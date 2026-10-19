@@ -33,7 +33,7 @@ int AnimClass::initAnimation() {
     (double)(*v4 - *v3) * (double)(*v4 - *v3)
   + (double)v6 * (double)v6
   + (double)(v4[1] - v3[1]) * (double)(v4[1] - v3[1]));
-  IDA_LOWORD(result) = Math::RoundToInt(v1); /*0x447e7c*/
+  (result) = ((result) & ~0xFFFF) | ((Math::RoundToInt(v1)) & 0xFFFF); /*0x447e7c*/
   return result; /*0x447e81*/
 }
 

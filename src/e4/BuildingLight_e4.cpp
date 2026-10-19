@@ -86,7 +86,7 @@ Coord * * BuildingLight::CalculateShading(__m64, void * a1, void * a2)
     LOBYTE(v5) = Coord::To_Screen((Coord *)g_TacticalClass_Instance, v3, v47); /*0x5ff88b*/
     if ( (unsigned char)v5 ) /*0x5ff892*/
     {
-      if ( (dword_A8B230->ptr_0 & 0x1000) == 0 || (LOBYTE(v5) = Game::Stub3((int)v3), !(unsigned char)v5) ) /*0x5ff8b2*/
+      if ( (dword_A8B230->ptr_0 & 0x1000) == 0 || ((v5) = ((v5) & ~0xFF) | ((Game::Stub3((int)v3)) & 0xFF), !(unsigned char)v5) ) /*0x5ff8b2*/
       {
         v52[0] = v47[0] - 128; /*0x5ff8c9*/
         v53[0] = DSurface_ViewBounds.field_0; /*0x5ff8d9*/
@@ -145,7 +145,7 @@ LABEL_23:
                   for ( i = 0; i < v12; ++i ) /*0x5ffb41*/
                   {
                     v13 = *v32 == 0; /*0x5ffb4e*/
-                    LOBYTE(v35) = *v32++; /*0x5ffb50*/
+                    (v35) = ((v35) & ~0xFF) | ((*v32++) & 0xFF); /*0x5ffb50*/
                     if ( !v13 ) /*0x5ffb58*/
                     {
                       v14 = *v10; /*0x5ffb62*/
@@ -180,7 +180,7 @@ LABEL_23:
                   for ( j = 0; j < v15; ++j ) /*0x5ffc92*/
                   {
                     v13 = *v32 == 0; /*0x5ffc9f*/
-                    LOBYTE(v35) = *v32++; /*0x5ffca1*/
+                    (v35) = ((v35) & ~0xFF) | ((*v32++) & 0xFF); /*0x5ffca1*/
                     if ( !v13 ) /*0x5ffca9*/
                     {
                       v16 = *v10; /*0x5ffcaf*/
@@ -237,7 +237,7 @@ LABEL_23:
                   for ( j = 0; j < v23; ++j ) /*0x5ffe15*/
                   {
                     v13 = *v32 == 0; /*0x5ffe22*/
-                    LOBYTE(v35) = *v32++; /*0x5ffe24*/
+                    (v35) = ((v35) & ~0xFF) | ((*v32++) & 0xFF); /*0x5ffe24*/
                     if ( !v13 ) /*0x5ffe2c*/
                     {
                       v24 = *v10; /*0x5ffe32*/

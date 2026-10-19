@@ -189,7 +189,7 @@ void ** TemporalClass::ProcessTimeWarp()
     v42 = v10 - v8; /*0x71a7ef*/
     v43 = v12; /*0x71a7f3*/
     Math::Sqrt((double)v9 * (double)v9 + (double)v12 * (double)v12 + (double)(v10 - v8) * (double)(v10 - v8)); /*0x71a81f*/
-    LOWORD(v13) = Math::RoundToInt(v1); /*0x71a827*/
+    (v13) = ((v13) & ~0xFFFF) | ((Math::RoundToInt(v1)) & 0xFFFF); /*0x71a827*/
     if ( v13 > *&dword_8871E0->u32_F60 << 8 )
     {
       return (void **)FactoryClass::CompleteItem((FactoryClass *)this); /*0x71a841*/

@@ -245,7 +245,7 @@ void* Factory_CalculateExitCell(Factory *aP0, Factory *aP0, void * a1, void * a2
       *v8 = *v23; /*0x718e32*/
       v7[11] = v23->vtable2; /*0x718e3b*/
       v7[12] = v23->vtable3; /*0x718e41*/
-      LOWORD(v68) = *v8 / 256; /*0x718e52*/
+      (v68) = ((v68) & ~0xFFFF) | ((*v8 / 256) & 0xFFFF); /*0x718e52*/
       v24 = (int *)v7[3]; /*0x718e63*/
       HIWORD(v68) = v7[11] / 256; /*0x718e69*/
       *(unsigned int *)v71 = v68; /*0x718e76*/

@@ -241,7 +241,7 @@ unsigned int * Pathfinding::ExpandNode(CellStruct * a1, int a2)
         v24[1].ptr_0 = ptr_0 + 1; /*0x5a55b2*/
         *(unsigned int *)(Items + 4 * ptr_0) = *(unsigned int *)&v20->X; /*0x5a55b8*/
       }
-      LODWORD(v77) = 0; /*0x5a55bf*/
+      (v77) = ((v77) & 0xFFFFFFFF00000000ull) | ((0) & 0xFFFFFFFFull); /*0x5a55bf*/
       v30 = (float *)&v4[2 * v76]; /*0x5a55c7*/
       do /*0x5a5789*/
       {
@@ -268,8 +268,8 @@ unsigned int * Pathfinding::ExpandNode(CellStruct * a1, int a2)
                 v37 = v36->X - v34; /*0x5a569f*/
                 v38 = v36->Y - v33; /*0x5a56a1*/
                 *(unsigned int *)&v79[2] = abs32(v37); /*0x5a56b1*/
-                if ( *(int *)&v79[2] <= (int)((HIDWORD(v38) ^ v38) - HIDWORD(v38)) ) /*0x5a56b5*/
-                  *(unsigned int *)&v79[2] = (HIDWORD(v38) ^ v38) - HIDWORD(v38); /*0x5a56b7*/
+                if ( *(int *)&v79[2] <= (int)(((((v38) >> 32) & 0xFFFFFFFFu) ^ v38) - (((v38) >> 32) & 0xFFFFFFFFu)) ) /*0x5a56b5*/
+                  *(unsigned int *)&v79[2] = ((((v38) >> 32) & 0xFFFFFFFFu) ^ v38) - (((v38) >> 32) & 0xFFFFFFFFu); /*0x5a56b7*/
                 v82 = (unsigned int)Random::State((Random *)&stru_ABE890); /*0x5a56c5*/
                 v39 = v73[1]; /*0x5a56d5*/
                 v40 = v73[0]; /*0x5a56e0*/
@@ -313,7 +313,7 @@ unsigned int * Pathfinding::ExpandNode(CellStruct * a1, int a2)
             }
           }
         }
-        LODWORD(v77) = v77 + 1; /*0x5a5785*/
+        (v77) = ((v77) & 0xFFFFFFFF00000000ull) | ((v77 + 1) & 0xFFFFFFFFull); /*0x5a5785*/
       }
       while ( (int)v77 < 8 ); /*0x5a5789*/
       ++v75; /*0x5a5794*/
@@ -419,14 +419,14 @@ unsigned int * Pathfinding::ExpandNode(CellStruct * a1, int a2)
         do /*0x5a59b3*/
         {
           v78 = (unsigned int)Random::State((Random *)&stru_ABE890); /*0x5a5996*/
-          LOWORD(v66) = Math::RoundToInt((double)v78 * *(double *)v80 * 2.328306437080797e-10); /*0x5a59ac*/
+          (v66) = ((v66) & ~0xFFFF) | ((Math::RoundToInt((double)v78 * *(double *)v80 * 2.328306437080797e-10)) & 0xFFFF); /*0x5a59ac*/
         }
         while ( v66 > v65 ); /*0x5a59b3*/
         v81[0] = *(unsigned int *)(v24->Items + 4 * v66); /*0x5a59bb*/
         do /*0x5a59e7*/
         {
           v77 = (unsigned int)Random::State((Random *)&stru_ABE890); /*0x5a59c9*/
-          LOWORD(v67) = Math::RoundToInt((double)v77 * 0.000000001629814505956558); /*0x5a59db*/
+          (v67) = ((v67) & ~0xFFFF) | ((Math::RoundToInt((double)v77 * 0.000000001629814505956558)) & 0xFFFF); /*0x5a59db*/
           *(unsigned int *)v79 = v67; /*0x5a59e3*/
         }
         while ( (unsigned int)v67 > 6 ); /*0x5a59e7*/

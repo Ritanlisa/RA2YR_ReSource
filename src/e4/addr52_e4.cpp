@@ -1355,11 +1355,11 @@ LABEL_106:
     (*(void (**)(unsigned int, unsigned __int8 ***))(**((unsigned int **)dword_A83C6C + nn) + 100))( /*0x52ca2a*/
       *((unsigned int *)dword_A83C6C + nn),
       dword_887048);
-  LODWORD(v65) = Audio::Callback(); /*0x52ca37*/
+  (v65) = ((v65) & 0xFFFFFFFF00000000ull) | ((Audio::Callback()) & 0xFFFFFFFFull); /*0x52ca37*/
   if ( v65 < *(unsigned long long *)&stru_A8E960.waypoints[2038] ) /*0x52ca4c*/
   {
     do /*0x52ca63*/
-      LODWORD(v66) = Audio::Callback(); /*0x52ca4e*/
+      (v66) = ((v66) & 0xFFFFFFFF00000000ull) | ((Audio::Callback()) & 0xFFFFFFFFull); /*0x52ca4e*/
     while ( v66 < *(unsigned long long *)&stru_A8E960.waypoints[2038] ); /*0x52ca63*/
   }
   PlayIntroSequence(0, -1, (int)aGrey); /*0x52ca65*/

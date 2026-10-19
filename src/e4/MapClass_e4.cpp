@@ -412,7 +412,7 @@ int MapClass::SetScrollMode(int a2, int aP1, int a1, int aP2, int a3)
 
   int result = aP1; // eax /*0x4aeb30*/
   *(unsigned int *)(aP1 + 4512) = aP1; /*0x4aeb36*/
-  LOBYTE(result) = aP1 != 0; /*0x4aeb3c*/
+  (result) = ((result) & ~0xFF) | ((aP1 != 0) & 0xFF); /*0x4aeb3c*/
   *(unsigned char *)(aP1 + 4508) = aP1 != 0; /*0x4aeb3f*/
   return result; /*0x4aeb45*/
 
@@ -1095,20 +1095,20 @@ LABEL_22:
       v22 = v39++; /*0x56761a*/
       v23 = *(unsigned short *)v22 + v13; /*0x567626*/
       v24 = v46 + v22->q002_; /*0x56762d*/
-      LOWORD(v48) = v23; /*0x567635*/
+      (v48) = ((v48) & ~0xFFFF) | ((v23) & 0xFFFF); /*0x567635*/
       ++v55; /*0x56763a*/
       v25 = this->MapClass_field_0xF4; /*0x56763e*/
-      HIWORD(v48) = v24; /*0x567644*/
+      (v48) = ((v48) & ~(0xFFFF << 16)) | (((v24) & 0xFFFF) << 16); /*0x567644*/
       *(unsigned int *)v47 = v48; /*0x567653*/
       v26 = v24 + v23; /*0x567657*/
       if ( v26 > v25 ) /*0x56765c*/
       {
         if ( v23 - v24 >= v25 || v24 - v23 >= v25 ) /*0x567672*/
         {
-          LOWORD(v13) = v45; /*0x5678a3*/
+          (v13) = ((v13) & ~0xFFFF) | ((v45) & 0xFFFF); /*0x5678a3*/
           continue; /*0x5678a3*/
         }
-        LOWORD(v13) = v45; /*0x56767e*/
+        (v13) = ((v13) & ~0xFFFF) | ((v45) & 0xFFFF); /*0x56767e*/
         if ( v26 > v25 + 2 * *(unsigned int *)this->__pad_F8 ) /*0x567688*/
           continue; /*0x567688*/
         if ( (int)abs32(v23 - v45) > a3 ) /*0x56769e*/
@@ -1362,8 +1362,8 @@ LABEL_17:
               --v17; /*0x568667*/
               v14 = v20 - 1; /*0x568669*/
               --v16; /*0x56866a*/
-              LOWORD(v31) = v18; /*0x56866b*/
-              HIWORD(v31) = v17; /*0x568670*/
+              (v31) = ((v31) & ~0xFFFF) | ((v18) & 0xFFFF); /*0x56866b*/
+              (v31) = ((v31) & ~(0xFFFF << 16)) | (((v17) & 0xFFFF) << 16); /*0x568670*/
               v19 -= 16; /*0x568675*/
             }
             --v40; /*0x56867d*/
@@ -1379,8 +1379,8 @@ LABEL_17:
         v25 = *((unsigned int *)v39 + 328); /*0x5686a2*/
         if ( *(unsigned int *)(i + v25 + 5668) != 0xFFFF || *(unsigned int *)(i + v25 + 5672) != 0xFFFF ) /*0x5686b8*/
         {
-          LOWORD(v32) = *(unsigned short *)(i + v25 + 5668) + *(unsigned int *)aP1; /*0x5686df*/
-          HIWORD(v32) = *(unsigned short *)(i + v25 + 5672) + HIWORD(*(unsigned int *)aP1); /*0x5686e4*/
+          (v32) = ((v32) & ~0xFFFF) | ((*(unsigned short *)(i + v25 + 5668) + *(unsigned int *)aP1) & 0xFFFF); /*0x5686df*/
+          (v32) = ((v32) & ~(0xFFFF << 16)) | (((*(unsigned short *)(i + v25 + 5672) + HIWORD(*(unsigned int *)aP1)) & 0xFFFF) << 16); /*0x5686e4*/
           v26 = (__int16)v32 + ((short)(((v32) >> 16) & 0xFFFF) << 9); /*0x5686ef*/
           if ( v26 >= 0 && v26 < MapClass_field_0x140 ) /*0x5686f9*/
           {
@@ -1403,8 +1403,8 @@ LABEL_17:
         result = *((unsigned int *)v39 + 328); /*0x568735*/
         if ( *(unsigned int *)(i + result + 5732) != 0xFFFF || *(unsigned int *)(i + result + 5736) != 0xFFFF ) /*0x56874b*/
         {
-          LOWORD(v33) = *(unsigned short *)(i + result + 5732) + *(unsigned int *)aP1; /*0x568776*/
-          HIWORD(v33) = *(unsigned short *)(i + result + 5736) + HIWORD(*(unsigned int *)aP1); /*0x56877b*/
+          (v33) = ((v33) & ~0xFFFF) | ((*(unsigned short *)(i + result + 5732) + *(unsigned int *)aP1) & 0xFFFF); /*0x568776*/
+          (v33) = ((v33) & ~(0xFFFF << 16)) | (((*(unsigned short *)(i + result + 5736) + HIWORD(*(unsigned int *)aP1)) & 0xFFFF) << 16); /*0x56877b*/
           result = (__int16)v33 + ((short)(((v33) >> 16) & 0xFFFF) << 9); /*0x568786*/
           if ( result >= 0 && result < MapClass_field_0x140 ) /*0x568790*/
           {
@@ -1594,8 +1594,8 @@ LABEL_17:
               --v18; /*0x568aa4*/
               v15 = v21 - 1; /*0x568aa6*/
               --v17; /*0x568aa7*/
-              LOWORD(v30) = v19; /*0x568aa8*/
-              HIWORD(v30) = v18; /*0x568aad*/
+              (v30) = ((v30) & ~0xFFFF) | ((v19) & 0xFFFF); /*0x568aa8*/
+              (v30) = ((v30) & ~(0xFFFF << 16)) | (((v18) & 0xFFFF) << 16); /*0x568aad*/
               v20 -= 16; /*0x568ab2*/
             }
             --v39; /*0x568aba*/
@@ -1613,9 +1613,9 @@ LABEL_17:
         if ( *(unsigned int *)(j + result + 5668) != 0xFFFF || *(unsigned int *)(j + result + 5672) != 0xFFFF ) /*0x568af9*/
         {
           v27 = *(unsigned short *)(j + result + 5672) + HIWORD(*(unsigned int *)aP1); /*0x568b1c*/
-          LOWORD(v31) = *(unsigned short *)(j + result + 5668) + *(unsigned int *)aP1; /*0x568b24*/
+          (v31) = ((v31) & ~0xFFFF) | ((*(unsigned short *)(j + result + 5668) + *(unsigned int *)aP1) & 0xFFFF); /*0x568b24*/
           result = (__int16)v31 + (v27 << 9); /*0x568b32*/
-          HIWORD(v31) = v27; /*0x568b34*/
+          (v31) = ((v31) & ~(0xFFFF << 16)) | (((v27) & 0xFFFF) << 16); /*0x568b34*/
           if ( result >= 0 && result < MapClass_field_0x140 ) /*0x568b41*/
           {
             v28 = this->MapClass_field_0x13C; /*0x568b47*/
@@ -1703,7 +1703,7 @@ TechnoTypeClass * * MapClass::PostProcessReveal(char a2)
         for ( k = 0; k < *(int *)&g_AircraftTrackerPool; v13[80] |= 0x100000u ) /*0x568cef*/
         {
           int v21; // [esp+10h] [ebp-8h]
-          HIWORD(v21) = *(unsigned short *)(j + 38); /*0x568d01*/
+          (v21) = ((v21) & ~(0xFFFF << 16)) | (((*(unsigned short *)(j + 38)) & 0xFFFF) << 16); /*0x568d01*/
           LOWORD(v21) = k + *&this->__pad_124; /*0x568d09*/
           unsigned int v12; // eax
           v12 = (__int16)v21 + ((short)(((v21) >> 16) & 0xFFFF) << 9); /*0x568d14*/
@@ -1722,7 +1722,7 @@ TechnoTypeClass * * MapClass::PostProcessReveal(char a2)
         for ( m = 0; m < *(int *)&g_AircraftTrackerState; v16[80] |= 0x200000u ) /*0x568d6d*/
         {
           int v22; // [esp+14h] [ebp-4h]
-          LOWORD(v22) = *(unsigned short *)(j + 36); /*0x568d7b*/
+          (v22) = ((v22) & ~0xFFFF) | ((*(unsigned short *)(j + 36)) & 0xFFFF); /*0x568d7b*/
           (v22) = ((v22) & ~(0xFFFF << 16)) | ((((unsigned short)this->q128 + m) & 0xFFFF) << 16); /*0x568d80*/
           unsigned int v15; // eax
           v15 = (__int16)v22 + ((short)(((v22) >> 16) & 0xFFFF) << 9); /*0x568d8e*/
@@ -2340,7 +2340,7 @@ void* MapClass::ApplyTerrainDamage(IUnknown *a1, IUnknown)
       v5 = a2; /*0x574c37*/
       v6 = a2[1]; /*0x574c3e*/
       LOWORD(v64) = v3 + *a2; /*0x574c48*/
-      HIWORD(v64) = v4 + v6; /*0x574c4d*/
+      (v64) = ((v64) & ~(0xFFFF << 16)) | (((v4 + v6) & 0xFFFF) << 16); /*0x574c4d*/
       *(unsigned int *)v68 = v64; /*0x574c60*/
       v7 = *((unsigned int *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v68) + 17); /*0x574c69*/
       if ( v7 >= 74 && v7 <= 101 ) /*0x574c74*/
@@ -2400,8 +2400,8 @@ void* MapClass::ApplyTerrainDamage(IUnknown *a1, IUnknown)
       v23 = v21 << 9; /*0x574d93*/
       v18 = v22 + v23 < 0; /*0x574d96*/
       v24 = v22 + v23; /*0x574d96*/
-      LOWORD(v66) = v22; /*0x574d98*/
-      HIWORD(v66) = v21; /*0x574d9d*/
+      (v66) = ((v66) & ~0xFFFF) | ((v22) & 0xFFFF); /*0x574d98*/
+      (v66) = ((v66) & ~(0xFFFF << 16)) | (((v21) & 0xFFFF) << 16); /*0x574d9d*/
       if ( v18 || v24 >= 0x40000 || (v25 = *(CellClass **)(dword_87F924 + 4 * v24)) == 0 ) /*0x574db6*/
       {
         v11 = &unk_ABDC50; /*0x574dc0*/
@@ -2458,7 +2458,7 @@ LABEL_34:
         v33 = HIWORD(dword_89F688[v66 & 7]) + v68[1]; /*0x574eb5*/
         LOWORD(a2) = v32 + LOWORD(dword_89F688[v66 & 7]); /*0x574ec2*/
         HIWORD(a2) = v33; /*0x574ec7*/
-        LOWORD(v32) = (unsigned short)a2; /*0x574ecc*/
+        (v32) = ((v32) & ~0xFFFF) | (((unsigned short)a2) & 0xFFFF); /*0x574ecc*/
         v34 = v33 << 9; /*0x574ed0*/
         v18 = (__int16)a2 + v34 < 0; /*0x574ed3*/
         v35 = (__int16)a2 + v34; /*0x574ed3*/
@@ -2926,8 +2926,8 @@ unsigned int * MapClass::FastCellLookup(short * a2, int a3, char a4)
       v17 = v20 + v21 < 0; /*0x578a34*/
       int v22 = v20 + v21; // eax /*0x578a34*/
       int v29; // [esp+24h] [ebp+Ch]
-      LOWORD(v29) = v20; /*0x578a36*/
-      HIWORD(v29) = v19; /*0x578a3b*/
+      (v29) = ((v29) & ~0xFFFF) | ((v20) & 0xFFFF); /*0x578a36*/
+      (v29) = ((v29) & ~(0xFFFF << 16)) | (((v19) & 0xFFFF) << 16); /*0x578a3b*/
       if ( v17 || v22 >= 0x40000 || (result = *(unsigned int **)(*(unsigned int *)&g_Shroud_CellArray + 4 * v22)) == 0 ) /*0x578a54*/
       {
         g_MissionQueueFrame.briefing[139] = v29; /*0x578a5c*/
@@ -2942,8 +2942,8 @@ unsigned int * MapClass::FastCellLookup(short * a2, int a3, char a4)
       v17 = v15 + v16 < 0; /*0x5789d3*/
       int v18 = v15 + v16; // eax /*0x5789d3*/
       int v28; // [esp+24h] [ebp+Ch]
-      LOWORD(v28) = v15; /*0x5789d5*/
-      HIWORD(v28) = v14; /*0x5789da*/
+      (v28) = ((v28) & ~0xFFFF) | ((v15) & 0xFFFF); /*0x5789d5*/
+      (v28) = ((v28) & ~(0xFFFF << 16)) | (((v14) & 0xFFFF) << 16); /*0x5789da*/
       if ( v17 || v18 >= 0x40000 || (result = *(unsigned int **)(*(unsigned int *)&g_Shroud_CellArray + 4 * v18)) == 0 ) /*0x5789f3*/
       {
         g_MissionQueueFrame.briefing[139] = v28; /*0x578a00*/
@@ -4042,10 +4042,10 @@ unsigned int MapClass::TransformCoordToScreen(int a2, unsigned int * a3)
   v32 = v8[1]; /*0x6d82d3*/
   v33 = *((unsigned int *)v8 + 2); /*0x6d82da*/
   int v9; // eax
-  LOWORD(v9) = Math::RoundToInt(v31); /*0x6d82de*/
+  (v9) = ((v9) & ~0xFFFF) | ((Math::RoundToInt(v31)) & 0xFFFF); /*0x6d82de*/
   int v10 = v9; // esi /*0x6d82e7*/
   int v11; // eax
-  LOWORD(v11) = Math::RoundToInt(v32); /*0x6d82e9*/
+  (v11) = ((v11) & ~0xFFFF) | ((Math::RoundToInt(v32)) & 0xFFFF); /*0x6d82e9*/
   int v34; // [esp+4Ch] [ebp-18h] BYREF
   v34 = v10; /*0x6d82f0*/
   int v35; // [esp+50h] [ebp-14h]

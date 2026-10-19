@@ -294,7 +294,7 @@ double Math::ArcTan2_Table(double a1)
 
   int v1; // eax
 
-  LOWORD(v1) = Math::RoundToInt((a1 + 1.0) * -2048.0); /*0x4cadc0*/
+  (v1) = ((v1) & ~0xFFFF) | ((Math::RoundToInt((a1 + 1.0) * -2048.0)) & 0xFFFF); /*0x4cadc0*/
   return 4 * v1; /*0x4cadd7*/
 
 }
@@ -312,7 +312,7 @@ double Math::ArcTan(double a1)
   float v8; // [esp+4h] [ebp+4h]
 
   v8 = a1; /*0x4cade4*/
-  LOWORD(v2) = Math::RoundToInt(a1 / flt_8650B8); /*0x4cadee*/
+  (v2) = ((v2) & ~0xFFFF) | ((Math::RoundToInt(a1 / flt_8650B8)) & 0xFFFF); /*0x4cadee*/
   result = abs32(v2); /*0x4cadf6*/
   v4 = v8 < 0.0; /*0x4cae12*/
   v5 = 0; /*0x4cae12*/
@@ -328,7 +328,7 @@ double ComputeChronosphereDistortion(float a1)
   int v1; // eax
   signed int v2; // eax
 
-  IDA_LOWORD(v1) = Math::RoundToInt(flt_8223B4 * a1); /*0x4cb1aa*/
+  (v1) = ((v1) & ~0xFFFF) | ((Math::RoundToInt(flt_8223B4 * a1)) & 0xFFFF); /*0x4cb1aa*/
   v2 = (v1 / 2) & 0x80001FFF; /*0x4cb1b9*/
   if ( v2 >= 0 ) /*0x4cb1be*/
     return v2 + 2048; /*0x4cb1be*/
@@ -503,12 +503,12 @@ int Gap2Recv_4CE4B0::ProcessDataHelper(void* a2, int a3) {
     fmul [esp+30h+var_1C+4]
     fsubr [esp+30h+var_C+4]
   }
-  LOWORD(v6) = Math::RoundToInt(v3); /*0x4ce519*/
+  (v6) = ((v6) & ~0xFFFF) | ((Math::RoundToInt(v3)) & 0xFFFF); /*0x4ce519*/
   a3 = v6; /*0x4ce520*/
   Math::ArcTan2(v12); /*0x4ce524*/
   __asm { fmul [esp+38h+var_1C+4] } /*0x4ce529*/
   __asm { fiadd dword ptr [esi] }
-  LOWORD(v7) = Math::RoundToInt(v3); /*0x4ce532*/
+  (v7) = ((v7) & ~0xFFFF) | ((Math::RoundToInt(v3)) & 0xFFFF); /*0x4ce532*/
   v8 = a3; /*0x4ce537*/
   *a2 = v7; /*0x4ce53d*/
   a2[1] = v8; /*0x4ce53f*/

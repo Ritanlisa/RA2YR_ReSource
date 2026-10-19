@@ -1921,7 +1921,7 @@ LABEL_463:
       }
       while ( (int)v181 < (int)&stru_A8B250.__pad_0[108] ); /*0x5e5c4c*/
       *(unsigned int *)&stru_A8B250.__pad_0[36] = v180; /*0x5e5c52*/
-      LOBYTE(v197.ambientSoundController[3]) = 0; /*0x5e5c58*/
+      v197.ambientSoundController[3] = 0; /*0x5e5c58*/
       v187 = &stru_A8B250.__pad_0[140]; /*0x5e5c5d*/
       do /*0x5e5cb6*/
       {

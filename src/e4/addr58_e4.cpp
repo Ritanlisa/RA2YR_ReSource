@@ -596,7 +596,7 @@ char globalHelper_088570(MouseClass * aP0, VectorClass_flat * aP1, MouseClass * 
           dword_ABDC74 = (int)v20; /*0x588647*/
           v11 = &unk_ABDC50; /*0x58864d*/
         }
-        LOWORD(v5) = CellClass::IsPassable(&v11->mapCoords, aP2->u32_67C, aP2, aP1); /*0x58865f*/
+        (v5) = ((v5) & ~0xFFFF) | ((CellClass::IsPassable(&v11->mapCoords, aP2->u32_67C, aP2, aP1)) & 0xFFFF); /*0x58865f*/
         if ( (unsigned char)v5 ) /*0x588666*/
         {
           (v5) = ((v5) & ~0xFFFF) | ((++v18) & 0xFFFF); /*0x588674*/
@@ -1818,7 +1818,7 @@ unsigned int * E4Recv_58BE20::sub_58BE20()
     {
       __int64 v7; // [esp+14h] [ebp-10h]
       v7 = (unsigned int)Random::State((Random *)&g_MissionQueueFrame.globalVariables[1552]); /*0x58be52*/
-      LOWORD(v3) = Math::RoundToInt((double)v7 * (double)(v2 + 1) * 2.328306437080797e-10); /*0x58be68*/
+      (v3) = ((v3) & ~0xFFFF) | ((Math::RoundToInt((double)v7 * (double)(v2 + 1) * 2.328306437080797e-10)) & 0xFFFF); /*0x58be68*/
     }
     while ( v3 > v2 ); /*0x58be6f*/
     v4 = (unsigned short *)(g_MissionQueueFrame.localVariables[163] + 80 * v3); /*0x58be7d*/
@@ -1855,7 +1855,7 @@ unsigned int * E4Recv_58BEA0::sub_58BEA0()
       {
         __int64 v10; // [esp+1Ch] [ebp-10h]
         v10 = (unsigned int)Random::State((Random *)&g_MissionQueueFrame.globalVariables[1552]); /*0x58bed5*/
-        LOWORD(v4) = Math::RoundToInt((double)v10 * v11 * 2.328306437080797e-10); /*0x58beeb*/
+        (v4) = ((v4) & ~0xFFFF) | ((Math::RoundToInt((double)v10 * v11 * 2.328306437080797e-10)) & 0xFFFF); /*0x58beeb*/
       }
       while ( v4 > v3 ); /*0x58bef2*/
       v5 = (unsigned short *)(g_MissionQueueFrame.localVariables[163] + 80 * v4); /*0x58bf00*/
@@ -1958,7 +1958,7 @@ unsigned int * E4Recv_58C320::sub_58C320(unsigned int * a2)
     {
       __int64 v8; // [esp+18h] [ebp-10h]
       v8 = (unsigned int)Random::State((Random *)&g_MissionQueueFrame.globalVariables[1552]); /*0x58c355*/
-      LOWORD(v4) = Math::RoundToInt((double)v8 * (double)(unsigned int)v2 * 2.328306437080797e-10); /*0x58c36b*/
+      (v4) = ((v4) & ~0xFFFF) | ((Math::RoundToInt((double)v8 * (double)(unsigned int)v2 * 2.328306437080797e-10)) & 0xFFFF); /*0x58c36b*/
     }
     while ( v4 > v2 - 1 ); /*0x58c372*/
     v5 = g_MissionQueueFrame.localVariables[163] + 80 * v4; /*0x58c380*/
@@ -1997,7 +1997,7 @@ unsigned int * E4Recv_58C3B0::sub_58C3B0(unsigned int * a2)
       {
         __int64 v11; // [esp+20h] [ebp-10h]
         v11 = (unsigned int)Random::State((Random *)&g_MissionQueueFrame.globalVariables[1552]); /*0x58c3e9*/
-        LOWORD(v4) = Math::RoundToInt((double)v11 * v12 * 2.328306437080797e-10); /*0x58c3ff*/
+        (v4) = ((v4) & ~0xFFFF) | ((Math::RoundToInt((double)v11 * v12 * 2.328306437080797e-10)) & 0xFFFF); /*0x58c3ff*/
       }
       while ( v4 > v3 - 1 ); /*0x58c406*/
       v5 = g_MissionQueueFrame.localVariables[163] + 80 * v4; /*0x58c414*/
@@ -2038,7 +2038,7 @@ unsigned int * E4Recv_58C4A0::sub_58C4A0(ObjectClass * aP1)
     do /*0x58c508*/
     {
       v9 = (unsigned int)Random::State((Random *)&g_MissionQueueFrame.globalVariables[1552]); /*0x58c4eb*/
-      LOWORD(v4) = Math::RoundToInt((double)v9 * (double)(unsigned int)v7 * 2.328306437080797e-10); /*0x58c501*/
+      (v4) = ((v4) & ~0xFFFF) | ((Math::RoundToInt((double)v9 * (double)(unsigned int)v7 * 2.328306437080797e-10)) & 0xFFFF); /*0x58c501*/
     }
     while ( v4 > v7 - 1 ); /*0x58c508*/
     ++v3; /*0x58c518*/

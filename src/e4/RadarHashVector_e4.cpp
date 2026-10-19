@@ -111,7 +111,7 @@ AbstractClass * * RadarHashVector::ComputeHashIndex(int a2, char * a3)
     }
     *&this->q004 = v5; /*0x658be3*/
     this->m_8 = v3; /*0x658be9*/
-    BYTE1(this->m_C) = a3 == 0; /*0x658bec*/
+    (this->m_C) = ((this->m_C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x658bec*/
   }
   else
   {

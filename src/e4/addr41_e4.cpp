@@ -525,7 +525,7 @@ int SubmitDirectSoundBufferData(unsigned int a1, char * a2, char * a3)
       v40 = *(unsigned int *)(v5 + 4); /*0x41205f*/
       if ( *(float *)&stru_A8E960.random[40] * 256.0 != (double)v40 ) /*0x41207a*/
       {
-        LOWORD(v7) = Math::RoundToInt(*(float *)&stru_A8E960.random[40] * 255.0); /*0x412088*/
+        (v7) = ((v7) & ~0xFFFF) | ((Math::RoundToInt(*(float *)&stru_A8E960.random[40] * 255.0)) & 0xFFFF); /*0x412088*/
         *(unsigned int *)(v5 + 4) = v7; /*0x41208f*/
         v8 = *v6; /*0x412092*/
         v9 = sub_40A900((unsigned __int8)v7); /*0x41209a*/

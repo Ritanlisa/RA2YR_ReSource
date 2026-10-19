@@ -651,9 +651,9 @@ int TacticalMap::RenderAllObjects(int a2)
   v6 = (IsoCoord *)TransformMatrix3x4Point((float *)v97.__pad_0, &this->u32_DE4, (float *)v83.__pad_0); /*0x6d8e14*/
   v83 = *v6; /*0x6d8e1b*/
   v84 = *v6->IsoCoord_field_0x04.__pad_0; /*0x6d8e2d*/
-  LOWORD(v7) = Math::RoundToInt(*(float *)v83.__pad_0); /*0x6d8e31*/
+  (v7) = ((v7) & ~0xFFFF) | ((Math::RoundToInt(*(float *)v83.__pad_0)) & 0xFFFF); /*0x6d8e31*/
   v86 = v7; /*0x6d8e3a*/
-  LOWORD(v8) = Math::RoundToInt(*(float *)&v83.IsoCoord_field_0x04); /*0x6d8e3e*/
+  (v8) = ((v8) & ~0xFFFF) | ((Math::RoundToInt(*(float *)&v83.IsoCoord_field_0x04)) & 0xFFFF); /*0x6d8e3e*/
   v87 = v8; /*0x6d8e43*/
   v81 = v3 + 2 * v2; /*0x6d8e4a*/
   *(float *)v83.__pad_0 = (float)v81; /*0x6d8e62*/
@@ -664,7 +664,7 @@ int TacticalMap::RenderAllObjects(int a2)
   v9 = (IsoCoord *)TransformMatrix3x4Point((float *)v97.__pad_0, v5, (float *)v83.__pad_0); /*0x6d8e84*/
   v83 = *v9; /*0x6d8e8b*/
   v84 = *v9->IsoCoord_field_0x04.__pad_0; /*0x6d8e9d*/
-  LOWORD(v10) = Math::RoundToInt(*(float *)v83.__pad_0); /*0x6d8ea1*/
+  (v10) = ((v10) & ~0xFFFF) | ((Math::RoundToInt(*(float *)v83.__pad_0)) & 0xFFFF); /*0x6d8ea1*/
   v11 = v10; /*0x6d8ea8*/
   v81 = v3 - v2; /*0x6d8eae*/
   v82 = v78; /*0x6d8eb6*/

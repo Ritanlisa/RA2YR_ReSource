@@ -84,7 +84,7 @@ int Object::FindClosestObjectCell(unsigned int *aP1, char aP2, int aP3)
       Math::Sqrt((double)v14 * (double)v14 + (double)v15 * (double)v15); /*0x47c484*/
       double v4; // st7
       int v10; // eax
-      LOWORD(v10) = Math::RoundToInt(v4); /*0x47c48c*/
+      (v10) = ((v10) & ~0xFFFF) | ((Math::RoundToInt(v4)) & 0xFFFF); /*0x47c48c*/
       if ( !v12 || v10 < v13 ) /*0x47c49d*/
       {
         v12 = (int)v8; /*0x47c49f*/
@@ -284,10 +284,10 @@ unsigned int * Object::FindNearestObjectAtCell(unsigned int * a2)
   {
     v6 = *(unsigned short *)v5; /*0x56c343*/
     v7 = v4 + *((unsigned short *)v5 + 1); /*0x56c351*/
-    LOWORD(v23) = v3 + v6; /*0x56c354*/
+    (v23) = ((v23) & ~0xFFFF) | ((v3 + v6) & 0xFFFF); /*0x56c354*/
     v8 = (__int16)(v3 + v6); /*0x56c359*/
     v9 = *&this->u32_F4; /*0x56c35c*/
-    HIWORD(v23) = v7; /*0x56c362*/
+    (v23) = ((v23) & ~(0xFFFF << 16)) | (((v7) & 0xFFFF) << 16); /*0x56c362*/
     v10 = v7; /*0x56c367*/
     v11 = v8 + v7; /*0x56c36a*/
     if ( v11 > v9 && v8 - v10 < v9 && v10 - v8 < v9 && v11 <= v9 + 2 * *&this->u32_F8 ) /*0x56c39c*/
@@ -327,13 +327,13 @@ LABEL_20:
             goto LABEL_20; /*0x56c44a*/
         }
       }
-      LOWORD(v3) = v30; /*0x56c4be*/
+      (v3) = ((v3) & ~0xFFFF) | ((v30) & 0xFFFF); /*0x56c4be*/
     }
     v5 = v24 + 4; /*0x56c4c7*/
     v24 += 4; /*0x56c4d0*/
     if ( (int)v24 >= (int)&g_MissionQueueFrame.waypoints[2094] ) /*0x56c4d4*/
       break; /*0x56c4d4*/
-    LOWORD(v4) = v31; /*0x56c33e*/
+    (v4) = ((v4) & ~0xFFFF) | ((v31) & 0xFFFF); /*0x56c33e*/
   }
   result = v21; /*0x56c4da*/
   if ( v21 ) /*0x56c4e4*/
@@ -1084,11 +1084,11 @@ char Object_Calc_7DEFD7(MouseClass * aP0, unsigned short *a1, int a3, int a4, in
     (v8) = ((v8) & ~(0xFFFF << 16)) | (((0) & 0xFFFF) << 16); /*0x7df008*/
     do
     {
-      LOBYTE(v9) = *v6; /*0x7df00a*/
+      (v9) = ((v9) & ~0xFF) | ((*v6) & 0xFF); /*0x7df00a*/
       if ( *v6 )
       {
-        LOWORD(v8) = *v7; /*0x7df010*/
-        LOBYTE(v17) = *v6; /*0x7df013*/
+        (v8) = ((v8) & ~0xFFFF) | ((*v7) & 0xFFFF); /*0x7df010*/
+        (v17) = ((v17) & ~0xFF) | ((*v6) & 0xFF); /*0x7df013*/
         v18 = v8; /*0x7df016*/
         v10 = (v8 >> 8) & 0xFC; /*0x7df022*/
         v11 = v10; /*0x7df02d*/
@@ -1151,11 +1151,11 @@ char Object_Calc_7DF0B4(MouseClass * aP0, unsigned short *a1, int a3, int a4, in
     (v8) = ((v8) & ~(0xFFFF << 16)) | (((0) & 0xFFFF) << 16); /*0x7df0e5*/
     do
     {
-      LOBYTE(v9) = *v6; /*0x7df0e7*/
+      (v9) = ((v9) & ~0xFF) | ((*v6) & 0xFF); /*0x7df0e7*/
       if ( *v6 )
       {
-        LOWORD(v8) = *v7; /*0x7df0ed*/
-        LOBYTE(v17) = *v6; /*0x7df0f0*/
+        (v8) = ((v8) & ~0xFFFF) | ((*v7) & 0xFFFF); /*0x7df0ed*/
+        (v17) = ((v17) & ~0xFF) | ((*v6) & 0xFF); /*0x7df0f0*/
         v18 = v8; /*0x7df0f3*/
         v10 = (v8 >> 8) & 0xF8; /*0x7df0ff*/
         v11 = v10; /*0x7df10a*/
@@ -1218,11 +1218,11 @@ char Object_Calc_7DF191(MouseClass * aP0, unsigned short *a1, int a3, int a4, in
     (v8) = ((v8) & ~(0xFFFF << 16)) | (((0) & 0xFFFF) << 16); /*0x7df1c2*/
     do
     {
-      LOBYTE(v9) = *v6; /*0x7df1c4*/
+      (v9) = ((v9) & ~0xFF) | ((*v6) & 0xFF); /*0x7df1c4*/
       if ( *v6 )
       {
-        LOWORD(v8) = *v7; /*0x7df1ca*/
-        LOBYTE(v17) = *v6; /*0x7df1cd*/
+        (v8) = ((v8) & ~0xFFFF) | ((*v7) & 0xFFFF); /*0x7df1ca*/
+        (v17) = ((v17) & ~0xFF) | ((*v6) & 0xFF); /*0x7df1cd*/
         v18 = v8; /*0x7df1d0*/
         v10 = (v8 >> 7) & 0xF8; /*0x7df1dc*/
         v11 = v10; /*0x7df1e7*/
@@ -1283,7 +1283,7 @@ LABEL_2:
     {
       while ( 1 ) /*0x7df340*/
       {
-        LOBYTE(v11) = *v8; /*0x7df340*/
+        (v11) = ((v11) & ~0xFF) | ((*v8) & 0xFF); /*0x7df340*/
         if ( *v8 ) /*0x7df340*/
           break; /*0x7df340*/
         ++v8; /*0x7df300*/
@@ -1300,7 +1300,7 @@ LABEL_2:
         }
       }
       v15.m64_i8[0] = *v8; /*0x7df346*/
-      LOWORD(v10) = *v9; /*0x7df349*/
+      (v10) = ((v10) & ~0xFFFF) | ((*v9) & 0xFFFF); /*0x7df349*/
       v15.m64_i8[2] = *v8; /*0x7df34c*/
       v15.m64_i8[4] = *v8; /*0x7df34f*/
       v12 = _m_psrlwi(_m_punpcklbw(a1, (__m64)*(unsigned int *)(a8 + 4 * v10)), 8u); /*0x7df35a*/
@@ -1357,7 +1357,7 @@ LABEL_2:
     {
       while ( 1 ) /*0x7df480*/
       {
-        LOBYTE(v11) = *v8; /*0x7df480*/
+        (v11) = ((v11) & ~0xFF) | ((*v8) & 0xFF); /*0x7df480*/
         if ( *v8 ) /*0x7df480*/
           break; /*0x7df480*/
         ++v8; /*0x7df440*/
@@ -1374,7 +1374,7 @@ LABEL_2:
         }
       }
       v15.m64_i8[0] = *v8; /*0x7df486*/
-      LOWORD(v10) = *v9; /*0x7df489*/
+      (v10) = ((v10) & ~0xFFFF) | ((*v9) & 0xFFFF); /*0x7df489*/
       v15.m64_i8[2] = *v8; /*0x7df48c*/
       v15.m64_i8[4] = *v8; /*0x7df48f*/
       v12 = _m_psrlwi(_m_punpcklbw(a1, (__m64)*(unsigned int *)(a8 + 4 * v10)), 8u); /*0x7df49a*/
@@ -1431,7 +1431,7 @@ LABEL_2:
     {
       while ( 1 ) /*0x7df5c0*/
       {
-        LOBYTE(v11) = *v8; /*0x7df5c0*/
+        (v11) = ((v11) & ~0xFF) | ((*v8) & 0xFF); /*0x7df5c0*/
         if ( *v8 ) /*0x7df5c0*/
           break; /*0x7df5c0*/
         ++v8; /*0x7df580*/
@@ -1448,7 +1448,7 @@ LABEL_2:
         }
       }
       v15.m64_i8[0] = *v8; /*0x7df5c6*/
-      LOWORD(v10) = *v9; /*0x7df5c9*/
+      (v10) = ((v10) & ~0xFFFF) | ((*v9) & 0xFFFF); /*0x7df5c9*/
       v15.m64_i8[2] = *v8; /*0x7df5cc*/
       v15.m64_i8[4] = *v8; /*0x7df5cf*/
       v12 = _m_psrlwi(_m_punpcklbw(a1, (__m64)*(unsigned int *)(a8 + 4 * v10)), 8u); /*0x7df5da*/
@@ -1505,7 +1505,7 @@ LABEL_2:
     {
       while ( 1 ) /*0x7df700*/
       {
-        LOBYTE(v11) = *v8; /*0x7df700*/
+        (v11) = ((v11) & ~0xFF) | ((*v8) & 0xFF); /*0x7df700*/
         if ( *v8 ) /*0x7df700*/
           break; /*0x7df700*/
         ++v8; /*0x7df6c0*/
@@ -1522,7 +1522,7 @@ LABEL_2:
         }
       }
       v15.m64_i8[0] = *v8; /*0x7df706*/
-      LOWORD(v10) = *v9; /*0x7df709*/
+      (v10) = ((v10) & ~0xFFFF) | ((*v9) & 0xFFFF); /*0x7df709*/
       v15.m64_i8[2] = *v8; /*0x7df70c*/
       v15.m64_i8[4] = *v8; /*0x7df70f*/
       v12 = _m_psrlwi(_m_punpcklbw(a1, (__m64)*(unsigned int *)(a8 + 4 * v10)), 8u); /*0x7df71a*/

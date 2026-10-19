@@ -258,7 +258,7 @@ void* TacticalClass::ProcessScroll(int * a2)
         fstp st
       }
       Math::Sqrt(v10); /*0x4ac484*/
-      LOWORD(v4) = Math::RoundToInt(v2); /*0x4ac48c*/
+      (v4) = ((v4) & ~0xFFFF) | ((Math::RoundToInt(v2)) & 0xFFFF); /*0x4ac48c*/
       if ( v4 > 4 ) /*0x4ac494*/
       {
         DisplayClass_field_0x11B0_high = HIBYTE(this->DisplayClass_field_0x11B0); /*0x4ac496*/
@@ -269,7 +269,7 @@ void* TacticalClass::ProcessScroll(int * a2)
         {
           g_TacticalClass_Instance[863].__tail_0[1] = 1; /*0x4ac4c0*/
           TacticalClass::InitScrollBounds((TacticalClass *)g_TacticalClass_Instance, &this->DisplayClass_field_0x11D4); /*0x4ac4cc*/
-          LOBYTE(v4) = Mouse::SetCursor((int)&dword_87F7E8, 0, 0); /*0x4ac4da*/
+          (v4) = ((v4) & ~0xFF) | ((Mouse::SetCursor((int)&dword_87F7E8, 0, 0)) & 0xFF); /*0x4ac4da*/
         }
       }
     }
@@ -294,7 +294,7 @@ void* TacticalClass::ProcessScroll(int * a2)
     if ( v4 != DisplayClass_field_0x11DC || v5 != this->DisplayClass_field_0x11E0 ) /*0x4ac40b*/
     {
       g_TacticalClass_Instance[863].__tail_0[1] = 1; /*0x4ac41c*/
-      LOBYTE(v4) = TacticalClass::UpdateScrollMaxBounds((TacticalClass *)g_TacticalClass_Instance, &v11); /*0x4ac429*/
+      (v4) = ((v4) & ~0xFF) | ((TacticalClass::UpdateScrollMaxBounds((TacticalClass *)g_TacticalClass_Instance, &v11)) & 0xFF); /*0x4ac429*/
     }
   }
   return v4; /*0x4ac42e*/
@@ -1007,9 +1007,9 @@ void* * TacticalClass::DrawBuildingsInView(AbstractClass * aP1)
   v41 = *v6; /*0x6d6d7e*/
   v42 = v6[1]; /*0x6d6d89*/
   v43 = *((unsigned int *)v6 + 2); /*0x6d6d90*/
-  LOWORD(v7) = Math::RoundToInt(v41); /*0x6d6d94*/
+  (v7) = ((v7) & ~0xFFFF) | ((Math::RoundToInt(v41)) & 0xFFFF); /*0x6d6d94*/
   v8 = v7; /*0x6d6d9d*/
-  LOWORD(v9) = Math::RoundToInt(v42); /*0x6d6d9f*/
+  (v9) = ((v9) & ~0xFFFF) | ((Math::RoundToInt(v42)) & 0xFFFF); /*0x6d6d9f*/
   v53 = v8; /*0x6d6da6*/
   v54 = v9; /*0x6d6dac*/
   v55 = 0; /*0x6d6db0*/
@@ -1266,7 +1266,7 @@ void * TacticalClass::IsOccupiedByTechno(unsigned int * a2)
       LABEL_12:
       v10 = (double)((v4[1] - v20[0]) * (v4[1] - v20[0])) * 0.5; /*0x6da444*/
       v21 = (*v4 - v19) * (*v4 - v19); /*0x6da46d*/
-      LOWORD(v11) = Math::RoundToInt(v10 + (double)v21); /*0x6da477*/
+      (v11) = ((v11) & ~0xFFFF) | ((Math::RoundToInt(v10 + (double)v21)) & 0xFFFF); /*0x6da477*/
       if ( v11 < v16 && v11 < 0xC8 ) /*0x6da487*/
       {
         v16 = v11; /*0x6da489*/

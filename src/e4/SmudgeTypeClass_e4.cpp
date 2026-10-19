@@ -269,7 +269,7 @@ int SmudgeTypeClass::PowerDrainUpdate(int * a2)
   AbstractTypeClass::ProcessPower((AbstractTypeClass *)this, a2); /*0x6b57f9*/
   Power::TimerProcess(this->ArrayIndex); /*0x6b5807*/
   int v3; // ecx
-  LOBYTE(v3) = (unsigned char)(this->Crater); /*0x6b580c*/
+  (v3) = ((v3) & ~0xFF) | (((unsigned char)(this->Crater)) & 0xFF); /*0x6b580c*/
   ((Power *)a2)->FlagProcess(v3); /*0x6b5815*/
   int v4; // edx
   LOBYTE(v4) = this->Burn; /*0x6b581a*/

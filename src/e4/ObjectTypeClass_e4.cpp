@@ -1883,7 +1883,7 @@ int ObjectTypeClass::FreeLoaderBuffer()
   this->AbstractTypeClass = 0; /*0x5f9b70*/
   this->vtable2 = 0; /*0x5f9b72*/
   this->vtable3 = 0; /*0x5f9b75*/
-  LOBYTE(this->vtable4) = 0; /*0x5f9b78*/
+  (this->vtable4) = ((this->vtable4) & ~0xFF) | ((0) & 0xFF); /*0x5f9b78*/
   this->uniqueId = 0; /*0x5f9b7b*/
   return 0; /*0x5f9b7e*/
 

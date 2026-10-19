@@ -117,7 +117,7 @@ MapSeedClass * * MapSeedClass::PlaceBuildingClusters(MapSeedClass * aP1)
           do /*0x5a5c92*/
           {
             v20 = (unsigned int)Random::State((Random *)&g_MissionQueueFrame.globalVariables[1552]); /*0x5a5c78*/
-            LOWORD(v8) = Math::RoundToInt((double)v20 * 4.656612874161595e-10); /*0x5a5c8a*/
+            (v8) = ((v8) & ~0xFFFF) | ((Math::RoundToInt((double)v20 * 4.656612874161595e-10)) & 0xFFFF); /*0x5a5c8a*/
           }
           while ( v8 > 1 ); /*0x5a5c92*/
           if ( v8 ) /*0x5a5c96*/
@@ -137,7 +137,7 @@ LABEL_11:
           for ( i = 0; i < (__int16)v28 - (__int16)v27 - 1; ++i ) /*0x5a5cf3*/
           {
             (v32) = ((v32) & ~0xFFFF) | ((i + 1) & 0xFFFF); /*0x5a5cfa*/
-            LOWORD(v30) = v9 + i + 1; /*0x5a5d0a*/
+            (v30) = ((v30) & ~0xFFFF) | ((v9 + i + 1) & 0xFFFF); /*0x5a5d0a*/
             (v30) = ((v30) & ~(0xFFFF << 16)) | ((((((v27) >> 16) & 0xFFFF)) & 0xFFFF) << 16); /*0x5a5d0f*/
             v29 = v30; /*0x5a5d1a*/
             PlaceMapSeedClassBuildings(g_CellTileTypeCache, &v29, -1, -1); /*0x5a5d28*/
@@ -153,7 +153,7 @@ LABEL_11:
           do /*0x5a5da0*/
           {
             v49 = (unsigned int)Random::State((Random *)&g_MissionQueueFrame.globalVariables[1552]); /*0x5a5d7d*/
-            LOWORD(v12) = Math::RoundToInt((double)v49 * 4.656612874161595e-10); /*0x5a5d98*/
+            (v12) = ((v12) & ~0xFFFF) | ((Math::RoundToInt((double)v49 * 4.656612874161595e-10)) & 0xFFFF); /*0x5a5d98*/
           }
           while ( v12 > 1 ); /*0x5a5da0*/
           if ( v12 ) /*0x5a5da4*/
@@ -187,7 +187,7 @@ LABEL_18:
       LODWORD(v20) = *FindClearPlacementCell(v57, &v24, &v38, 4); /*0x5a5e4d*/
       v5 = *globalHelper_0A7070(&v49, (__int16 *)&v20, &v38, 4); /*0x5a5e68*/
       v28 = v5; /*0x5a5e6a*/
-      if ( v5 && ((LOWORD(v5) = v25, v24) || v25) && (LOWORD(v5) = v25, (short)(((v5) >> 16) & 0xFFFF) - v25 >= 6) ) /*0x5a5ea1*/
+      if ( v5 && (((v5) = ((v5) & ~0xFFFF) | ((v25) & 0xFFFF), v24) || v25) && ((v5) = ((v5) & ~0xFFFF) | ((v25) & 0xFFFF), (short)(((v5) >> 16) & 0xFFFF) - v25 >= 6) ) /*0x5a5ea1*/
       {
         (v5) = ((v5) & ~0xFFFF) | (((((v20) >> 16) & 0xFFFF)) & 0xFFFF); /*0x5a5ea7*/
         v22 = 0; /*0x5a5eac*/
@@ -245,7 +245,7 @@ LABEL_18:
                   v16 = (short)(((v28) >> 16) & 0xFFFF); /*0x5a61cd*/
                   if ( (short)(((v28) >> 16) & 0xFFFF) - (short)(((v20) >> 16) & 0xFFFF) < 4 ) /*0x5a61de*/
                   {
-                    LOWORD(v5) = PlaceMapSeedClassBuildings(g_CellTileTypeCache + 7, &v20, -1, -1); /*0x5a63e7*/
+                    (v5) = ((v5) & ~0xFFFF) | ((PlaceMapSeedClassBuildings(g_CellTileTypeCache + 7, &v20, -1, -1)) & 0xFFFF); /*0x5a63e7*/
                     goto LABEL_73; /*0x5a63ec*/
                   }
                   v52.max_entries = (__int16)v20; /*0x5a61e9*/
@@ -327,7 +327,7 @@ LABEL_18:
             do /*0x5a5f96*/
             {
               *(unsigned long long *)v43 = (unsigned int)Random::State((Random *)&g_MissionQueueFrame.globalVariables[1552]); /*0x5a5f7c*/
-              LOWORD(v15) = Math::RoundToInt((double)*(__int64 *)v43 * 4.656612874161595e-10); /*0x5a5f8e*/
+              (v15) = ((v15) & ~0xFFFF) | ((Math::RoundToInt((double)*(__int64 *)v43 * 4.656612874161595e-10)) & 0xFFFF); /*0x5a5f8e*/
             }
             while ( v15 > 1 ); /*0x5a5f96*/
             if ( v15 ) /*0x5a5f9a*/
@@ -379,14 +379,14 @@ LABEL_38:
         do /*0x5a648f*/
         {
           *(unsigned long long *)v46 = (unsigned int)Random::State((Random *)&g_MissionQueueFrame.globalVariables[1552]); /*0x5a6472*/
-          LOWORD(v18) = Math::RoundToInt((double)*(__int64 *)v46 * 4.656612874161595e-10); /*0x5a6487*/
+          (v18) = ((v18) & ~0xFFFF) | ((Math::RoundToInt((double)*(__int64 *)v46 * 4.656612874161595e-10)) & 0xFFFF); /*0x5a6487*/
         }
         while ( v18 > 1 ); /*0x5a648f*/
         if ( v18 ) /*0x5a6493*/
-          LOWORD(v5) = PlaceMapSeedClassBuildings(g_CellTileTypeCache + 12, &v20, -1, -1); /*0x5a64a6*/
+          (v5) = ((v5) & ~0xFFFF) | ((PlaceMapSeedClassBuildings(g_CellTileTypeCache + 12, &v20, -1, -1)) & 0xFFFF); /*0x5a64a6*/
         else
 LABEL_72:
-          LOWORD(v5) = PlaceMapSeedClassBuildings(dword_ABBEC4 + 3, &v20, -1, -1); /*0x5a64bd*/
+          (v5) = ((v5) & ~0xFFFF) | ((PlaceMapSeedClassBuildings(dword_ABBEC4 + 3, &v20, -1, -1)) & 0xFFFF); /*0x5a64bd*/
 LABEL_73:
         v13 = v27 - 10; /*0x5a64c9*/
         v24 += 10; /*0x5a64d4*/
@@ -638,7 +638,7 @@ char MapSeedClass_18::Release(int a2, unsigned int * a3)
       }
       *&this->q004 = v4; /*0x5acb27*/
       this->m_8 = a2; /*0x5acb2f*/
-      BYTE1(this->m_C) = a3 == 0; /*0x5acb32*/
+      (this->m_C) = ((this->m_C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x5acb32*/
       return 1; /*0x5acb38*/
     }
     else
@@ -735,7 +735,7 @@ char MapSeedClass_18::SetCapacity(int a2, unsigned int * a3)
     }
     *&this->q004 = v4; /*0x5acc5a*/
     this->m_8 = a2; /*0x5acc62*/
-    BYTE1(this->m_C) = a3 == 0; /*0x5acc65*/
+    (this->m_C) = ((this->m_C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x5acc65*/
   }
   else
   {

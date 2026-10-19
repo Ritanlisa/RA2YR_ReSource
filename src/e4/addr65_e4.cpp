@@ -1902,7 +1902,7 @@ char MoveScriptTypeClassToWaypoint(ScriptTypeClass * aP0, ObjectClass * aP1, int
   v5 = aP1; /*0x65e019*/
   v6 = aP0->q0B0; /*0x65e01b*/
   v50 = (unsigned int *)aP0; /*0x65e021*/
-  LOBYTE(v48) = v6 != 0; /*0x65e02e*/
+  (v48) = ((v48) & ~0xFF) | ((v6 != 0) & 0xFF); /*0x65e02e*/
   v7 = aP1; /*0x65e035*/
   if ( aP1 ) /*0x65e037*/
   {
@@ -1916,12 +1916,12 @@ char MoveScriptTypeClassToWaypoint(ScriptTypeClass * aP0, ObjectClass * aP1, int
       }
     }
     v4 = (int)v50; /*0x65e0c3*/
-    HIBYTE(v48) = 0; /*0x65e0c7*/
+    (v48) = ((v48) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x65e0c7*/
   }
   else
   {
 LABEL_5:
-    HIBYTE(v48) = 1; /*0x65e064*/
+    (v48) = ((v48) & ~(0xFF << 8)) | (((1) & 0xFF) << 8); /*0x65e064*/
   }
   v52 = 0; /*0x65e072*/
   v51 = *a2; /*0x65e07e*/
@@ -1980,7 +1980,7 @@ LABEL_5:
         (v53) = ((v53) & ~0xFFFF) | (((unsigned short)v52 << 13) & 0xFFFF); /*0x65e191*/
         if ( (*(int (**)(unsigned int *))(v16 + 44))(v5) == 2 ) /*0x65e19e*/
         {
-          LOWORD(v56) = ((v15 << 13) - 24577) & 0xE000; /*0x65e1af*/
+          (v56) = ((v56) & ~0xFFFF) | ((((v15 << 13) - 24577) & 0xE000) & 0xFFFF); /*0x65e1af*/
           v17 = v56; /*0x65e1b4*/
           v53 = v56; /*0x65e1b8*/
         }
@@ -2052,7 +2052,7 @@ LABEL_46:
           *v45 = 0; /*0x65e5d1*/
         }
       }
-      if ( HIBYTE(v48) ) /*0x65e2d9*/
+      if ( (((v48) >> 8) & 0xFF) ) /*0x65e2d9*/
       {
         v22 = CellCoord::To_CellObj(&dword_87F7E8, (__int16 *)&v49); /*0x65e2ee*/
         Coords = CellClass::GetCoords(v22, v61); /*0x65e2f5*/
@@ -3271,7 +3271,7 @@ short E4Recv_659A30::sub_659A30()
   __int16 result; // ax
   char v10; // cl
 
-  LOWORD(v2) = Math::RoundToInt(*(double *)&this->bombVisible / *(double *)&this->nextArrayIndex); /*0x659a3c*/
+  (v2) = ((v2) & ~0xFFFF) | ((Math::RoundToInt(*(double *)&this->bombVisible / *(double *)&this->nextArrayIndex)) & 0xFFFF); /*0x659a3c*/
   v3 = this->customSound_controller[3]; /*0x659a41*/
   v4 = this->customSound_controller[4]; /*0x659a44*/
   customSound = this->customSound; /*0x659a47*/

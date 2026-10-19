@@ -103,7 +103,7 @@ ATOM DialogClass::RegisterWinClasses()
     WndClass.hInstance = (HINSTANCE)(g_hInstance); /*0x60d4f4*/
     memset(&WndClass.hIcon, 0, 16); /*0x60d4f8*/
     WndClass.lpszClassName = (LPCSTR)(g_INI_Key_NewEdit); /*0x60d508*/
-    LOWORD(result) = RegisterClassA(&WndClass); /*0x60d510*/
+    (result) = ((result) & ~0xFFFF) | ((RegisterClassA(&WndClass)) & 0xFFFF); /*0x60d510*/
   }
   return result; /*0x60d515*/
 

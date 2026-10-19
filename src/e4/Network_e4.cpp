@@ -328,7 +328,7 @@ LABEL_5:
               if ( !result->u8_1F5 ) /*0x4316a0*/
               {
                 v16 = *(unsigned int *)(v10 + 4); /*0x4316b4*/
-                LOWORD(v19) = *(unsigned int *)v10 / 256; /*0x4316c3*/
+                (v19) = ((v19) & ~0xFFFF) | ((*(unsigned int *)v10 / 256) & 0xFFFF); /*0x4316c3*/
                 (v19) = ((v19) & ~(0xFFFF << 16)) | (((v16 / 256) & 0xFFFF) << 16); /*0x4316db*/
                 return CreateTriggerClassIfFarEnough(11, (unsigned __int8)(v16 >> 31), v19); /*0x4316e5*/
               }
@@ -446,7 +446,7 @@ LABEL_10:
             v44 = &MEMORY[0xA8E2B4]; /*0x48d30c*/
             do /*0x48d484*/
             {
-              LOWORD(v5) = *v44; /*0x48d318*/
+              (v5) = ((v5) & ~0xFFFF) | ((*v44) & 0xFFFF); /*0x48d318*/
               v7 = *v44 == 0; /*0x48d31b*/
               v46 = v5; /*0x48d31e*/
               if ( !v7 ) /*0x48d322*/
@@ -484,7 +484,7 @@ LABEL_10:
                     ToWideStringChar((char *)v13); /*0x48d434*/
                     Debug::Log(); /*0x48d43f*/
                     v15 = MEMORY[0xA8DA78][v6]; /*0x48d44d*/
-                    LOWORD(v16) = *(unsigned short *)(v15 + 131); /*0x48d456*/
+                    (v16) = ((v16) & ~0xFFFF) | ((*(unsigned short *)(v15 + 131)) & 0xFFFF); /*0x48d456*/
                     Network::SendMessage(&MEMORY[0xA8E9C0].Socket, (int)v51, 91, 0, v15 + 40, v16, 0); /*0x48d46c*/
                   }
                 }
@@ -936,9 +936,9 @@ int Network::IsBroadcastAddr()
       && BYTE1(this->__pad_000) == 0xFF
       && BYTE2(this->__pad_000) == 0xFF
       && HIBYTE(this->__pad_000) == 0xFF
-      && LOBYTE(this->q004) == 0xFF
-      && BYTE1(this->q004) == 0xFF
-      && BYTE2(this->q004) == 0xFF
+      && ((this->q004) & 0xFF) == 0xFF
+      && (((this->q004) >> 8) & 0xFF) == 0xFF
+      && (((this->q004) >> 16) & 0xFF) == 0xFF
       && HIBYTE(this->q004) == 0xFF
       && (this->q008) = ((this->q008) & ~0xFF) | ((= 0xFF
       && (this->q008) = ((this->q008) & ~(0xFF << 8)) | (((= 0xFF) & 0xFF) << 8)) & 0xFF))
@@ -946,9 +946,9 @@ int Network::IsBroadcastAddr()
       return 1; /*0x53ee42*/
     }
   }
-  else if ( LOBYTE(this->q004) == 0xFF /*0x53ee5f*/
-         && BYTE1(this->q004) == 0xFF
-         && BYTE2(this->q004) == 0xFF
+  else if ( ((this->q004) & 0xFF) == 0xFF /*0x53ee5f*/
+         && (((this->q004) >> 8) & 0xFF) == 0xFF
+         && (((this->q004) >> 16) & 0xFF) == 0xFF
          && HIBYTE(this->q004) == 0xFF
          && (this->q008) = ((this->q008) & ~0xFF) | ((= 0xFF
          && (this->q008) = ((this->q008) & ~(0xFF << 8)) | (((= 0xFF) & 0xFF) << 8)) & 0xFF))
@@ -2431,7 +2431,7 @@ LABEL_69:
           {
             if ( *(unsigned short *)v44 ) /*0x5d99ed*/
             {
-              LOWORD(v35) = *(unsigned short *)v44; /*0x5d99ed*/
+              (v35) = ((v35) & ~0xFFFF) | ((*(unsigned short *)v44) & 0xFFFF); /*0x5d99ed*/
               v35 = (*(int (**)(WinsockInterface *, int))(*(unsigned int *)dword_887628->__pad_0 + 108))( /*0x5d99fe*/
                       dword_887628,
                       v35);
@@ -2470,9 +2470,9 @@ LABEL_69:
       {
         if ( !*((unsigned short *)v88 + k) ) /*0x5d9926*/
         {
-          LOWORD(v37) = *((unsigned short *)v87 + k); /*0x5d992e*/
+          (v37) = ((v37) & ~0xFFFF) | ((*((unsigned short *)v87 + k)) & 0xFFFF); /*0x5d992e*/
           Network::QueryAddress((unsigned __int16 *)&v89, v37, v40, 0); /*0x5d993e*/
-          LOWORD(v38) = Network::WaitForPacket(v40, 0); /*0x5d9948*/
+          (v38) = ((v38) & ~0xFFFF) | ((Network::WaitForPacket(v40, 0)) & 0xFFFF); /*0x5d9948*/
           *((unsigned short *)v88 + k) = v38; /*0x5d9950*/
           if ( (unsigned short)v38 ) /*0x5d9955*/
             ++v36; /*0x5d9957*/
@@ -2486,7 +2486,7 @@ LABEL_69:
     {
       if ( *(unsigned short *)v29 ) /*0x5d996d*/
       {
-        LOWORD(v38) = *(unsigned short *)v29; /*0x5d996d*/
+        (v38) = ((v38) & ~0xFFFF) | ((*(unsigned short *)v29) & 0xFFFF); /*0x5d996d*/
         v38 = (*(int (**)(WinsockInterface *, int))(*(unsigned int *)dword_887628->__pad_0 + 108))( /*0x5d997e*/
                 dword_887628,
                 v38);
@@ -2541,7 +2541,7 @@ LABEL_69:
           {
             v48 = (void *)(this->Network_field_0x10 + 1); /*0x5d9a8e*/
             this->Network_field_0x10 = (int)v48; /*0x5d9a90*/
-            LOWORD(k) = (unsigned short)v48; /*0x5d9a98*/
+            (k) = ((k) & ~0xFFFF) | (((unsigned short)v48) & 0xFFFF); /*0x5d9a98*/
             if ( (int)v48 > 0xFFFF ) /*0x5d9a9b*/
               this->Network_field_0x10 = 2048; /*0x5d9a9d*/
             v49 = dword_887628; /*0x5d9aa4*/
@@ -2756,7 +2756,7 @@ unsigned short Network::ResolveNetworkAddress(uint16_t a2, void *a2_1)
     {
       v8 = (void *)(this->Network_field_0x10 + 1); /*0x5da283*/
       this->Network_field_0x10 = (int)v8; /*0x5da285*/
-      LOWORD(v6) = (unsigned short)v8; /*0x5da28d*/
+      (v6) = ((v6) & ~0xFFFF) | (((unsigned short)v8) & 0xFFFF); /*0x5da28d*/
       if ( (int)v8 > 0xFFFF ) /*0x5da290*/
         this->Network_field_0x10 = 2048; /*0x5da292*/
       v9 = dword_887628; /*0x5da295*/
@@ -2831,7 +2831,7 @@ LABEL_19:
     else
     {
       result = Debug::Log(); /*0x5da3f8*/
-      LOWORD(result) = v12; /*0x5da400*/
+      (result) = ((result) & ~0xFFFF) | ((v12) & 0xFFFF); /*0x5da400*/
     }
   }
   else
@@ -3499,7 +3499,7 @@ void Network::Network_UpdateLatencyDisplay( ProgressScreenClass * aP1, ProgressS
     }
     while ( v7 ); /*0x643c77*/
   }
-  LOWORD(result) = Math::RoundToInt(v6); /*0x643c88*/
+  (result) = ((result) & ~0xFFFF) | ((Math::RoundToInt(v6)) & 0xFFFF); /*0x643c88*/
   v10 = result; /*0x643c90*/
   v11 = *(double *)((char *)this + 8 * aP1 + 8); /*0x643c94*/
   v12 = *&this->u32_48 * 0.01 * aP2; /*0x643ca1*/
@@ -3513,7 +3513,7 @@ void Network::Network_UpdateLatencyDisplay( ProgressScreenClass * aP1, ProgressS
   v14 = v11 < *(double *)((char *)this + 8 * aP1 + 8); /*0x643cc0*/
   v15 = 0; /*0x643cc0*/
   v16 = v11 == *(double *)((char *)this + 8 * aP1 + 8); /*0x643cc0*/
-  LOWORD(result) = v13; /*0x643cc4*/
+  (result) = ((result) & ~0xFFFF) | ((v13) & 0xFFFF); /*0x643cc4*/
   if ( v11 != *(double *)((char *)this + 8 * aP1 + 8) ) /*0x643cc9*/
   {
     v17 = this->u32_61; /*0x643ccf*/

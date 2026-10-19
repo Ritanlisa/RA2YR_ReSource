@@ -1044,15 +1044,15 @@ char globalHelper_06ED40(IUnknown * aP0, int a2)
   v7 = v5[14] - g_TerrainBridgeIndex + 1; /*0x56edde*/
   if ( v7 == dword_ABC1E8 || v7 == dword_AA0E38 ) /*0x56ede9*/
   {
-    LOBYTE(v7) = Cell::UpdateTileType((__int16 *)&a2, 1, 0); /*0x56ee37*/
+    (v7) = ((v7) & ~0xFF) | ((Cell::UpdateTileType((__int16 *)&a2, 1, 0)) & 0xFF); /*0x56ee37*/
   }
   else if ( v7 == g_TerrainSoundTable2 ) /*0x56edf3*/
   {
-    LOBYTE(v7) = Cell::SetTileType((__int16 *)&a2, g_TerrainBridgeIndex + g_TerrainSoundTable2, -1, -1, 0); /*0x56ee03*/
+    (v7) = ((v7) & ~0xFF) | ((Cell::SetTileType((__int16 *)&a2, g_TerrainBridgeIndex + g_TerrainSoundTable2, -1, -1, 0)) & 0xFF); /*0x56ee03*/
   }
   else if ( v7 == g_TerrainSoundTable2 + 2 ) /*0x56ee13*/
   {
-    LOBYTE(v7) = Cell::SetTileType((__int16 *)&a2, g_TerrainSoundTable2 + g_TerrainBridgeIndex + 2, -1, -1, 0); /*0x56ee25*/
+    (v7) = ((v7) & ~0xFF) | ((Cell::SetTileType((__int16 *)&a2, g_TerrainSoundTable2 + g_TerrainBridgeIndex + 2, -1, -1, 0)) & 0xFF); /*0x56ee25*/
   }
   return v7; /*0x56ee08*/
 
@@ -1097,15 +1097,15 @@ char globalHelper_06EE40(IUnknown * aP0, int a2)
   v7 = v5[14] - g_TerrainBridgeIndex + 1; /*0x56eede*/
   if ( v7 == dword_ABC2B4 || v7 == dword_AA1130 ) /*0x56eee9*/
   {
-    LOBYTE(v7) = Cell::UpdateTileType((__int16 *)&a2, 1, 0); /*0x56ef39*/
+    (v7) = ((v7) & ~0xFF) | ((Cell::UpdateTileType((__int16 *)&a2, 1, 0)) & 0xFF); /*0x56ef39*/
   }
   else if ( v7 == g_TerrainSoundTable2 ) /*0x56eef3*/
   {
-    LOBYTE(v7) = Cell::SetTileType((__int16 *)&a2, g_TerrainSoundTable2 + g_TerrainBridgeIndex + 1, -1, -1, 0); /*0x56ef05*/
+    (v7) = ((v7) & ~0xFF) | ((Cell::SetTileType((__int16 *)&a2, g_TerrainSoundTable2 + g_TerrainBridgeIndex + 1, -1, -1, 0)) & 0xFF); /*0x56ef05*/
   }
   else if ( v7 == g_TerrainSoundTable2 + 1 ) /*0x56ef15*/
   {
-    LOBYTE(v7) = Cell::SetTileType((__int16 *)&a2, g_TerrainSoundTable2 + g_TerrainBridgeIndex + 2, -1, -1, 0); /*0x56ef27*/
+    (v7) = ((v7) & ~0xFF) | ((Cell::SetTileType((__int16 *)&a2, g_TerrainSoundTable2 + g_TerrainBridgeIndex + 2, -1, -1, 0)) & 0xFF); /*0x56ef27*/
   }
   return v7; /*0x56ef0a*/
 
@@ -1153,15 +1153,15 @@ char globalHelper_06F690(IUnknown * aP0, IUnknown * aP1)
   v7 = v5[14] - g_TerrainBridgeIndex + 1; /*0x56f733*/
   if ( v7 == dword_ABC1D0 || v7 == dword_AA1540 ) /*0x56f73e*/
   {
-    LOBYTE(v7) = Cell::UpdateTileType((__int16 *)&aP1, 1, 0); /*0x56f78c*/
+    (v7) = ((v7) & ~0xFF) | ((Cell::UpdateTileType((__int16 *)&aP1, 1, 0)) & 0xFF); /*0x56f78c*/
   }
   else if ( v7 == g_TerrainSoundConfig ) /*0x56f748*/
   {
-    LOBYTE(v7) = Cell::SetTileType((__int16 *)&aP1, g_TerrainBridgeIndex + g_TerrainSoundConfig, -1, -1, 0); /*0x56f758*/
+    (v7) = ((v7) & ~0xFF) | ((Cell::SetTileType((__int16 *)&aP1, g_TerrainBridgeIndex + g_TerrainSoundConfig, -1, -1, 0)) & 0xFF); /*0x56f758*/
   }
   else if ( v7 == g_TerrainSoundConfig + 2 ) /*0x56f768*/
   {
-    LOBYTE(v7) = Cell::SetTileType((__int16 *)&aP1, g_TerrainSoundConfig + g_TerrainBridgeIndex + 2, -1, -1, 0); /*0x56f77a*/
+    (v7) = ((v7) & ~0xFF) | ((Cell::SetTileType((__int16 *)&aP1, g_TerrainSoundConfig + g_TerrainBridgeIndex + 2, -1, -1, 0)) & 0xFF); /*0x56f77a*/
   }
   return v7; /*0x56f75d*/
 
@@ -1209,15 +1209,15 @@ char sub_56F7A0(unsigned short * a1, int a2)
   v7 = v5[14] - g_TerrainBridgeIndex + 1; /*0x56f843*/
   if ( v7 == dword_AA1548 || v7 == dword_AA0740 ) /*0x56f84e*/
   {
-    LOBYTE(v7) = Cell::UpdateTileType((__int16 *)&a2, 1, 0); /*0x56f89e*/
+    (v7) = ((v7) & ~0xFF) | ((Cell::UpdateTileType((__int16 *)&a2, 1, 0)) & 0xFF); /*0x56f89e*/
   }
   else if ( v7 == g_TerrainSoundConfig ) /*0x56f858*/
   {
-    LOBYTE(v7) = Cell::SetTileType((__int16 *)&a2, g_TerrainSoundConfig + g_TerrainBridgeIndex + 1, -1, -1, 0); /*0x56f86a*/
+    (v7) = ((v7) & ~0xFF) | ((Cell::SetTileType((__int16 *)&a2, g_TerrainSoundConfig + g_TerrainBridgeIndex + 1, -1, -1, 0)) & 0xFF); /*0x56f86a*/
   }
   else if ( v7 == g_TerrainSoundConfig + 1 ) /*0x56f87a*/
   {
-    LOBYTE(v7) = Cell::SetTileType((__int16 *)&a2, g_TerrainSoundConfig + g_TerrainBridgeIndex + 2, -1, -1, 0); /*0x56f88c*/
+    (v7) = ((v7) & ~0xFF) | ((Cell::SetTileType((__int16 *)&a2, g_TerrainSoundConfig + g_TerrainBridgeIndex + 2, -1, -1, 0)) & 0xFF); /*0x56f88c*/
   }
   return v7; /*0x56f86f*/
 

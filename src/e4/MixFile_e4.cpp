@@ -327,7 +327,7 @@ unsigned int * MIXFile::Load(ObjectClass * a2)
     char v11; // cl
     v11 = v10[2]; /*0x6276ef*/
     *v10 = 4 * *(unsigned short *)v10; /*0x6276f9*/
-    v10[1] = 4 * HIBYTE(v31); /*0x627706*/
+    v10[1] = 4 * (((v31) >> 8) & 0xFF); /*0x627706*/
     v10[2] = 4 * v11; /*0x62770f*/
   }
   int v12; // edi

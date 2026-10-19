@@ -369,7 +369,7 @@ CoordStruct* MapClass::FindFirstFirestorm(CoordStruct* a1, const int* a2, const 
           }
         }
         v6 += v39; /*0x5881c4*/
-        WORD1(v34) = v6; /*0x5881c9*/
+        (v34) = ((v34) & ~(0xFFFF << 16)) | (((v6) & 0xFFFF) << 16); /*0x5881c9*/
       }
     }
     else
@@ -383,7 +383,7 @@ CoordStruct* MapClass::FindFirstFirestorm(CoordStruct* a1, const int* a2, const 
         (v34) = ((v34) & ~(0xFFFF << 16)) | (((v14 / 256) & 0xFFFF) << 16); /*0x588223*/
         v6 = (((v34) >> 16) & 0xFFFF); /*0x588234*/
         v17 = (__int16)v34 >= (short)(((v34) >> 32) & 0xFFFF) ? -1 : 1;
-        for ( i = v34; ((i & 0xFFFFu) << 16 | (v16 & 0xFFFFu)) != *(unsigned int *)((char *)&v34 + 2); LOWORD(v34) = i ) /*0x58823d*/
+        for ( i = v34; ((i & 0xFFFFu) << 16 | (v16 & 0xFFFFu)) != *(unsigned int *)((char *)&v34 + 2); (v34) = ((v34) & ~0xFFFF) | ((i) & 0xFFFF)) /*0x58823d*/
         {
           v19 = (__int16)i + ((short)(((v34) >> 16) & 0xFFFF) << 9); /*0x588259*/
           if ( v19 < 0x40000 && (v20 = *(Cell **)(dword_87F924 + 4 * v19)) != 0 ) /*0x58826f*/
@@ -727,7 +727,7 @@ LABEL_61:
       result = --v46; /*0x567d79*/
       if ( !v46 ) /*0x567d82*/
         return result; /*0x567d82*/
-      LOWORD(v17) = v50; /*0x567b2a*/
+      (v17) = ((v17) & ~0xFFFF) | ((v50) & 0xFFFF); /*0x567b2a*/
     }
   }
   return result; /*0x567d88*/

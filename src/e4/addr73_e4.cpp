@@ -97,17 +97,17 @@ AbstractClass * * ProcessSelectionExperience()
   char v14; // [esp+13h] [ebp-5h]
   wchar_t *v15; // [esp+14h] [ebp-4h]
 
-  LOBYTE(v1) = (unsigned char)MEMORY[0xA8ECC8]; /*0x730af3*/
+  (v1) = ((v1) & ~0xFF) | (((unsigned char)MEMORY[0xA8ECC8]) & 0xFF); /*0x730af3*/
   v14 = 0; /*0x730afe*/
   if ( (int)MEMORY[0xA8ECC8] <= 0 ) /*0x730b03*/
     return v1; /*0x730b03*/
-  LOBYTE(v1) = (unsigned char)MEMORY[0xA8ECBC]; /*0x730b09*/
+  (v1) = ((v1) & ~0xFF) | (((unsigned char)MEMORY[0xA8ECBC]) & 0xFF); /*0x730b09*/
   if ( !*(unsigned int *)MEMORY[0xA8ECBC]
     || (v2 = *(House ***)MEMORY[0xA8ECBC],
         v1 = (*(int (**)(unsigned int))(**(unsigned int **)MEMORY[0xA8ECBC] + 44))(*(unsigned int *)MEMORY[0xA8ECBC]),
         v1 != 6)
     || (v1 = (*(int (**)(House **))&(*v2)->__pad_3D7[49])(v2), v1 <= 0)
-    || (LOBYTE(v1) = House::IsHumanPlayer(v2[135]), !(unsigned char)v1) )
+    || ((v1) = ((v1) & ~0xFF) | ((House::IsHumanPlayer(v2[135])) & 0xFF), !(unsigned char)v1) )
   {
     v4 = MEMORY[0xA8ECC8]; /*0x730b71*/
     v5 = 0; /*0x730b77*/
@@ -199,7 +199,7 @@ LABEL_23:
         goto LABEL_24; /*0x730c13*/
     }
   }
-  LOBYTE(v1) = (unsigned char)MEMORY[0xA8ECBC]; /*0x730b41*/
+  (v1) = ((v1) & ~0xFF) | (((unsigned char)MEMORY[0xA8ECBC]) & 0xFF); /*0x730b41*/
   v3 = *(unsigned char **)MEMORY[0xA8ECBC]; /*0x730b46*/
   if ( *(unsigned int *)MEMORY[0xA8ECBC] ) /*0x730b46*/
   {
@@ -208,7 +208,7 @@ LABEL_23:
       LOBYTE(v1) = (*(int (**)(unsigned char *, int))(*(unsigned int *)v3 + 884))(v3, 9); /*0x730b5e*/
       if ( (unsigned char)v1 ) /*0x730b66*/
 LABEL_47:
-        LOBYTE(v1) = PlayVocClass(*&dword_8871E0->q72C, 0x2000, 1.0, 0); /*0x730d39*/
+        (v1) = ((v1) & ~0xFF) | ((PlayVocClass(*&dword_8871E0->q72C, 0x2000, 1.0, 0)) & 0xFF); /*0x730d39*/
     }
   }
   return v1; /*0x730d55*/
@@ -861,11 +861,11 @@ char sub_7331B0()
         {
           if ( (*(unsigned char *)(HeightMap + 20) & 1) != 0 ) /*0x7332e4*/
           {
-            LOBYTE(HeightMap) = *(unsigned char *)(HeightMap + 144); /*0x7332e6*/
+            (HeightMap) = ((HeightMap) & ~0xFF) | ((*(unsigned char *)(HeightMap + 144)) & 0xFF); /*0x7332e6*/
             if ( (unsigned char)HeightMap ) /*0x7332ee*/
             {
               if ( *(unsigned int *)&dword_A8B238 ) /*0x7332f7*/
-                LOBYTE(HeightMap) = House::IsHumanPlayer(v14[135]); /*0x73330d*/
+                (HeightMap) = ((HeightMap) & ~0xFF) | ((House::IsHumanPlayer(v14[135])) & 0xFF); /*0x73330d*/
               else
                 HeightMap = BYTE1(v14[135]->House_field_0x1EC); /*0x7332ff*/
               if ( (unsigned char)HeightMap ) /*0x733314*/

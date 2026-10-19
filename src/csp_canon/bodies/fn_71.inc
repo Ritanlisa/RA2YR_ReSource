@@ -879,7 +879,7 @@ int TerrainClass::Update() {
           v16 = (TerrainTypeClass *)location[1]; /*0x71c8be*/
           v17 = location[2]; /*0x71c8c5*/
           v14 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &v15); /*0x71c8c9*/
-          IDA_LOBYTE(result) = CellClass::SpawnTiberiumTree(v14, 1); /*0x71c8d0*/
+          (result) = ((result) & ~0xFF) | ((CellClass::SpawnTiberiumTree(v14, 1)) & 0xFF); /*0x71c8d0*/
         }
       }
     }

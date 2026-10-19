@@ -306,7 +306,7 @@ int Palette_LoadSimple(char * Source, unsigned int * a2, unsigned int * a3)
     v9 = 0; /*0x72ae45*/
     while ( 1 ) /*0x72ae5d*/
     {
-      HIBYTE(v15) = 4 * *v8; /*0x72ae5d*/
+      (v15) = ((v15) & ~(0xFF << 8)) | (((4 * *v8) & 0xFF) << 8); /*0x72ae5d*/
       LOBYTE(v15) = 4 * *(v8 - 1); /*0x72ae64*/
       v10 = 4 * v8[1]; /*0x72ae6a*/
       v8 += 3; /*0x72ae80*/
@@ -3145,7 +3145,7 @@ int E4Recv_7294E0::sub_7294E0()
   else
   {
     v5 = (*(int (**)(unsigned int *))(*vtable3 + 1336))(vtable3); /*0x72951c*/
-    LOWORD(v3) = Math::RoundToInt((double)v5 * *(double *)(*(unsigned int *)&g_RulesClass_Instance + 32)); /*0x729527*/
+    (v3) = ((v3) & ~0xFFFF) | ((Math::RoundToInt((double)v5 * *(double *)(*(unsigned int *)&g_RulesClass_Instance + 32))) & 0xFFFF); /*0x729527*/
     if ( v3 <= 5 ) /*0x72952f*/
       v3 = 5; /*0x729531*/
     v7 -= v3; /*0x729542*/

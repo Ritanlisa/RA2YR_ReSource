@@ -1816,7 +1816,7 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
     fmul ds:dbl_7E2AC0
     fadd ds:dbl_7E3808
   }
-  LOWORD(v56) = Math::RoundToInt(a2); /*0x68a846*/
+  (v56) = ((v56) & ~0xFFFF) | ((Math::RoundToInt(a2)) & 0xFFFF); /*0x68a846*/
   __asm { fild dword ptr [esi+3534h] } /*0x68a84b*/
   *(unsigned int *)(_ESI + 13608) = v56; /*0x68a856*/
   *(unsigned int *)(_ESI + 13612) = v56; /*0x68a85c*/
@@ -1829,7 +1829,7 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
     fmul ds:dbl_7E2AC0
     fadd ds:dbl_7E3808
   }
-  LOWORD(v57) = Math::RoundToInt(a2); /*0x68a88c*/
+  (v57) = ((v57) & ~0xFFFF) | ((Math::RoundToInt(a2)) & 0xFFFF); /*0x68a88c*/
   __asm { fild dword ptr [esi+3538h] } /*0x68a891*/
   *(unsigned int *)(_ESI + 13620) = v57; /*0x68a89c*/
   __asm /*0x68a8a2*/
@@ -1843,7 +1843,7 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
     fmul ds:dbl_7E2AC0
     fadd ds:dbl_7E3808
   }
-  LOWORD(v58) = Math::RoundToInt(a2); /*0x68a8c6*/
+  (v58) = ((v58) & ~0xFFFF) | ((Math::RoundToInt(a2)) & 0xFFFF); /*0x68a8c6*/
   __asm { fild dword ptr [esi+353Ch] } /*0x68a8cb*/
   *(unsigned int *)(_ESI + 13624) = v58; /*0x68a8d6*/
   __asm /*0x68a8dc*/
@@ -1857,7 +1857,7 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
     fmul ds:dbl_7E2AC0
     fadd ds:dbl_7E3808
   }
-  LOWORD(v59) = Math::RoundToInt(a2); /*0x68a900*/
+  (v59) = ((v59) & ~0xFFFF) | ((Math::RoundToInt(a2)) & 0xFFFF); /*0x68a900*/
   __asm { fild dword ptr [esi+3540h] } /*0x68a905*/
   *(unsigned int *)(_ESI + 13628) = v59; /*0x68a910*/
   __asm /*0x68a916*/
@@ -1871,7 +1871,7 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
     fmul ds:dbl_7E4658
     fadd ds:dbl_7E3808
   }
-  LOWORD(v60) = Math::RoundToInt(a2); /*0x68a93a*/
+  (v60) = ((v60) & ~0xFFFF) | ((Math::RoundToInt(a2)) & 0xFFFF); /*0x68a93a*/
   __asm { fild dword ptr [esi+3544h] } /*0x68a93f*/
   *(unsigned int *)(_ESI + 13632) = v60; /*0x68a94a*/
   __asm /*0x68a950*/
@@ -1885,7 +1885,7 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
     fmul ds:dbl_7E4658
     fadd ds:dbl_7E3808
   }
-  LOWORD(v61) = Math::RoundToInt(a2); /*0x68a974*/
+  (v61) = ((v61) & ~0xFFFF) | ((Math::RoundToInt(a2)) & 0xFFFF); /*0x68a974*/
   __asm { fild dword ptr [esi+3548h] } /*0x68a979*/
   *(unsigned int *)(_ESI + 13636) = v61; /*0x68a984*/
   __asm /*0x68a98a*/
@@ -1899,7 +1899,7 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
     fmul ds:dbl_7E2AC0
     fadd ds:dbl_7E3808
   }
-  LOWORD(v62) = Math::RoundToInt(a2); /*0x68a9ae*/
+  (v62) = ((v62) & ~0xFFFF) | ((Math::RoundToInt(a2)) & 0xFFFF); /*0x68a9ae*/
   __asm { fild dword ptr [esi+354Ch] } /*0x68a9b3*/
   *(unsigned int *)(_ESI + 13640) = v62; /*0x68a9be*/
   __asm /*0x68a9c4*/
@@ -1913,7 +1913,7 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
     fmul ds:dbl_7E2AC0
     fadd ds:dbl_7E3808
   }
-  LOWORD(v63) = Math::RoundToInt(a2); /*0x68a9e8*/
+  (v63) = ((v63) & ~0xFFFF) | ((Math::RoundToInt(a2)) & 0xFFFF); /*0x68a9e8*/
   __asm { fild dword ptr [esi+3550h] } /*0x68a9ed*/
   *(unsigned int *)(_ESI + 13644) = v63; /*0x68a9f6*/
   __asm /*0x68a9fe*/
@@ -1927,7 +1927,7 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
     fmul ds:dbl_7E2AC0
     fadd ds:dbl_7E3808
   }
-  LOWORD(v64) = Math::RoundToInt(a2); /*0x68aa22*/
+  (v64) = ((v64) & ~0xFFFF) | ((Math::RoundToInt(a2)) & 0xFFFF); /*0x68aa22*/
   __asm { fild dword ptr [esi+3554h] } /*0x68aa27*/
   *(unsigned int *)(_ESI + 13648) = v64; /*0x68aa32*/
   __asm /*0x68aa38*/
@@ -1941,7 +1941,7 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
     fmul ds:dbl_7E2AC0
     fadd ds:dbl_7E3808
   }
-  LOWORD(v65) = Math::RoundToInt(a2); /*0x68aa5c*/
+  (v65) = ((v65) & ~0xFFFF) | ((Math::RoundToInt(a2)) & 0xFFFF); /*0x68aa5c*/
   __asm { fild dword ptr [esi+3558h] } /*0x68aa61*/
   *(unsigned int *)(_ESI + 13652) = v65; /*0x68aa6c*/
   __asm /*0x68aa72*/
@@ -1955,7 +1955,7 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
     fmul ds:dbl_7E4658
     fadd ds:dbl_7E3808
   }
-  LOWORD(v66) = Math::RoundToInt(a2); /*0x68aa96*/
+  (v66) = ((v66) & ~0xFFFF) | ((Math::RoundToInt(a2)) & 0xFFFF); /*0x68aa96*/
   __asm { fild dword ptr [esi+355Ch] } /*0x68aa9b*/
   *(unsigned int *)(_ESI + 13656) = v66; /*0x68aaa6*/
   __asm /*0x68aaac*/
@@ -1969,12 +1969,12 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
     fmul ds:dbl_7E4658
     fadd ds:dbl_7E3808
   }
-  LOWORD(v67) = Math::RoundToInt(a2); /*0x68aad0*/
+  (v67) = ((v67) & ~0xFFFF) | ((Math::RoundToInt(a2)) & 0xFFFF); /*0x68aad0*/
   __asm { fild dword ptr [esi+3578h] } /*0x68aad5*/
   *(unsigned int *)(_ESI + 13660) = v67; /*0x68aae0*/
   __asm { fstp [esp+48h+var_48]; double } /*0x68aae6*/
   INIClass::ReadDouble_Overwrite((double *)a3, aLighting, aNukeambientcha, v79); /*0x68aaf3*/
-  LOWORD(v68) = Math::RoundToInt(a2); /*0x68aaf8*/
+  (v68) = ((v68) & ~0xFFFF) | ((Math::RoundToInt(a2)) & 0xFFFF); /*0x68aaf8*/
   __asm { fild dword ptr [esi+357Ch] } /*0x68aafd*/
   *(unsigned int *)(_ESI + 13688) = v68; /*0x68ab08*/
   __asm /*0x68ab0e*/
@@ -1988,7 +1988,7 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
     fmul ds:dbl_7E2AC0
     fadd ds:dbl_7E3808
   }
-  LOWORD(v69) = Math::RoundToInt(a2); /*0x68ab32*/
+  (v69) = ((v69) & ~0xFFFF) | ((Math::RoundToInt(a2)) & 0xFFFF); /*0x68ab32*/
   __asm { fild dword ptr [esi+3580h] } /*0x68ab37*/
   *(unsigned int *)(_ESI + 13692) = v69; /*0x68ab42*/
   __asm /*0x68ab48*/
@@ -2002,7 +2002,7 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
     fmul ds:dbl_7E2AC0
     fadd ds:dbl_7E3808
   }
-  LOWORD(v70) = Math::RoundToInt(a2); /*0x68ab6c*/
+  (v70) = ((v70) & ~0xFFFF) | ((Math::RoundToInt(a2)) & 0xFFFF); /*0x68ab6c*/
   __asm { fild dword ptr [esi+3584h] } /*0x68ab71*/
   *(unsigned int *)(_ESI + 13696) = v70; /*0x68ab7a*/
   __asm /*0x68ab82*/
@@ -2016,7 +2016,7 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
     fmul ds:dbl_7E2AC0
     fadd ds:dbl_7E3808
   }
-  LOWORD(v71) = Math::RoundToInt(a2); /*0x68aba6*/
+  (v71) = ((v71) & ~0xFFFF) | ((Math::RoundToInt(a2)) & 0xFFFF); /*0x68aba6*/
   __asm { fild dword ptr [esi+3588h] } /*0x68abab*/
   *(unsigned int *)(_ESI + 13700) = v71; /*0x68abb6*/
   __asm /*0x68abbc*/
@@ -2030,7 +2030,7 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
     fmul ds:dbl_7E2AC0
     fadd ds:dbl_7E3808
   }
-  LOWORD(v72) = Math::RoundToInt(a2); /*0x68abe0*/
+  (v72) = ((v72) & ~0xFFFF) | ((Math::RoundToInt(a2)) & 0xFFFF); /*0x68abe0*/
   __asm { fild dword ptr [esi+358Ch] } /*0x68abe5*/
   *(unsigned int *)(_ESI + 13704) = v72; /*0x68abf0*/
   __asm /*0x68abf6*/
@@ -2044,7 +2044,7 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
     fmul ds:dbl_7E4658
     fadd ds:dbl_7E3808
   }
-  LOWORD(v73) = Math::RoundToInt(a2); /*0x68ac1a*/
+  (v73) = ((v73) & ~0xFFFF) | ((Math::RoundToInt(a2)) & 0xFFFF); /*0x68ac1a*/
   __asm { fild dword ptr [esi+3590h] } /*0x68ac1f*/
   *(unsigned int *)(_ESI + 13708) = v73; /*0x68ac2a*/
   __asm /*0x68ac30*/
@@ -2058,7 +2058,7 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
     fmul ds:dbl_7E4658
     fadd ds:dbl_7E3808
   }
-  LOWORD(v74) = Math::RoundToInt(a2); /*0x68ac54*/
+  (v74) = ((v74) & ~0xFFFF) | ((Math::RoundToInt(a2)) & 0xFFFF); /*0x68ac54*/
   __asm { fild dword ptr [esi+3594h] } /*0x68ac59*/
   *(unsigned int *)(_ESI + 13712) = v74; /*0x68ac64*/
   __asm /*0x68ac6a*/
@@ -2072,7 +2072,7 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
     fmul ds:dbl_7E4658
     fadd ds:dbl_7E3808
   }
-  LOWORD(v75) = Math::RoundToInt(a2); /*0x68ac8e*/
+  (v75) = ((v75) & ~0xFFFF) | ((Math::RoundToInt(a2)) & 0xFFFF); /*0x68ac8e*/
   HIDWORD(v79) = 55; /*0x68ac93*/
   *(unsigned int *)(_ESI + 13716) = v75; /*0x68ac9a*/
   Multiplayer::ShowProgress((Multiplayer *)&dword_A8B238, SHIDWORD(v79)); /*0x68aca0*/

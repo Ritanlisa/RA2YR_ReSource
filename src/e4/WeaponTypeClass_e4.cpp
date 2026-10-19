@@ -474,7 +474,7 @@ WeaponTypeClass * WeaponTypeClass::ddtor(void ** Block, char a2)
   }
   NeedsSaveOrLink = v3->nextArrayIndex.NeedsSaveOrLink; /*0x77316e*/
   /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass_AnimTypeClass_const) */  /*0x773174*/
-  if ( NeedsSaveOrLink && BYTE1(v3[7].ptr_4) ) /*0x773182*/
+  if ( NeedsSaveOrLink && (((v3[7].ptr_4) >> 8) & 0xFF) ) /*0x773182*/
   {
     __3_YAXPAX_Z(NeedsSaveOrLink); /*0x77318b*/
     v3[6].NeedsSaveOrLink = 0; /*0x773193*/
@@ -483,7 +483,7 @@ WeaponTypeClass * WeaponTypeClass::ddtor(void ** Block, char a2)
   v3[7].ptr_0 = 0; /*0x77319f*/
   ptr_4 = v3->nextArrayIndex.ptr_4; /*0x7731a5*/
   /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass_int) */  /*0x7731ab*/
-  if ( ptr_4 && BYTE1(v3[6].ptr_C) ) /*0x7731b9*/
+  if ( ptr_4 && (((v3[6].ptr_C) >> 8) & 0xFF) ) /*0x7731b9*/
   {
     __3_YAXPAX_Z(ptr_4); /*0x7731c2*/
     v3[6].ptr_4 = 0; /*0x7731ca*/

@@ -614,8 +614,8 @@ unsigned int * SpawnManagerClass::Constructor_6B83A0(int aP1, int aP2)
 
   this->ptr_4 = 0; /*0x6b83a9*/
   this->ptr_8 = (void *)aP1; /*0x6b83b0*/
-  LOBYTE(this->vtable4) = 1; /*0x6b83b3*/
-  BYTE1(this->IsAllocated) = 0; /*0x6b83b7*/
+  (this->vtable4) = ((this->vtable4) & ~0xFF) | ((1) & 0xFF); /*0x6b83b3*/
+  (this->IsAllocated) = ((this->IsAllocated) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x6b83b7*/
   /* X11: vtable install elided (base-interface slot, RHS vt_VectorClass) */  /*0x6b83bb*/
   if ( aP1 ) /*0x6b83c1*/
   {
@@ -670,7 +670,7 @@ char SpawnManagerClass_25::Release(int a2, unsigned int * a3)
     }
     *&this->q004 = v4; /*0x6b847a*/
     this->u32_8 = a2; /*0x6b8482*/
-    BYTE1(this->q00C) = a3 == 0; /*0x6b8485*/
+    (this->q00C) = ((this->q00C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x6b8485*/
   }
   else
   {

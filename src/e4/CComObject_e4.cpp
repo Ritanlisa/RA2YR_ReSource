@@ -1096,9 +1096,9 @@ CampaignScore * * CComObject_CChatEventSink___ATL::DispatchStub_28(int a1, int a
       v8 = WideString::GetOrEmpty((wchar_t **)&v26); /*0x7a92fd*/
       swprintf(v28, (const size_t)g_Str_Trace___hs_, (const wchar_t *const)a3 + 18, v8); /*0x7a930e*/
       Type = BuildingAnim::GetType(); /*0x7a9321*/
-      LOWORD(v10) = Math::RoundToInt(*(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5312) * 900.0); /*0x7a9331*/
+      (v10) = ((v10) & ~0xFFFF) | ((Math::RoundToInt(*(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5312) * 900.0)) & 0xFFFF); /*0x7a9331*/
       MessageListClass::AddMessage((MessageListClass *)&stru_A8BB1C.__pad_87[189], 0, 0, v28, Type, 22, v10, 0); /*0x7a9348*/
-      LOWORD(v11) = Math::RoundToInt(*(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5312) * 900.0); /*0x7a9360*/
+      (v11) = ((v11) & ~0xFFFF) | ((Math::RoundToInt(*(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5312) * 900.0)) & 0xFFFF); /*0x7a9360*/
       v25 = v11; /*0x7a9365*/
       StringCSF = GetStringCSF(aTxtHowToReply, 0, g_Str_File_wonline_cpp, 8066); /*0x7a937a*/
       MessageListClass::AddMessage((MessageListClass *)&stru_A8BB1C.__pad_87[189], 0, 0, StringCSF, Type, 22, v25, 0); /*0x7a9389*/

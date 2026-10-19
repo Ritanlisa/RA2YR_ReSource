@@ -13,19 +13,19 @@ const SHPFrame& SHPFile::GetFrameHeader(int frame_index) const {
     }
 
 SHPReference* SHPStruct:: SHPStruct::AsReference() {
-    return IsReference() ? static_cast<SHPReference*>(this) : nullptr;
+    return IsReference() ? dynamic_cast<SHPReference*>(this) : nullptr;
 }
 
 const SHPReference* SHPStruct:: SHPStruct::AsReference() const {
-    return IsReference() ? static_cast<const SHPReference*>(this) : nullptr;
+    return IsReference() ? dynamic_cast<const SHPReference*>(this) : nullptr;
 }
 
 SHPFile* SHPStruct:: SHPStruct::AsFile() {
-    return !IsReference() ? static_cast<SHPFile*>(this) : nullptr;
+    return !IsReference() ? dynamic_cast<SHPFile*>(this) : nullptr;
 }
 
 const SHPFile* SHPStruct:: SHPStruct::AsFile() const {
-    return !IsReference() ? static_cast<const SHPFile*>(this) : nullptr;
+    return !IsReference() ? dynamic_cast<const SHPFile*>(this) : nullptr;
 }
 }
 

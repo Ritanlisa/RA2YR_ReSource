@@ -264,7 +264,7 @@ char DisplayClass::UpdateCellPassability(int16_t *a1, int aP2)
     v12 = i & 7; /*0x4a9985*/
     v13 = *v3 + LOWORD(g_DDrawSurfaceManager.scenario[v12 + 82]); /*0x4a9997*/
     LOWORD(v12) = v3[1] + HIWORD(g_DDrawSurfaceManager.scenario[v12 + 82]); /*0x4a999e*/
-    LOWORD(v34) = v13; /*0x4a99a2*/
+    (v34) = ((v34) & ~0xFFFF) | ((v13) & 0xFFFF); /*0x4a99a2*/
     (v34) = ((v34) & ~(0xFFFF << 16)) | (((v12) & 0xFFFF) << 16); /*0x4a99ab*/
     *(unsigned int *)v32 = v34; /*0x4a99b7*/
     v14 = CellCoord::To_CellObj((CellCoord *)this, v32); /*0x4a99c5*/
@@ -284,7 +284,7 @@ char DisplayClass::UpdateCellPassability(int16_t *a1, int aP2)
           v18 = j & 7; /*0x4a9a3e*/
           v19 = v32[0] + LOWORD(g_DDrawSurfaceManager.scenario[v18 + 82]); /*0x4a9a50*/
           LOWORD(v18) = v32[1] + HIWORD(g_DDrawSurfaceManager.scenario[v18 + 82]); /*0x4a9a59*/
-          LOWORD(v35) = v19; /*0x4a9a5e*/
+          (v35) = ((v35) & ~0xFFFF) | ((v19) & 0xFFFF); /*0x4a9a5e*/
           (v35) = ((v35) & ~(0xFFFF << 16)) | (((v18) & 0xFFFF) << 16); /*0x4a9a67*/
           *(unsigned int *)v36 = v35; /*0x4a9a73*/
           v20 = CellCoord::To_CellObj((CellCoord *)this, v36); /*0x4a9a89*/
@@ -330,7 +330,7 @@ char DisplayClass::UpdateCellPassability(int16_t *a1, int aP2)
           v25 = k & 7; /*0x4a9b7b*/
           v26 = v32[0] + LOWORD(g_DDrawSurfaceManager.scenario[v25 + 82]); /*0x4a9b8d*/
           LOWORD(v25) = v32[1] + HIWORD(g_DDrawSurfaceManager.scenario[v25 + 82]); /*0x4a9b96*/
-          LOWORD(v37) = v26; /*0x4a9b9b*/
+          (v37) = ((v37) & ~0xFFFF) | ((v26) & 0xFFFF); /*0x4a9b9b*/
           (v37) = ((v37) & ~(0xFFFF << 16)) | (((v25) & 0xFFFF) << 16); /*0x4a9ba4*/
           *(unsigned int *)v36 = v37; /*0x4a9bb0*/
           v27 = CellCoord::To_CellObj((CellCoord *)this, v36); /*0x4a9bc6*/
@@ -426,7 +426,7 @@ char DisplayClass::ProcessCellReveal(int16_t *aP1, int aP2)
     v10 = i & 7; /*0x4a9e69*/
     v11 = aP1[1] + HIWORD(g_DDrawSurfaceManager.scenario[v10 + 82]); /*0x4a9e7c*/
     LOWORD(v24) = LOWORD(g_DDrawSurfaceManager.scenario[v10 + 82]) + *aP1; /*0x4a9e87*/
-    HIWORD(v24) = v11; /*0x4a9e90*/
+    (v24) = ((v24) & ~(0xFFFF << 16)) | (((v11) & 0xFFFF) << 16); /*0x4a9e90*/
     *(unsigned int *)v22 = v24; /*0x4a9e9c*/
     v12 = CellCoord::To_CellObj((CellCoord *)this, v22); /*0x4a9eaa*/
     if ( (v22[0] != *aP1 || v22[1] != aP1[1]) && (v12->u32_140 & 1) == 0 ) /*0x4a9ec7*/
@@ -445,8 +445,8 @@ char DisplayClass::ProcessCellReveal(int16_t *aP1, int aP2)
           v16 = j & 7; /*0x4a9f29*/
           v17 = LOWORD(g_DDrawSurfaceManager.scenario[v16 + 82]) + v22[0]; /*0x4a9f2c*/
           LOWORD(v16) = HIWORD(g_DDrawSurfaceManager.scenario[v16 + 82]); /*0x4a9f3b*/
-          LOWORD(v25) = v17; /*0x4a9f43*/
-          HIWORD(v25) = v22[1] + v16; /*0x4a9f54*/
+          (v25) = ((v25) & ~0xFFFF) | ((v17) & 0xFFFF); /*0x4a9f43*/
+          (v25) = ((v25) & ~(0xFFFF << 16)) | (((v22[1] + v16) & 0xFFFF) << 16); /*0x4a9f54*/
           *(unsigned int *)v26 = v25; /*0x4a9f5d*/
           v18 = CellCoord::To_CellObj((CellCoord *)this, v26); /*0x4a9f73*/
           v19 = Cell::GetAdjacentPassableMask(v26, 1); /*0x4a9f75*/
@@ -540,7 +540,7 @@ bool DisplayClass::RevealFogCell(int16_t *a1, int aP2)
     v11 = i & 7; /*0x4aa0d6*/
     v12 = v3[1] + HIWORD(g_DDrawSurfaceManager.scenario[v11 + 82]); /*0x4aa0ec*/
     LOWORD(v24) = *v3 + LOWORD(g_DDrawSurfaceManager.scenario[v11 + 82]); /*0x4aa0f7*/
-    HIWORD(v24) = v12; /*0x4aa100*/
+    (v24) = ((v24) & ~(0xFFFF << 16)) | (((v12) & 0xFFFF) << 16); /*0x4aa100*/
     *(unsigned int *)v22 = v24; /*0x4aa10c*/
     v13 = CellCoord::To_CellObj((CellCoord *)this, v22); /*0x4aa11a*/
     if ( (v22[0] != *v3 || v22[1] != v3[1]) && (v13->u32_12C & 0x10) == 0 ) /*0x4aa137*/
@@ -559,7 +559,7 @@ bool DisplayClass::RevealFogCell(int16_t *a1, int aP2)
           v17 = j & 7; /*0x4aa194*/
           v18 = v22[0] + LOWORD(g_DDrawSurfaceManager.scenario[v17 + 82]); /*0x4aa1a6*/
           LOWORD(v17) = v22[1] + HIWORD(g_DDrawSurfaceManager.scenario[v17 + 82]); /*0x4aa1af*/
-          LOWORD(v25) = v18; /*0x4aa1b4*/
+          (v25) = ((v25) & ~0xFFFF) | ((v18) & 0xFFFF); /*0x4aa1b4*/
           (v25) = ((v25) & ~(0xFFFF << 16)) | (((v17) & 0xFFFF) << 16); /*0x4aa1bd*/
           *(unsigned int *)v26 = v25; /*0x4aa1c9*/
           v19 = CellCoord::To_CellObj((CellCoord *)this, v26); /*0x4aa1df*/

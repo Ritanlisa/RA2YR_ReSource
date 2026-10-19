@@ -692,7 +692,7 @@ int Cell::IsBridge2()
 
 
   int result; // eax
-  LOBYTE(result) = *&this->u32_EC == 5; /*0x487df7*/
+  (result) = ((result) & ~0xFF) | ((*&this->u32_EC == 5) & 0xFF); /*0x487df7*/
   return result; /*0x487dfa*/
 
 }
@@ -765,7 +765,7 @@ int Cell::Exists(MouseClass * aP1)
 
   int result; // eax
   result = (int)(*aP1); /*0x5657ee*/
-  LOBYTE(result) = *((unsigned int *)this->q13C + 512 * aP1[1] + result) != 0; /*0x5657fa*/
+  (result) = ((result) & ~0xFF) | ((*((unsigned int *)this->q13C + 512 * aP1[1] + result) != 0) & 0xFF); /*0x5657fa*/
   return result; /*0x5657fd*/
 
 }
@@ -824,7 +824,7 @@ int Cell::SetRadar(int16_t *aP1)
   v17[3] = dword_87F8E0 + dword_87F8DC + 2; /*0x56d4d5*/
   v17[5] = dword_87F8E0 + dword_87F8DC; /*0x56d4dc*/
   v6 = -1 - result; /*0x56d4e3*/
-  LOBYTE(result) = *(unsigned char *)v5; /*0x56d4e5*/
+  (result) = ((result) & ~0xFF) | ((*(unsigned char *)v5) & 0xFF); /*0x56d4e5*/
   v8 = *(unsigned char *)v5 == 7; /*0x56d4e8*/
   v17[7] = v6; /*0x56d4ea*/
   if ( !v8 ) /*0x56d4ee*/
@@ -1691,7 +1691,7 @@ LABEL_43:
     v22 = *(unsigned int *)(v12 + 8); /*0x6d2b0f*/
     v39[1] = v21; /*0x6d2b12*/
     v23 = *(unsigned int *)(v12 + 12); /*0x6d2b16*/
-    LOBYTE(v12) = (unsigned char)g_CraterPool; /*0x6d2b19*/
+    (v12) = ((v12) & ~0xFF) | (((unsigned char)g_CraterPool) & 0xFF); /*0x6d2b19*/
     v39[2] = v22; /*0x6d2b1e*/
     v39[3] = v23; /*0x6d2b27*/
     LOBYTE(v39[4]) = v20; /*0x6d2b32*/

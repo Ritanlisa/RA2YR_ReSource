@@ -194,7 +194,7 @@ int INIClass::ReadCoord(double *a1, double a2, unsigned __int8 *a3, unsigned __i
   INIClass::ReadDouble_Overwrite(a1, aP2, a4, -1.0); /*0x474631*/
   if ( a2 == -1.0 ) /*0x474641*/
     return a5; /*0x474645*/
-  LOWORD(result) = Math::RoundToInt(a2 * 256.0); /*0x474652*/
+  (result) = ((result) & ~0xFFFF) | ((Math::RoundToInt(a2 * 256.0)) & 0xFFFF); /*0x474652*/
   return result; /*0x474649*/
 
 }
@@ -618,8 +618,8 @@ unsigned int * INIClass::parseKeyValue(unsigned int * a2) {
 
     this->headNode[0] = 0; /*0x47822e*/
     this->headNode[1] = 0; /*0x478231*/
-    IDA_LOBYTE(this->headNode[2]) = 1; /*0x478234*/
-    IDA_BYTE1(this->headNode[2]) = 0; /*0x478238*/
+    this->headNode[2] = 1; /*0x478234*/
+    this->headNode[3] = 0; /*0x478238*/
     *(unsigned int *)this->__pad_0 = 0; /*0x47823b*/
     if ( this == (INIClass *)a2 ) /*0x478241*/
       return this->__pad_0; /*0x478241*/
@@ -629,7 +629,7 @@ unsigned int * INIClass::parseKeyValue(unsigned int * a2) {
     if ( !v3 ) /*0x478255*/
     {
       this->headNode[0] = 0; /*0x4782c6*/
-      IDA_BYTE1(this->headNode[2]) = 0; /*0x4782c9*/
+      this->headNode[3] = 0; /*0x4782c9*/
       return this->__pad_0; /*0x4782cc*/
     }
     v4 = (int)(RA2_OPNEW(3 * v3)); /*0x47825b*/
@@ -659,7 +659,7 @@ unsigned int * INIClass::parseKeyValue(unsigned int * a2) {
       return this->__pad_0; /*0x478289*/
     v7 = this->headNode[1]; /*0x47828b*/
     v8 = 0; /*0x47828e*/
-    IDA_BYTE1(this->headNode[2]) = 1; /*0x478292*/
+    this->headNode[3] = 1; /*0x478292*/
     if ( v7 <= 0 ) /*0x478296*/
       return this->__pad_0; /*0x478296*/
     v9 = 0; /*0x478298*/

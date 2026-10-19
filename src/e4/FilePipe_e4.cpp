@@ -99,7 +99,7 @@ AbstractClass * * FilePipe_38::Release(int a2, char * a3)
       }
       *&this->Items = v5; /*0x47840d*/
       this->__pad_008 = v3; /*0x478413*/
-      BYTE1(this->m_C) = a3 == 0; /*0x478416*/
+      (this->m_C) = ((this->m_C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x478416*/
       return (gamemd::AbstractClass **)(1); /*0x47841c*/
     }
     else
@@ -214,7 +214,7 @@ char FilePipe_30::Release(int a2, unsigned int * a3)
     }
     *&this->u32_4 = v4; /*0x4781ba*/
     this->Capacity = a2; /*0x4781c2*/
-    BYTE1(this->m_C) = a3 == 0; /*0x4781c5*/
+    (this->m_C) = ((this->m_C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x4781c5*/
   }
   else
   {
@@ -441,7 +441,7 @@ char FilePipe_30::SetCapacity(int a2, unsigned int * a3)
     }
     *&this->u32_4 = v4; /*0x4b9e9a*/
     this->Capacity = a2; /*0x4b9ea2*/
-    BYTE1(this->m_C) = a3 == 0; /*0x4b9ea5*/
+    (this->m_C) = ((this->m_C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x4b9ea5*/
   }
   else
   {
@@ -509,7 +509,7 @@ char FilePipe_30::SetCapacity_0(int a2, unsigned int * a3)
     }
     *&this->u32_4 = v4; /*0x4ba0fa*/
     this->Capacity = a2; /*0x4ba102*/
-    BYTE1(this->m_C) = a3 == 0; /*0x4ba105*/
+    (this->m_C) = ((this->m_C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x4ba105*/
   }
   else
   {

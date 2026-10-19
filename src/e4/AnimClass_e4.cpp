@@ -566,30 +566,30 @@ LABEL_78:
       v50 = v47 - 1; /*0x423483*/
       if ( v50 ) /*0x423484*/
       {
-        LOBYTE(v50) = v96; /*0x4234ce*/
+        (v50) = ((v50) & ~0xFF) | ((v96) & 0xFF); /*0x4234ce*/
         goto LABEL_89; /*0x4234ce*/
       }
       LOWORD(v41) = v98; /*0x423486*/
       v50 = v96; /*0x42348c*/
-      LOWORD(v49) = v84; /*0x423493*/
-      LOWORD(v48) = v96; /*0x42349c*/
+      (v49) = ((v49) & ~0xFFFF) | ((v84) & 0xFFFF); /*0x423493*/
+      (v48) = ((v48) & ~0xFFFF) | ((v96) & 0xFFFF); /*0x42349c*/
       LODWORD(v41) = v49 | (32 * (v48 | (LODWORD(v41) << 6))); /*0x4234a3*/
     }
     else
     {
       v50 = v96; /*0x4234a7*/
     }
-    LOWORD(v49) = (unsigned __int8)v50 >> 1; /*0x4234b2*/
-    LOWORD(v48) = v98; /*0x4234b4*/
+    (v49) = ((v49) & ~0xFFFF) | (((unsigned __int8)v50 >> 1) & 0xFFFF); /*0x4234b2*/
+    (v48) = ((v48) & ~0xFFFF) | ((v98) & 0xFFFF); /*0x4234b4*/
     v48 *= 32; /*0x4234ba*/
     v51 = v48 | v49; /*0x4234bd*/
-    LOWORD(v48) = v84; /*0x4234bf*/
+    (v48) = ((v48) & ~0xFFFF) | ((v84) & 0xFFFF); /*0x4234bf*/
     v49 = v48 | (v51 << 6); /*0x4234c8*/
     LODWORD(v41) |= v49; /*0x4234ca*/
 LABEL_89:
-    LOWORD(v49) = v98; /*0x4234d2*/
-    LOWORD(v48) = v84; /*0x4234d8*/
-    LOWORD(v50) = (unsigned __int8)v50 >> 1; /*0x4234e0*/
+    (v49) = ((v49) & ~0xFFFF) | ((v98) & 0xFFFF); /*0x4234d2*/
+    (v48) = ((v48) & ~0xFFFF) | ((v84) & 0xFFFF); /*0x4234d8*/
+    (v50) = ((v50) & ~0xFFFF) | (((unsigned __int8)v50 >> 1) & 0xFFFF); /*0x4234e0*/
     LODWORD(v41) |= v48 | (32 * ((32 * v49) | v50)); /*0x4234ee*/
     *(float *)v100 = v41; /*0x4234f0*/
   }
@@ -607,14 +607,14 @@ LABEL_89:
     v57 = v54 - 1; /*0x423560*/
     if ( v57 ) /*0x423561*/
     {
-      LOBYTE(v57) = v85; /*0x4235ad*/
+      (v57) = ((v57) & ~0xFF) | ((v85) & 0xFF); /*0x4235ad*/
       goto LABEL_98; /*0x4235ad*/
     }
-    LOWORD(v55) = v99; /*0x423563*/
+    (v55) = ((v55) & ~0xFFFF) | ((v99) & 0xFFFF); /*0x423563*/
     v57 = v85; /*0x423569*/
-    LOWORD(v56) = v85; /*0x423573*/
+    (v56) = ((v56) & ~0xFFFF) | ((v85) & 0xFFFF); /*0x423573*/
     v58 = v56 | (v55 << 6); /*0x423575*/
-    LOWORD(v56) = v97; /*0x423577*/
+    (v56) = ((v56) & ~0xFFFF) | ((v97) & 0xFFFF); /*0x423577*/
     v55 = v56 | (32 * v58); /*0x423580*/
     LODWORD(v41) |= v55; /*0x423582*/
   }
@@ -622,22 +622,22 @@ LABEL_89:
   {
     v57 = v85; /*0x423586*/
   }
-  LOWORD(v56) = (unsigned __int8)v57 >> 1; /*0x423591*/
-  LOWORD(v55) = v99; /*0x423593*/
+  (v56) = ((v56) & ~0xFFFF) | (((unsigned __int8)v57 >> 1) & 0xFFFF); /*0x423591*/
+  (v55) = ((v55) & ~0xFFFF) | ((v99) & 0xFFFF); /*0x423593*/
   v55 *= 32; /*0x423599*/
   v59 = v55 | v56; /*0x42359c*/
-  LOWORD(v55) = v97; /*0x42359e*/
+  (v55) = ((v55) & ~0xFFFF) | ((v97) & 0xFFFF); /*0x42359e*/
   v56 = v55 | (v59 << 6); /*0x4235a7*/
   LODWORD(v41) |= v56; /*0x4235a9*/
 LABEL_98:
-  LOWORD(v56) = v99; /*0x4235b1*/
-  LOWORD(v55) = v97; /*0x4235b7*/
-  LOWORD(v57) = (unsigned __int8)v57 >> 1; /*0x4235bf*/
+  (v56) = ((v56) & ~0xFFFF) | ((v99) & 0xFFFF); /*0x4235b1*/
+  (v55) = ((v55) & ~0xFFFF) | ((v97) & 0xFFFF); /*0x4235b7*/
+  (v57) = ((v57) & ~0xFFFF) | (((unsigned __int8)v57 >> 1) & 0xFFFF); /*0x4235bf*/
   LODWORD(v41) |= v55 | (32 * ((32 * v56) | v57)); /*0x4235cd*/
   *(float *)v100 = v41; /*0x4235cf*/
 LABEL_99:
   v60 = (unsigned int *)(*((int (**)(AnimClass *, int *))this->AnimClass_field_0x0 + 18))(this, &v108); /*0x4235d3*/
-  LOWORD(v94) = *v60 / 256; /*0x4235ef*/
+  (v94) = ((v94) & ~0xFFFF) | ((*v60 / 256) & 0xFFFF); /*0x4235ef*/
   HIWORD(v94) = v60[1] / 256; /*0x423608*/
   *(unsigned int *)v101 = v94; /*0x423615*/
   v61 = (CellClass *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v101); /*0x42361a*/
@@ -1438,7 +1438,7 @@ int AnimClass_GetAnimation(int *a1, int a2)  // a2 = edi reg param (IDA sub_7298
   {
     (*(void (**)(unsigned int, unsigned int, unsigned int))(*v3->vtable4 + 288))(v3->vtable4, 0, 0); /*0x729a43*/
     v11 = (int *)(*(int (**)(unsigned int))(*v3->vtable4 + 132))(v3->vtable4); /*0x729a4e*/
-    LOWORD(v12) = Math::RoundToInt(64.0 / (double)v11[455]); /*0x729a60*/
+    (v12) = ((v12) & ~0xFFFF) | ((Math::RoundToInt(64.0 / (double)v11[455])) & 0xFFFF); /*0x729a60*/
     v3->owningHouseIndex = *(unsigned int *)&stru_A8E960.random[528]; /*0x729a72*/
     *(unsigned int *)(v3 + 44) = v18; /*0x729a78*/
     v13 = v3->vtable4; /*0x729a7b*/
@@ -1451,7 +1451,7 @@ int AnimClass_GetAnimation(int *a1, int a2)  // a2 = edi reg param (IDA sub_7298
   {
     v6 = (*(int (**)(unsigned int, int))(*v3->vtable4 + 456))(v3->vtable4, a2); /*0x72993f*/
     v14 = (*(int (**)(unsigned int))(*v3->vtable4 + 1336))(v3->vtable4); /*0x72994f*/
-    LOWORD(v7) = Math::RoundToInt((double)v14 * *(double *)dword_8871E0->TunnelSpeed); /*0x72995a*/
+    (v7) = ((v7) & ~0xFFFF) | ((Math::RoundToInt((double)v14 * *(double *)dword_8871E0->TunnelSpeed)) & 0xFFFF); /*0x72995a*/
     if ( v7 <= 5 ) /*0x729962*/
       v7 = 5; /*0x729964*/
     v17 += v7; /*0x729971*/

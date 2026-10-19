@@ -152,7 +152,7 @@ int Movie::Play(int a1, int a2, int a3, const char *a4, char a5, char a6, char a
       Timer::PumpMessages((Timer *)dword_87F770); /*0x5bef0b*/
       v9 = 0; /*0x5bef1e*/
       v10 = 0; /*0x5bef20*/
-      LOWORD(v11) = Math::RoundToInt(*(float *)&stru_A8E960.random[40] * 255.0); /*0x5bef24*/
+      (v11) = ((v11) & ~0xFFFF) | ((Math::RoundToInt(*(float *)&stru_A8E960.random[40] * 255.0)) & 0xFFFF); /*0x5bef24*/
       VQMovie = (MovieClass **)LoadVQMovie(Str, &DSurface_Alternate->DSurface_field_0x0, 0, 0, 0, 0, 0, 0, 0, 0, v11, 1); /*0x5bef56*/
       v13 = (MovieContext *)VQMovie; /*0x5bef5b*/
       if ( VQMovie ) /*0x5bef61*/

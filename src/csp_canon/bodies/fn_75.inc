@@ -148,7 +148,7 @@ char VocClass::LoadFromINI(CCINIClass * aP1) {
     }
   }
   __asm { fmul ds:flt_7EF38C } /*0x750539*/
-  LOWORD(v10) = Math::RoundToInt(v2); /*0x75053f*/
+  (v10) = ((v10) & ~0xFFFF) | ((Math::RoundToInt(v2)) & 0xFFFF); /*0x75053f*/
   sub_406550((int)this->AbstractClass, v10); /*0x750548*/
   if ( this->AbstractClass ) /*0x75054d*/
     v11 = VocClass::GetSampleName((char *)this->AbstractClass); /*0x750553*/
@@ -609,10 +609,10 @@ int Gap2Recv_756860::InitializeTileAudioOcclusion(int a2, void* a3) {
   v8 = 3 * *(unsigned int *)(a2 + 4); /*0x75687d*/
   v51 = 0; /*0x756880*/
   v9 = 41 * (*(unsigned int *)(a2 + 8) + *(unsigned int *)(uniqueId + 4 * v8)); /*0x756897*/
-  LOBYTE(uniqueId) = *(unsigned char *)(abstractFlags + 4 * v9 + 160); /*0x75689a*/
+  (uniqueId) = ((uniqueId) & ~0xFF) | ((*(unsigned char *)(abstractFlags + 4 * v9 + 160)) & 0xFF); /*0x75689a*/
   v10 = (v7 + 128.0 - *a3) * 256.0; /*0x7568a1*/
   v11 = abstractFlags + 4 * v9; /*0x7568a7*/
-  LOBYTE(v44) = *(unsigned char *)(v11 + 161); /*0x7568bb*/
+  (v44) = ((v44) & ~0xFF) | ((*(unsigned char *)(v11 + 161)) & 0xFF); /*0x7568bb*/
   v50 = *(unsigned int *)(v11 + 4); /*0x7568c4*/
   v37 = (uint8_t)uniqueId; /*0x7568c8*/
   v12 = Math::RoundToInt(v10); /*0x7568cc*/
@@ -621,10 +621,10 @@ int Gap2Recv_756860::InitializeTileAudioOcclusion(int a2, void* a3) {
   v14 = Math::RoundToInt((v13 - a3[1]) * 256.0); /*0x7568e8*/
   v15 = (double)*(int *)(a2 + 64); /*0x7568ed*/
   *(unsigned short *)&v52[2] = v14; /*0x7568f0*/
-  LOWORD(v16) = Math::RoundToInt(v15 + *a3); /*0x7568f7*/
+  (v16) = ((v16) & ~0xFFFF) | ((Math::RoundToInt(v15 + *a3)) & 0xFFFF); /*0x7568f7*/
   v17 = (double)*(int *)(a2 + 68); /*0x7568fc*/
   *(unsigned int *)(a2 + 64) = v16; /*0x7568ff*/
-  LOWORD(v18) = Math::RoundToInt(v17 + a3[1]); /*0x756905*/
+  (v18) = ((v18) & ~0xFFFF) | ((Math::RoundToInt(v17 + a3[1])) & 0xFFFF); /*0x756905*/
   v19 = (double)v37; /*0x75690a*/
   v20 = v18; /*0x75690e*/
   *(unsigned int *)(a2 + 68) = v18; /*0x756910*/

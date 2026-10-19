@@ -919,13 +919,13 @@ unsigned int * E4Recv_69D870::sub_69D870(int a2, int a3)
 // ==== BACKFILL 0x0069DE70  ScenarioClass::FreeConfig  cls=ScenarioClass  sig=csp  renamed_refs=0  residual=- ====
 void ScenarioClass::FreeConfig() {
 
-  if ( LOBYTE(this->nextScenario[23]) ) /*0x69de76*/
+  if ( this->nextScenario[23] ) /*0x69de76*/
   {
     if ( this->nextScenario[22] ) /*0x69de7b*/
     {
       __3_YAXPAX_Z((void *)this->nextScenario[22]); /*0x69de83*/
       this->nextScenario[22] = 0; /*0x69de8b*/
-      LOBYTE(this->nextScenario[23]) = 0; /*0x69de8e*/
+      this->nextScenario[23] = 0; /*0x69de8e*/
       this->nextScenario[5] = 0; /*0x69de91*/
       this->nextScenario[6] = 0; /*0x69de94*/
     }

@@ -12,7 +12,7 @@ CoordStruct CellClass::Cell2Coord(const CellStruct& cell, int z) {
     }
 
 CellStruct CellClass::Coord2Cell(const CoordStruct& crd) {
-        return CellStruct(static_cast<int16_t>(crd.X / 256), static_cast<int16_t>(crd.Y / 256));
+        return CellStruct((int16_t)(crd.X / 256), (int16_t)(crd.Y / 256));
     }
 
 CoordStruct CellClass::GetCenterCoords() const { CoordStruct buf; GetCenterCoords(&buf); return buf; }
@@ -27,7 +27,7 @@ void CellClass::SetRadSite(RadSiteClass* rad) { radSite = rad; }
 
 RadSiteClass* CellClass::GetRadSite() const { return radSite; }
 
-bool CellClass::ContainsBridge() const { return (static_cast<uint32_t>(flags) & 0x8000u) != 0; }
+bool CellClass::ContainsBridge() const { return ((uint32_t)(flags) & 0x8000u) != 0; }
 
 ObjectClass* CellClass::GetContent() const { return ContainsBridge() ? altObject : firstObject; }
 

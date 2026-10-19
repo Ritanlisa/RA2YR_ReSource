@@ -291,7 +291,7 @@ LABEL_15:
   }
 LABEL_10:
   v11 = v8; /*0x750dbc*/
-  LOWORD(v10) = Math::RoundToInt(v11 * 16384.0); /*0x750dc6*/
+  (v10) = ((v10) & ~0xFFFF) | ((Math::RoundToInt(v11 * 16384.0)) & 0xFFFF); /*0x750dc6*/
   if ( v10 >= 0x4000 ) /*0x750dd0*/
     v10 = 0x4000; /*0x750dd2*/
   AudioMixer::PlayBuffer(v5, v10); /*0x750ddb*/
@@ -429,7 +429,7 @@ void ThemeClass_Update()
   if ( Audio::IsSoundPlaying() ) /*0x752794*/
     return; /*0x752794*/
   v0 = qword_B1D4D0 + ThemeClass::GetValue(g_InfantryDrawState); /*0x7527b4*/
-  LODWORD(v1) = Audio::Callback(); /*0x7527be*/
+  (v1) = ((v1) & 0xFFFFFFFF00000000ull) | ((Audio::Callback()) & 0xFFFFFFFFull); /*0x7527be*/
   if ( v1 <= v0 || dword_B1D428 ) /*0x7527dc*/
     return; /*0x7527dc*/
   if ( dword_B1D4C4 ) /*0x7527e9*/
@@ -655,7 +655,7 @@ int CCINIClass::InitFromINIEVA()
 
   v1 = (INIClass *)this; /*0x75300a*/
   v13 = this; /*0x753011*/
-  LOBYTE(KeyCount) = INIClass::BinarySearchSection((int)this, g_INI_Key_DialogList) != 0; /*0x75301c*/
+  (KeyCount) = ((KeyCount) & ~0xFF) | ((INIClass::BinarySearchSection((int)this, g_INI_Key_DialogList) != 0) & 0xFF); /*0x75301c*/
   if ( (unsigned char)KeyCount ) /*0x753023*/
   {
     KeyCount = INIClass::GetKeyCount(v1->__pad_0, g_INI_Key_DialogList); /*0x753030*/

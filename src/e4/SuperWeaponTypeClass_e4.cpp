@@ -532,7 +532,7 @@ void* SuperWeaponTypeClass::SD_vt25(unsigned char *** aP1)
   else
   {
     __asm { fmul ds:flt_7F4100 } /*0x6ced80*/
-    LOWORD(v30) = Math::RoundToInt(a3); /*0x6ced86*/
+    (v30) = ((v30) & ~0xFFFF) | ((Math::RoundToInt(a3)) & 0xFFFF); /*0x6ced86*/
     *(unsigned int *)(_EBP + 176) = v30; /*0x6ced8b*/
   }
   v31 = (char *)(_EBP + 204); /*0x6ced9c*/

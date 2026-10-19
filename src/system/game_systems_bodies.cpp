@@ -279,7 +279,7 @@ LABEL_9:
     if ( hWnda ) /*0x5e1da8*/
     {
       v10 = (unsigned __int16)v20; /*0x5e1dbd*/
-      v11 = HIWORD(v20); /*0x5e1dc3*/
+      v11 = (((v20) >> 16) & 0xFFFF); /*0x5e1dc3*/
       GetWindowRect((HWND)this, &Rect); /*0x5e1dc5*/
       StringCSF = &g_TypeClass_DefaultString; /*0x5e1dd9*/
       v44.y = v11 - Rect.top; /*0x5e1dde*/
@@ -382,7 +382,7 @@ LABEL_9:
     {
       ReadChatMessage((wchar_t **)&hWnd, (HWND)v20); /*0x5e1fb8*/
       DeleteAndZero::Alt((DeleteAndZero *)&hWnd); /*0x5e1fc1*/
-      if ( HIWORD(v16) == 1281 ) /*0x5e1fcf*/
+      if ( (((v16) >> 16) & 0xFFFF) == 1281 ) /*0x5e1fcf*/
       {
         SendNetworkLobbyChatMessage((HWND)this, (int)Math::InitDegToRad, 61680); /*0x5e1fe6*/
         return 0; /*0x5e1ff4*/
@@ -1440,7 +1440,7 @@ LABEL_27:
               do /*0x60da40*/
               {
                 v32 = *v31; /*0x60d9c0*/
-                LOBYTE(v185) = *(unsigned char *)(v10 + 200); /*0x60d9c3*/
+                (v185) = ((v185) & ~0xFF) | ((*(unsigned char *)(v10 + 200)) & 0xFF); /*0x60d9c3*/
                 g_GameScreenFlags = (unsigned __int8)v185; /*0x60d9de*/
                 g_GameScreenConfig = 255 - (unsigned __int8)v185; /*0x60d9ed*/
                 ++v31; /*0x60d9f5*/
@@ -2216,7 +2216,7 @@ LABEL_290:
     }
     else
     {
-      v170 = HIWORD(wParam); /*0x60f2a9*/
+      v170 = (((wParam) >> 16) & 0xFFFF); /*0x60f2a9*/
       v171 = -1; /*0x60f2ab*/
       if ( (unsigned __int16)wParam < Rect.right && v170 < Rect.bottom )
       {
@@ -2237,10 +2237,10 @@ LABEL_290:
     {
 LABEL_151:
       v76 = (unsigned __int16)wParam; /*0x60e499*/
-      v77 = HIWORD(wParam); /*0x60e4ac*/
+      v77 = (((wParam) >> 16) & 0xFFFF); /*0x60e4ac*/
       if ( (unsigned __int16)wParam > Rect.right /*0x60e4c4*/
         && (unsigned __int16)wParam < Rect.right + *(unsigned int *)(v10 + 4)
-        && HIWORD(wParam)
+        && (((wParam) >> 16) & 0xFFFF)
         && v77 < Rect.bottom )
       {
         SendMessageA(*(HWND *)(v10 + 12), (UINT)hWnd, Msg, wParam); /*0x60e4e2*/
@@ -2282,7 +2282,7 @@ LABEL_151:
       v62 = v61 - 41; /*0x60e24e*/
       if ( !v62 ) /*0x60e254*/
       {
-        v63 = SendMessageA((HWND)this, 0x4E8u, 0, (unsigned __int16)wParam | (HIWORD(wParam) << 16)); /*0x60e287*/
+        v63 = SendMessageA((HWND)this, 0x4E8u, 0, (unsigned __int16)wParam | ((((wParam) >> 16) & 0xFFFF) << 16)); /*0x60e287*/
         v64 = v63; /*0x60e289*/
         if ( v63 != -1 ) /*0x60e28e*/
         {
@@ -3192,7 +3192,7 @@ void LoadSaveDialog::FillList()
           lParam = 1; /*0x559a10*/
           WideString::Reassign((WideString *)&v42, asc_829F78); /*0x559a18*/
           v26 = (unsigned __int16)v25 << 16; /*0x559a2a*/
-          LOBYTE(v26) = -56; /*0x559a2d*/
+          (v26) = ((v26) & ~0xFF) | ((-56) & 0xFF); /*0x559a2d*/
           SendMessageA(hWnd, 0x4A8u, v26, (LPARAM)&lParam); /*0x559a37*/
           v24 = (LPARAM)hFindFilea; /*0x559a39*/
         }
@@ -3208,7 +3208,7 @@ void LoadSaveDialog::FillList()
           WideString::Reassign((WideString *)&v42, WideCharStr); /*0x559ad8*/
           v28 = (unsigned __int16)v25 << 16; /*0x559ae7*/
           v29 = v28; /*0x559aea*/
-          LOBYTE(v29) = -1; /*0x559aed*/
+          (v29) = ((v29) & ~0xFF) | ((-1) & 0xFF); /*0x559aed*/
           SendMessageA(hWnd, 0x4A8u, v29, (LPARAM)&lParam); /*0x559af7*/
           GetTimeFormatA(0x400u, 0, &SystemTime, 0, FileName, 128); /*0x559b0f*/
           lParam = 1; /*0x559b2b*/
@@ -3714,7 +3714,7 @@ void LoadScreen::RenderLoop()
     LOBYTE(Blocka) = 4 * *((unsigned char *)&v388[0].Struct_field_00 + v19); /*0x4b6e8e*/
     v21 = *((unsigned char *)&v388[0].Struct_field_00 + v19 + 1); /*0x4b6e92*/
     LOBYTE(v19) = *((unsigned char *)&v388[0].Struct_field_00 + v19 + 2); /*0x4b6e99*/
-    HIBYTE(Blocka) = 4 * v21; /*0x4b6ea3*/
+    (Blocka) = ((Blocka) & ~(0xFF << 8)) | (((4 * v21) & 0xFF) << 8); /*0x4b6ea3*/
     *(unsigned short *)v20 = Blocka; /*0x4b6eb0*/
     v20[2] = 4 * v19; /*0x4b6eb9*/
   }
@@ -3751,7 +3751,7 @@ void LoadScreen::RenderLoop()
     LOBYTE(Blockb) = 4 * *((unsigned char *)&v388[0].Struct_field_00 + v28); /*0x4b6f7d*/
     v30 = *((unsigned char *)&v388[0].Struct_field_00 + v28 + 1); /*0x4b6f81*/
     LOBYTE(v28) = *((unsigned char *)&v388[0].Struct_field_00 + v28 + 2); /*0x4b6f88*/
-    HIBYTE(Blockb) = 4 * v30; /*0x4b6f92*/
+    (Blockb) = ((Blockb) & ~(0xFF << 8)) | (((4 * v30) & 0xFF) << 8); /*0x4b6f92*/
     *(unsigned short *)v29 = Blockb; /*0x4b6f9f*/
     v29[2] = 4 * v28; /*0x4b6fa8*/
   }
@@ -4043,7 +4043,7 @@ LABEL_56:
     v70 = 0; /*0x4b76d6*/
     v377[1] = v272; /*0x4b76d9*/
     v377[2] = *(__int16 *)(v320 + 2); /*0x4b76fe*/
-    LOBYTE(v294) = 0; /*0x4b771f*/
+    (v294) = ((v294) & ~0xFF) | ((0) & 0xFF); /*0x4b771f*/
     v254 = 1; /*0x4b7727*/
     v377[3] = *(__int16 *)(v320 + 4); /*0x4b772c*/
     v346[0] = 0; /*0x4b7733*/
@@ -4115,7 +4115,7 @@ LABEL_108:
     if ( v271 || (v74 & 0x8000) == 0 ) /*0x4b78a5*/
     {
       if ( v74 == 32 ) /*0x4b848b*/
-        HIBYTE(v294) = 1; /*0x4b848d*/
+        (v294) = ((v294) & ~(0xFF << 8)) | (((1) & 0xFF) << 8); /*0x4b848d*/
       goto LABEL_252; /*0x4b848d*/
     }
     v75 = v74 & 0xFFFF7FFF; /*0x4b78ab*/
@@ -4979,7 +4979,7 @@ LABEL_333:
     {
       __asm { fld [esp+680h+var_640] } /*0x4b8c1a*/
     }
-    LOWORD(v196) = Math::RoundToInt(v1); /*0x4b8c1e*/
+    (v196) = ((v196) & ~0xFFFF) | ((Math::RoundToInt(v1)) & 0xFFFF); /*0x4b8c1e*/
     if ( v191 < v192 ) /*0x4b8c25*/
       v196 = -v196; /*0x4b8c27*/
     v197 = v305; /*0x4b8c29*/
@@ -5187,7 +5187,7 @@ LABEL_364:
       v212 = dword_A8B230; /*0x4b9276*/
     }
   }
-  while ( !HIBYTE(v294) ); /*0x4b9282*/
+  while ( !(((v294) >> 8) & 0xFF) ); /*0x4b9282*/
   v218 = 0; /*0x4b928f*/
   v262 = 0; /*0x4b9293*/
   if ( v323.Count > 0 ) /*0x4b9297*/
@@ -6298,7 +6298,7 @@ void LoadingScreen::Render()
           *(unsigned int *)&v80.m_Colors[28] = 0; /*0x553170*/
           *(unsigned int *)&v80.m_Colors[32] = 0; /*0x553174*/
           v22 = ((unsigned __int8)v72 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x55318a*/
-              | (HIBYTE(v72) >> g_BitMask_Blue << g_BitMask_Green)
+              | ((((v72) >> 8) & 0xFF) >> g_BitMask_Blue << g_BitMask_Green)
               | (v79 >> g_BitMask_Red << g_BitShift_Blue);
           Text::Layout( /*0x553194*/
             g_FogOfWarState,

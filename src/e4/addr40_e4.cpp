@@ -2403,7 +2403,7 @@ void AudioStreamThreadProc(unsigned int * lpThreadParameter)
           goto LABEL_30; /*0x409866*/
         }
         EnterCriticalSection(&unk_87E880); /*0x4095f5*/
-        LODWORD(v3) = Audio::Callback(); /*0x4095fb*/
+        (v3) = ((v3) & 0xFFFFFFFF00000000ull) | ((Audio::Callback()) & 0xFFFFFFFFull); /*0x4095fb*/
         v4 = (((v3) >> 32) & 0xFFFFFFFFu); /*0x409600*/
         v5 = v3; /*0x409602*/
         AudioThread::UpdateStats(&v2[2].nextArrayIndex, v3); /*0x40960c*/
@@ -2770,13 +2770,13 @@ AudioController * * E4Recv_40A090::sub_40A090()
   v7 = v4; /*0x40a0f2*/
   (v10) = ((v10) & ~0xFFFF) | ((0) & 0xFFFF); /*0x40a0f6*/
   HIWORD(v6) = this->customSound_controller[0]; /*0x40a102*/
-  LOWORD(v9) = (((v6) >> 16) & 0xFFFF) * v3; /*0x40a107*/
+  (v9) = ((v9) & ~0xFFFF) | (((((v6) >> 16) & 0xFFFF) * v3) & 0xFFFF); /*0x40a107*/
   (v6) = ((v6) & ~0xFFFF) | ((1) & 0xFFFF); /*0x40a116*/
   v8 = v4 * (unsigned __int16)((((v6) >> 16) & 0xFFFF) * v3); /*0x40a122*/
   (v10) = ((v10) & ~0xFFFF) | ((0) & 0xFFFF); /*0x40a133*/
   v11[0] = 20; /*0x40a13c*/
   v11[1] = 1; /*0x40a148*/
-  HIWORD(v9) = 8 * v3; /*0x40a15b*/
+  (v9) = ((v9) & ~(0xFFFF << 16)) | (((8 * v3) & 0xFFFF) << 16); /*0x40a15b*/
   memset(&v11[2], 0, 12); /*0x40a160*/
   if ( dword_87E89C->lpVtbl->CreateSoundBuffer( /*0x40a16d*/
          dword_87E89C,
@@ -3831,7 +3831,7 @@ int E4Recv_4053E0::sub_4053E0()
     LODWORD(v2) = this->M28; /*0x4053ed*/
     if ( (unsigned int)v2 == 2 ) /*0x4053f3*/
     {
-      LODWORD(v2) = Audio::Callback(); /*0x4053f6*/
+      (v2) = ((v2) & 0xFFFFFFFF00000000ull) | ((Audio::Callback()) & 0xFFFFFFFFull); /*0x4053f6*/
       *((unsigned long long *)this + 40) -= v2; /*0x40540b*/
     }
   }
@@ -3863,7 +3863,7 @@ int E4Recv_405430::sub_405430()
       LODWORD(v2) = this->M28; /*0x405462*/
       if ( (unsigned int)v2 == 2 ) /*0x405468*/
       {
-        LODWORD(v4) = Audio::Callback(); /*0x40546b*/
+        (v4) = ((v4) & 0xFFFFFFFF00000000ull) | ((Audio::Callback()) & 0xFFFFFFFFull); /*0x40546b*/
         v2 = *((unsigned long long *)this + 40) + v4; /*0x40547e*/
         *((unsigned long long *)this + 40) = v2; /*0x405480*/
       }
@@ -3924,7 +3924,7 @@ int E4Recv_405A00::sub_405A00()
     }
     else
     {
-      LODWORD(v6) = Audio::Callback(); /*0x405a88*/
+      (v6) = ((v6) & 0xFFFFFFFF00000000ull) | ((Audio::Callback()) & 0xFFFFFFFFull); /*0x405a88*/
       *((unsigned long long *)v1 + 40) = v5 + v6; /*0x405a91*/
     }
     v1->u32_1C = 2; /*0x405a75*/
@@ -4554,7 +4554,7 @@ int ObjectClass::sub_407160()
 
   int result; // eax
   result = (int)this->AbstractClass; /*0x407160*/
-  LOBYTE(result) = (int)this->AbstractClass | 1; /*0x407162*/
+  (result) = ((result) & ~0xFF) | (((int)this->AbstractClass | 1) & 0xFF); /*0x407162*/
   this->AbstractClass = (void *)result; /*0x407164*/
   return result; /*0x407166*/
 
@@ -4776,7 +4776,7 @@ DWORD StartAddress(unsigned int * lpThreadParameter)
   {
     do /*0x40775e*/
     {
-      LODWORD(v2) = Audio::Callback(); /*0x4076a5*/
+      (v2) = ((v2) & 0xFFFFFFFF00000000ull) | ((Audio::Callback()) & 0xFFFFFFFFull); /*0x4076a5*/
       AudioThread::UpdateStats(v1 + 8, v2); /*0x4076af*/
       EnterCriticalSection(&CriticalSection); /*0x4076b9*/
       for ( i = AudioQueue::GetNext((AudioQueue *)&unk_87E810); i; i = AudioQueue::GetNextAlt((AudioQueue *)i) ) /*0x4076c9*/
@@ -5326,7 +5326,7 @@ int sub_409360()
   LONGLONG v0; // rax
   LARGE_INTEGER Frequency; // [esp+0h] [ebp-8h] BYREF
 
-  LODWORD(v0) = QueryPerformanceFrequency(&Frequency); /*0x409368*/
+  (v0) = ((v0) & 0xFFFFFFFF00000000ull) | ((QueryPerformanceFrequency(&Frequency)) & 0xFFFFFFFFull); /*0x409368*/
   if ( (unsigned int)v0 ) /*0x409370*/
   {
     v0 = Frequency.QuadPart / 1000; /*0x409383*/

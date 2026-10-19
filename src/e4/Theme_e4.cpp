@@ -40,16 +40,16 @@ int Theme::QueueSong(int aP1, void *a2)
         this->u32_8 = aP1; /*0x720b45*/
         if ( aP1 != -1 && aP1 != -2 && aP1 != this->ptr_4 ) /*0x720b52*/
         {
-          LOBYTE(IsSoundEnabled) = Debug::Log("Theme::QueueSong(%d)\n", aP1); /*0x720b5a*/
+          (IsSoundEnabled) = ((IsSoundEnabled) & ~0xFF) | ((Debug::Log("Theme::QueueSong(%d)\n", aP1)) & 0xFF); /*0x720b5a*/
           if ( this->audioSample ) /*0x720b5f*/
           {
             if ( this->u32_11 && !AudioSample::IsBuffering() ) /*0x720b70*/
               (this->audioSample)->Release(); /*0x720b7c*/
-            LOBYTE(IsSoundEnabled) = (this->audioSample)->IsSoundPlaying() != 0; /*0x720b8b*/
+            (IsSoundEnabled) = ((IsSoundEnabled) & ~0xFF) | (((this->audioSample)->IsSoundPlaying() != 0) & 0xFF); /*0x720b8b*/
             if ( (unsigned char)IsSoundEnabled == 1 ) /*0x720b90*/
             {
               if ( this->audioSample ) /*0x720b92*/
-                LOBYTE(IsSoundEnabled) = ThemeClass::RequestBuffer(); /*0x720b99*/
+                (IsSoundEnabled) = ((IsSoundEnabled) & ~0xFF) | ((ThemeClass::RequestBuffer()) & 0xFF); /*0x720b99*/
               this->u32_11 = 1; /*0x720b9e*/
             }
           }

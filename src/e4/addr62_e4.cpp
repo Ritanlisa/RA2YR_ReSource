@@ -2100,7 +2100,7 @@ int E4Recv_6278C0::sub_6278C0(const char * a2)
     v12 = *(unsigned int *)(v8 + 8); /*0x62798f*/
     v21 = v18; /*0x627992*/
     if ( *(unsigned int *)(v8 + 16) < v12 /*0x6279c0*/
-      || ((LOBYTE(v11) = *(unsigned char *)(v8 + 13), (unsigned char)v11) || !v12)
+      || (((v11) = ((v11) & ~0xFF) | ((*(unsigned char *)(v8 + 13)) & 0xFF), (unsigned char)v11) || !v12)
       && (v11 = *(unsigned int *)(v8 + 20), v11 > 0)
       && (LOBYTE(v11) = (*(int (**)(int, int, unsigned int))(*(unsigned int *)v8 + 8))(v8, v12 + v11, 0), (unsigned char)v11) )
     {
@@ -2117,7 +2117,7 @@ int E4Recv_6278C0::sub_6278C0(const char * a2)
     v10 = 260 * v9; /*0x627955*/
     while ( 1 ) /*0x627962*/
     {
-      LOBYTE(v11) = String::Equals((const char *)(v10 + *(unsigned int *)(v8 + 4)), String); /*0x627962*/
+      (v11) = ((v11) & ~0xFF) | ((String::Equals((const char *)(v10 + *(unsigned int *)(v8 + 4)), String)) & 0xFF); /*0x627962*/
       if ( (unsigned char)v11 ) /*0x627969*/
         break; /*0x627969*/
       --v9; /*0x62796f*/

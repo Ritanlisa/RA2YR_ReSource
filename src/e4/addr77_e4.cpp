@@ -1168,7 +1168,7 @@ unsigned int * PlayerProfile_Load(unsigned int * a1, const char ** a2)
       DeleteAndZero(&v17); /*0x778c05*/
       v7 = (unsigned __int8 *)String::GetOrEmpty((String *)&v17.ptr_4); /*0x778c14*/
       Bool_Overwrite = INIClass::ReadBool_Overwrite(&v17.nextArrayIndex, v7, (unsigned __int8 *)aLocaleverified, 0); /*0x778c23*/
-      LOBYTE(v17.customSound_controller[4]) = Bool_Overwrite; /*0x778c2e*/
+      v17.customSound_controller[4] = Bool_Overwrite; /*0x778c2e*/
       String::Assign((String *)&v17, g_INI_Key_Country); /*0x778c32*/
       v9 = INIClass::ReadInt((bool *)&v17.nextArrayIndex, (String *)&v17.ptr_4, (String *)&v17, -2); /*0x778c50*/
       DeleteAndZero(&v17); /*0x778c52*/

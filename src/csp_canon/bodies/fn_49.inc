@@ -1269,7 +1269,7 @@ int CampaignClass::GetValue(unsigned int *a2) {
       this->LoadFromINI(); /*0x49e4fa*/
     result = *((int *)this + 23); /*0x49e503*/
     *a2 = result; /*0x49e506*/
-    IDA_LOBYTE(result) = *((unsigned char *)this + 96); /*0x49e508*/
+    (result) = ((result) & ~0xFF) | ((*((unsigned char *)this + 96)) & 0xFF); /*0x49e508*/
     return result; /*0x49e50b*/
 }
 

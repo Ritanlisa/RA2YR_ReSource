@@ -273,7 +273,7 @@ void E4Recv_4DF280::sub_4DF280()
   if ( v2 ) /*0x4df28e*/
   {
     v3 = (unsigned int *)(*(int (**)(int, unsigned char *))(*(unsigned int *)v2 + 72))(v2, v6); /*0x4df297*/
-    LOWORD(v4) = *v3 / 256; /*0x4df2aa*/
+    (v4) = ((v4) & ~0xFFFF) | ((*v3 / 256) & 0xFFFF); /*0x4df2aa*/
     HIWORD(v4) = v3[1] / 256; /*0x4df2c3*/
     *(unsigned int *)v5 = v4; /*0x4df2d1*/
     *((unsigned int *)this + 370) = (unsigned int)(((CellCoord *)((CellCoord *)&dword_87F7E8))->To_CellObj(v5)); /*0x4df2da*/

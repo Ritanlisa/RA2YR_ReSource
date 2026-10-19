@@ -310,7 +310,7 @@ char Gap2Recv_5840C0::CheckMapReachability(CCINIClass * aP1, int a3, int a4, int
     {
       for ( j = 0; j < v48; ++j ) /*0x58438d*/
       {
-        LOWORD(v56) = v27 + *v26; /*0x5843a6*/
+        (v56) = ((v56) & ~0xFFFF) | ((v27 + *v26) & 0xFFFF); /*0x5843a6*/
         HIWORD(v56) = v26[1] + v28; /*0x5843b1*/
         aP1 = v56; /*0x5843ba*/
         if ( (uint8_t)LayerClass::IsWithinUsableArea((LayerClass *)this, (int16_t *)&aP1, 1) ) /*0x5843c1*/

@@ -55,7 +55,7 @@ int Math_Sqrt(double a1)
   v3 = a1 < 0.0; /*0x4cac44*/
   v4 = 0; /*0x4cac44*/
   v5 = a1 == 0.0; /*0x4cac44*/
-  LOWORD(result) = v1; /*0x4cac4a*/
+  (result) = ((result) & ~0xFFFF) | ((v1) & 0xFFFF); /*0x4cac4a*/
   if ( a1 != 0.0 ) /*0x4cac4f*/
   {
     if ( a1 <= 0.0 ) /*0x4cac65*/

@@ -34,7 +34,7 @@ int Timer::StartDouble(double a2)
   {
     LOBYTE(this->m_18) = 1; /*0x4a525e*/
     *(double *)this->__pad_0 = a2 * 900.0; /*0x4a5262*/
-    LOWORD(result) = Math::RoundToInt(a2 * 900.0); /*0x4a5264*/
+    (result) = ((result) & ~0xFFFF) | ((Math::RoundToInt(a2 * 900.0)) & 0xFFFF); /*0x4a5264*/
     v4 = *(AbstractClass **)&stru_A8E960.random[528]; /*0x4a5269*/
     BYTE1(this->m_18) = 0; /*0x4a5272*/
     *&this->ptr_8 = v4; /*0x4a5276*/

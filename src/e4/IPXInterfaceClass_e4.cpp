@@ -576,7 +576,7 @@ AbstractClass * * IPXInterfaceClass::getSocketState(int a2, unsigned int * a3)
     }
     *&this->Initialized = v4; /*0x7b2a9a*/
     this->LocalNetwork = a2; /*0x7b2aa2*/
-    BYTE1(this->LocalNode) = a3 == 0; /*0x7b2aa5*/
+    this->LocalNode[1] = a3 == 0; /*0x7b2aa5*/
   }
   else
   {

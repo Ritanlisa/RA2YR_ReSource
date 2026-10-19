@@ -1012,7 +1012,7 @@ AbstractClass * * House::ChooseHouseEnemy(BuildingClass * aP1)
     fstp st
   }
   Math::Sqrt(v32); /*0x50dd23*/
-  LOWORD(v20) = Math::RoundToInt(v2); /*0x50dd2b*/
+  (v20) = ((v20) & ~0xFFFF) | ((Math::RoundToInt(v2)) & 0xFFFF); /*0x50dd2b*/
   v21 = v20; /*0x50dd3c*/
   v37 = *(unsigned int *)&DataGlobal_87F8EC; /*0x50dd3e*/
   v38 = *(unsigned int *)&DataGlobal_87F8F0; /*0x50dd51*/
@@ -1034,7 +1034,7 @@ AbstractClass * * House::ChooseHouseEnemy(BuildingClass * aP1)
     fstp st
   }
   Math::Sqrt(v33); /*0x50dd8d*/
-  LOWORD(v24) = Math::RoundToInt(v2); /*0x50dd95*/
+  (v24) = ((v24) & ~0xFFFF) | ((Math::RoundToInt(v2)) & 0xFFFF); /*0x50dd95*/
   v25 = v24; /*0x50dd9a*/
   v37 = *(unsigned int *)&DataGlobal_87F8EC / 2; /*0x50dda6*/
   v38 = 2 * *(unsigned int *)&DataGlobal_87F8F0; /*0x50ddc2*/
@@ -1056,7 +1056,7 @@ AbstractClass * * House::ChooseHouseEnemy(BuildingClass * aP1)
     fstp st
   }
   Math::Sqrt(v34); /*0x50ddfe*/
-  LOWORD(v28) = Math::RoundToInt(v2); /*0x50de06*/
+  (v28) = ((v28) & ~0xFFFF) | ((Math::RoundToInt(v2)) & 0xFFFF); /*0x50de06*/
   v44 = v28; /*0x50de11*/
   v38 = *(unsigned int *)&DataGlobal_87F8F0; /*0x50de1d*/
   v37 = 0; /*0x50de28*/
@@ -1078,7 +1078,7 @@ AbstractClass * * House::ChooseHouseEnemy(BuildingClass * aP1)
     fstp st
   }
   Math::Sqrt(v35); /*0x50de64*/
-  LOWORD(v31) = Math::RoundToInt(v2); /*0x50de6c*/
+  (v31) = ((v31) & ~0xFFFF) | ((Math::RoundToInt(v2)) & 0xFFFF); /*0x50de6c*/
   if ( v21 > v25 || v21 > v44 || v21 > v31 ) /*0x50de7f*/
   {
     if ( v25 > v44 || v25 > v31 ) /*0x50de97*/

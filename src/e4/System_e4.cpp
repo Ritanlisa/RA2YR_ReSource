@@ -310,7 +310,7 @@ char sub_626AB0(const char * a1, int a2)
   v15 = *(unsigned int *)&g_FileExtensionState[8]; /*0x626c07*/
   v16 = *(unsigned int *)(v15 + 8); /*0x626c0a*/
   if ( *(unsigned int *)(v15 + 16) < v16 /*0x626c34*/
-    || ((LOBYTE(v17) = *(unsigned char *)(v15 + 13), (unsigned char)v17) || !v16)
+    || (((v17) = ((v17) & ~0xFF) | ((*(unsigned char *)(v15 + 13)) & 0xFF), (unsigned char)v17) || !v16)
     && (v17 = *(unsigned int *)(v15 + 20), v17 > 0)
     && (LOBYTE(v17) = (*(int (**)(int, int, unsigned int))(*(unsigned int *)v15 + 8))(v15, v16 + v17, 0), (unsigned char)v17) )
   {

@@ -275,7 +275,7 @@ void* E4Recv_5D2650::sub_5D2650(void * a2, int a3)
             return; /*0x5d268c*/
         }
         int v5; // eax
-        LOWORD(v5) = Math::RoundToInt((double)a3 * *(float *)&stru_A8EB00.ObjectTypeClass[38]); /*0x5d269f*/
+        (v5) = ((v5) & ~0xFFFF) | ((Math::RoundToInt((double)a3 * *(float *)&stru_A8EB00.ObjectTypeClass[38])) & 0xFFFF); /*0x5d269f*/
         nullsub_192(v5); /*0x5d26a7*/
       }
     }
@@ -863,11 +863,11 @@ LABEL_46:
         String::Assign((String *)v19.ambientSoundController, asc_830A14); /*0x5d792f*/
         String::TrimRight((String *)&v19.abstractFlags, (const char **)v19.ambientSoundController); /*0x5d793d*/
         DeleteAndZero((ObjectClass *)v19.ambientSoundController); /*0x5d7946*/
-        LOBYTE(v19.ambientSoundController[2]) = 1; /*0x5d794f*/
+        v19.ambientSoundController[2] = 1; /*0x5d794f*/
         if ( String::Length((String *)&v19.abstractFlags) ) /*0x5d7954*/
         {
           v14 = String::GetOrEmpty((String *)&v19.abstractFlags); /*0x5d7966*/
-          LOBYTE(v19.ambientSoundController[2]) = _strcmpi(v14, g_Str_false) != 0; /*0x5d7979*/
+          v19.ambientSoundController[2] = _strcmpi(v14, g_Str_false) != 0; /*0x5d7979*/
         }
         if ( WideString::Length((WideString *)&v19.referenceCount) /*0x5d79a3*/
           && String::Length((String *)&v19.ptr_8)
@@ -1298,7 +1298,7 @@ void HandleNetworkPlayerDisconnect(wchar_t * a1, int a2)
   }
   if ( wcslen(String) ) /*0x5da802*/
   {
-    LOWORD(v5) = Math::RoundToInt(*&dword_8871E0->u32_14C0 * 900.0); /*0x5da822*/
+    (v5) = ((v5) & ~0xFFFF) | ((Math::RoundToInt(*&dword_8871E0->u32_14C0 * 900.0)) & 0xFFFF); /*0x5da822*/
     MessageListClass::AddMessage(&unk_A8BC60, 0, 0, String, *(unsigned int *)(*(unsigned int *)(v4 + 52) + 192), 16454, v5, 0); /*0x5da845*/
     MapClass::MarkForRedraw((GScreenClass *)&dword_87F7E8, 0); /*0x5da851*/
   }

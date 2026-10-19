@@ -1824,8 +1824,8 @@ int TileRenderer_DrawBlock(int a1, unsigned short * a2, unsigned char * a3, unsi
             do /*0x7c4ab6*/
             {
               v46 = a3 + 4; /*0x7c4aa1*/
-              LOBYTE(v11) = v9; /*0x7c4aa4*/
-              BYTE1(v11) = v9; /*0x7c4aa6*/
+              (v11) = ((v11) & ~0xFF) | ((v9) & 0xFF); /*0x7c4aa4*/
+              (v11) = ((v11) & ~(0xFF << 8)) | (((v9) & 0xFF) << 8); /*0x7c4aa6*/
               v47 = v11 << 16; /*0x7c4aaa*/
               (v47) = ((v47) & ~0xFFFF) | ((v11) & 0xFFFF); /*0x7c4aad*/
               *((unsigned int *)v46 - 1) = v47; /*0x7c4ab0*/
@@ -1858,7 +1858,7 @@ LABEL_77:
             do /*0x7c4a6a*/
             {
               v33 = *v31; /*0x7c49e8*/
-              v34 = HIBYTE(*v31); /*0x7c49ee*/
+              v34 = (((*v31) >> 8) & 0xFF); /*0x7c49ee*/
               if ( v34 ) /*0x7c49f2*/
               {
                 v35 = v8 - 4; /*0x7c49f4*/
@@ -1886,8 +1886,8 @@ LABEL_77:
                 do /*0x7c4a46*/
                 {
                   v42 = v39 + 4; /*0x7c4a31*/
-                  LOBYTE(v8) = v33; /*0x7c4a34*/
-                  BYTE1(v8) = v33; /*0x7c4a36*/
+                  (v8) = ((v8) & ~0xFF) | ((v33) & 0xFF); /*0x7c4a34*/
+                  (v8) = ((v8) & ~(0xFF << 8)) | (((v33) & 0xFF) << 8); /*0x7c4a36*/
                   v43 = v8 << 16; /*0x7c4a3a*/
                   (v43) = ((v43) & ~0xFFFF) | ((v8) & 0xFFFF); /*0x7c4a3d*/
                   *((unsigned int *)v42 - 1) = v43; /*0x7c4a40*/
@@ -1914,7 +1914,7 @@ LABEL_77:
         {
           if ( v11 == 45056 ) /*0x7c47ac*/
           {
-            v12 = HIBYTE(v9) & 0xF; /*0x7c47b5*/
+            v12 = (((v9) >> 8) & 0xFF) & 0xF; /*0x7c47b5*/
             v60 = v12; /*0x7c47ba*/
             if ( (unsigned char)v9 ) /*0x7c47be*/
             {
@@ -1925,15 +1925,15 @@ LABEL_77:
                 if ( v13 ) /*0x7c47d1*/
                 {
                   v14 = v13; /*0x7c47d5*/
-                  LOBYTE(v8) = v9; /*0x7c47d7*/
-                  BYTE1(v8) = v9; /*0x7c47db*/
+                  (v8) = ((v8) & ~0xFF) | ((v9) & 0xFF); /*0x7c47d7*/
+                  (v8) = ((v8) & ~(0xFF << 8)) | (((v9) & 0xFF) << 8); /*0x7c47db*/
                   v15 = v8 << 16; /*0x7c47df*/
                   (v15) = ((v15) & ~0xFFFF) | ((v8) & 0xFFFF); /*0x7c47e2*/
                   v8 = a6; /*0x7c47e5*/
                   v16 = v13 >> 2; /*0x7c47e9*/
                   memset32(a3, v15, v16); /*0x7c47ec*/
                   memset(&a3[4 * v16], v15, v14 & 3); /*0x7c47f3*/
-                  v12 = HIBYTE(v9) & 0xF; /*0x7c47f5*/
+                  v12 = (((v9) >> 8) & 0xFF) & 0xF; /*0x7c47f5*/
                   v13 = 4 * v60; /*0x7c47f9*/
                   a3 += 4 * v60; /*0x7c4800*/
                 }
@@ -1998,8 +1998,8 @@ LABEL_77:
               if ( v24 ) /*0x7c48f9*/
               {
                 v25 = v24; /*0x7c48fd*/
-                LOBYTE(v8) = v17; /*0x7c48ff*/
-                BYTE1(v8) = v17; /*0x7c4903*/
+                (v8) = ((v8) & ~0xFF) | ((v17) & 0xFF); /*0x7c48ff*/
+                (v8) = ((v8) & ~(0xFF << 8)) | (((v17) & 0xFF) << 8); /*0x7c4903*/
                 v26 = v8 << 16; /*0x7c4907*/
                 (v26) = ((v26) & ~0xFFFF) | ((v8) & 0xFFFF); /*0x7c490a*/
                 v8 = a6; /*0x7c490d*/
@@ -2147,7 +2147,7 @@ int TileRenderer_DrawBlock16BPP(int a1, unsigned short * a2, unsigned char * a3,
     while ( 1 ) /*0x7c4bbe*/
     {
       v10 = *v7; /*0x7c4bbe*/
-      if ( (HIBYTE(*v7) & 0x80u) == 0 ) /*0x7c4bc5*/
+      if ( ((((*v7) >> 8) & 0xFF) & 0x80u) == 0 ) /*0x7c4bc5*/
         break; /*0x7c4bc5*/
       v11 = v10 & 0xF000; /*0x7c4bd4*/
       if ( v11 > 0xC000 ) /*0x7c4be0*/
@@ -2179,8 +2179,8 @@ int TileRenderer_DrawBlock16BPP(int a1, unsigned short * a2, unsigned char * a3,
           do /*0x7c4ed2*/
           {
             v45 = v8 + 4; /*0x7c4ebd*/
-            LOBYTE(v11) = v10; /*0x7c4ec0*/
-            BYTE1(v11) = v10; /*0x7c4ec2*/
+            (v11) = ((v11) & ~0xFF) | ((v10) & 0xFF); /*0x7c4ec0*/
+            (v11) = ((v11) & ~(0xFF << 8)) | (((v10) & 0xFF) << 8); /*0x7c4ec2*/
             v46 = v11 << 16; /*0x7c4ec6*/
             (v46) = ((v46) & ~0xFFFF) | ((v11) & 0xFFFF); /*0x7c4ec9*/
             *((unsigned int *)v45 - 1) = v46; /*0x7c4ecc*/
@@ -2227,8 +2227,8 @@ LABEL_63:
               do /*0x7c4e6d*/
               {
                 v41 = v40 + 4; /*0x7c4e58*/
-                LOBYTE(v9) = v35; /*0x7c4e5b*/
-                BYTE1(v9) = v35; /*0x7c4e5d*/
+                (v9) = ((v9) & ~0xFF) | ((v35) & 0xFF); /*0x7c4e5b*/
+                (v9) = ((v9) & ~(0xFF << 8)) | (((v35) & 0xFF) << 8); /*0x7c4e5d*/
                 v42 = v9 << 16; /*0x7c4e61*/
                 (v42) = ((v42) & ~0xFFFF) | ((v9) & 0xFFFF); /*0x7c4e64*/
                 *((unsigned int *)v41 - 1) = v42; /*0x7c4e67*/
@@ -2330,8 +2330,8 @@ LABEL_65:
             if ( v23 ) /*0x7c4d2c*/
             {
               v24 = v23; /*0x7c4d30*/
-              LOBYTE(v9) = v17; /*0x7c4d32*/
-              BYTE1(v9) = v17; /*0x7c4d36*/
+              (v9) = ((v9) & ~0xFF) | ((v17) & 0xFF); /*0x7c4d32*/
+              (v9) = ((v9) & ~(0xFF << 8)) | (((v17) & 0xFF) << 8); /*0x7c4d36*/
               v25 = v9 << 16; /*0x7c4d3a*/
               (v25) = ((v25) & ~0xFFFF) | ((v9) & 0xFFFF); /*0x7c4d3d*/
               v9 = a6; /*0x7c4d40*/
@@ -2351,7 +2351,7 @@ LABEL_65:
           ++a2; /*0x7c4d86*/
           break;
         case 0xB000u: /*0x7c4be6*/
-          v12 = HIBYTE(v10) & 0xF; /*0x7c4c07*/
+          v12 = (((v10) >> 8) & 0xFF) & 0xF; /*0x7c4c07*/
           v53 = 4; /*0x7c4c0a*/
           v59 = v12; /*0x7c4c12*/
           v13 = 4 * v12; /*0x7c4c16*/
@@ -2360,8 +2360,8 @@ LABEL_65:
             if ( v13 ) /*0x7c4c1f*/
             {
               v14 = v13; /*0x7c4c23*/
-              LOBYTE(v9) = v10; /*0x7c4c25*/
-              BYTE1(v9) = v10; /*0x7c4c29*/
+              (v9) = ((v9) & ~0xFF) | ((v10) & 0xFF); /*0x7c4c25*/
+              (v9) = ((v9) & ~(0xFF << 8)) | (((v10) & 0xFF) << 8); /*0x7c4c29*/
               v15 = v9 << 16; /*0x7c4c2d*/
               (v15) = ((v15) & ~0xFFFF) | ((v9) & 0xFFFF); /*0x7c4c30*/
               v9 = a6; /*0x7c4c33*/
@@ -2544,9 +2544,9 @@ int TileRenderer_DrawBlock8BPP(int a1, unsigned short * a2, unsigned char * a3, 
             v44 = 2; /*0x7c52bc*/
             do /*0x7c52cf*/
             {
-              LOBYTE(v45) = v9; /*0x7c52c1*/
+              (v45) = ((v45) & ~0xFF) | ((v9) & 0xFF); /*0x7c52c1*/
               v46 = a3 + 2; /*0x7c52c3*/
-              HIBYTE(v45) = v9; /*0x7c52c6*/
+              (v45) = ((v45) & ~(0xFF << 8)) | (((v9) & 0xFF) << 8); /*0x7c52c6*/
               *((unsigned short *)v46 - 1) = v45; /*0x7c52c8*/
               a3 = &v46[v8 - 2]; /*0x7c52cc*/
               --v44; /*0x7c52ce*/
@@ -2576,15 +2576,15 @@ LABEL_77:
             do /*0x7c5290*/
             {
               v34 = *v32; /*0x7c5220*/
-              v35 = HIBYTE(*v32); /*0x7c5226*/
+              v35 = (((*v32) >> 8) & 0xFF); /*0x7c5226*/
               if ( v35 ) /*0x7c522a*/
               {
                 v36 = 2; /*0x7c522f*/
                 do /*0x7c5242*/
                 {
-                  LOBYTE(v37) = v35; /*0x7c5234*/
+                  (v37) = ((v37) & ~0xFF) | ((v35) & 0xFF); /*0x7c5234*/
                   v38 = a3 + 2; /*0x7c5236*/
-                  HIBYTE(v37) = v35; /*0x7c5239*/
+                  (v37) = ((v37) & ~(0xFF << 8)) | (((v35) & 0xFF) << 8); /*0x7c5239*/
                   *((unsigned short *)v38 - 1) = v37; /*0x7c523b*/
                   a3 = &v38[v8 - 2]; /*0x7c523f*/
                   --v36; /*0x7c5241*/
@@ -2599,9 +2599,9 @@ LABEL_77:
                 v40 = 2; /*0x7c5259*/
                 do /*0x7c526c*/
                 {
-                  LOBYTE(v41) = v34; /*0x7c525e*/
+                  (v41) = ((v41) & ~0xFF) | ((v34) & 0xFF); /*0x7c525e*/
                   v42 = v39 + 2; /*0x7c5260*/
-                  HIBYTE(v41) = v34; /*0x7c5263*/
+                  (v41) = ((v41) & ~(0xFF << 8)) | (((v34) & 0xFF) << 8); /*0x7c5263*/
                   *((unsigned short *)v42 - 1) = v41; /*0x7c5265*/
                   v39 = &v42[v8 - 2]; /*0x7c5269*/
                   --v40; /*0x7c526b*/
@@ -2626,7 +2626,7 @@ LABEL_77:
         {
           if ( v11 == 45056 ) /*0x7c500c*/
           {
-            v12 = HIBYTE(v9) & 0xF; /*0x7c5015*/
+            v12 = (((v9) >> 8) & 0xFF) & 0xF; /*0x7c5015*/
             v60 = v12; /*0x7c501a*/
             if ( (unsigned char)v9 ) /*0x7c501e*/
             {
@@ -2637,15 +2637,15 @@ LABEL_77:
                 if ( v13 ) /*0x7c502d*/
                 {
                   v14 = v13; /*0x7c5031*/
-                  LOBYTE(v8) = v9; /*0x7c5033*/
-                  BYTE1(v8) = v9; /*0x7c5037*/
+                  (v8) = ((v8) & ~0xFF) | ((v9) & 0xFF); /*0x7c5033*/
+                  (v8) = ((v8) & ~(0xFF << 8)) | (((v9) & 0xFF) << 8); /*0x7c5037*/
                   v15 = v8 << 16; /*0x7c503b*/
                   (v15) = ((v15) & ~0xFFFF) | ((v8) & 0xFFFF); /*0x7c503e*/
                   v8 = a6; /*0x7c5041*/
                   v16 = v13 >> 2; /*0x7c5045*/
                   memset32(a3, v15, v16); /*0x7c5048*/
                   memset(&a3[4 * v16], v15, v14 & 3); /*0x7c504f*/
-                  v12 = HIBYTE(v9) & 0xF; /*0x7c5051*/
+                  v12 = (((v9) >> 8) & 0xFF) & 0xF; /*0x7c5051*/
                   v13 = 2 * v60; /*0x7c5055*/
                   a3 += 2 * v60; /*0x7c5058*/
                 }
@@ -2715,8 +2715,8 @@ LABEL_78:
               if ( v23 ) /*0x7c513b*/
               {
                 v24 = v23; /*0x7c513f*/
-                LOBYTE(v8) = v17; /*0x7c5141*/
-                BYTE1(v8) = v17; /*0x7c5145*/
+                (v8) = ((v8) & ~0xFF) | ((v17) & 0xFF); /*0x7c5141*/
+                (v8) = ((v8) & ~(0xFF << 8)) | (((v17) & 0xFF) << 8); /*0x7c5145*/
                 v25 = v8 << 16; /*0x7c5149*/
                 (v25) = ((v25) & ~0xFFFF) | ((v8) & 0xFFFF); /*0x7c514c*/
                 v8 = a6; /*0x7c514f*/
@@ -2917,8 +2917,8 @@ int TileRenderer_DrawBlock2(int a1, unsigned short * a2, unsigned char * a3, uns
             do /*0x7c570a*/
             {
               v46 = a3 + 4; /*0x7c56f5*/
-              LOBYTE(v11) = v9; /*0x7c56f8*/
-              BYTE1(v11) = v9; /*0x7c56fa*/
+              (v11) = ((v11) & ~0xFF) | ((v9) & 0xFF); /*0x7c56f8*/
+              (v11) = ((v11) & ~(0xFF << 8)) | (((v9) & 0xFF) << 8); /*0x7c56fa*/
               v47 = v11 << 16; /*0x7c56fe*/
               (v47) = ((v47) & ~0xFFFF) | ((v11) & 0xFFFF); /*0x7c5701*/
               *((unsigned int *)v46 - 1) = v47; /*0x7c5704*/
@@ -2950,7 +2950,7 @@ LABEL_76:
             do /*0x7c56be*/
             {
               v33 = *v31; /*0x7c563c*/
-              v34 = HIBYTE(*v31); /*0x7c5642*/
+              v34 = (((*v31) >> 8) & 0xFF); /*0x7c5642*/
               if ( v34 ) /*0x7c5646*/
               {
                 v35 = v8 - 4; /*0x7c5648*/
@@ -2978,8 +2978,8 @@ LABEL_76:
                 do /*0x7c569a*/
                 {
                   v42 = v39 + 4; /*0x7c5685*/
-                  LOBYTE(v8) = v33; /*0x7c5688*/
-                  BYTE1(v8) = v33; /*0x7c568a*/
+                  (v8) = ((v8) & ~0xFF) | ((v33) & 0xFF); /*0x7c5688*/
+                  (v8) = ((v8) & ~(0xFF << 8)) | (((v33) & 0xFF) << 8); /*0x7c568a*/
                   v43 = v8 << 16; /*0x7c568e*/
                   (v43) = ((v43) & ~0xFFFF) | ((v8) & 0xFFFF); /*0x7c5691*/
                   *((unsigned int *)v42 - 1) = v43; /*0x7c5694*/
@@ -3006,7 +3006,7 @@ LABEL_76:
         {
           if ( v11 == 45056 ) /*0x7c541c*/
           {
-            v12 = HIBYTE(v9) & 0xF; /*0x7c5425*/
+            v12 = (((v9) >> 8) & 0xFF) & 0xF; /*0x7c5425*/
             v60 = v12; /*0x7c542a*/
             if ( (unsigned char)v9 ) /*0x7c542e*/
             {
@@ -3017,15 +3017,15 @@ LABEL_76:
                 if ( v13 ) /*0x7c5441*/
                 {
                   v14 = v13; /*0x7c5445*/
-                  LOBYTE(v8) = v9; /*0x7c5447*/
-                  BYTE1(v8) = v9; /*0x7c544b*/
+                  (v8) = ((v8) & ~0xFF) | ((v9) & 0xFF); /*0x7c5447*/
+                  (v8) = ((v8) & ~(0xFF << 8)) | (((v9) & 0xFF) << 8); /*0x7c544b*/
                   v15 = v8 << 16; /*0x7c544f*/
                   (v15) = ((v15) & ~0xFFFF) | ((v8) & 0xFFFF); /*0x7c5452*/
                   v8 = a6; /*0x7c5455*/
                   v16 = v13 >> 2; /*0x7c5459*/
                   memset32(a3, v15, v16); /*0x7c545c*/
                   memset(&a3[4 * v16], v15, v14 & 3); /*0x7c5463*/
-                  v12 = HIBYTE(v9) & 0xF; /*0x7c5465*/
+                  v12 = (((v9) >> 8) & 0xFF) & 0xF; /*0x7c5465*/
                   v13 = 4 * v60; /*0x7c5469*/
                   a3 += 4 * v60; /*0x7c5470*/
                 }
@@ -3093,8 +3093,8 @@ LABEL_77:
               if ( v23 ) /*0x7c5550*/
               {
                 v24 = v23; /*0x7c5554*/
-                LOBYTE(v8) = v17; /*0x7c5556*/
-                BYTE1(v8) = v17; /*0x7c555a*/
+                (v8) = ((v8) & ~0xFF) | ((v17) & 0xFF); /*0x7c5556*/
+                (v8) = ((v8) & ~(0xFF << 8)) | (((v17) & 0xFF) << 8); /*0x7c555a*/
                 v25 = v8 << 16; /*0x7c555e*/
                 (v25) = ((v25) & ~0xFFFF) | ((v8) & 0xFFFF); /*0x7c5561*/
                 v8 = a6; /*0x7c5564*/
@@ -3243,7 +3243,7 @@ int TileRenderer_DrawBlock2Sub(int a1, unsigned short * a2, unsigned char * a3, 
     {
       v10 = *v7; /*0x7c580e*/
       v58 = *v7; /*0x7c5815*/
-      if ( (HIBYTE(*v7) & 0x80u) == 0 ) /*0x7c5819*/
+      if ( ((((*v7) >> 8) & 0xFF) & 0x80u) == 0 ) /*0x7c5819*/
         break; /*0x7c5819*/
       v11 = v10; /*0x7c5821*/
       v12 = v10 & 0xF000; /*0x7c5828*/
@@ -3257,8 +3257,8 @@ int TileRenderer_DrawBlock2Sub(int a1, unsigned short * a2, unsigned char * a3, 
           do /*0x7c5b13*/
           {
             v46 = v8 + 4; /*0x7c5afe*/
-            LOBYTE(v11) = v10; /*0x7c5b01*/
-            BYTE1(v11) = v10; /*0x7c5b03*/
+            (v11) = ((v11) & ~0xFF) | ((v10) & 0xFF); /*0x7c5b01*/
+            (v11) = ((v11) & ~(0xFF << 8)) | (((v10) & 0xFF) << 8); /*0x7c5b03*/
             v47 = v11 << 16; /*0x7c5b07*/
             (v47) = ((v47) & ~0xFFFF) | ((v11) & 0xFFFF); /*0x7c5b0a*/
             *((unsigned int *)v46 - 1) = v47; /*0x7c5b0d*/
@@ -3325,8 +3325,8 @@ LABEL_64:
               do /*0x7c5ab5*/
               {
                 v42 = v41 + 4; /*0x7c5aa0*/
-                LOBYTE(v9) = v35; /*0x7c5aa3*/
-                BYTE1(v9) = v35; /*0x7c5aa5*/
+                (v9) = ((v9) & ~0xFF) | ((v35) & 0xFF); /*0x7c5aa3*/
+                (v9) = ((v9) & ~(0xFF << 8)) | (((v35) & 0xFF) << 8); /*0x7c5aa5*/
                 v43 = v9 << 16; /*0x7c5aa9*/
                 (v43) = ((v43) & ~0xFFFF) | ((v9) & 0xFFFF); /*0x7c5aac*/
                 *((unsigned int *)v42 - 1) = v43; /*0x7c5aaf*/
@@ -3428,8 +3428,8 @@ LABEL_65:
             if ( v23 ) /*0x7c597f*/
             {
               v24 = v23; /*0x7c5983*/
-              LOBYTE(v9) = v17; /*0x7c5985*/
-              BYTE1(v9) = v17; /*0x7c5989*/
+              (v9) = ((v9) & ~0xFF) | ((v17) & 0xFF); /*0x7c5985*/
+              (v9) = ((v9) & ~(0xFF << 8)) | (((v17) & 0xFF) << 8); /*0x7c5989*/
               v25 = v9 << 16; /*0x7c598d*/
               (v25) = ((v25) & ~0xFFFF) | ((v9) & 0xFFFF); /*0x7c5990*/
               v9 = a6; /*0x7c5993*/
@@ -3449,7 +3449,7 @@ LABEL_65:
           ++a2; /*0x7c59da*/
           break;
         case 0xB000u: /*0x7c583a*/
-          v13 = HIBYTE(v10) & 0xF; /*0x7c585b*/
+          v13 = (((v10) >> 8) & 0xFF) & 0xF; /*0x7c585b*/
           v54 = 2; /*0x7c585e*/
           v61 = v13; /*0x7c5866*/
           v14 = 4 * v13; /*0x7c586a*/
@@ -3457,14 +3457,14 @@ LABEL_65:
           {
             if ( v14 ) /*0x7c5873*/
             {
-              LOBYTE(v9) = v10; /*0x7c5879*/
-              BYTE1(v9) = v10; /*0x7c587d*/
+              (v9) = ((v9) & ~0xFF) | ((v10) & 0xFF); /*0x7c5879*/
+              (v9) = ((v9) & ~(0xFF << 8)) | (((v10) & 0xFF) << 8); /*0x7c587d*/
               v15 = v9 << 16; /*0x7c5883*/
               (v15) = ((v15) & ~0xFFFF) | ((v9) & 0xFFFF); /*0x7c5886*/
               v9 = a6; /*0x7c5889*/
               memset32(v8, v15, v14 >> 2); /*0x7c5890*/
               v16 = &v8[4 * (v14 >> 2)]; /*0x7c5890*/
-              LOBYTE(v10) = v58; /*0x7c5894*/
+              (v10) = ((v10) & ~0xFF) | ((v58) & 0xFF); /*0x7c5894*/
               v8 += v14; /*0x7c589b*/
               memset(v16, v15, v14 & 3); /*0x7c589d*/
               v13 = v61; /*0x7c589f*/
@@ -3609,7 +3609,7 @@ LABEL_2:
         v9 = a4 * a5; /*0x7c6ba1*/
         (v10) = ((v10) & ~(0xFFFF << 16)) | (((0) & 0xFFFF) << 16); /*0x7c6ba4*/
         BYTE1(v10) = v6[a4 * a5]; /*0x7c6ba6*/
-        LOBYTE(v10) = *v6++; /*0x7c6ba9*/
+        (v10) = ((v10) & ~0xFF) | ((*v6++) & 0xFF); /*0x7c6ba9*/
         if ( (v10 & 0x8000) != 0 ) /*0x7c6baf*/
           break; /*0x7c6baf*/
         v11 = (int *)(a1 + 32 * v10); /*0x7c6bb4*/
@@ -3640,9 +3640,9 @@ LABEL_2:
         }
       }
       v19 = *((unsigned short *)dword_B1D14C + (v10 & 0x7FFF)); /*0x7c6c29*/
-      LOWORD(v9) = v19; /*0x7c6c25*/
+      (v9) = ((v9) & ~0xFFFF) | ((v19) & 0xFFFF); /*0x7c6c25*/
       v16 = v9 << 16; /*0x7c6c2c*/
-      LOWORD(v16) = v19; /*0x7c6c2f*/
+      (v16) = ((v16) & ~0xFFFF) | ((v19) & 0xFFFF); /*0x7c6c2f*/
       *v7 = v16; /*0x7c6c32*/
       v7[1] = v16; /*0x7c6c34*/
       *(int *)((char *)v7 + v27) = v16; /*0x7c6c3a*/
@@ -3704,7 +3704,7 @@ LABEL_2:
         v9 = a4 * a5; /*0x7c6caa*/
         (v10) = ((v10) & ~(0xFFFF << 16)) | (((0) & 0xFFFF) << 16); /*0x7c6cad*/
         BYTE1(v10) = v6[a4 * a5]; /*0x7c6caf*/
-        LOBYTE(v10) = *v6++; /*0x7c6cb2*/
+        (v10) = ((v10) & ~0xFF) | ((*v6++) & 0xFF); /*0x7c6cb2*/
         if ( (v10 & 0x8000) != 0 ) /*0x7c6cb8*/
           break; /*0x7c6cb8*/
         v11 = (int *)(a1 + 32 * v10); /*0x7c6cbd*/
@@ -3727,9 +3727,9 @@ LABEL_2:
         }
       }
       v16 = *((unsigned short *)dword_B1D14C + (v10 & 0x7FFF)); /*0x7c6d04*/
-      LOWORD(v9) = v16; /*0x7c6d00*/
+      (v9) = ((v9) & ~0xFFFF) | ((v16) & 0xFFFF); /*0x7c6d00*/
       v13 = v9 << 16; /*0x7c6d07*/
-      LOWORD(v13) = v16; /*0x7c6d0a*/
+      (v13) = ((v13) & ~0xFFFF) | ((v16) & 0xFFFF); /*0x7c6d0a*/
       *v7 = v13; /*0x7c6d0d*/
       v7[1] = v13; /*0x7c6d0f*/
       v17 = 2 * v22; /*0x7c6d15*/
@@ -3780,7 +3780,7 @@ LABEL_2:
         v9 = (unsigned __int16 *)(a4 * a5); /*0x7c6d6d*/
         (v10) = ((v10) & ~(0xFFFF << 16)) | (((0) & 0xFFFF) << 16); /*0x7c6d70*/
         BYTE1(v10) = v6[a4 * a5]; /*0x7c6d72*/
-        LOBYTE(v10) = *v6++; /*0x7c6d75*/
+        (v10) = ((v10) & ~0xFF) | ((*v6++) & 0xFF); /*0x7c6d75*/
         if ( (v10) = ((v10) & ~(0xFF << 8)) | (((= 0xFF) & 0xFF) << 8)) /*0x7c6d7b*/
           break; /*0x7c6d7b*/
         v11 = (int *)(a1 + 8 * v10); /*0x7c6d80*/
@@ -3848,7 +3848,7 @@ LABEL_2:
         v9 = (unsigned __int16 *)(a4 * a5); /*0x7c6e04*/
         (v10) = ((v10) & ~(0xFFFF << 16)) | (((0) & 0xFFFF) << 16); /*0x7c6e07*/
         BYTE1(v10) = v6[a4 * a5]; /*0x7c6e09*/
-        LOBYTE(v10) = *v6++; /*0x7c6e0c*/
+        (v10) = ((v10) & ~0xFF) | ((*v6++) & 0xFF); /*0x7c6e0c*/
         if ( (v10) = ((v10) & ~(0xFF << 8)) | (((= 0xFF) & 0xFF) << 8)) /*0x7c6e12*/
           break; /*0x7c6e12*/
         v11 = (unsigned int *)(a1 + 16 * v10); /*0x7c6e17*/
@@ -3918,11 +3918,11 @@ LABEL_2:
       {
         (v9) = ((v9) & ~(0xFFFF << 16)) | (((0) & 0xFFFF) << 16); /*0x7c6ec4*/
         BYTE1(v9) = v6[a4 * a5]; /*0x7c6ec6*/
-        LOBYTE(v9) = *v6++; /*0x7c6ec9*/
+        (v9) = ((v9) & ~0xFF) | ((*v6++) & 0xFF); /*0x7c6ec9*/
         if ( (v9) = ((v9) & ~(0xFF << 8)) | (((= 0xFF) & 0xFF) << 8)) /*0x7c6ecf*/
           break; /*0x7c6ecf*/
         v10 = (unsigned char *)(a1 + 16 * v9); /*0x7c6ed4*/
-        LOBYTE(v11) = *v10; /*0x7c6ed7*/
+        (v11) = ((v11) & ~0xFF) | ((*v10) & 0xFF); /*0x7c6ed7*/
         HIBYTE(v11) = v10[2]; /*0x7c6ed9*/
         *v7 = v11; /*0x7c6edc*/
         LOBYTE(result) = v10[8]; /*0x7c6edf*/
@@ -3996,7 +3996,7 @@ LABEL_2:
         v9 = a4 * a5; /*0x7c6ff9*/
         (v10) = ((v10) & ~(0xFFFF << 16)) | (((0) & 0xFFFF) << 16); /*0x7c6ffc*/
         BYTE1(v10) = v6[a4 * a5]; /*0x7c6ffe*/
-        LOBYTE(v10) = *v6++; /*0x7c7001*/
+        (v10) = ((v10) & ~0xFF) | ((*v6++) & 0xFF); /*0x7c7001*/
         if ( (v10 & 0x8000) != 0 ) /*0x7c7007*/
           break; /*0x7c7007*/
         v11 = (int *)(a1 + 32 * v10); /*0x7c700c*/
@@ -4027,9 +4027,9 @@ LABEL_2:
         }
       }
       v19 = v10 & 0x7FFF; /*0x7c706f*/
-      LOWORD(v9) = v19; /*0x7c7074*/
+      (v9) = ((v9) & ~0xFFFF) | ((v19) & 0xFFFF); /*0x7c7074*/
       v16 = v9 << 16; /*0x7c7077*/
-      LOWORD(v16) = v19; /*0x7c707a*/
+      (v16) = ((v16) & ~0xFFFF) | ((v19) & 0xFFFF); /*0x7c707a*/
       *v7 = v16; /*0x7c707d*/
       v7[1] = v16; /*0x7c707f*/
       *(int *)((char *)v7 + v27) = v16; /*0x7c7085*/
@@ -4407,7 +4407,7 @@ finish_loop:
     }
   }
   while ( ((unsigned __int8)v5 & 3) != 0 ); /*0x7c9207*/
-  LOBYTE(v4) = v3; /*0x7c9209*/
+  (v4) = ((v4) & ~0xFF) | ((v3) & 0xFF); /*0x7c9209*/
   v7 = v3 >> 2; /*0x7c920b*/
   if ( !v7 ) /*0x7c920e*/
   {
@@ -5682,7 +5682,7 @@ main_loop_0:
         break; /*0x7cafad*/
       if ( !(unsigned char)v9 ) /*0x7cafb1*/
         return 0; /*0x7cafb1*/
-      if ( BYTE1(v9) == (unsigned char)Val ) /*0x7cafb5*/
+      if ( (((v9) >> 8) & 0xFF) == (unsigned char)Val ) /*0x7cafb5*/
         return (char *)(v2 - 3); /*0x7cafe4*/
       if ( !(((v9) >> 8) & 0xFF) ) /*0x7cafb9*/
         return 0; /*0x7cafb9*/
@@ -6049,7 +6049,7 @@ empty_counter:
   }
   do /*0x7cb5e3*/
   {
-    LOBYTE(v12) = *v9++; /*0x7cb5d0*/
+    (v12) = ((v12) & ~0xFF) | ((*v9++) & 0xFF); /*0x7cb5d0*/
     if ( !(unsigned char)v12 ) /*0x7cb5d5*/
     {
 LABEL_26:
@@ -7858,10 +7858,10 @@ dodwords:
     return -2 * v5 + 1; /*0x7cdb00*/
   if ( !(unsigned char)v8 ) /*0x7cdb04*/
     return 0; /*0x7cdb04*/
-  v5 = HIBYTE(v8) < (unsigned int)v3[1]; /*0x7cdb06*/
-  if ( HIBYTE(v8) == v3->u8_1 ) /*0x7cdb09*/
+  v5 = (((v8) >> 8) & 0xFF) < (unsigned int)v3[1]; /*0x7cdb06*/
+  if ( (((v8) >> 8) & 0xFF) == v3->u8_1 ) /*0x7cdb09*/
   {
-    if ( HIBYTE(v8) ) /*0x7cdb0d*/
+    if ( (((v8) >> 8) & 0xFF) ) /*0x7cdb0d*/
     {
       v3 += 2; /*0x7cdb0f*/
       goto dodwords; /*0x7cdb12*/
@@ -8392,9 +8392,9 @@ LABEL_116:
               if ( (v56 & 0x20) != 0 ) /*0x7ce7ab*/
               {
                 if ( (v56 & 0x40) != 0 ) /*0x7ce7b5*/
-                  LODWORD(int64_arg) = (__int16)get_int_arg(&a3); /*0x7ce7bd*/
+                  (int64_arg) = ((int64_arg) & 0xFFFFFFFF00000000ull) | (((__int16)get_int_arg(&a3)) & 0xFFFFFFFFull); /*0x7ce7bd*/
                 else
-                  LODWORD(int64_arg) = (unsigned __int16)get_int_arg(&a3); /*0x7ce7c9*/
+                  (int64_arg) = ((int64_arg) & 0xFFFFFFFF00000000ull) | (((unsigned __int16)get_int_arg(&a3)) & 0xFFFFFFFFull); /*0x7ce7c9*/
               }
               else
               {
@@ -8403,7 +8403,7 @@ LABEL_116:
                   int64_arg = (unsigned int)get_int_arg(&a3); /*0x7ce7e0*/
                   goto LABEL_126; /*0x7ce7e0*/
                 }
-                LODWORD(int64_arg) = get_int_arg(&a3); /*0x7ce7d8*/
+                (int64_arg) = ((int64_arg) & 0xFFFFFFFF00000000ull) | ((get_int_arg(&a3)) & 0xFFFFFFFFull); /*0x7ce7d8*/
               }
               int64_arg = (int)int64_arg; /*0x7ce7c0*/
             }
@@ -8416,7 +8416,7 @@ LABEL_126:
             {
               (v25) = ((v25) & 0xFFFFFFFFull) | ((unsigned long long)((-(int)int64_arg) & 0xFFFFFFFFull) << 32); /*0x7ce7fd*/
               (v56) |= ((((1u)) & 0xFF) << 8); /*0x7ce801*/
-              LODWORD(v25) = (unsigned __int64)-int64_arg >> 32; /*0x7ce805*/
+              (v25) = ((v25) & 0xFFFFFFFF00000000ull) | (((unsigned __int64)-int64_arg >> 32) & 0xFFFFFFFFull); /*0x7ce805*/
             }
             else
             {

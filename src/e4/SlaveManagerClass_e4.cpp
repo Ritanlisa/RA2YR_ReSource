@@ -1168,7 +1168,7 @@ char SlaveManagerClass_25::Release(int a2, unsigned int * a3)
     }
     *&this->Items = v4; /*0x6b166a*/
     this->Capacity = a2; /*0x6b1672*/
-    BYTE1(this->IsInitialized) = a3 == 0; /*0x6b1675*/
+    (this->IsInitialized) = ((this->IsInitialized) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x6b1675*/
   }
   else
   {

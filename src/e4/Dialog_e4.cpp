@@ -1342,7 +1342,7 @@ AbstractClass * * Dialog::InitializeControls(HWND hWnd, LPARAM)
   wchar_t lParam[1024]; // [esp+2C0h] [ebp-800h] BYREF
 
   GetClassNameA(hWnd, ClassName, 128); /*0x60f9bc*/
-  LODWORD(v34) = GetWindowLongA(hWnd, -16); /*0x60f9e2*/
+  (v34) = ((v34) & 0xFFFFFFFF00000000ull) | ((GetWindowLongA(hWnd, -16)) & 0xFFFFFFFFull); /*0x60f9e2*/
   ScreenDialogToClient(hWnd, &v37); /*0x60f9e6*/
   GetClientRect(hWnd, &Rect); /*0x60f9fb*/
   TimerPool::AllocSlot((TimerPool *)hWnd); /*0x60fa08*/
@@ -1861,7 +1861,7 @@ LABEL_16:
       ScreenDialogToClient(v6, &v85); /*0x6138cc*/
       v12 = HashTable::Find(g_DialogHashTable, g_Str_File_tab_tlu_pcx, 0); /*0x6138dc*/
       v13 = (unsigned __int16)((*(int (**)(int))(*(unsigned int *)v12 + 128))(v12) - 1) << 16; /*0x6138f1*/
-      LOBYTE(v13) = v13 | 0x59; /*0x6138f4*/
+      (v13) = ((v13) & ~0xFF) | ((v13 | 0x59) & 0xFF); /*0x6138f4*/
       SendMessageA(hWnd, 0x1329u, 0, v13); /*0x613905*/
       v6 = hWnd; /*0x61390b*/
 LABEL_22:

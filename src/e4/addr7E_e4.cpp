@@ -54,7 +54,7 @@ void  sub_7E0001(int * a1, unsigned int * a2, int a3, int a4, int a5)
     v12 = (char *)v7 + 1; /*0x7e007d*/
     a1 = (int *)((char *)a1 + 2); /*0x7e007e*/
     *v12++ = stru_A8E960.waypoints[v11 + 2442]; /*0x7e0087*/
-    *v12 = HIBYTE(v11); /*0x7e008a*/
+    *v12 = (((v11) >> 8) & 0xFF); /*0x7e008a*/
     v12[1] = 0; /*0x7e008d*/
     a2 = (unsigned int *)((char *)a2 + a5); /*0x7e0093*/
     --a3; /*0x7e0096*/
@@ -113,8 +113,8 @@ void  sub_7E00A6(int * a1, char * a2, int a3, unsigned int a4, unsigned int a5)
     *v14 = v12; /*0x7e0133*/
     ++v13; /*0x7e0135*/
     ++v14; /*0x7e0136*/
-    *v13 = HIBYTE(v12); /*0x7e0137*/
-    *v14 = HIBYTE(v12); /*0x7e0139*/
+    *v13 = (((v12) >> 8) & 0xFF); /*0x7e0137*/
+    *v14 = (((v12) >> 8) & 0xFF); /*0x7e0139*/
     v13[1] = 0; /*0x7e013d*/
     v14[1] = 0; /*0x7e0140*/
     v17 = &a2[a5 >> 1]; /*0x7e0148*/
@@ -158,7 +158,7 @@ void  ObfuscateDataBlock(int * a1, unsigned int * a2, int a3)
   *(unsigned char *)a2 = *(unsigned short *)a1; /*0x7e01bd*/
   v10 = (char *)a2 + 1; /*0x7e01bf*/
   *v10++ = stru_A8E960.waypoints[v9 + 2442]; /*0x7e01c6*/
-  *v10 = HIBYTE(v9); /*0x7e01c9*/
+  *v10 = (((v9) >> 8) & 0xFF); /*0x7e01c9*/
   v10[1] = 0; /*0x7e01cc*/
 
 }

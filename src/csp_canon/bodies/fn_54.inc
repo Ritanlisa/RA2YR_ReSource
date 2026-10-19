@@ -2584,7 +2584,7 @@ int TerrainClass::InitTheatre() {
         v17 = v17; /*0x549f61*/
         v18 = *(unsigned char *)(v11 + 47); /*0x549f68*/
         v19 = *(unsigned char *)(v11 + 46); /*0x549f6b*/
-        IDA_BYTE2(v39) = *(unsigned char *)(v11 + 48); /*0x549f6e*/
+        (v39) = ((v39) & ~(0xFF << 16)) | (((*(unsigned char *)(v11 + 48)) & 0xFF) << 16); /*0x549f6e*/
         (v39) = ((v39) & ~(0xFF << 8)) | (((v18) & 0xFF) << 8); /*0x549f77*/
         (v39) = ((v39) & ~0xFF) | ((v19) & 0xFF); /*0x549f85*/
         Color::ScaleRGB((int)&v37, 1.4); /*0x549f89*/
@@ -2603,7 +2603,7 @@ int TerrainClass::InitTheatre() {
           IDA_LOWORD(v23) = (uint8_t)((((v36) >> 8) & 0xFF) >> g_BitMask_Blue); /*0x54a004*/
           v25 = (unsigned int)v23 << g_BitMask_Green; /*0x54a008*/
           v26 = v25 | (v24 << g_BitShift_Blue); /*0x54a010*/
-          IDA_LOWORD(v25) = (uint8_t)((uint8_t)v36 >> g_BitShift_Green_0); /*0x54a01e*/
+          (v25) = ((v25) & ~0xFFFF) | (((uint8_t)((uint8_t)v36 >> g_BitShift_Green_0)) & 0xFFFF); /*0x54a01e*/
           *v21 = (v25 << g_BitShift_Red) | v26; /*0x54a02f*/
           v27 = Color::Lerp2(v35, (int)&v39, (int)&v44, v40); /*0x54a037*/
           v36 = *(unsigned short *)v27; /*0x54a042*/

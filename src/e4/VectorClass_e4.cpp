@@ -349,7 +349,7 @@ AbstractClass * * VectorClass_Cell::Release(int a2, unsigned int * a3)
           m_8 = a2; /*0x42f759*/
         for ( i = 0; i < m_8; v5[i - 1] = *(unsigned int *)(*&this->Items + 4 * i - 4) ) /*0x42f75f*/
           ++i; /*0x42f764*/
-        if ( BYTE1(this->IsInitialized) ) /*0x42f771*/
+        if ( this->IsAllocated ) /*0x42f771*/
         {
           __3_YAXPAX_Z(*&this->Items); /*0x42f77c*/
           *&this->Items = 0; /*0x42f784*/
@@ -357,7 +357,7 @@ AbstractClass * * VectorClass_Cell::Release(int a2, unsigned int * a3)
       }
       *&this->Items = v5; /*0x42f78d*/
       this->Capacity = a2; /*0x42f795*/
-      BYTE1(this->IsInitialized) = a3 == 0; /*0x42f798*/
+      this->IsAllocated = a3 == 0; /*0x42f798*/
       return 1; /*0x42f79e*/
     }
     else
@@ -457,7 +457,7 @@ AbstractClass * * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistrib
           while ( v13 < m_8 ); /*0x4e08ed*/
           v4 = a3; /*0x4e08ef*/
         }
-        if ( BYTE1(this->IsInitialized) ) /*0x4e08f3*/
+        if ( this->IsAllocated ) /*0x4e08f3*/
         {
           v15 = *&this->Items; /*0x4e08fa*/
           if ( v15 ) /*0x4e08ff*/
@@ -467,7 +467,7 @@ AbstractClass * * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistrib
       }
       *&this->Items = v6; /*0x4e091a*/
       this->Capacity = a2; /*0x4e0922*/
-      BYTE1(this->IsInitialized) = v4 == 0; /*0x4e0925*/
+      this->IsAllocated = v4 == 0; /*0x4e0925*/
       return 1; /*0x4e092b*/
     }
     else
@@ -569,7 +569,7 @@ AbstractClass * * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistrib
         while ( v12 < m_8 ); /*0x4e0bb9*/
         v4 = a3; /*0x4e0bbb*/
       }
-      if ( BYTE1(this->IsInitialized) ) /*0x4e0bbf*/
+      if ( this->IsAllocated ) /*0x4e0bbf*/
       {
         v14 = *&this->Items; /*0x4e0bc6*/
         if ( v14 ) /*0x4e0bcb*/
@@ -652,7 +652,7 @@ AbstractClass * * VectorClass_Ptr::ResizeAndCopy(int a2, unsigned int * a3)
     }
     *&this->ptr_4 = v4; /*0x5ad08a*/
     *&this->ptr_8 = a2; /*0x5ad092*/
-    BYTE1(this->m_C) = a3 == 0; /*0x5ad095*/
+    (this->m_C) = ((this->m_C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x5ad095*/
   }
   else
   {
@@ -1444,7 +1444,7 @@ AbstractClass * * VectorClass_UUndoInfoStruct::Release(int a2, unsigned int * a3
       while ( m_8 ); /*0x6b4554*/
       v3 = a2; /*0x6b4556*/
     }
-    if ( BYTE1(this->IsInitialized) ) /*0x6b455c*/
+    if ( this->IsAllocated ) /*0x6b455c*/
     {
       __3_YAXPAX_Z(*&this->Items); /*0x6b4565*/
       *&this->Items = 0; /*0x6b456d*/
@@ -1452,7 +1452,7 @@ AbstractClass * * VectorClass_UUndoInfoStruct::Release(int a2, unsigned int * a3
   }
   *&this->Items = v8; /*0x6b4578*/
   this->Capacity = v3; /*0x6b457e*/
-  BYTE1(this->IsInitialized) = a3 == 0; /*0x6b4581*/
+  this->IsAllocated = a3 == 0; /*0x6b4581*/
   return 1; /*0x6b451b*/
 
 }
@@ -1547,7 +1547,7 @@ AbstractClass * * VectorClass_UUndoInfoStruct::SetCapacity(int a2, unsigned int 
       while ( m_8 ); /*0x6b46fb*/
       v3 = a2; /*0x6b46fd*/
     }
-    if ( BYTE1(this->IsInitialized) ) /*0x6b4703*/
+    if ( this->IsAllocated ) /*0x6b4703*/
     {
       __3_YAXPAX_Z(*&this->Items); /*0x6b470c*/
       *&this->Items = 0; /*0x6b4714*/
@@ -1555,7 +1555,7 @@ AbstractClass * * VectorClass_UUndoInfoStruct::SetCapacity(int a2, unsigned int 
   }
   *&this->Items = v8; /*0x6b471f*/
   this->Capacity = v3; /*0x6b4725*/
-  BYTE1(this->IsInitialized) = a3 == 0; /*0x6b4728*/
+  this->IsAllocated = a3 == 0; /*0x6b4728*/
   LABEL_26:
   v14 = this->Capacity; /*0x6b4734*/
   if ( v14 < this->Count ) /*0x6b473c*/
@@ -2915,7 +2915,7 @@ char VectorClass_ushort::Remove(int a2, unsigned short * a3)
           m_8 = a2; /*0x42d940*/
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned short *)(*&this->Items + 2 * i - 2) ) /*0x42d946*/
           ++i; /*0x42d94b*/
-        if ( BYTE1(this->IsInitialized) ) /*0x42d95a*/
+        if ( this->IsAllocated ) /*0x42d95a*/
         {
           __3_YAXPAX_Z(*&this->Items); /*0x42d965*/
           *&this->Items = 0; /*0x42d96d*/
@@ -2923,7 +2923,7 @@ char VectorClass_ushort::Remove(int a2, unsigned short * a3)
       }
       *&this->Items = v4; /*0x42d976*/
       this->Capacity = a2; /*0x42d97e*/
-      BYTE1(this->IsInitialized) = a3 == 0; /*0x42d981*/
+      this->IsAllocated = a3 == 0; /*0x42d981*/
       return 1; /*0x42d987*/
     }
     else
@@ -3209,7 +3209,7 @@ char VectorClass_ptr_Reestablish::Remove(int a2, unsigned int * a3)
           m_8 = a2; /*0x45a7f3*/
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->Items + 4 * i - 4) ) /*0x45a7f9*/
           ++i; /*0x45a7fe*/
-        if ( BYTE1(this->IsInitialized) ) /*0x45a80b*/
+        if ( this->IsAllocated ) /*0x45a80b*/
         {
           __3_YAXPAX_Z(*&this->Items); /*0x45a816*/
           *&this->Items = 0; /*0x45a81e*/
@@ -3217,7 +3217,7 @@ char VectorClass_ptr_Reestablish::Remove(int a2, unsigned int * a3)
       }
       *&this->Items = v4; /*0x45a827*/
       this->Capacity = a2; /*0x45a82f*/
-      BYTE1(this->IsInitialized) = a3 == 0; /*0x45a832*/
+      this->IsAllocated = a3 == 0; /*0x45a832*/
       return 1; /*0x45a838*/
     }
     else
@@ -3754,7 +3754,7 @@ char VectorClass_flat::vt02(int a2, unsigned int * a3)
       }
       *&this->u32_4 = v4; /*0x477cf7*/
       this->u32_8 = a2; /*0x477cff*/
-      BYTE1(this->u32_C) = a3 == 0; /*0x477d02*/
+      (this->u32_C) = ((this->u32_C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x477d02*/
       return 1; /*0x477d08*/
     }
     else
@@ -3858,7 +3858,7 @@ char VectorClass_flat::Resize(int a2, unsigned int * a3, void *a3_1)
     }
     *&this->u32_4 = v4; /*0x477e8a*/
     this->u32_8 = a2; /*0x477e92*/
-    BYTE1(this->u32_C) = a3 == 0; /*0x477e95*/
+    (this->u32_C) = ((this->u32_C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x477e95*/
   }
   else
   {
@@ -4619,12 +4619,12 @@ void VectorClass_ptr_AITriggerTypeClass::Destroy_0()
 
   void *v2 = *&this->Items; // eax /*0x4e8546*/
   this->Count = 0; /*0x4e8549*/
-  if ( v2 && BYTE1(this->IsInitialized) ) /*0x4e8550*/
+  if ( v2 && this->IsAllocated ) /*0x4e8550*/
   {
     __3_YAXPAX_Z(v2); /*0x4e8556*/
     *&this->Items = 0; /*0x4e855e*/
   }
-  BYTE1(this->IsInitialized) = 0; /*0x4e8561*/
+  this->IsAllocated = 0; /*0x4e8561*/
   this->Capacity = 0; /*0x4e8564*/
 
 }
@@ -4649,12 +4649,12 @@ void VectorClass_ptr_AITriggerTypeClass::Destroy_1()
 
   void *v2 = *&this->Items; // eax /*0x4e85a6*/
   this->Count = 0; /*0x4e85a9*/
-  if ( v2 && BYTE1(this->IsInitialized) ) /*0x4e85b0*/
+  if ( v2 && this->IsAllocated ) /*0x4e85b0*/
   {
     __3_YAXPAX_Z(v2); /*0x4e85b6*/
     *&this->Items = 0; /*0x4e85be*/
   }
-  BYTE1(this->IsInitialized) = 0; /*0x4e85c1*/
+  this->IsAllocated = 0; /*0x4e85c1*/
   this->Capacity = 0; /*0x4e85c4*/
 
 }
@@ -4701,12 +4701,12 @@ void VectorClass_ptr_TubeClass::Destroy_0()
 
   void *v2 = *&this->Items; // eax /*0x4e86c6*/
   this->Count = 0; /*0x4e86c9*/
-  if ( v2 && BYTE1(this->IsInitialized) ) /*0x4e86d0*/
+  if ( v2 && this->IsAllocated ) /*0x4e86d0*/
   {
     __3_YAXPAX_Z(v2); /*0x4e86d6*/
     *&this->Items = 0; /*0x4e86de*/
   }
-  BYTE1(this->IsInitialized) = 0; /*0x4e86e1*/
+  this->IsAllocated = 0; /*0x4e86e1*/
   this->Capacity = 0; /*0x4e86e4*/
 
 }
@@ -4731,12 +4731,12 @@ void VectorClass_ptr_TubeClass::Destroy_1()
 
   void *v2 = *&this->Items; // eax /*0x4e8726*/
   this->Count = 0; /*0x4e8729*/
-  if ( v2 && BYTE1(this->IsInitialized) ) /*0x4e8730*/
+  if ( v2 && this->IsAllocated ) /*0x4e8730*/
   {
     __3_YAXPAX_Z(v2); /*0x4e8736*/
     *&this->Items = 0; /*0x4e873e*/
   }
-  BYTE1(this->IsInitialized) = 0; /*0x4e8741*/
+  this->IsAllocated = 0; /*0x4e8741*/
   this->Capacity = 0; /*0x4e8744*/
 
 }
@@ -5181,7 +5181,7 @@ char VectorClass_ptr_AITriggerTypeClass::SetCapacity_1(int a2, unsigned int * a3
         m_8 = a2; /*0x4ea846*/
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->Items + 4 * i - 4) ) /*0x4ea84c*/
         ++i; /*0x4ea851*/
-      if ( BYTE1(this->IsInitialized) ) /*0x4ea85e*/
+      if ( this->IsAllocated ) /*0x4ea85e*/
       {
         __3_YAXPAX_Z(*&this->Items); /*0x4ea869*/
         *&this->Items = 0; /*0x4ea871*/
@@ -5189,7 +5189,7 @@ char VectorClass_ptr_AITriggerTypeClass::SetCapacity_1(int a2, unsigned int * a3
     }
     *&this->Items = v4; /*0x4ea87a*/
     this->Capacity = a2; /*0x4ea882*/
-    BYTE1(this->IsInitialized) = a3 == 0; /*0x4ea885*/
+    this->IsAllocated = a3 == 0; /*0x4ea885*/
   }
   else
   {
@@ -5285,7 +5285,7 @@ char VectorClass_ptr_TubeClass::SetCapacity_0(int a2, unsigned int * a3)
         m_8 = a2; /*0x4eaf66*/
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->Items + 4 * i - 4) ) /*0x4eaf6c*/
         ++i; /*0x4eaf71*/
-      if ( BYTE1(this->IsInitialized) ) /*0x4eaf7e*/
+      if ( this->IsAllocated ) /*0x4eaf7e*/
       {
         __3_YAXPAX_Z(*&this->Items); /*0x4eaf89*/
         *&this->Items = 0; /*0x4eaf91*/
@@ -5293,7 +5293,7 @@ char VectorClass_ptr_TubeClass::SetCapacity_0(int a2, unsigned int * a3)
     }
     *&this->Items = v4; /*0x4eaf9a*/
     this->Capacity = a2; /*0x4eafa2*/
-    BYTE1(this->IsInitialized) = a3 == 0; /*0x4eafa5*/
+    this->IsAllocated = a3 == 0; /*0x4eafa5*/
   }
   else
   {
@@ -5361,7 +5361,7 @@ char VectorClass_ptr_TubeClass::SetCapacity_1(int a2, unsigned int * a3)
         m_8 = a2; /*0x4eb1c6*/
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->Items + 4 * i - 4) ) /*0x4eb1cc*/
         ++i; /*0x4eb1d1*/
-      if ( BYTE1(this->IsInitialized) ) /*0x4eb1de*/
+      if ( this->IsAllocated ) /*0x4eb1de*/
       {
         __3_YAXPAX_Z(*&this->Items); /*0x4eb1e9*/
         *&this->Items = 0; /*0x4eb1f1*/
@@ -5369,7 +5369,7 @@ char VectorClass_ptr_TubeClass::SetCapacity_1(int a2, unsigned int * a3)
     }
     *&this->Items = v4; /*0x4eb1fa*/
     this->Capacity = a2; /*0x4eb202*/
-    BYTE1(this->IsInitialized) = a3 == 0; /*0x4eb205*/
+    this->IsAllocated = a3 == 0; /*0x4eb205*/
   }
   else
   {
@@ -7687,7 +7687,7 @@ char VectorClass_W4PassabilityType::SetCapacity_1(int a2, char * a3)
         while ( m_8 ); /*0x58a33f*/
         v3 = a2; /*0x58a341*/
       }
-      if ( BYTE1(this->IsInitialized) ) /*0x58a347*/
+      if ( this->IsAllocated ) /*0x58a347*/
       {
         __3_YAXPAX_Z(*&this->Items); /*0x58a350*/
         *&this->Items = 0; /*0x58a358*/
@@ -7695,7 +7695,7 @@ char VectorClass_W4PassabilityType::SetCapacity_1(int a2, char * a3)
     }
     *&this->Items = v5; /*0x58a363*/
     this->Capacity = v3; /*0x58a369*/
-    BYTE1(this->IsInitialized) = a3 == 0; /*0x58a36c*/
+    this->IsAllocated = a3 == 0; /*0x58a36c*/
   }
   else
   {
@@ -8206,7 +8206,7 @@ char VectorClass_cptr_MultiMission::SetAt(int a2, unsigned int * a3)
           m_8 = a2; /*0x5eeca3*/
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->Items + 4 * i - 4) ) /*0x5eeca9*/
           ++i; /*0x5eecae*/
-        if ( BYTE1(this->IsInitialized) ) /*0x5eecbb*/
+        if ( this->IsAllocated ) /*0x5eecbb*/
         {
           __3_YAXPAX_Z(*&this->Items); /*0x5eecc6*/
           *&this->Items = 0; /*0x5eecce*/
@@ -8214,7 +8214,7 @@ char VectorClass_cptr_MultiMission::SetAt(int a2, unsigned int * a3)
       }
       *&this->Items = v4; /*0x5eecd7*/
       this->Capacity = a2; /*0x5eecdf*/
-      BYTE1(this->IsInitialized) = a3 == 0; /*0x5eece2*/
+      this->IsAllocated = a3 == 0; /*0x5eece2*/
       return 1; /*0x5eece8*/
     }
     else
@@ -10221,7 +10221,7 @@ char VectorClass_E::Release(signed int Size, char * a3)
           m_8 = Size; /*0x74c07c*/
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned char *)(*&this->Items + i - 1) ) /*0x74c082*/
           ++i; /*0x74c087*/
-        if ( BYTE1(this->IsInitialized) ) /*0x74c094*/
+        if ( this->IsAllocated ) /*0x74c094*/
         {
           __3_YAXPAX_Z(*&this->Items); /*0x74c09f*/
           *&this->Items = 0; /*0x74c0a7*/
@@ -10229,7 +10229,7 @@ char VectorClass_E::Release(signed int Size, char * a3)
       }
       *&this->Items = v4; /*0x74c0b0*/
       this->Capacity = Size; /*0x74c0b8*/
-      BYTE1(this->IsInitialized) = a3 == 0; /*0x74c0bb*/
+      this->IsAllocated = a3 == 0; /*0x74c0bb*/
       return 1; /*0x74c0c1*/
     }
     else
@@ -10534,20 +10534,20 @@ unsigned int *  VectorClass_rc_ptr_WDTTerritory::loc_76B6C0(int a3, void *a2)
       else
         v8 = 0; /*0x76b1d3*/
       ParseWDTTerritories_Parse_76B790(v8); /*0x76b1da*/
-      LOBYTE(v9) = 0; /*0x76b1e6*/
+      (v9) = ((v9) & ~0xFF) | ((0) & 0xFF); /*0x76b1e6*/
       v10 = v5 + 1; /*0x76b1e8*/
       *(unsigned int *)(v80 + 8) = *(unsigned int *)(a3 + 32); /*0x76b1e9*/
-      HIBYTE(v9) = *(unsigned char *)(v10 + a2 - 1); /*0x76b1ec*/
+      (v9) = ((v9) & ~(0xFF << 8)) | (((*(unsigned char *)(v10 + a2 - 1)) & 0xFF) << 8); /*0x76b1ec*/
       *(unsigned short *)(v80 + 12) = v9; /*0x76b1f4*/
       *(unsigned short *)(v80 + 12) += *(unsigned __int8 *)(v10 + a2); /*0x76b201*/
       v11 = *(unsigned char *)(v10 + a2 + 1); /*0x76b205*/
       v10 += 2; /*0x76b211*/
       *(unsigned char *)(v80 + 14) = v11 + 0x80; /*0x76b212*/
-      LOBYTE(v12) = 0; /*0x76b21c*/
-      LOBYTE(v9) = *(unsigned char *)(v10 + a2) + 0x80; /*0x76b21e*/
+      (v12) = ((v12) & ~0xFF) | ((0) & 0xFF); /*0x76b21c*/
+      (v9) = ((v9) & ~0xFF) | ((*(unsigned char *)(v10 + a2) + 0x80) & 0xFF); /*0x76b21e*/
       ++v10; /*0x76b221*/
       *(unsigned char *)(v80 + 15) = v9; /*0x76b222*/
-      HIBYTE(v12) = *(unsigned char *)(v10 + a2); /*0x76b229*/
+      (v12) = ((v12) & ~(0xFF << 8)) | (((*(unsigned char *)(v10 + a2)) & 0xFF) << 8); /*0x76b229*/
       ++v10; /*0x76b22c*/
       *(unsigned short *)(v80 + 16) = v12; /*0x76b22d*/
       *(unsigned short *)(v80 + 16) += *(unsigned __int8 *)(v10 + a2); /*0x76b23a*/
@@ -10558,10 +10558,10 @@ unsigned int *  VectorClass_rc_ptr_WDTTerritory::loc_76B6C0(int a3, void *a2)
       v14 = *(unsigned char *)(v10 + a2) + 0x80; /*0x76b269*/
       ++v10; /*0x76b26c*/
       *(unsigned char *)(v80 + 30) = v14; /*0x76b26d*/
-      LOBYTE(v9) = *(unsigned char *)(v10 + a2) + 0x80; /*0x76b277*/
+      (v9) = ((v9) & ~0xFF) | ((*(unsigned char *)(v10 + a2) + 0x80) & 0xFF); /*0x76b277*/
       ++v10; /*0x76b27a*/
       *(unsigned char *)(v80 + 18) = v9; /*0x76b27b*/
-      LOBYTE(v13) = *(unsigned char *)(v10 + a2) + 0x80; /*0x76b285*/
+      (v13) = ((v13) & ~0xFF) | ((*(unsigned char *)(v10 + a2) + 0x80) & 0xFF); /*0x76b285*/
       ++v10; /*0x76b287*/
       *(unsigned char *)(v80 + 19) = v13; /*0x76b288*/
       v15 = *(unsigned char *)(v10 + a2) + 0x80; /*0x76b294*/

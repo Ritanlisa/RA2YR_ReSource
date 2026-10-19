@@ -858,17 +858,17 @@ char Gap2Recv_76B180::ParseWDTTerritories(WDTState * aP1, int a3) {
       (v9) = ((v9) & ~0xFF) | ((0) & 0xFF); /*0x76b1e6*/
       v10 = v5 + 1; /*0x76b1e8*/
       *(unsigned int *)(v80 + 8) = *((unsigned int *)this + 8); /*0x76b1e9*/
-      HIBYTE(v9) = *(unsigned char *)(v10 + aP1 - 1); /*0x76b1ec*/
+      (v9) = ((v9) & ~(0xFF << 8)) | (((*(unsigned char *)(v10 + aP1 - 1)) & 0xFF) << 8); /*0x76b1ec*/
       *(unsigned short *)(v80 + 12) = v9; /*0x76b1f4*/
       *(unsigned short *)(v80 + 12) += *(uint8_t *)(v10 + aP1); /*0x76b201*/
       v11 = *(unsigned char *)(v10 + aP1 + 1); /*0x76b205*/
       v10 += 2; /*0x76b211*/
       *(unsigned char *)(v80 + 14) = v11 + 0x80; /*0x76b212*/
       (v12) = ((v12) & ~0xFF) | ((0) & 0xFF); /*0x76b21c*/
-      LOBYTE(v9) = *(unsigned char *)(v10 + aP1) + 0x80; /*0x76b21e*/
+      (v9) = ((v9) & ~0xFF) | ((*(unsigned char *)(v10 + aP1) + 0x80) & 0xFF); /*0x76b21e*/
       ++v10; /*0x76b221*/
       *(unsigned char *)(v80 + 15) = v9; /*0x76b222*/
-      HIBYTE(v12) = *(unsigned char *)(v10 + aP1); /*0x76b229*/
+      (v12) = ((v12) & ~(0xFF << 8)) | (((*(unsigned char *)(v10 + aP1)) & 0xFF) << 8); /*0x76b229*/
       ++v10; /*0x76b22c*/
       *(unsigned short *)(v80 + 16) = v12; /*0x76b22d*/
       *(unsigned short *)(v80 + 16) += *(uint8_t *)(v10 + aP1); /*0x76b23a*/
@@ -879,10 +879,10 @@ char Gap2Recv_76B180::ParseWDTTerritories(WDTState * aP1, int a3) {
       v14 = *(unsigned char *)(v10 + aP1) + 0x80; /*0x76b269*/
       ++v10; /*0x76b26c*/
       *(unsigned char *)(v80 + 30) = v14; /*0x76b26d*/
-      LOBYTE(v9) = *(unsigned char *)(v10 + aP1) + 0x80; /*0x76b277*/
+      (v9) = ((v9) & ~0xFF) | ((*(unsigned char *)(v10 + aP1) + 0x80) & 0xFF); /*0x76b277*/
       ++v10; /*0x76b27a*/
       *(unsigned char *)(v80 + 18) = v9; /*0x76b27b*/
-      LOBYTE(v13) = *(unsigned char *)(v10 + aP1) + 0x80; /*0x76b285*/
+      (v13) = ((v13) & ~0xFF) | ((*(unsigned char *)(v10 + aP1) + 0x80) & 0xFF); /*0x76b285*/
       ++v10; /*0x76b287*/
       *(unsigned char *)(v80 + 19) = v13; /*0x76b288*/
       v15 = *(unsigned char *)(v10 + aP1) + 0x80; /*0x76b294*/

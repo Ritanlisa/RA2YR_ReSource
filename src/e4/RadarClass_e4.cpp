@@ -163,7 +163,7 @@ int RadarClass_RecreateSurface(void * a1, void * a2)
     }
     v3->RadarSurfaceAlt = v17; /*0x65479d*/
     (*(void (**)(char *, unsigned int))(*(unsigned int *)v17 + 24))(v17, 0); /*0x6547a8*/
-    LOBYTE(result) = RadarClass::UpdateFoundationShapesCustom(v3); /*0x6547ad*/
+    (result) = ((result) & ~0xFF) | ((RadarClass::UpdateFoundationShapesCustom(v3)) & 0xFF); /*0x6547ad*/
   }
   return result; /*0x6547b3*/
 

@@ -395,7 +395,7 @@ unsigned int * SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
             LOBYTE(v15) = v60; /*0x6308e1*/
             BYTE1(v15) = v60; /*0x6308e9*/
             v46 = (unsigned int)v15 << 16; /*0x6308f1*/
-            LOWORD(v46) = (unsigned short)v15; /*0x6308f4*/
+            (v46) = ((v46) & ~0xFFFF) | (((unsigned short)v15) & 0xFFFF); /*0x6308f4*/
             v15 = v56; /*0x6308f7*/
             v47 = v53 >> 2; /*0x6308fb*/
             memset32(v45, v46, v47); /*0x6308fe*/
@@ -2166,7 +2166,7 @@ LABEL_10:
   LOBYTE(v23) = stru_AC4B48.SidebarClass_field_0x188; /*0x6399aa*/
   if ( !LOBYTE(stru_AC4B48.SidebarClass_field_0x188) ) /*0x6399b1*/
   {
-    LOBYTE(v23) = House::IsHumanPlayer((House *)v37->owner); /*0x6399c1*/
+    (v23) = ((v23) & ~0xFF) | ((House::IsHumanPlayer((House *)v37->owner)) & 0xFF); /*0x6399c1*/
     if ( (unsigned char)v23 ) /*0x6399c8*/
     {
       LOBYTE(stru_AC4B48.SidebarClass_field_0x188) = 1; /*0x6399ce*/
@@ -2192,7 +2192,7 @@ LABEL_10:
         {
           v23 = *(unsigned int *)(v24[1] + 4 * j); /*0x6399f4*/
           v27 = *(unsigned int *)v23; /*0x6399f7*/
-          LOBYTE(v23) = *(unsigned char *)(*(unsigned int *)v23 + 131); /*0x6399f9*/
+          (v23) = ((v23) & ~0xFF) | ((*(unsigned char *)(*(unsigned int *)v23 + 131)) & 0xFF); /*0x6399f9*/
           if ( !(unsigned char)v23 ) /*0x639a01*/
             LOBYTE(v23) = (*(int (**)(int))(*(unsigned int *)v27 + 332))(v27); /*0x639a05*/
         }
@@ -2513,7 +2513,7 @@ LABEL_37:
         v19 = *(unsigned int *)WaypointCoords; /*0x63af74*/
         LOBYTE(WaypointCoords) = WaypointCoords[4]; /*0x63af7b*/
         *(unsigned int *)&v23[104] = v19; /*0x63af7f*/
-        LOBYTE(v24) = (unsigned char)WaypointCoords; /*0x63af81*/
+        (v24) = ((v24) & ~0xFF) | (((unsigned char)WaypointCoords) & 0xFF); /*0x63af81*/
         v20 = ScriptAction::GetWaypointCoords((ScriptAction *)&v29[12], v16); /*0x63af88*/
         ScenarioClass::SetEvent( /*0x63afac*/
           &v29[20],
@@ -2524,7 +2524,7 @@ LABEL_37:
           *(int *)&v23[104],
           v24);
         qmemcpy(v23, &v29[20], sizeof(v23)); /*0x63afc2*/
-        LOWORD(v24) = *(unsigned short *)&v29[128]; /*0x63afc4*/
+        (v24) = ((v24) & ~0xFFFF) | ((*(unsigned short *)&v29[128]) & 0xFFFF); /*0x63afc4*/
         (v24) = ((v24) & ~(0xFF << 16)) | (((v29[130]) & 0xFF) << 16); /*0x63afc6*/
         Network::RecordEvent( /*0x63afc7*/
           *(__int64 *)v23,
@@ -3432,7 +3432,7 @@ int ObjectClass::sub_632A70(int a2, int a3, ObjectClass * aP3)
   sub_5C8E40(this, a2, a3, aP3, 64); /*0x632a85*/
   int result; // eax
   result = (int)this->AbstractClass; /*0x632a8a*/
-  LOBYTE(result) = (int)this->AbstractClass | 1; /*0x632a8c*/
+  (result) = ((result) & ~0xFF) | (((int)this->AbstractClass | 1) & 0xFF); /*0x632a8c*/
   this->AbstractClass = (void *)result; /*0x632a8e*/
   return result; /*0x632a90*/
 
@@ -3475,7 +3475,7 @@ int ObjectClass::sub_632D60(int a2)
   if ( !a2 ) /*0x632d6a*/
   {
     result = (*((int (**)(ObjectClass *))this->AbstractClass + 1))(this); /*0x632d6e*/
-    LOBYTE(this->vtable4) = 0; /*0x632d71*/
+    (this->vtable4) = ((this->vtable4) & ~0xFF) | ((0) & 0xFF); /*0x632d71*/
   }
   this->attachedBomb = (BombClass *)a2; /*0x632d77*/
   if ( a2 ) /*0x632d7a*/
@@ -3483,7 +3483,7 @@ int ObjectClass::sub_632D60(int a2)
     TagClass *attachedTag; // ecx
     attachedTag = this->attachedTag; /*0x632d7c*/
     result = 1; /*0x632d7f*/
-    LOBYTE(this->vtable4) = 1; /*0x632d86*/
+    (this->vtable4) = ((this->vtable4) & ~0xFF) | ((1) & 0xFF); /*0x632d86*/
     if ( attachedTag == 1 ) /*0x632d89*/
     {
       result = ((*(unsigned int *)(a2 + 512) - 1) / 8 + 1) * (55 / ((*(unsigned int *)(a2 + 512) - 1) / 8) + 1); /*0x632da7*/
@@ -4299,7 +4299,7 @@ int ObjectClass::sub_635210()
     qmemcpy(v15, &this->attachedBomb, 0x6Eu); /*0x635243*/
     v3 = 0; /*0x635247*/
     v11 = result; /*0x635249*/
-    v15[110] = BYTE2(this->location[2]); /*0x63524f*/
+    v15[110] = this->location[4]; /*0x63524f*/
     if ( result > 0 ) /*0x635250*/
     {
       while ( 1 ) /*0x635265*/
@@ -4681,7 +4681,7 @@ char sub_6394E0(IUnknown * a1, int a2)
     v7 = *(unsigned int *)WaypointCoords; /*0x63953c*/
     LOBYTE(WaypointCoords) = WaypointCoords[4]; /*0x639543*/
     *(unsigned int *)&v10[104] = v7; /*0x639547*/
-    LOBYTE(v11) = (unsigned char)WaypointCoords; /*0x639549*/
+    (v11) = ((v11) & ~0xFF) | (((unsigned char)WaypointCoords) & 0xFF); /*0x639549*/
     v8 = ScriptAction::GetWaypointCoords((ScriptAction *)v12, a1); /*0x639550*/
     ScenarioClass::SetEvent( /*0x639577*/
       &v12[128],
@@ -4692,7 +4692,7 @@ char sub_6394E0(IUnknown * a1, int a2)
       *(int *)&v10[104],
       v11);
     qmemcpy(v10, &v12[128], sizeof(v10)); /*0x63958d*/
-    LOWORD(v11) = v13; /*0x63958f*/
+    (v11) = ((v11) & ~0xFFFF) | ((v13) & 0xFFFF); /*0x63958f*/
     (v11) = ((v11) & ~(0xFF << 16)) | (((v14) & 0xFF) << 16); /*0x639591*/
     LOBYTE(Next) = Network::RecordEvent( /*0x639592*/
                      *(__int64 *)v10,

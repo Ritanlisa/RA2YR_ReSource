@@ -220,7 +220,7 @@ char ParticleSystemClass_32::SetCapacity(int a2, unsigned int * a3)
     }
     *&this->q004 = v4; /*0x4e965a*/
     this->m_8 = a2; /*0x4e9662*/
-    BYTE1(this->m_C) = a3 == 0; /*0x4e9665*/
+    (this->m_C) = ((this->m_C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x4e9665*/
   }
   else
   {
@@ -315,7 +315,7 @@ char ParticleSystemClass_16::Release(int a2, unsigned int * a3)
       }
       *&this->q004 = v4; /*0x4eb327*/
       this->m_8 = a2; /*0x4eb32f*/
-      BYTE1(this->m_C) = a3 == 0; /*0x4eb332*/
+      (this->m_C) = ((this->m_C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x4eb332*/
       return 1; /*0x4eb338*/
     }
     else
@@ -441,7 +441,7 @@ char ParticleSystemClass_32::Release(int a2, unsigned int * a3)
       }
       *&this->q004 = v4; /*0x4eb587*/
       this->m_8 = a2; /*0x4eb58f*/
-      BYTE1(this->m_C) = a3 == 0; /*0x4eb592*/
+      (this->m_C) = ((this->m_C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x4eb592*/
       return 1; /*0x4eb598*/
     }
     else
@@ -540,7 +540,7 @@ char ParticleSystemClass_32::CopyParticles2(int a2, unsigned int * a3)
     }
     *&this->q004 = v4; /*0x4eb6ba*/
     this->m_8 = a2; /*0x4eb6c2*/
-    BYTE1(this->m_C) = a3 == 0; /*0x4eb6c5*/
+    (this->m_C) = ((this->m_C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x4eb6c5*/
   }
   else
   {
@@ -608,7 +608,7 @@ char ParticleSystemClass_32_::ResizeDataArray(int a2, unsigned int * a3)
     }
     *&this->q004 = v4; /*0x4eb91a*/
     this->Capacity = a2; /*0x4eb922*/
-    BYTE1(this->m_C) = a3 == 0; /*0x4eb925*/
+    (this->m_C) = ((this->m_C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x4eb925*/
   }
   else
   {

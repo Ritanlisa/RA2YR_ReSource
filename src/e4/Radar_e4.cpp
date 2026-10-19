@@ -84,7 +84,7 @@ int Radar::FindNearestRadarTarget(int a2, int a3, int a4)
           Math::Sqrt(v12); /*0x43110c*/
           double v4; // st7
           int v8; // eax
-          LOWORD(v8) = Math::RoundToInt(v4); /*0x431114*/
+          (v8) = ((v8) & ~0xFFFF) | ((Math::RoundToInt(v4)) & 0xFFFF); /*0x431114*/
           if ( v8 < 128 ) /*0x43111e*/
             return *(unsigned int *)&this->__pad_0[8 * v13 + 4 * i + 4 * v13]; /*0x431161*/
         }
@@ -515,7 +515,7 @@ LABEL_33:
     if ( v49 == v9 ) /*0x58289b*/
     {
       v51 = v49; /*0x5828a5*/
-      HIWORD(v103) = (unsigned short)v115; /*0x5828a7*/
+      (v103) = ((v103) & ~(0xFFFF << 16)) | ((((unsigned short)v115) & 0xFFFF) << 16); /*0x5828a7*/
       (v103) = ((v103) & ~0xFFFF) | ((v49 + 1) & 0xFFFF); /*0x5828b3*/
       *(unsigned int *)v95 = v103; /*0x5828c0*/
       v52 = v47 + 2 * (5 * v109 + 5); /*0x5828c4*/
@@ -533,7 +533,7 @@ LABEL_33:
       else
       {
         (v104) = ((v104) & ~0xFFFF) | ((v49) & 0xFFFF); /*0x5828dc*/
-        HIWORD(v104) = (unsigned short)v115; /*0x5828e1*/
+        (v104) = ((v104) & ~(0xFFFF << 16)) | ((((unsigned short)v115) & 0xFFFF) << 16); /*0x5828e1*/
         *(unsigned int *)v95 = v104; /*0x5828ee*/
         v52 = *(unsigned int *)v101 + v47; /*0x5828f2*/
       }
@@ -641,7 +641,7 @@ LABEL_73:
         }
         v71 = (int)&v68[-10 * v109 - 10]; /*0x582b4d*/
         (v106) = ((v106) & ~0xFFFF) | ((v9 - 1) & 0xFFFF); /*0x582b52*/
-        HIWORD(v106) = (unsigned short)v115; /*0x582b5f*/
+        (v106) = ((v106) & ~(0xFFFF << 16)) | ((((unsigned short)v115) & 0xFFFF) << 16); /*0x582b5f*/
         v70 = v106; /*0x582b64*/
       }
       v72 = v115; /*0x582b68*/
@@ -659,7 +659,7 @@ LABEL_82:
               if ( (unsigned __int8)LayerClass::IsWithinUsableArea((LayerClass *)this, v95, 1) ) /*0x582c33*/
               {
                 (v104) = ((v104) & ~0xFFFF) | ((v9) & 0xFFFF); /*0x582c4a*/
-                HIWORD(v104) = (unsigned short)v72 + 1; /*0x582c4f*/
+                (v104) = ((v104) & ~(0xFFFF << 16)) | ((((unsigned short)v72 + 1) & 0xFFFF) << 16); /*0x582c4f*/
                 if ( (unsigned __int8)LayerClass::IsWithinUsableArea((LayerClass *)this, (__int16 *)&v104, 1) ) /*0x582c54*/
                 {
                   v75 = (unsigned __int16)aP3 | (v92 << 16); /*0x582c6e*/
@@ -1072,7 +1072,7 @@ LABEL_73:
             v52 = (unsigned __int16)*((unsigned int *)v96 - 1); /*0x584b95*/
             v53 = (unsigned __int16)HIWORD(*((unsigned int *)v96 - 1)); /*0x584b9b*/
             v54 = *((unsigned int *)v103 + 1); /*0x584ba1*/
-            LOBYTE(v128) = *v96; /*0x584ba4*/
+            (v128) = ((v128) & ~0xFF) | ((*v96) & 0xFF); /*0x584ba4*/
             v55 = *(unsigned int *)(v54 + 36 * v52 + 8); /*0x584bae*/
             v56 = v54 + 36 * v52; /*0x584bb2*/
             if ( *(unsigned int *)(v56 + 16) < v55 /*0x584bd8*/
@@ -1530,11 +1530,11 @@ MapClass * * Radar::RenderMinimap()
   v96 = this->u32_149C; /*0x656f83*/
   v93 = v10; /*0x656f87*/
   v101 = v8; /*0x656f8b*/
-  LOWORD(v11) = Math::RoundToInt((double)v10 * this->u32_1488 + (double)v96); /*0x656f9d*/
+  (v11) = ((v11) & ~0xFFFF) | ((Math::RoundToInt((double)v10 * this->u32_1488 + (double)v96)) & 0xFFFF); /*0x656f9d*/
   v12 = v7 - this->u32_1498; /*0x656fac*/
   v93 = v11; /*0x656fae*/
   v101 += v12; /*0x656fb4*/
-  LOWORD(v13) = Math::RoundToInt((double)v101 * this->u32_1488 + (double)this->u32_14A0); /*0x656fc8*/
+  (v13) = ((v13) & ~0xFFFF) | ((Math::RoundToInt((double)v101 * this->u32_1488 + (double)this->u32_14A0)) & 0xFFFF); /*0x656fc8*/
   v101 = v13; /*0x656fd1*/
   if ( v93 == v96 - 1 ) /*0x656fdc*/
     ++v93; /*0x656fdf*/
@@ -1546,17 +1546,17 @@ MapClass * * Radar::RenderMinimap()
   this->u32_14E4 = 1; /*0x65700d*/
   this->u32_14E8 = 1; /*0x657010*/
   v101 = 2 * dword_886FA8; /*0x65701c*/
-  LOWORD(v16) = Math::RoundToInt(v14); /*0x65702c*/
+  (v16) = ((v16) & ~0xFFFF) | ((Math::RoundToInt(v14)) & 0xFFFF); /*0x65702c*/
   v17 = 30.0 / this->u32_1488; /*0x657037*/
   this->u32_14E4 = v16; /*0x65703d*/
   v101 = 2 * dword_886FAC; /*0x65704c*/
   *(float *)&v96 = v17; /*0x657050*/
-  LOWORD(v18) = Math::RoundToInt(v14); /*0x65705c*/
+  (v18) = ((v18) & ~0xFFFF) | ((Math::RoundToInt(v14)) & 0xFFFF); /*0x65705c*/
   this->u32_14E8 = v18; /*0x657061*/
-  LOWORD(v19) = Math::RoundToInt(v14); /*0x65706f*/
+  (v19) = ((v19) & ~0xFFFF) | ((Math::RoundToInt(v14)) & 0xFFFF); /*0x65706f*/
   v93 = v19; /*0x657074*/
   v101 = 2 * dword_886FAC; /*0x657082*/
-  LOWORD(v20) = Math::RoundToInt((double)(2 * dword_886FAC) / *(float *)&v96 * 0.5); /*0x657094*/
+  (v20) = ((v20) & ~0xFFFF) | ((Math::RoundToInt((double)(2 * dword_886FAC) / *(float *)&v96 * 0.5)) & 0xFFFF); /*0x657094*/
   this->u32_14DC -= v93; /*0x6570a2*/
   this->u32_14E0 -= v20; /*0x6570aa*/
   v21 = this->u32_14DC; /*0x6570ad*/

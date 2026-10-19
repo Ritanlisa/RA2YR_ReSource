@@ -456,7 +456,7 @@ bool FogOfWar_Get(IUnknown * aP0)
   {
     v9 = *aP0 / 256; /*0x586559*/
     HIWORD(v12) = aP0[1] / 256 - v1 / 2; /*0x586580*/
-    LOWORD(v12) = v9 - v1 / 2; /*0x586585*/
+    (v12) = ((v12) & ~0xFFFF) | ((v9 - v1 / 2) & 0xFFFF); /*0x586585*/
     v6 = (__int16)v12 + ((short)(((v12) >> 16) & 0xFFFF) << 9); /*0x586593*/
     if ( v6 >= 0x40000 || (NeighbourContent = *(CellClass **)(dword_87F924 + 4 * v6)) == 0 ) /*0x5865a9*/
     {

@@ -241,7 +241,7 @@ char Cell::CreateCrater(int a0, int a1, int a2, int a3, char a4)
     v22 = *(_DWORD *)(v12 + 8); /*0x6d2b0f*/
     v39[1] = v21; /*0x6d2b12*/
     v23 = *(_DWORD *)(v12 + 12); /*0x6d2b16*/
-    LOBYTE(v12) = (_BYTE)g_CraterPool; /*0x6d2b19*/
+    (v12) = ((v12) & ~0xFF) | (((_BYTE)g_CraterPool) & 0xFF); /*0x6d2b19*/
     v39[2] = v22; /*0x6d2b1e*/
     v39[3] = v23; /*0x6d2b27*/
     LOBYTE(v39[4]) = v20; /*0x6d2b32*/
@@ -1039,7 +1039,7 @@ bool gamemd::TEventClass::Execute(int a0, int a1, ra2::game::ObjectClass* a2, in
       return v18; /*0x71eb72*/
     case 28: /*0x71e964*/
       ScenarioClass::GetGlobalStateByID((ScenarioClass *)dword_A8B230, this->TEventClass_field_34, &a6); /*0x71eb84*/
-      LOBYTE(v18) = (_BYTE)a6 == 0; /*0x71eb95*/
+      (v18) = ((v18) & ~0xFF) | (((_BYTE)a6 == 0) & 0xFF); /*0x71eb95*/
       return v18; /*0x71eb9b*/
     case 36: /*0x71e964*/
       ScenarioClass::GetLocalStateByID((ScenarioClass *)dword_A8B230, this->TEventClass_field_34, &a6); /*0x71ebad*/
@@ -1047,15 +1047,15 @@ bool gamemd::TEventClass::Execute(int a0, int a1, ra2::game::ObjectClass* a2, in
       return v18; /*0x71ebbd*/
     case 37: /*0x71e964*/
       ScenarioClass::GetLocalStateByID((ScenarioClass *)dword_A8B230, this->TEventClass_field_34, &a6); /*0x71ebcf*/
-      LOBYTE(v18) = (_BYTE)a6 == 0; /*0x71ebe0*/
+      (v18) = ((v18) & ~0xFF) | (((_BYTE)a6 == 0) & 0xFF); /*0x71ebe0*/
       return v18; /*0x71ebe6*/
     case 45: /*0x71e964*/
       return (int)dword_A8B230[378].vtable1 <= this->TEventClass_field_34; /*0x71eb03*/
     case 46: /*0x71e964*/
-      LOBYTE(v18) = (int)dword_A8B230[378].vtable1 >= this->TEventClass_field_34; /*0x71eb1f*/
+      (v18) = ((v18) & ~0xFF) | (((int)dword_A8B230[378].vtable1 >= this->TEventClass_field_34) & 0xFF); /*0x71eb1f*/
       return v18; /*0x71eb25*/
     case 47: /*0x71e964*/
-      LOBYTE(v18) = this->TEventClass_field_34 <= *(_DWORD *)&((unsigned int *)&stru_A8EB00)[416] / 15; /*0x71eb49*/
+      (v18) = ((v18) & ~0xFF) | ((this->TEventClass_field_34 <= *(_DWORD *)&((unsigned int *)&stru_A8EB00)[416] / 15) & 0xFF); /*0x71eb49*/
       return v18; /*0x71eb50*/
     case 60: /*0x71e964*/
       v10 = -1; /*0x71e971*/
@@ -1292,7 +1292,7 @@ bool gamemd::TEventClass::Execute(int a0, int a1, ra2::game::ObjectClass* a2, in
           fstp st
         }
         Math::Sqrt(v57); /*0x71ee38*/
-        LOWORD(v18) = Math::RoundToInt(v7); /*0x71ee40*/
+        (v18) = ((v18) & ~0xFFFF) | ((Math::RoundToInt(v7)) & 0xFFFF); /*0x71ee40*/
         (v18) = ((v18) & ~0xFF) | ((v18 <= 1280) & 0xFF); /*0x71ee4d*/
         return v18; /*0x71ee54*/
       }
@@ -2082,11 +2082,11 @@ bool gamemd::DisplayClass::ConvertAction(gamemd::Vector2D<short> const& a0, bool
       v23 = &byte_885180[3 * v22]; /*0x4ab0ed*/
       v21 += 2; /*0x4ab0f4*/
       LOWORD(a5) = *(_WORD *)v23; /*0x4ab0fa*/
-      LOWORD(v6) = (unsigned __int8)(BYTE1(a5) >> g_BitMask_Blue); /*0x4ab114*/
-      LOWORD(v22) = (unsigned __int8)((unsigned __int8)v23[2] >> g_BitMask_Red); /*0x4ab128*/
+      (v6) = ((v6) & ~0xFFFF) | (((unsigned __int8)(BYTE1(a5) >> g_BitMask_Blue)) & 0xFFFF); /*0x4ab114*/
+      (v22) = ((v22) & ~0xFFFF) | (((unsigned __int8)((unsigned __int8)v23[2] >> g_BitMask_Red)) & 0xFFFF); /*0x4ab128*/
       v24 = v22 << g_BitShift_Blue; /*0x4ab12c*/
       v25 = v24 | (v6 << g_BitMask_Green); /*0x4ab134*/
-      LOWORD(v24) = (unsigned __int8)((unsigned __int8)a5 >> g_BitShift_Green_0); /*0x4ab142*/
+      (v24) = ((v24) & ~0xFFFF) | (((unsigned __int8)((unsigned __int8)a5 >> g_BitShift_Green_0)) & 0xFFFF); /*0x4ab142*/
       v6 = (v24 << g_BitShift_Red) | v25; /*0x4ab148*/
       ++v20; /*0x4ab14a*/
       *(_WORD *)(v21 - 2) = v6; /*0x4ab14b*/
@@ -2116,11 +2116,11 @@ bool gamemd::DisplayClass::ConvertAction(gamemd::Vector2D<short> const& a0, bool
       v31 = &byte_885180[3 * v30]; /*0x4ab1da*/
       v29 += 2; /*0x4ab1e1*/
       v57 = *(_WORD *)v31; /*0x4ab1e7*/
-      LOWORD(v6) = (unsigned __int8)(HIBYTE(v57) >> g_BitMask_Blue); /*0x4ab201*/
-      LOWORD(v30) = (unsigned __int8)((unsigned __int8)v31[2] >> g_BitMask_Red); /*0x4ab215*/
+      (v6) = ((v6) & ~0xFFFF) | (((unsigned __int8)((((v57) >> 8) & 0xFF) >> g_BitMask_Blue)) & 0xFFFF); /*0x4ab201*/
+      (v30) = ((v30) & ~0xFFFF) | (((unsigned __int8)((unsigned __int8)v31[2] >> g_BitMask_Red)) & 0xFFFF); /*0x4ab215*/
       v32 = v30 << g_BitShift_Blue; /*0x4ab219*/
       v33 = v32 | (v6 << g_BitMask_Green); /*0x4ab221*/
-      LOWORD(v32) = (unsigned __int8)((unsigned __int8)v57 >> g_BitShift_Green_0); /*0x4ab22f*/
+      (v32) = ((v32) & ~0xFFFF) | (((unsigned __int8)((unsigned __int8)v57 >> g_BitShift_Green_0)) & 0xFFFF); /*0x4ab22f*/
       v6 = (v32 << g_BitShift_Red) | v33; /*0x4ab235*/
       ++v28; /*0x4ab237*/
       *(_WORD *)(v29 - 2) = v6; /*0x4ab238*/
@@ -2128,13 +2128,13 @@ bool gamemd::DisplayClass::ConvertAction(gamemd::Vector2D<short> const& a0, bool
       while ( v28 < 8 ); /*0x4ab23f*/
       break; /*0x4ab23f*/
     default:
-      LOWORD(v17) = (unsigned __int8)((unsigned __int8)this->__pad_11B4[25] >> g_BitMask_Blue); /*0x4ab261*/
-      LOWORD(v13) = (unsigned __int8)((unsigned __int8)this->__pad_11B4[26] >> g_BitMask_Red); /*0x4ab279*/
+      (v17) = ((v17) & ~0xFFFF) | (((unsigned __int8)((unsigned __int8)this->__pad_11B4[25] >> g_BitMask_Blue)) & 0xFFFF); /*0x4ab261*/
+      (v13) = ((v13) & ~0xFFFF) | (((unsigned __int8)((unsigned __int8)this->__pad_11B4[26] >> g_BitMask_Red)) & 0xFFFF); /*0x4ab279*/
       v34 = v13 << g_BitShift_Blue; /*0x4ab27d*/
       v35 = v34 | (v17 << g_BitMask_Green); /*0x4ab285*/
-      LOBYTE(v34) = (unsigned __int8)*v14 >> g_BitShift_Green_0; /*0x4ab289*/
+      (v34) = ((v34) & ~0xFF) | (((unsigned __int8)*v14 >> g_BitShift_Green_0) & 0xFF); /*0x4ab289*/
       v43 = 0; /*0x4ab291*/
-      LOWORD(v34) = (unsigned __int8)v34; /*0x4ab293*/
+      (v34) = ((v34) & ~0xFFFF) | (((unsigned __int8)v34) & 0xFFFF); /*0x4ab293*/
       v36 = (v34 << g_BitShift_Red) | v35; /*0x4ab29f*/
       v42 = *(_DWORD *)(*(_DWORD *)&stru_87F5F0.__pad_58[128] + 372); /*0x4ab2a1*/
       *(_WORD *)(v42 + 2) = v36; /*0x4ab2a7*/
@@ -2144,11 +2144,11 @@ bool gamemd::DisplayClass::ConvertAction(gamemd::Vector2D<short> const& a0, bool
       v37 = v43 % 256; /*0x4ab2c8*/
       v38 = &byte_885180[3 * (v43 % 256)]; /*0x4ab2c9*/
       v39 += 2; /*0x4ab2d0*/
-      LOWORD(v42) = (unsigned __int8)((unsigned __int8)HIBYTE(*(_WORD *)v38) >> g_BitMask_Blue); /*0x4ab2f0*/
-      LOWORD(v37) = (unsigned __int8)((unsigned __int8)v38[2] >> g_BitMask_Red); /*0x4ab304*/
+      (v42) = ((v42) & ~0xFFFF) | (((unsigned __int8)((unsigned __int8)HIBYTE(*(_WORD *)v38) >> g_BitMask_Blue)) & 0xFFFF); /*0x4ab2f0*/
+      (v37) = ((v37) & ~0xFFFF) | (((unsigned __int8)((unsigned __int8)v38[2] >> g_BitMask_Red)) & 0xFFFF); /*0x4ab304*/
       v40 = v37 << g_BitShift_Blue; /*0x4ab308*/
       v41 = v40 | (v42 << g_BitMask_Green); /*0x4ab310*/
-      LOWORD(v40) = (unsigned __int8)((unsigned __int8)*(_WORD *)v38 >> g_BitShift_Green_0); /*0x4ab31e*/
+      (v40) = ((v40) & ~0xFFFF) | (((unsigned __int8)((unsigned __int8)*(_WORD *)v38 >> g_BitShift_Green_0)) & 0xFFFF); /*0x4ab31e*/
       v42 = (v40 << g_BitShift_Red) | v41; /*0x4ab324*/
       ++v43; /*0x4ab326*/
       *(_WORD *)(v39 - 2) = v42; /*0x4ab327*/
@@ -3520,7 +3520,7 @@ bool gamemd::XSurface::DrawLineModulated(gamemd::Vector2D<int> const& a0, gamemd
           fild [esp+78h+arg_14]
           fmulp st(1), st
         }
-        LOWORD(v27) = Math::RoundToInt(v9); /*0x4bbe0b*/
+        (v27) = ((v27) & ~0xFFFF) | ((Math::RoundToInt(v9)) & 0xFFFF); /*0x4bbe0b*/
         v28 = abs32(v27); /*0x4bbe13*/
         if ( v22 >= v18 ) /*0x4bbe17*/
           v106 = (_DWORD *)(v22 - v28); /*0x4bbe28*/
@@ -3545,7 +3545,7 @@ bool gamemd::XSurface::DrawLineModulated(gamemd::Vector2D<int> const& a0, gamemd
           fstp st
         }
         Math::Sqrt(v81); /*0x4bbe73*/
-        LOWORD(v29) = Math::RoundToInt(v9); /*0x4bbe78*/
+        (v29) = ((v29) & ~0xFFFF) | ((Math::RoundToInt(v9)) & 0xFFFF); /*0x4bbe78*/
         v114 = v29; /*0x4bbe81*/
         v93 = v23 - v95[1]; /*0x4bbe90*/
         v94 = v24 - v95[2]; /*0x4bbe94*/
@@ -3565,7 +3565,7 @@ bool gamemd::XSurface::DrawLineModulated(gamemd::Vector2D<int> const& a0, gamemd
           fstp st
         }
         Math::Sqrt(v82); /*0x4bbebc*/
-        LOWORD(v30) = Math::RoundToInt(v9); /*0x4bbec4*/
+        (v30) = ((v30) & ~0xFFFF) | ((Math::RoundToInt(v9)) & 0xFFFF); /*0x4bbec4*/
         v115 = v30; /*0x4bbec9*/
         __asm { fild [esp+78h+arg_14] } /*0x4bbed2*/
         v116 = v22 - v18; /*0x4bbedb*/
@@ -3575,7 +3575,7 @@ bool gamemd::XSurface::DrawLineModulated(gamemd::Vector2D<int> const& a0, gamemd
           fild [esp+78h+arg_14]
           fmulp st(1), st
         }
-        LOWORD(v31) = Math::RoundToInt(v9); /*0x4bbeef*/
+        (v31) = ((v31) & ~0xFFFF) | ((Math::RoundToInt(v9)) & 0xFFFF); /*0x4bbeef*/
         v32 = abs32(v31); /*0x4bbef7*/
         if ( v18 <= v22 ) /*0x4bbefb*/
           v110 = v18 + v32; /*0x4bbf0a*/
@@ -4024,7 +4024,7 @@ bool gamemd::XSurface::DrawLineZBuf(gamemd::Vector2D<int> const& a0, gamemd::Vec
       fstp st
     }
     Math::Sqrt(v72); /*0x4bfe5d*/
-    LOWORD(v26) = Math::RoundToInt(v9); /*0x4bfe62*/
+    (v26) = ((v26) & ~0xFFFF) | ((Math::RoundToInt(v9)) & 0xFFFF); /*0x4bfe62*/
     v102 = v26; /*0x4bfe6d*/
     LODWORD(v87) = v24 - v88[1]; /*0x4bfe7c*/
     __asm { fild dword ptr [esp+7Ch+var_48+4] } /*0x4bfe82*/
@@ -4044,7 +4044,7 @@ bool gamemd::XSurface::DrawLineZBuf(gamemd::Vector2D<int> const& a0, gamemd::Vec
       fstp st
     }
     Math::Sqrt(v73); /*0x4bfeaa*/
-    LOWORD(v27) = Math::RoundToInt(v9); /*0x4bfeb2*/
+    (v27) = ((v27) & ~0xFFFF) | ((Math::RoundToInt(v9)) & 0xFFFF); /*0x4bfeb2*/
     v103 = v27; /*0x4bfeb7*/
     __asm { fild [esp+74h+arg_10] } /*0x4bfec0*/
     v104 = v19 - v23; /*0x4bfec9*/
@@ -4054,7 +4054,7 @@ bool gamemd::XSurface::DrawLineZBuf(gamemd::Vector2D<int> const& a0, gamemd::Vec
       fild [esp+74h+arg_10]
       fmulp st(1), st
     }
-    LOWORD(v28) = Math::RoundToInt(v9); /*0x4bfedd*/
+    (v28) = ((v28) & ~0xFFFF) | ((Math::RoundToInt(v9)) & 0xFFFF); /*0x4bfedd*/
     v29 = abs32(v28); /*0x4bfee5*/
     if ( v19 >= v23 ) /*0x4bfee9*/
       v97 = (_DWORD *)(v19 - v29); /*0x4bfef7*/
@@ -4079,7 +4079,7 @@ bool gamemd::XSurface::DrawLineZBuf(gamemd::Vector2D<int> const& a0, gamemd::Vec
     fstp st
   }
   Math::Sqrt(v74); /*0x4bff3f*/
-  LOWORD(v30) = Math::RoundToInt(v9); /*0x4bff44*/
+  (v30) = ((v30) & ~0xFFFF) | ((Math::RoundToInt(v9)) & 0xFFFF); /*0x4bff44*/
   v107 = v30; /*0x4bff49*/
   LODWORD(v87) = v24 - v88[1]; /*0x4bff56*/
   __asm { fild dword ptr [esp+7Ch+var_48+4] } /*0x4bff5e*/
@@ -4099,7 +4099,7 @@ bool gamemd::XSurface::DrawLineZBuf(gamemd::Vector2D<int> const& a0, gamemd::Vec
     fstp st
   }
   Math::Sqrt(v75); /*0x4bff88*/
-  LOWORD(v31) = Math::RoundToInt(v9); /*0x4bff90*/
+  (v31) = ((v31) & ~0xFFFF) | ((Math::RoundToInt(v9)) & 0xFFFF); /*0x4bff90*/
   v108 = v31; /*0x4bff95*/
   __asm { fild [esp+74h+arg_14] } /*0x4bff9e*/
   v109 = v19 - v23; /*0x4bffa7*/
@@ -4109,7 +4109,7 @@ bool gamemd::XSurface::DrawLineZBuf(gamemd::Vector2D<int> const& a0, gamemd::Vec
     fild [esp+74h+arg_14]
     fmulp st(1), st
   }
-  LOWORD(v32) = Math::RoundToInt(v9); /*0x4bffbb*/
+  (v32) = ((v32) & ~0xFFFF) | ((Math::RoundToInt(v9)) & 0xFFFF); /*0x4bffbb*/
   v33 = abs32(v32); /*0x4bffc3*/
   if ( v23 <= v19 ) /*0x4bffc7*/
   {
@@ -4423,7 +4423,7 @@ bool gamemd::XSurface::DrawLineZBufColored(gamemd::Vector2D<int> const& a0, game
   }
   double v8; // st7
   int v11; // eax
-  LOWORD(v11) = Math::RoundToInt(v8); /*0x4bdf2d*/
+  (v11) = ((v11) & ~0xFFFF) | ((Math::RoundToInt(v8)) & 0xFFFF); /*0x4bdf2d*/
   int v12 = v11; // ebx /*0x4bdf34*/
   int v91; // [esp+3Ch] [ebp-4Ch]
   v91 = v11; /*0x4bdf39*/
@@ -4435,7 +4435,7 @@ bool gamemd::XSurface::DrawLineZBufColored(gamemd::Vector2D<int> const& a0, game
     fmul [esp+7Ch+arg_10]
   }
   int v13; // eax
-  LOWORD(v13) = Math::RoundToInt(v8); /*0x4bdf52*/
+  (v13) = ((v13) & ~0xFFFF) | ((Math::RoundToInt(v8)) & 0xFFFF); /*0x4bdf52*/
   int v14 = v13; // ebp /*0x4bdf59*/
   int v90; // [esp+38h] [ebp-50h]
   v90 = v13; /*0x4bdf5e*/
@@ -4447,7 +4447,7 @@ bool gamemd::XSurface::DrawLineZBufColored(gamemd::Vector2D<int> const& a0, game
     fmul [esp+7Ch+arg_10]
   }
   int v15; // eax
-  LOWORD(v15) = Math::RoundToInt(v8); /*0x4bdf77*/
+  (v15) = ((v15) & ~0xFFFF) | ((Math::RoundToInt(v8)) & 0xFFFF); /*0x4bdf77*/
   int v89; // [esp+34h] [ebp-54h]
   v89 = v15; /*0x4bdf7f*/
   if ( v12 < 8 && v14 < 8 && v15 < 8 ) /*0x4bdf8d*/
@@ -4528,7 +4528,7 @@ bool gamemd::XSurface::DrawLineZBufColored(gamemd::Vector2D<int> const& a0, game
     double v75; // [esp+4h] [ebp-84h]
     Math::Sqrt(v75); /*0x4be0c1*/
     int v30; // eax
-    LOWORD(v30) = Math::RoundToInt(v8); /*0x4be0c6*/
+    (v30) = ((v30) & ~0xFFFF) | ((Math::RoundToInt(v8)) & 0xFFFF); /*0x4be0c6*/
     a8 = v30; /*0x4be0d1*/
     *(_DWORD *)&v93[4] = v28 - v94[1]; /*0x4be0e0*/
     __asm { fild dword ptr [esp+84h+var_44+4] } /*0x4be0e6*/
@@ -4550,7 +4550,7 @@ bool gamemd::XSurface::DrawLineZBufColored(gamemd::Vector2D<int> const& a0, game
     double v76; // [esp+4h] [ebp-84h]
     Math::Sqrt(v76); /*0x4be10e*/
     int v31; // eax
-    LOWORD(v31) = Math::RoundToInt(v8); /*0x4be116*/
+    (v31) = ((v31) & ~0xFFFF) | ((Math::RoundToInt(v8)) & 0xFFFF); /*0x4be116*/
     a8 = v31; /*0x4be11b*/
     __asm { fild [esp+7Ch+arg_18] } /*0x4be124*/
     a8 = v23 - v27; /*0x4be12d*/
@@ -4561,7 +4561,7 @@ bool gamemd::XSurface::DrawLineZBufColored(gamemd::Vector2D<int> const& a0, game
       fmulp st(1), st
     }
     int v32; // eax
-    LOWORD(v32) = Math::RoundToInt(v8); /*0x4be141*/
+    (v32) = ((v32) & ~0xFFFF) | ((Math::RoundToInt(v8)) & 0xFFFF); /*0x4be141*/
     unsigned int v33; // eax
     v33 = abs32(v32); /*0x4be149*/
     if ( v23 >= v27 ) /*0x4be14d*/
@@ -4589,7 +4589,7 @@ bool gamemd::XSurface::DrawLineZBufColored(gamemd::Vector2D<int> const& a0, game
     double v77; // [esp+4h] [ebp-84h]
     Math::Sqrt(v77); /*0x4be1a9*/
     int v34; // eax
-    LOWORD(v34) = Math::RoundToInt(v8); /*0x4be1ae*/
+    (v34) = ((v34) & ~0xFFFF) | ((Math::RoundToInt(v8)) & 0xFFFF); /*0x4be1ae*/
     int v110; // [esp+9Ch] [ebp+14h]
     v110 = v34; /*0x4be1b3*/
     *(_DWORD *)&v93[4] = v28 - v94[1]; /*0x4be1c0*/
@@ -4612,7 +4612,7 @@ bool gamemd::XSurface::DrawLineZBufColored(gamemd::Vector2D<int> const& a0, game
     double v78; // [esp+4h] [ebp-84h]
     Math::Sqrt(v78); /*0x4be1f2*/
     int v35; // eax
-    LOWORD(v35) = Math::RoundToInt(v8); /*0x4be1fa*/
+    (v35) = ((v35) & ~0xFFFF) | ((Math::RoundToInt(v8)) & 0xFFFF); /*0x4be1fa*/
     int v111; // [esp+9Ch] [ebp+14h]
     v111 = v35; /*0x4be1ff*/
     __asm { fild [esp+7Ch+arg_10] } /*0x4be208*/
@@ -4625,7 +4625,7 @@ bool gamemd::XSurface::DrawLineZBufColored(gamemd::Vector2D<int> const& a0, game
       fmulp st(1), st
     }
     int v36; // eax
-    LOWORD(v36) = Math::RoundToInt(v8); /*0x4be225*/
+    (v36) = ((v36) & ~0xFFFF) | ((Math::RoundToInt(v8)) & 0xFFFF); /*0x4be225*/
     unsigned int v37; // eax
     v37 = abs32(v36); /*0x4be22d*/
     if ( v27 <= v23 ) /*0x4be231*/
@@ -4713,8 +4713,8 @@ bool gamemd::XSurface::DrawLineZBufColored(gamemd::Vector2D<int> const& a0, game
             unsigned __int16 v71; // di
             v71 = *(_WORD *)&v108[v83]; /*0x4be80b*/
             __int16 v115; // [esp+9Ch] [ebp+14h]
-            LOBYTE(v115) = (unsigned __int8)(v71 >> g_BitShift_Red) << g_BitShift_Green_0; /*0x4be82a*/
-            HIBYTE(v115) = (unsigned __int8)(v71 >> g_BitMask_Green) << g_BitMask_Blue; /*0x4be845*/
+            (v115) = ((v115) & ~0xFF) | (((unsigned __int8)(v71 >> g_BitShift_Red) << g_BitShift_Green_0) & 0xFF); /*0x4be82a*/
+            (v115) = ((v115) & ~(0xFF << 8)) | ((((unsigned __int8)(v71 >> g_BitMask_Green) << g_BitMask_Blue) & 0xFF) << 8); /*0x4be845*/
             LOWORD(a7) = v115; /*0x4be861*/
             BYTE2(a7) = (unsigned __int8)(v71 >> g_BitShift_Blue) << g_BitMask_Red; /*0x4be870*/
             __int16 v72; // ax
@@ -4791,8 +4791,8 @@ bool gamemd::XSurface::DrawLineZBufColored(gamemd::Vector2D<int> const& a0, game
             unsigned __int16 v61; // di
             v61 = *(_WORD *)&v108[2 * v82]; /*0x4be603*/
             __int16 v114; // [esp+9Ch] [ebp+14h]
-            LOBYTE(v114) = (unsigned __int8)(v61 >> g_BitShift_Red) << g_BitShift_Green_0; /*0x4be622*/
-            HIBYTE(v114) = (unsigned __int8)(v61 >> g_BitMask_Green) << g_BitMask_Blue; /*0x4be63d*/
+            (v114) = ((v114) & ~0xFF) | (((unsigned __int8)(v61 >> g_BitShift_Red) << g_BitShift_Green_0) & 0xFF); /*0x4be622*/
+            (v114) = ((v114) & ~(0xFF << 8)) | ((((unsigned __int8)(v61 >> g_BitMask_Green) << g_BitMask_Blue) & 0xFF) << 8); /*0x4be63d*/
             LOWORD(a7) = v114; /*0x4be659*/
             BYTE2(a7) = (unsigned __int8)(v61 >> g_BitShift_Blue) << g_BitMask_Red; /*0x4be668*/
             __int16 v62; // ax
@@ -4873,8 +4873,8 @@ bool gamemd::XSurface::DrawLineZBufColored(gamemd::Vector2D<int> const& a0, game
           unsigned __int16 v52; // di
           v52 = *(_WORD *)&v108[v81]; /*0x4be406*/
           __int16 v113; // [esp+9Ch] [ebp+14h]
-          LOBYTE(v113) = (unsigned __int8)(v52 >> g_BitShift_Red) << g_BitShift_Green_0; /*0x4be425*/
-          HIBYTE(v113) = (unsigned __int8)(v52 >> g_BitMask_Green) << g_BitMask_Blue; /*0x4be440*/
+          (v113) = ((v113) & ~0xFF) | (((unsigned __int8)(v52 >> g_BitShift_Red) << g_BitShift_Green_0) & 0xFF); /*0x4be425*/
+          (v113) = ((v113) & ~(0xFF << 8)) | ((((unsigned __int8)(v52 >> g_BitMask_Green) << g_BitMask_Blue) & 0xFF) << 8); /*0x4be440*/
           LOWORD(a7) = v113; /*0x4be45c*/
           BYTE2(a7) = (unsigned __int8)(v52 >> g_BitShift_Blue) << g_BitMask_Red; /*0x4be46b*/
           __int16 v53; // ax
@@ -5398,11 +5398,11 @@ bool gamemd::XSurface::FillRectWithFlags(gamemd::RectangleStruct const& a0, game
   DSurface *thisa; // [esp+70h] [ebp+4h]
   thisa = 0; /*0x4bb987*/
   LOWORD(a2) = (unsigned __int8)(*(_BYTE *)(a3 + 2) >> g_BitMask_Red); /*0x4bb99a*/
-  LOWORD(v15) = (unsigned __int8)(*(_BYTE *)(a3 + 1) >> g_BitMask_Blue); /*0x4bb9b1*/
+  (v15) = ((v15) & ~0xFFFF) | (((unsigned __int8)(*(_BYTE *)(a3 + 1) >> g_BitMask_Blue)) & 0xFFFF); /*0x4bb9b1*/
   int v17 = v15 << g_BitMask_Green; // edx /*0x4bb9b5*/
   int v18; // ebx
   v18 = v17 | (a2 << g_BitShift_Blue); /*0x4bb9c5*/
-  LOWORD(v17) = (unsigned __int8)(*(_BYTE *)a3 >> g_BitShift_Green_0); /*0x4bb9ca*/
+  (v17) = ((v17) & ~0xFFFF) | (((unsigned __int8)(*(_BYTE *)a3 >> g_BitShift_Green_0)) & 0xFFFF); /*0x4bb9ca*/
   int v19; // ebx
   v19 = (v17 << g_BitShift_Red) | v18; /*0x4bb9d2*/
   __int16 i; // [esp+38h] [ebp-34h]
@@ -5442,9 +5442,9 @@ bool gamemd::XSurface::FillRectWithFlags(gamemd::RectangleStruct const& a0, game
           break; /*0x4bbabb*/
         v11 = v36; /*0x4bba5d*/
       }
-      LOWORD(v12) = v30; /*0x4bbabd*/
+      (v12) = ((v12) & ~0xFFFF) | ((v30) & 0xFFFF); /*0x4bbabd*/
       (v19) = ((v19) & ~0xFFFF) | ((i) & 0xFFFF); /*0x4bbac1*/
-      LOWORD(v11) = v31; /*0x4bbac5*/
+      (v11) = ((v11) & ~0xFFFF) | ((v31) & 0xFFFF); /*0x4bbac5*/
       v16 = v45; /*0x4bbac9*/
     }
   }
@@ -7192,8 +7192,8 @@ void gamemd::DisplayClass::LeftMouseButtonUp(gamemd::Vector3D<int> const& a0, ga
   if ( (*(int (__thiscall **)(void *))(*(_DWORD *)this->q11A8 + 44))(this->q11A8) == 7 ) /*0x4aba14*/
   {
     v8 = a3[1] + *(_WORD *)&this->__pad_41E[3420]; /*0x4aba27*/
-    LOWORD(v55) = *(_WORD *)&this->__pad_41E[3418] + *a3; /*0x4aba2b*/
-    HIWORD(v55) = v8; /*0x4aba30*/
+    (v55) = ((v55) & ~0xFFFF) | ((*(_WORD *)&this->__pad_41E[3418] + *a3) & 0xFFFF); /*0x4aba2b*/
+    (v55) = ((v55) & ~(0xFFFF << 16)) | (((v8) & 0xFFFF) << 16); /*0x4aba30*/
     v9 = *(_DWORD *)&this->__pad_41E[3422]; /*0x4aba39*/
     *(_DWORD *)v56 = v55; /*0x4aba43*/
     this->__pad_41E[3426] = GetBuildingPlacement( /*0x4aba5e*/
@@ -7228,9 +7228,9 @@ void gamemd::DisplayClass::LeftMouseButtonUp(gamemd::Vector3D<int> const& a0, ga
     LOBYTE(v56[0]) = 0; /*0x4abaf0*/
   v12 = a3[1] + *(_WORD *)&this->__pad_41E[3420]; /*0x4abb06*/
   v13 = *(_DWORD *)&this->q1198[12]; /*0x4abb0a*/
-  LOWORD(v55) = *(_WORD *)&this->__pad_41E[3418] + *a3; /*0x4abb10*/
+  (v55) = ((v55) & ~0xFFFF) | ((*(_WORD *)&this->__pad_41E[3418] + *a3) & 0xFFFF); /*0x4abb10*/
   q11A8 = this->q11A8; /*0x4abb15*/
-  HIWORD(v55) = v12; /*0x4abb1b*/
+  (v55) = ((v55) & ~(0xFFFF << 16)) | (((v12) & 0xFFFF) << 16); /*0x4abb1b*/
   v50 = LOBYTE(v56[0]); /*0x4abb38*/
   v48 = (*(int (__thiscall **)(void *))(*(_DWORD *)q11A8 + 64))(q11A8); /*0x4abb3c*/
   v15 = (*(int (__thiscall **)(int))(*(_DWORD *)v13 + 44))(v13); /*0x4abb41*/
@@ -9071,7 +9071,7 @@ void gamemd::BuildingClass::CreateDestructionCrater()
   /* X11: vtable install elided (X68 star-arith-named, RHS BuildingClass_Vtable4) */  /*0x43ba0e*/
   AbstractClass::GenerateUniqueID((AbstractClass *)(this + 4)); /*0x43ba15*/
   *(_DWORD *)(this + 1516) = 0; /*0x43ba22*/
-  LOBYTE(v6) = 0; /*0x43ba28*/
+  (v6) = ((v6) & ~0xFF) | ((0) & 0xFF); /*0x43ba28*/
   *(_DWORD *)(this + 1520) = 0; /*0x43ba2a*/
   *(_DWORD *)(this + 1524) = 0; /*0x43ba30*/
   *(_DWORD *)(this + 1800) = 0; /*0x43ba36*/
@@ -9080,7 +9080,7 @@ void gamemd::BuildingClass::CreateDestructionCrater()
   *(_DWORD *)(this + 1808) = 0; /*0x43ba43*/
   if ( v7 ) /*0x43ba46*/
   {
-    HIBYTE(v6) = *(_BYTE *)(v7 + 5904); /*0x43ba48*/
+    (v6) = ((v6) & ~(0xFF << 8)) | (((*(_BYTE *)(v7 + 5904)) & 0xFF) << 8); /*0x43ba48*/
     LOWORD(a3) = v6; /*0x43ba52*/
     FacingClass::Update((char *)(this + 880), &a3); /*0x43ba5e*/
   }

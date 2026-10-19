@@ -843,9 +843,9 @@ LABEL_39:
   }
   while ( 1 ) /*0x57b4d0*/
   {
-    LOWORD(v33) = v9 + dword_88095C; /*0x57b4d0*/
+    (v33) = ((v33) & ~0xFFFF) | ((v9 + dword_88095C) & 0xFFFF); /*0x57b4d0*/
     v10 = (__int16)(v9 + dword_88095C); /*0x57b4d5*/
-    HIWORD(v33) = *(&dword_88095C + 1) + v30; /*0x57b4d8*/
+    (v33) = ((v33) & ~(0xFFFF << 16)) | (((*(&dword_88095C + 1) + v30) & 0xFFFF) << 16); /*0x57b4d8*/
     v11 = (__int16)(*(&dword_88095C + 1) + v30); /*0x57b4e1*/
     v31 = v33; /*0x57b4e4*/
     v12 = (__int16)v10 + v11; /*0x57b4e8*/
@@ -1765,7 +1765,7 @@ void* CreateCliffStraightMap(IUnknown * aP0)
         BuildingClass::AddUpgrade(&dword_87F7E8.field_0, (int)aP0); /*0x57e6e8*/
         v40 = LOWORD(aP0->ptr_0) + 1; /*0x57e6f4*/
         HIWORD(right) = HIWORD(aP0->ptr_0); /*0x57e6f6*/
-        LOWORD(right) = v40; /*0x57e6fb*/
+        (right) = ((right) & ~0xFFFF) | ((v40) & 0xFFFF); /*0x57e6fb*/
         v51[0] = right; /*0x57e708*/
         BuildingClass::AddUpgrade(&dword_87F7E8.field_0, (int)v51); /*0x57e712*/
         right = 1; /*0x57e723*/
@@ -1780,7 +1780,7 @@ void* CreateCliffStraightMap(IUnknown * aP0)
       v43 = v55; /*0x57e769*/
       Cell::SearchEnemies((int)v5, (unsigned __int16 *)v55); /*0x57e770*/
       Cell::SearchEnemies((int)v41, (unsigned __int16 *)v43); /*0x57e778*/
-      LOBYTE(v2) = Cell::SearchEnemies((int)v42, (unsigned __int16 *)v43); /*0x57e780*/
+      (v2) = ((v2) & ~0xFF) | ((Cell::SearchEnemies((int)v42, (unsigned __int16 *)v43)) & 0xFF); /*0x57e780*/
     }
   }
   return v2; /*0x57e785*/
@@ -2340,7 +2340,7 @@ void* CreateCliffStraightBridgeMap(IUnknown * aP0)
         BuildingClass::AddUpgrade(&dword_87F7E8.field_0, (int)aP0); /*0x57f155*/
         v40 = LOWORD(aP0->ptr_0) + 1; /*0x57f161*/
         HIWORD(right) = HIWORD(aP0->ptr_0); /*0x57f163*/
-        LOWORD(right) = v40; /*0x57f168*/
+        (right) = ((right) & ~0xFFFF) | ((v40) & 0xFFFF); /*0x57f168*/
         v51[0] = right; /*0x57f175*/
         BuildingClass::AddUpgrade(&dword_87F7E8.field_0, (int)v51); /*0x57f17f*/
         right = 1; /*0x57f190*/
@@ -2355,7 +2355,7 @@ void* CreateCliffStraightBridgeMap(IUnknown * aP0)
       v43 = v55; /*0x57f1d6*/
       Cell::SearchEnemies((int)v5, (unsigned __int16 *)v55); /*0x57f1dd*/
       Cell::SearchEnemies((int)v41, (unsigned __int16 *)v43); /*0x57f1e5*/
-      LOBYTE(v2) = Cell::SearchEnemies((int)v42, (unsigned __int16 *)v43); /*0x57f1ed*/
+      (v2) = ((v2) & ~0xFF) | ((Cell::SearchEnemies((int)v42, (unsigned __int16 *)v43)) & 0xFF); /*0x57f1ed*/
     }
   }
   return v2; /*0x57f1f2*/
@@ -2400,15 +2400,15 @@ char globalHelper_072230(ObjectClass * a1, int a2)
   v7 = v5[14] - g_Cell_BuildabilityLUT + 1; /*0x5722ce*/
   if ( v7 == dword_ABC1E8 || v7 == dword_AA0E38 ) /*0x5722d9*/
   {
-    LOBYTE(v7) = Cell::UpdateTileType((__int16 *)&a2, 1, 0); /*0x572327*/
+    (v7) = ((v7) & ~0xFF) | ((Cell::UpdateTileType((__int16 *)&a2, 1, 0)) & 0xFF); /*0x572327*/
   }
   else if ( v7 == g_TerrainSoundTable2 ) /*0x5722e3*/
   {
-    LOBYTE(v7) = Cell::SetTileType((__int16 *)&a2, g_Cell_BuildabilityLUT + g_TerrainSoundTable2, -1, -1, 0); /*0x5722f3*/
+    (v7) = ((v7) & ~0xFF) | ((Cell::SetTileType((__int16 *)&a2, g_Cell_BuildabilityLUT + g_TerrainSoundTable2, -1, -1, 0)) & 0xFF); /*0x5722f3*/
   }
   else if ( v7 == g_TerrainSoundTable2 + 2 ) /*0x572303*/
   {
-    LOBYTE(v7) = Cell::SetTileType((__int16 *)&a2, g_TerrainSoundTable2 + g_Cell_BuildabilityLUT + 2, -1, -1, 0); /*0x572315*/
+    (v7) = ((v7) & ~0xFF) | ((Cell::SetTileType((__int16 *)&a2, g_TerrainSoundTable2 + g_Cell_BuildabilityLUT + 2, -1, -1, 0)) & 0xFF); /*0x572315*/
   }
   return v7; /*0x5722f8*/
 
@@ -2453,15 +2453,15 @@ char globalHelper_072330(IUnknown * a1, int a2)
   v7 = v5[14] - g_Cell_BuildabilityLUT + 1; /*0x5723ce*/
   if ( v7 == dword_ABC2B4 || v7 == dword_AA1130 ) /*0x5723d9*/
   {
-    LOBYTE(v7) = Cell::UpdateTileType((__int16 *)&a2, 1, 0); /*0x572429*/
+    (v7) = ((v7) & ~0xFF) | ((Cell::UpdateTileType((__int16 *)&a2, 1, 0)) & 0xFF); /*0x572429*/
   }
   else if ( v7 == g_TerrainSoundTable2 ) /*0x5723e3*/
   {
-    LOBYTE(v7) = Cell::SetTileType((__int16 *)&a2, g_TerrainSoundTable2 + g_Cell_BuildabilityLUT + 1, -1, -1, 0); /*0x5723f5*/
+    (v7) = ((v7) & ~0xFF) | ((Cell::SetTileType((__int16 *)&a2, g_TerrainSoundTable2 + g_Cell_BuildabilityLUT + 1, -1, -1, 0)) & 0xFF); /*0x5723f5*/
   }
   else if ( v7 == g_TerrainSoundTable2 + 1 ) /*0x572405*/
   {
-    LOBYTE(v7) = Cell::SetTileType((__int16 *)&a2, g_TerrainSoundTable2 + g_Cell_BuildabilityLUT + 2, -1, -1, 0); /*0x572417*/
+    (v7) = ((v7) & ~0xFF) | ((Cell::SetTileType((__int16 *)&a2, g_TerrainSoundTable2 + g_Cell_BuildabilityLUT + 2, -1, -1, 0)) & 0xFF); /*0x572417*/
   }
   return v7; /*0x5723fa*/
 
@@ -2542,7 +2542,7 @@ unsigned int * E4Recv_578C50::sub_578C50(unsigned int * v9, int a3)
   v8 = v4 + this->M244 - v6; /*0x578cf0*/
   int v9; // [esp+28h] [ebp+8h]
   (v9) = ((v9) & ~0xFFFF) | ((v4 + v6 + 1 + (v3 + (v5 & 1) + v5 + (v3 & 1)) / 2) & 0xFFFF); /*0x578d34*/
-  HIWORD(v9) = (v5 - v3) / 2 + v8; /*0x578d3f*/
+  (v9) = ((v9) & ~(0xFFFF << 16)) | ((((v5 - v3) / 2 + v8) & 0xFFFF) << 16); /*0x578d3f*/
   *v9 = v9; /*0x578d4b*/
   return v9; /*0x578d48*/
 

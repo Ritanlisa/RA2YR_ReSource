@@ -857,10 +857,10 @@ AbstractClass * * GenerateRangeRingTextures()
     dword_AC1838 = (void *)__2_YAPAXI_Z(0x40000u); /*0x5ff776*/
     do /*0x5ff7ed*/
     {
-      BYTE1(v21) = (unsigned __int8)((unsigned __int16)v1 >> g_BitMask_Green) << g_BitMask_Blue; /*0x5ff7aa*/
-      LOBYTE(v18) = 0; /*0x5ff7bb*/
-      HIBYTE(v18) = (unsigned __int8)((unsigned __int16)v1 >> g_BitShift_Red) << g_BitShift_Green_0; /*0x5ff7bd*/
-      BYTE2(v21) = (unsigned __int8)((unsigned __int16)v1 >> g_BitShift_Blue) << g_BitMask_Red; /*0x5ff7bf*/
+      (v21) = ((v21) & ~(0xFF << 8)) | ((((unsigned __int8)((unsigned __int16)v1 >> g_BitMask_Green) << g_BitMask_Blue) & 0xFF) << 8); /*0x5ff7aa*/
+      (v18) = ((v18) & ~0xFF) | ((0) & 0xFF); /*0x5ff7bb*/
+      (v18) = ((v18) & ~(0xFF << 8)) | ((((unsigned __int8)((unsigned __int16)v1 >> g_BitShift_Red) << g_BitShift_Green_0) & 0xFF) << 8); /*0x5ff7bd*/
+      (v21) = ((v21) & ~(0xFF << 16)) | ((((unsigned __int8)((unsigned __int16)v1 >> g_BitShift_Blue) << g_BitMask_Red) & 0xFF) << 16); /*0x5ff7bf*/
       result = (char *)(((v21) >> 16) & 0xFF); /*0x5ff7dc*/
       *((unsigned int *)dword_AC1838 + v1++) = (((v21) >> 16) & 0xFF) | (((((v21) >> 8) & 0xFF) | v18) << 8); /*0x5ff7e3*/
     }

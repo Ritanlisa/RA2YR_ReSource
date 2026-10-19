@@ -1333,7 +1333,7 @@ int UnitClass::Mission_Harvest()
     default:
 LABEL_9:
       MissionControl = MissionClass::GetMissionControl((MissionClass *)this); /*0x41525a*/
-      LOWORD(v8) = Math::RoundToInt(*((double *)MissionControl + 2) * 900.0); /*0x41526a*/
+      (v8) = ((v8) & ~0xFFFF) | ((Math::RoundToInt(*((double *)MissionControl + 2) * 900.0)) & 0xFFFF); /*0x41526a*/
       return v8 + Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2);
   }
 
@@ -7395,7 +7395,7 @@ LABEL_20:
               fsub ds:dbl_7E2820
               fmul ds:dbl_7E2818
             }
-            LOWORD(v84) = Math::RoundToInt(v1); /*0x44d065*/
+            (v84) = ((v84) & ~0xFFFF) | ((Math::RoundToInt(v1)) & 0xFFFF); /*0x44d065*/
             _EAX = dword_8871E0; /*0x44d06a*/
             __asm /*0x44d074*/
             {
@@ -7418,7 +7418,7 @@ LABEL_20:
             v77 = 0.0; /*0x44d0de*/
             Math::Sqrt(10000.0); /*0x44d0fe*/
             __asm { fstp [esp+0F0h+var_A0] } /*0x44d108*/
-            LODWORD(v84) = SLOWORD(v84) - 0x3FFF; /*0x44d112*/
+            (v84) = ((short)((v84) & 0xFFFF) - 0x3FFF); /*0x44d112*/
             __asm /*0x44d116*/
             {
               fild dword ptr [esp+0F0h+var_80]
@@ -7497,7 +7497,7 @@ LABEL_20:
             v82[0] = *v43; /*0x44d201*/
             v82[1] = v43[1]; /*0x44d20c*/
             v83 = v43[2]; /*0x44d213*/
-            v44 = (unsigned int *)(*(int (**)(unsigned int, unsigned char *))(*(unsigned int *)LODWORD(v78) + 72))(LODWORD(v78), v96); /*0x44d221*/
+            v44 = (unsigned int *)(*(int (**)(unsigned int, unsigned char *))(*(unsigned int *)((v78) & 0xFFFFFFFFu) + 72))(((v78) & 0xFFFFFFFFu), v96); /*0x44d221*/
             v45 = v44[2] - v83; /*0x44d23c*/
             _ECX = dword_8871E0; /*0x44d248*/
             LODWORD(v78) = (*v44 - v82[0]) * (*v44 - v82[0]) + (v44[1] - v82[1]) * (v44[1] - v82[1]); /*0x44d250*/
@@ -7509,7 +7509,7 @@ LABEL_20:
             }
             __asm { fstp [esp+0F4h+var_F8+4]; double }
             Math::Sqrt(v78); /*0x44d278*/
-            LOWORD(v47) = Math::RoundToInt(v1); /*0x44d280*/
+            (v47) = ((v47) & ~0xFFFF) | ((Math::RoundToInt(v1)) & 0xFFFF); /*0x44d280*/
             v59 = v47; /*0x44d285*/
             IsCloseEnoughToBuilding = TechnoClass::IsCloseEnoughToBuilding((TechnoClass *)this, 0); /*0x44d28a*/
             if ( !(unsigned __int8)ComputeMathFacingAngle(IsCloseEnoughToBuilding, v38, v59, v45, v62, &v74) ) /*0x44d29a*/
@@ -7518,13 +7518,13 @@ LABEL_20:
               __asm { fild dword ptr [edx+16B8h] } /*0x44d2ae*/
               __asm { fstp [esp+0F4h+var_F8+4]; double }
               Math::Sqrt(v78); /*0x44d2c2*/
-              LOWORD(v50) = Math::RoundToInt(v1); /*0x44d2ca*/
+              (v50) = ((v50) & ~0xFFFF) | ((Math::RoundToInt(v1)) & 0xFFFF); /*0x44d2ca*/
               v60 = v50; /*0x44d2cf*/
               v51 = TechnoClass::IsCloseEnoughToBuilding((TechnoClass *)this, 0); /*0x44d2e4*/
               if ( !(unsigned __int8)ComputeMathFacingAngle(v51, 10 * v38 / 8, v60, v45, v63, &v74) ) /*0x44d2f4*/
               {
-                LOWORD(v78) = -1536; /*0x44d2fa*/
-                v74 = (AnimClass *)LODWORD(v78); /*0x44d305*/
+                (v78) = ((v78) & ~0xFFFF) | ((-1536) & 0xFFFF); /*0x44d2fa*/
+                v74 = (AnimClass *)((v78) & 0xFFFFFFFFu); /*0x44d305*/
               }
             }
             __asm /*0x44d30e*/
@@ -7547,7 +7547,7 @@ LABEL_20:
               fsub ds:dbl_7E2820
               fmul ds:dbl_7E2818
             }
-            LODWORD(v78) = (__int16)Math::RoundToInt(v1) - 0x3FFF; /*0x44d365*/
+            (v78) = ((__int16)Math::RoundToInt(v1) - 0x3FFF); /*0x44d365*/
             __asm /*0x44d369*/
             {
               fild dword ptr [esp+0F0h+var_B8]
@@ -7574,7 +7574,7 @@ LABEL_20:
             if ( (_AX & 0x4000) == 0 ) /*0x44d3b1*/
             {
               v53 = HIDWORD(v78); /*0x44d3b3*/
-              v54 = LODWORD(v78); /*0x44d3b7*/
+              v54 = ((v78) & 0xFFFFFFFFu); /*0x44d3b7*/
               Math::ArcTan2(v78); /*0x44d3bd*/
               __asm { fdivr [esp+0F0h+var_D0] } /*0x44d3c2*/
               __asm { fstp [esp+0F8h+var_D0] }
@@ -7582,7 +7582,7 @@ LABEL_20:
               __asm { fdivr [esp+0F8h+var_C8] } /*0x44d3d1*/
               __asm { fstp [esp+0E8h+var_C8] }
             }
-            LODWORD(v78) = (__int16)v74 - 0x3FFF; /*0x44d3ea*/
+            (v78) = ((__int16)v74 - 0x3FFF); /*0x44d3ea*/
             __asm /*0x44d3ee*/
             {
               fild dword ptr [esp+0F0h+var_B8]
@@ -7592,7 +7592,7 @@ LABEL_20:
             Math::ArcTan2(v70); /*0x44d3fb*/
             __asm { fmul [esp+0F0h+var_D0] } /*0x44d400*/
             __asm { fstp [esp+0F0h+var_D0] }
-            LODWORD(v78) = (__int16)v74 - 0x3FFF; /*0x44d412*/
+            (v78) = ((__int16)v74 - 0x3FFF); /*0x44d412*/
             __asm /*0x44d416*/
             {
               fild dword ptr [esp+0F0h+var_B8]
@@ -7602,7 +7602,7 @@ LABEL_20:
             Math::ArcTan2(v71); /*0x44d423*/
             __asm { fmul [esp+0F0h+var_C8] } /*0x44d428*/
             __asm { fstp [esp+0F0h+var_C8] }
-            LODWORD(v78) = (__int16)v74 - 0x3FFF; /*0x44d43b*/
+            (v78) = ((__int16)v74 - 0x3FFF); /*0x44d43b*/
             __asm /*0x44d43f*/
             {
               fild dword ptr [esp+0F0h+var_B8]
@@ -7658,7 +7658,7 @@ LABEL_56:
         fld qword ptr [eax+10h]
         fmul ds:dbl_7E27F8
       }
-      LOWORD(result) = Math::RoundToInt(v1); /*0x44d594*/
+      (result) = ((result) & ~0xFFFF) | ((Math::RoundToInt(v1)) & 0xFFFF); /*0x44d594*/
     }
   }
   return result; /*0x44cc5a*/

@@ -115,7 +115,7 @@ int FactoryClass::UpdateProduction()
           this->production[2] = v9; /*0x4c9c1c*/
           this->queuedObjects = (int)v11; /*0x4c9c22*/
           this->queuedCount = 0; /*0x4c9c25*/
-          LOBYTE(Speed) = HouseClass::ProcessPowerDrain((int *)this->owner, this->balance); /*0x4c9c2f*/
+          (Speed) = ((Speed) & ~0xFF) | ((HouseClass::ProcessPowerDrain((int *)this->owner, this->balance)) & 0xFF); /*0x4c9c2f*/
           this->balance = 0; /*0x4c9c34*/
         }
       }
@@ -814,7 +814,7 @@ char FactoryClass_33::Release(int a2, unsigned int * a3)
       }
       *&this->q004 = v4; /*0x4ca9b7*/
       this->q008 = a2; /*0x4ca9bf*/
-      BYTE1(this->q00C) = a3 == 0; /*0x4ca9c2*/
+      (this->q00C) = ((this->q00C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x4ca9c2*/
       return 1; /*0x4ca9c8*/
     }
     else

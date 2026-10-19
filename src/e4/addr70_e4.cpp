@@ -482,7 +482,7 @@ void * TechnoClass_RenderVoxel(int * a1, int a2, void * a3, unsigned int * a4, c
   if ( (v24 & 8) != 0 ) /*0x7071a1*/
   {
     v27 = (*(int (**)(int *))(a1[1] + 16))(a1 + 1); /*0x7071b3*/
-    LOWORD(v28) = Math::RoundToInt(*((float *)a1 + 147)); /*0x7071b5*/
+    (v28) = ((v28) & ~0xFFFF) | ((Math::RoundToInt(*((float *)a1 + 147))) & 0xFFFF); /*0x7071b5*/
     v29 = v27 + v28; /*0x7071ba*/
     v20 = (unsigned int *)a6; /*0x7071bc*/
     v26 = v29 % 400; /*0x7071c9*/
@@ -974,9 +974,9 @@ int E4Recv_7011A0::sub_7011A0()
   v7 = (char *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v11); /*0x701234*/
   ScenarioClass::CalcMinShroudLevel((ScenarioClass *)&dword_87F7E8); /*0x701236*/
   v8 = *(unsigned int *)&stru_B0EA70.__pad_1C[168] * v7[283]; /*0x70127d*/
-  LOWORD(v9) = Math::RoundToInt(v1); /*0x70127f*/
+  (v9) = ((v9) & ~0xFFFF) | ((Math::RoundToInt(v1)) & 0xFFFF); /*0x70127f*/
   Math::Sqrt((double)(v8 * v8 + (v9 << 8) * (v9 << 8))); /*0x7012a1*/
-  LOWORD(result) = Math::RoundToInt(v1); /*0x7012a9*/
+  (result) = ((result) & ~0xFFFF) | ((Math::RoundToInt(v1)) & 0xFFFF); /*0x7012a9*/
   return result; /*0x7011b0*/
 
 }

@@ -577,7 +577,7 @@ int SuperClass::ClickFire(int a2, short * a3)
         }
         a2 = v8; /*0x6cb991*/
 LABEL_11:
-        LOWORD(v11) = Math::RoundToInt((double)(int)a3 - (double)a2 / *(double *)dword_8871E0->ChargeToDrainRatio); /*0x6cb995*/
+        (v11) = ((v11) & ~0xFFFF) | ((Math::RoundToInt((double)(int)a3 - (double)a2 / *(double *)dword_8871E0->ChargeToDrainRatio)) & 0xFFFF); /*0x6cb995*/
         *v10 = v9; /*0x6cb9b4*/
         v10->u32_4 = v30; /*0x6cb9b6*/
         v10->u32_8 = v11; /*0x6cb9b9*/
@@ -599,7 +599,7 @@ LABEL_11:
           else
             v15 -= *(unsigned int *)&stru_A8E960.random[528] - v14; /*0x6cba08*/
         }
-        LOWORD(v17) = Math::RoundToInt((double)(v13 - v15) * *(double *)dword_8871E0->ChargeToDrainRatio); /*0x6cba23*/
+        (v17) = ((v17) & ~0xFFFF) | ((Math::RoundToInt((double)(v13 - v15) * *(double *)dword_8871E0->ChargeToDrainRatio)) & 0xFFFF); /*0x6cba23*/
         v18 = a2; /*0x6cba2c*/
         this->q030 = v16; /*0x6cba30*/
         this->u32_34 = v30; /*0x6cba33*/

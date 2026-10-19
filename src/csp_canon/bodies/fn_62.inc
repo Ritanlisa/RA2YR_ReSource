@@ -706,7 +706,7 @@ void ParticleClass::UpdateParticlePhysics() {
   *(float *)&this->__pad_E4[52] = v14 + *(float *)&this->__pad_E4[52]; /*0x62c432*/
   *(float *)&this->__pad_E4[56] = v15 + *(float *)&this->__pad_E4[56]; /*0x62c442*/
   *(float *)&this->__pad_E4[60] = v16 + *(float *)&this->__pad_E4[60]; /*0x62c452*/
-  IDA_LOWORD(v4) = Math::RoundToInt(*(float *)&this->__pad_E4[52]); /*0x62c45e*/
+  (v4) = ((v4) & ~0xFFFF) | ((Math::RoundToInt(*(float *)&this->__pad_E4[52])) & 0xFFFF); /*0x62c45e*/
   v5 = *(float *)&this->__pad_E4[56]; /*0x62c463*/
   v17 = v4; /*0x62c469*/
   IDA_LOWORD(v6) = Math::RoundToInt(v5); /*0x62c46d*/
@@ -1173,7 +1173,7 @@ void ParticleSystemClass::CreateBuildingLight(int a1, int a2) {
     {
       v6 = 0.4; /*0x62e2f1*/
     }
-    IDA_LOWORD(v8) = Math::RoundToInt(v6 * (double)*(int *)Type->__pad_304); /*0x62e314*/
+    (v8) = ((v8) & ~0xFFFF) | ((Math::RoundToInt(v6 * (double)*(int *)Type->__pad_304)) & 0xFFFF); /*0x62e314*/
     v9 = v8; /*0x62e31b*/
     v10 = (ObjectClass *)RA2_OPNEW(0x18u); /*0x62e31d*/
     if ( v10 ) /*0x62e327*/
@@ -1795,7 +1795,7 @@ int ParticleSystemClass::Update() {
   IDA_LOBYTE(Owner) = this->isAliveFlag[0]; /*0x62fdbf*/
   if ( (unsigned char)Owner ) /*0x62fdc7*/
   {
-    IDA_LOBYTE(Owner) = this->__pad_E5[19]; /*0x62fdc9*/
+    (Owner) = ((Owner) & ~0xFF) | ((this->__pad_E5[19]) & 0xFF); /*0x62fdc9*/
     if ( (unsigned char)Owner ) /*0x62fdd1*/
     {
       Owner = this->Owner; /*0x62fdd3*/

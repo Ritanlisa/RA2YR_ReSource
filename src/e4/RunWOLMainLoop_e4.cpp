@@ -63,12 +63,12 @@ Coord * * sub_77E110()
     {
 LABEL_5:
       Theme::Stop((Theme *)&MEMORY[0xA83D10], 0); /*0x77e16a*/
-      LOBYTE(v1) = Theme::QueueSong((int)&MEMORY[0xA83D10], -2); /*0x77e176*/
+      (v1) = ((v1) & ~0xFF) | ((Theme::QueueSong((int)&MEMORY[0xA83D10], -2)) & 0xFF); /*0x77e176*/
     }
   }
   else
   {
-    LOBYTE(v1) = Theme::QueueSong((int)&MEMORY[0xA83D10], -3); /*0x77e1c2*/
+    (v1) = ((v1) & ~0xFF) | ((Theme::QueueSong((int)&MEMORY[0xA83D10], -3)) & 0xFF); /*0x77e1c2*/
   }
   return v1; /*0x77e17b*/
 

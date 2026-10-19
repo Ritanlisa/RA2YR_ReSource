@@ -123,7 +123,7 @@ bool BufferIOFileClass::Read() {
   BOOL v1; // eax
 
   if ( BYTE1(this->BufferOffset) && BYTE1(this->BufferSize) ) /*0x431f37*/
-    LOBYTE(v1) = 1; /*0x431f3e*/
+    (v1) = ((v1) & ~0xFF) | ((1) & 0xFF); /*0x431f3e*/
   else
     return *(unsigned int *)((unsigned int *)this)[0] != -1; /*0x431f49*/
   return v1; /*0x431f40*/
@@ -540,7 +540,7 @@ int Vector::Clear()
 
   int result; // eax
 
-  LOBYTE(result) = *((unsigned char *)this + 8); /*0x43ae53*/
+  (result) = ((result) & ~0xFF) | ((*((unsigned char *)this + 8)) & 0xFF); /*0x43ae53*/
   if ( (unsigned char)result ) /*0x43ae58*/
     __3_YAXPAX_Z(*(void **)this); /*0x43ae5d*/
   *(unsigned int *)this = 0; /*0x43ae65*/

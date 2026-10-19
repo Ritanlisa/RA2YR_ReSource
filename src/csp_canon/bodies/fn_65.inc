@@ -249,7 +249,7 @@ void* Gap2Recv_6547C0::GenerateImageThumbnail(RadarClass * aP1, RadarClass * aP2
     if ( v17 >= 108.0 ) /*0x6548e1*/
     {
       v99 = 108.0 / v16; /*0x65490a*/
-      LOWORD(v20) = Math::RoundToInt(v15 * v99); /*0x65491a*/
+      (v20) = ((v20) & ~0xFFFF) | ((Math::RoundToInt(v15 * v99)) & 0xFFFF); /*0x65491a*/
       v97 = v20; /*0x65491f*/
       v69 = 108; /*0x654926*/
       v18 = v20; /*0x65492e*/
@@ -259,7 +259,7 @@ void* Gap2Recv_6547C0::GenerateImageThumbnail(RadarClass * aP1, RadarClass * aP2
       v18 = 140; /*0x6548eb*/
       v97 = 140; /*0x6548f0*/
       v89 = v17; /*0x6548d2*/
-      LOWORD(v19) = Math::RoundToInt(v89); /*0x6548f7*/
+      (v19) = ((v19) & ~0xFFFF) | ((Math::RoundToInt(v89)) & 0xFFFF); /*0x6548f7*/
       v69 = v19; /*0x6548fc*/
     }
     v6[1314] = v99; /*0x654939*/
@@ -289,17 +289,17 @@ void* Gap2Recv_6547C0::GenerateImageThumbnail(RadarClass * aP1, RadarClass * aP2
   v23 = (*(int (**)(unsigned int, unsigned int, unsigned int))(**((unsigned int **)v6 + 1160) + 92))(*((unsigned int *)v6 + 1160), 0, 0); /*0x6549f0*/
   v24 = *v7; /*0x6549f3*/
   v90 = v23; /*0x6549f5*/
-  LOWORD(v25) = Math::RoundToInt((double)*v7 * v99); /*0x654a0e*/
+  (v25) = ((v25) & ~0xFFFF) | ((Math::RoundToInt((double)*v7 * v99)) & 0xFFFF); /*0x654a0e*/
   v26 = v25; /*0x654a13*/
   v82 = v25; /*0x654a1a*/
-  LOWORD(v27) = Math::RoundToInt((double)(v24 + v7[2]) * v99); /*0x654a33*/
+  (v27) = ((v27) & ~0xFFFF) | ((Math::RoundToInt((double)(v24 + v7[2]) * v99)) & 0xFFFF); /*0x654a33*/
   v83 = v27 + 1; /*0x654a42*/
   if ( v27 + 1 >= v97 ) /*0x654a46*/
     v83 = v97; /*0x654a48*/
   v28 = v7[1]; /*0x654a4c*/
-  LOWORD(v29) = Math::RoundToInt((double)v28 * v99); /*0x654a64*/
+  (v29) = ((v29) & ~0xFFFF) | ((Math::RoundToInt((double)v28 * v99)) & 0xFFFF); /*0x654a64*/
   v84 = v29; /*0x654a6c*/
-  LOWORD(v30) = Math::RoundToInt((double)(v28 + v7[3]) * v99); /*0x654a87*/
+  (v30) = ((v30) & ~0xFFFF) | ((Math::RoundToInt((double)(v28 + v7[3]) * v99)) & 0xFFFF); /*0x654a87*/
   v31 = v69; /*0x654a8c*/
   v32 = v30 + 1; /*0x654a90*/
   if ( v30 + 1 >= v69 ) /*0x654a95*/
@@ -321,7 +321,7 @@ void* Gap2Recv_6547C0::GenerateImageThumbnail(RadarClass * aP1, RadarClass * aP2
     v80 = v33 + 2 * (v26 + v97 * v84); /*0x654af1*/
     do /*0x654dff*/
     {
-      LOWORD(v34) = Math::RoundToInt(v72); /*0x654af9*/
+      (v34) = ((v34) & ~0xFFFF) | ((Math::RoundToInt(v72)) & 0xFFFF); /*0x654af9*/
       v35 = *((unsigned int *)v6 + 1169); /*0x654afe*/
       if ( v35 >= v34 ) /*0x654b06*/
       {
@@ -334,7 +334,7 @@ void* Gap2Recv_6547C0::GenerateImageThumbnail(RadarClass * aP1, RadarClass * aP2
         v71 = v36; /*0x654b0a*/
       }
       v37 = v72 + v73; /*0x654b1a*/
-      LOWORD(v38) = Math::RoundToInt(v37); /*0x654b20*/
+      (v38) = ((v38) & ~0xFFFF) | ((Math::RoundToInt(v37)) & 0xFFFF); /*0x654b20*/
       v39 = v38 + 1; /*0x654b25*/
       v70 = v35; /*0x654b26*/
       if ( v35 >= v39 ) /*0x654b2c*/
@@ -348,7 +348,7 @@ void* Gap2Recv_6547C0::GenerateImageThumbnail(RadarClass * aP1, RadarClass * aP2
           v40 = 0.0; /*0x654b4c*/
           v41 = 0.0; /*0x654b52*/
           v42 = 0.0; /*0x654b58*/
-          LOWORD(v43) = Math::RoundToInt(v37); /*0x654b65*/
+          (v43) = ((v43) & ~0xFFFF) | ((Math::RoundToInt(v37)) & 0xFFFF); /*0x654b65*/
           v44 = *((unsigned int *)v6 + 1168); /*0x654b6a*/
           v93 = v44; /*0x654b72*/
           if ( v44 >= v43 ) /*0x654b76*/
@@ -361,7 +361,7 @@ void* Gap2Recv_6547C0::GenerateImageThumbnail(RadarClass * aP1, RadarClass * aP2
             v45 = *((unsigned int *)v6 + 1168); /*0x654b78*/
             v100 = v45; /*0x654b7a*/
           }
-          LOWORD(v46) = Math::RoundToInt(v37); /*0x654b9b*/
+          (v46) = ((v46) & ~0xFFFF) | ((Math::RoundToInt(v37)) & 0xFFFF); /*0x654b9b*/
           v47 = v46 + 1; /*0x654ba0*/
           if ( v44 < v46 + 1 ) /*0x654ba5*/
             v47 = v44; /*0x654ba7*/
@@ -452,15 +452,15 @@ void* Gap2Recv_6547C0::GenerateImageThumbnail(RadarClass * aP1, RadarClass * aP2
             while ( v48 < v70 ); /*0x654d1f*/
             v36 = v71; /*0x654d25*/
           }
-          LOWORD(v60) = Math::RoundToInt(v37); /*0x654d2f*/
+          (v60) = ((v60) & ~0xFFFF) | ((Math::RoundToInt(v37)) & 0xFFFF); /*0x654d2f*/
           v61 = 255; /*0x654d39*/
           if ( v60 <= 255 ) /*0x654d3e*/
             v61 = v60; /*0x654d40*/
-          LOWORD(v62) = Math::RoundToInt(v37); /*0x654d48*/
+          (v62) = ((v62) & ~0xFFFF) | ((Math::RoundToInt(v37)) & 0xFFFF); /*0x654d48*/
           v63 = 255; /*0x654d52*/
           if ( v62 <= 255 ) /*0x654d57*/
             v63 = v62; /*0x654d59*/
-          LOWORD(v64) = Math::RoundToInt(v37); /*0x654d61*/
+          (v64) = ((v64) & ~0xFFFF) | ((Math::RoundToInt(v37)) & 0xFFFF); /*0x654d61*/
           if ( v64 > 255 ) /*0x654d6b*/
             v64 = 255; /*0x654d6d*/
           v98 = v98 + v74; /*0x654d84*/
@@ -736,7 +736,7 @@ bool Gap2Recv_659650::RenderProjectileTrail() {
       fld qword ptr [esi+68h]
       fdiv qword ptr [esi+18h]
     }
-    LOWORD(v13) = Math::RoundToInt(v1); /*0x65979d*/
+    (v13) = ((v13) & ~0xFFFF) | ((Math::RoundToInt(v1)) & 0xFFFF); /*0x65979d*/
     v14 = _ESI->customSound_controller[4]; /*0x6597a5*/
     v38 = _ESI->customSound_controller[3]; /*0x6597a8*/
     customSound = _ESI->customSound; /*0x6597ac*/
@@ -779,11 +779,11 @@ bool Gap2Recv_659650::RenderProjectileTrail() {
       do /*0x659962*/
       {
         v22 = ProjectileTrail::ComputeRenderData((ProjectileTrail *)_ESI); /*0x659840*/
-        LOWORD(owningHouseIndex) = (uint8_t)(BYTE2(_ESI[1]) >> g_BitMask_Red); /*0x65985f*/
-        WORD2(v22) = (uint8_t)(BYTE1(_ESI[1]) >> g_BitMask_Blue); /*0x659876*/
+        (owningHouseIndex) = ((owningHouseIndex) & ~0xFFFF) | (((uint8_t)(BYTE2(_ESI[1]) >> g_BitMask_Red)) & 0xFFFF); /*0x65985f*/
+        (v22) = ((v22) & ~(0xFFFFull << 32)) | ((((uint8_t)(BYTE1(_ESI[1]) >> g_BitMask_Blue)) & 0xFFFFull) << 32); /*0x659876*/
         HIDWORD(v22) <<= g_BitMask_Green; /*0x65987e*/
         v23 = (((v22) >> 32) & 0xFFFFFFFFu) | (owningHouseIndex << g_BitShift_Blue); /*0x65988e*/
-        WORD2(v22) = (uint8_t)(LOBYTE(_ESI[1]) >> g_BitShift_Green_0); /*0x659893*/
+        (v22) = ((v22) & ~(0xFFFFull << 32)) | ((((uint8_t)(LOBYTE(_ESI[1]) >> g_BitShift_Green_0)) & 0xFFFFull) << 32); /*0x659893*/
         owningHouseIndex = ((((v22) >> 32) & 0xFFFFFFFFu) << g_BitShift_Red) | v23; /*0x6598a3*/
         Coord::To_Screen((Coord *)g_TacticalClass_Instance, _ESI->location, &v38); /*0x6598a5*/
         Coord::To_Screen((Coord *)g_TacticalClass_Instance, &_ESI->lineTrailer, v37); /*0x6598bc*/
@@ -890,7 +890,7 @@ int Gap2Recv_659E30::Weapon_Update_Update() {
   __asm { fst qword ptr [esi+68h] } /*0x659e8a*/
   *(double *)&_ESI->bombVisible = _RT1; /*0x659e8a*/
   __asm { fdiv qword ptr [esi+18h] } /*0x659e8d*/
-  LOWORD(result) = Math::RoundToInt(v1); /*0x659e93*/
+  (result) = ((result) & ~0xFFFF) | ((Math::RoundToInt(v1)) & 0xFFFF); /*0x659e93*/
   v9 = *v5; /*0x659e98*/
   v10 = _ESI->customSound_controller[4]; /*0x659e9a*/
   customSound = _ESI->customSound; /*0x659e9d*/
@@ -962,7 +962,7 @@ int Gap2Recv_659EE0::Weapon_Update_Update_659EE0() {
     fild [esp+18h+var_4]
     fmul qword ptr [esi+48h]
   }
-  LOWORD(v6) = Math::RoundToInt(v1); /*0x659f3a*/
+  (v6) = ((v6) & ~0xFFFF) | ((Math::RoundToInt(v1)) & 0xFFFF); /*0x659f3a*/
   v7 = v6 * *(unsigned int *)&_ESI->isOnMap + _ESI->customSound_controller[4]; /*0x659f5f*/
   v8 = v6 * _ESI->spawnStatus + _ESI->customSound; /*0x659f64*/
   _ESI->customSound_controller[3] += v6 * _ESI->estimatedHealth; /*0x659f68*/
@@ -980,7 +980,7 @@ int Gap2Recv_659EE0::Weapon_Update_Update_659EE0() {
   __asm { fst qword ptr [esi+68h] } /*0x659f9b*/
   *(double *)&_ESI->bombVisible = _RT1; /*0x659f9b*/
   __asm { fdiv qword ptr [esi+18h] } /*0x659f9e*/
-  LOWORD(result) = Math::RoundToInt(v1); /*0x659fa4*/
+  (result) = ((result) & ~0xFFFF) | ((Math::RoundToInt(v1)) & 0xFFFF); /*0x659fa4*/
   v11 = _ESI->customSound_controller[3]; /*0x659fa9*/
   v12 = _ESI->customSound_controller[4]; /*0x659fab*/
   customSound = _ESI->customSound; /*0x659fae*/
@@ -1537,8 +1537,8 @@ void* Gap2Recv_65FB80::Team_Load_65FB80(int a2, IUnknown * aP2) {
   this->fallRate = 0; /*0x65fbc5*/
   this->nextObject = *(ObjectClass **)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x65fbd4*/
   this->attachedBomb = 0; /*0x65fbd7*/
-  LOBYTE(this->ambientSoundController[0]) = 1; /*0x65fbde*/
-  BYTE1(this->ambientSoundController[0]) = 1; /*0x65fbe1*/
+  (this->ambientSoundController[0]) = ((this->ambientSoundController[0]) & ~0xFF) | ((1) & 0xFF); /*0x65fbde*/
+  (this->ambientSoundController[0]) = ((this->ambientSoundController[0]) & ~(0xFF << 8)) | (((1) & 0xFF) << 8); /*0x65fbe1*/
   v6 = *(unsigned int *)&stru_87F5F0.__pad_E12[2178]; /*0x65fbe4*/
   v7 = *(unsigned int *)&stru_87F5F0.__pad_E12[2182]; /*0x65fbea*/
   _6550C0 = Team_Load_6550C0((ObjectClass *)&stru_87F5F0.__pad_58[416], v22, (int16_t *)&aP2); /*0x65fbff*/

@@ -1086,7 +1086,7 @@ char * SaveScenarioToINI(char * Source, char a2, int a3)
   /* X11: vtable install elided (X67 recv-slot, RHS vt_List_INIClass_INISection) */  /*0x687d05*/
   Node::Init((MixFileClass *)&v10.fallRate); /*0x687d0d*/
   v10.ambientSoundController[1] = 0; /*0x687d17*/
-  LOBYTE(v10.ambientSoundController[2]) = 0; /*0x687d1d*/
+  v10.ambientSoundController[2] = 0; /*0x687d1d*/
   /* X11: vtable install elided (X67 recv-slot, RHS CCINIClass_Vtable) */  /*0x687d21*/
   if ( stru_A8E960.random[503] ) /*0x687d29*/
   {
@@ -1336,7 +1336,7 @@ AbstractClass * * SessionClass_AssignHouses()
         if ( v34 != v16[523].isAliveFlag ) /*0x688244*/
         {
           qmemcpy(v16[523].isAliveFlag, v34, 0x14u); /*0x68824f*/
-          LOBYTE(v16[523].location[2]) = v35; /*0x688251*/
+          v16[523].location[2] = v35; /*0x688251*/
         }
         StringCSF = GetStringCSF(g_Str_TXT_COMPUTER, 0, g_Str_File_Scenario_CPP, 4032); /*0x688263*/
         wcscpy((wchar_t *)&v16[524].nextArrayIndex + 1, StringCSF); /*0x688270*/

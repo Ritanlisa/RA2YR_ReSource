@@ -247,7 +247,7 @@ int GameSettings::Read(void *a1, void *a2, void *a3)
   __asm { fst dword ptr [esi+3Ch] } /*0x5faa42*/
   *(float *)&_ESI[60] = _ET1; /*0x5faa42*/
   __asm { fmul ds:dbl_7EAA50 } /*0x5faa45*/
-  LOWORD(v16) = Math::RoundToInt(v1); /*0x5faa4b*/
+  (v16) = ((v16) & ~0xFFFF) | ((Math::RoundToInt(v1)) & 0xFFFF); /*0x5faa4b*/
   ThemeClass::GetField(v16); /*0x5faa52*/
   __asm /*0x5faa57*/
   {

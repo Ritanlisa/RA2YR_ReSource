@@ -124,7 +124,7 @@ LABEL_39:
       return v18; /*0x71eb72*/
     case 28: /*0x71e964*/
       ScenarioClass::GetGlobalStateByID((ScenarioClass *)dword_A8B230, this->TEventClass_field_34, &a6); /*0x71eb84*/
-      LOBYTE(v18) = (unsigned char)a6 == 0; /*0x71eb95*/
+      (v18) = ((v18) & ~0xFF) | (((unsigned char)a6 == 0) & 0xFF); /*0x71eb95*/
       return v18; /*0x71eb9b*/
     case 36: /*0x71e964*/
       ScenarioClass::GetLocalStateByID((ScenarioClass *)dword_A8B230, this->TEventClass_field_34, &a6); /*0x71ebad*/
@@ -132,15 +132,15 @@ LABEL_39:
       return v18; /*0x71ebbd*/
     case 37: /*0x71e964*/
       ScenarioClass::GetLocalStateByID((ScenarioClass *)dword_A8B230, this->TEventClass_field_34, &a6); /*0x71ebcf*/
-      LOBYTE(v18) = (unsigned char)a6 == 0; /*0x71ebe0*/
+      (v18) = ((v18) & ~0xFF) | (((unsigned char)a6 == 0) & 0xFF); /*0x71ebe0*/
       return v18; /*0x71ebe6*/
     case 45: /*0x71e964*/
       return dword_A8B230[378].ptr_4 <= this->TEventClass_field_34; /*0x71eb03*/
     case 46: /*0x71e964*/
-      LOBYTE(v18) = dword_A8B230[378].ptr_4 >= this->TEventClass_field_34; /*0x71eb1f*/
+      (v18) = ((v18) & ~0xFF) | ((dword_A8B230[378].ptr_4 >= this->TEventClass_field_34) & 0xFF); /*0x71eb1f*/
       return v18; /*0x71eb25*/
     case 47: /*0x71e964*/
-      LOBYTE(v18) = this->TEventClass_field_34 <= *(unsigned int *)&stru_A8E960.random[528] / 15; /*0x71eb49*/
+      (v18) = ((v18) & ~0xFF) | ((this->TEventClass_field_34 <= *(unsigned int *)&stru_A8E960.random[528] / 15) & 0xFF); /*0x71eb49*/
       return v18; /*0x71eb50*/
     case 60: /*0x71e964*/
       v10 = -1; /*0x71e971*/
@@ -376,7 +376,7 @@ LABEL_139:
               fstp st
             }
             Math::Sqrt(v57); /*0x71ee38*/
-            LOWORD(v18) = Math::RoundToInt(v7); /*0x71ee40*/
+            (v18) = ((v18) & ~0xFFFF) | ((Math::RoundToInt(v7)) & 0xFFFF); /*0x71ee40*/
             (v18) = ((v18) & ~0xFF) | ((v18 <= 1280) & 0xFF); /*0x71ee4d*/
             return v18; /*0x71ee54*/
           }

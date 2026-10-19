@@ -18,7 +18,7 @@ wchar_t MSPrintAnim::GetCharAt(size_t a2)
   if ( a2 >= result ) /*0x7b7124*/
     (result) = ((result) & ~0xFFFF) | ((0) & 0xFFFF); /*0x7b7130*/
   else
-    LOWORD(result) = *(unsigned short *)(*(unsigned int *)this->vtable1 + 2 * a2); /*0x7b7129*/
+    (result) = ((result) & ~0xFFFF) | ((*(unsigned short *)(*(unsigned int *)this->vtable1 + 2 * a2)) & 0xFFFF); /*0x7b7129*/
   return result; /*0x7b7128*/
 
 }

@@ -1177,13 +1177,13 @@ char FoggedObjectClass_42::Release(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x4e05cc*/
   {
-    LOBYTE(this->IsInitialized) = 0; /*0x4e05d6*/
+    (this->IsInitialized) = ((this->IsInitialized) & ~0xFF) | ((0) & 0xFF); /*0x4e05d6*/
     unsigned int *v4; // edi
     if ( a3 ) /*0x4e05dc*/
       v4 = a3; /*0x4e05f2*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x4e05ee*/
-    LOBYTE(this->IsInitialized) = 1; /*0x4e05f6*/
+    (this->IsInitialized) = ((this->IsInitialized) & ~0xFF) | ((1) & 0xFF); /*0x4e05f6*/
     if ( v4 ) /*0x4e05fa*/
     {
       if ( *&this->Items ) /*0x4e0605*/
@@ -1194,7 +1194,7 @@ char FoggedObjectClass_42::Release(int a2, unsigned int * a3)
         int i; // eax
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->Items + 4 * i - 4) ) /*0x4e0619*/
           ++i; /*0x4e061e*/
-        if ( BYTE1(this->IsInitialized) ) /*0x4e062b*/
+        if ( (((this->IsInitialized) >> 8) & 0xFF) ) /*0x4e062b*/
         {
           __3_YAXPAX_Z(*&this->Items); /*0x4e0636*/
           *&this->Items = 0; /*0x4e063e*/
@@ -1202,7 +1202,7 @@ char FoggedObjectClass_42::Release(int a2, unsigned int * a3)
       }
       *&this->Items = v4; /*0x4e0647*/
       this->Capacity = a2; /*0x4e064f*/
-      BYTE1(this->IsInitialized) = a3 == 0; /*0x4e0652*/
+      (this->IsInitialized) = ((this->IsInitialized) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x4e0652*/
       return 1; /*0x4e0658*/
     }
     else
@@ -1224,12 +1224,12 @@ namespace gamemd {
 void FoggedObjectClass_42::ddtor(void *a1)
 {
 
-  if ( *&this->Items && BYTE1(this->IsInitialized) ) /*0x4e067d*/
+  if ( *&this->Items && (((this->IsInitialized) >> 8) & 0xFF) ) /*0x4e067d*/
   {
     __3_YAXPAX_Z(*&this->Items); /*0x4e0683*/
     *&this->Items = 0; /*0x4e068b*/
   }
-  BYTE1(this->IsInitialized) = 0; /*0x4e068e*/
+  (this->IsInitialized) = ((this->IsInitialized) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x4e068e*/
   this->Capacity = 0; /*0x4e0691*/
 
 }
@@ -1261,7 +1261,7 @@ namespace gamemd {
 unsigned int FoggedObjectClass_42::Write(int a2)
 {
 
-  if ( LOBYTE(this->IsInitialized) ) /*0x4e06e0*/
+  if ( ((this->IsInitialized) & 0xFF) ) /*0x4e06e0*/
     return (unsigned int)(a2 - *&this->Items) >> 2; /*0x4e06f5*/
   else
     return 0; /*0x4e06e7*/

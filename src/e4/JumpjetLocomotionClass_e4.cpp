@@ -199,16 +199,16 @@ void* JumpjetLocomotionClass::Update2(void * a1, void * a2)
   }
   LOWORD(v12) = Math::RoundToInt(v4[2]); /*0x439b9c*/
   v56 = v12; /*0x439ba4*/
-  LOWORD(v13) = Math::RoundToInt(v4[1]); /*0x439ba5*/
+  (v13) = ((v13) & ~0xFFFF) | ((Math::RoundToInt(v4[1])) & 0xFFFF); /*0x439ba5*/
   v51 = v13; /*0x439bad*/
-  LOWORD(v14) = Math::RoundToInt(*v4); /*0x439bae*/
+  (v14) = ((v14) & ~0xFFFF) | ((Math::RoundToInt(*v4)) & 0xFFFF); /*0x439bae*/
   Coord3D::Set(&v84, v14, v51, (int)v56); /*0x439bb8*/
   Vector3::AddAssign((int *)v5, a2); /*0x439bc0*/
   LOWORD(v15) = Math::RoundToInt(v4[2]); /*0x439bc8*/
   v57 = v15; /*0x439bd0*/
-  LOWORD(v16) = Math::RoundToInt(v4[1]); /*0x439bd1*/
+  (v16) = ((v16) & ~0xFFFF) | ((Math::RoundToInt(v4[1])) & 0xFFFF); /*0x439bd1*/
   v52 = v16; /*0x439bd9*/
-  LOWORD(v17) = Math::RoundToInt(*v4); /*0x439bda*/
+  (v17) = ((v17) & ~0xFFFF) | ((Math::RoundToInt(*v4)) & 0xFFFF); /*0x439bda*/
   Coord3D::Set(&v83, v17, v52, (int)v57); /*0x439be4*/
   GroundHeight = Cell::GetGroundHeight(&v83); /*0x439bfe*/
   v75 = dword_89C76C + GroundHeight; /*0x439c09*/
@@ -321,15 +321,15 @@ LABEL_35:
   *(float *)Function::sub_645D00(v29, 2) = v71; /*0x439ee3*/
   LOWORD(v32) = Math::RoundToInt(v28->Climb); /*0x439ee8*/
   v59 = v32; /*0x439ef0*/
-  LOWORD(v33) = Math::RoundToInt(*((float *)v28 + 7)); /*0x439ef1*/
+  (v33) = ((v33) & ~0xFFFF) | ((Math::RoundToInt(*((float *)v28 + 7))) & 0xFFFF); /*0x439ef1*/
   v54 = v33; /*0x439ef9*/
-  LOWORD(v34) = Math::RoundToInt(*v4); /*0x439efa*/
+  (v34) = ((v34) & ~0xFFFF) | ((Math::RoundToInt(*v4)) & 0xFFFF); /*0x439efa*/
   Coord::Subtract((Coord *)&v83, v34, v54, (int)v59); /*0x439f04*/
   LOWORD(v35) = Math::RoundToInt(v79); /*0x439f0d*/
   v60 = v35; /*0x439f16*/
-  LOWORD(v36) = Math::RoundToInt(v78); /*0x439f17*/
+  (v36) = ((v36) & ~0xFFFF) | ((Math::RoundToInt(v78)) & 0xFFFF); /*0x439f17*/
   v55 = v36; /*0x439f20*/
-  LOWORD(v37) = Math::RoundToInt(v77); /*0x439f21*/
+  (v37) = ((v37) & ~0xFFFF) | ((Math::RoundToInt(v77)) & 0xFFFF); /*0x439f21*/
   Coord::Subtract((Coord *)&v84, v37, v55, (int)v60); /*0x439f2b*/
   v38 = Coord::To_Cell((Coord *)&dword_87F7E8, &v84)->level[0]; /*0x439f3f*/
   if ( Coord::To_Cell((Coord *)&dword_87F7E8, &v83)->level[0] - v38 >= 2 /*0x439fb1*/
@@ -908,7 +908,7 @@ int JumpjetLocomotionClass::StubReturnZero_2(unsigned int a1)
     return 0; /*0x4b4b43*/
   if ( v2 == -1 ) /*0x4b4b4c*/
     return 0; /*0x4b4b4c*/
-  LOBYTE(v5) = 0; /*0x4b4b53*/
+  (v5) = ((v5) & ~0xFF) | ((0) & 0xFF); /*0x4b4b53*/
   HIBYTE(v5) = algn_7E7B29[12 * this->MovementSpeed[1] + 3]; /*0x4b4b55*/
   LOWORD(this) = v5; /*0x4b4b58*/
   if ( (((((unsigned int)this >> 12) + 1) >> 1) & 7) == v2 ) /*0x4b4b78*/
@@ -916,8 +916,8 @@ int JumpjetLocomotionClass::StubReturnZero_2(unsigned int a1)
   TrackNumber = v1->TrackNumber; /*0x4b4b7a*/
   if ( dword_7E7A2C[4 * v4] == TrackNumber /*0x4b4bc1*/
     && TrackNumber
-    && (LOBYTE(v7) = 0,
-        HIBYTE(v7) = *(unsigned char *)(v3 + 4),
+    && ((v7) = ((v7) & ~0xFF) | ((0) & 0xFF),
+        (v7) = ((v7) & ~(0xFF << 8)) | (((*(unsigned char *)(v3 + 4)) & 0xFF) << 8),
         LOWORD(this) = v7,
         (v8 = byte_7E7B28[96 * (((((unsigned int)this >> 12) + 1) >> 1) & 7) + 12 * v2]) != 0)
     && dword_7E7A30[4 * v8] )
@@ -1999,7 +1999,7 @@ Coord * * JumpjetLocomotionClass::MoveToDestination(int a1)
   if ( !dword_A8E7AC ) /*0x54b4dd*/
   {
     v2 = this; /*0x54b4e3*/
-    result = LOBYTE(this->DestinationCoords[2]); /*0x54b4e7*/
+    result = this->DestinationCoords[2]; /*0x54b4e7*/
     if ( (unsigned char)result ) /*0x54b4ec*/
     {
       v3 = &this->NoWobbles_d; /*0x54b4fb*/
@@ -2646,7 +2646,7 @@ int JumpjetLocomotionClass::StubReturnZero_15(unsigned int a1)
     return 0; /*0x6a4173*/
   if ( v2 == -1 ) /*0x6a417c*/
     return 0; /*0x6a417c*/
-  LOBYTE(v5) = 0; /*0x6a4183*/
+  (v5) = ((v5) & ~0xFF) | ((0) & 0xFF); /*0x6a4183*/
   HIBYTE(v5) = algn_7F2A41[12 * this->MovementSpeed[1] + 3]; /*0x6a4185*/
   LOWORD(this) = v5; /*0x6a4188*/
   if ( (((((unsigned int)this >> 12) + 1) >> 1) & 7) == v2 ) /*0x6a41a8*/
@@ -2654,8 +2654,8 @@ int JumpjetLocomotionClass::StubReturnZero_15(unsigned int a1)
   TrackNumber = v1->TrackNumber; /*0x6a41aa*/
   if ( dword_7F2964[4 * v4] == TrackNumber /*0x6a41f1*/
     && TrackNumber
-    && (LOBYTE(v7) = 0,
-        HIBYTE(v7) = *(unsigned char *)(v3 + 4),
+    && ((v7) = ((v7) & ~0xFF) | ((0) & 0xFF),
+        (v7) = ((v7) & ~(0xFF << 8)) | (((*(unsigned char *)(v3 + 4)) & 0xFF) << 8),
         LOWORD(this) = v7,
         (v8 = byte_7F2A40[96 * (((((unsigned int)this >> 12) + 1) >> 1) & 7) + 12 * v2]) != 0)
     && dword_7F2968[4 * v8] )
@@ -2998,34 +2998,34 @@ double JumpjetLocomotionClass::ComputeVectorLengthMetric(void *a1)
 
 
   int v2; // eax
-  LOWORD(v2) = Math::RoundToInt(*(float *)&this->TurnRate); /*0x439a1a*/
+  (v2) = ((v2) & ~0xFFFF) | ((Math::RoundToInt(*(float *)&this->TurnRate)) & 0xFFFF); /*0x439a1a*/
   double v3 = *&this->Speed; // st7 /*0x439a1f*/
   unsigned int v14[3]; // [esp+20h] [ebp-Ch] BYREF
   v14[0] = v2; /*0x439a22*/
   int v4; // eax
-  LOWORD(v4) = Math::RoundToInt(v3); /*0x439a26*/
+  (v4) = ((v4) & ~0xFFFF) | ((Math::RoundToInt(v3)) & 0xFFFF); /*0x439a26*/
   double Climb; // st7
   Climb = this->Climb; /*0x439a2b*/
   v14[1] = v4; /*0x439a2e*/
   int v6; // eax
-  LOWORD(v6) = Math::RoundToInt(Climb); /*0x439a32*/
+  (v6) = ((v6) & ~0xFFFF) | ((Math::RoundToInt(Climb)) & 0xFFFF); /*0x439a32*/
   v14[2] = v6; /*0x439a37*/
   Cell::GetGroundHeight(v14); /*0x439a45*/
   Math::RoundToInt(Climb); /*0x439a55*/
   Coord::To_Cell((Coord *)&DataGlobal_87F7E8, v14); /*0x439a6a*/
   int v7; // eax
-  LOWORD(v7) = Math::RoundToInt(Climb); /*0x439a8c*/
+  (v7) = ((v7) & ~0xFFFF) | ((Math::RoundToInt(Climb)) & 0xFFFF); /*0x439a8c*/
   int v12; // [esp+14h] [ebp-18h]
   v12 = v7; /*0x439a94*/
   int v8; // eax
-  LOWORD(v8) = Math::RoundToInt(Climb); /*0x439a98*/
+  (v8) = ((v8) & ~0xFFFF) | ((Math::RoundToInt(Climb)) & 0xFFFF); /*0x439a98*/
   int v13; // [esp+18h] [ebp-14h]
   v13 = v8; /*0x439aa1*/
   int v9; // eax
-  LOWORD(v9) = Math::RoundToInt(Climb); /*0x439aab*/
+  (v9) = ((v9) & ~0xFFFF) | ((Math::RoundToInt(Climb)) & 0xFFFF); /*0x439aab*/
   Math::Sqrt((double)v9 * (double)v9 + (double)v12 * (double)v12 + (double)v13 * (double)v13); /*0x439adc*/
   int v10; // eax
-  LOWORD(v10) = Math::RoundToInt(Climb); /*0x439ae4*/
+  (v10) = ((v10) & ~0xFFFF) | ((Math::RoundToInt(Climb)) & 0xFFFF); /*0x439ae4*/
   return (double)v10; /*0x439af2*/
 
 }
@@ -5096,7 +5096,7 @@ char JumpjetLocomotionClass_26::Release(int a2, unsigned int * a3)
       }
       *&this->q004 = v4; /*0x54e9b7*/
       this->q008 = a2; /*0x54e9bf*/
-      BYTE1(this->q00C) = a3 == 0; /*0x54e9c2*/
+      (this->q00C) = ((this->q00C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x54e9c2*/
       return 1; /*0x54e9c8*/
     }
     else
@@ -5196,7 +5196,7 @@ char JumpjetLocomotionClass_26::SetCapacity(int a2, unsigned int * a3)
     }
     *&this->q004 = v4; /*0x54eaea*/
     this->q008 = a2; /*0x54eaf2*/
-    BYTE1(this->q00C) = a3 == 0; /*0x54eaf5*/
+    (this->q00C) = ((this->q00C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x54eaf5*/
   }
   else
   {

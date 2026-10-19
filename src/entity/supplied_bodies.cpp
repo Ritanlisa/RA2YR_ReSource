@@ -467,7 +467,7 @@ int AnimClass::resetAnimation()
   v3 = *(unsigned int *)(*((unsigned int *)v2 + 949) + 40); /*0x449567*/
   v4 = (unsigned short *)(*(int (**)(AnimClass *, int *))(this->AnimClass_field_0x0 + 440))(this, &v13); /*0x449573*/
   HIWORD(v10) = (((v3) >> 16) & 0xFFFF) + v4[1]; /*0x449596*/
-  LOWORD(v10) = v3 + *v4 - 1; /*0x4495a1*/
+  (v10) = ((v10) & ~0xFFFF) | ((v3 + *v4 - 1) & 0xFFFF); /*0x4495a1*/
   v15[1] = ((short)(((v10) >> 16) & 0xFFFF) << 8) + 128; /*0x4495be*/
   *(unsigned int *)v12 = v10; /*0x4495c2*/
   v15[0] = ((__int16)v10 << 8) + 128; /*0x4495cc*/
@@ -774,7 +774,7 @@ int* AnimClass::ctor(void* a1, void* a2, void* a3, int a4, void* a5, void* a6, i
         v55 = Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink); /*0x422310*/
         v58 = Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink); /*0x422324*/
         v28 = *(double *)(this->AnimClass_field_0xC8 + 792); /*0x42232e*/
-        LOWORD(v29) = Math::RoundToInt(v28); /*0x42233c*/
+        (v29) = ((v29) & ~0xFFFF) | ((Math::RoundToInt(v28)) & 0xFFFF); /*0x42233c*/
         v56 = (double)((int)abs32(v55) % v29) - *(double *)(this->AnimClass_field_0xC8 + 808); /*0x422375*/
         v63 = (double)((int)abs32(v58) % v29) - *(double *)(this->AnimClass_field_0xC8 + 808); /*0x422387*/
         v64 = v56; /*0x42238b*/
@@ -854,10 +854,10 @@ int* AnimClass::ctor(void* a1, void* a2, void* a3, int a4, void* a5, void* a6, i
         v47 = Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink); /*0x422579*/
         v48 = this->AnimClass_field_0xC8; /*0x42257e*/
         v57 = v47; /*0x422584*/
-        LOWORD(v49) = Math::RoundToInt(*(double *)(v48 + 808) + *(double *)(v48 + 808)); /*0x422590*/
+        (v49) = ((v49) & ~0xFFFF) | ((Math::RoundToInt(*(double *)(v48 + 808) + *(double *)(v48 + 808))) & 0xFFFF); /*0x422590*/
         v62 = v49; /*0x42259e*/
         v50 = (double)((int)abs32(v60) % v49) - *(double *)(v48 + 808); /*0x4225b2*/
-        LOWORD(v51) = Math::RoundToInt(v50); /*0x4225d0*/
+        (v51) = ((v51) & ~0xFFFF) | ((Math::RoundToInt(v50)) & 0xFFFF); /*0x4225d0*/
         v61 = (double)((int)abs32(v46) % v51) + *(double *)(v48 + 792); /*0x4225f8*/
         v52 = (double)((int)abs32(v57) % v62) - *(double *)(v48 + 808); /*0x422621*/
         v71 = v61; /*0x422627*/

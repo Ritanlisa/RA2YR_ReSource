@@ -391,7 +391,7 @@ int MovementAI::MainFootClass(int a1, char a2) {  // g57b5 W4: raw 真值补参 
       v11 = this->m_State; /*0x515132*/
       v96[1] = this->q028 / 256; /*0x515138*/
       *(unsigned int *)(v11 + 1368) = *(unsigned int *)v96; /*0x515141*/
-      LOBYTE(v10) = v95[0]; /*0x51514a*/
+      (v10) = ((v10) & ~0xFF) | ((v95[0]) & 0xFF); /*0x51514a*/
       *(unsigned int *)(this->m_State + 1596) = -1; /*0x51514e*/
       *(unsigned char *)(this->m_State + 1668) = v10; /*0x51515b*/
       *(unsigned char *)(this->m_State + 1669) = 0; /*0x515164*/
@@ -1008,7 +1008,7 @@ LABEL_19:
   {
     v29 = *(unsigned int *)&stru_A8E960.random[528]; /*0x5168d6*/
     v30 = *(double *)dword_8871E0->LightningPrintText * 900.0; /*0x5168e2*/
-    LOWORD(v31) = Math::RoundToInt(v30); /*0x5168e8*/
+    (v31) = ((v31) & ~0xFFFF) | ((Math::RoundToInt(v30)) & 0xFFFF); /*0x5168e8*/
     v32 = v68[1]; /*0x5168f0*/
     v33 = (unsigned int *)(this->m_State + 1600); /*0x5168f4*/
     *v33 = v29; /*0x5168fa*/
@@ -1064,7 +1064,7 @@ LABEL_19:
             v63 = v47 - v45; /*0x516a8c*/
             v64 = v49; /*0x516a90*/
             Math::Sqrt((double)v46 * (double)v46 + (double)v49 * (double)v49 + (double)(v47 - v45) * (double)(v47 - v45)); /*0x516abc*/
-            LOWORD(v50) = Math::RoundToInt(v30); /*0x516ac4*/
+            (v50) = ((v50) & ~0xFFFF) | ((Math::RoundToInt(v30)) & 0xFFFF); /*0x516ac4*/
             if ( v50 < dword_8871E0->BuildSpeed[1] && !(unsigned __int8)Team::AllMembersValid((Team *)this->m_State) ) /*0x516ade*/
             {
               v51 = (int *)(this->m_State + 156); /*0x516aee*/
@@ -1108,7 +1108,7 @@ LABEL_19:
   {
     v15 = *(unsigned int *)&stru_A8E960.random[528]; /*0x516690*/
     v16 = *(double *)dword_8871E0->LightningPrintText * 900.0; /*0x51669c*/
-    LOWORD(v17) = Math::RoundToInt(v16); /*0x5166a2*/
+    (v17) = ((v17) & ~0xFFFF) | ((Math::RoundToInt(v16)) & 0xFFFF); /*0x5166a2*/
     v18 = v66; /*0x5166aa*/
     v19 = (unsigned int *)(this->m_State + 1600); /*0x5166ae*/
     *v19 = v15; /*0x5166b5*/
@@ -1132,7 +1132,7 @@ LABEL_19:
     v63 = v22; /*0x516739*/
     v64 = v23; /*0x516741*/
     Math::Sqrt((double)v23 * (double)v23 + (double)v22 * (double)v22 + (double)v62 * (double)v62); /*0x516762*/
-    LOWORD(v24) = Math::RoundToInt(v16); /*0x51676a*/
+    (v24) = ((v24) & ~0xFFFF) | ((Math::RoundToInt(v16)) & 0xFFFF); /*0x51676a*/
     if ( v24 >= dword_8871E0->BuildSpeed[1] ) /*0x51677b*/
       goto LABEL_28; /*0x51677b*/
     if ( (*(int (**)(int))(*(unsigned int *)this->m_State + 388))(this->m_State) == 2 /*0x51679b*/
@@ -1282,7 +1282,7 @@ int* Pathfinding::CheckCliff(unsigned int *a2, int16_t *a3, int a4, int a5) {
     LOWORD(a3) = v24 + v15; /*0x5839f2*/
     HIWORD(a3) = (((v24) >> 16) & 0xFFFF) + HIWORD(dword_89F688[v13]); /*0x583a03*/
     v26[4] = a3; /*0x583a0c*/
-    LOWORD(v15) = *v16; /*0x583a10*/
+    (v15) = ((v15) & ~0xFFFF) | ((*v16) & 0xFFFF); /*0x583a10*/
     LOWORD(v16) = (((v24) >> 16) & 0xFFFF) + v16[1]; /*0x583a1a*/
     LOWORD(a3) = v24 + v15; /*0x583a1d*/
     HIWORD(a3) = (unsigned short)v16; /*0x583a22*/
@@ -8209,7 +8209,7 @@ int RulesClass::Reset() {
               fstp st
             }
             Math::Sqrt(v23); /*0x74e7af*/
-            LOWORD(v10) = Math::RoundToInt(v1); /*0x74e7b7*/
+            (v10) = ((v10) & ~0xFFFF) | ((Math::RoundToInt(v1)) & 0xFFFF); /*0x74e7b7*/
             v11 = *&this->q0B4; /*0x74e7bc*/
             v12 = 1000 - v10; /*0x74e7c7*/
             v13 = *&this->q0AC; /*0x74e7c9*/

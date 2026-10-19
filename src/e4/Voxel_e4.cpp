@@ -288,7 +288,7 @@ AbstractClass * Voxel::RenderFrame(void *a1)
   }
   LOWORD(v17) = Math::RoundToInt(*(float *)&dword_B2D948 - *(float *)&dword_B2D5E0); /*0x754655*/
   v18 = v17; /*0x754666*/
-  LOWORD(v19) = Math::RoundToInt(*(float *)&dword_B2D94C - *(float *)&dword_B2D5E4); /*0x754668*/
+  (v19) = ((v19) & ~0xFFFF) | ((Math::RoundToInt(*(float *)&dword_B2D94C - *(float *)&dword_B2D5E4)) & 0xFFFF); /*0x754668*/
   ebx24 = 128 - SLODWORD(v18) / 2; /*0x75467f*/
   LODWORD(v18) += 8; /*0x754686*/
   v20 = (unsigned int *)(v19 + 8); /*0x754694*/
@@ -298,9 +298,9 @@ AbstractClass * Voxel::RenderFrame(void *a1)
   dword_B2FB60 = ebx24; /*0x7546a8*/
   dword_B2FB68 = LODWORD(v18); /*0x7546b1*/
   dword_B2FB6C = v19 + 8; /*0x7546b9*/
-  LOWORD(v22) = Math::RoundToInt(v27[0]); /*0x7546c1*/
+  (v22) = ((v22) & ~0xFFFF) | ((Math::RoundToInt(v27[0])) & 0xFFFF); /*0x7546c1*/
   v24 = (unsigned int *)(v22 - SLODWORD(v18) / 2); /*0x7546c8*/
-  LOWORD(v23) = Math::RoundToInt(v27[1]); /*0x7546d9*/
+  (v23) = ((v23) & ~0xFFFF) | ((Math::RoundToInt(v27[1])) & 0xFFFF); /*0x7546d9*/
   LODWORD(v27[0]) = v24; /*0x7546e8*/
   LODWORD(v27[1]) = v23 - (int)v20 / 2; /*0x7546ec*/
   v27[4] = v18; /*0x7546f4*/
@@ -2116,11 +2116,11 @@ void* Voxel::FaceBlit()
       do /*0x76129b*/
       {
         v5 = i; /*0x76117f*/
-        LOWORD(v6) = Math::RoundToInt(i); /*0x76119d*/
+        (v6) = ((v6) & ~0xFFFF) | ((Math::RoundToInt(i)) & 0xFFFF); /*0x76119d*/
         v33 = v6; /*0x7611a8*/
-        LOWORD(v7) = Math::RoundToInt(v5); /*0x7611b5*/
+        (v7) = ((v7) & ~0xFFFF) | ((Math::RoundToInt(v5)) & 0xFFFF); /*0x7611b5*/
         v30 = v7; /*0x7611c0*/
-        LOWORD(v8) = Math::RoundToInt(v5); /*0x7611cd*/
+        (v8) = ((v8) & ~0xFFFF) | ((Math::RoundToInt(v5)) & 0xFFFF); /*0x7611cd*/
         v9 = Coord3D::Set(&v49, v8, v30, v33); /*0x7611e0*/
         v10 = *v9; /*0x7611e2*/
         v11 = v9->Coord3D_field_0x04; /*0x7611e4*/
@@ -2169,11 +2169,11 @@ void* Voxel::FaceBlit()
       if ( v18 < 4 ) /*0x7613a6*/
       {
         v19 = i; /*0x7613ac*/
-        LOWORD(v20) = Math::RoundToInt(i); /*0x7613ca*/
+        (v20) = ((v20) & ~0xFFFF) | ((Math::RoundToInt(i)) & 0xFFFF); /*0x7613ca*/
         v34 = v20; /*0x7613d5*/
-        LOWORD(v21) = Math::RoundToInt(v19); /*0x7613e2*/
+        (v21) = ((v21) & ~0xFFFF) | ((Math::RoundToInt(v19)) & 0xFFFF); /*0x7613e2*/
         v31 = v21; /*0x7613ed*/
-        LOWORD(v22) = Math::RoundToInt(v19); /*0x7613fa*/
+        (v22) = ((v22) & ~0xFFFF) | ((Math::RoundToInt(v19)) & 0xFFFF); /*0x7613fa*/
         v49 = *(Coord3D *)Coord3D::Set(&v50, v22, v31, v34); /*0x761411*/
         v40 = *(float *)CellStruct::Set((CellStruct *)&v42, *(unsigned int *)v49.__pad_0 / 256, v49.Coord3D_field_0x04 / 256); /*0x76144f*/
         if ( *(unsigned int *)v36 != LODWORD(v40) ) /*0x761453*/
@@ -2191,11 +2191,11 @@ void* Voxel::FaceBlit()
       }
       v25 = i; /*0x7614c3*/
       v40 = i; /*0x7614c7*/
-      LOWORD(v26) = Math::RoundToInt(i); /*0x7614e5*/
+      (v26) = ((v26) & ~0xFFFF) | ((Math::RoundToInt(i)) & 0xFFFF); /*0x7614e5*/
       v35 = v26; /*0x7614f0*/
-      LOWORD(v27) = Math::RoundToInt(v25); /*0x7614fd*/
+      (v27) = ((v27) & ~0xFFFF) | ((Math::RoundToInt(v25)) & 0xFFFF); /*0x7614fd*/
       v32 = v27; /*0x761508*/
-      LOWORD(v28) = Math::RoundToInt(v25); /*0x761515*/
+      (v28) = ((v28) & ~0xFFFF) | ((Math::RoundToInt(v25)) & 0xFFFF); /*0x761515*/
       v49 = *(Coord3D *)Coord3D::Set(&v51, v28, v32, v35); /*0x76152c*/
       v41 = *(unsigned int *)CellStruct::Set((CellStruct *)&v44, *(unsigned int *)v49.__pad_0 / 256, v49.Coord3D_field_0x04 / 256); /*0x76156e*/
       if ( (unsigned __int8)Coord::Compare2D((Coord *)v37, &v41) ) /*0x761572*/
@@ -2405,7 +2405,7 @@ int Voxel::SectionProject(int * a2, int a3)
     fmul st, st(2)
     faddp st(1), st
   }
-  LOWORD(v10) = Math::RoundToInt(v3); /*0x761a47*/
+  (v10) = ((v10) & ~0xFFFF) | ((Math::RoundToInt(v3)) & 0xFFFF); /*0x761a47*/
   __asm { fstp st } /*0x761a54*/
   __asm { fstp st }
   v64 = v56; /*0x761a5a*/
@@ -2426,7 +2426,7 @@ int Voxel::SectionProject(int * a2, int a3)
     fmul st, st(2)
     faddp st(1), st
   }
-  LOWORD(v11) = Math::RoundToInt(v3); /*0x761a96*/
+  (v11) = ((v11) & ~0xFFFF) | ((Math::RoundToInt(v3)) & 0xFFFF); /*0x761a96*/
   __asm { fild [esp+0C8h+var_9C] } /*0x761a9b*/
   v12 = v11; /*0x761a9f*/
   __asm /*0x761aa1*/
@@ -2436,7 +2436,7 @@ int Voxel::SectionProject(int * a2, int a3)
     fmul st, st(2)
     faddp st(1), st
   }
-  LOWORD(v13) = Math::RoundToInt(v3); /*0x761aab*/
+  (v13) = ((v13) & ~0xFFFF) | ((Math::RoundToInt(v3)) & 0xFFFF); /*0x761aab*/
   __asm { fild [esp+0C8h+var_98] } /*0x761ab0*/
   v14 = v13; /*0x761ab4*/
   __asm /*0x761ab6*/
@@ -2446,7 +2446,7 @@ int Voxel::SectionProject(int * a2, int a3)
     fmul st, st(2)
     faddp st(1), st
   }
-  LOWORD(v15) = Math::RoundToInt(v3); /*0x761ac0*/
+  (v15) = ((v15) & ~0xFFFF) | ((Math::RoundToInt(v3)) & 0xFFFF); /*0x761ac0*/
   v61 = v12; /*0x761ac9*/
   __asm { fstp st } /*0x761acd*/
   v63 = v15; /*0x761acf*/
@@ -2469,7 +2469,7 @@ int Voxel::SectionProject(int * a2, int a3)
     fstp st
   }
   Math::Sqrt(v52); /*0x761b09*/
-  LOWORD(v16) = Math::RoundToInt(v3); /*0x761b11*/
+  (v16) = ((v16) & ~0xFFFF) | ((Math::RoundToInt(v3)) & 0xFFFF); /*0x761b11*/
   LODWORD(v59) = v16; /*0x761b1a*/
   *&this->u32_B4 = v12; /*0x761b27*/
   *&this->u32_B8 = v62; /*0x761b2d*/
@@ -2677,7 +2677,7 @@ int Voxel::SectionProject(int * a2, int a3)
   }
   v74 = v28[1]; /*0x761e8e*/
   v75 = v28[2]; /*0x761e95*/
-  LOWORD(v29) = Math::RoundToInt(v3); /*0x761e99*/
+  (v29) = ((v29) & ~0xFFFF) | ((Math::RoundToInt(v3)) & 0xFFFF); /*0x761e99*/
   __asm { fild [esp+0C8h+var_9C] } /*0x761e9e*/
   v30 = v29; /*0x761ea2*/
   __asm /*0x761ea4*/
@@ -2688,7 +2688,7 @@ int Voxel::SectionProject(int * a2, int a3)
   LOWORD(v31) = Math::RoundToInt(v3); /*0x761eac*/
   __asm { fld [esp+0C8h+var_5C] } /*0x761eb1*/
   v57 = v31; /*0x761eb5*/
-  LOWORD(v32) = Math::RoundToInt(v3); /*0x761eb9*/
+  (v32) = ((v32) & ~0xFFFF) | ((Math::RoundToInt(v3)) & 0xFFFF); /*0x761eb9*/
   v33 = v57; /*0x761ebe*/
   __asm /*0x761eca*/
   {
@@ -2698,7 +2698,7 @@ int Voxel::SectionProject(int * a2, int a3)
   *&this->u32_FC = v30; /*0x761ed0*/
   *&this->q100 = v33; /*0x761ed2*/
   *&this->q104 = v32; /*0x761ed5*/
-  LOWORD(v34) = Math::RoundToInt(v3); /*0x761ed8*/
+  (v34) = ((v34) & ~0xFFFF) | ((Math::RoundToInt(v3)) & 0xFFFF); /*0x761ed8*/
   __asm /*0x761edd*/
   {
     fld [esp+0C8h+var_A4]
@@ -2708,7 +2708,7 @@ int Voxel::SectionProject(int * a2, int a3)
   LOWORD(v36) = Math::RoundToInt(v3); /*0x761ee7*/
   __asm { fld [esp+0C8h+var_80] } /*0x761eec*/
   v57 = v36; /*0x761ef0*/
-  LOWORD(v37) = Math::RoundToInt(v3); /*0x761ef4*/
+  (v37) = ((v37) & ~0xFFFF) | ((Math::RoundToInt(v3)) & 0xFFFF); /*0x761ef4*/
   *&this->q108 = v35; /*0x761eff*/
   __asm /*0x761f09*/
   {
@@ -2717,7 +2717,7 @@ int Voxel::SectionProject(int * a2, int a3)
   }
   *&this->u32_10C = v57; /*0x761f0f*/
   *&this->u32_110 = v37; /*0x761f12*/
-  LOWORD(v38) = Math::RoundToInt(v3); /*0x761f15*/
+  (v38) = ((v38) & ~0xFFFF) | ((Math::RoundToInt(v3)) & 0xFFFF); /*0x761f15*/
   __asm /*0x761f1a*/
   {
     fld [esp+0C8h+var_A4]
@@ -2727,13 +2727,13 @@ int Voxel::SectionProject(int * a2, int a3)
   LOWORD(v40) = Math::RoundToInt(v3); /*0x761f24*/
   __asm { fld [esp+0C8h+var_74] } /*0x761f29*/
   v57 = v40; /*0x761f2d*/
-  LOWORD(v41) = Math::RoundToInt(v3); /*0x761f31*/
+  (v41) = ((v41) & ~0xFFFF) | ((Math::RoundToInt(v3)) & 0xFFFF); /*0x761f31*/
   v42 = v57; /*0x761f36*/
   __asm { fadd [esp+0C8h+var_70] } /*0x761f40*/
   *&this->q114 = v39; /*0x761f44*/
   *&this->q118 = v42; /*0x761f46*/
   *&this->u32_11C = v41; /*0x761f49*/
-  LOWORD(v43) = Math::RoundToInt(v3); /*0x761f4c*/
+  (v43) = ((v43) & ~0xFFFF) | ((Math::RoundToInt(v3)) & 0xFFFF); /*0x761f4c*/
   __asm /*0x761f51*/
   {
     fld [esp+0C8h+var_A4]
@@ -2743,7 +2743,7 @@ int Voxel::SectionProject(int * a2, int a3)
   LOWORD(v45) = Math::RoundToInt(v3); /*0x761f5b*/
   __asm { fld [esp+0C8h+var_68] } /*0x761f60*/
   v57 = v45; /*0x761f64*/
-  LOWORD(v46) = Math::RoundToInt(v3); /*0x761f68*/
+  (v46) = ((v46) & ~0xFFFF) | ((Math::RoundToInt(v3)) & 0xFFFF); /*0x761f68*/
   v47 = v57; /*0x761f6d*/
   *&this->q120 = v44; /*0x761f77*/
   *&this->q124 = v47; /*0x761f85*/
@@ -2956,7 +2956,7 @@ AbstractClass * * Voxel::LightRender(AbstractClass ** a2, int a3)
     fmul st, st(2)
     faddp st(1), st
   }
-  LOWORD(v10) = Math::RoundToInt(v3); /*0x762477*/
+  (v10) = ((v10) & ~0xFFFF) | ((Math::RoundToInt(v3)) & 0xFFFF); /*0x762477*/
   __asm { fstp st } /*0x762484*/
   __asm { fstp st }
   v64 = v56; /*0x76248a*/
@@ -2977,7 +2977,7 @@ AbstractClass * * Voxel::LightRender(AbstractClass ** a2, int a3)
     fmul st, st(2)
     faddp st(1), st
   }
-  LOWORD(v11) = Math::RoundToInt(v3); /*0x7624c6*/
+  (v11) = ((v11) & ~0xFFFF) | ((Math::RoundToInt(v3)) & 0xFFFF); /*0x7624c6*/
   __asm { fild [esp+0C8h+var_9C] } /*0x7624cb*/
   v12 = v11; /*0x7624cf*/
   __asm /*0x7624d1*/
@@ -2987,7 +2987,7 @@ AbstractClass * * Voxel::LightRender(AbstractClass ** a2, int a3)
     fmul st, st(2)
     faddp st(1), st
   }
-  LOWORD(v13) = Math::RoundToInt(v3); /*0x7624db*/
+  (v13) = ((v13) & ~0xFFFF) | ((Math::RoundToInt(v3)) & 0xFFFF); /*0x7624db*/
   __asm { fild [esp+0C8h+var_98] } /*0x7624e0*/
   v14 = v13; /*0x7624e4*/
   __asm /*0x7624e6*/
@@ -2997,7 +2997,7 @@ AbstractClass * * Voxel::LightRender(AbstractClass ** a2, int a3)
     fmul st, st(2)
     faddp st(1), st
   }
-  LOWORD(v15) = Math::RoundToInt(v3); /*0x7624f0*/
+  (v15) = ((v15) & ~0xFFFF) | ((Math::RoundToInt(v3)) & 0xFFFF); /*0x7624f0*/
   v61 = v12; /*0x7624fd*/
   __asm /*0x762503*/
   {
@@ -3069,7 +3069,7 @@ AbstractClass * * Voxel::LightRender(AbstractClass ** a2, int a3)
   Coord::To_Screen((Coord *)g_TacticalClass_Instance, &v61, &this->Voxel_field_0xCC); /*0x762617*/
   Coord::To_Screen((Coord *)g_TacticalClass_Instance, &v64, &this->u32_D4); /*0x76262e*/
   __asm { fld [esp+0C8h+var_88] } /*0x762633*/
-  LOWORD(v20) = Math::RoundToInt(v3); /*0x762637*/
+  (v20) = ((v20) & ~0xFFFF) | ((Math::RoundToInt(v3)) & 0xFFFF); /*0x762637*/
   LODWORD(v59) = v20; /*0x76263c*/
   __asm { fild dword ptr [esp+0C8h+var_B4+4] } /*0x762646*/
   _EAX = 48 * *&this->u32_B0; /*0x76264d*/
@@ -3260,7 +3260,7 @@ AbstractClass * * Voxel::LightRender(AbstractClass ** a2, int a3)
   }
   v72 = v27[1]; /*0x76290f*/
   v73 = v27[2]; /*0x762916*/
-  LOWORD(v28) = Math::RoundToInt(v3); /*0x76291a*/
+  (v28) = ((v28) & ~0xFFFF) | ((Math::RoundToInt(v3)) & 0xFFFF); /*0x76291a*/
   __asm { fild [esp+0C8h+var_9C] } /*0x76291f*/
   v29 = v28; /*0x762923*/
   __asm /*0x762925*/
@@ -3271,7 +3271,7 @@ AbstractClass * * Voxel::LightRender(AbstractClass ** a2, int a3)
   LOWORD(v30) = Math::RoundToInt(v3); /*0x76292d*/
   __asm { fld [esp+0C8h+var_64] } /*0x762932*/
   v57 = v30; /*0x762936*/
-  LOWORD(v31) = Math::RoundToInt(v3); /*0x76293a*/
+  (v31) = ((v31) & ~0xFFFF) | ((Math::RoundToInt(v3)) & 0xFFFF); /*0x76293a*/
   v32 = v57; /*0x76293f*/
   __asm /*0x76294b*/
   {
@@ -3281,7 +3281,7 @@ AbstractClass * * Voxel::LightRender(AbstractClass ** a2, int a3)
   *&this->u32_FC = v29; /*0x762951*/
   *&this->q100 = v32; /*0x762953*/
   *&this->q104 = v31; /*0x762956*/
-  LOWORD(v33) = Math::RoundToInt(v3); /*0x762959*/
+  (v33) = ((v33) & ~0xFFFF) | ((Math::RoundToInt(v3)) & 0xFFFF); /*0x762959*/
   __asm /*0x76295e*/
   {
     fld [esp+0C8h+var_A4]
@@ -3291,7 +3291,7 @@ AbstractClass * * Voxel::LightRender(AbstractClass ** a2, int a3)
   LOWORD(v35) = Math::RoundToInt(v3); /*0x762968*/
   __asm { fld [esp+0C8h+var_7C] } /*0x76296d*/
   v57 = v35; /*0x762971*/
-  LOWORD(v36) = Math::RoundToInt(v3); /*0x762975*/
+  (v36) = ((v36) & ~0xFFFF) | ((Math::RoundToInt(v3)) & 0xFFFF); /*0x762975*/
   *&this->q108 = v34; /*0x762980*/
   __asm /*0x76298a*/
   {
@@ -3300,7 +3300,7 @@ AbstractClass * * Voxel::LightRender(AbstractClass ** a2, int a3)
   }
   *&this->u32_10C = v57; /*0x762990*/
   *&this->u32_110 = v36; /*0x762993*/
-  LOWORD(v37) = Math::RoundToInt(v3); /*0x762996*/
+  (v37) = ((v37) & ~0xFFFF) | ((Math::RoundToInt(v3)) & 0xFFFF); /*0x762996*/
   __asm /*0x76299b*/
   {
     fld [esp+0C8h+var_A4]
@@ -3310,13 +3310,13 @@ AbstractClass * * Voxel::LightRender(AbstractClass ** a2, int a3)
   LOWORD(v39) = Math::RoundToInt(v3); /*0x7629a5*/
   __asm { fld [esp+0C8h+var_58] } /*0x7629aa*/
   v57 = v39; /*0x7629ae*/
-  LOWORD(v40) = Math::RoundToInt(v3); /*0x7629b2*/
+  (v40) = ((v40) & ~0xFFFF) | ((Math::RoundToInt(v3)) & 0xFFFF); /*0x7629b2*/
   v41 = v57; /*0x7629b7*/
   __asm { fadd [esp+0C8h+var_78] } /*0x7629c1*/
   *&this->q114 = v38; /*0x7629c5*/
   *&this->q118 = v41; /*0x7629c7*/
   *&this->u32_11C = v40; /*0x7629ca*/
-  LOWORD(v42) = Math::RoundToInt(v3); /*0x7629cd*/
+  (v42) = ((v42) & ~0xFFFF) | ((Math::RoundToInt(v3)) & 0xFFFF); /*0x7629cd*/
   __asm /*0x7629d2*/
   {
     fld [esp+0C8h+var_A4]
@@ -3326,7 +3326,7 @@ AbstractClass * * Voxel::LightRender(AbstractClass ** a2, int a3)
   LOWORD(v44) = Math::RoundToInt(v3); /*0x7629dc*/
   __asm { fld [esp+0C8h+var_70] } /*0x7629e1*/
   v57 = v44; /*0x7629e5*/
-  LOWORD(v45) = Math::RoundToInt(v3); /*0x7629e9*/
+  (v45) = ((v45) & ~0xFFFF) | ((Math::RoundToInt(v3)) & 0xFFFF); /*0x7629e9*/
   v46 = v57; /*0x7629ee*/
   *&this->q120 = v43; /*0x7629f8*/
   *&this->q124 = v46; /*0x762a06*/
@@ -3442,7 +3442,7 @@ DynamicVectorClass_flat * * Voxel::TransformMatrix()
 
   if ( *&this->q138 - *&this->u32_140 > 0.1 && !this->u32_B0 ) /*0x762b18*/
     this->u64_12D = 1; /*0x762b22*/
-  LOWORD(v2) = Math::RoundToInt(1.0 / 0.050000001); /*0x762b35*/
+  (v2) = ((v2) & ~0xFFFF) | ((Math::RoundToInt(1.0 / 0.050000001)) & 0xFFFF); /*0x762b35*/
   if ( this->q130 == v2 && this->u32_B0 == 3 ) /*0x762b49*/
   {
     v3 = this->q134; /*0x762b4b*/
@@ -3475,7 +3475,7 @@ DynamicVectorClass_flat * * Voxel::TransformMatrix()
     v84 = v12; /*0x762be6*/
     v83 = v13; /*0x762bea*/
     Math::Sqrt((double)v82 * (double)v82 + (double)v12 * (double)v12 + (double)v13 * (double)v13); /*0x762c16*/
-    LOWORD(v14) = Math::RoundToInt(1.0 / 0.050000001); /*0x762c1e*/
+    (v14) = ((v14) & ~0xFFFF) | ((Math::RoundToInt(1.0 / 0.050000001)) & 0xFFFF); /*0x762c1e*/
     v81 = v14; /*0x762c23*/
     if ( dbl_B45D80 * 6.0 < (double)v14 ) /*0x762c3e*/
     {
@@ -3758,11 +3758,11 @@ int Voxel::FacePixelBuffer(int * a1)
           v16 = 0; /*0x7dfa79*/
           if ( !v13 ) /*0x7dfa7e*/
             break; /*0x7dfa7e*/
-          LOBYTE(v16) = *v12; /*0x7dfa80*/
+          (v16) = ((v16) & ~0xFF) | ((*v12) & 0xFF); /*0x7dfa80*/
           v17 = v12 + 1; /*0x7dfa82*/
           (v13) = ((v13) & ~0xFF) | ((v13 - v16) & 0xFF); /*0x7dfa83*/
           v15 += g_VoxelOffsetTable[v16]; /*0x7dfa85*/
-          BYTE1(v13) = *v17; /*0x7dfa8c*/
+          (v13) = ((v13) & ~(0xFF << 8)) | (((*v17) & 0xFF) << 8); /*0x7dfa8c*/
           for ( i = v17 + 1; (((v13) >> 8) & 0xFF); g_VoxelRenderBuffer[(unsigned int)v19] = g_VoxelColorPalette[(unsigned int)v20] ) /*0x7dfa91*/
           {
             (v13) = ((v13) & ~0xFF) | ((v13 - 1) & 0xFF); /*0x7dfa95*/
@@ -3844,12 +3844,12 @@ int Voxel::FacePixelBufferEx(int a1)
   while ( v3 ); /*0x7dfb1b*/
   v8 = &savedregs; /*0x7dfb1d*/
   v23 = *(unsigned int *)(a1 + 24); /*0x7dfb26*/
-  BYTE1(v3) = *(unsigned char *)(a1 + 49); /*0x7dfb29*/
+  (v3) = ((v3) & ~(0xFF << 8)) | (((*(unsigned char *)(a1 + 49)) & 0xFF) << 8); /*0x7dfb29*/
   do /*0x7dfb72*/
   {
     *(v8 - 1) = *(unsigned int *)(a1 + 12); /*0x7dfb2f*/
     *(v8 - 2) = *(v8 - 3); /*0x7dfb35*/
-    LOBYTE(v3) = *(unsigned char *)(a1 + 48); /*0x7dfb38*/
+    (v3) = ((v3) & ~0xFF) | ((*(unsigned char *)(a1 + 48)) & 0xFF); /*0x7dfb38*/
     do /*0x7dfb5c*/
     {
       *(unsigned int *)(a1 + 24) = *(v8 - 3); /*0x7dfb3e*/
@@ -3861,13 +3861,13 @@ int Voxel::FacePixelBufferEx(int a1)
         v21 = v8; /*0x7dfb82*/
         v12 = (unsigned __int8 *)(*(unsigned int *)(a1 + 8) + v10); /*0x7dfb85*/
         v13 = *(unsigned __int8 *)(a1 + 50); /*0x7dfb88*/
-        LOWORD(v9) = *(unsigned short *)(a1 + 26); /*0x7dfb8b*/
+        (v9) = ((v9) & ~0xFFFF) | ((*(unsigned short *)(a1 + 26)) & 0xFFFF); /*0x7dfb8b*/
         v15 = v9 << 16; /*0x7dfb8f*/
         v14 = *(unsigned int *)(a1 + 42); /*0x7dfb92*/
-        LOWORD(v15) = *(unsigned short *)(a1 + 24); /*0x7dfb95*/
+        (v15) = ((v15) & ~0xFFFF) | ((*(unsigned short *)(a1 + 24)) & 0xFFFF); /*0x7dfb95*/
         while ( v13 ) /*0x7dfb9c*/
         {
-          BYTE1(v13) = *v12; /*0x7dfb9e*/
+          (v13) = ((v13) & ~(0xFF << 8)) | (((*v12) & 0xFF) << 8); /*0x7dfb9e*/
           for ( i = v12 - 1; (((v13) >> 8) & 0xFF); g_VoxelRenderBuffer[(unsigned int)v17] = g_VoxelColorPalette[(unsigned int)v18] ) /*0x7dfba3*/
           {
             (v13) = ((v13) & ~0xFF) | ((v13 - 1) & 0xFF); /*0x7dfba7*/
@@ -3980,11 +3980,11 @@ int Voxel::FacePixelBuffer3(int * a1)
           v16 = 0; /*0x7dfcb9*/
           if ( !v13 ) /*0x7dfcbe*/
             break; /*0x7dfcbe*/
-          LOBYTE(v16) = *v12; /*0x7dfcc0*/
+          (v16) = ((v16) & ~0xFF) | ((*v12) & 0xFF); /*0x7dfcc0*/
           v17 = v12 + 1; /*0x7dfcc2*/
           (v13) = ((v13) & ~0xFF) | ((v13 - v16) & 0xFF); /*0x7dfcc3*/
           v15 += g_VoxelOffsetTable[v16]; /*0x7dfcc5*/
-          BYTE1(v13) = *v17; /*0x7dfccc*/
+          (v13) = ((v13) & ~(0xFF << 8)) | (((*v17) & 0xFF) << 8); /*0x7dfccc*/
           for ( i = v17 + 1; (((v13) >> 8) & 0xFF); g_VoxelRenderBuffer[(unsigned int)v19] = v20 ) /*0x7dfcd1*/
           {
             (v13) = ((v13) & ~0xFF) | ((v13 - 1) & 0xFF); /*0x7dfcd5*/

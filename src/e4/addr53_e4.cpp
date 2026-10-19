@@ -224,7 +224,7 @@ int ShowLoadingScreen(void * a1, void * a2, void * a3)
     for ( i = 0; i < 256; ++i ) /*0x5312ec*/
     {
       v7 = &v5[2 * (i % 256) + i % 256]; /*0x531302*/
-      LOBYTE(v36) = 4 * *v7; /*0x531309*/
+      (v36) = ((v36) & ~0xFF) | ((4 * *v7) & 0xFF); /*0x531309*/
       HIBYTE(v36) = 4 * v7[1]; /*0x531313*/
       v8 = 4 * v7[2]; /*0x53131f*/
       *(unsigned short *)v7 = v36; /*0x531323*/
@@ -295,7 +295,7 @@ int ShowLoadingScreen(void * a1, void * a2, void * a3)
   v33 += *(unsigned int *)(Instance + 28) + 3; /*0x5315bb*/
   TextRenderer::Printf(v35, (size_t)v20, (int)g_DSurface_Hidden, (int)v38, (int)&v32, 0xFFFF, 0, 22, v28); /*0x5315d2*/
   Frame::Present((int)g_DSurface_Hidden, 10, (int)v5, v16, 0, v29, a3, v31); /*0x5315e4*/
-  LODWORD(v21) = Audio::Callback(); /*0x5315e9*/
+  (v21) = ((v21) & 0xFFFFFFFF00000000ull) | ((Audio::Callback()) & 0xFFFFFFFFull); /*0x5315e9*/
   *(unsigned long long *)&MEMORY[0xA8EB00].?[2980] = v21 + 5000; /*0x5315f6*/
   if ( v5 ) /*0x531603*/
     __3_YAXPAX_Z(v5); /*0x531606*/
@@ -749,12 +749,12 @@ void TheaterClass_LoadMIX(int a1)
         v13 = v11->AbstractClass_1; /*0x534c11*/
         v14 = 4 * *v11; /*0x534c14*/
         v15 = v11 + 1; /*0x534c17*/
-        LOBYTE(v29) = v14; /*0x534c18*/
+        (v29) = ((v29) & ~0xFF) | ((v14) & 0xFF); /*0x534c18*/
         v16 = 4 * v15[1]; /*0x534c23*/
         v11 = v15 + 2; /*0x534c28*/
         v17 = (char *)&FileSystem_TEMPERAT_PAL + 3 * (v12 % 256); /*0x534c42*/
         ++v12; /*0x534c49*/
-        HIBYTE(v29) = 4 * v13; /*0x534c2f*/
+        (v29) = ((v29) & ~(0xFF << 8)) | (((4 * v13) & 0xFF) << 8); /*0x534c2f*/
         *(unsigned short *)v17 = v29; /*0x534c4a*/
         v17[2] = v16; /*0x534c53*/
       }
@@ -764,8 +764,8 @@ void TheaterClass_LoadMIX(int a1)
     {
       for ( i = 0; i < 256; ++i ) /*0x534c5a*/
       {
-        LOBYTE(v30) = i; /*0x534c63*/
-        HIBYTE(v30) = -1 - i; /*0x534c67*/
+        (v30) = ((v30) & ~0xFF) | ((i) & 0xFF); /*0x534c63*/
+        (v30) = ((v30) & ~(0xFF << 8)) | (((-1 - i) & 0xFF) << 8); /*0x534c67*/
         v19 = 4 * i; /*0x534c6d*/
         v20 = (char *)&FileSystem_TEMPERAT_PAL + 3 * (i % 256); /*0x534c85*/
         *(unsigned short *)v20 = v30; /*0x534c8d*/
@@ -781,7 +781,7 @@ void TheaterClass_LoadMIX(int a1)
     for ( j = 0; j < 256; ++j ) /*0x534cde*/
     {
       v23 = &stru_886380[3 * (j % 256)]; /*0x534cf7*/
-      LOBYTE(v31) = 4 * *v23; /*0x534d01*/
+      (v31) = ((v31) & ~0xFF) | ((4 * *v23) & 0xFF); /*0x534d01*/
       v24 = MEMORY[0x886382][3 * (j % 256)]; /*0x534d0c*/
       HIBYTE(v31) = 4 * MEMORY[0x886381][3 * (j % 256)]; /*0x534d16*/
       *(unsigned short *)v23 = v31; /*0x534d23*/
@@ -1038,14 +1038,14 @@ AbstractClass * * E4Recv_538E70::sub_538E70(double a2)
     LOBYTE(v14) = v6; /*0x538ea9*/
     BYTE2(v12.Color_field_00) = v6; /*0x538eb7*/
     v13 = v6; /*0x538ebb*/
-    LOWORD(v7) = Math::RoundToInt((double)v6 * a2); /*0x538ec7*/
+    (v7) = ((v7) & ~0xFFFF) | ((Math::RoundToInt((double)v6 * a2)) & 0xFFFF); /*0x538ec7*/
     if ( v7 >= 255 ) /*0x538ed1*/
       v7 = 255; /*0x538ed3*/
     BYTE2(v12.Color_field_00) = v7 <= 0 ? 0 : v7;
     v8 = Color::ConvertToRGB(&v12, (int)&v11); /*0x538ef2*/
     ++v3; /*0x538ef4*/
     result = *(unsigned short *)v8; /*0x538efb*/
-    LOBYTE(v8) = *(unsigned char *)(v8 + 2); /*0x538efe*/
+    (v8) = ((v8) & ~0xFF) | ((*(unsigned char *)(v8 + 2)) & 0xFF); /*0x538efe*/
     *(unsigned short *)v4 = result; /*0x538f01*/
     v4[2] = v8; /*0x538f04*/
   }
@@ -1339,13 +1339,13 @@ int SuperWeapon_Update()
               v31 = *(unsigned int *)(*(int *)((char *)&stru_A83CD9.estimatedHealth + 3) + 90196); /*0x53ab01*/
             VoxClass::FindAndPlay(&stru_828080, -1); /*0x53ab11*/
             StringCSF = GetStringCSF(aTxtLightningSt_0, 0, g_Str_File_Ion_cpp, 974); /*0x53ab31*/
-            LOBYTE(v17) = MessageListClass::AddMessage(&unk_A8BC60, 0, 0, StringCSF, v31, 70, 150, 0); /*0x53ab40*/
+            (v17) = ((v17) & ~0xFF) | ((MessageListClass::AddMessage(&unk_A8BC60, 0, 0, StringCSF, v31, 70, 150, 0)) & 0xFF); /*0x53ab40*/
           }
         }
       }
       else
       {
-        LOBYTE(v17) = LightningStorm::Start(LightningStorm_Duration, 0, LightningStorm_Coords, LightningStorm_Owner); /*0x53aaca*/
+        (v17) = ((v17) & ~0xFF) | ((LightningStorm::Start(LightningStorm_Duration, 0, LightningStorm_Coords, LightningStorm_Owner)) & 0xFF); /*0x53aaca*/
       }
     }
   }
@@ -3248,7 +3248,7 @@ DWORD sub_53E070(unsigned int * lpThreadParameter)
   {
     do /*0x53e1ac*/
     {
-      LODWORD(v2) = Audio::Callback(); /*0x53e096*/
+      (v2) = ((v2) & 0xFFFFFFFF00000000ull) | ((Audio::Callback()) & 0xFFFFFFFFull); /*0x53e096*/
       AudioThread::UpdateStats(v1 + 8, v2); /*0x53e0a0*/
       v3 = (ObjectClass *)dword_AA045C; /*0x53e0ac*/
       if ( dword_AA045C && dword_AA0444 && Stream ) /*0x53e0c8*/

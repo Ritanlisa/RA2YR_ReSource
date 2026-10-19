@@ -1075,12 +1075,12 @@ LABEL_13:
               v85 = 0; /*0x6a971d*/
               if ( v87 >= v20 ) /*0x6a9727*/
               {
-                LOBYTE(v70) = 0; /*0x6a99be*/
+                (v70) = ((v70) & ~0xFF) | ((0) & 0xFF); /*0x6a99be*/
               }
               else
               {
-                if ( !*(unsigned char *)(v19 + 52) || (HIBYTE(v70) = 1, stru_A8E960.random[552]) ) /*0x6a9740*/
-                  HIBYTE(v70) = 0; /*0x6a9742*/
+                if ( !*(unsigned char *)(v19 + 52) || ((v70) = ((v70) & ~(0xFF << 8)) | (((1) & 0xFF) << 8), stru_A8E960.random[552]) ) /*0x6a9740*/
+                  (v70) = ((v70) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x6a9742*/
                 v21 = *(unsigned int *)(v81 + 52 * v87 + 92); /*0x6a974d*/
                 v22 = v81 + 52 * v87; /*0x6a9754*/
                 v84 = (int *)v22; /*0x6a9757*/
@@ -1093,7 +1093,7 @@ LABEL_13:
                     v90 = 0; /*0x6a995e*/
                   else
                     v90 = (int)v32[46]; /*0x6a9958*/
-                  LOBYTE(v70) = 1; /*0x6a996b*/
+                  (v70) = ((v70) & ~0xFF) | ((1) & 0xFF); /*0x6a996b*/
                   IsCliffWall = !SuperClass::ShouldDrawProgress(*(SuperClass **)(*(unsigned int *)(*(int *)((char *)&stru_A83CD9.estimatedHealth + 3) /*0x6a998c*/
                                                                                            + 600)
                                                                                + 4 * v31));
@@ -1135,7 +1135,7 @@ LABEL_13:
                     if ( !v83 ) /*0x6a981b*/
                     {
                       v16 = v74; /*0x6a987d*/
-                      LOBYTE(v70) = 0; /*0x6a9881*/
+                      (v70) = ((v70) & ~0xFF) | ((0) & 0xFF); /*0x6a9881*/
                       v28 = (unsigned int *)(v81 + 4 * (v87 + 4 * (3 * v87 + 6) + 2)); /*0x6a988e*/
                       switch ( *v28 ) /*0x6a989c*/
                       {
@@ -1146,14 +1146,14 @@ LABEL_13:
                         case 1: /*0x6a989c*/
                           Member09 = 0; /*0x6a98a3*/
                           v75 = 1; /*0x6a98a5*/
-                          LOBYTE(v70) = 1; /*0x6a98ac*/
+                          (v70) = ((v70) & ~0xFF) | ((1) & 0xFF); /*0x6a98ac*/
                           if ( *v28 != 1 ) /*0x6a98bb*/
                             goto LABEL_45; /*0x6a98bb*/
                           v27 = v84[27]; /*0x6a98c1*/
                           goto LABEL_43; /*0x6a98c1*/
                         case 2: /*0x6a989c*/
                           v29 = 0; /*0x6a98eb*/
-                          LOBYTE(v70) = 1; /*0x6a98ed*/
+                          (v70) = ((v70) & ~0xFF) | ((1) & 0xFF); /*0x6a98ed*/
                           IsCliffWall = 0; /*0x6a98f4*/
                           v16 = 1; /*0x6a98f9*/
                           if ( *v28 == 1 ) /*0x6a9905*/
@@ -1165,7 +1165,7 @@ LABEL_13:
                           ProductionState = v29; /*0x6a9919*/
                           goto LABEL_59; /*0x6a991d*/
                         case 3: /*0x6a989c*/
-                          LOBYTE(v70) = 1; /*0x6a98da*/
+                          (v70) = ((v70) & ~0xFF) | ((1) & 0xFF); /*0x6a98da*/
                           IsCliffWall = 1; /*0x6a98df*/
                           v16 = 0; /*0x6a98e4*/
                           goto LABEL_59; /*0x6a98e6*/
@@ -1173,7 +1173,7 @@ LABEL_13:
                           goto LABEL_59;
                       }
                     }
-                    LOBYTE(v70) = 1; /*0x6a981d*/
+                    (v70) = ((v70) & ~0xFF) | ((1) & 0xFF); /*0x6a981d*/
                     IsCliffWall = ObjectClass::IsCliffWall((ObjectClass *)v83); /*0x6a9829*/
                     if ( IsCliffWall ) /*0x6a982d*/
                       BufferCount = (size_t)GetStringCSF(g_Str_TXT_READY, 0, &stru_83FA80.AlliedVoice[6], 3411); /*0x6a9845*/
@@ -1225,7 +1225,7 @@ LABEL_59:
                     0,
                     0);
                 }
-                if ( HIBYTE(v70) ) /*0x6a9a49*/
+                if ( (((v70) >> 8) & 0xFF) ) /*0x6a9a49*/
                 {
                   v119[0] = v15; /*0x6a9a61*/
                   v119[1] = v17; /*0x6a9a68*/

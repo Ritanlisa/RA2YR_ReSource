@@ -224,7 +224,7 @@ char File::Dispatch(void *a1, void *a2, void *a3, void *a4)
   {
     case 0: /*0x4cb94c*/
     case 1: /*0x4cb94c*/
-      LOWORD(v5) = ntohs(**&this->ptr_8); /*0x4cb95a*/
+      (v5) = ((v5) & ~0xFFFF) | ((ntohs(**&this->ptr_8)) & 0xFFFF); /*0x4cb95a*/
       **&this->ptr_8 = v5; /*0x4cb963*/
       break; /*0x4cb966*/
     case 2: /*0x4cb94c*/
@@ -416,7 +416,7 @@ int File::FindByPrefix(char *Str1, unsigned char *a3)
         return 0; /*0x625dd2*/
     }
     *a3 = **(unsigned char **)(v3 + 8); /*0x625def*/
-    LOBYTE(v4) = v3 != 0; /*0x625df5*/
+    (v4) = ((v4) & ~0xFF) | ((v3 != 0) & 0xFF); /*0x625df5*/
   }
   else
   {

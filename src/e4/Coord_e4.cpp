@@ -113,8 +113,8 @@ unsigned int * Coord::ToCell(unsigned int *aP1)
 
 
   int v3; // [esp+0h] [ebp-4h]
-  LOWORD(v3) = *(unsigned int *)&this->__pad_0 / 256; /*0x413a3f*/
-  HIWORD(v3) = *&this->u32_4 / 256; /*0x413a53*/
+  (v3) = ((v3) & ~0xFFFF) | ((*(unsigned int *)&this->__pad_0 / 256) & 0xFFFF); /*0x413a3f*/
+  (v3) = ((v3) & ~(0xFFFF << 16)) | (((*&this->u32_4 / 256) & 0xFFFF) << 16); /*0x413a53*/
   *aP1 = v3; /*0x413a60*/
   return aP1; /*0x413a63*/
 
@@ -236,10 +236,10 @@ void * Coord::WorldToScreen(MouseClass * aP1, MouseClass * aP2, char a4)
   int v5; // esi
   v5 = (int)(aP2[1]); /*0x6557f9*/
   int v7; // eax
-  LOWORD(v7) = Math::RoundToInt((double)(*aP2 + (this->u32_1490 << 8) - v5) * this->u32_1488 * 0.00390625); /*0x655820*/
+  (v7) = ((v7) & ~0xFFFF) | ((Math::RoundToInt((double)(*aP2 + (this->u32_1490 << 8) - v5) * this->u32_1488 * 0.00390625)) & 0xFFFF); /*0x655820*/
   int v8 = v7; // ebp /*0x65582b*/
   int v9; // eax
-  LOWORD(v9) = Math::RoundToInt((double)(v4 + v5 - (this->u32_1498 << 8)) * this->u32_1488 * 0.00390625); /*0x655848*/
+  (v9) = ((v9) & ~0xFFFF) | ((Math::RoundToInt((double)(v4 + v5 - (this->u32_1498 << 8)) * this->u32_1488 * 0.00390625)) & 0xFFFF); /*0x655848*/
   if ( a4 ) /*0x655853*/
   {
     if ( v8 < 0 ) /*0x655857*/
@@ -272,7 +272,7 @@ AbstractClass * * Coord::To_Screen(unsigned int *a2, int *a3)
   int v5; // esi
   v5 = (30 * v10 / 2 + 30 * *a2 / 2) / 256; /*0x6d21cb*/
   int v6; // eax
-  LOWORD(v6) = Math::RoundToInt((double)(int)a2[2] * dbl_B0CD48 + (double)(a2[2] >= 728) + 0.5); /*0x6d21f2*/
+  (v6) = ((v6) & ~0xFFFF) | ((Math::RoundToInt((double)(int)a2[2] * dbl_B0CD48 + (double)(a2[2] >= 728) + 0.5)) & 0xFFFF); /*0x6d21f2*/
   *a3 = v4; /*0x6d21fd*/
   a3[1] = v5 - v6; /*0x6d21ff*/
   int v7 = *a3 - *&this->u32_B0; // edi /*0x6d2213*/

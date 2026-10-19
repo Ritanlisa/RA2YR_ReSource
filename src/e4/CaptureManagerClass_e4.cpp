@@ -1089,7 +1089,7 @@ namespace gamemd {
 unsigned int CaptureManagerClass::LoadTypeData(int a2)
 {
 
-  if ( LOBYTE(this->vtable4) ) /*0x472ab0*/
+  if ( ((this->vtable4) & 0xFF) ) /*0x472ab0*/
     return (unsigned int)(a2 - *&this->ptr_4) >> 2; /*0x472ac5*/
   else
     return 0; /*0x472ab7*/
@@ -1135,13 +1135,13 @@ char CaptureManagerClass::SetCapacity(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x472b8c*/
   {
-    LOBYTE(this->vtable4) = 0; /*0x472b96*/
+    (this->vtable4) = ((this->vtable4) & ~0xFF) | ((0) & 0xFF); /*0x472b96*/
     unsigned int *v4; // edi
     if ( a3 ) /*0x472b9c*/
       v4 = a3; /*0x472bb2*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x472bae*/
-    LOBYTE(this->vtable4) = 1; /*0x472bb6*/
+    (this->vtable4) = ((this->vtable4) & ~0xFF) | ((1) & 0xFF); /*0x472bb6*/
     if ( v4 ) /*0x472bba*/
     {
       if ( *&this->ptr_4 ) /*0x472bc5*/
@@ -1152,7 +1152,7 @@ char CaptureManagerClass::SetCapacity(int a2, unsigned int * a3)
         int i; // eax
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->ptr_4 + 4 * i - 4) ) /*0x472bd9*/
           ++i; /*0x472bde*/
-        if ( BYTE1(this->vtable4) ) /*0x472beb*/
+        if ( (((this->vtable4) >> 8) & 0xFF) ) /*0x472beb*/
         {
           __3_YAXPAX_Z(*&this->ptr_4); /*0x472bf6*/
           *&this->ptr_4 = 0; /*0x472bfe*/
@@ -1160,7 +1160,7 @@ char CaptureManagerClass::SetCapacity(int a2, unsigned int * a3)
       }
       *&this->ptr_4 = v4; /*0x472c07*/
       this->ptr_8 = a2; /*0x472c0f*/
-      BYTE1(this->vtable4) = a3 == 0; /*0x472c12*/
+      (this->vtable4) = ((this->vtable4) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x472c12*/
       return 1; /*0x472c18*/
     }
     else
@@ -1197,7 +1197,7 @@ int CaptureManagerClass::IndexOf(unsigned int * a2)
 {
 
 
-  if ( !LOBYTE(this->vtable4) ) /*0x472c60*/
+  if ( !((this->vtable4) & 0xFF) ) /*0x472c60*/
     return 0; /*0x472c68*/
   int m_8 = this->vtable3; // edx /*0x472c6e*/
   int result = 0; // eax /*0x472c71*/
@@ -1219,7 +1219,7 @@ namespace gamemd {
 unsigned int CaptureManagerClass::PointerToIndex(int a2)
 {
 
-  if ( LOBYTE(this->vtable4) ) /*0x472ca0*/
+  if ( ((this->vtable4) & 0xFF) ) /*0x472ca0*/
     return (unsigned int)(a2 - *&this->vtable2) >> 2; /*0x472cb5*/
   else
     return 0; /*0x472ca7*/
@@ -1235,13 +1235,13 @@ char CaptureManagerClass::Release(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x472ccc*/
   {
-    LOBYTE(this->vtable4) = 0; /*0x472cd2*/
+    (this->vtable4) = ((this->vtable4) & ~0xFF) | ((0) & 0xFF); /*0x472cd2*/
     unsigned int *v4; // edi
     if ( a3 ) /*0x472cd8*/
       v4 = a3; /*0x472cee*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x472cea*/
-    LOBYTE(this->vtable4) = 1; /*0x472cf2*/
+    (this->vtable4) = ((this->vtable4) & ~0xFF) | ((1) & 0xFF); /*0x472cf2*/
     if ( !v4 ) /*0x472cf6*/
       return 0; /*0x472d6a*/
     if ( *&this->vtable2 ) /*0x472cf8*/
@@ -1252,7 +1252,7 @@ char CaptureManagerClass::Release(int a2, unsigned int * a3)
       int i; // eax
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->vtable2 + 4 * i - 4) ) /*0x472d0c*/
         ++i; /*0x472d11*/
-      if ( BYTE1(this->vtable4) ) /*0x472d1e*/
+      if ( (((this->vtable4) >> 8) & 0xFF) ) /*0x472d1e*/
       {
         __3_YAXPAX_Z(*&this->vtable2); /*0x472d29*/
         *&this->vtable2 = 0; /*0x472d31*/
@@ -1260,7 +1260,7 @@ char CaptureManagerClass::Release(int a2, unsigned int * a3)
     }
     *&this->vtable2 = v4; /*0x472d3a*/
     this->vtable3 = a2; /*0x472d42*/
-    BYTE1(this->vtable4) = a3 == 0; /*0x472d45*/
+    (this->vtable4) = ((this->vtable4) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x472d45*/
   }
   else
   {
@@ -1321,7 +1321,7 @@ unsigned int * CaptureManagerClass::Constructor_473140(int a2, int a3)
 
   this->vtable2 = 0; /*0x47314b*/
   this->vtable3 = (void *)a2; /*0x47314e*/
-  LOBYTE(this->vtable4) = 1; /*0x473151*/
+  (this->vtable4) = ((this->vtable4) & ~0xFF) | ((1) & 0xFF); /*0x473151*/
   (this->IsAllocated) = ((this->IsAllocated) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x473155*/
   /* X11: vtable install elided (base-interface slot, RHS vt_VectorClass) */  /*0x473158*/
   if ( a2 ) /*0x47315e*/

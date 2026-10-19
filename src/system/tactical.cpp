@@ -274,7 +274,7 @@ void* TacticalClass::RenderIsometric(const RectangleStruct& viewRect, int flags)
   v13 = (unsigned __int64)(2290649225LL * viewRect[2]) >> 32; /*0x6d765e*/
   v31 = v12; /*0x6d7660*/
   v13 >>= 5; /*0x6d7664*/
-  LOWORD(v25) = v21[0] - 2; /*0x6d7669*/
+  (v25) = ((v25) & ~0xFFFF) | ((v21[0] - 2) & 0xFFFF); /*0x6d7669*/
   result = (unsigned int)v13 >> 31; /*0x6d766e*/
   v32 = v13 + ((unsigned int)v13 >> 31) + 4; /*0x6d7675*/
   v15 = 0; /*0x6d7679*/
@@ -286,7 +286,7 @@ void* TacticalClass::RenderIsometric(const RectangleStruct& viewRect, int flags)
     v33 = v15; /*0x6d7692*/
     v30 = v15 / 2; /*0x6d769b*/
     (v28) = ((v28) & ~0xFFFF) | ((v25 + v16) & 0xFFFF); /*0x6d76ae*/
-    HIWORD(v28) = v30 + (((v25) >> 16) & 0xFFFF); /*0x6d76b9*/
+    (v28) = ((v28) & ~(0xFFFF << 16)) | (((v30 + (((v25) >> 16) & 0xFFFF)) & 0xFFFF) << 16); /*0x6d76b9*/
     result = v32; /*0x6d76be*/
     *(unsigned int *)v21 = v28; /*0x6d76c8*/
     if ( v32 > 0 ) /*0x6d76cc*/
@@ -494,9 +494,9 @@ int TacticalClass::DrawMap(const RectangleStruct& viewRect, RectangleStruct* bou
           v39 = *v12; /*0x6d792f*/
           v40 = v12[1]; /*0x6d793a*/
           v41 = *((unsigned int *)v12 + 2); /*0x6d7941*/
-          LOWORD(v13) = Math::RoundToInt(v39); /*0x6d7945*/
+          (v13) = ((v13) & ~0xFFFF) | ((Math::RoundToInt(v39)) & 0xFFFF); /*0x6d7945*/
           v14 = v13; /*0x6d794e*/
-          LOWORD(v15) = Math::RoundToInt(v40); /*0x6d7950*/
+          (v15) = ((v15) & ~0xFFFF) | ((Math::RoundToInt(v40)) & 0xFFFF); /*0x6d7950*/
           v16 = viewRect[3]; /*0x6d796d*/
           v17 = viewRect[2]; /*0x6d7978*/
           (v42) = ((v42) & ~(0xFFFF << 16)) | (((v15 / 256) & 0xFFFF) << 16); /*0x6d799d*/
@@ -910,7 +910,7 @@ Point2D* TacticalClass::CalcBuildingDrawPos(Point2D* out, BuildingClass* buildin
   v34 = *(Triple *)v5; /*0x6d7252*/
   v35 = v5[1]; /*0x6d725d*/
   v36 = *((unsigned int *)v5 + 2); /*0x6d7264*/
-  LOWORD(v6) = Math::RoundToInt(*(float *)&v34); /*0x6d7268*/
+  (v6) = ((v6) & ~0xFFFF) | ((Math::RoundToInt(*(float *)&v34)) & 0xFFFF); /*0x6d7268*/
   v7 = v6; /*0x6d7271*/
   LOWORD(v8) = Math::RoundToInt(v35); /*0x6d7273*/
   Coord::Subtract((Coord *)&v40, v7, (int)v8, 0); /*0x6d727f*/
@@ -1647,7 +1647,7 @@ int TacticalClass::RenderCells()
         Math::CalcAngle(v38, v39); /*0x5503e8*/
         __asm { fsub ds:dbl_7E2820 } /*0x5503ed*/
         __asm { fmul ds:dbl_7E2818 }
-        LOWORD(field30) = Math::RoundToInt(v1); /*0x550401*/
+        (field30) = ((field30) & ~0xFFFF) | ((Math::RoundToInt(v1)) & 0xFFFF); /*0x550401*/
         v7 = (((field30 >> 12) + 1) >> 1) & 7; /*0x55041c*/
         Coord::To_Screen((Coord *)g_TacticalClass_Instance, &_EBX->field24, &v55); /*0x55041f*/
         Coord::To_Screen((Coord *)g_TacticalClass_Instance, &_EBX->field30, &v53); /*0x550430*/
@@ -1679,10 +1679,10 @@ int TacticalClass::RenderCells()
             v12 = 255; /*0x550547*/
             v44 = 255; /*0x55054c*/
           }
-          LOBYTE(v41) = v11; /*0x550556*/
+          (v41) = ((v41) & ~0xFF) | ((v11) & 0xFF); /*0x550556*/
           v45 = (TacticalClass_field_4C >> g_BitMask_Blue << g_BitMask_Green) /*0x550584*/
               | (v12 >> g_BitMask_Red << g_BitShift_Blue);
-          HIBYTE(v41) = TacticalClass_field_4C; /*0x55059a*/
+          (v41) = ((v41) & ~(0xFF << 8)) | (((TacticalClass_field_4C) & 0xFF) << 8); /*0x55059a*/
           field30 = (v11 >> g_BitShift_Green_0 << g_BitShift_Red) | v45; /*0x5505aa*/
           v42 = v44; /*0x5505ae*/
         }
@@ -1936,7 +1936,7 @@ BuildingTypeClass * * TacticalClass::CalcViewportCells()
   v14 = *((unsigned int *)v6 + 2); /*0x6d8bcb*/
   LOWORD(v7) = Math::RoundToInt(v12); /*0x6d8bcf*/
   v8 = v7; /*0x6d8bd8*/
-  LOWORD(v9) = Math::RoundToInt(v13); /*0x6d8bda*/
+  (v9) = ((v9) & ~0xFFFF) | ((Math::RoundToInt(v13)) & 0xFFFF); /*0x6d8bda*/
   this->TacticalClass_field_D80 = (int)v8 / 256; /*0x6d8bf0*/
   this->TacticalClass_field_D84 = v9 / 256; /*0x6d8c04*/
   this->TacticalClass_field_D88 = dword_B0CE30 / 60 + 2; /*0x6d8c2a*/

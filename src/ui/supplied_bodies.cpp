@@ -456,12 +456,12 @@ LABEL_8:
   {
     if ( v19 < 8 ) /*0x43455c*/
     {
-      LOBYTE(v16) = (unsigned __int8)(v10 >> g_BitShift_Red) << g_BitShift_Green_0; /*0x43458e*/
-      HIBYTE(v16) = (unsigned __int8)(v10 >> g_BitMask_Green) << g_BitMask_Blue; /*0x43459b*/
+      (v16) = ((v16) & ~0xFF) | (((unsigned __int8)(v10 >> g_BitShift_Red) << g_BitShift_Green_0) & 0xFF); /*0x43458e*/
+      (v16) = ((v16) & ~(0xFF << 8)) | ((((unsigned __int8)(v10 >> g_BitMask_Green) << g_BitMask_Blue) & 0xFF) << 8); /*0x43459b*/
       LOWORD(v17.Color_field_00) = v16; /*0x4345b1*/
       BYTE2(v17.Color_field_00) = (unsigned __int8)(v10 >> g_BitShift_Blue) << g_BitMask_Red; /*0x4345ba*/
       Color::Lerp(&v17, v12, (unsigned __int8 *)&stru_A80220); /*0x4345be*/
-      LOWORD(v13) = (unsigned __int8)(BYTE2(v17.Color_field_00) >> g_BitMask_Red); /*0x4345ee*/
+      (v13) = ((v13) & ~0xFFFF) | (((unsigned __int8)(BYTE2(v17.Color_field_00) >> g_BitMask_Red)) & 0xFFFF); /*0x4345ee*/
       v11 = a6; /*0x43460e*/
       this->u32_24 = ((unsigned __int8)(LOBYTE(v17.Color_field_00) >> g_BitShift_Green_0) << g_BitShift_Red) /*0x434614*/
                             | (v13 << g_BitShift_Blue)
@@ -3188,7 +3188,7 @@ int * SliderClass::Constructor(int a2, int a3, int a4, int a5, int a6, int a7) {
     v22 = 4; /*0x6b1c80*/
   v23 = (double)this->u32_34 / v20; /*0x6b1c85*/
   this->u32_4C = v22; /*0x6b1c88*/
-  LOWORD(v24) = Math::RoundToInt(v23); /*0x6b1c91*/
+  (v24) = ((v24) & ~0xFFFF) | ((Math::RoundToInt(v23)) & 0xFFFF); /*0x6b1c91*/
   if ( v24 >= SliderClass_field_0x14 - v22 ) /*0x6b1c9c*/
     v24 = SliderClass_field_0x14 - v22; /*0x6b1c9e*/
   this->u32_50 = v24; /*0x6b1ca2*/
@@ -3201,7 +3201,7 @@ int * SliderClass::Constructor(int a2, int a3, int a4, int a5, int a6, int a7) {
   if ( (int)v26 <= 4 ) /*0x6b1cc7*/
     v27 = 4; /*0x6b1cc9*/
   this->u32_4C = v27; /*0x6b1cd0*/
-  LOWORD(v28) = Math::RoundToInt(v23); /*0x6b1cd3*/
+  (v28) = ((v28) & ~0xFFFF) | ((Math::RoundToInt(v23)) & 0xFFFF); /*0x6b1cd3*/
   if ( v28 >= SliderClass_field_0x18 - v27 ) /*0x6b1ce0*/
     v28 = SliderClass_field_0x18 - v27; /*0x6b1ce2*/
   this->u32_50 = v28; /*0x6b1ce4*/
@@ -3256,7 +3256,7 @@ int SliderClass::GetValue(int a2) {
   if ( (int)v5 <= 4 ) /*0x6b1d7e*/
     v6 = 4; /*0x6b1d80*/
   this->u32_4C = v6; /*0x6b1d88*/
-  LOWORD(v7) = Math::RoundToInt(SliderClass_field_0x30); /*0x6b1d8f*/
+  (v7) = ((v7) & ~0xFFFF) | ((Math::RoundToInt(SliderClass_field_0x30)) & 0xFFFF); /*0x6b1d8f*/
   if ( v7 >= SliderClass_field_0x14 - v6 ) /*0x6b1da0*/
     v7 = SliderClass_field_0x14 - v6; /*0x6b1da2*/
   this->u32_50 = v7; /*0x6b1da4*/

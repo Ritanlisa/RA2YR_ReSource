@@ -125,7 +125,7 @@ long long E4Recv_6B1EE0::sub_6B1EE0()
   else
     abstractFlags = ((unsigned int *)this)[0]; /*0x6b1ef2*/
   nextObject = (double)(int)this->nextObject; /*0x6b1ef5*/
-  LOWORD(v4) = Math::RoundToInt(nextObject); /*0x6b1f07*/
+  (v4) = ((v4) & ~0xFFFF) | ((Math::RoundToInt(nextObject)) & 0xFFFF); /*0x6b1f07*/
   v5 = v4; /*0x6b1f0f*/
   if ( v4 <= 4 ) /*0x6b1f11*/
     v5 = 4; /*0x6b1f13*/

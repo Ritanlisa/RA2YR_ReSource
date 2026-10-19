@@ -395,11 +395,11 @@ unsigned int * globalHelper_0A7640(unsigned int *a0, int aP1)
       if ( (int16_t)*v9 < v3 ) /*0x5a7676*/
         v3 = *v9; /*0x5a7678*/
       if ( (short)(((v11) >> 16) & 0xFFFF) < v6 ) /*0x5a7683*/
-        v6 = IDA_HIWORD(*v9); /*0x5a7685*/
+        v6 = (((*v9) >> 16) & 0xFFFF); /*0x5a7685*/
       if ( (int16_t)*v9 > v2 ) /*0x5a768b*/
         v2 = *v9; /*0x5a768d*/
       if ( (short)(((v11) >> 16) & 0xFFFF) > v4 ) /*0x5a7693*/
-        v4 = IDA_HIWORD(*v9); /*0x5a7695*/
+        v4 = (((*v9) >> 16) & 0xFFFF); /*0x5a7695*/
       v7 = v10 == 1; /*0x5a76a3*/
       --v9; /*0x5a76a4*/
       --v10; /*0x5a76a8*/

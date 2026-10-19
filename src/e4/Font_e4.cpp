@@ -170,7 +170,7 @@ LABEL_4:
               v55 = *(unsigned short *)v23; /*0x434e3b*/
               v56 = v23[2]; /*0x434e4c*/
               Color::Lerp((unsigned __int8 *)&v55, v21 * (255 / aP9), (unsigned __int8 *)&stru_A80220); /*0x434e59*/
-              v22 = PackRGB565((unsigned __int8)v55, HIBYTE(v55), v56); /*0x434e7c*/
+              v22 = PackRGB565((unsigned __int8)v55, (((v55) >> 8) & 0xFF), v56); /*0x434e7c*/
             }
 LABEL_18:
             if ( v22 == -1 ) /*0x434e84*/
@@ -262,14 +262,14 @@ LABEL_26:
             break; /*0x434fef*/
           if ( v32 < aP9 ) /*0x434ff9*/
           {
-            LOBYTE(v47) = (unsigned __int8)((unsigned __int16)v15 >> g_BitShift_Red) << g_BitShift_Green_0; /*0x435028*/
-            HIBYTE(v47) = (unsigned __int8)((unsigned __int16)v15 >> g_BitMask_Green) << g_BitMask_Blue; /*0x435035*/
+            (v47) = ((v47) & ~0xFF) | (((unsigned __int8)((unsigned __int16)v15 >> g_BitShift_Red) << g_BitShift_Green_0) & 0xFF); /*0x435028*/
+            (v47) = ((v47) & ~(0xFF << 8)) | ((((unsigned __int8)((unsigned __int16)v15 >> g_BitMask_Green) << g_BitMask_Blue) & 0xFF) << 8); /*0x435035*/
             v57 = v47; /*0x43504b*/
             v58 = (unsigned __int8)((unsigned __int16)v15 >> g_BitShift_Blue) << g_BitMask_Red; /*0x435054*/
             Color::Lerp((unsigned __int8 *)&v57, v33 * (255 / aP9), (unsigned __int8 *)&stru_A80220); /*0x435066*/
             v35 = ((unsigned __int8)v57 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x4350ba*/
                 | (v58 >> g_BitMask_Red << g_BitShift_Blue)
-                | (HIBYTE(v57) >> g_BitMask_Blue << g_BitMask_Green);
+                | ((((v57) >> 8) & 0xFF) >> g_BitMask_Blue << g_BitMask_Green);
           }
         }
         if ( v35 == -1 ) /*0x4350bf*/
@@ -349,14 +349,14 @@ LABEL_59:
               break; /*0x4351cc*/
             if ( v40 < aP9 ) /*0x4351d6*/
             {
-              LOBYTE(v59) = (unsigned __int8)((unsigned __int16)v15 >> g_BitShift_Red) << g_BitShift_Green_0; /*0x435205*/
-              HIBYTE(v59) = (unsigned __int8)((unsigned __int16)v15 >> g_BitMask_Green) << g_BitMask_Blue; /*0x435212*/
+              (v59) = ((v59) & ~0xFF) | (((unsigned __int8)((unsigned __int16)v15 >> g_BitShift_Red) << g_BitShift_Green_0) & 0xFF); /*0x435205*/
+              (v59) = ((v59) & ~(0xFF << 8)) | ((((unsigned __int8)((unsigned __int16)v15 >> g_BitMask_Green) << g_BitMask_Blue) & 0xFF) << 8); /*0x435212*/
               v57 = v59; /*0x435228*/
               v58 = (unsigned __int8)((unsigned __int16)v15 >> g_BitShift_Blue) << g_BitMask_Red; /*0x435231*/
               Color::Lerp((unsigned __int8 *)&v57, v41 * (255 / aP9), (unsigned __int8 *)&stru_A80220); /*0x435243*/
               v43 = ((unsigned __int8)v57 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x435297*/
                   | (v58 >> g_BitMask_Red << g_BitShift_Blue)
-                  | (HIBYTE(v57) >> g_BitMask_Blue << g_BitMask_Green);
+                  | ((((v57) >> 8) & 0xFF) >> g_BitMask_Blue << g_BitMask_Green);
             }
           }
           if ( v43 == -1 ) /*0x43529c*/

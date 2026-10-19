@@ -408,7 +408,7 @@ LABEL_33:
         v28 = *v52++; /*0x7b0853*/
         v29 = (unsigned __int8)(v28 >> g_BitShift_Red) << g_BitShift_Green_0; /*0x7b086a*/
         v30 = (unsigned __int8)(v28 >> g_BitMask_Green) << g_BitMask_Blue; /*0x7b087c*/
-        LOBYTE(v28) = (unsigned __int8)(v28 >> g_BitShift_Blue) << g_BitMask_Red; /*0x7b088e*/
+        (v28) = ((v28) & ~0xFF) | (((unsigned __int8)(v28 >> g_BitShift_Blue) << g_BitMask_Red) & 0xFF); /*0x7b088e*/
         v27[v114] = v29; /*0x7b0897*/
         *v27 = v30; /*0x7b089a*/
         v27[v115] = v28; /*0x7b08a5*/
@@ -1254,7 +1254,7 @@ int ClipLine(IUnknown * aP0, int * a1, int * a2)
       aP0[1] = (int)v37; /*0x7bc54b*/
       LOWORD(v38) = Math::RoundToInt(v50); /*0x7bc54e*/
       *a1 = (int)v38; /*0x7bc557*/
-      LOWORD(result) = Math::RoundToInt(v45); /*0x7bc559*/
+      (result) = ((result) & ~0xFFFF) | ((Math::RoundToInt(v45)) & 0xFFFF); /*0x7bc559*/
       a1[1] = result; /*0x7bc55e*/
       (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x7bc561*/
       return result; /*0x7bc569*/

@@ -677,7 +677,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
       }
       if ( v5 > 0 ) /*0x45f2df*/
       {
-        LOWORD(v6) = Math::RoundToInt(*&dword_8871E0->q1518 * 900.0 / (double)v23); /*0x45f2f7*/
+        (v6) = ((v6) & ~0xFFFF) | ((Math::RoundToInt(*&dword_8871E0->q1518 * 900.0 / (double)v23)) & 0xFFFF); /*0x45f2f7*/
         v4 = v6; /*0x45f2fc*/
       }
       this->RubbleLoaded = 0; /*0x45f2fe*/
@@ -2031,7 +2031,7 @@ unsigned int * BuildingTypeClass::GetUpgradeOffset(unsigned int * a2, double a3,
     Math::Sqrt(v16); /*0x717936*/
     __asm { fmul ds:dbl_7F4FC0 } /*0x71793b*/
     int v13; // eax
-    LOWORD(v13) = Math::RoundToInt(a3); /*0x717944*/
+    (v13) = ((v13) & ~0xFFFF) | ((Math::RoundToInt(a3)) & 0xFFFF); /*0x717944*/
     int v14; // ebx
     if ( v5->ClearAllWeapons >= 0 ) /*0x717951*/
       v14 = -v13; /*0x717957*/
@@ -2468,8 +2468,8 @@ int BuildingTypeClass::GetPowerOutput(int aP1)
   result = aP1; /*0x4c9680*/
   if ( aP1 >= 127 ) /*0x4c9687*/
     result = 127; /*0x4c9689*/
-  LOBYTE(v3) = 0; /*0x4c968e*/
-  HIBYTE(v3) = result; /*0x4c9690*/
+  (v3) = ((v3) & ~0xFF) | ((0) & 0xFF); /*0x4c968e*/
+  (v3) = ((v3) & ~(0xFF << 8)) | (((result) & 0xFF) << 8); /*0x4c9690*/
   LOWORD(this->abstractFlags) = v3; /*0x4c9692*/
   return result; /*0x4c9696*/
 

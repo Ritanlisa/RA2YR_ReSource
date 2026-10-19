@@ -741,7 +741,7 @@ void UI_Helper_6217E0(ObjectClass * aP0, ObjectClass * aP1, short a3, int a4)
                 v6 = v20; /*0x62195f*/
                 v17 = v16 + v12 * (unsigned __int16)(v25 & g_CreditsScreenState); /*0x621963*/
                 v10 = v21; /*0x621965*/
-                LOWORD(v14) = v15 | v14; /*0x621969*/
+                (v14) = ((v14) & ~0xFFFF) | ((v15 | v14) & 0xFFFF); /*0x621969*/
                 v7 = a3; /*0x62196b*/
                 *v21 = (v17 >> 8) | v14; /*0x621974*/
                 v5 = aP1; /*0x621977*/
@@ -1358,7 +1358,7 @@ int sub_6AC480(int a1, int * a2, unsigned int * a3, int a4, void * aDarkred)
       v18 = *(unsigned short *)v8; /*0x6ac4d7*/
       v19 = *(unsigned char *)(v8 + 2); /*0x6ac4e1*/
       v9 = ((unsigned __int8)v18 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x6ac52e*/
-         | (HIBYTE(v18) >> g_BitMask_Blue << g_BitMask_Green)
+         | ((((v18) >> 8) & 0xFF) >> g_BitMask_Blue << g_BitMask_Green)
          | (v19 >> g_BitMask_Red << g_BitShift_Blue);
       v10 = a3[2]; /*0x6ac536*/
       v11 = a3[1]; /*0x6ac539*/

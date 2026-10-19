@@ -255,13 +255,13 @@ int sub_6219D0(int * a1, int a2, int a3, int a4)
           v16 = &v27[v12 + *a1]; /*0x621a45*/
           do /*0x621a8c*/
           {
-            LOWORD(v15) = *v16++; /*0x621a4f*/
+            (v15) = ((v15) & ~0xFFFF) | ((*v16++) & 0xFFFF); /*0x621a4f*/
             LOWORD(v11) = HIWORD(g_ScreenSaverState) & (HIWORD(g_ScreenSaverState) >> 1); /*0x621a5b*/
-            LOWORD(v14) = (unsigned __int16)g_ScreenSaverState >> 1; /*0x621a65*/
+            (v14) = ((v14) & ~0xFFFF) | (((unsigned __int16)g_ScreenSaverState >> 1) & 0xFFFF); /*0x621a65*/
             v14 &= g_ScreenSaverState; /*0x621a68*/
-            LOWORD(v15) = (unsigned __int16)v15 >> 1; /*0x621a6e*/
+            (v15) = ((v15) & ~0xFFFF) | (((unsigned __int16)v15 >> 1) & 0xFFFF); /*0x621a6e*/
             v17 = v14 | v11; /*0x621a71*/
-            LOWORD(v14) = (unsigned __int16)g_CreditsScreenState >> 1; /*0x621a7a*/
+            (v14) = ((v14) & ~0xFFFF) | (((unsigned __int16)g_CreditsScreenState >> 1) & 0xFFFF); /*0x621a7a*/
             v11 = v15 & (v14 | v17); /*0x621a7f*/
             ++v13; /*0x621a81*/
             *(v16 - 1) = v11; /*0x621a82*/
@@ -296,13 +296,13 @@ int sub_6219D0(int * a1, int a2, int a3, int a4)
           v23 = &v27[v22]; /*0x621aed*/
           do /*0x621b35*/
           {
-            LOWORD(v22) = *v23++; /*0x621af7*/
+            (v22) = ((v22) & ~0xFFFF) | ((*v23++) & 0xFFFF); /*0x621af7*/
             LOWORD(v20) = HIWORD(g_ScreenSaverState) & (HIWORD(g_ScreenSaverState) >> 1); /*0x621b03*/
-            LOWORD(v19) = (unsigned __int16)g_ScreenSaverState >> 1; /*0x621b0d*/
+            (v19) = ((v19) & ~0xFFFF) | (((unsigned __int16)g_ScreenSaverState >> 1) & 0xFFFF); /*0x621b0d*/
             v19 &= g_ScreenSaverState; /*0x621b10*/
-            LOWORD(v22) = (unsigned __int16)v22 >> 1; /*0x621b16*/
+            (v22) = ((v22) & ~0xFFFF) | (((unsigned __int16)v22 >> 1) & 0xFFFF); /*0x621b16*/
             v24 = v19 | v20; /*0x621b19*/
-            LOWORD(v19) = (unsigned __int16)g_CreditsScreenState >> 1; /*0x621b22*/
+            (v19) = ((v19) & ~0xFFFF) | (((unsigned __int16)g_CreditsScreenState >> 1) & 0xFFFF); /*0x621b22*/
             v20 = v22 & (v19 | v24); /*0x621b27*/
             ++v21; /*0x621b29*/
             *(v23 - 1) = v20; /*0x621b2a*/
@@ -615,7 +615,7 @@ bool Team_Start_76ED10(void * a1, void * a2)
       byte_A8B31D = 0; /*0x76edfd*/
       byte_A8B31C = v7 & 1; /*0x76ee06*/
       MEMORY[0xA8B258] = (*(unsigned int *)(v10 + 56) & 0x10) != 0; /*0x76ee14*/
-      LOBYTE(v7) = (*(unsigned int *)(v10 + 56) & 0x20) != 0; /*0x76ee20*/
+      (v7) = ((v7) & ~0xFF) | (((*(unsigned int *)(v10 + 56) & 0x20) != 0) & 0xFF); /*0x76ee20*/
       byte_A8B31F = 0; /*0x76ee22*/
       (dword_A8B320) = ((dword_A8B320) & ~0xFF) | ((v7) & 0xFF); /*0x76ee29*/
       MEMORY[0xA8B260] = 1; /*0x76ee2f*/

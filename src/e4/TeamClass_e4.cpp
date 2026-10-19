@@ -1844,7 +1844,7 @@ AbstractClass * * TeamClass::FindClosestEnemy(AbstractClass * aP1, AbstractClass
   unsigned int v43[3]; // [esp+58h] [ebp-Ch] BYREF
 
   int v3; // eax
-  LOBYTE(v3) = (unsigned char)aP2; /*0x6eaee3*/
+  (v3) = ((v3) & ~0xFF) | (((unsigned char)aP2) & 0xFF); /*0x6eaee3*/
   int v4 = this; // esi /*0x6eaeea*/
   int v5 = 0; // ebx /*0x6eaeec*/
   *aP2 = 0; /*0x6eaef2*/
@@ -2051,7 +2051,7 @@ AbstractClass * * TeamClass::FindClosestEnemy(AbstractClass * aP1, AbstractClass
       if ( v23 ) /*0x6eb368*/
       {
         *aP2 = (int)v23; /*0x6eb36e*/
-        LOBYTE(v3) = (unsigned char)aP2; /*0x6eb36a*/
+        (v3) = ((v3) & ~0xFF) | (((unsigned char)aP2) & 0xFF); /*0x6eb36a*/
       }
     }
   }
@@ -2464,7 +2464,7 @@ int TeamClass::ProcessMemberPositions()
           Math::Sqrt((double)v9 * (double)v9 + (double)v16 * (double)v16 + (double)v12 * (double)v12); /*0x6ec09b*/
           double v1; // st7
           int v13; // eax
-          LOWORD(v13) = Math::RoundToInt(v1); /*0x6ec0a3*/
+          (v13) = ((v13) & ~0xFFFF) | ((Math::RoundToInt(v1)) & 0xFFFF); /*0x6ec0a3*/
           if ( v13 <= v6 ) /*0x6ec0aa*/
           {
             if ( (*((int (**)(FootClass *))firstUnit->TechnoClass + 97))(firstUnit) != 5 ) /*0x6ec0e8*/

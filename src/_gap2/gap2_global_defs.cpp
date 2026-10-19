@@ -145,7 +145,7 @@ int Gap2Recv_402F60::ProcessAudioMixerFrame() {
 
   if ( this->q104 ) /*0x402f69*/
     return -2146304000; /*0x402f76*/
-  LODWORD(v3) = Audio::Callback(); /*0x402f80*/
+  (v3) = ((v3) & 0xFFFFFFFF00000000ull) | ((Audio::Callback()) & 0xFFFFFFFFull); /*0x402f80*/
   if ( (unsigned __int64)(v3 - *((unsigned long long *)this + 39)) >= *((unsigned long long *)this + 34) ) /*0x402fb1*/
   {
     v4 = v3 - *((unsigned long long *)this + 39); /*0x402fc5*/
@@ -557,7 +557,7 @@ int Gap2Recv_4055C0::UpdateVoicePlayback() {
         else if ( (this->nextArrayIndex & 1) == 0 ) /*0x4057a7*/
         {
           Voice::DetachChannel((Voice *)this); /*0x4057af*/
-          LODWORD(v2) = Audio::ReleaseChannelRefs((Audio *)this); /*0x4057b6*/
+          (v2) = ((v2) & 0xFFFFFFFF00000000ull) | ((Audio::ReleaseChannelRefs((Audio *)this)) & 0xFFFFFFFFull); /*0x4057b6*/
           this->referenceCount = 4; /*0x4057bb*/
           this->currentWeaponSlot = 0; /*0x4057c2*/
           this->temporalTargetingMe = 0; /*0x4057c8*/
@@ -570,7 +570,7 @@ int Gap2Recv_4055C0::UpdateVoicePlayback() {
         LODWORD(v2) = this->armorMultiplier[0]; /*0x4055f5*/
         if ( !(unsigned int)v2 ) /*0x4055fd*/
         {
-          LODWORD(v2) = Audio::Callback(); /*0x405603*/
+          (v2) = ((v2) & 0xFFFFFFFF00000000ull) | ((Audio::Callback()) & 0xFFFFFFFFull); /*0x405603*/
           if ( v2 > *(unsigned long long *)&this->gattlingStage ) /*0x405620*/
           {
             this->referenceCount = this->NeedsSaveOrLink; /*0x405629*/
@@ -670,7 +670,7 @@ LABEL_41:
                 this->nextArrayIndex = nextArrayIndex; /*0x405958*/
               }
             }
-            LODWORD(v2) = AudioStream::Stop(v14); /*0x405961*/
+            (v2) = ((v2) & 0xFFFFFFFF00000000ull) | ((AudioStream::Stop(v14)) & 0xFFFFFFFFull); /*0x405961*/
           }
           else
           {
@@ -1025,8 +1025,8 @@ void* Gap2Recv_4197C0::FindSpiralMoveTarget(ObjectClass * aP1) {
     __asm { fstp [esp+88h+var_40] } /*0x4198bf*/
     do /*0x419a68*/
     {
-      LOBYTE(v10) = 0; /*0x4198c3*/
-      HIBYTE(v10) = v27; /*0x4198c5*/
+      (v10) = ((v10) & ~0xFF) | ((0) & 0xFF); /*0x4198c3*/
+      (v10) = ((v10) & ~(0xFF << 8)) | (((v27) & 0xFF) << 8); /*0x4198c5*/
       LODWORD(v32) = v10 - 0x3FFF; /*0x4198d2*/
       __asm /*0x4198d6*/
       {
@@ -1042,12 +1042,12 @@ void* Gap2Recv_4197C0::FindSpiralMoveTarget(ObjectClass * aP1) {
         fmul [esp+90h+var_40]
         fsubr [esp+90h+var_38]
       }
-      LOWORD(v13) = Math::RoundToInt(v2); /*0x4198fb*/
+      (v13) = ((v13) & ~0xFFFF) | ((Math::RoundToInt(v2)) & 0xFFFF); /*0x4198fb*/
       v14 = v13; /*0x419902*/
       Math::ArcTan2(COERCE_DOUBLE((((v11 & 0xFFFFFFFFull)) << 32 | (v12 & 0xFFFFFFFFull)))); /*0x419904*/
       __asm { fmul [esp+98h+var_40] } /*0x419909*/
       __asm { fadd qword ptr [esp+88h+var_28] }
-      LOWORD(v15) = Math::RoundToInt(v2); /*0x419914*/
+      (v15) = ((v15) & ~0xFFFF) | ((Math::RoundToInt(v2)) & 0xFFFF); /*0x419914*/
       v16 = v15; /*0x419919*/
       v29[2] = v15 / 256; /*0x41992e*/
       v29[3] = v14 / 256; /*0x419946*/
@@ -5575,7 +5575,7 @@ short Gap2Recv_50D6D0::SelectSimilarBuildingTypes(int a2) {
   if ( (unsigned short)a2 == *(unsigned short *)&stru_A8E960.waypoints[6] ) /*0x50d6e8*/
   {
     (i) = ((i) & ~0xFFFF) | (((((a2) >> 16) & 0xFFFF)) & 0xFFFF); /*0x50d6ea*/
-    if ( HIWORD(a2) == *(unsigned short *)&stru_A8E960.waypoints[8] ) /*0x50d6f6*/
+    if ( (((a2) >> 16) & 0xFFFF) == *(unsigned short *)&stru_A8E960.waypoints[8] ) /*0x50d6f6*/
       return i; /*0x50d6f6*/
   }
   v30 = 0; /*0x50d702*/
@@ -7282,7 +7282,7 @@ if ( (*(unsigned __int8 (**)(int))(*(unsigned int *)(v2 + 4) + 16))(v2 + 4) ) /*
       (v28) = ((v28) & ~0xFFFF) | ((0) & 0xFFFF); /*0x54bf0a*/
     Math::CalcAngle((double)v31 - (double)*(int *)(v3 + 68), (double)v29 - (double)v30); /*0x54bf2d*/
     result = (result - 1.570796326794897) * -10430.06004058427; /*0x54bf3b*/
-    LOWORD(v29) = Math::RoundToInt(result); /*0x54bf46*/
+    (v29) = ((v29) & ~0xFFFF) | ((Math::RoundToInt(result)) & 0xFFFF); /*0x54bf46*/
     v28 = v29; /*0x54bf53*/
     FacingClass::Update(&v3->u32_54, &v28); /*0x54bf5b*/
     if ( !*(unsigned int *)((*(int (**)(unsigned int))(*v3->vtable4 + 444))(v3->vtable4) + 224) ) /*0x54bf6b*/
@@ -8178,7 +8178,7 @@ void Gap2Recv_56A4C0::FlattenCliffMap(void* a2) {
                     v17 = (__int16)(dword_89F6A0 + (unsigned short)a2) + ((__int16)((((a2) >> 16) & 0xFFFF) + *(&dword_89F6A0 + 1)) << 9); /*0x56a706*/
                     if ( v17 >= 0x40000 || (v18 = *(CellClass **)(dword_87F924 + 4 * v17)) == 0 ) /*0x56a71d*/
                     {
-                      HIWORD(v36) = (((a2) >> 16) & 0xFFFF) + *(&dword_89F6A0 + 1); /*0x56a6fd*/
+                      (v36) = ((v36) & ~(0xFFFF << 16)) | ((((((a2) >> 16) & 0xFFFF) + *(&dword_89F6A0 + 1)) & 0xFFFF) << 16); /*0x56a6fd*/
                       dword_ABDC74 = v36; /*0x56a71f*/
                       v18 = &unk_ABDC50; /*0x56a725*/
                     }
@@ -8399,11 +8399,11 @@ void Gap2Recv_56A980::RepairMapCliff(void* v34) {
                       v20 = &unk_ABDC50; /*0x56ac46*/
                     }
                     v20->level[0] += 4; /*0x56ac53*/
-                    HIWORD(v38) = *(&dword_89F698 + 1) + v15; /*0x56ac69*/
+                    (v38) = ((v38) & ~(0xFFFF << 16)) | (((*(&dword_89F698 + 1) + v15) & 0xFFFF) << 16); /*0x56ac69*/
                     v21 = (__int16)(v16 + dword_89F698) + ((__int16)(*(&dword_89F698 + 1) + v15) << 9); /*0x56ac7c*/
                     if ( v21 >= 0x40000 || (v22 = *(CellClass **)(dword_87F924 + 4 * v21)) == 0 ) /*0x56ac92*/
                     {
-                      LOWORD(v38) = v16 + dword_89F698; /*0x56ac6e*/
+                      (v38) = ((v38) & ~0xFFFF) | ((v16 + dword_89F698) & 0xFFFF); /*0x56ac6e*/
                       dword_ABDC74 = v38; /*0x56ac98*/
                       v22 = &unk_ABDC50; /*0x56ac9d*/
                     }
@@ -8443,17 +8443,17 @@ void Gap2Recv_56A980::RepairMapCliff(void* v34) {
                     v27 = (__int16)(v39 + dword_89F690) + ((__int16)(*(&dword_89F690 + 1) + v23) << 9); /*0x56ad97*/
                     if ( v27 >= 0x40000 || (v28 = *(CellClass **)(dword_87F924 + 4 * v27)) == 0 ) /*0x56adae*/
                     {
-                      HIWORD(v40) = *(&dword_89F690 + 1) + v23; /*0x56ad8c*/
-                      LOWORD(v40) = v24 + dword_89F690; /*0x56ad84*/
+                      (v40) = ((v40) & ~(0xFFFF << 16)) | (((*(&dword_89F690 + 1) + v23) & 0xFFFF) << 16); /*0x56ad8c*/
+                      (v40) = ((v40) & ~0xFFFF) | ((v24 + dword_89F690) & 0xFFFF); /*0x56ad84*/
                       dword_ABDC74 = v40; /*0x56adb4*/
                       v28 = &unk_ABDC50; /*0x56adba*/
                     }
                     v28->level[0] += 4; /*0x56adc7*/
-                    HIWORD(v41) = *(&dword_89F6A0 + 1) + v23; /*0x56addd*/
+                    (v41) = ((v41) & ~(0xFFFF << 16)) | (((*(&dword_89F6A0 + 1) + v23) & 0xFFFF) << 16); /*0x56addd*/
                     v29 = (__int16)(v24 + dword_89F6A0) + ((__int16)(*(&dword_89F6A0 + 1) + v23) << 9); /*0x56adf0*/
                     if ( v29 >= 0x40000 || (v30 = *(CellClass **)(dword_87F924 + 4 * v29)) == 0 ) /*0x56ae06*/
                     {
-                      LOWORD(v41) = v24 + dword_89F6A0; /*0x56ade2*/
+                      (v41) = ((v41) & ~0xFFFF) | ((v24 + dword_89F6A0) & 0xFFFF); /*0x56ade2*/
                       dword_ABDC74 = v41; /*0x56ae0c*/
                       v30 = &unk_ABDC50; /*0x56ae11*/
                     }
@@ -8626,7 +8626,7 @@ char Gap2Recv_56E890::ProcessDataHouseClass(void* a2, void* a3, void* a4) {
     v8 = (ObjectClass *)*(&dword_A8022C->ptr_0 + v7); /*0x56e904*/
     if ( v8 ) /*0x56e909*/
     {
-      if ( !BYTE1(v8[2].location[0]) ) /*0x56e90b*/
+      if ( !v8[2].location[1] ) /*0x56e90b*/
       {
         StartCoords = HouseClass::GetStartCoords(dword_A8022C->vtable1 + v7), v12); /*0x56e91c*/
         if ( *StartCoords != dword_ABDC10 || StartCoords[1] != dword_ABDC14 || StartCoords[2] != dword_ABDC18 ) /*0x56e945*/
@@ -9695,7 +9695,7 @@ char Gap2Recv_5840C0::CheckMapReachability(CCINIClass * aP1, int a3, int a4, int
     {
       for ( j = 0; j < v48; ++j ) /*0x58438d*/
       {
-        LOWORD(v56) = v27 + *v26; /*0x5843a6*/
+        (v56) = ((v56) & ~0xFFFF) | ((v27 + *v26) & 0xFFFF); /*0x5843a6*/
         HIWORD(v56) = v26[1] + v28; /*0x5843b1*/
         aP1 = v56; /*0x5843ba*/
         if ( (unsigned __int8)LayerClass::IsWithinUsableArea((LayerClass *)this, (__int16 *)&aP1, 1) ) /*0x5843c1*/
@@ -10982,7 +10982,7 @@ char Gap2Recv_591740::PlaceMapSeedCityArea(void* a2, void* a3, void* a4) {
         do /*0x591ad6*/
         {
           v73 = (unsigned int)Random::State((Random *)&g_MissionQueueFrame.globalVariables[1552]); /*0x591abc*/
-          LOWORD(v46) = Math::RoundToInt((double)v73 * 4.656612874161595e-10); /*0x591ace*/
+          (v46) = ((v46) & ~0xFFFF) | ((Math::RoundToInt((double)v73 * 4.656612874161595e-10)) & 0xFFFF); /*0x591ace*/
         }
         while ( v46 > 1 ); /*0x591ad6*/
         v47 = MapSeed_field_0x0C > 0; /*0x591adc*/
@@ -12091,12 +12091,12 @@ void Gap2Recv_594870::PlaceRandomWaypoints(int a2) {
   do /*0x5948f1*/
   {
     v21 = (unsigned int)Random::State((Random *)&stru_ABE890); /*0x5948d7*/
-    LOWORD(v3) = Math::RoundToInt((double)v21 * 6.984919311242392e-10); /*0x5948e9*/
+    (v3) = ((v3) & ~0xFFFF) | ((Math::RoundToInt((double)v21 * 6.984919311242392e-10)) & 0xFFFF); /*0x5948e9*/
   }
   while ( v3 > 2 ); /*0x5948f1*/
   NeedsSaveOrLink = this->NeedsSaveOrLink; /*0x5948f3*/
   (v21) = ((v21) & 0xFFFFFFFF00000000ull) | ((0) & 0xFFFFFFFFull); /*0x5948f6*/
-  for ( i = v3 + 12 * NeedsSaveOrLink + 3 * NeedsSaveOrLink; v28 < i; LODWORD(v21) = v21 + 1 ) /*0x59490a*/
+  for ( i = v3 + 12 * NeedsSaveOrLink + 3 * NeedsSaveOrLink; v28 < i; (v21) = ((v21) & 0xFFFFFFFF00000000ull) | ((v21 + 1) & 0xFFFFFFFFull)) /*0x59490a*/
   {
     if ( (int)v21 >= 300 ) /*0x594918*/
       break; /*0x594918*/
@@ -12106,7 +12106,7 @@ void Gap2Recv_594870::PlaceRandomWaypoints(int a2) {
     do /*0x59495c*/
     {
       v23 = (unsigned int)Random::State((Random *)&stru_ABE890); /*0x59493f*/
-      LOWORD(v7) = Math::RoundToInt((double)v23 * v24 * 2.328306437080797e-10); /*0x594955*/
+      (v7) = ((v7) & ~0xFFFF) | ((Math::RoundToInt((double)v23 * v24 * 2.328306437080797e-10)) & 0xFFFF); /*0x594955*/
     }
     while ( v7 > v6 ); /*0x59495c*/
     *(unsigned int *)v20 = *(unsigned int *)(this->fallRate + 4 * v7); /*0x594967*/
@@ -12222,7 +12222,7 @@ char Gap2Recv_595400::PlaceNeutralBuilding() {
     do /*0x59548c*/
     {
       *(unsigned long long *)v22 = (unsigned int)Random::State((Random *)&stru_ABE890); /*0x59546b*/
-      LOWORD(v6) = Math::RoundToInt((double)*(__int64 *)v22 * *(double *)&v24 * 2.328306437080797e-10); /*0x595485*/
+      (v6) = ((v6) & ~0xFFFF) | ((Math::RoundToInt((double)*(__int64 *)v22 * *(double *)&v24 * 2.328306437080797e-10)) & 0xFFFF); /*0x595485*/
     }
     while ( v6 > v5 ); /*0x59548c*/
     v18 = (int *)BuildingClass::Construct(v4, *(unsigned int *)(*(unsigned int *)dword_8871E0->MultiEngineer + 4 * v6), Owner); /*0x5954a6*/
@@ -12239,7 +12239,7 @@ char Gap2Recv_595400::PlaceNeutralBuilding() {
     do /*0x595501*/
     {
       v24 = (unsigned int)Random::State((Random *)&stru_ABE890); /*0x5954e4*/
-      LOWORD(v8) = Math::RoundToInt((double)v24 * *(double *)v22 * 2.328306437080797e-10); /*0x5954fa*/
+      (v8) = ((v8) & ~0xFFFF) | ((Math::RoundToInt((double)v24 * *(double *)v22 * 2.328306437080797e-10)) & 0xFFFF); /*0x5954fa*/
     }
     while ( v8 > v7 ); /*0x595501*/
     *(unsigned int *)v17 = *(unsigned int *)(v1->fallRate + 4 * v8); /*0x595513*/
@@ -13374,7 +13374,7 @@ LABEL_11:
       do /*0x5a8476*/
       {
         v46 = (unsigned int)Random::State((Random *)&stru_ABE890); /*0x5a8451*/
-        LOWORD(v13) = Math::RoundToInt((double)v46 * v44 * 2.328306437080797e-10 + v37); /*0x5a846b*/
+        (v13) = ((v13) & ~0xFFFF) | ((Math::RoundToInt((double)v46 * v44 * 2.328306437080797e-10 + v37)) & 0xFFFF); /*0x5a846b*/
         v36.StringVector_field_0x18 = v13; /*0x5a8472*/
       }
       while ( v13 > v33 ); /*0x5a8476*/
@@ -13407,7 +13407,7 @@ LABEL_11:
           do /*0x5a853e*/
           {
             v47 = (unsigned int)Random::State((Random *)&stru_ABE890); /*0x5a8524*/
-            LOWORD(v19) = Math::RoundToInt((double)v47 * 0.000000003492459655621196); /*0x5a8536*/
+            (v19) = ((v19) & ~0xFFFF) | ((Math::RoundToInt((double)v47 * 0.000000003492459655621196)) & 0xFFFF); /*0x5a8536*/
           }
           while ( v19 > 0xE ); /*0x5a853e*/
           v20 = *v4; /*0x5a8540*/
@@ -13580,7 +13580,7 @@ void* Gap2Recv_5A95B0::PlaceRandomAIBuildings() {
           do /*0x5a96df*/
           {
             v34 = (unsigned int)Random::State((Random *)&stru_ABE890); /*0x5a96c2*/
-            LOWORD(v9) = Math::RoundToInt((double)v34 * *(double *)v30 * 2.328306437080797e-10); /*0x5a96d8*/
+            (v9) = ((v9) & ~0xFFFF) | ((Math::RoundToInt((double)v34 * *(double *)v30 * 2.328306437080797e-10)) & 0xFFFF); /*0x5a96d8*/
           }
           while ( v9 > v8 ); /*0x5a96df*/
           v10 = (unsigned int **)BuildingClass::Construct( /*0x5a96fd*/
@@ -16124,11 +16124,11 @@ v2 = (double)v31 * 0.02 + 1.0; /*0x62cb5f*/
 v32 = v2 * this->M268; /*0x62cb6d*/
 *(float *)&v33 = v2 * this->M272; /*0x62cb79*/
 v3 = v2 * this->M276; /*0x62cb7d*/
-LOWORD(v4) = Math::RoundToInt(v3); /*0x62cb8d*/
+(v4) = ((v4) & ~0xFFFF) | ((Math::RoundToInt(v3)) & 0xFFFF); /*0x62cb8d*/
 v5 = v4; /*0x62cb9c*/
-LOWORD(v6) = Math::RoundToInt(v3); /*0x62cb9e*/
+(v6) = ((v6) & ~0xFFFF) | ((Math::RoundToInt(v3)) & 0xFFFF); /*0x62cb9e*/
 v7 = v6; /*0x62cba9*/
-LOWORD(v8) = Math::RoundToInt(v3 * this->M228); /*0x62cbab*/
+(v8) = ((v8) & ~0xFFFF) | ((Math::RoundToInt(v3 * this->M228)) & 0xFFFF); /*0x62cbab*/
 v9 = this->M302; /*0x62cbb6*/
 this->q100 = v5; /*0x62cbbc*/
 this->M260 = v7; /*0x62cbbe*/
@@ -16196,7 +16196,7 @@ if ( v15 && *(unsigned int *)(v10 + 744) && v9 <= *(char *)(v10 + 780) ) /*0x62c
         (double)(v25 - v21) * (double)(v25 - v21)
       + (double)(v27 - v37) * (double)(v27 - v37)
       + (double)(v26 - v22) * (double)(v26 - v22));
-      LOWORD(v28) = Math::RoundToInt(v14); /*0x62cda3*/
+      (v28) = ((v28) & ~0xFFFF) | ((Math::RoundToInt(v14)) & 0xFFFF); /*0x62cda3*/
       v29 = v28; /*0x62cda8*/
       v30 = this->M172; /*0x62cdaa*/
       v31 = *(unsigned int *)(v30 + 744); /*0x62cdb6*/
@@ -18825,7 +18825,7 @@ void* Gap2Recv_6547C0::GenerateImageThumbnail(RadarClass * aP1, RadarClass * aP2
     if ( v17 >= 108.0 ) /*0x6548e1*/
     {
       v99 = 108.0 / v16; /*0x65490a*/
-      LOWORD(v20) = Math::RoundToInt(v15 * v99); /*0x65491a*/
+      (v20) = ((v20) & ~0xFFFF) | ((Math::RoundToInt(v15 * v99)) & 0xFFFF); /*0x65491a*/
       v97 = v20; /*0x65491f*/
       v69 = 108; /*0x654926*/
       v18 = v20; /*0x65492e*/
@@ -18835,7 +18835,7 @@ void* Gap2Recv_6547C0::GenerateImageThumbnail(RadarClass * aP1, RadarClass * aP2
       v18 = 140; /*0x6548eb*/
       v97 = 140; /*0x6548f0*/
       v89 = v17; /*0x6548d2*/
-      LOWORD(v19) = Math::RoundToInt(v89); /*0x6548f7*/
+      (v19) = ((v19) & ~0xFFFF) | ((Math::RoundToInt(v89)) & 0xFFFF); /*0x6548f7*/
       v69 = v19; /*0x6548fc*/
     }
     v6[1314] = v99; /*0x654939*/
@@ -18865,17 +18865,17 @@ void* Gap2Recv_6547C0::GenerateImageThumbnail(RadarClass * aP1, RadarClass * aP2
   v23 = (*(int (**)(unsigned int, unsigned int, unsigned int))(**((unsigned int **)v6 + 1160) + 92))(*((unsigned int *)v6 + 1160), 0, 0); /*0x6549f0*/
   v24 = *v7; /*0x6549f3*/
   v90 = v23; /*0x6549f5*/
-  LOWORD(v25) = Math::RoundToInt((double)*v7 * v99); /*0x654a0e*/
+  (v25) = ((v25) & ~0xFFFF) | ((Math::RoundToInt((double)*v7 * v99)) & 0xFFFF); /*0x654a0e*/
   v26 = v25; /*0x654a13*/
   v82 = v25; /*0x654a1a*/
-  LOWORD(v27) = Math::RoundToInt((double)(v24 + v7[2]) * v99); /*0x654a33*/
+  (v27) = ((v27) & ~0xFFFF) | ((Math::RoundToInt((double)(v24 + v7[2]) * v99)) & 0xFFFF); /*0x654a33*/
   v83 = v27 + 1; /*0x654a42*/
   if ( v27 + 1 >= v97 ) /*0x654a46*/
     v83 = v97; /*0x654a48*/
   v28 = v7->__pad_004; /*0x654a4c*/
-  LOWORD(v29) = Math::RoundToInt((double)v28 * v99); /*0x654a64*/
+  (v29) = ((v29) & ~0xFFFF) | ((Math::RoundToInt((double)v28 * v99)) & 0xFFFF); /*0x654a64*/
   v84 = v29; /*0x654a6c*/
-  LOWORD(v30) = Math::RoundToInt((double)(v28 + v7->u32_C) * v99); /*0x654a87*/
+  (v30) = ((v30) & ~0xFFFF) | ((Math::RoundToInt((double)(v28 + v7->u32_C) * v99)) & 0xFFFF); /*0x654a87*/
   v31 = v69; /*0x654a8c*/
   v32 = v30 + 1; /*0x654a90*/
   if ( v30 + 1 >= v69 ) /*0x654a95*/
@@ -18897,7 +18897,7 @@ void* Gap2Recv_6547C0::GenerateImageThumbnail(RadarClass * aP1, RadarClass * aP2
     v80 = (unsigned __int16 *)(v33 + 2 * (v26 + v97 * v84)); /*0x654af1*/
     do /*0x654dff*/
     {
-      LOWORD(v34) = Math::RoundToInt(v72); /*0x654af9*/
+      (v34) = ((v34) & ~0xFFFF) | ((Math::RoundToInt(v72)) & 0xFFFF); /*0x654af9*/
       v35 = v6->ptr_1244; /*0x654afe*/
       if ( v35 >= v34 ) /*0x654b06*/
       {
@@ -18910,7 +18910,7 @@ void* Gap2Recv_6547C0::GenerateImageThumbnail(RadarClass * aP1, RadarClass * aP2
         v71 = v36; /*0x654b0a*/
       }
       v37 = v72 + v73; /*0x654b1a*/
-      LOWORD(v38) = Math::RoundToInt(v37); /*0x654b20*/
+      (v38) = ((v38) & ~0xFFFF) | ((Math::RoundToInt(v37)) & 0xFFFF); /*0x654b20*/
       v39 = v38 + 1; /*0x654b25*/
       v70 = v35; /*0x654b26*/
       if ( v35 >= v39 ) /*0x654b2c*/
@@ -18924,7 +18924,7 @@ void* Gap2Recv_6547C0::GenerateImageThumbnail(RadarClass * aP1, RadarClass * aP2
           v40 = 0.0; /*0x654b4c*/
           v41 = 0.0; /*0x654b52*/
           v42 = 0.0; /*0x654b58*/
-          LOWORD(v43) = Math::RoundToInt(v37); /*0x654b65*/
+          (v43) = ((v43) & ~0xFFFF) | ((Math::RoundToInt(v37)) & 0xFFFF); /*0x654b65*/
           v44 = v6->ptr_1240; /*0x654b6a*/
           v93 = v44; /*0x654b72*/
           if ( v44 >= v43 ) /*0x654b76*/
@@ -18937,7 +18937,7 @@ void* Gap2Recv_6547C0::GenerateImageThumbnail(RadarClass * aP1, RadarClass * aP2
             v45 = v6->ptr_1240; /*0x654b78*/
             v100 = v45; /*0x654b7a*/
           }
-          LOWORD(v46) = Math::RoundToInt(v37); /*0x654b9b*/
+          (v46) = ((v46) & ~0xFFFF) | ((Math::RoundToInt(v37)) & 0xFFFF); /*0x654b9b*/
           v47 = v46 + 1; /*0x654ba0*/
           if ( v44 < v46 + 1 ) /*0x654ba5*/
             v47 = v44; /*0x654ba7*/
@@ -19028,15 +19028,15 @@ void* Gap2Recv_6547C0::GenerateImageThumbnail(RadarClass * aP1, RadarClass * aP2
             while ( v48 < v70 ); /*0x654d1f*/
             v36 = v71; /*0x654d25*/
           }
-          LOWORD(v60) = Math::RoundToInt(v37); /*0x654d2f*/
+          (v60) = ((v60) & ~0xFFFF) | ((Math::RoundToInt(v37)) & 0xFFFF); /*0x654d2f*/
           v61 = 255; /*0x654d39*/
           if ( v60 <= 255 ) /*0x654d3e*/
             v61 = v60; /*0x654d40*/
-          LOWORD(v62) = Math::RoundToInt(v37); /*0x654d48*/
+          (v62) = ((v62) & ~0xFFFF) | ((Math::RoundToInt(v37)) & 0xFFFF); /*0x654d48*/
           v63 = 255; /*0x654d52*/
           if ( v62 <= 255 ) /*0x654d57*/
             v63 = v62; /*0x654d59*/
-          LOWORD(v64) = Math::RoundToInt(v37); /*0x654d61*/
+          (v64) = ((v64) & ~0xFFFF) | ((Math::RoundToInt(v37)) & 0xFFFF); /*0x654d61*/
           if ( v64 > 255 ) /*0x654d6b*/
             v64 = 255; /*0x654d6d*/
           v98 = v98 + v74; /*0x654d84*/
@@ -19269,11 +19269,11 @@ bool Gap2Recv_659650::RenderProjectileTrail() {
       do /*0x659962*/
       {
         v22 = ProjectileTrail::ComputeRenderData((ProjectileTrail *)_ESI); /*0x659840*/
-        LOWORD(owningHouseIndex) = (unsigned __int8)(BYTE2(_ESI[1].abstractFlags) >> g_BitMask_Red); /*0x65985f*/
-        WORD2(v22) = (unsigned __int8)(BYTE1(_ESI[1].abstractFlags) >> g_BitMask_Blue); /*0x659876*/
+        (owningHouseIndex) = ((owningHouseIndex) & ~0xFFFF) | (((unsigned __int8)(BYTE2(_ESI[1].abstractFlags) >> g_BitMask_Red)) & 0xFFFF); /*0x65985f*/
+        (v22) = ((v22) & ~(0xFFFFull << 32)) | ((((unsigned __int8)(BYTE1(_ESI[1].abstractFlags) >> g_BitMask_Blue)) & 0xFFFFull) << 32); /*0x659876*/
         HIDWORD(v22) <<= g_BitMask_Green; /*0x65987e*/
         v23 = (((v22) >> 32) & 0xFFFFFFFFu) | (owningHouseIndex << g_BitShift_Blue); /*0x65988e*/
-        WORD2(v22) = (unsigned __int8)(LOBYTE(_ESI[1].abstractFlags) >> g_BitShift_Green_0); /*0x659893*/
+        (v22) = ((v22) & ~(0xFFFFull << 32)) | ((((unsigned __int8)(LOBYTE(_ESI[1].abstractFlags) >> g_BitShift_Green_0)) & 0xFFFFull) << 32); /*0x659893*/
         owningHouseIndex = ((((v22) >> 32) & 0xFFFFFFFFu) << g_BitShift_Red) | v23; /*0x6598a3*/
         Coord::To_Screen((Coord *)g_TacticalClass_Instance, _ESI->location, &v38); /*0x6598a5*/
         Coord::To_Screen((Coord *)g_TacticalClass_Instance, &_ESI->lineTrailer, v37); /*0x6598bc*/
@@ -19737,7 +19737,7 @@ LABEL_17:
       if ( !v17 ) /*0x65de4d*/
         goto LABEL_36; /*0x65de4d*/
       v31 = *(unsigned int *)(v16 + 2048); /*0x65de5b*/
-      if ( v31 > 0 && BYTE1(this->location[2]) ) /*0x65de61*/
+      if ( v31 > 0 && this->location[3] ) /*0x65de61*/
       {
         __asm { fild [esp+2Ch+var_8] } /*0x65de6b*/
         __asm { fstp [esp+34h+var_34]; float }
@@ -22761,7 +22761,7 @@ int Gap2Recv_68FBB0::RenderScoreTypeText(int a2, int a3, ScoreScreen * aP3) {
       v13 = a2; /*0x68fcb2*/
       if ( v4 >= a3 + 84 ) /*0x68fcb6*/
       {
-        LOBYTE(v12) = *(unsigned char *)(v33 + a2); /*0x68fcb8*/
+        (v12) = ((v12) & ~0xFF) | ((*(unsigned char *)(v33 + a2)) & 0xFF); /*0x68fcb8*/
         if ( (unsigned char)v12 ) /*0x68fcbd*/
         {
           if ( (unsigned char)v12 != 32 ) /*0x68fcc1*/
@@ -22883,7 +22883,7 @@ LABEL_27:
       }
       if ( v33 ) /*0x68fd33*/
       {
-        LOBYTE(v12) = *(unsigned char *)(v33 + a2 - 1); /*0x68fd39*/
+        (v12) = ((v12) & ~0xFF) | ((*(unsigned char *)(v33 + a2 - 1)) & 0xFF); /*0x68fd39*/
         --v33; /*0x68fd43*/
         (v12) = ((v12) & ~0xFFFF) | (((char)v12) & 0xFFFF); /*0x68fd47*/
         v16 = (*(int (**)(unsigned int, int))(**&this->u32_C + 4))(this->u32_C, v12) + 1; /*0x68fd53*/
@@ -27392,7 +27392,7 @@ LABEL_34:
         v10 = (*((int (**)(TechnoClass *))v11->RadioClass + 33))(v11); /*0x6ef36a*/
         if ( v10->u32_5E0 > 0 ) /*0x6ef378*/
         {
-          LOBYTE(v10) = *(unsigned char *)(v3->occupant + 244); /*0x6ef381*/
+          (v10) = ((v10) & ~0xFF) | ((*(unsigned char *)(v3->occupant + 244)) & 0xFF); /*0x6ef381*/
           if ( (unsigned char)v10 ) /*0x6ef389*/
           {
             TeamClass::LiberateMember_Start((int *)v3, (int)v11, 0xFFFFFFFF, 0); /*0x6ef392*/
@@ -28777,7 +28777,7 @@ void Gap2Recv_722440::PropagateCellOccupancy() {
   v2 = (int *)this->u32_F4; /*0x722448*/
   if ( v2 && *v2 && *&this->lineTrailer > 0.00001 ) /*0x72247a*/
   {
-    LOWORD(v3) = Math::RoundToInt((double)*v2 * *&this->lineTrailer); /*0x72248a*/
+    (v3) = ((v3) & ~0xFFFF) | ((Math::RoundToInt((double)*v2 * *&this->lineTrailer)) & 0xFFFF); /*0x72248a*/
     if ( v3 < 5 ) /*0x722492*/
     {
       v4 = 5; /*0x7224a5*/

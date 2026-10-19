@@ -536,7 +536,7 @@ int BulletClass::ComputeImpactTrajectory(int a1) {
   Math::SinCos(v12); /*0x662189*/
   __asm { fimul [esp+38h+var_14] } /*0x66218e*/
   __asm { fiadd [esp+30h+var_4] }
-  IDA_LOWORD(v6) = Math::RoundToInt(a2); /*0x662199*/
+  (v6) = ((v6) & ~0xFFFF) | ((Math::RoundToInt(a2)) & 0xFFFF); /*0x662199*/
   v7 = v6; /*0x66219e*/
   if ( v6 > (int)((unsigned int *)_ESI)[0] ) /*0x6621a5*/
   {

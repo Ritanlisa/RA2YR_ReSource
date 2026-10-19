@@ -75,7 +75,7 @@ int sub_7C61CF(int a1)
         {
           *v5 = v6; /*0x7c61fc*/
           v7 = **(uint16_t **)(a1 + 68); /*0x7c6205*/
-          IDA_LOWORD(v7) = *(unsigned short *)(*(unsigned int *)(a1 + 144) + 2 * v7); /*0x7c620e*/
+          (v7) = ((v7) & ~0xFFFF) | ((*(unsigned short *)(*(unsigned int *)(a1 + 144) + 2 * v7)) & 0xFFFF); /*0x7c620e*/
           (v7) = ((v7) & ~0xFF) | ((v4) & 0xFF); /*0x7c6212*/
           **(unsigned short **)(a1 + 72) = *(unsigned short *)(*(unsigned int *)(a1 + 88) + 2 * v7); /*0x7c621b*/
         }

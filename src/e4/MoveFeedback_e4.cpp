@@ -268,7 +268,7 @@ char MoveFeedback::SetCapacity(int a2, unsigned int * a3)
     }
     *&this->m_Capacity = v4; /*0x40c0aa*/
     this->m_8 = a2; /*0x40c0b2*/
-    BYTE1(this->m_C) = a3 == 0; /*0x40c0b5*/
+    (this->m_C) = ((this->m_C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x40c0b5*/
   }
   else
   {

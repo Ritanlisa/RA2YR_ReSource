@@ -268,9 +268,9 @@ LABEL_21:
           v31 = (64 - v31) / 3 + 64; /*0x73cb1a*/
         else
           (v31) = ((v31) & ~0xFF) | (((char)(v31 - 64) / 3 + 64) & 0xFF); /*0x73cb01*/
-        LOBYTE(v32) = 0; /*0x73cb1e*/
-        HIBYTE(v32) = v31; /*0x73cb27*/
-        LOWORD(v59) = v32; /*0x73cb2e*/
+        (v32) = ((v32) & ~0xFF) | ((0) & 0xFF); /*0x73cb1e*/
+        (v32) = ((v32) & ~(0xFF << 8)) | (((v31) & 0xFF) << 8); /*0x73cb27*/
+        (v59) = ((v59) & ~0xFFFF) | ((v32) & 0xFFFF); /*0x73cb2e*/
         FacingClass::Set_SyncLog(v75.__pad_0, &v59); /*0x73cb33*/
       }
       if ( *((unsigned int *)this + 260) ) /*0x73cb38*/

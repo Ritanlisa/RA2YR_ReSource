@@ -221,13 +221,13 @@ VectorClass_flat * * BuildingPlacement::ProcessBuildingPlacementAction()
         {
           DeployDir = dword_8871E0->DeployDir; /*0x54c776*/
           Value = ProgressTimer::GetValue(&this->q054, &v47); /*0x54c77a*/
-          LOBYTE(v23) = 0; /*0x54c77f*/
-          HIBYTE(v23) = DeployDir; /*0x54c781*/
+          (v23) = ((v23) & ~0xFF) | ((0) & 0xFF); /*0x54c77f*/
+          (v23) = ((v23) & ~(0xFF << 8)) | (((DeployDir) & 0xFF) << 8); /*0x54c781*/
           if ( *(unsigned short *)Value != v23 ) /*0x54c786*/
           {
-            LOBYTE(v24) = 0; /*0x54c78d*/
+            (v24) = ((v24) & ~0xFF) | ((0) & 0xFF); /*0x54c78d*/
             HIBYTE(v24) = dword_8871E0->DeployDir; /*0x54c793*/
-            LOWORD(v47) = v24; /*0x54c799*/
+            (v47) = ((v47) & ~0xFFFF) | ((v24) & 0xFFFF); /*0x54c799*/
             FacingClass::Update(&this->q054, &v47); /*0x54c79e*/
           }
         }
@@ -446,7 +446,7 @@ unsigned int * BuildingPlacement::SelectBuildingPlacementCells(int a2)
     fadd ds:dbl_7E1708
     fimul [esp+40h+var_1C]
   }
-  LOWORD(v4) = Math::RoundToInt(v2); /*0x594f8d*/
+  (v4) = ((v4) & ~0xFFFF) | ((Math::RoundToInt(v2)) & 0xFFFF); /*0x594f8d*/
   v5 = a2; /*0x594f92*/
   v40 = v4; /*0x594f99*/
   if ( !BuildingPlacement_field_0x20 && a2->q010 > 0 ) /*0x594fa4*/

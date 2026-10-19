@@ -200,7 +200,7 @@ LABEL_36:
                 break; /*0x4540a1*/
               v21 = v1->Audio8[0]; /*0x4540a7*/
               if ( v1->Audio8[2] < v21 /*0x4540d8*/
-                || (BYTE1(v1->Audio8[1]) || !v21)
+                || (v1->Audio8[2] || !v21)
                 && (v22 = v1->Audio8[3], v22 > 0)
                 && (*(unsigned __int8 (**)(int *, int, unsigned int))(v1->Audio7[3] + 8))(
                      &v1->Audio7[3],
@@ -228,7 +228,7 @@ LABEL_36:
             break; /*0x453ff2*/
           FiringOccupantIndex = v1->FiringOccupantIndex; /*0x453ff8*/
           if ( v1->Audio7[1] < FiringOccupantIndex /*0x454029*/
-            || (BYTE1(v1->Audio7[0]) || !FiringOccupantIndex)
+            || (v1->Audio7[1] || !FiringOccupantIndex)
             && (v15 = v1->Audio7[2], v15 > 0)
             && (*(unsigned __int8 (**)(int *, int, unsigned int))(v1->Overpowerers + 8))(
                  &v1->Overpowerers,
@@ -676,7 +676,7 @@ void* BuildingClass_ProcessSell(int * p_ComPtr_field_0x14, double a3, int a4, in
     if ( *(unsigned char *)(_EBP + 1676) ) /*0x739eec*/
     {
       TechnoClass::Deploy(v107, a3); /*0x739ef8*/
-      LOBYTE(v8) = *(unsigned char *)(_EBP + 144); /*0x739efd*/
+      (v8) = ((v8) & ~0xFF) | ((*(unsigned char *)(_EBP + 144)) & 0xFF); /*0x739efd*/
       if ( !(unsigned char)v8 ) /*0x739f05*/
         return v8; /*0x739f05*/
     }
@@ -711,7 +711,7 @@ LABEL_202:
     v101 = *(unsigned int *)_EBP; /*0x73b074*/
     v102 = (*(int (**)(int, int *, unsigned int))(*(unsigned int *)_EBP + 440))(_EBP, &v110.ComPtr_field_0x08, 0); /*0x73b080*/
     (*(void (**)(int, int))(v101 + 1332))(_EBP, v102); /*0x73b089*/
-    LOBYTE(v8) = *(unsigned char *)(_EBP + 144); /*0x73b08f*/
+    (v8) = ((v8) & ~0xFF) | ((*(unsigned char *)(_EBP + 144)) & 0xFF); /*0x73b08f*/
     if ( (unsigned char)v8 ) /*0x73b097*/
       LOBYTE(v8) = FootClass::UpdateAI((FootClass *)this, _EBP, (int)v96, a3, (int)v107); /*0x73b0a0*/
     return v8; /*0x73b0a0*/

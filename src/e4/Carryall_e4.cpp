@@ -115,7 +115,7 @@ FootClass * * Carryall::MissionStateMachine()
     }
       LABEL_5:
       MissionControl = MissionClass::GetMissionControl((MissionClass *)this); /*0x416d9d*/
-      LOWORD(v4) = Math::RoundToInt(*((double *)MissionControl + 2) * 900.0); /*0x416dad*/
+      (v4) = ((v4) & ~0xFFFF) | ((Math::RoundToInt(*((double *)MissionControl + 2) * 900.0)) & 0xFFFF); /*0x416dad*/
       return v4 + Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2);
     case 1: /*0x416d64*/
       v11 = this->u32_5A4; /*0x416f29*/

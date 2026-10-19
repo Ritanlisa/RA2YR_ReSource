@@ -469,7 +469,7 @@ int CopySHPFrameToSurface(int a1, unsigned short * a2, int * a3, int a4, int a5,
               v35 = 4; /*0x74860e*/
               do /*0x748625*/
               {
-                if ( (HIBYTE(*v32) & 0x80u) == 0 ) /*0x748619*/
+                if ( ((((*v32) >> 8) & 0xFF) & 0x80u) == 0 ) /*0x748619*/
                   *(unsigned short *)v34 = *v32; /*0x74861b*/
                 v34 = (int *)((char *)v34 + 2); /*0x74861e*/
                 ++v32; /*0x748621*/
@@ -502,7 +502,7 @@ int CopySHPFrameToSurface(int a1, unsigned short * a2, int * a3, int a4, int a5,
           do /*0x748591*/
           {
             v28 = *v26; /*0x748569*/
-            if ( (HIBYTE(*v26) & 0x80u) == 0 ) /*0x74856f*/
+            if ( ((((*v26) >> 8) & 0xFF) & 0x80u) == 0 ) /*0x74856f*/
             {
               v29 = v27; /*0x748573*/
               if ( v14 ) /*0x748575*/
@@ -666,7 +666,7 @@ unsigned int sub_748AF0(int a1, unsigned short * a2, int * a3, unsigned int a4, 
           v15 = 4; /*0x748b7b*/
           do /*0x748b92*/
           {
-            if ( (HIBYTE(*v12) & 0x80u) == 0 ) /*0x748b86*/
+            if ( ((((*v12) >> 8) & 0xFF) & 0x80u) == 0 ) /*0x748b86*/
               *(unsigned short *)v14 = *v12; /*0x748b88*/
             v14 = (int *)((char *)v14 + 2); /*0x748b8b*/
             ++v12; /*0x748b8e*/

@@ -629,7 +629,7 @@ AbstractClass * * UDPInterfaceClass::flush(int a2, unsigned int * a3)
     }
     *&this->Initialized = v4; /*0x7b451a*/
     this->m_8 = a2; /*0x7b4522*/
-    BYTE1(this->m_C) = a3 == 0; /*0x7b4525*/
+    (this->m_C) = ((this->m_C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x7b4525*/
   }
   else
   {

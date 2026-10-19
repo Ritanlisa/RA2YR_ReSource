@@ -27,7 +27,7 @@ int MovementAI::IsPathMovementAllowed()
       return this->u32_100 != 0; /*0x487e28*/
   }
   if ( this->u32_100 == 1 ) /*0x487e45*/
-    LOBYTE(v3) = 0; /*0x487e48*/
+    (v3) = ((v3) & ~0xFF) | ((0) & 0xFF); /*0x487e48*/
   else
     return this->u32_100 != 0; /*0x487e2a*/
   return v3; /*0x487e34*/

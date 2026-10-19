@@ -344,7 +344,7 @@ LABEL_20:
           }
           v22 = v21; /*0x629b26*/
           __asm { faddp st(1), st } /*0x629b28*/
-          LOWORD(v23) = Math::RoundToInt(v1); /*0x629b2a*/
+          (v23) = ((v23) & ~0xFFFF) | ((Math::RoundToInt(v1)) & 0xFFFF); /*0x629b2a*/
           v58 = (int)v22 + v55; /*0x629b44*/
           v59 = v56 + v23; /*0x629b48*/
           v60 = v57; /*0x629b4c*/
@@ -632,11 +632,11 @@ LABEL_8:
     v29 = (double)(v18 + 2); /*0x62a1c6*/
     Math::SinCos(*(double *)&v26[1]); /*0x62a1ca*/
     v20 = v30 - v1 * v29; /*0x62a1d3*/
-    LOWORD(v21) = Math::RoundToInt(v2); /*0x62a1d7*/
+    (v21) = ((v21) & ~0xFFFF) | ((Math::RoundToInt(v2)) & 0xFFFF); /*0x62a1d7*/
     v27 = v21; /*0x62a1dc*/
     Math::ArcTan2(*(double *)&v26[1]); /*0x62a1e6*/
     v22 = v2 * v29 + (double)v31; /*0x62a1f2*/
-    LOWORD(v23) = Math::RoundToInt(v22); /*0x62a1f6*/
+    (v23) = ((v23) & ~0xFFFF) | ((Math::RoundToInt(v22)) & 0xFFFF); /*0x62a1f6*/
     v34 = v23; /*0x62a1ff*/
     v35 = v27; /*0x62a203*/
     v24 = *(unsigned int *)this->__pad_28; /*0x62a207*/
@@ -980,18 +980,18 @@ Coord * * ParasiteClass::Update(void *a1, void *a2, void *a3, void *a4)
   v66 = v10; /*0x62bea5*/
   this->q0D4 = -1073741824; /*0x62bea9*/
   this->q0D4 = this->q0D4 - (double)dword_8871E0->RepairRate[0]; /*0x62bebd*/
-  LOWORD(v11) = Math::RoundToInt(v66); /*0x62bec4*/
+  (v11) = ((v11) & ~0xFFFF) | ((Math::RoundToInt(v66)) & 0xFFFF); /*0x62bec4*/
   v49 = v11; /*0x62becd*/
-  LOWORD(v12) = Math::RoundToInt(v65); /*0x62bece*/
+  (v12) = ((v12) & ~0xFFFF) | ((Math::RoundToInt(v65)) & 0xFFFF); /*0x62bece*/
   v46 = v12; /*0x62bed7*/
-  LOWORD(v13) = Math::RoundToInt(v64); /*0x62bed8*/
+  (v13) = ((v13) & ~0xFFFF) | ((Math::RoundToInt(v64)) & 0xFFFF); /*0x62bed8*/
   Coord3D::Set(&v68, v13, v46, v49); /*0x62bee2*/
   Vector3::AddAssign(&this->q0CC, v52); /*0x62beec*/
-  LOWORD(v14) = Math::RoundToInt(v66); /*0x62bef5*/
+  (v14) = ((v14) & ~0xFFFF) | ((Math::RoundToInt(v66)) & 0xFFFF); /*0x62bef5*/
   v50 = v14; /*0x62befe*/
-  LOWORD(v15) = Math::RoundToInt(v65); /*0x62beff*/
+  (v15) = ((v15) & ~0xFFFF) | ((Math::RoundToInt(v65)) & 0xFFFF); /*0x62beff*/
   v47 = v15; /*0x62bf08*/
-  LOWORD(v16) = Math::RoundToInt(v64); /*0x62bf09*/
+  (v16) = ((v16) & ~0xFFFF) | ((Math::RoundToInt(v64)) & 0xFFFF); /*0x62bf09*/
   Coord3D::Set(&v69, v16, v47, v50); /*0x62bf13*/
   GroundHeight = Cell::GetGroundHeight(&v69); /*0x62bf2d*/
   v67 = dword_AC4A0C + GroundHeight; /*0x62bf3d*/

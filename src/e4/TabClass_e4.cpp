@@ -88,7 +88,7 @@ int TabClass::DrawPower(void *a1, void * aGrey)
     v5 = Color::ConvertToRGB(BuildingAnimByName + 194, (int)&hWnd); /*0x6583dd*/
     v25 = *(unsigned short *)v5; /*0x6583e6*/
     v26 = *(unsigned char *)(v5 + 2); /*0x6583ee*/
-    v6 = (unsigned __int8)v25 | ((HIBYTE(v25) | (v26 << 8)) << 8); /*0x65841f*/
+    v6 = (unsigned __int8)v25 | (((((v25) >> 8) & 0xFF) | (v26 << 8)) << 8); /*0x65841f*/
     DlgItem = GetDlgItem((HWND)hDlg, v3); /*0x65842e*/
     SendMessageA(DlgItem, 0x498u, 0, v6); /*0x658438*/
     SendMessageA(DlgItem, 0x4B2u, 0, (LPARAM)lParam); /*0x658447*/
@@ -115,7 +115,7 @@ int TabClass::DrawPower(void *a1, void * aGrey)
       }
       else
       {
-        LOBYTE(v25) = HouseClass::IsAlliedWith(*(HouseClass **)((char *)&stru_A83CD9.estimatedHealth + 3)); /*0x6584f4*/
+        (v25) = ((v25) & ~0xFF) | ((HouseClass::IsAlliedWith(*(HouseClass **)((char *)&stru_A83CD9.estimatedHealth + 3))) & 0xFF); /*0x6584f4*/
         SendMessageA(hWnd, 0xF1u, (unsigned __int8)v25, 0); /*0x65850b*/
       }
       IsAlliedWith = HouseClass::IsAlliedWith((HouseClass *)other); /*0x658515*/

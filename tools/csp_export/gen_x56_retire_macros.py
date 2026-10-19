@@ -23,7 +23,8 @@ sys.path.insert(0, str(ROOT / 'tools' / 'csp_export'))
 import _ida_macro_retire  # noqa: E402
 from _ida_macro_retire import (  # noqa: E402
     FAMILY, Scan, balanced_paren, read_form, write_form, pair_form,
-    resolve_operand_width, W64, W32, W16, W8, WPTR, WUNK, WDBL, WFLT,
+    resolve_operand_width, member_split_form, call_return_is_integral,
+    W64, W32, W16, W8, WPTR, WUNK, WDBL, WFLT,
 )
 
 OUTDIR = ROOT / '.omo' / 'evidence' / 'optimization' / 'x56'
@@ -67,17 +68,130 @@ _MEMBER_CHAIN_RE = re.compile(
     r'[A-Za-z_]\w*(?:\s*\[[^\]]*\])*(?:\s*(?:->|\.)\s*[A-Za-z_]\w*(?:\s*\[[^\]]*\])*)+')
 
 
+_TOP_LEVEL_OPS = ('&&', '||', '==', '!=', '<=', '>=', '<', '>')
+
+
+def _top_level_cmp(s: str) -> bool:
+    """X77: True when a depth-0 comparison/logical operator is present.
+    `a == b` / `a && b` / `a < b` results are int by language rule, no matter
+    the operand types -- masking such a value is always legal."""
+    depth = 0
+    i = 0
+    n = len(s)
+    while i < n:
+        c = s[i]
+        if c == '(':
+            depth += 1
+        elif c == ')':
+            depth -= 1
+        elif depth == 0:
+            two = s[i:i + 2]
+            if two in ('&&', '||', '==', '!=', '<=', '>='):
+                return True
+            if c in '<>':
+                if c == '>' and i > 0 and s[i - 1] == '-':
+                    i += 1          # `->` member access, not a comparison
+                    continue
+                nxt = s[i + 1] if i + 1 < n else ''
+                if nxt in '<>' or nxt == '=':
+                    i += 2          # shift operator
+                    continue
+                return True
+        i += 1
+    return False
+
+
+def _scalar_cast_prefix(s: str) -> bool:
+    """X77: RHS begins with a cast to an integral scalar type -> provably integral."""
+    m = re.match(r'^\(\s*([^()]*?)\s*\)', s)
+    if not m:
+        return False
+    from _ida_macro_retire import classify_type
+    return classify_type(m.group(1)) in (W8, W16, W32, W64)
+
+
+def _unary_deref(s: str) -> bool:
+    """X77: True when s contains a UNARY '*' (deref) -- binary multiplies are
+    value-level arithmetic whose operands are checked individually."""
+    for i, c in enumerate(s):
+        if c != '*':
+            continue
+        j = i - 1
+        while j >= 0 and s[j] in ' \t':
+            j -= 1
+        if j < 0 or s[j] in '(,+-*/%&|^!<>=?;:{':
+            return True
+    return False
+
+
+def _typed_deref_prefix(s: str) -> bool:
+    """X77: `*(scalar*)expr` / `*(scalar *)expr` -> deref value is integral."""
+    m = re.match(r'^\*\s*\(\s*([^()]*?)\s*\)', s)
+    if not m:
+        return False
+    from _ida_macro_retire import classify_type
+    t = m.group(1)
+    if t.count('*') != 1:
+        return False
+    return classify_type(t.replace('*', ' ')) in (W8, W16, W32, W64)
+
+
+_UNARY_DEREF_SUB = re.compile(r'(?:^|(?<=[(,;+\-*/%&|^!<>=?:]))\s*\*\s*([A-Za-z_]\w*)\s*')
+
+
+def _resolve_unary_derefs(s: str, lines, line_idx):
+    """X77: substitute `*v` with 0 when v's pointee width resolves integral,
+    else mark the text BAD.  Returns (new_text, ok)."""
+    bad = False
+
+    def _sub(m):
+        nonlocal bad
+        w = resolve_operand_width('*' + m.group(1), lines, line_idx)
+        if w.width in (W8, W16, W32, W64):
+            return '0'
+        bad = True
+        return m.group(0)
+
+    out = _UNARY_DEREF_SUB.sub(_sub, s)
+    return out, not bad
+
+
 def _rhs_integral(rhs: str, lines: list[str], line_idx: int) -> bool:
     """write/compound RHS must be provably integral (no calls, no derefs,
     no pointer-typed operands) -- else the mask form C2296s on pointers."""
     s = rhs.strip()
     if not s:
         return False
+    s = re.sub(r'/\*.*?\*/', ' ', s, flags=re.S)   # X77: strip /*0xADDR*/ anchors
+    s = re.sub(r'//.*$', ' ', s)
+    if s.lstrip().startswith(('=', '&&', '||', '?', ':', ',', ')')) or not s.strip():
+        return False                      # X77: comparison/term continuation, not a value
+    if '\n' in s or len(s) > 400:
+        return False                      # X77: RHS must be a single short expression
+    if _scalar_cast_prefix(s):                     # X77: (unsigned char)expr
+        return True
+    if _typed_deref_prefix(s):                     # X77: *(unsigned char*)expr
+        return True
+    if _top_level_cmp(s) and '?' not in s:         # X77: comparison/logical result
+        return True
     s2 = re.sub(r'\b(?:sizeof|alignof)\s*\([^)]*\)', '0', s)
-    if re.search(r'\b[A-Za-z_]\w*\s*\(', s2):
-        return False                      # call in RHS: return type unproven
-    if '*' in s2 and not re.match(r'^[\s\d+xXa-fA-F+\-()<>]+$', s2):
-        return False                      # deref/pointer-shaped text
+    if not _scalar_cast_prefix(s2) and not _typed_deref_prefix(s2):
+        call_m = re.match(r'^([A-Za-z_]\w*(?:::[A-Za-z_]\w*)?)\s*\(', s2)
+        if call_m:
+            # X77: single top-level call -> accept when the callee's declared
+            # return type resolves to an integral scalar (tree prototype index)
+            close = balanced_paren(s2, call_m.end() - 1)
+            if close >= 0 and not s2[close + 1:].strip():
+                if call_return_is_integral(call_m.group(1)):
+                    return True
+        if re.search(r'\b[A-Za-z_]\w*\s*\(', s2):
+            return False                      # call in RHS: return type unproven
+    if _unary_deref(s2):
+        s2, ok = _resolve_unary_derefs(s2, lines, line_idx)
+        if not ok:
+            return False                  # deref of unknown pointee
+        if not s2:
+            return False
     # member chains resolve as whole expressions first
     def _chain_ok(m):
         op = resolve_operand_width(m.group(0).strip(), lines, line_idx)
@@ -132,10 +246,18 @@ def convert_site(text: str, m, scan: Scan, lines: list[str], line_of) -> tuple[s
         return None, {'action': 'bank', 'reason': 'unbalanced'}
     operand = text[open_idx + 1:close_idx].strip()
     after = close_idx + 1
-    # statement-local paren depth before macro (for terminator decisions)
-    stmt_start = max(text.rfind(';', 0, m.start()), text.rfind('{', 0, m.start()),
-                     text.rfind('}', 0, m.start()))
-    pre_depth = text.count('(', stmt_start, m.start()) - text.count(')', stmt_start, m.start())
+    # X77: an operand carrying an IDA-artifact NAME (field_/dword_/unk_/sub_)
+    # must not gain extra references -- the mask/write forms mention the
+    # operand twice, which GROWS the gate's ida-naming count (Step-6 rename
+    # lane; USER ruling 2026-10-22).  Bank instead.
+    if re.search(r'field_|dword_|unk_|sub_', operand):
+        return None, {'action': 'bank', 'reason': 'ida-artifact-operand',
+                      'operand': operand}
+    # X77: code-aware ABSOLUTE paren depth at the macro site. A 'for (...)''
+    # header carries its own ';' inside parens, so the statement-start
+    # heuristic undercounted and the RHS scan could run to EOF. A ')' that
+    # closes below this depth ends the enclosing paren.
+    pre_depth = scan.depth[m.start()]
 
     if name in ('__PAIR64__', '__PAIR32__', '__SPAIR64__'):
         parts = _top_commas(operand)
@@ -175,10 +297,6 @@ def convert_site(text: str, m, scan: Scan, lines: list[str], line_of) -> tuple[s
     # ---- bitfield families ----
     op = resolve_operand_width(operand, lines, line_of)
     info = {'action': '', 'operand': operand, 'opclass': f'{op.kind}/{op.width}'}
-    if op.width == WPTR:
-        info['action'] = 'bank'
-        info['reason'] = 'pointer-operand'
-        return None, info
 
     # look ahead for assignment / compound / incdec
     j = after
@@ -194,7 +312,78 @@ def convert_site(text: str, m, scan: Scan, lines: list[str], line_of) -> tuple[s
         if rest.startswith(c):
             compound = c
             break
-    is_assign = rest.startswith('=') and compound is None
+    is_assign = rest.startswith('=') and not rest.startswith('==') and compound is None
+
+    # ---- X77: packed-field split (typed member / array-index authority) ----
+    # Member operand with a corpus-proven typed member at the macro's byte
+    # offset -> replace the whole access with that member (never invented).
+    if name in FAMILY and name not in ('HIBYTE', 'SHIBYTE'):
+        split = member_split_form(name, operand, lines, line_of)
+        if split:
+            kind, payload, meta = split
+            info.update(meta)
+            info['opclass'] = f"split-{meta.get('split')}"
+            if kind == 'width':
+                op = payload                      # member's own declared width
+            else:
+                read_txt, target_txt = payload
+                info['path'] = 'target'
+                if is_assign:
+                    k2 = j + 1
+                    depth = 0
+                    while k2 < len(text):
+                        c = text[k2]
+                        if c == '(':
+                            depth += 1
+                        elif c == ')':
+                            if depth == 0 and pre_depth > 0:
+                                break
+                            depth -= 1
+                        elif c == ';' and depth == 0:
+                            break
+                        elif c == ',' and depth == 0 and pre_depth > 0:
+                            break
+                        k2 += 1
+                    rhs = text[j + 1:k2].strip()
+                    if not _rhs_integral(rhs, lines, line_of):
+                        info['action'] = 'bank'
+                        info['reason'] = 'split-write-rhs'
+                        return None, info
+                    info['action'] = 'split-write'
+                    info['after'] = f'{target_txt} = {rhs}'
+                    return ('REPLACE', m.start(), k2, f'{target_txt} = {rhs}'), info
+                if compound and compound in ('|=', '&=', '^=', '+=', '-='):
+                    k2 = j + len(compound)
+                    depth = 0
+                    while k2 < len(text):
+                        c = text[k2]
+                        if c == '(':
+                            depth += 1
+                        elif c == ')':
+                            if depth == 0 and pre_depth > 0:
+                                break
+                            depth -= 1
+                        elif c in ';,' and depth == 0:
+                            break
+                        k2 += 1
+                    rhs = text[j + len(compound):k2].strip()
+                    if not _rhs_integral(rhs, lines, line_of):
+                        info['action'] = 'bank'
+                        info['reason'] = 'split-compound-rhs'
+                        return None, info
+                    info['action'] = 'split-compound'
+                    info['after'] = f'{target_txt} {compound} {rhs}'
+                    return ('REPLACE', m.start(), k2, f'{target_txt} {compound} {rhs}'), info
+                if not compound:
+                    info['action'] = 'split-read'
+                    info['after'] = read_txt[:160]
+                    return read_txt, info
+        # kind == 'width' falls through to the standard mask/shift path below
+
+    if op.width == WPTR:
+        info['action'] = 'bank'
+        info['reason'] = 'pointer-operand'
+        return None, info
 
     if is_assign:
         # RHS = balanced expression to depth-0 ';' ',' or ')'
@@ -293,6 +482,8 @@ def _decl_unsigned(name: str, lines: list[str]) -> bool:
 
 
 def process_file(p: Path, rel: str, wanted: set[str], apply: bool):
+    import _ida_macro_retire as _M
+    _M.CURRENT_FILE = rel          # X77: dual-universe filter context
     raw = p.read_bytes()
     text = raw.decode('utf-8', errors='replace')
     lines = text.split('\n')

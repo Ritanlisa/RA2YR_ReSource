@@ -82,7 +82,7 @@ AbstractClass * * MSEngine::Release(int a2, char * a3)
       }
       *&this->MSEngine_field_0x4 = v7; /*0x5acde9*/
       this->MSEngine_field_0x8 = v3; /*0x5acdf1*/
-      BYTE1(this->m_C) = v5 == 0; /*0x5acdf4*/
+      (this->m_C) = ((this->m_C) & ~(0xFF << 8)) | (((v5 == 0) & 0xFF) << 8); /*0x5acdf4*/
       return 1; /*0x5acdfa*/
     }
     else
@@ -164,7 +164,7 @@ AbstractClass * * MSEngine::SetCapacity(int a2, char * a3)
     }
     *&this->MSEngine_field_0x4 = v7; /*0x5acf83*/
     this->MSEngine_field_0x8 = v3; /*0x5acf8b*/
-    BYTE1(this->m_C) = v5 == 0; /*0x5acf8e*/
+    (this->m_C) = ((this->m_C) & ~(0xFF << 8)) | (((v5 == 0) & 0xFF) << 8); /*0x5acf8e*/
   }
   else
   {

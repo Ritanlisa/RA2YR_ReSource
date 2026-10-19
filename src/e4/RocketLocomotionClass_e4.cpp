@@ -198,7 +198,7 @@ char RocketLocomotionClass_17::SetCapacity(int a2, unsigned int * a3)
       }
       *&this->q004 = v4; /*0x6648d7*/
       this->m_8 = a2; /*0x6648df*/
-      BYTE1(this->m_C) = a3 == 0; /*0x6648e2*/
+      (this->m_C) = ((this->m_C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x6648e2*/
       return 1; /*0x6648e8*/
     }
     else
@@ -297,7 +297,7 @@ char RocketLocomotionClass_17::Release(int a2, unsigned int * a3)
     }
     *&this->q004 = v4; /*0x664a0a*/
     this->m_8 = a2; /*0x664a12*/
-    BYTE1(this->m_C) = a3 == 0; /*0x664a15*/
+    (this->m_C) = ((this->m_C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x664a15*/
   }
   else
   {

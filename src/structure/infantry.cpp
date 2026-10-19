@@ -996,7 +996,7 @@ LABEL_66:
       goto LABEL_81; /*0x514ade*/
     Value = ProgressTimer::GetValue((ProgressTimer *)(this->Owner + 904), &v59); /*0x514af3*/
     v46 = this->Owner; /*0x514b07*/
-    LOWORD(v58) = *(unsigned short *)Value + (*(unsigned short *)this->HoverLocomotionClass_field_bool_68 << 8); /*0x514b0a*/
+    (v58) = ((v58) & ~0xFFFF) | ((*(unsigned short *)Value + (*(unsigned short *)this->HoverLocomotionClass_field_bool_68 << 8)) & 0xFFFF); /*0x514b0a*/
     FacingClass::Set_SyncLog((char *)(v46 + 904), &v58); /*0x514b1d*/
     v47 = *(unsigned int *)this->HoverLocomotionClass_field_bool_68; /*0x514b22*/
     v48 = abs32(v47); /*0x514b2a*/
@@ -1550,17 +1550,17 @@ int InfantryClass::ProcessIdleAction()
           (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x51cef2*/
           break; /*0x51cef8*/
         case 6: /*0x51ced9*/
-          LOWORD(v12) = (unsigned __int16)Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 7) << 13; /*0x51cf11*/
-          LOBYTE(v8) = 0; /*0x51cf16*/
-          HIBYTE(v8) = ((v12 >> 7) + 1) >> 1; /*0x51cf27*/
-          LOWORD(v13) = v8; /*0x51cf2f*/
+          (v12) = ((v12) & ~0xFFFF) | (((unsigned __int16)Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 7) << 13) & 0xFFFF); /*0x51cf11*/
+          (v8) = ((v8) & ~0xFF) | ((0) & 0xFF); /*0x51cf16*/
+          (v8) = ((v8) & ~(0xFF << 8)) | (((((v12 >> 7) + 1) >> 1) & 0xFF) << 8); /*0x51cf27*/
+          (v13) = ((v13) & ~0xFFFF) | ((v8) & 0xFFFF); /*0x51cf2f*/
           result = FacingClass::Set_SyncLog((char *)this->primaryFacing, &v13); /*0x51cf34*/
           (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x51cf3b*/
           break; /*0x51cf41*/
         case 8: /*0x51ced9*/
-          LOWORD(v12) = (unsigned __int16)Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 7) << 13; /*0x51cff1*/
-          LOBYTE(v10) = 0; /*0x51cff6*/
-          HIBYTE(v10) = ((v12 >> 7) + 1) >> 1; /*0x51d007*/
+          (v12) = ((v12) & ~0xFFFF) | (((unsigned __int16)Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 7) << 13) & 0xFFFF); /*0x51cff1*/
+          (v10) = ((v10) & ~0xFF) | ((0) & 0xFF); /*0x51cff6*/
+          (v10) = ((v10) & ~(0xFF << 8)) | (((((v12 >> 7) + 1) >> 1) & 0xFF) << 8); /*0x51d007*/
           LOWORD(v14) = v10; /*0x51d009*/
           FacingClass::Set_SyncLog((char *)this->primaryFacing, &v14); /*0x51d014*/
           if ( !v7 ) /*0x51d01b*/
@@ -1581,9 +1581,9 @@ int InfantryClass::ProcessIdleAction()
           break; /*0x51d057*/
         case 9: /*0x51ced9*/
         case 10: /*0x51ced9*/
-          LOWORD(v12) = (unsigned __int16)Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 7) << 13; /*0x51d06f*/
-          LOBYTE(v11) = 0; /*0x51d074*/
-          HIBYTE(v11) = ((v12 >> 7) + 1) >> 1; /*0x51d085*/
+          (v12) = ((v12) & ~0xFFFF) | (((unsigned __int16)Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 7) << 13) & 0xFFFF); /*0x51d06f*/
+          (v11) = ((v11) & ~0xFF) | ((0) & 0xFF); /*0x51d074*/
+          (v11) = ((v11) & ~(0xFF << 8)) | (((((v12 >> 7) + 1) >> 1) & 0xFF) << 8); /*0x51d085*/
           LOWORD(v15) = v11; /*0x51d08d*/
           result = FacingClass::Set_SyncLog((char *)this->primaryFacing, &v15); /*0x51d092*/
           goto LABEL_22; /*0x51d092*/
@@ -2587,7 +2587,7 @@ LABEL_33:
           Math::CalcAngle(v39, v41); /*0x51d28e*/
           __asm { fsub ds:dbl_7E2820 } /*0x51d293*/
           __asm { fmul ds:dbl_7E2818 }
-          LOWORD(ptr_0) = Math::RoundToInt(a2); /*0x51d2a7*/
+          (ptr_0) = ((ptr_0) & ~0xFFFF) | ((Math::RoundToInt(a2)) & 0xFFFF); /*0x51d2a7*/
           v11 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 4); /*0x51d2ba*/
           v46 = v11 + ((((ptr_0 >> 12) + 1) >> 1) & 7) - 2; /*0x51d2d0*/
         }
@@ -2595,7 +2595,7 @@ LABEL_33:
         this = 0; /*0x51d491*/
         a3 = 0; /*0x51d49b*/
         v22 = (unsigned int *)(*(int (**)(int *, unsigned short *, unsigned int))(v21 + 76))(v7, v54, 0); /*0x51d4a5*/
-        LOWORD(ptr_0) = *v22 / 256; /*0x51d4b8*/
+        (ptr_0) = ((ptr_0) & ~0xFFFF) | ((*v22 / 256) & 0xFFFF); /*0x51d4b8*/
         HIWORD(ptr_0) = v22[1] / 256; /*0x51d4d0*/
         *(unsigned int *)v43 = ptr_0; /*0x51d4d9*/
         v23 = (char *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v43); /*0x51d4e8*/
@@ -2633,7 +2633,7 @@ LABEL_33:
                 this = (InfantryClass *)ptr_0; /*0x51d5d5*/
               if ( *(unsigned short *)&stru_A8E960.waypoints[590] || *(unsigned short *)&stru_A8E960.waypoints[592] ) /*0x51d5e5*/
                 goto LABEL_57; /*0x51d5e5*/
-              v53[1] = (SHIWORD(ptr_0) << 8) + 128; /*0x51d606*/
+              v53[1] = ((short)(((ptr_0) >> 16) & 0xFFFF) << 8) + 128; /*0x51d606*/
               v53[0] = ((__int16)ptr_0 << 8) + 128; /*0x51d612*/
               v53[2] = v55; /*0x51d626*/
               v35 = Terrain::ClimbCheck(&v50, v53); /*0x51d62a*/
@@ -2714,7 +2714,7 @@ int InfantryClass::FindNearbyCell()
     {
       if ( !this->vt_slot_1360(this, a2) /*0x418eab*/
         || (v6 = (unsigned int *)(*(int (**)(int, double *, unsigned int))(*(unsigned int *)a2 + 76))(a2, &v26, 0),
-            LOWORD(v19) = *v6 / 256,
+            (v19) = ((v19) & ~0xFFFF) | ((*v6 / 256) & 0xFFFF),
             HIWORD(v19) = v6[1] / 256,
             *(unsigned int *)v20 = v19,
             !Cell::IsOccupied((Cell *)this, v20, 0)) )
@@ -3539,7 +3539,7 @@ int InfantryClass::ProcessTunnelMovement()
     Math::CalcAngle(v14, v15); /*0x72924c*/
     __asm { fsub ds:dbl_7E2820 } /*0x729251*/
     __asm { fmul ds:dbl_7E2818 }
-    LOWORD(v16) = Math::RoundToInt(v1); /*0x729276*/
+    (v16) = ((v16) & ~0xFFFF) | ((Math::RoundToInt(v1)) & 0xFFFF); /*0x729276*/
     if ( (unsigned short)v16 == *(unsigned short *)ProgressTimer::GetValue((ProgressTimer *)((char *)this->ptr_C + 904), &v17) ) /*0x729284*/
     {
       _EAX = (*(int (**)(void *))(*(unsigned int *)this->ptr_C + 132))(this->ptr_C); /*0x72929f*/

@@ -155,7 +155,7 @@ unsigned int * ConvertClass::Construct(int a2, int a3, int a4, int a5, char a6, 
     {
       v11 = ComputeColorSaturation(a2 + 2 * (v8 % 256) + v8 % 256, a2 + 2 * (v8 % 256), (int)&a5); /*0x48e98b*/
       v12 = *(unsigned short *)v11; /*0x48e990*/
-      LOBYTE(v11) = *(unsigned char *)(v11 + 2); /*0x48e993*/
+      (v11) = ((v11) & ~0xFF) | ((*(unsigned char *)(v11 + 2)) & 0xFF); /*0x48e993*/
       LOWORD(v29.Color_field_00) = v12; /*0x48e996*/
       BYTE2(v29.Color_field_00) = (unsigned __int8)v11 >> 1; /*0x48e9a5*/
       v13 = (unsigned __int16 *)Color::ConvertToRGB(&v29, (int)&v28); /*0x48e9ae*/
@@ -190,7 +190,7 @@ unsigned int * ConvertClass::Construct(int a2, int a3, int a4, int a5, char a6, 
             v20 = ComputeColorSaturation(a2 + 2 * (j % 256) + j % 256, a2, (int)&a5); /*0x48ea85*/
             v21 = *(unsigned char *)(v20 + 2); /*0x48ea8f*/
             LOWORD(v29.Color_field_00) = *(unsigned short *)v20; /*0x48ea92*/
-            LOBYTE(v31) = v21; /*0x48ea97*/
+            (v31) = ((v31) & ~0xFF) | ((v21) & 0xFF); /*0x48ea97*/
             BYTE2(v29.Color_field_00) = v21; /*0x48eaa4*/
             BYTE2(v29.Color_field_00) = 2 * v30 * v21 / (*&this->q16C - 1); /*0x48eac2*/
             v22 = (unsigned __int16 *)Color::ConvertToRGB(&v29, (int)&v28); /*0x48eac6*/

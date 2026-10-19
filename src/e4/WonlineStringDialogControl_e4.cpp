@@ -174,7 +174,7 @@ char WonlineStringDialogControl_12::Release(int a2, unsigned int * a3)
       }
       *&this->q004 = v4; /*0x7ad157*/
       this->m_8 = a2; /*0x7ad15f*/
-      BYTE1(this->m_C) = a3 == 0; /*0x7ad162*/
+      (this->m_C) = ((this->m_C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x7ad162*/
       return 1; /*0x7ad168*/
     }
     else
@@ -276,7 +276,7 @@ char WonlineStringDialogControl_12::SetCapacity(int a2, unsigned int * a3)
     }
     *&this->q004 = v4; /*0x7ad28a*/
     this->m_8 = a2; /*0x7ad292*/
-    BYTE1(this->m_C) = a3 == 0; /*0x7ad295*/
+    (this->m_C) = ((this->m_C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x7ad295*/
   }
   else
   {

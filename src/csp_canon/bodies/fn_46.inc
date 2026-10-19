@@ -265,7 +265,7 @@ int BulletClass::LoseTarget() {
   v2 = (unsigned int *)(*(int (**)(void *, unsigned char *))(*(unsigned int *)this->BulletClass_field_0x10C + 72))( /*0x468443*/
                    this->BulletClass_field_0x10C,
                    v6);
-  IDA_LOWORD(v5) = *v2 / 256; /*0x468456*/
+  (v5) = ((v5) & ~0xFFFF) | ((*v2 / 256) & 0xFFFF); /*0x468456*/
   IDA_HIWORD(v5) = v2[1] / 256; /*0x46846a*/
   *(unsigned int *)v4 = v5; /*0x468473*/
   IDA_LOWORD(v2) = dword_A8E7AC; /*0x468477*/

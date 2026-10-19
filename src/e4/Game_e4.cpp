@@ -1244,7 +1244,7 @@ unsigned char Game::ManageGameSpeed()
     result = RadarClass::SetGlobal(**(RadarClass ***)&g_RulesClass_Instance); /*0x657c71*/
     this->u8_14D9 = 1; /*0x657c76*/
   }
-  LOBYTE(result) = v16; /*0x657c81*/
+  (result) = ((result) & ~0xFF) | ((v16) & 0xFF); /*0x657c81*/
   v13 = this->u8_14BC == v16; /*0x657c90*/
   this->u8_14BD = v15 == 0; /*0x657c92*/
   if ( !v13 ) /*0x657c98*/

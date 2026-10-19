@@ -499,13 +499,13 @@ int VoxelAnimClass::VoxelAnimClass_Update()
         v20 = (AnimClass *)__2_YAPAXI_Z(0x1C8u); /*0x74a15a*/
         if ( v20 ) /*0x74a161*/
         {
-          LOWORD(v21) = Math::RoundToInt(*&v1->u32_C8); /*0x74a169*/
+          (v21) = ((v21) & ~0xFFFF) | ((Math::RoundToInt(*&v1->u32_C8)) & 0xFFFF); /*0x74a169*/
           v22 = *&v1->q0CC; /*0x74a16e*/
           v97 = v21; /*0x74a174*/
-          LOWORD(v23) = Math::RoundToInt(v22); /*0x74a178*/
+          (v23) = ((v23) & ~0xFFFF) | ((Math::RoundToInt(v22)) & 0xFFFF); /*0x74a178*/
           v24 = *&v1->q0D0; /*0x74a17d*/
           v98 = v23; /*0x74a183*/
-          LOWORD(v25) = Math::RoundToInt(v24); /*0x74a187*/
+          (v25) = ((v25) & ~0xFFFF) | ((Math::RoundToInt(v24)) & 0xFFFF); /*0x74a187*/
           v26 = v1->VoxelAnimClass_field_0x104; /*0x74a18c*/
           v99 = v25; /*0x74a19a*/
           AnimClass::ctor(v20, *(void **)(v26 + 744), &v97, 0, 1, (void *)0x2600, (void *)0xFFFFFFE2, 0); /*0x74a1af*/
@@ -769,13 +769,13 @@ int VoxelAnimClass::VoxelAnimClass_Update()
       v61 = (AnimClass *)__2_YAPAXI_Z(0x1C8u); /*0x74a73f*/
       if ( v61 ) /*0x74a746*/
       {
-        LOWORD(v62) = Math::RoundToInt(*&v1->u32_C8); /*0x74a74e*/
+        (v62) = ((v62) & ~0xFFFF) | ((Math::RoundToInt(*&v1->u32_C8)) & 0xFFFF); /*0x74a74e*/
         v63 = *&v1->q0CC; /*0x74a753*/
         v97 = v62; /*0x74a759*/
-        LOWORD(v64) = Math::RoundToInt(v63); /*0x74a75d*/
+        (v64) = ((v64) & ~0xFFFF) | ((Math::RoundToInt(v63)) & 0xFFFF); /*0x74a75d*/
         v65 = *&v1->q0D0 * dbl_B1D170; /*0x74a768*/
         v98 = v64; /*0x74a76e*/
-        LOWORD(v66) = Math::RoundToInt(v65 * 0.01924500897298839 + 0.5); /*0x74a77e*/
+        (v66) = ((v66) & ~0xFFFF) | ((Math::RoundToInt(v65 * 0.01924500897298839 + 0.5)) & 0xFFFF); /*0x74a77e*/
         v99 = v66; /*0x74a783*/
         AnimClass::ctor(v61, *(void **)(v1->VoxelAnimClass_field_0x104 + 748), &v97, (void *)1, 1, (void *)0x600, 0, 0); /*0x74a7a6*/
       }

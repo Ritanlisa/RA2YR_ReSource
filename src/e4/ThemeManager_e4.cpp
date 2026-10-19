@@ -32,10 +32,10 @@ char ThemeManager::ProcessCallback(void *a1)
     (v3) = ((v3) & 0xFFFFFFFF00000000ull) | ((this->u32_14) & 0xFFFFFFFFull); /*0x40810d*/
     if ( *(unsigned int *)(v3 + 20) == *(unsigned int *)(v3 + 24) ) /*0x408118*/
       break; /*0x408118*/
-    LODWORD(v3) = Audio::Callback(); /*0x40811a*/
+    (v3) = ((v3) & 0xFFFFFFFF00000000ull) | ((Audio::Callback()) & 0xFFFFFFFFull); /*0x40811a*/
     if ( v3 >= v4 ) /*0x408127*/
       break; /*0x408127*/
-    LOBYTE(v3) = Event::Dispatch(); /*0x408129*/
+    (v3) = ((v3) & ~0xFF) | ((Event::Dispatch()) & 0xFF); /*0x408129*/
   }
   return v3; /*0x408130*/
 

@@ -349,7 +349,7 @@ int PrepareTacticalClassCellTransform(BuildingTypeClass * a1)
   Math::CalcAngle(v47, v54); /*0x550b56*/
   __asm { fsub ds:dbl_7E2820 } /*0x550b5b*/
   __asm { fmul ds:dbl_7E2818 }
-  LOWORD(v60) = Math::RoundToInt(a2); /*0x550b6f*/
+  (v60) = ((v60) & ~0xFFFF) | ((Math::RoundToInt(a2)) & 0xFFFF); /*0x550b6f*/
   v60 = (((v60 >> 12) + 1) >> 1) & 7; /*0x550b8d*/
   Coord::To_Screen((Coord *)g_TacticalClass_Instance, _EBX + 9, &v76); /*0x550b91*/
   Coord::To_Screen((Coord *)g_TacticalClass_Instance, _EBX + 12, v75); /*0x550ba2*/
@@ -383,7 +383,7 @@ int PrepareTacticalClassCellTransform(BuildingTypeClass * a1)
     fld [esp+144h+var_100]
     fmul ds:flt_7E2220
   }
-  LOWORD(v10) = Math::RoundToInt(a2); /*0x550c27*/
+  (v10) = ((v10) & ~0xFFFF) | ((Math::RoundToInt(a2)) & 0xFFFF); /*0x550c27*/
   *(unsigned int *)v59 = v10; /*0x550c2c*/
   LOBYTE(v10) = _EBX->alignmentPadding; /*0x550c30*/
   LOWORD(v58.Color_field_00) = 0; /*0x550c35*/
@@ -402,8 +402,8 @@ int PrepareTacticalClassCellTransform(BuildingTypeClass * a1)
       (v13) = ((v13) & ~0xFF) | ((-1) & 0xFF); /*0x550c7e*/
     if ( v12 > 0xFF ) /*0x550c89*/
       (v12) = ((v12) & ~0xFF) | ((-1) & 0xFF); /*0x550c8b*/
-    LOBYTE(v61) = v12; /*0x550c90*/
-    HIBYTE(v61) = v13; /*0x550c94*/
+    (v61) = ((v61) & ~0xFF) | ((v12) & 0xFF); /*0x550c90*/
+    (v61) = ((v61) & ~(0xFF << 8)) | (((v13) & 0xFF) << 8); /*0x550c94*/
     v62 = v11; /*0x550c9d*/
     v56 = v61; /*0x550ca1*/
     (v12) = ((v12) & ~0xFF) | ((v11) & 0xFF); /*0x550ca6*/
@@ -414,9 +414,9 @@ int PrepareTacticalClassCellTransform(BuildingTypeClass * a1)
     v14 = _EBX->q042; /*0x550cb9*/
     v62 = *((unsigned char *)_EBX + 67); /*0x550cbf*/
     v15 = _EBX->q043; /*0x550cc3*/
-    LOBYTE(v56) = (unsigned __int8)v61 >> 1; /*0x550cca*/
-    HIBYTE(v56) = v14 >> 1; /*0x550cce*/
-    LOBYTE(v12) = v15 >> 1; /*0x550cd2*/
+    (v56) = ((v56) & ~0xFF) | (((unsigned __int8)v61 >> 1) & 0xFF); /*0x550cca*/
+    (v56) = ((v56) & ~(0xFF << 8)) | (((v14 >> 1) & 0xFF) << 8); /*0x550cce*/
+    (v12) = ((v12) & ~0xFF) | ((v15 >> 1) & 0xFF); /*0x550cd2*/
   }
   v64 = v76; /*0x550cdf*/
   v65 = v77; /*0x550ce3*/
@@ -533,7 +533,7 @@ int PrepareTacticalClassCellTransform(BuildingTypeClass * a1)
         {
           v12 = v57 >> 1; /*0x550f8f*/
           v32 = v55 != 0 ? 8 : 64;
-          if ( (unsigned __int8)v56 >> 1 < v32 && HIBYTE(v56) >> 1 < v32 && v12 < v32 ) /*0x550fa7*/
+          if ( (unsigned __int8)v56 >> 1 < v32 && (((v56) >> 8) & 0xFF) >> 1 < v32 && v12 < v32 ) /*0x550fa7*/
           {
 LABEL_37:
             v7 = v67; /*0x550fd1*/
@@ -541,7 +541,7 @@ LABEL_37:
           }
           _EBX = (int *)v73; /*0x550fa9*/
           v17 = v60; /*0x550fad*/
-          LOBYTE(v56) = (unsigned __int8)v56 >> 1; /*0x550fb1*/
+          (v56) = ((v56) & ~0xFF) | (((unsigned __int8)v56 >> 1) & 0xFF); /*0x550fb1*/
           HIBYTE(v56) >>= 1; /*0x550fb5*/
           v57 >>= 1; /*0x550fb9*/
         }
@@ -566,13 +566,13 @@ LABEL_37:
     }
     __asm { fmul ds:flt_7E3560 }
     v35 = (*(unsigned int *)v59 * v62) >> 8; /*0x551086*/
-    v36 = (*(unsigned int *)v59 * HIBYTE(v61)) >> 8; /*0x551089*/
+    v36 = (*(unsigned int *)v59 * (((v61) >> 8) & 0xFF)) >> 8; /*0x551089*/
     v37 = (*(unsigned int *)v59 * (unsigned __int8)v61) >> 8; /*0x55108c*/
     __asm { fstp dword ptr [esp+144h+var_E0] } /*0x55108f*/
     ColorStruct::SetRGB( /*0x55109d*/
       &v78,
       (unsigned __int16)(*(unsigned short *)v59 * (unsigned __int8)v61) >> 8,
-      (unsigned __int16)(*(unsigned short *)v59 * HIBYTE(v61)) >> 8,
+      (unsigned __int16)(*(unsigned short *)v59 * (((v61) >> 8) & 0xFF)) >> 8,
       (unsigned __int16)(*(unsigned short *)v59 * v62) >> 8);
     ColorStruct::SetRGB(&v79, v37, v36, v35); /*0x5510ac*/
     v38 = v74; /*0x5510b1*/
@@ -972,7 +972,7 @@ LABEL_30:
     }
     else
     {
-      HIBYTE(v21) = (unsigned char)v3 - (unsigned char)v25; /*0x551f75*/
+      (v21) = ((v21) & ~(0xFF << 8)) | ((((unsigned char)v3 - (unsigned char)v25) & 0xFF) << 8); /*0x551f75*/
       LOBYTE(v21) = 16 * (v29 - 3) + ((unsigned __int16)((unsigned short)v3 - (unsigned short)v25) >> 8); /*0x551f75*/
     }
     *(unsigned short *)v20 = v21; /*0x551fb8*/
@@ -1428,7 +1428,7 @@ int E4Recv_55B720::sub_55B720()
     if ( *(unsigned int *)&MEMORY[0xA8EB00].?[416] - nextArrayIndex >= (int)NeedsSaveOrLink ) /*0x55b771*/
     {
 LABEL_7:
-      LOWORD(v7) = Math::RoundToInt(*(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5696) * 900.0); /*0x55b779*/
+      (v7) = ((v7) & ~0xFFFF) | ((Math::RoundToInt(*(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5696) * 900.0)) & 0xFFFF); /*0x55b779*/
       *p_nextArrayIndex = (int)v3; /*0x55b78e*/
       p_nextArrayIndex[1] = (int)v15; /*0x55b790*/
       p_nextArrayIndex[2] = v7; /*0x55b798*/

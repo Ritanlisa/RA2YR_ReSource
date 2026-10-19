@@ -207,8 +207,8 @@ CellClass * * InitializeBuildabilityGrid(int a1)
               *(unsigned int *)v24 = v21; /*0x6b2991*/
               v18 = (CellClass *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v24); /*0x6b2995*/
               if ( !(unsigned __int8)CellClass::IsBuildable(v18) /*0x6b29d6*/
-                || (HIWORD(v22) = v26[1],
-                    LOWORD(v22) = v26[0] - 1,
+                || ((v22) = ((v22) & ~(0xFFFF << 16)) | (((v26[1]) & 0xFFFF) << 16),
+                    (v22) = ((v22) & ~0xFFFF) | ((v26[0] - 1) & 0xFFFF),
                     *(unsigned int *)v24 = v22,
                     v19 = (CellClass *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v24),
                     !(unsigned __int8)CellClass::IsBuildable(v19)) )
@@ -731,7 +731,7 @@ LABEL_31:
             HIWORD(v94) = v99 + HIWORD(v89); /*0x6b32d9*/
             do /*0x6b330d*/
             {
-              LOWORD(v94) = v34 + v33; /*0x6b32e5*/
+              (v94) = ((v94) & ~0xFFFF) | ((v34 + v33) & 0xFFFF); /*0x6b32e5*/
               *(unsigned int *)v95 = v94; /*0x6b32ee*/
               *((unsigned int *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v95) + 18) = -1; /*0x6b32fd*/
               v31 = *(unsigned int *)(v30 + 664); /*0x6b3304*/
@@ -1585,7 +1585,7 @@ char StandardCreateUnitAtCoords(unsigned int * a0, IUnknown * aP1, int a3, char 
     v7 = *(Cell **)(*(unsigned int *)&stru_A8E960.random[168] + 4 * v6); /*0x6b5a21*/
     if ( BYTE1(v7[1].Cell_field_0x0) ) /*0x6b5a24*/
     {
-      LOWORD(v20) = *v4 / 256; /*0x6b5a3f*/
+      (v20) = ((v20) & ~0xFFFF) | ((*v4 / 256) & 0xFFFF); /*0x6b5a3f*/
       HIWORD(v20) = v4[1] / 256; /*0x6b5a57*/
       v21 = v20; /*0x6b5a64*/
       if ( (unsigned __int8)Cell::IsWalkable(v7, &v21, a4) ) /*0x6b5a6c*/
@@ -1748,7 +1748,7 @@ int TimedCreateUnitAtCoords(unsigned int * a0, IUnknown * aP1, int a3, char a4)
     v8 = *(Cell **)(*(unsigned int *)&stru_A8E960.random[168] + 4 * v7); /*0x6b5d11*/
     if ( LOBYTE(v8[1].Cell_field_0x0) ) /*0x6b5d14*/
     {
-      LOWORD(v21) = *v4 / 256; /*0x6b5d2f*/
+      (v21) = ((v21) & ~0xFFFF) | ((*v4 / 256) & 0xFFFF); /*0x6b5d2f*/
       HIWORD(v21) = v4[1] / 256; /*0x6b5d47*/
       v22 = v21; /*0x6b5d54*/
       if ( (unsigned __int8)Cell::IsWalkable(v8, &v22, a4) ) /*0x6b5d5c*/
@@ -2246,11 +2246,11 @@ AbstractClass * * Palette_LoadFromFile(int a1, int a2, char * Source, int a4, in
         LOBYTE(v5) = *(v14 - 1); /*0x6b9dd0*/
         v14 += 3; /*0x6b9dd3*/
         v13 += 2; /*0x6b9dd6*/
-        LOWORD(v8) = (unsigned __int8)v8; /*0x6b9dd9*/
-        LOWORD(v5) = (unsigned __int8)((unsigned __int8)v5 >> g_BitShift_Green_0); /*0x6b9ded*/
+        (v8) = ((v8) & ~0xFFFF) | (((unsigned __int8)v8) & 0xFFFF); /*0x6b9dd9*/
+        (v5) = ((v5) & ~0xFFFF) | (((unsigned __int8)((unsigned __int8)v5 >> g_BitShift_Green_0)) & 0xFFFF); /*0x6b9ded*/
         v16 = v5 << g_BitShift_Red; /*0x6b9df1*/
         v17 = v16 | (v8 << g_BitShift_Blue); /*0x6b9df9*/
-        LOWORD(v16) = (unsigned __int8)(*(v14 - 3) >> g_BitMask_Blue); /*0x6b9e06*/
+        (v16) = ((v16) & ~0xFFFF) | (((unsigned __int8)(*(v14 - 3) >> g_BitMask_Blue)) & 0xFFFF); /*0x6b9e06*/
         v5 = v16 << g_BitMask_Green; /*0x6b9e0a*/
         v8 = v5 | v17; /*0x6b9e0c*/
         --v15; /*0x6b9e0e*/
@@ -4549,7 +4549,7 @@ long long E4Recv_6B1EE0::sub_6B1EE0()
   else
     abstractFlags = this->M24; /*0x6b1ef2*/
   nextObject = (double)(int)this->nextObject; /*0x6b1ef5*/
-  LOWORD(v4) = Math::RoundToInt(nextObject); /*0x6b1f07*/
+  (v4) = ((v4) & ~0xFFFF) | ((Math::RoundToInt(nextObject)) & 0xFFFF); /*0x6b1f07*/
   v5 = v4; /*0x6b1f0f*/
   if ( v4 <= 4 ) /*0x6b1f11*/
     v5 = 4; /*0x6b1f13*/

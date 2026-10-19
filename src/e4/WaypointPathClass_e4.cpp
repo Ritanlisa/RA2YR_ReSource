@@ -28,8 +28,8 @@ int WaypointPathClass::Init(void *a1, void *a2)
   this->idxArray = -1; /*0x76373a*/
   this->waypoints[1] = 0; /*0x763741*/
   this->waypoints[2] = 0; /*0x763744*/
-  LOBYTE(this->waypoints[3]) = 1; /*0x763747*/
-  BYTE1(this->waypoints[3]) = 0; /*0x76374b*/
+  (this->waypoints[3]) = ((this->waypoints[3]) & ~0xFF) | ((1) & 0xFF); /*0x763747*/
+  (this->waypoints[3]) = ((this->waypoints[3]) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x76374b*/
   /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass) */  /*0x76374e*/
   this->waypoints[5] = 10; /*0x763755*/
   this->waypoints[4] = 0; /*0x76375c*/

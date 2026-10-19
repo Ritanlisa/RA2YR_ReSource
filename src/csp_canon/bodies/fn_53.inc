@@ -1964,7 +1964,7 @@ bool PsyDom::IsActive()
   int result; // eax
 
   result = PsyDom_Status; /*0x53b400*/
-  LOBYTE(result) = PsyDom_Status != 0; /*0x53b407*/
+  (result) = ((result) & ~0xFF) | ((PsyDom_Status != 0) & 0xFF); /*0x53b407*/
   return result; /*0x53b40a*/
 
 }
@@ -2024,7 +2024,7 @@ int Gap2Recv_53B780::ApplyChronoScreenColorShift() {
               do /*0x53b9a1*/
               {
                 v5 += 2; /*0x53b927*/
-                LOWORD(v9) = *v13; /*0x53b92a*/
+                (v9) = ((v9) & ~0xFFFF) | ((*v13) & 0xFFFF); /*0x53b92a*/
                 *(unsigned short *)(v5 - 2) = ((*v13 & 0x1F) + (((uint16_t)v16 * (31 - (*v13 & 0x1F))) >> 8)) /*0x53b991*/
                                    | (32
                                     * (((v9 >> 5) & 0x3F)
@@ -2061,7 +2061,7 @@ int Gap2Recv_53B780::ApplyChronoScreenColorShift() {
               {
                 HIWORD(v8) = HIWORD(v12); /*0x53b834*/
                 v5 += 2; /*0x53b83d*/
-                LOWORD(v8) = *v12; /*0x53b840*/
+                (v8) = ((v8) & ~0xFFFF) | ((*v12) & 0xFFFF); /*0x53b840*/
                 *(unsigned short *)(v5 - 2) = ((*v12 & 0x1F) + (((uint16_t)v16 * (31 - (*v12 & 0x1F))) >> 8)) /*0x53b8a8*/
                                    | (32
                                     * (((v8 >> 5) & 0x1F)
@@ -2098,8 +2098,8 @@ int Gap2Recv_53B780::ApplyChronoScreenColorShift() {
             {
               HIWORD(v10) = HIWORD(v14); /*0x53ba07*/
               v5 += 2; /*0x53ba10*/
-              LOWORD(v10) = *v14; /*0x53ba13*/
-              LOWORD(v7) = *v14 >> 11; /*0x53ba1b*/
+              (v10) = ((v10) & ~0xFFFF) | ((*v14) & 0xFFFF); /*0x53ba13*/
+              (v7) = ((v7) & ~0xFFFF) | ((*v14 >> 11) & 0xFFFF); /*0x53ba1b*/
               v11 = v7 + (((uint16_t)v16 * (31 - (uint16_t)v7)) >> 8); /*0x53ba3d*/
               v7 = (*v14 & 0x3F) + (((uint16_t)v16 * (63 - (*v14 & 0x3F))) >> 8); /*0x53ba72*/
               *(unsigned short *)(v5 - 2) = v7 /*0x53ba7a*/

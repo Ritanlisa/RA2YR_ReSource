@@ -95,7 +95,7 @@ INIClass * * UnitTypeClass::ReadINIEntry()
         v5 = *(char **)(*(unsigned int *)&stru_A8E960.random[168] + 4 * v4); /*0x6b4e29*/
         sprintf(Buffer, "%d", v7); /*0x6b4e37*/
         sprintf(Source, "%s,%d,%d,%d", v5 + 36, i, v1, *((unsigned __int8 *)v3 + 287)); /*0x6b4e55*/
-        LOBYTE(v4) = INIClass::SetString(v9, (unsigned __int8 *)aSmudge, Buffer, Source); /*0x6b4e71*/
+        (v4) = ((v4) & ~0xFF) | ((INIClass::SetString(v9, (unsigned __int8 *)aSmudge, Buffer, Source)) & 0xFF); /*0x6b4e71*/
         ++v7; /*0x6b4e76*/
       }
     }

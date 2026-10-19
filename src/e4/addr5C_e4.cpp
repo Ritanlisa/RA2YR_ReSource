@@ -312,7 +312,7 @@ char LCW_DecodeLength(int a1, unsigned char * a2, int a3)
   }
   else
   {
-    LOBYTE(v3) = *v4; /*0x5c6383*/
+    (v3) = ((v3) & ~0xFF) | ((*v4) & 0xFF); /*0x5c6383*/
     v6 = (unsigned __int8)*v4; /*0x5c6388*/
   }
   ++v4; /*0x5c63aa*/
@@ -2566,7 +2566,7 @@ char ModCryptoExp(char * a1, int edx0)
   unsigned int v26[64]; // [esp+214h] [ebp-100h] BYREF
 
   v2 = a1; /*0x5c902a*/
-  HIDWORD(v4) = *(unsigned int *)a1; /*0x5c9032*/
+  (v4) = ((v4) & 0xFFFFFFFFull) | ((unsigned long long)((*(unsigned int *)a1) & 0xFFFFFFFFull) << 32); /*0x5c9032*/
   if ( (*(unsigned int *)a1 & 1) == 0 ) /*0x5c9037*/
     return 0; /*0x5c9045*/
   v6 = *(unsigned int *)&a1[4 * edx0 - 4]; /*0x5c9046*/
@@ -2587,7 +2587,7 @@ LABEL_17:
     v14 = &unk_82E174; /*0x5c90bb*/
     while ( 1 ) /*0x5c90c0*/
     {
-      WORD2(v4) = *v14; /*0x5c90c0*/
+      (v4) = ((v4) & ~(0xFFFFull << 32)) | (((*v14) & 0xFFFFull) << 32); /*0x5c90c0*/
       if ( !ShiftBigIntAndScan(v25, (int)v2, (int)(((v4) >> 32) & 0xFFFFFFFFu), edx0) ) /*0x5c90ce*/
         break; /*0x5c90ce*/
       if ( (unsigned int)++v14 >= 0x82FCE2 ) /*0x5c90e5*/
@@ -2646,7 +2646,7 @@ LABEL_17:
     v13 = (char *)&v11[v12 / 2]; /*0x5c908c*/
     if ( (((v4) >> 32) & 0xFFFF) <= v10 ) /*0x5c9092*/
     {
-      if ( WORD2(v4) == v10 ) /*0x5c9098*/
+      if ( (((v4) >> 32) & 0xFFFF) == v10 ) /*0x5c9098*/
         goto LABEL_15; /*0x5c9098*/
       v11 = v13 + 2; /*0x5c909a*/
       v12 += -1 - v12 / 2; /*0x5c90a2*/
@@ -3018,7 +3018,7 @@ int ObjectClass::sub_5CE0C0(int a2, unsigned int * a3)
   this->nextArrayIndex = fallRate; /*0x5ce112*/
   if ( this->NeedsSaveOrLink >= WideString::Length((const wchar_t **)&this->NeedsSaveOrLink) ) /*0x5ce122*/
   {
-    LOWORD(v7) = Math::RoundToInt(*(float *)&stru_A8EB00.ObjectTypeClass[38] * 64.0); /*0x5ce130*/
+    (v7) = ((v7) & ~0xFFFF) | ((Math::RoundToInt(*(float *)&stru_A8EB00.ObjectTypeClass[38] * 64.0)) & 0xFFFF); /*0x5ce130*/
     sub_406670(aBleep1, v7); /*0x5ce13c*/
     return 1; /*0x5ce149*/
   }
@@ -3068,7 +3068,7 @@ int ObjectClass::sub_5CE0C0(int a2, unsigned int * a3)
     this->NeedsSaveOrLink = v10; /*0x5ce217*/
     if ( (unsigned short)i == 10 ) /*0x5ce21a*/
     {
-      LOWORD(v14) = Math::RoundToInt(*(float *)&stru_A8EB00.ObjectTypeClass[38] * 64.0); /*0x5ce228*/
+      (v14) = ((v14) & ~0xFFFF) | ((Math::RoundToInt(*(float *)&stru_A8EB00.ObjectTypeClass[38] * 64.0)) & 0xFFFF); /*0x5ce228*/
       sub_406670(aBleep1, v14); /*0x5ce234*/
       this->customSound_controller[0] += (int)this->attachedTag->?; /*0x5ce244*/
     }

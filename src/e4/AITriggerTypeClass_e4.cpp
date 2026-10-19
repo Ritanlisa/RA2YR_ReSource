@@ -486,7 +486,7 @@ LABEL_26:
   if ( v22 ) /*0x41f890*/
   {
     atof(v22); /*0x41f893*/
-    LOWORD(v23) = Math::RoundToInt(v2); /*0x41f89b*/
+    (v23) = ((v23) & ~0xFFFF) | ((Math::RoundToInt(v2)) & 0xFFFF); /*0x41f89b*/
     v45 = v23; /*0x41f8a0*/
     __asm /*0x41f8a8*/
     {
@@ -499,7 +499,7 @@ LABEL_26:
   if ( v25 ) /*0x41f8c2*/
   {
     atof(v25); /*0x41f8c5*/
-    LOWORD(v26) = Math::RoundToInt(v2); /*0x41f8cd*/
+    (v26) = ((v26) & ~0xFFFF) | ((Math::RoundToInt(v2)) & 0xFFFF); /*0x41f8cd*/
     v45 = v26; /*0x41f8d2*/
     __asm /*0x41f8da*/
     {
@@ -512,7 +512,7 @@ LABEL_26:
   if ( v28 ) /*0x41f8f4*/
   {
     atof(v28); /*0x41f8f7*/
-    LOWORD(v29) = Math::RoundToInt(v2); /*0x41f8ff*/
+    (v29) = ((v29) & ~0xFFFF) | ((Math::RoundToInt(v2)) & 0xFFFF); /*0x41f8ff*/
     v45 = v29; /*0x41f904*/
     __asm /*0x41f90c*/
     {
@@ -885,7 +885,7 @@ char AITriggerTypeClass_40::SetCapacity(int a2, unsigned int * a3)
     }
     *&this->q004 = v4; /*0x4205ca*/
     this->q008 = a2; /*0x4205d2*/
-    BYTE1(this->q00C) = a3 == 0; /*0x4205d5*/
+    (this->q00C) = ((this->q00C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x4205d5*/
   }
   else
   {

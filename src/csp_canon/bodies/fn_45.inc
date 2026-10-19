@@ -328,7 +328,7 @@ char Gap2Recv_459CA0::ProcessDataCellClass() {
       v4 = v1; /*0x459ce5*/
       v1 += 2; /*0x459cea*/
       v5 = v3 + v4[1]; /*0x459cf4*/
-      LOWORD(v9) = *v4 + v2; /*0x459cf7*/
+      (v9) = ((v9) & ~0xFFFF) | ((*v4 + v2) & 0xFFFF); /*0x459cf7*/
       (v9) = ((v9) & ~(0xFFFF << 16)) | (((v5) & 0xFFFF) << 16); /*0x459d00*/
       *(unsigned int *)v8 = v9; /*0x459d0f*/
       if ( (uint8_t)LayerClass::CoordinatesLegal((LayerClass *)&dword_87F7E8, v8) ) /*0x459d13*/
@@ -663,7 +663,7 @@ char sub_45E8F0()
       {
         for ( i = 0; i < v1; ++i ) /*0x45e944*/
         {
-          IDA_LOBYTE(SubFile) = *(unsigned char *)(v2 + i); /*0x45e946*/
+          (SubFile) = ((SubFile) & ~0xFF) | ((*(unsigned char *)(v2 + i)) & 0xFF); /*0x45e946*/
           if ( (unsigned char)SubFile ) /*0x45e94b*/
           {
             (SubFile) = ((SubFile) & ~0xFF) | ((SubFile - 65) & 0xFF); /*0x45e94d*/

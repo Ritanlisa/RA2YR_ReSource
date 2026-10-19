@@ -993,11 +993,11 @@ LABEL_21:
       LOBYTE(v10) = v22[1] >> g_BitMask_Red; /*0x6ba8a8*/
       v22 += 3; /*0x6ba8b0*/
       ++v21; /*0x6ba8b3*/
-      LOWORD(v12) = (unsigned __int8)v10; /*0x6ba8b6*/
-      LOWORD(v10) = (unsigned __int8)(*(v22 - 4) >> v20); /*0x6ba8c9*/
+      (v12) = ((v12) & ~0xFFFF) | (((unsigned __int8)v10) & 0xFFFF); /*0x6ba8b6*/
+      (v10) = ((v10) & ~0xFFFF) | (((unsigned __int8)(*(v22 - 4) >> v20)) & 0xFFFF); /*0x6ba8c9*/
       v24 = v10 << g_BitShift_Red; /*0x6ba8cd*/
       v25 = v24 | (v12 << g_BitShift_Blue); /*0x6ba8d5*/
-      LOWORD(v24) = (unsigned __int8)(*(v22 - 3) >> g_BitMask_Blue); /*0x6ba8e2*/
+      (v24) = ((v24) & ~0xFFFF) | (((unsigned __int8)(*(v22 - 3) >> g_BitMask_Blue)) & 0xFFFF); /*0x6ba8e2*/
       v10 = v24 << g_BitMask_Green; /*0x6ba8e6*/
       v12 = v10 | v25; /*0x6ba8e8*/
       --v23; /*0x6ba8ea*/
@@ -1189,7 +1189,7 @@ TechnoClass * * Surface::BlitTechnoTo(short * a1, TechnoClass * aP2, TechnoClass
   if ( (v12 & 8) != 0 ) /*0x707522*/
   {
     v14 = (*(int (**)(int *))(this->Width + 16))(&this->Width); /*0x707534*/
-    LOWORD(v15) = Math::RoundToInt(this->u32_24C); /*0x707536*/
+    (v15) = ((v15) & ~0xFFFF) | ((Math::RoundToInt(this->u32_24C)) & 0xFFFF); /*0x707536*/
     v42 = (v14 + v15) % 400; /*0x707545*/
   }
   if ( (*(int (**)(Surface *))(*(unsigned int *)this->__pad_0 + 44))(this) == 1 ) /*0x707557*/

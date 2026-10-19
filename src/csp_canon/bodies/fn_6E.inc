@@ -1019,7 +1019,7 @@ void Gap2Recv_6EA0D0::SelectTeamProductionBuilding() {
                      *p_attachedTag,
                      &v33);
     v27 = 0x7FFFFFFF; /*0x6ea124*/
-    LOWORD(v22) = *v6 / 256; /*0x6ea13a*/
+    (v22) = ((v22) & ~0xFFFF) | ((*v6 / 256) & 0xFFFF); /*0x6ea13a*/
     fallRate = this->fallRate; /*0x6ea143*/
     HIWORD(v22) = v6[1] / 256; /*0x6ea151*/
     *(unsigned int *)v29 = v22; /*0x6ea15a*/
@@ -1031,7 +1031,7 @@ void Gap2Recv_6EA0D0::SelectTeamProductionBuilding() {
       if ( v9 && !*(unsigned char *)(v9 + 129) && !*(unsigned int *)(*(int (**)(int, unsigned int))(*(unsigned int *)v9 + 1016))(v9, 0) ) /*0x6ea19e*/
       {
         v10 = (unsigned int *)(*(int (**)(int, unsigned char *))(*(unsigned int *)v9 + 72))(v9, v36); /*0x6ea1b0*/
-        LOWORD(v23) = *v10 / 256; /*0x6ea1c3*/
+        (v23) = ((v23) & ~0xFFFF) | ((*v10 / 256) & 0xFFFF); /*0x6ea1c3*/
         attachedTag = this->attachedTag; /*0x6ea1d2*/
         HIWORD(v23) = v10[1] / 256; /*0x6ea1da*/
         v22 = v23; /*0x6ea1e3*/
@@ -1043,7 +1043,7 @@ void Gap2Recv_6EA0D0::SelectTeamProductionBuilding() {
         v34 = v14 - v12[1]; /*0x6ea214*/
         v35 = v15 - v12[2]; /*0x6ea224*/
         Math::Sqrt((double)v33 * (double)v33 + (double)v35 * (double)v35 + (double)v34 * (double)v34); /*0x6ea249*/
-        LOWORD(v16) = Math::RoundToInt(v1); /*0x6ea251*/
+        (v16) = ((v16) & ~0xFFFF) | ((Math::RoundToInt(v1)) & 0xFFFF); /*0x6ea251*/
         v17 = v16 * (CellClass::GetTileData((int16_t *)&v22, this->fallRate) + 1); /*0x6ea27a*/
         if ( *(unsigned char *)(*(unsigned int *)(v9 + 1312) + 5801) ) /*0x6ea274*/
           v17 /= 2; /*0x6ea288*/
@@ -1055,7 +1055,7 @@ void Gap2Recv_6EA0D0::SelectTeamProductionBuilding() {
           v19 = this->customSound_controller[1]; /*0x6ea2a3*/
           v26 = (ObjectClass *)v19; /*0x6ea2a6*/
           v25 = -1; /*0x6ea2aa*/
-          LOWORD(v24) = *v18 / 256; /*0x6ea2c0*/
+          (v24) = ((v24) & ~0xFFFF) | ((*v18 / 256) & 0xFFFF); /*0x6ea2c0*/
           HIWORD(v24) = v18[1] / 256; /*0x6ea2d4*/
           for ( j = v24; v19; v19 = *(unsigned int *)(v19 + 1496) ) /*0x6ea2e3*/
           {
@@ -1198,7 +1198,7 @@ void TeamClass::MoveToCellAndAttack(int a2, int a3) {
       if ( Entry[1] < 0x2BEu ) /*0x6ecd36*/
         v3->SelectMember((int)CellFromArray); /*0x6ecd3b*/
     }
-    IDA_LOWORD(v6) = Math::RoundToInt(*(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 4432) * 900.0); /*0x6ecd52*/
+    (v6) = ((v6) & ~0xFFFF) | ((Math::RoundToInt(*(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 4432) * 900.0)) & 0xFFFF); /*0x6ecd52*/
     if ( !(*(unsigned int *)&(&stru_A8EB00)[416] % v6) ) /*0x6ecd5f*/
     {
       firstUnit = v3->firstUnit; /*0x6ecd69*/
@@ -1270,7 +1270,7 @@ int TeamClass::Create(int a2, int a3) {
     for ( i = this->firstUnit; i; i = this->firstUnit ) /*0x6ecfef*/
     {
       this->LiberateMember_Start((FootClass *)i, (int)0xFFFFFFFF, 0); /*0x6ecff8*/
-      IDA_LOBYTE(v4) = (unsigned char)((TeamClass *)v5)->AddMember((FootClass *)i, 0); /*0x6ed002*/
+      (v4) = ((v4) & ~0xFF) | (((unsigned char)((TeamClass *)v5)->AddMember((FootClass *)i, 0)) & 0xFF); /*0x6ed002*/
     }
     if ( this ) /*0x6ed010*/
       IDA_LOBYTE(v4) = (*((char (__thiscall **)(TeamClass *, int))*(void ***)this + 8))(this, 1); /*0x6ed018*/

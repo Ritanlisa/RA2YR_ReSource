@@ -274,14 +274,14 @@ int Audio::WaitForCallback()
   int v2; // ebx
   v2 = Audio::Callback(); /*0x4070bd*/
   unsigned __int64 v3; // rax
-  LODWORD(v3) = *&this->u32_4; /*0x4070c9*/
+  (v3) = ((v3) & 0xFFFFFFFF00000000ull) | ((*&this->u32_4) & 0xFFFFFFFFull); /*0x4070c9*/
   unsigned __int64 v4; // kr00_8
   v4 = *(unsigned long long *)this->__pad_10 + ((((((v3) >> 32) & 0xFFFFFFFFu) & 0xFFFFFFFFull)) << 32 | (v2 & 0xFFFFFFFFull)); /*0x4070cc*/
   if ( (unsigned int)v3 != *&this->u32_8 ) /*0x4070d0*/
   {
     do /*0x4070ee*/
     {
-      LODWORD(v3) = Audio::Callback(); /*0x4070d2*/
+      (v3) = ((v3) & 0xFFFFFFFF00000000ull) | ((Audio::Callback()) & 0xFFFFFFFFull); /*0x4070d2*/
       if ( v3 >= v4 ) /*0x4070df*/
         break; /*0x4070df*/
       Event::Dispatch(); /*0x4070e1*/
@@ -673,7 +673,7 @@ int Audio::LoadWAVFiles(void *a1_1)
             {
               v5 = (unsigned int *)(4 * i + *(unsigned int *)this->__pad_18); /*0x7208cc*/
               v6 = sub_408560((int)v9, v8[0]) / 0x3E8; /*0x7208dc*/
-              HIDWORD(v6) = *v5; /*0x7208e1*/
+              (v6) = ((v6) & 0xFFFFFFFFull) | ((unsigned long long)((*v5) & 0xFFFFFFFFull) << 32); /*0x7208e1*/
               v8[1] = v6; /*0x7208e4*/
               *(float *)((((v6) >> 32) & 0xFFFFFFFFu) + 644) = (float)(int)v6; /*0x7208ec*/
             }
@@ -768,7 +768,7 @@ int Audio::InitFromINI(double a2, double a3, int a1, int aP1, int aP2, void * aC
     dword_8464C4 = INIClass::ReadInt_Overwrite((bool *)v4, g_INI_Key_Defaults, aLimit, dword_8464C4); /*0x751270*/
     dword_8464C0 = INIClass::ReadInt_Overwrite((bool *)v4, g_INI_Key_Defaults, g_INI_Key_Range, dword_8464C0); /*0x75128c*/
   }
-  LOBYTE(KeyCount) = INIClass::BinarySearchSection((int)v4, g_INI_Key_SoundList) != 0; /*0x75129f*/
+  (KeyCount) = ((KeyCount) & ~0xFF) | ((INIClass::BinarySearchSection((int)v4, g_INI_Key_SoundList) != 0) & 0xFF); /*0x75129f*/
   if ( (unsigned char)KeyCount )
   {
     KeyCount = INIClass::GetKeyCount((char *)v4, g_INI_Key_SoundList); /*0x7512b1*/
@@ -1226,7 +1226,7 @@ int Audio_Helper_7C7F20(void * a1, void * a2, void * a3, void * a4)
       ++v34; /*0x7c7f6a*/
       v5 = (unsigned short *)((char *)v5 + 1); /*0x7c7f6d*/
       v9 = 4 * v8; /*0x7c7f6e*/
-      LOBYTE(v9) = (unsigned __int8)v9 >> 2; /*0x7c7f71*/
+      (v9) = ((v9) & ~0xFF) | (((unsigned __int8)v9 >> 2) & 0xFF); /*0x7c7f71*/
       if ( (v9) = ((v9) & ~(0xFF << 8)) | (((= 2) & 0xFF) << 8)) /*0x7c7f77*/
       {
         if ( (v9 & 0x20) != 0 ) /*0x7c7f7b*/
@@ -1239,7 +1239,7 @@ int Audio_Helper_7C7F20(void * a1, void * a2, void * a3, void * a4)
         else
         {
           v10 = v7; /*0x7c7f8b*/
-          LOWORD(v9) = (unsigned __int8)(v9 + 1); /*0x7c7f8f*/
+          (v9) = ((v9) & ~0xFFFF) | (((unsigned __int8)(v9 + 1)) & 0xFFFF); /*0x7c7f8f*/
           for ( i = v9 >> 1; i; --i ) /*0x7c7f93*/
           {
             *(unsigned short *)v6 = *v5++; /*0x7c7f95*/
@@ -1281,7 +1281,7 @@ int Audio_Helper_7C7F20(void * a1, void * a2, void * a3, void * a4)
               if ( v18 ) /*0x7c7fcc*/
                 LOBYTE(a1) = -1; /*0x7c7fce*/
             }
-            LOBYTE(v16) = v14 >> 4; /*0x7c7fdb*/
+            (v16) = ((v16) & ~0xFF) | ((v14 >> 4) & 0xFF); /*0x7c7fdb*/
             BYTE1(a1) = byte_7C80F6[v16] + a1; /*0x7c7fde*/
             v19 = __readeflags(); /*0x7c7fe4*/
             if ( byte_7C80F6[v16] < 0 ) /*0x7c7fec*/
@@ -1983,11 +1983,11 @@ int sub_7DF7C0(int * a1)
           v16 = 0; /*0x7df879*/
           if ( !v13 ) /*0x7df87e*/
             break; /*0x7df87e*/
-          LOBYTE(v16) = *v12; /*0x7df880*/
+          (v16) = ((v16) & ~0xFF) | ((*v12) & 0xFF); /*0x7df880*/
           v17 = v12 + 1; /*0x7df882*/
           (v13) = ((v13) & ~0xFF) | ((v13 - v16) & 0xFF); /*0x7df883*/
           v15 += g_VoxelOffsetTable[v16]; /*0x7df885*/
-          BYTE1(v13) = *v17; /*0x7df88c*/
+          (v13) = ((v13) & ~(0xFF << 8)) | (((*v17) & 0xFF) << 8); /*0x7df88c*/
           for ( i = v17 + 1; (((v13) >> 8) & 0xFF); g_VoxelRenderBuffer[(unsigned int)v19] = v20 ) /*0x7df891*/
           {
             (v13) = ((v13) & ~0xFF) | ((v13 - 1) & 0xFF); /*0x7df895*/
@@ -2068,12 +2068,12 @@ int sub_7DF8C0(int a1)
   while ( v3 ); /*0x7df8fb*/
   v8 = &savedregs; /*0x7df8fd*/
   v24 = *(unsigned int *)(a1 + 24); /*0x7df906*/
-  BYTE1(v3) = *(unsigned char *)(a1 + 49); /*0x7df909*/
+  (v3) = ((v3) & ~(0xFF << 8)) | (((*(unsigned char *)(a1 + 49)) & 0xFF) << 8); /*0x7df909*/
   do /*0x7df952*/
   {
     *(v8 - 1) = *(unsigned int *)(a1 + 12); /*0x7df90f*/
     *(v8 - 2) = *(v8 - 3); /*0x7df915*/
-    LOBYTE(v3) = *(unsigned char *)(a1 + 48); /*0x7df918*/
+    (v3) = ((v3) & ~0xFF) | ((*(unsigned char *)(a1 + 48)) & 0xFF); /*0x7df918*/
     do /*0x7df93c*/
     {
       *(unsigned int *)(a1 + 24) = *(v8 - 3); /*0x7df91e*/
@@ -2085,13 +2085,13 @@ int sub_7DF8C0(int a1)
         v22 = v8; /*0x7df962*/
         v12 = (unsigned __int8 *)(*(unsigned int *)(a1 + 8) + v10); /*0x7df965*/
         v13 = *(unsigned __int8 *)(a1 + 50); /*0x7df968*/
-        LOWORD(v9) = *(unsigned short *)(a1 + 26); /*0x7df96b*/
+        (v9) = ((v9) & ~0xFFFF) | ((*(unsigned short *)(a1 + 26)) & 0xFFFF); /*0x7df96b*/
         v15 = v9 << 16; /*0x7df96f*/
         v14 = *(unsigned int *)(a1 + 42); /*0x7df972*/
-        LOWORD(v15) = *(unsigned short *)(a1 + 24); /*0x7df975*/
+        (v15) = ((v15) & ~0xFFFF) | ((*(unsigned short *)(a1 + 24)) & 0xFFFF); /*0x7df975*/
         while ( v13 ) /*0x7df97c*/
         {
-          BYTE1(v13) = *v12; /*0x7df97e*/
+          (v13) = ((v13) & ~(0xFF << 8)) | (((*v12) & 0xFF) << 8); /*0x7df97e*/
           for ( i = v12 - 1; (((v13) >> 8) & 0xFF); g_VoxelRenderBuffer[(unsigned int)v18] = v19 ) /*0x7df983*/
           {
             (v13) = ((v13) & ~0xFF) | ((v13 - 1) & 0xFF); /*0x7df987*/
@@ -2177,12 +2177,12 @@ int sub_7DFD00(int a1)
   while ( v3 ); /*0x7dfd3e*/
   v8 = &savedregs; /*0x7dfd40*/
   v23 = *(unsigned int *)(a1 + 24); /*0x7dfd49*/
-  BYTE1(v3) = *(unsigned char *)(a1 + 49); /*0x7dfd4c*/
+  (v3) = ((v3) & ~(0xFF << 8)) | (((*(unsigned char *)(a1 + 49)) & 0xFF) << 8); /*0x7dfd4c*/
   do /*0x7dfd95*/
   {
     *(v8 - 1) = *(unsigned int *)(a1 + 12); /*0x7dfd52*/
     *(v8 - 2) = *(v8 - 3); /*0x7dfd58*/
-    LOBYTE(v3) = *(unsigned char *)(a1 + 48); /*0x7dfd5b*/
+    (v3) = ((v3) & ~0xFF) | ((*(unsigned char *)(a1 + 48)) & 0xFF); /*0x7dfd5b*/
     do /*0x7dfd7f*/
     {
       *(unsigned int *)(a1 + 24) = *(v8 - 3); /*0x7dfd61*/
@@ -2194,13 +2194,13 @@ int sub_7DFD00(int a1)
         v21 = v8; /*0x7dfda2*/
         v12 = (unsigned __int8 *)(*(unsigned int *)(a1 + 8) + v10); /*0x7dfda5*/
         v13 = *(unsigned __int8 *)(a1 + 50); /*0x7dfda8*/
-        LOWORD(v9) = *(unsigned short *)(a1 + 26); /*0x7dfdab*/
+        (v9) = ((v9) & ~0xFFFF) | ((*(unsigned short *)(a1 + 26)) & 0xFFFF); /*0x7dfdab*/
         v15 = v9 << 16; /*0x7dfdaf*/
         v14 = *(unsigned int *)(a1 + 42); /*0x7dfdb2*/
-        LOWORD(v15) = *(unsigned short *)(a1 + 24); /*0x7dfdb5*/
+        (v15) = ((v15) & ~0xFFFF) | ((*(unsigned short *)(a1 + 24)) & 0xFFFF); /*0x7dfdb5*/
         while ( v13 ) /*0x7dfdbc*/
         {
-          BYTE1(v13) = *v12; /*0x7dfdbe*/
+          (v13) = ((v13) & ~(0xFF << 8)) | (((*v12) & 0xFF) << 8); /*0x7dfdbe*/
           for ( i = (char *)(v12 - 1); (((v13) >> 8) & 0xFF); g_VoxelRenderBuffer[(unsigned int)v17] = v18 ) /*0x7dfdc3*/
           {
             (v13) = ((v13) & ~0xFF) | ((v13 - 1) & 0xFF); /*0x7dfdc7*/

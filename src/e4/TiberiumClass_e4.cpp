@@ -92,8 +92,8 @@ int TiberiumClass::Spread(int a1, int a2, int a3, int a4, int a5, int a6, char a
           v13 = (unsigned short *)(4 * (v11 & 7) + 9041544); /*0x5a01fe*/
           v14 = *v13 + *v12; /*0x5a0205*/
           LOWORD(v13) = v12[1] + v13[1]; /*0x5a020c*/
-          LOWORD(v32) = v14; /*0x5a0210*/
-          HIWORD(v32) = (unsigned short)v13; /*0x5a0215*/
+          (v32) = ((v32) & ~0xFFFF) | ((v14) & 0xFFFF); /*0x5a0210*/
+          (v32) = ((v32) & ~(0xFFFF << 16)) | ((((unsigned short)v13) & 0xFFFF) << 16); /*0x5a0215*/
           v30 = v32; /*0x5a021e*/
           v15 = (__int16)v13; /*0x5a0225*/
           v16 = (__int16)v13 + v14; /*0x5a0228*/

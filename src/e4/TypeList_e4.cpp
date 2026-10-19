@@ -115,7 +115,7 @@ char TypeList_Particle::Remove(int a2, unsigned int * a3)
         int i; // eax
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->Items + 4 * i - 4) ) /*0x45a219*/
           ++i; /*0x45a21e*/
-        if ( BYTE1(this->IsInitialized) ) /*0x45a22b*/
+        if ( this->IsAllocated ) /*0x45a22b*/
         {
           __3_YAXPAX_Z(*&this->Items); /*0x45a236*/
           *&this->Items = 0; /*0x45a23e*/
@@ -123,7 +123,7 @@ char TypeList_Particle::Remove(int a2, unsigned int * a3)
       }
       *&this->Items = v4; /*0x45a247*/
       this->Capacity = (void *)(a2); /*0x45a24f*/
-      BYTE1(this->IsInitialized) = a3 == 0; /*0x45a252*/
+      this->IsAllocated = a3 == 0; /*0x45a252*/
       return 1; /*0x45a258*/
     }
     else
@@ -390,7 +390,7 @@ char TypeList_TechnoType::Remove(int a2, unsigned int * a3)
         int i; // eax
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->Items + 4 * i - 4) ) /*0x478059*/
           ++i; /*0x47805e*/
-        if ( BYTE1(this->IsInitialized) ) /*0x47806b*/
+        if ( this->IsAllocated ) /*0x47806b*/
         {
           __3_YAXPAX_Z(*&this->Items); /*0x478076*/
           *&this->Items = 0; /*0x47807e*/
@@ -398,7 +398,7 @@ char TypeList_TechnoType::Remove(int a2, unsigned int * a3)
       }
       *&this->Items = v4; /*0x478087*/
       this->Capacity = (void *)(a2); /*0x47808f*/
-      BYTE1(this->IsInitialized) = a3 == 0; /*0x478092*/
+      this->IsAllocated = a3 == 0; /*0x478092*/
       return 1; /*0x478098*/
     }
     else
@@ -552,12 +552,12 @@ void TypeList_Infantry::ddtor(void *a1)
 
   void *v2 = *&this->Items; // eax /*0x5128a6*/
   this->Count = 0; /*0x5128a9*/
-  if ( v2 && BYTE1(this->IsInitialized) ) /*0x5128b0*/
+  if ( v2 && this->IsAllocated ) /*0x5128b0*/
   {
     __3_YAXPAX_Z(v2); /*0x5128b6*/
     *&this->Items = 0; /*0x5128be*/
   }
-  BYTE1(this->IsInitialized) = 0; /*0x5128c1*/
+  this->IsAllocated = 0; /*0x5128c1*/
   this->Capacity = 0; /*0x5128c4*/
 
 }
@@ -681,7 +681,7 @@ char TypeList_Infantry::Remove(int a2, unsigned int * a3)
         m_8 = a2; /*0x512eb6*/
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->Items + 4 * i - 4) ) /*0x512ebc*/
         ++i; /*0x512ec1*/
-      if ( BYTE1(this->IsInitialized) ) /*0x512ece*/
+      if ( this->IsAllocated ) /*0x512ece*/
       {
         __3_YAXPAX_Z(*&this->Items); /*0x512ed9*/
         *&this->Items = 0; /*0x512ee1*/
@@ -689,7 +689,7 @@ char TypeList_Infantry::Remove(int a2, unsigned int * a3)
     }
     *&this->Items = v4; /*0x512eea*/
     this->Capacity = a2; /*0x512ef2*/
-    BYTE1(this->IsInitialized) = a3 == 0; /*0x512ef5*/
+    this->IsAllocated = a3 == 0; /*0x512ef5*/
   }
   else
   {
@@ -1124,12 +1124,12 @@ void TypeList_VoxelAnim::ddtor(void *a1)
 
   void *v2 = *&this->Items; // eax /*0x67a416*/
   this->Count = 0; /*0x67a419*/
-  if ( v2 && BYTE1(this->IsInitialized) ) /*0x67a420*/
+  if ( v2 && this->IsAllocated ) /*0x67a420*/
   {
     __3_YAXPAX_Z(v2); /*0x67a426*/
     *&this->Items = 0; /*0x67a42e*/
   }
-  BYTE1(this->IsInitialized) = 0; /*0x67a431*/
+  this->IsAllocated = 0; /*0x67a431*/
   this->Capacity = 0; /*0x67a434*/
 
 }
@@ -1194,12 +1194,12 @@ void TypeList_VoxelAnim::TypeList_vt03()
 
   void *v2 = *&this->Items; // eax /*0x67a686*/
   this->Count = 0; /*0x67a689*/
-  if ( v2 && BYTE1(this->IsInitialized) ) /*0x67a690*/
+  if ( v2 && this->IsAllocated ) /*0x67a690*/
   {
     __3_YAXPAX_Z(v2); /*0x67a696*/
     *&this->Items = 0; /*0x67a69e*/
   }
-  BYTE1(this->IsInitialized) = 0; /*0x67a6a1*/
+  this->IsAllocated = 0; /*0x67a6a1*/
   this->Capacity = 0; /*0x67a6a4*/
 
 }
@@ -1247,12 +1247,12 @@ void TypeList_cptr_TerrainTypeClass::GetClassIdentifier()
 
   void *v2 = *&this->Items; // eax /*0x67a936*/
   this->Count = 0; /*0x67a939*/
-  if ( v2 && BYTE1(this->IsInitialized) ) /*0x67a940*/
+  if ( v2 && this->IsAllocated ) /*0x67a940*/
   {
     __3_YAXPAX_Z(v2); /*0x67a946*/
     *&this->Items = 0; /*0x67a94e*/
   }
-  BYTE1(this->IsInitialized) = 0; /*0x67a951*/
+  this->IsAllocated = 0; /*0x67a951*/
   this->Capacity = 0; /*0x67a954*/
 
 }
@@ -1395,7 +1395,7 @@ char TypeList_VoxelAnim::SetCapacity(int a2, unsigned int * a3)
         int i; // eax
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->Items + 4 * i - 4) ) /*0x67ab89*/
           ++i; /*0x67ab8e*/
-        if ( BYTE1(this->IsInitialized) ) /*0x67ab9b*/
+        if ( this->IsAllocated ) /*0x67ab9b*/
         {
           __3_YAXPAX_Z(*&this->Items); /*0x67aba6*/
           *&this->Items = 0; /*0x67abae*/
@@ -1403,7 +1403,7 @@ char TypeList_VoxelAnim::SetCapacity(int a2, unsigned int * a3)
       }
       *&this->Items = v4; /*0x67abb7*/
       this->Capacity = a2; /*0x67abbf*/
-      BYTE1(this->IsInitialized) = a3 == 0; /*0x67abc2*/
+      this->IsAllocated = a3 == 0; /*0x67abc2*/
       return 1; /*0x67abc8*/
     }
     else
@@ -1481,7 +1481,7 @@ char TypeList_VoxelAnim::Remove(int a2, unsigned int * a3)
       int i; // eax
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->Items + 4 * i - 4) ) /*0x67ad1c*/
         ++i; /*0x67ad21*/
-      if ( BYTE1(this->IsInitialized) ) /*0x67ad2e*/
+      if ( this->IsAllocated ) /*0x67ad2e*/
       {
         __3_YAXPAX_Z(*&this->Items); /*0x67ad39*/
         *&this->Items = 0; /*0x67ad41*/
@@ -1489,7 +1489,7 @@ char TypeList_VoxelAnim::Remove(int a2, unsigned int * a3)
     }
     *&this->Items = v4; /*0x67ad4a*/
     this->Capacity = a2; /*0x67ad52*/
-    BYTE1(this->IsInitialized) = a3 == 0; /*0x67ad55*/
+    this->IsAllocated = a3 == 0; /*0x67ad55*/
   }
   else
   {
@@ -1582,7 +1582,7 @@ char TypeList_flat::Release(int a2, unsigned int * a3)
     }
     *&this->u32_4 = v4; /*0x67b0ca*/
     this->u32_8 = a2; /*0x67b0d2*/
-    BYTE1(this->u32_C) = a3 == 0; /*0x67b0d5*/
+    (this->u32_C) = ((this->u32_C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x67b0d5*/
   }
   else
   {
@@ -1669,7 +1669,7 @@ char TypeList_cptr_TerrainTypeClass::SetCapacity(int a2, unsigned int * a3)
         int i; // eax
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->Items + 4 * i - 4) ) /*0x67b289*/
           ++i; /*0x67b28e*/
-        if ( BYTE1(this->IsInitialized) ) /*0x67b29b*/
+        if ( this->IsAllocated ) /*0x67b29b*/
         {
           __3_YAXPAX_Z(*&this->Items); /*0x67b2a6*/
           *&this->Items = 0; /*0x67b2ae*/
@@ -1677,7 +1677,7 @@ char TypeList_cptr_TerrainTypeClass::SetCapacity(int a2, unsigned int * a3)
       }
       *&this->Items = v4; /*0x67b2b7*/
       this->Capacity = a2; /*0x67b2bf*/
-      BYTE1(this->IsInitialized) = a3 == 0; /*0x67b2c2*/
+      this->IsAllocated = a3 == 0; /*0x67b2c2*/
       return 1; /*0x67b2c8*/
     }
     else
@@ -1699,12 +1699,12 @@ namespace gamemd {
 void TypeList_cptr_TerrainTypeClass::TryFreeAndClear()
 {
 
-  if ( *&this->Items && BYTE1(this->IsInitialized) ) /*0x67b2ed*/
+  if ( *&this->Items && this->IsAllocated ) /*0x67b2ed*/
   {
     __3_YAXPAX_Z(*&this->Items); /*0x67b2f3*/
     *&this->Items = 0; /*0x67b2fb*/
   }
-  BYTE1(this->IsInitialized) = 0; /*0x67b2fe*/
+  this->IsAllocated = 0; /*0x67b2fe*/
   this->Capacity = 0; /*0x67b301*/
 
 }
@@ -1771,7 +1771,7 @@ char TypeList_cptr_TerrainTypeClass::Remove(int a2, unsigned int * a3)
       int i; // eax
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->Items + 4 * i - 4) ) /*0x67b41c*/
         ++i; /*0x67b421*/
-      if ( BYTE1(this->IsInitialized) ) /*0x67b42e*/
+      if ( this->IsAllocated ) /*0x67b42e*/
       {
         __3_YAXPAX_Z(*&this->Items); /*0x67b439*/
         *&this->Items = 0; /*0x67b441*/
@@ -1779,7 +1779,7 @@ char TypeList_cptr_TerrainTypeClass::Remove(int a2, unsigned int * a3)
     }
     *&this->Items = v4; /*0x67b44a*/
     this->Capacity = a2; /*0x67b452*/
-    BYTE1(this->IsInitialized) = a3 == 0; /*0x67b455*/
+    this->IsAllocated = a3 == 0; /*0x67b455*/
   }
   else
   {

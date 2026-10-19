@@ -431,7 +431,7 @@ int AnimTypeClass::PowerDrainUpdate(int * a2)
   LOBYTE(v3) = this->Normalized; /*0x4289ec*/
   ((Power *)a2)->FlagProcess(v3); /*0x4289f5*/
   int v4; // edx
-  LOBYTE(v4) = (unsigned char)(this->Flat_flag); /*0x4289fa*/
+  (v4) = ((v4) & ~0xFF) | (((unsigned char)(this->Flat_flag)) & 0xFF); /*0x4289fa*/
   int v5; // eax
   v5 = ((Power *)a2)->FlagProcess(v4); /*0x428a03*/
   LOBYTE(v5) = this->Translucent; /*0x428a08*/

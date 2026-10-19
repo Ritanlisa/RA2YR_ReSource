@@ -162,13 +162,13 @@ int Network_SendTimestamp(int a1, int a2, int a3, int a4)
   v7 = (double)(int)a1; /*0x4891c6*/
   v10 = v7; /*0x4891ca*/
   v11 = v7 * *(float *)(a2 + 300); /*0x4891d4*/
-  LOWORD(v8) = Math::RoundToInt(*(float *)(a2 + 292) * 256.0); /*0x4891e4*/
+  (v8) = ((v8) & ~0xFFFF) | ((Math::RoundToInt(*(float *)(a2 + 292) * 256.0)) & 0xFFFF); /*0x4891e4*/
   if ( v11 != v10 && v8 ) /*0x489200*/
   {
     LOWORD(v9) = Math::RoundToInt((v10 - v11) * (double)(v8 - a4) / (double)v8 + v11); /*0x489220*/
     v4 = v9; /*0x489225*/
   }
-  LOWORD(result) = Math::RoundToInt((double)(int)((int)v4 <= 0 ? 0 : (unsigned int)v4) * *(double *)(a2 + 8 * a3 + 160));
+  (result) = ((result) & ~0xFFFF) | ((Math::RoundToInt((double)(int)((int)v4 <= 0 ? 0 : (unsigned int)v4) * *(double *)(a2 + 8 * a3 + 160))) & 0xFFFF);
   if ( result >= dword_8871E0->IRepairRate[0] ) /*0x489257*/
     return dword_8871E0->IRepairRate[0]; /*0x48925a*/
   return result; /*0x4891b8*/
@@ -410,7 +410,7 @@ int PlaySoundEffectAt(TechnoClass * aP0, int aP1, unsigned int *a2, int aP3, cha
     {
       v21 = (((v108) >> 16) & 0xFFFF) + HIWORD(dword_ABD490[v103]); /*0x4895dc*/
       LOWORD(v131) = v108 + LOWORD(dword_ABD490[v103]); /*0x4895e1*/
-      HIWORD(v131) = v21; /*0x4895e6*/
+      (v131) = ((v131) & ~(0xFFFF << 16)) | (((v21) & 0xFFFF) << 16); /*0x4895e6*/
       j = v131; /*0x4895f6*/
       v22 = (unsigned int *)CellCoord::To_CellObj(&j); /*0x489608*/
       v112 = v22; /*0x48960a*/
@@ -929,7 +929,7 @@ AbstractClass * * CreateSmokeEffectAt(int a1, int a2, int a3, int a4, int a5, ch
       {
         if ( v10 > 1.0 ) /*0x48a686*/
           v10 = 1.0; /*0x48a68a*/
-        LOWORD(v11) = Math::RoundToInt(v10 * 63.0); /*0x48a696*/
+        (v11) = ((v11) & ~0xFFFF) | ((Math::RoundToInt(v10 * 63.0)) & 0xFFFF); /*0x48a696*/
         v12 = v11; /*0x48a69b*/
       }
       v13 = (ObjectClass *)__2_YAPAXI_Z(0x18u); /*0x48a6bf*/
@@ -1341,7 +1341,7 @@ char MainGame()
       mbp.dwStyle = 327696; /*0x48cd6e*/
       memset(&mbp.lpszIcon, 0, 12); /*0x48cd75*/
       mbp.dwLanguageId = 1024; /*0x48cd7e*/
-      LOBYTE(inited) = MessageBoxIndirectA(&mbp); /*0x48cd85*/
+      (inited) = ((inited) & ~0xFF) | ((MessageBoxIndirectA(&mbp)) & 0xFF); /*0x48cd85*/
     }
     return inited; /*0x48cd90*/
   }
@@ -1518,8 +1518,8 @@ CellStruct * * sub_48E0B0()
               v2,
               "Local address: %d.%d.%d.%d\n",
               (unsigned __int8)*v5,
-              BYTE1(*v5),
-              (unsigned __int8)BYTE2(*v5),
+              (((*v5) >> 8) & 0xFF),
+              (unsigned __int8)(((*v5) >> 16) & 0xFF),
               HIBYTE(*v5));
         }
       }

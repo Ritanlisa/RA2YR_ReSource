@@ -763,7 +763,7 @@ void* * ObjectClass::FindPlacementCell(FootClass * aP0, int aP1, IUnknown ** a2,
            v34,
            v16,
            v36[0],
-           BYTE1(v25[80]) & 1,
+           (((v25[80]) >> 8) & 0xFF) & 1,
            0)) )
   {
     a4 = 0; /*0x4de4d7*/
@@ -881,12 +881,12 @@ AbstractClass * * ObjectClass::BuildTransform(unsigned int * a1, float * a2, uns
     Math::SinCos(v14[202]); /*0x514135*/
     LOWORD(v15) = Math::RoundToInt(fabs(v11) * v29 + fabs(*(float *)&v34) * v31); /*0x51414f*/
     v34 = (int)v15; /*0x51415c*/
-    LOWORD(v16) = Math::RoundToInt(v35 * v31); /*0x514160*/
+    (v16) = ((v16) & ~0xFFFF) | ((Math::RoundToInt(v35 * v31)) & 0xFFFF); /*0x514160*/
     v35 = *(float *)&v16; /*0x514165*/
     LOWORD(v17) = Math::RoundToInt(v31 - (double)v16); /*0x514171*/
     v18 = v17; /*0x51417e*/
     v32 = (int)v17; /*0x514180*/
-    LOWORD(v19) = Math::RoundToInt(v33 * v29); /*0x514184*/
+    (v19) = ((v19) & ~0xFFFF) | ((Math::RoundToInt(v33 * v29)) & 0xFFFF); /*0x514184*/
     v33 = *(float *)&v19; /*0x514189*/
     LOWORD(v20) = Math::RoundToInt(v29 - (double)v19); /*0x514195*/
     v21 = (float *)this->ptr_8; /*0x51419a*/
@@ -1111,7 +1111,7 @@ int ObjectClass::DropAsBomb_Track()
   result = (*(int (**)(IUnknown *, int))(this->field_0 + 292))(this, 1); /*0x5f41a1*/
   if ( this ) /*0x5f41a9*/
   {
-    LOBYTE(result) = (this->abstractFlags & 4) != 0; /*0x5f41b5*/
+    (result) = ((result) & ~0xFF) | (((this->abstractFlags & 4) != 0) & 0xFF); /*0x5f41b5*/
     if ( (this->abstractFlags & 4) != 0 ) /*0x5f41bb*/
     {
       if ( !*&this->u32_674 ) /*0x5f41bd*/
@@ -1507,7 +1507,7 @@ LABEL_41:
       if ( result ) /*0x5f5187*/
       {
         v28 = *(unsigned short *)((char *)&dword_8871E0[1].DetailMinFrameRateNormal + 3); /*0x5f519e*/
-        if ( (unsigned char)v28 || __PAIR16__(HIBYTE(v28), 0) != BYTE1(dword_8871E0[1].DetailMinFrameRateMovie) ) /*0x5f51b4*/
+        if ( (unsigned char)v28 || __PAIR16__((((v28) >> 8) & 0xFF), 0) != BYTE1(dword_8871E0[1].DetailMinFrameRateMovie) ) /*0x5f51b4*/
         {
           v18 = BYTE1(dword_8871E0[1].DetailMinFrameRateMovie); /*0x5f51e2*/
           *(unsigned short *)result = *(unsigned short *)((char *)&dword_8871E0[1].DetailMinFrameRateNormal + 3); /*0x5f51e5*/
@@ -2081,7 +2081,7 @@ void* ObjectClass::FindPlacementPosition(int a2, int a3, int a4, int a5)
       LOBYTE(a5) = 1; /*0x71846e*/
     }
     v13 = (unsigned int *)(*(int (**)(int, int *))(*(unsigned int *)this->ptr_C + 72))(this->ptr_C, &v43); /*0x71847d*/
-    LOWORD(v37) = *v13 / 256; /*0x718490*/
+    (v37) = ((v37) & ~0xFFFF) | ((*v13 / 256) & 0xFFFF); /*0x718490*/
     HIWORD(v37) = v13[1] / 256; /*0x7184a8*/
     *(unsigned int *)v39 = v37; /*0x7184b1*/
     v40 = (__int16 *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v39); /*0x7184c0*/
@@ -2392,7 +2392,7 @@ int ObjectClass::GetCell()
   unsigned char v5[12]; // [esp+10h] [ebp-Ch] BYREF
   v1 = (unsigned int *)(*(int (**)(IUnknown *, unsigned char *, unsigned int))(this->field_0 + 76))(this, v5, 0); /*0x5f6a1c*/
   int v3; // [esp+8h] [ebp-14h]
-  LOWORD(v3) = *v1 / 256; /*0x5f6a2f*/
+  (v3) = ((v3) & ~0xFFFF) | ((*v1 / 256) & 0xFFFF); /*0x5f6a2f*/
   HIWORD(v3) = v1[1] / 256; /*0x5f6a48*/
   __int16 v4[2]; // [esp+Ch] [ebp-10h] BYREF
   *(unsigned int *)v4 = v3; /*0x5f6a56*/

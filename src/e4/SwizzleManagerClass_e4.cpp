@@ -109,7 +109,7 @@ int SwizzleManagerClass_19::Release(int a2, unsigned int * a3)
       }
       *&this->q004 = v5; /*0x6cf66b*/
       this->m_8 = v3; /*0x6cf671*/
-      BYTE1(this->m_C) = a3 == 0; /*0x6cf674*/
+      (this->m_C) = ((this->m_C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x6cf674*/
       return 1; /*0x6cf67a*/
     }
     else
@@ -218,7 +218,7 @@ AbstractClass * * SwizzleManagerClass_19::SetCapacity(int a2, unsigned int * a3)
     }
     *&this->q004 = v5; /*0x6cf7e6*/
     this->m_8 = v3; /*0x6cf7ec*/
-    BYTE1(this->m_C) = a3 == 0; /*0x6cf7ef*/
+    (this->m_C) = ((this->m_C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x6cf7ef*/
   }
   else
   {

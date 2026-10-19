@@ -6,7 +6,7 @@ namespace gamemd {
 target_t BuildTarget(AbstractType kind, unsigned value) noexcept {
     target_composite tc;
     tc.whole = 0;
-    tc.exponent = static_cast<unsigned>(kind);
+    tc.exponent = (unsigned)(kind);
     tc.mantissa = value;
     return tc.whole;
 }
@@ -14,7 +14,7 @@ target_t BuildTarget(AbstractType kind, unsigned value) noexcept {
 AbstractType TargetKind(target_t t) noexcept {
     target_composite tc;
     tc.whole = t;
-    return static_cast<AbstractType>(tc.exponent);
+    return (AbstractType)(tc.exponent);
 }
 
 unsigned TargetValue(target_t t) noexcept {
@@ -64,7 +64,7 @@ TargetClass::TargetClass() noexcept : m_target(kTargetNone) {}
 
 TargetClass::TargetClass(target_t t) noexcept : m_target(t) {}
 
-TargetClass::TargetClass(AbstractType kind, int id) noexcept : m_target(BuildTarget(kind, static_cast<unsigned>(id))) {}
+TargetClass::TargetClass(AbstractType kind, int id) noexcept : m_target(BuildTarget(kind, (unsigned)(id))) {}
 
 TargetClass::operator target_t() const { return m_target; }
 

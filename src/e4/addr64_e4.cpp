@@ -852,7 +852,7 @@ LABEL_9:
         v20 = *(unsigned int *)(*(unsigned int *)(v18 + 4 * v17) + 111); /*0x648a18*/
         if ( v20 != *(unsigned int *)(*(int *)((char *)&stru_A83CD9.estimatedHealth + 3) + 48) ) /*0x648a24*/
         {
-          LOWORD(v20) = *v19; /*0x648a29*/
+          (v20) = ((v20) & ~0xFFFF) | ((*v19) & 0xFFFF); /*0x648a29*/
           Network::SendMessage( /*0x648a44*/
             (int *)&stru_A8E960.nextScenario[96],
             (int)&v119,

@@ -144,7 +144,7 @@ AbstractClass * * ConnectionPointClass_9::Release(int a2, unsigned int * a3)
       }
       *&this->q004 = v4; /*0x4a1307*/
       this->m_8 = a2; /*0x4a130f*/
-      BYTE1(this->m_C) = a3 == 0; /*0x4a1312*/
+      (this->m_C) = ((this->m_C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x4a1312*/
       return 1; /*0x4a1318*/
     }
     else

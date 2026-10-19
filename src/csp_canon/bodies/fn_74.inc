@@ -651,8 +651,8 @@ void Gap2Recv_74E1C0::ProcessVeinholeMonster() {
       {
         v8 = v6 + 36; /*0x74e27e*/
         v9 = Cell::PosToIndex((Cell *)(v6 + 36)); /*0x74e28f*/
-        HIWORD(v47) = v41 + *((unsigned short *)this + 125); /*0x74e2a2*/
-        LOWORD(v47) = v43 + *((unsigned short *)this + 124); /*0x74e2ab*/
+        (v47) = ((v47) & ~(0xFFFF << 16)) | (((v41 + *((unsigned short *)this + 125)) & 0xFFFF) << 16); /*0x74e2a2*/
+        (v47) = ((v47) & ~0xFFFF) | ((v43 + *((unsigned short *)this + 124)) & 0xFFFF); /*0x74e2ab*/
         if ( v52 < v51.Capacity /*0x74e2d9*/
           || (v51.IsAllocated || !v51.Capacity)
           && v53 > 0

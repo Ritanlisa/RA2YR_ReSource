@@ -9,7 +9,7 @@ MemoryBuffer::MemoryBuffer(void* pBuffer, int size) noexcept : Buffer(pBuffer)
         , Size(size) {
         if (!Buffer && Size > 0)
         {
-            Buffer = operator new(static_cast<std::size_t>(Size));  // data: 0x8a3a08
+            Buffer = operator new((std::size_t)(Size));  // data: 0x8a3a08
             Allocated = true;
         }
     }

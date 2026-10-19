@@ -78,10 +78,10 @@ bool Weapon_Update(void * a1, void * a2)
       {
         updated = Weapon_Update_Update_659FF0((int)v3); /*0x659ceb*/
         LOWORD(a2) = (unsigned __int8)(BYTE2(v3[1].abstractFlags) >> g_BitMask_Red); /*0x659d13*/
-        LOWORD(updated) = (unsigned __int8)(BYTE1(v3[1].abstractFlags) >> g_BitMask_Blue); /*0x659d28*/
-        LODWORD(updated) = (unsigned int)updated << g_BitMask_Green; /*0x659d30*/
+        (updated) = ((updated) & ~0xFFFF) | (((unsigned __int8)(BYTE1(v3[1].abstractFlags) >> g_BitMask_Blue)) & 0xFFFF); /*0x659d28*/
+        (updated) = ((updated) & 0xFFFFFFFF00000000ull) | (((unsigned int)updated << g_BitMask_Green) & 0xFFFFFFFFull); /*0x659d30*/
         v6 = updated | (a2 << g_BitShift_Blue); /*0x659d40*/
-        LOWORD(updated) = (unsigned __int8)(LOBYTE(v3[1].abstractFlags) >> g_BitShift_Green_0); /*0x659d45*/
+        (updated) = ((updated) & ~0xFFFF) | (((unsigned __int8)(LOBYTE(v3[1].abstractFlags) >> g_BitShift_Green_0)) & 0xFFFF); /*0x659d45*/
         a2 = ((unsigned int)updated << g_BitShift_Red) | v6; /*0x659d55*/
         Coord::To_Screen((Coord *)g_TacticalClass_Instance, v3->location, v15); /*0x659d57*/
         Coord::To_Screen((Coord *)g_TacticalClass_Instance, &v3->lineTrailer, v14); /*0x659d68*/

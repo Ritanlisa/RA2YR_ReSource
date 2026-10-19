@@ -724,7 +724,7 @@ LABEL_165:
 LABEL_152:
           v53 = *(unsigned int *)&v3[1].__pad_38[56]; /*0x4f8bff*/
           Float4::Sum((int *)&v3[1].__pad_38[36]); /*0x4f8c0b*/
-          LOWORD(v54) = Math::RoundToInt(a2); /*0x4f8c10*/
+          (v54) = ((v54) & ~0xFFFF) | ((Math::RoundToInt(a2)) & 0xFFFF); /*0x4f8c10*/
           if ( v53 - v54 < 30 && v53 > 50 ) /*0x4f8c21*/
           {
             _EAX = dword_8871E0; /*0x4f8c23*/
@@ -733,7 +733,7 @@ LABEL_152:
               fld qword ptr [eax+16A8h]
               fmul ds:dbl_7E27F8
             }
-            LOWORD(v56) = Math::RoundToInt(a2); /*0x4f8c34*/
+            (v56) = ((v56) & ~0xFFFF) | ((Math::RoundToInt(a2)) & 0xFFFF); /*0x4f8c34*/
             v57 = Rules::GetProductionTimeMult((Rules *)&stru_A8E960.altNextScenario[252], v56); /*0x4f8c3f*/
             *(unsigned int *)v47 = *(unsigned int *)&stru_A8E960.random[528]; /*0x4f8c4a*/
             *(unsigned int *)&v3[33].__pad_EC[76] = v119; /*0x4f8c50*/

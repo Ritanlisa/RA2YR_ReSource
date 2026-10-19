@@ -555,7 +555,7 @@ int HouseClass::Construct(int a2, void *a2_1, void *a3, void *a4, void *a5, void
   this->u32_5784 = 0; /*0x4f5c8d*/
   this->u32_5786 = 0; /*0x4f5c94*/
   *(&this->q15E2) = 0; /*0x4f5c9b*/
-  LOWORD(v7) = Math::RoundToInt(*&dword_8871E0->IRepairStep * 900.0); /*0x4f5cb3*/
+  (v7) = ((v7) & ~0xFFFF) | ((Math::RoundToInt(*&dword_8871E0->IRepairStep * 900.0)) & 0xFFFF); /*0x4f5cb3*/
   v8 = *(unsigned int *)&stru_A8E960.random[528]; /*0x4f5cb8*/
   *(&this->u8_15E5) = v7; /*0x4f5cbe*/
   *(&this->u32_15E3) = v8; /*0x4f5cc4*/
@@ -808,7 +808,7 @@ int HouseClass::Construct(int a2, void *a2_1, void *a3, void *a4, void *a5, void
   memset(&this->u8_15F9, 0, 0x10810u); /*0x4f6324*/
   *(&this->q076) |= 1 << *(&this->vtable4); /*0x4f633d*/
   v68 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 450, 1800); /*0x4f635a*/
-  LOWORD(v51) = Math::RoundToInt((double)v68 * *&dword_8871E0->u32_10A8); /*0x4f6368*/
+  (v51) = ((v51) & ~0xFFFF) | ((Math::RoundToInt((double)v68 * *&dword_8871E0->u32_10A8)) & 0xFFFF); /*0x4f6368*/
   *(&this->u8_157C) = *(unsigned int *)&stru_A8E960.random[528]; /*0x4f6373*/
   *(&this->u8_157D) = *(unsigned int *)&Destination[4]; /*0x4f637d*/
   *(&this->u8_157E) = v51; /*0x4f6383*/
@@ -3554,7 +3554,7 @@ double HouseClass::GiveTiberium_Storage(float aP1, int aP2)
   int v4; // eax
   int result; // eax
 
-  LOWORD(v4) = Math::RoundToInt(aP1 * 5.0 + (double)this->siloMoney); /*0x4f9623*/
+  (v4) = ((v4) & ~0xFFFF) | ((Math::RoundToInt(aP1 * 5.0 + (double)this->siloMoney)) & 0xFFFF); /*0x4f9623*/
   this->siloMoney = v4; /*0x4f9628*/
   LOWORD(result) = Math::RoundToInt( /*0x4f9654*/
                      (double)*(int *)(*(unsigned int *)(g_BuildingLoadQueue_Array.?[2] + 4 * aP2) + 184)
@@ -3590,7 +3590,7 @@ char HouseClass::UpdateAllSilos(int a2, int a3)
       fmul ds:dbl_7E3CC8
       fadd ds:dbl_7E1738
     }
-    LOWORD(v6) = Math::RoundToInt(a2); /*0x4f9993*/
+    (v6) = ((v6) & ~0xFFFF) | ((Math::RoundToInt(a2)) & 0xFFFF); /*0x4f9993*/
     v4 = v6; /*0x4f9998*/
   }
   v7 = 0; /*0x4f99a0*/
@@ -3603,7 +3603,7 @@ char HouseClass::UpdateAllSilos(int a2, int a3)
       fmul ds:dbl_7E3CC8
       fadd ds:dbl_7E1738
     }
-    LOWORD(v7) = Math::RoundToInt(a2); /*0x4f99c3*/
+    (v7) = ((v7) & ~0xFFFF) | ((Math::RoundToInt(a2)) & 0xFFFF); /*0x4f99c3*/
   }
   if ( v4 != v7 ) /*0x4f99ca*/
   {
@@ -3617,7 +3617,7 @@ char HouseClass::UpdateAllSilos(int a2, int a3)
         LOBYTE(v7) = v9[129]; /*0x4f99df*/
         if ( !(unsigned char)v7 ) /*0x4f99e7*/
         {
-          LOBYTE(v7) = *(unsigned char *)(*((unsigned int *)v9 + 328) + 5800); /*0x4f99ef*/
+          (v7) = ((v7) & ~0xFF) | ((*(unsigned char *)(*((unsigned int *)v9 + 328) + 5800)) & 0xFF); /*0x4f99ef*/
           if ( (unsigned char)v7 ) /*0x4f99f7*/
             LOBYTE(v7) = (*(int (**)(unsigned __int8 *, int))(*(unsigned int *)v9 + 292))(v9, 2); /*0x4f99fd*/
         }

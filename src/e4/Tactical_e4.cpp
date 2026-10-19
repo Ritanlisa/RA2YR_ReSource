@@ -400,7 +400,7 @@ ScenarioClass * * Tactical::CalculateTacticalLighting(int * a1, IUnknown * aP2, 
           fstp st
         }
         Math::Sqrt(v28); /*0x484385*/
-        LOWORD(v19) = Math::RoundToInt(v8); /*0x48438d*/
+        (v19) = ((v19) & ~0xFFFF) | ((Math::RoundToInt(v8)) & 0xFFFF); /*0x48438d*/
         if ( v19 <= v17 ) /*0x484394*/
         {
           v20 = (1000 * v17 - 1000 * v19) / v17; /*0x4843bd*/
@@ -1097,7 +1097,7 @@ MouseClass * * Tactical::HandleTacticalMouseInput(int _28, unsigned int * a2, in
       {
         if ( dword_887640 ) /*0x6930e8*/
         {
-          LOBYTE(v5) = (unsigned char)a3; /*0x6930f5*/
+          (v5) = ((v5) & ~0xFF) | (((unsigned char)a3) & 0xFF); /*0x6930f5*/
           if ( !stru_A8E960.random[552] || *a3 == 533 ) /*0x693101*/
           {
             v5 = *a3 - 513; /*0x693109*/
@@ -1107,7 +1107,7 @@ MouseClass * * Tactical::HandleTacticalMouseInput(int _28, unsigned int * a2, in
                 a5 = *(HWND *)a5; /*0x693138*/
                 v12 = (__int16)a5 - DSurface_ViewBounds.field_0; /*0x693148*/
                 v13 = SHIWORD(a5) - dword_886FA4; /*0x693150*/
-                LOBYTE(v5) = Tactical::MouseOver(&v12, &v10, v14, &a3, (bool *)&a5, v11); /*0x693170*/
+                (v5) = ((v5) & ~0xFF) | ((Tactical::MouseOver(&v12, &v10, v14, &a3, (bool *)&a5, v11)) & 0xFF); /*0x693170*/
                 if ( (unsigned char)v5 ) /*0x693177*/
                 {
                   LOBYTE(v5) = HandlePlanningModeClick(v12, v13); /*0x693187*/
@@ -1116,7 +1116,7 @@ MouseClass * * Tactical::HandleTacticalMouseInput(int _28, unsigned int * a2, in
                     v7 = Radar::ScanWaypoints((int)&v10, a3, 1); /*0x6931af*/
                     TacticalClass::HandlePlayerAction((DisplayClass *)&dword_87F7E8, &v10, v11[0], a3, v7, 0); /*0x6931c9*/
                     DisplayClass::InitViewBounds((DisplayClass *)&dword_87F7E8, &v12); /*0x6931d8*/
-                    LOBYTE(v5) = (unsigned __int8)SetCapture(g_hWnd); /*0x6931e4*/
+                    (v5) = ((v5) & ~0xFF) | (((unsigned __int8)SetCapture(g_hWnd)) & 0xFF); /*0x6931e4*/
                     this->u32_555A = 1; /*0x6931ea*/
                   }
                 }
@@ -1125,7 +1125,7 @@ MouseClass * * Tactical::HandleTacticalMouseInput(int _28, unsigned int * a2, in
                 a5 = *(HWND *)a5; /*0x69320b*/
                 v12 = (__int16)a5 - DSurface_ViewBounds.field_0; /*0x69321b*/
                 v13 = SHIWORD(a5) - dword_886FA4; /*0x693221*/
-                LOBYTE(v5) = ScriptAction::HitTest(v12, v13); /*0x693225*/
+                (v5) = ((v5) & ~0xFF) | ((ScriptAction::HitTest(v12, v13)) & 0xFF); /*0x693225*/
                 if ( !(unsigned char)v5 && this->u32_555A ) /*0x693232*/
                 {
                   Tactical::MouseOver(&v12, &v10, v14, &a3, (bool *)&a5, v11); /*0x69325e*/
@@ -1139,10 +1139,10 @@ MouseClass * * Tactical::HandleTacticalMouseInput(int _28, unsigned int * a2, in
                 a5 = *(HWND *)a5; /*0x6932b6*/
                 v12 = (__int16)a5 - DSurface_ViewBounds.field_0; /*0x6932c6*/
                 v13 = SHIWORD(a5) - dword_886FA4; /*0x6932cc*/
-                LOBYTE(v5) = UI_Handle(v12, v13); /*0x6932d0*/
+                (v5) = ((v5) & ~0xFF) | ((UI_Handle(v12, v13)) & 0xFF); /*0x6932d0*/
                 if ( !this->u32_555A ) /*0x6932d5*/
                 {
-                  LOBYTE(v5) = Tactical::MouseOver(&v12, &v10, v14, &a3, (bool *)&a5, v11); /*0x693301*/
+                  (v5) = ((v5) & ~0xFF) | ((Tactical::MouseOver(&v12, &v10, v14, &a3, (bool *)&a5, v11)) & 0xFF); /*0x693301*/
                   if ( (unsigned char)v5 ) /*0x693308*/
                   {
                     if ( !stru_A8E960.random[552] ) /*0x693314*/
@@ -1153,7 +1153,7 @@ MouseClass * * Tactical::HandleTacticalMouseInput(int _28, unsigned int * a2, in
                       byte_884D40 = 0; /*0x69333f*/
                       (*(void (**)(MouseClass *))(dword_887640->HandleClick_ph + 16))(dword_887640); /*0x693347*/
                     }
-                    LOBYTE(v5) = (unsigned __int8)SetCapture(g_hWnd); /*0x693351*/
+                    (v5) = ((v5) & ~0xFF) | (((unsigned __int8)SetCapture(g_hWnd)) & 0xFF); /*0x693351*/
                     this->u32_555A = 1; /*0x693357*/
                   }
                 }
@@ -1179,7 +1179,7 @@ MouseClass * * Tactical::HandleTacticalMouseInput(int _28, unsigned int * a2, in
                 }
                 break; /*0x6933e3*/
               case 0x215: /*0x69311f*/
-                LOBYTE(v5) = (unsigned char)g_hWnd; /*0x6933ea*/
+                (v5) = ((v5) & ~0xFF) | (((unsigned char)g_hWnd) & 0xFF); /*0x6933ea*/
                 if ( *(HWND *)a5 != g_hWnd && this->u32_555A == 1 ) /*0x6933fc*/
                   LOBYTE(v5) = (*(char (**)(Tactical *))(*(unsigned int *)this->__pad_0 + 140))(this); /*0x693402*/
                 break; /*0x693402*/
@@ -1434,9 +1434,9 @@ unsigned int * Tactical::PixelToCell(unsigned int *aP1, int *aP2)
   v46 = *v7; /*0x6d65f8*/
   v47 = v7[1]; /*0x6d6603*/
   v48 = *((unsigned int *)v7 + 2); /*0x6d660a*/
-  LOWORD(v8) = Math::RoundToInt(v46); /*0x6d660e*/
+  (v8) = ((v8) & ~0xFFFF) | ((Math::RoundToInt(v46)) & 0xFFFF); /*0x6d660e*/
   v9 = v8; /*0x6d6617*/
-  LOWORD(v10) = Math::RoundToInt(v47); /*0x6d6619*/
+  (v10) = ((v10) & ~0xFFFF) | ((Math::RoundToInt(v47)) & 0xFFFF); /*0x6d6619*/
   LODWORD(v49) = (unsigned __int8)v9; /*0x6d6631*/
   (v39) = ((v39) & ~0xFFFF) | ((v9 / 256) & 0xFFFF); /*0x6d6638*/
   LODWORD(v50) = (unsigned __int8)v10; /*0x6d664c*/
@@ -1461,9 +1461,9 @@ unsigned int * Tactical::PixelToCell(unsigned int *aP1, int *aP2)
     v49 = *v14; /*0x6d66f4*/
     v50 = v14[1]; /*0x6d66ff*/
     v51 = *((unsigned int *)v14 + 2); /*0x6d6706*/
-    LOWORD(v15) = Math::RoundToInt(v49); /*0x6d670a*/
+    (v15) = ((v15) & ~0xFFFF) | ((Math::RoundToInt(v49)) & 0xFFFF); /*0x6d670a*/
     v16 = v15; /*0x6d6713*/
-    LOWORD(v17) = Math::RoundToInt(v50); /*0x6d6715*/
+    (v17) = ((v17) & ~0xFFFF) | ((Math::RoundToInt(v50)) & 0xFFFF); /*0x6d6715*/
     v40[0] = v16 / 256; /*0x6d672a*/
     v40[1] = v17 / 256; /*0x6d6747*/
     v18 = (Cell *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v40); /*0x6d6751*/
@@ -1861,11 +1861,11 @@ int Tactical::DrawOverlay(int * a1, BuildingTypeClass * aP2, int a4, int a5)
   int v23; // edi
   v23 = *(unsigned int *)g_DSurface_Hidden_2; /*0x6dbc77*/
   int v24; // eax
-  LOWORD(v24) = Math::RoundToInt((double)v21 * dbl_B0CD48 + (double)(v21 >= 728) + 0.5); /*0x6dbc83*/
+  (v24) = ((v24) & ~0xFFFF) | ((Math::RoundToInt((double)v21 * dbl_B0CD48 + (double)(v21 >= 728) + 0.5)) & 0xFFFF); /*0x6dbc83*/
   int v28; // [esp-8h] [ebp-38h]
   v28 = 14 - v24; /*0x6dbc99*/
   int v25; // eax
-  LOWORD(v25) = Math::RoundToInt((double)*(int *)v30.__pad_000 * dbl_B0CD48 + (double)v33 + 0.5); /*0x6dbca4*/
+  (v25) = ((v25) & ~0xFFFF) | ((Math::RoundToInt((double)*(int *)v30.__pad_000 * dbl_B0CD48 + (double)v33 + 0.5)) & 0xFFFF); /*0x6dbca4*/
   (*(void (**)(AudioStream *, CellStruct *, unsigned int *, unsigned int *, int, int, int, int))(v23 + 52))( /*0x6dbcc7*/
     v22,
     &DSurface_ViewBounds,
@@ -2175,7 +2175,7 @@ char Tactical_42::Release(int a2, unsigned int * a3)
       }
       *&this->q004 = v4; /*0x6e4917*/
       this->q008 = a2; /*0x6e491f*/
-      BYTE1(this->q00C) = a3 == 0; /*0x6e4922*/
+      (this->q00C) = ((this->q00C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x6e4922*/
       return 1; /*0x6e4928*/
     }
     else
@@ -2278,7 +2278,7 @@ char Tactical_42::SetCapacity(int a2, unsigned int * a3)
     }
     *&this->q004 = v4; /*0x6e4a4a*/
     this->q008 = a2; /*0x6e4a52*/
-    BYTE1(this->q00C) = a3 == 0; /*0x6e4a55*/
+    (this->q00C) = ((this->q00C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x6e4a55*/
   }
   else
   {

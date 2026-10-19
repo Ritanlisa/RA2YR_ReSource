@@ -1355,7 +1355,7 @@ int * globalHelper_0A6010(void * a1, void * a2, void * a3, void * a4, void * a5,
   int v14; // [esp+8h] [ebp-8h] BYREF
 
   v11 = (unsigned __int16 *)Color::ConvertToRGB(a6 + 194, (int)&a6); /*0x4a6028*/
-  LOWORD(v14) = *v11; /*0x4a6036*/
+  (v14) = ((v14) & ~0xFFFF) | ((*v11) & 0xFFFF); /*0x4a6036*/
   BYTE2(v14) = v11->field_2; /*0x4a603e*/
   v12 = RenderTextLabel( /*0x4a60b2*/
           &v14,
@@ -2454,11 +2454,11 @@ int sub_4AEA20(int a1, int a2)
     v5 = (v3 + v2) % 256; /*0x4aea5b*/
     v6 = &byte_885180[3 * v5]; /*0x4aea5c*/
     ++v4; /*0x4aea63*/
-    LOWORD(v5) = (unsigned __int8)((unsigned __int8)v6[2] >> g_BitMask_Red); /*0x4aea83*/
+    (v5) = ((v5) & ~0xFFFF) | (((unsigned __int8)((unsigned __int8)v6[2] >> g_BitMask_Red)) & 0xFFFF); /*0x4aea83*/
     LOWORD(a1) = (unsigned __int8)((unsigned __int8)HIBYTE(*(unsigned short *)v6) >> g_BitMask_Blue); /*0x4aea97*/
     v7 = a1 << g_BitMask_Green; /*0x4aea9b*/
     v8 = v7 | (v5 << g_BitShift_Blue); /*0x4aeaa3*/
-    LOWORD(v7) = (unsigned __int8)((unsigned __int8)*(unsigned short *)v6 >> g_BitShift_Green_0); /*0x4aeab1*/
+    (v7) = ((v7) & ~0xFFFF) | (((unsigned __int8)((unsigned __int8)*(unsigned short *)v6 >> g_BitShift_Green_0)) & 0xFFFF); /*0x4aeab1*/
     a1 = v7 << g_BitShift_Red; /*0x4aeab5*/
     result = a1 | v8; /*0x4aeab7*/
     ++v3; /*0x4aeab9*/
@@ -3353,7 +3353,7 @@ int sub_4A3A10(int * a1, void ** a2, void ** a3, int a4)
       (*(void (**)(int *, int, unsigned int))(v11 + 36))(a1, a4, SWORD3(Src)); /*0x4a3a9e*/
     else
       (*(void (**)(int *, unsigned int, int))(v11 + 40))(a1, SWORD3(Src), 1); /*0x4a3aab*/
-    LOWORD(v10) = v12; /*0x4a3aae*/
+    (v10) = ((v10) & ~0xFFFF) | ((v12) & 0xFFFF); /*0x4a3aae*/
     WORD3(Src) = 0; /*0x4a3ab2*/
   }
   if ( *a2 == *a3 ) /*0x4a3ac1*/
@@ -3562,7 +3562,7 @@ char sub_4A4700()
   HRESULT v1; // eax
   char Buffer[80]; // [esp+Ch] [ebp-50h] BYREF
 
-  LOBYTE(v1) = byte_81FC6C; /*0x4a4700*/
+  (v1) = ((v1) & ~0xFF) | ((byte_81FC6C) & 0xFF); /*0x4a4700*/
   if ( byte_81FC6C ) /*0x4a470a*/
   {
     v1 = g_lpDirectDraw7->lpVtbl->WaitForVerticalBlank(g_lpDirectDraw7, 1, 0); /*0x4a4718*/
@@ -3579,7 +3579,7 @@ char sub_4A4700()
       else
       {
         sprintf(Buffer, "DDRAW.DLL Error code = %08X", v1); /*0x4a474e*/
-        LOBYTE(v1) = MessageBoxA(g_hWnd, Buffer, g_Str_Direct_X, 0x30u); /*0x4a4769*/
+        (v1) = ((v1) & ~0xFF) | ((MessageBoxA(g_hWnd, Buffer, g_Str_Direct_X, 0x30u)) & 0xFF); /*0x4a4769*/
       }
     }
   }
@@ -3923,7 +3923,7 @@ unsigned int * FillRectangle(IUnknown * aP0, IUnknown * aP1, int a3, int a4, int
   int v16; // [esp+8h] [ebp-8h] BYREF
 
   v12 = (unsigned __int16 *)Color::ConvertToRGB(a6 + 194, (int)&a6); /*0x4a6518*/
-  LOWORD(v16) = *v12; /*0x4a6526*/
+  (v16) = ((v16) & ~0xFFFF) | ((*v12) & 0xFFFF); /*0x4a6526*/
   BYTE2(v16) = v12->field_2; /*0x4a652e*/
   v13 = RenderTextLabelWordWrap( /*0x4a65a7*/
           &v16,

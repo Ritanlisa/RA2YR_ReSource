@@ -265,7 +265,7 @@ char Gap2Recv_591740::PlaceMapSeedCityArea(void* a2, void* a3, void* a4) {
         do /*0x591ad6*/
         {
           v73 = (unsigned int)Random::State((Random *)&g_MissionQueueFrame.globalVariables[1552]); /*0x591abc*/
-          LOWORD(v46) = Math::RoundToInt((double)v73 * 4.656612874161595e-10); /*0x591ace*/
+          (v46) = ((v46) & ~0xFFFF) | ((Math::RoundToInt((double)v73 * 4.656612874161595e-10)) & 0xFFFF); /*0x591ace*/
         }
         while ( v46 > 1 ); /*0x591ad6*/
         v47 = MapSeed_field_0x0C > 0; /*0x591adc*/
@@ -1382,12 +1382,12 @@ void Gap2Recv_594870::PlaceRandomWaypoints(int a2) {
   do /*0x5948f1*/
   {
     v21 = (unsigned int)Random::State((Random *)&g_MissionQueueFrame.globalVariables[1552]); /*0x5948d7*/
-    LOWORD(v3) = Math::RoundToInt((double)v21 * 6.984919311242392e-10); /*0x5948e9*/
+    (v3) = ((v3) & ~0xFFFF) | ((Math::RoundToInt((double)v21 * 6.984919311242392e-10)) & 0xFFFF); /*0x5948e9*/
   }
   while ( v3 > 2 ); /*0x5948f1*/
   NeedsSaveOrLink = ((unsigned int *)this)[0]; /*0x5948f3*/
   (v21) = ((v21) & 0xFFFFFFFF00000000ull) | ((0) & 0xFFFFFFFFull); /*0x5948f6*/
-  for ( i = v3 + 12 * (unsigned int)NeedsSaveOrLink + 3 * (unsigned int)NeedsSaveOrLink; v28 < i; LODWORD(v21) = v21 + 1 ) /*0x59490a*/
+  for ( i = v3 + 12 * (unsigned int)NeedsSaveOrLink + 3 * (unsigned int)NeedsSaveOrLink; v28 < i; (v21) = ((v21) & 0xFFFFFFFF00000000ull) | ((v21 + 1) & 0xFFFFFFFFull)) /*0x59490a*/
   {
     if ( (int)v21 >= 300 ) /*0x594918*/
       break; /*0x594918*/
@@ -1397,7 +1397,7 @@ void Gap2Recv_594870::PlaceRandomWaypoints(int a2) {
     do /*0x59495c*/
     {
       v23 = (unsigned int)Random::State((Random *)&g_MissionQueueFrame.globalVariables[1552]); /*0x59493f*/
-      LOWORD(v7) = Math::RoundToInt((double)v23 * v24 * 2.328306437080797e-10); /*0x594955*/
+      (v7) = ((v7) & ~0xFFFF) | ((Math::RoundToInt((double)v23 * v24 * 2.328306437080797e-10)) & 0xFFFF); /*0x594955*/
     }
     while ( v7 > (unsigned int)v6 ); /*0x59495c*/
     *(unsigned int *)v20 = *(unsigned int *)(this->fallRate + 4 * v7); /*0x594967*/

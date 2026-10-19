@@ -106,7 +106,7 @@ AbstractClass * * MSFont_18::SetCapacity8(int a2, unsigned int * a3)
     }
     *&this->q004 = v5; /*0x5d5666*/
     this->m_8 = v3; /*0x5d566c*/
-    BYTE1(this->m_C) = a3 == 0; /*0x5d566f*/
+    (this->m_C) = ((this->m_C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x5d566f*/
   }
   else
   {
@@ -256,7 +256,7 @@ char MSFont_18::Release(int a2, unsigned int * a3)
       }
       *&this->q004 = v4; /*0x5d5217*/
       this->m_8 = a2; /*0x5d521f*/
-      BYTE1(this->m_C) = a3 == 0; /*0x5d5222*/
+      (this->m_C) = ((this->m_C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x5d5222*/
       return 1; /*0x5d5228*/
     }
     else
@@ -355,7 +355,7 @@ char MSFont_18::SetCapacity(int a2, unsigned int * a3)
     }
     *&this->q004 = v4; /*0x5d534a*/
     this->m_8 = a2; /*0x5d5352*/
-    BYTE1(this->m_C) = a3 == 0; /*0x5d5355*/
+    (this->m_C) = ((this->m_C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x5d5355*/
   }
   else
   {

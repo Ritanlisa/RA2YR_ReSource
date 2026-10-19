@@ -834,7 +834,7 @@ LABEL_48:
       {
         v56 = *Block; /*0x56c8f4*/
         v57 = (unsigned __int16)*Block; /*0x56c8fa*/
-        v58 = HIWORD(*Block); /*0x56c8ff*/
+        v58 = (((*Block) >> 16) & 0xFFFF); /*0x56c8ff*/
         *(unsigned short *)(v77[v57] + 2 * v40[v57]) = v58; /*0x56c909*/
         *(unsigned short *)(v77[(unsigned __int16)v58] + 2 * v40[(unsigned __int16)v58]) = v56; /*0x56c920*/
         ++v40[v57]; /*0x56c924*/
@@ -1769,7 +1769,7 @@ LABEL_98:
       {
         if ( ++v50 >= 2 ) /*0x570705*/
         {
-          LOWORD(v32) = v81[0]; /*0x570707*/
+          (v32) = ((v32) & ~0xFFFF) | ((v81[0]) & 0xFFFF); /*0x570707*/
 LABEL_101:
           v53 = this; /*0x57070b*/
           v76[1] = v81[1]; /*0x570717*/
@@ -1999,7 +1999,7 @@ AbstractClass * * Terrain::RecursiveModify(IUnknown * aP1)
       {
         v26 = HIWORD(g_DDrawSurfaceManager.scenario[(v86 & 7) + 82]) + v84[1]; /*0x5737a2*/
         LOWORD(v83) = LOWORD(g_DDrawSurfaceManager.scenario[(v86 & 7) + 82]) + v25; /*0x5737af*/
-        HIWORD(v83) = v26; /*0x5737b4*/
+        (v83) = ((v83) & ~(0xFFFF << 16)) | (((v26) & 0xFFFF) << 16); /*0x5737b4*/
         (v25) = ((v25) & ~0xFFFF) | ((v83) & 0xFFFF); /*0x5737b9*/
         v27 = v26 << 9; /*0x5737bd*/
         v28 = (__int16)v83 + v27 < 0; /*0x5737c0*/
@@ -2257,7 +2257,7 @@ LABEL_131:
       {
         if ( ++v77 >= 2 ) /*0x573f04*/
         {
-          LOWORD(v38) = v87[0]; /*0x573f06*/
+          (v38) = ((v38) & ~0xFFFF) | ((v87[0]) & 0xFFFF); /*0x573f06*/
 LABEL_135:
           v85[0] = v38; /*0x573f10*/
           v85[1] = v87[1] - 2; /*0x573f20*/
@@ -2383,7 +2383,7 @@ int Terrain::CreateCrater(IUnknown * aP1, void *a2_1, void *a3_1, void *a4_1, vo
       v13 = v12 + LOWORD(g_DDrawSurfaceManager.scenario[(v37 & 7) + 82]); /*0x57685c*/
       LOWORD(a2) = v13; /*0x57685f*/
       HIWORD(a2) = v33 + HIWORD(g_DDrawSurfaceManager.scenario[(v37 & 7) + 82]); /*0x576873*/
-      LOWORD(v12) = v13; /*0x576878*/
+      (v12) = ((v12) & ~0xFFFF) | ((v13) & 0xFFFF); /*0x576878*/
       v14 = SHIWORD(a2) << 9; /*0x57687c*/
       v15 = v13 + v14 < 0; /*0x57687f*/
       v16 = v13 + v14; /*0x57687f*/
@@ -2452,7 +2452,7 @@ int Terrain::CreateCrater(IUnknown * aP1, void *a2_1, void *a3_1, void *a4_1, vo
     }
     if ( (v27 == dword_AA1548 || v27 == dword_AA0740) && *((unsigned char *)v26 + 282) == 12 ) /*0x576a44*/
     {
-      LOBYTE(v10) = CellClass::RecursiveCraterUpdate((CellClass *)this, (__int16 *)&a2, 4, &v38); /*0x576b26*/
+      (v10) = ((v10) & ~0xFF) | ((CellClass::RecursiveCraterUpdate((CellClass *)this, (__int16 *)&a2, 4, &v38)) & 0xFF); /*0x576b26*/
       goto LABEL_51; /*0x576b26*/
     }
     if ( (v27 == g_TerrainSoundConfig /*0x576a6e*/
@@ -2485,7 +2485,7 @@ LABEL_49:
     v21 = v36; /*0x576a9e*/
     a2 = v36; /*0x576aa2*/
   }
-  LOBYTE(v10) = CellClass::RecursiveCraterUpdate((CellClass *)this, (__int16 *)&a2, 2, &v38); /*0x576ab7*/
+  (v10) = ((v10) & ~0xFF) | ((CellClass::RecursiveCraterUpdate((CellClass *)this, (__int16 *)&a2, 2, &v38)) & 0xFF); /*0x576ab7*/
 LABEL_51:
   if ( (unsigned char)v10 ) /*0x576abe*/
   {
@@ -2978,7 +2978,7 @@ void Terrain::PlaceTiberiumTrees(ScenarioClass * aP0, int a2, int a3, char a4)
             fmul ds:dbl_7ED8C0
             fadd ds:dbl_7E1718
           }
-          LOWORD(v30) = Math::RoundToInt(a1); /*0x5a2bb4*/
+          (v30) = ((v30) & ~0xFFFF) | ((Math::RoundToInt(a1)) & 0xFFFF); /*0x5a2bb4*/
         }
         while ( v30 > 3 ); /*0x5a2bbc*/
         sprintf(Buffer, "TIBTRE0%d", (int)v30 % 10); /*0x5a2bd1*/
@@ -3002,7 +3002,7 @@ void Terrain::PlaceTiberiumTrees(ScenarioClass * aP0, int a2, int a3, char a4)
           fild [esp+80h+var_24]
           fmul ds:dbl_7EDA90
         }
-        LOWORD(v33) = Math::RoundToInt(a1); /*0x5a2c38*/
+        (v33) = ((v33) & ~0xFFFF) | ((Math::RoundToInt(a1)) & 0xFFFF); /*0x5a2c38*/
       }
       while ( v33 > 0xB ); /*0x5a2c40*/
       *(unsigned int *)(*(unsigned int *)v55 + 68) = v65 + v33; /*0x5a2c4c*/
@@ -3023,7 +3023,7 @@ LABEL_49:
       v36 = v61 & 7; /*0x5a2c7c*/
       v37 = v5[1] + HIWORD(dword_89F688[v36]); /*0x5a2c95*/
       LOWORD(v62) = *v5 + LOWORD(dword_89F688[v36]); /*0x5a2c99*/
-      HIWORD(v62) = v37; /*0x5a2ca2*/
+      (v62) = ((v62) & ~(0xFFFF << 16)) | (((v37) & 0xFFFF) << 16); /*0x5a2ca2*/
       *(unsigned int *)v55 = v62; /*0x5a2cab*/
       if ( !(unsigned __int8)LayerClass::IsWithinUsableArea((LayerClass *)&dword_87F7E8, v55, 1) ) /*0x5a2cbc*/
         goto LABEL_67; /*0x5a2cbc*/

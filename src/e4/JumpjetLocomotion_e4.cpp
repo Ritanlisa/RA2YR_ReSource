@@ -703,14 +703,14 @@ void* JumpjetLocomotion::Land()
     v6 = v5 - *&this->u32_28; /*0x54cade*/
     this->JumpjetLocomotion_field_0x74 = 0; /*0x54cae1*/
     *&this->u32_7C = 0; /*0x54cae4*/
-    LOWORD(v7) = Math::RoundToInt(v6); /*0x54cae7*/
+    (v7) = ((v7) & ~0xFFFF) | ((Math::RoundToInt(v6)) & 0xFFFF); /*0x54cae7*/
     v8 = *&this->u32_28 + 1.0; /*0x54caef*/
     v53 = v7; /*0x54caf5*/
     *&this->u32_28 = v8; /*0x54caf9*/
   }
   else
   {
-    LOWORD(v9) = Math::RoundToInt((double)v53 - *&this->u32_28); /*0x54cb05*/
+    (v9) = ((v9) & ~0xFFFF) | ((Math::RoundToInt((double)v53 - *&this->u32_28)) & 0xFFFF); /*0x54cb05*/
     v53 = v9; /*0x54cb0a*/
     v49[0] = *(unsigned short *)ProgressTimer::GetValue(&this->q054, v50) + 11520; /*0x54cb2a*/
     FacingClass::Update(&this->q054, v49); /*0x54cb39*/
@@ -1144,7 +1144,7 @@ void* JumpjetLocomotion::UpdateFacing()
     if ( (double)SLODWORD(v60) >= v14 ) /*0x54d451*/
     {
       v14 = (double)v59 + *&this->q024; /*0x54d469*/
-      LOWORD(v33) = Math::RoundToInt(v14); /*0x54d46c*/
+      (v33) = ((v33) & ~0xFFFF) | ((Math::RoundToInt(v14)) & 0xFFFF); /*0x54d46c*/
       v59 = v33; /*0x54d471*/
     }
     else
@@ -1161,7 +1161,7 @@ LABEL_49:
     if ( (double)SLODWORD(v60) <= v14 ) /*0x54d48b*/
     {
       v14 = (double)v59 - *&this->q024; /*0x54d49b*/
-      LOWORD(v35) = Math::RoundToInt(v14); /*0x54d49e*/
+      (v35) = ((v35) & ~0xFFFF) | ((Math::RoundToInt(v14)) & 0xFFFF); /*0x54d49e*/
       v59 = v35; /*0x54d4a3*/
       v34 = v35; /*0x54d4a7*/
     }
@@ -1205,7 +1205,7 @@ LABEL_50:
   v64 = *v40; /*0x54d567*/
   v65 = v40[1]; /*0x54d56e*/
   v41 = v40[2]; /*0x54d572*/
-  LOWORD(v42) = Math::RoundToInt(v14); /*0x54d575*/
+  (v42) = ((v42) & ~0xFFFF) | ((Math::RoundToInt(v14)) & 0xFFFF); /*0x54d575*/
   LODWORD(v60) = v42; /*0x54d57a*/
   v61 = (double)(*(__int16 *)ProgressTimer::GetValue(&this->q054, &v59) - 0x3FFF) /*0x54d5a2*/
       * -0.00009587672516830327;
@@ -1214,10 +1214,10 @@ LABEL_50:
   v60 = (double)SLODWORD(v60); /*0x54d5b4*/
   v62 = (double)v65; /*0x54d5bc*/
   Math::SinCos(v61); /*0x54d5c0*/
-  LOWORD(v45) = Math::RoundToInt(v14); /*0x54d5cd*/
+  (v45) = ((v45) & ~0xFFFF) | ((Math::RoundToInt(v14)) & 0xFFFF); /*0x54d5cd*/
   LODWORD(v61) = v45; /*0x54d5d4*/
   Math::ArcTan2(COERCE_DOUBLE((((v43 & 0xFFFFFFFFull)) << 32 | (v44 & 0xFFFFFFFFull)))); /*0x54d5d8*/
-  LOWORD(v46) = Math::RoundToInt(v14 * v60 + (double)v64); /*0x54d5e8*/
+  (v46) = ((v46) & ~0xFFFF) | ((Math::RoundToInt(v14 * v60 + (double)v64)) & 0xFFFF); /*0x54d5e8*/
   v47 = *(unsigned int *)this->__pad_C; /*0x54d5f1*/
   v66[1] = LODWORD(v61); /*0x54d5f4*/
   v66[0] = v46; /*0x54d5f8*/

@@ -260,7 +260,7 @@ LABEL_158:
       PlayerColorScheme = SessionClass::GetPlayerColorScheme(v41); /*0x6de0e0*/
       if ( v40 ) /*0x6de0e2*/
       {
-        LOWORD(v43) = Math::RoundToInt(result); /*0x6de0fb*/
+        (v43) = ((v43) & ~0xFFFF) | ((Math::RoundToInt(result)) & 0xFFFF); /*0x6de0fb*/
         v116 = v43; /*0x6de100*/
         StringCSF = GetStringCSF(v40, 0, g_Str_File_TAction_CPP, 1766); /*0x6de115*/
         MessageListClass::AddMessage(&unk_A8BC60, 0, 0, StringCSF, PlayerColorScheme, 16454, v116, 0); /*0x6de122*/
@@ -891,7 +891,7 @@ LABEL_60:
       return result; /*0x6ddb56*/
     case 0x5E:
       v11 = ScenarioClass::Get_Waypoint_Location((char *)dword_A8B230, v120.__pad_C, a1->u32_44); /*0x6dd922*/
-      Coord::Subtract((Coord *)&v120.u32_10, ((__int16)*v11 << 8) + 128, ((__int16)HIWORD(*v11) << 8) + 128, 0); /*0x6dd94e*/
+      Coord::Subtract((Coord *)&v120.u32_10, ((__int16)*v11 << 8) + 128, ((__int16)(((*v11) >> 16) & 0xFFFF) << 8) + 128, 0); /*0x6dd94e*/
       *(unsigned int *)v120.__pad_0 = *(unsigned int *)&v120.u32_10; /*0x6dd95f*/
       *(unsigned int *)&v120.q004 = *(unsigned int *)&v120.u32_14; /*0x6dd967*/
       v120.Coord_field_0x8 = *(unsigned int *)&v120.q018; /*0x6dd971*/

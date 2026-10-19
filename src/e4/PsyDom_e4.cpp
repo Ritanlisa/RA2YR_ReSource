@@ -111,7 +111,7 @@ void PsyDom::Fire()
     do
     {
       v12 = *v11; /*0x53b1bd*/
-      v31[1] = HIWORD(*v11); /*0x53b1c6*/
+      v31[1] = (((*v11) >> 16) & 0xFFFF); /*0x53b1c6*/
       HIWORD(v29) = *(&PsyDom_Coords + 1) + v31[1]; /*0x53b1dd*/
       LOWORD(v29) = PsyDom_Coords + v12; /*0x53b1e2*/
       *(unsigned int *)v31 = v29; /*0x53b1f7*/

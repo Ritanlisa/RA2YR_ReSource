@@ -170,7 +170,7 @@ AbstractClass * * Turret::LoadVoxelTurretAndBarrel()
         v28 = 0; /*0x5f9038*/
         Vector::Clear((int)v27); /*0x5f903f*/
         *(unsigned int *)v26.__tail_0 = &off_7E1668; /*0x5f904b*/
-        LOBYTE(v2) = BufferIOFileClass::Dtor((BufferIOFileClass *)&v26); /*0x5f9052*/
+        (v2) = ((v2) & ~0xFF) | ((BufferIOFileClass::Dtor((BufferIOFileClass *)&v26)) & 0xFF); /*0x5f9052*/
       }
     }
   }

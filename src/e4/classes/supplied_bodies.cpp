@@ -1084,7 +1084,7 @@ LABEL_44:
     {
       BuildingClass::DrawSelectionBlip(v6, v31, v58, v45, v60.Coord3D_field_0x04); /*0x63bcda*/
     }
-    LOBYTE(updated) = DSurface::DrawMarker((DSurface *)v6, v45, v60.Coord3D_field_0x04); /*0x63bce7*/
+    (updated) = ((updated) & ~0xFF) | ((DSurface::DrawMarker((DSurface *)v6, v45, v60.Coord3D_field_0x04)) & 0xFF); /*0x63bce7*/
     return updated; /*0x63bcf6*/
   }
   (updated) = ((updated) & ~0xFF) | ((v53) & 0xFF); /*0x63bcf7*/
@@ -1683,7 +1683,7 @@ int ScriptAction::ExecuteMissionCmd()
       v9[26],
       v10);
     qmemcpy(v9, v14, sizeof(v9)); /*0x6ffca4*/
-    LOWORD(v10) = v15; /*0x6ffca6*/
+    (v10) = ((v10) & ~0xFFFF) | ((v15) & 0xFFFF); /*0x6ffca6*/
     (v10) = ((v10) & ~(0xFF << 16)) | (((v16) & 0xFF) << 16); /*0x6ffca8*/
     Object_Helper_637DD0( /*0x6ffca9*/
       v9[0],

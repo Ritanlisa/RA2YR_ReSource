@@ -430,7 +430,7 @@ int DropListClass::Open(char a2, unsigned int *a3, char *a4) {
       LOBYTE(this->DropListClass_field_0x48) = 1; /*0x4b5148*/
     }
   }
-  LOWORD(v12) = (unsigned short)a4; /*0x4b514d*/
+  (v12) = ((v12) & ~0xFFFF) | (((unsigned short)a4) & 0xFFFF); /*0x4b514d*/
   if ( a4 == &this->u32_B0 ) /*0x4b5159*/
   {
     DropListClass_field_0x38 = this->DropListClass_field_0x38; /*0x4b5160*/
@@ -928,10 +928,10 @@ int TauntCommandClass::Do(int a1) {
   unsigned int v23; // [esp+3Dh] [ebp-197h]
   int v24; // [esp+41h] [ebp-193h]
 
-  LOBYTE(Time) = dword_A8B238; /*0x536350*/
+  (Time) = ((Time) & ~0xFF) | ((dword_A8B238) & 0xFF); /*0x536350*/
   if ( *(unsigned int *)&dword_A8B238 == 3 || *(unsigned int *)&dword_A8B238 == 4 ) /*0x536366*/
   {
-    LOBYTE(Time) = dword_A8B538[0]; /*0x53636c*/
+    (Time) = ((Time) & ~0xFF) | ((dword_A8B538[0]) & 0xFF); /*0x53636c*/
     if ( !dword_A8B538[0] ) /*0x536373*/
     {
       Time = timeGetTime(); /*0x536379*/
@@ -2560,7 +2560,7 @@ int MessageListClass::AddMessage(void* a1, int a2, void* a3, int a4, int a5, int
     MessageCount = this->MessageCount; /*0x5d3cb3*/
     for ( i = 0; MessageCount; MessageCount = (*(int (**)(int))(*(unsigned int *)MessageCount + 4))(MessageCount) ) /*0x5d3cb3*/
       ++i; /*0x5d3cbf*/
-    if ( BYTE1(this->MessageTimer[1]) && BYTE2(this->MessageTimer[1]) ) /*0x5d3cce*/
+    if ( this->MessageTimer[2] && this->MessageTimer[3] ) /*0x5d3cce*/
       ++i; /*0x5d3cd5*/
     if ( i + 1 > this->TextColorIndex ) /*0x5d3cdc*/
     {
@@ -4219,7 +4219,7 @@ int SidebarClass::UpdateCameoProductionState(void* a1) {
     if ( a1 ) /*0x6a5f3a*/
     {
       v10 = (*(int (**)(unsigned int *))(*a1 + 132))(a1); /*0x6a5f4b*/
-      LOBYTE(v3) = (unsigned char)MEMORY[0xA83D4C]; /*0x6a5f4f*/
+      (v3) = ((v3) & ~0xFF) | (((unsigned char)MEMORY[0xA83D4C]) & 0xFF); /*0x6a5f4f*/
       if ( MEMORY[0xA83D4C] ) /*0x6a5f56*/
       {
         v5 = (*(int (**)(unsigned int *))(*a1 + 44))(a1); /*0x6a5f64*/
@@ -4252,24 +4252,24 @@ int SidebarClass::UpdateCameoProductionState(void* a1) {
         v7 = this->u32_539C; /*0x6a5fd3*/
         if ( v3 == v7 ) /*0x6a5fdb*/
         {
-          LOBYTE(v3) = HouseClass::ShouldDisableCameo(MEMORY[0xA83D4C], v10); /*0x6a5fe8*/
+          (v3) = ((v3) & ~0xFF) | ((HouseClass::ShouldDisableCameo(MEMORY[0xA83D4C], v10)) & 0xFF); /*0x6a5fe8*/
           if ( (unsigned char)v3 ) /*0x6a5fef*/
           {
             v8 = this->u32_539C; /*0x6a5ff5*/
             this->u32_53A6 = 1; /*0x6a5ffb*/
             *(unsigned char *)((char *)this + 3988 * v8 + 5504) = 1; /*0x6a6015*/
             MapClass::MarkForRedraw(&dword_87F7E8, 0); /*0x6a601c*/
-            LOBYTE(v3) = (unsigned char)MEMORY[0xA8ED84]; /*0x6a6021*/
+            (v3) = ((v3) & ~0xFF) | (((unsigned char)MEMORY[0xA8ED84]) & 0xFF); /*0x6a6021*/
             if ( this->u32_53A0 <= (int)MEMORY[0xA8ED84] ) /*0x6a602e*/
             {
-              LOBYTE(v3) = (unsigned char)MEMORY[0xA8ED84] + 2; /*0x6a6030*/
+              (v3) = ((v3) & ~0xFF) | (((unsigned char)MEMORY[0xA8ED84] + 2) & 0xFF); /*0x6a6030*/
               this->u32_53A0 = MEMORY[0xA8ED84] + 1; /*0x6a6033*/
             }
           }
         }
         else if ( v5 == 6 ) /*0x6a6043*/
         {
-          LOBYTE(v3) = *(unsigned char *)(a1[328] + 5835); /*0x6a604b*/
+          (v3) = ((v3) & ~0xFF) | ((*(unsigned char *)(a1[328] + 5835)) & 0xFF); /*0x6a604b*/
           if ( (unsigned char)v3 ) /*0x6a6053*/
           {
             if ( v7 == 3 ) /*0x6a6058*/
@@ -4277,10 +4277,10 @@ int SidebarClass::UpdateCameoProductionState(void* a1) {
               this->u32_53A6 = 1; /*0x6a605a*/
               this->u32_443C = 1; /*0x6a6067*/
               MapClass::MarkForRedraw(&dword_87F7E8, 0); /*0x6a606d*/
-              LOBYTE(v3) = (unsigned char)MEMORY[0xA8ED84]; /*0x6a6072*/
+              (v3) = ((v3) & ~0xFF) | (((unsigned char)MEMORY[0xA8ED84]) & 0xFF); /*0x6a6072*/
               if ( this->u32_53A0 <= (int)MEMORY[0xA8ED84] ) /*0x6a607f*/
               {
-                LOBYTE(v3) = (unsigned char)MEMORY[0xA8ED84] + 2; /*0x6a6081*/
+                (v3) = ((v3) & ~0xFF) | (((unsigned char)MEMORY[0xA8ED84] + 2) & 0xFF); /*0x6a6081*/
                 this->u32_53A0 = MEMORY[0xA8ED84] + 1; /*0x6a6084*/
               }
             }

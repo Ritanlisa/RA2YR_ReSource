@@ -254,7 +254,7 @@ UnitClass::UnitClass() noexcept
     default:
 LABEL_9:
       MissionControl = MissionClass::GetMissionControl((MissionClass *)this); /*0x41525a*/
-      LOWORD(v8) = Math::RoundToInt(*((double *)MissionControl + 2) * 900.0); /*0x41526a*/
+      (v8) = ((v8) & ~0xFFFF) | ((Math::RoundToInt(*((double *)MissionControl + 2) * 900.0)) & 0xFFFF); /*0x41526a*/
       return v8 + Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2);
   }
 
@@ -966,7 +966,7 @@ LABEL_7:
     if ( !this->movementDestination ) /*0x738d92*/
     {
       v6 = (unsigned int *)(*((int (**)(UnitClass *, unsigned char *))this->ptr_0 + 18))(this, v33); /*0x738da7*/
-      LOWORD(v29) = *v6 / 256; /*0x738dbf*/
+      (v29) = ((v29) & ~0xFFFF) | ((*v6 / 256) & 0xFFFF); /*0x738dbf*/
       HIWORD(v29) = v6[1] / 256; /*0x738dd7*/
       *(unsigned int *)v28 = v29; /*0x738de4*/
       v7 = CellStruct::Add((CellStruct *)v28, v31, &g_DDrawSurfaceManager.scenario[89]); /*0x738de9*/
@@ -1030,7 +1030,7 @@ LABEL_7:
           v22 = (unsigned short *)(*((int (**)(UnitClass *, unsigned char *))this->ptr_0 + 110))(this, v32); /*0x7392d8*/
           v23 = v22[1] + *((unsigned short *)v21 + 1); /*0x7392e8*/
           LOWORD(v29) = *v22 + *(unsigned short *)v21; /*0x7392ed*/
-          HIWORD(v29) = v23; /*0x7392f8*/
+          (v29) = ((v29) & ~(0xFFFF << 16)) | (((v23) & 0xFFFF) << 16); /*0x7392f8*/
           *(unsigned int *)v31 = v29; /*0x739308*/
           v28[0] = LOWORD(g_DDrawSurfaceManager.scenario[89]) + v29; /*0x73930e*/
           v28[1] = HIWORD(g_DDrawSurfaceManager.scenario[89]) + v23; /*0x739313*/
@@ -1402,7 +1402,7 @@ int UnitClass::SimpleDeployerUndeploy()
       v13 = this->ptr_0; /*0x739e9c*/
       v19 = this->location[2]; /*0x739ea1*/
       v14 = (*(int (**)(UnitClass *))(v13 + 132))(this); /*0x739ea5*/
-      LOBYTE(v2) = (unsigned __int8)StartAudioControllerAt(*(unsigned int *)(v14 + 1392), &v17, 0); /*0x739eb3*/
+      (v2) = ((v2) & ~0xFF) | (((unsigned __int8)StartAudioControllerAt(*(unsigned int *)(v14 + 1392), &v17, 0)) & 0xFF); /*0x739eb3*/
     }
   }
   return v2; /*0x739eb8*/

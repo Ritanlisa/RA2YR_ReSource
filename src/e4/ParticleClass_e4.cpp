@@ -101,13 +101,13 @@ void ParticleClass::DrawParticle(int * a2, int * a3)
                   BYTE2(v28[0]) = v21; /*0x62d15a*/
                   double v22 = 1.0 - *&this->q0B8; // st7 /*0x62d16d*/
                   int v23; // eax
-                  LOWORD(v23) = Math::RoundToInt(v22); /*0x62d1ac*/
+                  (v23) = ((v23) & ~0xFFFF) | ((Math::RoundToInt(v22)) & 0xFFFF); /*0x62d1ac*/
                   int v24 = v23; // esi /*0x62d1c9*/
                   int v25; // eax
-                  LOWORD(v25) = Math::RoundToInt(v22); /*0x62d1e1*/
+                  (v25) = ((v25) & ~0xFFFF) | ((Math::RoundToInt(v22)) & 0xFFFF); /*0x62d1e1*/
                   int v26 = v25; // ebp /*0x62d1ea*/
                   int v27; // eax
-                  LOWORD(v27) = Math::RoundToInt(v22); /*0x62d215*/
+                  (v27) = ((v27) & ~0xFFFF) | ((Math::RoundToInt(v22)) & 0xFFFF); /*0x62d215*/
                   if ( v14 < 127 ) /*0x62d21f*/
                   {
                     v24 = (v14 * v24) >> 7; /*0x62d22a*/

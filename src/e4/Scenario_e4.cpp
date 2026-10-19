@@ -206,9 +206,9 @@ int Scenario::ReadTeams()
               else
               {
                 v10 = strtok(0, Delimiter); /*0x44f92e*/
-                LOWORD(v69) = atoi(v10); /*0x44f940*/
+                (v69) = ((v69) & ~0xFFFF) | ((atoi(v10)) & 0xFFFF); /*0x44f940*/
                 v11 = strtok(0, Delimiter); /*0x44f945*/
-                HIWORD(v69) = atoi(v11); /*0x44f950*/
+                (v69) = ((v69) & ~(0xFFFF << 16)) | (((atoi(v11)) & 0xFFFF) << 16); /*0x44f950*/
                 v12 = v69; /*0x44f955*/
               }
               v59 = v12; /*0x44f999*/
@@ -274,7 +274,7 @@ int Scenario::ReadTeams()
                   if ( v61 >= 256 ) /*0x44fb7e*/
                     v61 = 256; /*0x44fb80*/
                   v32 = v29->Type; /*0x44fb88*/
-                  LOWORD(v33) = Math::RoundToInt((double)v61 * 0.00390625 * (double)v32->Strength); /*0x44fb9a*/
+                  (v33) = ((v33) & ~0xFFFF) | ((Math::RoundToInt((double)v61 * 0.00390625 * (double)v32->Strength)) & 0xFFFF); /*0x44fb9a*/
                   v29->health = v33; /*0x44fb9f*/
                   v34 = v32->Strength; /*0x44fba2*/
                   if ( v33 > v34 - 3 ) /*0x44fbad*/
@@ -771,7 +771,7 @@ LABEL_38:
     if ( NeedsSaveOrLink ) /*0x55b257*/
       goto LABEL_42; /*0x55b257*/
   }
-  LOWORD(v19) = Math::RoundToInt(*(double *)dword_8871E0->ShroudRate * 900.0); /*0x55b259*/
+  (v19) = ((v19) & ~0xFFFF) | ((Math::RoundToInt(*(double *)dword_8871E0->ShroudRate * 900.0)) & 0xFFFF); /*0x55b259*/
   v20 = v65; /*0x55b26a*/
   *p_nextArrayIndex = v15; /*0x55b26e*/
   p_nextArrayIndex->u32_4 = v20; /*0x55b270*/
@@ -798,7 +798,7 @@ LABEL_42:
       if ( v15 - ptr_0 >= ptr_8 ) /*0x55b2fc*/
       {
 LABEL_50:
-        LOWORD(v23) = Math::RoundToInt(*(double *)v13->FogRate * 900.0); /*0x55b304*/
+        (v23) = ((v23) & ~0xFFFF) | ((Math::RoundToInt(*(double *)v13->FogRate * 900.0)) & 0xFFFF); /*0x55b304*/
         v24 = v65; /*0x55b315*/
         v14[129].ptr_0 = v15; /*0x55b319*/
         v14[129].ptr_4 = v24; /*0x55b31b*/
@@ -841,7 +841,7 @@ LABEL_57:
       if ( !(unsigned __int8)PsyDom::IsActive() ) /*0x55b3ab*/
       {
         v31 = *(unsigned int *)&stru_A8E960.random[528]; /*0x55b3d2*/
-        LOWORD(v32) = Math::RoundToInt(*&dword_8871E0->AmbientChangeStep * 900.0); /*0x55b3e4*/
+        (v32) = ((v32) & ~0xFFFF) | ((Math::RoundToInt(*&dword_8871E0->AmbientChangeStep * 900.0)) & 0xFFFF); /*0x55b3e4*/
         v33 = v65; /*0x55b3ef*/
         v34 = dword_A8B230 + 130; /*0x55b3f3*/
         dword_A8B230[130].ptr_0 = v31; /*0x55b3f9*/
@@ -858,7 +858,7 @@ LABEL_57:
     v29->ptr_8 = v28; /*0x55b423*/
 LABEL_65:
     dword_A8B230[378].ptr_8 &= (dword_A8B230[378].ptr_8 <= 0) - 1; /*0x55b426*/
-    LOWORD(v35) = Math::RoundToInt(*&dword_8871E0->CrateRegen * 100.0); /*0x55b453*/
+    (v35) = ((v35) & ~0xFFFF) | ((Math::RoundToInt(*&dword_8871E0->CrateRegen * 100.0)) & 0xFFFF); /*0x55b453*/
     ptr_4 = dword_A8B230[378].ptr_4; /*0x55b45e*/
     if ( dword_A8B230[378].ptr_8 >= ptr_4 ) /*0x55b46c*/
     {
@@ -1458,7 +1458,7 @@ LABEL_40:
 LABEL_58:
     if ( LOBYTE(v17[374].nextArrayIndex) ) /*0x685a38*/
     {
-      if ( BYTE1(v17[205].ptr_4) ) /*0x685a42*/
+      if ( (((v17[205].ptr_4) >> 8) & 0xFF) ) /*0x685a42*/
         Map_Delete_5ADE20((int)v17, (const char *)&v17[7].ptr_C); /*0x685a52*/
       else
         Map_Delete_5ADE20((int)v17, (const char *)&v17->ptr_4); /*0x685a5c*/
@@ -1667,7 +1667,7 @@ LABEL_36:
     if ( v13 ) /*0x686023*/
       (*(void (**)(ObjectClass *, unsigned int))(v13->ptr_0 + 164))(v13, 0); /*0x686028*/
     stru_A8E960.nextScenario[64] = 0; /*0x686035*/
-    LOBYTE(v15) = ChatMessageWOL(0, &g_TypeClass_DefaultString); /*0x68603c*/
+    (v15) = ((v15) & ~0xFF) | ((ChatMessageWOL(0, &g_TypeClass_DefaultString)) & 0xFF); /*0x68603c*/
     return v15; /*0x68604b*/
   }
   dword_A8D57C = (wchar_t *)((char *)dword_A8D57C + 1); /*0x685f62*/
@@ -1751,7 +1751,7 @@ LABEL_40:
   qmemcpy(v33, &stru_A8B250.__pad_0[108], sizeof(v33)); /*0x6861ca*/
   qmemcpy(v34, &stru_A8B250.__pad_0[76], sizeof(v34)); /*0x6861da*/
   qmemcpy(v32, &stru_A8B250.__pad_0[44], sizeof(v32)); /*0x6861ea*/
-  LOBYTE(v15) = InitNetworkGameState(); /*0x6861ec*/
+  (v15) = ((v15) & ~0xFF) | ((InitNetworkGameState()) & 0xFF); /*0x6861ec*/
   if ( (unsigned char)v15 ) /*0x6861f3*/
   {
     *(unsigned int *)&stru_A8B250.__pad_0[36] = v19; /*0x68623a*/
@@ -1798,7 +1798,7 @@ LABEL_65:
     GameResult::CalcScore((GameResult *)&stru_8A38E0); /*0x68639a*/
     if ( *(unsigned int *)&stru_887338.__pad_1C[20] ) /*0x6863a7*/
       Tooltip::Enable(*(Tooltip **)&stru_887338.__pad_1C[20], stru_A8E960.random[12]); /*0x6863af*/
-    LOBYTE(v15) = TacticalMap::Redraw((GScreenClass *)&dword_87F7E8); /*0x6863b9*/
+    (v15) = ((v15) & ~0xFF) | ((TacticalMap::Redraw((GScreenClass *)&dword_87F7E8)) & 0xFF); /*0x6863b9*/
     goto LABEL_60; /*0x6863be*/
   }
   if ( dword_887628 ) /*0x6861fd*/
@@ -1809,7 +1809,7 @@ LABEL_65:
   stru_A8E960.nextScenario[64] = 0; /*0x68620f*/
 LABEL_60:
   if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x68621d*/
-    LOBYTE(v15) = ChatMessageWOL(0, &g_TypeClass_DefaultString); /*0x68622a*/
+    (v15) = ((v15) & ~0xFF) | ((ChatMessageWOL(0, &g_TypeClass_DefaultString)) & 0xFF); /*0x68622a*/
   return v15; /*0x686045*/
 
 }

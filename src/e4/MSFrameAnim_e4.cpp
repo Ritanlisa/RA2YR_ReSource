@@ -310,7 +310,7 @@ char MSFrameAnim::loopAnimation(int a2, unsigned int * a3)
     }
     *&this->__pad_004 = v4; /*0x76a32a*/
     this->m_8 = a2; /*0x76a332*/
-    BYTE1(this->m_C) = a3 == 0; /*0x76a335*/
+    (this->m_C) = ((this->m_C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x76a335*/
   }
   else
   {

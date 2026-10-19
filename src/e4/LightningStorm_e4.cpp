@@ -43,8 +43,8 @@ int LightningStorm::Start(int a1, int a2, int a3, void * a4)
     {
       __int16 v7; // si
       v7 = Random::Range(&dword_A8B230[14].NeedsSaveOrLink, 0, dword_87F918); /*0x539f04*/
-      LOWORD(v12) = Random::Range(&dword_A8B230[14].NeedsSaveOrLink, 0, dword_87F914); /*0x539f1e*/
-      HIWORD(v12) = v7; /*0x539f23*/
+      (v12) = ((v12) & ~0xFFFF) | ((Random::Range(&dword_A8B230[14].NeedsSaveOrLink, 0, dword_87F914)) & 0xFFFF); /*0x539f1e*/
+      (v12) = ((v12) & ~(0xFFFF << 16)) | (((v7) & 0xFFFF) << 16); /*0x539f23*/
     }
     result = a3; /*0x539f3e*/
   }

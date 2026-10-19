@@ -1938,7 +1938,7 @@ void AudioOptionsClass::ApplySettings() {
   if ( v4 >= 1.0 ) /*0x5fb1ba*/
     v4 = 1.0; /*0x5fb1be*/
   this->u32_3C = v4; /*0x5fb1c4*/
-  LOWORD(v5) = Math::RoundToInt(v4 * 255.0); /*0x5fb1cd*/
+  (v5) = ((v5) & ~0xFFFF) | ((Math::RoundToInt(v4 * 255.0)) & 0xFFFF); /*0x5fb1cd*/
   ThemeClass::GetField(v5); /*0x5fb1d4*/
   LOWORD(v6) = Math::RoundToInt(this->u32_3C * 16384.0); /*0x5fb1e2*/
   EndBufferMixer(&g_MixerChannel_Voice->ptr_0, (int)v6); /*0x5fb1ef*/
@@ -2695,7 +2695,7 @@ int * SliderClass::Constructor(int a2, int a3, int a4, int a5, int a6, int a7) {
     v22 = 4; /*0x6b1c80*/
   v23 = (double)this->u32_34 / v20; /*0x6b1c85*/
   this->u32_4C = v22; /*0x6b1c88*/
-  LOWORD(v24) = Math::RoundToInt(v23); /*0x6b1c91*/
+  (v24) = ((v24) & ~0xFFFF) | ((Math::RoundToInt(v23)) & 0xFFFF); /*0x6b1c91*/
   if ( v24 >= SliderClass_field_0x14 - v22 ) /*0x6b1c9c*/
     v24 = SliderClass_field_0x14 - v22; /*0x6b1c9e*/
   this->u32_50 = v24; /*0x6b1ca2*/
@@ -2708,7 +2708,7 @@ int * SliderClass::Constructor(int a2, int a3, int a4, int a5, int a6, int a7) {
   if ( (int)v26 <= 4 ) /*0x6b1cc7*/
     v27 = 4; /*0x6b1cc9*/
   this->u32_4C = v27; /*0x6b1cd0*/
-  LOWORD(v28) = Math::RoundToInt(v23); /*0x6b1cd3*/
+  (v28) = ((v28) & ~0xFFFF) | ((Math::RoundToInt(v23)) & 0xFFFF); /*0x6b1cd3*/
   if ( v28 >= SliderClass_field_0x18 - v27 ) /*0x6b1ce0*/
     v28 = SliderClass_field_0x18 - v27; /*0x6b1ce2*/
   this->u32_50 = v28; /*0x6b1ce4*/
@@ -2763,7 +2763,7 @@ int SliderClass::GetValue(int a2) {
   if ( (int)v5 <= 4 ) /*0x6b1d7e*/
     v6 = 4; /*0x6b1d80*/
   this->u32_4C = v6; /*0x6b1d88*/
-  LOWORD(v7) = Math::RoundToInt(SliderClass_field_0x30); /*0x6b1d8f*/
+  (v7) = ((v7) & ~0xFFFF) | ((Math::RoundToInt(SliderClass_field_0x30)) & 0xFFFF); /*0x6b1d8f*/
   if ( v7 >= SliderClass_field_0x14 - v6 ) /*0x6b1da0*/
     v7 = SliderClass_field_0x14 - v6; /*0x6b1da2*/
   this->u32_50 = v7; /*0x6b1da4*/

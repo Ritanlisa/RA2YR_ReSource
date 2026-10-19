@@ -145,7 +145,7 @@ LABEL_23:
   }
 LABEL_24:
   LOBYTE(v14) = a1; /*0x6614ba*/
-  HIBYTE(v14) = v15; /*0x6614c8*/
+  (v14) = ((v14) & ~(0xFF << 8)) | (((v15) & 0xFF) << 8); /*0x6614c8*/
   *(unsigned short *)a3 = v14; /*0x6614d1*/
   *(unsigned char *)(a3 + 2) = v6; /*0x6614d7*/
   return a3; /*0x6614d4*/
@@ -649,7 +649,7 @@ LABEL_63:
           fstp st
         }
         Math::Sqrt(v136); /*0x6629b2*/
-        LOWORD(v68) = Math::RoundToInt(v1); /*0x6629ba*/
+        (v68) = ((v68) & ~0xFFFF) | ((Math::RoundToInt(v1)) & 0xFFFF); /*0x6629ba*/
         this->CurrentPitch = v68; /*0x6629bf*/
       }
       goto LABEL_111; /*0x6629c2*/
@@ -712,7 +712,7 @@ LABEL_63:
           fstp st
         }
         Math::Sqrt(v137); /*0x662a94*/
-        LOWORD(v81) = Math::RoundToInt(v1); /*0x662a99*/
+        (v81) = ((v81) & ~0xFFFF) | ((Math::RoundToInt(v1)) & 0xFFFF); /*0x662a99*/
         LODWORD(v151) = v81; /*0x662a9e*/
         __asm { fild dword ptr [esp+0B0h+var_94+4] } /*0x662aa5*/
         __asm { fidiv dword ptr [esi+54h] }
@@ -834,7 +834,7 @@ LABEL_63:
           fstp st
         }
         Math::Sqrt(v140); /*0x662c22*/
-        LOWORD(v100) = Math::RoundToInt(v1); /*0x662c2a*/
+        (v100) = ((v100) & ~0xFFFF) | ((Math::RoundToInt(v1)) & 0xFFFF); /*0x662c2a*/
         if ( v100 <= v93 ) /*0x662c31*/
           this->TrailerTimer[2] = 5; /*0x662c33*/
       }
@@ -897,7 +897,7 @@ LABEL_119:
       if ( (_AX & 0x4100) == 0 ) /*0x662e24*/
       {
         __asm { fld qword ptr [esi+44h] } /*0x662e2a*/
-        LOWORD(v120) = Math::RoundToInt(v1); /*0x662e2d*/
+        (v120) = ((v120) & ~0xFFFF) | ((Math::RoundToInt(v1)) & 0xFFFF); /*0x662e2d*/
         _EDI = (char *)this - 4; /*0x662e32*/
         v150 = v120; /*0x662e35*/
         __asm { fild dword ptr [esp+0A8h+var_94] } /*0x662e39*/
@@ -912,7 +912,7 @@ LABEL_119:
         v154 = v124; /*0x662e62*/
         Math::ArcTan2(v144); /*0x662e66*/
         __asm { fmul qword ptr [esp+0B0h+var_94+4] } /*0x662e6b*/
-        LOWORD(v125) = Math::RoundToInt(v1); /*0x662e72*/
+        (v125) = ((v125) & ~0xFFFF) | ((Math::RoundToInt(v1)) & 0xFFFF); /*0x662e72*/
         LODWORD(v157) = v125; /*0x662e7b*/
         v150 = *(__int16 *)ProgressTimer::GetValue((ProgressTimer *)(this->Owner + 904), v164) - 0x3FFF; /*0x662e97*/
         __asm /*0x662e9b*/
@@ -935,7 +935,7 @@ LABEL_119:
           fmul qword ptr [esp+0B0h+var_64+4]
           fsubr [esp+0B0h+var_74+4]
         }
-        LOWORD(v127) = Math::RoundToInt(v1); /*0x662ed0*/
+        (v127) = ((v127) & ~0xFFFF) | ((Math::RoundToInt(v1)) & 0xFFFF); /*0x662ed0*/
         v150 = v127; /*0x662edb*/
         Math::ArcTan2(COERCE_DOUBLE((((v126 & 0xFFFFFFFFull)) << 32 | (v164[1] & 0xFFFFFFFFull)))); /*0x662edf*/
         __asm /*0x662ee4*/
@@ -943,7 +943,7 @@ LABEL_119:
           fmul qword ptr [esp+0B8h+var_64+4]
           fiadd dword ptr [esp+0B8h+var_84+4]
         }
-        LOWORD(v128) = Math::RoundToInt(v1); /*0x662eec*/
+        (v128) = ((v128) & ~0xFFFF) | ((Math::RoundToInt(v1)) & 0xFFFF); /*0x662eec*/
         __asm { fld dword ptr [edi+54h] } /*0x662ef1*/
         v129 = v128; /*0x662efb*/
         __asm { fstp [esp+0B0h+var_B4+4]; double } /*0x662f01*/
@@ -952,7 +952,7 @@ LABEL_119:
         Math::SinCos(v145); /*0x662f12*/
         __asm { fmul qword ptr [esp+0B0h+var_94+4] } /*0x662f17*/
         __asm { fiadd [esp+0A8h+var_78] }
-        LOWORD(v130) = Math::RoundToInt(v1); /*0x662f22*/
+        (v130) = ((v130) & ~0xFFFF) | ((Math::RoundToInt(v1)) & 0xFFFF); /*0x662f22*/
         v160 = v130; /*0x662f27*/
         v158 = v129; /*0x662f31*/
         v159 = v166; /*0x662f3c*/

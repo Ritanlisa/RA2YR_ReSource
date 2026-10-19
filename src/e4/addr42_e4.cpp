@@ -96,9 +96,9 @@ LABEL_5:
         v8 = v6 * (v5 >> 8) * (unsigned __int8)v5 / 32258; /*0x4201ba*/
         if ( v8 > v6 ) /*0x4201be*/
           LOBYTE(v8) = aP0 - 1; /*0x4201c0*/
-        LOBYTE(v9) = 0; /*0x4201c2*/
+        (v9) = ((v9) & ~0xFF) | ((0) & 0xFF); /*0x4201c2*/
         ++v5; /*0x4201c4*/
-        HIBYTE(v9) = v8; /*0x4201c5*/
+        (v9) = ((v9) & ~(0xFF << 8)) | (((v8) & 0xFF) << 8); /*0x4201c5*/
         *v7++ = v9; /*0x4201c7*/
       }
       while ( v5 <= 0xFFFF ); /*0x4201d3*/
@@ -494,7 +494,7 @@ void * ObjectClass::ProductionCompletionCallback(TechnoClass *self)
   LOBYTE(v3) = this->ironCurtainTimer[2]; /*0x424d5f*/
   if ( !(unsigned char)v3 ) /*0x424d67*/
   {
-    LOBYTE(v3) = *(unsigned char *)(this->missionTimer[0] + 855); /*0x424d73*/
+    (v3) = ((v3) & ~0xFF) | ((*(unsigned char *)(this->missionTimer[0] + 855)) & 0xFF); /*0x424d73*/
     if ( (unsigned char)v3 ) /*0x424d7b*/
     {
       v4 = (unsigned int *)(*(int (**)(TechnoClass *, char *))&this->ptr_0->q048)(this, v21); /*0x424d8a*/
@@ -559,7 +559,7 @@ unsigned int * ObjectClass::CreateUnitOnCompletion_addr42(TechnoClass *self)
   int v22[4]; // [esp+20h] [ebp-10h] BYREF
   v2 = (unsigned int *)(*(int (**)(TechnoClass *, int *))(this->vtable0 + 72))(this, v22); /*0x424f12*/
   int v17; // [esp+10h] [ebp-20h]
-  LOWORD(v17) = *v2 / 256; /*0x424f25*/
+  (v17) = ((v17) & ~0xFFFF) | ((*v2 / 256) & 0xFFFF); /*0x424f25*/
   HIWORD(v17) = v2[1] / 256; /*0x424f3e*/
   __int16 v19[2]; // [esp+14h] [ebp-1Ch] BYREF
   *(unsigned int *)v19 = v17; /*0x424f4b*/
@@ -635,7 +635,7 @@ unsigned int * ObjectClass::CreateUnitOnCompletion_addr42(TechnoClass *self)
     {
       unsigned int *v13; // eax
       v13 = (unsigned int *)(*(int (**)(TechnoClass *, int *))(this->vtable0 + 72))(this, v22); /*0x4250bd*/
-      LOBYTE(v11) = StandardCreateUnitAtCoords(v13, v5, v18, 0); /*0x4250c4*/
+      (v11) = ((v11) & ~0xFF) | ((StandardCreateUnitAtCoords(v13, v5, v18, 0)) & 0xFF); /*0x4250c4*/
     }
   }
   return v11; /*0x4250c9*/
@@ -1082,7 +1082,7 @@ AbstractClass * * ObjectClass::sub_426ED0(int a2)
     (v6) = ((v6) & ~(0xFFFF << 16)) | (((0) & 0xFFFF) << 16); /*0x426ef7*/
     if ( *(unsigned __int16 *)i <= a2 ) /*0x426efe*/
     {
-      LOWORD(v6) = *(unsigned short *)i; /*0x426ef9*/
+      (v6) = ((v6) & ~0xFFFF) | ((*(unsigned short *)i) & 0xFFFF); /*0x426ef9*/
       if ( v6 + *((unsigned __int16 *)i + 1) > a2 ) /*0x426f0a*/
         break; /*0x426f0a*/
     }
@@ -1504,7 +1504,7 @@ void * globalHelper_02AA90(int a1, DynamicVectorClass_uint * aP1)
     atexit(nullsub_4); /*0x42aaac*/
   }
   v2 = a1; /*0x42aab7*/
-  LOWORD(v3) = Math::RoundToInt(*(float *)(a1 + 8)); /*0x42aabf*/
+  (v3) = ((v3) & ~0xFFFF) | ((Math::RoundToInt(*(float *)(a1 + 8))) & 0xFFFF); /*0x42aabf*/
   v4 = aP1; /*0x42aac4*/
   dword_89A2DC = v3; /*0x42aac8*/
   dword_89A2E0 = *(unsigned int *)(a1 + 12); /*0x42aad7*/
@@ -2852,9 +2852,9 @@ unsigned int * ObjectClass::sub_4202F0(int a2)
     if ( v5 > v3 ) /*0x420333*/
       LOBYTE(v5) = a2 - 1; /*0x420335*/
     __int16 v6; // ax
-    LOBYTE(v6) = 0; /*0x420337*/
+    (v6) = ((v6) & ~0xFF) | ((0) & 0xFF); /*0x420337*/
     ++v2; /*0x420339*/
-    HIBYTE(v6) = v5; /*0x42033a*/
+    (v6) = ((v6) & ~(0xFF << 8)) | (((v5) & 0xFF) << 8); /*0x42033a*/
     LOWORD(v4->AbstractClass) = v6; /*0x42033c*/
     v4 = &v4->ptr_2; /*0x420340*/
   }
@@ -3310,7 +3310,7 @@ int ObjectClass::sub_426E80(int a2)
     (v5) = ((v5) & ~(0xFFFF << 16)) | (((0) & 0xFFFF) << 16); /*0x426ea6*/
     if ( *(unsigned __int16 *)i <= a2 ) /*0x426ead*/
     {
-      LOWORD(v5) = *(unsigned short *)i; /*0x426ea8*/
+      (v5) = ((v5) & ~0xFFFF) | ((*(unsigned short *)i) & 0xFFFF); /*0x426ea8*/
       if ( v5 + *((unsigned __int16 *)i + 1) > a2 ) /*0x426eb9*/
         break; /*0x426eb9*/
     }
@@ -3344,7 +3344,7 @@ unsigned short ObjectClass::sub_426FD0(int a2)
         (v8) = ((v8) & ~(0xFFFF << 16)) | (((0) & 0xFFFF) << 16); /*0x426ff9*/
         if ( *(unsigned __int16 *)i <= a2 ) /*0x427000*/
         {
-          LOWORD(v8) = *(unsigned short *)i; /*0x426ffb*/
+          (v8) = ((v8) & ~0xFFFF) | ((*(unsigned short *)i) & 0xFFFF); /*0x426ffb*/
           if ( v8 + *((unsigned __int16 *)i + 1) > a2 ) /*0x42700c*/
             break; /*0x42700c*/
         }

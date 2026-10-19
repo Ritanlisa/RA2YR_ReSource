@@ -264,7 +264,7 @@ char Mission_e4::ProcessUnitMissionAI()
   if ( v4 ) /*0x520fb7*/
   {
     v5 = (unsigned int *)(*(int (**)(int, char *, Mission *))(*(unsigned int *)v4 + 76))(v4, v25, this); /*0x520fc5*/
-    LOWORD(v22) = *v5 / 256; /*0x520fd8*/
+    (v22) = ((v22) & ~0xFFFF) | ((*v5 / 256) & 0xFFFF); /*0x520fd8*/
     HIWORD(v22) = v5[1] / 256; /*0x520fec*/
     LOBYTE(v5) = this->__pad_5B8[292]; /*0x520ff1*/
     *(unsigned int *)v23 = v22; /*0x520ffd*/
@@ -520,7 +520,7 @@ char Mission_e4::AssignTeamMemberMissions(ScriptClass * aP1, int a3)
                   v11 = (unsigned int *)(*(int (**)(unsigned int, unsigned char *))(**&this->ptr_34 + 72))( /*0x6ed9a8*/
                                     this->ptr_34,
                                     v21);
-                  LOWORD(v22) = *v11 / 256; /*0x6ed9bb*/
+                  (v22) = ((v22) & ~0xFFFF) | ((*v11 / 256) & 0xFFFF); /*0x6ed9bb*/
                   HIWORD(v22) = v11[1] / 256; /*0x6ed9d7*/
                   v16 = v22; /*0x6ed9e4*/
                   v12 = (int *)globalHelper_0DA020(v18, &v16); /*0x6ed9e8*/

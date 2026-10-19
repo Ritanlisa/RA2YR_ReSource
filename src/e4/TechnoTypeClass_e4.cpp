@@ -1039,7 +1039,7 @@ int TechnoTypeClass::ComputeValueSimple(float * a2)
   TechnoTypeClass *v6; // [esp+14h] [ebp+4h]
   v6 = (TechnoTypeClass *)(*(int (**)(TechnoTypeClass *))(this->ObjectTypeClass[0] + 172))(this); /*0x711f31*/
   int result; // eax
-  LOWORD(result) = Math::RoundToInt((double)(int)v6 * ThreatMultiplier * v5); /*0x711f41*/
+  (result) = ((result) & ~0xFFFF) | ((Math::RoundToInt((double)(int)v6 * ThreatMultiplier * v5)) & 0xFFFF); /*0x711f41*/
   return result; /*0x711f46*/
 
 }
@@ -1063,21 +1063,21 @@ int TechnoTypeClass::ComputeValue(void * a2, float a3)
     ThreatMultiplier = TechnoTypeClass::GetThreatMultiplier((float *)a2, this); /*0x711fac*/
     if ( *&this->Soylent ) /*0x711fa6*/
     {
-      LOWORD(result) = Math::RoundToInt((double)*&this->u32_98 * v12); /*0x711fc0*/
+      (result) = ((result) & ~0xFFFF) | ((Math::RoundToInt((double)*&this->u32_98 * v12)) & 0xFFFF); /*0x711fc0*/
     }
     else
     {
       TechnoTypeClass *v11; // [esp+14h] [ebp+4h]
       v11 = (TechnoTypeClass *)(*(int (**)(TechnoTypeClass *))(this->ObjectTypeClass[0] + 172))(this); /*0x711fd7*/
       int v6; // eax
-      LOWORD(v6) = Math::RoundToInt((double)(int)v11 * ThreatMultiplier * v12); /*0x711fe7*/
+      (v6) = ((v6) & ~0xFFFF) | ((Math::RoundToInt((double)(int)v11 * ThreatMultiplier * v12)) & 0xFFFF); /*0x711fe7*/
       int v7 = v6; // esi /*0x711fec*/
       int v13; // [esp+18h] [ebp+8h]
       v13 = v6; /*0x711ff0*/
       if ( (unsigned __int8)House::IsCurrentPlayer((House *)a2) ) /*0x711ff4*/
       {
         int v8; // eax
-        LOWORD(v8) = Math::RoundToInt((double)v13 * v9); /*0x712005*/
+        (v8) = ((v8) & ~0xFFFF) | ((Math::RoundToInt((double)v13 * v9)) & 0xFFFF); /*0x712005*/
         return v8; /*0x71200a*/
       }
       return v7; /*0x71200c*/
@@ -1087,7 +1087,7 @@ int TechnoTypeClass::ComputeValue(void * a2, float a3)
   {
     int v14; // [esp+18h] [ebp+8h]
     v14 = (*(int (**)(TechnoTypeClass *))(this->ObjectTypeClass[0] + 172))(this); /*0x712020*/
-    LOWORD(result) = Math::RoundToInt((double)v14 * v9); /*0x71202c*/
+    (result) = ((result) & ~0xFFFF) | ((Math::RoundToInt((double)v14 * v9)) & 0xFFFF); /*0x71202c*/
   }
   return result; /*0x711fc5*/
 

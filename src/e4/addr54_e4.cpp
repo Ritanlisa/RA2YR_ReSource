@@ -102,7 +102,7 @@ AbstractClass * * E4Recv_541170::sub_541170(int a2, int a3, int a4, int a5)
     if ( ++v7 >= MEMORY[0xA8DA84] ) /*0x5411ad*/
       return 0; /*0x5411ad*/
   }
-  LOWORD(v5) = *(&dword_A8E2B2 + v7); /*0x5411be*/
+  (v5) = ((v5) & ~0xFFFF) | ((*(&dword_A8E2B2 + v7)) & 0xFFFF); /*0x5411be*/
   v10 = (unsigned int *)(MEMORY[0xA8DA78][v7] + 40); /*0x5411c6*/
   vtable1 = (char)this->ptr_4; /*0x5411c9*/
   v12 = a4; /*0x5411cc*/
@@ -867,7 +867,7 @@ LABEL_26:
           if ( v65 ) /*0x54629f*/
             v68 = (unsigned __int8)(v65 + 96); /*0x5462a8*/
           else
-            LOBYTE(v68) = 0; /*0x5462ae*/
+            (v68) = ((v68) & ~0xFF) | ((0) & 0xFF); /*0x5462ae*/
           v35 = v69 + 1; /*0x5462be*/
           sprintf(v145, "%02d", v69 + 1); /*0x5462c8*/
           strcat(v145, (const char *)&v68); /*0x5462f5*/
@@ -1235,7 +1235,7 @@ void MapClass_LoadIsometricTiles(char a1, char a2)
         v6 = (unsigned int *)*((unsigned int *)MEMORY[0xA8ED2C] + v4); /*0x546e07*/
         if ( (int)v6[188] > 1 ) /*0x546e11*/
         {
-          LOBYTE(inited) = *(unsigned char *)(i + 282); /*0x546e13*/
+          (inited) = ((inited) & ~0xFF) | ((*(unsigned char *)(i + 282)) & 0xFF); /*0x546e13*/
           v7 = inited; /*0x546e1d*/
           v8 = (unsigned int *)(*(int (**)(unsigned int))(*v6 + 156))(*((unsigned int *)MEMORY[0xA8ED2C] + v4)); /*0x546e1f*/
           if ( v8 && (v9 = v8[v7 % (*v8 * v8[1]) + 4]) != 0 && (*(unsigned int *)(v9 + 36) & 4) != 0 ) /*0x546e48*/
@@ -1826,7 +1826,7 @@ AbstractClass * * E4Recv_54BA30::UpdateFootMovement()
       Math::CalcAngle(v28, v29); /*0x54bc26*/
       __asm { fsub ds:dbl_7E2820 } /*0x54bc2b*/
       __asm { fmul ds:dbl_7E2818 }
-      LOWORD(v33) = Math::RoundToInt(result); /*0x54bc3f*/
+      (v33) = ((v33) & ~0xFFFF) | ((Math::RoundToInt(result)) & 0xFFFF); /*0x54bc3f*/
       v32 = v33; /*0x54bc50*/
       FacingClass::Update(&_ESI->u32_54, &v32); /*0x54bc54*/
       int Member; // eax

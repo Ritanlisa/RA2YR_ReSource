@@ -1407,8 +1407,8 @@ unsigned short * FrameSnapshot::InitMax(int a2)
   v4 = a2; /*0x4c91fb*/
   if ( a2 >= 127 ) /*0x4c9202*/
     v4 = 127; /*0x4c9204*/
-  LOBYTE(v5) = 0; /*0x4c9209*/
-  HIBYTE(v5) = v4; /*0x4c920b*/
+  (v5) = ((v5) & ~0xFF) | ((0) & 0xFF); /*0x4c9209*/
+  (v5) = ((v5) & ~(0xFF << 8)) | (((v4) & 0xFF) << 8); /*0x4c920b*/
   result->u32_14 = v5; /*0x4c920d*/
   return result; /*0x4c9211*/
 
@@ -3071,7 +3071,7 @@ LABEL_75:
     }
   }
   MissionControl = MissionClass::GetMissionControl((MissionClass *)this); /*0x73ef77*/
-  LOWORD(v65) = Math::RoundToInt(*((double *)MissionControl + 2) * 900.0); /*0x73ef87*/
+  (v65) = ((v65) & ~0xFFFF) | ((Math::RoundToInt(*((double *)MissionControl + 2) * 900.0)) & 0xFFFF); /*0x73ef87*/
   return v65 + Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2); /*0x73e62b*/
 
 }
@@ -3844,14 +3844,14 @@ void Voxel_Section::Draw()
       if ( v79 ) /*0x75dcc3*/
       {
         v61 = 0; /*0x75dcc8*/
-        for ( HIBYTE(v81) = 1; v61 < v80; ++v61 ) /*0x75dcd0*/
+        for ( (v81) = ((v81) & ~(0xFF << 8)) | (((1) & 0xFF) << 8); v61 < v80; ++v61 ) /*0x75dcd0*/
           v79[v61] = *((unsigned int *)&_ESI->WarheadTypeClass_field_0x1AC->ptr_0 + v61); /*0x75dcde*/
       }
     }
     else
     {
       v79 = 0; /*0x75dceb*/
-      HIBYTE(v81) = 0; /*0x75dcf2*/
+      (v81) = ((v81) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x75dcf2*/
     }
   }
   p_WarheadTypeClass_field_0x24 = *(unsigned __int8 **)&_ESI->u32_1B8; /*0x75dd01*/

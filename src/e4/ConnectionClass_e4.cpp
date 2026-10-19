@@ -244,7 +244,7 @@ LABEL_40:
           v29[0] = 0; /*0x48c2b0*/
         Debug::Log(); /*0x48c2c6*/
         v26 = *(unsigned int *)&stru_A8E960.nextScenario[172]; /*0x48c2cb*/
-        LOBYTE(v26) = this == *(ModemConnectionClass **)&stru_A8E960.nextScenario[172]; /*0x48c2d7*/
+        (v26) = ((v26) & ~0xFF) | ((this == *(ModemConnectionClass **)&stru_A8E960.nextScenario[172]) & 0xFF); /*0x48c2d7*/
         (*(void (**)(ModemConnectionClass *, __int16 *, int, unsigned int, unsigned int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 36))( /*0x48c2ea*/
           this,
           &v27,
@@ -446,8 +446,8 @@ int ConnectionClass::serviceSendQueue()
       if ( (unsigned int)(v9 - v10) > this->PhoneNumber[4] ) /*0x48c4b7*/
       {
         v11 = *(unsigned int *)&stru_A8E960.nextScenario[172]; /*0x48c4bd*/
-        LOWORD(v10) = *(unsigned short *)(v8 + 32); /*0x48c4c3*/
-        LOBYTE(v11) = this == *(ModemConnectionClass **)&stru_A8E960.nextScenario[172]; /*0x48c4cb*/
+        (v10) = ((v10) & ~0xFFFF) | ((*(unsigned short *)(v8 + 32)) & 0xFFFF); /*0x48c4c3*/
+        (v11) = ((v11) & ~0xFF) | ((this == *(ModemConnectionClass **)&stru_A8E960.nextScenario[172]) & 0xFF); /*0x48c4cb*/
         (*(void (**)(ModemConnectionClass *, unsigned int, unsigned int, unsigned int, unsigned int, int, int))(*(unsigned int *)this->__pad_0 /*0x48c4e2*/
                                                                                                  + 36))(
           this,
@@ -470,7 +470,7 @@ int ConnectionClass::serviceSendQueue()
           if ( v13[2] == 1 ) /*0x48c4f9*/
           {
             v14 = *(unsigned int *)v8; /*0x48c4fb*/
-            LOBYTE(v14) = *(unsigned int *)v8 | 2; /*0x48c4fd*/
+            (v14) = ((v14) & ~0xFF) | ((*(unsigned int *)v8 | 2) & 0xFF); /*0x48c4fd*/
             *(unsigned int *)v8 = v14; /*0x48c4ff*/
           }
         }
@@ -481,7 +481,7 @@ int ConnectionClass::serviceSendQueue()
         {
           v17 = *(unsigned int *)v8; /*0x48c51b*/
           v21 = 1; /*0x48c51d*/
-          LOBYTE(v17) = *(unsigned int *)v8 | 4; /*0x48c525*/
+          (v17) = ((v17) & ~0xFF) | ((*(unsigned int *)v8 | 4) & 0xFF); /*0x48c525*/
           *(unsigned int *)v8 = v17; /*0x48c527*/
         }
         v18 = this->PhoneNumber[6]; /*0x48c529*/
@@ -489,7 +489,7 @@ int ConnectionClass::serviceSendQueue()
         {
           v19 = *(unsigned int *)v8; /*0x48c53d*/
           v21 = 1; /*0x48c53f*/
-          LOBYTE(v19) = *(unsigned int *)v8 | 4; /*0x48c547*/
+          (v19) = ((v19) & ~0xFF) | ((*(unsigned int *)v8 | 4) & 0xFF); /*0x48c547*/
           *(unsigned int *)v8 = v19; /*0x48c549*/
         }
       }

@@ -36,11 +36,11 @@ int Color::ConvertToRGB(int a2, void *a2_1)
   v10[4] = v11; /*0x5174bb*/
   v12 = v2 * (255 - v3 * (255 - v4 % 255) / 0xFFu) / 0xFF; /*0x5174e2*/
   v5 = ((unsigned int)(v4 / 255) > 4 ? -4 : 2) + v4 / 255;
-  LOBYTE(v9) = v10[v5]; /*0x51750f*/
+  (v9) = ((v9) & ~0xFF) | ((v10[v5]) & 0xFF); /*0x51750f*/
   v6 = (v5 > 4 ? -4 : 2) + v5;
   v7 = v6 + (v6 > 4 ? -4 : 2);
   (v6) = ((v6) & ~0xFF) | ((v10[v6]) & 0xFF); /*0x51752c*/
-  HIBYTE(v9) = v10[v7]; /*0x517535*/
+  (v9) = ((v9) & ~(0xFF << 8)) | (((v10[v7]) & 0xFF) << 8); /*0x517535*/
   *(unsigned short *)a2 = v9; /*0x517544*/
   a2->field_2 = v6; /*0x51754a*/
   return a2; /*0x517530*/
@@ -148,14 +148,14 @@ unsigned int * Color::RGBFromFloat(int aP1, float a3, void *a3_1)
 
   double v3 = 1.0 - a3; // st7 /*0x75f547*/
   int v5; // eax
-  LOWORD(v5) = Math::RoundToInt(v3); /*0x75f565*/
+  (v5) = ((v5) & ~0xFFFF) | ((Math::RoundToInt(v3)) & 0xFFFF); /*0x75f565*/
   int v6 = v5; // ebp /*0x75f56d*/
   int v7; // eax
-  LOWORD(v7) = Math::RoundToInt(v3); /*0x75f57a*/
+  (v7) = ((v7) & ~0xFFFF) | ((Math::RoundToInt(v3)) & 0xFFFF); /*0x75f57a*/
   int v10; // [esp+4h] [ebp-8h]
   v10 = v7; /*0x75f582*/
   int v8; // eax
-  LOWORD(v8) = Math::RoundToInt(v3); /*0x75f591*/
+  (v8) = ((v8) & ~0xFFFF) | ((Math::RoundToInt(v3)) & 0xFFFF); /*0x75f591*/
   this->Color_field_00 = v6; /*0x75f59e*/
   this->u32_4 = v10; /*0x75f5a0*/
   this->u32_8 = v8; /*0x75f5a3*/

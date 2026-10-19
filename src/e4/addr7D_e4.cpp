@@ -1954,15 +1954,15 @@ $NORMAL_STATE$1749: /*0x7d2359*/
 LABEL_113:
                 if ( (v55 & 0x8000) != 0 ) /*0x7d26a7*/
                 {
-                  LODWORD(v21) = get_int64_arg_0(&aP2); /*0x7d26ad*/
+                  (v21) = ((v21) & 0xFFFFFFFF00000000ull) | ((get_int64_arg_0(&aP2)) & 0xFFFFFFFFull); /*0x7d26ad*/
                   goto LABEL_123; /*0x7d26b3*/
                 }
                 if ( (v55 & 0x20) != 0 ) /*0x7d26b9*/
                 {
                   if ( (v55 & 0x40) != 0 ) /*0x7d26c3*/
-                    LODWORD(v21) = (__int16)get_int_arg_0(&aP2); /*0x7d26cb*/
+                    (v21) = ((v21) & 0xFFFFFFFF00000000ull) | (((__int16)get_int_arg_0(&aP2)) & 0xFFFFFFFFull); /*0x7d26cb*/
                   else
-                    LODWORD(v21) = (unsigned __int16)get_int_arg_0(&aP2); /*0x7d26d7*/
+                    (v21) = ((v21) & 0xFFFFFFFF00000000ull) | (((unsigned __int16)get_int_arg_0(&aP2)) & 0xFFFFFFFFull); /*0x7d26d7*/
 LABEL_118:
                   v21 = (int)v21; /*0x7d26ce*/
                 }
@@ -1970,7 +1970,7 @@ LABEL_118:
                 {
                   if ( (v55 & 0x40) != 0 ) /*0x7d26e4*/
                   {
-                    LODWORD(v21) = get_int_arg_0(&aP2); /*0x7d26e6*/
+                    (v21) = ((v21) & 0xFFFFFFFF00000000ull) | ((get_int_arg_0(&aP2)) & 0xFFFFFFFFull); /*0x7d26e6*/
                     goto LABEL_118; /*0x7d26ec*/
                   }
                   v21 = (unsigned int)get_int_arg_0(&aP2); /*0x7d26ee*/
@@ -1980,7 +1980,7 @@ LABEL_123:
                 {
                   (v22) = ((v22) & 0xFFFFFFFFull) | ((unsigned long long)((-(int)v21) & 0xFFFFFFFFull) << 32); /*0x7d270b*/
                   (v55) |= ((((1u)) & 0xFF) << 8); /*0x7d270f*/
-                  LODWORD(v22) = (unsigned __int64)-v21 >> 32; /*0x7d2713*/
+                  (v22) = ((v22) & 0xFFFFFFFF00000000ull) | (((unsigned __int64)-v21 >> 32) & 0xFFFFFFFFull); /*0x7d2713*/
                 }
                 else
                 {
@@ -4052,7 +4052,7 @@ copy_start_0:
     goto main_loop_entrance_1; /*0x7d4c6b*/
   while ( 1 ) /*0x7d4c6d*/
   {
-    LOBYTE(v8) = *v7++; /*0x7d4c6d*/
+    (v8) = ((v8) & ~0xFF) | ((*v7++) & 0xFF); /*0x7d4c6d*/
     if ( !(unsigned char)v8 ) /*0x7d4c72*/
       break; /*0x7d4c72*/
     *v6++ = v8; /*0x7d4c74*/
@@ -5227,7 +5227,7 @@ AbstractClass * * __init_ctype()
       v5 = &CPInfo.LeadByte[1]; /*0x7d6b85*/
       do /*0x7d6ba7*/
       {
-        LOBYTE(j) = *v5; /*0x7d6b88*/
+        (j) = ((j) & ~0xFF) | ((*v5) & 0xFF); /*0x7d6b88*/
         if ( !*v5 ) /*0x7d6b88*/
           break; /*0x7d6b8c*/
         v7 = *(v5 - 1); /*0x7d6b8e*/
@@ -8360,7 +8360,7 @@ LABEL_20:
   }
   *(unsigned short *)v24 = 0; /*0x7db325*/
   *(unsigned short *)&v24[10] = v7; /*0x7db32f*/
-  v9 = (int)(77 * (HIBYTE(v7) + 2 * HIBYTE(a2)) + 19728 * v7 - 323162868) >> 16; /*0x7db343*/
+  v9 = (int)(77 * ((((v7) >> 8) & 0xFF) + 2 * HIBYTE(a2)) + 19728 * v7 - 323162868) >> 16; /*0x7db343*/
   *(unsigned long long *)&v24[2] = (((a2 & 0xFFFFFFFFull)) << 32 | ((unsigned int)this & 0xFFFFFFFFull)); /*0x7db346*/
   __multtenpow12(v24, -(__int16)v9, 1); /*0x7db353*/
   if ( *(unsigned short *)&v24[10] >= 0x3FFFu ) /*0x7db361*/
@@ -8611,14 +8611,14 @@ LABEL_36:
   if ( !v20 ) /*0x7db8e5*/
   {
     v22 = (unsigned __int8 *)*v8; /*0x7db8fd*/
-    BYTE1(v22) = BYTE1(*v8) & 0xF3 | 4; /*0x7db902*/
+    BYTE1(v22) = (((*v8) >> 8) & 0xFF) & 0xF3 | 4; /*0x7db902*/
     goto LABEL_54; /*0x7db902*/
   }
   v21 = v20 - 1; /*0x7db8e7*/
   if ( !v21 ) /*0x7db8e8*/
   {
     v22 = (unsigned __int8 *)*v8; /*0x7db8f3*/
-    BYTE1(v22) = BYTE1(*v8) & 0xF3 | 8; /*0x7db8f8*/
+    BYTE1(v22) = (((*v8) >> 8) & 0xFF) & 0xF3 | 8; /*0x7db8f8*/
 LABEL_54:
     *v8 = (unsigned int)v22; /*0x7db905*/
     goto LABEL_56; /*0x7db907*/
@@ -9405,7 +9405,7 @@ LABEL_28:
           switch ( v20 ) /*0x7dc8b9*/
           {
             case 2u: /*0x7dc8b9*/
-              LOWORD(v21) = *(unsigned short *)(v18 + 4); /*0x7dc8c0*/
+              (v21) = ((v21) & ~0xFFFF) | ((*(unsigned short *)(v18 + 4)) & 0xFFFF); /*0x7dc8c0*/
               ++v19; /*0x7dc8c4*/
               v18 += 4; /*0x7dc8c6*/
               goto LABEL_17; /*0x7dc8c6*/
@@ -10013,9 +10013,9 @@ LABEL_116:
               if ( (v56 & 0x20) != 0 ) /*0x7dda0e*/
               {
                 if ( (v56 & 0x40) != 0 ) /*0x7dda18*/
-                  LODWORD(int64_arg_1) = (__int16)get_int_arg_1(&a2); /*0x7dda20*/
+                  (int64_arg_1) = ((int64_arg_1) & 0xFFFFFFFF00000000ull) | (((__int16)get_int_arg_1(&a2)) & 0xFFFFFFFFull); /*0x7dda20*/
                 else
-                  LODWORD(int64_arg_1) = (unsigned __int16)get_int_arg_1(&a2); /*0x7dda2c*/
+                  (int64_arg_1) = ((int64_arg_1) & 0xFFFFFFFF00000000ull) | (((unsigned __int16)get_int_arg_1(&a2)) & 0xFFFFFFFFull); /*0x7dda2c*/
               }
               else
               {
@@ -10024,7 +10024,7 @@ LABEL_116:
                   int64_arg_1 = (unsigned int)get_int_arg_1(&a2); /*0x7dda43*/
                   goto LABEL_126; /*0x7dda43*/
                 }
-                LODWORD(int64_arg_1) = get_int_arg_1(&a2); /*0x7dda3b*/
+                (int64_arg_1) = ((int64_arg_1) & 0xFFFFFFFF00000000ull) | ((get_int_arg_1(&a2)) & 0xFFFFFFFFull); /*0x7dda3b*/
               }
               int64_arg_1 = (int)int64_arg_1; /*0x7dda23*/
             }
@@ -10037,7 +10037,7 @@ LABEL_126:
             {
               (v23) = ((v23) & 0xFFFFFFFFull) | ((unsigned long long)((-(int)int64_arg_1) & 0xFFFFFFFFull) << 32); /*0x7dda60*/
               (v56) |= ((((1u)) & 0xFF) << 8); /*0x7dda64*/
-              LODWORD(v23) = (unsigned __int64)-int64_arg_1 >> 32; /*0x7dda68*/
+              (v23) = ((v23) & 0xFFFFFFFF00000000ull) | (((unsigned __int64)-int64_arg_1 >> 32) & 0xFFFFFFFFull); /*0x7dda68*/
             }
             else
             {
@@ -15009,9 +15009,9 @@ void __multtenpow12(unsigned short * a1, int a2, int a3)
         v6 = &v3[12 * v5]; /*0x7dc14a*/
         if ( *(unsigned short *)v6 >= 0x8000u ) /*0x7dc14d*/
         {
-          LODWORD(v8) = *(unsigned int *)v6; /*0x7dc152*/
+          (v8) = ((v8) & 0xFFFFFFFF00000000ull) | ((*(unsigned int *)v6) & 0xFFFFFFFFull); /*0x7dc152*/
           v7 = v6 + 4; /*0x7dc152*/
-          HIDWORD(v8) = *v7; /*0x7dc153*/
+          (v8) = ((v8) & 0xFFFFFFFFull) | ((unsigned long long)((*v7) & 0xFFFFFFFFull) << 32); /*0x7dc153*/
           v9 = v7[1]; /*0x7dc154*/
           --*(unsigned int *)((char *)&v8 + 2); /*0x7dc155*/
           v6 = (char *)&v8; /*0x7dc158*/

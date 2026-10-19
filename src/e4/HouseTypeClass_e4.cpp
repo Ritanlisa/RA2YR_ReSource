@@ -1299,7 +1299,7 @@ char HouseTypeClass_36::Release(int a2, unsigned int * a3)
     }
     *&this->u32_4 = v4; /*0x5132ba*/
     this->u32_8 = a2; /*0x5132c2*/
-    BYTE1(this->q00C) = a3 == 0; /*0x5132c5*/
+    (this->q00C) = ((this->q00C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x5132c5*/
   }
   else
   {
@@ -1392,7 +1392,7 @@ char HouseTypeClass_36::SetCapacity(int a2, unsigned int * a3)
       }
       *&this->u32_4 = v4; /*0x5134a7*/
       this->u32_8 = a2; /*0x5134af*/
-      BYTE1(this->q00C) = a3 == 0; /*0x5134b2*/
+      (this->q00C) = ((this->q00C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x5134b2*/
       return 1; /*0x5134b8*/
     }
     else
@@ -1508,7 +1508,7 @@ char HouseTypeClass_28::Release(int a2, unsigned int * a3)
     }
     *&this->u32_4 = v4; /*0x51368a*/
     this->u32_8 = a2; /*0x513692*/
-    BYTE1(this->q00C) = a3 == 0; /*0x513695*/
+    (this->q00C) = ((this->q00C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x513695*/
   }
   else
   {

@@ -467,7 +467,7 @@ int E4Recv_491D90::sub_491D90(unsigned char * a1, unsigned char * a2, RLEBlitTra
         v11 = *v14; /*0x491e2f*/
         --v19; /*0x491e31*/
         ++v14; /*0x491e35*/
-        LOBYTE(v11) = *(unsigned char *)(*&this->M4 + v11); /*0x491e36*/
+        (v11) = ((v11) & ~0xFF) | ((*(unsigned char *)(*&this->M4 + v11)) & 0xFF); /*0x491e36*/
         *(v14 - 1) = v11; /*0x491e39*/
       }
       v15 = g_ZBufferDescriptor; /*0x491e40*/
@@ -892,7 +892,7 @@ int E4Recv_496310::sub_496310(int a5, int a2, uint8_t *a4, int a3, int a1, int a
     }
     else
     {
-      LOBYTE(result) = *(unsigned char *)a2++; /*0x49635b*/
+      (result) = ((result) & ~0xFF) | ((*(unsigned char *)a2++) & 0xFF); /*0x49635b*/
       result = (unsigned __int8)result; /*0x496366*/
       v18 -= (unsigned __int8)result; /*0x49636b*/
       v14 += (unsigned __int8)result; /*0x49636d*/
@@ -946,7 +946,7 @@ int E4Recv_4964D0::sub_4964D0(int a5, int a2, uint8_t *a4, int a3, int a1, int a
       m_4 = this->M4; /*0x496536*/
       LOWORD(v12) = this->M8; /*0x496539*/
       ++v14; /*0x496543*/
-      LOWORD(m_4) = *(unsigned short *)(m_4 + 2 * v23) >> 2; /*0x49654a*/
+      (m_4) = ((m_4) & ~0xFFFF) | ((*(unsigned short *)(m_4 + 2 * v23) >> 2) & 0xFFFF); /*0x49654a*/
       v21 = v12 & m_4; /*0x49654e*/
       v22 = 3 * v21; /*0x496550*/
       LOWORD(v21) = *(v14 - 1) >> 2; /*0x496557*/
@@ -956,7 +956,7 @@ int E4Recv_4964D0::sub_4964D0(int a5, int a2, uint8_t *a4, int a3, int a1, int a
     }
     else
     {
-      LOBYTE(result) = *(unsigned char *)a2++; /*0x49651b*/
+      (result) = ((result) & ~0xFF) | ((*(unsigned char *)a2++) & 0xFF); /*0x49651b*/
       result = (unsigned __int8)result; /*0x496526*/
       v18 -= (unsigned __int8)result; /*0x49652b*/
       v14 += (unsigned __int8)result; /*0x49652d*/
@@ -2856,7 +2856,7 @@ unsigned char E4Recv_491740::sub_491740(unsigned char * a1, unsigned char * a2, 
       if ( (unsigned char)result ) /*0x49175f*/
       {
         result = *(unsigned __int8 *)(*&this->M4 + (unsigned __int8)result); /*0x491770*/
-        LOBYTE(result) = *(unsigned char *)(result + this->M8); /*0x491776*/
+        (result) = ((result) & ~0xFF) | ((*(unsigned char *)(result + this->M8)) & 0xFF); /*0x491776*/
         *a1 = result; /*0x491779*/
       }
       ++a1; /*0x49177b*/
@@ -3037,7 +3037,7 @@ char E4Recv_4918E0::sub_4918E0(int arg0, unsigned char * a2, int a4, int a5, int
     {
       ++v13; /*0x491950*/
       --v17; /*0x491951*/
-      LOBYTE(v15) = *(unsigned char *)(*(unsigned __int8 *)(v18 + v14) + this->M8); /*0x491958*/
+      (v15) = ((v15) & ~0xFF) | ((*(unsigned char *)(*(unsigned __int8 *)(v18 + v14) + this->M8)) & 0xFF); /*0x491958*/
       *(unsigned char *)(v13 - 1) = v15; /*0x49195b*/
     }
     else
@@ -3178,7 +3178,7 @@ char E4Recv_491A70::sub_491A70(int arg0, unsigned char * a2, int a4, int a5, int
     {
       ++v13; /*0x491adf*/
       --v16; /*0x491ae0*/
-      LOBYTE(v11) = *(unsigned char *)(*(unsigned __int8 *)(*&this->M4 + v17) + this->M8); /*0x491ae7*/
+      (v11) = ((v11) & ~0xFF) | ((*(unsigned char *)(*(unsigned __int8 *)(*&this->M4 + v17) + this->M8)) & 0xFF); /*0x491ae7*/
       *(unsigned char *)(v13 - 1) = v11; /*0x491aea*/
     }
     else
@@ -3665,7 +3665,7 @@ char sub_492740(int a1, int a2, unsigned short * a3, unsigned char * a4, int a5,
       {
         LOWORD(a2) = this->u16_8; /*0x492768*/
         v14 = (unsigned __int16)*a3; /*0x492776*/
-        LOWORD(v14) = (unsigned __int16)v14 >> 2; /*0x492779*/
+        (v14) = ((v14) & ~0xFFFF) | (((unsigned __int16)v14 >> 2) & 0xFFFF); /*0x492779*/
         v10 = a2 & v14; /*0x492781*/
         v15 = a2 & (*(unsigned short *)(this->Data + 2 * v17) >> 2); /*0x492783*/
         a2 = 3 * v10; /*0x492785*/
@@ -3757,7 +3757,7 @@ unsigned int E4Recv_492830::sub_492830(unsigned short * a2, unsigned char * a3, 
     result = (unsigned __int8)*a3; /*0x49285c*/
     if ( *a3 ) /*0x49285c*/
     {
-      LOWORD(result) = *(unsigned short *)(m_4 + 2 * result); /*0x492862*/
+      (result) = ((result) & ~0xFFFF) | ((*(unsigned short *)(m_4 + 2 * result)) & 0xFFFF); /*0x492862*/
       result = (m_8_low & ((unsigned __int16)*a2 >> 1)) + (m_8_low & (result >> 1)); /*0x492873*/
       *a2 = result; /*0x492875*/
     }
@@ -6552,17 +6552,17 @@ int * RandomCoordScatter(int * a0, IUnknown * aP1, int aP2, ScenarioClass * aP3)
   v18 = a1; /*0x49f42a*/
   LOWORD(v16) = 0; /*0x49f438*/
   v6 = Random::State((unsigned int *)dword_A8B230 + 134); /*0x49f43f*/
-  LOBYTE(v7) = 0; /*0x49f448*/
-  HIBYTE(v7) = v6; /*0x49f44a*/
+  (v7) = ((v7) & ~0xFF) | ((0) & 0xFF); /*0x49f448*/
+  (v7) = ((v7) & ~(0xFF << 8)) | (((v6) & 0xFF) << 8); /*0x49f44a*/
   v8 = a2[2]; /*0x49f451*/
   v16 = (double)(v7 - 0x3FFF) * -0.00009587672516830327; /*0x49f46c*/
   v19 = (double)a4; /*0x49f47e*/
   v20 = (double)a2[1]; /*0x49f485*/
   Math::SinCos(v16); /*0x49f489*/
-  LOWORD(v9) = Math::RoundToInt(a3); /*0x49f496*/
+  (v9) = ((v9) & ~0xFFFF) | ((Math::RoundToInt(a3)) & 0xFFFF); /*0x49f496*/
   v21 = v9; /*0x49f49d*/
   Math::ArcTan2(v16); /*0x49f4a1*/
-  LOWORD(v10) = Math::RoundToInt(a3 * v19 + (double)*a2); /*0x49f4af*/
+  (v10) = ((v10) & ~0xFFFF) | ((Math::RoundToInt(a3 * v19 + (double)*a2)) & 0xFFFF); /*0x49f4af*/
   Coord::Subtract(&v16, v10, v21, v8); /*0x49f4bf*/
   v11 = HIDWORD(v16); /*0x49f4c4*/
   v12 = v17; /*0x49f4c8*/

@@ -119,7 +119,7 @@ int UpdateHouseClassAnger(IUnknown * aP0, HouseClass * aP1, int a3, int a4)
   v13 = *(unsigned int *)(v5 + 22036); /*0x5047de*/
   do /*0x504832*/
   {
-    HIDWORD(v5) = *(unsigned int *)v9; /*0x5047e5*/
+    (v5) = ((v5) & 0xFFFFFFFFull) | ((unsigned long long)((*(unsigned int *)v9) & 0xFFFFFFFFull) << 32); /*0x5047e5*/
     if ( *(unsigned int *)(v9 + 4) > v4 && !*(unsigned char *)((((v5) >> 32) & 0xFFFFFFFFu) + 501) ) /*0x5047eb*/
     {
       if ( !(((v5) >> 32) & 0xFFFFFFFFu) /*0x50481e*/
@@ -224,7 +224,7 @@ int globalHelper_005FD0(int a1, int * a2, int a3, int a4, void * a5)
     Math::CalcAngle(v12, v13); /*0x50603c*/
     __asm { fsub ds:dbl_7E2820 } /*0x506041*/
     __asm { fmul ds:dbl_7E2818 }
-    LOWORD(v15) = Math::RoundToInt(a3); /*0x506055*/
+    (v15) = ((v15) & ~0xFFFF) | ((Math::RoundToInt(a3)) & 0xFFFF); /*0x506055*/
     v10 = 32 * a5 - (unsigned __int8)(((v15 >> 7) + 1) >> 1); /*0x506071*/
     v9 = ((((v10) >> 32) & 0xFFFFFFFFu) ^ v10) - (((v10) >> 32) & 0xFFFFFFFFu); /*0x506074*/
     if ( v9 >= 128 ) /*0x50607b*/

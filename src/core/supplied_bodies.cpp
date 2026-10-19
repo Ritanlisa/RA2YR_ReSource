@@ -2020,7 +2020,7 @@ char CountdownTimer::UpdateDisplay(char a2) {
       this->u32_4 = uniqueId / 60; /*0x4a2670*/
 LABEL_26:
       this->u32_8 = 1; /*0x4a2757*/
-      LOBYTE(abstractFlags) = MapClass::MarkForRedraw((GScreenClass *)&DataGlobal_87F7E8, 0); /*0x4a2761*/
+      (abstractFlags) = ((abstractFlags) & ~0xFF) | ((MapClass::MarkForRedraw((GScreenClass *)&DataGlobal_87F7E8, 0)) & 0xFF); /*0x4a2761*/
       byte_884B90 = 1; /*0x4a2766*/
       return abstractFlags; /*0x4a2766*/
     }
@@ -2043,7 +2043,7 @@ LABEL_26:
   {
 LABEL_12:
     this->u32_8 = 1; /*0x4a26d3*/
-    LOBYTE(abstractFlags) = MapClass::MarkForRedraw((GScreenClass *)&DataGlobal_87F7E8, 0); /*0x4a26d6*/
+    (abstractFlags) = ((abstractFlags) & ~0xFF) | ((MapClass::MarkForRedraw((GScreenClass *)&DataGlobal_87F7E8, 0)) & 0xFF); /*0x4a26d6*/
   }
 LABEL_13:
   v9 = this->u32_4; /*0x4a26db*/
@@ -2557,7 +2557,7 @@ LABEL_121:
   {
     v8 = a3[1] + *&this->u16_117A; /*0x4aba27*/
     LOWORD(v55) = *&this->u16_1178 + *a3; /*0x4aba2b*/
-    HIWORD(v55) = v8; /*0x4aba30*/
+    (v55) = ((v55) & ~(0xFFFF << 16)) | (((v8) & 0xFFFF) << 16); /*0x4aba30*/
     v9 = *&this->u32_117C; /*0x4aba39*/
     *(unsigned int *)v56 = v55; /*0x4aba43*/
     this->__pad_F5E[546] = GetBuildingPlacement( /*0x4aba5e*/
@@ -2594,7 +2594,7 @@ LABEL_121:
   v13 = *&this->u32_11A4; /*0x4abb0a*/
   LOWORD(v55) = *&this->u16_1178 + *a3; /*0x4abb10*/
   DisplayClass_field_0x11A8 = this->DisplayClass_field_0x11A8; /*0x4abb15*/
-  HIWORD(v55) = v12; /*0x4abb1b*/
+  (v55) = ((v55) & ~(0xFFFF << 16)) | (((v12) & 0xFFFF) << 16); /*0x4abb1b*/
   v50 = LOBYTE(v56[0]); /*0x4abb38*/
   v48 = (*(int (**)(int))(*(unsigned int *)DisplayClass_field_0x11A8 + 64))(DisplayClass_field_0x11A8); /*0x4abb3c*/
   v15 = (*(int (**)(int))(*(unsigned int *)v13 + 44))(v13); /*0x4abb41*/

@@ -401,7 +401,7 @@ int Gap2Recv_6D9CE0::FindBuildingsInScreenRect(int a2, int a3, int a4, int a5) {
           v12 = 30 * v11 / 2 + 30 * *v10 / 2; /*0x6d9dcf*/
           v13 = -60 * v11 / 2 + 60 * *v10 / 2; /*0x6d9dd3*/
           v14 = ((((v13) >> 32) & 0xFF) + (int)v13) >> 8; /*0x6d9deb*/
-          LOWORD(v15) = Math::RoundToInt((double)v28 * dbl_B0CD48 + (double)(v28 >= 728) + 0.5); /*0x6d9e15*/
+          (v15) = ((v15) & ~0xFFFF) | ((Math::RoundToInt((double)v28 * dbl_B0CD48 + (double)(v28 >= 728) + 0.5)) & 0xFFFF); /*0x6d9e15*/
           v16 = v12 / 256 - v15; /*0x6d9e1a*/
           if ( v14 >= v24 && v14 <= v26 && v16 >= v25 && v16 <= v27 ) /*0x6d9e40*/
           {

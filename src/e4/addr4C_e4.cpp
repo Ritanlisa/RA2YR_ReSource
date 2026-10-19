@@ -342,7 +342,7 @@ void InitializeRadialGradientTexture()
                       }
                       Math::Sqrt(v16); /*0x4c1834*/
                       __asm { fmul ds:dbl_7E3D90 } /*0x4c1839*/
-                      LOWORD(v11) = Math::RoundToInt(v1); /*0x4c1842*/
+                      (v11) = ((v11) & ~0xFFFF) | ((Math::RoundToInt(v1)) & 0xFFFF); /*0x4c1842*/
                       v12 = 400 - v11; /*0x4c184c*/
                       if ( 400 - v11 >= 0 ) /*0x4c184e*/
                       {
@@ -647,8 +647,8 @@ LABEL_6:
       do /*0x4c39e6*/
       {
         v12 = (int)&a1[2 * (v10 % 256) + v10 % 256]; /*0x4c39ac*/
-        LOWORD(v16) = *(unsigned short *)v12; /*0x4c39ba*/
-        BYTE2(v16) = *(unsigned char *)(v12 + 2); /*0x4c39c7*/
+        (v16) = ((v16) & ~0xFFFF) | ((*(unsigned short *)v12) & 0xFFFF); /*0x4c39ba*/
+        (v16) = ((v16) & ~(0xFF << 16)) | (((*(unsigned char *)(v12 + 2)) & 0xFF) << 16); /*0x4c39c7*/
         Color::Lerp((unsigned __int8 *)&v16, v18, (unsigned __int8 *)&v14); /*0x4c39cb*/
         v7[v10++] = Palette::FindClosestColor(a1, (int)&v16); /*0x4c39dc*/
       }
@@ -1165,7 +1165,7 @@ LABEL_52:
         v50 = *v48; /*0x4cf485*/
         *(float *)&v56.ComPtr_field_0x0C = (double)v56.ComPtr_field_0x10 * (1.0 - *(float *)&a4); /*0x4cf497*/
         v56.ComPtr_field_0x10 = (*(int (**)(int *))(v50 + 188))(v48); /*0x4cf4a1*/
-        LOWORD(v51) = Math::RoundToInt((double)v56.ComPtr_field_0x10 * *(float *)&a4 + *(float *)&v56.ComPtr_field_0x0C); /*0x4cf4b1*/
+        (v51) = ((v51) & ~0xFFFF) | ((Math::RoundToInt((double)v56.ComPtr_field_0x10 * *(float *)&a4 + *(float *)&v56.ComPtr_field_0x0C)) & 0xFFFF); /*0x4cf4b1*/
         *(unsigned int *)(ComPtr_field_0x10 + 56) = v51; /*0x4cf4b6*/
         goto LABEL_60; /*0x4cf4bb*/
       }

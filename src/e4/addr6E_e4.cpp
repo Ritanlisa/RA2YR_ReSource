@@ -640,7 +640,7 @@ LABEL_16:
     {
       v13 = v20; /*0x6efd61*/
       v14 = (unsigned int *)(*(int (**)(unsigned int, char *))(**(unsigned int **)(v20 + 52) + 72))(*(unsigned int *)(v20 + 52), v23); /*0x6efd6f*/
-      LOWORD(v21) = *v14 / 256; /*0x6efd82*/
+      (v21) = ((v21) & ~0xFFFF) | ((*v14 / 256) & 0xFFFF); /*0x6efd82*/
       HIWORD(v21) = v14[1] / 256; /*0x6efd9a*/
       v15 = v11->field_28; /*0x6efda3*/
       v20 = v21; /*0x6efda6*/
@@ -1969,7 +1969,7 @@ void E4Recv_6EDF10::sub_6EDF10(int a2, int a3)
     unsigned char v8[12]; // [esp+10h] [ebp-Ch] BYREF
     v5 = (unsigned int *)(*(int (**)(unsigned int *, unsigned char *))(*i + 72))(i, v8); /*0x6edf27*/
     int v6; // [esp+8h] [ebp-14h]
-    LOWORD(v6) = *v5 / 256; /*0x6edf3a*/
+    (v6) = ((v6) & ~0xFFFF) | ((*v5 / 256) & 0xFFFF); /*0x6edf3a*/
     HIWORD(v6) = v5[1] / 256; /*0x6edf53*/
     int v7; // [esp+Ch] [ebp-10h] BYREF
     v7 = v6; /*0x6edf60*/

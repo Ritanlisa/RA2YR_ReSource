@@ -733,7 +733,7 @@ void TeamClass::MoveToCellAndAttack(int a2, int a3) {
     if ( Entry[1] < 0x2BEu ) /*0x6ecd36*/
       TeamClass::SelectMember((int)v3, (int)CellFromArray); /*0x6ecd3b*/
   }
-  LOWORD(v6) = Math::RoundToInt(*&dword_8871E0->u32_1150 * 900.0); /*0x6ecd52*/
+  (v6) = ((v6) & ~0xFFFF) | ((Math::RoundToInt(*&dword_8871E0->u32_1150 * 900.0)) & 0xFFFF); /*0x6ecd52*/
   if ( !(*(unsigned int *)&stru_A8E960.random[528] % v6) ) /*0x6ecd5f*/
   {
     firstUnit = (int *)v3->firstUnit; /*0x6ecd69*/
@@ -809,7 +809,7 @@ int TeamClass::Create(int a1, int a2) {
   for ( i = this->firstUnit; i; i = this->firstUnit ) /*0x6ecfef*/
   {
     TeamClass::LiberateMember_Start(&this->ptr_0, i, 0xFFFFFFFF, 0); /*0x6ecff8*/
-    LOBYTE(v4) = TeamClass::AddMember(v5, i, 0); /*0x6ed002*/
+    (v4) = ((v4) & ~0xFF) | ((TeamClass::AddMember(v5, i, 0)) & 0xFF); /*0x6ed002*/
   }
   if ( this ) /*0x6ed010*/
     LOBYTE(v4) = this->vt_slot_32(this, 1); /*0x6ed018*/
@@ -2885,7 +2885,7 @@ void TeamClass::ProcessTeamMovement(int a2, int a3) {
         v21 = v25; /*0x6ee4c1*/
         v18 = 0; /*0x6ee4c7*/
         v13 = (unsigned int *)(*(int (**)(int, unsigned char *))(v12 + 72))(firstUnit, v23); /*0x6ee4d6*/
-        LOWORD(v25) = *v13 / 256; /*0x6ee4ed*/
+        (v25) = ((v25) & ~0xFFFF) | ((*v13 / 256) & 0xFFFF); /*0x6ee4ed*/
         HIWORD(v25) = v13[1] / 256; /*0x6ee50d*/
         LOBYTE(v13) = firstUnit->onBridge; /*0x6ee516*/
         *(unsigned int *)v20 = v25; /*0x6ee520*/
@@ -3114,7 +3114,7 @@ void * TeamClass::ScoreMember(unsigned int *a2, int a3, int a4) {
         {
           case 0: /*0x6eef0e*/
             v11 = (unsigned int *)(*(int (**)(unsigned int *, char *))(*v9 + 72))(v9, v45); /*0x6eef1e*/
-            LOWORD(v25) = *v11 / 256; /*0x6eef31*/
+            (v25) = ((v25) & ~0xFFFF) | ((*v11 / 256) & 0xFFFF); /*0x6eef31*/
             v12 = a2->owner; /*0x6eef42*/
             HIWORD(v25) = v11[1] / 256; /*0x6eef4b*/
             v32 = v25; /*0x6eef58*/
@@ -3122,7 +3122,7 @@ void * TeamClass::ScoreMember(unsigned int *a2, int a3, int a4) {
             break; /*0x6eef6f*/
           case 1: /*0x6eef0e*/
             v13 = (unsigned int *)(*(int (**)(unsigned int *, char *))(*v9 + 72))(v9, v46); /*0x6eef7d*/
-            LOWORD(v26) = *v13 / 256; /*0x6eef90*/
+            (v26) = ((v26) & ~0xFFFF) | ((*v13 / 256) & 0xFFFF); /*0x6eef90*/
             v14 = a2->owner; /*0x6eefa1*/
             HIWORD(v26) = v13[1] / 256; /*0x6eefaa*/
             v33 = v26; /*0x6eefb7*/
@@ -3187,7 +3187,7 @@ void * TeamClass::ScoreMember(unsigned int *a2, int a3, int a4) {
               fstp st
             }
             Math::Sqrt(v24); /*0x6ef0b2*/
-            LOWORD(TileData) = Math::RoundToInt(v4); /*0x6ef0ba*/
+            (TileData) = ((TileData) & ~0xFFFF) | ((Math::RoundToInt(v4)) & 0xFFFF); /*0x6ef0ba*/
 LABEL_10:
             v10 = TileData; /*0x6ef0bf*/
             break; /*0x6ef0bf*/
@@ -3306,8 +3306,8 @@ void TeamClass::SelectDeploymentTarget(int a2, int a3) {
     else
     {
       v12 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 255); /*0x6efadc*/
-      LOBYTE(v13) = 0; /*0x6efae1*/
-      HIBYTE(v13) = v12; /*0x6efae3*/
+      (v13) = ((v13) & ~0xFF) | ((0) & 0xFF); /*0x6efae1*/
+      (v13) = ((v13) & ~(0xFF << 8)) | (((v12) & 0xFF) << 8); /*0x6efae3*/
       v14 = v13; /*0x6efaea*/
     }
     LODWORD(v25) = v14 - 0x3FFF; /*0x6efb61*/
@@ -3336,7 +3336,7 @@ void TeamClass::SelectDeploymentTarget(int a2, int a3) {
     Math::ArcTan2(v25); /*0x6efbb2*/
     __asm { fmul qword ptr [esp+58h+var_20] } /*0x6efbb7*/
     __asm { fiadd [esp+48h+var_C] }
-    LOWORD(v19) = Math::RoundToInt(v3); /*0x6efbc2*/
+    (v19) = ((v19) & ~0xFFFF) | ((Math::RoundToInt(v3)) & 0xFFFF); /*0x6efbc2*/
     LOWORD(v25) = v19 / 256; /*0x6efbd7*/
     WORD1(v25) = SLODWORD(v27) / 256; /*0x6efbef*/
     *(unsigned int *)v24 = LODWORD(v25); /*0x6efc01*/

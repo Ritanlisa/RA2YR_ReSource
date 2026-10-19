@@ -3595,7 +3595,7 @@ int * __cdecl IsoTile::Decode16Bit(int p0, uint16_t* p1, int* p2, int p3, int p4
               v38 = 4; /*0x7489af*/
               do /*0x7489c6*/
               {
-                if ( (HIBYTE(*v35) & 0x80u) == 0 ) /*0x7489ba*/
+                if ( ((((*v35) >> 8) & 0xFF) & 0x80u) == 0 ) /*0x7489ba*/
                   *(unsigned short *)v37 = *v35; /*0x7489bc*/
                 v37 = (int *)((char *)v37 + 2); /*0x7489bf*/
                 ++v35; /*0x7489c2*/
@@ -3627,7 +3627,7 @@ int * __cdecl IsoTile::Decode16Bit(int p0, uint16_t* p1, int* p2, int p3, int p4
           do /*0x748918*/
           {
             v30 = *v27; /*0x7488f8*/
-            if ( (HIBYTE(*v27) & 0x80u) == 0 ) /*0x7488fe*/
+            if ( ((((*v27) >> 8) & 0xFF) & 0x80u) == 0 ) /*0x7488fe*/
             {
               v31 = v28; /*0x748902*/
               if ( v14 ) /*0x748904*/
@@ -3840,7 +3840,7 @@ unsigned int __cdecl IsoTile::Decode8BitV2(int p0, uint8_t* p1, int* p2, unsigne
             v62 = 4; /*0x748f65*/
             do /*0x748f7c*/
             {
-              if ( (HIBYTE(*v59) & 0x80u) == 0 ) /*0x748f70*/
+              if ( ((((*v59) >> 8) & 0xFF) & 0x80u) == 0 ) /*0x748f70*/
                 *(unsigned short *)v61 = *v59; /*0x748f72*/
               v61 = (int *)((char *)v61 + 2); /*0x748f75*/
               ++v59; /*0x748f78*/
@@ -3867,7 +3867,7 @@ unsigned int __cdecl IsoTile::Decode8BitV2(int p0, uint8_t* p1, int* p2, unsigne
             do /*0x748f1f*/
             {
               v55 = *v53; /*0x748ef7*/
-              if ( (HIBYTE(*v53) & 0x80u) == 0 ) /*0x748efd*/
+              if ( ((((*v53) >> 8) & 0xFF) & 0x80u) == 0 ) /*0x748efd*/
               {
                 v56 = v54; /*0x748f01*/
                 if ( v52 ) /*0x748f03*/
@@ -4187,7 +4187,7 @@ char * __cdecl IsoTile::Decode16BitV2(int p0, uint16_t* p1, int* p2, int p3, int
                 v37 = 4; /*0x7c3c26*/
                 do /*0x7c3c3d*/
                 {
-                  if ( (HIBYTE(*v34) & 0x80u) == 0 ) /*0x7c3c31*/
+                  if ( ((((*v34) >> 8) & 0xFF) & 0x80u) == 0 ) /*0x7c3c31*/
                     *(unsigned short *)v36 = *v34; /*0x7c3c33*/
                   v36 = (int *)((char *)v36 + 2); /*0x7c3c36*/
                   ++v34; /*0x7c3c39*/
@@ -4248,7 +4248,7 @@ LABEL_58:
               do /*0x7c3b95*/
               {
                 v29 = *v26; /*0x7c3b75*/
-                if ( (HIBYTE(*v26) & 0x80u) == 0 ) /*0x7c3b7b*/
+                if ( ((((*v26) >> 8) & 0xFF) & 0x80u) == 0 ) /*0x7c3b7b*/
                 {
                   v30 = v27; /*0x7c3b7f*/
                   if ( v14 ) /*0x7c3b81*/
@@ -4896,7 +4896,7 @@ int Lightning::Draw(int p0, int p1, int p2, int p3, int p4, int p5, int p6)
     fstp st
   }
   Math::Sqrt(v54); /*0x4c1fd6*/
-  LOWORD(result) = Math::RoundToInt(v8); /*0x4c1fde*/
+  (result) = ((result) & ~0xFFFF) | ((Math::RoundToInt(v8)) & 0xFFFF); /*0x4c1fde*/
   v62 = result; /*0x4c1fe5*/
   if ( result )
   {
@@ -6357,7 +6357,7 @@ char MapSeed::PlaceCityBlock(int16_t* p0, int16_t* p1, void* p2)
         do /*0x5914ce*/
         {
           v62 = (unsigned int)Random::State((Random *)&g_MissionQueueFrame.globalVariables[1552]); /*0x5914ae*/
-          LOWORD(v40) = Math::RoundToInt((double)v62 * 4.656612874161595e-10); /*0x5914c4*/
+          (v40) = ((v40) & ~0xFFFF) | ((Math::RoundToInt((double)v62 * 4.656612874161595e-10)) & 0xFFFF); /*0x5914c4*/
         }
         while ( v40 > 1 ); /*0x5914ce*/
         LOWORD(v59.MapSeed_field_0x20) = 0; /*0x5914d2*/
@@ -6728,7 +6728,7 @@ char MapSeed::PlaceCityBuildings(int16_t* p0, int16_t* p1, void* p2)
         do /*0x5921b0*/
         {
           var20 = (unsigned int)Random::State((Random *)&stru_ABE890); /*0x592190*/
-          LOWORD(v43) = Math::RoundToInt((double)var20 * 4.656612874161595e-10); /*0x5921a6*/
+          (v43) = ((v43) & ~0xFFFF) | ((Math::RoundToInt((double)var20 * 4.656612874161595e-10)) & 0xFFFF); /*0x5921a6*/
         }
         while ( v43 > 1 ); /*0x5921b0*/
         LOWORD(v63.MapSeed_field_0x20) = 0; /*0x5921b4*/
@@ -8189,7 +8189,7 @@ char RadarHashVector::Release(int p0, char* p1)
       }
       *&this->q004 = v5; /*0x658a48*/
       this->m_8 = v3; /*0x658a4e*/
-      BYTE1(this->m_C) = p1 == 0; /*0x658a51*/
+      (this->m_C) = ((this->m_C) & ~(0xFF << 8)) | (((p1 == 0) & 0xFF) << 8); /*0x658a51*/
       return 1; /*0x658a57*/
     }
     else
@@ -16067,9 +16067,9 @@ LABEL_159:
             if ( v38 >= 0 && v38 < stru_B76AD0.DynamicArray_field_0x10 ) /*0x7a5f68*/
             {
               qmemcpy(v160, (char *)dword_B76AE8 + 268 * v38, sizeof(v160)); /*0x7a5f9c*/
-              LOBYTE(v153) = ValidateGameJoinWOL((int)v160, 0, 0); /*0x7a5fb5*/
+              (v153) = ((v153) & ~0xFF) | ((ValidateGameJoinWOL((int)v160, 0, 0)) & 0xFF); /*0x7a5fb5*/
               v35 = (void (*)(HWND, BOOL))EnableWindow; /*0x7a5fbe*/
-              HIBYTE(v153) = ValidateGameJoinWOL((int)v160, 0, 1); /*0x7a5fc4*/
+              (v153) = ((v153) & ~(0xFF << 8)) | (((ValidateGameJoinWOL((int)v160, 0, 1)) & 0xFF) << 8); /*0x7a5fc4*/
             }
           }
           v39 = GetDlgItem((HWND)v4, 1774); /*0x7a5fd0*/
@@ -16246,7 +16246,7 @@ LABEL_213:
           ProcessPingRequestsWOL(v148); /*0x7a6a13*/
         DeleteAndZero((ObjectClass *)&v151.ptr_4); /*0x7a6a1c*/
       }
-      LODWORD(v154) = *(unsigned int *)&stru_B778FC.m_3[1]; /*0x7a6a26*/
+      (v154) = ((v154) & 0xFFFFFFFF00000000ull) | ((*(unsigned int *)&stru_B778FC.m_3[1]) & 0xFFFFFFFFull); /*0x7a6a26*/
       if ( *(unsigned int *)v81 ) /*0x7a6a2a*/
       {
         *(unsigned int *)&v151.ptr_4 = a4 + 36; /*0x7a6a43*/
@@ -16453,7 +16453,7 @@ LABEL_299:
                 memset(v157, 0, sizeof(v157)); /*0x7a6ed8*/
                 v131 = *(unsigned int *)&stru_B778FC.m_3[1]; /*0x7a6eda*/
                 v132 = 0; /*0x7a6ee0*/
-                LODWORD(v154) = *(unsigned int *)&stru_B778FC.m_3[1]; /*0x7a6ee4*/
+                (v154) = ((v154) & 0xFFFFFFFF00000000ull) | ((*(unsigned int *)&stru_B778FC.m_3[1]) & 0xFFFFFFFFull); /*0x7a6ee4*/
                 for ( *(unsigned int *)v152.__pad_0 = 0; v132 < v131; v130 += 108 ) /*0x7a6eec*/
                 {
                   if ( v130 >= 0 && v132 < *(int *)&stru_B778FC.m_3[1] ) /*0x7a6efc*/
@@ -17878,7 +17878,7 @@ LABEL_139:
     if ( (unsigned __int8)SessionClass::GetGameSpeed((SessionClass *)&dword_A8B238) ) /*0x7aa648*/
     {
       Type = BuildingAnim::GetType(); /*0x7aa65c*/
-      LOWORD(v79) = Math::RoundToInt(*&dword_8871E0->u32_14C0 * 900.0); /*0x7aa66b*/
+      (v79) = ((v79) & ~0xFFFF) | ((Math::RoundToInt(*&dword_8871E0->u32_14C0 * 900.0)) & 0xFFFF); /*0x7aa66b*/
       MessageListClass::AddMessage(&unk_A8BC60, 0, 0, Buffer, Type, 22, v79, 0); /*0x7aa680*/
     }
     byte_B76E28[0] = 0; /*0x7aa685*/
@@ -18955,14 +18955,14 @@ LABEL_148:
               if ( wcslen(v24) ) /*0x55e927*/
               {
                 swprintf(v94, (const size_t)&off_82A0F8, **(const wchar_t *const **)&stru_A8D804.__pad_3D[567], v92); /*0x55e99a*/
-                LOWORD(v29) = Math::RoundToInt(*&dword_8871E0->u32_14C0 * 900.0); /*0x55e9b6*/
+                (v29) = ((v29) & ~0xFFFF) | ((Math::RoundToInt(*&dword_8871E0->u32_14C0 * 900.0)) & 0xFFFF); /*0x55e9b6*/
                 v78 = v29; /*0x55e9bb*/
                 v72 = SessionClass::GetPlayerColorScheme(dword_A8B394); /*0x55e9de*/
                 LOBYTE(v2) = MessageListClass::AddMessage(&unk_A8BC60, v94, dword_A8B394, v24, v72, 16454, v78, 0); /*0x55e9e7*/
               }
               else
               {
-                LOWORD(v28) = Math::RoundToInt(*&dword_8871E0->u32_14C0 * 900.0); /*0x55e946*/
+                (v28) = ((v28) & ~0xFFFF) | ((Math::RoundToInt(*&dword_8871E0->u32_14C0 * 900.0)) & 0xFFFF); /*0x55e946*/
                 v77 = v28; /*0x55e94b*/
                 v71 = SessionClass::GetPlayerColorScheme(dword_A8B394); /*0x55e968*/
                 v67 = GetStringCSF(g_Str_TXT_CANT_SEND_BLANK_PAGE, 0, g_Str_File_MainLoop_CPP, 2072); /*0x55e978*/
@@ -18971,7 +18971,7 @@ LABEL_148:
             }
             else
             {
-              LOWORD(v27) = Math::RoundToInt(*&dword_8871E0->u32_14C0 * 900.0); /*0x55e8e9*/
+              (v27) = ((v27) & ~0xFFFF) | ((Math::RoundToInt(*&dword_8871E0->u32_14C0 * 900.0)) & 0xFFFF); /*0x55e8e9*/
               v76 = v27; /*0x55e8f4*/
               v70 = SessionClass::GetPlayerColorScheme(dword_A8B394); /*0x55e90c*/
               v66 = GetStringCSF(g_Str_TXT_NO_NAME_SPECIFIED, 0, g_Str_File_MainLoop_CPP, 2067); /*0x55e91c*/
@@ -19033,14 +19033,14 @@ LABEL_148:
             {
               if ( wcslen(v36) ) /*0x55ec34*/
               {
-                LOWORD(v41) = Math::RoundToInt(*&dword_8871E0->u32_14C0 * 900.0); /*0x55ec54*/
+                (v41) = ((v41) & ~0xFFFF) | ((Math::RoundToInt(*&dword_8871E0->u32_14C0 * 900.0)) & 0xFFFF); /*0x55ec54*/
                 v80 = v41; /*0x55ec59*/
                 v74 = SessionClass::GetPlayerColorScheme(dword_A8B394); /*0x55ec7c*/
                 LOBYTE(v2) = MessageListClass::AddMessage(&unk_A8BC60, v98, dword_A8B394, v36, v74, 16454, v80, 0); /*0x55ec80*/
               }
               else
               {
-                LOWORD(v42) = Math::RoundToInt(*&dword_8871E0->u32_14C0 * 900.0); /*0x55ec93*/
+                (v42) = ((v42) & ~0xFFFF) | ((Math::RoundToInt(*&dword_8871E0->u32_14C0 * 900.0)) & 0xFFFF); /*0x55ec93*/
                 v81 = v42; /*0x55ec9e*/
                 v75 = SessionClass::GetPlayerColorScheme(dword_A8B394); /*0x55ecb6*/
                 v69 = GetStringCSF(g_Str_TXT_CANT_SEND_BLANK_PAGE, 0, g_Str_File_MainLoop_CPP, 2149); /*0x55eccc*/
@@ -19049,7 +19049,7 @@ LABEL_148:
             }
             else
             {
-              LOWORD(v40) = Math::RoundToInt(*&dword_8871E0->u32_14C0 * 900.0); /*0x55ebf4*/
+              (v40) = ((v40) & ~0xFFFF) | ((Math::RoundToInt(*&dword_8871E0->u32_14C0 * 900.0)) & 0xFFFF); /*0x55ebf4*/
               v79 = v40; /*0x55ebf9*/
               v73 = SessionClass::GetPlayerColorScheme(dword_A8B394); /*0x55ec16*/
               v68 = GetStringCSF(aTxtNameNotSpec, 0, g_Str_File_MainLoop_CPP, 2136); /*0x55ec2c*/
@@ -19123,7 +19123,7 @@ LABEL_103:
                 v47 = dword_ABCE18; /*0x55ee97*/
               }
               Type = BuildingAnim::GetType(); /*0x55eef1*/
-              LOWORD(v51) = Math::RoundToInt(*&dword_8871E0->u32_14C0 * 900.0); /*0x55ef06*/
+              (v51) = ((v51) & ~0xFFFF) | ((Math::RoundToInt(*&dword_8871E0->u32_14C0 * 900.0)) & 0xFFFF); /*0x55ef06*/
               v82 = v51; /*0x55ef0b*/
               v52 = GetStringCSF(aTxtObserverCan, 0, g_Str_File_MainLoop_CPP, 2234); /*0x55ef20*/
               MessageListClass::AddMessage(&unk_A8BC60, 0, 0, v52, Type, 22, v82, 1); /*0x55ef2d*/
@@ -19198,7 +19198,7 @@ LABEL_123:
           Network::ReceiveLoop((IPXManagerClass *)&stru_A8E960.nextScenario[96]); /*0x55f0a3*/
         }
         v60 = CharToWideString(byte_A8D63C); /*0x55f0b8*/
-        LOWORD(v61) = Math::RoundToInt(*&dword_8871E0->u32_14C0 * 900.0); /*0x55f0c7*/
+        (v61) = ((v61) & ~0xFFFF) | ((Math::RoundToInt(*&dword_8871E0->u32_14C0 * 900.0)) & 0xFFFF); /*0x55f0c7*/
         v83 = v61; /*0x55f0d2*/
         v62 = SessionClass::GetPlayerColorScheme(dword_A8D748); /*0x55f0de*/
         MessageListClass::AddMessage( /*0x55f0f5*/
@@ -19542,7 +19542,7 @@ char ChatEvent::ProcessStrings(const char* p0, int p1, int p2, int p3)
     v17 = (void **)((char *)v17 + 2); /*0x6b9844*/
     v21 = v20 >> g_BitMask_Blue << g_BitMask_Green; /*0x6b9857*/
     LOWORD(v18) = v21 | (v18 >> g_BitMask_Red << g_BitShift_Blue); /*0x6b985f*/
-    LOWORD(v21) = (unsigned __int8)(*(v16 - 2) >> g_BitShift_Green_0); /*0x6b986c*/
+    (v21) = ((v21) & ~0xFFFF) | (((unsigned __int8)(*(v16 - 2) >> g_BitShift_Green_0)) & 0xFFFF); /*0x6b986c*/
     *((unsigned short *)v17 - 1) = (v21 << g_BitShift_Red) | v18; /*0x6b9874*/
     --Block[2]; /*0x6b987d*/
   }
@@ -20843,7 +20843,7 @@ LABEL_121:
               v46 = j; /*0x482479*/
               if ( !j ) /*0x482482*/
               {
-                LOWORD(v47) = Math::RoundToInt(*(double *)&v120); /*0x482488*/
+                (v47) = ((v47) & ~0xFFFF) | ((Math::RoundToInt(*(double *)&v120)) & 0xFFFF); /*0x482488*/
                 v46 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, v47, v47 + 900); /*0x4824a5*/
               }
               if ( !(unsigned __int8)House::IsHumanPlayer(*(House **)(p0 + 540)) || *(unsigned int *)&dword_A8B238 ) /*0x4824bf*/
@@ -20932,7 +20932,7 @@ LABEL_121:
                         (double)(*(unsigned int *)&v122.u32_1C - v71) * (double)(*(unsigned int *)&v122.u32_1C - v71)
                       + (double)*(int *)&v122.q004 * (double)*(int *)&v122.q004
                       + (double)*(int *)v122.__pad_0 * (double)*(int *)v122.__pad_0);
-                      LOWORD(v72) = Math::RoundToInt(v17); /*0x482938*/
+                      (v72) = ((v72) & ~0xFFFF) | ((Math::RoundToInt(v17)) & 0xFFFF); /*0x482938*/
                       if ( v72 < dword_8871E0->PathDelay[1] ) /*0x482949*/
                         *(unsigned char *)(v119 + 978) = 1; /*0x48294f*/
                     }
@@ -20944,7 +20944,7 @@ LABEL_121:
             case 4: /*0x481de0*/
               Debug::Log(); /*0x482574*/
               v48 = v120; /*0x482579*/
-              LOWORD(v49) = Math::RoundToInt(*(double *)&v120); /*0x482580*/
+              (v49) = ((v49) & ~0xFFFF) | ((Math::RoundToInt(*(double *)&v120)) & 0xFFFF); /*0x482580*/
               *(unsigned int *)&v122.u32_14 = v49; /*0x482590*/
               v113 = *&dword_8871E0->u32_FA8; /*0x4825a0*/
               v119 = v49; /*0x4825a1*/
@@ -21032,7 +21032,7 @@ LABEL_121:
               v64 = (AnimClass *)__2_YAPAXI_Z(0x1C8u); /*0x4827b7*/
               if ( v64 ) /*0x4827c1*/
                 AnimClass::ctor(v64, *(void **)dword_8B4154, (int *)&v122.ptr_40, 0, 1, (void *)0x600, 0, 0); /*0x4827e3*/
-              LOWORD(v65) = Math::RoundToInt(*(double *)&v120); /*0x4827ec*/
+              (v65) = ((v65) & ~0xFFFF) | ((Math::RoundToInt(*(double *)&v120)) & 0xFFFF); /*0x4827ec*/
               v66 = v65; /*0x4827f4*/
               v67 = *(unsigned int *)p0; /*0x4827fd*/
               *(unsigned int *)v122.__pad_C = v65; /*0x4827ff*/
@@ -21092,7 +21092,7 @@ LABEL_121:
                         (double)(*(unsigned int *)&v122.u32_38 - v91) * (double)(*(unsigned int *)&v122.u32_38 - v91)
                       + (double)*(int *)&v122.q004 * (double)*(int *)&v122.q004
                       + (double)*(int *)v122.__pad_0 * (double)*(int *)v122.__pad_0);
-                      LOWORD(v92) = Math::RoundToInt(v17); /*0x482e40*/
+                      (v92) = ((v92) & ~0xFFFF) | ((Math::RoundToInt(v17)) & 0xFFFF); /*0x482e40*/
                       if ( v92 < dword_8871E0->PathDelay[1] /*0x482e6b*/
                         && !j->q158
                         && j->q15C == 1072693248 )
@@ -21150,7 +21150,7 @@ LABEL_121:
                         (double)(*(unsigned int *)&v122.u32_38 - v98) * (double)(*(unsigned int *)&v122.u32_38 - v98)
                       + (double)*(int *)&v122.q004 * (double)*(int *)&v122.q004
                       + (double)*(int *)v122.__pad_0 * (double)*(int *)v122.__pad_0);
-                      LOWORD(v99) = Math::RoundToInt(v17); /*0x483023*/
+                      (v99) = ((v99) & ~0xFFFF) | ((Math::RoundToInt(v17)) & 0xFFFF); /*0x483023*/
                       if ( v99 < dword_8871E0->PathDelay[1] /*0x48305a*/
                         && !j->q580
                         && j->q584 == 1072693248
@@ -21208,7 +21208,7 @@ LABEL_121:
                         (double)*(int *)v122.__pad_0 * (double)*(int *)v122.__pad_0
                       + (double)(*(unsigned int *)&v122.u32_38 - v104) * (double)(*(unsigned int *)&v122.u32_38 - v104)
                       + (double)*(int *)&v122.q004 * (double)*(int *)&v122.q004);
-                      LOWORD(v105) = Math::RoundToInt(v17); /*0x48320f*/
+                      (v105) = ((v105) & ~0xFFFF) | ((Math::RoundToInt(v17)) & 0xFFFF); /*0x48320f*/
                       if ( v105 < dword_8871E0->PathDelay[1] /*0x48323a*/
                         && !j->q160
                         && j->q164 == 1072693248 )
@@ -21278,7 +21278,7 @@ LABEL_121:
                         (double)(*(unsigned int *)&v122.u32_38 - v74) * (double)(*(unsigned int *)&v122.u32_38 - v74)
                       + (double)*(int *)&v122.q004 * (double)*(int *)&v122.q004
                       + (double)*(int *)v122.__pad_0 * (double)*(int *)v122.__pad_0);
-                      LOWORD(v75) = Math::RoundToInt(v17); /*0x482a6a*/
+                      (v75) = ((v75) & ~0xFFFF) | ((Math::RoundToInt(v17)) & 0xFFFF); /*0x482a6a*/
                       if ( v75 < dword_8871E0->PathDelay[1] ) /*0x482a7b*/
                       {
                         if ( *(unsigned char *)((*(int (**)(int))(*(unsigned int *)v119 + 132))(v119) + 3214) ) /*0x482a8f*/
@@ -21323,7 +21323,7 @@ LABEL_121:
             case 16: /*0x481de0*/
               Debug::Log(); /*0x481df6*/
               v18 = Crate::applyCrateEffect(&stru_81D07C); /*0x481e0c*/
-              LOWORD(v19) = Math::RoundToInt(*(double *)&v120); /*0x481e0e*/
+              (v19) = ((v19) & ~0xFFFF) | ((Math::RoundToInt(*(double *)&v120)) & 0xFFFF); /*0x481e0e*/
               v20 = *(unsigned int *)this->__pad_0; /*0x481e13*/
               v21 = v19; /*0x481e17*/
               v119 = v19; /*0x481e28*/
@@ -21627,7 +21627,7 @@ _DWORD * Dial8Class::Constructor(int p0, int p1, int p2, int p3, unsigned int p4
   v7 = p4; /*0x4a53b5*/
   ControlClass::Construct((ControlClass *)this, p0, p1, p2, p3, p4, 7, 1); /*0x4a53d5*/
   /* X11: vtable install elided (X67 star-deref, RHS vt_Dial8Class) */  /*0x4a53da*/
-  LOBYTE(v10) = 0; /*0x4a53ed*/
+  (v10) = ((v10) & ~0xFF) | ((0) & 0xFF); /*0x4a53ed*/
   this->u32_2C = this->Width + this->Visible / 2; /*0x4a53ef*/
   this->u32_30 = this->Height + this->ID / 2; /*0x4a53ff*/
   HIBYTE(v10) = p5; /*0x4a5406*/
@@ -21706,10 +21706,10 @@ LABEL_8:
                   v12);
     Math::CalcAngle((double)this->u32_30 - (double)v8[1], (double)*v8 - (double)this->u32_2C); /*0x4a5709*/
     LOWORD(p0) = Math::RoundToInt((v4 - 1.570796326794897) * -10430.06004058427); /*0x4a5722*/
-    LOBYTE(v9) = 0; /*0x4a572f*/
+    (v9) = ((v9) & ~0xFF) | ((0) & 0xFF); /*0x4a572f*/
     v10 = this->u32_BC; /*0x4a5738*/
     HIBYTE(v9) = ((p0 >> 7) + 1) >> 1; /*0x4a573e*/
-    this->u32_B4 = HIBYTE(v9); /*0x4a5740*/
+    this->u32_B4 = (((v9) >> 8) & 0xFF); /*0x4a5740*/
     LOWORD(p0) = v9; /*0x4a5746*/
     v11 = (((p0 >> 12) + 1) >> 1) & 7; /*0x4a5755*/
     this->u32_B8 = v11; /*0x4a575a*/
@@ -22031,7 +22031,7 @@ void DiskLaserClass::Update()
   {
     this->q030 = -1; /*0x4a7441*/
     v67 = this; /*0x4a744e*/
-    LOBYTE(v3) = VectorClass::AppendCopy((DynamicVectorClass *)&stru_B0F670.DynamicVector_field_0x28, &v67); /*0x4a7452*/
+    (v3) = ((v3) & ~0xFF) | ((VectorClass::AppendCopy((DynamicVectorClass *)&stru_B0F670.DynamicVector_field_0x28, &v67)) & 0xFF); /*0x4a7452*/
     return v3; /*0x4a745e*/
   }
   DiskLaserClass_field_0x24 = (unsigned char *)this->DiskLaserClass_field_0x24; /*0x4a745f*/
@@ -22041,7 +22041,7 @@ LABEL_2:
     v61 = (int)&v67; /*0x4a7359*/
     this->q030 = -1; /*0x4a735a*/
     v67 = this; /*0x4a7361*/
-    LOBYTE(v3) = VectorClass::AppendCopy((DynamicVectorClass *)&stru_B0F670.DynamicVector_field_0x28, (unsigned int *)v61); /*0x4a7365*/
+    (v3) = ((v3) & ~0xFF) | ((VectorClass::AppendCopy((DynamicVectorClass *)&stru_B0F670.DynamicVector_field_0x28, (unsigned int *)v61)) & 0xFF); /*0x4a7365*/
   }
   else
   {
@@ -22076,7 +22076,7 @@ LABEL_2:
     else
     {
       v62 = (unsigned __int8 *)(*(unsigned int *)(this->DiskLaserClass_field_0x24 + 540) + 22268); /*0x4a7535*/
-      LOBYTE(v63) = *v62 >> 1; /*0x4a753d*/
+      (v63) = ((v63) & ~0xFF) | ((*v62 >> 1) & 0xFF); /*0x4a753d*/
       HIBYTE(v63) = v62[1] >> 1; /*0x4a754a*/
       v64 = v62[2] >> 1; /*0x4a7557*/
       v25 = &v63; /*0x4a755b*/
@@ -22242,7 +22242,7 @@ LABEL_2:
         LOWORD(v55) = *v65; /*0x4a788f*/
         BYTE2(v55) = *((unsigned char *)v65 + 2); /*0x4a7899*/
         HIBYTE(v54) = HIBYTE(v65); /*0x4a789c*/
-        LOWORD(v54) = *(unsigned short *)v62; /*0x4a78ad*/
+        (v54) = ((v54) & ~0xFFFF) | ((*(unsigned short *)v62) & 0xFFFF); /*0x4a78ad*/
         BYTE2(v54) = v62[2]; /*0x4a78b7*/
         TimerClass::Construct( /*0x4a78df*/
           v48,

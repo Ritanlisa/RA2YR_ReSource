@@ -793,7 +793,7 @@ int PlayerClass::UpdateAIUnits() {
     v3 = 0; /*0x732620*/
     if ( HeightMap ) /*0x732627*/
     {
-      LOBYTE(HeightMap) = (unsigned __int8)EventClass::resetEvent((EventClass *)HeightMap, 0, 0); /*0x73262d*/
+      (HeightMap) = ((HeightMap) & ~0xFF) | (((unsigned __int8)EventClass::resetEvent((EventClass *)HeightMap, 0, 0)) & 0xFF); /*0x73262d*/
       /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass_TechnoClass) */  /*0x732632*/
       *&v2->q014 = 10; /*0x732638*/
       *(unsigned int *)v2->Count = 0; /*0x73263f*/
@@ -808,7 +808,7 @@ int PlayerClass::UpdateAIUnits() {
       do /*0x7326a6*/
       {
         v5 = *(unsigned int *)(*(unsigned int *)&MEMORY[0xA8EB00].?[152] + 4 * v3); /*0x73265a*/
-        LOBYTE(HeightMap) = StepTechnoClassCleanupIfHuman(v5, this); /*0x73265f*/
+        (HeightMap) = ((HeightMap) & ~0xFF) | ((StepTechnoClassCleanupIfHuman(v5, this)) & 0xFF); /*0x73265f*/
         if ( (unsigned char)HeightMap ) /*0x732666*/
         {
           EventClass_field_0x8 = v2->EventClass_field_0x8; /*0x732668*/
@@ -857,9 +857,9 @@ int PlayerClass::UpdateAIUnits() {
         if ( (*(unsigned char *)(HeightMap + 20) & 1) != 0 ) /*0x73270c*/
         {
           v16 = HeightMap; /*0x732714*/
-          LOBYTE(HeightMap) = StepTechnoClassCleanupIfHuman(HeightMap, this); /*0x732718*/
+          (HeightMap) = ((HeightMap) & ~0xFF) | ((StepTechnoClassCleanupIfHuman(HeightMap, this)) & 0xFF); /*0x732718*/
           if ( (unsigned char)HeightMap ) /*0x73271f*/
-            LOBYTE(HeightMap) = DynamicVector::AddItem((DynamicVector *)v2, &v16); /*0x732728*/
+            (HeightMap) = ((HeightMap) & ~0xFF) | ((DynamicVector::AddItem((DynamicVector *)v2, &v16)) & 0xFF); /*0x732728*/
         }
       }
     }

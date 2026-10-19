@@ -821,14 +821,14 @@ int TechnoClass::ProcessDeployAction()
           }
         }
         if ( this->customSound_controller[3] != 6 ) /*0x6b0200*/
-          LOBYTE(v3) = FactoryClass::PlaceExitUnits((FactoryClass *)this); /*0x6b0204*/
+          (v3) = ((v3) & ~0xFF) | ((FactoryClass::PlaceExitUnits((FactoryClass *)this)) & 0xFF); /*0x6b0204*/
       }
       break; /*0x6b0061*/
     case 6:
       v3 = (*(int (**)(int))(*(unsigned int *)this->occupant + 44))(this->occupant); /*0x6b0214*/
       if ( v3 == 1 ) /*0x6b021a*/
       {
-        LOBYTE(v3) = (unsigned __int8)Event_Process_6B0490(this); /*0x6b021e*/
+        (v3) = ((v3) & ~0xFF) | (((unsigned __int8)Event_Process_6B0490(this)) & 0xFF); /*0x6b021e*/
 LABEL_51:
         this->customSound_controller[3] = 1; /*0x6b0223*/
         this->customSound_controller[4] = 0x7FFFFFFF; /*0x6b022a*/

@@ -299,12 +299,12 @@ void* BuildingLightClass::CTOR(int a1) {
     Math::SinCos(v29); /*0x4359a6*/
     __asm { fmul [esp+6Ch+var_48] } /*0x4359ab*/
     __asm { fsubr [esp+64h+var_30] }
-    LOWORD(v7) = Math::RoundToInt(a2); /*0x4359b6*/
+    (v7) = ((v7) & ~0xFFFF) | ((Math::RoundToInt(a2)) & 0xFFFF); /*0x4359b6*/
     v25 = v7; /*0x4359bf*/
     Math::ArcTan2(v29); /*0x4359c6*/
     __asm { fmul [esp+70h+var_48] } /*0x4359cb*/
     __asm { fiadd [esp+68h+var_24] }
-    LOWORD(v8) = Math::RoundToInt(a2); /*0x4359d6*/
+    (v8) = ((v8) & ~0xFFFF) | ((Math::RoundToInt(a2)) & 0xFFFF); /*0x4359d6*/
     v9 = Coord3D::Set(&v43, v8, v25, v27); /*0x4359e0*/
     v40 = *v9; /*0x4359e9*/
     v41 = v9->Coord3D_field_0x04; /*0x4359f0*/
@@ -337,12 +337,12 @@ void* BuildingLightClass::CTOR(int a1) {
     Math::SinCos(v34); /*0x435a73*/
     __asm { fmul [esp+6Ch+var_48] } /*0x435a78*/
     __asm { fsubr [esp+64h+var_30] }
-    LOWORD(v15) = Math::RoundToInt(a2); /*0x435a83*/
+    (v15) = ((v15) & ~0xFFFF) | ((Math::RoundToInt(a2)) & 0xFFFF); /*0x435a83*/
     v26 = v15; /*0x435a8c*/
     Math::ArcTan2(v34); /*0x435a8f*/
     __asm { fmul [esp+70h+var_48] } /*0x435a94*/
     __asm { fiadd [esp+68h+var_24] }
-    LOWORD(v16) = Math::RoundToInt(a2); /*0x435a9f*/
+    (v16) = ((v16) & ~0xFFFF) | ((Math::RoundToInt(a2)) & 0xFFFF); /*0x435a9f*/
     v17 = Coord3D::Set(&v43, v16, v26, v13); /*0x435aa9*/
     v4[1].ptr_C = *v17; /*0x435ab0*/
     v4[1].uniqueId = v17->Coord3D_field_0x04; /*0x435ab5*/
@@ -499,7 +499,7 @@ int BuildingLightClass::Draw_Start(int a1, int a2) {
                   || (v71 = this->location[0],
                       v72 = this->location[1],
                       v73 = this->location[2],
-                      LOBYTE(BehaviourMode) = Game::Stub3((int)&v71),
+                      (BehaviourMode) = ((BehaviourMode) & ~0xFF) | ((Game::Stub3((int)&v71)) & 0xFF),
                       !(unsigned char)BehaviourMode) )
                 {
                   v9 = (ObjectClass *)__2_YAPAXI_Z(0x18u); /*0x435c95*/
@@ -1120,7 +1120,7 @@ LABEL_31:
             while ( v75 < 2 ); /*0x4368b1*/
             (v48) = ((v48) & ~0xFF) | ((v76) & 0xFF); /*0x4368b7*/
             if ( v76 ) /*0x4368bd*/
-              LOBYTE(v48) = TeamClass::Update_0(*(TeamClass **)(v87 + 52), 35, v87, dword_89C4F0, 0, 0); /*0x4368d4*/
+              (v48) = ((v48) & ~0xFF) | ((TeamClass::Update_0(*(TeamClass **)(v87 + 52), 35, v87, dword_89C4F0, 0, 0)) & 0xFF); /*0x4368d4*/
           }
         }
       }
@@ -1390,7 +1390,7 @@ int BuildingClass::HandleFactoryCommand() {
       if ( v8 == 16 || v8 == 40 || v8 == 3 ) /*0x44363a*/
       {
         v12 = (unsigned int *)(*(int (**)(unsigned int *, unsigned char *))(*v24 + 72))(v24, v21); /*0x44369b*/
-        LOWORD(v20) = *v12 / 256; /*0x4436b0*/
+        (v20) = ((v20) & ~0xFFFF) | ((*v12 / 256) & 0xFFFF); /*0x4436b0*/
         HIWORD(v20) = v12[1] / 256; /*0x4436c9*/
         *(unsigned int *)v19 = v20; /*0x4436d4*/
         BuildingClass::SetRallyPoint((int)this, v19, 1); /*0x4436d8*/
@@ -1558,11 +1558,11 @@ int BuildingClass::CreateUnits()
     if ( Type->Refinery ) /*0x445fd6*/
     {
       Float4::Sum(&this->tiltSidewaysAngle); /*0x445fec*/
-      LOWORD(v6) = Math::RoundToInt(v2); /*0x445ff1*/
+      (v6) = ((v6) & ~0xFFFF) | ((Math::RoundToInt(v2)) & 0xFFFF); /*0x445ff1*/
       if ( v6 ) /*0x445ff8*/
       {
         Float4::Sum(&this->tiltSidewaysAngle); /*0x445ffc*/
-        LOWORD(v7) = Math::RoundToInt(v2); /*0x446001*/
+        (v7) = ((v7) & ~0xFFFF) | ((Math::RoundToInt(v2)) & 0xFFFF); /*0x446001*/
         v6 = 4 * v7 / *(unsigned int *)&this->Type->Storage; /*0x446010*/
       }
       this->StorageFilledSlots = v6; /*0x446019*/
@@ -2195,10 +2195,10 @@ LABEL_172:
   LOBYTE(result) = dword_8871E0->ElevationIncrementBonus[1]; /*0x446ee8*/
   if ( !(unsigned char)result ) /*0x446ef0*/
   {
-    LOBYTE(result) = *(unsigned char *)&this->Type->HoverPad; /*0x446efc*/
+    (result) = ((result) & ~0xFF) | ((*(unsigned char *)&this->Type->HoverPad) & 0xFF); /*0x446efc*/
     if ( (unsigned char)result ) /*0x446f04*/
     {
-      LOBYTE(result) = v133; /*0x446f0a*/
+      (result) = ((result) & ~0xFF) | ((v133) & 0xFF); /*0x446f0a*/
       if ( !v133 ) /*0x446f10*/
       {
         v115 = ++dword_A8E7AC; /*0x446f21*/
@@ -2852,10 +2852,10 @@ int SuperWeapon::SelectSuperWeaponTarget(int a1) {
     if ( v3 ) /*0x4fadf3*/
     {
       v10 = (unsigned int *)(*(int (**)(int, unsigned char *))(*(unsigned int *)v3 + 72))(v3, v15); /*0x4fadff*/
-      LOWORD(v13) = *v10 / 256; /*0x4fae12*/
+      (v13) = ((v13) & ~0xFFFF) | ((*v10 / 256) & 0xFFFF); /*0x4fae12*/
       HIWORD(v13) = v10[1] / 256; /*0x4fae2a*/
       v14 = v13; /*0x4fae37*/
-      LOBYTE(v5) = SuperWeapon::FireSuperWeaponHouseClass(this, a1, (int)&v14); /*0x4fae3f*/
+      (v5) = ((v5) & ~0xFF) | ((SuperWeapon::FireSuperWeaponHouseClass(this, a1, (int)&v14)) & 0xFF); /*0x4fae3f*/
     }
   }
   return v5; /*0x4fae44*/
@@ -2889,7 +2889,7 @@ int SuperWeapon::FireSuperWeaponHouseClass(int a1, int a2) {
   if ( *(unsigned char *)(v6[10] + 238) && v5 ) /*0x4faeab*/
   {
     SuperClass::SetReadiness((SuperClass *)v5, 0); /*0x4faeb1*/
-    LOBYTE(v8) = this == *(SuperWeapon **)((char *)&stru_A83CD9.estimatedHealth + 3); /*0x4faec0*/
+    (v8) = ((v8) & ~0xFF) | ((this == *(SuperWeapon **)((char *)&stru_A83CD9.estimatedHealth + 3)) & 0xFF); /*0x4faec0*/
     SuperClass::StopPreclickAnim(v5, v8); /*0x4faec4*/
   }
   for ( i = dword_A80238 - 1; i >= 0; --i ) /*0x4faed4*/
@@ -2931,7 +2931,7 @@ int SuperWeapon::EvaluateAITarget(int v5, void* a2) {
       (v4) = ((v4) & ~0xFF) | ((v5) & 0xFF); /*0x4faf26*/
       if ( v5 )
       {
-        LOBYTE(v4) = *(unsigned char *)(*(unsigned int *)(v5 + 40) + 236); /*0x4faf35*/
+        (v4) = ((v4) & ~0xFF) | ((*(unsigned char *)(*(unsigned int *)(v5 + 40) + 236)) & 0xFF); /*0x4faf35*/
         if ( (unsigned char)v4 )
         {
           a2 = (__int16 *)CellCoord::To_CellObj(&dword_87F7E8, a2); /*0x4faf5f*/
@@ -2977,7 +2977,7 @@ int SuperWeapon::EvaluateAITarget(int v5, void* a2) {
                 v14 = (unsigned int *)(*(int (**)(unsigned int, unsigned int *))(***&this->q054 + 72))( /*0x4fb05d*/
                                   **&this->q054,
                                   v19);
-                LOWORD(v5) = *v14 / 256; /*0x4fb070*/
+                (v5) = ((v5) & ~0xFFFF) | ((*v14 / 256) & 0xFFFF); /*0x4fb070*/
                 HIWORD(v5) = v14[1] / 256; /*0x4fb084*/
                 v4 = v5; /*0x4fb089*/
               }

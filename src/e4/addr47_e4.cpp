@@ -661,7 +661,7 @@ int CellClass_UpdateNeighborTerrain(int a1, int a2, unsigned int a3, int a4)
   if ( a3 < 8 ) /*0x47e132*/
   {
     LOWORD(v41) = *p_smudgeTypeIndex + LOWORD(dword_89F688[a3 & 7]); /*0x47e157*/
-    HIWORD(v41) = HIWORD(*p_smudgeTypeIndex) + HIWORD(dword_89F688[a3 & 7]); /*0x47e166*/
+    HIWORD(v41) = (((*p_smudgeTypeIndex) >> 16) & 0xFFFF) + HIWORD(dword_89F688[a3 & 7]); /*0x47e166*/
     *(unsigned int *)v48 = v41; /*0x47e16f*/
     v4 = (CellClass *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v48); /*0x47e17d*/
   }
@@ -875,7 +875,7 @@ int CellClass_SetOccupancyFlags(int a1, int a2, unsigned int a3, int a4)
   if ( a3 < 8 ) /*0x47e562*/
   {
     LOWORD(v41) = *p_smudgeTypeIndex + LOWORD(dword_89F688[a3 & 7]); /*0x47e587*/
-    HIWORD(v41) = HIWORD(*p_smudgeTypeIndex) + HIWORD(dword_89F688[a3 & 7]); /*0x47e596*/
+    HIWORD(v41) = (((*p_smudgeTypeIndex) >> 16) & 0xFFFF) + HIWORD(dword_89F688[a3 & 7]); /*0x47e596*/
     *(unsigned int *)v48 = v41; /*0x47e59f*/
     v4 = (CellClass *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v48); /*0x47e5ad*/
   }

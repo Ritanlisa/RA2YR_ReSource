@@ -176,7 +176,7 @@ char BlowPipe_23::SetCapacity(int a2, unsigned int * a3)
       }
       *&this->q004 = v4; /*0x63e3d7*/
       this->m_8 = a2; /*0x63e3df*/
-      BYTE1(this->m_C) = a3 == 0; /*0x63e3e2*/
+      (this->m_C) = ((this->m_C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x63e3e2*/
       return 1; /*0x63e3e8*/
     }
     else
@@ -275,7 +275,7 @@ char BlowPipe_31::Release(int a2, unsigned int * a3)
     }
     *&this->q004 = v4; /*0x63e50a*/
     this->m_8 = a2; /*0x63e512*/
-    BYTE1(this->m_C) = a3 == 0; /*0x63e515*/
+    (this->m_C) = ((this->m_C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x63e515*/
   }
   else
   {
@@ -373,7 +373,7 @@ char BlowPipe_23::Release(int a2, unsigned int * a3)
       }
       *&this->q004 = v4; /*0x63e717*/
       this->m_8 = a2; /*0x63e71f*/
-      BYTE1(this->m_C) = a3 == 0; /*0x63e722*/
+      (this->m_C) = ((this->m_C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x63e722*/
       return 1; /*0x63e728*/
     }
     else
@@ -475,7 +475,7 @@ char BlowPipe_23::SetCapacity_0(int a2, unsigned int * a3)
     }
     *&this->q004 = v4; /*0x63e84a*/
     this->m_8 = a2; /*0x63e852*/
-    BYTE1(this->m_C) = a3 == 0; /*0x63e855*/
+    (this->m_C) = ((this->m_C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x63e855*/
   }
   else
   {
@@ -543,7 +543,7 @@ char BlowPipe_23::SetCapacity_1(int a2, unsigned int * a3)
     }
     *&this->q004 = v4; /*0x63eb4a*/
     this->m_8 = a2; /*0x63eb52*/
-    BYTE1(this->m_C) = a3 == 0; /*0x63eb55*/
+    (this->m_C) = ((this->m_C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x63eb55*/
   }
   else
   {

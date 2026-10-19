@@ -646,7 +646,7 @@ AbstractClass * * Render::DrawLine(int a1, int a2, int a3, int a4, int a5, int a
         &v29,
         &v33,
         ((unsigned __int8)v31 >> g_BitShift_Green_0 << g_BitShift_Red)
-        | (HIBYTE(v31) >> g_BitMask_Blue << g_BitMask_Green)
+        | ((((v31) >> 8) & 0xFF) >> g_BitMask_Blue << g_BitMask_Green)
         | (v32 >> g_BitMask_Red << g_BitShift_Blue));
     }
     result = v50; /*0x705829*/
@@ -775,7 +775,7 @@ void Render::DrawTileBitmap(int a1, unsigned short * a2, short a3, short a4, uns
             v23 = ((v22 - 12) >> 4) + 1; /*0x7c77c9*/
 LABEL_121:
             v30 = *(unsigned __int8 *)(v20 + 2) << 16; /*0x7c7ae0*/
-            LOWORD(v30) = *(unsigned short *)v20; /*0x7c7ae8*/
+            (v30) = ((v30) & ~0xFFFF) | ((*(unsigned short *)v20) & 0xFFFF); /*0x7c7ae8*/
             LOBYTE(v24) = *(unsigned short *)v20; /*0x7c7aeb*/
             v27 = v30 >> 8; /*0x7c7aed*/
             --v20; /*0x7c7af0*/
@@ -787,7 +787,7 @@ LABEL_121:
             v24 = 0; /*0x7c77d7*/
             v23 = ((v22 - 8) >> 4) + 1; /*0x7c77d9*/
 LABEL_119:
-            LOWORD(v27) = *(unsigned short *)v20; /*0x7c7aa4*/
+            (v27) = ((v27) & ~0xFFFF) | ((*(unsigned short *)v20) & 0xFFFF); /*0x7c7aa4*/
             LOBYTE(v24) = *(unsigned short *)v20; /*0x7c7aa9*/
             v21 -= 8; /*0x7c7aab*/
             v20 -= 2; /*0x7c7aae*/
@@ -815,7 +815,7 @@ LABEL_117:
         LOBYTE(v24) = *(unsigned int *)v20; /*0x7c796d*/
         LOBYTE(v19) = g_ScreenRenderMask[(unsigned int)v24] | v19; /*0x7c796f*/
         v18 += *(int *)((char *)&g_ScreenRenderLUT1 + 2 * v19); /*0x7c77f0*/
-        LOWORD(v19) = *(__int16 *)((char *)&g_ScreenRenderLUT2 + v19); /*0x7c77f7*/
+        (v19) = ((v19) & ~0xFFFF) | ((*(__int16 *)((char *)&g_ScreenRenderLUT2 + v19)) & 0xFFFF); /*0x7c77f7*/
         if ( v18 > 0x7FFF ) /*0x7c7803*/
         {
           v18 = 0x7FFF; /*0x7c7998*/
@@ -829,7 +829,7 @@ LABEL_117:
 LABEL_75:
         LOBYTE(v24) = (((v28) >> 8) & 0xFF); /*0x7c781d*/
         v18 += *(int *)((char *)&g_ScreenRenderLUT1 + 2 * v19); /*0x7c781f*/
-        LOWORD(v19) = *(__int16 *)((char *)&g_ScreenRenderLUT2 + v19); /*0x7c7826*/
+        (v19) = ((v19) & ~0xFFFF) | ((*(__int16 *)((char *)&g_ScreenRenderLUT2 + v19)) & 0xFFFF); /*0x7c7826*/
         if ( v18 > 0x7FFF ) /*0x7c7832*/
         {
           v18 = 0x7FFF; /*0x7c79b0*/
@@ -843,7 +843,7 @@ LABEL_75:
         v27 = (((v28) >> 16) & 0xFFFF); /*0x7c784d*/
 LABEL_79:
         v18 += *(int *)((char *)&g_ScreenRenderLUT1 + 2 * v19); /*0x7c7850*/
-        LOWORD(v19) = *(__int16 *)((char *)&g_ScreenRenderLUT2 + v19); /*0x7c7857*/
+        (v19) = ((v19) & ~0xFFFF) | ((*(__int16 *)((char *)&g_ScreenRenderLUT2 + v19)) & 0xFFFF); /*0x7c7857*/
         if ( v18 > 0x7FFF ) /*0x7c7863*/
         {
           v18 = 0x7FFF; /*0x7c79c8*/
@@ -857,7 +857,7 @@ LABEL_79:
 LABEL_83:
         LOBYTE(v24) = v27; /*0x7c787e*/
         v18 += *(int *)((char *)&g_ScreenRenderLUT1 + 2 * v19); /*0x7c7880*/
-        LOWORD(v19) = *(__int16 *)((char *)&g_ScreenRenderLUT2 + v19); /*0x7c7887*/
+        (v19) = ((v19) & ~0xFFFF) | ((*(__int16 *)((char *)&g_ScreenRenderLUT2 + v19)) & 0xFFFF); /*0x7c7887*/
         if ( v18 > 0x7FFF ) /*0x7c7893*/
         {
           v18 = 0x7FFF; /*0x7c79e0*/
@@ -870,7 +870,7 @@ LABEL_83:
         v21[6] = v18; /*0x7c78aa*/
 LABEL_87:
         v18 += *(int *)((char *)&g_ScreenRenderLUT1 + 2 * v19); /*0x7c78ae*/
-        LOWORD(v19) = *(__int16 *)((char *)&g_ScreenRenderLUT2 + v19); /*0x7c78b5*/
+        (v19) = ((v19) & ~0xFFFF) | ((*(__int16 *)((char *)&g_ScreenRenderLUT2 + v19)) & 0xFFFF); /*0x7c78b5*/
         if ( v18 > 0x7FFF ) /*0x7c78c1*/
         {
           v18 = 0x7FFF; /*0x7c79f8*/
@@ -884,7 +884,7 @@ LABEL_87:
 LABEL_91:
         LOBYTE(v24) = (((v27) >> 8) & 0xFF); /*0x7c78dc*/
         v18 += *(int *)((char *)&g_ScreenRenderLUT1 + 2 * v19); /*0x7c78de*/
-        LOWORD(v19) = *(__int16 *)((char *)&g_ScreenRenderLUT2 + v19); /*0x7c78e5*/
+        (v19) = ((v19) & ~0xFFFF) | ((*(__int16 *)((char *)&g_ScreenRenderLUT2 + v19)) & 0xFFFF); /*0x7c78e5*/
         if ( v18 > 0x7FFF ) /*0x7c78f1*/
         {
           v18 = 0x7FFF; /*0x7c7a10*/
@@ -897,7 +897,7 @@ LABEL_91:
         v21[10] = v18; /*0x7c7908*/
 LABEL_95:
         v18 += *(int *)((char *)&g_ScreenRenderLUT1 + 2 * v19); /*0x7c790c*/
-        LOWORD(v19) = *(__int16 *)((char *)&g_ScreenRenderLUT2 + v19); /*0x7c7913*/
+        (v19) = ((v19) & ~0xFFFF) | ((*(__int16 *)((char *)&g_ScreenRenderLUT2 + v19)) & 0xFFFF); /*0x7c7913*/
         if ( v18 > 0x7FFF ) /*0x7c791f*/
         {
           v18 = 0x7FFF; /*0x7c7a28*/
@@ -910,7 +910,7 @@ LABEL_95:
         v21[12] = v18; /*0x7c7936*/
 LABEL_99:
         v18 += *(int *)((char *)&g_ScreenRenderLUT1 + 2 * v19); /*0x7c793a*/
-        LOWORD(v19) = *(__int16 *)((char *)&g_ScreenRenderLUT2 + v19); /*0x7c7941*/
+        (v19) = ((v19) & ~0xFFFF) | ((*(__int16 *)((char *)&g_ScreenRenderLUT2 + v19)) & 0xFFFF); /*0x7c7941*/
         if ( v18 > 0x7FFF ) /*0x7c794d*/
         {
           v18 = 0x7FFF; /*0x7c7a40*/
@@ -938,7 +938,7 @@ LABEL_99:
           case 2u: /*0x7c7982*/
             goto LABEL_117;
           case 3u: /*0x7c7982*/
-            LOWORD(v27) = 16 * *(unsigned short *)v20; /*0x7c7a8d*/
+            (v27) = ((v27) & ~0xFFFF) | ((16 * *(unsigned short *)v20) & 0xFFFF); /*0x7c7a8d*/
             LOBYTE(v24) = 16 * *(unsigned char *)v20; /*0x7c7a91*/
             v21 -= 10; /*0x7c7a93*/
             LOBYTE(v19) = g_ScreenRenderFlag[(unsigned int)v24] | v19; /*0x7c7a96*/
@@ -947,7 +947,7 @@ LABEL_99:
             goto LABEL_119;
           case 5u: /*0x7c7982*/
             v29 = *(unsigned __int8 *)(v20 + 2) << 16; /*0x7c7ac1*/
-            LOWORD(v29) = *(unsigned short *)v20; /*0x7c7ac4*/
+            (v29) = ((v29) & ~0xFFFF) | ((*(unsigned short *)v20) & 0xFFFF); /*0x7c7ac4*/
             v27 = v29 >> 4; /*0x7c7ac9*/
             LOBYTE(v24) = 16 * *(unsigned short *)v20; /*0x7c7acc*/
             v21 -= 6; /*0x7c7acf*/
@@ -982,7 +982,7 @@ LABEL_99:
             v36 = ((v35 - 12) >> 4) + 1; /*0x7c7b99*/
 LABEL_180:
             v43 = *(unsigned __int8 *)(v32 + 2) << 16; /*0x7c7eb4*/
-            LOWORD(v43) = *(unsigned short *)v32; /*0x7c7ebc*/
+            (v43) = ((v43) & ~0xFFFF) | ((*(unsigned short *)v32) & 0xFFFF); /*0x7c7ebc*/
             LOBYTE(v37) = *(unsigned short *)v32; /*0x7c7ebf*/
             v40 = v43 >> 8; /*0x7c7ec1*/
             --v32; /*0x7c7ec4*/
@@ -994,7 +994,7 @@ LABEL_180:
             v37 = 0; /*0x7c7ba7*/
             v36 = ((v35 - 8) >> 4) + 1; /*0x7c7ba9*/
 LABEL_178:
-            LOWORD(v40) = *(unsigned short *)v32; /*0x7c7e78*/
+            (v40) = ((v40) & ~0xFFFF) | ((*(unsigned short *)v32) & 0xFFFF); /*0x7c7e78*/
             LOBYTE(v37) = *(unsigned short *)v32; /*0x7c7e7d*/
             v31 -= 8; /*0x7c7e7f*/
             v32 -= 2; /*0x7c7e82*/
@@ -1022,7 +1022,7 @@ LABEL_176:
         LOBYTE(v37) = *(unsigned int *)v32; /*0x7c7d3d*/
         LOBYTE(v34) = g_ScreenRenderMask[(unsigned int)v37] | v34; /*0x7c7d3f*/
         v33 += *(int *)((char *)&g_ScreenRenderLUT1 + 2 * v34); /*0x7c7bc0*/
-        LOWORD(v34) = *(__int16 *)((char *)&g_ScreenRenderLUT2 + v34); /*0x7c7bc7*/
+        (v34) = ((v34) & ~0xFFFF) | ((*(__int16 *)((char *)&g_ScreenRenderLUT2 + v34)) & 0xFFFF); /*0x7c7bc7*/
         if ( v33 > 0x7FFF ) /*0x7c7bd3*/
         {
           v33 = 0x7FFF; /*0x7c7d6c*/
@@ -1036,7 +1036,7 @@ LABEL_176:
 LABEL_134:
         LOBYTE(v37) = (((v41) >> 8) & 0xFF); /*0x7c7bed*/
         v33 += *(int *)((char *)&g_ScreenRenderLUT1 + 2 * v34); /*0x7c7bef*/
-        LOWORD(v34) = *(__int16 *)((char *)&g_ScreenRenderLUT2 + v34); /*0x7c7bf6*/
+        (v34) = ((v34) & ~0xFFFF) | ((*(__int16 *)((char *)&g_ScreenRenderLUT2 + v34)) & 0xFFFF); /*0x7c7bf6*/
         if ( v33 > 0x7FFF ) /*0x7c7c02*/
         {
           v33 = 0x7FFF; /*0x7c7d84*/
@@ -1050,7 +1050,7 @@ LABEL_134:
         v40 = (((v41) >> 16) & 0xFFFF); /*0x7c7c1d*/
 LABEL_138:
         v33 += *(int *)((char *)&g_ScreenRenderLUT1 + 2 * v34); /*0x7c7c20*/
-        LOWORD(v34) = *(__int16 *)((char *)&g_ScreenRenderLUT2 + v34); /*0x7c7c27*/
+        (v34) = ((v34) & ~0xFFFF) | ((*(__int16 *)((char *)&g_ScreenRenderLUT2 + v34)) & 0xFFFF); /*0x7c7c27*/
         if ( v33 > 0x7FFF ) /*0x7c7c33*/
         {
           v33 = 0x7FFF; /*0x7c7d9c*/
@@ -1064,7 +1064,7 @@ LABEL_138:
 LABEL_142:
         LOBYTE(v37) = v40; /*0x7c7c4e*/
         v33 += *(int *)((char *)&g_ScreenRenderLUT1 + 2 * v34); /*0x7c7c50*/
-        LOWORD(v34) = *(__int16 *)((char *)&g_ScreenRenderLUT2 + v34); /*0x7c7c57*/
+        (v34) = ((v34) & ~0xFFFF) | ((*(__int16 *)((char *)&g_ScreenRenderLUT2 + v34)) & 0xFFFF); /*0x7c7c57*/
         if ( v33 > 0x7FFF ) /*0x7c7c63*/
         {
           v33 = 0x7FFF; /*0x7c7db4*/
@@ -1077,7 +1077,7 @@ LABEL_142:
         v31[6] = v33; /*0x7c7c7a*/
 LABEL_146:
         v33 += *(int *)((char *)&g_ScreenRenderLUT1 + 2 * v34); /*0x7c7c7e*/
-        LOWORD(v34) = *(__int16 *)((char *)&g_ScreenRenderLUT2 + v34); /*0x7c7c85*/
+        (v34) = ((v34) & ~0xFFFF) | ((*(__int16 *)((char *)&g_ScreenRenderLUT2 + v34)) & 0xFFFF); /*0x7c7c85*/
         if ( v33 > 0x7FFF ) /*0x7c7c91*/
         {
           v33 = 0x7FFF; /*0x7c7dcc*/
@@ -1091,7 +1091,7 @@ LABEL_146:
 LABEL_150:
         LOBYTE(v37) = (((v40) >> 8) & 0xFF); /*0x7c7cac*/
         v33 += *(int *)((char *)&g_ScreenRenderLUT1 + 2 * v34); /*0x7c7cae*/
-        LOWORD(v34) = *(__int16 *)((char *)&g_ScreenRenderLUT2 + v34); /*0x7c7cb5*/
+        (v34) = ((v34) & ~0xFFFF) | ((*(__int16 *)((char *)&g_ScreenRenderLUT2 + v34)) & 0xFFFF); /*0x7c7cb5*/
         if ( v33 > 0x7FFF ) /*0x7c7cc1*/
         {
           v33 = 0x7FFF; /*0x7c7de4*/
@@ -1104,7 +1104,7 @@ LABEL_150:
         v31[10] = v33; /*0x7c7cd8*/
 LABEL_154:
         v33 += *(int *)((char *)&g_ScreenRenderLUT1 + 2 * v34); /*0x7c7cdc*/
-        LOWORD(v34) = *(__int16 *)((char *)&g_ScreenRenderLUT2 + v34); /*0x7c7ce3*/
+        (v34) = ((v34) & ~0xFFFF) | ((*(__int16 *)((char *)&g_ScreenRenderLUT2 + v34)) & 0xFFFF); /*0x7c7ce3*/
         if ( v33 > 0x7FFF ) /*0x7c7cef*/
         {
           v33 = 0x7FFF; /*0x7c7dfc*/
@@ -1117,7 +1117,7 @@ LABEL_154:
         v31[12] = v33; /*0x7c7d06*/
 LABEL_158:
         v33 += *(int *)((char *)&g_ScreenRenderLUT1 + 2 * v34); /*0x7c7d0a*/
-        LOWORD(v34) = *(__int16 *)((char *)&g_ScreenRenderLUT2 + v34); /*0x7c7d11*/
+        (v34) = ((v34) & ~0xFFFF) | ((*(__int16 *)((char *)&g_ScreenRenderLUT2 + v34)) & 0xFFFF); /*0x7c7d11*/
         if ( v33 > 0x7FFF ) /*0x7c7d1d*/
         {
           v33 = 0x7FFF; /*0x7c7e14*/
@@ -1145,7 +1145,7 @@ LABEL_158:
           case 2u: /*0x7c7d52*/
             goto LABEL_176;
           case 3u: /*0x7c7d52*/
-            LOWORD(v40) = 16 * *(unsigned short *)v32; /*0x7c7e61*/
+            (v40) = ((v40) & ~0xFFFF) | ((16 * *(unsigned short *)v32) & 0xFFFF); /*0x7c7e61*/
             LOBYTE(v37) = 16 * *(unsigned char *)v32; /*0x7c7e65*/
             v31 -= 10; /*0x7c7e67*/
             LOBYTE(v34) = g_ScreenRenderFlag[(unsigned int)v37] | v34; /*0x7c7e6a*/
@@ -1154,7 +1154,7 @@ LABEL_158:
             goto LABEL_178;
           case 5u: /*0x7c7d52*/
             v42 = *(unsigned __int8 *)(v32 + 2) << 16; /*0x7c7e95*/
-            LOWORD(v42) = *(unsigned short *)v32; /*0x7c7e98*/
+            (v42) = ((v42) & ~0xFFFF) | ((*(unsigned short *)v32) & 0xFFFF); /*0x7c7e98*/
             v40 = v42 >> 4; /*0x7c7e9d*/
             LOBYTE(v37) = 16 * *(unsigned short *)v32; /*0x7c7ea0*/
             v31 -= 6; /*0x7c7ea3*/
@@ -1191,7 +1191,7 @@ LABEL_158:
             v10 = ((a5 - 12) >> 4) + 1; /*0x7c7401*/
 LABEL_62:
             v17 = *(unsigned __int8 *)(v8 + 2) << 16; /*0x7c771c*/
-            LOWORD(v17) = *(unsigned short *)v8; /*0x7c7724*/
+            (v17) = ((v17) & ~0xFFFF) | ((*(unsigned short *)v8) & 0xFFFF); /*0x7c7724*/
             LOBYTE(v11) = *(unsigned short *)v8; /*0x7c7727*/
             v14 = v17 >> 8; /*0x7c7729*/
             --v8; /*0x7c772c*/
@@ -1203,7 +1203,7 @@ LABEL_62:
             v11 = 0; /*0x7c740f*/
             v10 = ((a5 - 8) >> 4) + 1; /*0x7c7411*/
 LABEL_60:
-            LOWORD(v14) = *(unsigned short *)v8; /*0x7c76e0*/
+            (v14) = ((v14) & ~0xFFFF) | ((*(unsigned short *)v8) & 0xFFFF); /*0x7c76e0*/
             LOBYTE(v11) = *(unsigned short *)v8; /*0x7c76e5*/
             v9 -= 4; /*0x7c76e7*/
             v8 -= 2; /*0x7c76ea*/
@@ -1231,7 +1231,7 @@ LABEL_58:
         LOBYTE(v11) = *(unsigned int *)v8; /*0x7c75a5*/
         LOBYTE(v7) = g_ScreenRenderMask[(unsigned int)v11] | v7; /*0x7c75a7*/
         v6 += *(int *)((char *)&g_ScreenRenderLUT1 + 2 * v7); /*0x7c7428*/
-        LOWORD(v7) = *(__int16 *)((char *)&g_ScreenRenderLUT2 + v7); /*0x7c742f*/
+        (v7) = ((v7) & ~0xFFFF) | ((*(__int16 *)((char *)&g_ScreenRenderLUT2 + v7)) & 0xFFFF); /*0x7c742f*/
         if ( v6 > 0x7FFF ) /*0x7c743b*/
         {
           v6 = 0x7FFF; /*0x7c75d4*/
@@ -1245,7 +1245,7 @@ LABEL_58:
 LABEL_15:
         LOBYTE(v11) = (((v15) >> 8) & 0xFF); /*0x7c7455*/
         v6 += *(int *)((char *)&g_ScreenRenderLUT1 + 2 * v7); /*0x7c7457*/
-        LOWORD(v7) = *(__int16 *)((char *)&g_ScreenRenderLUT2 + v7); /*0x7c745e*/
+        (v7) = ((v7) & ~0xFFFF) | ((*(__int16 *)((char *)&g_ScreenRenderLUT2 + v7)) & 0xFFFF); /*0x7c745e*/
         if ( v6 > 0x7FFF ) /*0x7c746a*/
         {
           v6 = 0x7FFF; /*0x7c75ec*/
@@ -1259,7 +1259,7 @@ LABEL_15:
         v14 = (((v15) >> 16) & 0xFFFF); /*0x7c7485*/
 LABEL_19:
         v6 += *(int *)((char *)&g_ScreenRenderLUT1 + 2 * v7); /*0x7c7488*/
-        LOWORD(v7) = *(__int16 *)((char *)&g_ScreenRenderLUT2 + v7); /*0x7c748f*/
+        (v7) = ((v7) & ~0xFFFF) | ((*(__int16 *)((char *)&g_ScreenRenderLUT2 + v7)) & 0xFFFF); /*0x7c748f*/
         if ( v6 > 0x7FFF ) /*0x7c749b*/
         {
           v6 = 0x7FFF; /*0x7c7604*/
@@ -1273,7 +1273,7 @@ LABEL_19:
 LABEL_23:
         LOBYTE(v11) = v14; /*0x7c74b6*/
         v6 += *(int *)((char *)&g_ScreenRenderLUT1 + 2 * v7); /*0x7c74b8*/
-        LOWORD(v7) = *(__int16 *)((char *)&g_ScreenRenderLUT2 + v7); /*0x7c74bf*/
+        (v7) = ((v7) & ~0xFFFF) | ((*(__int16 *)((char *)&g_ScreenRenderLUT2 + v7)) & 0xFFFF); /*0x7c74bf*/
         if ( v6 > 0x7FFF ) /*0x7c74cb*/
         {
           v6 = 0x7FFF; /*0x7c761c*/
@@ -1286,7 +1286,7 @@ LABEL_23:
         v9[3] = v6; /*0x7c74e2*/
 LABEL_27:
         v6 += *(int *)((char *)&g_ScreenRenderLUT1 + 2 * v7); /*0x7c74e6*/
-        LOWORD(v7) = *(__int16 *)((char *)&g_ScreenRenderLUT2 + v7); /*0x7c74ed*/
+        (v7) = ((v7) & ~0xFFFF) | ((*(__int16 *)((char *)&g_ScreenRenderLUT2 + v7)) & 0xFFFF); /*0x7c74ed*/
         if ( v6 > 0x7FFF ) /*0x7c74f9*/
         {
           v6 = 0x7FFF; /*0x7c7634*/
@@ -1300,7 +1300,7 @@ LABEL_27:
 LABEL_31:
         LOBYTE(v11) = (((v14) >> 8) & 0xFF); /*0x7c7514*/
         v6 += *(int *)((char *)&g_ScreenRenderLUT1 + 2 * v7); /*0x7c7516*/
-        LOWORD(v7) = *(__int16 *)((char *)&g_ScreenRenderLUT2 + v7); /*0x7c751d*/
+        (v7) = ((v7) & ~0xFFFF) | ((*(__int16 *)((char *)&g_ScreenRenderLUT2 + v7)) & 0xFFFF); /*0x7c751d*/
         if ( v6 > 0x7FFF ) /*0x7c7529*/
         {
           v6 = 0x7FFF; /*0x7c764c*/
@@ -1313,7 +1313,7 @@ LABEL_31:
         v9[5] = v6; /*0x7c7540*/
 LABEL_35:
         v6 += *(int *)((char *)&g_ScreenRenderLUT1 + 2 * v7); /*0x7c7544*/
-        LOWORD(v7) = *(__int16 *)((char *)&g_ScreenRenderLUT2 + v7); /*0x7c754b*/
+        (v7) = ((v7) & ~0xFFFF) | ((*(__int16 *)((char *)&g_ScreenRenderLUT2 + v7)) & 0xFFFF); /*0x7c754b*/
         if ( v6 > 0x7FFF ) /*0x7c7557*/
         {
           v6 = 0x7FFF; /*0x7c7664*/
@@ -1326,7 +1326,7 @@ LABEL_35:
         v9[6] = v6; /*0x7c756e*/
 LABEL_39:
         v6 += *(int *)((char *)&g_ScreenRenderLUT1 + 2 * v7); /*0x7c7572*/
-        LOWORD(v7) = *(__int16 *)((char *)&g_ScreenRenderLUT2 + v7); /*0x7c7579*/
+        (v7) = ((v7) & ~0xFFFF) | ((*(__int16 *)((char *)&g_ScreenRenderLUT2 + v7)) & 0xFFFF); /*0x7c7579*/
         if ( v6 > 0x7FFF ) /*0x7c7585*/
         {
           v6 = 0x7FFF; /*0x7c767c*/
@@ -1354,7 +1354,7 @@ LABEL_39:
           case 2u: /*0x7c75ba*/
             goto LABEL_58;
           case 3u: /*0x7c75ba*/
-            LOWORD(v14) = 16 * *(unsigned short *)v8; /*0x7c76c9*/
+            (v14) = ((v14) & ~0xFFFF) | ((16 * *(unsigned short *)v8) & 0xFFFF); /*0x7c76c9*/
             LOBYTE(v11) = 16 * *(unsigned char *)v8; /*0x7c76cd*/
             v9 -= 5; /*0x7c76cf*/
             LOBYTE(v7) = g_ScreenRenderFlag[(unsigned int)v11] | v7; /*0x7c76d2*/
@@ -1363,7 +1363,7 @@ LABEL_39:
             goto LABEL_60;
           case 5u: /*0x7c75ba*/
             v16 = *(unsigned __int8 *)(v8 + 2) << 16; /*0x7c76fd*/
-            LOWORD(v16) = *(unsigned short *)v8; /*0x7c7700*/
+            (v16) = ((v16) & ~0xFFFF) | ((*(unsigned short *)v8) & 0xFFFF); /*0x7c7700*/
             v14 = v16 >> 4; /*0x7c7705*/
             LOBYTE(v11) = 16 * *(unsigned short *)v8; /*0x7c7708*/
             v9 -= 3; /*0x7c770b*/

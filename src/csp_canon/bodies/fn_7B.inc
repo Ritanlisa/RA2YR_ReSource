@@ -1217,7 +1217,7 @@ wchar_t MSPrintAnim::GetCharAt(size_t a2)
   if ( a2 >= result ) /*0x7b7124*/
     (result) = ((result) & ~0xFFFF) | ((0) & 0xFFFF); /*0x7b7130*/
   else
-    LOWORD(result) = *(unsigned short *)(*(unsigned int *)this->__pad_0 + 2 * a2); /*0x7b7129*/
+    (result) = ((result) & ~0xFFFF) | ((*(unsigned short *)(*(unsigned int *)this->__pad_0 + 2 * a2)) & 0xFFFF); /*0x7b7129*/
   return result; /*0x7b7128*/
 
 }
@@ -1244,7 +1244,7 @@ int WideString::GetChar(size_t aP1)
   result = wcslen(*(const wchar_t **)this); /*0x7b7186*/
   if ( aP1 >= result ) /*0x7b7194*/
     return 0; /*0x7b71a0*/
-  LOWORD(result) = *(unsigned short *)(*(unsigned int *)this + 2 * aP1); /*0x7b7199*/
+  (result) = ((result) & ~0xFFFF) | ((*(unsigned short *)(*(unsigned int *)this + 2 * aP1)) & 0xFFFF); /*0x7b7199*/
   return result; /*0x7b7198*/
 
 }

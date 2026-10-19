@@ -437,22 +437,22 @@ int Warhead::ProcessDamageArea()
   v27 = 1000 * v3 / 255; /*0x65b684*/
   if ( v6 > 2000.0 ) /*0x65b68b*/
     v6 = 2000.0; /*0x65b68f*/
-  LOWORD(v7) = Math::RoundToInt(v6); /*0x65b695*/
+  (v7) = ((v7) & ~0xFFFF) | ((Math::RoundToInt(v6)) & 0xFFFF); /*0x65b695*/
   v8 = v7; /*0x65b69e*/
   v9 = (double)v25 * v2->u64_1828; /*0x65b6a0*/
   if ( v9 > 2000.0 ) /*0x65b6b3*/
     v9 = 2000.0; /*0x65b6b7*/
-  LOWORD(v10) = Math::RoundToInt(v9); /*0x65b6bd*/
+  (v10) = ((v10) & ~0xFFFF) | ((Math::RoundToInt(v9)) & 0xFFFF); /*0x65b6bd*/
   v26 = v10; /*0x65b6c6*/
   v11 = (double)(1000 * v4 / 255) * v2->u64_1828; /*0x65b6ca*/
   if ( v11 > 2000.0 ) /*0x65b6dd*/
     v11 = 2000.0; /*0x65b6e1*/
-  LOWORD(v12) = Math::RoundToInt(v11); /*0x65b6e7*/
+  (v12) = ((v12) & ~0xFFFF) | ((Math::RoundToInt(v11)) & 0xFFFF); /*0x65b6e7*/
   v13 = v12; /*0x65b6f0*/
   v14 = (double)v27 * v2->u64_1828; /*0x65b6f2*/
   if ( v14 > 2000.0 ) /*0x65b705*/
     v14 = 2000.0; /*0x65b709*/
-  LOWORD(v15) = Math::RoundToInt(v14); /*0x65b70f*/
+  (v15) = ((v15) & ~0xFFFF) | ((Math::RoundToInt(v14)) & 0xFFFF); /*0x65b70f*/
   v16 = this->u32_6C; /*0x65b714*/
   v17 = v15; /*0x65b71b*/
   this->u32_58 = v26; /*0x65b71f*/

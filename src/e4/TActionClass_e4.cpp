@@ -723,8 +723,8 @@ char TActionClass::executeParadropAction(int a2, int a3, int a4, int aP4)
   do /*0x6e37da*/
   {
     v13 = v11->q002_; /*0x6e377e*/
-    LOWORD(v17) = *(unsigned short *)v11 + v16[0]; /*0x6e378a*/
-    HIWORD(v17) = v16[1] + v13; /*0x6e378f*/
+    (v17) = ((v17) & ~0xFFFF) | ((*(unsigned short *)v11 + v16[0]) & 0xFFFF); /*0x6e378a*/
+    (v17) = ((v17) & ~(0xFFFF << 16)) | (((v16[1] + v13) & 0xFFFF) << 16); /*0x6e378f*/
     *(unsigned int *)v18 = v17; /*0x6e37a2*/
     for ( i = (unsigned int *)*((unsigned int *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v18) + 57); /*0x6e37b3*/
           i;

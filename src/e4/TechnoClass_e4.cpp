@@ -491,7 +491,7 @@ unsigned int * TechnoClass::Update(int a2, void *a2_1, void *a3, void *a4)
       v12 = __2_YAPAXI_Z(0x50u); /*0x6f40b3*/
       if ( v12 ) /*0x6f40ba*/
       {
-        LOBYTE(v13) = *(unsigned char *)(*(unsigned int *)(*(int (**)(TechnoClass *))(v3->ptr_0 + 1016))(v3) + 320); /*0x6f40cc*/
+        (v13) = ((v13) & ~0xFF) | ((*(unsigned char *)(*(unsigned int *)(*(int (**)(TechnoClass *))(v3->ptr_0 + 1016))(v3) + 320)) & 0xFF); /*0x6f40cc*/
         v14 = (*(int (**)(TechnoClass *, unsigned int, int))(v3->ptr_0 + 1016))(v3, 0, v13); /*0x6f40d7*/
         v15 = (CaptureManagerClass *)CaptureManagerClass::CaptureManagerClass( /*0x6f40e9*/
                                        v12,
@@ -980,8 +980,8 @@ int TechnoClass_DrawAirstrikeFlare_SetContext(int a1, int a2, int a3, int a4, in
     else
     {
       v20 = -1; /*0x705925*/
-      LOBYTE(v21) = (char)(110 * v11) / 14; /*0x705950*/
-      HIBYTE(v21) = (char)(30 * v11) / 14; /*0x70596c*/
+      (v21) = ((v21) & ~0xFF) | (((char)(110 * v11) / 14) & 0xFF); /*0x705950*/
+      (v21) = ((v21) & ~(0xFF << 8)) | ((((char)(30 * v11) / 14) & 0xFF) << 8); /*0x70596c*/
     }
     v12 = v32; /*0x705976*/
     v13 = v42; /*0x70597a*/
@@ -1813,8 +1813,8 @@ LABEL_81:
         v53 = a6; /*0x73c050*/
         goto LABEL_92; /*0x73c050*/
       }
-      LOWORD(v51) = v115; /*0x73bffd*/
-      LOWORD(v50) = v113; /*0x73c003*/
+      (v51) = ((v51) & ~0xFFFF) | ((v115) & 0xFFFF); /*0x73bffd*/
+      (v50) = ((v50) & ~0xFFFF) | ((v113) & 0xFFFF); /*0x73c003*/
       v51 = v110 | (32 * (v50 | (v51 << 6))); /*0x73c01e*/
       v52 = v51 | a6; /*0x73c020*/
     }
@@ -1822,16 +1822,16 @@ LABEL_81:
     {
       v52 = a6; /*0x73c024*/
     }
-    LOWORD(v49) = v115; /*0x73c032*/
-    LOWORD(v50) = v113 >> 1; /*0x73c03a*/
-    LOWORD(v51) = v110; /*0x73c03c*/
+    (v49) = ((v49) & ~0xFFFF) | ((v115) & 0xFFFF); /*0x73c032*/
+    (v50) = ((v50) & ~0xFFFF) | ((v113 >> 1) & 0xFFFF); /*0x73c03a*/
+    (v51) = ((v51) & ~0xFFFF) | ((v110) & 0xFFFF); /*0x73c03c*/
     v49 *= 32; /*0x73c042*/
     v50 = v51 | ((v49 | v50) << 6); /*0x73c04a*/
     v53 = v50 | v52; /*0x73c04c*/
 LABEL_92:
-    LOWORD(v51) = v110; /*0x73c057*/
-    LOWORD(v50) = v113 >> 1; /*0x73c066*/
-    LOWORD(v49) = v115; /*0x73c068*/
+    (v51) = ((v51) & ~0xFFFF) | ((v110) & 0xFFFF); /*0x73c057*/
+    (v50) = ((v50) & ~0xFFFF) | ((v113 >> 1) & 0xFFFF); /*0x73c066*/
+    (v49) = ((v49) & ~0xFFFF) | ((v115) & 0xFFFF); /*0x73c068*/
     v54 = v51 | (32 * ((32 * v49) | v50)) | v53; /*0x73c078*/
     goto LABEL_94; /*0x73c07a*/
   }
@@ -1850,14 +1850,14 @@ LABEL_94:
     v60 = v57 - 1; /*0x73c0d2*/
     if ( v60 ) /*0x73c0d3*/
     {
-      LOBYTE(v60) = v111; /*0x73c11f*/
+      (v60) = ((v60) & ~0xFF) | ((v111) & 0xFF); /*0x73c11f*/
       goto LABEL_101; /*0x73c11f*/
     }
-    LOWORD(v58) = v116; /*0x73c0d5*/
+    (v58) = ((v58) & ~0xFFFF) | ((v116) & 0xFFFF); /*0x73c0d5*/
     v60 = v111; /*0x73c0db*/
-    LOWORD(v59) = v111; /*0x73c0e5*/
+    (v59) = ((v59) & ~0xFFFF) | ((v111) & 0xFFFF); /*0x73c0e5*/
     v61 = v59 | (v58 << 6); /*0x73c0e7*/
-    LOWORD(v59) = v114; /*0x73c0e9*/
+    (v59) = ((v59) & ~0xFFFF) | ((v114) & 0xFFFF); /*0x73c0e9*/
     v58 = v59 | (32 * v61); /*0x73c0f2*/
     v54 |= v58; /*0x73c0f4*/
   }
@@ -1865,17 +1865,17 @@ LABEL_94:
   {
     v60 = v111; /*0x73c0f8*/
   }
-  LOWORD(v59) = (unsigned __int8)v60 >> 1; /*0x73c103*/
-  LOWORD(v58) = v116; /*0x73c105*/
+  (v59) = ((v59) & ~0xFFFF) | (((unsigned __int8)v60 >> 1) & 0xFFFF); /*0x73c103*/
+  (v58) = ((v58) & ~0xFFFF) | ((v116) & 0xFFFF); /*0x73c105*/
   v58 *= 32; /*0x73c10b*/
   v62 = v58 | v59; /*0x73c10e*/
-  LOWORD(v58) = v114; /*0x73c110*/
+  (v58) = ((v58) & ~0xFFFF) | ((v114) & 0xFFFF); /*0x73c110*/
   v59 = v58 | (v62 << 6); /*0x73c119*/
   v54 |= v59; /*0x73c11b*/
 LABEL_101:
-  LOWORD(v59) = v116; /*0x73c123*/
-  LOWORD(v58) = v114; /*0x73c129*/
-  LOWORD(v60) = (unsigned __int8)v60 >> 1; /*0x73c131*/
+  (v59) = ((v59) & ~0xFFFF) | ((v116) & 0xFFFF); /*0x73c123*/
+  (v58) = ((v58) & ~0xFFFF) | ((v114) & 0xFFFF); /*0x73c129*/
+  (v60) = ((v60) & ~0xFFFF) | (((unsigned __int8)v60 >> 1) & 0xFFFF); /*0x73c131*/
   v54 |= v58 | (32 * ((32 * v59) | v60)); /*0x73c13f*/
 LABEL_102:
   if ( UnitClass::IsDeactivated((UnitClass *)v10) ) /*0x73c143*/

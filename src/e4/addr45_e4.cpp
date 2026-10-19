@@ -328,7 +328,7 @@ void* DrawTechnoDeployCircle(IUnknown * aP0, IUnknown * aP1, int a1, int a4, int
   __asm { fld [ebp+arg_10] } /*0x45698d*/
   if ( a10 ) /*0x45699c*/
   {
-    LOWORD(v10) = Math::RoundToInt(a3); /*0x45699e*/
+    (v10) = ((v10) & ~0xFFFF) | ((Math::RoundToInt(a3)) & 0xFFFF); /*0x45699e*/
     v37 = v10; /*0x4569a3*/
     __asm { fild [esp+88h+var_74] } /*0x4569a7*/
   }
@@ -340,7 +340,7 @@ void* DrawTechnoDeployCircle(IUnknown * aP0, IUnknown * aP1, int a1, int a4, int
     __asm { fdivr [esp+90h+var_20] } /*0x4569cf*/
     __asm { fmul ds:dbl_7E1728 }
   }
-  LOWORD(v11) = Math::RoundToInt(a3); /*0x4569b2*/
+  (v11) = ((v11) & ~0xFFFF) | ((Math::RoundToInt(a3)) & 0xFFFF); /*0x4569b2*/
   v12 = v11; /*0x4569e1*/
   v37 = v11; /*0x4569f2*/
   Coord::To_Screen((Coord *)g_TacticalClass_Instance, &a4, &v40); /*0x4569f6*/
@@ -522,9 +522,9 @@ LABEL_19:
                 fxch st(1)
               }
             }
-            LOWORD(v26) = Math::RoundToInt(a3); /*0x456d5c*/
+            (v26) = ((v26) & ~0xFFFF) | ((Math::RoundToInt(a3)) & 0xFFFF); /*0x456d5c*/
             v27 = v26; /*0x456d61*/
-            LOWORD(v28) = Math::RoundToInt(a3); /*0x456d63*/
+            (v28) = ((v28) & ~0xFFFF) | ((Math::RoundToInt(a3)) & 0xFFFF); /*0x456d63*/
             v19 = v40; /*0x456d68*/
             v18 = v41; /*0x456d6c*/
             v29 = v27 + v40; /*0x456d70*/
@@ -534,7 +534,7 @@ LABEL_19:
           }
           __asm { fld [esp+88h+var_58] } /*0x456ca3*/
         }
-        LOWORD(v17) = Math::RoundToInt(a3); /*0x456c73*/
+        (v17) = ((v17) & ~0xFFFF) | ((Math::RoundToInt(a3)) & 0xFFFF); /*0x456c73*/
         v18 = v41; /*0x456c78*/
         v19 = v40; /*0x456c7c*/
         v20 = v41 + v17; /*0x456c80*/
@@ -1163,7 +1163,7 @@ unsigned int * sub_455DD0(int a1, unsigned int * a2)
       fmul ds:dbl_7E44C8
     }
     byte_89C828 |= 1u; /*0x455e11*/
-    LOWORD(v5) = Math::RoundToInt(a3); /*0x455e17*/
+    (v5) = ((v5) & ~0xFFFF) | ((Math::RoundToInt(a3)) & 0xFFFF); /*0x455e17*/
     dword_89C7F0 = v5; /*0x455e1c*/
   }
   v6 = 0; /*0x455e27*/
@@ -1198,7 +1198,7 @@ unsigned int * sub_455DD0(int a1, unsigned int * a2)
         fstp st
       }
       Math::Sqrt(v10); /*0x455eb7*/
-      LOWORD(v8) = Math::RoundToInt(a3); /*0x455ebf*/
+      (v8) = ((v8) & ~0xFFFF) | ((Math::RoundToInt(a3)) & 0xFFFF); /*0x455ebf*/
       if ( v8 < v11 && v8 < dword_89C7F0 ) /*0x455ed0*/
       {
         v14 = v7; /*0x455ed2*/

@@ -439,7 +439,7 @@ int BuildingClass::Construct(int a2, int a3)
   /* X11: vtable install elided (X67 recv-slot, RHS BuildingClass_Vtable4) */  /*0x43ba0e*/
   AbstractClass::GenerateUniqueID(&this->vtable2); /*0x43ba15*/
   this->Upgrades = 0; /*0x43ba22*/
-  LOBYTE(v6) = 0; /*0x43ba28*/
+  (v6) = ((v6) & ~0xFF) | ((0) & 0xFF); /*0x43ba28*/
   this->q5F0 = 0; /*0x43ba2a*/
   this->q5F4 = 0; /*0x43ba30*/
   this->PrismTargetCoords = 0; /*0x43ba36*/
@@ -449,7 +449,7 @@ int BuildingClass::Construct(int a2, int a3)
   if ( v7 ) /*0x43ba46*/
   {
     HIBYTE(v6) = v7->BarrelStartPitch; /*0x43ba48*/
-    LOWORD(a3) = v6; /*0x43ba52*/
+    (a3) = ((a3) & ~0xFFFF) | ((v6) & 0xFFFF); /*0x43ba52*/
     FacingClass::Update(&this->barrelFacing, &a3); /*0x43ba5e*/
   }
   memset(&this->Anims, 0, 0x54u); /*0x43ba70*/
@@ -462,7 +462,7 @@ int BuildingClass::Construct(int a2, int a3)
   this->q5C4 = 0; /*0x43baa3*/
   AudioController::Init(&this->Audio7_d); /*0x43baa9*/
   AudioController::Init(&this->__pad_6B4); /*0x43bab4*/
-  LOWORD(a3) = 0x4000; /*0x43babd*/
+  (a3) = ((a3) & ~0xFFFF) | ((0x4000) & 0xFFFF); /*0x43babd*/
   FacingClass::Update(&this->barrelFacing, &a3); /*0x43bacb*/
   this->RepairProgress = 0; /*0x43bad0*/
   if ( *(int *)&stru_A8E960.altNextScenario[236] < *(int *)&stru_A8E960.altNextScenario[228] /*0x43bb08*/
@@ -876,7 +876,7 @@ int BuildingClass::AfterDestruction()
   {
     v4 = (unsigned short *)(*(int (**)(BuildingClass *, unsigned int))(v1->ptr_0 + 264))(v1, 0); /*0x441f9a*/
     v5 = (unsigned int *)(*(int (**)(BuildingClass *, int *))(v1->ptr_0 + 172))(v1, v30); /*0x441fa1*/
-    LOWORD(v24) = *v5 / 256; /*0x441fb7*/
+    (v24) = ((v24) & ~0xFFFF) | ((*v5 / 256) & 0xFFFF); /*0x441fb7*/
     HIWORD(v24) = v5[1] / 256; /*0x441fcb*/
     *(unsigned int *)v23 = v24; /*0x441fd4*/
     while ( *v4 != 0x7FFF || v4[1] != 0x7FFF ) /*0x441fe6*/
@@ -884,8 +884,8 @@ int BuildingClass::AfterDestruction()
       v6 = v4; /*0x441fe8*/
       v4 += 2; /*0x441fea*/
       v7 = v23[1] + v6[1]; /*0x441ff9*/
-      LOWORD(v24) = v23[0] + *v6; /*0x441ffe*/
-      HIWORD(v24) = v7; /*0x442007*/
+      (v24) = ((v24) & ~0xFFFF) | ((v23[0] + *v6) & 0xFFFF); /*0x441ffe*/
+      (v24) = ((v24) & ~(0xFFFF << 16)) | (((v7) & 0xFFFF) << 16); /*0x442007*/
       *(unsigned int *)v25 = v24; /*0x442016*/
       v8 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v25); /*0x44201f*/
       BuildingClass::CreatePlacementCrater((BuildingClass *)v8); /*0x442023*/
@@ -951,7 +951,7 @@ int BuildingClass::AfterDestruction()
     v20 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v23); /*0x442193*/
     result = Tactical::AddCellToDrawList((int *)g_TacticalClass_Instance, (int)v20); /*0x44219f*/
   }
-  LOBYTE(result) = *(unsigned char *)(v1->Type + 5991); /*0x4421aa*/
+  (result) = ((result) & ~0xFF) | ((*(unsigned char *)(v1->Type + 5991)) & 0xFF); /*0x4421aa*/
   if ( (unsigned char)result ) /*0x4421b2*/
   {
     v21 = (unsigned int *)(*(int (**)(BuildingClass *, int *))(v1->ptr_0 + 172))(v1, v30); /*0x4421bd*/
@@ -1520,7 +1520,7 @@ LABEL_12:
           goto LABEL_12; /*0x44f431*/
         v30 = v50; /*0x44f437*/
       }
-      LOWORD(v49) = v32; /*0x44f43f*/
+      (v49) = ((v49) & ~0xFFFF) | ((v32) & 0xFFFF); /*0x44f43f*/
       (v49) = ((v49) & ~(0xFFFF << 16)) | ((((((v51) >> 16) & 0xFFFF) - 1) & 0xFFFF) << 16); /*0x44f449*/
       *(unsigned int *)v48 = v49; /*0x44f458*/
       if ( (unsigned __int8)LayerClass::CoordinatesLegal((LayerClass *)&dword_87F7E8, v48) ) /*0x44f45c*/
@@ -1556,7 +1556,7 @@ LABEL_12:
           goto LABEL_12; /*0x44f527*/
         v40 = v49; /*0x44f52d*/
       }
-      HIWORD(v50) = v42; /*0x44f535*/
+      (v50) = ((v50) & ~(0xFFFF << 16)) | (((v42) & 0xFFFF) << 16); /*0x44f535*/
       (v50) = ((v50) & ~0xFFFF) | ((v51 - 1) & 0xFFFF); /*0x44f53f*/
       *(unsigned int *)v48 = v50; /*0x44f54e*/
       if ( (unsigned __int8)LayerClass::CoordinatesLegal((LayerClass *)&dword_87F7E8, v48) ) /*0x44f552*/
@@ -2339,7 +2339,7 @@ int BuildingClass::UpdateConstruction()
           v96 = (int *)this->vt_slot_72(this, v242); /*0x444a82*/
           v211 = *v96; /*0x444a8e*/
           Math::CalcAngle((double)v96[1] - (double)*(int *)v203, (double)*(int *)v202 - (double)v211); /*0x444aa7*/
-          LOWORD(v211) = Math::RoundToInt((v1 - 1.570796326794897) * -10430.06004058427); /*0x444ac0*/
+          (v211) = ((v211) & ~0xFFFF) | ((Math::RoundToInt((v1 - 1.570796326794897) * -10430.06004058427)) & 0xFFFF); /*0x444ac0*/
           v211 = (unsigned __int8)((((unsigned int)v211 >> 7) + 1) >> 1); /*0x444adf*/
           v97 = this->ptr_0; /*0x444ae3*/
           *(unsigned int *)v202 = v198; /*0x444ae8*/
@@ -2464,7 +2464,7 @@ int BuildingClass::UpdateConstruction()
           v68 = (int *)(*(int (**)(BuildingClass *, char *))(v67 + 72))(this, v241); /*0x4446a2*/
           v205 = *v68; /*0x4446ae*/
           Math::CalcAngle((double)v68[1] - (double)v215, (double)v214 - (double)v205); /*0x4446c7*/
-          LOWORD(v205) = Math::RoundToInt((v1 - 1.570796326794897) * -10430.06004058427); /*0x4446e0*/
+          (v205) = ((v205) & ~0xFFFF) | ((Math::RoundToInt((v1 - 1.570796326794897) * -10430.06004058427)) & 0xFFFF); /*0x4446e0*/
           v214 = (unsigned __int8)((((unsigned int)v205 >> 7) + 1) >> 1); /*0x4446ff*/
           v69 = this->ptr_0; /*0x444703*/
           v208 = v201; /*0x444708*/
@@ -2505,7 +2505,7 @@ int BuildingClass::UpdateConstruction()
           v211 = v77; /*0x4447a2*/
           if ( *(unsigned char *)(v78 + 5860) ) /*0x4447a6*/
           {
-            if ( (unsigned int *)(__int16)v200 == (unsigned int *)((char *)v201 + 1) && SHIWORD(v200) == *(unsigned int *)v203 + 2 ) /*0x4447cb*/
+            if ( (unsigned int *)(__int16)v200 == (unsigned int *)((char *)v201 + 1) && (short)(((v200) >> 16) & 0xFFFF) == *(unsigned int *)v203 + 2 ) /*0x4447cb*/
             {
               v79 = v76 + *(unsigned int *)(v78 + 3784); /*0x4447d9*/
               v81 = *(unsigned int *)(v78 + 3792); /*0x4447db*/
@@ -2522,7 +2522,7 @@ int BuildingClass::UpdateConstruction()
           }
           if ( *(unsigned char *)(v78 + 5861) /*0x444821*/
             && (unsigned int *)(__int16)v200 == (unsigned int *)((char *)v201 + 2)
-            && SHIWORD(v200) == *(unsigned int *)v203 + 2 )
+            && (short)(((v200) >> 16) & 0xFFFF) == *(unsigned int *)v203 + 2 )
           {
             v82 = v80 + *(unsigned int *)(v78 + 3788); /*0x444835*/
             v79 += *(unsigned int *)(v78 + 3784); /*0x44483f*/
@@ -2534,7 +2534,7 @@ int BuildingClass::UpdateConstruction()
           }
           if ( *(unsigned char *)(v78 + 5862) /*0x44487d*/
             && (unsigned int *)(__int16)v200 == (unsigned int *)((char *)v201 + 2)
-            && SHIWORD(v200) == *(unsigned int *)v203 + 1 )
+            && (short)(((v200) >> 16) & 0xFFFF) == *(unsigned int *)v203 + 1 )
           {
             v83 = *(unsigned int *)(v78 + 3784) + v79; /*0x444889*/
             v84 = *(unsigned int *)(v78 + 3788); /*0x44488b*/
@@ -2641,7 +2641,7 @@ int BuildingClass::UpdateConstruction()
         v37 = v35[1]; /*0x44422e*/
         v204 = (__int16)v34; /*0x44424b*/
         Math::CalcAngle((double)v37 - (double)(__int16)v34, (double)(__int16)v33 - (double)v36); /*0x444258*/
-        LOWORD(v204) = Math::RoundToInt((v1 - 1.570796326794897) * -10430.06004058427); /*0x444271*/
+        (v204) = ((v204) & ~0xFFFF) | ((Math::RoundToInt((v1 - 1.570796326794897) * -10430.06004058427)) & 0xFFFF); /*0x444271*/
         v38 = (((v204 >> 12) + 1) >> 1) & 7; /*0x44428a*/
         v39 = (Cell *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v203); /*0x44428d*/
         if ( Cell::IsBridge(v39) == (unsigned int *)this ) /*0x44429b*/
@@ -2672,7 +2672,7 @@ int BuildingClass::UpdateConstruction()
       v44 = (unsigned int *)(*(int (**)(BuildingClass *, int *))(v43 + 72))(this, &v210); /*0x444367*/
       LODWORD(v195) = 0; /*0x44436c*/
       *(unsigned int *)&v194[2] = 0; /*0x44436e*/
-      LOWORD(v200) = *v44 / 256; /*0x44437e*/
+      (v200) = ((v200) & ~0xFFFF) | ((*v44 / 256) & 0xFFFF); /*0x44437e*/
       v45 = v44[1]; /*0x44438d*/
       *(unsigned int *)v194 = &v215; /*0x444393*/
       *(unsigned int *)&v193[2] = 1; /*0x444394*/
@@ -2788,13 +2788,13 @@ LABEL_99:
         v8 = this->ptr_0; /*0x443d79*/
         HIWORD(v206) = v7; /*0x443d82*/
         v9 = (unsigned int *)(*(int (**)(BuildingClass *, char *))(v8 + 72))(this, v236); /*0x443d88*/
-        LOWORD(v217) = *v9 / 256; /*0x443d9b*/
+        (v217) = ((v217) & ~0xFFFF) | ((*v9 / 256) & 0xFFFF); /*0x443d9b*/
         HIWORD(v217) = v9[1] / 256; /*0x443db3*/
         if ( (__int16)(v217 - v205) - (__int16)((((v217) >> 16) & 0xFFFF) - (((v205) >> 16) & 0xFFFF)) <= dword_87F8EC ) /*0x443dd7*/
         {
           v199 = dword_87F8F0; /*0x443e31*/
           (v205) = ((v205) & ~0xFFFF) | ((v205 - 1) & 0xFFFF); /*0x443e37*/
-          HIWORD(v205) = v7; /*0x443e3c*/
+          (v205) = ((v205) & ~(0xFFFF << 16)) | (((v7) & 0xFFFF) << 16); /*0x443e3c*/
           v198 = 0; /*0x443e45*/
           v204 = v205; /*0x443e46*/
           p_NeedsSaveOrLink = (Random *)&dword_A8B230[14].NeedsSaveOrLink; /*0x443e4a*/
@@ -2802,18 +2802,18 @@ LABEL_99:
         else
         {
           LOWORD(v208) = dword_87F8EC; /*0x443dd9*/
-          HIWORD(v217) = v7; /*0x443dde*/
+          (v217) = ((v217) & ~(0xFFFF << 16)) | (((v7) & 0xFFFF) << 16); /*0x443dde*/
           HIWORD(v208) = -(__int16)dword_87F8EC; /*0x443dea*/
           (v217) = ((v217) & ~0xFFFF) | ((v205 - 1) & 0xFFFF); /*0x443def*/
           (v205) = ((v205) & ~0xFFFF) | ((dword_87F8EC + v205 - 1) & 0xFFFF); /*0x443e04*/
-          HIWORD(v205) = v7 - dword_87F8EC; /*0x443e09*/
+          (v205) = ((v205) & ~(0xFFFF << 16)) | (((v7 - dword_87F8EC) & 0xFFFF) << 16); /*0x443e09*/
           v204 = v205; /*0x443e18*/
           p_NeedsSaveOrLink = (Random *)&dword_A8B230[14].NeedsSaveOrLink; /*0x443e21*/
           v199 = dword_87F8F0; /*0x443e27*/
           v198 = 0; /*0x443e28*/
         }
         v11 = Random::Range(p_NeedsSaveOrLink, (int)v198, v199); /*0x443e50*/
-        LOWORD(v204) = v11 + v204; /*0x443e55*/
+        (v204) = ((v204) & ~0xFFFF) | ((v11 + v204) & 0xFFFF); /*0x443e55*/
         HIWORD(v204) += v11; /*0x443e5a*/
         v199 = 0; /*0x443e6e*/
         v224[0] = ((__int16)v204 << 8) + 128; /*0x443e79*/

@@ -524,7 +524,7 @@ char Gap2Recv_5175F0::ReadRegistryOptionsWOL() {
     }
     result = RegCloseKey(phkResult); /*0x51768d*/
   }
-  LOBYTE(result) = ((unsigned int *)this)[0]; /*0x517693*/
+  (result) = ((result) & ~0xFF) | ((((unsigned int *)this)[0]) & 0xFF); /*0x517693*/
   return result; /*0x517696*/
 
 }
@@ -707,7 +707,7 @@ int Gap2Recv_51FB00::PlaceScenarioInfantry() {
               v13 = strtok(0, Str); /*0x51fc00*/
               v14 = atoi(v13); /*0x51fc12*/
               v15 = strtok(0, Str); /*0x51fc14*/
-              LOWORD(v16) = atoi(v15); /*0x51fc1a*/
+              (v16) = ((v16) & ~0xFFFF) | ((atoi(v15)) & 0xFFFF); /*0x51fc1a*/
               v17 = v14; /*0x51fc22*/
             }
             v43 = (v17 << 8) + 128; /*0x51fc6c*/
@@ -772,7 +772,7 @@ int Gap2Recv_51FB00::PlaceScenarioInfantry() {
             else
             {
               v39 = *(unsigned int *)(v11 + 1728); /*0x51fe60*/
-              LOWORD(v40) = Math::RoundToInt((double)v48 * 0.00390625 * (double)*(int *)(v39 + 160)); /*0x51fe72*/
+              (v40) = ((v40) & ~0xFFFF) | ((Math::RoundToInt((double)v48 * 0.00390625 * (double)*(int *)(v39 + 160))) & 0xFFFF); /*0x51fe72*/
               *(unsigned int *)(v11 + 108) = v40; /*0x51fe77*/
               v41 = *(unsigned int *)(v39 + 160); /*0x51fe7a*/
               if ( v40 > v41 - 3 ) /*0x51fe85*/

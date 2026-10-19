@@ -13,8 +13,8 @@ CoordStruct Cell2Coord(const CellStruct& cell, int z) noexcept {
 
 CellStruct Coord2Cell(const CoordStruct& crd) noexcept {
     return CellStruct(
-        static_cast<int16_t>(crd.X / kLeptonsPerCell),
-        static_cast<int16_t>(crd.Y / kLeptonsPerCell)
+        (int16_t)(crd.X / kLeptonsPerCell),
+        (int16_t)(crd.Y / kLeptonsPerCell)
     );
 }
 

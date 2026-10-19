@@ -725,7 +725,7 @@ char AudioStream::DrawWaveform(int *a2, unsigned int *a3, unsigned int *a4, uint
       fild [esp+7Ch+arg_18]
       fmulp st(1), st
     }
-    LOWORD(v25) = Math::RoundToInt(v23); /*0x4bec45*/
+    (v25) = ((v25) & ~0xFFFF) | ((Math::RoundToInt(v23)) & 0xFFFF); /*0x4bec45*/
     v26 = abs32(v25); /*0x4bec4d*/
     if ( (int)v19 >= v15 ) /*0x4bec51*/
       v90 = &v19[-v26]; /*0x4bec62*/
@@ -750,7 +750,7 @@ char AudioStream::DrawWaveform(int *a2, unsigned int *a3, unsigned int *a4, uint
       fild [esp+7Ch+arg_18]
       fmulp st(1), st
     }
-    LOWORD(v30) = Math::RoundToInt(v28); /*0x4bece1*/
+    (v30) = ((v30) & ~0xFFFF) | ((Math::RoundToInt(v28)) & 0xFFFF); /*0x4bece1*/
     v31 = abs32(v30); /*0x4bece9*/
     if ( v15 <= (int)v19 ) /*0x4beced*/
       v87 = (char *)(v15 + v31); /*0x4becfc*/
@@ -1461,7 +1461,7 @@ int AudioStream::UpdateTimers()
           LODWORD(v0) = v1[7]; /*0x404ff3*/
           if ( (unsigned int)v0 == 2 ) /*0x404ff9*/
           {
-            LODWORD(v0) = Audio::Callback(); /*0x404ffb*/
+            (v0) = ((v0) & 0xFFFFFFFF00000000ull) | ((Audio::Callback()) & 0xFFFFFFFFull); /*0x404ffb*/
             *((unsigned long long *)v1 + 40) -= v0; /*0x405010*/
           }
         }
@@ -1504,7 +1504,7 @@ int AudioStream::UpdateCountdowners()
           *(unsigned int *)v0.__pad_0 = i[3].DListNode_field_0x04; /*0x405088*/
           if ( *(unsigned int *)v0.__pad_0 == 2 ) /*0x40508e*/
           {
-            LODWORD(v3) = Audio::Callback(); /*0x405090*/
+            (v3) = ((v3) & 0xFFFFFFFF00000000ull) | ((Audio::Callback()) & 0xFFFFFFFFull); /*0x405090*/
             v0 = (DListNode)(*(unsigned long long *)&i[40] + v3); /*0x4050a3*/
             i[40] = v0; /*0x4050a5*/
           }

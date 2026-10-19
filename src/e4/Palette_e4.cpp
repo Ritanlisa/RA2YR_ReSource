@@ -210,9 +210,9 @@ LABEL_37:
       v30 = 0; /*0x6423ed*/
       v46 = -1; /*0x6423ef*/
       v50 = 0xFFFF; /*0x6423f7*/
-      LOBYTE(v55) = (unsigned __int8)(v29 >> g_BitShift_Red) << g_BitShift_Green_0; /*0x642408*/
-      BYTE1(v55) = (unsigned __int8)(v29 >> g_BitMask_Green) << g_BitMask_Blue; /*0x642429*/
-      BYTE2(v55) = (unsigned __int8)(v29 >> g_BitShift_Blue) << g_BitMask_Red; /*0x642431*/
+      (v55) = ((v55) & ~0xFF) | (((unsigned __int8)(v29 >> g_BitShift_Red) << g_BitShift_Green_0) & 0xFF); /*0x642408*/
+      (v55) = ((v55) & ~(0xFF << 8)) | ((((unsigned __int8)(v29 >> g_BitMask_Green) << g_BitMask_Blue) & 0xFF) << 8); /*0x642429*/
+      (v55) = ((v55) & ~(0xFF << 16)) | ((((unsigned __int8)(v29 >> g_BitShift_Blue) << g_BitMask_Red) & 0xFF) << 16); /*0x642431*/
       if ( v21 > 0 ) /*0x642435*/
       {
         v31 = Blocka; /*0x642447*/
@@ -337,7 +337,7 @@ unsigned char * Palette::ConvertIndices(int a2)
   unsigned short *v5; // esi
   __int16 *v6; // edi
 
-  LOBYTE(this->m_Colors[0]) = 0; /*0x632be9*/
+  this->m_Colors[0] = 0; /*0x632be9*/
   v3 = Hash_Check_5C61E0(); /*0x632bf1*/
   v4 = Hash_Check(); /*0x632bf3*/
   if ( v3 <= 0 ) /*0x632bfa*/

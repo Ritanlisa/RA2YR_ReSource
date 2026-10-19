@@ -530,7 +530,7 @@ char EventClass::processEvent(int a2, unsigned int * a3)
       }
       *&this->EventClass_field_0x4 = v4; /*0x40b7c7*/
       this->m_8 = a2; /*0x40b7cf*/
-      BYTE1(this->m_C) = a3 == 0; /*0x40b7d2*/
+      (this->m_C) = ((this->m_C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x40b7d2*/
       return 1; /*0x40b7d8*/
     }
     else
@@ -582,7 +582,7 @@ char EventClass::validateEvent(int a2, unsigned int * a3)
     }
     *&this->EventClass_field_0x4 = v4; /*0x40b8fa*/
     this->m_8 = a2; /*0x40b902*/
-    BYTE1(this->m_C) = a3 == 0; /*0x40b905*/
+    (this->m_C) = ((this->m_C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x40b905*/
   }
   else
   {
@@ -630,7 +630,7 @@ char EventClass::dispatchEvent(int a2, unsigned int * a3)
       }
       *&this->EventClass_field_0x4 = v4; /*0x40ba27*/
       this->m_8 = a2; /*0x40ba2f*/
-      BYTE1(this->m_C) = a3 == 0; /*0x40ba32*/
+      (this->m_C) = ((this->m_C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x40ba32*/
       return 1; /*0x40ba38*/
     }
     else
@@ -820,7 +820,7 @@ char EventClass::clearEvents(int a2, unsigned int * a3)
     }
     *&this->q004 = v4; /*0x40c48a*/
     this->u32_8 = a2; /*0x40c492*/
-    BYTE1(this->q00C) = a3 == 0; /*0x40c495*/
+    (this->q00C) = ((this->q00C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x40c495*/
   }
   else
   {

@@ -225,7 +225,7 @@ signed int BuildingLightClass::UpdateOscillation()
       v28 = v26 - *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1484); /*0x513ddc*/
   }
   v13 = (double)v26 + *&this->q0A0; /*0x513de4*/
-  LOWORD(v14) = Math::RoundToInt(v13); /*0x513de7*/
+  (v14) = ((v14) & ~0xFFFF) | ((Math::RoundToInt(v13)) & 0xFFFF); /*0x513de7*/
   v27 = v14; /*0x513dec*/
   v15 = (*(int (**)(char *))(*((unsigned int *)this->ptr_C + 1) + 16))((char *)this->ptr_C + 4); /*0x513df9*/
   if ( (v15 & 1) != 0 ) /*0x513dfe*/
@@ -234,9 +234,9 @@ signed int BuildingLightClass::UpdateOscillation()
     v16 = 1.1; /*0x513e08*/
   v17 = *(unsigned int *)&MEMORY[0xA8EB00].?[416] + 2 * v15; /*0x513e20*/
   v18 = v16 * *(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1488) * 900.0; /*0x513e23*/
-  LOWORD(v19) = Math::RoundToInt(v13); /*0x513e2b*/
+  (v19) = ((v19) & ~0xFFFF) | ((Math::RoundToInt(v13)) & 0xFFFF); /*0x513e2b*/
   Math::SinCos((double)(v17 % v19) * 6.283185307179586 / v18); /*0x513e4f*/
-  LOWORD(v20) = Math::RoundToInt(v13 + v13 + (double)v27); /*0x513e5d*/
+  (v20) = ((v20) & ~0xFFFF) | ((Math::RoundToInt(v13 + v13 + (double)v27)) & 0xFFFF); /*0x513e5d*/
   if ( v20 < 0 ) /*0x513e66*/
   {
     this->customSound_controller[4] = 0; /*0x513e68*/

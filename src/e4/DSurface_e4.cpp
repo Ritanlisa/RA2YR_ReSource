@@ -281,7 +281,7 @@ AbstractClass * * DSurface::CreatePrimary(void *a1)
     {
       if ( (v17 & 0x80u) != 0 ) /*0x4ba9f6*/
         break; /*0x4ba9f6*/
-      LOBYTE(v17) = 2 * v17; /*0x4ba9f8*/
+      (v17) = ((v17) & ~0xFF) | ((2 * v17) & 0xFF); /*0x4ba9f8*/
       ++v19; /*0x4ba9fa*/
     }
     while ( v19 < 8 ); /*0x4ba9fe*/
@@ -305,7 +305,7 @@ AbstractClass * * DSurface::CreatePrimary(void *a1)
       if ( (v20 & 0x80u) != 0 ) /*0x4baa2f*/
         break; /*0x4baa2f*/
       ++v22; /*0x4baa31*/
-      LOBYTE(v20) = 2 * v20; /*0x4baa32*/
+      (v20) = ((v20) & ~0xFF) | ((2 * v20) & 0xFF); /*0x4baa32*/
     }
     while ( v22 < 8 ); /*0x4baa37*/
     v23 = g_DDraw_BlueMask; /*0x4baa39*/
@@ -328,7 +328,7 @@ AbstractClass * * DSurface::CreatePrimary(void *a1)
       if ( (v23 & 0x80u) != 0 ) /*0x4baa69*/
         break; /*0x4baa69*/
       ++v25; /*0x4baa6b*/
-      LOBYTE(v23) = 2 * v23; /*0x4baa6c*/
+      (v23) = ((v23) & ~0xFF) | ((2 * v23) & 0xFF); /*0x4baa6c*/
     }
     while ( v25 < 8 ); /*0x4baa71*/
     g_BitMask_Red = v25; /*0x4baa83*/
@@ -919,10 +919,10 @@ int DSurface_FillRectWithFlags(DSurface *aP0, DSurface *aP0, int a2, int a3, uns
   v45 = v16; /*0x4bb983*/
   thisa = 0; /*0x4bb987*/
   LOWORD(a2) = (unsigned __int8)(*(unsigned char *)(a3 + 2) >> g_BitMask_Red); /*0x4bb99a*/
-  LOWORD(v15) = (unsigned __int8)(*(unsigned char *)(a3 + 1) >> g_BitMask_Blue); /*0x4bb9b1*/
+  (v15) = ((v15) & ~0xFFFF) | (((unsigned __int8)(*(unsigned char *)(a3 + 1) >> g_BitMask_Blue)) & 0xFFFF); /*0x4bb9b1*/
   v17 = v15 << g_BitMask_Green; /*0x4bb9b5*/
   v18 = v17 | (a2 << g_BitShift_Blue); /*0x4bb9c5*/
-  LOWORD(v17) = (unsigned __int8)(*(unsigned char *)a3 >> g_BitShift_Green_0); /*0x4bb9ca*/
+  (v17) = ((v17) & ~0xFFFF) | (((unsigned __int8)(*(unsigned char *)a3 >> g_BitShift_Green_0)) & 0xFFFF); /*0x4bb9ca*/
   v19 = (v17 << g_BitShift_Red) | v18; /*0x4bb9d2*/
   for ( i = v19; (int)thisa < v41; thisa = &thisa->u32_1 ) /*0x4bb9da*/
   {
@@ -949,9 +949,9 @@ int DSurface_FillRectWithFlags(DSurface *aP0, DSurface *aP0, int a2, int a3, uns
           break; /*0x4bbabb*/
         v11 = v36; /*0x4bba5d*/
       }
-      LOWORD(v12) = v30; /*0x4bbabd*/
-      LOWORD(v19) = i; /*0x4bbac1*/
-      LOWORD(v11) = v31; /*0x4bbac5*/
+      (v12) = ((v12) & ~0xFFFF) | ((v30) & 0xFFFF); /*0x4bbabd*/
+      (v19) = ((v19) & ~0xFFFF) | ((i) & 0xFFFF); /*0x4bbac1*/
+      (v11) = ((v11) & ~0xFFFF) | ((v31) & 0xFFFF); /*0x4bbac5*/
       v16 = v45; /*0x4bbac9*/
     }
   }
@@ -1871,7 +1871,7 @@ void* DSurface::DrawLineZBufColored(int a2, unsigned int * a3, unsigned int * a4
     fild [esp+7Ch+arg_C]
     fmul [esp+7Ch+arg_10]
   }
-  LOWORD(v11) = Math::RoundToInt(v8); /*0x4bdf2d*/
+  (v11) = ((v11) & ~0xFFFF) | ((Math::RoundToInt(v8)) & 0xFFFF); /*0x4bdf2d*/
   v12 = v11; /*0x4bdf34*/
   v91 = v11; /*0x4bdf39*/
   v106 = (unsigned __int8 *)a5[1]; /*0x4bdf3d*/
@@ -1880,7 +1880,7 @@ void* DSurface::DrawLineZBufColored(int a2, unsigned int * a3, unsigned int * a4
     fild [esp+7Ch+arg_C]
     fmul [esp+7Ch+arg_10]
   }
-  LOWORD(v13) = Math::RoundToInt(v8); /*0x4bdf52*/
+  (v13) = ((v13) & ~0xFFFF) | ((Math::RoundToInt(v8)) & 0xFFFF); /*0x4bdf52*/
   v14 = v13; /*0x4bdf59*/
   v90 = v13; /*0x4bdf5e*/
   v107 = (unsigned __int8 *)a5[2]; /*0x4bdf62*/
@@ -1889,7 +1889,7 @@ void* DSurface::DrawLineZBufColored(int a2, unsigned int * a3, unsigned int * a4
     fild [esp+7Ch+arg_C]
     fmul [esp+7Ch+arg_10]
   }
-  LOWORD(v15) = Math::RoundToInt(v8); /*0x4bdf77*/
+  (v15) = ((v15) & ~0xFFFF) | ((Math::RoundToInt(v8)) & 0xFFFF); /*0x4bdf77*/
   v89 = v15; /*0x4bdf7f*/
   if ( v12 < 8 && v14 < 8 && v15 < 8 ) /*0x4bdf8d*/
     return 0; /*0x4bdf8d*/
@@ -1951,7 +1951,7 @@ void* DSurface::DrawLineZBufColored(int a2, unsigned int * a3, unsigned int * a4
       fstp st
     }
     Math::Sqrt(v75); /*0x4be0c1*/
-    LOWORD(v30) = Math::RoundToInt(v8); /*0x4be0c6*/
+    (v30) = ((v30) & ~0xFFFF) | ((Math::RoundToInt(v8)) & 0xFFFF); /*0x4be0c6*/
     a8 = v30; /*0x4be0d1*/
     *(unsigned int *)&v93[4] = v28 - v94[1]; /*0x4be0e0*/
     __asm { fild dword ptr [esp+84h+var_44+4] } /*0x4be0e6*/
@@ -1971,7 +1971,7 @@ void* DSurface::DrawLineZBufColored(int a2, unsigned int * a3, unsigned int * a4
       fstp st
     }
     Math::Sqrt(v76); /*0x4be10e*/
-    LOWORD(v31) = Math::RoundToInt(v8); /*0x4be116*/
+    (v31) = ((v31) & ~0xFFFF) | ((Math::RoundToInt(v8)) & 0xFFFF); /*0x4be116*/
     a8 = v31; /*0x4be11b*/
     __asm { fild [esp+7Ch+arg_18] } /*0x4be124*/
     a8 = v23 - v27; /*0x4be12d*/
@@ -1981,7 +1981,7 @@ void* DSurface::DrawLineZBufColored(int a2, unsigned int * a3, unsigned int * a4
       fild [esp+7Ch+arg_18]
       fmulp st(1), st
     }
-    LOWORD(v32) = Math::RoundToInt(v8); /*0x4be141*/
+    (v32) = ((v32) & ~0xFFFF) | ((Math::RoundToInt(v8)) & 0xFFFF); /*0x4be141*/
     v33 = abs32(v32); /*0x4be149*/
     if ( v23 >= v27 ) /*0x4be14d*/
       a7 = v23 - v33; /*0x4be15e*/
@@ -2006,7 +2006,7 @@ void* DSurface::DrawLineZBufColored(int a2, unsigned int * a3, unsigned int * a4
       fstp st
     }
     Math::Sqrt(v77); /*0x4be1a9*/
-    LOWORD(v34) = Math::RoundToInt(v8); /*0x4be1ae*/
+    (v34) = ((v34) & ~0xFFFF) | ((Math::RoundToInt(v8)) & 0xFFFF); /*0x4be1ae*/
     v110 = v34; /*0x4be1b3*/
     *(unsigned int *)&v93[4] = v28 - v94[1]; /*0x4be1c0*/
     __asm { fild dword ptr [esp+84h+var_44+4] } /*0x4be1c8*/
@@ -2026,7 +2026,7 @@ void* DSurface::DrawLineZBufColored(int a2, unsigned int * a3, unsigned int * a4
       fstp st
     }
     Math::Sqrt(v78); /*0x4be1f2*/
-    LOWORD(v35) = Math::RoundToInt(v8); /*0x4be1fa*/
+    (v35) = ((v35) & ~0xFFFF) | ((Math::RoundToInt(v8)) & 0xFFFF); /*0x4be1fa*/
     v111 = v35; /*0x4be1ff*/
     __asm { fild [esp+7Ch+arg_10] } /*0x4be208*/
     v112 = v23 - v27; /*0x4be211*/
@@ -2036,7 +2036,7 @@ void* DSurface::DrawLineZBufColored(int a2, unsigned int * a3, unsigned int * a4
       fild [esp+7Ch+arg_10]
       fmulp st(1), st
     }
-    LOWORD(v36) = Math::RoundToInt(v8); /*0x4be225*/
+    (v36) = ((v36) & ~0xFFFF) | ((Math::RoundToInt(v8)) & 0xFFFF); /*0x4be225*/
     v37 = abs32(v36); /*0x4be22d*/
     if ( v27 <= v23 ) /*0x4be231*/
       v109 = v27 + v37; /*0x4be240*/
@@ -2101,8 +2101,8 @@ void* DSurface::DrawLineZBufColored(int a2, unsigned int * a3, unsigned int * a4
           if ( (unsigned __int16)a8 < *SamplePosition ) /*0x4be7fa*/
           {
             v71 = *(unsigned short *)&v108[v83]; /*0x4be80b*/
-            LOBYTE(v115) = (unsigned __int8)(v71 >> g_BitShift_Red) << g_BitShift_Green_0; /*0x4be82a*/
-            HIBYTE(v115) = (unsigned __int8)(v71 >> g_BitMask_Green) << g_BitMask_Blue; /*0x4be845*/
+            (v115) = ((v115) & ~0xFF) | (((unsigned __int8)(v71 >> g_BitShift_Red) << g_BitShift_Green_0) & 0xFF); /*0x4be82a*/
+            (v115) = ((v115) & ~(0xFF << 8)) | ((((unsigned __int8)(v71 >> g_BitMask_Green) << g_BitMask_Blue) & 0xFF) << 8); /*0x4be845*/
             LOWORD(a7) = v115; /*0x4be861*/
             BYTE2(a7) = (unsigned __int8)(v71 >> g_BitShift_Blue) << g_BitMask_Red; /*0x4be870*/
             v72 = BlendColorPack((unsigned __int8 *)&a7, (v91 * v70) >> 7, (v90 * v70) >> 7, (v89 * v70) >> 7); /*0x4be895*/
@@ -2175,8 +2175,8 @@ void* DSurface::DrawLineZBufColored(int a2, unsigned int * a3, unsigned int * a4
           if ( (unsigned __int16)a8 < *SamplePosition ) /*0x4be5f2*/
           {
             v61 = *(unsigned short *)&v108[2 * v82]; /*0x4be603*/
-            LOBYTE(v114) = (unsigned __int8)(v61 >> g_BitShift_Red) << g_BitShift_Green_0; /*0x4be622*/
-            HIBYTE(v114) = (unsigned __int8)(v61 >> g_BitMask_Green) << g_BitMask_Blue; /*0x4be63d*/
+            (v114) = ((v114) & ~0xFF) | (((unsigned __int8)(v61 >> g_BitShift_Red) << g_BitShift_Green_0) & 0xFF); /*0x4be622*/
+            (v114) = ((v114) & ~(0xFF << 8)) | ((((unsigned __int8)(v61 >> g_BitMask_Green) << g_BitMask_Blue) & 0xFF) << 8); /*0x4be63d*/
             LOWORD(a7) = v114; /*0x4be659*/
             BYTE2(a7) = (unsigned __int8)(v61 >> g_BitShift_Blue) << g_BitMask_Red; /*0x4be668*/
             v62 = BlendColorPack((unsigned __int8 *)&a7, (v91 * v60) >> 7, (v90 * v60) >> 7, (v89 * v60) >> 7); /*0x4be68d*/
@@ -2250,8 +2250,8 @@ void* DSurface::DrawLineZBufColored(int a2, unsigned int * a3, unsigned int * a4
         if ( (unsigned __int16)a8 < *SamplePosition ) /*0x4be3f5*/
         {
           v52 = *(unsigned short *)&v108[v81]; /*0x4be406*/
-          LOBYTE(v113) = (unsigned __int8)(v52 >> g_BitShift_Red) << g_BitShift_Green_0; /*0x4be425*/
-          HIBYTE(v113) = (unsigned __int8)(v52 >> g_BitMask_Green) << g_BitMask_Blue; /*0x4be440*/
+          (v113) = ((v113) & ~0xFF) | (((unsigned __int8)(v52 >> g_BitShift_Red) << g_BitShift_Green_0) & 0xFF); /*0x4be425*/
+          (v113) = ((v113) & ~(0xFF << 8)) | ((((unsigned __int8)(v52 >> g_BitMask_Green) << g_BitMask_Blue) & 0xFF) << 8); /*0x4be440*/
           LOWORD(a7) = v113; /*0x4be45c*/
           BYTE2(a7) = (unsigned __int8)(v52 >> g_BitShift_Blue) << g_BitMask_Red; /*0x4be46b*/
           v53 = BlendColorPack((unsigned __int8 *)&a7, (v91 * v51) >> 7, (v90 * v51) >> 7, (v89 * v51) >> 7); /*0x4be490*/

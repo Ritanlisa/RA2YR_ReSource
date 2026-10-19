@@ -204,7 +204,7 @@ int Movement::CalcVelocity(double *a1, Vector3 *a2, double a3, void **a4, int16_
     v24 = v23; /*0x5b22d6*/
     LOWORD(v25) = Math::RoundToInt(a3); /*0x5b22d8*/
     HIDWORD(v92) = v25; /*0x5b22dd*/
-    LOWORD(v26) = Math::RoundToInt(a3); /*0x5b22e1*/
+    (v26) = ((v26) & ~0xFFFF) | ((Math::RoundToInt(a3)) & 0xFFFF); /*0x5b22e1*/
     v78 = (((v26 + a2->Vector3_field_0x08 & 0xFFFFFFFFull)) << 32 | (HIDWORD(v92) + a2->Vector3_field_0x04 & 0xFFFFFFFFull)); /*0x5b22f9*/
     v27 = Coord::Subtract((Coord *)&v92, (int)v24 + *(unsigned int *)a2->__pad_0, v78, (int)(((v78) >> 32) & 0xFFFFFFFFu)); /*0x5b22ff*/
     v28 = v27->q004; /*0x5b2308*/
@@ -234,7 +234,7 @@ int Movement::CalcVelocity(double *a1, Vector3 *a2, double a3, void **a4, int16_
       fstp st
     }
     Math::Sqrt(v79); /*0x5b233a*/
-    LOWORD(result) = Math::RoundToInt(a3); /*0x5b2342*/
+    (result) = ((result) & ~0xFFFF) | ((Math::RoundToInt(a3)) & 0xFFFF); /*0x5b2342*/
     return result; /*0x5b234d*/
   }
   __asm { fld qword ptr [esi+10h] } /*0x5b2352*/
@@ -248,7 +248,7 @@ int Movement::CalcVelocity(double *a1, Vector3 *a2, double a3, void **a4, int16_
   v33 = v32; /*0x5b237d*/
   LOWORD(v34) = Math::RoundToInt(a3); /*0x5b237f*/
   HIDWORD(v92) = v34; /*0x5b2384*/
-  LOWORD(v35) = Math::RoundToInt(a3); /*0x5b2388*/
+  (v35) = ((v35) & ~0xFFFF) | ((Math::RoundToInt(a3)) & 0xFFFF); /*0x5b2388*/
   v36 = Coord::Subtract( /*0x5b23a6*/
           (Coord *)&v90,
           (int)v33 + *(unsigned int *)a2->__pad_0,
@@ -322,7 +322,7 @@ int Movement::CalcVelocity(double *a1, Vector3 *a2, double a3, void **a4, int16_
   *(unsigned short *)v87 = Math::RoundToInt(v46); /*0x5b2510*/
   if ( Math::Abs16Cmp((Math *)&v86, v87, a5) ) /*0x5b2515*/
   {
-    LOWORD(v86) = *(unsigned short *)v87; /*0x5b2523*/
+    (v86) = ((v86) & ~0xFFFF) | ((*(unsigned short *)v87) & 0xFFFF); /*0x5b2523*/
   }
   else if ( *(__int16 *)Math::Sub16((Math *)v87, &v88, &v86) >= 0 ) /*0x5b2541*/
   {
@@ -394,7 +394,7 @@ int Movement::CalcVelocity(double *a1, Vector3 *a2, double a3, void **a4, int16_
   v58 = v57; /*0x5b266b*/
   LOWORD(v59) = Math::RoundToInt(v46); /*0x5b266d*/
   HIDWORD(v90) = v59; /*0x5b2672*/
-  LOWORD(v60) = Math::RoundToInt(v46); /*0x5b2676*/
+  (v60) = ((v60) & ~0xFFFF) | ((Math::RoundToInt(v46)) & 0xFFFF); /*0x5b2676*/
   v61 = Coord::Subtract((Coord *)&v88.field_4, 6 * (unsigned int)v58, 6 * HIDWORD(v90), 6 * v60); /*0x5b2695*/
   v62 = (double *)Coord::Subtract( /*0x5b26b9*/
                     (Coord *)v87,

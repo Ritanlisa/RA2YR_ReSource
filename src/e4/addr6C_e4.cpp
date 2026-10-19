@@ -1278,7 +1278,7 @@ LABEL_342:
     qmemcpy(&v268[2], v242, 4 * (dword_B0BD90[0] >> 2)); /*0x6c85ea*/
     v247 = &v242[2 * v245]; /*0x6c85ea*/
     v246 = &v268[v245 + 2]; /*0x6c85ea*/
-    LOBYTE(v245) = v244; /*0x6c85ec*/
+    (v245) = ((v245) & ~0xFF) | ((v244) & 0xFF); /*0x6c85ec*/
     v248 = dword_B0BD54; /*0x6c85ee*/
     qmemcpy(v246, v247, v245 & 3); /*0x6c85f6*/
     v249 = g_SidebarButtonState.ptr_0; /*0x6c85f8*/
