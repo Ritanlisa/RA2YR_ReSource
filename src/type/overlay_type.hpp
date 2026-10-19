@@ -82,7 +82,7 @@ public:
     public:  // funcs-move
     // === FUNCS-MOVE (BEGIN) ===
     void* GetTile(int a1);  // 0x5fe4c0
-    void* vt_entry_6C(int a1, int a2);  // 0x5fea30
+    void* sub_5FEA30(int a1, int a2);  // 0x5fea30
     int SaveLoad_Prefix(int a1, int a2);  // 0x5feaf0
     int SaveLoad_Prefix_0(int a1, int a2, int a3);  // 0x5fec10
     // === FUNCS-MOVE (END) ===

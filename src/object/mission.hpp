@@ -103,7 +103,7 @@ public:
 protected:
     MissionClass() noexcept;
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
-    bool vt_entry_200();  // 0x41B5E0
+    bool sub_41B5E0();  // 0x41B5E0
     int IsProducing();  // 0x454250
     void* Init();  // 0x49B610
     int SetState();  // 0x5B2FD0

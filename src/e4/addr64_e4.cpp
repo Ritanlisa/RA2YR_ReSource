@@ -125,7 +125,7 @@ ObjectClass * * E4Recv_645D60::sub_645D60(float * a2)
   int v18; // [esp+4h] [ebp-74h]
   int v19; // [esp+8h] [ebp-70h]
   int v20; // [esp+Ch] [ebp-6Ch]
-  void *vtable0; // [esp+18h] [ebp-60h] BYREF
+  void *ptr_0; // [esp+18h] [ebp-60h] BYREF
   void *ptr_0; // [esp+1Ch] [ebp-5Ch]
   void *ptr_4; // [esp+20h] [ebp-58h]
   void *ptr_8; // [esp+24h] [ebp-54h]

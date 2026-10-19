@@ -1108,7 +1108,7 @@ void* TacticalClass::DrawBuildings(const RectangleStruct& viewRect)
   unsigned int v107[3]; // [esp+108h] [ebp-44h] BYREF
   unsigned int v108[3]; // [esp+114h] [ebp-38h] BYREF
   unsigned int v109[3]; // [esp+120h] [ebp-2Ch] BYREF
-  void *vtable0; // [esp+12Ch] [ebp-20h]
+  void *ptr_0; // [esp+12Ch] [ebp-20h]
   int v111[2]; // [esp+134h] [ebp-18h] BYREF
   unsigned int v112[4]; // [esp+13Ch] [ebp-10h] BYREF
 

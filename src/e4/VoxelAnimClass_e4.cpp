@@ -892,7 +892,7 @@ AbstractClass * * VoxelAnimClass::GetFrameCount(int * a2)
     Power::TimerProcess(v5); /*0x74aa7a*/
   }
   int v6; // eax
-  v6 = (*((int (**)(void **))this->AbstractClass_10C->vtable1 + 4))(&this->AbstractClass_10C->vtable1); /*0x74aa8b*/
+  v6 = (*((int (**)(void **))this->AbstractClass_10C->ptr_0 + 4))(&this->AbstractClass_10C->ptr_0); /*0x74aa8b*/
   Power::TimerProcess(v6); /*0x74aa91*/
   int v7; // edx
   LOBYTE(v7) = this->ParticleSystemClass_110; /*0x74aa96*/

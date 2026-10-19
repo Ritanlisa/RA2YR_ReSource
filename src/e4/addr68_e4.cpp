@@ -1530,7 +1530,7 @@ LABEL_9:
   if ( dword_A80238 > 0 ) /*0x68881f*/
   {
 LABEL_16:
-    v12 = *&dword_A8022C->vtable1; /*0x688825*/
+    v12 = *&dword_A8022C->ptr_0; /*0x688825*/
     ppv = v12; /*0x68882e*/
     v13 = v12->relatedTagsCapacity; /*0x688832*/
     if ( *(unsigned char *)(v13 + 422) ) /*0x688835*/

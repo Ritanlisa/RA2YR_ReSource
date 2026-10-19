@@ -386,8 +386,8 @@ public:
     virtual bool CreateWarheadDamageEffect();  // 0x41BC30
     // wrapper: delegates to TechnoClass::CreateWarheadDamageEffect at 0x41BC30
     virtual void sub_41BEF0();
-    virtual int vt_entry_428();  // 0x41BFE0 (G42.33 b4 W7: 体签名同步)
-    virtual int vt_entry_434();  // 0x41BFF0
+    virtual int sub_41BFE0();  // 0x41BFE0 (G42.33 b4 W7: 体签名同步)
+    virtual int sub_41BFF0();  // 0x41BFF0
     virtual unsigned int * GetBodyFacing(unsigned int *a2);  // 0x41C1E0 (G42.33 b4 W7c: 体签名同步)
     virtual int sub_41C640();
     virtual int sub_41C650();
@@ -424,7 +424,7 @@ public:
     virtual int CheckState1() const;  // 0x5B2E70
     virtual int CheckState2() const; // 0x5B2E80
     virtual int StubReturn450(); // 0x5B2E40
-    virtual void vt_entry_448();  // 0x6F60C0
+    virtual void sub_6F60C0();  // 0x6F60C0
     // wrapper: delegates to TechnoClass::vt_entry_448 at 0x6F60C0
     virtual int sub_54D28C0();
     virtual int GetTypeFlag() const;  // 0x5224E0
@@ -435,14 +435,14 @@ public:
     virtual int FindClosestInfantry();  // 0x4DFA70
     virtual int FindClosestUnit();  // 0x4DFB70
     virtual int FindBestMovementDirection();  // 0x740B60
-    virtual int vt_entry_4A8();  // 0x4DF1A0
-    virtual int vt_entry_4AC();  // 0x4DF1C0
-    virtual int vt_entry_4B0();  // 0x4DF1D0
-    virtual int vt_entry_4B4();  // 0x4DF1E0
-    virtual int vt_entry_4B8();  // 0x4DF1F0
-    virtual int vt_entry_4C4();  // 0x4DF310
-    virtual int vt_entry_4C8();  // 0x4DF320
-    virtual int vt_entry_4D0();  // 0x4DF4B0
+    virtual int sub_4DF1A0();  // 0x4DF1A0
+    virtual int sub_4DF1C0();  // 0x4DF1C0
+    virtual int sub_4DF1D0();  // 0x4DF1D0
+    virtual int sub_4DF1E0();  // 0x4DF1E0
+    virtual int sub_4DF1F0();  // 0x4DF1F0
+    virtual int sub_4DF310();  // 0x4DF310
+    virtual int sub_4DF320();  // 0x4DF320
+    virtual int sub_4DF4B0();  // 0x4DF4B0
     virtual int GetAnimationValue() const;  // 0x4E0150
     virtual int FindDeployDestination();  // 0x50C920
     // wrapper: delegates to TechnoClass::FindDeployDestination at 0x50C920
@@ -684,7 +684,7 @@ public:
     virtual int sub_570DCF0();
     virtual int GetPoweredWeaponIndex() const;  // 0x70DD20
     virtual int GetVt252Byte() const;  // 0x70DD50
-    virtual int vt_entry_3E8();  // 0x70DD90
+    virtual int sub_70DD90();  // 0x70DD90
     virtual int SetSpread(); // 0x70DDD0
     virtual int DecCounter();  // 0x70D670
     virtual int PlaceAtCell();  // 0x70D8F0

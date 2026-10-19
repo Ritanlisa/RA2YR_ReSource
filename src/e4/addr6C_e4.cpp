@@ -1515,7 +1515,7 @@ int DlgProcScoreScreen(HWND hWnd, UINT, WPARAM wParam, LPARAM)
     {
       do /*0x6c930e*/
       {
-        v24 = *&dword_A8022C->vtable1; /*0x6c92be*/
+        v24 = *&dword_A8022C->ptr_0; /*0x6c92be*/
         if ( *(unsigned char *)(v24 + 493) ) /*0x6c92c1*/
         {
           v25 = (char *)v22 + SumArray((int *)(v24 + 9032)); /*0x6c92dc*/

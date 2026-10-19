@@ -5444,7 +5444,7 @@ wchar_t * MapFile::LoadDescription(uint8_t*** p0, char* p1)
   this->u32_17C = 1; /*0x69a43d*/
   this->u32_180 = 2; /*0x69a444*/
   this->u32_184 = 4; /*0x69a44e*/
-  v5->vt_entry_68(v4); /*0x69a458*/
+  v5->sub_69A458(v4); /*0x69a458*/
   if ( p1 ) /*0x69a464*/
   {
     strcpy(&this->__pad_058, p1); /*0x69a481*/
@@ -8645,7 +8645,7 @@ _DWORD * ScoreAnimClass::Constructor_ScoreAnimClass(char p0)
     v87 = (char *)&dword_A8DB54 - v1; /*0x54293a*/
     do
     {
-      v16 = *&dword_A8022C->vtable1; /*0x542949*/
+      v16 = *&dword_A8022C->ptr_0; /*0x542949*/
       if ( v16 && (void *)v16 != dword_A83D4C )
       {
         v17 = *(unsigned int *)(v16 + 90196); /*0x542960*/
@@ -19111,7 +19111,7 @@ LABEL_103:
                 if ( v49 /*0x55eee3*/
                   && *(unsigned char *)(*(unsigned int *)(v49 + 52) + 421)
                   && (!byte_A8D108[v48] && v47 == 1
-                   || !(unsigned __int8)HouseClass::IsAlliedWith(dword_A8022C->vtable1
+                   || !(unsigned __int8)HouseClass::IsAlliedWith(dword_A8022C->ptr_0
                                                                  + *(unsigned int *)(**(unsigned int **)&stru_A8D804.__pad_3D[567]
                                                                              + 111)))
                    && dword_ABCE18 == 2) )
@@ -19141,7 +19141,7 @@ LABEL_123:
             if ( v53 /*0x55efa9*/
               && *(unsigned char *)(v53->u32_34 + 421)
               && (byte_A8D108[v90] && dword_ABCE18 == 1
-               || (unsigned __int8)HouseClass::IsAlliedWith(dword_A8022C->vtable1
+               || (unsigned __int8)HouseClass::IsAlliedWith(dword_A8022C->ptr_0
                                                             + *(unsigned int *)(**(unsigned int **)&stru_A8D804.__pad_3D[567] + 111)))
                && dword_ABCE18 == 2
                || dword_ABCE18 == 3) )
@@ -20229,7 +20229,7 @@ bool __stdcall Conditions::CheckResult3(int p0, int p1, char p2)
 {
   DisplayClass *v3; // ecx
 
-  return DisplayClass::vt_entry_94(v3, (int16_t *)this, p1, p2) != 0; /*0x653849*/
+  return DisplayClass::sub_653849(v3, (int16_t *)this, p1, p2) != 0; /*0x653849*/
 }
 // 0x7667a0
 _DWORD * Conflict_WorldDominationTour::QueryInterface(char p0)

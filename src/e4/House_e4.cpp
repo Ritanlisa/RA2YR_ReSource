@@ -615,7 +615,7 @@ int House::UpdateHouseAI()
         {
           do
           {
-            v12 = *(&dword_A8022C->vtable0 + *(unsigned int *)v38); /*0x4fd60b*/
+            v12 = *(&dword_A8022C->ptr_0 + *(unsigned int *)v38); /*0x4fd60b*/
             if ( (House *)v12 != this )
             {
               v10 = v12->relatedTagsCapacity; /*0x4fd616*/
@@ -684,7 +684,7 @@ int House::UpdateHouseAI()
   v21 = this->u32_5600; /*0x4fd723*/
   if ( v21 != -1 ) /*0x4fd72c*/
   {
-    v22 = *(&dword_A8022C->vtable0 + v21); /*0x4fd734*/
+    v22 = *(&dword_A8022C->ptr_0 + v21); /*0x4fd734*/
     if ( v22->defeated ) /*0x4fd737*/
     {
       v23 = this->u32_5614; /*0x4fd741*/

@@ -1043,7 +1043,7 @@ public:
     virtual void LoadTileFileData(); // 0x544CB0
     virtual bool GetTerrainType(uint16_t* p0, int p1);  // 0x549AA0 (x13:signals; virt=slot)
     virtual IsometricTileClass * GetHeight(int p0);  // 0x549AE0 (x13:signals; virt=slot)
-    virtual _DWORD * __stdcall vt_entry_6C(int* p0, int* p1);  // 0x549B50 (x13:signals; virt=slot)
+    virtual _DWORD * __stdcall sub_549B50(int* p0, int* p1);  // 0x549B50 (x13:signals; virt=slot)
     // +15 more virtual methods
 
     uint8_t IsometricTileTypeClass_field_0x04[4];

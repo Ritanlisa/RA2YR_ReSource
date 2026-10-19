@@ -8177,7 +8177,7 @@ int UnitClass::EvaluateTarget(int a2, int a3, int a4, int a5, char a6)
         v29 = *(unsigned int *)(((unsigned int)(a2)) + 68); /*0x73f3d7*/
         if ( v29 != -1 ) /*0x73f3dd*/
         {
-          v30 = *(&dword_A83D84->vtable1 + v29); /*0x73f3e9*/
+          v30 = *(&dword_A83D84->ptr_0 + v29); /*0x73f3e9*/
           if ( *(unsigned char *)(v30 + 682) /*0x73f40c*/
             && !(uint8_t)House::IsCurrentPlayer(*((House **)&this->attachedTag5))
             && !*(unsigned int *)&dword_A8B238 )
@@ -8748,7 +8748,7 @@ void UnitClass::Destructor()
   int v9; // eax
   int Vtable3; // eax
   char *ptr_0; // ebx
-  unsigned int *vtable0; // ebp
+  unsigned int *ptr_0; // ebp
   int v13; // edi
   UnitClass *v14; // edx
   char *v15; // ecx

@@ -130,7 +130,7 @@ LABEL_5:
       {
         if ( (*(&v9->q00C) & 1) != 0 /*0x4312a6*/
           && (unsigned __int8)HouseClass::IsAllied(*(HouseClass **)((char *)&stru_A83CD9.estimatedHealth + 3), result)
-          && (unsigned __int8)HouseClass::IsAlliedWith(dword_A8022C->vtable1 + v9->u32_110))
+          && (unsigned __int8)HouseClass::IsAlliedWith(dword_A8022C->ptr_0 + v9->u32_110))
           && !*(unsigned char *)(*(&dword_A8022C->ptr_0 + v9->u32_110) + 501) )
         {
           v10 = (int *)(*(int (**)(int, int *))(*(unsigned int *)dword_880A04 + 120))(dword_880A04, v15); /*0x4312bf*/

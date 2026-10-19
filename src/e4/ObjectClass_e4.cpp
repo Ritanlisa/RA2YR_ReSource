@@ -1019,7 +1019,7 @@ ObjectClass * * ObjectClass::Dtor()
   ObjectClass *v10; // [esp+10h] [ebp-4h] BYREF
   v10 = this; /*0x5f3bbb*/
   int v3; // eax
-  v3 = (*(int (**)(DynamicVectorClass *, ObjectClass **))(stru_B0F698.vtable0 + 16))(&stru_B0F698, &v10); /*0x5f3bbf*/
+  v3 = (*(int (**)(DynamicVectorClass *, ObjectClass **))(stru_B0F698.ptr_0 + 16))(&stru_B0F698, &v10); /*0x5f3bbf*/
   if ( v3 != -1 && v3 < stru_B0F698.Count ) /*0x5f3bcf*/
   {
     --stru_B0F698.Count; /*0x5f3bd4*/

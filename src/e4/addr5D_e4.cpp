@@ -2427,7 +2427,7 @@ int sub_5D5AA0()
 namespace gamemd {
 int sub_5D7550(int a1)
 {
-  return *(unsigned int *)(*&dword_A8022C->vtable1 + 90204); /*0x5d7563*/
+  return *(unsigned int *)(*&dword_A8022C->ptr_0 + 90204); /*0x5d7563*/
 }
 } // namespace gamemd
 

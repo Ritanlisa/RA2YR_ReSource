@@ -1012,7 +1012,7 @@ int ObjectClass::DrawPowerBarForPlayers(HWND hDlg)
     int v4; // edi
     v4 = *(&dword_A8022C->ptr_0.ptr_0 + v2); /*0x658668*/
     if ( v4 /*0x658683*/
-      && ((uint8_t)((House *)(dword_A8022C->vtable1.ptr_0 + v2)))->IsHumanPlayer()
+      && ((uint8_t)((House *)(dword_A8022C->ptr_0.ptr_0 + v2)))->IsHumanPlayer()
        || !*(unsigned char *)(v4->u32_34 + 422)) )
     {
       ((TabClass *)(v3))->DrawPower(hDlg); /*0x658692*/

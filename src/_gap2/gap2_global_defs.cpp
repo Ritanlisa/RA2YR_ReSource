@@ -1878,7 +1878,7 @@ namespace gamemd {
     int result; // eax
     int occupant; // ecx
     int v28; // [esp-4h] [ebp-34h]
-    char *vtable0; // [esp+10h] [ebp-20h]
+    char *ptr_0; // [esp+10h] [ebp-20h]
     char *ptr_0; // [esp+14h] [ebp-1Ch]
     int v31; // [esp+18h] [ebp-18h]
     int v32; // [esp+1Ch] [ebp-14h]
@@ -2126,7 +2126,7 @@ namespace gamemd {
   {
     int result; // eax
     ObjectClass *v7; // edi
-    int vtable0; // esi
+    int ptr_0; // esi
     int v9; // [esp+10h] [ebp-8h]
     int v10; // [esp+14h] [ebp-4h]
 
@@ -2476,7 +2476,7 @@ namespace gamemd {
     int v4; // ebp
     int *v5; // eax
     int v6; // ecx
-    int vtable0; // edx
+    int ptr_0; // edx
     unsigned int *v8; // eax
     void **v9; // ebx
     int FoundationHeight; // edi
@@ -2914,7 +2914,7 @@ namespace gamemd {
     Cell *v16; // eax
     TechnoClass *v17; // eax
     TechnoClass *v18; // esi
-    int vtable0; // eax
+    int ptr_0; // eax
     int v20; // ebp
     int result; // eax
     int v22; // edx
@@ -8628,7 +8628,7 @@ char Gap2Recv_56E890::ProcessDataHouseClass(void* a2, void* a3, void* a4) {
     {
       if ( !v8[2].location[1] ) /*0x56e90b*/
       {
-        StartCoords = HouseClass::GetStartCoords(dword_A8022C->vtable1 + v7), v12); /*0x56e91c*/
+        StartCoords = HouseClass::GetStartCoords(dword_A8022C->ptr_0 + v7), v12); /*0x56e91c*/
         if ( *StartCoords != dword_ABDC10 || StartCoords[1] != dword_ABDC14 || StartCoords[2] != dword_ABDC18 ) /*0x56e945*/
         {
           v10 = sub_4FFD90(v8, a2); /*0x56e94a*/
@@ -23591,13 +23591,13 @@ int Gap2Recv_6967B0::DlgProcLoadGame_Load() {
     (*(this->customSound + (sizeof(this->ambientSoundController[2]) - 1))) = 0; /*0x69680d*/
     String::Trim(&this->ptr_8); /*0x696811*/
     _strupr(this->ptr_8); /*0x696817*/
-    if ( !_strcmpithis->vtable3, a3f8) ) /*0x69682c*/
+    if ( !_strcmpithis->ptr_8, a3f8) ) /*0x69682c*/
     {
   LABEL_17:
       v5 = 0; /*0x69691b*/
     goto LABEL_18; /*0x69691b*/
     }
-    if ( !_strcmpithis->vtable3, a2f8) ) /*0x696838*/
+    if ( !_strcmpithis->ptr_8, a2f8) ) /*0x696838*/
     {
   LABEL_5:
       v5 = 1; /*0x696844*/
@@ -23605,13 +23605,13 @@ int Gap2Recv_6967B0::DlgProcLoadGame_Load() {
       ListBoxItem = FindListBoxItem(DlgItem, -1, v5); /*0x69691d*/
     return SendMessageA(DlgItem, 0x14Eu, ListBoxItem, 0); /*0x696931*/
     }
-    if ( !_strcmpithis->vtable3, a3e8) ) /*0x696854*/
+    if ( !_strcmpithis->ptr_8, a3e8) ) /*0x696854*/
     {
   LABEL_7:
       v5 = 2; /*0x696860*/
     goto LABEL_18; /*0x696865*/
     }
-    if ( !_strcmpithis->vtable3, a2e8) ) /*0x696870*/
+    if ( !_strcmpithis->ptr_8, a2e8) ) /*0x696870*/
     {
       LABEL_9:
       v5 = 3; /*0x69687c*/
@@ -27518,7 +27518,7 @@ void Gap2Recv_6EF700::DeployTeamMembersAtStart(ScriptClass * aP1, char a3) {
       return; /*0x6ef788*/
     }
     v6 = v4->owner->enemyHouseIndex; /*0x6ef791*/
-    if ( v6 == -1 || (v7 = *&dword_A8022C->vtable3) == 0 ) /*0x6ef7a7*/
+    if ( v6 == -1 || (v7 = *&dword_A8022C->ptr_8) == 0 ) /*0x6ef7a7*/
     {
       this->q080 = 1; /*0x6ef7a9*/
       return; /*0x6ef7b6*/

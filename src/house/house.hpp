@@ -662,8 +662,8 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     // raw fn_4E 段头真 this=DynamicVector/VectorClass<TagClass*> (前误挂 HouseClass),
     // 载体 = gap2_defs.cpp TU-local TagClassVectorHost
     void processTargetSelection();  // 0x4F21A0
-    void* vt_placeholder_03(int a1);  // 0x4F2810
-    void* vt_placeholder_04(int a1);  // 0x4F2830
+    void* sub_4F2810(int a1);  // 0x4F2810
+    void* sub_4F2830(int a1);  // 0x4F2830
     // g57w10 r4: 0x4F2850/2880/2A60/2B10/2BB0 已归属修正 -- raw fn_4F 段头真
     // this=DynamicVector<GraphicMenuItem*> (前误挂 HouseClass), 载体 = gap2_defs.cpp
     // TU-local GraphicMenuItemVectorHost (0x4F2810/2830 raw this=HouseClass 真身保留)
@@ -816,8 +816,8 @@ void Update_TogglePower(double);  // 0x4F8440
     void* PsiWarn(int a1, int a2, int a3, int a4);  // 0x43b5e0
     void ResetObjectOrders(int a1, int a2);  // 0x4adee0
     int RevealShroudForAllies(int a1, int a2);  // 0x4adff0
-    int vt_placeholder_00(int a1);  // 0x4e8240
-    int vt_placeholder_01(int a1);  // 0x4e8250
+    int sub_4E8240(int a1);  // 0x4e8240
+    int sub_4E8250(int a1);  // 0x4e8250
     int CanDetect();  // 0x501640
     int SaveLoad_Prefix();  // 0x503040
     int PrerequisitesForTechnoTypeAreListed(int a1, int a2, int a3);  // 0x505360

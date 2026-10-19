@@ -3805,7 +3805,7 @@ int MouseClass::CheckCapture(void* a1) {
   result = ((unsigned int *)&stru_A8EB00)[440]; /*0x693880*/
   if ( !((unsigned int *)&stru_A8EB00)[440] ) /*0x69388a*/
   {
-    DisplayClass::vt_entry_B0((DisplayClass *)a1); /*0x693892*/
+    DisplayClass::sub_693892((DisplayClass *)a1); /*0x693892*/
     this->q5550 = *a1; /*0x693899*/
     this->q5554 = a1[1]; /*0x6938a2*/
     this->q5558 = 0; /*0x6938a8*/

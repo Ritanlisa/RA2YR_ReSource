@@ -107,13 +107,13 @@ public:
 
     // === Phase 3 generated declarations (IDA functions.json) ===
     virtual int MissionMoveCarryallLand();  // 0x416AF0
-    virtual char vt_entry_4F8();  // 0x41C080 (G42.33 b4 W7: 体签名同步)
+    virtual char sub_41C080();  // 0x41C080 (G42.33 b4 W7: 体签名同步)
     virtual int Destru_vt323();  // 0x41C090
-    virtual void vt_entry_514();  // 0x41C0F0
+    virtual void sub_41C0F0();  // 0x41C0F0
     virtual bool StubReturnFalse();  // 0x41c100
     virtual void StubReturnVoid(); // 0x41C110
-virtual void vt_entry_534(int);  // 0x41C130
-    virtual void vt_entry_540();  // 0x41C140
+virtual void sub_41C130(int);  // 0x41C130
+    virtual void sub_41C140();  // 0x41C140
     // G42 归属正名: GetTurretAngle(0x43ED40)/ProcessDemolish(0x4415F0) 真身 =
     // BuildingClass (canon vt+1256/vt+1260 + IDA typed this=BuildingClass* +
     // this->Type@1312 读 BuildingTypeClass*), 声明迁 building.hpp
@@ -159,9 +159,9 @@ virtual void vt_entry_534(int);  // 0x41C130
     virtual int DispatchSell();  // 0x4D9720
     virtual int SelectAutoTarget_Cloaked(int a2 = 0, int a3 = 0, int a4 = 0);  // 0x4D9920
     virtual int HandleTargetDestroyed(int* a2, int* a3);  // 0x4D9960 (G42.42d truth arity)
-    virtual void vt_entry_524();  // 0x4D9C00
+    virtual void sub_4D9C00();  // 0x4D9C00
     virtual int Destru_vt107();  // 0x4D9C10
-    virtual int vt_entry_4F0();  // 0x4D9FF0
+    virtual int sub_4D9FF0();  // 0x4D9FF0
     virtual void ClearSomeVector();  // 0x4DA1C0
     virtual bool CanBeControlled() const;  // 0x4DA1D0
     virtual bool CanBeRecruited() const;  // 0x4DA230
@@ -171,13 +171,13 @@ virtual void vt_entry_534(int);  // 0x41C130
     virtual int UpdateState();  // 0x4daf10
     virtual int GetAttackSpeed() const;  // 0x4DB0A0
     virtual int Destru_vt30();  // 0x4DB7E0
-    virtual void vt_entry_548();  // 0x4DBA30
-    virtual void vt_entry_54C();  // 0x4DBA40
+    virtual void sub_4DBA30();  // 0x4DBA30
+    virtual void sub_4DBA40();  // 0x4DBA40
     virtual int BeginPowerUpdate(int* a2);  // 0x4DBAD0 (G42.42d truth arity)
     virtual bool CanBeHunted() const;  // 0x4DBDA0
     virtual int LiberateMember();  // 0x4DBED0
-    virtual int vt_entry_4E0();  // 0x4DBFD0
-    virtual int vt_entry_4F4();  // 0x4DC030
+    virtual int sub_4DBFD0();  // 0x4DBFD0
+    virtual int sub_4DC030();  // 0x4DC030
     virtual int CheckTargetCell() const; // 0x4DC060
     virtual int Destru_vt311();  // 0x4DC790
     virtual void SetBuildingType();  // 0x4DC810
@@ -198,7 +198,7 @@ virtual void vt_entry_534(int);  // 0x41C130
     virtual int CheckCellPassable() const; // 0x4DE940
     virtual bool DeployAction();  // 0x4DEAE0
     virtual void UpdateTeamAI();  // 0x4DEBB0
-    virtual int vt_entry_530(int a2, int a3, int a4);  // 0x4DEE50 (G42.33 批 3: 真值 3 栈参)
+    virtual int sub_4DEE50(int a2, int a3, int a4);  // 0x4DEE50 (G42.33 批 3: 真值 3 栈参)
     virtual void ClearPathIndex();  // 0x4DF0D0
     virtual int MissionSell_Dispatch();  // 0x4DF0E0
     virtual void UpdateAttackMove_SelectNewTarget();  // 0x4DF3A0

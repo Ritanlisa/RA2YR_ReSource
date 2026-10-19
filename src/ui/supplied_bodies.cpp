@@ -832,7 +832,7 @@ int CampaignScore::DialogProc(HWND hWnd, unsigned int a2, UINT_PTR uIDEvent, HWN
         }
         MapSkirmishDialogPlayerToControl(hWnd, (int)dword_A8DA8C); /*0x46ec5a*/
         if ( dword_A8B23C ) /*0x46ec67*/
-          (*((void (__thiscall **)(ObjectClass *, HWND))((dword_A8B230_host *)&dword_A8B23C)->vtable1 + 14))((ObjectClass *)(long)dword_A8B23C, hWnd); /*0x46ec6c*/
+          (*((void (__thiscall **)(ObjectClass *, HWND))((dword_A8B230_host *)&dword_A8B23C)->ptr_0 + 14))((ObjectClass *)(long)dword_A8B23C, hWnd); /*0x46ec6c*/
         v72 = GetDlgItem(hWnd, 1842); /*0x46ec75*/
         v73 = v72; /*0x46ec77*/
         if ( v72 ) /*0x46ec7b*/
@@ -1452,7 +1452,7 @@ int CampaignScore::DialogProc(HWND hWnd, unsigned int a2, UINT_PTR uIDEvent, HWN
         CampaignScore::FindDialogTemplate((CampaignScore *)hWnd); /*0x46f2cf*/
       }
       byte_89E05C = 0; /*0x46f2d9*/
-      ResetLobbyFactionTable((HWND)((dword_A8B230_host *)&dword_A8B230)[127].vtable2); /*0x46f2e6*/
+      ResetLobbyFactionTable((HWND)((dword_A8B230_host *)&dword_A8B230)[127].ptr_4); /*0x46f2e6*/
       return 0; /*0x46f2f7*/
     }
     if ( a2 != 2 ) /*0x46e042*/

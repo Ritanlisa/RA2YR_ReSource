@@ -1252,7 +1252,7 @@ char Scenario::LoadWithProgress(void *a1, void *a2_x)
       LoadProgressMgr::ReleaseBuffer(v29); /*0x684c00*/
     }
     for ( j = dword_A80238 - 1; j >= 0; --j ) /*0x684c10*/
-      Scenario::ProcessSidebarUnits(dword_A8022C->vtable1 + j)); /*0x684c1b*/
+      Scenario::ProcessSidebarUnits(dword_A8022C->ptr_0 + j)); /*0x684c1b*/
     return 1; /*0x684c24*/
   }
   else

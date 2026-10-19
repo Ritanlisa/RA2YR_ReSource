@@ -92,7 +92,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     // 体读 location@+0x9C、height delta@+0xE4、type 链@+0xAC→behavior kind@+0x314）
     int AdjustHeight();  // 0x62D5E0
     bool CheckMirrorState(int a1);  // 0x62D6F0
-    int vt_entry_1E8();  // 0x62D830
+    int sub_62D830();  // 0x62D830
     int Stub();  // 0x62D990
     void* UpdateParticle(int a1);  // 0x62D9A0
     int ProcessCreation();  // 0x62DF20

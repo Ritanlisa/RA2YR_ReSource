@@ -657,11 +657,11 @@ int ParticleTypeClass::SaveLoad_Prefix(int a1, int a2)
     {
       ObjectTypeClass::Construct((ObjectTypeClass *)v3, (int)&a2); /*0x645689*/
       ParticleTypeClass::Constructor(&v3->ParticleTypeClass_2B8, 0, 0); /*0x645698*/
-      /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList_RGBClass) */  /*0x64569d*/
-      /* X11: vtable install elided (X67 recv-slot, RHS vt_ParticleTypeClass_4) */  /*0x6456a3*/
-      /* X11: vtable install elided (X67 recv-slot, RHS vt_ParticleTypeClass_4) */  /*0x6456a9*/
-      /* X11: vtable install elided (X67 recv-slot, RHS vt_ParticleTypeClass_4) */  /*0x6456b0*/
-      /* X11: vtable install elided (X67 recv-slot, RHS vt_ParticleTypeClass_4) */  /*0x6456b7*/
+      /* X11: ptr_0 install elided (X67 recv-slot, RHS vt_TypeList_RGBClass) */  /*0x64569d*/
+      /* X11: ptr_0 install elided (X67 recv-slot, RHS vt_ParticleTypeClass_4) */  /*0x6456a3*/
+      /* X11: ptr_0 install elided (X67 recv-slot, RHS vt_ParticleTypeClass_4) */  /*0x6456a9*/
+      /* X11: ptr_0 install elided (X67 recv-slot, RHS vt_ParticleTypeClass_4) */  /*0x6456b0*/
+      /* X11: ptr_0 install elided (X67 recv-slot, RHS vt_ParticleTypeClass_4) */  /*0x6456b7*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v3->__pad_2E4); /*0x6456ca*/
     v5 = *v2; /*0x6456cf*/
@@ -734,10 +734,10 @@ ParticleTypeClass * ParticleTypeClass::ddtor(char a2, int a3, int a4, int a5, in
 {
 
 
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_ParticleTypeClass) */  /*0x645956*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_ParticleTypeClass) */  /*0x64595c*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_ParticleTypeClass) */  /*0x645963*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_ParticleTypeClass) */  /*0x64596a*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS vt_ParticleTypeClass) */  /*0x645956*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS vt_ParticleTypeClass) */  /*0x64595c*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS vt_ParticleTypeClass) */  /*0x645963*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS vt_ParticleTypeClass) */  /*0x64596a*/
   AbstractClass::AnnounceExpiredPointer(&a3->ArrayIndex, 1); /*0x645971*/
   ParticleTypeClass *v7; // [esp+4h] [ebp-4h] BYREF
   v7 = a3; /*0x645986*/
@@ -774,7 +774,7 @@ ParticleTypeClass * ParticleTypeClass::ddtor(char a2, int a3, int a4, int a5, in
   }
   CampaignClass *ParticleTypeClass_field_0x2BC; // eax
   ParticleTypeClass_field_0x2BC = a3->ParticleTypeClass_field_0x2BC; /*0x645a08*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x645a0e*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x645a0e*/
   if ( ParticleTypeClass_field_0x2BC && a3->__pad_2C0[5] ) /*0x645a1c*/
   {
     __3_YAXPAX_Z(ParticleTypeClass_field_0x2BC); /*0x645a27*/
@@ -799,7 +799,7 @@ unsigned int * ParticleTypeClass::Constructor(int a2, int a3, void *a3_2, void *
   a3_2->BehavesLike = a3_2; /*0x645a80*/
   (*((unsigned char *)&(a3_2->ParticleTypeClass_field_0xC))) = 1; /*0x645a83*/
   (((unsigned char *)&(a3_2->ParticleTypeClass_field_0xC))[1]) = 0; /*0x645a87*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x645a8a*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x645a8a*/
   if ( a3_2 ) /*0x645a90*/
   {
     if ( a3_2 ) /*0x645a98*/
@@ -850,7 +850,7 @@ unsigned int * ParticleTypeClass::Constructor(int a2, int a3, void *a3_2, void *
       (((unsigned char *)&(a3_2->ParticleTypeClass_field_0xC))[1]) = 1; /*0x645ae8*/
     }
   }
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass) */  /*0x645aec*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS vt_DynamicVectorClass) */  /*0x645aec*/
   a3_2->Damage = 10; /*0x645af2*/
   a3_2->ParticleTypeClass_field_0x10 = 0; /*0x645af9*/
   return &a3_2->ArrayIndex; /*0x645afe*/
@@ -873,7 +873,7 @@ TypeList_flat * ParticleTypeClass::QueryInterface(char a2, int a3, int a4, int a
 {
 
   void *v3 = this->ptr_4; // eax /*0x477ac3*/
-  /* X11: vtable install elided (implicit via VectorClass virtuals 0x477ac6) */
+  /* X11: ptr_0 install elided (implicit via VectorClass virtuals 0x477ac6) */
   if ( v3 && this->ParticleTypeClass_field_2BC ) /*0x477ad0*/
   {
     operator delete((v3)); /*0x477ad8*/

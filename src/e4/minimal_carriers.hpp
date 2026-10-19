@@ -281,7 +281,7 @@ struct Next { void* ptr_0; };  // minimal E2 (size-fix pending til evidence)
 } // namespace gamemd
 namespace gamemd {
 struct VectorClass_TagClass {  // G57w17h4: til VectorClass (ordinal 1500) layout, ?$VectorClass@PAVTagClass@@
-    void *vtable0;                // 0x0 (til vtable0)
+    void *ptr_0;                // 0x0 (til vtable0)
     unsigned int *Items;          // 0x4 (til int; raw reads as u32 item array)
     unsigned int Capacity;        // 0x8 (til int)
     unsigned char IsInitialized;  // 0xC (til char[1])

@@ -1592,7 +1592,7 @@ void MPCooperative_Play(AnimClass * aP0, int a2, int a3)
   v6 = 0; /*0x5c2d28*/
   for ( j = 0; j < dword_A80238; ++j ) /*0x5c2d2e*/
   {
-    v8 = *&dword_A8022C->vtable1; /*0x5c2d36*/
+    v8 = *&dword_A8022C->ptr_0; /*0x5c2d36*/
     if ( v8 && (uint8_t)((House *)(v8))->IsCurrentPlayer() ) /*0x5c2d3d*/
       ++v6; /*0x5c2d46*/
   }

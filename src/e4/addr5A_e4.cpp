@@ -5298,7 +5298,7 @@ int E4Recv_5AEE50::sub_5AEE50(float a2)
     fld [esp+40h+var_24]
     fmul st, st(1)
   }
-  void *vtable0; // [esp+4h] [ebp-20h]
+  void *ptr_0; // [esp+4h] [ebp-20h]
   ptr_0 = this->AbstractClass; /*0x5aee99*/
   void *ptr_4; // [esp+14h] [ebp-10h]
   ptr_4 = this->q050; /*0x5aee9d*/

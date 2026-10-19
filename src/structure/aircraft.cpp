@@ -1669,7 +1669,7 @@ int AircraftClass::LoadFromStream()
   int v5; // eax
   int Vtable3; // eax
   char *ptr_0; // ebx
-  unsigned int *vtable0; // ebp
+  unsigned int *ptr_0; // ebp
   int v9; // esi
   AircraftClass *v10; // edx
   char *v11; // ecx

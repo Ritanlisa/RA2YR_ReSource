@@ -403,7 +403,7 @@ int TechnoClass::SmokeUpdate(double a2) {  // g57b5 W4: raw 真值补参 (a2)
             v3->AssignTarget_SyncLog(0); /*0x415032*/
             v3->ValidatePlacement(0, 1); /*0x415040*/
           }
-          if ( v3->vt_entry_200() ) /*0x41504a*/
+          if ( v3->sub_41504A() ) /*0x41504a*/
             v3->ProcessPassengerEjection(); /*0x415058*/
           if ( v3->AircraftClass_field_bool_6C8 && v3->currentMission != 1 ) /*0x41506f*/
           {

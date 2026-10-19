@@ -9068,7 +9068,7 @@ int WaveClass::Destructor() {
       ++v2; /*0x75ed8e*/
     }
   }
-  this->WaveClass_field_128->GetClassIdentifierthis->vtable4); /*0x75edae*/
+  this->WaveClass_field_128->GetClassIdentifierthis->ptr_C); /*0x75edae*/
   v3 = (void *)this->u32_1F4; /*0x75edb1*/
   this->WaveClass_field_128 = 0; /*0x75edb4*/
   if ( v3 && this->u32_1FD ) /*0x75edbe*/

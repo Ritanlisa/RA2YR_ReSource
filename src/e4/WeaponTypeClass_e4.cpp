@@ -363,11 +363,11 @@ int WeaponTypeClass_SaveLoad_Prefix(WeaponTypeClass *aP0, WeaponTypeClass *aP0, 
       v5-((unsigned int *)(>Anim))[0] = (int)&vt_TypeList; /*0x772d30*/
     }
     int v4; // ebx
-    v7->vt_entry_68(&aP0, 4, 0, v4); /*0x772d42*/
+    v7->sub_772D42(&aP0, 4, 0, v4); /*0x772d42*/
     int i; // ebx
     for ( i = 0; i < (int)a2; ++i ) /*0x772d4d*/
     {
-      v7->vt_entry_68(&a3, 4, 0); /*0x772d5b*/
+      v7->sub_772D5B(&a3, 4, 0); /*0x772d5b*/
       DynamicVector::Add_Alt4((DynamicVector *)v5->Anim, &a3); /*0x772d69*/
     }
     if ( Report ) /*0x772d77*/
@@ -375,20 +375,20 @@ int WeaponTypeClass_SaveLoad_Prefix(WeaponTypeClass *aP0, WeaponTypeClass *aP0, 
       ((DynamicVectorClass *)Report)->Construct(0, 0); /*0x772d7f*/
       /* X11: vtable install elided (X67 star-deref, RHS vt_TypeList) */  /*0x772d84*/
     }
-    v7->vt_entry_68(&a2, 4, 0); /*0x772d97*/
+    v7->sub_772D97(&a2, 4, 0); /*0x772d97*/
     int j; // ebx
     for ( j = 0; j < (int)a2; ++j ) /*0x772da2*/
     {
-      v7->vt_entry_68(&a3, 4, 0); /*0x772db0*/
+      v7->sub_772DB0(&a3, 4, 0); /*0x772db0*/
       DynamicVector::Add_Alt((DynamicVector *)Report, &a3); /*0x772dba*/
     }
     if ( v5 != (WeaponTypeClass *)-216 ) /*0x772dce*/
       TypeList::Construct((TypeList *)v5->DownReport); /*0x772dd2*/
-    v7->vt_entry_68(&a2, 4); /*0x772de3*/
+    v7->sub_772DE3(&a2, 4); /*0x772de3*/
     int k; // ebx
     for ( k = 0; k < (int)aP0; ++k ) /*0x772dee*/
     {
-      v7->vt_entry_68(&a2, 4, 0); /*0x772dfc*/
+      v7->sub_772DFC(&a2, 4, 0); /*0x772dfc*/
       DynamicVector::Add_Alt((DynamicVector *)v5->DownReport, &a2); /*0x772e06*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&v5->Warhead); /*0x772e1e*/

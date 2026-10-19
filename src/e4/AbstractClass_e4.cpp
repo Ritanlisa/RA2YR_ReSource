@@ -788,7 +788,7 @@ int AbstractClass::SaveLoad_Prefix_0(AbstractClass * aP0, AbstractClass * aP1)
     v4 = (int)(aP0[7]); /*0x4103be*/
     v5 = *v2; /*0x4103c1*/
     v6 = aP0->COMStub_Ret176_12(0); /*0x4103c7*/
-    result = v2->vt_entry_68(aP0, v6); /*0x4103cd*/
+    result = v2->sub_4103CD(aP0, v6); /*0x4103cd*/
     aP0[7] = v4; /*0x4103d0*/
   }
   return result; /*0x41038e*/

@@ -147,9 +147,7 @@ extern void _CxxThrowException_8(void * aP0, struct _ThrowInfo * aP1);  // CRT t
 extern unsigned char _TI2_AVbad_typeid__[];  // .rdata ThrowInfo
 extern unsigned char _TI3_AV__non_rtti_object__[];  // .rdata ThrowInfo
 extern unsigned char _TI2_AVbad_cast__[];  // .rdata ThrowInfo
-extern unsigned int vt___non_rtti_object;  // q000 addr const
 extern unsigned int vt_bad_typeid;  // q000 addr const
-extern unsigned int vt_bad_cast;  // q000 addr const
 extern int _fclose_lk(int aP0);  // def later in this TU (b24 truth int)
 extern int free(void * aP0);  // def later in this TU (b24 fwd for global op-delete)
 extern unsigned char * _mbsdec(const unsigned char * aP0, const unsigned char * aP1);  // CRT internal
@@ -9216,14 +9214,14 @@ unsigned int * __sbh_free_block(char * aP0, int aP1)  // G42.33 b18: truth char*
   {
     if ( !dword_B78B90 ) /*0x7cfa1b*/
       goto LABEL_46; /*0x7cfa1b*/
-    VirtualFree((LPVOID)(dword_B78B90->vtable4 + (dword_B78B88 << 15)), 0x8000u, 0x4000u); /*0x7cfa3f*/
-    *(&dword_B78B90->vtable3) |= 0x80000000 >> dword_B78B88; /*0x7cfa53*/
+    VirtualFree((LPVOID)(dword_B78B90->ptr_C + (dword_B78B88 << 15)), 0x8000u, 0x4000u); /*0x7cfa3f*/
+    *(&dword_B78B90->ptr_8) |= 0x80000000 >> dword_B78B88; /*0x7cfa53*/
     *(unsigned int *)(dword_B78B90->uniqueId + 4 * dword_B78B88 + 196) = 0; /*0x7cfa64*/
     --*(unsigned char *)(dword_B78B90->uniqueId + 67); /*0x7cfa74*/
     v22 = (LPVOID *)dword_B78B90; /*0x7cfa77*/
     if ( !*(unsigned char *)(dword_B78B90->uniqueId + 67) ) /*0x7cfa7f*/
     {
-      *(&dword_B78B90->vtable2) &= ~1u; /*0x7cfa85*/
+      *(&dword_B78B90->ptr_4) &= ~1u; /*0x7cfa85*/
       v22 = (LPVOID *)dword_B78B90; /*0x7cfa89*/
     }
     if ( v22[2] == (LPVOID)-1 ) /*0x7cfa92*/

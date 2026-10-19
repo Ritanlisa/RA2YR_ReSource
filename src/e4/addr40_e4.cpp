@@ -2984,7 +2984,7 @@ void * E4Recv_40E3E0::sub_40E3E0(unsigned int * Block, char a2)
   }
   if ( (a2 & 1) != 0 ) /*0x40e481*/
     __3_YAXPAX_Z(this); /*0x40e484*/
-  return &this->vtable; /*0x40e48e*/
+  return &this->ptr_0; /*0x40e48e*/
 
 }
 }
@@ -3055,7 +3055,7 @@ void * E4Recv_40E4C0::sub_40E4C0(unsigned int * Block, char a2)
   }
   if ( (a2 & 1) != 0 ) /*0x40e561*/
     __3_YAXPAX_Z(this); /*0x40e564*/
-  return &this->vtable; /*0x40e56e*/
+  return &this->ptr_0; /*0x40e56e*/
 
 }
 }

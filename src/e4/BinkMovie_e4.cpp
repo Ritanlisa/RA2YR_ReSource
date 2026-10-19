@@ -916,7 +916,7 @@ int BinkMovie::InitKeyframeTracking(char * Source, void * aSubtitlemdTxt)
   if ( !(unsigned __int8)CCFileClass::Open(&v10, 0) ) /*0x6c9b8a*/
   {
 LABEL_6:
-    /* X11: vtable install elided (X67 star-deref, RHS vt_CCFileClass) */  /*0x6c9be2*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS vt_CCFileClass) */  /*0x6c9be2*/
     v12 = 0; /*0x6c9bee*/
     Vector::Clear((int)v11); /*0x6c9bf5*/
     *(unsigned int *)v10.__tail_0 = &off_7E1668; /*0x6c9bfe*/
@@ -927,7 +927,7 @@ LABEL_6:
   v7 = 0; /*0x6c9ba0*/
   v8 = &v10; /*0x6c9ba4*/
   v9 = 0; /*0x6c9ba8*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_FileStraw) */  /*0x6c9bac*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS vt_FileStraw) */  /*0x6c9bac*/
   BinkMovie::VtableDispatch(&v13, (int)&v6); /*0x6c9bb4*/
   v3 = ParseMovieSubtitles(v13.MovieHandle, Source); /*0x6c9bc1*/
   *(unsigned int *)this->MovieHandle = v3; /*0x6c9bc8*/
@@ -939,7 +939,7 @@ LABEL_6:
   }
   nullsub_40(v5); /*0x6c9c19*/
   FileStraw::Destructor(&v6); /*0x6c9c22*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_CCFileClass) */  /*0x6c9c2b*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS vt_CCFileClass) */  /*0x6c9c2b*/
   v12 = 0; /*0x6c9c33*/
   Vector::Clear((int)v11); /*0x6c9c3a*/
   *(unsigned int *)v10.__tail_0 = &off_7E1668; /*0x6c9c43*/
@@ -1164,10 +1164,10 @@ int * BinkMovie::CreateSurfaceTracker(char * FullPath)
       v3[1] = 640; /*0x6c9a60*/
       v3[2] = 255; /*0x6c9a67*/
       v3[3] = 0; /*0x6c9a6e*/
-      /* X11: vtable install elided (X67 star-deref, RHS XSurface_Vtable) */  /*0x6c9a71*/
+      /* X11: ptr_0 install elided (X67 star-deref, RHS XSurface_Vtable) */  /*0x6c9a71*/
       v3[4] = 2; /*0x6c9a77*/
       Buffer::Init(0, 0x4FB00u); /*0x6c9a7e*/
-      /* X11: vtable install elided (X67 star-deref, RHS BSurface_Vtable) */  /*0x6c9a83*/
+      /* X11: ptr_0 install elided (X67 star-deref, RHS BSurface_Vtable) */  /*0x6c9a83*/
       (*(void (**)(unsigned int *, unsigned int))(*v4 + 24))(v4, 0); /*0x6c9a8e*/
       v2->u32_10 = v4; /*0x6c9a91*/
     }

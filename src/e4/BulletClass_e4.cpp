@@ -71,7 +71,7 @@ BulletClass::BulletClass()
     v2 = (*(unsigned int *)&DataGlobal_A8EB00[592])++; /*0x4664a8*/
     *(unsigned int *)(*(unsigned int *)&DataGlobal_A8EB00[580] + 4 * v2) = this; /*0x4664b7*/
   }
-  return (int)this->vtable1; /*0x4664bc*/
+  return (int)this->ptr_0; /*0x4664bc*/
 
 }
 }  // G42.18 ns repair

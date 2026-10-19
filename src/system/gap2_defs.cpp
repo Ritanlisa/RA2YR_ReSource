@@ -13842,7 +13842,7 @@ void CellClass::UpdateTerrainAndWaypoints(void* a1, int a2, int a3, int a4) {
     }
   }
   for ( ii = dword_A80238 - 1; ii >= 0; --ii ) /*0x566dd0*/
-    CellClass::IterateOccupiers(dword_A8022C->vtable1 + ii), *(int *)v152); /*0x566ddf*/
+    CellClass::IterateOccupiers(dword_A8022C->ptr_0 + ii), *(int *)v152); /*0x566ddf*/
   v123 = 0; /*0x566ded*/
   for ( a2 = 0; v123 < *(int *)&stru_A8E960.nextScenario[88]; a2 = v123 ) /*0x566df5*/
   {
@@ -35671,8 +35671,8 @@ void* MixFileClass::LoadSubFile() {
           v7 = &dword_B077B4->uniqueId; /*0x69e635*/
           if ( dword_B077B4->uniqueId ) /*0x69e632*/
           {
-            v8 = (MixFileClass *)dword_B077B4->vtable4; /*0x69e63c*/
-            v9 = &dword_B077B4->vtable4; /*0x69e63f*/
+            v8 = (MixFileClass *)dword_B077B4->ptr_C; /*0x69e63c*/
+            v9 = &dword_B077B4->ptr_C; /*0x69e63f*/
             if ( v8 ) /*0x69e644*/
               MixFileClass::CacheNode_Dtor(v8, 1); /*0x69e648*/
             *v9 = 0; /*0x69e64d*/

@@ -2136,7 +2136,7 @@ AbstractClass * * Radar::ScanWaypoints(MouseClass * aP0, MouseClass * aP1, int a
         {
           v26 = ((CellCoord *)(&dword_87F7E8))->To_CellObj(v14); /*0x692adc*/
           v30 = 12; /*0x692af4*/
-          if ( (uint8_t)((House *)(*&dword_A8022C->vtable1]))->IsHumanPlayer() ) /*0x692aed*/
+          if ( (uint8_t)((House *)(*&dword_A8022C->ptr_0]))->IsHumanPlayer() ) /*0x692aed*/
             goto LABEL_81; /*0x692afc*/
         }
       }

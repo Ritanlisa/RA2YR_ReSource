@@ -64,8 +64,8 @@ public:
     // wrapper: delegates to DisplayClass::vt_entry_94 at 0x4A9CA0
     virtual bool vt_entry_A4(uint32_t unk1, uint32_t unk2, uint32_t unk3);
     virtual void SetViewDimensions(const RectangleStruct& rect);
-virtual void vt_entry_AC(void);  // 0x40D250
-virtual void vt_entry_B0(void);  // 0x4AAD20
+virtual void sub_40D250(void);  // 0x40D250
+virtual void sub_4AAD20(void);  // 0x4AAD20
     // wrapper: delegates to DisplayClass::vt_entry_B0 at 0x4AAD20
     virtual void vt_entry_B4(Point2D* point);
 

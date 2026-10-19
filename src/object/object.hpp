@@ -488,7 +488,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int ClearFlags2();  // 0x401170
     int Cleanup();  // 0x402220
     int GetSizeMax();  // 0x4103E0
-    int vt_entry_140(int a1, void* a2, void* a3, void* a4);  // 0x417C80
+    int sub_417C80(int a1, void* a2, void* a3, void* a4);  // 0x417C80
     int GetCoordsThunk1();  // 0x41BDD0
     int GetCoordsThunk3();  // 0x41BE30
     int GetMember41_2();  // 0x41CFA0

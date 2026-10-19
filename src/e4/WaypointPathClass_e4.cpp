@@ -123,7 +123,7 @@ int WaypointPathClass::LoadState(unsigned int * a1, int a2)
       /* X11: vtable install elided (X67 recv-slot, RHS vt_WaypointPathClass_4) */  /*0x763cb4*/
       /* X11: vtable install elided (X67 recv-slot, RHS vt_WaypointPathClass_4) */  /*0x763cbb*/
     }
-    result = v3->vt_entry_68(&this, 4, 0); /*0x763ccd*/
+    result = v3->sub_763CCD(&this, 4, 0); /*0x763ccd*/
     if ( result >= 0 ) /*0x763cd2*/
     {
       p_vfptr1 = (WaypointPathClass *)&v2[1].ptr_4; /*0x763cd8*/

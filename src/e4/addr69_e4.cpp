@@ -117,7 +117,7 @@ AbstractClass * * E4Recv_690400::sub_690400()
 
   GetClientRect(g_hWnd, &Rect); /*0x690412*/
   ClientToScreen(g_hWnd, (LPPOINT)&Rect); /*0x690423*/
-  char *vtable0; // eax
+  char *ptr_0; // eax
   ptr_0 = (char *)this->AbstractClass; /*0x690429*/
   char *ptr_0; // esi
   ptr_0 = (char *)this->M4; /*0x69042f*/

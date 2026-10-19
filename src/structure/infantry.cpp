@@ -3055,7 +3055,7 @@ int InfantryClass::CheckAndApplyBomb()
   int v8; // [esp+18h] [ebp-14h] BYREF
   char v9[16]; // [esp+1Ch] [ebp-10h] BYREF
 
-  FootClass::vt_entry_4F4((FootClass *)this); /*0x521dd6*/
+  FootClass::sub_521DD6((FootClass *)this); /*0x521dd6*/
   result = (int)this->movementDestination; /*0x521ddb*/
   if ( result ) /*0x521de3*/
   {
@@ -4998,7 +4998,7 @@ int InfantryClass::AssignDestination_SyncLog(AbstractClass* dest, int sync_flag)
           v37 = dest; /*0x51b0de*/
           if ( dest ) /*0x51b0e4*/
           {
-            dest->vt_entry_68(*locomotor); /*0x51b0ec*/
+            dest->sub_51B0EC(*locomotor); /*0x51b0ec*/
             InfantryClass::checkBridgeClearance((InfantryClass *)this->locomotor, *(int *)ppv.__pad_000); /*0x51b0f6*/
             v37 = dest; /*0x51b0fb*/
           }

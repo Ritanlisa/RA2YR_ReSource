@@ -882,7 +882,7 @@ LABEL_19:
           result = (*(int (**)(int *, int **, int, unsigned int))(v10 + 12))(v2, &a2, 4, 0); /*0x4727f9*/
           if ( result < 0 ) /*0x4727fe*/
             break; /*0x4727fe*/
-          result = v2->vt_entry_68(&v16, 4, 0); /*0x47280f*/
+          result = v2->sub_47280F(&v16, 4, 0); /*0x47280f*/
           v18 = result; /*0x472814*/
           if ( result < 0 ) /*0x472818*/
             break; /*0x472818*/

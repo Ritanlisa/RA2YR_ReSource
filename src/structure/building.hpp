@@ -424,10 +424,10 @@ int CanAcceptType(int,int);  // 0x452670
     static BuildingClass* AllocAndCtor();  // 0x70BF50
 
     // Trivial stubs (vt_entry_*)
-    bool vt_entry_4E4();  // 0x41C060
-    bool vt_entry_4D4();  // 0x4DE750
-    bool vt_entry_4D8();  // 0x4DE760
-    bool vt_entry_504();  // 0x4DB9B0
+    bool sub_41C060();  // 0x41C060
+    bool sub_4DE750();  // 0x4DE750
+    bool sub_4DE760();  // 0x4DE760
+    bool sub_4DB9B0();  // 0x4DB9B0
     bool StubReturnFalse();  // 0x459D80
     bool StubReturnFalse3();  // 0x459DF0
     bool StubReturnFalse4();  // 0x459E00

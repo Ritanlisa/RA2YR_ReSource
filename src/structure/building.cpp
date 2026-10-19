@@ -3910,7 +3910,7 @@ int BuildingClass::ProcessRepair()
 
             v23 = LinkedList::Pop(&this->inAirFlag); /*0x44b9f0*/
 
-            this->vt_entry_100(v23, g_TerrainTypeTable); /*0x44b9f8*/
+            this->sub_44B9F8(v23, g_TerrainTypeTable); /*0x44b9f8*/
 
             return 1; /*0x44ba0a*/
 
@@ -3946,7 +3946,7 @@ int BuildingClass::ProcessRepair()
 
         v21 = LinkedList::Pop(&this->inAirFlag); /*0x44b9b7*/
 
-        this->vt_entry_100(v21, g_TerrainTypeTable); /*0x44b9bf*/
+        this->sub_44B9BF(v21, g_TerrainTypeTable); /*0x44b9bf*/
 
         this->MissionDispatch(5, 0); /*0x44b9cd*/
 
@@ -4090,7 +4090,7 @@ LABEL_231:
 
           v34 = LinkedList::Pop(&this->inAirFlag); /*0x44bb4c*/
 
-          this->vt_entry_100(v34, g_TerrainTypeTable); /*0x44bb54*/
+          this->sub_44BB54(v34, g_TerrainTypeTable); /*0x44bb54*/
 
           this->MissionDispatch(5, 0); /*0x44bb62*/
 

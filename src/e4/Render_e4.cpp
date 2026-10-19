@@ -2082,7 +2082,7 @@ int Render_Get(ScoreScreen * aP0)
   {
     do /*0x68ee21*/
     {
-      int v4 = *&dword_A8022C->vtable1; // esi /*0x68edad*/
+      int v4 = *&dword_A8022C->ptr_0; // esi /*0x68edad*/
       if ( (uint8_t)(aP0)->IsAlliedWith((void *)v4) /*0x68edca*/
         && (uint8_t)HouseClass::IsAlliedWith((void *)v4, aP0)
         || aP0 == (void *)v4 )

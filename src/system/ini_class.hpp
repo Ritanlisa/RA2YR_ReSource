@@ -41,7 +41,7 @@ struct INISection {
 
 // Linked list node for INIClass internals
 struct INILinkNode {
-    void* vtable;
+    void* ptr_0;
     INILinkNode* Prev;
     INILinkNode* Next;
 };
@@ -51,7 +51,7 @@ struct INILinkNode {
 #ifndef GAMEMD_G2_GenericList_DEF  // G42.57w14 twin-guard (shared w/ e4 GenericList carrier; first-include wins)
 #define GAMEMD_G2_GenericList_DEF 1
 struct GenericList {
-    void* vtable;
+    void* ptr_0;
     unsigned int u32_4;   // g57w10 C2039 supply (ml offset 4)
     unsigned int u32_8;   // ml offset 8
     unsigned int u32_C;   // ml offset 12

@@ -4110,7 +4110,7 @@ void BuildingClass::Unlimbo_UnitDeliveryFix()
         wallOwnerIndex = v9->wallOwnerIndex; /*0x4405da*/
         v11 = 0; /*0x4405dd*/
         if ( wallOwnerIndex >= 0 ) /*0x4405e1*/
-          v11 = (BuildingClass *)*(&dword_A8022C->vtable1 + wallOwnerIndex); /*0x4405e9*/
+          v11 = (BuildingClass *)*(&dword_A8022C->ptr_0 + wallOwnerIndex); /*0x4405e9*/
         owner = (BuildingClass *)this->owner; /*0x4405ec*/
         if ( v11 == owner ) /*0x4405f4*/
         {
@@ -4134,7 +4134,7 @@ void BuildingClass::Unlimbo_UnitDeliveryFix()
         v15 = v9->wallOwnerIndex; /*0x44061b*/
         v16 = 0; /*0x44061e*/
         if ( v15 >= 0 ) /*0x440622*/
-          v16 = (BuildingClass *)*(&dword_A8022C->vtable1 + v15); /*0x44062a*/
+          v16 = (BuildingClass *)*(&dword_A8022C->ptr_0 + v15); /*0x44062a*/
         owner = (BuildingClass *)this->owner; /*0x44062d*/
         if ( v16 == owner ) /*0x440635*/
         {
@@ -4158,7 +4158,7 @@ void BuildingClass::Unlimbo_UnitDeliveryFix()
           v20 = 0; /*0x4406ed*/
           v21 = v19->q050; /*0x4406ef*/
           if ( v21 >= 0 ) /*0x4406f4*/
-            v20 = (BuildingClass *)*(&dword_A8022C->vtable1 + v21); /*0x4406fc*/
+            v20 = (BuildingClass *)*(&dword_A8022C->ptr_0 + v21); /*0x4406fc*/
           v22 = (BuildingClass *)this->owner; /*0x4406ff*/
           if ( v20 == v22 ) /*0x440707*/
           {
@@ -11691,7 +11691,7 @@ namespace gamemd {
     --dword_A8E7AC; /*0x4581b2*/
     v43 = this->Audio8[0]; /*0x4581b9*/
     this->Audio8_2.Dispatch(); /*0x4581bc*/
-    this->Audio8_2.vt_entry_40(v43, 0); /*0x4581c6*/
+    this->Audio8_2.sub_4581C6(v43, 0); /*0x4581c6*/
     v44 = (unsigned int *)(*((int (__thiscall **)(BuildingClass *))this->ptr_0 + 111))(this); /*0x4581cd*/
     BuildingClass::UpdateThreatBounds(this, v44); /*0x4581d6*/
   }
@@ -11778,7 +11778,7 @@ namespace gamemd {
   }
   v19 = this->Audio8[0]; /*0x45870a*/
   this->Audio8_2.Dispatch(); /*0x458718*/
-  this->Audio8_2.vt_entry_40(v19, 0); /*0x458722*/
+  this->Audio8_2.sub_458722(v19, 0); /*0x458722*/
   v20 = (unsigned int *)(*((int (__thiscall **)(BuildingClass *))this->ptr_0 + 111))(this); /*0x458729*/
   BuildingClass::UpdateThreatBounds(this, v20); /*0x458732*/
 }
@@ -11792,7 +11792,7 @@ namespace gamemd {
   }
   v19 = this->Audio8[0]; /*0x45870a*/
   this->Audio8_2.Dispatch(); /*0x458718*/
-  this->Audio8_2.vt_entry_40(v19, 0); /*0x458722*/
+  this->Audio8_2.sub_458722(v19, 0); /*0x458722*/
   v20 = (unsigned int *)(*((int (__thiscall **)(BuildingClass *))this->ptr_0 + 111))(this); /*0x458729*/
   BuildingClass::UpdateThreatBounds(this, v20); /*0x458732*/
 }

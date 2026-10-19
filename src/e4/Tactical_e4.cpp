@@ -1147,7 +1147,7 @@ MouseClass * * Tactical::HandleTacticalMouseInput(int _28, unsigned int * a2, in
                   {
                     if ( !stru_A8E960.random[552] ) /*0x693314*/
                     {
-                      DisplayClass::vt_entry_B0((DisplayClass *)&v12); /*0x693320*/
+                      DisplayClass::sub_693320((DisplayClass *)&v12); /*0x693320*/
                       dword_884D38 = v12; /*0x69332d*/
                       dword_884D3C = v13; /*0x693339*/
                       byte_884D40 = 0; /*0x69333f*/

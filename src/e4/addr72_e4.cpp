@@ -823,7 +823,7 @@ int * * MouseClass_SetupResources(int a1, int a2)
   v20 = *((int16_t *)dword_B0F9DC + 1); /*0x72ee33*/
   int v21; // ebx
   v21 = *((int16_t *)dword_B0F9DC + 2); /*0x72ee37*/
-  int v22 = dword_B0FC24->vtable2 + dword_B0FC24->vtable4 - v21; // esi /*0x72ee48*/
+  int v22 = dword_B0FC24->ptr_4 + dword_B0FC24->ptr_C - v21; // esi /*0x72ee48*/
   unsigned int *v23; // eax
   v23 = (unsigned int *)(operator new(0x10u)); /*0x72ee4a*/
   if ( v23 ) /*0x72ee54*/
@@ -838,13 +838,13 @@ int * * MouseClass_SetupResources(int a1, int a2)
   {
     dword_B0FC14 = 0; /*0x72ee6e*/
   }
-  dword_B0FA20 = (v36 - *((unsigned int *)dword_B0FC20 + 3)) / dword_B0FC24->vtable4; /*0x72ee95*/
-  int v24 = dword_B0FA20 * dword_B0FC24->vtable4; // ecx /*0x72ee9d*/
+  dword_B0FA20 = (v36 - *((unsigned int *)dword_B0FC20 + 3)) / dword_B0FC24->ptr_C; /*0x72ee95*/
+  int v24 = dword_B0FA20 * dword_B0FC24->ptr_C; // ecx /*0x72ee9d*/
   int v25; // esi
   v25 = v24 + *((unsigned int *)dword_B0FC20 + 3); /*0x72eeab*/
   int v26; // ebp
   v26 = *((int16_t *)dword_B0FA38 + 1); /*0x72eead*/
-  int v27 = v24 + dword_B0FC24->vtable2; // edi /*0x72eeb1*/
+  int v27 = v24 + dword_B0FC24->ptr_4; // edi /*0x72eeb1*/
   unsigned int *v28; // eax
   v28 = (unsigned int *)(operator new(0x10u)); /*0x72eeb3*/
   if ( v28 ) /*0x72eebd*/

@@ -120,11 +120,11 @@ struct GraphicMenuItemVectorHost {
     bool IsAllocated;       // 0x0D
     int q010;               // 0x10  (ml DynamicVectorClass@16=Count)
     int CapacityIncrement;  // 0x14
-    void vt_placeholder_05();  // 0x4F2850 vt+12 (Clear)
-    int vt_placeholder_06(int a1);  // 0x4F2880 vt+20 (GetItemIndex)
+    void sub_4F2850();  // 0x4F2850 vt+12 (Clear)
+    int sub_4F2880(int a1);  // 0x4F2880 vt+20 (GetItemIndex)
     int processWaypointPlanning(int a1, void* a2);  // 0x4F2A60 vt+8 (SetCapacity; gap2 占位名)
-    int vt_placeholder_08(void* a1);  // 0x4F2B10 vt+16 (FindItemIndex)
-    void* vt_placeholder_11(int a2);  // 0x4F2BB0 vt+0 (scalar-deleting dtor)
+    int sub_4F2B10(void* a1);  // 0x4F2B10 vt+16 (FindItemIndex)
+    void* sub_4F2BB0(int a2);  // 0x4F2BB0 vt+0 (scalar-deleting dtor)
 
     unsigned int u32_19D;  // X10 supply (member_lookup)
     unsigned int u32_C;  // X10 supply (member_lookup)
@@ -3719,7 +3719,7 @@ int HouseClass::ClearLowPowerTargets() {
         }
         return this->isWinner; /*0x4fcbc0*/
       }
-      if ( (*(uint8_t (**)(ObjectClass *))(dword_A8B23C->vtable1 + 4))(dword_A8B23C) /*0x4fc5ec*/
+      if ( (*(uint8_t (**)(ObjectClass *))(dword_A8B23C->ptr_0 + 4))(dword_A8B23C) /*0x4fc5ec*/
         && (*(uint8_t (**)(ObjectClass *))(v30->ptr_0 + 8))(v30) )
       {
         v31 = *(unsigned int *)&dword_A8B238; /*0x4fc5f3*/
@@ -8275,7 +8275,7 @@ int HouseClass::ComputePowerDistribution() {
   v2 = this->enemyHouseIndex; /*0x508156*/
   if ( v2 == -1 ) /*0x50815f*/
     goto LABEL_3; /*0x50815f*/
-  v3 = *&dword_A8022C->vtable1; /*0x508173*/
+  v3 = *&dword_A8022C->ptr_0; /*0x508173*/
   v4 = v3[22572] + 3000; /*0x50818e*/
   v5 = v3[22571] + 3000; /*0x508194*/
   v6 = v3[22570] + 3000; /*0x5081a4*/

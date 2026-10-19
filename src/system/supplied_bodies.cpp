@@ -408,7 +408,7 @@ unsigned int * GenericList::Constructor() {
   int v5; // edi
   unsigned int *v6; // edi
 
-  result = &this->vtable; /*0x52ace0*/
+  result = &this->ptr_0; /*0x52ace0*/
   v2 = &this->u32_10; /*0x52ace9*/
   this->u32_8 = 0; /*0x52acef*/
   this->u32_C = 0; /*0x52acf2*/

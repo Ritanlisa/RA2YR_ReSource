@@ -2347,7 +2347,7 @@ if ( *(unsigned int *)&v198[32] == 189 || *(unsigned int *)&v198[32] == 201 )
       return this->u32_5C; /*0x473c0b*/
     if ( (uint8_t)((File *)((BufferIOFileClass *)this))->IsReady(0) ) /*0x473c15*/
       return BufferIOFileClass::SetSize(); /*0x473c48*/
-    v3 = *(unsigned int *)this->vtable1; /*0x473c1e*/
+    v3 = *(unsigned int *)this->ptr_0; /*0x473c1e*/
     v5 = 0; /*0x473c2b*/
     v4 = (const char *)(*(int (**)(CCFileClass *))(v3 + 4))(this); /*0x473c33*/
     LookupFileInfoCache(v4, 0, 0, 0, &v5); /*0x473c3a*/

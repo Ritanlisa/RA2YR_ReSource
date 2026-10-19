@@ -579,7 +579,7 @@ AbstractClass * * ApplyGameOptions(CampaignScore * aP0)
   dword_A8E960[0] = v6; /*0x5b6ac4*/
   (v6) = ((v6) & ~0xFF) | ((unsigned int)(v6 | 0xC0) & 0xFF); /*0x5b6acf*/
   *(unsigned int *)&g_Rules_EngineerCount = aP0->u32_A2; /*0x5b6ad1*/
-  stru_A8EB00.vtable0[24] = *(unsigned int *)&g_Rules_EngineerCount; /*0x5b6ad7*/
+  stru_A8EB00.ptr_0[24] = *(unsigned int *)&g_Rules_EngineerCount; /*0x5b6ad7*/
   ShortGame = (aP0->wasFallingDown & 0x10) != 0; /*0x5b6ae9*/
   SWAllowed = (aP0->wasFallingDown & 0x20) != 0; /*0x5b6afb*/
   g_Rules_ShortGame = (aP0->wasFallingDown & 0x40) != 0; /*0x5b6b0d*/

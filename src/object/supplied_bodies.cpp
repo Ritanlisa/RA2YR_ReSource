@@ -14425,7 +14425,7 @@ LABEL_38:
           v20 = *(unsigned __int8 **)(*(unsigned int *)this->vt_slot_1072(this) + 172); /*0x700960*/
           v21 = v38[20]; /*0x700966*/
           v22 = v21 != -1 /*0x700960*/
-             && (unsigned __int8)HouseClass::IsAlliedWith(dword_A8022C->vtable1 + v21)) == 0;
+             && (unsigned __int8)HouseClass::IsAlliedWith(dword_A8022C->ptr_0 + v21)) == 0;
           v23 = ObjectClass::processDeath((ObjectClass *)a2); /*0x700990*/
           v24 = v23 && !*(unsigned char *)(v23 + 256) && *(int *)(v23 + 108) > 0; /*0x7009ae*/
           if ( v42 /*0x7009f1*/
