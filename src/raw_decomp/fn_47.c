@@ -1699,7 +1699,7 @@ _DWORD *__thiscall CaptureManagerClass::ddtor(CaptureManagerClass *this, char a2
 
 
 // ==== 0x00472A80  _DynamicVectorClass_PAUControlNode::vt[03]  this=DynamicVector  sig=csp ====
-void __thiscall CaptureManagerClass::vt_03(_DynamicVectorClass_PAUControlNode *this)
+void __thiscall CaptureManagerClass::g_var_ffdfec(_DynamicVectorClass_PAUControlNode *this)
 {
   void *v2; // eax
 
@@ -1728,7 +1728,7 @@ unsigned int __thiscall CaptureManagerClass::LoadTypeData(_DynamicVectorClass_PA
 
 
 // ==== 0x00472AD0  _VectorClass_PAUControlNode::vt[06]  this=VectorClass  sig=csp ====
-int __thiscall CaptureManagerClass::vt_06(_VectorClass_PAUControlNode *this, int a2)
+int __thiscall CaptureManagerClass::g_var_1d5e6b(_VectorClass_PAUControlNode *this, int a2)
 {
   return *(_DWORD *)(*(_DWORD *)&this->m_1[3] + 4 * a2); /*0x472ada*/
 }
@@ -14789,7 +14789,7 @@ _DWORD *__thiscall CaptureManagerClass::ddtor(CaptureManagerClass *this, char a2
 
 
 // ==== 0x00472A80  _DynamicVectorClass_PAUControlNode::vt[03]  this=DynamicVector  sig=csp ====
-void __thiscall CaptureManagerClass::vt_03(_DynamicVectorClass_PAUControlNode *this)
+void __thiscall CaptureManagerClass::g_var_ffdfec(_DynamicVectorClass_PAUControlNode *this)
 {
   void *v2; // eax
 
@@ -14818,7 +14818,7 @@ unsigned int __thiscall CaptureManagerClass::LoadTypeData(_DynamicVectorClass_PA
 
 
 // ==== 0x00472AD0  _VectorClass_PAUControlNode::vt[06]  this=VectorClass  sig=csp ====
-int __thiscall CaptureManagerClass::vt_06(_VectorClass_PAUControlNode *this, int a2)
+int __thiscall CaptureManagerClass::g_var_1d5e6b(_VectorClass_PAUControlNode *this, int a2)
 {
   return *(_DWORD *)(*(_DWORD *)&this->m_1[3] + 4 * a2); /*0x472ada*/
 }

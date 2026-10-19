@@ -53,7 +53,7 @@ int ParasiteClass::Constructor(void *a1, void *a2, void *a3, void *a4)
   v2 = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x629225*/
   this->ParasiteClass_field_40 = 0; /*0x62922b*/
   this->ParasiteClass_field_38 = v2; /*0x62922e*/
-  /* X11: vtable install elided (base-interface slot, RHS vt_ParasiteClass) */  /*0x629231*/
+  /* X11: vtable install elided (base-interface slot, RHS g_ptr_7EF864) */  /*0x629231*/
   /* X11: vtable install elided (implicit via ParasiteClass virtuals 0x629237) */
   /* X11: vtable install elided (implicit via ParasiteClass virtuals 0x62923e) */
   /* X11: vtable install elided (implicit via ParasiteClass virtuals 0x629245) */

@@ -435,8 +435,8 @@ struct HouseClass {
     AbstractClass * * SaveLoad_Prefix(int a1, LPSTREAM pStm);
     BOOL GainedPoweredCenter(int a2);
     static CellStruct * * UpdateAITryFireSW(void *a1);
-    VectorClass_flat * vt_00_(char a2);
-    VectorCursor * vt_placeholder_07(char a2);
+    VectorClass_flat * g_var_4cd06d(char a2);
+    VectorCursor * g_var_7395f7(char a2);
     char DroppedFlag(UnitClass * aP1, int a3);
     static char IonSensitivesShouldBeOffline();  // x4:empty@0x53a130
     char PickedUpFlag(ObjectClass * aP1, char a3);
@@ -472,19 +472,19 @@ struct HouseClass {
     int SetPrimaryFactory(int a2);
     int UpdatePower(double a2);
     int sub_5092F0(int a2);
-    int vt_04_(int * a2);
+    int g_var_9d376d(int * a2);
     std::locale::facet * initAngerStruct(char a2);
     unsigned int * SDDTORAllAndTriggers();
-    unsigned int * vt_placeholder_09();
-    unsigned int * vt_placeholder_10();
-    unsigned int vt_05_(int a2);
+    unsigned int * g_var_1acf04();
+    unsigned int * g_var_2f6b7e();
+    unsigned int g_var_167f7c(int a2);
     void * CanTogglePower();
     void ** PsiWarn(InfantryClass * aP0, int a2, int arg0, void * a3);
     void AcquiredThreatNode();
     int Construct(int a2, void *a2_1 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0, void *a9 = 0);
     static void LostPoweredCenter(int a2, void *a2_2);
     static int ResetObjectOrders(char a1, int a2);
-    void vt_03_();
+    void g_var_78dc8d();
     static int CalcProductionSpeed(HouseClass * aP1);
      int FindByName(void *a1 = 0);
     static char FindType15(HouseClass * aP1);

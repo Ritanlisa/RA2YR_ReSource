@@ -66,7 +66,7 @@ ULONG AbstractClass::Release() {
     return 1;  // IDA: returns 1 (stub, not tracking ref count)
 }
 
-// IDA: q000[0][3] -- GetClassID (XSurface::vt_entry_68 stub @ 0x4C9150)
+// IDA: q000[0][3] -- GetClassID (XSurface::g_var_04f235 stub @ 0x4C9150)
 HRESULT AbstractClass::GetClassID(CLSID* class_id) {
     return E_NOTIMPL;
 }
@@ -79,12 +79,12 @@ HRESULT AbstractClass::IsDirty() {
     return NeedsSaveOrLink ? S_OK : S_FALSE;
 }
 
-// IDA: q000[0][5] -- Load (stub = XSurface::vt_entry_68)
+// IDA: q000[0][5] -- Load (stub = XSurface::g_var_04f235)
 HRESULT AbstractClass::Load(IStream* stream) {
     return S_OK;
 }
 
-// IDA: q000[0][6] -- Save (stub = XSurface::vt_entry_68)
+// IDA: q000[0][6] -- Save (stub = XSurface::g_var_04f235)
 HRESULT AbstractClass::Save(IStream* stream, int clear_dirty) {
     return S_OK;
 }

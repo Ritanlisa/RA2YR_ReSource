@@ -35,10 +35,10 @@ namespace gamemd {  // G42.18c ns repair
 void * DiskLaserClass::CopyTo(unsigned int * Block, char a2)
 {
   
-  /* X11: vtable install elided (X67 star-deref, RHS vt_DiskLaserClass) */  /*0x4a7c9d*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_DiskLaserClass) */  /*0x4a7ca3*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_DiskLaserClass) */  /*0x4a7caa*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_DiskLaserClass) */  /*0x4a7cb1*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E5F8C) */  /*0x4a7c9d*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E5F8C) */  /*0x4a7ca3*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E5F8C) */  /*0x4a7caa*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E5F8C) */  /*0x4a7cb1*/
   DiskLaserClass *v5; // [esp+4h] [ebp-4h] BYREF
   v5 = (gamemd::DiskLaserClass *)(Block); /*0x4a7cbf*/
   int v3; // eax

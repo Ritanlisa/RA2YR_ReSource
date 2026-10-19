@@ -48,7 +48,7 @@ unsigned int * RulesClass::InitINIChain(int a2, int a3)
   this->DetailBufferZoneWidth = a2; /*0x538b3e*/
   (this->AmmoCrateDamage) = 1; /*0x538b41*/
   (this->u8_D) = 0; /*0x538b45*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x538b48*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x538b48*/
   if ( a2 ) /*0x538b4e*/
   {
     if ( a3 ) /*0x538b56*/
@@ -429,7 +429,7 @@ void RulesClass::readMaximums()
 
   void *DetailMinFrameRateMovie; // eax
   DetailMinFrameRateMovie = (void *)this->DetailMinFrameRateMovie; /*0x679fa6*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x679fa9*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x679fa9*/
   if ( DetailMinFrameRateMovie && (this->u8_D) ) /*0x679fb3*/
   {
     operator delete((DetailMinFrameRateMovie)); /*0x679fb9*/
@@ -446,7 +446,7 @@ void RulesClass::readInfantryTypes()
 
   void *DetailMinFrameRateMovie; // eax
   DetailMinFrameRateMovie = (void *)this->DetailMinFrameRateMovie; /*0x679fd6*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x679fd9*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x679fd9*/
   if ( DetailMinFrameRateMovie && (this->u8_D) ) /*0x679fe3*/
   {
     operator delete((DetailMinFrameRateMovie)); /*0x679fe9*/
@@ -463,7 +463,7 @@ void RulesClass::readCountries()
 
   void *DetailMinFrameRateMovie; // eax
   DetailMinFrameRateMovie = (void *)this->DetailMinFrameRateMovie; /*0x67a006*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x67a009*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x67a009*/
   if ( DetailMinFrameRateMovie && (this->u8_D) ) /*0x67a013*/
   {
     operator delete((DetailMinFrameRateMovie)); /*0x67a019*/
@@ -480,7 +480,7 @@ void RulesClass::readVehicleTypes()
 
   void *DetailMinFrameRateMovie; // eax
   DetailMinFrameRateMovie = (void *)this->DetailMinFrameRateMovie; /*0x67a066*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x67a069*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x67a069*/
   if ( DetailMinFrameRateMovie && (this->u8_D) ) /*0x67a073*/
   {
     operator delete((DetailMinFrameRateMovie)); /*0x67a079*/
@@ -632,7 +632,7 @@ unsigned int * RulesClass::readParticles()
   (this->u8_D) = 0; /*0x67a8be*/
   this->SmallVisceroid = (UnitTypeClass *)10; /*0x67a8c1*/
   this->LargeVisceroid = 0; /*0x67a8c8*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList) */  /*0x67a8cb*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_var_131447) */  /*0x67a8cb*/
   return &this->DetailMinFrameRateNormal; /*0x67a8d1*/
 }
 }  // G42.18c ns repair
@@ -696,7 +696,7 @@ void * RulesClass::LoadTypeList(int a1, unsigned char *** edx0, INIClass * aP1, 
     RulesClass::readIQ((RulesClass *)&v17, 0, 0); /*0x67be11*/
     v22 = 10; /*0x67be1a*/
     v21 = 0; /*0x67be28*/
-    v17 = &vt_TypeList_TerrainTypeClass_const; /*0x67be2c*/
+    v17 = &g_ptr_7F0CFC; /*0x67be2c*/
     for ( i = strtok(String, Delimiter); i; i = strtok(0, Delimiter) ) /*0x67be3e*/
     {
       if ( !*i ) /*0x67be40*/
@@ -716,10 +716,10 @@ void * RulesClass::LoadTypeList(int a1, unsigned char *** edx0, INIClass * aP1, 
     *(unsigned int *)(a1 + 8) = 0; /*0x67beb0*/
     *(unsigned char *)(a1 + 12) = 1; /*0x67beb3*/
     *(unsigned char *)(a1 + 13) = 0; /*0x67beb7*/
-    /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_TerrainTypeClass_const) */  /*0x67beba*/
+    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7F0D9C) */  /*0x67beba*/
     System_Load_67BFA0((ObjectClass *)a1, &v17); /*0x67bec0*/
-    /* X11: vtable install elided (X67 star-deref, RHS vt_TypeList_TerrainTypeClass_const) */  /*0x67bec5*/
-    v17 = &vt_VectorClass_TerrainTypeClass_const; /*0x67becb*/
+    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7F0CFC) */  /*0x67bec5*/
+    v17 = &g_ptr_7F0D9C; /*0x67becb*/
     v9 = v22; /*0x67bed7*/
     *(unsigned int *)(a1 + 16) = v21; /*0x67bedb*/
     v10 = Block; /*0x67bede*/
@@ -737,7 +737,7 @@ void * RulesClass::LoadTypeList(int a1, unsigned char *** edx0, INIClass * aP1, 
     *(unsigned int *)(a1 + 8) = 0; /*0x67bf1c*/
     *(unsigned char *)(a1 + 12) = 1; /*0x67bf1f*/
     *(unsigned char *)(a1 + 13) = 0; /*0x67bf23*/
-    /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_TerrainTypeClass_const) */  /*0x67bf26*/
+    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7F0D9C) */  /*0x67bf26*/
     if ( (unsigned int *)a1 != a5 ) /*0x67bf2c*/
     {
       TypeList_cptr_TerrainTypeClass::TryFreeAndClear((_VectorClass_PBVTerrainTypeClass *)a1); /*0x67bf30*/
@@ -771,7 +771,7 @@ void * RulesClass::LoadTypeList(int a1, unsigned char *** edx0, INIClass * aP1, 
     }
     *(unsigned int *)(a1 + 16) = a5[4]; /*0x67bf83*/
     *(unsigned int *)(a1 + 20) = a5[5]; /*0x67bf89*/
-    /* X11: vtable install elided (X67 star-deref, RHS vt_TypeList_TerrainTypeClass_const) */  /*0x67bf8c*/
+    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7F0CFC) */  /*0x67bf8c*/
   }
   return (void *)a1; /*0x67bf02*/
 
@@ -785,7 +785,7 @@ unsigned int * RulesClass::readIQ(int a2, int a3)
   this->DetailBufferZoneWidth = a2; /*0x67c43e*/
   (this->AmmoCrateDamage) = 1; /*0x67c441*/
   (this->u8_D) = 0; /*0x67c445*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x67c448*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x67c448*/
   if ( a2 ) /*0x67c44e*/
   {
     if ( a3 ) /*0x67c456*/

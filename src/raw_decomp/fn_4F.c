@@ -2306,8 +2306,8 @@ int __thiscall sub_4F2770(ObjectClass *this, int a2)
 
 
 
-// ==== 0x004F2810  HouseClass::vt_placeholder_03  this=HouseClass  sig=csp ====
-void **__thiscall HouseClass::vt_placeholder_03(HouseClass *this, char a2)
+// ==== 0x004F2810  HouseClass::g_var_89a06f  this=HouseClass  sig=csp ====
+void **__thiscall HouseClass::g_var_89a06f(HouseClass *this, char a2)
 {
   HashTable::DestroyHashTableINIClass((INIClass *)this); /*0x4f2813*/
   if ( (a2 & 1) != 0 ) /*0x4f281d*/
@@ -2317,8 +2317,8 @@ void **__thiscall HouseClass::vt_placeholder_03(HouseClass *this, char a2)
 
 
 
-// ==== 0x004F2830  HouseClass::vt_placeholder_04  this=HouseClass  sig=csp ====
-char *__thiscall HouseClass::vt_placeholder_04(HouseClass *this, char a2)
+// ==== 0x004F2830  HouseClass::g_var_89a97f  this=HouseClass  sig=csp ====
+char *__thiscall HouseClass::g_var_89a97f(HouseClass *this, char a2)
 {
   HouseClass::processTargetSelection((char *)this); /*0x4f2833*/
   if ( (a2 & 1) != 0 ) /*0x4f283d*/
@@ -2328,7 +2328,7 @@ char *__thiscall HouseClass::vt_placeholder_04(HouseClass *this, char a2)
 
 
 
-// ==== 0x004F2850  ?$DynamicVectorClass@PAVGraphicMenuItem@@::vt_placeholder_05  this=DynamicVector  sig=csp ====
+// ==== 0x004F2850  ?$DynamicVectorClass@PAVGraphicMenuItem@@::g_var_e8629d  this=DynamicVector  sig=csp ====
 void __thiscall HouseClass_24_::sub_4F2850(int this)
 {
   void *v2; // eax
@@ -2346,7 +2346,7 @@ void __thiscall HouseClass_24_::sub_4F2850(int this)
 
 
 
-// ==== 0x004F2880  ?$DynamicVectorClass@PAVGraphicMenuItem@@::vt_placeholder_06  this=DynamicVector  sig=csp ====
+// ==== 0x004F2880  ?$DynamicVectorClass@PAVGraphicMenuItem@@::g_var_948f21  this=DynamicVector  sig=csp ====
 unsigned int __thiscall HouseClass_24_::sub_4F2880(int this, int a2)
 {
   if ( *(_BYTE *)(this + 12) ) /*0x4f2880*/
@@ -2373,8 +2373,8 @@ BOOL __thiscall Map::CanScroll(_VectorCursor_PAVGraphicMenuItem_V_DynamicVectorC
 
 
 
-// ==== 0x004F28C0  ?$VectorCursor@PAVGraphicMenuItem@@V?$DynamicVectorClass@PAVGraphicMenuItem@@@@::vt_placeholder_07  this=VectorCursor  sig=csp ====
-std::locale::facet *__thiscall HouseClass::vt_placeholder_07(std::locale::facet *this, char a2)
+// ==== 0x004F28C0  ?$VectorCursor@PAVGraphicMenuItem@@V?$DynamicVectorClass@PAVGraphicMenuItem@@@@::g_var_7395f7  this=VectorCursor  sig=csp ====
+std::locale::facet *__thiscall HouseClass::g_var_7395f7(std::locale::facet *this, char a2)
 {
   *(_DWORD *)this = &VectorCursor<GraphicMenuItem *,DynamicVectorClass<GraphicMenuItem *>>::`vftable'; /*0x4f28c9*/
   if ( (a2 & 1) != 0 ) /*0x4f28cf*/
@@ -2557,7 +2557,7 @@ char __thiscall HouseClass_24_::sub_4F2A60(void *this, int a2, _DWORD *a3)
 
 
 
-// ==== 0x004F2B10  ?$DynamicVectorClass@PAVGraphicMenuItem@@::vt_placeholder_08  this=DynamicVector  sig=csp ====
+// ==== 0x004F2B10  ?$DynamicVectorClass@PAVGraphicMenuItem@@::g_var_98c4de  this=DynamicVector  sig=csp ====
 int __thiscall HouseClass_24_::sub_4F2B10(int *this, _DWORD *a2)
 {
   int v2; // edx
@@ -2578,7 +2578,7 @@ int __thiscall HouseClass_24_::sub_4F2B10(int *this, _DWORD *a2)
 
 
 
-// ==== 0x004F2B40  ?$VectorCursor@PAVGraphicMenuItem@@V?$DynamicVectorClass@PAVGraphicMenuItem@@@@::vt_placeholder_09  this=VectorCursor  sig=csp ====
+// ==== 0x004F2B40  ?$VectorCursor@PAVGraphicMenuItem@@V?$DynamicVectorClass@PAVGraphicMenuItem@@@@::g_var_1acf04  this=VectorCursor  sig=csp ====
 _DWORD *__thiscall HouseClass_24_::sub_4F2B40(_DWORD *this)
 {
   ++this->q008; /*0x4f2b42*/
@@ -2587,7 +2587,7 @@ _DWORD *__thiscall HouseClass_24_::sub_4F2B40(_DWORD *this)
 
 
 
-// ==== 0x004F2B50  ?$VectorCursor@PAVGraphicMenuItem@@V?$DynamicVectorClass@PAVGraphicMenuItem@@@@::vt_placeholder_10  this=VectorCursor  sig=csp ====
+// ==== 0x004F2B50  ?$VectorCursor@PAVGraphicMenuItem@@V?$DynamicVectorClass@PAVGraphicMenuItem@@@@::g_var_2f6b7e  this=VectorCursor  sig=csp ====
 _DWORD *__thiscall HouseClass_24_::sub_4F2B50(_DWORD *this)
 {
   --this->q008; /*0x4f2b52*/
@@ -2617,7 +2617,7 @@ _DWORD *__thiscall HouseClass_24::QueryInterface(_VectorClass_PAVGraphicMenuItem
 
 
 
-// ==== 0x004F2BB0  ?$DynamicVectorClass@PAVGraphicMenuItem@@::vt_placeholder_11  this=DynamicVector  sig=csp ====
+// ==== 0x004F2BB0  ?$DynamicVectorClass@PAVGraphicMenuItem@@::g_var_968cd5  this=DynamicVector  sig=csp ====
 _DWORD *__thiscall HouseClass_24_::sub_4F2BB0(_DWORD *Block, char a2)
 {
   void *v3; // eax
@@ -16152,8 +16152,8 @@ int __thiscall sub_4F2770(ObjectClass *this, int a2)
 
 
 
-// ==== 0x004F2810  HouseClass::vt_placeholder_03  this=HouseClass  sig=csp ====
-void **__thiscall HouseClass::vt_placeholder_03(HouseClass *this, char a2)
+// ==== 0x004F2810  HouseClass::g_var_89a06f  this=HouseClass  sig=csp ====
+void **__thiscall HouseClass::g_var_89a06f(HouseClass *this, char a2)
 {
   HashTable::DestroyHashTableINIClass((INIClass *)this); /*0x4f2813*/
   if ( (a2 & 1) != 0 ) /*0x4f281d*/
@@ -16163,8 +16163,8 @@ void **__thiscall HouseClass::vt_placeholder_03(HouseClass *this, char a2)
 
 
 
-// ==== 0x004F2830  HouseClass::vt_placeholder_04  this=HouseClass  sig=csp ====
-char *__thiscall HouseClass::vt_placeholder_04(HouseClass *this, char a2)
+// ==== 0x004F2830  HouseClass::g_var_89a97f  this=HouseClass  sig=csp ====
+char *__thiscall HouseClass::g_var_89a97f(HouseClass *this, char a2)
 {
   HouseClass::processTargetSelection((char *)this); /*0x4f2833*/
   if ( (a2 & 1) != 0 ) /*0x4f283d*/
@@ -16174,7 +16174,7 @@ char *__thiscall HouseClass::vt_placeholder_04(HouseClass *this, char a2)
 
 
 
-// ==== 0x004F2850  ?$DynamicVectorClass@PAVGraphicMenuItem@@::vt_placeholder_05  this=DynamicVector  sig=csp ====
+// ==== 0x004F2850  ?$DynamicVectorClass@PAVGraphicMenuItem@@::g_var_e8629d  this=DynamicVector  sig=csp ====
 void __thiscall HouseClass_24_::sub_4F2850(int this)
 {
   void *v2; // eax
@@ -16192,7 +16192,7 @@ void __thiscall HouseClass_24_::sub_4F2850(int this)
 
 
 
-// ==== 0x004F2880  ?$DynamicVectorClass@PAVGraphicMenuItem@@::vt_placeholder_06  this=DynamicVector  sig=csp ====
+// ==== 0x004F2880  ?$DynamicVectorClass@PAVGraphicMenuItem@@::g_var_948f21  this=DynamicVector  sig=csp ====
 unsigned int __thiscall HouseClass_24_::sub_4F2880(int this, int a2)
 {
   if ( *(_BYTE *)(this + 12) ) /*0x4f2880*/
@@ -16219,8 +16219,8 @@ BOOL __thiscall Map::CanScroll(_VectorCursor_PAVGraphicMenuItem_V_DynamicVectorC
 
 
 
-// ==== 0x004F28C0  ?$VectorCursor@PAVGraphicMenuItem@@V?$DynamicVectorClass@PAVGraphicMenuItem@@@@::vt_placeholder_07  this=VectorCursor  sig=csp ====
-std::locale::facet *__thiscall HouseClass::vt_placeholder_07(std::locale::facet *this, char a2)
+// ==== 0x004F28C0  ?$VectorCursor@PAVGraphicMenuItem@@V?$DynamicVectorClass@PAVGraphicMenuItem@@@@::g_var_7395f7  this=VectorCursor  sig=csp ====
+std::locale::facet *__thiscall HouseClass::g_var_7395f7(std::locale::facet *this, char a2)
 {
   *(_DWORD *)this = &VectorCursor<GraphicMenuItem *,DynamicVectorClass<GraphicMenuItem *>>::`vftable'; /*0x4f28c9*/
   if ( (a2 & 1) != 0 ) /*0x4f28cf*/
@@ -16403,7 +16403,7 @@ char __thiscall HouseClass_24_::sub_4F2A60(void *this, int a2, _DWORD *a3)
 
 
 
-// ==== 0x004F2B10  ?$DynamicVectorClass@PAVGraphicMenuItem@@::vt_placeholder_08  this=DynamicVector  sig=csp ====
+// ==== 0x004F2B10  ?$DynamicVectorClass@PAVGraphicMenuItem@@::g_var_98c4de  this=DynamicVector  sig=csp ====
 int __thiscall HouseClass_24_::sub_4F2B10(int *this, _DWORD *a2)
 {
   int v2; // edx
@@ -16424,7 +16424,7 @@ int __thiscall HouseClass_24_::sub_4F2B10(int *this, _DWORD *a2)
 
 
 
-// ==== 0x004F2B40  ?$VectorCursor@PAVGraphicMenuItem@@V?$DynamicVectorClass@PAVGraphicMenuItem@@@@::vt_placeholder_09  this=VectorCursor  sig=csp ====
+// ==== 0x004F2B40  ?$VectorCursor@PAVGraphicMenuItem@@V?$DynamicVectorClass@PAVGraphicMenuItem@@@@::g_var_1acf04  this=VectorCursor  sig=csp ====
 _DWORD *__thiscall HouseClass_24_::sub_4F2B40(_DWORD *this)
 {
   ++this->q008; /*0x4f2b42*/
@@ -16433,7 +16433,7 @@ _DWORD *__thiscall HouseClass_24_::sub_4F2B40(_DWORD *this)
 
 
 
-// ==== 0x004F2B50  ?$VectorCursor@PAVGraphicMenuItem@@V?$DynamicVectorClass@PAVGraphicMenuItem@@@@::vt_placeholder_10  this=VectorCursor  sig=csp ====
+// ==== 0x004F2B50  ?$VectorCursor@PAVGraphicMenuItem@@V?$DynamicVectorClass@PAVGraphicMenuItem@@@@::g_var_2f6b7e  this=VectorCursor  sig=csp ====
 _DWORD *__thiscall HouseClass_24_::sub_4F2B50(_DWORD *this)
 {
   --this->q008; /*0x4f2b52*/
@@ -16463,7 +16463,7 @@ _DWORD *__thiscall HouseClass_24::QueryInterface(_VectorClass_PAVGraphicMenuItem
 
 
 
-// ==== 0x004F2BB0  ?$DynamicVectorClass@PAVGraphicMenuItem@@::vt_placeholder_11  this=DynamicVector  sig=csp ====
+// ==== 0x004F2BB0  ?$DynamicVectorClass@PAVGraphicMenuItem@@::g_var_968cd5  this=DynamicVector  sig=csp ====
 _DWORD *__thiscall HouseClass_24_::sub_4F2BB0(_DWORD *Block, char a2)
 {
   void *v3; // eax

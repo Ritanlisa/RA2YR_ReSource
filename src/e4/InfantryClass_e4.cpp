@@ -203,7 +203,7 @@ void* InfantryClass::Destruct(IUnknown * a1, AbstractClass * edx0)
 
 
   AbstractClass *pVal = &a1->ptr_2; // edi /*0x517d9a*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_InfantryClass) */  /*0x517d9d*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7EB034) */  /*0x517d9d*/
   /* X11: vtable install elided (implicit via InfantryClass virtuals 0x517da3) */
   /* X11: vtable install elided (implicit via off_7EB02C virtuals 0x517daa) */
   /* X11: vtable install elided (implicit via InfantryClass virtuals 0x517db1) */

@@ -249,7 +249,7 @@ VectorClass_flat * Dial8Class_48::QueryInterface(unsigned int * Block, char a2)
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x4a8033*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x4a8036*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x4a8036*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x4a8040*/
   {
     operator delete((v3)); /*0x4a8048*/
@@ -269,7 +269,7 @@ DynamicVector * Dial8Class_48::Constructor_VectorClass_DiskLaserClass___(unsigne
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x4a8083*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x4a8086*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x4a8086*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x4a8090*/
   {
     operator delete((v3)); /*0x4a8098*/

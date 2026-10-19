@@ -1275,7 +1275,7 @@ int AbstractClass::ProcessInit() {
   return 0;  /* G42.33b2 restub: auto restub (pass4+, 7 errs): wrong-universe gap2 body; truth func_0x75d230.json */
 }
 
-// ==== BACKFILL 0x0075E080  WarheadTypeClass::vt_03  cls=WarheadTypeClass  sig=csp  renamed_refs=0  residual=- ====
+// ==== BACKFILL 0x0075E080  WarheadTypeClass::g_var_ffdfec  cls=WarheadTypeClass  sig=csp  renamed_refs=0  residual=- ====
 int WarheadTypeClass__vt_03_(int a1, unsigned int * a2)
 {
   if ( !a2 ) /*0x75e086*/

@@ -6224,7 +6224,7 @@ _DWORD *__thiscall VectorClass_ptr_RadarEventClass::loc_660FD0(_DWORD *Block, ch
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x660fd3*/
-  *Block = &vt_VectorClass_RadarEventClass; /*0x660fd6*/
+  *Block = &g_ptr_7F0ACC; /*0x660fd6*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x660fe0*/
   {
     __3_YAXPAX_Z(v3); /*0x660fe8*/

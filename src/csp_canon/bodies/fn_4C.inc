@@ -174,8 +174,8 @@ char * E4Recv_4C6BE0::sub_4C6BE0(int a2, char a3, int a4, int a5)
     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4C6BE0)
 }
 
-// ==== BACKFILL 0x004C9150  XSurface::vt_entry_68  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
-int XSurface::vt_entry_68()
+// ==== BACKFILL 0x004C9150  XSurface::g_var_04f235  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
+int XSurface::g_var_04f235()
 {
 
   return 0; /*0x4c9152*/

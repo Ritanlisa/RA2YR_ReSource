@@ -10655,7 +10655,7 @@ _DWORD *__thiscall VectorClass_ptr_BulletClass::loc_46B910(_DWORD *Block, char a
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x46b913*/
-  *Block = &vt_VectorClass_BulletClass; /*0x46b916*/
+  *Block = &g_ptr_7E4698; /*0x46b916*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x46b920*/
   {
     __3_YAXPAX_Z(v3); /*0x46b928*/

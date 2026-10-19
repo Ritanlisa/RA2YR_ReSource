@@ -2487,7 +2487,7 @@ void * E4Recv_7CA971::__0__non_rtti_object_QAE_PBD_Z(char * a2)  // G42.33 b24: 
 {
 
   __0exception_QAE_ABQBD_Z(this, (const char *const *)&a2); /*0x7ca981*/
-  *(unsigned int *)this = (unsigned int)&vt___non_rtti_object; /*0x7ca986 G42.33 b24*/
+  *(unsigned int *)this = (unsigned int)&g_var_fb124d; /*0x7ca986 G42.33 b24*/
   return this; /*0x7ca98e*/
 
 }
@@ -2508,7 +2508,7 @@ exception * E4Recv_7CA9B4::sub_7CA9B4(struct exception * a2)
 {
 
   __0exception_QAE_ABV0__Z(this, a2); /*0x7ca9bb*/
-  *(unsigned int *)this = (unsigned int)&vt___non_rtti_object; /*0x7ca9c0 G42.33 b24*/
+  *(unsigned int *)this = (unsigned int)&g_var_fb124d; /*0x7ca9c0 G42.33 b24*/
   return (struct exception *)(void *)this; /*0x7ca9c8 G42.33 b24*/
 
 }
@@ -2518,7 +2518,7 @@ exception * E4Recv_7CA9CC::sub_7CA9CC(struct exception * a1)
 {
 
   __0exception_QAE_ABV0__Z((exception *)this, a1); /*0x7ca9d3*/
-  *(unsigned int *)this = (unsigned int)&vt_bad_typeid; /*0x7ca9d8 G42.33 b24: ptr_0 install (hpp minimal ptr_0)*/
+  *(unsigned int *)this = (unsigned int)&g_ptr_7F95DC; /*0x7ca9d8 G42.33 b24: ptr_0 install (hpp minimal ptr_0)*/
   return (exception *)this; /*0x7ca9e0*/
 
 }
@@ -2641,7 +2641,7 @@ exception * E4Recv_7CAC34::sub_7CAC34(struct exception * a2)
 {
 
   __0exception_QAE_ABV0__Z(this, a2); /*0x7cac3b*/
-  *(unsigned int *)this = (unsigned int)&vt_bad_cast; /*0x7cac40 G42.33 b24*/
+  *(unsigned int *)this = (unsigned int)&g_var_668c41; /*0x7cac40 G42.33 b24*/
   return (struct exception *)(void *)this; /*0x7cac48 G42.33 b24*/
 
 }

@@ -509,7 +509,7 @@ CCINIClass * TypeList_flat::BuildingTypeConstructor()
   ((unsigned int *)this)[0] = 0; /*0x5ac40e*/
   ((unsigned int *)this)[0] = 10; /*0x5ac411*/
   ((unsigned int *)this)[0] = 0; /*0x5ac418*/
-  this->DynamicVectorClass = &vt_TypeList; /*0x5ac41b*/
+  this->DynamicVectorClass = &g_var_131447; /*0x5ac41b*/
 return (gamemd::CCINIClass *)&this->DynamicVectorClass; /*0x5ac421*/
 
 }
@@ -533,7 +533,7 @@ TypeList_flat * TypeList_BuildingType::Add(unsigned int * Block, char a2, void *
   void *v3; // eax
 
   v3 = (void *)*((unsigned int *)Block + 1); /*0x5ac653*/
-  *(unsigned int *)Block = (unsigned int)(&vt_VectorClass); /*0x5ac656*/
+  *(unsigned int *)Block = (unsigned int)(&g_ptr_7E8500); /*0x5ac656*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x5ac660*/
   {
     __3_YAXPAX_Z(v3); /*0x5ac668*/
@@ -1320,8 +1320,8 @@ int E4Recv_5AFEF0::sub_5AFEF0()
 void E4Recv_5AFF50::sub_5AFF50()
 {
 
-  *(unsigned int *)this->LocomotionClass = &vt_MechLocomotionClass; /*0x5aff50*/
-  *(unsigned int *)&this->LocomotionClass[4] = &vt_MechLocomotionClass; /*0x5aff56*/
+  *(unsigned int *)this->LocomotionClass = &g_ptr_7EDB6C; /*0x5aff50*/
+  *(unsigned int *)&this->LocomotionClass[4] = &g_ptr_7EDB6C; /*0x5aff56*/
   LocomotionClass::Construct((LocomotionClass *)this); /*0x5aff5d*/
 
 }

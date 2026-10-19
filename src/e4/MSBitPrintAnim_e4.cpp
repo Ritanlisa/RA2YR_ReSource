@@ -20,9 +20,9 @@
 namespace gamemd {  // G42.18 ns repair
 MSBitPrintAnim * MSBitPrintAnim::QueryInterface(void ** Block, char a2)
 {
-  /* X11: vtable install elided (X67 star-deref, RHS vt_MSBitPrintAnim) */  /*0x5ced16*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EE9D8) */  /*0x5ced16*/
   ((DeleteAndZero *)((char *)Block + 28))->Alt(); /*0x5ced1c*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_MSAnim) */  /*0x5ced25*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EE8E8) */  /*0x5ced25*/
   if ( (a2 & 1) != 0 ) /*0x5ced2d*/
     operator delete((Block)); /*0x5ced30*/
   return (gamemd::MSBitPrintAnim *)(Block); /*0x5ced3a*/

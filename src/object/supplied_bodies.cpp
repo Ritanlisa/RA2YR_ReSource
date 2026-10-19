@@ -57,12 +57,12 @@
 struct AudioMixer;  // W13-C fwd (e4/classes/AudioMixer_e4.hpp 载体; (AudioMixer*) cast 用法)
 
 // G57w10: q000 externs (truth e4_globals_decls)
-extern unsigned char vt_DynamicVectorClass_AbstractClass[4];  // data: 0x7E91EC  // G57w10 vftable residue fix
-extern unsigned char vt_DynamicVectorClass_ParticleSystemTypeClass_const[4];  // data: 0x7E4444  // G57w10 vftable residue fix
-extern unsigned char vt_DynamicVectorClass_PlanningNodeClass[4];  // data: 0x7EFE44  // G57w10 vftable residue fix
-extern unsigned char vt_DynamicVectorClass_TechnoClass[4];  // data: 0x7E17AC  // G57w10 vftable residue fix
-extern unsigned char vt_VectorClass_ParticleSystemTypeClass_const[4];  // data: 0x7E4424  // G57w10 vftable residue fix
-extern unsigned char vt_VectorClass_TechnoClass[4];  // data: 0x7E180C  // G57w10 vftable residue fix
+extern unsigned char g_ptr_7E91EC[4];  // data: 0x7E91EC  // G57w10 vftable residue fix
+extern unsigned char g_ptr_7E4444[4];  // data: 0x7E4444  // G57w10 vftable residue fix
+extern unsigned char g_ptr_7EFE44[4];  // data: 0x7EFE44  // G57w10 vftable residue fix
+extern unsigned char g_ptr_7E17AC[4];  // data: 0x7E17AC  // G57w10 vftable residue fix
+extern unsigned char g_ptr_7E4424[4];  // data: 0x7E4424  // G57w10 vftable residue fix
+extern unsigned char g_ptr_7E180C[4];  // data: 0x7E180C  // G57w10 vftable residue fix
 // ---- g57b5 W6: TU-local globals (csp_canon 驱动) ----extern int AudioMixer;  // 词表 (canon 无条目, int 兜底) L880
 // ---- g57c5 W5 vocab (declaration-only) ----
 namespace ra2 {
@@ -471,7 +471,7 @@ int TechnoClass::selectTarget()
 
 // 0x41BFF0
 namespace ra2::game {
-int TechnoClass::vt_entry_434()
+int TechnoClass::g_var_845aa8()
 {
   int result; // eax
 
@@ -482,7 +482,7 @@ int TechnoClass::vt_entry_434()
 
 // 0x41C0F0
 namespace ra2::game {
-void FootClass::vt_entry_514() {
+void FootClass::g_var_3c6d93() {
   ; /*0x41c0f0*/
 }
 } // namespace ra2::game
@@ -496,14 +496,14 @@ void FootClass::StubReturnVoid() {
 
 // 0x41C130
 namespace ra2::game {
-void FootClass::vt_entry_534(int a2) {
+void FootClass::g_var_a270fc(int a2) {
   ; /*0x41c130*/
 }
 } // namespace ra2::game
 
 // 0x41C140
 namespace ra2::game {
-void FootClass::vt_entry_540() {
+void FootClass::g_var_122519() {
   ; /*0x41c140*/
 }
 } // namespace ra2::game
@@ -629,14 +629,14 @@ int FootClass::updateLocomotion(int a2) {
 
 // 0x4DBA30
 namespace ra2::game {
-void FootClass::vt_entry_548() {
+void FootClass::g_var_85b48b() {
   ; /*0x4dba30*/
 }
 } // namespace ra2::game
 
 // 0x4DBA40
 namespace ra2::game {
-void FootClass::vt_entry_54C() {
+void FootClass::g_var_c64868() {
   ; /*0x4dba40*/
 }
 } // namespace ra2::game
@@ -667,7 +667,7 @@ int TechnoClass::GetTargetCellCenter(AbstractClass *a2)
 
 // 0x4DEE50
 namespace ra2::game {
-int FootClass::vt_entry_530(int a2, int a3, int a4)
+int FootClass::g_var_43e13d(int a2, int a3, int a4)
 {
   int (__thiscall **ptr_0)(FootClass *, int, int, int, int *); // eax
   int v6; // [esp+0h] [ebp-4h] BYREF
@@ -681,21 +681,21 @@ int FootClass::vt_entry_530(int a2, int a3, int a4)
 
 // 0x4DF1C0
 namespace ra2::game {
-BOOL TechnoClass::vt_entry_4AC() {
+BOOL TechnoClass::g_var_c4eb38() {
   return this->u32_5C4 != -1; /*0x4df1ce*/
 }
 } // namespace ra2::game
 
 // 0x4DF1D0
 namespace ra2::game {
-int TechnoClass::vt_entry_4B0() {
+int TechnoClass::g_var_242f49() {
   return this->u32_5D1; /*0x4df1d6*/
 }
 } // namespace ra2::game
 
 // 0x4DF310
 namespace ra2::game {
-BOOL TechnoClass::vt_entry_4C4() {
+BOOL TechnoClass::g_var_646489() {
   return this->u32_5C4 == 29; /*0x4df31e*/
 }
 } // namespace ra2::game
@@ -806,7 +806,7 @@ int TechnoClass::GetGlobalValue(int *a2) const {
 
 // 0x70DD90
 namespace ra2::game {
-int TechnoClass::vt_entry_3E8() {
+int TechnoClass::g_var_e75276() {
   return 1; /*0x70dd95*/
 }
 } // namespace ra2::game
@@ -1705,7 +1705,7 @@ unsigned int * TechnoClass::HasOnlyOneGarrisonSlot()
 
 // 0x41BFE0
 namespace ra2::game {
-int TechnoClass::vt_entry_428()
+int TechnoClass::g_var_6a4733()
 {
   int result; // eax
 
@@ -1715,7 +1715,7 @@ int TechnoClass::vt_entry_428()
 
 // 0x41C080
 namespace ra2::game {
-char FootClass::vt_entry_4F8() {
+char FootClass::g_var_d19fc3() {
   return 0; /*0x41c082*/
 }
 } // namespace ra2::game
@@ -3745,7 +3745,7 @@ int TechnoClass::EvacuateFootprintCells()
   v23 = *v37 / 256; /*0x458aae*/
   v24 = v37[1] / 256; /*0x458ac6*/
   EventClass::resetEvent((EventClass *)&v31, 0, 0); /*0x458acb*/
-  v31 = &vt_DynamicVectorClass_TechnoClass; /*0x458ad0*/
+  v31 = &g_ptr_7E17AC; /*0x458ad0*/
   v36 = 10; /*0x458ad8*/
   v35 = 0; /*0x458ae0*/
   while ( *v3 != 0x7FFF || v3[1] != 0x7FFF ) /*0x458af8*/
@@ -3850,7 +3850,7 @@ LABEL_28:
       (*(void (**)(int *))(*v15 + 248))(v15); /*0x458d6f*/
   }
   result = (int)Block; /*0x458d7e*/
-  v31 = &vt_VectorClass_TechnoClass; /*0x458d82*/
+  v31 = &g_ptr_7E180C; /*0x458d82*/
   if ( Block && BYTE1(v34) ) /*0x458d92*/
     __3_YAXPAX_Z(Block); /*0x458d95*/
   (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x458da0*/
@@ -5219,7 +5219,7 @@ int FootClass::HandleTargetDestroyed()
 
 // 0x4D9C00
 namespace ra2::game {
-int FootClass::vt_entry_524() {
+int FootClass::g_var_718b21() {
   return 0; /*0x4d9c02*/
 }
 } // namespace ra2::game
@@ -5239,7 +5239,7 @@ int FootClass::Destru_vt107(int a2, int a3, int a4, int a5, char a6) {
 
 // 0x4D9FF0
 namespace ra2::game {
-unsigned int * FootClass::vt_entry_4F0(unsigned int *a2) {
+unsigned int * FootClass::g_var_98656b(unsigned int *a2) {
   unsigned int *v2; // ecx
   unsigned char v4[12]; // [esp+4h] [ebp-Ch] BYREF
 
@@ -5254,7 +5254,7 @@ unsigned int * FootClass::vt_entry_4F0(unsigned int *a2) {
 // 0x4DA1C0
 namespace ra2::game {
 int FootClass::ClearSomeVector() {
-  return this->vt_entry_68(this->FootClass_field_abstract_array_5AC);
+  return this->g_var_04f235(this->FootClass_field_abstract_array_5AC);
 }
 } // namespace ra2::game
 
@@ -5297,7 +5297,7 @@ int FootClass::Destru_vt107()
 
 // 0x4D9FF0
 namespace ra2::game {
-int FootClass::vt_entry_4F0()
+int FootClass::g_var_98656b()
 {
   unsigned int *v2; // ecx
   unsigned char v4[12]; // [esp+4h] [ebp-Ch] BYREF
@@ -5894,7 +5894,7 @@ int TechnoClass::GetDeployCoords()
 
 // 0x4DBFD0
 namespace ra2::game {
-int FootClass::vt_entry_4E0()
+int FootClass::g_var_0ed861()
 {
   if ( !(*((int (__thiscall **)(FootClass *, unsigned int))this->ptr_0 + 254))(this, 0) ) /*0x4dbfd7*/
     return 1; /*0x4dbfe1*/
@@ -5908,7 +5908,7 @@ int FootClass::vt_entry_4E0()
 
 // 0x4DC030
 namespace ra2::game {
-int FootClass::vt_entry_4F4()
+int FootClass::g_var_51b9cc()
 {
   int result; // eax
 
@@ -6968,7 +6968,7 @@ int FootClass::MissionSell_Dispatch()
 
 // 0x4DF1A0
 namespace ra2::game {
-int TechnoClass::vt_entry_4A8()
+int TechnoClass::g_var_3c4f4f()
 {
   this->FootClass_field_5C4 = -1; /*0x4df1a2*/
   this->FootClass_field_5C8 = 0; /*0x4df1ac*/
@@ -6980,7 +6980,7 @@ int TechnoClass::vt_entry_4A8()
 
 // 0x4DF320
 namespace ra2::game {
-int TechnoClass::vt_entry_4C8()
+int TechnoClass::g_var_431f68()
 {
   int v2; // eax
   void (__thiscall **ptr_0)(TechnoClass *, int, int); // edx
@@ -7069,7 +7069,7 @@ void FootClass::UpdateAttackMove_SelectNewTarget()
 
 // 0x4DF4B0
 namespace ra2::game {
-int TechnoClass::vt_entry_4D0()
+int TechnoClass::g_var_7f5ddd()
 {
   char result; // al
 
@@ -10376,7 +10376,7 @@ int TechnoClass::PushNearbyUnits()
     if ( (unsigned char)result ) /*0x6f4f5f*/
     {
       EventClass::resetEvent((EventClass *)&v15, 0, 0); /*0x6f4f6e*/
-      v15 = &vt_DynamicVectorClass_TechnoClass; /*0x6f4f78*/
+      v15 = &g_ptr_7E17AC; /*0x6f4f78*/
       v20 = 10; /*0x6f4f80*/
       v19 = 0; /*0x6f4f88*/
       for ( i = *(unsigned int *)&stru_A8E960.random[276] - 1; i >= 0; --i ) /*0x6f4f95*/
@@ -10402,7 +10402,7 @@ int TechnoClass::PushNearbyUnits()
       for ( j = v19 - 1; j >= 0; --j ) /*0x6f504f*/
         (*(void (**)(unsigned int, TechnoClass *))(**((unsigned int **)Block + j) + 968))(*((unsigned int *)Block + j), this); /*0x6f505b*/
       result = (int)Block; /*0x6f5064*/
-      v15 = &vt_VectorClass_TechnoClass; /*0x6f5068*/
+      v15 = &g_ptr_7E180C; /*0x6f5068*/
       if ( Block ) /*0x6f5072*/
       {
         if ( BYTE1(v18) ) /*0x6f507a*/
@@ -11052,7 +11052,7 @@ void TechnoClass::DrawHealthBar(Point2D* pLocation, RectangleStruct* pBounds, bo
 
 // 0x6F60C0
 namespace ra2::game {
-void TechnoClass::vt_entry_448()
+void TechnoClass::g_var_370bdd()
 {
   int result; // eax
 
@@ -13298,7 +13298,7 @@ void FootClass::UpdateLocomotion()
               v40 = 1; /*0x6fbb04*/
               v27 = *(unsigned int *)&stru_A8E960.random[276] - 1; /*0x6fbb09*/
               v41 = 0; /*0x6fbb0c*/
-              v37 = &vt_DynamicVectorClass_TechnoClass; /*0x6fbb12*/
+              v37 = &g_ptr_7E17AC; /*0x6fbb12*/
               v43 = 10; /*0x6fbb1a*/
               for ( i = 0; v27 >= 0; --v27 ) /*0x6fbb26*/
               {
@@ -13325,7 +13325,7 @@ void FootClass::UpdateLocomotion()
                 (*(void (**)(unsigned int, TechnoClass *))(**((unsigned int **)Block + j) + 968))( /*0x6fbbe3*/
                   *((unsigned int *)Block + j),
                   this);
-              v37 = &vt_VectorClass_TechnoClass; /*0x6fbbf0*/
+              v37 = &g_ptr_7E180C; /*0x6fbbf0*/
               if ( Block && v41 ) /*0x6fbc00*/
                 __3_YAXPAX_Z(Block); /*0x6fbc03*/
             }

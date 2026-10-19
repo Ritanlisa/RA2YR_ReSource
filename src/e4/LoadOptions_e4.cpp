@@ -199,12 +199,12 @@ LoadOptions * LoadOptions::QueryInterface(char a2, int a3, int a1)
 
 
   int v3 = 0; // esi /*0x55a0d4*/
-  for ( a3->m_0 = (int)&vt_LoadOptionsClass; v3 < *((unsigned int *)a3 + 12); ++v3 ) /*0x55a0e1*/
+  for ( a3->m_0 = (int)&g_ptr_7ED2E4; v3 < *((unsigned int *)a3 + 12); ++v3 ) /*0x55a0e1*/
     __3_YAXPAX_Z(*(void **)(*((unsigned int *)a3 + 9) + 4 * v3)); /*0x55a0ea*/
   (*(void (**)(LoadOptionsClass *))(*((unsigned int *)a3 + 8) + 12))(a3 + 2); /*0x55a102*/
   void *v4; // eax
   v4 = (void *)*((unsigned int *)a3 + 9); /*0x55a105*/
-  *((unsigned int *)a3 + 8) = (unsigned int)(&vt_VectorClass); /*0x55a108*/
+  *((unsigned int *)a3 + 8) = (unsigned int)(&g_ptr_7E8500); /*0x55a108*/
   if ( v4 && *((unsigned char *)a3 + 45) ) /*0x55a112*/
   {
     __3_YAXPAX_Z(v4); /*0x55a11a*/
@@ -340,7 +340,7 @@ VectorClass_flat * LoadOptions::Constructor_VectorClass_FileEntryClass___(char a
 
   void *v3; // eax
   v3 = *(void **)&a1->m_1[3]; /*0x55a413*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x55a416*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x55a416*/
   if ( v3 && (((unsigned char *)&(a1->m_C))[1]) ) /*0x55a420*/
   {
     operator delete((v3)); /*0x55a428*/
@@ -361,7 +361,7 @@ DynamicVector * LoadOptions::vt00(char a2, int a1)
 
   void *v3; // eax
   v3 = *(void **)&a1->m_1[3]; /*0x55a463*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x55a466*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x55a466*/
   if ( v3 && (((unsigned char *)&(a1->m_C))[1]) ) /*0x55a470*/
   {
     operator delete((v3)); /*0x55a478*/

@@ -22050,7 +22050,7 @@ _DWORD *__thiscall IRTTITypeInfo::loc_74F6A0(_DWORD *Block, char a2)
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x74f6a3*/
-  *Block = &vt_VectorClass_VeinholeMonsterClass; /*0x74f6a6*/
+  *Block = &g_ptr_7F665C; /*0x74f6a6*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x74f6b0*/
   {
     __3_YAXPAX_Z(v3); /*0x74f6b8*/

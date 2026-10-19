@@ -451,7 +451,7 @@ char * * LoadTerrainTypeClassTheatre(AbstractClass * a1, char a2)
   GenericNode::Constructor(v76); /*0x545175*/
   GenericNode::Constructor(v77); /*0x54517e*/
   LinkedList::Prepend(v76, (int)v77); /*0x545194*/
-  v75[3] = &vt_List_INIClass_INISection; /*0x5451a0*/
+  v75[3] = &g_ptr_7E1AFC; /*0x5451a0*/
   memset(&v77[3], 0, 12); /*0x5451a8*/
   v78 = 0; /*0x5451b4*/
   v79 = 0; /*0x5451b9*/
@@ -960,7 +960,7 @@ LABEL_26:
             v58 = CCFileClass::Open(v171, 0); /*0x5466ad*/
             if ( v58 && !v65 ) /*0x5466b9*/
               strncpy((char *)(v3 + 757), v182, 0xEu); /*0x5466cc*/
-            v171[0] = &vt_CCFileClass; /*0x5466db*/
+            v171[0] = &g_ptr_7E16B0; /*0x5466db*/
             v173 = 0; /*0x5466e6*/
             Vector::Clear((int)v172); /*0x5466f1*/
             v171[0] = &off_7E1668; /*0x546702*/
@@ -986,7 +986,7 @@ LABEL_26:
             v58 = CCFileClass::Open(v174, 0); /*0x5467ca*/
             if ( v58 && !v65 ) /*0x5467d4*/
               strncpy((char *)(v3 + 757), v182, 0xEu); /*0x5467e7*/
-            v174[0] = &vt_CCFileClass; /*0x5467f6*/
+            v174[0] = &g_ptr_7E16B0; /*0x5467f6*/
             v176 = 0; /*0x546801*/
             Vector::Clear((int)v175); /*0x546808*/
             v174[0] = &off_7E1668; /*0x546814*/
@@ -1007,7 +1007,7 @@ LABEL_26:
             v58 = CCFileClass::Open(v165, 0); /*0x54687a*/
             if ( v58 && !v65 ) /*0x546884*/
               strncpy((char *)(v3 + 757), v182, 0xEu); /*0x546897*/
-            v165[0] = &vt_CCFileClass; /*0x5468a6*/
+            v165[0] = &g_ptr_7E16B0; /*0x5468a6*/
             v167 = 0; /*0x5468b1*/
             Vector::Clear((int)v166); /*0x5468b8*/
             v165[0] = &off_7E1668; /*0x5468c4*/
@@ -1035,7 +1035,7 @@ LABEL_189:
           v58 = CCFileClass::Open(v177, 0); /*0x54695e*/
           if ( v58 && !v65 ) /*0x546968*/
             strncpy((char *)(v3 + 757), v182, 0xEu); /*0x54697b*/
-          v177[0] = &vt_CCFileClass; /*0x54698a*/
+          v177[0] = &g_ptr_7E16B0; /*0x54698a*/
           v179 = 0; /*0x546995*/
           Vector::Clear((int)v178); /*0x54699c*/
           v177[0] = &off_7E1668; /*0x5469a8*/
@@ -1167,22 +1167,22 @@ LABEL_217:
     g_Cell_BuildabilityLUT = -1; /*0x546cb3*/
     g_TerrainBridgeIndex = -1; /*0x546cb9*/
   }
-  v168[0] = &vt_CCFileClass; /*0x546ccb*/
+  v168[0] = &g_ptr_7E16B0; /*0x546ccb*/
   v170 = 0; /*0x546cd2*/
   Vector::Clear((int)v169); /*0x546cd9*/
   v168[0] = &off_7E1668; /*0x546cea*/
   BufferIOFileClass::Dtor(v168); /*0x546cf1*/
-  v161[0] = &vt_CCFileClass; /*0x546cfd*/
+  v161[0] = &g_ptr_7E16B0; /*0x546cfd*/
   v163 = 0; /*0x546d04*/
   Vector::Clear((int)v162); /*0x546d0b*/
   v161[0] = &off_7E1668; /*0x546d17*/
   BufferIOFileClass::Dtor(v161); /*0x546d1e*/
-  v149[0] = (int)&vt_CCFileClass; /*0x546d2a*/
+  v149[0] = (int)&g_ptr_7E16B0; /*0x546d2a*/
   v151 = 0; /*0x546d31*/
   Vector::Clear((int)v150); /*0x546d38*/
   v149[0] = (int)&off_7E1668; /*0x546d44*/
   BufferIOFileClass::Dtor(v149); /*0x546d4b*/
-  v158[0] = (int)&vt_CCFileClass; /*0x546d57*/
+  v158[0] = (int)&g_ptr_7E16B0; /*0x546d57*/
   v160 = 0; /*0x546d5e*/
   Vector::Clear((int)v159); /*0x546d65*/
   v158[0] = (int)&off_7E1668; /*0x546d71*/
@@ -2039,7 +2039,7 @@ char * E4Recv_5408F0::sub_5408F0(int a2, int a3, int a4, int a5, short a6, short
   unsigned int *v9; // eax
   __int16 v10; // cx
 
-  /* X11: vtable install elided (X67 star-deref, RHS vt_IPXManagerClass) */  /*0x5408f7*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EC16C) */  /*0x5408f7*/
   if ( dword_887628 ) /*0x540905*/
   {
     (**(void (***)(int, int))dword_887628)(dword_887628, 1); /*0x54090b*/
@@ -2426,7 +2426,7 @@ int sub_543E70()
   dword_AA1080 = 0; /*0x543e7c*/
   byte_AA1084 = 1; /*0x543e81*/
   byte_AA1085 = 0; /*0x543e88*/
-  dword_AA1078 = (int)&vt_DynamicVectorClass; /*0x543e8d*/
+  dword_AA1078 = (int)&g_ptr_7E3238; /*0x543e8d*/
   dword_AA108C = 10; /*0x543e97*/
   dword_AA1088 = 0; /*0x543ea1*/
   return atexit(sub_543EB0); /*0x543eac*/
@@ -2439,7 +2439,7 @@ void sub_543EB0()
 {
   if ( (byte_AA0E2C & 1) == 0 ) /*0x543eba*/
   {
-    dword_AA1078 = (int)&vt_VectorClass; /*0x543ebe*/
+    dword_AA1078 = (int)&g_ptr_7E8500; /*0x543ebe*/
     byte_AA0E2C |= 1u; /*0x543ed1*/
     if ( dword_AA107C ) /*0x543ed7*/
     {
@@ -2947,7 +2947,7 @@ int sub_54E260()
   g_MissionQueueFrame.nextScenario[0] = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x54e26d*/
   g_MissionQueueFrame.nextScenario[2] = 0; /*0x54e276*/
   sub_54EBF0((VectorClass *)&g_MissionQueueFrame.nextScenario[3], 0, 0); /*0x54e280*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass) */  /*0x54e298*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E3238) */  /*0x54e298*/
   g_MissionQueueFrame.nextScenario[8] = 10; /*0x54e2a2*/
   g_MissionQueueFrame.nextScenario[7] = 0; /*0x54e2ac*/
   g_MissionQueueFrame.nextScenario[0] = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x54e2b6*/
@@ -2970,7 +2970,7 @@ unsigned int * E4Recv_54E360::sub_54E360()
   this->M20 = 0; /*0x54e37b*/
   LOBYTE(this->q018) = 1; /*0x54e37e*/
   BYTE1(this->M25) = 0; /*0x54e382*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass) */  /*0x54e385*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E3238) */  /*0x54e385*/
   this->q020 = (void *)10; /*0x54e38c*/
   this->M28 = 0; /*0x54e393*/
   this->AbstractClass = *(void **)&DataGlobal_A8EB00[644]; /*0x54e39e*/
@@ -3003,7 +3003,7 @@ void E4Recv_54E690::sub_54E690()
   ptr_8[3](v5); /*0x54e6b8*/
   (*((void (**)(void **, int, unsigned int))*p_vtable3 + 2))(p_vtable3, abstractFlags, 0); /*0x54e6c3*/
   v7 = p_vtable3[1]; /*0x54e6c6*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x54e6c9*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x54e6c9*/
   if ( v7 && *((unsigned char *)p_vtable3 + 13) ) /*0x54e6d3*/
   {
     __3_YAXPAX_Z(v7); /*0x54e6d9*/
@@ -3340,7 +3340,7 @@ int sub_54FDC0()
   dword_ABC880 = 0; /*0x54fdcc*/
   byte_ABC884 = 1; /*0x54fdd1*/
   byte_ABC885 = 0; /*0x54fdd8*/
-  dword_ABC878 = (int)&vt_DynamicVectorClass; /*0x54fddd*/
+  dword_ABC878 = (int)&g_ptr_7E3238; /*0x54fddd*/
   dword_ABC88C = 10; /*0x54fde7*/
   dword_ABC888 = 0; /*0x54fdf1*/
   return atexit(sub_54FE00); /*0x54fdfc*/
@@ -3353,7 +3353,7 @@ void sub_54FE00()
 {
   if ( (byte_ABC718 & 1) == 0 ) /*0x54fe0a*/
   {
-    dword_ABC878 = (int)&vt_VectorClass; /*0x54fe0e*/
+    dword_ABC878 = (int)&g_ptr_7E8500; /*0x54fe0e*/
     byte_ABC718 |= 1u; /*0x54fe21*/
     if ( dword_ABC87C ) /*0x54fe27*/
     {

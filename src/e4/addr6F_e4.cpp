@@ -111,7 +111,7 @@ int AISelectTeamHouseClass(IUnknown * aP0, int a2, int a3)
   v56 = (ObjectClass *)aP0; /*0x6f0ab9*/
   Team_Helper_6F2230(&v57, 0, 0); /*0x6f0ac9*/
   v5 = *(unsigned int *)(a2 + 22016); /*0x6f0ace*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList_TeamTypeClass_const) */  /*0x6f0ad4*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7EA9C4) */  /*0x6f0ad4*/
   v55 = 0; /*0x6f0adf*/
   if ( v5 != -1 ) /*0x6f0ae3*/
     v55 = (unsigned int *)*(&dword_A8022C->ptr_0 + v5); /*0x6f0aee*/
@@ -177,7 +177,7 @@ int AISelectTeamHouseClass(IUnknown * aP0, int a2, int a3)
     {
       v17 = 0; /*0x6f0bfa*/
       Team_Helper_6F27F0((VectorClass *)&v60, 0, 0); /*0x6f0c02*/
-      /* X11: vtable install elided (X67 star-deref, RHS vt_DynamicVectorClass_DiscreteDistributionClass_AITriggerTypeClass_DistributionObject_AITriggerTypeClass) */  /*0x6f0c0b*/
+      /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7F4860) */  /*0x6f0c0b*/
       v61 = 10; /*0x6f0c13*/
       v60.m_10 = 0; /*0x6f0c1b*/
       v62 = 0; /*0x6f0c1f*/
@@ -273,7 +273,7 @@ LABEL_51:
         *(unsigned int *)(v57.Items + 4 * v31) = v30; /*0x6f0dbf*/
       }
 LABEL_58:
-      /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_DiscreteDistributionClass_AITriggerTypeClass_DistributionObject_AITriggerTypeClass) */  /*0x6f0dc2*/
+      /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7F4840) */  /*0x6f0dc2*/
       if ( *(unsigned int *)&v60.m_1[3] && BYTE1(v60.m_C) ) /*0x6f0dd8*/
         Team_Helper_6F26E0(*(char **)&v60.m_1[3], 3); /*0x6f0de0*/
     }
@@ -294,7 +294,7 @@ LABEL_71:
     v41->ptr_8 = 0; /*0x6f0e73*/
     (v41->ptr_C) = ((v41->ptr_C) & ~0xFF) | ((1) & 0xFF); /*0x6f0e76*/
     (v41->ptr_C) = ((v41->ptr_C) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x6f0e7a*/
-    /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass_TeamTypeClass_const) */  /*0x6f0e7e*/
+    /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7EA9E4) */  /*0x6f0e7e*/
     if ( !v42 ) /*0x6f0e84*/
     {
       VectorClass::ClearAndFree3((int)v41); /*0x6f0e8c*/
@@ -331,8 +331,8 @@ LABEL_71:
     v51 = v59; /*0x6f0f7f*/
     v41->uniqueId = v58; /*0x6f0f85*/
     v41->abstractFlags = v51; /*0x6f0f88*/
-    /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList_TeamTypeClass_const) */  /*0x6f0f8b*/
-    /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass_TeamTypeClass_const) */  /*0x6f0f91*/
+    /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7EA9C4) */  /*0x6f0f8b*/
+    /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7EA9E4) */  /*0x6f0f91*/
     if ( Items ) /*0x6f0f99*/
     {
       if ( v57.IsAllocated[0] ) /*0x6f0fa1*/
@@ -380,10 +380,10 @@ LABEL_70:
     v47->ptr_8 = 0; /*0x6f0f19*/
     (v47->ptr_C) = ((v47->ptr_C) & ~0xFF) | ((1) & 0xFF); /*0x6f0f1c*/
     (v47->ptr_C) = ((v47->ptr_C) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x6f0f20*/
-    /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass_TeamTypeClass_const) */  /*0x6f0f24*/
+    /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7EA9E4) */  /*0x6f0f24*/
     Team_Helper_6F2780(v47, &v57); /*0x6f0f2a*/
-    /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList_TeamTypeClass_const) */  /*0x6f0f2f*/
-    /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass_TeamTypeClass_const) */  /*0x6f0f35*/
+    /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7EA9C4) */  /*0x6f0f2f*/
+    /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7EA9E4) */  /*0x6f0f35*/
     v48 = (void *)v57.Items; /*0x6f0f3d*/
     v49 = v59; /*0x6f0f45*/
     v42 = v57.Items == 0; /*0x6f0f49*/

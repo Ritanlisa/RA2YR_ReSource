@@ -85,7 +85,7 @@ int TaskForceClass::Construct(char *aP1, void *a2, void *a3, void *a4, void *a5,
   this->Coord_9C = 0; /*0x6e7e99*/
   *(unsigned int *)this->q0A0 = 0; /*0x6e7ea3*/
   /* X11: vtable install elided (implicit via TaskForceClass virtuals 0x6e7ead) */
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_TaskForceClass) */  /*0x6e7eb3*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F4654) */  /*0x6e7eb3*/
   /* X11: vtable install elided (implicit via TaskForceClass virtuals 0x6e7eba) */
   /* X11: vtable install elided (implicit via TaskForceClass virtuals 0x6e7ec1) */
   if ( dword_A8E8E0 < dword_A8E8D8 /*0x6e7f05*/
@@ -183,10 +183,10 @@ namespace gamemd {
 void * TaskForceClass::ExecuteAction(void ** Block, char a2)
 {
 
-  /* X11: vtable install elided (X67 star-deref, RHS vt_TaskForceClass) */  /*0x6e87f6*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_TaskForceClass) */  /*0x6e87fc*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_TaskForceClass) */  /*0x6e8803*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_TaskForceClass) */  /*0x6e880a*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7F4654) */  /*0x6e87f6*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F4654) */  /*0x6e87fc*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7F4654) */  /*0x6e8803*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7F4654) */  /*0x6e880a*/
   AbstractClass::AnnounceExpiredPointer(Block, 1); /*0x6e8811*/
   TaskForceClass *v5; // [esp+4h] [ebp-4h] BYREF
   v5 = (gamemd::TaskForceClass *)(Block); /*0x6e8826*/

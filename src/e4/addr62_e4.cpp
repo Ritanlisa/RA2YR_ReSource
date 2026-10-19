@@ -1968,7 +1968,7 @@ unsigned int * sub_627020()
       v2[2] = 0; /*0x627063*/
       *((unsigned char *)v2 + 12) = 1; /*0x627066*/
       *((unsigned char *)v2 + 13) = 0; /*0x62706a*/
-      /* X11: vtable install elided (X67 star-deref, RHS vt_DynamicVectorClass_char) */  /*0x62706d*/
+      /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E5BC4) */  /*0x62706d*/
       v2[5] = 10; /*0x627073*/
       v2[4] = 0; /*0x62707a*/
     }
@@ -1984,7 +1984,7 @@ unsigned int * sub_627020()
       v3[2] = 0; /*0x627095*/
       *((unsigned char *)v3 + 12) = 1; /*0x627098*/
       *((unsigned char *)v3 + 13) = 0; /*0x62709c*/
-      /* X11: vtable install elided (X67 star-deref, RHS vt_DynamicVectorClass_HSVClass) */  /*0x62709f*/
+      /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EF750) */  /*0x62709f*/
       v3[5] = 10; /*0x6270a5*/
       v3[4] = 0; /*0x6270ac*/
     }
@@ -2268,9 +2268,9 @@ AbstractClass * * DestructParticleSystemClass(ParticleSystemClass * aP0, int a2)
   AbstractClass *v15; // [esp+14h] [ebp-4h] BYREF
 
   v3 = v2; /*0x62e073*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_ParticleSystemClass_4) */  /*0x62e077*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_ParticleSystemClass_4) */  /*0x62e07d*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_ParticleSystemClass_4) */  /*0x62e084*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_var_25d3a8) */  /*0x62e077*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_var_25d3a8) */  /*0x62e07d*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_var_25d3a8) */  /*0x62e084*/
   v2->ptr_C = (int)&off_7EFB70; /*0x62e08b*/
   AbstractClass::AnnounceExpiredPointer(v2, 1); /*0x62e092*/
   ObjectClass::Undeploy((ObjectClass *)v3); /*0x62e099*/
@@ -2351,7 +2351,7 @@ AbstractClass * * DestructParticleSystemClass(ParticleSystemClass * aP0, int a2)
     }
   }
   v12 = v3->abstractFlags.ptr_C; /*0x62e23e*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass_ParticleClass) */  /*0x62e244*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E9D84) */  /*0x62e244*/
   if ( v12 && BYTE1(v3[5].abstractFlags) ) /*0x62e252*/
   {
     __3_YAXPAX_Z(v12); /*0x62e25b*/
@@ -2611,7 +2611,7 @@ unsigned int * E4Recv_624080::sub_624080()
 namespace gamemd {
 void E4Recv_624090::sub_624090()
 {
-  /* X11: vtable install elided (X67 star-deref, RHS vt_OwnerDrawDialogControl) */  /*0x624090*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_var_03fe96) */  /*0x624090*/
 }
 } // namespace gamemd
 
@@ -3091,7 +3091,7 @@ int sub_629190()
   dword_AC4918 = 0; /*0x62919c*/
   byte_AC491C = 1; /*0x6291a1*/
   byte_AC491D = 0; /*0x6291a8*/
-  dword_AC4910 = (int)&vt_DynamicVectorClass; /*0x6291ad*/
+  dword_AC4910 = (int)&g_ptr_7E3238; /*0x6291ad*/
   dword_AC4924 = 10; /*0x6291b7*/
   dword_AC4920 = 0; /*0x6291c1*/
   return atexit(sub_6291D0); /*0x6291cc*/
@@ -3102,7 +3102,7 @@ int sub_629190()
 namespace gamemd {
 void sub_6291D0()
 {
-  dword_AC4910 = (int)&vt_VectorClass; /*0x6291d8*/
+  dword_AC4910 = (int)&g_ptr_7E8500; /*0x6291d8*/
   if ( dword_AC4914 && byte_AC491D ) /*0x6291ec*/
   {
     operator delete((void *)(dword_AC4914)); /*0x6291ef*/

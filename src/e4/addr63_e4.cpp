@@ -2403,7 +2403,7 @@ AbstractClass * * ExportSelectionAsScriptAction()
   }
   EventClass::resetEvent((EventClass *)&v25, 0, 0); /*0x63ad87*/
   v2 = 0; /*0x63ad8e*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_DynamicVectorClass_TechnoClass) */  /*0x63ad92*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E17AC) */  /*0x63ad92*/
   v26 = 10; /*0x63ad9a*/
   *(unsigned int *)v25.__tail_10 = 0; /*0x63ada2*/
   v27 = 0; /*0x63ada6*/
@@ -2565,7 +2565,7 @@ LABEL_37:
       ++*(unsigned int *)stru_AC4B48.__pad_B8; /*0x63b008*/
     }
   }
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_TechnoClass) */  /*0x63b012*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E180C) */  /*0x63b012*/
   VectorClass_Techno::ddtor(&v25); /*0x63b01a*/
   return result; /*0x63b01f*/
 
@@ -3371,7 +3371,7 @@ int E4Recv_631F10::sub_631F10(int a2, int a3)
 namespace gamemd {
 void E4Recv_631F30::sub_631F30()
 {
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_PixelFXClass) */  /*0x631f30*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7EFDA4) */  /*0x631f30*/
 }
 } // namespace gamemd
 
@@ -3641,7 +3641,7 @@ int sub_6335E0()
   dword_AC4B50 = 0; /*0x6335ec*/
   byte_AC4B54 = 1; /*0x6335f1*/
   byte_AC4B55 = 0; /*0x6335f8*/
-  dword_AC4B48 = (int)&vt_DynamicVectorClass; /*0x6335fd*/
+  dword_AC4B48 = (int)&g_ptr_7E3238; /*0x6335fd*/
   dword_AC4B5C = 10; /*0x633607*/
   dword_AC4B58 = 0; /*0x633611*/
   return atexit(sub_633620); /*0x63361c*/
@@ -3654,7 +3654,7 @@ void sub_633620()
 {
   if ( (byte_AC4B61 & 1) == 0 ) /*0x63362a*/
   {
-    dword_AC4B48 = (int)&vt_VectorClass; /*0x63362e*/
+    dword_AC4B48 = (int)&g_ptr_7E8500; /*0x63362e*/
     byte_AC4B61 |= 1u; /*0x633641*/
     if ( dword_AC4B4C ) /*0x633647*/
     {
@@ -3678,7 +3678,7 @@ int sub_633680()
   dword_AC4CA0 = 0; /*0x63368c*/
   byte_AC4CA4 = 1; /*0x633691*/
   byte_AC4CA5 = 0; /*0x633698*/
-  dword_AC4C98 = (int)&vt_DynamicVectorClass; /*0x63369d*/
+  dword_AC4C98 = (int)&g_ptr_7E3238; /*0x63369d*/
   dword_AC4CAC = 10; /*0x6336a7*/
   dword_AC4CA8 = 0; /*0x6336b1*/
   return atexit(sub_6336C0); /*0x6336bc*/
@@ -3691,7 +3691,7 @@ void sub_6336C0()
 {
   if ( (byte_AC4B60 & 1) == 0 ) /*0x6336ca*/
   {
-    dword_AC4C98 = (int)&vt_VectorClass; /*0x6336ce*/
+    dword_AC4C98 = (int)&g_ptr_7E8500; /*0x6336ce*/
     byte_AC4B60 |= 1u; /*0x6336e1*/
     if ( dword_AC4C9C ) /*0x6336e7*/
     {
@@ -3752,7 +3752,7 @@ int sub_6337C0()
   dword_AC4B38 = 0; /*0x6337cc*/
   byte_AC4B3C = 1; /*0x6337d1*/
   byte_AC4B3D = 0; /*0x6337d8*/
-  stru_AC4B30 = (int)&vt_DynamicVectorClass; /*0x6337dd*/
+  stru_AC4B30 = (int)&g_ptr_7E3238; /*0x6337dd*/
   dword_AC4B44 = 10; /*0x6337e7*/
   dword_AC4B40 = 0; /*0x6337f1*/
   return atexit(sub_633800); /*0x6337fc*/
@@ -3765,7 +3765,7 @@ void sub_633800()
 {
   if ( (byte_AC4B62 & 1) == 0 ) /*0x63380a*/
   {
-    stru_AC4B30 = (int)&vt_VectorClass; /*0x63380e*/
+    stru_AC4B30 = (int)&g_ptr_7E8500; /*0x63380e*/
     byte_AC4B62 |= 1u; /*0x633821*/
     if ( dword_AC4B34 ) /*0x633827*/
     {
@@ -3789,7 +3789,7 @@ int sub_633860()
   dword_AC4C20 = 0; /*0x63386c*/
   byte_AC4C24 = 1; /*0x633871*/
   byte_AC4C25 = 0; /*0x633878*/
-  dword_AC4C18 = (int)&vt_DynamicVectorClass; /*0x63387d*/
+  dword_AC4C18 = (int)&g_ptr_7E3238; /*0x63387d*/
   dword_AC4C2C = 10; /*0x633887*/
   dword_AC4C28 = 0; /*0x633891*/
   return atexit(sub_6338A0); /*0x63389c*/
@@ -3802,7 +3802,7 @@ void sub_6338A0()
 {
   if ( (byte_AC4B62 & 2) == 0 ) /*0x6338aa*/
   {
-    dword_AC4C18 = (int)&vt_VectorClass; /*0x6338ae*/
+    dword_AC4C18 = (int)&g_ptr_7E8500; /*0x6338ae*/
     byte_AC4B62 |= 2u; /*0x6338c1*/
     if ( dword_AC4C1C ) /*0x6338c7*/
     {
@@ -3826,7 +3826,7 @@ int sub_633900()
   dword_AC4C80 = 0; /*0x63390c*/
   byte_AC4C84 = 1; /*0x633911*/
   byte_AC4C85 = 0; /*0x633918*/
-  dword_AC4C78 = (int)&vt_DynamicVectorClass; /*0x63391d*/
+  dword_AC4C78 = (int)&g_ptr_7E3238; /*0x63391d*/
   dword_AC4C8C = 10; /*0x633927*/
   dword_AC4C88 = 0; /*0x633931*/
   return atexit(sub_633940); /*0x63393c*/
@@ -3839,7 +3839,7 @@ void sub_633940()
 {
   if ( (byte_AC4B62 & 4) == 0 ) /*0x63394a*/
   {
-    dword_AC4C78 = (int)&vt_VectorClass; /*0x63394e*/
+    dword_AC4C78 = (int)&g_ptr_7E8500; /*0x63394e*/
     byte_AC4B62 |= 4u; /*0x633961*/
     if ( dword_AC4C7C ) /*0x633967*/
     {

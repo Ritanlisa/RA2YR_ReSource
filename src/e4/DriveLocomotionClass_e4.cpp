@@ -32,8 +32,8 @@ HRESULT DriveLocomotionClass::BeginMove(int * a1, int * pStm)
   if ( a1 ) /*0x4af79a*/
   {
     a1->Piggybackee = 0; /*0x4af79c*/
-    /* X11: vtable install elided (X67 star-deref, RHS vt_DriveLocomotionClass) */  /*0x4af7a3*/
-    /* X11: vtable install elided (X68 star-amp-named, RHS vt_DriveLocomotionClass) */  /*0x4af7a9*/
+    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E7EB0) */  /*0x4af7a3*/
+    /* X11: vtable install elided (X68 star-amp-named, RHS g_ptr_7E7EB0) */  /*0x4af7a9*/
     *(unsigned int *)a1->__pad_18 = &off_7E7E8C; /*0x4af7b0*/
   }
   (*(void (__stdcall **)(int *, int **, int, unsigned int))(*v2 + 12))(v2, &pStm, 1, 0); /*0x4af7c3*/
@@ -132,8 +132,8 @@ namespace gamemd {
 DriveLocomotionClass * DriveLocomotionClass::ProcessMove(ILocomotion ** Block, char a2)
 {
 
-  /* X11: vtable install elided (X67 star-deref, RHS vt_DriveLocomotionClass) */  /*0x4b4d03*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_DriveLocomotionClass) */  /*0x4b4d09*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E7EB0) */  /*0x4b4d03*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E7EB0) */  /*0x4b4d09*/
   *(unsigned int *)Block->u32_18 = &off_7E7E8C; /*0x4b4d10*/
   ILocomotion *Piggybackee; // eax
   Piggybackee = Block->Piggybackee; /*0x4b4d17*/

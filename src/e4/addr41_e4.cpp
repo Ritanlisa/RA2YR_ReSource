@@ -1359,7 +1359,7 @@ int sub_412870()
   do /*0x41289c*/
   {
     EventClass::resetEvent(v0, 0, 0); /*0x412883*/
-    /* X11: vtable install elided (X67 star-deref, RHS vt_DynamicVectorClass) */  /*0x412888*/
+    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E3238) */  /*0x412888*/
     v0[5] = 10; /*0x41288e*/
     v0[4] = 0; /*0x412895*/
     v0 += 6; /*0x412898*/
@@ -1370,7 +1370,7 @@ int sub_412870()
   dword_889E10 = 0; /*0x4128a9*/
   byte_889E14 = 1; /*0x4128af*/
   byte_889E15 = 0; /*0x4128b6*/
-  dword_889E08 = (int)&vt_DynamicVectorClass; /*0x4128bc*/
+  dword_889E08 = (int)&g_ptr_7E3238; /*0x4128bc*/
   dword_889E1C = 10; /*0x4128c6*/
   dword_889E18 = 0; /*0x4128d0*/
   return atexit(sub_4128F0); /*0x4128de*/
@@ -1404,7 +1404,7 @@ void sub_4128F0()
   v3 = dword_889E10; /*0x41291e*/
   (*(void (**)(int *))(dword_889E08 + 12))(&dword_889E08); /*0x412929*/
   (*(void (**)(int *, int, unsigned int))(dword_889E08 + 8))(&dword_889E08, v3, 0); /*0x412939*/
-  dword_889E08 = (int)&vt_VectorClass_TechnoClass; /*0x412948*/
+  dword_889E08 = (int)&g_ptr_7E180C; /*0x412948*/
   if ( dword_889E0C && byte_889E15 ) /*0x412956*/
   {
     __3_YAXPAX_Z(dword_889E0C); /*0x412959*/
@@ -1418,7 +1418,7 @@ void sub_4128F0()
   {
     v6 = *(v4 - 6); /*0x41297d*/
     v4 -= 6; /*0x412980*/
-    *(v4 - 1) = &vt_VectorClass_TechnoClass; /*0x412985*/
+    *(v4 - 1) = &g_ptr_7E180C; /*0x412985*/
     if ( v6 ) /*0x412988*/
     {
       if ( *((unsigned char *)v4 + 9) ) /*0x41298a*/
@@ -1896,7 +1896,7 @@ int sub_41D280()
   dword_889FC0 = 0; /*0x41d28c*/
   byte_889FC4 = 1; /*0x41d291*/
   byte_889FC5 = 0; /*0x41d298*/
-  dword_889FB8 = (int)&vt_DynamicVectorClass; /*0x41d29d*/
+  dword_889FB8 = (int)&g_ptr_7E3238; /*0x41d29d*/
   dword_889FCC = 10; /*0x41d2a7*/
   dword_889FC8 = 0; /*0x41d2b1*/
   return atexit(sub_41D2C0); /*0x41d2bc*/
@@ -1907,7 +1907,7 @@ int sub_41D280()
 namespace gamemd {
 void sub_41D2C0()
 {
-  dword_889FB8 = (int)&vt_VectorClass; /*0x41d2c8*/
+  dword_889FB8 = (int)&g_ptr_7E8500; /*0x41d2c8*/
   if ( dword_889FBC && byte_889FC5 ) /*0x41d2dc*/
   {
     operator delete((void *)(dword_889FBC)); /*0x41d2df*/

@@ -8077,24 +8077,24 @@ char sub_4E8220()
 
 
 
-// ==== 0x004E8240  TiberianSunClassFactory::vt_placeholder_00  this=TiberianSunClassFactory  sig=csp ====
-int __thiscall HouseClass::vt_placeholder_00(TiberianSunClassFactory *this)
+// ==== 0x004E8240  TiberianSunClassFactory::g_var_048e7c  this=TiberianSunClassFactory  sig=csp ====
+int __thiscall HouseClass::g_var_048e7c(TiberianSunClassFactory *this)
 {
   return 1; /*0x4e8245*/
 }
 
 
 
-// ==== 0x004E8250  TiberianSunClassFactory::vt_placeholder_01  this=TiberianSunClassFactory  sig=csp ====
-int __thiscall HouseClass::vt_placeholder_01(TiberianSunClassFactory *this)
+// ==== 0x004E8250  TiberianSunClassFactory::g_var_25576f  this=TiberianSunClassFactory  sig=csp ====
+int __thiscall HouseClass::g_var_25576f(TiberianSunClassFactory *this)
 {
   return 1; /*0x4e8255*/
 }
 
 
 
-// ==== 0x004E8260  TiberianSunClassFactory::vt_placeholder_02  this=TiberianSunClassFactory  sig=csp ====
-int __thiscall HouseClass::vt_placeholder_02(TiberianSunClassFactory *this, int a2)
+// ==== 0x004E8260  TiberianSunClassFactory::g_var_c1fcbd  this=TiberianSunClassFactory  sig=csp ====
+int __thiscall HouseClass::g_var_c1fcbd(TiberianSunClassFactory *this, int a2)
 {
   return 0; /*0x4e8262*/
 }
@@ -9713,7 +9713,7 @@ char __thiscall HouseClass::COMStub_1(_VectorClass_PAVTagClass *this, int a2)
 
 
 // ==== 0x004E9240  ?$VectorClass@PAVTagClass@@::vt[02]  this=VectorClass  sig=csp ====
-char __thiscall HouseClass::vt_02_(void *this, int a2, _DWORD *a3)
+char __thiscall HouseClass::g_var_723ac8(void *this, int a2, _DWORD *a3)
 {
   _DWORD *v4; // edi
   int v6; // ecx
@@ -9762,7 +9762,7 @@ char __thiscall HouseClass::vt_02_(void *this, int a2, _DWORD *a3)
 
 
 // ==== 0x004E92F0  ?$VectorClass@PAVTagClass@@::vt[03]  this=VectorClass  sig=csp ====
-void __thiscall HouseClass::vt_03_(int this)
+void __thiscall HouseClass::g_var_78dc8d(int this)
 {
   if ( *(_DWORD *)(this + 4) && *(_BYTE *)(this + 13) ) /*0x4e92fd*/
   {
@@ -9776,7 +9776,7 @@ void __thiscall HouseClass::vt_03_(int this)
 
 
 // ==== 0x004E9320  ?$VectorClass@PAVTagClass@@::vt[04]  this=VectorClass  sig=csp ====
-int __thiscall HouseClass::vt_04_(int this, _DWORD *a2)
+int __thiscall HouseClass::g_var_9d376d(int this, _DWORD *a2)
 {
   int result; // eax
   int v3; // edx
@@ -9799,7 +9799,7 @@ int __thiscall HouseClass::vt_04_(int this, _DWORD *a2)
 
 
 // ==== 0x004E9360  ?$VectorClass@PAVTagClass@@::vt[05]  this=VectorClass  sig=csp ====
-unsigned int __thiscall HouseClass::vt_05_(int this, int a2)
+unsigned int __thiscall HouseClass::g_var_167f7c(int this, int a2)
 {
   if ( *(_BYTE *)(this + 12) ) /*0x4e9360*/
     return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2; /*0x4e9375*/
@@ -10703,7 +10703,7 @@ char __thiscall ParticleSystemClass::AddRef(_VectorClass_PAVParticleClass *this,
 
 
 // ==== 0x004E9E20  _VectorClass_PAVParticleClass::vt[02]  this=VectorClass  sig=csp ====
-char __thiscall ParticleSystemClass::vt_02(_VectorClass_PAVParticleClass *this, int a2, _DWORD *a3)
+char __thiscall ParticleSystemClass::g_var_e9d84c(_VectorClass_PAVParticleClass *this, int a2, _DWORD *a3)
 {
   _DWORD *v4; // edi
   int m_8; // ecx
@@ -10752,7 +10752,7 @@ char __thiscall ParticleSystemClass::vt_02(_VectorClass_PAVParticleClass *this, 
 
 
 // ==== 0x004E9ED0  _VectorClass_PAVParticleClass::vt[03]  this=VectorClass  sig=csp ====
-void __thiscall ParticleSystemClass::vt_03(_VectorClass_PAVParticleClass *this)
+void __thiscall ParticleSystemClass::g_var_ffdfec(_VectorClass_PAVParticleClass *this)
 {
   if ( *(_DWORD *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x4e9edd*/
   {
@@ -10766,7 +10766,7 @@ void __thiscall ParticleSystemClass::vt_03(_VectorClass_PAVParticleClass *this)
 
 
 // ==== 0x004E9F00  _VectorClass_PAVParticleClass::vt[04]  this=VectorClass  sig=csp ====
-int __thiscall ParticleSystemClass::vt_04(_VectorClass_PAVParticleClass *this, _DWORD *a2)
+int __thiscall ParticleSystemClass::g_var_0e2ad2(_VectorClass_PAVParticleClass *this, _DWORD *a2)
 {
   int result; // eax
   int m_8; // edx
@@ -10789,7 +10789,7 @@ int __thiscall ParticleSystemClass::vt_04(_VectorClass_PAVParticleClass *this, _
 
 
 // ==== 0x004E9F40  _VectorClass_PAVParticleClass::vt[05]  this=VectorClass  sig=csp ====
-unsigned int __thiscall ParticleSystemClass::vt_05(_VectorClass_PAVParticleClass *this, int a2)
+unsigned int __thiscall ParticleSystemClass::g_var_8e5f48(_VectorClass_PAVParticleClass *this, int a2)
 {
   if ( LOBYTE(this->m_C) ) /*0x4e9f40*/
     return (unsigned int)(a2 - *(_DWORD *)&this->m_1[3]) >> 2; /*0x4e9f55*/
@@ -17924,7 +17924,7 @@ int __thiscall VectorClass_ptr_SuperClass::FindItemIndex_0(_DynamicVectorClass_P
 
 
 // ==== 0x004EF4E0  ?$VectorClass@PAVTagClass@@::vt[00]  this=VectorClass  sig=csp ====
-_DWORD *__thiscall HouseClass::vt_00_(_DWORD *Block, char a2)
+_DWORD *__thiscall HouseClass::g_var_4cd06d(_DWORD *Block, char a2)
 {
   void *v3; // eax
 
@@ -18146,7 +18146,7 @@ _DWORD *__thiscall VectorClass_ptr_BuildingLightClass::Constructor_VectorClass_B
 
 
 // ==== 0x004EF800  _VectorClass_PAVParticleClass::vt[00]  this=VectorClass  sig=csp ====
-_DWORD *__thiscall ParticleSystemClass::vt_00(_VectorClass_PAVParticleClass *this, char a2)
+_DWORD *__thiscall ParticleSystemClass::g_var_bba615(_VectorClass_PAVParticleClass *this, char a2)
 {
   void *v3; // eax
 
@@ -19844,7 +19844,7 @@ _DWORD *__thiscall FoggedObjectClass_42_::loc_4E0D30(_DWORD *Block, char a2)
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x4e0d33*/
-  *Block = &vt_VectorClass_FootClass; /*0x4e0d36*/
+  *Block = &g_ptr_7E8C48; /*0x4e0d36*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x4e0d40*/
   {
     __3_YAXPAX_Z(v3); /*0x4e0d48*/
@@ -26808,24 +26808,24 @@ char sub_4E8220()
 
 
 
-// ==== 0x004E8240  TiberianSunClassFactory::vt_placeholder_00  this=TiberianSunClassFactory  sig=csp ====
-int __thiscall HouseClass::vt_placeholder_00(TiberianSunClassFactory *this)
+// ==== 0x004E8240  TiberianSunClassFactory::g_var_048e7c  this=TiberianSunClassFactory  sig=csp ====
+int __thiscall HouseClass::g_var_048e7c(TiberianSunClassFactory *this)
 {
   return 1; /*0x4e8245*/
 }
 
 
 
-// ==== 0x004E8250  TiberianSunClassFactory::vt_placeholder_01  this=TiberianSunClassFactory  sig=csp ====
-int __thiscall HouseClass::vt_placeholder_01(TiberianSunClassFactory *this)
+// ==== 0x004E8250  TiberianSunClassFactory::g_var_25576f  this=TiberianSunClassFactory  sig=csp ====
+int __thiscall HouseClass::g_var_25576f(TiberianSunClassFactory *this)
 {
   return 1; /*0x4e8255*/
 }
 
 
 
-// ==== 0x004E8260  TiberianSunClassFactory::vt_placeholder_02  this=TiberianSunClassFactory  sig=csp ====
-int __thiscall HouseClass::vt_placeholder_02(TiberianSunClassFactory *this, int a2)
+// ==== 0x004E8260  TiberianSunClassFactory::g_var_c1fcbd  this=TiberianSunClassFactory  sig=csp ====
+int __thiscall HouseClass::g_var_c1fcbd(TiberianSunClassFactory *this, int a2)
 {
   return 0; /*0x4e8262*/
 }
@@ -28444,7 +28444,7 @@ char __thiscall HouseClass::COMStub_1(_VectorClass_PAVTagClass *this, int a2)
 
 
 // ==== 0x004E9240  ?$VectorClass@PAVTagClass@@::vt[02]  this=VectorClass  sig=csp ====
-char __thiscall HouseClass::vt_02_(void *this, int a2, _DWORD *a3)
+char __thiscall HouseClass::g_var_723ac8(void *this, int a2, _DWORD *a3)
 {
   _DWORD *v4; // edi
   int v6; // ecx
@@ -28493,7 +28493,7 @@ char __thiscall HouseClass::vt_02_(void *this, int a2, _DWORD *a3)
 
 
 // ==== 0x004E92F0  ?$VectorClass@PAVTagClass@@::vt[03]  this=VectorClass  sig=csp ====
-void __thiscall HouseClass::vt_03_(int this)
+void __thiscall HouseClass::g_var_78dc8d(int this)
 {
   if ( *(_DWORD *)(this + 4) && *(_BYTE *)(this + 13) ) /*0x4e92fd*/
   {
@@ -28507,7 +28507,7 @@ void __thiscall HouseClass::vt_03_(int this)
 
 
 // ==== 0x004E9320  ?$VectorClass@PAVTagClass@@::vt[04]  this=VectorClass  sig=csp ====
-int __thiscall HouseClass::vt_04_(int this, _DWORD *a2)
+int __thiscall HouseClass::g_var_9d376d(int this, _DWORD *a2)
 {
   int result; // eax
   int v3; // edx
@@ -28530,7 +28530,7 @@ int __thiscall HouseClass::vt_04_(int this, _DWORD *a2)
 
 
 // ==== 0x004E9360  ?$VectorClass@PAVTagClass@@::vt[05]  this=VectorClass  sig=csp ====
-unsigned int __thiscall HouseClass::vt_05_(int this, int a2)
+unsigned int __thiscall HouseClass::g_var_167f7c(int this, int a2)
 {
   if ( *(_BYTE *)(this + 12) ) /*0x4e9360*/
     return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2; /*0x4e9375*/
@@ -29434,7 +29434,7 @@ char __thiscall ParticleSystemClass::AddRef(_VectorClass_PAVParticleClass *this,
 
 
 // ==== 0x004E9E20  _VectorClass_PAVParticleClass::vt[02]  this=VectorClass  sig=csp ====
-char __thiscall ParticleSystemClass::vt_02(_VectorClass_PAVParticleClass *this, int a2, _DWORD *a3)
+char __thiscall ParticleSystemClass::g_var_e9d84c(_VectorClass_PAVParticleClass *this, int a2, _DWORD *a3)
 {
   _DWORD *v4; // edi
   int m_8; // ecx
@@ -29483,7 +29483,7 @@ char __thiscall ParticleSystemClass::vt_02(_VectorClass_PAVParticleClass *this, 
 
 
 // ==== 0x004E9ED0  _VectorClass_PAVParticleClass::vt[03]  this=VectorClass  sig=csp ====
-void __thiscall ParticleSystemClass::vt_03(_VectorClass_PAVParticleClass *this)
+void __thiscall ParticleSystemClass::g_var_ffdfec(_VectorClass_PAVParticleClass *this)
 {
   if ( *(_DWORD *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x4e9edd*/
   {
@@ -29497,7 +29497,7 @@ void __thiscall ParticleSystemClass::vt_03(_VectorClass_PAVParticleClass *this)
 
 
 // ==== 0x004E9F00  _VectorClass_PAVParticleClass::vt[04]  this=VectorClass  sig=csp ====
-int __thiscall ParticleSystemClass::vt_04(_VectorClass_PAVParticleClass *this, _DWORD *a2)
+int __thiscall ParticleSystemClass::g_var_0e2ad2(_VectorClass_PAVParticleClass *this, _DWORD *a2)
 {
   int result; // eax
   int m_8; // edx
@@ -29520,7 +29520,7 @@ int __thiscall ParticleSystemClass::vt_04(_VectorClass_PAVParticleClass *this, _
 
 
 // ==== 0x004E9F40  _VectorClass_PAVParticleClass::vt[05]  this=VectorClass  sig=csp ====
-unsigned int __thiscall ParticleSystemClass::vt_05(_VectorClass_PAVParticleClass *this, int a2)
+unsigned int __thiscall ParticleSystemClass::g_var_8e5f48(_VectorClass_PAVParticleClass *this, int a2)
 {
   if ( LOBYTE(this->m_C) ) /*0x4e9f40*/
     return (unsigned int)(a2 - *(_DWORD *)&this->m_1[3]) >> 2; /*0x4e9f55*/
@@ -36655,7 +36655,7 @@ int __thiscall VectorClass_ptr_SuperClass::FindItemIndex_0(_DynamicVectorClass_P
 
 
 // ==== 0x004EF4E0  ?$VectorClass@PAVTagClass@@::vt[00]  this=VectorClass  sig=csp ====
-_DWORD *__thiscall HouseClass::vt_00_(_DWORD *Block, char a2)
+_DWORD *__thiscall HouseClass::g_var_4cd06d(_DWORD *Block, char a2)
 {
   void *v3; // eax
 
@@ -36877,7 +36877,7 @@ _DWORD *__thiscall VectorClass_ptr_BuildingLightClass::Constructor_VectorClass_B
 
 
 // ==== 0x004EF800  _VectorClass_PAVParticleClass::vt[00]  this=VectorClass  sig=csp ====
-_DWORD *__thiscall ParticleSystemClass::vt_00(_VectorClass_PAVParticleClass *this, char a2)
+_DWORD *__thiscall ParticleSystemClass::g_var_bba615(_VectorClass_PAVParticleClass *this, char a2)
 {
   void *v3; // eax
 

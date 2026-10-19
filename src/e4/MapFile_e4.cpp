@@ -16,7 +16,7 @@ DynamicVector * MapFile::QueryInterface(unsigned int * Block, char a2)
 {
 
   int v3 = *&Block->__pad_004; // eax /*0x69d523*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x69d526*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x69d526*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x69d530*/
   {
     int v4; // ecx
@@ -56,7 +56,7 @@ unsigned int * MapFile::Constructor(int a2, int a3, void *a3_1, void *a4)
   this->q008 = a2; /*0x69d77e*/
   (this->MapFile_field_0x0C) = ((this->MapFile_field_0x0C) & ~0xFF) | ((1) & 0xFF); /*0x69d781*/
   (this->MapFile_field_0x0C) = ((this->MapFile_field_0x0C) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x69d785*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x69d788*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x69d788*/
   if ( a2 ) /*0x69d78e*/
   {
     if ( a3 ) /*0x69d796*/

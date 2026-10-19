@@ -30,7 +30,7 @@ int ConnectionPointClass::GetConnectionInterface(unsigned int * a1, int a2)
   *(unsigned int *)(v3 + 12) = 0; /*0x4a079b*/
   *(unsigned char *)(v3 + 16) = 1; /*0x4a079e*/
   *(unsigned char *)(v3 + 17) = 0; /*0x4a07a2*/
-  *(unsigned int *)(v3 + 4) = (unsigned int)(&vt_VectorClass); /*0x4a07a5*/
+  *(unsigned int *)(v3 + 4) = (unsigned int)(&g_ptr_7E8500); /*0x4a07a5*/
   if ( (int *)(v3 + 4) != &a1->ConnectionPointClass_field_0x1C ) /*0x4a07ab*/
   {
     VectorClass::ClearAndFree2(v3 + 4); /*0x4a07af*/
@@ -71,10 +71,10 @@ int ConnectionPointClass::GetConnectionInterface(unsigned int * a1, int a2)
   }
   *(unsigned int *)(v3 + 20) = *((unsigned int *)a1 + 11); /*0x4a0815*/
   *(unsigned int *)(v3 + 24) = *((unsigned int *)a1 + 12); /*0x4a081b*/
-  *(unsigned int *)(v3 + 4) = (unsigned int)(&vt_DynamicVectorClass); /*0x4a081e*/
+  *(unsigned int *)(v3 + 4) = (unsigned int)(&g_ptr_7E3238); /*0x4a081e*/
   *(unsigned int *)(v3 + 28) = 0; /*0x4a0824*/
   *(unsigned int *)(v3 + 32) = 0; /*0x4a0827*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_EnumConnectionsClass) */  /*0x4a082a*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E5CA4) */  /*0x4a082a*/
   int i; // esi
   for ( i = 0; i < *(unsigned int *)(v3 + 20); ++i ) /*0x4a0837*/
   {
@@ -101,10 +101,10 @@ unsigned int * ConnectionPointClass::Construct(unsigned int * a1, ConnectionPoin
   *((unsigned int *)a1 + 9) = 0; /*0x4a089f*/
   *((unsigned char *)a1 + 40) = 1; /*0x4a08a2*/
   *((unsigned char *)a1 + 41) = 0; /*0x4a08a6*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass) */  /*0x4a08a9*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E3238) */  /*0x4a08a9*/
   *((unsigned int *)a1 + 12) = 10; /*0x4a08b0*/
   *((unsigned int *)a1 + 11) = 0; /*0x4a08b7*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_ConnectionPointClass) */  /*0x4a08ba*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E5CE4) */  /*0x4a08ba*/
   (*(void (**)(int))(*(unsigned int *)a3 + 4))(a3); /*0x4a08c3*/
   return a1->__pad_0; /*0x4a08c8*/
 
@@ -315,7 +315,7 @@ unsigned int * ConnectionPointClass_9::QueryInterface(char a2)  // G42.41d: trut
 
   void *v3; // eax
   v3 = (void *)(*&this->q004); /*0x4a14f3*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x4a14f6*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x4a14f6*/
   if ( v3 && (((this->m_C) >> 8) & 0xFF) ) /*0x4a1500*/
   {
     __3_YAXPAX_Z(v3); /*0x4a1508*/

@@ -164,10 +164,10 @@ RLEBlitTransZRemapXlatAlpha_ushort * RLEBlitTransZRemapXlatAlpha_ushort::QueryIn
 
   void *m_C; // eax
   m_C = (void *)Block->u32_C; /*0x49aa48*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_RLEBlitTransZRemapXlatAlpha) */  /*0x49aa4b*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_var_477f70) */  /*0x49aa4b*/
   FractalNoise::Dtor(m_C); /*0x49aa52*/
   Block->u32_C = 0; /*0x49aa5b*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_RLEBlitter) */  /*0x49aa64*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E5BA0) */  /*0x49aa64*/
   if ( (a2 & 1) != 0 ) /*0x49aa6a*/
     operator delete((Block)); /*0x49aa6d*/
   return Block->tail_0; /*0x49aa77*/

@@ -5913,7 +5913,7 @@ _BYTE *__thiscall sub_488280(CheckListClass *this, int a2, int a3, int a4, int a
 
 
 // ==== 0x00488310  CheckListClass::?  this=CheckListClass  sig=csp ====
-int __thiscall CheckListClass::vt_method_488310(CheckListClass *this, int a2)
+int __thiscall CheckListClass::g_var_1d7b82(CheckListClass *this, int a2)
 {
   int v3; // eax
 
@@ -16656,7 +16656,7 @@ _BYTE *__thiscall sub_488280(CheckListClass *this, int a2, int a3, int a4, int a
 
 
 // ==== 0x00488310  CheckListClass::?  this=CheckListClass  sig=csp ====
-int __thiscall CheckListClass::vt_method_488310(CheckListClass *this, int a2)
+int __thiscall CheckListClass::g_var_1d7b82(CheckListClass *this, int a2)
 {
   int v3; // eax
 

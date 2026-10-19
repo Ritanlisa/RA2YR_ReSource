@@ -53,7 +53,7 @@ TriggerClass * * TagClass::Destructor(void * a1)
   int v20; // eax
   unsigned int v22[4]; // [esp+10h] [ebp-10h] BYREF
 
-  /* X11: vtable install elided (base-interface slot, RHS vt_TagClass) */  /*0x6e4f69*/
+  /* X11: vtable install elided (base-interface slot, RHS g_ptr_7F44B4) */  /*0x6e4f69*/
   /* X11: vtable install elided (implicit via TagClass virtuals 0x6e4f6f) */
   /* X11: vtable install elided (implicit via TagClass virtuals 0x6e4f76) */
   /* X11: vtable install elided (implicit via TagClass virtuals 0x6e4f7d) */

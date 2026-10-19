@@ -340,10 +340,10 @@ char ** LoadFromINIGraphicMenu(void * a1, void * a2, void * a3)
   v9 = v8 + 88; /*0x4f1d18*/
   *(unsigned int *)(v8 + 84) = 0; /*0x4f1d1b*/
   sub_4F2C00((VectorClass *)(v8 + 88), 0, 0); /*0x4f1d22*/
-  *(unsigned int *)(v8 + 88) = &vt_DynamicVectorClass_GraphicMenuItem; /*0x4f1d27*/
+  *(unsigned int *)(v8 + 88) = &g_ptr_7EA604; /*0x4f1d27*/
   *(unsigned int *)(v8 + 108) = 10; /*0x4f1d2d*/
   *(unsigned int *)(v8 + 104) = 0; /*0x4f1d34*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_GraphicMenu) */  /*0x4f1d3b*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EA5FC) */  /*0x4f1d3b*/
   unknown_libname_73(&v38.ptr_8); /*0x4f1d42*/
   String::Assign((String *)&v38.ptr_C, &g_INI_DefaultBuffer); /*0x4f1d50*/
   String::Assign((String *)&v38, aBackground); /*0x4f1d5e*/
@@ -365,7 +365,7 @@ char ** LoadFromINIGraphicMenu(void * a1, void * a2, void * a3)
     String::Concat2((String *)&v38.ptr_8, (char **)&v38, aVqa); /*0x4f1dd6*/
     v12 = CCFileClass::Construct2((CCFileClass *)&v38.ambientSoundController[2], (char **)&v38); /*0x4f1de4*/
     v13 = v12->Open(0, p_nextObject); /*0x4f1df8*/
-    /* X11: vtable install elided (X67 recv-slot, RHS vt_CCFileClass) */  /*0x4f1dfa*/
+    /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E16B0) */  /*0x4f1dfa*/
     v39 = 0; /*0x4f1e02*/
     Vector::Clear((int)&v38.location[1]); /*0x4f1e09*/
     v38.ambientSoundController[3] = (int)&off_7E1668; /*0x4f1e12*/
@@ -408,7 +408,7 @@ LABEL_18:
     String::Concat2((String *)&v38.ptr_C, (char **)&v38.uniqueId, aBik_0); /*0x4f1e66*/
     v15 = CCFileClass::Construct2((CCFileClass *)&v38.ambientSoundController[3], (char **)&v38.uniqueId); /*0x4f1e74*/
     v16 = v15->Open(0); /*0x4f1e89*/
-    /* X11: vtable install elided (X67 recv-slot, RHS vt_CCFileClass) */  /*0x4f1e8b*/
+    /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E16B0) */  /*0x4f1e8b*/
     v39 = 0; /*0x4f1e93*/
     Vector::Clear((int)&v38.location[1]); /*0x4f1e9e*/
     v38.ambientSoundController[3] = (int)&off_7E1668; /*0x4f1ea7*/
@@ -569,7 +569,7 @@ ObjectClass * * E4Recv_4F2300::ProcessGraphicMenu()
         *(unsigned int *)&v21.m_1[3] = this->M84 + 4); /*0x4f24a9*/
         int v22; // [esp+3Ah] [ebp-14h]
         v22 = 0; /*0x4f24b1*/
-        /* X11: vtable install elided (X67 star-deref, RHS vt_VectorCursor_GraphicMenuItem_DynamicVectorClass_GraphicMenuItem) */  /*0x4f24b5*/
+        /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EA644) */  /*0x4f24b5*/
         if ( Map::CanScroll(&v21) ) /*0x4f24bd*/
         {
           do /*0x4f24f6*/
@@ -584,14 +584,14 @@ ObjectClass * * E4Recv_4F2300::ProcessGraphicMenu()
         }
         if ( (*(uint8_t (**)(_VectorCursor_PAVGraphicMenuItem_V_DynamicVectorClass_PAVGraphicMenuItem *))(*(unsigned int *)v21.__pad_0 + 4))(&v21) ) /*0x4f2505*/
           v11 = *(State **)(*(unsigned int *)(*(unsigned int *)&v21.m_1[3] + 4) + 4 * v22); /*0x4f2517*/
-        /* X11: vtable install elided (X67 star-deref, RHS vt_VectorCursor_GraphicMenuItem_DynamicVectorClass_GraphicMenuItem) */  /*0x4f251a*/
+        /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EA644) */  /*0x4f251a*/
       }
       else
       {
         *(unsigned int *)&v19.m_1[3] = this->M84 + 4); /*0x4f241e*/
         int v20; // [esp+2Eh] [ebp-20h]
         v20 = 0; /*0x4f2422*/
-        /* X11: vtable install elided (X67 star-deref, RHS vt_VectorCursor_GraphicMenuItem_DynamicVectorClass_GraphicMenuItem) */  /*0x4f242a*/
+        /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EA644) */  /*0x4f242a*/
         if ( Map::CanScroll(&v19) ) /*0x4f2432*/
         {
           do /*0x4f2467*/
@@ -608,7 +608,7 @@ ObjectClass * * E4Recv_4F2300::ProcessGraphicMenu()
           v11 = *(State **)(*(unsigned int *)(*(unsigned int *)&v19.m_1[3] + 4) + 4 * v20); /*0x4f2488*/
         else
           v11 = 0; /*0x4f2498*/
-        /* X11: vtable install elided (X67 star-deref, RHS vt_VectorCursor_GraphicMenuItem_DynamicVectorClass_GraphicMenuItem) */  /*0x4f248b*/
+        /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EA644) */  /*0x4f248b*/
       }
       if ( v11 ) /*0x4f2524*/
       {
@@ -628,7 +628,7 @@ ObjectClass * * E4Recv_4F2300::ProcessGraphicMenu()
       *(unsigned int *)&v23.m_1[3] = this->M84 + 4); /*0x4f2559*/
       int v24; // [esp+46h] [ebp-8h]
       v24 = 0; /*0x4f255d*/
-      /* X11: vtable install elided (X67 star-deref, RHS vt_VectorCursor_GraphicMenuItem_DynamicVectorClass_GraphicMenuItem) */  /*0x4f2561*/
+      /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EA644) */  /*0x4f2561*/
       if ( Map::CanScroll(&v23) ) /*0x4f2569*/
       {
         do /*0x4f25a2*/
@@ -643,7 +643,7 @@ ObjectClass * * E4Recv_4F2300::ProcessGraphicMenu()
       }
       if ( (*(uint8_t (**)(_VectorCursor_PAVGraphicMenuItem_V_DynamicVectorClass_PAVGraphicMenuItem *))(*(unsigned int *)v23.__pad_0 + 4))(&v23) ) /*0x4f25b1*/
         v13 = *(State **)(*(unsigned int *)(*(unsigned int *)&v23.m_1[3] + 4) + 4 * v24); /*0x4f25c3*/
-      /* X11: vtable install elided (X67 star-deref, RHS vt_VectorCursor_GraphicMenuItem_DynamicVectorClass_GraphicMenuItem) */  /*0x4f25c8*/
+      /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EA644) */  /*0x4f25c8*/
       if ( v13 != v4 ) /*0x4f25d0*/
       {
         if ( v4 ) /*0x4f25d4*/
@@ -952,7 +952,7 @@ MSAnim * * E4Recv_4F3460::sub_4F3460(int a2, ReferenceCounted * a3, unsigned int
   this->M48 = 0; /*0x4f34a7*/
   unknown_libname_73(&this->q034); /*0x4f34aa*/
   v15 = a9; /*0x4f34af*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_GraphicMenuImageItem) */  /*0x4f34b3*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EA674) */  /*0x4f34b3*/
   if ( String::Length(v15) && (a3 = __2_YAPAXI_Z(0x10u)) != 0 ) /*0x4f34d4*/
   {
     String::Assign((char **)&a2, aHighlightsound); /*0x4f34df*/
@@ -1256,7 +1256,7 @@ int E4Recv_4FA210::sub_4FA210(int a2, int a3)
   *(unsigned int *)(a2 + 8) = 0; /*0x4fa234*/
   *(unsigned char *)(a2 + 12) = 1; /*0x4fa237*/
   *(unsigned char *)(a2 + 13) = 0; /*0x4fa23b*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_TeamTypeClass_const) */  /*0x4fa23e*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EA9E4) */  /*0x4fa23e*/
   if ( (void ***)a2 != &v11 ) /*0x4fa244*/
   {
     VectorClass::ClearAndFree3(a2); /*0x4fa248*/
@@ -1294,8 +1294,8 @@ int E4Recv_4FA210::sub_4FA210(int a2, int a3)
   v9 = Block; /*0x4fa2a5*/
   v4 = Block == 0; /*0x4fa2a9*/
   *(unsigned int *)(a2 + 20) = v8; /*0x4fa2ab*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_TypeList_TeamTypeClass_const) */  /*0x4fa2ae*/
-  v11 = &vt_VectorClass_TeamTypeClass_const; /*0x4fa2b4*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EA9C4) */  /*0x4fa2ae*/
+  v11 = &g_ptr_7EA9E4; /*0x4fa2b4*/
   if ( !v4 && v14 ) /*0x4fa2c2*/
     __3_YAXPAX_Z(v9); /*0x4fa2c5*/
   return a2; /*0x4fa2cf*/
@@ -1534,20 +1534,20 @@ int sub_4F1B80(char ** a1, int a2)
     v5.headNode[1] = 0; /*0x4f1be3*/
     v5.sectionHead[1] = 0; /*0x4f1be7*/
     v5.sectionHead[2] = 0; /*0x4f1beb*/
-    /* X11: vtable install elided (X67 recv-slot, RHS vt_GenericNode) */  /*0x4f1bef*/
+    /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E1B0C) */  /*0x4f1bef*/
     GenericNode::Constructor((MixFileClass *)&v5.sectionCount); /*0x4f1bf7*/
     LinkedList::Prepend((LinkedList *)v5.sectionHead, (int)&v5.sectionCount); /*0x4f1c0d*/
-    /* X11: vtable install elided (X67 recv-slot, RHS vt_List_INIClass_INISection) */  /*0x4f1c16*/
+    /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E1AFC) */  /*0x4f1c16*/
     memset(&v5.needsSave_flag, 0, 13); /*0x4f1c24*/
     v5.unknown38 = 0; /*0x4f1c34*/
     v5.INIClass_field_3C = 0; /*0x4f1c38*/
-    /* X11: vtable install elided (X67 star-deref, RHS vt_INIClass) */  /*0x4f1c3c*/
+    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EA5F4) */  /*0x4f1c3c*/
     if ( FileStraw::Open((FileStraw *)&v5, (int)&v6, 0) <= 0 ) /*0x4f1c4b*/
       v3 = 0; /*0x4f1c5c*/
     else
       v3 = LoadFromINIGraphicMenu(v4, &v5, a2); /*0x4f1c58*/
     HashTable::DestroyHashTableINIClass(&v5); /*0x4f1c62*/
-    /* X11: vtable install elided (X67 star-deref, RHS vt_CCFileClass) */  /*0x4f1c6e*/
+    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x4f1c6e*/
     v8 = 0; /*0x4f1c76*/
     Vector::Clear((int)v7); /*0x4f1c7d*/
     *(unsigned int *)v6.__tail_0 = &off_7E1668; /*0x4f1c86*/
@@ -1556,7 +1556,7 @@ int sub_4F1B80(char ** a1, int a2)
   }
   else
   {
-    /* X11: vtable install elided (X67 star-deref, RHS vt_CCFileClass) */  /*0x4f1bab*/
+    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x4f1bab*/
     v8 = 0; /*0x4f1bb3*/
     Vector::Clear((int)v7); /*0x4f1bba*/
     *(unsigned int *)v6.__tail_0 = &off_7E1668; /*0x4f1bc3*/
@@ -1577,7 +1577,7 @@ int ObjectClass::sub_4F2280(int a2, int a3)
   int v5; // [esp+8h] [ebp-4h]
   v5 = 0; /*0x4f2286*/
   *(unsigned int *)&v4.m_1[3] = &this->customSound_controller[2]; /*0x4f228e*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorCursor_GraphicMenuItem_DynamicVectorClass_GraphicMenuItem) */  /*0x4f2296*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EA644) */  /*0x4f2296*/
   int result; // eax
   for ( result = Map::CanScroll(&v4); /*0x4f22a6*/
   (unsigned char)result;
@@ -1602,7 +1602,7 @@ int ObjectClass::sub_4F26E0(int a2)
   *(unsigned int *)&v4.m_1[3] = &this->customSound_controller[2]; /*0x4f26e7*/
   int v5; // [esp+Ch] [ebp-4h]
   v5 = 0; /*0x4f26ef*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorCursor_GraphicMenuItem_DynamicVectorClass_GraphicMenuItem) */  /*0x4f26f7*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EA644) */  /*0x4f26f7*/
   if ( Map::CanScroll(&v4) ) /*0x4f26ff*/
   {
     do /*0x4f2738*/
@@ -1633,7 +1633,7 @@ int ObjectClass::sub_4F2770(int a2)
   *(unsigned int *)&v4.m_1[3] = &this->customSound_controller[2]; /*0x4f2777*/
   int v5; // [esp+Ch] [ebp-4h]
   v5 = 0; /*0x4f277f*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorCursor_GraphicMenuItem_DynamicVectorClass_GraphicMenuItem) */  /*0x4f2787*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EA644) */  /*0x4f2787*/
   if ( Map::CanScroll(&v4) ) /*0x4f278f*/
   {
     do /*0x4f27c8*/
@@ -1733,7 +1733,7 @@ int * E4Recv_4F2F10::sub_4F2F10(GraphicMenuAnimItem * a2, unsigned int * a3, Gra
   Vector::Clear((int)&v15.customSound_controller[3]); /*0x4f3019*/
   /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x4f3027) */
   BufferIOFileClass::Dtor((BufferIOFileClass *)&v15.?); /*0x4f302b*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_CCFileClass) */  /*0x4f3037*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E16B0) */  /*0x4f3037*/
   int v17; // [esp+E4h] [ebp-8h]
   v17 = 0; /*0x4f303e*/
   char v16[12]; // [esp+D8h] [ebp-14h] BYREF
@@ -1793,7 +1793,7 @@ unsigned int * E4Recv_4F3C40::sub_4F3C40(int a2, const char ** a3)
   v3->nextArrayIndex = 0; /*0x4f3c61*/
   (v3->u8_C) = 1; /*0x4f3c64*/
   (v3->u8_E) = 0; /*0x4f3c68*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass) */  /*0x4f3c6b*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E3238) */  /*0x4f3c6b*/
   v3->occupant = 10; /*0x4f3c71*/
   v3->NeedsSaveOrLink = 0; /*0x4f3c78*/
   /* X11: vtable install elided (implicit via GraphicMenuShortcutItem virtuals 0x4f3c7b) */
@@ -2142,7 +2142,7 @@ void sub_4F5130()
 {
   if ( (byte_A8EF60 & 1) == 0 ) /*0x4f513a*/
   {
-    dword_A8EFC8 = (int)&vt_VectorClass; /*0x4f513e*/
+    dword_A8EFC8 = (int)&g_ptr_7E8500; /*0x4f513e*/
     byte_A8EF60 |= 1u; /*0x4f5151*/
     if ( dword_A8EFCC ) /*0x4f5157*/
     {

@@ -34,7 +34,7 @@
 namespace gamemd {  // G42.18 ns repair
 void E4Recv_46D350::sub_46D350()
 {
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_CampaignScoreClass) */  /*0x46d350*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E4AAC) */  /*0x46d350*/
 }  // G42.18 ns repair
 } // namespace gamemd
 
@@ -642,7 +642,7 @@ void sub_466320()
 {
   if ( (byte_89DDD0 & 1) == 0 ) /*0x46632a*/
   {
-    dword_89DE18 = (int)&vt_VectorClass; /*0x46632e*/
+    dword_89DE18 = (int)&g_ptr_7E8500; /*0x46632e*/
     byte_89DDD0 |= 1u; /*0x466341*/
     if ( dword_89DE1C ) /*0x466347*/
     {

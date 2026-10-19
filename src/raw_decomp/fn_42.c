@@ -15417,7 +15417,7 @@ _DWORD *__thiscall VectorClass_ptr_AlphaShapeClass::loc_421B10(_DWORD *Block, ch
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x421b13*/
-  *Block = &vt_VectorClass_AlphaShapeClass; /*0x421b16*/
+  *Block = &g_ptr_7E3258; /*0x421b16*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x421b20*/
   {
     __3_YAXPAX_Z(v3); /*0x421b28*/

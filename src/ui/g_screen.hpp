@@ -59,14 +59,14 @@ public:
     virtual void LoadFromINI(CCINIClass* ini);
     virtual const wchar_t* GetToolTip(unsigned int dialog_id);
     int CloseWindow();
-    virtual void vt_entry_8C();
+    virtual void g_var_5463b9();
     // unmatched: no callgraph reference and no git history record
-    virtual bool vt_entry_90(const CellStruct& cell, HouseClass* house);
-    virtual bool vt_entry_94(const CellStruct& cell, HouseClass* house, bool unk);
+    virtual bool g_var_487457(const CellStruct& cell, HouseClass* house);
+    virtual bool g_var_72f2d5(const CellStruct& cell, HouseClass* house, bool unk);
     // unmatched: no callgraph reference and no git history record
-    virtual bool vt_entry_98(const CellStruct& cell, HouseClass* house);
+    virtual bool g_var_33fd16(const CellStruct& cell, HouseClass* house);
     // unmatched: no callgraph reference and no git history record
-    virtual bool vt_entry_9C(const CellStruct& cell, HouseClass* house);
+    virtual bool g_var_d6ef1e(const CellStruct& cell, HouseClass* house);
 
     int32_t  ScreenShakeX;
     int32_t  ScreenShakeY;

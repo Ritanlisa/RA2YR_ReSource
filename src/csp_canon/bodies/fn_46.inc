@@ -751,9 +751,9 @@ int CampaignClass::Write(AbstractTypeClass * aP0, int aP1)
     {
       ((AbstractTypeClass*)(int)aP0)->Init((int)&aP1); /*0x46d01f*/
       /* X11: vtable install elided (implicit via CampaignClass virtuals 0x46d024) */
-      ((unsigned int *)aP0)[0] = (unsigned int)(&vt_CampaignClass); /*0x46d02a*/
-      ((unsigned int *)aP0)[0] = (unsigned int)(&vt_CampaignClass); /*0x46d031*/
-      ((unsigned int *)aP0)[0] = (unsigned int)(&vt_CampaignClass); /*0x46d038*/
+      ((unsigned int *)aP0)[0] = (unsigned int)(&g_ptr_7E49FC); /*0x46d02a*/
+      ((unsigned int *)aP0)[0] = (unsigned int)(&g_ptr_7E49FC); /*0x46d031*/
+      ((unsigned int *)aP0)[0] = (unsigned int)(&g_ptr_7E49FC); /*0x46d038*/
     }
     return 0; /*0x46d03f*/
   }
@@ -798,9 +798,9 @@ void ** CampaignClass::DTOR(char a2)
   CampaignClass *v5; // [esp+4h] [ebp-4h] BYREF
 
   /* X11: vtable install elided (implicit via CampaignClass virtuals 0x46d096) */
-  ((unsigned int *)this)[0] = (unsigned int)(&vt_CampaignClass); /*0x46d09c*/
-  ((unsigned int *)this)[0] = (unsigned int)(&vt_CampaignClass); /*0x46d0a3*/
-  ((unsigned int *)this)[0] = (unsigned int)(&vt_CampaignClass); /*0x46d0aa*/
+  ((unsigned int *)this)[0] = (unsigned int)(&g_ptr_7E49FC); /*0x46d09c*/
+  ((unsigned int *)this)[0] = (unsigned int)(&g_ptr_7E49FC); /*0x46d0a3*/
+  ((unsigned int *)this)[0] = (unsigned int)(&g_ptr_7E49FC); /*0x46d0aa*/
   AbstractClass::AnnounceExpiredPointer((gamemd::AbstractClass *)(this), 1); /*0x46d0b1*/
   v5 = (gamemd::CampaignClass *)(this); /*0x46d0c6*/
   v3 = (*(int (**)(unsigned int *, CampaignClass **))(dword_A83CF8 + 16))(&dword_A83CF8, &v5); /*0x46d0ca*/
@@ -824,7 +824,7 @@ return (void **)this; /*0x46d118*/
 unsigned int * MPCooperative::initGame()
 {
 
-  this->MPCooperative_field_0x0 = &vt_CampaignScoreClass; /*0x46d334*/
+  this->MPCooperative_field_0x0 = &g_ptr_7E4AAC; /*0x46d334*/
   this->MPCooperative_field_0x4 = 0; /*0x46d33a*/
   dword_89E050 = 0; /*0x46d33d*/
   *((unsigned int *)((char *)&stru_81AF8C + 6)) = -1; /*0x46d343*/
@@ -836,7 +836,7 @@ unsigned int * MPCooperative::initGame()
 void E4Recv_46D350::sub_46D350()
 {
 
-  this->m_0 = (int)&vt_CampaignScoreClass; /*0x46d350*/
+  this->m_0 = (int)&g_ptr_7E4AAC; /*0x46d350*/
 
 }
 

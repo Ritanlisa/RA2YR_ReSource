@@ -1484,12 +1484,12 @@ void* Gap2Recv_597430::Team_Start_597430() {
   rc_ptr v8[4]; // [esp+14h] [ebp-8h] BYREF
 
   ComPtr::Constructor((ComPtr *)&v6); /*0x59743c*/
-  v6 = &vt_rc_ptr; /*0x59744e*/
+  v6 = &g_var_5878c0; /*0x59744e*/
   if ( *(unsigned int *)&dword_A8B238 == 4 && dword_A8B244 == 3 ) /*0x59745f*/
   {
     WDTTerritoryClass = FindWDTTerritoryClass(v8, *(int *)dword_A8B240); /*0x59746b*/
     ComPtr::Set((ComPtr *)&v6, WDTTerritoryClass[1]); /*0x597478*/
-    *(unsigned int *)v8 = &vt_rc_ptr; /*0x597481*/
+    *(unsigned int *)v8 = &g_var_5878c0; /*0x597481*/
     ComPtr::Release((ComPtr *)v8); /*0x597485*/
   }
   v3 = v7; /*0x59748a*/
@@ -1563,7 +1563,7 @@ void* Gap2Recv_597430::Team_Start_597430() {
     this->customSound_controller[4] = *(uint8_t *)(v3 + 54); /*0x597593*/
     this->ambientSoundController[1] = *(unsigned int *)(v3 + 24); /*0x597599*/
   }
-  v6 = &vt_rc_ptr; /*0x5975a0*/
+  v6 = &g_var_5878c0; /*0x5975a0*/
   return ComPtr::Release((ComPtr *)&v6); /*0x5975a9*/
 
 }

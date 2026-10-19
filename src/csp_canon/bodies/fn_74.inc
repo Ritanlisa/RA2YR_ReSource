@@ -398,10 +398,10 @@ int Gap2Recv_74C9F0::DestroyVeinholeMonster() {
 
   v1 = this; /*0x74c9f4*/
   Vtable3 = (int)this; /*0x74c9f9*/
-  *(unsigned int *)this->__pad_0 = &vt_VeinholeMonsterClass; /*0x74c9fd*/
-  this->VeinholeMonsterClass_field_0x04 = (int)&vt_VeinholeMonsterClass; /*0x74ca03*/
-  this->VeinholeMonsterClass_field_0x08 = (int)&vt_VeinholeMonsterClass; /*0x74ca0a*/
-  this->VeinholeMonsterClass_field_0x0C = (int)&vt_VeinholeMonsterClass; /*0x74ca11*/
+  *(unsigned int *)this->__pad_0 = &g_var_2e91b1; /*0x74c9fd*/
+  this->VeinholeMonsterClass_field_0x04 = (int)&g_var_2e91b1; /*0x74ca03*/
+  this->VeinholeMonsterClass_field_0x08 = (int)&g_var_2e91b1; /*0x74ca0a*/
+  this->VeinholeMonsterClass_field_0x0C = (int)&g_var_2e91b1; /*0x74ca11*/
   v31 = -2; /*0x74ca18*/
   do /*0x74cc16*/
   {

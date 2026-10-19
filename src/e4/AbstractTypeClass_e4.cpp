@@ -31,10 +31,10 @@ int AbstractTypeClass::Constructor(char *aP1, void *a2, void *a3, void *a4)
   this->__pad_024 = 0; /*0x410817*/
   this->UINameLabel = 0; /*0x41081a*/
   this->Name = 0; /*0x41081e*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_AbstractTypeClass) */  /*0x410822*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_AbstractTypeClass) */  /*0x410829*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_AbstractTypeClass) */  /*0x410830*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_AbstractTypeClass) */  /*0x410837*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E1FD4) */  /*0x410822*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E1FD4) */  /*0x410829*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E1FD4) */  /*0x410830*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E1FD4) */  /*0x410837*/
   if ( aP1 ) /*0x41083e*/
   {
     strncpy(Destination, aP1, 0x18u); /*0x410895*/
@@ -96,7 +96,7 @@ int AbstractTypeClass::Dtor(void *a1)
 {
 
 
-  /* X11: vtable install elided (base-interface slot, RHS vt_AbstractTypeClass) */  /*0x4109cd*/
+  /* X11: vtable install elided (base-interface slot, RHS g_ptr_7E1FD4) */  /*0x4109cd*/
   /* X11: vtable install elided (implicit via AbstractTypeClass virtuals 0x4109d3) */
   /* X11: vtable install elided (implicit via AbstractTypeClass virtuals 0x4109da) */
   /* X11: vtable install elided (implicit via AbstractTypeClass virtuals 0x4109e1) */
@@ -188,10 +188,10 @@ AbstractTypeClass * AbstractTypeClass::ddtor(char a2, int aP1, int a3, int a4, i
 {
 
 
-  /* X11: vtable install elided (base-interface slot, RHS vt_AbstractTypeClass) */  /*0x410c3d*/
-  /* X11: vtable install elided (qmark slot, RHS vt_AbstractTypeClass) */  /*0x410c43*/
-  /* X11: vtable install elided (qmark slot, RHS vt_AbstractTypeClass) */  /*0x410c4a*/
-  /* X11: vtable install elided (qmark slot, RHS vt_AbstractTypeClass) */  /*0x410c51*/
+  /* X11: vtable install elided (base-interface slot, RHS g_ptr_7E1FD4) */  /*0x410c3d*/
+  /* X11: vtable install elided (qmark slot, RHS g_ptr_7E1FD4) */  /*0x410c43*/
+  /* X11: vtable install elided (qmark slot, RHS g_ptr_7E1FD4) */  /*0x410c4a*/
+  /* X11: vtable install elided (qmark slot, RHS g_ptr_7E1FD4) */  /*0x410c51*/
   AbstractTypeClass *v5; // [esp+4h] [ebp-4h] BYREF
   v5 = (gamemd::AbstractTypeClass *)(aP1); /*0x410c5f*/
   int v3; // eax

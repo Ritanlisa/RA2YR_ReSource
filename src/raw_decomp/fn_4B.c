@@ -1163,7 +1163,7 @@ int __thiscall DropListClass::OnClick(DropListClass *this)
 
 
 // ==== 0x004B4F20  DropListClass::?  this=DropListClass  sig=csp ====
-int __thiscall DropListClass::vt_method_4B4F20(DropListClass *this, int a2)
+int __thiscall DropListClass::g_var_926b49(DropListClass *this, int a2)
 {
   (*(void (__thiscall **)(int *, int))(this->DropListClass_field_0x50 + 12))(&this->DropListClass_field_0x50, a2); /*0x4b4f2f*/
   return LinkedList::InsertAfter((LinkClass *)this, a2); /*0x4b4f3a*/
@@ -8919,7 +8919,7 @@ int __thiscall DropListClass::OnClick(DropListClass *this)
 
 
 // ==== 0x004B4F20  DropListClass::?  this=DropListClass  sig=csp ====
-int __thiscall DropListClass::vt_method_4B4F20(DropListClass *this, int a2)
+int __thiscall DropListClass::g_var_926b49(DropListClass *this, int a2)
 {
   (*(void (__thiscall **)(int *, int))(this->DropListClass_field_0x50 + 12))(&this->DropListClass_field_0x50, a2); /*0x4b4f2f*/
   return LinkedList::InsertAfter((LinkClass *)this, a2); /*0x4b4f3a*/

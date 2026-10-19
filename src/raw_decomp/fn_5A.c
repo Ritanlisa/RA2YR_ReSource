@@ -22538,7 +22538,7 @@ _DWORD *__thiscall VectorClass_ptr_MapRegionClass::loc_5AD3E0(_DWORD *Block, cha
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x5ad3e3*/
-  *Block = &vt_VectorClass_MapRegionClass; /*0x5ad3e6*/
+  *Block = &g_ptr_7ED878; /*0x5ad3e6*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x5ad3f0*/
   {
     __3_YAXPAX_Z(v3); /*0x5ad3f8*/

@@ -29,36 +29,36 @@ namespace gamemd { class ObjectClass; class FootClass; }
 #include "src/type/particle_system_type.hpp"
 
 // G57w10: q000 externs (truth e4_globals_decls)
-extern unsigned char vt_AbstractTypeClass[4];  // data: 0x7E1FD4  // G57w10 vftable residue fix
-extern unsigned char vt_BufferIOFileClass[4];  // data: 0x7E3A2C  // G57w10 vftable residue fix
-extern unsigned char vt_CaptureManagerClass[4];  // data: 0x7E4B14  // G57w10 vftable residue fix
-extern unsigned char vt_DynamicVectorClass_AbstractClass[4];  // data: 0x7E91EC  // G57w10 vftable residue fix
-extern unsigned char vt_DynamicVectorClass_CellClass[4];  // data: 0x7ED9BC  // G57w10 vftable residue fix
-extern unsigned char vt_DynamicVectorClass_ControlNode[4];  // data: 0x7E4BA4  // G57w10 vftable residue fix
-extern unsigned char vt_DynamicVectorClass_InfantryClass[4];  // data: 0x7E43C8  // G57w10 vftable residue fix
-extern unsigned char vt_DynamicVectorClass_SlaveManagerClass_SlaveControl[4];  // data: 0x7F322C  // G57w10 vftable residue fix
-extern unsigned char vt_DynamicVectorClass_SpawnManagerClass_SpawnControl[4];  // data: 0x7F36B4  // G57w10 vftable residue fix
-extern unsigned char vt_DynamicVectorClass_TechnoTypeClass_const[4];  // data: 0x7E8934  // G57w10 vftable residue fix
-extern unsigned char vt_DynamicVectorClass_WaypointClass[4];  // data: 0x7F6ED4  // G57w10 vftable residue fix
-extern unsigned char vt_FactoryClass[4];  // data: 0x7E88A4  // G57w10 vftable residue fix
-extern unsigned char vt_FootClass[4];  // data: 0x7E8C68  // G57w10 vftable residue fix
-extern unsigned char vt_HouseTypeClass[4];  // data: 0x7EAB2C  // G57w10 vftable residue fix
-extern unsigned char vt_LightSourceClass[4];  // data: 0x7ECFFC  // G57w10 vftable residue fix
-extern unsigned char vt_ObjectTypeClass[4];  // data: 0x7EF2AC  // G57w10 vftable residue fix
-extern unsigned char vt_RawFileClass[4];  // data: 0x7F0904  // G57w10 vftable residue fix
-extern unsigned char vt_SlaveManagerClass[4];  // data: 0x7F319C  // G57w10 vftable residue fix
-extern unsigned char vt_SpawnManagerClass[4];  // data: 0x7F3624  // G57w10 vftable residue fix
-extern unsigned char vt_TEventClass[4];  // data: 0x7F554C  // G57w10 vftable residue fix
-extern unsigned char vt_TriggerClass[4];  // data: 0x7F582C  // G57w10 vftable residue fix
-extern unsigned char vt_TriggerTypeClass[4];  // data: 0x7F58D8  // G57w10 vftable residue fix
-extern unsigned char vt_TypeList_AircraftTypeClass_const[4];  // data: 0x7EABC8  // G57w10 vftable residue fix
-extern unsigned char vt_TypeList_InfantryTypeClass_const[4];  // data: 0x7EAC08  // G57w10 vftable residue fix
-extern unsigned char vt_TypeList_UnitTypeClass_const[4];  // data: 0x7EABE8  // G57w10 vftable residue fix
-extern unsigned char vt_UnitClass[4];  // data: 0x7F5C70  // G57w10 vftable residue fix
-extern unsigned char vt_VectorClass_Cell[4];  // data: 0x7E38D0  // G57w10 vftable residue fix
-extern unsigned char vt_VectorClass_CellClass[4];  // data: 0x7ED480  // G57w10 vftable residue fix
-extern unsigned char vt_WaveClass[4];  // data: 0x7F6BD0  // G57w10 vftable residue fix
-extern unsigned char vt_WaypointPathClass[4];  // data: 0x7F6E44  // G57w10 vftable residue fix
+extern unsigned char g_ptr_7E1FD4[4];  // data: 0x7E1FD4  // G57w10 vftable residue fix
+extern unsigned char g_ptr_7E3A2C[4];  // data: 0x7E3A2C  // G57w10 vftable residue fix
+extern unsigned char g_ptr_7E4B14[4];  // data: 0x7E4B14  // G57w10 vftable residue fix
+extern unsigned char g_ptr_7E91EC[4];  // data: 0x7E91EC  // G57w10 vftable residue fix
+extern unsigned char g_ptr_7ED9BC[4];  // data: 0x7ED9BC  // G57w10 vftable residue fix
+extern unsigned char g_ptr_7E4BA4[4];  // data: 0x7E4BA4  // G57w10 vftable residue fix
+extern unsigned char g_ptr_7E43C8[4];  // data: 0x7E43C8  // G57w10 vftable residue fix
+extern unsigned char g_ptr_7F322C[4];  // data: 0x7F322C  // G57w10 vftable residue fix
+extern unsigned char g_ptr_7F36B4[4];  // data: 0x7F36B4  // G57w10 vftable residue fix
+extern unsigned char g_ptr_7E8934[4];  // data: 0x7E8934  // G57w10 vftable residue fix
+extern unsigned char g_ptr_7F6ED4[4];  // data: 0x7F6ED4  // G57w10 vftable residue fix
+extern unsigned char g_ptr_7E88A4[4];  // data: 0x7E88A4  // G57w10 vftable residue fix
+extern unsigned char g_ptr_7E8C68[4];  // data: 0x7E8C68  // G57w10 vftable residue fix
+extern unsigned char g_ptr_7EAB2C[4];  // data: 0x7EAB2C  // G57w10 vftable residue fix
+extern unsigned char g_ptr_7ECFFC[4];  // data: 0x7ECFFC  // G57w10 vftable residue fix
+extern unsigned char g_ptr_7EF2AC[4];  // data: 0x7EF2AC  // G57w10 vftable residue fix
+extern unsigned char g_ptr_7F0904[4];  // data: 0x7F0904  // G57w10 vftable residue fix
+extern unsigned char g_ptr_7F319C[4];  // data: 0x7F319C  // G57w10 vftable residue fix
+extern unsigned char g_ptr_7F3624[4];  // data: 0x7F3624  // G57w10 vftable residue fix
+extern unsigned char g_ptr_7F554C[4];  // data: 0x7F554C  // G57w10 vftable residue fix
+extern unsigned char g_ptr_7F582C[4];  // data: 0x7F582C  // G57w10 vftable residue fix
+extern unsigned char g_ptr_7F58D8[4];  // data: 0x7F58D8  // G57w10 vftable residue fix
+extern unsigned char g_ptr_7EABC8[4];  // data: 0x7EABC8  // G57w10 vftable residue fix
+extern unsigned char g_ptr_7EAC08[4];  // data: 0x7EAC08  // G57w10 vftable residue fix
+extern unsigned char g_ptr_7EABE8[4];  // data: 0x7EABE8  // G57w10 vftable residue fix
+extern unsigned char g_ptr_7F5C70[4];  // data: 0x7F5C70  // G57w10 vftable residue fix
+extern unsigned char g_ptr_7E38D0[4];  // data: 0x7E38D0  // G57w10 vftable residue fix
+extern unsigned char g_ptr_7ED480[4];  // data: 0x7ED480  // G57w10 vftable residue fix
+extern unsigned char g_ptr_7F6BD0[4];  // data: 0x7F6BD0  // G57w10 vftable residue fix
+extern unsigned char g_ptr_7F6E44[4];  // data: 0x7F6E44  // G57w10 vftable residue fix
 
 namespace gamemd {
 // truth-filled 0x6D2790 (G42.52 truth-emitting generator)
@@ -310,10 +310,10 @@ void gamemd::AbstractTypeClass::AbstractTypeClass(gamemd::AbstractTypeClass::noi
   *((_BYTE *)this + 36) = 0; /*0x410817*/
   *((_BYTE *)this + 61) = 0; /*0x41081a*/
   *((_BYTE *)this + 100) = 0; /*0x41081e*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_AbstractTypeClass) */  /*0x410822*/
-  /* X11: vtable install elided (X68 star-arith-named, RHS vt_AbstractTypeClass) */  /*0x410829*/
-  /* X11: vtable install elided (X68 star-arith-named, RHS vt_AbstractTypeClass) */  /*0x410830*/
-  /* X11: vtable install elided (X68 star-arith-named, RHS vt_AbstractTypeClass) */  /*0x410837*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E1FD4) */  /*0x410822*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS g_ptr_7E1FD4) */  /*0x410829*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS g_ptr_7E1FD4) */  /*0x410830*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS g_ptr_7E1FD4) */  /*0x410837*/
   if ( Source ) /*0x41083e*/
   {
     strncpy(Destination, Source, 0x18u); /*0x410895*/
@@ -392,7 +392,7 @@ void gamemd::BufferIOFileClass::BufferIOFileClass(gamemd::noinit_t const& a0)
   this->TotalBytesWritten = 0; /*0x431b6f*/
   this->FileID = 0; /*0x431b72*/
   this->MixFileIndex = 0; /*0x431b75*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_BufferIOFileClass) */  /*0x431b78*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E3A2C) */  /*0x431b78*/
   return &this->FileClass; /*0x431b7e*/
 }
 // link stub (no binary body yet)
@@ -409,13 +409,13 @@ void gamemd::LightSourceClass::LightSourceClass(gamemd::Vector3D<int> const& a0,
   this->DetailLevel = 2; /*0x55478f*/
   this->Location[0] = a2; /*0x554796*/
   this->Activated = 0; /*0x55479c*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_LightSourceClass) */  /*0x5547a0*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7ECFFC) */  /*0x5547a0*/
   this->Location[1] = a3; /*0x5547a6*/
   this->LightVisibility = a5; /*0x5547ad*/
-  ((unsigned int *)this)[0] = (void *)&vt_LightSourceClass; /*0x5547b0*/
+  ((unsigned int *)this)[0] = (void *)&g_ptr_7ECFFC; /*0x5547b0*/
   this->Location[2] = a4; /*0x5547b7*/
-  ((unsigned int *)this)[0] = (void *)&vt_LightSourceClass; /*0x5547ba*/
-  ((unsigned int *)this)[0] = (void *)&vt_LightSourceClass; /*0x5547c1*/
+  ((unsigned int *)this)[0] = (void *)&g_ptr_7ECFFC; /*0x5547ba*/
+  ((unsigned int *)this)[0] = (void *)&g_ptr_7ECFFC; /*0x5547c1*/
   if ( g_MissionQueueFrame.random[133] < g_MissionQueueFrame.random[131] /*0x5547fd*/
       || (BYTE1(g_MissionQueueFrame.random[132]) || !g_MissionQueueFrame.random[131])
       && g_MissionQueueFrame.random[134] > 0
@@ -478,10 +478,10 @@ void gamemd::ObjectTypeClass::ObjectTypeClass(gamemd::ObjectTypeClass::noinit_t)
   this->VoxelCaches[17] = 0; /*0x5f73c7*/
   LOBYTE(this->VoxelCaches[18]) = 0; /*0x5f73cd*/
   this->VoxelCaches[19] = 0; /*0x5f73d3*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_ObjectTypeClass) */  /*0x5f73d9*/
-  ((unsigned int *)this)[0] = (void *)&vt_ObjectTypeClass; /*0x5f73df*/
-  ((unsigned int *)this)[0] = (void *)&vt_ObjectTypeClass; /*0x5f73e6*/
-  ((unsigned int *)this)[0] = (void *)&vt_ObjectTypeClass; /*0x5f73ed*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7EF2AC) */  /*0x5f73d9*/
+  ((unsigned int *)this)[0] = (void *)&g_ptr_7EF2AC; /*0x5f73df*/
+  ((unsigned int *)this)[0] = (void *)&g_ptr_7EF2AC; /*0x5f73e6*/
+  ((unsigned int *)this)[0] = (void *)&g_ptr_7EF2AC; /*0x5f73ed*/
   return &this->AbstractTypeClass; /*0x5f73f6*/
 }
 // link stub (no binary body yet)
@@ -539,21 +539,21 @@ void gamemd::SuperWeaponTypeClass::SuperWeaponTypeClass(gamemd::AbstractTypeClas
   InfantryTypeVector::Construct2((InfantryTypeVector *)((char *)this + 332), 0, 0); /*0x5114fc*/
   *((_DWORD *)this + 88) = 10; /*0x511501*/
   *((_DWORD *)this + 87) = 0; /*0x511508*/
-  /* X11: vtable install elided (X68 star-arith-named, RHS vt_TypeList_InfantryTypeClass_const) */  /*0x51150b*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS g_ptr_7EAC08) */  /*0x51150b*/
   UnitTypeVector::ConstructUnitTypeVectorClass((UnitTypeVector *)((char *)this + 360), 0, 0); /*0x51151b*/
   *((_DWORD *)this + 95) = 10; /*0x511520*/
   *((_DWORD *)this + 94) = 0; /*0x511527*/
-  /* X11: vtable install elided (X68 star-arith-named, RHS vt_TypeList_UnitTypeClass_const) */  /*0x51152a*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS g_ptr_7EABE8) */  /*0x51152a*/
   AircraftTypeVector::Constructor((AircraftTypeVector *)this + 97, 0, 0); /*0x51153a*/
   *((_DWORD *)this + 102) = 10; /*0x511542*/
   *((_DWORD *)this + 101) = 0; /*0x511549*/
-  /* X11: vtable install elided (X68 star-arith-named, RHS vt_TypeList_AircraftTypeClass_const) */  /*0x51154c*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS g_ptr_7EABC8) */  /*0x51154c*/
   *((_DWORD *)this + 105) = 16777281; /*0x511552*/
   *((_BYTE *)this + 424) = 0; /*0x51156c*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_HouseTypeClass) */  /*0x511572*/
-  ((unsigned int *)this)[0] = (void *)&vt_HouseTypeClass; /*0x511578*/
-  ((unsigned int *)this)[0] = (void *)&vt_HouseTypeClass; /*0x51157f*/
-  ((unsigned int *)this)[0] = (void *)&vt_HouseTypeClass; /*0x511586*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7EAB2C) */  /*0x511572*/
+  ((unsigned int *)this)[0] = (void *)&g_ptr_7EAB2C; /*0x511578*/
+  ((unsigned int *)this)[0] = (void *)&g_ptr_7EAB2C; /*0x51157f*/
+  ((unsigned int *)this)[0] = (void *)&g_ptr_7EAB2C; /*0x511586*/
   AbstractClass::GenerateUniqueID((AbstractClass *)&((unsigned int *)this)[0]); /*0x51158d*/
   *((_BYTE *)this + 416) = 0; /*0x511592*/
   v4 = dword_A83CA8; /*0x511598*/
@@ -654,9 +654,9 @@ void gamemd::UnitClass::UnitClass()
   *((_BYTE *)this + 1761) = 0; /*0x735428*/
   *((_BYTE *)this + 1762) = 0; /*0x73542e*/
   *(this + 441) = 0; /*0x735434*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_UnitClass) */  /*0x73543a*/
-  /* X11: vtable install elided (X68 star-arith-named, RHS vt_UnitClass) */  /*0x735440*/
-  /* X11: vtable install elided (X68 star-arith-named, RHS vt_UnitClass) */  /*0x735446*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7F5C70) */  /*0x73543a*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS g_ptr_7F5C70) */  /*0x735440*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS g_ptr_7F5C70) */  /*0x735446*/
   *(this + 3) = (int)&off_7F5C44; /*0x73544d*/
   AbstractClass::GenerateUniqueID((AbstractClass *)(this + 1)); /*0x735454*/
   if ( ((unsigned int *)&FootClass_Array)[2] < ((unsigned int *)&FootClass_Array)[0] /*0x73548f*/
@@ -873,15 +873,15 @@ void gamemd::WaveClass::WaveClass(ra2::game::TechnoClass* a0, gamemd::WaveType, 
   *((_DWORD *)this + 126) = 5; /*0x75e9e7*/
   *((_BYTE *)this + 508) = 1; /*0x75e9f1*/
   *((_BYTE *)this + 509) = 0; /*0x75e9f8*/
-  /* X11: vtable install elided (X68 star-arith-named, RHS vt_VectorClass_CellClass) */  /*0x75e9fe*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS g_ptr_7ED480) */  /*0x75e9fe*/
   *((_DWORD *)this + 125) = __2_YAPAXI_Z(0x14u); /*0x75ea18*/
   *((_BYTE *)this + 509) = 1; /*0x75ea1e*/
-  /* X11: vtable install elided (X68 star-arith-named, RHS vt_DynamicVectorClass_CellClass) */  /*0x75ea25*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS g_ptr_7ED9BC) */  /*0x75ea25*/
   *((_DWORD *)this + 129) = 10; /*0x75ea2f*/
   *((_DWORD *)this + 128) = 0; /*0x75ea39*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_WaveClass) */  /*0x75ea3f*/
-  ((unsigned int *)this)[0] = (void *)&vt_WaveClass; /*0x75ea45*/
-  ((unsigned int *)this)[0] = (void *)&vt_WaveClass; /*0x75ea4b*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F6BD0) */  /*0x75ea3f*/
+  ((unsigned int *)this)[0] = (void *)&g_ptr_7F6BD0; /*0x75ea45*/
+  ((unsigned int *)this)[0] = (void *)&g_ptr_7F6BD0; /*0x75ea4b*/
   ((unsigned int *)this)[0] = &off_7F6BC8; /*0x75ea52*/
   int v8; // edx
   v8 = a2[1] - a3[1]; /*0x75ea66*/
@@ -1508,9 +1508,9 @@ bool gamemd::TriggerClass::FireActions(ra2::game::ObjectClass* a0, gamemd::Vecto
   *(_DWORD *)(this + 64) = 0; /*0x725fc7*/
   *(_BYTE *)(this + 68) = 1; /*0x725fca*/
   /* X11: vtable install elided (implicit via TriggerClass virtuals 0x725fce) */
-  /* X11: vtable install elided (X68 star-arith-named, RHS vt_TriggerClass) */  /*0x725fd4*/
-  /* X11: vtable install elided (X68 star-arith-named, RHS vt_TriggerClass) */  /*0x725fdb*/
-  /* X11: vtable install elided (X68 star-arith-named, RHS vt_TriggerClass) */  /*0x725fe2*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS g_ptr_7F582C) */  /*0x725fd4*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS g_ptr_7F582C) */  /*0x725fdb*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS g_ptr_7F582C) */  /*0x725fe2*/
   if ( g_BuildingLoadQueue_Array.LightBlueTint < g_BuildingLoadQueue_Array.LightRedTint /*0x72601b*/
       || (BYTE1(g_BuildingLoadQueue_Array.LightGreenTint) || !g_BuildingLoadQueue_Array.LightRedTint)
       && g_BuildingLoadQueue_Array.PrimaryFirePixelOffset[0] > 0
@@ -1577,9 +1577,9 @@ bool gamemd::TriggerClass::RegisterEvent(int a0, ra2::game::ObjectClass* a1, boo
   *(_DWORD *)(this + 64) = 0; /*0x725fc7*/
   *(_BYTE *)(this + 68) = 1; /*0x725fca*/
   /* X11: vtable install elided (implicit via TriggerClass virtuals 0x725fce) */
-  /* X11: vtable install elided (X68 star-arith-named, RHS vt_TriggerClass) */  /*0x725fd4*/
-  /* X11: vtable install elided (X68 star-arith-named, RHS vt_TriggerClass) */  /*0x725fdb*/
-  /* X11: vtable install elided (X68 star-arith-named, RHS vt_TriggerClass) */  /*0x725fe2*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS g_ptr_7F582C) */  /*0x725fd4*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS g_ptr_7F582C) */  /*0x725fdb*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS g_ptr_7F582C) */  /*0x725fe2*/
   if ( g_BuildingLoadQueue_Array.LightBlueTint < g_BuildingLoadQueue_Array.LightRedTint /*0x72601b*/
       || (BYTE1(g_BuildingLoadQueue_Array.LightGreenTint) || !g_BuildingLoadQueue_Array.LightRedTint)
       && g_BuildingLoadQueue_Array.PrimaryFirePixelOffset[0] > 0
@@ -1645,10 +1645,10 @@ bool gamemd::TriggerTypeClass::RemoveAction(gamemd::TActionClass* a0)
   this->NextTrigger = 0; /*0x726cc0*/
   this->FirstEvent = 0; /*0x726cc6*/
   this->FirstAction = 0; /*0x726ccc*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_TriggerTypeClass) */  /*0x726cd2*/
-  ((unsigned int *)this)[0] = (void *)&vt_TriggerTypeClass; /*0x726cd8*/
-  ((unsigned int *)this)[0] = (void *)&vt_TriggerTypeClass; /*0x726cdf*/
-  ((unsigned int *)this)[0] = (void *)&vt_TriggerTypeClass; /*0x726ce6*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F58D8) */  /*0x726cd2*/
+  ((unsigned int *)this)[0] = (void *)&g_ptr_7F58D8; /*0x726cd8*/
+  ((unsigned int *)this)[0] = (void *)&g_ptr_7F58D8; /*0x726cdf*/
+  ((unsigned int *)this)[0] = (void *)&g_ptr_7F58D8; /*0x726ce6*/
   if ( g_BuildingLoadQueue_Array.GateCloseDelay[0] < g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[2] /*0x726d21*/
       || (BYTE1(g_BuildingLoadQueue_Array.qE24[0]) || !g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[2])
       && g_BuildingLoadQueue_Array.GateCloseDelay[1] > 0
@@ -1703,10 +1703,10 @@ bool gamemd::TriggerTypeClass::RemoveEvent(gamemd::TEventClass* a0)
   this->NextTrigger = 0; /*0x726cc0*/
   this->FirstEvent = 0; /*0x726cc6*/
   this->FirstAction = 0; /*0x726ccc*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_TriggerTypeClass) */  /*0x726cd2*/
-  ((unsigned int *)this)[0] = (void *)&vt_TriggerTypeClass; /*0x726cd8*/
-  ((unsigned int *)this)[0] = (void *)&vt_TriggerTypeClass; /*0x726cdf*/
-  ((unsigned int *)this)[0] = (void *)&vt_TriggerTypeClass; /*0x726ce6*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F58D8) */  /*0x726cd2*/
+  ((unsigned int *)this)[0] = (void *)&g_ptr_7F58D8; /*0x726cd8*/
+  ((unsigned int *)this)[0] = (void *)&g_ptr_7F58D8; /*0x726cdf*/
+  ((unsigned int *)this)[0] = (void *)&g_ptr_7F58D8; /*0x726ce6*/
   if ( g_BuildingLoadQueue_Array.GateCloseDelay[0] < g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[2] /*0x726d21*/
       || (BYTE1(g_BuildingLoadQueue_Array.qE24[0]) || !g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[2])
       && g_BuildingLoadQueue_Array.GateCloseDelay[1] > 0
@@ -1762,10 +1762,10 @@ bool gamemd::AbstractTypeClass::LoadFromINI(gamemd::CCINIClass* a0)
   *((_BYTE *)this + 36) = 0; /*0x410817*/
   *((_BYTE *)this + 61) = 0; /*0x41081a*/
   *((_BYTE *)this + 100) = 0; /*0x41081e*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_AbstractTypeClass) */  /*0x410822*/
-  /* X11: vtable install elided (X68 star-arith-named, RHS vt_AbstractTypeClass) */  /*0x410829*/
-  /* X11: vtable install elided (X68 star-arith-named, RHS vt_AbstractTypeClass) */  /*0x410830*/
-  /* X11: vtable install elided (X68 star-arith-named, RHS vt_AbstractTypeClass) */  /*0x410837*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E1FD4) */  /*0x410822*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS g_ptr_7E1FD4) */  /*0x410829*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS g_ptr_7E1FD4) */  /*0x410830*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS g_ptr_7E1FD4) */  /*0x410837*/
   if ( Source ) /*0x41083e*/
   {
     strncpy(Destination, Source, 0x18u); /*0x410895*/
@@ -1833,10 +1833,10 @@ bool gamemd::AbstractTypeClass::SaveToINI(gamemd::CCINIClass* a0)
   *((_BYTE *)this + 36) = 0; /*0x410817*/
   *((_BYTE *)this + 61) = 0; /*0x41081a*/
   *((_BYTE *)this + 100) = 0; /*0x41081e*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_AbstractTypeClass) */  /*0x410822*/
-  /* X11: vtable install elided (X68 star-arith-named, RHS vt_AbstractTypeClass) */  /*0x410829*/
-  /* X11: vtable install elided (X68 star-arith-named, RHS vt_AbstractTypeClass) */  /*0x410830*/
-  /* X11: vtable install elided (X68 star-arith-named, RHS vt_AbstractTypeClass) */  /*0x410837*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E1FD4) */  /*0x410822*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS g_ptr_7E1FD4) */  /*0x410829*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS g_ptr_7E1FD4) */  /*0x410830*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS g_ptr_7E1FD4) */  /*0x410837*/
   if ( Source ) /*0x41083e*/
   {
     strncpy(Destination, Source, 0x18u); /*0x410895*/
@@ -2451,7 +2451,7 @@ bool gamemd::RawFileClass::CreateFile()
   *(_WORD *)this->BufferDirty = 0; /*0x65ca9d*/
   *(_WORD *)this->BufferWritePending = 0; /*0x65caa1*/
   this->CacheReadAhead[0] = 0; /*0x65caa5*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_RawFileClass) */  /*0x65caa8*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F0904) */  /*0x65caa8*/
   return &this->FileClass; /*0x65caae*/
 }
 // truth-filled 0x65CA80 (G42.52 truth-emitting generator)
@@ -2466,7 +2466,7 @@ bool gamemd::RawFileClass::DeleteFile()
   *(_WORD *)this->BufferDirty = 0; /*0x65ca9d*/
   *(_WORD *)this->BufferWritePending = 0; /*0x65caa1*/
   this->CacheReadAhead[0] = 0; /*0x65caa5*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_RawFileClass) */  /*0x65caa8*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F0904) */  /*0x65caa8*/
   return &this->FileClass; /*0x65caae*/
 }
 // truth-filled 0x65CA80 (G42.52 truth-emitting generator)
@@ -2481,7 +2481,7 @@ bool gamemd::RawFileClass::Exists(bool a0)
   *(_WORD *)this->BufferDirty = 0; /*0x65ca9d*/
   *(_WORD *)this->BufferWritePending = 0; /*0x65caa1*/
   this->CacheReadAhead[0] = 0; /*0x65caa5*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_RawFileClass) */  /*0x65caa8*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F0904) */  /*0x65caa8*/
   return &this->FileClass; /*0x65caae*/
 }
 // truth-filled 0x65CA80 (G42.52 truth-emitting generator)
@@ -2496,7 +2496,7 @@ bool gamemd::RawFileClass::HasHandle()
   *(_WORD *)this->BufferDirty = 0; /*0x65ca9d*/
   *(_WORD *)this->BufferWritePending = 0; /*0x65caa1*/
   this->CacheReadAhead[0] = 0; /*0x65caa5*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_RawFileClass) */  /*0x65caa8*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F0904) */  /*0x65caa8*/
   return &this->FileClass; /*0x65caae*/
 }
 // truth-filled 0x65CA80 (G42.52 truth-emitting generator)
@@ -2511,7 +2511,7 @@ bool gamemd::RawFileClass::Open(gamemd::FileAccessMode)
   *(_WORD *)this->BufferDirty = 0; /*0x65ca9d*/
   *(_WORD *)this->BufferWritePending = 0; /*0x65caa1*/
   this->CacheReadAhead[0] = 0; /*0x65caa5*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_RawFileClass) */  /*0x65caa8*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F0904) */  /*0x65caa8*/
   return &this->FileClass; /*0x65caae*/
 }
 // truth-filled 0x65CA80 (G42.52 truth-emitting generator)
@@ -2526,7 +2526,7 @@ bool gamemd::RawFileClass::OpenEx(const char* a0, gamemd::FileAccessMode)
   *(_WORD *)this->BufferDirty = 0; /*0x65ca9d*/
   *(_WORD *)this->BufferWritePending = 0; /*0x65caa1*/
   this->CacheReadAhead[0] = 0; /*0x65caa5*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_RawFileClass) */  /*0x65caa8*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F0904) */  /*0x65caa8*/
   return &this->FileClass; /*0x65caae*/
 }
 // truth-filled 0x4BAEC0 (G42.52 truth-emitting generator)
@@ -5531,7 +5531,7 @@ int gamemd::RawFileClass::ReadBytes(void* a0, int a1)
   *(_WORD *)this->BufferDirty = 0; /*0x65ca9d*/
   *(_WORD *)this->BufferWritePending = 0; /*0x65caa1*/
   this->CacheReadAhead[0] = 0; /*0x65caa5*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_RawFileClass) */  /*0x65caa8*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F0904) */  /*0x65caa8*/
   return &this->FileClass; /*0x65caae*/
 }
 // truth-filled 0x65CA80 (G42.52 truth-emitting generator)
@@ -5546,7 +5546,7 @@ int gamemd::RawFileClass::Seek(int a0, gamemd::FileSeekMode)
   *(_WORD *)this->BufferDirty = 0; /*0x65ca9d*/
   *(_WORD *)this->BufferWritePending = 0; /*0x65caa1*/
   this->CacheReadAhead[0] = 0; /*0x65caa5*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_RawFileClass) */  /*0x65caa8*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F0904) */  /*0x65caa8*/
   return &this->FileClass; /*0x65caae*/
 }
 // truth-filled 0x65CA80 (G42.52 truth-emitting generator)
@@ -5561,7 +5561,7 @@ int gamemd::RawFileClass::WriteBytes(void* a0, int a1)
   *(_WORD *)this->BufferDirty = 0; /*0x65ca9d*/
   *(_WORD *)this->BufferWritePending = 0; /*0x65caa1*/
   this->CacheReadAhead[0] = 0; /*0x65caa5*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_RawFileClass) */  /*0x65caa8*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F0904) */  /*0x65caa8*/
   return &this->FileClass; /*0x65caae*/
 }
 // truth-filled 0x71E6A0 (G42.52 truth-emitting generator)
@@ -5581,10 +5581,10 @@ long gamemd::TActionClass::GetClassID(GUID* a0)
   this->TActionClass_field_30 = 0; /*0x71e6b8*/
   LOBYTE(this->TActionClass_field_38) = 0; /*0x71e6bb*/
   *(_DWORD *)&this->TActionClass_field_54 = 0; /*0x71e6be*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_TEventClass) */  /*0x71e6c1*/
-  ((unsigned int *)this)[0] = (void *)&vt_TEventClass; /*0x71e6c7*/
-  ((unsigned int *)this)[0] = (void *)&vt_TEventClass; /*0x71e6ce*/
-  ((unsigned int *)this)[0] = (void *)&vt_TEventClass; /*0x71e6d5*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F554C) */  /*0x71e6c1*/
+  ((unsigned int *)this)[0] = (void *)&g_ptr_7F554C; /*0x71e6c7*/
+  ((unsigned int *)this)[0] = (void *)&g_ptr_7F554C; /*0x71e6ce*/
+  ((unsigned int *)this)[0] = (void *)&g_ptr_7F554C; /*0x71e6d5*/
   v2 = ((unsigned int *)&g_BuildingLoadQueue_Array)[54]; /*0x71e6dc*/
   if ( ((unsigned int *)&g_BuildingLoadQueue_Array)[54] < ((unsigned int *)&g_BuildingLoadQueue_Array)[52] /*0x71e71a*/
       || (BYTE1(((unsigned int *)&g_BuildingLoadQueue_Array)[53]) || !((unsigned int *)&g_BuildingLoadQueue_Array)[52])
@@ -5660,10 +5660,10 @@ long gamemd::TActionClass::Load(struct IStream* a0)
   this->TActionClass_field_30 = 0; /*0x71e6b8*/
   LOBYTE(this->TActionClass_field_38) = 0; /*0x71e6bb*/
   *(_DWORD *)&this->TActionClass_field_54 = 0; /*0x71e6be*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_TEventClass) */  /*0x71e6c1*/
-  ((unsigned int *)this)[0] = (void *)&vt_TEventClass; /*0x71e6c7*/
-  ((unsigned int *)this)[0] = (void *)&vt_TEventClass; /*0x71e6ce*/
-  ((unsigned int *)this)[0] = (void *)&vt_TEventClass; /*0x71e6d5*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F554C) */  /*0x71e6c1*/
+  ((unsigned int *)this)[0] = (void *)&g_ptr_7F554C; /*0x71e6c7*/
+  ((unsigned int *)this)[0] = (void *)&g_ptr_7F554C; /*0x71e6ce*/
+  ((unsigned int *)this)[0] = (void *)&g_ptr_7F554C; /*0x71e6d5*/
   v2 = ((unsigned int *)&g_BuildingLoadQueue_Array)[54]; /*0x71e6dc*/
   if ( ((unsigned int *)&g_BuildingLoadQueue_Array)[54] < ((unsigned int *)&g_BuildingLoadQueue_Array)[52] /*0x71e71a*/
       || (BYTE1(((unsigned int *)&g_BuildingLoadQueue_Array)[53]) || !((unsigned int *)&g_BuildingLoadQueue_Array)[52])
@@ -5739,10 +5739,10 @@ long gamemd::TActionClass::Save(struct IStream* a0, int a1)
   this->TActionClass_field_30 = 0; /*0x71e6b8*/
   LOBYTE(this->TActionClass_field_38) = 0; /*0x71e6bb*/
   *(_DWORD *)&this->TActionClass_field_54 = 0; /*0x71e6be*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_TEventClass) */  /*0x71e6c1*/
-  ((unsigned int *)this)[0] = (void *)&vt_TEventClass; /*0x71e6c7*/
-  ((unsigned int *)this)[0] = (void *)&vt_TEventClass; /*0x71e6ce*/
-  ((unsigned int *)this)[0] = (void *)&vt_TEventClass; /*0x71e6d5*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F554C) */  /*0x71e6c1*/
+  ((unsigned int *)this)[0] = (void *)&g_ptr_7F554C; /*0x71e6c7*/
+  ((unsigned int *)this)[0] = (void *)&g_ptr_7F554C; /*0x71e6ce*/
+  ((unsigned int *)this)[0] = (void *)&g_ptr_7F554C; /*0x71e6d5*/
   v2 = ((unsigned int *)&g_BuildingLoadQueue_Array)[54]; /*0x71e6dc*/
   if ( ((unsigned int *)&g_BuildingLoadQueue_Array)[54] < ((unsigned int *)&g_BuildingLoadQueue_Array)[52] /*0x71e71a*/
       || (BYTE1(((unsigned int *)&g_BuildingLoadQueue_Array)[53]) || !((unsigned int *)&g_BuildingLoadQueue_Array)[52])
@@ -5823,10 +5823,10 @@ long gamemd::TEventClass::Load(struct IStream* a0)
     if ( this ) /*0x71f8d6*/
     {
       AbstractClass::InitVtables((AbstractClass *)this, (int)&a2); /*0x71f8df*/
-      /* X11: vtable install elided (X67 recv-slot, RHS vt_TEventClass) */  /*0x71f8e4*/
-      ((unsigned int *)this)[0] = (void *)&vt_TEventClass; /*0x71f8ea*/
-      ((unsigned int *)this)[0] = (void *)&vt_TEventClass; /*0x71f8f1*/
-      ((unsigned int *)this)[0] = (void *)&vt_TEventClass; /*0x71f8f8*/
+      /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F554C) */  /*0x71f8e4*/
+      ((unsigned int *)this)[0] = (void *)&g_ptr_7F554C; /*0x71f8ea*/
+      ((unsigned int *)this)[0] = (void *)&g_ptr_7F554C; /*0x71f8f1*/
+      ((unsigned int *)this)[0] = (void *)&g_ptr_7F554C; /*0x71f8f8*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->TEventClass_field_28); /*0x71f908*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->TEventClass_field_30); /*0x71f916*/
@@ -5937,7 +5937,7 @@ long gamemd::TeamTypeClass::GetClassID(GUID* a0)
   this->taskForceCapacity = 0; /*0x4c98dd*/
   this->q04C[0] = 1; /*0x4c98e0*/
   this->q04C[1] = 0; /*0x4c98e3*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass_TechnoTypeClass_const) */  /*0x4c98e6*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8934) */  /*0x4c98e6*/
   *(_DWORD *)&this->q04C[8] = 10; /*0x4c98ed*/
   *(_DWORD *)&this->q04C[4] = 0; /*0x4c98f4*/
   this->TeamTypeClass_field_71 = 1; /*0x4c98f7*/
@@ -5949,10 +5949,10 @@ long gamemd::TeamTypeClass::GetClassID(GUID* a0)
   this->TeamTypeClass_field_68 = -1; /*0x4c990d*/
   this->TeamTypeClass_field_6C = 0; /*0x4c9914*/
   this->TeamTypeClass_field_70 = 0; /*0x4c9917*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_FactoryClass) */  /*0x4c991a*/
-  ((unsigned int *)this)[0] = (void *)&vt_FactoryClass; /*0x4c9920*/
-  ((unsigned int *)this)[0] = (void *)&vt_FactoryClass; /*0x4c9926*/
-  ((unsigned int *)this)[0] = (void *)&vt_FactoryClass; /*0x4c992d*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E88A4) */  /*0x4c991a*/
+  ((unsigned int *)this)[0] = (void *)&g_ptr_7E88A4; /*0x4c9920*/
+  ((unsigned int *)this)[0] = (void *)&g_ptr_7E88A4; /*0x4c9926*/
+  ((unsigned int *)this)[0] = (void *)&g_ptr_7E88A4; /*0x4c992d*/
   AbstractClass::GenerateUniqueID((AbstractClass *)&((unsigned int *)this)[0]); /*0x4c9934*/
   if ( *(int *)&stru_A83D50.__pad_C8[40] < *(int *)&stru_A83D50.__pad_C8[32] /*0x4c996d*/
       || (stru_A83D50.__pad_C8[37] || !*(_DWORD *)&stru_A83D50.__pad_C8[32])
@@ -6005,7 +6005,7 @@ long gamemd::TeamTypeClass::Load(struct IStream* a0)
   this->taskForceCapacity = 0; /*0x4c98dd*/
   this->q04C[0] = 1; /*0x4c98e0*/
   this->q04C[1] = 0; /*0x4c98e3*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass_TechnoTypeClass_const) */  /*0x4c98e6*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8934) */  /*0x4c98e6*/
   *(_DWORD *)&this->q04C[8] = 10; /*0x4c98ed*/
   *(_DWORD *)&this->q04C[4] = 0; /*0x4c98f4*/
   this->TeamTypeClass_field_71 = 1; /*0x4c98f7*/
@@ -6017,10 +6017,10 @@ long gamemd::TeamTypeClass::Load(struct IStream* a0)
   this->TeamTypeClass_field_68 = -1; /*0x4c990d*/
   this->TeamTypeClass_field_6C = 0; /*0x4c9914*/
   this->TeamTypeClass_field_70 = 0; /*0x4c9917*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_FactoryClass) */  /*0x4c991a*/
-  ((unsigned int *)this)[0] = (void *)&vt_FactoryClass; /*0x4c9920*/
-  ((unsigned int *)this)[0] = (void *)&vt_FactoryClass; /*0x4c9926*/
-  ((unsigned int *)this)[0] = (void *)&vt_FactoryClass; /*0x4c992d*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E88A4) */  /*0x4c991a*/
+  ((unsigned int *)this)[0] = (void *)&g_ptr_7E88A4; /*0x4c9920*/
+  ((unsigned int *)this)[0] = (void *)&g_ptr_7E88A4; /*0x4c9926*/
+  ((unsigned int *)this)[0] = (void *)&g_ptr_7E88A4; /*0x4c992d*/
   AbstractClass::GenerateUniqueID((AbstractClass *)&((unsigned int *)this)[0]); /*0x4c9934*/
   if ( *(int *)&stru_A83D50.__pad_C8[40] < *(int *)&stru_A83D50.__pad_C8[32] /*0x4c996d*/
       || (stru_A83D50.__pad_C8[37] || !*(_DWORD *)&stru_A83D50.__pad_C8[32])
@@ -6073,7 +6073,7 @@ long gamemd::TeamTypeClass::Save(struct IStream* a0, int a1)
   this->taskForceCapacity = 0; /*0x4c98dd*/
   this->q04C[0] = 1; /*0x4c98e0*/
   this->q04C[1] = 0; /*0x4c98e3*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass_TechnoTypeClass_const) */  /*0x4c98e6*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8934) */  /*0x4c98e6*/
   *(_DWORD *)&this->q04C[8] = 10; /*0x4c98ed*/
   *(_DWORD *)&this->q04C[4] = 0; /*0x4c98f4*/
   this->TeamTypeClass_field_71 = 1; /*0x4c98f7*/
@@ -6085,10 +6085,10 @@ long gamemd::TeamTypeClass::Save(struct IStream* a0, int a1)
   this->TeamTypeClass_field_68 = -1; /*0x4c990d*/
   this->TeamTypeClass_field_6C = 0; /*0x4c9914*/
   this->TeamTypeClass_field_70 = 0; /*0x4c9917*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_FactoryClass) */  /*0x4c991a*/
-  ((unsigned int *)this)[0] = (void *)&vt_FactoryClass; /*0x4c9920*/
-  ((unsigned int *)this)[0] = (void *)&vt_FactoryClass; /*0x4c9926*/
-  ((unsigned int *)this)[0] = (void *)&vt_FactoryClass; /*0x4c992d*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E88A4) */  /*0x4c991a*/
+  ((unsigned int *)this)[0] = (void *)&g_ptr_7E88A4; /*0x4c9920*/
+  ((unsigned int *)this)[0] = (void *)&g_ptr_7E88A4; /*0x4c9926*/
+  ((unsigned int *)this)[0] = (void *)&g_ptr_7E88A4; /*0x4c992d*/
   AbstractClass::GenerateUniqueID((AbstractClass *)&((unsigned int *)this)[0]); /*0x4c9934*/
   if ( *(int *)&stru_A83D50.__pad_C8[40] < *(int *)&stru_A83D50.__pad_C8[32] /*0x4c996d*/
       || (stru_A83D50.__pad_C8[37] || !*(_DWORD *)&stru_A83D50.__pad_C8[32])
@@ -6134,13 +6134,13 @@ long gamemd::WaypointPathClass::GetClassID(GUID* a0)
   *(_DWORD *)(this + 48) = 0; /*0x763828*/
   *(_BYTE *)(this + 52) = 1; /*0x76382b*/
   *(_BYTE *)(this + 53) = 0; /*0x76382f*/
-  /* X11: vtable install elided (X68 star-arith-named, RHS vt_DynamicVectorClass_WaypointClass) */  /*0x763832*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS g_ptr_7F6ED4) */  /*0x763832*/
   *(_DWORD *)(this + 60) = 10; /*0x763839*/
   *(_DWORD *)(this + 56) = 0; /*0x763840*/
   /* X11: vtable install elided (implicit via WaypointPathClass virtuals 0x763845) */
-  /* X11: vtable install elided (X68 star-arith-named, RHS vt_WaypointPathClass) */  /*0x76384b*/
-  /* X11: vtable install elided (X68 star-arith-named, RHS vt_WaypointPathClass) */  /*0x763852*/
-  /* X11: vtable install elided (X68 star-arith-named, RHS vt_WaypointPathClass) */  /*0x763859*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS g_ptr_7F6E44) */  /*0x76384b*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS g_ptr_7F6E44) */  /*0x763852*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS g_ptr_7F6E44) */  /*0x763859*/
   if ( a2 < 0xC /*0x76389a*/
       && (dword_B72618 < dword_B72610
        || (byte_B72615 || !dword_B72610)
@@ -6166,13 +6166,13 @@ long gamemd::WaypointPathClass::Load(struct IStream* a0)
   *(_DWORD *)(this + 48) = 0; /*0x763828*/
   *(_BYTE *)(this + 52) = 1; /*0x76382b*/
   *(_BYTE *)(this + 53) = 0; /*0x76382f*/
-  /* X11: vtable install elided (X68 star-arith-named, RHS vt_DynamicVectorClass_WaypointClass) */  /*0x763832*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS g_ptr_7F6ED4) */  /*0x763832*/
   *(_DWORD *)(this + 60) = 10; /*0x763839*/
   *(_DWORD *)(this + 56) = 0; /*0x763840*/
   /* X11: vtable install elided (implicit via WaypointPathClass virtuals 0x763845) */
-  /* X11: vtable install elided (X68 star-arith-named, RHS vt_WaypointPathClass) */  /*0x76384b*/
-  /* X11: vtable install elided (X68 star-arith-named, RHS vt_WaypointPathClass) */  /*0x763852*/
-  /* X11: vtable install elided (X68 star-arith-named, RHS vt_WaypointPathClass) */  /*0x763859*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS g_ptr_7F6E44) */  /*0x76384b*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS g_ptr_7F6E44) */  /*0x763852*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS g_ptr_7F6E44) */  /*0x763859*/
   if ( a2 < 0xC /*0x76389a*/
       && (dword_B72618 < dword_B72610
        || (byte_B72615 || !dword_B72610)
@@ -6198,13 +6198,13 @@ long gamemd::WaypointPathClass::Save(struct IStream* a0, int a1)
   *(_DWORD *)(this + 48) = 0; /*0x763828*/
   *(_BYTE *)(this + 52) = 1; /*0x76382b*/
   *(_BYTE *)(this + 53) = 0; /*0x76382f*/
-  /* X11: vtable install elided (X68 star-arith-named, RHS vt_DynamicVectorClass_WaypointClass) */  /*0x763832*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS g_ptr_7F6ED4) */  /*0x763832*/
   *(_DWORD *)(this + 60) = 10; /*0x763839*/
   *(_DWORD *)(this + 56) = 0; /*0x763840*/
   /* X11: vtable install elided (implicit via WaypointPathClass virtuals 0x763845) */
-  /* X11: vtable install elided (X68 star-arith-named, RHS vt_WaypointPathClass) */  /*0x76384b*/
-  /* X11: vtable install elided (X68 star-arith-named, RHS vt_WaypointPathClass) */  /*0x763852*/
-  /* X11: vtable install elided (X68 star-arith-named, RHS vt_WaypointPathClass) */  /*0x763859*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS g_ptr_7F6E44) */  /*0x76384b*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS g_ptr_7F6E44) */  /*0x763852*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS g_ptr_7F6E44) */  /*0x763859*/
   if ( a2 < 0xC /*0x76389a*/
       && (dword_B72618 < dword_B72610
        || (byte_B72615 || !dword_B72610)
@@ -6229,14 +6229,14 @@ long ra2::game::CaptureManagerClass::GetClassID(GUID* a0)
   *(_DWORD *)(this + 40) = 0; /*0x4717e6*/
   *(_DWORD *)(this + 44) = 0; /*0x4717e9*/
   *(_BYTE *)(this + 49) = 0; /*0x4717ec*/
-  /* X11: vtable install elided (X68 star-arith-named, RHS vt_DynamicVectorClass_ControlNode) */  /*0x4717ef*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS g_ptr_7E4BA4) */  /*0x4717ef*/
   *(_DWORD *)(this + 56) = 10; /*0x4717f6*/
   *(_DWORD *)(this + 52) = 0; /*0x4717fd*/
   *(_DWORD *)(this + 72) = a2; /*0x471800*/
   /* X11: vtable install elided (implicit via CaptureManagerClass virtuals 0x471807) */
-  /* X11: vtable install elided (X68 star-arith-named, RHS vt_CaptureManagerClass) */  /*0x47180d*/
-  /* X11: vtable install elided (X68 star-arith-named, RHS vt_CaptureManagerClass) */  /*0x471814*/
-  /* X11: vtable install elided (X68 star-arith-named, RHS vt_CaptureManagerClass) */  /*0x47181b*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS g_ptr_7E4B14) */  /*0x47180d*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS g_ptr_7E4B14) */  /*0x471814*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS g_ptr_7E4B14) */  /*0x47181b*/
   *(_DWORD *)(this + 60) = a3; /*0x471822*/
   *(_BYTE *)(this + 64) = a4; /*0x471825*/
   *(_BYTE *)(this + 65) = 0; /*0x471828*/
@@ -6265,14 +6265,14 @@ long ra2::game::CaptureManagerClass::Load(struct IStream* a0)
   *(_DWORD *)(this + 40) = 0; /*0x4717e6*/
   *(_DWORD *)(this + 44) = 0; /*0x4717e9*/
   *(_BYTE *)(this + 49) = 0; /*0x4717ec*/
-  /* X11: vtable install elided (X68 star-arith-named, RHS vt_DynamicVectorClass_ControlNode) */  /*0x4717ef*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS g_ptr_7E4BA4) */  /*0x4717ef*/
   *(_DWORD *)(this + 56) = 10; /*0x4717f6*/
   *(_DWORD *)(this + 52) = 0; /*0x4717fd*/
   *(_DWORD *)(this + 72) = a2; /*0x471800*/
   /* X11: vtable install elided (implicit via CaptureManagerClass virtuals 0x471807) */
-  /* X11: vtable install elided (X68 star-arith-named, RHS vt_CaptureManagerClass) */  /*0x47180d*/
-  /* X11: vtable install elided (X68 star-arith-named, RHS vt_CaptureManagerClass) */  /*0x471814*/
-  /* X11: vtable install elided (X68 star-arith-named, RHS vt_CaptureManagerClass) */  /*0x47181b*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS g_ptr_7E4B14) */  /*0x47180d*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS g_ptr_7E4B14) */  /*0x471814*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS g_ptr_7E4B14) */  /*0x47181b*/
   *(_DWORD *)(this + 60) = a3; /*0x471822*/
   *(_BYTE *)(this + 64) = a4; /*0x471825*/
   *(_BYTE *)(this + 65) = 0; /*0x471828*/
@@ -6301,14 +6301,14 @@ long ra2::game::CaptureManagerClass::QueryInterface(const GUID& a0, void** a1)
   *(_DWORD *)(this + 40) = 0; /*0x4717e6*/
   *(_DWORD *)(this + 44) = 0; /*0x4717e9*/
   *(_BYTE *)(this + 49) = 0; /*0x4717ec*/
-  /* X11: vtable install elided (X68 star-arith-named, RHS vt_DynamicVectorClass_ControlNode) */  /*0x4717ef*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS g_ptr_7E4BA4) */  /*0x4717ef*/
   *(_DWORD *)(this + 56) = 10; /*0x4717f6*/
   *(_DWORD *)(this + 52) = 0; /*0x4717fd*/
   *(_DWORD *)(this + 72) = a2; /*0x471800*/
   /* X11: vtable install elided (implicit via CaptureManagerClass virtuals 0x471807) */
-  /* X11: vtable install elided (X68 star-arith-named, RHS vt_CaptureManagerClass) */  /*0x47180d*/
-  /* X11: vtable install elided (X68 star-arith-named, RHS vt_CaptureManagerClass) */  /*0x471814*/
-  /* X11: vtable install elided (X68 star-arith-named, RHS vt_CaptureManagerClass) */  /*0x47181b*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS g_ptr_7E4B14) */  /*0x47180d*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS g_ptr_7E4B14) */  /*0x471814*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS g_ptr_7E4B14) */  /*0x47181b*/
   *(_DWORD *)(this + 60) = a3; /*0x471822*/
   *(_BYTE *)(this + 64) = a4; /*0x471825*/
   *(_BYTE *)(this + 65) = 0; /*0x471828*/
@@ -6337,14 +6337,14 @@ long ra2::game::CaptureManagerClass::Save(struct IStream* a0, int a1)
   *(_DWORD *)(this + 40) = 0; /*0x4717e6*/
   *(_DWORD *)(this + 44) = 0; /*0x4717e9*/
   *(_BYTE *)(this + 49) = 0; /*0x4717ec*/
-  /* X11: vtable install elided (X68 star-arith-named, RHS vt_DynamicVectorClass_ControlNode) */  /*0x4717ef*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS g_ptr_7E4BA4) */  /*0x4717ef*/
   *(_DWORD *)(this + 56) = 10; /*0x4717f6*/
   *(_DWORD *)(this + 52) = 0; /*0x4717fd*/
   *(_DWORD *)(this + 72) = a2; /*0x471800*/
   /* X11: vtable install elided (implicit via CaptureManagerClass virtuals 0x471807) */
-  /* X11: vtable install elided (X68 star-arith-named, RHS vt_CaptureManagerClass) */  /*0x47180d*/
-  /* X11: vtable install elided (X68 star-arith-named, RHS vt_CaptureManagerClass) */  /*0x471814*/
-  /* X11: vtable install elided (X68 star-arith-named, RHS vt_CaptureManagerClass) */  /*0x47181b*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS g_ptr_7E4B14) */  /*0x47180d*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS g_ptr_7E4B14) */  /*0x471814*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS g_ptr_7E4B14) */  /*0x47181b*/
   *(_DWORD *)(this + 60) = a3; /*0x471822*/
   *(_BYTE *)(this + 64) = a4; /*0x471825*/
   *(_BYTE *)(this + 65) = 0; /*0x471828*/
@@ -6373,15 +6373,15 @@ long ra2::game::SlaveManagerClass::GetClassID(GUID* a0)
   this->slaveVectorCapacity = 0; /*0x6af374*/
   (this->creationFrame) = ((this->creationFrame) & ~0xFF) | ((1) & 0xFF); /*0x6af377*/
   (this->creationFrame) = ((this->creationFrame) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x6af37b*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass_SlaveManagerClass_SlaveControl) */  /*0x6af37e*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F322C) */  /*0x6af37e*/
   *(_DWORD *)&this->q048[4] = 10; /*0x6af385*/
   *(_DWORD *)this->q048 = 0; /*0x6af38c*/
   *(_DWORD *)&this->q048[8] = *(_DWORD *)&((unsigned int *)&stru_A8EB00)[416]; /*0x6af395*/
   this->SlaveManagerClass_field_58 = 0; /*0x6af398*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_SlaveManagerClass) */  /*0x6af39b*/
-  ((unsigned int *)this)[0] = (void *)&vt_SlaveManagerClass; /*0x6af3a1*/
-  ((unsigned int *)this)[0] = (void *)&vt_SlaveManagerClass; /*0x6af3a8*/
-  ((unsigned int *)this)[0] = (void *)&vt_SlaveManagerClass; /*0x6af3af*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F319C) */  /*0x6af39b*/
+  ((unsigned int *)this)[0] = (void *)&g_ptr_7F319C; /*0x6af3a1*/
+  ((unsigned int *)this)[0] = (void *)&g_ptr_7F319C; /*0x6af3a8*/
+  ((unsigned int *)this)[0] = (void *)&g_ptr_7F319C; /*0x6af3af*/
   this->master = 0; /*0x6af3b6*/
   this->house = 0; /*0x6af3b9*/
   this->slaveOwner = 0; /*0x6af3bc*/
@@ -6416,15 +6416,15 @@ long ra2::game::SlaveManagerClass::Load(struct IStream* a0)
   this->slaveVectorCapacity = 0; /*0x6af374*/
   (this->creationFrame) = ((this->creationFrame) & ~0xFF) | ((1) & 0xFF); /*0x6af377*/
   (this->creationFrame) = ((this->creationFrame) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x6af37b*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass_SlaveManagerClass_SlaveControl) */  /*0x6af37e*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F322C) */  /*0x6af37e*/
   *(_DWORD *)&this->q048[4] = 10; /*0x6af385*/
   *(_DWORD *)this->q048 = 0; /*0x6af38c*/
   *(_DWORD *)&this->q048[8] = *(_DWORD *)&((unsigned int *)&stru_A8EB00)[416]; /*0x6af395*/
   this->SlaveManagerClass_field_58 = 0; /*0x6af398*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_SlaveManagerClass) */  /*0x6af39b*/
-  ((unsigned int *)this)[0] = (void *)&vt_SlaveManagerClass; /*0x6af3a1*/
-  ((unsigned int *)this)[0] = (void *)&vt_SlaveManagerClass; /*0x6af3a8*/
-  ((unsigned int *)this)[0] = (void *)&vt_SlaveManagerClass; /*0x6af3af*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F319C) */  /*0x6af39b*/
+  ((unsigned int *)this)[0] = (void *)&g_ptr_7F319C; /*0x6af3a1*/
+  ((unsigned int *)this)[0] = (void *)&g_ptr_7F319C; /*0x6af3a8*/
+  ((unsigned int *)this)[0] = (void *)&g_ptr_7F319C; /*0x6af3af*/
   this->master = 0; /*0x6af3b6*/
   this->house = 0; /*0x6af3b9*/
   this->slaveOwner = 0; /*0x6af3bc*/
@@ -6459,15 +6459,15 @@ long ra2::game::SlaveManagerClass::Save(struct IStream* a0, int a1)
   this->slaveVectorCapacity = 0; /*0x6af374*/
   (this->creationFrame) = ((this->creationFrame) & ~0xFF) | ((1) & 0xFF); /*0x6af377*/
   (this->creationFrame) = ((this->creationFrame) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x6af37b*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass_SlaveManagerClass_SlaveControl) */  /*0x6af37e*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F322C) */  /*0x6af37e*/
   *(_DWORD *)&this->q048[4] = 10; /*0x6af385*/
   *(_DWORD *)this->q048 = 0; /*0x6af38c*/
   *(_DWORD *)&this->q048[8] = *(_DWORD *)&((unsigned int *)&stru_A8EB00)[416]; /*0x6af395*/
   this->SlaveManagerClass_field_58 = 0; /*0x6af398*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_SlaveManagerClass) */  /*0x6af39b*/
-  ((unsigned int *)this)[0] = (void *)&vt_SlaveManagerClass; /*0x6af3a1*/
-  ((unsigned int *)this)[0] = (void *)&vt_SlaveManagerClass; /*0x6af3a8*/
-  ((unsigned int *)this)[0] = (void *)&vt_SlaveManagerClass; /*0x6af3af*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F319C) */  /*0x6af39b*/
+  ((unsigned int *)this)[0] = (void *)&g_ptr_7F319C; /*0x6af3a1*/
+  ((unsigned int *)this)[0] = (void *)&g_ptr_7F319C; /*0x6af3a8*/
+  ((unsigned int *)this)[0] = (void *)&g_ptr_7F319C; /*0x6af3af*/
   this->master = 0; /*0x6af3b6*/
   this->house = 0; /*0x6af3b9*/
   this->slaveOwner = 0; /*0x6af3bc*/
@@ -6499,17 +6499,17 @@ long ra2::game::SpawnManagerClass::GetClassID(GUID* a0)
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x6b6ea8*/
   SpawnControlVector::Constructor((SpawnControlVector *)this->spawns, 0, 0); /*0x6b6eb6*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass_SpawnManagerClass_SpawnControl) */  /*0x6b6ebb*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F36B4) */  /*0x6b6ebb*/
   *(_DWORD *)&this->q048[4] = 10; /*0x6b6ec1*/
   *(_DWORD *)this->q048 = 0; /*0x6b6ec8*/
   *(_DWORD *)&this->q048[8] = *(_DWORD *)&((unsigned int *)&stru_A8EB00)[416]; /*0x6b6ed4*/
   this->SpawnManagerClass_field_58 = 0; /*0x6b6ed7*/
   this->SpawnManagerClass_field_5C = *(_DWORD *)&((unsigned int *)&stru_A8EB00)[416]; /*0x6b6ee0*/
   this->SpawnManagerClass_field_64 = 0; /*0x6b6ee3*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_SpawnManagerClass) */  /*0x6b6ee6*/
-  ((unsigned int *)this)[0] = (void *)&vt_SpawnManagerClass; /*0x6b6eec*/
-  ((unsigned int *)this)[0] = (void *)&vt_SpawnManagerClass; /*0x6b6ef3*/
-  ((unsigned int *)this)[0] = (void *)&vt_SpawnManagerClass; /*0x6b6efa*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F3624) */  /*0x6b6ee6*/
+  ((unsigned int *)this)[0] = (void *)&g_ptr_7F3624; /*0x6b6eec*/
+  ((unsigned int *)this)[0] = (void *)&g_ptr_7F3624; /*0x6b6ef3*/
+  ((unsigned int *)this)[0] = (void *)&g_ptr_7F3624; /*0x6b6efa*/
   this->owner = 0; /*0x6b6f01*/
   this->spawnOwner = 0; /*0x6b6f04*/
   this->spawnType = 0; /*0x6b6f07*/
@@ -6543,17 +6543,17 @@ long ra2::game::SpawnManagerClass::Load(struct IStream* a0)
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x6b6ea8*/
   SpawnControlVector::Constructor((SpawnControlVector *)this->spawns, 0, 0); /*0x6b6eb6*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass_SpawnManagerClass_SpawnControl) */  /*0x6b6ebb*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F36B4) */  /*0x6b6ebb*/
   *(_DWORD *)&this->q048[4] = 10; /*0x6b6ec1*/
   *(_DWORD *)this->q048 = 0; /*0x6b6ec8*/
   *(_DWORD *)&this->q048[8] = *(_DWORD *)&((unsigned int *)&stru_A8EB00)[416]; /*0x6b6ed4*/
   this->SpawnManagerClass_field_58 = 0; /*0x6b6ed7*/
   this->SpawnManagerClass_field_5C = *(_DWORD *)&((unsigned int *)&stru_A8EB00)[416]; /*0x6b6ee0*/
   this->SpawnManagerClass_field_64 = 0; /*0x6b6ee3*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_SpawnManagerClass) */  /*0x6b6ee6*/
-  ((unsigned int *)this)[0] = (void *)&vt_SpawnManagerClass; /*0x6b6eec*/
-  ((unsigned int *)this)[0] = (void *)&vt_SpawnManagerClass; /*0x6b6ef3*/
-  ((unsigned int *)this)[0] = (void *)&vt_SpawnManagerClass; /*0x6b6efa*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F3624) */  /*0x6b6ee6*/
+  ((unsigned int *)this)[0] = (void *)&g_ptr_7F3624; /*0x6b6eec*/
+  ((unsigned int *)this)[0] = (void *)&g_ptr_7F3624; /*0x6b6ef3*/
+  ((unsigned int *)this)[0] = (void *)&g_ptr_7F3624; /*0x6b6efa*/
   this->owner = 0; /*0x6b6f01*/
   this->spawnOwner = 0; /*0x6b6f04*/
   this->spawnType = 0; /*0x6b6f07*/
@@ -6587,17 +6587,17 @@ long ra2::game::SpawnManagerClass::Save(struct IStream* a0, int a1)
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x6b6ea8*/
   SpawnControlVector::Constructor((SpawnControlVector *)this->spawns, 0, 0); /*0x6b6eb6*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass_SpawnManagerClass_SpawnControl) */  /*0x6b6ebb*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F36B4) */  /*0x6b6ebb*/
   *(_DWORD *)&this->q048[4] = 10; /*0x6b6ec1*/
   *(_DWORD *)this->q048 = 0; /*0x6b6ec8*/
   *(_DWORD *)&this->q048[8] = *(_DWORD *)&((unsigned int *)&stru_A8EB00)[416]; /*0x6b6ed4*/
   this->SpawnManagerClass_field_58 = 0; /*0x6b6ed7*/
   this->SpawnManagerClass_field_5C = *(_DWORD *)&((unsigned int *)&stru_A8EB00)[416]; /*0x6b6ee0*/
   this->SpawnManagerClass_field_64 = 0; /*0x6b6ee3*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_SpawnManagerClass) */  /*0x6b6ee6*/
-  ((unsigned int *)this)[0] = (void *)&vt_SpawnManagerClass; /*0x6b6eec*/
-  ((unsigned int *)this)[0] = (void *)&vt_SpawnManagerClass; /*0x6b6ef3*/
-  ((unsigned int *)this)[0] = (void *)&vt_SpawnManagerClass; /*0x6b6efa*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F3624) */  /*0x6b6ee6*/
+  ((unsigned int *)this)[0] = (void *)&g_ptr_7F3624; /*0x6b6eec*/
+  ((unsigned int *)this)[0] = (void *)&g_ptr_7F3624; /*0x6b6ef3*/
+  ((unsigned int *)this)[0] = (void *)&g_ptr_7F3624; /*0x6b6efa*/
   this->owner = 0; /*0x6b6f01*/
   this->spawnOwner = 0; /*0x6b6f04*/
   this->spawnType = 0; /*0x6b6f07*/
@@ -6659,7 +6659,7 @@ gamemd::Vector2D<short> * gamemd::MPGameModeClass::AssignStartingPositionsToHous
       }
     }
   }
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_Cell) */  /*0x5d6c45*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E38D0) */  /*0x5d6c45*/
   char v7; // [esp+11h] [ebp-Bh]
   if ( Block && v7 ) /*0x5d6c58*/
     __3_YAXPAX_Z(Block); /*0x5d6c5b*/
@@ -6679,14 +6679,14 @@ unsigned long ra2::game::CaptureManagerClass::AddRef()
   *(_DWORD *)(this + 40) = 0; /*0x4717e6*/
   *(_DWORD *)(this + 44) = 0; /*0x4717e9*/
   *(_BYTE *)(this + 49) = 0; /*0x4717ec*/
-  /* X11: vtable install elided (X68 star-arith-named, RHS vt_DynamicVectorClass_ControlNode) */  /*0x4717ef*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS g_ptr_7E4BA4) */  /*0x4717ef*/
   *(_DWORD *)(this + 56) = 10; /*0x4717f6*/
   *(_DWORD *)(this + 52) = 0; /*0x4717fd*/
   *(_DWORD *)(this + 72) = a2; /*0x471800*/
   /* X11: vtable install elided (implicit via CaptureManagerClass virtuals 0x471807) */
-  /* X11: vtable install elided (X68 star-arith-named, RHS vt_CaptureManagerClass) */  /*0x47180d*/
-  /* X11: vtable install elided (X68 star-arith-named, RHS vt_CaptureManagerClass) */  /*0x471814*/
-  /* X11: vtable install elided (X68 star-arith-named, RHS vt_CaptureManagerClass) */  /*0x47181b*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS g_ptr_7E4B14) */  /*0x47180d*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS g_ptr_7E4B14) */  /*0x471814*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS g_ptr_7E4B14) */  /*0x47181b*/
   *(_DWORD *)(this + 60) = a3; /*0x471822*/
   *(_BYTE *)(this + 64) = a4; /*0x471825*/
   *(_BYTE *)(this + 65) = 0; /*0x471828*/
@@ -6715,14 +6715,14 @@ unsigned long ra2::game::CaptureManagerClass::Release()
   *(_DWORD *)(this + 40) = 0; /*0x4717e6*/
   *(_DWORD *)(this + 44) = 0; /*0x4717e9*/
   *(_BYTE *)(this + 49) = 0; /*0x4717ec*/
-  /* X11: vtable install elided (X68 star-arith-named, RHS vt_DynamicVectorClass_ControlNode) */  /*0x4717ef*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS g_ptr_7E4BA4) */  /*0x4717ef*/
   *(_DWORD *)(this + 56) = 10; /*0x4717f6*/
   *(_DWORD *)(this + 52) = 0; /*0x4717fd*/
   *(_DWORD *)(this + 72) = a2; /*0x471800*/
   /* X11: vtable install elided (implicit via CaptureManagerClass virtuals 0x471807) */
-  /* X11: vtable install elided (X68 star-arith-named, RHS vt_CaptureManagerClass) */  /*0x47180d*/
-  /* X11: vtable install elided (X68 star-arith-named, RHS vt_CaptureManagerClass) */  /*0x471814*/
-  /* X11: vtable install elided (X68 star-arith-named, RHS vt_CaptureManagerClass) */  /*0x47181b*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS g_ptr_7E4B14) */  /*0x47180d*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS g_ptr_7E4B14) */  /*0x471814*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS g_ptr_7E4B14) */  /*0x47181b*/
   *(_DWORD *)(this + 60) = a3; /*0x471822*/
   *(_BYTE *)(this + 64) = a4; /*0x471825*/
   *(_BYTE *)(this + 65) = 0; /*0x471828*/
@@ -6814,10 +6814,10 @@ void gamemd::AbstractTypeClass::LoadTheaterSpecificArt(gamemd::TheaterType)
   *((_BYTE *)this + 36) = 0; /*0x410817*/
   *((_BYTE *)this + 61) = 0; /*0x41081a*/
   *((_BYTE *)this + 100) = 0; /*0x41081e*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_AbstractTypeClass) */  /*0x410822*/
-  /* X11: vtable install elided (X68 star-arith-named, RHS vt_AbstractTypeClass) */  /*0x410829*/
-  /* X11: vtable install elided (X68 star-arith-named, RHS vt_AbstractTypeClass) */  /*0x410830*/
-  /* X11: vtable install elided (X68 star-arith-named, RHS vt_AbstractTypeClass) */  /*0x410837*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E1FD4) */  /*0x410822*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS g_ptr_7E1FD4) */  /*0x410829*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS g_ptr_7E1FD4) */  /*0x410830*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS g_ptr_7E1FD4) */  /*0x410837*/
   if ( Source ) /*0x41083e*/
   {
     strncpy(Destination, Source, 0x18u); /*0x410895*/
@@ -7287,7 +7287,7 @@ void gamemd::MapClass::AllocateCells()
     *((_DWORD *)v2 + 2) = 0; /*0x565ab4*/
     v2[12] = 1; /*0x565abb*/
     v2[13] = 0; /*0x565abf*/
-    /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_CellClass) */  /*0x565ac3*/
+    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7ED480) */  /*0x565ac3*/
   }
   (*(void (__thiscall **)(char *, _DWORD, _DWORD))(*(_DWORD *)v2 + 8))(v2, *(_DWORD *)&this->q144[16], 0); /*0x565ad4*/
   int result; // eax
@@ -8370,7 +8370,7 @@ void gamemd::RawFileClass::CDCheck(unsigned int a0, bool a1, const char* a2)
   *(_WORD *)this->BufferDirty = 0; /*0x65ca9d*/
   *(_WORD *)this->BufferWritePending = 0; /*0x65caa1*/
   this->CacheReadAhead[0] = 0; /*0x65caa5*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_RawFileClass) */  /*0x65caa8*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F0904) */  /*0x65caa8*/
   return &this->FileClass; /*0x65caae*/
 }
 // truth-filled 0x65CA80 (G42.52 truth-emitting generator)
@@ -8385,7 +8385,7 @@ void gamemd::RawFileClass::Close()
   *(_WORD *)this->BufferDirty = 0; /*0x65ca9d*/
   *(_WORD *)this->BufferWritePending = 0; /*0x65caa1*/
   this->CacheReadAhead[0] = 0; /*0x65caa5*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_RawFileClass) */  /*0x65caa8*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F0904) */  /*0x65caa8*/
   return &this->FileClass; /*0x65caae*/
 }
 // truth-filled 0x71E6A0 (G42.52 truth-emitting generator)
@@ -8405,10 +8405,10 @@ void gamemd::TActionClass::pointerExpired(class ra2::game::AbstractClass* a0, bo
   this->TActionClass_field_30 = 0; /*0x71e6b8*/
   LOBYTE(this->TActionClass_field_38) = 0; /*0x71e6bb*/
   *(_DWORD *)&this->TActionClass_field_54 = 0; /*0x71e6be*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_TEventClass) */  /*0x71e6c1*/
-  ((unsigned int *)this)[0] = (void *)&vt_TEventClass; /*0x71e6c7*/
-  ((unsigned int *)this)[0] = (void *)&vt_TEventClass; /*0x71e6ce*/
-  ((unsigned int *)this)[0] = (void *)&vt_TEventClass; /*0x71e6d5*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F554C) */  /*0x71e6c1*/
+  ((unsigned int *)this)[0] = (void *)&g_ptr_7F554C; /*0x71e6c7*/
+  ((unsigned int *)this)[0] = (void *)&g_ptr_7F554C; /*0x71e6ce*/
+  ((unsigned int *)this)[0] = (void *)&g_ptr_7F554C; /*0x71e6d5*/
   v2 = ((unsigned int *)&g_BuildingLoadQueue_Array)[54]; /*0x71e6dc*/
   if ( ((unsigned int *)&g_BuildingLoadQueue_Array)[54] < ((unsigned int *)&g_BuildingLoadQueue_Array)[52] /*0x71e71a*/
       || (BYTE1(((unsigned int *)&g_BuildingLoadQueue_Array)[53]) || !((unsigned int *)&g_BuildingLoadQueue_Array)[52])
@@ -8486,7 +8486,7 @@ void gamemd::TeamTypeClass::pointerExpired(class ra2::game::AbstractClass* a0, b
   this->taskForceCapacity = 0; /*0x4c98dd*/
   this->q04C[0] = 1; /*0x4c98e0*/
   this->q04C[1] = 0; /*0x4c98e3*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass_TechnoTypeClass_const) */  /*0x4c98e6*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8934) */  /*0x4c98e6*/
   *(_DWORD *)&this->q04C[8] = 10; /*0x4c98ed*/
   *(_DWORD *)&this->q04C[4] = 0; /*0x4c98f4*/
   this->TeamTypeClass_field_71 = 1; /*0x4c98f7*/
@@ -8498,10 +8498,10 @@ void gamemd::TeamTypeClass::pointerExpired(class ra2::game::AbstractClass* a0, b
   this->TeamTypeClass_field_68 = -1; /*0x4c990d*/
   this->TeamTypeClass_field_6C = 0; /*0x4c9914*/
   this->TeamTypeClass_field_70 = 0; /*0x4c9917*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_FactoryClass) */  /*0x4c991a*/
-  ((unsigned int *)this)[0] = (void *)&vt_FactoryClass; /*0x4c9920*/
-  ((unsigned int *)this)[0] = (void *)&vt_FactoryClass; /*0x4c9926*/
-  ((unsigned int *)this)[0] = (void *)&vt_FactoryClass; /*0x4c992d*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E88A4) */  /*0x4c991a*/
+  ((unsigned int *)this)[0] = (void *)&g_ptr_7E88A4; /*0x4c9920*/
+  ((unsigned int *)this)[0] = (void *)&g_ptr_7E88A4; /*0x4c9926*/
+  ((unsigned int *)this)[0] = (void *)&g_ptr_7E88A4; /*0x4c992d*/
   AbstractClass::GenerateUniqueID((AbstractClass *)&((unsigned int *)this)[0]); /*0x4c9934*/
   if ( *(int *)&stru_A83D50.__pad_C8[40] < *(int *)&stru_A83D50.__pad_C8[32] /*0x4c996d*/
       || (stru_A83D50.__pad_C8[37] || !*(_DWORD *)&stru_A83D50.__pad_C8[32])
@@ -8547,13 +8547,13 @@ void gamemd::WaypointPathClass::pointerExpired(class ra2::game::AbstractClass* a
   *(_DWORD *)(this + 48) = 0; /*0x763828*/
   *(_BYTE *)(this + 52) = 1; /*0x76382b*/
   *(_BYTE *)(this + 53) = 0; /*0x76382f*/
-  /* X11: vtable install elided (X68 star-arith-named, RHS vt_DynamicVectorClass_WaypointClass) */  /*0x763832*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS g_ptr_7F6ED4) */  /*0x763832*/
   *(_DWORD *)(this + 60) = 10; /*0x763839*/
   *(_DWORD *)(this + 56) = 0; /*0x763840*/
   /* X11: vtable install elided (implicit via WaypointPathClass virtuals 0x763845) */
-  /* X11: vtable install elided (X68 star-arith-named, RHS vt_WaypointPathClass) */  /*0x76384b*/
-  /* X11: vtable install elided (X68 star-arith-named, RHS vt_WaypointPathClass) */  /*0x763852*/
-  /* X11: vtable install elided (X68 star-arith-named, RHS vt_WaypointPathClass) */  /*0x763859*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS g_ptr_7F6E44) */  /*0x76384b*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS g_ptr_7F6E44) */  /*0x763852*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS g_ptr_7F6E44) */  /*0x763859*/
   if ( a2 < 0xC /*0x76389a*/
       && (dword_B72618 < dword_B72610
        || (byte_B72615 || !dword_B72610)
@@ -8578,14 +8578,14 @@ void ra2::game::CaptureManagerClass::pointerExpired(class ra2::game::AbstractCla
   *(_DWORD *)(this + 40) = 0; /*0x4717e6*/
   *(_DWORD *)(this + 44) = 0; /*0x4717e9*/
   *(_BYTE *)(this + 49) = 0; /*0x4717ec*/
-  /* X11: vtable install elided (X68 star-arith-named, RHS vt_DynamicVectorClass_ControlNode) */  /*0x4717ef*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS g_ptr_7E4BA4) */  /*0x4717ef*/
   *(_DWORD *)(this + 56) = 10; /*0x4717f6*/
   *(_DWORD *)(this + 52) = 0; /*0x4717fd*/
   *(_DWORD *)(this + 72) = a2; /*0x471800*/
   /* X11: vtable install elided (implicit via CaptureManagerClass virtuals 0x471807) */
-  /* X11: vtable install elided (X68 star-arith-named, RHS vt_CaptureManagerClass) */  /*0x47180d*/
-  /* X11: vtable install elided (X68 star-arith-named, RHS vt_CaptureManagerClass) */  /*0x471814*/
-  /* X11: vtable install elided (X68 star-arith-named, RHS vt_CaptureManagerClass) */  /*0x47181b*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS g_ptr_7E4B14) */  /*0x47180d*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS g_ptr_7E4B14) */  /*0x471814*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS g_ptr_7E4B14) */  /*0x47181b*/
   *(_DWORD *)(this + 60) = a3; /*0x471822*/
   *(_BYTE *)(this + 64) = a4; /*0x471825*/
   *(_BYTE *)(this + 65) = 0; /*0x471828*/
@@ -8636,14 +8636,14 @@ void ra2::game::FootClass::Draw_A_SHP(struct ra2::game::SHPStruct* a0, int a1, g
   this->currentSpeed_multiplier[0] = 0; /*0x4d3292*/
   this->currentSpeed_multiplier[1] = 1072693248; /*0x4d329b*/
   AbstractClassVector::Construct((AbstractClassVector *)this->unknownAbstractArray588, 0, 0); /*0x4d32a5*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass_AbstractClass) */  /*0x4d32aa*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E91EC) */  /*0x4d32aa*/
   *(_DWORD *)&this->__pad_58C[16] = 10; /*0x4d32b0*/
   *(_DWORD *)&this->__pad_58C[12] = 0; /*0x4d32b7*/
   this->FootClass_field_5A0 = 0; /*0x4d32c0*/
   this->movementDestination = 0; /*0x4d32c7*/
   this->lastDestination = 0; /*0x4d32d0*/
   AbstractClassVector::Construct((AbstractClassVector *)this->FootClass_field_abstract_array_5AC, 0, 0); /*0x4d32d6*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass_AbstractClass) */  /*0x4d32e0*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E91EC) */  /*0x4d32e0*/
   *(_DWORD *)&this->__pad_5B0[16] = 10; /*0x4d32e6*/
   *(_DWORD *)&this->__pad_5B0[12] = 0; /*0x4d32e9*/
   this->FootClass_field_int_5C4 = -1; /*0x4d32ec*/
@@ -8700,10 +8700,10 @@ void ra2::game::FootClass::Draw_A_SHP(struct ra2::game::SHPStruct* a0, int a1, g
   this->frozenStill = 1; /*0x4d344a*/
   this->FootClass_field_bool_6B7 = 0; /*0x4d3451*/
   this->FootClass_field_bool_6B8 = 0; /*0x4d3457*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_FootClass) */  /*0x4d345d*/
-  ((unsigned int *)this)[0] = (void *)&vt_FootClass; /*0x4d3463*/
-  ((unsigned int *)this)[0] = (void *)&vt_FootClass; /*0x4d346a*/
-  ((unsigned int *)this)[0] = (void *)&vt_FootClass; /*0x4d3471*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8C68) */  /*0x4d345d*/
+  ((unsigned int *)this)[0] = (void *)&g_ptr_7E8C68; /*0x4d3463*/
+  ((unsigned int *)this)[0] = (void *)&g_ptr_7E8C68; /*0x4d346a*/
+  ((unsigned int *)this)[0] = (void *)&g_ptr_7E8C68; /*0x4d3471*/
   this->pathDirections[0] = -1; /*0x4d3478*/
   AudioController::Init((AudioController *)this->audioController7); /*0x4d3482*/
   if ( ((char *)&FootClass_Array) < (int)((char *)&FootClass_Array) /*0x4d34bb*/
@@ -8764,14 +8764,14 @@ void ra2::game::FootClass::Draw_A_VXL(struct ra2::game::VoxelStruct* a0, int a1,
   this->currentSpeed_multiplier[0] = 0; /*0x4d3292*/
   this->currentSpeed_multiplier[1] = 1072693248; /*0x4d329b*/
   AbstractClassVector::Construct((AbstractClassVector *)this->unknownAbstractArray588, 0, 0); /*0x4d32a5*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass_AbstractClass) */  /*0x4d32aa*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E91EC) */  /*0x4d32aa*/
   *(_DWORD *)&this->__pad_58C[16] = 10; /*0x4d32b0*/
   *(_DWORD *)&this->__pad_58C[12] = 0; /*0x4d32b7*/
   this->FootClass_field_5A0 = 0; /*0x4d32c0*/
   this->movementDestination = 0; /*0x4d32c7*/
   this->lastDestination = 0; /*0x4d32d0*/
   AbstractClassVector::Construct((AbstractClassVector *)this->FootClass_field_abstract_array_5AC, 0, 0); /*0x4d32d6*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass_AbstractClass) */  /*0x4d32e0*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E91EC) */  /*0x4d32e0*/
   *(_DWORD *)&this->__pad_5B0[16] = 10; /*0x4d32e6*/
   *(_DWORD *)&this->__pad_5B0[12] = 0; /*0x4d32e9*/
   this->FootClass_field_int_5C4 = -1; /*0x4d32ec*/
@@ -8828,10 +8828,10 @@ void ra2::game::FootClass::Draw_A_VXL(struct ra2::game::VoxelStruct* a0, int a1,
   this->frozenStill = 1; /*0x4d344a*/
   this->FootClass_field_bool_6B7 = 0; /*0x4d3451*/
   this->FootClass_field_bool_6B8 = 0; /*0x4d3457*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_FootClass) */  /*0x4d345d*/
-  ((unsigned int *)this)[0] = (void *)&vt_FootClass; /*0x4d3463*/
-  ((unsigned int *)this)[0] = (void *)&vt_FootClass; /*0x4d346a*/
-  ((unsigned int *)this)[0] = (void *)&vt_FootClass; /*0x4d3471*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8C68) */  /*0x4d345d*/
+  ((unsigned int *)this)[0] = (void *)&g_ptr_7E8C68; /*0x4d3463*/
+  ((unsigned int *)this)[0] = (void *)&g_ptr_7E8C68; /*0x4d346a*/
+  ((unsigned int *)this)[0] = (void *)&g_ptr_7E8C68; /*0x4d3471*/
   this->pathDirections[0] = -1; /*0x4d3478*/
   AudioController::Init((AudioController *)this->audioController7); /*0x4d3482*/
   if ( ((char *)&FootClass_Array) < (int)((char *)&FootClass_Array) /*0x4d34bb*/
@@ -8870,15 +8870,15 @@ void ra2::game::SlaveManagerClass::pointerExpired(class ra2::game::AbstractClass
   this->slaveVectorCapacity = 0; /*0x6af374*/
   (this->creationFrame) = ((this->creationFrame) & ~0xFF) | ((1) & 0xFF); /*0x6af377*/
   (this->creationFrame) = ((this->creationFrame) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x6af37b*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass_SlaveManagerClass_SlaveControl) */  /*0x6af37e*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F322C) */  /*0x6af37e*/
   *(_DWORD *)&this->q048[4] = 10; /*0x6af385*/
   *(_DWORD *)this->q048 = 0; /*0x6af38c*/
   *(_DWORD *)&this->q048[8] = *(_DWORD *)&((unsigned int *)&stru_A8EB00)[416]; /*0x6af395*/
   this->SlaveManagerClass_field_58 = 0; /*0x6af398*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_SlaveManagerClass) */  /*0x6af39b*/
-  ((unsigned int *)this)[0] = (void *)&vt_SlaveManagerClass; /*0x6af3a1*/
-  ((unsigned int *)this)[0] = (void *)&vt_SlaveManagerClass; /*0x6af3a8*/
-  ((unsigned int *)this)[0] = (void *)&vt_SlaveManagerClass; /*0x6af3af*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F319C) */  /*0x6af39b*/
+  ((unsigned int *)this)[0] = (void *)&g_ptr_7F319C; /*0x6af3a1*/
+  ((unsigned int *)this)[0] = (void *)&g_ptr_7F319C; /*0x6af3a8*/
+  ((unsigned int *)this)[0] = (void *)&g_ptr_7F319C; /*0x6af3af*/
   this->master = 0; /*0x6af3b6*/
   this->house = 0; /*0x6af3b9*/
   this->slaveOwner = 0; /*0x6af3bc*/
@@ -8910,17 +8910,17 @@ void ra2::game::SpawnManagerClass::pointerExpired(class ra2::game::AbstractClass
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x6b6ea8*/
   SpawnControlVector::Constructor((SpawnControlVector *)this->spawns, 0, 0); /*0x6b6eb6*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass_SpawnManagerClass_SpawnControl) */  /*0x6b6ebb*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F36B4) */  /*0x6b6ebb*/
   *(_DWORD *)&this->q048[4] = 10; /*0x6b6ec1*/
   *(_DWORD *)this->q048 = 0; /*0x6b6ec8*/
   *(_DWORD *)&this->q048[8] = *(_DWORD *)&((unsigned int *)&stru_A8EB00)[416]; /*0x6b6ed4*/
   this->SpawnManagerClass_field_58 = 0; /*0x6b6ed7*/
   this->SpawnManagerClass_field_5C = *(_DWORD *)&((unsigned int *)&stru_A8EB00)[416]; /*0x6b6ee0*/
   this->SpawnManagerClass_field_64 = 0; /*0x6b6ee3*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_SpawnManagerClass) */  /*0x6b6ee6*/
-  ((unsigned int *)this)[0] = (void *)&vt_SpawnManagerClass; /*0x6b6eec*/
-  ((unsigned int *)this)[0] = (void *)&vt_SpawnManagerClass; /*0x6b6ef3*/
-  ((unsigned int *)this)[0] = (void *)&vt_SpawnManagerClass; /*0x6b6efa*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F3624) */  /*0x6b6ee6*/
+  ((unsigned int *)this)[0] = (void *)&g_ptr_7F3624; /*0x6b6eec*/
+  ((unsigned int *)this)[0] = (void *)&g_ptr_7F3624; /*0x6b6ef3*/
+  ((unsigned int *)this)[0] = (void *)&g_ptr_7F3624; /*0x6b6efa*/
   this->owner = 0; /*0x6b6f01*/
   this->spawnOwner = 0; /*0x6b6f04*/
   this->spawnType = 0; /*0x6b6f07*/
@@ -9016,14 +9016,14 @@ void gamemd::BuildingClass::CreateDestructionCrater()
   *(_DWORD *)(this + 1652) = 0; /*0x43b8b7*/
   *(_BYTE *)(this + 1656) = 1; /*0x43b8bd*/
   *(_BYTE *)(this + 1657) = 0; /*0x43b8c4*/
-  /* X11: vtable install elided (X68 star-arith-named, RHS vt_DynamicVectorClass_InfantryClass) */  /*0x43b8ca*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS g_ptr_7E43C8) */  /*0x43b8ca*/
   *(_DWORD *)(this + 1664) = 10; /*0x43b8d0*/
   *(_DWORD *)(this + 1660) = 0; /*0x43b8d6*/
   *(_DWORD *)(this + 1672) = 0; /*0x43b8dc*/
   *(_DWORD *)(this + 1676) = 0; /*0x43b8e2*/
   *(_BYTE *)(this + 1680) = 1; /*0x43b8e8*/
   *(_BYTE *)(this + 1681) = 0; /*0x43b8ef*/
-  /* X11: vtable install elided (X68 star-arith-named, RHS vt_DynamicVectorClass_InfantryClass) */  /*0x43b8f5*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS g_ptr_7E43C8) */  /*0x43b8f5*/
   *(_DWORD *)(this + 1688) = 10; /*0x43b8fb*/
   *(_DWORD *)(this + 1684) = 0; /*0x43b901*/
   *(_DWORD *)(this + 1692) = 0; /*0x43b907*/
@@ -9203,10 +9203,10 @@ void gamemd::TActionClass::ExecuteAction(int a0, ra2::game::ObjectClass* a1, ra2
   this->TActionClass_field_30 = 0; /*0x71e6b8*/
   LOBYTE(this->TActionClass_field_38) = 0; /*0x71e6bb*/
   *(_DWORD *)&this->TActionClass_field_54 = 0; /*0x71e6be*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_TEventClass) */  /*0x71e6c1*/
-  ((unsigned int *)this)[0] = (void *)&vt_TEventClass; /*0x71e6c7*/
-  ((unsigned int *)this)[0] = (void *)&vt_TEventClass; /*0x71e6ce*/
-  ((unsigned int *)this)[0] = (void *)&vt_TEventClass; /*0x71e6d5*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F554C) */  /*0x71e6c1*/
+  ((unsigned int *)this)[0] = (void *)&g_ptr_7F554C; /*0x71e6c7*/
+  ((unsigned int *)this)[0] = (void *)&g_ptr_7F554C; /*0x71e6ce*/
+  ((unsigned int *)this)[0] = (void *)&g_ptr_7F554C; /*0x71e6d5*/
   v2 = ((unsigned int *)&g_BuildingLoadQueue_Array)[54]; /*0x71e6dc*/
   if ( ((unsigned int *)&g_BuildingLoadQueue_Array)[54] < ((unsigned int *)&g_BuildingLoadQueue_Array)[52] /*0x71e71a*/
       || (BYTE1(((unsigned int *)&g_BuildingLoadQueue_Array)[53]) || !((unsigned int *)&g_BuildingLoadQueue_Array)[52])
@@ -9282,10 +9282,10 @@ void gamemd::TActionClass::ddtor()
   this->TActionClass_field_30 = 0; /*0x71e6b8*/
   LOBYTE(this->TActionClass_field_38) = 0; /*0x71e6bb*/
   *(_DWORD *)&this->TActionClass_field_54 = 0; /*0x71e6be*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_TEventClass) */  /*0x71e6c1*/
-  ((unsigned int *)this)[0] = (void *)&vt_TEventClass; /*0x71e6c7*/
-  ((unsigned int *)this)[0] = (void *)&vt_TEventClass; /*0x71e6ce*/
-  ((unsigned int *)this)[0] = (void *)&vt_TEventClass; /*0x71e6d5*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F554C) */  /*0x71e6c1*/
+  ((unsigned int *)this)[0] = (void *)&g_ptr_7F554C; /*0x71e6c7*/
+  ((unsigned int *)this)[0] = (void *)&g_ptr_7F554C; /*0x71e6ce*/
+  ((unsigned int *)this)[0] = (void *)&g_ptr_7F554C; /*0x71e6d5*/
   v2 = ((unsigned int *)&g_BuildingLoadQueue_Array)[54]; /*0x71e6dc*/
   if ( ((unsigned int *)&g_BuildingLoadQueue_Array)[54] < ((unsigned int *)&g_BuildingLoadQueue_Array)[52] /*0x71e71a*/
       || (BYTE1(((unsigned int *)&g_BuildingLoadQueue_Array)[53]) || !((unsigned int *)&g_BuildingLoadQueue_Array)[52])
@@ -9348,10 +9348,10 @@ void gamemd::TActionClass::ddtor()
 void gamemd::TEventClass::ddtor()
 {
 
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_TEventClass) */  /*0x71fa86*/
-  ((unsigned int *)this)[0] = (void *)&vt_TEventClass; /*0x71fa8c*/
-  ((unsigned int *)this)[0] = (void *)&vt_TEventClass; /*0x71fa93*/
-  ((unsigned int *)this)[0] = (void *)&vt_TEventClass; /*0x71fa9a*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F554C) */  /*0x71fa86*/
+  ((unsigned int *)this)[0] = (void *)&g_ptr_7F554C; /*0x71fa8c*/
+  ((unsigned int *)this)[0] = (void *)&g_ptr_7F554C; /*0x71fa93*/
+  ((unsigned int *)this)[0] = (void *)&g_ptr_7F554C; /*0x71fa9a*/
   AbstractClass::AnnounceExpiredPointer(&this->AbstractClass, 1); /*0x71faa1*/
   TEventClass *v7; // [esp+8h] [ebp-4h] BYREF
   v7 = this; /*0x71fab6*/

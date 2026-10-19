@@ -30,7 +30,7 @@ unsigned int * ScoreAnimClass::Constructor_ScoreAnimClass_0(char a2)
 unsigned int * ScoreAnimClass::Constructor_ScoreAnimClass_1(char a2)
 {
 
-  this->m_0 = (int)&vt_ScoreAnimClass; /*0x691029*/
+  this->m_0 = (int)&g_ptr_7F0EDC; /*0x691029*/
   if ( (a2 & 1) != 0 ) /*0x69102f*/
     __3_YAXPAX_Z(this); /*0x691032*/
   return &this->m_0; /*0x69103c*/
@@ -120,9 +120,9 @@ int ScriptClass::LoadState(AbstractClass * aP0, int aP1)
     {
       AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x69164f*/
       /* X11: vtable install elided (implicit via ScriptClass virtuals 0x691654) */
-      ((unsigned int *)aP0)[0] = (unsigned int)(&vt_ScriptClass); /*0x69165a*/
-      ((unsigned int *)aP0)[0] = (unsigned int)(&vt_ScriptClass); /*0x691661*/
-      ((unsigned int *)aP0)[0] = (unsigned int)(&vt_ScriptClass); /*0x691668*/
+      ((unsigned int *)aP0)[0] = (unsigned int)(&g_ptr_7F0F4C); /*0x69165a*/
+      ((unsigned int *)aP0)[0] = (unsigned int)(&g_ptr_7F0F4C); /*0x691661*/
+      ((unsigned int *)aP0)[0] = (unsigned int)(&g_ptr_7F0F4C); /*0x691668*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->buildingType); /*0x691678*/
     return 0; /*0x69167d*/
@@ -237,9 +237,9 @@ int ScriptTypeClass::LoadTypeData(AbstractTypeClass * aP0, int aP1)
     {
       ((AbstractTypeClass*)(int)aP0)->Init((int)&aP1); /*0x691daf*/
       /* X11: vtable install elided (implicit via ScriptTypeClass virtuals 0x691db4) */
-      ((unsigned int *)aP0)[0] = (unsigned int)(&vt_ScriptTypeClass); /*0x691dba*/
-      ((unsigned int *)aP0)[0] = (unsigned int)(&vt_ScriptTypeClass); /*0x691dc1*/
-      ((unsigned int *)aP0)[0] = (unsigned int)(&vt_ScriptTypeClass); /*0x691dc8*/
+      ((unsigned int *)aP0)[0] = (unsigned int)(&g_ptr_7F0FDC); /*0x691dba*/
+      ((unsigned int *)aP0)[0] = (unsigned int)(&g_ptr_7F0FDC); /*0x691dc1*/
+      ((unsigned int *)aP0)[0] = (unsigned int)(&g_ptr_7F0FDC); /*0x691dc8*/
     }
     return 0; /*0x691dcf*/
   }
@@ -321,7 +321,7 @@ int Gap2Recv_692290::SmallFunc_692290() {
   *((unsigned char *)this + 21850) = 0; /*0x6922b8*/
   *((unsigned char *)this + 21849) = 1; /*0x6922be*/
   /* X11: vtable install elided (implicit via ScrollClass virtuals 0x6922c5) */
-  *((unsigned int *)this + 5446) = &vt_ScrollClass; /*0x6922cb*/
+  *((unsigned int *)this + 5446) = &g_var_5ee334; /*0x6922cb*/
   return this; /*0x6922d7*/
 
 }
@@ -872,7 +872,7 @@ _DWORD * MapFile::Constructor(int a2, int a3)
   this->MapFile_field_0x08 = a2; /*0x69d77e*/
   (this->MapFile_field_0x0C) = ((this->MapFile_field_0x0C) & ~0xFF) | ((1) & 0xFF); /*0x69d781*/
   (this->MapFile_field_0x0C) = ((this->MapFile_field_0x0C) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x69d785*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_VectorClass); /*0x69d788*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)(&g_ptr_7E8500); /*0x69d788*/
   if ( a2 ) /*0x69d78e*/
   {
     if ( a3 ) /*0x69d796*/

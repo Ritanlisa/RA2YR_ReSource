@@ -170,7 +170,7 @@ LABEL_61:
     goto LABEL_61; /*0x4794f7*/
   v15 = CCFileClass::Construct(&v24, g_Str_File_THEMEMD_MIX); /*0x479526*/
   v16 = v15->vt_slot_20(0, a2); /*0x47953f*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_CCFileClass) */  /*0x479541*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E16B0) */  /*0x479541*/
   v28 = 0; /*0x479545*/
   Vector::Clear((int)v26); /*0x47954c*/
   v24.FilePointer = (int)&off_7E1668; /*0x47955a*/
@@ -201,7 +201,7 @@ LABEL_58:
   sprintf(Source, "MOVMD%02d.MIX", a3); /*0x4795e4*/
   v19 = CCFileClass::Construct((CCFileClass *)&v24.FilePointer, Source); /*0x4795f5*/
   v20 = v19->vt_slot_20(0); /*0x479609*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_CCFileClass) */  /*0x47960b*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x47960b*/
   v27 = 0; /*0x47960f*/
   Vector::Clear((int)&v25); /*0x479616*/
   *(unsigned int *)v24.__tail_0 = &off_7E1668; /*0x47961f*/

@@ -3,7 +3,7 @@
 // REFERENCE ONLY - not compiled. Width-matched rewrites; unmatched kept raw.
 
 // ==== 0x00630090  ParticleSystemClass::vt[06]  this=ParticleSystemClass  sig=csp ====
-int __stdcall ParticleSystemClass::vt_06(ParticleSystemClass *this, int *a2, int Owner)
+int __stdcall ParticleSystemClass::g_var_1d5e6b(ParticleSystemClass *this, int *a2, int Owner)
 {
   int result; // eax
   int v4; // edx
@@ -15223,7 +15223,7 @@ LABEL_66:
 
 
 // ==== 0x00630090  ParticleSystemClass::vt[06]  this=ParticleSystemClass  sig=csp ====
-int __stdcall ParticleSystemClass::vt_06(ParticleSystemClass *this, int *a2, int Owner)
+int __stdcall ParticleSystemClass::g_var_1d5e6b(ParticleSystemClass *this, int *a2, int Owner)
 {
   int result; // eax
   int v4; // edx

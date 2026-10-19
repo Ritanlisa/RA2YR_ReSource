@@ -222,13 +222,13 @@ void AbstractClass::COMStub_Return0_69(Tactical * aP0, AbstractClass * aP1)
 
 }
 
-// ==== BACKFILL 0x004DBA30  FootClass::vt_entry_548  cls=FootClass  sig=csp  renamed_refs=0  residual=- ====
-void FootClass::vt_entry_548() {
+// ==== BACKFILL 0x004DBA30  FootClass::g_var_85b48b  cls=FootClass  sig=csp  renamed_refs=0  residual=- ====
+void FootClass::g_var_85b48b() {
     ; /*0x4dba30*/
 }
 
-// ==== BACKFILL 0x004DBA40  FootClass::vt_entry_54C  cls=FootClass  sig=csp  renamed_refs=0  residual=- ====
-void FootClass::vt_entry_54C() {
+// ==== BACKFILL 0x004DBA40  FootClass::g_var_c64868  cls=FootClass  sig=csp  renamed_refs=0  residual=- ====
+void FootClass::g_var_c64868() {
     ; /*0x4dba40*/
 }
 
@@ -238,24 +238,24 @@ int TechnoClass::GetTargetCellCenter(AbstractClass *a2)
     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004DBA50.json)
 }
 
-// ==== BACKFILL 0x004DEE50  FootClass::vt_entry_530  cls=FootClass  sig=csp  renamed_refs=0  residual=- ====
-int FootClass::vt_entry_530(int a2, int a3, int a4)
+// ==== BACKFILL 0x004DEE50  FootClass::g_var_43e13d  cls=FootClass  sig=csp  renamed_refs=0  residual=- ====
+int FootClass::g_var_43e13d(int a2, int a3, int a4)
 {
     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004DEE50.json)
 }
 
-// ==== BACKFILL 0x004DF1C0  TechnoClass::vt_entry_4AC  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
-BOOL TechnoClass::vt_entry_4AC() {
+// ==== BACKFILL 0x004DF1C0  TechnoClass::g_var_c4eb38  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
+BOOL TechnoClass::g_var_c4eb38() {
     return *((unsigned int *)this + 369) != -1; /*0x4df1ce*/
 }
 
-// ==== BACKFILL 0x004DF1D0  TechnoClass::vt_entry_4B0  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
-int TechnoClass::vt_entry_4B0() {
+// ==== BACKFILL 0x004DF1D0  TechnoClass::g_var_242f49  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
+int TechnoClass::g_var_242f49() {
     return *((unsigned char *)this + 1489); /*0x4df1d6*/
 }
 
-// ==== BACKFILL 0x004DF1E0  TechnoClass::vt_entry_4B4  cls=TechnoClass  sig=csp  renamed_refs=0  residual=u32_5C4 ====
-int TechnoClass::vt_entry_4B4() {
+// ==== BACKFILL 0x004DF1E0  TechnoClass::g_var_d042ea  cls=TechnoClass  sig=csp  renamed_refs=0  residual=u32_5C4 ====
+int TechnoClass::g_var_d042ea() {
   return this->u32_5C4; /*0x4df1e6*/
 }
 
@@ -286,7 +286,7 @@ void E4Recv_4DF280::sub_4DF280()
 
 }
 
-// ==== BACKFILL 0x004DF310  TechnoClass::vt_entry_4C4  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
-BOOL TechnoClass::vt_entry_4C4() {
+// ==== BACKFILL 0x004DF310  TechnoClass::g_var_646489  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
+BOOL TechnoClass::g_var_646489() {
     return *((unsigned int *)this + 369) == 29; /*0x4df31e*/
 }

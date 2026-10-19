@@ -75,8 +75,8 @@ public:
     int PointerToIndex(void*) const;                                   // 0x472CA0
 
     // Stub/vtable
-    void vt_03();                                                      // 0x472A80
-    void vt_06();                                                      // 0x472AD0
+    void g_var_ffdfec();                                                      // 0x472A80
+    void g_var_1d5e6b();                                                      // 0x472AD0
 
     DynamicVectorClass<void*>   controlNodes;      // +0x24 (this+36)
     int32_t                     controlNodeCount;  // +0x34 (this+52)

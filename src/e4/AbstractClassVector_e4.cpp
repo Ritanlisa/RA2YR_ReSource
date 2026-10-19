@@ -52,7 +52,7 @@ int AbstractClassVector::Construct(int aP1, int aP2, void *a3, void *a4, void *a
   this->q008 = aP1; /*0x4e0e8e*/
   (this->AbstractClassVector_field_0x0C) = ((this->AbstractClassVector_field_0x0C) & ~0xFF) | ((1) & 0xFF); /*0x4e0e91*/
   (this->AbstractClassVector_field_0x0C) = ((this->AbstractClassVector_field_0x0C) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x4e0e95*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x4e0e98*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x4e0e98*/
   if ( aP1 ) /*0x4e0e9e*/
   {
     if ( aP2 ) /*0x4e0ea6*/

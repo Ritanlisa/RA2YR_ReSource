@@ -7787,8 +7787,8 @@ int __thiscall FootClass::HandleTargetDestroyed(FootClass *this, int *a2, int *a
 
 
 
-// ==== 0x004D9C00  FootClass::vt_entry_524  this=FootClass  sig=csp ====
-int FootClass::vt_entry_524(FootClass *this)
+// ==== 0x004D9C00  FootClass::g_var_718b21  this=FootClass  sig=csp ====
+int FootClass::g_var_718b21(FootClass *this)
 {
   return 0; /*0x4d9c02*/
 }
@@ -7968,8 +7968,8 @@ int __thiscall BuildingClass::SellUnit(FootClass *this, int a2)
 
 
 
-// ==== 0x004D9FF0  FootClass::vt_entry_4F0  this=FootClass  sig=csp ====
-_DWORD *__thiscall FootClass::vt_entry_4F0(FootClass *this, _DWORD *a2)
+// ==== 0x004D9FF0  FootClass::g_var_98656b  this=FootClass  sig=csp ====
+_DWORD *__thiscall FootClass::g_var_98656b(FootClass *this, _DWORD *a2)
 {
   _DWORD *v2; // ecx
   _BYTE v4[12]; // [esp+4h] [ebp-Ch] BYREF
@@ -9304,8 +9304,8 @@ LABEL_13:
 
 
 
-// ==== 0x004DB9B0  FootClass::vt_entry_504  this=FootClass  sig=csp ====
-char __thiscall BuildingClass::vt_entry_504(FootClass *this)
+// ==== 0x004DB9B0  FootClass::g_var_4e2537  this=FootClass  sig=csp ====
+char __thiscall BuildingClass::g_var_4e2537(FootClass *this)
 {
   int Member; // eax
   int v3; // esi
@@ -9329,16 +9329,16 @@ char __thiscall BuildingClass::vt_entry_504(FootClass *this)
 
 
 
-// ==== 0x004DBA30  FootClass::vt_entry_548  this=FootClass  sig=csp ====
-void FootClass::vt_entry_548(FootClass *this)
+// ==== 0x004DBA30  FootClass::g_var_85b48b  this=FootClass  sig=csp ====
+void FootClass::g_var_85b48b(FootClass *this)
 {
   ; /*0x4dba30*/
 }
 
 
 
-// ==== 0x004DBA40  FootClass::vt_entry_54C  this=FootClass  sig=csp ====
-void FootClass::vt_entry_54C(FootClass *this)
+// ==== 0x004DBA40  FootClass::g_var_c64868  this=FootClass  sig=csp ====
+void FootClass::g_var_c64868(FootClass *this)
 {
   ; /*0x4dba40*/
 }
@@ -9676,8 +9676,8 @@ char __userpurge FootClass::LiberateMember@<al>(FootClass *this, int a2@<edi>, i
 
 
 
-// ==== 0x004DBFD0  FootClass::vt_entry_4E0  this=FootClass  sig=csp ====
-bool __thiscall FootClass::vt_entry_4E0(FootClass *this)
+// ==== 0x004DBFD0  FootClass::g_var_0ed861  this=FootClass  sig=csp ====
+bool __thiscall FootClass::g_var_0ed861(FootClass *this)
 {
   if ( !(*((int (__thiscall **)(FootClass *, _DWORD))this->TechnoClass + 254))(this, 0) ) /*0x4dbfd7*/
     return 1; /*0x4dbfe1*/
@@ -9690,8 +9690,8 @@ bool __thiscall FootClass::vt_entry_4E0(FootClass *this)
 
 
 
-// ==== 0x004DC030  FootClass::vt_entry_4F4  this=FootClass  sig=csp ====
-int __thiscall FootClass::vt_entry_4F4(FootClass *this)
+// ==== 0x004DC030  FootClass::g_var_51b9cc  this=FootClass  sig=csp ====
+int __thiscall FootClass::g_var_51b9cc(FootClass *this)
 {
   int result; // eax
 
@@ -11181,16 +11181,16 @@ int __thiscall FootClass::PopAndProcess(FootClass *this)
 
 
 
-// ==== 0x004DE750  FootClass::vt_entry_4D4  this=FootClass  sig=csp ====
-void __stdcall BuildingClass::vt_entry_4D4(FootClass *this)
+// ==== 0x004DE750  FootClass::g_var_717619  this=FootClass  sig=csp ====
+void __stdcall BuildingClass::g_var_717619(FootClass *this)
 {
   ; /*0x4de750*/
 }
 
 
 
-// ==== 0x004DE760  FootClass::vt_entry_4D8  this=FootClass  sig=csp ====
-void __stdcall BuildingClass::vt_entry_4D8(FootClass *this)
+// ==== 0x004DE760  FootClass::g_var_6347dd  this=FootClass  sig=csp ====
+void __stdcall BuildingClass::g_var_6347dd(FootClass *this)
 {
   ; /*0x4de760*/
 }
@@ -11527,8 +11527,8 @@ int __thiscall TechnoClass::GetThreatValue(TechnoClass *this)
 
 
 
-// ==== 0x004DEE50  FootClass::vt_entry_530  this=FootClass  sig=csp ====
-int __thiscall FootClass::vt_entry_530(FootClass *this, int a2, int a3, int a4)
+// ==== 0x004DEE50  FootClass::g_var_43e13d  this=FootClass  sig=csp ====
+int __thiscall FootClass::g_var_43e13d(FootClass *this, int a2, int a3, int a4)
 {
   int (__thiscall **vtable0)(FootClass *, int, int, int, int *); // eax
   int v6; // [esp+0h] [ebp-4h] BYREF
@@ -11697,8 +11697,8 @@ int __thiscall FootClass::MissionSell_Dispatch(FootClass *this, char *a2)
 
 
 
-// ==== 0x004DF1A0  TechnoClass::vt_entry_4A8  this=FootClass  sig=csp ====
-int __thiscall TechnoClass::vt_entry_4A8(TechnoClass *this)
+// ==== 0x004DF1A0  TechnoClass::g_var_3c4f4f  this=FootClass  sig=csp ====
+int __thiscall TechnoClass::g_var_3c4f4f(TechnoClass *this)
 {
   this->FootClass_field_5C4 = -1; /*0x4df1a2*/
   this->FootClass_field_5C8 = 0; /*0x4df1ac*/
@@ -11709,32 +11709,32 @@ int __thiscall TechnoClass::vt_entry_4A8(TechnoClass *this)
 
 
 
-// ==== 0x004DF1C0  TechnoClass::vt_entry_4AC  this=FootClass  sig=csp ====
-BOOL __thiscall TechnoClass::vt_entry_4AC(TechnoClass *this)
+// ==== 0x004DF1C0  TechnoClass::g_var_c4eb38  this=FootClass  sig=csp ====
+BOOL __thiscall TechnoClass::g_var_c4eb38(TechnoClass *this)
 {
   return this->FootClass_field_5C4 != -1; /*0x4df1ce*/
 }
 
 
 
-// ==== 0x004DF1D0  TechnoClass::vt_entry_4B0  this=FootClass  sig=csp ====
-char __thiscall TechnoClass::vt_entry_4B0(TechnoClass *this)
+// ==== 0x004DF1D0  TechnoClass::g_var_242f49  this=FootClass  sig=csp ====
+char __thiscall TechnoClass::g_var_242f49(TechnoClass *this)
 {
   return this->FootClass_field_bool_5D1; /*0x4df1d6*/
 }
 
 
 
-// ==== 0x004DF1E0  TechnoClass::vt_entry_4B4  this=FootClass  sig=csp ====
-int __thiscall TechnoClass::vt_entry_4B4(TechnoClass *this)
+// ==== 0x004DF1E0  TechnoClass::g_var_d042ea  this=FootClass  sig=csp ====
+int __thiscall TechnoClass::g_var_d042ea(TechnoClass *this)
 {
   return this->FootClass_field_5C4; /*0x4df1e6*/
 }
 
 
 
-// ==== 0x004DF1F0  TechnoClass::vt_entry_4B8  this=FootClass  sig=csp ====
-_DWORD *__thiscall TechnoClass::vt_entry_4B8(TechnoClass *this, _DWORD *a2)
+// ==== 0x004DF1F0  TechnoClass::g_var_e1d6b5  this=FootClass  sig=csp ====
+_DWORD *__thiscall TechnoClass::g_var_e1d6b5(TechnoClass *this, _DWORD *a2)
 {
   int v2; // eax
   _DWORD *v3; // edx
@@ -11800,16 +11800,16 @@ void __thiscall sub_4DF280(TechnoClass *this)
 
 
 
-// ==== 0x004DF310  TechnoClass::vt_entry_4C4  this=FootClass  sig=csp ====
-BOOL __thiscall TechnoClass::vt_entry_4C4(TechnoClass *this)
+// ==== 0x004DF310  TechnoClass::g_var_646489  this=FootClass  sig=csp ====
+BOOL __thiscall TechnoClass::g_var_646489(TechnoClass *this)
 {
   return this->FootClass_field_5C4 == 29; /*0x4df31e*/
 }
 
 
 
-// ==== 0x004DF320  TechnoClass::vt_entry_4C8  this=FootClass  sig=csp ====
-char __thiscall TechnoClass::vt_entry_4C8(TechnoClass *this)
+// ==== 0x004DF320  TechnoClass::g_var_431f68  this=FootClass  sig=csp ====
+char __thiscall TechnoClass::g_var_431f68(TechnoClass *this)
 {
   int v2; // eax
   void (__thiscall **vtable0)(TechnoClass *, int, int); // edx
@@ -11899,8 +11899,8 @@ LABEL_6:
 
 
 
-// ==== 0x004DF4B0  TechnoClass::vt_entry_4D0  this=FootClass  sig=csp ====
-char __thiscall TechnoClass::vt_entry_4D0(TechnoClass *this)
+// ==== 0x004DF4B0  TechnoClass::g_var_7f5ddd  this=FootClass  sig=csp ====
+char __thiscall TechnoClass::g_var_7f5ddd(TechnoClass *this)
 {
   char result; // al
 
@@ -20260,8 +20260,8 @@ int __thiscall FootClass::HandleTargetDestroyed(FootClass *this, int *a2, int *a
 
 
 
-// ==== 0x004D9C00  FootClass::vt_entry_524  this=FootClass  sig=csp ====
-int FootClass::vt_entry_524(FootClass *this)
+// ==== 0x004D9C00  FootClass::g_var_718b21  this=FootClass  sig=csp ====
+int FootClass::g_var_718b21(FootClass *this)
 {
   return 0; /*0x4d9c02*/
 }
@@ -20441,8 +20441,8 @@ int __thiscall BuildingClass::SellUnit(FootClass *this, int a2)
 
 
 
-// ==== 0x004D9FF0  FootClass::vt_entry_4F0  this=FootClass  sig=csp ====
-_DWORD *__thiscall FootClass::vt_entry_4F0(FootClass *this, _DWORD *a2)
+// ==== 0x004D9FF0  FootClass::g_var_98656b  this=FootClass  sig=csp ====
+_DWORD *__thiscall FootClass::g_var_98656b(FootClass *this, _DWORD *a2)
 {
   _DWORD *v2; // ecx
   _BYTE v4[12]; // [esp+4h] [ebp-Ch] BYREF
@@ -21777,8 +21777,8 @@ LABEL_13:
 
 
 
-// ==== 0x004DB9B0  FootClass::vt_entry_504  this=FootClass  sig=csp ====
-char __thiscall BuildingClass::vt_entry_504(FootClass *this)
+// ==== 0x004DB9B0  FootClass::g_var_4e2537  this=FootClass  sig=csp ====
+char __thiscall BuildingClass::g_var_4e2537(FootClass *this)
 {
   int Member; // eax
   int v3; // esi
@@ -21802,16 +21802,16 @@ char __thiscall BuildingClass::vt_entry_504(FootClass *this)
 
 
 
-// ==== 0x004DBA30  FootClass::vt_entry_548  this=FootClass  sig=csp ====
-void FootClass::vt_entry_548(FootClass *this)
+// ==== 0x004DBA30  FootClass::g_var_85b48b  this=FootClass  sig=csp ====
+void FootClass::g_var_85b48b(FootClass *this)
 {
   ; /*0x4dba30*/
 }
 
 
 
-// ==== 0x004DBA40  FootClass::vt_entry_54C  this=FootClass  sig=csp ====
-void FootClass::vt_entry_54C(FootClass *this)
+// ==== 0x004DBA40  FootClass::g_var_c64868  this=FootClass  sig=csp ====
+void FootClass::g_var_c64868(FootClass *this)
 {
   ; /*0x4dba40*/
 }
@@ -22149,8 +22149,8 @@ char __userpurge FootClass::LiberateMember@<al>(FootClass *this, int a2@<edi>, i
 
 
 
-// ==== 0x004DBFD0  FootClass::vt_entry_4E0  this=FootClass  sig=csp ====
-bool __thiscall FootClass::vt_entry_4E0(FootClass *this)
+// ==== 0x004DBFD0  FootClass::g_var_0ed861  this=FootClass  sig=csp ====
+bool __thiscall FootClass::g_var_0ed861(FootClass *this)
 {
   if ( !(*((int (__thiscall **)(FootClass *, _DWORD))this->TechnoClass + 254))(this, 0) ) /*0x4dbfd7*/
     return 1; /*0x4dbfe1*/
@@ -22163,8 +22163,8 @@ bool __thiscall FootClass::vt_entry_4E0(FootClass *this)
 
 
 
-// ==== 0x004DC030  FootClass::vt_entry_4F4  this=FootClass  sig=csp ====
-int __thiscall FootClass::vt_entry_4F4(FootClass *this)
+// ==== 0x004DC030  FootClass::g_var_51b9cc  this=FootClass  sig=csp ====
+int __thiscall FootClass::g_var_51b9cc(FootClass *this)
 {
   int result; // eax
 
@@ -23676,16 +23676,16 @@ int __thiscall FootClass::PopAndProcess(FootClass *this)
 
 
 
-// ==== 0x004DE750  FootClass::vt_entry_4D4  this=FootClass  sig=csp ====
-void __stdcall BuildingClass::vt_entry_4D4(FootClass *this)
+// ==== 0x004DE750  FootClass::g_var_717619  this=FootClass  sig=csp ====
+void __stdcall BuildingClass::g_var_717619(FootClass *this)
 {
   ; /*0x4de750*/
 }
 
 
 
-// ==== 0x004DE760  FootClass::vt_entry_4D8  this=FootClass  sig=csp ====
-void __stdcall BuildingClass::vt_entry_4D8(FootClass *this)
+// ==== 0x004DE760  FootClass::g_var_6347dd  this=FootClass  sig=csp ====
+void __stdcall BuildingClass::g_var_6347dd(FootClass *this)
 {
   ; /*0x4de760*/
 }
@@ -24022,8 +24022,8 @@ int __thiscall TechnoClass::GetThreatValue(TechnoClass *this)
 
 
 
-// ==== 0x004DEE50  FootClass::vt_entry_530  this=FootClass  sig=csp ====
-int __thiscall FootClass::vt_entry_530(FootClass *this, int a2, int a3, int a4)
+// ==== 0x004DEE50  FootClass::g_var_43e13d  this=FootClass  sig=csp ====
+int __thiscall FootClass::g_var_43e13d(FootClass *this, int a2, int a3, int a4)
 {
   int (__thiscall **vtable0)(FootClass *, int, int, int, int *); // eax
   int v6; // [esp+0h] [ebp-4h] BYREF
@@ -24192,8 +24192,8 @@ int __thiscall FootClass::MissionSell_Dispatch(FootClass *this, char *a2)
 
 
 
-// ==== 0x004DF1A0  TechnoClass::vt_entry_4A8  this=FootClass  sig=csp ====
-int __thiscall TechnoClass::vt_entry_4A8(TechnoClass *this)
+// ==== 0x004DF1A0  TechnoClass::g_var_3c4f4f  this=FootClass  sig=csp ====
+int __thiscall TechnoClass::g_var_3c4f4f(TechnoClass *this)
 {
   this->FootClass_field_5C4 = -1; /*0x4df1a2*/
   this->FootClass_field_5C8 = 0; /*0x4df1ac*/
@@ -24204,32 +24204,32 @@ int __thiscall TechnoClass::vt_entry_4A8(TechnoClass *this)
 
 
 
-// ==== 0x004DF1C0  TechnoClass::vt_entry_4AC  this=FootClass  sig=csp ====
-BOOL __thiscall TechnoClass::vt_entry_4AC(TechnoClass *this)
+// ==== 0x004DF1C0  TechnoClass::g_var_c4eb38  this=FootClass  sig=csp ====
+BOOL __thiscall TechnoClass::g_var_c4eb38(TechnoClass *this)
 {
   return this->FootClass_field_5C4 != -1; /*0x4df1ce*/
 }
 
 
 
-// ==== 0x004DF1D0  TechnoClass::vt_entry_4B0  this=FootClass  sig=csp ====
-char __thiscall TechnoClass::vt_entry_4B0(TechnoClass *this)
+// ==== 0x004DF1D0  TechnoClass::g_var_242f49  this=FootClass  sig=csp ====
+char __thiscall TechnoClass::g_var_242f49(TechnoClass *this)
 {
   return this->FootClass_field_bool_5D1; /*0x4df1d6*/
 }
 
 
 
-// ==== 0x004DF1E0  TechnoClass::vt_entry_4B4  this=FootClass  sig=csp ====
-int __thiscall TechnoClass::vt_entry_4B4(TechnoClass *this)
+// ==== 0x004DF1E0  TechnoClass::g_var_d042ea  this=FootClass  sig=csp ====
+int __thiscall TechnoClass::g_var_d042ea(TechnoClass *this)
 {
   return this->FootClass_field_5C4; /*0x4df1e6*/
 }
 
 
 
-// ==== 0x004DF1F0  TechnoClass::vt_entry_4B8  this=FootClass  sig=csp ====
-_DWORD *__thiscall TechnoClass::vt_entry_4B8(TechnoClass *this, _DWORD *a2)
+// ==== 0x004DF1F0  TechnoClass::g_var_e1d6b5  this=FootClass  sig=csp ====
+_DWORD *__thiscall TechnoClass::g_var_e1d6b5(TechnoClass *this, _DWORD *a2)
 {
   int v2; // eax
   _DWORD *v3; // edx
@@ -24295,16 +24295,16 @@ void __thiscall sub_4DF280(TechnoClass *this)
 
 
 
-// ==== 0x004DF310  TechnoClass::vt_entry_4C4  this=FootClass  sig=csp ====
-BOOL __thiscall TechnoClass::vt_entry_4C4(TechnoClass *this)
+// ==== 0x004DF310  TechnoClass::g_var_646489  this=FootClass  sig=csp ====
+BOOL __thiscall TechnoClass::g_var_646489(TechnoClass *this)
 {
   return this->FootClass_field_5C4 == 29; /*0x4df31e*/
 }
 
 
 
-// ==== 0x004DF320  TechnoClass::vt_entry_4C8  this=FootClass  sig=csp ====
-char __thiscall TechnoClass::vt_entry_4C8(TechnoClass *this)
+// ==== 0x004DF320  TechnoClass::g_var_431f68  this=FootClass  sig=csp ====
+char __thiscall TechnoClass::g_var_431f68(TechnoClass *this)
 {
   int v2; // eax
   void (__thiscall **vtable0)(TechnoClass *, int, int); // edx
@@ -24394,8 +24394,8 @@ LABEL_6:
 
 
 
-// ==== 0x004DF4B0  TechnoClass::vt_entry_4D0  this=FootClass  sig=csp ====
-char __thiscall TechnoClass::vt_entry_4D0(TechnoClass *this)
+// ==== 0x004DF4B0  TechnoClass::g_var_7f5ddd  this=FootClass  sig=csp ====
+char __thiscall TechnoClass::g_var_7f5ddd(TechnoClass *this)
 {
   char result; // al
 

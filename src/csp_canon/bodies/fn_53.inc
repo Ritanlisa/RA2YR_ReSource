@@ -1476,7 +1476,7 @@ int DeployCommandClass::performAction_192()
 _DWORD * ScreenCaptureCommandClass::Constructor()
 {
 
-  *(unsigned int *)this->CommandClass = (unsigned int)(&vt_ScreenCaptureCommandClass); /*0x537b42*/
+  *(unsigned int *)this->CommandClass = (unsigned int)(&g_ptr_7EBF04); /*0x537b42*/
 return (unsigned int *)this->CommandClass; /*0x537b48*/
 
 }
@@ -1559,7 +1559,7 @@ char PageUserCommandClass::Do(int a1)
 _DWORD * CursorPositionCommandClass::Constructor()
 {
 
-  *(unsigned int *)this->CommandClass = (unsigned int)(&vt_CursorPositionCommandClass); /*0x537e72*/
+  *(unsigned int *)this->CommandClass = (unsigned int)(&g_ptr_7EBF54); /*0x537e72*/
 return (unsigned int *)this->CommandClass; /*0x537e78*/
 
 }
@@ -1606,7 +1606,7 @@ bool DeployCommandClass::performAction_197(int a1)
 unsigned int * DeleteCommandClass::Constructor(void *a1, void *a2, void *a3, void *a4, void *a5)
 {
 
-  *(unsigned int *)this->CommandClass =(unsigned int)(&vt_DeleteCommandClass); /*0x537f12*/
+  *(unsigned int *)this->CommandClass =(unsigned int)(&g_ptr_7EBF7C); /*0x537f12*/
 return (unsigned int *)this->CommandClass; /*0x537f18*/
 
 }
@@ -2404,7 +2404,7 @@ void* Gap2Recv_53FA90::Network_Init_53FA90(int aP1, int aP2, int aP3, short aP4,
   int v12; // eax
 
   IPXConnClass::constructor((IPXConnClass *)this, aP1, aP2, aP3 + 2, a6, 0, 0, &g_TypeClass_DefaultString, 12); /*0x53faba*/
-  *(unsigned int *)this->__pad_0 = &vt_IPXGlobalConnClass; /*0x53facc*/
+  *(unsigned int *)this->__pad_0 = &g_ptr_7EC10C; /*0x53facc*/
   *((unsigned short *)this + 92) = aP4; /*0x53fad2*/
   *((unsigned int *)this + 49) = 0; /*0x53fad9*/
   *((unsigned char *)this + 200) = 1; /*0x53fadf*/

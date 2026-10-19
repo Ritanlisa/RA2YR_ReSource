@@ -307,10 +307,10 @@ namespace gamemd {
 ParticleSystemTypeClass * ParticleSystemTypeClass::ddtor(void ** Block, char a2)
 {
 
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_ParticleSystemTypeClass) */  /*0x644966*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_ParticleSystemTypeClass) */  /*0x64496c*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_ParticleSystemTypeClass) */  /*0x644973*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_ParticleSystemTypeClass) */  /*0x64497a*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F007C) */  /*0x644966*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F007C) */  /*0x64496c*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F007C) */  /*0x644973*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F007C) */  /*0x64497a*/
   AbstractClass::AnnounceExpiredPointer(&Block->tail_0, 1); /*0x644981*/
   ParticleSystemTypeClass *v5; // [esp+4h] [ebp-4h] BYREF
   v5 = Block; /*0x644996*/
@@ -398,7 +398,7 @@ int ParticleSystemTypeClass::SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1)
     /* X11: vtable install elided (implicit via ParticleSystemTypeClass virtuals 0x644804) */
     /* X11: vtable install elided (implicit via ParticleSystemTypeClass virtuals 0x64480a) */
     /* X11: vtable install elided (implicit via ParticleSystemTypeClass virtuals 0x644811) */
-    /* X11: vtable install elided (X67 recv-slot, RHS vt_ParticleSystemTypeClass) */  /*0x644818*/
+    /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F007C) */  /*0x644818*/
   }
   return 0; /*0x644821*/
 }

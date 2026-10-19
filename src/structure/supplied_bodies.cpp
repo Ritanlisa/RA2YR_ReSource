@@ -57,9 +57,9 @@ extern char ParsePathDirections(void *a1, int a2, void *a3);  // W13-C raw 0x42B
 extern void * SimplifyPathFilter(void *a1, void *a2, int a3);  // W13-C raw 0x42B7F0 ObjectClass::SimplifyPathFilter thiscall 自由形
 
 // G57w10: q000 externs (truth e4_globals_decls)
-extern unsigned char vt_DynamicVectorClass_PlanningNodeClass[4];  // data: 0x7EFE44  // G57w10 vftable residue fix
-extern unsigned char vt_DynamicVectorClass_TechnoClass[4];  // data: 0x7E17AC  // G57w10 vftable residue fix
-extern unsigned char vt_VectorClass_TechnoClass[4];  // data: 0x7E180C  // G57w10 vftable residue fix
+extern unsigned char g_ptr_7EFE44[4];  // data: 0x7EFE44  // G57w10 vftable residue fix
+extern unsigned char g_ptr_7E17AC[4];  // data: 0x7E17AC  // G57w10 vftable residue fix
+extern unsigned char g_ptr_7E180C[4];  // data: 0x7E180C  // G57w10 vftable residue fix
 // ---- g57b5 W6: TU-local globals (csp_canon 驱动) ----
 extern int IID_IFlyControl;  // 词表 (canon 无条目, int 兜底) L1038
 // ---- g57b5 W6 end ----

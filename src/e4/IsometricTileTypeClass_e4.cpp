@@ -81,13 +81,13 @@ AbstractClass * * IsometricTileTypeClass::LoadTypeData(int * a1, int a2)
     {
       ObjectTypeClass::Construct((ObjectTypeClass *)a1, (int)&a2); /*0x549cd8*/
       ((IsometricTileTypeClass *)((char *)a1 + 676))->Constructor_0(0, 0); /*0x549ce9*/
-      *((unsigned int *)a1 + 169) = (unsigned int)(&vt_DynamicVectorClass); /*0x549cee*/
+      *((unsigned int *)a1 + 169) = (unsigned int)(&g_ptr_7E3238); /*0x549cee*/
       *((unsigned int *)a1 + 174) = 10; /*0x549cf4*/
       *((unsigned int *)a1 + 173) = 0; /*0x549cfb*/
-      /* X11: vtable install elided (X67 star-deref, RHS vt_IsometricTileTypeClass) */  /*0x549d02*/
-      /* X11: vtable install elided (X67 recv-slot, RHS vt_IsometricTileTypeClass) */  /*0x549d08*/
-      /* X11: vtable install elided (X67 recv-slot, RHS vt_IsometricTileTypeClass) */  /*0x549d0f*/
-      /* X11: vtable install elided (X67 recv-slot, RHS vt_IsometricTileTypeClass) */  /*0x549d16*/
+      /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7ECC1C) */  /*0x549d02*/
+      /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7ECC1C) */  /*0x549d08*/
+      /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7ECC1C) */  /*0x549d0f*/
+      /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7ECC1C) */  /*0x549d16*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)a1 + 175); /*0x549d2a*/
     for ( j = 0; j < *(int *)&g_SurfaceAnimState; *(unsigned int *)(*(unsigned int *)&DataGlobal_87F69C + 4 * j - 4) = 0 ) /*0x549d39*/
@@ -267,7 +267,7 @@ DynamicVector * IsometricTileTypeClass::Constructor(unsigned int * Block, char a
 
 
   void *v3 = *&Block->__pad_004; // eax /*0x54a763*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x54a766*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x54a766*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x54a770*/
   {
     __3_YAXPAX_Z(v3); /*0x54a778*/

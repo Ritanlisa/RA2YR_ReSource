@@ -634,9 +634,9 @@ int TagClass::LoadTag(AbstractClass * aP0, int aP1)
     {
       AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x6e574f*/
       /* X11: vtable install elided (implicit via TagClass virtuals 0x6e5754) */
-      ((unsigned int *)aP0)[0] = (unsigned int)(&vt_TagClass); /*0x6e575a*/
-      ((unsigned int *)aP0)[0] = (unsigned int)(&vt_TagClass); /*0x6e5761*/
-      ((unsigned int *)aP0)[0] = (unsigned int)(&vt_TagClass); /*0x6e5768*/
+      ((unsigned int *)aP0)[0] = (unsigned int)(&g_ptr_7F44B4); /*0x6e575a*/
+      ((unsigned int *)aP0)[0] = (unsigned int)(&g_ptr_7F44B4); /*0x6e5761*/
+      ((unsigned int *)aP0)[0] = (unsigned int)(&g_ptr_7F44B4); /*0x6e5768*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->buildingType); /*0x6e5778*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->firstTrigger); /*0x6e5786*/
@@ -739,9 +739,9 @@ int TagTypeClass::LoadTypeData(AbstractTypeClass * aP0, int aP1)
     {
       ((AbstractTypeClass*)((int)aP0))->Init((int)&aP1); /*0x6e642f*/
       /* X11: vtable install elided (implicit via TagTypeClass virtuals 0x6e6434) */
-      ((unsigned int *)aP0)[0] = (unsigned int)(&vt_TagTypeClass); /*0x6e643a*/
-      ((unsigned int *)aP0)[0] = (unsigned int)(&vt_TagTypeClass); /*0x6e6441*/
-      ((unsigned int *)aP0)[0] = (unsigned int)(&vt_TagTypeClass); /*0x6e6448*/
+      ((unsigned int *)aP0)[0] = (unsigned int)(&g_ptr_7F4598); /*0x6e643a*/
+      ((unsigned int *)aP0)[0] = (unsigned int)(&g_ptr_7F4598); /*0x6e6441*/
+      ((unsigned int *)aP0)[0] = (unsigned int)(&g_ptr_7F4598); /*0x6e6448*/
     }
     ObjectPtr_RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)aP0 + 40); /*0x6e645b*/
     return 0; /*0x6e6460*/
@@ -872,10 +872,10 @@ int TaskForceClass::LoadTaskForce(AbstractTypeClass * aP0, int aP1)
     if ( aP0 ) /*0x6e86b6*/
     {
       ((AbstractTypeClass*)(int)aP0)->Init((int)&aP1); /*0x6e86bf*/
-      *(unsigned int *)aP0->__pad_0 = (unsigned int)(&vt_TaskForceClass); /*0x6e86c4*/
-      aP0->TaskForceClass_field_0x4 = (int)&vt_TaskForceClass; /*0x6e86ca*/
-      *(unsigned int *)aP0->__pad_8 = (unsigned int)(&vt_TaskForceClass); /*0x6e86d1*/
-      *(unsigned int *)&aP0->__pad_8[4] = (unsigned int)(&vt_TaskForceClass); /*0x6e86d8*/
+      *(unsigned int *)aP0->__pad_0 = (unsigned int)(&g_ptr_7F4654); /*0x6e86c4*/
+      aP0->TaskForceClass_field_0x4 = (int)&g_ptr_7F4654; /*0x6e86ca*/
+      *(unsigned int *)aP0->__pad_8 = (unsigned int)(&g_ptr_7F4654); /*0x6e86d1*/
+      *(unsigned int *)&aP0->__pad_8[4] = (unsigned int)(&g_ptr_7F4654); /*0x6e86d8*/
     }
     v3 = (int *)(aP0 + 1); /*0x6e86e0*/
     v4 = 6; /*0x6e86e6*/

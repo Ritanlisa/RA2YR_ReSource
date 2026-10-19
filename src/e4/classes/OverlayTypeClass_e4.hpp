@@ -126,7 +126,7 @@ OverlayTypeClass * ddtor(void ** Block, char a2);
     int   SaveLoad_Prefix_0(TechnoTypeClass * aP0, ObjectTypeClass * aP1, int aP2);
     unsigned int *  Construct(char *aP1, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0, void *a9 = 0);
 OverlayTypeClass(ObjectClass * aP1);
-    unsigned int * vt_entry_6C(unsigned int * a0, OverlayTypeClass * aP1);
+    unsigned int * g_var_4f9ac2(unsigned int * a0, OverlayTypeClass * aP1);
     void GetLandType(unsigned int * a2, int * a3, unsigned int a4);
 };
 

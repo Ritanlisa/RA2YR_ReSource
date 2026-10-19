@@ -591,12 +591,12 @@ LABEL_8:
       }
     }
     AbstractClassVector::Construct((AbstractClassVector *)&v33, 0, 0); /*0x7095e2*/
-    v33 = &vt_DynamicVectorClass_AbstractClass; /*0x7095f2*/
+    v33 = &g_ptr_7E91EC; /*0x7095f2*/
     v38 = 10; /*0x7095fa*/
     v37 = 0; /*0x7095fe*/
     VectorClass::Construct(&v30, 0, 0); /*0x709602*/
     v11 = v3->__pad_480; /*0x709607*/
-    /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass_int) */  /*0x70960d*/
+    /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E4E78) */  /*0x70960d*/
     v32 = 10; /*0x709617*/
     v31 = 0; /*0x70961b*/
     if ( v11 > 0 ) /*0x70961f*/
@@ -674,7 +674,7 @@ LABEL_8:
       }
       v3->AssignTarget_SyncLog(); /*0x70975d*/
     }
-    /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass_int) */  /*0x7097a0*/
+    /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E4DB8) */  /*0x7097a0*/
     if ( v30.Items && v30.IsAllocated[0] ) /*0x7097b0*/
     {
       __3_YAXPAX_Z((void *)v30.Items); /*0x7097b3*/
@@ -682,7 +682,7 @@ LABEL_8:
     }
     v30.Capacity = 0; /*0x7097c3*/
     v30.IsAllocated[0] = 0; /*0x7097ca*/
-    v33 = &vt_VectorClass_AbstractClass; /*0x7097cf*/
+    v33 = &g_ptr_7E920C; /*0x7097cf*/
     if ( v34 ) /*0x7097d8*/
     {
       if ( v36 ) /*0x7097e0*/

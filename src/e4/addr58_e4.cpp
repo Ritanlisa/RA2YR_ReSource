@@ -1121,7 +1121,7 @@ LABEL_32:
             while ( v28 < dword_ABDFA0 ); /*0x58ee5c*/
           }
           v29 = v27->u32_2C; /*0x58ee5e*/
-          /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass_Cell) */  /*0x58ee61*/
+          /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E38D0) */  /*0x58ee61*/
           if ( v29 ) /*0x58ee66*/
           {
             if ( v27->u8_35 ) /*0x58ee68*/
@@ -1787,7 +1787,7 @@ void sub_58BC70()
 {
   if ( (byte_ABDFB0 & 1) == 0 ) /*0x58bc7a*/
   {
-    dword_ABDF90 = (int)&vt_VectorClass; /*0x58bc7e*/
+    dword_ABDF90 = (int)&g_ptr_7E8500; /*0x58bc7e*/
     byte_ABDFB0 |= 1u; /*0x58bc91*/
     if ( dword_ABDF94 ) /*0x58bc97*/
     {
@@ -1917,7 +1917,7 @@ void sub_58C100()
         }
       }
       v4 = (void *)v2[11]; /*0x58c184*/
-      v2[10] = &vt_VectorClass_Cell; /*0x58c187*/
+      v2[10] = &g_ptr_7E38D0; /*0x58c187*/
       if ( v4 ) /*0x58c190*/
       {
         if ( *((unsigned char *)v2 + 53) ) /*0x58c192*/

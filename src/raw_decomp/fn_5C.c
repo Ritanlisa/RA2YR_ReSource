@@ -10691,9 +10691,9 @@ LABEL_12:
 
 
 
-// ==== 0x005CA7D0  MultiplayerSiege::vt_entry_18  this=MultiplayerSiege  sig=csp ====
+// ==== 0x005CA7D0  MultiplayerSiege::g_var_d773ad  this=MultiplayerSiege  sig=csp ====
 // attributes: thunk
-bool __thiscall MPBattleClass::vt_entry_18(MultiplayerSiege *this)
+bool __thiscall MPBattleClass::g_var_d773ad(MultiplayerSiege *this)
 {
   return ScenarioClass::createStartingForces((MultiplayerGameMode *)this);
 }
@@ -26695,9 +26695,9 @@ LABEL_12:
 
 
 
-// ==== 0x005CA7D0  MultiplayerSiege::vt_entry_18  this=MultiplayerSiege  sig=csp ====
+// ==== 0x005CA7D0  MultiplayerSiege::g_var_d773ad  this=MultiplayerSiege  sig=csp ====
 // attributes: thunk
-bool __thiscall MPBattleClass::vt_entry_18(MultiplayerSiege *this)
+bool __thiscall MPBattleClass::g_var_d773ad(MultiplayerSiege *this)
 {
   return ScenarioClass::createStartingForces((MultiplayerGameMode *)this);
 }

@@ -11717,7 +11717,7 @@ _DWORD *__thiscall VectorClass_ptr_BuildChoiceClass_int_ouseClass::loc_5102C0(_D
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x5102c3*/
-  *Block = &vt_VectorClass_HouseClass_BuildChoiceClass; /*0x5102c6*/
+  *Block = &g_ptr_7EA7D4; /*0x5102c6*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x5102d0*/
   {
     __3_YAXPAX_Z(v3); /*0x5102d8*/

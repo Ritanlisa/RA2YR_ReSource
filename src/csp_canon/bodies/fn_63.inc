@@ -2,7 +2,7 @@
 // member names (tools/csp_export/backfill_completed.py, mechanical).
 // Reference substrate for RA2MCP step-6 rework; not compiled.
 
-// ==== BACKFILL 0x00630090  ParticleSystemClass::vt_06  cls=ParticleSystemClass  sig=csp  renamed_refs=0  residual=- ====
+// ==== BACKFILL 0x00630090  ParticleSystemClass::g_var_1d5e6b  cls=ParticleSystemClass  sig=csp  renamed_refs=0  residual=- ====
 int ParticleSystemClass__vt_06_(int * a1, int * a2, int a3)
 {
     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00630090.json)

@@ -2683,7 +2683,7 @@ unsigned int * IsometricTileTypeClass::Constructor_0(int a2, int a3)
   this->IsometricTileTypeClass_field_0x08 = a2; /*0x54a85e*/
   (this->IsometricTileTypeClass_field_0x0C) = ((this->IsometricTileTypeClass_field_0x0C) & ~0xFF) | ((1) & 0xFF); /*0x54a861*/
   (this->IsometricTileTypeClass_field_0x0C) = ((this->IsometricTileTypeClass_field_0x0C) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x54a865*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_VectorClass); /*0x54a868*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)(&g_ptr_7E8500); /*0x54a868*/
   if ( a2 ) /*0x54a86e*/
   {
     if ( a3 ) /*0x54a876*/

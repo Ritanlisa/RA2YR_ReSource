@@ -1166,7 +1166,7 @@ namespace gamemd {
 int sub_6A4C10()
 {
   GadgetClass::Construct(&stru_B07E58, 0, 0, 1, 1, 8, 0); /*0x6a4c21*/
-  stru_B07E58 = (int)&vt_SidebarClassSBGadgetClass; /*0x6a4c2b*/
+  stru_B07E58 = (int)&g_var_8206b7; /*0x6a4c2b*/
   return atexit(sub_6A4C40); /*0x6a4c3b*/
 }
 } // namespace gamemd
@@ -1318,7 +1318,7 @@ int sub_6A4DC0()
     ControlClass::Construct(v0, 0, 0, 0, 60, 48, 25, 0); /*0x6a4ddb*/
     v0[11] = 0; /*0x6a4de0*/
     v0->q030 = 0; /*0x6a4de3*/
-    /* X11: vtable install elided (X67 star-deref, RHS vt_SidebarClassStripClassSelectClass) */  /*0x6a4de6*/
+    /* X11: vtable install elided (X67 star-deref, RHS g_var_e98be5) */  /*0x6a4de6*/
     v0 += 14; /*0x6a4dec*/
     --v1; /*0x6a4def*/
   }
@@ -1719,7 +1719,7 @@ int sub_6AF120()
   dword_B0B5F8 = 0; /*0x6af12c*/
   byte_B0B5FC = 1; /*0x6af131*/
   byte_B0B5FD = 0; /*0x6af138*/
-  SlaveManagerClass_Array = (int)&vt_DynamicVectorClass; /*0x6af13d*/
+  SlaveManagerClass_Array = (int)&g_ptr_7E3238; /*0x6af13d*/
   dword_B0B604 = 10; /*0x6af147*/
   dword_B0B600 = 0; /*0x6af151*/
   return atexit(sub_6AF160); /*0x6af15c*/
@@ -1730,7 +1730,7 @@ int sub_6AF120()
 namespace gamemd {
 void sub_6AF160()
 {
-  SlaveManagerClass_Array = (int)&vt_VectorClass; /*0x6af168*/
+  SlaveManagerClass_Array = (int)&g_ptr_7E8500; /*0x6af168*/
   if ( dword_B0B5F4 && byte_B0B5FD ) /*0x6af17c*/
   {
     operator delete((void *)(dword_B0B5F4)); /*0x6af17f*/

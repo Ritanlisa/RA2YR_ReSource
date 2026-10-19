@@ -423,7 +423,7 @@ int CanAcceptType(int,int);  // 0x452670
     static BuildingClass* Create(BuildingTypeClass* type, CoordStruct* pos, HouseClass* owner);  // 0x466000
     static BuildingClass* AllocAndCtor();  // 0x70BF50
 
-    // Trivial stubs (vt_entry_*)
+    // Trivial stubs (g_var_7a20bc*)
     bool sub_41C060();  // 0x41C060
     bool sub_4DE750();  // 0x4DE750
     bool sub_4DE760();  // 0x4DE760
@@ -502,7 +502,7 @@ int CanAcceptType(int,int);  // 0x452670
     LightSourceClass*                     LightSource;
     uint32_t                              LaserFenceFrame;
     uint32_t                              FirestormWallFrame;
-    virtual void vt_entry_100(void *, int);  // W20M26 vt+0x100 (canon ('buildingclass', 'HouseClass::UpdateConstruction'))
+    virtual void g_var_9bbfff(void *, int);  // W20M26 vt+0x100 (canon ('buildingclass', 'HouseClass::UpdateConstruction'))
     virtual void MissionDispatch(int, int);  // W20M26 vt+0x1E8 (canon ('buildingclass', 'ParticleClass::MissionDispatch'))
     virtual int ThunkTo159x4(int);  // W20M26 vt+0x274 (canon ('buildingclass', 'ObjectClass::ThunkTo159x4'))
     virtual int ThunkTo636(int, int);

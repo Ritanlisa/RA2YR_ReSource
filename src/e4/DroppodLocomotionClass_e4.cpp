@@ -234,9 +234,9 @@ HRESULT DropPodLocomotionClass::BeginMove(DropPodLocomotionClass * a1, int * pSt
   if ( a1 ) /*0x4b625a*/
   {
     a1->Piggybackee = 0; /*0x4b625c*/
-    /* X11: vtable install elided (X67 star-deref, RHS vt_DropPodLocomotionClass) */  /*0x4b6263*/
-    /* X11: vtable install elided (X67 star-deref, RHS vt_DropPodLocomotionClass) */  /*0x4b6269*/
-    /* X11: vtable install elided (X67 star-deref, RHS vt_DropPodLocomotionClass) */  /*0x4b6270*/
+    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8254) */  /*0x4b6263*/
+    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8254) */  /*0x4b6269*/
+    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8254) */  /*0x4b6270*/
   }
   (*(void (**)(int *, int **, int, unsigned int))(*v2 + 12))(v2, &pStm, 1, 0); /*0x4b6283*/
   if ( !(unsigned char)pStm ) /*0x4b628c*/
@@ -324,9 +324,9 @@ namespace gamemd {
 void * DropPodLocomotionClass::ProcessMove(char a2)
 {
 
-  /* X11: vtable install elided (X67 star-deref, RHS vt_DropPodLocomotionClass) */  /*0x4b66f3*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_DropPodLocomotionClass) */  /*0x4b66f9*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_DropPodLocomotionClass) */  /*0x4b6700*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8254) */  /*0x4b66f3*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8254) */  /*0x4b66f9*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8254) */  /*0x4b6700*/
   ILocomotion *Piggybackee; // eax
   Piggybackee = this->Piggybackee; /*0x4b6707*/
   if ( Piggybackee ) /*0x4b670c*/

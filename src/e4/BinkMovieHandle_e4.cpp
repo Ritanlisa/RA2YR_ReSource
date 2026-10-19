@@ -247,13 +247,13 @@ BinkMovieHandle * BinkMovieHandle::QueryInterface(char a2)
 
   BinkMovie *height; // edi
   height = (BinkMovie *)this->height; /*0x5c0a34*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_BinkMovieHandle) */  /*0x5c0a37*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EE154) */  /*0x5c0a37*/
   if ( height ) /*0x5c0a3f*/
   {
     (height)->Stop(); /*0x5c0a43*/
     __3_YAXPAX_Z(height); /*0x5c0a49*/
   }
-  /* X11: vtable install elided (X67 star-deref, RHS vt_MovieHandle) */  /*0x5c0a55*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EE124) */  /*0x5c0a55*/
   if ( (a2 & 1) != 0 ) /*0x5c0a5d*/
     __3_YAXPAX_Z(this); /*0x5c0a60*/
   return this->MovieHandle; /*0x5c0a6a*/

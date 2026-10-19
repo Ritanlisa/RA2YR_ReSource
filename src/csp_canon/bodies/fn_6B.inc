@@ -391,9 +391,9 @@ int  SmudgeTypeClass::LoadTypeData(ObjectTypeClass * aP0, int aP1)
     {
       ((ObjectTypeClass*)(ObjectTypeClass *)aP0)->Construct((int)&aP1); /*0x6b586f*/
       /* X11: vtable install elided (implicit via SmudgeTypeClass virtuals 0x6b5874) */
-      ((unsigned int *)aP0)[0] = (unsigned int)(&vt_SmudgeTypeClass); /*0x6b587a*/
-      ((unsigned int *)aP0)[0] = (unsigned int)(&vt_SmudgeTypeClass); /*0x6b5881*/
-      ((unsigned int *)aP0)[0] = (unsigned int)(&vt_SmudgeTypeClass); /*0x6b5888*/
+      ((unsigned int *)aP0)[0] = (unsigned int)(&g_ptr_7F34FC); /*0x6b587a*/
+      ((unsigned int *)aP0)[0] = (unsigned int)(&g_ptr_7F34FC); /*0x6b5881*/
+      ((unsigned int *)aP0)[0] = (unsigned int)(&g_ptr_7F34FC); /*0x6b5888*/
     }
     ((VoxelAnimType*)(char *)aP0)->LoadAnim(); /*0x6b5891*/
     ((ObjectTypeClass*)(char *)aP0)->Load2DArt(); /*0x6b5898*/

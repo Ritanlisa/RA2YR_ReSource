@@ -85,7 +85,7 @@ struct MissionClass {
     int Return450L();
     int Return450M();
     int Return450N();
-    int vt_entry_1FC();
+    int g_var_a00e37();
 static char * GetMissionControl(MissionClass * aP1);
     unsigned int * Init(void *a1 = 0, void *a2 = 0);  // 0x49b610
     int ForceMission();

@@ -111,11 +111,11 @@ unsigned int * INIClass::sectionExists() {
   sectionHead = this->sectionHead; /*0x52af59*/
   this->headNode[1] = 0; /*0x52af5f*/
   this->headNode[2] = 0; /*0x52af62*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_GenericNode) */  /*0x52af65*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E1B0C) */  /*0x52af65*/
   this->sectionHead[1] = 0; /*0x52af6b*/
   this->sectionHead[2] = 0; /*0x52af6e*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_GenericNode) */  /*0x52af71*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_GenericList) */  /*0x52af77*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E1B0C) */  /*0x52af71*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E1B04) */  /*0x52af77*/
   if ( this != (INIClass *)-16 ) /*0x52af7d*/
   {
     v3 = this->sectionHead[1]; /*0x52af7f*/
@@ -138,7 +138,7 @@ unsigned int * INIClass::sectionExists() {
   if ( v6 ) /*0x52afad*/
     v6[2] = (unsigned int)sectionHead; /*0x52afaf*/
   this->headNode[1] = (int)sectionHead; /*0x52afb2*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_List_INIClass_INIEntry) */  /*0x52afb7*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EB744) */  /*0x52afb7*/
   return result; /*0x52afb5*/
 
 }
@@ -412,11 +412,11 @@ unsigned int * GenericList::Constructor() {
   v2 = &this->u32_10; /*0x52ace9*/
   this->u32_8 = 0; /*0x52acef*/
   this->u32_C = 0; /*0x52acf2*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_GenericNode) */  /*0x52acf5*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E1B0C) */  /*0x52acf5*/
   this->u32_14 = 0; /*0x52acfb*/
   this->u32_18 = 0; /*0x52acfe*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_GenericNode) */  /*0x52ad01*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_GenericList) */  /*0x52ad07*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E1B0C) */  /*0x52ad01*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E1B04) */  /*0x52ad07*/
   if ( this != (GenericList *)-16 ) /*0x52ad0d*/
   {
     v3 = this->u32_14; /*0x52ad0f*/
@@ -769,7 +769,7 @@ namespace gamemd {
 unsigned int * BufferIOFileClass::Constructor_BitText(char a2) {
     Text *v3; // esi
 
-    /* X11: vtable install elided (X67 star-deref, RHS vt_BitText) */  /*0x435564*/
+    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E3A80) */  /*0x435564*/
     v3 = g_FogOfWarState; /*0x43556a*/
     if ( g_FogOfWarState ) /*0x435572*/
       (*(void (__thiscall **)(Text *, int))g_FogOfWarState->Text_field_00)(g_FogOfWarState, 1); /*0x43557a*/

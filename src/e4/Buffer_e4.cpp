@@ -444,7 +444,7 @@ DynamicVector * Buffer::Constructor_VectorClass_ObjectClass___(char a2, int a3, 
 
   void *v3; // eax
   v3 = (void *)a3->u32_4; /*0x488033*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x488036*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x488036*/
   if ( v3 && *((unsigned char *)a3 + 13) ) /*0x488040*/
   {
     __3_YAXPAX_Z(v3); /*0x488048*/

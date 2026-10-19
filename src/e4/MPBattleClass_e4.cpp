@@ -37,7 +37,7 @@ unsigned int * MPBattleClass::initGame(const wchar_t ** a1, MultiplayerBattle * 
 {
   
   MultiplayerGameMode::Construct((MultiplayerGameMode *)this, a1, aP2, a3, aP4, aP5, aP6); /*0x5c0df3*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_MultiplayerBattle) */  /*0x5c0df8*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EE184) */  /*0x5c0df8*/
   return this->MPGameModeClass; /*0x5c0e00*/
   
 }
@@ -48,7 +48,7 @@ unsigned int * MPBattleClass::MPFreeForAllClass(const wchar_t ** a1, FreeForAll 
 {
   
   MultiplayerGameMode::Construct((MultiplayerGameMode *)this, a1, aP2, a3, aP4, aP5, aP6); /*0x5c5d03*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_FreeForAll) */  /*0x5c5d08*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EE424) */  /*0x5c5d08*/
   return this->MPGameModeClass; /*0x5c5d10*/
   
 }
@@ -58,7 +58,7 @@ namespace gamemd {
 unsigned int * MPBattleClass::MPManBattleClass(const wchar_t ** a1, MultiplayerManBattle * aP2, const char ** a3, MultiplayerManBattle * aP4, char aP5, MultiplayerManBattle * aP6, void *a7)
 {
   MultiplayerGameMode::Construct((MultiplayerGameMode *)a1, aP2, a3, aP4, aP5, aP6, a7); /*0x5c6173*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_MultiplayerManBattle) */  /*0x5c6178*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EE50C) */  /*0x5c6178*/
   return a1->__pad_0; /*0x5c6180*/
 }
 } // namespace gamemd
@@ -68,7 +68,7 @@ unsigned int * MPBattleClass::MPMegawealthClass(const wchar_t ** a1, const wchar
 {
   
   MultiplayerGameMode::Construct((MultiplayerGameMode *)this, a1, a2, a3, aP4, aP5, aP6); /*0x5c9403*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_Megawealth) */  /*0x5c9408*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EE5F4) */  /*0x5c9408*/
   return this->MPGameModeClass; /*0x5c9410*/
   
 }
@@ -79,14 +79,14 @@ unsigned int * MPBattleClass::MPSiegeClass(const wchar_t ** a1, MultiplayerSiege
 {
   
   MultiplayerGameMode::Construct((MultiplayerGameMode *)this, a1, aP2, a3, aP4, aP5, aP6); /*0x5ca653*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_MultiplayerSiege) */  /*0x5ca658*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EE6FC) */  /*0x5ca658*/
   return this->MPGameModeClass; /*0x5ca660*/
   
 }
 } // namespace gamemd
 // 0x5CA7D0
 namespace gamemd {
-int MPBattleClass::vt_entry_18()
+int MPBattleClass::g_var_d773ad()
 {
   return ScenarioClass::createStartingForces();
 }
@@ -233,7 +233,7 @@ unsigned int * MPBattleClass::MPUnholyAllianceClass(const wchar_t ** a1, UnholyA
 {
   
   MultiplayerGameMode::Construct((MultiplayerGameMode *)this, a1, aP2, a3, aP4, aP5, aP6); /*0x5cb3c3*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_UnholyAlliance) */  /*0x5cb3c8*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EE814) */  /*0x5cb3c8*/
   return this->MPGameModeClass; /*0x5cb3d0*/
   
 }
@@ -380,7 +380,7 @@ int MPBattleClass::onDialogDestroyed()
   dword_ABFC98 = 0; /*0x5d4c5c*/
   byte_ABFC9C = 1; /*0x5d4c61*/
   byte_ABFC9D = 0; /*0x5d4c68*/
-  dword_ABFC90 = (int)&vt_DynamicVectorClass; /*0x5d4c6d*/
+  dword_ABFC90 = (int)&g_ptr_7E3238; /*0x5d4c6d*/
   dword_ABFCA4 = 10; /*0x5d4c77*/
   dword_ABFCA0 = 0; /*0x5d4c81*/
   return atexit(sub_5D4C90); /*0x5d4c8c*/
@@ -394,7 +394,7 @@ int MPBattleClass::unfixAlliances()
   dword_ABFCC0 = 0; /*0x5d4cdc*/
   byte_ABFCC4 = 1; /*0x5d4ce1*/
   byte_ABFCC5 = 0; /*0x5d4ce8*/
-  dword_ABFCB8 = (int)&vt_DynamicVectorClass; /*0x5d4ced*/
+  dword_ABFCB8 = (int)&g_ptr_7E3238; /*0x5d4ced*/
   dword_ABFCCC = 10; /*0x5d4cf7*/
   dword_ABFCC8 = 0; /*0x5d4d01*/
   return atexit(sub_5D4D10); /*0x5d4d0c*/

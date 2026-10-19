@@ -11455,8 +11455,8 @@ char __thiscall OverlayTypeClass::LoadFromINI(OverlayTypeClass *this, unsigned _
 
 
 
-// ==== 0x005FEA30  OverlayTypeClass::vt_entry_6C  this=OverlayTypeClass  sig=csp ====
-_DWORD *__stdcall OverlayTypeClass::vt_entry_6C(OverlayTypeClass *this, _DWORD *a2)
+// ==== 0x005FEA30  OverlayTypeClass::g_var_4f9ac2  this=OverlayTypeClass  sig=csp ====
+_DWORD *__stdcall OverlayTypeClass::g_var_4f9ac2(OverlayTypeClass *this, _DWORD *a2)
 {
   this->ObjectTypeClass = (void *)*a2; /*0x5fea3d*/
   this->? = (void *)a2[1]; /*0x5fea42*/
@@ -23984,8 +23984,8 @@ char __thiscall OverlayTypeClass::LoadFromINI(OverlayTypeClass *this, unsigned _
 
 
 
-// ==== 0x005FEA30  OverlayTypeClass::vt_entry_6C  this=OverlayTypeClass  sig=csp ====
-_DWORD *__stdcall OverlayTypeClass::vt_entry_6C(OverlayTypeClass *this, _DWORD *a2)
+// ==== 0x005FEA30  OverlayTypeClass::g_var_4f9ac2  this=OverlayTypeClass  sig=csp ====
+_DWORD *__stdcall OverlayTypeClass::g_var_4f9ac2(OverlayTypeClass *this, _DWORD *a2)
 {
   this->ObjectTypeClass = (void *)*a2; /*0x5fea3d*/
   this->? = (void *)a2[1]; /*0x5fea42*/

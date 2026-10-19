@@ -3089,7 +3089,7 @@ LABEL_75:
 
 
 // ==== 0x007A4C10  CChatEventSink::?  this=CChatEventSink  sig=csp ====
-int __stdcall CComObject_CChatEventSink___ATL::vt_04_(int a1, int a2, int a3)
+int __stdcall CComObject_CChatEventSink___ATL::g_var_9d376d(int a1, int a2, int a3)
 {
   int v3; // ecx
   int v4; // esi
@@ -14054,7 +14054,7 @@ LABEL_75:
 
 
 // ==== 0x007A4C10  CChatEventSink::?  this=CChatEventSink  sig=csp ====
-int __stdcall CComObject_CChatEventSink___ATL::vt_04_(int a1, int a2, int a3)
+int __stdcall CComObject_CChatEventSink___ATL::g_var_9d376d(int a1, int a2, int a3)
 {
   int v3; // ecx
   int v4; // esi

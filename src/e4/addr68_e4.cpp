@@ -1083,7 +1083,7 @@ char * SaveScenarioToINI(char * Source, char a2, int a3)
   v10.ptr_8 = 0; /*0x687cf4*/
   v10.ptr_C = 0; /*0x687cf8*/
   GenericList::Constructor((GenericList *)&v10.uniqueId); /*0x687cfc*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_List_INIClass_INISection) */  /*0x687d05*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E1AFC) */  /*0x687d05*/
   Node::Init((MixFileClass *)&v10.fallRate); /*0x687d0d*/
   v10.ambientSoundController[1] = 0; /*0x687d17*/
   v10.ambientSoundController[2] = 0; /*0x687d1d*/
@@ -1092,7 +1092,7 @@ char * SaveScenarioToINI(char * Source, char a2, int a3)
   {
     v4 = CCFileClass::Construct((CCFileClass *)&v10.customSound_controller[3], Source); /*0x687d34*/
     v5 = v4->vt_slot_20(0); /*0x687d3e*/
-    /* X11: vtable install elided (X67 recv-slot, RHS vt_CCFileClass) */  /*0x687d48*/
+    /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E16B0) */  /*0x687d48*/
     v8 = v5; /*0x687d50*/
     v12 = 0; /*0x687d54*/
     Vector::Clear((int)v11); /*0x687d5b*/
@@ -1102,7 +1102,7 @@ char * SaveScenarioToINI(char * Source, char a2, int a3)
     {
       CCFileClass::Construct((CCFileClass *)&v10.customSound_controller[3], Source); /*0x687d7c*/
       CCINIClass::Load((CCINIClass *)&v10.ptr_4, (int)&v10.customSound_controller[3], 1, 0); /*0x687d8d*/
-      /* X11: vtable install elided (X67 recv-slot, RHS vt_CCFileClass) */  /*0x687d99*/
+      /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E16B0) */  /*0x687d99*/
       v12 = 0; /*0x687da1*/
       Vector::Clear((int)v11); /*0x687da8*/
       v10.customSound_controller[3] = (int)&off_7E1668; /*0x687db1*/
@@ -1474,7 +1474,7 @@ void GenerateScenarioUnits(char a1)
 
   v56 = a1; /*0x6886c0*/
   EventClass::resetEvent(&v60, 0, 0); /*0x6886cc*/
-  v60 = &vt_DynamicVectorClass_TechnoClass; /*0x6886d6*/
+  v60 = &g_ptr_7E17AC; /*0x6886d6*/
   ppv = (LPVOID)MEMORY[0xA8B270]; /*0x6886de*/
   v65 = 10; /*0x6886e9*/
   v64 = 0; /*0x6886f1*/
@@ -1540,11 +1540,11 @@ LABEL_16:
     v54[250] = aGeneratingUnit; /*0x688848*/
     Debug::Log(); /*0x68884d*/
     UnitTypeVector::Construct2(0, 0); /*0x68885b*/
-    v67 = &vt_DynamicVectorClass_UnitTypeClass; /*0x68886b*/
+    v67 = &g_ptr_7EA2A4; /*0x68886b*/
     v72 = 10; /*0x688873*/
     v71 = 0; /*0x688877*/
     InfantryTypeVector::ConstructFromData(0, 0); /*0x68887b*/
-    v73 = &vt_DynamicVectorClass_InfantryTypeClass; /*0x688880*/
+    v73 = &g_ptr_7EA324; /*0x688880*/
     v78 = 10; /*0x688888*/
     v77 = 0; /*0x68888c*/
     v14 = 0; /*0x688898*/
@@ -1789,7 +1789,7 @@ LABEL_47:
         }
         v63 = 0; /*0x688dcf*/
         v62 = 0; /*0x688dd6*/
-        v73 = &vt_VectorClass_InfantryTypeClass; /*0x688dda*/
+        v73 = &g_ptr_7EA344; /*0x688dda*/
         if ( v74 && (((v76) >> 8) & 0xFF) ) /*0x688dea*/
         {
           __3_YAXPAX_Z(v74); /*0x688ded*/
@@ -1797,7 +1797,7 @@ LABEL_47:
         }
         (v76) = ((v76) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x688dfd*/
         v75 = 0; /*0x688e04*/
-        v67 = &vt_VectorClass_UnitTypeClass; /*0x688e08*/
+        v67 = &g_ptr_7EA2C4; /*0x688e08*/
         if ( v68 && v70 ) /*0x688e18*/
         {
           __3_YAXPAX_Z(v68); /*0x688e1b*/
@@ -1818,7 +1818,7 @@ LABEL_111:
   v54[252] = Random::Range((unsigned int *)dword_A8B230 + 134, 0, 0xFFFF); /*0x688e48*/
   v54[251] = aFinishedUnitGe; /*0x688e5f*/
   Debug::Log(); /*0x688e64*/
-  v80 = &vt_VectorClass_Cell; /*0x688e75*/
+  v80 = &g_ptr_7E38D0; /*0x688e75*/
   if ( v81 && v83 ) /*0x688e88*/
   {
     __3_YAXPAX_Z(v81); /*0x688e8b*/
@@ -1826,7 +1826,7 @@ LABEL_111:
   }
   v83 = 0; /*0x688e9b*/
   v82 = 0; /*0x688ea5*/
-  v60 = &vt_VectorClass_TechnoClass; /*0x688ea9*/
+  v60 = &g_ptr_7E180C; /*0x688ea9*/
   if ( Block ) /*0x688eb1*/
   {
     if ( v63 ) /*0x688eb9*/
@@ -2575,7 +2575,7 @@ int sub_68C330()
   dword_B054D8 = 0; /*0x68c33c*/
   byte_B054DC = 1; /*0x68c341*/
   byte_B054DD = 0; /*0x68c348*/
-  stru_B054D0 = (int)&vt_DynamicVectorClass; /*0x68c34d*/
+  stru_B054D0 = (int)&g_ptr_7E3238; /*0x68c34d*/
   dword_B054E4 = 10; /*0x68c357*/
   dword_B054E0 = 0; /*0x68c361*/
   return atexit(sub_68C370); /*0x68c36c*/
@@ -2586,7 +2586,7 @@ int sub_68C330()
 namespace gamemd {
 void sub_68C370()
 {
-  stru_B054D0 = (int)&vt_VectorClass; /*0x68c378*/
+  stru_B054D0 = (int)&g_ptr_7E8500; /*0x68c378*/
   if ( dword_B054D4 && byte_B054DD ) /*0x68c38c*/
   {
     operator delete((void *)(dword_B054D4)); /*0x68c38f*/
@@ -2788,7 +2788,7 @@ int E4Recv_68F8A0::sub_68F8A0()
     *(unsigned int *)(v4 + 28) = 0; /*0x68f922*/
     *(unsigned int *)(v4 + 32) = 0; /*0x68f925*/
     *(unsigned char *)(v4 + 36) = 0; /*0x68f928*/
-    /* X11: vtable install elided (X67 star-deref, RHS vt_ScorePrintClass) */  /*0x68f92b*/
+    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7F0EB4) */  /*0x68f92b*/
   }
   else
   {

@@ -125,7 +125,7 @@ void sub_5B3B10()
   if ( (byte_ABF008 & 1) == 0 ) /*0x5b3b1b*/
   {
     byte_ABF008 |= 1u; /*0x5b3b25*/
-    g_MixFileList.ptr_0 = &vt_GenericList; /*0x5b3b2b*/
+    g_MixFileList.ptr_0 = &g_ptr_7E1B04; /*0x5b3b2b*/
 LABEL_3:
     v0 = g_MixFileList.First_Previous; /*0x5b3b37*/
     while ( g_MixFileList.First_Previous && *(unsigned int *)(g_MixFileList.First_Previous + 4) && *(unsigned int *)(g_MixFileList.First_Previous + 8) && g_MixFileList.First_Previous ) /*0x5b3b4d*/
@@ -146,7 +146,7 @@ LABEL_3:
         }
       }
     }
-    g_MixFileList.Last_vfptr = (int)&vt_GenericNode; /*0x5b3b7f*/
+    g_MixFileList.Last_vfptr = (int)&g_ptr_7E1B0C; /*0x5b3b7f*/
     if ( &g_MixFileList.Last_vfptr && g_MixFileList.Last_Previous && g_MixFileList.Last_t18 ) /*0x5b3b98*/
     {
       *(unsigned int *)(g_MixFileList.Last_t18 + 4) = g_MixFileList.Last_Previous; /*0x5b3b9a*/
@@ -155,7 +155,7 @@ LABEL_3:
       g_MixFileList.Last_t18 = 0; /*0x5b3bb2*/
       g_MixFileList.Last_Previous = 0; /*0x5b3bb8*/
     }
-    g_MixFileList.First_vfptr = (int)&vt_GenericNode; /*0x5b3bc3*/
+    g_MixFileList.First_vfptr = (int)&g_ptr_7E1B0C; /*0x5b3bc3*/
     if ( &g_MixFileList.First_vfptr && v0 && g_MixFileList.First_tC ) /*0x5b3bda*/
     {
       *(unsigned int *)(g_MixFileList.First_tC + 4) = v0; /*0x5b3bdc*/
@@ -264,7 +264,7 @@ AbstractClass * * SearchMIXFile(char *Source, char aP1)
       SHPFile = ((CCFileClass *)&v14.buffer)->ReadEntireFile(); /*0x5b420a*/
     }
     v9[3] = (unsigned int)(SHPFile); /*0x5b422a*/
-    /* X11: vtable install elided (X67 recv-slot, RHS vt_CCFileClass) */  /*0x5b4231*/
+    /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E16B0) */  /*0x5b4231*/
     v16 = 0; /*0x5b4239*/
     Vector::Clear((int)v15); /*0x5b4240*/
     v14.buffer = (int)&off_7E1668; /*0x5b4249*/
@@ -273,7 +273,7 @@ AbstractClass * * SearchMIXFile(char *Source, char aP1)
   }
   else
   {
-    /* X11: vtable install elided (X67 recv-slot, RHS vt_CCFileClass) */  /*0x5b4169*/
+    /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E16B0) */  /*0x5b4169*/
     v16 = 0; /*0x5b4171*/
     Vector::Clear((int)v15); /*0x5b4178*/
     v14.buffer = (int)&off_7E1668; /*0x5b4181*/
@@ -716,10 +716,10 @@ LABEL_15:
     v6 = (void *)__2_YAPAXI_Z(4 * Buffer); /*0x5bb435*/
     v15.Pipe_field_0x04 = 0; /*0x5bb437*/
     v15.Pipe_field_0x08 = 0; /*0x5bb448*/
-    /* X11: vtable install elided (X67 star-deref, RHS vt_Pipe) */  /*0x5bb44c*/
+    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E6218) */  /*0x5bb44c*/
     Buffer::Init((Buffer *)&v15.Pipe_field_0x0C, (int)v6, 4 * Buffer); /*0x5bb454*/
     v16 = 0; /*0x5bb463*/
-    /* X11: vtable install elided (X67 star-deref, RHS vt_BufferPipe) */  /*0x5bb467*/
+    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E6200) */  /*0x5bb467*/
     LZOPipe::Constructor((LZOPipe *)&v18.BufferOffset, 0, 0x2000); /*0x5bb46f*/
     Pipe::SetDelegate((Pipe *)&v18.BufferOffset, (int)&v15); /*0x5bb47d*/
     v7 = Compression::Read(&v18.BufferOffset, v5, Buffer); /*0x5bb499*/
@@ -2003,12 +2003,12 @@ namespace gamemd {
 int sub_5B3AC0()
 {
   g_MixFileList.First_tC = 0; /*0x5b3acc*/
-  g_MixFileList.First_vfptr = (int)&vt_GenericNode; /*0x5b3ad2*/
-  g_MixFileList.Last_vfptr = (int)&vt_GenericNode; /*0x5b3ad7*/
+  g_MixFileList.First_vfptr = (int)&g_ptr_7E1B0C; /*0x5b3ad2*/
+  g_MixFileList.Last_vfptr = (int)&g_ptr_7E1B0C; /*0x5b3ad7*/
   g_MixFileList.Last_Previous = 0; /*0x5b3adc*/
   g_MixFileList.Last_t18 = (int)&g_MixFileList.First; /*0x5b3ae2*/
   g_MixFileList.First_Previous = (int)&g_MixFileList.Last; /*0x5b3aec*/
-  g_MixFileList.ptr_0 = &vt_List_MixFileClass; /*0x5b3af6*/
+  g_MixFileList.ptr_0 = &g_ptr_7EDF38; /*0x5b3af6*/
   return atexit(sub_5B3B10); /*0x5b3b06*/
 }
 } // namespace gamemd
@@ -2055,7 +2055,7 @@ void MixFileClass::sub_5B3F50()
   unsigned int *v7; // eax
 
   CountFiles = (void *)this->CountFiles; /*0x5b3f56*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_MixFileClass) */  /*0x5b3f59*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EDF50) */  /*0x5b3f59*/
   if ( CountFiles ) /*0x5b3f61*/
     free(CountFiles); /*0x5b3f64*/
   if ( this->MixFileClass_field_24 && BYTE2(this->FileSize) ) /*0x5b3f73*/
@@ -2085,7 +2085,7 @@ void MixFileClass::sub_5B3F50()
       }
     }
   }
-  /* X11: vtable install elided (X67 star-deref, RHS vt_GenericNode) */  /*0x5b3fc0*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E1B0C) */  /*0x5b3fc0*/
   if ( this ) /*0x5b3fc6*/
   {
     v6 = this->Previous; /*0x5b3fc8*/
@@ -3461,7 +3461,7 @@ unsigned char * E4Recv_5BDA40::sub_5BDA40()
   this->M21856 = 0; /*0x5bda56*/
   this->M21860 = 0; /*0x5bda5c*/
   this->M21864 = 0; /*0x5bda62*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_MouseClass) */  /*0x5bda68*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E195C) */  /*0x5bda68*/
   return this; /*0x5bda74*/
 
 }
@@ -3804,7 +3804,7 @@ int sub_5BF7D0()
   dword_ABF398 = 0; /*0x5bf7dc*/
   byte_ABF39C = 1; /*0x5bf7e1*/
   byte_ABF39D = 0; /*0x5bf7e8*/
-  dword_ABF390 = (int)&vt_DynamicVectorClass; /*0x5bf7ed*/
+  dword_ABF390 = (int)&g_ptr_7E3238; /*0x5bf7ed*/
   dword_ABF3A4 = 10; /*0x5bf7f7*/
   dword_ABF3A0 = 0; /*0x5bf801*/
   return atexit(sub_5BF810); /*0x5bf80c*/
@@ -3815,7 +3815,7 @@ int sub_5BF7D0()
 namespace gamemd {
 void sub_5BF810()
 {
-  dword_ABF390 = (int)&vt_VectorClass; /*0x5bf818*/
+  dword_ABF390 = (int)&g_ptr_7E8500; /*0x5bf818*/
   if ( dword_ABF394 && byte_ABF39D ) /*0x5bf82c*/
   {
     operator delete((void *)(dword_ABF394)); /*0x5bf82f*/

@@ -320,13 +320,13 @@ int FactoryClass::LoadFromStream(int a1, int * a2)
       AbstractClass::InitVtables((AbstractClass *)v3, (int)&a2); /*0x4ca299*/
       __4type_info_AAEAAV0_ABV0__Z(&v3->production[2], (int)&a2); /*0x4ca2a6*/
       TechnoTypeVector::Constructor((TechnoTypeVector *)v3->onHold, 0, 0); /*0x4ca2b2*/
-      /* X11: vtable install elided (X67 star-deref, RHS vt_DynamicVectorClass_TechnoTypeClass_const) */  /*0x4ca2b7*/
+      /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8934) */  /*0x4ca2b7*/
       *&v3->u32_54 = 10; /*0x4ca2bd*/
       *&v3->q050 = 0; /*0x4ca2c4*/
-      /* X11: vtable install elided (X67 recv-slot, RHS vt_FactoryClass_4) */  /*0x4ca2c7*/
-      /* X11: vtable install elided (X67 recv-slot, RHS vt_FactoryClass_4) */  /*0x4ca2cd*/
-      /* X11: vtable install elided (X67 recv-slot, RHS vt_FactoryClass_4) */  /*0x4ca2d4*/
-      /* X11: vtable install elided (X67 recv-slot, RHS vt_FactoryClass_4) */  /*0x4ca2db*/
+      /* X11: vtable install elided (X67 recv-slot, RHS g_var_fbe4b4) */  /*0x4ca2c7*/
+      /* X11: vtable install elided (X67 recv-slot, RHS g_var_fbe4b4) */  /*0x4ca2cd*/
+      /* X11: vtable install elided (X67 recv-slot, RHS g_var_fbe4b4) */  /*0x4ca2d4*/
+      /* X11: vtable install elided (X67 recv-slot, RHS g_var_fbe4b4) */  /*0x4ca2db*/
     }
     v5 = *v2; /*0x4ca2e2*/
     this = 0; /*0x4ca2ee*/
@@ -587,7 +587,7 @@ void * FactoryClass::CopyTo(void ** Block, char a2)
     }
   }
   v5 = *&Block->u32_60; /*0x4ca838*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x4ca83b*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x4ca83b*/
   if ( v5 && Block->__pad_42[11] ) /*0x4ca846*/
   {
     operator delete((v5)); /*0x4ca84e*/
@@ -888,7 +888,7 @@ namespace gamemd {
 VectorClass_flat * FactoryClass_33::QueryInterface(unsigned int * Block, char a2)
 {
   void *v3 = *&Block->__pad_004; // eax /*0x4cab53*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x4cab56*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x4cab56*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x4cab60*/
   {
     operator delete((v3)); /*0x4cab68*/

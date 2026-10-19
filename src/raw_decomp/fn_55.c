@@ -6550,7 +6550,7 @@ int __thiscall CheckListClass::GetItemCount(ListClass *this)
 
 
 // ==== 0x00557B10  ListClass::vt[19]  this=ListClass  sig=csp ====
-char __thiscall CheckListClass::vt_19(ListClass *this, char a2, int a3, _DWORD *a4)
+char __thiscall CheckListClass::g_var_d2d9f4(ListClass *this, char a2, int a3, _DWORD *a4)
 {
   char result; // al
   int v6; // edi
@@ -6888,7 +6888,7 @@ _BYTE *__thiscall ListClass::Destru_vt00(ListClass *this, char a2)
 
 
 // ==== 0x00558120  SliderClass::?  this=SliderClass  sig=csp ====
-int __thiscall SliderClass::vt_method_558120(SliderClass *this)
+int __thiscall SliderClass::g_var_d52e84(SliderClass *this)
 {
   return *((_DWORD *)this + 19); /*0x558123*/
 }
@@ -20719,7 +20719,7 @@ int __thiscall CheckListClass::GetItemCount(ListClass *this)
 
 
 // ==== 0x00557B10  ListClass::vt[19]  this=ListClass  sig=csp ====
-char __thiscall CheckListClass::vt_19(ListClass *this, char a2, int a3, _DWORD *a4)
+char __thiscall CheckListClass::g_var_d2d9f4(ListClass *this, char a2, int a3, _DWORD *a4)
 {
   char result; // al
   int v6; // edi
@@ -21057,7 +21057,7 @@ _BYTE *__thiscall ListClass::Destru_vt00(ListClass *this, char a2)
 
 
 // ==== 0x00558120  SliderClass::?  this=SliderClass  sig=csp ====
-int __thiscall SliderClass::vt_method_558120(SliderClass *this)
+int __thiscall SliderClass::g_var_d52e84(SliderClass *this)
 {
   return *((_DWORD *)this + 19); /*0x558123*/
 }

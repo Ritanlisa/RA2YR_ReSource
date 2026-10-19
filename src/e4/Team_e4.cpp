@@ -631,10 +631,10 @@ bool Team_Start_76ED10(void * a1, void * a2)
     {
       v6 = 0; /*0x76ee77*/
     }
-    v9 = &vt_rc_ptr_WDTTerritory; /*0x76ee7d*/
+    v9 = &g_ptr_7EBFA4; /*0x76ee7d*/
     ComPtr::Release(&v9); /*0x76ee85*/
   }
-  v11 = &vt_rc_ptr_WorldDominationTour_Territory; /*0x76ee8e*/
+  v11 = &g_ptr_7F71C4; /*0x76ee8e*/
   ComPtr::Release(&v11); /*0x76ee96*/
   SelectionInitializeWOL((int)v13); /*0x76ee9f*/
   return v6; /*0x76ed22*/
@@ -700,11 +700,11 @@ rc_ptr_base * Team_Create_765F60(rc_ptr_base * a1, int a2)
   {
     v6 = (unsigned int *)(v4 + 8); /*0x765f78*/
     *(unsigned int *)(v4 + 4) = 0; /*0x765f7d*/
-    /* X11: vtable install elided (X67 star-deref, RHS vt_ReferenceCounted) */  /*0x765f84*/
+    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7F0954) */  /*0x765f84*/
     ComPtr::Constructor((ComPtr *)(v4 + 8)); /*0x765f8a*/
-    /* X11: vtable install elided (X67 star-deref, RHS vt_rc_ptr) */  /*0x765f8f*/
+    /* X11: vtable install elided (X67 star-deref, RHS g_var_5878c0) */  /*0x765f8f*/
     ComPtr::Set(&v5->u32_8, *(unsigned int *)(a2 + 4)); /*0x765f9b*/
-    /* X11: vtable install elided (X67 star-deref, RHS vt_WorldDominationTour_Conflict) */  /*0x765fa0*/
+    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7F6FC4) */  /*0x765fa0*/
   }
   else
   {
@@ -731,11 +731,11 @@ rc_ptr_base * Team_Create_767B00(rc_ptr_base * a1, int a2)
   {
     v6 = (unsigned int *)(v4 + 8); /*0x767b18*/
     *(unsigned int *)(v4 + 4) = 0; /*0x767b1d*/
-    /* X11: vtable install elided (X67 star-deref, RHS vt_ReferenceCounted) */  /*0x767b24*/
+    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7F0954) */  /*0x767b24*/
     ComPtr::Constructor((ComPtr *)(v4 + 8)); /*0x767b2a*/
-    /* X11: vtable install elided (X67 star-deref, RHS vt_rc_ptr) */  /*0x767b2f*/
+    /* X11: vtable install elided (X67 star-deref, RHS g_var_5878c0) */  /*0x767b2f*/
     ComPtr::Set(&v5->u32_8, *(unsigned int *)(a2 + 4)); /*0x767b3b*/
-    /* X11: vtable install elided (X67 star-deref, RHS vt_WorldDominationTour_History) */  /*0x767b40*/
+    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7F70DC) */  /*0x767b40*/
   }
   else
   {

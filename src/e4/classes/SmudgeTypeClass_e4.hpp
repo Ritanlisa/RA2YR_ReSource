@@ -100,7 +100,7 @@ struct SmudgeTypeClass {
     int  LoadTypeData(ObjectTypeClass * aP0, int aP1);
     int PowerDrainUpdate(int * a2);
     int SaveToINI(TechnoTypeClass * aP0, ObjectTypeClass * aP1, int aP2);
-    void vt_entry_A0(int * a2, int * a3, int a4, int a5, short * a6);
+    void g_var_3d23dc(int * a2, int * a3, int a4, int a5, short * a6);
 };
 
 } // namespace gamemd

@@ -93,7 +93,7 @@ AbstractClass * * UnholyAlliance_GetResult()
 namespace gamemd {  // G42.18c ns repair
 UnholyAlliance * UnholyAlliance::QueryInterface(unsigned int * Block, char a2)
 {
-  /* X11: vtable install elided (X68 star-amp-named, RHS vt_UnholyAlliance) */  /*0x5cb543*/
+  /* X11: vtable install elided (X68 star-amp-named, RHS g_ptr_7EE814) */  /*0x5cb543*/
   ((MultiplayerGameMode *)Block)->Dtor(); /*0x5cb549*/
   if ( (a2 & 1) != 0 ) /*0x5cb553*/
     operator delete((Block)); /*0x5cb556*/

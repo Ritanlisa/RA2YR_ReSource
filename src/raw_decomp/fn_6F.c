@@ -5117,8 +5117,8 @@ int __fastcall sub_6F6030(int *a1, _DWORD *a2, int a3)
 
 
 
-// ==== 0x006F60C0  TechnoClass::vt_entry_448  this=TechnoClass  sig=csp ====
-int __thiscall TechnoClass::vt_entry_448(TechnoClass *this)
+// ==== 0x006F60C0  TechnoClass::g_var_370bdd  this=TechnoClass  sig=csp ====
+int __thiscall TechnoClass::g_var_370bdd(TechnoClass *this)
 {
   int result; // eax
 
@@ -15842,8 +15842,8 @@ int __fastcall sub_6F6030(int *a1, _DWORD *a2, int a3)
 
 
 
-// ==== 0x006F60C0  TechnoClass::vt_entry_448  this=TechnoClass  sig=csp ====
-int __thiscall TechnoClass::vt_entry_448(TechnoClass *this)
+// ==== 0x006F60C0  TechnoClass::g_var_370bdd  this=TechnoClass  sig=csp ====
+int __thiscall TechnoClass::g_var_370bdd(TechnoClass *this)
 {
   int result; // eax
 

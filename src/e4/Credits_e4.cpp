@@ -59,7 +59,7 @@ char Credits::Screen()
         v2[1] = 0; /*0x52cc0e*/
         v2[2] = 0; /*0x52cc13*/
         (v2 + 3)->Constructor(); /*0x52cc16*/
-        /* X11: vtable install elided (X67 star-deref, RHS vt_List) */  /*0x52cc1b*/
+        /* X11: vtable install elided (X67 star-deref, RHS g_var_a3009f) */  /*0x52cc1b*/
         v3->needsSave_flag = 0; /*0x52cc21*/
         v3->INIClass_field_2C = 0; /*0x52cc24*/
         v3->unknown30 = 0; /*0x52cc27*/
@@ -79,7 +79,7 @@ char Credits::Screen()
       (v3)->LoadFromINIList(); /*0x52cc67*/
       if ( v3 ) /*0x52cc6e*/
         (*(void (**)(unsigned int *, int))*v3)(v3, 1); /*0x52cc76*/
-      v11[0] = (unsigned int)(&vt_CCFileClass); /*0x52cc7c*/
+      v11[0] = (unsigned int)(&g_ptr_7E16B0); /*0x52cc7c*/
       v13 = 0; /*0x52cc84*/
       (v12)->Clear(); /*0x52cc88*/
       v11[0] = (unsigned int)(&off_7E1668); /*0x52cc91*/
@@ -102,7 +102,7 @@ char Credits::Screen()
       v6[1] = 0; /*0x52ccee*/
       v6[2] = 0; /*0x52ccf3*/
       (v6 + 3)->Constructor(); /*0x52ccf6*/
-      /* X11: vtable install elided (X67 star-deref, RHS vt_List) */  /*0x52ccff*/
+      /* X11: vtable install elided (X67 star-deref, RHS g_var_a3009f) */  /*0x52ccff*/
       v7->needsSave_flag = 0; /*0x52cd08*/
       v7->INIClass_field_2C = 0; /*0x52cd0b*/
       v7->unknown30 = 0; /*0x52cd0e*/
@@ -115,7 +115,7 @@ char Credits::Screen()
       (v7)->LoadFromINIList(); /*0x52cd2c*/
       (*(void (**)(unsigned int *, int))*v7)(v7, 1); /*0x52cd37*/
     }
-    v11[0] = (unsigned int)(&vt_CCFileClass); /*0x52cd3d*/
+    v11[0] = (unsigned int)(&g_ptr_7E16B0); /*0x52cd3d*/
     v13 = 0; /*0x52cd45*/
     (v12)->Clear(); /*0x52cd49*/
     v11[0] = (unsigned int)(&off_7E1668); /*0x52cd52*/

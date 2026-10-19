@@ -55,9 +55,9 @@ namespace gamemd {
 } // namespace gamemd
 
 // G57w10: q000 externs (truth e4_globals_decls)
-extern unsigned char vt_VectorClass_MultiplayerGameMode[4];  // data: 0x7EED40  // G57w10 vftable residue fix
-extern unsigned char vt_VectorClass_MultiplayerTeam[4];  // data: 0x7EEE54  // G57w10 vftable residue fix
-extern unsigned char vt_rc_ptr_PlayerProfile[4];  // data: 0x7F3F44  // G57w10 vftable residue fix
+extern unsigned char g_ptr_7EED40[4];  // data: 0x7EED40  // G57w10 vftable residue fix
+extern unsigned char g_ptr_7EEE54[4];  // data: 0x7EEE54  // G57w10 vftable residue fix
+extern unsigned char g_ptr_7F3F44[4];  // data: 0x7F3F44  // G57w10 vftable residue fix
 // ---- g57b5 W6: TU-local globals (csp_canon 驱动) ----
 extern int GameSetupDialogProc;  // 词表 (canon 无条目, int 兜底) L857
 extern int _NonReentrantLock;  // 词表 (canon 无条目, int 兜底) L749
@@ -1549,7 +1549,7 @@ void ModemGame::ReceiveMapPreview()
     v13 = 0; /*0x5b74cc*/
     Buffer::Init(&v14, (int)(v4 + 4), FileSize); /*0x5b74de*/
     v14.Buffer_field_0C = 0; /*0x5b74ee*/
-    /* X11: vtable install elided (X67 star-deref, RHS vt_BufferStraw) */  /*0x5b74f2*/
+    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E61E0) */  /*0x5b74f2*/
     LZOStraw::Constructor((LZOStraw *)v15, 1, 0x2000); /*0x5b74fa*/
     Delegate::Set(v15, (int)&v12); /*0x5b7508*/
     v6 = (char *)__2_YAPAXI_Z(2 * v5); /*0x5b7519*/

@@ -493,8 +493,8 @@ int __stdcall INoticeSource::Dispatch(AbstractClass *this)
 
 
 
-// ==== 0x00410600  AbstractClass::vt_entry_40  this=AbstractClass  sig=csp ====
-int __stdcall XSurface::vt_entry_40(AbstractClass *this)
+// ==== 0x00410600  AbstractClass::g_var_326827  this=AbstractClass  sig=csp ====
+int __stdcall XSurface::g_var_326827(AbstractClass *this)
 {
   AbstractClass *v1; // ecx
 
@@ -6421,8 +6421,8 @@ char __thiscall AircraftClass::ValidateMovement(AircraftClass *this, int a2, int
 
 
 
-// ==== 0x00417C80  ObjectClass::vt_entry_140  this=AircraftClass  sig=csp ====
-char __thiscall ObjectClass::vt_entry_140(ObjectClass *this, int a2, __int16 *a3, __int16 *a4, void **a5)
+// ==== 0x00417C80  ObjectClass::g_var_c16898  this=AircraftClass  sig=csp ====
+char __thiscall ObjectClass::g_var_c16898(ObjectClass *this, int a2, __int16 *a3, __int16 *a4, void **a5)
 {
   return ObjectClass::SpawnInfantry(this, a2, a3, a4, a5); /*0x417c99*/
 }
@@ -8530,8 +8530,8 @@ int __stdcall AircraftClass::CheckPassengerCount(
 
 
 
-// ==== 0x0041B5E0  AircraftClass::vt_entry_200  this=AircraftClass  sig=csp ====
-bool __thiscall MissionClass::vt_entry_200(AircraftClass *this)
+// ==== 0x0041B5E0  AircraftClass::g_var_1fa6c5  this=AircraftClass  sig=csp ====
+bool __thiscall MissionClass::g_var_1fa6c5(AircraftClass *this)
 {
   int currentMission; // eax
 
@@ -9106,8 +9106,8 @@ int TacticalClass::StubReturnFalse4(TechnoClass *this)
 
 
 
-// ==== 0x0041BF30  TechnoClass::vt_entry_1FC  this=TechnoClass  sig=csp ====
-int __thiscall MissionClass::vt_entry_1FC(TechnoClass *this)
+// ==== 0x0041BF30  TechnoClass::g_var_a00e37  this=TechnoClass  sig=csp ====
+int __thiscall MissionClass::g_var_a00e37(TechnoClass *this)
 {
   int result; // eax
 
@@ -9194,8 +9194,8 @@ int TacticalClass::StubReturnFalse9(TechnoClass *this)
 
 
 
-// ==== 0x0041BFE0  TechnoClass::vt_entry_428  this=TechnoClass  sig=csp ====
-int __thiscall TechnoClass::vt_entry_428(TechnoClass *this)
+// ==== 0x0041BFE0  TechnoClass::g_var_6a4733  this=TechnoClass  sig=csp ====
+int __thiscall TechnoClass::g_var_6a4733(TechnoClass *this)
 {
   int result; // eax
 
@@ -9204,8 +9204,8 @@ int __thiscall TechnoClass::vt_entry_428(TechnoClass *this)
 
 
 
-// ==== 0x0041BFF0  TechnoClass::vt_entry_434  this=TechnoClass  sig=csp ====
-int __thiscall TechnoClass::vt_entry_434(TechnoClass *this)
+// ==== 0x0041BFF0  TechnoClass::g_var_845aa8  this=TechnoClass  sig=csp ====
+int __thiscall TechnoClass::g_var_845aa8(TechnoClass *this)
 {
   int result; // eax
 
@@ -9275,8 +9275,8 @@ BOOL __thiscall TacticalClass::ProcessTick(FootClass *this)
 
 
 
-// ==== 0x0041C060  FootClass::vt_entry_4E4  this=FootClass  sig=csp ====
-char BuildingClass::vt_entry_4E4(FootClass *this)
+// ==== 0x0041C060  FootClass::g_var_3b7240  this=FootClass  sig=csp ====
+char BuildingClass::g_var_3b7240(FootClass *this)
 {
   return 0; /*0x41c062*/
 }
@@ -9291,8 +9291,8 @@ char __thiscall AircraftClass::CheckDockState(FootClass *this)
 
 
 
-// ==== 0x0041C080  FootClass::vt_entry_4F8  this=FootClass  sig=csp ====
-char FootClass::vt_entry_4F8(FootClass *this)
+// ==== 0x0041C080  FootClass::g_var_d19fc3  this=FootClass  sig=csp ====
+char FootClass::g_var_d19fc3(FootClass *this)
 {
   return 0; /*0x41c082*/
 }
@@ -9339,8 +9339,8 @@ int __stdcall FootClass::Destru_vt323(
 
 
 
-// ==== 0x0041C0F0  FootClass::vt_entry_514  this=FootClass  sig=csp ====
-void FootClass::vt_entry_514(FootClass *this)
+// ==== 0x0041C0F0  FootClass::g_var_3c6d93  this=FootClass  sig=csp ====
+void FootClass::g_var_3c6d93(FootClass *this)
 {
   ; /*0x41c0f0*/
 }
@@ -9371,16 +9371,16 @@ void __stdcall FootClass::Stub(FootClass *this)
 
 
 
-// ==== 0x0041C130  FootClass::vt_entry_534  this=FootClass  sig=csp ====
-void __stdcall FootClass::vt_entry_534(FootClass *this, int a2)
+// ==== 0x0041C130  FootClass::g_var_a270fc  this=FootClass  sig=csp ====
+void __stdcall FootClass::g_var_a270fc(FootClass *this, int a2)
 {
   ; /*0x41c130*/
 }
 
 
 
-// ==== 0x0041C140  FootClass::vt_entry_540  this=FootClass  sig=csp ====
-void __stdcall FootClass::vt_entry_540(FootClass *this)
+// ==== 0x0041C140  FootClass::g_var_122519  this=FootClass  sig=csp ====
+void __stdcall FootClass::g_var_122519(FootClass *this)
 {
   ; /*0x41c140*/
 }
@@ -10076,8 +10076,8 @@ AircraftClass *__thiscall AircraftTypeClass::ConstructAircraft(AircraftTypeClass
 
 
 
-// ==== 0x0041CB50  AircraftTypeClass::vt_entry_A0  this=AircraftTypeClass  sig=csp ====
-char TechnoTypeClass::vt_entry_A0(AircraftTypeClass *this)
+// ==== 0x0041CB50  AircraftTypeClass::g_var_3d23dc  this=AircraftTypeClass  sig=csp ====
+char TechnoTypeClass::g_var_3d23dc(AircraftTypeClass *this)
 {
   return 0; /*0x41cb52*/
 }
@@ -10123,8 +10123,8 @@ char __stdcall AircraftTypeClass::GetDimensions(AircraftTypeClass *this, int a2)
 
 
 
-// ==== 0x0041CBF0  AircraftTypeClass::vt_entry_7C  this=AircraftTypeClass  sig=csp ====
-_DWORD *__stdcall ObjectTypeClass::vt_entry_7C(AircraftTypeClass *this)
+// ==== 0x0041CBF0  AircraftTypeClass::g_var_773e90  this=AircraftTypeClass  sig=csp ====
+_DWORD *__stdcall ObjectTypeClass::g_var_773e90(AircraftTypeClass *this)
 {
   int v1; // esi
 
@@ -13447,8 +13447,8 @@ int __stdcall INoticeSource::Dispatch(AbstractClass *this)
 
 
 
-// ==== 0x00410600  AbstractClass::vt_entry_40  this=AbstractClass  sig=csp ====
-int __stdcall XSurface::vt_entry_40(AbstractClass *this)
+// ==== 0x00410600  AbstractClass::g_var_326827  this=AbstractClass  sig=csp ====
+int __stdcall XSurface::g_var_326827(AbstractClass *this)
 {
   AbstractClass *v1; // ecx
 
@@ -19375,8 +19375,8 @@ char __thiscall AircraftClass::ValidateMovement(AircraftClass *this, int a2, int
 
 
 
-// ==== 0x00417C80  ObjectClass::vt_entry_140  this=AircraftClass  sig=csp ====
-char __thiscall ObjectClass::vt_entry_140(ObjectClass *this, int a2, __int16 *a3, __int16 *a4, void **a5)
+// ==== 0x00417C80  ObjectClass::g_var_c16898  this=AircraftClass  sig=csp ====
+char __thiscall ObjectClass::g_var_c16898(ObjectClass *this, int a2, __int16 *a3, __int16 *a4, void **a5)
 {
   return ObjectClass::SpawnInfantry(this, a2, a3, a4, a5); /*0x417c99*/
 }
@@ -21484,8 +21484,8 @@ int __stdcall AircraftClass::CheckPassengerCount(
 
 
 
-// ==== 0x0041B5E0  AircraftClass::vt_entry_200  this=AircraftClass  sig=csp ====
-bool __thiscall MissionClass::vt_entry_200(AircraftClass *this)
+// ==== 0x0041B5E0  AircraftClass::g_var_1fa6c5  this=AircraftClass  sig=csp ====
+bool __thiscall MissionClass::g_var_1fa6c5(AircraftClass *this)
 {
   int currentMission; // eax
 
@@ -22060,8 +22060,8 @@ int TacticalClass::StubReturnFalse4(TechnoClass *this)
 
 
 
-// ==== 0x0041BF30  TechnoClass::vt_entry_1FC  this=TechnoClass  sig=csp ====
-int __thiscall MissionClass::vt_entry_1FC(TechnoClass *this)
+// ==== 0x0041BF30  TechnoClass::g_var_a00e37  this=TechnoClass  sig=csp ====
+int __thiscall MissionClass::g_var_a00e37(TechnoClass *this)
 {
   int result; // eax
 
@@ -22148,8 +22148,8 @@ int TacticalClass::StubReturnFalse9(TechnoClass *this)
 
 
 
-// ==== 0x0041BFE0  TechnoClass::vt_entry_428  this=TechnoClass  sig=csp ====
-int __thiscall TechnoClass::vt_entry_428(TechnoClass *this)
+// ==== 0x0041BFE0  TechnoClass::g_var_6a4733  this=TechnoClass  sig=csp ====
+int __thiscall TechnoClass::g_var_6a4733(TechnoClass *this)
 {
   int result; // eax
 
@@ -22158,8 +22158,8 @@ int __thiscall TechnoClass::vt_entry_428(TechnoClass *this)
 
 
 
-// ==== 0x0041BFF0  TechnoClass::vt_entry_434  this=TechnoClass  sig=csp ====
-int __thiscall TechnoClass::vt_entry_434(TechnoClass *this)
+// ==== 0x0041BFF0  TechnoClass::g_var_845aa8  this=TechnoClass  sig=csp ====
+int __thiscall TechnoClass::g_var_845aa8(TechnoClass *this)
 {
   int result; // eax
 
@@ -22229,8 +22229,8 @@ BOOL __thiscall TacticalClass::ProcessTick(FootClass *this)
 
 
 
-// ==== 0x0041C060  FootClass::vt_entry_4E4  this=FootClass  sig=csp ====
-char BuildingClass::vt_entry_4E4(FootClass *this)
+// ==== 0x0041C060  FootClass::g_var_3b7240  this=FootClass  sig=csp ====
+char BuildingClass::g_var_3b7240(FootClass *this)
 {
   return 0; /*0x41c062*/
 }
@@ -22245,8 +22245,8 @@ char __thiscall AircraftClass::CheckDockState(FootClass *this)
 
 
 
-// ==== 0x0041C080  FootClass::vt_entry_4F8  this=FootClass  sig=csp ====
-char FootClass::vt_entry_4F8(FootClass *this)
+// ==== 0x0041C080  FootClass::g_var_d19fc3  this=FootClass  sig=csp ====
+char FootClass::g_var_d19fc3(FootClass *this)
 {
   return 0; /*0x41c082*/
 }
@@ -22293,8 +22293,8 @@ int __stdcall FootClass::Destru_vt323(
 
 
 
-// ==== 0x0041C0F0  FootClass::vt_entry_514  this=FootClass  sig=csp ====
-void FootClass::vt_entry_514(FootClass *this)
+// ==== 0x0041C0F0  FootClass::g_var_3c6d93  this=FootClass  sig=csp ====
+void FootClass::g_var_3c6d93(FootClass *this)
 {
   ; /*0x41c0f0*/
 }
@@ -22325,16 +22325,16 @@ void __stdcall FootClass::Stub(FootClass *this)
 
 
 
-// ==== 0x0041C130  FootClass::vt_entry_534  this=FootClass  sig=csp ====
-void __stdcall FootClass::vt_entry_534(FootClass *this, int a2)
+// ==== 0x0041C130  FootClass::g_var_a270fc  this=FootClass  sig=csp ====
+void __stdcall FootClass::g_var_a270fc(FootClass *this, int a2)
 {
   ; /*0x41c130*/
 }
 
 
 
-// ==== 0x0041C140  FootClass::vt_entry_540  this=FootClass  sig=csp ====
-void __stdcall FootClass::vt_entry_540(FootClass *this)
+// ==== 0x0041C140  FootClass::g_var_122519  this=FootClass  sig=csp ====
+void __stdcall FootClass::g_var_122519(FootClass *this)
 {
   ; /*0x41c140*/
 }
@@ -23030,8 +23030,8 @@ AircraftClass *__thiscall AircraftTypeClass::ConstructAircraft(AircraftTypeClass
 
 
 
-// ==== 0x0041CB50  AircraftTypeClass::vt_entry_A0  this=AircraftTypeClass  sig=csp ====
-char TechnoTypeClass::vt_entry_A0(AircraftTypeClass *this)
+// ==== 0x0041CB50  AircraftTypeClass::g_var_3d23dc  this=AircraftTypeClass  sig=csp ====
+char TechnoTypeClass::g_var_3d23dc(AircraftTypeClass *this)
 {
   return 0; /*0x41cb52*/
 }
@@ -23077,8 +23077,8 @@ char __stdcall AircraftTypeClass::GetDimensions(AircraftTypeClass *this, int a2)
 
 
 
-// ==== 0x0041CBF0  AircraftTypeClass::vt_entry_7C  this=AircraftTypeClass  sig=csp ====
-_DWORD *__stdcall ObjectTypeClass::vt_entry_7C(AircraftTypeClass *this)
+// ==== 0x0041CBF0  AircraftTypeClass::g_var_773e90  this=AircraftTypeClass  sig=csp ====
+_DWORD *__stdcall ObjectTypeClass::g_var_773e90(AircraftTypeClass *this)
 {
   int v1; // esi
 

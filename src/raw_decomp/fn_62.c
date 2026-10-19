@@ -13058,8 +13058,8 @@ int __stdcall ParticleClass::CheckCollisionFlags(ParticleClass *this, int *a2, i
 
 
 
-// ==== 0x0062D830  ParticleClass::vt_entry_1E8  this=ParticleClass  sig=csp ====
-int __thiscall ParticleClass::vt_entry_1E8(ParticleClass *this)
+// ==== 0x0062D830  ParticleClass::g_var_22c88d  this=ParticleClass  sig=csp ====
+int __thiscall ParticleClass::g_var_22c88d(ParticleClass *this)
 {
   int v2; // eax
   int v3; // eax
@@ -28534,8 +28534,8 @@ int __stdcall ParticleClass::CheckCollisionFlags(ParticleClass *this, int *a2, i
 
 
 
-// ==== 0x0062D830  ParticleClass::vt_entry_1E8  this=ParticleClass  sig=csp ====
-int __thiscall ParticleClass::vt_entry_1E8(ParticleClass *this)
+// ==== 0x0062D830  ParticleClass::g_var_22c88d  this=ParticleClass  sig=csp ====
+int __thiscall ParticleClass::g_var_22c88d(ParticleClass *this)
 {
   int v2; // eax
   int v3; // eax

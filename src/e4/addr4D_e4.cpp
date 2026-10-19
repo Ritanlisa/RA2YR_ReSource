@@ -37,7 +37,7 @@ namespace gamemd {  // G42.18 ns repair
 void* DestructFoggedObjectClass(FoggedObjectClass * aP0)
 {
 
-  /* X11: vtable install elided (X67 star-deref, RHS vt_FoggedObjectClass) */  /*0x4d1663*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8B0C) */  /*0x4d1663*/
   /* X11: vtable install elided (implicit via FoggedObjectClass virtuals 0x4d1669) */
   /* X11: vtable install elided (implicit via FoggedObjectClass virtuals 0x4d1670) */
   /* X11: vtable install elided (implicit via FoggedObjectClass virtuals 0x4d1677) */
@@ -126,7 +126,7 @@ void* DestructFoggedObjectClass(FoggedObjectClass * aP0)
       0);
   void *v15; // eax
   v15 = (void *)((unsigned int)(aP0->nextArrayIndex));
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x4d1855*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x4d1855*/
   if ( v15 && aP0->u32_69 ) /*0x4d1860*/
   {
     operator delete((v15)); /*0x4d1866*/
@@ -447,7 +447,7 @@ int sub_4D0750()
   dword_8B3D18 = 0; /*0x4d075c*/
   byte_8B3D1C = 1; /*0x4d0761*/
   byte_8B3D1D = 0; /*0x4d0768*/
-  dword_8B3D10 = (int)&vt_DynamicVectorClass; /*0x4d076d*/
+  dword_8B3D10 = (int)&g_ptr_7E3238; /*0x4d076d*/
   dword_8B3D24 = 10; /*0x4d0777*/
   g_FootClassConfig = 0; /*0x4d0781*/
   return atexit(sub_4D0790); /*0x4d078c*/
@@ -460,7 +460,7 @@ void sub_4D0790()
 {
   if ( (byte_8B3CD5 & 1) == 0 ) /*0x4d079a*/
   {
-    dword_8B3D10 = (int)&vt_VectorClass; /*0x4d079e*/
+    dword_8B3D10 = (int)&g_ptr_7E8500; /*0x4d079e*/
     byte_8B3CD5 |= 1u; /*0x4d07b1*/
     if ( dword_8B3D14 ) /*0x4d07b7*/
     {
@@ -661,7 +661,7 @@ int sub_4D3160()
 namespace gamemd {
 void sub_4D31A0()
 {
-  FootClass_Array = (int)&vt_VectorClass; /*0x4d31a8*/
+  FootClass_Array = (int)&g_ptr_7E8500; /*0x4d31a8*/
   if ( dword_8B3DC4 && byte_8B3DCD ) /*0x4d31bc*/
   {
     operator delete((void *)(dword_8B3DC4)); /*0x4d31bf*/

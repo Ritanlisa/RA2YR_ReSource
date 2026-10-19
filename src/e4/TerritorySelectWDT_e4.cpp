@@ -50,7 +50,7 @@ wchar_t ** E4Recv_7665D0::sub_7665D0(wchar_t ** a2)
   int v18; // [esp+3Ch] [ebp-4h]
   v18 = 0; /*0x766601*/
   void **v16; // [esp+34h] [ebp-Ch] BYREF
-  v16 = (void **)(&vt_VectorCursorrc_ptrDynamicVectorClassrc_ptr); /*0x766605*/
+  v16 = (void **)(&g_var_0f5bcb); /*0x766605*/
   do /*0x7666b0*/
   {
     if ( !((unsigned __int8 (*)(void ***))v16[1])(&v16) ) /*0x76661a*/
@@ -58,7 +58,7 @@ wchar_t ** E4Recv_7665D0::sub_7665D0(wchar_t ** a2)
     int v4; // edi
     v4 = v17[1] + 8 * v18; /*0x766634*/
     ComPtr::Constructor(&v14); /*0x766637*/
-    v14 = (void **)(&vt_rc_ptr); /*0x76663c*/
+    v14 = (void **)(&g_var_5878c0); /*0x76663c*/
     ComPtr::Set(&v14, *(unsigned int *)(v4 + 4)); /*0x766648*/
     if ( (v2 & v15[2]) == 0 ) /*0x766654*/
     {
@@ -77,7 +77,7 @@ wchar_t ** E4Recv_7665D0::sub_7665D0(wchar_t ** a2)
         v2 |= v15[2]; /*0x766693*/
       }
     }
-    v14 = (void **)(&vt_rc_ptr); /*0x76669a*/
+    v14 = (void **)(&g_var_5878c0); /*0x76669a*/
     ComPtr::Release(&v14); /*0x76669e*/
     ((void (*)(void ***))v16[2])(&v16); /*0x7666ab*/
   }
@@ -90,7 +90,7 @@ wchar_t ** E4Recv_7665D0::sub_7665D0(wchar_t ** a2)
     int v7; // edi
     v7 = v17[1] + 8 * v18; /*0x7666e8*/
     ComPtr::Constructor(&v14); /*0x7666eb*/
-    v14 = (void **)(&vt_rc_ptr); /*0x7666f0*/
+    v14 = (void **)(&g_var_5878c0); /*0x7666f0*/
     ComPtr::Set(&v14, *(unsigned int *)(v7 + 4)); /*0x7666fc*/
     if ( (v2 & v15[2]) == 0 ) /*0x766708*/
     {
@@ -109,12 +109,12 @@ wchar_t ** E4Recv_7665D0::sub_7665D0(wchar_t ** a2)
         v2 |= v15[2]; /*0x766748*/
       }
     }
-    v14 = (void **)(&vt_rc_ptr); /*0x76674f*/
+    v14 = (void **)(&g_var_5878c0); /*0x76674f*/
     ComPtr::Release(&v14); /*0x766753*/
     ((void (*)(void ***))v16[2])(&v16); /*0x766760*/
   }
   WideString::AssignFromPtr(a2, (const wchar_t **)&v11); /*0x766776*/
-  v16 = (void **)(&vt_VectorCursorrc_ptrDynamicVectorClassrc_ptr); /*0x76677f*/
+  v16 = (void **)(&g_var_0f5bcb); /*0x76677f*/
   (&v11)->Alt(); /*0x766787*/
   return a2; /*0x76678e*/
 

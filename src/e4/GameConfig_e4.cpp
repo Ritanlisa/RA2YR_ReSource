@@ -120,7 +120,7 @@ int GameConfig::ComputeHash()
   v6[2] = 0; /*0x679ded*/
   unsigned int v7[10]; // [esp+1Ch] [ebp-B8h] BYREF
   (v7)->Constructor(); /*0x679df1*/
-  v7[0] = (unsigned int)(&vt_List); /*0x679dfa*/
+  v7[0] = (unsigned int)(&g_var_a3009f); /*0x679dfa*/
   memset(&v7[7], 0, 12); /*0x679e07*/
   char v8; // [esp+44h] [ebp-90h]
   v8 = 0; /*0x679e13*/
@@ -136,7 +136,7 @@ int GameConfig::ComputeHash()
   if ( CCINIClass::Load(v6, (int)v12, 0, 0) ) /*0x679e3b*/
     dword_B053B4 = Hash::ComputeHashSHA1((int)v6); /*0x679e4d*/
   byte_B053B8 = 1; /*0x679e59*/
-  v12[0] = (unsigned int)(&vt_CCFileClass); /*0x679e60*/
+  v12[0] = (unsigned int)(&g_ptr_7E16B0); /*0x679e60*/
   int v14; // [esp+CCh] [ebp-8h]
   v14 = 0; /*0x679e68*/
   unsigned char v13[12]; // [esp+C0h] [ebp-14h] BYREF
@@ -171,12 +171,12 @@ void GameConfig::Constructor(void *a1, void *a2, void *a3, void *a4)
       *v2->Previous.__pad_0 = 0; /*0x5d67e1*/
       v2[2].Previous = 0; /*0x5d67e6*/
       *v2->GenericNode_C.__pad_0 = 0; /*0x5d67e9*/
-      /* X11: vtable install elided (X67 star-deref, RHS vt_GenericNode) */  /*0x5d67ec*/
+      /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E1B0C) */  /*0x5d67ec*/
       GenericNode::Constructor((MixFileClass *)&v2[3].Previous); /*0x5d67f2*/
-      /* X11: vtable install elided (X67 recv-slot, RHS vt_GenericList) */  /*0x5d67fa*/
+      /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E1B04) */  /*0x5d67fa*/
       LinkedList::Prepend((LinkedList *)&v3[2], (int)&v3[3].Previous); /*0x5d6801*/
       v1 = this; /*0x5d6806*/
-      /* X11: vtable install elided (X67 recv-slot, RHS vt_List_INIClass_INISection) */  /*0x5d680a*/
+      /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E1AFC) */  /*0x5d680a*/
       *v3->u32_14.__pad_0 = 0; /*0x5d6811*/
       v3[5].Previous = 0; /*0x5d6814*/
       *v3->u32_18.__pad_0 = 0; /*0x5d6817*/
@@ -194,7 +194,7 @@ void GameConfig::Constructor(void *a1, void *a2, void *a3, void *a4)
     CCFileClass::Construct2(&v6, &v1->ObjectClass_2C); /*0x5d683c*/
     if ( (unsigned __int8)CCFileClass::Open(&v6, 0) ) /*0x5d6846*/
       CCINIClass::Load(*&v1->q038, (int)&v6, 0, 0); /*0x5d685a*/
-    /* X11: vtable install elided (X67 star-deref, RHS vt_CCFileClass) */  /*0x5d6863*/
+    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x5d6863*/
     v8 = 0; /*0x5d686b*/
     Vector::Clear((int)v7); /*0x5d686f*/
     *(unsigned int *)v6.__tail_0 = &off_7E1668; /*0x5d6878*/

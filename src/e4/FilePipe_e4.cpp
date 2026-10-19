@@ -334,7 +334,7 @@ VectorClass_flat * FilePipe_38::QueryInterface(unsigned int * Block, char a2)
 {
 
   void *v3 = *&Block->u32_2; // eax /*0x4786d3*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x4786d6*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x4786d6*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_2))[1]) ) /*0x4786e0*/
   {
     operator delete((v3)); /*0x4786e8*/
@@ -549,7 +549,7 @@ DynamicVector * FilePipe_30::Destructor(unsigned int * Block, char a2)
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x4ba163*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x4ba166*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x4ba166*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x4ba170*/
   {
     operator delete((v3)); /*0x4ba178*/
@@ -589,7 +589,7 @@ DynamicVector * FilePipe_30::Destructor_1(unsigned int * Block, char a2)
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x4ba2a3*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x4ba2a6*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x4ba2a6*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x4ba2b0*/
   {
     operator delete((v3)); /*0x4ba2b8*/

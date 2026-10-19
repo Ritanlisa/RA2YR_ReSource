@@ -5098,7 +5098,7 @@ int RulesClass::ReadDataList() {
              &v24,
              (unsigned __int8 *)aSides,
              (unsigned __int8 *)StringByIndex,
-             &vt_TypeList_int,
+             &g_ptr_7E4DD8,
              (void *)v16.IntVector_field_0x04,
              v17,
              v18,
@@ -5111,7 +5111,7 @@ int RulesClass::ReadDataList() {
       v8 = Block; /*0x672527*/
       v9 = Block == 0; /*0x67252e*/
       v6[44] = v7->unknown_18; /*0x672530*/
-      v24 = &vt_VectorClass_int; /*0x672533*/
+      v24 = &g_ptr_7E4DB8; /*0x672533*/
       if ( !v9 && v27 ) /*0x672543*/
       {
         __3_YAXPAX_Z(v8); /*0x672546*/

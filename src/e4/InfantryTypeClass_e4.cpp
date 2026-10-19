@@ -91,15 +91,15 @@ InfantryTypeClass * InfantryTypeClass::Constructor(char *aP1, void *a2, void *a3
   AnimTypeVector::Constructor(&this->qE50, 0, 0); /*0x5236f9*/
   this->qE60 = 0; /*0x523703*/
   this->u32_E64 = 10; /*0x523706*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList) */  /*0x523709*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_var_131447) */  /*0x523709*/
   AnimTypeVector::Constructor(&this->u32_E6C, 0, 0); /*0x523719*/
   this->u32_E80 = 10; /*0x52371e*/
   this->u32_E7C = 0; /*0x523721*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList) */  /*0x523724*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_var_131447) */  /*0x523724*/
   VectorClass::Construct(&this->u32_E88, 0, 0); /*0x523734*/
   this->u32_E9C = 10; /*0x523739*/
   this->u32_E98 = 0; /*0x52373c*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList) */  /*0x52373f*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_var_131447) */  /*0x52373f*/
   this->u32_EA4 = -1; /*0x523748*/
   this->u32_EA8 = -1; /*0x52374e*/
   this->Cyborg_2 = 0; /*0x523754*/
@@ -208,10 +208,10 @@ unsigned int * InfantryTypeClass::Constructor_523980(int aP1)
 {
 
   TechnoTypeClass::Construct((int)this, aP1); /*0x523988*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList) */  /*0x523992*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList) */  /*0x523998*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList) */  /*0x52399e*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_InfantryTypeClass) */  /*0x5239a8*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_var_131447) */  /*0x523992*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_var_131447) */  /*0x523998*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_var_131447) */  /*0x52399e*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7EB5E4) */  /*0x5239a8*/
   /* X11: vtable install elided (implicit via InfantryTypeClass virtuals 0x5239ae) */
   /* X11: vtable install elided (implicit via InfantryTypeClass virtuals 0x5239b5) */
   /* X11: vtable install elided (implicit via InfantryTypeClass virtuals 0x5239bc) */
@@ -373,7 +373,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   v4->EliteOccupyWeapon = v9; /*0x52417f*/
   INIClassIntList = &v44; /*0x524186*/
   DynamicVectorClass::Copy(&v44, &v4->u32_E88); /*0x52418a*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList_int) */  /*0x524198*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E4DD8) */  /*0x524198*/
   inited = (unsigned __int8 *)__0Iostream_init_QAE_XZ_4(&v4->BarrelVoxel); /*0x5241a0*/
   INIClassIntList = (DynamicVectorClass *)GetINIClassIntList( /*0x5241b4*/
                                             (int)&v48,
@@ -392,7 +392,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   *(unsigned int *)(v4 + 3736) = INIClassIntList->Count; /*0x5241c4*/
   *(unsigned int *)(v4 + 3740) = v11->CapacityIncrement; /*0x5241ca*/
   *(unsigned int *)(v4 + 3744) = v11[1].ptr_0; /*0x5241d4*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_int) */  /*0x5241d7*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E4DB8) */  /*0x5241d7*/
   VectorClass::Destroy((int)&v48); /*0x5241df*/
   if ( INIClass::GetString( /*0x5241fb*/
          (INIClass *)this,
@@ -403,7 +403,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
          128) )
   {
     DynamicVectorClass::AnimTypeConstructor((DynamicVectorClass *)&v48, 0, 0); /*0x524210*/
-    /* X11: vtable install elided (X67 star-deref, RHS vt_TypeList_AnimTypeClass_const) */  /*0x52421f*/
+    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EB6D4) */  /*0x52421f*/
     for ( i = strtok(String, Delimiter); i; i = strtok(0, Delimiter) ) /*0x524231*/
     {
       if ( !*i ) /*0x524233*/
@@ -413,7 +413,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
         DynamicVector::Add_Alt4(&v48, &INIClassIntList); /*0x524250*/
     }
     TypeList::AnimTypeCopy((TypeList *)&v48.DynamicVector_field_0x1C, &v48); /*0x524271*/
-    /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_AnimTypeClass_const) */  /*0x52427a*/
+    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EB6F4) */  /*0x52427a*/
     DynamicVectorClass::Destroy_Alt((_VectorClass_PBVAnimTypeClass *)&v48); /*0x524282*/
   }
   else
@@ -426,7 +426,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   *(unsigned int *)(v4 + 3680) = v49; /*0x5242b7*/
   *(unsigned int *)(v4 + 3684) = v13; /*0x5242ba*/
   *(unsigned int *)(v4 + 3688) = v14; /*0x5242bd*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass_AnimTypeClass_const) */  /*0x5242c9*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7EB6F4) */  /*0x5242c9*/
   DynamicVectorClass::Destroy_Alt((_VectorClass_PBVAnimTypeClass *)&v48.DynamicVector_field_0x1C); /*0x5242cd*/
   if ( INIClass::GetString( /*0x5242e9*/
          (INIClass *)this,
@@ -437,7 +437,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
          128) )
   {
     DynamicVectorClass::AnimTypeConstructor((DynamicVectorClass *)&v48, 0, 0); /*0x5242fa*/
-    /* X11: vtable install elided (X67 star-deref, RHS vt_TypeList_AnimTypeClass_const) */  /*0x524309*/
+    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EB6D4) */  /*0x524309*/
     for ( j = strtok(String, Delimiter); j; j = strtok(0, Delimiter) ) /*0x52431b*/
     {
       if ( !*j ) /*0x52431d*/
@@ -447,7 +447,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
         DynamicVector::Add_Alt4(&v48, &INIClassIntList); /*0x52433a*/
     }
     TypeList::AnimTypeCopy((TypeList *)&v48.DynamicVector_field_0x1C, &v48); /*0x52435b*/
-    /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_AnimTypeClass_const) */  /*0x524364*/
+    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EB6F4) */  /*0x524364*/
     DynamicVectorClass::Destroy_Alt((_VectorClass_PBVAnimTypeClass *)&v48); /*0x524368*/
   }
   else
@@ -456,7 +456,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   }
   InfantryTypeClass::CopyDataArray(&v4->u32_E6C, &v48.DynamicVector_field_0x1C); /*0x52438c*/
   *(unsigned int *)(v4 + 3716) = v51; /*0x524399*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass_AnimTypeClass_const) */  /*0x52439c*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7EB6F4) */  /*0x52439c*/
   DynamicVectorClass::Destroy_Alt((_VectorClass_PBVAnimTypeClass *)&v48.DynamicVector_field_0x1C); /*0x5243a4*/
   Bool_Overwrite = INIClass::ReadBool_Overwrite( /*0x5243b8*/
                      &this->ptr_0,
@@ -667,7 +667,7 @@ ObjectTypeClass * * InfantryTypeClass_LoadTypeData(InfantryTypeClass *aP0, Infan
     if ( aP0 != (InfantryTypeClass *)-3720 ) /*0x5249c1*/
     {
       ((DynamicVectorClass *)aP0->VoiceComment)->Construct(0, 0); /*0x5249c7*/
-      /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList) */  /*0x5249cc*/
+      /* X11: vtable install elided (X67 recv-slot, RHS g_var_131447) */  /*0x5249cc*/
     }
     int v4; // ebp
     int i; // ebx
@@ -689,7 +689,7 @@ ObjectTypeClass * * InfantryTypeClass_LoadTypeData(InfantryTypeClass *aP0, Infan
     if ( aP0 != (InfantryTypeClass *)-3664 ) /*0x524a13*/
     {
       ((DynamicVectorClass *)aP0->DeadBodies)->AnimTypeConstructor(0, 0); /*0x524a1b*/
-      /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList) */  /*0x524a20*/
+      /* X11: vtable install elided (X67 recv-slot, RHS g_var_131447) */  /*0x524a20*/
     }
     (*(void (__stdcall **)(int, int *, int, unsigned int))(aP0->ptr_C)(aP0, &aP0, 4, 0); /*0x524a33*/
     for ( i = 0; i < aP0; ++i ) /*0x524a3e*/
@@ -702,7 +702,7 @@ ObjectTypeClass * * InfantryTypeClass_LoadTypeData(InfantryTypeClass *aP0, Infan
     if ( aP0 != (InfantryTypeClass *)-3692 ) /*0x524a95*/
     {
       ((DynamicVectorClass *)aP0->DeathAnims)->AnimTypeConstructor(0, 0); /*0x524a9d*/
-      /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList) */  /*0x524aa2*/
+      /* X11: vtable install elided (X67 recv-slot, RHS g_var_131447) */  /*0x524aa2*/
     }
     (*(void (__stdcall **)(int, int *, int))(aP0->ptr_C)(aP0, &aP0, 4); /*0x524ab5*/
     for ( k = 0; k < (int)aP0; ++k ) /*0x524ac0*/
@@ -791,7 +791,7 @@ InfantryTypeClass * InfantryTypeClass::ddtor(int Block, char a2)
   operator delete(((void *)Block->Sequence[0])); /*0x524de7*/
   Block->Sequence[0] = 0; /*0x524df1*/
   v4 = (void *)Block->VoiceComment[1]; /*0x524df7*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x524dff*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x524dff*/
   if ( v4 && (Block->u8_9) ) /*0x524e0b*/
   {
     operator delete((v4)); /*0x524e14*/
@@ -800,7 +800,7 @@ InfantryTypeClass * InfantryTypeClass::ddtor(int Block, char a2)
   (Block->u8_9) = 0; /*0x524e22*/
   Block->VoiceComment[2] = 0; /*0x524e28*/
   v5 = (void *)Block->DeathAnims[1]; /*0x524e2e*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x524e34*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x524e34*/
   if ( v5 && (Block->u8_9) ) /*0x524e42*/
   {
     operator delete((v5)); /*0x524e4b*/
@@ -809,7 +809,7 @@ InfantryTypeClass * InfantryTypeClass::ddtor(int Block, char a2)
   (Block->u8_9) = 0; /*0x524e59*/
   Block->DeathAnims[2] = 0; /*0x524e5f*/
   v6 = (void *)Block->DeadBodies[1]; /*0x524e65*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x524e6b*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x524e6b*/
   if ( v6 && (Block->u8_9) ) /*0x524e79*/
   {
     operator delete((v6)); /*0x524e82*/

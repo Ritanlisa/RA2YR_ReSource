@@ -635,7 +635,7 @@ LABEL_95:
       }
       SaveProfileWOL(v265.ptr_4, (const char **)&stru_B73E10.CChatEventSink_field_0x30); /*0x6c75b8*/
     }
-    /* X11: vtable install elided (X67 recv-slot, RHS vt_rc_ptr_PlayerProfile) */  /*0x6c75c1*/
+    /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F3F44) */  /*0x6c75c1*/
     ComPtr::Release((ComPtr *)&v265); /*0x6c75c9*/
   }
   v80 = 0; /*0x6c75d2*/
@@ -723,7 +723,7 @@ LABEL_134:
   v265.attachedTag = -1; /*0x6c77ac*/
   v265.attachedBomb = -1; /*0x6c77b0*/
   memset(v265.ambientSoundController, 0, 9); /*0x6c77b4*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_RawFileClass) */  /*0x6c77c7*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F0904) */  /*0x6c77c7*/
   FileClass::SetName((BufferIOFileClass *)&v265.occupant, Filename); /*0x6c77cf*/
   FileClass::Open2((RawFileClass *)&v265.occupant, (const CHAR *)1); /*0x6c77da*/
   if ( v265.attachedBomb != -1 && GetFileTime((HANDLE)v265.attachedBomb, 0, 0, (LPFILETIME)&v265.referenceCount) ) /*0x6c77ef*/
@@ -2026,7 +2026,7 @@ void sub_6C6B60()
 namespace gamemd {
 void * E4Recv_6C8840::sub_6C8840(unsigned int * Block, char a2)  // G42.33 b9 hpp void* sync
 {
-  /* X11: vtable install elided (X67 star-deref, RHS vt_rc_ptr) */  /*0x6c8843*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_var_5878c0) */  /*0x6c8843*/
   ComPtr::Release((ComPtr *)Block); /*0x6c8849*/
   if ( (a2 & 1) != 0 ) /*0x6c8853*/
     operator delete((Block)); /*0x6c8856*/
@@ -3050,13 +3050,13 @@ namespace gamemd {
 int sub_6CF070()
 {
   sub_6CF8F0(&dword_B0C114, 0, 0); /*0x6cf079*/
-  dword_B0C114 = (int)&vt_DynamicVectorClass; /*0x6cf087*/
+  dword_B0C114 = (int)&g_ptr_7E3238; /*0x6cf087*/
   dword_B0C128 = 10; /*0x6cf091*/
   dword_B0C124 = 0; /*0x6cf09b*/
   sub_6CF8F0(&dword_B0C12C, 0, 0); /*0x6cf0a5*/
-  dword_B0C12C = (int)&vt_DynamicVectorClass; /*0x6cf0b4*/
+  dword_B0C12C = (int)&g_ptr_7E3238; /*0x6cf0b4*/
   dword_B0C13C = 0; /*0x6cf0be*/
-  SwizzleManagerClass_Instance = (int)&vt_SwizzleManagerClass; /*0x6cf0c8*/
+  SwizzleManagerClass_Instance = (int)&g_ptr_7F4108; /*0x6cf0c8*/
   dword_B0C128 = 1000; /*0x6cf0d2*/
   dword_B0C140 = 1000; /*0x6cf0d7*/
   return atexit(SwizzleManagerClass::Register); /*0x6cf0e2*/

@@ -2837,7 +2837,7 @@ char __thiscall Tactical::HandleTacticalMouseInput(Tactical *this, int a2, _DWOR
                   {
                     if ( !stru_A8EB00.?[440] ) /*0x693314*/
                     {
-                      DisplayClass::vt_entry_B0((DisplayClass *)&v12); /*0x693320*/
+                      DisplayClass::g_var_2eb6a7((DisplayClass *)&v12); /*0x693320*/
                       dword_884D38 = v12; /*0x69332d*/
                       dword_884D3C = v13; /*0x693339*/
                       byte_884D40 = 0; /*0x69333f*/
@@ -3144,7 +3144,7 @@ char __thiscall MouseClass::CheckCapture(ScrollClass *this, _DWORD *a2)
   result = stru_A8EB00.?[440]; /*0x693880*/
   if ( !stru_A8EB00.?[440] ) /*0x69388a*/
   {
-    DisplayClass::vt_entry_B0((DisplayClass *)a2); /*0x693892*/
+    DisplayClass::g_var_2eb6a7((DisplayClass *)a2); /*0x693892*/
     *((_DWORD *)this + 5460) = *a2; /*0x693899*/
     *((_DWORD *)this + 5461) = a2[1]; /*0x6938a2*/
     *((_BYTE *)this + 21848) = 0; /*0x6938a8*/
@@ -16213,7 +16213,7 @@ char __thiscall Tactical::HandleTacticalMouseInput(Tactical *this, int a2, _DWOR
                   {
                     if ( !stru_A8EB00.?[440] ) /*0x693314*/
                     {
-                      DisplayClass::vt_entry_B0((DisplayClass *)&v12); /*0x693320*/
+                      DisplayClass::g_var_2eb6a7((DisplayClass *)&v12); /*0x693320*/
                       dword_884D38 = v12; /*0x69332d*/
                       dword_884D3C = v13; /*0x693339*/
                       byte_884D40 = 0; /*0x69333f*/
@@ -16520,7 +16520,7 @@ char __thiscall MouseClass::CheckCapture(ScrollClass *this, _DWORD *a2)
   result = stru_A8EB00.?[440]; /*0x693880*/
   if ( !stru_A8EB00.?[440] ) /*0x69388a*/
   {
-    DisplayClass::vt_entry_B0((DisplayClass *)a2); /*0x693892*/
+    DisplayClass::g_var_2eb6a7((DisplayClass *)a2); /*0x693892*/
     *((_DWORD *)this + 5460) = *a2; /*0x693899*/
     *((_DWORD *)this + 5461) = a2[1]; /*0x6938a2*/
     *((_BYTE *)this + 21848) = 0; /*0x6938a8*/
@@ -24130,7 +24130,7 @@ _DWORD *__thiscall VectorClass_ptr_GlobalPacketType::loc_69D720(_DWORD *Block, c
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x69d723*/
-  *Block = &vt_VectorClass_PhoneEntryClass; /*0x69d726*/
+  *Block = &g_var_ad296c; /*0x69d726*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x69d730*/
   {
     __3_YAXPAX_Z(v3); /*0x69d738*/

@@ -1647,22 +1647,22 @@ LABEL_171:
             v197.customSound_controller[0] = 0; /*0x5e5268*/
             v197.customSound_controller[3] = 0; /*0x5e526c*/
             v197.customSound_controller[4] = 0; /*0x5e5270*/
-            /* X11: vtable install elided (X67 recv-slot, RHS vt_GenericNode) */  /*0x5e5277*/
+            /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E1B0C) */  /*0x5e5277*/
             *(unsigned int *)v197.bombVisible = 0; /*0x5e527b*/
             v197.health = 0; /*0x5e5282*/
-            /* X11: vtable install elided (X67 recv-slot, RHS vt_GenericNode) */  /*0x5e5289*/
-            /* X11: vtable install elided (X67 recv-slot, RHS vt_GenericList) */  /*0x5e5290*/
+            /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E1B0C) */  /*0x5e5289*/
+            /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E1B04) */  /*0x5e5290*/
             MixFileClass::LinkIntoPool((MixFileClass *)&v197.customSound); /*0x5e5298*/
             *(unsigned int *)v197.bombVisible = v197.customSound_controller[3]; /*0x5e52a7*/
             v197.health = (int)&v197.customSound_controller[2]; /*0x5e52ae*/
             if ( v197.customSound_controller[3] ) /*0x5e52b5*/
               *(unsigned int *)(v197.customSound_controller[3] + 8) = &v197.customSound; /*0x5e52be*/
             v197.customSound_controller[3] = (int)&v197.customSound; /*0x5e52d5*/
-            /* X11: vtable install elided (X67 recv-slot, RHS vt_List_INIClass_INISection) */  /*0x5e52dc*/
+            /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E1AFC) */  /*0x5e52dc*/
             memset(&v197.estimatedHealth, 0, 13); /*0x5e52e4*/
             *(unsigned int *)v197.needsRedraw = 0; /*0x5e5301*/
             *(unsigned int *)v197.hasParachute = 0; /*0x5e5308*/
-            /* X11: vtable install elided (X67 recv-slot, RHS vt_INIClass) */  /*0x5e530f*/
+            /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7EA5F4) */  /*0x5e530f*/
             FileStraw::Open((FileStraw *)&v197.ambientSoundController[3], (int)&v200, 0); /*0x5e5317*/
             INIClass::GetString( /*0x5e5339*/
               (INIClass *)&v197.ambientSoundController[3],
@@ -1678,7 +1678,7 @@ LABEL_171:
             }
             HashTable::DestroyHashTableINIClass((INIClass *)&v197.ambientSoundController[3]); /*0x5e5394*/
           }
-          /* X11: vtable install elided (X67 star-deref, RHS vt_CCFileClass) */  /*0x5e53a0*/
+          /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x5e53a0*/
           v203 = 0; /*0x5e53ab*/
           Vector::Clear((int)v201); /*0x5e53b2*/
           *(unsigned int *)v200.__tail_0 = &off_7E1668; /*0x5e53be*/
@@ -2156,7 +2156,7 @@ LABEL_13:
   v197.nextArrayIndex = 0; /*0x5e441c*/
   v197.referenceCount = 0; /*0x5e4420*/
   LOWORD(v197.NeedsSaveOrLink) = 1; /*0x5e4424*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass_int) */  /*0x5e442d*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E4E78) */  /*0x5e442d*/
   v197.owningHouseIndex = 10; /*0x5e4435*/
   v197.occupant = 0; /*0x5e443d*/
   v196.DeleteAndZero_field_0x08 = 0; /*0x5e4441*/
@@ -2255,7 +2255,7 @@ LABEL_13:
         }
       }
     }
-    /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass_int) */  /*0x5e46ee*/
+    /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E4DB8) */  /*0x5e46ee*/
     if ( v197.nextArrayIndex && BYTE1(v197.NeedsSaveOrLink) ) /*0x5e4704*/
     {
       __3_YAXPAX_Z((void *)v197.nextArrayIndex); /*0x5e470b*/
@@ -2265,7 +2265,7 @@ LABEL_13:
     goto LABEL_13; /*0x5e4704*/
   }
   free((void *)v197.ptr_4); /*0x5e4722*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass_int) */  /*0x5e4730*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E4DB8) */  /*0x5e4730*/
   if ( !v197.nextArrayIndex || !BYTE1(v197.NeedsSaveOrLink) ) /*0x5e4744*/
     return 0; /*0x5e4387*/
   __3_YAXPAX_Z((void *)v197.nextArrayIndex); /*0x5e474b*/
@@ -2353,7 +2353,7 @@ if ( *(unsigned int *)&v198[32] == 189 || *(unsigned int *)&v198[32] == 201 )
     LookupFileInfoCache(v4, 0, 0, 0, &v5); /*0x473c3a*/
     return v5; /*0x473c0e*/
   }
-  v200[0] = (int)&vt_CCFileClass;
+  v200[0] = (int)&g_ptr_7E16B0;
   int v203 = 0;
   char v201[8]; // [esp+168h] [ebp-28Ch] BYREF
   ((Vector *)((int)v201))->Clear((int)((Vector *)((int)v201)));
@@ -2841,7 +2841,7 @@ Debug::Log();
 *(unsigned int *)&v198[60] = 0;
 *(unsigned int *)&v198[64] = 0;
 *(unsigned short *)&v198[68] = 1;
-*(unsigned int *)&v198[56] = (unsigned int)&vt_DynamicVectorClass_int;
+*(unsigned int *)&v198[56] = (unsigned int)&g_ptr_7E4E78;
 *(unsigned int *)&v198[76] = 10;
 *(unsigned int *)&v198[72] = 0;
 *(unsigned int *)&v198[32] = 0;
@@ -2937,7 +2937,7 @@ if ( v64 && v65 )
 
 
 
-        *(unsigned int *)&v198[56] = (unsigned int)&vt_VectorClass_int;
+        *(unsigned int *)&v198[56] = (unsigned int)&g_ptr_7E4DB8;
         if ( *(unsigned int *)&v198[60] && v198[69] )
         {
           RA2_OPDEL(*(void **)&v198[60]);
@@ -2945,7 +2945,7 @@ if ( v64 && v65 )
           goto LABEL_102;
           goto LABEL_13;
           free(*(void **)&v198[40]);
-          *(unsigned int *)&v198[56] = (unsigned int)&vt_VectorClass_int;
+          *(unsigned int *)&v198[56] = (unsigned int)&g_ptr_7E4DB8;
           if ( !*(unsigned int *)&v198[60] || !v198[69] )
             return 0;
           RA2_OPDEL(*(void **)&v198[60]);
@@ -3257,7 +3257,7 @@ if ( v64 && v65 )
           unsigned int v6[6]; // [esp+28h] [ebp-134h] BYREF
           GenericNode::Constructor(v6); /*0x5e6594*/
           LinkedList::Prepend(v5, (int)v6); /*0x5e65aa*/
-          v4[3] = &vt_List; /*0x5e65b9*/
+          v4[3] = &g_var_a3009f; /*0x5e65b9*/
           memset(&v6[3], 0, 12); /*0x5e65c1*/
           char v7; // [esp+40h] [ebp-11Ch]
           v7 = 0; /*0x5e65cd*/
@@ -3265,11 +3265,11 @@ if ( v64 && v65 )
           v8 = 0; /*0x5e65d1*/
           int v9; // [esp+48h] [ebp-114h]
           v9 = 0; /*0x5e65d5*/
-          v4[0] = &vt_INIClass; /*0x5e65d9*/
+          v4[0] = &g_ptr_7EA5F4; /*0x5e65d9*/
           if ( !FileStraw::Open(v4, (int)v10, 0) ) /*0x5e65e1*/
           {
             HashTable::DestroyHashTableINIClass(v4); /*0x5e65ee*/
-            v10[0] = &vt_CCFileClass; /*0x5e65fa*/
+            v10[0] = &g_ptr_7E16B0; /*0x5e65fa*/
             v12 = 0; /*0x5e6602*/
             Vector::Clear((int)v11); /*0x5e6609*/
             v10[0] = (unsigned int)&off_7E1668; /*0x5e6612*/
@@ -3292,7 +3292,7 @@ if ( v64 && v65 )
               Int_Overwrite = 8; /*0x5e6687*/
           }
           HashTable::DestroyHashTableINIClass(v4); /*0x5e6690*/
-          v10[0] = &vt_CCFileClass; /*0x5e669c*/
+          v10[0] = &g_ptr_7E16B0; /*0x5e669c*/
           v12 = 0; /*0x5e66a4*/
           Vector::Clear((int)v11); /*0x5e66ab*/
           v10[0] = (unsigned int)&off_7E1668; /*0x5e66b4*/
@@ -3616,7 +3616,7 @@ void ExchangeMultiplayerGameInfo()
     v11[2] = 0; /*0x5e7ac9*/
     Buffer::Init(v12, (int)(v4 + 4), FileSize); /*0x5e7ad9*/
     v12[3] = 0; /*0x5e7ae2*/
-    v11[0] = (int)&vt_BufferStraw; /*0x5e7af1*/
+    v11[0] = (int)&g_ptr_7E61E0; /*0x5e7af1*/
     LZOStraw::Constructor(v14, 1, 0x2000); /*0x5e7af9*/
     Delegate::Set(v14, (int)v11); /*0x5e7b07*/
     v6 = (char *)operator new(2 * v5); /*0x5e7b18*/
@@ -3688,7 +3688,7 @@ char LoadScenarioClassByIndex(int a1)
   }
   v3 = CCFileClass::Construct(v17, (char *)(*(unsigned int *)(dword_A8B8CC + 4 * a1) + 88)); /*0x5e7c3b*/
   v4 = v3->vt_slot_20(0); /*0x5e7c46*/
-  v17[0] = &vt_CCFileClass; /*0x5e7c4f*/
+  v17[0] = &g_ptr_7E16B0; /*0x5e7c4f*/
   v5 = v4 == 0; /*0x5e7c57*/
   v19 = 0; /*0x5e7c5a*/
   Vector::Clear((int)v18); /*0x5e7c62*/
@@ -3706,7 +3706,7 @@ char LoadScenarioClassByIndex(int a1)
   v6 = (int **)(dword_A8B8CC + 4 * a1); /*0x5e7c93*/
   v7 = Game::CheckForGameCD((void *)0x3C); /*0x5e7c96*/
   if ( (uint8_t)ScenarioClass::CheckExists(*v6, v7) /*0x5e7cca*/
-    || (Field = GameOption::GetField(*(unsigned int ***)(dword_A8B8CC + 4 * a1)), (result = vt_CD(Field)) != 0) )
+    || (Field = GameOption::GetField(*(unsigned int ***)(dword_A8B8CC + 4 * a1)), (result = g_ptr_7E4C30(Field)) != 0) )
   {
   LABEL_9:
     wcscpy((wchar_t *)&dword_A8B320 + 1, *(const wchar_t **)(dword_A8B8CC + 4 * a1)); /*0x5e7d31*/
@@ -3736,14 +3736,14 @@ char LoadScenarioClassByIndex(int a1)
     dword_A8BB0C = PlayerCountMap; /*0x5e7e2a*/
     v13 = CCFileClass::Construct(v17, &byte_A8B8E0); /*0x5e7e30*/
     dword_A8BB04 = v13->vt_slot_44(); /*0x5e7e45*/
-    v17[0] = &vt_CCFileClass; /*0x5e7e4a*/
+    v17[0] = &g_ptr_7E16B0; /*0x5e7e4a*/
     v19 = 0; /*0x5e7e4e*/
     Vector::Clear((int)v18); /*0x5e7e52*/
     v17[0] = (unsigned int)&off_7E1668; /*0x5e7e60*/
     ((BufferIOFileClass *)(v17))->Dtor(); /*0x5e7e64*/
     v14 = CCFileClass::Construct(v17, &byte_A8B8E0); /*0x5e7e72*/
     dword_A8BB04 = v14->vt_slot_44(); /*0x5e7e82*/
-    v17[0] = &vt_CCFileClass; /*0x5e7e87*/
+    v17[0] = &g_ptr_7E16B0; /*0x5e7e87*/
     v19 = 0; /*0x5e7e8b*/
     Vector::Clear((int)v18); /*0x5e7e8f*/
     v17[0] = (unsigned int)&off_7E1668; /*0x5e7e98*/

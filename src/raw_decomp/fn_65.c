@@ -1814,7 +1814,7 @@ bool __stdcall Conditions::CheckResult3(RadarClass *this, int a2, char a3)
 {
   DisplayClass *v3; // ecx
 
-  return DisplayClass::vt_entry_94(v3, (__int16 *)this, a2, a3) != 0; /*0x653849*/
+  return DisplayClass::g_var_72f2d5(v3, (__int16 *)this, a2, a3) != 0; /*0x653849*/
 }
 
 
@@ -16222,7 +16222,7 @@ bool __stdcall Conditions::CheckResult3(RadarClass *this, int a2, char a3)
 {
   DisplayClass *v3; // ecx
 
-  return DisplayClass::vt_entry_94(v3, (__int16 *)this, a2, a3) != 0; /*0x653849*/
+  return DisplayClass::g_var_72f2d5(v3, (__int16 *)this, a2, a3) != 0; /*0x653849*/
 }
 
 

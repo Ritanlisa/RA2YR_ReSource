@@ -125,7 +125,7 @@ void ObjectClass::sub_770E70(ObjectClass * aP1, ObjectClass * aP2, ObjectClass, 
 namespace gamemd {
 void E4Recv_771890::sub_771890()
 {
-  /* X11: vtable install elided (X67 star-deref, RHS vt_WorldDominationTour_Voices_Anim) */  /*0x771890*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7F7354) */  /*0x771890*/
   VtableStub::sub_5CB6C0(); /*0x771896*/
 }
 }
@@ -819,7 +819,7 @@ int WindowProc_Main(int a1, int a2, HWND hWnd, UINT Msg, signed int wParam, LPAR
         {
           MainWindowProc_Helper_724000(v16, (int)v12); /*0x7777a3*/
           v17->u32_264 = 7; /*0x7777a8*/
-          /* X11: vtable install elided (X67 star-deref, RHS vt_CCToolTip) */  /*0x7777b2*/
+          /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7F74C4) */  /*0x7777b2*/
           *(unsigned int *)&stru_887338.__pad_1C[20] = v17; /*0x7777b8*/
         }
         else
@@ -1139,14 +1139,14 @@ unsigned int * PlayerProfile_Load(unsigned int * a1, const char ** a2)
     v17.NeedsSaveOrLink = 0; /*0x778ac3*/
     v17.fallRate = 0; /*0x778ac7*/
     v17.nextObject = 0; /*0x778acb*/
-    /* X11: vtable install elided (X67 recv-slot, RHS vt_GenericNode) */  /*0x778acf*/
+    /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E1B0C) */  /*0x778acf*/
     GenericNode::Constructor((MixFileClass *)&v17.attachedTag); /*0x778ad7*/
     LinkedList::Prepend((LinkedList *)&v17.owningHouseIndex, (int)&v17.attachedTag); /*0x778aed*/
-    /* X11: vtable install elided (X67 recv-slot, RHS vt_List_INIClass_INISection) */  /*0x778af9*/
+    /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E1AFC) */  /*0x778af9*/
     memset(&v17.ambientSoundController[1], 0, 13); /*0x778b07*/
     v17.customSound_controller[0] = 0; /*0x778b18*/
     v17.customSound_controller[1] = 0; /*0x778b1c*/
-    /* X11: vtable install elided (X67 recv-slot, RHS vt_INIClass) */  /*0x778b20*/
+    /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7EA5F4) */  /*0x778b20*/
     FileStraw::Open((FileStraw *)&v17.nextArrayIndex, (int)&v17.spawnStatus, 0); /*0x778b28*/
     CCFileClass::Close((CCFileClass *)&v17.spawnStatus); /*0x778b34*/
     String::AssignFromPtr((String *)&v17.ptr_4, a2); /*0x778b3e*/
@@ -1250,7 +1250,7 @@ unsigned int * PlayerProfile_Load(unsigned int * a1, const char ** a2)
         AccountInfoWOL_Load = 0; /*0x778eb7*/
       v16 = *(ComPtr **)v17.bombVisible; /*0x778eb9*/
       ComPtr::Constructor(*(ComPtr **)v17.bombVisible); /*0x778ebf*/
-      /* X11: vtable install elided (X67 star-deref, RHS vt_rc_ptr_PlayerProfile) */  /*0x778ec6*/
+      /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7F3F44) */  /*0x778ec6*/
       ComPtr::Set(v16, (int)AccountInfoWOL_Load); /*0x778ecd*/
       DeleteAndZero::Alt((DeleteAndZero *)&v17.uniqueId); /*0x778ed6*/
       DeleteAndZero::Alt((DeleteAndZero *)&v17.abstractFlags); /*0x778edf*/
@@ -3843,7 +3843,7 @@ unsigned int * E4Recv_771850::sub_771850(int a2)
   this->M16 = TimerGetTicks(); /*0x771867*/
   this->u32_18 = 0; /*0x77186e*/
   this->a2 = a2; /*0x771871*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_WorldDominationTour_Voices_Anim) */  /*0x771874*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7F7354) */  /*0x771874*/
   return this; /*0x77187c*/
 }
 } // namespace gamemd
@@ -4174,7 +4174,7 @@ unsigned int * sub_773450(int a1, int a2)
     v4[2] = 0; /*0x773480*/
     v4->u8_40C = 0; /*0x773482*/
     v4[260] = 0; /*0x773488*/
-    /* X11: vtable install elided (X67 star-deref, RHS vt_WebBrowser) */  /*0x77348e*/
+    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7F743C) */  /*0x77348e*/
     Debug::Log(); /*0x773494*/
     v4[260] = a1; /*0x77349c*/
     Debug::Log(); /*0x7734a7*/
@@ -5101,8 +5101,8 @@ char sub_779730()
   BufferIOFile::Constructor(v8, g_Str_File_wolinfoMD_ini); /*0x779740*/
   if ( ((File *)(v8))->IsReady(0) ) /*0x77974c*/
   {
-    v3[0] = &vt_GenericNode; /*0x779779*/
-    v4[0] = &vt_GenericNode; /*0x77977d*/
+    v3[0] = &g_ptr_7E1B0C; /*0x779779*/
+    v4[0] = &g_ptr_7E1B0C; /*0x77977d*/
     v2[1] = 0; /*0x779785*/
     v2[2] = 0; /*0x77978a*/
     v3[1] = 0; /*0x77978e*/
@@ -5110,12 +5110,12 @@ char sub_779730()
     v4[1] = 0; /*0x779796*/
     v4[2] = 0; /*0x77979a*/
     LinkedList::Prepend(v3, (int)v4); /*0x7797a6*/
-    v2[3] = &vt_List; /*0x7797af*/
+    v2[3] = &g_var_a3009f; /*0x7797af*/
     memset(&v4[3], 0, 12); /*0x7797bd*/
     v5 = 0; /*0x7797c9*/
     v6 = 0; /*0x7797cd*/
     v7 = 0; /*0x7797d1*/
-    v2[0] = &vt_INIClass; /*0x7797d5*/
+    v2[0] = &g_ptr_7EA5F4; /*0x7797d5*/
     FileStraw::Open(v2, (int)v8, 0); /*0x7797dd*/
     CCFileClass::Close(v8); /*0x7797e6*/
     Bool_Overwrite = INIClass::ReadBool_Overwrite( /*0x779804*/
@@ -5156,8 +5156,8 @@ int ReadWOLGameOption(INIClass * a1)
     CCFileClass::Close(v9); /*0x779865*/
     CCFileClass::Reopen(v9, g_Str_File_wolinfoMD_ini, 1); /*0x779875*/
   }
-  v4[0] = &vt_GenericNode; /*0x779883*/
-  v5[0] = &vt_GenericNode; /*0x779887*/
+  v4[0] = &g_ptr_7E1B0C; /*0x779883*/
+  v5[0] = &g_ptr_7E1B0C; /*0x779887*/
   v3[1] = 0; /*0x77988f*/
   v3[2] = 0; /*0x779894*/
   v4[1] = 0; /*0x779898*/
@@ -5165,12 +5165,12 @@ int ReadWOLGameOption(INIClass * a1)
   v5[1] = 0; /*0x7798a0*/
   v5[2] = 0; /*0x7798a4*/
   LinkedList::Prepend(v4, (int)v5); /*0x7798b0*/
-  v3[3] = &vt_List; /*0x7798b9*/
+  v3[3] = &g_var_a3009f; /*0x7798b9*/
   memset(&v5[3], 0, 12); /*0x7798c2*/
   v6 = 0; /*0x7798ce*/
   v7 = 0; /*0x7798d2*/
   v8 = 0; /*0x7798d6*/
-  v3[0] = &vt_INIClass; /*0x7798da*/
+  v3[0] = &g_ptr_7EA5F4; /*0x7798da*/
   if ( ((File *)(v9))->IsReady(0) ) /*0x7798e2*/
   {
     FileStraw::Open(v3, (int)v9, 0); /*0x7798f5*/
@@ -5198,8 +5198,8 @@ char sub_779940()
   BufferIOFile::Constructor(v8, g_Str_File_wolinfoMD_ini); /*0x779950*/
   if ( ((File *)(v8))->IsReady(0) ) /*0x77995c*/
   {
-    v3[0] = &vt_GenericNode; /*0x779989*/
-    v4[0] = &vt_GenericNode; /*0x77998d*/
+    v3[0] = &g_ptr_7E1B0C; /*0x779989*/
+    v4[0] = &g_ptr_7E1B0C; /*0x77998d*/
     v2[1] = 0; /*0x779995*/
     v2[2] = 0; /*0x77999a*/
     v3[1] = 0; /*0x77999e*/
@@ -5207,12 +5207,12 @@ char sub_779940()
     v4[1] = 0; /*0x7799a6*/
     v4[2] = 0; /*0x7799aa*/
     LinkedList::Prepend(v3, (int)v4); /*0x7799b6*/
-    v2[3] = &vt_List; /*0x7799bf*/
+    v2[3] = &g_var_a3009f; /*0x7799bf*/
     memset(&v4[3], 0, 12); /*0x7799cd*/
     v5 = 0; /*0x7799d9*/
     v6 = 0; /*0x7799dd*/
     v7 = 0; /*0x7799e1*/
-    v2[0] = &vt_INIClass; /*0x7799e5*/
+    v2[0] = &g_ptr_7EA5F4; /*0x7799e5*/
     FileStraw::Open(v2, (int)v8, 0); /*0x7799ed*/
     CCFileClass::Close(v8); /*0x7799f6*/
     Bool_Overwrite = INIClass::ReadBool_Overwrite( /*0x779a14*/
@@ -5253,8 +5253,8 @@ int ReadWOLLobbyOption(INIClass * a1)
     CCFileClass::Close(v9); /*0x779a75*/
     CCFileClass::Reopen(v9, g_Str_File_wolinfoMD_ini, 1); /*0x779a85*/
   }
-  v4[0] = &vt_GenericNode; /*0x779a93*/
-  v5[0] = &vt_GenericNode; /*0x779a97*/
+  v4[0] = &g_ptr_7E1B0C; /*0x779a93*/
+  v5[0] = &g_ptr_7E1B0C; /*0x779a97*/
   v3[1] = 0; /*0x779a9f*/
   v3[2] = 0; /*0x779aa4*/
   v4[1] = 0; /*0x779aa8*/
@@ -5262,12 +5262,12 @@ int ReadWOLLobbyOption(INIClass * a1)
   v5[1] = 0; /*0x779ab0*/
   v5[2] = 0; /*0x779ab4*/
   LinkedList::Prepend(v4, (int)v5); /*0x779ac0*/
-  v3[3] = &vt_List; /*0x779ac9*/
+  v3[3] = &g_var_a3009f; /*0x779ac9*/
   memset(&v5[3], 0, 12); /*0x779ad2*/
   v6 = 0; /*0x779ade*/
   v7 = 0; /*0x779ae2*/
   v8 = 0; /*0x779ae6*/
-  v3[0] = &vt_INIClass; /*0x779aea*/
+  v3[0] = &g_ptr_7EA5F4; /*0x779aea*/
   if ( ((File *)(v9))->IsReady(0) ) /*0x779af2*/
   {
     FileStraw::Open(v3, (int)v9, 0); /*0x779b05*/
@@ -6519,7 +6519,7 @@ namespace gamemd {
 int sub_77D120()
 {
   ComPtr::Constructor(&stru_B75E48); /*0x77d125*/
-  stru_B75E48 = (int)&vt_rc_ptr; /*0x77d12f*/
+  stru_B75E48 = (int)&g_var_5878c0; /*0x77d12f*/
   return atexit(sub_77D140); /*0x77d13f*/
 }
 } // namespace gamemd
@@ -6528,7 +6528,7 @@ int sub_77D120()
 namespace gamemd {
 void sub_77D140()
 {
-  stru_B75E48 = (int)&vt_rc_ptr; /*0x77d140*/
+  stru_B75E48 = (int)&g_var_5878c0; /*0x77d140*/
   ComPtr::Release(&stru_B75E48); /*0x77d14f*/
 }
 } // namespace gamemd

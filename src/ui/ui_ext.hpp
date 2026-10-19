@@ -451,7 +451,7 @@ class CheckListClass
 public:
     virtual ~CheckListClass() = default;  // 0x557E10
 
-    virtual int vt_method_488310(int a2); // 0x488310
+    virtual int g_var_1d7b82(int a2); // 0x488310
     virtual int Clear(); // 0x488350
     virtual int ScrollUp(int a2); // 0x488360
     virtual void GetSelected(wchar_t *String2); // 0x488380
@@ -712,7 +712,7 @@ public:
     virtual ~DropListClass() = default;
 
     virtual int OnClick(); // 0x4B4EE0 (G42.34: def truth int)
-    virtual int vt_method_4B4F20(int a2); // 0x4B4F20 (G42.34: def truth)
+    virtual int g_var_926b49(int a2); // 0x4B4F20 (G42.34: def truth)
     virtual int Draw(int a2); // 0x4B4F40 (G42.34: def truth)
     virtual unsigned int * HitTest(int a2); // 0x4B4F60 (G42.34: def truth)
     virtual int OnDblClick(); // 0x4B4F80 (G42.34: def truth)
@@ -1107,7 +1107,7 @@ class SliderClass
 public:
     virtual ~SliderClass() = default; // 0x6B1D00
 
-    virtual int vt_method_558120(); // 0x558120 (G42.35 def truth)
+    virtual int g_var_d52e84(); // 0x558120 (G42.35 def truth)
     virtual unsigned int * QueryInterface(char a2); // 0x558180 (G42.35 def truth)
     static int Destructor(void *aP0);  // 0x6B1D00 G42.35 static-form sync (ui/supplied sites 0x557658/0x558183)
     virtual int * Constructor(int a2, int a3, int a4, int a5, int a6, int a7); // 0x6B1B20 (G42.35 def truth)

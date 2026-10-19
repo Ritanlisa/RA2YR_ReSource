@@ -1794,8 +1794,8 @@ int MouseClass::LoadGameAssets() {
         if ( this ) /*0x5be09f*/
         {
           MouseClass::drawCursor(this, (int)v72); /*0x5be0a8*/
-          /* X11: vtable install elided (X67 recv-slot, RHS vt_MouseClass_2) */  /*0x5be0ad*/
-          /* X11: vtable install elided (X67 recv-slot, RHS vt_MouseClass_2) */  /*0x5be0b4*/
+          /* X11: vtable install elided (X67 recv-slot, RHS g_var_8dbb83) */  /*0x5be0ad*/
+          /* X11: vtable install elided (X67 recv-slot, RHS g_var_8dbb83) */  /*0x5be0b4*/
         }
         v14 = &this->u32_15A8; /*0x5be0be*/
         v73 = 4; /*0x5be0c4*/
@@ -1939,7 +1939,7 @@ int MouseClass::LoadGameAssets() {
               do /*0x5be2ff*/
               {
                 SubzoneHashVector::Construct(v40, 0, 0); /*0x5be2e2*/
-                /* X11: vtable install elided (X67 star-deref, RHS vt_DynamicVectorClass_HashObject_unsigned_int_SubzoneConnectionStruct) */  /*0x5be2e7*/
+                /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7ED520) */  /*0x5be2e7*/
                 v40[5] = (SubzoneHashVector)10; /*0x5be2ed*/
                 v40[4] = 0; /*0x5be2f4*/
                 v40 += 6; /*0x5be2fb*/
@@ -3426,7 +3426,7 @@ int SidebarClass::Load(int a1) {
       if ( this != (RadarClass *)-4700 ) /*0x6568ee*/
       {
         VectorClass::PointConstructor(&this->RadarPoints, 0, 0); /*0x6568f4*/
-        /* X11: vtable install elided (X67 star-deref, RHS vt_DynamicVectorClass_Point2D) */  /*0x6568f9*/
+        /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EEB54) */  /*0x6568f9*/
         *&this->q1270 = 10; /*0x6568ff*/
         *&this->q126C = 0; /*0x656906*/
       }
@@ -3441,7 +3441,7 @@ LABEL_14:
           if ( this != (RadarClass *)-4644 ) /*0x65699e*/
           {
             VectorClass::CellConstructor(&this->RadarCells, 0, 0); /*0x6569a4*/
-            /* X11: vtable install elided (X67 star-deref, RHS vt_DynamicVectorClass_Cell) */  /*0x6569a9*/
+            /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E3890) */  /*0x6569a9*/
             *&this->q1238 = 10; /*0x6569af*/
             *&this->q1234 = 0; /*0x6569b6*/
           }
@@ -3460,7 +3460,7 @@ LABEL_26:
                 *(unsigned int *)v18 = 0; /*0x656a39*/
                 v18[4] = 1; /*0x656a3b*/
                 v18[5] = 0; /*0x656a3e*/
-                *((unsigned int *)v18 - 2) = &vt_DynamicVectorClass_Point2D; /*0x656a41*/
+                *((unsigned int *)v18 - 2) = &g_ptr_7EEB54; /*0x656a41*/
                 *((unsigned int *)v18 + 3) = 10; /*0x656a48*/
                 *((unsigned int *)v18 + 2) = 0; /*0x656a4f*/
               }
@@ -3930,7 +3930,7 @@ void* TabClass::initTabData() {
   this->q53A8 = 0; /*0x6a4ecd*/
   this->q5514 = 0; /*0x6a4ed3*/
   this->q5515 = 0; /*0x6a4ed9*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_SidebarClass) */  /*0x6a4edf*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_var_473345) */  /*0x6a4edf*/
   v4 = &this->q1544; /*0x6a4ee5*/
   v5 = 4; /*0x6a4eeb*/
   do /*0x6a4f07*/
@@ -7523,7 +7523,7 @@ void* MouseClass::Construct(int a1, int a2) {
 
   pad_2C = this->__pad_2C; /*0x7b8742*/
   *&this->outBuffer = a1; /*0x7b8745*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_Mouse) */  /*0x7b8748*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F7B78) */  /*0x7b8748*/
   this->m_ScrollY = 0; /*0x7b874e*/
   this->m_MaxX = 0; /*0x7b8751*/
   this->m_MaxY = -1; /*0x7b8754*/
@@ -7565,7 +7565,7 @@ void* MouseClass::Construct(int a1, int a2) {
   *&this->q090 = -1; /*0x7b8841*/
   *&this->q094 = 0; /*0x7b8847*/
   *&this->LevelAndPassabilityStruct2pointer_70 = v9; /*0x7b884d*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_WWMouseClass) */  /*0x7b8850*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_var_704190) */  /*0x7b8850*/
   if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7b8867*/
     Debug::Log(); /*0x7b8878*/
   MouseClass::CalcConfiningRect(this); /*0x7b8882*/

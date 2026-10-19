@@ -53,7 +53,7 @@ int ArtConfig::validateConfig(Selection_WorldDominationTour * aP1, int a3, Selec
     (*(void (**)(void *, unsigned int))(*(unsigned int *)v9 + 4))(v9, 0); /*0x76fcc8*/
     (aP1)->Add(this->u32_28); /*0x76fcd6*/
   }
-  v11[0] = (unsigned int)(&vt_CCFileClass); /*0x76fcdf*/
+  v11[0] = (unsigned int)(&g_ptr_7E16B0); /*0x76fcdf*/
   int v13; // [esp+74h] [ebp-8h]
   v13 = 0; /*0x76fce7*/
   unsigned char v12[12]; // [esp+68h] [ebp-14h] BYREF
@@ -77,7 +77,7 @@ rc_ptr * ArtConfig_Read(rc_ptr_base * a1, int edx0, unsigned int * a2, Reference
   else
     v9 = 0; /*0x76f944*/
   ComPtr::Constructor((ComPtr *)this); /*0x76f948*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_rc_ptr_WorldDominationTour_Territory) */  /*0x76f94f*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7F71C4) */  /*0x76f94f*/
   ComPtr::Set((ComPtr *)this, (int)v9); /*0x76f956*/
   return this; /*0x76f95d*/
 

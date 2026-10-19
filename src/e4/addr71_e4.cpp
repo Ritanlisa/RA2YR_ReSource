@@ -294,7 +294,7 @@ int ObjectTypeClass_LoadTheaterSHP(int a1)
       unsigned int v5[22]; // [esp+Ch] [ebp-26Ch] BYREF
       CCFileClass::Construct(v5, Buffer); /*0x71dd29*/
       *(unsigned int *)(v4 + 164) = (unsigned int)((v5)->ReadEntireFile()); /*0x71dd3b*/
-      v5[0] = (unsigned int)(&vt_CCFileClass); /*0x71dd41*/
+      v5[0] = (unsigned int)(&g_ptr_7E16B0); /*0x71dd41*/
       int v7; // [esp+70h] [ebp-208h]
       v7 = 0; /*0x71dd49*/
       unsigned char v6[12]; // [esp+64h] [ebp-214h] BYREF
@@ -741,7 +741,7 @@ int sub_71A3D0()
   dword_B0EC68 = 0; /*0x71a3dc*/
   byte_B0EC6C = 1; /*0x71a3e1*/
   byte_B0EC6D = 0; /*0x71a3e8*/
-  dword_B0EC60 = (int)&vt_DynamicVectorClass; /*0x71a3ed*/
+  dword_B0EC60 = (int)&g_ptr_7E3238; /*0x71a3ed*/
   dword_B0EC74 = 10; /*0x71a3f7*/
   dword_B0EC70 = 0; /*0x71a401*/
   return atexit(sub_71A410); /*0x71a40c*/
@@ -752,7 +752,7 @@ int sub_71A3D0()
 namespace gamemd {
 void sub_71A410()
 {
-  dword_B0EC60 = (int)&vt_VectorClass; /*0x71a418*/
+  dword_B0EC60 = (int)&g_ptr_7E8500; /*0x71a418*/
   if ( dword_B0EC64 && byte_B0EC6D ) /*0x71a42c*/
   {
     operator delete((void *)(dword_B0EC64)); /*0x71a42f*/
@@ -1219,7 +1219,7 @@ int sub_71E620()
   dword_B0F1A8 = 0; /*0x71e62c*/
   byte_B0F1AC = 1; /*0x71e631*/
   byte_B0F1AD = 0; /*0x71e638*/
-  dword_B0F1A0 = (int)&vt_DynamicVectorClass; /*0x71e63d*/
+  dword_B0F1A0 = (int)&g_ptr_7E3238; /*0x71e63d*/
   dword_B0F1B4 = 10; /*0x71e647*/
   dword_B0F1B0 = 0; /*0x71e651*/
   return atexit(sub_71E660); /*0x71e65c*/
@@ -1230,7 +1230,7 @@ int sub_71E620()
 namespace gamemd {
 void sub_71E660()
 {
-  dword_B0F1A0 = (int)&vt_VectorClass; /*0x71e668*/
+  dword_B0F1A0 = (int)&g_ptr_7E8500; /*0x71e668*/
   if ( dword_B0F1A4 && byte_B0F1AD ) /*0x71e67c*/
   {
     operator delete((void *)(dword_B0F1A4)); /*0x71e67f*/

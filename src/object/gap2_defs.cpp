@@ -41,22 +41,22 @@ extern unsigned int dword_A8B230;  // w18j2 data: 0xA8B230
 namespace gamemd { int GetHealthRatio(BuildingClass *p_this); }  // x4:ida@0x5f5c60
 
 // G57w10: q000 externs (truth e4_globals_decls)
-extern unsigned char vt_DynamicVectorClass_AbstractClass[4];  // data: 0x7E91EC  // G57w10 vftable residue fix
-extern unsigned char vt_DynamicVectorClass_FoggedObjectClass_DrawRecord[4];  // data: 0x7E8BA0  // G57w10 vftable residue fix
-extern unsigned char vt_DynamicVectorClass_int[4];  // data: 0x7E4E78  // G57w10 vftable residue fix
-extern unsigned char vt_VectorClass_AbstractClass[4];  // data: 0x7E920C  // G57w10 vftable residue fix
-extern unsigned char vt_VectorClass_AnimTypeClass_const[4];  // data: 0x7EB6F4  // G57w10 vftable residue fix
-extern unsigned char vt_VectorClass_InfantryClass[4];  // data: 0x7E43E8  // G57w10 vftable residue fix
-extern unsigned char vt_VectorClass_NodeNameType[4];  // data: 0x7EE390  // G57w10 vftable residue fix
-extern unsigned char vt_VectorClass_RGBClass[4];  // data: 0x7E4E38  // G57w10 vftable residue fix
-extern unsigned char vt_VectorClass_ScoutStruct[4];  // data: 0x7EA9A4  // G57w10 vftable residue fix
-extern unsigned char vt_VectorClass_SlaveManagerClass_SlaveControl[4];  // data: 0x7F324C  // G57w10 vftable residue fix
-extern unsigned char vt_VectorClass_SpawnManagerClass_SpawnControl[4];  // data: 0x7F36D4  // G57w10 vftable residue fix
-extern unsigned char vt_VectorClass_TechnoClass[4];  // data: 0x7E180C  // G57w10 vftable residue fix
-extern unsigned char vt_VectorClass_TechnoTypeClass_const[4];  // data: 0x7E8954  // G57w10 vftable residue fix
-extern unsigned char vt_VectorClass_VoxelAnimTypeClass_const[4];  // data: 0x7F0D5C  // G57w10 vftable residue fix
-extern unsigned char vt_VectorClass_char_const[4];  // data: 0x7EE0D4  // G57w10 vftable residue fix
-extern unsigned char vt_VectorClass_int[4];  // data: 0x7E4DB8  // G57w10 vftable residue fix
+extern unsigned char g_ptr_7E91EC[4];  // data: 0x7E91EC  // G57w10 vftable residue fix
+extern unsigned char g_ptr_7E8BA0[4];  // data: 0x7E8BA0  // G57w10 vftable residue fix
+extern unsigned char g_ptr_7E4E78[4];  // data: 0x7E4E78  // G57w10 vftable residue fix
+extern unsigned char g_ptr_7E920C[4];  // data: 0x7E920C  // G57w10 vftable residue fix
+extern unsigned char g_ptr_7EB6F4[4];  // data: 0x7EB6F4  // G57w10 vftable residue fix
+extern unsigned char g_ptr_7E43E8[4];  // data: 0x7E43E8  // G57w10 vftable residue fix
+extern unsigned char g_ptr_7EE390[4];  // data: 0x7EE390  // G57w10 vftable residue fix
+extern unsigned char g_ptr_7E4E38[4];  // data: 0x7E4E38  // G57w10 vftable residue fix
+extern unsigned char g_ptr_7EA9A4[4];  // data: 0x7EA9A4  // G57w10 vftable residue fix
+extern unsigned char g_ptr_7F324C[4];  // data: 0x7F324C  // G57w10 vftable residue fix
+extern unsigned char g_ptr_7F36D4[4];  // data: 0x7F36D4  // G57w10 vftable residue fix
+extern unsigned char g_ptr_7E180C[4];  // data: 0x7E180C  // G57w10 vftable residue fix
+extern unsigned char g_ptr_7E8954[4];  // data: 0x7E8954  // G57w10 vftable residue fix
+extern unsigned char g_ptr_7F0D5C[4];  // data: 0x7F0D5C  // G57w10 vftable residue fix
+extern unsigned char g_ptr_7EE0D4[4];  // data: 0x7EE0D4  // G57w10 vftable residue fix
+extern unsigned char g_ptr_7E4DB8[4];  // data: 0x7E4DB8  // G57w10 vftable residue fix
 // ---- g57c5 W5 vocab (declaration-only) ----
 namespace ra2 { namespace game {
 int AbstractClass_Constructor(AbstractClass *p_this);  // x4:ida@0x410170
@@ -459,14 +459,14 @@ int TechnoClass::SmokeUpdate(double a2) {  // g57b5 W4: raw 真值补参 (a2)
 }
 // 0x417C80
 namespace ra2 { namespace game { 
-int ObjectClass::vt_entry_140(int a1, void* a2, void* a3, void* a4) {
+int ObjectClass::g_var_c16898(int a1, void* a2, void* a3, void* a4) {
   return ObjectClass::SpawnInfantry(this, a1, a2, a3, a4); /*0x417c99*/
 }
 }
 }
 // 0x41B5E0
 namespace ra2 { namespace game { 
-bool MissionClass::vt_entry_200() {
+bool MissionClass::g_var_1fa6c5() {
   int currentMission; // eax
 
   currentMission = this->currentMission; /*0x41b5e0*/

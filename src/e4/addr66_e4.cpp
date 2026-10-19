@@ -1348,7 +1348,7 @@ unsigned int * E4Recv_6616B0::sub_6616B0()
   while ( v2 ); /*0x6616df*/
   this->M12 = 0; /*0x6616e1*/
   this->M16 = 0; /*0x6616e4*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_RandomStraw) */  /*0x6616f1*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7F0AFC) */  /*0x6616f1*/
   memset(&this->ptr_14, 0, 0x100u); /*0x6616f7*/
   return this->ptr_0; /*0x6616fb*/
 
@@ -1659,8 +1659,8 @@ int sub_661EA0()
 namespace gamemd {
 void E4Recv_661F30::sub_661F30()
 {
-  /* X11: vtable install elided (X67 star-deref, RHS vt_RocketLocomotionClass) */  /*0x661f30*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_RocketLocomotionClass) */  /*0x661f36*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7F0B1C) */  /*0x661f30*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7F0B1C) */  /*0x661f36*/
   LocomotionClass::Construct(); /*0x661f3d*/
 }
 } // namespace gamemd
@@ -1867,7 +1867,7 @@ int sub_663800()
   unk_B052D8 = 0; /*0x66380c*/
   unk_B052DC = 1; /*0x663811*/
   unk_B052DD = 0; /*0x663818*/
-  unk_B052D0 = (int)&vt_DynamicVectorClass; /*0x66381d*/
+  unk_B052D0 = (int)&g_ptr_7E3238; /*0x66381d*/
   unk_B052E4 = 10; /*0x663827*/
   unk_B052E0 = 0; /*0x663831*/
   unk_B052E8 = 0; /*0x663836*/
@@ -1906,7 +1906,7 @@ void sub_663850()
     }
     while ( !v0 ); /*0x66389d*/
   }
-  unk_B052D0 = (int)&vt_VectorClass; /*0x6638a4*/
+  unk_B052D0 = (int)&g_ptr_7E8500; /*0x6638a4*/
   if ( unk_B052D4 && unk_B052DD ) /*0x6638b8*/
   {
     operator delete((void *)(unk_B052D4)); /*0x6638bb*/
@@ -1926,7 +1926,7 @@ unsigned int * E4Recv_6638E0::sub_6638E0()
   this->M8 = 0; /*0x6638e7*/
   LOBYTE(this->M12) = 1; /*0x6638ea*/
   BYTE1(this->M13) = 0; /*0x6638ee*/
-  /* X11: vtable install elided (base-interface slot, RHS vt_DynamicVectorClass) */  /*0x6638f1*/
+  /* X11: vtable install elided (base-interface slot, RHS g_ptr_7E3238) */  /*0x6638f1*/
   this->M20 = 10; /*0x6638f7*/
   this->M16 = 0; /*0x6638fe*/
   LOBYTE(this->q018) = 0; /*0x663901*/

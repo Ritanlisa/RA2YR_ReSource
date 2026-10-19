@@ -89,17 +89,17 @@ void* SlaveManagerClass::ctor(TechnoClass * aP1, int a3, int a4, int a5, int a6,
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x6af1a8*/
   SlaveControlVector::Constructor(&this->slaves, 0, 0); /*0x6af1b6*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass_SlaveManagerClass_SlaveControl) */  /*0x6af1c3*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F322C) */  /*0x6af1c3*/
   this->slaveVectorCapacity = 10; /*0x6af1c9*/
   this->__pad_048 = 0; /*0x6af1d0*/
   this->creationFrame = *(unsigned int *)&stru_A8E960.random[528]; /*0x6af1d8*/
   this->SlaveManagerClass_field_58 = 0; /*0x6af1df*/
   this->master = a2; /*0x6af1e2*/
   this->house = a3; /*0x6af1e9*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_SlaveManagerClass_4) */  /*0x6af1f2*/
-  /* X11: vtable install elided (legacy slot spelling slot, RHS vt_SlaveManagerClass_4) */  /*0x6af1f8*/
-  /* X11: vtable install elided (legacy slot spelling slot, RHS vt_SlaveManagerClass_4) */  /*0x6af1ff*/
-  /* X11: vtable install elided (legacy slot spelling slot, RHS vt_SlaveManagerClass_4) */  /*0x6af206*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_var_2d557a) */  /*0x6af1f2*/
+  /* X11: vtable install elided (legacy slot spelling slot, RHS g_var_2d557a) */  /*0x6af1f8*/
+  /* X11: vtable install elided (legacy slot spelling slot, RHS g_var_2d557a) */  /*0x6af1ff*/
+  /* X11: vtable install elided (legacy slot spelling slot, RHS g_var_2d557a) */  /*0x6af206*/
   this->slaveOwner = a4; /*0x6af20d*/
   this->slaveType = a5; /*0x6af210*/
   this->slaveCount = a6; /*0x6af213*/
@@ -179,12 +179,12 @@ int SlaveManagerClass::Constructor(void *a1, void *a2, void *a3, void *a4)
   this->slaveVectorCapacity = 0; /*0x6af374*/
   LOBYTE(this->creationFrame) = 1; /*0x6af377*/
   BYTE1(this->creationFrame) = 0; /*0x6af37b*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass) */  /*0x6af37e*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E3238) */  /*0x6af37e*/
   *&this->slaveVectorCapacity = 10; /*0x6af385*/
   *(unsigned int *)this->slaveVectorCount = 0; /*0x6af38c*/
   *&this->creationFrame = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x6af395*/
   this->SlaveManagerClass_field_58 = 0; /*0x6af398*/
-  /* X11: vtable install elided (base-interface slot, RHS vt_SlaveManagerClass) */  /*0x6af39b*/
+  /* X11: vtable install elided (base-interface slot, RHS g_ptr_7F319C) */  /*0x6af39b*/
   /* X11: vtable install elided (implicit via SlaveManagerClass virtuals 0x6af3a1) */
   /* X11: vtable install elided (implicit via SlaveManagerClass virtuals 0x6af3a8) */
   /* X11: vtable install elided (implicit via SlaveManagerClass virtuals 0x6af3af) */
@@ -250,7 +250,7 @@ void SlaveManagerClass::Constructor_SlaveManagerClass()
     while ( v4 < dword_B0B600 ); /*0x6af53d*/
   }
   void *v5 = *&this->slaveVectorCount; // eax /*0x6af53f*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x6af542*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x6af542*/
   if ( v5 && this->u32_45 ) /*0x6af54c*/
   {
     __3_YAXPAX_Z(v5); /*0x6af554*/
@@ -846,7 +846,7 @@ AbstractClass * * SlaveManagerClass::LoadManager(unsigned int * a1, int a2)
     {
       AbstractClass::InitVtables((AbstractClass *)a1, (int)&a1); /*0x6b119b*/
       SlaveControlVector::Constructor((SlaveControlVector *)a1->slaves, 0, 0); /*0x6b11a7*/
-      /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass) */  /*0x6b11b0*/
+      /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E3238) */  /*0x6b11b0*/
       *&a1->slaveVectorCapacity = 10; /*0x6b11b6*/
       *(unsigned int *)a1->slaveVectorCount = 0; /*0x6b11bd*/
       Timer::Start(&a1->creationFrame, 0); /*0x6b11c0*/
@@ -863,7 +863,7 @@ AbstractClass * * SlaveManagerClass::LoadManager(unsigned int * a1, int a2)
       if ( a1 != (SlaveManagerClass *)-56 ) /*0x6b1201*/
       {
         SlaveControlVector::Constructor((SlaveControlVector *)a1->slaves, 0, 0); /*0x6b1207*/
-        /* X11: vtable install elided (X67 star-deref, RHS vt_DynamicVectorClass) */  /*0x6b120c*/
+        /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E3238) */  /*0x6b120c*/
         *&a1->slaveVectorCapacity = 10; /*0x6b1212*/
         *(unsigned int *)a1->slaveVectorCount = 0; /*0x6b1219*/
       }
@@ -1207,7 +1207,7 @@ namespace gamemd {
 DynamicVector * SlaveManagerClass_25::QueryInterface(unsigned int * Block, char a2)
 {
   void *v3 = *&Block->__pad_004; // eax /*0x6b1983*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x6b1986*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x6b1986*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x6b1990*/
   {
     operator delete((v3)); /*0x6b1998*/

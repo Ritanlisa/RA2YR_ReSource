@@ -134,7 +134,7 @@ struct ObjectTypeClass {
     unsigned int * Copy(unsigned int * a0, ObjectTypeClass * aP1);
     unsigned int * InitTripleTen(unsigned int * a1);
     unsigned int * loadTypeMember_5717C00(unsigned int * a2);
-    unsigned int * vt_entry_7C(unsigned int * a1);
+    unsigned int * g_var_773e90(unsigned int * a1);
     void CleanupWeapons();
     void ReleaseWaveAndString(void *a1);
     int SetRTTI71(void *a1 = 0);

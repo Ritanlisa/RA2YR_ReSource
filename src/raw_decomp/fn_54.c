@@ -5142,8 +5142,8 @@ int sub_549B30()
 
 
 
-// ==== 0x00549B50  IsometricTileTypeClass::vt_entry_6C  this=IsometricTileTypeClass  sig=csp ====
-_DWORD *__stdcall IsometricTileTypeClass::vt_entry_6C(IsometricTileTypeClass *this, _DWORD *a2)
+// ==== 0x00549B50  IsometricTileTypeClass::g_var_4f9ac2  this=IsometricTileTypeClass  sig=csp ====
+_DWORD *__stdcall IsometricTileTypeClass::g_var_4f9ac2(IsometricTileTypeClass *this, _DWORD *a2)
 {
   *(_DWORD *)this->__pad_0 = *a2; /*0x549b5d*/
   this->IsometricTileTypeClass_field_0x04 = a2[1]; /*0x549b62*/
@@ -15938,8 +15938,8 @@ int sub_549B30()
 
 
 
-// ==== 0x00549B50  IsometricTileTypeClass::vt_entry_6C  this=IsometricTileTypeClass  sig=csp ====
-_DWORD *__stdcall IsometricTileTypeClass::vt_entry_6C(IsometricTileTypeClass *this, _DWORD *a2)
+// ==== 0x00549B50  IsometricTileTypeClass::g_var_4f9ac2  this=IsometricTileTypeClass  sig=csp ====
+_DWORD *__stdcall IsometricTileTypeClass::g_var_4f9ac2(IsometricTileTypeClass *this, _DWORD *a2)
 {
   *(_DWORD *)this->__pad_0 = *a2; /*0x549b5d*/
   this->IsometricTileTypeClass_field_0x04 = a2[1]; /*0x549b62*/

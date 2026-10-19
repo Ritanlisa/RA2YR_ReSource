@@ -44,11 +44,11 @@ int HoverLocomotionClass::BeginMove(int a1, int * a2)
   v2 = SwizzleManager::SaveLoad((int *)a1->0, a2); /*0x5170c1*/
   if ( v2 >= 0 && a1 ) /*0x5170c9*/
   {
-    /* X11: vtable install elided (X67 star-deref, RHS vt_LocomotionClass) */  /*0x5170ce*/
-    /* X11: vtable install elided (X68 star-amp-named, RHS vt_LocomotionClass) */  /*0x5170d4*/
+    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EADF4) */  /*0x5170ce*/
+    /* X11: vtable install elided (X68 star-amp-named, RHS g_ptr_7EADF4) */  /*0x5170d4*/
     FrameSnapshot::Init((FrameSnapshot *)a1->LocomotionFacing); /*0x5170db*/
-    /* X11: vtable install elided (X67 star-deref, RHS vt_HoverLocomotionClass) */  /*0x5170e0*/
-    /* X11: vtable install elided (X68 star-amp-named, RHS vt_HoverLocomotionClass) */  /*0x5170e6*/
+    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EACFC) */  /*0x5170e0*/
+    /* X11: vtable install elided (X68 star-amp-named, RHS g_ptr_7EACFC) */  /*0x5170e6*/
   }
   return v2; /*0x5170ef*/
 }
@@ -64,8 +64,8 @@ int HoverLocomotionClass::StubReturn120()
 namespace gamemd {
 HoverLocomotionClass * HoverLocomotionClass::ProcessMove(unsigned int * Block, char a2)
 {
-  /* X11: vtable install elided (X67 star-deref, RHS vt_HoverLocomotionClass) */  /*0x5172c3*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_HoverLocomotionClass) */  /*0x5172c9*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EACFC) */  /*0x5172c3*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EACFC) */  /*0x5172c9*/
   ((LocomotionClass *)((LocomotionClass *)Block))->Construct(); /*0x5172d0*/
   if ( (a2 & 1) != 0 ) /*0x5172da*/
     operator delete((Block)); /*0x5172dd*/

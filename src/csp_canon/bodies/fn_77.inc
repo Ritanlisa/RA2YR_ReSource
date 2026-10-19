@@ -28,7 +28,7 @@ void Gap2Recv_770430::System_Init_770430() {
   if ( v2 ) /*0x77047d*/
     AudioSample::Destructor(v2); /*0x77047f*/
   v3 = (int *)this->targetLaserTimer[2]; /*0x770484*/
-  this->targetLaserTimer[1] = (int)&vt_VectorClass; /*0x77048a*/
+  this->targetLaserTimer[1] = (int)&g_ptr_7E8500; /*0x77048a*/
   if ( v3 && this->isSinking[0] ) /*0x770498*/
   {
     v4 = v3 - 1; /*0x7704a7*/
@@ -44,7 +44,7 @@ void Gap2Recv_770430::System_Init_770430() {
   {
     v7 = (void *)*(v5 - 5); /*0x7704df*/
     v5 -= 6; /*0x7704e2*/
-    *v5 = (int)&vt_VectorClass; /*0x7704e7*/
+    *v5 = (int)&g_ptr_7E8500; /*0x7704e7*/
     if ( v7 && *((unsigned char *)v5 + 13) ) /*0x7704ef*/
     {
       __3_YAXPAX_Z(v7); /*0x7704f5*/
@@ -603,13 +603,13 @@ void* Gap2Recv_778710::LoadAccountInfoWOL() {
     ((unsigned int *)&v11)[0] = 0; /*0x7787a5*/
     GenericNode::Constructor((GenericNode *)&v11.owningHouseIndex); /*0x7787a9*/
     GenericNode::Constructor((GenericNode *)&v11.attachedTag); /*0x7787b2*/
-    v11.occupant = (int)&vt_GenericList; /*0x7787c0*/
+    v11.occupant = (int)&g_ptr_7E1B04; /*0x7787c0*/
     LinkedList::Prepend((LinkedList *)&v11.owningHouseIndex, (int)&v11.attachedTag); /*0x7787c8*/
-    v11.occupant = (int)&vt_List; /*0x7787d1*/
+    v11.occupant = (int)&g_var_a3009f; /*0x7787d1*/
     memset(&v11.ambientSoundController[1], 0, 13); /*0x7787df*/
     v11.customSound_controller[0] = 0; /*0x7787ef*/
     v11.customSound_controller[1] = 0; /*0x7787f3*/
-    ((unsigned int *)&v11)[0] = (int)&vt_INIClass; /*0x7787f7*/
+    ((unsigned int *)&v11)[0] = (int)&g_ptr_7EA5F4; /*0x7787f7*/
     FileStraw::Open((FileStraw *)&((char *)&v11), (int)&v11.customSound_controller[2], 0); /*0x7787ff*/
     CCFileClass::Close((BufferIOFileClass *)&v11.customSound_controller[2]); /*0x778808*/
     v4 = (uint8_t *)String::GetOrEmpty_Alt((String *)&stru_B73590); /*0x778812*/
@@ -663,7 +663,7 @@ void* Gap2Recv_778710::LoadAccountInfoWOL() {
     AccountInfoWOL_Load = 0; /*0x7789c0*/
   abstractFlags = (ComPtr *)((char *)&v11); /*0x7789c2*/
   ComPtr::Constructor((ComPtr *)((char *)&v11)); /*0x7789c8*/
-  *(unsigned int *)abstractFlags->__pad_0 = &vt_rc_ptr; /*0x7789cf*/
+  *(unsigned int *)abstractFlags->__pad_0 = &g_var_5878c0; /*0x7789cf*/
   ComPtr::Set(abstractFlags, (int)AccountInfoWOL_Load); /*0x7789d6*/
   v11.customSound_controller[2] = (int)&off_7E1668; /*0x7789df*/
   BufferIOFileClass::Dtor((BufferIOFileClass *)&v11.customSound_controller[2]); /*0x7789e7*/

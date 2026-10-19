@@ -49,7 +49,7 @@ int TemporalClass::Constructor(void *a1, void *a2, void *a3, void *a4)
   v2 = *(unsigned int *)&TeamTypeClass_Array; /*0x71a458*/
   this->TemporalClass_field_34 = 0; /*0x71a45d*/
   *&this->creationFrame = v2; /*0x71a464*/
-  /* X11: vtable install elided (base-interface slot, RHS vt_TemporalClass) */  /*0x71a467*/
+  /* X11: vtable install elided (base-interface slot, RHS g_ptr_7F5154) */  /*0x71a467*/
   /* X11: vtable install elided (implicit via TemporalClass virtuals 0x71a46d) */
   /* X11: vtable install elided (implicit via TemporalClass virtuals 0x71a474) */
   /* X11: vtable install elided (implicit via TemporalClass virtuals 0x71a47b) */
@@ -79,7 +79,7 @@ TemporalClass::TemporalClass(TechnoClass * aP1)
   ((AbstractClass *)this)->Constructor(); /*0x71a4e7*/
   *&this->creationFrame = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x71a4fb*/
   this->TemporalClass_field_34 = 0; /*0x71a4fe*/
-  /* X11: vtable install elided (base-interface slot, RHS vt_TemporalClass) */  /*0x71a501*/
+  /* X11: vtable install elided (base-interface slot, RHS g_ptr_7F5154) */  /*0x71a501*/
   /* X11: vtable install elided (implicit via TemporalClass virtuals 0x71a507) */
   /* X11: vtable install elided (implicit via TemporalClass virtuals 0x71a50e) */
   /* X11: vtable install elided (implicit via TemporalClass virtuals 0x71a515) */
@@ -378,10 +378,10 @@ void * TemporalClass::ProcessEvent(char a2, int aP1, int aP0, int a1, int aP2)
 {
 
 
-  /* X11: vtable install elided (base-interface slot, RHS vt_TemporalClass) */  /*0x71b1bd*/
-  /* X11: vtable install elided (qmark slot, RHS vt_TemporalClass) */  /*0x71b1c3*/
-  /* X11: vtable install elided (qmark slot, RHS vt_TemporalClass) */  /*0x71b1ca*/
-  /* X11: vtable install elided (qmark slot, RHS vt_TemporalClass) */  /*0x71b1d1*/
+  /* X11: vtable install elided (base-interface slot, RHS g_ptr_7F5154) */  /*0x71b1bd*/
+  /* X11: vtable install elided (qmark slot, RHS g_ptr_7F5154) */  /*0x71b1c3*/
+  /* X11: vtable install elided (qmark slot, RHS g_ptr_7F5154) */  /*0x71b1ca*/
+  /* X11: vtable install elided (qmark slot, RHS g_ptr_7F5154) */  /*0x71b1d1*/
   TemporalClass *v5; // [esp+4h] [ebp-4h] BYREF
   v5 = (gamemd::TemporalClass *)(aP1); /*0x71b1df*/
   int v3; // eax

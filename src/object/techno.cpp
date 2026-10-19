@@ -1177,9 +1177,9 @@ void TechnoClass::AddPassenger(FootClass* passenger)
 //  2. Cloak/stealth detection (HasStupidGuardMode)
 //  3. Building placement validation (cell owner check)
 //  4. MCV deploy state check
-//  5. Deploy animation coordinate preset (vt_entry_240)
+//  5. Deploy animation coordinate preset (g_var_69308f)
 //  6. Mission queued clear
-//  7. Deploy/undeploy animation state machine (vt_entry_488)
+//  7. Deploy/undeploy animation state machine (g_var_40b46d)
 //  8. Construction progress: timer countdown, placement distance,
 //     production size calc, cost accumulation
 //  9. Production milestone → type chain switching
@@ -1250,7 +1250,7 @@ InfantryTypeClass* TechnoClass::GetCrew() const
   return v6; /*0x707d37*/
 }
 // 0x4df1f0
-int TechnoClass::vt_entry_4B8()
+int TechnoClass::g_var_e1d6b5()
 {
   int v2; // eax
   unsigned int *v3; // edx

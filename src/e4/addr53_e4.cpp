@@ -307,7 +307,7 @@ int ShowLoadingScreen(void * a1, void * a2, void * a3)
   }
   if ( v34 ) /*0x531630*/
     (**(void (***)(int, int))v34)(v34, 1); /*0x531636*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_CCFileClass) */  /*0x53163f*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x53163f*/
   v44 = 0; /*0x531647*/
   Vector::Clear((int)v43); /*0x531652*/
   *(unsigned int *)v42.__tail_0 = &off_7E1668; /*0x53165b*/
@@ -374,7 +374,7 @@ char BulkData_Initialize()
 LABEL_11:
     Debug::Log(); /*0x53178f*/
 LABEL_12:
-    /* X11: vtable install elided (X67 star-deref, RHS vt_CCFileClass) */  /*0x53179c*/
+    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x53179c*/
     v9 = 0; /*0x5317a8*/
     Vector::Clear((int)v8); /*0x5317ac*/
     *(unsigned int *)v7.__tail_0 = &off_7E1668; /*0x5317b5*/
@@ -393,19 +393,19 @@ LABEL_12:
   {
 LABEL_16:
     Debug::Log(); /*0x531805*/
-    /* X11: vtable install elided (X67 star-deref, RHS vt_CCFileClass) */  /*0x531819*/
+    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x531819*/
     v12 = 0; /*0x531821*/
     Vector::Clear((int)v11); /*0x531828*/
     *(unsigned int *)v10.__tail_0 = &off_7E1668; /*0x531831*/
     BufferIOFileClass::Dtor((BufferIOFileClass *)&v10); /*0x531839*/
     goto LABEL_12; /*0x53183e*/
   }
-  /* X11: vtable install elided (X67 star-deref, RHS vt_CCFileClass) */  /*0x531852*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x531852*/
   v12 = 0; /*0x53185a*/
   Vector::Clear((int)v11); /*0x531861*/
   *(unsigned int *)v10.__tail_0 = &off_7E1668; /*0x53186a*/
   BufferIOFileClass::Dtor((BufferIOFileClass *)&v10); /*0x531872*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_CCFileClass) */  /*0x53187b*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x53187b*/
   v9 = 0; /*0x531883*/
   Vector::Clear((int)v8); /*0x531887*/
   *(unsigned int *)v7.__tail_0 = &off_7E1668; /*0x531890*/
@@ -1091,7 +1091,7 @@ char sub_538F20(int a1, int a2, char * Source)
         CCFileClass::Reset(&v20); /*0x538f8d*/
         byte_A9F91C = 0; /*0x538f92*/
       }
-      /* X11: vtable install elided (X67 star-deref, RHS vt_CCFileClass) */  /*0x538f9d*/
+      /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x538f9d*/
       v22 = 0; /*0x538fa5*/
       Vector::Clear((int)v21); /*0x538fad*/
       *(unsigned int *)v20.__tail_0 = &off_7E1668; /*0x538fb6*/
@@ -1109,7 +1109,7 @@ char sub_538F20(int a1, int a2, char * Source)
       FileClass::Write(&v20, &stru_A8E960.waypoints[2442], 0x10000u); /*0x539003*/
       CCFileClass::Reset(&v20); /*0x53900c*/
     }
-    /* X11: vtable install elided (X67 star-deref, RHS vt_CCFileClass) */  /*0x539015*/
+    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x539015*/
     v22 = 0; /*0x53901d*/
     Vector::Clear((int)v21); /*0x539025*/
     *(unsigned int *)v20.__tail_0 = &off_7E1668; /*0x53902e*/
@@ -2407,7 +2407,7 @@ int E4Recv_538C40::sub_538C40(char * Source)
     CCFileClass::Reset(&v2); /*0x538c7e*/
     byte_A9F91C = 0; /*0x538c83*/
   }
-  /* X11: vtable install elided (X67 star-deref, RHS vt_CCFileClass) */  /*0x538c8e*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x538c8e*/
   v4 = 0; /*0x538c96*/
   Vector::Clear((int)v3); /*0x538c9e*/
   *(unsigned int *)v2.__tail_0 = &off_7E1668; /*0x538ca7*/
@@ -2432,7 +2432,7 @@ int E4Recv_538CC0::sub_538CC0(char * Source)
     FileClass::Write(&v2, &stru_A8E960.waypoints[2442], 0x10000u); /*0x538cf5*/
     CCFileClass::Reset(&v2); /*0x538cfe*/
   }
-  /* X11: vtable install elided (X67 star-deref, RHS vt_CCFileClass) */  /*0x538d07*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x538d07*/
   v4 = 0; /*0x538d0f*/
   Vector::Clear((int)v3); /*0x538d17*/
   *(unsigned int *)v2.__tail_0 = &off_7E1668; /*0x538d20*/
@@ -2722,7 +2722,7 @@ int sub_539580()
   dword_A9FA68 = 0; /*0x53958c*/
   byte_A9FA6C = 1; /*0x539591*/
   byte_A9FA6D = 0; /*0x539598*/
-  LightningStorm_CloudsManifesting = (int)&vt_DynamicVectorClass; /*0x53959d*/
+  LightningStorm_CloudsManifesting = (int)&g_ptr_7E3238; /*0x53959d*/
   dword_A9FA74 = 10; /*0x5395a7*/
   dword_A9FA70 = 0; /*0x5395b1*/
   return atexit(sub_5395C0); /*0x5395bc*/
@@ -2735,7 +2735,7 @@ void sub_5395C0()
 {
   if ( (byte_A9F9A9 & 1) == 0 ) /*0x5395ca*/
   {
-    LightningStorm_CloudsManifesting = (int)&vt_VectorClass; /*0x5395ce*/
+    LightningStorm_CloudsManifesting = (int)&g_ptr_7E8500; /*0x5395ce*/
     byte_A9F9A9 |= 1u; /*0x5395e1*/
     if ( dword_A9FA64 ) /*0x5395e7*/
     {
@@ -2759,7 +2759,7 @@ int sub_539620()
   dword_A9F9D8 = 0; /*0x53962c*/
   byte_A9F9DC = 1; /*0x539631*/
   byte_A9F9DD = 0; /*0x539638*/
-  LightningStorm_CloudsPresent = (int)&vt_DynamicVectorClass; /*0x53963d*/
+  LightningStorm_CloudsPresent = (int)&g_ptr_7E3238; /*0x53963d*/
   dword_A9F9E4 = 10; /*0x539647*/
   dword_A9F9E0 = 0; /*0x539651*/
   return atexit(sub_539660); /*0x53965c*/
@@ -2772,7 +2772,7 @@ void sub_539660()
 {
   if ( (byte_A9F9A8 & 1) == 0 ) /*0x53966a*/
   {
-    LightningStorm_CloudsPresent = (int)&vt_VectorClass; /*0x53966e*/
+    LightningStorm_CloudsPresent = (int)&g_ptr_7E8500; /*0x53966e*/
     byte_A9F9A8 |= 1u; /*0x539681*/
     if ( dword_A9F9D4 ) /*0x539687*/
     {
@@ -2796,7 +2796,7 @@ int sub_5396C0()
   dword_A9FA20 = 0; /*0x5396cc*/
   byte_A9FA24 = 1; /*0x5396d1*/
   byte_A9FA25 = 0; /*0x5396d8*/
-  LightningStorm_BoltsPresent = (int)&vt_DynamicVectorClass; /*0x5396dd*/
+  LightningStorm_BoltsPresent = (int)&g_ptr_7E3238; /*0x5396dd*/
   dword_A9FA2C = 10; /*0x5396e7*/
   dword_A9FA28 = 0; /*0x5396f1*/
   return atexit(sub_539700); /*0x5396fc*/
@@ -2809,7 +2809,7 @@ void sub_539700()
 {
   if ( (byte_A9F9A8 & 2) == 0 ) /*0x53970a*/
   {
-    LightningStorm_BoltsPresent = (int)&vt_VectorClass; /*0x53970e*/
+    LightningStorm_BoltsPresent = (int)&g_ptr_7E8500; /*0x53970e*/
     byte_A9F9A8 |= 2u; /*0x539721*/
     if ( dword_A9FA1C ) /*0x539727*/
     {
@@ -3088,7 +3088,7 @@ int sub_53CA70()
   dword_AA0120 = 0; /*0x53ca7c*/
   byte_AA0124 = 1; /*0x53ca81*/
   byte_AA0125 = 0; /*0x53ca88*/
-  stru_AA0118 = (int)&vt_DynamicVectorClass; /*0x53ca8d*/
+  stru_AA0118 = (int)&g_ptr_7E3238; /*0x53ca8d*/
   dword_AA012C = 10; /*0x53ca97*/
   dword_AA0128 = 0; /*0x53caa1*/
   return atexit(sub_53CAB0); /*0x53caac*/
@@ -3101,7 +3101,7 @@ void sub_53CAB0()
 {
   if ( (byte_A9FAD8 & 1) == 0 ) /*0x53caba*/
   {
-    stru_AA0118 = (int)&vt_VectorClass; /*0x53cabe*/
+    stru_AA0118 = (int)&g_ptr_7E8500; /*0x53cabe*/
     byte_A9FAD8 |= 1u; /*0x53cad1*/
     if ( dword_AA011C ) /*0x53cad7*/
     {

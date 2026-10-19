@@ -1382,7 +1382,7 @@ int sub_4C1D90()
   dword_8A0E90 = 0; /*0x4c1d9c*/
   byte_8A0E94 = 1; /*0x4c1da1*/
   byte_8A0E95 = 0; /*0x4c1da8*/
-  dword_8A0E88 = (int)&vt_DynamicVectorClass; /*0x4c1dad*/
+  dword_8A0E88 = (int)&g_ptr_7E3238; /*0x4c1dad*/
   dword_8A0E9C = 10; /*0x4c1db7*/
   dword_8A0E98 = 0; /*0x4c1dc1*/
   return atexit(sub_4C1DD0); /*0x4c1dcc*/
@@ -1393,7 +1393,7 @@ int sub_4C1D90()
 namespace gamemd {
 void sub_4C1DD0()
 {
-  dword_8A0E88 = (int)&vt_VectorClass; /*0x4c1dd8*/
+  dword_8A0E88 = (int)&g_ptr_7E8500; /*0x4c1dd8*/
   if ( dword_8A0E8C && byte_8A0E95 ) /*0x4c1dec*/
   {
     operator delete((void *)(dword_8A0E8C)); /*0x4c1def*/
@@ -1469,7 +1469,7 @@ int * E4Recv_4C2FC0::sub_4C2FC0(DropListClass * aP1, ControlClass * aP2, int a4,
   aP4 = aP4; /*0x4c2ff6*/
   (((unsigned char *)&(aP4))[1]) = (((unsigned char *)&(aP4))[1]) & 0xFE; /*0x4c2ff8*/
   this->M44 = (unsigned int)(aP4); /*0x4c2ffc*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_EditClass) */  /*0x4c3004*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E81A4) */  /*0x4c3004*/
   this->M48 = a10; /*0x4c300a*/
   this->M52 = (unsigned int)(aP2); /*0x4c300d*/
   this->M56 = a4 - 1; /*0x4c3010*/
@@ -1814,7 +1814,7 @@ int sub_4C3C10()
   dword_8A3778 = 0; /*0x4c3c1c*/
   byte_8A377C = 1; /*0x4c3c21*/
   byte_8A377D = 0; /*0x4c3c28*/
-  dword_8A3770 = (int)&vt_DynamicVectorClass; /*0x4c3c2d*/
+  dword_8A3770 = (int)&g_ptr_7E3238; /*0x4c3c2d*/
   dword_8A3784 = 10; /*0x4c3c37*/
   dword_8A3780 = 0; /*0x4c3c41*/
   return atexit(sub_4C3C50); /*0x4c3c4c*/
@@ -1825,7 +1825,7 @@ int sub_4C3C10()
 namespace gamemd {
 void sub_4C3C50()
 {
-  dword_8A3770 = (int)&vt_VectorClass; /*0x4c3c58*/
+  dword_8A3770 = (int)&g_ptr_7E8500; /*0x4c3c58*/
   if ( dword_8A3774 && byte_8A377D ) /*0x4c3c6c*/
   {
     operator delete((void *)(dword_8A3774)); /*0x4c3c6f*/
@@ -2148,7 +2148,7 @@ int sub_4C5210()
   dword_8A3878 = 0; /*0x4c521c*/
   byte_8A387C = 1; /*0x4c5221*/
   byte_8A387D = 0; /*0x4c5228*/
-  dword_8A3870 = (int)&vt_DynamicVectorClass; /*0x4c522d*/
+  dword_8A3870 = (int)&g_ptr_7E3238; /*0x4c522d*/
   dword_8A3884 = 10; /*0x4c5237*/
   dword_8A3880 = 0; /*0x4c5241*/
   return atexit(sub_4C5250); /*0x4c524c*/
@@ -2161,7 +2161,7 @@ void sub_4C5250()
 {
   if ( (byte_8A3818 & 1) == 0 ) /*0x4c525a*/
   {
-    dword_8A3870 = (int)&vt_VectorClass; /*0x4c525e*/
+    dword_8A3870 = (int)&g_ptr_7E8500; /*0x4c525e*/
     byte_8A3818 |= 1u; /*0x4c5271*/
     if ( dword_8A3874 ) /*0x4c5277*/
     {
@@ -2808,7 +2808,7 @@ char sub_4C9160()
   CCFileClass::Construct(v2, aExpandDat); /*0x4c916d*/
   char v0; // bl
   v0 = ((CCFileClass *)(v2))->Open(0); /*0x4c9181*/
-  v2[0] = &vt_CCFileClass; /*0x4c9183*/
+  v2[0] = &g_ptr_7E16B0; /*0x4c9183*/
   int v4; // [esp+68h] [ebp-8h]
   v4 = 0; /*0x4c918b*/
   unsigned char v3[12]; // [esp+5Ch] [ebp-14h] BYREF
@@ -3523,8 +3523,8 @@ int sub_4CC980()
 namespace gamemd {
 void E4Recv_4CCA70::sub_4CCA70()
 {
-  /* X11: vtable install elided (X67 star-deref, RHS vt_FlyLocomotionClass) */  /*0x4cca70*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_FlyLocomotionClass) */  /*0x4cca76*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E89F4) */  /*0x4cca70*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E89F4) */  /*0x4cca76*/
   LocomotionClass::Construct(); /*0x4cca7d*/
 }
 } // namespace gamemd

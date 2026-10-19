@@ -593,7 +593,7 @@ AbstractClass * * sub_6B2F30(char a1, int a2, int a3)
   ObjectVector::Construct(&v101, 0, 0); /*0x6b3003*/
   v8 = (unsigned __int16 *)v5; /*0x6b3008*/
   v9 = v6; /*0x6b300b*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_DynamicVectorClass_ObjectClass) */  /*0x6b3010*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E4F64) */  /*0x6b3010*/
   v101.ObjectVector_field_0x14 = 10; /*0x6b3018*/
   v101.ObjectVector_field_0x10 = 0; /*0x6b3023*/
   v100 = (unsigned __int16 *)v5; /*0x6b3027*/
@@ -990,7 +990,7 @@ LABEL_110:
     }
     while ( v61 <= v62 ); /*0x6b3811*/
   }
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_ObjectClass) */  /*0x6b381b*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E192C) */  /*0x6b381b*/
   if ( v101.ObjectVector_field_0x04 && BYTE1(v101.ObjectVector_field_0x0C) ) /*0x6b382d*/
     __3_YAXPAX_Z((void *)v101.ObjectVector_field_0x04); /*0x6b3830*/
   return 1; /*0x6b3838*/
@@ -1522,7 +1522,7 @@ int FactoryClass_LoadTheaterSHP(int a1)
       unsigned int v5[22]; // [esp+8h] [ebp-26Ch] BYREF
       ((char *)(v5))->Construct(Buffer); /*0x6b54ed*/
       *(unsigned int *)(v4 + 164) = (v5)->ReadEntireFile(); /*0x6b54ff*/
-      v5[0] = (unsigned int)(&vt_CCFileClass); /*0x6b5505*/
+      v5[0] = (unsigned int)(&g_ptr_7E16B0); /*0x6b5505*/
       v7 = (unsigned int)(0); /*0x6b550d*/
       unsigned char v6[12]; // [esp+60h] [ebp-214h] BYREF
       ((void *)((int)v6))->Clear(); /*0x6b5515*/
@@ -1578,7 +1578,7 @@ char StandardCreateUnitAtCoords(unsigned int * a0, IUnknown * aP1, int a3, char 
     return 0; /*0x6b59e6*/
   Game::LockMutex((Game *)&v30, 0, 0); /*0x6b59f4*/
   v6 = 0; /*0x6b59fe*/
-  v30 = &vt_DynamicVectorClass_SmudgeTypeClass_const; /*0x6b5a02*/
+  v30 = &g_ptr_7F0DEC; /*0x6b5a02*/
   v35 = 10; /*0x6b5a0a*/
   for ( i = 0; v6 < *(int *)&stru_A8E960.random[180]; ++v6 ) /*0x6b5a16*/
   {
@@ -1605,7 +1605,7 @@ char StandardCreateUnitAtCoords(unsigned int * a0, IUnknown * aP1, int a3, char 
   v9 = 10; /*0x6b5ad1*/
   v10 = 0; /*0x6b5ad6*/
   v11 = i; /*0x6b5ad8*/
-  v24 = &vt_DynamicVectorClass_SmudgeTypeClass_const; /*0x6b5adc*/
+  v24 = &g_ptr_7F0DEC; /*0x6b5adc*/
   v29 = 10; /*0x6b5ae6*/
   v28 = 0; /*0x6b5aea*/
   if ( i > 0 ) /*0x6b5aee*/
@@ -1672,7 +1672,7 @@ LABEL_37:
       UnitClass::Create(v16, *((void **)Block + v17), v4, -1); /*0x6b5bee*/
     }
   }
-  v24 = &vt_VectorClass_SmudgeTypeClass_const; /*0x6b5c3c*/
+  v24 = &g_ptr_7F0D7C; /*0x6b5c3c*/
   if ( Block && BYTE1(v27) ) /*0x6b5c46*/
   {
     __3_YAXPAX_Z(Block); /*0x6b5c49*/
@@ -1680,7 +1680,7 @@ LABEL_37:
   }
   BYTE1(v27) = 0; /*0x6b5c59*/
   v26 = 0; /*0x6b5c5f*/
-  v30 = &vt_VectorClass_SmudgeTypeClass_const; /*0x6b5c63*/
+  v30 = &g_ptr_7F0D7C; /*0x6b5c63*/
   if ( v31 ) /*0x6b5c67*/
   {
     if ( v33 ) /*0x6b5c6d*/
@@ -1741,7 +1741,7 @@ int TimedCreateUnitAtCoords(unsigned int * a0, IUnknown * aP1, int a3, char a4)
   }
   Game::LockMutex((Game *)&v31, 0, 0); /*0x6b5ce4*/
   v7 = 0; /*0x6b5cee*/
-  v31 = &vt_DynamicVectorClass_SmudgeTypeClass_const; /*0x6b5cf2*/
+  v31 = &g_ptr_7F0DEC; /*0x6b5cf2*/
   v36 = 10; /*0x6b5cfa*/
   for ( i = 0; v7 < *(int *)&stru_A8E960.random[180]; ++v7 ) /*0x6b5d06*/
   {
@@ -1768,7 +1768,7 @@ int TimedCreateUnitAtCoords(unsigned int * a0, IUnknown * aP1, int a3, char a4)
   v10 = 10; /*0x6b5dc1*/
   v11 = 0; /*0x6b5dc6*/
   v12 = i; /*0x6b5dc8*/
-  v25 = &vt_DynamicVectorClass_SmudgeTypeClass_const; /*0x6b5dcc*/
+  v25 = &g_ptr_7F0DEC; /*0x6b5dcc*/
   v30 = 10; /*0x6b5dd6*/
   v29 = 0; /*0x6b5dda*/
   if ( i > 0 ) /*0x6b5dde*/
@@ -1835,7 +1835,7 @@ LABEL_37:
       UnitClass::Create(v17, *((void **)Block + v18), v4, -1); /*0x6b5ede*/
     }
   }
-  v25 = &vt_VectorClass_SmudgeTypeClass_const; /*0x6b5f2c*/
+  v25 = &g_ptr_7F0D7C; /*0x6b5f2c*/
   if ( Block && BYTE1(v28) ) /*0x6b5f36*/
   {
     __3_YAXPAX_Z(Block); /*0x6b5f39*/
@@ -1844,7 +1844,7 @@ LABEL_37:
   result = (int)v32; /*0x6b5f45*/
   BYTE1(v28) = 0; /*0x6b5f49*/
   v27 = 0; /*0x6b5f4f*/
-  v31 = &vt_VectorClass_SmudgeTypeClass_const; /*0x6b5f53*/
+  v31 = &g_ptr_7F0D7C; /*0x6b5f53*/
   if ( v32 ) /*0x6b5f57*/
   {
     if ( v34 ) /*0x6b5f5d*/
@@ -2380,7 +2380,7 @@ LABEL_31:
     if ( v47 / (double)v45 >= v5->DiskLaserClass_field_0x28 ) /*0x6ba0c9*/
       Render_Load_6BAFA0((ObjectClass *)v5); /*0x6ba0cd*/
     DeleteAndZero((ObjectClass *)v48); /*0x6ba0d6*/
-    *(unsigned int *)&v48[56] = &vt_CCFileClass; /*0x6ba0e2*/
+    *(unsigned int *)&v48[56] = &g_ptr_7E16B0; /*0x6ba0e2*/
     *(unsigned int *)&v48[156] = 0; /*0x6ba0ea*/
     Vector::Clear((int)&v48[144]); /*0x6ba0f1*/
     *(unsigned int *)&v48[56] = &off_7E1668; /*0x6ba0fa*/
@@ -2389,7 +2389,7 @@ LABEL_31:
   }
   else
   {
-    *(unsigned int *)&v48[56] = &vt_CCFileClass; /*0x6b9d68*/
+    *(unsigned int *)&v48[56] = &g_ptr_7E16B0; /*0x6b9d68*/
     *(unsigned int *)&v48[156] = 0; /*0x6b9d70*/
     Vector::Clear((int)&v48[144]); /*0x6b9d77*/
     *(unsigned int *)&v48[56] = &off_7E1668; /*0x6b9d80*/
@@ -4422,7 +4422,7 @@ void WinMain_Setup()
   if ( dword_A8B230 ) /*0x6beacc*/
   {
     v19 = (void *)dword_A8B230[377].ptr_C; /*0x6bead2*/
-    /* X11: vtable install elided (legacy slot spelling slot, RHS vt_VectorClass) */  /*0x6beadf*/
+    /* X11: vtable install elided (legacy slot spelling slot, RHS g_ptr_7E8500) */  /*0x6beadf*/
     if ( v19 && v18->u32_3519 ) /*0x6beae7*/
     {
       operator delete((v19)); /*0x6beaf0*/
@@ -4431,7 +4431,7 @@ void WinMain_Setup()
     v18->u32_3519 = 0; /*0x6beafe*/
     v18->ionGreen = 0; /*0x6beb04*/
     v20 = v18->ambientTarget; /*0x6beb0a*/
-    /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x6beb10*/
+    /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x6beb10*/
     if ( v20 && v18->u32_34FD ) /*0x6beb1a*/
     {
       operator delete((v20)); /*0x6beb23*/
@@ -4440,7 +4440,7 @@ void WinMain_Setup()
     v18->u32_34FD = 0; /*0x6beb31*/
     v18->red = 0; /*0x6beb37*/
     v21 = v18->allowableUnitsCount; /*0x6beb3d*/
-    /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x6beb43*/
+    /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x6beb43*/
     if ( v21 && v18->u32_34E1 ) /*0x6beb51*/
     {
       operator delete((v21)); /*0x6beb5a*/
@@ -4711,7 +4711,7 @@ int sub_6B23B0()
   dword_B0B658 = 0; /*0x6b23bc*/
   byte_B0B65C = 1; /*0x6b23c1*/
   byte_B0B65D = 0; /*0x6b23c8*/
-  dword_B0B650 = (int)&vt_DynamicVectorClass; /*0x6b23cd*/
+  dword_B0B650 = (int)&g_ptr_7E3238; /*0x6b23cd*/
   dword_B0B664 = 10; /*0x6b23d7*/
   g_SlaveMgrPool = 0; /*0x6b23e1*/
   return atexit(sub_6B23F0); /*0x6b23ec*/
@@ -4722,7 +4722,7 @@ int sub_6B23B0()
 namespace gamemd {
 void sub_6B23F0()
 {
-  dword_B0B650 = (int)&vt_VectorClass; /*0x6b23f8*/
+  dword_B0B650 = (int)&g_ptr_7E8500; /*0x6b23f8*/
   if ( dword_B0B654 && byte_B0B65D ) /*0x6b240c*/
   {
     operator delete((void *)(dword_B0B654)); /*0x6b240f*/
@@ -5168,7 +5168,7 @@ int sub_6B6C10()
   dword_B0B888 = 0; /*0x6b6c1c*/
   byte_B0B88C = 1; /*0x6b6c21*/
   byte_B0B88D = 0; /*0x6b6c28*/
-  SpawnManagerClass_Array = (int)&vt_DynamicVectorClass; /*0x6b6c2d*/
+  SpawnManagerClass_Array = (int)&g_ptr_7E3238; /*0x6b6c2d*/
   dword_B0B894 = 10; /*0x6b6c37*/
   dword_B0B890 = 0; /*0x6b6c41*/
   return atexit(sub_6B6C50); /*0x6b6c4c*/
@@ -5179,7 +5179,7 @@ int sub_6B6C10()
 namespace gamemd {
 void sub_6B6C50()
 {
-  SpawnManagerClass_Array = (int)&vt_VectorClass; /*0x6b6c58*/
+  SpawnManagerClass_Array = (int)&g_ptr_7E8500; /*0x6b6c58*/
   if ( dword_B0B884 && byte_B0B88D ) /*0x6b6c6c*/
   {
     operator delete((void *)(dword_B0B884)); /*0x6b6c6f*/
@@ -5624,7 +5624,7 @@ int sub_6BB260()
   dword_B0BC90 = 0; /*0x6bb26c*/
   byte_B0BC94 = 1; /*0x6bb271*/
   byte_B0BC95 = 0; /*0x6bb278*/
-  g_AnimationManager = (int)&vt_DynamicVectorClass; /*0x6bb27d*/
+  g_AnimationManager = (int)&g_ptr_7E3238; /*0x6bb27d*/
   dword_B0BC9C = 10; /*0x6bb287*/
   dword_B0BC98 = 0; /*0x6bb291*/
   return atexit(sub_6BB2A0); /*0x6bb29c*/
@@ -5635,7 +5635,7 @@ int sub_6BB260()
 namespace gamemd {
 void sub_6BB2A0()
 {
-  g_AnimationManager = (int)&vt_VectorClass; /*0x6bb2a8*/
+  g_AnimationManager = (int)&g_ptr_7E8500; /*0x6bb2a8*/
   if ( dword_B0BC8C && byte_B0BC95 ) /*0x6bb2bc*/
   {
     operator delete((void *)(dword_B0BC8C)); /*0x6bb2bf*/

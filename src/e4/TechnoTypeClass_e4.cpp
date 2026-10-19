@@ -178,7 +178,7 @@ unsigned int * TechnoTypeClass::LoadBase(char *aP1, void *a2)
   this->u32_F5 = 1; /*0x6f07eb*/
   this->u32_F6 = 0; /*0x6f07f1*/
   this->q0F7 = 0; /*0x6f07f7*/
-  /* X11: vtable install elided (base-interface slot, RHS vt_TeamTypeClass) */  /*0x6f07fd*/
+  /* X11: vtable install elided (base-interface slot, RHS g_ptr_7F47A4) */  /*0x6f07fd*/
   /* X11: vtable install elided (implicit via TeamTypeClass virtuals 0x6f0803) */
   /* X11: vtable install elided (implicit via TeamTypeClass virtuals 0x6f080a) */
   /* X11: vtable install elided (implicit via TeamTypeClass virtuals 0x6f0811) */
@@ -272,11 +272,11 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3, void *a3_1)  // G57w11: d
   VoxelAnimTypeVector::Constructor(0, 0); /*0x710bee*/
   this->q324 = 0; /*0x710bf8*/
   this->q328 = 10; /*0x710bfb*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList) */  /*0x710bfe*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_var_131447) */  /*0x710bfe*/
   VectorClass::Construct(&this->DebrisMaximums, 0, 0); /*0x710c0f*/
   this->u32_344 = 10; /*0x710c14*/
   this->u32_340 = 0; /*0x710c17*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList) */  /*0x710c1a*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_var_131447) */  /*0x710c1a*/
   this->Locomotor = 1247291207; /*0x710c2d*/
   this->u32_350 = 298948665; /*0x710c39*/
   this->q354 = -1610610249; /*0x710c42*/
@@ -316,7 +316,7 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3, void *a3_1)  // G57w11: d
   VectorClass::BuildingTypeConstructor(&this->Dock, 0, 0); /*0x710d46*/
   this->u32_3FC = 10; /*0x710d4b*/
   this->u32_3F8 = 0; /*0x710d51*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList) */  /*0x710d57*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_var_131447) */  /*0x710d57*/
   this->DeploysInto = 0; /*0x710d61*/
   this->UndeploysInto = 0; /*0x710d67*/
   this->PowersUnit = 0; /*0x710d6e*/
@@ -324,43 +324,43 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3, void *a3_1)  // G57w11: d
   VectorClass::Construct(&this->VoiceSelect, 0, 0); /*0x710d81*/
   this->u32_428 = 10; /*0x710d8e*/
   this->ptr_424 = 0; /*0x710d94*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList) */  /*0x710d9a*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_var_131447) */  /*0x710d9a*/
   VectorClass::Construct(&this->VoiceSelectEnslaved, 0, 0); /*0x710da4*/
   this->u32_444 = 10; /*0x710db1*/
   this->u32_440 = 0; /*0x710db7*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList) */  /*0x710dbd*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_var_131447) */  /*0x710dbd*/
   VectorClass::Construct(&this->VoiceSelectDeactivated, 0, 0); /*0x710dc7*/
   this->u32_460 = 10; /*0x710dd4*/
   this->u32_45C = 0; /*0x710dda*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList) */  /*0x710de0*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_var_131447) */  /*0x710de0*/
   VectorClass::Construct(&this->VoiceMove, 0, 0); /*0x710dea*/
   this->u32_47C = 10; /*0x710df7*/
   this->u32_478 = 0; /*0x710dfd*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList) */  /*0x710e03*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_var_131447) */  /*0x710e03*/
   VectorClass::Construct(&this->VoiceAttack, 0, 0); /*0x710e0d*/
   this->u32_498 = 10; /*0x710e1a*/
   this->ptr_494 = 0; /*0x710e20*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList) */  /*0x710e26*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_var_131447) */  /*0x710e26*/
   VectorClass::Construct(&this->VoiceSpecialAttack, 0, 0); /*0x710e30*/
   this->u32_4B4 = 10; /*0x710e3d*/
   this->u32_4B0 = 0; /*0x710e43*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList) */  /*0x710e49*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_var_131447) */  /*0x710e49*/
   VectorClass::Construct(&this->VoiceDie, 0, 0); /*0x710e53*/
   this->u32_4D0 = 10; /*0x710e58*/
   this->u32_4CC = 0; /*0x710e5e*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList) */  /*0x710e6c*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_var_131447) */  /*0x710e6c*/
   VectorClass::Construct(&this->VoiceFeedback, 0, 0); /*0x710e76*/
   this->u32_4EC = 10; /*0x710e83*/
   this->u32_4E8 = 0; /*0x710e89*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList) */  /*0x710e8f*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_var_131447) */  /*0x710e8f*/
   VectorClass::Construct(&this->MoveSound, 0, 0); /*0x710e99*/
   this->u32_508 = 10; /*0x710ea6*/
   this->u32_504 = 0; /*0x710eac*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList) */  /*0x710eb2*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_var_131447) */  /*0x710eb2*/
   VectorClass::Construct(&this->DieSound, 0, 0); /*0x710ebc*/
   this->u32_524 = 10; /*0x710ec1*/
   this->BuildingTypeClass_520 = 0; /*0x710ec7*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList) */  /*0x710ecd*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_var_131447) */  /*0x710ecd*/
   this->AuxSound1 = -1; /*0x710ed7*/
   this->AuxSound2 = -1; /*0x710edd*/
   this->CreateSound = -1; /*0x710ee3*/
@@ -402,7 +402,7 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3, void *a3_1)  // G57w11: d
   AnimTypeVector::Constructor(&this->DebrisAnims, 0, 0); /*0x710fc3*/
   this->u32_5D8 = 10; /*0x710fc8*/
   this->u32_5D4 = 0; /*0x710fce*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList) */  /*0x710fd4*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_var_131447) */  /*0x710fd4*/
   this->Passengers = 0; /*0x710fde*/
   this->OpenTopped = 0; /*0x710fe4*/
   this->Sight = 0; /*0x710fea*/
@@ -431,11 +431,11 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3, void *a3_1)  // G57w11: d
   VectorClass::Construct(&this->Prerequisite, 0, 0); /*0x71108c*/
   this->u32_64C = 10; /*0x711099*/
   this->u32_648 = 0; /*0x71109f*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList) */  /*0x7110a5*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_var_131447) */  /*0x7110a5*/
   VectorClass::Construct(&this->PrerequisiteOverride, 0, 0); /*0x7110af*/
   this->VeteranAbilities = 10; /*0x7110b8*/
   this->IdleRate = 0; /*0x7110be*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList) */  /*0x7110c4*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_var_131447) */  /*0x7110c4*/
   this->ThreatPosed = 0; /*0x7110ce*/
   this->Points = 0; /*0x7110d4*/
   this->Speed = 0; /*0x7110da*/
@@ -502,11 +502,11 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3, void *a3_1)  // G57w11: d
   AnimTypeVector::Constructor(&this->Explosion, 0, 0); /*0x71123d*/
   this->u32_740 = 10; /*0x71124a*/
   this->u32_73C = 0; /*0x711250*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList) */  /*0x711256*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_var_131447) */  /*0x711256*/
   AnimTypeVector::Constructor(&this->DestroyAnim, 0, 0); /*0x711260*/
   this->u32_75C = 10; /*0x711265*/
   this->ptr_758 = 0; /*0x71126b*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList) */  /*0x711271*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_var_131447) */  /*0x711271*/
   this->NaturalParticleSystem = 0; /*0x71127b*/
   this->NaturalParticleSystemLocation = 0; /*0x711282*/
   this->u32_76C = 0; /*0x711288*/
@@ -515,11 +515,11 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3, void *a3_1)  // G57w11: d
   VectorClass::ConstructorWithVtable(0, 0); /*0x7112a1*/
   this->u32_78C = 10; /*0x7112ae*/
   this->VoxelAnimList_Embed = 0; /*0x7112b4*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList) */  /*0x7112ba*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_var_131447) */  /*0x7112ba*/
   VectorClass::ConstructorWithVtable(0, 0); /*0x7112c4*/
   this->u32_7A8 = 10; /*0x7112c9*/
   this->u32_7A4 = 0; /*0x7112cf*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList) */  /*0x7112d5*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_var_131447) */  /*0x7112d5*/
   this->DamageSmokeOffset = 0; /*0x7112df*/
   this->u32_7B4 = 0; /*0x7112e5*/
   this->u32_7B8 = 0; /*0x7112eb*/
@@ -771,48 +771,48 @@ void TechnoTypeClass::Construct(int aP1, void *a2, void *a3, void *a4, void *a5,
 
   ObjectTypeClass::Construct(aP1); /*0x71184b*/
   TechnoTypeClass::Constructor_0((TechnoTypeClass *)this->qC24 + 44), aP1); /*0x711859*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList) */  /*0x71185e*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_var_131447) */  /*0x71185e*/
   IntDynamicVector::Construct(&this->u32_CC0, aP1); /*0x71186d*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList) */  /*0x711872*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_var_131447) */  /*0x711872*/
   this->unknown_3C0 = 0; /*0x711883*/
   TechnoTypeClass::Constructor_1(&this->u32_98, aP1); /*0x711889*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList) */  /*0x71188e*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_var_131447) */  /*0x71188e*/
   IntDynamicVector::Construct(&this->q1050, aP1); /*0x71189e*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList) */  /*0x7118a3*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_var_131447) */  /*0x7118a3*/
   IntDynamicVector::Construct(&this->q10C0, aP1); /*0x7118b3*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList) */  /*0x7118b8*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_var_131447) */  /*0x7118b8*/
   IntDynamicVector::Construct(&this->q1130, aP1); /*0x7118c8*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList) */  /*0x7118cd*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_var_131447) */  /*0x7118cd*/
   IntDynamicVector::Construct((IntDynamicVector *)this->q1198 + 8), aP1); /*0x7118dd*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList) */  /*0x7118e2*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_var_131447) */  /*0x7118e2*/
   IntDynamicVector::Construct(&this->q1210, aP1); /*0x7118f2*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList) */  /*0x7118f7*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_var_131447) */  /*0x7118f7*/
   IntDynamicVector::Construct(&this->q1280, aP1); /*0x711907*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList) */  /*0x71190c*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_var_131447) */  /*0x71190c*/
   IntDynamicVector::Construct((IntDynamicVector *)this->q12E8 + 8), aP1); /*0x71191c*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList) */  /*0x711921*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_var_131447) */  /*0x711921*/
   IntDynamicVector::Construct(&this->u32_98, aP1); /*0x711931*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList) */  /*0x711936*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_var_131447) */  /*0x711936*/
   IntDynamicVector::Construct(&this->u32_98, aP1); /*0x711946*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList) */  /*0x71194b*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_var_131447) */  /*0x71194b*/
   IntDynamicVector::Construct(&this->u32_98, aP1); /*0x71195b*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList) */  /*0x711960*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_var_131447) */  /*0x711960*/
   ObjectTypeClass::CheckFlag(&this->q1710, aP1); /*0x711970*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList) */  /*0x711975*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_var_131447) */  /*0x711975*/
   IntDynamicVector::Construct((IntDynamicVector *)this->q18B0 + 48), aP1); /*0x711985*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList) */  /*0x71198a*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_var_131447) */  /*0x71198a*/
   IntDynamicVector::Construct((IntDynamicVector *)this->q1948 + 8), aP1); /*0x71199a*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList) */  /*0x71199f*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_var_131447) */  /*0x71199f*/
   this->CameoFile = 0; /*0x7119ac*/
   this->AltCameoFile = 0; /*0x7119b5*/
   ObjectTypeClass::CheckFlag((ObjectTypeClass *)this->u8_1C34 + 124), aP1); /*0x7119bb*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList) */  /*0x7119c0*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_var_131447) */  /*0x7119c0*/
   ObjectTypeClass::CheckFlag(&this->u32_98, aP1); /*0x7119d0*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList) */  /*0x7119df*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_var_131447) */  /*0x7119df*/
   TypeList::ParticleConstructor((TypeList *)this->u8_1C34 + 428), 0, 0); /*0x7119e6*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList) */  /*0x7119eb*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_var_131447) */  /*0x7119eb*/
   TypeList::ParticleConstructor(&this->u32_98, 0, 0); /*0x7119fb*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList) */  /*0x711a0a*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_var_131447) */  /*0x711a0a*/
   this->TurretAnimData = 2; /*0x711a10*/
   this->u32_CA8 = 1; /*0x711a16*/
   this->u32_CAC = 1; /*0x711a1c*/
@@ -866,7 +866,7 @@ int TechnoTypeClass::DTOR(void *a1)
 {
 
   char v2 = a1->CameoAllocated; // al /*0x711ae7*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_TechnoTypeClass) */  /*0x711aed*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7F4EAC) */  /*0x711aed*/
   /* X11: vtable install elided (implicit via TechnoTypeClass virtuals 0x711af5) */
   /* X11: vtable install elided (implicit via TechnoTypeClass virtuals 0x711afc) */
   /* X11: vtable install elided (implicit via TechnoTypeClass virtuals 0x711b03) */
@@ -893,27 +893,27 @@ int TechnoTypeClass::DTOR(void *a1)
   v4 = (*(int (**)(TechnoTypeClass *, void **))(stru_A8EB00.ptr_0 + 16))(&stru_A8EB00, &v17); /*0x711b8d*/
   if ( v4 != -1 ) /*0x711b93*/
     TechnoTypeClass::RemoveItem(&stru_A8EB00, v4); /*0x711b9b*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x711ba7*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x711ba7*/
   VectorClass::Cleanup((int)(a1 + 1940)); /*0x711bad*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x711bb8*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x711bb8*/
   VectorClass::Cleanup((int)(a1 + 1912)); /*0x711bbe*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x711bc9*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x711bc9*/
   DynamicVectorClass::Destroy_Alt(&a1->DestroyAnim); /*0x711bcf*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x711bda*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x711bda*/
   DynamicVectorClass::Destroy_Alt(&a1->Explosion); /*0x711be0*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x711bf0*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x711bf0*/
   VectorClass::Destroy((int)(a1 + 1620)); /*0x711bf2*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x711bfd*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x711bfd*/
   VectorClass::Destroy((int)(a1 + 1592)); /*0x711bff*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x711c0a*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x711c0a*/
   DynamicVectorClass::Destroy_Alt(&a1->DebrisAnims); /*0x711c10*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x711c1b*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x711c1b*/
   VectorClass::Destroy((int)(a1 + 1296)); /*0x711c1d*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x711c28*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x711c28*/
   VectorClass::Destroy((int)(a1 + 1268)); /*0x711c2a*/
   void *v5; // eax
   v5 = (void *)a1->VoiceFeedback_Items; /*0x711c2f*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x711c35*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x711c35*/
   if ( v5 && a1->VoiceFeedback_FlagByte ) /*0x711c3f*/
   {
     operator delete((void *)(v5)); /*0x711c48*/
@@ -923,7 +923,7 @@ int TechnoTypeClass::DTOR(void *a1)
   a1->VoiceFeedback_Capacity = 0; /*0x711c5c*/
   void *v6; // eax
   v6 = (void *)a1->IntList_H_Items; /*0x711c62*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x711c68*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x711c68*/
   if ( v6 && a1->IntList_H_FlagByte ) /*0x711c72*/
   {
     operator delete((void *)(v6)); /*0x711c7b*/
@@ -933,7 +933,7 @@ int TechnoTypeClass::DTOR(void *a1)
   a1->IntList_H_Capacity = 0; /*0x711c8f*/
   void *v7; // eax
   v7 = (void *)a1->IntList_G_Items; /*0x711c95*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x711c9b*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x711c9b*/
   if ( v7 && a1->IntList_G_FlagByte ) /*0x711ca5*/
   {
     operator delete((void *)(v7)); /*0x711cae*/
@@ -943,7 +943,7 @@ int TechnoTypeClass::DTOR(void *a1)
   a1->IntList_G_Capacity = 0; /*0x711cc2*/
   void *v8; // eax
   v8 = (void *)a1->IntList_F_Items; /*0x711cc8*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x711cce*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x711cce*/
   if ( v8 && a1->IntList_F_FlagByte ) /*0x711cd8*/
   {
     operator delete((void *)(v8)); /*0x711ce1*/
@@ -953,7 +953,7 @@ int TechnoTypeClass::DTOR(void *a1)
   a1->IntList_F_Capacity = 0; /*0x711cf5*/
   void *v9; // eax
   v9 = (void *)a1->IntList_E_Items; /*0x711cfb*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x711d01*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x711d01*/
   if ( v9 && a1->IntList_E_FlagByte ) /*0x711d0b*/
   {
     operator delete((void *)(v9)); /*0x711d14*/
@@ -963,7 +963,7 @@ int TechnoTypeClass::DTOR(void *a1)
   a1->IntList_E_Capacity = 0; /*0x711d28*/
   void *v10; // eax
   v10 = (void *)a1->IntList_D_Items; /*0x711d2e*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x711d34*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x711d34*/
   if ( v10 && a1->IntList_D_FlagByte ) /*0x711d3e*/
   {
     operator delete((void *)(v10)); /*0x711d47*/
@@ -973,7 +973,7 @@ int TechnoTypeClass::DTOR(void *a1)
   a1->IntList_D_Capacity = 0; /*0x711d5b*/
   void *v11; // eax
   v11 = (void *)a1->IntList_C_Items; /*0x711d61*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x711d67*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x711d67*/
   if ( v11 && a1->IntList_C_FlagByte ) /*0x711d71*/
   {
     operator delete((void *)(v11)); /*0x711d7a*/
@@ -983,7 +983,7 @@ int TechnoTypeClass::DTOR(void *a1)
   a1->IntList_C_Capacity = 0; /*0x711d8e*/
   void *v12; // eax
   v12 = (void *)a1->IntList_B_Items; /*0x711d94*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x711d9a*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x711d9a*/
   if ( v12 && a1->IntList_B_FlagByte ) /*0x711da4*/
   {
     operator delete((void *)(v12)); /*0x711dad*/
@@ -993,7 +993,7 @@ int TechnoTypeClass::DTOR(void *a1)
   a1->IntList_B_Capacity = 0; /*0x711dc1*/
   void *v13; // eax
   v13 = (void *)a1->BuildingTypeList_Items; /*0x711dc7*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x711dcd*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x711dcd*/
   if ( v13 && a1->BuildingTypeList_FlagByte ) /*0x711ddb*/
   {
     operator delete((void *)(v13)); /*0x711de4*/
@@ -1003,7 +1003,7 @@ int TechnoTypeClass::DTOR(void *a1)
   a1->BuildingTypeList_Capacity = 0; /*0x711df8*/
   void *v14; // eax
   v14 = (void *)a1->IntList_A_Items; /*0x711dfe*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x711e04*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x711e04*/
   if ( v14 && a1->IntList_A_FlagByte ) /*0x711e0f*/
   {
     operator delete((void *)(v14)); /*0x711e18*/
@@ -1013,7 +1013,7 @@ int TechnoTypeClass::DTOR(void *a1)
   a1->IntList_A_Capacity = 0; /*0x711e2c*/
   void *v15; // eax
   v15 = (void *)a1->VoxelAnimList_Items; /*0x711e32*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x711e38*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x711e38*/
   if ( v15 && a1->VoxelAnimList_FlagByte ) /*0x711e46*/
   {
     operator delete((void *)(v15)); /*0x711e4f*/
@@ -1490,7 +1490,7 @@ int TechnoTypeClass::SaveLoad_Prefix_0(unsigned int *a2, int *a3, int a4, int a5
 } // namespace gamemd
 // 0x41CB50
 namespace gamemd {
-char TechnoTypeClass::vt_entry_A0()
+char TechnoTypeClass::g_var_3d23dc()
 {
   return 0; /*0x41cb52*/
 }
@@ -1541,7 +1541,7 @@ unsigned int * TechnoTypeClass::Constructor(void *a1, void *a2, void *a3, void *
   BYTE1(a1->ObjectTypeClass[3]) = 0; /*0x717afe*/
   a1->ObjectTypeClass[5] = 10; /*0x717b01*/
   a1->ObjectTypeClass[4] = 0; /*0x717b08*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList) */  /*0x717b0b*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_var_131447) */  /*0x717b0b*/
   return a1->ObjectTypeClass; /*0x717b11*/
 
 }
@@ -1572,7 +1572,7 @@ namespace gamemd {  // G42.18c ns repair
 unsigned int * TechnoTypeClass::Constructor_0(ObjectTypeClass * aP1, void *a2, void *a3)
 {
 
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass) */  /*0x717bc2*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E3238) */  /*0x717bc2*/
   return aP1->ObjectTypeClass; /*0x717bc8*/
 
 }
@@ -1582,7 +1582,7 @@ namespace gamemd {  // G42.18c ns repair
 VectorClass_flat * TechnoTypeClass::Constructor_1(ObjectTypeClass * aP1)
 {
 
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass) */  /*0x717be2*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E3238) */  /*0x717be2*/
   return this->ObjectTypeClass; /*0x717be8*/
 
 }

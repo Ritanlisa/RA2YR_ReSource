@@ -466,7 +466,7 @@ AbstractClass * * File::ParseCSFString(char * Source)
     if ( CCFileClass::Read(&v23, &v18, 4) != 4 ) /*0x7349fe*/
     {
 LABEL_42:
-      /* X11: vtable install elided (X67 star-deref, RHS vt_CCFileClass) */  /*0x734cad*/
+      /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x734cad*/
       v25 = 0; /*0x734cbc*/
       Vector::Clear((int)v24); /*0x734cc3*/
       *(unsigned int *)v23.__tail_0 = &off_7E1668; /*0x734ccc*/
@@ -596,7 +596,7 @@ LABEL_31:
     }
   }
 LABEL_43:
-  /* X11: vtable install elided (X67 star-deref, RHS vt_CCFileClass) */  /*0x734ce9*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x734ce9*/
   v25 = 0; /*0x734cf8*/
   Vector::Clear((int)v24); /*0x734cff*/
   *(unsigned int *)v23.__tail_0 = &off_7E1668; /*0x734d08*/
@@ -651,10 +651,10 @@ AbstractClass * * File::LoadWDT(ObjectClass * aP1)
   this->u32_34 = 0; /*0x76aca1*/
   this->u8_38 = 1; /*0x76aca4*/
   this->u8_39 = 0; /*0x76aca8*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass_rc_ptr_WDTTerritory) */  /*0x76acab*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F7260) */  /*0x76acab*/
   this->q040 = 10; /*0x76acb2*/
   this->u32_3C = 0; /*0x76acb9*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_WDTState) */  /*0x76acbe*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7F7250) */  /*0x76acbe*/
   v3 = (File *)__2_YAPAXI_Z(0xCu); /*0x76acc4*/
   if ( v3 ) /*0x76acce*/
     PaletteData = File::LoadPaletteData(v3, aP1); /*0x76acdc*/

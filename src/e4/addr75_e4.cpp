@@ -1999,7 +1999,7 @@ int sub_759180()
   dword_B45B60 = 0; /*0x75918c*/
   byte_B45B64 = 1; /*0x759191*/
   byte_B45B65 = 0; /*0x759198*/
-  dword_B45B58 = (int)&vt_DynamicVectorClass; /*0x75919d*/
+  dword_B45B58 = (int)&g_ptr_7E3238; /*0x75919d*/
   dword_B45B6C = 10; /*0x7591a7*/
   g_AsyncIOState = 0; /*0x7591b1*/
   return atexit(sub_7591C0); /*0x7591bc*/
@@ -2009,7 +2009,7 @@ int sub_759180()
 namespace gamemd {
 void sub_7591C0()
 {
-  dword_B45B58 = (int)&vt_VectorClass; /*0x7591c8*/
+  dword_B45B58 = (int)&g_ptr_7E8500; /*0x7591c8*/
   if ( AsyncIO_Instance && byte_B45B65 ) /*0x7591dc*/
   {
     operator delete((void *)(AsyncIO_Instance)); /*0x7591df*/
@@ -2369,7 +2369,7 @@ int sub_750300()
   dword_B1D380 = 0; /*0x75030c*/
   byte_B1D384 = 1; /*0x750311*/
   byte_B1D385 = 0; /*0x750318*/
-  dword_B1D378 = (int)&vt_DynamicVectorClass; /*0x75031d*/
+  dword_B1D378 = (int)&g_ptr_7E3238; /*0x75031d*/
   dword_B1D38C = 10; /*0x750327*/
   g_VocPlayState = 0; /*0x750331*/
   return atexit(sub_750340); /*0x75033c*/
@@ -2380,7 +2380,7 @@ int sub_750300()
 namespace gamemd {
 void sub_750340()
 {
-  dword_B1D378 = (int)&vt_VectorClass; /*0x750348*/
+  dword_B1D378 = (int)&g_ptr_7E8500; /*0x750348*/
   if ( g_VocAudioConfig && byte_B1D385 ) /*0x75035c*/
   {
     operator delete((void *)(g_VocAudioConfig)); /*0x75035f*/
@@ -2786,7 +2786,7 @@ int sub_752210()
   dword_B1D4A8 = 0; /*0x75221c*/
   byte_B1D4AC = 1; /*0x752221*/
   byte_B1D4AD = 0; /*0x752228*/
-  dword_B1D4A0 = (int)&vt_DynamicVectorClass; /*0x75222d*/
+  dword_B1D4A0 = (int)&g_ptr_7E3238; /*0x75222d*/
   dword_B1D4B4 = 10; /*0x752237*/
   g_InfantrySelectState = 0; /*0x752241*/
   return atexit(sub_752250); /*0x75224c*/
@@ -2797,7 +2797,7 @@ int sub_752210()
 namespace gamemd {
 void sub_752250()
 {
-  dword_B1D4A0 = (int)&vt_VectorClass; /*0x752258*/
+  dword_B1D4A0 = (int)&g_ptr_7E8500; /*0x752258*/
   if ( g_InfantryRenderPool && byte_B1D4AD ) /*0x75226c*/
   {
     operator delete((void *)(g_InfantryRenderPool)); /*0x75226f*/

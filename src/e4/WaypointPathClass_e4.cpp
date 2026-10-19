@@ -30,10 +30,10 @@ int WaypointPathClass::Init(void *a1, void *a2)
   this->waypoints[2] = 0; /*0x763744*/
   (this->waypoints[3]) = ((this->waypoints[3]) & ~0xFF) | ((1) & 0xFF); /*0x763747*/
   (this->waypoints[3]) = ((this->waypoints[3]) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x76374b*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass) */  /*0x76374e*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E3238) */  /*0x76374e*/
   this->waypoints[5] = 10; /*0x763755*/
   this->waypoints[4] = 0; /*0x76375c*/
-  /* X11: vtable install elided (base-interface slot, RHS vt_WaypointPathClass) */  /*0x76375f*/
+  /* X11: vtable install elided (base-interface slot, RHS g_ptr_7F6E44) */  /*0x76375f*/
   /* X11: vtable install elided (implicit via WaypointPathClass virtuals 0x763765) */
   /* X11: vtable install elided (implicit via WaypointPathClass virtuals 0x76376c) */
   /* X11: vtable install elided (implicit via WaypointPathClass virtuals 0x763773) */
@@ -64,7 +64,7 @@ int WaypointPathClass::Construct(unsigned int aP1, void *a2, void *a3, void *a4,
   this->ptr_C = 0; /*0x763828*/
   this->WaypointClass_field_34 = 1; /*0x76382b*/
   this->WaypointClass_field_35 = 0; /*0x76382f*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass) */  /*0x763832*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E3238) */  /*0x763832*/
   this->waypointCapacity = 10; /*0x763839*/
   this->waypointCount = 0; /*0x763840*/
   /* X11: vtable install elided (implicit via WaypointPathClass virtuals 0x763845) */
@@ -117,11 +117,11 @@ int WaypointPathClass::LoadState(unsigned int * a1, int a2)
     if ( v2 ) /*0x763c92*/
     {
       AbstractClass::InitVtables(v2, (int)&a2); /*0x763c9b*/
-      /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass_WaypointClass) */  /*0x763ca0*/
-      /* X11: vtable install elided (X67 recv-slot, RHS vt_WaypointPathClass_4) */  /*0x763ca7*/
-      /* X11: vtable install elided (X67 recv-slot, RHS vt_WaypointPathClass_4) */  /*0x763cad*/
-      /* X11: vtable install elided (X67 recv-slot, RHS vt_WaypointPathClass_4) */  /*0x763cb4*/
-      /* X11: vtable install elided (X67 recv-slot, RHS vt_WaypointPathClass_4) */  /*0x763cbb*/
+      /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F6ED4) */  /*0x763ca0*/
+      /* X11: vtable install elided (X67 recv-slot, RHS g_var_b7cf51) */  /*0x763ca7*/
+      /* X11: vtable install elided (X67 recv-slot, RHS g_var_b7cf51) */  /*0x763cad*/
+      /* X11: vtable install elided (X67 recv-slot, RHS g_var_b7cf51) */  /*0x763cb4*/
+      /* X11: vtable install elided (X67 recv-slot, RHS g_var_b7cf51) */  /*0x763cbb*/
     }
     result = v3->sub_763CCD(&this, 4, 0); /*0x763ccd*/
     if ( result >= 0 ) /*0x763cd2*/
@@ -130,7 +130,7 @@ int WaypointPathClass::LoadState(unsigned int * a1, int a2)
       if ( p_vfptr1 ) /*0x763cdd*/
       {
         WaypointPathClass::computePath(p_vfptr1, 0, 0); /*0x763ce3*/
-        /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass_WaypointClass) */  /*0x763ce8*/
+        /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F6ED4) */  /*0x763ce8*/
         p_vfptr1->abstractFlags = 10; /*0x763cee*/
         p_vfptr1->uniqueId = 0; /*0x763cf5*/
       }
@@ -195,7 +195,7 @@ unsigned int * WaypointPathClass::computePath(int a2, unsigned int *a3, void *a3
   this->ptr_8 = (void *)a2; /*0x764770*/
   LOBYTE(this->ptr_C) = 1; /*0x764773*/
   BYTE1(this->ptr_C) = 0; /*0x764777*/
-  /* X11: vtable install elided (legacy slot spelling slot, RHS vt_VectorClass_WaypointClass) */  /*0x76477a*/
+  /* X11: vtable install elided (legacy slot spelling slot, RHS g_ptr_7F6EF4) */  /*0x76477a*/
   if ( !a2 ) /*0x764780*/
     return &this->ptr_0; /*0x764780*/
   if ( !a3 ) /*0x764788*/
@@ -338,7 +338,7 @@ WaypointPathClass * WaypointPathClass::ProcessEvent(char a2)
 {
 
 
-  /* X11: vtable install elided (base-interface slot, RHS vt_WaypointPathClass) */  /*0x763e26*/
+  /* X11: vtable install elided (base-interface slot, RHS g_ptr_7F6E44) */  /*0x763e26*/
   /* X11: vtable install elided (implicit via WaypointPathClass virtuals 0x763e2c) */
   /* X11: vtable install elided (implicit via WaypointPathClass virtuals 0x763e33) */
   /* X11: vtable install elided (implicit via WaypointPathClass virtuals 0x763e3a) */
@@ -358,7 +358,7 @@ WaypointPathClass * WaypointPathClass::ProcessEvent(char a2)
   }
   int v4; // eax
   v4 = this->waypoints[1]; /*0x763e8f*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x763e92*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x763e92*/
   if ( v4 && BYTE1(this->waypoints[3]) ) /*0x763e9d*/
   {
     __3_YAXPAX_Z((void *)(v4 - 4)); /*0x763eb0*/

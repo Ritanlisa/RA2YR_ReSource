@@ -32,10 +32,10 @@ int AlphaShapeClass::SD_vt05(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x420df9*/
     {
       AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x420e02*/
-      *(unsigned int *)aP0->__pad_0 = (unsigned int)(&vt_AlphaShapeClass); /*0x420e07*/
-      aP0->AlphaShapeClass_field_0x04 = (int)&vt_AlphaShapeClass; /*0x420e0d*/
-      aP0->AlphaShapeClass_field_0x08 = (int)&vt_AlphaShapeClass; /*0x420e14*/
-      aP0->AlphaShapeClass_field_0x0C = (int)&vt_AlphaShapeClass; /*0x420e1b*/
+      *(unsigned int *)aP0->__pad_0 = (unsigned int)(&g_ptr_7E3278); /*0x420e07*/
+      aP0->AlphaShapeClass_field_0x04 = (int)&g_ptr_7E3278; /*0x420e0d*/
+      aP0->AlphaShapeClass_field_0x08 = (int)&g_ptr_7E3278; /*0x420e14*/
+      aP0->AlphaShapeClass_field_0x0C = (int)&g_ptr_7E3278; /*0x420e1b*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance,(int *)(&aP0->AlphaShapeClass_field_0x24)); /*0x420e2b*/
     *((unsigned int *)aP0 + 14) = 0; /*0x420e30*/

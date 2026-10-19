@@ -1501,7 +1501,7 @@ std::locale::facet * CampaignScore::Constructor_CampaignEndScoreClass(char a2) {
 
 // 0x488310
 namespace gamemd {
-int CheckListClass::vt_method_488310(int a2) {
+int CheckListClass::g_var_1d7b82(int a2) {
   int v3; // eax
 
   v3 = operator new(8u); /*0x488315*/
@@ -1656,7 +1656,7 @@ int DropListClass::OnClick() {
 
 // 0x4B4F20
 namespace gamemd {
-int DropListClass::vt_method_4B4F20(int a2) {
+int DropListClass::g_var_926b49(int a2) {
   this->q050.?(a2); /*0x4b4f2f*/
   return LinkedList::InsertAfter((LinkClass *)this, a2); /*0x4b4f3a*/
 }
@@ -1939,7 +1939,7 @@ unsigned int * GadgetClass::QueryInterface(char a2) {
   ShpButtonClass *v3; // eax
   unsigned __int8 *v4; // eax
 
-  /* X11: vtable install elided (X67 star-deref, RHS vt_GadgetClass) */  /*0x4e1a65*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E92BC) */  /*0x4e1a65*/
   v3 = (ShpButtonClass *)dword_8B3E90; /*0x4e1a6b*/
   if ( this == (ShpButtonClass *)dword_8B3E90 ) /*0x4e1a72*/
   {
@@ -2399,7 +2399,7 @@ int ListClass::AddItem(int a2) {
 
 // 0x558120
 namespace gamemd {
-int SliderClass::vt_method_558120() {
+int SliderClass::g_var_d52e84() {
   return this->u32_4C; /*0x558123*/
 }
 } // namespace gamemd
@@ -2474,7 +2474,7 @@ wchar_t ** ListBox::Constructor() {
     v1 = 1; /*0x5c1054*/
     v4 = FormatWideString((wchar_t **)&v6, (const wchar_t *)this); /*0x5c1059*/
     MultiplayerTeam::Constructor(v3, (const wchar_t **)v4, (wchar_t *)this); /*0x5c1062*/
-    /* X11: vtable install elided (X67 star-deref, RHS vt_MultiplayerBattleTeam) */  /*0x5c1067*/
+    /* X11: vtable install elided (X67 star-deref, RHS g_var_a3ac0d) */  /*0x5c1067*/
   }
   else
   {
@@ -2560,7 +2560,7 @@ char FontClass::LoadFontResources(int16_t a2) {
     if ( !v13 ) /*0x5d303f*/
     {
 LABEL_15:
-      v16[0] = &vt_CCFileClass; /*0x5d3045*/
+      v16[0] = &g_ptr_7E16B0; /*0x5d3045*/
       v18 = 0; /*0x5d304d*/
       Vector::Clear((int)v17); /*0x5d3051*/
       v16[0] = &off_7E1668; /*0x5d305a*/
@@ -2572,7 +2572,7 @@ LABEL_15:
     this->u32_8 = v15->ptr_4; /*0x5d3080*/
   }
   Audio::IsSoundEnabled(); /*0x5d3083*/
-  v16[0] = &vt_CCFileClass; /*0x5d308c*/
+  v16[0] = &g_ptr_7E16B0; /*0x5d308c*/
   v18 = 0; /*0x5d3094*/
   Vector::Clear((int)v17); /*0x5d3098*/
   v16[0] = &off_7E1668; /*0x5d30a1*/
@@ -3122,7 +3122,7 @@ int * SliderClass::Constructor(int a2, int a3, int a4, int a5, int a6, int a7) {
   int v33; // [esp-10h] [ebp-30h]
 
   ListClass::Constructor((int)this, a2, a3, a4, a5, a6); /*0x6b1b44*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_SliderClass) */  /*0x6b1b51*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7ED21C) */  /*0x6b1b51*/
   this->u32_44 = a7 != 0; /*0x6b1b5c*/
   this->u32_3C = 0; /*0x6b1b5f*/
   this->u32_40 = 0; /*0x6b1b62*/

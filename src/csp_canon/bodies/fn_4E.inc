@@ -629,20 +629,20 @@ int sub_4E6190()
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E6190)
 }
 
-// ==== BACKFILL 0x004E8240  HouseClass::vt_placeholder_00  cls=TiberianSunClassFactory  sig=csp  renamed_refs=0  residual=- ====
-int HouseClass::vt_placeholder_00()
+// ==== BACKFILL 0x004E8240  HouseClass::g_var_048e7c  cls=TiberianSunClassFactory  sig=csp  renamed_refs=0  residual=- ====
+int HouseClass::g_var_048e7c()
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E8240)
 }
 
-// ==== BACKFILL 0x004E8250  HouseClass::vt_placeholder_01  cls=TiberianSunClassFactory  sig=csp  renamed_refs=0  residual=- ====
-int HouseClass::vt_placeholder_01()
+// ==== BACKFILL 0x004E8250  HouseClass::g_var_25576f  cls=TiberianSunClassFactory  sig=csp  renamed_refs=0  residual=- ====
+int HouseClass::g_var_25576f()
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E8250)
 }
 
-// ==== BACKFILL 0x004E8260  HouseClass::vt_placeholder_02  cls=TiberianSunClassFactory  sig=csp  renamed_refs=0  residual=- ====
-int HouseClass::vt_placeholder_02()
+// ==== BACKFILL 0x004E8260  HouseClass::g_var_c1fcbd  cls=TiberianSunClassFactory  sig=csp  renamed_refs=0  residual=- ====
+int HouseClass::g_var_c1fcbd()
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E8260)
 }
@@ -665,19 +665,19 @@ int HouseClass::COMStub_5(int a1)
     (void)a1; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004E82C0.json)
 }
 
-// ==== BACKFILL 0x004E92F0  HouseClass::vt_03  cls=VectorClass  sig=csp  renamed_refs=0  residual=- ====
+// ==== BACKFILL 0x004E92F0  HouseClass::g_var_ffdfec  cls=VectorClass  sig=csp  renamed_refs=0  residual=- ====
 void HouseClass_vt_03_free_()
 {
      // TODO stub - quarantined G42 T9 (raw this-body; truth = .omo/ida_cache/)
 }
 
-// ==== BACKFILL 0x004E9320  HouseClass::vt_04  cls=VectorClass  sig=csp  renamed_refs=0  residual=- ====
+// ==== BACKFILL 0x004E9320  HouseClass::g_var_0e2ad2  cls=VectorClass  sig=csp  renamed_refs=0  residual=- ====
 int HouseClass_vt_04_free_(int * a2)
 {
     return 0; // TODO stub - quarantined G42 T9 (raw this-body; truth = .omo/ida_cache/)
 }
 
-// ==== BACKFILL 0x004E9360  HouseClass::vt_05  cls=VectorClass  sig=csp  renamed_refs=0  residual=- ====
+// ==== BACKFILL 0x004E9360  HouseClass::g_var_8e5f48  cls=VectorClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int HouseClass_vt_05_free_(int a2)
 {
     return 0; // TODO stub - quarantined G42 T9 (raw this-body; truth = .omo/ida_cache/)
@@ -695,7 +695,7 @@ int HouseClass::COMStub_4(void* a1)
     (void)a1; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004E9430.json)
 }
 
-// ==== BACKFILL 0x004EF4E0  HouseClass::vt_00  cls=VectorClass  sig=csp  renamed_refs=0  residual=- ====
+// ==== BACKFILL 0x004EF4E0  HouseClass::g_var_bba615  cls=VectorClass  sig=csp  renamed_refs=0  residual=- ====
 VectorClass_flat * HouseClass_vt_00__free(unsigned int * Block, char a2)
 {
     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4EF4E0)

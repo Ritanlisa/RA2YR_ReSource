@@ -182,7 +182,7 @@ AbstractClass * * MixFile::LoadSide(void * aUimdIni)
   v6 = CCFileClass::Construct(&v18, Buffer); /*0x535101*/
   char v7; // bl
   v7 = v6->vt_slot_20(0); /*0x535115*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_CCFileClass) */  /*0x535117*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E16B0) */  /*0x535117*/
   int v20; // [esp+C4h] [ebp-74h]
   v20 = 0; /*0x53511f*/
   int v19[3]; // [esp+B8h] [ebp-80h] BYREF
@@ -205,7 +205,7 @@ AbstractClass * * MixFile::LoadSide(void * aUimdIni)
   v9 = CCFileClass::Construct(&v18, Buffer); /*0x5351a4*/
   char v10; // bl
   v10 = v9->vt_slot_20(0); /*0x5351b8*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_CCFileClass) */  /*0x5351ba*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E16B0) */  /*0x5351ba*/
   v20 = 0; /*0x5351c2*/
   Vector::Clear((int)v19); /*0x5351c9*/
   v18.ptr_0.__tail_0.__tail_0.__tail_0 = (FileClass)&off_7E1668; /*0x5351d2*/
@@ -236,7 +236,7 @@ AbstractClass * * MixFile::LoadSide(void * aUimdIni)
     v13 = CCFileClass::Construct(&v18, Buffer); /*0x53527b*/
     char v14; // bl
     v14 = v13->vt_slot_20(0); /*0x535294*/
-    /* X11: vtable install elided (X67 recv-slot, RHS vt_CCFileClass) */  /*0x535296*/
+    /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E16B0) */  /*0x535296*/
     v20 = 0; /*0x53529a*/
     Vector::Clear((int)v19); /*0x5352a1*/
     v18.ptr_0.__tail_0.__tail_0.__tail_0 = (FileClass)&off_7E1668; /*0x5352aa*/
@@ -257,7 +257,7 @@ AbstractClass * * MixFile::LoadSide(void * aUimdIni)
     {
       ((SidebarClass *)dword_8871E0)->ReadButtonList(); /*0x53533d*/
       ((TabClass *)&dword_87F7E8)->LoadButtonSHPs(); /*0x535347*/
-      /* X11: vtable install elided (X67 recv-slot, RHS vt_CCFileClass) */  /*0x535353*/
+      /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E16B0) */  /*0x535353*/
       v23 = 0; /*0x53535a*/
       Vector::Clear((int)v22); /*0x535361*/
       v21.ptr_0.__tail_0.__tail_0.__tail_0 = (FileClass)&off_7E1668; /*0x53536d*/
@@ -267,7 +267,7 @@ AbstractClass * * MixFile::LoadSide(void * aUimdIni)
     else
     {
       Debug::Log(); /*0x53538b*/
-      /* X11: vtable install elided (X67 recv-slot, RHS vt_CCFileClass) */  /*0x53539a*/
+      /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E16B0) */  /*0x53539a*/
       v23 = 0; /*0x5353a1*/
       Vector::Clear((int)v22); /*0x5353a8*/
       v21.ptr_0.__tail_0.__tail_0.__tail_0 = (FileClass)&off_7E1668; /*0x5353b4*/
@@ -344,10 +344,10 @@ unsigned int * MIXFile::Load(ObjectClass * a2)
     *(unsigned int *)(v13 + 8) = 20; /*0x627733*/
     *(unsigned char *)(v13 + 12) = 1; /*0x62773a*/
     *(unsigned char *)(v13 + 13) = 0; /*0x62773e*/
-    /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x627742*/
+    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x627742*/
     *(unsigned int *)(v13 + 4) = (unsigned int)(__2_YAPAXI_Z(0x50u)); /*0x627750*/
     *((unsigned char *)v14 + 13) = 1; /*0x627753*/
-    /* X11: vtable install elided (X67 star-deref, RHS vt_DynamicVectorClass) */  /*0x627757*/
+    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E3238) */  /*0x627757*/
     v14[5] = 10; /*0x62775d*/
     v14[4] = 0; /*0x627764*/
   }

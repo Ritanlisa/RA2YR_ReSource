@@ -793,7 +793,7 @@ void BrainClass::sub_43A600()
   (*(void (**)(BrainClass *))(this->u32_4 + 12))&this->u32_4; /*0x43a63c*/
   void *v5; // eax
   v5 = (void *)this->u32_8; /*0x43a63f*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x43a642*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x43a642*/
   if ( v5 && this->u32_11 ) /*0x43a64c*/
   {
     operator delete((v5)); /*0x43a652*/
@@ -827,7 +827,7 @@ unsigned int * BrainClass::sub_43AA90(char a2)
   (*(void (**)(BrainClass *))(this->u32_4 + 12))&this->u32_4; /*0x43aacd*/
   void *v6; // eax
   v6 = (void *)this->u32_8; /*0x43aad0*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x43aad3*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x43aad3*/
   if ( v6 && this->u32_11 ) /*0x43aadd*/
   {
     operator delete((v6)); /*0x43aae5*/
@@ -1801,7 +1801,7 @@ int sub_438530()
 namespace gamemd {
 void sub_438590()
 {
-  dword_89C668 = (int)&vt_VectorClass; /*0x438598*/
+  dword_89C668 = (int)&g_ptr_7E8500; /*0x438598*/
   if ( dword_89C66C && byte_89C675 ) /*0x4385ac*/
   {
     operator delete((void *)(dword_89C66C)); /*0x4385af*/

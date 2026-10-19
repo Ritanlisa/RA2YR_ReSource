@@ -73,16 +73,16 @@ struct ParticleSystemClass {
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     static int CreateParticle(void *aP1, void *a2, void *a3);
-    VectorClass_flat * vt_00_(char a2);
+    VectorClass_flat * g_var_4cd06d(char a2);
     unsigned int * ddtor(int a2, int a3);
     int Draw(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0);
     int GetObjectSize();
     int GetTypeIdentifier();
     int SaveToINI(int a2);
     int StubReturn2();
-    int vt_04_(int * a2);
+    int g_var_9d376d(int * a2);
     unsigned int LoadTypeData(int a2);
-    unsigned int vt_05_(int a2);
+    unsigned int g_var_167f7c(int a2);
     void GetClassIdentifier();
     void initParticleArray();
     int  Constructor(int a2, int * a3, int a4, void * a5, unsigned int * a6, int a7);  // 0x62dc50

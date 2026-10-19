@@ -1416,7 +1416,7 @@ int __thiscall InfantryClass::CheckAndApplyBomb(InfantryClass *this)
   int v8; // [esp+18h] [ebp-14h] BYREF
   char v9[16]; // [esp+1Ch] [ebp-10h] BYREF
 
-  FootClass::vt_entry_4F4((FootClass *)this); /*0x521dd6*/
+  FootClass::g_var_51b9cc((FootClass *)this); /*0x521dd6*/
   result = (int)this->?; /*0x521ddb*/
   if ( result ) /*0x521de3*/
   {
@@ -13666,7 +13666,7 @@ int __thiscall InfantryClass::CheckAndApplyBomb(InfantryClass *this)
   int v8; // [esp+18h] [ebp-14h] BYREF
   char v9[16]; // [esp+1Ch] [ebp-10h] BYREF
 
-  FootClass::vt_entry_4F4((FootClass *)this); /*0x521dd6*/
+  FootClass::g_var_51b9cc((FootClass *)this); /*0x521dd6*/
   result = (int)this->?; /*0x521ddb*/
   if ( result ) /*0x521de3*/
   {

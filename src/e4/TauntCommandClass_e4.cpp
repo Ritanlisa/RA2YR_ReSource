@@ -26,7 +26,7 @@ unsigned int * TauntCommandClass::Construct(int a2, void *a2_2, void *a3, void *
 {
 
   a2_2->TauntCommandClass_field_00 = a2_2; /*0x536296*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_TauntCommandClass) */  /*0x536299*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EBEDC) */  /*0x536299*/
   return a2_2->CommandClass; /*0x53629f*/
 
 }

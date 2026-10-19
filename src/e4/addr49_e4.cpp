@@ -1933,7 +1933,7 @@ AbstractClass * * E4Recv_49C0D0::CampaignClass_LoadCoopSave(void * aScore_0)
   {
     LABEL_44:
     (v24)->DestroyHashTableINIClass(); /*0x49c553*/
-    v29[0] = &vt_CCFileClass; /*0x49c563*/
+    v29[0] = &g_ptr_7E16B0; /*0x49c563*/
     v31 = 0; /*0x49c56e*/
     Vector::Clear((int)v30); /*0x49c575*/
     v29[0] = (unsigned int)&off_7E1668; /*0x49c581*/
@@ -1990,7 +1990,7 @@ AbstractClass * * E4Recv_49C0D0::CampaignClass_LoadCoopSave(void * aScore_0)
   }
   *(aScore_0 + 108) = 1; /*0x49c505*/
   HashTable::DestroyHashTableINIClass(v24); /*0x49c509*/
-  v29[0] = &vt_CCFileClass; /*0x49c515*/
+  v29[0] = &g_ptr_7E16B0; /*0x49c515*/
   v31 = 0; /*0x49c520*/
   Vector::Clear((int)v30); /*0x49c527*/
   v29[0] = (unsigned int)&off_7E1668; /*0x49c533*/
@@ -2291,7 +2291,7 @@ int E4Recv_49D390::LoadCoopCampaignSave(IUnknown * aP1)
     CCFileClass::Reset(v17); /*0x49d418*/
     LABEL_5:
     HashTable::DestroyHashTableINIClass(v20); /*0x49d41d*/
-    v17[0] = &vt_CCFileClass; /*0x49d42a*/
+    v17[0] = &g_ptr_7E16B0; /*0x49d42a*/
     v19 = 0; /*0x49d432*/
     Vector::Clear((int)v18); /*0x49d436*/
     v17[0] = &off_7E1668; /*0x49d43f*/
@@ -2371,7 +2371,7 @@ int E4Recv_49D390::LoadCoopCampaignSave(IUnknown * aP1)
   if ( strcmp(aP1, g_Str_undefined) ) /*0x49d614*/
     goto LABEL_5; /*0x49d63a*/
   HashTable::DestroyHashTableINIClass(v20); /*0x49d644*/
-  v17[0] = &vt_CCFileClass; /*0x49d64d*/
+  v17[0] = &g_ptr_7E16B0; /*0x49d64d*/
   v19 = 0; /*0x49d655*/
   Vector::Clear((int)v18); /*0x49d659*/
   v17[0] = &off_7E1668; /*0x49d662*/
@@ -2565,7 +2565,7 @@ AbstractClass * ObjectClass::sub_49E7C0(char * Block, char a2)
         DeleteAndZero((ObjectClass *)(v7 + 7)); /*0x49e7fc*/
         DeleteAndZero((ObjectClass *)(v7 + 6)); /*0x49e804*/
         v9 = (void *)*v7; /*0x49e809*/
-        *(v7 - 1) = (int)&vt_VectorClass_DynamicVectorClass_char; /*0x49e80b*/
+        *(v7 - 1) = (int)&g_ptr_7E5C04; /*0x49e80b*/
         if ( v9 && *((unsigned char *)v7 + 9) ) /*0x49e812*/
         {
           __3_YAXPAX_Z(v9); /*0x49e818*/
@@ -2574,7 +2574,7 @@ AbstractClass * ObjectClass::sub_49E7C0(char * Block, char a2)
         *((unsigned char *)v7 + 9) = 0; /*0x49e822*/
         v7[1] = 0; /*0x49e825*/
         v10 = (void *)*(v7 - 6); /*0x49e828*/
-        *(v7 - 7) = (int)&vt_VectorClass_DynamicVectorClass_char; /*0x49e82b*/
+        *(v7 - 7) = (int)&g_ptr_7E5C04; /*0x49e82b*/
         if ( v10 && *((unsigned char *)v7 - 15) ) /*0x49e832*/
         {
           __3_YAXPAX_Z(v10); /*0x49e838*/
@@ -2596,7 +2596,7 @@ AbstractClass * ObjectClass::sub_49E7C0(char * Block, char a2)
     DeleteAndZero(this->spawnStatus); /*0x49e86d*/
     DeleteAndZero(this->customSound); /*0x49e875*/
     fallRate = (void *)this->fallRate; /*0x49e87a*/
-    /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass_DynamicVectorClass_char) */  /*0x49e886*/
+    /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E5C04) */  /*0x49e886*/
     if ( fallRate && BYTE1(this->attachedTag) ) /*0x49e88b*/
     {
       __3_YAXPAX_Z(fallRate); /*0x49e891*/
@@ -2605,7 +2605,7 @@ AbstractClass * ObjectClass::sub_49E7C0(char * Block, char a2)
     BYTE1(this->attachedTag) = 0; /*0x49e89c*/
     this->nextObject = 0; /*0x49e89f*/
     abstractFlags = (void *)this->abstractFlags; /*0x49e8a2*/
-    /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass_DynamicVectorClass_char) */  /*0x49e8a5*/
+    /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E5C04) */  /*0x49e8a5*/
     if ( abstractFlags && BYTE1(this->referenceCount) ) /*0x49e8ac*/
     {
       __3_YAXPAX_Z(abstractFlags); /*0x49e8b2*/
@@ -6308,10 +6308,10 @@ unsigned int * E4Recv_49DA60::sub_49DA60()
   result->ptr_3 = 0; /*0x49da6f*/
   p_uniqueId->ptr_2 = 0; /*0x49da72*/
   p_uniqueId->ptr_3 = 0; /*0x49da75*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_GenericNode) */  /*0x49da78*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E1B0C) */  /*0x49da78*/
   p_referenceCount->ptr_2 = 0; /*0x49da7e*/
   p_referenceCount->ptr_3 = 0; /*0x49da81*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_GenericNode) */  /*0x49da84*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E1B0C) */  /*0x49da84*/
   /* X11: vtable install elided (implicit via GenericList virtuals 0x49da8d) */
   if ( p_referenceCount ) /*0x49da94*/
   {

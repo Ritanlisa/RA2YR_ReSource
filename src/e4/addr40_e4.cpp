@@ -181,7 +181,7 @@ LABEL_30:
         __3_YAXPAX_Z(*(void **)v3); /*0x401532*/
       __3_YAXPAX_Z(v3); /*0x40153b*/
     }
-    v19[0] = (int)&vt_CCFileClass; /*0x401547*/
+    v19[0] = (int)&g_ptr_7E16B0; /*0x401547*/
     v21 = 0; /*0x40154f*/
     Vector::Clear((int)v20); /*0x401556*/
     v19[0] = (int)&off_7E1668; /*0x40155f*/
@@ -231,7 +231,7 @@ LABEL_24:
     if ( v3[strlen(v3 + 8) + 8] != 92 ) /*0x40147a*/
       strcat(v3 + 8, asc_815E74); /*0x40149d*/
   }
-  v19[0] = (int)&vt_CCFileClass; /*0x4014ac*/
+  v19[0] = (int)&g_ptr_7E16B0; /*0x4014ac*/
   v21 = 0; /*0x4014b4*/
   Vector::Clear((int)v20); /*0x4014bb*/
   v19[0] = (int)&off_7E1668; /*0x4014c4*/
@@ -1412,7 +1412,7 @@ LABEL_11:
     g_MixerChannel_SFX = &g_Audio_Enabled->q068; /*0x406c4c*/
     v3 = CCFileClass::Construct(&v14, aAudiomdMix); /*0x406c51*/
     v4 = v3->vt_slot_20(0); /*0x406c65*/
-    /* X11: vtable install elided (X67 star-deref, RHS vt_CCFileClass) */  /*0x406c67*/
+    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x406c67*/
     v16 = 0; /*0x406c6f*/
     Vector::Clear((int)v15); /*0x406c76*/
     *(unsigned int *)v14.__tail_0 = &off_7E1668; /*0x406c7f*/
@@ -2930,7 +2930,7 @@ void * E4Recv_40E3E0::sub_40E3E0(unsigned int * Block, char a2)
   unsigned int v8; // edx
   unsigned int *v9; // ecx
 
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_GenericList) */  /*0x40e3e6*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E1B04) */  /*0x40e3e6*/
   while ( 1 ) /*0x40e3ec*/
   {
     v3 = (unsigned int *)this->M8; /*0x40e3ec*/
@@ -2950,7 +2950,7 @@ void * E4Recv_40E3E0::sub_40E3E0(unsigned int * Block, char a2)
       v3[1] = 0; /*0x40e41d*/
     }
   }
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_GenericNode) */  /*0x40e427*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E1B0C) */  /*0x40e427*/
   if ( this != (GenericList *)-16 ) /*0x40e42d*/
   {
     v6 = this->M20; /*0x40e42f*/
@@ -2966,7 +2966,7 @@ void * E4Recv_40E3E0::sub_40E3E0(unsigned int * Block, char a2)
       }
     }
   }
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_GenericNode) */  /*0x40e454*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E1B0C) */  /*0x40e454*/
   if ( this != (GenericList *)-4 ) /*0x40e45a*/
   {
     v8 = this->M8; /*0x40e45c*/
@@ -3001,7 +3001,7 @@ void * E4Recv_40E4C0::sub_40E4C0(unsigned int * Block, char a2)
   unsigned int v8; // edx
   unsigned int *v9; // ecx
 
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_GenericList) */  /*0x40e4c6*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E1B04) */  /*0x40e4c6*/
   while ( 1 ) /*0x40e4cc*/
   {
     v3 = (unsigned int *)this->M8; /*0x40e4cc*/
@@ -3021,7 +3021,7 @@ void * E4Recv_40E4C0::sub_40E4C0(unsigned int * Block, char a2)
       v3[1] = 0; /*0x40e4fd*/
     }
   }
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_GenericNode) */  /*0x40e507*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E1B0C) */  /*0x40e507*/
   if ( this != (GenericList *)-16 ) /*0x40e50d*/
   {
     v6 = this->M20; /*0x40e50f*/
@@ -3037,7 +3037,7 @@ void * E4Recv_40E4C0::sub_40E4C0(unsigned int * Block, char a2)
       }
     }
   }
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_GenericNode) */  /*0x40e534*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E1B0C) */  /*0x40e534*/
   if ( this != (GenericList *)-4 ) /*0x40e53a*/
   {
     v8 = this->M8; /*0x40e53c*/
@@ -5870,11 +5870,11 @@ int sub_40B540()
   dword_87F5E0 = 0; /*0x40b550*/
   byte_87F5E4 = 1; /*0x40b556*/
   byte_87F5E5 = 0; /*0x40b55d*/
-  stru_87F5D8 = (int)&vt_DynamicVectorClass; /*0x40b563*/
+  stru_87F5D8 = (int)&g_ptr_7E3238; /*0x40b563*/
   dword_87F5EC = 10; /*0x40b56d*/
   dword_87F5E8 = 0; /*0x40b577*/
   EventClass::resetEvent(&stru_87F5F0, 0, 0); /*0x40b57d*/
-  stru_87F5F0 = (int)&vt_DynamicVectorClass; /*0x40b587*/
+  stru_87F5F0 = (int)&g_ptr_7E3238; /*0x40b587*/
   dword_87F604 = 10; /*0x40b591*/
   dword_87F600 = 0; /*0x40b59b*/
   dword_87F608 = 100; /*0x40b5a1*/
@@ -5887,7 +5887,7 @@ namespace gamemd {
 void sub_40B5C0()
 {
   Stream::FlushAndReset(&stru_87F5D8); /*0x40b5c6*/
-  stru_87F5F0 = (int)&vt_VectorClass; /*0x40b5d4*/
+  stru_87F5F0 = (int)&g_ptr_7E8500; /*0x40b5d4*/
   if ( dword_87F5F4 && byte_87F5FD ) /*0x40b5e6*/
   {
     operator delete((void *)(dword_87F5F4)); /*0x40b5e9*/
@@ -5895,7 +5895,7 @@ void sub_40B5C0()
   }
   byte_87F5FD = 0; /*0x40b5fc*/
   dword_87F5F8 = 0; /*0x40b604*/
-  stru_87F5D8 = (int)&vt_VectorClass; /*0x40b60a*/
+  stru_87F5D8 = (int)&g_ptr_7E8500; /*0x40b60a*/
   if ( dword_87F5DC && byte_87F5E5 ) /*0x40b61c*/
   {
     operator delete((void *)(dword_87F5DC)); /*0x40b61f*/
@@ -5952,7 +5952,7 @@ int sub_40BDD0()
   dword_87F660 = 0; /*0x40bddc*/
   byte_87F664 = 1; /*0x40bde1*/
   byte_87F665 = 0; /*0x40bde8*/
-  dword_87F658 = (int)&vt_DynamicVectorClass; /*0x40bded*/
+  dword_87F658 = (int)&g_ptr_7E3238; /*0x40bded*/
   dword_87F66C = 10; /*0x40bdf7*/
   dword_87F668 = 0; /*0x40be01*/
   return atexit(EventClass::finalizeEvent); /*0x40be0c*/
@@ -5967,7 +5967,7 @@ int sub_40C1B0()
   dword_87F6A0 = 0; /*0x40c1bc*/
   byte_87F6A4 = 1; /*0x40c1c1*/
   byte_87F6A5 = 0; /*0x40c1c8*/
-  dword_87F698 = (int)&vt_DynamicVectorClass; /*0x40c1cd*/
+  dword_87F698 = (int)&g_ptr_7E3238; /*0x40c1cd*/
   dword_87F6AC = 10; /*0x40c1d7*/
   dword_87F6A8 = 0; /*0x40c1e1*/
   return atexit(sub_40C1F0); /*0x40c1ec*/
@@ -5978,7 +5978,7 @@ int sub_40C1B0()
 namespace gamemd {
 void sub_40C1F0()
 {
-  dword_87F698 = (int)&vt_VectorClass; /*0x40c1f8*/
+  dword_87F698 = (int)&g_ptr_7E8500; /*0x40c1f8*/
   if ( dword_87F69C && byte_87F6A5 ) /*0x40c20c*/
   {
     operator delete((void *)(dword_87F69C)); /*0x40c20f*/
@@ -6123,7 +6123,7 @@ int sub_40C7A0()
   dword_87F758 = 0; /*0x40c7ac*/
   byte_87F75C = 1; /*0x40c7b1*/
   byte_87F75D = 0; /*0x40c7b8*/
-  dword_87F750 = (int)&vt_DynamicVectorClass; /*0x40c7bd*/
+  dword_87F750 = (int)&g_ptr_7E3238; /*0x40c7bd*/
   dword_87F764 = 10; /*0x40c7c7*/
   dword_87F760 = 0; /*0x40c7d1*/
   return atexit(sub_40C7E0); /*0x40c7dc*/
@@ -6134,7 +6134,7 @@ int sub_40C7A0()
 namespace gamemd {
 void sub_40C7E0()
 {
-  dword_87F750 = (int)&vt_VectorClass; /*0x40c7e8*/
+  dword_87F750 = (int)&g_ptr_7E8500; /*0x40c7e8*/
   if ( dword_87F754 && byte_87F75D ) /*0x40c7fc*/
   {
     operator delete((void *)(dword_87F754)); /*0x40c7ff*/
@@ -6161,7 +6161,7 @@ int sub_40CB80()
   g_LogicClass.IsAlloc = 0; /*0x40cb98*/
   g_LogicClass.GrowStep = 10; /*0x40cb9d*/
   g_LogicClass.Count = 0; /*0x40cba7*/
-  g_LogicClass.ptr_0 = (int)&vt_LogicClass; /*0x40cbac*/
+  g_LogicClass.ptr_0 = (int)&g_ptr_7E18FC; /*0x40cbac*/
   return atexit(sub_40CBC0); /*0x40cbbc*/
 }
 } // namespace gamemd
@@ -6170,7 +6170,7 @@ int sub_40CB80()
 namespace gamemd {
 void sub_40CBC0()
 {
-  g_LogicClass.ptr_0 = (int)&vt_VectorClass; /*0x40cbc8*/
+  g_LogicClass.ptr_0 = (int)&g_ptr_7E8500; /*0x40cbc8*/
   if ( g_LogicClass.Items && g_LogicClass.IsAlloc ) /*0x40cbdc*/
   {
     operator delete((void *)(g_LogicClass.Items)); /*0x40cbdf*/
@@ -6369,7 +6369,7 @@ int sub_40D340()
   g_MixFilePool_Capacity = 0; /*0x40d34c*/
   byte_884D9C = 1; /*0x40d351*/
   g_MixFilePool_Flag = 0; /*0x40d358*/
-  g_MixFileArray = (int)&vt_DynamicVectorClass; /*0x40d35d*/
+  g_MixFileArray = (int)&g_ptr_7E3238; /*0x40d35d*/
   g_MixFilePool_GrowSize = 10; /*0x40d367*/
   g_MixFilePool_Count = 0; /*0x40d371*/
   return atexit(sub_40D380); /*0x40d37c*/
@@ -6380,7 +6380,7 @@ int sub_40D340()
 namespace gamemd {
 void sub_40D380()
 {
-  g_MixFileArray = (int)&vt_VectorClass; /*0x40d388*/
+  g_MixFileArray = (int)&g_ptr_7E8500; /*0x40d388*/
   if ( g_MixFilePool && g_MixFilePool_Flag ) /*0x40d39c*/
   {
     operator delete((void *)(g_MixFilePool)); /*0x40d39f*/
@@ -6399,7 +6399,7 @@ int sub_40D3C0()
   dword_884DC8 = 0; /*0x40d3cc*/
   byte_884DCC = 1; /*0x40d3d1*/
   byte_884DCD = 0; /*0x40d3d8*/
-  MixFileClass_Array_Alt = (int)&vt_DynamicVectorClass; /*0x40d3dd*/
+  MixFileClass_Array_Alt = (int)&g_ptr_7E3238; /*0x40d3dd*/
   dword_884DD4 = 10; /*0x40d3e7*/
   dword_884DD0 = 0; /*0x40d3f1*/
   return atexit(sub_40D400); /*0x40d3fc*/
@@ -6410,7 +6410,7 @@ int sub_40D3C0()
 namespace gamemd {
 void sub_40D400()
 {
-  MixFileClass_Array_Alt = (int)&vt_VectorClass; /*0x40d408*/
+  MixFileClass_Array_Alt = (int)&g_ptr_7E8500; /*0x40d408*/
   if ( dword_884DC4 && byte_884DCD ) /*0x40d41c*/
   {
     operator delete((void *)(dword_884DC4)); /*0x40d41f*/
@@ -6429,7 +6429,7 @@ int sub_40D440()
   dword_884DB0 = 0; /*0x40d44c*/
   byte_884DB4 = 1; /*0x40d451*/
   byte_884DB5 = 0; /*0x40d458*/
-  g_MixFileArray_Maps = (int)&vt_DynamicVectorClass; /*0x40d45d*/
+  g_MixFileArray_Maps = (int)&g_ptr_7E3238; /*0x40d45d*/
   dword_884DBC = 10; /*0x40d467*/
   dword_884DB8 = 0; /*0x40d471*/
   return atexit(sub_40D480); /*0x40d47c*/
@@ -6440,7 +6440,7 @@ int sub_40D440()
 namespace gamemd {
 void sub_40D480()
 {
-  g_MixFileArray_Maps = (int)&vt_VectorClass; /*0x40d488*/
+  g_MixFileArray_Maps = (int)&g_ptr_7E8500; /*0x40d488*/
   if ( dword_884DAC && byte_884DB5 ) /*0x40d49c*/
   {
     operator delete((void *)(dword_884DAC)); /*0x40d49f*/
@@ -6459,7 +6459,7 @@ int sub_40D4C0()
   dword_884DE8 = 0; /*0x40d4cc*/
   byte_884DEC = 1; /*0x40d4d1*/
   byte_884DED = 0; /*0x40d4d8*/
-  g_MixFileArray_Movies = (int)&vt_DynamicVectorClass; /*0x40d4dd*/
+  g_MixFileArray_Movies = (int)&g_ptr_7E3238; /*0x40d4dd*/
   dword_884DF4 = 10; /*0x40d4e7*/
   dword_884DF0 = 0; /*0x40d4f1*/
   return atexit(sub_40D500); /*0x40d4fc*/
@@ -6470,7 +6470,7 @@ int sub_40D4C0()
 namespace gamemd {
 void sub_40D500()
 {
-  g_MixFileArray_Movies = (int)&vt_VectorClass; /*0x40d508*/
+  g_MixFileArray_Movies = (int)&g_ptr_7E8500; /*0x40d508*/
   if ( dword_884DE4 && byte_884DED ) /*0x40d51c*/
   {
     operator delete((void *)(dword_884DE4)); /*0x40d51f*/
@@ -7093,11 +7093,11 @@ int sub_40E1C0()
   dword_887060 = 0; /*0x40e1ce*/
   g_IniSectionList.First.Previous = 0; /*0x40e1d4*/
   g_IniSectionList.First_t8 = 0; /*0x40e1da*/
-  g_IniSectionList.First.__pad_0 = (int)&vt_GenericNode; /*0x40e1e0*/
+  g_IniSectionList.First.__pad_0 = (int)&g_ptr_7E1B0C; /*0x40e1e0*/
   GenericNode::Constructor(&g_IniSectionList.Last); /*0x40e1ea*/
-  g_IniSectionList.ptr_0 = &vt_GenericList; /*0x40e1f9*/
+  g_IniSectionList.ptr_0 = &g_ptr_7E1B04; /*0x40e1f9*/
   LinkedList::Prepend(&g_IniSectionList.First, (int)&g_IniSectionList.Last); /*0x40e203*/
-  g_IniSectionList.ptr_0 = &vt_List_INISection; /*0x40e20d*/
+  g_IniSectionList.ptr_0 = &g_ptr_7E1AFC; /*0x40e20d*/
   g_IniSectionList.u32_1C = 0; /*0x40e217*/
   g_IniSectionList.u32_20 = 0; /*0x40e21d*/
   g_IniSectionList.u32_24 = 0; /*0x40e223*/
@@ -7159,7 +7159,7 @@ GenericNode * GenericNode::sub_40E390(GenericNode ** Block, char a2)
   int Previous; // ecx
   unsigned int *v4; // eax
 
-  /* X11: vtable install elided (X67 star-deref, RHS vt_GenericNode) */  /*0x40e397*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E1B0C) */  /*0x40e397*/
   if ( this ) /*0x40e39d*/
   {
     Previous = this->Previous; /*0x40e39f*/
@@ -7325,7 +7325,7 @@ int sub_40E770()
   dword_8872B8 = 0; /*0x40e77c*/
   byte_8872BC = 1; /*0x40e781*/
   byte_8872BD = 0; /*0x40e788*/
-  dword_8872B0 = (int)&vt_DynamicVectorClass; /*0x40e78d*/
+  dword_8872B0 = (int)&g_ptr_7E3238; /*0x40e78d*/
   dword_8872C4 = 10; /*0x40e797*/
   dword_8872C0 = 0; /*0x40e7a1*/
   return atexit(sub_40E7B0); /*0x40e7ac*/
@@ -7336,7 +7336,7 @@ int sub_40E770()
 namespace gamemd {
 void sub_40E7B0()
 {
-  dword_8872B0 = (int)&vt_VectorClass; /*0x40e7b8*/
+  dword_8872B0 = (int)&g_ptr_7E8500; /*0x40e7b8*/
   if ( dword_8872B4 && byte_8872BD ) /*0x40e7cc*/
   {
     operator delete((void *)(dword_8872B4)); /*0x40e7cf*/
@@ -7559,7 +7559,7 @@ int sub_40EE40()
   dword_887390 = 0; /*0x40ee4c*/
   byte_887394 = 1; /*0x40ee51*/
   byte_887395 = 0; /*0x40ee58*/
-  dword_887388 = (int)&vt_DynamicVectorClass; /*0x40ee5d*/
+  dword_887388 = (int)&g_ptr_7E3238; /*0x40ee5d*/
   dword_88739C = 10; /*0x40ee67*/
   dword_887398 = 0; /*0x40ee71*/
   return atexit(sub_40EE80); /*0x40ee7c*/
@@ -7570,7 +7570,7 @@ int sub_40EE40()
 namespace gamemd {
 void sub_40EE80()
 {
-  dword_887388 = (int)&vt_VectorClass; /*0x40ee88*/
+  dword_887388 = (int)&g_ptr_7E8500; /*0x40ee88*/
   if ( dword_88738C && byte_887395 ) /*0x40ee9c*/
   {
     operator delete((void *)(dword_88738C)); /*0x40ee9f*/
@@ -7759,7 +7759,7 @@ int sub_40F490()
   dword_8874C8 = 0; /*0x40f49c*/
   byte_8874CC = 1; /*0x40f4a1*/
   byte_8874CD = 0; /*0x40f4a8*/
-  WarheadTypeClass_Array = (WarheadTypeClass *)&vt_DynamicVectorClass; /*0x40f4ad*/
+  WarheadTypeClass_Array = (WarheadTypeClass *)&g_ptr_7E3238; /*0x40f4ad*/
   dword_8874D4 = 10; /*0x40f4b7*/
   g_WarheadTypePool = 0; /*0x40f4c1*/
   return atexit(sub_40F4D0); /*0x40f4cc*/
@@ -7770,7 +7770,7 @@ int sub_40F490()
 namespace gamemd {
 void sub_40F4D0()
 {
-  WarheadTypeClass_Array = (WarheadTypeClass *)&vt_VectorClass; /*0x40f4d8*/
+  WarheadTypeClass_Array = (WarheadTypeClass *)&g_ptr_7E8500; /*0x40f4d8*/
   if ( dword_8874C4 && byte_8874CD ) /*0x40f4ec*/
   {
     operator delete((void *)(dword_8874C4)); /*0x40f4ef*/
@@ -7914,7 +7914,7 @@ int sub_40FB30()
   dword_887570 = 0; /*0x40fb3c*/
   byte_887574 = 1; /*0x40fb41*/
   byte_887575 = 0; /*0x40fb48*/
-  WeaponTypeClass_Array = (WeaponTypeClass *)&vt_DynamicVectorClass; /*0x40fb4d*/
+  WeaponTypeClass_Array = (WeaponTypeClass *)&g_ptr_7E3238; /*0x40fb4d*/
   dword_88757C = 10; /*0x40fb57*/
   g_WeaponTypePool = 0; /*0x40fb61*/
   return atexit(sub_40FB70); /*0x40fb6c*/
@@ -7925,7 +7925,7 @@ int sub_40FB30()
 namespace gamemd {
 void sub_40FB70()
 {
-  WeaponTypeClass_Array = (WeaponTypeClass *)&vt_VectorClass; /*0x40fb78*/
+  WeaponTypeClass_Array = (WeaponTypeClass *)&g_ptr_7E8500; /*0x40fb78*/
   if ( g_WeaponTypeConfig && byte_887575 ) /*0x40fb8c*/
   {
     operator delete((void *)(g_WeaponTypeConfig)); /*0x40fb8f*/

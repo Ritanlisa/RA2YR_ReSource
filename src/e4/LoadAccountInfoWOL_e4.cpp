@@ -15,7 +15,7 @@ void * E4Recv_779690::LoadAccountInfoWOL_Load(void* aP1, ObjectClass * aP2, void
 {
   this->M4 = 0; /*0x779695*/
   this->M8 = 0; /*0x779698*/
-  *this = (gamemd::ReferenceCounted)((ReferenceCounted)&vt_ReferenceCounted); /*0x7796a3*/
+  *this = (gamemd::ReferenceCounted)((ReferenceCounted)&g_ptr_7F0954); /*0x7796a3*/
   String::AssignFromPtr(&this->u32_C, aP1); /*0x7796a9*/
   this->M16 = (unsigned int)(aP2); /*0x7796ba*/
   this->u32_18 = (unsigned int)(aP4); /*0x7796c1*/
@@ -30,7 +30,7 @@ void * E4Recv_779690::LoadAccountInfoWOL_Load(void* aP1, ObjectClass * aP2, void
   this->M56 = (unsigned int)(aP12); /*0x779700*/
   WideString::AssignFromPtr(&this->u32_3C, aP14); /*0x779703*/
   WideString::AssignFromPtr(this->M40, aP13); /*0x779710*/
-  *this = (gamemd::ReferenceCounted)((ReferenceCounted)&vt_PlayerProfile); /*0x779715*/
+  *this = (gamemd::ReferenceCounted)((ReferenceCounted)&g_ptr_7F74F4); /*0x779715*/
   return this; /*0x77971d*/
 }  // G42.18 ns repair
 } // namespace gamemd

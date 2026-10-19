@@ -293,7 +293,7 @@ unsigned int * DynamicVector::Constructor_Techno(int a2, int a3)
   this->DynamicVector_field_0x8 = a2; /*0x7342e0*/
   this->__pad_C[0] = 1; /*0x7342e3*/
   this->__pad_C[1] = (unsigned int)(0); /*0x7342e7*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_VectorClass); /*0x7342eb*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)(&g_ptr_7E8500); /*0x7342eb*/
   if ( a2 ) /*0x7342f1*/
   {
     if ( a3 ) /*0x7342f9*/
@@ -306,7 +306,7 @@ unsigned int * DynamicVector::Constructor_Techno(int a2, int a3)
       this->__pad_C[1] = 1; /*0x73430f*/
     }
   }
-  *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_DynamicVectorClass); /*0x734313*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)(&g_ptr_7E3238); /*0x734313*/
   *(unsigned int *)this->__pad_14 = 10; /*0x734319*/
   this->DynamicVector_field_0x10 = 0; /*0x734320*/
   return this->__pad_0; /*0x734329*/

@@ -237,8 +237,8 @@ int ObjectClass::CheckTypeFlag1681() {
   return 0;  /* G42.33b2 restub: auto restub (pass4+, 1 errs): wrong-universe gap2 body; truth func_0x70dd70.json */
 }
 
-// ==== BACKFILL 0x0070DD90  TechnoClass::vt_entry_3E8  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
-int TechnoClass::vt_entry_3E8() {
+// ==== BACKFILL 0x0070DD90  TechnoClass::g_var_e75276  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
+int TechnoClass::g_var_e75276() {
     return 1; /*0x70dd95*/
 }
 

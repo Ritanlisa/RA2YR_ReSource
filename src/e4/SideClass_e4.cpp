@@ -138,11 +138,11 @@ int SideClass::Construct(CCINIClass * aP1, void *a2, void *a3, void *a4, void *a
   aP1->u32_A5 = 0; /*0x6a4576*/
   aP1->u32_AC = 10; /*0x6a457c*/
   aP1->u32_A8 = 0; /*0x6a4586*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList) */  /*0x6a458c*/
-  /* X11: vtable install elided (base-interface slot, RHS vt_SideClass) */  /*0x6a4597*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_SideClass) */  /*0x6a459d*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_SideClass) */  /*0x6a45a3*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_SideClass) */  /*0x6a45aa*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_var_131447) */  /*0x6a458c*/
+  /* X11: vtable install elided (base-interface slot, RHS g_ptr_7F2E94) */  /*0x6a4597*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F2E94) */  /*0x6a459d*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F2E94) */  /*0x6a45a3*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F2E94) */  /*0x6a45aa*/
   AbstractClass::GenerateUniqueID((AbstractClass *)&aP1->?); /*0x6a45b1*/
   if ( FootClass_Array.?[0] < FootClass_Array.?[1] /*0x6a45ea*/
     || (BYTE1(FootClass_Array.?[2]) || !FootClass_Array.?[1])
@@ -197,11 +197,11 @@ int SideClass::SaveLoad_Prefix(unsigned int * a0, AbstractTypeClass * aP1)
       BYTE1(v2[1].ptr_4) = 0; /*0x6a47c5*/
       v2[1].ptr_C = (void *)10; /*0x6a47cb*/
       v2[1].ptr_8 = 0; /*0x6a47d1*/
-      /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList_int) */  /*0x6a47d7*/
-      /* X11: vtable install elided (legacy slot spelling slot, RHS vt_SideClass_4) */  /*0x6a47e1*/
-      /* X11: vtable install elided (legacy slot spelling slot, RHS vt_SideClass_4) */  /*0x6a47e7*/
-      /* X11: vtable install elided (legacy slot spelling slot, RHS vt_SideClass_4) */  /*0x6a47ee*/
-      /* X11: vtable install elided (legacy slot spelling slot, RHS vt_SideClass_4) */  /*0x6a47f5*/
+      /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E4DD8) */  /*0x6a47d7*/
+      /* X11: vtable install elided (legacy slot spelling slot, RHS g_var_01d193) */  /*0x6a47e1*/
+      /* X11: vtable install elided (legacy slot spelling slot, RHS g_var_01d193) */  /*0x6a47e7*/
+      /* X11: vtable install elided (legacy slot spelling slot, RHS g_var_01d193) */  /*0x6a47ee*/
+      /* X11: vtable install elided (legacy slot spelling slot, RHS g_var_01d193) */  /*0x6a47f5*/
     }
     p_houseTypes = &v2->houseTypes; /*0x6a47fc*/
     if ( p_houseTypes ) /*0x6a4804*/
@@ -212,7 +212,7 @@ int SideClass::SaveLoad_Prefix(unsigned int * a0, AbstractTypeClass * aP1)
       *((unsigned char *)p_houseTypes + 13) = 0; /*0x6a4810*/
       p_houseTypes[5] = (void *)10; /*0x6a4813*/
       p_houseTypes[4] = 0; /*0x6a4816*/
-      /* X11: vtable install elided (X67 star-deref, RHS vt_TypeList_int) */  /*0x6a4819*/
+      /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E4DD8) */  /*0x6a4819*/
     }
     (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)v3 + 12))(v3, &aP1, 4, 0); /*0x6a482a*/
     for ( i = 0; i < aP1; ++i ) /*0x6a4833*/
@@ -250,10 +250,10 @@ void * SideClass::Init(void ** Block, char a2, void *a3, void *a4, void *a5, voi
 {
 
 
-  /* X11: vtable install elided (base-interface slot, RHS vt_SideClass) */  /*0x6a4936*/
-  /* X11: vtable install elided (qmark slot, RHS vt_SideClass) */  /*0x6a493c*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_SideClass) */  /*0x6a4943*/
-  /* X11: vtable install elided (qmark slot, RHS vt_SideClass) */  /*0x6a494a*/
+  /* X11: vtable install elided (base-interface slot, RHS g_ptr_7F2E94) */  /*0x6a4936*/
+  /* X11: vtable install elided (qmark slot, RHS g_ptr_7F2E94) */  /*0x6a493c*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F2E94) */  /*0x6a4943*/
+  /* X11: vtable install elided (qmark slot, RHS g_ptr_7F2E94) */  /*0x6a494a*/
   AbstractClass::AnnounceExpiredPointer(&Block->AbstractClass, 1); /*0x6a4951*/
   SideClass *v6; // [esp+4h] [ebp-4h] BYREF
   v6 = (gamemd::SideClass *)(Block); /*0x6a4966*/
@@ -271,7 +271,7 @@ void * SideClass::Init(void ** Block, char a2, void *a3, void *a4, void *a5, voi
   }
   void *houseTypesCount; // eax
   houseTypesCount = (void *)Block->houseTypesCount; /*0x6a499f*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x6a49a5*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x6a49a5*/
   if ( houseTypesCount && *((unsigned char *)Block + 165) ) /*0x6a49b3*/
   {
     __3_YAXPAX_Z(houseTypesCount); /*0x6a49be*/

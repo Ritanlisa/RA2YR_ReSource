@@ -439,7 +439,7 @@ struct TechnoTypeClass {
     VectorClass_flat * Constructor_1(ObjectTypeClass * aP1);
     bool CanAttackMove_IgnoreWeapon();
     char RemoveItem(int a2, void *a2_2);
-    char vt_entry_A0();
+    char g_var_3d23dc();
     double ComputeBuildTime();
     int ComputeValue(void * a2, float a3);
     int ComputeValueSimple(float * a2);

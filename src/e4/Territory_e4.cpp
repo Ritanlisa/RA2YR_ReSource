@@ -108,7 +108,7 @@ void Territory_WorldDominationTour_8::Close(int a2, void *a2_2)
 namespace gamemd {
 unsigned int * Territory_WorldDominationTour_8::QueryInterface(unsigned int * Block, char a2)
 {
-  /* X11: vtable install elided (X67 star-deref, RHS vt_WorldDominationTour_Voices_Anim) */  /*0x771a33*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7F7354) */  /*0x771a33*/
   VtableStub::sub_5CB6C0(Block); /*0x771a39*/
   if ( (a2 & 1) != 0 ) /*0x771a43*/
     operator delete((Block)); /*0x771a46*/

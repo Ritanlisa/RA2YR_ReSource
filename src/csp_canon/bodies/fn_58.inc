@@ -175,7 +175,7 @@ char Gap2Recv_5840C0::CheckMapReachability(CCINIClass * aP1, int a3, int a4, int
   v6 = 1 << (a3 + 1); /*0x5840d6*/
   v48 = v6; /*0x5840e3*/
   WordVector::Constructor(&v59, 0, 0); /*0x5840e7*/
-  v59 = (WordVector)&vt_DynamicVectorClass; /*0x5840f0*/
+  v59 = (WordVector)&g_ptr_7E3238; /*0x5840f0*/
   v64 = 10; /*0x5840fa*/
   v63 = 0; /*0x584102*/
   if ( Block && v62 ) /*0x58410e*/
@@ -328,7 +328,7 @@ char Gap2Recv_5840C0::CheckMapReachability(CCINIClass * aP1, int a3, int a4, int
           }
           if ( v53 == *(unsigned short *)(this->estimatedHealth + 2 * (a3 + 4 * v29 + v29)) && !*((unsigned char *)v50 + j) ) /*0x58441c*/
           {
-            v59 = (WordVector)&vt_VectorClass; /*0x584522*/
+            v59 = (WordVector)&g_ptr_7E8500; /*0x584522*/
             if ( Block && v62 ) /*0x584534*/
               __3_YAXPAX_Z(Block); /*0x584537*/
             return 1; /*0x584542*/
@@ -385,7 +385,7 @@ char Gap2Recv_5840C0::CheckMapReachability(CCINIClass * aP1, int a3, int a4, int
     }
     while ( v37 ); /*0x5844ef*/
   }
-  v59 = (WordVector)&vt_VectorClass; /*0x5844f5*/
+  v59 = (WordVector)&g_ptr_7E8500; /*0x5844f5*/
   if ( Block ) /*0x5844ff*/
   {
     if ( v62 ) /*0x584507*/
@@ -657,13 +657,13 @@ void Gap2Recv_585930::FloodFillConnectedCells(MapClass * aP1, int a3) {
 
   v37 = (LayerClass *)this; /*0x585941*/
   VectorClass::CellConstructor((VectorClass *)&v41, 0, 0); /*0x585945*/
-  *(unsigned int *)v41.__pad_0 = &vt_DynamicVectorClass; /*0x585958*/
+  *(unsigned int *)v41.__pad_0 = &g_ptr_7E3238; /*0x585958*/
   v42 = 10; /*0x58595c*/
   *(unsigned int *)v41.__tail_10 = 0; /*0x585960*/
   Buffer::Cleanup(&v41); /*0x585964*/
   v42 = 100; /*0x58596f*/
   VectorClass::CellConstructor((VectorClass *)&v39, 0, 0); /*0x585977*/
-  *(unsigned int *)v39.__pad_0 = &vt_DynamicVectorClass; /*0x585980*/
+  *(unsigned int *)v39.__pad_0 = &g_ptr_7E3238; /*0x585980*/
   v40 = 10; /*0x585984*/
   *(unsigned int *)v39.__tail_10 = 0; /*0x585988*/
   Buffer::Cleanup(&v39); /*0x58598c*/
@@ -819,9 +819,9 @@ void Gap2Recv_585930::FloodFillConnectedCells(MapClass * aP1, int a3) {
     }
     ++v28; /*0x585cc7*/
   }
-  *(unsigned int *)v39.__pad_0 = &vt_VectorClass; /*0x585cd9*/
+  *(unsigned int *)v39.__pad_0 = &g_ptr_7E8500; /*0x585cd9*/
   Buffer::Cleanup(&v39); /*0x585cdd*/
-  *(unsigned int *)v41.__pad_0 = &vt_VectorClass; /*0x585ce6*/
+  *(unsigned int *)v41.__pad_0 = &g_ptr_7E8500; /*0x585ce6*/
   Buffer::Cleanup(&v41); /*0x585cea*/
 
 }

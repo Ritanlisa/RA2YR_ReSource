@@ -200,7 +200,7 @@ TypeList_flat * TypeList_cptr_ParticleSystemTypeClass::QueryInterface(unsigned i
   void *v3; // eax
 
   v3 = (void *)*((unsigned int *)Block + 1); /*0x717b73*/
-  *(unsigned int *)Block =(unsigned int)(&vt_VectorClass); /*0x717b76*/
+  *(unsigned int *)Block =(unsigned int)(&g_ptr_7E8500); /*0x717b76*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x717b80*/
   {
     __3_YAXPAX_Z(v3); /*0x717b88*/
@@ -240,7 +240,7 @@ unsigned int * TypeList_flat::ParticleConstructor(int a2, int a3)
   ((unsigned int *)this)[0] = a2; /*0x717c80*/
   ((unsigned int *)this)[0] = 1; /*0x717c83*/
   ((unsigned int *)this)[0] = 0; /*0x717c87*/
-  this->DynamicVectorClass = &vt_VectorClass; /*0x717c8b*/
+  this->DynamicVectorClass = &g_ptr_7E8500; /*0x717c8b*/
   if ( a2 ) /*0x717c91*/
   {
     if ( a3 ) /*0x717c99*/
@@ -253,7 +253,7 @@ unsigned int * TypeList_flat::ParticleConstructor(int a2, int a3)
       ((unsigned int *)this)[0] = 1; /*0x717caf*/
     }
   }
-  this->DynamicVectorClass = &vt_DynamicVectorClass; /*0x717cb3*/
+  this->DynamicVectorClass = &g_ptr_7E3238; /*0x717cb3*/
   ((unsigned int *)this)[0] = 10; /*0x717cb9*/
   ((unsigned int *)this)[0] = 0; /*0x717cc0*/
 return (unsigned int *)&this->DynamicVectorClass; /*0x717cc9*/
@@ -461,9 +461,9 @@ int TemporalClass::LoadTemporal(AbstractClass * aP0, int aP1)
     {
       AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x71a682*/
       /* X11: vtable install elided (implicit via TemporalClass virtuals 0x71a687) */
-      ((unsigned int *)aP0)[0] = (unsigned int)(&vt_TemporalClass); /*0x71a68d*/
-      ((unsigned int *)aP0)[0] = (unsigned int)(&vt_TemporalClass); /*0x71a694*/
-      ((unsigned int *)aP0)[0] = (unsigned int)(&vt_TemporalClass); /*0x71a69b*/
+      ((unsigned int *)aP0)[0] = (unsigned int)(&g_ptr_7F5154); /*0x71a68d*/
+      ((unsigned int *)aP0)[0] = (unsigned int)(&g_ptr_7F5154); /*0x71a694*/
+      ((unsigned int *)aP0)[0] = (unsigned int)(&g_ptr_7F5154); /*0x71a69b*/
     }
     ObjectPtr_RegisterForTracking((int)&SwizzleManagerClass_Instance,(int *)(&aP0->creationFrame)); /*0x71a6ab*/
     ObjectPtr_RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)aP0->__pad_28); /*0x71a6b9*/

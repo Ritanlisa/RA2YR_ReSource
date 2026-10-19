@@ -580,10 +580,10 @@ ParticleSystemTypeClass * ParticleSystemTypeClass::ddtor(void ** Block, char a2)
   int v3; // eax
   ParticleSystemTypeClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-  Block->ParticleSystemTypeClass_field_0x0 = &vt_ParticleSystemTypeClass; /*0x644966*/
-  Block->ParticleSystemTypeClass_field_0x4 = &vt_ParticleSystemTypeClass; /*0x64496c*/
-  Block->ParticleSystemTypeClass_field_0x8 = &vt_ParticleSystemTypeClass; /*0x644973*/
-  Block->SpawnCount = &vt_ParticleSystemTypeClass; /*0x64497a*/
+  Block->ParticleSystemTypeClass_field_0x0 = &g_ptr_7F007C; /*0x644966*/
+  Block->ParticleSystemTypeClass_field_0x4 = &g_ptr_7F007C; /*0x64496c*/
+  Block->ParticleSystemTypeClass_field_0x8 = &g_ptr_7F007C; /*0x644973*/
+  Block->SpawnCount = &g_ptr_7F007C; /*0x64497a*/
   AbstractClass::AnnounceExpiredPointer(&Block->ParticleSystemTypeClass_field_0x0, 1); /*0x644981*/
   v5 =(gamemd::ParticleSystemTypeClass *)Block; /*0x644996*/
   v3 = (*(int (**)(char *, ParticleSystemTypeClass **))(*(unsigned int *)&stru_A83D50.__pad_14[4] + 16))( /*0x64499a*/

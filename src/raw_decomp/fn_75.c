@@ -11605,7 +11605,7 @@ int __thiscall WarheadTypeClass::ProcessPower(WarheadTypeClass *this, int *a2)
 
 
 // ==== 0x0075E080  WarheadTypeClass::vt[03]  this=WarheadTypeClass  sig=csp ====
-int __stdcall WarheadTypeClass::vt_03(WarheadTypeClass *this, _DWORD *a2)
+int __stdcall WarheadTypeClass::g_var_ffdfec(WarheadTypeClass *this, _DWORD *a2)
 {
   if ( !a2 ) /*0x75e086*/
     return -2147467261; /*0x75e088*/
@@ -24970,7 +24970,7 @@ char __thiscall Voxel_Section_Draw(int this, int a2)
   if ( INIClass::GetString(this + 36, (int)unk_847D94, &MEMORY[0x889F64], String, 0x80u) )
   {
     DynamicVectorClass::AnimTypeConstructor(0, 0);
-    v89[0] = (int)&vt_TypeList_AnimTypeClass_const;
+    v89[0] = (int)&g_ptr_7EB6D4;
     for ( i = strtok(String, MEMORY[0x817F70]); i; i = strtok(0, MEMORY[0x817F70]) )
     {
       if ( !*i )
@@ -24980,7 +24980,7 @@ char __thiscall Voxel_Section_Draw(int this, int a2)
         DynamicVector::Add_Alt4(&v81);
     }
     TypeList::AnimTypeCopy(v89);
-    v89[0] = (int)&vt_VectorClass_AnimTypeClass_const;
+    v89[0] = (int)&g_ptr_7EB6F4;
     DynamicVectorClass::Destroy_Alt(v89);
   }
   else
@@ -24994,7 +24994,7 @@ char __thiscall Voxel_Section_Draw(int this, int a2)
   v13 = Block;
   *(_DWORD *)(this + 280) = v11;
   *(_DWORD *)(this + 284) = v12;
-  v82 = (int)&vt_VectorClass_AnimTypeClass_const;
+  v82 = (int)&g_ptr_7EB6F4;
   if ( v13 && v85 )
     __3_YAXPAX_Z(v13);
   *(_DWORD *)(this + 288) = INIClass::ReadInt_Overwrite(this + 36, unk_847D88, *(_DWORD *)(this + 288));
@@ -25113,7 +25113,7 @@ char __thiscall Voxel_Section_Draw(int this, int a2)
   if ( INIClass::GetString(this + 36, (int)MEMORY[0x844384], &MEMORY[0x889F64], String, 0x80u) )
   {
     DynamicVector::Constructor_VoxelAnim(0, 0);
-    v89[0] = (int)&vt_TypeList_VoxelAnimTypeClass_const;
+    v89[0] = (int)&g_ptr_7F0D3C;
     for ( j = strtok(String, MEMORY[0x817F70]); j; j = strtok(0, MEMORY[0x817F70]) )
     {
       if ( !*j )
@@ -25130,14 +25130,14 @@ char __thiscall Voxel_Section_Draw(int this, int a2)
       }
     }
     Voxel_Section::Constructor(v89);
-    v82 = (int)&vt_TypeList_VoxelAnimTypeClass_const;
-    v89[0] = (int)&vt_VectorClass_VoxelAnimTypeClass_const;
+    v82 = (int)&g_ptr_7F0D3C;
+    v89[0] = (int)&g_ptr_7F0D5C;
     Vector::Cleanup2(v89);
   }
   else
   {
     Voxel_Section::Constructor(this + 396);
-    v82 = (int)&vt_TypeList_VoxelAnimTypeClass_const;
+    v82 = (int)&g_ptr_7F0D3C;
   }
   if ( (int *)(this + 396) != &v82 )
   {
@@ -25177,13 +25177,13 @@ char __thiscall Voxel_Section_Draw(int this, int a2)
   v58 = Block;
   *(_DWORD *)(this + 416) = v56;
   *(_DWORD *)(this + 420) = v57;
-  v82 = (int)&vt_VectorClass_VoxelAnimTypeClass_const;
+  v82 = (int)&g_ptr_7F0D5C;
   if ( v58 && v85 )
     __3_YAXPAX_Z(v58);
   v75 = 0;
   v76 = 0;
   LOWORD(v77) = 1;
-  v74 = &vt_VectorClass_int;
+  v74 = &g_ptr_7E4DB8;
   if ( &v74 != (void ***)(this + 424) )
   {
     VectorClass::Destroy(v74, v75, v76, v77);
@@ -25206,7 +25206,7 @@ char __thiscall Voxel_Section_Draw(int this, int a2)
   }
   v78 = *(_DWORD *)(this + 440);
   v79 = *(char **)(this + 444);
-  v74 = &vt_TypeList_int;
+  v74 = &g_ptr_7E4DD8;
   v60 = __0Iostream_init_QAE_XZ_4((Iostream_init *)(this + 36));
   v61 = (_DWORD *)INIClass::ReadIntList(
                     (int)&v82,
@@ -25257,7 +25257,7 @@ char __thiscall Voxel_Section_Draw(int this, int a2)
   v66 = v61[6];
   v67 = Block;
   *(_DWORD *)(this + 448) = v66;
-  v82 = (int)&vt_VectorClass_int;
+  v82 = (int)&g_ptr_7E4DB8;
   if ( v67 && v85 )
     __3_YAXPAX_Z(v67);
   if ( INIClass::GetString(this + 36, (int)aVerses, stru_847C40, Destination, 0x80u) )
@@ -25375,7 +25375,7 @@ int __thiscall WarheadTypeClass::ProcessPower(WarheadTypeClass *this, int *a2)
 
 
 // ==== 0x0075E080  WarheadTypeClass::vt[03]  this=WarheadTypeClass  sig=csp ====
-int __stdcall WarheadTypeClass::vt_03(WarheadTypeClass *this, _DWORD *a2)
+int __stdcall WarheadTypeClass::g_var_ffdfec(WarheadTypeClass *this, _DWORD *a2)
 {
   if ( !a2 ) /*0x75e086*/
     return -2147467261; /*0x75e088*/

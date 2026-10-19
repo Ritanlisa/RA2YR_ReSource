@@ -23,7 +23,7 @@ int FoggedObject::DrawVector_Constructor(int aP1, int aP2, void *a3)
   this->u32_8 = aP1; /*0x4d2dc0*/
   this->u32_C = 1; /*0x4d2dc3*/
   this->u32_D = 0; /*0x4d2dc7*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x4d2dca*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x4d2dca*/
   if ( !aP1 ) /*0x4d2dd0*/
     return this->__pad_0; /*0x4d2e38*/
   if ( !aP2 ) /*0x4d2dd8*/
@@ -78,7 +78,7 @@ VectorClass_flat * FoggedObject_DrawVector::QueryInterface(unsigned int * Block,
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x4d2d13*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x4d2d16*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x4d2d16*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x4d2d20*/
   {
     operator delete((void *)(v3)); /*0x4d2d28*/

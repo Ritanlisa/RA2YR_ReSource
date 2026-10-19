@@ -169,7 +169,7 @@ AbstractClass * * MultiplayerSiege::ProcessTurn(char a2)
   if ( v3 >= dword_A8DA84 ) /*0x5ca84c*/
   {
     v5 = Block; /*0x5ca84e*/
-    /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x5ca852*/
+    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x5ca852*/
     if ( !Block || !v16 ) /*0x5ca868*/
       return 0; /*0x5ca868*/
     goto LABEL_26; /*0x5ca868*/
@@ -178,7 +178,7 @@ AbstractClass * * MultiplayerSiege::ProcessTurn(char a2)
   if ( v6 < 0 || v6 >= stru_A80220.? ) /*0x5ca887*/
   {
     v5 = Block; /*0x5ca980*/
-    /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x5ca984*/
+    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x5ca984*/
     if ( !Block || !v16 ) /*0x5ca996*/
       return 0; /*0x5ca996*/
     LABEL_26:
@@ -189,7 +189,7 @@ AbstractClass * * MultiplayerSiege::ProcessTurn(char a2)
   if ( *(unsigned char *)(v7->relatedTagsCapacity + 422) ) /*0x5ca899*/
   {
     v5 = Block; /*0x5ca8a3*/
-    /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x5ca8a7*/
+    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x5ca8a7*/
     if ( !Block || !v16 ) /*0x5ca8bd*/
       return 0; /*0x5ca8bd*/
     goto LABEL_26; /*0x5ca8bd*/
@@ -213,7 +213,7 @@ AbstractClass * * MultiplayerSiege::ProcessTurn(char a2)
       (v10)->SetMapSeed(*v11); /*0x5ca944*/
     }
   }
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x5ca957*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x5ca957*/
   if ( Block && v16 ) /*0x5ca969*/
     __3_YAXPAX_Z(Block); /*0x5ca96c*/
   return 1; /*0x5ca974*/
@@ -372,7 +372,7 @@ namespace gamemd {
 MultiplayerSiege * MultiplayerSiege::QueryInterface(char a2)
 {
 
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_MultiplayerSiege) */  /*0x5cabd3*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7EE6FC) */  /*0x5cabd3*/
   ((MultiplayerGameMode *)this)->Dtor(); /*0x5cabd9*/
   if ( (a2 & 1) != 0 ) /*0x5cabe3*/
     __3_YAXPAX_Z(this); /*0x5cabe6*/

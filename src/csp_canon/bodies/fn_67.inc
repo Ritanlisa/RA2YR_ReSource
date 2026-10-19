@@ -130,7 +130,7 @@ void TypeList_flat::InfantryCleanup()
   void *Items; // eax
 
   Items = (void *)(((unsigned int *)this)[0]); /*0x67a036*/
-  this->DynamicVectorClass = &vt_VectorClass; /*0x67a039*/
+  this->DynamicVectorClass = &g_ptr_7E8500; /*0x67a039*/
   if ( Items && ((unsigned int *)this)[0] ) /*0x67a043*/
   {
     __3_YAXPAX_Z(Items); /*0x67a049*/
@@ -169,7 +169,7 @@ CCINIClass * TypeList_flat::VoxelAnimConstructor()
   ((unsigned int *)this)[0] = 0; /*0x67a39e*/
   ((unsigned int *)this)[0] = 10; /*0x67a3a1*/
   ((unsigned int *)this)[0] = 0; /*0x67a3a8*/
-  this->DynamicVectorClass = &vt_TypeList; /*0x67a3ab*/
+  this->DynamicVectorClass = &g_var_131447; /*0x67a3ab*/
 return (gamemd::CCINIClass *)&this->DynamicVectorClass; /*0x67a3b1*/
 
 }
@@ -190,7 +190,7 @@ DynamicVector * TypeList_flat::Construct(void *a1, void *a2, void *a3, void *a4,
   ((unsigned int *)this)[0] = 0; /*0x67a4fe*/
   ((unsigned int *)this)[0] = 10; /*0x67a501*/
   ((unsigned int *)this)[0] = 0; /*0x67a508*/
-  this->DynamicVectorClass = &vt_TypeList; /*0x67a50b*/
+  this->DynamicVectorClass = &g_var_131447; /*0x67a50b*/
 return (gamemd::DynamicVector *)&this->DynamicVectorClass; /*0x67a511*/
 
 }
@@ -211,7 +211,7 @@ CCINIClass * TypeList_flat::ConstructSmudge()
   ((unsigned int *)this)[0] = 0; /*0x67a60e*/
   ((unsigned int *)this)[0] = 10; /*0x67a611*/
   ((unsigned int *)this)[0] = 0; /*0x67a618*/
-  this->DynamicVectorClass = &vt_TypeList; /*0x67a61b*/
+  this->DynamicVectorClass = &g_var_131447; /*0x67a61b*/
 return (gamemd::CCINIClass *)&this->DynamicVectorClass; /*0x67a621*/
 
 }
@@ -260,7 +260,7 @@ unsigned int * TypeList_flat::InfantryConstructor()
   ((unsigned int *)this)[0] = 0; /*0x67a82e*/
   ((unsigned int *)this)[0] = 10; /*0x67a831*/
   ((unsigned int *)this)[0] = 0; /*0x67a838*/
-  this->DynamicVectorClass = &vt_TypeList; /*0x67a83b*/
+  this->DynamicVectorClass = &g_var_131447; /*0x67a83b*/
 return (unsigned int *)&this->DynamicVectorClass; /*0x67a841*/
 
 }
@@ -292,7 +292,7 @@ TypeList_flat * TypeList_VoxelAnim::Add(unsigned int * Block, char a2, void *a3_
   void *v3; // eax
 
   v3 = (void *)*((unsigned int *)Block + 1); /*0x67a993*/
-  *(unsigned int *)Block =(unsigned int)(&vt_VectorClass); /*0x67a996*/
+  *(unsigned int *)Block =(unsigned int)(&g_ptr_7E8500); /*0x67a996*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x67a9a0*/
   {
     __3_YAXPAX_Z(v3); /*0x67a9a8*/
@@ -313,7 +313,7 @@ TypeList_flat * TypeList_VoxelAnim::TypeList_vt00(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = (void *)*((unsigned int *)Block + 1); /*0x67a9e3*/
-  *(unsigned int *)Block =(unsigned int)(&vt_VectorClass); /*0x67a9e6*/
+  *(unsigned int *)Block =(unsigned int)(&g_ptr_7E8500); /*0x67a9e6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x67a9f0*/
   {
     __3_YAXPAX_Z(v3); /*0x67a9f8*/
@@ -334,7 +334,7 @@ TypeList_flat * TypeList_cptr_TerrainTypeClass::Add(unsigned int * Block, char a
   void *v3; // eax
 
   v3 = (void *)*((unsigned int *)Block + 1); /*0x67aa33*/
-  *(unsigned int *)Block =(unsigned int)(&vt_VectorClass); /*0x67aa36*/
+  *(unsigned int *)Block =(unsigned int)(&g_ptr_7E8500); /*0x67aa36*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x67aa40*/
   {
     __3_YAXPAX_Z(v3); /*0x67aa48*/
@@ -362,7 +362,7 @@ unsigned int * DynamicVector::Constructor_VoxelAnim(int a2, int a3)
   this->DynamicVector_field_0x8 = a2; /*0x67ac80*/
   this->__pad_C[0] = 1; /*0x67ac83*/
   this->__pad_C[1] = (unsigned int)(0); /*0x67ac87*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_VectorClass); /*0x67ac8b*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)(&g_ptr_7E8500); /*0x67ac8b*/
   if ( a2 ) /*0x67ac91*/
   {
     if ( a3 ) /*0x67ac99*/
@@ -375,7 +375,7 @@ unsigned int * DynamicVector::Constructor_VoxelAnim(int a2, int a3)
       this->__pad_C[1] = 1; /*0x67acaf*/
     }
   }
-  *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_DynamicVectorClass); /*0x67acb3*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)(&g_ptr_7E3238); /*0x67acb3*/
   *(unsigned int *)this->__pad_14 = 10; /*0x67acb9*/
   this->DynamicVector_field_0x10 = 0; /*0x67acc0*/
   return this->__pad_0; /*0x67acc9*/

@@ -5146,8 +5146,8 @@ void **__thiscall SmudgeTypeClass::GetFlag(SmudgeTypeClass *this, int a2)
 
 
 
-// ==== 0x006B55F0  SmudgeTypeClass::vt_entry_A0  this=SmudgeTypeClass  sig=csp ====
-void __thiscall SmudgeTypeClass::vt_entry_A0(SmudgeTypeClass *this, int *a2, int *a3, int a4, int a5, __int16 *a6)
+// ==== 0x006B55F0  SmudgeTypeClass::g_var_3d23dc  this=SmudgeTypeClass  sig=csp ====
+void __thiscall SmudgeTypeClass::g_var_3d23dc(SmudgeTypeClass *this, int *a2, int *a3, int a4, int a5, __int16 *a6)
 {
   int v7; // ebx
   int v8; // edx
@@ -18151,8 +18151,8 @@ void **__thiscall SmudgeTypeClass::GetFlag(SmudgeTypeClass *this, int a2)
 
 
 
-// ==== 0x006B55F0  SmudgeTypeClass::vt_entry_A0  this=SmudgeTypeClass  sig=csp ====
-void __thiscall SmudgeTypeClass::vt_entry_A0(SmudgeTypeClass *this, int *a2, int *a3, int a4, int a5, __int16 *a6)
+// ==== 0x006B55F0  SmudgeTypeClass::g_var_3d23dc  this=SmudgeTypeClass  sig=csp ====
+void __thiscall SmudgeTypeClass::g_var_3d23dc(SmudgeTypeClass *this, int *a2, int *a3, int a4, int a5, __int16 *a6)
 {
   int v7; // ebx
   int v8; // edx

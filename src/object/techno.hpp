@@ -425,7 +425,7 @@ public:
     virtual int CheckState2() const; // 0x5B2E80
     virtual int StubReturn450(); // 0x5B2E40
     virtual void sub_6F60C0();  // 0x6F60C0
-    // wrapper: delegates to TechnoClass::vt_entry_448 at 0x6F60C0
+    // wrapper: delegates to TechnoClass::g_var_370bdd at 0x6F60C0
     virtual int sub_54D28C0();
     virtual int GetTypeFlag() const;  // 0x5224E0
     // wrapper: delegates to TechnoClass::GetTypeFlag at 0x5224E0
@@ -1168,7 +1168,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* Update(int a1, int a2);  // 0x6f3f40
     bool GetField();  // 0x731cf0
     // === G42.41m supplies (ml names; /c-gate) ===
-    uint32_t u32_5D1;  // ml @0x5D1 (vt_entry_4B0 returns)
+    uint32_t u32_5D1;  // ml @0x5D1 (g_var_242f49 returns)
     uint32_t u32_6C4;  // ml @0x6C4 (byte-ptr base use 0x746415)
     uint8_t u32_6E1;  // ml name (0x746400 use)
     uint8_t u32_6E2;  // ml name (0x746400 use)

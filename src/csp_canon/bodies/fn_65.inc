@@ -1051,11 +1051,11 @@ long long Gap2Recv_659FF0::Weapon_Update_Update_659FF0() {
 void* Gap2Recv_65A7E0::Helper_65A7E0(TechnoClass * aP1) {
 
   ObjectClass::Init((ObjectClass *)this, aP1); /*0x65a7e8*/
-  this->radioLinks[0] = (int)&vt_VectorClass; /*0x65a7ed*/
+  this->radioLinks[0] = (int)&g_ptr_7E8500; /*0x65a7ed*/
   /* X11: vtable install elided (implicit via RadioClass virtuals 0x65a7f7) */
-  ((unsigned int *)this)[0] = &vt_RadioClass; /*0x65a7fd*/
-  ((unsigned int *)this)[0] = &vt_RadioClass; /*0x65a804*/
-  ((unsigned int *)this)[0] = &vt_RadioClass; /*0x65a80b*/
+  ((unsigned int *)this)[0] = &g_ptr_7F04DC; /*0x65a7fd*/
+  ((unsigned int *)this)[0] = &g_ptr_7F04DC; /*0x65a804*/
+  ((unsigned int *)this)[0] = &g_ptr_7F04DC; /*0x65a80b*/
   return this; /*0x65a814*/
 
 }
@@ -1171,9 +1171,9 @@ int RadSiteClass::SaveLoad_Prefix(AbstractClass * aP0, int aP1)
       (&aP0->RadLightTimer)[0] = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x65b40c*/
       (&aP0->RadLightTimer)[2] = 0; /*0x65b40f*/
       /* X11: vtable install elided (implicit via RadSiteClass virtuals 0x65b416) */
-      ((unsigned int *)aP0)[0] = (unsigned int)(&vt_RadSiteClass); /*0x65b41c*/
-      ((unsigned int *)aP0)[0] = (unsigned int)(&vt_RadSiteClass); /*0x65b423*/
-      ((unsigned int *)aP0)[0] = (unsigned int)(&vt_RadSiteClass); /*0x65b42a*/
+      ((unsigned int *)aP0)[0] = (unsigned int)(&g_ptr_7F07E4); /*0x65b41c*/
+      ((unsigned int *)aP0)[0] = (unsigned int)(&g_ptr_7F07E4); /*0x65b423*/
+      ((unsigned int *)aP0)[0] = (unsigned int)(&g_ptr_7F07E4); /*0x65b42a*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->LightSource); /*0x65b43a*/
   }
@@ -1228,7 +1228,7 @@ char* Gap2Recv_65C250::WinMain_Helper_65C250(int a2, int aP2) {
   *((unsigned int *)this + 6) = 1; /*0x65c26e*/
   *((unsigned char *)this + 28) = 0; /*0x65c275*/
   *((unsigned char *)this + 29) = 0; /*0x65c278*/
-  *(unsigned int *)this->__pad_0 = &vt_RAMFileClass; /*0x65c27b*/
+  *(unsigned int *)this->__pad_0 = &g_ptr_7F0874; /*0x65c27b*/
   if ( !a2 && aP2 > 0 ) /*0x65c285*/
   {
     this->RAMFileClass_field_0x8 = (AbstractClass *)__2_YAPAXI_Z(aP2); /*0x65c290*/
@@ -1244,7 +1244,7 @@ void Gap2Recv_65C2A0::WinMain_Helper_65C2A0() {
   char v2; // al
 
   v2 = *((unsigned char *)this + 29); /*0x65c2a3*/
-  *(unsigned int *)this->__pad_0 = &vt_RAMFileClass; /*0x65c2a6*/
+  *(unsigned int *)this->__pad_0 = &g_ptr_7F0874; /*0x65c2a6*/
   *((unsigned char *)this + 28) = 0; /*0x65c2ae*/
   if ( v2 ) /*0x65c2b2*/
   {
@@ -1252,7 +1252,7 @@ void Gap2Recv_65C2A0::WinMain_Helper_65C2A0() {
     this->RAMFileClass_field_0x8 = 0; /*0x65c2c0*/
     *((unsigned char *)this + 29) = 0; /*0x65c2c7*/
   }
-  *(unsigned int *)this->__pad_0 = &vt_FileClass; /*0x65c2cb*/
+  *(unsigned int *)this->__pad_0 = &g_ptr_7F08BC; /*0x65c2cb*/
 
 }
 

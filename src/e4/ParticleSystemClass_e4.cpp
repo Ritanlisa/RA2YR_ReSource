@@ -649,7 +649,7 @@ DynamicVector * ParticleSystemClass_32::Constructor_VectorClass_BuildingClass___
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x4ef5d3*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x4ef5d6*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x4ef5d6*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x4ef5e0*/
   {
     operator delete((v3)); /*0x4ef5e8*/
@@ -669,7 +669,7 @@ VectorClass_flat * ParticleSystemClass_16::QueryInterface(unsigned int * Block, 
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x4efd53*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x4efd56*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x4efd56*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x4efd60*/
   {
     operator delete((v3)); /*0x4efd68*/
@@ -689,7 +689,7 @@ VectorClass_flat * ParticleSystemClass_32::QueryInterface(unsigned int * Block, 
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x4efdf3*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x4efdf6*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x4efdf6*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x4efe00*/
   {
     operator delete((v3)); /*0x4efe08*/
@@ -709,7 +709,7 @@ DynamicVector * ParticleSystemClass_32::Constructor_VectorClass_TerrainClass___(
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x4efe43*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x4efe46*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x4efe46*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x4efe50*/
   {
     operator delete((v3)); /*0x4efe58*/
@@ -729,7 +729,7 @@ DynamicVector * ParticleSystemClass_32::Constructor_VectorClass_AircraftClass___
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x4efee3*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x4efee6*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x4efee6*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x4efef0*/
   {
     operator delete((v3)); /*0x4efef8*/

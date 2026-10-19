@@ -187,8 +187,8 @@ int INoticeSource::Dispatch(int a1, void *a2, void *a3, void *a4, void *a5)
 
 }
 
-// ==== BACKFILL 0x00410600  XSurface::vt_entry_40  cls=AbstractClass  sig=csp  renamed_refs=0  residual=- ====
-int XSurface::vt_entry_40(int a1)
+// ==== BACKFILL 0x00410600  XSurface::g_var_326827  cls=AbstractClass  sig=csp  renamed_refs=0  residual=- ====
+int XSurface::g_var_326827(int a1)
 {
 
   AbstractClass *v1; // ecx
@@ -206,9 +206,9 @@ int AbstractTypeClass::Init(int aP1)
   AbstractClass::InitVtables((unsigned int *)this, aP1); /*0x410968*/
   v3 = *((unsigned char *)this + 61); /*0x41096d*/
   /* X11: vtable install elided (implicit via AbstractTypeClass virtuals 0x410975) */
-  *((unsigned int *)this + 1) = (unsigned int)(&vt_AbstractTypeClass); /*0x41097b*/
-  *((unsigned int *)this + 2) = (unsigned int)(&vt_AbstractTypeClass); /*0x410982*/
-  *((unsigned int *)this + 3) = (unsigned int)(&vt_AbstractTypeClass); /*0x410989*/
+  *((unsigned int *)this + 1) = (unsigned int)(&g_ptr_7E1FD4); /*0x41097b*/
+  *((unsigned int *)this + 2) = (unsigned int)(&g_ptr_7E1FD4); /*0x410982*/
+  *((unsigned int *)this + 3) = (unsigned int)(&g_ptr_7E1FD4); /*0x410989*/
   if ( v3 ) /*0x410990*/
     *((unsigned int *)this + 24) = (unsigned int)(GetStringCSF((char *)((char *)this + 61), 0, aDRa2mdpostAbst, 127)); /*0x4109a0*/
   else
@@ -602,8 +602,8 @@ char AircraftClass::ValidateMovement(int a2, int * a3, int a4)
     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00417BD0.json)
 }
 
-// ==== BACKFILL 0x00417C80  ObjectClass::vt_entry_140  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
-int ObjectClass::vt_entry_140(int a1, void* a2, void* a3, void* a4) {
+// ==== BACKFILL 0x00417C80  ObjectClass::g_var_c16898  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
+int ObjectClass::g_var_c16898(int a1, void* a2, void* a3, void* a4) {
   return 0;  /* G42.33b2 restub: auto restub (pass4+, 1 errs): wrong-universe gap2 body; truth func_0x417C80.json */
 }
 
@@ -631,8 +631,8 @@ HRESULT AircraftClass::CheckPassengerCount(int a1, int pPStm, int a3)
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x41B5C0)
 }
 
-// ==== BACKFILL 0x0041B5E0  MissionClass::vt_entry_200  cls=AircraftClass  sig=csp  renamed_refs=0  residual=- ====
-bool MissionClass::vt_entry_200() {
+// ==== BACKFILL 0x0041B5E0  MissionClass::g_var_1fa6c5  cls=AircraftClass  sig=csp  renamed_refs=0  residual=- ====
+bool MissionClass::g_var_1fa6c5() {
   return false;  /* G42.33b2 restub: auto restub (pass4+, 1 errs): wrong-universe gap2 body; truth func_0x41B5E0.json */
 }
 
@@ -764,8 +764,8 @@ int TacticalClass::StubReturnFalse4()
 
 }
 
-// ==== BACKFILL 0x0041BF30  MissionClass::vt_entry_1FC  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
-int MissionClass::vt_entry_1FC()
+// ==== BACKFILL 0x0041BF30  MissionClass::g_var_a00e37  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
+int MissionClass::g_var_a00e37()
 {
 
   int result; // eax
@@ -827,8 +827,8 @@ int TacticalClass::StubReturnFalse9()
 
 }
 
-// ==== BACKFILL 0x0041BFF0  TechnoClass::vt_entry_434  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
-int TechnoClass::vt_entry_434()
+// ==== BACKFILL 0x0041BFF0  TechnoClass::g_var_845aa8  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
+int TechnoClass::g_var_845aa8()
 {
     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0041BFF0.json)
 }
@@ -882,8 +882,8 @@ char AircraftClass::CheckDockState()
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x41C070)
 }
 
-// ==== BACKFILL 0x0041C0F0  FootClass::vt_entry_514  cls=FootClass  sig=csp  renamed_refs=0  residual=- ====
-void FootClass::vt_entry_514() {
+// ==== BACKFILL 0x0041C0F0  FootClass::g_var_3c6d93  cls=FootClass  sig=csp  renamed_refs=0  residual=- ====
+void FootClass::g_var_3c6d93() {
     ; /*0x41c0f0*/
 }
 
@@ -900,13 +900,13 @@ void FootClass::Stub(int a1)
 
 }
 
-// ==== BACKFILL 0x0041C130  FootClass::vt_entry_534  cls=FootClass  sig=csp  renamed_refs=0  residual=- ====
-void FootClass::vt_entry_534(int a2) {
+// ==== BACKFILL 0x0041C130  FootClass::g_var_a270fc  cls=FootClass  sig=csp  renamed_refs=0  residual=- ====
+void FootClass::g_var_a270fc(int a2) {
     ; /*0x41c130*/
 }
 
-// ==== BACKFILL 0x0041C140  FootClass::vt_entry_540  cls=FootClass  sig=csp  renamed_refs=0  residual=- ====
-void FootClass::vt_entry_540() {
+// ==== BACKFILL 0x0041C140  FootClass::g_var_122519  cls=FootClass  sig=csp  renamed_refs=0  residual=- ====
+void FootClass::g_var_122519() {
     ; /*0x41c140*/
 }
 
@@ -1070,8 +1070,8 @@ AircraftClass * AircraftTypeClass::ConstructAircraft(AbstractClass * ppv)
     return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0041CB20.json)
 }
 
-// ==== BACKFILL 0x0041CB50  TechnoTypeClass::vt_entry_A0  cls=AircraftTypeClass  sig=csp  renamed_refs=0  residual=- ====
-char TechnoTypeClass::vt_entry_A0()
+// ==== BACKFILL 0x0041CB50  TechnoTypeClass::g_var_3d23dc  cls=AircraftTypeClass  sig=csp  renamed_refs=0  residual=- ====
+char TechnoTypeClass::g_var_3d23dc()
 {
 
   return 0; /*0x41cb52*/
@@ -1100,8 +1100,8 @@ char AircraftTypeClass::GetDimensions(int a1, int a2)
 
 }
 
-// ==== BACKFILL 0x0041CBF0  ObjectTypeClass::vt_entry_7C  cls=AircraftTypeClass  sig=csp  renamed_refs=0  residual=- ====
-unsigned int * ObjectTypeClass::vt_entry_7C(unsigned int * a1)
+// ==== BACKFILL 0x0041CBF0  ObjectTypeClass::g_var_773e90  cls=AircraftTypeClass  sig=csp  renamed_refs=0  residual=- ====
+unsigned int * ObjectTypeClass::g_var_773e90(unsigned int * a1)
 {
     return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0041CBF0.json)
 }
@@ -1208,9 +1208,9 @@ int AirstrikeClass::Write(AbstractClass * aP0, int aP1)
     {
       AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x41d712*/
       /* X11: vtable install elided (implicit via AirstrikeClass virtuals 0x41d717) */
-      ((unsigned int *)aP0)[0] = (unsigned int)(&vt_AirstrikeClass); /*0x41d71d*/
-      ((unsigned int *)aP0)[0] = (unsigned int)(&vt_AirstrikeClass); /*0x41d724*/
-      ((unsigned int *)aP0)[0] = (unsigned int)(&vt_AirstrikeClass); /*0x41d72b*/
+      ((unsigned int *)aP0)[0] = (unsigned int)(&g_ptr_7E297C); /*0x41d71d*/
+      ((unsigned int *)aP0)[0] = (unsigned int)(&g_ptr_7E297C); /*0x41d724*/
+      ((unsigned int *)aP0)[0] = (unsigned int)(&g_ptr_7E297C); /*0x41d72b*/
     }
     ObjectPtr_RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->owner); /*0x41d73b*/
     ObjectPtr_RegisterForTracking((int)&SwizzleManagerClass_Instance,(int *)(&aP0->AirstrikeClass_field_50)); /*0x41d749*/

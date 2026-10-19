@@ -945,7 +945,7 @@ unsigned int * EventClass::resetEvent(int aP1, int aP2)
   this->q008 = (void *)aP1; /*0x40bd0e*/
   (this->EventClass_field_0xC) = ((this->EventClass_field_0xC) & ~0xFF) | ((1) & 0xFF); /*0x40bd11*/
   (this->EventClass_field_0xC) = ((this->EventClass_field_0xC) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x40bd15*/
-  this->EventClass_field_0x0 = (int)&vt_VectorClass; /*0x40bd18*/
+  this->EventClass_field_0x0 = (int)&g_ptr_7E8500; /*0x40bd18*/
   if ( aP1 ) /*0x40bd1e*/
   {
     if ( aP2 ) /*0x40bd26*/
@@ -1001,8 +1001,8 @@ int VectorClass_flat::FindValue(unsigned int * a2)
     (void)a2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0040CF00.json)
 }
 
-// ==== BACKFILL 0x0040D250  DisplayClass::vt_entry_AC  cls=DisplayClass  sig=csp  renamed_refs=0  residual=- ====
-void DisplayClass::vt_entry_AC() {
+// ==== BACKFILL 0x0040D250  DisplayClass::g_var_cb2eb5  cls=DisplayClass  sig=csp  renamed_refs=0  residual=- ====
+void DisplayClass::g_var_cb2eb5() {
     ; /*0x40d250*/
 }
 
@@ -1037,7 +1037,7 @@ char * AbstractType::FindName()
 // ==== BACKFILL 0x0040E320  GenericNode::Constructor  cls=GenericNode  sig=csp  renamed_refs=0  residual=- ====
 void* GenericNode::Constructor() {
   this->Previous = 0; /*0x40e324*/
-  *(unsigned int *)&this->__pad_0 = (unsigned int)(void *)&vt_GenericNode; /*0x40e32a*/
+  *(unsigned int *)&this->__pad_0 = (unsigned int)(void *)&g_ptr_7E1B0C; /*0x40e32a*/
   return this; /*0x40e330*/
 }
 

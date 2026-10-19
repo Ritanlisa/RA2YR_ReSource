@@ -19,10 +19,10 @@ IsometricTileClass::IsometricTileClass(int aP1, unsigned short *aP2)
 
   this->ObjectClass::ctor(); /*0x543786*/
   this->u32_AC = (unsigned int)(*(IsometricTileClass *)(*(unsigned int *)&((unsigned int *)&stru_A8EB00)[328] + 4 * aP1)); /*0x54379c*/
-  *this = (gamemd::IsometricTileClass)((IsometricTileClass)&vt_IsometricTileClass); /*0x5437a2*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_IsometricTileClass) */  /*0x5437a8*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_IsometricTileClass) */  /*0x5437af*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_IsometricTileClass) */  /*0x5437b6*/
+  *this = (gamemd::IsometricTileClass)((IsometricTileClass)&g_ptr_7EC22C); /*0x5437a2*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7EC22C) */  /*0x5437a8*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7EC22C) */  /*0x5437af*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7EC22C) */  /*0x5437b6*/
   if ( *aP2 != word_AA06D0 || aP2[1] != word_AA06D2 ) /*0x5437d4*/
   {
     this->inLimbo = 0; /*0x543805*/

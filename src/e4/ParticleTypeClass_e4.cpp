@@ -288,7 +288,7 @@ void ParticleTypeClass::ParticleTypeClass_LoadFromINI(uint8_t *** aP1)
   if ( !ObjectTypeClass::LoadFromINI((ObjectTypeClass *)this, aP1) ) /*0x644f6d*/
     return 0; /*0x645417*/
   ParticleTypeClass::Constructor((ParticleTypeClass *)v44, 0, 0); /*0x644f85*/
-  v44[0] = &vt_TypeList_RGBClass; /*0x644f8a*/
+  v44[0] = &g_ptr_7E4E58; /*0x644f8a*/
   inited = (unsigned __int8 *)__0Iostream_init_QAE_XZ_4this->BarrelVoxel); /*0x644f9a*/
   RGBColorList = (unsigned int *)INIClass::ReadRGBColorList( /*0x644fac*/
                              (INIClass *)aP1,
@@ -306,7 +306,7 @@ void ParticleTypeClass::ParticleTypeClass_LoadFromINI(uint8_t *** aP1)
   this->ColorList = RGBColorList[4]; /*0x644fbd*/
   this->ParticleTypeClass_field_0x2CC = RGBColorList[5]; /*0x644fc6*/
   *(unsigned int *)this->__pad_2D0 = RGBColorList[6]; /*0x644fd3*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_RGBClass) */  /*0x644fd9*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E4E38) */  /*0x644fd9*/
   FilePipe_38::ddtor(&v52); /*0x644fe1*/
   Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x644ff5*/
                     (bool *)aP1,
@@ -657,11 +657,11 @@ int ParticleTypeClass::SaveLoad_Prefix(int a1, int a2)
     {
       ObjectTypeClass::Construct((ObjectTypeClass *)v3, (int)&a2); /*0x645689*/
       ParticleTypeClass::Constructor(&v3->ParticleTypeClass_2B8, 0, 0); /*0x645698*/
-      /* X11: ptr_0 install elided (X67 recv-slot, RHS vt_TypeList_RGBClass) */  /*0x64569d*/
-      /* X11: ptr_0 install elided (X67 recv-slot, RHS vt_ParticleTypeClass_4) */  /*0x6456a3*/
-      /* X11: ptr_0 install elided (X67 recv-slot, RHS vt_ParticleTypeClass_4) */  /*0x6456a9*/
-      /* X11: ptr_0 install elided (X67 recv-slot, RHS vt_ParticleTypeClass_4) */  /*0x6456b0*/
-      /* X11: ptr_0 install elided (X67 recv-slot, RHS vt_ParticleTypeClass_4) */  /*0x6456b7*/
+      /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E4E58) */  /*0x64569d*/
+      /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F0188) */  /*0x6456a3*/
+      /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F0188) */  /*0x6456a9*/
+      /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F0188) */  /*0x6456b0*/
+      /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F0188) */  /*0x6456b7*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v3->__pad_2E4); /*0x6456ca*/
     v5 = *v2; /*0x6456cf*/
@@ -734,10 +734,10 @@ ParticleTypeClass * ParticleTypeClass::ddtor(char a2, int a3, int a4, int a5, in
 {
 
 
-  /* X11: ptr_0 install elided (X67 recv-slot, RHS vt_ParticleTypeClass) */  /*0x645956*/
-  /* X11: ptr_0 install elided (X67 recv-slot, RHS vt_ParticleTypeClass) */  /*0x64595c*/
-  /* X11: ptr_0 install elided (X67 recv-slot, RHS vt_ParticleTypeClass) */  /*0x645963*/
-  /* X11: ptr_0 install elided (X67 recv-slot, RHS vt_ParticleTypeClass) */  /*0x64596a*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F015C) */  /*0x645956*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F015C) */  /*0x64595c*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F015C) */  /*0x645963*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F015C) */  /*0x64596a*/
   AbstractClass::AnnounceExpiredPointer(&a3->ArrayIndex, 1); /*0x645971*/
   ParticleTypeClass *v7; // [esp+4h] [ebp-4h] BYREF
   v7 = a3; /*0x645986*/
@@ -774,7 +774,7 @@ ParticleTypeClass * ParticleTypeClass::ddtor(char a2, int a3, int a4, int a5, in
   }
   CampaignClass *ParticleTypeClass_field_0x2BC; // eax
   ParticleTypeClass_field_0x2BC = a3->ParticleTypeClass_field_0x2BC; /*0x645a08*/
-  /* X11: ptr_0 install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x645a0e*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x645a0e*/
   if ( ParticleTypeClass_field_0x2BC && a3->__pad_2C0[5] ) /*0x645a1c*/
   {
     __3_YAXPAX_Z(ParticleTypeClass_field_0x2BC); /*0x645a27*/
@@ -799,7 +799,7 @@ unsigned int * ParticleTypeClass::Constructor(int a2, int a3, void *a3_2, void *
   a3_2->BehavesLike = a3_2; /*0x645a80*/
   (*((unsigned char *)&(a3_2->ParticleTypeClass_field_0xC))) = 1; /*0x645a83*/
   (((unsigned char *)&(a3_2->ParticleTypeClass_field_0xC))[1]) = 0; /*0x645a87*/
-  /* X11: ptr_0 install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x645a8a*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x645a8a*/
   if ( a3_2 ) /*0x645a90*/
   {
     if ( a3_2 ) /*0x645a98*/
@@ -850,7 +850,7 @@ unsigned int * ParticleTypeClass::Constructor(int a2, int a3, void *a3_2, void *
       (((unsigned char *)&(a3_2->ParticleTypeClass_field_0xC))[1]) = 1; /*0x645ae8*/
     }
   }
-  /* X11: ptr_0 install elided (X67 recv-slot, RHS vt_DynamicVectorClass) */  /*0x645aec*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E3238) */  /*0x645aec*/
   a3_2->Damage = 10; /*0x645af2*/
   a3_2->ParticleTypeClass_field_0x10 = 0; /*0x645af9*/
   return &a3_2->ArrayIndex; /*0x645afe*/

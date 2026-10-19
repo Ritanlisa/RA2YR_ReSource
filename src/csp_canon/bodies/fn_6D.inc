@@ -85,10 +85,10 @@ void* Gap2Recv_6D1E30::SmallFunc_6D1E30(AbstractClass * aP1) {
   AbstractClass::InitVtables((AbstractClass *)this, aP1); /*0x6d1e38*/
   this->Tactical_field_0xDA4 = (AbstractClass *)TimerGetTicks(); /*0x6d1e48*/
   *(unsigned int *)&this->__pad_DA8[4] = 0; /*0x6d1e4e*/
-  *(unsigned int *)this->__pad_0 = &vt_Tactical; /*0x6d1e58*/
-  *(unsigned int *)&this->Tactical_field_0x2[2] = &vt_Tactical; /*0x6d1e5e*/
-  this->Tactical_field_0x8[0] = (int)&vt_Tactical; /*0x6d1e65*/
-  this->Tactical_field_0xC[0] = (int)&vt_Tactical; /*0x6d1e6c*/
+  *(unsigned int *)this->__pad_0 = &g_ptr_7F431C; /*0x6d1e58*/
+  *(unsigned int *)&this->Tactical_field_0x2[2] = &g_ptr_7F431C; /*0x6d1e5e*/
+  this->Tactical_field_0x8[0] = (int)&g_ptr_7F431C; /*0x6d1e65*/
+  this->Tactical_field_0xC[0] = (int)&g_ptr_7F431C; /*0x6d1e6c*/
   return this->__pad_0; /*0x6d1e75*/
 
 }

@@ -184,7 +184,7 @@ void * GetINIClassIntList(int a1, unsigned char *** edx0, INIClass * aP1, unsign
     VectorClass::Construct(&v22, 0, 0); /*0x525471*/
     v24 = 10; /*0x52547a*/
     v23 = 0; /*0x525488*/
-    /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList_int) */  /*0x52548c*/
+    /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E4DD8) */  /*0x52548c*/
     for ( i = (ObjectClass *)strtok(String, Delimiter); i; i = (ObjectClass *)strtok(0, Delimiter) ) /*0x52549e*/
     {
       if ( !LOBYTE(i->ptr_0) ) /*0x5254a0*/
@@ -207,13 +207,13 @@ void * GetINIClassIntList(int a1, unsigned char *** edx0, INIClass * aP1, unsign
       }
     }
     IntVector::Copy((IntVector *)a1, &v22); /*0x525514*/
-    /* X11: vtable install elided (X67 star-deref, RHS vt_TypeList_int) */  /*0x52551e*/
+    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E4DD8) */  /*0x52551e*/
     v16 = v24; /*0x525528*/
     a1->q010 = v23; /*0x52552c*/
     Items = (void *)v22.Items; /*0x52552f*/
     v18 = v22.Items == 0; /*0x525533*/
     a1->u32_14 = v16; /*0x525535*/
-    /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass_int) */  /*0x525538*/
+    /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E4DB8) */  /*0x525538*/
     if ( !v18 && v22.IsAllocated[0] ) /*0x525542*/
     {
       __3_YAXPAX_Z(Items); /*0x525545*/
@@ -222,7 +222,7 @@ void * GetINIClassIntList(int a1, unsigned char *** edx0, INIClass * aP1, unsign
     v19 = a6; /*0x525551*/
     v22.IsAllocated[0] = 0; /*0x525558*/
     v22.Capacity = 0; /*0x52555e*/
-    a5 = &vt_VectorClass_int; /*0x525562*/
+    a5 = &g_ptr_7E4DB8; /*0x525562*/
     if ( a6 && HIBYTE(a8) ) /*0x525572*/
       goto LABEL_20; /*0x525572*/
   }
@@ -232,10 +232,10 @@ void * GetINIClassIntList(int a1, unsigned char *** edx0, INIClass * aP1, unsign
     a1->Capacity = 0; /*0x52558a*/
     a1->IsInitialized = 1; /*0x52558d*/
     a1->IsAllocated = 0; /*0x525591*/
-    /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_int) */  /*0x525594*/
+    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E4DB8) */  /*0x525594*/
     TypeList::Copy((TypeList *)a1, &a5); /*0x525596*/
-    /* X11: vtable install elided (X67 star-deref, RHS vt_TypeList_int) */  /*0x52559b*/
-    a5 = &vt_VectorClass_int; /*0x5255a1*/
+    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E4DD8) */  /*0x52559b*/
+    a5 = &g_ptr_7E4DB8; /*0x5255a1*/
     v20 = a10; /*0x5255af*/
     a1->q010 = a9; /*0x5255b6*/
     v19 = a6; /*0x5255b9*/
@@ -1160,9 +1160,9 @@ LABEL_3:
   if ( !CmdLine_NoCD ) /*0x52c3b5*/
   {
     Debug::Log(); /*0x52c3c0*/
-    kk = (int)&vt_CD; /*0x52c3c8*/
-    *(unsigned int *)&v83[60] = &vt_CD; /*0x52c3d1*/
-    if ( !(unsigned __int8)vt_CD(-1) ) /*0x52c3d6*/
+    kk = (int)&g_ptr_7E4C30; /*0x52c3c8*/
+    *(unsigned int *)&v83[60] = &g_ptr_7E4C30; /*0x52c3d1*/
+    if ( !(unsigned __int8)g_ptr_7E4C30(-1) ) /*0x52c3d6*/
     {
 LABEL_68:
       Debug::Log(); /*0x52c3e0*/
@@ -1185,7 +1185,7 @@ LABEL_68:
             break; /*0x52c47e*/
           strcat(Source, asc_81C8FC); /*0x52c4a8*/
         }
-        kk = (int)&vt_CD; /*0x52c4b9*/
+        kk = (int)&g_ptr_7E4C30; /*0x52c4b9*/
         v3 = 0; /*0x52c4be*/
       }
       GameDirectoryCD = (unsigned char *)Game::FindGameDirectoryCD(Source); /*0x52c4cc*/
@@ -1193,8 +1193,8 @@ LABEL_68:
         break; /*0x52c4cf*/
       if ( GameDirectoryCD == 2 ) /*0x52c4d2*/
         goto LABEL_79; /*0x52c4d2*/
-      *(unsigned int *)&v83[44] = &vt_CD; /*0x52c4de*/
-      if ( !(unsigned __int8)vt_CD(dword_81C1D0) ) /*0x52c4ea*/
+      *(unsigned int *)&v83[44] = &g_ptr_7E4C30; /*0x52c4de*/
+      if ( !(unsigned __int8)g_ptr_7E4C30(dword_81C1D0) ) /*0x52c4ea*/
         goto LABEL_68; /*0x52c4ea*/
 LABEL_80:
       if ( !GameDirectoryCD ) /*0x52c582*/
@@ -1203,8 +1203,8 @@ LABEL_80:
         goto LABEL_82; /*0x52c588*/
       }
     }
-    *(unsigned int *)&v83[52] = &vt_CD; /*0x52c4fb*/
-    if ( !(unsigned __int8)vt_CD(dword_81C1D0) ) /*0x52c50c*/
+    *(unsigned int *)&v83[52] = &g_ptr_7E4C30; /*0x52c4fb*/
+    if ( !(unsigned __int8)g_ptr_7E4C30(dword_81C1D0) ) /*0x52c50c*/
       goto LABEL_68; /*0x52c50c*/
 LABEL_79:
     FadePalette(&FileSystem_TEMPERAT_PAL, 0, 0); /*0x52c512*/
@@ -1265,7 +1265,7 @@ LABEL_89:
   {
     Debug::Log(); /*0x52c6fc*/
 LABEL_93:
-    *(unsigned int *)&v83[68] = &vt_CCFileClass; /*0x52c704*/
+    *(unsigned int *)&v83[68] = &g_ptr_7E16B0; /*0x52c704*/
 LABEL_94:
     *(unsigned int *)&v83[168] = 0; /*0x52c70c*/
     Vector::Clear((int)&v83[156]); /*0x52c71a*/
@@ -1288,12 +1288,12 @@ LABEL_94:
   if ( !(unsigned __int8)CCFileClass::Open((CCFileClass *)&v83[176], 0) ) /*0x52c7c1*/
   {
     Debug::Log(); /*0x52c7cf*/
-    *(unsigned int *)&v83[176] = &vt_CCFileClass; /*0x52c7e3*/
+    *(unsigned int *)&v83[176] = &g_ptr_7E16B0; /*0x52c7e3*/
     *(unsigned int *)&v83[276] = 0; /*0x52c7ea*/
     Vector::Clear((int)&v83[264]); /*0x52c7f1*/
     BufferIOFileClass::Destruct((BufferIOFileClass *)&v83[176]); /*0x52c7fd*/
     HashTable::DestroyHashTableINIClass((INIClass *)&v83[284]); /*0x52c809*/
-    *(unsigned int *)&v83[68] = &vt_CCFileClass; /*0x52c80e*/
+    *(unsigned int *)&v83[68] = &g_ptr_7E16B0; /*0x52c80e*/
     goto LABEL_94; /*0x52c812*/
   }
   INIClass::INIClass((INIClass *)&v83[372]); /*0x52c81e*/
@@ -1303,7 +1303,7 @@ LABEL_94:
   {
     Debug::Log(); /*0x52c851*/
     HashTable::DestroyHashTableINIClass((INIClass *)&v83[372]); /*0x52c860*/
-    *(unsigned int *)&v83[176] = &vt_CCFileClass; /*0x52c86c*/
+    *(unsigned int *)&v83[176] = &g_ptr_7E16B0; /*0x52c86c*/
     *(unsigned int *)&v83[276] = 0; /*0x52c877*/
     Vector::Clear((int)&v83[264]); /*0x52c87e*/
     BufferIOFileClass::Destruct((BufferIOFileClass *)&v83[176]); /*0x52c88a*/
@@ -1453,7 +1453,7 @@ void InitRules()
   struct _WIN32_FIND_DATAA FindFileData; // [esp+1DCh] [ebp-140h] BYREF
 
   RulesClass::InitINIChain((RulesClass *)&dwInitParam, 0, 0); /*0x52cd82*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_DynamicVectorClass_CCINIClass) */  /*0x52cd8e*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EB82C) */  /*0x52cd8e*/
   v18 = 10; /*0x52cd9c*/
   *(unsigned int *)dwInitParam.__tail_10 = 0; /*0x52cda4*/
   v16 = 0; /*0x52cda8*/
@@ -1517,7 +1517,7 @@ LABEL_15:
       ++*(unsigned int *)dwInitParam.__tail_10; /*0x52ce9b*/
     }
 LABEL_24:
-    /* X11: vtable install elided (X67 star-deref, RHS vt_CCFileClass) */  /*0x52cee4*/
+    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x52cee4*/
     v21 = 0; /*0x52cef3*/
     Vector::Clear((int)v20); /*0x52cefa*/
     *(unsigned int *)v19.__pad_0 = &off_7E1668; /*0x52cf03*/
@@ -1562,7 +1562,7 @@ LABEL_36:
       v9 = *(unsigned int *)dwInitParam.__tail_10; /*0x52cfa9*/
       goto LABEL_36; /*0x52cfa9*/
     }
-    /* X11: vtable install elided (X67 star-deref, RHS vt_CCFileClass) */  /*0x52cfe1*/
+    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x52cfe1*/
     v21 = 0; /*0x52cfe5*/
     Vector::Clear((int)v20); /*0x52cfec*/
     *(unsigned int *)v19.__pad_0 = &off_7E1668; /*0x52cffa*/
@@ -1570,7 +1570,7 @@ LABEL_36:
   }
   if ( *(int *)dwInitParam.__tail_10 <= 0 ) /*0x52d013*/
   {
-    /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_CCINIClass) */  /*0x52d019*/
+    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EB80C) */  /*0x52d019*/
     VectorClass_ptr_CCINIClass::ddtor(&dwInitParam); /*0x52d021*/
     return 0; /*0x52d032*/
   }
@@ -1578,12 +1578,12 @@ LABEL_36:
   if ( !CCINIClass::Load((CCINIClass *)&DSurface_ViewBounds.__pad_FC[228], (int)&v22, 0, 0) ) /*0x52d053*/
   {
     Debug::Log(); /*0x52d061*/
-    /* X11: vtable install elided (X67 star-deref, RHS vt_CCFileClass) */  /*0x52d070*/
+    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x52d070*/
     v24 = 0; /*0x52d077*/
     Vector::Clear((int)v23); /*0x52d07e*/
     *(unsigned int *)v22.__tail_0 = &off_7E1668; /*0x52d08a*/
     BufferIOFileClass::Dtor((BufferIOFileClass *)&v22); /*0x52d091*/
-    /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_CCINIClass) */  /*0x52d09a*/
+    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EB80C) */  /*0x52d09a*/
     VectorClass_ptr_CCINIClass::ddtor(&dwInitParam); /*0x52d0a2*/
     return 0; /*0x52d0b3*/
   }
@@ -1631,17 +1631,17 @@ LABEL_36:
     if ( CCINIClass::Load(&v19, (int)&v25, 1, 0) > 1 ) /*0x52d277*/
     {
       HashTable::DestroyHashTableINIClass((INIClass *)&v19); /*0x52d281*/
-      /* X11: vtable install elided (X67 star-deref, RHS vt_CCFileClass) */  /*0x52d28d*/
+      /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x52d28d*/
       v27 = 0; /*0x52d294*/
       Vector::Clear((int)v26); /*0x52d29b*/
       *(unsigned int *)v25.__tail_0 = &off_7E1668; /*0x52d2a7*/
       BufferIOFileClass::Dtor((BufferIOFileClass *)&v25); /*0x52d2ae*/
-      /* X11: vtable install elided (X67 star-deref, RHS vt_CCFileClass) */  /*0x52d2ba*/
+      /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x52d2ba*/
       v24 = 0; /*0x52d2c1*/
       Vector::Clear((int)v23); /*0x52d2c8*/
       *(unsigned int *)v22.__tail_0 = &off_7E1668; /*0x52d2d4*/
       BufferIOFileClass::Dtor((BufferIOFileClass *)&v22); /*0x52d2db*/
-      /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_CCINIClass) */  /*0x52d2e4*/
+      /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EB80C) */  /*0x52d2e4*/
       if ( *(unsigned int *)&dwInitParam.m_1[3] ) /*0x52d2ee*/
       {
         if ( BYTE1(dwInitParam.m_C) ) /*0x52d2f4*/
@@ -1670,22 +1670,22 @@ LABEL_36:
   }
   CCFileClass::Construct(&v28, aAimdIni); /*0x52d363*/
   CCINIClass::Load((CCINIClass *)&DSurface_ViewBounds.__pad_FC[140], (int)&v28, 1, 0); /*0x52d378*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_CCFileClass) */  /*0x52d384*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x52d384*/
   v29[3] = 0; /*0x52d38b*/
   Vector::Clear((int)v29); /*0x52d392*/
   *(unsigned int *)v28.__tail_0 = &off_7E1668; /*0x52d39e*/
   BufferIOFileClass::Dtor((BufferIOFileClass *)&v28); /*0x52d3a5*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_CCFileClass) */  /*0x52d3b1*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x52d3b1*/
   v27 = 0; /*0x52d3b8*/
   Vector::Clear((int)v26); /*0x52d3bf*/
   *(unsigned int *)v25.__tail_0 = &off_7E1668; /*0x52d3cb*/
   BufferIOFileClass::Dtor((BufferIOFileClass *)&v25); /*0x52d3d2*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_CCFileClass) */  /*0x52d3de*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x52d3de*/
   v24 = 0; /*0x52d3e5*/
   Vector::Clear((int)v23); /*0x52d3ec*/
   *(unsigned int *)v22.__tail_0 = &off_7E1668; /*0x52d3f8*/
   BufferIOFileClass::Dtor((BufferIOFileClass *)&v22); /*0x52d3ff*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_CCINIClass) */  /*0x52d408*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EB80C) */  /*0x52d408*/
   if ( *(unsigned int *)&dwInitParam.m_1[3] && BYTE1(dwInitParam.m_C) ) /*0x52d418*/
     __3_YAXPAX_Z(*(void **)&dwInitParam.m_1[3]); /*0x52d41b*/
   return 1; /*0x52d028*/
@@ -2336,8 +2336,8 @@ LABEL_134:
         }
         else
         {
-          v59 = (CD)&vt_CD; /*0x52de8d*/
-          if ( (unsigned __int8)vt_CD(*(unsigned int *)(v18 + 8)) ) /*0x52de9d*/
+          v59 = (CD)&g_ptr_7E4C30; /*0x52de8d*/
+          if ( (unsigned __int8)g_ptr_7E4C30(*(unsigned int *)(v18 + 8)) ) /*0x52de9d*/
           {
             Movie::Play(-1, -1, j, *(const char **)j, 1, 1, 1, 0); /*0x52deb6*/
             Screen::Capture(1, 0, 0, -1); /*0x52debf*/
@@ -3312,7 +3312,7 @@ void E4Recv_52AAF0::sub_52AAF0()
   void *v7; // [esp-8h] [ebp-10h]
 
   v2 = (void *)this->u32_C; /*0x52aaf4*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_INIClass_INIEntry) */  /*0x52aaf7*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EB734) */  /*0x52aaf7*/
   free(v2); /*0x52aafe*/
   v7 = (void *)this->ptr_10; /*0x52ab08*/
   this->u32_C = 0; /*0x52ab09*/
@@ -3332,7 +3332,7 @@ void E4Recv_52AAF0::sub_52AAF0()
   }
   free(this->u32_18); /*0x52ab47*/
   this->u32_18 = 0; /*0x52ab51*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_GenericNode) */  /*0x52ab54*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E1B0C) */  /*0x52ab54*/
   if ( this ) /*0x52ab5a*/
   {
     v5 = this->u32_4; /*0x52ab5c*/

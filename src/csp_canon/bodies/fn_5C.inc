@@ -418,11 +418,11 @@ int ObjectClass::ReadMPMapsINI(char* Source) {
   GenericNode::Constructor((GenericNode *)v4.sectionHead); /*0x5c132d*/
   GenericNode::Constructor((GenericNode *)&v4.sectionCount); /*0x5c1336*/
   LinkedList::Prepend((LinkedList *)v4.sectionHead, (int)&v4.sectionCount); /*0x5c134c*/
-  v4.headNode[2] = (int)&vt_List; /*0x5c1355*/
+  v4.headNode[2] = (int)&g_var_a3009f; /*0x5c1355*/
   memset(&v4.__pad_20[8], 0, 13); /*0x5c1363*/
   v4.unknown38 = 0; /*0x5c1373*/
   v4.INIClass_field_3C = 0; /*0x5c1377*/
-  *(unsigned int *)v4.__pad_0 = &vt_INIClass; /*0x5c137b*/
+  *(unsigned int *)v4.__pad_0 = &g_ptr_7EA5F4; /*0x5c137b*/
   if ( FileStraw::Open((FileStraw *)&v4, (int)&v5, 0) ) /*0x5c1383*/
   {
     Int_Overwrite = 0; /*0x5c13cd*/
@@ -439,7 +439,7 @@ int ObjectClass::ReadMPMapsINI(char* Source) {
                         (uint8_t *)&(unsigned int *)((char *)&stru_82BA00 + 139),
                         0);
     HashTable::DestroyHashTableINIClass(&v4); /*0x5c1429*/
-    *(unsigned int *)v5.CDFileClass = &vt_CCFileClass; /*0x5c1435*/
+    *(unsigned int *)v5.CDFileClass = &g_ptr_7E16B0; /*0x5c1435*/
     v7 = 0; /*0x5c143d*/
     Vector::Clear((int)v6); /*0x5c1444*/
     *(unsigned int *)v5.CDFileClass = &off_7E1668; /*0x5c144d*/
@@ -449,7 +449,7 @@ int ObjectClass::ReadMPMapsINI(char* Source) {
   else
   {
     HashTable::DestroyHashTableINIClass(&v4); /*0x5c1390*/
-    *(unsigned int *)v5.CDFileClass = &vt_CCFileClass; /*0x5c139c*/
+    *(unsigned int *)v5.CDFileClass = &g_ptr_7E16B0; /*0x5c139c*/
     v7 = 0; /*0x5c13a4*/
     Vector::Clear((int)v6); /*0x5c13ab*/
     *(unsigned int *)v5.CDFileClass = &off_7E1668; /*0x5c13b4*/
@@ -695,7 +695,7 @@ DynamicVector * MPCooperative::saveGameState(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x5c4fc3*/
-  *Block = &vt_VectorClass; /*0x5c4fc6*/
+  *Block = &g_ptr_7E8500; /*0x5c4fc6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x5c4fd0*/
   {
     __3_YAXPAX_Z(v3); /*0x5c4fd8*/
@@ -1104,7 +1104,7 @@ VectorClass_flat * MPCooperative::verifyGameIntegrity(unsigned int * Block, char
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x5c5853*/
-  *Block = &vt_VectorClass; /*0x5c5856*/
+  *Block = &g_ptr_7E8500; /*0x5c5856*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x5c5860*/
   {
     __3_YAXPAX_Z(v3); /*0x5c5868*/
@@ -1125,7 +1125,7 @@ VectorClass_flat * MPCooperative::processVote(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x5c58a3*/
-  *Block = &vt_VectorClass; /*0x5c58a6*/
+  *Block = &g_ptr_7E8500; /*0x5c58a6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x5c58b0*/
   {
     __3_YAXPAX_Z(v3); /*0x5c58b8*/
@@ -1146,7 +1146,7 @@ DynamicVector * MPCooperative::tallyVotes(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x5c5993*/
-  *Block = &vt_VectorClass; /*0x5c5996*/
+  *Block = &g_ptr_7E8500; /*0x5c5996*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x5c59a0*/
   {
     __3_YAXPAX_Z(v3); /*0x5c59a8*/
@@ -1168,7 +1168,7 @@ unsigned int * MPCooperative::applyVoteResult(int a2, int a3)
   this->MPCooperative_field_0x8 = (void *)a2; /*0x5c59ee*/
   LOBYTE(this->MPCooperative_field_0xC) = 1; /*0x5c59f1*/
   BYTE1(this->MPCooperative_field_0xC) = 0; /*0x5c59f5*/
-  this->MPCooperative_field_0x0 = &vt_VectorClass; /*0x5c59f8*/
+  this->MPCooperative_field_0x0 = &g_ptr_7E8500; /*0x5c59f8*/
   if ( a2 ) /*0x5c59fe*/
   {
     if ( a3 ) /*0x5c5a06*/
@@ -1196,7 +1196,7 @@ _DWORD * CoopCampaignVector::Construct(int aP1, int aP2)
   this->CoopCampaignVector_field_0x08 = (unsigned int)(aP1);
   (this->CoopCampaignVector_field_0x0C) = ((this->CoopCampaignVector_field_0x0C) & ~0xFF) | ((1) & 0xFF); /*0x5c5a91*/
   (this->CoopCampaignVector_field_0x0C) = ((this->CoopCampaignVector_field_0x0C) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x5c5a95*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_VectorClass); /*0x5c5a98*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)(&g_ptr_7E8500); /*0x5c5a98*/
   if ( aP1 ) /*0x5c5a9e*/
   {
     if ( aP2 ) /*0x5c5aa6*/
@@ -1687,7 +1687,7 @@ void* Gap2Recv_5CE4A0::UI_Load(char* a2, int a3, char a4) {
   *((unsigned char *)this + 12) = 0; /*0x5ce4b7*/
   *((unsigned int *)this + 4) = TimerGetTicks(); /*0x5ce4d4*/
   *((unsigned int *)this + 6) = 0; /*0x5ce4d7*/
-  *(unsigned int *)this->__pad_0 = &vt_MSAnim; /*0x5ce4da*/
+  *(unsigned int *)this->__pad_0 = &g_ptr_7EE8E8; /*0x5ce4da*/
   v5 = (MSAnim *)((char *)this + 44); /*0x5ce4e5*/
   *((unsigned int *)this + 7) = DSurface_Alternate; /*0x5ce4e8*/
   *((unsigned int *)this + 8) = a3; /*0x5ce4eb*/
@@ -1698,7 +1698,7 @@ void* Gap2Recv_5CE4A0::UI_Load(char* a2, int a3, char a4) {
   *((unsigned int *)this + 12) = 0; /*0x5ce4f9*/
   *((unsigned int *)this + 13) = 0; /*0x5ce4fc*/
   *((unsigned int *)this + 14) = 0; /*0x5ce4ff*/
-  *(unsigned int *)this->__pad_0 = &vt_MSPCXAnim; /*0x5ce505*/
+  *(unsigned int *)this->__pad_0 = &g_ptr_7EEA2C; /*0x5ce505*/
   *((unsigned char *)this + 12) = 1; /*0x5ce50b*/
   if ( (uint8_t)String::NotEquals((String *)a2, 0) ) /*0x5ce50f*/
   {
@@ -1731,7 +1731,7 @@ void* Gap2Recv_5CE4A0::UI_Load(char* a2, int a3, char a4) {
         *((unsigned int *)this + 12) = v15 / 2 + v14; /*0x5ce5ed*/
       }
     }
-    *(unsigned int *)v19.CDFileClass = &vt_CCFileClass; /*0x5ce5f7*/
+    *(unsigned int *)v19.CDFileClass = &g_ptr_7E16B0; /*0x5ce5f7*/
     v21 = 0; /*0x5ce5ff*/
     Vector::Clear((int)v20); /*0x5ce606*/
     *(unsigned int *)v19.CDFileClass = &off_7E1668; /*0x5ce60f*/
@@ -1803,7 +1803,7 @@ char* Gap2Recv_5CEDD0::Map_Delete_5CEDD0() {
   this->DynamicVector_field_0x8 = 0; /*0x5cede0*/
   this->__pad_C[0] = 1; /*0x5cede3*/
   this->__pad_C[1] = 0; /*0x5cede7*/
-  *(unsigned int *)this->__pad_0 = &vt_DynamicVectorClass; /*0x5cedea*/
+  *(unsigned int *)this->__pad_0 = &g_ptr_7E3238; /*0x5cedea*/
   *(unsigned int *)this->__pad_14 = 10; /*0x5cedf0*/
   this->DynamicVector_field_0x10 = 0; /*0x5cedf7*/
   unknown_libname_73(&this->DynamicVector_field_0x28); /*0x5cedfa*/
@@ -1811,14 +1811,14 @@ char* Gap2Recv_5CEDD0::Map_Delete_5CEDD0() {
   *((unsigned int *)this + 13) = 0; /*0x5cee0c*/
   *((unsigned char *)this + 56) = 1; /*0x5cee0f*/
   *((unsigned char *)this + 57) = 0; /*0x5cee13*/
-  *((unsigned int *)this + 11) = &vt_DynamicVectorClass; /*0x5cee16*/
+  *((unsigned int *)this + 11) = &g_ptr_7E3238; /*0x5cee16*/
   *((unsigned int *)this + 16) = 10; /*0x5cee1c*/
   *((unsigned int *)this + 15) = 0; /*0x5cee1f*/
   *((unsigned int *)this + 18) = 0; /*0x5cee22*/
   *((unsigned int *)this + 19) = 0; /*0x5cee25*/
   *((unsigned char *)this + 80) = 1; /*0x5cee28*/
   *((unsigned char *)this + 81) = 0; /*0x5cee2c*/
-  *((unsigned int *)this + 17) = &vt_DynamicVectorClass; /*0x5cee2f*/
+  *((unsigned int *)this + 17) = &g_ptr_7E3238; /*0x5cee2f*/
   *((unsigned int *)this + 22) = 10; /*0x5cee36*/
   *((unsigned int *)this + 21) = 0; /*0x5cee39*/
   (*(void (**)(DynamicVector *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x5cee3e*/

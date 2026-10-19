@@ -46,28 +46,28 @@ public:
     // wrapper: delegates to DisplayClass::ddtor at 0x4A8930
     virtual const wchar_t* GetToolTip(unsigned int dialog_id) override;
     // G42.33: binary truth -- 0x7C865C (CloseWindow) has no vtable xref; the
-    // vtable slot is the separate vt_entry_8C wrapper. Plain non-virtual here
+    // vtable slot is the separate g_var_5463b9 wrapper. Plain non-virtual here
     // and in GScreenClass keeps the vtable model unchanged.
     int CloseWindow();
     // wrapper: delegates to CloseWindow at 0x7C865C
-    virtual void vt_entry_8C() override;
+    virtual void g_var_5463b9() override;
     // unmatched: no callgraph reference and no git history record
-    virtual bool vt_entry_90(const CellStruct& cell, HouseClass* house);
-    virtual bool vt_entry_94(const CellStruct& cell, HouseClass* house, bool unk);
+    virtual bool g_var_487457(const CellStruct& cell, HouseClass* house);
+    virtual bool g_var_72f2d5(const CellStruct& cell, HouseClass* house, bool unk);
     // unmatched: no callgraph reference and no git history record
-    virtual bool vt_entry_98(const CellStruct& cell, HouseClass* house);
+    virtual bool g_var_33fd16(const CellStruct& cell, HouseClass* house);
     // unmatched: no callgraph reference and no git history record
-    virtual bool vt_entry_9C(const CellStruct& cell, HouseClass* house);
+    virtual bool g_var_d6ef1e(const CellStruct& cell, HouseClass* house);
 
     // design: pure virtual function, no binary implementation
     virtual MouseCursorType GetLastMouseCursor() = 0;
-    // wrapper: delegates to DisplayClass::vt_entry_94 at 0x4A9CA0
-    virtual bool vt_entry_A4(uint32_t unk1, uint32_t unk2, uint32_t unk3);
+    // wrapper: delegates to DisplayClass::g_var_72f2d5 at 0x4A9CA0
+    virtual bool g_var_4da35c(uint32_t unk1, uint32_t unk2, uint32_t unk3);
     virtual void SetViewDimensions(const RectangleStruct& rect);
 virtual void sub_40D250(void);  // 0x40D250
 virtual void sub_4AAD20(void);  // 0x4AAD20
-    // wrapper: delegates to DisplayClass::vt_entry_B0 at 0x4AAD20
-    virtual void vt_entry_B4(Point2D* point);
+    // wrapper: delegates to DisplayClass::g_var_2eb6a7 at 0x4AAD20
+    virtual void g_var_d9c98f(Point2D* point);
 
     // unmatched: no callgraph reference and no git history record
     virtual bool ConvertAction(

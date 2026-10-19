@@ -378,7 +378,7 @@ void sub_6D1AA0()
 {
   if ( (byte_B0CD58 & 1) == 0 ) /*0x6d1aaa*/
   {
-    dword_B0CE78 = (int)&vt_VectorClass; /*0x6d1aae*/
+    dword_B0CE78 = (int)&g_ptr_7E8500; /*0x6d1aae*/
     byte_B0CD58 |= 1u; /*0x6d1ac1*/
     if ( g_CraterPool ) /*0x6d1ac7*/
     {
@@ -402,7 +402,7 @@ int sub_6D1B10()
   dword_B0CDF0 = 0; /*0x6d1b1c*/
   byte_B0CDF4 = 1; /*0x6d1b21*/
   byte_B0CDF5 = 0; /*0x6d1b28*/
-  dword_B0CDE8 = (int)&vt_DynamicVectorClass; /*0x6d1b2d*/
+  dword_B0CDE8 = (int)&g_ptr_7E3238; /*0x6d1b2d*/
   dword_B0CDFC = 10; /*0x6d1b37*/
   dword_B0CDF8 = 0; /*0x6d1b41*/
   return atexit(sub_6D1B50); /*0x6d1b4c*/
@@ -415,7 +415,7 @@ void sub_6D1B50()
 {
   if ( (byte_B0CD59 & 1) == 0 ) /*0x6d1b5a*/
   {
-    dword_B0CDE8 = (int)&vt_VectorClass; /*0x6d1b5e*/
+    dword_B0CDE8 = (int)&g_ptr_7E8500; /*0x6d1b5e*/
     byte_B0CD59 |= 1u; /*0x6d1b71*/
     if ( dword_B0CDEC ) /*0x6d1b77*/
     {
@@ -454,9 +454,9 @@ void E4Recv_6D1E80::sub_6D1E80()
 {
 
   /* X11: vtable install elided (implicit via Tactical virtuals 0x6d1e80) */
-  /* X11: vtable install elided (X67 star-deref, RHS vt_Tactical) */  /*0x6d1e86*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_Tactical) */  /*0x6d1e8d*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_Tactical) */  /*0x6d1e94*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7F431C) */  /*0x6d1e86*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F431C) */  /*0x6d1e8d*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F431C) */  /*0x6d1e94*/
   g_TacticalClass_Instance = 0; /*0x6d1e9b*/
   ((AbstractClass *)this)->DTOR(); /*0x6d1ea5*/
 
@@ -840,7 +840,7 @@ int sub_6DCF80()
 namespace gamemd {
 void sub_6DCFC0()
 {
-  dword_B0E658 = (int)&vt_VectorClass; /*0x6dcfc8*/
+  dword_B0E658 = (int)&g_ptr_7E8500; /*0x6dcfc8*/
   if ( dword_B0E65C && byte_B0E665 ) /*0x6dcfdc*/
   {
     operator delete((void *)(dword_B0E65C)); /*0x6dcfdf*/

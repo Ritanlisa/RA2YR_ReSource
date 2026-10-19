@@ -43,14 +43,14 @@ using ra2::game::AbstractClass;
 namespace gamemd { int ProcessTechnoMovementAction(char *p_this); }  // x4:ida@0x415c60
 
 // G57w10: q000 externs (truth e4_globals_decls)
-extern unsigned char vt_DynamicVectorClass_Cell[4];  // data: 0x7E3890  // G57w10 vftable residue fix
-extern unsigned char vt_DynamicVectorClass_CellClass[4];  // data: 0x7ED9BC  // G57w10 vftable residue fix
-extern unsigned char vt_DynamicVectorClass_ParticleClass[4];  // data: 0x7E9D64  // G57w10 vftable residue fix
-extern unsigned char vt_VectorClass_AnimTypeClass_const[4];  // data: 0x7EB6F4  // G57w10 vftable residue fix
-extern unsigned char vt_VectorClass_Cell[4];  // data: 0x7E38D0  // G57w10 vftable residue fix
-extern unsigned char vt_VectorClass_CellClass[4];  // data: 0x7ED480  // G57w10 vftable residue fix
-extern unsigned char vt_VectorClass_ParticleClass[4];  // data: 0x7E9D84  // G57w10 vftable residue fix
-extern unsigned char vt_VectorClass_SmudgeClass[4];  // data: 0x7E9DC4  // G57w10 vftable residue fix
+extern unsigned char g_ptr_7E3890[4];  // data: 0x7E3890  // G57w10 vftable residue fix
+extern unsigned char g_ptr_7ED9BC[4];  // data: 0x7ED9BC  // G57w10 vftable residue fix
+extern unsigned char g_ptr_7E9D64[4];  // data: 0x7E9D64  // G57w10 vftable residue fix
+extern unsigned char g_ptr_7EB6F4[4];  // data: 0x7EB6F4  // G57w10 vftable residue fix
+extern unsigned char g_ptr_7E38D0[4];  // data: 0x7E38D0  // G57w10 vftable residue fix
+extern unsigned char g_ptr_7ED480[4];  // data: 0x7ED480  // G57w10 vftable residue fix
+extern unsigned char g_ptr_7E9D84[4];  // data: 0x7E9D84  // G57w10 vftable residue fix
+extern unsigned char g_ptr_7E9DC4[4];  // data: 0x7E9DC4  // G57w10 vftable residue fix
 // 0x415EE0
 namespace gamemd { 
 void* BulletClass::FlightUpdate(int a1, int a2) {
@@ -6131,7 +6131,7 @@ bool ParticleClass::CheckMirrorState(int a1) {
 }
 // 0x62D830
 namespace gamemd { 
-int ParticleClass::vt_entry_1E8() {
+int ParticleClass::g_var_22c88d() {
   int v2; // eax
   int v3; // eax
   int v5[2]; // [esp+4h] [ebp-10h] BYREF
@@ -6521,7 +6521,7 @@ int ParticleClass::CreateInstance(void* a1, float a2, int a3) {
   if ( this->Owner < v8 /*0x62e55d*/
     || (this->q0C9 || !v8)
     && (v9 = this->Target, v9 > 0)
-    && this->Particles.vt_entry_40(v8 + v9, 0) )
+    && this->Particles.g_var_326827(v8 + v9, 0) )
   {
     v10 = this->Owner; /*0x62e564*/
     v11 = this->TargetCoords; /*0x62e567*/
@@ -6612,7 +6612,7 @@ void ParticleSystemClass::UpdateAllParticles() {
             if ( (int)this->Owner < v17 /*0x62e7d5*/
               || ((this->u8_D9) || !v17)
               && (Target = this->Target, (int)Target > 0)
-              && this->Particles->vt_entry_40((int)Target + v17, 0) )
+              && this->Particles->g_var_326827((int)Target + v17, 0) )
             {
               Owner = this->Owner; /*0x62e7dc*/
               v20 = this->TargetCoords[0]; /*0x62e7df*/

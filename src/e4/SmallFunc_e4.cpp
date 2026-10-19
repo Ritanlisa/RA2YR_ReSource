@@ -103,8 +103,8 @@ namespace gamemd {
 void sub_40D1B0()
 {
 
-  *(unsigned int *)&DataGlobal_87F7E8 = (unsigned int)(&vt_MouseClass); /*0x40d1b2*/
-  dword_884D00 = (int)&vt_MouseClass; /*0x40d1bc*/
+  *(unsigned int *)&DataGlobal_87F7E8 = (unsigned int)(&g_ptr_7E195C); /*0x40d1b2*/
+  dword_884D00 = (int)&g_ptr_7E195C; /*0x40d1bc*/
   int *v0; // esi
   v0 = (int *)(&dword_884B84); /*0x40d1c6*/
   int v1 = 4; // edi /*0x40d1cb*/
@@ -203,9 +203,9 @@ int E4Recv_5AFEF0::sub_5AFEF0()
   int v2; // eax
   v2 = g_MissionQueueFrame.localVariables[229]; /*0x5aff29*/
   this->IsMoving = 0; /*0x5aff2e*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_MechLocomotionClass) */  /*0x5aff32*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EDB6C) */  /*0x5aff32*/
   this->HeadToCoord[2] = v2; /*0x5aff38*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_MechLocomotionClass) */  /*0x5aff3b*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EDB6C) */  /*0x5aff3b*/
   return (int)this->LocomotionClass; /*0x5aff44*/
 
 }
@@ -314,8 +314,8 @@ int E4Recv_728A00::sub_728A00()
   this->CurrentState[6] = 0; /*0x728a33*/
   this->CurrentState[7] = 0; /*0x728a36*/
   LOBYTE(this->CurrentState[8]) = 0; /*0x728a39*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_TunnelLocomotionClass) */  /*0x728a3c*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_TunnelLocomotionClass) */  /*0x728a42*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7F5A24) */  /*0x728a3c*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7F5A24) */  /*0x728a42*/
   return (int)this->LocomotionClass; /*0x728a4b*/
 
 }

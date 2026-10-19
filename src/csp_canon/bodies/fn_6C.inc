@@ -2102,7 +2102,7 @@ unsigned int * E4Recv_6C6540::sub_6C6540(int a2, wchar_t * String, int a4, int a
   ((Buffer*)((Buffer *)((char *)this + 36)))->Init(0, 0); /*0x6c656c*/
   *((unsigned int *)this + 12) = 0; /*0x6c657e*/
   *((unsigned int *)this + 13) = a4; /*0x6c6585*/
-  *(unsigned int *)this = (unsigned int)&vt_StaticButtonClass; /*0x6c6588 G42.33 b9 truth: mov [esi], offset vt*/
+  *(unsigned int *)this = (unsigned int)&g_ptr_7F3EA0; /*0x6c6588 G42.33 b9 truth: mov [esi], offset vt*/
   StaticButtonClass::Draw(this, String, 0); /*0x6c658e*/
   if ( aP3 == -1 || aP4 == -1 ) /*0x6c659b*/
   {
@@ -2126,7 +2126,7 @@ StaticButtonClass * StaticButtonClass::QueryInterface(char a2)
 void * E4Recv_6C8840::sub_6C8840(unsigned int * Block, char a2)  // G42.33 b9 hpp void* sync
 {
 
-  *(unsigned int *)Block = (unsigned int)&vt_rc_ptr; /*0x6c8843*/
+  *(unsigned int *)Block = (unsigned int)&g_var_5878c0; /*0x6c8843*/
   ((ComPtr *)((ComPtr *)Block))->Release(); /*0x6c8849*/
   if ( (a2 & 1) != 0 ) /*0x6c8853*/
     __3_YAXPAX_Z(Block); /*0x6c8856*/
@@ -2751,10 +2751,10 @@ void Gap2Recv_6CF1D0::SmallFunc_6CF1D0() {
   void *SwizzleManagerClass_field_0x20; // eax
   void *SwizzleManagerClass_field_0x08; // eax
 
-  *(unsigned int *)this->__pad_0 = &vt_SwizzleManagerClass; /*0x6cf1d4*/
+  *(unsigned int *)this->__pad_0 = &g_ptr_7F4108; /*0x6cf1d4*/
   SwizzleManagerClass::ConvertNodes((int)this); /*0x6cf1da*/
   SwizzleManagerClass_field_0x20 = (void *)this->SwizzleManagerClass_field_0x20; /*0x6cf1df*/
-  this->SwizzleManagerClass_field_0x1C = (int)&vt_VectorClass; /*0x6cf1e6*/
+  this->SwizzleManagerClass_field_0x1C = (int)&g_ptr_7E8500; /*0x6cf1e6*/
   if ( SwizzleManagerClass_field_0x20 && *((unsigned char *)this + 41) ) /*0x6cf1ef*/
   {
     __3_YAXPAX_Z(SwizzleManagerClass_field_0x20); /*0x6cf1f5*/
@@ -2763,7 +2763,7 @@ void Gap2Recv_6CF1D0::SmallFunc_6CF1D0() {
   *((unsigned char *)this + 41) = 0; /*0x6cf200*/
   this->SwizzleManagerClass_field_0x24 = 0; /*0x6cf203*/
   SwizzleManagerClass_field_0x08 = (void *)this->SwizzleManagerClass_field_0x08; /*0x6cf206*/
-  this->SwizzleManagerClass_field_0x04 = (int)&vt_VectorClass; /*0x6cf209*/
+  this->SwizzleManagerClass_field_0x04 = (int)&g_ptr_7E8500; /*0x6cf209*/
   if ( SwizzleManagerClass_field_0x08 && BYTE1(this->SwizzleManagerClass_field_0x10) ) /*0x6cf214*/
   {
     __3_YAXPAX_Z(SwizzleManagerClass_field_0x08); /*0x6cf21a*/
@@ -2831,7 +2831,7 @@ unsigned int * E4Recv_6CF8F0::sub_6CF8F0(int a2, unsigned int * a3)
   this->M8 = a2; /*0x6cf900 G42.33 b12: hpp M8@8 (Capacity)*/
   this->M12 = 1; /*0x6cf903 G42.33 b12: hpp M12@0xC (IsInitialized)*/
   this->M13 = 0; /*0x6cf907 G42.33 b12: hpp M13@0xD (IsAllocated)*/
-  this->ptr_0 = (unsigned int)&vt_VectorClass; /*0x6cf90a G42.33 b12: hpp ptr_0@0*/
+  this->ptr_0 = (unsigned int)&g_ptr_7E8500; /*0x6cf90a G42.33 b12: hpp ptr_0@0*/
   if ( !a2 ) /*0x6cf910*/
     return &this->ptr_0; /*0x6cf910*/
   if ( !a3 ) /*0x6cf918*/

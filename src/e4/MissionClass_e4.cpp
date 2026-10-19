@@ -127,7 +127,7 @@ AbstractClass * * MissionClass::LoadFromINI(unsigned int *a2, void *a2_1)
 
 // 0x41BF30
 namespace gamemd {
-int MissionClass::vt_entry_1FC()
+int MissionClass::g_var_a00e37()
 {
 
   int result; // eax

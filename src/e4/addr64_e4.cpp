@@ -2999,7 +2999,7 @@ if ( lParam >= 0 && lParam < dword_A8DA84 ) /*0x64aafb*/
               {
                 ((ObjectVector *)(&v77))->Construct(0, 0); /*0x64ce2b*/
                 v5 = v2 + a2; /*0x64ce30*/
-                v77 = &vt_DynamicVectorClass; /*0x64ce33*/
+                v77 = &g_ptr_7E3238; /*0x64ce33*/
                 v82 = 10; /*0x64ce3d*/
                 v81 = 0; /*0x64ce45*/
                 v6 = v2; /*0x64ce4d*/
@@ -3078,14 +3078,14 @@ if ( lParam >= 0 && lParam < dword_A8DA84 ) /*0x64aafb*/
                   v80 = 0; /*0x64d063*/
                   v79 = 0; /*0x64d068*/
                   VectorClass::CellConstructor(&v100, 0, 0); /*0x64d06c*/
-                  v100 = &vt_DynamicVectorClass; /*0x64d07c*/
+                  v100 = &g_ptr_7E3238; /*0x64d07c*/
                   v105 = 10; /*0x64d087*/
                   v104 = 0; /*0x64d08e*/
                   BoolVector::Construct(0, 0); /*0x64d095*/
                   v99 = 10; /*0x64d09a*/
                   v22 = 0; /*0x64d09e*/
                   v23 = NumOfElements; /*0x64d0a0*/
-                  v94 = &vt_DynamicVectorClass; /*0x64d0a4*/
+                  v94 = &g_ptr_7E3238; /*0x64d0a4*/
                   for ( j = 0; v22 < (int)NumOfElements; ++v22 ) /*0x64d0b2*/
                   {
                     if ( !(unsigned char)v92 ) /*0x64d0c2*/
@@ -3348,7 +3348,7 @@ if ( lParam >= 0 && lParam < dword_A8DA84 ) /*0x64aafb*/
                     (((unsigned char *)&(v70))[1]) &= ~0x80u; /*0x64d8d1*/
                     ++k; /*0x64d8d4*/
                   }
-                  v94 = &vt_VectorClass; /*0x64d8e6*/
+                  v94 = &g_ptr_7E8500; /*0x64d8e6*/
                   if ( v95 && (((unsigned char *)&(v97))[1]) ) /*0x64d8f8*/
                   {
                     operator delete((void *)(v95)); /*0x64d8fb*/
@@ -3356,7 +3356,7 @@ if ( lParam >= 0 && lParam < dword_A8DA84 ) /*0x64aafb*/
                   }
                   (((unsigned char *)&(v97))[1]) = 0; /*0x64d90e*/
                   v96 = 0; /*0x64d915*/
-                  v100 = &vt_VectorClass; /*0x64d919*/
+                  v100 = &g_ptr_7E8500; /*0x64d919*/
                   if ( v101 && (((unsigned char *)&(v103))[1]) ) /*0x64d92f*/
                   {
                     operator delete((void *)(v101)); /*0x64d932*/
@@ -3366,7 +3366,7 @@ if ( lParam >= 0 && lParam < dword_A8DA84 ) /*0x64aafb*/
                   v102 = 0; /*0x64d94e*/
                   operator delete((void *)(Base)); /*0x64d955*/
                 }
-                v77 = &vt_VectorClass; /*0x64d963*/
+                v77 = &g_ptr_7E8500; /*0x64d963*/
                 if ( Block ) /*0x64d96d*/
                 {
                   if ( v80 ) /*0x64d975*/
@@ -3807,7 +3807,7 @@ if ( lParam >= 0 && lParam < dword_A8DA84 ) /*0x64aafb*/
       namespace gamemd {
       void sub_6429A0()
       {
-        dword_AC4F58[0] = (int)&vt_ProgressScreenClass; /*0x6429a5*/
+        dword_AC4F58[0] = (int)&g_ptr_7F0064; /*0x6429a5*/
         if ( byte_AC4FB0 ) /*0x6429b1*/
         {
           operator delete((void *)(dword_AC4FAC)); /*0x6429b9*/
@@ -3838,7 +3838,7 @@ if ( lParam >= 0 && lParam < dword_A8DA84 ) /*0x64aafb*/
         *&this->q080 = -1; /*0x642a0f*/
         LOBYTE(this->estimatedHealth) = 0; /*0x642a1d*/
         this->visibilityFlags = 0; /*0x642a20*/
-        /* X11: vtable install elided (base-interface slot, RHS vt_ProgressScreenClass) */  /*0x642a23*/
+        /* X11: vtable install elided (base-interface slot, RHS g_ptr_7F0064) */  /*0x642a23*/
         memset(&this->M124, 0, 0x40u); /*0x642a29*/
         return &this->AbstractClass; /*0x642a2d*/
 

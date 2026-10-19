@@ -167,7 +167,7 @@ int sub_6269A0()
       if ( v4 ) /*0x6269d7*/
       {
         StringVector::Construct(v4, 0, 0); /*0x6269df*/
-        /* X11: vtable install elided (X67 star-deref, RHS vt_DynamicVectorClass_char) */  /*0x6269e4*/
+        /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E5BC4) */  /*0x6269e4*/
         v5->StringVector_field_0x14 = 10; /*0x6269ea*/
         v5->StringVector_field_0x10 = 0; /*0x6269f1*/
       }
@@ -181,7 +181,7 @@ int sub_6269A0()
       if ( v6 ) /*0x626a0d*/
       {
         VectorClass::ConstructHSV(v6, 0, 0); /*0x626a15*/
-        /* X11: vtable install elided (legacy slot spelling slot, RHS vt_DynamicVectorClass_HSVClass) */  /*0x626a1a*/
+        /* X11: vtable install elided (legacy slot spelling slot, RHS g_ptr_7EF750) */  /*0x626a1a*/
         v7[1].Items = (void *)10; /*0x626a20*/
         v7[1].ptr_0 = 0; /*0x626a27*/
       }
@@ -258,7 +258,7 @@ char sub_626AB0(const char * a1, int a2)
       if ( v4 ) /*0x626af9*/
       {
         StringVector::Construct(v4, 0, 0); /*0x626b01*/
-        /* X11: vtable install elided (X67 star-deref, RHS vt_DynamicVectorClass_char) */  /*0x626b06*/
+        /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E5BC4) */  /*0x626b06*/
         v5->StringVector_field_0x14 = 10; /*0x626b0c*/
         v5->StringVector_field_0x10 = 0; /*0x626b0f*/
       }
@@ -272,7 +272,7 @@ char sub_626AB0(const char * a1, int a2)
       if ( v6 ) /*0x626b2b*/
       {
         VectorClass::ConstructHSV(v6, 0, 0); /*0x626b33*/
-        /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass_HSVClass) */  /*0x626b38*/
+        /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7EF750) */  /*0x626b38*/
         v7[1].Items = 10; /*0x626b3e*/
         v7[1].ptr_0 = 0; /*0x626b41*/
       }
@@ -426,7 +426,7 @@ DynamicVector * System_Init()
     dword_ABFDA8 = 0; /*0x5d5ae1*/
     byte_ABFDAC = 1; /*0x5d5ae6*/
     byte_ABFDAD = 0; /*0x5d5aec*/
-    g_MultiplayerModeConfig = (int)&vt_DynamicVectorClass; /*0x5d5af1*/
+    g_MultiplayerModeConfig = (int)&g_ptr_7E3238; /*0x5d5af1*/
     dword_ABFDB4 = 10; /*0x5d5afb*/
     dword_ABFDB0 = 0; /*0x5d5b05*/
     atexit(MultiplayerConfig::Cleanup); /*0x5d5b0a*/
@@ -541,7 +541,7 @@ rc_ptr * System_Init_766880(rc_ptr_base * a1, int a2, int a3, void * a4, ObjectC
     inited = 0; /*0x7668ba*/
   }
   ComPtr::Constructor((ComPtr *)this); /*0x7668be*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_rc_ptr_WorldDominationTour_ValueGameOption_unsigned_char) */  /*0x7668c5*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7F701C) */  /*0x7668c5*/
   ComPtr::Set((ComPtr *)this, (int)inited); /*0x7668cc*/
   DeleteAndZero((ObjectClass *)&a4); /*0x7668d5*/
   return this; /*0x7668dc*/
@@ -561,7 +561,7 @@ rc_ptr * System_Init_7676F0(rc_ptr_base * a1, int a2)
   {
     v4[2] = a2; /*0x767704*/
     v4[1] = 0; /*0x767707*/
-    /* X11: vtable install elided (X67 star-deref, RHS vt_WorldDominationTourMapSizeGameOption) */  /*0x76770e*/
+    /* X11: vtable install elided (X67 star-deref, RHS g_var_22c08f) */  /*0x76770e*/
     v5 = (int)v4; /*0x767714*/
   }
   else
@@ -569,7 +569,7 @@ rc_ptr * System_Init_7676F0(rc_ptr_base * a1, int a2)
     v5 = 0; /*0x767718*/
   }
   ComPtr::Constructor((ComPtr *)a1); /*0x76771c*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_rc_ptr) */  /*0x767723*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_var_5878c0) */  /*0x767723*/
   ComPtr::Set((ComPtr *)a1, v5); /*0x76772a*/
   return a1; /*0x767731*/
 }

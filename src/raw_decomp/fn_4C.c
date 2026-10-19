@@ -6827,8 +6827,8 @@ LABEL_24:
 
 
 
-// ==== 0x004C9150  XSurface::vt_entry_68  this=XSurface  sig=csp ====
-int __thiscall XSurface::vt_entry_68(Class_7E8C94 *this)
+// ==== 0x004C9150  XSurface::g_var_04f235  this=XSurface  sig=csp ====
+int __thiscall XSurface::g_var_04f235(Class_7E8C94 *this)
 {
   return 0; /*0x4c9152*/
 }
@@ -19254,8 +19254,8 @@ LABEL_24:
 
 
 
-// ==== 0x004C9150  XSurface::vt_entry_68  this=XSurface  sig=csp ====
-int __thiscall XSurface::vt_entry_68(Class_7E8C94 *this)
+// ==== 0x004C9150  XSurface::g_var_04f235  this=XSurface  sig=csp ====
+int __thiscall XSurface::g_var_04f235(Class_7E8C94 *this)
 {
   return 0; /*0x4c9152*/
 }

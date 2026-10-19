@@ -75,7 +75,7 @@ MSVQAnim * MSVQAnim::QueryInterface(char a2)
       __3_YAXPAX_Z(v5); /*0x5cece2*/
     }
   }
-  /* X11: vtable install elided (X67 star-deref, RHS vt_MSAnim) */  /*0x5cecee*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EE8E8) */  /*0x5cecee*/
   if ( (a2 & 1) != 0 ) /*0x5cecf7*/
     __3_YAXPAX_Z(this); /*0x5cecfa*/
   return (gamemd::MSVQAnim *)(this->ptr_0); /*0x5ced04*/

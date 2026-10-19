@@ -101,7 +101,7 @@ int EnumConnectionsClass::_vt06(unsigned int * a1, unsigned int * a2)
   *(unsigned int *)(v3 + 12) = 0; /*0x4a01cb*/
   *(unsigned char *)(v3 + 16) = 1; /*0x4a01ce*/
   *(unsigned char *)(v3 + 17) = 0; /*0x4a01d2*/
-  *(unsigned int *)(v3 + 4) = (unsigned int)(&vt_VectorClass); /*0x4a01d5*/
+  *(unsigned int *)(v3 + 4) = (unsigned int)(&g_ptr_7E8500); /*0x4a01d5*/
   if ( (int *)(v3 + 4) != &a1->EnumConnectionsClass_field_0x04 ) /*0x4a01db*/
   {
     VectorClass::ClearAndFree2(v3 + 4); /*0x4a01df*/
@@ -142,12 +142,12 @@ int EnumConnectionsClass::_vt06(unsigned int * a1, unsigned int * a2)
   }
   *(unsigned int *)(v3 + 20) = a1->EnumConnectionsClass_field_0x14; /*0x4a0249*/
   *(unsigned int *)(v3 + 24) = *((unsigned int *)a1 + 6); /*0x4a024f*/
-  *(unsigned int *)(v3 + 4) = (unsigned int)(&vt_DynamicVectorClass); /*0x4a0252*/
+  *(unsigned int *)(v3 + 4) = (unsigned int)(&g_ptr_7E3238); /*0x4a0252*/
   int v10; // eax
   v10 = *((unsigned int *)a1 + 7); /*0x4a0258*/
   *(unsigned int *)(v3 + 32) = 0; /*0x4a025b*/
   *(unsigned int *)(v3 + 28) = v10; /*0x4a025e*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_EnumConnectionsClass) */  /*0x4a0261*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E5CA4) */  /*0x4a0261*/
   int i; // esi
   for ( i = 0; i < *(unsigned int *)(v3 + 20); ++i ) /*0x4a026e*/
   {
@@ -175,7 +175,7 @@ unsigned int * E4Recv_4A02B0::sub_4A02B0(unsigned int * a2)
   this->M12 = 0; /*0x4a02c4*/
   LOBYTE(this->M16) = 1; /*0x4a02c7*/
   BYTE1(this->M16) = 0; /*0x4a02cb*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x4a02ce*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x4a02ce*/
   if ( &this->M4 != a2 ) /*0x4a02d4*/
   {
     VectorClass::ClearAndFree2((int)&this->M4); /*0x4a02d8*/
@@ -217,7 +217,7 @@ unsigned int * E4Recv_4A02B0::sub_4A02B0(unsigned int * a2)
   }
   p_EnumConnectionsClass_field_0x04[4] = a2[4]; /*0x4a0331*/
   p_EnumConnectionsClass_field_0x04[5] = a2[5]; /*0x4a0337*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_DynamicVectorClass) */  /*0x4a033a*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E3238) */  /*0x4a033a*/
   this->M28 = 0; /*0x4a0340*/
   this->q020 = 0; /*0x4a0343*/
   /* X11: vtable install elided (implicit via EnumConnectionsClass virtuals 0x4a0346) */
@@ -243,7 +243,7 @@ unsigned int * E4Recv_4A0380::sub_4A0380(unsigned int * a2)
   this->M12 = 0; /*0x4a0397*/
   LOBYTE(this->M16) = 1; /*0x4a039a*/
   BYTE1(this->M16) = 0; /*0x4a039e*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x4a03a1*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x4a03a1*/
   if ( &this->M4 != a2 + 1 ) /*0x4a03a7*/
   {
     VectorClass::ClearAndFree2((int)&this->M4); /*0x4a03ab*/
@@ -285,7 +285,7 @@ unsigned int * E4Recv_4A0380::sub_4A0380(unsigned int * a2)
   }
   p_EnumConnectionsClass_field_0x04[4] = a2[5]; /*0x4a040c*/
   p_EnumConnectionsClass_field_0x04[5] = a2[6]; /*0x4a0412*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_DynamicVectorClass) */  /*0x4a0415*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E3238) */  /*0x4a0415*/
   int v10; // eax
   v10 = a2[7]; /*0x4a041b*/
   this->q020 = 0; /*0x4a041e*/
@@ -320,7 +320,7 @@ int EnumConnectionPointsClass::_vt06(unsigned int * a1, unsigned int * a2)
   *(unsigned int *)(v3 + 20) = 0; /*0x4a0b64*/
   *(unsigned char *)(v3 + 24) = 1; /*0x4a0b67*/
   *(unsigned char *)(v3 + 25) = 0; /*0x4a0b6b*/
-  *(unsigned int *)(v3 + 12) = (unsigned int)(&vt_VectorClass); /*0x4a0b6e*/
+  *(unsigned int *)(v3 + 12) = (unsigned int)(&g_ptr_7E8500); /*0x4a0b6e*/
   if ( (int *)(v3 + 12) != &a1->EnumConnectionPointsClass_field_0x0C ) /*0x4a0b74*/
   {
     VectorClass::CleanupTyped(v3 + 12); /*0x4a0b78*/
@@ -357,8 +357,8 @@ int EnumConnectionPointsClass::_vt06(unsigned int * a1, unsigned int * a2)
   }
   *(unsigned int *)(v3 + 28) = a1->EnumConnectionPointsClass_field_0x1C; /*0x4a0bcb*/
   *(unsigned int *)(v3 + 32) = a1->EnumConnectionPointsClass_field_0x20; /*0x4a0bd1*/
-  *(unsigned int *)(v3 + 12) = (unsigned int)(&vt_DynamicVectorClass); /*0x4a0bd4*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_EnumConnectionPointsClass) */  /*0x4a0bda*/
+  *(unsigned int *)(v3 + 12) = (unsigned int)(&g_ptr_7E3238); /*0x4a0bd4*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E5D28) */  /*0x4a0bda*/
   int i; // esi
   for ( i = 0; i < *(unsigned int *)(v3 + 28); ++i ) /*0x4a0be7*/
   {
@@ -626,7 +626,7 @@ void * LoadFileSHP(char * aP0, bool * aP1)
       {
 LABEL_6:
         *aP1 = !v7; /*0x4a392f*/
-        /* X11: vtable install elided (X67 star-deref, RHS vt_CCFileClass) */  /*0x4a3938*/
+        /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x4a3938*/
         v9[3] = 0; /*0x4a3940*/
         Vector::Clear((int)v9); /*0x4a3948*/
         *(unsigned int *)v8.__tail_0 = &off_7E1668; /*0x4a3951*/
@@ -669,7 +669,7 @@ AbstractClass * * FileClass_LoadToBuffer(char ** a1, bool * a2)
       if ( !v5 ) /*0x4a39c5*/
       {
         LABEL_6: *a2 = (gamemd::AbstractClass **)(!v7);
-        v8[0] = (unsigned int)(&vt_CCFileClass); /*0x4a39df*/
+        v8[0] = (unsigned int)(&g_ptr_7E16B0); /*0x4a39df*/
         v9[3] = 0; /*0x4a39e7*/
         Vector::Clear((int)v9); /*0x4a39ef*/
         v8[0] = (unsigned int)&off_7E1668; /*0x4a39f8*/
@@ -894,12 +894,12 @@ unsigned int * sub_4A4900(unsigned int a1, unsigned int a2, unsigned int a3, uns
   if ( !g_lpDirectDraw7 ) /*0x4a4915*/
     return 0; /*0x4a4ab2*/
   sub_4A4E30(&v16, 0, 0); /*0x4a4923*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass_DDSURFACEDESC) */  /*0x4a4937*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E5E0C) */  /*0x4a4937*/
   v18 = 10; /*0x4a493f*/
   v17 = 0; /*0x4a4947*/
   if ( g_lpDirectDraw7->lpVtbl->EnumDisplayModes(g_lpDirectDraw7, 0, 0, &v16, (LPDDENUMMODESCALLBACK)sub_4A4850) || !v17 ) /*0x4a4967*/
   {
-    /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass_DDSURFACEDESC) */  /*0x4a4a93*/
+    /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E5DEC) */  /*0x4a4a93*/
     if ( v16.Items && v16.IsAllocated[0] ) /*0x4a4aa5*/
       __3_YAXPAX_Z((void *)v16.Items); /*0x4a4aa8*/
     return 0; /*0x4a4aa8*/
@@ -934,7 +934,7 @@ unsigned int * sub_4A4900(unsigned int a1, unsigned int a2, unsigned int a3, uns
   {
 LABEL_13:
     __3_YAXPAX_Z(v5); /*0x4a4a1a*/
-    /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass_DDSURFACEDESC) */  /*0x4a4a28*/
+    /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E5DEC) */  /*0x4a4a28*/
     if ( v16.Items && v16.IsAllocated[0] ) /*0x4a4a38*/
     {
       __3_YAXPAX_Z((void *)v16.Items); /*0x4a4a3b*/
@@ -943,7 +943,7 @@ LABEL_13:
     return 0; /*0x4a4a38*/
   }
   qsort(v5, NumOfElements, 8u, sub_4A48C0); /*0x4a4a5b*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass_DDSURFACEDESC) */  /*0x4a4a69*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E5DEC) */  /*0x4a4a69*/
   if ( v16.Items && v16.IsAllocated[0] ) /*0x4a4a79*/
     __3_YAXPAX_Z((void *)v16.Items); /*0x4a4a7c*/
   return v5; /*0x4a4a45*/
@@ -2800,7 +2800,7 @@ void E4Recv_4A0450::sub_4A0450()
 
 
   int v2 = 0; // edi /*0x4a0457*/
-  for ( *(unsigned int *)this->ptr_0 = &vt_EnumConnectionsClass; v2 < this->M20; ++v2 ) /*0x4a0464*/
+  for ( *(unsigned int *)this->ptr_0 = &g_ptr_7E5CA4; v2 < this->M20; ++v2 ) /*0x4a0464*/
   {
     int v6; // [esp-4h] [ebp-10h]
     v6 = *(unsigned int *)(this->M8 + 8 * v2); /*0x4a046c*/
@@ -2811,7 +2811,7 @@ void E4Recv_4A0450::sub_4A0450()
   (*(void (**)(int *))(EnumConnectionsClass_field_0x04 + 12))(p_EnumConnectionsClass_field_0x04); /*0x4a0482*/
   void *v5; // eax
   v5 = (void *)p_EnumConnectionsClass_field_0x04[1]; /*0x4a0485*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x4a0488*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x4a0488*/
   if ( v5 && *((unsigned char *)p_EnumConnectionsClass_field_0x04 + 13) ) /*0x4a0492*/
   {
     __3_YAXPAX_Z(v5); /*0x4a0498*/
@@ -2837,7 +2837,7 @@ void E4Recv_4A08D0::sub_4A08D0()
   (*(void (**)(int *))(ConnectionPointClass_field_0x1C + 12))(p_ConnectionPointClass_field_0x1C); /*0x4a08eb*/
   void *v5; // eax
   v5 = (void *)p_ConnectionPointClass_field_0x1C[1]; /*0x4a08ee*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x4a08f5*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x4a08f5*/
   if ( v5 && *((unsigned char *)p_ConnectionPointClass_field_0x1C + 13) ) /*0x4a08fd*/
   {
     __3_YAXPAX_Z(v5); /*0x4a0903*/
@@ -2862,7 +2862,7 @@ unsigned int * E4Recv_4A0CE0::sub_4A0CE0(unsigned int * a2)
   this->M20 = 0; /*0x4a0d00*/
   LOBYTE(this->q018) = 1; /*0x4a0d03*/
   BYTE1(this->q018) = 0; /*0x4a0d07*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x4a0d0a*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x4a0d0a*/
   if ( &this->M12 != a2 + 3 ) /*0x4a0d10*/
   {
     VectorClass::CleanupTyped((int)&this->M12); /*0x4a0d14*/
@@ -2898,7 +2898,7 @@ unsigned int * E4Recv_4A0CE0::sub_4A0CE0(unsigned int * a2)
   }
   this->M28 = a2[7]; /*0x4a0d67*/
   this->EnumConnectionPointsClass_field_0x20 = a2[8]; /*0x4a0d6d*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_DynamicVectorClass) */  /*0x4a0d70*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E3238) */  /*0x4a0d70*/
   /* X11: vtable install elided (implicit via EnumConnectionPointsClass virtuals 0x4a0d76) */
   int i; // esi
   for ( i = 0; i < this->M28; ++i ) /*0x4a0d83*/
@@ -2919,7 +2919,7 @@ void E4Recv_4A0DB0::sub_4A0DB0()
 
 
   int v2 = 0; // edi /*0x4a0db7*/
-  for ( *(unsigned int *)this->ptr_0 = &vt_EnumConnectionPointsClass; /*0x4a0dc4*/
+  for ( *(unsigned int *)this->ptr_0 = &g_ptr_7E5D28; /*0x4a0dc4*/
   v2 < this->M28;
   ++v2 )
   {
@@ -2932,7 +2932,7 @@ void E4Recv_4A0DB0::sub_4A0DB0()
   (*(void (**)(int *))(EnumConnectionPointsClass_field_0x0C + 12))(p_EnumConnectionPointsClass_field_0x0C); /*0x4a0de2*/
   void *v5; // eax
   v5 = (void *)p_EnumConnectionPointsClass_field_0x0C[1]; /*0x4a0de5*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x4a0de8*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x4a0de8*/
   if ( v5 && *((unsigned char *)p_EnumConnectionPointsClass_field_0x0C + 13) ) /*0x4a0df2*/
   {
     __3_YAXPAX_Z(v5); /*0x4a0df8*/
@@ -3252,7 +3252,7 @@ void E4Recv_4A2880::sub_4A2880()
 
   int CStreamClass_field_0x08 = this->M8; // eax /*0x4a2886*/
   /* X11: vtable install elided (implicit via CStreamClass virtuals 0x4a2889) */
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_CStreamClass) */  /*0x4a2891*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E5D94) */  /*0x4a2891*/
   if ( CStreamClass_field_0x08 ) /*0x4a2898*/
   {
     ULONG v6; // [esp+0h] [ebp-8h]
@@ -4103,7 +4103,7 @@ int sub_4A6C70()
   dword_8A0210 = 0; /*0x4a6c7c*/
   byte_8A0214 = 1; /*0x4a6c81*/
   byte_8A0215 = 0; /*0x4a6c88*/
-  dword_8A0208 = (int)&vt_DynamicVectorClass; /*0x4a6c8d*/
+  dword_8A0208 = (int)&g_ptr_7E3238; /*0x4a6c8d*/
   dword_8A021C = 10; /*0x4a6c97*/
   dword_8A0218 = 0; /*0x4a6ca1*/
   return atexit(sub_4A6CB0); /*0x4a6cac*/
@@ -4114,7 +4114,7 @@ int sub_4A6C70()
 namespace gamemd {
 void sub_4A6CB0()
 {
-  dword_8A0208 = (int)&vt_VectorClass; /*0x4a6cb8*/
+  dword_8A0208 = (int)&g_ptr_7E8500; /*0x4a6cb8*/
   if ( dword_8A020C && byte_8A0215 ) /*0x4a6ccc*/
   {
     operator delete((void *)(dword_8A020C)); /*0x4a6ccf*/
@@ -4304,8 +4304,8 @@ int sub_4A8630()
     *v0 = 0; /*0x4a863f*/
     *((unsigned char *)v0 + 4) = 1; /*0x4a8641*/
     *((unsigned char *)v0 + 5) = 0; /*0x4a8645*/
-    *(v0 - 2) = &vt_VectorClass_ObjectClass; /*0x4a8648*/
-    *(v0 - 2) = &vt_DynamicVectorClass_ObjectClass; /*0x4a864f*/
+    *(v0 - 2) = &g_ptr_7E192C; /*0x4a8648*/
+    *(v0 - 2) = &g_ptr_7E4F64; /*0x4a864f*/
     v0[3] = 10; /*0x4a8656*/
     v0[2] = 0; /*0x4a865d*/
     *(v0 - 2) = &off_7E6060; /*0x4a8660*/
@@ -4333,7 +4333,7 @@ void sub_4A8680()
       void *v2; // eax
       v2 = *(void **)(v0 - 24); /*0x4a86a3*/
       v0 -= 24; /*0x4a86a6*/
-      *(unsigned int *)(v0 - 4) = &vt_VectorClass; /*0x4a86ab*/
+      *(unsigned int *)(v0 - 4) = &g_ptr_7E8500; /*0x4a86ab*/
       if ( v2 ) /*0x4a86b2*/
       {
         if ( *(unsigned char *)(v0 + 9) ) /*0x4a86b4*/
@@ -4356,7 +4356,7 @@ namespace gamemd {
 int sub_4A86E0()
 {
   GadgetClass::Construct(stru_8A06F8, 0, 0, 0, 0, 127, 1); /*0x4a86f1*/
-  stru_8A06F8[0] = (int)&vt_DisplayClassTacticalClass; /*0x4a86fb*/
+  stru_8A06F8[0] = (int)&g_var_874cc6; /*0x4a86fb*/
   return atexit(sub_4A8710); /*0x4a870b*/
 }
 } // namespace gamemd

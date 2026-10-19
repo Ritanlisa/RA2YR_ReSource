@@ -263,7 +263,7 @@ unsigned int * E4Recv_6616B0::sub_6616B0()
   v2 = 32; /*0x6616b8*/
   this->Straw_field_0x04 = 0; /*0x6616bd*/
   *((unsigned int *)this + 2) = 0; /*0x6616c0*/
-  *(unsigned int *)this->__pad_0 = &vt_Straw; /*0x6616c3*/
+  *(unsigned int *)this->__pad_0 = &g_ptr_7E61F0; /*0x6616c3*/
   *((unsigned int *)this + 3) = 0; /*0x6616c9*/
   *((unsigned int *)this + 4) = 0; /*0x6616cc*/
   v3 = (ObjectClass *)((char *)this + 20); /*0x6616cf*/
@@ -276,7 +276,7 @@ unsigned int * E4Recv_6616B0::sub_6616B0()
   while ( v2 ); /*0x6616df*/
   *((unsigned int *)this + 3) = 0; /*0x6616e1*/
   *((unsigned int *)this + 4) = 0; /*0x6616e4*/
-  *(unsigned int *)this->__pad_0 = &vt_RandomStraw; /*0x6616f1*/
+  *(unsigned int *)this->__pad_0 = &g_ptr_7F0AFC; /*0x6616f1*/
   memset((char *)this + 20, 0, 0x100u); /*0x6616f7*/
   return this->__pad_0; /*0x6616fb*/
 
@@ -463,8 +463,8 @@ void * E4Recv_661B70::sub_661B70()
 void E4Recv_661F30::sub_661F30()
 {
 
-  *(unsigned int *)this->LocomotionClass = &vt_RocketLocomotionClass; /*0x661f30*/
-  *(unsigned int *)&this->LocomotionClass[4] = &vt_RocketLocomotionClass; /*0x661f36*/
+  *(unsigned int *)this->LocomotionClass = &g_ptr_7F0B1C; /*0x661f30*/
+  *(unsigned int *)&this->LocomotionClass[4] = &g_ptr_7F0B1C; /*0x661f36*/
   LocomotionClass::Construct((LocomotionClass *)this); /*0x661f3d*/
 
 }

@@ -147,7 +147,7 @@ extern void _CxxThrowException_8(void * aP0, struct _ThrowInfo * aP1);  // CRT t
 extern unsigned char _TI2_AVbad_typeid__[];  // .rdata ThrowInfo
 extern unsigned char _TI3_AV__non_rtti_object__[];  // .rdata ThrowInfo
 extern unsigned char _TI2_AVbad_cast__[];  // .rdata ThrowInfo
-extern unsigned int vt_bad_typeid;  // q000 addr const
+extern unsigned int g_ptr_7F95DC;  // q000 addr const
 extern int _fclose_lk(int aP0);  // def later in this TU (b24 truth int)
 extern int free(void * aP0);  // def later in this TU (b24 fwd for global op-delete)
 extern unsigned char * _mbsdec(const unsigned char * aP0, const unsigned char * aP1);  // CRT internal
@@ -13314,7 +13314,7 @@ exception * E4Recv_7CA9CC::sub_7CA9CC(struct exception * a1)
 {
 
   __0exception_QAE_ABV0__Z((exception *)this, a1); /*0x7ca9d3*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_bad_typeid) */  /*0x7ca9d8*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F95DC) */  /*0x7ca9d8*/
   return (exception *)this; /*0x7ca9e0*/
 
 }

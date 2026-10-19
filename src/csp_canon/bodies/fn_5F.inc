@@ -739,7 +739,7 @@ int Gap2Recv_5FD2E0::ReadOverlayINI() {
       v26 = 0; /*0x5fd3b9*/
       Buffer::Init(&v27, v6, Base64Data); /*0x5fd3c5*/
       v27.Buffer_field_0C = 0; /*0x5fd3ce*/
-      *(unsigned int *)v25.__pad_0 = &vt_BufferStraw; /*0x5fd3d9*/
+      *(unsigned int *)v25.__pad_0 = &g_ptr_7E61E0; /*0x5fd3d9*/
       LCWStraw::Constructor(&v28, 1, 0x2000); /*0x5fd3e1*/
       Delegate::Set((Straw *)&v28, (int)&v25); /*0x5fd3ef*/
       for ( i = 0; i < 512; ++i ) /*0x5fd3f4*/
@@ -791,10 +791,10 @@ int Gap2Recv_5FD2E0::ReadOverlayINI() {
       (*(void (**)(int *))(v27.Buffer_field_10 + 116))(&v27.Buffer_field_10); /*0x5fd5af*/
       v25.Straw_field_0x04 = 0; /*0x5fd5b6*/
       v26 = 0; /*0x5fd5bc*/
-      *(unsigned int *)v25.__pad_0 = &vt_Straw; /*0x5fd5c0*/
+      *(unsigned int *)v25.__pad_0 = &g_ptr_7E61F0; /*0x5fd5c0*/
       Buffer::Init(&v27, v15, v14); /*0x5fd5c8*/
       v27.Buffer_field_0C = 0; /*0x5fd5d1*/
-      *(unsigned int *)v25.__pad_0 = &vt_BufferStraw; /*0x5fd5dc*/
+      *(unsigned int *)v25.__pad_0 = &g_ptr_7E61E0; /*0x5fd5dc*/
       LCWStraw::Constructor(&v28, 1, 0x2000); /*0x5fd5e4*/
       Delegate::Set((Straw *)&v28, (int)&v25); /*0x5fd5f2*/
       for ( k = 0; k < 512; ++k ) /*0x5fd5f7*/
@@ -1005,8 +1005,8 @@ void OverlayTypeClass::GetLandType(unsigned int * a2, int * a3, unsigned int a4)
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005FE5A0.json)
 }
 
-// ==== BACKFILL 0x005FEA30  OverlayTypeClass::vt_entry_6C  cls=OverlayTypeClass  sig=csp  renamed_refs=0  residual=- ====
-unsigned int * OverlayTypeClass::vt_entry_6C(unsigned int * a0, OverlayTypeClass * aP1)
+// ==== BACKFILL 0x005FEA30  OverlayTypeClass::g_var_4f9ac2  cls=OverlayTypeClass  sig=csp  renamed_refs=0  residual=- ====
+unsigned int * OverlayTypeClass::g_var_4f9ac2(unsigned int * a0, OverlayTypeClass * aP1)
 {
     return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005FEA30.json)
 }

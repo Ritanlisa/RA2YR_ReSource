@@ -40,7 +40,7 @@ struct MPBattleClass {
     int randomHumanCountryIndex();
     int stopGame();
     int unfixAlliances();
-    int vt_entry_18();
+    int g_var_d773ad();
     long long canAllyWith();
     long long isDefaultFix();
     long long isValidMap();

@@ -515,7 +515,7 @@ CampaignClass * * E4Recv_7B2E50::sub_7B2E50()
 {
 
 
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_UDPInterfaceClass) */  /*0x7b2e56*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F7A6C) */  /*0x7b2e56*/
   while ( this->M258888 ) /*0x7b2e5c*/
   {
     __3_YAXPAX_Z(*this->M258876); /*0x7b2e6f*/
@@ -551,7 +551,7 @@ CampaignClass * * E4Recv_7B2E50::sub_7B2E50()
   (this)->connect(); /*0x7b2f04*/
   void *v8; // eax
   v8 = (void *)this->M259412; /*0x7b2f09*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x7b2f0f*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x7b2f0f*/
   if ( v8 && this->M259421 ) /*0x7b2f1d*/
   {
     __3_YAXPAX_Z(v8); /*0x7b2f26*/
@@ -561,7 +561,7 @@ CampaignClass * * E4Recv_7B2E50::sub_7B2E50()
   this->M259416 = 0; /*0x7b2f3a*/
   void *v9; // eax
   v9 = (void *)this->M258876; /*0x7b2f40*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x7b2f46*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x7b2f46*/
   if ( v9 && this->M258885 ) /*0x7b2f54*/
   {
     __3_YAXPAX_Z(v9); /*0x7b2f5d*/
@@ -1110,12 +1110,12 @@ char sub_7BC1F0(XSurface * a1, XSurface * a2, XSurface * aP2, int arg4)
 
   if ( a1->vt_slot_112() == 1 ) /*0x7bc1ff*/
   {
-    v7 = &vt_BlitPlain_unsigned_char; /*0x7bc20a*/
+    v7 = &g_ptr_7F7BDC; /*0x7bc20a*/
     return BlitterCopySimpleSHP(a1, a2, aP2, arg4, (int *)&v7, 0, 3, 1000, 0); /*0x7bc218*/
   }
   else
   {
-    v7 = &vt_BlitPlain_unsigned_short; /*0x7bc223*/
+    v7 = &g_ptr_7F7BC4; /*0x7bc223*/
     return BlitterCopySimpleSHP(a1, a2, aP2, arg4, (int *)&v7, 0, 3, 1000, 0); /*0x7bc240*/
   }
 
@@ -1130,12 +1130,12 @@ char sub_7BC250(XSurface * a1, XSurface * a2, XSurface * aP2, int arg4)
 
   if ( a1->vt_slot_112() == 1 ) /*0x7bc25f*/
   {
-    v7 = &vt_BlitTrans_unsigned_char; /*0x7bc26a*/
+    v7 = &g_ptr_7F7C0C; /*0x7bc26a*/
     return BlitterCopySimpleSHP(a1, a2, aP2, arg4, (int *)&v7, 0, 3, 1000, 0); /*0x7bc278*/
   }
   else
   {
-    v7 = &vt_BlitTrans_unsigned_short; /*0x7bc283*/
+    v7 = &g_ptr_7F7BF4; /*0x7bc283*/
     return BlitterCopySimpleSHP(a1, a2, aP2, arg4, (int *)&v7, 0, 3, 1000, 0); /*0x7bc2a0*/
   }
 
@@ -1742,7 +1742,7 @@ namespace gamemd {
 int sub_7B0110()
 {
   ComPtr::Constructor(&dword_B77F58); /*0x7b0115*/
-  dword_B77F58 = (int)&vt_rc_ptr; /*0x7b011f*/
+  dword_B77F58 = (int)&g_var_5878c0; /*0x7b011f*/
   return atexit(sub_7B0130); /*0x7b012f*/
 }
 } // namespace gamemd
@@ -1751,7 +1751,7 @@ int sub_7B0110()
 namespace gamemd {
 void sub_7B0130()
 {
-  dword_B77F58 = (int)&vt_rc_ptr; /*0x7b0130*/
+  dword_B77F58 = (int)&g_var_5878c0; /*0x7b0130*/
   ComPtr::Release(&dword_B77F58); /*0x7b013f*/
 }
 } // namespace gamemd
@@ -1761,7 +1761,7 @@ namespace gamemd {
 int sub_7B0150()
 {
   ComPtr::Constructor(&dword_B77F70); /*0x7b0155*/
-  dword_B77F70 = (int)&vt_rc_ptr; /*0x7b015f*/
+  dword_B77F70 = (int)&g_var_5878c0; /*0x7b015f*/
   return atexit(sub_7B0170); /*0x7b016f*/
 }
 } // namespace gamemd
@@ -1770,7 +1770,7 @@ int sub_7B0150()
 namespace gamemd {
 void sub_7B0170()
 {
-  dword_B77F70 = (int)&vt_rc_ptr; /*0x7b0170*/
+  dword_B77F70 = (int)&g_var_5878c0; /*0x7b0170*/
   ComPtr::Release(&dword_B77F70); /*0x7b017f*/
 }
 } // namespace gamemd
@@ -1780,7 +1780,7 @@ namespace gamemd {
 int sub_7B0190()
 {
   ComPtr::Constructor(&stru_B77F68); /*0x7b0195*/
-  stru_B77F68 = (int)&vt_rc_ptr; /*0x7b019f*/
+  stru_B77F68 = (int)&g_var_5878c0; /*0x7b019f*/
   return atexit(sub_7B01B0); /*0x7b01af*/
 }
 } // namespace gamemd
@@ -1789,7 +1789,7 @@ int sub_7B0190()
 namespace gamemd {
 void sub_7B01B0()
 {
-  stru_B77F68 = (int)&vt_rc_ptr; /*0x7b01b0*/
+  stru_B77F68 = (int)&g_var_5878c0; /*0x7b01b0*/
   ComPtr::Release(&stru_B77F68); /*0x7b01bf*/
 }
 } // namespace gamemd
@@ -1799,7 +1799,7 @@ namespace gamemd {
 int sub_7B01D0()
 {
   ComPtr::Constructor(&dword_B77F78); /*0x7b01d5*/
-  dword_B77F78 = (int)&vt_rc_ptr; /*0x7b01df*/
+  dword_B77F78 = (int)&g_var_5878c0; /*0x7b01df*/
   return atexit(sub_7B01F0); /*0x7b01ef*/
 }
 } // namespace gamemd
@@ -1808,7 +1808,7 @@ int sub_7B01D0()
 namespace gamemd {
 void sub_7B01F0()
 {
-  dword_B77F78 = (int)&vt_rc_ptr; /*0x7b01f0*/
+  dword_B77F78 = (int)&g_var_5878c0; /*0x7b01f0*/
   ComPtr::Release(&dword_B77F78); /*0x7b01ff*/
 }
 } // namespace gamemd
@@ -1847,16 +1847,16 @@ rc_ptr * FindWDTTerritoryClass(rc_ptr_base * a1, int a2)
   else
   {
     ComPtr::Constructor((ComPtr *)v6); /*0x7b03d9*/
-    v6[0] = &vt_rc_ptr; /*0x7b03de*/
+    v6[0] = &g_var_5878c0; /*0x7b03de*/
     v3 = 1; /*0x7b03e6*/
     v4 = v6; /*0x7b03eb*/
   }
   ComPtr::Constructor((ComPtr *)a1); /*0x7b03f1*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_rc_ptr) */  /*0x7b03f6*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_var_5878c0) */  /*0x7b03f6*/
   ComPtr::Set((ComPtr *)a1, v4[1]); /*0x7b0402*/
   if ( (v3 & 1) != 0 ) /*0x7b040a*/
   {
-    v6[0] = &vt_rc_ptr; /*0x7b0410*/
+    v6[0] = &g_var_5878c0; /*0x7b0410*/
     ComPtr::Release((ComPtr *)v6); /*0x7b0418*/
   }
   return a1; /*0x7b041f*/
@@ -3145,7 +3145,7 @@ void sub_7BC610(int a1, char * a2, int a3, int a4, int a5, int a6, int a7, int a
 namespace gamemd {
 BlitPlain * E4Recv_7BC640::___Gfacet_locale_std__UAEPAXI_Z_148(unsigned int * Block, char a2)
 {
-  /* X11: vtable install elided (X67 star-deref, RHS vt_Blitter) */  /*0x7bc649*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E5B88) */  /*0x7bc649*/
   if ( (a2 & 1) != 0 ) /*0x7bc64f*/
     operator delete((Block)); /*0x7bc652*/
   return Block; /*0x7bc65c*/
@@ -3156,7 +3156,7 @@ BlitPlain * E4Recv_7BC640::___Gfacet_locale_std__UAEPAXI_Z_148(unsigned int * Bl
 namespace gamemd {
 BlitPlain * E4Recv_7BC660::___Gfacet_locale_std__UAEPAXI_Z_149(unsigned int * Block, char a2)
 {
-  /* X11: vtable install elided (X67 star-deref, RHS vt_Blitter) */  /*0x7bc669*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E5B88) */  /*0x7bc669*/
   if ( (a2 & 1) != 0 ) /*0x7bc66f*/
     operator delete((Block)); /*0x7bc672*/
   return Block; /*0x7bc67c*/
@@ -3167,7 +3167,7 @@ BlitPlain * E4Recv_7BC660::___Gfacet_locale_std__UAEPAXI_Z_149(unsigned int * Bl
 namespace gamemd {
 BlitTrans * E4Recv_7BC680::___Gfacet_locale_std__UAEPAXI_Z_150(unsigned int * Block, char a2)
 {
-  /* X11: vtable install elided (X67 star-deref, RHS vt_Blitter) */  /*0x7bc689*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E5B88) */  /*0x7bc689*/
   if ( (a2 & 1) != 0 ) /*0x7bc68f*/
     operator delete((Block)); /*0x7bc692*/
   return Block; /*0x7bc69c*/
@@ -3178,7 +3178,7 @@ BlitTrans * E4Recv_7BC680::___Gfacet_locale_std__UAEPAXI_Z_150(unsigned int * Bl
 namespace gamemd {
 BlitTrans * E4Recv_7BC6A0::___Gfacet_locale_std__UAEPAXI_Z_151(unsigned int * Block, char a2)
 {
-  /* X11: vtable install elided (X67 star-deref, RHS vt_Blitter) */  /*0x7bc6a9*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E5B88) */  /*0x7bc6a9*/
   if ( (a2 & 1) != 0 ) /*0x7bc6af*/
     operator delete((Block)); /*0x7bc6b2*/
   return Block; /*0x7bc6bc*/

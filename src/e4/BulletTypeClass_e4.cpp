@@ -179,9 +179,9 @@ unsigned char * BulletTypeClass::Construct(char *aP1, void *a2, void *a3, void *
   this->animHigh = 0; /*0x46bcd4*/
   this->animRate = 0; /*0x46bcda*/
   this->Flat_d = 0; /*0x46bce0*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_BulletTypeClass) */  /*0x46bce6*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_BulletTypeClass) */  /*0x46bcec*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_BulletTypeClass) */  /*0x46bcf2*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E491C) */  /*0x46bce6*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E491C) */  /*0x46bcec*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E491C) */  /*0x46bcf2*/
   /* X11: vtable install elided (implicit via BulletTypeClass virtuals 0x46bcf9) */
   ((int)(&this->AbstractClass_E58))->GenerateUniqueID(); /*0x46bd00*/
   this->IsLogic_d = 1; /*0x46bd05*/
@@ -593,10 +593,10 @@ BulletTypeClass * BulletTypeClass::ddtor(char a2, int a1, int aP0, int aP1, int 
 {
 
 
-  /* X11: vtable install elided (X67 star-deref, RHS vt_BulletTypeClass) */  /*0x46c896*/
-  /* X11: vtable install elided (X68 star-amp-named, RHS vt_BulletTypeClass) */  /*0x46c89c*/
-  /* X11: vtable install elided (X68 star-amp-named, RHS vt_BulletTypeClass) */  /*0x46c8a3*/
-  /* X11: vtable install elided (X68 star-amp-named, RHS vt_BulletTypeClass) */  /*0x46c8aa*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E491C) */  /*0x46c896*/
+  /* X11: vtable install elided (X68 star-amp-named, RHS g_ptr_7E491C) */  /*0x46c89c*/
+  /* X11: vtable install elided (X68 star-amp-named, RHS g_ptr_7E491C) */  /*0x46c8a3*/
+  /* X11: vtable install elided (X68 star-amp-named, RHS g_ptr_7E491C) */  /*0x46c8aa*/
   AbstractClass::AnnounceExpiredPointer((void **)a1, 1); /*0x46c8b1*/
   BulletTypeClass *v6; // [esp+4h] [ebp-4h] BYREF
   v6 = (gamemd::BulletTypeClass *)(a1); /*0x46c8c6*/
@@ -900,9 +900,9 @@ int BulletTypeClass::SaveLoad_Prefix(gamemd::ObjectTypeClass* aP0, int aP1)
     {
       ObjectTypeClass::Construct((ObjectTypeClass *)aP0, (int)&aP1); /*0x46c6bf*/
       /* X11: vtable install elided (implicit via BulletTypeClass virtuals 0x46c6c4) */
-      /* X11: vtable install elided (X68 star-amp-named, RHS vt_BulletTypeClass) */  /*0x46c6ca*/
-      /* X11: vtable install elided (X68 star-amp-named, RHS vt_BulletTypeClass) */  /*0x46c6d1*/
-      /* X11: vtable install elided (X68 star-amp-named, RHS vt_BulletTypeClass) */  /*0x46c6d8*/
+      /* X11: vtable install elided (X68 star-amp-named, RHS g_ptr_7E491C) */  /*0x46c6ca*/
+      /* X11: vtable install elided (X68 star-amp-named, RHS g_ptr_7E491C) */  /*0x46c6d1*/
+      /* X11: vtable install elided (X68 star-amp-named, RHS g_ptr_7E491C) */  /*0x46c6d8*/
     }
     VoxelAnimType::LoadAnim(aP0->ptr_0); /*0x46c6e1*/
     ObjectTypeClass::Load2DArt(aP0->ptr_0); /*0x46c6e8*/

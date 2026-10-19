@@ -58,7 +58,7 @@ DynamicVector * ToolTipManager_7::QueryInterface(unsigned int * Block, char a2)
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x724f43*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x724f46*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x724f46*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x724f50*/
   {
     operator delete((v3)); /*0x724f58*/

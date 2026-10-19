@@ -2287,7 +2287,7 @@ int InfantryClass::CalcMoveTarget()
   {
     ObjectVector::Construct(&v86, 0, 0); /*0x51b7ee*/
     ObjectVector_field_0x14 = 10; /*0x51b7f3*/
-    /* X11: vtable install elided (X67 star-deref, RHS vt_DynamicVectorClass_ObjectClass) */  /*0x51b7fa*/
+    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E4F64) */  /*0x51b7fa*/
     v86.ObjectVector_field_0x14 = 10; /*0x51b802*/
     v86.ObjectVector_field_0x10 = 0; /*0x51b809*/
     if ( ObjectPlacement_field_0x04 ) /*0x51b810*/
@@ -2338,7 +2338,7 @@ LABEL_26:
     }
     this->vt_slot_1348(this, 0, 0); /*0x51b8fc*/
     result = v86.ObjectVector_field_0x04; /*0x51b902*/
-    /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_ObjectClass) */  /*0x51b906*/
+    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E192C) */  /*0x51b906*/
     if ( v86.ObjectVector_field_0x04 && BYTE1(v86.ObjectVector_field_0x0C) ) /*0x51b91f*/
       __3_YAXPAX_Z((void *)v86.ObjectVector_field_0x04); /*0x51b926*/
   }

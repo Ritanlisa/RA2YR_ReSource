@@ -232,7 +232,7 @@ TypeList_flat * TypeList_Infantry::Add(unsigned int * Block, char a2, void *a3_1
   void *v3; // eax
 
   v3 = (void *)*((unsigned int *)Block + 1); /*0x5129f3*/
-  *(unsigned int *)Block = (unsigned int)(&vt_VectorClass); /*0x5129f6*/
+  *(unsigned int *)Block = (unsigned int)(&g_ptr_7E8500); /*0x5129f6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x512a00*/
   {
     __3_YAXPAX_Z(v3); /*0x512a08*/

@@ -6,7 +6,7 @@
 unsigned int * MPCooperative::startGame()
 {
 
-  this->MPCooperative_field_0x0 = &vt_CampaignEndScoreClass; /*0x470c04*/
+  this->MPCooperative_field_0x0 = &g_ptr_7E4AB8; /*0x470c04*/
   dword_89E008 = -1; /*0x470c0a*/
   dword_89E020 = 0; /*0x470c14*/
   dword_89DFD4 = 0; /*0x470c1a*/
@@ -18,7 +18,7 @@ unsigned int * MPCooperative::startGame()
 void E4Recv_470C30::sub_470C30()
 {
 
-  this->m_0 = (int)&vt_CampaignEndScoreClass; /*0x470c30*/
+  this->m_0 = (int)&g_ptr_7E4AB8; /*0x470c30*/
 
 }
 
@@ -527,7 +527,7 @@ TypeList_flat * TypeList_flat::QueryInterface(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = (void *)*((unsigned int *)Block + 1); /*0x477993*/
-  *(unsigned int *)Block = (unsigned int)(&vt_VectorClass); /*0x477996*/
+  *(unsigned int *)Block = (unsigned int)(&g_ptr_7E8500); /*0x477996*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4779a0*/
   {
     __3_YAXPAX_Z(v3); /*0x4779a8*/
@@ -696,7 +696,7 @@ unsigned int * TypeList_flat::TechnoTypeConstructor(int a2, int a3)
   ((unsigned int *)this)[0] = a2; /*0x47879e*/
   ((unsigned int *)this)[0] = 1; /*0x4787a1*/
   ((unsigned int *)this)[0] = 0; /*0x4787a5*/
-  this->DynamicVectorClass = &vt_VectorClass; /*0x4787a8*/
+  this->DynamicVectorClass = &g_ptr_7E8500; /*0x4787a8*/
   if ( a2 ) /*0x4787ae*/
   {
     if ( a3 ) /*0x4787b6*/

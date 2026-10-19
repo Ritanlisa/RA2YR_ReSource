@@ -12,7 +12,7 @@ VectorClass_flat * SmudgeTypeVector::QueryInterface(unsigned int * Block, char a
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x67c0b3*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x67c0b6*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x67c0b6*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x67c0c0*/
   {
     operator delete((v3)); /*0x67c0c8*/

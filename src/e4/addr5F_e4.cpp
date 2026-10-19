@@ -544,7 +544,7 @@ AbstractClass * * sub_5FDDF0()
   v9 = 0; /*0x5fde1b*/
   v10 = 1; /*0x5fde1f*/
   v11 = 0; /*0x5fde24*/
-  v7 = &vt_DynamicVectorClass; /*0x5fde28*/
+  v7 = &g_ptr_7E3238; /*0x5fde28*/
   v12 = 0; /*0x5fde30*/
   v13 = 1000; /*0x5fde34*/
   if ( v1 ) /*0x5fde38*/
@@ -576,7 +576,7 @@ AbstractClass * * sub_5FDDF0()
     if ( (uint8_t)BuildingClass::CheckAdjacentCells((int)v6) ) /*0x5fdebc*/
       BuildingClass::VisualizePlacement(v6); /*0x5fdec7*/
   }
-  v7 = &vt_VectorClass; /*0x5fded3*/
+  v7 = &g_ptr_7E8500; /*0x5fded3*/
   if ( Block ) /*0x5fdedd*/
   {
     if ( v11 ) /*0x5fdee3*/
@@ -1406,7 +1406,7 @@ int sub_5F6FF0()
   dword_AC1420 = 0; /*0x5f6ffc*/
   byte_AC1424 = 1; /*0x5f7001*/
   byte_AC1425 = 0; /*0x5f7008*/
-  dword_AC1418 = (int)&vt_DynamicVectorClass; /*0x5f700d*/
+  dword_AC1418 = (int)&g_ptr_7E3238; /*0x5f700d*/
   dword_AC142C = 10; /*0x5f7017*/
   dword_AC1428 = 0; /*0x5f7021*/
   return atexit(sub_5F7030); /*0x5f702c*/
@@ -1419,7 +1419,7 @@ void sub_5F7030()
 {
   if ( (byte_AC1470 & 1) == 0 ) /*0x5f703a*/
   {
-    dword_AC1418 = (int)&vt_VectorClass; /*0x5f703e*/
+    dword_AC1418 = (int)&g_ptr_7E8500; /*0x5f703e*/
     byte_AC1470 |= 1u; /*0x5f7051*/
     if ( dword_AC141C ) /*0x5f7057*/
     {
@@ -2104,7 +2104,7 @@ int sub_5FF1D0()
   dword_AC1680 = 0; /*0x5ff1dc*/
   byte_AC1684 = 1; /*0x5ff1e1*/
   byte_AC1685 = 0; /*0x5ff1e8*/
-  dword_AC1678 = (int)&vt_DynamicVectorClass; /*0x5ff1ed*/
+  dword_AC1678 = (int)&g_ptr_7E3238; /*0x5ff1ed*/
   dword_AC168C = 10; /*0x5ff1f7*/
   dword_AC1688 = 0; /*0x5ff201*/
   return atexit(sub_5FF210); /*0x5ff20c*/
@@ -2115,7 +2115,7 @@ int sub_5FF1D0()
 namespace gamemd {
 void sub_5FF210()
 {
-  dword_AC1678 = (int)&vt_VectorClass; /*0x5ff218*/
+  dword_AC1678 = (int)&g_ptr_7E8500; /*0x5ff218*/
   if ( dword_AC167C && byte_AC1685 ) /*0x5ff22c*/
   {
     operator delete((void *)(dword_AC167C)); /*0x5ff22f*/

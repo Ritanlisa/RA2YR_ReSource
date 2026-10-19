@@ -1982,7 +1982,7 @@ char sub_5C0640(const char * a1, char * a2, int a3)
   v5 = CCFileClass::Construct(v11, Source); /*0x5c06d6*/
   char v6; // bl
   v6 = v5->vt_slot_20(0); /*0x5c06e8*/
-  v11[0] = &vt_CCFileClass; /*0x5c06ea*/
+  v11[0] = &g_ptr_7E16B0; /*0x5c06ea*/
   int v13; // [esp+78h] [ebp-D0h]
   v13 = 0; /*0x5c06f2*/
   unsigned char v12[12]; // [esp+6Ch] [ebp-DCh] BYREF
@@ -1996,7 +1996,7 @@ char sub_5C0640(const char * a1, char * a2, int a3)
     v7 = CCFileClass::Construct(v11, Source); /*0x5c0742*/
     char v8; // bl
     v8 = v7->vt_slot_20(0); /*0x5c0754*/
-    v11[0] = &vt_CCFileClass; /*0x5c0756*/
+    v11[0] = &g_ptr_7E16B0; /*0x5c0756*/
     v13 = 0; /*0x5c075e*/
     Vector::Clear((int)v12); /*0x5c0766*/
     v11[0] = (unsigned int)&off_7E1668; /*0x5c076f*/

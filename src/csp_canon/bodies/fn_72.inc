@@ -182,7 +182,7 @@ char * E4Recv_724000::sub_724000(int a2)
   *((unsigned int *)v3 + 2) = 0; /*0x724030*/
   v3[12] = 1; /*0x724033*/
   v3[13] = 0; /*0x724037*/
-  *(unsigned int *)v3 = (unsigned int)(&vt_DynamicVectorClass); /*0x72403a*/
+  *(unsigned int *)v3 = (unsigned int)(&g_ptr_7E3238); /*0x72403a*/
   *((unsigned int *)v3 + 5) = 10; /*0x724040*/
   *((unsigned int *)v3 + 4) = 0; /*0x724047*/
   *((unsigned int *)this + 147) = 0; /*0x72404a*/
@@ -449,9 +449,9 @@ int TriggerClass::LoadTrigger(AbstractClass * aP0, int aP1)
     {
       AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x72687f*/
       /* X11: vtable install elided (implicit via TriggerClass virtuals 0x726884) */
-      ((unsigned int *)aP0)[0] = (unsigned int)(&vt_TriggerClass); /*0x72688a*/
-      ((unsigned int *)aP0)[0] = (unsigned int)(&vt_TriggerClass); /*0x726891*/
-      ((unsigned int *)aP0)[0] = (unsigned int)(&vt_TriggerClass); /*0x726898*/
+      ((unsigned int *)aP0)[0] = (unsigned int)(&g_ptr_7F582C); /*0x72688a*/
+      ((unsigned int *)aP0)[0] = (unsigned int)(&g_ptr_7F582C); /*0x726891*/
+      ((unsigned int *)aP0)[0] = (unsigned int)(&g_ptr_7F582C); /*0x726898*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->buildingType); /*0x7268a8*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->nextTrigger); /*0x7268b6*/
@@ -919,9 +919,9 @@ int TubeClass::LoadState(AbstractClass * aP0, int aP1)
     {
       ((AbstractClass *)((AbstractClass *)aP0))->Constructor(); /*0x7281ba*/
       /* X11: vtable install elided (implicit via TubeClass virtuals 0x7281bf) */
-      ((unsigned int *)aP0)[0] = (unsigned int)(&vt_TubeClass); /*0x7281c5*/
-      ((unsigned int *)aP0)[0] = (unsigned int)(&vt_TubeClass); /*0x7281cc*/
-      ((unsigned int *)aP0)[0] = (unsigned int)(&vt_TubeClass); /*0x7281d3*/
+      ((unsigned int *)aP0)[0] = (unsigned int)(&g_ptr_7F5984); /*0x7281c5*/
+      ((unsigned int *)aP0)[0] = (unsigned int)(&g_ptr_7F5984); /*0x7281cc*/
+      ((unsigned int *)aP0)[0] = (unsigned int)(&g_ptr_7F5984); /*0x7281d3*/
     }
     return 0; /*0x7281da*/
   }

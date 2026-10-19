@@ -1239,7 +1239,7 @@ int sub_65B160()
   dword_B04BD8 = 0; /*0x65b16c*/
   byte_B04BDC = 1; /*0x65b171*/
   byte_B04BDD = 0; /*0x65b178*/
-  RadSiteClass_Array = (int)&vt_DynamicVectorClass; /*0x65b17d*/
+  RadSiteClass_Array = (int)&g_ptr_7E3238; /*0x65b17d*/
   dword_B04BE4 = 10; /*0x65b187*/
   dword_B04BE0 = 0; /*0x65b191*/
   return atexit(sub_65B1A0); /*0x65b19c*/
@@ -1249,7 +1249,7 @@ int sub_65B160()
 namespace gamemd {
 void sub_65B1A0()
 {
-  RadSiteClass_Array = (int)&vt_VectorClass; /*0x65b1a8*/
+  RadSiteClass_Array = (int)&g_ptr_7E8500; /*0x65b1a8*/
   if ( dword_B04BD4 && byte_B04BDD ) /*0x65b1bc*/
   {
     operator delete((void *)(dword_B04BD4)); /*0x65b1bf*/
@@ -1393,7 +1393,7 @@ void * RAMFileClass::nullsub_0_10(char a2)
     this->RAMFileClass_field_0x8 = 0; /*0x65c5c0*/
     this->u32_1D = 0; /*0x65c5c7*/
   }
-  /* X11: vtable install elided (X67 star-deref, RHS vt_FileClass) */  /*0x65c5cf*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7F08BC) */  /*0x65c5cf*/
   if ( (a2 & 1) != 0 ) /*0x65c5d7*/
     __3_YAXPAX_Z(this); /*0x65c5da*/
   return this; /*0x65c5e4*/
@@ -1516,7 +1516,7 @@ unsigned int sub_65D510(int a1, const char * a2, int a3, unsigned char * a4)
   v10[2] = 0; /*0x65d523*/
   v10[3] = a1; /*0x65d527*/
   v11 = 0; /*0x65d52b*/
-  v10[0] = (unsigned int)(&vt_FileStraw); /*0x65d530*/
+  v10[0] = (unsigned int)(&g_ptr_7E4D90); /*0x65d530*/
   if ( a3 && a2 ) /*0x65d53c*/
   {
     v6 = 0; /*0x65d54b*/
@@ -2961,7 +2961,7 @@ namespace gamemd {
 int sub_652870()
 {
   GadgetClass::Construct(stru_B04A10, 0, 0, 0, 0, 159, 1); /*0x652884*/
-  stru_B04A10[0] = (int)&vt_RadarClassRTacticalClass; /*0x65288e*/
+  stru_B04A10[0] = (int)&g_var_4553fe; /*0x65288e*/
   return atexit(sub_6528A0); /*0x65289e*/
 }
 } // namespace gamemd
@@ -3182,7 +3182,7 @@ int sub_659090()
   dword_B04A68 = 0; /*0x65909c*/
   byte_B04A6C = 1; /*0x6590a1*/
   byte_B04A6D = 0; /*0x6590a8*/
-  RadBeam_Array = (int)&vt_DynamicVectorClass; /*0x6590ad*/
+  RadBeam_Array = (int)&g_ptr_7E3238; /*0x6590ad*/
   dword_B04A74 = 10; /*0x6590b7*/
   dword_B04A70 = 0; /*0x6590c1*/
   return atexit(sub_6590D0); /*0x6590cc*/
@@ -3193,7 +3193,7 @@ int sub_659090()
 namespace gamemd {
 void sub_6590D0()
 {
-  RadBeam_Array = (int)&vt_VectorClass; /*0x6590d8*/
+  RadBeam_Array = (int)&g_ptr_7E8500; /*0x6590d8*/
   if ( dword_B04A64 && byte_B04A6D ) /*0x6590ec*/
   {
     operator delete((void *)(dword_B04A64)); /*0x6590ef*/
@@ -4166,7 +4166,7 @@ void sub_65F9F0()
 {
   if ( (byte_B04D28 & 1) == 0 ) /*0x65f9fa*/
   {
-    stru_B04DA8 = (int)&vt_VectorClass; /*0x65f9fe*/
+    stru_B04DA8 = (int)&g_ptr_7E8500; /*0x65f9fe*/
     byte_B04D28 |= 1u; /*0x65fa11*/
     if ( dword_B04DAC ) /*0x65fa17*/
     {

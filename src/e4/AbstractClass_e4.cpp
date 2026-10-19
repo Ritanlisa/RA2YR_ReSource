@@ -69,10 +69,10 @@ void AbstractClass::Initialize(TechnoClass * aP1, TechnoClass * aP2)
     {
       AbstractClass::Constructor(v4); /*0x438ec3*/
       v5[2].ptr_C = 0; /*0x438ecb*/
-      /* X11: vtable install elided (legacy slot spelling slot, RHS vt_BombClass_4) */  /*0x438ece*/
-      /* X11: vtable install elided (legacy slot spelling slot, RHS vt_BombClass_4) */  /*0x438ed4*/
-      /* X11: vtable install elided (legacy slot spelling slot, RHS vt_BombClass_4) */  /*0x438edb*/
-      /* X11: vtable install elided (legacy slot spelling slot, RHS vt_BombClass_4) */  /*0x438ee2*/
+      /* X11: vtable install elided (legacy slot spelling slot, RHS g_var_a979a8) */  /*0x438ece*/
+      /* X11: vtable install elided (legacy slot spelling slot, RHS g_var_a979a8) */  /*0x438ed4*/
+      /* X11: vtable install elided (legacy slot spelling slot, RHS g_var_a979a8) */  /*0x438edb*/
+      /* X11: vtable install elided (legacy slot spelling slot, RHS g_var_a979a8) */  /*0x438ee2*/
       v5[1].ptr_4 = 0; /*0x438ee9*/
       v5[1].ptr_8 = 0; /*0x438eec*/
       LOBYTE(v5[2].uniqueId) = 0; /*0x438eef*/
@@ -1244,7 +1244,7 @@ int AbstractClass::compareType(int a1)
 namespace gamemd {
 Blitter * AbstractClass::getTileIndex(char a2)
 {
-  /* X11: vtable install elided (X67 star-deref, RHS vt_Blitter) */  /*0x499cc9*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E5B88) */  /*0x499cc9*/
   if ( (a2 & 1) != 0 ) /*0x499ccf*/
     operator delete((this)); /*0x499cd2*/
   return (gamemd::Blitter *)((std::locale::facet *)this); /*0x499cdc*/
@@ -1288,7 +1288,7 @@ std::locale::facet * AbstractClass::setOverlayFlags(char a2)
 namespace gamemd {
 RLEBlitter * AbstractClass::clearOverlayFlags(char a2)
 {
-  /* X11: vtable install elided (X67 star-deref, RHS vt_RLEBlitter) */  /*0x499da9*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E5BA0) */  /*0x499da9*/
   if ( (a2 & 1) != 0 ) /*0x499daf*/
     operator delete((this)); /*0x499db2*/
   return (std::locale::facet *)this; /*0x499dbc*/
@@ -1860,7 +1860,7 @@ void AbstractClass::resetTeamState()
 namespace gamemd {
 FileClass * AbstractClass::processAITrigger(unsigned int * Block, char a2)
 {
-  /* X11: vtable install elided (X67 star-deref, RHS vt_FileClass) */  /*0x65c619*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7F08BC) */  /*0x65c619*/
   if ( (a2 & 1) != 0 ) /*0x65c61f*/
     operator delete((Block)); /*0x65c622*/
   return Block; /*0x65c62c*/

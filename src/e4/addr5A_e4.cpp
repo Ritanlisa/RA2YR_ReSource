@@ -1165,7 +1165,7 @@ FootClass * * MapSeed_PlaceBuildingsScatter2(int a1)
   StringVector::Construct((StringVector *)v41, 0, 0); /*0x5a65ac*/
   v7 = *(unsigned int *)&v41[8]; /*0x5a65b1*/
   v8 = 10; /*0x5a65b5*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_DynamicVectorClass_char) */  /*0x5a65ba*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E5BC4) */  /*0x5a65ba*/
   *(unsigned int *)&v41[20] = 10; /*0x5a65c2*/
   *(unsigned int *)&v41[16] = 0; /*0x5a65c6*/
   v9 = off_82B138; /*0x5a65ca*/
@@ -1287,7 +1287,7 @@ LABEL_48:
       v6 = v33; /*0x5a6640*/
     }
   }
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_char) */  /*0x5a68f5*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E5C24) */  /*0x5a68f5*/
   if ( *(unsigned int *)&v41[4] ) /*0x5a6903*/
   {
     if ( v41[13] ) /*0x5a690b*/
@@ -5699,8 +5699,8 @@ int sub_5AFED0()
 namespace gamemd {
 void E4Recv_5AFF50::sub_5AFF50()
 {
-  /* X11: vtable install elided (X67 star-deref, RHS vt_MechLocomotionClass) */  /*0x5aff50*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_MechLocomotionClass) */  /*0x5aff56*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EDB6C) */  /*0x5aff50*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EDB6C) */  /*0x5aff56*/
   LocomotionClass::Construct(); /*0x5aff5d*/
 }
 } // namespace gamemd

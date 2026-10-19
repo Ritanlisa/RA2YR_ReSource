@@ -609,8 +609,8 @@ int DisplayClass::ProcessTacticalMouseInput(char a2, int a3, int a4)
     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004AAC10.json)
 }
 
-// ==== BACKFILL 0x004AAD20  DisplayClass::vt_entry_B0  cls=DisplayClass  sig=csp  renamed_refs=0  residual=- ====
-void DisplayClass::vt_entry_B0() {
+// ==== BACKFILL 0x004AAD20  DisplayClass::g_var_2eb6a7  cls=DisplayClass  sig=csp  renamed_refs=0  residual=- ====
+void DisplayClass::g_var_2eb6a7() {
     ; /*0x4aad20*/
 }
 

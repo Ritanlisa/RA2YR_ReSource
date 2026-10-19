@@ -35,10 +35,10 @@ namespace gamemd {  // G42.18c ns repair
 void * NeuronClass::Reset(unsigned int * Block, char a2)
 {
 
-  /* X11: vtable install elided (X67 star-deref, RHS vt_NeuronClass) */  /*0x43a9cd*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_NeuronClass) */  /*0x43a9d3*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_NeuronClass) */  /*0x43a9da*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_NeuronClass) */  /*0x43a9e1*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E3DC4) */  /*0x43a9cd*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E3DC4) */  /*0x43a9d3*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E3DC4) */  /*0x43a9da*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E3DC4) */  /*0x43a9e1*/
   NeuronClass *v6; // [esp+4h] [ebp-4h] BYREF
   v6 = (gamemd::NeuronClass *)(Block); /*0x43a9ef*/
   int v3; // eax
@@ -217,7 +217,7 @@ VectorClass_flat * NeuronClass_25::QueryInterface(unsigned int * Block, char a2)
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x43acb3*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x43acb6*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x43acb6*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x43acc0*/
   {
     operator delete((v3)); /*0x43acc8*/

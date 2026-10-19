@@ -194,9 +194,9 @@ void * Multiplayer::FindStartPositions(void *a1)
   *(unsigned int *)&v2[8] = 0; /*0x688654*/
   v2[13] = 0; /*0x688657*/
   v2[12] = (Multiplayer)1; /*0x68865f*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x688663*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x688663*/
   Multiplayer::CopyDataArray(v2, &v25); /*0x688669*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_DynamicVectorClass) */  /*0x68866e*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E3238) */  /*0x68866e*/
   /* X11: vtable install elided (implicit via VectorClass virtuals 0x688674) */
   Items = v25.Items; /*0x68867c*/
   v17 = v27; /*0x688684*/

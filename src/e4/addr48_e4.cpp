@@ -315,12 +315,12 @@ int PlaySoundEffectAt(TechnoClass * aP0, int aP1, unsigned int *a2, int aP3, cha
   v113 = aP1; /*0x48929b*/
   v114 = (int)aP0; /*0x48929f*/
   sub_48B070(0, 0); /*0x4892a3*/
-  v117 = &vt_DynamicVectorClass_4; /*0x4892aa*/
+  v117 = &g_ptr_7E5170; /*0x4892aa*/
   v122 = 10; /*0x4892b2*/
   v121 = 0; /*0x4892ba*/
   if ( !aP1 || (*(unsigned char *)dword_A8B230 & 0x20) != 0 || (v8 = aP3) == 0 ) /*0x4892d7*/
   {
-    v117 = &vt_VectorClass_DamageGroup; /*0x48a4bb*/
+    v117 = &g_ptr_7E5144; /*0x48a4bb*/
     if ( Block && (((v120) >> 8) & 0xFF) ) /*0x48a4cd*/
       __3_YAXPAX_Z(Block); /*0x48a4d0*/
     return 1; /*0x48a4da*/
@@ -593,7 +593,7 @@ LABEL_82:
   ((void (*)(void ***, int, unsigned int))v117[2])(&v117, v53, 0); /*0x489b0f*/
   if ( v107 ) /*0x489b18*/
   {
-    v117 = &vt_VectorClass_DamageGroup; /*0x489b1e*/
+    v117 = &g_ptr_7E5144; /*0x489b1e*/
     if ( Block ) /*0x489b28*/
     {
       if ( (((v120) >> 8) & 0xFF) ) /*0x489b30*/
@@ -886,7 +886,7 @@ LABEL_213:
     ParticleSystemClass::CreateParticle(v94, v94); /*0x48a479*/
   }
   v96 = v111 == 0; /*0x48a489*/
-  v117 = &vt_VectorClass_DamageGroup; /*0x48a491*/
+  v117 = &g_ptr_7E5144; /*0x48a491*/
   if ( Block && (((v120) >> 8) & 0xFF) ) /*0x48a4a1*/
     __3_YAXPAX_Z(Block); /*0x48a4a4*/
   return v96; /*0x489b40*/
@@ -1840,12 +1840,12 @@ ColorListClass * E4Recv_488760::sub_488760(ListClass * aP1, int a3, int a4, List
   this->M380 = 0; /*0x48879f*/
   this->M384 = 1; /*0x4887a5*/
   this->M385 = 0; /*0x4887ab*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass) */  /*0x4887b1*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E3238) */  /*0x4887b1*/
   this->M392 = 10; /*0x4887bb*/
   this->M388 = 0; /*0x4887c5*/
   this->M400 = 0; /*0x4887cb*/
   this->M396 = 1; /*0x4887d1*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_ColorListClass) */  /*0x4887d7*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E5054) */  /*0x4887d7*/
   return this->ptr_0; /*0x4887df*/
 
 }
@@ -1862,11 +1862,11 @@ int E4Recv_4887F0::sub_4887F0()
 
   v2 = this->M372; /*0x4887f5*/
   v3 = &this->M372; /*0x4887fb*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_ColorListClass) */  /*0x488803*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E5054) */  /*0x488803*/
   (*(void (**)(char *))(v2 + 12))(&this->M372); /*0x488809*/
   this->M400 = 0; /*0x48880e*/
   v4 = (void *)*((unsigned int *)v3 + 1); /*0x488814*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_int) */  /*0x488819*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E4DB8) */  /*0x488819*/
   if ( v4 && v3[13] ) /*0x488821*/
   {
     __3_YAXPAX_Z(v4); /*0x488827*/
@@ -2746,7 +2746,7 @@ int sub_48E6A0()
   dword_89ED00 = 0; /*0x48e6ac*/
   byte_89ED04 = 1; /*0x48e6b1*/
   byte_89ED05 = 0; /*0x48e6b8*/
-  dword_89ECF8 = (int)&vt_DynamicVectorClass; /*0x48e6bd*/
+  dword_89ECF8 = (int)&g_ptr_7E3238; /*0x48e6bd*/
   dword_89ED0C = 10; /*0x48e6c7*/
   dword_89ED08 = 0; /*0x48e6d1*/
   return atexit(sub_48E6E0); /*0x48e6dc*/
@@ -2759,7 +2759,7 @@ void sub_48E6E0()
 {
   if ( (byte_89ED10 & 1) == 0 ) /*0x48e6ea*/
   {
-    dword_89ECF8 = (int)&vt_VectorClass; /*0x48e6ee*/
+    dword_89ECF8 = (int)&g_ptr_7E8500; /*0x48e6ee*/
     byte_89ED10 |= 1u; /*0x48e701*/
     if ( dword_89ECFC ) /*0x48e707*/
     {

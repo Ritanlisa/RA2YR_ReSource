@@ -10155,8 +10155,8 @@ int __thiscall ObjectClass::CheckTypeFlag1681(ObjectClass *this)
 
 
 
-// ==== 0x0070DD90  TechnoClass::vt_entry_3E8  this=TechnoClass  sig=csp ====
-int __thiscall TechnoClass::vt_entry_3E8(TechnoClass *this)
+// ==== 0x0070DD90  TechnoClass::g_var_e75276  this=TechnoClass  sig=csp ====
+int __thiscall TechnoClass::g_var_e75276(TechnoClass *this)
 {
   return 1; /*0x70dd95*/
 }
@@ -22436,8 +22436,8 @@ int __thiscall ObjectClass::CheckTypeFlag1681(ObjectClass *this)
 
 
 
-// ==== 0x0070DD90  TechnoClass::vt_entry_3E8  this=TechnoClass  sig=csp ====
-int __thiscall TechnoClass::vt_entry_3E8(TechnoClass *this)
+// ==== 0x0070DD90  TechnoClass::g_var_e75276  this=TechnoClass  sig=csp ====
+int __thiscall TechnoClass::g_var_e75276(TechnoClass *this)
 {
   return 1; /*0x70dd95*/
 }

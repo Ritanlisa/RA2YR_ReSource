@@ -14791,7 +14791,7 @@ _DWORD *__thiscall Tactical_42_::loc_6E4B00(_DWORD *Block, char a2)
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x6e4b03*/
-  *Block = &vt_VectorClass_TActionClass; /*0x6e4b06*/
+  *Block = &g_ptr_7F43F0; /*0x6e4b06*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x6e4b10*/
   {
     __3_YAXPAX_Z(v3); /*0x6e4b18*/

@@ -29,7 +29,7 @@ struct CheckListClass {
     int CheckListClass_field_0x50;  // 0x50
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
-    int  vt_method_488310(int a2);  // 0x488310
+    int  g_var_1d7b82(int a2);  // 0x488310
     int Clear(void *a1 = 0);  // 0x488350
     int  ScrollUp(int a2);  // 0x488360
     void  GetSelected(void * String2);  // 0x488380

@@ -334,7 +334,7 @@ int UnitClass::GetExitCell(AbstractClass* aP1, AbstractClass* aP2, unsigned int 
   if ( this->referenceCount < result /*0x54e4b6*/
     || (this->customSound || !result)
     && (v13 = this->needsSave, v13 > 0)
-    && (result = this->ptr_C->vt_entry_40(&this->nextObject, result + v13, 0),
+    && (result = this->ptr_C->g_var_326827(&this->nextObject, result + v13, 0),
         (unsigned char)result) )
   {
     result = this->referenceCount; /*0x54e4b8*/
@@ -2763,7 +2763,7 @@ int UnitClass::CalcMoveTarget()
     ObjectVector::Construct(&v78, 0, 0); /*0x735e7c*/
     v51 = v78.ObjectVector_field_0x08; /*0x735e81*/
     ObjectVector_field_0x14 = 10; /*0x735e85*/
-    /* X11: vtable install elided (X67 star-deref, RHS vt_DynamicVectorClass_ObjectClass) */  /*0x735e8c*/
+    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E4F64) */  /*0x735e8c*/
     v78.ObjectVector_field_0x14 = 10; /*0x735e94*/
     v78.ObjectVector_field_0x10 = 0; /*0x735e98*/
     while ( 1 ) /*0x735ea2*/
@@ -2795,7 +2795,7 @@ LABEL_26:
           }
         }
         this->vt_slot_1348(this, 0, 0); /*0x735f6a*/
-        /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_ObjectClass) */  /*0x735f74*/
+        /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E192C) */  /*0x735f74*/
         if ( v78.ObjectVector_field_0x04 && BYTE1(v78.ObjectVector_field_0x0C) ) /*0x735f8a*/
           __3_YAXPAX_Z((void *)v78.ObjectVector_field_0x04); /*0x735f91*/
         return; /*0x735fa0*/
@@ -10838,8 +10838,8 @@ namespace gamemd {
 } // namespace gamemd
 
 // G57w10: q000 externs (truth e4_globals_decls)
-extern unsigned char vt_DynamicVectorClass_ObjectClass[4];  // data: 0x7E4F64  // G57w10 vftable residue fix
-extern unsigned char vt_VectorClass_ObjectClass[4];  // data: 0x7E192C  // G57w10 vftable residue fix
+extern unsigned char g_ptr_7E4F64[4];  // data: 0x7E4F64  // G57w10 vftable residue fix
+extern unsigned char g_ptr_7E192C[4];  // data: 0x7E192C  // G57w10 vftable residue fix
 
 namespace gamemd {
 

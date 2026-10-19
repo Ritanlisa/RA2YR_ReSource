@@ -19605,7 +19605,7 @@ _DWORD *__thiscall VectorClass_UDirtyAreaStruct::loc_6DCC80(_DWORD *Block, char 
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x6dcc83*/
-  *Block = &vt_VectorClass_DirtyAreaStruct; /*0x6dcc86*/
+  *Block = &g_ptr_7F42BC; /*0x6dcc86*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x6dcc90*/
   {
     __3_YAXPAX_Z(v3); /*0x6dcc98*/

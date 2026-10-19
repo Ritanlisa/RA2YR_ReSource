@@ -306,10 +306,10 @@ void TacticalMap::Construct(void *a1, void *a2, void *a3, void *a4, void *a5, vo
   a1->Tactical_field_0xDA4 = (AbstractClass *)Timer::GetTicks(); /*0x6d1d35*/
   *(unsigned int *)&a1->__pad_DA8[4] = 0; /*0x6d1d3b*/
   *(unsigned int *)&a1->__pad_DA8[8] = 0; /*0x6d1d4e*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_Tactical) */  /*0x6d1d54*/
-  /* X11: vtable install elided (X68 star-amp-named, RHS vt_Tactical) */  /*0x6d1d5a*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_Tactical) */  /*0x6d1d61*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_Tactical) */  /*0x6d1d68*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7F431C) */  /*0x6d1d54*/
+  /* X11: vtable install elided (X68 star-amp-named, RHS g_ptr_7F431C) */  /*0x6d1d5a*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F431C) */  /*0x6d1d61*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F431C) */  /*0x6d1d68*/
   memset(&a1->__pad_AC[56], 0, 0xC80u); /*0x6d1d6f*/
   *(unsigned short *)&a1->__pad_10[20] = 0; /*0x6d1d77*/
   *(unsigned int *)&a1->__pad_34[112] = -1; /*0x6d1d7d*/

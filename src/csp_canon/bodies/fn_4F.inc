@@ -38,32 +38,32 @@ int E4Recv_4F2770::sub_4F2770(int a2)
     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004F2770.json)
 }
 
-// ==== BACKFILL 0x004F2810  HouseClass::vt_placeholder_03  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
-void* HouseClass::vt_placeholder_03(int a1)
+// ==== BACKFILL 0x004F2810  HouseClass::g_var_89a06f  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
+void* HouseClass::g_var_89a06f(int a1)
 {
     (void)a1; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004F2810.json)
 }
 
-// ==== BACKFILL 0x004F2830  HouseClass::vt_placeholder_04  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
-void* HouseClass::vt_placeholder_04(int a1)
+// ==== BACKFILL 0x004F2830  HouseClass::g_var_89a97f  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
+void* HouseClass::g_var_89a97f(int a1)
 {
     (void)a1; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004F2830.json)
 }
 
-// ==== BACKFILL 0x004F2850  HouseClass::vt_placeholder_05  cls=DynamicVector  sig=csp  renamed_refs=0  residual=- ====
-void HouseClass::vt_placeholder_05()
+// ==== BACKFILL 0x004F2850  HouseClass::g_var_e8629d  cls=DynamicVector  sig=csp  renamed_refs=0  residual=- ====
+void HouseClass::g_var_e8629d()
 {
       // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004F2850.json)
 }
 
-// ==== BACKFILL 0x004F2880  HouseClass::vt_placeholder_06  cls=DynamicVector  sig=csp  renamed_refs=0  residual=- ====
-int HouseClass::vt_placeholder_06(int a1)
+// ==== BACKFILL 0x004F2880  HouseClass::g_var_948f21  cls=DynamicVector  sig=csp  renamed_refs=0  residual=- ====
+int HouseClass::g_var_948f21(int a1)
 {
     (void)a1; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004F2880.json)
 }
 
-// ==== BACKFILL 0x004F28C0  HouseClass::vt_placeholder_07  cls=VectorCursor  sig=csp  renamed_refs=0  residual=- ====
-VectorCursor * HouseClass::vt_placeholder_07(char a2)
+// ==== BACKFILL 0x004F28C0  HouseClass::g_var_7395f7  cls=VectorCursor  sig=csp  renamed_refs=0  residual=- ====
+VectorCursor * HouseClass::g_var_7395f7(char a2)
 {
     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4F28C0)
 }
@@ -74,26 +74,26 @@ int HouseClass::processWaypointPlanning(int a1, void* a2)
     (void)a1; (void)a2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004F2A60.json)
 }
 
-// ==== BACKFILL 0x004F2B10  HouseClass::vt_placeholder_08  cls=DynamicVector  sig=csp  renamed_refs=0  residual=- ====
-int HouseClass::vt_placeholder_08(void* a1)
+// ==== BACKFILL 0x004F2B10  HouseClass::g_var_98c4de  cls=DynamicVector  sig=csp  renamed_refs=0  residual=- ====
+int HouseClass::g_var_98c4de(void* a1)
 {
     (void)a1; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004F2B10.json)
 }
 
-// ==== BACKFILL 0x004F2B40  HouseClass::vt_placeholder_09  cls=VectorCursor  sig=csp  renamed_refs=0  residual=- ====
-unsigned int * HouseClass::vt_placeholder_09()
+// ==== BACKFILL 0x004F2B40  HouseClass::g_var_1acf04  cls=VectorCursor  sig=csp  renamed_refs=0  residual=- ====
+unsigned int * HouseClass::g_var_1acf04()
 {
     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4F2B40)
 }
 
-// ==== BACKFILL 0x004F2B50  HouseClass::vt_placeholder_10  cls=VectorCursor  sig=csp  renamed_refs=0  residual=- ====
-unsigned int * HouseClass::vt_placeholder_10()
+// ==== BACKFILL 0x004F2B50  HouseClass::g_var_2f6b7e  cls=VectorCursor  sig=csp  renamed_refs=0  residual=- ====
+unsigned int * HouseClass::g_var_2f6b7e()
 {
     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4F2B50)
 }
 
-// ==== BACKFILL 0x004F2BB0  HouseClass::vt_placeholder_11  cls=DynamicVector  sig=csp  renamed_refs=0  residual=- ====
-void* HouseClass::vt_placeholder_11(int a1)
+// ==== BACKFILL 0x004F2BB0  HouseClass::g_var_968cd5  cls=DynamicVector  sig=csp  renamed_refs=0  residual=- ====
+void* HouseClass::g_var_968cd5(int a1)
 {
     (void)a1; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004F2BB0.json)
 }

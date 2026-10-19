@@ -29,6 +29,6 @@ bool GScreenClass::UpdateCursor(MouseCursorType cursor, bool miniMap) { return f
 bool GScreenClass::RestoreCursor() { return false; }
 void GScreenClass::UpdateCursorMinimapState(bool miniMap) {}
 
-// GScreenClass Load/Save/vt_entry stubs are in src/render/display.cpp
+// GScreenClass Load/Save/g_var_139cd7 stubs are in src/render/display.cpp
 
 } // namespace gamemd

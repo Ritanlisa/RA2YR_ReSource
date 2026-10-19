@@ -91,7 +91,7 @@ VectorClass_flat * * LoadBuildingTypeClassPrerequisites(unsigned int * a1, unsig
   if ( INIClass::GetString((INIClass *)a2, a3, a4, &g_INI_DefaultBuffer, v21.__pad_20, 128) ) /*0x47710a*/
   {
     DynamicVectorClass::Construct((DynamicVectorClass *)&v21, 0, 0); /*0x477121*/
-    /* X11: vtable install elided (X67 star-deref, RHS vt_TypeList_int) */  /*0x47712a*/
+    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E4DD8) */  /*0x47712a*/
     for ( i = (BuildingTypeClass *)strtok(v21.__pad_20, Delimiter); i; i = (BuildingTypeClass *)strtok(0, Delimiter) ) /*0x477144*/
     {
       if ( !LOBYTE(i->ptr_0) ) /*0x47714a*/
@@ -194,17 +194,17 @@ VectorClass_flat * * LoadBuildingTypeClassPrerequisites(unsigned int * a1, unsig
       }
     }
     DynamicVectorClass::Copy(a1, &v21); /*0x4773cb*/
-    /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList_int) */  /*0x4773d9*/
-    /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_int) */  /*0x4773df*/
+    /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E4DD8) */  /*0x4773d9*/
+    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E4DB8) */  /*0x4773df*/
     VectorClass::Destroy((int)&v21); /*0x4773e3*/
-    a5 = &vt_VectorClass_int; /*0x4773ef*/
+    a5 = &g_ptr_7E4DB8; /*0x4773ef*/
     VectorClass::Destroy((int)&a5); /*0x4773f6*/
     return a1; /*0x4773fb*/
   }
   else
   {
     VectorClass::Copy(a1, &a5); /*0x477413*/
-    a5 = &vt_VectorClass_int; /*0x47741f*/
+    a5 = &g_ptr_7E4DB8; /*0x47741f*/
     VectorClass::Destroy((int)&a5); /*0x47742a*/
     return a1; /*0x47742f*/
   }
@@ -1345,7 +1345,7 @@ unsigned short * RenderFogOfWarOverlay(int a1, int * a2, unsigned int a3)
 namespace gamemd {
 void E4Recv_470C30::sub_470C30()
 {
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_CampaignEndScoreClass) */  /*0x470c30*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E4AB8) */  /*0x470c30*/
 }
 } // namespace gamemd
 
@@ -1507,7 +1507,7 @@ int sub_471750()
   dword_89E0F8 = 0; /*0x47175c*/
   byte_89E0FC = 1; /*0x471761*/
   byte_89E0FD = 0; /*0x471768*/
-  dword_89E0F0 = (int)&vt_DynamicVectorClass; /*0x47176d*/
+  dword_89E0F0 = (int)&g_ptr_7E3238; /*0x47176d*/
   dword_89E104 = 10; /*0x471777*/
   dword_89E100 = 0; /*0x471781*/
   return atexit(sub_471790); /*0x47178c*/
@@ -1518,7 +1518,7 @@ int sub_471750()
 namespace gamemd {
 void sub_471790()
 {
-  dword_89E0F0 = (int)&vt_VectorClass; /*0x471798*/
+  dword_89E0F0 = (int)&g_ptr_7E8500; /*0x471798*/
   if ( dword_89E0F4 && byte_89E0FD ) /*0x4717ac*/
   {
     operator delete((void *)(dword_89E0F4)); /*0x4717af*/
@@ -1809,7 +1809,7 @@ unsigned int * E4Recv_473750::sub_473750(unsigned int * a2)
   this->u32_16 = 0; /*0x473767*/
   this->q018 = 0; /*0x47376d*/
   this->M28 = -1; /*0x473770*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_CarryoverClass) */  /*0x473777*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E4C04) */  /*0x473777*/
   if ( v3 ) /*0x47377d*/
   {
     int v4; // eax
@@ -2017,7 +2017,7 @@ CCINIClass * E4Recv_474540::sub_474540(CCINIClass * aP1, char a3)
   v9 = -1732584194; /*0x4745a5*/
   v10 = 271733878; /*0x4745ad*/
   v11 = -1009589776; /*0x4745b5*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_SHAPipe) */  /*0x4745bd*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E4D78) */  /*0x4745bd*/
   INIClass::WriteToString((INIClass *)this, (int)&v6); /*0x4745c5*/
   SHA1::ComputeThunk(&v6, (char *)&this->ambientSoundController[1] + 1); /*0x4745d2*/
   LOBYTE(this->ambientSoundController[1]) = 1; /*0x4745db*/
@@ -2064,7 +2064,7 @@ int E4Recv_476E20::sub_476E20()
   v7 = 271733878; /*0x476e5c*/
   int v8; // [esp+38h] [ebp-4Ch]
   v8 = -1009589776; /*0x476e64*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_SHAPipe) */  /*0x476e6c*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E4D78) */  /*0x476e6c*/
   INIClass::WriteToString((INIClass *)this, (int)&v3); /*0x476e74*/
   SHA1::ComputeThunk(&v3, (char *)&this->ambientSoundController[1] + 1); /*0x476e81*/
   LOBYTE(this->ambientSoundController[1]) = 1; /*0x476e8a*/

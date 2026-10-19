@@ -500,7 +500,7 @@ CampaignClass * * UDPInterfaceClass::Destructor(char a2, int a3, int aP1, int a5
 {
 
 
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_UDPInterfaceClass) */  /*0x7b4176*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F7A6C) */  /*0x7b4176*/
   while ( *((unsigned int *)a3 + 64722) ) /*0x7b417c*/
   {
     __3_YAXPAX_Z(**((void ***)a3 + 64719)); /*0x7b418f*/
@@ -538,7 +538,7 @@ CampaignClass * * UDPInterfaceClass::Destructor(char a2, int a3, int aP1, int a5
   UDPInterfaceClass::connect(a3); /*0x7b4224*/
   void *v9; // eax
   v9 = (void *)*((unsigned int *)a3 + 64853); /*0x7b4229*/
-  *((unsigned int *)a3 + 64852) = (unsigned int)(&vt_VectorClass); /*0x7b422f*/
+  *((unsigned int *)a3 + 64852) = (unsigned int)(&g_ptr_7E8500); /*0x7b422f*/
   if ( v9 && *((unsigned char *)a3 + 259421) ) /*0x7b423d*/
   {
     __3_YAXPAX_Z(v9); /*0x7b4246*/
@@ -548,7 +548,7 @@ CampaignClass * * UDPInterfaceClass::Destructor(char a2, int a3, int aP1, int a5
   *((unsigned int *)a3 + 64854) = 0; /*0x7b425a*/
   void *v10; // eax
   v10 = (void *)*((unsigned int *)a3 + 64719); /*0x7b4260*/
-  *((unsigned int *)a3 + 64718) = (unsigned int)(&vt_VectorClass); /*0x7b4266*/
+  *((unsigned int *)a3 + 64718) = (unsigned int)(&g_ptr_7E8500); /*0x7b4266*/
   if ( v10 && *((unsigned char *)a3 + 258885) ) /*0x7b4274*/
   {
     __3_YAXPAX_Z(v10); /*0x7b427d*/
@@ -994,7 +994,7 @@ DynamicVector * UDPInterfaceClass::receivePacket(unsigned int * Block, char a2, 
 
 
   void *v3 = *&Block->__pad_004; // eax /*0x7b45d3*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x7b45d6*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x7b45d6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x7b45e0*/
   {
     __3_YAXPAX_Z(v3); /*0x7b45e8*/

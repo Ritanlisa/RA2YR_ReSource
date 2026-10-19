@@ -56,7 +56,7 @@ int sub_679CC0()
     v1[2] = 0; /*0x679cde*/
     unsigned int v2[10]; // [esp+10h] [ebp-B8h] BYREF
     ((GenericList *)(v2))->Constructor(); /*0x679ce2*/
-    v2[0] = (unsigned int)(&vt_List); /*0x679ceb*/
+    v2[0] = (unsigned int)(&g_var_a3009f); /*0x679ceb*/
     memset(&v2[7], 0, 12); /*0x679cf8*/
     char v3; // [esp+38h] [ebp-90h]
     v3 = 0; /*0x679d04*/
@@ -72,7 +72,7 @@ int sub_679CC0()
     if ( CCINIClass::Load(v1, (int)v7, 0, 0) ) /*0x679d2c*/
       dword_B053B4 = Hash::ComputeHashSHA1((int)v1); /*0x679d3e*/
     byte_B053B8 = 1; /*0x679d4a*/
-    v7[0] = (unsigned int)(&vt_CCFileClass); /*0x679d51*/
+    v7[0] = (unsigned int)(&g_ptr_7E16B0); /*0x679d51*/
     int v9; // [esp+C0h] [ebp-8h]
     v9 = 0; /*0x679d59*/
     unsigned char v8[12]; // [esp+B4h] [ebp-14h] BYREF
@@ -109,7 +109,7 @@ int ReadINIClassBuildingTypeList(TypeList_BuildingType * aP0, unsigned char *** 
     VectorClass::BuildingTypeConstructor(&v17, 0, 0); /*0x67b591*/
     v19 = 10; /*0x67b59a*/
     v18 = 0; /*0x67b5a8*/
-    /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList_BuildingTypeClass_const) */  /*0x67b5ac*/
+    /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7ED90C) */  /*0x67b5ac*/
     for ( i = strtok(String, Delimiter); i; i = strtok(0, Delimiter) ) /*0x67b5be*/
     {
       if ( !*i ) /*0x67b5c0*/
@@ -130,10 +130,10 @@ int ReadINIClassBuildingTypeList(TypeList_BuildingType * aP0, unsigned char *** 
     aP0->Capacity = 0; /*0x67b630*/
     aP0->IsInitialized = 1; /*0x67b633*/
     aP0->IsAllocated = 0; /*0x67b637*/
-    /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass_BuildingTypeClass_const) */  /*0x67b63a*/
+    /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7EAA08) */  /*0x67b63a*/
     VectorClass::CopyBuilding(aP0, &v17); /*0x67b640*/
-    /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList_BuildingTypeClass_const) */  /*0x67b645*/
-    /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass_BuildingTypeClass_const) */  /*0x67b64b*/
+    /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7ED90C) */  /*0x67b645*/
+    /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7EAA08) */  /*0x67b64b*/
     v9 = v19; /*0x67b657*/
     aP0->Count = v18; /*0x67b65b*/
     Items = (void *)v17.Items; /*0x67b65e*/
@@ -151,7 +151,7 @@ int ReadINIClassBuildingTypeList(TypeList_BuildingType * aP0, unsigned char *** 
     aP0->Capacity = 0; /*0x67b69c*/
     aP0->IsInitialized = 1; /*0x67b69f*/
     aP0->IsAllocated = 0; /*0x67b6a3*/
-    /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass_BuildingTypeClass_const) */  /*0x67b6a6*/
+    /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7EAA08) */  /*0x67b6a6*/
     if ( aP0 != a4 ) /*0x67b6ac*/
     {
       DynamicVectorClass::Destroy((_VectorClass_PBVBuildingTypeClass *)aP0); /*0x67b6b0*/
@@ -185,7 +185,7 @@ int ReadINIClassBuildingTypeList(TypeList_BuildingType * aP0, unsigned char *** 
     }
     aP0->Count = a4->Count; /*0x67b703*/
     aP0->CapacityIncrement = a4->CapacityIncrement; /*0x67b709*/
-    /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList_BuildingTypeClass_const) */  /*0x67b70c*/
+    /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7ED90C) */  /*0x67b70c*/
   }
   return aP0; /*0x67b682*/
 
@@ -205,7 +205,7 @@ void * ReadINIClassInfantryTypeList(INIClass * aP0, unsigned char *** edx0, INIC
     ((InfantryTypeVector *)(&v17))->Construct2(0, 0); /*0x67bb51*/
     v17.q014 = 10; /*0x67bb5a*/
     v17.q010 = 0; /*0x67bb68*/
-    *(unsigned int *)&v17.__pad_0 = (unsigned int)(&vt_TypeList); /*0x67bb6c*/
+    *(unsigned int *)&v17.__pad_0 = (unsigned int)(&g_var_131447); /*0x67bb6c*/
     char *i; // eax
     for ( i = strtok((char *)&v17.q01C, Str); i; i = strtok(0, Str) ) /*0x67bb7e*/
     {
@@ -231,10 +231,10 @@ void * ReadINIClassInfantryTypeList(INIClass * aP0, unsigned char *** edx0, INIC
     aP0->u32_8 = 0; /*0x67bbf0*/
     aP0->u32_C = 1; /*0x67bbf3*/
     aP0->u8_D = 0; /*0x67bbf7*/
-    /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x67bbfa*/
+    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x67bbfa*/
     HouseTypeClass::readStartInfantry((HouseTypeClass *)aP0, &v17); /*0x67bc00*/
-    /* X11: vtable install elided (X67 star-deref, RHS vt_TypeList) */  /*0x67bc05*/
-    *(unsigned int *)&v17.__pad_0 = (unsigned int)(&vt_VectorClass); /*0x67bc0b*/
+    /* X11: vtable install elided (X67 star-deref, RHS g_var_131447) */  /*0x67bc05*/
+    *(unsigned int *)&v17.__pad_0 = (unsigned int)(&g_ptr_7E8500); /*0x67bc0b*/
     int InfantryTypeVector_field_0x14 = v17.q014; // ecx /*0x67bc17*/
     aP0->sectionHead = v17.q010; /*0x67bc1b*/
     void *InfantryTypeVector_field_0x04; // eax
@@ -254,7 +254,7 @@ void * ReadINIClassInfantryTypeList(INIClass * aP0, unsigned char *** edx0, INIC
     aP0->u32_8 = 0; /*0x67bc5c*/
     aP0->u32_C = 1; /*0x67bc5f*/
     aP0->u8_D = 0; /*0x67bc63*/
-    /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x67bc66*/
+    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x67bc66*/
     if ( (unsigned int *)aP0 != a4 ) /*0x67bc6c*/
     {
       ((_VectorClass_PBVInfantryTypeClass *)aP0)->Cleanup(); /*0x67bc70*/
@@ -289,7 +289,7 @@ void * ReadINIClassInfantryTypeList(INIClass * aP0, unsigned char *** edx0, INIC
     }
     aP0->sectionHead = a4[4]; /*0x67bcc3*/
     aP0->u32_14 = a4[5]; /*0x67bcc9*/
-    /* X11: vtable install elided (X67 star-deref, RHS vt_TypeList) */  /*0x67bccc*/
+    /* X11: vtable install elided (X67 star-deref, RHS g_var_131447) */  /*0x67bccc*/
   }
   return aP0; /*0x67bc42*/
 }
@@ -335,7 +335,7 @@ int ArtINI_Load()
   unsigned int v1[22]; // [esp+0h] [ebp-6Ch] BYREF
   CCFileClass::Construct(v1, aArtmdIni); /*0x679efa*/
   CCINIClass::Load(&dword_887180, (int)v1, 0, 0); /*0x679f0d*/
-  v1[0] = (unsigned int)(&vt_CCFileClass); /*0x679f16*/
+  v1[0] = (unsigned int)(&g_ptr_7E16B0); /*0x679f16*/
   int v3; // [esp+64h] [ebp-8h]
   v3 = 0; /*0x679f1e*/
   unsigned char v2[12]; // [esp+58h] [ebp-14h] BYREF

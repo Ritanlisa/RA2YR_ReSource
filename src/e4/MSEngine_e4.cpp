@@ -186,7 +186,7 @@ CampaignClass * MSEngine::Destructor(void *a1)
   ((SessionClass *)this)->Destruct(); /*0x5cee64*/
   void *v2; // eax
   v2 = (void *)this->u32_48; /*0x5cee69*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x5cee70*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x5cee70*/
   if ( v2 && this->u32_51 ) /*0x5cee79*/
   {
     __3_YAXPAX_Z(v2); /*0x5cee7f*/
@@ -196,7 +196,7 @@ CampaignClass * MSEngine::Destructor(void *a1)
   this->u32_4C = 0; /*0x5cee8d*/
   void *v3; // eax
   v3 = (void *)this->u32_30; /*0x5cee90*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x5cee93*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x5cee93*/
   if ( v3 && this->u32_39 ) /*0x5cee9e*/
   {
     __3_YAXPAX_Z(v3); /*0x5ceea4*/
@@ -229,23 +229,23 @@ CampaignClass * MSEngine::Construct(void *a1, void *a2, void *a3, void *a4, void
   p_MSEngine_field_0x8[2] = 0; /*0x5d1ab5*/
   *((unsigned char *)p_MSEngine_field_0x8 + 12) = 1; /*0x5d1ab8*/
   *((unsigned char *)p_MSEngine_field_0x8 + 13) = 0; /*0x5d1abb*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClassTRect) */  /*0x5d1abe*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_var_6074db) */  /*0x5d1abe*/
   this->u32_1C = 0; /*0x5d1ac4*/
   this->u32_20 = 0; /*0x5d1ac7*/
   this->u32_24 = 1; /*0x5d1aca*/
   this->u32_25 = 0; /*0x5d1acd*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass) */  /*0x5d1ad0*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E3238) */  /*0x5d1ad0*/
   this->u32_2C = 10; /*0x5d1ad6*/
   this->u32_28 = 0; /*0x5d1add*/
   this->q034 = 0; /*0x5d1ae0*/
   this->u32_38 = 0; /*0x5d1ae3*/
   this->u32_3C = 1; /*0x5d1ae6*/
   this->u32_3D = 0; /*0x5d1ae9*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass) */  /*0x5d1aec*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E3238) */  /*0x5d1aec*/
   this->u32_44 = 10; /*0x5d1af2*/
   this->u32_40 = 0; /*0x5d1af9*/
   v3 = (void (**)(void **, int, unsigned int))*p_MSEngine_field_0x8; /*0x5d1afc*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_MSEngine) */  /*0x5d1b01*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EEBD4) */  /*0x5d1b01*/
   this->MSEngine_field_0x4 = 0; /*0x5d1b07*/
   v3[2](p_MSEngine_field_0x8, 20, 0); /*0x5d1b0a*/
   (*(void (**)(char *))(this->u32_18 + 12))(&this->u32_18); /*0x5d1b11*/
@@ -273,7 +273,7 @@ CampaignClass * MSEngine::Destruct(void *a1)
   int result; // eax
 
   v2 = 0; /*0x5d1b37*/
-  for ( *(unsigned int *)this->__pad_0 = &vt_MSEngine; v2 < this->u32_40; ++v2 ) /*0x5d1b45*/
+  for ( *(unsigned int *)this->__pad_0 = &g_ptr_7EEBD4; v2 < this->u32_40; ++v2 ) /*0x5d1b45*/
   {
     v3 = (MSEngine **)this->q034; /*0x5d1b47*/
     v4 = v3[v2]; /*0x5d1b4a*/
@@ -297,7 +297,7 @@ CampaignClass * MSEngine::Destruct(void *a1)
   p_MSEngine_field_0x8 = &this->MSEngine_field_0x8; /*0x5d1ba3*/
   (*(void (**)(int *))(MSEngine_field_0x8 + 12))(p_MSEngine_field_0x8); /*0x5d1ba8*/
   v11 = (void *)*((unsigned int *)v5 + 1); /*0x5d1bab*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_MSSfx) */  /*0x5d1bae*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EEC44) */  /*0x5d1bae*/
   if ( v11 && v5[13] ) /*0x5d1bb9*/
   {
     __3_YAXPAX_Z(v11); /*0x5d1bbf*/
@@ -306,7 +306,7 @@ CampaignClass * MSEngine::Destruct(void *a1)
   v5[13] = 0; /*0x5d1bca*/
   *((unsigned int *)v5 + 2) = 0; /*0x5d1bcd*/
   v12 = (void *)*((unsigned int *)v8 + 1); /*0x5d1bd0*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_MSAnim) */  /*0x5d1bd3*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EEC24) */  /*0x5d1bd3*/
   if ( v12 && v8[13] ) /*0x5d1bdd*/
   {
     __3_YAXPAX_Z(v12); /*0x5d1be3*/
@@ -315,7 +315,7 @@ CampaignClass * MSEngine::Destruct(void *a1)
   v8[13] = 0; /*0x5d1bee*/
   *((unsigned int *)v8 + 2) = 0; /*0x5d1bf1*/
   result = p_MSEngine_field_0x8[1]; /*0x5d1bf4*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_TRect_int) */  /*0x5d1bf7*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7ED970) */  /*0x5d1bf7*/
   if ( result && *((unsigned char *)p_MSEngine_field_0x8 + 13) ) /*0x5d1c01*/
   {
     __3_YAXPAX_Z((void *)result); /*0x5d1c07*/
@@ -500,7 +500,7 @@ VectorClass_flat * MSEngine::QueryInterface(unsigned int * Block, char a2)
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x5ad4d3*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClassTRect) */  /*0x5ad4d6*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_var_6074db) */  /*0x5ad4d6*/
   if ( v3 && (Block->u8_E) ) /*0x5ad4e0*/
   {
     operator delete((v3)); /*0x5ad4e8*/
@@ -521,7 +521,7 @@ CampaignClass * MSEngine::Constructor(unsigned int * Block, char a2, void *a3_1,
 
 
   void *v3 = *&Block->__pad_004; // eax /*0x5ad523*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClassTRect) */  /*0x5ad526*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_var_6074db) */  /*0x5ad526*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x5ad530*/
   {
     __3_YAXPAX_Z(v3); /*0x5ad538*/

@@ -872,8 +872,8 @@ int ParticleClass::CheckCollisionFlags(TechnoTypeClass * aP0, int * a1, int aP2)
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x62D810)
 }
 
-// ==== BACKFILL 0x0062D830  ParticleClass::vt_entry_1E8  cls=ParticleClass  sig=csp  renamed_refs=0  residual=- ====
-int ParticleClass::vt_entry_1E8() {
+// ==== BACKFILL 0x0062D830  ParticleClass::g_var_22c88d  cls=ParticleClass  sig=csp  renamed_refs=0  residual=- ====
+int ParticleClass::g_var_22c88d() {
   int v2; // eax
   int v3; // eax
   int v5[2]; // [esp+4h] [ebp-10h] BYREF

@@ -610,8 +610,8 @@ unsigned int * VectorClass_K_8::Constructor(void *a1_1, void *a2_1, void *a3_1, 
   a1_1->CStreamClass_field_0x18 = __2_YAPAXI_Z(0x10000u); /*0x4a2843*/
   a1_1->CStreamClass_field_0x1C = __2_YAPAXI_Z(0x10000u); /*0x4a2850*/
   a1_1->CStreamClass_field_0x20 = __2_YAPAXI_Z(0x10000u); /*0x4a285b*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_CStreamClass) */  /*0x4a285e*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_CStreamClass) */  /*0x4a2864*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E5D94) */  /*0x4a285e*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E5D94) */  /*0x4a2864*/
   a1_1->CStreamClass_field_0x24 = 0xFFFF; /*0x4a286b*/
   return a1_1->__pad_0; /*0x4a2874*/
 
@@ -678,7 +678,7 @@ unsigned int * VectorClass_ptr_BuildChoiceClass_int_ouseClass::Constructor(EnumC
   aP1->CapacityIncrement[0] = 0; /*0x4a0c3a*/
   aP1->q018 = 1; /*0x4a0c3d*/
   aP1->u32_19 = 0; /*0x4a0c41*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x4a0c44*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x4a0c44*/
   if ( &aP1->q018 != (char *)a2_1 ) /*0x4a0c4a*/
   {
     VectorClass::CleanupTyped((int)&aP1->q018); /*0x4a0c4e*/
@@ -715,7 +715,7 @@ unsigned int * VectorClass_ptr_BuildChoiceClass_int_ouseClass::Constructor(EnumC
   }
   *((unsigned int *)p_IsInitialized + 4) = a2_1[4]; /*0x4a0c9d*/
   *((unsigned int *)p_IsInitialized + 5) = a2_1[5]; /*0x4a0ca3*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_DynamicVectorClass) */  /*0x4a0ca6*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E3238) */  /*0x4a0ca6*/
   /* X11: vtable install elided (implicit via EnumConnectionPointsClass virtuals 0x4a0cac) */
   int i; // esi
   for ( i = 0; i < *&aP1->q01C; ++i ) /*0x4a0cb9*/
@@ -1196,7 +1196,7 @@ namespace gamemd {
 void * VectorClass_ptr_ConvertClass::Constructor_ConvertClass(void ** Block, char a2)
 {
 
-  /* X11: vtable install elided (X67 star-deref, RHS vt_ConvertClass) */  /*0x491214*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E5358) */  /*0x491214*/
   COMClass::RegisterAll((COMClass *)Block); /*0x49121a*/
   operator delete((*(Block + 92))); /*0x491226*/
   void *v3; // ecx
@@ -1769,7 +1769,7 @@ VectorClass_flat *  VectorClass_flat::QueryInterface(unsigned int * Block, char 
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x40b303*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x40b306*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x40b306*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x40b310*/
   {
     operator delete((v3)); /*0x40b318*/
@@ -2092,7 +2092,7 @@ DynamicVector * VectorClass_ptr_LightConvertClass::Constructor_VectorClass_Light
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x40c543*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x40c546*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x40c546*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x40c550*/
   {
     __3_YAXPAX_Z(v3); /*0x40c558*/
@@ -2166,7 +2166,7 @@ DynamicVector * VectorClass_ptr_IsometricTileClass::Constructor_VectorClass_Isom
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x40cb33*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x40cb36*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x40cb36*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x40cb40*/
   {
     __3_YAXPAX_Z(v3); /*0x40cb48*/
@@ -2196,7 +2196,7 @@ LogicClass * VectorClass_ptr_IsometricTileClass::Constructor_VectorClass_ObjectC
   void *count; // eax
 
   count = (void *)Block->count; /*0x40cc23*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x40cc26*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x40cc26*/
   if ( count && *((unsigned char *)Block + 13) ) /*0x40cc30*/
   {
     operator delete((count)); /*0x40cc38*/
@@ -2447,7 +2447,7 @@ namespace gamemd {
 VectorClass_flat * VectorClass_ptr_ScriptClass::QueryInterface(unsigned int * Block, char a2)
 {
   void *v3 = *&Block->__pad_004; // eax /*0x40eab3*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x40eab6*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x40eab6*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x40eac0*/
   {
     operator delete((v3)); /*0x40eac8*/
@@ -2466,7 +2466,7 @@ namespace gamemd {
 DynamicVector * VectorClass_ptr_ScriptClass::Constructor_VectorClass_ScriptClass___(unsigned int * Block, char a2)
 {
   void *v3 = *&Block->u32_8; // eax /*0x40eb03*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x40eb06*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x40eb06*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x40eb10*/
   {
     operator delete((v3)); /*0x40eb18*/
@@ -2530,7 +2530,7 @@ DynamicVector * VectorClass_ptr_VoxelAnimClass::Constructor_VectorClass_VoxelAni
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x40f1d3*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x40f1d6*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x40f1d6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x40f1e0*/
   {
     __3_YAXPAX_Z(v3); /*0x40f1e8*/
@@ -2610,7 +2610,7 @@ DynamicVector * VectorClass_ptr_WarheadTypeClass::Constructor_VectorClass_Warhea
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x40f8f3*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x40f8f6*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x40f8f6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x40f900*/
   {
     __3_YAXPAX_Z(v3); /*0x40f908*/
@@ -2681,7 +2681,7 @@ DynamicVector * VectorClass_ptr_WeaponTypeClass::Constructor_VectorClass_WeaponT
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x40fec3*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x40fec6*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x40fec6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x40fed0*/
   {
     __3_YAXPAX_Z(v3); /*0x40fed8*/
@@ -2752,7 +2752,7 @@ DynamicVector * VectorClass_ptr_AirstrikeClass::Constructor_VectorClass_Airstrik
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x41e0f3*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x41e0f6*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x41e0f6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x41e100*/
   {
     __3_YAXPAX_Z(v3); /*0x41e108*/
@@ -2825,7 +2825,7 @@ unsigned int * VectorClass_ptr_AlphaShapeClass::loc_421B10(unsigned int * Block,
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x421b13*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_AlphaShapeClass) */  /*0x421b16*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E3258) */  /*0x421b16*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x421b20*/
   {
     __3_YAXPAX_Z(v3); /*0x421b28*/
@@ -2966,7 +2966,7 @@ VectorClass_ushort * VectorClass_ushort::Add(unsigned int * Block, char a2, void
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x42dbb3*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x42dbb6*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x42dbb6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x42dbc0*/
   {
     __3_YAXPAX_Z(v3); /*0x42dbc8*/
@@ -2987,7 +2987,7 @@ DynamicVector * VectorClass_ushort::Constructor(unsigned int * Block, char a2, v
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x42dc03*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x42dc06*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x42dc06*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x42dc10*/
   {
     __3_YAXPAX_Z(v3); /*0x42dc18*/
@@ -3260,7 +3260,7 @@ DynamicVector * VectorClass_ptr_Reestablish::Constructor(unsigned int * Block, c
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x45aa13*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x45aa16*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x45aa16*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x45aa20*/
   {
     __3_YAXPAX_Z(v3); /*0x45aa28*/
@@ -3282,7 +3282,7 @@ DynamicVector * VectorClass_InfantryPtr::Destruct(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = (void *)*((unsigned int *)Block + 1); /*0x45aab3*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x45aab6*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x45aab6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x45aac0*/
   {
     operator delete((v3)); /*0x45aac8*/
@@ -3301,7 +3301,7 @@ namespace gamemd {
 DynamicVector * VectorClass_ptr_FoggedObjectClass::Constructor_VectorClass_FoggedObjectClass___(unsigned int * Block, char a2)
 {
   void *v3 = *&Block->__pad_004; // eax /*0x45ab03*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x45ab06*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x45ab06*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x45ab10*/
   {
     operator delete((v3)); /*0x45ab18*/
@@ -3341,7 +3341,7 @@ VectorClass_flat * VectorClass_ptr_Reestablish::Add(unsigned int * Block, char a
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x45ace3*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x45ace6*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x45ace6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x45acf0*/
   {
     __3_YAXPAX_Z(v3); /*0x45acf8*/
@@ -3361,7 +3361,7 @@ namespace gamemd {
 DynamicVector * VectorClass_ptr_Reestablish::Constructor_VectorClass_Reestablish___(unsigned int * Block, char a2)
 {
   void *v3 = *&Block->__pad_004; // eax /*0x45ad33*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x45ad36*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x45ad36*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x45ad40*/
   {
     operator delete((v3)); /*0x45ad48*/
@@ -3522,7 +3522,7 @@ unsigned int * VectorClass_ptr_BulletClass::loc_46B910(unsigned int * Block, cha
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x46b913*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_BulletClass) */  /*0x46b916*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E4698) */  /*0x46b916*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x46b920*/
   {
     __3_YAXPAX_Z(v3); /*0x46b928*/
@@ -3609,7 +3609,7 @@ DynamicVector * VectorClass_ptr_CaptureManagerClass::Constructor_VectorClass_Cap
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x4730f3*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x4730f6*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x4730f6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x473100*/
   {
     __3_YAXPAX_Z(v3); /*0x473108*/
@@ -3878,7 +3878,7 @@ VectorClass_flat *  VectorClass_flat::vt00(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x478633*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x478636*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x478636*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x478640*/
   {
     operator delete((v3)); /*0x478648*/
@@ -3947,7 +3947,7 @@ DynamicVector * VectorClass_ptr_DamageGroup::Constructor_VectorClass_DamageGroup
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x48b023*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x48b026*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x48b026*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x48b030*/
   {
     __3_YAXPAX_Z(v3); /*0x48b038*/
@@ -4018,7 +4018,7 @@ DynamicVector * VectorClass_ptr_ConvertClass::Constructor_VectorClass_ConvertCla
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x49b133*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x49b136*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x49b136*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x49b140*/
   {
     __3_YAXPAX_Z(v3); /*0x49b148*/
@@ -4047,7 +4047,7 @@ namespace gamemd {
 DynamicVector *  VectorClass_UtagCONNECTDATA::Constructor_VectorClass_tagCONNECTDATA_(unsigned int * Block, char a2)
 {
   void *v3 = *&Block->__pad_004; // eax /*0x4a0e13*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x4a0e16*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x4a0e16*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x4a0e20*/
   {
     operator delete((v3)); /*0x4a0e28*/
@@ -4329,7 +4329,7 @@ DynamicVector * VectorClass_ptr_EBolt::Constructor_VectorClass_EBolt___(unsigned
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x4c2f53*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x4c2f56*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x4c2f56*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4c2f60*/
   {
     __3_YAXPAX_Z(v3); /*0x4c2f68*/
@@ -4400,7 +4400,7 @@ DynamicVector * VectorClass_ptr_EgoClass::Constructor_VectorClass_EgoClass___(un
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x4c4cb3*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x4c4cb6*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x4c4cb6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4c4cc0*/
   {
     __3_YAXPAX_Z(v3); /*0x4c4cc8*/
@@ -4471,7 +4471,7 @@ DynamicVector * VectorClass_ptr_EMPulseClass::Constructor_VectorClass_EMPulseCla
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x4c5e73*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x4c5e76*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x4c5e76*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4c5e80*/
   {
     __3_YAXPAX_Z(v3); /*0x4c5e88*/
@@ -5797,7 +5797,7 @@ DynamicVector * VectorClass_ptr_SuperClass::Constructor_VectorClass_SuperClass__
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x4ef673*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x4ef676*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x4ef676*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4ef680*/
   {
     __3_YAXPAX_Z(v3); /*0x4ef688*/
@@ -5817,7 +5817,7 @@ DynamicVector * VectorClass_ptr_AITriggerTypeClass::Constructor_VectorClass_AITr
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x4ef713*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x4ef716*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x4ef716*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4ef720*/
   {
     __3_YAXPAX_Z(v3); /*0x4ef728*/
@@ -5837,7 +5837,7 @@ DynamicVector * VectorClass_ptr_BuildingLightClass::Constructor_VectorClass_Buil
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x4ef7b3*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x4ef7b6*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x4ef7b6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4ef7c0*/
   {
     __3_YAXPAX_Z(v3); /*0x4ef7c8*/
@@ -5857,7 +5857,7 @@ DynamicVector * VectorClass_ptr_TeamClass::Constructor_VectorClass_TeamClass___(
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x4ef8f3*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x4ef8f6*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x4ef8f6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4ef900*/
   {
     __3_YAXPAX_Z(v3); /*0x4ef908*/
@@ -5879,7 +5879,7 @@ DynamicVector * VectorClass_ptr_AITriggerTypeClass::Constructor_VectorClass_Trig
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x4ef9e3*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x4ef9e6*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x4ef9e6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4ef9f0*/
   {
     __3_YAXPAX_Z(v3); /*0x4ef9f8*/
@@ -5899,7 +5899,7 @@ DynamicVector * VectorClass_ptr_AITriggerTypeClass::Constructor_VectorClass_Trig
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x4efa83*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x4efa86*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x4efa86*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4efa90*/
   {
     __3_YAXPAX_Z(v3); /*0x4efa98*/
@@ -5919,7 +5919,7 @@ DynamicVector * VectorClass_ptr_TubeClass::Constructor_VectorClass_TubeClass___(
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x4efb23*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x4efb26*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x4efb26*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4efb30*/
   {
     __3_YAXPAX_Z(v3); /*0x4efb38*/
@@ -5939,7 +5939,7 @@ DynamicVector * VectorClass_ptr_BuildingLightClass::Constructor_VectorClass_Part
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x4efbc3*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x4efbc6*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x4efbc6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4efbd0*/
   {
     __3_YAXPAX_Z(v3); /*0x4efbd8*/
@@ -5959,7 +5959,7 @@ DynamicVector * VectorClass_ptr_TubeClass::Constructor_VectorClass_WaveClass___(
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x4efc63*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x4efc66*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x4efc66*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4efc70*/
   {
     __3_YAXPAX_Z(v3); /*0x4efc78*/
@@ -5979,7 +5979,7 @@ DynamicVector * VectorClass_ptr_TubeClass::Constructor_VectorClass_OverlayClass_
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x4efd03*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x4efd06*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x4efd06*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4efd10*/
   {
     __3_YAXPAX_Z(v3); /*0x4efd18*/
@@ -6001,7 +6001,7 @@ DynamicVector * VectorClass_ptr_UnitClass::Constructor_VectorClass_UnitClass___(
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x4eff83*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x4eff86*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x4eff86*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4eff90*/
   {
     __3_YAXPAX_Z(v3); /*0x4eff98*/
@@ -6021,7 +6021,7 @@ DynamicVector * VectorClass_ptr_UnitClass::Constructor_VectorClass_HouseClass___
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x4f0023*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x4f0026*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x4f0026*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4f0030*/
   {
     __3_YAXPAX_Z(v3); /*0x4f0038*/
@@ -6041,7 +6041,7 @@ DynamicVector * VectorClass_ptr_TeamClass::Constructor_VectorClass_AnimClass___(
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x4f00c3*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x4f00c6*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x4f00c6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4f00d0*/
   {
     __3_YAXPAX_Z(v3); /*0x4f00d8*/
@@ -6061,7 +6061,7 @@ DynamicVector * VectorClass_ptr_TeamClass::Constructor_VectorClass_FactoryClass_
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x4f0163*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x4f0166*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x4f0166*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4f0170*/
   {
     __3_YAXPAX_Z(v3); /*0x4f0178*/
@@ -6081,7 +6081,7 @@ DynamicVector * VectorClass_ptr_CampaignClass::Constructor_VectorClass_CampaignC
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x4f0203*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x4f0206*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x4f0206*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4f0210*/
   {
     __3_YAXPAX_Z(v3); /*0x4f0218*/
@@ -6101,7 +6101,7 @@ DynamicVector * VectorClass_ptr_CampaignClass::Constructor_VectorClass_SideClass
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x4f02a3*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x4f02a6*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x4f02a6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4f02b0*/
   {
     __3_YAXPAX_Z(v3); /*0x4f02b8*/
@@ -6121,7 +6121,7 @@ DynamicVector * VectorClass_ptr_HouseTypeClass::Constructor_VectorClass_HouseTyp
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x4f0343*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x4f0346*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x4f0346*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4f0350*/
   {
     __3_YAXPAX_Z(v3); /*0x4f0358*/
@@ -6141,7 +6141,7 @@ DynamicVector * VectorClass_ptr_HouseTypeClass::Constructor_VectorClass_TaskForc
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x4f03e3*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x4f03e6*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x4f03e6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4f03f0*/
   {
     __3_YAXPAX_Z(v3); /*0x4f03f8*/
@@ -6161,7 +6161,7 @@ DynamicVector * VectorClass_ptr_HouseTypeClass::Constructor_VectorClass_TeamType
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x4f0483*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x4f0486*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x4f0486*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4f0490*/
   {
     __3_YAXPAX_Z(v3); /*0x4f0498*/
@@ -6181,7 +6181,7 @@ DynamicVector * VectorClass_ptr_ScriptTypeClass::Constructor_VectorClass_ScriptT
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x4f0523*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x4f0526*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x4f0526*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4f0530*/
   {
     __3_YAXPAX_Z(v3); /*0x4f0538*/
@@ -6201,7 +6201,7 @@ DynamicVector * VectorClass_ptr_ScriptTypeClass::Constructor_VectorClass_Overlay
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x4f05c3*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x4f05c6*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x4f05c6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4f05d0*/
   {
     __3_YAXPAX_Z(v3); /*0x4f05d8*/
@@ -6221,7 +6221,7 @@ DynamicVector * VectorClass_ptr_SmudgeTypeClass::Constructor_VectorClass_SmudgeT
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x4f0663*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x4f0666*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x4f0666*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4f0670*/
   {
     __3_YAXPAX_Z(v3); /*0x4f0678*/
@@ -6241,7 +6241,7 @@ DynamicVector * VectorClass_ptr_SmudgeTypeClass::Constructor_VectorClass_Terrain
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x4f0703*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x4f0706*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x4f0706*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4f0710*/
   {
     __3_YAXPAX_Z(v3); /*0x4f0718*/
@@ -6261,7 +6261,7 @@ DynamicVector * VectorClass_ptr_SmudgeTypeClass::Constructor_VectorClass_Buildin
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x4f07a3*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x4f07a6*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x4f07a6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4f07b0*/
   {
     __3_YAXPAX_Z(v3); /*0x4f07b8*/
@@ -6281,7 +6281,7 @@ DynamicVector * VectorClass_ptr_AircraftTypeClass::Constructor_VectorClass_Aircr
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x4f0843*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x4f0846*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x4f0846*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4f0850*/
   {
     __3_YAXPAX_Z(v3); /*0x4f0858*/
@@ -6301,7 +6301,7 @@ DynamicVector * VectorClass_ptr_AircraftTypeClass::Constructor_VectorClass_UnitT
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x4f08e3*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x4f08e6*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x4f08e6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4f08f0*/
   {
     __3_YAXPAX_Z(v3); /*0x4f08f8*/
@@ -6321,7 +6321,7 @@ DynamicVector * VectorClass_ptr_AnimTypeClass::Constructor_VectorClass_AnimTypeC
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x4f0983*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x4f0986*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x4f0986*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4f0990*/
   {
     __3_YAXPAX_Z(v3); /*0x4f0998*/
@@ -6341,7 +6341,7 @@ DynamicVector * VectorClass_ptr_AnimTypeClass::Constructor_VectorClass_InfantryT
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x4f0a23*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x4f0a26*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x4f0a26*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4f0a30*/
   {
     __3_YAXPAX_Z(v3); /*0x4f0a38*/
@@ -6361,7 +6361,7 @@ DynamicVector * VectorClass_ptr_AnimTypeClass::Constructor_VectorClass_BulletTyp
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x4f0ac3*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x4f0ac6*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x4f0ac6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4f0ad0*/
   {
     __3_YAXPAX_Z(v3); /*0x4f0ad8*/
@@ -6381,7 +6381,7 @@ DynamicVector * VectorClass_ptr_VoxelAnimTypeClass::Constructor_VectorClass_Voxe
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x4f0b63*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x4f0b66*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x4f0b66*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4f0b70*/
   {
     __3_YAXPAX_Z(v3); /*0x4f0b78*/
@@ -6401,7 +6401,7 @@ DynamicVector * VectorClass_ptr_VoxelAnimTypeClass::Constructor_VectorClass_Isom
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x4f0c03*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x4f0c06*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x4f0c06*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4f0c10*/
   {
     __3_YAXPAX_Z(v3); /*0x4f0c18*/
@@ -6421,7 +6421,7 @@ DynamicVector * VectorClass_ptr_ParticleTypeClass::Constructor_VectorClass_Parti
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x4f0ca3*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x4f0ca6*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x4f0ca6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4f0cb0*/
   {
     __3_YAXPAX_Z(v3); /*0x4f0cb8*/
@@ -6441,7 +6441,7 @@ DynamicVector * VectorClass_ptr_ParticleTypeClass::Constructor_VectorClass_Parti
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x4f0d43*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x4f0d46*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x4f0d46*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4f0d50*/
   {
     __3_YAXPAX_Z(v3); /*0x4f0d58*/
@@ -6461,7 +6461,7 @@ DynamicVector * VectorClass_ptr_ParticleTypeClass::Constructor_VectorClass_Super
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x4f0de3*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x4f0de6*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x4f0de6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4f0df0*/
   {
     __3_YAXPAX_Z(v3); /*0x4f0df8*/
@@ -6481,7 +6481,7 @@ DynamicVector * VectorClass_ptr_SuperClass::Constructor_VectorClass_AbstractType
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x4f0e83*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x4f0e86*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x4f0e86*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4f0e90*/
   {
     __3_YAXPAX_Z(v3); /*0x4f0e98*/
@@ -6902,7 +6902,7 @@ VectorClass_flat * VectorClass_BuildingType::Get(unsigned int * Block, char a2)
 {
 
   void *v3 = *&Block->ptr_4; // eax /*0x50fff3*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x50fff6*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x50fff6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x510000*/
   {
     __3_YAXPAX_Z(v3); /*0x510008*/
@@ -6928,7 +6928,7 @@ DynamicVector * VectorClass_UAngerStruct::Constructor_VectorClass_AngerStruct_(u
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x510183*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x510186*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x510186*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x510190*/
   {
     __3_YAXPAX_Z(v3); /*0x510198*/
@@ -6952,7 +6952,7 @@ unsigned int * VectorClass_ptr_BuildChoiceClass_int_ouseClass::loc_5102C0(unsign
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x5102c3*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_HouseClass_BuildChoiceClass) */  /*0x5102c6*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EA7D4) */  /*0x5102c6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x5102d0*/
   {
     __3_YAXPAX_Z(v3); /*0x5102d8*/
@@ -6970,7 +6970,7 @@ VectorClass_flat * VectorClass_BuildingType::Constructor_0(unsigned int * Block,
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x510313*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x510316*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x510316*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x510320*/
   {
     __3_YAXPAX_Z(v3); /*0x510328*/
@@ -6990,7 +6990,7 @@ DynamicVector * VectorClass__N::Constructor_VectorClass_bool_(unsigned int * Blo
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x5103b3*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x5103b6*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x5103b6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x5103c0*/
   {
     __3_YAXPAX_Z(v3); /*0x5103c8*/
@@ -7275,7 +7275,7 @@ DynamicVector * VectorClass_ptr_IonBlastClass::Constructor_VectorClass_IonBlastC
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x53dd53*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x53dd56*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x53dd56*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x53dd60*/
   {
     __3_YAXPAX_Z(v3); /*0x53dd68*/
@@ -7376,7 +7376,7 @@ DynamicVector * VectorClass_ptr_LaserDrawClass::Constructor_VectorClass_LaserDra
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x5515e3*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x5515e6*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x5515e6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x5515f0*/
   {
     __3_YAXPAX_Z(v3); /*0x5515f8*/
@@ -7446,7 +7446,7 @@ DynamicVector * VectorClass_ptr_LightSourceClass::Constructor_VectorClass_LightS
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x5557d3*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x5557d6*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x5557d6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x5557e0*/
   {
     __3_YAXPAX_Z(v3); /*0x5557e8*/
@@ -7748,7 +7748,7 @@ char * VectorClass_W4PassabilityType::Constructor_0(unsigned int * Block, char a
       {
         v9 = (void *)*((unsigned int *)v7 - 5); /*0x58a862*/
         v7 -= 24; /*0x58a865*/
-        /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClassHashObject) */  /*0x58a86a*/
+        /* X11: vtable install elided (X67 star-deref, RHS g_var_a68180) */  /*0x58a86a*/
         if ( v9 && v7[13] ) /*0x58a872*/
         {
           __3_YAXPAX_Z(v9); /*0x58a878*/
@@ -7767,7 +7767,7 @@ char * VectorClass_W4PassabilityType::Constructor_0(unsigned int * Block, char a
   else
   {
     v11 = *(void **)&Block->m_1[3]; /*0x58a8a5*/
-    /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClassHashObject) */  /*0x58a8ac*/
+    /* X11: vtable install elided (X67 star-deref, RHS g_var_a68180) */  /*0x58a8ac*/
     if ( v11 && BYTE1(Block->u32_C) ) /*0x58a8b4*/
     {
       __3_YAXPAX_Z(v11); /*0x58a8ba*/
@@ -7796,7 +7796,7 @@ DynamicVector * VectorClass_W4PassabilityType::Constructor_1(unsigned int * Bloc
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x58aae3*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x58aae6*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x58aae6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x58aaf0*/
   {
     __3_YAXPAX_Z(v3); /*0x58aaf8*/
@@ -7938,7 +7938,7 @@ unsigned int * VectorClass_ptr_MapRegionClass::loc_5AD3E0(unsigned int * Block, 
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x5ad3e3*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_MapRegionClass) */  /*0x5ad3e6*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7ED878) */  /*0x5ad3e6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x5ad3f0*/
   {
     __3_YAXPAX_Z(v3); /*0x5ad3f8*/
@@ -7958,7 +7958,7 @@ DynamicVector * VectorClass_N::Constructor_VectorClass_double_(unsigned int * Bl
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x5ad613*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x5ad616*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x5ad616*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x5ad620*/
   {
     __3_YAXPAX_Z(v3); /*0x5ad628*/
@@ -8101,7 +8101,7 @@ DynamicVector * VectorClass_ptr_MSSfx::Constructor_VectorClass_MSAnim___(unsigne
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x5d2cf3*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x5d2cf6*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x5d2cf6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x5d2d00*/
   {
     __3_YAXPAX_Z(v3); /*0x5d2d08*/
@@ -8121,7 +8121,7 @@ DynamicVector * VectorClass_Point2D::Constructor_VectorClass_MSSfx___(unsigned i
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x5d2d93*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x5d2d96*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x5d2d96*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x5d2da0*/
   {
     __3_YAXPAX_Z(v3); /*0x5d2da8*/
@@ -8253,7 +8253,7 @@ VectorClass_flat * VectorClass_cptr_MultiMission::GetAt(unsigned int * Block, ch
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x5eeec3*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x5eeec6*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x5eeec6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x5eeed0*/
   {
     __3_YAXPAX_Z(v3); /*0x5eeed8*/
@@ -8351,7 +8351,7 @@ DynamicVector * VectorClass_ptr_ObjectTypeClass::Constructor_VectorClass_ObjectT
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x5f9e33*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x5f9e36*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x5f9e36*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x5f9e40*/
   {
     __3_YAXPAX_Z(v3); /*0x5f9e48*/
@@ -8402,7 +8402,7 @@ DynamicVector * VectorClass_ptr_SpotLightClass::Constructor_VectorClass_SpotLigh
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x6002d3*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x6002d6*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x6002d6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x6002e0*/
   {
     __3_YAXPAX_Z(v3); /*0x6002e8*/
@@ -8442,7 +8442,7 @@ VectorClass_flat * VectorClass_ptr_ColorScheme::Constructor_VectorClass_HSVClass
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x628763*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x628766*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x628766*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x628770*/
   {
     __3_YAXPAX_Z(v3); /*0x628778*/
@@ -8552,7 +8552,7 @@ DynamicVector * VectorClass_ptr_ParasiteClass::Constructor_VectorClass_ParasiteC
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x62b383*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x62b386*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x62b386*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x62b390*/
   {
     __3_YAXPAX_Z(v3); /*0x62b398*/
@@ -8726,7 +8726,7 @@ DynamicVector * VectorClass_ptr_PlanningMemberClass::Constructor_VectorClass_Pla
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x63eca3*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x63eca6*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x63eca6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x63ecb0*/
   {
     __3_YAXPAX_Z(v3); /*0x63ecb8*/
@@ -8746,7 +8746,7 @@ DynamicVector * VectorClass_ptr_PlanningMemberClass::Constructor_VectorClass_Pla
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x63ed43*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x63ed46*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x63ed46*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x63ed50*/
   {
     __3_YAXPAX_Z(v3); /*0x63ed58*/
@@ -8819,7 +8819,7 @@ DynamicVector * VectorClass_ptr_RadBeam::Constructor_VectorClass_RadBeam___(unsi
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x65a4f3*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x65a4f6*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x65a4f6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x65a500*/
   {
     __3_YAXPAX_Z(v3); /*0x65a508*/
@@ -8859,7 +8859,7 @@ DynamicVector * VectorClass_ptr_RadSiteClass::Constructor_VectorClass_RadSiteCla
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x65c203*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x65c206*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x65c206*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x65c210*/
   {
     __3_YAXPAX_Z(v3); /*0x65c218*/
@@ -8901,7 +8901,7 @@ unsigned int * VectorClass_ptr_RadarEventClass::loc_660FD0(unsigned int * Block,
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x660fd3*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_RadarEventClass) */  /*0x660fd6*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7F0ACC) */  /*0x660fd6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x660fe0*/
   {
     __3_YAXPAX_Z(v3); /*0x660fe8*/
@@ -9233,7 +9233,7 @@ DynamicVector * VectorClass_ptr_GlobalPacketType::Constructor_VectorClass_MultiM
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x69d5e3*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x69d5e6*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x69d5e6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x69d5f0*/
   {
     __3_YAXPAX_Z(v3); /*0x69d5f8*/
@@ -9253,7 +9253,7 @@ DynamicVector * VectorClass_ptr_GlobalPacketType::Constructor_VectorClass_Global
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x69d683*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x69d686*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x69d686*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x69d690*/
   {
     __3_YAXPAX_Z(v3); /*0x69d698*/
@@ -9275,7 +9275,7 @@ unsigned int * VectorClass_ptr_GlobalPacketType::loc_69D720(unsigned int * Block
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x69d723*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_PhoneEntryClass) */  /*0x69d726*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_var_ad296c) */  /*0x69d726*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x69d730*/
   {
     __3_YAXPAX_Z(v3); /*0x69d738*/
@@ -9388,7 +9388,7 @@ DynamicVector * VectorClass_ptr_SlaveManagerClass::Constructor_VectorClass_Slave
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x6b1a23*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x6b1a26*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x6b1a26*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x6b1a30*/
   {
     __3_YAXPAX_Z(v3); /*0x6b1a38*/
@@ -9424,7 +9424,7 @@ DynamicVector * VectorClass_UUndoInfoStruct::Constructor_VectorClass_UndoInfoStr
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x6b47f3*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x6b47f6*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x6b47f6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x6b4800*/
   {
     __3_YAXPAX_Z(v3); /*0x6b4808*/
@@ -9469,7 +9469,7 @@ DynamicVector * VectorClass_ptr_SpawnManagerClass::Constructor_VectorClass_Spawn
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x6b8833*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x6b8836*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x6b8836*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x6b8840*/
   {
     __3_YAXPAX_Z(v3); /*0x6b8848*/
@@ -9709,7 +9709,7 @@ DynamicVector * VectorClass_ptr_SubTitle::Constructor_VectorClass_SubTitle___(un
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x6ca9c3*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x6ca9c6*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x6ca9c6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x6ca9d0*/
   {
     __3_YAXPAX_Z(v3); /*0x6ca9d8*/
@@ -9861,7 +9861,7 @@ unsigned int * VectorClass_UDirtyAreaStruct::loc_6DCC80(unsigned int * Block, ch
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x6dcc83*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_DirtyAreaStruct) */  /*0x6dcc86*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7F42BC) */  /*0x6dcc86*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x6dcc90*/
   {
     __3_YAXPAX_Z(v3); /*0x6dcc98*/
@@ -9881,7 +9881,7 @@ DynamicVector * VectorClass_UDirtyAreaStruct::Constructor_VectorClass_ShadowCont
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x6dcd23*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x6dcd26*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x6dcd26*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x6dcd30*/
   {
     __3_YAXPAX_Z(v3); /*0x6dcd38*/
@@ -9926,7 +9926,7 @@ DynamicVector * VectorClass_ptr_TagTypeClass::Constructor_VectorClass_TagTypeCla
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x6e67f3*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x6e67f6*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x6e67f6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x6e6800*/
   {
     __3_YAXPAX_Z(v3); /*0x6e6808*/
@@ -10022,7 +10022,7 @@ DynamicVector * VectorClass_ptr_TemporalClass::Constructor_VectorClass_TemporalC
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x71b553*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x71b556*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x71b556*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x71b560*/
   {
     __3_YAXPAX_Z(v3); /*0x71b568*/
@@ -10067,7 +10067,7 @@ DynamicVector * VectorClass_ptr_TEventClass::Constructor_VectorClass_TEventClass
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x71feb3*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x71feb6*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x71feb6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x71fec0*/
   {
     __3_YAXPAX_Z(v3); /*0x71fec8*/
@@ -10093,7 +10093,7 @@ DynamicVector * VectorClass_ptr_ThemeControl::Constructor_VectorClass_ThemeContr
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x7213e3*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x7213e6*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x7213e6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x7213f0*/
   {
     __3_YAXPAX_Z(v3); /*0x7213f8*/
@@ -10138,7 +10138,7 @@ DynamicVector * VectorClass_ptr_TiberiumClass::Constructor_VectorClass_TiberiumC
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x723a43*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x723a46*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x723a46*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x723a50*/
   {
     __3_YAXPAX_Z(v3); /*0x723a58*/
@@ -10162,7 +10162,7 @@ char VectorClass_E::Clear(int a2)
 VectorClass_flat * VectorClass_E::QueryInterface(unsigned int * Block, char a2)
 {
   void *v3 = *&Block->__pad_004; // eax /*0x74bfa3*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x74bfa6*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x74bfa6*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x74bfb0*/
   {
     operator delete((void *)(v3)); /*0x74bfb8*/
@@ -10320,7 +10320,7 @@ DynamicVector * VectorClass_ptr_VocClass::Constructor_VectorClass_VocClass___(un
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x751be3*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x751be6*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x751be6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x751bf0*/
   {
     __3_YAXPAX_Z(v3); /*0x751bf8*/
@@ -10382,7 +10382,7 @@ DynamicVector * VectorClass_ptr_MovieHandle::Constructor_VectorClass_MovieHandle
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x75a743*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x75a746*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x75a746*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x75a750*/
   {
     __3_YAXPAX_Z(v3); /*0x75a758*/
@@ -10427,7 +10427,7 @@ DynamicVector * VectorClass_ptr_WaypointPathClass::Constructor_VectorClass_Waypo
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x764713*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x764716*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x764716*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x764720*/
   {
     __3_YAXPAX_Z(v3); /*0x764728*/
@@ -10750,7 +10750,7 @@ unsigned int *  VectorClass_rc_ptr_WDTTerritory::loc_76B6C0(int a3, void *a2)
         ComPtr::Set((unsigned int *)(*(unsigned int *)(a3 + 48) + 8 * v76), v78); /*0x76b687*/
       }
       v77 = *(unsigned int *)(a3 + 32); /*0x76b68c*/
-      v79 = &vt_rc_ptr; /*0x76b68f*/
+      v79 = &g_var_5878c0; /*0x76b68f*/
       *(unsigned int *)(a3 + 32) = v77 + 1; /*0x76b698*/
       ComPtr::Release(&v79); /*0x76b69f*/
       if ( v5 >= a3 ) /*0x76b6a8*/
@@ -10768,7 +10768,7 @@ unsigned int * VectorClass_rc_ptr_WDTTerritory::Clear(unsigned int * a2, int a3)
 
   int v3 = *&this->Items + 8 * a3; // edi /*0x76b76d*/
   ComPtr::Constructor((ComPtr *)a2); /*0x76b772*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_rc_ptr) */  /*0x76b777*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_var_5878c0) */  /*0x76b777*/
   ComPtr::Set((ComPtr *)a2, v3->u32_4); /*0x76b783*/
   return a2; /*0x76b78a*/
 

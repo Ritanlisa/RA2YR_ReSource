@@ -427,10 +427,10 @@ BlitTransXlatAlpha_ushort * BlitTransXlatAlpha_ushort::Blit(unsigned int * Block
 
   void *v3; // eax
   v3 = (void *)*((unsigned int *)Block + 2); /*0x49a248*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_BlitTransXlatAlpha) */  /*0x49a24b*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_var_81adf3) */  /*0x49a24b*/
   FractalNoise::Dtor(v3); /*0x49a252*/
   *((unsigned int *)Block + 2) = 0; /*0x49a25b*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_Blitter) */  /*0x49a264*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E5B88) */  /*0x49a264*/
   if ( (a2 & 1) != 0 ) /*0x49a26a*/
     operator delete((Block)); /*0x49a26d*/
   return Block->tail_0; /*0x49a277*/

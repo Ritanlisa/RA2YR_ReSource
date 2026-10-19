@@ -9401,8 +9401,8 @@ LABEL_36:
 
 
 
-// ==== 0x004A9CA0  DisplayClass::vt_entry_94  this=DisplayClass  sig=csp ====
-char __thiscall DisplayClass::vt_entry_94(DisplayClass *this, __int16 *a2, int a3, char a4)
+// ==== 0x004A9CA0  DisplayClass::g_var_72f2d5  this=DisplayClass  sig=csp ====
+char __thiscall DisplayClass::g_var_72f2d5(DisplayClass *this, __int16 *a2, int a3, char a4)
 {
   DisplayClass *v5; // esi
   void *DisplayClass_field_0x140; // eax
@@ -10289,8 +10289,8 @@ int __thiscall DisplayClass::ProcessTacticalMouseInput(TacticalClass_DisplayClas
 
 
 
-// ==== 0x004AAD20  DisplayClass::vt_entry_B0  this=DisplayClass  sig=csp ====
-void __stdcall DisplayClass::vt_entry_B0(DisplayClass *this)
+// ==== 0x004AAD20  DisplayClass::g_var_2eb6a7  this=DisplayClass  sig=csp ====
+void __stdcall DisplayClass::g_var_2eb6a7(DisplayClass *this)
 {
   ; /*0x4aad20*/
 }
@@ -24131,8 +24131,8 @@ LABEL_36:
 
 
 
-// ==== 0x004A9CA0  DisplayClass::vt_entry_94  this=DisplayClass  sig=csp ====
-char __thiscall DisplayClass::vt_entry_94(DisplayClass *this, __int16 *a2, int a3, char a4)
+// ==== 0x004A9CA0  DisplayClass::g_var_72f2d5  this=DisplayClass  sig=csp ====
+char __thiscall DisplayClass::g_var_72f2d5(DisplayClass *this, __int16 *a2, int a3, char a4)
 {
   DisplayClass *v5; // esi
   void *DisplayClass_field_0x140; // eax
@@ -25019,8 +25019,8 @@ int __thiscall DisplayClass::ProcessTacticalMouseInput(TacticalClass_DisplayClas
 
 
 
-// ==== 0x004AAD20  DisplayClass::vt_entry_B0  this=DisplayClass  sig=csp ====
-void __stdcall DisplayClass::vt_entry_B0(DisplayClass *this)
+// ==== 0x004AAD20  DisplayClass::g_var_2eb6a7  this=DisplayClass  sig=csp ====
+void __stdcall DisplayClass::g_var_2eb6a7(DisplayClass *this)
 {
   ; /*0x4aad20*/
 }
@@ -28046,7 +28046,7 @@ _DWORD *__thiscall DisplayClass::loc_4AEB50(_DWORD *Block, char a2)
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x4aeb53*/
-  *Block = &vt_VectorClass_ObjectClass; /*0x4aeb56*/
+  *Block = &g_ptr_7E192C; /*0x4aeb56*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x4aeb60*/
   {
     __3_YAXPAX_Z(v3); /*0x4aeb68*/

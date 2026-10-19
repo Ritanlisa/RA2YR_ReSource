@@ -12218,8 +12218,8 @@ int __stdcall InputManager_ProcessEvents::Release(GScreenClass *this)
 
 
 
-// ==== 0x0040D250  DisplayClass::vt_entry_AC  this=DisplayClass  sig=csp ====
-void __stdcall DisplayClass::vt_entry_AC(DisplayClass *this)
+// ==== 0x0040D250  DisplayClass::g_var_cb2eb5  this=DisplayClass  sig=csp ====
+void __stdcall DisplayClass::g_var_cb2eb5(DisplayClass *this)
 {
   ; /*0x40d250*/
 }
@@ -27872,8 +27872,8 @@ int __stdcall InputManager_ProcessEvents::Release(GScreenClass *this)
 
 
 
-// ==== 0x0040D250  DisplayClass::vt_entry_AC  this=DisplayClass  sig=csp ====
-void __stdcall DisplayClass::vt_entry_AC(DisplayClass *this)
+// ==== 0x0040D250  DisplayClass::g_var_cb2eb5  this=DisplayClass  sig=csp ====
+void __stdcall DisplayClass::g_var_cb2eb5(DisplayClass *this)
 {
   ; /*0x40d250*/
 }

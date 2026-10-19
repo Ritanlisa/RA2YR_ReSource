@@ -41,10 +41,10 @@ unsigned int * HouseTypeClass::loadVeteranWeapons(HouseTypeClass * a2)
 {
 
   ((int)this)->Init(a2); /*0x511658*/
-  this->veteranInfantry[0] = (gamemd::InfantryTypeClass*)(&vt_TypeList); /*0x51165d*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_TypeList) */  /*0x511667*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_TypeList) */  /*0x511671*/
-  /* X11: vtable install elided (base-interface slot, RHS vt_HouseTypeClass) */  /*0x51167b*/
+  this->veteranInfantry[0] = (gamemd::InfantryTypeClass*)(&g_var_131447); /*0x51165d*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_var_131447) */  /*0x511667*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_var_131447) */  /*0x511671*/
+  /* X11: vtable install elided (base-interface slot, RHS g_ptr_7EAB2C) */  /*0x51167b*/
   /* X11: vtable install elided (implicit via HouseTypeClass virtuals 0x511681) */
   /* X11: vtable install elided (implicit via HouseTypeClass virtuals 0x511688) */
   /* X11: vtable install elided (implicit via HouseTypeClass virtuals 0x51168f) */
@@ -77,7 +77,7 @@ AbstractClass * HouseTypeClass::Dtor(void *a1)
   }
   void *v3; // eax
   v3 = *(void **)&a1->pad_16D[27]; /*0x511710*/
-  /* X11: vtable install elided (X68 star-amp-named, RHS vt_VectorClass) */  /*0x51171a*/
+  /* X11: vtable install elided (X68 star-amp-named, RHS g_ptr_7E8500) */  /*0x51171a*/
   if ( v3 && a1->pad_16D[36] ) /*0x511726*/
   {
     operator delete((v3)); /*0x51172f*/
@@ -87,7 +87,7 @@ AbstractClass * HouseTypeClass::Dtor(void *a1)
   *(unsigned int *)&a1->pad_16D[31] = 0; /*0x511743*/
   void *v4; // eax
   v4 = *(void **)&a1->smartAi; /*0x511749*/
-  /* X11: vtable install elided (X68 star-amp-named, RHS vt_VectorClass) */  /*0x51174f*/
+  /* X11: vtable install elided (X68 star-amp-named, RHS g_ptr_7E8500) */  /*0x51174f*/
   if ( v4 && a1->pad_16D[8] ) /*0x51175d*/
   {
     operator delete((v4)); /*0x511766*/
@@ -97,7 +97,7 @@ AbstractClass * HouseTypeClass::Dtor(void *a1)
   *(unsigned int *)&a1->pad_16D[3] = 0; /*0x51177a*/
   void *veteranInfantryCount; // eax
   veteranInfantryCount = (void *)a1->veteranInfantryCount; /*0x511780*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x511786*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x511786*/
   if ( veteranInfantryCount && (((unsigned char *)&(a1->veteranUnitsCount))[1]) ) /*0x511794*/
   {
     operator delete((veteranInfantryCount)); /*0x51179d*/
@@ -392,7 +392,7 @@ AbstractClass * HouseTypeClass::LoadFromINI(uint8_t *** aP1, void *a2)
          128) )
   {
     InfantryTypeVector::Construct(&v82, 0, 0); /*0x511d42*/
-    /* X11: vtable install elided (X67 star-deref, RHS vt_TypeList_InfantryTypeClass_const) */  /*0x511d56*/
+    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EAC08) */  /*0x511d56*/
     for ( i = strtok(String, Delimiter); i; i = strtok(0, Delimiter) ) /*0x511d64*/
     {
       if ( !*i ) /*0x511d66*/
@@ -402,14 +402,14 @@ AbstractClass * HouseTypeClass::LoadFromINI(uint8_t *** aP1, void *a2)
         InfantryTypeVector::Add(&v82, &v82.InfantryTypeVector_field_0x1C); /*0x511d83*/
     }
     HouseTypeClass::readAllowedUnits((HouseTypeClass *)&Destination, &v82); /*0x511da4*/
-    /* X11: vtable install elided (X67 star-deref, RHS vt_TypeList_InfantryTypeClass_const) */  /*0x511dad*/
-    /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_InfantryTypeClass_const) */  /*0x511db1*/
+    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EAC08) */  /*0x511dad*/
+    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EAC28) */  /*0x511db1*/
     Vector::Cleanup((_VectorClass_PBVInfantryTypeClass *)&v82); /*0x511db9*/
   }
   else
   {
     HouseTypeClass::readAllowedUnits((HouseTypeClass *)&Destination, &_EBX->veteranInfantry_d); /*0x511dcb*/
-    /* X11: vtable install elided (X67 star-deref, RHS vt_TypeList_InfantryTypeClass_const) */  /*0x511dd0*/
+    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EAC08) */  /*0x511dd0*/
   }
   HouseTypeClass::readStartInfantry(&_EBX->veteranInfantry_d, &Destination); /*0x511de5*/
   UnitTypeVector_field_0x10 = Destination.uniqueId; /*0x511dee*/
@@ -418,7 +418,7 @@ AbstractClass * HouseTypeClass::LoadFromINI(uint8_t *** aP1, void *a2)
   UnitTypeVector_field_0x04 = (void *)Destination.UnitTypeVector_field_0x04; /*0x511df9*/
   *(unsigned int *)(_EBX + 348) = UnitTypeVector_field_0x10; /*0x511dfd*/
   *(unsigned int *)(_EBX + 356) = UnitTypeVector_field_0x18; /*0x511e02*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_InfantryTypeClass_const) */  /*0x511e05*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EAC28) */  /*0x511e05*/
   if ( UnitTypeVector_field_0x04 && BYTE1(Destination.UnitTypeVector_field_0x0C) ) /*0x511e15*/
     __3_YAXPAX_Z(UnitTypeVector_field_0x04); /*0x511e18*/
   if ( INIClass::GetString( /*0x511e3a*/
@@ -430,7 +430,7 @@ AbstractClass * HouseTypeClass::LoadFromINI(uint8_t *** aP1, void *a2)
          128) )
   {
     UnitTypeVector::Construct(&Destination, 0, 0); /*0x511e4f*/
-    /* X11: vtable install elided (X67 star-deref, RHS vt_TypeList_UnitTypeClass_const) */  /*0x511e5e*/
+    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EABE8) */  /*0x511e5e*/
     for ( j = strtok(String, Delimiter); j; j = strtok(0, Delimiter) ) /*0x511e70*/
     {
       if ( !*j ) /*0x511e72*/
@@ -450,7 +450,7 @@ AbstractClass * HouseTypeClass::LoadFromINI(uint8_t *** aP1, void *a2)
       }
     }
     TypeList::CopyConstructor((TypeList *)&v82, &Destination); /*0x511ee6*/
-    /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_UnitTypeClass_const) */  /*0x511eef*/
+    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EAC48) */  /*0x511eef*/
     Vector::Destructor((_VectorClass_PBVUnitTypeClass *)&Destination); /*0x511ef7*/
   }
   else
@@ -464,7 +464,7 @@ AbstractClass * HouseTypeClass::LoadFromINI(uint8_t *** aP1, void *a2)
   InfantryTypeVector_field_0x04 = (void *)v82.InfantryTypeVector_field_0x04; /*0x511f2f*/
   *(unsigned int *)(_EBX + 376) = InfantryTypeVector_field_0x10; /*0x511f33*/
   *(unsigned int *)(_EBX + 384) = InfantryTypeVector_field_0x18; /*0x511f38*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_UnitTypeClass_const) */  /*0x511f3b*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EAC48) */  /*0x511f3b*/
   if ( InfantryTypeVector_field_0x04 && BYTE1(v82.InfantryTypeVector_field_0x0C) ) /*0x511f4b*/
     __3_YAXPAX_Z(InfantryTypeVector_field_0x04); /*0x511f4e*/
   if ( INIClass::GetString( /*0x511f70*/
@@ -476,7 +476,7 @@ AbstractClass * HouseTypeClass::LoadFromINI(uint8_t *** aP1, void *a2)
          128) )
   {
     HouseTypeClass::readDefaultAlly((HouseTypeClass *)&Destination, 0, 0); /*0x511f85*/
-    /* X11: vtable install elided (X67 star-deref, RHS vt_TypeList_AircraftTypeClass_const) */  /*0x511f94*/
+    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EABC8) */  /*0x511f94*/
     for ( k = strtok(String, Delimiter); k; k = strtok(0, Delimiter) ) /*0x511fa6*/
     {
       if ( !*k ) /*0x511fa8*/
@@ -496,7 +496,7 @@ AbstractClass * HouseTypeClass::LoadFromINI(uint8_t *** aP1, void *a2)
       }
     }
     HouseTypeClass::readParaDropTypes((HouseTypeClass *)&v82, &Destination); /*0x51201c*/
-    /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_AircraftTypeClass_const) */  /*0x512025*/
+    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EAC68) */  /*0x512025*/
     VectorClass::ClearAndFree4((int)&Destination); /*0x51202d*/
   }
   else
@@ -510,7 +510,7 @@ AbstractClass * HouseTypeClass::LoadFromINI(uint8_t *** aP1, void *a2)
   v43 = (void *)v82.InfantryTypeVector_field_0x04; /*0x512065*/
   *(unsigned int *)(_EBX + 404) = v41; /*0x512069*/
   *(unsigned int *)(_EBX + 412) = v42; /*0x51206e*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_AircraftTypeClass_const) */  /*0x512071*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EAC68) */  /*0x512071*/
   if ( v43 && BYTE1(v82.InfantryTypeVector_field_0x0C) ) /*0x512081*/
     __3_YAXPAX_Z(v43); /*0x512084*/
   v44 = *(unsigned int *)(_EBX + 188); /*0x51208c*/
@@ -608,7 +608,7 @@ int HouseTypeClass::SaveLoad_Prefix(unsigned int * i, int a2)
     if ( veteranInfantry ) /*0x5122ef*/
     {
       InfantryTypeVector::Construct((InfantryTypeVector *)veteranInfantry, 0, 0); /*0x5122f7*/
-      /* X11: vtable install elided (X67 star-deref, RHS vt_TypeList) */  /*0x5122fc*/
+      /* X11: vtable install elided (X67 star-deref, RHS g_var_131447) */  /*0x5122fc*/
     }
     (*(void (__stdcall **)(int, int *, int, unsigned int))(*(unsigned int *)v4 + 12))(v4, &a2, 4, 0); /*0x51230e*/
     for ( i = 0; (int)i < a2; i = (HouseTypeClass *)((char *)i + 1) ) /*0x51231f*/
@@ -620,7 +620,7 @@ int HouseTypeClass::SaveLoad_Prefix(unsigned int * i, int a2)
     if ( v2 != (HouseTypeClass *)-360 ) /*0x51234f*/
     {
       UnitTypeVector::Construct(&v2->prefix, 0, 0); /*0x512357*/
-      /* X11: vtable install elided (X67 star-deref, RHS vt_TypeList) */  /*0x51235c*/
+      /* X11: vtable install elided (X67 star-deref, RHS g_var_131447) */  /*0x51235c*/
     }
     (*(void (__stdcall **)(int, HouseTypeClass **, int, unsigned int))(*(unsigned int *)v4 + 12))(v4, &i, 4, 0); /*0x51236f*/
     for ( i = 0; i < (int)i; ++i ) /*0x51237a*/
@@ -749,7 +749,7 @@ void * HouseTypeClass::ReadCountryName(int a1, unsigned char *** edx0, INIClass 
     AircraftTypeVector::Constructor(&v17, 0, 0); /*0x67b931*/
     v22 = 10; /*0x67b93a*/
     v21 = 0; /*0x67b948*/
-    v17 = (AircraftTypeVector)&vt_TypeList_AircraftTypeClass_const; /*0x67b94c*/
+    v17 = (AircraftTypeVector)&g_ptr_7EABC8; /*0x67b94c*/
     for ( i = strtok(String, Delimiter); i; i = strtok(0, Delimiter) ) /*0x67b95e*/
     {
       if ( !*i ) /*0x67b960*/
@@ -772,10 +772,10 @@ void * HouseTypeClass::ReadCountryName(int a1, unsigned char *** edx0, INIClass 
     *(unsigned int *)(a1 + 8) = 0; /*0x67b9d0*/
     *(unsigned char *)(a1 + 12) = 1; /*0x67b9d3*/
     *(unsigned char *)(a1 + 13) = 0; /*0x67b9d7*/
-    /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_AircraftTypeClass_const) */  /*0x67b9da*/
+    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EAC68) */  /*0x67b9da*/
     HouseTypeClass::readBaseDefense((HouseTypeClass *)a1, &v17); /*0x67b9e0*/
-    /* X11: vtable install elided (X67 star-deref, RHS vt_TypeList_AircraftTypeClass_const) */  /*0x67b9e5*/
-    v17 = (AircraftTypeVector)&vt_VectorClass_AircraftTypeClass_const; /*0x67b9eb*/
+    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EABC8) */  /*0x67b9e5*/
+    v17 = (AircraftTypeVector)&g_ptr_7EAC68; /*0x67b9eb*/
     v9 = v22; /*0x67b9f7*/
     *(unsigned int *)(a1 + 16) = v21; /*0x67b9fb*/
     v10 = Block; /*0x67b9fe*/
@@ -793,7 +793,7 @@ void * HouseTypeClass::ReadCountryName(int a1, unsigned char *** edx0, INIClass 
     *(unsigned int *)(a1 + 8) = 0; /*0x67ba3c*/
     *(unsigned char *)(a1 + 12) = 1; /*0x67ba3f*/
     *(unsigned char *)(a1 + 13) = 0; /*0x67ba43*/
-    /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_AircraftTypeClass_const) */  /*0x67ba46*/
+    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EAC68) */  /*0x67ba46*/
     if ( (unsigned int *)a1 != a5 ) /*0x67ba4c*/
     {
       VectorClass::ClearAndFree4(a1); /*0x67ba50*/
@@ -827,7 +827,7 @@ void * HouseTypeClass::ReadCountryName(int a1, unsigned char *** edx0, INIClass 
     }
     *(unsigned int *)(a1 + 16) = a5[4]; /*0x67baa3*/
     *(unsigned int *)(a1 + 20) = a5[5]; /*0x67baa9*/
-    /* X11: vtable install elided (X67 star-deref, RHS vt_TypeList_AircraftTypeClass_const) */  /*0x67baac*/
+    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EABC8) */  /*0x67baac*/
   }
   return a1; /*0x67ba22*/
 
@@ -982,7 +982,7 @@ HouseTypeClass * HouseTypeClass::Destructor(char a2)
 {
 
 
-  /* X11: vtable install elided (base-interface slot, RHS vt_HouseTypeClass) */  /*0x512766*/
+  /* X11: vtable install elided (base-interface slot, RHS g_ptr_7EAB2C) */  /*0x512766*/
   /* X11: vtable install elided (implicit via HouseTypeClass virtuals 0x51276c) */
   /* X11: vtable install elided (implicit via HouseTypeClass virtuals 0x512773) */
   /* X11: vtable install elided (implicit via HouseTypeClass virtuals 0x51277a) */
@@ -1001,7 +1001,7 @@ HouseTypeClass * HouseTypeClass::Destructor(char a2)
     while ( v3 < dword_A83CA8 ); /*0x5127cd*/
   }
   void *v4 = *&this->q188; // eax /*0x5127cf*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x5127d8*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x5127d8*/
   if ( v4 && this->u8_191 ) /*0x5127e6*/
   {
     __3_YAXPAX_Z(v4); /*0x5127ef*/
@@ -1010,7 +1010,7 @@ HouseTypeClass * HouseTypeClass::Destructor(char a2)
   this->u8_191 = 0; /*0x5127fd*/
   *&this->u32_18C = 0; /*0x512803*/
   void *v5 = *&this->smartAi; // eax /*0x512809*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x51280f*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x51280f*/
   if ( v5 && this->u8_175 ) /*0x51281d*/
   {
     __3_YAXPAX_Z(v5); /*0x512826*/
@@ -1020,7 +1020,7 @@ HouseTypeClass * HouseTypeClass::Destructor(char a2)
   *&this->q170 = 0; /*0x51283a*/
   void *veteranInfantryCount; // eax
   veteranInfantryCount = (void *)this->veteranInfantryCount; /*0x512840*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x512846*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x512846*/
   if ( veteranInfantryCount && BYTE1(this->veteranUnitsCount) ) /*0x512854*/
   {
     __3_YAXPAX_Z(veteranInfantryCount); /*0x51285d*/
@@ -1088,7 +1088,7 @@ unsigned int * HouseTypeClass::readStartUnit()
   (this->u8_D) = ((this->u8_D) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x51296e*/
   this->abstractFlags = 10; /*0x512971*/
   this->uniqueId = 0; /*0x512978*/
-  /* X11: vtable install elided (base-interface slot, RHS vt_TypeList) */  /*0x51297b*/
+  /* X11: vtable install elided (base-interface slot, RHS g_var_131447) */  /*0x51297b*/
   return &this->AbstractClass; /*0x512981*/
 
 }
@@ -1185,7 +1185,7 @@ VectorClass_flat * HouseTypeClass_36::Constructor(unsigned int * Block, char a2,
 
 
   void *v3 = *&Block->__pad_004; // eax /*0x512b83*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x512b86*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x512b86*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x512b90*/
   {
     __3_YAXPAX_Z(v3); /*0x512b98*/
@@ -1454,7 +1454,7 @@ unsigned int * HouseTypeClass::readDefaultAlly(int a2, int a3)
   this->ptr_8 = (void *)a2; /*0x513570*/
   LOBYTE(this->ptr_C) = 1; /*0x513573*/
   (this->u8_D) = ((this->u8_D) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x513577*/
-  /* X11: vtable install elided (base-interface slot, RHS vt_VectorClass) */  /*0x51357b*/
+  /* X11: vtable install elided (base-interface slot, RHS g_ptr_7E8500) */  /*0x51357b*/
   if ( a2 ) /*0x513581*/
   {
     if ( a3 ) /*0x513589*/
@@ -1467,7 +1467,7 @@ unsigned int * HouseTypeClass::readDefaultAlly(int a2, int a3)
       (this->u8_D) = ((this->u8_D) & ~(0xFF << 8)) | (((1) & 0xFF) << 8); /*0x51359f*/
     }
   }
-  /* X11: vtable install elided (base-interface slot, RHS vt_DynamicVectorClass) */  /*0x5135a3*/
+  /* X11: vtable install elided (base-interface slot, RHS g_ptr_7E3238) */  /*0x5135a3*/
   this->abstractFlags = 10; /*0x5135a9*/
   this->uniqueId = 0; /*0x5135b0*/
   return &this->AbstractClass; /*0x5135b9*/
@@ -1582,7 +1582,7 @@ unsigned int * HouseTypeClass::readParaDropTypes(VectorClass_flat * a2)
   this->ptr_8 = 0; /*0x5137e0*/
   LOBYTE(this->ptr_C) = 1; /*0x5137e3*/
   (this->u8_D) = ((this->u8_D) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x5137e7*/
-  /* X11: vtable install elided (base-interface slot, RHS vt_VectorClass) */  /*0x5137ea*/
+  /* X11: vtable install elided (base-interface slot, RHS g_ptr_7E8500) */  /*0x5137ea*/
   if ( this != (HouseTypeClass *)a2 ) /*0x5137f0*/
   {
     VectorClass::ClearAndFree4((int)this); /*0x5137f2*/
@@ -1617,7 +1617,7 @@ unsigned int * HouseTypeClass::readParaDropTypes(VectorClass_flat * a2)
   }
   this->uniqueId = a2[4]; /*0x513841*/
   this->abstractFlags = a2[5]; /*0x513847*/
-  /* X11: vtable install elided (base-interface slot, RHS vt_TypeList) */  /*0x51384a*/
+  /* X11: vtable install elided (base-interface slot, RHS g_var_131447) */  /*0x51384a*/
   return &this->AbstractClass; /*0x513852*/
 
 }
@@ -1633,7 +1633,7 @@ unsigned int * HouseTypeClass::readAllowedUnits(InfantryTypeClass * a2)
   this->ptr_8 = 0; /*0x513870*/
   LOBYTE(this->ptr_C) = 1; /*0x513873*/
   (this->u8_D) = ((this->u8_D) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x513877*/
-  /* X11: vtable install elided (base-interface slot, RHS vt_VectorClass) */  /*0x51387a*/
+  /* X11: vtable install elided (base-interface slot, RHS g_ptr_7E8500) */  /*0x51387a*/
   if ( this != (HouseTypeClass *)a2 ) /*0x513880*/
   {
     Vector::Cleanup((_VectorClass_PBVInfantryTypeClass *)this); /*0x513882*/
@@ -1668,7 +1668,7 @@ unsigned int * HouseTypeClass::readAllowedUnits(InfantryTypeClass * a2)
   }
   this->uniqueId = a2[4]; /*0x5138d1*/
   this->abstractFlags = a2[5]; /*0x5138d7*/
-  /* X11: vtable install elided (base-interface slot, RHS vt_DynamicVectorClass) */  /*0x5138da*/
+  /* X11: vtable install elided (base-interface slot, RHS g_ptr_7E3238) */  /*0x5138da*/
   return &this->AbstractClass; /*0x5138e2*/
 
 }

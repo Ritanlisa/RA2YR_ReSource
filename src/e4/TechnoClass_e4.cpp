@@ -328,21 +328,21 @@ TechnoClass::TechnoClass(AbstractClass * aP1)
   this->currentTargetThreatValues[2] = 0; /*0x6f3057*/
   LOBYTE(this->currentTargetThreatValues[3]) = 1; /*0x6f305d*/
   BYTE1(this->currentTargetThreatValues[3]) = 0; /*0x6f3064*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass) */  /*0x6f306a*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E3238) */  /*0x6f306a*/
   this->currentTargetThreatValues[5] = 10; /*0x6f3074*/
   this->currentTargetThreatValues[4] = 0; /*0x6f307a*/
   this->currentTargets[1] = 0; /*0x6f3080*/
   this->currentTargets[2] = 0; /*0x6f3086*/
   LOBYTE(this->currentTargets[3]) = 1; /*0x6f308c*/
   BYTE1(this->currentTargets[3]) = 0; /*0x6f3093*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass) */  /*0x6f3099*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E3238) */  /*0x6f3099*/
   this->currentTargets[5] = 10; /*0x6f309f*/
   this->currentTargets[4] = 0; /*0x6f30a5*/
   this->attackedTargets[1] = 0; /*0x6f30ab*/
   this->attackedTargets[2] = 0; /*0x6f30b1*/
   LOBYTE(this->attackedTargets[3]) = 1; /*0x6f30b7*/
   BYTE1(this->attackedTargets[3]) = 0; /*0x6f30be*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass) */  /*0x6f30c4*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E3238) */  /*0x6f30c4*/
   this->attackedTargets[5] = 10; /*0x6f30ca*/
   this->attackedTargets[4] = 0; /*0x6f30d0*/
   this->isTurretRotateSoundPlaying = 1; /*0x6f30d6*/
@@ -359,7 +359,7 @@ TechnoClass::TechnoClass(AbstractClass * aP1)
   this->planningToken = 0; /*0x6f311e*/
   this->disguiseAsType = 0; /*0x6f3124*/
   this->disguisedAsHouse = 0; /*0x6f312a*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_TechnoClass) */  /*0x6f3130*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F493C) */  /*0x6f3130*/
   /* X11: vtable install elided (implicit via TechnoClass virtuals 0x6f3136) */
   /* X11: vtable install elided (implicit via TechnoClass virtuals 0x6f313d) */
   /* X11: vtable install elided (implicit via off_7F4934 virtuals 0x6f314a) */
@@ -666,10 +666,10 @@ int TechnoClass::DTOR(void *a1)
     (*(void (**)(int))(*(unsigned int *)v12 + 248))(v12); /*0x6f468b*/
     this->deployAnim = 0; /*0x6f4691*/
   }
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x6f469d*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x6f469d*/
   AbstractClassVector::ddtor(&this->__pad_470); /*0x6f46a3*/
   void *v13 = *&this->attackedTargets; // eax /*0x6f46a8*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x6f46ae*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x6f46ae*/
   if ( v13 && this->vecAbs_IsAllocated ) /*0x6f46bc*/
   {
     __3_YAXPAX_Z(v13); /*0x6f46c5*/
@@ -678,7 +678,7 @@ int TechnoClass::DTOR(void *a1)
   this->vecAbs_IsAllocated = 0; /*0x6f46d3*/
   this->audioController3 = 0; /*0x6f46d9*/
   void *v14 = *&this->vecInt_Items; // eax /*0x6f46df*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x6f46e5*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x6f46e5*/
   if ( v14 && this->vecInt_IsAllocated ) /*0x6f46f3*/
   {
     __3_YAXPAX_Z(v14); /*0x6f46fc*/
@@ -693,7 +693,7 @@ int TechnoClass::DTOR(void *a1)
   /* X11: vtable install elided (implicit via RadioClass virtuals 0x6f472e) */
   /* X11: vtable install elided (implicit via RadioClass virtuals 0x6f4735) */
   void *v15 = *&this->flashing; // eax /*0x6f473c*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x6f4742*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x6f4742*/
   if ( v15 && this->vecTechno_IsAllocated ) /*0x6f4750*/
   {
     __3_YAXPAX_Z(v15); /*0x6f4759*/

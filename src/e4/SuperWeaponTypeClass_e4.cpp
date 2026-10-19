@@ -276,19 +276,19 @@ int SuperWeaponTypeClass::Construct(char *aP1, void *a2, void *a3, void *a4, voi
   (&this->q14C)->Construct2(0, 0); /*0x5114fc*/
   this->q160 = 10; /*0x511501*/
   this->q15C = 0; /*0x511508*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList) */  /*0x51150b*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_var_131447) */  /*0x51150b*/
   (&this->q168)->ConstructUnitTypeVectorClass(0, 0); /*0x51151b*/
   this->u32_17C = 10; /*0x511520*/
   this->u32_178 = 0; /*0x511527*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList) */  /*0x51152a*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_var_131447) */  /*0x51152a*/
   AircraftTypeVector::Constructor(&this->AbstractClass_184, 0, 0); /*0x51153a*/
   this->q198 = 10; /*0x511542*/
   this->q194 = 0; /*0x511549*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList) */  /*0x51154c*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_var_131447) */  /*0x51154c*/
   this->q1A4 = 16777281; /*0x511552*/
   this->WarheadTypeClass_1A8 = 0; /*0x51156c*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_HouseTypeClass) */  /*0x511572*/
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_HouseTypeClass) */  /*0x511578*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7EAB2C) */  /*0x511572*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7EAB2C) */  /*0x511578*/
   /* X11: vtable install elided (implicit via HouseTypeClass virtuals 0x51157f) */
   /* X11: vtable install elided (implicit via HouseTypeClass virtuals 0x511586) */
   AbstractClass::GenerateUniqueID(&this->AbstractClass_184); /*0x51158d*/
@@ -612,7 +612,7 @@ unsigned int * SuperWeaponTypeClass::SDDTOR(char a2)
 {
 
 
-  /* X11: vtable install elided (X67 recv-slot, RHS vt_SuperWeaponTypeClass) */  /*0x6cefed*/
+  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F4064) */  /*0x6cefed*/
   /* X11: vtable install elided (implicit via SuperWeaponTypeClass virtuals 0x6ceff3) */
   /* X11: vtable install elided (implicit via SuperWeaponTypeClass virtuals 0x6ceffa) */
   /* X11: vtable install elided (implicit via SuperWeaponTypeClass virtuals 0x6cf001) */

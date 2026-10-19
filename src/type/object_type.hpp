@@ -47,10 +47,10 @@ public:
 
     virtual ~ObjectTypeClass() = default;  // 0x5F7400 (as Destruct)
 
-    virtual CoordStruct* onCellChanged(CoordStruct* pDest, CoordStruct* pSrc) const; // 0x41CBF0 -- ObjectTypeClass::vt_entry_7C
+    virtual CoordStruct* onCellChanged(CoordStruct* pDest, CoordStruct* pSrc) const; // 0x41CBF0 -- ObjectTypeClass::g_var_773e90
     // unmatched: no callgraph reference and no git history record
     virtual DWORD GetOwners() const;
-    // wrapper: delegates to ObjectTypeClass::vt_entry_7C at 0x41CBF0
+    // wrapper: delegates to ObjectTypeClass::g_var_773e90 at 0x41CBF0
     virtual int GetPipMax() const;
     // unmatched: no callgraph reference and no git history record
     virtual void onTypeLoadComplete(DWORD dwUnk) const;

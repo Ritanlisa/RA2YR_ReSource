@@ -774,7 +774,7 @@ VectorClass_flat * MapSeedClass_18::QueryInterface(unsigned int * Block, char a2
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x5ad433*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x5ad436*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x5ad436*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x5ad440*/
   {
     operator delete((v3)); /*0x5ad448*/
@@ -794,7 +794,7 @@ DynamicVector * MapSeedClass_18::Constructor_VectorClass__WIN32_FIND_DATAA___(un
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x5ad483*/
-  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x5ad486*/
+  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x5ad486*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x5ad490*/
   {
     operator delete((v3)); /*0x5ad498*/
