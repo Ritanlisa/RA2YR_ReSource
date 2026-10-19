@@ -3449,7 +3449,7 @@ LABEL_37:
           ++v15; /*0x4fc447*/
         ++v14; /*0x4fc448*/
       }
-      v16 = (HouseClass *)((char *)v16 + 4); /*0x4fc449*/
+      v16 = (HouseClass *)((char *)&v16->ptr_4); /*0x4fc449*/
       --v17; /*0x4fc44c*/
     }
     while ( v17 ); /*0x4fc44d*/
@@ -3484,7 +3484,7 @@ LABEL_73:
     }
 LABEL_72:
     v27 = ++v43 < dword_A80238; /*0x4fc535*/
-    v40 = (HouseClass *)((char *)v40 + 4); /*0x4fc547*/
+    v40 = (HouseClass *)((char *)&v40->ptr_4); /*0x4fc547*/
     if ( !v27 ) /*0x4fc54b*/
       goto LABEL_73; /*0x4fc54b*/
   }
@@ -3505,7 +3505,7 @@ LABEL_72:
       }
     }
     ++v22; /*0x4fc52d*/
-    v23 = (HouseClass *)((char *)v23 + 4); /*0x4fc52e*/
+    v23 = (HouseClass *)((char *)&v23->ptr_4); /*0x4fc52e*/
     if ( v22 >= dword_A80238 ) /*0x4fc533*/
       goto LABEL_72; /*0x4fc533*/
   }

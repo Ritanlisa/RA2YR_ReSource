@@ -77,7 +77,7 @@ AbstractClass * * MSFrameAnim::setFrameRate(int a2, unsigned int * a3)
           do /*0x76a039*/
           {
             MSFrameAnim::drawFrame(v7); /*0x76a028*/
-            v7 = (MSFrameAnim *)((char *)v7 + 8); /*0x76a031*/
+            v7 = (MSFrameAnim *)((char *)&v7->m_8); /*0x76a031*/
             --v14; /*0x76a035*/
           }
           while ( v14 ); /*0x76a039*/

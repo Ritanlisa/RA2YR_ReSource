@@ -1180,7 +1180,7 @@ LABEL_68:
           sprintf(Buffer[0].__tail_0, "%c:\\", v57->ptr_0 + 65); /*0x52c438*/
           strcat(Source, Buffer[0].__tail_0); /*0x52c46a*/
           ++v3; /*0x52c476*/
-          v57 = (ObjectClass *)((char *)v57 + 4); /*0x52c477*/
+          v57 = (ObjectClass *)((char *)&v57->ptr_4); /*0x52c477*/
           if ( v3 >= dword_A8E950 ) /*0x52c47e*/
             break; /*0x52c47e*/
           strcat(Source, asc_81C8FC); /*0x52c4a8*/

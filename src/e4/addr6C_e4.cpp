@@ -538,7 +538,7 @@ int ProcessGameResults(char a1)
         *v58++ = ptr_0; /*0x6c740a*/
         v265.ptr_C = ptr_C + 1; /*0x6c7410*/
       }
-      v56 = (HouseClass *)((char *)v56 + 4); /*0x6c7414*/
+      v56 = (HouseClass *)((char *)&v56->ptr_4); /*0x6c7414*/
       --v59; /*0x6c7417*/
     }
     while ( v59 ); /*0x6c7418*/

@@ -79,7 +79,7 @@ TriggerClass * * TagClass::Destructor(void * a1)
             while ( ambientParticles->ObjectClass != a1 ) /*0x6e4fc3*/
             {
               ++v3; /*0x6e4fc5*/
-              ambientParticles = (ParticleSystemClass *)((char *)ambientParticles + 4); /*0x6e4fc6*/
+              ambientParticles = (ParticleSystemClass *)((char *)&ambientParticles->ptr_4); /*0x6e4fc6*/
               if ( v3 >= (int)FootClass_Array.? ) /*0x6e4fcb*/
                 goto LABEL_9; /*0x6e4fcb*/
             }

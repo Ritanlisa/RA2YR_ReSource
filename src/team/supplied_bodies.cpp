@@ -692,7 +692,7 @@ int TeamClass::SumMemberCounts() {
     do /*0x6e817b*/
     {
       ptr_0 = v3->ptr_0; /*0x6e8173*/
-      v3 = (TeamClass *)((char *)v3 + 8); /*0x6e8175*/
+      v3 = (TeamClass *)((char *)&v3->ptr_8); /*0x6e8175*/
       result += (int)ptr_0; /*0x6e8178*/
       --v1; /*0x6e817a*/
     }

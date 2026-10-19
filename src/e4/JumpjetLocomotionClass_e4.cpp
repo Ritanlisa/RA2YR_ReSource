@@ -1399,7 +1399,7 @@ BuildingClass * * JumpjetLocomotionClass::ProcessRotation()
       FootClass *LinkedTo; // ecx
       LinkedTo = this->LinkedTo; /*0x4ce636*/
       this->u8_53 = 0; /*0x4ce639*/
-      LinkedTo = (FootClass *)((char *)LinkedTo + 156); /*0x4ce63d*/
+      LinkedTo = (FootClass *)((char *)&LinkedTo->location); /*0x4ce63d*/
       unsigned int v9[3]; // [esp+Ch] [ebp-Ch] BYREF
       v9[0] = LinkedTo->TechnoClass; /*0x4ce645*/
       v9[1] = LinkedTo->ptr_8; /*0x4ce651*/

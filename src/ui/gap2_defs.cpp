@@ -4096,7 +4096,7 @@ LABEL_17:
             }
           }
           ++v13; /*0x6a55cf*/
-          v14 = (HouseClass *)((char *)v14 + 4); /*0x6a55d0*/
+          v14 = (HouseClass *)((char *)&v14->ptr_4); /*0x6a55d0*/
           if ( v13 >= dword_A80238 ) /*0x6a55d5*/
             goto LABEL_17; /*0x6a55d5*/
         }
@@ -4187,7 +4187,7 @@ LABEL_17:
               ++v32; /*0x6a580a*/
             }
             ++v27; /*0x6a580e*/
-            v28 = (HouseClass *)((char *)v28 + 4); /*0x6a580f*/
+            v28 = (HouseClass *)((char *)&v28->ptr_4); /*0x6a580f*/
           }
           while ( v27 < dword_A80238 ); /*0x6a5814*/
         }

@@ -3944,7 +3944,7 @@ LABEL_96:
           break; /*0x64c7dc*/
       }
       ++v25; /*0x64c7de*/
-      v24 = (HouseClass *)((char *)v24 + 4); /*0x64c7df*/
+      v24 = (HouseClass *)((char *)&v24->ptr_4); /*0x64c7df*/
       if ( v25 >= v51 ) /*0x64c7e3*/
         goto LABEL_57; /*0x64c7e3*/
     }

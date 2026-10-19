@@ -1474,7 +1474,7 @@ int  SessionClass::IsValidHouse(void * a2)
   v5 = 0; /*0x697ed3*/
   if ( dword_A80238 <= 0 ) /*0x697ed7*/
     return 0; /*0x697efd*/
-  for ( i = dword_A8022C; ; i = (HouseClass *)((char *)i + 4) ) /*0x697ed9*/
+  for ( i = dword_A8022C; ; i = (HouseClass *)((char *)&i->ptr_4) ) /*0x697ed9*/
   {
     v7 = *(void **)i->ptr_0; /*0x697edf*/
     if ( *(unsigned char *)(*(unsigned int *)i->ptr_0 + 492) ) /*0x697ee1*/
