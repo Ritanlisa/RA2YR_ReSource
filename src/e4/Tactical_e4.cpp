@@ -108,7 +108,7 @@ void * Tactical::ConstructTacticalSurface()
   do /*0x42a73d*/
   {
     VectorClassUInt::Constructor(0, 0); /*0x42a724*/
-    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E37CC) */  /*0x42a729*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E37CC) */  /*0x42a729*/
     v2->u32_14 = 10; /*0x42a72f*/
     v2->q010 = 0; /*0x42a736*/
     v2 += 6; /*0x42a739*/
@@ -2061,10 +2061,10 @@ int Tactical::StubReturn3608()
 namespace gamemd {
 Tactical * Tactical::UpdateView(unsigned int * Block, char a2)
 {
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7F431C) */  /*0x6dc473*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7F431C) */  /*0x6dc479*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F431C) */  /*0x6dc480*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F431C) */  /*0x6dc487*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7F431C) */  /*0x6dc473*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7F431C) */  /*0x6dc479*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F431C) */  /*0x6dc480*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F431C) */  /*0x6dc487*/
   g_TacticalClass_Instance = 0; /*0x6dc48e*/
   AbstractClass::DTOR((AbstractClass *)Block); /*0x6dc498*/
   if ( (a2 & 1) != 0 ) /*0x6dc4a2*/
@@ -2298,7 +2298,7 @@ VectorClass_flat * Tactical_42::QueryInterface(unsigned int * Block, char a2)
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x6e4ab3*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x6e4ab6*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x6e4ab6*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x6e4ac0*/
   {
     operator delete((v3)); /*0x6e4ac8*/

@@ -1,5 +1,5 @@
 // INIClass + CCINIClass -- IDA-confirmed class definitions
-// INIClass @ 0x535AA0: base INI parser (~0x40 bytes + vtable)
+// INIClass @ 0x535AA0: base INI parser (~0x40 bytes + ptr_0)
 // CCINIClass @ 0x535B30: INIClass + CCFileClass integration (~0x58 bytes)
 #pragma once
 
@@ -65,7 +65,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
 #endif  // GAMEMD_G2_GenericList_DEF
 
 // IDA: INIClass @ 0x535AA0 -- size ~0x40 (64 bytes)
-// vtable at 0x7EA5F4
+// ptr_0 at 0x7EA5F4
 // CSP: INIClass matched via T1
 #ifndef GAMEMD_E4_INIClass  // G57w8: e4 flat carrier wins in opt-in TUs (C2011 vs INIClass_e4.hpp; CCINIClass 依赖基类一并让位)
 class INIClass {
@@ -88,9 +88,9 @@ public:
 
 protected:
     // IDA layout offsets (0x00-0x3F):
-    uint32_t vtableDummy;           // +0x00: vtable ptr (set by constructor)
-    unsigned int headNode[3];       // +0x04: embedded list head -- INILinkNode(vtable/Prev/Next) raw-int view (G42.34: bodies index raw; no .Prev/.Next users)
-    // +0x10: GenericList vtable
+    uint32_t vtableDummy;           // +0x00: ptr_0 ptr (set by constructor)
+    unsigned int headNode[3];       // +0x04: embedded list head -- INILinkNode(ptr_0/Prev/Next) raw-int view (G42.34: bodies index raw; no .Prev/.Next users)
+    // +0x10: GenericList ptr_0
     // G42.34 T11: IDA til renders sectionHead as raw int view (bodies index sectionHead[0..2];
     // int* locals read it). Embedded INILinkNode form broke C2676 here + addr64_e4/addr5E_e4.
     int        sectionHead[3];       // +0x10: section list head raw-int view (was INILinkNode embed, same 12B)
@@ -208,7 +208,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
 
 
 // IDA: CCINIClass @ 0x535B30 -- size ~0x58 (88 bytes)
-// vtable at 0x7E1AF4 (CCINIClass_Vtable)
+// ptr_0 at 0x7E1AF4 (CCINIClass_Vtable)
 // Extends INIClass with CCFileClass integration
 #if !defined(GAMEMD_E4_INIClass) && !defined(GAMEMD_E4_CCINIClass)  // G42.57w14: decoupled CCINIClass guard
 class CCINIClass : public INIClass {

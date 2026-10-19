@@ -129,7 +129,7 @@ AbstractClass * * WarheadTypeClass::parseVerses()
   int v13; // ecx
 
   v2 = (void *)this->m_C; /*0x52ab84*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EB73C) */  /*0x52ab87*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EB73C) */  /*0x52ab87*/
   free(v2); /*0x52ab8e*/
   this->m_C = 0; /*0x52ab98*/
   while ( 1 ) /*0x52ab9b*/
@@ -162,7 +162,7 @@ AbstractClass * * WarheadTypeClass::parseVerses()
   this->CombatLightSize = 0; /*0x52ac0e*/
   this->Particle = 0; /*0x52ac11*/
   this->Wall = 0; /*0x52ac14*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E1B04) */  /*0x52ac1a*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E1B04) */  /*0x52ac1a*/
   while ( 1 ) /*0x52ac21*/
   {
     v5 = this->InfDeath; /*0x52ac21*/
@@ -182,7 +182,7 @@ AbstractClass * * WarheadTypeClass::parseVerses()
       v5->ptr_4 = 0; /*0x52ac52*/
     }
   }
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E1B0C) */  /*0x52ac5c*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E1B0C) */  /*0x52ac5c*/
   if ( this != (char *)-32 ) /*0x52ac62*/
   {
     v8 = this->__pad_024; /*0x52ac64*/
@@ -199,7 +199,7 @@ AbstractClass * * WarheadTypeClass::parseVerses()
     }
   }
   result = &this->AnimList; /*0x52ac84*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E1B0C) */  /*0x52ac89*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E1B0C) */  /*0x52ac89*/
   if ( this != (char *)-20 ) /*0x52ac8f*/
   {
     v11 = this->InfDeath; /*0x52ac91*/
@@ -215,7 +215,7 @@ AbstractClass * * WarheadTypeClass::parseVerses()
       }
     }
   }
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E1B0C) */  /*0x52acb3*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E1B0C) */  /*0x52acb3*/
   if ( this ) /*0x52acb9*/
   {
     v13 = this->ptr_4; /*0x52acbb*/
@@ -242,7 +242,7 @@ void * WarheadTypeClass::ReadParticleSystems(char a2, int aP1, int a3, int a4, i
 {
 
 
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E1B04) */  /*0x52afc6*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E1B04) */  /*0x52afc6*/
   while ( 1 ) /*0x52afcc*/
   {
     unsigned int *WarheadTypeClass_field_0x8; // eax
@@ -265,7 +265,7 @@ void * WarheadTypeClass::ReadParticleSystems(char a2, int aP1, int a3, int a4, i
       WarheadTypeClass_field_0x8[1] = 0; /*0x52affd*/
     }
   }
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E1B0C) */  /*0x52b007*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E1B0C) */  /*0x52b007*/
   if ( aP1 != (WarheadTypeClass *)-16 ) /*0x52b00d*/
   {
     int v6; // edx
@@ -283,7 +283,7 @@ void * WarheadTypeClass::ReadParticleSystems(char a2, int aP1, int a3, int a4, i
       }
     }
   }
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E1B0C) */  /*0x52b034*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E1B0C) */  /*0x52b034*/
   if ( aP1 != (WarheadTypeClass *)-4 ) /*0x52b03a*/
   {
     void *v8 = aP1->WarheadTypeClass_field_0x8; // edx /*0x52b03c*/
@@ -364,7 +364,7 @@ int WarheadTypeClass::Construct(ObjectClass * aP1, void *a2, void *a3, void *a4,
   AnimTypeVector::Constructor(&aP1->q104, 0, 0); /*0x75cefe*/
   *(unsigned int *)(aP1 + 276) = 0; /*0x75cf08*/
   *&aP1->q118 = 10; /*0x75cf0b*/
-  /* X11: vtable install elided (X68 star-arith-named, RHS g_var_131447) */  /*0x75cf0e*/
+  /* X11: ptr_0 install elided (X68 star-arith-named, RHS g_var_131447) */  /*0x75cf0e*/
   aP1->q120 = 0; /*0x75cf14*/
   aP1->q124 = 0; /*0x75cf1a*/
   aP1->q128 = 0; /*0x75cf25*/
@@ -424,20 +424,20 @@ int WarheadTypeClass::Construct(ObjectClass * aP1, void *a2, void *a3, void *a4,
   *(unsigned char *)(aP1 + 409) = 0; /*0x75d083*/
   *(unsigned int *)(aP1 + 416) = 10; /*0x75d086*/
   *(unsigned int *)(aP1 + 412) = 0; /*0x75d089*/
-  /* X11: vtable install elided (X68 star-arith-named, RHS g_var_131447) */  /*0x75d08c*/
+  /* X11: ptr_0 install elided (X68 star-arith-named, RHS g_var_131447) */  /*0x75d08c*/
   *(unsigned char *)(aP1 + 436) = 1; /*0x75d092*/
   *(unsigned int *)(aP1 + 428) = 0; /*0x75d098*/
   *(unsigned int *)(aP1 + 432) = 0; /*0x75d09b*/
   *(unsigned char *)(aP1 + 437) = 0; /*0x75d09e*/
   *(unsigned int *)(aP1 + 444) = 10; /*0x75d0a1*/
   *(unsigned int *)(aP1 + 440) = 0; /*0x75d0a4*/
-  /* X11: vtable install elided (X68 star-arith-named, RHS g_var_131447) */  /*0x75d0a7*/
+  /* X11: ptr_0 install elided (X68 star-arith-named, RHS g_var_131447) */  /*0x75d0a7*/
   aP1->u32_1C4 = 0; /*0x75d0ae*/
   aP1->u32_1C8 = 0; /*0x75d0b4*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7F6B04) */  /*0x75d0ba*/
-  /* X11: vtable install elided (X68 star-arith-named, RHS g_ptr_7F6B04) */  /*0x75d0c1*/
-  /* X11: vtable install elided (implicit via WarheadTypeClass virtuals 0x75d0c7) */
-  /* X11: vtable install elided (implicit via WarheadTypeClass virtuals 0x75d0ce) */
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7F6B04) */  /*0x75d0ba*/
+  /* X11: ptr_0 install elided (X68 star-arith-named, RHS g_ptr_7F6B04) */  /*0x75d0c1*/
+  /* X11: ptr_0 install elided (implicit via WarheadTypeClass virtuals 0x75d0c7) */
+  /* X11: ptr_0 install elided (implicit via WarheadTypeClass virtuals 0x75d0ce) */
   (aP1 + 4)->GenerateUniqueID(); /*0x75d0d5*/
   (*(void (**)(int))(*(unsigned int *)(aP1 + 396) + 12))(aP1 + 396); /*0x75d0de*/
   (*(void (**)(int))(*(unsigned int *)(aP1 + 424) + 12))(aP1 + 424); /*0x75d0e5*/
@@ -567,18 +567,18 @@ int WarheadTypeClass::SaveLoad_Prefix(unsigned int * a1, int a2)
     {
       AbstractTypeClass::Init((int)v2, (int)&a1); /*0x75e108*/
       ((DynamicVectorClass *)v2->q104)->AnimTypeConstructor(0, 0); /*0x75e117*/
-      /* X11: vtable install elided (X67 star-deref, RHS g_var_131447) */  /*0x75e120*/
+      /* X11: ptr_0 install elided (X67 star-deref, RHS g_var_131447) */  /*0x75e120*/
       ((WarheadTypeClass *)DebrisTypes)->checkImmunity((int)&a1); /*0x75e12d*/
       (&v2->WarheadTypeClass_1A8)->calculateDamage((int)&a1); /*0x75e139*/
-      /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F6B04) */  /*0x75e13e*/
-      /* X11: vtable install elided (implicit via WarheadTypeClass virtuals 0x75e144) */
-      /* X11: vtable install elided (implicit via WarheadTypeClass virtuals 0x75e14b) */
-      /* X11: vtable install elided (implicit via WarheadTypeClass virtuals 0x75e152) */
+      /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F6B04) */  /*0x75e13e*/
+      /* X11: ptr_0 install elided (implicit via WarheadTypeClass virtuals 0x75e144) */
+      /* X11: ptr_0 install elided (implicit via WarheadTypeClass virtuals 0x75e14b) */
+      /* X11: ptr_0 install elided (implicit via WarheadTypeClass virtuals 0x75e152) */
     }
     if ( v2 != (WarheadTypeClass *)-260 ) /*0x75e161*/
     {
       ((DynamicVectorClass *)v2->q104)->AnimTypeConstructor(0, 0); /*0x75e169*/
-      /* X11: vtable install elided (X67 star-deref, RHS g_var_131447) */  /*0x75e16e*/
+      /* X11: ptr_0 install elided (X67 star-deref, RHS g_var_131447) */  /*0x75e16e*/
     }
     (*(void (__stdcall **)(int, WarheadTypeClass **, int, unsigned int))(*(unsigned int *)v4 + 12))(v4, &a1, 4, 0); /*0x75e180*/
     int i; // ebx
@@ -724,10 +724,10 @@ CampaignClass * * WarheadTypeClass::Destructor(char a2, int a3, int a1)
 {
 
 
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F6B04) */  /*0x75e516*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F6B04) */  /*0x75e51c*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F6B04) */  /*0x75e523*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F6B04) */  /*0x75e52a*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F6B04) */  /*0x75e516*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F6B04) */  /*0x75e51c*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F6B04) */  /*0x75e523*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F6B04) */  /*0x75e52a*/
   AbstractClass::AnnounceExpiredPointer((AbstractClass *)a3, 1); /*0x75e531*/
   WarheadTypeClass *v9; // [esp+4h] [ebp-4h] BYREF
   v9 = a3; /*0x75e546*/
@@ -762,7 +762,7 @@ CampaignClass * * WarheadTypeClass::Destructor(char a2, int a3, int a1)
   }
   CampaignClass *WarheadTypeClass_field_0x1AC; // eax
   WarheadTypeClass_field_0x1AC = a3->WarheadTypeClass_field_0x1AC; /*0x75e5c8*/
-  /* X11: vtable install elided (X68 star-amp-named, RHS g_ptr_7E8500) */  /*0x75e5d1*/
+  /* X11: ptr_0 install elided (X68 star-amp-named, RHS g_ptr_7E8500) */  /*0x75e5d1*/
   if ( WarheadTypeClass_field_0x1AC && a3->__pad_1B0[5] ) /*0x75e5df*/
   {
     __3_YAXPAX_Z(WarheadTypeClass_field_0x1AC); /*0x75e5e8*/
@@ -772,7 +772,7 @@ CampaignClass * * WarheadTypeClass::Destructor(char a2, int a3, int a1)
   *(unsigned int *)a3->__pad_1B0 = 0; /*0x75e5fc*/
   void *v6; // eax
   v6 = (void *)a3->WarheadTypeClass_field_0x190[0]; /*0x75e602*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x75e608*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x75e608*/
   if ( v6 && BYTE1(a3->MinDebris) ) /*0x75e616*/
   {
     __3_YAXPAX_Z(v6); /*0x75e61f*/
@@ -782,7 +782,7 @@ CampaignClass * * WarheadTypeClass::Destructor(char a2, int a3, int a1)
   a3->MaxDebris = 0; /*0x75e633*/
   void *WarheadTypeClass_field_0x108; // eax
   WarheadTypeClass_field_0x108 = (void *)a3->WarheadTypeClass_field_0x108; /*0x75e639*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x75e63f*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x75e63f*/
   if ( WarheadTypeClass_field_0x108 && a3->__pad_10C[5] ) /*0x75e64d*/
   {
     __3_YAXPAX_Z(WarheadTypeClass_field_0x108); /*0x75e656*/
@@ -1005,7 +1005,7 @@ void* WarheadTypeClass_ReadINI(WarheadTypeClass *a1)
   v7 = (unsigned int *)INIClassIntList; /*0x77236b*/
   INIClassIntList->uniqueId = *(unsigned int *)(v4 + 204); /*0x772377*/
   v7->u32_14 = *(unsigned int *)(v4 + 208); /*0x77237d*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E4DD8) */  /*0x772382*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E4DD8) */  /*0x772382*/
   inited = (unsigned __int8 *)__0Iostream_init_QAE_XZ_4(&v4->__pad_024); /*0x772388*/
   INIClassIntList = GetINIClassIntList( /*0x77239c*/
                       (int)&v67,
@@ -1026,7 +1026,7 @@ void* WarheadTypeClass_ReadINI(WarheadTypeClass *a1)
   v10 = v9->VectorClass_18; /*0x7723b5*/
   v11 = *(void **)&v67.Items; /*0x7723b8*/
   *(unsigned int *)(v4 + 212) = v10; /*0x7723bc*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E4DB8) */  /*0x7723c1*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E4DB8) */  /*0x7723c1*/
   if ( v11 && v67.IsAllocated ) /*0x7723d1*/
     __3_YAXPAX_Z(v11); /*0x7723d4*/
   INIClassIntList = (int)&v60; /*0x7723e8*/
@@ -1034,7 +1034,7 @@ void* WarheadTypeClass_ReadINI(WarheadTypeClass *a1)
   v12 = (unsigned int *)INIClassIntList; /*0x7723f1*/
   INIClassIntList->uniqueId = *(unsigned int *)(v4 + 232); /*0x7723fd*/
   v12->u32_14 = *(unsigned int *)(v4 + 236); /*0x772405*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E4DD8) */  /*0x772408*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E4DD8) */  /*0x772408*/
   v13 = (unsigned __int8 *)__0Iostream_init_QAE_XZ_4(&v4->__pad_024); /*0x77240e*/
   INIClassIntList = GetINIClassIntList( /*0x772422*/
                       (int)&v67,
@@ -1053,7 +1053,7 @@ void* WarheadTypeClass_ReadINI(WarheadTypeClass *a1)
   *(unsigned int *)(v4 + 232) = INIClassIntList->uniqueId; /*0x772432*/
   *(unsigned int *)(v4 + 236) = v14->u32_14; /*0x772438*/
   *(unsigned int *)(v4 + 240) = v14->VectorClass_18; /*0x77243e*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E4DB8) */  /*0x772447*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E4DB8) */  /*0x772447*/
   if ( *(unsigned int *)&v67.Items && v67.IsAllocated ) /*0x772457*/
     __3_YAXPAX_Z(*(void **)&v67.Items); /*0x77245a*/
   if ( INIClass::GetString( /*0x772479*/
@@ -1065,7 +1065,7 @@ void* WarheadTypeClass_ReadINI(WarheadTypeClass *a1)
          128) )
   {
     DynamicVectorClass::AnimTypeConstructor((DynamicVectorClass *)&v67, 0, 0); /*0x77248e*/
-    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EB6D4) */  /*0x77249d*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EB6D4) */  /*0x77249d*/
     for ( i = strtok(String, Delimiter); i; i = strtok(0, Delimiter) ) /*0x7724af*/
     {
       if ( !*i ) /*0x7724b1*/
@@ -1075,7 +1075,7 @@ void* WarheadTypeClass_ReadINI(WarheadTypeClass *a1)
         DynamicVector::Add_Alt4(&v67, &INIClassIntList); /*0x7724ce*/
     }
     TypeList::AnimTypeCopy((TypeList *)&v67.DynamicVector_field_0x1C, &v67); /*0x7724ef*/
-    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EB6F4) */  /*0x7724f8*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EB6F4) */  /*0x7724f8*/
     DynamicVectorClass::Destroy_Alt((_VectorClass_PBVAnimTypeClass *)&v67); /*0x772500*/
   }
   else
@@ -1089,7 +1089,7 @@ void* WarheadTypeClass_ReadINI(WarheadTypeClass *a1)
   v18 = *(void **)v67.__pad_20; /*0x772538*/
   *(unsigned int *)(v4 + 260) = v16; /*0x77253c*/
   *(unsigned int *)(v4 + 264) = v17; /*0x772541*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7EB6F4) */  /*0x772544*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7EB6F4) */  /*0x772544*/
   if ( v18 && BYTE1(v67.DynamicVector_field_0x28) ) /*0x772554*/
     __3_YAXPAX_Z(v18); /*0x772557*/
   v19 = v4->AssaultAnim_d; /*0x77255f*/
@@ -1316,7 +1316,7 @@ TypeList_flat * WarheadTypeClass::QueryInterface(unsigned int * Block, char a2)
 
   void *v3; // eax
   v3 = (void *)*(Block + 1); /*0x524fc3*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x524fc6*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x524fc6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x524fd0*/
   {
     operator delete((v3)); /*0x524fd8*/
@@ -1380,7 +1380,7 @@ void * WarheadTypeClass::parseModifiers(char a2)
   int v5; // edi
 
   void *WarheadTypeClass_field_0xC = this->ptr_C; // eax /*0x52ad54*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_var_79f03e) */  /*0x52ad57*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_79f03e) */  /*0x52ad57*/
   free(WarheadTypeClass_field_0xC); /*0x52ad5e*/
   void *WarheadTypeClass_field_0x10; // [esp-8h] [ebp-10h]
   WarheadTypeClass_field_0x10 = this->uniqueId; /*0x52ad68*/
@@ -1402,7 +1402,7 @@ void * WarheadTypeClass::parseModifiers(char a2)
   }
   free((void *)this->InfDeath[0]); /*0x52ada7*/
   this->InfDeath[0] = 0; /*0x52adb1*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E1B0C) */  /*0x52adb4*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E1B0C) */  /*0x52adb4*/
   if ( this ) /*0x52adba*/
   {
     void *WarheadTypeClass_field_0x4 = this->ptr_4; // ecx /*0x52adbc*/
@@ -1478,13 +1478,13 @@ int WarheadTypeClass::GetTypeIdentifier()
 namespace gamemd {  // G42.18c ns repair
 CCINIClass * WarheadTypeClass::checkImmunity(int aP1)
 {
-  /* X11: vtable install elided (X67 recv-slot, RHS g_var_131447) */  /*0x75e692*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_131447) */  /*0x75e692*/
   return &this->Deform; /*0x75e698*/
 }
 }  // G42.18c ns repair
 // 0x75E6A0
 namespace gamemd {  
 // G42.35f: def was outside namespace (pre-existing damage)
-/* X11: vtable install elided (X67 recv-slot, RHS TypeList_int_vftable) */  /*0x75e6a2*/
+/* X11: ptr_0 install elided (X67 recv-slot, RHS TypeList_int_vftable) */  /*0x75e6a2*/
 return &this->Deform; /*0x75e6a8*/
 }

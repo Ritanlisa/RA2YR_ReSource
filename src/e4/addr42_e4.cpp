@@ -1034,10 +1034,10 @@ AbstractClass * * sub_4267F0(int a2)
       *(unsigned int *)(v8 + 4) = v9; /*0x426926*/
       *(unsigned int *)(v8 + 8) = v10; /*0x42692c*/
       *(unsigned int *)(v8 + 12) = 0; /*0x426935*/
-      /* X11: vtable install elided (X67 star-deref, RHS XSurface_Vtable) */  /*0x42693c*/
+      /* X11: ptr_0 install elided (X67 star-deref, RHS XSurface_Vtable) */  /*0x42693c*/
       *(unsigned int *)(v8 + 16) = 1; /*0x426942*/
       Buffer::Init((Buffer *)(v8 + 20), 0, v10 * v9); /*0x426949*/
-      /* X11: vtable install elided (X67 star-deref, RHS BSurface_Vtable) */  /*0x42694e*/
+      /* X11: ptr_0 install elided (X67 star-deref, RHS BSurface_Vtable) */  /*0x42694e*/
     }
     else
     {
@@ -1461,7 +1461,7 @@ AbstractClass * * ObjectClass::sub_42A900()
   {
     v11 = (void *)*((unsigned int *)v9 - 5); /*0x42aa0f*/
     v9 -= 24; /*0x42aa12*/
-    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E37EC) */  /*0x42aa17*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E37EC) */  /*0x42aa17*/
     if ( v11 ) /*0x42aa1d*/
     {
       if ( v9[13] ) /*0x42aa1f*/
@@ -3211,7 +3211,7 @@ void AnimFile::sub_4266D0()
   void (***v3)(unsigned int, int); // ecx
 
   char v2 = this->u32_89; // al /*0x4266d6*/
-  /* X11: vtable install elided (implicit via AnimFile virtuals 0x4266dc) */
+  /* X11: ptr_0 install elided (implicit via AnimFile virtuals 0x4266dc) */
   if ( v2 ) /*0x4266e4*/
   {
     (*(void (**)(unsigned int))(*this->u32_343) + 52))(this->u32_84); /*0x4266ee*/
@@ -3230,7 +3230,7 @@ void AnimFile::sub_4266D0()
     this->u32_E10 = 0; /*0x426726*/
   }
   this->u32_88 = 0; /*0x42672c*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E35A8) */  /*0x426732*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E35A8) */  /*0x426732*/
 
 }
 } // namespace gamemd

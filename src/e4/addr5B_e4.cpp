@@ -264,7 +264,7 @@ AbstractClass * * SearchMIXFile(char *Source, char aP1)
       SHPFile = ((CCFileClass *)&v14.buffer)->ReadEntireFile(); /*0x5b420a*/
     }
     v9[3] = (unsigned int)(SHPFile); /*0x5b422a*/
-    /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E16B0) */  /*0x5b4231*/
+    /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E16B0) */  /*0x5b4231*/
     v16 = 0; /*0x5b4239*/
     Vector::Clear((int)v15); /*0x5b4240*/
     v14.buffer = (int)&off_7E1668; /*0x5b4249*/
@@ -273,7 +273,7 @@ AbstractClass * * SearchMIXFile(char *Source, char aP1)
   }
   else
   {
-    /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E16B0) */  /*0x5b4169*/
+    /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E16B0) */  /*0x5b4169*/
     v16 = 0; /*0x5b4171*/
     Vector::Clear((int)v15); /*0x5b4178*/
     v14.buffer = (int)&off_7E1668; /*0x5b4181*/
@@ -716,10 +716,10 @@ LABEL_15:
     v6 = (void *)__2_YAPAXI_Z(4 * Buffer); /*0x5bb435*/
     v15.Pipe_field_0x04 = 0; /*0x5bb437*/
     v15.Pipe_field_0x08 = 0; /*0x5bb448*/
-    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E6218) */  /*0x5bb44c*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E6218) */  /*0x5bb44c*/
     Buffer::Init((Buffer *)&v15.Pipe_field_0x0C, (int)v6, 4 * Buffer); /*0x5bb454*/
     v16 = 0; /*0x5bb463*/
-    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E6200) */  /*0x5bb467*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E6200) */  /*0x5bb467*/
     LZOPipe::Constructor((LZOPipe *)&v18.BufferOffset, 0, 0x2000); /*0x5bb46f*/
     Pipe::SetDelegate((Pipe *)&v18.BufferOffset, (int)&v15); /*0x5bb47d*/
     v7 = Compression::Read(&v18.BufferOffset, v5, Buffer); /*0x5bb499*/
@@ -1344,11 +1344,11 @@ void* * LoadVQMovie(char * Source, int * a2, int a3, int a4, IUnknown * a5, int 
   v15->q048 = 0; /*0x5bfb11*/
   v16 = CCFileClass::Construct(&v53, Source); /*0x5bfb14*/
   v17 = v16->vt_slot_20(0); /*0x5bfb1e*/
-  /* X11: vtable install elided (implicit via CCFileClass virtuals 0x5bfb2a) */
+  /* X11: ptr_0 install elided (implicit via CCFileClass virtuals 0x5bfb2a) */
   v45 = v17 == 0; /*0x5bfb32*/
   v55 = 0; /*0x5bfb37*/
   Vector::Clear((int)v54); /*0x5bfb3e*/
-  /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x5bfb47) */
+  /* X11: ptr_0 install elided (implicit via off_7E1668 virtuals 0x5bfb47) */
   ((BufferIOFileClass *)((BufferIOFileClass *)&v53))->Dtor(); /*0x5bfb4f*/
   if ( v45 ) /*0x5bfb58*/
     return 0; /*0x5bfb58*/
@@ -2055,7 +2055,7 @@ void MixFileClass::sub_5B3F50()
   unsigned int *v7; // eax
 
   CountFiles = (void *)this->CountFiles; /*0x5b3f56*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EDF50) */  /*0x5b3f59*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EDF50) */  /*0x5b3f59*/
   if ( CountFiles ) /*0x5b3f61*/
     free(CountFiles); /*0x5b3f64*/
   if ( this->MixFileClass_field_24 && BYTE2(this->FileSize) ) /*0x5b3f73*/
@@ -2085,7 +2085,7 @@ void MixFileClass::sub_5B3F50()
       }
     }
   }
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E1B0C) */  /*0x5b3fc0*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E1B0C) */  /*0x5b3fc0*/
   if ( this ) /*0x5b3fc6*/
   {
     v6 = this->Previous; /*0x5b3fc8*/
@@ -3456,12 +3456,12 @@ unsigned char * E4Recv_5BDA40::sub_5BDA40()
 {
 
   SmallFunc_692290((int)this); /*0x5bda43*/
-  /* X11: vtable install elided (implicit via MouseClass virtuals 0x5bda4a) */
+  /* X11: ptr_0 install elided (implicit via MouseClass virtuals 0x5bda4a) */
   this->M21852 = 0; /*0x5bda50*/
   this->M21856 = 0; /*0x5bda56*/
   this->M21860 = 0; /*0x5bda5c*/
   this->M21864 = 0; /*0x5bda62*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E195C) */  /*0x5bda68*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E195C) */  /*0x5bda68*/
   return this; /*0x5bda74*/
 
 }

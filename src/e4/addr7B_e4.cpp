@@ -515,7 +515,7 @@ CampaignClass * * E4Recv_7B2E50::sub_7B2E50()
 {
 
 
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F7A6C) */  /*0x7b2e56*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F7A6C) */  /*0x7b2e56*/
   while ( this->M258888 ) /*0x7b2e5c*/
   {
     __3_YAXPAX_Z(*this->M258876); /*0x7b2e6f*/
@@ -551,7 +551,7 @@ CampaignClass * * E4Recv_7B2E50::sub_7B2E50()
   (this)->connect(); /*0x7b2f04*/
   void *v8; // eax
   v8 = (void *)this->M259412; /*0x7b2f09*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x7b2f0f*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x7b2f0f*/
   if ( v8 && this->M259421 ) /*0x7b2f1d*/
   {
     __3_YAXPAX_Z(v8); /*0x7b2f26*/
@@ -561,7 +561,7 @@ CampaignClass * * E4Recv_7B2E50::sub_7B2E50()
   this->M259416 = 0; /*0x7b2f3a*/
   void *v9; // eax
   v9 = (void *)this->M258876; /*0x7b2f40*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x7b2f46*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x7b2f46*/
   if ( v9 && this->M258885 ) /*0x7b2f54*/
   {
     __3_YAXPAX_Z(v9); /*0x7b2f5d*/
@@ -1852,7 +1852,7 @@ rc_ptr * FindWDTTerritoryClass(rc_ptr_base * a1, int a2)
     v4 = v6; /*0x7b03eb*/
   }
   ComPtr::Constructor((ComPtr *)a1); /*0x7b03f1*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_var_5878c0) */  /*0x7b03f6*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_var_5878c0) */  /*0x7b03f6*/
   ComPtr::Set((ComPtr *)a1, v4[1]); /*0x7b0402*/
   if ( (v3 & 1) != 0 ) /*0x7b040a*/
   {
@@ -3145,7 +3145,7 @@ void sub_7BC610(int a1, char * a2, int a3, int a4, int a5, int a6, int a7, int a
 namespace gamemd {
 BlitPlain * E4Recv_7BC640::___Gfacet_locale_std__UAEPAXI_Z_148(unsigned int * Block, char a2)
 {
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E5B88) */  /*0x7bc649*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E5B88) */  /*0x7bc649*/
   if ( (a2 & 1) != 0 ) /*0x7bc64f*/
     operator delete((Block)); /*0x7bc652*/
   return Block; /*0x7bc65c*/
@@ -3156,7 +3156,7 @@ BlitPlain * E4Recv_7BC640::___Gfacet_locale_std__UAEPAXI_Z_148(unsigned int * Bl
 namespace gamemd {
 BlitPlain * E4Recv_7BC660::___Gfacet_locale_std__UAEPAXI_Z_149(unsigned int * Block, char a2)
 {
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E5B88) */  /*0x7bc669*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E5B88) */  /*0x7bc669*/
   if ( (a2 & 1) != 0 ) /*0x7bc66f*/
     operator delete((Block)); /*0x7bc672*/
   return Block; /*0x7bc67c*/
@@ -3167,7 +3167,7 @@ BlitPlain * E4Recv_7BC660::___Gfacet_locale_std__UAEPAXI_Z_149(unsigned int * Bl
 namespace gamemd {
 BlitTrans * E4Recv_7BC680::___Gfacet_locale_std__UAEPAXI_Z_150(unsigned int * Block, char a2)
 {
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E5B88) */  /*0x7bc689*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E5B88) */  /*0x7bc689*/
   if ( (a2 & 1) != 0 ) /*0x7bc68f*/
     operator delete((Block)); /*0x7bc692*/
   return Block; /*0x7bc69c*/
@@ -3178,7 +3178,7 @@ BlitTrans * E4Recv_7BC680::___Gfacet_locale_std__UAEPAXI_Z_150(unsigned int * Bl
 namespace gamemd {
 BlitTrans * E4Recv_7BC6A0::___Gfacet_locale_std__UAEPAXI_Z_151(unsigned int * Block, char a2)
 {
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E5B88) */  /*0x7bc6a9*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E5B88) */  /*0x7bc6a9*/
   if ( (a2 & 1) != 0 ) /*0x7bc6af*/
     operator delete((Block)); /*0x7bc6b2*/
   return Block; /*0x7bc6bc*/

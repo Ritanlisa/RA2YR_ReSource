@@ -93,7 +93,7 @@ namespace LocomotorCLSID
 
 //============================================================================
 // LocomotionClass — abstract base for all locomotion types
-// Base = 0x18 bytes (2 vtable ptrs + 4 data fields)
+// Base = 0x18 bytes (2 ptr_0 ptrs + 4 data fields)
 //============================================================================
 class LocomotionClass : public IPersistStream, public ILocomotion
 {
@@ -178,8 +178,8 @@ public:
     // unmatched: no callgraph reference and no git history record
     static void ChangeLocomotorTo(FootClass* object, const CLSID& clsid);
 
-    // Fields (offset from vtable[0])
-    // 0x04: vtable[1] (IPersistStream/COM)
+    // Fields (offset from ptr_0[0])
+    // 0x04: ptr_0[1] (IPersistStream/COM)
     FootClass*   Owner;      // 0x08
     FootClass*   LinkedTo;   // 0x0C
     bool         Powered;    // 0x10
@@ -227,7 +227,7 @@ protected:
 };
 
 //============================================================================
-// ILocoVTable — vtable pointer constants for locomotion_cast verification
+// ILocoVTable — ptr_0 pointer constants for locomotion_cast verification
 //============================================================================
 namespace ILocoVTable
 {
@@ -241,7 +241,7 @@ namespace ILocoVTable
     inline constexpr uintptr_t Teleport = 0x7F5000;
     inline constexpr uintptr_t Tunnel  = 0x7F5A24;
     inline constexpr uintptr_t DropPod = 0x7E8278;
-    // Mech: vtable @ 0x7EDB6C (no IPiggyback ILocoVTable constant)
+    // Mech: ptr_0 @ 0x7EDB6C (no IPiggyback ILocoVTable constant)
 } // namespace ILocoVTable
 
 //============================================================================

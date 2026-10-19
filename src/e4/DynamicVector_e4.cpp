@@ -100,7 +100,7 @@ unsigned int * DynamicVector::Constructor_Cell(ObjectClass * aP1, ObjectClass * 
   aP1->ptr_8 = aP2; /*0x42f681*/
   aP1->ptr_C = (void *)(1); /*0x42f684*/
   aP1->u32_D = 0; /*0x42f688*/
-  /* X11: vtable install elided (implicit via VectorClass virtuals 0x42f68c) */
+  /* X11: ptr_0 install elided (implicit via VectorClass virtuals 0x42f68c) */
   if ( aP2 ) /*0x42f692*/
   {
     if ( a3_1 ) /*0x42f69a*/
@@ -117,7 +117,7 @@ unsigned int * DynamicVector::Constructor_Cell(ObjectClass * aP1, ObjectClass * 
       aP1->u32_D = 1; /*0x42f6c6*/
     }
   }
-  /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x42f6ca) */
+  /* X11: ptr_0 install elided (implicit via DynamicVectorClass virtuals 0x42f6ca) */
   *(unsigned int *)aP1->abstractFlags = 10; /*0x42f6d0*/
   aP1->uniqueId = 0; /*0x42f6d7*/
   return (unsigned int *)(aP1->ptr_0); /*0x42f6e0*/
@@ -412,7 +412,7 @@ unsigned int * DynamicVector::Constructor_VoxelAnim(int a2, int a3)
   this->DynamicVector_field_0x8 = a2; /*0x67ac80*/
   this->IsInitialized = 1; /*0x67ac83*/
   this->IsAllocated = 0; /*0x67ac87*/
-  /* X11: vtable install elided (implicit via VectorClass virtuals 0x67ac8b) */
+  /* X11: ptr_0 install elided (implicit via VectorClass virtuals 0x67ac8b) */
   if ( a2 ) /*0x67ac91*/
   {
     if ( a3 ) /*0x67ac99*/
@@ -425,7 +425,7 @@ unsigned int * DynamicVector::Constructor_VoxelAnim(int a2, int a3)
       this->IsAllocated = 1; /*0x67acaf*/
     }
   }
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E3238) */  /*0x67acb3*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E3238) */  /*0x67acb3*/
   *(unsigned int *)this->CapacityIncrement = 10; /*0x67acb9*/
   this->Count = 0; /*0x67acc0*/
   return (unsigned int *)(this->__pad_0); /*0x67acc9*/
@@ -566,7 +566,7 @@ unsigned int * DynamicVector::Constructor_Techno(int a2, int a3, void *a3_1)
   this->Capacity = a2; /*0x7342e0*/
   this->IsInitialized = 1; /*0x7342e3*/
   this->IsAllocated = 0; /*0x7342e7*/
-  /* X11: vtable install elided (implicit via VectorClass virtuals 0x7342eb) */
+  /* X11: ptr_0 install elided (implicit via VectorClass virtuals 0x7342eb) */
   if ( a2 ) /*0x7342f1*/
   {
     if ( a3 ) /*0x7342f9*/
@@ -579,7 +579,7 @@ unsigned int * DynamicVector::Constructor_Techno(int a2, int a3, void *a3_1)
       this->IsAllocated = 1; /*0x73430f*/
     }
   }
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E3238) */  /*0x734313*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E3238) */  /*0x734313*/
   *(unsigned int *)this->CapacityIncrement = 10; /*0x734319*/
   this->Count = 0; /*0x734320*/
   return this->ptr_0; /*0x734329*/

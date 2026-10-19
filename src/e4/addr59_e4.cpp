@@ -575,7 +575,7 @@ ObjectClass * * RandomMap_DistributeTerrain()
   }
   ComputeMapCameraBounds(v35); /*0x594ee3*/
   __3_YAXPAX_Z(Base); /*0x594eed*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7ED878) */  /*0x594efb*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7ED878) */  /*0x594efb*/
   Base = 0; /*0x594f08*/
   NumOfElements = 0; /*0x594f0c*/
   v41 = 0; /*0x594f10*/
@@ -611,7 +611,7 @@ AbstractTypeClass * * CleanupRandomMapCache()
   int v17; // [esp+2Ch] [ebp-4h]
 
   Map_Cleanup(&v15, 0, 0); /*0x595cef*/
-  /* X11: vtable install elided (legacy slot spelling slot, RHS g_ptr_7ED94C) */  /*0x595cf4*/
+  /* X11: ptr_0 install elided (legacy slot spelling slot, RHS g_ptr_7ED94C) */  /*0x595cf4*/
   v17 = 10; /*0x595cfc*/
   j = 0; /*0x595d09*/
   i = (struct _WIN32_FIND_DATAA *)__2_YAPAXI_Z(0x140u); /*0x595d19*/
@@ -747,7 +747,7 @@ LABEL_38:
     }
     while ( !v12 ); /*0x595f85*/
   }
-  /* X11: vtable install elided (legacy slot spelling slot, RHS g_ptr_7ED92C) */  /*0x595f89*/
+  /* X11: ptr_0 install elided (legacy slot spelling slot, RHS g_ptr_7ED92C) */  /*0x595f89*/
   if ( Items ) /*0x595f91*/
   {
     if ( v15.IsAllocated ) /*0x595f99*/
@@ -781,12 +781,12 @@ unsigned int * GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)())
   struct _WIN32_FIND_DATAA FindFileData; // [esp+130h] [ebp-140h] BYREF
 
   ComPtr::Constructor(&v17); /*0x595fc2*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EBFA4) */  /*0x595fd8*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EBFA4) */  /*0x595fd8*/
   if ( *(unsigned int *)&dword_A8B238 == 4 && dword_A8B244 == 3 ) /*0x595fe5*/
   {
     WDTTerritoryClass = FindWDTTerritoryClass((rc_ptr *)&v17.ComPtr_field_0x08, *(int *)dword_A8B240); /*0x595ff1*/
     ComPtr::Set(&v17, WDTTerritoryClass->u32_4); /*0x595ffe*/
-    /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7EBFA4) */  /*0x596007*/
+    /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7EBFA4) */  /*0x596007*/
     ComPtr::Release((ComPtr *)&v17.ComPtr_field_0x08); /*0x59600b*/
   }
   if ( v17.ComPtr_field_0x04 ) /*0x596016*/
@@ -879,12 +879,12 @@ unsigned int * GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)())
     dword_ABE150 = 0; /*0x5962b2*/
   }
 LABEL_39:
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x5962b8*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x5962b8*/
   v20 = 0; /*0x5962c7*/
   Vector::Clear((int)v19); /*0x5962ce*/
   *(unsigned int *)v18.__tail_0 = &off_7E1668; /*0x5962d7*/
   BufferIOFileClass::Dtor((BufferIOFileClass *)&v18); /*0x5962df*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EBFA4) */  /*0x5962e8*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EBFA4) */  /*0x5962e8*/
   return ComPtr::Release(&v17); /*0x5962f5*/
 
 }
@@ -992,12 +992,12 @@ AbstractClass * * ArrangeBuildingPlacementGrid(int a1, int a2, MapResourceClass 
   v38 = a4[1]; /*0x59a9df*/
   v37 = *a4; /*0x59a9e9*/
   VectorClass::Construct(&v44, 0, 0); /*0x59a9ed*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E4E78) */  /*0x59a9f8*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E4E78) */  /*0x59a9f8*/
   v46 = 10; /*0x59aa00*/
   v45 = 0; /*0x59aa0b*/
   VectorClass::Construct(&v41, 0, 0); /*0x59aa12*/
   v11 = 0; /*0x59aa1b*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E4E78) */  /*0x59aa1f*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E4E78) */  /*0x59aa1f*/
   v43 = 10; /*0x59aa27*/
   i = 0; /*0x59aa2f*/
   if ( v25 > 0 ) /*0x59aa33*/
@@ -1112,13 +1112,13 @@ AbstractClass * * ArrangeBuildingPlacementGrid(int a1, int a2, MapResourceClass 
       v37 = *v7; /*0x59ac8f*/
     ++v17; /*0x59aca0*/
   }
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E4DB8) */  /*0x59acb8*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E4DB8) */  /*0x59acb8*/
   if ( v41.Items && v41.IsAllocated[0] ) /*0x59acc4*/
   {
     __3_YAXPAX_Z((void *)v41.Items); /*0x59acc7*/
     v41.Items = 0; /*0x59accf*/
   }
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E4DB8) */  /*0x59acdb*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E4DB8) */  /*0x59acdb*/
   v41.IsAllocated[0] = 0; /*0x59ace2*/
   v41.Capacity = 0; /*0x59ace9*/
   if ( v44.Items ) /*0x59acf2*/

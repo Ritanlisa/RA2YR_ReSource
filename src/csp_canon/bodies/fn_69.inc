@@ -119,7 +119,7 @@ int ScriptClass::LoadState(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x691646*/
     {
       AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x69164f*/
-      /* X11: vtable install elided (implicit via ScriptClass virtuals 0x691654) */
+      /* X11: ptr_0 install elided (implicit via ScriptClass virtuals 0x691654) */
       ((unsigned int *)aP0)[0] = (unsigned int)(&g_ptr_7F0F4C); /*0x69165a*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&g_ptr_7F0F4C); /*0x691661*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&g_ptr_7F0F4C); /*0x691668*/
@@ -236,7 +236,7 @@ int ScriptTypeClass::LoadTypeData(AbstractTypeClass * aP0, int aP1)
     if ( aP0 ) /*0x691da6*/
     {
       ((AbstractTypeClass*)(int)aP0)->Init((int)&aP1); /*0x691daf*/
-      /* X11: vtable install elided (implicit via ScriptTypeClass virtuals 0x691db4) */
+      /* X11: ptr_0 install elided (implicit via ScriptTypeClass virtuals 0x691db4) */
       ((unsigned int *)aP0)[0] = (unsigned int)(&g_ptr_7F0FDC); /*0x691dba*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&g_ptr_7F0FDC); /*0x691dc1*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&g_ptr_7F0FDC); /*0x691dc8*/
@@ -320,7 +320,7 @@ int Gap2Recv_692290::SmallFunc_692290() {
   *((unsigned char *)this + 21848) = 0; /*0x6922b2*/
   *((unsigned char *)this + 21850) = 0; /*0x6922b8*/
   *((unsigned char *)this + 21849) = 1; /*0x6922be*/
-  /* X11: vtable install elided (implicit via ScrollClass virtuals 0x6922c5) */
+  /* X11: ptr_0 install elided (implicit via ScrollClass virtuals 0x6922c5) */
   *((unsigned int *)this + 5446) = &g_var_5ee334; /*0x6922cb*/
   return this; /*0x6922d7*/
 
@@ -492,7 +492,7 @@ HWND E4Recv_696C40::sub_696C40()
 void Gap2Recv_6990A0::SaveConfigWOL() {
 
   char *v2; // eax
-  int vtable1; // eax
+  int ptr_4; // eax
   int i; // edi
   int j; // edi
   int v6; // eax
@@ -509,9 +509,9 @@ void Gap2Recv_6990A0::SaveConfigWOL() {
   INIClass::SetInt(dword_8870C0.__pad_0, aMultiplayer, aColorex, this->targetingTimer[0], 0); /*0x699163*/
   INIClass::SetHouseName(dword_8870C0.__pad_0, aMultiplayer, aSide, (void *)this->targetingTimer[1]); /*0x69917e*/
   INIClass::SetInt(dword_8870C0.__pad_0, aMultiplayer, aSideex, this->targetingTimer[2], 0); /*0x69919b*/
-  vtable1 = this->vtable1; /*0x6991a0*/
-  if ( vtable1 ) /*0x6991a7*/
-    INIClass::SetInt(dword_8870C0.__pad_0, aMultiplayer, g_INI_Key_GameMode, *(unsigned int *)(vtable1 + 40), 0); /*0x6991ad*/
+  ptr_4 = this->ptr_4; /*0x6991a0*/
+  if ( ptr_4 ) /*0x6991a7*/
+    INIClass::SetInt(dword_8870C0.__pad_0, aMultiplayer, g_INI_Key_GameMode, *(unsigned int *)(ptr_4 + 40), 0); /*0x6991ad*/
   else
     INIClass::SetInt(dword_8870C0.__pad_0, aMultiplayer, g_INI_Key_GameMode, 0, 0); /*0x6991c0*/
   GameSetup::WriteINI((int)this->__pad_18C, dword_8870C0.__pad_0, (uint8_t *)aSkirmish); /*0x6991d5*/
@@ -590,7 +590,7 @@ char sub_69ADE0(char a2)
 void Gap2Recv_69B170::ParseAndApplyAlliances() {
 
   bool v1; // zf
-  void *vtable0; // edx
+  void *ptr_0; // edx
   const char *v3; // edi
   char *v4; // ebx
   char *i; // ebp
@@ -628,9 +628,9 @@ void Gap2Recv_69B170::ParseAndApplyAlliances() {
   *((unsigned char *)this + 1672) = 0; /*0x69b17d*/
   if ( v1 ) /*0x69b184*/
   {
-    vtable0 = dword_A8B230->vtable0; /*0x69b199*/
-    BYTE1(vtable0) = ((uint16_t)dword_A8B230->vtable0 >> 8) & 0xFB; /*0x69b19b*/
-    dword_A8B230->vtable0 = vtable0; /*0x69b19e*/
+    ptr_0 = dword_A8B230->ptr_0; /*0x69b199*/
+    BYTE1(ptr_0) = ((uint16_t)dword_A8B230->ptr_0 >> 8) & 0xFB; /*0x69b19b*/
+    dword_A8B230->ptr_0 = ptr_0; /*0x69b19e*/
     Debug::Log(); /*0x69b1a0*/
     Debug::Log(); /*0x69b1af*/
     if ( strlen(&byte_B77A04) ) /*0x69b1b9*/
@@ -638,11 +638,11 @@ void Gap2Recv_69B170::ParseAndApplyAlliances() {
       if ( strlen(byte_B76568) ) /*0x69b1d1*/
       {
         ParseAndApplyAlliances_Parse(&v33, 0, 0); /*0x69b1ea*/
-        /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x69b1ff) */
+        /* X11: ptr_0 install elided (implicit via DynamicVectorClass virtuals 0x69b1ff) */
         v35 = 10; /*0x69b203*/
         v34 = 0; /*0x69b207*/
         ParseAndApplyAlliances_Parse(&v30, 0, 0); /*0x69b20b*/
-        /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x69b210) */
+        /* X11: ptr_0 install elided (implicit via DynamicVectorClass virtuals 0x69b210) */
         v32 = 10; /*0x69b232*/
         v31 = 0; /*0x69b238*/
         v3 = &byte_B77A04; /*0x69b23c*/
@@ -663,7 +663,7 @@ void Gap2Recv_69B170::ParseAndApplyAlliances() {
               && (v34 < v33.Capacity
                || (v33.IsAllocated || !v33.Capacity)
                && v35 > 0
-               && (*((uint8_t (**)(VectorClass *, int, unsigned int))v33.vtable0 + 2))(
+               && (*((uint8_t (**)(VectorClass *, int, unsigned int))v33.ptr_0 + 2))(
                     &v33,
                     v35 + v33.Capacity,
                     0)) )
@@ -686,7 +686,7 @@ void Gap2Recv_69B170::ParseAndApplyAlliances() {
               && (v31 < v30.Capacity
                || (v30.IsAllocated || !v30.Capacity)
                && v32 > 0
-               && (*((uint8_t (**)(VectorClass *, int, unsigned int))v30.vtable0 + 2))(
+               && (*((uint8_t (**)(VectorClass *, int, unsigned int))v30.ptr_0 + 2))(
                     &v30,
                     v32 + v30.Capacity,
                     0)) )
@@ -762,16 +762,16 @@ void Gap2Recv_69B170::ParseAndApplyAlliances() {
         }
         __3_YAXPAX_Z(v4); /*0x69b4c1*/
         *((unsigned char *)this + 1672) = 1; /*0x69b4d4*/
-        v27 = dword_A8B230->vtable0; /*0x69b4e0*/
-        BYTE1(v27) = ((uint16_t)dword_A8B230->vtable0 >> 8) | 4; /*0x69b4e2*/
-        dword_A8B230->vtable0 = v27; /*0x69b4e5*/
-        /* X11: vtable install elided (implicit via VectorClass virtuals 0x69b4ed) */
+        v27 = dword_A8B230->ptr_0; /*0x69b4e0*/
+        BYTE1(v27) = ((uint16_t)dword_A8B230->ptr_0 >> 8) | 4; /*0x69b4e2*/
+        dword_A8B230->ptr_0 = v27; /*0x69b4e5*/
+        /* X11: ptr_0 install elided (implicit via VectorClass virtuals 0x69b4ed) */
         if ( v30.Items && v30.IsAllocated ) /*0x69b4f9*/
         {
           __3_YAXPAX_Z(v30.Items); /*0x69b4fc*/
           v30.Items = 0; /*0x69b504*/
         }
-        /* X11: vtable install elided (implicit via VectorClass virtuals 0x69b50c) */
+        /* X11: ptr_0 install elided (implicit via VectorClass virtuals 0x69b50c) */
         v30.IsAllocated = 0; /*0x69b514*/
         v30.Capacity = 0; /*0x69b519*/
         if ( v33.Items ) /*0x69b51e*/
@@ -901,18 +901,18 @@ unsigned int * E4Recv_69D870::sub_69D870(int a2, int a3)
   this->Capacity = a2; /*0x69d87e*/
   this->IsInitialized = 1; /*0x69d881*/
   this->IsAllocated = 0; /*0x69d885*/
-  /* X11: vtable install elided (implicit via VectorClass virtuals 0x69d888) */
+  /* X11: ptr_0 install elided (implicit via VectorClass virtuals 0x69d888) */
   if ( a2 ) /*0x69d88e*/
   {
     if ( a3 ) /*0x69d896*/
     {
       this->Items = (unsigned int)((void *)a3);
-      return (unsigned int *)(&this->vtable1); /*0x69d89e*/
+      return (unsigned int *)(&this->ptr_4); /*0x69d89e*/
     }
     this->Items = (unsigned int)((void *)__2_YAPAXI_Z(4 * a2)); /*0x69d8ad*/
     this->IsAllocated = 1; /*0x69d8b0*/
   }
-  return (unsigned int *)(&this->vtable1); /*0x69d89d*/
+  return (unsigned int *)(&this->ptr_4); /*0x69d89d*/
 
 }
 

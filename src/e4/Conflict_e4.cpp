@@ -44,7 +44,7 @@ int Conflict_WorldDominationTour_12::Release(int a2, unsigned int * a3)
       do /*0x766c97*/
       {
         ComPtr::Constructor(v6); /*0x766c88*/
-        /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7F7024) */  /*0x766c8d*/
+        /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7F7024) */  /*0x766c8d*/
         v6 = (ComPtr *)((char *)v6 + 8); /*0x766c93*/
         --v9; /*0x766c96*/
       }
@@ -69,7 +69,7 @@ int Conflict_WorldDominationTour_12::Release(int a2, unsigned int * a3)
       do /*0x766c67*/
       {
         ComPtr::Constructor(v6); /*0x766c58*/
-        /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7F7024) */  /*0x766c5d*/
+        /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7F7024) */  /*0x766c5d*/
         v6 = (ComPtr *)((char *)v6 + 8); /*0x766c63*/
         --v7; /*0x766c66*/
       }
@@ -134,7 +134,7 @@ AbstractClass * * Conflict_WorldDominationTour_12::Constructor_1(int a2, unsigne
         do /*0x766e45*/
         {
           ComPtr::Constructor(v8); /*0x766e36*/
-          /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7F7024) */  /*0x766e3b*/
+          /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7F7024) */  /*0x766e3b*/
           v8 = (ComPtr *)((char *)v8 + 8); /*0x766e41*/
           --v9; /*0x766e44*/
         }
@@ -266,7 +266,7 @@ unsigned int * Conflict_WorldDominationTour_12::Seek(unsigned int * a2, int a3, 
 
   int v3 = *&a3_2->u32_4 + 8 * a3_2; // edi /*0x76685d*/
   ComPtr::Constructor((ComPtr *)a3_2); /*0x766862*/
-  /* X11: vtable install elided (X68 star-paren-named, RHS g_var_5878c0) */  /*0x766867*/
+  /* X11: ptr_0 install elided (X68 star-paren-named, RHS g_var_5878c0) */  /*0x766867*/
   ComPtr::Set((ComPtr *)a3_2, v3->u32_4); /*0x766873*/
   return a3_2; /*0x76687a*/
 }
@@ -277,7 +277,7 @@ namespace gamemd {
 unsigned int * Conflict_WorldDominationTour_12::Constructor(char a2, void *a2_1, void *a3, void *a4)
 {
 
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7F701C) */  /*0x766963*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7F701C) */  /*0x766963*/
   ComPtr::Release((ComPtr *)this); /*0x766969*/
   if ( (a2 & 1) != 0 ) /*0x766973*/
     __3_YAXPAX_Z(this); /*0x766976*/
@@ -291,7 +291,7 @@ namespace gamemd {
 unsigned int * Conflict_WorldDominationTour_12::Constructor_0(char a2)
 {
 
-  /* X11: vtable install elided (X67 star-deref, RHS g_var_5878c0) */  /*0x766993*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_var_5878c0) */  /*0x766993*/
   ComPtr::Release((ComPtr *)this); /*0x766999*/
   if ( (a2 & 1) != 0 ) /*0x7669a3*/
     __3_YAXPAX_Z(this); /*0x7669a6*/
@@ -403,7 +403,7 @@ VectorClass_flat * Conflict_WorldDominationTour_12::QueryInterface(unsigned int 
   void (***v3)(unsigned int, int); // ecx
 
   v3 = *(void (****)(unsigned int, int))&Block->__pad_004; /*0x766fc3*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_var_18554b) */  /*0x766fc6*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_var_18554b) */  /*0x766fc6*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x766fd0*/
   {
     (**v3)(v3, 3); /*0x766fdf*/
@@ -424,7 +424,7 @@ DynamicVector * Conflict_WorldDominationTour_12::Constructor_2(unsigned int * Bl
   void (***v3)(unsigned int, int); // ecx
 
   v3 = *(void (****)(unsigned int, int))&Block->__pad_004; /*0x767083*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_var_18554b) */  /*0x767086*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_var_18554b) */  /*0x767086*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x767090*/
   {
     (**v3)(v3, 3); /*0x76709f*/
@@ -443,7 +443,7 @@ namespace gamemd {
 int Conflict_WorldDominationTour_12::Constructor_3(void *a1_1)
 {
   ComPtr::Constructor((ComPtr *)a1_1); /*0x7670d3*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_var_5878c0) */  /*0x7670d8*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_var_5878c0) */  /*0x7670d8*/
   return (int)(a1_1); /*0x7670e0*/
 }
 } // namespace gamemd

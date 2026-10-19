@@ -27,10 +27,10 @@ unsigned int * RadioClass::Release(void *a1)
   (&a1->radioLinks)[0] = (int)&g_ptr_7E8500; /*0x65a77c*/
   *(unsigned int *)&a1->q0E4 = operator new(4u); /*0x65a78b*/
   (((unsigned char *)&((&a1->radioLinks)[3]))[1]) = 1; /*0x65a791*/
-  /* X11: vtable install elided (implicit via RadioClass virtuals 0x65a798) */
-  /* X11: vtable install elided (implicit via RadioClass virtuals 0x65a79e) */
-  /* X11: vtable install elided (implicit via RadioClass virtuals 0x65a7a5) */
-  /* X11: vtable install elided (implicit via RadioClass virtuals 0x65a7ac) */
+  /* X11: ptr_0 install elided (implicit via RadioClass virtuals 0x65a798) */
+  /* X11: ptr_0 install elided (implicit via RadioClass virtuals 0x65a79e) */
+  /* X11: ptr_0 install elided (implicit via RadioClass virtuals 0x65a7a5) */
+  /* X11: ptr_0 install elided (implicit via RadioClass virtuals 0x65a7ac) */
   *(unsigned int *)a1->radioLinks[1] = 0; /*0x65a7be*/
   (&a1->lastCommands)[0] = 0; /*0x65a7c4*/
   a1->lastCommands[1] = 0; /*0x65a7ca*/
@@ -109,7 +109,7 @@ int RadioClass::LoadState(int aP1, int aP2)
       *(unsigned int *)(v3 + 232) = 0; /*0x65abab*/
       *(unsigned char *)(v3 + 236) = 1; /*0x65abb2*/
       *(unsigned char *)(v3 + 237) = 0; /*0x65abb6*/
-      /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x65abba*/
+      /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x65abba*/
     }
     result = (*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)v4 + 12))(v4, &aP2, 4, 0); /*0x65abcc*/
     if ( result >= 0 ) /*0x65abd1*/

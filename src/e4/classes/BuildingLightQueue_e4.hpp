@@ -1,5 +1,5 @@
 // GENERATED flat e4 class (mechanical; render_ext bridge cut G57w8d --
-// e4 flat carrier wins, truth render_ext.hpp:821 vtable slot semantics)
+// e4 flat carrier wins, truth render_ext.hpp:821 ptr_0 slot semantics)
 #pragma once
 
 #include "e4/classes/_fwd_e4.hpp"

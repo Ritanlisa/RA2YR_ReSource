@@ -35,10 +35,10 @@ namespace gamemd {  // G42.18c ns repair
 void * DiskLaserClass::CopyTo(unsigned int * Block, char a2)
 {
   
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E5F8C) */  /*0x4a7c9d*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E5F8C) */  /*0x4a7ca3*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E5F8C) */  /*0x4a7caa*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E5F8C) */  /*0x4a7cb1*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E5F8C) */  /*0x4a7c9d*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E5F8C) */  /*0x4a7ca3*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E5F8C) */  /*0x4a7caa*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E5F8C) */  /*0x4a7cb1*/
   DiskLaserClass *v5; // [esp+4h] [ebp-4h] BYREF
   v5 = (gamemd::DiskLaserClass *)(Block); /*0x4a7cbf*/
   int v3; // eax
@@ -70,10 +70,10 @@ int  DiskLaserClass::Write(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x4a7ba9*/
     {
       AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x4a7bb2*/
-      /* X11: vtable install elided (implicit via DiskLaserClass virtuals 0x4a7bb7) */
-      /* X11: vtable install elided (implicit via DiskLaserClass virtuals 0x4a7bbd) */
-      /* X11: vtable install elided (implicit via DiskLaserClass virtuals 0x4a7bc4) */
-      /* X11: vtable install elided (implicit via DiskLaserClass virtuals 0x4a7bcb) */
+      /* X11: ptr_0 install elided (implicit via DiskLaserClass virtuals 0x4a7bb7) */
+      /* X11: ptr_0 install elided (implicit via DiskLaserClass virtuals 0x4a7bbd) */
+      /* X11: ptr_0 install elided (implicit via DiskLaserClass virtuals 0x4a7bc4) */
+      /* X11: ptr_0 install elided (implicit via DiskLaserClass virtuals 0x4a7bcb) */
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->u32_24); /*0x4a7bdb*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->DiskLaserClass_field_0x28); /*0x4a7be9*/

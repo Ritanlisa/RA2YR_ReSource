@@ -612,7 +612,7 @@ protected:
     int32_t                     u32_22500; // raw 0x4f53ad
     int32_t                     u32_22580; // raw 0x4f53b8
     // g57w11 r4 item2d 词表 (raw fn_4F 0x4F6EC0 SetCombatPower 体引用)
-    void*                       ptr_23;  // raw 0x4f6ef1 (ml:8C vtable6 族; 载体词表)
+    void*                       ptr_23;  // raw 0x4f6ef1 (ml:8C ptr_18 族; 载体词表)
     double                      u32_188;   // raw 0x4f6f11 (double 乘积承接; ml 392)
     double                      u32_190;   // raw 0x4f6f2b (double 乘积承接)
     // g57w11 r4 item2e 词表续 (raw 0x4F6EC0 SetCombatPower 尾段 + 0x4F7140 Destruct 体引用)

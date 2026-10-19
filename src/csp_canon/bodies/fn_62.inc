@@ -569,11 +569,11 @@ int ParticleClass::Construct(int a1, void* a2, float a3, int a4) {
   this->Translucency = v13[756]; /*0x62b754*/
   this->q130 = 0; /*0x62b75b*/
   this->q4C4 = 0; /*0x62b761*/
-  /* X11: vtable install elided (implicit via ParticleClass virtuals 0x62b767) */
-  /* X11: vtable install elided (implicit via ParticleClass virtuals 0x62b76d) */
-  /* X11: vtable install elided (implicit via ParticleClass virtuals 0x62b773) */
-  /* X11: vtable install elided (implicit via ParticleClass virtuals 0x62b77a) */
-  this->vtable2.GenerateUniqueID(); /*0x62b781*/
+  /* X11: ptr_0 install elided (implicit via ParticleClass virtuals 0x62b767) */
+  /* X11: ptr_0 install elided (implicit via ParticleClass virtuals 0x62b76d) */
+  /* X11: ptr_0 install elided (implicit via ParticleClass virtuals 0x62b773) */
+  /* X11: ptr_0 install elided (implicit via ParticleClass virtuals 0x62b77a) */
+  this->ptr_8.GenerateUniqueID(); /*0x62b781*/
   if ( dword_A83DD8 < dword_A83DD0 /*0x62b7b9*/
     || (byte_A83DD5 || !dword_A83DD0)
     && dword_A83DDC > 0
@@ -1009,9 +1009,9 @@ int ParticleSystemClass::Constructor(int a2, int *a3, int a4, void *a5, unsigned
   this->ParticleSystemClass_field_bool_F9 = 0; /*0x62dd0a*/
   *(&this->nextArrayIndex3) = 0; /*0x62dd10*/
   *this = (int)(void *)&ParticleSystemClass_vftable; /*0x62dd16*/
-  /* X11: vtable install elided (implicit via ParticleSystemClass virtuals 0x62dd1c) */
-  /* X11: vtable install elided (implicit via ParticleSystemClass virtuals 0x62dd22) */
-  /* X11: vtable install elided (implicit via off_7EFB70 virtuals 0x62dd29) */
+  /* X11: ptr_0 install elided (implicit via ParticleSystemClass virtuals 0x62dd1c) */
+  /* X11: ptr_0 install elided (implicit via ParticleSystemClass virtuals 0x62dd22) */
+  /* X11: ptr_0 install elided (implicit via off_7EFB70 virtuals 0x62dd29) */
   AbstractClass::GenerateUniqueID((AbstractClass *)(this + 1)); /*0x62dd30*/
   if ( g_GameCleanupState < dword_A80210 /*0x62dd6a*/
     || (byte_A80215 || !dword_A80210)
@@ -1061,7 +1061,7 @@ int ParticleSystemClass::Constructor(int a2, int *a3, int a4, void *a5, unsigned
   v15 = *(&this->abstractFlags6); /*0x62de6d*/
   if ( v15 ) /*0x62de75*/
   {
-    v16 = *(&this->vtable49); /*0x62de7f*/
+    v16 = *(&this->ptr_C4); /*0x62de7f*/
     v17 = *(&this->uniqueId0); /*0x62de81*/
     v18 = *(&this->uniqueId1); /*0x62de84*/
     v19 = (unsigned int *)(*(int (**)(int, unsigned char *))(v15->u32_48)(v15, v24); /*0x62de8c*/
@@ -1791,7 +1791,7 @@ int ParticleSystemClass::Update() {
   v2 = *(unsigned int *)&this->__pad_E5[7] - 1; /*0x62fda6*/
   *(unsigned int *)&this->__pad_E5[7] = v2; /*0x62fdad*/
   if ( !v2 ) /*0x62fdb3*/
-    (*(void (**)(ParticleSystemClass *))(this->vtable0 + 248))(this); /*0x62fdb9*/
+    (*(void (**)(ParticleSystemClass *))(this->ptr_0 + 248))(this); /*0x62fdb9*/
   IDA_LOBYTE(Owner) = this->isAliveFlag[0]; /*0x62fdbf*/
   if ( (unsigned char)Owner ) /*0x62fdc7*/
   {
@@ -1801,13 +1801,13 @@ int ParticleSystemClass::Update() {
       Owner = this->Owner; /*0x62fdd3*/
       if ( !Owner ) /*0x62fddb*/
       {
-        (*(void (**)(ParticleSystemClass *))(this->vtable0 + 212))(this); /*0x62fde1*/
+        (*(void (**)(ParticleSystemClass *))(this->ptr_0 + 212))(this); /*0x62fde1*/
         this->isAliveFlag[0] = 0; /*0x62fde7*/
         IDA_LOBYTE(Owner) = stru_B0F698.Capacity; /*0x62fdee*/
         if ( stru_B0F698.Count < stru_B0F698.Capacity /*0x62fe28*/
           || (stru_B0F698.IsAllocated[0] || !stru_B0F698.Capacity)
           && stru_B0F698.CapacityIncrement > 0
-          && (IDA_LOBYTE(Owner) = (*(int (**)(DynamicVectorClass *, int, unsigned int))(stru_B0F698.vtable0 + 8))(
+          && (IDA_LOBYTE(Owner) = (*(int (**)(DynamicVectorClass *, int, unsigned int))(stru_B0F698.ptr_0 + 8))(
                                 &stru_B0F698,
                                 stru_B0F698.Capacity + stru_B0F698.CapacityIncrement,
                                 0),

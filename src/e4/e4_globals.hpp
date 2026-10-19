@@ -14450,7 +14450,7 @@ extern int DataGlobal_B0498C;  // data: 0xb0498c
 extern int DataGlobal_B04990;  // data: 0xb04990
 extern int DataGlobal_B049BC;  // data: 0xb049bc
 
-// G41.46 C2065 data supply: vtable/raw-data globals the
+// G41.46 C2065 data supply: ptr_0/raw-data globals the
 // cache-typed bodies reference but the globals generator missed.
 extern unsigned char g_var_131447[4];
 extern unsigned char g_var_5878c0[4];

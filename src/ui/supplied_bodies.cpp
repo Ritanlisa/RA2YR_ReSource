@@ -190,7 +190,7 @@ struct stru_A8B250_host { unsigned char q000[160]; };
 extern stru_A8B250_host stru_A8B250;  // data: 0xA8B250
 // G42.35: .ObjectTypeClass[N] 下标站点宿主 (e4_globals 裸 uint 与 cache 成员词汇不兼容)
 struct stru_A8EB00_host { unsigned int ObjectTypeClass[64]; };
-// G42.35: dword_A8B230[127].vtable2 下标站点宿主
+// G42.35: dword_A8B230[127].ptr_8 下标站点宿主
 struct dword_A8B230_host { void *ptr_0; void *ptr_4; };
 // G42.35: 体表缺席全局 (ida_globals 名 dword_887598/dword_87F5F0; stru_ 成员词汇承载)
 struct stru_887598_host { void *lineTrailer; };
@@ -1603,7 +1603,7 @@ unsigned int * ControlClass::Construct(int a2, int a3, int a4, int a5, int a6, i
   GadgetClass::Construct((ShpButtonClass *)this, a3, a4, a5, a6, a7, a8); /*0x48e543*/
   this->u32_28 = 0; /*0x48e54c*/
   this->u32_24 = a2; /*0x48e553*/
-  /* X11: vtable install elided (implicit via class virtuals 0x48e556) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x48e556) — binary-proven install, was 0 */
   return this->ptr_0; /*0x48e55e*/
 }
 } // namespace gamemd
@@ -1614,7 +1614,7 @@ unsigned int * ControlClass::CtorFromData(ControlClass * a2) {
   ControlClass::Constructor(this, a2); /*0x48e579*/
   this->u32_24 = a2->ID; /*0x48e581*/
   this->u32_28 = a2->q028; /*0x48e587*/
-  /* X11: vtable install elided (implicit via class virtuals 0x48e58a) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x48e58a) — binary-proven install, was 0 */
   return this->ptr_0; /*0x48e592*/
 }
 } // namespace gamemd
@@ -1706,7 +1706,7 @@ namespace gamemd {
 unsigned int * ControlClass::Constructor(int a2) {
   this->X = 0; /*0x4e1344*/
   this->Y = 0; /*0x4e1347*/
-  /* X11: vtable install elided (implicit via class virtuals 0x4e134e) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x4e134e) — binary-proven install, was 0 */
   this->Width = a2->Width; /*0x4e1357*/
   this->X = a2->Height; /*0x4e135d*/
   this->Visible = a2->Visible; /*0x4e1363*/
@@ -1715,7 +1715,7 @@ unsigned int * ControlClass::Constructor(int a2) {
   this->u32_1D = a2->q01D; /*0x4e1375*/
   this->u32_1E = a2->q01E; /*0x4e137b*/
   this->u32_20 = a2->q020; /*0x4e1381*/
-  /* X11: vtable install elided (implicit via class virtuals 0x4e1384) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x4e1384) — binary-proven install, was 0 */
   return this->ptr_0; /*0x4e138a*/
 }
 } // namespace gamemd
@@ -1939,7 +1939,7 @@ unsigned int * GadgetClass::QueryInterface(char a2) {
   ShpButtonClass *v3; // eax
   unsigned __int8 *v4; // eax
 
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E92BC) */  /*0x4e1a65*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E92BC) */  /*0x4e1a65*/
   v3 = (ShpButtonClass *)dword_8B3E90; /*0x4e1a6b*/
   if ( this == (ShpButtonClass *)dword_8B3E90 ) /*0x4e1a72*/
   {
@@ -1971,7 +1971,7 @@ int ListClass::Constructor(int a2, int a3, int a4, int a5, int a6) {
 
   ControlClass::Construct((ControlClass *)this, a2, a3, a4, a5, a6, 7, 1); /*0x4e2524*/
   v7 = this->u32_30; /*0x4e2529*/
-  /* X11: vtable install elided (implicit via class virtuals 0x4e2533) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x4e2533) — binary-proven install, was 0 */
   if ( v7 != 255 ) /*0x4e2539*/
   {
     this->u32_30 = 255; /*0x4e253d*/
@@ -2299,7 +2299,7 @@ int ListClass::Construct(int a2, int a3, int a4, int a5, int a6, int a7, int a8,
   this->u32_C4 -= v10; /*0x5572e2*/
   v14 = this->u32_D0; /*0x5572e8*/
   this->__pad_019 = v12 - v11; /*0x5572f2*/
-  /* X11: vtable install elided (implicit via class virtuals 0x5572f7) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x5572f7) — binary-proven install, was 0 */
   this->u32_C8 = v13 - v14; /*0x5572fd*/
   v15 = v11; /*0x557303*/
   if ( v11 <= v10 ) /*0x557305*/
@@ -2332,7 +2332,7 @@ int ListClass::Destruct() {
   void *v4; // eax
 
   v2 = this->Enabled; /*0x557606*/
-  /* X11: vtable install elided (implicit via class virtuals 0x557609) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x557609) — binary-proven install, was 0 */
   if ( v2 ) /*0x557611*/
   {
     v3 = this->u32_118; /*0x55761c*/
@@ -2474,7 +2474,7 @@ wchar_t ** ListBox::Constructor() {
     v1 = 1; /*0x5c1054*/
     v4 = FormatWideString((wchar_t **)&v6, (const wchar_t *)this); /*0x5c1059*/
     MultiplayerTeam::Constructor(v3, (const wchar_t **)v4, (wchar_t *)this); /*0x5c1062*/
-    /* X11: vtable install elided (X67 star-deref, RHS g_var_a3ac0d) */  /*0x5c1067*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_var_a3ac0d) */  /*0x5c1067*/
   }
   else
   {
@@ -3122,7 +3122,7 @@ int * SliderClass::Constructor(int a2, int a3, int a4, int a5, int a6, int a7) {
   int v33; // [esp-10h] [ebp-30h]
 
   ListClass::Constructor((int)this, a2, a3, a4, a5, a6); /*0x6b1b44*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7ED21C) */  /*0x6b1b51*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7ED21C) */  /*0x6b1b51*/
   this->u32_44 = a7 != 0; /*0x6b1b5c*/
   this->u32_3C = 0; /*0x6b1b5f*/
   this->u32_40 = 0; /*0x6b1b62*/
@@ -3218,7 +3218,7 @@ int SliderClass::Destructor() {
   void (__thiscall ***v3)(unsigned int, int); // ecx
 
   v2 = (void (__thiscall ***)(unsigned int, int))this->u32_3C; /*0x6b1d03*/
-  /* X11: vtable install elided (implicit via class virtuals 0x6b1d06) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x6b1d06) — binary-proven install, was 0 */
   if ( v2 ) /*0x6b1d0e*/
   {
     (**v2)(v2, 1); /*0x6b1d14*/
@@ -3274,7 +3274,7 @@ void ToolTipClass::updateString() {
   void *v5; // eax
 
   ToolTipClass_field_0x08 = (HWND)this->Y; /*0x7240ba*/
-  /* X11: vtable install elided (implicit via class virtuals 0x7240bd) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x7240bd) — binary-proven install, was 0 */
   KillTimer(ToolTipClass_field_0x08, 0x54544950u); /*0x7240c4*/
   if ( this->X ) /*0x7240ca*/
     this->InputThunkB(&this->ID); /*0x7240db*/

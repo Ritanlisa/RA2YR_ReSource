@@ -2955,28 +2955,28 @@ int __thiscall Bitmap::GetNumberBitmapWOL(Bitmap *this)
 // ==== 0x00783B80  ObjectClass::Render_Find  this=ObjectClass  sig=csp ====
 int __thiscall Render_Find(ObjectClass *this)
 {
-  void *vtable3; // eax
+  void *ptr_C; // eax
 
   if ( !this ) /*0x783b82*/
     return 0; /*0x783b84*/
-  vtable3 = this->?; /*0x783b87*/
-  if ( (unsigned int)vtable3 > 0x7D0 ) /*0x783b8f*/
+  ptr_C = this->?; /*0x783b87*/
+  if ( (unsigned int)ptr_C > 0x7D0 ) /*0x783b8f*/
     return HashTable::Find(&g_DialogHashTable, g_Str_File_comchief_pcx, 0); /*0x783b9d*/
-  if ( (unsigned int)vtable3 > 0x5DC ) /*0x783ba8*/
+  if ( (unsigned int)ptr_C > 0x5DC ) /*0x783ba8*/
     return HashTable::Find(&g_DialogHashTable, aStargenPcx, 0); /*0x783bb6*/
-  if ( (unsigned int)vtable3 > 0x3E8 ) /*0x783bc1*/
+  if ( (unsigned int)ptr_C > 0x3E8 ) /*0x783bc1*/
     return HashTable::Find(&g_DialogHashTable, aGeneralPcx, 0); /*0x783bcf*/
-  if ( (unsigned int)vtable3 > 0x1F4 ) /*0x783bda*/
+  if ( (unsigned int)ptr_C > 0x1F4 ) /*0x783bda*/
     return HashTable::Find(&g_DialogHashTable, aBriggenrPcx, 0); /*0x783be8*/
-  if ( (unsigned int)vtable3 > 0xFA ) /*0x783bf3*/
+  if ( (unsigned int)ptr_C > 0xFA ) /*0x783bf3*/
     return HashTable::Find(&g_DialogHashTable, aColonelPcx, 0); /*0x783c01*/
-  if ( (unsigned int)vtable3 > 0x96 ) /*0x783c0c*/
+  if ( (unsigned int)ptr_C > 0x96 ) /*0x783c0c*/
     return HashTable::Find(&g_DialogHashTable, aMajorPcx, 0); /*0x783c1a*/
-  if ( (unsigned int)vtable3 > 0x50 ) /*0x783c23*/
+  if ( (unsigned int)ptr_C > 0x50 ) /*0x783c23*/
     return HashTable::Find(&g_DialogHashTable, aLieutenaPcx, 0); /*0x783c31*/
-  if ( (unsigned int)vtable3 > 0x3C ) /*0x783c3a*/
+  if ( (unsigned int)ptr_C > 0x3C ) /*0x783c3a*/
     return HashTable::Find(&g_DialogHashTable, aSergeantPcx, 0); /*0x783c48*/
-  if ( (unsigned int)vtable3 <= 0x1F ) /*0x783c53*/
+  if ( (unsigned int)ptr_C <= 0x1F ) /*0x783c53*/
     return HashTable::Find(&g_DialogHashTable, aPrivatePcx, 0); /*0x783c6f*/
   return HashTable::Find(&g_DialogHashTable, aCorporalPcx, 0); /*0x783b86*/
 }
@@ -4279,7 +4279,7 @@ char __thiscall sub_786DC0(ObjectClass *this)
 // ==== 0x00786E70  ObjectClass::method_786E70  this=ObjectClass  sig=csp ====
 int __thiscall sub_786E70(ObjectClass *this)
 {
-  void *vtable0; // ecx
+  void *ptr_0; // ecx
   int v3; // edi
   int i; // esi
   char *v5; // eax
@@ -4287,14 +4287,14 @@ int __thiscall sub_786E70(ObjectClass *this)
 
   if ( !String::Length((String *)this) ) /*0x786e75*/
     return -1; /*0x786e75*/
-  vtable0 = g_WOL_UserList.AbstractClass; /*0x786e7e*/
+  ptr_0 = g_WOL_UserList.AbstractClass; /*0x786e7e*/
   v3 = 1; /*0x786e84*/
   if ( (int)g_WOL_UserList.AbstractClass <= 1 ) /*0x786e8b*/
     return -1; /*0x786ed8*/
   for ( i = 248; ; i += 248 ) /*0x786e8d*/
   {
     v5 = 0; /*0x786e92*/
-    if ( i >= 0 && v3 < (int)vtable0 ) /*0x786e9a*/
+    if ( i >= 0 && v3 < (int)ptr_0 ) /*0x786e9a*/
       v5 = (char *)g_WOL_UserList.? + i; /*0x786ea1*/
     v6 = strchr(v5 + 24, 58); /*0x786ea9*/
     if ( v6 ) /*0x786eb3*/
@@ -4302,7 +4302,7 @@ int __thiscall sub_786E70(ObjectClass *this)
       if ( *v6 && (unsigned __int8)String::Equals_Alt((String *)this, v6 + 1) ) /*0x786ebe*/
         break; /*0x786ebe*/
     }
-    vtable0 = g_WOL_UserList.AbstractClass; /*0x786ec7*/
+    ptr_0 = g_WOL_UserList.AbstractClass; /*0x786ec7*/
     if ( ++v3 >= (int)g_WOL_UserList.AbstractClass ) /*0x786ed6*/
       return -1; /*0x786ed6*/
   }
@@ -4392,7 +4392,7 @@ int LoginFlowWOL(ObjectClass *this)
   TechnoTypeClass *v20; // ecx
   ObjectClass *PlayerProfile; // eax
   String *v22; // ebp
-  int vtable0; // ecx
+  int ptr_0; // ecx
   int v24; // esi
   int v25; // edi
   char *v26; // eax
@@ -4651,7 +4651,7 @@ LABEL_98:
   v22 = (String *)(v42 + 12); /*0x787531*/
   if ( !String::Length((String *)(v42 + 12)) ) /*0x787536*/
     goto LABEL_82; /*0x787536*/
-  vtable0 = (int)g_WOL_UserList.AbstractClass; /*0x787543*/
+  ptr_0 = (int)g_WOL_UserList.AbstractClass; /*0x787543*/
   v24 = 1; /*0x787549*/
   if ( (int)g_WOL_UserList.AbstractClass <= 1 ) /*0x787550*/
   {
@@ -4663,7 +4663,7 @@ LABEL_77:
   while ( 1 ) /*0x787557*/
   {
     v26 = 0; /*0x787557*/
-    if ( v25 >= 0 && v24 < vtable0 ) /*0x78755f*/
+    if ( v25 >= 0 && v24 < ptr_0 ) /*0x78755f*/
       v26 = (char *)g_WOL_UserList.? + v25; /*0x787566*/
     v27 = strchr(v26 + 24, 58); /*0x78756e*/
     if ( v27 ) /*0x787578*/
@@ -4671,7 +4671,7 @@ LABEL_77:
       if ( *v27 && (unsigned __int8)String::Equals_Alt(v22, v27 + 1) ) /*0x787583*/
         break; /*0x787583*/
     }
-    vtable0 = (int)g_WOL_UserList.AbstractClass; /*0x78758c*/
+    ptr_0 = (int)g_WOL_UserList.AbstractClass; /*0x78758c*/
     ++v24; /*0x787592*/
     v25 += 248; /*0x787593*/
     if ( v24 >= (int)g_WOL_UserList.AbstractClass ) /*0x78759b*/
@@ -4681,16 +4681,16 @@ LABEL_77:
   {
 LABEL_82:
     v28 = dword_B76468; /*0x7875c6*/
-    vtable0 = (int)g_WOL_UserList.AbstractClass; /*0x7875cb*/
+    ptr_0 = (int)g_WOL_UserList.AbstractClass; /*0x7875cb*/
   }
   else
   {
-    vtable0 = (int)g_WOL_UserList.AbstractClass; /*0x7875b7*/
+    ptr_0 = (int)g_WOL_UserList.AbstractClass; /*0x7875b7*/
     v28 = v24; /*0x7875bd*/
     dword_B76468 = v24; /*0x7875bf*/
   }
 LABEL_78:
-  if ( v28 < vtable0 ) /*0x7875a4*/
+  if ( v28 < ptr_0 ) /*0x7875a4*/
   {
     if ( v28 != -1 ) /*0x7875d6*/
     {
@@ -4706,12 +4706,12 @@ LABEL_96:
   {
     dword_B76468 = -1; /*0x7875a6*/
   }
-  if ( vtable0 <= 1 ) /*0x7875db*/
+  if ( ptr_0 <= 1 ) /*0x7875db*/
     goto LABEL_96; /*0x7875db*/
   v28 = 1; /*0x7875e1*/
   dword_B76468 = 1; /*0x7875e6*/
 LABEL_87:
-  if ( v28 >= vtable0 || !ConnectAndLoginWOL((char *)g_WOL_UserList.? + 248 * v28) ) /*0x787614*/
+  if ( v28 >= ptr_0 || !ConnectAndLoginWOL((char *)g_WOL_UserList.? + 248 * v28) ) /*0x787614*/
     goto LABEL_96; /*0x78761b*/
   if ( byte_B77E68 && (unsigned __int8)Flag::IsNot2(&v41) ) /*0x78762e*/
   {
@@ -11498,28 +11498,28 @@ int __thiscall Bitmap::GetNumberBitmapWOL(Bitmap *this)
 // ==== 0x00783B80  ObjectClass::Render_Find  this=ObjectClass  sig=csp ====
 int __thiscall Render_Find(ObjectClass *this)
 {
-  void *vtable3; // eax
+  void *ptr_C; // eax
 
   if ( !this ) /*0x783b82*/
     return 0; /*0x783b84*/
-  vtable3 = this->?; /*0x783b87*/
-  if ( (unsigned int)vtable3 > 0x7D0 ) /*0x783b8f*/
+  ptr_C = this->?; /*0x783b87*/
+  if ( (unsigned int)ptr_C > 0x7D0 ) /*0x783b8f*/
     return HashTable::Find(&g_DialogHashTable, g_Str_File_comchief_pcx, 0); /*0x783b9d*/
-  if ( (unsigned int)vtable3 > 0x5DC ) /*0x783ba8*/
+  if ( (unsigned int)ptr_C > 0x5DC ) /*0x783ba8*/
     return HashTable::Find(&g_DialogHashTable, aStargenPcx, 0); /*0x783bb6*/
-  if ( (unsigned int)vtable3 > 0x3E8 ) /*0x783bc1*/
+  if ( (unsigned int)ptr_C > 0x3E8 ) /*0x783bc1*/
     return HashTable::Find(&g_DialogHashTable, aGeneralPcx, 0); /*0x783bcf*/
-  if ( (unsigned int)vtable3 > 0x1F4 ) /*0x783bda*/
+  if ( (unsigned int)ptr_C > 0x1F4 ) /*0x783bda*/
     return HashTable::Find(&g_DialogHashTable, aBriggenrPcx, 0); /*0x783be8*/
-  if ( (unsigned int)vtable3 > 0xFA ) /*0x783bf3*/
+  if ( (unsigned int)ptr_C > 0xFA ) /*0x783bf3*/
     return HashTable::Find(&g_DialogHashTable, aColonelPcx, 0); /*0x783c01*/
-  if ( (unsigned int)vtable3 > 0x96 ) /*0x783c0c*/
+  if ( (unsigned int)ptr_C > 0x96 ) /*0x783c0c*/
     return HashTable::Find(&g_DialogHashTable, aMajorPcx, 0); /*0x783c1a*/
-  if ( (unsigned int)vtable3 > 0x50 ) /*0x783c23*/
+  if ( (unsigned int)ptr_C > 0x50 ) /*0x783c23*/
     return HashTable::Find(&g_DialogHashTable, aLieutenaPcx, 0); /*0x783c31*/
-  if ( (unsigned int)vtable3 > 0x3C ) /*0x783c3a*/
+  if ( (unsigned int)ptr_C > 0x3C ) /*0x783c3a*/
     return HashTable::Find(&g_DialogHashTable, aSergeantPcx, 0); /*0x783c48*/
-  if ( (unsigned int)vtable3 <= 0x1F ) /*0x783c53*/
+  if ( (unsigned int)ptr_C <= 0x1F ) /*0x783c53*/
     return HashTable::Find(&g_DialogHashTable, aPrivatePcx, 0); /*0x783c6f*/
   return HashTable::Find(&g_DialogHashTable, aCorporalPcx, 0); /*0x783b86*/
 }
@@ -12822,7 +12822,7 @@ char __thiscall sub_786DC0(ObjectClass *this)
 // ==== 0x00786E70  ObjectClass::method_786E70  this=ObjectClass  sig=csp ====
 int __thiscall sub_786E70(ObjectClass *this)
 {
-  void *vtable0; // ecx
+  void *ptr_0; // ecx
   int v3; // edi
   int i; // esi
   char *v5; // eax
@@ -12830,14 +12830,14 @@ int __thiscall sub_786E70(ObjectClass *this)
 
   if ( !String::Length((String *)this) ) /*0x786e75*/
     return -1; /*0x786e75*/
-  vtable0 = g_WOL_UserList.AbstractClass; /*0x786e7e*/
+  ptr_0 = g_WOL_UserList.AbstractClass; /*0x786e7e*/
   v3 = 1; /*0x786e84*/
   if ( (int)g_WOL_UserList.AbstractClass <= 1 ) /*0x786e8b*/
     return -1; /*0x786ed8*/
   for ( i = 248; ; i += 248 ) /*0x786e8d*/
   {
     v5 = 0; /*0x786e92*/
-    if ( i >= 0 && v3 < (int)vtable0 ) /*0x786e9a*/
+    if ( i >= 0 && v3 < (int)ptr_0 ) /*0x786e9a*/
       v5 = (char *)g_WOL_UserList.? + i; /*0x786ea1*/
     v6 = strchr(v5 + 24, 58); /*0x786ea9*/
     if ( v6 ) /*0x786eb3*/
@@ -12845,7 +12845,7 @@ int __thiscall sub_786E70(ObjectClass *this)
       if ( *v6 && (unsigned __int8)String::Equals_Alt((String *)this, v6 + 1) ) /*0x786ebe*/
         break; /*0x786ebe*/
     }
-    vtable0 = g_WOL_UserList.AbstractClass; /*0x786ec7*/
+    ptr_0 = g_WOL_UserList.AbstractClass; /*0x786ec7*/
     if ( ++v3 >= (int)g_WOL_UserList.AbstractClass ) /*0x786ed6*/
       return -1; /*0x786ed6*/
   }
@@ -12935,7 +12935,7 @@ int LoginFlowWOL(ObjectClass *this)
   TechnoTypeClass *v20; // ecx
   ObjectClass *PlayerProfile; // eax
   String *v22; // ebp
-  int vtable0; // ecx
+  int ptr_0; // ecx
   int v24; // esi
   int v25; // edi
   char *v26; // eax
@@ -13194,7 +13194,7 @@ LABEL_98:
   v22 = (String *)(v42 + 12); /*0x787531*/
   if ( !String::Length((String *)(v42 + 12)) ) /*0x787536*/
     goto LABEL_82; /*0x787536*/
-  vtable0 = (int)g_WOL_UserList.AbstractClass; /*0x787543*/
+  ptr_0 = (int)g_WOL_UserList.AbstractClass; /*0x787543*/
   v24 = 1; /*0x787549*/
   if ( (int)g_WOL_UserList.AbstractClass <= 1 ) /*0x787550*/
   {
@@ -13206,7 +13206,7 @@ LABEL_77:
   while ( 1 ) /*0x787557*/
   {
     v26 = 0; /*0x787557*/
-    if ( v25 >= 0 && v24 < vtable0 ) /*0x78755f*/
+    if ( v25 >= 0 && v24 < ptr_0 ) /*0x78755f*/
       v26 = (char *)g_WOL_UserList.? + v25; /*0x787566*/
     v27 = strchr(v26 + 24, 58); /*0x78756e*/
     if ( v27 ) /*0x787578*/
@@ -13214,7 +13214,7 @@ LABEL_77:
       if ( *v27 && (unsigned __int8)String::Equals_Alt(v22, v27 + 1) ) /*0x787583*/
         break; /*0x787583*/
     }
-    vtable0 = (int)g_WOL_UserList.AbstractClass; /*0x78758c*/
+    ptr_0 = (int)g_WOL_UserList.AbstractClass; /*0x78758c*/
     ++v24; /*0x787592*/
     v25 += 248; /*0x787593*/
     if ( v24 >= (int)g_WOL_UserList.AbstractClass ) /*0x78759b*/
@@ -13224,16 +13224,16 @@ LABEL_77:
   {
 LABEL_82:
     v28 = dword_B76468; /*0x7875c6*/
-    vtable0 = (int)g_WOL_UserList.AbstractClass; /*0x7875cb*/
+    ptr_0 = (int)g_WOL_UserList.AbstractClass; /*0x7875cb*/
   }
   else
   {
-    vtable0 = (int)g_WOL_UserList.AbstractClass; /*0x7875b7*/
+    ptr_0 = (int)g_WOL_UserList.AbstractClass; /*0x7875b7*/
     v28 = v24; /*0x7875bd*/
     dword_B76468 = v24; /*0x7875bf*/
   }
 LABEL_78:
-  if ( v28 < vtable0 ) /*0x7875a4*/
+  if ( v28 < ptr_0 ) /*0x7875a4*/
   {
     if ( v28 != -1 ) /*0x7875d6*/
     {
@@ -13249,12 +13249,12 @@ LABEL_96:
   {
     dword_B76468 = -1; /*0x7875a6*/
   }
-  if ( vtable0 <= 1 ) /*0x7875db*/
+  if ( ptr_0 <= 1 ) /*0x7875db*/
     goto LABEL_96; /*0x7875db*/
   v28 = 1; /*0x7875e1*/
   dword_B76468 = 1; /*0x7875e6*/
 LABEL_87:
-  if ( v28 >= vtable0 || !ConnectAndLoginWOL((char *)g_WOL_UserList.? + 248 * v28) ) /*0x787614*/
+  if ( v28 >= ptr_0 || !ConnectAndLoginWOL((char *)g_WOL_UserList.? + 248 * v28) ) /*0x787614*/
     goto LABEL_96; /*0x78761b*/
   if ( byte_B77E68 && (unsigned __int8)Flag::IsNot2(&v41) ) /*0x78762e*/
   {

@@ -62,10 +62,10 @@ int CCFileClass::Destru_vt08(int a2, int a3) {
 
 // ==== BACKFILL 0x004019A0  CCFileClass::Destru_vt00  cls=CCFileClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * CCFileClass::Destru_vt00(char a2) {
-  /* X11: vtable install elided (implicit via CCFileClass virtuals 0x4019a6) */
+  /* X11: ptr_0 install elided (implicit via CCFileClass virtuals 0x4019a6) */
   *((unsigned int *)this + 25) = 0; /*0x4019ac*/
   ((Vector *)((unsigned char *)this + 88))->Clear(); /*0x4019b3*/
-  /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x4019ba) */
+  /* X11: ptr_0 install elided (implicit via off_7E1668 virtuals 0x4019ba) */
   ((BufferIOFileClass *)this)->Dtor(); /*0x4019c0*/
   if ( (a2 & 1) != 0 ) /*0x4019ca*/
     RA2_OPDEL(this); /*0x4019cd*/

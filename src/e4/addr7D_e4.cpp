@@ -9630,7 +9630,7 @@ unsigned int * _com_error::sub_7DCE0E(int a2)
   v3 = *(unsigned int *)(a2 + 8); /*0x7dce1b*/
   this->u32_C = 0; /*0x7dce1e*/
   this->u32_8 = v3; /*0x7dce22*/
-  /* X11: vtable install elided (implicit via _com_error virtuals 0x7dce27) */
+  /* X11: ptr_0 install elided (implicit via _com_error virtuals 0x7dce27) */
   if ( v3 ) /*0x7dce2d*/
     (*(void (__stdcall **)(int))(*(unsigned int *)v3 + 4))(v3); /*0x7dce32*/
   return &this->ptr_0; /*0x7dce37*/
@@ -9643,7 +9643,7 @@ HLOCAL _com_error::sub_7DCE3B()
 
   HLOCAL result; // eax
   result = (HLOCAL)this->u32_8; /*0x7dce3e*/
-  /* X11: vtable install elided (implicit via _com_error virtuals 0x7dce41) */
+  /* X11: ptr_0 install elided (implicit via _com_error virtuals 0x7dce41) */
   if ( result ) /*0x7dce49*/
     result = (HLOCAL)(*(int (__stdcall **)(HLOCAL))(*&result->u32_20))(result); /*0x7dce4e*/
   void *v3; // esi
@@ -11663,7 +11663,7 @@ unsigned int * E4Recv_7D2E6E::sub_7D2E6E()
 
   this->M4 = 0; /*0x7d2e70*/
   this->M8 = 0; /*0x7d2e74*/
-  /* X11: vtable install elided (base-interface slot, RHS g_ptr_7F990C) */  /*0x7d2e78*/
+  /* X11: ptr_0 install elided (base-interface slot, RHS g_ptr_7F990C) */  /*0x7d2e78*/
   return &this->AbstractClass; /*0x7d2e7e*/
 
 }
@@ -11685,7 +11685,7 @@ namespace gamemd {
 exception * E4Recv_7D2E9B::__0exception_QAE_ABQBD_Z(const char ** a2)
 {
 
-  /* X11: vtable install elided (implicit via exception virtuals 0x7d2ea3) */
+  /* X11: ptr_0 install elided (implicit via exception virtuals 0x7d2ea3) */
   int v3; // eax
   v3 = strlen(*a2); /*0x7d2eab*/
   char *v4; // eax
@@ -11703,7 +11703,7 @@ namespace gamemd {
 exception * E4Recv_7D2ED8::__0exception_QAE_ABV0__Z(const struct exception * a2)
 {
 
-  /* X11: vtable install elided (implicit via exception virtuals 0x7d2ee0) */
+  /* X11: ptr_0 install elided (implicit via exception virtuals 0x7d2ee0) */
   int v3; // eax
   v3 = *((unsigned int *)a2 + 2); /*0x7d2ee6*/
   this->M8 = v3; /*0x7d2eeb*/

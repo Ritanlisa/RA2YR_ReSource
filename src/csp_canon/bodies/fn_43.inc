@@ -37,7 +37,7 @@ int Gap2Recv_430AC0::RenderAlliedBuildingTags(int a2, int a3, int a4, int a5, in
 
   int result; // eax
   ObjectClass *v7; // edi
-  int vtable0; // esi
+  int ptr_0; // esi
   int v9; // [esp+10h] [ebp-8h]
   int v10; // [esp+14h] [ebp-4h]
 
@@ -51,16 +51,16 @@ int Gap2Recv_430AC0::RenderAlliedBuildingTags(int a2, int a3, int a4, int a5, in
       v9 = 3; /*0x430ae4*/
       do /*0x430b75*/
       {
-        vtable0 = (int)v7->AbstractClass; /*0x430aec*/
+        ptr_0 = (int)v7->AbstractClass; /*0x430aec*/
         if ( v7->AbstractClass /*0x430b3b*/
-          && (*(unsigned char *)(vtable0 + 12) & 1) != 0
-          && (uint8_t)HouseClass::IsAllied((HouseClass *)dword_A83D4C, *(unsigned int *)(vtable0 + 272))
+          && (*(unsigned char *)(ptr_0 + 12) & 1) != 0
+          && (uint8_t)HouseClass::IsAllied((HouseClass *)dword_A83D4C, *(unsigned int *)(ptr_0 + 272))
           && (uint8_t)HouseClass::IsAlliedWith(
-                                *((void **)((char *)&stru_A80220) + *(unsigned int *)(vtable0 + 272)),
+                                *((void **)((char *)&stru_A80220) + *(unsigned int *)(ptr_0 + 272)),
                                 (void *)dword_A83D4C)
-          && !*(unsigned char *)(*((unsigned int *)((char *)&stru_A80220) + *(unsigned int *)(vtable0 + 272)) + 501) )
+          && !*(unsigned char *)(*((unsigned int *)((char *)&stru_A80220) + *(unsigned int *)(ptr_0 + 272)) + 501) )
         {
-          RenderBuildingTag(vtable0, a2, a3, a4, a5, a6); /*0x430b64*/
+          RenderBuildingTag(ptr_0, a2, a3, a4, a5, a6); /*0x430b64*/
         }
         v7 = (ObjectClass *)((char *)v7 + 4); /*0x430b6d*/
         --v9; /*0x430b71*/
@@ -352,10 +352,10 @@ BuildingLightClass * BuildingLightClass::SDDTOR(char a2, int a1, int aP0, int aP
   int v3; // eax
   BuildingLightClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-  /* X11: vtable install elided (implicit via BuildingLightClass virtuals 0x4370c4) */
-  /* X11: vtable install elided (implicit via BuildingLightClass virtuals 0x4370ca) */
-  /* X11: vtable install elided (implicit via BuildingLightClass virtuals 0x4370d1) */
-  /* X11: vtable install elided (implicit via BuildingLightClass virtuals 0x4370d8) */
+  /* X11: ptr_0 install elided (implicit via BuildingLightClass virtuals 0x4370c4) */
+  /* X11: ptr_0 install elided (implicit via BuildingLightClass virtuals 0x4370ca) */
+  /* X11: ptr_0 install elided (implicit via BuildingLightClass virtuals 0x4370d1) */
+  /* X11: ptr_0 install elided (implicit via BuildingLightClass virtuals 0x4370d8) */
   if ( (uint8_t)((ObjectClass *)(this))->Undeploy() ) /*0x4370df*/
     ((VectorClass *)((DynamicVectorClass *)&g_LogicClass))->RemoveItem((int)this); /*0x4370ee*/
   v5 = (gamemd::BuildingLightClass *)(this); /*0x437103*/

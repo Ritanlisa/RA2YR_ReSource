@@ -166,7 +166,7 @@ unsigned int * Movie_Create(int a1, int a2, int * a3)
     result = (unsigned int *)__2_YAPAXI_Z(0x14u); /*0x5c0885*/
     if ( result ) /*0x5c088f*/
     {
-      /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EE154) */  /*0x5c0897*/
+      /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EE154) */  /*0x5c0897*/
       result[4] = (unsigned int)v9; /*0x5c089d*/
       if ( v9 ) /*0x5c08a0*/
       {
@@ -185,7 +185,7 @@ unsigned int * Movie_Create(int a1, int a2, int * a3)
   if ( !v12 ) /*0x5c091e*/
     return 0; /*0x5c0955*/
   *(unsigned char *)(v12 + 20) = 0; /*0x5c0920*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EE0F4) */  /*0x5c0924*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EE0F4) */  /*0x5c0924*/
   *(unsigned int *)(v12 + 16) = VQMovie; /*0x5c092a*/
   *(unsigned int *)(v12 + 8) = MovieClass::GetWidth(*VQMovie); /*0x5c0934*/
   v13[3] = MovieClass::GetHeight(*(MovieClass **)v13[4]); /*0x5c0941*/
@@ -3114,7 +3114,7 @@ int BinkMovieHandle::_vt03(unsigned char a2)
 namespace gamemd {
 void E4Recv_5C0630::sub_5C0630()
 {
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EE124) */  /*0x5c0630*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EE124) */  /*0x5c0630*/
 }
 } // namespace gamemd
 
@@ -3122,7 +3122,7 @@ void E4Recv_5C0630::sub_5C0630()
 namespace gamemd {
 void E4Recv_5C0E10::sub_5C0E10()
 {
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7EE184) */  /*0x5c0e10*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7EE184) */  /*0x5c0e10*/
   MultiplayerGameMode::Dtor(); /*0x5c0e16*/
 }
 } // namespace gamemd
@@ -3413,7 +3413,7 @@ int sub_5C5CC0()
 namespace gamemd {
 void E4Recv_5C5D20::sub_5C5D20()
 {
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7EE424) */  /*0x5c5d20*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7EE424) */  /*0x5c5d20*/
   MultiplayerGameMode::Dtor(); /*0x5c5d26*/
 }
 } // namespace gamemd
@@ -3593,7 +3593,7 @@ int sub_5C6080(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 namespace gamemd {
 void E4Recv_5C6190::sub_5C6190()
 {
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7EE50C) */  /*0x5c6190*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7EE50C) */  /*0x5c6190*/
   MultiplayerGameMode::Dtor(); /*0x5c6196*/
 }
 } // namespace gamemd
@@ -4137,7 +4137,7 @@ int sub_5C93C0()
 namespace gamemd {
 void E4Recv_5C9420::sub_5C9420()
 {
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EE5F4) */  /*0x5c9420*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EE5F4) */  /*0x5c9420*/
   MultiplayerGameMode::Dtor(); /*0x5c9426*/
 }
 } // namespace gamemd
@@ -4433,7 +4433,7 @@ int sub_5CA610()
 namespace gamemd {
 void E4Recv_5CA670::sub_5CA670()
 {
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7EE6FC) */  /*0x5ca670*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7EE6FC) */  /*0x5ca670*/
   MultiplayerGameMode::Dtor(); /*0x5ca676*/
 }
 } // namespace gamemd
@@ -4505,7 +4505,7 @@ void sub_5CACD0()
 namespace gamemd {
 void E4Recv_5CAE60::sub_5CAE60()
 {
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EE7E4) */  /*0x5cae60*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EE7E4) */  /*0x5cae60*/
   MultiplayerTeam::Destructor(); /*0x5cae66*/
 }
 } // namespace gamemd
@@ -4514,7 +4514,7 @@ void E4Recv_5CAE60::sub_5CAE60()
 namespace gamemd {
 void E4Recv_5CAF00::sub_5CAF00()
 {
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EE7F4) */  /*0x5caf00*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EE7F4) */  /*0x5caf00*/
   MultiplayerTeam::Destructor(); /*0x5caf06*/
 }
 } // namespace gamemd
@@ -4604,7 +4604,7 @@ int sub_5CB360()
 namespace gamemd {
 void E4Recv_5CB3E0::sub_5CB3E0()
 {
-  /* X11: vtable install elided (X68 star-amp-named, RHS g_ptr_7EE814) */  /*0x5cb3e0*/
+  /* X11: ptr_0 install elided (X68 star-amp-named, RHS g_ptr_7EE814) */  /*0x5cb3e0*/
   MultiplayerGameMode::Dtor(); /*0x5cb3e6*/
 }
 } // namespace gamemd
@@ -4637,7 +4637,7 @@ int E4Recv_5CD570::sub_5CD570(const wchar_t ** a2, int a3, int a4, int a5, int *
   size_t v11 = 0; // ebx /*0x5cd597*/
   this->M16 = Timer::GetTicks(); /*0x5cd59c*/
   this->u32_18 = 0; /*0x5cd59f*/
-  /* X11: vtable install elided (implicit via MSAnim virtuals 0x5cd5a5) */
+  /* X11: ptr_0 install elided (implicit via MSAnim virtuals 0x5cd5a5) */
   WideString::AssignFromPtr(&this->u32_1C, a2); /*0x5cd5ab*/
   this->M44 = a8; /*0x5cd5c0*/
   this->M48 = a9; /*0x5cd5c7*/
@@ -4648,7 +4648,7 @@ int E4Recv_5CD570::sub_5CD570(const wchar_t ** a2, int a3, int a4, int a5, int *
   this->u32_48 = 0; /*0x5cd5da*/
   this->M73 = a10; /*0x5cd5dd*/
   this->M76 = 0; /*0x5cd5e0*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EEA00) */  /*0x5cd5e3*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EEA00) */  /*0x5cd5e3*/
   this->M16 = Timer::GetTicks(); /*0x5cd5f6*/
   int v15; // [esp+14h] [ebp-8h]
   this->M20 = v15; /*0x5cd5f9*/

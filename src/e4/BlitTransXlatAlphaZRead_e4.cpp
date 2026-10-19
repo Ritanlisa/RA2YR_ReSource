@@ -365,7 +365,7 @@ namespace gamemd {
 std::locale::facet * BlitTransXlatAlphaZRead_ushort::Constructor_Blitter(char a2)
 {
 
-  /* X11: vtable install elided (implicit via Blitter virtuals 0x49a3a9) */
+  /* X11: ptr_0 install elided (implicit via Blitter virtuals 0x49a3a9) */
   if ( (a2 & 1) != 0 ) /*0x49a3af*/
     __3_YAXPAX_Z(this); /*0x49a3b2*/
   return (std::locale::facet *)this; /*0x49a3bc*/
@@ -377,7 +377,7 @@ namespace gamemd {
 std::locale::facet * BlitTransXlatAlphaZRead_ushort::Constructor_Blitter_0(char a2)
 {
 
-  /* X11: vtable install elided (implicit via Blitter virtuals 0x49a3c9) */
+  /* X11: ptr_0 install elided (implicit via Blitter virtuals 0x49a3c9) */
   if ( (a2 & 1) != 0 ) /*0x49a3cf*/
     __3_YAXPAX_Z(this); /*0x49a3d2*/
   return (std::locale::facet *)this; /*0x49a3dc*/
@@ -389,7 +389,7 @@ namespace gamemd {
 std::locale::facet * BlitTransXlatAlphaZRead_ushort::Constructor_Blitter_1(char a2)
 {
 
-  /* X11: vtable install elided (implicit via Blitter virtuals 0x49a3e9) */
+  /* X11: ptr_0 install elided (implicit via Blitter virtuals 0x49a3e9) */
   if ( (a2 & 1) != 0 ) /*0x49a3ef*/
     __3_YAXPAX_Z(this); /*0x49a3f2*/
   return (std::locale::facet *)this; /*0x49a3fc*/
@@ -401,7 +401,7 @@ namespace gamemd {
 std::locale::facet * BlitTransXlatAlphaZRead_ushort::Constructor_Blitter_2(char a2)
 {
 
-  /* X11: vtable install elided (implicit via Blitter virtuals 0x49a409) */
+  /* X11: ptr_0 install elided (implicit via Blitter virtuals 0x49a409) */
   if ( (a2 & 1) != 0 ) /*0x49a40f*/
     __3_YAXPAX_Z(this); /*0x49a412*/
   return (std::locale::facet *)this; /*0x49a41c*/
@@ -415,10 +415,10 @@ BlitTransXlatAlphaZRead_ushort * BlitTransXlatAlphaZRead_ushort::Blit(unsigned i
 
   void *m_8; // eax
   m_8 = (void *)Block->u32_8; /*0x49a428*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_var_2b9adb) */  /*0x49a42b*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_var_2b9adb) */  /*0x49a42b*/
   FractalNoise::Dtor(m_8); /*0x49a432*/
   *&Block->u32_8 = 0; /*0x49a43b*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E5B88) */  /*0x49a444*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E5B88) */  /*0x49a444*/
   if ( (a2 & 1) != 0 ) /*0x49a44a*/
     operator delete((Block)); /*0x49a44d*/
   return Block->tail_0; /*0x49a457*/

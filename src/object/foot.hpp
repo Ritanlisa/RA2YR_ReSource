@@ -360,9 +360,9 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     unsigned int q021; // 0x21  gB member supply
     unsigned int q0A0; // 0xA0  gB member supply
     unsigned int q0A4; // 0xA4  gB member supply
-    void* ptr_0;  // 0x0 (ml truth)  gB vtable supply
-    void* ptr_4;  // 0x4 (ml truth)  gB vtable supply
-    void* ptr_8;  // 0x8 (ml truth)  gB vtable supply
+    void* ptr_0;  // 0x0 (ml truth)  gB ptr_0 supply
+    void* ptr_4;  // 0x4 (ml truth)  gB ptr_0 supply
+    void* ptr_8;  // 0x8 (ml truth)  gB ptr_0 supply
 public:  // g57c5 W4 supply slot
     ILocomotion* Locomotor;  // 0x674 g57c5 W4 supply (ml FootClass@0x674)
 

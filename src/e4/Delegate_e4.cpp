@@ -256,7 +256,7 @@ GenericNode * Delegate::Constructor_GenericNode(char a2)
   int Previous; // ecx
   unsigned int *v4; // eax
 
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E1B0C) */  /*0x52ae27*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E1B0C) */  /*0x52ae27*/
   if ( this ) /*0x52ae2d*/
   {
     Previous = this->Previous; /*0x52ae2f*/

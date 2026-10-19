@@ -1291,11 +1291,11 @@ int E4Recv_557380::sub_557380(int a2)
   this->M60 = 0; /*0x5573aa*/
   this->u32_40 = 1; /*0x5573ad*/
   this->M65 = 0; /*0x5573b1*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x5573b4*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x5573b4*/
   sub_4B5830((unsigned int *)this->M184 + 24), (unsigned int *)(a2 + 52)); /*0x5573ba*/
   this->M272 = *(unsigned int *)(a2 + 68); /*0x5573c2*/
   this->u32_48 = *(unsigned int *)(a2 + 72); /*0x5573c8*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E3238) */  /*0x5573cb*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E3238) */  /*0x5573cb*/
   this->M76 = *(unsigned int *)(a2 + 76); /*0x5573d7*/
   this->u32_50 = *(unsigned int *)(a2 + 80); /*0x5573dd*/
   this->u32_54 = *(unsigned char *)(a2 + 84); /*0x5573e9*/
@@ -1303,7 +1303,7 @@ int E4Recv_557380::sub_557380(int a2)
   this->M84 = *(unsigned char *)(a2 + 132); /*0x5573fa*/
   this->M133 = *(unsigned char *)(a2 + 133); /*0x557400*/
   this->u32_88 = *(unsigned int *)(a2 + 136); /*0x557406*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8118) */  /*0x557409*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E8118) */  /*0x557409*/
   this->M140 = *(unsigned char *)(a2 + 140); /*0x557413*/
   this->M144 = *(unsigned int *)(a2 + 144); /*0x557419*/
   this->M148 = *(unsigned int *)(a2 + 148); /*0x55741f*/
@@ -1316,12 +1316,12 @@ int E4Recv_557380::sub_557380(int a2)
   this->M173 = *(unsigned char *)(a2 + 173); /*0x557449*/
   this->M176 = *(unsigned int *)(a2 + 176); /*0x55744f*/
   this->M180 = *(unsigned char *)(a2 + 180); /*0x55745b*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8088) */  /*0x557460*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E8088) */  /*0x557460*/
   ControlClass::CtorFromData(&this->M184, a2 + 184); /*0x557466*/
   this->M228 = *(unsigned char *)(a2 + 228); /*0x55746e*/
   this->M229 = *(unsigned char *)(a2 + 229); /*0x557474*/
   this->M232 = *(unsigned int *)(a2 + 232); /*0x55747a*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8118) */  /*0x55747d*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E8118) */  /*0x55747d*/
   this->M236 = *(unsigned char *)(a2 + 236); /*0x557486*/
   this->M240 = *(unsigned int *)(a2 + 240); /*0x55748c*/
   this->M244 = *(unsigned int *)(a2 + 244); /*0x557492*/
@@ -1334,7 +1334,7 @@ int E4Recv_557380::sub_557380(int a2)
   this->M269 = *(unsigned char *)(a2 + 269); /*0x5574bc*/
   this->M272 = *(unsigned int *)(a2 + 272); /*0x5574c6*/
   this->u32_114 = *(unsigned char *)(a2 + 276); /*0x5574d2*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8088) */  /*0x5574de*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E8088) */  /*0x5574de*/
   sub_5581A0(&this->u32_118, a2 + 280); /*0x5574e4*/
   this->M340 = *(unsigned int *)(a2 + 340); /*0x5574fa*/
   this->M344 = *(unsigned int *)(a2 + 344); /*0x557500*/
@@ -1342,11 +1342,11 @@ int E4Recv_557380::sub_557380(int a2)
   this->M88 = *(unsigned int *)(a2 + 352); /*0x55750c*/
   this->u32_164 = *(unsigned int *)(a2 + 356); /*0x557512*/
   this->u32_168 = *(unsigned int *)(a2 + 360); /*0x55751c*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7ED21C) */  /*0x55751f*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7ED21C) */  /*0x55751f*/
   this->M364 = *(unsigned int *)(a2 + 364); /*0x55752c*/
   int v3 = this->M88; // eax /*0x557538*/
   this->M368 = *(unsigned int *)(a2 + 368); /*0x55753c*/
-  /* X11: vtable install elided (implicit via ListClass virtuals 0x557542) */
+  /* X11: ptr_0 install elided (implicit via ListClass virtuals 0x557542) */
   v3->SetMember10(&this->M88, this); /*0x557548*/
   this->SetMember10(&this->M184, this); /*0x557553*/
   this->u32_118.SetMember10(this); /*0x55755f*/
@@ -3780,7 +3780,7 @@ namespace gamemd {
 int E4Recv_556510::sub_556510()
 {
 
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7ED0A4) */  /*0x556510*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7ED0A4) */  /*0x556510*/
   return sub_490400((int)this);
 
 }
@@ -3790,7 +3790,7 @@ int E4Recv_556510::sub_556510()
 namespace gamemd {
 LightConvertClass * E4Recv_556520::sub_556520(unsigned int * Block, char a2)
 {
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7ED0A4) */  /*0x556523*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7ED0A4) */  /*0x556523*/
   sub_490400((int)Block); /*0x556529*/
   if ( (a2 & 1) != 0 ) /*0x556533*/
     operator delete((Block)); /*0x556536*/
@@ -3961,7 +3961,7 @@ int E4Recv_5581A0::sub_5581A0(GaugeClass * aP1)
   this->M48 = aP1->u32_30; /*0x5581c3*/
   this->u32_34 = aP1->u32_34; /*0x5581c9*/
   this->M56 = aP1->u32_38; /*0x5581cf*/
-  /* X11: vtable install elided (implicit via GaugeClass virtuals 0x5581d2) */
+  /* X11: ptr_0 install elided (implicit via GaugeClass virtuals 0x5581d2) */
   return this; /*0x5581da*/
 }
 } // namespace gamemd
@@ -4333,7 +4333,7 @@ int E4Recv_5595F0::sub_5595F0(char * Buffer)
     FileClass::SetFileName(&v6, Buffer); /*0x559621*/
   }
   while ( (unsigned __int8)CCFileClass::Open(&v6, 0) == 1 ); /*0x559633*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x559639*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x559639*/
   int v8; // [esp+6Ch] [ebp-8h]
   v8 = 0; /*0x559641*/
   int v7[3]; // [esp+60h] [ebp-14h] BYREF

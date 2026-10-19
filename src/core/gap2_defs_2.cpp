@@ -57,7 +57,7 @@ void* EnumConnectionPointsClass::Constructor_VectorClass_IConnectionPoint___(int
   void *v3; // eax
 
   v3 = *&this->__pad_004; /*0x4a0e63*/
-  /* X11: vtable install elided (implicit via class virtuals 0x4a0e66) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x4a0e66) — binary-proven install, was 0 */
   if ( v3 && (this->IsAllocated) ) /*0x4a0e70*/
   {
     operator delete((v3)); /*0x4a0e78*/
@@ -794,7 +794,7 @@ int PlayerClass::UpdateAIUnits() {
     if ( HeightMap ) /*0x732627*/
     {
       (HeightMap) = ((HeightMap) & ~0xFF) | (((unsigned __int8)EventClass::resetEvent((EventClass *)HeightMap, 0, 0)) & 0xFF); /*0x73262d*/
-      /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E17AC) */  /*0x732632*/
+      /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E17AC) */  /*0x732632*/
       *&v2->q014 = 10; /*0x732638*/
       *(unsigned int *)v2->Count = 0; /*0x73263f*/
     }
@@ -839,7 +839,7 @@ int PlayerClass::UpdateAIUnits() {
     if ( v8 ) /*0x7326ba*/
     {
       EventClass::resetEvent(v8, 0, 0); /*0x7326c2*/
-      /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E17AC) */  /*0x7326c7*/
+      /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E17AC) */  /*0x7326c7*/
       *&v2->q014 = 10; /*0x7326cd*/
       *(unsigned int *)v2->Count = 0; /*0x7326d4*/
     }
@@ -925,7 +925,7 @@ int COMClass::registerObject(int a1, void* a2) {
         do /*0x765a75*/
         {
           ComPtr::Constructor(v8); /*0x765a66*/
-          /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7F6F34) */  /*0x765a6b*/
+          /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7F6F34) */  /*0x765a6b*/
           v8 = (ComPtr *)((char *)v8 + 8); /*0x765a71*/
           --v9; /*0x765a74*/
         }

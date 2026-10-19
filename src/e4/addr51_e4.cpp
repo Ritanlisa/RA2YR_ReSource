@@ -643,8 +643,8 @@ int sub_513C00()
 namespace gamemd {
 void E4Recv_513D00::sub_513D00()
 {
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EACFC) */  /*0x513d00*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EACFC) */  /*0x513d06*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EACFC) */  /*0x513d00*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EACFC) */  /*0x513d06*/
   this->LocomotionClass::Construct(); /*0x513d0d*/
 }
 } // namespace gamemd

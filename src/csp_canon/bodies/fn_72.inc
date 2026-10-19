@@ -191,7 +191,7 @@ char * E4Recv_724000::sub_724000(int a2)
   *((unsigned char *)this + 600) = 0; /*0x72405c*/
   *((unsigned int *)this + 151) = 0; /*0x724062*/
   v4 = *(unsigned int *)v3; /*0x724068*/
-  /* X11: vtable install elided (implicit via ToolTipManager virtuals 0x72406a) */
+  /* X11: ptr_0 install elided (implicit via ToolTipManager virtuals 0x72406a) */
   (*(void (**)(char *))(v4 + 12))(v3); /*0x724070*/
   __3_YAXPAX_Z(*((void **)this + 147)); /*0x72407a*/
   *((unsigned int *)this + 147) = 0; /*0x724082*/
@@ -448,7 +448,7 @@ int TriggerClass::LoadTrigger(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x726876*/
     {
       AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x72687f*/
-      /* X11: vtable install elided (implicit via TriggerClass virtuals 0x726884) */
+      /* X11: ptr_0 install elided (implicit via TriggerClass virtuals 0x726884) */
       ((unsigned int *)aP0)[0] = (unsigned int)(&g_ptr_7F582C); /*0x72688a*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&g_ptr_7F582C); /*0x726891*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&g_ptr_7F582C); /*0x726898*/
@@ -918,7 +918,7 @@ int TubeClass::LoadState(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x7281b6*/
     {
       ((AbstractClass *)((AbstractClass *)aP0))->Constructor(); /*0x7281ba*/
-      /* X11: vtable install elided (implicit via TubeClass virtuals 0x7281bf) */
+      /* X11: ptr_0 install elided (implicit via TubeClass virtuals 0x7281bf) */
       ((unsigned int *)aP0)[0] = (unsigned int)(&g_ptr_7F5984); /*0x7281c5*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&g_ptr_7F5984); /*0x7281cc*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&g_ptr_7F5984); /*0x7281d3*/

@@ -1469,7 +1469,7 @@ int * E4Recv_4C2FC0::sub_4C2FC0(DropListClass * aP1, ControlClass * aP2, int a4,
   aP4 = aP4; /*0x4c2ff6*/
   (((unsigned char *)&(aP4))[1]) = (((unsigned char *)&(aP4))[1]) & 0xFE; /*0x4c2ff8*/
   this->M44 = (unsigned int)(aP4); /*0x4c2ffc*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E81A4) */  /*0x4c3004*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E81A4) */  /*0x4c3004*/
   this->M48 = a10; /*0x4c300a*/
   this->M52 = (unsigned int)(aP2); /*0x4c300d*/
   this->M56 = a4 - 1; /*0x4c3010*/
@@ -3523,8 +3523,8 @@ int sub_4CC980()
 namespace gamemd {
 void E4Recv_4CCA70::sub_4CCA70()
 {
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E89F4) */  /*0x4cca70*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E89F4) */  /*0x4cca76*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E89F4) */  /*0x4cca70*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E89F4) */  /*0x4cca76*/
   LocomotionClass::Construct(); /*0x4cca7d*/
 }
 } // namespace gamemd

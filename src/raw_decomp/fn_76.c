@@ -662,7 +662,7 @@ int __thiscall WaveClass::Update(WaveClass *this)
       this->WaveIntensity = v6; /*0x760fdf*/
       if ( v6 >= 0 ) /*0x760fe5*/
         goto LABEL_3; /*0x760fe5*/
-      result = (*(int (__thiscall **)(WaveClass *))(this->vtable0 + 248))(this); /*0x760feb*/
+      result = (*(int (__thiscall **)(WaveClass *))(this->ptr_0 + 248))(this); /*0x760feb*/
       break; /*0x760ff5*/
     case 1: /*0x760f65*/
     case 2: /*0x760f65*/
@@ -677,7 +677,7 @@ int __thiscall WaveClass::Update(WaveClass *this)
       this->WaveIntensity = v3; /*0x760f7a*/
       if ( v3 < 0 ) /*0x760f80*/
 LABEL_9:
-        result = (*(int (__thiscall **)(WaveClass *))(this->vtable0 + 248))(this); /*0x76100c*/
+        result = (*(int (__thiscall **)(WaveClass *))(this->ptr_0 + 248))(this); /*0x76100c*/
       else
 LABEL_3:
         result = ObjectClass::DetectCloaked((UnitClass *)this); /*0x760f91*/
@@ -2635,8 +2635,8 @@ int __thiscall String::To_Waypoint(char *this)
   int v2; // esi
 
   v2 = -1; /*0x763694*/
-  if ( isalpha(*this) && (v2 = toupper(*this) - 65, isalpha(this->vtable2)) ) /*0x7636ba*/
-    return toupper(this->vtable2) + 26 * v2 - 39; /*0x7636db*/
+  if ( isalpha(*this) && (v2 = toupper(*this) - 65, isalpha(this->ptr_8)) ) /*0x7636ba*/
+    return toupper(this->ptr_8) + 26 * v2 - 39; /*0x7636db*/
   else
     return v2; /*0x7636e0*/
 }
@@ -2878,12 +2878,12 @@ int __stdcall WaypointPathClass::LoadState(WaypointPathClass *this, int a2)
   WaypointPathClass *p_vtable1; // esi
   int v6; // ebp
   int v7; // eax
-  void *vtable2; // ecx
+  void *ptr_8; // ecx
   int abstractFlags; // eax
   int uniqueId; // eax
   int v11; // ecx
   int v12; // edx
-  char *vtable1; // eax
+  char *ptr_4; // eax
   char *v14; // ecx
   int v15; // [esp+28h] [ebp-Ch] BYREF
   int v16; // [esp+2Ch] [ebp-8h]
@@ -2897,16 +2897,16 @@ int __stdcall WaypointPathClass::LoadState(WaypointPathClass *this, int a2)
     if ( v2 ) /*0x763c92*/
     {
       AbstractClass::InitVtables(v2, (int)&a2); /*0x763c9b*/
-      v2[1].vtable1 = &DynamicVectorClass<WaypointClass>::`vftable'; /*0x763ca0*/
-      v2->vtable0 = &WaypointPathClass::`vftable'; /*0x763ca7*/
-      v2->vtable1 = &WaypointPathClass::`vftable'; /*0x763cad*/
-      v2->vtable2 = &WaypointPathClass::`vftable'; /*0x763cb4*/
-      v2->vtable3 = &WaypointPathClass::`vftable'; /*0x763cbb*/
+      v2[1].ptr_4 = &DynamicVectorClass<WaypointClass>::`vftable'; /*0x763ca0*/
+      v2->ptr_0 = &WaypointPathClass::`vftable'; /*0x763ca7*/
+      v2->ptr_4 = &WaypointPathClass::`vftable'; /*0x763cad*/
+      v2->ptr_8 = &WaypointPathClass::`vftable'; /*0x763cb4*/
+      v2->ptr_C = &WaypointPathClass::`vftable'; /*0x763cbb*/
     }
     result = (*(int (__stdcall **)(int, WaypointPathClass **, int, _DWORD))(*(_DWORD *)v3 + 12))(v3, &this, 4, 0); /*0x763ccd*/
     if ( result >= 0 ) /*0x763cd2*/
     {
-      p_vtable1 = (WaypointPathClass *)&v2[1].vtable1; /*0x763cd8*/
+      p_vtable1 = (WaypointPathClass *)&v2[1].ptr_4; /*0x763cd8*/
       if ( p_vtable1 ) /*0x763cdd*/
       {
         WaypointPathClass::computePath(p_vtable1, 0, 0); /*0x763ce3*/
@@ -2930,21 +2930,21 @@ int __stdcall WaypointPathClass::LoadState(WaypointPathClass *this, int a2)
           result = (*(int (__stdcall **)(int, int *, int, _DWORD))(v7 + 12))(v3, &v15, 12, 0); /*0x763d19*/
           if ( result < 0 ) /*0x763d1e*/
             break; /*0x763d1e*/
-          vtable2 = p_vtable1->?; /*0x763d20*/
-          if ( p_vtable1->? < (int)vtable2 /*0x763d42*/
-            || (BYTE1(p_vtable1->?) || !vtable2)
+          ptr_8 = p_vtable1->?; /*0x763d20*/
+          if ( p_vtable1->? < (int)ptr_8 /*0x763d42*/
+            || (BYTE1(p_vtable1->?) || !ptr_8)
             && (abstractFlags = p_vtable1->?, abstractFlags > 0)
             && (*((unsigned __int8 (__thiscall **)(WaypointPathClass *, int, _DWORD))p_vtable1->AbstractClass + 2))(
                  p_vtable1,
-                 (int)vtable2 + abstractFlags,
+                 (int)ptr_8 + abstractFlags,
                  0) )
           {
             uniqueId = p_vtable1->?; /*0x763d49*/
             v11 = uniqueId + 1; /*0x763d4c*/
             v12 = 3 * uniqueId; /*0x763d4f*/
-            vtable1 = (char *)p_vtable1->?; /*0x763d52*/
+            ptr_4 = (char *)p_vtable1->?; /*0x763d52*/
             p_vtable1->? = v11; /*0x763d55*/
-            v14 = &vtable1[4 * v12]; /*0x763d58*/
+            v14 = &ptr_4[4 * v12]; /*0x763d58*/
             *(_DWORD *)v14 = v15; /*0x763d5f*/
             *((_DWORD *)v14 + 1) = v16; /*0x763d65*/
             *((_DWORD *)v14 + 2) = v17; /*0x763d6c*/
@@ -5277,11 +5277,11 @@ ComPtr *__fastcall Team_Create_765F60(ComPtr *a1, int a2)
 // ==== 0x00766060  ObjectClass::FindWDTTerritoryClass_Find_Find  this=ObjectClass  sig=csp ====
 int __thiscall FindWDTTerritoryClass_Find_Find(ObjectClass *this)
 {
-  _DWORD *vtable3; // eax
+  _DWORD *ptr_C; // eax
 
-  vtable3 = this->?; /*0x766060*/
-  if ( vtable3 ) /*0x766065*/
-    return vtable3[2]; /*0x766067*/
+  ptr_C = this->?; /*0x766060*/
+  if ( ptr_C ) /*0x766065*/
+    return ptr_C[2]; /*0x766067*/
   else
     return 0; /*0x76606b*/
 }
@@ -6175,20 +6175,20 @@ char __thiscall Conflict_WorldDominationTour_12::Constructor_1(
 // ==== 0x00766EE0  ObjectClass::System_Init_766EE0  this=ObjectClass  sig=csp ====
 char __thiscall System_Init_766EE0(ObjectClass *this, int a2)
 {
-  void *vtable2; // ecx
+  void *ptr_8; // ecx
   int abstractFlags; // eax
   int uniqueId; // eax
 
-  vtable2 = this->?; /*0x766ee3*/
-  if ( this->? >= (int)vtable2 ) /*0x766eeb*/
+  ptr_8 = this->?; /*0x766ee3*/
+  if ( this->? >= (int)ptr_8 ) /*0x766eeb*/
   {
-    if ( !BYTE1(this->?) && vtable2 ) /*0x766ef6*/
+    if ( !BYTE1(this->?) && ptr_8 ) /*0x766ef6*/
       return 0; /*0x766ef6*/
     abstractFlags = this->?; /*0x766ef8*/
     if ( abstractFlags <= 0 /*0x766f08*/
       || !(*((unsigned __int8 (__thiscall **)(ObjectClass *, int, _DWORD))this->AbstractClass + 2))(
             this,
-            (int)vtable2 + abstractFlags,
+            (int)ptr_8 + abstractFlags,
             0) )
     {
       return 0; /*0x766f0f*/
@@ -7282,7 +7282,7 @@ void __thiscall WorldDomination::SetupTerritoryNodes(int this)
   void (__thiscall ***v3)(_DWORD, int); // ecx
   int i; // ebp
   ObjectClass *v5; // edi
-  void (__thiscall ***vtable1)(_DWORD, int); // ecx
+  void (__thiscall ***ptr_4)(_DWORD, int); // ecx
   void (__thiscall ***v7)(_DWORD, int); // ecx
   void *v8; // eax
   void (__thiscall ***v9)(_DWORD, int); // ecx
@@ -7299,9 +7299,9 @@ void __thiscall WorldDomination::SetupTerritoryNodes(int this)
     v5 = *(ObjectClass **)(*(_DWORD *)(this + 192) + 4 * i); /*0x7680fa*/
     if ( v5 ) /*0x7680ff*/
     {
-      vtable1 = (void (__thiscall ***)(_DWORD, int))v5->?; /*0x768101*/
-      if ( vtable1 ) /*0x768106*/
-        (**vtable1)(vtable1, 1); /*0x76810c*/
+      ptr_4 = (void (__thiscall ***)(_DWORD, int))v5->?; /*0x768101*/
+      if ( ptr_4 ) /*0x768106*/
+        (**ptr_4)(ptr_4, 1); /*0x76810c*/
       DeleteAndZero(v5); /*0x768110*/
       __3_YAXPAX_Z(v5); /*0x768116*/
     }
@@ -7401,7 +7401,7 @@ int __thiscall ArtConfig::ReadLayout(int this, INIClass *a2, PriorityQueue *a3, 
   char **v60; // eax
   char **v61; // eax
   int v62; // eax
-  int vtable1; // ebx
+  int ptr_4; // ebx
   char **v64; // eax
   char **v65; // eax
   int v66; // eax
@@ -7736,12 +7736,12 @@ int __thiscall ArtConfig::ReadLayout(int this, INIClass *a2, PriorityQueue *a3, 
     if ( v62 ) /*0x768d85*/
       PriorityQueue::Add(a3, v62); /*0x768d8f*/
   }
-  vtable1 = 0; /*0x768d9a*/
+  ptr_4 = 0; /*0x768d9a*/
   v73.? = 0; /*0x768d9c*/
   do /*0x768e87*/
   {
     String::Assign((String *)&v73, 0); /*0x768da6*/
-    v64 = FormatStringInt((char **)&v73.ambientSoundController[1], vtable1, 2); /*0x768dbd*/
+    v64 = FormatStringInt((char **)&v73.ambientSoundController[1], ptr_4, 2); /*0x768dbd*/
     v65 = ProcessStringAndCopy((char **)&v73.?, aTerritory, v64); /*0x768dcc*/
     HIBYTE(v73.?) = INIClass::ReadString(a2, (char **)&v73.?, v65, (char **)&v73, (int)&v73.?) > 0; /*0x768de4*/
     DeleteAndZero((ObjectClass *)&v73.?); /*0x768de9*/
@@ -7751,7 +7751,7 @@ int __thiscall ArtConfig::ReadLayout(int this, INIClass *a2, PriorityQueue *a3, 
     {
       ArtConfig_Read( /*0x768e1d*/
         (rc_ptr *)&v73.?,
-        vtable1,
+        ptr_4,
         a2,
         (char *)&v73.?,
         (const char **)(this + 40),
@@ -7769,11 +7769,11 @@ int __thiscall ArtConfig::ReadLayout(int this, INIClass *a2, PriorityQueue *a3, 
       }
       v73.? = &rc_ptr<WorldDominationTour::Territory>::`vftable'; /*0x768e6e*/
       ComPtr::Release((ComPtr *)&v73.?); /*0x768e76*/
-      vtable1 = (int)v73.?; /*0x768e7b*/
+      ptr_4 = (int)v73.?; /*0x768e7b*/
     }
-    v73.? = (void *)++vtable1; /*0x768e83*/
+    v73.? = (void *)++ptr_4; /*0x768e83*/
   }
-  while ( vtable1 < 100 ); /*0x768e87*/
+  while ( ptr_4 < 100 ); /*0x768e87*/
   for ( j = 0; j < *(_DWORD *)(this + 60); ++j ) /*0x768e94*/
     ArtConfig::resetConfig( /*0x768ead*/
       *(_DWORD *)(*(_DWORD *)(this + 48) + 8 * j + 4),
@@ -8086,14 +8086,14 @@ _DWORD *__thiscall unknown_libname_37(ObjectClass *this)
 _DWORD *__thiscall sub_769490(ObjectClass *this, _DWORD *a2)
 {
   _DWORD *result; // eax
-  char *vtable1; // edx
+  char *ptr_4; // edx
   char *v4; // ecx
 
   result = &this->AbstractClass; /*0x769490*/
-  vtable1 = (char *)this->?; /*0x76949d*/
+  ptr_4 = (char *)this->?; /*0x76949d*/
   this->AbstractClass = (char *)this->AbstractClass + *a2; /*0x7694a0*/
   v4 = (char *)this->? + 1; /*0x7694aa*/
-  result[1] = &vtable1[a2[1]]; /*0x7694ab*/
+  result[1] = &ptr_4[a2[1]]; /*0x7694ab*/
   result[2] = v4; /*0x7694ae*/
   return result; /*0x7694b1*/
 }
@@ -8103,20 +8103,20 @@ _DWORD *__thiscall sub_769490(ObjectClass *this, _DWORD *a2)
 // ==== 0x007694C0  ObjectClass::Map_Load_7694C0  this=ObjectClass  sig=csp ====
 int *__thiscall Map_Load_7694C0(ObjectClass *this, int *a2)
 {
-  int vtable2; // esi
+  int ptr_8; // esi
   int v4; // [esp+4h] [ebp-8h]
   int v5; // [esp+8h] [ebp-4h]
 
-  vtable2 = (int)this->?; /*0x7694c6*/
-  if ( vtable2 <= 0 ) /*0x7694cb*/
+  ptr_8 = (int)this->?; /*0x7694c6*/
+  if ( ptr_8 <= 0 ) /*0x7694cb*/
   {
     v4 = 0; /*0x7694e6*/
     v5 = 0; /*0x7694ea*/
   }
   else
   {
-    v4 = (int)this->AbstractClass / vtable2; /*0x7694d2*/
-    v5 = (int)this->? / vtable2; /*0x7694e0*/
+    v4 = (int)this->AbstractClass / ptr_8; /*0x7694d2*/
+    v5 = (int)this->? / ptr_8; /*0x7694e0*/
   }
   *a2 = v4; /*0x7694fc*/
   a2[1] = v5; /*0x7694fe*/
@@ -8128,7 +8128,7 @@ int *__thiscall Map_Load_7694C0(ObjectClass *this, int *a2)
 // ==== 0x00769550  LoadWDTMapAsset  this=-  sig=ida-proto ====
 int __fastcall LoadWDTMapAsset(const char **a1, char **a2)
 {
-  void *vtable0; // ebp
+  void *ptr_0; // ebp
   int *v4; // eax
   int *v5; // esi
   int *v6; // eax
@@ -8195,10 +8195,10 @@ int __fastcall LoadWDTMapAsset(const char **a1, char **a2)
   FileStraw::Open((FileStraw *)&v55.ambientSoundController[1], (int)&v55.needsRedraw, 0); /*0x7695ce*/
   CCFileClass::Close((BufferIOFileClass *)&v55.needsRedraw); /*0x7695da*/
   sub_47AA00((CDFileClass *)&v56, a2); /*0x7695e7*/
-  vtable0 = DecodeFrameSHP((int)&v56, 0, 0, 0); /*0x7695fc*/
-  v55.AbstractClass = vtable0; /*0x769600*/
-  v55.? = (*(int (__thiscall **)(void *))(*(_DWORD *)vtable0 + 128))(vtable0); /*0x76960d*/
-  v55.? = (*(int (__thiscall **)(void *))(*(_DWORD *)vtable0 + 124))(vtable0); /*0x76961e*/
+  ptr_0 = DecodeFrameSHP((int)&v56, 0, 0, 0); /*0x7695fc*/
+  v55.AbstractClass = ptr_0; /*0x769600*/
+  v55.? = (*(int (__thiscall **)(void *))(*(_DWORD *)ptr_0 + 128))(ptr_0); /*0x76960d*/
+  v55.? = (*(int (__thiscall **)(void *))(*(_DWORD *)ptr_0 + 124))(ptr_0); /*0x76961e*/
   *(_DWORD *)&v51.m_1[3] = 0; /*0x769627*/
   v51.m_8 = 30; /*0x76962b*/
   LOWORD(v51.m_C) = 1; /*0x76962f*/
@@ -8255,7 +8255,7 @@ LABEL_67:
     }
     while ( 1 ) /*0x769736*/
     {
-      abstractFlags = (*(int (__thiscall **)(void *, int *))(*(_DWORD *)vtable0 + 40))(vtable0, &v49); /*0x769736*/
+      abstractFlags = (*(int (__thiscall **)(void *, int *))(*(_DWORD *)ptr_0 + 40))(ptr_0, &v49); /*0x769736*/
       v55.? = abstractFlags; /*0x76973b*/
       if ( abstractFlags <= 0x1D ) /*0x76973f*/
       {
@@ -8426,7 +8426,7 @@ LABEL_67:
       v9 = v50; /*0x769a06*/
       v30 = v49; /*0x769a0a*/
 LABEL_66:
-      vtable0 = v55.AbstractClass; /*0x769a0e*/
+      ptr_0 = v55.AbstractClass; /*0x769a0e*/
       v49 = v30 + 1; /*0x769a19*/
       if ( v30 + 1 >= v55.? ) /*0x769a1d*/
         goto LABEL_67; /*0x769a1d*/
@@ -10558,7 +10558,7 @@ _DWORD *__thiscall sub_76B7B0(ObjectClass *this, _DWORD *a2)
   _DWORD *v6; // ebx
   ComPtr *v7; // edi
   void *v8; // eax
-  void *vtable2; // eax
+  void *ptr_8; // eax
   int v10; // edi
 
   v2 = a2; /*0x76b7b1*/
@@ -10600,10 +10600,10 @@ _DWORD *__thiscall sub_76B7B0(ObjectClass *this, _DWORD *a2)
   this->? = v8; /*0x76b819*/
   if ( !v8 ) /*0x76b81c*/
     return &this->AbstractClass; /*0x76b81c*/
-  vtable2 = this->?; /*0x76b81e*/
+  ptr_8 = this->?; /*0x76b81e*/
   v10 = 0; /*0x76b821*/
   BYTE1(this->?) = 1; /*0x76b825*/
-  if ( (int)vtable2 <= 0 ) /*0x76b829*/
+  if ( (int)ptr_8 <= 0 ) /*0x76b829*/
     return &this->AbstractClass; /*0x76b829*/
   do /*0x76b84a*/
   {
@@ -11174,11 +11174,11 @@ int sub_76BFB0()
 // ==== 0x0076BFC0  ObjectClass::ConstructWDTSelection_Create_76BFC0  this=ObjectClass  sig=csp ====
 int __thiscall ConstructWDTSelection_Create_76BFC0(ObjectClass *this)
 {
-  unsigned __int8 *vtable3; // eax
+  unsigned __int8 *ptr_C; // eax
 
-  vtable3 = (unsigned __int8 *)this->?; /*0x76bfc0*/
-  if ( vtable3 ) /*0x76bfc5*/
-    return vtable3[20]; /*0x76bfcc*/
+  ptr_C = (unsigned __int8 *)this->?; /*0x76bfc0*/
+  if ( ptr_C ) /*0x76bfc5*/
+    return ptr_C[20]; /*0x76bfcc*/
   else
     return 1; /*0x76bfcf*/
 }
@@ -11438,16 +11438,16 @@ int __thiscall ConstructWDTSelection(int this, int a2, int a3)
   String::Assign((String *)&v21, aSounds_0); /*0x76c4e2*/
   ConstructWDTSelection_Create_76CA60((TechnoClass *)this, (char *)&v21.nextArrayIndex, (char **)&v21); /*0x76c4f3*/
   DeleteAndZero(&v21); /*0x76c4fc*/
-  unknown_libname_73(&v21.vtable2); /*0x76c505*/
-  String::Assign((String *)&v21.vtable1, &g_INI_DefaultBuffer); /*0x76c513*/
+  unknown_libname_73(&v21.ptr_8); /*0x76c505*/
+  String::Assign((String *)&v21.ptr_4, &g_INI_DefaultBuffer); /*0x76c513*/
   String::Assign((String *)&v21, aLayouts); /*0x76c521*/
   _76BFB0 = ConstructWDTSelection_Create_76BFB0(); /*0x76c53b*/
   v10 = FromStringInt((char **)&v21.abstractFlags, _76BFB0); /*0x76c546*/
-  INIClass::ReadString((INIClass *)&v21.nextArrayIndex, (char **)&v21, v10, (char **)&v21.vtable1, (int)&v21.vtable2); /*0x76c555*/
+  INIClass::ReadString((INIClass *)&v21.nextArrayIndex, (char **)&v21, v10, (char **)&v21.ptr_4, (int)&v21.ptr_8); /*0x76c555*/
   DeleteAndZero((ObjectClass *)&v21.abstractFlags); /*0x76c55e*/
   DeleteAndZero(&v21); /*0x76c567*/
-  DeleteAndZero((ObjectClass *)&v21.vtable1); /*0x76c570*/
-  ConstructWDTSelection_Create_76CBF0((TechnoClass *)this, &v21.nextArrayIndex, (char **)&v21.vtable2); /*0x76c581*/
+  DeleteAndZero((ObjectClass *)&v21.ptr_4); /*0x76c570*/
+  ConstructWDTSelection_Create_76CBF0((TechnoClass *)this, &v21.nextArrayIndex, (char **)&v21.ptr_8); /*0x76c581*/
   v11 = *(_DWORD *)(this + 1116); /*0x76c590*/
   LOBYTE(v12) = ConstructWDTSelection_Create(*(_DWORD *)(a2 + 4), a3); /*0x76c599*/
   ArtConfig::ReadLayout(v11, (INIClass *)&v21.nextArrayIndex, (PriorityQueue *)this, v12); /*0x76c5a7*/
@@ -11465,12 +11465,12 @@ int __thiscall ConstructWDTSelection(int this, int a2, int a3)
   ScoreClass::SetState(v15, 1); /*0x76c5ff*/
   PriorityQueue::Add((PriorityQueue *)this, (int)v15); /*0x76c607*/
   v16 = GetStringCSF(aTxtBack, 0, g_Str_File_WDTSel_cpp, 164); /*0x76c61d*/
-  WideString::Assign((WideString *)&v21.vtable3, v16); /*0x76c627*/
+  WideString::Assign((WideString *)&v21.ptr_C, v16); /*0x76c627*/
   v17 = (MSBitPrintAnim *)__2_YAPAXI_Z(0x34u); /*0x76c62e*/
   if ( v17 ) /*0x76c638*/
     v18 = (ScoreClass *)MSBitPrintAnim::Construct( /*0x76c655*/
                           v17,
-                          (const wchar_t **)&v21.vtable3,
+                          (const wchar_t **)&v21.ptr_C,
                           (_DWORD *)(*(_DWORD *)(this + 1116) + 172),
                           1);
   else
@@ -11478,9 +11478,9 @@ int __thiscall ConstructWDTSelection(int this, int a2, int a3)
   ScoreClass::SetState(v18, 1); /*0x76c65f*/
   PriorityQueue::Add((PriorityQueue *)this, (int)v18); /*0x76c667*/
   ConstructWDTSelection_Create_76EEB0((TechnoClass *)this); /*0x76c66e*/
-  DeleteAndZero::Alt((DeleteAndZero *)&v21.vtable3); /*0x76c677*/
+  DeleteAndZero::Alt((DeleteAndZero *)&v21.ptr_C); /*0x76c677*/
   DeleteAndZero::Alt((DeleteAndZero *)&v21.uniqueId); /*0x76c680*/
-  DeleteAndZero((ObjectClass *)&v21.vtable2); /*0x76c689*/
+  DeleteAndZero((ObjectClass *)&v21.ptr_8); /*0x76c689*/
   HashTable::DestroyHashTableINIClass((INIClass *)&v21.nextArrayIndex); /*0x76c692*/
   v21.customSound_controller[2] = (int)&CCFileClass::`vftable'; /*0x76c69e*/
   v23 = 0; /*0x76c6a6*/
@@ -11833,7 +11833,7 @@ _DWORD *__thiscall ShowWDTTerritorySelection(TechnoClass *this, _DWORD *a2)
       }
       else if ( v9 == 2049 ) /*0x76ce7f*/
       {
-        WDTSurface::ToggleState(this->currentTargets[1], &this->vtable0, 0); /*0x76ce8e*/
+        WDTSurface::ToggleState(this->currentTargets[1], &this->ptr_0, 0); /*0x76ce8e*/
         if ( (unsigned __int8)WDTSurface::PointInRect((WDTSurface *)this->currentTargets[1], &v26.m_3[1]) ) /*0x76ce9e*/
         {
           String::Assign((String *)&v25, aCanceled); /*0x76ceb4*/
@@ -11881,7 +11881,7 @@ _DWORD *__thiscall ShowWDTTerritorySelection(TechnoClass *this, _DWORD *a2)
             if ( v13 == 1 && *(_BYTE *)(Count::Get((Count *)this->currentTargets) + 104) ) /*0x76cfc6*/
             {
               v14 = Count::Get((Count *)this->currentTargets); /*0x76cfd6*/
-              WDTGame::ToggleTeamMode(v14, &this->vtable0, 0); /*0x76cfdd*/
+              WDTGame::ToggleTeamMode(v14, &this->ptr_0, 0); /*0x76cfdd*/
               v15 = GetStringCSF(g_Str_WDT_TerritorySelectToolTip, 0, g_Str_File_WDTSel_cpp, 916); /*0x76cff3*/
               WideString::Assign((WideString *)&v25.DeleteAndZero_field_0x04, v15); /*0x76cffd*/
               ScoreText::Show((ScoreText *)this, (const wchar_t **)&v25.DeleteAndZero_field_0x04); /*0x76d009*/
@@ -12368,7 +12368,7 @@ bool __thiscall TerritorySelectWDT(TechnoClass *this, int a2)
     {
       if ( v3 ) /*0x76dafc*/
         ComPtr::Set((ComPtr *)this->customSound_controller, 0); /*0x76db03*/
-      TerritorySelectWDT_Process((ObjectClass *)this->currentTargets[4], 0, &this->vtable0); /*0x76db11*/
+      TerritorySelectWDT_Process((ObjectClass *)this->currentTargets[4], 0, &this->ptr_0); /*0x76db11*/
       v6 = *(MSAnim **)(this->currentTargets[4] + 44); /*0x76db1c*/
       if ( v6 ) /*0x76db21*/
       {
@@ -12436,7 +12436,7 @@ bool __thiscall TerritorySelectWDT(TechnoClass *this, int a2)
       v15 = &v31; /*0x76dcf0*/
     }
     DeleteAndZero::Alt(v15); /*0x76dcf4*/
-    TerritorySelectWDT_Process((ObjectClass *)this->currentTargets[4], 1, &this->vtable0); /*0x76dcff*/
+    TerritorySelectWDT_Process((ObjectClass *)this->currentTargets[4], 1, &this->ptr_0); /*0x76dcff*/
     if ( Conflict::GetOwnerHouse(*(Conflict **)(this->ambientSoundController[4] + 12)) == this->currentTargetThreatValues[4] ) /*0x76dd18*/
     {
       v19 = this->ambientSoundController[4] + 24; /*0x76dd25*/
@@ -12638,7 +12638,7 @@ void __thiscall ShowWDTTerritorySelection_Show(TechnoClass *this)
   v2 = this->currentTargets[1]; /*0x76e186*/
   if ( !*(_BYTE *)(v2 + 104) ) /*0x76e18c*/
   {
-    WDTGame::ToggleTeamMode(v2, &this->vtable0, 1); /*0x76e19c*/
+    WDTGame::ToggleTeamMode(v2, &this->ptr_0, 1); /*0x76e19c*/
     String::Assign((String *)&v5, aMousecancel); /*0x76e1aa*/
     if ( (unsigned __int8)String::NotEquals((String *)&v5, 0) ) /*0x76e1b5*/
     {
@@ -12995,7 +12995,7 @@ void __thiscall ScoreText::ShowAlt(ScoreText *this, const wchar_t **a2, int a3)
   if ( *((_DWORD *)this + 287) ) /*0x76ea24*/
   {
     Session::RemoveTeam((Session *)this, *((int (__thiscall ****)(_DWORD, int))this + 287)); /*0x76ea2f*/
-    (*(void (__thiscall **)(ObjectClass *, int, DSurface *, int, _DWORD, int))(g_DSurface_Hidden->vtable0 + 8))( /*0x76ea5a*/
+    (*(void (__thiscall **)(ObjectClass *, int, DSurface *, int, _DWORD, int))(g_DSurface_Hidden->ptr_0 + 8))( /*0x76ea5a*/
       g_DSurface_Hidden,
       *((_DWORD *)this + 279) + 124,
       DSurface_Alternate,
@@ -13048,7 +13048,7 @@ void __thiscall ScoreText::Show(ScoreText *this, const wchar_t **a2)
   if ( v5 ) /*0x76eb25*/
   {
     Session::RemoveTeam((Session *)this, v5); /*0x76eb2a*/
-    (*(void (__thiscall **)(ObjectClass *, int *, DSurface *, int *, _DWORD, int))(g_DSurface_Hidden->vtable0 + 8))( /*0x76eb4c*/
+    (*(void (__thiscall **)(ObjectClass *, int *, DSurface *, int *, _DWORD, int))(g_DSurface_Hidden->ptr_0 + 8))( /*0x76eb4c*/
       g_DSurface_Hidden,
       v9,
       DSurface_Alternate,
@@ -13210,7 +13210,7 @@ int __thiscall ConstructWDTSelection_Create_76EEB0(TechnoClass *this)
   }
   (*(void (__thiscall **)(MouseClass *))(dword_887640->MouseClass_field_0x0 + 12))(dword_887640); /*0x76eefa*/
   (*(void (__thiscall **)(DSurface *, _DWORD))(DSurface_Alternate->DSurface_field_0x0 + 24))(DSurface_Alternate, 0); /*0x76ef07*/
-  (*(void (__thiscall **)(ObjectClass *, _DWORD))(g_DSurface_Hidden->vtable0 + 24))(g_DSurface_Hidden, 0); /*0x76ef14*/
+  (*(void (__thiscall **)(ObjectClass *, _DWORD))(g_DSurface_Hidden->ptr_0 + 24))(g_DSurface_Hidden, 0); /*0x76ef14*/
   (*(void (__thiscall **)(DSurface *, ObjectClass *, _DWORD, int))(g_DSurface_Primary->DSurface_field_0x0 + 4))( /*0x76ef29*/
     g_DSurface_Primary,
     g_DSurface_Hidden,
@@ -13469,18 +13469,18 @@ _DWORD *__thiscall ConstructWDTSelection_Create_76F210(VectorClass *this, int a2
   this->Capacity = a2; /*0x76f21e*/
   this->IsInitialized = 1; /*0x76f221*/
   this->IsAllocated = 0; /*0x76f225*/
-  this->vtable0 = &VectorClass<MSSfxEntry *>::`vftable'; /*0x76f228*/
+  this->ptr_0 = &VectorClass<MSSfxEntry *>::`vftable'; /*0x76f228*/
   if ( a2 ) /*0x76f22e*/
   {
     if ( a3 ) /*0x76f236*/
     {
       this->Items = (void *)a3; /*0x76f238*/
-      return &this->vtable0; /*0x76f23e*/
+      return &this->ptr_0; /*0x76f23e*/
     }
     this->Items = (void *)__2_YAPAXI_Z(4 * a2); /*0x76f24d*/
     this->IsAllocated = 1; /*0x76f250*/
   }
-  return &this->vtable0; /*0x76f23d*/
+  return &this->ptr_0; /*0x76f23d*/
 }
 
 
@@ -14984,7 +14984,7 @@ int __thiscall WaveClass::Update(WaveClass *this)
       this->WaveIntensity = v6; /*0x760fdf*/
       if ( v6 >= 0 ) /*0x760fe5*/
         goto LABEL_3; /*0x760fe5*/
-      result = (*(int (__thiscall **)(WaveClass *))(this->vtable0 + 248))(this); /*0x760feb*/
+      result = (*(int (__thiscall **)(WaveClass *))(this->ptr_0 + 248))(this); /*0x760feb*/
       break; /*0x760ff5*/
     case 1: /*0x760f65*/
     case 2: /*0x760f65*/
@@ -14999,7 +14999,7 @@ int __thiscall WaveClass::Update(WaveClass *this)
       this->WaveIntensity = v3; /*0x760f7a*/
       if ( v3 < 0 ) /*0x760f80*/
 LABEL_9:
-        result = (*(int (__thiscall **)(WaveClass *))(this->vtable0 + 248))(this); /*0x76100c*/
+        result = (*(int (__thiscall **)(WaveClass *))(this->ptr_0 + 248))(this); /*0x76100c*/
       else
 LABEL_3:
         result = ObjectClass::DetectCloaked((UnitClass *)this); /*0x760f91*/
@@ -16957,8 +16957,8 @@ int __thiscall String::To_Waypoint(char *this)
   int v2; // esi
 
   v2 = -1; /*0x763694*/
-  if ( isalpha(*this) && (v2 = toupper(*this) - 65, isalpha(this->vtable2)) ) /*0x7636ba*/
-    return toupper(this->vtable2) + 26 * v2 - 39; /*0x7636db*/
+  if ( isalpha(*this) && (v2 = toupper(*this) - 65, isalpha(this->ptr_8)) ) /*0x7636ba*/
+    return toupper(this->ptr_8) + 26 * v2 - 39; /*0x7636db*/
   else
     return v2; /*0x7636e0*/
 }
@@ -17200,12 +17200,12 @@ int __stdcall WaypointPathClass::LoadState(WaypointPathClass *this, int a2)
   WaypointPathClass *p_vtable1; // esi
   int v6; // ebp
   int v7; // eax
-  void *vtable2; // ecx
+  void *ptr_8; // ecx
   int abstractFlags; // eax
   int uniqueId; // eax
   int v11; // ecx
   int v12; // edx
-  char *vtable1; // eax
+  char *ptr_4; // eax
   char *v14; // ecx
   int v15; // [esp+28h] [ebp-Ch] BYREF
   int v16; // [esp+2Ch] [ebp-8h]
@@ -17219,16 +17219,16 @@ int __stdcall WaypointPathClass::LoadState(WaypointPathClass *this, int a2)
     if ( v2 ) /*0x763c92*/
     {
       AbstractClass::InitVtables(v2, (int)&a2); /*0x763c9b*/
-      v2[1].vtable1 = &DynamicVectorClass<WaypointClass>::`vftable'; /*0x763ca0*/
-      v2->vtable0 = &WaypointPathClass::`vftable'; /*0x763ca7*/
-      v2->vtable1 = &WaypointPathClass::`vftable'; /*0x763cad*/
-      v2->vtable2 = &WaypointPathClass::`vftable'; /*0x763cb4*/
-      v2->vtable3 = &WaypointPathClass::`vftable'; /*0x763cbb*/
+      v2[1].ptr_4 = &DynamicVectorClass<WaypointClass>::`vftable'; /*0x763ca0*/
+      v2->ptr_0 = &WaypointPathClass::`vftable'; /*0x763ca7*/
+      v2->ptr_4 = &WaypointPathClass::`vftable'; /*0x763cad*/
+      v2->ptr_8 = &WaypointPathClass::`vftable'; /*0x763cb4*/
+      v2->ptr_C = &WaypointPathClass::`vftable'; /*0x763cbb*/
     }
     result = (*(int (__stdcall **)(int, WaypointPathClass **, int, _DWORD))(*(_DWORD *)v3 + 12))(v3, &this, 4, 0); /*0x763ccd*/
     if ( result >= 0 ) /*0x763cd2*/
     {
-      p_vtable1 = (WaypointPathClass *)&v2[1].vtable1; /*0x763cd8*/
+      p_vtable1 = (WaypointPathClass *)&v2[1].ptr_4; /*0x763cd8*/
       if ( p_vtable1 ) /*0x763cdd*/
       {
         WaypointPathClass::computePath(p_vtable1, 0, 0); /*0x763ce3*/
@@ -17252,21 +17252,21 @@ int __stdcall WaypointPathClass::LoadState(WaypointPathClass *this, int a2)
           result = (*(int (__stdcall **)(int, int *, int, _DWORD))(v7 + 12))(v3, &v15, 12, 0); /*0x763d19*/
           if ( result < 0 ) /*0x763d1e*/
             break; /*0x763d1e*/
-          vtable2 = p_vtable1->?; /*0x763d20*/
-          if ( p_vtable1->? < (int)vtable2 /*0x763d42*/
-            || (BYTE1(p_vtable1->?) || !vtable2)
+          ptr_8 = p_vtable1->?; /*0x763d20*/
+          if ( p_vtable1->? < (int)ptr_8 /*0x763d42*/
+            || (BYTE1(p_vtable1->?) || !ptr_8)
             && (abstractFlags = p_vtable1->?, abstractFlags > 0)
             && (*((unsigned __int8 (__thiscall **)(WaypointPathClass *, int, _DWORD))p_vtable1->AbstractClass + 2))(
                  p_vtable1,
-                 (int)vtable2 + abstractFlags,
+                 (int)ptr_8 + abstractFlags,
                  0) )
           {
             uniqueId = p_vtable1->?; /*0x763d49*/
             v11 = uniqueId + 1; /*0x763d4c*/
             v12 = 3 * uniqueId; /*0x763d4f*/
-            vtable1 = (char *)p_vtable1->?; /*0x763d52*/
+            ptr_4 = (char *)p_vtable1->?; /*0x763d52*/
             p_vtable1->? = v11; /*0x763d55*/
-            v14 = &vtable1[4 * v12]; /*0x763d58*/
+            v14 = &ptr_4[4 * v12]; /*0x763d58*/
             *(_DWORD *)v14 = v15; /*0x763d5f*/
             *((_DWORD *)v14 + 1) = v16; /*0x763d65*/
             *((_DWORD *)v14 + 2) = v17; /*0x763d6c*/
@@ -19599,11 +19599,11 @@ ComPtr *__fastcall Team_Create_765F60(ComPtr *a1, int a2)
 // ==== 0x00766060  ObjectClass::FindWDTTerritoryClass_Find_Find  this=ObjectClass  sig=csp ====
 int __thiscall FindWDTTerritoryClass_Find_Find(ObjectClass *this)
 {
-  _DWORD *vtable3; // eax
+  _DWORD *ptr_C; // eax
 
-  vtable3 = this->?; /*0x766060*/
-  if ( vtable3 ) /*0x766065*/
-    return vtable3[2]; /*0x766067*/
+  ptr_C = this->?; /*0x766060*/
+  if ( ptr_C ) /*0x766065*/
+    return ptr_C[2]; /*0x766067*/
   else
     return 0; /*0x76606b*/
 }
@@ -20497,20 +20497,20 @@ char __thiscall Conflict_WorldDominationTour_12::Constructor_1(
 // ==== 0x00766EE0  ObjectClass::System_Init_766EE0  this=ObjectClass  sig=csp ====
 char __thiscall System_Init_766EE0(ObjectClass *this, int a2)
 {
-  void *vtable2; // ecx
+  void *ptr_8; // ecx
   int abstractFlags; // eax
   int uniqueId; // eax
 
-  vtable2 = this->?; /*0x766ee3*/
-  if ( this->? >= (int)vtable2 ) /*0x766eeb*/
+  ptr_8 = this->?; /*0x766ee3*/
+  if ( this->? >= (int)ptr_8 ) /*0x766eeb*/
   {
-    if ( !BYTE1(this->?) && vtable2 ) /*0x766ef6*/
+    if ( !BYTE1(this->?) && ptr_8 ) /*0x766ef6*/
       return 0; /*0x766ef6*/
     abstractFlags = this->?; /*0x766ef8*/
     if ( abstractFlags <= 0 /*0x766f08*/
       || !(*((unsigned __int8 (__thiscall **)(ObjectClass *, int, _DWORD))this->AbstractClass + 2))(
             this,
-            (int)vtable2 + abstractFlags,
+            (int)ptr_8 + abstractFlags,
             0) )
     {
       return 0; /*0x766f0f*/
@@ -21604,7 +21604,7 @@ void __thiscall WorldDomination::SetupTerritoryNodes(int this)
   void (__thiscall ***v3)(_DWORD, int); // ecx
   int i; // ebp
   ObjectClass *v5; // edi
-  void (__thiscall ***vtable1)(_DWORD, int); // ecx
+  void (__thiscall ***ptr_4)(_DWORD, int); // ecx
   void (__thiscall ***v7)(_DWORD, int); // ecx
   void *v8; // eax
   void (__thiscall ***v9)(_DWORD, int); // ecx
@@ -21621,9 +21621,9 @@ void __thiscall WorldDomination::SetupTerritoryNodes(int this)
     v5 = *(ObjectClass **)(*(_DWORD *)(this + 192) + 4 * i); /*0x7680fa*/
     if ( v5 ) /*0x7680ff*/
     {
-      vtable1 = (void (__thiscall ***)(_DWORD, int))v5->?; /*0x768101*/
-      if ( vtable1 ) /*0x768106*/
-        (**vtable1)(vtable1, 1); /*0x76810c*/
+      ptr_4 = (void (__thiscall ***)(_DWORD, int))v5->?; /*0x768101*/
+      if ( ptr_4 ) /*0x768106*/
+        (**ptr_4)(ptr_4, 1); /*0x76810c*/
       DeleteAndZero(v5); /*0x768110*/
       __3_YAXPAX_Z(v5); /*0x768116*/
     }
@@ -21723,7 +21723,7 @@ int __thiscall ArtConfig::ReadLayout(int this, INIClass *a2, PriorityQueue *a3, 
   char **v60; // eax
   char **v61; // eax
   int v62; // eax
-  int vtable1; // ebx
+  int ptr_4; // ebx
   char **v64; // eax
   char **v65; // eax
   int v66; // eax
@@ -22058,12 +22058,12 @@ int __thiscall ArtConfig::ReadLayout(int this, INIClass *a2, PriorityQueue *a3, 
     if ( v62 ) /*0x768d85*/
       PriorityQueue::Add(a3, v62); /*0x768d8f*/
   }
-  vtable1 = 0; /*0x768d9a*/
+  ptr_4 = 0; /*0x768d9a*/
   v73.? = 0; /*0x768d9c*/
   do /*0x768e87*/
   {
     String::Assign((String *)&v73, 0); /*0x768da6*/
-    v64 = FormatStringInt((char **)&v73.ambientSoundController[1], vtable1, 2); /*0x768dbd*/
+    v64 = FormatStringInt((char **)&v73.ambientSoundController[1], ptr_4, 2); /*0x768dbd*/
     v65 = ProcessStringAndCopy((char **)&v73.?, aTerritory, v64); /*0x768dcc*/
     HIBYTE(v73.?) = INIClass::ReadString(a2, (char **)&v73.?, v65, (char **)&v73, (int)&v73.?) > 0; /*0x768de4*/
     DeleteAndZero((ObjectClass *)&v73.?); /*0x768de9*/
@@ -22073,7 +22073,7 @@ int __thiscall ArtConfig::ReadLayout(int this, INIClass *a2, PriorityQueue *a3, 
     {
       ArtConfig_Read( /*0x768e1d*/
         (rc_ptr *)&v73.?,
-        vtable1,
+        ptr_4,
         a2,
         (char *)&v73.?,
         (const char **)(this + 40),
@@ -22091,11 +22091,11 @@ int __thiscall ArtConfig::ReadLayout(int this, INIClass *a2, PriorityQueue *a3, 
       }
       v73.? = &rc_ptr<WorldDominationTour::Territory>::`vftable'; /*0x768e6e*/
       ComPtr::Release((ComPtr *)&v73.?); /*0x768e76*/
-      vtable1 = (int)v73.?; /*0x768e7b*/
+      ptr_4 = (int)v73.?; /*0x768e7b*/
     }
-    v73.? = (void *)++vtable1; /*0x768e83*/
+    v73.? = (void *)++ptr_4; /*0x768e83*/
   }
-  while ( vtable1 < 100 ); /*0x768e87*/
+  while ( ptr_4 < 100 ); /*0x768e87*/
   for ( j = 0; j < *(_DWORD *)(this + 60); ++j ) /*0x768e94*/
     ArtConfig::resetConfig( /*0x768ead*/
       *(_DWORD *)(*(_DWORD *)(this + 48) + 8 * j + 4),
@@ -22408,14 +22408,14 @@ _DWORD *__thiscall unknown_libname_37(ObjectClass *this)
 _DWORD *__thiscall sub_769490(ObjectClass *this, _DWORD *a2)
 {
   _DWORD *result; // eax
-  char *vtable1; // edx
+  char *ptr_4; // edx
   char *v4; // ecx
 
   result = &this->AbstractClass; /*0x769490*/
-  vtable1 = (char *)this->?; /*0x76949d*/
+  ptr_4 = (char *)this->?; /*0x76949d*/
   this->AbstractClass = (char *)this->AbstractClass + *a2; /*0x7694a0*/
   v4 = (char *)this->? + 1; /*0x7694aa*/
-  result[1] = &vtable1[a2[1]]; /*0x7694ab*/
+  result[1] = &ptr_4[a2[1]]; /*0x7694ab*/
   result[2] = v4; /*0x7694ae*/
   return result; /*0x7694b1*/
 }
@@ -22425,20 +22425,20 @@ _DWORD *__thiscall sub_769490(ObjectClass *this, _DWORD *a2)
 // ==== 0x007694C0  ObjectClass::Map_Load_7694C0  this=ObjectClass  sig=csp ====
 int *__thiscall Map_Load_7694C0(ObjectClass *this, int *a2)
 {
-  int vtable2; // esi
+  int ptr_8; // esi
   int v4; // [esp+4h] [ebp-8h]
   int v5; // [esp+8h] [ebp-4h]
 
-  vtable2 = (int)this->?; /*0x7694c6*/
-  if ( vtable2 <= 0 ) /*0x7694cb*/
+  ptr_8 = (int)this->?; /*0x7694c6*/
+  if ( ptr_8 <= 0 ) /*0x7694cb*/
   {
     v4 = 0; /*0x7694e6*/
     v5 = 0; /*0x7694ea*/
   }
   else
   {
-    v4 = (int)this->AbstractClass / vtable2; /*0x7694d2*/
-    v5 = (int)this->? / vtable2; /*0x7694e0*/
+    v4 = (int)this->AbstractClass / ptr_8; /*0x7694d2*/
+    v5 = (int)this->? / ptr_8; /*0x7694e0*/
   }
   *a2 = v4; /*0x7694fc*/
   a2[1] = v5; /*0x7694fe*/
@@ -22450,7 +22450,7 @@ int *__thiscall Map_Load_7694C0(ObjectClass *this, int *a2)
 // ==== 0x00769550  LoadWDTMapAsset  this=-  sig=ida-proto ====
 int __fastcall LoadWDTMapAsset(const char **a1, char **a2)
 {
-  void *vtable0; // ebp
+  void *ptr_0; // ebp
   int *v4; // eax
   int *v5; // esi
   int *v6; // eax
@@ -22517,10 +22517,10 @@ int __fastcall LoadWDTMapAsset(const char **a1, char **a2)
   FileStraw::Open((FileStraw *)&v55.ambientSoundController[1], (int)&v55.needsRedraw, 0); /*0x7695ce*/
   CCFileClass::Close((BufferIOFileClass *)&v55.needsRedraw); /*0x7695da*/
   sub_47AA00((CDFileClass *)&v56, a2); /*0x7695e7*/
-  vtable0 = DecodeFrameSHP((int)&v56, 0, 0, 0); /*0x7695fc*/
-  v55.AbstractClass = vtable0; /*0x769600*/
-  v55.? = (*(int (__thiscall **)(void *))(*(_DWORD *)vtable0 + 128))(vtable0); /*0x76960d*/
-  v55.? = (*(int (__thiscall **)(void *))(*(_DWORD *)vtable0 + 124))(vtable0); /*0x76961e*/
+  ptr_0 = DecodeFrameSHP((int)&v56, 0, 0, 0); /*0x7695fc*/
+  v55.AbstractClass = ptr_0; /*0x769600*/
+  v55.? = (*(int (__thiscall **)(void *))(*(_DWORD *)ptr_0 + 128))(ptr_0); /*0x76960d*/
+  v55.? = (*(int (__thiscall **)(void *))(*(_DWORD *)ptr_0 + 124))(ptr_0); /*0x76961e*/
   *(_DWORD *)&v51.m_1[3] = 0; /*0x769627*/
   v51.m_8 = 30; /*0x76962b*/
   LOWORD(v51.m_C) = 1; /*0x76962f*/
@@ -22577,7 +22577,7 @@ LABEL_67:
     }
     while ( 1 ) /*0x769736*/
     {
-      abstractFlags = (*(int (__thiscall **)(void *, int *))(*(_DWORD *)vtable0 + 40))(vtable0, &v49); /*0x769736*/
+      abstractFlags = (*(int (__thiscall **)(void *, int *))(*(_DWORD *)ptr_0 + 40))(ptr_0, &v49); /*0x769736*/
       v55.? = abstractFlags; /*0x76973b*/
       if ( abstractFlags <= 0x1D ) /*0x76973f*/
       {
@@ -22748,7 +22748,7 @@ LABEL_67:
       v9 = v50; /*0x769a06*/
       v30 = v49; /*0x769a0a*/
 LABEL_66:
-      vtable0 = v55.AbstractClass; /*0x769a0e*/
+      ptr_0 = v55.AbstractClass; /*0x769a0e*/
       v49 = v30 + 1; /*0x769a19*/
       if ( v30 + 1 >= v55.? ) /*0x769a1d*/
         goto LABEL_67; /*0x769a1d*/
@@ -24891,7 +24891,7 @@ _DWORD *__thiscall sub_76B7B0(ObjectClass *this, _DWORD *a2)
   _DWORD *v6; // ebx
   ComPtr *v7; // edi
   void *v8; // eax
-  void *vtable2; // eax
+  void *ptr_8; // eax
   int v10; // edi
 
   v2 = a2; /*0x76b7b1*/
@@ -24933,10 +24933,10 @@ _DWORD *__thiscall sub_76B7B0(ObjectClass *this, _DWORD *a2)
   this->? = v8; /*0x76b819*/
   if ( !v8 ) /*0x76b81c*/
     return &this->AbstractClass; /*0x76b81c*/
-  vtable2 = this->?; /*0x76b81e*/
+  ptr_8 = this->?; /*0x76b81e*/
   v10 = 0; /*0x76b821*/
   BYTE1(this->?) = 1; /*0x76b825*/
-  if ( (int)vtable2 <= 0 ) /*0x76b829*/
+  if ( (int)ptr_8 <= 0 ) /*0x76b829*/
     return &this->AbstractClass; /*0x76b829*/
   do /*0x76b84a*/
   {
@@ -25507,11 +25507,11 @@ int sub_76BFB0()
 // ==== 0x0076BFC0  ObjectClass::ConstructWDTSelection_Create_76BFC0  this=ObjectClass  sig=csp ====
 int __thiscall ConstructWDTSelection_Create_76BFC0(ObjectClass *this)
 {
-  unsigned __int8 *vtable3; // eax
+  unsigned __int8 *ptr_C; // eax
 
-  vtable3 = (unsigned __int8 *)this->?; /*0x76bfc0*/
-  if ( vtable3 ) /*0x76bfc5*/
-    return vtable3[20]; /*0x76bfcc*/
+  ptr_C = (unsigned __int8 *)this->?; /*0x76bfc0*/
+  if ( ptr_C ) /*0x76bfc5*/
+    return ptr_C[20]; /*0x76bfcc*/
   else
     return 1; /*0x76bfcf*/
 }
@@ -25771,16 +25771,16 @@ int __thiscall ConstructWDTSelection(int this, int a2, int a3)
   String::Assign((String *)&v21, aSounds_0); /*0x76c4e2*/
   ConstructWDTSelection_Create_76CA60((TechnoClass *)this, (char *)&v21.nextArrayIndex, (char **)&v21); /*0x76c4f3*/
   DeleteAndZero(&v21); /*0x76c4fc*/
-  unknown_libname_73(&v21.vtable2); /*0x76c505*/
-  String::Assign((String *)&v21.vtable1, &g_INI_DefaultBuffer); /*0x76c513*/
+  unknown_libname_73(&v21.ptr_8); /*0x76c505*/
+  String::Assign((String *)&v21.ptr_4, &g_INI_DefaultBuffer); /*0x76c513*/
   String::Assign((String *)&v21, aLayouts); /*0x76c521*/
   _76BFB0 = ConstructWDTSelection_Create_76BFB0(); /*0x76c53b*/
   v10 = FromStringInt((char **)&v21.abstractFlags, _76BFB0); /*0x76c546*/
-  INIClass::ReadString((INIClass *)&v21.nextArrayIndex, (char **)&v21, v10, (char **)&v21.vtable1, (int)&v21.vtable2); /*0x76c555*/
+  INIClass::ReadString((INIClass *)&v21.nextArrayIndex, (char **)&v21, v10, (char **)&v21.ptr_4, (int)&v21.ptr_8); /*0x76c555*/
   DeleteAndZero((ObjectClass *)&v21.abstractFlags); /*0x76c55e*/
   DeleteAndZero(&v21); /*0x76c567*/
-  DeleteAndZero((ObjectClass *)&v21.vtable1); /*0x76c570*/
-  ConstructWDTSelection_Create_76CBF0((TechnoClass *)this, &v21.nextArrayIndex, (char **)&v21.vtable2); /*0x76c581*/
+  DeleteAndZero((ObjectClass *)&v21.ptr_4); /*0x76c570*/
+  ConstructWDTSelection_Create_76CBF0((TechnoClass *)this, &v21.nextArrayIndex, (char **)&v21.ptr_8); /*0x76c581*/
   v11 = *(_DWORD *)(this + 1116); /*0x76c590*/
   LOBYTE(v12) = ConstructWDTSelection_Create(*(_DWORD *)(a2 + 4), a3); /*0x76c599*/
   ArtConfig::ReadLayout(v11, (INIClass *)&v21.nextArrayIndex, (PriorityQueue *)this, v12); /*0x76c5a7*/
@@ -25798,12 +25798,12 @@ int __thiscall ConstructWDTSelection(int this, int a2, int a3)
   ScoreClass::SetState(v15, 1); /*0x76c5ff*/
   PriorityQueue::Add((PriorityQueue *)this, (int)v15); /*0x76c607*/
   v16 = GetStringCSF(aTxtBack, 0, g_Str_File_WDTSel_cpp, 164); /*0x76c61d*/
-  WideString::Assign((WideString *)&v21.vtable3, v16); /*0x76c627*/
+  WideString::Assign((WideString *)&v21.ptr_C, v16); /*0x76c627*/
   v17 = (MSBitPrintAnim *)__2_YAPAXI_Z(0x34u); /*0x76c62e*/
   if ( v17 ) /*0x76c638*/
     v18 = (ScoreClass *)MSBitPrintAnim::Construct( /*0x76c655*/
                           v17,
-                          (const wchar_t **)&v21.vtable3,
+                          (const wchar_t **)&v21.ptr_C,
                           (_DWORD *)(*(_DWORD *)(this + 1116) + 172),
                           1);
   else
@@ -25811,9 +25811,9 @@ int __thiscall ConstructWDTSelection(int this, int a2, int a3)
   ScoreClass::SetState(v18, 1); /*0x76c65f*/
   PriorityQueue::Add((PriorityQueue *)this, (int)v18); /*0x76c667*/
   ConstructWDTSelection_Create_76EEB0((TechnoClass *)this); /*0x76c66e*/
-  DeleteAndZero::Alt((DeleteAndZero *)&v21.vtable3); /*0x76c677*/
+  DeleteAndZero::Alt((DeleteAndZero *)&v21.ptr_C); /*0x76c677*/
   DeleteAndZero::Alt((DeleteAndZero *)&v21.uniqueId); /*0x76c680*/
-  DeleteAndZero((ObjectClass *)&v21.vtable2); /*0x76c689*/
+  DeleteAndZero((ObjectClass *)&v21.ptr_8); /*0x76c689*/
   HashTable::DestroyHashTableINIClass((INIClass *)&v21.nextArrayIndex); /*0x76c692*/
   v21.customSound_controller[2] = (int)&CCFileClass::`vftable'; /*0x76c69e*/
   v23 = 0; /*0x76c6a6*/
@@ -26166,7 +26166,7 @@ _DWORD *__thiscall ShowWDTTerritorySelection(TechnoClass *this, _DWORD *a2)
       }
       else if ( v9 == 2049 ) /*0x76ce7f*/
       {
-        WDTSurface::ToggleState(this->currentTargets[1], &this->vtable0, 0); /*0x76ce8e*/
+        WDTSurface::ToggleState(this->currentTargets[1], &this->ptr_0, 0); /*0x76ce8e*/
         if ( (unsigned __int8)WDTSurface::PointInRect((WDTSurface *)this->currentTargets[1], &v26.m_3[1]) ) /*0x76ce9e*/
         {
           String::Assign((String *)&v25, aCanceled); /*0x76ceb4*/
@@ -26214,7 +26214,7 @@ _DWORD *__thiscall ShowWDTTerritorySelection(TechnoClass *this, _DWORD *a2)
             if ( v13 == 1 && *(_BYTE *)(Count::Get((Count *)this->currentTargets) + 104) ) /*0x76cfc6*/
             {
               v14 = Count::Get((Count *)this->currentTargets); /*0x76cfd6*/
-              WDTGame::ToggleTeamMode(v14, &this->vtable0, 0); /*0x76cfdd*/
+              WDTGame::ToggleTeamMode(v14, &this->ptr_0, 0); /*0x76cfdd*/
               v15 = GetStringCSF(g_Str_WDT_TerritorySelectToolTip, 0, g_Str_File_WDTSel_cpp, 916); /*0x76cff3*/
               WideString::Assign((WideString *)&v25.DeleteAndZero_field_0x04, v15); /*0x76cffd*/
               ScoreText::Show((ScoreText *)this, (const wchar_t **)&v25.DeleteAndZero_field_0x04); /*0x76d009*/
@@ -26701,7 +26701,7 @@ bool __thiscall TerritorySelectWDT(TechnoClass *this, int a2)
     {
       if ( v3 ) /*0x76dafc*/
         ComPtr::Set((ComPtr *)this->customSound_controller, 0); /*0x76db03*/
-      TerritorySelectWDT_Process((ObjectClass *)this->currentTargets[4], 0, &this->vtable0); /*0x76db11*/
+      TerritorySelectWDT_Process((ObjectClass *)this->currentTargets[4], 0, &this->ptr_0); /*0x76db11*/
       v6 = *(MSAnim **)(this->currentTargets[4] + 44); /*0x76db1c*/
       if ( v6 ) /*0x76db21*/
       {
@@ -26769,7 +26769,7 @@ bool __thiscall TerritorySelectWDT(TechnoClass *this, int a2)
       v15 = &v31; /*0x76dcf0*/
     }
     DeleteAndZero::Alt(v15); /*0x76dcf4*/
-    TerritorySelectWDT_Process((ObjectClass *)this->currentTargets[4], 1, &this->vtable0); /*0x76dcff*/
+    TerritorySelectWDT_Process((ObjectClass *)this->currentTargets[4], 1, &this->ptr_0); /*0x76dcff*/
     if ( Conflict::GetOwnerHouse(*(Conflict **)(this->ambientSoundController[4] + 12)) == this->currentTargetThreatValues[4] ) /*0x76dd18*/
     {
       v19 = this->ambientSoundController[4] + 24; /*0x76dd25*/
@@ -26971,7 +26971,7 @@ void __thiscall ShowWDTTerritorySelection_Show(TechnoClass *this)
   v2 = this->currentTargets[1]; /*0x76e186*/
   if ( !*(_BYTE *)(v2 + 104) ) /*0x76e18c*/
   {
-    WDTGame::ToggleTeamMode(v2, &this->vtable0, 1); /*0x76e19c*/
+    WDTGame::ToggleTeamMode(v2, &this->ptr_0, 1); /*0x76e19c*/
     String::Assign((String *)&v5, aMousecancel); /*0x76e1aa*/
     if ( (unsigned __int8)String::NotEquals((String *)&v5, 0) ) /*0x76e1b5*/
     {
@@ -27328,7 +27328,7 @@ void __thiscall ScoreText::ShowAlt(ScoreText *this, const wchar_t **a2, int a3)
   if ( *((_DWORD *)this + 287) ) /*0x76ea24*/
   {
     Session::RemoveTeam((Session *)this, *((int (__thiscall ****)(_DWORD, int))this + 287)); /*0x76ea2f*/
-    (*(void (__thiscall **)(ObjectClass *, int, DSurface *, int, _DWORD, int))(g_DSurface_Hidden->vtable0 + 8))( /*0x76ea5a*/
+    (*(void (__thiscall **)(ObjectClass *, int, DSurface *, int, _DWORD, int))(g_DSurface_Hidden->ptr_0 + 8))( /*0x76ea5a*/
       g_DSurface_Hidden,
       *((_DWORD *)this + 279) + 124,
       DSurface_Alternate,
@@ -27381,7 +27381,7 @@ void __thiscall ScoreText::Show(ScoreText *this, const wchar_t **a2)
   if ( v5 ) /*0x76eb25*/
   {
     Session::RemoveTeam((Session *)this, v5); /*0x76eb2a*/
-    (*(void (__thiscall **)(ObjectClass *, int *, DSurface *, int *, _DWORD, int))(g_DSurface_Hidden->vtable0 + 8))( /*0x76eb4c*/
+    (*(void (__thiscall **)(ObjectClass *, int *, DSurface *, int *, _DWORD, int))(g_DSurface_Hidden->ptr_0 + 8))( /*0x76eb4c*/
       g_DSurface_Hidden,
       v9,
       DSurface_Alternate,
@@ -27543,7 +27543,7 @@ int __thiscall ConstructWDTSelection_Create_76EEB0(TechnoClass *this)
   }
   (*(void (__thiscall **)(MouseClass *))(dword_887640->MouseClass_field_0x0 + 12))(dword_887640); /*0x76eefa*/
   (*(void (__thiscall **)(DSurface *, _DWORD))(DSurface_Alternate->DSurface_field_0x0 + 24))(DSurface_Alternate, 0); /*0x76ef07*/
-  (*(void (__thiscall **)(ObjectClass *, _DWORD))(g_DSurface_Hidden->vtable0 + 24))(g_DSurface_Hidden, 0); /*0x76ef14*/
+  (*(void (__thiscall **)(ObjectClass *, _DWORD))(g_DSurface_Hidden->ptr_0 + 24))(g_DSurface_Hidden, 0); /*0x76ef14*/
   (*(void (__thiscall **)(DSurface *, ObjectClass *, _DWORD, int))(g_DSurface_Primary->DSurface_field_0x0 + 4))( /*0x76ef29*/
     g_DSurface_Primary,
     g_DSurface_Hidden,
@@ -27802,18 +27802,18 @@ _DWORD *__thiscall ConstructWDTSelection_Create_76F210(VectorClass *this, int a2
   this->Capacity = a2; /*0x76f21e*/
   this->IsInitialized = 1; /*0x76f221*/
   this->IsAllocated = 0; /*0x76f225*/
-  this->vtable0 = &VectorClass<MSSfxEntry *>::`vftable'; /*0x76f228*/
+  this->ptr_0 = &VectorClass<MSSfxEntry *>::`vftable'; /*0x76f228*/
   if ( a2 ) /*0x76f22e*/
   {
     if ( a3 ) /*0x76f236*/
     {
       this->Items = (void *)a3; /*0x76f238*/
-      return &this->vtable0; /*0x76f23e*/
+      return &this->ptr_0; /*0x76f23e*/
     }
     this->Items = (void *)__2_YAPAXI_Z(4 * a2); /*0x76f24d*/
     this->IsAllocated = 1; /*0x76f250*/
   }
-  return &this->vtable0; /*0x76f23d*/
+  return &this->ptr_0; /*0x76f23d*/
 }
 
 

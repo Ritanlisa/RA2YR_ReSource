@@ -2563,7 +2563,7 @@ int __RTtypeid(unsigned int * a1)
 }
 
 // ==== BACKFILL 0x007CAAE4  ___RTDynamicCast  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
-unsigned char * __RTDynamicCast(void ** aP0, int arg4, struct TypeDescriptor * a2, struct TypeDescriptor * a3, int a5)  // G42.33 b24: aP0 void** (deref = vtable)
+unsigned char * __RTDynamicCast(void ** aP0, int arg4, struct TypeDescriptor * a2, struct TypeDescriptor * a3, int a5)  // G42.33 b24: aP0 void** (deref = ptr_0)
 {
   unsigned char *result; // eax
   unsigned char *CompleteObject_YAPAXPAPAX_Z; // edi

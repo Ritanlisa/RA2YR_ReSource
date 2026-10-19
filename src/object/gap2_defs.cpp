@@ -138,12 +138,12 @@ namespace ra2 { namespace game {
 // 0x4101C0
 namespace ra2 { namespace game { 
 void* AbstractClass::InitVtables(int a1) {
-  /* X11: vtable install elided (implicit via class virtuals 0x4101c2) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x4101c9) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x4101d0) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x4101d6) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x4101dd) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x4101e4) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x4101c2) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x4101c9) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x4101d0) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x4101d6) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x4101dd) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x4101e4) — binary-proven install, was 0 */
   return &this->ptr_0; /*0x4101eb*/
 }
 }
@@ -217,10 +217,10 @@ namespace ra2 { namespace game {
 int AbstractClass::COMStub_8() {
   char v3; // [esp+8h] [ebp+4h]
 
-  /* X11: vtable install elided (implicit via class virtuals 0x4105a9) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x4105af) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x4105b6) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x4105bd) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x4105a9) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x4105af) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x4105b6) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x4105bd) — binary-proven install, was 0 */
   if ( (v3 & 1) != 0 ) /*0x4105c4*/
     operator delete((void *)(this)); /*0x4105c7*/
   return (int)this; /*0x4105d1*/
@@ -611,10 +611,10 @@ void* AbstractClass::Create() {
   int v2; // eax
 
   AbstractClass::Constructor(this); /*0x41d303*/
-  /* X11: vtable install elided (implicit via class virtuals 0x41d308) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x41d30e) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x41d315) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x41d31c) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x41d308) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x41d30e) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x41d315) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x41d31c) — binary-proven install, was 0 */
   if ( dword_889FC8 < dword_889FC0 /*0x41d359*/
     || (byte_889FC5 || !dword_889FC0)
     && dword_889FCC > 0
@@ -749,7 +749,7 @@ int ObjectClass::Set(void* a1) {
   this->ambientSoundController[3] = 0; /*0x431a81*/
   this->ambientSoundController[4] = 0; /*0x431a84*/
   this->customSound_controller[0] = 0; /*0x431a87*/
-  /* X11: vtable install elided (implicit via class virtuals 0x431a8a) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x431a8a) — binary-proven install, was 0 */
   if ( ObjectClass::GetMember06((RawFileClass *)this) && (this->u32_29) ) /*0x431a9a*/
   {
     if ( !strcmp(a1, (const char *)this->COMStub_AddRef()) ) /*0x431ab7*/
@@ -899,10 +899,10 @@ int AbstractClass::Construct(unsigned int *a2) {
         v7[1].ptr_4 = 0; /*0x43a84a*/
         v7[1].ptr_8 = 0; /*0x43a84d*/
         v7[1].ptr_C = *(void **)&((unsigned int *)&stru_A8EB00)[416]; /*0x43a856*/
-        /* X11: vtable install elided (implicit via class virtuals 0x43a859) — binary-proven install, was 0 */
-        /* X11: vtable install elided (implicit via class virtuals 0x43a85f) — binary-proven install, was 0 */
-        /* X11: vtable install elided (implicit via class virtuals 0x43a866) — binary-proven install, was 0 */
-        /* X11: vtable install elided (implicit via class virtuals 0x43a86d) — binary-proven install, was 0 */
+        /* X11: ptr_0 install elided (implicit via class virtuals 0x43a859) — binary-proven install, was 0 */
+        /* X11: ptr_0 install elided (implicit via class virtuals 0x43a85f) — binary-proven install, was 0 */
+        /* X11: ptr_0 install elided (implicit via class virtuals 0x43a866) — binary-proven install, was 0 */
+        /* X11: ptr_0 install elided (implicit via class virtuals 0x43a86d) — binary-proven install, was 0 */
         if ( g_BuildingLoadQueue_Array.PaletteFile[1] < g_BuildingLoadQueue_Array.ZFudgeBridge /*0x43a8a5*/
           || ((((unsigned char *)&(g_BuildingLoadQueue_Array.PaletteFile[0]))[1]) || !g_BuildingLoadQueue_Array.ZFudgeBridge)
           && g_BuildingLoadQueue_Array.PaletteFile[2] > 0
@@ -1989,16 +1989,16 @@ int AbstractClass::LoadTypeFile() {
         this->u32_A4 = v4; /*0x45f0e6*/
         if ( v4 ) /*0x45f0ec*/
           this->u32_A8 = 1; /*0x45f0ee*/
-        /* X11: vtable install elided (implicit via class virtuals 0x45f0fc) — binary-proven install, was 0 */
+        /* X11: ptr_0 install elided (implicit via class virtuals 0x45f0fc) — binary-proven install, was 0 */
         v10 = 0; /*0x45f104*/
         Vector::Clear((int)v9); /*0x45f10f*/
-        /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x45f118) */
+        /* X11: ptr_0 install elided (implicit via off_7E1668 virtuals 0x45f118) */
         BufferIOFileClass::Dtor((BufferIOFileClass *)&v8); /*0x45f120*/
       }
-      /* X11: vtable install elided (implicit via class virtuals 0x45f129) — binary-proven install, was 0 */
+      /* X11: ptr_0 install elided (implicit via class virtuals 0x45f129) — binary-proven install, was 0 */
       v7 = 0; /*0x45f131*/
       Vector::Clear((int)v6); /*0x45f139*/
-      /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x45f142) */
+      /* X11: ptr_0 install elided (implicit via off_7E1668 virtuals 0x45f142) */
       BufferIOFileClass::Dtor((BufferIOFileClass *)&v5); /*0x45f14a*/
     }
     return this->u32_A4; /*0x45f14f*/
@@ -2038,10 +2038,10 @@ int AbstractClass::LoadTheaterSHP() {
         ObjectTypeClass::SetRTTI71((ObjectTypeClass *)Buffer); /*0x4659f3*/
         CCFileClass::Construct(&v8, Buffer); /*0x465a04*/
         v3 = (int16_t *)CCFileClass::ReadEntireFile(&v8); /*0x465a16*/
-        /* X11: vtable install elided (implicit via class virtuals 0x465a18) — binary-proven install, was 0 */
+        /* X11: ptr_0 install elided (implicit via class virtuals 0x465a18) — binary-proven install, was 0 */
         v10 = 0; /*0x465a20*/
         Vector::Clear((int)v9); /*0x465a28*/
-        /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x465a31) */
+        /* X11: ptr_0 install elided (implicit via off_7E1668 virtuals 0x465a31) */
         BufferIOFileClass::Dtor((BufferIOFileClass *)&v8); /*0x465a39*/
       }
       this->u32_E00 = v3; /*0x465a40*/
@@ -2065,10 +2065,10 @@ int AbstractClass::LoadTheaterSHP() {
         this->u32_F08 = v5; /*0x465aa2*/
         this->u32_F0C = v4; /*0x465aa8*/
       }
-      /* X11: vtable install elided (implicit via class virtuals 0x465ab5) — binary-proven install, was 0 */
+      /* X11: ptr_0 install elided (implicit via class virtuals 0x465ab5) — binary-proven install, was 0 */
       v13 = 0; /*0x465abd*/
       Vector::Clear((int)v12); /*0x465ac8*/
-      /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x465ad1) */
+      /* X11: ptr_0 install elided (implicit via off_7E1668 virtuals 0x465ad1) */
       BufferIOFileClass::Dtor((BufferIOFileClass *)&v11); /*0x465ad9*/
     }
     return this->u32_E00; /*0x465ade*/
@@ -2567,9 +2567,9 @@ void* ObjectClass::Construct() {
   this->health = 0; /*0x4d0903*/
   this->isOnMap = 1; /*0x4d0906*/
   this->ptr_0 = 0; /*0x4d0909*/
-  /* X11: vtable install elided (implicit via class virtuals 0x4d090f) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x4d0916) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x4d091d) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x4d090f) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x4d0916) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x4d091d) — binary-proven install, was 0 */
   if ( g_FootClassConfig < dword_8B3D18 /*0x4d0956*/
     || (byte_8B3D1D || !dword_8B3D18)
     && dword_8B3D24 > 0
@@ -2719,10 +2719,10 @@ void* FootClass::Construct(int a1) {
   this->frozenStill = 1; /*0x4d344a*/
   this->FootClass_field_bool_6B7 = 0; /*0x4d3451*/
   this->FootClass_field_bool_6B8 = 0; /*0x4d3457*/
-  /* X11: vtable install elided (implicit via class virtuals 0x4d345d) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x4d3463) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x4d346a) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x4d3471) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x4d345d) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x4d3463) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x4d346a) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x4d3471) — binary-proven install, was 0 */
   this->pathDirections[0] = -1; /*0x4d3478*/
   AudioController::Init((AudioController *)this->audioController7); /*0x4d3482*/
   if ( FootClass_Array.uniqueId < (int)FootClass_Array.ptr_8 /*0x4d34bb*/
@@ -3520,10 +3520,10 @@ void* AbstractClass::CreateInstance(int a1) {
   int v4; // eax
   AbstractClass *v6; // [esp+Ch] [ebp-4h] BYREF
 
-  /* X11: vtable install elided (implicit via class virtuals 0x543b16) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x543b1c) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x543b23) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x543b2a) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x543b16) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x543b1c) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x543b23) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x543b2a) — binary-proven install, was 0 */
   AbstractClass::AnnounceExpiredPointer(&this->ptr_0, 1); /*0x543b31*/
   if ( byte_A8E9A0 && !this->q081 ) /*0x543b3f*/
   {
@@ -3642,10 +3642,10 @@ int RadioClass::Constructor() {
   dword_A8ED84 = dword_A8ED84; /*0x5b2dd7*/
   this->attachedTag = 0; /*0x5b2ddd*/
   this->missionTimer = dword_A8ED84; /*0x5b2de3*/
-  /* X11: vtable install elided (implicit via class virtuals 0x5b2de9) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x5b2def) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x5b2df6) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x5b2dfd) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x5b2de9) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x5b2def) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x5b2df6) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x5b2dfd) — binary-proven install, was 0 */
   return this; /*0x5b2e06*/
 }
 }
@@ -4028,7 +4028,7 @@ void* AbstractClass::getWeaponSpeed(int a1) {
   void *v8; // edx
   unsigned int *ptr_8; // ecx
 
-  /* X11: vtable install elided (implicit via class virtuals 0x5b46e6) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x5b46e6) — binary-proven install, was 0 */
   while ( 1 ) /*0x5b46ec*/
   {
     ptr_4 = this->ptr_8; /*0x5b46ec*/
@@ -4064,7 +4064,7 @@ void* AbstractClass::getWeaponSpeed(int a1) {
       }
     }
   }
-  /* X11: vtable install elided (implicit via class virtuals 0x5b4754) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x5b4754) — binary-proven install, was 0 */
   if ( this != (AbstractClass *)-4 ) /*0x5b475a*/
   {
     v8 = this->ptr_8; /*0x5b475c*/
@@ -4334,7 +4334,7 @@ void* AbstractClass::updateAnimationState(int aP1, int aP2) {
   this->ptr_8 = (void *)aP1; /*0x5c5a3e*/
   (this->ptr_C) = 1; /*0x5c5a41*/
   (this->u32_D) = 0; /*0x5c5a45*/
-  /* X11: vtable install elided (implicit via class virtuals 0x5c5a48) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x5c5a48) — binary-proven install, was 0 */
   if ( aP1 ) /*0x5c5a4e*/
   {
     if ( aP2 ) /*0x5c5a56*/
@@ -5542,10 +5542,10 @@ void AbstractClass::ProcessData() {
   AbstractClass *v5; // [esp+8h] [ebp-4h] BYREF
 
   v2 = this->u32_44; /*0x6293e7*/
-  /* X11: vtable install elided (implicit via class virtuals 0x6293ea) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x6293f2) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x6293f9) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x629400) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x6293ea) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x6293f2) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x6293f9) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x629400) — binary-proven install, was 0 */
   this->IsAllocated = 0; /*0x629407*/
   this->abstractFlags = 0; /*0x62940a*/
   this->u32_48 = 0; /*0x62940d*/
@@ -5631,10 +5631,10 @@ int ObjectClass::ProcessUpdate() {
   this->Translucency = 0; /*0x62bc38*/
   this->u32_130 = 0; /*0x62bc3e*/
   this->u32_131 = 0; /*0x62bc44*/
-  /* X11: vtable install elided (implicit via class virtuals 0x62bc4a) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x62bc50) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x62bc57) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x62bc5e) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x62bc4a) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x62bc50) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x62bc57) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x62bc5e) — binary-proven install, was 0 */
   if ( *(int *)&DataGlobal_A83DD8 < *(int *)DataGlobal_A83DD0 /*0x62bc99*/
     || (DataGlobal_A83DD5 || !*(unsigned int *)DataGlobal_A83DD0)
     && *(int *)&DataGlobal_A83DDC > 0
@@ -5841,10 +5841,10 @@ namespace ra2 { namespace game {
 void* RadioClass::ProcessEvent(int a1) {
   void *v3; // eax
 
-  /* X11: vtable install elided (implicit via class virtuals 0x65aeb3) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x65aeb9) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x65aec0) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x65aec7) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x65aeb3) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x65aeb9) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x65aec0) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x65aec7) — binary-proven install, was 0 */
   v3 = (void *)this->radioLinks[1]; /*0x65aece*/
   this->radioLinks[0] = (int)0; /*0x65aed4*/
   if ( v3 && (this->q0ED) ) /*0x65aee2*/
@@ -5854,10 +5854,10 @@ void* RadioClass::ProcessEvent(int a1) {
   }
   (this->q0ED) = 0; /*0x65aeff*/
   this->radioLinks[2] = 0; /*0x65af06*/
-  /* X11: vtable install elided (implicit via class virtuals 0x65af12) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x65af18) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x65af1f) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x65af26) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x65af12) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x65af18) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x65af1f) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x65af26) — binary-proven install, was 0 */
   ObjectClass::Dtor((ObjectClass *)this); /*0x65af2d*/
   if ( (a1 & 1) != 0 ) /*0x65af37*/
     operator delete((void *)(this)); /*0x65af3a*/
@@ -5929,7 +5929,7 @@ void* AbstractClass::checkAICondition(int a1) {
   void *ptr_0; // ecx
 
   ptr_0 = this->ptr_4; /*0x65d4d3*/
-  /* X11: vtable install elided (implicit via class virtuals 0x65d4d6) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x65d4d6) — binary-proven install, was 0 */
   if ( ptr_0 ) /*0x65d4de*/
   {
     this->ptr_4 = 0; /*0x65d4e0*/
@@ -6433,10 +6433,10 @@ int MissionClass::Construct(int a1, int a2, int a3) {
   this->unknown82 = 0; /*0x6e8b20*/
   this->isSuspended = 0; /*0x6e8b26*/
   this->achievedGreatSuccess = 0; /*0x6e8b2c*/
-  /* X11: vtable install elided (implicit via class virtuals 0x6e8b32) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x6e8b38) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x6e8b3f) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x6e8b46) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x6e8b32) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x6e8b38) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x6e8b3f) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x6e8b46) — binary-proven install, was 0 */
   if ( dword_8B40F8 < dword_8B40F0 /*0x6e8b7e*/
     || (byte_8B40F5 || !dword_8B40F0)
     && dword_8B40FC > 0
@@ -6694,10 +6694,10 @@ void* TechnoClass::Constructor(int a1) {
   this->attackedTargets[0] = (int)0; /*0x6f4407*/
   this->attackedTargets[5] = 10; /*0x6f440d*/
   this->attackedTargets[4] = 0; /*0x6f4410*/
-  /* X11: vtable install elided (implicit via class virtuals 0x6f4413) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x6f4419) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x6f4420) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via off_7F4934 virtuals 0x6f4427) */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x6f4413) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x6f4419) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x6f4420) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via off_7F4934 virtuals 0x6f4427) */
   v4 = 0; /*0x6f4433*/
   v8 = 0; /*0x6f4437*/
   if ( *(int *)&((unsigned int *)&stru_A8EB00)[164] > 0 ) /*0x6f443b*/
@@ -8860,10 +8860,10 @@ int ObjectClass::ProcessFoggedState() {
   this->u32_D4 = 0; /*0x71be48*/
   this->occupant = 0; /*0x71be4e*/
   this->u32_DC = 0; /*0x71be54*/
-  /* X11: vtable install elided (implicit via class virtuals 0x71be5a) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via off_7F5200 virtuals 0x71be60) */
-  /* X11: vtable install elided (implicit via class virtuals 0x71be66) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x71be6d) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x71be5a) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via off_7F5200 virtuals 0x71be60) */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x71be66) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x71be6d) — binary-proven install, was 0 */
   if ( dword_A8E998 < dword_A8E990 /*0x71bea8*/
     || (byte_A8E995 || !dword_A8E990)
     && dword_A8E99C > 0
@@ -9649,10 +9649,10 @@ int ObjectClass::Initialize() {
   this->currentTurretNumber_d = 0; /*0x749945*/
   this->currentWeaponSlot_d = 0; /*0x74994b*/
   this->currentRank = 0; /*0x749951*/
-  /* X11: vtable install elided (implicit via class virtuals 0x749957) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x74995d) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x749963) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x74996a) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x749957) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x74995d) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x749963) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x74996a) — binary-proven install, was 0 */
   AbstractClass::GenerateUniqueID(&this->ptr_4); /*0x749971*/
   AudioController::Init((AudioController *)this->u32_11B)); /*0x74997c*/
   AudioController::Init((AudioController *)this->nextArrayIndex)); /*0x749987*/
@@ -9888,10 +9888,10 @@ int AbstractClass::ProcessInit() {
   void *v6; // eax
   AbstractClass *v8; // [esp+8h] [ebp-4h] BYREF
 
-  /* X11: vtable install elided (implicit via class virtuals 0x75d237) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x75d23d) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x75d244) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x75d24b) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x75d237) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x75d23d) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x75d244) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x75d24b) — binary-proven install, was 0 */
   AbstractClass::AnnounceExpiredPointer(this, 1); /*0x75d252*/
   v8 = this; /*0x75d267*/
   v2 = ((int (__thiscall *)(WarheadTypeClass **, AbstractClass **))g_WarheadTypePool)( /*0x75d26b*/

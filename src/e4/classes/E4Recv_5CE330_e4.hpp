@@ -10,6 +10,6 @@ struct E4Recv_5CE330 {
     unsigned int M52;  // 0x34
 // --- flat members (END) ---
     int sub_5CE330(const wchar_t ** a2);  // 0x5CE330
-    void* attachedTag;  // (W16G3 @0x5ce364; ->AbstractClass reads rewritten to vtable deref)
+    void* attachedTag;  // (W16G3 @0x5ce364; ->AbstractClass reads rewritten to ptr_0 deref)
 };
 } // namespace gamemd

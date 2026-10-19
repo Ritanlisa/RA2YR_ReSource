@@ -253,10 +253,10 @@ char IDTechnoClassMatches(void * a1, int a2)
   if ( v3 <= 0 ) /*0x732c3f*/
     return 0; /*0x732c8a*/
   while ( !(uint8_t)((ObjectClass *)(a1))->StepCleanup(*(void **)(*(unsigned int *)(a2 + 4) + 4 * v4)) /*0x732c83*/
-       || !(*((uint8_t (**)(ObjectClass *))a1->vtable1 + 79))(a1)
+       || !(*((uint8_t (**)(ObjectClass *))a1->ptr_4 + 79))(a1)
        && (!a1
-        || (*((int (**)(ObjectClass *))a1->vtable1 + 11))(a1) != 6
-        || !*(unsigned int *)((*((int (**)(ObjectClass *))a1->vtable1 + 33))(a1) + 1032)) )
+        || (*((int (**)(ObjectClass *))a1->ptr_4 + 11))(a1) != 6
+        || !*(unsigned int *)((*((int (**)(ObjectClass *))a1->ptr_4 + 33))(a1) + 1032)) )
   {
     if ( ++v4 >= v3 ) /*0x732c88*/
       return 0; /*0x732c88*/

@@ -253,10 +253,10 @@ void * AirstrikeClass::CopyTo(char a2, int aP1, int aP0, int a1, int aP2)
 {
 
 
-  /* X11: vtable install elided (base-interface slot, RHS g_ptr_7E297C) */  /*0x41dd5d*/
-  /* X11: vtable install elided (qmark slot, RHS g_ptr_7E297C) */  /*0x41dd63*/
-  /* X11: vtable install elided (qmark slot, RHS g_ptr_7E297C) */  /*0x41dd6a*/
-  /* X11: vtable install elided (qmark slot, RHS g_ptr_7E297C) */  /*0x41dd71*/
+  /* X11: ptr_0 install elided (base-interface slot, RHS g_ptr_7E297C) */  /*0x41dd5d*/
+  /* X11: ptr_0 install elided (qmark slot, RHS g_ptr_7E297C) */  /*0x41dd63*/
+  /* X11: ptr_0 install elided (qmark slot, RHS g_ptr_7E297C) */  /*0x41dd6a*/
+  /* X11: ptr_0 install elided (qmark slot, RHS g_ptr_7E297C) */  /*0x41dd71*/
   AirstrikeClass *v5; // [esp+4h] [ebp-4h] BYREF
   v5 = (gamemd::AirstrikeClass *)(aP1); /*0x41dd7f*/
   int v3; // eax
@@ -360,10 +360,10 @@ AirstrikeClass::AirstrikeClass(int a2)
   int v14; // eax
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x41d384*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_var_bffa65) */  /*0x41d389*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_var_bffa65) */  /*0x41d38f*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_var_bffa65) */  /*0x41d396*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_var_bffa65) */  /*0x41d39d*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_bffa65) */  /*0x41d389*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_bffa65) */  /*0x41d38f*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_bffa65) */  /*0x41d396*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_bffa65) */  /*0x41d39d*/
   if ( dword_889FC8 < dword_889FC0 /*0x41d3d9*/
     || (byte_889FC5 || !dword_889FC0)
     && dword_889FCC > 0
@@ -422,10 +422,10 @@ int AirstrikeClass::Write(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x41d709*/
     {
       AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x41d712*/
-      /* X11: vtable install elided (implicit via AirstrikeClass virtuals 0x41d717) */
-      /* X11: vtable install elided (implicit via AirstrikeClass virtuals 0x41d71d) */
-      /* X11: vtable install elided (implicit via AirstrikeClass virtuals 0x41d724) */
-      /* X11: vtable install elided (implicit via AirstrikeClass virtuals 0x41d72b) */
+      /* X11: ptr_0 install elided (implicit via AirstrikeClass virtuals 0x41d717) */
+      /* X11: ptr_0 install elided (implicit via AirstrikeClass virtuals 0x41d71d) */
+      /* X11: ptr_0 install elided (implicit via AirstrikeClass virtuals 0x41d724) */
+      /* X11: ptr_0 install elided (implicit via AirstrikeClass virtuals 0x41d72b) */
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->owner); /*0x41d73b*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->AirstrikeClass_field_50); /*0x41d749*/

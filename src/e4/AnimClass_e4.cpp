@@ -50,9 +50,9 @@ int AnimClass::Destruct(AnimClass * a2, void *a2_2)
 {
 
 
-  /* X11: vtable install elided (implicit via AnimClass virtuals 0x4228eb) */
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E3330) */  /*0x4228f1*/
-  /* X11: vtable install elided (implicit via AnimClass virtuals 0x4228f8) */
+  /* X11: ptr_0 install elided (implicit via AnimClass virtuals 0x4228eb) */
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E3330) */  /*0x4228f1*/
+  /* X11: ptr_0 install elided (implicit via AnimClass virtuals 0x4228f8) */
   a2->q00C = (unsigned int)&off_7E3328; /*0x4228ff*/
   AbstractClass::AnnounceExpiredPointer(&a2->AnimClass_field_0x0, 1); /*0x422906*/
   if ( byte_A8E9A0 ) /*0x422914*/

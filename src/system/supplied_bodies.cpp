@@ -111,11 +111,11 @@ unsigned int * INIClass::sectionExists() {
   sectionHead = this->sectionHead; /*0x52af59*/
   this->headNode[1] = 0; /*0x52af5f*/
   this->headNode[2] = 0; /*0x52af62*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E1B0C) */  /*0x52af65*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E1B0C) */  /*0x52af65*/
   this->sectionHead[1] = 0; /*0x52af6b*/
   this->sectionHead[2] = 0; /*0x52af6e*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E1B0C) */  /*0x52af71*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E1B04) */  /*0x52af77*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E1B0C) */  /*0x52af71*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E1B04) */  /*0x52af77*/
   if ( this != (INIClass *)-16 ) /*0x52af7d*/
   {
     v3 = this->sectionHead[1]; /*0x52af7f*/
@@ -138,7 +138,7 @@ unsigned int * INIClass::sectionExists() {
   if ( v6 ) /*0x52afad*/
     v6[2] = (unsigned int)sectionHead; /*0x52afaf*/
   this->headNode[1] = (int)sectionHead; /*0x52afb2*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EB744) */  /*0x52afb7*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EB744) */  /*0x52afb7*/
   return result; /*0x52afb5*/
 
 }
@@ -228,7 +228,7 @@ unsigned int * BufferIOFileClass::QueryInterface(char a2) {
   void *FileBaseOffset; // eax
 
   FileBaseOffset = (void *)this->FileBaseOffset; /*0x432616*/
-  /* X11: vtable install elided (implicit via class virtuals 0x432619) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x432619) — binary-proven install, was 0 */
   if ( FileBaseOffset ) /*0x432621*/
   {
     if ( (this->BufferOffset) ) /*0x432623*/
@@ -259,7 +259,7 @@ namespace gamemd {
   void **FilePointer; // esi
 
   FileSize = (void *)this->FileSize; /*0x434a43*/
-  /* X11: vtable install elided (implicit via class virtuals 0x434a46) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x434a46) — binary-proven install, was 0 */
   if ( FileSize ) /*0x434a4e*/
     free(FileSize); /*0x434a51*/
   FilePointer = (void **)this->FilePointer; /*0x434a5a*/
@@ -290,7 +290,7 @@ unsigned int * INIClass::parseSection(unsigned int *a2) {
   this->headNode[1] = 0; /*0x477f50*/
   (this->sectionCount) = 1; /*0x477f53*/
   (this->u8_1D) = 0; /*0x477f57*/
-  /* X11: vtable install elided (implicit via class virtuals 0x477f5a) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x477f5a) — binary-proven install, was 0 */
   if ( this == (INIClass *)a2 ) /*0x477f60*/
     return this->ptr_0; /*0x477f60*/
   TypeList_TechnoType::ddtor((_VectorClass_PAVTechnoTypeClass *)this); /*0x477f62*/
@@ -412,11 +412,11 @@ unsigned int * GenericList::Constructor() {
   v2 = &this->u32_10; /*0x52ace9*/
   this->u32_8 = 0; /*0x52acef*/
   this->u32_C = 0; /*0x52acf2*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E1B0C) */  /*0x52acf5*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E1B0C) */  /*0x52acf5*/
   this->u32_14 = 0; /*0x52acfb*/
   this->u32_18 = 0; /*0x52acfe*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E1B0C) */  /*0x52ad01*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E1B04) */  /*0x52ad07*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E1B0C) */  /*0x52ad01*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E1B04) */  /*0x52ad07*/
   if ( this != (GenericList *)-16 ) /*0x52ad0d*/
   {
     v3 = this->u32_14; /*0x52ad0f*/
@@ -456,7 +456,7 @@ unsigned int * INIClass::findSection(int a2, int a3, int a4, int a5, int a6, int
   *(unsigned int *)this->__pad_020 = a8; /*0x52af2e*/
   this->sectionCount = a7; /*0x52af31*/
   *&this->unknown30 = a6; /*0x52af38*/
-  /* X11: vtable install elided (implicit via class virtuals 0x52af3b) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x52af3b) — binary-proven install, was 0 */
   return this->ptr_0; /*0x52af41*/
 }
 } // namespace gamemd
@@ -707,7 +707,7 @@ unsigned int * INIClass::parseKeyValue(unsigned int *a2) {
     this->headNode[1] = 0; /*0x478231*/
     (this->sectionCount) = 1; /*0x478234*/
     (this->u8_1D) = 0; /*0x478238*/
-    /* X11: vtable install elided (implicit via VectorClass_RGBClass virtuals 0x47823b) */
+    /* X11: ptr_0 install elided (implicit via VectorClass_RGBClass virtuals 0x47823b) */
     if ( this == (INIClass *)a2 ) /*0x478241*/
       return this->ptr_0; /*0x478241*/
     FilePipe_38::ddtor((int)this); /*0x478247*/
@@ -769,7 +769,7 @@ namespace gamemd {
 unsigned int * BufferIOFileClass::Constructor_BitText(char a2) {
     Text *v3; // esi
 
-    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E3A80) */  /*0x435564*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E3A80) */  /*0x435564*/
     v3 = g_FogOfWarState; /*0x43556a*/
     if ( g_FogOfWarState ) /*0x435572*/
       (*(void (__thiscall **)(Text *, int))g_FogOfWarState->Text_field_00)(g_FogOfWarState, 1); /*0x43557a*/

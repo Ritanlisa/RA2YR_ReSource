@@ -26,7 +26,7 @@ unsigned int * MultiplayerGameMode::ConstructMultiplayerGameModeVectorClass(int 
   a3_2->MultiplayerGameMode_field_0x08 = a3_2; /*0x5d89fe*/
   (*((unsigned char *)&(a3_2->MultiplayerGameMode_field_0x0C))) = 1; /*0x5d8a01*/
   (((unsigned char *)&(a3_2->MultiplayerGameMode_field_0x0C))[1]) = 0; /*0x5d8a05*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x5d8a08*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x5d8a08*/
   if ( a3_2 ) /*0x5d8a0e*/
   {
     if ( a3_2 ) /*0x5d8a16*/
@@ -64,7 +64,7 @@ MultiplayerGameMode * MultiplayerGameMode::QueryInterface(char * Block, char a2)
   ((DeleteAndZero *)Block + 3)->Alt(); /*0x5d7f76*/
   ((DeleteAndZero *)((char *)Block + 32))->Alt(); /*0x5d7f7e*/
   MultiplayerGameMode_field_0x0C = (void *)Block->u32_C; /*0x5d7f83*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x5d7f86*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x5d7f86*/
   if ( MultiplayerGameMode_field_0x0C && (Block->u8_15) ) /*0x5d7f90*/
   {
     operator delete((MultiplayerGameMode_field_0x0C)); /*0x5d7f98*/

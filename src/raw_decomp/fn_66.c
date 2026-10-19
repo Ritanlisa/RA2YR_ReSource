@@ -153,8 +153,8 @@ LABEL_12:
   if ( v37 || (LOBYTE(v13) = v38) != 0 ) /*0x66016c*/
   {
     Render_Render_660730(this, &v47); /*0x660179*/
-    v14 = this->vtable2; /*0x66017e*/
-    v15 = this->vtable3; /*0x660181*/
+    v14 = this->ptr_8; /*0x66017e*/
+    v15 = this->ptr_C; /*0x660181*/
     v16 = &v47; /*0x660184*/
     v17 = 4; /*0x660188*/
     do /*0x6601a0*/
@@ -173,7 +173,7 @@ LABEL_12:
       v41[0] = v19; /*0x6601d1*/
     v20 = 0; /*0x6601da*/
     v21 = &v47; /*0x6601dc*/
-    v43 = (this->vtable4 + this->vtable4) * 0.7071067811865475 / (double)v41[0] * this->referenceCount; /*0x6601ed*/
+    v43 = (this->ptr_10 + this->ptr_10) * 0.7071067811865475 / (double)v41[0] * this->referenceCount; /*0x6601ed*/
     do /*0x660242*/
     {
       v22 = v20 + 1; /*0x6601fb*/
@@ -304,8 +304,8 @@ bool sub_660530()
 // ==== 0x00660540  ObjectClass::Map_Helper  this=ObjectClass  sig=csp ====
 int __thiscall Map_Helper_660540(ObjectClass *this)
 {
-  void *vtable1; // edx
-  char *vtable2; // esi
+  void *ptr_4; // edx
+  char *ptr_8; // esi
   int *v4; // eax
   int v5; // ecx
   char *v6; // ebp
@@ -345,14 +345,14 @@ int __thiscall Map_Helper_660540(ObjectClass *this)
   int v40[7]; // [esp+64h] [ebp-1Ch] BYREF
 
   Render_Render_660730((float *)this, &v39); /*0x66054e*/
-  vtable1 = this->?; /*0x660553*/
-  vtable2 = (char *)this->?; /*0x660556*/
+  ptr_4 = this->?; /*0x660553*/
+  ptr_8 = (char *)this->?; /*0x660556*/
   v4 = &v39; /*0x660559*/
   v5 = 4; /*0x66055d*/
   do /*0x660574*/
   {
-    v6 = &vtable2[v4[1]]; /*0x660569*/
-    *v4 += (int)vtable1; /*0x66056b*/
+    v6 = &ptr_8[v4[1]]; /*0x660569*/
+    *v4 += (int)ptr_4; /*0x66056b*/
     v4[1] = (int)v6; /*0x66056d*/
     v4 += 2; /*0x660570*/
     --v5; /*0x660573*/
@@ -472,8 +472,8 @@ int __thiscall sub_660730(float *this, _DWORD *a2)
   float v11[12]; // [esp+1Ch] [ebp-30h] BYREF
 
   Matrix3x4::Identity(v11); /*0x66073a*/
-  Matrix2D::Rotate(v11, this->vtable2); /*0x660747*/
-  v7 = this->vtable4; /*0x66075c*/
+  Matrix2D::Rotate(v11, this->ptr_8); /*0x660747*/
+  v7 = this->ptr_10; /*0x66075c*/
   v8 = 0.0; /*0x660760*/
   v9 = 0; /*0x660768*/
   v3 = TransformMatrix3x4Point(v10, v11, &v7); /*0x660770*/
@@ -1430,7 +1430,7 @@ _DWORD *__thiscall sub_6616B0(Straw *this)
 // ==== 0x00661770  ObjectClass::SHA1TickRNG  this=ObjectClass  sig=csp ====
 void *__thiscall SHA1TickRNG(ObjectClass *this, char a2)
 {
-  int vtable3; // ecx
+  int ptr_C; // ecx
   _BYTE *v4; // eax
   void *result; // eax
   int *p_abstractFlags; // ebx
@@ -1447,11 +1447,11 @@ void *__thiscall SHA1TickRNG(ObjectClass *this, char a2)
   int v17; // [esp+44h] [ebp-48h]
   int v18; // [esp+48h] [ebp-44h]
 
-  vtable3 = (int)this->?; /*0x661779*/
+  ptr_C = (int)this->?; /*0x661779*/
   if ( (a2 & 1) != 0 ) /*0x66179a*/
   {
-    v4 = (char *)&this->? + (unsigned __int8)(vtable3 / 8); /*0x661796*/
-    *v4 ^= 1 << (vtable3 & 7); /*0x6617a3*/
+    v4 = (char *)&this->? + (unsigned __int8)(ptr_C / 8); /*0x661796*/
+    *v4 ^= 1 << (ptr_C & 7); /*0x6617a3*/
   }
   result = (char *)this->? + 1; /*0x6617a9*/
   this->? = result; /*0x6617ab*/
@@ -2095,7 +2095,7 @@ char __stdcall UpdateBullets(RocketLocomotionClass *this)
 {
   double v1; // st7
   FootClass *Owner; // ecx
-  void *vtable1; // edx
+  void *ptr_4; // edx
   int v5; // eax
   TechnoClass *spawnOwner; // eax
   bool v8; // al
@@ -2147,7 +2147,7 @@ char __stdcall UpdateBullets(RocketLocomotionClass *this)
 int __thiscall TechnoClass::CalculateDamage(TechnoClass *this)
 {
   double v1; // st7
-  _DWORD *vtable3; // edx
+  _DWORD *ptr_C; // edx
   int v4; // ecx
   int v5; // ecx
   int *v6; // edx
@@ -2182,8 +2182,8 @@ int __thiscall TechnoClass::CalculateDamage(TechnoClass *this)
 
   _ESI = this; /*0x66303b*/
   GadgetGrid::RemoveItem((GadgetGrid *)&g_CellClassManager, (int)this->?); /*0x663047*/
-  vtable3 = _ESI->?; /*0x66304c*/
-  v4 = vtable3[433]; /*0x663054*/
+  ptr_C = _ESI->?; /*0x66304c*/
+  v4 = ptr_C[433]; /*0x663054*/
   if ( v4 == *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 1248) ) /*0x663062*/
   {
     v20 = (_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 1200); /*0x66306a*/
@@ -2216,7 +2216,7 @@ int __thiscall TechnoClass::CalculateDamage(TechnoClass *this)
   }
   v19 = v5; /*0x6630d9*/
 LABEL_13:
-  v6 = vtable3 + 39; /*0x6630dd*/
+  v6 = ptr_C + 39; /*0x6630dd*/
   v21 = v20[10]; /*0x6630ef*/
   v35 = *v6; /*0x6630f3*/
   __asm { fild dword ptr [esp+68h+var_48] } /*0x6630f7*/
@@ -2299,21 +2299,21 @@ LABEL_13:
 int __stdcall JumpjetLocomotionClass::ComputeFloatExpression_3(RocketLocomotionClass *this, int a2, int a3, int a4)
 {
   int result; // eax
-  void *vtable1; // edx
+  void *ptr_4; // edx
   int v6; // edx
   bool v7; // zf
   int v8; // esi
   int v9; // [esp+Ch] [ebp-Ch]
 
   result = (int)this; /*0x6632e0*/
-  vtable1 = this->?[1].?; /*0x6632ec*/
-  if ( vtable1 == *(void **)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 1248) ) /*0x6632fe*/
+  ptr_4 = this->?[1].?; /*0x6632ec*/
+  if ( ptr_4 == *(void **)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 1248) ) /*0x6632fe*/
   {
     v6 = *(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 1200; /*0x663300*/
   }
   else
   {
-    v7 = vtable1 == *(void **)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 1352); /*0x66330e*/
+    v7 = ptr_4 == *(void **)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 1352); /*0x66330e*/
     v6 = *(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 1304; /*0x663310*/
     if ( !v7 ) /*0x663316*/
       v6 = *(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 1252; /*0x663318*/
@@ -2405,7 +2405,7 @@ float *__stdcall JumpjetLocomotionClass::ComputePitchYaw(JumpjetLocomotionClass 
 {
   JumpjetLocomotionClass *v3; // esi
   int *v4; // edi
-  void *vtable1; // ecx
+  void *ptr_4; // ecx
   int v6; // eax
   int v7; // eax
   int v8; // eax
@@ -2433,12 +2433,12 @@ LABEL_13:
   }
   v11 = -*(float *)v3->__pad_50; /*0x6634e0*/
   Matrix3D::RotateZ(v13.m_Data, v11); /*0x6634e3*/
-  vtable1 = v3->?[1].?; /*0x6634f0*/
-  if ( vtable1 == *(void **)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 1248) ) /*0x6634fe*/
+  ptr_4 = v3->?[1].?; /*0x6634f0*/
+  if ( ptr_4 == *(void **)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 1248) ) /*0x6634fe*/
   {
     v6 = *(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 1200; /*0x663500*/
   }
-  else if ( vtable1 == *(void **)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 1352) ) /*0x66350d*/
+  else if ( ptr_4 == *(void **)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 1352) ) /*0x66350d*/
   {
     v6 = *(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 1304; /*0x66350f*/
   }
@@ -2759,7 +2759,7 @@ void __thiscall sub_663960(DynamicVectorClass *this)
     }
   }
   Items = (void *)this->Items; /*0x6639a3*/
-  this->vtable0 = (int)&VectorClass<OwnerTalkClass::ConnectionListStruct *>::`vftable'; /*0x6639a6*/
+  this->ptr_0 = (int)&VectorClass<OwnerTalkClass::ConnectionListStruct *>::`vftable'; /*0x6639a6*/
   if ( Items && this->IsAllocated[0] ) /*0x6639b0*/
   {
     __3_YAXPAX_Z(Items); /*0x6639b6*/
@@ -2928,7 +2928,7 @@ char __thiscall sub_663CD0(ObjectClass *this, _BYTE *a2)
   char v5; // bl
   int uniqueId; // ecx
   int v7; // eax
-  _DWORD *vtable1; // esi
+  _DWORD *ptr_4; // esi
   _DWORD *i; // edx
   int v10; // [esp+8h] [ebp-8h] BYREF
 
@@ -2943,13 +2943,13 @@ char __thiscall sub_663CD0(ObjectClass *this, _BYTE *a2)
   v7 = 0; /*0x663d16*/
   if ( uniqueId > 0 ) /*0x663d1a*/
   {
-    vtable1 = this->?; /*0x663d1c*/
-    for ( i = vtable1; v10 != *(_DWORD *)(*i + 33); ++i ) /*0x663d23*/
+    ptr_4 = this->?; /*0x663d1c*/
+    for ( i = ptr_4; v10 != *(_DWORD *)(*i + 33); ++i ) /*0x663d23*/
     {
       if ( ++v7 >= uniqueId ) /*0x663d32*/
         return 0; /*0x663d3d*/
     }
-    return *(_BYTE *)(vtable1[v7] + 40); /*0x663d43*/
+    return *(_BYTE *)(ptr_4[v7] + 40); /*0x663d43*/
   }
   return v5; /*0x663cdf*/
 }
@@ -5331,8 +5331,8 @@ LABEL_12:
   if ( v37 || (LOBYTE(v13) = v38) != 0 ) /*0x66016c*/
   {
     Render_Render_660730(this, &v47); /*0x660179*/
-    v14 = this->vtable2; /*0x66017e*/
-    v15 = this->vtable3; /*0x660181*/
+    v14 = this->ptr_8; /*0x66017e*/
+    v15 = this->ptr_C; /*0x660181*/
     v16 = &v47; /*0x660184*/
     v17 = 4; /*0x660188*/
     do /*0x6601a0*/
@@ -5351,7 +5351,7 @@ LABEL_12:
       v41[0] = v19; /*0x6601d1*/
     v20 = 0; /*0x6601da*/
     v21 = &v47; /*0x6601dc*/
-    v43 = (this->vtable4 + this->vtable4) * 0.7071067811865475 / (double)v41[0] * this->referenceCount; /*0x6601ed*/
+    v43 = (this->ptr_10 + this->ptr_10) * 0.7071067811865475 / (double)v41[0] * this->referenceCount; /*0x6601ed*/
     do /*0x660242*/
     {
       v22 = v20 + 1; /*0x6601fb*/
@@ -5482,8 +5482,8 @@ bool sub_660530()
 // ==== 0x00660540  ObjectClass::Map_Helper  this=ObjectClass  sig=csp ====
 int __thiscall Map_Helper_660540(ObjectClass *this)
 {
-  void *vtable1; // edx
-  char *vtable2; // esi
+  void *ptr_4; // edx
+  char *ptr_8; // esi
   int *v4; // eax
   int v5; // ecx
   char *v6; // ebp
@@ -5523,14 +5523,14 @@ int __thiscall Map_Helper_660540(ObjectClass *this)
   int v40[7]; // [esp+64h] [ebp-1Ch] BYREF
 
   Render_Render_660730((float *)this, &v39); /*0x66054e*/
-  vtable1 = this->?; /*0x660553*/
-  vtable2 = (char *)this->?; /*0x660556*/
+  ptr_4 = this->?; /*0x660553*/
+  ptr_8 = (char *)this->?; /*0x660556*/
   v4 = &v39; /*0x660559*/
   v5 = 4; /*0x66055d*/
   do /*0x660574*/
   {
-    v6 = &vtable2[v4[1]]; /*0x660569*/
-    *v4 += (int)vtable1; /*0x66056b*/
+    v6 = &ptr_8[v4[1]]; /*0x660569*/
+    *v4 += (int)ptr_4; /*0x66056b*/
     v4[1] = (int)v6; /*0x66056d*/
     v4 += 2; /*0x660570*/
     --v5; /*0x660573*/
@@ -5650,8 +5650,8 @@ int __thiscall sub_660730(float *this, _DWORD *a2)
   float v11[12]; // [esp+1Ch] [ebp-30h] BYREF
 
   Matrix3x4::Identity(v11); /*0x66073a*/
-  Matrix2D::Rotate(v11, this->vtable2); /*0x660747*/
-  v7 = this->vtable4; /*0x66075c*/
+  Matrix2D::Rotate(v11, this->ptr_8); /*0x660747*/
+  v7 = this->ptr_10; /*0x66075c*/
   v8 = 0.0; /*0x660760*/
   v9 = 0; /*0x660768*/
   v3 = TransformMatrix3x4Point(v10, v11, &v7); /*0x660770*/
@@ -6628,7 +6628,7 @@ _DWORD *__thiscall sub_6616B0(Straw *this)
 // ==== 0x00661770  ObjectClass::SHA1TickRNG  this=ObjectClass  sig=csp ====
 void *__thiscall SHA1TickRNG(ObjectClass *this, char a2)
 {
-  int vtable3; // ecx
+  int ptr_C; // ecx
   _BYTE *v4; // eax
   void *result; // eax
   int *p_abstractFlags; // ebx
@@ -6645,11 +6645,11 @@ void *__thiscall SHA1TickRNG(ObjectClass *this, char a2)
   int v17; // [esp+44h] [ebp-48h]
   int v18; // [esp+48h] [ebp-44h]
 
-  vtable3 = (int)this->?; /*0x661779*/
+  ptr_C = (int)this->?; /*0x661779*/
   if ( (a2 & 1) != 0 ) /*0x66179a*/
   {
-    v4 = (char *)&this->? + (unsigned __int8)(vtable3 / 8); /*0x661796*/
-    *v4 ^= 1 << (vtable3 & 7); /*0x6617a3*/
+    v4 = (char *)&this->? + (unsigned __int8)(ptr_C / 8); /*0x661796*/
+    *v4 ^= 1 << (ptr_C & 7); /*0x6617a3*/
   }
   result = (char *)this->? + 1; /*0x6617a9*/
   this->? = result; /*0x6617ab*/
@@ -7293,7 +7293,7 @@ char __stdcall UpdateBullets(RocketLocomotionClass *this)
 {
   double v1; // st7
   FootClass *Owner; // ecx
-  void *vtable1; // edx
+  void *ptr_4; // edx
   int v5; // eax
   TechnoClass *spawnOwner; // eax
   bool v8; // al
@@ -7345,7 +7345,7 @@ char __stdcall UpdateBullets(RocketLocomotionClass *this)
 int __thiscall TechnoClass::CalculateDamage(TechnoClass *this)
 {
   double v1; // st7
-  _DWORD *vtable3; // edx
+  _DWORD *ptr_C; // edx
   int v4; // ecx
   int v5; // ecx
   int *v6; // edx
@@ -7380,8 +7380,8 @@ int __thiscall TechnoClass::CalculateDamage(TechnoClass *this)
 
   _ESI = this; /*0x66303b*/
   GadgetGrid::RemoveItem((GadgetGrid *)&g_CellClassManager, (int)this->?); /*0x663047*/
-  vtable3 = _ESI->?; /*0x66304c*/
-  v4 = vtable3[433]; /*0x663054*/
+  ptr_C = _ESI->?; /*0x66304c*/
+  v4 = ptr_C[433]; /*0x663054*/
   if ( v4 == *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 1248) ) /*0x663062*/
   {
     v20 = (_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 1200); /*0x66306a*/
@@ -7414,7 +7414,7 @@ int __thiscall TechnoClass::CalculateDamage(TechnoClass *this)
   }
   v19 = v5; /*0x6630d9*/
 LABEL_13:
-  v6 = vtable3 + 39; /*0x6630dd*/
+  v6 = ptr_C + 39; /*0x6630dd*/
   v21 = v20[10]; /*0x6630ef*/
   v35 = *v6; /*0x6630f3*/
   __asm { fild dword ptr [esp+68h+var_48] } /*0x6630f7*/
@@ -7497,21 +7497,21 @@ LABEL_13:
 int __stdcall JumpjetLocomotionClass::ComputeFloatExpression_3(RocketLocomotionClass *this, int a2, int a3, int a4)
 {
   int result; // eax
-  void *vtable1; // edx
+  void *ptr_4; // edx
   int v6; // edx
   bool v7; // zf
   int v8; // esi
   int v9; // [esp+Ch] [ebp-Ch]
 
   result = (int)this; /*0x6632e0*/
-  vtable1 = this->?[1].?; /*0x6632ec*/
-  if ( vtable1 == *(void **)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 1248) ) /*0x6632fe*/
+  ptr_4 = this->?[1].?; /*0x6632ec*/
+  if ( ptr_4 == *(void **)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 1248) ) /*0x6632fe*/
   {
     v6 = *(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 1200; /*0x663300*/
   }
   else
   {
-    v7 = vtable1 == *(void **)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 1352); /*0x66330e*/
+    v7 = ptr_4 == *(void **)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 1352); /*0x66330e*/
     v6 = *(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 1304; /*0x663310*/
     if ( !v7 ) /*0x663316*/
       v6 = *(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 1252; /*0x663318*/
@@ -7603,7 +7603,7 @@ float *__stdcall JumpjetLocomotionClass::ComputePitchYaw(JumpjetLocomotionClass 
 {
   JumpjetLocomotionClass *v3; // esi
   int *v4; // edi
-  void *vtable1; // ecx
+  void *ptr_4; // ecx
   int v6; // eax
   int v7; // eax
   int v8; // eax
@@ -7631,12 +7631,12 @@ LABEL_13:
   }
   v11 = -*(float *)v3->__pad_50; /*0x6634e0*/
   Matrix3D::RotateZ(v13.m_Data, v11); /*0x6634e3*/
-  vtable1 = v3->?[1].?; /*0x6634f0*/
-  if ( vtable1 == *(void **)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 1248) ) /*0x6634fe*/
+  ptr_4 = v3->?[1].?; /*0x6634f0*/
+  if ( ptr_4 == *(void **)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 1248) ) /*0x6634fe*/
   {
     v6 = *(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 1200; /*0x663500*/
   }
-  else if ( vtable1 == *(void **)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 1352) ) /*0x66350d*/
+  else if ( ptr_4 == *(void **)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 1352) ) /*0x66350d*/
   {
     v6 = *(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 1304; /*0x66350f*/
   }
@@ -7957,7 +7957,7 @@ void __thiscall sub_663960(DynamicVectorClass *this)
     }
   }
   Items = (void *)this->Items; /*0x6639a3*/
-  this->vtable0 = (int)&VectorClass<OwnerTalkClass::ConnectionListStruct *>::`vftable'; /*0x6639a6*/
+  this->ptr_0 = (int)&VectorClass<OwnerTalkClass::ConnectionListStruct *>::`vftable'; /*0x6639a6*/
   if ( Items && this->IsAllocated[0] ) /*0x6639b0*/
   {
     __3_YAXPAX_Z(Items); /*0x6639b6*/
@@ -8126,7 +8126,7 @@ char __thiscall sub_663CD0(ObjectClass *this, _BYTE *a2)
   char v5; // bl
   int uniqueId; // ecx
   int v7; // eax
-  _DWORD *vtable1; // esi
+  _DWORD *ptr_4; // esi
   _DWORD *i; // edx
   int v10; // [esp+8h] [ebp-8h] BYREF
 
@@ -8141,13 +8141,13 @@ char __thiscall sub_663CD0(ObjectClass *this, _BYTE *a2)
   v7 = 0; /*0x663d16*/
   if ( uniqueId > 0 ) /*0x663d1a*/
   {
-    vtable1 = this->?; /*0x663d1c*/
-    for ( i = vtable1; v10 != *(_DWORD *)(*i + 33); ++i ) /*0x663d23*/
+    ptr_4 = this->?; /*0x663d1c*/
+    for ( i = ptr_4; v10 != *(_DWORD *)(*i + 33); ++i ) /*0x663d23*/
     {
       if ( ++v7 >= uniqueId ) /*0x663d32*/
         return 0; /*0x663d3d*/
     }
-    return *(_BYTE *)(vtable1[v7] + 40); /*0x663d43*/
+    return *(_BYTE *)(ptr_4[v7] + 40); /*0x663d43*/
   }
   return v5; /*0x663cdf*/
 }

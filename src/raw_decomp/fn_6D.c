@@ -788,14 +788,14 @@ void UI_Draw_6D0E60(ObjectClass *this)
 wchar_t *__thiscall HouseClass::updateFactoryQueue(HouseClass *this)
 {
   HouseClass *v1; // esi
-  void (__stdcall **vtable0)(_DWORD); // eax
+  void (__stdcall **ptr_0)(_DWORD); // eax
   wchar_t *result; // eax
   void *v4; // [esp+8h] [ebp-8h]
 
   v1 = this; /*0x6d0ec4*/
-  vtable0 = (void (__stdcall **)(_DWORD))this->AbstractClass; /*0x6d0ec8*/
+  ptr_0 = (void (__stdcall **)(_DWORD))this->AbstractClass; /*0x6d0ec8*/
   BYTE1(this->ownedBuildingTypes2[1]) = 1; /*0x6d0eca*/
-  vtable0[14](0); /*0x6d0ed1*/
+  ptr_0[14](0); /*0x6d0ed1*/
   result = *(wchar_t **)&stru_A8EB00.?[416]; /*0x6d0ed4*/
   v1 = (HouseClass *)((char *)v1 + 21816); /*0x6d0edd*/
   v1->AbstractClass = *(void **)&stru_A8EB00.?[416]; /*0x6d0ee8*/
@@ -809,11 +809,11 @@ wchar_t *__thiscall HouseClass::updateFactoryQueue(HouseClass *this)
 // ==== 0x006D0F00  ObjectClass::PreDraw  this=ObjectClass  sig=csp ====
 int __thiscall ObjectClass::PreDraw(ObjectClass *this)
 {
-  int (__stdcall **vtable0)(_DWORD); // eax
+  int (__stdcall **ptr_0)(_DWORD); // eax
 
-  vtable0 = (int (__stdcall **)(_DWORD))this->AbstractClass; /*0x6d0f00*/
+  ptr_0 = (int (__stdcall **)(_DWORD))this->AbstractClass; /*0x6d0f00*/
   *((_BYTE *)this + 21829) = 1; /*0x6d0f04*/
-  return vtable0[14](0); /*0x6d0f0e*/
+  return ptr_0[14](0); /*0x6d0f0e*/
 }
 
 
@@ -1164,7 +1164,7 @@ char __thiscall sub_6D1570(ObjectClass *this)
 char __thiscall HouseClass::InitDefeatState(HouseClass *this)
 {
   char result; // al
-  char (__thiscall **vtable0)(HouseClass *, _DWORD); // edx
+  char (__thiscall **ptr_0)(HouseClass *, _DWORD); // edx
 
   result = this->ownedBuildingTypes2[1]; /*0x6d1613*/
   if ( !result ) /*0x6d161b*/
@@ -1173,9 +1173,9 @@ char __thiscall HouseClass::InitDefeatState(HouseClass *this)
     HashTable::Remove(*(HashTable **)&stru_88732C.__pad_1C[32], 241); /*0x6d1632*/
     LOBYTE(this->ownedBuildingTypes2[1]) = 1; /*0x6d1639*/
     CommandClass::BuildBar((CommandClass *)this); /*0x6d1640*/
-    vtable0 = (char (__thiscall **)(HouseClass *, _DWORD))this->AbstractClass; /*0x6d1645*/
+    ptr_0 = (char (__thiscall **)(HouseClass *, _DWORD))this->AbstractClass; /*0x6d1645*/
     BYTE1(this->ownedBuildingTypes2[1]) = 1; /*0x6d164b*/
-    return vtable0[14](this, 0); /*0x6d1652*/
+    return ptr_0[14](this, 0); /*0x6d1652*/
   }
   return result; /*0x6d1655*/
 }
@@ -1739,7 +1739,7 @@ int World::ToScreen(int *this, _DWORD *a2, int *a3)
   LOWORD(v8) = Math::RoundToInt(v12); /*0x6d20c4*/
   v9 = v8; /*0x6d20c9*/
   *this = v7; /*0x6d20cf*/
-  this->vtable2 = v9; /*0x6d20d1*/
+  this->ptr_8 = v9; /*0x6d20d1*/
   return (int)this; /*0x6d20d4*/
 }
 
@@ -6236,7 +6236,7 @@ int __thiscall TacticalMap::RenderAllObjects(TacticalMap *this, int a2)
           if ( v20 >= v15 + v96 ) /*0x6d8fac*/
             goto LABEL_54; /*0x6d8fac*/
           (*(void (__thiscall **)(int *, char *, _DWORD))(*v18 + 76))(v18, v110, 0); /*0x6d8fc0*/
-          if ( ((int)dword_A8B230->vtable0 & 0x1000) != 0 ) /*0x6d8fce*/
+          if ( ((int)dword_A8B230->ptr_0 & 0x1000) != 0 ) /*0x6d8fce*/
           {
             if ( (unsigned __int8)Game::Stub3((int)&v89) ) /*0x6d8fda*/
               goto LABEL_54; /*0x6d8fe1*/
@@ -6456,7 +6456,7 @@ LABEL_54:
               if ( (*(_BYTE *)(v67 + 20) & 4) == 0 /*0x6d965d*/
                 || ((*(void (__thiscall **)(int, _BYTE *, _DWORD))(*(_DWORD *)v67 + 76))(v67, v105, 0), !g_hWnd)
                 || stru_A8EB00.?[391]
-                || ((int)dword_A8B230->vtable0 & 0x1000) == 0
+                || ((int)dword_A8B230->ptr_0 & 0x1000) == 0
                 || (v97 = *(IsoCoord *)(v67 + 156),
                     v98 = *(_DWORD *)(v67 + 164),
                     !(unsigned __int8)Game::Stub3((int)&v97)) )
@@ -10950,14 +10950,14 @@ void UI_Draw_6D0E60(ObjectClass *this)
 wchar_t *__thiscall HouseClass::updateFactoryQueue(HouseClass *this)
 {
   HouseClass *v1; // esi
-  void (__stdcall **vtable0)(_DWORD); // eax
+  void (__stdcall **ptr_0)(_DWORD); // eax
   wchar_t *result; // eax
   void *v4; // [esp+8h] [ebp-8h]
 
   v1 = this; /*0x6d0ec4*/
-  vtable0 = (void (__stdcall **)(_DWORD))this->AbstractClass; /*0x6d0ec8*/
+  ptr_0 = (void (__stdcall **)(_DWORD))this->AbstractClass; /*0x6d0ec8*/
   BYTE1(this->ownedBuildingTypes2[1]) = 1; /*0x6d0eca*/
-  vtable0[14](0); /*0x6d0ed1*/
+  ptr_0[14](0); /*0x6d0ed1*/
   result = *(wchar_t **)&stru_A8EB00.?[416]; /*0x6d0ed4*/
   v1 = (HouseClass *)((char *)v1 + 21816); /*0x6d0edd*/
   v1->AbstractClass = *(void **)&stru_A8EB00.?[416]; /*0x6d0ee8*/
@@ -10971,11 +10971,11 @@ wchar_t *__thiscall HouseClass::updateFactoryQueue(HouseClass *this)
 // ==== 0x006D0F00  ObjectClass::PreDraw  this=ObjectClass  sig=csp ====
 int __thiscall ObjectClass::PreDraw(ObjectClass *this)
 {
-  int (__stdcall **vtable0)(_DWORD); // eax
+  int (__stdcall **ptr_0)(_DWORD); // eax
 
-  vtable0 = (int (__stdcall **)(_DWORD))this->AbstractClass; /*0x6d0f00*/
+  ptr_0 = (int (__stdcall **)(_DWORD))this->AbstractClass; /*0x6d0f00*/
   *((_BYTE *)this + 21829) = 1; /*0x6d0f04*/
-  return vtable0[14](0); /*0x6d0f0e*/
+  return ptr_0[14](0); /*0x6d0f0e*/
 }
 
 
@@ -11326,7 +11326,7 @@ char __thiscall sub_6D1570(ObjectClass *this)
 char __thiscall HouseClass::InitDefeatState(HouseClass *this)
 {
   char result; // al
-  char (__thiscall **vtable0)(HouseClass *, _DWORD); // edx
+  char (__thiscall **ptr_0)(HouseClass *, _DWORD); // edx
 
   result = this->ownedBuildingTypes2[1]; /*0x6d1613*/
   if ( !result ) /*0x6d161b*/
@@ -11335,9 +11335,9 @@ char __thiscall HouseClass::InitDefeatState(HouseClass *this)
     HashTable::Remove(*(HashTable **)&stru_88732C.__pad_1C[32], 241); /*0x6d1632*/
     LOBYTE(this->ownedBuildingTypes2[1]) = 1; /*0x6d1639*/
     CommandClass::BuildBar((CommandClass *)this); /*0x6d1640*/
-    vtable0 = (char (__thiscall **)(HouseClass *, _DWORD))this->AbstractClass; /*0x6d1645*/
+    ptr_0 = (char (__thiscall **)(HouseClass *, _DWORD))this->AbstractClass; /*0x6d1645*/
     BYTE1(this->ownedBuildingTypes2[1]) = 1; /*0x6d164b*/
-    return vtable0[14](this, 0); /*0x6d1652*/
+    return ptr_0[14](this, 0); /*0x6d1652*/
   }
   return result; /*0x6d1655*/
 }
@@ -11901,7 +11901,7 @@ int World::ToScreen(int *this, _DWORD *a2, int *a3)
   LOWORD(v8) = Math::RoundToInt(v12); /*0x6d20c4*/
   v9 = v8; /*0x6d20c9*/
   *this = v7; /*0x6d20cf*/
-  this->vtable2 = v9; /*0x6d20d1*/
+  this->ptr_8 = v9; /*0x6d20d1*/
   return (int)this; /*0x6d20d4*/
 }
 
@@ -16398,7 +16398,7 @@ int __thiscall TacticalMap::RenderAllObjects(TacticalMap *this, int a2)
           if ( v20 >= v15 + v96 ) /*0x6d8fac*/
             goto LABEL_54; /*0x6d8fac*/
           (*(void (__thiscall **)(int *, char *, _DWORD))(*v18 + 76))(v18, v110, 0); /*0x6d8fc0*/
-          if ( ((int)dword_A8B230->vtable0 & 0x1000) != 0 ) /*0x6d8fce*/
+          if ( ((int)dword_A8B230->ptr_0 & 0x1000) != 0 ) /*0x6d8fce*/
           {
             if ( (unsigned __int8)Game::Stub3((int)&v89) ) /*0x6d8fda*/
               goto LABEL_54; /*0x6d8fe1*/
@@ -16618,7 +16618,7 @@ LABEL_54:
               if ( (*(_BYTE *)(v67 + 20) & 4) == 0 /*0x6d965d*/
                 || ((*(void (__thiscall **)(int, _BYTE *, _DWORD))(*(_DWORD *)v67 + 76))(v67, v105, 0), !g_hWnd)
                 || stru_A8EB00.?[391]
-                || ((int)dword_A8B230->vtable0 & 0x1000) == 0
+                || ((int)dword_A8B230->ptr_0 & 0x1000) == 0
                 || (v97 = *(IsoCoord *)(v67 + 156),
                     v98 = *(_DWORD *)(v67 + 164),
                     !(unsigned __int8)Game::Stub3((int)&v97)) )

@@ -1155,7 +1155,7 @@ int __thiscall Subzone::BuildGraph(Subzone *this, int a2)
   }
   v53 = 1; /*0x582034*/
   Subzone::Constructor((Subzone *)&v73, 0, 0); /*0x58203c*/
-  (*((void (__thiscall **)(VectorClass *))v73.vtable0 + 3))(&v73); /*0x582049*/
+  (*((void (__thiscall **)(VectorClass *))v73.ptr_0 + 3))(&v73); /*0x582049*/
   v11 = *(_DWORD *)(p_Subzone_field_0x08 + 8); /*0x58204c*/
   v12 = *(_DWORD *)(p_Subzone_field_0x08 + 16); /*0x58204f*/
   LOWORD(v76) = 0; /*0x582056*/
@@ -1173,7 +1173,7 @@ int __thiscall Subzone::BuildGraph(Subzone *this, int a2)
     *(_DWORD *)(p_Subzone_field_0x08 + 16) = v14 + 1; /*0x582094*/
     Subzone::CopyDataFrom((Subzone *)(*(_DWORD *)(p_Subzone_field_0x08 + 4) + 36 * v14), (int)&v73); /*0x58209d*/
   }
-  v73.vtable0 = &VectorClass<SubzoneConnectionStruct>::`vftable'; /*0x5820a6*/
+  v73.ptr_0 = &VectorClass<SubzoneConnectionStruct>::`vftable'; /*0x5820a6*/
   VectorClass::Cleanup5((int)&v73); /*0x5820ae*/
   *(_WORD *)(*(_DWORD *)(p_Subzone_field_0x08 + 4) + 24) = 0; /*0x5820b9*/
   *(_DWORD *)(*(_DWORD *)(p_Subzone_field_0x08 + 4) + 28) = 7; /*0x5820c0*/
@@ -1212,7 +1212,7 @@ int __thiscall Subzone::BuildGraph(Subzone *this, int a2)
       v60[0] = v17; /*0x582182*/
       v19 = Radar::ProcessSubzone((Radar *)v2, v15, a2, v53, &v69, v60); /*0x582194*/
       VectorClass::ConstructSubzone(&v73, 0, 0); /*0x582196*/
-      v73.vtable0 = &DynamicVectorClass<SubzoneConnectionStruct>::`vftable'; /*0x58219f*/
+      v73.ptr_0 = &DynamicVectorClass<SubzoneConnectionStruct>::`vftable'; /*0x58219f*/
       v75 = 10; /*0x5821a7*/
       v74 = 0; /*0x5821af*/
       VectorClass::CleanupSubzone((int)&v73); /*0x5821b7*/
@@ -1233,7 +1233,7 @@ int __thiscall Subzone::BuildGraph(Subzone *this, int a2)
         *(_DWORD *)(p_Subzone_field_0x08 + 16) = v23 + 1; /*0x582206*/
         Subzone::CopyDataFrom((Subzone *)(*(_DWORD *)(p_Subzone_field_0x08 + 4) + 36 * v23), (int)&v73); /*0x58220f*/
       }
-      v73.vtable0 = &VectorClass<SubzoneConnectionStruct>::`vftable'; /*0x582218*/
+      v73.ptr_0 = &VectorClass<SubzoneConnectionStruct>::`vftable'; /*0x582218*/
       if ( v73.Items && v73.IsAllocated ) /*0x58222a*/
       {
         __3_YAXPAX_Z(v73.Items); /*0x58222d*/
@@ -2627,7 +2627,7 @@ int __thiscall sub_583AD0(ObjectClass *this, int *a2)
   int v20; // [esp+24h] [ebp-4h]
 
   VectorClass::Construct(&v18, 0, 0); /*0x583ae1*/
-  v18.vtable0 = &DynamicVectorClass<int>::`vftable'; /*0x583af1*/
+  v18.ptr_0 = &DynamicVectorClass<int>::`vftable'; /*0x583af1*/
   v20 = 10; /*0x583af9*/
   v19 = 0; /*0x583b05*/
   *(_DWORD *)&stru_87F5F0.__pad_58[700] = *(_DWORD *)&stru_87F5F0.__pad_58[668] /*0x583b0d*/
@@ -2665,7 +2665,7 @@ LABEL_15:
                 goto LABEL_16; /*0x583bb6*/
               v6 = v19; /*0x583b6b*/
             }
-            if ( (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v18.vtable0 + 2))( /*0x583b94*/
+            if ( (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v18.ptr_0 + 2))( /*0x583b94*/
                    &v18,
                    v20 + Capacity,
                    0) )
@@ -2705,7 +2705,7 @@ LABEL_16:
   *a2 = v12; /*0x583bfe*/
   if ( v12 < 0 ) /*0x583c00*/
   {
-    v18.vtable0 = &VectorClass<int>::`vftable'; /*0x583c31*/
+    v18.ptr_0 = &VectorClass<int>::`vftable'; /*0x583c31*/
     if ( Items && v18.IsAllocated ) /*0x583c41*/
       __3_YAXPAX_Z(Items); /*0x583c44*/
     return 0; /*0x583c4f*/
@@ -2713,7 +2713,7 @@ LABEL_16:
   else
   {
     v16 = *((_DWORD *)Items + v12); /*0x583c02*/
-    v18.vtable0 = &VectorClass<int>::`vftable'; /*0x583c06*/
+    v18.ptr_0 = &VectorClass<int>::`vftable'; /*0x583c06*/
     if ( Items ) /*0x583c10*/
     {
       if ( v18.IsAllocated ) /*0x583c18*/
@@ -3814,7 +3814,7 @@ LABEL_72:
           v108[1] = v28; /*0x584920*/
           Radar::ProcessSubzone(v2, v91, i, v86, &v104, v108); /*0x584925*/
           VectorClass::ConstructSubzone(&v122, 0, 0); /*0x584932*/
-          v122.vtable0 = &DynamicVectorClass<SubzoneConnectionStruct>::`vftable'; /*0x58493b*/
+          v122.ptr_0 = &DynamicVectorClass<SubzoneConnectionStruct>::`vftable'; /*0x58493b*/
           v124 = 10; /*0x584943*/
           v123 = 0; /*0x58494e*/
           VectorClass::CleanupSubzone((int)&v122); /*0x584955*/
@@ -3837,7 +3837,7 @@ LABEL_72:
             *(_DWORD *)(v39 + 32) = v127; /*0x5849e0*/
             v35 = (int)&v2->__pad_64[24 * i + 40]; /*0x5849e3*/
           }
-          v122.vtable0 = &VectorClass<SubzoneConnectionStruct>::`vftable'; /*0x5849eb*/
+          v122.ptr_0 = &VectorClass<SubzoneConnectionStruct>::`vftable'; /*0x5849eb*/
           if ( v122.Items && v122.IsAllocated ) /*0x5849fd*/
           {
             __3_YAXPAX_Z(v122.Items); /*0x584a00*/
@@ -8132,11 +8132,11 @@ char __thiscall unknown::Release(_DynamicVectorClass_UZoneConnectionClass *this,
 _WORD *__thiscall sub_589680(_WORD *this)
 {
   *this = 0; /*0x589684*/
-  this->vtable2 = 0; /*0x589687*/
-  this->vtable3 = 0; /*0x58968b*/
-  this->vtable4 = 0; /*0x58968f*/
-  this->vtable3 = 0; /*0x589693*/
-  this->vtable4 = -1; /*0x589696*/
+  this->ptr_8 = 0; /*0x589687*/
+  this->ptr_C = 0; /*0x58968b*/
+  this->ptr_10 = 0; /*0x58968f*/
+  this->ptr_C = 0; /*0x589693*/
+  this->ptr_10 = -1; /*0x589696*/
   return this; /*0x58969d*/
 }
 
@@ -8259,13 +8259,13 @@ char __thiscall VectorClass_USubzoneTrackingStruct::Release(_VectorClass_USubzon
           do /*0x5897bf*/
           {
             VectorClass::ConstructSubzone(v6, 0, 0); /*0x589799*/
-            v6->vtable0 = &DynamicVectorClass<SubzoneConnectionStruct>::`vftable'; /*0x58979e*/
+            v6->ptr_0 = &DynamicVectorClass<SubzoneConnectionStruct>::`vftable'; /*0x58979e*/
             v6[1].Items = (void *)10; /*0x5897a4*/
-            v6[1].vtable0 = 0; /*0x5897a7*/
-            (*((void (__thiscall **)(VectorClass *))v6->vtable0 + 3))(v6); /*0x5897ae*/
+            v6[1].ptr_0 = 0; /*0x5897a7*/
+            (*((void (__thiscall **)(VectorClass *))v6->ptr_0 + 3))(v6); /*0x5897ae*/
             LOWORD(v6[1].Capacity) = 0; /*0x5897b1*/
             *(_DWORD *)&v6[1].IsInitialized = 0; /*0x5897b5*/
-            v6[2].vtable0 = 0; /*0x5897b8*/
+            v6[2].ptr_0 = 0; /*0x5897b8*/
             v6 = (VectorClass *)((char *)v6 + 36); /*0x5897bb*/
             --v3; /*0x5897be*/
           }
@@ -10116,9 +10116,9 @@ _DWORD *__thiscall VectorClass::ConstructSubzone(VectorClass *this, int a2, int 
   this->Capacity = a2; /*0x58ac80*/
   this->IsInitialized = 1; /*0x58ac83*/
   this->IsAllocated = 0; /*0x58ac87*/
-  this->vtable0 = &VectorClass<SubzoneConnectionStruct>::`vftable'; /*0x58ac8a*/
+  this->ptr_0 = &VectorClass<SubzoneConnectionStruct>::`vftable'; /*0x58ac8a*/
   if ( !a2 ) /*0x58ac90*/
-    return &this->vtable0; /*0x58ac90*/
+    return &this->ptr_0; /*0x58ac90*/
   if ( !a3 ) /*0x58ac98*/
   {
     v7 = (char *)__2_YAPAXI_Z(8 * a2); /*0x58acc2*/
@@ -10138,7 +10138,7 @@ _DWORD *__thiscall VectorClass::ConstructSubzone(VectorClass *this, int a2, int 
         while ( v9 ); /*0x58ace1*/
         this->Items = v7; /*0x58ace3*/
         this->IsAllocated = 1; /*0x58ace6*/
-        return &this->vtable0; /*0x58acef*/
+        return &this->ptr_0; /*0x58acef*/
       }
     }
     else
@@ -10147,7 +10147,7 @@ _DWORD *__thiscall VectorClass::ConstructSubzone(VectorClass *this, int a2, int 
     }
     this->Items = v7; /*0x58acf4*/
     this->IsAllocated = 1; /*0x58acf7*/
-    return &this->vtable0; /*0x58acfb*/
+    return &this->ptr_0; /*0x58acfb*/
   }
   v4 = a3; /*0x58ac9d*/
   if ( a2 - 1 >= 0 ) /*0x58aca1*/
@@ -10163,7 +10163,7 @@ _DWORD *__thiscall VectorClass::ConstructSubzone(VectorClass *this, int a2, int 
     while ( v5 ); /*0x58acad*/
   }
   this->Items = (void *)a3; /*0x58acaf*/
-  return &this->vtable0; /*0x58acb4*/
+  return &this->ptr_0; /*0x58acb4*/
 }
 
 
@@ -11153,10 +11153,10 @@ void *ComputeMapCameraBounds(ObjectClass *this)
             v23 = *(void **)&v21[v20]; /*0x58ba73*/
             v24 = *(void **)&v21[v20 + 4]; /*0x58ba76*/
           }
-          *(void **)((char *)&v19->vtable0 + v20) = v23; /*0x58ba80*/
+          *(void **)((char *)&v19->ptr_0 + v20) = v23; /*0x58ba80*/
           ++v18; /*0x58ba89*/
           v22 += 4; /*0x58ba8a*/
-          *(void **)((char *)&dword_A8B230->vtable1 + v20) = v24; /*0x58ba8d*/
+          *(void **)((char *)&dword_A8B230->ptr_4 + v20) = v24; /*0x58ba8d*/
           v20 += 8; /*0x58ba9b*/
           *(_DWORD *)((char *)dword_A8B230 + v22 - 4) = *(_DWORD *)&g_MissionQueueFrame.waypoints[v22 + 1302]; /*0x58ba9e*/
           v19 = dword_A8B230; /*0x58baa2*/
@@ -11164,9 +11164,9 @@ void *ComputeMapCameraBounds(ObjectClass *this)
             break; /*0x58baae*/
         }
       }
-      v19[122].vtable1 = (void *)g_MissionQueueFrame.briefing[355]; /*0x58bab5*/
-      dword_A8B230[122].vtable2 = (void *)g_MissionQueueFrame.briefing[354]; /*0x58bac7*/
-      dword_A8B230[122].vtable3 = (void *)g_MissionQueueFrame.localVariables[131]; /*0x58bad8*/
+      v19[122].ptr_4 = (void *)g_MissionQueueFrame.briefing[355]; /*0x58bab5*/
+      dword_A8B230[122].ptr_8 = (void *)g_MissionQueueFrame.briefing[354]; /*0x58bac7*/
+      dword_A8B230[122].ptr_C = (void *)g_MissionQueueFrame.localVariables[131]; /*0x58bad8*/
       result = (void *)g_MissionQueueFrame.localVariables[147]; /*0x58bae4*/
       dword_A8B230[122].uniqueId = g_MissionQueueFrame.localVariables[147]; /*0x58bae9*/
     }
@@ -11232,10 +11232,10 @@ void *ScenarioClass::CopyStartPositions(ScenarioClass *this)
           v7 = *(void **)&v5[v4]; /*0x58bb95*/
           v8 = *(void **)&v5[v4 + 4]; /*0x58bb98*/
         }
-        *(void **)((char *)&v2->vtable0 + v4) = v7; /*0x58bba2*/
+        *(void **)((char *)&v2->ptr_0 + v4) = v7; /*0x58bba2*/
         ++v3; /*0x58bbab*/
         v6 += 4; /*0x58bbac*/
-        *(void **)((char *)&dword_A8B230->vtable1 + v4) = v8; /*0x58bbaf*/
+        *(void **)((char *)&dword_A8B230->ptr_4 + v4) = v8; /*0x58bbaf*/
         v4 += 8; /*0x58bbbd*/
         *(_DWORD *)((char *)dword_A8B230 + v6 - 4) = *(_DWORD *)&g_MissionQueueFrame.waypoints[v6 + 1302]; /*0x58bbc0*/
         v2 = dword_A8B230; /*0x58bbc4*/
@@ -11244,9 +11244,9 @@ void *ScenarioClass::CopyStartPositions(ScenarioClass *this)
         v5 = &g_MissionQueueFrame.waypoints[1470]; /*0x58bb82*/
       }
     }
-    v2[122].vtable1 = (void *)g_MissionQueueFrame.briefing[355]; /*0x58bbda*/
-    dword_A8B230[122].vtable2 = (void *)g_MissionQueueFrame.briefing[354]; /*0x58bbed*/
-    dword_A8B230[122].vtable3 = (void *)g_MissionQueueFrame.localVariables[131]; /*0x58bbfe*/
+    v2[122].ptr_4 = (void *)g_MissionQueueFrame.briefing[355]; /*0x58bbda*/
+    dword_A8B230[122].ptr_8 = (void *)g_MissionQueueFrame.briefing[354]; /*0x58bbed*/
+    dword_A8B230[122].ptr_C = (void *)g_MissionQueueFrame.localVariables[131]; /*0x58bbfe*/
     result = (void *)g_MissionQueueFrame.localVariables[147]; /*0x58bc0a*/
     dword_A8B230[122].uniqueId = g_MissionQueueFrame.localVariables[147]; /*0x58bc0f*/
   }
@@ -12321,7 +12321,7 @@ int __thiscall RandomMap::ExpandTerrainCells(RandomMap *this, int a2, int a3)
   int v19; // esi
   int Capacity; // ecx
   int v21; // eax
-  void *vtable0; // eax
+  void *ptr_0; // eax
   _DWORD *Items; // edx
   int v24; // ecx
   int v25; // [esp+Ch] [ebp-1Ch]
@@ -12374,8 +12374,8 @@ int __thiscall RandomMap::ExpandTerrainCells(RandomMap *this, int a2, int a3)
         if ( v10 ) /*0x58d267*/
         {
           VectorClass::CellConstructor(v10, 0, 0); /*0x58d26d*/
-          v11[1].vtable0 = 0; /*0x58d272*/
-          v11->vtable0 = &DynamicVectorClass<Cell>::`vftable'; /*0x58d275*/
+          v11[1].ptr_0 = 0; /*0x58d272*/
+          v11->ptr_0 = &DynamicVectorClass<Cell>::`vftable'; /*0x58d275*/
           v11[1].Items = (void *)10; /*0x58d27b*/
           v12 = v11; /*0x58d282*/
         }
@@ -12408,18 +12408,18 @@ int __thiscall RandomMap::ExpandTerrainCells(RandomMap *this, int a2, int a3)
                   if ( *(_DWORD *)(v19 + 60) != v26 + 1 ) /*0x58d334*/
                   {
                     Capacity = v12->Capacity; /*0x58d336*/
-                    if ( (int)v12[1].vtable0 < Capacity /*0x58d35b*/
+                    if ( (int)v12[1].ptr_0 < Capacity /*0x58d35b*/
                       || (v12->IsAllocated || !Capacity)
                       && (v21 = (int)v12[1].Items, v21 > 0)
-                      && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v12->vtable0 + 2))(
+                      && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v12->ptr_0 + 2))(
                            v12,
                            Capacity + v21,
                            0) )
                     {
-                      vtable0 = v12[1].vtable0; /*0x58d362*/
+                      ptr_0 = v12[1].ptr_0; /*0x58d362*/
                       Items = v12->Items; /*0x58d365*/
-                      v12[1].vtable0 = (char *)vtable0 + 1; /*0x58d36b*/
-                      Items[(_DWORD)vtable0] = v28; /*0x58d372*/
+                      v12[1].ptr_0 = (char *)ptr_0 + 1; /*0x58d36b*/
+                      Items[(_DWORD)ptr_0] = v28; /*0x58d372*/
                     }
                     *(_DWORD *)(v19 + 60) = v26 + 1; /*0x58d375*/
                     v13 = g_MissionQueueFrame.localVariables[160]; /*0x58d378*/
@@ -12481,7 +12481,7 @@ _DWORD *__thiscall RandomMap::TerrainAlloc(RandomMap *this)
   int Capacity; // eax
   int v11; // ebp
   int v12; // ecx
-  void *vtable0; // eax
+  void *ptr_0; // eax
   _DWORD *Items; // edx
   char v16; // [esp+Fh] [ebp-Dh]
   VectorClass *v17; // [esp+10h] [ebp-Ch]
@@ -12492,9 +12492,9 @@ _DWORD *__thiscall RandomMap::TerrainAlloc(RandomMap *this)
   if ( v1 ) /*0x58d428*/
   {
     VectorClass::CellConstructor(v1, 0, 0); /*0x58d430*/
-    v2->vtable0 = &DynamicVectorClass<Cell>::`vftable'; /*0x58d435*/
+    v2->ptr_0 = &DynamicVectorClass<Cell>::`vftable'; /*0x58d435*/
     v2[1].Items = (void *)10; /*0x58d43b*/
-    v2[1].vtable0 = 0; /*0x58d442*/
+    v2[1].ptr_0 = 0; /*0x58d442*/
     v3 = v2; /*0x58d449*/
   }
   else
@@ -12505,7 +12505,7 @@ _DWORD *__thiscall RandomMap::TerrainAlloc(RandomMap *this)
   LayerClass::CellIteratorReset((LayerClass *)&stru_87F5F0.__pad_58[416]); /*0x58d458*/
   v4 = LayerClass::CellIteratorNext((LayerClass *)&stru_87F5F0.__pad_58[416]); /*0x58d467*/
   if ( !v4 ) /*0x58d46b*/
-    return &v3->vtable0; /*0x58d592*/
+    return &v3->ptr_0; /*0x58d592*/
   do
   {
     v5 = *(_DWORD *)(v4 + 36); /*0x58d478*/
@@ -12541,22 +12541,22 @@ _DWORD *__thiscall RandomMap::TerrainAlloc(RandomMap *this)
       {
         Capacity = v3->Capacity; /*0x58d535*/
         v11 = *(_DWORD *)(v4 + 36); /*0x58d53b*/
-        if ( (int)v3[1].vtable0 < Capacity /*0x58d55d*/
+        if ( (int)v3[1].ptr_0 < Capacity /*0x58d55d*/
           || (v3->IsAllocated || !Capacity)
           && (v12 = (int)v3[1].Items, v12 > 0)
-          && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v3->vtable0 + 2))(v3, Capacity + v12, 0) )
+          && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v3->ptr_0 + 2))(v3, Capacity + v12, 0) )
         {
-          vtable0 = v3[1].vtable0; /*0x58d564*/
+          ptr_0 = v3[1].ptr_0; /*0x58d564*/
           Items = v3->Items; /*0x58d567*/
-          v3[1].vtable0 = (char *)vtable0 + 1; /*0x58d56d*/
-          Items[(_DWORD)vtable0] = v11; /*0x58d570*/
+          v3[1].ptr_0 = (char *)ptr_0 + 1; /*0x58d56d*/
+          Items[(_DWORD)ptr_0] = v11; /*0x58d570*/
         }
       }
     }
     v4 = LayerClass::CellIteratorNext((LayerClass *)&stru_87F5F0.__pad_58[416]); /*0x58d57d*/
   }
   while ( v4 );
-  return &v3->vtable0; /*0x58d588*/
+  return &v3->ptr_0; /*0x58d588*/
 }
 
 
@@ -13027,7 +13027,7 @@ char __thiscall TileSystem::BuildNodes(TileSystem *this)
     v61 = 0; /*0x58db63*/
   }
   VectorClass::CellConstructor(&v167, 0, 0); /*0x58db98*/
-  v167.vtable0 = &DynamicVectorClass<Cell>::`vftable'; /*0x58dba2*/
+  v167.ptr_0 = &DynamicVectorClass<Cell>::`vftable'; /*0x58dba2*/
   v169 = 10; /*0x58dbaf*/
   v168 = 0; /*0x58dbb6*/
   while ( v61 ) /*0x58dbc1*/
@@ -13524,7 +13524,7 @@ LABEL_226:
   }
   BYTE1(v163.TileSystem_field_0x0C) = 0; /*0x58e590*/
   v163.TileSystem_field_0x08 = 0; /*0x58e59a*/
-  v167.vtable0 = &VectorClass<Cell>::`vftable'; /*0x58e5a1*/
+  v167.ptr_0 = &VectorClass<Cell>::`vftable'; /*0x58e5a1*/
   if ( v167.Items ) /*0x58e5ac*/
   {
     if ( v167.IsAllocated ) /*0x58e5b7*/
@@ -13554,7 +13554,7 @@ _DWORD *__thiscall TileSystem::AnalyzeTileConnectivity(TileSystem *this)
   int v15; // eax
   int Capacity; // ecx
   int Items; // eax
-  void *vtable0; // eax
+  void *ptr_0; // eax
   _DWORD *v19; // edx
   VectorClass *v21; // [esp+Ch] [ebp-10h]
   int v22; // [esp+10h] [ebp-Ch]
@@ -13566,8 +13566,8 @@ _DWORD *__thiscall TileSystem::AnalyzeTileConnectivity(TileSystem *this)
   if ( v2 ) /*0x58e5ec*/
   {
     VectorClass::CellConstructor(v2, 0, 0); /*0x58e5f2*/
-    v3[1].vtable0 = 0; /*0x58e5f7*/
-    v3->vtable0 = &DynamicVectorClass<Cell>::`vftable'; /*0x58e5fa*/
+    v3[1].ptr_0 = 0; /*0x58e5f7*/
+    v3->ptr_0 = &DynamicVectorClass<Cell>::`vftable'; /*0x58e5fa*/
     v3[1].Items = (void *)10; /*0x58e600*/
     v4 = v3; /*0x58e607*/
   }
@@ -13579,7 +13579,7 @@ _DWORD *__thiscall TileSystem::AnalyzeTileConnectivity(TileSystem *this)
   v6 = v1[3].TileSystem_field_0x08 - 1; /*0x58e625*/
   v22 = v6; /*0x58e626*/
   if ( v6 < 0 ) /*0x58e62a*/
-    return &v4->vtable0; /*0x58e728*/
+    return &v4->ptr_0; /*0x58e728*/
   v7 = g_MissionQueueFrame.localVariables[160]; /*0x58e631*/
   while ( 2 )
   {
@@ -13611,23 +13611,23 @@ LABEL_18:
     }
     v4 = v21; /*0x58e6c9*/
     Capacity = v21->Capacity; /*0x58e6cd*/
-    if ( (int)v21[1].vtable0 < Capacity ) /*0x58e6d5*/
+    if ( (int)v21[1].ptr_0 < Capacity ) /*0x58e6d5*/
       goto LABEL_25; /*0x58e6d5*/
     if ( v21->IsAllocated || !Capacity ) /*0x58e6e0*/
     {
       Items = (int)v21[1].Items; /*0x58e6e2*/
       if ( Items > 0 ) /*0x58e6e7*/
       {
-        if ( (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v21->vtable0 + 2))( /*0x58e6f3*/
+        if ( (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v21->ptr_0 + 2))( /*0x58e6f3*/
                v21,
                Capacity + Items,
                0) )
         {
 LABEL_25:
-          vtable0 = v21[1].vtable0; /*0x58e6fa*/
+          ptr_0 = v21[1].ptr_0; /*0x58e6fa*/
           v19 = v21->Items; /*0x58e6fd*/
-          v21[1].vtable0 = (char *)vtable0 + 1; /*0x58e703*/
-          v19[(_DWORD)vtable0] = v9; /*0x58e706*/
+          v21[1].ptr_0 = (char *)ptr_0 + 1; /*0x58e703*/
+          v19[(_DWORD)ptr_0] = v9; /*0x58e706*/
         }
         v7 = g_MissionQueueFrame.localVariables[160]; /*0x58e709*/
       }
@@ -13639,7 +13639,7 @@ LABEL_27:
       v1 = this; /*0x58e63d*/
       continue; /*0x58e63d*/
     }
-    return &v4->vtable0; /*0x58e721*/
+    return &v4->ptr_0; /*0x58e721*/
   }
 }
 
@@ -13665,7 +13665,7 @@ char __thiscall RandomMap::CollectTerrainCells(RandomMap *this, int a2)
   Cell *v16; // eax
   int Capacity; // ecx
   int v18; // eax
-  void *vtable0; // eax
+  void *ptr_0; // eax
   _DWORD *Items; // edx
   RandomMap *v21; // edi
   int v22; // edx
@@ -13685,9 +13685,9 @@ char __thiscall RandomMap::CollectTerrainCells(RandomMap *this, int a2)
     if ( v2 ) /*0x58e774*/
     {
       VectorClass::CellConstructor(v2, 0, 0); /*0x58e77a*/
-      v3->vtable0 = &DynamicVectorClass<Cell>::`vftable'; /*0x58e77f*/
+      v3->ptr_0 = &DynamicVectorClass<Cell>::`vftable'; /*0x58e77f*/
       v3[1].Items = (void *)10; /*0x58e785*/
-      v3[1].vtable0 = 0; /*0x58e78c*/
+      v3[1].ptr_0 = 0; /*0x58e78c*/
       v4 = v3; /*0x58e78f*/
     }
     else
@@ -13729,18 +13729,18 @@ char __thiscall RandomMap::CollectTerrainCells(RandomMap *this, int a2)
                      (unsigned __int8)Cell::IsShore(v16))) )
               {
                 Capacity = v4->Capacity; /*0x58e8b2*/
-                if ( (int)v4[1].vtable0 < Capacity /*0x58e8d8*/
+                if ( (int)v4[1].ptr_0 < Capacity /*0x58e8d8*/
                   || (v4->IsAllocated || !Capacity)
                   && (v18 = (int)v4[1].Items, v18 > 0)
-                  && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v4->vtable0 + 2))(
+                  && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v4->ptr_0 + 2))(
                        v4,
                        Capacity + v18,
                        0) )
                 {
-                  vtable0 = v4[1].vtable0; /*0x58e8df*/
+                  ptr_0 = v4[1].ptr_0; /*0x58e8df*/
                   Items = v4->Items; /*0x58e8e2*/
-                  v4[1].vtable0 = (char *)vtable0 + 1; /*0x58e8e8*/
-                  Items[(_DWORD)vtable0] = *(_DWORD *)v24; /*0x58e8ef*/
+                  v4[1].ptr_0 = (char *)ptr_0 + 1; /*0x58e8e8*/
+                  Items[(_DWORD)ptr_0] = *(_DWORD *)v24; /*0x58e8ef*/
                 }
                 v21 = v26; /*0x58e8f2*/
                 *(_DWORD *)(v13 + 56) = v26->RandomMap_field_0x8; /*0x58e903*/
@@ -13751,7 +13751,7 @@ char __thiscall RandomMap::CollectTerrainCells(RandomMap *this, int a2)
                 if ( p_vtable0 ) /*0x58e98c*/
                   (*(void (__thiscall **)(_DWORD *, int))*p_vtable0)(p_vtable0, 1); /*0x58e992*/
                 if ( v4 ) /*0x58e996*/
-                  (*(void (__thiscall **)(VectorClass *, int))v4->vtable0)(v4, 1); /*0x58e99f*/
+                  (*(void (__thiscall **)(VectorClass *, int))v4->ptr_0)(v4, 1); /*0x58e99f*/
                 return 0; /*0x58e9a4*/
               }
             }
@@ -13770,7 +13770,7 @@ char __thiscall RandomMap::CollectTerrainCells(RandomMap *this, int a2)
     }
     if ( v5 ) /*0x58e94b*/
       (*(void (__thiscall **)(_DWORD *, int))*v5)(v5, 1); /*0x58e951*/
-    p_vtable0 = &v4->vtable0; /*0x58e95c*/
+    p_vtable0 = &v4->ptr_0; /*0x58e95c*/
   }
   if ( p_vtable0 ) /*0x58e972*/
     (*(void (__thiscall **)(_DWORD *, int))*p_vtable0)(p_vtable0, 1); /*0x58e978*/
@@ -13805,7 +13805,7 @@ char __thiscall RandomMap::PlaceRandomMapTerrain(RandomMap *this)
   v1 = RandomMap::TerrainAlloc(this); /*0x58e9c7*/
   VectorClass::CellConstructor(&v19, 0, 0); /*0x58e9c9*/
   v2 = 50000; /*0x58e9ce*/
-  v19.vtable0 = &DynamicVectorClass<Cell>::`vftable'; /*0x58e9d3*/
+  v19.ptr_0 = &DynamicVectorClass<Cell>::`vftable'; /*0x58e9d3*/
   j = 0; /*0x58e9db*/
   v21 = 50000; /*0x58e9e3*/
   v3 = 0; /*0x58e9ea*/
@@ -13824,7 +13824,7 @@ LABEL_11:
         goto LABEL_12; /*0x58ea4a*/
       v2 = v21; /*0x58e9f6*/
     }
-    if ( (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v19.vtable0 + 2))(&v19, v2 + Capacity, 0) ) /*0x58ea25*/
+    if ( (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v19.ptr_0 + 2))(&v19, v2 + Capacity, 0) ) /*0x58ea25*/
     {
 LABEL_9:
       v6 = j++; /*0x58ea2c*/
@@ -13866,7 +13866,7 @@ LABEL_12:
             if ( j < v19.Capacity /*0x58eb57*/
               || (v19.IsAllocated || !v19.Capacity)
               && v21 > 0
-              && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v19.vtable0 + 2))(
+              && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v19.ptr_0 + 2))(
                    &v19,
                    v21 + v19.Capacity,
                    0) )
@@ -13880,7 +13880,7 @@ LABEL_12:
     }
     v7 = j; /*0x58eb7e*/
   }
-  v19.vtable0 = &VectorClass<Cell>::`vftable'; /*0x58eb93*/
+  v19.ptr_0 = &VectorClass<Cell>::`vftable'; /*0x58eb93*/
   if ( v19.Items && v19.IsAllocated ) /*0x58eba6*/
     __3_YAXPAX_Z(v19.Items); /*0x58eba9*/
   return 1; /*0x58eb91*/
@@ -14254,9 +14254,9 @@ void __thiscall RandomMap::CollectBorderCells(RandomMap *this)
   if ( v2 ) /*0x58f0db*/
   {
     VectorClass::Construct(v2, 0, 0); /*0x58f0e3*/
-    v3->vtable0 = &DynamicVectorClass<int>::`vftable'; /*0x58f0e8*/
+    v3->ptr_0 = &DynamicVectorClass<int>::`vftable'; /*0x58f0e8*/
     v3[1].Items = (void *)10; /*0x58f0ee*/
-    v3[1].vtable0 = 0; /*0x58f0f5*/
+    v3[1].ptr_0 = 0; /*0x58f0f5*/
   }
   else
   {
@@ -15556,7 +15556,7 @@ int __thiscall Subzone::BuildGraph(Subzone *this, int a2)
   }
   v53 = 1; /*0x582034*/
   Subzone::Constructor((Subzone *)&v73, 0, 0); /*0x58203c*/
-  (*((void (__thiscall **)(VectorClass *))v73.vtable0 + 3))(&v73); /*0x582049*/
+  (*((void (__thiscall **)(VectorClass *))v73.ptr_0 + 3))(&v73); /*0x582049*/
   v11 = *(_DWORD *)(p_Subzone_field_0x08 + 8); /*0x58204c*/
   v12 = *(_DWORD *)(p_Subzone_field_0x08 + 16); /*0x58204f*/
   LOWORD(v76) = 0; /*0x582056*/
@@ -15574,7 +15574,7 @@ int __thiscall Subzone::BuildGraph(Subzone *this, int a2)
     *(_DWORD *)(p_Subzone_field_0x08 + 16) = v14 + 1; /*0x582094*/
     Subzone::CopyDataFrom((Subzone *)(*(_DWORD *)(p_Subzone_field_0x08 + 4) + 36 * v14), (int)&v73); /*0x58209d*/
   }
-  v73.vtable0 = &VectorClass<SubzoneConnectionStruct>::`vftable'; /*0x5820a6*/
+  v73.ptr_0 = &VectorClass<SubzoneConnectionStruct>::`vftable'; /*0x5820a6*/
   VectorClass::Cleanup5((int)&v73); /*0x5820ae*/
   *(_WORD *)(*(_DWORD *)(p_Subzone_field_0x08 + 4) + 24) = 0; /*0x5820b9*/
   *(_DWORD *)(*(_DWORD *)(p_Subzone_field_0x08 + 4) + 28) = 7; /*0x5820c0*/
@@ -15613,7 +15613,7 @@ int __thiscall Subzone::BuildGraph(Subzone *this, int a2)
       v60[0] = v17; /*0x582182*/
       v19 = Radar::ProcessSubzone((Radar *)v2, v15, a2, v53, &v69, v60); /*0x582194*/
       VectorClass::ConstructSubzone(&v73, 0, 0); /*0x582196*/
-      v73.vtable0 = &DynamicVectorClass<SubzoneConnectionStruct>::`vftable'; /*0x58219f*/
+      v73.ptr_0 = &DynamicVectorClass<SubzoneConnectionStruct>::`vftable'; /*0x58219f*/
       v75 = 10; /*0x5821a7*/
       v74 = 0; /*0x5821af*/
       VectorClass::CleanupSubzone((int)&v73); /*0x5821b7*/
@@ -15634,7 +15634,7 @@ int __thiscall Subzone::BuildGraph(Subzone *this, int a2)
         *(_DWORD *)(p_Subzone_field_0x08 + 16) = v23 + 1; /*0x582206*/
         Subzone::CopyDataFrom((Subzone *)(*(_DWORD *)(p_Subzone_field_0x08 + 4) + 36 * v23), (int)&v73); /*0x58220f*/
       }
-      v73.vtable0 = &VectorClass<SubzoneConnectionStruct>::`vftable'; /*0x582218*/
+      v73.ptr_0 = &VectorClass<SubzoneConnectionStruct>::`vftable'; /*0x582218*/
       if ( v73.Items && v73.IsAllocated ) /*0x58222a*/
       {
         __3_YAXPAX_Z(v73.Items); /*0x58222d*/
@@ -17028,7 +17028,7 @@ int __thiscall sub_583AD0(ObjectClass *this, int *a2)
   int v20; // [esp+24h] [ebp-4h]
 
   VectorClass::Construct(&v18, 0, 0); /*0x583ae1*/
-  v18.vtable0 = &DynamicVectorClass<int>::`vftable'; /*0x583af1*/
+  v18.ptr_0 = &DynamicVectorClass<int>::`vftable'; /*0x583af1*/
   v20 = 10; /*0x583af9*/
   v19 = 0; /*0x583b05*/
   *(_DWORD *)&stru_87F5F0.__pad_58[700] = *(_DWORD *)&stru_87F5F0.__pad_58[668] /*0x583b0d*/
@@ -17066,7 +17066,7 @@ LABEL_15:
                 goto LABEL_16; /*0x583bb6*/
               v6 = v19; /*0x583b6b*/
             }
-            if ( (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v18.vtable0 + 2))( /*0x583b94*/
+            if ( (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v18.ptr_0 + 2))( /*0x583b94*/
                    &v18,
                    v20 + Capacity,
                    0) )
@@ -17106,7 +17106,7 @@ LABEL_16:
   *a2 = v12; /*0x583bfe*/
   if ( v12 < 0 ) /*0x583c00*/
   {
-    v18.vtable0 = &VectorClass<int>::`vftable'; /*0x583c31*/
+    v18.ptr_0 = &VectorClass<int>::`vftable'; /*0x583c31*/
     if ( Items && v18.IsAllocated ) /*0x583c41*/
       __3_YAXPAX_Z(Items); /*0x583c44*/
     return 0; /*0x583c4f*/
@@ -17114,7 +17114,7 @@ LABEL_16:
   else
   {
     v16 = *((_DWORD *)Items + v12); /*0x583c02*/
-    v18.vtable0 = &VectorClass<int>::`vftable'; /*0x583c06*/
+    v18.ptr_0 = &VectorClass<int>::`vftable'; /*0x583c06*/
     if ( Items ) /*0x583c10*/
     {
       if ( v18.IsAllocated ) /*0x583c18*/
@@ -18215,7 +18215,7 @@ LABEL_72:
           v108[1] = v28; /*0x584920*/
           Radar::ProcessSubzone(v2, v91, i, v86, &v104, v108); /*0x584925*/
           VectorClass::ConstructSubzone(&v122, 0, 0); /*0x584932*/
-          v122.vtable0 = &DynamicVectorClass<SubzoneConnectionStruct>::`vftable'; /*0x58493b*/
+          v122.ptr_0 = &DynamicVectorClass<SubzoneConnectionStruct>::`vftable'; /*0x58493b*/
           v124 = 10; /*0x584943*/
           v123 = 0; /*0x58494e*/
           VectorClass::CleanupSubzone((int)&v122); /*0x584955*/
@@ -18238,7 +18238,7 @@ LABEL_72:
             *(_DWORD *)(v39 + 32) = v127; /*0x5849e0*/
             v35 = (int)&v2->__pad_64[24 * i + 40]; /*0x5849e3*/
           }
-          v122.vtable0 = &VectorClass<SubzoneConnectionStruct>::`vftable'; /*0x5849eb*/
+          v122.ptr_0 = &VectorClass<SubzoneConnectionStruct>::`vftable'; /*0x5849eb*/
           if ( v122.Items && v122.IsAllocated ) /*0x5849fd*/
           {
             __3_YAXPAX_Z(v122.Items); /*0x584a00*/
@@ -22533,11 +22533,11 @@ char __thiscall unknown::Release(_DynamicVectorClass_UZoneConnectionClass *this,
 _WORD *__thiscall sub_589680(_WORD *this)
 {
   *this = 0; /*0x589684*/
-  this->vtable2 = 0; /*0x589687*/
-  this->vtable3 = 0; /*0x58968b*/
-  this->vtable4 = 0; /*0x58968f*/
-  this->vtable3 = 0; /*0x589693*/
-  this->vtable4 = -1; /*0x589696*/
+  this->ptr_8 = 0; /*0x589687*/
+  this->ptr_C = 0; /*0x58968b*/
+  this->ptr_10 = 0; /*0x58968f*/
+  this->ptr_C = 0; /*0x589693*/
+  this->ptr_10 = -1; /*0x589696*/
   return this; /*0x58969d*/
 }
 
@@ -22660,13 +22660,13 @@ char __thiscall VectorClass_USubzoneTrackingStruct::Release(_VectorClass_USubzon
           do /*0x5897bf*/
           {
             VectorClass::ConstructSubzone(v6, 0, 0); /*0x589799*/
-            v6->vtable0 = &DynamicVectorClass<SubzoneConnectionStruct>::`vftable'; /*0x58979e*/
+            v6->ptr_0 = &DynamicVectorClass<SubzoneConnectionStruct>::`vftable'; /*0x58979e*/
             v6[1].Items = (void *)10; /*0x5897a4*/
-            v6[1].vtable0 = 0; /*0x5897a7*/
-            (*((void (__thiscall **)(VectorClass *))v6->vtable0 + 3))(v6); /*0x5897ae*/
+            v6[1].ptr_0 = 0; /*0x5897a7*/
+            (*((void (__thiscall **)(VectorClass *))v6->ptr_0 + 3))(v6); /*0x5897ae*/
             LOWORD(v6[1].Capacity) = 0; /*0x5897b1*/
             *(_DWORD *)&v6[1].IsInitialized = 0; /*0x5897b5*/
-            v6[2].vtable0 = 0; /*0x5897b8*/
+            v6[2].ptr_0 = 0; /*0x5897b8*/
             v6 = (VectorClass *)((char *)v6 + 36); /*0x5897bb*/
             --v3; /*0x5897be*/
           }
@@ -24517,9 +24517,9 @@ _DWORD *__thiscall VectorClass::ConstructSubzone(VectorClass *this, int a2, int 
   this->Capacity = a2; /*0x58ac80*/
   this->IsInitialized = 1; /*0x58ac83*/
   this->IsAllocated = 0; /*0x58ac87*/
-  this->vtable0 = &VectorClass<SubzoneConnectionStruct>::`vftable'; /*0x58ac8a*/
+  this->ptr_0 = &VectorClass<SubzoneConnectionStruct>::`vftable'; /*0x58ac8a*/
   if ( !a2 ) /*0x58ac90*/
-    return &this->vtable0; /*0x58ac90*/
+    return &this->ptr_0; /*0x58ac90*/
   if ( !a3 ) /*0x58ac98*/
   {
     v7 = (char *)__2_YAPAXI_Z(8 * a2); /*0x58acc2*/
@@ -24539,7 +24539,7 @@ _DWORD *__thiscall VectorClass::ConstructSubzone(VectorClass *this, int a2, int 
         while ( v9 ); /*0x58ace1*/
         this->Items = v7; /*0x58ace3*/
         this->IsAllocated = 1; /*0x58ace6*/
-        return &this->vtable0; /*0x58acef*/
+        return &this->ptr_0; /*0x58acef*/
       }
     }
     else
@@ -24548,7 +24548,7 @@ _DWORD *__thiscall VectorClass::ConstructSubzone(VectorClass *this, int a2, int 
     }
     this->Items = v7; /*0x58acf4*/
     this->IsAllocated = 1; /*0x58acf7*/
-    return &this->vtable0; /*0x58acfb*/
+    return &this->ptr_0; /*0x58acfb*/
   }
   v4 = a3; /*0x58ac9d*/
   if ( a2 - 1 >= 0 ) /*0x58aca1*/
@@ -24564,7 +24564,7 @@ _DWORD *__thiscall VectorClass::ConstructSubzone(VectorClass *this, int a2, int 
     while ( v5 ); /*0x58acad*/
   }
   this->Items = (void *)a3; /*0x58acaf*/
-  return &this->vtable0; /*0x58acb4*/
+  return &this->ptr_0; /*0x58acb4*/
 }
 
 
@@ -25554,10 +25554,10 @@ void *ComputeMapCameraBounds(ObjectClass *this)
             v23 = *(void **)&v21[v20]; /*0x58ba73*/
             v24 = *(void **)&v21[v20 + 4]; /*0x58ba76*/
           }
-          *(void **)((char *)&v19->vtable0 + v20) = v23; /*0x58ba80*/
+          *(void **)((char *)&v19->ptr_0 + v20) = v23; /*0x58ba80*/
           ++v18; /*0x58ba89*/
           v22 += 4; /*0x58ba8a*/
-          *(void **)((char *)&dword_A8B230->vtable1 + v20) = v24; /*0x58ba8d*/
+          *(void **)((char *)&dword_A8B230->ptr_4 + v20) = v24; /*0x58ba8d*/
           v20 += 8; /*0x58ba9b*/
           *(_DWORD *)((char *)dword_A8B230 + v22 - 4) = *(_DWORD *)&g_MissionQueueFrame.waypoints[v22 + 1302]; /*0x58ba9e*/
           v19 = dword_A8B230; /*0x58baa2*/
@@ -25565,9 +25565,9 @@ void *ComputeMapCameraBounds(ObjectClass *this)
             break; /*0x58baae*/
         }
       }
-      v19[122].vtable1 = (void *)g_MissionQueueFrame.briefing[355]; /*0x58bab5*/
-      dword_A8B230[122].vtable2 = (void *)g_MissionQueueFrame.briefing[354]; /*0x58bac7*/
-      dword_A8B230[122].vtable3 = (void *)g_MissionQueueFrame.localVariables[131]; /*0x58bad8*/
+      v19[122].ptr_4 = (void *)g_MissionQueueFrame.briefing[355]; /*0x58bab5*/
+      dword_A8B230[122].ptr_8 = (void *)g_MissionQueueFrame.briefing[354]; /*0x58bac7*/
+      dword_A8B230[122].ptr_C = (void *)g_MissionQueueFrame.localVariables[131]; /*0x58bad8*/
       result = (void *)g_MissionQueueFrame.localVariables[147]; /*0x58bae4*/
       dword_A8B230[122].uniqueId = g_MissionQueueFrame.localVariables[147]; /*0x58bae9*/
     }
@@ -25633,10 +25633,10 @@ void *ScenarioClass::CopyStartPositions(ScenarioClass *this)
           v7 = *(void **)&v5[v4]; /*0x58bb95*/
           v8 = *(void **)&v5[v4 + 4]; /*0x58bb98*/
         }
-        *(void **)((char *)&v2->vtable0 + v4) = v7; /*0x58bba2*/
+        *(void **)((char *)&v2->ptr_0 + v4) = v7; /*0x58bba2*/
         ++v3; /*0x58bbab*/
         v6 += 4; /*0x58bbac*/
-        *(void **)((char *)&dword_A8B230->vtable1 + v4) = v8; /*0x58bbaf*/
+        *(void **)((char *)&dword_A8B230->ptr_4 + v4) = v8; /*0x58bbaf*/
         v4 += 8; /*0x58bbbd*/
         *(_DWORD *)((char *)dword_A8B230 + v6 - 4) = *(_DWORD *)&g_MissionQueueFrame.waypoints[v6 + 1302]; /*0x58bbc0*/
         v2 = dword_A8B230; /*0x58bbc4*/
@@ -25645,9 +25645,9 @@ void *ScenarioClass::CopyStartPositions(ScenarioClass *this)
         v5 = &g_MissionQueueFrame.waypoints[1470]; /*0x58bb82*/
       }
     }
-    v2[122].vtable1 = (void *)g_MissionQueueFrame.briefing[355]; /*0x58bbda*/
-    dword_A8B230[122].vtable2 = (void *)g_MissionQueueFrame.briefing[354]; /*0x58bbed*/
-    dword_A8B230[122].vtable3 = (void *)g_MissionQueueFrame.localVariables[131]; /*0x58bbfe*/
+    v2[122].ptr_4 = (void *)g_MissionQueueFrame.briefing[355]; /*0x58bbda*/
+    dword_A8B230[122].ptr_8 = (void *)g_MissionQueueFrame.briefing[354]; /*0x58bbed*/
+    dword_A8B230[122].ptr_C = (void *)g_MissionQueueFrame.localVariables[131]; /*0x58bbfe*/
     result = (void *)g_MissionQueueFrame.localVariables[147]; /*0x58bc0a*/
     dword_A8B230[122].uniqueId = g_MissionQueueFrame.localVariables[147]; /*0x58bc0f*/
   }
@@ -26722,7 +26722,7 @@ int __thiscall RandomMap::ExpandTerrainCells(RandomMap *this, int a2, int a3)
   int v19; // esi
   int Capacity; // ecx
   int v21; // eax
-  void *vtable0; // eax
+  void *ptr_0; // eax
   _DWORD *Items; // edx
   int v24; // ecx
   int v25; // [esp+Ch] [ebp-1Ch]
@@ -26775,8 +26775,8 @@ int __thiscall RandomMap::ExpandTerrainCells(RandomMap *this, int a2, int a3)
         if ( v10 ) /*0x58d267*/
         {
           VectorClass::CellConstructor(v10, 0, 0); /*0x58d26d*/
-          v11[1].vtable0 = 0; /*0x58d272*/
-          v11->vtable0 = &DynamicVectorClass<Cell>::`vftable'; /*0x58d275*/
+          v11[1].ptr_0 = 0; /*0x58d272*/
+          v11->ptr_0 = &DynamicVectorClass<Cell>::`vftable'; /*0x58d275*/
           v11[1].Items = (void *)10; /*0x58d27b*/
           v12 = v11; /*0x58d282*/
         }
@@ -26809,18 +26809,18 @@ int __thiscall RandomMap::ExpandTerrainCells(RandomMap *this, int a2, int a3)
                   if ( *(_DWORD *)(v19 + 60) != v26 + 1 ) /*0x58d334*/
                   {
                     Capacity = v12->Capacity; /*0x58d336*/
-                    if ( (int)v12[1].vtable0 < Capacity /*0x58d35b*/
+                    if ( (int)v12[1].ptr_0 < Capacity /*0x58d35b*/
                       || (v12->IsAllocated || !Capacity)
                       && (v21 = (int)v12[1].Items, v21 > 0)
-                      && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v12->vtable0 + 2))(
+                      && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v12->ptr_0 + 2))(
                            v12,
                            Capacity + v21,
                            0) )
                     {
-                      vtable0 = v12[1].vtable0; /*0x58d362*/
+                      ptr_0 = v12[1].ptr_0; /*0x58d362*/
                       Items = v12->Items; /*0x58d365*/
-                      v12[1].vtable0 = (char *)vtable0 + 1; /*0x58d36b*/
-                      Items[(_DWORD)vtable0] = v28; /*0x58d372*/
+                      v12[1].ptr_0 = (char *)ptr_0 + 1; /*0x58d36b*/
+                      Items[(_DWORD)ptr_0] = v28; /*0x58d372*/
                     }
                     *(_DWORD *)(v19 + 60) = v26 + 1; /*0x58d375*/
                     v13 = g_MissionQueueFrame.localVariables[160]; /*0x58d378*/
@@ -26882,7 +26882,7 @@ _DWORD *__thiscall RandomMap::TerrainAlloc(RandomMap *this)
   int Capacity; // eax
   int v11; // ebp
   int v12; // ecx
-  void *vtable0; // eax
+  void *ptr_0; // eax
   _DWORD *Items; // edx
   char v16; // [esp+Fh] [ebp-Dh]
   VectorClass *v17; // [esp+10h] [ebp-Ch]
@@ -26893,9 +26893,9 @@ _DWORD *__thiscall RandomMap::TerrainAlloc(RandomMap *this)
   if ( v1 ) /*0x58d428*/
   {
     VectorClass::CellConstructor(v1, 0, 0); /*0x58d430*/
-    v2->vtable0 = &DynamicVectorClass<Cell>::`vftable'; /*0x58d435*/
+    v2->ptr_0 = &DynamicVectorClass<Cell>::`vftable'; /*0x58d435*/
     v2[1].Items = (void *)10; /*0x58d43b*/
-    v2[1].vtable0 = 0; /*0x58d442*/
+    v2[1].ptr_0 = 0; /*0x58d442*/
     v3 = v2; /*0x58d449*/
   }
   else
@@ -26906,7 +26906,7 @@ _DWORD *__thiscall RandomMap::TerrainAlloc(RandomMap *this)
   LayerClass::CellIteratorReset((LayerClass *)&stru_87F5F0.__pad_58[416]); /*0x58d458*/
   v4 = LayerClass::CellIteratorNext((LayerClass *)&stru_87F5F0.__pad_58[416]); /*0x58d467*/
   if ( !v4 ) /*0x58d46b*/
-    return &v3->vtable0; /*0x58d592*/
+    return &v3->ptr_0; /*0x58d592*/
   do
   {
     v5 = *(_DWORD *)(v4 + 36); /*0x58d478*/
@@ -26942,22 +26942,22 @@ _DWORD *__thiscall RandomMap::TerrainAlloc(RandomMap *this)
       {
         Capacity = v3->Capacity; /*0x58d535*/
         v11 = *(_DWORD *)(v4 + 36); /*0x58d53b*/
-        if ( (int)v3[1].vtable0 < Capacity /*0x58d55d*/
+        if ( (int)v3[1].ptr_0 < Capacity /*0x58d55d*/
           || (v3->IsAllocated || !Capacity)
           && (v12 = (int)v3[1].Items, v12 > 0)
-          && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v3->vtable0 + 2))(v3, Capacity + v12, 0) )
+          && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v3->ptr_0 + 2))(v3, Capacity + v12, 0) )
         {
-          vtable0 = v3[1].vtable0; /*0x58d564*/
+          ptr_0 = v3[1].ptr_0; /*0x58d564*/
           Items = v3->Items; /*0x58d567*/
-          v3[1].vtable0 = (char *)vtable0 + 1; /*0x58d56d*/
-          Items[(_DWORD)vtable0] = v11; /*0x58d570*/
+          v3[1].ptr_0 = (char *)ptr_0 + 1; /*0x58d56d*/
+          Items[(_DWORD)ptr_0] = v11; /*0x58d570*/
         }
       }
     }
     v4 = LayerClass::CellIteratorNext((LayerClass *)&stru_87F5F0.__pad_58[416]); /*0x58d57d*/
   }
   while ( v4 );
-  return &v3->vtable0; /*0x58d588*/
+  return &v3->ptr_0; /*0x58d588*/
 }
 
 
@@ -27428,7 +27428,7 @@ char __thiscall TileSystem::BuildNodes(TileSystem *this)
     v61 = 0; /*0x58db63*/
   }
   VectorClass::CellConstructor(&v167, 0, 0); /*0x58db98*/
-  v167.vtable0 = &DynamicVectorClass<Cell>::`vftable'; /*0x58dba2*/
+  v167.ptr_0 = &DynamicVectorClass<Cell>::`vftable'; /*0x58dba2*/
   v169 = 10; /*0x58dbaf*/
   v168 = 0; /*0x58dbb6*/
   while ( v61 ) /*0x58dbc1*/
@@ -27925,7 +27925,7 @@ LABEL_226:
   }
   BYTE1(v163.TileSystem_field_0x0C) = 0; /*0x58e590*/
   v163.TileSystem_field_0x08 = 0; /*0x58e59a*/
-  v167.vtable0 = &VectorClass<Cell>::`vftable'; /*0x58e5a1*/
+  v167.ptr_0 = &VectorClass<Cell>::`vftable'; /*0x58e5a1*/
   if ( v167.Items ) /*0x58e5ac*/
   {
     if ( v167.IsAllocated ) /*0x58e5b7*/
@@ -27955,7 +27955,7 @@ _DWORD *__thiscall TileSystem::AnalyzeTileConnectivity(TileSystem *this)
   int v15; // eax
   int Capacity; // ecx
   int Items; // eax
-  void *vtable0; // eax
+  void *ptr_0; // eax
   _DWORD *v19; // edx
   VectorClass *v21; // [esp+Ch] [ebp-10h]
   int v22; // [esp+10h] [ebp-Ch]
@@ -27967,8 +27967,8 @@ _DWORD *__thiscall TileSystem::AnalyzeTileConnectivity(TileSystem *this)
   if ( v2 ) /*0x58e5ec*/
   {
     VectorClass::CellConstructor(v2, 0, 0); /*0x58e5f2*/
-    v3[1].vtable0 = 0; /*0x58e5f7*/
-    v3->vtable0 = &DynamicVectorClass<Cell>::`vftable'; /*0x58e5fa*/
+    v3[1].ptr_0 = 0; /*0x58e5f7*/
+    v3->ptr_0 = &DynamicVectorClass<Cell>::`vftable'; /*0x58e5fa*/
     v3[1].Items = (void *)10; /*0x58e600*/
     v4 = v3; /*0x58e607*/
   }
@@ -27980,7 +27980,7 @@ _DWORD *__thiscall TileSystem::AnalyzeTileConnectivity(TileSystem *this)
   v6 = v1[3].TileSystem_field_0x08 - 1; /*0x58e625*/
   v22 = v6; /*0x58e626*/
   if ( v6 < 0 ) /*0x58e62a*/
-    return &v4->vtable0; /*0x58e728*/
+    return &v4->ptr_0; /*0x58e728*/
   v7 = g_MissionQueueFrame.localVariables[160]; /*0x58e631*/
   while ( 2 )
   {
@@ -28012,23 +28012,23 @@ LABEL_18:
     }
     v4 = v21; /*0x58e6c9*/
     Capacity = v21->Capacity; /*0x58e6cd*/
-    if ( (int)v21[1].vtable0 < Capacity ) /*0x58e6d5*/
+    if ( (int)v21[1].ptr_0 < Capacity ) /*0x58e6d5*/
       goto LABEL_25; /*0x58e6d5*/
     if ( v21->IsAllocated || !Capacity ) /*0x58e6e0*/
     {
       Items = (int)v21[1].Items; /*0x58e6e2*/
       if ( Items > 0 ) /*0x58e6e7*/
       {
-        if ( (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v21->vtable0 + 2))( /*0x58e6f3*/
+        if ( (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v21->ptr_0 + 2))( /*0x58e6f3*/
                v21,
                Capacity + Items,
                0) )
         {
 LABEL_25:
-          vtable0 = v21[1].vtable0; /*0x58e6fa*/
+          ptr_0 = v21[1].ptr_0; /*0x58e6fa*/
           v19 = v21->Items; /*0x58e6fd*/
-          v21[1].vtable0 = (char *)vtable0 + 1; /*0x58e703*/
-          v19[(_DWORD)vtable0] = v9; /*0x58e706*/
+          v21[1].ptr_0 = (char *)ptr_0 + 1; /*0x58e703*/
+          v19[(_DWORD)ptr_0] = v9; /*0x58e706*/
         }
         v7 = g_MissionQueueFrame.localVariables[160]; /*0x58e709*/
       }
@@ -28040,7 +28040,7 @@ LABEL_27:
       v1 = this; /*0x58e63d*/
       continue; /*0x58e63d*/
     }
-    return &v4->vtable0; /*0x58e721*/
+    return &v4->ptr_0; /*0x58e721*/
   }
 }
 
@@ -28066,7 +28066,7 @@ char __thiscall RandomMap::CollectTerrainCells(RandomMap *this, int a2)
   Cell *v16; // eax
   int Capacity; // ecx
   int v18; // eax
-  void *vtable0; // eax
+  void *ptr_0; // eax
   _DWORD *Items; // edx
   RandomMap *v21; // edi
   int v22; // edx
@@ -28086,9 +28086,9 @@ char __thiscall RandomMap::CollectTerrainCells(RandomMap *this, int a2)
     if ( v2 ) /*0x58e774*/
     {
       VectorClass::CellConstructor(v2, 0, 0); /*0x58e77a*/
-      v3->vtable0 = &DynamicVectorClass<Cell>::`vftable'; /*0x58e77f*/
+      v3->ptr_0 = &DynamicVectorClass<Cell>::`vftable'; /*0x58e77f*/
       v3[1].Items = (void *)10; /*0x58e785*/
-      v3[1].vtable0 = 0; /*0x58e78c*/
+      v3[1].ptr_0 = 0; /*0x58e78c*/
       v4 = v3; /*0x58e78f*/
     }
     else
@@ -28130,18 +28130,18 @@ char __thiscall RandomMap::CollectTerrainCells(RandomMap *this, int a2)
                      (unsigned __int8)Cell::IsShore(v16))) )
               {
                 Capacity = v4->Capacity; /*0x58e8b2*/
-                if ( (int)v4[1].vtable0 < Capacity /*0x58e8d8*/
+                if ( (int)v4[1].ptr_0 < Capacity /*0x58e8d8*/
                   || (v4->IsAllocated || !Capacity)
                   && (v18 = (int)v4[1].Items, v18 > 0)
-                  && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v4->vtable0 + 2))(
+                  && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v4->ptr_0 + 2))(
                        v4,
                        Capacity + v18,
                        0) )
                 {
-                  vtable0 = v4[1].vtable0; /*0x58e8df*/
+                  ptr_0 = v4[1].ptr_0; /*0x58e8df*/
                   Items = v4->Items; /*0x58e8e2*/
-                  v4[1].vtable0 = (char *)vtable0 + 1; /*0x58e8e8*/
-                  Items[(_DWORD)vtable0] = *(_DWORD *)v24; /*0x58e8ef*/
+                  v4[1].ptr_0 = (char *)ptr_0 + 1; /*0x58e8e8*/
+                  Items[(_DWORD)ptr_0] = *(_DWORD *)v24; /*0x58e8ef*/
                 }
                 v21 = v26; /*0x58e8f2*/
                 *(_DWORD *)(v13 + 56) = v26->RandomMap_field_0x8; /*0x58e903*/
@@ -28152,7 +28152,7 @@ char __thiscall RandomMap::CollectTerrainCells(RandomMap *this, int a2)
                 if ( p_vtable0 ) /*0x58e98c*/
                   (*(void (__thiscall **)(_DWORD *, int))*p_vtable0)(p_vtable0, 1); /*0x58e992*/
                 if ( v4 ) /*0x58e996*/
-                  (*(void (__thiscall **)(VectorClass *, int))v4->vtable0)(v4, 1); /*0x58e99f*/
+                  (*(void (__thiscall **)(VectorClass *, int))v4->ptr_0)(v4, 1); /*0x58e99f*/
                 return 0; /*0x58e9a4*/
               }
             }
@@ -28171,7 +28171,7 @@ char __thiscall RandomMap::CollectTerrainCells(RandomMap *this, int a2)
     }
     if ( v5 ) /*0x58e94b*/
       (*(void (__thiscall **)(_DWORD *, int))*v5)(v5, 1); /*0x58e951*/
-    p_vtable0 = &v4->vtable0; /*0x58e95c*/
+    p_vtable0 = &v4->ptr_0; /*0x58e95c*/
   }
   if ( p_vtable0 ) /*0x58e972*/
     (*(void (__thiscall **)(_DWORD *, int))*p_vtable0)(p_vtable0, 1); /*0x58e978*/
@@ -28206,7 +28206,7 @@ char __thiscall RandomMap::PlaceRandomMapTerrain(RandomMap *this)
   v1 = RandomMap::TerrainAlloc(this); /*0x58e9c7*/
   VectorClass::CellConstructor(&v19, 0, 0); /*0x58e9c9*/
   v2 = 50000; /*0x58e9ce*/
-  v19.vtable0 = &DynamicVectorClass<Cell>::`vftable'; /*0x58e9d3*/
+  v19.ptr_0 = &DynamicVectorClass<Cell>::`vftable'; /*0x58e9d3*/
   j = 0; /*0x58e9db*/
   v21 = 50000; /*0x58e9e3*/
   v3 = 0; /*0x58e9ea*/
@@ -28225,7 +28225,7 @@ LABEL_11:
         goto LABEL_12; /*0x58ea4a*/
       v2 = v21; /*0x58e9f6*/
     }
-    if ( (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v19.vtable0 + 2))(&v19, v2 + Capacity, 0) ) /*0x58ea25*/
+    if ( (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v19.ptr_0 + 2))(&v19, v2 + Capacity, 0) ) /*0x58ea25*/
     {
 LABEL_9:
       v6 = j++; /*0x58ea2c*/
@@ -28267,7 +28267,7 @@ LABEL_12:
             if ( j < v19.Capacity /*0x58eb57*/
               || (v19.IsAllocated || !v19.Capacity)
               && v21 > 0
-              && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v19.vtable0 + 2))(
+              && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v19.ptr_0 + 2))(
                    &v19,
                    v21 + v19.Capacity,
                    0) )
@@ -28281,7 +28281,7 @@ LABEL_12:
     }
     v7 = j; /*0x58eb7e*/
   }
-  v19.vtable0 = &VectorClass<Cell>::`vftable'; /*0x58eb93*/
+  v19.ptr_0 = &VectorClass<Cell>::`vftable'; /*0x58eb93*/
   if ( v19.Items && v19.IsAllocated ) /*0x58eba6*/
     __3_YAXPAX_Z(v19.Items); /*0x58eba9*/
   return 1; /*0x58eb91*/
@@ -28655,9 +28655,9 @@ void __thiscall RandomMap::CollectBorderCells(RandomMap *this)
   if ( v2 ) /*0x58f0db*/
   {
     VectorClass::Construct(v2, 0, 0); /*0x58f0e3*/
-    v3->vtable0 = &DynamicVectorClass<int>::`vftable'; /*0x58f0e8*/
+    v3->ptr_0 = &DynamicVectorClass<int>::`vftable'; /*0x58f0e8*/
     v3[1].Items = (void *)10; /*0x58f0ee*/
-    v3[1].vtable0 = 0; /*0x58f0f5*/
+    v3[1].ptr_0 = 0; /*0x58f0f5*/
   }
   else
   {

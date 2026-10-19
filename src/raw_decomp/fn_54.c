@@ -1204,7 +1204,7 @@ int __thiscall sub_541170(ObjectClass *this, int a2, int a3, int a4, int a5)
   int v7; // eax
   _DWORD *i; // edx
   _DWORD *v10; // ecx
-  char vtable1; // al
+  char ptr_4; // al
   int v12; // edi
   int v13; // edi
   int v14; // [esp+0h] [ebp-1Ch] BYREF
@@ -1223,12 +1223,12 @@ int __thiscall sub_541170(ObjectClass *this, int a2, int a3, int a4, int a5)
   }
   LOWORD(v5) = *(&dword_A8E2B2 + v7); /*0x5411be*/
   v10 = (_DWORD *)(dword_A8DA78[v7] + 40); /*0x5411c6*/
-  vtable1 = (char)this->?; /*0x5411c9*/
+  ptr_4 = (char)this->?; /*0x5411c9*/
   v12 = a4; /*0x5411cc*/
   v15[0] = *v10; /*0x5411d2*/
   v15[1] = v10[1]; /*0x5411d9*/
   v15[2] = v10[2]; /*0x5411e2*/
-  if ( !vtable1 || !BYTE1(this->?) ) /*0x5411e8*/
+  if ( !ptr_4 || !BYTE1(this->?) ) /*0x5411e8*/
     return 0; /*0x5411af*/
   if ( a4 && (&v14 == (int *)-16 || Network::IsBroadcastAddr((Network *)v15)) ) /*0x5411ff*/
     v12 = 0; /*0x541208*/
@@ -3132,7 +3132,7 @@ char __thiscall AbstractClass::ModifyCellTiles(AbstractClass *this, int a2)
   _BYTE v39[12]; // [esp+40h] [ebp-Ch] BYREF
 
   v2 = this; /*0x543335*/
-  v30 = (*(int (__thiscall **)(AbstractClass *))(this->vtable0 + 108))(this); /*0x543342*/
+  v30 = (*(int (__thiscall **)(AbstractClass *))(this->ptr_0 + 108))(this); /*0x543342*/
   if ( !v30 ) /*0x543346*/
     return 0; /*0x543346*/
   v3 = a2; /*0x54334c*/
@@ -3151,7 +3151,7 @@ char __thiscall AbstractClass::ModifyCellTiles(AbstractClass *this, int a2)
         goto LABEL_45; /*0x54338c*/
       do /*0x5436f2*/
       {
-        v7 = (_WORD *)(*(int (__thiscall **)(AbstractClass *, int *))(v2->vtable0 + 440))(v2, &v36); /*0x54339b*/
+        v7 = (_WORD *)(*(int (__thiscall **)(AbstractClass *, int *))(v2->ptr_0 + 440))(v2, &v36); /*0x54339b*/
         LOWORD(v31) = *v7 + v6; /*0x5433b0*/
         HIWORD(v31) = v27 + v7[1]; /*0x5433b9*/
         *(_DWORD *)v32 = v31; /*0x5433c8*/
@@ -3244,7 +3244,7 @@ LABEL_28:
         v33 = 0; /*0x5435d3*/
         if ( dword_A8E9B8 <= 0 ) /*0x5435db*/
           goto LABEL_42; /*0x5435db*/
-        v35 = *(_DWORD *)(*(&dword_A83D84->vtable0 + *((_DWORD *)v8 + 17)) + 668); /*0x5435f8*/
+        v35 = *(_DWORD *)(*(&dword_A83D84->ptr_0 + *((_DWORD *)v8 + 17)) + 668); /*0x5435f8*/
         v28 = (char *)dword_A8E9AC; /*0x5435fc*/
         while ( 1 ) /*0x543608*/
         {
@@ -3297,9 +3297,9 @@ LABEL_45:
   }
   if ( v3 == 1 || v3 == 3 ) /*0x543723*/
   {
-    LOBYTE(v2[3].vtable2) = 0; /*0x543727*/
+    LOBYTE(v2[3].ptr_8) = 0; /*0x543727*/
     if ( v2 ) /*0x54372b*/
-      (*(void (__thiscall **)(AbstractClass *, int))(v2->vtable0 + 32))(v2, 1); /*0x543733*/
+      (*(void (__thiscall **)(AbstractClass *, int))(v2->ptr_0 + 32))(v2, 1); /*0x543733*/
   }
   return 1; /*0x543736*/
 }
@@ -3378,12 +3378,12 @@ int __stdcall AbstractClass::COMStub_6(AbstractClass *this, int *a2, int a3)
 // ==== 0x00543A10  AbstractClass::COMStub_54  this=IsometricTileClass  sig=csp ====
 int __thiscall AbstractClass::COMStub_54(AbstractClass *this, int a2, int a3)
 {
-  void (__thiscall **vtable0)(AbstractClass *, int); // eax
+  void (__thiscall **ptr_0)(AbstractClass *, int); // eax
 
-  vtable0 = (void (__thiscall **)(AbstractClass *, int))this->vtable0; /*0x543a17*/
+  ptr_0 = (void (__thiscall **)(AbstractClass *, int))this->ptr_0; /*0x543a17*/
   *((_BYTE *)this + 129) = 0; /*0x543a1c*/
-  vtable0[109](this, a2); /*0x543a23*/
-  return (*((int (__thiscall **)(AbstractClass *, int))this->vtable0 + 73))(this, 1); /*0x543a35*/
+  ptr_0[109](this, a2); /*0x543a23*/
+  return (*((int (__thiscall **)(AbstractClass *, int))this->ptr_0 + 73))(this, 1); /*0x543a35*/
 }
 
 
@@ -3393,9 +3393,9 @@ char __thiscall AbstractClass::COMStub_53(AbstractClass *this)
 {
   if ( !byte_A8E9A0 || *((_BYTE *)this + 129) ) /*0x543a4c*/
     return 0; /*0x543a88*/
-  (*((void (__thiscall **)(AbstractClass *))this->vtable0 + 84))(this); /*0x543a58*/
-  (*((void (__thiscall **)(AbstractClass *, int))this->vtable0 + 55))(this, 1); /*0x543a64*/
-  (*((void (__thiscall **)(AbstractClass *, _DWORD))this->vtable0 + 73))(this, 0); /*0x543a70*/
+  (*((void (__thiscall **)(AbstractClass *))this->ptr_0 + 84))(this); /*0x543a58*/
+  (*((void (__thiscall **)(AbstractClass *, int))this->ptr_0 + 55))(this, 1); /*0x543a64*/
+  (*((void (__thiscall **)(AbstractClass *, _DWORD))this->ptr_0 + 73))(this, 0); /*0x543a70*/
   *((_BYTE *)this + 129) = 1; /*0x543a76*/
   *((_BYTE *)this + 128) = 0; /*0x543a7d*/
   return 1; /*0x543a86*/
@@ -3456,16 +3456,16 @@ void **__thiscall AbstractClass::CreateInstance(AbstractClass *this, char a2)
   int v4; // eax
   AbstractClass *v6; // [esp+Ch] [ebp-4h] BYREF
 
-  this->vtable0 = &IsometricTileClass::`vftable'; /*0x543b16*/
-  this->vtable1 = &IsometricTileClass::`vftable'; /*0x543b1c*/
-  this->vtable2 = &IsometricTileClass::`vftable'; /*0x543b23*/
-  this->vtable3 = &IsometricTileClass::`vftable'; /*0x543b2a*/
-  AbstractClass::AnnounceExpiredPointer(&this->vtable0, 1); /*0x543b31*/
+  this->ptr_0 = &IsometricTileClass::`vftable'; /*0x543b16*/
+  this->ptr_4 = &IsometricTileClass::`vftable'; /*0x543b1c*/
+  this->ptr_8 = &IsometricTileClass::`vftable'; /*0x543b23*/
+  this->ptr_C = &IsometricTileClass::`vftable'; /*0x543b2a*/
+  AbstractClass::AnnounceExpiredPointer(&this->ptr_0, 1); /*0x543b31*/
   if ( byte_A8E9A0 && !*((_BYTE *)this + 129) ) /*0x543b3f*/
   {
-    (*((void (__thiscall **)(AbstractClass *))this->vtable0 + 84))(this); /*0x543b4d*/
-    (*((void (__thiscall **)(AbstractClass *, int))this->vtable0 + 55))(this, 1); /*0x543b59*/
-    (*((void (__thiscall **)(AbstractClass *, _DWORD))this->vtable0 + 73))(this, 0); /*0x543b65*/
+    (*((void (__thiscall **)(AbstractClass *))this->ptr_0 + 84))(this); /*0x543b4d*/
+    (*((void (__thiscall **)(AbstractClass *, int))this->ptr_0 + 55))(this, 1); /*0x543b59*/
+    (*((void (__thiscall **)(AbstractClass *, _DWORD))this->ptr_0 + 73))(this, 0); /*0x543b65*/
     *((_BYTE *)this + 129) = 1; /*0x543b6b*/
     *((_BYTE *)this + 128) = 0; /*0x543b72*/
   }
@@ -3503,7 +3503,7 @@ void **__thiscall AbstractClass::CreateInstance(AbstractClass *this, char a2)
   ObjectClass::Dtor((ObjectClass *)this); /*0x543c17*/
   if ( (a2 & 1) != 0 ) /*0x543c21*/
     __3_YAXPAX_Z(this); /*0x543c24*/
-  return &this->vtable0; /*0x543c2e*/
+  return &this->ptr_0; /*0x543c2e*/
 }
 
 
@@ -4024,7 +4024,7 @@ _DWORD *__thiscall Map_Get(TechnoClass *this, int a2)
   v3 = a2; /*0x544e0c*/
   if ( a2 > v2 - 1 ) /*0x544e13*/
     v3 = a2 % v2; /*0x544e16*/
-  for ( result = &this->vtable0; v3; --v3 ) /*0x544e1e*/
+  for ( result = &this->ptr_0; v3; --v3 ) /*0x544e1e*/
     result = (_DWORD *)result[175]; /*0x544e20*/
   return result; /*0x544e18*/
 }
@@ -6442,7 +6442,7 @@ char __stdcall JumpjetLocomotionClass::DispatchLocomotion(JumpjetLocomotionClass
   int v9; // edi
   FootClass *v10; // ecx
   int v11; // ebx
-  int (__thiscall **vtable0)(FootClass *, int *); // edx
+  int (__thiscall **ptr_0)(FootClass *, int *); // edx
   _DWORD *v13; // eax
   void *v14; // eax
   int *v15; // edx
@@ -6492,9 +6492,9 @@ char __stdcall JumpjetLocomotionClass::DispatchLocomotion(JumpjetLocomotionClass
         v9 = *v8; /*0x54af74*/
         v10 = this->?; /*0x54af76*/
         v11 = v8[1]; /*0x54af79*/
-        vtable0 = (int (__thiscall **)(FootClass *, int *))v10->TechnoClass; /*0x54af7c*/
+        ptr_0 = (int (__thiscall **)(FootClass *, int *))v10->TechnoClass; /*0x54af7c*/
         v31 = v8[2]; /*0x54af81*/
-        v13 = (_DWORD *)vtable0[18](v10, &v29); /*0x54af8a*/
+        v13 = (_DWORD *)ptr_0[18](v10, &v29); /*0x54af8a*/
         LOWORD(thisa) = *v13 / 256; /*0x54af9d*/
         HIWORD(thisa) = v13[1] / 256; /*0x54afb5*/
         *(_DWORD *)v27 = thisa; /*0x54afbe*/
@@ -6551,7 +6551,7 @@ char __stdcall JumpjetLocomotionClass::DispatchLocomotion(JumpjetLocomotionClass
         v30 = location[1]; /*0x54b0ac*/
         v31 = location[2]; /*0x54b0bd*/
         if ( (unsigned __int8)Cell::IsPassable(&v29) /*0x54b0fe*/
-          || ((int)dword_A8B230->vtable0 & 0x1000) != 0
+          || ((int)dword_A8B230->ptr_0 & 0x1000) != 0
           && (v21 = this->?->?, v29 = *v21, v30 = v21[1], v31 = v21[2], (unsigned __int8)Game::Stub3((int)&v29)) )
         {
           (*((void (__thiscall **)(FootClass *))this->?->TechnoClass + 84))(this->?); /*0x54b10c*/
@@ -9392,7 +9392,7 @@ void __thiscall AbstractClass::processStateTransition(AbstractClass *this, int a
 void __thiscall sub_54E690(ObjectClass *this)
 {
   int i; // esi
-  void (__thiscall **vtable3)(void **); // edx
+  void (__thiscall **ptr_C)(void **); // edx
   void **p_vtable3; // esi
   void **v5; // ecx
   int abstractFlags; // edi
@@ -9400,11 +9400,11 @@ void __thiscall sub_54E690(ObjectClass *this)
 
   for ( i = this->? - 1; i >= 0; --i ) /*0x54e699*/
     __3_YAXPAX_Z(*(void **)(this->? + 4 * i)); /*0x54e6a2*/
-  vtable3 = (void (__thiscall **)(void **))this->?; /*0x54e6ad*/
+  ptr_C = (void (__thiscall **)(void **))this->?; /*0x54e6ad*/
   p_vtable3 = &this->?; /*0x54e6b0*/
   v5 = &this->?; /*0x54e6b3*/
   abstractFlags = this->?; /*0x54e6b5*/
-  vtable3[3](v5); /*0x54e6b8*/
+  ptr_C[3](v5); /*0x54e6b8*/
   (*((void (__thiscall **)(void **, int, _DWORD))*p_vtable3 + 2))(p_vtable3, abstractFlags, 0); /*0x54e6c3*/
   v7 = p_vtable3[1]; /*0x54e6c6*/
   *p_vtable3 = &VectorClass<KamikazeControl *>::`vftable'; /*0x54e6c9*/
@@ -9813,18 +9813,18 @@ _DWORD *__thiscall sub_54EBF0(VectorClass *this, int a2, int a3)
   this->Capacity = a2; /*0x54ebfe*/
   this->IsInitialized = 1; /*0x54ec01*/
   this->IsAllocated = 0; /*0x54ec05*/
-  this->vtable0 = &VectorClass<KamikazeControl *>::`vftable'; /*0x54ec08*/
+  this->ptr_0 = &VectorClass<KamikazeControl *>::`vftable'; /*0x54ec08*/
   if ( a2 ) /*0x54ec0e*/
   {
     if ( a3 ) /*0x54ec16*/
     {
       this->Items = (void *)a3; /*0x54ec18*/
-      return &this->vtable0; /*0x54ec1e*/
+      return &this->ptr_0; /*0x54ec1e*/
     }
     this->Items = (void *)__2_YAPAXI_Z(4 * a2); /*0x54ec2d*/
     this->IsAllocated = 1; /*0x54ec30*/
   }
-  return &this->vtable0; /*0x54ec1d*/
+  return &this->ptr_0; /*0x54ec1d*/
 }
 
 
@@ -10738,10 +10738,10 @@ char *__thiscall TimerClass_Constructor(
   int v20; // eax
 
   *(_DWORD *)this = 0; /*0x54fe6a*/
-  this->vtable2 = 0; /*0x54fe6c*/
-  this->vtable3 = dword_A8ED84; /*0x54fe75*/
+  this->ptr_8 = 0; /*0x54fe6c*/
+  this->ptr_C = dword_A8ED84; /*0x54fe75*/
   v18 = this + 36; /*0x54fe78*/
-  this->vtable2 = 0; /*0x54fe7b*/
+  this->ptr_8 = 0; /*0x54fe7b*/
   *v18 = a2; /*0x54fe83*/
   this->abstractFlags = 0; /*0x54fe89*/
   this->nextArrayIndex = 1; /*0x54fe8c*/
@@ -10750,7 +10750,7 @@ char *__thiscall TimerClass_Constructor(
   this->NeedsSaveOrLink = 0; /*0x54fe99*/
   v18[2] = a4; /*0x54fe9c*/
   this->q084 = 0; /*0x54fea6*/
-  this->vtable4 = a5; /*0x54fea9*/
+  this->ptr_10 = a5; /*0x54fea9*/
   this->q034 = a6; /*0x54feaf*/
   this->TargetStrengthCoefficient = a7; /*0x54feb6*/
   this->zero_3C = a8; /*0x54febd*/
@@ -10773,9 +10773,9 @@ char *__thiscall TimerClass_Constructor(
   *(_DWORD *)this = 0; /*0x54ff08*/
   v19 = dword_A8ED84; /*0x54ff0a*/
   this->abstractFlags = 1; /*0x54ff10*/
-  this->vtable3 = v19; /*0x54ff13*/
-  this->vtable4 = a3; /*0x54ff1a*/
-  this->vtable2 = 1; /*0x54ff21*/
+  this->ptr_C = v19; /*0x54ff13*/
+  this->ptr_10 = a3; /*0x54ff1a*/
+  this->ptr_8 = 1; /*0x54ff21*/
   *(_WORD *)(this + 65) = a10; /*0x54ff29*/
   this->q10C = BYTE2(a10); /*0x54ff32*/
   this->q088 = a11; /*0x54ff39*/
@@ -12000,7 +12000,7 @@ int __thiscall sub_541170(ObjectClass *this, int a2, int a3, int a4, int a5)
   int v7; // eax
   _DWORD *i; // edx
   _DWORD *v10; // ecx
-  char vtable1; // al
+  char ptr_4; // al
   int v12; // edi
   int v13; // edi
   int v14; // [esp+0h] [ebp-1Ch] BYREF
@@ -12019,12 +12019,12 @@ int __thiscall sub_541170(ObjectClass *this, int a2, int a3, int a4, int a5)
   }
   LOWORD(v5) = *(&dword_A8E2B2 + v7); /*0x5411be*/
   v10 = (_DWORD *)(dword_A8DA78[v7] + 40); /*0x5411c6*/
-  vtable1 = (char)this->?; /*0x5411c9*/
+  ptr_4 = (char)this->?; /*0x5411c9*/
   v12 = a4; /*0x5411cc*/
   v15[0] = *v10; /*0x5411d2*/
   v15[1] = v10[1]; /*0x5411d9*/
   v15[2] = v10[2]; /*0x5411e2*/
-  if ( !vtable1 || !BYTE1(this->?) ) /*0x5411e8*/
+  if ( !ptr_4 || !BYTE1(this->?) ) /*0x5411e8*/
     return 0; /*0x5411af*/
   if ( a4 && (&v14 == (int *)-16 || Network::IsBroadcastAddr((Network *)v15)) ) /*0x5411ff*/
     v12 = 0; /*0x541208*/
@@ -13928,7 +13928,7 @@ char __thiscall AbstractClass::ModifyCellTiles(AbstractClass *this, int a2)
   _BYTE v39[12]; // [esp+40h] [ebp-Ch] BYREF
 
   v2 = this; /*0x543335*/
-  v30 = (*(int (__thiscall **)(AbstractClass *))(this->vtable0 + 108))(this); /*0x543342*/
+  v30 = (*(int (__thiscall **)(AbstractClass *))(this->ptr_0 + 108))(this); /*0x543342*/
   if ( !v30 ) /*0x543346*/
     return 0; /*0x543346*/
   v3 = a2; /*0x54334c*/
@@ -13947,7 +13947,7 @@ char __thiscall AbstractClass::ModifyCellTiles(AbstractClass *this, int a2)
         goto LABEL_45; /*0x54338c*/
       do /*0x5436f2*/
       {
-        v7 = (_WORD *)(*(int (__thiscall **)(AbstractClass *, int *))(v2->vtable0 + 440))(v2, &v36); /*0x54339b*/
+        v7 = (_WORD *)(*(int (__thiscall **)(AbstractClass *, int *))(v2->ptr_0 + 440))(v2, &v36); /*0x54339b*/
         LOWORD(v31) = *v7 + v6; /*0x5433b0*/
         HIWORD(v31) = v27 + v7[1]; /*0x5433b9*/
         *(_DWORD *)v32 = v31; /*0x5433c8*/
@@ -14040,7 +14040,7 @@ LABEL_28:
         v33 = 0; /*0x5435d3*/
         if ( dword_A8E9B8 <= 0 ) /*0x5435db*/
           goto LABEL_42; /*0x5435db*/
-        v35 = *(_DWORD *)(*(&dword_A83D84->vtable0 + *((_DWORD *)v8 + 17)) + 668); /*0x5435f8*/
+        v35 = *(_DWORD *)(*(&dword_A83D84->ptr_0 + *((_DWORD *)v8 + 17)) + 668); /*0x5435f8*/
         v28 = (char *)dword_A8E9AC; /*0x5435fc*/
         while ( 1 ) /*0x543608*/
         {
@@ -14093,9 +14093,9 @@ LABEL_45:
   }
   if ( v3 == 1 || v3 == 3 ) /*0x543723*/
   {
-    LOBYTE(v2[3].vtable2) = 0; /*0x543727*/
+    LOBYTE(v2[3].ptr_8) = 0; /*0x543727*/
     if ( v2 ) /*0x54372b*/
-      (*(void (__thiscall **)(AbstractClass *, int))(v2->vtable0 + 32))(v2, 1); /*0x543733*/
+      (*(void (__thiscall **)(AbstractClass *, int))(v2->ptr_0 + 32))(v2, 1); /*0x543733*/
   }
   return 1; /*0x543736*/
 }
@@ -14174,12 +14174,12 @@ int __stdcall AbstractClass::COMStub_6(AbstractClass *this, int *a2, int a3)
 // ==== 0x00543A10  AbstractClass::COMStub_54  this=IsometricTileClass  sig=csp ====
 int __thiscall AbstractClass::COMStub_54(AbstractClass *this, int a2, int a3)
 {
-  void (__thiscall **vtable0)(AbstractClass *, int); // eax
+  void (__thiscall **ptr_0)(AbstractClass *, int); // eax
 
-  vtable0 = (void (__thiscall **)(AbstractClass *, int))this->vtable0; /*0x543a17*/
+  ptr_0 = (void (__thiscall **)(AbstractClass *, int))this->ptr_0; /*0x543a17*/
   *((_BYTE *)this + 129) = 0; /*0x543a1c*/
-  vtable0[109](this, a2); /*0x543a23*/
-  return (*((int (__thiscall **)(AbstractClass *, int))this->vtable0 + 73))(this, 1); /*0x543a35*/
+  ptr_0[109](this, a2); /*0x543a23*/
+  return (*((int (__thiscall **)(AbstractClass *, int))this->ptr_0 + 73))(this, 1); /*0x543a35*/
 }
 
 
@@ -14189,9 +14189,9 @@ char __thiscall AbstractClass::COMStub_53(AbstractClass *this)
 {
   if ( !byte_A8E9A0 || *((_BYTE *)this + 129) ) /*0x543a4c*/
     return 0; /*0x543a88*/
-  (*((void (__thiscall **)(AbstractClass *))this->vtable0 + 84))(this); /*0x543a58*/
-  (*((void (__thiscall **)(AbstractClass *, int))this->vtable0 + 55))(this, 1); /*0x543a64*/
-  (*((void (__thiscall **)(AbstractClass *, _DWORD))this->vtable0 + 73))(this, 0); /*0x543a70*/
+  (*((void (__thiscall **)(AbstractClass *))this->ptr_0 + 84))(this); /*0x543a58*/
+  (*((void (__thiscall **)(AbstractClass *, int))this->ptr_0 + 55))(this, 1); /*0x543a64*/
+  (*((void (__thiscall **)(AbstractClass *, _DWORD))this->ptr_0 + 73))(this, 0); /*0x543a70*/
   *((_BYTE *)this + 129) = 1; /*0x543a76*/
   *((_BYTE *)this + 128) = 0; /*0x543a7d*/
   return 1; /*0x543a86*/
@@ -14252,16 +14252,16 @@ void **__thiscall AbstractClass::CreateInstance(AbstractClass *this, char a2)
   int v4; // eax
   AbstractClass *v6; // [esp+Ch] [ebp-4h] BYREF
 
-  this->vtable0 = &IsometricTileClass::`vftable'; /*0x543b16*/
-  this->vtable1 = &IsometricTileClass::`vftable'; /*0x543b1c*/
-  this->vtable2 = &IsometricTileClass::`vftable'; /*0x543b23*/
-  this->vtable3 = &IsometricTileClass::`vftable'; /*0x543b2a*/
-  AbstractClass::AnnounceExpiredPointer(&this->vtable0, 1); /*0x543b31*/
+  this->ptr_0 = &IsometricTileClass::`vftable'; /*0x543b16*/
+  this->ptr_4 = &IsometricTileClass::`vftable'; /*0x543b1c*/
+  this->ptr_8 = &IsometricTileClass::`vftable'; /*0x543b23*/
+  this->ptr_C = &IsometricTileClass::`vftable'; /*0x543b2a*/
+  AbstractClass::AnnounceExpiredPointer(&this->ptr_0, 1); /*0x543b31*/
   if ( byte_A8E9A0 && !*((_BYTE *)this + 129) ) /*0x543b3f*/
   {
-    (*((void (__thiscall **)(AbstractClass *))this->vtable0 + 84))(this); /*0x543b4d*/
-    (*((void (__thiscall **)(AbstractClass *, int))this->vtable0 + 55))(this, 1); /*0x543b59*/
-    (*((void (__thiscall **)(AbstractClass *, _DWORD))this->vtable0 + 73))(this, 0); /*0x543b65*/
+    (*((void (__thiscall **)(AbstractClass *))this->ptr_0 + 84))(this); /*0x543b4d*/
+    (*((void (__thiscall **)(AbstractClass *, int))this->ptr_0 + 55))(this, 1); /*0x543b59*/
+    (*((void (__thiscall **)(AbstractClass *, _DWORD))this->ptr_0 + 73))(this, 0); /*0x543b65*/
     *((_BYTE *)this + 129) = 1; /*0x543b6b*/
     *((_BYTE *)this + 128) = 0; /*0x543b72*/
   }
@@ -14299,7 +14299,7 @@ void **__thiscall AbstractClass::CreateInstance(AbstractClass *this, char a2)
   ObjectClass::Dtor((ObjectClass *)this); /*0x543c17*/
   if ( (a2 & 1) != 0 ) /*0x543c21*/
     __3_YAXPAX_Z(this); /*0x543c24*/
-  return &this->vtable0; /*0x543c2e*/
+  return &this->ptr_0; /*0x543c2e*/
 }
 
 
@@ -14820,7 +14820,7 @@ _DWORD *__thiscall Map_Get(TechnoClass *this, int a2)
   v3 = a2; /*0x544e0c*/
   if ( a2 > v2 - 1 ) /*0x544e13*/
     v3 = a2 % v2; /*0x544e16*/
-  for ( result = &this->vtable0; v3; --v3 ) /*0x544e1e*/
+  for ( result = &this->ptr_0; v3; --v3 ) /*0x544e1e*/
     result = (_DWORD *)result[175]; /*0x544e20*/
   return result; /*0x544e18*/
 }
@@ -17238,7 +17238,7 @@ char __stdcall JumpjetLocomotionClass::DispatchLocomotion(JumpjetLocomotionClass
   int v9; // edi
   FootClass *v10; // ecx
   int v11; // ebx
-  int (__thiscall **vtable0)(FootClass *, int *); // edx
+  int (__thiscall **ptr_0)(FootClass *, int *); // edx
   _DWORD *v13; // eax
   void *v14; // eax
   int *v15; // edx
@@ -17288,9 +17288,9 @@ char __stdcall JumpjetLocomotionClass::DispatchLocomotion(JumpjetLocomotionClass
         v9 = *v8; /*0x54af74*/
         v10 = this->?; /*0x54af76*/
         v11 = v8[1]; /*0x54af79*/
-        vtable0 = (int (__thiscall **)(FootClass *, int *))v10->TechnoClass; /*0x54af7c*/
+        ptr_0 = (int (__thiscall **)(FootClass *, int *))v10->TechnoClass; /*0x54af7c*/
         v31 = v8[2]; /*0x54af81*/
-        v13 = (_DWORD *)vtable0[18](v10, &v29); /*0x54af8a*/
+        v13 = (_DWORD *)ptr_0[18](v10, &v29); /*0x54af8a*/
         LOWORD(thisa) = *v13 / 256; /*0x54af9d*/
         HIWORD(thisa) = v13[1] / 256; /*0x54afb5*/
         *(_DWORD *)v27 = thisa; /*0x54afbe*/
@@ -17347,7 +17347,7 @@ char __stdcall JumpjetLocomotionClass::DispatchLocomotion(JumpjetLocomotionClass
         v30 = location[1]; /*0x54b0ac*/
         v31 = location[2]; /*0x54b0bd*/
         if ( (unsigned __int8)Cell::IsPassable(&v29) /*0x54b0fe*/
-          || ((int)dword_A8B230->vtable0 & 0x1000) != 0
+          || ((int)dword_A8B230->ptr_0 & 0x1000) != 0
           && (v21 = this->?->?, v29 = *v21, v30 = v21[1], v31 = v21[2], (unsigned __int8)Game::Stub3((int)&v29)) )
         {
           (*((void (__thiscall **)(FootClass *))this->?->TechnoClass + 84))(this->?); /*0x54b10c*/
@@ -20188,7 +20188,7 @@ void __thiscall AbstractClass::processStateTransition(AbstractClass *this, int a
 void __thiscall sub_54E690(ObjectClass *this)
 {
   int i; // esi
-  void (__thiscall **vtable3)(void **); // edx
+  void (__thiscall **ptr_C)(void **); // edx
   void **p_vtable3; // esi
   void **v5; // ecx
   int abstractFlags; // edi
@@ -20196,11 +20196,11 @@ void __thiscall sub_54E690(ObjectClass *this)
 
   for ( i = this->? - 1; i >= 0; --i ) /*0x54e699*/
     __3_YAXPAX_Z(*(void **)(this->? + 4 * i)); /*0x54e6a2*/
-  vtable3 = (void (__thiscall **)(void **))this->?; /*0x54e6ad*/
+  ptr_C = (void (__thiscall **)(void **))this->?; /*0x54e6ad*/
   p_vtable3 = &this->?; /*0x54e6b0*/
   v5 = &this->?; /*0x54e6b3*/
   abstractFlags = this->?; /*0x54e6b5*/
-  vtable3[3](v5); /*0x54e6b8*/
+  ptr_C[3](v5); /*0x54e6b8*/
   (*((void (__thiscall **)(void **, int, _DWORD))*p_vtable3 + 2))(p_vtable3, abstractFlags, 0); /*0x54e6c3*/
   v7 = p_vtable3[1]; /*0x54e6c6*/
   *p_vtable3 = &VectorClass<KamikazeControl *>::`vftable'; /*0x54e6c9*/
@@ -20609,18 +20609,18 @@ _DWORD *__thiscall sub_54EBF0(VectorClass *this, int a2, int a3)
   this->Capacity = a2; /*0x54ebfe*/
   this->IsInitialized = 1; /*0x54ec01*/
   this->IsAllocated = 0; /*0x54ec05*/
-  this->vtable0 = &VectorClass<KamikazeControl *>::`vftable'; /*0x54ec08*/
+  this->ptr_0 = &VectorClass<KamikazeControl *>::`vftable'; /*0x54ec08*/
   if ( a2 ) /*0x54ec0e*/
   {
     if ( a3 ) /*0x54ec16*/
     {
       this->Items = (void *)a3; /*0x54ec18*/
-      return &this->vtable0; /*0x54ec1e*/
+      return &this->ptr_0; /*0x54ec1e*/
     }
     this->Items = (void *)__2_YAPAXI_Z(4 * a2); /*0x54ec2d*/
     this->IsAllocated = 1; /*0x54ec30*/
   }
-  return &this->vtable0; /*0x54ec1d*/
+  return &this->ptr_0; /*0x54ec1d*/
 }
 
 
@@ -21534,10 +21534,10 @@ char *__thiscall TimerClass_Constructor(
   int v20; // eax
 
   *(_DWORD *)this = 0; /*0x54fe6a*/
-  this->vtable2 = 0; /*0x54fe6c*/
-  this->vtable3 = dword_A8ED84; /*0x54fe75*/
+  this->ptr_8 = 0; /*0x54fe6c*/
+  this->ptr_C = dword_A8ED84; /*0x54fe75*/
   v18 = this + 36; /*0x54fe78*/
-  this->vtable2 = 0; /*0x54fe7b*/
+  this->ptr_8 = 0; /*0x54fe7b*/
   *v18 = a2; /*0x54fe83*/
   this->abstractFlags = 0; /*0x54fe89*/
   this->nextArrayIndex = 1; /*0x54fe8c*/
@@ -21546,7 +21546,7 @@ char *__thiscall TimerClass_Constructor(
   this->NeedsSaveOrLink = 0; /*0x54fe99*/
   v18[2] = a4; /*0x54fe9c*/
   this->q084 = 0; /*0x54fea6*/
-  this->vtable4 = a5; /*0x54fea9*/
+  this->ptr_10 = a5; /*0x54fea9*/
   this->q034 = a6; /*0x54feaf*/
   this->TargetStrengthCoefficient = a7; /*0x54feb6*/
   this->zero_3C = a8; /*0x54febd*/
@@ -21569,9 +21569,9 @@ char *__thiscall TimerClass_Constructor(
   *(_DWORD *)this = 0; /*0x54ff08*/
   v19 = dword_A8ED84; /*0x54ff0a*/
   this->abstractFlags = 1; /*0x54ff10*/
-  this->vtable3 = v19; /*0x54ff13*/
-  this->vtable4 = a3; /*0x54ff1a*/
-  this->vtable2 = 1; /*0x54ff21*/
+  this->ptr_C = v19; /*0x54ff13*/
+  this->ptr_10 = a3; /*0x54ff1a*/
+  this->ptr_8 = 1; /*0x54ff21*/
   *(_WORD *)(this + 65) = a10; /*0x54ff29*/
   this->q10C = BYTE2(a10); /*0x54ff32*/
   this->q088 = a11; /*0x54ff39*/

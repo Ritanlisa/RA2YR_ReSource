@@ -15,7 +15,7 @@ namespace gamemd {  // G42.18 ns repair
 unsigned int * ScoreAnimClass::Constructor_ScoreAnimClass_0(char a2)
 {
 
-  /* X11: vtable install elided (implicit via ScoreAnimClass virtuals 0x691009) */
+  /* X11: ptr_0 install elided (implicit via ScoreAnimClass virtuals 0x691009) */
   if ( (a2 & 1) != 0 ) /*0x69100f*/
     __3_YAXPAX_Z(this); /*0x691012*/
   return this->__pad_0; /*0x69101c*/
@@ -26,7 +26,7 @@ unsigned int * ScoreAnimClass::Constructor_ScoreAnimClass_0(char a2)
 namespace gamemd {
 unsigned int * ScoreAnimClass::Constructor_ScoreAnimClass_1(char a2)
 {
-  /* X11: vtable install elided (implicit via ScoreAnimClass virtuals 0x691029) */
+  /* X11: ptr_0 install elided (implicit via ScoreAnimClass virtuals 0x691029) */
   if ( (a2 & 1) != 0 ) /*0x69102f*/
     operator delete((this)); /*0x691032*/
   return &this->m_0; /*0x69103c*/
@@ -41,7 +41,7 @@ unsigned int * ScoreAnimClass::Constructor_ScoreFontClass(char a2)
   char *v4; // eax
 
   v3 = (void *)this->field_C; /*0x6910a6*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F0EF0) */  /*0x6910a9*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F0EF0) */  /*0x6910a9*/
   if ( v3 && this->q010 == 1 ) /*0x6910b7*/
   {
     __3_YAXPAX_Z(v3); /*0x6910ba*/

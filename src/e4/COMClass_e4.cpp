@@ -49,7 +49,7 @@ void * COMClass::lockServer(rc_ptr_base * Block, char a2)
   }
   else
   {
-    /* X11: vtable install elided (implicit via rc_ptr virtuals 0x76705a) */
+    /* X11: ptr_0 install elided (implicit via rc_ptr virtuals 0x76705a) */
     ComPtr::Release((ComPtr *)Block); /*0x767060*/
     if ( (a2 & 1) != 0 ) /*0x767068*/
       operator delete((Block)); /*0x76706b*/
@@ -61,7 +61,7 @@ void * COMClass::lockServer(rc_ptr_base * Block, char a2)
 namespace gamemd {
 VectorCursor * COMClass::disconnectPoint(unsigned int * Block, char a2)
 {
-  /* X11: vtable install elided (X67 star-deref, RHS g_var_0f5bcb) */  /*0x7669f9*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_var_0f5bcb) */  /*0x7669f9*/
   if ( (a2 & 1) != 0 ) /*0x7669ff*/
     operator delete((Block)); /*0x766a02*/
   return Block->tail_0; /*0x766a0c*/

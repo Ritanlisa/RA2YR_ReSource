@@ -115,7 +115,7 @@ public:
     virtual bool canSelfRepair();  // 0x70FB50
     virtual bool shouldBeCloaked() const;  // 0x6FBDC0
     virtual bool shouldNotBeCloaked() const;  // 0x6FBC90
-    virtual bool IsDisguised() const;  // 0x41C010 (vtable slot 196, all Techno-family tables share this impl)
+    virtual bool IsDisguised() const;  // 0x41C010 (ptr_0 slot 196, all Techno-family tables share this impl)
     // wrapper: delegates to TechnoClass::ShouldNotBeCloaked at 0x6FBC90
     virtual DirStruct* getFacing(DirStruct* buffer) const;
     // wrapper: delegates to TechnoClass::ShouldNotBeCloaked at 0x6FBC90
@@ -465,7 +465,7 @@ public:
     virtual int ClearArrays();  // 0x5F99E0
     virtual int ComputeScanRange() const;  // 0x48AB90
     // G21 L6: draw* 族 (0x6594xx-0x6595xx) 归属裁决迁出——真 owner = RadBeam
-    // （双调用方接收者均 RadBeam::Create 对象，InitState 无 vtable 安装）
+    // （双调用方接收者均 RadBeam::Create 对象，InitState 无 ptr_0 安装）
     virtual int ClearScriptPlanningData();  // 0x633D30
     virtual int GetTileAnimationData() const;  // 0x547150
     virtual int MutateAll();  // 0x6B0AE0
@@ -626,7 +626,7 @@ public:
     virtual int TransitionEffectState(int a2);  // 0x7036C0
     virtual int Vt279Thunk0();  // 0x703850
     virtual int UpdatePowerDrain(); // 0x703860
-    virtual gamemd::WeaponTypeClass** GetPoweredWeaponSlot();  // 0x70E1A0 (vtable slot 253: house-power-gated weapon-slot pick via slot 254 SelectWeaponSlot; returns pointer to the WeaponTypeClass* holder)
+    virtual gamemd::WeaponTypeClass** GetPoweredWeaponSlot();  // 0x70E1A0 (ptr_0 slot 253: house-power-gated weapon-slot pick via slot 254 SelectWeaponSlot; returns pointer to the WeaponTypeClass* holder)
     virtual int UpdateState(); // 0x706640
     virtual int UpdateUnitAnimation();  // 0x736CA0
     virtual int GetInfantryCursorAction() const;  // 0x7404B0
@@ -688,7 +688,7 @@ public:
     virtual int SetSpread(); // 0x70DDD0
     virtual int DecCounter();  // 0x70D670
     virtual int PlaceAtCell();  // 0x70D8F0
-    virtual WeaponStruct* SelectWeaponSlot(int weaponIndex); // 0x70E140 (vtable slot 254: elite-vs-regular slot by veterancy >= 2.0 at +0x150)
+    virtual WeaponStruct* SelectWeaponSlot(int weaponIndex); // 0x70E140 (ptr_0 slot 254: elite-vs-regular slot by veterancy >= 2.0 at +0x150)
     virtual int Update2(); // 0x70ED10
     virtual int GetAnimationFlags() const;  // 0x70ED80
     virtual int GetTargetSpeedMultiplier() const;  // 0x50C050

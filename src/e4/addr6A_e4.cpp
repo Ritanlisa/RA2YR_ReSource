@@ -1318,7 +1318,7 @@ int sub_6A4DC0()
     ControlClass::Construct(v0, 0, 0, 0, 60, 48, 25, 0); /*0x6a4ddb*/
     v0[11] = 0; /*0x6a4de0*/
     v0->q030 = 0; /*0x6a4de3*/
-    /* X11: vtable install elided (X67 star-deref, RHS g_var_e98be5) */  /*0x6a4de6*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_var_e98be5) */  /*0x6a4de6*/
     v0 += 14; /*0x6a4dec*/
     --v1; /*0x6a4def*/
   }

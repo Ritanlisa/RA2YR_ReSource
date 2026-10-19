@@ -324,12 +324,12 @@ int __thiscall Skirmish::RenderPreview(Skirmish *this, HWND hWnd)
       {
         v18 = v32 /*0x640944*/
             + v34
-            * ((signed int)(1000 * (*(&v15[122].nextArrayIndex + 2 * v17) - (unsigned int)v15[122].vtable1))
-             / (int)v15[122].vtable3)
+            * ((signed int)(1000 * (*(&v15[122].nextArrayIndex + 2 * v17) - (unsigned int)v15[122].ptr_4))
+             / (int)v15[122].ptr_C)
             / 1000;
         v19 = v33 /*0x64097a*/
             + v35
-            * ((signed int)(1000 * (*(&v15[122].referenceCount + 2 * v17) - (unsigned int)v15[122].vtable2))
+            * ((signed int)(1000 * (*(&v15[122].referenceCount + 2 * v17) - (unsigned int)v15[122].ptr_8))
              / v15[122].uniqueId)
             / 1000;
         v20 = v19; /*0x64097e*/
@@ -604,7 +604,7 @@ int *__userpurge Tactical::Radar_Render@<eax>(
             Coord::Subtract((Coord *)&v74, ((__int16)v60 << 8) + 128, v41, 0); /*0x640ed4*/
             IsoCoord::ToScreenOffset(v74, v41, &v76, &v68); /*0x640eef*/
             v39 = (char *)dword_A8B230; /*0x640f32*/
-            v42 = *(int *)((char *)&dword_A8B230->vtable0 + v40); /*0x640f3a*/
+            v42 = *(int *)((char *)&dword_A8B230->ptr_0 + v40); /*0x640f3a*/
             if ( v42 != -1 ) /*0x640f40*/
             {
               v43 = *(_DWORD *)(*(_DWORD *)(*(_DWORD *)&stru_B054D0.m_1[3] /*0x640f66*/
@@ -615,7 +615,7 @@ int *__userpurge Tactical::Radar_Render@<eax>(
               {
                 if ( v43 ) /*0x640f78*/
                 {
-                  v69[0] = v72 * (1000000 * (v76 / 60 - v67) / (int)dword_A8B230[122].vtable3) / 1000000 + v70 - 3; /*0x640fd6*/
+                  v69[0] = v72 * (1000000 * (v76 / 60 - v67) / (int)dword_A8B230[122].ptr_C) / 1000000 + v70 - 3; /*0x640fd6*/
                   v44 = *(_DWORD *)v34; /*0x641015*/
                   v69[1] = v73 * (1000000 * (v68 / 30 - v61) / dword_A8B230[122].uniqueId) / 1000000 + v71 - 2; /*0x641025*/
                   v45 = (int *)(*(int (__thiscall **)(char *, _BYTE *))(v44 + 120))(v34, v79); /*0x641029*/
@@ -807,7 +807,7 @@ int __thiscall MiniMap::Render(MiniMap *this)
       }
       else
       {
-        v20 = *(&dword_A83D84->vtable0 + v17); /*0x6413d3*/
+        v20 = *(&dword_A83D84->ptr_0 + v17); /*0x6413d3*/
         RadarColor = OverlayTypeClass::GetRadarColor( /*0x6413e2*/
                        (OverlayTypeClass *)v20,
                        (int)&v52,
@@ -1046,7 +1046,7 @@ char __thiscall LoadMapPreviewImage(ObjectClass *this, _DWORD *a2)
   int v11; // eax
   int Base64Data; // edi
   int v13; // eax
-  void *vtable0; // ecx
+  void *ptr_0; // ecx
   unsigned int v15; // edi
   void *v16; // eax
   char v18[8]; // [esp+20h] [ebp-5Ch] BYREF
@@ -1108,11 +1108,11 @@ LABEL_14:
   *(_DWORD *)v21.__pad_0 = &BufferStraw::`vftable'; /*0x641c13*/
   LZOStraw::Constructor((LZOStraw *)&v23.Buffer_field_10, 1, 0x2000); /*0x641c1b*/
   Delegate::Set((Straw *)&v23.Buffer_field_10, (int)&v21); /*0x641c29*/
-  vtable0 = this->AbstractClass; /*0x641c2e*/
+  ptr_0 = this->AbstractClass; /*0x641c2e*/
   v18[0] = 0; /*0x641c30*/
   v18[1] = 0; /*0x641c34*/
   v18[2] = 0; /*0x641c38*/
-  (*(void (__thiscall **)(void *, _DWORD, _DWORD))(*(_DWORD *)vtable0 + 92))(vtable0, 0, 0); /*0x641c42*/
+  (*(void (__thiscall **)(void *, _DWORD, _DWORD))(*(_DWORD *)ptr_0 + 92))(ptr_0, 0, 0); /*0x641c42*/
   v24 = 0; /*0x641c47*/
   if ( (*(int (__thiscall **)(void *))(*(_DWORD *)this->AbstractClass + 128))(this->AbstractClass) <= 0 ) /*0x641c55*/
   {
@@ -1646,8 +1646,8 @@ _DWORD *__thiscall CoordStruct::Set2(CoordStruct *this, __int16 *a2, int a3)
   int v4; // edx
 
   v4 = *a2 << 8; /*0x642756*/
-  this->vtable2 = (a2[1] << 8) + 128; /*0x642759*/
-  this->vtable3 = a3; /*0x642766*/
+  this->ptr_8 = (a2[1] << 8) + 128; /*0x642759*/
+  this->ptr_C = a3; /*0x642766*/
   this->vfptr = (void *)(v4 + 128); /*0x642769*/
   return &this->vfptr; /*0x64276b*/
 }
@@ -4351,7 +4351,7 @@ LABEL_14:
                  0) )
           {
             ParticleTypeClass_field_0x2C8 = v3->ParticleTypeClass_field_0x2C8; /*0x64574e*/
-            v10 = (VectorClass *)((char *)&ParticleTypeClass_field_0x2C8->vtable0 + 1); /*0x645751*/
+            v10 = (VectorClass *)((char *)&ParticleTypeClass_field_0x2C8->ptr_0 + 1); /*0x645751*/
             v11 = 3 * (_DWORD)ParticleTypeClass_field_0x2C8; /*0x645754*/
             ParticleTypeClass_field_0x2BC = v3->ParticleTypeClass_field_0x2BC; /*0x645757*/
             v3->ParticleTypeClass_field_0x2C8 = v10; /*0x64575a*/
@@ -4772,13 +4772,13 @@ char *__thiscall Function::645D00(char *this, int a2)
 _DWORD *__thiscall sub_645D20(float *this, _DWORD *a2, float *a3)
 {
   *this = *a3; /*0x645d27*/
-  this->vtable2 = a3[1]; /*0x645d2c*/
-  this->vtable3 = a3[2]; /*0x645d32*/
-  this->vtable4 = a3[3]; /*0x645d3c*/
+  this->ptr_8 = a3[1]; /*0x645d2c*/
+  this->ptr_C = a3[2]; /*0x645d32*/
+  this->ptr_10 = a3[3]; /*0x645d3c*/
   *a2 = *(_DWORD *)this; /*0x645d43*/
-  a2[1] = this->vtable2; /*0x645d48*/
-  a2[2] = this->vtable3; /*0x645d4e*/
-  a2[3] = this->vtable4; /*0x645d55*/
+  a2[1] = this->ptr_8; /*0x645d48*/
+  a2[2] = this->ptr_C; /*0x645d4e*/
+  a2[3] = this->ptr_10; /*0x645d55*/
   return a2; /*0x645d54*/
 }
 
@@ -4803,10 +4803,10 @@ float *__thiscall sub_645D60(ObjectClass *this, float *a2)
   int v18; // [esp+4h] [ebp-74h]
   int v19; // [esp+8h] [ebp-70h]
   int v20; // [esp+Ch] [ebp-6Ch]
-  void *vtable0; // [esp+18h] [ebp-60h] BYREF
-  void *vtable1; // [esp+1Ch] [ebp-5Ch]
-  void *vtable2; // [esp+20h] [ebp-58h]
-  void *vtable3; // [esp+24h] [ebp-54h]
+  void *ptr_0; // [esp+18h] [ebp-60h] BYREF
+  void *ptr_4; // [esp+1Ch] [ebp-5Ch]
+  void *ptr_8; // [esp+20h] [ebp-58h]
+  void *ptr_C; // [esp+24h] [ebp-54h]
   int v25; // [esp+28h] [ebp-50h]
   int v26; // [esp+2Ch] [ebp-4Ch]
   int v27; // [esp+30h] [ebp-48h]
@@ -4816,12 +4816,12 @@ float *__thiscall sub_645D60(ObjectClass *this, float *a2)
   float v31[4]; // [esp+58h] [ebp-20h] BYREF
   float v32[4]; // [esp+68h] [ebp-10h] BYREF
 
-  vtable0 = this->AbstractClass; /*0x645d6f*/
-  vtable1 = this->?; /*0x645d76*/
-  vtable2 = this->?; /*0x645d7d*/
-  vtable3 = this->?; /*0x645d88*/
+  ptr_0 = this->AbstractClass; /*0x645d6f*/
+  ptr_4 = this->?; /*0x645d76*/
+  ptr_8 = this->?; /*0x645d7d*/
+  ptr_C = this->?; /*0x645d88*/
   v3 = sub_6460C0(v29, a2); /*0x645d8e*/
-  v4 = QuaternionMathMultiply((float *)v30[0].__pad_0, (float *)&vtable0, v3); /*0x645d9c*/
+  v4 = QuaternionMathMultiply((float *)v30[0].__pad_0, (float *)&ptr_0, v3); /*0x645d9c*/
   v5 = *(float *)&this->?; /*0x645da3*/
   v6 = *((_DWORD *)v4 + 1); /*0x645da6*/
   v25 = *(_DWORD *)v4; /*0x645da9*/
@@ -4841,11 +4841,11 @@ float *__thiscall sub_645D60(ObjectClass *this, float *a2)
   v29[3] = v9[3]; /*0x645e03*/
   v10 = sub_6460C0(v31, a2); /*0x645e09*/
   v11 = QuaternionMathMultiply(v32, v29, v10); /*0x645e17*/
-  vtable0 = *(void **)v11; /*0x645e1e*/
-  vtable1 = (void *)*((_DWORD *)v11 + 1); /*0x645e25*/
+  ptr_0 = *(void **)v11; /*0x645e1e*/
+  ptr_4 = (void *)*((_DWORD *)v11 + 1); /*0x645e25*/
   v12 = (void *)*((_DWORD *)v11 + 3); /*0x645e30*/
-  vtable2 = (void *)*((_DWORD *)v11 + 2); /*0x645e33*/
-  vtable3 = v12; /*0x645e3b*/
+  ptr_8 = (void *)*((_DWORD *)v11 + 2); /*0x645e33*/
+  ptr_C = v12; /*0x645e3b*/
   if ( !(v14 | v15) ) /*0x645e97*/
   {
     *(float *)&this->AbstractClass = -*(float *)&this->AbstractClass; /*0x645ea2*/
@@ -5863,7 +5863,7 @@ void Network::QueueProcessingLoop(Network *this)
   int v40; // eax
   int v41; // esi
   char Object_field_0x30; // al
-  int vtable0; // edx
+  int ptr_0; // edx
   char *v44; // edi
   int v45; // eax
   char *v46; // edi
@@ -7818,7 +7818,7 @@ int __stdcall Network::ProcessEventList(int a1, int *a2, int a3)
   EventClass *v21; // ecx
   char *v22; // esi
   char *v23; // edi
-  int *vtable3; // eax
+  int *ptr_C; // eax
   int v25; // ecx
   int v26; // esi
   int v27; // eax
@@ -7913,7 +7913,7 @@ int __stdcall Network::ProcessEventList(int a1, int *a2, int a3)
   v11 = dword_A83ED4; /*0x64c4dc*/
   while ( 1 ) /*0x64c4ec*/
   {
-    v12 = *(&dword_A8022C->vtable0 + v46); /*0x64c4ec*/
+    v12 = *(&dword_A8022C->ptr_0 + v46); /*0x64c4ec*/
     v47 = v12; /*0x64c4f1*/
     if ( v12 ) /*0x64c4f5*/
     {
@@ -8031,18 +8031,18 @@ LABEL_96:
   v17 = byte_8B4204[111 * v15]; /*0x64c63d*/
   if ( v17 == 19 ) /*0x64c647*/
   {
-    vtable3 = &dword_A8022C->vtable0; /*0x64c7bf*/
+    ptr_C = &dword_A8022C->ptr_0; /*0x64c7bf*/
     v25 = 0; /*0x64c7cc*/
     while ( 1 ) /*0x64c7d3*/
     {
-      v26 = *vtable3; /*0x64c7d3*/
-      if ( *vtable3 ) /*0x64c7d3*/
+      v26 = *ptr_C; /*0x64c7d3*/
+      if ( *ptr_C ) /*0x64c7d3*/
       {
         if ( *(_DWORD *)(v26 + 48) == v52 ) /*0x64c7dc*/
           break; /*0x64c7dc*/
       }
       ++v25; /*0x64c7de*/
-      ++vtable3; /*0x64c7df*/
+      ++ptr_C; /*0x64c7df*/
       if ( v25 >= v51 ) /*0x64c7e3*/
         goto LABEL_57; /*0x64c7e3*/
     }
@@ -8879,7 +8879,7 @@ int ComputeNetworkFrameCRC(TechnoClass *this)
   int v14; // ebx
   int v15; // edi
   HouseClass *v16; // edx
-  int vtable0; // ecx
+  int ptr_0; // ecx
   int *v18; // ebp
   int v19; // edi
   bool v20; // cc
@@ -8948,9 +8948,9 @@ int ComputeNetworkFrameCRC(TechnoClass *this)
     v16 = dword_A8022C; /*0x64dcbd*/
     do /*0x64dce2*/
     {
-      vtable0 = v16->vtable0; /*0x64dcc3*/
+      ptr_0 = v16->ptr_0; /*0x64dcc3*/
       v16 = (HouseClass *)((char *)v16 + 4); /*0x64dcc7*/
-      v1 = *(unsigned __int8 *)(vtable0 + 577) + (v1 >> 31) + 2 * v1; /*0x64dcda*/
+      v1 = *(unsigned __int8 *)(ptr_0 + 577) + (v1 >> 31) + 2 * v1; /*0x64dcda*/
       --v15; /*0x64dcdc*/
       *(_DWORD *)dword_AC51FC = v1; /*0x64dcdd*/
     }
@@ -9399,12 +9399,12 @@ int __thiscall Skirmish::RenderPreview(Skirmish *this, HWND hWnd)
       {
         v18 = v32 /*0x640944*/
             + v34
-            * ((signed int)(1000 * (*(&v15[122].nextArrayIndex + 2 * v17) - (unsigned int)v15[122].vtable1))
-             / (int)v15[122].vtable3)
+            * ((signed int)(1000 * (*(&v15[122].nextArrayIndex + 2 * v17) - (unsigned int)v15[122].ptr_4))
+             / (int)v15[122].ptr_C)
             / 1000;
         v19 = v33 /*0x64097a*/
             + v35
-            * ((signed int)(1000 * (*(&v15[122].referenceCount + 2 * v17) - (unsigned int)v15[122].vtable2))
+            * ((signed int)(1000 * (*(&v15[122].referenceCount + 2 * v17) - (unsigned int)v15[122].ptr_8))
              / v15[122].uniqueId)
             / 1000;
         v20 = v19; /*0x64097e*/
@@ -9679,7 +9679,7 @@ int *__userpurge Tactical::Radar_Render@<eax>(
             Coord::Subtract((Coord *)&v74, ((__int16)v60 << 8) + 128, v41, 0); /*0x640ed4*/
             IsoCoord::ToScreenOffset(v74, v41, &v76, &v68); /*0x640eef*/
             v39 = (char *)dword_A8B230; /*0x640f32*/
-            v42 = *(int *)((char *)&dword_A8B230->vtable0 + v40); /*0x640f3a*/
+            v42 = *(int *)((char *)&dword_A8B230->ptr_0 + v40); /*0x640f3a*/
             if ( v42 != -1 ) /*0x640f40*/
             {
               v43 = *(_DWORD *)(*(_DWORD *)(*(_DWORD *)&stru_B054D0.m_1[3] /*0x640f66*/
@@ -9690,7 +9690,7 @@ int *__userpurge Tactical::Radar_Render@<eax>(
               {
                 if ( v43 ) /*0x640f78*/
                 {
-                  v69[0] = v72 * (1000000 * (v76 / 60 - v67) / (int)dword_A8B230[122].vtable3) / 1000000 + v70 - 3; /*0x640fd6*/
+                  v69[0] = v72 * (1000000 * (v76 / 60 - v67) / (int)dword_A8B230[122].ptr_C) / 1000000 + v70 - 3; /*0x640fd6*/
                   v44 = *(_DWORD *)v34; /*0x641015*/
                   v69[1] = v73 * (1000000 * (v68 / 30 - v61) / dword_A8B230[122].uniqueId) / 1000000 + v71 - 2; /*0x641025*/
                   v45 = (int *)(*(int (__thiscall **)(char *, _BYTE *))(v44 + 120))(v34, v79); /*0x641029*/
@@ -9882,7 +9882,7 @@ int __thiscall MiniMap::Render(MiniMap *this)
       }
       else
       {
-        v20 = *(&dword_A83D84->vtable0 + v17); /*0x6413d3*/
+        v20 = *(&dword_A83D84->ptr_0 + v17); /*0x6413d3*/
         RadarColor = OverlayTypeClass::GetRadarColor( /*0x6413e2*/
                        (OverlayTypeClass *)v20,
                        (int)&v52,
@@ -10121,7 +10121,7 @@ char __thiscall LoadMapPreviewImage(ObjectClass *this, _DWORD *a2)
   int v11; // eax
   int Base64Data; // edi
   int v13; // eax
-  void *vtable0; // ecx
+  void *ptr_0; // ecx
   unsigned int v15; // edi
   void *v16; // eax
   char v18[8]; // [esp+20h] [ebp-5Ch] BYREF
@@ -10183,11 +10183,11 @@ LABEL_14:
   *(_DWORD *)v21.__pad_0 = &BufferStraw::`vftable'; /*0x641c13*/
   LZOStraw::Constructor((LZOStraw *)&v23.Buffer_field_10, 1, 0x2000); /*0x641c1b*/
   Delegate::Set((Straw *)&v23.Buffer_field_10, (int)&v21); /*0x641c29*/
-  vtable0 = this->AbstractClass; /*0x641c2e*/
+  ptr_0 = this->AbstractClass; /*0x641c2e*/
   v18[0] = 0; /*0x641c30*/
   v18[1] = 0; /*0x641c34*/
   v18[2] = 0; /*0x641c38*/
-  (*(void (__thiscall **)(void *, _DWORD, _DWORD))(*(_DWORD *)vtable0 + 92))(vtable0, 0, 0); /*0x641c42*/
+  (*(void (__thiscall **)(void *, _DWORD, _DWORD))(*(_DWORD *)ptr_0 + 92))(ptr_0, 0, 0); /*0x641c42*/
   v24 = 0; /*0x641c47*/
   if ( (*(int (__thiscall **)(void *))(*(_DWORD *)this->AbstractClass + 128))(this->AbstractClass) <= 0 ) /*0x641c55*/
   {
@@ -10721,8 +10721,8 @@ _DWORD *__thiscall CoordStruct::Set2(CoordStruct *this, __int16 *a2, int a3)
   int v4; // edx
 
   v4 = *a2 << 8; /*0x642756*/
-  this->vtable2 = (a2[1] << 8) + 128; /*0x642759*/
-  this->vtable3 = a3; /*0x642766*/
+  this->ptr_8 = (a2[1] << 8) + 128; /*0x642759*/
+  this->ptr_C = a3; /*0x642766*/
   this->vfptr = (void *)(v4 + 128); /*0x642769*/
   return &this->vfptr; /*0x64276b*/
 }
@@ -13426,7 +13426,7 @@ LABEL_14:
                  0) )
           {
             ParticleTypeClass_field_0x2C8 = v3->ParticleTypeClass_field_0x2C8; /*0x64574e*/
-            v10 = (VectorClass *)((char *)&ParticleTypeClass_field_0x2C8->vtable0 + 1); /*0x645751*/
+            v10 = (VectorClass *)((char *)&ParticleTypeClass_field_0x2C8->ptr_0 + 1); /*0x645751*/
             v11 = 3 * (_DWORD)ParticleTypeClass_field_0x2C8; /*0x645754*/
             ParticleTypeClass_field_0x2BC = v3->ParticleTypeClass_field_0x2BC; /*0x645757*/
             v3->ParticleTypeClass_field_0x2C8 = v10; /*0x64575a*/
@@ -13847,13 +13847,13 @@ char *__thiscall Function::645D00(char *this, int a2)
 _DWORD *__thiscall sub_645D20(float *this, _DWORD *a2, float *a3)
 {
   *this = *a3; /*0x645d27*/
-  this->vtable2 = a3[1]; /*0x645d2c*/
-  this->vtable3 = a3[2]; /*0x645d32*/
-  this->vtable4 = a3[3]; /*0x645d3c*/
+  this->ptr_8 = a3[1]; /*0x645d2c*/
+  this->ptr_C = a3[2]; /*0x645d32*/
+  this->ptr_10 = a3[3]; /*0x645d3c*/
   *a2 = *(_DWORD *)this; /*0x645d43*/
-  a2[1] = this->vtable2; /*0x645d48*/
-  a2[2] = this->vtable3; /*0x645d4e*/
-  a2[3] = this->vtable4; /*0x645d55*/
+  a2[1] = this->ptr_8; /*0x645d48*/
+  a2[2] = this->ptr_C; /*0x645d4e*/
+  a2[3] = this->ptr_10; /*0x645d55*/
   return a2; /*0x645d54*/
 }
 
@@ -13878,10 +13878,10 @@ float *__thiscall sub_645D60(ObjectClass *this, float *a2)
   int v18; // [esp+4h] [ebp-74h]
   int v19; // [esp+8h] [ebp-70h]
   int v20; // [esp+Ch] [ebp-6Ch]
-  void *vtable0; // [esp+18h] [ebp-60h] BYREF
-  void *vtable1; // [esp+1Ch] [ebp-5Ch]
-  void *vtable2; // [esp+20h] [ebp-58h]
-  void *vtable3; // [esp+24h] [ebp-54h]
+  void *ptr_0; // [esp+18h] [ebp-60h] BYREF
+  void *ptr_4; // [esp+1Ch] [ebp-5Ch]
+  void *ptr_8; // [esp+20h] [ebp-58h]
+  void *ptr_C; // [esp+24h] [ebp-54h]
   int v25; // [esp+28h] [ebp-50h]
   int v26; // [esp+2Ch] [ebp-4Ch]
   int v27; // [esp+30h] [ebp-48h]
@@ -13891,12 +13891,12 @@ float *__thiscall sub_645D60(ObjectClass *this, float *a2)
   float v31[4]; // [esp+58h] [ebp-20h] BYREF
   float v32[4]; // [esp+68h] [ebp-10h] BYREF
 
-  vtable0 = this->AbstractClass; /*0x645d6f*/
-  vtable1 = this->?; /*0x645d76*/
-  vtable2 = this->?; /*0x645d7d*/
-  vtable3 = this->?; /*0x645d88*/
+  ptr_0 = this->AbstractClass; /*0x645d6f*/
+  ptr_4 = this->?; /*0x645d76*/
+  ptr_8 = this->?; /*0x645d7d*/
+  ptr_C = this->?; /*0x645d88*/
   v3 = sub_6460C0(v29, a2); /*0x645d8e*/
-  v4 = QuaternionMathMultiply((float *)v30[0].__pad_0, (float *)&vtable0, v3); /*0x645d9c*/
+  v4 = QuaternionMathMultiply((float *)v30[0].__pad_0, (float *)&ptr_0, v3); /*0x645d9c*/
   v5 = *(float *)&this->?; /*0x645da3*/
   v6 = *((_DWORD *)v4 + 1); /*0x645da6*/
   v25 = *(_DWORD *)v4; /*0x645da9*/
@@ -13916,11 +13916,11 @@ float *__thiscall sub_645D60(ObjectClass *this, float *a2)
   v29[3] = v9[3]; /*0x645e03*/
   v10 = sub_6460C0(v31, a2); /*0x645e09*/
   v11 = QuaternionMathMultiply(v32, v29, v10); /*0x645e17*/
-  vtable0 = *(void **)v11; /*0x645e1e*/
-  vtable1 = (void *)*((_DWORD *)v11 + 1); /*0x645e25*/
+  ptr_0 = *(void **)v11; /*0x645e1e*/
+  ptr_4 = (void *)*((_DWORD *)v11 + 1); /*0x645e25*/
   v12 = (void *)*((_DWORD *)v11 + 3); /*0x645e30*/
-  vtable2 = (void *)*((_DWORD *)v11 + 2); /*0x645e33*/
-  vtable3 = v12; /*0x645e3b*/
+  ptr_8 = (void *)*((_DWORD *)v11 + 2); /*0x645e33*/
+  ptr_C = v12; /*0x645e3b*/
   if ( !(v14 | v15) ) /*0x645e97*/
   {
     *(float *)&this->AbstractClass = -*(float *)&this->AbstractClass; /*0x645ea2*/
@@ -14938,7 +14938,7 @@ void Network::QueueProcessingLoop(Network *this)
   int v40; // eax
   int v41; // esi
   char Object_field_0x30; // al
-  int vtable0; // edx
+  int ptr_0; // edx
   char *v44; // edi
   int v45; // eax
   char *v46; // edi
@@ -16893,7 +16893,7 @@ int __stdcall Network::ProcessEventList(int a1, int *a2, int a3)
   EventClass *v21; // ecx
   char *v22; // esi
   char *v23; // edi
-  int *vtable3; // eax
+  int *ptr_C; // eax
   int v25; // ecx
   int v26; // esi
   int v27; // eax
@@ -16988,7 +16988,7 @@ int __stdcall Network::ProcessEventList(int a1, int *a2, int a3)
   v11 = dword_A83ED4; /*0x64c4dc*/
   while ( 1 ) /*0x64c4ec*/
   {
-    v12 = *(&dword_A8022C->vtable0 + v46); /*0x64c4ec*/
+    v12 = *(&dword_A8022C->ptr_0 + v46); /*0x64c4ec*/
     v47 = v12; /*0x64c4f1*/
     if ( v12 ) /*0x64c4f5*/
     {
@@ -17106,18 +17106,18 @@ LABEL_96:
   v17 = byte_8B4204[111 * v15]; /*0x64c63d*/
   if ( v17 == 19 ) /*0x64c647*/
   {
-    vtable3 = &dword_A8022C->vtable0; /*0x64c7bf*/
+    ptr_C = &dword_A8022C->ptr_0; /*0x64c7bf*/
     v25 = 0; /*0x64c7cc*/
     while ( 1 ) /*0x64c7d3*/
     {
-      v26 = *vtable3; /*0x64c7d3*/
-      if ( *vtable3 ) /*0x64c7d3*/
+      v26 = *ptr_C; /*0x64c7d3*/
+      if ( *ptr_C ) /*0x64c7d3*/
       {
         if ( *(_DWORD *)(v26 + 48) == v52 ) /*0x64c7dc*/
           break; /*0x64c7dc*/
       }
       ++v25; /*0x64c7de*/
-      ++vtable3; /*0x64c7df*/
+      ++ptr_C; /*0x64c7df*/
       if ( v25 >= v51 ) /*0x64c7e3*/
         goto LABEL_57; /*0x64c7e3*/
     }
@@ -17954,7 +17954,7 @@ int ComputeNetworkFrameCRC(TechnoClass *this)
   int v14; // ebx
   int v15; // edi
   HouseClass *v16; // edx
-  int vtable0; // ecx
+  int ptr_0; // ecx
   int *v18; // ebp
   int v19; // edi
   bool v20; // cc
@@ -18023,9 +18023,9 @@ int ComputeNetworkFrameCRC(TechnoClass *this)
     v16 = dword_A8022C; /*0x64dcbd*/
     do /*0x64dce2*/
     {
-      vtable0 = v16->vtable0; /*0x64dcc3*/
+      ptr_0 = v16->ptr_0; /*0x64dcc3*/
       v16 = (HouseClass *)((char *)v16 + 4); /*0x64dcc7*/
-      v1 = *(unsigned __int8 *)(vtable0 + 577) + (v1 >> 31) + 2 * v1; /*0x64dcda*/
+      v1 = *(unsigned __int8 *)(ptr_0 + 577) + (v1 >> 31) + 2 * v1; /*0x64dcda*/
       --v15; /*0x64dcdc*/
       *(_DWORD *)dword_AC51FC = v1; /*0x64dcdd*/
     }

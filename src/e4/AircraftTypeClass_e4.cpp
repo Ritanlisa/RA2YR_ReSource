@@ -60,10 +60,10 @@ AircraftTypeClass::AircraftTypeClass(char *Source, int aP1, int a1, int a2, int 
   aP1->u8_E0C = 0; /*0x41c8ee*/
   aP1->u8_E0D = 0; /*0x41c8f4*/
   aP1->u8_E0E = 0; /*0x41c8fa*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E283C) */  /*0x41c900*/
-  /* X11: vtable install elided (X68 star-arith-named, RHS g_ptr_7E283C) */  /*0x41c906*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E283C) */  /*0x41c90c*/
-  /* X11: vtable install elided (X68 star-arith-named, RHS g_ptr_7E283C) */  /*0x41c913*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E283C) */  /*0x41c900*/
+  /* X11: ptr_0 install elided (X68 star-arith-named, RHS g_ptr_7E283C) */  /*0x41c906*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E283C) */  /*0x41c90c*/
+  /* X11: ptr_0 install elided (X68 star-arith-named, RHS g_ptr_7E283C) */  /*0x41c913*/
   (aP1 + 4)->GenerateUniqueID(); /*0x41c91a*/
   v3 = dword_A8B228; /*0x41c91f*/
   if ( dword_A8B228 < dword_A8B220 /*0x41c95d*/
@@ -197,10 +197,10 @@ AircraftTypeClass * AircraftTypeClass::ddtor(char a2, int a1, int aP0, int aP1, 
 {
 
 
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E283C) */  /*0x41cfe6*/
-  /* X11: vtable install elided (X68 star-amp-named, RHS g_ptr_7E283C) */  /*0x41cfec*/
-  /* X11: vtable install elided (X68 star-amp-named, RHS g_ptr_7E283C) */  /*0x41cff3*/
-  /* X11: vtable install elided (X68 star-amp-named, RHS g_ptr_7E283C) */  /*0x41cffa*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E283C) */  /*0x41cfe6*/
+  /* X11: ptr_0 install elided (X68 star-amp-named, RHS g_ptr_7E283C) */  /*0x41cfec*/
+  /* X11: ptr_0 install elided (X68 star-amp-named, RHS g_ptr_7E283C) */  /*0x41cff3*/
+  /* X11: ptr_0 install elided (X68 star-amp-named, RHS g_ptr_7E283C) */  /*0x41cffa*/
   AbstractClass::AnnounceExpiredPointer((void **)a1, 1); /*0x41d001*/
   AircraftTypeClass *v5; // [esp+4h] [ebp-4h] BYREF
   v5 = (gamemd::AircraftTypeClass *)(a1); /*0x41d016*/
@@ -307,10 +307,10 @@ int  AircraftTypeClass::LoadFromINI(ObjectTypeClass * aP0, int aP1)
     if ( aP0 ) /*0x41ce36*/
     {
       TechnoTypeClass::Construct((int)aP0, (int)&aP1); /*0x41ce3f*/
-      /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E283C) */  /*0x41ce44*/
-      /* X11: vtable install elided (implicit via AircraftTypeClass virtuals 0x41ce4a) */
-      /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E283C) */  /*0x41ce51*/
-      /* X11: vtable install elided (implicit via AircraftTypeClass virtuals 0x41ce58) */
+      /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E283C) */  /*0x41ce44*/
+      /* X11: ptr_0 install elided (implicit via AircraftTypeClass virtuals 0x41ce4a) */
+      /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E283C) */  /*0x41ce51*/
+      /* X11: ptr_0 install elided (implicit via AircraftTypeClass virtuals 0x41ce58) */
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->u32_E00); /*0x41ce6b*/
     (aP0->TechnoTypeClass)->LoadAnim(); /*0x41ce72*/

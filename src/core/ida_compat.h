@@ -30,7 +30,7 @@
 #include <commctrl.h>
 #include <cstddef>
 
-#include "ida_vtables.h"   // GENERATED vtable externs (gen_vtable_symbols.py)
+#include "ida_vtables.h"   // GENERATED ptr_0 externs (gen_vtable_symbols.py)
 
 // IDA pseudocode register pseudo-variables (_EAX.._ESP): untyped slots
 // that hold EITHER integers or pointers across a function body (the G31

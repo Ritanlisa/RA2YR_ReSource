@@ -182,7 +182,7 @@ char __thiscall MapClass::GrowLayer(MapClass *this, int a2, int a3, int a4)
   int v22; // esi
   int Capacity; // ecx
   int v24; // eax
-  void *vtable0; // eax
+  void *ptr_0; // eax
   _DWORD *Items; // edx
   int m; // eax
   VectorClass *v29; // [esp+10h] [ebp-20h]
@@ -215,7 +215,7 @@ char __thiscall MapClass::GrowLayer(MapClass *this, int a2, int a3, int a4)
   {
     do /*0x5a067e*/
     {
-      for ( j = (int)v6[1].vtable0 - 1; j >= 0; v10[283] = v4->__pad_30C[0] ) /*0x5a0499*/
+      for ( j = (int)v6[1].ptr_0 - 1; j >= 0; v10[283] = v4->__pad_30C[0] ) /*0x5a0499*/
       {
         v9 = *((_DWORD *)v6->Items + j); /*0x5a04a6*/
         *(_DWORD *)v31 = v9; /*0x5a04a9*/
@@ -233,17 +233,17 @@ char __thiscall MapClass::GrowLayer(MapClass *this, int a2, int a3, int a4)
         if ( v11 ) /*0x5a0515*/
         {
           VectorClass::CellConstructor(v11, 0, 0); /*0x5a051b*/
-          v12->vtable0 = &DynamicVectorClass<Cell>::`vftable'; /*0x5a0520*/
+          v12->ptr_0 = &DynamicVectorClass<Cell>::`vftable'; /*0x5a0520*/
           v12[1].Items = (void *)10; /*0x5a0526*/
-          v12[1].vtable0 = 0; /*0x5a052d*/
+          v12[1].ptr_0 = 0; /*0x5a052d*/
           v13 = v12; /*0x5a0530*/
         }
         else
         {
           v13 = 0; /*0x5a0534*/
         }
-        v13[1].Items = v6[1].vtable0; /*0x5a0539*/
-        v14 = (int)v6[1].vtable0 - 1; /*0x5a053f*/
+        v13[1].Items = v6[1].ptr_0; /*0x5a0539*/
+        v14 = (int)v6[1].ptr_0 - 1; /*0x5a053f*/
         v35 = v14; /*0x5a0540*/
         if ( v14 >= 0 ) /*0x5a0544*/
         {
@@ -272,18 +272,18 @@ char __thiscall MapClass::GrowLayer(MapClass *this, int a2, int a3, int a4)
                   if ( *(_DWORD *)(v22 + 60) != v30 + 1 ) /*0x5a05e7*/
                   {
                     Capacity = v13->Capacity; /*0x5a05e9*/
-                    if ( (int)v13[1].vtable0 < Capacity /*0x5a060e*/
+                    if ( (int)v13[1].ptr_0 < Capacity /*0x5a060e*/
                       || (v13->IsAllocated || !Capacity)
                       && (v24 = (int)v13[1].Items, v24 > 0)
-                      && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v13->vtable0 + 2))(
+                      && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v13->ptr_0 + 2))(
                            v13,
                            Capacity + v24,
                            0) )
                     {
-                      vtable0 = v13[1].vtable0; /*0x5a0615*/
+                      ptr_0 = v13[1].ptr_0; /*0x5a0615*/
                       Items = v13->Items; /*0x5a0618*/
-                      v13[1].vtable0 = (char *)vtable0 + 1; /*0x5a061e*/
-                      Items[(_DWORD)vtable0] = v33; /*0x5a0625*/
+                      v13[1].ptr_0 = (char *)ptr_0 + 1; /*0x5a061e*/
+                      Items[(_DWORD)ptr_0] = v33; /*0x5a0625*/
                     }
                     *(_DWORD *)(v22 + 60) = v30 + 1; /*0x5a0628*/
                     v15 = g_MissionQueueFrame.localVariables[160]; /*0x5a062b*/
@@ -298,7 +298,7 @@ char __thiscall MapClass::GrowLayer(MapClass *this, int a2, int a3, int a4)
           while ( v35 >= 0 ); /*0x5a0650*/
         }
         if ( v6 ) /*0x5a065a*/
-          (*(void (__thiscall **)(VectorClass *, int))v6->vtable0)(v6, 1); /*0x5a0663*/
+          (*(void (__thiscall **)(VectorClass *, int))v6->ptr_0)(v6, 1); /*0x5a0663*/
         v29 = v13; /*0x5a0665*/
         v6 = v13; /*0x5a0669*/
         v4 = v36; /*0x5a066b*/
@@ -309,7 +309,7 @@ char __thiscall MapClass::GrowLayer(MapClass *this, int a2, int a3, int a4)
     v5 = a3; /*0x5a0684*/
   }
   if ( v6 ) /*0x5a0688*/
-    (*(void (__thiscall **)(VectorClass *, int))v6->vtable0)(v6, 1); /*0x5a0691*/
+    (*(void (__thiscall **)(VectorClass *, int))v6->ptr_0)(v6, 1); /*0x5a0691*/
   if ( v5 > 1 ) /*0x5a0696*/
   {
     LayerClass::CellIteratorReset((LayerClass *)&stru_87F5F0.__pad_58[416]); /*0x5a069d*/
@@ -346,7 +346,7 @@ _DWORD *__thiscall RandomMap::CellListAlloc(RandomMap *this, int a2)
   int v16; // eax
   int Capacity; // ecx
   int Items; // eax
-  void *vtable0; // eax
+  void *ptr_0; // eax
   _DWORD *v20; // edx
   bool v21; // zf
   VectorClass *v23; // [esp+Ch] [ebp-10h]
@@ -358,9 +358,9 @@ _DWORD *__thiscall RandomMap::CellListAlloc(RandomMap *this, int a2)
   if ( v3 ) /*0x5a0718*/
   {
     VectorClass::CellConstructor(v3, 0, 0); /*0x5a071e*/
-    v4->vtable0 = &DynamicVectorClass<Cell>::`vftable'; /*0x5a0723*/
+    v4->ptr_0 = &DynamicVectorClass<Cell>::`vftable'; /*0x5a0723*/
     v4[1].Items = (void *)10; /*0x5a0729*/
-    v4[1].vtable0 = 0; /*0x5a0730*/
+    v4[1].ptr_0 = 0; /*0x5a0730*/
   }
   else
   {
@@ -370,7 +370,7 @@ _DWORD *__thiscall RandomMap::CellListAlloc(RandomMap *this, int a2)
   v4[1].Items = (void *)(*(_DWORD *)&this->__pad_4C[308] * *(_DWORD *)&this->__pad_4C[312]); /*0x5a0748*/
   v5 = g_MapCellWidth; /*0x5a074b*/
   if ( g_MapCellWidth * g_MapCellWidth <= 0 ) /*0x5a0758*/
-    return &v4->vtable0; /*0x5a08c1*/
+    return &v4->ptr_0; /*0x5a08c1*/
   v6 = g_MissionQueueFrame.localVariables[163]; /*0x5a075f*/
   v24 = 0; /*0x5a0765*/
   v25 = g_MapCellWidth * g_MapCellWidth; /*0x5a0769*/
@@ -419,23 +419,23 @@ LABEL_23:
     }
     v4 = v23; /*0x5a0855*/
     Capacity = v23->Capacity; /*0x5a0859*/
-    if ( (int)v23[1].vtable0 < Capacity ) /*0x5a0861*/
+    if ( (int)v23[1].ptr_0 < Capacity ) /*0x5a0861*/
       goto LABEL_31; /*0x5a0861*/
     if ( v23->IsAllocated || !Capacity ) /*0x5a086c*/
     {
       Items = (int)v23[1].Items; /*0x5a086e*/
       if ( Items > 0 ) /*0x5a0873*/
       {
-        if ( (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v23->vtable0 + 2))( /*0x5a087e*/
+        if ( (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v23->ptr_0 + 2))( /*0x5a087e*/
                v23,
                Capacity + Items,
                0) )
         {
 LABEL_31:
-          vtable0 = v23[1].vtable0; /*0x5a0885*/
+          ptr_0 = v23[1].ptr_0; /*0x5a0885*/
           v20 = v23->Items; /*0x5a0888*/
-          v23[1].vtable0 = (char *)vtable0 + 1; /*0x5a088e*/
-          v20[(_DWORD)vtable0] = v7; /*0x5a0891*/
+          v23[1].ptr_0 = (char *)ptr_0 + 1; /*0x5a088e*/
+          v20[(_DWORD)ptr_0] = v7; /*0x5a0891*/
         }
         v6 = g_MissionQueueFrame.localVariables[163]; /*0x5a0894*/
       }
@@ -449,7 +449,7 @@ LABEL_33:
       v5 = g_MapCellWidth; /*0x5a076f*/
       continue; /*0x5a076f*/
     }
-    return &v4->vtable0; /*0x5a08b5*/
+    return &v4->ptr_0; /*0x5a08b5*/
   }
 }
 
@@ -8345,9 +8345,9 @@ _DWORD *__thiscall sub_5A9960(ObjectClass *this, _DWORD *a2)
 _DWORD *__thiscall sub_5A9980(_DWORD *this, int a2, _DWORD *a3, int a4, _DWORD *a5, int a6)
 {
   *this = a2; /*0x5a998a*/
-  this->vtable2 = *a3; /*0x5a9992*/
-  this->vtable3 = a4; /*0x5a9999*/
-  this->vtable4 = *a5; /*0x5a99a2*/
+  this->ptr_8 = *a3; /*0x5a9992*/
+  this->ptr_C = a4; /*0x5a9999*/
+  this->ptr_10 = *a5; /*0x5a99a2*/
   this->uniqueId = a6; /*0x5a99a5*/
   return this; /*0x5a99a8*/
 }
@@ -8451,7 +8451,7 @@ Concurrency::details::_ReaderWriterLock *__thiscall __0_ReaderWriterLock_details
         Concurrency::details::_ReaderWriterLock *this)
 {
   *(_DWORD *)this = 0; /*0x5a9bf2*/
-  this->vtable2 = 0; /*0x5a9bf8*/
+  this->ptr_8 = 0; /*0x5a9bf8*/
   return this; /*0x5a9bff*/
 }
 
@@ -10391,18 +10391,18 @@ _DWORD *__thiscall Map_Cleanup(VectorClass *this, int a2, int a3)
   this->Capacity = a2; /*0x5ad9fe*/
   this->IsInitialized = 1; /*0x5ada01*/
   this->IsAllocated = 0; /*0x5ada05*/
-  this->vtable0 = &VectorClass<_WIN32_FIND_DATAA *>::`vftable'; /*0x5ada08*/
+  this->ptr_0 = &VectorClass<_WIN32_FIND_DATAA *>::`vftable'; /*0x5ada08*/
   if ( a2 ) /*0x5ada0e*/
   {
     if ( a3 ) /*0x5ada16*/
     {
       this->Items = (void *)a3; /*0x5ada18*/
-      return &this->vtable0; /*0x5ada1e*/
+      return &this->ptr_0; /*0x5ada1e*/
     }
     this->Items = (void *)__2_YAPAXI_Z(4 * a2); /*0x5ada2d*/
     this->IsAllocated = 1; /*0x5ada30*/
   }
-  return &this->vtable0; /*0x5ada1d*/
+  return &this->ptr_0; /*0x5ada1d*/
 }
 
 
@@ -10790,7 +10790,7 @@ char __thiscall ScenarioClass::Load(ScenarioClass *this, int a2)
 // ==== 0x005AE220  CampaignClass::LoadMovieDisplay  this=CampaignClass  sig=csp ====
 char __userpurge CampaignClass::LoadMovieDisplay@<al>(int this@<ecx>, ObjectClass a2)
 {
-  const char *vtable0; // ebp
+  const char *ptr_0; // ebp
   bool v4; // zf
   int v6; // edi
   bool v7; // bl
@@ -10802,14 +10802,14 @@ char __userpurge CampaignClass::LoadMovieDisplay@<al>(int this@<ecx>, ObjectClas
   int Ticks; // eax
   int v14; // [esp+14h] [ebp-8h]
 
-  vtable0 = (const char *)a2.AbstractClass; /*0x5ae227*/
+  ptr_0 = (const char *)a2.AbstractClass; /*0x5ae227*/
   v4 = a2.AbstractClass == 0; /*0x5ae22e*/
   *(_DWORD *)(this + 172) = 0; /*0x5ae231*/
   *(_DWORD *)(this + 176) = 0; /*0x5ae237*/
   *(_DWORD *)(this + 180) = 0; /*0x5ae23d*/
   if ( v4
     || (v6 = *(_DWORD *)(FootClass_Array.?[0]
-                       + 4 * *(_DWORD *)(*((_DWORD *)dword_A83C9C + *((_DWORD *)vtable0 + 1821)) + 188))) == 0 )
+                       + 4 * *(_DWORD *)(*((_DWORD *)dword_A83C9C + *((_DWORD *)ptr_0 + 1821)) + 188))) == 0 )
   {
     Debug::Log(); /*0x5ae24a*/
     return 0; /*0x5ae252*/
@@ -10828,7 +10828,7 @@ char __userpurge CampaignClass::LoadMovieDisplay@<al>(int this@<ecx>, ObjectClas
     }
     else
     {
-      String::Assign((String *)&a2, vtable0 + 4700); /*0x5ae300*/
+      String::Assign((String *)&a2, ptr_0 + 4700); /*0x5ae300*/
       v8 = CampaignClass::DeleteAndZero((CampaignClass *)(this + 80), (const char **)&a2); /*0x5ae315*/
       DeleteAndZero(&a2); /*0x5ae317*/
       if ( v8
@@ -11228,12 +11228,12 @@ int __thiscall Matrix3x3::ApplyCol1(int *this, float a2)
 void __thiscall sub_5AEA10(float *this, float a2)
 {
   *this = a2 * *this; /*0x5aea16*/
-  this->vtable2 = a2 * this->vtable2; /*0x5aea1f*/
-  this->vtable3 = a2 * this->vtable3; /*0x5aea29*/
-  this->vtable2 = a2 * this->vtable2; /*0x5aea33*/
+  this->ptr_8 = a2 * this->ptr_8; /*0x5aea1f*/
+  this->ptr_C = a2 * this->ptr_C; /*0x5aea29*/
+  this->ptr_8 = a2 * this->ptr_8; /*0x5aea33*/
   this->abstractFlags = a2 * this->abstractFlags; /*0x5aea3d*/
   this->objectTypeFlags = a2 * this->objectTypeFlags; /*0x5aea47*/
-  this->vtable3 = a2 * this->vtable3; /*0x5aea51*/
+  this->ptr_C = a2 * this->ptr_C; /*0x5aea51*/
   this->nextArrayIndex = a2 * this->nextArrayIndex; /*0x5aea5b*/
   this->owningHouseIndex = a2 * this->owningHouseIndex; /*0x5aea65*/
 }
@@ -11244,8 +11244,8 @@ void __thiscall sub_5AEA10(float *this, float a2)
 void __thiscall sub_5AEAD0(float *this, float a2)
 {
   *this = a2 * *this; /*0x5aead6*/
-  this->vtable2 = a2 * this->vtable2; /*0x5aeadf*/
-  this->vtable3 = a2 * this->vtable3; /*0x5aeae9*/
+  this->ptr_8 = a2 * this->ptr_8; /*0x5aeadf*/
+  this->ptr_C = a2 * this->ptr_C; /*0x5aeae9*/
 }
 
 
@@ -11253,7 +11253,7 @@ void __thiscall sub_5AEAD0(float *this, float a2)
 // ==== 0x005AEAF0  BuildingClass::updateFoundation  this=BuildingClass  sig=csp ====
 void __thiscall sub_5AEAF0(float *this, float a2)
 {
-  this->vtable2 = a2 * this->vtable2; /*0x5aeaf7*/
+  this->ptr_8 = a2 * this->ptr_8; /*0x5aeaf7*/
   this->abstractFlags = a2 * this->abstractFlags; /*0x5aeb01*/
   this->objectTypeFlags = a2 * this->objectTypeFlags; /*0x5aeb0b*/
 }
@@ -11263,7 +11263,7 @@ void __thiscall sub_5AEAF0(float *this, float a2)
 // ==== 0x005AEB20  BuildingClass::recalcAdjacency  this=BuildingClass  sig=csp ====
 void __thiscall sub_5AEB20(float *this, float a2)
 {
-  this->vtable3 = a2 * this->vtable3; /*0x5aeb27*/
+  this->ptr_C = a2 * this->ptr_C; /*0x5aeb27*/
   this->nextArrayIndex = a2 * this->nextArrayIndex; /*0x5aeb31*/
   this->owningHouseIndex = a2 * this->owningHouseIndex; /*0x5aeb3b*/
 }
@@ -11390,11 +11390,11 @@ int __thiscall sub_5AEC40(ObjectClass *this, float a2)
 int __thiscall sub_5AED50(ObjectClass *this, float a2)
 {
   int result; // eax
-  void *vtable1; // [esp+0h] [ebp-1Ch]
+  void *ptr_4; // [esp+0h] [ebp-1Ch]
   int v13; // [esp+4h] [ebp-18h]
-  void *vtable2; // [esp+8h] [ebp-14h]
+  void *ptr_8; // [esp+8h] [ebp-14h]
   int owningHouseIndex; // [esp+Ch] [ebp-10h]
-  void *vtable3; // [esp+10h] [ebp-Ch]
+  void *ptr_C; // [esp+10h] [ebp-Ch]
   double v17; // [esp+14h] [ebp-8h]
 
   __asm { fld [esp+1Ch+arg_0] } /*0x5aed53*/
@@ -11417,13 +11417,13 @@ int __thiscall sub_5AED50(ObjectClass *this, float a2)
     fld st(2)
     fmul st, st(5)
   }
-  vtable1 = _ESI->?; /*0x5aed95*/
+  ptr_4 = _ESI->?; /*0x5aed95*/
   result = _ESI->occupant; /*0x5aed99*/
   v13 = result; /*0x5aed9c*/
-  vtable2 = _ESI->?; /*0x5aeda0*/
+  ptr_8 = _ESI->?; /*0x5aeda0*/
   __asm { faddp st(1), st } /*0x5aeda4*/
   owningHouseIndex = _ESI->owningHouseIndex; /*0x5aedac*/
-  vtable3 = _ESI->?; /*0x5aedb0*/
+  ptr_C = _ESI->?; /*0x5aedb0*/
   __asm { fstp dword ptr [esi] } /*0x5aedb4*/
   *(float *)&_ESI->AbstractClass = _ET1; /*0x5aedb4*/
   __asm /*0x5aedb6*/
@@ -11512,11 +11512,11 @@ int __thiscall sub_5AEE50(ObjectClass *this, float a2)
 {
   int result; // eax
   int uniqueId; // [esp+0h] [ebp-24h]
-  void *vtable0; // [esp+4h] [ebp-20h]
+  void *ptr_0; // [esp+4h] [ebp-20h]
   int abstractFlags; // [esp+8h] [ebp-1Ch]
-  void *vtable1; // [esp+Ch] [ebp-18h]
+  void *ptr_4; // [esp+Ch] [ebp-18h]
   int v16; // [esp+10h] [ebp-14h]
-  void *vtable2; // [esp+14h] [ebp-10h]
+  void *ptr_8; // [esp+14h] [ebp-10h]
   int referenceCount; // [esp+18h] [ebp-Ch]
   double v19; // [esp+1Ch] [ebp-8h]
 
@@ -11526,7 +11526,7 @@ int __thiscall sub_5AEE50(ObjectClass *this, float a2)
   __asm { fstp [esp+38h+arg_0] } /*0x5aee6f*/
   Math::ArcTan2(v19); /*0x5aee75*/
   __asm { fld [esp+40h+arg_0] } /*0x5aee7f*/
-  vtable1 = this->?; /*0x5aee83*/
+  ptr_4 = this->?; /*0x5aee83*/
   __asm { fchs } /*0x5aee8a*/
   uniqueId = this->?; /*0x5aee8c*/
   __asm /*0x5aee93*/
@@ -11534,8 +11534,8 @@ int __thiscall sub_5AEE50(ObjectClass *this, float a2)
     fld [esp+40h+var_24]
     fmul st, st(1)
   }
-  vtable0 = this->AbstractClass; /*0x5aee99*/
-  vtable2 = this->?; /*0x5aee9d*/
+  ptr_0 = this->AbstractClass; /*0x5aee99*/
+  ptr_8 = this->?; /*0x5aee9d*/
   __asm { fld [esp+40h+var_20] } /*0x5aeea1*/
   __asm { fmul st, st(3) }
   abstractFlags = this->?; /*0x5aeead*/
@@ -11714,10 +11714,10 @@ void __thiscall sub_5AF000(float *this, float a2, float a3)
   double v7; // st7
   double v8; // st6
 
-  v3 = this->vtable2; /*0x5af000*/
-  v4 = this->vtable3; /*0x5af003*/
-  this->vtable2 = v4 * a2 + v3 * a3; /*0x5af014*/
-  this->vtable3 = v4 * a3 - v3 * a2; /*0x5af023*/
+  v3 = this->ptr_8; /*0x5af000*/
+  v4 = this->ptr_C; /*0x5af003*/
+  this->ptr_8 = v4 * a2 + v3 * a3; /*0x5af014*/
+  this->ptr_C = v4 * a3 - v3 * a2; /*0x5af023*/
   v5 = this->abstractFlags; /*0x5af026*/
   v6 = this->nextArrayIndex; /*0x5af029*/
   this->abstractFlags = v6 * a2 + v5 * a3; /*0x5af03a*/
@@ -11822,16 +11822,16 @@ void __thiscall sub_5AF120(float *this, float a2, float a3)
   double v8; // st6
 
   v3 = *this; /*0x5af120*/
-  v4 = this->vtable3; /*0x5af122*/
+  v4 = this->ptr_C; /*0x5af122*/
   *this = v3 * a3 - v4 * a2; /*0x5af133*/
-  this->vtable3 = v3 * a2 + v4 * a3; /*0x5af143*/
-  v5 = this->vtable2; /*0x5af146*/
+  this->ptr_C = v3 * a2 + v4 * a3; /*0x5af143*/
+  v5 = this->ptr_8; /*0x5af146*/
   v6 = this->nextArrayIndex; /*0x5af149*/
-  this->vtable2 = v5 * a3 - v6 * a2; /*0x5af15a*/
+  this->ptr_8 = v5 * a3 - v6 * a2; /*0x5af15a*/
   this->nextArrayIndex = v5 * a2 + v6 * a3; /*0x5af16b*/
-  v7 = this->vtable3; /*0x5af16e*/
+  v7 = this->ptr_C; /*0x5af16e*/
   v8 = this->owningHouseIndex; /*0x5af171*/
-  this->vtable3 = v7 * a3 - v8 * a2; /*0x5af182*/
+  this->ptr_C = v7 * a3 - v8 * a2; /*0x5af182*/
   this->owningHouseIndex = v7 * a2 + v8 * a3; /*0x5af193*/
 }
 
@@ -12756,7 +12756,7 @@ char __thiscall MapClass::GrowLayer(MapClass *this, int a2, int a3, int a4)
   int v22; // esi
   int Capacity; // ecx
   int v24; // eax
-  void *vtable0; // eax
+  void *ptr_0; // eax
   _DWORD *Items; // edx
   int m; // eax
   VectorClass *v29; // [esp+10h] [ebp-20h]
@@ -12789,7 +12789,7 @@ char __thiscall MapClass::GrowLayer(MapClass *this, int a2, int a3, int a4)
   {
     do /*0x5a067e*/
     {
-      for ( j = (int)v6[1].vtable0 - 1; j >= 0; v10[283] = v4->__pad_30C[0] ) /*0x5a0499*/
+      for ( j = (int)v6[1].ptr_0 - 1; j >= 0; v10[283] = v4->__pad_30C[0] ) /*0x5a0499*/
       {
         v9 = *((_DWORD *)v6->Items + j); /*0x5a04a6*/
         *(_DWORD *)v31 = v9; /*0x5a04a9*/
@@ -12807,17 +12807,17 @@ char __thiscall MapClass::GrowLayer(MapClass *this, int a2, int a3, int a4)
         if ( v11 ) /*0x5a0515*/
         {
           VectorClass::CellConstructor(v11, 0, 0); /*0x5a051b*/
-          v12->vtable0 = &DynamicVectorClass<Cell>::`vftable'; /*0x5a0520*/
+          v12->ptr_0 = &DynamicVectorClass<Cell>::`vftable'; /*0x5a0520*/
           v12[1].Items = (void *)10; /*0x5a0526*/
-          v12[1].vtable0 = 0; /*0x5a052d*/
+          v12[1].ptr_0 = 0; /*0x5a052d*/
           v13 = v12; /*0x5a0530*/
         }
         else
         {
           v13 = 0; /*0x5a0534*/
         }
-        v13[1].Items = v6[1].vtable0; /*0x5a0539*/
-        v14 = (int)v6[1].vtable0 - 1; /*0x5a053f*/
+        v13[1].Items = v6[1].ptr_0; /*0x5a0539*/
+        v14 = (int)v6[1].ptr_0 - 1; /*0x5a053f*/
         v35 = v14; /*0x5a0540*/
         if ( v14 >= 0 ) /*0x5a0544*/
         {
@@ -12846,18 +12846,18 @@ char __thiscall MapClass::GrowLayer(MapClass *this, int a2, int a3, int a4)
                   if ( *(_DWORD *)(v22 + 60) != v30 + 1 ) /*0x5a05e7*/
                   {
                     Capacity = v13->Capacity; /*0x5a05e9*/
-                    if ( (int)v13[1].vtable0 < Capacity /*0x5a060e*/
+                    if ( (int)v13[1].ptr_0 < Capacity /*0x5a060e*/
                       || (v13->IsAllocated || !Capacity)
                       && (v24 = (int)v13[1].Items, v24 > 0)
-                      && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v13->vtable0 + 2))(
+                      && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v13->ptr_0 + 2))(
                            v13,
                            Capacity + v24,
                            0) )
                     {
-                      vtable0 = v13[1].vtable0; /*0x5a0615*/
+                      ptr_0 = v13[1].ptr_0; /*0x5a0615*/
                       Items = v13->Items; /*0x5a0618*/
-                      v13[1].vtable0 = (char *)vtable0 + 1; /*0x5a061e*/
-                      Items[(_DWORD)vtable0] = v33; /*0x5a0625*/
+                      v13[1].ptr_0 = (char *)ptr_0 + 1; /*0x5a061e*/
+                      Items[(_DWORD)ptr_0] = v33; /*0x5a0625*/
                     }
                     *(_DWORD *)(v22 + 60) = v30 + 1; /*0x5a0628*/
                     v15 = g_MissionQueueFrame.localVariables[160]; /*0x5a062b*/
@@ -12872,7 +12872,7 @@ char __thiscall MapClass::GrowLayer(MapClass *this, int a2, int a3, int a4)
           while ( v35 >= 0 ); /*0x5a0650*/
         }
         if ( v6 ) /*0x5a065a*/
-          (*(void (__thiscall **)(VectorClass *, int))v6->vtable0)(v6, 1); /*0x5a0663*/
+          (*(void (__thiscall **)(VectorClass *, int))v6->ptr_0)(v6, 1); /*0x5a0663*/
         v29 = v13; /*0x5a0665*/
         v6 = v13; /*0x5a0669*/
         v4 = v36; /*0x5a066b*/
@@ -12883,7 +12883,7 @@ char __thiscall MapClass::GrowLayer(MapClass *this, int a2, int a3, int a4)
     v5 = a3; /*0x5a0684*/
   }
   if ( v6 ) /*0x5a0688*/
-    (*(void (__thiscall **)(VectorClass *, int))v6->vtable0)(v6, 1); /*0x5a0691*/
+    (*(void (__thiscall **)(VectorClass *, int))v6->ptr_0)(v6, 1); /*0x5a0691*/
   if ( v5 > 1 ) /*0x5a0696*/
   {
     LayerClass::CellIteratorReset((LayerClass *)&stru_87F5F0.__pad_58[416]); /*0x5a069d*/
@@ -12920,7 +12920,7 @@ _DWORD *__thiscall RandomMap::CellListAlloc(RandomMap *this, int a2)
   int v16; // eax
   int Capacity; // ecx
   int Items; // eax
-  void *vtable0; // eax
+  void *ptr_0; // eax
   _DWORD *v20; // edx
   bool v21; // zf
   VectorClass *v23; // [esp+Ch] [ebp-10h]
@@ -12932,9 +12932,9 @@ _DWORD *__thiscall RandomMap::CellListAlloc(RandomMap *this, int a2)
   if ( v3 ) /*0x5a0718*/
   {
     VectorClass::CellConstructor(v3, 0, 0); /*0x5a071e*/
-    v4->vtable0 = &DynamicVectorClass<Cell>::`vftable'; /*0x5a0723*/
+    v4->ptr_0 = &DynamicVectorClass<Cell>::`vftable'; /*0x5a0723*/
     v4[1].Items = (void *)10; /*0x5a0729*/
-    v4[1].vtable0 = 0; /*0x5a0730*/
+    v4[1].ptr_0 = 0; /*0x5a0730*/
   }
   else
   {
@@ -12944,7 +12944,7 @@ _DWORD *__thiscall RandomMap::CellListAlloc(RandomMap *this, int a2)
   v4[1].Items = (void *)(*(_DWORD *)&this->__pad_4C[308] * *(_DWORD *)&this->__pad_4C[312]); /*0x5a0748*/
   v5 = g_MapCellWidth; /*0x5a074b*/
   if ( g_MapCellWidth * g_MapCellWidth <= 0 ) /*0x5a0758*/
-    return &v4->vtable0; /*0x5a08c1*/
+    return &v4->ptr_0; /*0x5a08c1*/
   v6 = g_MissionQueueFrame.localVariables[163]; /*0x5a075f*/
   v24 = 0; /*0x5a0765*/
   v25 = g_MapCellWidth * g_MapCellWidth; /*0x5a0769*/
@@ -12993,23 +12993,23 @@ LABEL_23:
     }
     v4 = v23; /*0x5a0855*/
     Capacity = v23->Capacity; /*0x5a0859*/
-    if ( (int)v23[1].vtable0 < Capacity ) /*0x5a0861*/
+    if ( (int)v23[1].ptr_0 < Capacity ) /*0x5a0861*/
       goto LABEL_31; /*0x5a0861*/
     if ( v23->IsAllocated || !Capacity ) /*0x5a086c*/
     {
       Items = (int)v23[1].Items; /*0x5a086e*/
       if ( Items > 0 ) /*0x5a0873*/
       {
-        if ( (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v23->vtable0 + 2))( /*0x5a087e*/
+        if ( (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v23->ptr_0 + 2))( /*0x5a087e*/
                v23,
                Capacity + Items,
                0) )
         {
 LABEL_31:
-          vtable0 = v23[1].vtable0; /*0x5a0885*/
+          ptr_0 = v23[1].ptr_0; /*0x5a0885*/
           v20 = v23->Items; /*0x5a0888*/
-          v23[1].vtable0 = (char *)vtable0 + 1; /*0x5a088e*/
-          v20[(_DWORD)vtable0] = v7; /*0x5a0891*/
+          v23[1].ptr_0 = (char *)ptr_0 + 1; /*0x5a088e*/
+          v20[(_DWORD)ptr_0] = v7; /*0x5a0891*/
         }
         v6 = g_MissionQueueFrame.localVariables[163]; /*0x5a0894*/
       }
@@ -13023,7 +13023,7 @@ LABEL_33:
       v5 = g_MapCellWidth; /*0x5a076f*/
       continue; /*0x5a076f*/
     }
-    return &v4->vtable0; /*0x5a08b5*/
+    return &v4->ptr_0; /*0x5a08b5*/
   }
 }
 
@@ -20919,9 +20919,9 @@ _DWORD *__thiscall sub_5A9960(ObjectClass *this, _DWORD *a2)
 _DWORD *__thiscall sub_5A9980(_DWORD *this, int a2, _DWORD *a3, int a4, _DWORD *a5, int a6)
 {
   *this = a2; /*0x5a998a*/
-  this->vtable2 = *a3; /*0x5a9992*/
-  this->vtable3 = a4; /*0x5a9999*/
-  this->vtable4 = *a5; /*0x5a99a2*/
+  this->ptr_8 = *a3; /*0x5a9992*/
+  this->ptr_C = a4; /*0x5a9999*/
+  this->ptr_10 = *a5; /*0x5a99a2*/
   this->uniqueId = a6; /*0x5a99a5*/
   return this; /*0x5a99a8*/
 }
@@ -21025,7 +21025,7 @@ Concurrency::details::_ReaderWriterLock *__thiscall __0_ReaderWriterLock_details
         Concurrency::details::_ReaderWriterLock *this)
 {
   *(_DWORD *)this = 0; /*0x5a9bf2*/
-  this->vtable2 = 0; /*0x5a9bf8*/
+  this->ptr_8 = 0; /*0x5a9bf8*/
   return this; /*0x5a9bff*/
 }
 
@@ -22985,18 +22985,18 @@ _DWORD *__thiscall Map_Cleanup(VectorClass *this, int a2, int a3)
   this->Capacity = a2; /*0x5ad9fe*/
   this->IsInitialized = 1; /*0x5ada01*/
   this->IsAllocated = 0; /*0x5ada05*/
-  this->vtable0 = &VectorClass<_WIN32_FIND_DATAA *>::`vftable'; /*0x5ada08*/
+  this->ptr_0 = &VectorClass<_WIN32_FIND_DATAA *>::`vftable'; /*0x5ada08*/
   if ( a2 ) /*0x5ada0e*/
   {
     if ( a3 ) /*0x5ada16*/
     {
       this->Items = (void *)a3; /*0x5ada18*/
-      return &this->vtable0; /*0x5ada1e*/
+      return &this->ptr_0; /*0x5ada1e*/
     }
     this->Items = (void *)__2_YAPAXI_Z(4 * a2); /*0x5ada2d*/
     this->IsAllocated = 1; /*0x5ada30*/
   }
-  return &this->vtable0; /*0x5ada1d*/
+  return &this->ptr_0; /*0x5ada1d*/
 }
 
 
@@ -23384,7 +23384,7 @@ char __thiscall ScenarioClass::Load(ScenarioClass *this, int a2)
 // ==== 0x005AE220  CampaignClass::LoadMovieDisplay  this=CampaignClass  sig=csp ====
 char __userpurge CampaignClass::LoadMovieDisplay@<al>(int this@<ecx>, ObjectClass a2)
 {
-  const char *vtable0; // ebp
+  const char *ptr_0; // ebp
   bool v4; // zf
   int v6; // edi
   bool v7; // bl
@@ -23396,14 +23396,14 @@ char __userpurge CampaignClass::LoadMovieDisplay@<al>(int this@<ecx>, ObjectClas
   int Ticks; // eax
   int v14; // [esp+14h] [ebp-8h]
 
-  vtable0 = (const char *)a2.AbstractClass; /*0x5ae227*/
+  ptr_0 = (const char *)a2.AbstractClass; /*0x5ae227*/
   v4 = a2.AbstractClass == 0; /*0x5ae22e*/
   *(_DWORD *)(this + 172) = 0; /*0x5ae231*/
   *(_DWORD *)(this + 176) = 0; /*0x5ae237*/
   *(_DWORD *)(this + 180) = 0; /*0x5ae23d*/
   if ( v4
     || (v6 = *(_DWORD *)(FootClass_Array.?[0]
-                       + 4 * *(_DWORD *)(*((_DWORD *)dword_A83C9C + *((_DWORD *)vtable0 + 1821)) + 188))) == 0 )
+                       + 4 * *(_DWORD *)(*((_DWORD *)dword_A83C9C + *((_DWORD *)ptr_0 + 1821)) + 188))) == 0 )
   {
     Debug::Log(); /*0x5ae24a*/
     return 0; /*0x5ae252*/
@@ -23422,7 +23422,7 @@ char __userpurge CampaignClass::LoadMovieDisplay@<al>(int this@<ecx>, ObjectClas
     }
     else
     {
-      String::Assign((String *)&a2, vtable0 + 4700); /*0x5ae300*/
+      String::Assign((String *)&a2, ptr_0 + 4700); /*0x5ae300*/
       v8 = CampaignClass::DeleteAndZero((CampaignClass *)(this + 80), (const char **)&a2); /*0x5ae315*/
       DeleteAndZero(&a2); /*0x5ae317*/
       if ( v8
@@ -23822,12 +23822,12 @@ int __thiscall Matrix3x3::ApplyCol1(int *this, float a2)
 void __thiscall sub_5AEA10(float *this, float a2)
 {
   *this = a2 * *this; /*0x5aea16*/
-  this->vtable2 = a2 * this->vtable2; /*0x5aea1f*/
-  this->vtable3 = a2 * this->vtable3; /*0x5aea29*/
-  this->vtable2 = a2 * this->vtable2; /*0x5aea33*/
+  this->ptr_8 = a2 * this->ptr_8; /*0x5aea1f*/
+  this->ptr_C = a2 * this->ptr_C; /*0x5aea29*/
+  this->ptr_8 = a2 * this->ptr_8; /*0x5aea33*/
   this->abstractFlags = a2 * this->abstractFlags; /*0x5aea3d*/
   this->objectTypeFlags = a2 * this->objectTypeFlags; /*0x5aea47*/
-  this->vtable3 = a2 * this->vtable3; /*0x5aea51*/
+  this->ptr_C = a2 * this->ptr_C; /*0x5aea51*/
   this->nextArrayIndex = a2 * this->nextArrayIndex; /*0x5aea5b*/
   this->owningHouseIndex = a2 * this->owningHouseIndex; /*0x5aea65*/
 }
@@ -23838,8 +23838,8 @@ void __thiscall sub_5AEA10(float *this, float a2)
 void __thiscall sub_5AEAD0(float *this, float a2)
 {
   *this = a2 * *this; /*0x5aead6*/
-  this->vtable2 = a2 * this->vtable2; /*0x5aeadf*/
-  this->vtable3 = a2 * this->vtable3; /*0x5aeae9*/
+  this->ptr_8 = a2 * this->ptr_8; /*0x5aeadf*/
+  this->ptr_C = a2 * this->ptr_C; /*0x5aeae9*/
 }
 
 
@@ -23847,7 +23847,7 @@ void __thiscall sub_5AEAD0(float *this, float a2)
 // ==== 0x005AEAF0  BuildingClass::updateFoundation  this=BuildingClass  sig=csp ====
 void __thiscall sub_5AEAF0(float *this, float a2)
 {
-  this->vtable2 = a2 * this->vtable2; /*0x5aeaf7*/
+  this->ptr_8 = a2 * this->ptr_8; /*0x5aeaf7*/
   this->abstractFlags = a2 * this->abstractFlags; /*0x5aeb01*/
   this->objectTypeFlags = a2 * this->objectTypeFlags; /*0x5aeb0b*/
 }
@@ -23857,7 +23857,7 @@ void __thiscall sub_5AEAF0(float *this, float a2)
 // ==== 0x005AEB20  BuildingClass::recalcAdjacency  this=BuildingClass  sig=csp ====
 void __thiscall sub_5AEB20(float *this, float a2)
 {
-  this->vtable3 = a2 * this->vtable3; /*0x5aeb27*/
+  this->ptr_C = a2 * this->ptr_C; /*0x5aeb27*/
   this->nextArrayIndex = a2 * this->nextArrayIndex; /*0x5aeb31*/
   this->owningHouseIndex = a2 * this->owningHouseIndex; /*0x5aeb3b*/
 }
@@ -23984,11 +23984,11 @@ int __thiscall sub_5AEC40(ObjectClass *this, float a2)
 int __thiscall sub_5AED50(ObjectClass *this, float a2)
 {
   int result; // eax
-  void *vtable1; // [esp+0h] [ebp-1Ch]
+  void *ptr_4; // [esp+0h] [ebp-1Ch]
   int v13; // [esp+4h] [ebp-18h]
-  void *vtable2; // [esp+8h] [ebp-14h]
+  void *ptr_8; // [esp+8h] [ebp-14h]
   int owningHouseIndex; // [esp+Ch] [ebp-10h]
-  void *vtable3; // [esp+10h] [ebp-Ch]
+  void *ptr_C; // [esp+10h] [ebp-Ch]
   double v17; // [esp+14h] [ebp-8h]
 
   __asm { fld [esp+1Ch+arg_0] } /*0x5aed53*/
@@ -24011,13 +24011,13 @@ int __thiscall sub_5AED50(ObjectClass *this, float a2)
     fld st(2)
     fmul st, st(5)
   }
-  vtable1 = _ESI->?; /*0x5aed95*/
+  ptr_4 = _ESI->?; /*0x5aed95*/
   result = _ESI->occupant; /*0x5aed99*/
   v13 = result; /*0x5aed9c*/
-  vtable2 = _ESI->?; /*0x5aeda0*/
+  ptr_8 = _ESI->?; /*0x5aeda0*/
   __asm { faddp st(1), st } /*0x5aeda4*/
   owningHouseIndex = _ESI->owningHouseIndex; /*0x5aedac*/
-  vtable3 = _ESI->?; /*0x5aedb0*/
+  ptr_C = _ESI->?; /*0x5aedb0*/
   __asm { fstp dword ptr [esi] } /*0x5aedb4*/
   *(float *)&_ESI->AbstractClass = _ET1; /*0x5aedb4*/
   __asm /*0x5aedb6*/
@@ -24106,11 +24106,11 @@ int __thiscall sub_5AEE50(ObjectClass *this, float a2)
 {
   int result; // eax
   int uniqueId; // [esp+0h] [ebp-24h]
-  void *vtable0; // [esp+4h] [ebp-20h]
+  void *ptr_0; // [esp+4h] [ebp-20h]
   int abstractFlags; // [esp+8h] [ebp-1Ch]
-  void *vtable1; // [esp+Ch] [ebp-18h]
+  void *ptr_4; // [esp+Ch] [ebp-18h]
   int v16; // [esp+10h] [ebp-14h]
-  void *vtable2; // [esp+14h] [ebp-10h]
+  void *ptr_8; // [esp+14h] [ebp-10h]
   int referenceCount; // [esp+18h] [ebp-Ch]
   double v19; // [esp+1Ch] [ebp-8h]
 
@@ -24120,7 +24120,7 @@ int __thiscall sub_5AEE50(ObjectClass *this, float a2)
   __asm { fstp [esp+38h+arg_0] } /*0x5aee6f*/
   Math::ArcTan2(v19); /*0x5aee75*/
   __asm { fld [esp+40h+arg_0] } /*0x5aee7f*/
-  vtable1 = this->?; /*0x5aee83*/
+  ptr_4 = this->?; /*0x5aee83*/
   __asm { fchs } /*0x5aee8a*/
   uniqueId = this->?; /*0x5aee8c*/
   __asm /*0x5aee93*/
@@ -24128,8 +24128,8 @@ int __thiscall sub_5AEE50(ObjectClass *this, float a2)
     fld [esp+40h+var_24]
     fmul st, st(1)
   }
-  vtable0 = this->AbstractClass; /*0x5aee99*/
-  vtable2 = this->?; /*0x5aee9d*/
+  ptr_0 = this->AbstractClass; /*0x5aee99*/
+  ptr_8 = this->?; /*0x5aee9d*/
   __asm { fld [esp+40h+var_20] } /*0x5aeea1*/
   __asm { fmul st, st(3) }
   abstractFlags = this->?; /*0x5aeead*/
@@ -24308,10 +24308,10 @@ void __thiscall sub_5AF000(float *this, float a2, float a3)
   double v7; // st7
   double v8; // st6
 
-  v3 = this->vtable2; /*0x5af000*/
-  v4 = this->vtable3; /*0x5af003*/
-  this->vtable2 = v4 * a2 + v3 * a3; /*0x5af014*/
-  this->vtable3 = v4 * a3 - v3 * a2; /*0x5af023*/
+  v3 = this->ptr_8; /*0x5af000*/
+  v4 = this->ptr_C; /*0x5af003*/
+  this->ptr_8 = v4 * a2 + v3 * a3; /*0x5af014*/
+  this->ptr_C = v4 * a3 - v3 * a2; /*0x5af023*/
   v5 = this->abstractFlags; /*0x5af026*/
   v6 = this->nextArrayIndex; /*0x5af029*/
   this->abstractFlags = v6 * a2 + v5 * a3; /*0x5af03a*/
@@ -24416,16 +24416,16 @@ void __thiscall sub_5AF120(float *this, float a2, float a3)
   double v8; // st6
 
   v3 = *this; /*0x5af120*/
-  v4 = this->vtable3; /*0x5af122*/
+  v4 = this->ptr_C; /*0x5af122*/
   *this = v3 * a3 - v4 * a2; /*0x5af133*/
-  this->vtable3 = v3 * a2 + v4 * a3; /*0x5af143*/
-  v5 = this->vtable2; /*0x5af146*/
+  this->ptr_C = v3 * a2 + v4 * a3; /*0x5af143*/
+  v5 = this->ptr_8; /*0x5af146*/
   v6 = this->nextArrayIndex; /*0x5af149*/
-  this->vtable2 = v5 * a3 - v6 * a2; /*0x5af15a*/
+  this->ptr_8 = v5 * a3 - v6 * a2; /*0x5af15a*/
   this->nextArrayIndex = v5 * a2 + v6 * a3; /*0x5af16b*/
-  v7 = this->vtable3; /*0x5af16e*/
+  v7 = this->ptr_C; /*0x5af16e*/
   v8 = this->owningHouseIndex; /*0x5af171*/
-  this->vtable3 = v7 * a3 - v8 * a2; /*0x5af182*/
+  this->ptr_C = v7 * a3 - v8 * a2; /*0x5af182*/
   this->owningHouseIndex = v7 * a2 + v8 * a3; /*0x5af193*/
 }
 

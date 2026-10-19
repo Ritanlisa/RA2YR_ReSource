@@ -106,17 +106,17 @@ public:
 };
 
 // IDA: AbstractClass @ constructor=0x410170, sizeof >= 0x24 (4 vtables + 6 fields)
-// vtable[0] @ 0x7E1F50 (IPersistStream + custom, 28 entries)
-// vtable[1] @ 0x7E1F34 (IRTTITypeInfo chain, 32 entries)
-// vtable[2] @ 0x7E1F2C (INoticeSink merged, 32 entries)
-// vtable[3] @ 0x7E1F24 (INoticeSource merged, 31 entries)
-// All 4 vtable pointers are at +0x00/+0x04/+0x08/+0x0C (IDA ctor confirmed)
+// ptr_0[0] @ 0x7E1F50 (IPersistStream + custom, 28 entries)
+// ptr_0[1] @ 0x7E1F34 (IRTTITypeInfo chain, 32 entries)
+// ptr_0[2] @ 0x7E1F2C (INoticeSink merged, 32 entries)
+// ptr_0[3] @ 0x7E1F24 (INoticeSource merged, 31 entries)
+// All 4 ptr_0 pointers are at +0x00/+0x04/+0x08/+0x0C (IDA ctor confirmed)
 class AbstractClass : public IPersistStream, public IRTTITypeInfo,
                       public INoticeSink, public INoticeSource {
 public:
     static constexpr AbstractType kObjectTypeId = static_cast<AbstractType>(52);
 
-    // --- IPersistStream (vtable[0]) ---
+    // --- IPersistStream (ptr_0[0]) ---
     virtual HRESULT __stdcall QueryInterface(const IID& iid, void** ppv) override;  // 0x410260
     virtual ULONG   __stdcall AddRef() override;  // 0x410300
     virtual ULONG   __stdcall Release() override;  // 0x4E0360
@@ -130,30 +130,30 @@ public:
     // unmatched: no callgraph reference and no git history record
     virtual HRESULT __stdcall GetSizeMax(ULARGE_INTEGER* size) override;
 
-    // --- IRTTITypeInfo (vtable[1]) ---
+    // --- IRTTITypeInfo (ptr_0[1]) ---
     // unmatched: no callgraph reference and no git history record
     virtual AbstractType __stdcall whatAmI() const override;
     // unmatched: no callgraph reference and no git history record
     virtual int __stdcall fetchId() const override;
     virtual void __stdcall createId() override;   // 0x486920
 
-    // --- INoticeSink (vtable[2]) ---
+    // --- INoticeSink (ptr_0[2]) ---
     // unmatched: no callgraph reference and no git history record
     virtual bool __stdcall onNotice(unsigned long event) override;
 
-    // --- INoticeSource (vtable[3]) ---
+    // --- INoticeSource (ptr_0[3]) ---
     // unmatched: no callgraph reference and no git history record
     virtual void __stdcall notifySinks() override;
 
-    // --- AbstractClass custom virtuals (vtable[0] entries 8+) ---
-    // IDA: vtable[0][8]  = COMStub_8    (0x4105A0)
-    // IDA: vtable[0][9]  = StubReturnFalse (0x410470)
-    // IDA: vtable[0][10] = COMStub_Return0_10 (0x410480)
-    // IDA: vtable[0][13] = ProcessPower (0x410410)
-    // IDA: vtable[0][17] = sub_410440
-    // IDA: vtable[0][18] = GetInvalidCoord (0x4104C0)
-    // IDA: vtable[0][19] = GetCoordsEx (0x4104F0)
-    // IDA: vtable[0][22] = GetCoords (0x410540)
+    // --- AbstractClass custom virtuals (ptr_0[0] entries 8+) ---
+    // IDA: ptr_0[0][8]  = COMStub_8    (0x4105A0)
+    // IDA: ptr_0[0][9]  = StubReturnFalse (0x410470)
+    // IDA: ptr_0[0][10] = COMStub_Return0_10 (0x410480)
+    // IDA: ptr_0[0][13] = ProcessPower (0x410410)
+    // IDA: ptr_0[0][17] = sub_410440
+    // IDA: ptr_0[0][18] = GetInvalidCoord (0x4104C0)
+    // IDA: ptr_0[0][19] = GetCoordsEx (0x4104F0)
+    // IDA: ptr_0[0][22] = GetCoords (0x410540)
     virtual ~AbstractClass() = default;  // 0x4101F0
 
     virtual void initialize();  // 0x438E70
@@ -351,9 +351,9 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void AnnounceExpiredPointer(int a1, int a2);  // 0x7258d0
     void* RemoveObjectFromHouse(int a1, int a2, int a3, int a4, int a5);  // 0x4fb9b0
     // === FUNCS-MOVE (END) ===
-    void* ptr_0;  // 0x0 (ml truth)  gB vtable supply
-    void* ptr_4;  // 0x4 (ml truth)  gB vtable supply
-    void* ptr_8;  // 0x8 (ml truth)  gB vtable supply
+    void* ptr_0;  // 0x0 (ml truth)  gB ptr_0 supply
+    void* ptr_4;  // 0x4 (ml truth)  gB ptr_0 supply
+    void* ptr_8;  // 0x8 (ml truth)  gB ptr_0 supply
     int GetType();  // gB sig supply @cache
 
     unsigned char AbstractClass_10C[4];  /* AbstractClass */  // X10 supply (member_lookup)

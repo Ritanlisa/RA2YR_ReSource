@@ -476,7 +476,7 @@ void __thiscall sub_770850(ObjectClass *this, _DWORD *a2, char **a3, int a4, int
 char __thiscall sub_770970(ObjectClass *this, int a2, int a3, void **a4)
 {
   void **v4; // ebx
-  void *vtable0; // edi
+  void *ptr_0; // edi
   void **v6; // esi
   int v7; // eax
   int v9; // eax
@@ -488,7 +488,7 @@ char __thiscall sub_770970(ObjectClass *this, int a2, int a3, void **a4)
   void *v15; // [esp+Ch] [ebp-4h] BYREF
 
   v4 = a4; /*0x770976*/
-  vtable0 = this->AbstractClass; /*0x77097f*/
+  ptr_0 = this->AbstractClass; /*0x77097f*/
   v6 = &this->? + 37 * a2 + 12 * a3; /*0x770990*/
   DeleteAndZero::Alt2((DeleteAndZero *)a4); /*0x770996*/
   v7 = (int)v6[4]; /*0x77099b*/
@@ -499,7 +499,7 @@ char __thiscall sub_770970(ObjectClass *this, int a2, int a3, void **a4)
   else
     v9 = Random::Range(&Randomizer_Global, 0, v7 - 1); /*0x7709bd*/
   v10 = *((_DWORD *)v6[1] + v9); /*0x7709ca*/
-  if ( vtable0 == (void *)3 ) /*0x7709cd*/
+  if ( ptr_0 == (void *)3 ) /*0x7709cd*/
   {
     v11 = FormatStringInt((char **)&a3, v10, 2); /*0x7709d3*/
     v12 = ProcessStringAndCopy((char **)&a2, g_Str_WWD_Soviet, v11); /*0x7709e2*/
@@ -524,7 +524,7 @@ char __thiscall sub_770970(ObjectClass *this, int a2, int a3, void **a4)
 char __thiscall sub_770A50(ObjectClass *this, int a2, int a3, void **a4)
 {
   void **v4; // ebx
-  void *vtable0; // edi
+  void *ptr_0; // edi
   void **v6; // esi
   int v7; // eax
   int v9; // eax
@@ -536,7 +536,7 @@ char __thiscall sub_770A50(ObjectClass *this, int a2, int a3, void **a4)
   void *v15; // [esp+Ch] [ebp-4h] BYREF
 
   v4 = a4; /*0x770a56*/
-  vtable0 = this->AbstractClass; /*0x770a5f*/
+  ptr_0 = this->AbstractClass; /*0x770a5f*/
   v6 = &this->? + 37 * a2 + 12 * a3; /*0x770a70*/
   DeleteAndZero::Alt2((DeleteAndZero *)a4); /*0x770a76*/
   v7 = (int)v6[4]; /*0x770a7b*/
@@ -547,7 +547,7 @@ char __thiscall sub_770A50(ObjectClass *this, int a2, int a3, void **a4)
   else
     v9 = Random::Range(&Randomizer_Global, 0, v7 - 1); /*0x770a9d*/
   v10 = *((_DWORD *)v6[1] + v9); /*0x770aaa*/
-  if ( vtable0 == (void *)3 ) /*0x770aad*/
+  if ( ptr_0 == (void *)3 ) /*0x770aad*/
   {
     v11 = FormatStringInt((char **)&a3, v10, 2); /*0x770ab3*/
     v12 = ProcessStringAndCopy((char **)&a2, g_Str_WWD_Soviet, v11); /*0x770ac2*/
@@ -572,7 +572,7 @@ char __thiscall sub_770A50(ObjectClass *this, int a2, int a3, void **a4)
 char __thiscall sub_770B30(ObjectClass *this, int a2, void **a3)
 {
   void **v3; // ebx
-  void *vtable0; // edi
+  void *ptr_0; // edi
   char *v5; // esi
   int v6; // eax
   int v8; // eax
@@ -585,7 +585,7 @@ char __thiscall sub_770B30(ObjectClass *this, int a2, void **a3)
   void *v15; // [esp+10h] [ebp-4h] BYREF
 
   v3 = a3; /*0x770b38*/
-  vtable0 = this->AbstractClass; /*0x770b41*/
+  ptr_0 = this->AbstractClass; /*0x770b41*/
   v5 = (char *)this + 24 * a2 + 892; /*0x770b43*/
   DeleteAndZero::Alt2((DeleteAndZero *)a3); /*0x770b4c*/
   v6 = *((_DWORD *)v5 + 4); /*0x770b51*/
@@ -596,7 +596,7 @@ char __thiscall sub_770B30(ObjectClass *this, int a2, void **a3)
   else
     v8 = Random::Range(&Randomizer_Global, 0, v6 - 1); /*0x770b75*/
   v9 = *(_DWORD *)(*((_DWORD *)v5 + 1) + 4 * v8); /*0x770b82*/
-  if ( vtable0 == (void *)3 ) /*0x770b85*/
+  if ( ptr_0 == (void *)3 ) /*0x770b85*/
   {
     v10 = FormatStringInt((char **)&a3, v9, 2); /*0x770b8b*/
     v11 = ProcessStringAndCopy((char **)&a2, g_Str_WWD_Soviet, v10); /*0x770b9a*/
@@ -1048,7 +1048,7 @@ void __thiscall TerritorySelectWDT_Delete(TechnoClass *this, int a2, char a3, in
   int v8; // eax
   int v9; // edi
   int v10; // edx
-  int vtable0; // ebx
+  int ptr_0; // ebx
   int v12; // eax
   int v13; // eax
   int v14; // ecx
@@ -1079,13 +1079,13 @@ void __thiscall TerritorySelectWDT_Delete(TechnoClass *this, int a2, char a3, in
   if ( !this->targetLaserTimer[0] ) /*0x77150d*/
     LOBYTE(this->currentBurstIndex) = 1; /*0x771517*/
   unknown_libname_73(&v17); /*0x771522*/
-  vtable0 = this->vtable0; /*0x77152b*/
+  ptr_0 = this->ptr_0; /*0x77152b*/
   DeleteAndZero::Alt2(&v17); /*0x77153b*/
   v12 = this->primaryFacing[6 * a2 + 1]; /*0x771540*/
   if ( v12 > 0 )
   {
     v13 = v12 == 1 ? 0 : Random::Range(&Randomizer_Global, 0, v12 - 1);
-    if ( Map_Remove_770CE0(vtable0, *(_DWORD *)(this->barrelFacing[6 * a2 + 4] + 4 * v13), (char **)&v17) ) /*0x77156f*/
+    if ( Map_Remove_770CE0(ptr_0, *(_DWORD *)(this->barrelFacing[6 * a2 + 4] + 4 * v13), (char **)&v17) ) /*0x77156f*/
     {
       if ( !(unsigned __int8)Audio::IsPlaying() ) /*0x77157c*/
       {
@@ -1445,7 +1445,7 @@ void __thiscall sub_771A00(VectorClass *this)
   void *Items; // eax
 
   Items = this->Items; /*0x771a06*/
-  this->vtable0 = &VectorClass<unsigned int>::`vftable'; /*0x771a09*/
+  this->ptr_0 = &VectorClass<unsigned int>::`vftable'; /*0x771a09*/
   if ( Items && this->IsAllocated ) /*0x771a13*/
   {
     __3_YAXPAX_Z(Items); /*0x771a19*/
@@ -2196,15 +2196,15 @@ WeaponTypeClass *WeaponTypeClass::ddtor(WeaponTypeClass *this, char a2)
   AbstractClass *v3; // esi
   int v4; // eax
   void *NeedsSaveOrLink; // eax
-  void *vtable1; // eax
-  void *vtable3; // eax
+  void *ptr_4; // eax
+  void *ptr_C; // eax
   AbstractClass *v9; // [esp+8h] [ebp-4h] BYREF
 
   v3 = v2; /*0x7730f3*/
-  v2->vtable0 = &WeaponTypeClass::`vftable'; /*0x7730f7*/
-  v2->vtable1 = &WeaponTypeClass::`vftable'; /*0x7730fd*/
-  v2->vtable2 = &WeaponTypeClass::`vftable'; /*0x773104*/
-  v2->vtable3 = &WeaponTypeClass::`vftable'; /*0x77310b*/
+  v2->ptr_0 = &WeaponTypeClass::`vftable'; /*0x7730f7*/
+  v2->ptr_4 = &WeaponTypeClass::`vftable'; /*0x7730fd*/
+  v2->ptr_8 = &WeaponTypeClass::`vftable'; /*0x773104*/
+  v2->ptr_C = &WeaponTypeClass::`vftable'; /*0x77310b*/
   AbstractClass::AnnounceExpiredPointer(v2, 1); /*0x773112*/
   v3[4].uniqueId = 0; /*0x77311d*/
   v3[4].referenceCount = 0; /*0x773123*/
@@ -2221,28 +2221,28 @@ WeaponTypeClass *WeaponTypeClass::ddtor(WeaponTypeClass *this, char a2)
   }
   NeedsSaveOrLink = v3[6].NeedsSaveOrLink; /*0x77316e*/
   v3[6].referenceCount = (int)&VectorClass<AnimTypeClass const *>::`vftable'; /*0x773174*/
-  if ( NeedsSaveOrLink && BYTE1(v3[7].vtable1) ) /*0x773182*/
+  if ( NeedsSaveOrLink && BYTE1(v3[7].ptr_4) ) /*0x773182*/
   {
     __3_YAXPAX_Z(NeedsSaveOrLink); /*0x77318b*/
     v3[6].NeedsSaveOrLink = 0; /*0x773193*/
   }
-  BYTE1(v3[7].vtable1) = 0; /*0x773199*/
-  v3[7].vtable0 = 0; /*0x77319f*/
-  vtable1 = v3[6].vtable1; /*0x7731a5*/
-  v3[6].vtable0 = &VectorClass<int>::`vftable'; /*0x7731ab*/
-  if ( vtable1 && BYTE1(v3[6].vtable3) ) /*0x7731b9*/
+  BYTE1(v3[7].ptr_4) = 0; /*0x773199*/
+  v3[7].ptr_0 = 0; /*0x77319f*/
+  ptr_4 = v3[6].ptr_4; /*0x7731a5*/
+  v3[6].ptr_0 = &VectorClass<int>::`vftable'; /*0x7731ab*/
+  if ( ptr_4 && BYTE1(v3[6].ptr_C) ) /*0x7731b9*/
   {
-    __3_YAXPAX_Z(vtable1); /*0x7731c2*/
-    v3[6].vtable1 = 0; /*0x7731ca*/
+    __3_YAXPAX_Z(ptr_4); /*0x7731c2*/
+    v3[6].ptr_4 = 0; /*0x7731ca*/
   }
-  BYTE1(v3[6].vtable3) = 0; /*0x7731d0*/
-  v3[6].vtable2 = 0; /*0x7731d6*/
-  vtable3 = v3[5].vtable3; /*0x7731dc*/
-  v3[5].vtable2 = &VectorClass<int>::`vftable'; /*0x7731e2*/
-  if ( vtable3 && BYTE1(v3[5].abstractFlags) ) /*0x7731f0*/
+  BYTE1(v3[6].ptr_C) = 0; /*0x7731d0*/
+  v3[6].ptr_8 = 0; /*0x7731d6*/
+  ptr_C = v3[5].ptr_C; /*0x7731dc*/
+  v3[5].ptr_8 = &VectorClass<int>::`vftable'; /*0x7731e2*/
+  if ( ptr_C && BYTE1(v3[5].abstractFlags) ) /*0x7731f0*/
   {
-    __3_YAXPAX_Z(vtable3); /*0x7731f9*/
-    v3[5].vtable3 = 0; /*0x773201*/
+    __3_YAXPAX_Z(ptr_C); /*0x7731f9*/
+    v3[5].ptr_C = 0; /*0x773201*/
   }
   BYTE1(v3[5].abstractFlags) = 0; /*0x773209*/
   v3[5].uniqueId = 0; /*0x77320f*/
@@ -4852,12 +4852,12 @@ unsigned int __thiscall sub_7767F0(ObjectClass *this)
 // ==== 0x00776880  ObjectClass::System_Read  this=ObjectClass  sig=csp ====
 BOOL __thiscall System_Read_776880(ObjectClass *this)
 {
-  HWND vtable3; // esi
+  HWND ptr_C; // esi
   ULONG_PTR WindowContextHelpId; // eax
 
-  vtable3 = (HWND)this->?; /*0x776881*/
-  WindowContextHelpId = GetWindowContextHelpId(vtable3); /*0x776885*/
-  return WinHelpA(vtable3, szHelp, 8u, WindowContextHelpId); /*0x77689a*/
+  ptr_C = (HWND)this->?; /*0x776881*/
+  WindowContextHelpId = GetWindowContextHelpId(ptr_C); /*0x776885*/
+  return WinHelpA(ptr_C, szHelp, 8u, WindowContextHelpId); /*0x77689a*/
 }
 
 
@@ -12927,7 +12927,7 @@ void __thiscall sub_770850(ObjectClass *this, _DWORD *a2, char **a3, int a4, int
 char __thiscall sub_770970(ObjectClass *this, int a2, int a3, void **a4)
 {
   void **v4; // ebx
-  void *vtable0; // edi
+  void *ptr_0; // edi
   void **v6; // esi
   int v7; // eax
   int v9; // eax
@@ -12939,7 +12939,7 @@ char __thiscall sub_770970(ObjectClass *this, int a2, int a3, void **a4)
   void *v15; // [esp+Ch] [ebp-4h] BYREF
 
   v4 = a4; /*0x770976*/
-  vtable0 = this->AbstractClass; /*0x77097f*/
+  ptr_0 = this->AbstractClass; /*0x77097f*/
   v6 = &this->? + 37 * a2 + 12 * a3; /*0x770990*/
   DeleteAndZero::Alt2((DeleteAndZero *)a4); /*0x770996*/
   v7 = (int)v6[4]; /*0x77099b*/
@@ -12950,7 +12950,7 @@ char __thiscall sub_770970(ObjectClass *this, int a2, int a3, void **a4)
   else
     v9 = Random::Range(&Randomizer_Global, 0, v7 - 1); /*0x7709bd*/
   v10 = *((_DWORD *)v6[1] + v9); /*0x7709ca*/
-  if ( vtable0 == (void *)3 ) /*0x7709cd*/
+  if ( ptr_0 == (void *)3 ) /*0x7709cd*/
   {
     v11 = FormatStringInt((char **)&a3, v10, 2); /*0x7709d3*/
     v12 = ProcessStringAndCopy((char **)&a2, g_Str_WWD_Soviet, v11); /*0x7709e2*/
@@ -12975,7 +12975,7 @@ char __thiscall sub_770970(ObjectClass *this, int a2, int a3, void **a4)
 char __thiscall sub_770A50(ObjectClass *this, int a2, int a3, void **a4)
 {
   void **v4; // ebx
-  void *vtable0; // edi
+  void *ptr_0; // edi
   void **v6; // esi
   int v7; // eax
   int v9; // eax
@@ -12987,7 +12987,7 @@ char __thiscall sub_770A50(ObjectClass *this, int a2, int a3, void **a4)
   void *v15; // [esp+Ch] [ebp-4h] BYREF
 
   v4 = a4; /*0x770a56*/
-  vtable0 = this->AbstractClass; /*0x770a5f*/
+  ptr_0 = this->AbstractClass; /*0x770a5f*/
   v6 = &this->? + 37 * a2 + 12 * a3; /*0x770a70*/
   DeleteAndZero::Alt2((DeleteAndZero *)a4); /*0x770a76*/
   v7 = (int)v6[4]; /*0x770a7b*/
@@ -12998,7 +12998,7 @@ char __thiscall sub_770A50(ObjectClass *this, int a2, int a3, void **a4)
   else
     v9 = Random::Range(&Randomizer_Global, 0, v7 - 1); /*0x770a9d*/
   v10 = *((_DWORD *)v6[1] + v9); /*0x770aaa*/
-  if ( vtable0 == (void *)3 ) /*0x770aad*/
+  if ( ptr_0 == (void *)3 ) /*0x770aad*/
   {
     v11 = FormatStringInt((char **)&a3, v10, 2); /*0x770ab3*/
     v12 = ProcessStringAndCopy((char **)&a2, g_Str_WWD_Soviet, v11); /*0x770ac2*/
@@ -13023,7 +13023,7 @@ char __thiscall sub_770A50(ObjectClass *this, int a2, int a3, void **a4)
 char __thiscall sub_770B30(ObjectClass *this, int a2, void **a3)
 {
   void **v3; // ebx
-  void *vtable0; // edi
+  void *ptr_0; // edi
   char *v5; // esi
   int v6; // eax
   int v8; // eax
@@ -13036,7 +13036,7 @@ char __thiscall sub_770B30(ObjectClass *this, int a2, void **a3)
   void *v15; // [esp+10h] [ebp-4h] BYREF
 
   v3 = a3; /*0x770b38*/
-  vtable0 = this->AbstractClass; /*0x770b41*/
+  ptr_0 = this->AbstractClass; /*0x770b41*/
   v5 = (char *)this + 24 * a2 + 892; /*0x770b43*/
   DeleteAndZero::Alt2((DeleteAndZero *)a3); /*0x770b4c*/
   v6 = *((_DWORD *)v5 + 4); /*0x770b51*/
@@ -13047,7 +13047,7 @@ char __thiscall sub_770B30(ObjectClass *this, int a2, void **a3)
   else
     v8 = Random::Range(&Randomizer_Global, 0, v6 - 1); /*0x770b75*/
   v9 = *(_DWORD *)(*((_DWORD *)v5 + 1) + 4 * v8); /*0x770b82*/
-  if ( vtable0 == (void *)3 ) /*0x770b85*/
+  if ( ptr_0 == (void *)3 ) /*0x770b85*/
   {
     v10 = FormatStringInt((char **)&a3, v9, 2); /*0x770b8b*/
     v11 = ProcessStringAndCopy((char **)&a2, g_Str_WWD_Soviet, v10); /*0x770b9a*/
@@ -13499,7 +13499,7 @@ void __thiscall TerritorySelectWDT_Delete(TechnoClass *this, int a2, char a3, in
   int v8; // eax
   int v9; // edi
   int v10; // edx
-  int vtable0; // ebx
+  int ptr_0; // ebx
   int v12; // eax
   int v13; // eax
   int v14; // ecx
@@ -13530,13 +13530,13 @@ void __thiscall TerritorySelectWDT_Delete(TechnoClass *this, int a2, char a3, in
   if ( !this->targetLaserTimer[0] ) /*0x77150d*/
     LOBYTE(this->currentBurstIndex) = 1; /*0x771517*/
   unknown_libname_73(&v17); /*0x771522*/
-  vtable0 = this->vtable0; /*0x77152b*/
+  ptr_0 = this->ptr_0; /*0x77152b*/
   DeleteAndZero::Alt2(&v17); /*0x77153b*/
   v12 = this->primaryFacing[6 * a2 + 1]; /*0x771540*/
   if ( v12 > 0 )
   {
     v13 = v12 == 1 ? 0 : Random::Range(&Randomizer_Global, 0, v12 - 1);
-    if ( Map_Remove_770CE0(vtable0, *(_DWORD *)(this->barrelFacing[6 * a2 + 4] + 4 * v13), (char **)&v17) ) /*0x77156f*/
+    if ( Map_Remove_770CE0(ptr_0, *(_DWORD *)(this->barrelFacing[6 * a2 + 4] + 4 * v13), (char **)&v17) ) /*0x77156f*/
     {
       if ( !(unsigned __int8)Audio::IsPlaying() ) /*0x77157c*/
       {
@@ -13896,7 +13896,7 @@ void __thiscall sub_771A00(VectorClass *this)
   void *Items; // eax
 
   Items = this->Items; /*0x771a06*/
-  this->vtable0 = &VectorClass<unsigned int>::`vftable'; /*0x771a09*/
+  this->ptr_0 = &VectorClass<unsigned int>::`vftable'; /*0x771a09*/
   if ( Items && this->IsAllocated ) /*0x771a13*/
   {
     __3_YAXPAX_Z(Items); /*0x771a19*/
@@ -14647,15 +14647,15 @@ WeaponTypeClass *WeaponTypeClass::ddtor(WeaponTypeClass *this, char a2)
   AbstractClass *v3; // esi
   int v4; // eax
   void *NeedsSaveOrLink; // eax
-  void *vtable1; // eax
-  void *vtable3; // eax
+  void *ptr_4; // eax
+  void *ptr_C; // eax
   AbstractClass *v9; // [esp+8h] [ebp-4h] BYREF
 
   v3 = v2; /*0x7730f3*/
-  v2->vtable0 = &WeaponTypeClass::`vftable'; /*0x7730f7*/
-  v2->vtable1 = &WeaponTypeClass::`vftable'; /*0x7730fd*/
-  v2->vtable2 = &WeaponTypeClass::`vftable'; /*0x773104*/
-  v2->vtable3 = &WeaponTypeClass::`vftable'; /*0x77310b*/
+  v2->ptr_0 = &WeaponTypeClass::`vftable'; /*0x7730f7*/
+  v2->ptr_4 = &WeaponTypeClass::`vftable'; /*0x7730fd*/
+  v2->ptr_8 = &WeaponTypeClass::`vftable'; /*0x773104*/
+  v2->ptr_C = &WeaponTypeClass::`vftable'; /*0x77310b*/
   AbstractClass::AnnounceExpiredPointer(v2, 1); /*0x773112*/
   v3[4].uniqueId = 0; /*0x77311d*/
   v3[4].referenceCount = 0; /*0x773123*/
@@ -14672,28 +14672,28 @@ WeaponTypeClass *WeaponTypeClass::ddtor(WeaponTypeClass *this, char a2)
   }
   NeedsSaveOrLink = v3[6].NeedsSaveOrLink; /*0x77316e*/
   v3[6].referenceCount = (int)&VectorClass<AnimTypeClass const *>::`vftable'; /*0x773174*/
-  if ( NeedsSaveOrLink && BYTE1(v3[7].vtable1) ) /*0x773182*/
+  if ( NeedsSaveOrLink && BYTE1(v3[7].ptr_4) ) /*0x773182*/
   {
     __3_YAXPAX_Z(NeedsSaveOrLink); /*0x77318b*/
     v3[6].NeedsSaveOrLink = 0; /*0x773193*/
   }
-  BYTE1(v3[7].vtable1) = 0; /*0x773199*/
-  v3[7].vtable0 = 0; /*0x77319f*/
-  vtable1 = v3[6].vtable1; /*0x7731a5*/
-  v3[6].vtable0 = &VectorClass<int>::`vftable'; /*0x7731ab*/
-  if ( vtable1 && BYTE1(v3[6].vtable3) ) /*0x7731b9*/
+  BYTE1(v3[7].ptr_4) = 0; /*0x773199*/
+  v3[7].ptr_0 = 0; /*0x77319f*/
+  ptr_4 = v3[6].ptr_4; /*0x7731a5*/
+  v3[6].ptr_0 = &VectorClass<int>::`vftable'; /*0x7731ab*/
+  if ( ptr_4 && BYTE1(v3[6].ptr_C) ) /*0x7731b9*/
   {
-    __3_YAXPAX_Z(vtable1); /*0x7731c2*/
-    v3[6].vtable1 = 0; /*0x7731ca*/
+    __3_YAXPAX_Z(ptr_4); /*0x7731c2*/
+    v3[6].ptr_4 = 0; /*0x7731ca*/
   }
-  BYTE1(v3[6].vtable3) = 0; /*0x7731d0*/
-  v3[6].vtable2 = 0; /*0x7731d6*/
-  vtable3 = v3[5].vtable3; /*0x7731dc*/
-  v3[5].vtable2 = &VectorClass<int>::`vftable'; /*0x7731e2*/
-  if ( vtable3 && BYTE1(v3[5].abstractFlags) ) /*0x7731f0*/
+  BYTE1(v3[6].ptr_C) = 0; /*0x7731d0*/
+  v3[6].ptr_8 = 0; /*0x7731d6*/
+  ptr_C = v3[5].ptr_C; /*0x7731dc*/
+  v3[5].ptr_8 = &VectorClass<int>::`vftable'; /*0x7731e2*/
+  if ( ptr_C && BYTE1(v3[5].abstractFlags) ) /*0x7731f0*/
   {
-    __3_YAXPAX_Z(vtable3); /*0x7731f9*/
-    v3[5].vtable3 = 0; /*0x773201*/
+    __3_YAXPAX_Z(ptr_C); /*0x7731f9*/
+    v3[5].ptr_C = 0; /*0x773201*/
   }
   BYTE1(v3[5].abstractFlags) = 0; /*0x773209*/
   v3[5].uniqueId = 0; /*0x77320f*/
@@ -17303,12 +17303,12 @@ unsigned int __thiscall sub_7767F0(ObjectClass *this)
 // ==== 0x00776880  ObjectClass::System_Read  this=ObjectClass  sig=csp ====
 BOOL __thiscall System_Read_776880(ObjectClass *this)
 {
-  HWND vtable3; // esi
+  HWND ptr_C; // esi
   ULONG_PTR WindowContextHelpId; // eax
 
-  vtable3 = (HWND)this->?; /*0x776881*/
-  WindowContextHelpId = GetWindowContextHelpId(vtable3); /*0x776885*/
-  return WinHelpA(vtable3, szHelp, 8u, WindowContextHelpId); /*0x77689a*/
+  ptr_C = (HWND)this->?; /*0x776881*/
+  WindowContextHelpId = GetWindowContextHelpId(ptr_C); /*0x776885*/
+  return WinHelpA(ptr_C, szHelp, 8u, WindowContextHelpId); /*0x77689a*/
 }
 
 

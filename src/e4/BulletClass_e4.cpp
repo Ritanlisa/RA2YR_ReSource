@@ -48,10 +48,10 @@ BulletClass::BulletClass()
   *&this->u16_14E = -1; /*0x46640e*/
   this->__pad_154 = 0; /*0x466419*/
   this->q158 = 0; /*0x46641f*/
-  /* X11: vtable install elided (implicit via BulletClass virtuals 0x466425) */
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E46B8) */  /*0x46642b*/
-  /* X11: vtable install elided (implicit via BulletClass virtuals 0x466431) */
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E46B8) */  /*0x466438*/
+  /* X11: ptr_0 install elided (implicit via BulletClass virtuals 0x466425) */
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E46B8) */  /*0x46642b*/
+  /* X11: ptr_0 install elided (implicit via BulletClass virtuals 0x466431) */
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E46B8) */  /*0x466438*/
   AbstractClass::GenerateUniqueID(&this->BulletClass_field_0x4); /*0x46643f*/
   *(unsigned int *)this->q134 = 0; /*0x466444*/
   *&this->TargetCoords = 0; /*0x46644a*/
@@ -81,10 +81,10 @@ BulletClass * * BulletClass::Dtor(void *a1)
 {
   BulletClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-  /* X11: vtable install elided (implicit via BulletClass virtuals 0x466566) */
-  /* X11: vtable install elided (implicit via BulletClass virtuals 0x46656c) */
-  /* X11: vtable install elided (implicit via BulletClass virtuals 0x466573) */
-  /* X11: vtable install elided (implicit via BulletClass virtuals 0x46657a) */
+  /* X11: ptr_0 install elided (implicit via BulletClass virtuals 0x466566) */
+  /* X11: ptr_0 install elided (implicit via BulletClass virtuals 0x46656c) */
+  /* X11: ptr_0 install elided (implicit via BulletClass virtuals 0x466573) */
+  /* X11: ptr_0 install elided (implicit via BulletClass virtuals 0x46657a) */
   AbstractClass::AnnounceExpiredPointer((void **)a1, 1); /*0x466581*/
   if ( a1->q158 ) /*0x466586*/
   {

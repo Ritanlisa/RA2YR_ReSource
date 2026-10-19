@@ -17,7 +17,7 @@ unsigned int * CenterTeamCommand::Construct(int a2, void *a2_2, void *a3, void *
 {
 
   a2_2->CenterTeamCommand_field_00 = a2_2; /*0x5361a6*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EBEB4) */  /*0x5361a9*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EBEB4) */  /*0x5361a9*/
   return a2_2->CommandClass; /*0x5361af*/
 
 }

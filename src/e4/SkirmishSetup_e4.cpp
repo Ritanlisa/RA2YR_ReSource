@@ -74,7 +74,7 @@ char SkirmishSetup_Setup(HWND hWnd, int a2)
     {
       g_MultiplayerMode |= 1u; /*0x5d6171*/
       MultiplayerGameMode::ConstructMultiplayerGameModeVectorClass(&g_MultiplayerModeConfig, 0, 0); /*0x5d617c*/
-      /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EED20) */  /*0x5d6181*/
+      /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EED20) */  /*0x5d6181*/
       dword_ABFDB4 = 10; /*0x5d618b*/
       dword_ABFDB0 = 0; /*0x5d619a*/
       result = atexit(MultiplayerConfig::Cleanup); /*0x5d61a0*/
@@ -85,7 +85,7 @@ char SkirmishSetup_Setup(HWND hWnd, int a2)
     {
       g_MultiplayerMode |= 1u; /*0x5d61c4*/
       MultiplayerGameMode::ConstructMultiplayerGameModeVectorClass(&g_MultiplayerModeConfig, 0, 0); /*0x5d61cf*/
-      /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EED20) */  /*0x5d61d4*/
+      /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EED20) */  /*0x5d61d4*/
       dword_ABFDB4 = 10; /*0x5d61de*/
       dword_ABFDB0 = 0; /*0x5d61ed*/
       atexit(MultiplayerConfig::Cleanup); /*0x5d61f3*/

@@ -34,7 +34,7 @@
 namespace gamemd {  // G42.18 ns repair
 void E4Recv_46D350::sub_46D350()
 {
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E4AAC) */  /*0x46d350*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E4AAC) */  /*0x46d350*/
 }  // G42.18 ns repair
 } // namespace gamemd
 

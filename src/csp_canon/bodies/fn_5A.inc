@@ -634,18 +634,18 @@ void* Gap2Recv_5AD9F0::Map_Cleanup(int a2, int a3) {
   this->Capacity = a2; /*0x5ad9fe*/
   this->IsInitialized = 1; /*0x5ada01*/
   this->IsAllocated = 0; /*0x5ada05*/
-  /* X11: vtable install elided (implicit via VectorClass virtuals 0x5ada08) */
+  /* X11: ptr_0 install elided (implicit via VectorClass virtuals 0x5ada08) */
   if ( a2 ) /*0x5ada0e*/
   {
     if ( a3 ) /*0x5ada16*/
     {
       this->Items = (void *)a3; /*0x5ada18*/
-      return &this->vtable0; /*0x5ada1e*/
+      return &this->ptr_0; /*0x5ada1e*/
     }
     this->Items = (void *)__2_YAPAXI_Z(4 * a2); /*0x5ada2d*/
     this->IsAllocated = 1; /*0x5ada30*/
   }
-  return &this->vtable0; /*0x5ada1d*/
+  return &this->ptr_0; /*0x5ada1d*/
 
 }
 
@@ -914,11 +914,11 @@ int E4Recv_5AED50::sub_5AED50(float a2)
 {
 
   int result; // eax
-  void *vtable1; // [esp+0h] [ebp-1Ch]
+  void *ptr_4; // [esp+0h] [ebp-1Ch]
   int v13; // [esp+4h] [ebp-18h]
-  void *vtable2; // [esp+8h] [ebp-14h]
+  void *ptr_8; // [esp+8h] [ebp-14h]
   int owningHouseIndex; // [esp+Ch] [ebp-10h]
-  void *vtable3; // [esp+10h] [ebp-Ch]
+  void *ptr_C; // [esp+10h] [ebp-Ch]
   double v17; // [esp+14h] [ebp-8h]
 
   __asm { fld [esp+1Ch+arg_0] } /*0x5aed53*/
@@ -941,13 +941,13 @@ int E4Recv_5AED50::sub_5AED50(float a2)
     fld st(2)
     fmul st, st(5)
   }
-  vtable1 = ((unsigned int *)_ESI)[0]; /*0x5aed95*/
+  ptr_4 = ((unsigned int *)_ESI)[0]; /*0x5aed95*/
   result = _ESI->occupant; /*0x5aed99*/
   v13 = result; /*0x5aed9c*/
-  vtable2 = ((unsigned int *)_ESI)[0]; /*0x5aeda0*/
+  ptr_8 = ((unsigned int *)_ESI)[0]; /*0x5aeda0*/
   __asm { faddp st(1), st } /*0x5aeda4*/
   owningHouseIndex = _ESI->owningHouseIndex; /*0x5aedac*/
-  vtable3 = ((unsigned int *)_ESI)[0]; /*0x5aedb0*/
+  ptr_C = ((unsigned int *)_ESI)[0]; /*0x5aedb0*/
   __asm { fstp dword ptr [esi] } /*0x5aedb4*/
   *(float *)_ESI = _ET1; /*0x5aedb4*/
   __asm /*0x5aedb6*/
@@ -1036,11 +1036,11 @@ int E4Recv_5AEE50::sub_5AEE50(float a2)
 
   int result; // eax
   int uniqueId; // [esp+0h] [ebp-24h]
-  void *vtable0; // [esp+4h] [ebp-20h]
+  void *ptr_0; // [esp+4h] [ebp-20h]
   int abstractFlags; // [esp+8h] [ebp-1Ch]
-  void *vtable1; // [esp+Ch] [ebp-18h]
+  void *ptr_4; // [esp+Ch] [ebp-18h]
   int v16; // [esp+10h] [ebp-14h]
-  void *vtable2; // [esp+14h] [ebp-10h]
+  void *ptr_8; // [esp+14h] [ebp-10h]
   int referenceCount; // [esp+18h] [ebp-Ch]
   double v19; // [esp+1Ch] [ebp-8h]
 
@@ -1050,7 +1050,7 @@ int E4Recv_5AEE50::sub_5AEE50(float a2)
   __asm { fstp [esp+38h+arg_0] } /*0x5aee6f*/
   Math::ArcTan2(v19); /*0x5aee75*/
   __asm { fld [esp+40h+arg_0] } /*0x5aee7f*/
-  vtable1 = ((unsigned int *)this)[0]; /*0x5aee83*/
+  ptr_4 = ((unsigned int *)this)[0]; /*0x5aee83*/
   __asm { fchs } /*0x5aee8a*/
   uniqueId = ((unsigned int *)this)[0]; /*0x5aee8c*/
   __asm /*0x5aee93*/
@@ -1058,8 +1058,8 @@ int E4Recv_5AEE50::sub_5AEE50(float a2)
     fld [esp+40h+var_24]
     fmul st, st(1)
   }
-  vtable0 = this->AbstractClass; /*0x5aee99*/
-  vtable2 = ((unsigned int *)this)[0]; /*0x5aee9d*/
+  ptr_0 = this->AbstractClass; /*0x5aee99*/
+  ptr_8 = ((unsigned int *)this)[0]; /*0x5aee9d*/
   __asm { fld [esp+40h+var_20] } /*0x5aeea1*/
   __asm { fmul st, st(3) }
   abstractFlags = ((unsigned int *)this)[0]; /*0x5aeead*/

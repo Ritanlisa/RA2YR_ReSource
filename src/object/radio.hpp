@@ -44,7 +44,7 @@ public:
     bool hasAnyLink() const;
 
     int32_t             lastCommands[3];                  // 0xD4 (offset 212)
-    gamemd::VectorClass<TechnoClass*> radioLinks;         // 0xE0 (offset 224, 16 bytes: vtable/Items/Capacity/IsInitialized/IsAllocated)
+    gamemd::VectorClass<TechnoClass*> radioLinks;         // 0xE0 (offset 224, 16 bytes: ptr_0/Items/Capacity/IsInitialized/IsAllocated)
 
 protected:
     RadioClass() noexcept; // 0x65A750

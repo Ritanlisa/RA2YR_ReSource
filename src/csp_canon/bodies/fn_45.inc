@@ -244,9 +244,9 @@ int UnitClass::IsCellBlockedByBridge(void* aP1)
 
 // ==== BACKFILL 0x00458DD0  BuildingClass::CheckMissionGuard  cls=BuildingClass  sig=csp  renamed_refs=0  residual=- ====
 bool BuildingClass::CheckMissionGuard() {
-    // IDA 0x458DD0, BuildingClass vtable slot 256 (IDA name BuildingClass::_vt256).
+    // IDA 0x458DD0, BuildingClass ptr_0 slot 256 (IDA name BuildingClass::_vt256).
     // Type@+0x520 (ASM: mov eax,[ecx+520h]); CanBeOccupied@Type+0x157B,
-    // CanOccupyFire@Type+0x157C (INI-verified YRpp flags); vtable[+1032] =
+    // CanOccupyFire@Type+0x157C (INI-verified YRpp flags); ptr_0[+1032] =
     // slot 258 = MissionStubReturnZero6 - returns 0 for buildings, so the
     // third clause is inert in the original binary (kept for fidelity).
     return this->Type->CanBeOccupied
@@ -318,7 +318,7 @@ char Gap2Recv_459CA0::ProcessDataCellClass() {
   int v9; // [esp+10h] [ebp-4h] BYREF
 
   v1 = *(unsigned short **)(*((unsigned int *)this + 328) + 3796); /*0x459cad*/
-  v2 = *(unsigned int *)(*(int (**)(TechnoClass *, int *))(this->vtable0 + 440))(this, &v9); /*0x459cbf*/
+  v2 = *(unsigned int *)(*(int (**)(TechnoClass *, int *))(this->ptr_0 + 440))(this, &v9); /*0x459cbf*/
   v9 = v2; /*0x459cc3*/
   if ( v1 ) /*0x459cc7*/
   {

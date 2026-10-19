@@ -163,8 +163,8 @@ char *__thiscall sub_5D0290(char *this, const wchar_t **a2)
 
   v3 = (void **)(this + 12); /*0x5d0299*/
   *(_DWORD *)this = 0; /*0x5d029f*/
-  this->vtable2 = 0; /*0x5d02a1*/
-  this->vtable3 = 0; /*0x5d02a4*/
+  this->ptr_8 = 0; /*0x5d02a1*/
+  this->ptr_C = 0; /*0x5d02a4*/
   WideString::Assign((wchar_t **)this + 3, 0); /*0x5d02a7*/
   unknown_libname_74(&v8); /*0x5d02b0*/
   v4 = String::Tokenize2(a2, 0, (wchar_t *)asc_8304FC, (void **)&v8); /*0x5d02cf*/
@@ -172,10 +172,10 @@ char *__thiscall sub_5D0290(char *this, const wchar_t **a2)
     *(_DWORD *)this = Pipe::GetField((const wchar_t **)&v8); /*0x5d02e3*/
   v5 = String::Tokenize2(a2, v4, (wchar_t *)asc_8304FC, (void **)&v8); /*0x5d02fb*/
   if ( WideString::Length((const wchar_t **)&v8) ) /*0x5d02fd*/
-    this->vtable2 = Pipe::GetField((const wchar_t **)&v8); /*0x5d030f*/
+    this->ptr_8 = Pipe::GetField((const wchar_t **)&v8); /*0x5d030f*/
   v6 = String::Tokenize2(a2, v5, (wchar_t *)asc_8304FC, (void **)&v8); /*0x5d0328*/
   if ( WideString::Length((const wchar_t **)&v8) ) /*0x5d032a*/
-    this->vtable3 = Pipe::GetField((const wchar_t **)&v8); /*0x5d033c*/
+    this->ptr_C = Pipe::GetField((const wchar_t **)&v8); /*0x5d033c*/
   String::Tokenize2(a2, v6, (wchar_t *)asc_8304FC, (void **)&v8); /*0x5d034c*/
   if ( WideString::Length((const wchar_t **)&v8) ) /*0x5d0355*/
     WideString::Reassign_Alt(v3, (const wchar_t **)&v8); /*0x5d0365*/
@@ -3617,8 +3617,8 @@ _DWORD *__thiscall sub_5D30C0(ObjectClass *this, wchar_t *String, _DWORD *a3)
   wchar_t *v3; // esi
   int v4; // ebx
   int v6; // eax
-  char *vtable2; // ebp
-  char *vtable1; // edi
+  char *ptr_8; // ebp
+  char *ptr_4; // edi
   int v10; // [esp+Ch] [ebp-4h]
 
   v3 = String; /*0x5d30c3*/
@@ -3626,7 +3626,7 @@ _DWORD *__thiscall sub_5D30C0(ObjectClass *this, wchar_t *String, _DWORD *a3)
   v10 = 0; /*0x5d30ce*/
   if ( String && (v6 = wcslen(String)) != 0 ) /*0x5d30df*/
   {
-    vtable2 = (char *)this->?; /*0x5d30e2*/
+    ptr_8 = (char *)this->?; /*0x5d30e2*/
     while ( 1 ) /*0x5d30e9*/
     {
       for ( LOWORD(v6) = *v3; *v3; LOWORD(v6) = *v3 ) /*0x5d30e9*/
@@ -3643,15 +3643,15 @@ _DWORD *__thiscall sub_5D30C0(ObjectClass *this, wchar_t *String, _DWORD *a3)
       {
         v6 = (int)this->?; /*0x5d311c*/
         ++v3; /*0x5d311f*/
-        vtable2 += v6; /*0x5d3122*/
+        ptr_8 += v6; /*0x5d3122*/
       }
       if ( !*v3 ) /*0x5d3124*/
         break; /*0x5d3124*/
       v4 = 0; /*0x5d30e7*/
     }
-    vtable1 = (char *)this->?; /*0x5d312a*/
-    a3[3] = vtable2; /*0x5d3137*/
-    a3[2] = &vtable1[v10]; /*0x5d313a*/
+    ptr_4 = (char *)this->?; /*0x5d312a*/
+    a3[3] = ptr_8; /*0x5d3137*/
+    a3[2] = &ptr_4[v10]; /*0x5d313a*/
     *a3 = 0; /*0x5d3140*/
     a3[1] = 0; /*0x5d3146*/
     return a3; /*0x5d3133*/
@@ -4806,9 +4806,9 @@ LABEL_13:
     if ( v2 ) /*0x5d44d2*/
     {
       if ( this->customSound && this->bombVisible ) /*0x5d44db*/
-        v9 = this->vtable3 + this->abstractFlags; /*0x5d44e8*/
+        v9 = this->ptr_C + this->abstractFlags; /*0x5d44e8*/
       else
-        v9 = this->vtable3; /*0x5d44ec*/
+        v9 = this->ptr_C; /*0x5d44ec*/
       v10 = *(int **)this; /*0x5d44ef*/
       if ( *(_DWORD *)this ) /*0x5d44ef*/
       {
@@ -5191,23 +5191,23 @@ char __thiscall TacticalMap::DrawCursor(TacticalMap *this)
 char __thiscall TacticalClass::processInput(TacticalClass *this, int a2)
 {
   int v2; // esi
-  int *vtable0; // eax
+  int *ptr_0; // eax
   int v5; // edx
   int field24; // eax
 
   v2 = a2 - 8; /*0x5d4ad6*/
   this->visibleCells[120] = a2 - 8; /*0x5d4ae1*/
   Debug::Log(); /*0x5d4ae7*/
-  vtable0 = (int *)this->AbstractClass; /*0x5d4aec*/
+  ptr_0 = (int *)this->AbstractClass; /*0x5d4aec*/
   if ( this->AbstractClass ) /*0x5d4aec*/
   {
     do /*0x5d4b01*/
     {
-      v5 = *vtable0; /*0x5d4af5*/
-      vtable0[14] = v2; /*0x5d4af9*/
-      vtable0 = (int *)(*(int (__thiscall **)(int *))(v5 + 4))(vtable0); /*0x5d4afc*/
+      v5 = *ptr_0; /*0x5d4af5*/
+      ptr_0[14] = v2; /*0x5d4af9*/
+      ptr_0 = (int *)(*(int (__thiscall **)(int *))(v5 + 4))(ptr_0); /*0x5d4afc*/
     }
-    while ( vtable0 ); /*0x5d4b01*/
+    while ( ptr_0 ); /*0x5d4b01*/
   }
   LOBYTE(field24) = BYTE1(this->?); /*0x5d4b03*/
   if ( (_BYTE)field24 ) /*0x5d4b08*/
@@ -7131,11 +7131,11 @@ int __stdcall ListBox::AddEntries(MultiplayerGameMode *this)
 // ==== 0x005D6790  MultiplayerGameMode::ClearFlag  this=MultiplayerGameMode  sig=csp ====
 char ScenarioClass::ClearFlag(MultiplayerGameMode *this)
 {
-  void *vtable0; // ecx
+  void *ptr_0; // ecx
 
-  vtable0 = dword_A8B230->vtable0; /*0x5d6795*/
-  BYTE1(vtable0) = ((unsigned __int16)dword_A8B230->vtable0 >> 8) & 0xFB; /*0x5d6797*/
-  dword_A8B230->vtable0 = vtable0; /*0x5d679a*/
+  ptr_0 = dword_A8B230->ptr_0; /*0x5d6795*/
+  BYTE1(ptr_0) = ((unsigned __int16)dword_A8B230->ptr_0 >> 8) & 0xFB; /*0x5d6797*/
+  dword_A8B230->ptr_0 = ptr_0; /*0x5d679a*/
   return 1; /*0x5d679e*/
 }
 
@@ -7489,7 +7489,7 @@ char __thiscall ComputeMultiEngineerAdjustment(TechnoClass *this)
   int v15; // ebx
   int v16; // esi
   int v17; // edi
-  int vtable0; // edx
+  int ptr_0; // edx
   int v20; // [esp+10h] [ebp-Ch] BYREF
   int v21; // [esp+14h] [ebp-8h]
   TechnoClass *v22; // [esp+18h] [ebp-4h]
@@ -7505,8 +7505,8 @@ char __thiscall ComputeMultiEngineerAdjustment(TechnoClass *this)
       v3 = dword_A8022C; /*0x5d6da8*/
       do /*0x5d6dd9*/
       {
-        if ( !*(_BYTE *)(*(_DWORD *)(v3->vtable0 + 52) + 422) ) /*0x5d6db5*/
-          v20 |= 1 << *(_DWORD *)(*(_DWORD *)(v3->vtable0 + 52) + 180); /*0x5d6dd1*/
+        if ( !*(_BYTE *)(*(_DWORD *)(v3->ptr_0 + 52) + 422) ) /*0x5d6db5*/
+          v20 |= 1 << *(_DWORD *)(*(_DWORD *)(v3->ptr_0 + 52) + 180); /*0x5d6dd1*/
         v3 = (HouseClass *)((char *)v3 + 4); /*0x5d6dd5*/
         --v2; /*0x5d6dd8*/
       }
@@ -7575,7 +7575,7 @@ LABEL_42:
   }
   while ( 1 ) /*0x5d6eea*/
   {
-    v16 = *(&dword_A8022C->vtable0 + v15); /*0x5d6eea*/
+    v16 = *(&dword_A8022C->ptr_0 + v15); /*0x5d6eea*/
     if ( *(_BYTE *)(*(_DWORD *)(v16 + 52) + 422) ) /*0x5d6ef0*/
       goto LABEL_41; /*0x5d6ef0*/
     if ( v16 ) /*0x5d6f00*/
@@ -7594,10 +7594,10 @@ LABEL_42:
       }
     }
 LABEL_36:
-    vtable0 = v22->vtable0; /*0x5d6f63*/
+    ptr_0 = v22->ptr_0; /*0x5d6f63*/
     v20 = v1; /*0x5d6f65*/
-    if ( !(*(unsigned __int8 (__thiscall **)(TechnoClass *, int, int *))(vtable0 + 200))(v22, v16, &v20) /*0x5d6f83*/
-      || !(*(unsigned __int8 (__thiscall **)(TechnoClass *, int, int *))(v22->vtable0 + 204))(v22, v16, &v20) )
+    if ( !(*(unsigned __int8 (__thiscall **)(TechnoClass *, int, int *))(ptr_0 + 200))(v22, v16, &v20) /*0x5d6f83*/
+      || !(*(unsigned __int8 (__thiscall **)(TechnoClass *, int, int *))(v22->ptr_0 + 204))(v22, v16, &v20) )
     {
       return 0; /*0x5d7013*/
     }
@@ -7825,7 +7825,7 @@ LABEL_34:
           v27 = (*(int (__thiscall **)(int))(*(_DWORD *)v22 + 172))(v22); /*0x5d73e5*/
           v26 = a2; /*0x5d73eb*/
           *a2 -= v27; /*0x5d73f3*/
-          if ( ((int)dword_A8B230->vtable0 & 0x200) != 0 ) /*0x5d7400*/
+          if ( ((int)dword_A8B230->ptr_0 & 0x200) != 0 ) /*0x5d7400*/
             Timer::SetFlag((Timer *)(v24 + 84), 1); /*0x5d740a*/
           if ( (unsigned __int8)House::IsCurrentPlayer((House *)this) ) /*0x5d7411*/
             (*(void (__thiscall **)(int *, int))(*v24 + 496))(v24, 5); /*0x5d7420*/
@@ -7881,7 +7881,7 @@ LABEL_34:
 char HouseClass::InitAlliances(MultiplayerGameMode *this)
 {
   int nextArrayIndex; // edx
-  _DWORD *vtable3; // eax
+  _DWORD *ptr_C; // eax
   int v3; // edi
   int v4; // ebp
   int *v5; // ebx
@@ -7892,13 +7892,13 @@ char HouseClass::InitAlliances(MultiplayerGameMode *this)
   nextArrayIndex = stru_A80220.?; /*0x5d74a1*/
   if ( stru_A80220.? <= 0 ) /*0x5d74a9*/
     return 1; /*0x5d754a*/
-  vtable3 = stru_A80220.?; /*0x5d74af*/
+  ptr_C = stru_A80220.?; /*0x5d74af*/
   v3 = 1; /*0x5d74b8*/
   v4 = 0; /*0x5d74bd*/
   v9 = 1; /*0x5d74bf*/
   do /*0x5d7540*/
   {
-    v5 = (int *)vtable3[v4]; /*0x5d74c3*/
+    v5 = (int *)ptr_C[v4]; /*0x5d74c3*/
     if ( !*(_BYTE *)(v5[13] + 422) ) /*0x5d74c9*/
     {
       v6 = v5[22551]; /*0x5d74d4*/
@@ -7906,12 +7906,12 @@ char HouseClass::InitAlliances(MultiplayerGameMode *this)
       {
         do /*0x5d752d*/
         {
-          v7 = (int *)vtable3[v3]; /*0x5d74e8*/
-          if ( !*(_BYTE *)(v7[13] + 422) && *(_DWORD *)(vtable3[v4] + 90204) == v7[22551] ) /*0x5d7509*/
+          v7 = (int *)ptr_C[v3]; /*0x5d74e8*/
+          if ( !*(_BYTE *)(v7[13] + 422) && *(_DWORD *)(ptr_C[v4] + 90204) == v7[22551] ) /*0x5d7509*/
           {
             HouseClass::HandleAlliance(v5, (int)v7, 0); /*0x5d7510*/
             HouseClass::HandleAlliance(v7, (int)v5, 0); /*0x5d751a*/
-            vtable3 = stru_A80220.?; /*0x5d751f*/
+            ptr_C = stru_A80220.?; /*0x5d751f*/
           }
           nextArrayIndex = stru_A80220.?; /*0x5d7524*/
           ++v3; /*0x5d752a*/
@@ -8370,10 +8370,10 @@ char *__thiscall MultiplayerGameMode::QueryInterface(MultiplayerGameMode *this, 
 // ==== 0x005D7FD0  AbstractClass::checkVisibility  this=InitializerBase@MultiplayerGameMode  sig=csp ====
 _DWORD *__thiscall AbstractClass::checkVisibility(AbstractClass *this, char a2)
 {
-  this->vtable0 = &MultiplayerGameMode::InitializerBase::`vftable'; /*0x5d7fd9*/
+  this->ptr_0 = &MultiplayerGameMode::InitializerBase::`vftable'; /*0x5d7fd9*/
   if ( (a2 & 1) != 0 ) /*0x5d7fdf*/
     __3_YAXPAX_Z(this); /*0x5d7fe2*/
-  return &this->vtable0; /*0x5d7fec*/
+  return &this->ptr_0; /*0x5d7fec*/
 }
 
 
@@ -8403,10 +8403,10 @@ _DWORD *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_128(_DWORD *Block, char a2)
 // ==== 0x005D8030  AbstractClass::updateVisibilityState  this=InitializerBase@MultiplayerGameMode  sig=csp ====
 _DWORD *__thiscall AbstractClass::updateVisibilityState(AbstractClass *this, char a2)
 {
-  this->vtable0 = &MultiplayerGameMode::InitializerBase::`vftable'; /*0x5d8039*/
+  this->ptr_0 = &MultiplayerGameMode::InitializerBase::`vftable'; /*0x5d8039*/
   if ( (a2 & 1) != 0 ) /*0x5d803f*/
     __3_YAXPAX_Z(this); /*0x5d8042*/
-  return &this->vtable0; /*0x5d804c*/
+  return &this->ptr_0; /*0x5d804c*/
 }
 
 
@@ -8414,10 +8414,10 @@ _DWORD *__thiscall AbstractClass::updateVisibilityState(AbstractClass *this, cha
 // ==== 0x005D8050  AbstractClass::processFogReveal  this=InitializerBase@MultiplayerGameMode  sig=csp ====
 _DWORD *__thiscall AbstractClass::processFogReveal(AbstractClass *this, char a2)
 {
-  this->vtable0 = &MultiplayerGameMode::InitializerBase::`vftable'; /*0x5d8059*/
+  this->ptr_0 = &MultiplayerGameMode::InitializerBase::`vftable'; /*0x5d8059*/
   if ( (a2 & 1) != 0 ) /*0x5d805f*/
     __3_YAXPAX_Z(this); /*0x5d8062*/
-  return &this->vtable0; /*0x5d806c*/
+  return &this->ptr_0; /*0x5d806c*/
 }
 
 
@@ -8425,10 +8425,10 @@ _DWORD *__thiscall AbstractClass::processFogReveal(AbstractClass *this, char a2)
 // ==== 0x005D8070  AbstractClass::checkShroudState  this=InitializerBase@MultiplayerGameMode  sig=csp ====
 _DWORD *__thiscall AbstractClass::checkShroudState(AbstractClass *this, char a2)
 {
-  this->vtable0 = &MultiplayerGameMode::InitializerBase::`vftable'; /*0x5d8079*/
+  this->ptr_0 = &MultiplayerGameMode::InitializerBase::`vftable'; /*0x5d8079*/
   if ( (a2 & 1) != 0 ) /*0x5d807f*/
     __3_YAXPAX_Z(this); /*0x5d8082*/
-  return &this->vtable0; /*0x5d808c*/
+  return &this->ptr_0; /*0x5d808c*/
 }
 
 
@@ -8436,10 +8436,10 @@ _DWORD *__thiscall AbstractClass::checkShroudState(AbstractClass *this, char a2)
 // ==== 0x005D8090  AbstractClass::updateShroudMap  this=InitializerBase@MultiplayerGameMode  sig=csp ====
 _DWORD *__thiscall AbstractClass::updateShroudMap(AbstractClass *this, char a2)
 {
-  this->vtable0 = &MultiplayerGameMode::InitializerBase::`vftable'; /*0x5d8099*/
+  this->ptr_0 = &MultiplayerGameMode::InitializerBase::`vftable'; /*0x5d8099*/
   if ( (a2 & 1) != 0 ) /*0x5d809f*/
     __3_YAXPAX_Z(this); /*0x5d80a2*/
-  return &this->vtable0; /*0x5d80ac*/
+  return &this->ptr_0; /*0x5d80ac*/
 }
 
 
@@ -12811,7 +12811,7 @@ int __stdcall NetworkLobby::DlgProc(HWND hDlg, UINT a2, unsigned int nIDDlgItem,
   unsigned int v20; // eax
   int v21; // eax
   int PlayerCountMap; // edi
-  void *vtable2; // ecx
+  void *ptr_8; // ecx
   HWND DlgItem; // eax
   Dialog *DlgCtrlID; // edi
   GameSetup *ComboBoxSelectedRaw; // eax
@@ -12911,11 +12911,11 @@ int __stdcall NetworkLobby::DlgProc(HWND hDlg, UINT a2, unsigned int nIDDlgItem,
           PlayerCountMap = ReadPlayerCountMap(*(int *)&stru_A8B250.__pad_0[4]); /*0x5dede2*/
           if ( !dword_A8B23C /*0x5dedfe*/
             || !(*((unsigned __int8 (__thiscall **)(ObjectClass *))dword_A8B23C->AbstractClass + 1))(dword_A8B23C)
-            || (vtable2 = dword_A8B230[127].vtable2, (int)vtable2 > PlayerCountMap) )
+            || (ptr_8 = dword_A8B230[127].ptr_8, (int)ptr_8 > PlayerCountMap) )
           {
-            vtable2 = (void *)PlayerCountMap; /*0x5dee00*/
+            ptr_8 = (void *)PlayerCountMap; /*0x5dee00*/
           }
-          ResetLobbyFactionTable((int)vtable2); /*0x5dee02*/
+          ResetLobbyFactionTable((int)ptr_8); /*0x5dee02*/
           Lobby::InvalidateFactionCombos((Lobby *)hDlg); /*0x5dee09*/
           SkirmishDialogProc(hDlg, 1175, nIDDlgItem, (HWND)lParam); /*0x5dee16*/
           NetworkLobby::UpdatePlayerList(); /*0x5dee1b*/
@@ -13108,7 +13108,7 @@ LABEL_58:
         v13 = ReadPlayerCountMap(*(int *)&stru_A8B250.__pad_0[4]); /*0x5dea13*/
         if ( !dword_A8B23C /*0x5dea2f*/
           || !(*((unsigned __int8 (__thiscall **)(ObjectClass *))dword_A8B23C->AbstractClass + 1))(dword_A8B23C)
-          || (v14 = dword_A8B230[127].vtable2, (int)v14 > v13) )
+          || (v14 = dword_A8B230[127].ptr_8, (int)v14 > v13) )
         {
           v14 = (void *)v13; /*0x5dea31*/
         }
@@ -13854,8 +13854,8 @@ char *__thiscall sub_5D0290(char *this, const wchar_t **a2)
 
   v3 = (void **)(this + 12); /*0x5d0299*/
   *(_DWORD *)this = 0; /*0x5d029f*/
-  this->vtable2 = 0; /*0x5d02a1*/
-  this->vtable3 = 0; /*0x5d02a4*/
+  this->ptr_8 = 0; /*0x5d02a1*/
+  this->ptr_C = 0; /*0x5d02a4*/
   WideString::Assign((wchar_t **)this + 3, 0); /*0x5d02a7*/
   unknown_libname_74(&v8); /*0x5d02b0*/
   v4 = String::Tokenize2(a2, 0, (wchar_t *)asc_8304FC, (void **)&v8); /*0x5d02cf*/
@@ -13863,10 +13863,10 @@ char *__thiscall sub_5D0290(char *this, const wchar_t **a2)
     *(_DWORD *)this = Pipe::GetField((const wchar_t **)&v8); /*0x5d02e3*/
   v5 = String::Tokenize2(a2, v4, (wchar_t *)asc_8304FC, (void **)&v8); /*0x5d02fb*/
   if ( WideString::Length((const wchar_t **)&v8) ) /*0x5d02fd*/
-    this->vtable2 = Pipe::GetField((const wchar_t **)&v8); /*0x5d030f*/
+    this->ptr_8 = Pipe::GetField((const wchar_t **)&v8); /*0x5d030f*/
   v6 = String::Tokenize2(a2, v5, (wchar_t *)asc_8304FC, (void **)&v8); /*0x5d0328*/
   if ( WideString::Length((const wchar_t **)&v8) ) /*0x5d032a*/
-    this->vtable3 = Pipe::GetField((const wchar_t **)&v8); /*0x5d033c*/
+    this->ptr_C = Pipe::GetField((const wchar_t **)&v8); /*0x5d033c*/
   String::Tokenize2(a2, v6, (wchar_t *)asc_8304FC, (void **)&v8); /*0x5d034c*/
   if ( WideString::Length((const wchar_t **)&v8) ) /*0x5d0355*/
     WideString::Reassign_Alt(v3, (const wchar_t **)&v8); /*0x5d0365*/
@@ -17308,8 +17308,8 @@ _DWORD *__thiscall sub_5D30C0(ObjectClass *this, wchar_t *String, _DWORD *a3)
   wchar_t *v3; // esi
   int v4; // ebx
   int v6; // eax
-  char *vtable2; // ebp
-  char *vtable1; // edi
+  char *ptr_8; // ebp
+  char *ptr_4; // edi
   int v10; // [esp+Ch] [ebp-4h]
 
   v3 = String; /*0x5d30c3*/
@@ -17317,7 +17317,7 @@ _DWORD *__thiscall sub_5D30C0(ObjectClass *this, wchar_t *String, _DWORD *a3)
   v10 = 0; /*0x5d30ce*/
   if ( String && (v6 = wcslen(String)) != 0 ) /*0x5d30df*/
   {
-    vtable2 = (char *)this->?; /*0x5d30e2*/
+    ptr_8 = (char *)this->?; /*0x5d30e2*/
     while ( 1 ) /*0x5d30e9*/
     {
       for ( LOWORD(v6) = *v3; *v3; LOWORD(v6) = *v3 ) /*0x5d30e9*/
@@ -17334,15 +17334,15 @@ _DWORD *__thiscall sub_5D30C0(ObjectClass *this, wchar_t *String, _DWORD *a3)
       {
         v6 = (int)this->?; /*0x5d311c*/
         ++v3; /*0x5d311f*/
-        vtable2 += v6; /*0x5d3122*/
+        ptr_8 += v6; /*0x5d3122*/
       }
       if ( !*v3 ) /*0x5d3124*/
         break; /*0x5d3124*/
       v4 = 0; /*0x5d30e7*/
     }
-    vtable1 = (char *)this->?; /*0x5d312a*/
-    a3[3] = vtable2; /*0x5d3137*/
-    a3[2] = &vtable1[v10]; /*0x5d313a*/
+    ptr_4 = (char *)this->?; /*0x5d312a*/
+    a3[3] = ptr_8; /*0x5d3137*/
+    a3[2] = &ptr_4[v10]; /*0x5d313a*/
     *a3 = 0; /*0x5d3140*/
     a3[1] = 0; /*0x5d3146*/
     return a3; /*0x5d3133*/
@@ -18497,9 +18497,9 @@ LABEL_13:
     if ( v2 ) /*0x5d44d2*/
     {
       if ( this->customSound && this->bombVisible ) /*0x5d44db*/
-        v9 = this->vtable3 + this->abstractFlags; /*0x5d44e8*/
+        v9 = this->ptr_C + this->abstractFlags; /*0x5d44e8*/
       else
-        v9 = this->vtable3; /*0x5d44ec*/
+        v9 = this->ptr_C; /*0x5d44ec*/
       v10 = *(int **)this; /*0x5d44ef*/
       if ( *(_DWORD *)this ) /*0x5d44ef*/
       {
@@ -18882,23 +18882,23 @@ char __thiscall TacticalMap::DrawCursor(TacticalMap *this)
 char __thiscall TacticalClass::processInput(TacticalClass *this, int a2)
 {
   int v2; // esi
-  int *vtable0; // eax
+  int *ptr_0; // eax
   int v5; // edx
   int field24; // eax
 
   v2 = a2 - 8; /*0x5d4ad6*/
   this->visibleCells[120] = a2 - 8; /*0x5d4ae1*/
   Debug::Log(); /*0x5d4ae7*/
-  vtable0 = (int *)this->AbstractClass; /*0x5d4aec*/
+  ptr_0 = (int *)this->AbstractClass; /*0x5d4aec*/
   if ( this->AbstractClass ) /*0x5d4aec*/
   {
     do /*0x5d4b01*/
     {
-      v5 = *vtable0; /*0x5d4af5*/
-      vtable0[14] = v2; /*0x5d4af9*/
-      vtable0 = (int *)(*(int (__thiscall **)(int *))(v5 + 4))(vtable0); /*0x5d4afc*/
+      v5 = *ptr_0; /*0x5d4af5*/
+      ptr_0[14] = v2; /*0x5d4af9*/
+      ptr_0 = (int *)(*(int (__thiscall **)(int *))(v5 + 4))(ptr_0); /*0x5d4afc*/
     }
-    while ( vtable0 ); /*0x5d4b01*/
+    while ( ptr_0 ); /*0x5d4b01*/
   }
   LOBYTE(field24) = BYTE1(this->?); /*0x5d4b03*/
   if ( (_BYTE)field24 ) /*0x5d4b08*/
@@ -20822,11 +20822,11 @@ int __stdcall ListBox::AddEntries(MultiplayerGameMode *this)
 // ==== 0x005D6790  MultiplayerGameMode::ClearFlag  this=MultiplayerGameMode  sig=csp ====
 char ScenarioClass::ClearFlag(MultiplayerGameMode *this)
 {
-  void *vtable0; // ecx
+  void *ptr_0; // ecx
 
-  vtable0 = dword_A8B230->vtable0; /*0x5d6795*/
-  BYTE1(vtable0) = ((unsigned __int16)dword_A8B230->vtable0 >> 8) & 0xFB; /*0x5d6797*/
-  dword_A8B230->vtable0 = vtable0; /*0x5d679a*/
+  ptr_0 = dword_A8B230->ptr_0; /*0x5d6795*/
+  BYTE1(ptr_0) = ((unsigned __int16)dword_A8B230->ptr_0 >> 8) & 0xFB; /*0x5d6797*/
+  dword_A8B230->ptr_0 = ptr_0; /*0x5d679a*/
   return 1; /*0x5d679e*/
 }
 
@@ -21180,7 +21180,7 @@ char __thiscall ComputeMultiEngineerAdjustment(TechnoClass *this)
   int v15; // ebx
   int v16; // esi
   int v17; // edi
-  int vtable0; // edx
+  int ptr_0; // edx
   int v20; // [esp+10h] [ebp-Ch] BYREF
   int v21; // [esp+14h] [ebp-8h]
   TechnoClass *v22; // [esp+18h] [ebp-4h]
@@ -21196,8 +21196,8 @@ char __thiscall ComputeMultiEngineerAdjustment(TechnoClass *this)
       v3 = dword_A8022C; /*0x5d6da8*/
       do /*0x5d6dd9*/
       {
-        if ( !*(_BYTE *)(*(_DWORD *)(v3->vtable0 + 52) + 422) ) /*0x5d6db5*/
-          v20 |= 1 << *(_DWORD *)(*(_DWORD *)(v3->vtable0 + 52) + 180); /*0x5d6dd1*/
+        if ( !*(_BYTE *)(*(_DWORD *)(v3->ptr_0 + 52) + 422) ) /*0x5d6db5*/
+          v20 |= 1 << *(_DWORD *)(*(_DWORD *)(v3->ptr_0 + 52) + 180); /*0x5d6dd1*/
         v3 = (HouseClass *)((char *)v3 + 4); /*0x5d6dd5*/
         --v2; /*0x5d6dd8*/
       }
@@ -21266,7 +21266,7 @@ LABEL_42:
   }
   while ( 1 ) /*0x5d6eea*/
   {
-    v16 = *(&dword_A8022C->vtable0 + v15); /*0x5d6eea*/
+    v16 = *(&dword_A8022C->ptr_0 + v15); /*0x5d6eea*/
     if ( *(_BYTE *)(*(_DWORD *)(v16 + 52) + 422) ) /*0x5d6ef0*/
       goto LABEL_41; /*0x5d6ef0*/
     if ( v16 ) /*0x5d6f00*/
@@ -21285,10 +21285,10 @@ LABEL_42:
       }
     }
 LABEL_36:
-    vtable0 = v22->vtable0; /*0x5d6f63*/
+    ptr_0 = v22->ptr_0; /*0x5d6f63*/
     v20 = v1; /*0x5d6f65*/
-    if ( !(*(unsigned __int8 (__thiscall **)(TechnoClass *, int, int *))(vtable0 + 200))(v22, v16, &v20) /*0x5d6f83*/
-      || !(*(unsigned __int8 (__thiscall **)(TechnoClass *, int, int *))(v22->vtable0 + 204))(v22, v16, &v20) )
+    if ( !(*(unsigned __int8 (__thiscall **)(TechnoClass *, int, int *))(ptr_0 + 200))(v22, v16, &v20) /*0x5d6f83*/
+      || !(*(unsigned __int8 (__thiscall **)(TechnoClass *, int, int *))(v22->ptr_0 + 204))(v22, v16, &v20) )
     {
       return 0; /*0x5d7013*/
     }
@@ -21516,7 +21516,7 @@ LABEL_34:
           v27 = (*(int (__thiscall **)(int))(*(_DWORD *)v22 + 172))(v22); /*0x5d73e5*/
           v26 = a2; /*0x5d73eb*/
           *a2 -= v27; /*0x5d73f3*/
-          if ( ((int)dword_A8B230->vtable0 & 0x200) != 0 ) /*0x5d7400*/
+          if ( ((int)dword_A8B230->ptr_0 & 0x200) != 0 ) /*0x5d7400*/
             Timer::SetFlag((Timer *)(v24 + 84), 1); /*0x5d740a*/
           if ( (unsigned __int8)House::IsCurrentPlayer((House *)this) ) /*0x5d7411*/
             (*(void (__thiscall **)(int *, int))(*v24 + 496))(v24, 5); /*0x5d7420*/
@@ -21572,7 +21572,7 @@ LABEL_34:
 char HouseClass::InitAlliances(MultiplayerGameMode *this)
 {
   int nextArrayIndex; // edx
-  _DWORD *vtable3; // eax
+  _DWORD *ptr_C; // eax
   int v3; // edi
   int v4; // ebp
   int *v5; // ebx
@@ -21583,13 +21583,13 @@ char HouseClass::InitAlliances(MultiplayerGameMode *this)
   nextArrayIndex = stru_A80220.?; /*0x5d74a1*/
   if ( stru_A80220.? <= 0 ) /*0x5d74a9*/
     return 1; /*0x5d754a*/
-  vtable3 = stru_A80220.?; /*0x5d74af*/
+  ptr_C = stru_A80220.?; /*0x5d74af*/
   v3 = 1; /*0x5d74b8*/
   v4 = 0; /*0x5d74bd*/
   v9 = 1; /*0x5d74bf*/
   do /*0x5d7540*/
   {
-    v5 = (int *)vtable3[v4]; /*0x5d74c3*/
+    v5 = (int *)ptr_C[v4]; /*0x5d74c3*/
     if ( !*(_BYTE *)(v5[13] + 422) ) /*0x5d74c9*/
     {
       v6 = v5[22551]; /*0x5d74d4*/
@@ -21597,12 +21597,12 @@ char HouseClass::InitAlliances(MultiplayerGameMode *this)
       {
         do /*0x5d752d*/
         {
-          v7 = (int *)vtable3[v3]; /*0x5d74e8*/
-          if ( !*(_BYTE *)(v7[13] + 422) && *(_DWORD *)(vtable3[v4] + 90204) == v7[22551] ) /*0x5d7509*/
+          v7 = (int *)ptr_C[v3]; /*0x5d74e8*/
+          if ( !*(_BYTE *)(v7[13] + 422) && *(_DWORD *)(ptr_C[v4] + 90204) == v7[22551] ) /*0x5d7509*/
           {
             HouseClass::HandleAlliance(v5, (int)v7, 0); /*0x5d7510*/
             HouseClass::HandleAlliance(v7, (int)v5, 0); /*0x5d751a*/
-            vtable3 = stru_A80220.?; /*0x5d751f*/
+            ptr_C = stru_A80220.?; /*0x5d751f*/
           }
           nextArrayIndex = stru_A80220.?; /*0x5d7524*/
           ++v3; /*0x5d752a*/
@@ -22061,10 +22061,10 @@ char *__thiscall MultiplayerGameMode::QueryInterface(MultiplayerGameMode *this, 
 // ==== 0x005D7FD0  AbstractClass::checkVisibility  this=InitializerBase@MultiplayerGameMode  sig=csp ====
 _DWORD *__thiscall AbstractClass::checkVisibility(AbstractClass *this, char a2)
 {
-  this->vtable0 = &MultiplayerGameMode::InitializerBase::`vftable'; /*0x5d7fd9*/
+  this->ptr_0 = &MultiplayerGameMode::InitializerBase::`vftable'; /*0x5d7fd9*/
   if ( (a2 & 1) != 0 ) /*0x5d7fdf*/
     __3_YAXPAX_Z(this); /*0x5d7fe2*/
-  return &this->vtable0; /*0x5d7fec*/
+  return &this->ptr_0; /*0x5d7fec*/
 }
 
 
@@ -22094,10 +22094,10 @@ _DWORD *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_128(_DWORD *Block, char a2)
 // ==== 0x005D8030  AbstractClass::updateVisibilityState  this=InitializerBase@MultiplayerGameMode  sig=csp ====
 _DWORD *__thiscall AbstractClass::updateVisibilityState(AbstractClass *this, char a2)
 {
-  this->vtable0 = &MultiplayerGameMode::InitializerBase::`vftable'; /*0x5d8039*/
+  this->ptr_0 = &MultiplayerGameMode::InitializerBase::`vftable'; /*0x5d8039*/
   if ( (a2 & 1) != 0 ) /*0x5d803f*/
     __3_YAXPAX_Z(this); /*0x5d8042*/
-  return &this->vtable0; /*0x5d804c*/
+  return &this->ptr_0; /*0x5d804c*/
 }
 
 
@@ -22105,10 +22105,10 @@ _DWORD *__thiscall AbstractClass::updateVisibilityState(AbstractClass *this, cha
 // ==== 0x005D8050  AbstractClass::processFogReveal  this=InitializerBase@MultiplayerGameMode  sig=csp ====
 _DWORD *__thiscall AbstractClass::processFogReveal(AbstractClass *this, char a2)
 {
-  this->vtable0 = &MultiplayerGameMode::InitializerBase::`vftable'; /*0x5d8059*/
+  this->ptr_0 = &MultiplayerGameMode::InitializerBase::`vftable'; /*0x5d8059*/
   if ( (a2 & 1) != 0 ) /*0x5d805f*/
     __3_YAXPAX_Z(this); /*0x5d8062*/
-  return &this->vtable0; /*0x5d806c*/
+  return &this->ptr_0; /*0x5d806c*/
 }
 
 
@@ -22116,10 +22116,10 @@ _DWORD *__thiscall AbstractClass::processFogReveal(AbstractClass *this, char a2)
 // ==== 0x005D8070  AbstractClass::checkShroudState  this=InitializerBase@MultiplayerGameMode  sig=csp ====
 _DWORD *__thiscall AbstractClass::checkShroudState(AbstractClass *this, char a2)
 {
-  this->vtable0 = &MultiplayerGameMode::InitializerBase::`vftable'; /*0x5d8079*/
+  this->ptr_0 = &MultiplayerGameMode::InitializerBase::`vftable'; /*0x5d8079*/
   if ( (a2 & 1) != 0 ) /*0x5d807f*/
     __3_YAXPAX_Z(this); /*0x5d8082*/
-  return &this->vtable0; /*0x5d808c*/
+  return &this->ptr_0; /*0x5d808c*/
 }
 
 
@@ -22127,10 +22127,10 @@ _DWORD *__thiscall AbstractClass::checkShroudState(AbstractClass *this, char a2)
 // ==== 0x005D8090  AbstractClass::updateShroudMap  this=InitializerBase@MultiplayerGameMode  sig=csp ====
 _DWORD *__thiscall AbstractClass::updateShroudMap(AbstractClass *this, char a2)
 {
-  this->vtable0 = &MultiplayerGameMode::InitializerBase::`vftable'; /*0x5d8099*/
+  this->ptr_0 = &MultiplayerGameMode::InitializerBase::`vftable'; /*0x5d8099*/
   if ( (a2 & 1) != 0 ) /*0x5d809f*/
     __3_YAXPAX_Z(this); /*0x5d80a2*/
-  return &this->vtable0; /*0x5d80ac*/
+  return &this->ptr_0; /*0x5d80ac*/
 }
 
 
@@ -26502,7 +26502,7 @@ int __stdcall NetworkLobby::DlgProc(HWND hDlg, UINT a2, unsigned int nIDDlgItem,
   unsigned int v20; // eax
   int v21; // eax
   int PlayerCountMap; // edi
-  void *vtable2; // ecx
+  void *ptr_8; // ecx
   HWND DlgItem; // eax
   Dialog *DlgCtrlID; // edi
   GameSetup *ComboBoxSelectedRaw; // eax
@@ -26602,11 +26602,11 @@ int __stdcall NetworkLobby::DlgProc(HWND hDlg, UINT a2, unsigned int nIDDlgItem,
           PlayerCountMap = ReadPlayerCountMap(*(int *)&stru_A8B250.__pad_0[4]); /*0x5dede2*/
           if ( !dword_A8B23C /*0x5dedfe*/
             || !(*((unsigned __int8 (__thiscall **)(ObjectClass *))dword_A8B23C->AbstractClass + 1))(dword_A8B23C)
-            || (vtable2 = dword_A8B230[127].vtable2, (int)vtable2 > PlayerCountMap) )
+            || (ptr_8 = dword_A8B230[127].ptr_8, (int)ptr_8 > PlayerCountMap) )
           {
-            vtable2 = (void *)PlayerCountMap; /*0x5dee00*/
+            ptr_8 = (void *)PlayerCountMap; /*0x5dee00*/
           }
-          ResetLobbyFactionTable((int)vtable2); /*0x5dee02*/
+          ResetLobbyFactionTable((int)ptr_8); /*0x5dee02*/
           Lobby::InvalidateFactionCombos((Lobby *)hDlg); /*0x5dee09*/
           SkirmishDialogProc(hDlg, 1175, nIDDlgItem, (HWND)lParam); /*0x5dee16*/
           NetworkLobby::UpdatePlayerList(); /*0x5dee1b*/
@@ -26799,7 +26799,7 @@ LABEL_58:
         v13 = ReadPlayerCountMap(*(int *)&stru_A8B250.__pad_0[4]); /*0x5dea13*/
         if ( !dword_A8B23C /*0x5dea2f*/
           || !(*((unsigned __int8 (__thiscall **)(ObjectClass *))dword_A8B23C->AbstractClass + 1))(dword_A8B23C)
-          || (v14 = dword_A8B230[127].vtable2, (int)v14 > v13) )
+          || (v14 = dword_A8B230[127].ptr_8, (int)v14 > v13) )
         {
           v14 = (void *)v13; /*0x5dea31*/
         }

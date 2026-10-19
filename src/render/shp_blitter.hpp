@@ -16,30 +16,30 @@ extern void* g_VisibleSurfaceDescriptor;  // data: 0x87e8a4
 // Forward declares
 struct SHPStruct;
 
-// Pixel blit callback types -- these map to the vtable methods on the
+// Pixel blit callback types -- these map to the ptr_0 methods on the
 // RLEBlit/BlitTrans template classes found in IDA (50+ variants).
 // The specific variant is selected at runtime based on BlitterFlags.
 
 struct BlitRowFuncs
 {
-    // vtable[0]: per-row blit (translucent/alpha modes)
+    // ptr_0[0]: per-row blit (translucent/alpha modes)
     // unmatched: no callgraph reference and no git history record
     void (__thiscall *BlitRowT)(void* _this, int dest, int* src_pixels,
                                 int count, int stride, unsigned int zbuf,
                                 unsigned int vsurf, int param, int flags, int tint);
 
-    // vtable[1]: direct per-row blit
+    // ptr_0[1]: direct per-row blit
     // unmatched: no callgraph reference and no git history record
     void (__thiscall *BlitRow)(void* _this, int dest, int* src_pixels,
                                int count, int stride, unsigned int zbuf,
                                unsigned int vsurf, int param, int flags);
 
-    // vtable[2]: per-row blit with tint color
+    // ptr_0[2]: per-row blit with tint color
     // unmatched: no callgraph reference and no git history record
     void (__stdcall *BlitRowTint)(int dest, int* src_pixels, int count,
                                   int param1, int param2, int param3, int tint);
 
-    // vtable[3]: simplest per-row copy
+    // ptr_0[3]: simplest per-row copy
     // unmatched: no callgraph reference and no git history record
     void (__stdcall *BlitRowDirect)(int dest, int* src_pixels, int count,
                                     int param1, int param2, int param3,

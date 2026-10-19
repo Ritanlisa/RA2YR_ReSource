@@ -61,10 +61,10 @@ AlphaShapeClass * AlphaShapeClass::SDDTOR(char a2, int aP0, int aP1)
 {
 
 
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E3278) */  /*0x42173d*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E3278) */  /*0x421743*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E3278) */  /*0x42174a*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E3278) */  /*0x421751*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E3278) */  /*0x42173d*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E3278) */  /*0x421743*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E3278) */  /*0x42174a*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E3278) */  /*0x421751*/
   AlphaShapeClass *v6; // [esp+4h] [ebp-4h] BYREF
   v6 = (gamemd::AlphaShapeClass *)(aP0); /*0x42175f*/
   int v3; // eax
@@ -113,10 +113,10 @@ int  AlphaShapeClass::SD_vt05(int aP1, void *a2)
     if ( this ) /*0x420df9*/
     {
       AbstractClass::InitVtables((AbstractClass *)this, (int)&aP1); /*0x420e02*/
-      /* X11: vtable install elided (implicit via AlphaShapeClass virtuals 0x420e07) */
-      /* X11: vtable install elided (implicit via AlphaShapeClass virtuals 0x420e0d) */
-      /* X11: vtable install elided (implicit via AlphaShapeClass virtuals 0x420e14) */
-      /* X11: vtable install elided (implicit via AlphaShapeClass virtuals 0x420e1b) */
+      /* X11: ptr_0 install elided (implicit via AlphaShapeClass virtuals 0x420e07) */
+      /* X11: ptr_0 install elided (implicit via AlphaShapeClass virtuals 0x420e0d) */
+      /* X11: ptr_0 install elided (implicit via AlphaShapeClass virtuals 0x420e14) */
+      /* X11: ptr_0 install elided (implicit via AlphaShapeClass virtuals 0x420e1b) */
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance,&this->q024); /*0x420e2b*/
     this->u32_38 = 0; /*0x420e30*/

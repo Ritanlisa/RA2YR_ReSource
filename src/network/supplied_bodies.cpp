@@ -118,7 +118,7 @@ HRESULT __stdcall ConnectionClass::QueryInterface(const IID&, void**)
   void (__thiscall ***PlayerIndex)(unsigned int, int); // ecx
 
   v3 = (void *)this->Active; /*0x48c653*/
-  /* X11: vtable install elided (implicit via class virtuals 0x48c656) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x48c656) — binary-proven install, was 0 */
   operator delete((v3)); /*0x48c65d*/
   PlayerIndex = (void (__thiscall ***)(unsigned int, int))this->PlayerIndex; /*0x48c662*/
   if ( PlayerIndex ) /*0x48c66a*/
@@ -160,7 +160,7 @@ int NetworkID::Compare(int a2) {
 namespace gamemd {
 unsigned int * IPXConnClass::QueryInterface(char,int,int,int)
 {
-  /* X11: vtable install elided (implicit via class virtuals 0x53f853) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x53f853) — binary-proven install, was 0 */
   ConnectionClass::dtor((ConnectionClass *)this); /*0x53f859*/
   if ( (a2 & 1) != 0 ) /*0x53f863*/
     operator delete((this)); /*0x53f866*/
@@ -542,7 +542,7 @@ int IPXManagerClass::Flush(char a2)  // g57b5 W4: raw 真值补参 (a2)
 namespace gamemd {
 int32_t IPXManagerClass::getPlayerName(char a2)
 {
-  /* X11: vtable install elided (implicit via class virtuals 0x543109) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x543109) — binary-proven install, was 0 */
   if ( (a2 & 1) != 0 ) /*0x54310f*/
     operator delete((this)); /*0x543112*/
   return &this->ptr_0; /*0x54311c*/
@@ -1549,7 +1549,7 @@ void ModemGame::ReceiveMapPreview()
     v13 = 0; /*0x5b74cc*/
     Buffer::Init(&v14, (int)(v4 + 4), FileSize); /*0x5b74de*/
     v14.Buffer_field_0C = 0; /*0x5b74ee*/
-    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E61E0) */  /*0x5b74f2*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E61E0) */  /*0x5b74f2*/
     LZOStraw::Constructor((LZOStraw *)v15, 1, 0x2000); /*0x5b74fa*/
     Delegate::Set(v15, (int)&v12); /*0x5b7508*/
     v6 = (char *)__2_YAPAXI_Z(2 * v5); /*0x5b7519*/
@@ -1943,7 +1943,7 @@ void ModemHost::InitDialog()
   v52 = v51->vt_slot_20(0); /*0x5b8b9a*/
   v61 = 0; /*0x5b8ba4*/
   Vector::Clear((int)v60); /*0x5b8bac*/
-  /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x5b8bb5) */
+  /* X11: ptr_0 install elided (implicit via off_7E1668 virtuals 0x5b8bb5) */
   BufferIOFileClass::Dtor(&v59); /*0x5b8bbd*/
   if ( v52 ) /*0x5b8bc4*/
   {
@@ -2601,7 +2601,7 @@ void MultiplayerObserverTeam::QueryInterface()
 namespace gamemd {
 void MultiplayerSiegeDefenderTeam::QueryInterface()
 {
-  /* X11: vtable install elided (implicit via class virtuals 0x5caf13) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x5caf13) — binary-proven install, was 0 */
   MultiplayerTeam::Destructor((MultiplayerTeam *)this); /*0x5caf19*/
   if ( (a2 & 1) != 0 ) /*0x5caf23*/
     operator delete((this)); /*0x5caf26*/
@@ -2699,7 +2699,7 @@ void MultiplayerTeam::Constructor()
 namespace gamemd {
 void MultiplayerTeam::Destructor()
 {
-  /* X11: vtable install elided (implicit via class virtuals 0x5d8c80) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x5d8c80) — binary-proven install, was 0 */
   DeleteAndZero::Alt(&this->__pad_004); /*0x5d8c89*/
 }
 } // namespace gamemd
@@ -3210,7 +3210,7 @@ bool NullModemClass::initConnection()
 
   IPXConnClass::initConnection((ModemConnectionClass *)this, a2, a3, a4, a5, 60, -1, 1200, 0); /*0x5ef124*/
   v6 = this->u32_1C; /*0x5ef129*/
-  /* X11: vtable install elided (implicit via class virtuals 0x5ef12c) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x5ef12c) — binary-proven install, was 0 */
   this->u32_4C = -1; /*0x5ef135*/
   this->q050 = operator new(v6 + 11); /*0x5ef145*/
   return this->ptr_0; /*0x5ef14a*/

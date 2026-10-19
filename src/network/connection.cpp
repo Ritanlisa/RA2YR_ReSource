@@ -124,7 +124,7 @@ bool IPXConnClass::initConnection(int a2, int a3, int a4, int16_t a5, int a6, in
 
   (a1->q024) = a1; /*0x48be73*/
   a1->PhoneNumber[4] = a1; /*0x48be7b*/
-  /* X11: vtable install elided (implicit via class virtuals 0x48be83) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x48be83) — binary-proven install, was 0 */
   a1->PhoneNumber[1] = a1 + 14; /*0x48be89*/
   a1->PhoneNumber[5] = a1; /*0x48be8c*/
   a1->PhoneNumber[6] = a1; /*0x48be8f*/
@@ -305,7 +305,7 @@ int IPXManagerClass::processPacket()
   ObjectClass *v9; // [esp+0h] [ebp-Ch]
 
   v2 = this->Active; /*0x5409f7*/
-  /* X11: vtable install elided (implicit via class virtuals 0x5409fa) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x5409fa) — binary-proven install, was 0 */
   if ( v2 ) /*0x540a02*/
   {
     Network_Helper(v9); /*0x540a04*/
@@ -334,7 +334,7 @@ int IPXManagerClass::processPacket()
   if ( result <= 0 ) /*0x540a43*/
   {
     this->u32_44 = 0; /*0x540a70*/
-    /* X11: vtable install elided (implicit via class virtuals 0x540a73) — binary-proven install, was 0 */
+    /* X11: ptr_0 install elided (implicit via class virtuals 0x540a73) — binary-proven install, was 0 */
   }
   else
   {
@@ -350,7 +350,7 @@ int IPXManagerClass::processPacket()
     }
     while ( v7 < result ); /*0x540a60*/
     this->u32_44 = 0; /*0x540a62*/
-    /* X11: vtable install elided (implicit via class virtuals 0x540a65) — binary-proven install, was 0 */
+    /* X11: ptr_0 install elided (implicit via class virtuals 0x540a65) — binary-proven install, was 0 */
   }
   return result; /*0x540a6c*/
 }

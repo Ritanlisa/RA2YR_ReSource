@@ -57,9 +57,9 @@ SmudgeTypeClass::SmudgeTypeClass(char *Source, int a2, int a3, int a4, int a5, i
   a2->u32_29C = 1; /*0x6b5287*/
   *(a2 + 672) = 0; /*0x6b528d*/
   *(a2 + 673) = 0; /*0x6b5294*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7F34FC) */  /*0x6b529b*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7F34FC) */  /*0x6b529b*/
   *((unsigned int *)a2 + 1) = (unsigned int)(&g_ptr_7F34FC); /*0x6b52a1*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F34FC) */  /*0x6b52a7*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F34FC) */  /*0x6b52a7*/
   *((unsigned int *)a2 + 3) = (unsigned int)(&g_ptr_7F34FC); /*0x6b52ae*/
   ((int)(a2 + 4))->GenerateUniqueID(); /*0x6b52b5*/
   a2->u16_22F = 1; /*0x6b52ba*/
@@ -193,10 +193,10 @@ SmudgeTypeClass *  SmudgeTypeClass::ddtor(void * a2, char a3)
 
   SHPStruct *Image; // eax
   Image = a3->Image; /*0x6b6164*/
-  /* X11: vtable install elided (implicit via SmudgeTypeClass virtuals 0x6b616a) */
-  /* X11: vtable install elided (implicit via SmudgeTypeClass virtuals 0x6b6172) */
-  /* X11: vtable install elided (implicit via SmudgeTypeClass virtuals 0x6b6179) */
-  /* X11: vtable install elided (implicit via SmudgeTypeClass virtuals 0x6b6180) */
+  /* X11: ptr_0 install elided (implicit via SmudgeTypeClass virtuals 0x6b616a) */
+  /* X11: ptr_0 install elided (implicit via SmudgeTypeClass virtuals 0x6b6172) */
+  /* X11: ptr_0 install elided (implicit via SmudgeTypeClass virtuals 0x6b6179) */
+  /* X11: ptr_0 install elided (implicit via SmudgeTypeClass virtuals 0x6b6180) */
   if ( Image ) /*0x6b6187*/
   {
     operator delete((Image)); /*0x6b618a*/
@@ -291,10 +291,10 @@ int  SmudgeTypeClass::LoadTypeData(ObjectTypeClass * aP0, int aP1)
     if ( aP0 ) /*0x6b5866*/
     {
       ObjectTypeClass::Construct((ObjectTypeClass *)aP0, (int)&aP1); /*0x6b586f*/
-      /* X11: vtable install elided (implicit via SmudgeTypeClass virtuals 0x6b5874) */
-      /* X11: vtable install elided (implicit via SmudgeTypeClass virtuals 0x6b587a) */
-      /* X11: vtable install elided (implicit via SmudgeTypeClass virtuals 0x6b5881) */
-      /* X11: vtable install elided (implicit via SmudgeTypeClass virtuals 0x6b5888) */
+      /* X11: ptr_0 install elided (implicit via SmudgeTypeClass virtuals 0x6b5874) */
+      /* X11: ptr_0 install elided (implicit via SmudgeTypeClass virtuals 0x6b587a) */
+      /* X11: ptr_0 install elided (implicit via SmudgeTypeClass virtuals 0x6b5881) */
+      /* X11: ptr_0 install elided (implicit via SmudgeTypeClass virtuals 0x6b5888) */
     }
     ((char *)aP0)->LoadAnim(); /*0x6b5891*/
     ((char *)aP0)->Load2DArt(); /*0x6b5898*/

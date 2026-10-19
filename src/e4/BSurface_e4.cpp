@@ -49,10 +49,10 @@ unsigned int * BSurface::Construct(int a2, int a3, int v14, int a5, void *a5_2, 
     *(unsigned int *)(v10 + 4) = v11; /*0x410d28*/
     *(unsigned int *)(v10 + 8) = v12; /*0x410d30*/
     *(unsigned int *)(v10 + 12) = 0; /*0x410d38*/
-    /* X11: vtable install elided (X67 star-deref, RHS XSurface_Vtable) */  /*0x410d3b*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS XSurface_Vtable) */  /*0x410d3b*/
     *(unsigned int *)(v10 + 16) = 2; /*0x410d41*/
     Buffer::Init((Buffer *)(v10 + 20), 0, 2 * v12 * v11); /*0x410d48*/
-    /* X11: vtable install elided (X67 star-deref, RHS BSurface_Vtable) */  /*0x410d4d*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS BSurface_Vtable) */  /*0x410d4d*/
     v13 = (void *)v10; /*0x410d53*/
   }
   else
@@ -158,9 +158,9 @@ bool BSurface::CreateTripleBuffer(void *a1)
           *(unsigned int *)(v8 + 4) = v11; /*0x7b8d6a*/
           *(unsigned int *)(v8 + 8) = v10; /*0x7b8d6d*/
           *(unsigned int *)(v8 + 12) = 0; /*0x7b8d70*/
-          /* X11: vtable install elided (X67 star-deref, RHS XSurface_Vtable) */  /*0x7b8d77*/
+          /* X11: ptr_0 install elided (X67 star-deref, RHS XSurface_Vtable) */  /*0x7b8d77*/
           Buffer::Init((Buffer *)(v8 + 20), 0, v10 * v11 * v12); /*0x7b8d7d*/
-          /* X11: vtable install elided (X67 star-deref, RHS BSurface_Vtable) */  /*0x7b8d82*/
+          /* X11: ptr_0 install elided (X67 star-deref, RHS BSurface_Vtable) */  /*0x7b8d82*/
         }
         else
         {
@@ -181,9 +181,9 @@ bool BSurface::CreateTripleBuffer(void *a1)
           *(unsigned int *)(v13 + 4) = v16; /*0x7b8dc8*/
           *(unsigned int *)(v13 + 8) = v15; /*0x7b8dcb*/
           *(unsigned int *)(v13 + 12) = 0; /*0x7b8dce*/
-          /* X11: vtable install elided (X67 star-deref, RHS XSurface_Vtable) */  /*0x7b8dd5*/
+          /* X11: ptr_0 install elided (X67 star-deref, RHS XSurface_Vtable) */  /*0x7b8dd5*/
           Buffer::Init((Buffer *)(v13 + 20), 0, v15 * v16 * v17); /*0x7b8ddb*/
-          /* X11: vtable install elided (X67 star-deref, RHS BSurface_Vtable) */  /*0x7b8de0*/
+          /* X11: ptr_0 install elided (X67 star-deref, RHS BSurface_Vtable) */  /*0x7b8de0*/
         }
         else
         {
@@ -204,9 +204,9 @@ bool BSurface::CreateTripleBuffer(void *a1)
           *(unsigned int *)(v18 + 4) = v21; /*0x7b8e26*/
           *(unsigned int *)(v18 + 8) = v20; /*0x7b8e29*/
           *(unsigned int *)(v18 + 12) = 0; /*0x7b8e2c*/
-          /* X11: vtable install elided (X67 star-deref, RHS XSurface_Vtable) */  /*0x7b8e33*/
+          /* X11: ptr_0 install elided (X67 star-deref, RHS XSurface_Vtable) */  /*0x7b8e33*/
           Buffer::Init((Buffer *)(v18 + 20), 0, v20 * v21 * v22); /*0x7b8e39*/
-          /* X11: vtable install elided (X67 star-deref, RHS BSurface_Vtable) */  /*0x7b8e3e*/
+          /* X11: ptr_0 install elided (X67 star-deref, RHS BSurface_Vtable) */  /*0x7b8e3e*/
         }
         else
         {
@@ -264,10 +264,10 @@ unsigned int * BSurface::ConstructEx(int a2, int a3, int a4, int a5)
     *(unsigned int *)(v10 + 4) = v11; /*0x7bc9b8*/
     *(unsigned int *)(v10 + 8) = v12; /*0x7bc9c0*/
     *(unsigned int *)(v10 + 12) = 0; /*0x7bc9c8*/
-    /* X11: vtable install elided (X67 star-deref, RHS XSurface_Vtable) */  /*0x7bc9cb*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS XSurface_Vtable) */  /*0x7bc9cb*/
     *(unsigned int *)(v10 + 16) = 2; /*0x7bc9d1*/
     Buffer::Init((Buffer *)(v10 + 20), 0, 2 * v12 * v11); /*0x7bc9d8*/
-    /* X11: vtable install elided (X67 star-deref, RHS BSurface_Vtable) */  /*0x7bc9dd*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS BSurface_Vtable) */  /*0x7bc9dd*/
     v13 = v10; /*0x7bc9e3*/
   }
   else
@@ -325,7 +325,7 @@ namespace gamemd {
 BSurface * BSurface::ScalarDtor(char * Block, char a2)
 {
   Vector::Clear((int)&Block->Buffer); /*0x411656*/
-  /* X11: vtable install elided (X67 star-deref, RHS Surface_Vtable) */  /*0x41165f*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS Surface_Vtable) */  /*0x41165f*/
   if ( (a2 & 1) != 0 ) /*0x411667*/
     operator delete((Block)); /*0x41166a*/
   return Block->XSurface; /*0x411674*/

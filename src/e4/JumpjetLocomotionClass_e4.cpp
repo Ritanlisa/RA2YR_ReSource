@@ -4563,9 +4563,9 @@ HRESULT JumpjetLocomotionClass::InitClass(int * a1, int * pStm)
   if ( a1 ) /*0x54b76a*/
   {
     a1->Piggybackee = 0; /*0x54b76c*/
-    /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7ECD44) */  /*0x54b776*/
-    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7ECD44) */  /*0x54b77c*/
-    /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7ECD44) */  /*0x54b783*/
+    /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7ECD44) */  /*0x54b776*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7ECD44) */  /*0x54b77c*/
+    /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7ECD44) */  /*0x54b783*/
   }
   (*(void (__stdcall **)(int *, int **, int, unsigned int))(*v2 + 12))(v2, &pStm, 1, 0); /*0x54b796*/
   if ( !(unsigned char)pStm ) /*0x54b79f*/
@@ -4940,9 +4940,9 @@ namespace gamemd {  // G42.18c ns repair
 JumpjetLocomotionClass * JumpjetLocomotionClass::ProcessAttach(int * Block, char a2)
 {
 
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7ECD44) */  /*0x54dfa3*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7ECD44) */  /*0x54dfa9*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7ECD44) */  /*0x54dfb0*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7ECD44) */  /*0x54dfa3*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7ECD44) */  /*0x54dfa9*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7ECD44) */  /*0x54dfb0*/
   ILocomotion *Piggybackee; // eax
   Piggybackee = Block->Piggybackee; /*0x54dfb7*/
   if ( Piggybackee ) /*0x54dfbf*/
@@ -5216,7 +5216,7 @@ VectorClass_flat * JumpjetLocomotionClass_26::QueryInterface(unsigned int * Bloc
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x54eb53*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x54eb56*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x54eb56*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x54eb60*/
   {
     operator delete((v3)); /*0x54eb68*/
@@ -5236,7 +5236,7 @@ DynamicVector * JumpjetLocomotionClass_26::Constructor_VectorClass_KamikazeContr
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x54eba3*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x54eba6*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x54eba6*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x54ebb0*/
   {
     operator delete((v3)); /*0x54ebb8*/
@@ -6345,16 +6345,16 @@ HRESULT JumpjetLocomotionClass::InitMultiFieldArray_0(int * a1, int * pStm)
     return v3; /*0x719cb6*/
   if ( a1 ) /*0x719cba*/
   {
-    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EADF4) */  /*0x719cbc*/
-    /* X11: vtable install elided (X68 star-amp-named, RHS g_ptr_7EADF4) */  /*0x719cc2*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EADF4) */  /*0x719cbc*/
+    /* X11: ptr_0 install elided (X68 star-amp-named, RHS g_ptr_7EADF4) */  /*0x719cc2*/
     int v4; // eax
     v4 = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x719cc9*/
     a1->Timer[2] = 0; /*0x719cce*/
     a1->Timer[0] = v4; /*0x719cd5*/
     a1->Piggybackee = 0; /*0x719cd8*/
-    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7F4FDC) */  /*0x719cdf*/
-    /* X11: vtable install elided (X68 star-amp-named, RHS g_ptr_7F4FDC) */  /*0x719ce5*/
-    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7F4FDC) */  /*0x719cec*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7F4FDC) */  /*0x719cdf*/
+    /* X11: ptr_0 install elided (X68 star-amp-named, RHS g_ptr_7F4FDC) */  /*0x719ce5*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7F4FDC) */  /*0x719cec*/
   }
   (*(void (__stdcall **)(int *, int **, int, unsigned int))(*v2 + 12))(v2, &pStm, 1, 0); /*0x719cff*/
   if ( !(unsigned char)pStm ) /*0x719d08*/

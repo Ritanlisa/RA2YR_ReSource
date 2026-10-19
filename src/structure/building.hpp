@@ -117,7 +117,7 @@ int Construct(int,int);  // 0x43B740
     virtual bool TogglePrimaryFactory();  // 0x447E90
     int IsFactorySelectable();  // 0x457620
 
-    // Construction update (vtable[8])
+    // Construction update (ptr_0[8])
     // wrapper: delegates to BuildingClass::IsFactorySelectable at 0x457620
     virtual void UpdateConstructionOptions();
     int Mission_Construction() override;

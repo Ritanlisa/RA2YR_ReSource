@@ -136,11 +136,11 @@ char Gap2Recv_57CBE0::Map_Create_57CBE0() {
     v2 = &g_MissionQueueFrame.briefing[130]; /*0x57cc1f*/
   }
   v3 = v2[17]; /*0x57cc2c*/
-  v4 = (short)((this->AbstractClass) & 0xFFFF) + ((int16_t)(((unsigned int)this->vtable1 + 0x10000) >> 16) << 9); /*0x57cc44*/
+  v4 = (short)((this->AbstractClass) & 0xFFFF) + ((int16_t)(((unsigned int)this->ptr_4 + 0x10000) >> 16) << 9); /*0x57cc44*/
   if ( v4 >= 0x40000 || (v5 = *(int **)(*(unsigned int *)&stru_87F5F0.__pad_58[732] + 4 * v4)) == 0 ) /*0x57cc54*/
   {
     v5 = &g_MissionQueueFrame.briefing[130]; /*0x57cc5a*/
-    g_MissionQueueFrame.briefing[139] = (int)this->vtable1 + 0x10000; /*0x57cc5f*/
+    g_MissionQueueFrame.briefing[139] = (int)this->ptr_4 + 0x10000; /*0x57cc5f*/
   }
   v6 = v5[17]; /*0x57cc65*/
   result = 0; /*0x57cc6e*/

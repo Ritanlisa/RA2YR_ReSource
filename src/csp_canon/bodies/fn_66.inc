@@ -5,8 +5,8 @@
 // ==== BACKFILL 0x00660540  Map_Helper_660540  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int Gap2Recv_660540::Map_Helper_660540() {
 
-  void *vtable1; // edx
-  char *vtable2; // esi
+  void *ptr_4; // edx
+  char *ptr_8; // esi
   int *v4; // eax
   int v5; // ecx
   char *v6; // ebp
@@ -46,14 +46,14 @@ int Gap2Recv_660540::Map_Helper_660540() {
   int v40[7]; // [esp+64h] [ebp-1Ch] BYREF
 
   Render_Render_660730((float *)this, &v39); /*0x66054e*/
-  vtable1 = ((unsigned int *)this)[0]; /*0x660553*/
-  vtable2 = (char *)((unsigned int *)this)[0]; /*0x660556*/
+  ptr_4 = ((unsigned int *)this)[0]; /*0x660553*/
+  ptr_8 = (char *)((unsigned int *)this)[0]; /*0x660556*/
   v4 = &v39; /*0x660559*/
   v5 = 4; /*0x66055d*/
   do /*0x660574*/
   {
-    v6 = &vtable2[v4[1]]; /*0x660569*/
-    *v4 += (int)vtable1; /*0x66056b*/
+    v6 = &ptr_8[v4[1]]; /*0x660569*/
+    *v4 += (int)ptr_4; /*0x66056b*/
     v4[1] = (int)v6; /*0x66056d*/
     v4 += 2; /*0x660570*/
     --v5; /*0x660573*/
@@ -656,7 +656,7 @@ unsigned int * E4Recv_6638E0::sub_6638E0()
   ((unsigned int *)this)[0] = 0; /*0x6638e7*/
   LOBYTE(((unsigned int *)this)[0]) = 1; /*0x6638ea*/
   BYTE1(((unsigned int *)this)[0]) = 0; /*0x6638ee*/
-  /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x6638f1) */
+  /* X11: ptr_0 install elided (implicit via DynamicVectorClass virtuals 0x6638f1) */
   ((unsigned int *)this)[0] = 10; /*0x6638f7*/
   ((unsigned int *)this)[0] = 0; /*0x6638fe*/
   LOBYTE(((unsigned int *)this)[0]) = 0; /*0x663901*/
@@ -687,7 +687,7 @@ void E4Recv_663960::sub_663960()
     }
   }
   Items = (void *)this->Items; /*0x6639a3*/
-  /* X11: vtable install elided (implicit via VectorClass virtuals 0x6639a6) */
+  /* X11: ptr_0 install elided (implicit via VectorClass virtuals 0x6639a6) */
   if ( Items && this->IsAllocated[0] ) /*0x6639b0*/
   {
     __3_YAXPAX_Z(Items); /*0x6639b6*/
@@ -706,7 +706,7 @@ char E4Recv_663CD0::sub_663CD0(unsigned char * a2)
   char v5; // bl
   int uniqueId; // ecx
   int v7; // eax
-  unsigned int *vtable1; // esi
+  unsigned int *ptr_4; // esi
   unsigned int *i; // edx
   int v10; // [esp+8h] [ebp-8h] BYREF
 
@@ -721,13 +721,13 @@ char E4Recv_663CD0::sub_663CD0(unsigned char * a2)
   v7 = 0; /*0x663d16*/
   if ( uniqueId > 0 ) /*0x663d1a*/
   {
-    vtable1 = ((unsigned int *)this)[0]; /*0x663d1c*/
-    for ( i = vtable1; v10 != *(unsigned int *)(*i + 33); ++i ) /*0x663d23*/
+    ptr_4 = ((unsigned int *)this)[0]; /*0x663d1c*/
+    for ( i = ptr_4; v10 != *(unsigned int *)(*i + 33); ++i ) /*0x663d23*/
     {
       if ( ++v7 >= uniqueId ) /*0x663d32*/
         return 0; /*0x663d3d*/
     }
-    return *(unsigned char *)(vtable1[v7] + 40); /*0x663d43*/
+    return *(unsigned char *)(ptr_4[v7] + 40); /*0x663d43*/
   }
   return v5; /*0x663cdf*/
 

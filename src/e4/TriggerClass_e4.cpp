@@ -59,10 +59,10 @@ char TriggerClass::FindByEventType(char a1)
       v2[1] = DWORD2(MEMORY[0xAC1CB8]); /*0x6109a1*/
       v2[2] = v4; /*0x6109a9*/
       v2[3] = 0; /*0x6109b1*/
-      /* X11: vtable install elided (X67 star-deref, RHS XSurface_Vtable) */  /*0x6109b4*/
+      /* X11: ptr_0 install elided (X67 star-deref, RHS XSurface_Vtable) */  /*0x6109b4*/
       v2[4] = 2; /*0x6109ba*/
       Buffer::Init(v2 + 5, 0, 2 * v4 * v3); /*0x6109c1*/
-      /* X11: vtable install elided (X67 star-deref, RHS BSurface_Vtable) */  /*0x6109c6*/
+      /* X11: ptr_0 install elided (X67 star-deref, RHS BSurface_Vtable) */  /*0x6109c6*/
       v5 = (int)v2; /*0x6109cc*/
     }
     else
@@ -187,10 +187,10 @@ int TriggerClass::LoadTrigger(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x726876*/
     {
       AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x72687f*/
-      /* X11: vtable install elided (implicit via TriggerClass virtuals 0x726884) */
-      /* X11: vtable install elided (implicit via TriggerClass virtuals 0x72688a) */
-      /* X11: vtable install elided (implicit via TriggerClass virtuals 0x726891) */
-      /* X11: vtable install elided (implicit via TriggerClass virtuals 0x726898) */
+      /* X11: ptr_0 install elided (implicit via TriggerClass virtuals 0x726884) */
+      /* X11: ptr_0 install elided (implicit via TriggerClass virtuals 0x72688a) */
+      /* X11: ptr_0 install elided (implicit via TriggerClass virtuals 0x726891) */
+      /* X11: ptr_0 install elided (implicit via TriggerClass virtuals 0x726898) */
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->buildingType); /*0x7268a8*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->nextTrigger); /*0x7268b6*/

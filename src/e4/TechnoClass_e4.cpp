@@ -328,21 +328,21 @@ TechnoClass::TechnoClass(AbstractClass * aP1)
   this->currentTargetThreatValues[2] = 0; /*0x6f3057*/
   LOBYTE(this->currentTargetThreatValues[3]) = 1; /*0x6f305d*/
   BYTE1(this->currentTargetThreatValues[3]) = 0; /*0x6f3064*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E3238) */  /*0x6f306a*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E3238) */  /*0x6f306a*/
   this->currentTargetThreatValues[5] = 10; /*0x6f3074*/
   this->currentTargetThreatValues[4] = 0; /*0x6f307a*/
   this->currentTargets[1] = 0; /*0x6f3080*/
   this->currentTargets[2] = 0; /*0x6f3086*/
   LOBYTE(this->currentTargets[3]) = 1; /*0x6f308c*/
   BYTE1(this->currentTargets[3]) = 0; /*0x6f3093*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E3238) */  /*0x6f3099*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E3238) */  /*0x6f3099*/
   this->currentTargets[5] = 10; /*0x6f309f*/
   this->currentTargets[4] = 0; /*0x6f30a5*/
   this->attackedTargets[1] = 0; /*0x6f30ab*/
   this->attackedTargets[2] = 0; /*0x6f30b1*/
   LOBYTE(this->attackedTargets[3]) = 1; /*0x6f30b7*/
   BYTE1(this->attackedTargets[3]) = 0; /*0x6f30be*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E3238) */  /*0x6f30c4*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E3238) */  /*0x6f30c4*/
   this->attackedTargets[5] = 10; /*0x6f30ca*/
   this->attackedTargets[4] = 0; /*0x6f30d0*/
   this->isTurretRotateSoundPlaying = 1; /*0x6f30d6*/
@@ -359,10 +359,10 @@ TechnoClass::TechnoClass(AbstractClass * aP1)
   this->planningToken = 0; /*0x6f311e*/
   this->disguiseAsType = 0; /*0x6f3124*/
   this->disguisedAsHouse = 0; /*0x6f312a*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F493C) */  /*0x6f3130*/
-  /* X11: vtable install elided (implicit via TechnoClass virtuals 0x6f3136) */
-  /* X11: vtable install elided (implicit via TechnoClass virtuals 0x6f313d) */
-  /* X11: vtable install elided (implicit via off_7F4934 virtuals 0x6f314a) */
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F493C) */  /*0x6f3130*/
+  /* X11: ptr_0 install elided (implicit via TechnoClass virtuals 0x6f3136) */
+  /* X11: ptr_0 install elided (implicit via TechnoClass virtuals 0x6f313d) */
+  /* X11: ptr_0 install elided (implicit via off_7F4934 virtuals 0x6f314a) */
   AudioController::Init((AudioController *)this->turretRotateSoundController); /*0x6f3151*/
   AudioController::Init((AudioController *)this->gattlingSoundController); /*0x6f315c*/
   AudioController::Init((AudioController *)this->unusedGattlingSoundController); /*0x6f3167*/
@@ -590,10 +590,10 @@ int TechnoClass::DTOR(void *a1)
 
 
   Sidebar *v2 = *&this->planningToken; // ecx /*0x6f4507*/
-  /* X11: vtable install elided (implicit via TechnoClass virtuals 0x6f450d) */
-  /* X11: vtable install elided (implicit via TechnoClass virtuals 0x6f4515) */
-  /* X11: vtable install elided (implicit via TechnoClass virtuals 0x6f451c) */
-  /* X11: vtable install elided (implicit via off_7F4934 virtuals 0x6f4523) */
+  /* X11: ptr_0 install elided (implicit via TechnoClass virtuals 0x6f450d) */
+  /* X11: ptr_0 install elided (implicit via TechnoClass virtuals 0x6f4515) */
+  /* X11: ptr_0 install elided (implicit via TechnoClass virtuals 0x6f451c) */
+  /* X11: ptr_0 install elided (implicit via off_7F4934 virtuals 0x6f4523) */
   if ( v2 ) /*0x6f452a*/
   {
     Sidebar::CancelSidebarProductionQueue(v2); /*0x6f452c*/
@@ -666,10 +666,10 @@ int TechnoClass::DTOR(void *a1)
     (*(void (**)(int))(*(unsigned int *)v12 + 248))(v12); /*0x6f468b*/
     this->deployAnim = 0; /*0x6f4691*/
   }
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x6f469d*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x6f469d*/
   AbstractClassVector::ddtor(&this->__pad_470); /*0x6f46a3*/
   void *v13 = *&this->attackedTargets; // eax /*0x6f46a8*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x6f46ae*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x6f46ae*/
   if ( v13 && this->vecAbs_IsAllocated ) /*0x6f46bc*/
   {
     __3_YAXPAX_Z(v13); /*0x6f46c5*/
@@ -678,7 +678,7 @@ int TechnoClass::DTOR(void *a1)
   this->vecAbs_IsAllocated = 0; /*0x6f46d3*/
   this->audioController3 = 0; /*0x6f46d9*/
   void *v14 = *&this->vecInt_Items; // eax /*0x6f46df*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x6f46e5*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x6f46e5*/
   if ( v14 && this->vecInt_IsAllocated ) /*0x6f46f3*/
   {
     __3_YAXPAX_Z(v14); /*0x6f46fc*/
@@ -688,12 +688,12 @@ int TechnoClass::DTOR(void *a1)
   this->vecInt_Capacity = 0; /*0x6f4716*/
   ObjectClass *v17; // [esp+10h] [ebp-Ch]
   nullsub_69(v17); /*0x6f471c*/
-  /* X11: vtable install elided (implicit via RadioClass virtuals 0x6f4721) */
-  /* X11: vtable install elided (implicit via RadioClass virtuals 0x6f4727) */
-  /* X11: vtable install elided (implicit via RadioClass virtuals 0x6f472e) */
-  /* X11: vtable install elided (implicit via RadioClass virtuals 0x6f4735) */
+  /* X11: ptr_0 install elided (implicit via RadioClass virtuals 0x6f4721) */
+  /* X11: ptr_0 install elided (implicit via RadioClass virtuals 0x6f4727) */
+  /* X11: ptr_0 install elided (implicit via RadioClass virtuals 0x6f472e) */
+  /* X11: ptr_0 install elided (implicit via RadioClass virtuals 0x6f4735) */
   void *v15 = *&this->flashing; // eax /*0x6f473c*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x6f4742*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x6f4742*/
   if ( v15 && this->vecTechno_IsAllocated ) /*0x6f4750*/
   {
     __3_YAXPAX_Z(v15); /*0x6f4759*/
@@ -701,10 +701,10 @@ int TechnoClass::DTOR(void *a1)
   }
   this->vecTechno_IsAllocated = 0; /*0x6f4767*/
   this->vecTechno_Capacity = 0; /*0x6f476d*/
-  /* X11: vtable install elided (implicit via MissionClass virtuals 0x6f4775) */
-  /* X11: vtable install elided (implicit via MissionClass virtuals 0x6f477b) */
-  /* X11: vtable install elided (implicit via MissionClass virtuals 0x6f4782) */
-  /* X11: vtable install elided (implicit via MissionClass virtuals 0x6f4789) */
+  /* X11: ptr_0 install elided (implicit via MissionClass virtuals 0x6f4775) */
+  /* X11: ptr_0 install elided (implicit via MissionClass virtuals 0x6f477b) */
+  /* X11: ptr_0 install elided (implicit via MissionClass virtuals 0x6f4782) */
+  /* X11: ptr_0 install elided (implicit via MissionClass virtuals 0x6f4789) */
   return ObjectClass::Dtor((ObjectClass *)this); /*0x6f4795*/
 
 }

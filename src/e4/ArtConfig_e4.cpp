@@ -77,7 +77,7 @@ rc_ptr * ArtConfig_Read(rc_ptr_base * a1, int edx0, unsigned int * a2, Reference
   else
     v9 = 0; /*0x76f944*/
   ComPtr::Constructor((ComPtr *)this); /*0x76f948*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7F71C4) */  /*0x76f94f*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7F71C4) */  /*0x76f94f*/
   ComPtr::Set((ComPtr *)this, (int)v9); /*0x76f956*/
   return this; /*0x76f95d*/
 

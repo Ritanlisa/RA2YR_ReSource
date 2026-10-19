@@ -1003,7 +1003,7 @@ AbstractClass * * CommBufferClass::sub_48B0E0(int a2, int a3, size_t Size, int a
 {
 
 
-  /* X11: vtable install elided (implicit via CommBufferClass virtuals 0x48b0fd) */
+  /* X11: ptr_0 install elided (implicit via CommBufferClass virtuals 0x48b0fd) */
   *&this->__pad_004 = a2; /*0x48b103*/
   this->CommBufferClass_field_0x8 = a3; /*0x48b106*/
   *(unsigned int *)this->__pad_C = Size; /*0x48b109*/
@@ -1812,7 +1812,7 @@ CheckListClass * E4Recv_488280::sub_488280(ListClass * aP1, int a3, int a4, List
 
   ListClass::Construct((int)this, aP1, a3, a4, aP4, a6, aP6, aP7, a9); /*0x4882ad*/
   this->M372 = 0; /*0x4882b2*/
-  /* X11: vtable install elided (implicit via CheckListClass virtuals 0x4882b9) */
+  /* X11: ptr_0 install elided (implicit via CheckListClass virtuals 0x4882b9) */
   return this->__pad_0; /*0x4882c1*/
 
 }
@@ -1840,12 +1840,12 @@ ColorListClass * E4Recv_488760::sub_488760(ListClass * aP1, int a3, int a4, List
   this->M380 = 0; /*0x48879f*/
   this->M384 = 1; /*0x4887a5*/
   this->M385 = 0; /*0x4887ab*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E3238) */  /*0x4887b1*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E3238) */  /*0x4887b1*/
   this->M392 = 10; /*0x4887bb*/
   this->M388 = 0; /*0x4887c5*/
   this->M400 = 0; /*0x4887cb*/
   this->M396 = 1; /*0x4887d1*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E5054) */  /*0x4887d7*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E5054) */  /*0x4887d7*/
   return this->ptr_0; /*0x4887df*/
 
 }
@@ -1862,11 +1862,11 @@ int E4Recv_4887F0::sub_4887F0()
 
   v2 = this->M372; /*0x4887f5*/
   v3 = &this->M372; /*0x4887fb*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E5054) */  /*0x488803*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E5054) */  /*0x488803*/
   (*(void (**)(char *))(v2 + 12))(&this->M372); /*0x488809*/
   this->M400 = 0; /*0x48880e*/
   v4 = (void *)*((unsigned int *)v3 + 1); /*0x488814*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E4DB8) */  /*0x488819*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E4DB8) */  /*0x488819*/
   if ( v4 && v3[13] ) /*0x488821*/
   {
     __3_YAXPAX_Z(v4); /*0x488827*/
@@ -2112,7 +2112,7 @@ unsigned int * E4Recv_48B070::sub_48B070(int a2, int a3)
   this->Capacity = a2; /*0x48b07e*/
   this->IsInitialized = 1; /*0x48b081*/
   this->IsAllocated = 0; /*0x48b085*/
-  /* X11: vtable install elided (implicit via VectorClass virtuals 0x48b088) */
+  /* X11: ptr_0 install elided (implicit via VectorClass virtuals 0x48b088) */
   if ( a2 ) /*0x48b08e*/
   {
     if ( a3 ) /*0x48b096*/
@@ -2148,7 +2148,7 @@ void CommBufferClass::sub_48B1F0()
 
   int v2 = 0; // ebx /*0x48b1f4*/
   int v3 = *&this->__pad_004; // eax /*0x48b1f7*/
-  /* X11: vtable install elided (implicit via CommBufferClass virtuals 0x48b1fa) */
+  /* X11: ptr_0 install elided (implicit via CommBufferClass virtuals 0x48b1fa) */
   if ( v3 > 0 ) /*0x48b202*/
   {
     int v4 = 0; // edi /*0x48b204*/

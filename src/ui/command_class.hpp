@@ -25,7 +25,7 @@ class CellClass;
 
 // ============================================================================
 // CommandClass — base for all UI command buttons
-// vtbl layout: [0]=dtor, [1]=GetName, [2]=GetUIName, [3]=GetUICategory,
+// ptr_0 layout: [0]=dtor, [1]=GetName, [2]=GetUIName, [3]=GetUICategory,
 //              [4]=GetUIDescription, [5]=IsValid, [6]=IsEnabled,
 //              [7]=IsActive, [8]=Execute
 // Static data: Array @ 0x87F658, Hotkeys @ 0x87F680

@@ -31,7 +31,7 @@ int LinkClass::Destruct(void *a1)
 {
   
   
-  /* X11: vtable install elided (implicit via LinkClass virtuals 0x5565a5) */
+  /* X11: ptr_0 install elided (implicit via LinkClass virtuals 0x5565a5) */
   LinkClass *Prev; // edi
   Prev = (LinkClass *)LinkedList::FindPrev(this); /*0x5565b1*/
   int result; // eax

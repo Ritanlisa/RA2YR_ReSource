@@ -118,10 +118,10 @@ namespace gamemd {
 int VoxelAnimClass::CleanupMembers(void *a1)
 {
 
-  /* X11: vtable install elided (implicit via VoxelAnimClass virtuals 0x7499f6) */
-  /* X11: vtable install elided (implicit via VoxelAnimClass virtuals 0x7499fc) */
-  /* X11: vtable install elided (implicit via VoxelAnimClass virtuals 0x749a03) */
-  /* X11: vtable install elided (implicit via VoxelAnimClass virtuals 0x749a0a) */
+  /* X11: ptr_0 install elided (implicit via VoxelAnimClass virtuals 0x7499f6) */
+  /* X11: ptr_0 install elided (implicit via VoxelAnimClass virtuals 0x7499fc) */
+  /* X11: ptr_0 install elided (implicit via VoxelAnimClass virtuals 0x749a03) */
+  /* X11: ptr_0 install elided (implicit via VoxelAnimClass virtuals 0x749a0a) */
   AbstractClass::AnnounceExpiredPointer((AbstractClass *)a1, 1); /*0x749a11*/
   VoxelAnimClass *v6; // [esp+4h] [ebp-4h] BYREF
   v6 = (gamemd::VoxelAnimClass *)(a1); /*0x749a26*/
@@ -859,7 +859,7 @@ int VoxelAnimClass::SaveLoad_Prefix(ObjectClass * aP1, int aP1a)
     if ( aP1 ) /*0x74a989*/
     {
       ObjectClass::Init((ObjectClass *)aP1, (int)&aP1a); /*0x74a992*/
-      /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7F62EC) */  /*0x74a997*/
+      /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7F62EC) */  /*0x74a997*/
       aP1[1] = (int)&g_ptr_7F62EC; /*0x74a99d*/
       aP1[2] = (int)&g_ptr_7F62EC; /*0x74a9a4*/
       aP1[3] = (int)&g_ptr_7F62EC; /*0x74a9ab*/
@@ -929,9 +929,9 @@ int VoxelAnimClass::Reset(void *a1, void *a2)
   a1->__pad_20[21] = 0; /*0x75aad6*/
   a1->__pad_20[22] = 0; /*0x75aad9*/
   *(unsigned int *)&a1->__pad_20[24] = 0; /*0x75aadc*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F69D4) */  /*0x75aadf*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F69D4) */  /*0x75aae5*/
-  /* X11: vtable install elided (X68 star-amp-named, RHS g_ptr_7F69D4) */  /*0x75aaec*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F69D4) */  /*0x75aadf*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F69D4) */  /*0x75aae5*/
+  /* X11: ptr_0 install elided (X68 star-amp-named, RHS g_ptr_7F69D4) */  /*0x75aaec*/
   return (int)a1; /*0x75aaf5*/
 
 }
@@ -963,15 +963,15 @@ int VoxelAnimClass::Constructor(void *a1, void *a2, void *a3, void *a4, void *a5
   *(unsigned int *)&a1->__pad_144[180] = 5; /*0x75ec5d*/
   a1->__pad_144[184] = 1; /*0x75ec67*/
   a1->__pad_144[185] = 0; /*0x75ec6e*/
-  /* X11: vtable install elided (X68 star-amp-named, RHS g_ptr_7E8500) */  /*0x75ec74*/
+  /* X11: ptr_0 install elided (X68 star-amp-named, RHS g_ptr_7E8500) */  /*0x75ec74*/
   *(unsigned int *)&a1->__pad_144[176] = __2_YAPAXI_Z(0x14u); /*0x75ec83*/
   a1->__pad_144[185] = 1; /*0x75ec89*/
-  /* X11: vtable install elided (X68 star-amp-named, RHS g_ptr_7E3238) */  /*0x75ec90*/
+  /* X11: ptr_0 install elided (X68 star-amp-named, RHS g_ptr_7E3238) */  /*0x75ec90*/
   *(unsigned int *)&a1->__pad_144[192] = 10; /*0x75ec9a*/
   *(unsigned int *)&a1->__pad_144[188] = 0; /*0x75eca4*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F6BD0) */  /*0x75ecaa*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F6BD0) */  /*0x75ecb0*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F6BD0) */  /*0x75ecb7*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F6BD0) */  /*0x75ecaa*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F6BD0) */  /*0x75ecb0*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F6BD0) */  /*0x75ecb7*/
   *(unsigned int *)a1->__pad_C = &off_7F6BC8; /*0x75ecbe*/
   if ( *(int *)&DataGlobal_A8EB00[328] < *(int *)&DataGlobal_A8EB00[320] /*0x75ecfb*/
     || (DataGlobal_A8EB00[325] || !*(unsigned int *)&DataGlobal_A8EB00[320])

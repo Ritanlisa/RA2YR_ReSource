@@ -390,7 +390,7 @@ int  SmudgeTypeClass::LoadTypeData(ObjectTypeClass * aP0, int aP1)
     if ( aP0 ) /*0x6b5866*/
     {
       ((ObjectTypeClass*)(ObjectTypeClass *)aP0)->Construct((int)&aP1); /*0x6b586f*/
-      /* X11: vtable install elided (implicit via SmudgeTypeClass virtuals 0x6b5874) */
+      /* X11: ptr_0 install elided (implicit via SmudgeTypeClass virtuals 0x6b5874) */
       ((unsigned int *)aP0)[0] = (unsigned int)(&g_ptr_7F34FC); /*0x6b587a*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&g_ptr_7F34FC); /*0x6b5881*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&g_ptr_7F34FC); /*0x6b5888*/
@@ -717,7 +717,7 @@ int Gap2Recv_6BB990::TopLevelExceptionFilter(void* ExceptionInfo, int a3, int a4
           g_DSurface_Primary,
           v9)
      || g_DSurface_Hidden
-     && (*((uint8_t (**)(ObjectClass *))g_DSurface_Hidden->vtable1 + 27))(g_DSurface_Hidden)
+     && (*((uint8_t (**)(ObjectClass *))g_DSurface_Hidden->ptr_4 + 27))(g_DSurface_Hidden)
      || DSurface_Composite
      && (*(uint8_t (**)(AudioStream *))(*(unsigned int *)DSurface_Composite->__pad_0 + 108))(DSurface_Composite)
      || DSurface_Tile
@@ -781,7 +781,7 @@ int E4Recv_6BF8D0::CreateTClassFactory_CellClass(const void *a2, unsigned int *a
 int TClassFactory_CellClass::ddtor()
 {
     return 0; // TODO stub - quarantined G42 T9 (COM-thunk raw dump: phantom a3/a4 params,
-    // uninit v9 out-param, __stdcall/__cdecl vtable cast clash; truth = ida_cache marker above)
+    // uninit v9 out-param, __stdcall/__cdecl ptr_0 cast clash; truth = ida_cache marker above)
 }
 
 // ==== BACKFILL 0x006BFA50  CreateTClassFactory_EMPulseClass  cls=_TClassFactory_VEMPulseClass  sig=csp  renamed_refs=0  residual=- ====
@@ -806,7 +806,7 @@ int E4Recv_6BFA50::CreateTClassFactory_EMPulseClass(const void *a2, unsigned int
 int TClassFactory_EMPulseClass::ddtor()
 {
     return 0; // TODO stub - quarantined G42 T9 (COM-thunk raw dump: phantom a3/a4 params,
-    // uninit v9 out-param, __stdcall/__cdecl vtable cast clash; truth = ida_cache marker above)
+    // uninit v9 out-param, __stdcall/__cdecl ptr_0 cast clash; truth = ida_cache marker above)
 }
 
 // ==== BACKFILL 0x006BFBD0  CreateTClassFactory_LightSourceClass  cls=_TClassFactory_VLightSourceClass  sig=csp  renamed_refs=0  residual=- ====
@@ -837,7 +837,7 @@ int TClassFactory_LightSourceClass::ddtor()
 void* Gap2Recv_6BFD40::WinMain_Helper_6BFD40() {
 
   ((unsigned int *)this)[0] = 0; /*0x6bfd42*/
-  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6bfd49) */
+  /* X11: ptr_0 install elided (implicit via TClassFactory virtuals 0x6bfd49) */
   return this; /*0x6bfd4f*/
 
 }
@@ -870,7 +870,7 @@ int TClassFactory_SideClass::ddtor()
 void* Gap2Recv_6BFEC0::WinMain_Helper_6BFEC0() {
 
   ((unsigned int *)this)[0] = 0; /*0x6bfec2*/
-  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6bfec9) */
+  /* X11: ptr_0 install elided (implicit via TClassFactory virtuals 0x6bfec9) */
   return this; /*0x6bfecf*/
 
 }

@@ -39,7 +39,7 @@ struct FileEntryClass {
 // ============================================================================
 // LoadOptions — save/load game dialog controller (~31 methods)
 // 0x558740 (Construct), 0x558790 (Cleanup), 0x5587F0 (Run)
-// vtable: 0x7ED2E4
+// ptr_0: 0x7ED2E4
 // Used by: Options::DlgProc, CampaignMenu::DlgProc, MenuSelect, SkirmishMapGen
 // ============================================================================
 // CSP: LoadOptions matched via T1+T3

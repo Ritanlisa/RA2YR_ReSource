@@ -269,8 +269,8 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     unsigned int u32_D4; // 0xD4  gB member supply
     unsigned int u32_D8; // 0xD8  gB member supply
     unsigned int u32_DC; // 0xDC  gB member supply
-    void* ptr_C;  // 0xC (ml truth)  gB vtable supply
-    void* ptr_46;  // 0x0 (no offset truth)  gB vtable supply
+    void* ptr_C;  // 0xC (ml truth)  gB ptr_0 supply
+    void* ptr_46;  // 0x0 (no offset truth)  gB ptr_0 supply
 
     bool Difficulty;  // X10 supply (csp_canon_members)
     bool Enabled;  // X10 supply (csp_canon_members)

@@ -42,10 +42,10 @@ unsigned int * ScoreScreen::LoadScoreFont(int aP1)
   this->ScoreScreen_field_0x08 = 0; /*0x690a1c*/
   this->ScoreScreen_field_0x0C = 0; /*0x690a1f*/
   this->ScoreScreen_field_0x14 = 0; /*0x690a22*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7F0EF0) */  /*0x690a25*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7F0EF0) */  /*0x690a25*/
   ScoreScreen::LoadAudio(); /*0x690a2b*/
   ++dword_B0558C; /*0x690a3c*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7F0F08) */  /*0x690a44*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7F0F08) */  /*0x690a44*/
   (this->ScoreScreen_field_0x10) = ((this->ScoreScreen_field_0x10) & ~0xFF) | ((0) & 0xFF); /*0x690a4a*/
   v3 = SearchMIXFile(g_Str_File_FULLFNT3_SHP, 0); /*0x690a4d*/
   this->ScoreScreen_field_0x0C = (int)v3; /*0x690a54*/
@@ -56,7 +56,7 @@ unsigned int * ScoreScreen::LoadScoreFont(int aP1)
     LOBYTE(this->ScoreScreen_field_0x10) = 1; /*0x690a77*/
     CCFileClass::Reset(&v5); /*0x690a7b*/
     Debug::Log(); /*0x690a85*/
-    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x690a91*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x690a91*/
     v7 = 0; /*0x690a99*/
     Vector::Clear((int)v6); /*0x690a9d*/
     *(unsigned int *)v5.__tail_0 = &off_7E1668; /*0x690aa6*/
@@ -83,10 +83,10 @@ unsigned int * ScoreScreen::LoadCountryFlags(int a2)
   this->ScoreScreen_field_0x08 = 0; /*0x690aec*/
   this->ScoreScreen_field_0x0C = 0; /*0x690aef*/
   this->ScoreScreen_field_0x14 = 0; /*0x690af2*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7F0EF0) */  /*0x690af5*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7F0EF0) */  /*0x690af5*/
   ScoreScreen::LoadAudio(); /*0x690afb*/
   ++dword_B0558C; /*0x690b0c*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7F0F20) */  /*0x690b14*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7F0F20) */  /*0x690b14*/
   (this->ScoreScreen_field_0x10) = ((this->ScoreScreen_field_0x10) & ~0xFF) | ((0) & 0xFF); /*0x690b1a*/
   v3 = SearchMIXFile(aBigfontShp, 0); /*0x690b1d*/
   this->ScoreScreen_field_0x0C = (int)v3; /*0x690b24*/
@@ -97,7 +97,7 @@ unsigned int * ScoreScreen::LoadCountryFlags(int a2)
     LOBYTE(this->ScoreScreen_field_0x10) = 1; /*0x690b47*/
     CCFileClass::Reset(&v5); /*0x690b4b*/
     Debug::Log(); /*0x690b55*/
-    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x690b61*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x690b61*/
     v7 = 0; /*0x690b69*/
     Vector::Clear((int)v6); /*0x690b6d*/
     *(unsigned int *)v5.__tail_0 = &off_7E1668; /*0x690b76*/
@@ -120,7 +120,7 @@ unsigned int * ScoreScreen::Constructor(int aP1, int a3, int a4, void *a4_1)
   this->ScoreScreen_field_0x0C = Timer::GetTicks(); /*0x690f4d*/
   this->q014 = 0; /*0x690f50*/
   this->u32_18 = a4; /*0x690f57*/
-  /* X11: vtable install elided (X68 star-amp-named, RHS g_ptr_7F0EDC) */  /*0x690f5a*/
+  /* X11: ptr_0 install elided (X68 star-amp-named, RHS g_ptr_7F0EDC) */  /*0x690f5a*/
   return this->__pad_0; /*0x690f62*/
 
 }
@@ -285,10 +285,10 @@ AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3,
       *(unsigned int *)(v10 + 8) = v9; /*0x778283*/
       *(unsigned int *)(v10 + 4) = v28; /*0x778291*/
       *(unsigned int *)(v10 + 12) = 0; /*0x778294*/
-      /* X11: vtable install elided (X67 star-deref, RHS XSurface_Vtable) */  /*0x77829b*/
+      /* X11: ptr_0 install elided (X67 star-deref, RHS XSurface_Vtable) */  /*0x77829b*/
       *(unsigned int *)(v10 + 16) = 2; /*0x7782a1*/
       Buffer::Init((Buffer *)(v10 + 20), 0, 2 * v28 * v9); /*0x7782a8*/
-      /* X11: vtable install elided (X67 star-deref, RHS BSurface_Vtable) */  /*0x7782ad*/
+      /* X11: ptr_0 install elided (X67 star-deref, RHS BSurface_Vtable) */  /*0x7782ad*/
     }
     else
     {
@@ -343,10 +343,10 @@ AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3,
     }
     (*(void (**)(int *, int))*v8)(v8, 1); /*0x778456*/
   }
-  /* X11: vtable install elided (implicit via CCFileClass virtuals 0x778461) */
+  /* X11: ptr_0 install elided (implicit via CCFileClass virtuals 0x778461) */
   v40 = 0; /*0x778469*/
   ((void *)((int)v39))->Clear(); /*0x778474*/
-  /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x77847d) */
+  /* X11: ptr_0 install elided (implicit via off_7E1668 virtuals 0x77847d) */
   return (gamemd::AbstractClass **)(((gamemd::BufferIOFileClass *)((BufferIOFileClass *)&v38))->Dtor()); /*0x77848a*/
 }
 }

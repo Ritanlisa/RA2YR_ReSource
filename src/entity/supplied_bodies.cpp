@@ -78,7 +78,7 @@ struct Checksummer {                           // raw 0x425490 Add_double
 struct Coord {                                 // csp_canon:130963 同名类 + raw fn_42:3239 静态词表
     static void *GetCoords(void *a1, void *a2);
     static CellClass *To_Cell(void *a1, void *a2);
-    unsigned char q00C[0x400];              // 0xC 槽词汇 (v12[2].vtable4[..] 词表)
+    unsigned char q00C[0x400];              // 0xC 槽词汇 (v12[2].ptr_10[..] 词表)
 };
 struct stru_87F5F0_host {                      // 0x87F5F0 宿主 (object/supplied_bodies:106 同款)
     unsigned char q000[0x58];
@@ -137,10 +137,10 @@ int AnimClass::SimpleCtor()
   this->q19C = 1; /*0x422834*/
   this->SuperClass_19D = 0; /*0x42283b*/
   this->q19E = 0; /*0x422841*/
-  /* X11: vtable install elided (implicit via class virtuals 0x422847) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x42284d) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x422854) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via off_7E3328 virtuals 0x42285b) */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x422847) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x42284d) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x422854) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via off_7E3328 virtuals 0x42285b) */
   if ( dword_A8E9B8 < dword_A8E9B0 /*0x422896*/
     || (byte_A8E9B5 || !dword_A8E9B0)
     && dword_A8E9BC > 0
@@ -357,9 +357,9 @@ int AnimClass::SaveLoad_Prefix(int a2, int a3)
     {
       ObjectClass::Init((ObjectClass *)a2, (int)&a3); /*0x4252a6*/
       __4type_info_AAEAAV0_ABV0__Z(&a2->u32_B4, (int)&a3); /*0x4252b6*/
-      /* X11: vtable install elided (X67 star-deref, RHS g_var_236ff1) */  /*0x4252bb*/
-      /* X11: vtable install elided (legacy slot spelling slot, RHS g_var_236ff1) */  /*0x4252c1*/
-      /* X11: vtable install elided (legacy slot spelling slot, RHS g_var_236ff1) */  /*0x4252c8*/
+      /* X11: ptr_0 install elided (X67 star-deref, RHS g_var_236ff1) */  /*0x4252bb*/
+      /* X11: ptr_0 install elided (legacy slot spelling slot, RHS g_var_236ff1) */  /*0x4252c1*/
+      /* X11: ptr_0 install elided (legacy slot spelling slot, RHS g_var_236ff1) */  /*0x4252c8*/
       a2->ptr_4 = &off_7E3328; /*0x4252cf*/
     }
     AudioController::Init(&a2->AudioController_1A0); /*0x4252dc*/
@@ -693,9 +693,9 @@ int* AnimClass::ctor(void* a1, void* a2, void* a3, int a4, void* a5, void* a6, i
   this->q19C = 1; /*0x422009*/
   this->SuperClass_19D = 0; /*0x422010*/
   this->q19E = 0; /*0x422016*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_var_236ff1) */  /*0x42201c*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_var_236ff1) */  /*0x422022*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_var_236ff1) */  /*0x422028*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_236ff1) */  /*0x42201c*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_236ff1) */  /*0x422022*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_236ff1) */  /*0x422028*/
   *(unsigned int *)this->__pad_C = &off_7E3328; /*0x422030*/
   this->PaletteName = 0; /*0x422037*/
   AbstractClass::GenerateUniqueID(&this->ptr_4); /*0x42203d*/

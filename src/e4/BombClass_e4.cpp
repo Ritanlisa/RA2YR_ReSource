@@ -32,10 +32,10 @@ int BombClass::AbstractClass()
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x4385d4*/
   this->BombClass_field_54 = 0; /*0x4385de*/
-  /* X11: vtable install elided (base-interface slot, RHS g_ptr_7E3CE4) */  /*0x4385e1*/
-  /* X11: vtable install elided (implicit via BombClass virtuals 0x4385e7) */
-  /* X11: vtable install elided (implicit via BombClass virtuals 0x4385ee) */
-  /* X11: vtable install elided (implicit via BombClass virtuals 0x4385f5) */
+  /* X11: ptr_0 install elided (base-interface slot, RHS g_ptr_7E3CE4) */  /*0x4385e1*/
+  /* X11: ptr_0 install elided (implicit via BombClass virtuals 0x4385e7) */
+  /* X11: ptr_0 install elided (implicit via BombClass virtuals 0x4385ee) */
+  /* X11: ptr_0 install elided (implicit via BombClass virtuals 0x4385f5) */
   this->BombClass_field_28 = 0; /*0x4385fc*/
   this->BombClass_field_2C = 0; /*0x4385ff*/
   this->BombClass_field_58 = 0; /*0x438602*/
@@ -177,10 +177,10 @@ int BombClass::Write(int a2, int aP0, int aP1, int a1, int aP2)
     if ( aP0 ) /*0x438b59*/
     {
       AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP0); /*0x438b62*/
-      /* X11: vtable install elided (base-interface slot, RHS g_ptr_7E3CE4) */  /*0x438b67*/
-      /* X11: vtable install elided (qmark slot, RHS g_ptr_7E3CE4) */  /*0x438b6d*/
-      /* X11: vtable install elided (qmark slot, RHS g_ptr_7E3CE4) */  /*0x438b74*/
-      /* X11: vtable install elided (qmark slot, RHS g_ptr_7E3CE4) */  /*0x438b7b*/
+      /* X11: ptr_0 install elided (base-interface slot, RHS g_ptr_7E3CE4) */  /*0x438b67*/
+      /* X11: ptr_0 install elided (qmark slot, RHS g_ptr_7E3CE4) */  /*0x438b6d*/
+      /* X11: ptr_0 install elided (qmark slot, RHS g_ptr_7E3CE4) */  /*0x438b74*/
+      /* X11: ptr_0 install elided (qmark slot, RHS g_ptr_7E3CE4) */  /*0x438b7b*/
     }
     AudioController::Init((AudioController *)&aP0->audioController[3]); /*0x438b85*/
     aP0->BombClass_field_54 = 0; /*0x438b8d*/
@@ -207,10 +207,10 @@ BombClass * BombClass::CopyTo(char a2)
 {
 
 
-  /* X11: vtable install elided (base-interface slot, RHS g_ptr_7E3CE4) */  /*0x4393f7*/
-  /* X11: vtable install elided (implicit via BombClass virtuals 0x4393fd) */
-  /* X11: vtable install elided (implicit via BombClass virtuals 0x439404) */
-  /* X11: vtable install elided (implicit via BombClass virtuals 0x43940b) */
+  /* X11: ptr_0 install elided (base-interface slot, RHS g_ptr_7E3CE4) */  /*0x4393f7*/
+  /* X11: ptr_0 install elided (implicit via BombClass virtuals 0x4393fd) */
+  /* X11: ptr_0 install elided (implicit via BombClass virtuals 0x439404) */
+  /* X11: ptr_0 install elided (implicit via BombClass virtuals 0x43940b) */
   AudioFileClass::Release(&this->HouseClass_6C); /*0x439412*/
   BombClass *v5; // [esp+4h] [ebp-4h] BYREF
   v5 = this; /*0x439427*/

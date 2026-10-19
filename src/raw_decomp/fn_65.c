@@ -728,13 +728,13 @@ int Network::SendUnreachable(Network *this)
 // ==== 0x00652540  ObjectClass::Network_Process  this=ObjectClass  sig=csp ====
 int __thiscall Network_Process_652540(ObjectClass *this)
 {
-  char *vtable0; // eax
+  char *ptr_0; // eax
 
-  vtable0 = (char *)this->AbstractClass; /*0x652540*/
+  ptr_0 = (char *)this->AbstractClass; /*0x652540*/
   if ( this->AbstractClass ) /*0x652540*/
   {
     this->? = (void *)(((unsigned __int8)this->? + 1) & 0x7F); /*0x65254e*/
-    this->AbstractClass = vtable0 - 1; /*0x652551*/
+    this->AbstractClass = ptr_0 - 1; /*0x652551*/
   }
   return (int)this->AbstractClass; /*0x652555*/
 }
@@ -1083,9 +1083,9 @@ _DWORD *__thiscall RadarClass::Construct(RadarClass *this)
   do /*0x652a6e*/
   {
     VectorClass::PointConstructor(p_RadarClass_field_0x1278, 0, 0); /*0x652a55*/
-    p_RadarClass_field_0x1278->vtable0 = &DynamicVectorClass<Point2D>::`vftable'; /*0x652a5a*/
+    p_RadarClass_field_0x1278->ptr_0 = &DynamicVectorClass<Point2D>::`vftable'; /*0x652a5a*/
     p_RadarClass_field_0x1278[1].Items = (void *)10; /*0x652a60*/
-    p_RadarClass_field_0x1278[1].vtable0 = 0; /*0x652a67*/
+    p_RadarClass_field_0x1278[1].ptr_0 = 0; /*0x652a67*/
     p_RadarClass_field_0x1278 = (VectorClass *)((char *)p_RadarClass_field_0x1278 + 24); /*0x652a6a*/
     --v5; /*0x652a6d*/
   }
@@ -1304,17 +1304,17 @@ void __thiscall RadarClass::Destru_vt07(RadarClass *this)
 // ==== 0x00652E50  ObjectClass::resetObjectState  this=ObjectClass  sig=csp ====
 int __thiscall ObjectClass::resetObjectState(ObjectClass *this, char a2)
 {
-  void (__stdcall **vtable0)(GadgetClass *); // eax
+  void (__stdcall **ptr_0)(GadgetClass *); // eax
 
-  vtable0 = (void (__stdcall **)(GadgetClass *))this->AbstractClass; /*0x652e5e*/
+  ptr_0 = (void (__stdcall **)(GadgetClass *))this->AbstractClass; /*0x652e5e*/
   if ( a2 ) /*0x652e60*/
   {
-    vtable0[12](&stru_B04978); /*0x652e62*/
+    ptr_0[12](&stru_B04978); /*0x652e62*/
     return (*((int (__thiscall **)(ObjectClass *, GadgetClass *))this->AbstractClass + 12))(this, &stru_B04910); /*0x652e6e*/
   }
   else
   {
-    vtable0[13](&stru_B04978); /*0x652e75*/
+    ptr_0[13](&stru_B04978); /*0x652e75*/
     return (*((int (__thiscall **)(ObjectClass *, GadgetClass *))this->AbstractClass + 13))(this, &stru_B04910); /*0x652e81*/
   }
 }
@@ -4731,8 +4731,8 @@ LABEL_26:
               {
                 v14 = p_RadarClass_field_0x1224[4]; /*0x656a02*/
                 v15 = p_RadarClass_field_0x1224[1]; /*0x656a05*/
-                p_RadarClass_field_0x1224[4] = (VectorClass *)((char *)&v14->vtable0 + 1); /*0x656a0b*/
-                *((_DWORD *)&v15->vtable0 + (_DWORD)v14) = v19; /*0x656a12*/
+                p_RadarClass_field_0x1224[4] = (VectorClass *)((char *)&v14->ptr_0 + 1); /*0x656a0b*/
+                *((_DWORD *)&v15->ptr_0 + (_DWORD)v14) = v19; /*0x656a12*/
               }
               if ( ++v11 >= a2 ) /*0x656a1c*/
                 goto LABEL_26; /*0x656a1c*/
@@ -6184,9 +6184,9 @@ int __stdcall DrawPowerBarForPlayers(ObjectClass *this)
   v3 = v1; /*0x658657*/
   for ( i = dword_A80238; v2 < i; ++v2 ) /*0x658661*/
   {
-    v4 = *(&dword_A8022C->vtable0 + v2); /*0x658668*/
+    v4 = *(&dword_A8022C->ptr_0 + v2); /*0x658668*/
     if ( v4 /*0x658683*/
-      && ((unsigned __int8)House::IsHumanPlayer(*((House **)&dword_A8022C->vtable0 + v2))
+      && ((unsigned __int8)House::IsHumanPlayer(*((House **)&dword_A8022C->ptr_0 + v2))
        || !*(_BYTE *)(*(_DWORD *)(v4 + 52) + 422)) )
     {
       TabClass::DrawPower(v3, this); /*0x658692*/
@@ -6222,7 +6222,7 @@ LABEL_7:
     Dialog::Destroy(Dialog); /*0x658733*/
   }
   Timer::PumpMessages(*(Timer **)&stru_87F5F0.__pad_58[296]); /*0x658740*/
-  stru_A8EB00.?[440] = BYTE2(dword_A8B230[381].vtable3); /*0x658758*/
+  stru_A8EB00.?[440] = BYTE2(dword_A8B230[381].ptr_C); /*0x658758*/
   return MapClass::MarkForRedraw((GScreenClass *)&stru_87F5F0.__pad_58[416], 2); /*0x658763*/
 }
 
@@ -6784,25 +6784,25 @@ _DWORD *__thiscall VectorClass::PointConstructor(VectorClass *this, int a2, int 
   this->Capacity = a2; /*0x658d71*/
   this->IsInitialized = 1; /*0x658d74*/
   this->IsAllocated = 0; /*0x658d78*/
-  this->vtable0 = &VectorClass<Point2D>::`vftable'; /*0x658d7c*/
+  this->ptr_0 = &VectorClass<Point2D>::`vftable'; /*0x658d7c*/
   if ( a2 ) /*0x658d82*/
   {
     if ( a3 ) /*0x658d8a*/
     {
       this->Items = (void *)a3; /*0x658d8d*/
-      return &this->vtable0; /*0x658d98*/
+      return &this->ptr_0; /*0x658d98*/
     }
     v5 = (void *)__2_YAPAXI_Z(8 * a2); /*0x658da3*/
     if ( v5 ) /*0x658dad*/
     {
       this->Items = v5; /*0x658db0*/
       this->IsAllocated = 1; /*0x658db7*/
-      return &this->vtable0; /*0x658dbf*/
+      return &this->ptr_0; /*0x658dbf*/
     }
     this->IsAllocated = 1; /*0x658dc4*/
     this->Items = 0; /*0x658dc8*/
   }
-  return &this->vtable0; /*0x658d96*/
+  return &this->ptr_0; /*0x658d96*/
 }
 
 
@@ -7422,7 +7422,7 @@ bool __thiscall RenderProjectileTrail(ObjectClass *this)
   double v1; // st7
   int owningHouseIndex; // ebp
   int *v4; // eax
-  _BYTE *vtable1; // ecx
+  _BYTE *ptr_4; // ecx
   int v7; // edx
   ObjectClass **v8; // eax
   TagClass *v9; // edx
@@ -7482,11 +7482,11 @@ bool __thiscall RenderProjectileTrail(ObjectClass *this)
   }
   if ( LOBYTE(_ESI->customSound_controller[2]) ) /*0x6596d7*/
   {
-    vtable1 = _ESI->?; /*0x6596e2*/
-    if ( vtable1 ) /*0x6596e7*/
+    ptr_4 = _ESI->?; /*0x6596e2*/
+    if ( ptr_4 ) /*0x6596e7*/
     {
-      v7 = *(_DWORD *)vtable1; /*0x6596f0*/
-      if ( (vtable1[20] & 2) != 0 ) /*0x6596f4*/
+      v7 = *(_DWORD *)ptr_4; /*0x6596f0*/
+      if ( (ptr_4[20] & 2) != 0 ) /*0x6596f4*/
         v8 = (ObjectClass **)(*(int (__stdcall **)(int *))(v7 + 164))(&v38); /*0x659705*/
       else
         v8 = (ObjectClass **)(*(int (__stdcall **)(int *))(v7 + 88))(&v38); /*0x6596fb*/
@@ -10963,7 +10963,7 @@ int __thiscall sub_65C910(ObjectClass *this, int a2, int a3)
   int v10; // ecx
   int v11; // esi
   int v12; // ecx
-  unsigned int vtable1; // ecx
+  unsigned int ptr_4; // ecx
   unsigned int v14; // edi
   int v15; // esi
   unsigned int v16; // ebx
@@ -10972,7 +10972,7 @@ int __thiscall sub_65C910(ObjectClass *this, int a2, int a3)
   ObjectClass *v19; // [esp+4h] [ebp-Ch]
   int v20; // [esp+8h] [ebp-8h]
   int v21; // [esp+Ch] [ebp-4h]
-  void *vtable0; // [esp+14h] [ebp+4h]
+  void *ptr_0; // [esp+14h] [ebp+4h]
   int v23; // [esp+18h] [ebp+8h]
 
   result = a2; /*0x65c913*/
@@ -11008,23 +11008,23 @@ int __thiscall sub_65C910(ObjectClass *this, int a2, int a3)
     v20 = ~v11; /*0x65c96c*/
     if ( v9 + 1 > v9 ) /*0x65c970*/
     {
-      vtable0 = this->AbstractClass; /*0x65c976*/
+      ptr_0 = this->AbstractClass; /*0x65c976*/
       while ( 1 ) /*0x65c980*/
       {
-        vtable1 = (unsigned int)this->?; /*0x65c980*/
-        v14 = (unsigned int)vtable0; /*0x65c983*/
+        ptr_4 = (unsigned int)this->?; /*0x65c980*/
+        v14 = (unsigned int)ptr_0; /*0x65c983*/
         v15 = 0; /*0x65c987*/
-        this->? = (void *)(vtable1 + 1); /*0x65c98c*/
+        this->? = (void *)(ptr_4 + 1); /*0x65c98c*/
         do /*0x65c9d5*/
         {
-          v16 = vtable1; /*0x65c995*/
-          v17 = vtable1 ^ dword_839644[v15++]; /*0x65c997*/
+          v16 = ptr_4; /*0x65c995*/
+          v17 = ptr_4 ^ dword_839644[v15++]; /*0x65c997*/
           v18 = v14 /*0x65c9cc*/
               ^ ((unsigned __int16)v17 * (v17 >> 16)
                + (dword_839690[v15]
                 ^ ((((unsigned __int16)v17 * (unsigned __int16)v17 + ~((v17 >> 16) * (v17 >> 16))) << 16)
                  | (((unsigned __int16)v17 * (unsigned __int16)v17 + ~((v17 >> 16) * (v17 >> 16))) >> 16))));
-          vtable1 = v18; /*0x65c9d1*/
+          ptr_4 = v18; /*0x65c9d1*/
           v14 = v16; /*0x65c9d3*/
         }
         while ( v15 < 4 ); /*0x65c9d5*/
@@ -11882,18 +11882,18 @@ int __thiscall ComPtr::Set(ComPtr *this, int a2)
 // ==== 0x0065D4D0  AbstractClass::checkAICondition  this=rc_ptr_base  sig=csp ====
 _DWORD *__thiscall AbstractClass::checkAICondition(AbstractClass *this, char a2)
 {
-  void *vtable1; // ecx
+  void *ptr_4; // ecx
 
-  vtable1 = this->vtable1; /*0x65d4d3*/
-  this->vtable0 = &rc_ptr_base::`vftable'; /*0x65d4d6*/
-  if ( vtable1 ) /*0x65d4de*/
+  ptr_4 = this->ptr_4; /*0x65d4d3*/
+  this->ptr_0 = &rc_ptr_base::`vftable'; /*0x65d4d6*/
+  if ( ptr_4 ) /*0x65d4de*/
   {
-    this->vtable1 = 0; /*0x65d4e0*/
-    (*(void (__thiscall **)(void *))(*(_DWORD *)vtable1 + 8))(vtable1); /*0x65d4e9*/
+    this->ptr_4 = 0; /*0x65d4e0*/
+    (*(void (__thiscall **)(void *))(*(_DWORD *)ptr_4 + 8))(ptr_4); /*0x65d4e9*/
   }
   if ( (a2 & 1) != 0 ) /*0x65d4f1*/
     __3_YAXPAX_Z(this); /*0x65d4f4*/
-  return &this->vtable0; /*0x65d4fe*/
+  return &this->ptr_0; /*0x65d4fe*/
 }
 
 
@@ -13846,7 +13846,7 @@ LABEL_14:
       Dialog::Destroy(Dialog); /*0x65f68d*/
     }
     Timer::PumpMessages(*(Timer **)&stru_87F5F0.__pad_58[296]); /*0x65f69a*/
-    stru_A8EB00.?[440] = BYTE2(dword_A8B230[381].vtable3); /*0x65f6ac*/
+    stru_A8EB00.?[440] = BYTE2(dword_A8B230[381].ptr_C); /*0x65f6ac*/
     MapClass::MarkForRedraw((GScreenClass *)&stru_87F5F0.__pad_58[416], 2); /*0x65f6b7*/
   }
   stru_A8EB00.?[376] = v7; /*0x65f6c4*/
@@ -14169,7 +14169,7 @@ _DWORD *__thiscall Team_Load_65FB80(ObjectClass *this, int a2, int a3)
   int *_6550C0; // eax
   int v9; // ecx
   void *v10; // eax
-  void *vtable1; // edi
+  void *ptr_4; // edi
   void *v12; // edx
   void *v13; // eax
   void *v14; // ecx
@@ -14203,16 +14203,16 @@ _DWORD *__thiscall Team_Load_65FB80(ObjectClass *this, int a2, int a3)
   v10 = (void *)(_6550C0[1] - v7); /*0x65fc0b*/
   this->? = (void *)(v9 - v6); /*0x65fc0d*/
   this->? = v10; /*0x65fc10*/
-  vtable1 = this->?; /*0x65fc13*/
+  ptr_4 = this->?; /*0x65fc13*/
   v12 = v10; /*0x65fc1c*/
   v13 = (void *)(*(_DWORD *)&stru_87F5F0.__pad_E12[2190] - (_DWORD)v10); /*0x65fc23*/
-  v14 = (void *)(*(_DWORD *)&stru_87F5F0.__pad_E12[2186] - (_DWORD)vtable1); /*0x65fc25*/
-  v15 = *(_DWORD *)&stru_87F5F0.__pad_E12[2186] - (_DWORD)vtable1; /*0x65fc29*/
-  if ( *(_DWORD *)&stru_87F5F0.__pad_E12[2186] - (int)vtable1 <= (int)v13 ) /*0x65fc2b*/
+  v14 = (void *)(*(_DWORD *)&stru_87F5F0.__pad_E12[2186] - (_DWORD)ptr_4); /*0x65fc25*/
+  v15 = *(_DWORD *)&stru_87F5F0.__pad_E12[2186] - (_DWORD)ptr_4; /*0x65fc29*/
+  if ( *(_DWORD *)&stru_87F5F0.__pad_E12[2186] - (int)ptr_4 <= (int)v13 ) /*0x65fc2b*/
     v15 = (int)v13; /*0x65fc2d*/
   if ( (int)v12 <= v15 ) /*0x65fc31*/
   {
-    v16 = *(_DWORD *)&stru_87F5F0.__pad_E12[2186] - (_DWORD)vtable1; /*0x65fc39*/
+    v16 = *(_DWORD *)&stru_87F5F0.__pad_E12[2186] - (_DWORD)ptr_4; /*0x65fc39*/
     if ( (int)v14 <= (int)v13 ) /*0x65fc3b*/
       v16 = (int)v13; /*0x65fc3d*/
   }
@@ -14220,9 +14220,9 @@ _DWORD *__thiscall Team_Load_65FB80(ObjectClass *this, int a2, int a3)
   {
     v16 = (int)v12; /*0x65fc33*/
   }
-  if ( (int)vtable1 <= v16 ) /*0x65fc41*/
+  if ( (int)ptr_4 <= v16 ) /*0x65fc41*/
   {
-    v17 = *(_DWORD *)&stru_87F5F0.__pad_E12[2186] - (_DWORD)vtable1; /*0x65fc4b*/
+    v17 = *(_DWORD *)&stru_87F5F0.__pad_E12[2186] - (_DWORD)ptr_4; /*0x65fc4b*/
     if ( (int)v14 <= (int)v13 ) /*0x65fc4d*/
       v17 = (int)v13; /*0x65fc4f*/
     if ( (int)v12 <= v17 ) /*0x65fc53*/
@@ -15136,13 +15136,13 @@ int Network::SendUnreachable(Network *this)
 // ==== 0x00652540  ObjectClass::Network_Process  this=ObjectClass  sig=csp ====
 int __thiscall Network_Process_652540(ObjectClass *this)
 {
-  char *vtable0; // eax
+  char *ptr_0; // eax
 
-  vtable0 = (char *)this->AbstractClass; /*0x652540*/
+  ptr_0 = (char *)this->AbstractClass; /*0x652540*/
   if ( this->AbstractClass ) /*0x652540*/
   {
     this->? = (void *)(((unsigned __int8)this->? + 1) & 0x7F); /*0x65254e*/
-    this->AbstractClass = vtable0 - 1; /*0x652551*/
+    this->AbstractClass = ptr_0 - 1; /*0x652551*/
   }
   return (int)this->AbstractClass; /*0x652555*/
 }
@@ -15491,9 +15491,9 @@ _DWORD *__thiscall RadarClass::Construct(RadarClass *this)
   do /*0x652a6e*/
   {
     VectorClass::PointConstructor(p_RadarClass_field_0x1278, 0, 0); /*0x652a55*/
-    p_RadarClass_field_0x1278->vtable0 = &DynamicVectorClass<Point2D>::`vftable'; /*0x652a5a*/
+    p_RadarClass_field_0x1278->ptr_0 = &DynamicVectorClass<Point2D>::`vftable'; /*0x652a5a*/
     p_RadarClass_field_0x1278[1].Items = (void *)10; /*0x652a60*/
-    p_RadarClass_field_0x1278[1].vtable0 = 0; /*0x652a67*/
+    p_RadarClass_field_0x1278[1].ptr_0 = 0; /*0x652a67*/
     p_RadarClass_field_0x1278 = (VectorClass *)((char *)p_RadarClass_field_0x1278 + 24); /*0x652a6a*/
     --v5; /*0x652a6d*/
   }
@@ -15712,17 +15712,17 @@ void __thiscall RadarClass::Destru_vt07(RadarClass *this)
 // ==== 0x00652E50  ObjectClass::resetObjectState  this=ObjectClass  sig=csp ====
 int __thiscall ObjectClass::resetObjectState(ObjectClass *this, char a2)
 {
-  void (__stdcall **vtable0)(GadgetClass *); // eax
+  void (__stdcall **ptr_0)(GadgetClass *); // eax
 
-  vtable0 = (void (__stdcall **)(GadgetClass *))this->AbstractClass; /*0x652e5e*/
+  ptr_0 = (void (__stdcall **)(GadgetClass *))this->AbstractClass; /*0x652e5e*/
   if ( a2 ) /*0x652e60*/
   {
-    vtable0[12](&stru_B04978); /*0x652e62*/
+    ptr_0[12](&stru_B04978); /*0x652e62*/
     return (*((int (__thiscall **)(ObjectClass *, GadgetClass *))this->AbstractClass + 12))(this, &stru_B04910); /*0x652e6e*/
   }
   else
   {
-    vtable0[13](&stru_B04978); /*0x652e75*/
+    ptr_0[13](&stru_B04978); /*0x652e75*/
     return (*((int (__thiscall **)(ObjectClass *, GadgetClass *))this->AbstractClass + 13))(this, &stru_B04910); /*0x652e81*/
   }
 }
@@ -19139,8 +19139,8 @@ LABEL_26:
               {
                 v14 = p_RadarClass_field_0x1224[4]; /*0x656a02*/
                 v15 = p_RadarClass_field_0x1224[1]; /*0x656a05*/
-                p_RadarClass_field_0x1224[4] = (VectorClass *)((char *)&v14->vtable0 + 1); /*0x656a0b*/
-                *((_DWORD *)&v15->vtable0 + (_DWORD)v14) = v19; /*0x656a12*/
+                p_RadarClass_field_0x1224[4] = (VectorClass *)((char *)&v14->ptr_0 + 1); /*0x656a0b*/
+                *((_DWORD *)&v15->ptr_0 + (_DWORD)v14) = v19; /*0x656a12*/
               }
               if ( ++v11 >= a2 ) /*0x656a1c*/
                 goto LABEL_26; /*0x656a1c*/
@@ -20592,9 +20592,9 @@ int __stdcall DrawPowerBarForPlayers(ObjectClass *this)
   v3 = v1; /*0x658657*/
   for ( i = dword_A80238; v2 < i; ++v2 ) /*0x658661*/
   {
-    v4 = *(&dword_A8022C->vtable0 + v2); /*0x658668*/
+    v4 = *(&dword_A8022C->ptr_0 + v2); /*0x658668*/
     if ( v4 /*0x658683*/
-      && ((unsigned __int8)House::IsHumanPlayer(*((House **)&dword_A8022C->vtable0 + v2))
+      && ((unsigned __int8)House::IsHumanPlayer(*((House **)&dword_A8022C->ptr_0 + v2))
        || !*(_BYTE *)(*(_DWORD *)(v4 + 52) + 422)) )
     {
       TabClass::DrawPower(v3, this); /*0x658692*/
@@ -20630,7 +20630,7 @@ LABEL_7:
     Dialog::Destroy(Dialog); /*0x658733*/
   }
   Timer::PumpMessages(*(Timer **)&stru_87F5F0.__pad_58[296]); /*0x658740*/
-  stru_A8EB00.?[440] = BYTE2(dword_A8B230[381].vtable3); /*0x658758*/
+  stru_A8EB00.?[440] = BYTE2(dword_A8B230[381].ptr_C); /*0x658758*/
   return MapClass::MarkForRedraw((GScreenClass *)&stru_87F5F0.__pad_58[416], 2); /*0x658763*/
 }
 
@@ -21192,25 +21192,25 @@ _DWORD *__thiscall VectorClass::PointConstructor(VectorClass *this, int a2, int 
   this->Capacity = a2; /*0x658d71*/
   this->IsInitialized = 1; /*0x658d74*/
   this->IsAllocated = 0; /*0x658d78*/
-  this->vtable0 = &VectorClass<Point2D>::`vftable'; /*0x658d7c*/
+  this->ptr_0 = &VectorClass<Point2D>::`vftable'; /*0x658d7c*/
   if ( a2 ) /*0x658d82*/
   {
     if ( a3 ) /*0x658d8a*/
     {
       this->Items = (void *)a3; /*0x658d8d*/
-      return &this->vtable0; /*0x658d98*/
+      return &this->ptr_0; /*0x658d98*/
     }
     v5 = (void *)__2_YAPAXI_Z(8 * a2); /*0x658da3*/
     if ( v5 ) /*0x658dad*/
     {
       this->Items = v5; /*0x658db0*/
       this->IsAllocated = 1; /*0x658db7*/
-      return &this->vtable0; /*0x658dbf*/
+      return &this->ptr_0; /*0x658dbf*/
     }
     this->IsAllocated = 1; /*0x658dc4*/
     this->Items = 0; /*0x658dc8*/
   }
-  return &this->vtable0; /*0x658d96*/
+  return &this->ptr_0; /*0x658d96*/
 }
 
 
@@ -21830,7 +21830,7 @@ bool __thiscall RenderProjectileTrail(ObjectClass *this)
   double v1; // st7
   int owningHouseIndex; // ebp
   int *v4; // eax
-  _BYTE *vtable1; // ecx
+  _BYTE *ptr_4; // ecx
   int v7; // edx
   ObjectClass **v8; // eax
   TagClass *v9; // edx
@@ -21890,11 +21890,11 @@ bool __thiscall RenderProjectileTrail(ObjectClass *this)
   }
   if ( LOBYTE(_ESI->customSound_controller[2]) ) /*0x6596d7*/
   {
-    vtable1 = _ESI->?; /*0x6596e2*/
-    if ( vtable1 ) /*0x6596e7*/
+    ptr_4 = _ESI->?; /*0x6596e2*/
+    if ( ptr_4 ) /*0x6596e7*/
     {
-      v7 = *(_DWORD *)vtable1; /*0x6596f0*/
-      if ( (vtable1[20] & 2) != 0 ) /*0x6596f4*/
+      v7 = *(_DWORD *)ptr_4; /*0x6596f0*/
+      if ( (ptr_4[20] & 2) != 0 ) /*0x6596f4*/
         v8 = (ObjectClass **)(*(int (__stdcall **)(int *))(v7 + 164))(&v38); /*0x659705*/
       else
         v8 = (ObjectClass **)(*(int (__stdcall **)(int *))(v7 + 88))(&v38); /*0x6596fb*/
@@ -25371,7 +25371,7 @@ int __thiscall sub_65C910(ObjectClass *this, int a2, int a3)
   int v10; // ecx
   int v11; // esi
   int v12; // ecx
-  unsigned int vtable1; // ecx
+  unsigned int ptr_4; // ecx
   unsigned int v14; // edi
   int v15; // esi
   unsigned int v16; // ebx
@@ -25380,7 +25380,7 @@ int __thiscall sub_65C910(ObjectClass *this, int a2, int a3)
   ObjectClass *v19; // [esp+4h] [ebp-Ch]
   int v20; // [esp+8h] [ebp-8h]
   int v21; // [esp+Ch] [ebp-4h]
-  void *vtable0; // [esp+14h] [ebp+4h]
+  void *ptr_0; // [esp+14h] [ebp+4h]
   int v23; // [esp+18h] [ebp+8h]
 
   result = a2; /*0x65c913*/
@@ -25416,23 +25416,23 @@ int __thiscall sub_65C910(ObjectClass *this, int a2, int a3)
     v20 = ~v11; /*0x65c96c*/
     if ( v9 + 1 > v9 ) /*0x65c970*/
     {
-      vtable0 = this->AbstractClass; /*0x65c976*/
+      ptr_0 = this->AbstractClass; /*0x65c976*/
       while ( 1 ) /*0x65c980*/
       {
-        vtable1 = (unsigned int)this->?; /*0x65c980*/
-        v14 = (unsigned int)vtable0; /*0x65c983*/
+        ptr_4 = (unsigned int)this->?; /*0x65c980*/
+        v14 = (unsigned int)ptr_0; /*0x65c983*/
         v15 = 0; /*0x65c987*/
-        this->? = (void *)(vtable1 + 1); /*0x65c98c*/
+        this->? = (void *)(ptr_4 + 1); /*0x65c98c*/
         do /*0x65c9d5*/
         {
-          v16 = vtable1; /*0x65c995*/
-          v17 = vtable1 ^ dword_839644[v15++]; /*0x65c997*/
+          v16 = ptr_4; /*0x65c995*/
+          v17 = ptr_4 ^ dword_839644[v15++]; /*0x65c997*/
           v18 = v14 /*0x65c9cc*/
               ^ ((unsigned __int16)v17 * (v17 >> 16)
                + (dword_839690[v15]
                 ^ ((((unsigned __int16)v17 * (unsigned __int16)v17 + ~((v17 >> 16) * (v17 >> 16))) << 16)
                  | (((unsigned __int16)v17 * (unsigned __int16)v17 + ~((v17 >> 16) * (v17 >> 16))) >> 16))));
-          vtable1 = v18; /*0x65c9d1*/
+          ptr_4 = v18; /*0x65c9d1*/
           v14 = v16; /*0x65c9d3*/
         }
         while ( v15 < 4 ); /*0x65c9d5*/
@@ -26290,18 +26290,18 @@ int __thiscall ComPtr::Set(ComPtr *this, int a2)
 // ==== 0x0065D4D0  AbstractClass::checkAICondition  this=rc_ptr_base  sig=csp ====
 _DWORD *__thiscall AbstractClass::checkAICondition(AbstractClass *this, char a2)
 {
-  void *vtable1; // ecx
+  void *ptr_4; // ecx
 
-  vtable1 = this->vtable1; /*0x65d4d3*/
-  this->vtable0 = &rc_ptr_base::`vftable'; /*0x65d4d6*/
-  if ( vtable1 ) /*0x65d4de*/
+  ptr_4 = this->ptr_4; /*0x65d4d3*/
+  this->ptr_0 = &rc_ptr_base::`vftable'; /*0x65d4d6*/
+  if ( ptr_4 ) /*0x65d4de*/
   {
-    this->vtable1 = 0; /*0x65d4e0*/
-    (*(void (__thiscall **)(void *))(*(_DWORD *)vtable1 + 8))(vtable1); /*0x65d4e9*/
+    this->ptr_4 = 0; /*0x65d4e0*/
+    (*(void (__thiscall **)(void *))(*(_DWORD *)ptr_4 + 8))(ptr_4); /*0x65d4e9*/
   }
   if ( (a2 & 1) != 0 ) /*0x65d4f1*/
     __3_YAXPAX_Z(this); /*0x65d4f4*/
-  return &this->vtable0; /*0x65d4fe*/
+  return &this->ptr_0; /*0x65d4fe*/
 }
 
 
@@ -28254,7 +28254,7 @@ LABEL_14:
       Dialog::Destroy(Dialog); /*0x65f68d*/
     }
     Timer::PumpMessages(*(Timer **)&stru_87F5F0.__pad_58[296]); /*0x65f69a*/
-    stru_A8EB00.?[440] = BYTE2(dword_A8B230[381].vtable3); /*0x65f6ac*/
+    stru_A8EB00.?[440] = BYTE2(dword_A8B230[381].ptr_C); /*0x65f6ac*/
     MapClass::MarkForRedraw((GScreenClass *)&stru_87F5F0.__pad_58[416], 2); /*0x65f6b7*/
   }
   stru_A8EB00.?[376] = v7; /*0x65f6c4*/
@@ -28577,7 +28577,7 @@ _DWORD *__thiscall Team_Load_65FB80(ObjectClass *this, int a2, int a3)
   int *_6550C0; // eax
   int v9; // ecx
   void *v10; // eax
-  void *vtable1; // edi
+  void *ptr_4; // edi
   void *v12; // edx
   void *v13; // eax
   void *v14; // ecx
@@ -28611,16 +28611,16 @@ _DWORD *__thiscall Team_Load_65FB80(ObjectClass *this, int a2, int a3)
   v10 = (void *)(_6550C0[1] - v7); /*0x65fc0b*/
   this->? = (void *)(v9 - v6); /*0x65fc0d*/
   this->? = v10; /*0x65fc10*/
-  vtable1 = this->?; /*0x65fc13*/
+  ptr_4 = this->?; /*0x65fc13*/
   v12 = v10; /*0x65fc1c*/
   v13 = (void *)(*(_DWORD *)&stru_87F5F0.__pad_E12[2190] - (_DWORD)v10); /*0x65fc23*/
-  v14 = (void *)(*(_DWORD *)&stru_87F5F0.__pad_E12[2186] - (_DWORD)vtable1); /*0x65fc25*/
-  v15 = *(_DWORD *)&stru_87F5F0.__pad_E12[2186] - (_DWORD)vtable1; /*0x65fc29*/
-  if ( *(_DWORD *)&stru_87F5F0.__pad_E12[2186] - (int)vtable1 <= (int)v13 ) /*0x65fc2b*/
+  v14 = (void *)(*(_DWORD *)&stru_87F5F0.__pad_E12[2186] - (_DWORD)ptr_4); /*0x65fc25*/
+  v15 = *(_DWORD *)&stru_87F5F0.__pad_E12[2186] - (_DWORD)ptr_4; /*0x65fc29*/
+  if ( *(_DWORD *)&stru_87F5F0.__pad_E12[2186] - (int)ptr_4 <= (int)v13 ) /*0x65fc2b*/
     v15 = (int)v13; /*0x65fc2d*/
   if ( (int)v12 <= v15 ) /*0x65fc31*/
   {
-    v16 = *(_DWORD *)&stru_87F5F0.__pad_E12[2186] - (_DWORD)vtable1; /*0x65fc39*/
+    v16 = *(_DWORD *)&stru_87F5F0.__pad_E12[2186] - (_DWORD)ptr_4; /*0x65fc39*/
     if ( (int)v14 <= (int)v13 ) /*0x65fc3b*/
       v16 = (int)v13; /*0x65fc3d*/
   }
@@ -28628,9 +28628,9 @@ _DWORD *__thiscall Team_Load_65FB80(ObjectClass *this, int a2, int a3)
   {
     v16 = (int)v12; /*0x65fc33*/
   }
-  if ( (int)vtable1 <= v16 ) /*0x65fc41*/
+  if ( (int)ptr_4 <= v16 ) /*0x65fc41*/
   {
-    v17 = *(_DWORD *)&stru_87F5F0.__pad_E12[2186] - (_DWORD)vtable1; /*0x65fc4b*/
+    v17 = *(_DWORD *)&stru_87F5F0.__pad_E12[2186] - (_DWORD)ptr_4; /*0x65fc4b*/
     if ( (int)v14 <= (int)v13 ) /*0x65fc4d*/
       v17 = (int)v13; /*0x65fc4f*/
     if ( (int)v12 <= v17 ) /*0x65fc53*/

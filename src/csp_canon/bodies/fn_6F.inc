@@ -161,7 +161,7 @@ void* Gap2Recv_6F2230::Team_Helper_6F2230(int a2, int a3) {
   this->Capacity = a2; /*0x6f2240*/
   this->IsInitialized = 1; /*0x6f2243*/
   this->IsAllocated = 0; /*0x6f2247*/
-  /* X11: vtable install elided (implicit via VectorClass virtuals 0x6f224b) */
+  /* X11: ptr_0 install elided (implicit via VectorClass virtuals 0x6f224b) */
   if ( a2 ) /*0x6f2251*/
   {
     if ( a3 ) /*0x6f2259*/
@@ -174,10 +174,10 @@ void* Gap2Recv_6F2230::Team_Helper_6F2230(int a2, int a3) {
       this->IsAllocated = 1; /*0x6f226f*/
     }
   }
-  /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x6f2273) */
+  /* X11: ptr_0 install elided (implicit via DynamicVectorClass virtuals 0x6f2273) */
   *((unsigned int *)this + 5) = 10; /*0x6f2279*/
   *((unsigned int *)this + 4) = 0; /*0x6f2280*/
-  return &this->vtable0; /*0x6f2289*/
+  return &this->ptr_0; /*0x6f2289*/
 
 }
 
@@ -186,12 +186,12 @@ void* Gap2Recv_6F2780::Team_Helper_6F2780(void* aP1) {
 
   void *v3; // eax
   void *v4; // eax
-  void *vtable2; // ecx
+  void *ptr_8; // ecx
   int v6; // eax
 
   if ( this == (ObjectClass *)aP1 ) /*0x6f278a*/
     return this; /*0x6f278a*/
-  (*((void (**)(ObjectClass *))this->vtable1 + 3))(this); /*0x6f278e*/
+  (*((void (**)(ObjectClass *))this->ptr_4 + 3))(this); /*0x6f278e*/
   v3 = (void *)aP1[2]; /*0x6f2791*/
   ((unsigned int *)this)[0] = v3; /*0x6f2796*/
   if ( !v3 ) /*0x6f2799*/
@@ -204,10 +204,10 @@ void* Gap2Recv_6F2780::Team_Helper_6F2780(void* aP1) {
   ((unsigned int *)this)[0] = v4; /*0x6f27ab*/
   if ( !v4 ) /*0x6f27b0*/
     return this; /*0x6f27b0*/
-  vtable2 = ((unsigned int *)this)[0]; /*0x6f27b2*/
+  ptr_8 = ((unsigned int *)this)[0]; /*0x6f27b2*/
   v6 = 0; /*0x6f27b5*/
   BYTE1(((unsigned int *)this)[0]) = 1; /*0x6f27b9*/
-  if ( (int)vtable2 <= 0 ) /*0x6f27bd*/
+  if ( (int)ptr_8 <= 0 ) /*0x6f27bd*/
     return this; /*0x6f27bd*/
   do /*0x6f27d1*/
   {
@@ -295,7 +295,7 @@ int Gap2Recv_6FD800::SpreadRadiationAreaEffect(InfantryClass * aP1) {
   int v29; // [esp+5Ch] [ebp-10h]
   int v30[3]; // [esp+60h] [ebp-Ch] BYREF
 
-  v2 = (int *)(*((int (**)(ObjectClass *, int *))this->vtable1 + 18))(this, &v24); /*0x6fd813*/
+  v2 = (int *)(*((int (**)(ObjectClass *, int *))this->ptr_4 + 18))(this, &v24); /*0x6fd813*/
   v17 = 0; /*0x6fd818*/
   v27 = *v2; /*0x6fd822*/
   v28 = v2[1]; /*0x6fd829*/

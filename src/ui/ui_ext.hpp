@@ -262,7 +262,7 @@ public:
     static int Append(void *aP0, int aP1);       // 0x556700 vt+16
     static unsigned int * Attach(void *aP0, int aP1);  // 0x5566D0 vt+20
 
-    LinkClass*  m_Next;         // 0x04 (after vtable)
+    LinkClass*  m_Next;         // 0x04 (after ptr_0)
     LinkClass*  m_Prev;         // 0x08
     int32_t     LinkClass_field_0C;       // 0x0C
 };

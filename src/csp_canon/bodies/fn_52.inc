@@ -14,7 +14,7 @@ char Gap2Recv_5202F0::ProcessTechnoSquadResponse() {
   int v2; // ecx
   ObjectClass *v3; // edi
   int *v4; // eax
-  int vtable0; // edx
+  int ptr_0; // edx
   int v6; // ebx
   int *v7; // eax
   unsigned int *v8; // ebx
@@ -62,25 +62,25 @@ char Gap2Recv_5202F0::ProcessTechnoSquadResponse() {
   v3 = (ObjectClass *)*((unsigned int *)this + 361); /*0x520329*/
   if ( (uint8_t)Object::IsAlliedWithObjectHouse((Object *)this->owner, (int)v3) ) /*0x520336*/
     return 0; /*0x52033d*/
-  v4 = (int *)(*(int (**)(ObjectClass *, unsigned int *, TechnoClass *))(v3->vtable0 + 76))(v3, v40, this); /*0x52034d*/
+  v4 = (int *)(*(int (**)(ObjectClass *, unsigned int *, TechnoClass *))(v3->ptr_0 + 76))(v3, v40, this); /*0x52034d*/
   v37 = *v4; /*0x520352*/
-  vtable0 = this->vtable0; /*0x520356*/
+  ptr_0 = this->ptr_0; /*0x520356*/
   v38 = v4[1]; /*0x52035b*/
   v6 = v4[2]; /*0x520361*/
-  v7 = (int *)(*(int (**)(TechnoClass *, unsigned int *))(vtable0 + 72))(this, v40); /*0x520369*/
+  v7 = (int *)(*(int (**)(TechnoClass *, unsigned int *))(ptr_0 + 72))(this, v40); /*0x520369*/
   v37 = *v7; /*0x52036e*/
   v38 = v7[1]; /*0x520375*/
   if ( (int)abs32(v6 - v7[2]) >= dword_A8F240 /*0x5203f1*/
-    || (v8 = (unsigned int *)(*(int (**)(ObjectClass *, unsigned int *))(v3->vtable0 + 72))(v3, v40),
-        v9 = (unsigned int *)(*(int (**)(TechnoClass *, unsigned char *))(this->vtable0 + 72))(this, v41),
+    || (v8 = (unsigned int *)(*(int (**)(ObjectClass *, unsigned int *))(v3->ptr_0 + 72))(v3, v40),
+        v9 = (unsigned int *)(*(int (**)(TechnoClass *, unsigned char *))(this->ptr_0 + 72))(this, v41),
         v10 = Coord::Subtract((Coord *)v42, *v9 - *v8, v9[1] - v8[1], v9[2] - v8[2]),
         v37 = *v10,
         v38 = v10[1],
         v39 = v10[2],
         (int)Coord::Length((Coord *)&v37) >= 128) )
   {
-    v14 = (unsigned int *)(*(int (**)(ObjectClass *, unsigned int *))(v3->vtable0 + 72))(v3, v42); /*0x52048b*/
-    v15 = (unsigned int *)(*(int (**)(TechnoClass *, unsigned char *))(this->vtable0 + 72))(this, v41); /*0x520494*/
+    v14 = (unsigned int *)(*(int (**)(ObjectClass *, unsigned int *))(v3->ptr_0 + 72))(v3, v42); /*0x52048b*/
+    v15 = (unsigned int *)(*(int (**)(TechnoClass *, unsigned char *))(this->ptr_0 + 72))(this, v41); /*0x520494*/
     v16 = Coord::Subtract((Coord *)v40, *v15 - *v14, v15[1] - v14[1], v15[2] - v14[2]); /*0x5204b4*/
     v37 = *v16; /*0x5204bb*/
     v38 = v16[1]; /*0x5204c6*/
@@ -106,7 +106,7 @@ char Gap2Recv_5202F0::ProcessTechnoSquadResponse() {
                        v42);
         v24 = *v23; /*0x520551*/
         v25 = v23[1]; /*0x520553*/
-        v26 = v3->vtable0; /*0x520559*/
+        v26 = v3->ptr_0; /*0x520559*/
         v39 = v23[2]; /*0x52055b*/
         v27 = (unsigned int *)(*(int (**)(ObjectClass *, unsigned char *))(v26 + 72))(v3, v41); /*0x520566*/
         v28 = Coord::Subtract((Coord *)v40, *v27 - v24, v27[1] - v25, v27[2] - v39); /*0x520582*/
@@ -116,7 +116,7 @@ char Gap2Recv_5202F0::ProcessTechnoSquadResponse() {
         if ( (int)Coord::Length((Coord *)&v37) <= 128 ) /*0x5205a9*/
           return 0; /*0x5205a9*/
       }
-      (*(void (**)(TechnoClass *, unsigned int, int))(this->vtable0 + 1152))(this, *((unsigned int *)this + 361), 1); /*0x5205bc*/
+      (*(void (**)(TechnoClass *, unsigned int, int))(this->ptr_0 + 1152))(this, *((unsigned int *)this + 361), 1); /*0x5205bc*/
     }
     else
     {
@@ -137,28 +137,28 @@ char Gap2Recv_5202F0::ProcessTechnoSquadResponse() {
                           v42);
         v34 = *v33 / 256; /*0x52065a*/
         v35 = v33[1] / 256; /*0x52065d*/
-        v36 = (unsigned int *)(*(int (**)(ObjectClass *, unsigned char *, TechnoClass *))(v3->vtable0 + 76))(v3, v41, this); /*0x520663*/
+        v36 = (unsigned int *)(*(int (**)(ObjectClass *, unsigned char *, TechnoClass *))(v3->ptr_0 + 76))(v3, v41, this); /*0x520663*/
         if ( (uint16_t)(*v36 / 256) == (unsigned short)v34 && (uint16_t)(v36[1] / 256) == (unsigned short)v35 ) /*0x52068c*/
           return 0; /*0x52068c*/
       }
     }
-    (*(void (**)(TechnoClass *, unsigned int, int))(this->vtable0 + 1152))(this, *((unsigned int *)this + 361), 1); /*0x52069b*/
+    (*(void (**)(TechnoClass *, unsigned int, int))(this->ptr_0 + 1152))(this, *((unsigned int *)this + 361), 1); /*0x52069b*/
     return 0; /*0x5206a4*/
   }
   attachedTag = (TeamClass *)v3->attachedTag; /*0x5203f7*/
   if ( attachedTag ) /*0x5203fc*/
     TeamClass::Update_0(attachedTag, 1, (int)this, dword_A8F1E0, 0, 0); /*0x52040c*/
-  (*(void (**)(ObjectClass *, int))(v3->vtable0 + 628))(v3, 3); /*0x520417*/
-  (*(void (**)(ObjectClass *, unsigned int))(v3->vtable0 + 220))(v3, 0); /*0x520423*/
+  (*(void (**)(ObjectClass *, int))(v3->ptr_0 + 628))(v3, 3); /*0x520417*/
+  (*(void (**)(ObjectClass *, unsigned int))(v3->ptr_0 + 220))(v3, 0); /*0x520423*/
   v12 = (TechnoClass *)this->attachedTag; /*0x520429*/
   if ( v12 ) /*0x52042e*/
   {
     if ( (uint8_t)TechnoClass::HasAnyMission(v12) ) /*0x520430*/
       ObjectClass::SetReference(v3, this->attachedTag); /*0x52043f*/
   }
-  (*(void (**)(ObjectClass *, int, int))(v3->vtable0 + 980))(v3, this->owner, 1); /*0x520451*/
+  (*(void (**)(ObjectClass *, int, int))(v3->ptr_0 + 980))(v3, this->owner, 1); /*0x520451*/
   v3[4].parachute = *(unsigned int *)(*((unsigned int *)this + 432) + 3576); /*0x520465*/
-  (*(void (**)(TechnoClass *))(this->vtable0 + 248))(this); /*0x52046d*/
+  (*(void (**)(TechnoClass *))(this->ptr_0 + 248))(this); /*0x52046d*/
   return 1; /*0x520473*/
 
 }

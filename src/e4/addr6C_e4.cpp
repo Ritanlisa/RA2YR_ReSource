@@ -635,7 +635,7 @@ LABEL_95:
       }
       SaveProfileWOL(v265.ptr_4, (const char **)&stru_B73E10.CChatEventSink_field_0x30); /*0x6c75b8*/
     }
-    /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F3F44) */  /*0x6c75c1*/
+    /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F3F44) */  /*0x6c75c1*/
     ComPtr::Release((ComPtr *)&v265); /*0x6c75c9*/
   }
   v80 = 0; /*0x6c75d2*/
@@ -723,7 +723,7 @@ LABEL_134:
   v265.attachedTag = -1; /*0x6c77ac*/
   v265.attachedBomb = -1; /*0x6c77b0*/
   memset(v265.ambientSoundController, 0, 9); /*0x6c77b4*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F0904) */  /*0x6c77c7*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F0904) */  /*0x6c77c7*/
   FileClass::SetName((BufferIOFileClass *)&v265.occupant, Filename); /*0x6c77cf*/
   FileClass::Open2((RawFileClass *)&v265.occupant, (const CHAR *)1); /*0x6c77da*/
   if ( v265.attachedBomb != -1 && GetFileTime((HANDLE)v265.attachedBomb, 0, 0, (LPFILETIME)&v265.referenceCount) ) /*0x6c77ef*/
@@ -1832,7 +1832,7 @@ unsigned int * E4Recv_6C6540::sub_6C6540(int a2, wchar_t * String, int a4, int a
   Buffer::Init(&this->u32_24, 0, 0); /*0x6c656c*/
   this->M48 = 0; /*0x6c657e*/
   this->M52 = a4; /*0x6c6585*/
-  /* X11: vtable install elided (implicit via StaticButtonClass virtuals 0x6c6588) */
+  /* X11: ptr_0 install elided (implicit via StaticButtonClass virtuals 0x6c6588) */
   StaticButtonClass::Draw(this, String, 0); /*0x6c658e*/
   if ( aP3 == -1 || aP4 == -1 ) /*0x6c659b*/
   {
@@ -2026,7 +2026,7 @@ void sub_6C6B60()
 namespace gamemd {
 void * E4Recv_6C8840::sub_6C8840(unsigned int * Block, char a2)  // G42.33 b9 hpp void* sync
 {
-  /* X11: vtable install elided (X67 star-deref, RHS g_var_5878c0) */  /*0x6c8843*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_var_5878c0) */  /*0x6c8843*/
   ComPtr::Release((ComPtr *)Block); /*0x6c8849*/
   if ( (a2 & 1) != 0 ) /*0x6c8853*/
     operator delete((Block)); /*0x6c8856*/
@@ -3073,7 +3073,7 @@ unsigned int * E4Recv_6CF8F0::sub_6CF8F0(int a2, unsigned int * a3)
   this->Capacity = a2; /*0x6cf900*/
   this->IsInitialized = 1; /*0x6cf903*/
   this->IsAllocated = 0; /*0x6cf907*/
-  /* X11: vtable install elided (implicit via VectorClass virtuals 0x6cf90a) */
+  /* X11: ptr_0 install elided (implicit via VectorClass virtuals 0x6cf90a) */
   if ( !a2 ) /*0x6cf910*/
     return &this->ptr_0; /*0x6cf910*/
   if ( !a3 ) /*0x6cf918*/

@@ -22,7 +22,7 @@ int BitTextClass::ParseFontData(char * Source, void *a2)
   
   struct tagRECT *v3; // ebp
   v3 = (struct tagRECT *)(a2 + 48); /*0x43388a*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E3A78) */  /*0x433895*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E3A78) */  /*0x433895*/
   *(unsigned int *)(a2 + 4) = 0; /*0x43389b*/
   *(unsigned short *)(a2 + 36) = 0x7FFF; /*0x43389e*/
   *(unsigned short *)(a2 + 38) = 13653; /*0x4338a4*/
@@ -70,7 +70,7 @@ namespace gamemd {
 unsigned int * BitTextClass::LoadFont()
 {
   
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E3A80) */  /*0x434ad5*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E3A80) */  /*0x434ad5*/
   int v2; // eax
   v2 = (int)(operator new(0x44u)); /*0x434adb*/
   if ( v2 ) /*0x434ae5*/

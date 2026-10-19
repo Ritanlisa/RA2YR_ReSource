@@ -677,8 +677,8 @@ int __thiscall _EnterCriticalRegionHelper_ContextBase_details_Concurrency__UAEHX
 {
   int result; // eax
 
-  result = this->vtable4 + 1; /*0x401f83*/
-  this->vtable4 = result; /*0x401f84*/
+  result = this->ptr_10 + 1; /*0x401f83*/
+  this->ptr_10 = result; /*0x401f84*/
   return result; /*0x401f87*/
 }
 
@@ -1510,7 +1510,7 @@ int __thiscall ProcessAudioMixerFrame(ObjectClass *this)
   char *v6; // ecx
   AudioChannel *v7; // ecx
   ObjectClass *v8; // edi
-  ObjectClass *vtable0; // ebx
+  ObjectClass *ptr_0; // ebx
   AudioChannel *lastLayer; // ecx
   AudioChannel *v11; // ecx
   AudioChannel *v12; // ecx
@@ -1551,7 +1551,7 @@ int __thiscall ProcessAudioMixerFrame(ObjectClass *this)
     {
       do /*0x40317d*/
       {
-        vtable0 = (ObjectClass *)v8->AbstractClass; /*0x4030de*/
+        ptr_0 = (ObjectClass *)v8->AbstractClass; /*0x4030de*/
         if ( (v8->location[2] & 1) != 0 && v8[2].? ) /*0x4030ee*/
         {
           if ( (Audio::InitChannels((char *)&v8->?), IsActive) /*0x403158*/
@@ -1565,9 +1565,9 @@ int __thiscall ProcessAudioMixerFrame(ObjectClass *this)
             (*(void (__thiscall **)(ObjectClass *))(v8[1].owningHouseIndex + 32))(v8); /*0x403170*/
           }
         }
-        v8 = vtable0; /*0x403179*/
+        v8 = ptr_0; /*0x403179*/
       }
-      while ( vtable0 != (ObjectClass *)((char *)this + 248) ); /*0x40317d*/
+      while ( ptr_0 != (ObjectClass *)((char *)this + 248) ); /*0x40317d*/
       p_bombVisible = &this->bombVisible; /*0x403183*/
     }
     v14 = (ObjectClass *)this->q03A; /*0x403187*/
@@ -4250,7 +4250,7 @@ _DWORD *__thiscall AudioController::Stop(AudioController *this)
 _DWORD *__thiscall sub_405E80(ObjectClass *this)
 {
   _DWORD *result; // eax
-  char *vtable0; // esi
+  char *ptr_0; // esi
   int v3; // ecx
   int v4; // ecx
   int v5; // ebp
@@ -4262,11 +4262,11 @@ _DWORD *__thiscall sub_405E80(ObjectClass *this)
   {
     if ( this->? == &dword_87E294 ) /*0x405ea1*/
     {
-      vtable0 = (char *)this->AbstractClass; /*0x405ea7*/
+      ptr_0 = (char *)this->AbstractClass; /*0x405ea7*/
       if ( this->AbstractClass ) /*0x405ea7*/
       {
-        v3 = *((_DWORD *)vtable0 + 9); /*0x405eb1*/
-        if ( result[2] != v3 || result[1] != *((_DWORD *)vtable0 + 78) ) /*0x405eca*/
+        v3 = *((_DWORD *)ptr_0 + 9); /*0x405eb1*/
+        if ( result[2] != v3 || result[1] != *((_DWORD *)ptr_0 + 78) ) /*0x405eca*/
         {
 LABEL_19:
           *result = 0; /*0x405fc1*/
@@ -4274,28 +4274,28 @@ LABEL_19:
         }
         if ( (*(_BYTE *)(v3 + 16) & 1) != 0 && !*(_DWORD *)(v3 + 76) ) /*0x405eda*/
         {
-          if ( (vtable0[24] & 1) == 0 ) /*0x405ee7*/
+          if ( (ptr_0[24] & 1) == 0 ) /*0x405ee7*/
           {
-            v4 = *((_DWORD *)vtable0 + 44); /*0x405eed*/
-            if ( v4 && vtable0 == *(char **)(v4 + 192) ) /*0x405efd*/
+            v4 = *((_DWORD *)ptr_0 + 44); /*0x405eed*/
+            if ( v4 && ptr_0 == *(char **)(v4 + 192) ) /*0x405efd*/
             {
-              if ( (vtable0[24] & 2) != 0 ) /*0x405f03*/
+              if ( (ptr_0[24] & 2) != 0 ) /*0x405f03*/
                 Voice::Stop(v7); /*0x405f05*/
-              AudioStream::ReleaseChannel(*((AudioStream **)vtable0 + 44)); /*0x405f10*/
-              *(_DWORD *)(*((_DWORD *)vtable0 + 44) + 192) = 0; /*0x405f1b*/
-              *(_DWORD *)(*((_DWORD *)vtable0 + 44) + 188) = 0; /*0x405f27*/
-              *(_DWORD *)(*((_DWORD *)vtable0 + 44) + 180) = 0; /*0x405f33*/
-              *(_DWORD *)(*((_DWORD *)vtable0 + 44) + 184) = 0; /*0x405f3f*/
-              *(_DWORD *)(*((_DWORD *)vtable0 + 44) + 144) = 0; /*0x405f4b*/
-              *(_DWORD *)(*((_DWORD *)vtable0 + 44) + 152) = 0; /*0x405f57*/
-              *(_DWORD *)(*((_DWORD *)vtable0 + 44) + 156) = 0; /*0x405f63*/
+              AudioStream::ReleaseChannel(*((AudioStream **)ptr_0 + 44)); /*0x405f10*/
+              *(_DWORD *)(*((_DWORD *)ptr_0 + 44) + 192) = 0; /*0x405f1b*/
+              *(_DWORD *)(*((_DWORD *)ptr_0 + 44) + 188) = 0; /*0x405f27*/
+              *(_DWORD *)(*((_DWORD *)ptr_0 + 44) + 180) = 0; /*0x405f33*/
+              *(_DWORD *)(*((_DWORD *)ptr_0 + 44) + 184) = 0; /*0x405f3f*/
+              *(_DWORD *)(*((_DWORD *)ptr_0 + 44) + 144) = 0; /*0x405f4b*/
+              *(_DWORD *)(*((_DWORD *)ptr_0 + 44) + 152) = 0; /*0x405f57*/
+              *(_DWORD *)(*((_DWORD *)ptr_0 + 44) + 156) = 0; /*0x405f63*/
               result = &this->AbstractClass; /*0x405f69*/
-              *((_DWORD *)vtable0 + 44) = 0; /*0x405f6d*/
+              *((_DWORD *)ptr_0 + 44) = 0; /*0x405f6d*/
             }
             v5 = 0; /*0x405f7a*/
-            if ( *((int *)vtable0 + 42) > 0 ) /*0x405f7e*/
+            if ( *((int *)ptr_0 + 42) > 0 ) /*0x405f7e*/
             {
-              v6 = (RefCount **)(vtable0 + 40); /*0x405f80*/
+              v6 = (RefCount **)(ptr_0 + 40); /*0x405f80*/
               do /*0x405f98*/
               {
                 RefCount::Decrement(*v6); /*0x405f85*/
@@ -4303,14 +4303,14 @@ LABEL_19:
                 ++v5; /*0x405f92*/
                 ++v6; /*0x405f93*/
               }
-              while ( v5 < *((_DWORD *)vtable0 + 42) ); /*0x405f98*/
+              while ( v5 < *((_DWORD *)ptr_0 + 42) ); /*0x405f98*/
               result = &this->AbstractClass; /*0x405f9a*/
             }
-            *((_DWORD *)vtable0 + 42) = 0; /*0x405f9e*/
-            *((_DWORD *)vtable0 + 7) = 4; /*0x405fa4*/
-            *((_DWORD *)vtable0 + 78) = 0; /*0x405fab*/
-            *((_DWORD *)vtable0 + 158) = 0; /*0x405fb1*/
-            *((_DWORD *)vtable0 + 6) |= 1u; /*0x405fbd*/
+            *((_DWORD *)ptr_0 + 42) = 0; /*0x405f9e*/
+            *((_DWORD *)ptr_0 + 7) = 4; /*0x405fa4*/
+            *((_DWORD *)ptr_0 + 78) = 0; /*0x405fab*/
+            *((_DWORD *)ptr_0 + 158) = 0; /*0x405fb1*/
+            *((_DWORD *)ptr_0 + 6) |= 1u; /*0x405fbd*/
           }
           goto LABEL_19; /*0x405fbd*/
         }
@@ -7010,13 +7010,13 @@ int __thiscall Struct::ZeroInit32(Struct *this)
 // ==== 0x004085B0  ObjectClass::method_4085B0  this=ObjectClass  sig=csp ====
 int __thiscall sub_4085B0(ObjectClass *this)
 {
-  void *vtable1; // edx
+  void *ptr_4; // edx
   int result; // eax
 
-  vtable1 = this->?; /*0x4085b3*/
+  ptr_4 = this->?; /*0x4085b3*/
   result = (int)this->? * (int)this->? * this->?; /*0x4085ba*/
   this->? = result; /*0x4085c1*/
-  if ( vtable1 == (void *)1 || vtable1 == (void *)2 ) /*0x4085c9*/
+  if ( ptr_4 == (void *)1 || ptr_4 == (void *)2 ) /*0x4085c9*/
   {
     result >>= 2; /*0x4085cb*/
     this->? = result; /*0x4085ce*/
@@ -7291,7 +7291,7 @@ int __thiscall sub_408970(ObjectClass *this)
 {
   ObjectClass *v1; // edx
   char *v2; // ebx
-  void **vtable1; // esi
+  void **ptr_4; // esi
   void **p_vtable1; // edi
   _DWORD *v5; // eax
   int v6; // edx
@@ -7306,23 +7306,23 @@ int __thiscall sub_408970(ObjectClass *this)
 
   v1 = this; /*0x408973*/
   v2 = 0; /*0x408977*/
-  vtable1 = (void **)this->?; /*0x408979*/
+  ptr_4 = (void **)this->?; /*0x408979*/
   p_vtable1 = &this->?; /*0x40897c*/
-  if ( vtable1 != &this->? ) /*0x408985*/
+  if ( ptr_4 != &this->? ) /*0x408985*/
   {
     do /*0x4089ce*/
     {
-      LinkedList::Init((LinkedList *)vtable1); /*0x40898e*/
-      v5 = vtable1[12]; /*0x408993*/
-      vtable1[12] = 0; /*0x408996*/
+      LinkedList::Init((LinkedList *)ptr_4); /*0x40898e*/
+      v5 = ptr_4[12]; /*0x408993*/
+      ptr_4[12] = 0; /*0x408996*/
       v6 = v5[5]; /*0x40899b*/
       --*v5; /*0x40899f*/
-      v5[5] = v6 - (_DWORD)vtable1[7]; /*0x4089a6*/
+      v5[5] = v6 - (_DWORD)ptr_4[7]; /*0x4089a6*/
       v5[4] &= ~2u; /*0x4089ae*/
-      if ( vtable1[4] ) /*0x4089b1*/
-        __3_YAXPAX_Z(vtable1[4]); /*0x4089b9*/
-      __3_YAXPAX_Z(vtable1); /*0x4089c2*/
-      vtable1 = (void **)*p_vtable1; /*0x4089c7*/
+      if ( ptr_4[4] ) /*0x4089b1*/
+        __3_YAXPAX_Z(ptr_4[4]); /*0x4089b9*/
+      __3_YAXPAX_Z(ptr_4); /*0x4089c2*/
+      ptr_4 = (void **)*p_vtable1; /*0x4089c7*/
     }
     while ( *p_vtable1 != p_vtable1 ); /*0x4089ce*/
     v1 = this; /*0x4089d0*/
@@ -13134,7 +13134,7 @@ void *__thiscall AbstractClass::IsTechno(AbstractClass *this)
 
   if ( !this ) /*0x40dd25*/
     return 0; /*0x40dd45*/
-  switch ( (*((int (__thiscall **)(_DWORD))this->vtable0 + 11))(this) ) /*0x40dd3a*/
+  switch ( (*((int (__thiscall **)(_DWORD))this->ptr_0 + 11))(this) ) /*0x40dd3a*/
   {
     case 1: /*0x40dd3a*/
     case 2: /*0x40dd3a*/
@@ -13157,7 +13157,7 @@ void *__thiscall AbstractClass::IsTechnoType(AbstractClass *this)
 
   if ( !this ) /*0x40dd75*/
     return 0; /*0x40dd95*/
-  switch ( (*((int (__thiscall **)(_DWORD))this->vtable0 + 11))(this) ) /*0x40dd8a*/
+  switch ( (*((int (__thiscall **)(_DWORD))this->ptr_0 + 11))(this) ) /*0x40dd8a*/
   {
     case 1: /*0x40dd8a*/
     case 2: /*0x40dd8a*/
@@ -13556,7 +13556,7 @@ _DWORD *__thiscall sub_40E3E0(GenericList *this, char a2)
   int v8; // edx
   int v9; // ecx
 
-  this->vtable = &GenericList::`vftable'; /*0x40e3e6*/
+  this->ptr_0 = &GenericList::`vftable'; /*0x40e3e6*/
   while ( 1 ) /*0x40e3ec*/
   {
     v3 = *((_DWORD *)this + 2); /*0x40e3ec*/
@@ -13610,7 +13610,7 @@ _DWORD *__thiscall sub_40E3E0(GenericList *this, char a2)
   }
   if ( (a2 & 1) != 0 ) /*0x40e481*/
     __3_YAXPAX_Z(this); /*0x40e484*/
-  return &this->vtable; /*0x40e48e*/
+  return &this->ptr_0; /*0x40e48e*/
 }
 
 
@@ -13637,7 +13637,7 @@ _DWORD *__thiscall sub_40E4C0(GenericList *this, char a2)
   int v8; // edx
   int v9; // ecx
 
-  this->vtable = &GenericList::`vftable'; /*0x40e4c6*/
+  this->ptr_0 = &GenericList::`vftable'; /*0x40e4c6*/
   while ( 1 ) /*0x40e4cc*/
   {
     v3 = *((_DWORD *)this + 2); /*0x40e4cc*/
@@ -13691,7 +13691,7 @@ _DWORD *__thiscall sub_40E4C0(GenericList *this, char a2)
   }
   if ( (a2 & 1) != 0 ) /*0x40e561*/
     __3_YAXPAX_Z(this); /*0x40e564*/
-  return &this->vtable; /*0x40e56e*/
+  return &this->ptr_0; /*0x40e56e*/
 }
 
 
@@ -16331,8 +16331,8 @@ int __thiscall _EnterCriticalRegionHelper_ContextBase_details_Concurrency__UAEHX
 {
   int result; // eax
 
-  result = this->vtable4 + 1; /*0x401f83*/
-  this->vtable4 = result; /*0x401f84*/
+  result = this->ptr_10 + 1; /*0x401f83*/
+  this->ptr_10 = result; /*0x401f84*/
   return result; /*0x401f87*/
 }
 
@@ -17164,7 +17164,7 @@ int __thiscall ProcessAudioMixerFrame(ObjectClass *this)
   char *v6; // ecx
   AudioChannel *v7; // ecx
   ObjectClass *v8; // edi
-  ObjectClass *vtable0; // ebx
+  ObjectClass *ptr_0; // ebx
   AudioChannel *lastLayer; // ecx
   AudioChannel *v11; // ecx
   AudioChannel *v12; // ecx
@@ -17205,7 +17205,7 @@ int __thiscall ProcessAudioMixerFrame(ObjectClass *this)
     {
       do /*0x40317d*/
       {
-        vtable0 = (ObjectClass *)v8->AbstractClass; /*0x4030de*/
+        ptr_0 = (ObjectClass *)v8->AbstractClass; /*0x4030de*/
         if ( (v8->location[2] & 1) != 0 && v8[2].? ) /*0x4030ee*/
         {
           if ( (Audio::InitChannels((char *)&v8->?), IsActive) /*0x403158*/
@@ -17219,9 +17219,9 @@ int __thiscall ProcessAudioMixerFrame(ObjectClass *this)
             (*(void (__thiscall **)(ObjectClass *))(v8[1].owningHouseIndex + 32))(v8); /*0x403170*/
           }
         }
-        v8 = vtable0; /*0x403179*/
+        v8 = ptr_0; /*0x403179*/
       }
-      while ( vtable0 != (ObjectClass *)((char *)this + 248) ); /*0x40317d*/
+      while ( ptr_0 != (ObjectClass *)((char *)this + 248) ); /*0x40317d*/
       p_bombVisible = &this->bombVisible; /*0x403183*/
     }
     v14 = (ObjectClass *)this->q03A; /*0x403187*/
@@ -19904,7 +19904,7 @@ _DWORD *__thiscall AudioController::Stop(AudioController *this)
 _DWORD *__thiscall sub_405E80(ObjectClass *this)
 {
   _DWORD *result; // eax
-  char *vtable0; // esi
+  char *ptr_0; // esi
   int v3; // ecx
   int v4; // ecx
   int v5; // ebp
@@ -19916,11 +19916,11 @@ _DWORD *__thiscall sub_405E80(ObjectClass *this)
   {
     if ( this->? == &dword_87E294 ) /*0x405ea1*/
     {
-      vtable0 = (char *)this->AbstractClass; /*0x405ea7*/
+      ptr_0 = (char *)this->AbstractClass; /*0x405ea7*/
       if ( this->AbstractClass ) /*0x405ea7*/
       {
-        v3 = *((_DWORD *)vtable0 + 9); /*0x405eb1*/
-        if ( result[2] != v3 || result[1] != *((_DWORD *)vtable0 + 78) ) /*0x405eca*/
+        v3 = *((_DWORD *)ptr_0 + 9); /*0x405eb1*/
+        if ( result[2] != v3 || result[1] != *((_DWORD *)ptr_0 + 78) ) /*0x405eca*/
         {
 LABEL_19:
           *result = 0; /*0x405fc1*/
@@ -19928,28 +19928,28 @@ LABEL_19:
         }
         if ( (*(_BYTE *)(v3 + 16) & 1) != 0 && !*(_DWORD *)(v3 + 76) ) /*0x405eda*/
         {
-          if ( (vtable0[24] & 1) == 0 ) /*0x405ee7*/
+          if ( (ptr_0[24] & 1) == 0 ) /*0x405ee7*/
           {
-            v4 = *((_DWORD *)vtable0 + 44); /*0x405eed*/
-            if ( v4 && vtable0 == *(char **)(v4 + 192) ) /*0x405efd*/
+            v4 = *((_DWORD *)ptr_0 + 44); /*0x405eed*/
+            if ( v4 && ptr_0 == *(char **)(v4 + 192) ) /*0x405efd*/
             {
-              if ( (vtable0[24] & 2) != 0 ) /*0x405f03*/
+              if ( (ptr_0[24] & 2) != 0 ) /*0x405f03*/
                 Voice::Stop(v7); /*0x405f05*/
-              AudioStream::ReleaseChannel(*((AudioStream **)vtable0 + 44)); /*0x405f10*/
-              *(_DWORD *)(*((_DWORD *)vtable0 + 44) + 192) = 0; /*0x405f1b*/
-              *(_DWORD *)(*((_DWORD *)vtable0 + 44) + 188) = 0; /*0x405f27*/
-              *(_DWORD *)(*((_DWORD *)vtable0 + 44) + 180) = 0; /*0x405f33*/
-              *(_DWORD *)(*((_DWORD *)vtable0 + 44) + 184) = 0; /*0x405f3f*/
-              *(_DWORD *)(*((_DWORD *)vtable0 + 44) + 144) = 0; /*0x405f4b*/
-              *(_DWORD *)(*((_DWORD *)vtable0 + 44) + 152) = 0; /*0x405f57*/
-              *(_DWORD *)(*((_DWORD *)vtable0 + 44) + 156) = 0; /*0x405f63*/
+              AudioStream::ReleaseChannel(*((AudioStream **)ptr_0 + 44)); /*0x405f10*/
+              *(_DWORD *)(*((_DWORD *)ptr_0 + 44) + 192) = 0; /*0x405f1b*/
+              *(_DWORD *)(*((_DWORD *)ptr_0 + 44) + 188) = 0; /*0x405f27*/
+              *(_DWORD *)(*((_DWORD *)ptr_0 + 44) + 180) = 0; /*0x405f33*/
+              *(_DWORD *)(*((_DWORD *)ptr_0 + 44) + 184) = 0; /*0x405f3f*/
+              *(_DWORD *)(*((_DWORD *)ptr_0 + 44) + 144) = 0; /*0x405f4b*/
+              *(_DWORD *)(*((_DWORD *)ptr_0 + 44) + 152) = 0; /*0x405f57*/
+              *(_DWORD *)(*((_DWORD *)ptr_0 + 44) + 156) = 0; /*0x405f63*/
               result = &this->AbstractClass; /*0x405f69*/
-              *((_DWORD *)vtable0 + 44) = 0; /*0x405f6d*/
+              *((_DWORD *)ptr_0 + 44) = 0; /*0x405f6d*/
             }
             v5 = 0; /*0x405f7a*/
-            if ( *((int *)vtable0 + 42) > 0 ) /*0x405f7e*/
+            if ( *((int *)ptr_0 + 42) > 0 ) /*0x405f7e*/
             {
-              v6 = (RefCount **)(vtable0 + 40); /*0x405f80*/
+              v6 = (RefCount **)(ptr_0 + 40); /*0x405f80*/
               do /*0x405f98*/
               {
                 RefCount::Decrement(*v6); /*0x405f85*/
@@ -19957,14 +19957,14 @@ LABEL_19:
                 ++v5; /*0x405f92*/
                 ++v6; /*0x405f93*/
               }
-              while ( v5 < *((_DWORD *)vtable0 + 42) ); /*0x405f98*/
+              while ( v5 < *((_DWORD *)ptr_0 + 42) ); /*0x405f98*/
               result = &this->AbstractClass; /*0x405f9a*/
             }
-            *((_DWORD *)vtable0 + 42) = 0; /*0x405f9e*/
-            *((_DWORD *)vtable0 + 7) = 4; /*0x405fa4*/
-            *((_DWORD *)vtable0 + 78) = 0; /*0x405fab*/
-            *((_DWORD *)vtable0 + 158) = 0; /*0x405fb1*/
-            *((_DWORD *)vtable0 + 6) |= 1u; /*0x405fbd*/
+            *((_DWORD *)ptr_0 + 42) = 0; /*0x405f9e*/
+            *((_DWORD *)ptr_0 + 7) = 4; /*0x405fa4*/
+            *((_DWORD *)ptr_0 + 78) = 0; /*0x405fab*/
+            *((_DWORD *)ptr_0 + 158) = 0; /*0x405fb1*/
+            *((_DWORD *)ptr_0 + 6) |= 1u; /*0x405fbd*/
           }
           goto LABEL_19; /*0x405fbd*/
         }
@@ -22664,13 +22664,13 @@ int __thiscall Struct::ZeroInit32(Struct *this)
 // ==== 0x004085B0  ObjectClass::method_4085B0  this=ObjectClass  sig=csp ====
 int __thiscall sub_4085B0(ObjectClass *this)
 {
-  void *vtable1; // edx
+  void *ptr_4; // edx
   int result; // eax
 
-  vtable1 = this->?; /*0x4085b3*/
+  ptr_4 = this->?; /*0x4085b3*/
   result = (int)this->? * (int)this->? * this->?; /*0x4085ba*/
   this->? = result; /*0x4085c1*/
-  if ( vtable1 == (void *)1 || vtable1 == (void *)2 ) /*0x4085c9*/
+  if ( ptr_4 == (void *)1 || ptr_4 == (void *)2 ) /*0x4085c9*/
   {
     result >>= 2; /*0x4085cb*/
     this->? = result; /*0x4085ce*/
@@ -22945,7 +22945,7 @@ int __thiscall sub_408970(ObjectClass *this)
 {
   ObjectClass *v1; // edx
   char *v2; // ebx
-  void **vtable1; // esi
+  void **ptr_4; // esi
   void **p_vtable1; // edi
   _DWORD *v5; // eax
   int v6; // edx
@@ -22960,23 +22960,23 @@ int __thiscall sub_408970(ObjectClass *this)
 
   v1 = this; /*0x408973*/
   v2 = 0; /*0x408977*/
-  vtable1 = (void **)this->?; /*0x408979*/
+  ptr_4 = (void **)this->?; /*0x408979*/
   p_vtable1 = &this->?; /*0x40897c*/
-  if ( vtable1 != &this->? ) /*0x408985*/
+  if ( ptr_4 != &this->? ) /*0x408985*/
   {
     do /*0x4089ce*/
     {
-      LinkedList::Init((LinkedList *)vtable1); /*0x40898e*/
-      v5 = vtable1[12]; /*0x408993*/
-      vtable1[12] = 0; /*0x408996*/
+      LinkedList::Init((LinkedList *)ptr_4); /*0x40898e*/
+      v5 = ptr_4[12]; /*0x408993*/
+      ptr_4[12] = 0; /*0x408996*/
       v6 = v5[5]; /*0x40899b*/
       --*v5; /*0x40899f*/
-      v5[5] = v6 - (_DWORD)vtable1[7]; /*0x4089a6*/
+      v5[5] = v6 - (_DWORD)ptr_4[7]; /*0x4089a6*/
       v5[4] &= ~2u; /*0x4089ae*/
-      if ( vtable1[4] ) /*0x4089b1*/
-        __3_YAXPAX_Z(vtable1[4]); /*0x4089b9*/
-      __3_YAXPAX_Z(vtable1); /*0x4089c2*/
-      vtable1 = (void **)*p_vtable1; /*0x4089c7*/
+      if ( ptr_4[4] ) /*0x4089b1*/
+        __3_YAXPAX_Z(ptr_4[4]); /*0x4089b9*/
+      __3_YAXPAX_Z(ptr_4); /*0x4089c2*/
+      ptr_4 = (void **)*p_vtable1; /*0x4089c7*/
     }
     while ( *p_vtable1 != p_vtable1 ); /*0x4089ce*/
     v1 = this; /*0x4089d0*/
@@ -28788,7 +28788,7 @@ void *__thiscall AbstractClass::IsTechno(AbstractClass *this)
 
   if ( !this ) /*0x40dd25*/
     return 0; /*0x40dd45*/
-  switch ( (*((int (__thiscall **)(_DWORD))this->vtable0 + 11))(this) ) /*0x40dd3a*/
+  switch ( (*((int (__thiscall **)(_DWORD))this->ptr_0 + 11))(this) ) /*0x40dd3a*/
   {
     case 1: /*0x40dd3a*/
     case 2: /*0x40dd3a*/
@@ -28811,7 +28811,7 @@ void *__thiscall AbstractClass::IsTechnoType(AbstractClass *this)
 
   if ( !this ) /*0x40dd75*/
     return 0; /*0x40dd95*/
-  switch ( (*((int (__thiscall **)(_DWORD))this->vtable0 + 11))(this) ) /*0x40dd8a*/
+  switch ( (*((int (__thiscall **)(_DWORD))this->ptr_0 + 11))(this) ) /*0x40dd8a*/
   {
     case 1: /*0x40dd8a*/
     case 2: /*0x40dd8a*/
@@ -29210,7 +29210,7 @@ _DWORD *__thiscall sub_40E3E0(GenericList *this, char a2)
   int v8; // edx
   int v9; // ecx
 
-  this->vtable = &GenericList::`vftable'; /*0x40e3e6*/
+  this->ptr_0 = &GenericList::`vftable'; /*0x40e3e6*/
   while ( 1 ) /*0x40e3ec*/
   {
     v3 = *((_DWORD *)this + 2); /*0x40e3ec*/
@@ -29264,7 +29264,7 @@ _DWORD *__thiscall sub_40E3E0(GenericList *this, char a2)
   }
   if ( (a2 & 1) != 0 ) /*0x40e481*/
     __3_YAXPAX_Z(this); /*0x40e484*/
-  return &this->vtable; /*0x40e48e*/
+  return &this->ptr_0; /*0x40e48e*/
 }
 
 
@@ -29291,7 +29291,7 @@ _DWORD *__thiscall sub_40E4C0(GenericList *this, char a2)
   int v8; // edx
   int v9; // ecx
 
-  this->vtable = &GenericList::`vftable'; /*0x40e4c6*/
+  this->ptr_0 = &GenericList::`vftable'; /*0x40e4c6*/
   while ( 1 ) /*0x40e4cc*/
   {
     v3 = *((_DWORD *)this + 2); /*0x40e4cc*/
@@ -29345,7 +29345,7 @@ _DWORD *__thiscall sub_40E4C0(GenericList *this, char a2)
   }
   if ( (a2 & 1) != 0 ) /*0x40e561*/
     __3_YAXPAX_Z(this); /*0x40e564*/
-  return &this->vtable; /*0x40e56e*/
+  return &this->ptr_0; /*0x40e56e*/
 }
 
 

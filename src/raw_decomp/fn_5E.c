@@ -899,21 +899,21 @@ LABEL_5:
 int __thiscall Network::processQueue(Network *this)
 {
   int result; // eax
-  Network **vtable3; // esi
+  Network **ptr_C; // esi
   int nextArrayIndex; // edi
   Network *v4; // edx
 
   result = 0; /*0x5e2ba6*/
   if ( stru_A80220.? > 0 ) /*0x5e2baa*/
   {
-    vtable3 = (Network **)stru_A80220.?; /*0x5e2bae*/
+    ptr_C = (Network **)stru_A80220.?; /*0x5e2bae*/
     nextArrayIndex = stru_A80220.?; /*0x5e2bb5*/
     do /*0x5e2bda*/
     {
-      v4 = *vtable3; /*0x5e2bb7*/
-      if ( *vtable3 && v4->__pad_1AA[66] && !v4->Network_field_0x1F5[0] && v4 != this ) /*0x5e2bd3*/
+      v4 = *ptr_C; /*0x5e2bb7*/
+      if ( *ptr_C && v4->__pad_1AA[66] && !v4->Network_field_0x1F5[0] && v4 != this ) /*0x5e2bd3*/
         ++result; /*0x5e2bd5*/
-      ++vtable3; /*0x5e2bd6*/
+      ++ptr_C; /*0x5e2bd6*/
       --nextArrayIndex; /*0x5e2bd9*/
     }
     while ( nextArrayIndex ); /*0x5e2bda*/
@@ -3287,10 +3287,10 @@ int __thiscall MapPreview::Upload(MapPreview *this)
           Buffer,
           "%c%d,%d,%d,%d,%d",
           87,
-          dword_A8B230[122].vtable3,
+          dword_A8B230[122].ptr_C,
           dword_A8B230[122].uniqueId,
-          dword_A8B230[122].vtable1,
-          dword_A8B230[122].vtable2,
+          dword_A8B230[122].ptr_4,
+          dword_A8B230[122].ptr_8,
           dword_A8B230[122].abstractFlags);
         for ( i = 0; i < 8; ++i ) /*0x5e7f36*/
         {
@@ -7190,7 +7190,7 @@ void __fastcall SetupMultiplayerLobbyScreen(MultiplayerLobby *hDlg, void *a2, in
   char v7; // bl
   int v8; // eax
   int v9; // edi
-  int vtable1; // esi
+  int ptr_4; // esi
   int v11; // eax
   int ResourceID2CSF; // esi
   HWND DlgItem; // eax
@@ -7262,14 +7262,14 @@ void __fastcall SetupMultiplayerLobbyScreen(MultiplayerLobby *hDlg, void *a2, in
     dword_AC11CC = 0; /*0x5ec47a*/
   }
   v9 = v23 - dword_831700; /*0x5ec493*/
-  vtable1 = 0; /*0x5ec495*/
+  ptr_4 = 0; /*0x5ec495*/
   v24.? = 0; /*0x5ec499*/
   if ( !g_MPCooperativeState ) /*0x5ec49d*/
   {
     if ( v7 ) /*0x5ec4a1*/
     {
 LABEL_40:
-      vtable1 = 1; /*0x5ec4f1*/
+      ptr_4 = 1; /*0x5ec4f1*/
       v24.? = (void *)1; /*0x5ec4fd*/
       if ( !dword_AC11CC && v9 + v23 < 7 ) /*0x5ec50d*/
         ++v9; /*0x5ec50f*/
@@ -7314,18 +7314,18 @@ LABEL_43:
     ResourceIDCSF = GetResourceIDCSF(0); /*0x5ec560*/
     FillListBox((HWND)hDlg, ResourceIDCSF); /*0x5ec566*/
     SetupSkirmishSpawnLocations((HWND)hDlg, ResourceIDCSF, 8); /*0x5ec571*/
-    vtable1 = (int)v24.?; /*0x5ec576*/
+    ptr_4 = (int)v24.?; /*0x5ec576*/
   }
   if ( v9 <= 0 )
   {
     if ( v9 >= 0 )
     {
-      if ( vtable1 + v23 >= 7 ) /*0x5ec6b9*/
+      if ( ptr_4 + v23 >= 7 ) /*0x5ec6b9*/
         SetupMultiplayerLobbyScreen_Setup((HWND)hDlg, 7, 1); /*0x5ec6c4*/
     }
     else
     {
-      v15 = vtable1 + v23; /*0x5ec5a3*/
+      v15 = ptr_4 + v23; /*0x5ec5a3*/
       if ( *(_DWORD *)&dword_A8B238 == 4 ) /*0x5ec5a6*/
       {
         if ( !Network::IsMultiplayerActive() || Network::IsLobbyFeature() ) /*0x5ec5b1*/
@@ -7337,7 +7337,7 @@ LABEL_43:
       {
         v16 = 8; /*0x5ec5c8*/
       }
-      v17 = (ObjectClass *)(vtable1 + v23); /*0x5ec5d0*/
+      v17 = (ObjectClass *)(ptr_4 + v23); /*0x5ec5d0*/
       if ( v15 < 8 )
       {
         do
@@ -7396,7 +7396,7 @@ LABEL_43:
       else
         RetVtableStubZero_eax_27(); /*0x5ec69b*/
       CheckGameSettingsChanged(1, 0); /*0x5ec690*/
-      vtable1 = (int)v24.?; /*0x5ec695*/
+      ptr_4 = (int)v24.?; /*0x5ec695*/
     }
   }
   else
@@ -7447,19 +7447,19 @@ LABEL_43:
       }
       else
       {
-        dword_AC11CC = vtable1; /*0x5ec867*/
+        dword_AC11CC = ptr_4; /*0x5ec867*/
         dword_831700 = v23; /*0x5ec86f*/
       }
     }
     else
     {
-      dword_AC11CC = vtable1; /*0x5ec84b*/
+      dword_AC11CC = ptr_4; /*0x5ec84b*/
       dword_831700 = v23; /*0x5ec853*/
     }
   }
   else
   {
-    dword_AC11CC = vtable1; /*0x5ec830*/
+    dword_AC11CC = ptr_4; /*0x5ec830*/
     dword_831700 = v23; /*0x5ec838*/
   }
 }
@@ -9686,9 +9686,9 @@ _DWORD *__thiscall VectorClass_cptr_MultiMission::Constructor(_DynamicVectorClas
 // ==== 0x005EEF60  ObjectClass::String_Process  this=ObjectClass  sig=csp ====
 void __thiscall String_Process(ObjectClass *this)
 {
-  unsigned int vtable2; // esi
-  int *vtable0; // ebp
-  char *vtable3; // edi
+  unsigned int ptr_8; // esi
+  int *ptr_0; // ebp
+  char *ptr_C; // edi
   void *v5; // edi
   unsigned int v6; // edx
   int *v7; // edi
@@ -9699,22 +9699,22 @@ void __thiscall String_Process(ObjectClass *this)
   int v12; // eax
   int *v13; // [esp+8h] [ebp-4h]
 
-  vtable2 = (unsigned int)this->?; /*0x5eef65*/
-  if ( (ObjectClass *)vtable2 > this->nextObject && LOBYTE(this->?) != 1 ) /*0x5eef77*/
+  ptr_8 = (unsigned int)this->?; /*0x5eef65*/
+  if ( (ObjectClass *)ptr_8 > this->nextObject && LOBYTE(this->?) != 1 ) /*0x5eef77*/
   {
-    vtable0 = (int *)this->AbstractClass; /*0x5eef80*/
-    vtable3 = (char *)this->?; /*0x5eef83*/
+    ptr_0 = (int *)this->AbstractClass; /*0x5eef80*/
+    ptr_C = (char *)this->?; /*0x5eef83*/
     v13 = (int *)this->AbstractClass; /*0x5eef86*/
-    this->? = (void *)(vtable2 >> 1); /*0x5eef8c*/
-    this->? = vtable3 - 1; /*0x5eef94*/
-    v5 = (void *)__2_YAPAXI_Z(4 * (vtable2 >> 1)); /*0x5eef9f*/
+    this->? = (void *)(ptr_8 >> 1); /*0x5eef8c*/
+    this->? = ptr_C - 1; /*0x5eef94*/
+    v5 = (void *)__2_YAPAXI_Z(4 * (ptr_8 >> 1)); /*0x5eef9f*/
     v6 = 4 * (int)this->?; /*0x5eefa4*/
     this->AbstractClass = v5; /*0x5eefab*/
     memset(v5, 0, v6); /*0x5eefb0*/
-    if ( (int)vtable2 > 0 ) /*0x5eefbb*/
+    if ( (int)ptr_8 > 0 ) /*0x5eefbb*/
     {
-      v7 = vtable0; /*0x5eefbd*/
-      v8 = vtable2; /*0x5eefbf*/
+      v7 = ptr_0; /*0x5eefbd*/
+      v8 = ptr_8; /*0x5eefbf*/
       do /*0x5eeff3*/
       {
         v9 = *v7; /*0x5eefc1*/
@@ -9735,9 +9735,9 @@ void __thiscall String_Process(ObjectClass *this)
         --v8; /*0x5eeff2*/
       }
       while ( v8 ); /*0x5eeff3*/
-      vtable0 = v13; /*0x5eeff5*/
+      ptr_0 = v13; /*0x5eeff5*/
     }
-    __3_YAXPAX_Z(vtable0); /*0x5eeffa*/
+    __3_YAXPAX_Z(ptr_0); /*0x5eeffa*/
   }
 }
 
@@ -9746,8 +9746,8 @@ void __thiscall String_Process(ObjectClass *this)
 // ==== 0x005EF010  ObjectClass::Map_Helper_5EF010  this=ObjectClass  sig=csp ====
 void __thiscall Map_Helper_5EF010(ObjectClass *this)
 {
-  int vtable2; // esi
-  _DWORD *vtable0; // ebp
+  int ptr_8; // esi
+  _DWORD *ptr_0; // ebp
   char *v4; // edi
   void *v5; // edi
   unsigned int v6; // edx
@@ -9761,20 +9761,20 @@ void __thiscall Map_Helper_5EF010(ObjectClass *this)
 
   if ( LOBYTE(this->?) != 1 ) /*0x5ef018*/
   {
-    vtable2 = (int)this->?; /*0x5ef020*/
-    vtable0 = this->AbstractClass; /*0x5ef023*/
+    ptr_8 = (int)this->?; /*0x5ef020*/
+    ptr_0 = this->AbstractClass; /*0x5ef023*/
     v4 = (char *)this->? + 1; /*0x5ef02c*/
-    this->? = (void *)(2 * vtable2); /*0x5ef02d*/
-    v13 = vtable0; /*0x5ef030*/
+    this->? = (void *)(2 * ptr_8); /*0x5ef02d*/
+    v13 = ptr_0; /*0x5ef030*/
     this->? = v4; /*0x5ef038*/
-    v5 = (void *)__2_YAPAXI_Z(8 * vtable2); /*0x5ef043*/
+    v5 = (void *)__2_YAPAXI_Z(8 * ptr_8); /*0x5ef043*/
     v6 = 4 * (int)this->?; /*0x5ef048*/
     this->AbstractClass = v5; /*0x5ef04f*/
     memset(v5, 0, v6); /*0x5ef054*/
-    if ( vtable2 > 0 ) /*0x5ef05f*/
+    if ( ptr_8 > 0 ) /*0x5ef05f*/
     {
-      v7 = vtable0; /*0x5ef061*/
-      v8 = vtable2; /*0x5ef063*/
+      v7 = ptr_0; /*0x5ef061*/
+      v8 = ptr_8; /*0x5ef063*/
       do /*0x5ef097*/
       {
         v9 = *v7; /*0x5ef065*/
@@ -9795,9 +9795,9 @@ void __thiscall Map_Helper_5EF010(ObjectClass *this)
         --v8; /*0x5ef096*/
       }
       while ( v8 ); /*0x5ef097*/
-      vtable0 = v13; /*0x5ef099*/
+      ptr_0 = v13; /*0x5ef099*/
     }
-    __3_YAXPAX_Z(vtable0); /*0x5ef09e*/
+    __3_YAXPAX_Z(ptr_0); /*0x5ef09e*/
   }
 }
 
@@ -11505,21 +11505,21 @@ LABEL_5:
 int __thiscall Network::processQueue(Network *this)
 {
   int result; // eax
-  Network **vtable3; // esi
+  Network **ptr_C; // esi
   int nextArrayIndex; // edi
   Network *v4; // edx
 
   result = 0; /*0x5e2ba6*/
   if ( stru_A80220.? > 0 ) /*0x5e2baa*/
   {
-    vtable3 = (Network **)stru_A80220.?; /*0x5e2bae*/
+    ptr_C = (Network **)stru_A80220.?; /*0x5e2bae*/
     nextArrayIndex = stru_A80220.?; /*0x5e2bb5*/
     do /*0x5e2bda*/
     {
-      v4 = *vtable3; /*0x5e2bb7*/
-      if ( *vtable3 && v4->__pad_1AA[66] && !v4->Network_field_0x1F5[0] && v4 != this ) /*0x5e2bd3*/
+      v4 = *ptr_C; /*0x5e2bb7*/
+      if ( *ptr_C && v4->__pad_1AA[66] && !v4->Network_field_0x1F5[0] && v4 != this ) /*0x5e2bd3*/
         ++result; /*0x5e2bd5*/
-      ++vtable3; /*0x5e2bd6*/
+      ++ptr_C; /*0x5e2bd6*/
       --nextArrayIndex; /*0x5e2bd9*/
     }
     while ( nextArrayIndex ); /*0x5e2bda*/
@@ -13893,10 +13893,10 @@ int __thiscall MapPreview::Upload(MapPreview *this)
           Buffer,
           "%c%d,%d,%d,%d,%d",
           87,
-          dword_A8B230[122].vtable3,
+          dword_A8B230[122].ptr_C,
           dword_A8B230[122].uniqueId,
-          dword_A8B230[122].vtable1,
-          dword_A8B230[122].vtable2,
+          dword_A8B230[122].ptr_4,
+          dword_A8B230[122].ptr_8,
           dword_A8B230[122].abstractFlags);
         for ( i = 0; i < 8; ++i ) /*0x5e7f36*/
         {
@@ -17796,7 +17796,7 @@ void __fastcall SetupMultiplayerLobbyScreen(MultiplayerLobby *hDlg, void *a2, in
   char v7; // bl
   int v8; // eax
   int v9; // edi
-  int vtable1; // esi
+  int ptr_4; // esi
   int v11; // eax
   int ResourceID2CSF; // esi
   HWND DlgItem; // eax
@@ -17868,14 +17868,14 @@ void __fastcall SetupMultiplayerLobbyScreen(MultiplayerLobby *hDlg, void *a2, in
     dword_AC11CC = 0; /*0x5ec47a*/
   }
   v9 = v23 - dword_831700; /*0x5ec493*/
-  vtable1 = 0; /*0x5ec495*/
+  ptr_4 = 0; /*0x5ec495*/
   v24.? = 0; /*0x5ec499*/
   if ( !g_MPCooperativeState ) /*0x5ec49d*/
   {
     if ( v7 ) /*0x5ec4a1*/
     {
 LABEL_40:
-      vtable1 = 1; /*0x5ec4f1*/
+      ptr_4 = 1; /*0x5ec4f1*/
       v24.? = (void *)1; /*0x5ec4fd*/
       if ( !dword_AC11CC && v9 + v23 < 7 ) /*0x5ec50d*/
         ++v9; /*0x5ec50f*/
@@ -17920,18 +17920,18 @@ LABEL_43:
     ResourceIDCSF = GetResourceIDCSF(0); /*0x5ec560*/
     FillListBox((HWND)hDlg, ResourceIDCSF); /*0x5ec566*/
     SetupSkirmishSpawnLocations((HWND)hDlg, ResourceIDCSF, 8); /*0x5ec571*/
-    vtable1 = (int)v24.?; /*0x5ec576*/
+    ptr_4 = (int)v24.?; /*0x5ec576*/
   }
   if ( v9 <= 0 )
   {
     if ( v9 >= 0 )
     {
-      if ( vtable1 + v23 >= 7 ) /*0x5ec6b9*/
+      if ( ptr_4 + v23 >= 7 ) /*0x5ec6b9*/
         SetupMultiplayerLobbyScreen_Setup((HWND)hDlg, 7, 1); /*0x5ec6c4*/
     }
     else
     {
-      v15 = vtable1 + v23; /*0x5ec5a3*/
+      v15 = ptr_4 + v23; /*0x5ec5a3*/
       if ( *(_DWORD *)&dword_A8B238 == 4 ) /*0x5ec5a6*/
       {
         if ( !Network::IsMultiplayerActive() || Network::IsLobbyFeature() ) /*0x5ec5b1*/
@@ -17943,7 +17943,7 @@ LABEL_43:
       {
         v16 = 8; /*0x5ec5c8*/
       }
-      v17 = (ObjectClass *)(vtable1 + v23); /*0x5ec5d0*/
+      v17 = (ObjectClass *)(ptr_4 + v23); /*0x5ec5d0*/
       if ( v15 < 8 )
       {
         do
@@ -18002,7 +18002,7 @@ LABEL_43:
       else
         RetVtableStubZero_eax_27(); /*0x5ec69b*/
       CheckGameSettingsChanged(1, 0); /*0x5ec690*/
-      vtable1 = (int)v24.?; /*0x5ec695*/
+      ptr_4 = (int)v24.?; /*0x5ec695*/
     }
   }
   else
@@ -18053,19 +18053,19 @@ LABEL_43:
       }
       else
       {
-        dword_AC11CC = vtable1; /*0x5ec867*/
+        dword_AC11CC = ptr_4; /*0x5ec867*/
         dword_831700 = v23; /*0x5ec86f*/
       }
     }
     else
     {
-      dword_AC11CC = vtable1; /*0x5ec84b*/
+      dword_AC11CC = ptr_4; /*0x5ec84b*/
       dword_831700 = v23; /*0x5ec853*/
     }
   }
   else
   {
-    dword_AC11CC = vtable1; /*0x5ec830*/
+    dword_AC11CC = ptr_4; /*0x5ec830*/
     dword_831700 = v23; /*0x5ec838*/
   }
 }
@@ -20292,9 +20292,9 @@ _DWORD *__thiscall VectorClass_cptr_MultiMission::Constructor(_DynamicVectorClas
 // ==== 0x005EEF60  ObjectClass::String_Process  this=ObjectClass  sig=csp ====
 void __thiscall String_Process(ObjectClass *this)
 {
-  unsigned int vtable2; // esi
-  int *vtable0; // ebp
-  char *vtable3; // edi
+  unsigned int ptr_8; // esi
+  int *ptr_0; // ebp
+  char *ptr_C; // edi
   void *v5; // edi
   unsigned int v6; // edx
   int *v7; // edi
@@ -20305,22 +20305,22 @@ void __thiscall String_Process(ObjectClass *this)
   int v12; // eax
   int *v13; // [esp+8h] [ebp-4h]
 
-  vtable2 = (unsigned int)this->?; /*0x5eef65*/
-  if ( (ObjectClass *)vtable2 > this->nextObject && LOBYTE(this->?) != 1 ) /*0x5eef77*/
+  ptr_8 = (unsigned int)this->?; /*0x5eef65*/
+  if ( (ObjectClass *)ptr_8 > this->nextObject && LOBYTE(this->?) != 1 ) /*0x5eef77*/
   {
-    vtable0 = (int *)this->AbstractClass; /*0x5eef80*/
-    vtable3 = (char *)this->?; /*0x5eef83*/
+    ptr_0 = (int *)this->AbstractClass; /*0x5eef80*/
+    ptr_C = (char *)this->?; /*0x5eef83*/
     v13 = (int *)this->AbstractClass; /*0x5eef86*/
-    this->? = (void *)(vtable2 >> 1); /*0x5eef8c*/
-    this->? = vtable3 - 1; /*0x5eef94*/
-    v5 = (void *)__2_YAPAXI_Z(4 * (vtable2 >> 1)); /*0x5eef9f*/
+    this->? = (void *)(ptr_8 >> 1); /*0x5eef8c*/
+    this->? = ptr_C - 1; /*0x5eef94*/
+    v5 = (void *)__2_YAPAXI_Z(4 * (ptr_8 >> 1)); /*0x5eef9f*/
     v6 = 4 * (int)this->?; /*0x5eefa4*/
     this->AbstractClass = v5; /*0x5eefab*/
     memset(v5, 0, v6); /*0x5eefb0*/
-    if ( (int)vtable2 > 0 ) /*0x5eefbb*/
+    if ( (int)ptr_8 > 0 ) /*0x5eefbb*/
     {
-      v7 = vtable0; /*0x5eefbd*/
-      v8 = vtable2; /*0x5eefbf*/
+      v7 = ptr_0; /*0x5eefbd*/
+      v8 = ptr_8; /*0x5eefbf*/
       do /*0x5eeff3*/
       {
         v9 = *v7; /*0x5eefc1*/
@@ -20341,9 +20341,9 @@ void __thiscall String_Process(ObjectClass *this)
         --v8; /*0x5eeff2*/
       }
       while ( v8 ); /*0x5eeff3*/
-      vtable0 = v13; /*0x5eeff5*/
+      ptr_0 = v13; /*0x5eeff5*/
     }
-    __3_YAXPAX_Z(vtable0); /*0x5eeffa*/
+    __3_YAXPAX_Z(ptr_0); /*0x5eeffa*/
   }
 }
 
@@ -20352,8 +20352,8 @@ void __thiscall String_Process(ObjectClass *this)
 // ==== 0x005EF010  ObjectClass::Map_Helper_5EF010  this=ObjectClass  sig=csp ====
 void __thiscall Map_Helper_5EF010(ObjectClass *this)
 {
-  int vtable2; // esi
-  _DWORD *vtable0; // ebp
+  int ptr_8; // esi
+  _DWORD *ptr_0; // ebp
   char *v4; // edi
   void *v5; // edi
   unsigned int v6; // edx
@@ -20367,20 +20367,20 @@ void __thiscall Map_Helper_5EF010(ObjectClass *this)
 
   if ( LOBYTE(this->?) != 1 ) /*0x5ef018*/
   {
-    vtable2 = (int)this->?; /*0x5ef020*/
-    vtable0 = this->AbstractClass; /*0x5ef023*/
+    ptr_8 = (int)this->?; /*0x5ef020*/
+    ptr_0 = this->AbstractClass; /*0x5ef023*/
     v4 = (char *)this->? + 1; /*0x5ef02c*/
-    this->? = (void *)(2 * vtable2); /*0x5ef02d*/
-    v13 = vtable0; /*0x5ef030*/
+    this->? = (void *)(2 * ptr_8); /*0x5ef02d*/
+    v13 = ptr_0; /*0x5ef030*/
     this->? = v4; /*0x5ef038*/
-    v5 = (void *)__2_YAPAXI_Z(8 * vtable2); /*0x5ef043*/
+    v5 = (void *)__2_YAPAXI_Z(8 * ptr_8); /*0x5ef043*/
     v6 = 4 * (int)this->?; /*0x5ef048*/
     this->AbstractClass = v5; /*0x5ef04f*/
     memset(v5, 0, v6); /*0x5ef054*/
-    if ( vtable2 > 0 ) /*0x5ef05f*/
+    if ( ptr_8 > 0 ) /*0x5ef05f*/
     {
-      v7 = vtable0; /*0x5ef061*/
-      v8 = vtable2; /*0x5ef063*/
+      v7 = ptr_0; /*0x5ef061*/
+      v8 = ptr_8; /*0x5ef063*/
       do /*0x5ef097*/
       {
         v9 = *v7; /*0x5ef065*/
@@ -20401,9 +20401,9 @@ void __thiscall Map_Helper_5EF010(ObjectClass *this)
         --v8; /*0x5ef096*/
       }
       while ( v8 ); /*0x5ef097*/
-      vtable0 = v13; /*0x5ef099*/
+      ptr_0 = v13; /*0x5ef099*/
     }
-    __3_YAXPAX_Z(vtable0); /*0x5ef09e*/
+    __3_YAXPAX_Z(ptr_0); /*0x5ef09e*/
   }
 }
 

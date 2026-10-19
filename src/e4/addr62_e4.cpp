@@ -874,10 +874,10 @@ int SetupDialogRenderBuffer(int *a1, HWND a2, uint8_t a3)
       v7[2] = Rect.bottom + 1; /*0x62154f*/
       v7[1] = v9; /*0x621557*/
       v7[3] = 0; /*0x62155f*/
-      /* X11: vtable install elided (X67 star-deref, RHS XSurface_Vtable) */  /*0x621562*/
+      /* X11: ptr_0 install elided (X67 star-deref, RHS XSurface_Vtable) */  /*0x621562*/
       v7[4] = 2; /*0x621568*/
       Buffer::Init(v7 + 5, 0, 2 * v9 * v8); /*0x62156f*/
-      /* X11: vtable install elided (X67 star-deref, RHS BSurface_Vtable) */  /*0x621574*/
+      /* X11: ptr_0 install elided (X67 star-deref, RHS BSurface_Vtable) */  /*0x621574*/
     }
     else
     {
@@ -1968,7 +1968,7 @@ unsigned int * sub_627020()
       v2[2] = 0; /*0x627063*/
       *((unsigned char *)v2 + 12) = 1; /*0x627066*/
       *((unsigned char *)v2 + 13) = 0; /*0x62706a*/
-      /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E5BC4) */  /*0x62706d*/
+      /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E5BC4) */  /*0x62706d*/
       v2[5] = 10; /*0x627073*/
       v2[4] = 0; /*0x62707a*/
     }
@@ -1984,7 +1984,7 @@ unsigned int * sub_627020()
       v3[2] = 0; /*0x627095*/
       *((unsigned char *)v3 + 12) = 1; /*0x627098*/
       *((unsigned char *)v3 + 13) = 0; /*0x62709c*/
-      /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EF750) */  /*0x62709f*/
+      /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EF750) */  /*0x62709f*/
       v3[5] = 10; /*0x6270a5*/
       v3[4] = 0; /*0x6270ac*/
     }
@@ -2268,9 +2268,9 @@ AbstractClass * * DestructParticleSystemClass(ParticleSystemClass * aP0, int a2)
   AbstractClass *v15; // [esp+14h] [ebp-4h] BYREF
 
   v3 = v2; /*0x62e073*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_var_25d3a8) */  /*0x62e077*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_var_25d3a8) */  /*0x62e07d*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_var_25d3a8) */  /*0x62e084*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_25d3a8) */  /*0x62e077*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_25d3a8) */  /*0x62e07d*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_25d3a8) */  /*0x62e084*/
   v2->ptr_C = (int)&off_7EFB70; /*0x62e08b*/
   AbstractClass::AnnounceExpiredPointer(v2, 1); /*0x62e092*/
   ObjectClass::Undeploy((ObjectClass *)v3); /*0x62e099*/
@@ -2351,7 +2351,7 @@ AbstractClass * * DestructParticleSystemClass(ParticleSystemClass * aP0, int a2)
     }
   }
   v12 = v3->abstractFlags.ptr_C; /*0x62e23e*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E9D84) */  /*0x62e244*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E9D84) */  /*0x62e244*/
   if ( v12 && BYTE1(v3[5].abstractFlags) ) /*0x62e252*/
   {
     __3_YAXPAX_Z(v12); /*0x62e25b*/
@@ -2602,7 +2602,7 @@ LRESULT GetListBoxItemText(ObjectClass * aP0, WPARAM wParam, void ** a2)
 namespace gamemd {
 unsigned int * E4Recv_624080::sub_624080()
 {
-  /* X11: vtable install elided (implicit via OwnerDrawDialogControl virtuals 0x624082) */
+  /* X11: ptr_0 install elided (implicit via OwnerDrawDialogControl virtuals 0x624082) */
   return &this->ptr_0; /*0x624088*/
 }
 } // namespace gamemd
@@ -2611,7 +2611,7 @@ unsigned int * E4Recv_624080::sub_624080()
 namespace gamemd {
 void E4Recv_624090::sub_624090()
 {
-  /* X11: vtable install elided (X67 star-deref, RHS g_var_03fe96) */  /*0x624090*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_var_03fe96) */  /*0x624090*/
 }
 } // namespace gamemd
 
@@ -2896,7 +2896,7 @@ unsigned int * E4Recv_628B00::sub_628B00(int a2, unsigned char * a3)
   this->Capacity = a2; /*0x628b13*/
   this->IsInitialized = 1; /*0x628b16*/
   this->IsAllocated = 0; /*0x628b1a*/
-  /* X11: vtable install elided (implicit via VectorClass virtuals 0x628b1e) */
+  /* X11: ptr_0 install elided (implicit via VectorClass virtuals 0x628b1e) */
   if ( a2 ) /*0x628b24*/
   {
     if ( a3 ) /*0x628b2c*/
@@ -2939,7 +2939,7 @@ unsigned int * E4Recv_628B00::sub_628B00(int a2, unsigned char * a3)
       this->IsAllocated = 1; /*0x628b8b*/
     }
   }
-  /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x628b8f) */
+  /* X11: ptr_0 install elided (implicit via DynamicVectorClass virtuals 0x628b8f) */
   this->M20 = 10; /*0x628b95*/
   this->M16 = 0; /*0x628b9c*/
   return &this->ptr_0; /*0x628ba5*/

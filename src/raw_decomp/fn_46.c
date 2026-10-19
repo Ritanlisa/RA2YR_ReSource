@@ -15,10 +15,10 @@ _DWORD *__userpurge AbstractClass::queryInterface@<eax>(AbstractClass *this, _DW
   v7 = (void *)a2[1]; /*0x464a8b*/
   v8 = a2[2]; /*0x464a92*/
   GroundHeight = (void *)Cell::GetGroundHeight(&v6); /*0x464a96*/
-  this->vtable0 = v3; /*0x464aa5*/
-  this->vtable1 = v7; /*0x464aab*/
-  this->vtable2 = GroundHeight; /*0x464aaf*/
-  return &this->vtable0; /*0x464a9f*/
+  this->ptr_0 = v3; /*0x464aa5*/
+  this->ptr_4 = v7; /*0x464aab*/
+  this->ptr_8 = GroundHeight; /*0x464aaf*/
+  return &this->ptr_0; /*0x464a9f*/
 }
 
 
@@ -271,11 +271,11 @@ int __thiscall BuildingTypeClass::SaveLoad_Prefix(BuildingTypeClass *this)
   int v14; // [esp+3Ch] [ebp+8h] BYREF
 
   v1 = v13; /*0x465016*/
-  if ( v13[1].Weapon[210] && v13[1].vtable2 ) /*0x465025*/
+  if ( v13[1].Weapon[210] && v13[1].ptr_8 ) /*0x465025*/
   {
-    __3_YAXPAX_Z((void *)v13[1].vtable2); /*0x465030*/
-    v1[1].vtable2 = 0; /*0x465038*/
-    LOBYTE(v1[1].vtable3) = 0; /*0x46503e*/
+    __3_YAXPAX_Z((void *)v13[1].ptr_8); /*0x465030*/
+    v1[1].ptr_8 = 0; /*0x465038*/
+    LOBYTE(v1[1].ptr_C) = 0; /*0x46503e*/
   }
   if ( v1[1].CanBeHidden[0] && v1[1].TurretOffset ) /*0x46504c*/
   {
@@ -341,7 +341,7 @@ LABEL_32:
         SpeedType = v1[1].ChargerTurrets[15]; /*0x4651fb*/
         v1[1].UIName = 0; /*0x465210*/
         SpeedType *= 120; /*0x465219*/
-        v1[1].vtable1 = (int)&dword_89C900 + SpeedType; /*0x465228*/
+        v1[1].ptr_4 = (int)&dword_89C900 + SpeedType; /*0x465228*/
         v1[1].ChargerTurrets[8] = (int)&dword_89D368 + SpeedType; /*0x46522e*/
         ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&v1[1].UINameLabel[31]); /*0x465234*/
         ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)v1[1].ImageAllocated); /*0x465245*/
@@ -349,8 +349,8 @@ LABEL_32:
         ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v1[1].MainVoxel); /*0x465267*/
         ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v1[1].TurretVoxel); /*0x465278*/
         BuildingTypeClass::LoadVoxel((BuildingTypeClass *)v1); /*0x46527f*/
-        v1[1].vtable2 = 0; /*0x465284*/
-        LOBYTE(v1[1].vtable3) = 0; /*0x46528a*/
+        v1[1].ptr_8 = 0; /*0x465284*/
+        LOBYTE(v1[1].ptr_C) = 0; /*0x46528a*/
         v1[1].TurretOffset = 0; /*0x465290*/
         v1[1].CanBeHidden[0] = 0; /*0x465296*/
         *(_DWORD *)&v1[1].CameoFile[22] = 0; /*0x46529c*/
@@ -378,8 +378,8 @@ LABEL_32:
           result = (*(int (__stdcall **)(int, int *, int, _DWORD))(v6 + 12))(v2, &v10, 12, 0); /*0x4651b2*/
           if ( result < 0 ) /*0x4651b7*/
             break; /*0x4651b7*/
-          v7 = (int *)((char *)&v13->vtable0 + *(_DWORD *)&v1[1].Weapon[248]); /*0x4651cb*/
-          v8 = (TechnoTypeClass *)&v13->vtable3; /*0x4651cd*/
+          v7 = (int *)((char *)&v13->ptr_0 + *(_DWORD *)&v1[1].Weapon[248]); /*0x4651cb*/
+          v8 = (TechnoTypeClass *)&v13->ptr_C; /*0x4651cd*/
           ++v5; /*0x4651d0*/
           *v7 = v10; /*0x4651d1*/
           v13 = v8; /*0x4651d7*/
@@ -1693,7 +1693,7 @@ void __thiscall BulletClass::SetupVoxelTransform(BulletClass *this, int *a2, int
   float v34[12]; // [esp+A0h] [ebp-30h] BYREF
 
   _ESI = this; /*0x4680a3*/
-  if ( ((int)dword_A8B230->vtable0 & 0x1000) == 0 /*0x4680d5*/
+  if ( ((int)dword_A8B230->ptr_0 & 0x1000) == 0 /*0x4680d5*/
     || (v27 = *(_DWORD *)&this->__pad_1C[128],
         v28 = *(_DWORD *)&this->__pad_1C[132],
         v29 = *(_DWORD *)&this->__pad_1C[136],
@@ -3305,8 +3305,8 @@ _DWORD *__thiscall VectorClass_ptr_BulletClass::QueryInterface(_VectorClass_PAVB
 double *__thiscall sub_46B960(double *this, double *a2)
 {
   *this = *a2 + *this; /*0x46b96a*/
-  this->vtable2 = a2[1] + this->vtable2; /*0x46b972*/
-  this->vtable3 = a2[2] + this->vtable3; /*0x46b97b*/
+  this->ptr_8 = a2[1] + this->ptr_8; /*0x46b972*/
+  this->ptr_C = a2[2] + this->ptr_C; /*0x46b97b*/
   return this; /*0x46b97e*/
 }
 
@@ -4948,7 +4948,7 @@ char sub_46D8B0(ObjectClass *this)
   int v2; // edi
   const wchar_t **v3; // esi
   char *v4; // eax
-  unsigned __int8 (__thiscall **vtable0)(ObjectClass *, int); // esi
+  unsigned __int8 (__thiscall **ptr_0)(ObjectClass *, int); // esi
   int PlayerSide; // eax
   int v8; // [esp-4h] [ebp-10h]
 
@@ -4979,9 +4979,9 @@ char sub_46D8B0(ObjectClass *this)
     }
     else if ( dword_A8B23C ) /*0x46d92f*/
     {
-      vtable0 = (unsigned __int8 (__thiscall **)(ObjectClass *, int))dword_A8B23C->AbstractClass; /*0x46d938*/
+      ptr_0 = (unsigned __int8 (__thiscall **)(ObjectClass *, int))dword_A8B23C->AbstractClass; /*0x46d938*/
       PlayerSide = SessionClass::GetPlayerSide((int *)dword_A8DA90[v2]); /*0x46d93a*/
-      if ( !vtable0[7](dword_A8B23C, PlayerSide) ) /*0x46d946*/
+      if ( !ptr_0[7](dword_A8B23C, PlayerSide) ) /*0x46d946*/
       {
         v8 = (*((int (__thiscall **)(ObjectClass *))dword_A8B23C->AbstractClass + 10))(dword_A8B23C); /*0x46d958*/
         SessionClass::SetPlayerOption((int *)dword_A8DA90[v2], v8); /*0x46d960*/
@@ -6223,7 +6223,7 @@ LABEL_176:
       CampaignScore::FindDialogTemplate((CampaignScore *)hWnd); /*0x46f2cf*/
     }
     byte_89E05C = 0; /*0x46f2d9*/
-    ResetLobbyFactionTable((int)dword_A8B230[127].vtable2); /*0x46f2e6*/
+    ResetLobbyFactionTable((int)dword_A8B230[127].ptr_8); /*0x46f2e6*/
     return 0; /*0x46f2f7*/
   }
   if ( a2 != 2 ) /*0x46e042*/
@@ -7363,10 +7363,10 @@ _DWORD *__userpurge AbstractClass::queryInterface@<eax>(AbstractClass *this, _DW
   v7 = (void *)a2[1]; /*0x464a8b*/
   v8 = a2[2]; /*0x464a92*/
   GroundHeight = (void *)Cell::GetGroundHeight(&v6); /*0x464a96*/
-  this->vtable0 = v3; /*0x464aa5*/
-  this->vtable1 = v7; /*0x464aab*/
-  this->vtable2 = GroundHeight; /*0x464aaf*/
-  return &this->vtable0; /*0x464a9f*/
+  this->ptr_0 = v3; /*0x464aa5*/
+  this->ptr_4 = v7; /*0x464aab*/
+  this->ptr_8 = GroundHeight; /*0x464aaf*/
+  return &this->ptr_0; /*0x464a9f*/
 }
 
 
@@ -7619,11 +7619,11 @@ int __thiscall BuildingTypeClass::SaveLoad_Prefix(BuildingTypeClass *this)
   int v14; // [esp+3Ch] [ebp+8h] BYREF
 
   v1 = v13; /*0x465016*/
-  if ( v13[1].Weapon[210] && v13[1].vtable2 ) /*0x465025*/
+  if ( v13[1].Weapon[210] && v13[1].ptr_8 ) /*0x465025*/
   {
-    __3_YAXPAX_Z((void *)v13[1].vtable2); /*0x465030*/
-    v1[1].vtable2 = 0; /*0x465038*/
-    LOBYTE(v1[1].vtable3) = 0; /*0x46503e*/
+    __3_YAXPAX_Z((void *)v13[1].ptr_8); /*0x465030*/
+    v1[1].ptr_8 = 0; /*0x465038*/
+    LOBYTE(v1[1].ptr_C) = 0; /*0x46503e*/
   }
   if ( v1[1].CanBeHidden[0] && v1[1].TurretOffset ) /*0x46504c*/
   {
@@ -7689,7 +7689,7 @@ LABEL_32:
         SpeedType = v1[1].ChargerTurrets[15]; /*0x4651fb*/
         v1[1].UIName = 0; /*0x465210*/
         SpeedType *= 120; /*0x465219*/
-        v1[1].vtable1 = (int)&dword_89C900 + SpeedType; /*0x465228*/
+        v1[1].ptr_4 = (int)&dword_89C900 + SpeedType; /*0x465228*/
         v1[1].ChargerTurrets[8] = (int)&dword_89D368 + SpeedType; /*0x46522e*/
         ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&v1[1].UINameLabel[31]); /*0x465234*/
         ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)v1[1].ImageAllocated); /*0x465245*/
@@ -7697,8 +7697,8 @@ LABEL_32:
         ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v1[1].MainVoxel); /*0x465267*/
         ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v1[1].TurretVoxel); /*0x465278*/
         BuildingTypeClass::LoadVoxel((BuildingTypeClass *)v1); /*0x46527f*/
-        v1[1].vtable2 = 0; /*0x465284*/
-        LOBYTE(v1[1].vtable3) = 0; /*0x46528a*/
+        v1[1].ptr_8 = 0; /*0x465284*/
+        LOBYTE(v1[1].ptr_C) = 0; /*0x46528a*/
         v1[1].TurretOffset = 0; /*0x465290*/
         v1[1].CanBeHidden[0] = 0; /*0x465296*/
         *(_DWORD *)&v1[1].CameoFile[22] = 0; /*0x46529c*/
@@ -7726,8 +7726,8 @@ LABEL_32:
           result = (*(int (__stdcall **)(int, int *, int, _DWORD))(v6 + 12))(v2, &v10, 12, 0); /*0x4651b2*/
           if ( result < 0 ) /*0x4651b7*/
             break; /*0x4651b7*/
-          v7 = (int *)((char *)&v13->vtable0 + *(_DWORD *)&v1[1].Weapon[248]); /*0x4651cb*/
-          v8 = (TechnoTypeClass *)&v13->vtable3; /*0x4651cd*/
+          v7 = (int *)((char *)&v13->ptr_0 + *(_DWORD *)&v1[1].Weapon[248]); /*0x4651cb*/
+          v8 = (TechnoTypeClass *)&v13->ptr_C; /*0x4651cd*/
           ++v5; /*0x4651d0*/
           *v7 = v10; /*0x4651d1*/
           v13 = v8; /*0x4651d7*/
@@ -9041,7 +9041,7 @@ void __thiscall BulletClass::SetupVoxelTransform(BulletClass *this, int *a2, int
   float v34[12]; // [esp+A0h] [ebp-30h] BYREF
 
   _ESI = this; /*0x4680a3*/
-  if ( ((int)dword_A8B230->vtable0 & 0x1000) == 0 /*0x4680d5*/
+  if ( ((int)dword_A8B230->ptr_0 & 0x1000) == 0 /*0x4680d5*/
     || (v27 = *(_DWORD *)&this->__pad_1C[128],
         v28 = *(_DWORD *)&this->__pad_1C[132],
         v29 = *(_DWORD *)&this->__pad_1C[136],
@@ -10673,8 +10673,8 @@ _DWORD *__thiscall VectorClass_ptr_BulletClass::loc_46B910(_DWORD *Block, char a
 double *__thiscall sub_46B960(double *this, double *a2)
 {
   *this = *a2 + *this; /*0x46b96a*/
-  this->vtable2 = a2[1] + this->vtable2; /*0x46b972*/
-  this->vtable3 = a2[2] + this->vtable3; /*0x46b97b*/
+  this->ptr_8 = a2[1] + this->ptr_8; /*0x46b972*/
+  this->ptr_C = a2[2] + this->ptr_C; /*0x46b97b*/
   return this; /*0x46b97e*/
 }
 
@@ -12316,7 +12316,7 @@ char sub_46D8B0(ObjectClass *this)
   int v2; // edi
   const wchar_t **v3; // esi
   char *v4; // eax
-  unsigned __int8 (__thiscall **vtable0)(ObjectClass *, int); // esi
+  unsigned __int8 (__thiscall **ptr_0)(ObjectClass *, int); // esi
   int PlayerSide; // eax
   int v8; // [esp-4h] [ebp-10h]
 
@@ -12347,9 +12347,9 @@ char sub_46D8B0(ObjectClass *this)
     }
     else if ( dword_A8B23C ) /*0x46d92f*/
     {
-      vtable0 = (unsigned __int8 (__thiscall **)(ObjectClass *, int))dword_A8B23C->AbstractClass; /*0x46d938*/
+      ptr_0 = (unsigned __int8 (__thiscall **)(ObjectClass *, int))dword_A8B23C->AbstractClass; /*0x46d938*/
       PlayerSide = SessionClass::GetPlayerSide((int *)dword_A8DA90[v2]); /*0x46d93a*/
-      if ( !vtable0[7](dword_A8B23C, PlayerSide) ) /*0x46d946*/
+      if ( !ptr_0[7](dword_A8B23C, PlayerSide) ) /*0x46d946*/
       {
         v8 = (*((int (__thiscall **)(ObjectClass *))dword_A8B23C->AbstractClass + 10))(dword_A8B23C); /*0x46d958*/
         SessionClass::SetPlayerOption((int *)dword_A8DA90[v2], v8); /*0x46d960*/
@@ -13591,7 +13591,7 @@ LABEL_176:
       CampaignScore::FindDialogTemplate((CampaignScore *)hWnd); /*0x46f2cf*/
     }
     byte_89E05C = 0; /*0x46f2d9*/
-    ResetLobbyFactionTable((int)dword_A8B230[127].vtable2); /*0x46f2e6*/
+    ResetLobbyFactionTable((int)dword_A8B230[127].ptr_8); /*0x46f2e6*/
     return 0; /*0x46f2f7*/
   }
   if ( a2 != 2 ) /*0x46e042*/

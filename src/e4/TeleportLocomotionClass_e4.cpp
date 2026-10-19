@@ -37,9 +37,9 @@ TeleportLocomotionClass::TeleportLocomotionClass()
   this->Timer[2] = 0; /*0x718055*/
   this->Timer[0] = v2; /*0x718058*/
   this->Piggybackee = 0; /*0x71805b*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7F4FDC) */  /*0x71805e*/
-  /* X11: vtable install elided (implicit via TeleportLocomotionClass virtuals 0x718064) */
-  /* X11: vtable install elided (implicit via TeleportLocomotionClass virtuals 0x71806b) */
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7F4FDC) */  /*0x71805e*/
+  /* X11: ptr_0 install elided (implicit via TeleportLocomotionClass virtuals 0x718064) */
+  /* X11: ptr_0 install elided (implicit via TeleportLocomotionClass virtuals 0x71806b) */
   return (int)this->LocomotionClass; /*0x718074*/
   
 }

@@ -74,10 +74,10 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::Constructor(char *Source, void *a2, voi
   this->Warhead = 0; /*0x74ae59*/
   this->AttachedSystem = 0; /*0x74ae5f*/
   this->IsTiberium = 0; /*0x74ae65*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F651C) */  /*0x74ae6b*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F651C) */  /*0x74ae71*/
-  /* X11: vtable install elided (implicit via VoxelAnimTypeClass virtuals 0x74ae77) */
-  /* X11: vtable install elided (implicit via VoxelAnimTypeClass virtuals 0x74ae7e) */
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F651C) */  /*0x74ae6b*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F651C) */  /*0x74ae71*/
+  /* X11: ptr_0 install elided (implicit via VoxelAnimTypeClass virtuals 0x74ae77) */
+  /* X11: ptr_0 install elided (implicit via VoxelAnimTypeClass virtuals 0x74ae7e) */
   AbstractClass::GenerateUniqueID((AbstractClass *)&this->?); /*0x74ae85*/
   this->LegalTarget_d = 0; /*0x74ae8c*/
   this->IsLogic_d = 1; /*0x74ae92*/
@@ -422,7 +422,7 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
     else
       FileVXL = 0; /*0x74b5d5*/
     v4->MainVoxel = FileVXL; /*0x74b5db*/
-    /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E16B0) */  /*0x74b5e1*/
+    /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E16B0) */  /*0x74b5e1*/
     Destination.MaxFDelta = 0; /*0x74b5e9*/
     Vector::Clear((int)&Destination.MinDelay); /*0x74b5f1*/
     Destination.Header[0] = (int)&off_7E1668; /*0x74b5fa*/
@@ -475,10 +475,10 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::ddtor(void ** Block, char a2)
 {
 
 
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F651C) */  /*0x74ba36*/
-  /* X11: vtable install elided (qmark slot, RHS g_ptr_7F651C) */  /*0x74ba3c*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F651C) */  /*0x74ba43*/
-  /* X11: vtable install elided (qmark slot, RHS g_ptr_7F651C) */  /*0x74ba4a*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F651C) */  /*0x74ba36*/
+  /* X11: ptr_0 install elided (qmark slot, RHS g_ptr_7F651C) */  /*0x74ba3c*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F651C) */  /*0x74ba43*/
+  /* X11: ptr_0 install elided (qmark slot, RHS g_ptr_7F651C) */  /*0x74ba4a*/
   AbstractClass::AnnounceExpiredPointer((AbstractClass *)Block, 1); /*0x74ba51*/
   VoxelAnimTypeClass *v6; // [esp+4h] [ebp-4h] BYREF
   v6 = Block; /*0x74ba66*/
@@ -552,10 +552,10 @@ int VoxelAnimTypeClass::SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1)
     if ( aP0 ) /*0x74b82a*/
     {
       ObjectTypeClass::Construct((ObjectTypeClass *)aP0, (int)&aP1); /*0x74b833*/
-      /* X11: vtable install elided (implicit via VoxelAnimTypeClass virtuals 0x74b838) */
-      /* X11: vtable install elided (implicit via VoxelAnimTypeClass virtuals 0x74b83e) */
-      /* X11: vtable install elided (implicit via VoxelAnimTypeClass virtuals 0x74b845) */
-      /* X11: vtable install elided (implicit via VoxelAnimTypeClass virtuals 0x74b84c) */
+      /* X11: ptr_0 install elided (implicit via VoxelAnimTypeClass virtuals 0x74b838) */
+      /* X11: ptr_0 install elided (implicit via VoxelAnimTypeClass virtuals 0x74b83e) */
+      /* X11: ptr_0 install elided (implicit via VoxelAnimTypeClass virtuals 0x74b845) */
+      /* X11: ptr_0 install elided (implicit via VoxelAnimTypeClass virtuals 0x74b84c) */
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->Warhead); /*0x74b85f*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->BounceAnim); /*0x74b870*/

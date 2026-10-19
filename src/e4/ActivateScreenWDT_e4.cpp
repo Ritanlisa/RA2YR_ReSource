@@ -26,12 +26,12 @@ rc_ptr_base * ActivateScreenWDT_Create(rc_ptr_base * a1, int a2, unsigned int a3
   {
     v7 = (unsigned int *)(v5 + 8); /*0x76f488*/
     *(unsigned int *)(v5 + 4) = 0; /*0x76f48d*/
-    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7F0954) */  /*0x76f494*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7F0954) */  /*0x76f494*/
     ComPtr::Constructor((ComPtr *)(v5 + 8)); /*0x76f49a*/
-    /* X11: vtable install elided (X67 star-deref, RHS g_var_5878c0) */  /*0x76f49f*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_var_5878c0) */  /*0x76f49f*/
     ComPtr::Set(&v6->u32_8, *(unsigned int *)(a2 + 4)); /*0x76f4ab*/
     v6->u32_10 = 0; /*0x76f4b0*/
-    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7F7314) */  /*0x76f4b7*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7F7314) */  /*0x76f4b7*/
     v8 = v6->u32_C; /*0x76f4bd*/
     if ( v8 && a3 < *(unsigned int *)(v8 + 36) ) /*0x76f4ce*/
       v6->u32_10 = *(unsigned int *)(*(unsigned int *)(v8 + 68) + 4 * a3); /*0x76f4d6*/
@@ -41,7 +41,7 @@ rc_ptr_base * ActivateScreenWDT_Create(rc_ptr_base * a1, int a2, unsigned int a3
     v6 = 0; /*0x76f4db*/
   }
   ComPtr::Constructor(a1); /*0x76f4df*/
-  /* X11: vtable install elided (implicit via rc_ptr virtuals 0x76f4e6) */
+  /* X11: ptr_0 install elided (implicit via rc_ptr virtuals 0x76f4e6) */
   ComPtr::Set(a1, v6); /*0x76f4ee*/
   return a1; /*0x76f4f5*/
 }  // G42.18 ns repair

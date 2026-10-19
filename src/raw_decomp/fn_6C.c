@@ -110,9 +110,9 @@ int __thiscall TClassFactory_CampaignClass::CreateInstanceCOM(
   v7 = v6; /*0x6c015b*/
   if ( !v6 ) /*0x6c015f*/
     return -2147024882; /*0x6c0162*/
-  v8 = (*(int (__stdcall **)(AbstractClass *, _DWORD *, _DWORD *))v6->vtable0)(v6, a4, v9); /*0x6c0176*/
+  v8 = (*(int (__stdcall **)(AbstractClass *, _DWORD *, _DWORD *))v6->ptr_0)(v6, a4, v9); /*0x6c0176*/
   if ( v8 < 0 ) /*0x6c017a*/
-    (*(void (__thiscall **)(AbstractClass *, int))(v7->vtable0 + 32))(v7, 1); /*0x6c0182*/
+    (*(void (__thiscall **)(AbstractClass *, int))(v7->ptr_0 + 32))(v7, 1); /*0x6c0182*/
   return v8; /*0x6c011a*/
 }
 
@@ -619,9 +619,9 @@ int __thiscall TClassFactory_AirstrikeClass::ddtor(_TClassFactory_VAirstrikeClas
   v7 = v6; /*0x6c08d1*/
   if ( !v6 ) /*0x6c08d5*/
     return -2147024882; /*0x6c08d8*/
-  v8 = (*(int (__stdcall **)(AbstractClass *, _DWORD *, _DWORD *))v6->vtable0)(v6, a4, v9); /*0x6c08ec*/
+  v8 = (*(int (__stdcall **)(AbstractClass *, _DWORD *, _DWORD *))v6->ptr_0)(v6, a4, v9); /*0x6c08ec*/
   if ( v8 < 0 ) /*0x6c08f0*/
-    (*(void (__thiscall **)(AbstractClass *, int))(v7->vtable0 + 32))(v7, 1); /*0x6c08f8*/
+    (*(void (__thiscall **)(AbstractClass *, int))(v7->ptr_0 + 32))(v7, 1); /*0x6c08f8*/
   return v8; /*0x6c089a*/
 }
 
@@ -2037,9 +2037,9 @@ int __thiscall TClassFactory_ScriptClass::ddtor(_TClassFactory_VScriptClass *thi
   v7 = v6; /*0x6c1dd3*/
   if ( !v6 ) /*0x6c1dd7*/
     return -2147024882; /*0x6c1dda*/
-  v8 = (*(int (__stdcall **)(AbstractClass *, _DWORD *, _DWORD *))v6->vtable0)(v6, a4, v9); /*0x6c1dee*/
+  v8 = (*(int (__stdcall **)(AbstractClass *, _DWORD *, _DWORD *))v6->ptr_0)(v6, a4, v9); /*0x6c1dee*/
   if ( v8 < 0 ) /*0x6c1df2*/
-    (*(void (__thiscall **)(AbstractClass *, int))(v7->vtable0 + 32))(v7, 1); /*0x6c1dfa*/
+    (*(void (__thiscall **)(AbstractClass *, int))(v7->ptr_0 + 32))(v7, 1); /*0x6c1dfa*/
   return v8; /*0x6c1d9a*/
 }
 
@@ -7398,7 +7398,7 @@ void Audio_Read_6C6D00(ObjectClass *this)
   char *v1; // ecx
   int v2; // ebx
   char *v3; // eax
-  char *vtable2; // esi
+  char *ptr_8; // esi
   void *v5; // ebp
   char v6; // dl
   unsigned int v7; // ecx
@@ -7420,17 +7420,17 @@ void Audio_Read_6C6D00(ObjectClass *this)
       if ( v2 < (int)g_SidebarButtonState.? ) /*0x6c6d7a*/
       {
         v3 = (char *)__2_YAPAXI_Z(32776 * v2); /*0x6c6d88*/
-        vtable2 = (char *)g_SidebarButtonState.?; /*0x6c6d8d*/
+        ptr_8 = (char *)g_SidebarButtonState.?; /*0x6c6d8d*/
         v5 = v3; /*0x6c6d98*/
         if ( g_SidebarButtonState.? ) /*0x6c6d9a*/
         {
           v6 = 8 * LOBYTE(g_SidebarButtonState.AbstractClass); /*0x6c6dae*/
           v7 = (unsigned int)(32776 * (int)g_SidebarButtonState.AbstractClass) >> 2; /*0x6c6db0*/
           qmemcpy(v3, g_SidebarButtonState.?, 4 * v7); /*0x6c6db3*/
-          qmemcpy(&v3[4 * v7], &vtable2[4 * v7], v6 & 3); /*0x6c6dba*/
-          vtable2 = (char *)g_SidebarButtonState.?; /*0x6c6dbc*/
+          qmemcpy(&v3[4 * v7], &ptr_8[4 * v7], v6 & 3); /*0x6c6dba*/
+          ptr_8 = (char *)g_SidebarButtonState.?; /*0x6c6dbc*/
         }
-        __3_YAXPAX_Z(vtable2); /*0x6c6dc4*/
+        __3_YAXPAX_Z(ptr_8); /*0x6c6dc4*/
         g_SidebarButtonState.? = v5; /*0x6c6dcc*/
         g_SidebarButtonState.? = (void *)v2; /*0x6c6dd2*/
       }
@@ -7443,14 +7443,14 @@ void Audio_Read_6C6D00(ObjectClass *this)
 // ==== 0x006C6DE0  ObjectClass::Audio_Read_6C6DE0  this=ObjectClass  sig=csp ====
 void Audio_Read_6C6DE0(ObjectClass *this)
 {
-  int vtable0; // edx
-  char *vtable2; // ebx
+  int ptr_0; // edx
+  char *ptr_8; // ebx
   int v3; // ecx
   char *v4; // eax
   char *v5; // edi
   _BYTE v6[32776]; // [esp+14h] [ebp-8008h] BYREF
 
-  vtable0 = (int)g_SidebarButtonState.AbstractClass; /*0x6c6dea*/
+  ptr_0 = (int)g_SidebarButtonState.AbstractClass; /*0x6c6dea*/
   *(_DWORD *)v6 = 0; /*0x6c6df8*/
   *(_DWORD *)&v6[4] = 0; /*0x6c6dfc*/
   if ( g_SidebarButtonState.AbstractClass ) /*0x6c6e00*/
@@ -7458,30 +7458,30 @@ void Audio_Read_6C6DE0(ObjectClass *this)
     if ( (int)g_SidebarButtonState.AbstractClass > 0 ) /*0x6c6e06*/
     {
       Audio_Read_6C6B00((ObjectClass *)v6, (_DWORD *)g_SidebarButtonState.?); /*0x6c6e12*/
-      vtable0 = (int)g_SidebarButtonState.AbstractClass; /*0x6c6e17*/
+      ptr_0 = (int)g_SidebarButtonState.AbstractClass; /*0x6c6e17*/
     }
 LABEL_4:
-    vtable2 = (char *)g_SidebarButtonState.?; /*0x6c6e1d*/
+    ptr_8 = (char *)g_SidebarButtonState.?; /*0x6c6e1d*/
     while ( *(int *)&v6[4] < 1 || *(int *)v6 > 10 ) /*0x6c6e31*/
     {
       v3 = 0; /*0x6c6e37*/
-      if ( !vtable0 ) /*0x6c6e3b*/
+      if ( !ptr_0 ) /*0x6c6e3b*/
         return; /*0x6c6e3b*/
-      if ( vtable0 <= 0 ) /*0x6c6e41*/
-        v3 = vtable0 - 1; /*0x6c6e43*/
-      memcpy(&vtable2[32776 * v3], &vtable2[32776 * v3 + 32776], 32776 * vtable0 - 32776 * (v3 + 1)); /*0x6c6e6e*/
-      vtable0 = (int)g_SidebarButtonState.AbstractClass - 1; /*0x6c6e81*/
-      g_SidebarButtonState.AbstractClass = (void *)vtable0; /*0x6c6e82*/
-      if ( 3 * vtable0 <= (int)g_SidebarButtonState.? ) /*0x6c6e8d*/
+      if ( ptr_0 <= 0 ) /*0x6c6e41*/
+        v3 = ptr_0 - 1; /*0x6c6e43*/
+      memcpy(&ptr_8[32776 * v3], &ptr_8[32776 * v3 + 32776], 32776 * ptr_0 - 32776 * (v3 + 1)); /*0x6c6e6e*/
+      ptr_0 = (int)g_SidebarButtonState.AbstractClass - 1; /*0x6c6e81*/
+      g_SidebarButtonState.AbstractClass = (void *)ptr_0; /*0x6c6e82*/
+      if ( 3 * ptr_0 <= (int)g_SidebarButtonState.? ) /*0x6c6e8d*/
       {
         Audio_Read_6C8870(&g_SidebarButtonState); /*0x6c6e94*/
-        vtable0 = (int)g_SidebarButtonState.AbstractClass; /*0x6c6e99*/
+        ptr_0 = (int)g_SidebarButtonState.AbstractClass; /*0x6c6e99*/
       }
-      if ( !vtable0 ) /*0x6c6ea1*/
+      if ( !ptr_0 ) /*0x6c6ea1*/
         return; /*0x6c6ea1*/
-      if ( vtable0 <= 0 ) /*0x6c6ea7*/
+      if ( ptr_0 <= 0 ) /*0x6c6ea7*/
         goto LABEL_4; /*0x6c6ea7*/
-      vtable2 = (char *)g_SidebarButtonState.?; /*0x6c6ead*/
+      ptr_8 = (char *)g_SidebarButtonState.?; /*0x6c6ead*/
       *(_DWORD *)v6 = *(_DWORD *)g_SidebarButtonState.?; /*0x6c6eb5*/
       *(_DWORD *)&v6[4] = *((_DWORD *)g_SidebarButtonState.? + 1); /*0x6c6ec2*/
       if ( *(int *)&v6[4] <= 0x8000 ) /*0x6c6ec6*/
@@ -7610,27 +7610,27 @@ _DWORD *__thiscall sub_6C8840(rc_ptr *this, char a2)
 // ==== 0x006C8870  ObjectClass::Audio_Read_6C8870  this=ObjectClass  sig=csp ====
 char __thiscall Audio_Read_6C8870(ObjectClass *this)
 {
-  void *vtable0; // eax
-  int vtable1; // ecx
+  void *ptr_0; // eax
+  int ptr_4; // ecx
   int v5; // ebx
   void *v6; // eax
-  void *vtable2; // esi
+  void *ptr_8; // esi
   void *v8; // [esp+8h] [ebp-4h]
 
-  vtable0 = this->AbstractClass; /*0x6c8875*/
-  vtable1 = (int)this->?; /*0x6c8878*/
-  if ( 3 * (int)vtable0 > vtable1 ) /*0x6c8880*/
+  ptr_0 = this->AbstractClass; /*0x6c8875*/
+  ptr_4 = (int)this->?; /*0x6c8878*/
+  if ( 3 * (int)ptr_0 > ptr_4 ) /*0x6c8880*/
     return 0; /*0x6c8883*/
-  v5 = vtable1 / 2; /*0x6c888f*/
-  if ( vtable1 / 2 < 10 ) /*0x6c8894*/
+  v5 = ptr_4 / 2; /*0x6c888f*/
+  if ( ptr_4 / 2 < 10 ) /*0x6c8894*/
     v5 = 10; /*0x6c8896*/
-  if ( v5 >= vtable1 ) /*0x6c889d*/
+  if ( v5 >= ptr_4 ) /*0x6c889d*/
     return 0; /*0x6c88a0*/
   v6 = (void *)__2_YAPAXI_Z(32776 * v5); /*0x6c88b1*/
-  vtable2 = this->?; /*0x6c88b6*/
+  ptr_8 = this->?; /*0x6c88b6*/
   v8 = v6; /*0x6c88be*/
-  if ( vtable2 ) /*0x6c88c2*/
-    qmemcpy(v6, vtable2, 32776 * (int)this->AbstractClass); /*0x6c88d9*/
+  if ( ptr_8 ) /*0x6c88c2*/
+    qmemcpy(v6, ptr_8, 32776 * (int)this->AbstractClass); /*0x6c88d9*/
   __3_YAXPAX_Z(this->?); /*0x6c88e7*/
   this->? = v8; /*0x6c88f3*/
   this->? = (void *)v5; /*0x6c88f6*/
@@ -7642,24 +7642,24 @@ char __thiscall Audio_Read_6C8870(ObjectClass *this)
 // ==== 0x006C8900  ObjectClass::method_6C8900  this=ObjectClass  sig=csp ====
 char __thiscall sub_6C8900(ObjectClass *this)
 {
-  void *vtable0; // eax
+  void *ptr_0; // eax
   int v4; // ebp
   void *v5; // edx
-  void *vtable2; // esi
+  void *ptr_8; // esi
   void *v7; // [esp+4h] [ebp-4h]
 
-  vtable0 = this->AbstractClass; /*0x6c8904*/
+  ptr_0 = this->AbstractClass; /*0x6c8904*/
   if ( (int)this->AbstractClass < (int)this->? ) /*0x6c890b*/
     return 0; /*0x6c890d*/
-  v4 = 2 * (_DWORD)vtable0; /*0x6c8913*/
-  if ( 2 * (int)vtable0 < 10 ) /*0x6c891b*/
+  v4 = 2 * (_DWORD)ptr_0; /*0x6c8913*/
+  if ( 2 * (int)ptr_0 < 10 ) /*0x6c891b*/
     v4 = 10; /*0x6c891d*/
   v5 = (void *)__2_YAPAXI_Z(32776 * v4); /*0x6c8932*/
   memset(v5, 0, 4 * ((unsigned int)(32776 * v4) >> 2)); /*0x6c893d*/
   v7 = v5; /*0x6c8947*/
-  vtable2 = this->?; /*0x6c894d*/
-  if ( vtable2 ) /*0x6c8952*/
-    qmemcpy(v5, vtable2, 32776 * (int)this->AbstractClass); /*0x6c8967*/
+  ptr_8 = this->?; /*0x6c894d*/
+  if ( ptr_8 ) /*0x6c8952*/
+    qmemcpy(v5, ptr_8, 32776 * (int)this->AbstractClass); /*0x6c8967*/
   __3_YAXPAX_Z(this->?); /*0x6c8974*/
   this->? = (void *)v4; /*0x6c8980*/
   this->? = v7; /*0x6c8983*/
@@ -7758,7 +7758,7 @@ int __thiscall Buffer::AppendCellData(Buffer *this, int *a2, int a3)
 // ==== 0x006C8B10  ObjectClass::method_6C8B10  this=ObjectClass  sig=csp ====
 int __thiscall sub_6C8B10(ObjectClass *this, int a2, int a3, __int16 a4, __int16 a5)
 {
-  _WORD *vtable2; // edi
+  _WORD *ptr_8; // edi
   _DWORD *v8; // eax
   int v9; // esi
   unsigned int v10; // eax
@@ -7768,18 +7768,18 @@ int __thiscall sub_6C8B10(ObjectClass *this, int a2, int a3, __int16 a4, __int16
   _BYTE *v14; // [esp+2Ch] [ebp+Ch]
   int v15; // [esp+30h] [ebp+10h]
 
-  vtable2 = this->?; /*0x6c8b19*/
-  if ( (char *)(vtable2 + 6) > (char *)this->? + (unsigned int)this->AbstractClass ) /*0x6c8b28*/
+  ptr_8 = this->?; /*0x6c8b19*/
+  if ( (char *)(ptr_8 + 6) > (char *)this->? + (unsigned int)this->AbstractClass ) /*0x6c8b28*/
     return 0; /*0x6c8b28*/
   v12 = this->?; /*0x6c8b2c*/
-  this->? = vtable2 + 6; /*0x6c8b30*/
-  if ( !vtable2 ) /*0x6c8b33*/
+  this->? = ptr_8 + 6; /*0x6c8b30*/
+  if ( !ptr_8 ) /*0x6c8b33*/
     return 0; /*0x6c8b35*/
-  *vtable2 = a4; /*0x6c8b4f*/
-  vtable2[1] = a5; /*0x6c8b52*/
-  vtable2[2] = *(_WORD *)(a3 + 8); /*0x6c8b5a*/
-  vtable2[3] = *(_WORD *)(a3 + 12); /*0x6c8b66*/
-  *((_DWORD *)vtable2 + 2) = this->?; /*0x6c8b70*/
+  *ptr_8 = a4; /*0x6c8b4f*/
+  ptr_8[1] = a5; /*0x6c8b52*/
+  ptr_8[2] = *(_WORD *)(a3 + 8); /*0x6c8b5a*/
+  ptr_8[3] = *(_WORD *)(a3 + 12); /*0x6c8b66*/
+  *((_DWORD *)ptr_8 + 2) = this->?; /*0x6c8b70*/
   v8 = CellStruct::Copy((CellStruct *)a3, &v13); /*0x6c8b73*/
   v9 = a2; /*0x6c8b7a*/
   v14 = (_BYTE *)(*(int (__thiscall **)(int, _DWORD, _DWORD))(*(_DWORD *)a2 + 92))(a2, *v8, v8[1]); /*0x6c8b92*/
@@ -7802,11 +7802,11 @@ int __thiscall sub_6C8B10(ObjectClass *this, int a2, int a3, __int16 a4, __int16
         break; /*0x6c8c0a*/
       v9 = a2; /*0x6c8c0c*/
     }
-    vtable2 = v12; /*0x6c8c25*/
+    ptr_8 = v12; /*0x6c8c25*/
     v9 = a2; /*0x6c8c29*/
   }
   (*(void (__thiscall **)(int))(*(_DWORD *)v9 + 96))(v9); /*0x6c8c31*/
-  return (int)vtable2; /*0x6c8b37*/
+  return (int)ptr_8; /*0x6c8b37*/
 }
 
 
@@ -8477,9 +8477,9 @@ _DWORD *__thiscall sub_6C9740(float *this, _DWORD *a2, int a3)
   }
   while ( v4 ); /*0x6c975a*/
   *a2 = *(_DWORD *)this; /*0x6c9764*/
-  a2[1] = this->vtable2; /*0x6c9769*/
-  a2[2] = this->vtable3; /*0x6c976f*/
-  a2[3] = this->vtable4; /*0x6c9776*/
+  a2[1] = this->ptr_8; /*0x6c9769*/
+  a2[2] = this->ptr_C; /*0x6c976f*/
+  a2[3] = this->ptr_10; /*0x6c9776*/
   return a2; /*0x6c9775*/
 }
 
@@ -8539,9 +8539,9 @@ _DWORD *__thiscall sub_6C97E0(float *this, _DWORD *a2, int a3)
   }
   while ( v4 ); /*0x6c97fa*/
   *a2 = *(_DWORD *)this; /*0x6c9804*/
-  a2[1] = this->vtable2; /*0x6c9809*/
-  a2[2] = this->vtable3; /*0x6c980f*/
-  a2[3] = this->vtable4; /*0x6c9816*/
+  a2[1] = this->ptr_8; /*0x6c9809*/
+  a2[2] = this->ptr_C; /*0x6c980f*/
+  a2[3] = this->ptr_10; /*0x6c9816*/
   return a2; /*0x6c9815*/
 }
 
@@ -8939,7 +8939,7 @@ int __thiscall BinkMovie::CheckKeyframeTransition(BinkMovie *this, unsigned int 
 // ==== 0x006C9D30  AbstractClass::getTotalValue  this=AbstractClass  sig=csp ====
 int __thiscall AbstractClass::getTotalValue(AbstractClass *this, int a2)
 {
-  this->vtable3 = (void *)a2; /*0x6c9d34*/
+  this->ptr_C = (void *)a2; /*0x6c9d34*/
   return a2; /*0x6c9d37*/
 }
 
@@ -9128,7 +9128,7 @@ int __thiscall ParseMovieSubtitles(char *this, char *Source)
           v9 = *(_DWORD *)this; /*0x6ca00d*/
           v10 = this + 4; /*0x6ca010*/
           v11 = 0; /*0x6ca018*/
-          this->vtable3 = 0; /*0x6ca01a*/
+          this->ptr_C = 0; /*0x6ca01a*/
           do /*0x6ca050*/
           {
             if ( (*(int (__thiscall **)(int, __int16 *, int))(*(_DWORD *)v9 + 8))(v9, &v23, 2) != 2 || v23 == 10 ) /*0x6ca03b*/
@@ -9211,7 +9211,7 @@ char __thiscall sub_6CA1E0(ObjectClass *this, char *Source)
   wchar_t *p_vtable1; // ebp
   int v4; // esi
   wchar_t *v5; // edi
-  void *vtable0; // ebx
+  void *ptr_0; // ebx
   ObjectClass *v7; // eax
   wchar_t *v8; // esi
   size_t v9; // eax
@@ -9232,9 +9232,9 @@ char __thiscall sub_6CA1E0(ObjectClass *this, char *Source)
       v13 = 0; /*0x6ca208*/
       v4 = 0; /*0x6ca20d*/
       v5 = p_vtable1; /*0x6ca20f*/
-      vtable0 = v15->AbstractClass; /*0x6ca211*/
+      ptr_0 = v15->AbstractClass; /*0x6ca211*/
       *p_vtable1 = 0; /*0x6ca213*/
-      while ( (*(int (__thiscall **)(void *, wchar_t *, int))(*(_DWORD *)vtable0 + 8))(vtable0, &v14, 2) == 2 ) /*0x6ca22a*/
+      while ( (*(int (__thiscall **)(void *, wchar_t *, int))(*(_DWORD *)ptr_0 + 8))(ptr_0, &v14, 2) == 2 ) /*0x6ca22a*/
       {
         if ( v14 != 10 ) /*0x6ca235*/
         {
@@ -9910,18 +9910,18 @@ _DWORD *__thiscall Render_Parse_6CABA0(VectorClass *this, int a2, int a3)
   this->Capacity = a2; /*0x6cabae*/
   this->IsInitialized = 1; /*0x6cabb1*/
   this->IsAllocated = 0; /*0x6cabb5*/
-  this->vtable0 = &VectorClass<SubTitle *>::`vftable'; /*0x6cabb8*/
+  this->ptr_0 = &VectorClass<SubTitle *>::`vftable'; /*0x6cabb8*/
   if ( a2 ) /*0x6cabbe*/
   {
     if ( a3 ) /*0x6cabc6*/
     {
       this->Items = (void *)a3; /*0x6cabc8*/
-      return &this->vtable0; /*0x6cabce*/
+      return &this->ptr_0; /*0x6cabce*/
     }
     this->Items = (void *)__2_YAPAXI_Z(4 * a2); /*0x6cabdd*/
     this->IsAllocated = 1; /*0x6cabe0*/
   }
-  return &this->vtable0; /*0x6cabcd*/
+  return &this->ptr_0; /*0x6cabcd*/
 }
 
 
@@ -11687,7 +11687,7 @@ int __thiscall VectorClass::RemoveAt(DynamicVectorClass *this, int a2)
   int Count; // ecx
   int v5; // ecx
 
-  result = (*(int (__thiscall **)(DynamicVectorClass *, int))(this->vtable0 + 16))(this, a2); /*0x6ce2dc*/
+  result = (*(int (__thiscall **)(DynamicVectorClass *, int))(this->ptr_0 + 16))(this, a2); /*0x6ce2dc*/
   if ( result == -1 || (Count = this->Count, result >= Count) ) /*0x6ce2e9*/
   {
     LOBYTE(result) = 0; /*0x6ce30b*/
@@ -13116,9 +13116,9 @@ _DWORD *__thiscall sub_6CF8F0(VectorClass *this, int a2, _DWORD *a3)
   this->Capacity = a2; /*0x6cf900*/
   this->IsInitialized = 1; /*0x6cf903*/
   this->IsAllocated = 0; /*0x6cf907*/
-  this->vtable0 = &VectorClass<SwizzlePointerClass>::`vftable'; /*0x6cf90a*/
+  this->ptr_0 = &VectorClass<SwizzlePointerClass>::`vftable'; /*0x6cf90a*/
   if ( !a2 ) /*0x6cf910*/
-    return &this->vtable0; /*0x6cf910*/
+    return &this->ptr_0; /*0x6cf910*/
   if ( !a3 ) /*0x6cf918*/
   {
     v7 = (_DWORD *)__2_YAPAXI_Z(8 * a2); /*0x6cf942*/
@@ -13138,7 +13138,7 @@ _DWORD *__thiscall sub_6CF8F0(VectorClass *this, int a2, _DWORD *a3)
         while ( v9 ); /*0x6cf961*/
         this->Items = v7; /*0x6cf963*/
         this->IsAllocated = 1; /*0x6cf966*/
-        return &this->vtable0; /*0x6cf96f*/
+        return &this->ptr_0; /*0x6cf96f*/
       }
     }
     else
@@ -13147,7 +13147,7 @@ _DWORD *__thiscall sub_6CF8F0(VectorClass *this, int a2, _DWORD *a3)
     }
     this->Items = v7; /*0x6cf974*/
     this->IsAllocated = 1; /*0x6cf977*/
-    return &this->vtable0; /*0x6cf97b*/
+    return &this->ptr_0; /*0x6cf97b*/
   }
   v4 = a3; /*0x6cf91d*/
   if ( a2 - 1 >= 0 ) /*0x6cf921*/
@@ -13163,7 +13163,7 @@ _DWORD *__thiscall sub_6CF8F0(VectorClass *this, int a2, _DWORD *a3)
     while ( v5 ); /*0x6cf92d*/
   }
   this->Items = a3; /*0x6cf92f*/
-  return &this->vtable0; /*0x6cf934*/
+  return &this->ptr_0; /*0x6cf934*/
 }
 
 
@@ -13816,9 +13816,9 @@ int __thiscall TClassFactory_CampaignClass::CreateInstanceCOM(
   v7 = v6; /*0x6c015b*/
   if ( !v6 ) /*0x6c015f*/
     return -2147024882; /*0x6c0162*/
-  v8 = (*(int (__stdcall **)(AbstractClass *, _DWORD *, _DWORD *))v6->vtable0)(v6, a4, v9); /*0x6c0176*/
+  v8 = (*(int (__stdcall **)(AbstractClass *, _DWORD *, _DWORD *))v6->ptr_0)(v6, a4, v9); /*0x6c0176*/
   if ( v8 < 0 ) /*0x6c017a*/
-    (*(void (__thiscall **)(AbstractClass *, int))(v7->vtable0 + 32))(v7, 1); /*0x6c0182*/
+    (*(void (__thiscall **)(AbstractClass *, int))(v7->ptr_0 + 32))(v7, 1); /*0x6c0182*/
   return v8; /*0x6c011a*/
 }
 
@@ -14325,9 +14325,9 @@ int __thiscall TClassFactory_AirstrikeClass::ddtor(_TClassFactory_VAirstrikeClas
   v7 = v6; /*0x6c08d1*/
   if ( !v6 ) /*0x6c08d5*/
     return -2147024882; /*0x6c08d8*/
-  v8 = (*(int (__stdcall **)(AbstractClass *, _DWORD *, _DWORD *))v6->vtable0)(v6, a4, v9); /*0x6c08ec*/
+  v8 = (*(int (__stdcall **)(AbstractClass *, _DWORD *, _DWORD *))v6->ptr_0)(v6, a4, v9); /*0x6c08ec*/
   if ( v8 < 0 ) /*0x6c08f0*/
-    (*(void (__thiscall **)(AbstractClass *, int))(v7->vtable0 + 32))(v7, 1); /*0x6c08f8*/
+    (*(void (__thiscall **)(AbstractClass *, int))(v7->ptr_0 + 32))(v7, 1); /*0x6c08f8*/
   return v8; /*0x6c089a*/
 }
 
@@ -15743,9 +15743,9 @@ int __thiscall TClassFactory_ScriptClass::ddtor(_TClassFactory_VScriptClass *thi
   v7 = v6; /*0x6c1dd3*/
   if ( !v6 ) /*0x6c1dd7*/
     return -2147024882; /*0x6c1dda*/
-  v8 = (*(int (__stdcall **)(AbstractClass *, _DWORD *, _DWORD *))v6->vtable0)(v6, a4, v9); /*0x6c1dee*/
+  v8 = (*(int (__stdcall **)(AbstractClass *, _DWORD *, _DWORD *))v6->ptr_0)(v6, a4, v9); /*0x6c1dee*/
   if ( v8 < 0 ) /*0x6c1df2*/
-    (*(void (__thiscall **)(AbstractClass *, int))(v7->vtable0 + 32))(v7, 1); /*0x6c1dfa*/
+    (*(void (__thiscall **)(AbstractClass *, int))(v7->ptr_0 + 32))(v7, 1); /*0x6c1dfa*/
   return v8; /*0x6c1d9a*/
 }
 
@@ -21104,7 +21104,7 @@ void Audio_Read_6C6D00(ObjectClass *this)
   char *v1; // ecx
   int v2; // ebx
   char *v3; // eax
-  char *vtable2; // esi
+  char *ptr_8; // esi
   void *v5; // ebp
   char v6; // dl
   unsigned int v7; // ecx
@@ -21126,17 +21126,17 @@ void Audio_Read_6C6D00(ObjectClass *this)
       if ( v2 < (int)g_SidebarButtonState.? ) /*0x6c6d7a*/
       {
         v3 = (char *)__2_YAPAXI_Z(32776 * v2); /*0x6c6d88*/
-        vtable2 = (char *)g_SidebarButtonState.?; /*0x6c6d8d*/
+        ptr_8 = (char *)g_SidebarButtonState.?; /*0x6c6d8d*/
         v5 = v3; /*0x6c6d98*/
         if ( g_SidebarButtonState.? ) /*0x6c6d9a*/
         {
           v6 = 8 * LOBYTE(g_SidebarButtonState.AbstractClass); /*0x6c6dae*/
           v7 = (unsigned int)(32776 * (int)g_SidebarButtonState.AbstractClass) >> 2; /*0x6c6db0*/
           qmemcpy(v3, g_SidebarButtonState.?, 4 * v7); /*0x6c6db3*/
-          qmemcpy(&v3[4 * v7], &vtable2[4 * v7], v6 & 3); /*0x6c6dba*/
-          vtable2 = (char *)g_SidebarButtonState.?; /*0x6c6dbc*/
+          qmemcpy(&v3[4 * v7], &ptr_8[4 * v7], v6 & 3); /*0x6c6dba*/
+          ptr_8 = (char *)g_SidebarButtonState.?; /*0x6c6dbc*/
         }
-        __3_YAXPAX_Z(vtable2); /*0x6c6dc4*/
+        __3_YAXPAX_Z(ptr_8); /*0x6c6dc4*/
         g_SidebarButtonState.? = v5; /*0x6c6dcc*/
         g_SidebarButtonState.? = (void *)v2; /*0x6c6dd2*/
       }
@@ -21149,14 +21149,14 @@ void Audio_Read_6C6D00(ObjectClass *this)
 // ==== 0x006C6DE0  ObjectClass::Audio_Read_6C6DE0  this=ObjectClass  sig=csp ====
 void Audio_Read_6C6DE0(ObjectClass *this)
 {
-  int vtable0; // edx
-  char *vtable2; // ebx
+  int ptr_0; // edx
+  char *ptr_8; // ebx
   int v3; // ecx
   char *v4; // eax
   char *v5; // edi
   _BYTE v6[32776]; // [esp+14h] [ebp-8008h] BYREF
 
-  vtable0 = (int)g_SidebarButtonState.AbstractClass; /*0x6c6dea*/
+  ptr_0 = (int)g_SidebarButtonState.AbstractClass; /*0x6c6dea*/
   *(_DWORD *)v6 = 0; /*0x6c6df8*/
   *(_DWORD *)&v6[4] = 0; /*0x6c6dfc*/
   if ( g_SidebarButtonState.AbstractClass ) /*0x6c6e00*/
@@ -21164,30 +21164,30 @@ void Audio_Read_6C6DE0(ObjectClass *this)
     if ( (int)g_SidebarButtonState.AbstractClass > 0 ) /*0x6c6e06*/
     {
       Audio_Read_6C6B00((ObjectClass *)v6, (_DWORD *)g_SidebarButtonState.?); /*0x6c6e12*/
-      vtable0 = (int)g_SidebarButtonState.AbstractClass; /*0x6c6e17*/
+      ptr_0 = (int)g_SidebarButtonState.AbstractClass; /*0x6c6e17*/
     }
 LABEL_4:
-    vtable2 = (char *)g_SidebarButtonState.?; /*0x6c6e1d*/
+    ptr_8 = (char *)g_SidebarButtonState.?; /*0x6c6e1d*/
     while ( *(int *)&v6[4] < 1 || *(int *)v6 > 10 ) /*0x6c6e31*/
     {
       v3 = 0; /*0x6c6e37*/
-      if ( !vtable0 ) /*0x6c6e3b*/
+      if ( !ptr_0 ) /*0x6c6e3b*/
         return; /*0x6c6e3b*/
-      if ( vtable0 <= 0 ) /*0x6c6e41*/
-        v3 = vtable0 - 1; /*0x6c6e43*/
-      memcpy(&vtable2[32776 * v3], &vtable2[32776 * v3 + 32776], 32776 * vtable0 - 32776 * (v3 + 1)); /*0x6c6e6e*/
-      vtable0 = (int)g_SidebarButtonState.AbstractClass - 1; /*0x6c6e81*/
-      g_SidebarButtonState.AbstractClass = (void *)vtable0; /*0x6c6e82*/
-      if ( 3 * vtable0 <= (int)g_SidebarButtonState.? ) /*0x6c6e8d*/
+      if ( ptr_0 <= 0 ) /*0x6c6e41*/
+        v3 = ptr_0 - 1; /*0x6c6e43*/
+      memcpy(&ptr_8[32776 * v3], &ptr_8[32776 * v3 + 32776], 32776 * ptr_0 - 32776 * (v3 + 1)); /*0x6c6e6e*/
+      ptr_0 = (int)g_SidebarButtonState.AbstractClass - 1; /*0x6c6e81*/
+      g_SidebarButtonState.AbstractClass = (void *)ptr_0; /*0x6c6e82*/
+      if ( 3 * ptr_0 <= (int)g_SidebarButtonState.? ) /*0x6c6e8d*/
       {
         Audio_Read_6C8870(&g_SidebarButtonState); /*0x6c6e94*/
-        vtable0 = (int)g_SidebarButtonState.AbstractClass; /*0x6c6e99*/
+        ptr_0 = (int)g_SidebarButtonState.AbstractClass; /*0x6c6e99*/
       }
-      if ( !vtable0 ) /*0x6c6ea1*/
+      if ( !ptr_0 ) /*0x6c6ea1*/
         return; /*0x6c6ea1*/
-      if ( vtable0 <= 0 ) /*0x6c6ea7*/
+      if ( ptr_0 <= 0 ) /*0x6c6ea7*/
         goto LABEL_4; /*0x6c6ea7*/
-      vtable2 = (char *)g_SidebarButtonState.?; /*0x6c6ead*/
+      ptr_8 = (char *)g_SidebarButtonState.?; /*0x6c6ead*/
       *(_DWORD *)v6 = *(_DWORD *)g_SidebarButtonState.?; /*0x6c6eb5*/
       *(_DWORD *)&v6[4] = *((_DWORD *)g_SidebarButtonState.? + 1); /*0x6c6ec2*/
       if ( *(int *)&v6[4] <= 0x8000 ) /*0x6c6ec6*/
@@ -21316,27 +21316,27 @@ _DWORD *__thiscall sub_6C8840(rc_ptr *this, char a2)
 // ==== 0x006C8870  ObjectClass::Audio_Read_6C8870  this=ObjectClass  sig=csp ====
 char __thiscall Audio_Read_6C8870(ObjectClass *this)
 {
-  void *vtable0; // eax
-  int vtable1; // ecx
+  void *ptr_0; // eax
+  int ptr_4; // ecx
   int v5; // ebx
   void *v6; // eax
-  void *vtable2; // esi
+  void *ptr_8; // esi
   void *v8; // [esp+8h] [ebp-4h]
 
-  vtable0 = this->AbstractClass; /*0x6c8875*/
-  vtable1 = (int)this->?; /*0x6c8878*/
-  if ( 3 * (int)vtable0 > vtable1 ) /*0x6c8880*/
+  ptr_0 = this->AbstractClass; /*0x6c8875*/
+  ptr_4 = (int)this->?; /*0x6c8878*/
+  if ( 3 * (int)ptr_0 > ptr_4 ) /*0x6c8880*/
     return 0; /*0x6c8883*/
-  v5 = vtable1 / 2; /*0x6c888f*/
-  if ( vtable1 / 2 < 10 ) /*0x6c8894*/
+  v5 = ptr_4 / 2; /*0x6c888f*/
+  if ( ptr_4 / 2 < 10 ) /*0x6c8894*/
     v5 = 10; /*0x6c8896*/
-  if ( v5 >= vtable1 ) /*0x6c889d*/
+  if ( v5 >= ptr_4 ) /*0x6c889d*/
     return 0; /*0x6c88a0*/
   v6 = (void *)__2_YAPAXI_Z(32776 * v5); /*0x6c88b1*/
-  vtable2 = this->?; /*0x6c88b6*/
+  ptr_8 = this->?; /*0x6c88b6*/
   v8 = v6; /*0x6c88be*/
-  if ( vtable2 ) /*0x6c88c2*/
-    qmemcpy(v6, vtable2, 32776 * (int)this->AbstractClass); /*0x6c88d9*/
+  if ( ptr_8 ) /*0x6c88c2*/
+    qmemcpy(v6, ptr_8, 32776 * (int)this->AbstractClass); /*0x6c88d9*/
   __3_YAXPAX_Z(this->?); /*0x6c88e7*/
   this->? = v8; /*0x6c88f3*/
   this->? = (void *)v5; /*0x6c88f6*/
@@ -21348,24 +21348,24 @@ char __thiscall Audio_Read_6C8870(ObjectClass *this)
 // ==== 0x006C8900  ObjectClass::method_6C8900  this=ObjectClass  sig=csp ====
 char __thiscall sub_6C8900(ObjectClass *this)
 {
-  void *vtable0; // eax
+  void *ptr_0; // eax
   int v4; // ebp
   void *v5; // edx
-  void *vtable2; // esi
+  void *ptr_8; // esi
   void *v7; // [esp+4h] [ebp-4h]
 
-  vtable0 = this->AbstractClass; /*0x6c8904*/
+  ptr_0 = this->AbstractClass; /*0x6c8904*/
   if ( (int)this->AbstractClass < (int)this->? ) /*0x6c890b*/
     return 0; /*0x6c890d*/
-  v4 = 2 * (_DWORD)vtable0; /*0x6c8913*/
-  if ( 2 * (int)vtable0 < 10 ) /*0x6c891b*/
+  v4 = 2 * (_DWORD)ptr_0; /*0x6c8913*/
+  if ( 2 * (int)ptr_0 < 10 ) /*0x6c891b*/
     v4 = 10; /*0x6c891d*/
   v5 = (void *)__2_YAPAXI_Z(32776 * v4); /*0x6c8932*/
   memset(v5, 0, 4 * ((unsigned int)(32776 * v4) >> 2)); /*0x6c893d*/
   v7 = v5; /*0x6c8947*/
-  vtable2 = this->?; /*0x6c894d*/
-  if ( vtable2 ) /*0x6c8952*/
-    qmemcpy(v5, vtable2, 32776 * (int)this->AbstractClass); /*0x6c8967*/
+  ptr_8 = this->?; /*0x6c894d*/
+  if ( ptr_8 ) /*0x6c8952*/
+    qmemcpy(v5, ptr_8, 32776 * (int)this->AbstractClass); /*0x6c8967*/
   __3_YAXPAX_Z(this->?); /*0x6c8974*/
   this->? = (void *)v4; /*0x6c8980*/
   this->? = v7; /*0x6c8983*/
@@ -21464,7 +21464,7 @@ int __thiscall Buffer::AppendCellData(Buffer *this, int *a2, int a3)
 // ==== 0x006C8B10  ObjectClass::method_6C8B10  this=ObjectClass  sig=csp ====
 int __thiscall sub_6C8B10(ObjectClass *this, int a2, int a3, __int16 a4, __int16 a5)
 {
-  _WORD *vtable2; // edi
+  _WORD *ptr_8; // edi
   _DWORD *v8; // eax
   int v9; // esi
   unsigned int v10; // eax
@@ -21474,18 +21474,18 @@ int __thiscall sub_6C8B10(ObjectClass *this, int a2, int a3, __int16 a4, __int16
   _BYTE *v14; // [esp+2Ch] [ebp+Ch]
   int v15; // [esp+30h] [ebp+10h]
 
-  vtable2 = this->?; /*0x6c8b19*/
-  if ( (char *)(vtable2 + 6) > (char *)this->? + (unsigned int)this->AbstractClass ) /*0x6c8b28*/
+  ptr_8 = this->?; /*0x6c8b19*/
+  if ( (char *)(ptr_8 + 6) > (char *)this->? + (unsigned int)this->AbstractClass ) /*0x6c8b28*/
     return 0; /*0x6c8b28*/
   v12 = this->?; /*0x6c8b2c*/
-  this->? = vtable2 + 6; /*0x6c8b30*/
-  if ( !vtable2 ) /*0x6c8b33*/
+  this->? = ptr_8 + 6; /*0x6c8b30*/
+  if ( !ptr_8 ) /*0x6c8b33*/
     return 0; /*0x6c8b35*/
-  *vtable2 = a4; /*0x6c8b4f*/
-  vtable2[1] = a5; /*0x6c8b52*/
-  vtable2[2] = *(_WORD *)(a3 + 8); /*0x6c8b5a*/
-  vtable2[3] = *(_WORD *)(a3 + 12); /*0x6c8b66*/
-  *((_DWORD *)vtable2 + 2) = this->?; /*0x6c8b70*/
+  *ptr_8 = a4; /*0x6c8b4f*/
+  ptr_8[1] = a5; /*0x6c8b52*/
+  ptr_8[2] = *(_WORD *)(a3 + 8); /*0x6c8b5a*/
+  ptr_8[3] = *(_WORD *)(a3 + 12); /*0x6c8b66*/
+  *((_DWORD *)ptr_8 + 2) = this->?; /*0x6c8b70*/
   v8 = CellStruct::Copy((CellStruct *)a3, &v13); /*0x6c8b73*/
   v9 = a2; /*0x6c8b7a*/
   v14 = (_BYTE *)(*(int (__thiscall **)(int, _DWORD, _DWORD))(*(_DWORD *)a2 + 92))(a2, *v8, v8[1]); /*0x6c8b92*/
@@ -21508,11 +21508,11 @@ int __thiscall sub_6C8B10(ObjectClass *this, int a2, int a3, __int16 a4, __int16
         break; /*0x6c8c0a*/
       v9 = a2; /*0x6c8c0c*/
     }
-    vtable2 = v12; /*0x6c8c25*/
+    ptr_8 = v12; /*0x6c8c25*/
     v9 = a2; /*0x6c8c29*/
   }
   (*(void (__thiscall **)(int))(*(_DWORD *)v9 + 96))(v9); /*0x6c8c31*/
-  return (int)vtable2; /*0x6c8b37*/
+  return (int)ptr_8; /*0x6c8b37*/
 }
 
 
@@ -22183,9 +22183,9 @@ _DWORD *__thiscall sub_6C9740(float *this, _DWORD *a2, int a3)
   }
   while ( v4 ); /*0x6c975a*/
   *a2 = *(_DWORD *)this; /*0x6c9764*/
-  a2[1] = this->vtable2; /*0x6c9769*/
-  a2[2] = this->vtable3; /*0x6c976f*/
-  a2[3] = this->vtable4; /*0x6c9776*/
+  a2[1] = this->ptr_8; /*0x6c9769*/
+  a2[2] = this->ptr_C; /*0x6c976f*/
+  a2[3] = this->ptr_10; /*0x6c9776*/
   return a2; /*0x6c9775*/
 }
 
@@ -22245,9 +22245,9 @@ _DWORD *__thiscall sub_6C97E0(float *this, _DWORD *a2, int a3)
   }
   while ( v4 ); /*0x6c97fa*/
   *a2 = *(_DWORD *)this; /*0x6c9804*/
-  a2[1] = this->vtable2; /*0x6c9809*/
-  a2[2] = this->vtable3; /*0x6c980f*/
-  a2[3] = this->vtable4; /*0x6c9816*/
+  a2[1] = this->ptr_8; /*0x6c9809*/
+  a2[2] = this->ptr_C; /*0x6c980f*/
+  a2[3] = this->ptr_10; /*0x6c9816*/
   return a2; /*0x6c9815*/
 }
 
@@ -22645,7 +22645,7 @@ int __thiscall BinkMovie::CheckKeyframeTransition(BinkMovie *this, unsigned int 
 // ==== 0x006C9D30  AbstractClass::getTotalValue  this=AbstractClass  sig=csp ====
 int __thiscall AbstractClass::getTotalValue(AbstractClass *this, int a2)
 {
-  this->vtable3 = (void *)a2; /*0x6c9d34*/
+  this->ptr_C = (void *)a2; /*0x6c9d34*/
   return a2; /*0x6c9d37*/
 }
 
@@ -22834,7 +22834,7 @@ int __thiscall ParseMovieSubtitles(char *this, char *Source)
           v9 = *(_DWORD *)this; /*0x6ca00d*/
           v10 = this + 4; /*0x6ca010*/
           v11 = 0; /*0x6ca018*/
-          this->vtable3 = 0; /*0x6ca01a*/
+          this->ptr_C = 0; /*0x6ca01a*/
           do /*0x6ca050*/
           {
             if ( (*(int (__thiscall **)(int, __int16 *, int))(*(_DWORD *)v9 + 8))(v9, &v23, 2) != 2 || v23 == 10 ) /*0x6ca03b*/
@@ -22917,7 +22917,7 @@ char __thiscall sub_6CA1E0(ObjectClass *this, char *Source)
   wchar_t *p_vtable1; // ebp
   int v4; // esi
   wchar_t *v5; // edi
-  void *vtable0; // ebx
+  void *ptr_0; // ebx
   ObjectClass *v7; // eax
   wchar_t *v8; // esi
   size_t v9; // eax
@@ -22938,9 +22938,9 @@ char __thiscall sub_6CA1E0(ObjectClass *this, char *Source)
       v13 = 0; /*0x6ca208*/
       v4 = 0; /*0x6ca20d*/
       v5 = p_vtable1; /*0x6ca20f*/
-      vtable0 = v15->AbstractClass; /*0x6ca211*/
+      ptr_0 = v15->AbstractClass; /*0x6ca211*/
       *p_vtable1 = 0; /*0x6ca213*/
-      while ( (*(int (__thiscall **)(void *, wchar_t *, int))(*(_DWORD *)vtable0 + 8))(vtable0, &v14, 2) == 2 ) /*0x6ca22a*/
+      while ( (*(int (__thiscall **)(void *, wchar_t *, int))(*(_DWORD *)ptr_0 + 8))(ptr_0, &v14, 2) == 2 ) /*0x6ca22a*/
       {
         if ( v14 != 10 ) /*0x6ca235*/
         {
@@ -23616,18 +23616,18 @@ _DWORD *__thiscall Render_Parse_6CABA0(VectorClass *this, int a2, int a3)
   this->Capacity = a2; /*0x6cabae*/
   this->IsInitialized = 1; /*0x6cabb1*/
   this->IsAllocated = 0; /*0x6cabb5*/
-  this->vtable0 = &VectorClass<SubTitle *>::`vftable'; /*0x6cabb8*/
+  this->ptr_0 = &VectorClass<SubTitle *>::`vftable'; /*0x6cabb8*/
   if ( a2 ) /*0x6cabbe*/
   {
     if ( a3 ) /*0x6cabc6*/
     {
       this->Items = (void *)a3; /*0x6cabc8*/
-      return &this->vtable0; /*0x6cabce*/
+      return &this->ptr_0; /*0x6cabce*/
     }
     this->Items = (void *)__2_YAPAXI_Z(4 * a2); /*0x6cabdd*/
     this->IsAllocated = 1; /*0x6cabe0*/
   }
-  return &this->vtable0; /*0x6cabcd*/
+  return &this->ptr_0; /*0x6cabcd*/
 }
 
 
@@ -25393,7 +25393,7 @@ int __thiscall VectorClass::RemoveAt(DynamicVectorClass *this, int a2)
   int Count; // ecx
   int v5; // ecx
 
-  result = (*(int (__thiscall **)(DynamicVectorClass *, int))(this->vtable0 + 16))(this, a2); /*0x6ce2dc*/
+  result = (*(int (__thiscall **)(DynamicVectorClass *, int))(this->ptr_0 + 16))(this, a2); /*0x6ce2dc*/
   if ( result == -1 || (Count = this->Count, result >= Count) ) /*0x6ce2e9*/
   {
     LOBYTE(result) = 0; /*0x6ce30b*/
@@ -26822,9 +26822,9 @@ _DWORD *__thiscall sub_6CF8F0(VectorClass *this, int a2, _DWORD *a3)
   this->Capacity = a2; /*0x6cf900*/
   this->IsInitialized = 1; /*0x6cf903*/
   this->IsAllocated = 0; /*0x6cf907*/
-  this->vtable0 = &VectorClass<SwizzlePointerClass>::`vftable'; /*0x6cf90a*/
+  this->ptr_0 = &VectorClass<SwizzlePointerClass>::`vftable'; /*0x6cf90a*/
   if ( !a2 ) /*0x6cf910*/
-    return &this->vtable0; /*0x6cf910*/
+    return &this->ptr_0; /*0x6cf910*/
   if ( !a3 ) /*0x6cf918*/
   {
     v7 = (_DWORD *)__2_YAPAXI_Z(8 * a2); /*0x6cf942*/
@@ -26844,7 +26844,7 @@ _DWORD *__thiscall sub_6CF8F0(VectorClass *this, int a2, _DWORD *a3)
         while ( v9 ); /*0x6cf961*/
         this->Items = v7; /*0x6cf963*/
         this->IsAllocated = 1; /*0x6cf966*/
-        return &this->vtable0; /*0x6cf96f*/
+        return &this->ptr_0; /*0x6cf96f*/
       }
     }
     else
@@ -26853,7 +26853,7 @@ _DWORD *__thiscall sub_6CF8F0(VectorClass *this, int a2, _DWORD *a3)
     }
     this->Items = v7; /*0x6cf974*/
     this->IsAllocated = 1; /*0x6cf977*/
-    return &this->vtable0; /*0x6cf97b*/
+    return &this->ptr_0; /*0x6cf97b*/
   }
   v4 = a3; /*0x6cf91d*/
   if ( a2 - 1 >= 0 ) /*0x6cf921*/
@@ -26869,7 +26869,7 @@ _DWORD *__thiscall sub_6CF8F0(VectorClass *this, int a2, _DWORD *a3)
     while ( v5 ); /*0x6cf92d*/
   }
   this->Items = a3; /*0x6cf92f*/
-  return &this->vtable0; /*0x6cf934*/
+  return &this->ptr_0; /*0x6cf934*/
 }
 
 

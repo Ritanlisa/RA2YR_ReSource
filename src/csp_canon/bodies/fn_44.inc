@@ -27,7 +27,7 @@ int AnimClass::initAnimation() {
   int v9; // [esp+48h] [ebp+4h]
 
   v3 = (unsigned int *)(*(int (**)(int, unsigned char *))(*(unsigned int *)v9 + 72))(v9, v7); /*0x447e1a*/
-  v4 = (unsigned int *)(*((int (**)(BuildingClass *, unsigned char *, int))this->vtable1 + 42))(this, v8, v9); /*0x447e24*/
+  v4 = (unsigned int *)(*((int (**)(BuildingClass *, unsigned char *, int))this->ptr_4 + 42))(this, v8, v9); /*0x447e24*/
   v6 = v4[2] - v3[2]; /*0x447e48*/
   Math::Sqrt( /*0x447e74*/
     (double)(*v4 - *v3) * (double)(*v4 - *v3)

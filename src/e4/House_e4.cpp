@@ -1149,7 +1149,7 @@ void House::Constructor(void *a1, void *a2, void *a3, void *a4)
       *(unsigned int *)this->u32_C = v2; /*0x69e0bd*/
       this->q010 = 1; /*0x69e0c0*/
     }
-    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x69e0c8*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x69e0c8*/
     int v5; // [esp+68h] [ebp-8h]
     v5 = 0; /*0x69e0d0*/
     char v4[12]; // [esp+5Ch] [ebp-14h] BYREF

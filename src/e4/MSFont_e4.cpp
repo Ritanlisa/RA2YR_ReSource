@@ -413,7 +413,7 @@ VectorClass_flat * MSFont_18::QueryInterface(unsigned int * Block, char a2)
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x5d56e3*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x5d56e6*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x5d56e6*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x5d56f0*/
   {
     operator delete((v3)); /*0x5d56f8*/
@@ -433,7 +433,7 @@ DynamicVector * MSFont_18::Constructor_VectorClass_HWND_____(unsigned int * Bloc
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x5d5733*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x5d5736*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x5d5736*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x5d5740*/
   {
     operator delete((v3)); /*0x5d5748*/
@@ -453,7 +453,7 @@ DynamicVector * MSFont_18::Constructor_VectorClass_AcceleratorTracker_(unsigned 
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x5d57d3*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x5d57d6*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x5d57d6*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x5d57e0*/
   {
     operator delete((v3)); /*0x5d57e8*/

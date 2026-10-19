@@ -1244,7 +1244,7 @@ LABEL_72:
           v108[1] = v28; /*0x584920*/
           Radar::ProcessSubzone(v2, v91, i, v86, &v104, v108); /*0x584925*/
           VectorClass::ConstructSubzone(&v122, 0, 0); /*0x584932*/
-          /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7ED5A0) */  /*0x58493b*/
+          /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7ED5A0) */  /*0x58493b*/
           v124 = 10; /*0x584943*/
           v123 = 0; /*0x58494e*/
           VectorClass::CleanupSubzone((int)&v122); /*0x584955*/
@@ -1267,7 +1267,7 @@ LABEL_72:
             v39->Radar_field_0x20 = v127; /*0x5849e0*/
             v35 = (int)&v2->__pad_64[24 * i + 40]; /*0x5849e3*/
           }
-          /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E177C) */  /*0x5849eb*/
+          /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E177C) */  /*0x5849eb*/
           if ( v122.Items && v122.IsAllocated[0] ) /*0x5849fd*/
           {
             __3_YAXPAX_Z((void *)v122.Items); /*0x584a00*/

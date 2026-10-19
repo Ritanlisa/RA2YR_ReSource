@@ -408,10 +408,10 @@ LABEL_9:
         *(unsigned int *)&stru_AC4B48.__pad_B8[56] = 0; /*0x634234*/
       if ( *(unsigned int **)&stru_AC4B48.__pad_9C[12] == p_vfptr ) /*0x634240*/
         *(unsigned int *)&stru_AC4B48.__pad_9C[12] = 0; /*0x634242*/
-      /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7EFF24) */  /*0x63424b*/
+      /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7EFF24) */  /*0x63424b*/
       VectorClass::Cleanup2((int)&this->NeedsSaveOrLink); /*0x634251*/
       v16 = (void *)this->ptr_4; /*0x634256*/
-      /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7EFF04) */  /*0x634259*/
+      /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7EFF04) */  /*0x634259*/
       if ( v16 ) /*0x634261*/
       {
         if ( BYTE1(this->ptr_C) ) /*0x634263*/
@@ -694,7 +694,7 @@ TechnoClass * * TeamClass::RemoveAllMembers()
         Team_Remove((ObjectClass *)v4); /*0x6361fe*/
         *(unsigned int *)(v4 + 32) = &g_ptr_7EFF24; /*0x636206*/
         VectorClass::Cleanup2(v4 + 32); /*0x63620c*/
-        /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EFF04) */  /*0x636213*/
+        /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EFF04) */  /*0x636213*/
         VectorClass_ptr_PlanningMemberClass::Remove((_VectorClass_PAVPlanningMemberClass *)v4); /*0x636219*/
         __3_YAXPAX_Z((void *)v4); /*0x63621f*/
       }
@@ -1087,7 +1087,7 @@ LABEL_4:
       Team_Remove((ObjectClass *)v8); /*0x636c7c*/
       *(unsigned int *)(v8 + 32) = &g_ptr_7EFF24; /*0x636c84*/
       VectorClass::Cleanup2(v8 + 32); /*0x636c8a*/
-      /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EFF04) */  /*0x636c91*/
+      /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EFF04) */  /*0x636c91*/
       VectorClass_ptr_PlanningMemberClass::Remove((_VectorClass_PAVPlanningMemberClass *)v8); /*0x636c97*/
       __3_YAXPAX_Z((void *)v8); /*0x636c9d*/
     }
@@ -1264,9 +1264,9 @@ void TeamClass::Destructor(void * a2)
   TeamClass *v15; // [esp+10h] [ebp-4h] BYREF
 
   v2 = 0; /*0x6e8de5*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F4730) */  /*0x6e8de7*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F4730) */  /*0x6e8ded*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F4730) */  /*0x6e8df4*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F4730) */  /*0x6e8de7*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F4730) */  /*0x6e8ded*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F4730) */  /*0x6e8df4*/
   for ( this->ptr_C = (int)&g_ptr_7F4730; v2 < dword_A8B210; ++v2 ) /*0x6e8e09*/
   {
     v3 = (AITriggerTypeClass *)*((unsigned int *)dword_A8B204 + v2); /*0x6e8e10*/
@@ -3114,10 +3114,10 @@ int TeamClass::SaveLoad_Prefix(AbstractClass * aP0, int aP1)
     {
       AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x6ec473*/
       __4type_info_AAEAAV0_ABV0__Z(aP0->suspendTimer, (int)&aP1); /*0x6ec480*/
-      /* X11: vtable install elided (implicit via TeamClass virtuals 0x6ec485) */
-      /* X11: vtable install elided (implicit via TeamClass virtuals 0x6ec48b) */
-      /* X11: vtable install elided (implicit via TeamClass virtuals 0x6ec492) */
-      /* X11: vtable install elided (implicit via TeamClass virtuals 0x6ec499) */
+      /* X11: ptr_0 install elided (implicit via TeamClass virtuals 0x6ec485) */
+      /* X11: ptr_0 install elided (implicit via TeamClass virtuals 0x6ec48b) */
+      /* X11: ptr_0 install elided (implicit via TeamClass virtuals 0x6ec492) */
+      /* X11: ptr_0 install elided (implicit via TeamClass virtuals 0x6ec499) */
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->Coord_9C); /*0x6ec4a9*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->Coord_9C); /*0x6ec4b7*/

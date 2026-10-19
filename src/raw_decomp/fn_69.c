@@ -168,8 +168,8 @@ int __thiscall Screen::CleanupTransitionObjects(Screen *this)
 // ==== 0x00690400  ObjectClass::method  this=ObjectClass  sig=csp ====
 int __thiscall sub_690400(ObjectClass *this)
 {
-  char *vtable0; // eax
-  char *vtable1; // esi
+  char *ptr_0; // eax
+  char *ptr_4; // esi
   int result; // eax
   _DWORD v5[4]; // [esp+8h] [ebp-30h] BYREF
   _DWORD v6[4]; // [esp+18h] [ebp-20h] BYREF
@@ -177,14 +177,14 @@ int __thiscall sub_690400(ObjectClass *this)
 
   GetClientRect(g_hWnd, &Rect); /*0x690412*/
   ClientToScreen(g_hWnd, (LPPOINT)&Rect); /*0x690423*/
-  vtable0 = (char *)this->AbstractClass; /*0x690429*/
-  vtable1 = (char *)this->?; /*0x69042f*/
-  v5[0] = vtable0; /*0x690432*/
-  v6[0] = &vtable0[Rect.left]; /*0x69043d*/
-  v5[1] = vtable1; /*0x690441*/
+  ptr_0 = (char *)this->AbstractClass; /*0x690429*/
+  ptr_4 = (char *)this->?; /*0x69042f*/
+  v5[0] = ptr_0; /*0x690432*/
+  v6[0] = &ptr_0[Rect.left]; /*0x69043d*/
+  v5[1] = ptr_4; /*0x690441*/
   v6[3] = 400; /*0x69044d*/
   v5[3] = 400; /*0x690451*/
-  v6[1] = &vtable1[Rect.top]; /*0x69045b*/
+  v6[1] = &ptr_4[Rect.top]; /*0x69045b*/
   v6[2] = 640; /*0x690467*/
   v5[2] = 640; /*0x69046b*/
   if ( stru_887598.lineTrailer ) /*0x69046f*/
@@ -718,7 +718,7 @@ LABEL_5:
     v18 = v9; /*0x690e04*/
     m_8 = this->m_8; /*0x690e0f*/
     v21 = v10; /*0x690e1f*/
-    (*(void (__thiscall **)(ObjectClass *, int *, DSurface *, int *, _DWORD, int))(g_DSurface_Hidden->vtable0 + 8))( /*0x690e2b*/
+    (*(void (__thiscall **)(ObjectClass *, int *, DSurface *, int *, _DWORD, int))(g_DSurface_Hidden->ptr_0 + 8))( /*0x690e2b*/
       g_DSurface_Hidden,
       &v18,
       DSurface_Alternate,
@@ -971,7 +971,7 @@ char __thiscall VectorClass::PushBack2(DynamicVectorClass *this, _DWORD *a2)
       return 0; /*0x691176*/
     CapacityIncrement = this->CapacityIncrement; /*0x691178*/
     if ( CapacityIncrement <= 0 /*0x691188*/
-      || !(*(unsigned __int8 (__thiscall **)(DynamicVectorClass *, int, _DWORD))(this->vtable0 + 8))(
+      || !(*(unsigned __int8 (__thiscall **)(DynamicVectorClass *, int, _DWORD))(this->ptr_0 + 8))(
             this,
             Capacity + CapacityIncrement,
             0) )
@@ -2899,7 +2899,7 @@ char __thiscall ScrollMapEdge(ObjectClass *this, _DWORD *a2)
   __int64 v5; // rax
   int v6; // ecx
   __int64 v7; // rax
-  void (__thiscall **vtable0)(ObjectClass *, _DWORD *); // edx
+  void (__thiscall **ptr_0)(ObjectClass *, _DWORD *); // edx
   int v9; // edi
   LONG v10; // ebp
   int v11; // eax
@@ -2948,10 +2948,10 @@ char __thiscall ScrollMapEdge(ObjectClass *this, _DWORD *a2)
           goto LABEL_14; /*0x6934cb*/
         if ( *((_BYTE *)this + 4559) ) /*0x6934d5*/
         {
-          vtable0 = (void (__thiscall **)(ObjectClass *, _DWORD *))this->AbstractClass; /*0x6934df*/
+          ptr_0 = (void (__thiscall **)(ObjectClass *, _DWORD *))this->AbstractClass; /*0x6934df*/
           v30[0] = -1; /*0x6934e4*/
           v30[1] = -1; /*0x6934e8*/
-          vtable0[49](this, v30); /*0x6934f3*/
+          ptr_0[49](this, v30); /*0x6934f3*/
         }
         else
         {
@@ -4745,7 +4745,7 @@ char __thiscall ApplyModemConfigSettings(ObjectClass *this)
   int v27; // eax
   int *v28; // eax
   int *v30; // eax
-  HWND vtable0; // [esp-8h] [ebp-20h]
+  HWND ptr_0; // [esp-8h] [ebp-20h]
   wchar_t *StringCSF; // [esp+0h] [ebp-18h]
   wchar_t *v33; // [esp+0h] [ebp-18h]
   AnimClass **p_parachute; // [esp+10h] [ebp-8h]
@@ -4838,9 +4838,9 @@ LABEL_10:
         strcpy((char *)&this->lineTrailer, v22 + 1); /*0x695e24*/
     }
   }
-  vtable0 = (HWND)this->AbstractClass; /*0x695e3b*/
+  ptr_0 = (HWND)this->AbstractClass; /*0x695e3b*/
   this->lastLayer = 0; /*0x695e3c*/
-  v23 = GetDlgItem(vtable0, 1627); /*0x695e46*/
+  v23 = GetDlgItem(ptr_0, 1627); /*0x695e46*/
   if ( v23 && SendMessageA(v23, 0xF0u, 0, 0) == 1 ) /*0x695e5f*/
     this->lastLayer = 1; /*0x695e61*/
   Debug::Log(); /*0x695e88*/
@@ -6672,7 +6672,7 @@ int __thiscall GameSetup_WriteINI(int this, char *a2, unsigned __int8 *Block)
 void __thiscall SaveConfigWOL(TechnoClass *this)
 {
   char *v2; // eax
-  int vtable1; // eax
+  int ptr_4; // eax
   int i; // edi
   int j; // edi
   int v6; // eax
@@ -6689,9 +6689,9 @@ void __thiscall SaveConfigWOL(TechnoClass *this)
   INIClass::SetInt(dword_8870C0.__pad_0, aMultiplayer, aColorex, this->targetingTimer[0], 0); /*0x699163*/
   INIClass::SetHouseName(dword_8870C0.__pad_0, aMultiplayer, aSide, (void *)this->targetingTimer[1]); /*0x69917e*/
   INIClass::SetInt(dword_8870C0.__pad_0, aMultiplayer, aSideex, this->targetingTimer[2], 0); /*0x69919b*/
-  vtable1 = this->vtable1; /*0x6991a0*/
-  if ( vtable1 ) /*0x6991a7*/
-    INIClass::SetInt(dword_8870C0.__pad_0, aMultiplayer, g_INI_Key_GameMode, *(_DWORD *)(vtable1 + 40), 0); /*0x6991ad*/
+  ptr_4 = this->ptr_4; /*0x6991a0*/
+  if ( ptr_4 ) /*0x6991a7*/
+    INIClass::SetInt(dword_8870C0.__pad_0, aMultiplayer, g_INI_Key_GameMode, *(_DWORD *)(ptr_4 + 40), 0); /*0x6991ad*/
   else
     INIClass::SetInt(dword_8870C0.__pad_0, aMultiplayer, g_INI_Key_GameMode, 0, 0); /*0x6991c0*/
   GameSetup::WriteINI((int)this->__pad_18C, dword_8870C0.__pad_0, (unsigned __int8 *)aSkirmish); /*0x6991d5*/
@@ -7879,7 +7879,7 @@ int __thiscall Multiplayer::ShowProgress(Multiplayer *this, int a2)
   if ( !stru_A8EB00.?[391] ) /*0x69aea1*/
   {
     v14 = a2; /*0x69aeb4*/
-    if ( BYTE1(dword_A8B230[375].vtable0) ) /*0x69aeb8*/
+    if ( BYTE1(dword_A8B230[375].ptr_0) ) /*0x69aeb8*/
       v14 = a2 / 2; /*0x69aec7*/
     __asm { fild dword ptr [esp+1E4h+var_1D0] } /*0x69aecb*/
     __asm { fstp [esp+1E8h+var_1D0] }
@@ -7987,7 +7987,7 @@ int __thiscall Multiplayer::ShowProgress(Multiplayer *this, int a2)
 void __thiscall ParseAndApplyAlliances(ObjectClass *this)
 {
   bool v1; // zf
-  void *vtable0; // edx
+  void *ptr_0; // edx
   const char *v3; // edi
   char *v4; // ebx
   char *i; // ebp
@@ -8025,9 +8025,9 @@ void __thiscall ParseAndApplyAlliances(ObjectClass *this)
   *((_BYTE *)this + 1672) = 0; /*0x69b17d*/
   if ( v1 ) /*0x69b184*/
   {
-    vtable0 = dword_A8B230->vtable0; /*0x69b199*/
-    BYTE1(vtable0) = ((unsigned __int16)dword_A8B230->vtable0 >> 8) & 0xFB; /*0x69b19b*/
-    dword_A8B230->vtable0 = vtable0; /*0x69b19e*/
+    ptr_0 = dword_A8B230->ptr_0; /*0x69b199*/
+    BYTE1(ptr_0) = ((unsigned __int16)dword_A8B230->ptr_0 >> 8) & 0xFB; /*0x69b19b*/
+    dword_A8B230->ptr_0 = ptr_0; /*0x69b19e*/
     Debug::Log(); /*0x69b1a0*/
     Debug::Log(); /*0x69b1af*/
     if ( strlen(&byte_B77A04) ) /*0x69b1b9*/
@@ -8035,11 +8035,11 @@ void __thiscall ParseAndApplyAlliances(ObjectClass *this)
       if ( strlen(byte_B76568) ) /*0x69b1d1*/
       {
         ParseAndApplyAlliances_Parse(&v33, 0, 0); /*0x69b1ea*/
-        v33.vtable0 = &DynamicVectorClass<HouseClass *>::`vftable'; /*0x69b1ff*/
+        v33.ptr_0 = &DynamicVectorClass<HouseClass *>::`vftable'; /*0x69b1ff*/
         v35 = 10; /*0x69b203*/
         v34 = 0; /*0x69b207*/
         ParseAndApplyAlliances_Parse(&v30, 0, 0); /*0x69b20b*/
-        v30.vtable0 = &DynamicVectorClass<HouseClass *>::`vftable'; /*0x69b210*/
+        v30.ptr_0 = &DynamicVectorClass<HouseClass *>::`vftable'; /*0x69b210*/
         v32 = 10; /*0x69b232*/
         v31 = 0; /*0x69b238*/
         v3 = &byte_B77A04; /*0x69b23c*/
@@ -8060,7 +8060,7 @@ void __thiscall ParseAndApplyAlliances(ObjectClass *this)
               && (v34 < v33.Capacity
                || (v33.IsAllocated || !v33.Capacity)
                && v35 > 0
-               && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v33.vtable0 + 2))(
+               && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v33.ptr_0 + 2))(
                     &v33,
                     v35 + v33.Capacity,
                     0)) )
@@ -8083,7 +8083,7 @@ void __thiscall ParseAndApplyAlliances(ObjectClass *this)
               && (v31 < v30.Capacity
                || (v30.IsAllocated || !v30.Capacity)
                && v32 > 0
-               && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v30.vtable0 + 2))(
+               && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v30.ptr_0 + 2))(
                     &v30,
                     v32 + v30.Capacity,
                     0)) )
@@ -8159,16 +8159,16 @@ void __thiscall ParseAndApplyAlliances(ObjectClass *this)
         }
         __3_YAXPAX_Z(v4); /*0x69b4c1*/
         *((_BYTE *)this + 1672) = 1; /*0x69b4d4*/
-        v27 = dword_A8B230->vtable0; /*0x69b4e0*/
-        BYTE1(v27) = ((unsigned __int16)dword_A8B230->vtable0 >> 8) | 4; /*0x69b4e2*/
-        dword_A8B230->vtable0 = v27; /*0x69b4e5*/
-        v30.vtable0 = &VectorClass<HouseClass *>::`vftable'; /*0x69b4ed*/
+        v27 = dword_A8B230->ptr_0; /*0x69b4e0*/
+        BYTE1(v27) = ((unsigned __int16)dword_A8B230->ptr_0 >> 8) | 4; /*0x69b4e2*/
+        dword_A8B230->ptr_0 = v27; /*0x69b4e5*/
+        v30.ptr_0 = &VectorClass<HouseClass *>::`vftable'; /*0x69b4ed*/
         if ( v30.Items && v30.IsAllocated ) /*0x69b4f9*/
         {
           __3_YAXPAX_Z(v30.Items); /*0x69b4fc*/
           v30.Items = 0; /*0x69b504*/
         }
-        v33.vtable0 = &VectorClass<HouseClass *>::`vftable'; /*0x69b50c*/
+        v33.ptr_0 = &VectorClass<HouseClass *>::`vftable'; /*0x69b50c*/
         v30.IsAllocated = 0; /*0x69b514*/
         v30.Capacity = 0; /*0x69b519*/
         if ( v33.Items ) /*0x69b51e*/
@@ -10785,9 +10785,9 @@ _DWORD *__thiscall VectorClass::WstringConstructor(VectorClass *this, int a2, _D
   this->Capacity = a2; /*0x69d7d3*/
   this->IsInitialized = 1; /*0x69d7d6*/
   this->IsAllocated = 0; /*0x69d7da*/
-  this->vtable0 = &VectorClass<Wstring>::`vftable'; /*0x69d7de*/
+  this->ptr_0 = &VectorClass<Wstring>::`vftable'; /*0x69d7de*/
   if ( !a2 ) /*0x69d7e4*/
-    return &this->vtable0; /*0x69d7e4*/
+    return &this->ptr_0; /*0x69d7e4*/
   if ( !a3 ) /*0x69d7ec*/
   {
     v7 = (int *)__2_YAPAXI_Z(4 * a2 + 4); /*0x69d820*/
@@ -10806,7 +10806,7 @@ _DWORD *__thiscall VectorClass::WstringConstructor(VectorClass *this, int a2, _D
         while ( v3 ); /*0x69d848*/
         this->Items = v8; /*0x69d84a*/
         this->IsAllocated = 1; /*0x69d84d*/
-        return &this->vtable0; /*0x69d857*/
+        return &this->ptr_0; /*0x69d857*/
       }
     }
     else
@@ -10815,7 +10815,7 @@ _DWORD *__thiscall VectorClass::WstringConstructor(VectorClass *this, int a2, _D
     }
     this->Items = v8; /*0x69d85c*/
     this->IsAllocated = 1; /*0x69d85f*/
-    return &this->vtable0; /*0x69d863*/
+    return &this->ptr_0; /*0x69d863*/
   }
   *a3 = a2; /*0x69d7ee*/
   v5 = a3 + 1; /*0x69d7f6*/
@@ -10829,7 +10829,7 @@ _DWORD *__thiscall VectorClass::WstringConstructor(VectorClass *this, int a2, _D
     while ( v3 ); /*0x69d80a*/
   }
   this->Items = a3 + 1; /*0x69d80c*/
-  return &this->vtable0; /*0x69d811*/
+  return &this->ptr_0; /*0x69d811*/
 }
 
 
@@ -10841,18 +10841,18 @@ _DWORD *__thiscall ParseAndApplyAlliances_Parse(VectorClass *this, int a2, int a
   this->Capacity = a2; /*0x69d87e*/
   this->IsInitialized = 1; /*0x69d881*/
   this->IsAllocated = 0; /*0x69d885*/
-  this->vtable0 = &VectorClass<HouseClass *>::`vftable'; /*0x69d888*/
+  this->ptr_0 = &VectorClass<HouseClass *>::`vftable'; /*0x69d888*/
   if ( a2 ) /*0x69d88e*/
   {
     if ( a3 ) /*0x69d896*/
     {
       this->Items = (void *)a3; /*0x69d898*/
-      return &this->vtable0; /*0x69d89e*/
+      return &this->ptr_0; /*0x69d89e*/
     }
     this->Items = (void *)__2_YAPAXI_Z(4 * a2); /*0x69d8ad*/
     this->IsAllocated = 1; /*0x69d8b0*/
   }
-  return &this->vtable0; /*0x69d89d*/
+  return &this->ptr_0; /*0x69d89d*/
 }
 
 
@@ -12276,7 +12276,7 @@ int __thiscall LocomotionClass::Process(LocomotionClass *this)
   this->ptr_68 = 0; /*0x69eccf*/
   *(_DWORD *)this->ILocomotion = &ShipLocomotionClass::`vftable'; /*0x69ecd2*/
   *(_DWORD *)&this->ILocomotion[4] = &ShipLocomotionClass::`vftable'; /*0x69ecd8*/
-  this->vtable3 = &off_7F2D68; /*0x69ecdf*/
+  this->ptr_C = &off_7F2D68; /*0x69ecdf*/
   return (int)this->ILocomotion; /*0x69ece8*/
 }
 
@@ -12770,7 +12770,7 @@ _DWORD *__stdcall JumpjetLocomotionClass::ConvertCoordToCell_2(
 int __stdcall JumpjetLocomotionClass::CheckWindowsErrorWrapper_1(ShipLocomotionClass *this)
 {
   FootClass *Owner; // eax
-  _DWORD *vtable2; // esi
+  _DWORD *ptr_8; // esi
   double v3; // st7
   int result; // eax
 
@@ -12781,17 +12781,17 @@ int __stdcall JumpjetLocomotionClass::CheckWindowsErrorWrapper_1(ShipLocomotionC
       Owner = this->?; /*0x69f550*/
       if ( !LOBYTE(Owner[1].?) ) /*0x69f553*/
       {
-        vtable2 = Owner[1].?; /*0x69f55d*/
-        if ( vtable2 ) /*0x69f565*/
+        ptr_8 = Owner[1].?; /*0x69f55d*/
+        if ( ptr_8 ) /*0x69f565*/
         {
           do /*0x69f597*/
           {
-            if ( !vtable2[413] ) /*0x69f567*/
+            if ( !ptr_8[413] ) /*0x69f567*/
               WinAPI::Wrapper(-2147467261); /*0x69f576*/
-            (*(void (__stdcall **)(_DWORD))(*(_DWORD *)vtable2[413] + 72))(vtable2[413]); /*0x69f584*/
-            vtable2 = (_DWORD *)vtable2[434]; /*0x69f587*/
+            (*(void (__stdcall **)(_DWORD))(*(_DWORD *)ptr_8[413] + 72))(ptr_8[413]); /*0x69f584*/
+            ptr_8 = (_DWORD *)ptr_8[434]; /*0x69f587*/
           }
-          while ( vtable2 && vtable2 != (_DWORD *)vtable2[434] ); /*0x69f597*/
+          while ( ptr_8 && ptr_8 != (_DWORD *)ptr_8[434] ); /*0x69f597*/
         }
       }
     }
@@ -12816,7 +12816,7 @@ BOOL __thiscall sub_69F5E0(ObjectClass *this)
   double v2; // st7
   int fallRate; // eax
   int occupant; // esi
-  float *vtable3; // ecx
+  float *ptr_C; // ecx
   BOOL result; // eax
 
   nextObject = this->nextObject; /*0x69f5e4*/
@@ -12840,8 +12840,8 @@ BOOL __thiscall sub_69F5E0(ObjectClass *this)
   result = 0; /*0x69f65f*/
   if ( v2 == 1.0 ) /*0x69f630*/
   {
-    vtable3 = (float *)this->?; /*0x69f632*/
-    if ( fabs(vtable3[202]) < 0.005 && fabs(vtable3[203]) < 0.005 ) /*0x69f65d*/
+    ptr_C = (float *)this->?; /*0x69f632*/
+    if ( fabs(ptr_C[202]) < 0.005 && fabs(ptr_C[203]) < 0.005 ) /*0x69f65d*/
       return 1; /*0x69f630*/
   }
   return result; /*0x69f664*/
@@ -13185,12 +13185,12 @@ char __stdcall BulletTypeClass::ProcessImpact(ShipLocomotionClass *this)
   {
     movementDestination = v1->?->movementDestination; /*0x69fd16*/
     if ( movementDestination /*0x69fd54*/
-      && (*((int (__thiscall **)(AbstractClass *))movementDestination->vtable0 + 11))(movementDestination) == 11
+      && (*((int (__thiscall **)(AbstractClass *))movementDestination->ptr_0 + 11))(movementDestination) == 11
       && (v6 = v1->?,
           v7 = v6->movementDestination + 1,
           v8 = (_WORD *)(*((int (__thiscall **)(FootClass *, ShipLocomotionClass **))v6->TechnoClass + 110))(v6, &this),
-          *v8 == LOWORD(v7->vtable0))
-      && v8[1] == HIWORD(v7->vtable0) )
+          *v8 == LOWORD(v7->ptr_0))
+      && v8[1] == HIWORD(v7->ptr_0) )
     {
       v9 = (FootClass *)*((_DWORD *)v2 + 3); /*0x69fd56*/
       if ( !*(_DWORD *)&v9->__pad_58C[12] ) /*0x69fd59*/
@@ -13246,7 +13246,7 @@ char __stdcall BulletTypeClass::ProcessImpact(ShipLocomotionClass *this)
               v18 = v17->movementDestination; /*0x6a0037*/
               if ( v18 ) /*0x6a003f*/
               {
-                v19 = (_DWORD *)(*((int (__thiscall **)(AbstractClass *, int *, FootClass *))v18->vtable0 + 19))( /*0x6a004d*/
+                v19 = (_DWORD *)(*((int (__thiscall **)(AbstractClass *, int *, FootClass *))v18->ptr_0 + 19))( /*0x6a004d*/
                                   v18,
                                   &v23,
                                   v1->?);
@@ -13544,8 +13544,8 @@ int __thiscall Screen::CleanupTransitionObjects(Screen *this)
 // ==== 0x00690400  ObjectClass::method  this=ObjectClass  sig=csp ====
 int __thiscall sub_690400(ObjectClass *this)
 {
-  char *vtable0; // eax
-  char *vtable1; // esi
+  char *ptr_0; // eax
+  char *ptr_4; // esi
   int result; // eax
   _DWORD v5[4]; // [esp+8h] [ebp-30h] BYREF
   _DWORD v6[4]; // [esp+18h] [ebp-20h] BYREF
@@ -13553,14 +13553,14 @@ int __thiscall sub_690400(ObjectClass *this)
 
   GetClientRect(g_hWnd, &Rect); /*0x690412*/
   ClientToScreen(g_hWnd, (LPPOINT)&Rect); /*0x690423*/
-  vtable0 = (char *)this->AbstractClass; /*0x690429*/
-  vtable1 = (char *)this->?; /*0x69042f*/
-  v5[0] = vtable0; /*0x690432*/
-  v6[0] = &vtable0[Rect.left]; /*0x69043d*/
-  v5[1] = vtable1; /*0x690441*/
+  ptr_0 = (char *)this->AbstractClass; /*0x690429*/
+  ptr_4 = (char *)this->?; /*0x69042f*/
+  v5[0] = ptr_0; /*0x690432*/
+  v6[0] = &ptr_0[Rect.left]; /*0x69043d*/
+  v5[1] = ptr_4; /*0x690441*/
   v6[3] = 400; /*0x69044d*/
   v5[3] = 400; /*0x690451*/
-  v6[1] = &vtable1[Rect.top]; /*0x69045b*/
+  v6[1] = &ptr_4[Rect.top]; /*0x69045b*/
   v6[2] = 640; /*0x690467*/
   v5[2] = 640; /*0x69046b*/
   if ( stru_887598.lineTrailer ) /*0x69046f*/
@@ -14094,7 +14094,7 @@ LABEL_5:
     v18 = v9; /*0x690e04*/
     m_8 = this->m_8; /*0x690e0f*/
     v21 = v10; /*0x690e1f*/
-    (*(void (__thiscall **)(ObjectClass *, int *, DSurface *, int *, _DWORD, int))(g_DSurface_Hidden->vtable0 + 8))( /*0x690e2b*/
+    (*(void (__thiscall **)(ObjectClass *, int *, DSurface *, int *, _DWORD, int))(g_DSurface_Hidden->ptr_0 + 8))( /*0x690e2b*/
       g_DSurface_Hidden,
       &v18,
       DSurface_Alternate,
@@ -14347,7 +14347,7 @@ char __thiscall VectorClass::PushBack2(DynamicVectorClass *this, _DWORD *a2)
       return 0; /*0x691176*/
     CapacityIncrement = this->CapacityIncrement; /*0x691178*/
     if ( CapacityIncrement <= 0 /*0x691188*/
-      || !(*(unsigned __int8 (__thiscall **)(DynamicVectorClass *, int, _DWORD))(this->vtable0 + 8))(
+      || !(*(unsigned __int8 (__thiscall **)(DynamicVectorClass *, int, _DWORD))(this->ptr_0 + 8))(
             this,
             Capacity + CapacityIncrement,
             0) )
@@ -16275,7 +16275,7 @@ char __thiscall ScrollMapEdge(ObjectClass *this, _DWORD *a2)
   __int64 v5; // rax
   int v6; // ecx
   __int64 v7; // rax
-  void (__thiscall **vtable0)(ObjectClass *, _DWORD *); // edx
+  void (__thiscall **ptr_0)(ObjectClass *, _DWORD *); // edx
   int v9; // edi
   LONG v10; // ebp
   int v11; // eax
@@ -16324,10 +16324,10 @@ char __thiscall ScrollMapEdge(ObjectClass *this, _DWORD *a2)
           goto LABEL_14; /*0x6934cb*/
         if ( *((_BYTE *)this + 4559) ) /*0x6934d5*/
         {
-          vtable0 = (void (__thiscall **)(ObjectClass *, _DWORD *))this->AbstractClass; /*0x6934df*/
+          ptr_0 = (void (__thiscall **)(ObjectClass *, _DWORD *))this->AbstractClass; /*0x6934df*/
           v30[0] = -1; /*0x6934e4*/
           v30[1] = -1; /*0x6934e8*/
-          vtable0[49](this, v30); /*0x6934f3*/
+          ptr_0[49](this, v30); /*0x6934f3*/
         }
         else
         {
@@ -18121,7 +18121,7 @@ char __thiscall ApplyModemConfigSettings(ObjectClass *this)
   int v27; // eax
   int *v28; // eax
   int *v30; // eax
-  HWND vtable0; // [esp-8h] [ebp-20h]
+  HWND ptr_0; // [esp-8h] [ebp-20h]
   wchar_t *StringCSF; // [esp+0h] [ebp-18h]
   wchar_t *v33; // [esp+0h] [ebp-18h]
   AnimClass **p_parachute; // [esp+10h] [ebp-8h]
@@ -18214,9 +18214,9 @@ LABEL_10:
         strcpy((char *)&this->lineTrailer, v22 + 1); /*0x695e24*/
     }
   }
-  vtable0 = (HWND)this->AbstractClass; /*0x695e3b*/
+  ptr_0 = (HWND)this->AbstractClass; /*0x695e3b*/
   this->lastLayer = 0; /*0x695e3c*/
-  v23 = GetDlgItem(vtable0, 1627); /*0x695e46*/
+  v23 = GetDlgItem(ptr_0, 1627); /*0x695e46*/
   if ( v23 && SendMessageA(v23, 0xF0u, 0, 0) == 1 ) /*0x695e5f*/
     this->lastLayer = 1; /*0x695e61*/
   Debug::Log(); /*0x695e88*/
@@ -20048,7 +20048,7 @@ int __thiscall GameSetup_WriteINI(int this, char *a2, unsigned __int8 *Block)
 void __thiscall SaveConfigWOL(TechnoClass *this)
 {
   char *v2; // eax
-  int vtable1; // eax
+  int ptr_4; // eax
   int i; // edi
   int j; // edi
   int v6; // eax
@@ -20065,9 +20065,9 @@ void __thiscall SaveConfigWOL(TechnoClass *this)
   INIClass::SetInt(dword_8870C0.__pad_0, aMultiplayer, aColorex, this->targetingTimer[0], 0); /*0x699163*/
   INIClass::SetHouseName(dword_8870C0.__pad_0, aMultiplayer, aSide, (void *)this->targetingTimer[1]); /*0x69917e*/
   INIClass::SetInt(dword_8870C0.__pad_0, aMultiplayer, aSideex, this->targetingTimer[2], 0); /*0x69919b*/
-  vtable1 = this->vtable1; /*0x6991a0*/
-  if ( vtable1 ) /*0x6991a7*/
-    INIClass::SetInt(dword_8870C0.__pad_0, aMultiplayer, g_INI_Key_GameMode, *(_DWORD *)(vtable1 + 40), 0); /*0x6991ad*/
+  ptr_4 = this->ptr_4; /*0x6991a0*/
+  if ( ptr_4 ) /*0x6991a7*/
+    INIClass::SetInt(dword_8870C0.__pad_0, aMultiplayer, g_INI_Key_GameMode, *(_DWORD *)(ptr_4 + 40), 0); /*0x6991ad*/
   else
     INIClass::SetInt(dword_8870C0.__pad_0, aMultiplayer, g_INI_Key_GameMode, 0, 0); /*0x6991c0*/
   GameSetup::WriteINI((int)this->__pad_18C, dword_8870C0.__pad_0, (unsigned __int8 *)aSkirmish); /*0x6991d5*/
@@ -21255,7 +21255,7 @@ int __thiscall Multiplayer::ShowProgress(Multiplayer *this, int a2)
   if ( !stru_A8EB00.?[391] ) /*0x69aea1*/
   {
     v14 = a2; /*0x69aeb4*/
-    if ( BYTE1(dword_A8B230[375].vtable0) ) /*0x69aeb8*/
+    if ( BYTE1(dword_A8B230[375].ptr_0) ) /*0x69aeb8*/
       v14 = a2 / 2; /*0x69aec7*/
     __asm { fild dword ptr [esp+1E4h+var_1D0] } /*0x69aecb*/
     __asm { fstp [esp+1E8h+var_1D0] }
@@ -21363,7 +21363,7 @@ int __thiscall Multiplayer::ShowProgress(Multiplayer *this, int a2)
 void __thiscall ParseAndApplyAlliances(ObjectClass *this)
 {
   bool v1; // zf
-  void *vtable0; // edx
+  void *ptr_0; // edx
   const char *v3; // edi
   char *v4; // ebx
   char *i; // ebp
@@ -21401,9 +21401,9 @@ void __thiscall ParseAndApplyAlliances(ObjectClass *this)
   *((_BYTE *)this + 1672) = 0; /*0x69b17d*/
   if ( v1 ) /*0x69b184*/
   {
-    vtable0 = dword_A8B230->vtable0; /*0x69b199*/
-    BYTE1(vtable0) = ((unsigned __int16)dword_A8B230->vtable0 >> 8) & 0xFB; /*0x69b19b*/
-    dword_A8B230->vtable0 = vtable0; /*0x69b19e*/
+    ptr_0 = dword_A8B230->ptr_0; /*0x69b199*/
+    BYTE1(ptr_0) = ((unsigned __int16)dword_A8B230->ptr_0 >> 8) & 0xFB; /*0x69b19b*/
+    dword_A8B230->ptr_0 = ptr_0; /*0x69b19e*/
     Debug::Log(); /*0x69b1a0*/
     Debug::Log(); /*0x69b1af*/
     if ( strlen(&byte_B77A04) ) /*0x69b1b9*/
@@ -21411,11 +21411,11 @@ void __thiscall ParseAndApplyAlliances(ObjectClass *this)
       if ( strlen(byte_B76568) ) /*0x69b1d1*/
       {
         ParseAndApplyAlliances_Parse(&v33, 0, 0); /*0x69b1ea*/
-        v33.vtable0 = &DynamicVectorClass<HouseClass *>::`vftable'; /*0x69b1ff*/
+        v33.ptr_0 = &DynamicVectorClass<HouseClass *>::`vftable'; /*0x69b1ff*/
         v35 = 10; /*0x69b203*/
         v34 = 0; /*0x69b207*/
         ParseAndApplyAlliances_Parse(&v30, 0, 0); /*0x69b20b*/
-        v30.vtable0 = &DynamicVectorClass<HouseClass *>::`vftable'; /*0x69b210*/
+        v30.ptr_0 = &DynamicVectorClass<HouseClass *>::`vftable'; /*0x69b210*/
         v32 = 10; /*0x69b232*/
         v31 = 0; /*0x69b238*/
         v3 = &byte_B77A04; /*0x69b23c*/
@@ -21436,7 +21436,7 @@ void __thiscall ParseAndApplyAlliances(ObjectClass *this)
               && (v34 < v33.Capacity
                || (v33.IsAllocated || !v33.Capacity)
                && v35 > 0
-               && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v33.vtable0 + 2))(
+               && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v33.ptr_0 + 2))(
                     &v33,
                     v35 + v33.Capacity,
                     0)) )
@@ -21459,7 +21459,7 @@ void __thiscall ParseAndApplyAlliances(ObjectClass *this)
               && (v31 < v30.Capacity
                || (v30.IsAllocated || !v30.Capacity)
                && v32 > 0
-               && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v30.vtable0 + 2))(
+               && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v30.ptr_0 + 2))(
                     &v30,
                     v32 + v30.Capacity,
                     0)) )
@@ -21535,16 +21535,16 @@ void __thiscall ParseAndApplyAlliances(ObjectClass *this)
         }
         __3_YAXPAX_Z(v4); /*0x69b4c1*/
         *((_BYTE *)this + 1672) = 1; /*0x69b4d4*/
-        v27 = dword_A8B230->vtable0; /*0x69b4e0*/
-        BYTE1(v27) = ((unsigned __int16)dword_A8B230->vtable0 >> 8) | 4; /*0x69b4e2*/
-        dword_A8B230->vtable0 = v27; /*0x69b4e5*/
-        v30.vtable0 = &VectorClass<HouseClass *>::`vftable'; /*0x69b4ed*/
+        v27 = dword_A8B230->ptr_0; /*0x69b4e0*/
+        BYTE1(v27) = ((unsigned __int16)dword_A8B230->ptr_0 >> 8) | 4; /*0x69b4e2*/
+        dword_A8B230->ptr_0 = v27; /*0x69b4e5*/
+        v30.ptr_0 = &VectorClass<HouseClass *>::`vftable'; /*0x69b4ed*/
         if ( v30.Items && v30.IsAllocated ) /*0x69b4f9*/
         {
           __3_YAXPAX_Z(v30.Items); /*0x69b4fc*/
           v30.Items = 0; /*0x69b504*/
         }
-        v33.vtable0 = &VectorClass<HouseClass *>::`vftable'; /*0x69b50c*/
+        v33.ptr_0 = &VectorClass<HouseClass *>::`vftable'; /*0x69b50c*/
         v30.IsAllocated = 0; /*0x69b514*/
         v30.Capacity = 0; /*0x69b519*/
         if ( v33.Items ) /*0x69b51e*/
@@ -24181,9 +24181,9 @@ _DWORD *__thiscall VectorClass::WstringConstructor(VectorClass *this, int a2, _D
   this->Capacity = a2; /*0x69d7d3*/
   this->IsInitialized = 1; /*0x69d7d6*/
   this->IsAllocated = 0; /*0x69d7da*/
-  this->vtable0 = &VectorClass<Wstring>::`vftable'; /*0x69d7de*/
+  this->ptr_0 = &VectorClass<Wstring>::`vftable'; /*0x69d7de*/
   if ( !a2 ) /*0x69d7e4*/
-    return &this->vtable0; /*0x69d7e4*/
+    return &this->ptr_0; /*0x69d7e4*/
   if ( !a3 ) /*0x69d7ec*/
   {
     v7 = (int *)__2_YAPAXI_Z(4 * a2 + 4); /*0x69d820*/
@@ -24202,7 +24202,7 @@ _DWORD *__thiscall VectorClass::WstringConstructor(VectorClass *this, int a2, _D
         while ( v3 ); /*0x69d848*/
         this->Items = v8; /*0x69d84a*/
         this->IsAllocated = 1; /*0x69d84d*/
-        return &this->vtable0; /*0x69d857*/
+        return &this->ptr_0; /*0x69d857*/
       }
     }
     else
@@ -24211,7 +24211,7 @@ _DWORD *__thiscall VectorClass::WstringConstructor(VectorClass *this, int a2, _D
     }
     this->Items = v8; /*0x69d85c*/
     this->IsAllocated = 1; /*0x69d85f*/
-    return &this->vtable0; /*0x69d863*/
+    return &this->ptr_0; /*0x69d863*/
   }
   *a3 = a2; /*0x69d7ee*/
   v5 = a3 + 1; /*0x69d7f6*/
@@ -24225,7 +24225,7 @@ _DWORD *__thiscall VectorClass::WstringConstructor(VectorClass *this, int a2, _D
     while ( v3 ); /*0x69d80a*/
   }
   this->Items = a3 + 1; /*0x69d80c*/
-  return &this->vtable0; /*0x69d811*/
+  return &this->ptr_0; /*0x69d811*/
 }
 
 
@@ -24237,18 +24237,18 @@ _DWORD *__thiscall ParseAndApplyAlliances_Parse(VectorClass *this, int a2, int a
   this->Capacity = a2; /*0x69d87e*/
   this->IsInitialized = 1; /*0x69d881*/
   this->IsAllocated = 0; /*0x69d885*/
-  this->vtable0 = &VectorClass<HouseClass *>::`vftable'; /*0x69d888*/
+  this->ptr_0 = &VectorClass<HouseClass *>::`vftable'; /*0x69d888*/
   if ( a2 ) /*0x69d88e*/
   {
     if ( a3 ) /*0x69d896*/
     {
       this->Items = (void *)a3; /*0x69d898*/
-      return &this->vtable0; /*0x69d89e*/
+      return &this->ptr_0; /*0x69d89e*/
     }
     this->Items = (void *)__2_YAPAXI_Z(4 * a2); /*0x69d8ad*/
     this->IsAllocated = 1; /*0x69d8b0*/
   }
-  return &this->vtable0; /*0x69d89d*/
+  return &this->ptr_0; /*0x69d89d*/
 }
 
 
@@ -25672,7 +25672,7 @@ int __thiscall LocomotionClass::Process(LocomotionClass *this)
   this->ptr_68 = 0; /*0x69eccf*/
   *(_DWORD *)this->ILocomotion = &ShipLocomotionClass::`vftable'; /*0x69ecd2*/
   *(_DWORD *)&this->ILocomotion[4] = &ShipLocomotionClass::`vftable'; /*0x69ecd8*/
-  this->vtable3 = &off_7F2D68; /*0x69ecdf*/
+  this->ptr_C = &off_7F2D68; /*0x69ecdf*/
   return (int)this->ILocomotion; /*0x69ece8*/
 }
 
@@ -26166,7 +26166,7 @@ _DWORD *__stdcall JumpjetLocomotionClass::ConvertCoordToCell_2(
 int __stdcall JumpjetLocomotionClass::CheckWindowsErrorWrapper_1(ShipLocomotionClass *this)
 {
   FootClass *Owner; // eax
-  _DWORD *vtable2; // esi
+  _DWORD *ptr_8; // esi
   double v3; // st7
   int result; // eax
 
@@ -26177,17 +26177,17 @@ int __stdcall JumpjetLocomotionClass::CheckWindowsErrorWrapper_1(ShipLocomotionC
       Owner = this->?; /*0x69f550*/
       if ( !LOBYTE(Owner[1].?) ) /*0x69f553*/
       {
-        vtable2 = Owner[1].?; /*0x69f55d*/
-        if ( vtable2 ) /*0x69f565*/
+        ptr_8 = Owner[1].?; /*0x69f55d*/
+        if ( ptr_8 ) /*0x69f565*/
         {
           do /*0x69f597*/
           {
-            if ( !vtable2[413] ) /*0x69f567*/
+            if ( !ptr_8[413] ) /*0x69f567*/
               WinAPI::Wrapper(-2147467261); /*0x69f576*/
-            (*(void (__stdcall **)(_DWORD))(*(_DWORD *)vtable2[413] + 72))(vtable2[413]); /*0x69f584*/
-            vtable2 = (_DWORD *)vtable2[434]; /*0x69f587*/
+            (*(void (__stdcall **)(_DWORD))(*(_DWORD *)ptr_8[413] + 72))(ptr_8[413]); /*0x69f584*/
+            ptr_8 = (_DWORD *)ptr_8[434]; /*0x69f587*/
           }
-          while ( vtable2 && vtable2 != (_DWORD *)vtable2[434] ); /*0x69f597*/
+          while ( ptr_8 && ptr_8 != (_DWORD *)ptr_8[434] ); /*0x69f597*/
         }
       }
     }
@@ -26212,7 +26212,7 @@ BOOL __thiscall sub_69F5E0(ObjectClass *this)
   double v2; // st7
   int fallRate; // eax
   int occupant; // esi
-  float *vtable3; // ecx
+  float *ptr_C; // ecx
   BOOL result; // eax
 
   nextObject = this->nextObject; /*0x69f5e4*/
@@ -26236,8 +26236,8 @@ BOOL __thiscall sub_69F5E0(ObjectClass *this)
   result = 0; /*0x69f65f*/
   if ( v2 == 1.0 ) /*0x69f630*/
   {
-    vtable3 = (float *)this->?; /*0x69f632*/
-    if ( fabs(vtable3[202]) < 0.005 && fabs(vtable3[203]) < 0.005 ) /*0x69f65d*/
+    ptr_C = (float *)this->?; /*0x69f632*/
+    if ( fabs(ptr_C[202]) < 0.005 && fabs(ptr_C[203]) < 0.005 ) /*0x69f65d*/
       return 1; /*0x69f630*/
   }
   return result; /*0x69f664*/
@@ -26581,12 +26581,12 @@ char __stdcall BulletTypeClass::ProcessImpact(ShipLocomotionClass *this)
   {
     movementDestination = v1->?->movementDestination; /*0x69fd16*/
     if ( movementDestination /*0x69fd54*/
-      && (*((int (__thiscall **)(AbstractClass *))movementDestination->vtable0 + 11))(movementDestination) == 11
+      && (*((int (__thiscall **)(AbstractClass *))movementDestination->ptr_0 + 11))(movementDestination) == 11
       && (v6 = v1->?,
           v7 = v6->movementDestination + 1,
           v8 = (_WORD *)(*((int (__thiscall **)(FootClass *, ShipLocomotionClass **))v6->TechnoClass + 110))(v6, &this),
-          *v8 == LOWORD(v7->vtable0))
-      && v8[1] == HIWORD(v7->vtable0) )
+          *v8 == LOWORD(v7->ptr_0))
+      && v8[1] == HIWORD(v7->ptr_0) )
     {
       v9 = (FootClass *)*((_DWORD *)v2 + 3); /*0x69fd56*/
       if ( !*(_DWORD *)&v9->__pad_58C[12] ) /*0x69fd59*/
@@ -26642,7 +26642,7 @@ char __stdcall BulletTypeClass::ProcessImpact(ShipLocomotionClass *this)
               v18 = v17->movementDestination; /*0x6a0037*/
               if ( v18 ) /*0x6a003f*/
               {
-                v19 = (_DWORD *)(*((int (__thiscall **)(AbstractClass *, int *, FootClass *))v18->vtable0 + 19))( /*0x6a004d*/
+                v19 = (_DWORD *)(*((int (__thiscall **)(AbstractClass *, int *, FootClass *))v18->ptr_0 + 19))( /*0x6a004d*/
                                   v18,
                                   &v23,
                                   v1->?);

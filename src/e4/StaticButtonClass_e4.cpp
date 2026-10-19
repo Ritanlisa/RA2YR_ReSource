@@ -21,7 +21,7 @@ StaticButtonClass * StaticButtonClass::QueryInterface(char a2)
 
   void *v3; // eax
   v3 = (void *)this->u32_30; /*0x6c6883*/
-  /* X11: vtable install elided (implicit via StaticButtonClass virtuals 0x6c6886) */
+  /* X11: ptr_0 install elided (implicit via StaticButtonClass virtuals 0x6c6886) */
   if ( v3 ) /*0x6c688e*/
     __3_YAXPAX_Z(v3); /*0x6c6891*/
   Vector::Clear((int)&this->u32_90); /*0x6c689c*/

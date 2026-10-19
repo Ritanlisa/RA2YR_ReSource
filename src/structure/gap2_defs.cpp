@@ -129,11 +129,11 @@ int AircraftClass::Construct(int a1, void* a2) {
   this->AircraftClass_field_char_6D3 = 5; /*0x413d74*/
   this->AircraftClass_field_bool_6D4 = 1; /*0x413d7b*/
   this->AircraftClass_field_bool_6D5 = 1; /*0x413d81*/
-  /* X11: vtable install elided (implicit via class virtuals 0x413d87) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x413d8d) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x413d94) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x413d9b) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x413da2) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x413d87) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x413d8d) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x413d94) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x413d9b) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x413da2) — binary-proven install, was 0 */
   AbstractClass::GenerateUniqueID(&this->ptr_4); /*0x413dac*/
   v5 = this->Type; /*0x413db1*/
   if ( v5 ) /*0x413db9*/
@@ -260,10 +260,10 @@ void* BuildingLightClass::CTOR(int a1) {
   v4[1].nextObject = 0; /*0x43589d*/
   v4[1].attachedTag = 0; /*0x4358a3*/
   v4[1].attachedBomb = (int)this; /*0x4358a9*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_var_88e403) */  /*0x4358af*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_var_88e403) */  /*0x4358b5*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_var_88e403) */  /*0x4358bc*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_var_88e403) */  /*0x4358c3*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_88e403) */  /*0x4358af*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_88e403) */  /*0x4358b5*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_88e403) */  /*0x4358bc*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_88e403) */  /*0x4358c3*/
   if ( dword_8B41A0 < dword_8B4198 /*0x435900*/
     || (byte_8B419D || !dword_8B4198)
     && dword_8B41A4 > 0
@@ -1280,10 +1280,10 @@ void* BuildingClass::ctor(int a1) {
   this->Audio7[3] = (int)0; /*0x43b709*/
   this->Audio8[3] = 10; /*0x43b713*/
   this->Audio8[2] = 0; /*0x43b719*/
-  /* X11: vtable install elided (implicit via BuildingClass virtuals 0x43b71f) */
-  /* X11: vtable install elided (implicit via BuildingClass virtuals 0x43b725) */
-  /* X11: vtable install elided (implicit via BuildingClass virtuals 0x43b72c) */
-  /* X11: vtable install elided (implicit via BuildingClass virtuals 0x43b733) */
+  /* X11: ptr_0 install elided (implicit via BuildingClass virtuals 0x43b71f) */
+  /* X11: ptr_0 install elided (implicit via BuildingClass virtuals 0x43b725) */
+  /* X11: ptr_0 install elided (implicit via BuildingClass virtuals 0x43b72c) */
+  /* X11: ptr_0 install elided (implicit via BuildingClass virtuals 0x43b733) */
   return &this->ptr_0; /*0x43b73c*/
 }
 }
@@ -3115,9 +3115,9 @@ int InfantryClass::Construct(int a1, void* a2) {
   this->ShouldDeploy = 0; /*0x517abc*/
   this->InfantryClass_field_int_6E8 = 2; /*0x517ac2*/
   *(unsigned int *)this = 0; /*0x517acc*/
-  /* X11: vtable install elided (implicit via class virtuals 0x517ad2) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x517ad8) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via off_7EB02C virtuals 0x517adf) */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x517ad2) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x517ad8) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via off_7EB02C virtuals 0x517adf) */
   AbstractClass::GenerateUniqueID(&this->ptr_4); /*0x517ae6*/
   if ( *(int *)&g_BuildingClass_Count < *(int *)&DataGlobal_A83DF0 /*0x517b1e*/
     || (DataGlobal_A83DF5 || !*(unsigned int *)&DataGlobal_A83DF0)
@@ -4818,9 +4818,9 @@ int UnitClass::Construct() {
   this->Deploying = 0; /*0x735428*/
   this->Undeploying = 0; /*0x73542e*/
   this->NonPassengerCount = 0; /*0x735434*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7F5C70) */  /*0x73543a*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F5C70) */  /*0x735440*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F5C70) */  /*0x735446*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7F5C70) */  /*0x73543a*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F5C70) */  /*0x735440*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F5C70) */  /*0x735446*/
   this->ptr_C = (int)&off_7F5C44; /*0x73544d*/
   AbstractClass::GenerateUniqueID(&this->AbstractClass_1); /*0x735454*/
   if ( dword_8B4118 < dword_8B4110 /*0x73548f*/

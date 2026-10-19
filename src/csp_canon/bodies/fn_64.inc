@@ -37,7 +37,7 @@ unsigned int * E4Recv_6429E0::sub_6429E0()
   *(unsigned int *)&this->needsRedraw = -1; /*0x642a0f*/
   LOBYTE(this->estimatedHealth) = 0; /*0x642a1d*/
   this->visibilityFlags = 0; /*0x642a20*/
-  /* X11: vtable install elided (implicit via ProgressScreenClass virtuals 0x642a23) */
+  /* X11: ptr_0 install elided (implicit via ProgressScreenClass virtuals 0x642a23) */
   memset(&((unsigned int *)this)[0], 0, 0x40u); /*0x642a29*/
   return this; /*0x642a2d*/
 

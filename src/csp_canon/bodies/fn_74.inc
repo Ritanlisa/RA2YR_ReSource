@@ -625,7 +625,7 @@ void Gap2Recv_74E1C0::ProcessVeinholeMonster() {
 
   VectorClass::CellConstructor(&v51, 0, 0); /*0x74e1d1*/
   v2 = (unsigned int *)*((unsigned int *)this + 44); /*0x74e1d6*/
-  /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x74e1dc) */
+  /* X11: ptr_0 install elided (implicit via DynamicVectorClass virtuals 0x74e1dc) */
   v52 = 0; /*0x74e1e4*/
   v53 = 5000; /*0x74e1e8*/
   *((unsigned int *)this + 43) = 0; /*0x74e1f0*/
@@ -656,7 +656,7 @@ void Gap2Recv_74E1C0::ProcessVeinholeMonster() {
         if ( v52 < v51.Capacity /*0x74e2d9*/
           || (v51.IsAllocated || !v51.Capacity)
           && v53 > 0
-          && (*((uint8_t (**)(VectorClass *, int, unsigned int))v51.vtable0 + 2))(
+          && (*((uint8_t (**)(VectorClass *, int, unsigned int))v51.ptr_0 + 2))(
                &v51,
                v53 + v51.Capacity,
                0) )
@@ -796,7 +796,7 @@ void Gap2Recv_74E1C0::ProcessVeinholeMonster() {
               && (v52 < v51.Capacity
                || (v51.IsAllocated || !v51.Capacity)
                && v53 > 0
-               && (*((uint8_t (**)(VectorClass *, int, unsigned int))v51.vtable0 + 2))(
+               && (*((uint8_t (**)(VectorClass *, int, unsigned int))v51.ptr_0 + 2))(
                     &v51,
                     v53 + v51.Capacity,
                     0)) )
@@ -812,7 +812,7 @@ void Gap2Recv_74E1C0::ProcessVeinholeMonster() {
           if ( v52 < v51.Capacity /*0x74e4f2*/
             || (v51.IsAllocated || !v51.Capacity)
             && v53 > 0
-            && (*((uint8_t (**)(VectorClass *, int, unsigned int))v51.vtable0 + 2))(
+            && (*((uint8_t (**)(VectorClass *, int, unsigned int))v51.ptr_0 + 2))(
                  &v51,
                  v53 + v51.Capacity,
                  0) )
@@ -834,7 +834,7 @@ void Gap2Recv_74E1C0::ProcessVeinholeMonster() {
       }
     }
   }
-  /* X11: vtable install elided (implicit via VectorClass virtuals 0x74e682) */
+  /* X11: ptr_0 install elided (implicit via VectorClass virtuals 0x74e682) */
   if ( v51.Items ) /*0x74e68b*/
   {
     if ( v51.IsAllocated ) /*0x74e693*/

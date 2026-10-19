@@ -340,7 +340,7 @@ VectorClass_flat * LoadOptions::Constructor_VectorClass_FileEntryClass___(char a
 
   void *v3; // eax
   v3 = *(void **)&a1->m_1[3]; /*0x55a413*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x55a416*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x55a416*/
   if ( v3 && (((unsigned char *)&(a1->m_C))[1]) ) /*0x55a420*/
   {
     operator delete((v3)); /*0x55a428*/
@@ -361,7 +361,7 @@ DynamicVector * LoadOptions::vt00(char a2, int a1)
 
   void *v3; // eax
   v3 = *(void **)&a1->m_1[3]; /*0x55a463*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x55a466*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x55a466*/
   if ( v3 && (((unsigned char *)&(a1->m_C))[1]) ) /*0x55a470*/
   {
     operator delete((v3)); /*0x55a478*/

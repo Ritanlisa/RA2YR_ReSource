@@ -1619,10 +1619,10 @@ int InfantryTypeClass::DTOR()
   void *v4; // eax
   void *v5; // eax
 
-  /* X11: vtable install elided (implicit via class virtuals 0x5239d7) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x5239dd) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x5239e4) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x5239eb) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x5239d7) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x5239dd) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x5239e4) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x5239eb) — binary-proven install, was 0 */
   AbstractClass::AnnounceExpiredPointer(&this->ptr_0, 1); /*0x5239f2*/
   v2 = (*(int (__thiscall **)(unsigned int *, InfantryClass **))(dword_A8E348 + 16))(&dword_A8E348, &this); /*0x523a0b*/
   if ( v2 != -1 && v2 < dword_A8E358 && v2 < --dword_A8E358 ) /*0x523a26*/
@@ -2287,7 +2287,7 @@ int InfantryClass::CalcMoveTarget()
   {
     ObjectVector::Construct(&v86, 0, 0); /*0x51b7ee*/
     ObjectVector_field_0x14 = 10; /*0x51b7f3*/
-    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E4F64) */  /*0x51b7fa*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E4F64) */  /*0x51b7fa*/
     v86.ObjectVector_field_0x14 = 10; /*0x51b802*/
     v86.ObjectVector_field_0x10 = 0; /*0x51b809*/
     if ( ObjectPlacement_field_0x04 ) /*0x51b810*/
@@ -2338,7 +2338,7 @@ LABEL_26:
     }
     this->vt_slot_1348(this, 0, 0); /*0x51b8fc*/
     result = v86.ObjectVector_field_0x04; /*0x51b902*/
-    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E192C) */  /*0x51b906*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E192C) */  /*0x51b906*/
     if ( v86.ObjectVector_field_0x04 && BYTE1(v86.ObjectVector_field_0x0C) ) /*0x51b91f*/
       __3_YAXPAX_Z((void *)v86.ObjectVector_field_0x04); /*0x51b926*/
   }
@@ -5275,10 +5275,10 @@ int InfantryClass::LoadFromStream()
     if ( v2 ) /*0x521a03*/
     {
       FootClass::PostLoadInit((FootClass *)v2, (int)&this); /*0x521a0c*/
-      /* X11: vtable install elided (implicit via class virtuals 0x521a11) — binary-proven install, was 0 */
+      /* X11: ptr_0 install elided (implicit via class virtuals 0x521a11) — binary-proven install, was 0 */
       *p_vtable1 = 0; /*0x521a17*/
-      /* X11: vtable install elided (implicit via class virtuals 0x521a1d) — binary-proven install, was 0 */
-      /* X11: vtable install elided (implicit via off_7EB02C virtuals 0x521a24) */
+      /* X11: ptr_0 install elided (implicit via class virtuals 0x521a1d) — binary-proven install, was 0 */
+      /* X11: ptr_0 install elided (implicit via off_7EB02C virtuals 0x521a24) */
     }
     v11 = v2->locomotor[0]; /*0x521a2c*/
     if ( v11 != v10 ) /*0x521a34*/

@@ -1,5 +1,5 @@
 // X74: e4 carrier for the COM class-factory global object pUnk @ 0xA8E8C8.
-// Binary evidence: vtable 0x7EA564 = [0x429210, 0x4E8240, 0x4E8250, 0x429270,
+// Binary evidence: ptr_0 0x7EA564 = [0x429210, 0x4E8240, 0x4E8250, 0x429270,
 // 0x4E8260] (IClassFactory layout: QueryInterface, AddRef, Release,
 // CreateInstance, LockServer); init 0x4E7CE0 = single vptr store, now
 // compiler dynamic-init of this typed global. size = 4 (vptr only).

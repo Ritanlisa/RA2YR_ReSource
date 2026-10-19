@@ -2103,14 +2103,14 @@ char __thiscall QueryNATPortWOL(ObjectClass *this)
 
   v33 = (NetworkID *)this; /*0x79565c*/
   QueryNATPortWOL_Helper(&v26, 0, 0); /*0x795666*/
-  v26.vtable0 = &DynamicVectorClass<tConnInfoStruct *>::`vftable'; /*0x795670*/
+  v26.ptr_0 = &DynamicVectorClass<tConnInfoStruct *>::`vftable'; /*0x795670*/
   v28 = 10; /*0x79567b*/
   v27 = 0; /*0x795683*/
   v31 = 0; /*0x795687*/
   if ( dword_B76468 < 1 || dword_B76468 >= (int)g_WOL_UserList.AbstractClass ) /*0x795697*/
   {
     Items = v26.Items; /*0x795c8c*/
-    v26.vtable0 = &VectorClass<tConnInfoStruct *>::`vftable'; /*0x795c90*/
+    v26.ptr_0 = &VectorClass<tConnInfoStruct *>::`vftable'; /*0x795c90*/
     if ( !v26.Items || !v26.IsAllocated ) /*0x795ca2*/
       return 0; /*0x795ca2*/
 LABEL_65:
@@ -2138,7 +2138,7 @@ LABEL_65:
     Debug::Log(); /*0x79576b*/
 LABEL_59:
     Items = v26.Items; /*0x795c72*/
-    v26.vtable0 = &VectorClass<tConnInfoStruct *>::`vftable'; /*0x795c76*/
+    v26.ptr_0 = &VectorClass<tConnInfoStruct *>::`vftable'; /*0x795c76*/
     v11 = v26.Items == 0; /*0x795c7e*/
     goto LABEL_60; /*0x795c7e*/
   }
@@ -2175,7 +2175,7 @@ LABEL_58:
     Debug::Log(); /*0x795c37*/
     FreeLibrary(v5); /*0x795c46*/
     FreeLibrary(LibraryA); /*0x795c49*/
-    v26.vtable0 = &VectorClass<tConnInfoStruct *>::`vftable'; /*0x795c4b*/
+    v26.ptr_0 = &VectorClass<tConnInfoStruct *>::`vftable'; /*0x795c4b*/
     Items = v26.Items; /*0x795c53*/
     if ( !v26.Items || !v26.IsAllocated ) /*0x795c61*/
       return 0; /*0x795c61*/
@@ -2193,7 +2193,7 @@ LABEL_58:
     FreeLibrary(hLibModule); /*0x7958ec*/
     FreeLibrary(LibraryA); /*0x7958ef*/
 LABEL_18:
-    v26.vtable0 = &VectorClass<tConnInfoStruct *>::`vftable'; /*0x7958f1*/
+    v26.ptr_0 = &VectorClass<tConnInfoStruct *>::`vftable'; /*0x7958f1*/
     Items = v26.Items; /*0x7958f9*/
     v11 = v26.Items == 0; /*0x7958fd*/
 LABEL_60:
@@ -2247,7 +2247,7 @@ LABEL_60:
         if ( v27 < v26.Capacity /*0x795a01*/
           || (v26.IsAllocated || !v26.Capacity)
           && v28 > 0
-          && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v26.vtable0 + 2))(
+          && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v26.ptr_0 + 2))(
                &v26,
                v28 + v26.Capacity,
                0) )
@@ -2329,7 +2329,7 @@ LABEL_60:
   }
   FreeLibrary(hLibModule); /*0x795bfb*/
   FreeLibrary(v32); /*0x795c02*/
-  v26.vtable0 = &VectorClass<tConnInfoStruct *>::`vftable'; /*0x795c04*/
+  v26.ptr_0 = &VectorClass<tConnInfoStruct *>::`vftable'; /*0x795c04*/
   if ( v26.Items && v26.IsAllocated ) /*0x795c1a*/
     __3_YAXPAX_Z(v26.Items); /*0x795c1d*/
   return v21; /*0x795c25*/
@@ -3350,7 +3350,7 @@ int InitNetworkGame(ObjectClass *this)
   LoadScenarioClassByIndex(1); /*0x7972eb*/
   *(_DWORD *)&stru_A8B250.__pad_0[24] = 2; /*0x7972fb*/
   stru_A8EB00.ObjectTypeClass[24] = 2; /*0x797301*/
-  dword_A8B230[130].vtable3 = *(void **)&stru_A8B250.__pad_0[4]; /*0x797307*/
+  dword_A8B230[130].ptr_C = *(void **)&stru_A8B250.__pad_0[4]; /*0x797307*/
   dword_A8B554 = 5; /*0x797315*/
   switch ( *(_DWORD *)&stru_A8B250.__pad_0[24] ) /*0x797325*/
   {
@@ -4544,9 +4544,9 @@ _DWORD *__thiscall MainLobbyDlgProcWOL_Read(ObjectClass *this)
 int __stdcall MainLobbyDlgProcWOL(String hWnd, ObjectClass a2)
 {
   unsigned int v2; // ebx
-  char *vtable1; // ebp
+  char *ptr_4; // ebp
   Dialog *v4; // esi
-  unsigned int vtable0; // edi
+  unsigned int ptr_0; // edi
   int result; // eax
   LONG WindowLongA; // eax
   HWND v8; // ebx
@@ -4699,10 +4699,10 @@ int RunWOLMainLoop_Init(ObjectClass *this)
 // ==== 0x00799EA0  OptionsDlgProcWOL  this=-  sig=csp ====
 int __stdcall OptionsDlgProcWOL(String hWnd, ObjectClass a2)
 {
-  char *vtable1; // ebp
+  char *ptr_4; // ebp
   Dialog *v3; // esi
   unsigned int v4; // edi
-  unsigned int vtable0; // ebx
+  unsigned int ptr_0; // ebx
   int result; // eax
   LONG WindowLongA; // eax
   HWND v8; // eax
@@ -5595,7 +5595,7 @@ LABEL_34:
 // ==== 0x0079CBA0  RemoveWOLPlayerLogin  this=-  sig=csp ====
 void __fastcall RemoveWOLPlayerLogin(const char **a1)
 {
-  const char **vtable1; // ebp
+  const char **ptr_4; // ebp
   int v2; // esi
   int v3; // ebx
   void *v4; // eax
@@ -5610,7 +5610,7 @@ void __fastcall RemoveWOLPlayerLogin(const char **a1)
   char *v13; // eax
   ObjectClass v14; // [esp+8h] [ebp-188h] BYREF
 
-  vtable1 = a1; /*0x79cbad*/
+  ptr_4 = a1; /*0x79cbad*/
   v2 = 0; /*0x79cbaf*/
   v14.? = a1; /*0x79cbb1*/
   if ( *(int *)g_WindowManager.__pad_0 > 0 ) /*0x79cbb7*/
@@ -5620,7 +5620,7 @@ void __fastcall RemoveWOLPlayerLogin(const char **a1)
       unknown_libname_73(&v14.?); /*0x79cbc1*/
       if ( v2 >= 0 && v2 < *(int *)g_WindowManager.__pad_0 ) /*0x79cbd0*/
         String::Reassign((String *)&v14.?, (const char **)(*(_DWORD *)g_WindowManager.__pad_8 + 4 * v2)); /*0x79cbdf*/
-      if ( (unsigned __int8)String::Compare((String *)&v14.?, vtable1) ) /*0x79cbe9*/
+      if ( (unsigned __int8)String::Compare((String *)&v14.?, ptr_4) ) /*0x79cbe9*/
         break; /*0x79cbe9*/
       DeleteAndZero((ObjectClass *)&v14.?); /*0x79cbf6*/
       if ( ++v2 >= *(int *)g_WindowManager.__pad_0 ) /*0x79cc03*/
@@ -5655,12 +5655,12 @@ void __fastcall RemoveWOLPlayerLogin(const char **a1)
           }
           __3_YAXPAX_Z(v5); /*0x79ccc0*/
           *(_DWORD *)g_WindowManager.__pad_8 = v6; /*0x79ccc5*/
-          vtable1 = (const char **)v14.?; /*0x79cccb*/
+          ptr_4 = (const char **)v14.?; /*0x79cccb*/
           g_WindowManager.Array_field_0x4 = (void *)v3; /*0x79ccd2*/
         }
       }
     }
-    String::AssignFromPtr((String *)&v14, vtable1); /*0x79ccdd*/
+    String::AssignFromPtr((String *)&v14, ptr_4); /*0x79ccdd*/
     HashTable::FindWOLHashTableEntry((HashTable *)&stru_B765EC.?, (const char **)&v14, &v14.visibilityFlags); /*0x79ccf4*/
     if ( !stru_B76900.lastLayer ) /*0x79cd02*/
       goto LABEL_34; /*0x79cd02*/
@@ -5712,7 +5712,7 @@ LABEL_32:
     RemoveWOLPlayerLogin_Remove((ObjectClass *)&stru_B76900.isAliveFlag); /*0x79ce0a*/
 LABEL_34:
     memset(&v14.?, 0, 0x6Cu); /*0x79ce0f*/
-    v13 = String::GetOrEmpty_Alt((String *)vtable1); /*0x79ce20*/
+    v13 = String::GetOrEmpty_Alt((String *)ptr_4); /*0x79ce20*/
     strncpy((char *)&v14.attachedTag, v13, 9u); /*0x79ce2b*/
     (*(void (__stdcall **)(LPVOID, int *))(*(_DWORD *)ppv + 228))(ppv, &v14.?); /*0x79ce40*/
     DeleteAndZero(&v14); /*0x79ce4a*/
@@ -10008,14 +10008,14 @@ char __thiscall QueryNATPortWOL(ObjectClass *this)
 
   v33 = (NetworkID *)this; /*0x79565c*/
   QueryNATPortWOL_Helper(&v26, 0, 0); /*0x795666*/
-  v26.vtable0 = &DynamicVectorClass<tConnInfoStruct *>::`vftable'; /*0x795670*/
+  v26.ptr_0 = &DynamicVectorClass<tConnInfoStruct *>::`vftable'; /*0x795670*/
   v28 = 10; /*0x79567b*/
   v27 = 0; /*0x795683*/
   v31 = 0; /*0x795687*/
   if ( dword_B76468 < 1 || dword_B76468 >= (int)g_WOL_UserList.AbstractClass ) /*0x795697*/
   {
     Items = v26.Items; /*0x795c8c*/
-    v26.vtable0 = &VectorClass<tConnInfoStruct *>::`vftable'; /*0x795c90*/
+    v26.ptr_0 = &VectorClass<tConnInfoStruct *>::`vftable'; /*0x795c90*/
     if ( !v26.Items || !v26.IsAllocated ) /*0x795ca2*/
       return 0; /*0x795ca2*/
 LABEL_65:
@@ -10043,7 +10043,7 @@ LABEL_65:
     Debug::Log(); /*0x79576b*/
 LABEL_59:
     Items = v26.Items; /*0x795c72*/
-    v26.vtable0 = &VectorClass<tConnInfoStruct *>::`vftable'; /*0x795c76*/
+    v26.ptr_0 = &VectorClass<tConnInfoStruct *>::`vftable'; /*0x795c76*/
     v11 = v26.Items == 0; /*0x795c7e*/
     goto LABEL_60; /*0x795c7e*/
   }
@@ -10080,7 +10080,7 @@ LABEL_58:
     Debug::Log(); /*0x795c37*/
     FreeLibrary(v5); /*0x795c46*/
     FreeLibrary(LibraryA); /*0x795c49*/
-    v26.vtable0 = &VectorClass<tConnInfoStruct *>::`vftable'; /*0x795c4b*/
+    v26.ptr_0 = &VectorClass<tConnInfoStruct *>::`vftable'; /*0x795c4b*/
     Items = v26.Items; /*0x795c53*/
     if ( !v26.Items || !v26.IsAllocated ) /*0x795c61*/
       return 0; /*0x795c61*/
@@ -10098,7 +10098,7 @@ LABEL_58:
     FreeLibrary(hLibModule); /*0x7958ec*/
     FreeLibrary(LibraryA); /*0x7958ef*/
 LABEL_18:
-    v26.vtable0 = &VectorClass<tConnInfoStruct *>::`vftable'; /*0x7958f1*/
+    v26.ptr_0 = &VectorClass<tConnInfoStruct *>::`vftable'; /*0x7958f1*/
     Items = v26.Items; /*0x7958f9*/
     v11 = v26.Items == 0; /*0x7958fd*/
 LABEL_60:
@@ -10152,7 +10152,7 @@ LABEL_60:
         if ( v27 < v26.Capacity /*0x795a01*/
           || (v26.IsAllocated || !v26.Capacity)
           && v28 > 0
-          && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v26.vtable0 + 2))(
+          && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v26.ptr_0 + 2))(
                &v26,
                v28 + v26.Capacity,
                0) )
@@ -10234,7 +10234,7 @@ LABEL_60:
   }
   FreeLibrary(hLibModule); /*0x795bfb*/
   FreeLibrary(v32); /*0x795c02*/
-  v26.vtable0 = &VectorClass<tConnInfoStruct *>::`vftable'; /*0x795c04*/
+  v26.ptr_0 = &VectorClass<tConnInfoStruct *>::`vftable'; /*0x795c04*/
   if ( v26.Items && v26.IsAllocated ) /*0x795c1a*/
     __3_YAXPAX_Z(v26.Items); /*0x795c1d*/
   return v21; /*0x795c25*/
@@ -11255,7 +11255,7 @@ int InitNetworkGame(ObjectClass *this)
   LoadScenarioClassByIndex(1); /*0x7972eb*/
   *(_DWORD *)&stru_A8B250.__pad_0[24] = 2; /*0x7972fb*/
   stru_A8EB00.ObjectTypeClass[24] = 2; /*0x797301*/
-  dword_A8B230[130].vtable3 = *(void **)&stru_A8B250.__pad_0[4]; /*0x797307*/
+  dword_A8B230[130].ptr_C = *(void **)&stru_A8B250.__pad_0[4]; /*0x797307*/
   dword_A8B554 = 5; /*0x797315*/
   switch ( *(_DWORD *)&stru_A8B250.__pad_0[24] ) /*0x797325*/
   {
@@ -12449,9 +12449,9 @@ _DWORD *__thiscall MainLobbyDlgProcWOL_Read(ObjectClass *this)
 int __stdcall MainLobbyDlgProcWOL(String hWnd, ObjectClass a2)
 {
   unsigned int v2; // ebx
-  char *vtable1; // ebp
+  char *ptr_4; // ebp
   Dialog *v4; // esi
-  unsigned int vtable0; // edi
+  unsigned int ptr_0; // edi
   int result; // eax
   LONG WindowLongA; // eax
   HWND v8; // ebx
@@ -12604,10 +12604,10 @@ int RunWOLMainLoop_Init(ObjectClass *this)
 // ==== 0x00799EA0  OptionsDlgProcWOL  this=-  sig=csp ====
 int __stdcall OptionsDlgProcWOL(String hWnd, ObjectClass a2)
 {
-  char *vtable1; // ebp
+  char *ptr_4; // ebp
   Dialog *v3; // esi
   unsigned int v4; // edi
-  unsigned int vtable0; // ebx
+  unsigned int ptr_0; // ebx
   int result; // eax
   LONG WindowLongA; // eax
   HWND v8; // eax
@@ -13500,7 +13500,7 @@ LABEL_34:
 // ==== 0x0079CBA0  RemoveWOLPlayerLogin  this=-  sig=csp ====
 void __fastcall RemoveWOLPlayerLogin(const char **a1)
 {
-  const char **vtable1; // ebp
+  const char **ptr_4; // ebp
   int v2; // esi
   int v3; // ebx
   void *v4; // eax
@@ -13515,7 +13515,7 @@ void __fastcall RemoveWOLPlayerLogin(const char **a1)
   char *v13; // eax
   ObjectClass v14; // [esp+8h] [ebp-188h] BYREF
 
-  vtable1 = a1; /*0x79cbad*/
+  ptr_4 = a1; /*0x79cbad*/
   v2 = 0; /*0x79cbaf*/
   v14.? = a1; /*0x79cbb1*/
   if ( *(int *)g_WindowManager.__pad_0 > 0 ) /*0x79cbb7*/
@@ -13525,7 +13525,7 @@ void __fastcall RemoveWOLPlayerLogin(const char **a1)
       unknown_libname_73(&v14.?); /*0x79cbc1*/
       if ( v2 >= 0 && v2 < *(int *)g_WindowManager.__pad_0 ) /*0x79cbd0*/
         String::Reassign((String *)&v14.?, (const char **)(*(_DWORD *)g_WindowManager.__pad_8 + 4 * v2)); /*0x79cbdf*/
-      if ( (unsigned __int8)String::Compare((String *)&v14.?, vtable1) ) /*0x79cbe9*/
+      if ( (unsigned __int8)String::Compare((String *)&v14.?, ptr_4) ) /*0x79cbe9*/
         break; /*0x79cbe9*/
       DeleteAndZero((ObjectClass *)&v14.?); /*0x79cbf6*/
       if ( ++v2 >= *(int *)g_WindowManager.__pad_0 ) /*0x79cc03*/
@@ -13560,12 +13560,12 @@ void __fastcall RemoveWOLPlayerLogin(const char **a1)
           }
           __3_YAXPAX_Z(v5); /*0x79ccc0*/
           *(_DWORD *)g_WindowManager.__pad_8 = v6; /*0x79ccc5*/
-          vtable1 = (const char **)v14.?; /*0x79cccb*/
+          ptr_4 = (const char **)v14.?; /*0x79cccb*/
           g_WindowManager.Array_field_0x4 = (void *)v3; /*0x79ccd2*/
         }
       }
     }
-    String::AssignFromPtr((String *)&v14, vtable1); /*0x79ccdd*/
+    String::AssignFromPtr((String *)&v14, ptr_4); /*0x79ccdd*/
     HashTable::FindWOLHashTableEntry((HashTable *)&stru_B765EC.?, (const char **)&v14, &v14.visibilityFlags); /*0x79ccf4*/
     if ( !stru_B76900.lastLayer ) /*0x79cd02*/
       goto LABEL_34; /*0x79cd02*/
@@ -13617,7 +13617,7 @@ LABEL_32:
     RemoveWOLPlayerLogin_Remove((ObjectClass *)&stru_B76900.isAliveFlag); /*0x79ce0a*/
 LABEL_34:
     memset(&v14.?, 0, 0x6Cu); /*0x79ce0f*/
-    v13 = String::GetOrEmpty_Alt((String *)vtable1); /*0x79ce20*/
+    v13 = String::GetOrEmpty_Alt((String *)ptr_4); /*0x79ce20*/
     strncpy((char *)&v14.attachedTag, v13, 9u); /*0x79ce2b*/
     (*(void (__stdcall **)(LPVOID, int *))(*(_DWORD *)ppv + 228))(ppv, &v14.?); /*0x79ce40*/
     DeleteAndZero(&v14); /*0x79ce4a*/

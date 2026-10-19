@@ -61,7 +61,7 @@ MSVQAnim * MSVQAnim::QueryInterface(char a2)
   void *v5; // edi
 
   v3 = (void (***)(unsigned int, int))this->u32_28; /*0x5cecb3*/
-  /* X11: vtable install elided (implicit via MSVQAnim virtuals 0x5cecb6) */
+  /* X11: ptr_0 install elided (implicit via MSVQAnim virtuals 0x5cecb6) */
   if ( v3 ) /*0x5cecbe*/
     (**v3)(v3, 1); /*0x5cecc4*/
   MSVQAnim_field_0x1C = (MovieContext *)this->MSVQAnim_field_0x1C; /*0x5cecc6*/
@@ -75,7 +75,7 @@ MSVQAnim * MSVQAnim::QueryInterface(char a2)
       __3_YAXPAX_Z(v5); /*0x5cece2*/
     }
   }
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EE8E8) */  /*0x5cecee*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EE8E8) */  /*0x5cecee*/
   if ( (a2 & 1) != 0 ) /*0x5cecf7*/
     __3_YAXPAX_Z(this); /*0x5cecfa*/
   return (gamemd::MSVQAnim *)(this->ptr_0); /*0x5ced04*/

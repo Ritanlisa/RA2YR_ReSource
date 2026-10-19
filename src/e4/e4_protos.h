@@ -1144,7 +1144,7 @@ struct IsoCoord;
 struct SkirmishSetup;
 } // namespace gamemd
 
-// G42.12 F1: mangled template pseudo-types used in vtable casts
+// G42.12 F1: mangled template pseudo-types used in ptr_0 casts
 namespace gamemd {
 struct _DynamicVectorClass_PAUControlNode;
 struct _DynamicVectorClass_PAVVoxClass;
@@ -1233,9 +1233,9 @@ extern void SaveConfigWOL(void * aP0);  // 0x6990A0 (G42.33 b3)
 extern int Network_Helper_7ADB00(void * aP0, void * aP1, int aP2);  // 0x7ADB00 (G42.33 b4)
 extern int FindLobbyIDWOL_Find(void);  // 0x7B0210 (G42.33 b4)
 extern int GameLoop_Thunk(void);  // 0x77D710 = GameLoop::Thunk (G42.33 b4 static-cast supply)
-extern int AudioStream_ReadStreamAndSyncPosition(void);  // 0x4079C0 = AudioStream::ReadStreamAndSyncPosition (G57w15f1 vtable-slot supply)
-extern int AudioStream_SetPlaybackCallback(void);  // 0x407A30 = AudioStream::SetPlaybackCallback (G57w15f1 vtable-slot supply)
-extern int AudioStream_ProcessCallback(void *);  // 0x407A60 = AudioStream::ProcessCallback (G57w15f1 vtable-slot supply)
+extern int AudioStream_ReadStreamAndSyncPosition(void);  // 0x4079C0 = AudioStream::ReadStreamAndSyncPosition (G57w15f1 ptr_0-slot supply)
+extern int AudioStream_SetPlaybackCallback(void);  // 0x407A30 = AudioStream::SetPlaybackCallback (G57w15f1 ptr_0-slot supply)
+extern int AudioStream_ProcessCallback(void *);  // 0x407A60 = AudioStream::ProcessCallback (G57w15f1 ptr_0-slot supply)
 extern int CreateGameWOL_Create_7AC610(void * aP0);  // 0x7AC610 (G42.33 b7)
 extern int ConnectAndLoginWOL_Connect(void * aP0);  // 0x77D1F0 (G42.33 b7)
 extern int NavigateDialogTab(HWND aP0, int aP1);  // 0x600C70 (G42.33 b8)
@@ -1281,7 +1281,7 @@ namespace gamemd {
 extern int Event_Process_625C00(void * aP0, int aP1);  // 0x625C00 (G42.33 b8)
 } // namespace gamemd
 
-// G42.12 F1: mangled template pseudo-types used in vtable casts
+// G42.12 F1: mangled template pseudo-types used in ptr_0 casts
 namespace gamemd {
 struct _DynamicVectorClass_PAUAnimationPalette_Map_WorldDominationTour;
 struct _DynamicVectorClass_PAUButtonFadeEffect;

@@ -643,7 +643,7 @@ VectorClass_flat * DynamicVectorClass_uint::Destructor(unsigned int * Block, cha
 {
 
   void *v3 = *&Block->u32_8; // eax /*0x42db13*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x42db16*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x42db16*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x42db20*/
   {
     operator delete((v3)); /*0x42db28*/
@@ -664,7 +664,7 @@ DynamicVectorClass_uint * DynamicVectorClass_uint::Add(unsigned int * Block, cha
 
 
   void *v3 = *&Block->__pad_004; // eax /*0x42db63*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x42db66*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x42db66*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x42db70*/
   {
     __3_YAXPAX_Z(v3); /*0x42db78*/
@@ -693,7 +693,7 @@ unsigned int * DynamicVectorClass_flat::Copy(DynamicVector * aP1, void *a2)
   this->Capacity = 0; /*0x4779f0*/
   this->IsInitialized[0] = 1; /*0x4779f3*/
   this->IsAllocated[0] = 0; /*0x4779f7*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E4DB8) */  /*0x4779fa*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E4DB8) */  /*0x4779fa*/
   if ( this != (DynamicVectorClass *)a2 ) /*0x477a00*/
   {
     VectorClass::Destroy((int)this); /*0x477a02*/
@@ -727,7 +727,7 @@ unsigned int * DynamicVectorClass_flat::Copy(DynamicVector * aP1, void *a2)
   }
   this->Count = a2[4]; /*0x477a51*/
   this->CapacityIncrement = a2[5]; /*0x477a57*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E4E78) */  /*0x477a5a*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E4E78) */  /*0x477a5a*/
   return &this->ptr_0; /*0x477a62*/
 
 }
@@ -740,7 +740,7 @@ unsigned int * DynamicVectorClass_flat::Construct(int a2, int a3, void *a3_2, vo
   *&this->IsInitialized = a2; /*0x477dc0*/
   (this->IsInitialized) = 1; /*0x477dc3*/
   (this->IsAllocated) = 0; /*0x477dc7*/
-  /* X11: vtable install elided (implicit via VectorClass virtuals 0x477dcb) */
+  /* X11: ptr_0 install elided (implicit via VectorClass virtuals 0x477dcb) */
   if ( a2 ) /*0x477dd1*/
   {
     if ( a3 ) /*0x477dd9*/
@@ -753,7 +753,7 @@ unsigned int * DynamicVectorClass_flat::Construct(int a2, int a3, void *a3_2, vo
       (this->IsAllocated) = 1; /*0x477def*/
     }
   }
-  /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x477df3) */
+  /* X11: ptr_0 install elided (implicit via DynamicVectorClass virtuals 0x477df3) */
   this->CapacityIncrement = 10; /*0x477df9*/
   this->Count = 0; /*0x477e00*/
   return (unsigned int *)(this->ptr_0); /*0x477e09*/
@@ -1060,7 +1060,7 @@ DynamicVector * DynamicVectorClass_PAD::Add(unsigned int * Block, char a2, void 
 
 
   void *v3 = *&Block->__pad_004; // eax /*0x49ee13*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x49ee16*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x49ee16*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x49ee20*/
   {
     __3_YAXPAX_Z(v3); /*0x49ee28*/
@@ -1081,7 +1081,7 @@ VectorClass_flat * DynamicVectorClass_PAD_16::QueryInterface(unsigned int * Bloc
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x49eff3*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_var_a8087a) */  /*0x49eff6*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_var_a8087a) */  /*0x49eff6*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x49f000*/
   {
     operator delete((v3)); /*0x49f008*/
@@ -1101,7 +1101,7 @@ DynamicVector * DynamicVectorClass_PAD::Destructor(unsigned int * Block, char a2
 {
 
   void *v3 = *&Block->u32_8; // eax /*0x49f043*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_var_a8087a) */  /*0x49f046*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_var_a8087a) */  /*0x49f046*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x49f050*/
   {
     operator delete((v3)); /*0x49f058*/
@@ -1179,7 +1179,7 @@ unsigned int * DynamicVectorClass_flat::AnimTypeConstructor(DynamicVector * aP1,
   *&this->IsInitialized = aP1; /*0x525260*/
   (this->IsInitialized) = 1; /*0x525263*/
   (this->IsAllocated) = 0; /*0x525267*/
-  /* X11: vtable install elided (implicit via VectorClass virtuals 0x52526b) */
+  /* X11: ptr_0 install elided (implicit via VectorClass virtuals 0x52526b) */
   if ( aP1 ) /*0x525271*/
   {
     if ( aP2 ) /*0x525279*/
@@ -1192,7 +1192,7 @@ unsigned int * DynamicVectorClass_flat::AnimTypeConstructor(DynamicVector * aP1,
       (this->IsAllocated) = 1; /*0x52528f*/
     }
   }
-  /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x525293) */
+  /* X11: ptr_0 install elided (implicit via DynamicVectorClass virtuals 0x525293) */
   this->CapacityIncrement = 10; /*0x525299*/
   this->Count = 0; /*0x5252a0*/
   return this->ptr_0; /*0x5252a9*/
@@ -1232,7 +1232,7 @@ unsigned int * DynamicVectorClass_flat::BuildingTypeConstructor(int a2, int a3)
   *&this->Capacity = a2; /*0x5ac910*/
   (this->IsInitialized) = ((this->IsInitialized) & ~0xFF) | ((1) & 0xFF); /*0x5ac913*/
   (this->IsAllocated) = ((this->IsAllocated) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x5ac917*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x5ac91b*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x5ac91b*/
   if ( a2 ) /*0x5ac921*/
   {
     if ( a3 ) /*0x5ac929*/
@@ -1245,7 +1245,7 @@ unsigned int * DynamicVectorClass_flat::BuildingTypeConstructor(int a2, int a3)
       (this->IsAllocated) = ((this->IsAllocated) & ~(0xFF << 8)) | (((1) & 0xFF) << 8); /*0x5ac93f*/
     }
   }
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E3238) */  /*0x5ac943*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E3238) */  /*0x5ac943*/
   this->CapacityIncrement = 10; /*0x5ac949*/
   this->Count = 0; /*0x5ac950*/
   return this->VectorClass; /*0x5ac959*/
@@ -1352,7 +1352,7 @@ namespace gamemd {
 unsigned int * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Destructor_0(char a2)
 {
 
-  /* X11: vtable install elided (implicit via DialogControl virtuals 0x6244c9) */
+  /* X11: ptr_0 install elided (implicit via DialogControl virtuals 0x6244c9) */
   if ( (a2 & 1) != 0 ) /*0x6244cf*/
     __3_YAXPAX_Z(this); /*0x6244d2*/
   return this; /*0x6244dc*/
@@ -1476,7 +1476,7 @@ DynamicVector * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Destr
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x628643*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x628646*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x628646*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x628650*/
   {
     operator delete((v3)); /*0x628658*/
@@ -1501,7 +1501,7 @@ DynamicVector * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Destr
 
 
   void *v3 = *&Block->__pad_004; // eax /*0x6287b3*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x6287b6*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x6287b6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x6287c0*/
   {
     __3_YAXPAX_Z(v3); /*0x6287c8*/

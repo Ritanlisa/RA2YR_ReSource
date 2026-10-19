@@ -48,8 +48,8 @@ int FlyLocomotionClass::LocomotionClass()
   this->FlyLocomotionClass_field_54 = 0; /*0x4cca03*/
   this->FlyLocomotionClass_field_58 = 0; /*0x4cca06*/
   this->IsElevating = 0; /*0x4cca09*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E89F4) */  /*0x4cca0c*/
-  /* X11: vtable install elided (implicit via FlyLocomotionClass virtuals 0x4cca12) */
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E89F4) */  /*0x4cca0c*/
+  /* X11: ptr_0 install elided (implicit via FlyLocomotionClass virtuals 0x4cca12) */
   this->XYZ2[2] = v2; /*0x4cca1b*/
   return (int)this->LocomotionClass; /*0x4cca1e*/
 
@@ -75,11 +75,11 @@ void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
   if ( *(unsigned int *)(this->Owner + 692) ) /*0x4cfe8e*/
     return; /*0x4cfe94*/
   ObjectVector::Construct(&v11, 0, 0); /*0x4cfea2*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E4F64) */  /*0x4cfeb7*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E4F64) */  /*0x4cfeb7*/
   v11.ObjectVector_field_0x14 = 10; /*0x4cfebb*/
   v11.ObjectVector_field_0x10 = 0; /*0x4cfebf*/
   ObjectVector::Construct(&v10, 0, 0); /*0x4cfec3*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E4F64) */  /*0x4cfecd*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E4F64) */  /*0x4cfecd*/
   v10.ObjectVector_field_0x14 = 10; /*0x4cfed3*/
   v10.ObjectVector_field_0x10 = 0; /*0x4cfed7*/
   if ( !*(unsigned int *)&dword_A8B238 /*0x4cfeef*/
@@ -164,13 +164,13 @@ void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
   }
   (*(void (**)(unsigned int))(v9 + 968))(v8[v7]); /*0x4d011b*/
 LABEL_45:
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E192C) */  /*0x4d0121*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E192C) */  /*0x4d0121*/
   if ( v10.ObjectVector_field_0x04 && BYTE1(v10.ObjectVector_field_0x0C) ) /*0x4d0136*/
   {
     __3_YAXPAX_Z((void *)v10.ObjectVector_field_0x04); /*0x4d0139*/
     v10.ObjectVector_field_0x04 = 0; /*0x4d0141*/
   }
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E192C) */  /*0x4d0149*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E192C) */  /*0x4d0149*/
   BYTE1(v10.ObjectVector_field_0x0C) = 0; /*0x4d0150*/
   v10.ObjectVector_field_0x08 = 0; /*0x4d0154*/
   if ( v11.ObjectVector_field_0x04 ) /*0x4d0159*/
@@ -203,8 +203,8 @@ int FlyLocomotionClass::BeginMove(int * a1, int * a2)
   {
     if ( a1 ) /*0x4cfcd6*/
     {
-      /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E89F4) */  /*0x4cfcd8*/
-      /* X11: vtable install elided (X68 star-amp-named, RHS g_ptr_7E89F4) */  /*0x4cfcde*/
+      /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E89F4) */  /*0x4cfcd8*/
+      /* X11: ptr_0 install elided (X68 star-amp-named, RHS g_ptr_7E89F4) */  /*0x4cfcde*/
     }
   }
   return result; /*0x4cfce5*/
@@ -221,8 +221,8 @@ int FlyLocomotionClass::StubReturn96()
 namespace gamemd {
 FlyLocomotionClass * FlyLocomotionClass::ProcessMove(char a2)
 {
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E89F4) */  /*0x4d03a3*/
-  /* X11: vtable install elided (implicit via FlyLocomotionClass virtuals 0x4d03a9) */
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E89F4) */  /*0x4d03a3*/
+  /* X11: ptr_0 install elided (implicit via FlyLocomotionClass virtuals 0x4d03a9) */
   this->LocomotionClass::Construct(); /*0x4d03b0*/
   if ( (a2 & 1) != 0 ) /*0x4d03ba*/
     operator delete((this)); /*0x4d03bd*/

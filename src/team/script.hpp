@@ -78,7 +78,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int PowerDrainUpdate(int a1);  // 0x6914E0
     void* ProcessEvent(int a1);  // 0x691EE0
     // --- gap2 auto-generated stub declarations (END) ---
-    void* ptr_C;  // 0xC (ml truth)  gB vtable supply
+    void* ptr_C;  // 0xC (ml truth)  gB ptr_0 supply
 
     void* ptr_4;  // X10 supply (csp_canon_members)
     void* ptr_8;  // X10 supply (csp_canon_members)
@@ -136,7 +136,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int LoadTypeData(int a1, int a2);  // 0x691d90
     int ReadINI(int a1, int a2);  // 0x6e8340
     // === FUNCS-MOVE (END) ===
-    void* ptr_4;  // 0x4 (ml truth)  gB vtable supply
+    void* ptr_4;  // 0x4 (ml truth)  gB ptr_0 supply
 
     unsigned char ScriptTypeClass_2D80[4];  /* ScriptTypeClass */  // X10 supply (member_lookup)
 };

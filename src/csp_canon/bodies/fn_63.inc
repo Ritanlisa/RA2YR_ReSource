@@ -200,7 +200,7 @@ int Gap2Recv_631B20::UI_Pop_631500_Pop_Pop() {
 
   HWND DlgItem; // eax
   HWND v3; // eax
-  unsigned int *vtable2; // esi
+  unsigned int *ptr_8; // esi
   HWND v5; // eax
   int result; // eax
   char v7; // [esp+13h] [ebp-1h]
@@ -209,15 +209,15 @@ int Gap2Recv_631B20::UI_Pop_631500_Pop_Pop() {
   SendMessageA(DlgItem, 0x4B2u, 0, (LPARAM)((unsigned int *)this)[0] + 112); /*0x631b4d*/
   v3 = GetDlgItem((HWND)this->AbstractClass, 1503); /*0x631b58*/
   SendMessageA(v3, 0x4B4u, 0, (LPARAM)((unsigned int *)this)[0] + 154); /*0x631b6c*/
-  vtable2 = ((unsigned int *)this)[0]; /*0x631b6e*/
-  if ( !*vtable2 || vtable2[1] == -1 || vtable2[2] == -1 ) /*0x631b83*/
+  ptr_8 = ((unsigned int *)this)[0]; /*0x631b6e*/
+  if ( !*ptr_8 || ptr_8[1] == -1 || ptr_8[2] == -1 ) /*0x631b83*/
   {
     v7 = 0; /*0x631ba3*/
     qmemcpy(&((unsigned int *)this)[0], &dword_A8DAC0, 0x70u); /*0x631ba8*/
   }
   else
   {
-    qmemcpy(&((unsigned int *)this)[0], vtable2, 0x70u); /*0x631b8d*/
+    qmemcpy(&((unsigned int *)this)[0], ptr_8, 0x70u); /*0x631b8d*/
     v7 = 1; /*0x631b8f*/
   }
   v5 = GetDlgItem((HWND)this->AbstractClass, 1636); /*0x631bb9*/
@@ -665,7 +665,7 @@ int Gap2Recv_635490::Render_Render_635490(int a2) {
 
   int *Viewport; // eax
   int v4; // edx
-  void *vtable1; // eax
+  void *ptr_4; // eax
   unsigned int *ScenarioClassActionCoords; // eax
   int v8[2]; // [esp+4h] [ebp-44h] BYREF
   unsigned int v9[3]; // [esp+Ch] [ebp-3Ch] BYREF
@@ -678,9 +678,9 @@ int Gap2Recv_635490::Render_Render_635490(int a2) {
   v12[1] = Viewport[1]; /*0x6354a8*/
   v12[2] = Viewport[2]; /*0x6354af*/
   v4 = Viewport[3]; /*0x6354b3*/
-  vtable1 = ((unsigned int *)this)[0]; /*0x6354b6*/
+  ptr_4 = ((unsigned int *)this)[0]; /*0x6354b6*/
   v12[3] = v4; /*0x6354b9*/
-  ScenarioClassActionCoords = GetScenarioClassActionCoords(v10, *(unsigned char **)(*(unsigned int *)vtable1 + 4)); /*0x6354c6*/
+  ScenarioClassActionCoords = GetScenarioClassActionCoords(v10, *(unsigned char **)(*(unsigned int *)ptr_4 + 4)); /*0x6354c6*/
   v9[0] = *ScenarioClassActionCoords; /*0x6354cd*/
   v9[1] = ScenarioClassActionCoords[1]; /*0x6354d4*/
   v9[2] = ScenarioClassActionCoords[2]; /*0x6354eb*/
@@ -983,7 +983,7 @@ void* Gap2Recv_63DEC0::ExecuteActionPlanManager_Helper_63DEC0(int a2, int a3) {
   this->Capacity = a2; /*0x63ded0*/
   this->IsInitialized = 1; /*0x63ded3*/
   this->IsAllocated = 0; /*0x63ded7*/
-  /* X11: vtable install elided (implicit via VectorClass virtuals 0x63dedb) */
+  /* X11: ptr_0 install elided (implicit via VectorClass virtuals 0x63dedb) */
   if ( a2 ) /*0x63dee1*/
   {
     if ( a3 ) /*0x63dee9*/
@@ -996,10 +996,10 @@ void* Gap2Recv_63DEC0::ExecuteActionPlanManager_Helper_63DEC0(int a2, int a3) {
       this->IsAllocated = 1; /*0x63deff*/
     }
   }
-  /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x63df03) */
+  /* X11: ptr_0 install elided (implicit via DynamicVectorClass virtuals 0x63df03) */
   *((unsigned int *)this + 5) = 10; /*0x63df09*/
   *((unsigned int *)this + 4) = 0; /*0x63df10*/
-  return &this->vtable0; /*0x63df19*/
+  return &this->ptr_0; /*0x63df19*/
 
 }
 
@@ -1015,7 +1015,7 @@ void* Gap2Recv_63E1D0::ExecuteActionPlanManager_Helper_63E1D0(int a2, int a3) {
   this->Capacity = a2; /*0x63e1e0*/
   this->IsInitialized = 1; /*0x63e1e3*/
   this->IsAllocated = 0; /*0x63e1e7*/
-  /* X11: vtable install elided (implicit via VectorClass virtuals 0x63e1eb) */
+  /* X11: ptr_0 install elided (implicit via VectorClass virtuals 0x63e1eb) */
   if ( a2 ) /*0x63e1f1*/
   {
     if ( a3 ) /*0x63e1f9*/
@@ -1028,10 +1028,10 @@ void* Gap2Recv_63E1D0::ExecuteActionPlanManager_Helper_63E1D0(int a2, int a3) {
       this->IsAllocated = 1; /*0x63e20f*/
     }
   }
-  /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x63e213) */
+  /* X11: ptr_0 install elided (implicit via DynamicVectorClass virtuals 0x63e213) */
   *((unsigned int *)this + 5) = 10; /*0x63e219*/
   *((unsigned int *)this + 4) = 0; /*0x63e220*/
-  return &this->vtable0; /*0x63e229*/
+  return &this->ptr_0; /*0x63e229*/
 
 }
 
@@ -1042,7 +1042,7 @@ char Gap2Recv_63E5D0::Team_Destroy(int aP1) {
   int uniqueId; // ecx
   int v5; // ecx
 
-  v3 = (*((int (**)(ObjectClass *, int))this->vtable1 + 4))(this, aP1); /*0x63e5dc*/
+  v3 = (*((int (**)(ObjectClass *, int))this->ptr_4 + 4))(this, aP1); /*0x63e5dc*/
   if ( v3 == -1 ) /*0x63e5e2*/
     return 0; /*0x63e5e2*/
   uniqueId = ((unsigned int *)this)[0]; /*0x63e5e4*/

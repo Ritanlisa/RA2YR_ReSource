@@ -842,10 +842,10 @@ TActionClass::TActionClass()
   this->TActionClass_field_30 = 0; /*0x71e6b8*/
   LOBYTE(this->TActionClass_field_38) = 0; /*0x71e6bb*/
   *&this->TActionClass_field_54 = 0; /*0x71e6be*/
-  /* X11: vtable install elided (base-interface slot, RHS g_ptr_7F554C) */  /*0x71e6c1*/
-  /* X11: vtable install elided (implicit via TEventClass virtuals 0x71e6c7) */
-  /* X11: vtable install elided (implicit via TEventClass virtuals 0x71e6ce) */
-  /* X11: vtable install elided (implicit via TEventClass virtuals 0x71e6d5) */
+  /* X11: ptr_0 install elided (base-interface slot, RHS g_ptr_7F554C) */  /*0x71e6c1*/
+  /* X11: ptr_0 install elided (implicit via TEventClass virtuals 0x71e6c7) */
+  /* X11: ptr_0 install elided (implicit via TEventClass virtuals 0x71e6ce) */
+  /* X11: ptr_0 install elided (implicit via TEventClass virtuals 0x71e6d5) */
   v2 = DataGlobal_B0E840[2254]; /*0x71e6dc*/
   if ( DataGlobal_B0E840[2254] < DataGlobal_B0E840[2252] /*0x71e71a*/
     || (BYTE1(DataGlobal_B0E840[2253]) || !DataGlobal_B0E840[2252])
@@ -1664,10 +1664,10 @@ int TActionClass::SaveLoad_Prefix(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x6e3dc6*/
     {
       AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x6e3dcf*/
-      /* X11: vtable install elided (implicit via TActionClass virtuals 0x6e3dd4) */
-      /* X11: vtable install elided (implicit via TActionClass virtuals 0x6e3dda) */
-      /* X11: vtable install elided (implicit via TActionClass virtuals 0x6e3de1) */
-      /* X11: vtable install elided (implicit via TActionClass virtuals 0x6e3de8) */
+      /* X11: ptr_0 install elided (implicit via TActionClass virtuals 0x6e3dd4) */
+      /* X11: ptr_0 install elided (implicit via TActionClass virtuals 0x6e3dda) */
+      /* X11: ptr_0 install elided (implicit via TActionClass virtuals 0x6e3de1) */
+      /* X11: ptr_0 install elided (implicit via TActionClass virtuals 0x6e3de8) */
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->u32_53A0); /*0x6e3df8*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->u32_53A0); /*0x6e3e06*/

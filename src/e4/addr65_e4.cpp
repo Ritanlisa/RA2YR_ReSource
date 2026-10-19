@@ -1385,7 +1385,7 @@ void * RAMFileClass::nullsub_0_10(char a2)
 
 
   char v3 = this->u32_1D; // al /*0x65c5a3*/
-  /* X11: vtable install elided (implicit via RAMFileClass virtuals 0x65c5a6) */
+  /* X11: ptr_0 install elided (implicit via RAMFileClass virtuals 0x65c5a6) */
   this->u32_1C = 0; /*0x65c5ae*/
   if ( v3 ) /*0x65c5b2*/
   {
@@ -1393,7 +1393,7 @@ void * RAMFileClass::nullsub_0_10(char a2)
     this->RAMFileClass_field_0x8 = 0; /*0x65c5c0*/
     this->u32_1D = 0; /*0x65c5c7*/
   }
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7F08BC) */  /*0x65c5cf*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7F08BC) */  /*0x65c5cf*/
   if ( (a2 & 1) != 0 ) /*0x65c5d7*/
     __3_YAXPAX_Z(this); /*0x65c5da*/
   return this; /*0x65c5e4*/

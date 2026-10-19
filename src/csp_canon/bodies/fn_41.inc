@@ -25,7 +25,7 @@ int INoticeSink::Dispatch(int a1, void *a2, void *a3, void *a4, void *a5)
 int AbstractClass::GetVtable3(AbstractClass * aP0)
 {
 
-  return (int)aP0->vtable3; /*0x410227*/
+  return (int)aP0->ptr_C; /*0x410227*/
 
 }
 
@@ -205,7 +205,7 @@ int AbstractTypeClass::Init(int aP1)
 
   AbstractClass::InitVtables((unsigned int *)this, aP1); /*0x410968*/
   v3 = *((unsigned char *)this + 61); /*0x41096d*/
-  /* X11: vtable install elided (implicit via AbstractTypeClass virtuals 0x410975) */
+  /* X11: ptr_0 install elided (implicit via AbstractTypeClass virtuals 0x410975) */
   *((unsigned int *)this + 1) = (unsigned int)(&g_ptr_7E1FD4); /*0x41097b*/
   *((unsigned int *)this + 2) = (unsigned int)(&g_ptr_7E1FD4); /*0x410982*/
   *((unsigned int *)this + 3) = (unsigned int)(&g_ptr_7E1FD4); /*0x410989*/
@@ -799,7 +799,7 @@ int TacticalClass::StubReturnFalse6()
 // ==== BACKFILL 0x0041BFA0  TacticalClass::ProcessFrame  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
 int TacticalClass::ProcessFrame() {
 
-  return *(unsigned char *)((*((int (**)(TacticalClass *))this->vtable1 + 33))(this) + 3233); /*0x41bfae*/
+  return *(unsigned char *)((*((int (**)(TacticalClass *))this->ptr_4 + 33))(this) + 3233); /*0x41bfae*/
 
 }
 
@@ -968,7 +968,7 @@ int ObjectClass::CreateInstanceCOM(LPVOID * ppv, IID * rclsid, ILocomotion * aP2
   HRESULT v6; // esi
 
   if ( ppv->AbstractClass ) /*0x41c254*/
-    (*(void (**)(void *))(*(unsigned int *)ppv->vtable1 + 8))(ppv->AbstractClass); /*0x41c25d*/
+    (*(void (**)(void *))(*(unsigned int *)ppv->ptr_4 + 8))(ppv->AbstractClass); /*0x41c25d*/
   if ( (dwClsContext & 0x14) == 0 ) /*0x41c266*/
     return CoCreateInstance(rclsid, aP2, dwClsContext, &stru_817BB0, ppv); /*0x41c2cb*/
   result = CoCreateInstance(rclsid, aP2, dwClsContext, &riid, (LPVOID *)&aP2); /*0x41c27d*/
@@ -1207,7 +1207,7 @@ int AirstrikeClass::Write(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x41d709*/
     {
       AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x41d712*/
-      /* X11: vtable install elided (implicit via AirstrikeClass virtuals 0x41d717) */
+      /* X11: ptr_0 install elided (implicit via AirstrikeClass virtuals 0x41d717) */
       ((unsigned int *)aP0)[0] = (unsigned int)(&g_ptr_7E297C); /*0x41d71d*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&g_ptr_7E297C); /*0x41d724*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&g_ptr_7E297C); /*0x41d72b*/

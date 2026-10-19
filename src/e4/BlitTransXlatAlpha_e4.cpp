@@ -386,7 +386,7 @@ namespace gamemd {
 std::locale::facet * BlitTransXlatAlpha_ushort::Constructor_Blitter(char a2)
 {
 
-  /* X11: vtable install elided (implicit via Blitter virtuals 0x49a1a9) */
+  /* X11: ptr_0 install elided (implicit via Blitter virtuals 0x49a1a9) */
   if ( (a2 & 1) != 0 ) /*0x49a1af*/
     __3_YAXPAX_Z(this); /*0x49a1b2*/
   return (std::locale::facet *)this; /*0x49a1bc*/
@@ -399,7 +399,7 @@ namespace gamemd {
 std::locale::facet * BlitTransXlatAlpha_ushort::Constructor_Blitter_0(char a2)
 {
 
-  /* X11: vtable install elided (implicit via Blitter virtuals 0x49a1c9) */
+  /* X11: ptr_0 install elided (implicit via Blitter virtuals 0x49a1c9) */
   if ( (a2 & 1) != 0 ) /*0x49a1cf*/
     __3_YAXPAX_Z(this); /*0x49a1d2*/
   return (std::locale::facet *)this; /*0x49a1dc*/
@@ -412,7 +412,7 @@ namespace gamemd {
 std::locale::facet * BlitTransXlatAlpha_ushort::Constructor_Blitter_1(char a2)
 {
 
-  /* X11: vtable install elided (implicit via Blitter virtuals 0x49a1e9) */
+  /* X11: ptr_0 install elided (implicit via Blitter virtuals 0x49a1e9) */
   if ( (a2 & 1) != 0 ) /*0x49a1ef*/
     __3_YAXPAX_Z(this); /*0x49a1f2*/
   return (std::locale::facet *)this; /*0x49a1fc*/
@@ -427,10 +427,10 @@ BlitTransXlatAlpha_ushort * BlitTransXlatAlpha_ushort::Blit(unsigned int * Block
 
   void *v3; // eax
   v3 = (void *)*((unsigned int *)Block + 2); /*0x49a248*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_var_81adf3) */  /*0x49a24b*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_var_81adf3) */  /*0x49a24b*/
   FractalNoise::Dtor(v3); /*0x49a252*/
   *((unsigned int *)Block + 2) = 0; /*0x49a25b*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E5B88) */  /*0x49a264*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E5B88) */  /*0x49a264*/
   if ( (a2 & 1) != 0 ) /*0x49a26a*/
     operator delete((Block)); /*0x49a26d*/
   return Block->tail_0; /*0x49a277*/

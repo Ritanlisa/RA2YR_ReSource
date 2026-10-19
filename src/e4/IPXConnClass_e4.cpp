@@ -16,7 +16,7 @@ void * IPXConnClass::constructor(int aP1, SessionClass * aP2, IPXConnClass * aP3
 
   IPXConnClass::initConnection((int)((ModemConnectionClass *)aP1), aP2, aP3, aP4, a5, 2, -1, 60, a9); /*0x53f458*/
   Waypoint::InitInvalid(&aP1->u32_4C); /*0x53f462*/
-  /* X11: vtable install elided (implicit via IPXConnClass virtuals 0x53f46b) */
+  /* X11: ptr_0 install elided (implicit via IPXConnClass virtuals 0x53f46b) */
   if ( aP8 ) /*0x53f473*/
   {
     aP1->u32_4C = *(unsigned int *)(aP8); /*0x53f479*/

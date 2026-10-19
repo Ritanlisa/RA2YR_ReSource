@@ -31,8 +31,8 @@ int MechLocomotionClass::BeginMove(int * a1, int * a2)
   {
     if ( a1 ) /*0x5b19b6*/
     {
-      /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EDB6C) */  /*0x5b19b8*/
-      /* X11: vtable install elided (X68 star-amp-named, RHS g_ptr_7EDB6C) */  /*0x5b19be*/
+      /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EDB6C) */  /*0x5b19b8*/
+      /* X11: ptr_0 install elided (X68 star-amp-named, RHS g_ptr_7EDB6C) */  /*0x5b19be*/
     }
   }
   return result; /*0x5b19c5*/
@@ -49,8 +49,8 @@ int MechLocomotionClass::StubReturn52()
 namespace gamemd {
 MechLocomotionClass * MechLocomotionClass::ProcessMove(unsigned int * Block, char a2)
 {
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EDB6C) */  /*0x5b1b53*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EDB6C) */  /*0x5b1b59*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EDB6C) */  /*0x5b1b53*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EDB6C) */  /*0x5b1b59*/
   ((LocomotionClass *)((LocomotionClass *)Block))->Construct(); /*0x5b1b60*/
   if ( (a2 & 1) != 0 ) /*0x5b1b6a*/
     operator delete((Block)); /*0x5b1b6d*/

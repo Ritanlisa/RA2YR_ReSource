@@ -33,10 +33,10 @@ AbstractTypeClass * TagTypeClass::Construct(char *aP1, void *a2, void *a3, void 
   this->u32_98 = -1; /*0x6e5b78*/
   this->Coord_9C = 0; /*0x6e5b82*/
   this->q0A0 = 0; /*0x6e5b88*/
-  /* X11: vtable install elided (implicit via TagTypeClass virtuals 0x6e5b8e) */
-  /* X11: vtable install elided (implicit via TagTypeClass virtuals 0x6e5b95) */
-  /* X11: vtable install elided (implicit via TagTypeClass virtuals 0x6e5b9c) */
-  /* X11: vtable install elided (implicit via TagTypeClass virtuals 0x6e5ba3) */
+  /* X11: ptr_0 install elided (implicit via TagTypeClass virtuals 0x6e5b8e) */
+  /* X11: ptr_0 install elided (implicit via TagTypeClass virtuals 0x6e5b95) */
+  /* X11: ptr_0 install elided (implicit via TagTypeClass virtuals 0x6e5b9c) */
+  /* X11: ptr_0 install elided (implicit via TagTypeClass virtuals 0x6e5ba3) */
   if ( this == (char *)-36 ) /*0x6e5baa*/
   {
     Destination[0] = 0; /*0x6e5bac*/
@@ -86,10 +86,10 @@ AbstractClass * * TagTypeClass::CleanupMembers(void *a1)
 {
   unsigned int *v3; // esi
 
-  /* X11: vtable install elided (implicit via TagTypeClass virtuals 0x6e5ca7) */
-  /* X11: vtable install elided (implicit via TagTypeClass virtuals 0x6e5cad) */
-  /* X11: vtable install elided (implicit via TagTypeClass virtuals 0x6e5cb4) */
-  /* X11: vtable install elided (implicit via TagTypeClass virtuals 0x6e5cbb) */
+  /* X11: ptr_0 install elided (implicit via TagTypeClass virtuals 0x6e5ca7) */
+  /* X11: ptr_0 install elided (implicit via TagTypeClass virtuals 0x6e5cad) */
+  /* X11: ptr_0 install elided (implicit via TagTypeClass virtuals 0x6e5cb4) */
+  /* X11: ptr_0 install elided (implicit via TagTypeClass virtuals 0x6e5cbb) */
   AbstractClass::AnnounceExpiredPointer(&a1->ptr_0, 1); /*0x6e5cc2*/
   unsigned int *v2; // ecx
   v2 = (unsigned int *)a1->q0A0; /*0x6e5cc7*/
@@ -329,10 +329,10 @@ int TagTypeClass::LoadTypeData(AbstractTypeClass * aP0, int aP1)
     if ( aP0 ) /*0x6e6426*/
     {
       ((int)aP0)->Init((void*)(&aP1)); /*0x6e642f*/
-      /* X11: vtable install elided (implicit via TagTypeClass virtuals 0x6e6434) */
-      /* X11: vtable install elided (implicit via TagTypeClass virtuals 0x6e643a) */
-      /* X11: vtable install elided (implicit via TagTypeClass virtuals 0x6e6441) */
-      /* X11: vtable install elided (implicit via TagTypeClass virtuals 0x6e6448) */
+      /* X11: ptr_0 install elided (implicit via TagTypeClass virtuals 0x6e6434) */
+      /* X11: ptr_0 install elided (implicit via TagTypeClass virtuals 0x6e643a) */
+      /* X11: ptr_0 install elided (implicit via TagTypeClass virtuals 0x6e6441) */
+      /* X11: ptr_0 install elided (implicit via TagTypeClass virtuals 0x6e6448) */
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->u32_A0); /*0x6e645b*/
     return 0; /*0x6e6460*/

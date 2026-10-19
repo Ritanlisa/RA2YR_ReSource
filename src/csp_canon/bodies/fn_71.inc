@@ -460,7 +460,7 @@ int TemporalClass::LoadTemporal(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x71a679*/
     {
       AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x71a682*/
-      /* X11: vtable install elided (implicit via TemporalClass virtuals 0x71a687) */
+      /* X11: ptr_0 install elided (implicit via TemporalClass virtuals 0x71a687) */
       ((unsigned int *)aP0)[0] = (unsigned int)(&g_ptr_7F5154); /*0x71a68d*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&g_ptr_7F5154); /*0x71a694*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&g_ptr_7F5154); /*0x71a69b*/
@@ -589,7 +589,7 @@ int TerrainClass::CleanupMembers() {
   AbstractClass *v2; // edi
   int v3; // eax
   int Vtable3; // eax
-  void *vtable1; // edx
+  void *ptr_4; // edx
   int v6; // edi
   int v7; // eax
   signed int v8; // eax
@@ -599,10 +599,10 @@ int TerrainClass::CleanupMembers() {
   int v13[2]; // [esp+8h] [ebp-8h] BYREF
 
   v2 = (AbstractClass *)(this + 4); /*0x71b7b9*/
-  /* X11: vtable install elided (implicit via TerrainClass virtuals 0x71b7bc) */
-  /* X11: vtable install elided (implicit via TerrainClass virtuals 0x71b7c2) */
-  /* X11: vtable install elided (implicit via TerrainClass virtuals 0x71b7c9) */
-  /* X11: vtable install elided (implicit via off_7F5200 virtuals 0x71b7d0) */
+  /* X11: ptr_0 install elided (implicit via TerrainClass virtuals 0x71b7bc) */
+  /* X11: ptr_0 install elided (implicit via TerrainClass virtuals 0x71b7c2) */
+  /* X11: ptr_0 install elided (implicit via TerrainClass virtuals 0x71b7c9) */
+  /* X11: ptr_0 install elided (implicit via off_7F5200 virtuals 0x71b7d0) */
   AbstractClass::AnnounceExpiredPointer((void **)this, 1); /*0x71b7d6*/
   v13[0] = this; /*0x71b7eb*/
   v3 = (*(int (**)(unsigned int *, int *))(dword_A8E988 + 16))(&dword_A8E988, v13); /*0x71b7ef*/
@@ -621,40 +621,40 @@ int TerrainClass::CleanupMembers() {
     TerrainClass::ApplyCellModifications((TerrainClass *)this); /*0x71b840*/
   }
   Vtable3 = AbstractClass::GetVtable3(v2); /*0x71b846*/
-  vtable1 = g_BuildingLoadQueue_Array.vtable1; /*0x71b84b*/
+  ptr_4 = g_BuildingLoadQueue_Array.ptr_4; /*0x71b84b*/
   v6 = Vtable3; /*0x71b851*/
-  if ( g_BuildingLoadQueue_Array.vtable1 ) /*0x71b855*/
+  if ( g_BuildingLoadQueue_Array.ptr_4 ) /*0x71b855*/
   {
-    if ( !IDA_LOBYTE(g_BuildingLoadQueue_Array.vtable3) ) /*0x71b862*/
+    if ( !IDA_LOBYTE(g_BuildingLoadQueue_Array.ptr_C) ) /*0x71b862*/
     {
       qsort( /*0x71b872*/
-        g_BuildingLoadQueue_Array.vtable0,
-        (size_t)g_BuildingLoadQueue_Array.vtable1,
+        g_BuildingLoadQueue_Array.ptr_0,
+        (size_t)g_BuildingLoadQueue_Array.ptr_4,
         8u,
         (_CoreCrtNonSecureSearchSortCompareFunction)CompareFunction);
-      vtable1 = g_BuildingLoadQueue_Array.vtable1; /*0x71b877*/
+      ptr_4 = g_BuildingLoadQueue_Array.ptr_4; /*0x71b877*/
       g_BuildingLoadQueue_Array.uniqueId = 0; /*0x71b880*/
-      IDA_LOBYTE(g_BuildingLoadQueue_Array.vtable3) = 1; /*0x71b88a*/
+      IDA_LOBYTE(g_BuildingLoadQueue_Array.ptr_C) = 1; /*0x71b88a*/
     }
     v13[0] = v6; /*0x71b895*/
-    v7 = BinaryArraySearch((int)g_BuildingLoadQueue_Array.vtable0, (int)vtable1, v13); /*0x71b8a0*/
+    v7 = BinaryArraySearch((int)g_BuildingLoadQueue_Array.ptr_0, (int)ptr_4, v13); /*0x71b8a0*/
     if ( v7 ) /*0x71b8a7*/
     {
-      v8 = (signed int)(v7 - (unsigned int)g_BuildingLoadQueue_Array.vtable0) >> 3; /*0x71b8af*/
+      v8 = (signed int)(v7 - (unsigned int)g_BuildingLoadQueue_Array.ptr_0) >> 3; /*0x71b8af*/
       if ( v8 != -1 ) /*0x71b8b5*/
       {
         v9 = v8 + 1; /*0x71b8b7*/
-        for ( i = (char *)g_BuildingLoadQueue_Array.vtable1; /*0x71b8c1*/
-              v9 < (int)g_BuildingLoadQueue_Array.vtable1;
-              i = (char *)g_BuildingLoadQueue_Array.vtable1 )
+        for ( i = (char *)g_BuildingLoadQueue_Array.ptr_4; /*0x71b8c1*/
+              v9 < (int)g_BuildingLoadQueue_Array.ptr_4;
+              i = (char *)g_BuildingLoadQueue_Array.ptr_4 )
         {
-          v11 = (char *)g_BuildingLoadQueue_Array.vtable0 + 8 * v9++; /*0x71b8c9*/
+          v11 = (char *)g_BuildingLoadQueue_Array.ptr_0 + 8 * v9++; /*0x71b8c9*/
           *(v11 - 2) = *v11; /*0x71b8cf*/
           *(v11 - 1) = v11[1]; /*0x71b8d5*/
         }
-        g_BuildingLoadQueue_Array.vtable1 = i - 1; /*0x71b8ea*/
-        *((unsigned int *)g_BuildingLoadQueue_Array.vtable0 + 2 * (int)g_BuildingLoadQueue_Array.vtable1) = 0; /*0x71b8ef*/
-        *((unsigned int *)g_BuildingLoadQueue_Array.vtable0 + 2 * (int)g_BuildingLoadQueue_Array.vtable1 + 1) = 0; /*0x71b8ff*/
+        g_BuildingLoadQueue_Array.ptr_4 = i - 1; /*0x71b8ea*/
+        *((unsigned int *)g_BuildingLoadQueue_Array.ptr_0 + 2 * (int)g_BuildingLoadQueue_Array.ptr_4) = 0; /*0x71b8ef*/
+        *((unsigned int *)g_BuildingLoadQueue_Array.ptr_0 + 2 * (int)g_BuildingLoadQueue_Array.ptr_4 + 1) = 0; /*0x71b8ff*/
         g_BuildingLoadQueue_Array.uniqueId = 0; /*0x71b903*/
       }
     }
@@ -734,7 +734,7 @@ int TerrainClass::PlayAmbientAnimation() {
   v4 = (AnimClass *)RA2_OPNEW(0x1C8u); /*0x71c611*/
   if ( v4 ) /*0x71c618*/
   {
-    v5 = (int *)(*((int (**)(TerrainClass *, char *))this->vtable1 + 18))(this, v13); /*0x71c623*/
+    v5 = (int *)(*((int (**)(TerrainClass *, char *))this->ptr_4 + 18))(this, v13); /*0x71c623*/
     v6 = *v5; /*0x71c626*/
     v7 = v5[1]; /*0x71c628*/
     v8 = v5[2]; /*0x71c62b*/
@@ -778,8 +778,8 @@ int TerrainClass::ProcessTick() {
       health = (TerrainTypeClass *)((unsigned int *)this)[0]; /*0x71c6d1*/
       if ( !health ) /*0x71c6d6*/
       {
-        (*((void (**)(TerrainClass *, int))this->vtable1 + 55))(this, 1); /*0x71c6dc*/
-        (*((void (**)(TerrainClass *, int))this->vtable1 + 73))(this, 2); /*0x71c6e8*/
+        (*((void (**)(TerrainClass *, int))this->ptr_4 + 55))(this, 1); /*0x71c6dc*/
+        (*((void (**)(TerrainClass *, int))this->ptr_4 + 73))(this, 2); /*0x71c6e8*/
         IDA_LOBYTE(health) = this->__pad_C0[13]; /*0x71c6ee*/
         if ( !(unsigned char)health ) /*0x71c6f6*/
         {
@@ -856,7 +856,7 @@ int TerrainClass::Update() {
                  - 1,
           v8 == result) )
     {
-      return (*((int (**)(TerrainClass *))this->vtable1 + 62))(this); /*0x71c833*/
+      return (*((int (**)(TerrainClass *))this->ptr_4 + 62))(this); /*0x71c833*/
     }
     else
     {
@@ -926,7 +926,7 @@ int TerrainClass::ApplyCellModifications() {
 
   if ( !((unsigned int *)this)[0] ) /*0x71c937*/
   {
-    v2 = *(unsigned int *)(*((int (**)(TerrainClass *, int16_t *))this->vtable1 + 110))(this, v13); /*0x71c956*/
+    v2 = *(unsigned int *)(*((int (**)(TerrainClass *, int16_t *))this->ptr_4 + 110))(this, v13); /*0x71c956*/
     v3 = 0; /*0x71c958*/
     v12 = v2; /*0x71c95a*/
     do /*0x71c9b8*/
@@ -948,7 +948,7 @@ int TerrainClass::ApplyCellModifications() {
     v7 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v14); /*0x71c9e2*/
     v7->occupationFlags &= ~0x40u; /*0x71c9f6*/
   }
-  *(unsigned int *)v11 = *(unsigned int *)(*((int (**)(TerrainClass *, int16_t *))this->vtable1 + 110))(this, v13); /*0x71ca0a*/
+  *(unsigned int *)v11 = *(unsigned int *)(*((int (**)(TerrainClass *, int16_t *))this->ptr_4 + 110))(this, v13); /*0x71ca0a*/
   v8 = ObjectClass::Undeploy((ObjectClass *)this); /*0x71ca21*/
   v9 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v11); /*0x71ca23*/
   House::AnnounceUpgrade((int)v9, -1); /*0x71ca2a*/
@@ -1000,7 +1000,7 @@ int TerrainClass::CheckSpawnConditions(void* a1, int a2, int a3) {
   a1[3] = v5[3]; /*0x71ccce*/
   v6 = DSurface_ViewBounds.field_0; /*0x71ccd3*/
   v7 = (char *)DSurface_ViewBounds.field_4; /*0x71ccd9*/
-  v8 = (unsigned int *)(*((int (**)(TerrainClass *, unsigned int *))this->vtable1 + 75))(this, v20); /*0x71cce6*/
+  v8 = (unsigned int *)(*((int (**)(TerrainClass *, unsigned int *))this->ptr_4 + 75))(this, v20); /*0x71cce6*/
   v9 = v8[1]; /*0x71ccee*/
   v10 = v6 + *v8; /*0x71ccf1*/
   v11 = v8[2]; /*0x71ccf3*/
@@ -1011,14 +1011,14 @@ int TerrainClass::CheckSpawnConditions(void* a1, int a2, int a3) {
   v14 = a1[1]; /*0x71cd07*/
   if ( v14 >= (int)&v13[v12] || *a1 + a1[2] <= v10 || v14 + a1[3] <= (int)v13 ) /*0x71cd20*/
     return 0; /*0x71cd90*/
-  v15 = (unsigned int *)(*((int (**)(TerrainClass *, unsigned int *))this->vtable1 + 43))(this, v20); /*0x71cd30*/
+  v15 = (unsigned int *)(*((int (**)(TerrainClass *, unsigned int *))this->ptr_4 + 43))(this, v20); /*0x71cd30*/
   Coord::To_Screen((Coord *)g_TacticalClass_Instance, v15, &v18); /*0x71cd3d*/
   if ( *a1 > DSurface_ViewBounds.field_0 ) /*0x71cd4b*/
     v18 += DSurface_ViewBounds.field_0 - *a1; /*0x71cd55*/
   v16 = a1[1]; /*0x71cd59*/
   if ( v16 > (int)DSurface_ViewBounds.field_4 ) /*0x71cd63*/
     v19 += (int)DSurface_ViewBounds.field_4 - v16; /*0x71cd6d*/
-  (*((void (**)(TerrainClass *, int *, int *))this->vtable1 + 69))(this, &v18, a1); /*0x71cd7b*/
+  (*((void (**)(TerrainClass *, int *, int *))this->ptr_4 + 69))(this, &v18, a1); /*0x71cd7b*/
   return 1; /*0x71cd81*/
 }
 

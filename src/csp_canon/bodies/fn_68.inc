@@ -967,30 +967,30 @@ int BuildingType::Init(unsigned int a2)
 // ==== BACKFILL 0x0068C260  DynamicVector_PushBack  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char Gap2Recv_68C260::DynamicVector_PushBack(void* aP1) {
 
-  void *vtable2; // ecx
+  void *ptr_8; // ecx
   int abstractFlags; // eax
   int uniqueId; // eax
-  unsigned int *vtable1; // edx
+  unsigned int *ptr_4; // edx
 
-  vtable2 = ((unsigned int *)this)[0]; /*0x68c263*/
-  if ( ((unsigned int *)this)[0] >= (int)vtable2 ) /*0x68c26b*/
+  ptr_8 = ((unsigned int *)this)[0]; /*0x68c263*/
+  if ( ((unsigned int *)this)[0] >= (int)ptr_8 ) /*0x68c26b*/
   {
-    if ( !BYTE1(((unsigned int *)this)[0]) && vtable2 ) /*0x68c276*/
+    if ( !BYTE1(((unsigned int *)this)[0]) && ptr_8 ) /*0x68c276*/
       return 0; /*0x68c276*/
     abstractFlags = ((unsigned int *)this)[0]; /*0x68c278*/
     if ( abstractFlags <= 0 /*0x68c288*/
-      || !(*((uint8_t (**)(ObjectClass *, int, unsigned int))this->vtable1 + 2))(
+      || !(*((uint8_t (**)(ObjectClass *, int, unsigned int))this->ptr_4 + 2))(
             this,
-            (int)vtable2 + abstractFlags,
+            (int)ptr_8 + abstractFlags,
             0) )
     {
       return 0; /*0x68c28f*/
     }
   }
   uniqueId = ((unsigned int *)this)[0]; /*0x68c295*/
-  vtable1 = ((unsigned int *)this)[0]; /*0x68c298*/
+  ptr_4 = ((unsigned int *)this)[0]; /*0x68c298*/
   ((unsigned int *)this)[0] = uniqueId + 1; /*0x68c29e*/
-  vtable1[uniqueId] = *aP1; /*0x68c2a8*/
+  ptr_4[uniqueId] = *aP1; /*0x68c2a8*/
   return 1; /*0x68c291*/
 
 }

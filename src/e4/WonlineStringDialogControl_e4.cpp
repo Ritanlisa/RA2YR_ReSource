@@ -17,7 +17,7 @@
 namespace gamemd {  // G42.18 ns repair
 void * WonlineStringDialogControl_12::Constructor_WonlineStringDialogControl(DialogControl_OwnerDraw * Block, char a2)
 {
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7F7874) */  /*0x7ac636*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7F7874) */  /*0x7ac636*/
   DeleteAndZeroBlock->ObjectClass_C); /*0x7ac63c*/
   *&Block->__pad_000 = (int)&off_7F7624; /*0x7ac643*/
   ((OwnerDrawControl *)Block)->InitVtable(); /*0x7ac649*/
@@ -315,7 +315,7 @@ VectorClass_flat * WonlineStringDialogControl_12::QueryInterface(unsigned int * 
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x7ad373*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x7ad376*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x7ad376*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_C))[1]) ) /*0x7ad380*/
   {
     operator delete((v3)); /*0x7ad388*/
@@ -335,7 +335,7 @@ DynamicVector * WonlineStringDialogControl_12::Constructor_VectorClass_tConnInfo
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x7ad3c3*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x7ad3c6*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x7ad3c6*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_C))[1]) ) /*0x7ad3d0*/
   {
     operator delete((v3)); /*0x7ad3d8*/
@@ -469,7 +469,7 @@ LONG WonlineStringDialogControl_28::Release(char * Block)
   v1 = InterlockedDecrement((volatile LONG *)Block + 1); /*0x7ad654*/
   if ( !v1 && Block ) /*0x7ad65c*/
   {
-    /* X11: vtable install elided (X67 star-deref, RHS g_var_ba71f2) */  /*0x7ad663*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_var_ba71f2) */  /*0x7ad663*/
     *((unsigned int *)Block + 1) = 1; /*0x7ad669*/
     InterlockedDecrement(&Addend); /*0x7ad66f*/
     DeleteCriticalSection((LPCRITICAL_SECTION)(Block + 8)); /*0x7ad675*/

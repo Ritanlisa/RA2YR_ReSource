@@ -100,10 +100,10 @@ int SuperClass::Constructor(void *a1, void *a2, void *a3, void *a4, void *a5, vo
   HIBYTE(a1->SuperClass_field_0x6C) = 0; /*0x6caf07*/
   LOBYTE(a1->SuperClass_field_0x70) = 0; /*0x6caf0a*/
   a1->SuperClass_field_0x7C = (void *)-1; /*0x6caf0d*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F3FBC) */  /*0x6caf10*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F3FBC) */  /*0x6caf16*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F3FBC) */  /*0x6caf1d*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7F3FBC) */  /*0x6caf24*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F3FBC) */  /*0x6caf10*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F3FBC) */  /*0x6caf16*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F3FBC) */  /*0x6caf1d*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7F3FBC) */  /*0x6caf24*/
   *(unsigned int *)a1->__pad_3C = &g_TypeClass_DefaultString; /*0x6caf2b*/
   if ( dword_A83CC8 < dword_A83CC0 /*0x6caf64*/
     || (byte_A83CC5 || !dword_A83CC0)
@@ -149,10 +149,10 @@ int SuperClass::Construct(int a2, CCINIClass * aP2, void *a3, void *a4, void *a5
   aP2->u8_6F = 0; /*0x6cafea*/
   aP2->q070 = 0; /*0x6cafed*/
   aP2->q074 = -100; /*0x6caff0*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7F3FBC) */  /*0x6caff7*/
-  /* X11: vtable install elided (X68 star-arith-named, RHS g_ptr_7F3FBC) */  /*0x6caffd*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F3FBC) */  /*0x6cb003*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F3FBC) */  /*0x6cb00a*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7F3FBC) */  /*0x6caff7*/
+  /* X11: ptr_0 install elided (X68 star-arith-named, RHS g_ptr_7F3FBC) */  /*0x6caffd*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F3FBC) */  /*0x6cb003*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F3FBC) */  /*0x6cb00a*/
   (aP2 + 4)->GenerateUniqueID(); /*0x6cb011*/
   if ( dword_A83CC8 < dword_A83CC0 /*0x6cb049*/
     || (byte_A83CC5 || !dword_A83CC0)
@@ -209,10 +209,10 @@ SuperClass * * SuperClass::CleanupMembers(void *a1)
   int v9; // [esp+14h] [ebp-4h] BYREF
 
   v2 = *(unsigned __int8 **)(&this->u32_68); /*0x6cb124*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_var_9e1304) */  /*0x6cb127*/
-  /* X11: vtable install elided (legacy slot spelling slot, RHS g_var_9e1304) */  /*0x6cb12f*/
-  /* X11: vtable install elided (legacy slot spelling slot, RHS g_var_9e1304) */  /*0x6cb136*/
-  /* X11: vtable install elided (legacy slot spelling slot, RHS g_var_9e1304) */  /*0x6cb13d*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_var_9e1304) */  /*0x6cb127*/
+  /* X11: ptr_0 install elided (legacy slot spelling slot, RHS g_var_9e1304) */  /*0x6cb12f*/
+  /* X11: ptr_0 install elided (legacy slot spelling slot, RHS g_var_9e1304) */  /*0x6cb136*/
+  /* X11: ptr_0 install elided (legacy slot spelling slot, RHS g_var_9e1304) */  /*0x6cb13d*/
   if ( v2 ) /*0x6cb144*/
   {
     v2[405] = 0; /*0x6cb146*/
@@ -1310,10 +1310,10 @@ int SuperClass::LoadFromStream(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x6cdf0a*/
     {
       AbstractClass::Constructor((AbstractClass *)aP0); /*0x6cdf0e*/
-      /* X11: vtable install elided (implicit via SuperClass virtuals 0x6cdf13) */
-      /* X11: vtable install elided (implicit via SuperClass virtuals 0x6cdf19) */
-      /* X11: vtable install elided (implicit via SuperClass virtuals 0x6cdf20) */
-      /* X11: vtable install elided (implicit via SuperClass virtuals 0x6cdf27) */
+      /* X11: ptr_0 install elided (implicit via SuperClass virtuals 0x6cdf13) */
+      /* X11: ptr_0 install elided (implicit via SuperClass virtuals 0x6cdf19) */
+      /* X11: ptr_0 install elided (implicit via SuperClass virtuals 0x6cdf20) */
+      /* X11: ptr_0 install elided (implicit via SuperClass virtuals 0x6cdf27) */
     }
     if ( aP0->SuperClass_field_0x68 /*0x6cdf70*/
       && (g_BuildingLoadQueue_Array.SecondSpawnOffset[1] < DataGlobal_B0F5C0

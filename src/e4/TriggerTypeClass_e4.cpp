@@ -479,10 +479,10 @@ int TriggerTypeClass::LoadTypeData(AbstractTypeClass * aP0, int aP1)
     if ( aP0 ) /*0x727c06*/
     {
       AbstractTypeClass::Init((int)aP0, (int)&aP1); /*0x727c0f*/
-      /* X11: vtable install elided (implicit via TriggerTypeClass virtuals 0x727c14) */
-      /* X11: vtable install elided (implicit via TriggerTypeClass virtuals 0x727c1a) */
-      /* X11: vtable install elided (implicit via TriggerTypeClass virtuals 0x727c21) */
-      /* X11: vtable install elided (implicit via TriggerTypeClass virtuals 0x727c28) */
+      /* X11: ptr_0 install elided (implicit via TriggerTypeClass virtuals 0x727c14) */
+      /* X11: ptr_0 install elided (implicit via TriggerTypeClass virtuals 0x727c1a) */
+      /* X11: ptr_0 install elided (implicit via TriggerTypeClass virtuals 0x727c21) */
+      /* X11: ptr_0 install elided (implicit via TriggerTypeClass virtuals 0x727c28) */
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->q11C); /*0x727c3b*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->q11C); /*0x727c4c*/

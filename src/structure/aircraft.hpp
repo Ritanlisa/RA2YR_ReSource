@@ -189,9 +189,9 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int isTether;  // +0x418 (ml flat supply)
     int waypointIndex;  // +0x686 (ml flat supply)
     unsigned int FootClass_field_680; // 0x680  gB member supply
-    void* ptr_4;  // 0x4 (ml truth)  gB vtable supply
-    void* ptr_8;  // 0x8 (ml truth)  gB vtable supply
-    void* ptr_C;  // 0xC (ml truth)  gB vtable supply
+    void* ptr_4;  // 0x4 (ml truth)  gB ptr_0 supply
+    void* ptr_8;  // 0x8 (ml truth)  gB ptr_0 supply
+    void* ptr_C;  // 0xC (ml truth)  gB ptr_0 supply
 
     void* airstrike;  // X10 supply (csp_canon_members)
     unsigned char ambientSoundController[20];  /* AudioController */  // X10 supply (csp_canon_members)

@@ -1161,14 +1161,14 @@ int Game::DestroyAllObjects()
     if ( !byte_B0E84C ) /*0x534484*/
     {
       qsort( /*0x534494*/
-        (void *)g_BuildingLoadQueue_Array.vtable0,
+        (void *)g_BuildingLoadQueue_Array.ptr_0,
         i,
         8u,
         (_CoreCrtNonSecureSearchSortCompareFunction)CompareFunction);
       dword_B0E850 = 0; /*0x53449c*/
       byte_B0E84C = 1; /*0x5344a2*/
     }
-    v1 = *(_DWORD *)(g_BuildingLoadQueue_Array.vtable0 + 4); /*0x5344af*/
+    v1 = *(_DWORD *)(g_BuildingLoadQueue_Array.ptr_0 + 4); /*0x5344af*/
     if ( v1 ) /*0x5344b4*/
       (*(void (__thiscall **)(int, int))(*(_DWORD *)v1 + 32))(v1, 1); /*0x5344ba*/
   }
@@ -1244,8 +1244,8 @@ int Game::DestroyAllObjects()
   ProcessExpiredPointers(v17); /*0x534697*/
   while ( dword_A80238 ) /*0x5346a2*/
   {
-    if ( dword_A8022C->vtable0 ) /*0x5346a9*/
-      (*(void (__thiscall **)(int, int))(*(_DWORD *)dword_A8022C->vtable0 + 32))(dword_A8022C->vtable0, 1); /*0x5346b3*/
+    if ( dword_A8022C->ptr_0 ) /*0x5346a9*/
+      (*(void (__thiscall **)(int, int))(*(_DWORD *)dword_A8022C->ptr_0 + 32))(dword_A8022C->ptr_0, 1); /*0x5346b3*/
   }
   ProcessExpiredPointers(v18); /*0x5346be*/
   while ( dword_A8E9B8 ) /*0x5346c9*/
@@ -4254,7 +4254,7 @@ _DWORD *__thiscall CreateTeamCommand::performAction_158(View3CommandClass *this)
   int v4[2]; // [esp+4h] [ebp-Ch] BYREF
   int GroundHeight; // [esp+Ch] [ebp-4h]
 
-  v1 = (SLOWORD(dword_A8B230[374].vtable0) << 8) + 128; /*0x537558*/
+  v1 = (SLOWORD(dword_A8B230[374].ptr_0) << 8) + 128; /*0x537558*/
   v4[0] = (SHIWORD(dword_A8B230[373].NeedsSaveOrLink) << 8) + 128; /*0x53755d*/
   v4[1] = v1; /*0x537566*/
   GroundHeight = 0; /*0x53756a*/
@@ -4309,8 +4309,8 @@ _DWORD *__thiscall TacticalClass::InitView(View4CommandClass *this)
   int v4[2]; // [esp+4h] [ebp-Ch] BYREF
   int GroundHeight; // [esp+Ch] [ebp-4h]
 
-  v1 = (SLOWORD(dword_A8B230[374].vtable1) << 8) + 128; /*0x537648*/
-  v4[0] = (SHIWORD(dword_A8B230[374].vtable0) << 8) + 128; /*0x53764d*/
+  v1 = (SLOWORD(dword_A8B230[374].ptr_4) << 8) + 128; /*0x537648*/
+  v4[0] = (SHIWORD(dword_A8B230[374].ptr_0) << 8) + 128; /*0x53764d*/
   v4[1] = v1; /*0x537656*/
   GroundHeight = 0; /*0x53765a*/
   GroundHeight = Cell::GetGroundHeight(v4); /*0x53766d*/
@@ -4525,7 +4525,7 @@ void *__thiscall CreateTeamCommand::performAction_182(SetView4CommandClass *this
   v5[1] = v1[1]; /*0x53797c*/
   v2 = *Tactical::PixelToCell((Tactical *)g_TacticalClass_Instance, v4, v5); /*0x537985*/
   result = dword_A8B230; /*0x537987*/
-  *(int *)((char *)&dword_A8B230[374].vtable0 + 2) = v2; /*0x53798c*/
+  *(int *)((char *)&dword_A8B230[374].ptr_0 + 2) = v2; /*0x53798c*/
   return result; /*0x537992*/
 }
 
@@ -6739,7 +6739,7 @@ int Map_Reset(ObjectClass *this)
   }
   byte_A9FA25 = 0; /*0x539847*/
   dword_A9FA20 = 0; /*0x53984d*/
-  dword_A8B230[378].vtable2 = dword_A8B230[378].vtable0; /*0x539859*/
+  dword_A8B230[378].ptr_8 = dword_A8B230[378].ptr_0; /*0x539859*/
   if ( g_ChronoEffectState ) /*0x539867*/
     (**(void (__thiscall ***)(int, int))g_ChronoEffectState)(g_ChronoEffectState, 1); /*0x53986d*/
   ChronoScreenEffect_Duration = 0; /*0x539875*/
@@ -8040,9 +8040,9 @@ RulesClass *__thiscall SuperClass::LaunchPsychicDominator(SuperClass *this, int 
       PsyDom_Anim = 0; /*0x53aef1*/
     v7 = dword_A8B230 + 130; /*0x53af06*/
     PsyDom_Status = 1; /*0x53af0c*/
-    dword_A8B230[130].vtable0 = *(void **)&stru_A8EB00.?[416]; /*0x53af1b*/
-    v7->vtable1 = (void *)v9[1]; /*0x53af21*/
-    v7->vtable2 = (void *)1; /*0x53af24*/
+    dword_A8B230[130].ptr_0 = *(void **)&stru_A8EB00.?[416]; /*0x53af1b*/
+    v7->ptr_4 = (void *)v9[1]; /*0x53af21*/
+    v7->ptr_8 = (void *)1; /*0x53af24*/
     return (RulesClass *)ScenarioClass::UpdateLighting(); /*0x53af27*/
   }
   return result; /*0x53af2d*/
@@ -8092,7 +8092,7 @@ void UpdatePsyDom(ObjectClass *this)
       }
       break; /*0x53b03e*/
     case 5: /*0x53af50*/
-      if ( dword_A8B230[378].vtable2 == dword_A8B230[378].vtable1 ) /*0x53b052*/
+      if ( dword_A8B230[378].ptr_8 == dword_A8B230[378].ptr_4 ) /*0x53b052*/
         PsyDom_Status = 0; /*0x53b054*/
       break; /*0x53b054*/
     default:
@@ -8342,7 +8342,7 @@ void __usercall globalHelper_03B460(int a1@<ecx>, Scenario *a2@<esi>)
     AudioController::Init(&stru_A9F9B8); /*0x53b512*/
     PlayVocClass(*(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 644), 0x2000, 1.0, (int)&stru_A9F9B8); /*0x53b531*/
     SetVocClassEnabled(0); /*0x53b538*/
-    byte_A9FAD1 = BYTE2(dword_A8B230[381].vtable3); /*0x53b549*/
+    byte_A9FAD1 = BYTE2(dword_A8B230[381].ptr_C); /*0x53b549*/
     Scenario::ClearScreen(a2); /*0x53b54f*/
     Map_Process_753570(); /*0x53b554*/
   }
@@ -13834,14 +13834,14 @@ int Game::DestroyAllObjects()
     if ( !byte_B0E84C ) /*0x534484*/
     {
       qsort( /*0x534494*/
-        (void *)g_BuildingLoadQueue_Array.vtable0,
+        (void *)g_BuildingLoadQueue_Array.ptr_0,
         i,
         8u,
         (_CoreCrtNonSecureSearchSortCompareFunction)CompareFunction);
       dword_B0E850 = 0; /*0x53449c*/
       byte_B0E84C = 1; /*0x5344a2*/
     }
-    v1 = *(_DWORD *)(g_BuildingLoadQueue_Array.vtable0 + 4); /*0x5344af*/
+    v1 = *(_DWORD *)(g_BuildingLoadQueue_Array.ptr_0 + 4); /*0x5344af*/
     if ( v1 ) /*0x5344b4*/
       (*(void (__thiscall **)(int, int))(*(_DWORD *)v1 + 32))(v1, 1); /*0x5344ba*/
   }
@@ -13917,8 +13917,8 @@ int Game::DestroyAllObjects()
   ProcessExpiredPointers(v17); /*0x534697*/
   while ( dword_A80238 ) /*0x5346a2*/
   {
-    if ( dword_A8022C->vtable0 ) /*0x5346a9*/
-      (*(void (__thiscall **)(int, int))(*(_DWORD *)dword_A8022C->vtable0 + 32))(dword_A8022C->vtable0, 1); /*0x5346b3*/
+    if ( dword_A8022C->ptr_0 ) /*0x5346a9*/
+      (*(void (__thiscall **)(int, int))(*(_DWORD *)dword_A8022C->ptr_0 + 32))(dword_A8022C->ptr_0, 1); /*0x5346b3*/
   }
   ProcessExpiredPointers(v18); /*0x5346be*/
   while ( dword_A8E9B8 ) /*0x5346c9*/
@@ -16927,7 +16927,7 @@ _DWORD *__thiscall CreateTeamCommand::performAction_158(View3CommandClass *this)
   int v4[2]; // [esp+4h] [ebp-Ch] BYREF
   int GroundHeight; // [esp+Ch] [ebp-4h]
 
-  v1 = (SLOWORD(dword_A8B230[374].vtable0) << 8) + 128; /*0x537558*/
+  v1 = (SLOWORD(dword_A8B230[374].ptr_0) << 8) + 128; /*0x537558*/
   v4[0] = (SHIWORD(dword_A8B230[373].NeedsSaveOrLink) << 8) + 128; /*0x53755d*/
   v4[1] = v1; /*0x537566*/
   GroundHeight = 0; /*0x53756a*/
@@ -16982,8 +16982,8 @@ _DWORD *__thiscall TacticalClass::InitView(View4CommandClass *this)
   int v4[2]; // [esp+4h] [ebp-Ch] BYREF
   int GroundHeight; // [esp+Ch] [ebp-4h]
 
-  v1 = (SLOWORD(dword_A8B230[374].vtable1) << 8) + 128; /*0x537648*/
-  v4[0] = (SHIWORD(dword_A8B230[374].vtable0) << 8) + 128; /*0x53764d*/
+  v1 = (SLOWORD(dword_A8B230[374].ptr_4) << 8) + 128; /*0x537648*/
+  v4[0] = (SHIWORD(dword_A8B230[374].ptr_0) << 8) + 128; /*0x53764d*/
   v4[1] = v1; /*0x537656*/
   GroundHeight = 0; /*0x53765a*/
   GroundHeight = Cell::GetGroundHeight(v4); /*0x53766d*/
@@ -17198,7 +17198,7 @@ void *__thiscall CreateTeamCommand::performAction_182(SetView4CommandClass *this
   v5[1] = v1[1]; /*0x53797c*/
   v2 = *Tactical::PixelToCell((Tactical *)g_TacticalClass_Instance, v4, v5); /*0x537985*/
   result = dword_A8B230; /*0x537987*/
-  *(int *)((char *)&dword_A8B230[374].vtable0 + 2) = v2; /*0x53798c*/
+  *(int *)((char *)&dword_A8B230[374].ptr_0 + 2) = v2; /*0x53798c*/
   return result; /*0x537992*/
 }
 
@@ -19412,7 +19412,7 @@ int Map_Reset(ObjectClass *this)
   }
   byte_A9FA25 = 0; /*0x539847*/
   dword_A9FA20 = 0; /*0x53984d*/
-  dword_A8B230[378].vtable2 = dword_A8B230[378].vtable0; /*0x539859*/
+  dword_A8B230[378].ptr_8 = dword_A8B230[378].ptr_0; /*0x539859*/
   if ( g_ChronoEffectState ) /*0x539867*/
     (**(void (__thiscall ***)(int, int))g_ChronoEffectState)(g_ChronoEffectState, 1); /*0x53986d*/
   ChronoScreenEffect_Duration = 0; /*0x539875*/
@@ -20713,9 +20713,9 @@ RulesClass *__thiscall SuperClass::LaunchPsychicDominator(SuperClass *this, int 
       PsyDom_Anim = 0; /*0x53aef1*/
     v7 = dword_A8B230 + 130; /*0x53af06*/
     PsyDom_Status = 1; /*0x53af0c*/
-    dword_A8B230[130].vtable0 = *(void **)&stru_A8EB00.?[416]; /*0x53af1b*/
-    v7->vtable1 = (void *)v9[1]; /*0x53af21*/
-    v7->vtable2 = (void *)1; /*0x53af24*/
+    dword_A8B230[130].ptr_0 = *(void **)&stru_A8EB00.?[416]; /*0x53af1b*/
+    v7->ptr_4 = (void *)v9[1]; /*0x53af21*/
+    v7->ptr_8 = (void *)1; /*0x53af24*/
     return (RulesClass *)ScenarioClass::UpdateLighting(); /*0x53af27*/
   }
   return result; /*0x53af2d*/
@@ -20765,7 +20765,7 @@ void UpdatePsyDom(ObjectClass *this)
       }
       break; /*0x53b03e*/
     case 5: /*0x53af50*/
-      if ( dword_A8B230[378].vtable2 == dword_A8B230[378].vtable1 ) /*0x53b052*/
+      if ( dword_A8B230[378].ptr_8 == dword_A8B230[378].ptr_4 ) /*0x53b052*/
         PsyDom_Status = 0; /*0x53b054*/
       break; /*0x53b054*/
     default:
@@ -21015,7 +21015,7 @@ void __usercall globalHelper_03B460(int a1@<ecx>, Scenario *a2@<esi>)
     AudioController::Init(&stru_A9F9B8); /*0x53b512*/
     PlayVocClass(*(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 644), 0x2000, 1.0, (int)&stru_A9F9B8); /*0x53b531*/
     SetVocClassEnabled(0); /*0x53b538*/
-    byte_A9FAD1 = BYTE2(dword_A8B230[381].vtable3); /*0x53b549*/
+    byte_A9FAD1 = BYTE2(dword_A8B230[381].ptr_C); /*0x53b549*/
     Scenario::ClearScreen(a2); /*0x53b54f*/
     Map_Process_753570(); /*0x53b554*/
   }

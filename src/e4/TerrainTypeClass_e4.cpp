@@ -91,10 +91,10 @@ unsigned int * TerrainTypeClass::Construct(int a2, unsigned char a3, unsigned ch
   aP4->q305 = 1; /*0x5448b5*/
   aP4->q306 = 0; /*0x5448bc*/
   aP4->q0308 = 0; /*0x5448c2*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7ECC1C) */  /*0x5448c8*/
-  /* X11: vtable install elided (implicit via IsometricTileTypeClass virtuals 0x5448cf) */
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7ECC1C) */  /*0x5448d6*/
-  /* X11: vtable install elided (implicit via IsometricTileTypeClass virtuals 0x5448dd) */
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7ECC1C) */  /*0x5448c8*/
+  /* X11: ptr_0 install elided (implicit via IsometricTileTypeClass virtuals 0x5448cf) */
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7ECC1C) */  /*0x5448d6*/
+  /* X11: ptr_0 install elided (implicit via IsometricTileTypeClass virtuals 0x5448dd) */
   if ( g_BuildingLoadQueue_Array.LightBlueTint < g_BuildingLoadQueue_Array.LightRedTint /*0x544917*/
     || (BYTE1(g_BuildingLoadQueue_Array.LightGreenTint) || !g_BuildingLoadQueue_Array.LightRedTint)
     && g_BuildingLoadQueue_Array.PrimaryFirePixelOffset[0] > 0
@@ -171,10 +171,10 @@ TerrainTypeClass::TerrainTypeClass(char *Source, int aP1, int aP3, int a2, int a
   aP1->IsAnimated = 0; /*0x71dae5*/
   aP1->IsVeinhole = 0; /*0x71daeb*/
   aP1->FoundationData = 0; /*0x71daf1*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F542C) */  /*0x71daf7*/
-  /* X11: vtable install elided (qmark slot, RHS g_ptr_7F542C) */  /*0x71dafd*/
-  /* X11: vtable install elided (qmark slot, RHS g_ptr_7F542C) */  /*0x71db03*/
-  /* X11: vtable install elided (qmark slot, RHS g_ptr_7F542C) */  /*0x71db0a*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F542C) */  /*0x71daf7*/
+  /* X11: ptr_0 install elided (qmark slot, RHS g_ptr_7F542C) */  /*0x71dafd*/
+  /* X11: ptr_0 install elided (qmark slot, RHS g_ptr_7F542C) */  /*0x71db03*/
+  /* X11: ptr_0 install elided (qmark slot, RHS g_ptr_7F542C) */  /*0x71db0a*/
   AbstractClass::GenerateUniqueID((AbstractClass *)&aP1->?); /*0x71db11*/
   aP1->? = 0; /*0x71db18*/
   aP1->? = 1; /*0x71db1e*/
@@ -350,10 +350,10 @@ TerrainTypeClass * TerrainTypeClass::ddtor(void * a2, char a3)
 
   SHPStruct *Image; // eax
   Image = a3->Image; /*0x71e364*/
-  /* X11: vtable install elided (implicit via TerrainTypeClass virtuals 0x71e36a) */
-  /* X11: vtable install elided (implicit via TerrainTypeClass virtuals 0x71e372) */
-  /* X11: vtable install elided (implicit via TerrainTypeClass virtuals 0x71e379) */
-  /* X11: vtable install elided (implicit via TerrainTypeClass virtuals 0x71e380) */
+  /* X11: ptr_0 install elided (implicit via TerrainTypeClass virtuals 0x71e36a) */
+  /* X11: ptr_0 install elided (implicit via TerrainTypeClass virtuals 0x71e372) */
+  /* X11: ptr_0 install elided (implicit via TerrainTypeClass virtuals 0x71e379) */
+  /* X11: ptr_0 install elided (implicit via TerrainTypeClass virtuals 0x71e380) */
   if ( Image ) /*0x71e387*/
   {
     operator delete((void *)(Image)); /*0x71e38a*/
@@ -482,10 +482,10 @@ int  TerrainTypeClass::SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1)
     if ( aP0 ) /*0x71e1e6*/
     {
       ObjectTypeClass::Construct((ObjectTypeClass *)aP0, (int)&aP1); /*0x71e1ef*/
-      /* X11: vtable install elided (implicit via TerrainTypeClass virtuals 0x71e1f4) */
-      /* X11: vtable install elided (implicit via TerrainTypeClass virtuals 0x71e1fa) */
-      /* X11: vtable install elided (implicit via TerrainTypeClass virtuals 0x71e201) */
-      /* X11: vtable install elided (implicit via TerrainTypeClass virtuals 0x71e208) */
+      /* X11: ptr_0 install elided (implicit via TerrainTypeClass virtuals 0x71e1f4) */
+      /* X11: ptr_0 install elided (implicit via TerrainTypeClass virtuals 0x71e1fa) */
+      /* X11: ptr_0 install elided (implicit via TerrainTypeClass virtuals 0x71e201) */
+      /* X11: ptr_0 install elided (implicit via TerrainTypeClass virtuals 0x71e208) */
     }
     VoxelAnimType::LoadAnim((char *)aP0); /*0x71e211*/
     ObjectTypeClass::Load2DArt((char *)aP0); /*0x71e218*/

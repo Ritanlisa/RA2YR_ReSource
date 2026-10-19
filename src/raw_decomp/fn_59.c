@@ -4144,7 +4144,7 @@ void __thiscall PlaceRandomWaypoints(ObjectClass *this, int a2)
   v26[2] = *(_DWORD *)&stru_87F5F0.__pad_58[676] - 8; /*0x5948ac*/
   v26[3] = *(_DWORD *)&stru_87F5F0.__pad_58[680] - 8; /*0x5948b0*/
   VectorClass::CellConstructor(&v27, 0, 0); /*0x5948b4*/
-  v27.vtable0 = &DynamicVectorClass<Cell>::`vftable'; /*0x5948b9*/
+  v27.ptr_0 = &DynamicVectorClass<Cell>::`vftable'; /*0x5948b9*/
   v29 = 10; /*0x5948c1*/
   v28 = 0; /*0x5948c9*/
   do /*0x5948f1*/
@@ -4178,7 +4178,7 @@ void __thiscall PlaceRandomWaypoints(ObjectClass *this, int a2)
       && (v28 < v27.Capacity
        || (v27.IsAllocated || !v27.Capacity)
        && v29 > 0
-       && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v27.vtable0 + 2))(&v27, v29 + v27.Capacity, 0)) )
+       && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v27.ptr_0 + 2))(&v27, v29 + v27.Capacity, 0)) )
     {
       v8 = v28++; /*0x5949f0*/
       *((_DWORD *)v27.Items + v8) = *(_DWORD *)v20; /*0x5949fb*/
@@ -4188,7 +4188,7 @@ void __thiscall PlaceRandomWaypoints(ObjectClass *this, int a2)
   if ( v9 ) /*0x594a23*/
   {
     for ( j = 4544; j < 4576; j += 4 ) /*0x594a58*/
-      *(void **)((char *)&dword_A8B230->vtable0 + j) = *(void **)&g_MissionQueueFrame.globalVariables[128]; /*0x594a69*/
+      *(void **)((char *)&dword_A8B230->ptr_0 + j) = *(void **)&g_MissionQueueFrame.globalVariables[128]; /*0x594a69*/
     v11 = 0; /*0x594a79*/
     if ( (int)this->? > 0 ) /*0x594a7d*/
     {
@@ -4201,7 +4201,7 @@ void __thiscall PlaceRandomWaypoints(ObjectClass *this, int a2)
         ++v11; /*0x594ac0*/
         v14[80] |= 4u; /*0x594ac1*/
         ++v12; /*0x594acc*/
-        *((_DWORD *)&dword_A8B230[126].vtable1 + v11) = *(_DWORD *)(v9[1] + 4 * v11 - 4); /*0x594ad1*/
+        *((_DWORD *)&dword_A8B230[126].ptr_4 + v11) = *(_DWORD *)(v9[1] + 4 * v11 - 4); /*0x594ad1*/
       }
       while ( v11 < (int)this->? ); /*0x594add*/
     }
@@ -4220,13 +4220,13 @@ void __thiscall PlaceRandomWaypoints(ObjectClass *this, int a2)
       (**(void (__thiscall ***)(void *, int))this->AbstractClass)(this->AbstractClass, 1); /*0x594b21*/
     Items = v27.Items; /*0x594b23*/
     this->AbstractClass = v9; /*0x594b27*/
-    v27.vtable0 = &VectorClass<Cell>::`vftable'; /*0x594b2b*/
+    v27.ptr_0 = &VectorClass<Cell>::`vftable'; /*0x594b2b*/
     if ( Items && v27.IsAllocated ) /*0x594b3b*/
       __3_YAXPAX_Z(Items); /*0x594b3e*/
   }
   else
   {
-    v27.vtable0 = &VectorClass<Cell>::`vftable'; /*0x594a29*/
+    v27.ptr_0 = &VectorClass<Cell>::`vftable'; /*0x594a29*/
     if ( v27.Items ) /*0x594a33*/
     {
       if ( v27.IsAllocated ) /*0x594a3f*/
@@ -4471,7 +4471,7 @@ _DWORD *__thiscall BuildingPlacement::SelectBuildingPlacementCells(BuildingPlace
   _DWORD *v15; // ebx
   int Capacity; // eax
   int Items; // ecx
-  void *vtable0; // eax
+  void *ptr_0; // eax
   _DWORD *v19; // edx
   int v20; // edx
   int v21; // eax
@@ -4544,9 +4544,9 @@ _DWORD *__thiscall BuildingPlacement::SelectBuildingPlacementCells(BuildingPlace
   if ( v7 ) /*0x594fd8*/
   {
     VectorClass::CellConstructor(v7, 0, 0); /*0x594fde*/
-    v8->vtable0 = &DynamicVectorClass<Cell>::`vftable'; /*0x594fe3*/
+    v8->ptr_0 = &DynamicVectorClass<Cell>::`vftable'; /*0x594fe3*/
     v8[1].Items = (void *)10; /*0x594fe9*/
-    v8[1].vtable0 = 0; /*0x594ff0*/
+    v8[1].ptr_0 = 0; /*0x594ff0*/
     v39 = v8; /*0x594ff3*/
   }
   else
@@ -4622,20 +4622,20 @@ LABEL_26:
     {
       v15 = (_DWORD *)(*(_DWORD *)(a2 + 4) + 4 * v48); /*0x595155*/
       Capacity = v8->Capacity; /*0x595158*/
-      if ( (int)v8[1].vtable0 < Capacity ) /*0x59515d*/
+      if ( (int)v8[1].ptr_0 < Capacity ) /*0x59515d*/
         goto LABEL_36; /*0x59515d*/
       if ( !v8->IsAllocated && Capacity ) /*0x595168*/
         goto LABEL_38; /*0x595168*/
       Items = (int)v8[1].Items; /*0x59516a*/
       if ( Items <= 0 ) /*0x59516f*/
         goto LABEL_38; /*0x59516f*/
-      if ( (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v8->vtable0 + 2))(v8, Capacity + Items, 0) ) /*0x59517a*/
+      if ( (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v8->ptr_0 + 2))(v8, Capacity + Items, 0) ) /*0x59517a*/
       {
 LABEL_36:
-        vtable0 = v8[1].vtable0; /*0x595181*/
+        ptr_0 = v8[1].ptr_0; /*0x595181*/
         v19 = v8->Items; /*0x595184*/
-        v8[1].vtable0 = (char *)vtable0 + 1; /*0x59518a*/
-        v19[(_DWORD)vtable0] = *v15; /*0x59518f*/
+        v8[1].ptr_0 = (char *)ptr_0 + 1; /*0x59518a*/
+        v19[(_DWORD)ptr_0] = *v15; /*0x59518f*/
       }
       v10 = g_MissionQueueFrame.localVariables[163]; /*0x595192*/
 LABEL_38:
@@ -4647,7 +4647,7 @@ LABEL_38:
   if ( !*(_DWORD *)(v5 + 16) )
   {
 LABEL_39:
-    v20 = (int)v8[1].vtable0; /*0x59519b*/
+    v20 = (int)v8[1].ptr_0; /*0x59519b*/
     if ( v20 < v40 )
     {
       while ( 1 )
@@ -4698,7 +4698,7 @@ LABEL_39:
                   __asm { fstp st } /*0x595329*/
                 v10 = g_MissionQueueFrame.localVariables[163]; /*0x59532f*/
                 ++v27; /*0x595335*/
-                v20 = (int)v39[1].vtable0; /*0x595336*/
+                v20 = (int)v39[1].ptr_0; /*0x595336*/
               }
               while ( v27 < v20 );
             }
@@ -4722,44 +4722,44 @@ LABEL_39:
         }
         v31 = v8->Capacity; /*0x59538f*/
         v57 = (_DWORD *)(*(_DWORD *)(v5 + 4) + 4 * v47); /*0x595392*/
-        if ( (int)v8[1].vtable0 < v31 ) /*0x59539b*/
+        if ( (int)v8[1].ptr_0 < v31 ) /*0x59539b*/
           goto LABEL_72; /*0x59539b*/
         if ( !v8->IsAllocated && v31 ) /*0x5953a6*/
           goto LABEL_74; /*0x5953a6*/
         v32 = (int)v8[1].Items; /*0x5953a8*/
         if ( v32 <= 0 ) /*0x5953ad*/
           goto LABEL_74; /*0x5953ad*/
-        if ( (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v8->vtable0 + 2))(v8, v31 + v32, 0) ) /*0x5953b8*/
+        if ( (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v8->ptr_0 + 2))(v8, v31 + v32, 0) ) /*0x5953b8*/
         {
 LABEL_72:
-          v33 = v8[1].vtable0; /*0x5953bf*/
+          v33 = v8[1].ptr_0; /*0x5953bf*/
           v34 = v8->Items; /*0x5953c2*/
-          v8[1].vtable0 = (char *)v33 + 1; /*0x5953c8*/
+          v8[1].ptr_0 = (char *)v33 + 1; /*0x5953c8*/
           v34[(_DWORD)v33] = *v57; /*0x5953d1*/
         }
         v10 = g_MissionQueueFrame.localVariables[163]; /*0x5953d4*/
 LABEL_74:
-        v20 = (int)v8[1].vtable0; /*0x5953da*/
+        v20 = (int)v8[1].ptr_0; /*0x5953da*/
         if ( v20 >= v40 ) /*0x5953e3*/
-          return &v8->vtable0; /*0x5953e3*/
+          return &v8->ptr_0; /*0x5953e3*/
       }
     }
-    return &v8->vtable0; /*0x5951a4*/
+    return &v8->ptr_0; /*0x5951a4*/
   }
   v21 = v8->Capacity; /*0x5951e1*/
   v22 = *(_DWORD **)(v5 + 4); /*0x5951e7*/
-  if ( (int)v8[1].vtable0 < v21 /*0x595211*/
+  if ( (int)v8[1].ptr_0 < v21 /*0x595211*/
     || (v8->IsAllocated || !v21)
     && (v23 = (int)v8[1].Items, v23 > 0)
-    && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v8->vtable0 + 2))(v8, v21 + v23, 0) )
+    && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v8->ptr_0 + 2))(v8, v21 + v23, 0) )
   {
-    v24 = v8[1].vtable0; /*0x59521c*/
+    v24 = v8[1].ptr_0; /*0x59521c*/
     v25 = v8->Items; /*0x59521f*/
-    v8[1].vtable0 = (char *)v24 + 1; /*0x595225*/
+    v8[1].ptr_0 = (char *)v24 + 1; /*0x595225*/
     v25[(_DWORD)v24] = *v22; /*0x59522a*/
-    return &v8->vtable0; /*0x595235*/
+    return &v8->ptr_0; /*0x595235*/
   }
-  return &v8->vtable0; /*0x594fbd*/
+  return &v8->ptr_0; /*0x594fbd*/
 }
 
 
@@ -5214,7 +5214,7 @@ void CleanupRandomMapCache(ObjectClass *this)
   int v17; // [esp+2Ch] [ebp-4h]
 
   Map_Cleanup(&v15, 0, 0); /*0x595cef*/
-  v15.vtable0 = &DynamicVectorClass<_WIN32_FIND_DATAA *>::`vftable'; /*0x595cf4*/
+  v15.ptr_0 = &DynamicVectorClass<_WIN32_FIND_DATAA *>::`vftable'; /*0x595cf4*/
   v17 = 10; /*0x595cfc*/
   j = 0; /*0x595d09*/
   i = (struct _WIN32_FIND_DATAA *)__2_YAPAXI_Z(0x140u); /*0x595d19*/
@@ -5224,7 +5224,7 @@ void CleanupRandomMapCache(ObjectClass *this)
     if ( j < v15.Capacity /*0x595d5f*/
       || (v15.IsAllocated || !v15.Capacity)
       && v17 > 0
-      && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v15.vtable0 + 2))(&v15, v17 + v15.Capacity, 0) )
+      && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v15.ptr_0 + 2))(&v15, v17 + v15.Capacity, 0) )
     {
       v3 = j++; /*0x595d6a*/
       *((_DWORD *)v15.Items + v3) = i; /*0x595d75*/
@@ -5236,7 +5236,7 @@ void CleanupRandomMapCache(ObjectClass *this)
       if ( j < v15.Capacity /*0x595dc2*/
         || (v15.IsAllocated || !v15.Capacity)
         && v17 > 0
-        && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v15.vtable0 + 2))(
+        && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v15.ptr_0 + 2))(
              &v15,
              v17 + v15.Capacity,
              0) )
@@ -5353,7 +5353,7 @@ LABEL_38:
     }
     while ( !v12 ); /*0x595f85*/
   }
-  v15.vtable0 = &VectorClass<_WIN32_FIND_DATAA *>::`vftable'; /*0x595f89*/
+  v15.ptr_0 = &VectorClass<_WIN32_FIND_DATAA *>::`vftable'; /*0x595f89*/
   if ( Items ) /*0x595f91*/
   {
     if ( v15.IsAllocated ) /*0x595f99*/
@@ -6859,9 +6859,9 @@ __int64 __fastcall Random_Range_Int(int a1, unsigned int a2)
 // ==== 0x005980A0  ObjectClass::method_5980A0  this=ObjectClass  sig=csp ====
 _DWORD *__thiscall sub_5980A0(_DWORD *this, int a2)
 {
-  this->vtable3 = 0; /*0x5980a4*/
+  this->ptr_C = 0; /*0x5980a4*/
   *(_BYTE *)this = 0; /*0x5980a7*/
-  this->vtable4 = 0; /*0x5980a9*/
+  this->ptr_10 = 0; /*0x5980a9*/
   this->uniqueId = a2; /*0x5980b0*/
   return this; /*0x5980b3*/
 }
@@ -7312,7 +7312,7 @@ int __thiscall RandomMap::LoadConfig(RandomMap *this)
   else
   {
     DynamicVector_field_0x1C = v27.DynamicVector_field_0x1C; /*0x5988fa*/
-    TypeList::BuildingTypeCopy((TypeList *)&v27.__pad_20[4], &v27.DynamicVector_field_0x1C->vtable0); /*0x598903*/
+    TypeList::BuildingTypeCopy((TypeList *)&v27.__pad_20[4], &v27.DynamicVector_field_0x1C->ptr_0); /*0x598903*/
   }
   DynamicVector::Copy((DynamicVector *)DynamicVector_field_0x1C, &v27.__pad_20[4]); /*0x59890f*/
   *(_DWORD *)&v27.__pad_20[4] = &VectorClass<BuildingTypeClass const *>::`vftable'; /*0x598918*/
@@ -14150,7 +14150,7 @@ void __thiscall PlaceRandomWaypoints(ObjectClass *this, int a2)
   v26[2] = *(_DWORD *)&stru_87F5F0.__pad_58[676] - 8; /*0x5948ac*/
   v26[3] = *(_DWORD *)&stru_87F5F0.__pad_58[680] - 8; /*0x5948b0*/
   VectorClass::CellConstructor(&v27, 0, 0); /*0x5948b4*/
-  v27.vtable0 = &DynamicVectorClass<Cell>::`vftable'; /*0x5948b9*/
+  v27.ptr_0 = &DynamicVectorClass<Cell>::`vftable'; /*0x5948b9*/
   v29 = 10; /*0x5948c1*/
   v28 = 0; /*0x5948c9*/
   do /*0x5948f1*/
@@ -14184,7 +14184,7 @@ void __thiscall PlaceRandomWaypoints(ObjectClass *this, int a2)
       && (v28 < v27.Capacity
        || (v27.IsAllocated || !v27.Capacity)
        && v29 > 0
-       && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v27.vtable0 + 2))(&v27, v29 + v27.Capacity, 0)) )
+       && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v27.ptr_0 + 2))(&v27, v29 + v27.Capacity, 0)) )
     {
       v8 = v28++; /*0x5949f0*/
       *((_DWORD *)v27.Items + v8) = *(_DWORD *)v20; /*0x5949fb*/
@@ -14194,7 +14194,7 @@ void __thiscall PlaceRandomWaypoints(ObjectClass *this, int a2)
   if ( v9 ) /*0x594a23*/
   {
     for ( j = 4544; j < 4576; j += 4 ) /*0x594a58*/
-      *(void **)((char *)&dword_A8B230->vtable0 + j) = *(void **)&g_MissionQueueFrame.globalVariables[128]; /*0x594a69*/
+      *(void **)((char *)&dword_A8B230->ptr_0 + j) = *(void **)&g_MissionQueueFrame.globalVariables[128]; /*0x594a69*/
     v11 = 0; /*0x594a79*/
     if ( (int)this->? > 0 ) /*0x594a7d*/
     {
@@ -14207,7 +14207,7 @@ void __thiscall PlaceRandomWaypoints(ObjectClass *this, int a2)
         ++v11; /*0x594ac0*/
         v14[80] |= 4u; /*0x594ac1*/
         ++v12; /*0x594acc*/
-        *((_DWORD *)&dword_A8B230[126].vtable1 + v11) = *(_DWORD *)(v9[1] + 4 * v11 - 4); /*0x594ad1*/
+        *((_DWORD *)&dword_A8B230[126].ptr_4 + v11) = *(_DWORD *)(v9[1] + 4 * v11 - 4); /*0x594ad1*/
       }
       while ( v11 < (int)this->? ); /*0x594add*/
     }
@@ -14226,13 +14226,13 @@ void __thiscall PlaceRandomWaypoints(ObjectClass *this, int a2)
       (**(void (__thiscall ***)(void *, int))this->AbstractClass)(this->AbstractClass, 1); /*0x594b21*/
     Items = v27.Items; /*0x594b23*/
     this->AbstractClass = v9; /*0x594b27*/
-    v27.vtable0 = &VectorClass<Cell>::`vftable'; /*0x594b2b*/
+    v27.ptr_0 = &VectorClass<Cell>::`vftable'; /*0x594b2b*/
     if ( Items && v27.IsAllocated ) /*0x594b3b*/
       __3_YAXPAX_Z(Items); /*0x594b3e*/
   }
   else
   {
-    v27.vtable0 = &VectorClass<Cell>::`vftable'; /*0x594a29*/
+    v27.ptr_0 = &VectorClass<Cell>::`vftable'; /*0x594a29*/
     if ( v27.Items ) /*0x594a33*/
     {
       if ( v27.IsAllocated ) /*0x594a3f*/
@@ -14477,7 +14477,7 @@ _DWORD *__thiscall BuildingPlacement::SelectBuildingPlacementCells(BuildingPlace
   _DWORD *v15; // ebx
   int Capacity; // eax
   int Items; // ecx
-  void *vtable0; // eax
+  void *ptr_0; // eax
   _DWORD *v19; // edx
   int v20; // edx
   int v21; // eax
@@ -14550,9 +14550,9 @@ _DWORD *__thiscall BuildingPlacement::SelectBuildingPlacementCells(BuildingPlace
   if ( v7 ) /*0x594fd8*/
   {
     VectorClass::CellConstructor(v7, 0, 0); /*0x594fde*/
-    v8->vtable0 = &DynamicVectorClass<Cell>::`vftable'; /*0x594fe3*/
+    v8->ptr_0 = &DynamicVectorClass<Cell>::`vftable'; /*0x594fe3*/
     v8[1].Items = (void *)10; /*0x594fe9*/
-    v8[1].vtable0 = 0; /*0x594ff0*/
+    v8[1].ptr_0 = 0; /*0x594ff0*/
     v39 = v8; /*0x594ff3*/
   }
   else
@@ -14628,20 +14628,20 @@ LABEL_26:
     {
       v15 = (_DWORD *)(*(_DWORD *)(a2 + 4) + 4 * v48); /*0x595155*/
       Capacity = v8->Capacity; /*0x595158*/
-      if ( (int)v8[1].vtable0 < Capacity ) /*0x59515d*/
+      if ( (int)v8[1].ptr_0 < Capacity ) /*0x59515d*/
         goto LABEL_36; /*0x59515d*/
       if ( !v8->IsAllocated && Capacity ) /*0x595168*/
         goto LABEL_38; /*0x595168*/
       Items = (int)v8[1].Items; /*0x59516a*/
       if ( Items <= 0 ) /*0x59516f*/
         goto LABEL_38; /*0x59516f*/
-      if ( (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v8->vtable0 + 2))(v8, Capacity + Items, 0) ) /*0x59517a*/
+      if ( (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v8->ptr_0 + 2))(v8, Capacity + Items, 0) ) /*0x59517a*/
       {
 LABEL_36:
-        vtable0 = v8[1].vtable0; /*0x595181*/
+        ptr_0 = v8[1].ptr_0; /*0x595181*/
         v19 = v8->Items; /*0x595184*/
-        v8[1].vtable0 = (char *)vtable0 + 1; /*0x59518a*/
-        v19[(_DWORD)vtable0] = *v15; /*0x59518f*/
+        v8[1].ptr_0 = (char *)ptr_0 + 1; /*0x59518a*/
+        v19[(_DWORD)ptr_0] = *v15; /*0x59518f*/
       }
       v10 = g_MissionQueueFrame.localVariables[163]; /*0x595192*/
 LABEL_38:
@@ -14653,7 +14653,7 @@ LABEL_38:
   if ( !*(_DWORD *)(v5 + 16) )
   {
 LABEL_39:
-    v20 = (int)v8[1].vtable0; /*0x59519b*/
+    v20 = (int)v8[1].ptr_0; /*0x59519b*/
     if ( v20 < v40 )
     {
       while ( 1 )
@@ -14704,7 +14704,7 @@ LABEL_39:
                   __asm { fstp st } /*0x595329*/
                 v10 = g_MissionQueueFrame.localVariables[163]; /*0x59532f*/
                 ++v27; /*0x595335*/
-                v20 = (int)v39[1].vtable0; /*0x595336*/
+                v20 = (int)v39[1].ptr_0; /*0x595336*/
               }
               while ( v27 < v20 );
             }
@@ -14728,44 +14728,44 @@ LABEL_39:
         }
         v31 = v8->Capacity; /*0x59538f*/
         v57 = (_DWORD *)(*(_DWORD *)(v5 + 4) + 4 * v47); /*0x595392*/
-        if ( (int)v8[1].vtable0 < v31 ) /*0x59539b*/
+        if ( (int)v8[1].ptr_0 < v31 ) /*0x59539b*/
           goto LABEL_72; /*0x59539b*/
         if ( !v8->IsAllocated && v31 ) /*0x5953a6*/
           goto LABEL_74; /*0x5953a6*/
         v32 = (int)v8[1].Items; /*0x5953a8*/
         if ( v32 <= 0 ) /*0x5953ad*/
           goto LABEL_74; /*0x5953ad*/
-        if ( (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v8->vtable0 + 2))(v8, v31 + v32, 0) ) /*0x5953b8*/
+        if ( (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v8->ptr_0 + 2))(v8, v31 + v32, 0) ) /*0x5953b8*/
         {
 LABEL_72:
-          v33 = v8[1].vtable0; /*0x5953bf*/
+          v33 = v8[1].ptr_0; /*0x5953bf*/
           v34 = v8->Items; /*0x5953c2*/
-          v8[1].vtable0 = (char *)v33 + 1; /*0x5953c8*/
+          v8[1].ptr_0 = (char *)v33 + 1; /*0x5953c8*/
           v34[(_DWORD)v33] = *v57; /*0x5953d1*/
         }
         v10 = g_MissionQueueFrame.localVariables[163]; /*0x5953d4*/
 LABEL_74:
-        v20 = (int)v8[1].vtable0; /*0x5953da*/
+        v20 = (int)v8[1].ptr_0; /*0x5953da*/
         if ( v20 >= v40 ) /*0x5953e3*/
-          return &v8->vtable0; /*0x5953e3*/
+          return &v8->ptr_0; /*0x5953e3*/
       }
     }
-    return &v8->vtable0; /*0x5951a4*/
+    return &v8->ptr_0; /*0x5951a4*/
   }
   v21 = v8->Capacity; /*0x5951e1*/
   v22 = *(_DWORD **)(v5 + 4); /*0x5951e7*/
-  if ( (int)v8[1].vtable0 < v21 /*0x595211*/
+  if ( (int)v8[1].ptr_0 < v21 /*0x595211*/
     || (v8->IsAllocated || !v21)
     && (v23 = (int)v8[1].Items, v23 > 0)
-    && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v8->vtable0 + 2))(v8, v21 + v23, 0) )
+    && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v8->ptr_0 + 2))(v8, v21 + v23, 0) )
   {
-    v24 = v8[1].vtable0; /*0x59521c*/
+    v24 = v8[1].ptr_0; /*0x59521c*/
     v25 = v8->Items; /*0x59521f*/
-    v8[1].vtable0 = (char *)v24 + 1; /*0x595225*/
+    v8[1].ptr_0 = (char *)v24 + 1; /*0x595225*/
     v25[(_DWORD)v24] = *v22; /*0x59522a*/
-    return &v8->vtable0; /*0x595235*/
+    return &v8->ptr_0; /*0x595235*/
   }
-  return &v8->vtable0; /*0x594fbd*/
+  return &v8->ptr_0; /*0x594fbd*/
 }
 
 
@@ -15220,7 +15220,7 @@ void CleanupRandomMapCache(ObjectClass *this)
   int v17; // [esp+2Ch] [ebp-4h]
 
   Map_Cleanup(&v15, 0, 0); /*0x595cef*/
-  v15.vtable0 = &DynamicVectorClass<_WIN32_FIND_DATAA *>::`vftable'; /*0x595cf4*/
+  v15.ptr_0 = &DynamicVectorClass<_WIN32_FIND_DATAA *>::`vftable'; /*0x595cf4*/
   v17 = 10; /*0x595cfc*/
   j = 0; /*0x595d09*/
   i = (struct _WIN32_FIND_DATAA *)__2_YAPAXI_Z(0x140u); /*0x595d19*/
@@ -15230,7 +15230,7 @@ void CleanupRandomMapCache(ObjectClass *this)
     if ( j < v15.Capacity /*0x595d5f*/
       || (v15.IsAllocated || !v15.Capacity)
       && v17 > 0
-      && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v15.vtable0 + 2))(&v15, v17 + v15.Capacity, 0) )
+      && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v15.ptr_0 + 2))(&v15, v17 + v15.Capacity, 0) )
     {
       v3 = j++; /*0x595d6a*/
       *((_DWORD *)v15.Items + v3) = i; /*0x595d75*/
@@ -15242,7 +15242,7 @@ void CleanupRandomMapCache(ObjectClass *this)
       if ( j < v15.Capacity /*0x595dc2*/
         || (v15.IsAllocated || !v15.Capacity)
         && v17 > 0
-        && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v15.vtable0 + 2))(
+        && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v15.ptr_0 + 2))(
              &v15,
              v17 + v15.Capacity,
              0) )
@@ -15359,7 +15359,7 @@ LABEL_38:
     }
     while ( !v12 ); /*0x595f85*/
   }
-  v15.vtable0 = &VectorClass<_WIN32_FIND_DATAA *>::`vftable'; /*0x595f89*/
+  v15.ptr_0 = &VectorClass<_WIN32_FIND_DATAA *>::`vftable'; /*0x595f89*/
   if ( Items ) /*0x595f91*/
   {
     if ( v15.IsAllocated ) /*0x595f99*/
@@ -16865,9 +16865,9 @@ __int64 __fastcall Random_Range_Int(int a1, unsigned int a2)
 // ==== 0x005980A0  ObjectClass::method_5980A0  this=ObjectClass  sig=csp ====
 _DWORD *__thiscall sub_5980A0(_DWORD *this, int a2)
 {
-  this->vtable3 = 0; /*0x5980a4*/
+  this->ptr_C = 0; /*0x5980a4*/
   *(_BYTE *)this = 0; /*0x5980a7*/
-  this->vtable4 = 0; /*0x5980a9*/
+  this->ptr_10 = 0; /*0x5980a9*/
   this->uniqueId = a2; /*0x5980b0*/
   return this; /*0x5980b3*/
 }
@@ -17318,7 +17318,7 @@ int __thiscall RandomMap::LoadConfig(RandomMap *this)
   else
   {
     DynamicVector_field_0x1C = v27.DynamicVector_field_0x1C; /*0x5988fa*/
-    TypeList::BuildingTypeCopy((TypeList *)&v27.__pad_20[4], &v27.DynamicVector_field_0x1C->vtable0); /*0x598903*/
+    TypeList::BuildingTypeCopy((TypeList *)&v27.__pad_20[4], &v27.DynamicVector_field_0x1C->ptr_0); /*0x598903*/
   }
   DynamicVector::Copy((DynamicVector *)DynamicVector_field_0x1C, &v27.__pad_20[4]); /*0x59890f*/
   *(_DWORD *)&v27.__pad_20[4] = &VectorClass<BuildingTypeClass const *>::`vftable'; /*0x598918*/

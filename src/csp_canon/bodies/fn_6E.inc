@@ -183,7 +183,7 @@ char Gap2Recv_6E14A0::ProcessDataObjectClass(int a2, int a3, int a4, int a5) {
 
   void **p_vtable3; // eax
   int abstractFlags; // edx
-  void *vtable3; // esi
+  void *ptr_C; // esi
   int v8; // edi
   void *v9; // edx
   int v10; // ecx
@@ -191,15 +191,15 @@ char Gap2Recv_6E14A0::ProcessDataObjectClass(int a2, int a3, int a4, int a5) {
   int v12; // ecx
   void *v14; // [esp+10h] [ebp-8h]
 
-  p_vtable3 = &dword_A8B230[127].vtable3; /*0x6e14a8*/
+  p_vtable3 = &dword_A8B230[127].ptr_C; /*0x6e14a8*/
   abstractFlags = dword_A8B230[127].abstractFlags; /*0x6e14b4*/
-  vtable3 = dword_A8B230[127].vtable3; /*0x6e14b8*/
-  if ( vtable3 != (void *)-1 ) /*0x6e14be*/
+  ptr_C = dword_A8B230[127].ptr_C; /*0x6e14b8*/
+  if ( ptr_C != (void *)-1 ) /*0x6e14be*/
   {
-    if ( *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - (int)vtable3 >= abstractFlags ) /*0x6e14c6*/
+    if ( *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - (int)ptr_C >= abstractFlags ) /*0x6e14c6*/
       abstractFlags = 0; /*0x6e14cc*/
     else
-      abstractFlags -= *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - (unsigned int)vtable3; /*0x6e14c8*/
+      abstractFlags -= *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - (unsigned int)ptr_C; /*0x6e14c8*/
   }
   v8 = 15 * *(unsigned int *)&this->isAliveFlag; /*0x6e14d7*/
   if ( abstractFlags > v8 ) /*0x6e14dc*/
@@ -633,7 +633,7 @@ int TagClass::LoadTag(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x6e5746*/
     {
       AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x6e574f*/
-      /* X11: vtable install elided (implicit via TagClass virtuals 0x6e5754) */
+      /* X11: ptr_0 install elided (implicit via TagClass virtuals 0x6e5754) */
       ((unsigned int *)aP0)[0] = (unsigned int)(&g_ptr_7F44B4); /*0x6e575a*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&g_ptr_7F44B4); /*0x6e5761*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&g_ptr_7F44B4); /*0x6e5768*/
@@ -738,7 +738,7 @@ int TagTypeClass::LoadTypeData(AbstractTypeClass * aP0, int aP1)
     if ( aP0 ) /*0x6e6426*/
     {
       ((AbstractTypeClass*)((int)aP0))->Init((int)&aP1); /*0x6e642f*/
-      /* X11: vtable install elided (implicit via TagTypeClass virtuals 0x6e6434) */
+      /* X11: ptr_0 install elided (implicit via TagTypeClass virtuals 0x6e6434) */
       ((unsigned int *)aP0)[0] = (unsigned int)(&g_ptr_7F4598); /*0x6e643a*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&g_ptr_7F4598); /*0x6e6441*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&g_ptr_7F4598); /*0x6e6448*/
@@ -802,7 +802,7 @@ int TeamClass::SumMemberCounts() {
     int v1; // edx
     int result; // eax
     TeamClass *v3; // ecx
-    void *vtable0; // esi
+    void *ptr_0; // esi
 
     v1 = this->countObjects[5]; /*0x6e8160*/
     result = 0; /*0x6e8166*/
@@ -811,9 +811,9 @@ int TeamClass::SumMemberCounts() {
       v3 = (TeamClass *)((char *)this + 164); /*0x6e816d*/
       do /*0x6e817b*/
       {
-        vtable0 = *(void **)v3; /*0x6e8173 member first dword*/
+        ptr_0 = *(void **)v3; /*0x6e8173 member first dword*/
         v3 = (TeamClass *)((char *)v3 + 8); /*0x6e8175*/
-        result += (int)vtable0; /*0x6e8178*/
+        result += (int)ptr_0; /*0x6e8178*/
         --v1; /*0x6e817a*/
       }
       while ( v1 ); /*0x6e817b*/
@@ -1015,7 +1015,7 @@ void Gap2Recv_6EA0D0::SelectTeamProductionBuilding() {
         return; /*0x6ea10e*/
       *p_attachedTag = (TagClass *)attachedBomb; /*0x6ea114*/
     }
-    v6 = (unsigned int *)(*((int (**)(TagClass *, int *))(*p_attachedTag)->vtable1 + 18))( /*0x6ea11f*/
+    v6 = (unsigned int *)(*((int (**)(TagClass *, int *))(*p_attachedTag)->ptr_4 + 18))( /*0x6ea11f*/
                      *p_attachedTag,
                      &v33);
     v27 = 0x7FFFFFFF; /*0x6ea124*/
@@ -1035,7 +1035,7 @@ void Gap2Recv_6EA0D0::SelectTeamProductionBuilding() {
         attachedTag = this->attachedTag; /*0x6ea1d2*/
         HIWORD(v23) = v10[1] / 256; /*0x6ea1da*/
         v22 = v23; /*0x6ea1e3*/
-        v12 = (unsigned int *)(*((int (**)(TagClass *, unsigned char *))attachedTag->vtable1 + 18))(attachedTag, v37); /*0x6ea1f5*/
+        v12 = (unsigned int *)(*((int (**)(TagClass *, unsigned char *))attachedTag->ptr_4 + 18))(attachedTag, v37); /*0x6ea1f5*/
         v13 = (unsigned int *)(*(int (**)(int, unsigned char *))(*(unsigned int *)v9 + 72))(v9, v38); /*0x6ea1fc*/
         v14 = v13[1]; /*0x6ea203*/
         v33 = *v13 - *v12; /*0x6ea208*/
@@ -1049,7 +1049,7 @@ void Gap2Recv_6EA0D0::SelectTeamProductionBuilding() {
           v17 /= 2; /*0x6ea288*/
         if ( v17 < v27 ) /*0x6ea28e*/
         {
-          v18 = (unsigned int *)(*((int (**)(TagClass *, unsigned char *))this->attachedTag->vtable1 + 18))( /*0x6ea29e*/
+          v18 = (unsigned int *)(*((int (**)(TagClass *, unsigned char *))this->attachedTag->ptr_4 + 18))( /*0x6ea29e*/
                             this->attachedTag,
                             v39);
           v19 = this->customSound_controller[1]; /*0x6ea2a3*/
@@ -1179,7 +1179,7 @@ void TeamClass::MoveToCellAndAttack(int a2, int a3) {
     int v8; // ebp
     FootClass *v9; // ebx
     int v10; // edi
-    void *vtable0; // edx
+    void *ptr_0; // edx
     int v12; // eax
     AbstractClass *focus; // eax
     int v15; // [esp+10h] [ebp-14h] BYREF
@@ -1227,10 +1227,10 @@ void TeamClass::MoveToCellAndAttack(int a2, int a3) {
       if ( v9 ) /*0x6ecddd*/
       {
         v16[0] = *(unsigned int *)((char *)v9 + 156); /*0x6ecde9 +9C cellXY*/
-        vtable0 = *(void ***)v9; /*0x6ecded TechnoClass 基类虚表*/
+        ptr_0 = *(void ***)v9; /*0x6ecded TechnoClass 基类虚表*/
         v16[1] = *(unsigned int *)((char *)v9 + 160); /*0x6ecdf2 +A0*/
         v16[2] = *(unsigned int *)((char *)v9 + 164); /*0x6ecdfe +A4*/
-        v12 = (*((int (__thiscall **)(FootClass *, int, unsigned int *, unsigned int))vtable0 + 241))(v9, 1, v16, 0); /*0x6ece06*/
+        v12 = (*((int (__thiscall **)(FootClass *, int, unsigned int *, unsigned int))ptr_0 + 241))(v9, 1, v16, 0); /*0x6ece06*/
         if ( v12 ) /*0x6ece0e*/
         {
           v3->SelectMember(v12); /*0x6ece11*/

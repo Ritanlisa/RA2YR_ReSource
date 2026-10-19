@@ -214,7 +214,7 @@ unsigned int * Pathfinding::ExpandNode(CellStruct * a1, int a2)
   if ( v23 ) /*0x5a551e*/
   {
     VectorClass::CellConstructor(v23, 0, 0); /*0x5a5526*/
-    /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E3890) */  /*0x5a552b*/
+    /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E3890) */  /*0x5a552b*/
     v24[1].Items = 10; /*0x5a5531*/
     v24[1].ptr_0 = 0; /*0x5a5538*/
   }

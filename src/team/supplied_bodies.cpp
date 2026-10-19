@@ -308,7 +308,7 @@ unsigned int * CampaignClass::Constructor_0(int a2, int a3) {
   this->ptr_8 = (void *)a2; /*0x49f09e*/
   (this->ptr_C) = 1; /*0x49f0a1*/
   (this->q00D) = 0; /*0x49f0a5*/
-  /* X11: vtable install elided (implicit via class virtuals 0x49f0a8) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x49f0a8) — binary-proven install, was 0 */
   if ( a2 ) /*0x49f0ae*/
   {
     if ( a3 ) /*0x49f0b6*/
@@ -464,10 +464,10 @@ int ScriptClass::ExecuteTriggers(int a2, char a3) // raw sig=csp (int,int,char);
   a3->field28 = 0; /*0x6913cc*/
   a3->buildingType = (ScriptTypeClass *)a3; /*0x6913d3*/
   a3->idxCurrentLine = -1; /*0x6913d6*/
-  /* X11: vtable install elided (implicit via class virtuals 0x6913dd) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x6913e3) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x6913ea) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x6913f1) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x6913dd) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x6913e3) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x6913ea) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x6913f1) — binary-proven install, was 0 */
   if ( dword_8872C0 < dword_8872B8 /*0x69142f*/
     || (byte_8872BD || !dword_8872B8)
     && dword_8872C4 > 0
@@ -1296,10 +1296,10 @@ void * TriggerTypeClass::Construct(void *Source) {
   this->NextTrigger = 0; /*0x726cc0*/
   this->FirstEvent = 0; /*0x726cc6*/
   this->FirstAction = 0; /*0x726ccc*/
-  /* X11: vtable install elided (implicit via class virtuals 0x726cd2) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x726cd8) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x726cdf) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x726ce6) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x726cd2) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x726cd8) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x726cdf) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x726ce6) — binary-proven install, was 0 */
   if ( g_BuildingLoadQueue_Array.GateCloseDelay[0] < g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[2] /*0x726d21*/
     || ((((unsigned char *)&(g_BuildingLoadQueue_Array.align_E24[0]))[1]) || !g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[2])
     && g_BuildingLoadQueue_Array.GateCloseDelay[1] > 0
@@ -1349,10 +1349,10 @@ int TriggerClass::ProcessEvents() {
   int v7; // eax
   int v8; // eax
 
-  /* X11: vtable install elided (implicit via class virtuals 0x726e06) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x726e0c) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x726e13) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x726e1a) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x726e06) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x726e0c) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x726e13) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x726e1a) — binary-proven install, was 0 */
   AbstractClass::AnnounceExpiredPointer(this, 1); /*0x726e21*/
   v2 = (*(int (__thiscall **)(int *, AbstractClass **))(FootClass_Array.currentBurstIndex + 16))( /*0x726e3a*/
          &FootClass_Array.currentBurstIndex,
@@ -1858,7 +1858,7 @@ int CampaignClass::LoadFromINI() {
     *&this->u32_6828 = 0; /*0x49db33*/
     *&this->q6028 = 0; /*0x49db36*/
     this->scenario[56] = 0; /*0x49db39*/
-    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x49db3c*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x49db3c*/
     v73 = 0; /*0x49db44*/
     Vector::Clear((int)v72); /*0x49db4b*/
     *(unsigned int *)v71.__tail_0 = &off_7E1668; /*0x49db54*/
@@ -1881,7 +1881,7 @@ int CampaignClass::LoadFromINI() {
         do /*0x49dbf7*/
         {
           CampaignClass::Constructor_0((CampaignClass *)v8, 0, 0); /*0x49dbbe*/
-          /* X11: vtable install elided (X67 star-deref, RHS g_var_73f94a) */  /*0x49dbca*/
+          /* X11: ptr_0 install elided (X67 star-deref, RHS g_var_73f94a) */  /*0x49dbca*/
           v8->u32_14 = 10; /*0x49dbd0*/
           v8->q010 = 0; /*0x49dbd7*/
           CampaignClass::Constructor((CampaignClass *)(v8 + 6), 0, 0); /*0x49dbde*/
@@ -1990,7 +1990,7 @@ int CampaignClass::LoadFromINI() {
             v19->ptr_3 = 0; /*0x49df13*/
             v19->ptr_4 = 1; /*0x49df16*/
             v19->q00D = 0; /*0x49df1a*/
-            /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E5BC4) */  /*0x49df1d*/
+            /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E5BC4) */  /*0x49df1d*/
             v19->abstractFlags = 10; /*0x49df23*/
             v19->uniqueId = 0; /*0x49df2a*/
             v20 = *&this->q6028; /*0x49df2d*/
@@ -2073,7 +2073,7 @@ LABEL_42:
               *(unsigned int *)(v39 + 8) = 0; /*0x49e12a*/
               *(unsigned char *)(v39 + 12) = 1; /*0x49e12d*/
               *(unsigned char *)(v39 + 13) = 0; /*0x49e131*/
-              /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E5BC4) */  /*0x49e134*/
+              /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E5BC4) */  /*0x49e134*/
               *(unsigned int *)(v39 + 20) = 10; /*0x49e13a*/
               *(unsigned int *)(v39 + 16) = 0; /*0x49e141*/
               v40 = *&this->q6028; /*0x49e144*/
@@ -2173,7 +2173,7 @@ LABEL_77:
   *&this->q6028 = 0; /*0x49db84*/
 LABEL_80:
   this->scenario[56] = 1; /*0x49e36f*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x49e37a*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x49e37a*/
   v73 = 0; /*0x49e382*/
   Vector::Clear((int)v72); /*0x49e389*/
   *(unsigned int *)v71.__tail_0 = &off_7E1668; /*0x49e392*/
@@ -2189,7 +2189,7 @@ void * CampaignClass::Constructor(int a2, int a3) {
   this->ptr_8 = (void *)a2; /*0x49ece0*/
   (this->ptr_C) = 1; /*0x49ece3*/
   (this->q00D) = 0; /*0x49ece7*/
-  /* X11: vtable install elided (implicit via class virtuals 0x49eceb) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x49eceb) — binary-proven install, was 0 */
   if ( a2 ) /*0x49ecf1*/
   {
     if ( a3 ) /*0x49ecf9*/
@@ -2202,7 +2202,7 @@ void * CampaignClass::Constructor(int a2, int a3) {
       (this->q00D) = 1; /*0x49ed0f*/
     }
   }
-  /* X11: vtable install elided (implicit via class virtuals 0x49ed13) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x49ed13) — binary-proven install, was 0 */
   this->abstractFlags = 10; /*0x49ed19*/
   this->uniqueId = 0; /*0x49ed20*/
   return &this->ptr_0; /*0x49ed29*/
@@ -2219,7 +2219,7 @@ void * CampaignClass::Constructor_1(int a2) {
   (this->ptr_C) = 0; /*0x5d2e05*/
   (this->q00D) = 0; /*0x5d2e08*/
   (this->q00E) = 0; /*0x5d2e0b*/
-  /* X11: vtable install elided (implicit via class virtuals 0x5d2e13) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x5d2e13) — binary-proven install, was 0 */
   FontClass::LoadFontResources((int)this, a2); /*0x5d2e19*/
   ++*(unsigned int *)&g_MissionQueueFrame.underParMessage[25]; /*0x5d2e24*/
   return this; /*0x5d2e2b*/
@@ -2261,10 +2261,10 @@ void * ScriptTypeClass::Constructor(void *Source) {
   AbstractTypeClass::Constructor((int *)this, Source); /*0x6916b8*/
   this->scriptActions[27] = 0; /*0x6916bd*/
   this->scriptActions[28] = 0; /*0x6916c7*/
-  /* X11: vtable install elided (implicit via class virtuals 0x6916d1) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x6916d7) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x6916de) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x6916e5) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x6916d1) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x6916d7) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x6916de) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x6916e5) — binary-proven install, was 0 */
   v3 = *(unsigned int *)&FootClass_Array.isTether; /*0x6916ec*/
   if ( *(int *)&FootClass_Array.isTether < FootClass_Array.barrelRecoil[6] /*0x69172e*/
     || ((((unsigned char *)&(FootClass_Array.barrelRecoil[7]))[1]) || !FootClass_Array.barrelRecoil[6])
@@ -2371,9 +2371,9 @@ void * ScriptClass::ProcessEvent(int a2) {
   ScriptClass *v5; // [esp+4h] [ebp-4h] BYREF
 
   this->ptr_0 = 0; /*0x691ee6*/
-  /* X11: vtable install elided (implicit via class virtuals 0x691eec) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x691ef3) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x691efa) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x691eec) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x691ef3) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x691efa) — binary-proven install, was 0 */
   AbstractClass::AnnounceExpiredPointer(&this->ptr_0, 1); /*0x691f01*/
   v5 = this; /*0x691f16*/
   v3 = (*(int (__thiscall **)(int *, ScriptClass **))(dword_8872B0 + 16))(&dword_8872B0, &v5); /*0x691f1a*/
@@ -2417,10 +2417,10 @@ int TActionClass::ctor() {
   this->TActionClass_field_4C = 0; /*0x6dd02d*/
   this->TActionClass_field_50 = 0; /*0x6dd030*/
   this->TActionClass_field_54 = 0; /*0x6dd033*/
-  /* X11: vtable install elided (implicit via class virtuals 0x6dd036) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x6dd03c) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x6dd043) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x6dd04a) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x6dd036) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x6dd03c) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x6dd043) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x6dd04a) — binary-proven install, was 0 */
   v2 = dword_B0E668; /*0x6dd051*/
   if ( dword_B0E668 < dword_B0E660 /*0x6dd08f*/
     || (byte_B0E665 || !dword_B0E660)
@@ -2490,10 +2490,10 @@ void * TActionClass::Destructor(char a2) {
   int v5; // eax
   TActionClass *v7; // [esp+8h] [ebp-4h] BYREF
 
-  /* X11: vtable install elided (implicit via class virtuals 0x6e4666) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x6e466c) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x6e4673) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x6e467a) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x6e4666) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x6e466c) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x6e4673) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x6e467a) — binary-proven install, was 0 */
   AbstractClass::AnnounceExpiredPointer(&this->ptr_0, 1); /*0x6e4681*/
   v7 = this; /*0x6e4696*/
   v3 = (*(int (__thiscall **)(int *, TActionClass **))(g_BuildingLoadQueue_Array.LightVisibility + 16))( /*0x6e469a*/
@@ -3554,10 +3554,10 @@ int TriggerClass::Construct(int a2) {
   this->timer = v3; /*0x725fc4*/
   this->occuredEvents = 0; /*0x725fc7*/
   this->enabled = 1; /*0x725fca*/
-  /* X11: vtable install elided (implicit via class virtuals 0x725fce) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x725fd4) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x725fdb) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x725fe2) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x725fce) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x725fd4) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x725fdb) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x725fe2) — binary-proven install, was 0 */
   if ( g_BuildingLoadQueue_Array.LightBlueTint < g_BuildingLoadQueue_Array.LightRedTint /*0x72601b*/
     || ((((unsigned char *)&(g_BuildingLoadQueue_Array.LightGreenTint))[1]) || !g_BuildingLoadQueue_Array.LightRedTint)
     && g_BuildingLoadQueue_Array.PrimaryFirePixelOffset[0] > 0
@@ -3643,9 +3643,9 @@ void * TriggerClass::CheckCondition(int a2) {
   int v5; // eax
 
   this->ptr_0 = 0; /*0x726956*/
-  /* X11: vtable install elided (implicit via class virtuals 0x72695c) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x726963) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x72696a) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x72695c) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x726963) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x72696a) — binary-proven install, was 0 */
   AbstractClass::AnnounceExpiredPointer((AbstractClass *)this, 1); /*0x726971*/
   v3 = (*(int (__thiscall **)(unsigned int *, TriggerClass **))(dword_A8EAE8 + 16))(&dword_A8EAE8, &this); /*0x72698a*/
   if ( v3 != -1 && v3 < dword_A8EAF8 && v3 < --dword_A8EAF8 ) /*0x7269a5*/

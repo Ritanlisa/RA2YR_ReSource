@@ -15660,9 +15660,9 @@ char __thiscall UpdateScoreScreenStatistics(TechnoClass *this)
     this->customSound_controller[4] = v26; /*0x49bac0*/
   }
   uniqueId = dword_A8B230[43].uniqueId; /*0x49bacf*/
-  if ( dword_A8B230[43].vtable2 != -1 ) /*0x49bade*/
+  if ( dword_A8B230[43].ptr_8 != -1 ) /*0x49bade*/
   {
-    p_vtable2 = &dword_A8B230[43].vtable2; /*0x49bad5*/
+    p_vtable2 = &dword_A8B230[43].ptr_8; /*0x49bad5*/
     uniqueId += Timer::GetTicks() - *p_vtable2; /*0x49baea*/
   }
   v29 = uniqueId / 60; /*0x49bb06*/
@@ -15675,9 +15675,9 @@ char __thiscall UpdateScoreScreenStatistics(TechnoClass *this)
     sprintf(Buffer, "%02d:%02d:%02d", v30, v31 / 60, v31 % 60); /*0x49bb80*/
   }
   v32 = dword_A8B230[43].uniqueId; /*0x49bb94*/
-  if ( dword_A8B230[43].vtable2 != -1 ) /*0x49bba3*/
+  if ( dword_A8B230[43].ptr_8 != -1 ) /*0x49bba3*/
   {
-    v33 = &dword_A8B230[43].vtable2; /*0x49bb9a*/
+    v33 = &dword_A8B230[43].ptr_8; /*0x49bb9a*/
     v32 += Timer::GetTicks() - *v33; /*0x49bbaf*/
   }
   v34 = v32 + *(_DWORD *)this->bombVisible; /*0x49bbbb*/
@@ -16101,7 +16101,7 @@ LABEL_44:
                             (unsigned __int8 *)aHouse1,
                             -2);
   this->nextArrayIndex = INIClass::ReadInt_Overwrite(v28, aColor1, -2); /*0x49c349*/
-  this->vtable4 = SuperWeaponTypeClass::FindOrCreate( /*0x49c371*/
+  this->ptr_10 = SuperWeaponTypeClass::FindOrCreate( /*0x49c371*/
                              (unsigned __int8 ***)v24,
                              (unsigned __int8 *)v28,
                              (unsigned __int8 *)aHouse2,
@@ -35216,9 +35216,9 @@ char __thiscall UpdateScoreScreenStatistics(TechnoClass *this)
     this->customSound_controller[4] = v26; /*0x49bac0*/
   }
   uniqueId = dword_A8B230[43].uniqueId; /*0x49bacf*/
-  if ( dword_A8B230[43].vtable2 != -1 ) /*0x49bade*/
+  if ( dword_A8B230[43].ptr_8 != -1 ) /*0x49bade*/
   {
-    p_vtable2 = &dword_A8B230[43].vtable2; /*0x49bad5*/
+    p_vtable2 = &dword_A8B230[43].ptr_8; /*0x49bad5*/
     uniqueId += Timer::GetTicks() - *p_vtable2; /*0x49baea*/
   }
   v29 = uniqueId / 60; /*0x49bb06*/
@@ -35231,9 +35231,9 @@ char __thiscall UpdateScoreScreenStatistics(TechnoClass *this)
     sprintf(Buffer, "%02d:%02d:%02d", v30, v31 / 60, v31 % 60); /*0x49bb80*/
   }
   v32 = dword_A8B230[43].uniqueId; /*0x49bb94*/
-  if ( dword_A8B230[43].vtable2 != -1 ) /*0x49bba3*/
+  if ( dword_A8B230[43].ptr_8 != -1 ) /*0x49bba3*/
   {
-    v33 = &dword_A8B230[43].vtable2; /*0x49bb9a*/
+    v33 = &dword_A8B230[43].ptr_8; /*0x49bb9a*/
     v32 += Timer::GetTicks() - *v33; /*0x49bbaf*/
   }
   v34 = v32 + *(_DWORD *)this->bombVisible; /*0x49bbbb*/
@@ -35657,7 +35657,7 @@ LABEL_44:
                             (unsigned __int8 *)aHouse1,
                             -2);
   this->nextArrayIndex = INIClass::ReadInt_Overwrite(v28, aColor1, -2); /*0x49c349*/
-  this->vtable4 = SuperWeaponTypeClass::FindOrCreate( /*0x49c371*/
+  this->ptr_10 = SuperWeaponTypeClass::FindOrCreate( /*0x49c371*/
                              (unsigned __int8 ***)v24,
                              (unsigned __int8 *)v28,
                              (unsigned __int8 *)aHouse2,

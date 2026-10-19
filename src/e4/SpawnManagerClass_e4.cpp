@@ -27,7 +27,7 @@ SpawnManagerClass::SpawnManagerClass(int a2, int a3, int a4, int a5, int a6)
 
   ((AbstractClass *)this)->Constructor(); /*0x6b6c99*/
   (0)->Constructor(0); /*0x6b6ca7*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E3238) */  /*0x6b6cb0*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E3238) */  /*0x6b6cb0*/
   this->spawnVectorCapacity = 10; /*0x6b6cb6*/
   this->spawnVectorCount = 0; /*0x6b6cbd*/
   wchar_t *v7; // eax
@@ -38,10 +38,10 @@ SpawnManagerClass::SpawnManagerClass(int a2, int a3, int a4, int a5, int a6)
   this->SpawnManagerClass_field_64 = 0; /*0x6b6cdc*/
   this->spawnOwner = (gamemd::HouseClass *)(a3); /*0x6b6cdf*/
   this->owner = (gamemd::TechnoClass *)(a2); /*0x6b6ce6*/
-  /* X11: vtable install elided (implicit via SpawnManagerClass virtuals 0x6b6cef) */
-  /* X11: vtable install elided (implicit via SpawnManagerClass virtuals 0x6b6cf5) */
-  /* X11: vtable install elided (implicit via SpawnManagerClass virtuals 0x6b6cfc) */
-  /* X11: vtable install elided (implicit via SpawnManagerClass virtuals 0x6b6d03) */
+  /* X11: ptr_0 install elided (implicit via SpawnManagerClass virtuals 0x6b6cef) */
+  /* X11: ptr_0 install elided (implicit via SpawnManagerClass virtuals 0x6b6cf5) */
+  /* X11: ptr_0 install elided (implicit via SpawnManagerClass virtuals 0x6b6cfc) */
+  /* X11: ptr_0 install elided (implicit via SpawnManagerClass virtuals 0x6b6d03) */
   this->spawnType = (gamemd::HouseClass *)(a4); /*0x6b6d0a*/
   this->spawnCount = a5; /*0x6b6d0d*/
   this->SpawnManagerClass_field_34 = a6; /*0x6b6d10*/
@@ -126,17 +126,17 @@ void* SpawnManagerClass::Constructor(void *a1, void *a2, void *a3, void *a4)
 
   ((AbstractClass *)a1)->Constructor(); /*0x6b6ea8*/
   SpawnControlVector::Constructor((SpawnControlVector *)a1->spawns, 0, 0); /*0x6b6eb6*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E3238) */  /*0x6b6ebb*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E3238) */  /*0x6b6ebb*/
   *(unsigned int *)&a1->__pad_48[4] = 10; /*0x6b6ec1*/
   *(unsigned int *)a1->__pad_48 = 0; /*0x6b6ec8*/
   *(unsigned int *)&a1->__pad_48[8] = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x6b6ed4*/
   a1->SpawnManagerClass_field_58 = 0; /*0x6b6ed7*/
   a1->SpawnManagerClass_field_5C = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x6b6ee0*/
   a1->SpawnManagerClass_field_64 = 0; /*0x6b6ee3*/
-  /* X11: vtable install elided (base-interface slot, RHS g_ptr_7F3624) */  /*0x6b6ee6*/
-  /* X11: vtable install elided (qmark slot, RHS g_ptr_7F3624) */  /*0x6b6eec*/
-  /* X11: vtable install elided (qmark slot, RHS g_ptr_7F3624) */  /*0x6b6ef3*/
-  /* X11: vtable install elided (qmark slot, RHS g_ptr_7F3624) */  /*0x6b6efa*/
+  /* X11: ptr_0 install elided (base-interface slot, RHS g_ptr_7F3624) */  /*0x6b6ee6*/
+  /* X11: ptr_0 install elided (qmark slot, RHS g_ptr_7F3624) */  /*0x6b6eec*/
+  /* X11: ptr_0 install elided (qmark slot, RHS g_ptr_7F3624) */  /*0x6b6ef3*/
+  /* X11: ptr_0 install elided (qmark slot, RHS g_ptr_7F3624) */  /*0x6b6efa*/
   a1->owner = 0; /*0x6b6f01*/
   a1->spawnOwner = 0; /*0x6b6f04*/
   a1->spawnType = 0; /*0x6b6f07*/
@@ -174,9 +174,9 @@ void SpawnManagerClass::Constructor_SpawnManagerClass()
 
 
   *this = (gamemd::TaskManager)((TaskManager)&g_ptr_7F3624); /*0x6b7015*/
-  /* X11: vtable install elided (implicit via SpawnManagerClass virtuals 0x6b701b) */
-  /* X11: vtable install elided (implicit via SpawnManagerClass virtuals 0x6b7022) */
-  /* X11: vtable install elided (implicit via SpawnManagerClass virtuals 0x6b7029) */
+  /* X11: ptr_0 install elided (implicit via SpawnManagerClass virtuals 0x6b701b) */
+  /* X11: ptr_0 install elided (implicit via SpawnManagerClass virtuals 0x6b7022) */
+  /* X11: ptr_0 install elided (implicit via SpawnManagerClass virtuals 0x6b7029) */
   if ( byte_A8E9A0 ) /*0x6b7037*/
     (this)->Update(); /*0x6b7039*/
   int i; // esi
@@ -204,7 +204,7 @@ void SpawnManagerClass::Constructor_SpawnManagerClass()
   }
   void *v5; // eax
   v5 = (void *)this->spawnVectorCount; /*0x6b70bd*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x6b70c0*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x6b70c0*/
   if ( v5 && this->u32_45 ) /*0x6b70ca*/
   {
     __3_YAXPAX_Z(v5); /*0x6b70d2*/
@@ -389,10 +389,10 @@ AbstractClass * * SpawnManagerClass::LoadFromStream(int aP1, AbstractClass * aP1
       *&v2->creationFrame = *(unsigned int *)&stru_A8E960.random[528]; /*0x6b7f51*/
       v2->SpawnManagerClass_field_58 = 0; /*0x6b7f57*/
       Timer::Start(&v2->SpawnManagerClass_field_5C, 0); /*0x6b7f5a*/
-      /* X11: vtable install elided (X67 recv-slot, RHS g_var_d5f51c) */  /*0x6b7f5f*/
-      /* X11: vtable install elided (X67 recv-slot, RHS g_var_d5f51c) */  /*0x6b7f65*/
-      /* X11: vtable install elided (X67 recv-slot, RHS g_var_d5f51c) */  /*0x6b7f6c*/
-      /* X11: vtable install elided (X67 recv-slot, RHS g_var_d5f51c) */  /*0x6b7f73*/
+      /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_d5f51c) */  /*0x6b7f5f*/
+      /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_d5f51c) */  /*0x6b7f65*/
+      /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_d5f51c) */  /*0x6b7f6c*/
+      /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_d5f51c) */  /*0x6b7f73*/
     }
     Prefix_0 = (*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)v3 + 12))(v3, &v16, 4, 0); /*0x6b7f88*/
     if ( Prefix_0 >= 0 ) /*0x6b7f8c*/
@@ -401,7 +401,7 @@ AbstractClass * * SpawnManagerClass::LoadFromStream(int aP1, AbstractClass * aP1
       if ( v2 != (SpawnManagerClass *)-56 ) /*0x6b7f97*/
       {
         SpawnControlVector::Constructor(&v2->spawns, 0, 0); /*0x6b7f9d*/
-        /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7F36B4) */  /*0x6b7fa2*/
+        /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7F36B4) */  /*0x6b7fa2*/
         *&v2->spawnVectorCapacity = 10; /*0x6b7fa8*/
         *(unsigned int *)v2->__pad_48 = 0; /*0x6b7faf*/
       }
@@ -614,9 +614,9 @@ unsigned int * SpawnManagerClass::Constructor_6B83A0(int aP1, int aP2)
 
   this->ptr_4 = 0; /*0x6b83a9*/
   this->ptr_8 = (void *)aP1; /*0x6b83b0*/
-  (this->vtable4) = ((this->vtable4) & ~0xFF) | ((1) & 0xFF); /*0x6b83b3*/
+  (this->ptr_10) = ((this->ptr_10) & ~0xFF) | ((1) & 0xFF); /*0x6b83b3*/
   (this->IsAllocated) = ((this->IsAllocated) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x6b83b7*/
-  /* X11: vtable install elided (base-interface slot, RHS g_ptr_7E8500) */  /*0x6b83bb*/
+  /* X11: ptr_0 install elided (base-interface slot, RHS g_ptr_7E8500) */  /*0x6b83bb*/
   if ( aP1 ) /*0x6b83c1*/
   {
     if ( aP2 ) /*0x6b83c9*/
@@ -629,7 +629,7 @@ unsigned int * SpawnManagerClass::Constructor_6B83A0(int aP1, int aP2)
       (this->u8_D) = ((this->u8_D) & ~(0xFF << 8)) | (((1) & 0xFF) << 8); /*0x6b83df*/
     }
   }
-  /* X11: vtable install elided (base-interface slot, RHS g_ptr_7E3238) */  /*0x6b83e3*/
+  /* X11: ptr_0 install elided (base-interface slot, RHS g_ptr_7E3238) */  /*0x6b83e3*/
   this->abstractFlags = 10; /*0x6b83e9*/
   this->uniqueId = 0; /*0x6b83f0*/
   return &this->AbstractClass; /*0x6b83f9*/
@@ -710,7 +710,7 @@ DynamicVector * SpawnManagerClass_25::QueryInterface(unsigned int * Block, char 
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x6b8793*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x6b8796*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x6b8796*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x6b87a0*/
   {
     operator delete((v3)); /*0x6b87a8*/

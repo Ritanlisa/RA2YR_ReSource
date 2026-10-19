@@ -38,7 +38,7 @@ int sub_786390(void * a1)
 int E4Recv_786E70::sub_786E70()
 {
 
-  void *vtable0; // ecx
+  void *ptr_0; // ecx
   int v3; // edi
   int i; // esi
   char *v5; // eax
@@ -46,14 +46,14 @@ int E4Recv_786E70::sub_786E70()
 
   if ( !((String*)((String *)this))->Length() ) /*0x786e75*/
     return -1; /*0x786e75*/
-  vtable0 = (void *)(unsigned int)(((E4Recv_76AAF0 *)&g_WOL_UserList)->AbstractClass); /*0x786e7e*/
+  ptr_0 = (void *)(unsigned int)(((E4Recv_76AAF0 *)&g_WOL_UserList)->AbstractClass); /*0x786e7e*/
   v3 = 1; /*0x786e84*/
   if ( (int)((E4Recv_76AAF0 *)&g_WOL_UserList)->AbstractClass <= 1 ) /*0x786e8b*/
     return -1; /*0x786ed8*/
   for ( i = 248; ; i += 248 ) /*0x786e8d*/
   {
     v5 = 0; /*0x786e92*/
-    if ( i >= 0 && v3 < (int)vtable0 ) /*0x786e9a*/
+    if ( i >= 0 && v3 < (int)ptr_0 ) /*0x786e9a*/
       v5 = (char *)((char *)&g_WOL_UserList) + i; /*0x786ea1*/
     v6 = strchr(v5 + 24, 58); /*0x786ea9*/
     if ( v6 ) /*0x786eb3*/
@@ -61,7 +61,7 @@ int E4Recv_786E70::sub_786E70()
       if ( *v6 && (uint8_t)((String *)((String *)this))->Equals_Alt(v6 + 1) ) /*0x786ebe*/
         break; /*0x786ebe*/
     }
-    vtable0 = (void *)(unsigned int)(((E4Recv_76AAF0 *)&g_WOL_UserList)->AbstractClass); /*0x786ec7*/
+    ptr_0 = (void *)(unsigned int)(((E4Recv_76AAF0 *)&g_WOL_UserList)->AbstractClass); /*0x786ec7*/
     if ( ++v3 >= (int)((E4Recv_76AAF0 *)&g_WOL_UserList)->AbstractClass ) /*0x786ed6*/
       return -1; /*0x786ed6*/
   }

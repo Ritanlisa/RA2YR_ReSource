@@ -697,7 +697,7 @@ wchar_t * GameClass::GetDifficultyString(void * aSttPlayerclose, void * aSttPlay
 namespace gamemd {
 unsigned int * GameClass::saveGameState(char a2)
 {
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EFDA4) */  /*0x631f49*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EFDA4) */  /*0x631f49*/
   if ( (a2 & 1) != 0 ) /*0x631f4f*/
     operator delete((this)); /*0x631f52*/
   return (unsigned int *)(this); /*0x631f5c*/
@@ -720,7 +720,7 @@ PKPipe * GameClass::validateGameFile(unsigned int * Block, char a2)
   COMObject *v3; // ebx
   v3 = (COMObject *)Block->field_20; /*0x632ff5*/
   Pipe *v4 = &Block->u32_30; // esi /*0x632ff8*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7EFDC8) */  /*0x632ffd*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7EFDC8) */  /*0x632ffd*/
   if ( v3 ) /*0x633003*/
   {
     COMObject::Release(v3); /*0x633007*/
@@ -750,7 +750,7 @@ PKStrawClass * GameClass::applyGameSettings(unsigned int * Block, char a2)
 
   COMObject *v3 = *&Block->u32_30; // ebx /*0x633375*/
   Straw *p_m_14 = &Block->u32_30; // esi /*0x633378*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7EDF40) */  /*0x63337d*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7EDF40) */  /*0x63337d*/
   if ( v3 ) /*0x633383*/
   {
     COMObject::Release(v3); /*0x633387*/

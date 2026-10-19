@@ -2763,7 +2763,7 @@ int UnitClass::CalcMoveTarget()
     ObjectVector::Construct(&v78, 0, 0); /*0x735e7c*/
     v51 = v78.ObjectVector_field_0x08; /*0x735e81*/
     ObjectVector_field_0x14 = 10; /*0x735e85*/
-    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E4F64) */  /*0x735e8c*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E4F64) */  /*0x735e8c*/
     v78.ObjectVector_field_0x14 = 10; /*0x735e94*/
     v78.ObjectVector_field_0x10 = 0; /*0x735e98*/
     while ( 1 ) /*0x735ea2*/
@@ -2795,7 +2795,7 @@ LABEL_26:
           }
         }
         this->vt_slot_1348(this, 0, 0); /*0x735f6a*/
-        /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E192C) */  /*0x735f74*/
+        /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E192C) */  /*0x735f74*/
         if ( v78.ObjectVector_field_0x04 && BYTE1(v78.ObjectVector_field_0x0C) ) /*0x735f8a*/
           __3_YAXPAX_Z((void *)v78.ObjectVector_field_0x04); /*0x735f91*/
         return; /*0x735fa0*/
@@ -8617,11 +8617,11 @@ int UnitClass::Create(void* aP0, void* aP1, int aP2)
   int v5; // eax
 
   ObjectClass::ctor((ObjectClass *)this); /*0x6b4a53*/
-  /* X11: vtable install elided (implicit via class virtuals 0x6b4a5c) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x6b4a5c) — binary-proven install, was 0 */
   this->currentMission = (int)aP0; /*0x6b4a62*/
-  /* X11: vtable install elided (implicit via class virtuals 0x6b4a6c) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x6b4a73) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x6b4a79) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x6b4a6c) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x6b4a73) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x6b4a79) — binary-proven install, was 0 */
   AbstractClass::GenerateUniqueID(&this->ptr_4); /*0x6b4a80*/
   if ( dword_A8B1F0 < dword_A8B1E8 /*0x6b4abc*/
     || (byte_A8B1ED || !dword_A8B1E8)
@@ -8711,10 +8711,10 @@ int UnitClass::DestroySmudge(char a2)
   int v3; // eax
   SmudgeClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-  /* X11: vtable install elided (implicit via class virtuals 0x6b4fa6) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x6b4fac) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x6b4fb3) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x6b4fba) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x6b4fa6) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x6b4fac) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x6b4fb3) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x6b4fba) — binary-proven install, was 0 */
   AbstractClass::AnnounceExpiredPointer(&this->ptr_0, 1); /*0x6b4fc1*/
   v5 = this; /*0x6b4fd6*/
   v3 = (*(int (__thiscall **)(unsigned int *, SmudgeClass **))(dword_A8B1E0 + 16))(&dword_A8B1E0, &v5); /*0x6b4fda*/
@@ -8758,10 +8758,10 @@ void UnitClass::Destructor()
   UnitClass *v20; // [esp+10h] [ebp-4h] BYREF
 
   ElectricBolt = (UnitClass *)this->ElectricBolt; /*0x735789*/
-  /* X11: vtable install elided (implicit via class virtuals 0x735794) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x73579a) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x7357a0) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via off_7F5C44 virtuals 0x7357a7) */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x735794) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x73579a) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x7357a0) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via off_7F5C44 virtuals 0x7357a7) */
   if ( ElectricBolt ) /*0x7357ae*/
   {
     UnitClass::updateHarvesting(ElectricBolt); /*0x7357b0*/
@@ -9167,10 +9167,10 @@ int UnitClass::LoadFromStream(void* a0, void* aP1)
     if ( v2 ) /*0x744513*/
     {
       FootClass::PostLoadInit((FootClass *)v2, (int)&a0); /*0x74451c*/
-      /* X11: vtable install elided (implicit via class virtuals 0x744521) — binary-proven install, was 0 */
+      /* X11: ptr_0 install elided (implicit via class virtuals 0x744521) — binary-proven install, was 0 */
       *p_vtable1 = 0; /*0x744527*/
-      /* X11: vtable install elided (implicit via class virtuals 0x74452d) — binary-proven install, was 0 */
-      /* X11: vtable install elided (implicit via off_7F5C44 virtuals 0x744534) */
+      /* X11: ptr_0 install elided (implicit via class virtuals 0x74452d) — binary-proven install, was 0 */
+      /* X11: ptr_0 install elided (implicit via off_7F5C44 virtuals 0x744534) */
     }
     v11 = v2->locomotor[0]; /*0x74453c*/
     if ( v11 != v10 ) /*0x744544*/

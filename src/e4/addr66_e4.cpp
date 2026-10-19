@@ -1335,7 +1335,7 @@ unsigned int * E4Recv_6616B0::sub_6616B0()
   int v2 = 32; // ebp /*0x6616b8*/
   this->M4 = 0; /*0x6616bd*/
   this->M8 = 0; /*0x6616c0*/
-  /* X11: vtable install elided (implicit via Straw virtuals 0x6616c3) */
+  /* X11: ptr_0 install elided (implicit via Straw virtuals 0x6616c3) */
   this->M12 = 0; /*0x6616c9*/
   this->M16 = 0; /*0x6616cc*/
   ObjectClass *v3 = &this->ptr_14; // ebx /*0x6616cf*/
@@ -1348,7 +1348,7 @@ unsigned int * E4Recv_6616B0::sub_6616B0()
   while ( v2 ); /*0x6616df*/
   this->M12 = 0; /*0x6616e1*/
   this->M16 = 0; /*0x6616e4*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7F0AFC) */  /*0x6616f1*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7F0AFC) */  /*0x6616f1*/
   memset(&this->ptr_14, 0, 0x100u); /*0x6616f7*/
   return this->ptr_0; /*0x6616fb*/
 
@@ -1659,8 +1659,8 @@ int sub_661EA0()
 namespace gamemd {
 void E4Recv_661F30::sub_661F30()
 {
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7F0B1C) */  /*0x661f30*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7F0B1C) */  /*0x661f36*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7F0B1C) */  /*0x661f30*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7F0B1C) */  /*0x661f36*/
   LocomotionClass::Construct(); /*0x661f3d*/
 }
 } // namespace gamemd
@@ -1926,7 +1926,7 @@ unsigned int * E4Recv_6638E0::sub_6638E0()
   this->M8 = 0; /*0x6638e7*/
   LOBYTE(this->M12) = 1; /*0x6638ea*/
   BYTE1(this->M13) = 0; /*0x6638ee*/
-  /* X11: vtable install elided (base-interface slot, RHS g_ptr_7E3238) */  /*0x6638f1*/
+  /* X11: ptr_0 install elided (base-interface slot, RHS g_ptr_7E3238) */  /*0x6638f1*/
   this->M20 = 10; /*0x6638f7*/
   this->M16 = 0; /*0x6638fe*/
   LOBYTE(this->q018) = 0; /*0x663901*/
@@ -1957,7 +1957,7 @@ void E4Recv_663960::sub_663960()
   }
   void *Items; // eax
   Items = (void *)this->Items; /*0x6639a3*/
-  /* X11: vtable install elided (implicit via VectorClass virtuals 0x6639a6) */
+  /* X11: ptr_0 install elided (implicit via VectorClass virtuals 0x6639a6) */
   if ( Items && this->IsAllocated[0] ) /*0x6639b0*/
   {
     __3_YAXPAX_Z(Items); /*0x6639b6*/

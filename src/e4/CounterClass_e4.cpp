@@ -14,7 +14,7 @@ CounterClass * CounterClass::QueryInterface(unsigned int * Block, char a2)
   
   void *count; // eax
   count = (void *)Block->count; /*0x49fce3*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x49fce6*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x49fce6*/
   if ( count && *((unsigned char *)Block + 13) ) /*0x49fcf0*/
   {
     operator delete((void *)(count)); /*0x49fcf8*/

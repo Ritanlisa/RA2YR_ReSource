@@ -221,7 +221,7 @@ void* Gap2Recv_765C90::Team_Create_765C90(int a2, void* a3) {
   ((unsigned int *)this)[0] = (void *)a2; /*0x765ca3*/
   LOBYTE(((unsigned int *)this)[0]) = 1; /*0x765ca6*/
   BYTE1(((unsigned int *)this)[0]) = 0; /*0x765caa*/
-  /* X11: vtable install elided (implicit via VectorClassrc_ptr virtuals 0x765cae) */
+  /* X11: ptr_0 install elided (implicit via VectorClassrc_ptr virtuals 0x765cae) */
   if ( !a2 ) /*0x765cb5*/
     return this; /*0x765cb5*/
   if ( !a3 ) /*0x765cc1*/
@@ -283,11 +283,11 @@ rc_ptr_base * Team_Create_765F60(rc_ptr_base * a1, int a2)
 int E4Recv_766060::sub_766060()
 {
 
-  unsigned int *vtable3; // eax
+  unsigned int *ptr_C; // eax
 
-  vtable3 = (unsigned int *)(((unsigned int *)this)[0]); /*0x766060*/
-  if ( vtable3 ) /*0x766065*/
-    return vtable3[2]; /*0x766067*/
+  ptr_C = (unsigned int *)(((unsigned int *)this)[0]); /*0x766060*/
+  if ( ptr_C ) /*0x766065*/
+    return ptr_C[2]; /*0x766067*/
   else
     return 0; /*0x76606b*/
 
@@ -329,10 +329,10 @@ void* Gap2Recv_766A10::System_Init_766A10(int a2, int arg4, void * a3, ObjectCla
   *((unsigned int *)this + 2) = a2; /*0x766a1f*/
   *((unsigned int *)this + 3) = v6; /*0x766a26*/
   *((unsigned int *)this + 1) = 0; /*0x766a2d*/
-  /* X11: vtable install elided (implicit via GameOption virtuals 0x766a34) */
+  /* X11: ptr_0 install elided (implicit via GameOption virtuals 0x766a34) */
   *((unsigned int *)this + 4) = arg4; /*0x766a3a*/
   String::AssignFromPtr((char **)this + 5, (const char **)&a3); /*0x766a3d*/
-  /* X11: vtable install elided (implicit via WorldDominationTourValueGameOption virtuals 0x766a46) */
+  /* X11: ptr_0 install elided (implicit via WorldDominationTourValueGameOption virtuals 0x766a46) */
   DeleteAndZero(&a3); /*0x766a4c*/
   return this; /*0x766a53*/
 
@@ -360,20 +360,20 @@ int Conflict_WorldDominationTour_12::ddtor()
 // ==== BACKFILL 0x00766EE0  System_Init_766EE0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char Gap2Recv_766EE0::System_Init_766EE0(int aP1) {
 
-  void *vtable2; // ecx
+  void *ptr_8; // ecx
   int abstractFlags; // eax
   int uniqueId; // eax
 
-  vtable2 = ((unsigned int *)this)[0]; /*0x766ee3*/
-  if ( ((unsigned int *)this)[0] >= (int)vtable2 ) /*0x766eeb*/
+  ptr_8 = ((unsigned int *)this)[0]; /*0x766ee3*/
+  if ( ((unsigned int *)this)[0] >= (int)ptr_8 ) /*0x766eeb*/
   {
-    if ( !BYTE1(((unsigned int *)this)[0]) && vtable2 ) /*0x766ef6*/
+    if ( !BYTE1(((unsigned int *)this)[0]) && ptr_8 ) /*0x766ef6*/
       return 0; /*0x766ef6*/
     abstractFlags = ((unsigned int *)this)[0]; /*0x766ef8*/
     if ( abstractFlags <= 0 /*0x766f08*/
-      || !(*((uint8_t (**)(ObjectClass *, int, unsigned int))this->vtable1 + 2))(
+      || !(*((uint8_t (**)(ObjectClass *, int, unsigned int))this->ptr_4 + 2))(
             this,
-            (int)vtable2 + abstractFlags,
+            (int)ptr_8 + abstractFlags,
             0) )
     {
       return 0; /*0x766f0f*/
@@ -390,7 +390,7 @@ char Gap2Recv_766EE0::System_Init_766EE0(int aP1) {
 void* Gap2Recv_766F70::System_Init_766F70(int a2) {
 
   ComPtr::Constructor((ComPtr *)this); /*0x766f73*/
-  /* X11: vtable install elided (implicit via rc_ptr virtuals 0x766f7c) */
+  /* X11: ptr_0 install elided (implicit via rc_ptr virtuals 0x766f7c) */
   ComPtr::Set((ComPtr *)this, *(unsigned int *)(a2 + 4)); /*0x766f88*/
   return this; /*0x766f8f*/
 
@@ -645,7 +645,7 @@ void* Gap2Recv_76A7E0::ConstructWDTSelection_Create_767FB0_Create_Create(HashTab
   ((unsigned int *)this)[0] = (void *)aP1; /*0x76a7f3*/
   LOBYTE(((unsigned int *)this)[0]) = 1; /*0x76a7f6*/
   BYTE1(((unsigned int *)this)[0]) = 0; /*0x76a7fa*/
-  /* X11: vtable install elided (implicit via VectorClassrc_ptr virtuals 0x76a7fe) */
+  /* X11: ptr_0 install elided (implicit via VectorClassrc_ptr virtuals 0x76a7fe) */
   if ( !aP1 ) /*0x76a805*/
     return this; /*0x76a805*/
   if ( !aP2 ) /*0x76a811*/
@@ -1112,7 +1112,7 @@ char* Gap2Recv_76BF00::Audio_Create_76BF00(int a2) {
 
   v3 = (unsigned char *)this + 8; /*0x76bf05*/
   *((unsigned int *)this + 1) = 0; /*0x76bf08*/
-  /* X11: vtable install elided (implicit via ReferenceCounted virtuals 0x76bf11) */
+  /* X11: ptr_0 install elided (implicit via ReferenceCounted virtuals 0x76bf11) */
   ComPtr::Constructor((unsigned int *)this + 2); /*0x76bf17*/
   *v3 = &g_var_5878c0; /*0x76bf20*/
   ComPtr::Set(v3, *(unsigned int *)(a2 + 4)); /*0x76bf2c*/
@@ -1130,7 +1130,7 @@ char* Gap2Recv_76BF00::Audio_Create_76BF00(int a2) {
     v8 = aWdtDefaultlong; /*0x76bf72*/
   v9 = GetStringCSF(v8, 0, aDRa2mdpostWdtp, 21); /*0x76bf77*/
   WideString::Assign((wchar_t **)this + 5, v9); /*0x76bf80*/
-  /* X11: vtable install elided (implicit via CampaignProperties virtuals 0x76bf85) */
+  /* X11: ptr_0 install elided (implicit via CampaignProperties virtuals 0x76bf85) */
   return this; /*0x76bf8d*/
 
 }
@@ -1201,7 +1201,7 @@ int Gap2Recv_76C290::ConstructWDTSelection(int arg0, int arg4) {
   *((unsigned int *)this + 293) = &g_ptr_7E3238; /*0x76c3c1*/
   *((unsigned int *)this + 298) = 10; /*0x76c3c8*/
   *((unsigned int *)this + 297) = 0; /*0x76c3cf*/
-  /* X11: vtable install elided (implicit via Selection virtuals 0x76c3d2) */
+  /* X11: ptr_0 install elided (implicit via Selection virtuals 0x76c3d2) */
   *((unsigned int *)this + 299) = (uint16_t)Property::Set( /*0x76c448*/
                                                  (Property *)g_FogOfWarState,
                                                  ((uint8_t)dword_AC18A4 >> g_BitShift_Green_0 << g_BitShift_Red)
@@ -1225,16 +1225,16 @@ int Gap2Recv_76C290::ConstructWDTSelection(int arg0, int arg4) {
   String::Assign((String *)&v21, aSounds_0); /*0x76c4e2*/
   ConstructWDTSelection_Create_76CA60((TechnoClass *)this, (char *)&v21.nextArrayIndex, (char **)&v21); /*0x76c4f3*/
   DeleteAndZero(&v21); /*0x76c4fc*/
-  unknown_libname_73(&v21.vtable2); /*0x76c505*/
-  String::Assign((String *)&v21.vtable1, &g_INI_DefaultBuffer); /*0x76c513*/
+  unknown_libname_73(&v21.ptr_8); /*0x76c505*/
+  String::Assign((String *)&v21.ptr_4, &g_INI_DefaultBuffer); /*0x76c513*/
   String::Assign((String *)&v21, aLayouts); /*0x76c521*/
   _76BFB0 = ConstructWDTSelection_Create_76BFB0(); /*0x76c53b*/
   v10 = FromStringInt((char **)&v21.abstractFlags, _76BFB0); /*0x76c546*/
-  INIClass::ReadString((INIClass *)&v21.nextArrayIndex, (char **)&v21, v10, (char **)&v21.vtable1, (int)&v21.vtable2); /*0x76c555*/
+  INIClass::ReadString((INIClass *)&v21.nextArrayIndex, (char **)&v21, v10, (char **)&v21.ptr_4, (int)&v21.ptr_8); /*0x76c555*/
   DeleteAndZero((ObjectClass *)&v21.abstractFlags); /*0x76c55e*/
   DeleteAndZero(&v21); /*0x76c567*/
-  DeleteAndZero((ObjectClass *)&v21.vtable1); /*0x76c570*/
-  ConstructWDTSelection_Create_76CBF0((TechnoClass *)this, &v21.nextArrayIndex, (char **)&v21.vtable2); /*0x76c581*/
+  DeleteAndZero((ObjectClass *)&v21.ptr_4); /*0x76c570*/
+  ConstructWDTSelection_Create_76CBF0((TechnoClass *)this, &v21.nextArrayIndex, (char **)&v21.ptr_8); /*0x76c581*/
   v11 = *((unsigned int *)this + 279); /*0x76c590*/
   LOBYTE(v12) = ConstructWDTSelection_Create(*(unsigned int *)(arg0 + 4), arg4); /*0x76c599*/
   ArtConfig::ReadLayout(v11, (INIClass *)&v21.nextArrayIndex, (PriorityQueue *)this, v12); /*0x76c5a7*/
@@ -1252,12 +1252,12 @@ int Gap2Recv_76C290::ConstructWDTSelection(int arg0, int arg4) {
   ScoreClass::SetState(v15, 1); /*0x76c5ff*/
   PriorityQueue::Add((PriorityQueue *)this, (int)v15); /*0x76c607*/
   v16 = GetStringCSF(aTxtBack, 0, g_Str_File_WDTSel_cpp, 164); /*0x76c61d*/
-  WideString::Assign((WideString *)&v21.vtable3, v16); /*0x76c627*/
+  WideString::Assign((WideString *)&v21.ptr_C, v16); /*0x76c627*/
   v17 = (MSBitPrintAnim *)__2_YAPAXI_Z(0x34u); /*0x76c62e*/
   if ( v17 ) /*0x76c638*/
     v18 = (ScoreClass *)MSBitPrintAnim::Construct( /*0x76c655*/
                           v17,
-                          (const wchar_t **)&v21.vtable3,
+                          (const wchar_t **)&v21.ptr_C,
                           (unsigned int *)(*((unsigned int *)this + 279) + 172),
                           1);
   else
@@ -1265,9 +1265,9 @@ int Gap2Recv_76C290::ConstructWDTSelection(int arg0, int arg4) {
   ScoreClass::SetState(v18, 1); /*0x76c65f*/
   PriorityQueue::Add((PriorityQueue *)this, (int)v18); /*0x76c667*/
   ConstructWDTSelection_Create_76EEB0((TechnoClass *)this); /*0x76c66e*/
-  DeleteAndZero::Alt((DeleteAndZero *)&v21.vtable3); /*0x76c677*/
+  DeleteAndZero::Alt((DeleteAndZero *)&v21.ptr_C); /*0x76c677*/
   DeleteAndZero::Alt((DeleteAndZero *)&v21.uniqueId); /*0x76c680*/
-  DeleteAndZero((ObjectClass *)&v21.vtable2); /*0x76c689*/
+  DeleteAndZero((ObjectClass *)&v21.ptr_8); /*0x76c689*/
   HashTable::DestroyHashTableINIClass((INIClass *)&v21.nextArrayIndex); /*0x76c692*/
   v21.customSound_controller[2] = (int)&g_ptr_7E16B0; /*0x76c69e*/
   v23 = 0; /*0x76c6a6*/
@@ -1490,7 +1490,7 @@ bool Gap2Recv_76DAD0::TerritorySelectWDT(ObjectClass * aP1) {
     {
       if ( v3 ) /*0x76dafc*/
         ComPtr::Set((ComPtr *)this->customSound_controller, 0); /*0x76db03*/
-      TerritorySelectWDT_Process((ObjectClass *)this->currentTargets[4], 0, &this->vtable0); /*0x76db11*/
+      TerritorySelectWDT_Process((ObjectClass *)this->currentTargets[4], 0, &this->ptr_0); /*0x76db11*/
       v6 = *(MSAnim **)(this->currentTargets[4] + 44); /*0x76db1c*/
       if ( v6 ) /*0x76db21*/
       {
@@ -1558,7 +1558,7 @@ bool Gap2Recv_76DAD0::TerritorySelectWDT(ObjectClass * aP1) {
       v15 = &v31; /*0x76dcf0*/
     }
     DeleteAndZero::Alt(v15); /*0x76dcf4*/
-    TerritorySelectWDT_Process((ObjectClass *)this->currentTargets[4], 1, &this->vtable0); /*0x76dcff*/
+    TerritorySelectWDT_Process((ObjectClass *)this->currentTargets[4], 1, &this->ptr_0); /*0x76dcff*/
     if ( Conflict::GetOwnerHouse(*(Conflict **)(this->ambientSoundController[4] + 12)) == this->currentTargetThreatValues[4] ) /*0x76dd18*/
     {
       v19 = this->ambientSoundController[4] + 24; /*0x76dd25*/
@@ -1652,7 +1652,7 @@ void Gap2Recv_76E180::ShowWDTTerritorySelection_Show() {
   v2 = this->currentTargets[1]; /*0x76e186*/
   if ( !*(unsigned char *)(v2 + 104) ) /*0x76e18c*/
   {
-    WDTGame::ToggleTeamMode(v2, &this->vtable0, 1); /*0x76e19c*/
+    WDTGame::ToggleTeamMode(v2, &this->ptr_0, 1); /*0x76e19c*/
     String::Assign((String *)&v5, aMousecancel); /*0x76e1aa*/
     if ( (uint8_t)String::NotEquals((String *)&v5, 0) ) /*0x76e1b5*/
     {
@@ -1756,7 +1756,7 @@ int Gap2Recv_76EEB0::ConstructWDTSelection_Create_76EEB0() {
   }
   (*(void (**)(MouseClass *))(dword_887640->MouseClass_field_0x0 + 12))(dword_887640); /*0x76eefa*/
   (*(void (**)(DSurface *, unsigned int))(DSurface_Alternate->DSurface_field_0x0 + 24))(DSurface_Alternate, 0); /*0x76ef07*/
-  (*(void (**)(ObjectClass *, unsigned int))(g_DSurface_Hidden->vtable0 + 24))(g_DSurface_Hidden, 0); /*0x76ef14*/
+  (*(void (**)(ObjectClass *, unsigned int))(g_DSurface_Hidden->ptr_0 + 24))(g_DSurface_Hidden, 0); /*0x76ef14*/
   (*(void (**)(DSurface *, ObjectClass *, unsigned int, int))(g_DSurface_Primary->DSurface_field_0x0 + 4))( /*0x76ef29*/
     g_DSurface_Primary,
     g_DSurface_Hidden,
@@ -1838,7 +1838,7 @@ void* Gap2Recv_76F500::ConstructWDTSelection_Create_76F500() {
     v3 = 0; /*0x76f542*/
   }
   ComPtr::Constructor((ComPtr *)this); /*0x76f546*/
-  /* X11: vtable install elided (implicit via rc_ptr virtuals 0x76f54d) */
+  /* X11: ptr_0 install elided (implicit via rc_ptr virtuals 0x76f54d) */
   ComPtr::Set((ComPtr *)this, (int)v3); /*0x76f554*/
   return this; /*0x76f55b*/
 

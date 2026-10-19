@@ -413,7 +413,7 @@ VectorClass_flat * SwizzleManagerClass_19::QueryInterface(unsigned int * Block, 
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x6cf853*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x6cf856*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x6cf856*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x6cf860*/
   {
     operator delete((v3)); /*0x6cf868*/
@@ -433,7 +433,7 @@ DynamicVector * SwizzleManagerClass_19::Constructor_VectorClass_SwizzlePointerCl
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x6cf8a3*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x6cf8a6*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x6cf8a6*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x6cf8b0*/
   {
     operator delete((v3)); /*0x6cf8b8*/

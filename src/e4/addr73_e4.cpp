@@ -371,7 +371,7 @@ unsigned int * sub_731EB0(unsigned char (__fastcall *)(int, int), int a2)
     v2[2] = 0; /*0x731ed1*/
     *((unsigned char *)v2 + 12) = 1; /*0x731ed4*/
     *((unsigned char *)v2 + 13) = 0; /*0x731ed8*/
-    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E17AC) */  /*0x731edb*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E17AC) */  /*0x731edb*/
     v2[5] = 10; /*0x731ee1*/
     v2[4] = 0; /*0x731ee8*/
     v3 = v2; /*0x731eeb*/
@@ -430,7 +430,7 @@ unsigned int * TechnoClass_GatherFiltered(unsigned char (__fastcall *)(int, int)
     v2[2] = 0; /*0x731f91*/
     *((unsigned char *)v2 + 12) = 1; /*0x731f94*/
     *((unsigned char *)v2 + 13) = 0; /*0x731f98*/
-    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E17AC) */  /*0x731f9b*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E17AC) */  /*0x731f9b*/
     v2[5] = 10; /*0x731fa1*/
     v2[4] = 0; /*0x731fa8*/
     v3 = v2; /*0x731fab*/
@@ -531,7 +531,7 @@ int SelectAllOfType()
     if ( v3 ) /*0x7329a4*/
     {
       EventClass::resetEvent(v3, 0, 0); /*0x7329aa*/
-      /* X11: vtable install elided (legacy slot spelling slot, RHS g_ptr_7E17AC) */  /*0x7329af*/
+      /* X11: ptr_0 install elided (legacy slot spelling slot, RHS g_ptr_7E17AC) */  /*0x7329af*/
       *&v4->CapacityIncrement = 10; /*0x7329b5*/
       *(unsigned int *)v4->Count = 0; /*0x7329bc*/
     }
@@ -560,7 +560,7 @@ int SelectAllOfType()
     if ( v7 ) /*0x732a08*/
     {
       EventClass::resetEvent(v7, 0, 0); /*0x732a0e*/
-      /* X11: vtable install elided (legacy slot spelling slot, RHS g_ptr_7E17AC) */  /*0x732a13*/
+      /* X11: ptr_0 install elided (legacy slot spelling slot, RHS g_ptr_7E17AC) */  /*0x732a13*/
       *&v8->CapacityIncrement = 10; /*0x732a1a*/
       *(unsigned int *)v8->Count = 0; /*0x732a21*/
     }
@@ -678,7 +678,7 @@ char sub_732FF0(void * a1, int (__fastcall *)(unsigned int, int), int a3)
     if ( HeightMap ) /*0x73301c*/
     {
       (*((unsigned char *)&(HeightMap))) = (uint8_t)EventClass::resetEvent((int *)HeightMap, 0, 0); /*0x733022*/
-      /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E3238) */  /*0x733027*/
+      /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E3238) */  /*0x733027*/
       v4->u32_14 = 10; /*0x73302d*/
       v4->q010 = 0; /*0x733034*/
     }
@@ -722,7 +722,7 @@ char sub_732FF0(void * a1, int (__fastcall *)(unsigned int, int), int a3)
     if ( v10 ) /*0x7330b1*/
     {
       EventClass::resetEvent(v10, 0, 0); /*0x7330b9*/
-      /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E3238) */  /*0x7330be*/
+      /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E3238) */  /*0x7330be*/
       v4->u32_14 = 10; /*0x7330c4*/
       v4->q010 = 0; /*0x7330cb*/
     }
@@ -793,7 +793,7 @@ char sub_7331B0()
   if ( v2 ) /*0x7331db*/
   {
     EventClass::resetEvent(v2, 0, 0); /*0x7331e1*/
-    /* X11: vtable install elided (legacy slot spelling slot, RHS g_ptr_7E17AC) */  /*0x7331e6*/
+    /* X11: ptr_0 install elided (legacy slot spelling slot, RHS g_ptr_7E17AC) */  /*0x7331e6*/
     *&v3->CapacityIncrement = 10; /*0x7331ec*/
     *(unsigned int *)v3->Count = 0; /*0x7331f3*/
   }
@@ -841,7 +841,7 @@ char sub_7331B0()
     if ( v11 ) /*0x733290*/
     {
       EventClass::resetEvent(v11, 0, 0); /*0x733296*/
-      /* X11: vtable install elided (legacy slot spelling slot, RHS g_ptr_7E17AC) */  /*0x73329b*/
+      /* X11: ptr_0 install elided (legacy slot spelling slot, RHS g_ptr_7E17AC) */  /*0x73329b*/
       *&v12->CapacityIncrement = 10; /*0x7332a1*/
       *(unsigned int *)v12->Count = 0; /*0x7332a8*/
     }
@@ -1372,7 +1372,7 @@ unsigned int * E4Recv_733CD0::sub_733CD0()
     *(unsigned int *)(v2 + 8) = 0; /*0x733cef*/
     *(unsigned char *)(v2 + 12) = 1; /*0x733cf2*/
     *(unsigned char *)(v2 + 13) = 0; /*0x733cf6*/
-    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EE0B4) */  /*0x733cf9*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EE0B4) */  /*0x733cf9*/
     *(unsigned int *)(v2 + 20) = 10; /*0x733cff*/
     *(unsigned int *)(v2 + 16) = 0; /*0x733d06*/
     v3 = v2; /*0x733d09*/
@@ -1502,7 +1502,7 @@ void * SelectFactionThemeMusic(int a1, const char * a2, int a3, unsigned int * a
     VectorClass::Construct(v9, 0, 0); /*0x733e99*/
     v10->q010 = 0; /*0x733e9e*/
     v11 = v10; /*0x733ea1*/
-    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E3238) */  /*0x733ea3*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E3238) */  /*0x733ea3*/
     v10->u32_14 = 10; /*0x733ea9*/
     v36 = v10; /*0x733eb0*/
   }

@@ -786,7 +786,7 @@ public:
     void* Constructor(int a2, int *a3, int a4); // 0x7493B0 (G42 sig-sync: def)
 
     // --- g57w20m1 supply: til VoxelAnimClass 布局 (IDA live 2026-10-08; 0x7493B0 raw this 型) ---
-    int VoxelAnimClass_field_0x0;   // 0x0 (vtable 安装站 0x749434)
+    int VoxelAnimClass_field_0x0;   // 0x0 (ptr_0 安装站 0x749434)
     int VoxelAnimClass_field_0x4;   // 0x4 (0x74943a; GenerateUniqueID 0x74944e 经此)
     int VoxelAnimClass_field_0x8;   // 0x8 (0x749440)
     char __pad_C[16];               // 0xC (til 名; raw 0x749447 *(unsigned int*)this->__pad_C)
@@ -998,8 +998,8 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~IsoCoord() = default;
 
-    _DWORD * ToPixel(int p0, int p1);  // 0x6D1EB0 (x13:signals; virt=dropped(no-binary-vtable))
-    int __stdcall ToScreenOffset(int p0, int p1, int* p2, int* p3);  // 0x6D62E0 (x13:signals; virt=dropped(no-binary-vtable))
+    _DWORD * ToPixel(int p0, int p1);  // 0x6D1EB0 (x13:signals; virt=dropped(no-binary-ptr_0))
+    int __stdcall ToScreenOffset(int p0, int p1, int* p2, int* p3);  // 0x6D62E0 (x13:signals; virt=dropped(no-binary-ptr_0))
 
     uint8_t IsoCoord_field_0x04[4];
 
@@ -1012,10 +1012,10 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~IsoTile() = default;
 
-    int * __cdecl Decode16Bit(int p0, uint16_t* p1, int* p2, int p3, int p4, int p5);  // 0x748750 (x13:signals; virt=dropped(no-binary-vtable))
-    unsigned int __cdecl Decode8BitV2(int p0, uint8_t* p1, int* p2, unsigned int p3, int p4, int p5);  // 0x748C30 (x13:signals; virt=dropped(no-binary-vtable))
-    char * __cdecl Decode16BitV2(int p0, uint16_t* p1, int* p2, int p3, int p4, int p5);  // 0x7C39C0 (x13:signals; virt=dropped(no-binary-vtable))
-    unsigned int __cdecl Decode8Bit(int p0, uint8_t* p1, int* p2, unsigned int p3, int p4, int p5);  // 0x7C3EB0 (x13:signals; virt=dropped(no-binary-vtable))
+    int * __cdecl Decode16Bit(int p0, uint16_t* p1, int* p2, int p3, int p4, int p5);  // 0x748750 (x13:signals; virt=dropped(no-binary-ptr_0))
+    unsigned int __cdecl Decode8BitV2(int p0, uint8_t* p1, int* p2, unsigned int p3, int p4, int p5);  // 0x748C30 (x13:signals; virt=dropped(no-binary-ptr_0))
+    char * __cdecl Decode16BitV2(int p0, uint16_t* p1, int* p2, int p3, int p4, int p5);  // 0x7C39C0 (x13:signals; virt=dropped(no-binary-ptr_0))
+    unsigned int __cdecl Decode8Bit(int p0, uint8_t* p1, int* p2, unsigned int p3, int p4, int p5);  // 0x7C3EB0 (x13:signals; virt=dropped(no-binary-ptr_0))
 
     uint8_t IsoTile_field_0x04[4];
     uint8_t IsoTile_field_0x08[4];
@@ -1116,7 +1116,7 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~Lightning() = default;
 
-    int Draw(int p0, int p1, int p2, int p3, int p4, int p5, int p6);  // 0x4C1F20 (x13:signals; virt=dropped(no-binary-vtable))
+    int Draw(int p0, int p1, int p2, int p3, int p4, int p5, int p6);  // 0x4C1F20 (x13:signals; virt=dropped(no-binary-ptr_0))
 
 
     unsigned int u32_18;  // X10 supply (member_lookup)
@@ -1147,7 +1147,7 @@ class MapFile
 public:
     virtual ~MapFile() = default;  // 0x69C500
 
-    wchar_t * LoadDescription(uint8_t*** p0, char* p1);  // 0x69A3B0 (x13:signals; virt=dropped(no-binary-vtable))
+    wchar_t * LoadDescription(uint8_t*** p0, char* p1);  // 0x69A3B0 (x13:signals; virt=dropped(no-binary-ptr_0))
     virtual void ddtor(); // 0x69C500
     virtual unsigned int Write(int p0);  // 0x69C560 (x13:signals; virt=slot)
     virtual char Release(int p0, int* p1);  // 0x69CBC0 (x13:signals; virt=slot)
@@ -1175,7 +1175,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~MapPreview() = default;
 
-    char Check(int p0);  // 0x5D63E0 (x13:signals; virt=dropped(no-binary-vtable))
+    char Check(int p0);  // 0x5D63E0 (x13:signals; virt=dropped(no-binary-ptr_0))
     virtual void Upload(); // 0x5E7EB0
 
     uint8_t MapPreview_field_0x04[4];
@@ -1230,11 +1230,11 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~MapSeed() = default;
 
-    bool CheckTileMatch(int16_t* p0, int16_t* p1, int p2, char p3, char p4, char p5);  // 0x56D100 (x13:signals; virt=dropped(no-binary-vtable))
+    bool CheckTileMatch(int16_t* p0, int16_t* p1, int p2, char p3, char p4, char p5);  // 0x56D100 (x13:signals; virt=dropped(no-binary-ptr_0))
     virtual int IsInitialized(); // 0x58B7D0 (G42 sig-sync: returns dword_ABED0C)
-    char PlaceCityBlock(int16_t* p0, int16_t* p1, void* p2);  // 0x5910F0 (x13:signals; virt=dropped(no-binary-vtable))
-    char PlaceCityBuildings(int16_t* p0, int16_t* p1, void* p2);  // 0x591D80 (x13:signals; virt=dropped(no-binary-vtable))
-    char PlaceCityBlock2(int16_t* p0, int16_t* p1, void* p2);  // 0x593550 (x13:signals; virt=dropped(no-binary-vtable))
+    char PlaceCityBlock(int16_t* p0, int16_t* p1, void* p2);  // 0x5910F0 (x13:signals; virt=dropped(no-binary-ptr_0))
+    char PlaceCityBuildings(int16_t* p0, int16_t* p1, void* p2);  // 0x591D80 (x13:signals; virt=dropped(no-binary-ptr_0))
+    char PlaceCityBlock2(int16_t* p0, int16_t* p1, void* p2);  // 0x593550 (x13:signals; virt=dropped(no-binary-ptr_0))
     // +4 more virtual methods
 
     uint8_t MapSeed_field_0x04[4];
@@ -1350,8 +1350,8 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~Matrix() = default;
 
-    _DWORD * Copy12Float(int p0);  // 0x5AE5E0 (x13:signals; virt=dropped(no-binary-vtable))
-    unsigned int Scale(float p0);  // 0x5BD730 (x13:signals; virt=dropped(no-binary-vtable))
+    _DWORD * Copy12Float(int p0);  // 0x5AE5E0 (x13:signals; virt=dropped(no-binary-ptr_0))
+    unsigned int Scale(float p0);  // 0x5BD730 (x13:signals; virt=dropped(no-binary-ptr_0))
 
     uint8_t Matrix_field_0x04[4];
 
@@ -1367,7 +1367,7 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~Matrix2D() = default;
 
-    void Rotate(float p0);  // 0x5AF1A0 (x13:signals; virt=dropped(no-binary-vtable))
+    void Rotate(float p0);  // 0x5AF1A0 (x13:signals; virt=dropped(no-binary-ptr_0))
 
 };
 // 5 methods in IDA
@@ -1378,11 +1378,11 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~Matrix3x3() = default;
 
-    float * Multiply(float* p0);  // 0x5AE8F0 (x13:signals; virt=dropped(no-binary-vtable))
-    void ApplyCol0(float p0);  // 0x5AE9B0 (x13:signals; virt=dropped(no-binary-vtable))
-    void ApplyCol1(float p0);  // 0x5AE9E0 (x13:signals; virt=dropped(no-binary-vtable))
-    void RotateX(float p0);  // 0x5AEF60 (x13:signals; virt=dropped(no-binary-vtable))
-    float * TransformPoint(float* p0, float* p1);  // 0x5AF4D0 (x13:signals; virt=dropped(no-binary-vtable))
+    float * Multiply(float* p0);  // 0x5AE8F0 (x13:signals; virt=dropped(no-binary-ptr_0))
+    void ApplyCol0(float p0);  // 0x5AE9B0 (x13:signals; virt=dropped(no-binary-ptr_0))
+    void ApplyCol1(float p0);  // 0x5AE9E0 (x13:signals; virt=dropped(no-binary-ptr_0))
+    void RotateX(float p0);  // 0x5AEF60 (x13:signals; virt=dropped(no-binary-ptr_0))
+    float * TransformPoint(float* p0, float* p1);  // 0x5AF4D0 (x13:signals; virt=dropped(no-binary-ptr_0))
 
     uint8_t Matrix3x3_field_0x04[4];
     uint8_t Matrix3x3_field_0x08[4];
@@ -1407,8 +1407,8 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~PlacementList() = default;
 
-    _DWORD * FindByID(int p0, char p1);  // 0x47C4D0 (x13:signals; virt=dropped(no-binary-vtable))
-    _DWORD * FindByType(char p0);  // 0x47EBF0 (x13:signals; virt=dropped(no-binary-vtable))
+    _DWORD * FindByID(int p0, char p1);  // 0x47C4D0 (x13:signals; virt=dropped(no-binary-ptr_0))
+    _DWORD * FindByType(char p0);  // 0x47EBF0 (x13:signals; virt=dropped(no-binary-ptr_0))
 
     uint8_t PlacementList_field_0x04[4];
 
@@ -1422,7 +1422,7 @@ public:
     virtual ~PlanningNodeClass() = default; // 0x6370B0
 
     virtual void CleanupAll(); // 0x6370B0
-    char RemoveFromArray(int p0);  // 0x63EBD0 (x13:signals; virt=dropped(no-binary-vtable))
+    char RemoveFromArray(int p0);  // 0x63EBD0 (x13:signals; virt=dropped(no-binary-ptr_0))
 
     uint8_t PlanningNodeClass_field_0x04[4];
 
@@ -1523,7 +1523,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~ScoreClass() = default;
 
-    char SetState(char p0);  // 0x5CD3C0 (x13:signals; virt=dropped(no-binary-vtable))
+    char SetState(char p0);  // 0x5CD3C0 (x13:signals; virt=dropped(no-binary-ptr_0))
 
 
     unsigned int u32_30;  // X10 supply (member_lookup)
@@ -1552,9 +1552,9 @@ public:
     virtual ~ScoreScreen() = default;
 
     virtual void Display(); // 0x68CD20
-    bool Check(char p0);  // 0x68EC00 (x13:signals; virt=dropped(no-binary-vtable))
+    bool Check(char p0);  // 0x68EC00 (x13:signals; virt=dropped(no-binary-ptr_0))
     virtual int AccumulateScoreStats(); // 0x68EF20
-    int DisplayTimeText(unsigned int p0);  // 0x68F9B0 (x13:signals; virt=dropped(no-binary-vtable))
+    int DisplayTimeText(unsigned int p0);  // 0x68F9B0 (x13:signals; virt=dropped(no-binary-ptr_0))
     virtual void LoadAudio(); // 0x690640
     // +5 more virtual methods
 
@@ -1604,7 +1604,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~ScoreScreenClass() = default;
 
-    int __fastcall ProcessFrame(char* p0, int p1);  // 0x691970 (x13:signals; virt=dropped(no-binary-vtable))
+    int __fastcall ProcessFrame(char* p0, int p1);  // 0x691970 (x13:signals; virt=dropped(no-binary-ptr_0))
 
 };
 // 2 methods in IDA
@@ -1615,8 +1615,8 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~ScoreText() = default;
 
-    void ShowAlt(const int** p0, int p1);  // 0x76EA20 (x13:signals; virt=dropped(no-binary-vtable))
-    void Show(const int** p0);  // 0x76EAF0 (x13:signals; virt=dropped(no-binary-vtable))
+    void ShowAlt(const int** p0, int p1);  // 0x76EA20 (x13:signals; virt=dropped(no-binary-ptr_0))
+    void Show(const int** p0);  // 0x76EAF0 (x13:signals; virt=dropped(no-binary-ptr_0))
 
     uint8_t ScoreText_field_0x04[4];
 
@@ -1678,7 +1678,7 @@ public:
     virtual int LoadFromSaveStream(); // 0x539890
     virtual int ProcessCharged(); // 0x6C5640
     virtual int UpdateAll(); // 0x6DA740
-    char CreateChemLauncher(int p0, int p1, int p2, int p3);  // 0x6E38F0 (x13:signals; virt=dropped(no-binary-vtable))
+    char CreateChemLauncher(int p0, int p1, int p2, int p3);  // 0x6E38F0 (x13:signals; virt=dropped(no-binary-ptr_0))
     virtual int FindByName(); // 0x773030
 
     uint8_t SuperWeaponClass_field_0x04[4];
@@ -1781,7 +1781,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~TeamTypeVector() = default;
 
-    _DWORD * CopyConstruct(int* p0);  // 0x50E830 (x13:signals; virt=dropped(no-binary-vtable))
+    _DWORD * CopyConstruct(int* p0);  // 0x50E830 (x13:signals; virt=dropped(no-binary-ptr_0))
 
 };
 
@@ -1828,7 +1828,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~ActionQueue() = default;
 
-    _DWORD * PushEntry(int p0, int p1, int p2);  // 0x53CB10 (x13:signals; virt=dropped(no-binary-vtable))
+    _DWORD * PushEntry(int p0, int p1, int p2);  // 0x53CB10 (x13:signals; virt=dropped(no-binary-ptr_0))
 
 };
 // 1 methods in IDA
@@ -1874,7 +1874,7 @@ class AlphaShapeClass
 public:
     virtual ~AlphaShapeClass() = default;  // 0x421730
 
-    int CTOR(int p0, int p1, int p2);  // 0x420960 (x13:signals; virt=dropped(no-binary-vtable))
+    int CTOR(int p0, int p1, int p2);  // 0x420960 (x13:signals; virt=dropped(no-binary-ptr_0))
     virtual int Constructor(); // 0x420AF0
     virtual int __stdcall SD_vt03(int p0, int* p1);  // 0x420D40 (x13:signals; virt=slot)
     virtual int SD_vt11();  // G42 sig-sync // 0x420D80
@@ -1919,7 +1919,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~AppState() = default;
 
-    int __stdcall CallMethod(int p0);  // 0x5F3320 (x13:signals; virt=dropped(no-binary-vtable))
+    int __stdcall CallMethod(int p0);  // 0x5F3320 (x13:signals; virt=dropped(no-binary-ptr_0))
 
 };
 // 1 methods in IDA
@@ -1952,11 +1952,11 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~ArtConfig() = default;
 
-    _DWORD * loadConfig(char** p0, int p1, int p2, int* p3, char p4);  // 0x5CC760 (x13:signals; virt=dropped(no-binary-vtable))
-    int ReadLayout(int p0, int p1, int p2);  // 0x7681E0 (x13:signals; virt=dropped(no-binary-vtable))
-    int ParseLayoutEntry(int* p0, char** p1, char** p2, int p3);  // 0x768F50 (x13:signals; virt=dropped(no-binary-vtable))
-    char * saveConfig(const char** p0);  // 0x7691E0 (x13:signals; virt=dropped(no-binary-vtable))
-    int resetConfig(int* p0, int p1, int* p2);  // 0x76FB90 (x13:signals; virt=dropped(no-binary-vtable))
+    _DWORD * loadConfig(char** p0, int p1, int p2, int* p3, char p4);  // 0x5CC760 (x13:signals; virt=dropped(no-binary-ptr_0))
+    int ReadLayout(int p0, int p1, int p2);  // 0x7681E0 (x13:signals; virt=dropped(no-binary-ptr_0))
+    int ParseLayoutEntry(int* p0, char** p1, char** p2, int p3);  // 0x768F50 (x13:signals; virt=dropped(no-binary-ptr_0))
+    char * saveConfig(const char** p0);  // 0x7691E0 (x13:signals; virt=dropped(no-binary-ptr_0))
+    int resetConfig(int* p0, int p1, int* p2);  // 0x76FB90 (x13:signals; virt=dropped(no-binary-ptr_0))
     // +1 more virtual methods
 
     uint8_t ArtConfig_field_0x04[4];
@@ -2058,9 +2058,9 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~BigInt() = default;
 
-    int __fastcall ArrayArithmetic(int* p0, char* p1, int* p2, int p3);  // 0x5C6FE0 (x13:signals; virt=dropped(no-binary-vtable))
-    int DecryptBlock(char* p0, int p1, char* p2);  // 0x632740 (x13:signals; virt=dropped(no-binary-vtable))
-    int RSAOperation(char* p0, int p1, char* p2);  // 0x632870 (x13:signals; virt=dropped(no-binary-vtable))
+    int __fastcall ArrayArithmetic(int* p0, char* p1, int* p2, int p3);  // 0x5C6FE0 (x13:signals; virt=dropped(no-binary-ptr_0))
+    int DecryptBlock(char* p0, int p1, char* p2);  // 0x632740 (x13:signals; virt=dropped(no-binary-ptr_0))
+    int RSAOperation(char* p0, int p1, char* p2);  // 0x632870 (x13:signals; virt=dropped(no-binary-ptr_0))
     bool Compare(int p0);  // 0x632BC0 (x13:signals; virt=nonvirtual)
 
     uint8_t BigInt_field_0x04[4];
@@ -2078,11 +2078,11 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~BinkMovieClass() = default;
 
-    _DWORD * SetPosition(int p0, int p1, int p2);  // 0x433180 (x13:signals; virt=dropped(no-binary-vtable))
+    _DWORD * SetPosition(int p0, int p1, int p2);  // 0x433180 (x13:signals; virt=dropped(no-binary-ptr_0))
     virtual void RenderFrameToSurface(); // 0x4333F0  [BinkMovie::RenderFrameToSurface non-virtual variant at 0x433040, anchor removed]
-    int __fastcall AllocateRenderSurface(uint8_t* p0, uint8_t* p1, int p2);  // 0x4335E0 (x13:signals; virt=dropped(no-binary-vtable))
-    unsigned int __fastcall ReleaseRenderSurface(uint8_t* p0, uint8_t* p1, int p2);  // 0x4336C0 (x13:signals; virt=dropped(no-binary-vtable))
-    unsigned int __fastcall OpenFile(uint8_t* p0, uint8_t* p1, unsigned int p2);  // 0x433770 (x13:signals; virt=dropped(no-binary-vtable))
+    int __fastcall AllocateRenderSurface(uint8_t* p0, uint8_t* p1, int p2);  // 0x4335E0 (x13:signals; virt=dropped(no-binary-ptr_0))
+    unsigned int __fastcall ReleaseRenderSurface(uint8_t* p0, uint8_t* p1, int p2);  // 0x4336C0 (x13:signals; virt=dropped(no-binary-ptr_0))
+    unsigned int __fastcall OpenFile(uint8_t* p0, uint8_t* p1, unsigned int p2);  // 0x433770 (x13:signals; virt=dropped(no-binary-ptr_0))
 
     uint8_t BinkMovieClass_field_0x04[4];
     uint8_t BinkMovieClass_field_0x08[4];
@@ -2122,8 +2122,8 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~BlowPipe() = default;
 
-    int Draw(int p0, int p1, int p2);  // 0x438000 (x13:signals; virt=dropped(no-binary-vtable))
-    int DrawAlt(int p0, int p1, int p2);  // 0x438030 (x13:signals; virt=dropped(no-binary-vtable))
+    int Draw(int p0, int p1, int p2);  // 0x438000 (x13:signals; virt=dropped(no-binary-ptr_0))
+    int DrawAlt(int p0, int p1, int p2);  // 0x438030 (x13:signals; virt=dropped(no-binary-ptr_0))
     virtual void AddRef(); // 0x438060
     virtual char * Read(char* p0, int p1);  // 0x4380A0 (x13:signals; virt=slot)
     virtual _DWORD * QueryInterface(char p0);  // 0x632F90 (x13:signals; virt=slot)
@@ -2175,7 +2175,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~BridgeClass() = default;
 
-    _DWORD * GetCellData(int p0);  // 0x42E820 (x13:signals; virt=dropped(no-binary-vtable))
+    _DWORD * GetCellData(int p0);  // 0x42E820 (x13:signals; virt=dropped(no-binary-ptr_0))
 
 
     unsigned int u32_74;  // X10 supply (member_lookup)
@@ -2188,7 +2188,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~BuildLocation() = default;
 
-    _DWORD * InitCandidate(int p0, int* p1);  // 0x50E450 (x13:signals; virt=dropped(no-binary-vtable))
+    _DWORD * InitCandidate(int p0, int* p1);  // 0x50E450 (x13:signals; virt=dropped(no-binary-ptr_0))
 
 };
 // 1 methods in IDA
@@ -2198,7 +2198,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~BuildLocationVector() = default;
 
-    char Grow(int p0);  // 0x510860 (x13:signals; virt=dropped(no-binary-vtable))
+    char Grow(int p0);  // 0x510860 (x13:signals; virt=dropped(no-binary-ptr_0))
 
 };
 // 1 methods in IDA
@@ -2317,7 +2317,7 @@ public:
     virtual ~CDROM() = default;
 
     bool __stdcall DeviceIoControl(HANDLE hDevice, int a2);  // 0x47A3F0 (x13:signals; virt=nonvirtual)
-    char __stdcall LockVolume(int a1, HANDLE hDevice, unsigned __int8 a3, DWORD BytesReturned, __int16 a5);  // 0x47A6F0 (x13:signals; virt=dropped(no-binary-vtable))
+    char __stdcall LockVolume(int a1, HANDLE hDevice, unsigned __int8 a3, DWORD BytesReturned, __int16 a5);  // 0x47A6F0 (x13:signals; virt=dropped(no-binary-ptr_0))
 
     uint8_t CDROM_field_0x04[4];
 };
@@ -2379,7 +2379,7 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~Char() = default;
 
-    char Swap(char p0);  // 0x433C90 (x13:signals; virt=dropped(no-binary-vtable))
+    char Swap(char p0);  // 0x433C90 (x13:signals; virt=dropped(no-binary-ptr_0))
 
 
     uint8_t u8_41;  // X10 supply (member_lookup)
@@ -2411,7 +2411,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~ChatDialog() = default;
 
-    int __stdcall DlgProc(HWND hWnd, UINT a2, WPARAM a3, HWND a4);  // 0x79DB50 (x13:signals; virt=dropped(no-binary-vtable))
+    int __stdcall DlgProc(HWND hWnd, UINT a2, WPARAM a3, HWND a4);  // 0x79DB50 (x13:signals; virt=dropped(no-binary-ptr_0))
 
 };
 // 1 methods in IDA
@@ -2421,7 +2421,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~ChatEvent() = default;
 
-    char ProcessStrings(const char* p0, int p1, int p2, int p3);  // 0x6B9740 (x13:signals; virt=dropped(no-binary-vtable))
+    char ProcessStrings(const char* p0, int p1, int p2, int p3);  // 0x6B9740 (x13:signals; virt=dropped(no-binary-ptr_0))
 
 };
 // 1 methods in IDA
@@ -2452,7 +2452,7 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~Cliff() = default;
 
-    char __stdcall ProcessTransitions(int p0, int p1);  // 0x579010 (x13:signals; virt=dropped(no-binary-vtable))
+    char __stdcall ProcessTransitions(int p0, int p1);  // 0x579010 (x13:signals; virt=dropped(no-binary-ptr_0))
 
 };
 // 16 methods in IDA
@@ -2592,7 +2592,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~CrateClass() = default;
 
-    char ProcessPickup(int p0);  // 0x481A00 (x13:signals; virt=dropped(no-binary-vtable))
+    char ProcessPickup(int p0);  // 0x481A00 (x13:signals; virt=dropped(no-binary-ptr_0))
     virtual void Update(); // 0x56BBE0
     virtual void FindPlacement(); // 0x56BD40
 
@@ -2624,7 +2624,7 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~Crypto() = default;
 
-    void * DecodeByte(int p0);  // 0x632AA0 (x13:signals; virt=dropped(no-binary-vtable))
+    void * DecodeByte(int p0);  // 0x632AA0 (x13:signals; virt=dropped(no-binary-ptr_0))
 
 };
 // 2 methods in IDA
@@ -2703,7 +2703,7 @@ class DiskLaserClass
 public:
     virtual ~DiskLaserClass() = default;  // 0x4A7C30
 
-    int Fire(int p0, int p1, int p2, int p3);  // 0x4A71A0 (x13:signals; virt=dropped(no-binary-vtable))
+    int Fire(int p0, int p1, int p2, int p3);  // 0x4A71A0 (x13:signals; virt=dropped(no-binary-ptr_0))
     virtual void Update(); // 0x4A7340
     void PointerGotInvalid(AbstractClass * aP1);  // G42 sig-sync: def
     DiskLaserClass(); // 0x4A7A30 (constructor)
@@ -2767,10 +2767,10 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~DynamicArray() = default;
 
-    int AddFromList(int p0);  // 0x4129C0 (x13:signals; virt=dropped(no-binary-vtable))
-    char Resize(int* p0, int* p1);  // 0x6249A0 (x13:signals; virt=dropped(no-binary-vtable))
+    int AddFromList(int p0);  // 0x4129C0 (x13:signals; virt=dropped(no-binary-ptr_0))
+    char Resize(int* p0, int* p1);  // 0x6249A0 (x13:signals; virt=dropped(no-binary-ptr_0))
     virtual int ShrinkCapacity(); // 0x625440
-    char Remove(int p0);  // 0x7ACD60 (x13:signals; virt=dropped(no-binary-vtable))
+    char Remove(int p0);  // 0x7ACD60 (x13:signals; virt=dropped(no-binary-ptr_0))
     virtual int Grow(); // 0x7AD9D0
 
     uint8_t DynamicArray_field_0x04[4];
@@ -2798,7 +2798,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~DynamicClass() = default;
 
-    char Insert(const void* p0, int p1);  // 0x7ACA00 (x13:signals; virt=dropped(no-binary-vtable))
+    char Insert(const void* p0, int p1);  // 0x7ACA00 (x13:signals; virt=dropped(no-binary-ptr_0))
 
 
     unsigned int u32_4;  // X10 supply (member_lookup)
@@ -2811,7 +2811,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~DynamicStringArray() = default;
 
-    char Get(char** p0, int p1);  // 0x7ACE30 (x13:signals; virt=dropped(no-binary-vtable))
+    char Get(char** p0, int p1);  // 0x7ACE30 (x13:signals; virt=dropped(no-binary-ptr_0))
 
 
     uint32_t u32_8;  // X10 supply (member_lookup)
@@ -2872,7 +2872,7 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~Field() = default;
 
-    int Int_Set(int p0);  // 0x434110 (x13:signals; virt=dropped(no-binary-vtable))
+    int Int_Set(int p0);  // 0x434110 (x13:signals; virt=dropped(no-binary-ptr_0))
 
 
     void* q020;  // X10 supply (member_lookup)
@@ -2884,7 +2884,7 @@ class FractalNoise
 public:
     virtual ~FractalNoise() = default;
 
-    void __stdcall Release(void* p0);  // 0x420270 (x13:signals; virt=dropped(no-binary-vtable))
+    void __stdcall Release(void* p0);  // 0x420270 (x13:signals; virt=dropped(no-binary-ptr_0))
     static void Dtor(void *aP0);  // G42.35 R5-style static sync (cache-verbatim Blit-dtor bodies 0x49A2xx/0x49AAxx call FractalNoise::Dtor; def in e4/e4_static_stubs.cpp, decl mirror of _tree_full_e4.hpp)
 
 };
@@ -2896,10 +2896,10 @@ public:
     virtual ~Function() = default;
 
     virtual void Method_41C430(); // 0x41C430
-    int Method_424CA0(int p0);  // 0x424CA0 (x13:signals; virt=dropped(no-binary-vtable))
-    int Method_46B260(int p0);  // 0x46B260 (x13:signals; virt=dropped(no-binary-vtable))
+    int Method_424CA0(int p0);  // 0x424CA0 (x13:signals; virt=dropped(no-binary-ptr_0))
+    int Method_46B260(int p0);  // 0x46B260 (x13:signals; virt=dropped(no-binary-ptr_0))
     virtual int Method_4B4D60(); // 0x4B4D60
-    int Method_6342D0(int p0);  // 0x6342D0 (x13:signals; virt=dropped(no-binary-vtable))
+    int Method_6342D0(int p0);  // 0x6342D0 (x13:signals; virt=dropped(no-binary-ptr_0))
     // +2 more virtual methods
 
     uint8_t Function_field_0x04[4];
@@ -3010,8 +3010,8 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~HVAAnimation() = default;
 
-    int LoadFromFile(int p0);  // 0x759540 (x13:signals; virt=dropped(no-binary-vtable))
-    int ParseFrames(int p0, void* p1, unsigned int p2);  // 0x759670 (x13:signals; virt=dropped(no-binary-vtable))
+    int LoadFromFile(int p0);  // 0x759540 (x13:signals; virt=dropped(no-binary-ptr_0))
+    int ParseFrames(int p0, void* p1, unsigned int p2);  // 0x759670 (x13:signals; virt=dropped(no-binary-ptr_0))
 
     uint8_t HVAAnimation_field_0x04[4];
 
@@ -3030,7 +3030,7 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~Heap() = default;
 
-    void SiftDown(int p0);  // 0x5AD870 (x13:signals; virt=dropped(no-binary-vtable))
+    void SiftDown(int p0);  // 0x5AD870 (x13:signals; virt=dropped(no-binary-ptr_0))
 
 
     unsigned int u32_8;  // X10 supply (member_lookup)
@@ -3042,7 +3042,7 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~HexCoord() = default;
 
-    _DWORD * Convert(int* p0, int* p1);  // 0x5654A0 (x13:signals; virt=dropped(no-binary-vtable))
+    _DWORD * Convert(int* p0, int* p1);  // 0x5654A0 (x13:signals; virt=dropped(no-binary-ptr_0))
 
 
     void* q0F4;  // X10 supply (member_lookup)
@@ -3066,7 +3066,7 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~IDXContainer() = default;
 
-    int __fastcall LoadSample(int p0, int p1);  // 0x4016F0 (x13:signals; virt=dropped(no-binary-vtable))
+    int __fastcall LoadSample(int p0, int p1);  // 0x4016F0 (x13:signals; virt=dropped(no-binary-ptr_0))
 
 };
 // 1 methods in IDA
@@ -3090,11 +3090,11 @@ class ImageList
 public:
     virtual ~ImageList() = default; // 0x7C89FE
 
-    BOOL __stdcall DragEnter(HWND hwndLock, int x, int y);  // 0x7C89F2 (x13:signals; virt=dropped(no-binary-vtable))
-    BOOL __stdcall BeginDrag(HIMAGELIST himlTrack, int iTrack, int dxHotspot, int dyHotspot);  // 0x7C89F8 (x13:signals; virt=dropped(no-binary-vtable))
-    BOOL __stdcall Destroy(HIMAGELIST himl);  // 0x7C89FE (x13:signals; virt=dropped(no-binary-vtable))
+    BOOL __stdcall DragEnter(HWND hwndLock, int x, int y);  // 0x7C89F2 (x13:signals; virt=dropped(no-binary-ptr_0))
+    BOOL __stdcall BeginDrag(HIMAGELIST himlTrack, int iTrack, int dxHotspot, int dyHotspot);  // 0x7C89F8 (x13:signals; virt=dropped(no-binary-ptr_0))
+    BOOL __stdcall Destroy(HIMAGELIST himl);  // 0x7C89FE (x13:signals; virt=dropped(no-binary-ptr_0))
     virtual void EndDrag(); // 0x7C8A04
-    BOOL __stdcall DragMove(int x, int y);  // 0x7C8A0A (x13:signals; virt=dropped(no-binary-vtable))
+    BOOL __stdcall DragMove(int x, int y);  // 0x7C8A0A (x13:signals; virt=dropped(no-binary-ptr_0))
     // +1 more virtual methods
 
     uint8_t ImageList_field_0x04[4];
@@ -3111,7 +3111,7 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~Int4() = default;
 
-    _DWORD * Set(int p0, int p1, int p2, int p3);  // 0x645C30 (x13:signals; virt=dropped(no-binary-vtable))
+    _DWORD * Set(int p0, int p1, int p2, int p3);  // 0x645C30 (x13:signals; virt=dropped(no-binary-ptr_0))
 
     uint8_t Int4_field_0x04[4];
     public:  // symbol-anchor
@@ -3179,7 +3179,7 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~KeyValuePair() = default;
 
-    _DWORD * Init(int p0);  // 0x52AEC0 (x13:signals; virt=dropped(no-binary-vtable))
+    _DWORD * Init(int p0);  // 0x52AEC0 (x13:signals; virt=dropped(no-binary-ptr_0))
 
 };
 // 1 methods in IDA
@@ -3190,7 +3190,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~KeywordClass() = default;
 
-    int FindOrCreate(char *Source);  // 0x41CEF0 (x13:signals; virt=dropped(no-binary-vtable))
+    int FindOrCreate(char *Source);  // 0x41CEF0 (x13:signals; virt=dropped(no-binary-ptr_0))
 
 };
 // 1 methods in IDA
@@ -3201,7 +3201,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~KeywordType() = default;
 
-    int FindOrCreate2(char *Source);  // 0x524CB0 (x13:signals; virt=dropped(no-binary-vtable))
+    int FindOrCreate2(char *Source);  // 0x524CB0 (x13:signals; virt=dropped(no-binary-ptr_0))
 
 };
 // 3 methods in IDA
@@ -3369,11 +3369,11 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~Lobby() = default;
 
-    HWND UpdateReadyIcons();  // 0x46FA20 (x13:signals; virt=dropped(no-binary-vtable))
+    HWND UpdateReadyIcons();  // 0x46FA20 (x13:signals; virt=dropped(no-binary-ptr_0))
     virtual void SetupAllFactionSlots(); // 0x46FAC0
-    HWND EnableStartButton();  // 0x46FB50 (x13:signals; virt=dropped(no-binary-vtable))
-    char FillPlayerFactions();  // 0x4E4820 (x13:signals; virt=dropped(no-binary-vtable))
-    int InvalidateFactionCombos();  // 0x4E5310 (x13:signals; virt=dropped(no-binary-vtable))
+    HWND EnableStartButton();  // 0x46FB50 (x13:signals; virt=dropped(no-binary-ptr_0))
+    char FillPlayerFactions();  // 0x4E4820 (x13:signals; virt=dropped(no-binary-ptr_0))
+    int InvalidateFactionCombos();  // 0x4E5310 (x13:signals; virt=dropped(no-binary-ptr_0))
     // +4 more virtual methods
 
     uint8_t Lobby_field_0x04[4];
@@ -3449,7 +3449,7 @@ public:
     virtual ~MSAnim() = default;
 
     unsigned int GetField(unsigned int p0);  // 0x5CB840 (x13:signals; virt=nonvirtual)
-    unsigned int SetField(unsigned int p0);  // 0x5CB860 (x13:signals; virt=dropped(no-binary-vtable))
+    unsigned int SetField(unsigned int p0);  // 0x5CB860 (x13:signals; virt=dropped(no-binary-ptr_0))
     int Reset(int p0);  // 0x5CC6A0 (x13:signals; virt=nonvirtual)
 
     uint8_t MSAnim_field_0x04[4];
@@ -3533,7 +3533,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~MSChoiceClass() = default;
 
-    char ** LoadFromINI(int* p0, const char** p1);  // 0x5CF8E0 (x13:signals; virt=dropped(no-binary-vtable))
+    char ** LoadFromINI(int* p0, const char** p1);  // 0x5CF8E0 (x13:signals; virt=dropped(no-binary-ptr_0))
     char * DeleteAndZero(const int** p0);  // 0x5D0290 (x13:signals; virt=nonvirtual)
 
     uint8_t MSChoiceClass_field_0x04[4];
@@ -3604,7 +3604,7 @@ public:
     virtual char Load(int p0, int* p1);  // 0x5CB880 (x13:signals; virt=slot)
     virtual void Draw(int p0, int* p1);  // 0x5CBB80 (x13:signals; virt=slot)
     virtual int * Update(int* p0);  // 0x5CBCB0 (x13:signals; virt=slot)
-    void * Init(char** p0, int p1, int p2, int p3, int p4, int p5, char p6, int p7, char p8);  // 0x5CC250 (x13:signals; virt=dropped(no-binary-vtable))
+    void * Init(char** p0, int p1, int p2, int p3, int p4, int p5, char p6, int p7, char p8);  // 0x5CC250 (x13:signals; virt=dropped(no-binary-ptr_0))
     virtual char AddRef(char p0);  // 0x5CEAC0 (x13:signals; virt=slot)
     // +2 more virtual methods
 
@@ -3730,7 +3730,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~MSSfxClass() = default;
 
-    char FindByName(const char** p0);  // 0x76EBE0 (x13:signals; virt=dropped(no-binary-vtable))
+    char FindByName(const char** p0);  // 0x76EBE0 (x13:signals; virt=dropped(no-binary-ptr_0))
 
 };
 // 2 methods in IDA
@@ -3764,7 +3764,7 @@ public:
     virtual ~MSVQAnim() = default;
 
     _DWORD * Construct(char** p0, int p1, int p2, int* p3, char p4);  // 0x5CCA20 (x13:signals; virt=nonvirtual)
-    _DWORD * ConstructMSVQAnimHidden(char** p0, int* p1, int p2, char p3);  // 0x5CCC30 (x13:signals; virt=dropped(no-binary-vtable))
+    _DWORD * ConstructMSVQAnimHidden(char** p0, int* p1, int p2, char p3);  // 0x5CCC30 (x13:signals; virt=dropped(no-binary-ptr_0))
     static unsigned int * ConstructMSVQAnimHidden(void *aP0, char **aP1, int *aP2, int aP3, char aP4);  // 0x5CCC30 G42.33 b3 static-form sync
     virtual BOOL Load(int a2, _DWORD *a3);  // 0x5CCE90 (x13:signals; virt=slot)
     virtual void Play(int p0, int* p1);  // 0x5CD0E0 (x13:signals; virt=slot)
@@ -3827,7 +3827,7 @@ public:
     virtual ~MiniMap() = default;
 
     virtual void Render(); // 0x641140
-    bool SavePreviewToINI(char* p0);  // 0x6418B0 (x13:signals; virt=dropped(no-binary-vtable))
+    bool SavePreviewToINI(char* p0);  // 0x6418B0 (x13:signals; virt=dropped(no-binary-ptr_0))
 
     uint8_t MiniMap_field_0x04[4];
 
@@ -3840,9 +3840,9 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~MovieClass() = default;
 
-    HWND ReadConfig(HWND hDlg, int nIDDlgItem);  // 0x5C23B0 (x13:signals; virt=dropped(no-binary-vtable))
+    HWND ReadConfig(HWND hDlg, int nIDDlgItem);  // 0x5C23B0 (x13:signals; virt=dropped(no-binary-ptr_0))
     HWND Create(); // 0x5C3EC0
-    BOOL RenderLoop(int a2, char a3);  // 0x759940 (x13:signals; virt=dropped(no-binary-vtable))
+    BOOL RenderLoop(int a2, char a3);  // 0x759940 (x13:signals; virt=dropped(no-binary-ptr_0))
     virtual void GetWidth(); // 0x759F70
     virtual void GetHeight(); // 0x759F80
     // +1 more virtual methods
@@ -3917,8 +3917,8 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~NetMessage() = default;
 
-    char * Pack4(char* p0, char p1);  // 0x4CB700 (x13:signals; virt=dropped(no-binary-vtable))
-    char * Pack(char* p0, char* p1, uint16_t p2);  // 0x4CB830 (x13:signals; virt=dropped(no-binary-vtable))
+    char * Pack4(char* p0, char p1);  // 0x4CB700 (x13:signals; virt=dropped(no-binary-ptr_0))
+    char * Pack(char* p0, char* p1, uint16_t p2);  // 0x4CB830 (x13:signals; virt=dropped(no-binary-ptr_0))
 
     uint8_t NetMessage_field_0x04[4];
 };
@@ -4012,8 +4012,8 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~ObjectPlacement() = default;
 
-    int * CalcPosition(int* p0, int* p1, char p2, char p3, char p4);  // 0x481180 (x13:signals; virt=dropped(no-binary-vtable))
-    int * __stdcall CalcPosition_Wrapper(int* p0, int* p1, char p2);  // 0x4ACA10 (x13:signals; virt=dropped(no-binary-vtable))
+    int * CalcPosition(int* p0, int* p1, char p2, char p3, char p4);  // 0x481180 (x13:signals; virt=dropped(no-binary-ptr_0))
+    int * __stdcall CalcPosition_Wrapper(int* p0, int* p1, char p2);  // 0x4ACA10 (x13:signals; virt=dropped(no-binary-ptr_0))
 
     uint8_t ObjectPlacement_field_0x04[4];
 
@@ -4072,7 +4072,7 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~OptionQueue() = default;
 
-    int PushEntry(const void* p0);  // 0x4F1AA0 (x13:signals; virt=dropped(no-binary-vtable))
+    int PushEntry(const void* p0);  // 0x4F1AA0 (x13:signals; virt=dropped(no-binary-ptr_0))
 
 
     int u32_8;  // X10 supply (member_lookup)
@@ -4084,7 +4084,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~OreManagerClass() = default;
 
-    void * AssignMinerToRefinery(int* p0);  // 0x71AF20 (x13:signals; virt=dropped(no-binary-vtable))
+    void * AssignMinerToRefinery(int* p0);  // 0x71AF20 (x13:signals; virt=dropped(no-binary-ptr_0))
 
 
     unsigned char q02C;  // X10 supply (member_lookup)
@@ -4110,9 +4110,9 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~PKStrawClass() = default;
 
-    int Initialize(int p0, int p1);  // 0x633050 (x13:signals; virt=dropped(no-binary-vtable))
+    int Initialize(int p0, int p1);  // 0x633050 (x13:signals; virt=dropped(no-binary-ptr_0))
     virtual void RelayBlowfishKey(int p0);  // 0x6330C0 (x13:signals; virt=slot)
-    int SetSource(int p0);  // 0x633110 (x13:signals; virt=dropped(no-binary-vtable))
+    int SetSource(int p0);  // 0x633110 (x13:signals; virt=dropped(no-binary-ptr_0))
 
     uint8_t PKStrawClass_field_0x04[4];
     uint8_t PKStrawClass_field_0x08[4];
@@ -4183,8 +4183,8 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~PacketQueue() = default;
 
-    int ExtractEntry(void* p0, int* p1, int p2, void* p3, int* p4, uint16_t* p5);  // 0x48B570 (x13:signals; virt=dropped(no-binary-vtable))
-    int ReleaseEntry(void* p0, int* p1, int p2, void* p3, int* p4);  // 0x48B890 (x13:signals; virt=dropped(no-binary-vtable))
+    int ExtractEntry(void* p0, int* p1, int p2, void* p3, int* p4, uint16_t* p5);  // 0x48B570 (x13:signals; virt=dropped(no-binary-ptr_0))
+    int ReleaseEntry(void* p0, int* p1, int p2, void* p3, int* p4);  // 0x48B890 (x13:signals; virt=dropped(no-binary-ptr_0))
 
     uint8_t PacketQueue_field_0x04[4];
 
@@ -4279,8 +4279,8 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~PreviewClass() = default;
 
-    char ReadPreview(char* p0);  // 0x641EE0 (x13:signals; virt=dropped(no-binary-vtable))
-    char RenderMapPreview(int* p0);  // 0x689D30 (x13:signals; virt=dropped(no-binary-vtable))
+    char ReadPreview(char* p0);  // 0x641EE0 (x13:signals; virt=dropped(no-binary-ptr_0))
+    char RenderMapPreview(int* p0);  // 0x689D30 (x13:signals; virt=dropped(no-binary-ptr_0))
 
     uint8_t PreviewClass_field_0x04[4];
 
@@ -4312,7 +4312,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~PrintTimerOnTactical() = default;
 
-    int * __fastcall Start(int p0, int p1, int p2, int* p3, int* p4, bool* p5);  // 0x6D4B50 (x13:signals; virt=dropped(no-binary-vtable))
+    int * __fastcall Start(int p0, int p1, int p2, int* p3, int* p4, bool* p5);  // 0x6D4B50 (x13:signals; virt=dropped(no-binary-ptr_0))
 
 };
 // 2 methods in IDA
@@ -4322,7 +4322,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~PriorityQueue() = default;
     int Pop(); // 0x5AC960 (G42 sig-sync: def)
-    int Add(int p0);  // 0x5D1C20 (x13:signals; virt=dropped(no-binary-vtable))
+    int Add(int p0);  // 0x5D1C20 (x13:signals; virt=dropped(no-binary-ptr_0))
 
     uint8_t PriorityQueue_field_0x04[4];
 
@@ -4336,7 +4336,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~ProductionClass() = default;
 
-    char StartTimer(char p0);  // 0x4C9EA0 (x13:signals; virt=dropped(no-binary-vtable))
+    char StartTimer(char p0);  // 0x4C9EA0 (x13:signals; virt=dropped(no-binary-ptr_0))
 
 };
 // 1 methods in IDA
@@ -4371,7 +4371,7 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~Property() = default;
 
-    __int16 Set(int16_t p0);  // 0x433C70 (x13:signals; virt=dropped(no-binary-vtable))
+    __int16 Set(int16_t p0);  // 0x433C70 (x13:signals; virt=dropped(no-binary-ptr_0))
     virtual void GetField11(); // 0x726910
 
     uint8_t Property_field_0x04[4];
@@ -4387,7 +4387,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~PushCommandClass() = default;
 
-    char __fastcall Execute(int* p0, int p1);  // 0x6D09C0 (x13:signals; virt=dropped(no-binary-vtable))
+    char __fastcall Execute(int* p0, int p1);  // 0x6D09C0 (x13:signals; virt=dropped(no-binary-ptr_0))
 
 };
 // 1 methods in IDA
@@ -4398,7 +4398,7 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~RateScaler() = default;
 
-    char Init(double p0);  // 0x4A51F0 (x13:signals; virt=dropped(no-binary-vtable))
+    char Init(double p0);  // 0x4A51F0 (x13:signals; virt=dropped(no-binary-ptr_0))
 
 
     unsigned char __pad_004;  // X10 supply (member_lookup)
@@ -4443,7 +4443,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~SHPClass() = default;
 
-    void Load(char* p0, char* p1, int p2);  // 0x642C20 (x13:signals; virt=dropped(no-binary-vtable))
+    void Load(char* p0, char* p1, int p2);  // 0x642C20 (x13:signals; virt=dropped(no-binary-ptr_0))
 
 };
 // 2 methods in IDA
@@ -4464,7 +4464,7 @@ class Scalar
 public:
     virtual ~Scalar() = default;
 
-    void ** Dtor(char p0);  // 0x5ac340 (x13:signals; virt=dropped(no-binary-vtable))
+    void ** Dtor(char p0);  // 0x5ac340 (x13:signals; virt=dropped(no-binary-ptr_0))
 
     public:  // symbol-anchor
     // === SYMBOL-ANCHOR (BEGIN) ===
@@ -4509,7 +4509,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~ScriptActionVector() = default;
 
-    char PushBack(int* p0);  // 0x63EB80 (x13:signals; virt=dropped(no-binary-vtable))
+    char PushBack(int* p0);  // 0x63EB80 (x13:signals; virt=dropped(no-binary-ptr_0))
 
 
     unsigned int u32_14;  // X10 supply (member_lookup)
@@ -4644,7 +4644,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~SmudgeTypeList() = default;
 
-    _DWORD * Copy(int* p0);  // 0x67C280 (x13:signals; virt=dropped(no-binary-vtable))
+    _DWORD * Copy(int* p0);  // 0x67C280 (x13:signals; virt=dropped(no-binary-ptr_0))
 
 };
 // 6 methods in IDA
@@ -4658,7 +4658,7 @@ public:
     virtual int AddSmudge(int* p0);  // 0x67AF90 (x13:signals; virt=slot)
     virtual unsigned int Remove(int p0);  // 0x67AFD0 (x13:signals; virt=slot)
     _DWORD * Construct(int p0, int p1);  // 0x67AFF0 (x13:signals; virt=nonvirtual)
-    char Add(int* p0);  // 0x67B100 (x13:signals; virt=dropped(no-binary-vtable))
+    char Add(int* p0);  // 0x67B100 (x13:signals; virt=dropped(no-binary-ptr_0))
     // +1 more virtual methods
 
     uint8_t SmudgeTypeVector_field_0x04[4];
@@ -4683,10 +4683,10 @@ public:
     virtual ~SortedArray() = default;
 
     virtual unsigned int GetIndex(int p0);  // 0x42D570 (x13:signals; virt=slot)
-    char Find(int* p0);  // 0x52B170 (x13:signals; virt=dropped(no-binary-vtable))
-    void * BinarySearch2(int* p0);  // 0x52B210 (x13:signals; virt=dropped(no-binary-vtable))
-    void * FindValue(int* p0);  // 0x52B430 (x13:signals; virt=dropped(no-binary-vtable))
-    bool CheckCache(int* p0);  // 0x52B600 (x13:signals; virt=dropped(no-binary-vtable))
+    char Find(int* p0);  // 0x52B170 (x13:signals; virt=dropped(no-binary-ptr_0))
+    void * BinarySearch2(int* p0);  // 0x52B210 (x13:signals; virt=dropped(no-binary-ptr_0))
+    void * FindValue(int* p0);  // 0x52B430 (x13:signals; virt=dropped(no-binary-ptr_0))
+    bool CheckCache(int* p0);  // 0x52B600 (x13:signals; virt=dropped(no-binary-ptr_0))
     // +4 more virtual methods
 
     uint8_t SortedArray_field_0x04[4];
@@ -4717,7 +4717,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~SortedStateVector() = default;
 
-    size_t BinarySearch(int *a2);  // 0x7107E0 (x13:signals; virt=dropped(no-binary-vtable))
+    size_t BinarySearch(int *a2);  // 0x7107E0 (x13:signals; virt=dropped(no-binary-ptr_0))
 
 
     unsigned int u32_10;  // X10 supply (member_lookup)
@@ -4731,7 +4731,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~SortedVector() = default;
 
-    size_t BinarySearch(int *a2);  // 0x55F6E0 (x13:signals; virt=dropped(no-binary-vtable))
+    size_t BinarySearch(int *a2);  // 0x55F6E0 (x13:signals; virt=dropped(no-binary-ptr_0))
 
 };
 // 2 methods in IDA
@@ -4788,7 +4788,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~StaticButtonClass() = default;
 
-    int ReleaseBuffer(int* p0);  // 0x43AE10 (x13:signals; virt=dropped(no-binary-vtable))
+    int ReleaseBuffer(int* p0);  // 0x43AE10 (x13:signals; virt=dropped(no-binary-ptr_0))
     virtual int SetText(int p0);  // 0x6C6640 (x13:signals; virt=slot)
     virtual void Draw(int* p0, char p1);  // 0x6C6680 (x13:signals; virt=slot)
     virtual void HitTest(); // 0x6C6740
@@ -4840,9 +4840,9 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~Subzone() = default;
 
-    int BuildGraph(int p0);  // 0x581F90 (x13:signals; virt=dropped(no-binary-vtable))
+    int BuildGraph(int p0);  // 0x581F90 (x13:signals; virt=dropped(no-binary-ptr_0))
     _DWORD * Constructor(int p0, int p1);  // 0x589100 (x13:signals; virt=nonvirtual)
-    int * CopyDataFrom(int p0);  // 0x58A500 (x13:signals; virt=dropped(no-binary-vtable))
+    int * CopyDataFrom(int p0);  // 0x58A500 (x13:signals; virt=dropped(no-binary-ptr_0))
 
     uint8_t Subzone_field_0x04[4];
     uint8_t Subzone_field_0x08[4];
@@ -4901,7 +4901,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~SwizzleManager() = default;
 
-    int __stdcall SaveLoad(int* p0, int* p1);  // 0x55AAC0 (x13:signals; virt=dropped(no-binary-vtable))
+    int __stdcall SaveLoad(int* p0, int* p1);  // 0x55AAC0 (x13:signals; virt=dropped(no-binary-ptr_0))
     virtual int __stdcall ConvertWrapper(int p0);  // 0x6CF230 (x13:signals; virt=slot)
 
     uint8_t SwizzleManager_field_0x04[4];
@@ -4953,8 +4953,8 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~SymbolTable() = default;
 
-    void Rebuild(int** p0);  // 0x6234B0 (x13:signals; virt=dropped(no-binary-vtable))
-    char Insert(int* p0, int*** p1);  // 0x624530 (x13:signals; virt=dropped(no-binary-vtable))
+    void Rebuild(int** p0);  // 0x6234B0 (x13:signals; virt=dropped(no-binary-ptr_0))
+    char Insert(int* p0, int*** p1);  // 0x624530 (x13:signals; virt=dropped(no-binary-ptr_0))
 
     uint8_t SymbolTable_field_0x04[4];
 
@@ -5960,7 +5960,7 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~Targeting() = default;
 
-    void __stdcall Readd(int* p0);  // 0x4A9720 (x13:signals; virt=dropped(no-binary-vtable))
+    void __stdcall Readd(int* p0);  // 0x4A9720 (x13:signals; virt=dropped(no-binary-ptr_0))
 
 };
 // 1 methods in IDA
@@ -6004,7 +6004,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~TeknoClass() = default;
 
-    int GetType(int p0);  // 0x6E4DE0 (x13:signals; virt=dropped(no-binary-vtable))
+    int GetType(int p0);  // 0x6E4DE0 (x13:signals; virt=dropped(no-binary-ptr_0))
 
 
     unsigned int u32_24;  // X10 supply (member_types)
@@ -6112,7 +6112,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~TileVector() = default;
 
-    char PushBack(int* p0);  // 0x589C50 (x13:signals; virt=dropped(no-binary-vtable))
+    char PushBack(int* p0);  // 0x589C50 (x13:signals; virt=dropped(no-binary-ptr_0))
 
 
     uint32_t u32_10;  // X10 supply (member_lookup)
@@ -6155,7 +6155,7 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~Triple() = default;
 
-    _DWORD * Set(int p0, int p1, int p2);  // 0x43A0B0 (x13:signals; virt=dropped(no-binary-vtable))
+    _DWORD * Set(int p0, int p1, int p2);  // 0x43A0B0 (x13:signals; virt=dropped(no-binary-ptr_0))
 
 };
 // 1 methods in IDA
@@ -6210,7 +6210,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~VQAClass() = default;
 
-    char AdvanceFrame(uint8_t* p0);  // 0x759C30 (x13:signals; virt=dropped(no-binary-vtable))
+    char AdvanceFrame(uint8_t* p0);  // 0x759C30 (x13:signals; virt=dropped(no-binary-ptr_0))
 
 
     unsigned int u32_1450;  // X10 supply (member_types)
@@ -6321,7 +6321,7 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~Viewport() = default;
 
-    void ProcessScroll(int* p0);  // 0x692B60 (x13:signals; virt=dropped(no-binary-vtable))
+    void ProcessScroll(int* p0);  // 0x692B60 (x13:signals; virt=dropped(no-binary-ptr_0))
     virtual int Clear(); // 0x753E00
 
     uint8_t Viewport_field_0x04[4];
@@ -6338,7 +6338,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~VtableStub() = default;
 
-    void Push_407510();  // 0x407510 (x13:signals; virt=dropped(no-binary-vtable))
+    void Push_407510();  // 0x407510 (x13:signals; virt=dropped(no-binary-ptr_0))
     virtual void Method_425270(); // 0x425270
     virtual int Method_477740(); // 0x477740
     virtual void Method_5175D0(); // 0x5175D0
@@ -6364,8 +6364,8 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~WDTClass() = default;
 
-    int GetCellType(unsigned int p0);  // 0x76F600 (x13:signals; virt=dropped(no-binary-vtable))
-    int CountCellType(int p0);  // 0x76F670 (x13:signals; virt=dropped(no-binary-vtable))
+    int GetCellType(unsigned int p0);  // 0x76F600 (x13:signals; virt=dropped(no-binary-ptr_0))
+    int CountCellType(int p0);  // 0x76F670 (x13:signals; virt=dropped(no-binary-ptr_0))
 
     uint8_t WDTClass_field_0x04[4];
 
@@ -6380,8 +6380,8 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~WDTGame() = default;
 
-    char ToggleTeamMode(int* p0, char p1);  // 0x7693F0 (x13:signals; virt=dropped(no-binary-vtable))
-    void ProcessTerritorySelection(int* p0, bool* p1);  // 0x76D180 (x13:signals; virt=dropped(no-binary-vtable))
+    char ToggleTeamMode(int* p0, char p1);  // 0x7693F0 (x13:signals; virt=dropped(no-binary-ptr_0))
+    void ProcessTerritorySelection(int* p0, bool* p1);  // 0x76D180 (x13:signals; virt=dropped(no-binary-ptr_0))
     virtual void ReviewHistory(); // 0x76E4F0
     _DWORD * Constructor(int p0);  // 0x76F030 (x13:signals; virt=nonvirtual)
 
@@ -6437,8 +6437,8 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~WDTSurface() = default;
 
-    char ToggleState(int* p0, char p1);  // 0x7693A0 (x13:signals; virt=dropped(no-binary-vtable))
-    BOOL PointInRect(_DWORD *a2);  // 0x769440 (x13:signals; virt=dropped(no-binary-vtable))
+    char ToggleState(int* p0, char p1);  // 0x7693A0 (x13:signals; virt=dropped(no-binary-ptr_0))
+    BOOL PointInRect(_DWORD *a2);  // 0x769440 (x13:signals; virt=dropped(no-binary-ptr_0))
 
     uint8_t WDTSurface_field_0x04[4];
 
@@ -6454,8 +6454,8 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~WString() = default;
 
-    char Append(int* p0);  // 0x7B6970 (x13:signals; virt=dropped(no-binary-vtable))
-    void TrimRight(const int** p0);  // 0x7B6F40 (x13:signals; virt=dropped(no-binary-vtable))
+    char Append(int* p0);  // 0x7B6970 (x13:signals; virt=dropped(no-binary-ptr_0))
+    void TrimRight(const int** p0);  // 0x7B6F40 (x13:signals; virt=dropped(no-binary-ptr_0))
 
     uint8_t WString_field_0x04[4];
 
@@ -6481,7 +6481,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~WideChar() = default;
 
-    int __cdecl ToLong(int p0, int p1, int p2);  // 0x7CBB76 (x13:signals; virt=dropped(no-binary-vtable))
+    int __cdecl ToLong(int p0, int p1, int p2);  // 0x7CBB76 (x13:signals; virt=dropped(no-binary-ptr_0))
 
 };
 // 1 methods in IDA
@@ -6597,7 +6597,7 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~World() = default;
 
-    _DWORD * ToScreen(int* p0, int* p1);  // 0x6D2070 (x13:signals; virt=dropped(no-binary-vtable))
+    _DWORD * ToScreen(int* p0, int* p1);  // 0x6D2070 (x13:signals; virt=dropped(no-binary-ptr_0))
 
 };
 // 1 methods in IDA

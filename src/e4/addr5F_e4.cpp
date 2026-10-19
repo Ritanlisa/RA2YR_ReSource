@@ -728,10 +728,10 @@ AbstractClass * * GenerateRangeRingTextures()
         {
           Surface::Construct(v3, 256, 128); /*0x5ff465*/
           *v4->Width.__pad_0 = 0; /*0x5ff46d*/
-          /* X11: vtable install elided (X67 star-deref, RHS XSurface_Vtable) */  /*0x5ff476*/
+          /* X11: ptr_0 install elided (X67 star-deref, RHS XSurface_Vtable) */  /*0x5ff476*/
           v4[1].Width = 1; /*0x5ff47c*/
           Buffer::Init((Buffer *)&v4[1].Height, 0, 0x8000); /*0x5ff47f*/
-          /* X11: vtable install elided (X67 star-deref, RHS BSurface_Vtable) */  /*0x5ff484*/
+          /* X11: ptr_0 install elided (X67 star-deref, RHS BSurface_Vtable) */  /*0x5ff484*/
         }
         else
         {
@@ -742,10 +742,10 @@ AbstractClass * * GenerateRangeRingTextures()
       (*(void (**)(int, unsigned int))(*(unsigned int *)*v2 + 24))(*v2, 0); /*0x5ff497*/
       Surface::Construct(&v31, 256, 256); /*0x5ff4a8*/
       v31.LockCount = 0; /*0x5ff4b1*/
-      /* X11: vtable install elided (X67 star-deref, RHS XSurface_Vtable) */  /*0x5ff4bb*/
+      /* X11: ptr_0 install elided (X67 star-deref, RHS XSurface_Vtable) */  /*0x5ff4bb*/
       v32 = 1; /*0x5ff4c3*/
       Buffer::Init((Buffer *)v33, 0, 0x10000); /*0x5ff4c7*/
-      /* X11: vtable install elided (X67 star-deref, RHS BSurface_Vtable) */  /*0x5ff4d0*/
+      /* X11: ptr_0 install elided (X67 star-deref, RHS BSurface_Vtable) */  /*0x5ff4d0*/
       XSurface::Fill(&v31, 0); /*0x5ff4d9*/
       v5 = i; /*0x5ff4de*/
       if ( i > 0 ) /*0x5ff4e6*/
@@ -783,7 +783,7 @@ AbstractClass * * GenerateRangeRingTextures()
       }
       Vector::Clear((int)v33); /*0x5ff584*/
       ++v2; /*0x5ff58d*/
-      /* X11: vtable install elided (X67 star-deref, RHS Surface_Vtable) */  /*0x5ff593*/
+      /* X11: ptr_0 install elided (X67 star-deref, RHS Surface_Vtable) */  /*0x5ff593*/
     }
     i = 0; /*0x5ff5aa*/
     v10 = (Surface **)&unk_AC1798; /*0x5ff5ae*/
@@ -798,10 +798,10 @@ AbstractClass * * GenerateRangeRingTextures()
         {
           Surface::Construct(v12, 256, 128); /*0x5ff5d8*/
           *v13->Width.__pad_0 = 0; /*0x5ff5e0*/
-          /* X11: vtable install elided (X67 star-deref, RHS XSurface_Vtable) */  /*0x5ff5e9*/
+          /* X11: ptr_0 install elided (X67 star-deref, RHS XSurface_Vtable) */  /*0x5ff5e9*/
           v13[1].Width = 1; /*0x5ff5ef*/
           Buffer::Init((Buffer *)&v13[1].Height, 0, 0x8000); /*0x5ff5f6*/
-          /* X11: vtable install elided (X67 star-deref, RHS BSurface_Vtable) */  /*0x5ff5fb*/
+          /* X11: ptr_0 install elided (X67 star-deref, RHS BSurface_Vtable) */  /*0x5ff5fb*/
         }
         else
         {
@@ -812,10 +812,10 @@ AbstractClass * * GenerateRangeRingTextures()
       (*(void (**)(Surface *, unsigned int))(*(unsigned int *)(*v10)->__pad_0 + 24))(*v10, 0); /*0x5ff60c*/
       Surface::Construct(&v31, 256, 256); /*0x5ff61d*/
       v31.LockCount = 0; /*0x5ff626*/
-      /* X11: vtable install elided (X67 star-deref, RHS XSurface_Vtable) */  /*0x5ff630*/
+      /* X11: ptr_0 install elided (X67 star-deref, RHS XSurface_Vtable) */  /*0x5ff630*/
       v32 = 1; /*0x5ff638*/
       Buffer::Init((Buffer *)v33, 0, 0x10000); /*0x5ff640*/
-      /* X11: vtable install elided (X67 star-deref, RHS BSurface_Vtable) */  /*0x5ff649*/
+      /* X11: ptr_0 install elided (X67 star-deref, RHS BSurface_Vtable) */  /*0x5ff649*/
       XSurface::Fill(&v31, 0); /*0x5ff652*/
       v21 = 60 * dword_8871E0->BuildWeapons; /*0x5ff684*/
       LOWORD(v14) = Math::RoundToInt((double)v21 * -0.002790178571428571); /*0x5ff692*/
@@ -842,7 +842,7 @@ AbstractClass * * GenerateRangeRingTextures()
       Vector::Clear((int)v33); /*0x5ff702*/
       v11 -= 6; /*0x5ff70b*/
       ++v10; /*0x5ff70f*/
-      /* X11: vtable install elided (X67 star-deref, RHS Surface_Vtable) */  /*0x5ff715*/
+      /* X11: ptr_0 install elided (X67 star-deref, RHS Surface_Vtable) */  /*0x5ff715*/
       ++i; /*0x5ff71d*/
     }
     while ( v11 > 68 ); /*0x5ff721*/
@@ -1032,7 +1032,7 @@ unsigned int ObjectClass::sub_5F15C0(int a2, int a3, int a4, short a5)
   (this->onBridge) = a5; /*0x5f15e2*/
   this->fallRate = 60; /*0x5f15eb*/
   this->customSound_controller[3] = 60; /*0x5f15ee*/
-  /* X11: vtable install elided (implicit via NullModemClass virtuals 0x5f15f1) */
+  /* X11: ptr_0 install elided (implicit via NullModemClass virtuals 0x5f15f1) */
   this->ambientSoundController[1] = -1; /*0x5f15f7*/
   this->attachedBomb = 0; /*0x5f15fa*/
   this->customSound_controller[0] = 0; /*0x5f15fd*/

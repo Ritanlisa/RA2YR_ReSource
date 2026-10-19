@@ -44,9 +44,9 @@ class AnimTypeClass;
 class OverlayTypeClass;
 
 // TypeList<T> is defined in core/vector.hpp as TypeList<T> : DynamicVectorClass<T>
-// (24-byte container, vtable at offset 0). Debris below relies on that layout —
+// (24-byte container, ptr_0 at offset 0). Debris below relies on that layout —
 // confirmed against TiberiumClass ctor @0x7216C0 (Debris @+0xC4, Count @+0xD4=0,
-// CapacityIncrement @+0xD8=10, TypeList vtable @+0xC4).
+// CapacityIncrement @+0xD8=10, TypeList ptr_0 @+0xC4).
 
 class TiberiumClass : public ObjectClass
 {

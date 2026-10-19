@@ -171,12 +171,12 @@ void GameConfig::Constructor(void *a1, void *a2, void *a3, void *a4)
       *v2->Previous.__pad_0 = 0; /*0x5d67e1*/
       v2[2].Previous = 0; /*0x5d67e6*/
       *v2->GenericNode_C.__pad_0 = 0; /*0x5d67e9*/
-      /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E1B0C) */  /*0x5d67ec*/
+      /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E1B0C) */  /*0x5d67ec*/
       GenericNode::Constructor((MixFileClass *)&v2[3].Previous); /*0x5d67f2*/
-      /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E1B04) */  /*0x5d67fa*/
+      /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E1B04) */  /*0x5d67fa*/
       LinkedList::Prepend((LinkedList *)&v3[2], (int)&v3[3].Previous); /*0x5d6801*/
       v1 = this; /*0x5d6806*/
-      /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E1AFC) */  /*0x5d680a*/
+      /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E1AFC) */  /*0x5d680a*/
       *v3->u32_14.__pad_0 = 0; /*0x5d6811*/
       v3[5].Previous = 0; /*0x5d6814*/
       *v3->u32_18.__pad_0 = 0; /*0x5d6817*/
@@ -184,7 +184,7 @@ void GameConfig::Constructor(void *a1, void *a2, void *a3, void *a4)
       *v3->u32_1C.__pad_0 = 0; /*0x5d681d*/
       v3[7].Previous = 0; /*0x5d6820*/
       v3[8].__pad_0[0] = 0; /*0x5d6823*/
-      /* X11: vtable install elided (X67 star-deref, RHS CCINIClass_Vtable) */  /*0x5d6826*/
+      /* X11: ptr_0 install elided (X67 star-deref, RHS CCINIClass_Vtable) */  /*0x5d6826*/
     }
     else
     {
@@ -194,7 +194,7 @@ void GameConfig::Constructor(void *a1, void *a2, void *a3, void *a4)
     CCFileClass::Construct2(&v6, &v1->ObjectClass_2C); /*0x5d683c*/
     if ( (unsigned __int8)CCFileClass::Open(&v6, 0) ) /*0x5d6846*/
       CCINIClass::Load(*&v1->q038, (int)&v6, 0, 0); /*0x5d685a*/
-    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x5d6863*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x5d6863*/
     v8 = 0; /*0x5d686b*/
     Vector::Clear((int)v7); /*0x5d686f*/
     *(unsigned int *)v6.__tail_0 = &off_7E1668; /*0x5d6878*/

@@ -192,7 +192,7 @@ AbstractClass * * E4Recv_583AD0::sub_583AD0(int * a2)
   int v20; // [esp+24h] [ebp-4h]
 
   VectorClass::Construct(&v18, 0, 0); /*0x583ae1*/
-  /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x583af1) */
+  /* X11: ptr_0 install elided (implicit via DynamicVectorClass virtuals 0x583af1) */
   v20 = 10; /*0x583af9*/
   v19 = 0; /*0x583b05*/
   *(unsigned int *)&dword_87F904 = *(unsigned int *)&DataGlobal_87F8E4 /*0x583b0d*/
@@ -270,7 +270,7 @@ AbstractClass * * E4Recv_583AD0::sub_583AD0(int * a2)
   *a2 = v12; /*0x583bfe*/
   if ( v12 < 0 ) /*0x583c00*/
   {
-    /* X11: vtable install elided (implicit via VectorClass virtuals 0x583c31) */
+    /* X11: ptr_0 install elided (implicit via VectorClass virtuals 0x583c31) */
     if ( Items && v18.IsAllocated ) /*0x583c41*/
       operator delete((Items)); /*0x583c44*/
     return 0; /*0x583c4f*/
@@ -278,7 +278,7 @@ AbstractClass * * E4Recv_583AD0::sub_583AD0(int * a2)
   else
   {
     v16 = *((unsigned int *)Items + v12); /*0x583c02*/
-    /* X11: vtable install elided (implicit via VectorClass virtuals 0x583c06) */
+    /* X11: ptr_0 install elided (implicit via VectorClass virtuals 0x583c06) */
     if ( Items ) /*0x583c10*/
     {
       if ( v18.IsAllocated ) /*0x583c18*/
@@ -1121,7 +1121,7 @@ LABEL_32:
             while ( v28 < dword_ABDFA0 ); /*0x58ee5c*/
           }
           v29 = v27->u32_2C; /*0x58ee5e*/
-          /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E38D0) */  /*0x58ee61*/
+          /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E38D0) */  /*0x58ee61*/
           if ( v29 ) /*0x58ee66*/
           {
             if ( v27->u8_35 ) /*0x58ee68*/

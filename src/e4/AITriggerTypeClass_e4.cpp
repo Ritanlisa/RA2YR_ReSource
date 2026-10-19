@@ -654,10 +654,10 @@ namespace gamemd {
 AITriggerTypeClass * AITriggerTypeClass::ddtor(unsigned int * Block, char a2)
 {
 
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E2A24) */  /*0x41fffd*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E2A24) */  /*0x420003*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E2A24) */  /*0x42000a*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E2A24) */  /*0x420011*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E2A24) */  /*0x41fffd*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E2A24) */  /*0x420003*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E2A24) */  /*0x42000a*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E2A24) */  /*0x420011*/
   AITriggerTypeClass *v5; // [esp+4h] [ebp-4h] BYREF
   v5 = (gamemd::AITriggerTypeClass *)(Block); /*0x42001f*/
   int v3; // eax
@@ -923,7 +923,7 @@ VectorClass_flat * AITriggerTypeClass_40::QueryInterface(unsigned int * Block, c
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x420633*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x420636*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x420636*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x420640*/
   {
     operator delete((v3)); /*0x420648*/
@@ -943,7 +943,7 @@ DynamicVector * AITriggerTypeClass_40::Constructor_VectorClass_AlphaLightingRema
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x420683*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x420686*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x420686*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x420690*/
   {
     operator delete((v3)); /*0x420698*/

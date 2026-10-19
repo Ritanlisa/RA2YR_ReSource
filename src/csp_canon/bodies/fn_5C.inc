@@ -1871,7 +1871,7 @@ int CampaignClass::Check(int a2) {
 // ==== BACKFILL 0x005CF830  Network_Load  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int Gap2Recv_5CF830::Network_Load(ObjectClass * aP1) {
 
-  return (*((int (**)(ObjectClass *, char *))this->vtable1 + 4))(this, &aP1); /*0x5cf83a*/
+  return (*((int (**)(ObjectClass *, char *))this->ptr_4 + 4))(this, &aP1); /*0x5cf83a*/
 
 }
 

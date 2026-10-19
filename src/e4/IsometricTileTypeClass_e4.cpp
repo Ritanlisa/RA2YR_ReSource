@@ -84,10 +84,10 @@ AbstractClass * * IsometricTileTypeClass::LoadTypeData(int * a1, int a2)
       *((unsigned int *)a1 + 169) = (unsigned int)(&g_ptr_7E3238); /*0x549cee*/
       *((unsigned int *)a1 + 174) = 10; /*0x549cf4*/
       *((unsigned int *)a1 + 173) = 0; /*0x549cfb*/
-      /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7ECC1C) */  /*0x549d02*/
-      /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7ECC1C) */  /*0x549d08*/
-      /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7ECC1C) */  /*0x549d0f*/
-      /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7ECC1C) */  /*0x549d16*/
+      /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7ECC1C) */  /*0x549d02*/
+      /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7ECC1C) */  /*0x549d08*/
+      /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7ECC1C) */  /*0x549d0f*/
+      /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7ECC1C) */  /*0x549d16*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)a1 + 175); /*0x549d2a*/
     for ( j = 0; j < *(int *)&g_SurfaceAnimState; *(unsigned int *)(*(unsigned int *)&DataGlobal_87F69C + 4 * j - 4) = 0 ) /*0x549d39*/
@@ -267,7 +267,7 @@ DynamicVector * IsometricTileTypeClass::Constructor(unsigned int * Block, char a
 
 
   void *v3 = *&Block->__pad_004; // eax /*0x54a763*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x54a766*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x54a766*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x54a770*/
   {
     __3_YAXPAX_Z(v3); /*0x54a778*/
@@ -290,7 +290,7 @@ unsigned int * IsometricTileTypeClass::Constructor_0(int a2, int a3)
   this->m_8 = (void *)(a2); /*0x54a85e*/
   LOBYTE(this->ptr_C) = 1; /*0x54a861*/
   BYTE1(this->ptr_C) = 0; /*0x54a865*/
-  /* X11: vtable install elided (implicit via VectorClass virtuals 0x54a868) */
+  /* X11: ptr_0 install elided (implicit via VectorClass virtuals 0x54a868) */
   if ( a2 ) /*0x54a86e*/
   {
     if ( a3 ) /*0x54a876*/

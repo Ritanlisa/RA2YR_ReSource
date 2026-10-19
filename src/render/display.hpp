@@ -45,9 +45,9 @@ public:
     virtual void LoadFromINI(CCINIClass* ini) override;
     // wrapper: delegates to DisplayClass::ddtor at 0x4A8930
     virtual const wchar_t* GetToolTip(unsigned int dialog_id) override;
-    // G42.33: binary truth -- 0x7C865C (CloseWindow) has no vtable xref; the
-    // vtable slot is the separate g_var_5463b9 wrapper. Plain non-virtual here
-    // and in GScreenClass keeps the vtable model unchanged.
+    // G42.33: binary truth -- 0x7C865C (CloseWindow) has no ptr_0 xref; the
+    // ptr_0 slot is the separate g_var_5463b9 wrapper. Plain non-virtual here
+    // and in GScreenClass keeps the ptr_0 model unchanged.
     int CloseWindow();
     // wrapper: delegates to CloseWindow at 0x7C865C
     virtual void g_var_5463b9() override;

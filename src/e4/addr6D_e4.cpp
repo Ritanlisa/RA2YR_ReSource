@@ -453,10 +453,10 @@ namespace gamemd {
 void E4Recv_6D1E80::sub_6D1E80()
 {
 
-  /* X11: vtable install elided (implicit via Tactical virtuals 0x6d1e80) */
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7F431C) */  /*0x6d1e86*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F431C) */  /*0x6d1e8d*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F431C) */  /*0x6d1e94*/
+  /* X11: ptr_0 install elided (implicit via Tactical virtuals 0x6d1e80) */
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7F431C) */  /*0x6d1e86*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F431C) */  /*0x6d1e8d*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F431C) */  /*0x6d1e94*/
   g_TacticalClass_Instance = 0; /*0x6d1e9b*/
   ((AbstractClass *)this)->DTOR(); /*0x6d1ea5*/
 

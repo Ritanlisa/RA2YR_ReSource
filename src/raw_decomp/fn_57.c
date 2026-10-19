@@ -229,7 +229,7 @@ void __thiscall Terrain::ProcessCellModification(Terrain *this, __int16 *a2)
     LOBYTE(a2) = 0; /*0x570386*/
     VectorClass::CellConstructor(&v86, 0, 0); /*0x57038b*/
     v32 = *(_DWORD *)v81; /*0x570390*/
-    v86.vtable0 = &DynamicVectorClass<Cell>::`vftable'; /*0x570394*/
+    v86.ptr_0 = &DynamicVectorClass<Cell>::`vftable'; /*0x570394*/
     v88 = 10; /*0x57039c*/
     v87 = 0; /*0x5703a4*/
     while ( 1 ) /*0x5703ba*/
@@ -346,7 +346,7 @@ LABEL_109:
               goto LABEL_127; /*0x570993*/
             if ( (v86.IsAllocated || !Capacity) && v88 > 0 ) /*0x5709a7*/
             {
-              if ( (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v86.vtable0 + 2))( /*0x5709b6*/
+              if ( (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v86.ptr_0 + 2))( /*0x5709b6*/
                      &v86,
                      v88 + Capacity,
                      0) )
@@ -383,7 +383,7 @@ LABEL_137:
 LABEL_139:
             if ( v87 > 0 ) /*0x570a99*/
               LayerClass::Update_Pathfinding_2((LayerClass *)this, (int)&v86); /*0x570aa4*/
-            v86.vtable0 = &VectorClass<Cell>::`vftable'; /*0x570aad*/
+            v86.ptr_0 = &VectorClass<Cell>::`vftable'; /*0x570aad*/
             if ( v86.Items ) /*0x570ab7*/
             {
               if ( v86.IsAllocated ) /*0x570abf*/
@@ -441,7 +441,7 @@ LABEL_90:
         goto LABEL_96; /*0x5706b7*/
       if ( !v86.IsAllocated && v49 || v88 <= 0 ) /*0x5706cb*/
         goto LABEL_98; /*0x5706cb*/
-      if ( (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v86.vtable0 + 2))(&v86, v88 + v49, 0) ) /*0x5706da*/
+      if ( (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v86.ptr_0 + 2))(&v86, v88 + v49, 0) ) /*0x5706da*/
       {
 LABEL_96:
         v52 = v87++; /*0x5706e9*/
@@ -2167,7 +2167,7 @@ void __thiscall Terrain::RecursiveModify(Terrain *this, int a2)
     VectorClass::CellConstructor(&v92, 0, 0); /*0x57386f*/
     v38 = *(_DWORD *)v87; /*0x573874*/
     v39 = *(_DWORD *)&this->__pad_122[2]; /*0x57387f*/
-    v92.vtable0 = &DynamicVectorClass<Cell>::`vftable'; /*0x573885*/
+    v92.ptr_0 = &DynamicVectorClass<Cell>::`vftable'; /*0x573885*/
     v94 = 10; /*0x57388f*/
     v93 = 0; /*0x573897*/
     LOBYTE(a2) = 0; /*0x57389f*/
@@ -2276,7 +2276,7 @@ LABEL_92:
             {
               if ( (v92.IsAllocated || !Capacity) && v94 > 0 ) /*0x573bec*/
               {
-                if ( (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v92.vtable0 + 2))( /*0x573bfb*/
+                if ( (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v92.ptr_0 + 2))( /*0x573bfb*/
                        &v92,
                        v94 + Capacity,
                        0) )
@@ -2381,7 +2381,7 @@ LABEL_123:
         goto LABEL_129; /*0x573eb6*/
       if ( !v92.IsAllocated && v76 || v94 <= 0 ) /*0x573eca*/
         goto LABEL_131; /*0x573eca*/
-      if ( (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v92.vtable0 + 2))(&v92, v94 + v76, 0) ) /*0x573ed9*/
+      if ( (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v92.ptr_0 + 2))(&v92, v94 + v76, 0) ) /*0x573ed9*/
       {
 LABEL_129:
         v79 = v93++; /*0x573ee8*/
@@ -2414,7 +2414,7 @@ LABEL_139:
 LABEL_141:
           if ( v93 > 0 ) /*0x573fbc*/
             LayerClass::Update_Pathfinding_2((LayerClass *)this, (int)&v92); /*0x573fc7*/
-          v92.vtable0 = &VectorClass<Cell>::`vftable'; /*0x573fd0*/
+          v92.ptr_0 = &VectorClass<Cell>::`vftable'; /*0x573fd0*/
           if ( v92.Items ) /*0x573fda*/
           {
             if ( v92.IsAllocated ) /*0x573fe2*/
@@ -2659,7 +2659,7 @@ LABEL_34:
     VectorClass::CellConstructor(&v69, 0, 0); /*0x574369*/
     v40 = *(__int16 **)v63; /*0x57436e*/
     occupationFlags = v2->occupationFlags; /*0x574372*/
-    v69.vtable0 = &DynamicVectorClass<Cell>::`vftable'; /*0x57437d*/
+    v69.ptr_0 = &DynamicVectorClass<Cell>::`vftable'; /*0x57437d*/
     v71 = 10; /*0x574385*/
     v70 = 0; /*0x57438d*/
     if ( v63[0] >= occupationFlags ) /*0x574395*/
@@ -2760,7 +2760,7 @@ LABEL_79:
       while ( (__int16)a2 >= occupationFlags ); /*0x5743a1*/
     }
     Terrain::ConnectivityGraph((Terrain *)v2); /*0x5745ca*/
-    v69.vtable0 = &VectorClass<Cell>::`vftable'; /*0x5745d5*/
+    v69.ptr_0 = &VectorClass<Cell>::`vftable'; /*0x5745d5*/
     if ( v69.Items ) /*0x5745df*/
     {
       if ( v69.IsAllocated ) /*0x5745e7*/
@@ -3262,7 +3262,7 @@ LABEL_34:
     VectorClass::CellConstructor(&v69, 0, 0); /*0x574f85*/
     v40 = *(__int16 **)v63; /*0x574f8a*/
     occupationFlags = v2->occupationFlags; /*0x574f8e*/
-    v69.vtable0 = &DynamicVectorClass<Cell>::`vftable'; /*0x574f99*/
+    v69.ptr_0 = &DynamicVectorClass<Cell>::`vftable'; /*0x574f99*/
     v71 = 10; /*0x574fa1*/
     v70 = 0; /*0x574fa9*/
     if ( v63[0] >= occupationFlags ) /*0x574fb1*/
@@ -3366,7 +3366,7 @@ LABEL_79:
       while ( (__int16)a2 >= occupationFlags ); /*0x574fbd*/
     }
     Terrain::ConnectivityGraph((Terrain *)v2); /*0x5751e6*/
-    v69.vtable0 = &VectorClass<Cell>::`vftable'; /*0x5751f1*/
+    v69.ptr_0 = &VectorClass<Cell>::`vftable'; /*0x5751f1*/
     if ( v69.Items ) /*0x5751fb*/
     {
       if ( v69.IsAllocated ) /*0x575203*/
@@ -5046,7 +5046,7 @@ void *__thiscall LayerClass::Reveal(LayerClass *this, int a2)
 
   result = (void *)a2; /*0x577d90*/
   if ( a2 ) /*0x577da2*/
-    *(_BYTE *)(*(&dword_A8022C->vtable0 + *(_DWORD *)(a2 + 48)) + 577) = 1; /*0x577db0*/
+    *(_BYTE *)(*(&dword_A8022C->ptr_0 + *(_DWORD *)(a2 + 48)) + 577) = 1; /*0x577db0*/
   if ( (Object *)a2 == dword_A83D4C ) /*0x577dbc*/
   {
     if ( a2 ) /*0x577dca*/
@@ -5060,7 +5060,7 @@ void *__thiscall LayerClass::Reveal(LayerClass *this, int a2)
 LABEL_8:
   if ( *(_DWORD *)&dword_A8B238 != 3 && *(_DWORD *)&dword_A8B238 != 4 /*0x577df4*/
     || !dword_A8B23C
-    || (v8 = 1, (*(unsigned __int8 (__thiscall **)(ObjectClass *))(dword_A8B23C->vtable0 + 4))(dword_A8B23C)) )
+    || (v8 = 1, (*(unsigned __int8 (__thiscall **)(ObjectClass *))(dword_A8B23C->ptr_0 + 4))(dword_A8B23C)) )
   {
     v8 = 0; /*0x577dff*/
   }
@@ -5127,7 +5127,7 @@ void *__thiscall MapClass::ClearShroud(MapClass *this, int a2)
 
   result = (void *)a2; /*0x577f30*/
   if ( a2 ) /*0x577f3a*/
-    *(_BYTE *)(*(&dword_A8022C->vtable0 + *(_DWORD *)(a2 + 48)) + 577) = 1; /*0x577f48*/
+    *(_BYTE *)(*(&dword_A8022C->ptr_0 + *(_DWORD *)(a2 + 48)) + 577) = 1; /*0x577f48*/
   if ( (Object *)a2 == dword_A83D4C ) /*0x577f55*/
   {
     if ( a2 ) /*0x577f63*/
@@ -5141,7 +5141,7 @@ void *__thiscall MapClass::ClearShroud(MapClass *this, int a2)
 LABEL_8:
   v4 = (*(_DWORD *)&dword_A8B238 == 3 || *(_DWORD *)&dword_A8B238 == 4) /*0x577f94*/
     && dword_A8B23C
-    && !(*(unsigned __int8 (__thiscall **)(ObjectClass *))(dword_A8B23C->vtable0 + 4))(dword_A8B23C);
+    && !(*(unsigned __int8 (__thiscall **)(ObjectClass *))(dword_A8B23C->ptr_0 + 4))(dword_A8B23C);
   result = dword_A83D4C; /*0x577f9a*/
   if ( !dword_A83D4C->__pad_140[256] ) /*0x577f9f*/
   {
@@ -11852,7 +11852,7 @@ void __thiscall Terrain::ProcessCellModification(Terrain *this, __int16 *a2)
     LOBYTE(a2) = 0; /*0x570386*/
     VectorClass::CellConstructor(&v86, 0, 0); /*0x57038b*/
     v32 = *(_DWORD *)v81; /*0x570390*/
-    v86.vtable0 = &DynamicVectorClass<Cell>::`vftable'; /*0x570394*/
+    v86.ptr_0 = &DynamicVectorClass<Cell>::`vftable'; /*0x570394*/
     v88 = 10; /*0x57039c*/
     v87 = 0; /*0x5703a4*/
     while ( 1 ) /*0x5703ba*/
@@ -11969,7 +11969,7 @@ LABEL_109:
               goto LABEL_127; /*0x570993*/
             if ( (v86.IsAllocated || !Capacity) && v88 > 0 ) /*0x5709a7*/
             {
-              if ( (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v86.vtable0 + 2))( /*0x5709b6*/
+              if ( (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v86.ptr_0 + 2))( /*0x5709b6*/
                      &v86,
                      v88 + Capacity,
                      0) )
@@ -12006,7 +12006,7 @@ LABEL_137:
 LABEL_139:
             if ( v87 > 0 ) /*0x570a99*/
               LayerClass::Update_Pathfinding_2((LayerClass *)this, (int)&v86); /*0x570aa4*/
-            v86.vtable0 = &VectorClass<Cell>::`vftable'; /*0x570aad*/
+            v86.ptr_0 = &VectorClass<Cell>::`vftable'; /*0x570aad*/
             if ( v86.Items ) /*0x570ab7*/
             {
               if ( v86.IsAllocated ) /*0x570abf*/
@@ -12064,7 +12064,7 @@ LABEL_90:
         goto LABEL_96; /*0x5706b7*/
       if ( !v86.IsAllocated && v49 || v88 <= 0 ) /*0x5706cb*/
         goto LABEL_98; /*0x5706cb*/
-      if ( (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v86.vtable0 + 2))(&v86, v88 + v49, 0) ) /*0x5706da*/
+      if ( (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v86.ptr_0 + 2))(&v86, v88 + v49, 0) ) /*0x5706da*/
       {
 LABEL_96:
         v52 = v87++; /*0x5706e9*/
@@ -13790,7 +13790,7 @@ void __thiscall Terrain::RecursiveModify(Terrain *this, int a2)
     VectorClass::CellConstructor(&v92, 0, 0); /*0x57386f*/
     v38 = *(_DWORD *)v87; /*0x573874*/
     v39 = *(_DWORD *)&this->__pad_122[2]; /*0x57387f*/
-    v92.vtable0 = &DynamicVectorClass<Cell>::`vftable'; /*0x573885*/
+    v92.ptr_0 = &DynamicVectorClass<Cell>::`vftable'; /*0x573885*/
     v94 = 10; /*0x57388f*/
     v93 = 0; /*0x573897*/
     LOBYTE(a2) = 0; /*0x57389f*/
@@ -13899,7 +13899,7 @@ LABEL_92:
             {
               if ( (v92.IsAllocated || !Capacity) && v94 > 0 ) /*0x573bec*/
               {
-                if ( (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v92.vtable0 + 2))( /*0x573bfb*/
+                if ( (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v92.ptr_0 + 2))( /*0x573bfb*/
                        &v92,
                        v94 + Capacity,
                        0) )
@@ -14004,7 +14004,7 @@ LABEL_123:
         goto LABEL_129; /*0x573eb6*/
       if ( !v92.IsAllocated && v76 || v94 <= 0 ) /*0x573eca*/
         goto LABEL_131; /*0x573eca*/
-      if ( (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v92.vtable0 + 2))(&v92, v94 + v76, 0) ) /*0x573ed9*/
+      if ( (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v92.ptr_0 + 2))(&v92, v94 + v76, 0) ) /*0x573ed9*/
       {
 LABEL_129:
         v79 = v93++; /*0x573ee8*/
@@ -14037,7 +14037,7 @@ LABEL_139:
 LABEL_141:
           if ( v93 > 0 ) /*0x573fbc*/
             LayerClass::Update_Pathfinding_2((LayerClass *)this, (int)&v92); /*0x573fc7*/
-          v92.vtable0 = &VectorClass<Cell>::`vftable'; /*0x573fd0*/
+          v92.ptr_0 = &VectorClass<Cell>::`vftable'; /*0x573fd0*/
           if ( v92.Items ) /*0x573fda*/
           {
             if ( v92.IsAllocated ) /*0x573fe2*/
@@ -14282,7 +14282,7 @@ LABEL_34:
     VectorClass::CellConstructor(&v69, 0, 0); /*0x574369*/
     v40 = *(__int16 **)v63; /*0x57436e*/
     occupationFlags = v2->occupationFlags; /*0x574372*/
-    v69.vtable0 = &DynamicVectorClass<Cell>::`vftable'; /*0x57437d*/
+    v69.ptr_0 = &DynamicVectorClass<Cell>::`vftable'; /*0x57437d*/
     v71 = 10; /*0x574385*/
     v70 = 0; /*0x57438d*/
     if ( v63[0] >= occupationFlags ) /*0x574395*/
@@ -14383,7 +14383,7 @@ LABEL_79:
       while ( (__int16)a2 >= occupationFlags ); /*0x5743a1*/
     }
     Terrain::ConnectivityGraph((Terrain *)v2); /*0x5745ca*/
-    v69.vtable0 = &VectorClass<Cell>::`vftable'; /*0x5745d5*/
+    v69.ptr_0 = &VectorClass<Cell>::`vftable'; /*0x5745d5*/
     if ( v69.Items ) /*0x5745df*/
     {
       if ( v69.IsAllocated ) /*0x5745e7*/
@@ -14885,7 +14885,7 @@ LABEL_34:
     VectorClass::CellConstructor(&v69, 0, 0); /*0x574f85*/
     v40 = *(__int16 **)v63; /*0x574f8a*/
     occupationFlags = v2->occupationFlags; /*0x574f8e*/
-    v69.vtable0 = &DynamicVectorClass<Cell>::`vftable'; /*0x574f99*/
+    v69.ptr_0 = &DynamicVectorClass<Cell>::`vftable'; /*0x574f99*/
     v71 = 10; /*0x574fa1*/
     v70 = 0; /*0x574fa9*/
     if ( v63[0] >= occupationFlags ) /*0x574fb1*/
@@ -14989,7 +14989,7 @@ LABEL_79:
       while ( (__int16)a2 >= occupationFlags ); /*0x574fbd*/
     }
     Terrain::ConnectivityGraph((Terrain *)v2); /*0x5751e6*/
-    v69.vtable0 = &VectorClass<Cell>::`vftable'; /*0x5751f1*/
+    v69.ptr_0 = &VectorClass<Cell>::`vftable'; /*0x5751f1*/
     if ( v69.Items ) /*0x5751fb*/
     {
       if ( v69.IsAllocated ) /*0x575203*/
@@ -16669,7 +16669,7 @@ void *__thiscall LayerClass::Reveal(LayerClass *this, int a2)
 
   result = (void *)a2; /*0x577d90*/
   if ( a2 ) /*0x577da2*/
-    *(_BYTE *)(*(&dword_A8022C->vtable0 + *(_DWORD *)(a2 + 48)) + 577) = 1; /*0x577db0*/
+    *(_BYTE *)(*(&dword_A8022C->ptr_0 + *(_DWORD *)(a2 + 48)) + 577) = 1; /*0x577db0*/
   if ( (Object *)a2 == dword_A83D4C ) /*0x577dbc*/
   {
     if ( a2 ) /*0x577dca*/
@@ -16683,7 +16683,7 @@ void *__thiscall LayerClass::Reveal(LayerClass *this, int a2)
 LABEL_8:
   if ( *(_DWORD *)&dword_A8B238 != 3 && *(_DWORD *)&dword_A8B238 != 4 /*0x577df4*/
     || !dword_A8B23C
-    || (v8 = 1, (*(unsigned __int8 (__thiscall **)(ObjectClass *))(dword_A8B23C->vtable0 + 4))(dword_A8B23C)) )
+    || (v8 = 1, (*(unsigned __int8 (__thiscall **)(ObjectClass *))(dword_A8B23C->ptr_0 + 4))(dword_A8B23C)) )
   {
     v8 = 0; /*0x577dff*/
   }
@@ -16750,7 +16750,7 @@ void *__thiscall MapClass::ClearShroud(MapClass *this, int a2)
 
   result = (void *)a2; /*0x577f30*/
   if ( a2 ) /*0x577f3a*/
-    *(_BYTE *)(*(&dword_A8022C->vtable0 + *(_DWORD *)(a2 + 48)) + 577) = 1; /*0x577f48*/
+    *(_BYTE *)(*(&dword_A8022C->ptr_0 + *(_DWORD *)(a2 + 48)) + 577) = 1; /*0x577f48*/
   if ( (Object *)a2 == dword_A83D4C ) /*0x577f55*/
   {
     if ( a2 ) /*0x577f63*/
@@ -16764,7 +16764,7 @@ void *__thiscall MapClass::ClearShroud(MapClass *this, int a2)
 LABEL_8:
   v4 = (*(_DWORD *)&dword_A8B238 == 3 || *(_DWORD *)&dword_A8B238 == 4) /*0x577f94*/
     && dword_A8B23C
-    && !(*(unsigned __int8 (__thiscall **)(ObjectClass *))(dword_A8B23C->vtable0 + 4))(dword_A8B23C);
+    && !(*(unsigned __int8 (__thiscall **)(ObjectClass *))(dword_A8B23C->ptr_0 + 4))(dword_A8B23C);
   result = dword_A83D4C; /*0x577f9a*/
   if ( !dword_A83D4C->__pad_140[256] ) /*0x577f9f*/
   {

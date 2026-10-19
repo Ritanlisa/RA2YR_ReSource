@@ -28,7 +28,7 @@ namespace gamemd {  // G42.18c ns repair
 unsigned int * DeleteCommandClass::Constructor(void *a1, void *a2, void *a3, void *a4, void *a5)
 {
 
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EBF7C) */  /*0x537f12*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EBF7C) */  /*0x537f12*/
   return a1->CommandClass; /*0x537f18*/
 
 }
@@ -303,7 +303,7 @@ VectorClass_flat * DeleteCommandClass_28::QueryInterface(unsigned int * Block, c
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x53c783*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x53c786*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x53c786*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x53c790*/
   {
     operator delete((v3)); /*0x53c798*/
@@ -324,7 +324,7 @@ int DeleteCommandClass_28::Constructor(unsigned int * Block, char a2, void *a3_1
 
 
   void *v3 = *&Block->__pad_004; // eax /*0x53c7d3*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x53c7d6*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x53c7d6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x53c7e0*/
   {
     __3_YAXPAX_Z(v3); /*0x53c7e8*/

@@ -20,7 +20,7 @@ namespace gamemd
 // Object layout (verified via TiberiumClass::Debris ctor @0x7216C0 and the
 // per-type vtables, e.g. VectorClass<BulletClass*>::vftable @0x7E4698):
 //
-//   offset 0  : vtable pointer
+//   offset 0  : ptr_0 pointer
 //   offset 4  : T*   Items
 //   offset 8  : int  Capacity
 //   offset 12 : bool IsInitialized
@@ -29,13 +29,13 @@ namespace gamemd
 //   offset 16 : int  Count
 //   offset 20 : int  CapacityIncrement   (default 10)
 //
-// VectorClass vtable order (confirmed): [0] ~dtor, [1] operator==,
+// VectorClass ptr_0 order (confirmed): [0] ~dtor, [1] operator==,
 //   [2] SetCapacity, [3] Clear, [4] FindItemIndex, [5] GetItemIndex,
 //   [6] GetItem.
 //
 // NOTE on IDA stub names: IDA's per-instance "method names" (Add/Remove/Get/
 // Release/QueryInterface/GetSize/GetCapacity…) are heuristic and systematically
-// MISLABELED. The real identity comes from the decompiled body + vtable slot:
+// MISLABELED. The real identity comes from the decompiled body + ptr_0 slot:
 //   IDA "QueryInterface" (_vt00) = scalar-deleting ~dtor
 //   IDA "Add"           (_vt01) = operator==
 //   IDA "Release"       (_vt02) = VectorClass::SetCapacity (base)
@@ -74,7 +74,7 @@ public:
     VectorClass(VectorClass&& other) noexcept;
 
     // 0x46B8C0 (~VectorClass<BulletClass*>, scalar-deleting wrapper body)
-    // The vtable reset + "if (flag&1) operator delete(this)" are compiler-
+    // The ptr_0 reset + "if (flag&1) operator delete(this)" are compiler-
     // generated; the source destructor body is exactly the lines below.
     virtual ~VectorClass() noexcept;
 
@@ -83,23 +83,23 @@ public:
     VectorClass& operator=(const VectorClass& other);
     VectorClass& operator=(VectorClass&& other) noexcept;
 
-    // 0x46B660 — operator== [vtable slot 1]
+    // 0x46B660 — operator== [ptr_0 slot 1]
     virtual bool operator==(const VectorClass& other) const;
     bool operator!=(const VectorClass& other) const;
 
-    // 0x46B6A0 — VectorClass::SetCapacity [vtable slot 2] (base, flat)
+    // 0x46B6A0 — VectorClass::SetCapacity [ptr_0 slot 2] (base, flat)
     virtual bool SetCapacity(int capacity, T* mem = nullptr);
 
-    // 0x46B750 — VectorClass::Clear [vtable slot 3] (base)
+    // 0x46B750 — VectorClass::Clear [ptr_0 slot 3] (base)
     virtual void Clear();
 
-    // 0x46B780 — VectorClass::FindItemIndex [vtable slot 4] (base, scans Capacity)
+    // 0x46B780 — VectorClass::FindItemIndex [ptr_0 slot 4] (base, scans Capacity)
     virtual int FindItemIndex(const T& item) const;
 
-    // 0x46B7C0 — VectorClass::GetItemIndex [vtable slot 5] (final)
+    // 0x46B7C0 — VectorClass::GetItemIndex [ptr_0 slot 5] (final)
     virtual int GetItemIndex(const T* item) const final;
 
-    // 0x46B630 — VectorClass::GetItem [vtable slot 6] (final)
+    // 0x46B630 — VectorClass::GetItem [ptr_0 slot 6] (final)
     virtual T GetItem(int i) const final;
 
     // design: inline accessors, inlined at all call sites in the binary
@@ -139,16 +139,16 @@ public:
     DynamicVectorClass& operator=(const DynamicVectorClass& other);
     DynamicVectorClass& operator=(DynamicVectorClass&& other) noexcept;
 
-    // 0x4E9AA0 — DynamicVectorClass::SetCapacity [vtable slot 2 override]
+    // 0x4E9AA0 — DynamicVectorClass::SetCapacity [ptr_0 slot 2 override]
     // FLAT function: base alloc/copy logic inlined + Count clamp at the end.
     // (Does NOT delegate to VectorClass::SetCapacity — matches the binary.)
     bool SetCapacity(int capacity, T* mem = nullptr) override;
 
-    // 0x46B5E0 — DynamicVectorClass::Clear [vtable slot 3 override]
+    // 0x46B5E0 — DynamicVectorClass::Clear [ptr_0 slot 3 override]
     // Resets Count=0 first, then frees Items (flat; mirrors the binary order).
     void Clear() override;
 
-    // 0x4E9B50 — DynamicVectorClass::FindItemIndex [vtable slot 4 override]
+    // 0x4E9B50 — DynamicVectorClass::FindItemIndex [ptr_0 slot 4 override]
     // Scans Count (NOT Capacity); returns -1 when Count<=0. There is NO
     // IsInitialized check here (unlike the base VectorClass version).
     int FindItemIndex(const T& item) const override final;
@@ -193,7 +193,7 @@ public:
 //
 // Same memory layout as DynamicVectorClass<T> (no extra fields) — confirmed by
 // TypeList::CopyConstructor @0x513740 which copies exactly the 6 DynamicVector
-// fields. TypeList only differs by its own vtable (a distinct operator== slot,
+// fields. TypeList only differs by its own ptr_0 (a distinct operator== slot,
 // @0x67AE70, with a body identical to the base). All other behaviour is
 // inherited from DynamicVectorClass.
 // ============================================================================
@@ -212,7 +212,7 @@ public:
 
     TypeList& operator=(const TypeList& other);
 
-    // 0x67AE70 — TypeList::operator== [distinct vtable slot 1, identical body]
+    // 0x67AE70 — TypeList::operator== [distinct ptr_0 slot 1, identical body]
     bool operator==(const VectorClass<T>& other) const override;
 
 

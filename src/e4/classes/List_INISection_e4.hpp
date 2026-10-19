@@ -1,5 +1,5 @@
 // X74: flat carrier for the List<INIClass::INISection*> global object at
-// 0x887064 (RTTI ?$List@PAUINISection@INIClass@@, vtable 0x7E1AFC).
+// 0x887064 (RTTI ?$List@PAUINISection@INIClass@@, ptr_0 0x7E1AFC).
 // Layout evidence: init 0x40E1C0 store map + GenericList::Constructor
 // 0x52ACE0 (28B base part: vptr + two 12B GenericNode sentinels) + 7 own
 // members (0x887080-0x88709B, zeroed at init, no other refs at X74 time).

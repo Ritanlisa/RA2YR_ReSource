@@ -440,7 +440,7 @@ int E4Recv_517110::sub_517110()
   int v3; // ebx
   unsigned short *v4; // eax
   bool v5; // bl
-  void *vtable3; // ecx
+  void *ptr_C; // ecx
   int result; // eax
   unsigned char v8[4]; // [esp+8h] [ebp-4h] BYREF
 
@@ -455,10 +455,10 @@ int E4Recv_517110::sub_517110()
     if ( *v4 != (unsigned short)v2 || v4[1] != (unsigned short)v3 ) /*0x517177*/
       v5 = 0; /*0x517138*/
   }
-  vtable3 = (void *)(((unsigned int *)this)[0]); /*0x51717f*/
+  ptr_C = (void *)(((unsigned int *)this)[0]); /*0x51717f*/
   (&this->ambientSoundController)[3] = 0; /*0x517182*/
   (&this->ambientSoundController)[4] = 1072693248; /*0x517189*/
-  (*(void (**)(void *, unsigned int, int))(*(unsigned int *)vtable3 + 1348))(vtable3, 0, 1072693248); /*0x517199*/
+  (*(void (**)(void *, unsigned int, int))(*(unsigned int *)ptr_C + 1348))(ptr_C, 0, 1072693248); /*0x517199*/
   result = ((MovementAI *)((MovementAI *)this))->StepFootClass(0); /*0x5171a3*/
   if ( v5 ) /*0x5171aa*/
     return ((MovementAI *)((MovementAI *)this))->MainFootClass(1); /*0x5171b0*/

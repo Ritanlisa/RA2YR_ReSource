@@ -597,7 +597,7 @@ int VectorClass_ptr_BulletClass::Get(int a2, void *a2_2)
 // ==== BACKFILL 0x0046B960  BulletClass::AddVector3  cls=BulletClass  sig=csp  renamed_refs=0  residual=- ====
 void* BulletClass::AddVector3(void* a1) {
   *this = *a1 + *this; /*0x46b96a*/
-  this->vtable2 = a1[1] + this->vtable2; /*0x46b972*/
+  this->ptr_8 = a1[1] + this->ptr_8; /*0x46b972*/
   *(this + 2) = a1[2] + *(this + 2); /*0x46b97b*/
   return this; /*0x46b97e*/
 }
@@ -750,7 +750,7 @@ int CampaignClass::Write(AbstractTypeClass * aP0, int aP1)
     if ( aP0 ) /*0x46d016*/
     {
       ((AbstractTypeClass*)(int)aP0)->Init((int)&aP1); /*0x46d01f*/
-      /* X11: vtable install elided (implicit via CampaignClass virtuals 0x46d024) */
+      /* X11: ptr_0 install elided (implicit via CampaignClass virtuals 0x46d024) */
       ((unsigned int *)aP0)[0] = (unsigned int)(&g_ptr_7E49FC); /*0x46d02a*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&g_ptr_7E49FC); /*0x46d031*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&g_ptr_7E49FC); /*0x46d038*/
@@ -797,7 +797,7 @@ void ** CampaignClass::DTOR(char a2)
   int v3; // eax
   CampaignClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-  /* X11: vtable install elided (implicit via CampaignClass virtuals 0x46d096) */
+  /* X11: ptr_0 install elided (implicit via CampaignClass virtuals 0x46d096) */
   ((unsigned int *)this)[0] = (unsigned int)(&g_ptr_7E49FC); /*0x46d09c*/
   ((unsigned int *)this)[0] = (unsigned int)(&g_ptr_7E49FC); /*0x46d0a3*/
   ((unsigned int *)this)[0] = (unsigned int)(&g_ptr_7E49FC); /*0x46d0aa*/

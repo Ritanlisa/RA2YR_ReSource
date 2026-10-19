@@ -1647,22 +1647,22 @@ LABEL_171:
             v197.customSound_controller[0] = 0; /*0x5e5268*/
             v197.customSound_controller[3] = 0; /*0x5e526c*/
             v197.customSound_controller[4] = 0; /*0x5e5270*/
-            /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E1B0C) */  /*0x5e5277*/
+            /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E1B0C) */  /*0x5e5277*/
             *(unsigned int *)v197.bombVisible = 0; /*0x5e527b*/
             v197.health = 0; /*0x5e5282*/
-            /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E1B0C) */  /*0x5e5289*/
-            /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E1B04) */  /*0x5e5290*/
+            /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E1B0C) */  /*0x5e5289*/
+            /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E1B04) */  /*0x5e5290*/
             MixFileClass::LinkIntoPool((MixFileClass *)&v197.customSound); /*0x5e5298*/
             *(unsigned int *)v197.bombVisible = v197.customSound_controller[3]; /*0x5e52a7*/
             v197.health = (int)&v197.customSound_controller[2]; /*0x5e52ae*/
             if ( v197.customSound_controller[3] ) /*0x5e52b5*/
               *(unsigned int *)(v197.customSound_controller[3] + 8) = &v197.customSound; /*0x5e52be*/
             v197.customSound_controller[3] = (int)&v197.customSound; /*0x5e52d5*/
-            /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E1AFC) */  /*0x5e52dc*/
+            /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E1AFC) */  /*0x5e52dc*/
             memset(&v197.estimatedHealth, 0, 13); /*0x5e52e4*/
             *(unsigned int *)v197.needsRedraw = 0; /*0x5e5301*/
             *(unsigned int *)v197.hasParachute = 0; /*0x5e5308*/
-            /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7EA5F4) */  /*0x5e530f*/
+            /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7EA5F4) */  /*0x5e530f*/
             FileStraw::Open((FileStraw *)&v197.ambientSoundController[3], (int)&v200, 0); /*0x5e5317*/
             INIClass::GetString( /*0x5e5339*/
               (INIClass *)&v197.ambientSoundController[3],
@@ -1678,7 +1678,7 @@ LABEL_171:
             }
             HashTable::DestroyHashTableINIClass((INIClass *)&v197.ambientSoundController[3]); /*0x5e5394*/
           }
-          /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x5e53a0*/
+          /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x5e53a0*/
           v203 = 0; /*0x5e53ab*/
           Vector::Clear((int)v201); /*0x5e53b2*/
           *(unsigned int *)v200.__tail_0 = &off_7E1668; /*0x5e53be*/
@@ -2156,7 +2156,7 @@ LABEL_13:
   v197.nextArrayIndex = 0; /*0x5e441c*/
   v197.referenceCount = 0; /*0x5e4420*/
   LOWORD(v197.NeedsSaveOrLink) = 1; /*0x5e4424*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E4E78) */  /*0x5e442d*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E4E78) */  /*0x5e442d*/
   v197.owningHouseIndex = 10; /*0x5e4435*/
   v197.occupant = 0; /*0x5e443d*/
   v196.DeleteAndZero_field_0x08 = 0; /*0x5e4441*/
@@ -2255,7 +2255,7 @@ LABEL_13:
         }
       }
     }
-    /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E4DB8) */  /*0x5e46ee*/
+    /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E4DB8) */  /*0x5e46ee*/
     if ( v197.nextArrayIndex && BYTE1(v197.NeedsSaveOrLink) ) /*0x5e4704*/
     {
       __3_YAXPAX_Z((void *)v197.nextArrayIndex); /*0x5e470b*/
@@ -2265,7 +2265,7 @@ LABEL_13:
     goto LABEL_13; /*0x5e4704*/
   }
   free((void *)v197.ptr_4); /*0x5e4722*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E4DB8) */  /*0x5e4730*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E4DB8) */  /*0x5e4730*/
   if ( !v197.nextArrayIndex || !BYTE1(v197.NeedsSaveOrLink) ) /*0x5e4744*/
     return 0; /*0x5e4387*/
   __3_YAXPAX_Z((void *)v197.nextArrayIndex); /*0x5e474b*/

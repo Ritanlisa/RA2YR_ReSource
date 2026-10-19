@@ -311,7 +311,7 @@ int E4Recv_5ADD10::Map_Delete()
   unknown_libname_73(v9); /*0x5add33*/
   v9[1] = (void *)TimerGetTicks(); /*0x5add48*/
   v9[3] = 0; /*0x5add50*/
-  /* X11: vtable install elided (implicit via MapSelect virtuals 0x5add5b) */
+  /* X11: ptr_0 install elided (implicit via MapSelect virtuals 0x5add5b) */
   bool v2; // bl
   v2 = ((ScenarioClass *)&v7)->Load((int)this) == 0; /*0x5add71*/
   DeleteAndZero((ObjectClass *)v9); /*0x5add74*/
@@ -417,7 +417,7 @@ AbstractClass * * sub_68C050()
     {
       VectorClass::Construct(&v14, 0, 0); /*0x68c086*/
       v3 = 10; /*0x68c091*/
-      /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E4E78) */  /*0x68c096*/
+      /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E4E78) */  /*0x68c096*/
       v16 = 10; /*0x68c09e*/
       v15 = 0; /*0x68c0a2*/
       v4 = 0; /*0x68c0ac*/
@@ -492,7 +492,7 @@ LABEL_25:
         goto LABEL_25; /*0x68c19f*/
       }
 LABEL_29:
-      /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E4DB8) */  /*0x68c1ca*/
+      /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E4DB8) */  /*0x68c1ca*/
       if ( v14.Items ) /*0x68c1d9*/
       {
         if ( v14.IsAllocated[0] ) /*0x68c1e1*/
@@ -1520,7 +1520,7 @@ int Map_WorldDominationTour_20::Release(int a2, unsigned int * a3)
       do /*0x769eb7*/
       {
         ComPtr::Constructor(v6); /*0x769ea8*/
-        /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7F71C4) */  /*0x769ead*/
+        /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7F71C4) */  /*0x769ead*/
         v6 = (ComPtr *)((char *)v6 + 8); /*0x769eb3*/
         --v9; /*0x769eb6*/
       }
@@ -1545,7 +1545,7 @@ int Map_WorldDominationTour_20::Release(int a2, unsigned int * a3)
       do /*0x769e87*/
       {
         ComPtr::Constructor(v6); /*0x769e78*/
-        /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7F71C4) */  /*0x769e7d*/
+        /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7F71C4) */  /*0x769e7d*/
         v6 = (ComPtr *)((char *)v6 + 8); /*0x769e83*/
         --v7; /*0x769e86*/
       }
@@ -1600,7 +1600,7 @@ void * Map_WorldDominationTour_20::Constructor_0(rc_ptr_base * Block, char a2, v
       do /*0x76a63f*/
       {
         v5 = (ComPtr *)((char *)v5 - 8); /*0x76a62e*/
-        /* X11: vtable install elided (X67 star-deref, RHS g_var_5878c0) */  /*0x76a633*/
+        /* X11: ptr_0 install elided (X67 star-deref, RHS g_var_5878c0) */  /*0x76a633*/
         ComPtr::Release(v5); /*0x76a639*/
         --v7; /*0x76a63e*/
       }
@@ -1612,7 +1612,7 @@ void * Map_WorldDominationTour_20::Constructor_0(rc_ptr_base * Block, char a2, v
   }
   else
   {
-    /* X11: vtable install elided (X67 star-deref, RHS g_var_5878c0) */  /*0x76a65a*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_var_5878c0) */  /*0x76a65a*/
     ComPtr::Release(); /*0x76a660*/
     if ( (a2 & 1) != 0 ) /*0x76a668*/
       operator delete((this)); /*0x76a66b*/
@@ -2397,7 +2397,7 @@ unsigned int * Map_WorldDominationTour_20::Seek(unsigned int * a2, int a3, void 
 
   int v3 = *&a3_2->u32_4 + 8 * a3_2; // edi /*0x769cad*/
   ComPtr::Constructor((ComPtr *)a3_2); /*0x769cb2*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_var_5878c0) */  /*0x769cb7*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_var_5878c0) */  /*0x769cb7*/
   ComPtr::Set((ComPtr *)a3_2, v3->u32_4); /*0x769cc3*/
   return a3_2; /*0x769cca*/
 }
@@ -2430,7 +2430,7 @@ unsigned int * sub_769D70(unsigned int * a1, int a2)
 {
   a1[1] = a2; /*0x769d72*/
   a1[2] = 0; /*0x769d75*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_var_db7c4f) */  /*0x769d7c*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_var_db7c4f) */  /*0x769d7c*/
   return a1; /*0x769d82*/
 }
 } // namespace gamemd
@@ -2440,7 +2440,7 @@ namespace gamemd {
 VectorCursor * Map_WorldDominationTour_20::Constructor(unsigned int * Block, char a2, void *a3_1, void *a4)
 {
 
-  /* X11: vtable install elided (X67 star-deref, RHS g_var_db7c4f) */  /*0x769dc9*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_var_db7c4f) */  /*0x769dc9*/
   if ( (a2 & 1) != 0 ) /*0x769dcf*/
     __3_YAXPAX_Z(Block); /*0x769dd2*/
   return Block->__pad_0; /*0x769ddc*/
@@ -2609,7 +2609,7 @@ VectorClass_flat * Map_WorldDominationTour_20::QueryInterface(unsigned int * Blo
   void (__thiscall ***v3)(unsigned int, int); // ecx
 
   v3 = *(void (__thiscall ****)(unsigned int, int))&Block->__pad_004; /*0x76a5c3*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_var_18554b) */  /*0x76a5c6*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_var_18554b) */  /*0x76a5c6*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x76a5d0*/
   {
     (**v3)(v3, 3); /*0x76a5df*/
@@ -2637,7 +2637,7 @@ char sub_770C10(Map *aP0, int a1, int a2, void ** a3)
 {
 
   void *v3 = *&aP0->Width; // eax
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E8500) */
   if ( v3 && (aP0->u8_D) )
   {
     operator delete((v3)); /*0x76a6e8*/

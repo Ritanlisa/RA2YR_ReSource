@@ -566,7 +566,7 @@ char JumpjetLocomotionClass::ShortFunc_4CFD90(int a1)
 bool JumpjetLocomotionClass::DispatchVirtualCall_1(int a1)
 {
 
-  return *(unsigned char *)((*((int (**)(FootClass *))((unsigned int *)a1)[0]->vtable1 + 33))(((unsigned int *)a1)[0]) + 3367) == 0; /*0x4cfdbe*/
+  return *(unsigned char *)((*((int (**)(FootClass *))((unsigned int *)a1)[0]->ptr_4 + 33))(((unsigned int *)a1)[0]) + 3367) == 0; /*0x4cfdbe*/
 
 }
 

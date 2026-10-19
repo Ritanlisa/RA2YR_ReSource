@@ -16,7 +16,7 @@ unsigned int * E4Recv_69D870::sub_69D870(int a2, int a3)
   this->Capacity = a2; /*0x69d87e*/
   this->IsInitialized = 1; /*0x69d881*/
   this->IsAllocated = 0; /*0x69d885*/
-  /* X11: vtable install elided (implicit via VectorClass virtuals 0x69d888) */
+  /* X11: ptr_0 install elided (implicit via VectorClass virtuals 0x69d888) */
   if ( a2 ) /*0x69d88e*/
   {
     if ( a3 ) /*0x69d896*/

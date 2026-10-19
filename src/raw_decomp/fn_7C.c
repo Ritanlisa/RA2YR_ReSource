@@ -12396,7 +12396,7 @@ int __cdecl sub_7C9DBD(int a1, int a2, int a3)
 // ==== 0x007C9DD4  ObjectClass::_strtoxl  this=ObjectClass  sig=csp ====
 int __cdecl strtoxl(ObjectClass *this, unsigned __int8 **a2, int a3, int a4)
 {
-  unsigned __int8 vtable0; // bl
+  unsigned __int8 ptr_0; // bl
   unsigned __int8 *i; // esi
   int v7; // eax
   unsigned int v8; // ecx
@@ -12408,30 +12408,30 @@ int __cdecl strtoxl(ObjectClass *this, unsigned __int8 **a2, int a3, int a4)
   unsigned __int8 *v15; // [esp+14h] [ebp-4h]
 
   v13 = 0; /*0x7c9ddb*/
-  vtable0 = (unsigned __int8)this->AbstractClass; /*0x7c9de4*/
+  ptr_0 = (unsigned __int8)this->AbstractClass; /*0x7c9de4*/
   for ( i = (unsigned __int8 *)&this->AbstractClass + 1;
-        (int)SrcSizeInBytes <= 1 ? *((_BYTE *)off_87C590 + 2 * vtable0) & 8 : _isctype(vtable0, 8);
+        (int)SrcSizeInBytes <= 1 ? *((_BYTE *)off_87C590 + 2 * ptr_0) & 8 : _isctype(ptr_0, 8);
         ++i )
   {
-    vtable0 = *i; /*0x7c9e17*/
+    ptr_0 = *i; /*0x7c9e17*/
   }
   v14 = (char *)i; /*0x7c9e1f*/
-  if ( vtable0 == 45 ) /*0x7c9e22*/
+  if ( ptr_0 == 45 ) /*0x7c9e22*/
   {
     a4 |= 2u; /*0x7c9e24*/
 LABEL_10:
-    vtable0 = *i++; /*0x7c9e2f*/
+    ptr_0 = *i++; /*0x7c9e2f*/
     v14 = (char *)i; /*0x7c9e32*/
     goto LABEL_11; /*0x7c9e32*/
   }
-  if ( vtable0 == 43 ) /*0x7c9e2d*/
+  if ( ptr_0 == 43 ) /*0x7c9e2d*/
     goto LABEL_10; /*0x7c9e2d*/
 LABEL_11:
   if ( a3 >= 0 && a3 != 1 && a3 <= 36 ) /*0x7c9e4c*/
   {
     if ( !a3 ) /*0x7c9e57*/
     {
-      if ( vtable0 != 48 ) /*0x7c9e5c*/
+      if ( ptr_0 != 48 ) /*0x7c9e5c*/
       {
         a3 = 10; /*0x7c9e5e*/
 LABEL_26:
@@ -12439,19 +12439,19 @@ LABEL_26:
         while ( 1 ) /*0x7c9ea9*/
         {
           if ( (int)SrcSizeInBytes <= 1 ) /*0x7c9eb3*/
-            v7 = *((_BYTE *)off_87C590 + 2 * vtable0) & 4; /*0x7c9ec9*/
+            v7 = *((_BYTE *)off_87C590 + 2 * ptr_0) & 4; /*0x7c9ec9*/
           else
-            v7 = _isctype(vtable0, 4); /*0x7c9eb8*/
+            v7 = _isctype(ptr_0, 4); /*0x7c9eb8*/
           if ( v7 ) /*0x7c9ece*/
           {
-            v8 = (char)vtable0 - 48; /*0x7c9ed3*/
+            v8 = (char)ptr_0 - 48; /*0x7c9ed3*/
           }
           else
           {
             if ( (int)SrcSizeInBytes <= 1 ) /*0x7c9edf*/
-              v9 = *((_WORD *)off_87C590 + vtable0) & 0x103; /*0x7c9ef5*/
+              v9 = *((_WORD *)off_87C590 + ptr_0) & 0x103; /*0x7c9ef5*/
             else
-              v9 = _isctype(vtable0, 259); /*0x7c9ee3*/
+              v9 = _isctype(ptr_0, 259); /*0x7c9ee3*/
             if ( !v9 ) /*0x7c9ef9*/
             {
 LABEL_44:
@@ -12480,7 +12480,7 @@ LABEL_44:
                 return -v13; /*0x7c9fc1*/
               return v13; /*0x7c9fc7*/
             }
-            v8 = toupper((char)vtable0) - 55; /*0x7c9f07*/
+            v8 = toupper((char)ptr_0) - 55; /*0x7c9f07*/
           }
           if ( v8 >= a3 ) /*0x7c9f0d*/
             goto LABEL_44; /*0x7c9f0d*/
@@ -12490,7 +12490,7 @@ LABEL_44:
           else
             a4 |= 4u; /*0x7c9f29*/
           v10 = (unsigned __int8 *)v14++; /*0x7c9f38*/
-          vtable0 = *v10; /*0x7c9f3e*/
+          ptr_0 = *v10; /*0x7c9f3e*/
         }
       }
       if ( *i != 120 && *i != 88 ) /*0x7c9e6f*/
@@ -12500,9 +12500,9 @@ LABEL_44:
       }
       a3 = 16; /*0x7c9e7a*/
     }
-    if ( a3 == 16 && vtable0 == 48 && (*i == 120 || *i == 88) ) /*0x7c9e8f*/
+    if ( a3 == 16 && ptr_0 == 48 && (*i == 120 || *i == 88) ) /*0x7c9e8f*/
     {
-      vtable0 = i[1]; /*0x7c9e91*/
+      ptr_0 = i[1]; /*0x7c9e91*/
       v14 = (char *)(i + 2); /*0x7c9e96*/
     }
     goto LABEL_26; /*0x7c9e96*/
@@ -32188,7 +32188,7 @@ int __cdecl sub_7C9DBD(int a1, int a2, int a3)
 // ==== 0x007C9DD4  ObjectClass::_strtoxl  this=ObjectClass  sig=csp ====
 int __cdecl strtoxl(ObjectClass *this, unsigned __int8 **a2, int a3, int a4)
 {
-  unsigned __int8 vtable0; // bl
+  unsigned __int8 ptr_0; // bl
   unsigned __int8 *i; // esi
   int v7; // eax
   unsigned int v8; // ecx
@@ -32200,30 +32200,30 @@ int __cdecl strtoxl(ObjectClass *this, unsigned __int8 **a2, int a3, int a4)
   unsigned __int8 *v15; // [esp+14h] [ebp-4h]
 
   v13 = 0; /*0x7c9ddb*/
-  vtable0 = (unsigned __int8)this->AbstractClass; /*0x7c9de4*/
+  ptr_0 = (unsigned __int8)this->AbstractClass; /*0x7c9de4*/
   for ( i = (unsigned __int8 *)&this->AbstractClass + 1;
-        (int)SrcSizeInBytes <= 1 ? *((_BYTE *)off_87C590 + 2 * vtable0) & 8 : _isctype(vtable0, 8);
+        (int)SrcSizeInBytes <= 1 ? *((_BYTE *)off_87C590 + 2 * ptr_0) & 8 : _isctype(ptr_0, 8);
         ++i )
   {
-    vtable0 = *i; /*0x7c9e17*/
+    ptr_0 = *i; /*0x7c9e17*/
   }
   v14 = (char *)i; /*0x7c9e1f*/
-  if ( vtable0 == 45 ) /*0x7c9e22*/
+  if ( ptr_0 == 45 ) /*0x7c9e22*/
   {
     a4 |= 2u; /*0x7c9e24*/
 LABEL_10:
-    vtable0 = *i++; /*0x7c9e2f*/
+    ptr_0 = *i++; /*0x7c9e2f*/
     v14 = (char *)i; /*0x7c9e32*/
     goto LABEL_11; /*0x7c9e32*/
   }
-  if ( vtable0 == 43 ) /*0x7c9e2d*/
+  if ( ptr_0 == 43 ) /*0x7c9e2d*/
     goto LABEL_10; /*0x7c9e2d*/
 LABEL_11:
   if ( a3 >= 0 && a3 != 1 && a3 <= 36 ) /*0x7c9e4c*/
   {
     if ( !a3 ) /*0x7c9e57*/
     {
-      if ( vtable0 != 48 ) /*0x7c9e5c*/
+      if ( ptr_0 != 48 ) /*0x7c9e5c*/
       {
         a3 = 10; /*0x7c9e5e*/
 LABEL_26:
@@ -32231,19 +32231,19 @@ LABEL_26:
         while ( 1 ) /*0x7c9ea9*/
         {
           if ( (int)SrcSizeInBytes <= 1 ) /*0x7c9eb3*/
-            v7 = *((_BYTE *)off_87C590 + 2 * vtable0) & 4; /*0x7c9ec9*/
+            v7 = *((_BYTE *)off_87C590 + 2 * ptr_0) & 4; /*0x7c9ec9*/
           else
-            v7 = _isctype(vtable0, 4); /*0x7c9eb8*/
+            v7 = _isctype(ptr_0, 4); /*0x7c9eb8*/
           if ( v7 ) /*0x7c9ece*/
           {
-            v8 = (char)vtable0 - 48; /*0x7c9ed3*/
+            v8 = (char)ptr_0 - 48; /*0x7c9ed3*/
           }
           else
           {
             if ( (int)SrcSizeInBytes <= 1 ) /*0x7c9edf*/
-              v9 = *((_WORD *)off_87C590 + vtable0) & 0x103; /*0x7c9ef5*/
+              v9 = *((_WORD *)off_87C590 + ptr_0) & 0x103; /*0x7c9ef5*/
             else
-              v9 = _isctype(vtable0, 259); /*0x7c9ee3*/
+              v9 = _isctype(ptr_0, 259); /*0x7c9ee3*/
             if ( !v9 ) /*0x7c9ef9*/
             {
 LABEL_44:
@@ -32272,7 +32272,7 @@ LABEL_44:
                 return -v13; /*0x7c9fc1*/
               return v13; /*0x7c9fc7*/
             }
-            v8 = toupper((char)vtable0) - 55; /*0x7c9f07*/
+            v8 = toupper((char)ptr_0) - 55; /*0x7c9f07*/
           }
           if ( v8 >= a3 ) /*0x7c9f0d*/
             goto LABEL_44; /*0x7c9f0d*/
@@ -32282,7 +32282,7 @@ LABEL_44:
           else
             a4 |= 4u; /*0x7c9f29*/
           v10 = (unsigned __int8 *)v14++; /*0x7c9f38*/
-          vtable0 = *v10; /*0x7c9f3e*/
+          ptr_0 = *v10; /*0x7c9f3e*/
         }
       }
       if ( *i != 120 && *i != 88 ) /*0x7c9e6f*/
@@ -32292,9 +32292,9 @@ LABEL_44:
       }
       a3 = 16; /*0x7c9e7a*/
     }
-    if ( a3 == 16 && vtable0 == 48 && (*i == 120 || *i == 88) ) /*0x7c9e8f*/
+    if ( a3 == 16 && ptr_0 == 48 && (*i == 120 || *i == 88) ) /*0x7c9e8f*/
     {
-      vtable0 = i[1]; /*0x7c9e91*/
+      ptr_0 = i[1]; /*0x7c9e91*/
       v14 = (char *)(i + 2); /*0x7c9e96*/
     }
     goto LABEL_26; /*0x7c9e96*/

@@ -309,7 +309,7 @@ FireError TechnoClass::GetFireError(AbstractClass* target, int weapon_index, boo
 
 // 0x70ece0
 // G42.34 T4: 0x70ECE0 misattribution, asm-verified -- body touches only
-// [&this->vtable1/4/0x10/0x18/0x1C] (32B sub-object; float@0x10 = v0/max(v4,1) ramp)
+// [&this->ptr_4/4/0x10/0x18/0x1C] (32B sub-object; float@0x10 = v0/max(v4,1) ramp)
 {
   BulletClass *result; // eax
   void *ptr_0; // [esp+0h] [ebp-4h]
@@ -1358,7 +1358,7 @@ int TechnoClass::ClearScriptPlanningData() { return 0;
   (this->u32_2D) = 0; /*0x633e1a*/
   this->owningHouseIndex = 0; /*0x633e1d*/
   ptr_0 = this->ptr_4; /*0x633e20*/
-  /* X11: vtable install elided (implicit via class virtuals 0x633e23) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x633e23) — binary-proven install, was 0 */
   if ( ptr_0 && (this->u32_D) ) /*0x633e2d*/
   {
     operator delete((void *)(ptr_0)); /*0x633e33*/

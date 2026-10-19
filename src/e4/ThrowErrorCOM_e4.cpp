@@ -17,7 +17,7 @@ unsigned int * _com_error::ThrowErrorCOM_Helper(int a2, int a3, char a4)
   
   this->u32_C = 0; /*0x7dcdc7*/
   this->u32_4 = a2; /*0x7dcdcb*/
-  /* X11: vtable install elided (implicit via _com_error virtuals 0x7dcdd2) */
+  /* X11: ptr_0 install elided (implicit via _com_error virtuals 0x7dcdd2) */
   this->u32_8 = a3; /*0x7dcdda*/
   if ( a3 && a4 ) /*0x7dcde4*/
     (*(void (**)(int))(*(unsigned int *)a3 + 4))(a3); /*0x7dcde9*/

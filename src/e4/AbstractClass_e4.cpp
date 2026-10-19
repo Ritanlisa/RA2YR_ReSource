@@ -69,10 +69,10 @@ void AbstractClass::Initialize(TechnoClass * aP1, TechnoClass * aP2)
     {
       AbstractClass::Constructor(v4); /*0x438ec3*/
       v5[2].ptr_C = 0; /*0x438ecb*/
-      /* X11: vtable install elided (legacy slot spelling slot, RHS g_var_a979a8) */  /*0x438ece*/
-      /* X11: vtable install elided (legacy slot spelling slot, RHS g_var_a979a8) */  /*0x438ed4*/
-      /* X11: vtable install elided (legacy slot spelling slot, RHS g_var_a979a8) */  /*0x438edb*/
-      /* X11: vtable install elided (legacy slot spelling slot, RHS g_var_a979a8) */  /*0x438ee2*/
+      /* X11: ptr_0 install elided (legacy slot spelling slot, RHS g_var_a979a8) */  /*0x438ece*/
+      /* X11: ptr_0 install elided (legacy slot spelling slot, RHS g_var_a979a8) */  /*0x438ed4*/
+      /* X11: ptr_0 install elided (legacy slot spelling slot, RHS g_var_a979a8) */  /*0x438edb*/
+      /* X11: ptr_0 install elided (legacy slot spelling slot, RHS g_var_a979a8) */  /*0x438ee2*/
       v5[1].ptr_4 = 0; /*0x438ee9*/
       v5[1].ptr_8 = 0; /*0x438eec*/
       LOBYTE(v5[2].uniqueId) = 0; /*0x438eef*/
@@ -412,7 +412,7 @@ ObjectClass * * AbstractClass_getPathDirection(void * a1, void * a2, void * a3)
 namespace gamemd {
 unsigned int * AbstractClass::checkVisibility(char a2)
 {
-  /* X11: vtable install elided (implicit via MultiplayerGameModeInitializerBase virtuals 0x5d7fd9) */
+  /* X11: ptr_0 install elided (implicit via MultiplayerGameModeInitializerBase virtuals 0x5d7fd9) */
   if ( (a2 & 1) != 0 ) /*0x5d7fdf*/
     operator delete((this)); /*0x5d7fe2*/
   return &this->ptr_0; /*0x5d7fec*/
@@ -422,7 +422,7 @@ unsigned int * AbstractClass::checkVisibility(char a2)
 namespace gamemd {
 unsigned int * AbstractClass::updateVisibilityState(char a2)
 {
-  /* X11: vtable install elided (implicit via MultiplayerGameModeInitializerBase virtuals 0x5d8039) */
+  /* X11: ptr_0 install elided (implicit via MultiplayerGameModeInitializerBase virtuals 0x5d8039) */
   if ( (a2 & 1) != 0 ) /*0x5d803f*/
     operator delete((this)); /*0x5d8042*/
   return &this->ptr_0; /*0x5d804c*/
@@ -432,7 +432,7 @@ unsigned int * AbstractClass::updateVisibilityState(char a2)
 namespace gamemd {
 unsigned int * AbstractClass::processFogReveal(char a2)
 {
-  /* X11: vtable install elided (implicit via MultiplayerGameModeInitializerBase virtuals 0x5d8059) */
+  /* X11: ptr_0 install elided (implicit via MultiplayerGameModeInitializerBase virtuals 0x5d8059) */
   if ( (a2 & 1) != 0 ) /*0x5d805f*/
     operator delete((this)); /*0x5d8062*/
   return &this->ptr_0; /*0x5d806c*/
@@ -442,7 +442,7 @@ unsigned int * AbstractClass::processFogReveal(char a2)
 namespace gamemd {
 unsigned int * AbstractClass::checkShroudState(char a2)
 {
-  /* X11: vtable install elided (implicit via MultiplayerGameModeInitializerBase virtuals 0x5d8079) */
+  /* X11: ptr_0 install elided (implicit via MultiplayerGameModeInitializerBase virtuals 0x5d8079) */
   if ( (a2 & 1) != 0 ) /*0x5d807f*/
     operator delete((this)); /*0x5d8082*/
   return &this->ptr_0; /*0x5d808c*/
@@ -452,7 +452,7 @@ unsigned int * AbstractClass::checkShroudState(char a2)
 namespace gamemd {
 unsigned int * AbstractClass::updateShroudMap(char a2)
 {
-  /* X11: vtable install elided (implicit via MultiplayerGameModeInitializerBase virtuals 0x5d8099) */
+  /* X11: ptr_0 install elided (implicit via MultiplayerGameModeInitializerBase virtuals 0x5d8099) */
   if ( (a2 & 1) != 0 ) /*0x5d809f*/
     operator delete((this)); /*0x5d80a2*/
   return &this->ptr_0; /*0x5d80ac*/
@@ -700,10 +700,10 @@ namespace gamemd {
 int AbstractClass::DTOR(void *a1_1)
 {
 
-  /* X11: vtable install elided (implicit via AbstractClass virtuals 0x4101f0) */
-  /* X11: vtable install elided (implicit via AbstractClass virtuals 0x4101f6) */
-  /* X11: vtable install elided (implicit via AbstractClass virtuals 0x4101fd) */
-  /* X11: vtable install elided (implicit via AbstractClass virtuals 0x410204) */
+  /* X11: ptr_0 install elided (implicit via AbstractClass virtuals 0x4101f0) */
+  /* X11: ptr_0 install elided (implicit via AbstractClass virtuals 0x4101f6) */
+  /* X11: ptr_0 install elided (implicit via AbstractClass virtuals 0x4101fd) */
+  /* X11: ptr_0 install elided (implicit via AbstractClass virtuals 0x410204) */
   int result; // eax
   return result; /*0x41020b*/
 }
@@ -902,7 +902,7 @@ void AbstractClass::COM_Stub_Return0(int a1)
 namespace gamemd {
 Surface * AbstractClass::getObjectValue(char a2)
 {
-  /* X11: vtable install elided (implicit via Surface virtuals 0x4115d9) */
+  /* X11: ptr_0 install elided (implicit via Surface virtuals 0x4115d9) */
   if ( (a2 & 1) != 0 ) /*0x4115df*/
   operator delete((this)); /*0x4115e2*/
   return (gamemd::Surface *)((std::locale::facet *)this); /*0x4115ec*/
@@ -1158,7 +1158,7 @@ namespace gamemd {
 std::locale::facet * AbstractClass::setMapCoords(char a2)
 {
 
-  /* X11: vtable install elided (implicit via Animate virtuals 0x427279) */
+  /* X11: ptr_0 install elided (implicit via Animate virtuals 0x427279) */
   if ( (a2 & 1) != 0 ) /*0x42727f*/
     __3_YAXPAX_Z(this); /*0x427282*/
   return (std::locale::facet *)this; /*0x42728c*/
@@ -1244,7 +1244,7 @@ int AbstractClass::compareType(int a1)
 namespace gamemd {
 Blitter * AbstractClass::getTileIndex(char a2)
 {
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E5B88) */  /*0x499cc9*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E5B88) */  /*0x499cc9*/
   if ( (a2 & 1) != 0 ) /*0x499ccf*/
     operator delete((this)); /*0x499cd2*/
   return (gamemd::Blitter *)((std::locale::facet *)this); /*0x499cdc*/
@@ -1255,7 +1255,7 @@ Blitter * AbstractClass::getTileIndex(char a2)
 namespace gamemd {
 BlitPlainXlat * AbstractClass::setTileIndex(char a2)
 {
-  /* X11: vtable install elided (implicit via Blitter virtuals 0x499ce9) */
+  /* X11: ptr_0 install elided (implicit via Blitter virtuals 0x499ce9) */
   if ( (a2 & 1) != 0 ) /*0x499cef*/
     operator delete((this)); /*0x499cf2*/
   return (gamemd::BlitPlainXlat *)(this); /*0x499cfc*/
@@ -1266,7 +1266,7 @@ BlitPlainXlat * AbstractClass::setTileIndex(char a2)
 namespace gamemd {
 BlitTransXlat * AbstractClass::getOverlayType(char a2)
 {
-  /* X11: vtable install elided (implicit via Blitter virtuals 0x499d09) */
+  /* X11: ptr_0 install elided (implicit via Blitter virtuals 0x499d09) */
   if ( (a2 & 1) != 0 ) /*0x499d0f*/
     operator delete((this)); /*0x499d12*/
   return this; /*0x499d1c*/
@@ -1277,7 +1277,7 @@ BlitTransXlat * AbstractClass::getOverlayType(char a2)
 namespace gamemd {
 std::locale::facet * AbstractClass::setOverlayFlags(char a2)
 {
-  /* X11: vtable install elided (implicit via Blitter virtuals 0x499d29) */
+  /* X11: ptr_0 install elided (implicit via Blitter virtuals 0x499d29) */
   if ( (a2 & 1) != 0 ) /*0x499d2f*/
     operator delete((this)); /*0x499d32*/
   return this; /*0x499d3c*/
@@ -1288,7 +1288,7 @@ std::locale::facet * AbstractClass::setOverlayFlags(char a2)
 namespace gamemd {
 RLEBlitter * AbstractClass::clearOverlayFlags(char a2)
 {
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E5BA0) */  /*0x499da9*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E5BA0) */  /*0x499da9*/
   if ( (a2 & 1) != 0 ) /*0x499daf*/
     operator delete((this)); /*0x499db2*/
   return (std::locale::facet *)this; /*0x499dbc*/
@@ -1485,10 +1485,10 @@ int AbstractClass::COMStub_Ret450_151()
 namespace gamemd {
 MissionClass * AbstractClass::getWeaponRange(unsigned int * Block, char a2)
 {
-  /* X11: vtable install elided (implicit via MissionClass virtuals 0x5b3a63) */
-  /* X11: vtable install elided (implicit via MissionClass virtuals 0x5b3a69) */
-  /* X11: vtable install elided (implicit via MissionClass virtuals 0x5b3a70) */
-  /* X11: vtable install elided (implicit via MissionClass virtuals 0x5b3a77) */
+  /* X11: ptr_0 install elided (implicit via MissionClass virtuals 0x5b3a63) */
+  /* X11: ptr_0 install elided (implicit via MissionClass virtuals 0x5b3a69) */
+  /* X11: ptr_0 install elided (implicit via MissionClass virtuals 0x5b3a70) */
+  /* X11: ptr_0 install elided (implicit via MissionClass virtuals 0x5b3a77) */
   ((ObjectClass *)Block)->Dtor(); /*0x5b3a7e*/
   if ( (a2 & 1) != 0 ) /*0x5b3a88*/
     operator delete((Block)); /*0x5b3a8b*/
@@ -1860,7 +1860,7 @@ void AbstractClass::resetTeamState()
 namespace gamemd {
 FileClass * AbstractClass::processAITrigger(unsigned int * Block, char a2)
 {
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7F08BC) */  /*0x65c619*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7F08BC) */  /*0x65c619*/
   if ( (a2 & 1) != 0 ) /*0x65c61f*/
     operator delete((Block)); /*0x65c622*/
   return Block; /*0x65c62c*/

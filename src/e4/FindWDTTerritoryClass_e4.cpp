@@ -36,7 +36,7 @@ unsigned int * E4Recv_765380::sub_765380(unsigned int * a2, int a3)
   v4 = v7; /*0x7653ea*/
   a2[1] = v6; /*0x7653ef*/
   a2[2] = v4; /*0x7653f2*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7F6F9C) */  /*0x7653f5*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7F6F9C) */  /*0x7653f5*/
   return a2; /*0x7653ee*/
 
 }

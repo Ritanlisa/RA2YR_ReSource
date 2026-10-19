@@ -410,7 +410,7 @@ char Gap2Recv_70F1D0::DrawBuildingRangeIndicator(TechnoClass * aP1, int a3) {
   int v40; // [esp+144h] [ebp-10h] BYREF
   unsigned int v41[3]; // [esp+148h] [ebp-Ch] BYREF
 
-  v4 = (void **)(*((int (**)(ObjectClass *, unsigned int, unsigned int))this->vtable1 + 26))(this, 0, 0); /*0x70f1e0*/
+  v4 = (void **)(*((int (**)(ObjectClass *, unsigned int, unsigned int))this->ptr_4 + 26))(this, 0, 0); /*0x70f1e0*/
   if ( !v4 ) /*0x70f1e5*/
   {
     v4 = (void **)*((unsigned int *)this + 75); /*0x70f1eb*/
@@ -421,7 +421,7 @@ char Gap2Recv_70F1D0::DrawBuildingRangeIndicator(TechnoClass * aP1, int a3) {
         v5 = (AnimClass *)__2_YAPAXI_Z(0x1C8u); /*0x70f217*/
         if ( v5 ) /*0x70f21e*/
         {
-          v6 = (int *)(*((int (**)(ObjectClass *, unsigned int *))this->vtable1 + 18))(this, v41); /*0x70f239*/
+          v6 = (int *)(*((int (**)(ObjectClass *, unsigned int *))this->ptr_4 + 18))(this, v41); /*0x70f239*/
           v4 = AnimClass::ctor( /*0x70f24c*/
                  v5,
                  *(void **)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 184),

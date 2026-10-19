@@ -81,17 +81,17 @@ AbstractClass *__thiscall AbstractClass::Constructor(AbstractClass *this)
   char v2; // cl
 
   result = this; /*0x410170*/
-  this->vtable2 = &INoticeSink::`vftable'; /*0x410174*/
-  this->vtable3 = &INoticeSource::`vftable'; /*0x41017b*/
+  this->ptr_8 = &INoticeSink::`vftable'; /*0x410174*/
+  this->ptr_C = &INoticeSource::`vftable'; /*0x41017b*/
   this->nextArrayIndex = 0; /*0x410182*/
   this->referenceCount = 0; /*0x410185*/
   LOBYTE(this->NeedsSaveOrLink) = 0; /*0x410188*/
   v2 = this->abstractFlags & 0xF8; /*0x41018e*/
   result->uniqueId = -1; /*0x410191*/
-  result->vtable0 = &AbstractClass::`vftable'; /*0x410198*/
-  result->vtable1 = &AbstractClass::`vftable'; /*0x41019e*/
-  result->vtable2 = &AbstractClass::`vftable'; /*0x4101a5*/
-  result->vtable3 = &AbstractClass::`vftable'; /*0x4101ac*/
+  result->ptr_0 = &AbstractClass::`vftable'; /*0x410198*/
+  result->ptr_4 = &AbstractClass::`vftable'; /*0x41019e*/
+  result->ptr_8 = &AbstractClass::`vftable'; /*0x4101a5*/
+  result->ptr_C = &AbstractClass::`vftable'; /*0x4101ac*/
   LOBYTE(result->abstractFlags) = v2; /*0x4101b3*/
   return result; /*0x4101b6*/
 }
@@ -101,13 +101,13 @@ AbstractClass *__thiscall AbstractClass::Constructor(AbstractClass *this)
 // ==== 0x004101C0  AbstractClass::InitVtables  this=AbstractClass  sig=csp ====
 _DWORD *__thiscall AbstractClass::InitVtables(AbstractClass *this, int a2)
 {
-  this->vtable2 = &INoticeSink::`vftable'; /*0x4101c2*/
-  this->vtable3 = &INoticeSource::`vftable'; /*0x4101c9*/
-  this->vtable0 = &AbstractClass::`vftable'; /*0x4101d0*/
-  this->vtable1 = &AbstractClass::`vftable'; /*0x4101d6*/
-  this->vtable2 = &AbstractClass::`vftable'; /*0x4101dd*/
-  this->vtable3 = &AbstractClass::`vftable'; /*0x4101e4*/
-  return &this->vtable0; /*0x4101eb*/
+  this->ptr_8 = &INoticeSink::`vftable'; /*0x4101c2*/
+  this->ptr_C = &INoticeSource::`vftable'; /*0x4101c9*/
+  this->ptr_0 = &AbstractClass::`vftable'; /*0x4101d0*/
+  this->ptr_4 = &AbstractClass::`vftable'; /*0x4101d6*/
+  this->ptr_8 = &AbstractClass::`vftable'; /*0x4101dd*/
+  this->ptr_C = &AbstractClass::`vftable'; /*0x4101e4*/
+  return &this->ptr_0; /*0x4101eb*/
 }
 
 
@@ -117,10 +117,10 @@ int __thiscall AbstractClass::DTOR(AbstractClass *this)
 {
   int result; // eax
 
-  this->vtable0 = &AbstractClass::`vftable'; /*0x4101f0*/
-  this->vtable1 = &AbstractClass::`vftable'; /*0x4101f6*/
-  this->vtable2 = &AbstractClass::`vftable'; /*0x4101fd*/
-  this->vtable3 = &AbstractClass::`vftable'; /*0x410204*/
+  this->ptr_0 = &AbstractClass::`vftable'; /*0x4101f0*/
+  this->ptr_4 = &AbstractClass::`vftable'; /*0x4101f6*/
+  this->ptr_8 = &AbstractClass::`vftable'; /*0x4101fd*/
+  this->ptr_C = &AbstractClass::`vftable'; /*0x410204*/
   return result; /*0x41020b*/
 }
 
@@ -137,7 +137,7 @@ int __stdcall INoticeSink::Dispatch(AbstractClass *this)
 // ==== 0x00410220  AbstractClass::GetVtable3  this=AbstractClass  sig=csp ====
 int __stdcall AbstractClass::GetVtable3(AbstractClass *this)
 {
-  return (int)this->vtable3; /*0x410227*/
+  return (int)this->ptr_C; /*0x410227*/
 }
 
 
@@ -150,11 +150,11 @@ int __stdcall AbstractClass::GenerateUniqueID(AbstractClass *this)
   if ( dword_A8B230 ) /*0x410238*/
   {
     result = AbstractClass::updateAITimer(dword_A8B230); /*0x410246*/
-    this->vtable3 = (void *)result; /*0x41024f*/
+    this->ptr_C = (void *)result; /*0x41024f*/
   }
   else
   {
-    this->vtable3 = 0; /*0x410240*/
+    this->ptr_C = 0; /*0x410240*/
     return 0; /*0x41023e*/
   }
   return result; /*0x410243*/
@@ -182,14 +182,14 @@ int __thiscall AbstractClass::QueryInterface(AbstractClass *this)
   if ( !memcmp(iid, &IID_IRTTITypeInfo, 0x10u) ) /*0x4102ce*/
   {
     if ( thisa ) /*0x4102d6*/
-      p_vtable1 = &thisa->vtable1; /*0x4102d8*/
+      p_vtable1 = &thisa->ptr_4; /*0x4102d8*/
     else
       p_vtable1 = 0; /*0x4102dd*/
     *ppv = p_vtable1; /*0x4102df*/
   }
   if ( !*ppv ) /*0x4102e1*/
     return -2147467262; /*0x4102e6*/
-  (*((void (__stdcall **)(AbstractClass *))thisa->vtable0 + 1))(thisa); /*0x4102f2*/
+  (*((void (__stdcall **)(AbstractClass *))thisa->ptr_0 + 1))(thisa); /*0x4102f2*/
   return 0; /*0x41026e*/
 }
 
@@ -384,7 +384,7 @@ int __thiscall AbstractClass::GetCoordsEx(AbstractClass *this)
   _BYTE v3[12]; // [esp+4h] [ebp-Ch] BYREF
   _DWORD *v4; // [esp+14h] [ebp+4h]
 
-  v1 = (_DWORD *)(*((int (__thiscall **)(AbstractClass *, _BYTE *))this->vtable0 + 18))(this, v3); /*0x4104fe*/
+  v1 = (_DWORD *)(*((int (__thiscall **)(AbstractClass *, _BYTE *))this->ptr_0 + 18))(this, v3); /*0x4104fe*/
   *v4 = *v1; /*0x410508*/
   v4[1] = v1[1]; /*0x41050d*/
   v4[2] = v1[2]; /*0x410514*/
@@ -422,7 +422,7 @@ int __thiscall AbstractClass::GetCoords(AbstractClass *this)
   _BYTE v3[12]; // [esp+4h] [ebp-Ch] BYREF
   CoordStruct *out; // [esp+14h] [ebp+4h]
 
-  v1 = (int *)(*(int (__thiscall **)(AbstractClass *, _BYTE *))(this->vtable0 + 72))(this, v3); /*0x41054e*/
+  v1 = (int *)(*(int (__thiscall **)(AbstractClass *, _BYTE *))(this->ptr_0 + 72))(this, v3); /*0x41054e*/
   out->vfptr = (void *)*v1; /*0x410558*/
   out[1].vfptr = (void *)v1[1]; /*0x41055d*/
   out[2].vfptr = (void *)v1[2]; /*0x410564*/
@@ -462,10 +462,10 @@ int __thiscall AbstractClass::COMStub_8(AbstractClass *this)
 {
   char v3; // [esp+8h] [ebp+4h]
 
-  this->vtable0 = &AbstractClass::`vftable'; /*0x4105a9*/
-  this->vtable1 = &AbstractClass::`vftable'; /*0x4105af*/
-  this->vtable2 = &AbstractClass::`vftable'; /*0x4105b6*/
-  this->vtable3 = &AbstractClass::`vftable'; /*0x4105bd*/
+  this->ptr_0 = &AbstractClass::`vftable'; /*0x4105a9*/
+  this->ptr_4 = &AbstractClass::`vftable'; /*0x4105af*/
+  this->ptr_8 = &AbstractClass::`vftable'; /*0x4105b6*/
+  this->ptr_C = &AbstractClass::`vftable'; /*0x4105bd*/
   if ( (v3 & 1) != 0 ) /*0x4105c4*/
     __3_YAXPAX_Z(this); /*0x4105c7*/
   return (int)this; /*0x4105d1*/
@@ -3426,7 +3426,7 @@ int __thiscall VectorClass::RemoveObjectById(VectorClass *this)
   VectorClass *v2; // esi
   int v3; // eax
   int v4; // eax
-  char *vtable0; // ecx
+  char *ptr_0; // ecx
   char *v6; // ecx
   VectorClass *v7; // [esp+4h] [ebp-4h] BYREF
 
@@ -3439,11 +3439,11 @@ int __thiscall VectorClass::RemoveObjectById(VectorClass *this)
   v4 = (*(int (__thiscall **)(VectorClass *, VectorClass **))(v3 + 16))(this + 600, &v7); /*0x4137cb*/
   if ( v4 != -1 ) /*0x4137d1*/
   {
-    vtable0 = (char *)v2[1].vtable0; /*0x4137d3*/
-    if ( v4 < (int)vtable0 ) /*0x4137d8*/
+    ptr_0 = (char *)v2[1].ptr_0; /*0x4137d3*/
+    if ( v4 < (int)ptr_0 ) /*0x4137d8*/
     {
-      v6 = vtable0 - 1; /*0x4137da*/
-      for ( v2[1].vtable0 = v6; v4 < (int)v2[1].vtable0; *((_DWORD *)v2->Items + v4 - 1) = *((_DWORD *)v2->Items + v4) ) /*0x4137e0*/
+      v6 = ptr_0 - 1; /*0x4137da*/
+      for ( v2[1].ptr_0 = v6; v4 < (int)v2[1].ptr_0; *((_DWORD *)v2->Items + v4 - 1) = *((_DWORD *)v2->Items + v4) ) /*0x4137e0*/
         ++v4; /*0x4137e5*/
     }
   }
@@ -3818,7 +3818,7 @@ int __userpurge AircraftClass::Construct@<eax>(int this@<ecx>, int a2@<edi>, int
   const IID *v7; // ebx
   int v8; // eax
   int v9; // eax
-  int vtable2; // ebp
+  int ptr_8; // ebp
   _DWORD *v11; // edi
   int i; // eax
   _DWORD *v13; // edx
@@ -3878,15 +3878,15 @@ int __userpurge AircraftClass::Construct@<eax>(int this@<ecx>, int a2@<edi>, int
     goto LABEL_25; /*0x413ea0*/
   if ( g_BuildingLoadQueue_Array.? ) /*0x413ea8*/
   {
-    vtable2 = (int)g_BuildingLoadQueue_Array.?; /*0x413eb1*/
+    ptr_8 = (int)g_BuildingLoadQueue_Array.?; /*0x413eb1*/
     if ( (int)g_BuildingLoadQueue_Array.? < 0 ) /*0x413eb5*/
       return this; /*0x413eb5*/
   }
   else
   {
-    vtable2 = 10; /*0x413eaa*/
+    ptr_8 = 10; /*0x413eaa*/
   }
-  v11 = (_DWORD *)__2_YAPAXI_Z(8 * ((int)g_BuildingLoadQueue_Array.? + vtable2)); /*0x413ecb*/
+  v11 = (_DWORD *)__2_YAPAXI_Z(8 * ((int)g_BuildingLoadQueue_Array.? + ptr_8)); /*0x413ecb*/
   if ( v11 ) /*0x413ed2*/
   {
     for ( i = 0; i < (int)g_BuildingLoadQueue_Array.?; v11[2 * i - 1] = v13[1] ) /*0x413ee7*/
@@ -3896,7 +3896,7 @@ int __userpurge AircraftClass::Construct@<eax>(int this@<ecx>, int a2@<edi>, int
     }
     __3_YAXPAX_Z(g_BuildingLoadQueue_Array.TechnoTypeClass); /*0x413f10*/
     g_BuildingLoadQueue_Array.TechnoTypeClass = v11; /*0x413f1f*/
-    g_BuildingLoadQueue_Array.? = (char *)g_BuildingLoadQueue_Array.? + vtable2; /*0x413f25*/
+    g_BuildingLoadQueue_Array.? = (char *)g_BuildingLoadQueue_Array.? + ptr_8; /*0x413f25*/
     g_BuildingLoadQueue_Array.? = 0; /*0x413f2a*/
 LABEL_25:
     *((_DWORD *)g_BuildingLoadQueue_Array.TechnoTypeClass + 2 * (int)g_BuildingLoadQueue_Array.?) = ppv; /*0x413f34*/
@@ -3987,8 +3987,8 @@ int __thiscall AircraftClass::Destruct(AircraftClass *this)
   int *team; // ecx
   int v5; // eax
   int Vtable3; // eax
-  char *vtable1; // ebx
-  _DWORD *vtable0; // ebp
+  char *ptr_4; // ebx
+  _DWORD *ptr_0; // ebp
   int v9; // esi
   AircraftClass *v10; // edx
   char *v11; // ecx
@@ -4035,7 +4035,7 @@ int __thiscall AircraftClass::Destruct(AircraftClass *this)
     while ( v5 < dword_A8E3A0 ); /*0x414171*/
   }
   Vtable3 = AbstractClass::GetVtable3(p_vtable1); /*0x414174*/
-  vtable1 = (char *)g_BuildingLoadQueue_Array.?; /*0x414179*/
+  ptr_4 = (char *)g_BuildingLoadQueue_Array.?; /*0x414179*/
   v16 = (AircraftClass *)Vtable3; /*0x41417f*/
   if ( g_BuildingLoadQueue_Array.? ) /*0x414185*/
   {
@@ -4046,16 +4046,16 @@ int __thiscall AircraftClass::Destruct(AircraftClass *this)
         (size_t)g_BuildingLoadQueue_Array.?,
         8u,
         (_CoreCrtNonSecureSearchSortCompareFunction)CompareFunction);
-      vtable1 = (char *)g_BuildingLoadQueue_Array.?; /*0x4141a7*/
+      ptr_4 = (char *)g_BuildingLoadQueue_Array.?; /*0x4141a7*/
       g_BuildingLoadQueue_Array.? = 0; /*0x4141b0*/
       LOBYTE(g_BuildingLoadQueue_Array.?) = 1; /*0x4141b6*/
     }
-    vtable0 = g_BuildingLoadQueue_Array.TechnoTypeClass; /*0x4141bd*/
-    v9 = (int)vtable1; /*0x4141c3*/
+    ptr_0 = g_BuildingLoadQueue_Array.TechnoTypeClass; /*0x4141bd*/
+    v9 = (int)ptr_4; /*0x4141c3*/
     while ( v9 > 0 ) /*0x4141c7*/
     {
-      v10 = (AircraftClass *)vtable0[2 * (v9 / 2)]; /*0x4141d4*/
-      v11 = (char *)&vtable0[2 * (v9 / 2)]; /*0x4141d8*/
+      v10 = (AircraftClass *)ptr_0[2 * (v9 / 2)]; /*0x4141d4*/
+      v11 = (char *)&ptr_0[2 * (v9 / 2)]; /*0x4141d8*/
       if ( (int)v16 >= (int)v10 ) /*0x4141e0*/
       {
         if ( v10 == v16 ) /*0x4141ea*/
@@ -4066,18 +4066,18 @@ int __thiscall AircraftClass::Destruct(AircraftClass *this)
             if ( v12 != -1 ) /*0x41421e*/
             {
               v13 = v12 + 1; /*0x414220*/
-              if ( v13 < (int)vtable1 ) /*0x414223*/
+              if ( v13 < (int)ptr_4 ) /*0x414223*/
               {
                 do /*0x414242*/
                 {
                   v14 = (char *)g_BuildingLoadQueue_Array.TechnoTypeClass + 8 * v13++; /*0x41422b*/
                   *(v14 - 2) = *v14; /*0x414231*/
                   *(v14 - 1) = v14[1]; /*0x414237*/
-                  vtable1 = (char *)g_BuildingLoadQueue_Array.?; /*0x41423a*/
+                  ptr_4 = (char *)g_BuildingLoadQueue_Array.?; /*0x41423a*/
                 }
                 while ( v13 < (int)g_BuildingLoadQueue_Array.? ); /*0x414242*/
               }
-              g_BuildingLoadQueue_Array.? = vtable1 - 1; /*0x41424f*/
+              g_BuildingLoadQueue_Array.? = ptr_4 - 1; /*0x41424f*/
               *((_DWORD *)g_BuildingLoadQueue_Array.TechnoTypeClass + 2 * (int)g_BuildingLoadQueue_Array.?) = 0; /*0x414255*/
               *((_DWORD *)g_BuildingLoadQueue_Array.TechnoTypeClass + 2 * (int)g_BuildingLoadQueue_Array.? + 1) = 0; /*0x414263*/
               g_BuildingLoadQueue_Array.? = 0; /*0x414267*/
@@ -4085,7 +4085,7 @@ int __thiscall AircraftClass::Destruct(AircraftClass *this)
           }
           break; /*0x414267*/
         }
-        vtable0 = v11 + 8; /*0x4141ec*/
+        ptr_0 = v11 + 8; /*0x4141ec*/
         v9 += -1 - v9 / 2; /*0x4141f4*/
       }
       else
@@ -4113,12 +4113,12 @@ int __thiscall AircraftClass::QueryInterface(AircraftClass *this, AbstractClass 
       if ( a2 ) /*0x4142bf*/
       {
         *ppv = &a2[48]; /*0x4142c8*/
-        (*((void (__stdcall **)(AbstractClass *))a2->vtable0 + 1))(a2); /*0x4142cf*/
+        (*((void (__stdcall **)(AbstractClass *))a2->ptr_0 + 1))(a2); /*0x4142cf*/
         return 0; /*0x4142d7*/
       }
       *ppv = 0; /*0x4142dc*/
     }
-    (*((void (__stdcall **)(AbstractClass *))a2->vtable0 + 1))(a2); /*0x4142e4*/
+    (*((void (__stdcall **)(AbstractClass *))a2->ptr_0 + 1))(a2); /*0x4142e4*/
     return 0; /*0x4142e7*/
   }
   return result; /*0x4142d4*/
@@ -4179,13 +4179,13 @@ int __thiscall AircraftClass::MoveTo(AircraftClass *this, _DWORD *a2, int a3)
     }
   }
   v8 = a3; /*0x41438f*/
-  if ( FootClass::DispatchInput((double *)&this->vtable0, (int)&v15, a3) ) /*0x41439b*/
+  if ( FootClass::DispatchInput((double *)&this->ptr_0, (int)&v15, a3) ) /*0x41439b*/
   {
     v10 = this->Type; /*0x4143a8*/
     if ( !*(_BYTE *)(v10 + 560) /*0x4143e1*/
       || !*(_BYTE *)(v10 + 3594)
-      || *(_DWORD *)(*(int (__thiscall **)(AircraftClass *, _DWORD))(this->vtable0 + 1016))(this, 0)
-      && *(_BYTE *)(*(_DWORD *)(*(int (__thiscall **)(AircraftClass *, _DWORD))(this->vtable0 + 1016))(this, 0) + 327) )
+      || *(_DWORD *)(*(int (__thiscall **)(AircraftClass *, _DWORD))(this->ptr_0 + 1016))(this, 0)
+      && *(_BYTE *)(*(_DWORD *)(*(int (__thiscall **)(AircraftClass *, _DWORD))(this->ptr_0 + 1016))(this, 0) + 327) )
     {
       this->isALoaner[0] = 1; /*0x4143eb*/
     }
@@ -4203,10 +4203,10 @@ int __thiscall AircraftClass::MoveTo(AircraftClass *this, _DWORD *a2, int a3)
     v13 = this->Type; /*0x41443e*/
     this->animation[0] = 0; /*0x414444*/
     v14 = (*(int (__thiscall **)(int))(*(_DWORD *)v13 + 188))(v13); /*0x414456*/
-    if ( (*(int (__thiscall **)(AircraftClass *))(this->vtable0 + 456))(this) == v14 ) /*0x414464*/
-      result = (*(int (__thiscall **)(AircraftClass *, _DWORD, int))(this->vtable0 + 1348))(this, 0, 1072693248); /*0x414471*/
+    if ( (*(int (__thiscall **)(AircraftClass *))(this->ptr_0 + 456))(this) == v14 ) /*0x414464*/
+      result = (*(int (__thiscall **)(AircraftClass *, _DWORD, int))(this->ptr_0 + 1348))(this, 0, 1072693248); /*0x414471*/
     else
-      result = (*(int (__thiscall **)(AircraftClass *, _DWORD, _DWORD))(this->vtable0 + 1348))(this, 0, 0); /*0x41448a*/
+      result = (*(int (__thiscall **)(AircraftClass *, _DWORD, _DWORD))(this->ptr_0 + 1348))(this, 0, 0); /*0x41448a*/
     LOBYTE(result) = 1; /*0x414479*/
   }
   else
@@ -4241,7 +4241,7 @@ int __userpurge AircraftClass::Draw@<eax>(
   FootClass *v17; // esi
   int v18; // eax
   int v19; // edi
-  void *vtable0; // edx
+  void *ptr_0; // edx
   int *v21; // eax
   int v22; // ecx
   int v23; // eax
@@ -4274,7 +4274,7 @@ int __userpurge AircraftClass::Draw@<eax>(
   int v51; // [esp+40h] [ebp-D0h]
   char v52[4]; // [esp+50h] [ebp-C0h] BYREF
   int v53; // [esp+54h] [ebp-BCh] BYREF
-  char *vtable1; // [esp+58h] [ebp-B8h] BYREF
+  char *ptr_4; // [esp+58h] [ebp-B8h] BYREF
   int v55[2]; // [esp+5Ch] [ebp-B4h] BYREF
   int v56; // [esp+64h] [ebp-ACh] BYREF
   int v57; // [esp+68h] [ebp-A8h]
@@ -4287,7 +4287,7 @@ int __userpurge AircraftClass::Draw@<eax>(
   AudioConfig v64; // [esp+E8h] [ebp-28h] BYREF
 
   v8 = v7; /*0x4144bf*/
-  if ( stru_A8EB00.?[391] || !g_hWnd || ((int)dword_A8B230->vtable0 & 0x1000) == 0 ) /*0x4144de*/
+  if ( stru_A8EB00.?[391] || !g_hWnd || ((int)dword_A8B230->ptr_0 & 0x1000) == 0 ) /*0x4144de*/
     goto LABEL_9; /*0x4144de*/
   if ( !*(_DWORD *)(v7 + 1652) ) /*0x4144e4*/
     WinAPI::Wrapper(-2147467261); /*0x4144f3*/
@@ -4315,12 +4315,12 @@ LABEL_9:
       v15 = (*(int (__thiscall **)(int, int))(*(_DWORD *)v8 + 204))(v8, 1); /*0x4145ae*/
     v16 = *(_DWORD *)(v8 + 1336) % *(_DWORD *)(*(_DWORD *)(v15 + 180) + 8); /*0x4145bd*/
     v17 = (FootClass *)this; /*0x4145c0*/
-    vtable1 = (char *)this->?; /*0x4145cb*/
+    ptr_4 = (char *)this->?; /*0x4145cb*/
     v18 = *(_DWORD *)(v8 + 1652); /*0x4145cf*/
     v19 = v16; /*0x4145d7*/
-    vtable0 = this->FootClass; /*0x4145d9*/
+    ptr_0 = this->FootClass; /*0x4145d9*/
     v62 = v19; /*0x4145db*/
-    v53 = (int)vtable0; /*0x4145df*/
+    v53 = (int)ptr_0; /*0x4145df*/
     if ( !v18 ) /*0x4145e3*/
       WinAPI::Wrapper(-2147467261); /*0x4145ea*/
     v21 = (int *)(*(int (__stdcall **)(_DWORD, int *, int))(**(_DWORD **)(v8 + 1652) + 44))( /*0x4145fd*/
@@ -4329,14 +4329,14 @@ LABEL_9:
                    a3);
     v22 = *v21; /*0x414600*/
     v23 = v21[1]; /*0x414606*/
-    vtable1 += v22; /*0x41460f*/
+    ptr_4 += v22; /*0x41460f*/
     v24 = v23 + v55[0]; /*0x414613*/
     v25 = *(_DWORD *)(v8 + 280); /*0x414615*/
     v55[0] = v24; /*0x41461d*/
     if ( v25 && *(_BYTE *)(*(_DWORD *)(v8 + 1732) + 3580) ) /*0x414629*/
     {
       DB = CCINIClass::GetDB((CCINIClass *)(v8 + 276)); /*0x414639*/
-      (*(void (__thiscall **)(int, char **, int))(*(_DWORD *)DB + 276))(DB, &vtable1, a5); /*0x41464f*/
+      (*(void (__thiscall **)(int, char **, int))(*(_DWORD *)DB + 276))(DB, &ptr_4, a5); /*0x41464f*/
     }
     (*(void (__thiscall **)(int, char *))(*(_DWORD *)v8 + 440))(v8, v52); /*0x41465f*/
     v27 = *(_DWORD *)(v8 + 1732); /*0x414665*/
@@ -4365,7 +4365,7 @@ LABEL_9:
     v32 = (*(int (__thiscall **)(int))(*(_DWORD *)v8 + 192))(v8); /*0x414739*/
     v33 = *(_DWORD *)(v8 + 160); /*0x414741*/
     v61 = *(_DWORD *)(v8 + 156); /*0x414744*/
-    HIBYTE(vtable1) = v32; /*0x41474c*/
+    HIBYTE(ptr_4) = v32; /*0x41474c*/
     v34 = *(_DWORD *)(v8 + 164); /*0x414750*/
     *(_BYTE *)(v8 + 1718) = 0; /*0x414759*/
     v62 = v33; /*0x414760*/
@@ -4421,7 +4421,7 @@ LABEL_33:
       (*(void (__thiscall **)(int, int))(*(_DWORD *)v8 + 460))(v8, v31); /*0x4148ab*/
       v43 = v55[0]; /*0x4148b9*/
       v51 = v55[1]; /*0x4148bd*/
-      *(_BYTE *)(v8 + 1718) = HIBYTE(vtable1); /*0x4148be*/
+      *(_BYTE *)(v8 + 1718) = HIBYTE(ptr_4); /*0x4148be*/
       TacticalClass::AddToDrawQueue((TacticalClass *)g_TacticalClass_Instance, v8, v43, v51); /*0x4148cc*/
       LightningStorm::IsActive(); /*0x4148d1*/
       (*(int (__thiscall **)(int))(*(_DWORD *)v8 + 456))(v8); /*0x4148f9*/
@@ -4466,7 +4466,7 @@ int __thiscall AircraftClass::ProcessMissionTimeout(AircraftClass *this)
   int *team; // ecx
   char *MissionControl; // eax
   int v4; // eax
-  int (__thiscall **vtable0)(AircraftClass *, int, int *, _DWORD); // edi
+  int (__thiscall **ptr_0)(AircraftClass *, int, int *, _DWORD); // edi
   int v7; // eax
   void *v8; // edi
   int v9; // eax
@@ -4480,12 +4480,12 @@ int __thiscall AircraftClass::ProcessMissionTimeout(AircraftClass *this)
       goto LABEL_12; /*0x414ae5*/
     if ( *(_DWORD *)&dword_A8B238 ) /*0x414afb*/
     {
-      vtable0 = (int (__thiscall **)(AircraftClass *, int, int *, _DWORD))this->FootClass; /*0x414b03*/
+      ptr_0 = (int (__thiscall **)(AircraftClass *, int, int *, _DWORD))this->FootClass; /*0x414b03*/
       v10 = this->?[0]; /*0x414b09*/
       v11 = this->?[1]; /*0x414b15*/
       v12 = this->?[2]; /*0x414b20*/
-      v7 = vtable0[241](this, 64, &v10, 0); /*0x414b24*/
-      ((void (__thiscall *)(AircraftClass *, int))vtable0[242])(this, v7); /*0x414b2d*/
+      v7 = ptr_0[241](this, 64, &v10, 0); /*0x414b24*/
+      ((void (__thiscall *)(AircraftClass *, int))ptr_0[242])(this, v7); /*0x414b2d*/
     }
     if ( !this->? ) /*0x414b33*/
     {
@@ -4786,7 +4786,7 @@ int __thiscall UnitClass::Mission_Harvest(AircraftClass *this)
   int DB; // eax
   int v14; // edi
   int v15; // eax
-  void (__thiscall **vtable0)(AircraftClass *, void *, int); // ebx
+  void (__thiscall **ptr_0)(AircraftClass *, void *, int); // ebx
   __int16 *WaypointCoords; // eax
   void *v18; // eax
   void *NearbyCell; // eax
@@ -4816,7 +4816,7 @@ int __thiscall UnitClass::Mission_Harvest(AircraftClass *this)
          || (v3 = this->?[0],
              v4 = this->?[1],
              v5 = this->?[2],
-             v6 = (_DWORD *)(*((int (__thiscall **)(AbstractClass *, _BYTE *))movementDestination->vtable0 + 18))(
+             v6 = (_DWORD *)(*((int (__thiscall **)(AbstractClass *, _BYTE *))movementDestination->ptr_0 + 18))(
                               movementDestination,
                               v35),
              v3 == *v6)
@@ -4841,13 +4841,13 @@ int __thiscall UnitClass::Mission_Harvest(AircraftClass *this)
               && (v15 = *(_DWORD *)(DB + 1492)) != 0
               && *TechnoClass::GetWaypointCoords(*(TechnoClass **)(v15 + 36), &v30) != g_AircraftStatusFlag )
             {
-              vtable0 = (void (__thiscall **)(AircraftClass *, void *, int))this->FootClass; /*0x415375*/
+              ptr_0 = (void (__thiscall **)(AircraftClass *, void *, int))this->FootClass; /*0x415375*/
               WaypointCoords = (__int16 *)TechnoClass::GetWaypointCoords( /*0x415381*/
                                             *(TechnoClass **)(*(_DWORD *)(v14 + 1492) + 36),
                                             &v31);
               v18 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], WaypointCoords); /*0x41538c*/
               NearbyCell = InfantryClass::FindNearbyCell((InfantryClass *)this, (int)v18); /*0x415394*/
-              vtable0[288](this, NearbyCell, 1); /*0x41539c*/
+              ptr_0[288](this, NearbyCell, 1); /*0x41539c*/
             }
             else
             {
@@ -4959,7 +4959,7 @@ int __thiscall TechnoClass::ApplyIronCurtain(TechnoClass *this)
   double v1; // st7
   int v3; // ebx
   AbstractClass *target; // eax
-  void *vtable0; // edi
+  void *ptr_0; // edi
   int v6; // eax
   int v7; // eax
   int v8; // edx
@@ -4990,9 +4990,9 @@ int __thiscall TechnoClass::ApplyIronCurtain(TechnoClass *this)
           0,
           0,
           0);
-        vtable0 = this->RadioClass; /*0x415678*/
+        ptr_0 = this->RadioClass; /*0x415678*/
         v6 = (*((int (__thiscall **)(TechnoClass *, _DWORD))this->RadioClass + 254))(this, 0); /*0x41567e*/
-        (*((void (__thiscall **)(TechnoClass *, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD))vtable0 + 290))( /*0x415697*/
+        (*((void (__thiscall **)(TechnoClass *, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD))ptr_0 + 290))( /*0x415697*/
           this,
           0,
           0,
@@ -5054,7 +5054,7 @@ int __thiscall TechnoClass::ReturnToBase(TechnoClass *this)
 {
   double v1; // st7
   int v3; // edi
-  void *vtable0; // edi
+  void *ptr_0; // edi
   int v5; // eax
   int v6; // eax
   int *v7; // eax
@@ -5070,9 +5070,9 @@ int __thiscall TechnoClass::ReturnToBase(TechnoClass *this)
                        + 180) )
   {
     (*((void (__thiscall **)(TechnoClass *, _DWORD, _DWORD, _DWORD, _DWORD))this->RadioClass + 291))(this, 0, 0, 0, 0); /*0x4157f7*/
-    vtable0 = this->RadioClass; /*0x4157fd*/
+    ptr_0 = this->RadioClass; /*0x4157fd*/
     v5 = (*((int (__thiscall **)(TechnoClass *, _DWORD))this->RadioClass + 254))(this, 0); /*0x415803*/
-    (*((void (__thiscall **)(TechnoClass *, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD))vtable0 + 290))( /*0x41581c*/
+    (*((void (__thiscall **)(TechnoClass *, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD))ptr_0 + 290))( /*0x41581c*/
       this,
       0,
       0,
@@ -5122,21 +5122,21 @@ int __thiscall TechnoClass::ReturnToBaseAndReload(TechnoClass *this)
     {
       if ( ObjectClass::ComputeDistance(this, target) <= *(_DWORD *)&dword_8871E0->__pad_240[780] ) /*0x415940*/
       {
-        (*(void (__thiscall **)(TechnoClass *, int, _DWORD))(this->vtable0 + 488))(this, 27, 0); /*0x41594a*/
+        (*(void (__thiscall **)(TechnoClass *, int, _DWORD))(this->ptr_0 + 488))(this, 27, 0); /*0x41594a*/
         --*((_BYTE *)this + 1747); /*0x415950*/
       }
       return 3; /*0x415956*/
     }
     else
     {
-      (*(void (__thiscall **)(TechnoClass *, int, int))(this->vtable0 + 1152))(this, target, 1); /*0x41591f*/
+      (*(void (__thiscall **)(TechnoClass *, int, int))(this->ptr_0 + 1152))(this, target, 1); /*0x41591f*/
       return 3; /*0x415925*/
     }
   }
   else
   {
-    (*(void (__thiscall **)(TechnoClass *, _DWORD, int))(this->vtable0 + 1152))(this, 0, 1); /*0x4158f3*/
-    (*(void (__thiscall **)(TechnoClass *, int, _DWORD))(this->vtable0 + 488))(this, 4, 0); /*0x415901*/
+    (*(void (__thiscall **)(TechnoClass *, _DWORD, int))(this->ptr_0 + 1152))(this, 0, 1); /*0x4158f3*/
+    (*(void (__thiscall **)(TechnoClass *, int, _DWORD))(this->ptr_0 + 488))(this, 4, 0); /*0x415901*/
     return 3; /*0x415907*/
   }
 }
@@ -5156,9 +5156,9 @@ int __thiscall TechnoClass::ScatterFromThreat(TechnoClass *this)
   {
     *((_BYTE *)this + 1746) = 0; /*0x415a0a*/
 LABEL_9:
-    (*(void (__thiscall **)(TechnoClass *, _DWORD))(this->vtable0 + 968))(this, 0); /*0x415a11*/
-    (*(void (__thiscall **)(TechnoClass *, _DWORD, int))(this->vtable0 + 1152))(this, 0, 1); /*0x415a25*/
-    (*(void (__thiscall **)(TechnoClass *, int, _DWORD))(this->vtable0 + 488))(this, 4, 0); /*0x415a33*/
+    (*(void (__thiscall **)(TechnoClass *, _DWORD))(this->ptr_0 + 968))(this, 0); /*0x415a11*/
+    (*(void (__thiscall **)(TechnoClass *, _DWORD, int))(this->ptr_0 + 1152))(this, 0, 1); /*0x415a25*/
+    (*(void (__thiscall **)(TechnoClass *, int, _DWORD))(this->ptr_0 + 488))(this, 4, 0); /*0x415a33*/
     return 5; /*0x415a33*/
   }
   if ( ObjectClass::ComputeDistance(this, target) > *(_DWORD *)&dword_8871E0->__pad_240[780] ) /*0x41599d*/
@@ -5167,7 +5167,7 @@ LABEL_9:
     *((_BYTE *)this + 1746) = 0; /*0x4159a5*/
     if ( v3 > 0 ) /*0x4159ae*/
     {
-      (*(void (__thiscall **)(TechnoClass *, int, _DWORD))(this->vtable0 + 488))(this, 26, 0); /*0x4159b8*/
+      (*(void (__thiscall **)(TechnoClass *, int, _DWORD))(this->ptr_0 + 488))(this, 26, 0); /*0x4159b8*/
       return 5; /*0x4159c7*/
     }
     goto LABEL_9; /*0x4159ae*/
@@ -5191,7 +5191,7 @@ int __thiscall AircraftClass::ProcessReturnToBase(AircraftClass *this)
   double v1; // st7
   HouseClass *owner; // ecx
   int *TransitionCount; // eax
-  void (__thiscall **vtable0)(AircraftClass *, void *, int); // edi
+  void (__thiscall **ptr_0)(AircraftClass *, void *, int); // edi
   void *v6; // eax
   int v8; // [esp+0h] [ebp-Ch]
   __int16 v9[2]; // [esp+4h] [ebp-8h] BYREF
@@ -5220,9 +5220,9 @@ int __thiscall AircraftClass::ProcessReturnToBase(AircraftClass *this)
                        v8);
     if ( *(_DWORD *)v9 != g_AircraftStatusFlag ) /*0x415aa7*/
     {
-      vtable0 = (void (__thiscall **)(AircraftClass *, void *, int))this->FootClass; /*0x415ab8*/
+      ptr_0 = (void (__thiscall **)(AircraftClass *, void *, int))this->FootClass; /*0x415ab8*/
       v6 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v9); /*0x415ac6*/
-      vtable0[288](this, v6, 1); /*0x415ace*/
+      ptr_0[288](this, v6, 1); /*0x415ace*/
       return 3; /*0x415ade*/
     }
   }
@@ -5823,7 +5823,7 @@ int __thiscall AircraftClass::DeployWithAnim(
           v17);
   if ( v11 == 4 ) /*0x4165f6*/
   {
-    (*(void (__thiscall **)(AircraftClass *, _DWORD))(this->vtable0 + 952))(this, 0); /*0x416613*/
+    (*(void (__thiscall **)(AircraftClass *, _DWORD))(this->ptr_0 + 952))(this, 0); /*0x416613*/
     if ( *(int *)(this->Type + 1852) > 0 ) /*0x416627*/
     {
       v13 = (AnimClass *)__2_YAPAXI_Z(0x1C8u); /*0x416633*/
@@ -5833,12 +5833,12 @@ int __thiscall AircraftClass::DeployWithAnim(
                        + 4
                        * ((unsigned int)Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink)
                         % *(_DWORD *)(this->Type + 1852)));
-        v15 = (int *)(*(int (__thiscall **)(AircraftClass *, _BYTE *))(this->vtable0 + 164))(this, v18); /*0x41667b*/
+        v15 = (int *)(*(int (__thiscall **)(AircraftClass *, _BYTE *))(this->ptr_0 + 164))(this, v18); /*0x41667b*/
         AnimClass::ctor(v13, v14, v15, 0, 1, (void *)0x600, 0, 0); /*0x416685*/
       }
     }
-    if ( !(*(unsigned __int8 (__thiscall **)(AircraftClass *, int))(this->vtable0 + 988))(this, a6) ) /*0x416694*/
-      (*(void (__thiscall **)(AircraftClass *))(this->vtable0 + 248))(this); /*0x4166a3*/
+    if ( !(*(unsigned __int8 (__thiscall **)(AircraftClass *, int))(this->ptr_0 + 988))(this, a6) ) /*0x416694*/
+      (*(void (__thiscall **)(AircraftClass *))(this->ptr_0 + 248))(this); /*0x4166a3*/
   }
   else if ( v11 == 5 ) /*0x4165f9*/
   {
@@ -6058,7 +6058,7 @@ void __thiscall FootClass::MissionMoveCarryallLand(FootClass *this)
   int v8; // ecx
   int v9; // edx
   int v10; // eax
-  void (__thiscall **vtable0)(FootClass *, void *, int); // esi
+  void (__thiscall **ptr_0)(FootClass *, void *, int); // esi
   void *v12; // eax
   LPVOID ppv; // [esp+4Ch] [ebp-20h] BYREF
   CellClass *passengers; // [esp+50h] [ebp-1Ch] BYREF
@@ -6137,9 +6137,9 @@ void __thiscall FootClass::MissionMoveCarryallLand(FootClass *this)
     }
     else
     {
-      vtable0 = (void (__thiscall **)(FootClass *, void *, int))this->TechnoClass; /*0x416d10*/
+      ptr_0 = (void (__thiscall **)(FootClass *, void *, int))this->TechnoClass; /*0x416d10*/
       v12 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], (__int16 *)&ppv); /*0x416d1e*/
-      vtable0[288](this, v12, 1); /*0x416d26*/
+      ptr_0[288](this, v12, 1); /*0x416d26*/
     }
   }
   else
@@ -6446,7 +6446,7 @@ int __thiscall AircraftClass::GetCursorOverObject(AircraftClass *this, int *a2, 
   int v7; // ebx
   Object *v8; // eax
   _DWORD *v9; // eax
-  int (__thiscall **vtable0)(AircraftClass *, int **, _DWORD, int *); // eax
+  int (__thiscall **ptr_0)(AircraftClass *, int **, _DWORD, int *); // eax
   int v11; // ebp
   int v12; // ecx
   int v13; // edx
@@ -6488,9 +6488,9 @@ int __thiscall AircraftClass::GetCursorOverObject(AircraftClass *this, int *a2, 
     v9 = (_DWORD *)(*(int (__thiscall **)(int *, char *))(*v4 + 72))(v4, v18); /*0x417d89*/
     LOWORD(a3) = *v9 / 256; /*0x417d9e*/
     HIWORD(a3) = v9[1] / 256; /*0x417db7*/
-    vtable0 = (int (__thiscall **)(AircraftClass *, int **, _DWORD, int *))this->FootClass; /*0x417dc0*/
+    ptr_0 = (int (__thiscall **)(AircraftClass *, int **, _DWORD, int *))this->FootClass; /*0x417dc0*/
     a2 = a3; /*0x417dc4*/
-    v7 = vtable0[28](this, &a2, 0, v3); /*0x417dcb*/
+    v7 = ptr_0[28](this, &a2, 0, v3); /*0x417dcb*/
   }
 LABEL_18:
   if ( v7 == 4 ) /*0x417dd0*/
@@ -6601,7 +6601,7 @@ int __thiscall AircraftClass::Mission_Attack(AircraftClass *this)
   char v6; // al
   int ammo; // eax
   int v8; // eax
-  int vtable0; // edi
+  int ptr_0; // edi
   void *SpiralMoveTarget; // eax
   int v11; // eax
   int v12; // eax
@@ -6775,7 +6775,7 @@ int __thiscall AircraftClass::MissionDispatch(AircraftClass *this, _DWORD *a2, i
   void (__thiscall **v6)(AircraftClass *, void *, int); // ebx
   void *ClosestPlacementCell; // eax
   AbstractClass *v8; // edi
-  int (__thiscall **vtable0)(AircraftClass *, int, void *); // ebx
+  int (__thiscall **ptr_0)(AircraftClass *, int, void *); // ebx
   void *v10; // eax
   AbstractClass *movementDestination; // ecx
   AircraftTypeClass *Type; // eax
@@ -6852,11 +6852,11 @@ LABEL_4:
         case 18:
           FootClass::MissionDispatch((FootClass *)a2, a3, (_DWORD *)a3, (int)a4, v17); /*0x4191ff*/
           v8 = (AbstractClass *)*a4; /*0x419204*/
-          if ( *a4 && (*((int (__thiscall **)(AbstractClass *))v8->vtable0 + 11))(v8) == 6 ) /*0x419214*/
+          if ( *a4 && (*((int (__thiscall **)(AbstractClass *))v8->ptr_0 + 11))(v8) == 6 ) /*0x419214*/
           {
-            vtable0 = (int (__thiscall **)(AircraftClass *, int, void *))this->FootClass; /*0x419216*/
+            ptr_0 = (int (__thiscall **)(AircraftClass *, int, void *))this->FootClass; /*0x419216*/
             v10 = AbstractClass::IsTechnoType(v8); /*0x41921a*/
-            if ( vtable0[158](this, 15, v10) != 1 ) /*0x41922d*/
+            if ( ptr_0[158](this, 15, v10) != 1 ) /*0x41922d*/
               return 10; /*0x419238*/
             (*((void (__thiscall **)(AircraftClass *, int, _DWORD))this->FootClass + 122))(this, 7, 0); /*0x419241*/
           }
@@ -6878,7 +6878,7 @@ LABEL_4:
           if ( !movementDestination ) /*0x4192b6*/
             return 1; /*0x4192b6*/
           if ( this->Type[1].TechnoTypeClass[317] /*0x4192ee*/
-            && (*((int (__thiscall **)(AbstractClass *))movementDestination->vtable0 + 11))(movementDestination) == 11
+            && (*((int (__thiscall **)(AbstractClass *))movementDestination->ptr_0 + 11))(movementDestination) == 11
             && this->? == (AbstractClass *)(*((int (__thiscall **)(AircraftClass *))this->FootClass + 111))(this) )
           {
             return 1; /*0x4192f7*/
@@ -7073,7 +7073,7 @@ void *__thiscall FindSpiralMoveTarget(TechnoClass *this, int a2)
     return 0; /*0x4197d7*/
   if ( (*(int (__stdcall **)(char *))(this->health + 24))((char *)this + 1728) ) /*0x4197ea*/
     return (void *)a2; /*0x4197f9*/
-  v5 = (*(int (__thiscall **)(TechnoClass *, _DWORD))(this->vtable0 + 360))(this, 0); /*0x41980c*/
+  v5 = (*(int (__thiscall **)(TechnoClass *, _DWORD))(this->ptr_0 + 360))(this, 0); /*0x41980c*/
   v6 = (*(int (__thiscall **)(int, int *))(*(_DWORD *)a2 + 72))(a2, &v40); /*0x419813*/
   v38 = *(double *)v6; /*0x419818*/
   v7 = *(_DWORD *)(v6 + 8); /*0x419829*/
@@ -7526,7 +7526,7 @@ void *__thiscall TechnoClass::FindClosestPlacementCell(TechnoClass *this)
   int v8; // ebp
   int TileIndex; // eax
   int v10; // eax
-  int (__thiscall **vtable0)(TechnoClass *, _DWORD *); // eax
+  int (__thiscall **ptr_0)(TechnoClass *, _DWORD *); // eax
   __int16 *v12; // eax
   __int64 v13; // rax
   int v15; // eax
@@ -7624,10 +7624,10 @@ void *__thiscall TechnoClass::FindClosestPlacementCell(TechnoClass *this)
       {
         if ( v30 < 256 ) /*0x41a311*/
         {
-          vtable0 = (int (__thiscall **)(TechnoClass *, _DWORD *))this->RadioClass; /*0x41a327*/
+          ptr_0 = (int (__thiscall **)(TechnoClass *, _DWORD *))this->RadioClass; /*0x41a327*/
           v35 = 0; /*0x41a334*/
           v36 = 0; /*0x41a339*/
-          v12 = (__int16 *)vtable0[110](this, &v39); /*0x41a33e*/
+          v12 = (__int16 *)ptr_0[110](this, &v39); /*0x41a33e*/
           v29 = MapClass::GetTileIndex((MapClass *)&stru_87F5F0.__pad_58[416], v12, 0, 0); /*0x41a351*/
           v13 = ((__int64 (__thiscall *)(TechnoClass *, int *))*((_DWORD *)this->RadioClass + 110))(this, &v38); /*0x41a35a*/
           *(_DWORD *)v37 = *LayerClass::Pathfinding_Find( /*0x41a37c*/
@@ -7757,7 +7757,7 @@ char *__thiscall AircraftClass::CheckLandingClearance(AircraftClass *this, int a
 int __thiscall AircraftClass::GetMissionTimer(AircraftClass *this)
 {
   int v2; // edi
-  void (__thiscall **vtable0)(AircraftClass *, int, _DWORD); // eax
+  void (__thiscall **ptr_0)(AircraftClass *, int, _DWORD); // eax
   char *MissionControl; // eax
   int result; // eax
   void (__thiscall **v6)(AircraftClass *, CellClass *, int); // edi
@@ -7781,9 +7781,9 @@ int __thiscall AircraftClass::GetMissionTimer(AircraftClass *this)
     {
       if ( this->? ) /*0x41a5f3*/
       {
-        vtable0 = (void (__thiscall **)(AircraftClass *, int, _DWORD))this->FootClass; /*0x41a5fd*/
+        ptr_0 = (void (__thiscall **)(AircraftClass *, int, _DWORD))this->FootClass; /*0x41a5fd*/
         this->AircraftClass_field_bool_6D4 = 1; /*0x41a605*/
-        vtable0[122](this, 2, 0); /*0x41a60c*/
+        ptr_0[122](this, 2, 0); /*0x41a60c*/
       }
       MissionControl = MissionClass::GetMissionControl((MissionClass *)this); /*0x41a614*/
       LOWORD(result) = Math::RoundToInt(*((double *)MissionControl + 2) * 900.0); /*0x41a622*/
@@ -8143,7 +8143,7 @@ int __thiscall AircraftClass::RevealSight(AircraftClass *this, int a2, int a3)
   HouseClass *v8; // edx
   int result; // eax
   int v10; // ebx
-  int (__thiscall **vtable0)(AircraftClass *); // edx
+  int (__thiscall **ptr_0)(AircraftClass *); // edx
   int v12; // eax
   int v13; // ecx
   int v14; // edx
@@ -8173,15 +8173,15 @@ LABEL_4:
   }
   if ( v4 ) /*0x41ae19*/
     goto LABEL_4; /*0x41ae19*/
-  result = (int)dword_A8B230->vtable0; /*0x41aeaa*/
-  if ( ((int)dword_A8B230->vtable0 & 0x1000) != 0 ) /*0x41aeaf*/
+  result = (int)dword_A8B230->ptr_0; /*0x41aeaa*/
+  if ( ((int)dword_A8B230->ptr_0 & 0x1000) != 0 ) /*0x41aeaf*/
   {
     v10 = *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 244); /*0x41aec5*/
     v17 = this->?[0]; /*0x41aecd*/
     v18 = this->?[1]; /*0x41aed6*/
-    vtable0 = (int (__thiscall **)(AircraftClass *))this->FootClass; /*0x41aeda*/
+    ptr_0 = (int (__thiscall **)(AircraftClass *))this->FootClass; /*0x41aeda*/
     v19 = this->?[2]; /*0x41aedf*/
-    v12 = vtable0[114](this); /*0x41aee3*/
+    v12 = ptr_0[114](this); /*0x41aee3*/
     MapClass::RevealArea1( /*0x41af1a*/
       (MapClass *)&stru_87F5F0.__pad_58[416],
       &v17,
@@ -8447,7 +8447,7 @@ int __stdcall AircraftClass::LoadFromStream(AircraftClass *this, LPSTREAM pStm)
   int v10; // edi
   int v11; // ebp
   int v12; // edi
-  int vtable2; // eax
+  int ptr_8; // eax
 
   v2 = this; /*0x41b432*/
   p_vtable1 = &this->?; /*0x41b43a*/
@@ -8497,12 +8497,12 @@ int __stdcall AircraftClass::LoadFromStream(AircraftClass *this, LPSTREAM pStm)
     }
     (*(void (__stdcall **)(int))(*(_DWORD *)v10 + 8))(v10); /*0x41b52e*/
     v12 = (*((int (__stdcall **)(void **))*p_vtable1 + 4))(p_vtable1); /*0x41b53d*/
-    vtable2 = (int)g_BuildingLoadQueue_Array.?; /*0x41b53f*/
+    ptr_8 = (int)g_BuildingLoadQueue_Array.?; /*0x41b53f*/
     if ( (int)g_BuildingLoadQueue_Array.? + 1 <= (int)g_BuildingLoadQueue_Array.? ) /*0x41b548*/
       goto LABEL_18; /*0x41b548*/
     if ( !g_BuildingLoadQueue_Array.? ) /*0x41b54c*/
-      vtable2 = 10; /*0x41b54e*/
-    if ( BuildingTypeClass::Enqueue((int)&g_BuildingLoadQueue_Array, vtable2) ) /*0x41b559*/
+      ptr_8 = 10; /*0x41b54e*/
+    if ( BuildingTypeClass::Enqueue((int)&g_BuildingLoadQueue_Array, ptr_8) ) /*0x41b559*/
     {
 LABEL_18:
       *((_DWORD *)g_BuildingLoadQueue_Array.TechnoTypeClass + 2 * (int)g_BuildingLoadQueue_Array.?) = v12; /*0x41b56d*/
@@ -9586,10 +9586,10 @@ int __thiscall Vector3::Magnitude(int *this)
 // ==== 0x0041C3F0  BulletClass::NormalizeZeroVector  this=BulletClass  sig=csp ====
 void __thiscall sub_41C3F0(double *this)
 {
-  if ( *this == 0.0 && this->vtable2 == 0.0 && this->vtable3 == 0.0 ) /*0x41c41d*/
+  if ( *this == 0.0 && this->ptr_8 == 0.0 && this->ptr_C == 0.0 ) /*0x41c41d*/
   {
     *(_DWORD *)this = 0; /*0x41c41f*/
-    this->vtable2 = 1079574528; /*0x41c425*/
+    this->ptr_8 = 1079574528; /*0x41c425*/
   }
 }
 
@@ -9657,7 +9657,7 @@ char *__thiscall AbstractClass::processCleanup(AbstractClass *this, char a2)
     v4 = (char *)this - 4; /*0x41c4a1*/
     v5 = 3 * v3; /*0x41c4a4*/
     v6 = v3 - 1; /*0x41c4a7*/
-    v7 = &this->vtable0 + v5; /*0x41c4a8*/
+    v7 = &this->ptr_0 + v5; /*0x41c4a8*/
     if ( v6 >= 0 ) /*0x41c4ab*/
     {
       v8 = v6 + 1; /*0x41c4ae*/
@@ -9718,9 +9718,9 @@ char __thiscall BuildingTypeClass_Enqueue(int this, int a2)
 int __thiscall BuildingTypeClass::Dequeue(BuildingTypeClass *this, int *a2)
 {
   int result; // eax
-  char *vtable0; // edi
+  char *ptr_0; // edi
   int v5; // ebx
-  int vtable1; // ecx
+  int ptr_4; // ecx
   int v7; // esi
 
   result = (int)this->?; /*0x41c593*/
@@ -9732,26 +9732,26 @@ int __thiscall BuildingTypeClass::Dequeue(BuildingTypeClass *this, int *a2)
       this->? = 0; /*0x41c5b8*/
       LOBYTE(this->?) = 1; /*0x41c5bf*/
     }
-    vtable0 = (char *)this->TechnoTypeClass; /*0x41c5c9*/
+    ptr_0 = (char *)this->TechnoTypeClass; /*0x41c5c9*/
     v5 = *a2; /*0x41c5cb*/
-    vtable1 = (int)this->?; /*0x41c5cd*/
-    if ( vtable1 <= 0 ) /*0x41c5d2*/
+    ptr_4 = (int)this->?; /*0x41c5cd*/
+    if ( ptr_4 <= 0 ) /*0x41c5d2*/
       return 0; /*0x41c5fe*/
     while ( 1 ) /*0x41c5db*/
     {
-      v7 = *(_DWORD *)&vtable0[8 * (vtable1 / 2)]; /*0x41c5db*/
+      v7 = *(_DWORD *)&ptr_0[8 * (ptr_4 / 2)]; /*0x41c5db*/
       if ( v7 <= v5 ) /*0x41c5e3*/
       {
         if ( v7 == v5 ) /*0x41c5e9*/
-          return (int)&vtable0[8 * (vtable1 / 2)]; /*0x41c603*/
-        vtable0 += 8 * (vtable1 / 2) + 8; /*0x41c5eb*/
-        vtable1 += -1 - vtable1 / 2; /*0x41c5f3*/
+          return (int)&ptr_0[8 * (ptr_4 / 2)]; /*0x41c603*/
+        ptr_0 += 8 * (ptr_4 / 2) + 8; /*0x41c5eb*/
+        ptr_4 += -1 - ptr_4 / 2; /*0x41c5f3*/
       }
       else
       {
-        vtable1 /= 2; /*0x41c5e5*/
+        ptr_4 /= 2; /*0x41c5e5*/
       }
-      if ( vtable1 <= 0 ) /*0x41c5f7*/
+      if ( ptr_4 <= 0 ) /*0x41c5f7*/
         return 0; /*0x41c5f7*/
     }
   }
@@ -10552,10 +10552,10 @@ AbstractClass *__thiscall AbstractClass::Create(AbstractClass *this)
   int v2; // eax
 
   AbstractClass::Constructor(this); /*0x41d303*/
-  this->vtable0 = &AirstrikeClass::`vftable'; /*0x41d308*/
-  this->vtable1 = &AirstrikeClass::`vftable'; /*0x41d30e*/
-  this->vtable2 = &AirstrikeClass::`vftable'; /*0x41d315*/
-  this->vtable3 = &AirstrikeClass::`vftable'; /*0x41d31c*/
+  this->ptr_0 = &AirstrikeClass::`vftable'; /*0x41d308*/
+  this->ptr_4 = &AirstrikeClass::`vftable'; /*0x41d30e*/
+  this->ptr_8 = &AirstrikeClass::`vftable'; /*0x41d315*/
+  this->ptr_C = &AirstrikeClass::`vftable'; /*0x41d31c*/
   if ( dword_889FC8 < dword_889FC0 /*0x41d359*/
     || (byte_889FC5 || !dword_889FC0)
     && dword_889FCC > 0
@@ -11727,7 +11727,7 @@ char __thiscall TriggerClass::EvaluateCondition(int this, TriggerClass *a2, _DWO
   bool v7; // dl
   TriggerClass *v8; // edi
   char result; // al
-  void *vtable0; // eax
+  void *ptr_0; // eax
   int referenceCount; // eax
   int v12; // eax
   int v13; // eax
@@ -11790,17 +11790,17 @@ LABEL_28:
       goto LABEL_36; /*0x41e840*/
     goto LABEL_34; /*0x41e840*/
   }
-  vtable0 = dword_A8B230[43].vtable0; /*0x41e7f4*/
-  if ( !vtable0 ) /*0x41e7fc*/
+  ptr_0 = dword_A8B230[43].ptr_0; /*0x41e7f4*/
+  if ( !ptr_0 ) /*0x41e7fc*/
   {
 LABEL_34:
     if ( *(_BYTE *)(this + 210) ) /*0x41e842*/
       goto LABEL_36; /*0x41e84a*/
     return 0; /*0x41e852*/
   }
-  if ( vtable0 != (void *)1 ) /*0x41e800*/
+  if ( ptr_0 != (void *)1 ) /*0x41e800*/
   {
-    if ( vtable0 != (void *)2 ) /*0x41e805*/
+    if ( ptr_0 != (void *)2 ) /*0x41e805*/
       goto LABEL_36; /*0x41e805*/
     goto LABEL_28; /*0x41e805*/
   }
@@ -13035,17 +13035,17 @@ AbstractClass *__thiscall AbstractClass::Constructor(AbstractClass *this)
   char v2; // cl
 
   result = this; /*0x410170*/
-  this->vtable2 = &INoticeSink::`vftable'; /*0x410174*/
-  this->vtable3 = &INoticeSource::`vftable'; /*0x41017b*/
+  this->ptr_8 = &INoticeSink::`vftable'; /*0x410174*/
+  this->ptr_C = &INoticeSource::`vftable'; /*0x41017b*/
   this->nextArrayIndex = 0; /*0x410182*/
   this->referenceCount = 0; /*0x410185*/
   LOBYTE(this->NeedsSaveOrLink) = 0; /*0x410188*/
   v2 = this->abstractFlags & 0xF8; /*0x41018e*/
   result->uniqueId = -1; /*0x410191*/
-  result->vtable0 = &AbstractClass::`vftable'; /*0x410198*/
-  result->vtable1 = &AbstractClass::`vftable'; /*0x41019e*/
-  result->vtable2 = &AbstractClass::`vftable'; /*0x4101a5*/
-  result->vtable3 = &AbstractClass::`vftable'; /*0x4101ac*/
+  result->ptr_0 = &AbstractClass::`vftable'; /*0x410198*/
+  result->ptr_4 = &AbstractClass::`vftable'; /*0x41019e*/
+  result->ptr_8 = &AbstractClass::`vftable'; /*0x4101a5*/
+  result->ptr_C = &AbstractClass::`vftable'; /*0x4101ac*/
   LOBYTE(result->abstractFlags) = v2; /*0x4101b3*/
   return result; /*0x4101b6*/
 }
@@ -13055,13 +13055,13 @@ AbstractClass *__thiscall AbstractClass::Constructor(AbstractClass *this)
 // ==== 0x004101C0  AbstractClass::InitVtables  this=AbstractClass  sig=csp ====
 _DWORD *__thiscall AbstractClass::InitVtables(AbstractClass *this, int a2)
 {
-  this->vtable2 = &INoticeSink::`vftable'; /*0x4101c2*/
-  this->vtable3 = &INoticeSource::`vftable'; /*0x4101c9*/
-  this->vtable0 = &AbstractClass::`vftable'; /*0x4101d0*/
-  this->vtable1 = &AbstractClass::`vftable'; /*0x4101d6*/
-  this->vtable2 = &AbstractClass::`vftable'; /*0x4101dd*/
-  this->vtable3 = &AbstractClass::`vftable'; /*0x4101e4*/
-  return &this->vtable0; /*0x4101eb*/
+  this->ptr_8 = &INoticeSink::`vftable'; /*0x4101c2*/
+  this->ptr_C = &INoticeSource::`vftable'; /*0x4101c9*/
+  this->ptr_0 = &AbstractClass::`vftable'; /*0x4101d0*/
+  this->ptr_4 = &AbstractClass::`vftable'; /*0x4101d6*/
+  this->ptr_8 = &AbstractClass::`vftable'; /*0x4101dd*/
+  this->ptr_C = &AbstractClass::`vftable'; /*0x4101e4*/
+  return &this->ptr_0; /*0x4101eb*/
 }
 
 
@@ -13071,10 +13071,10 @@ int __thiscall AbstractClass::DTOR(AbstractClass *this)
 {
   int result; // eax
 
-  this->vtable0 = &AbstractClass::`vftable'; /*0x4101f0*/
-  this->vtable1 = &AbstractClass::`vftable'; /*0x4101f6*/
-  this->vtable2 = &AbstractClass::`vftable'; /*0x4101fd*/
-  this->vtable3 = &AbstractClass::`vftable'; /*0x410204*/
+  this->ptr_0 = &AbstractClass::`vftable'; /*0x4101f0*/
+  this->ptr_4 = &AbstractClass::`vftable'; /*0x4101f6*/
+  this->ptr_8 = &AbstractClass::`vftable'; /*0x4101fd*/
+  this->ptr_C = &AbstractClass::`vftable'; /*0x410204*/
   return result; /*0x41020b*/
 }
 
@@ -13091,7 +13091,7 @@ int __stdcall INoticeSink::Dispatch(AbstractClass *this)
 // ==== 0x00410220  AbstractClass::GetVtable3  this=AbstractClass  sig=csp ====
 int __stdcall AbstractClass::GetVtable3(AbstractClass *this)
 {
-  return (int)this->vtable3; /*0x410227*/
+  return (int)this->ptr_C; /*0x410227*/
 }
 
 
@@ -13104,11 +13104,11 @@ int __stdcall AbstractClass::GenerateUniqueID(AbstractClass *this)
   if ( dword_A8B230 ) /*0x410238*/
   {
     result = AbstractClass::updateAITimer(dword_A8B230); /*0x410246*/
-    this->vtable3 = (void *)result; /*0x41024f*/
+    this->ptr_C = (void *)result; /*0x41024f*/
   }
   else
   {
-    this->vtable3 = 0; /*0x410240*/
+    this->ptr_C = 0; /*0x410240*/
     return 0; /*0x41023e*/
   }
   return result; /*0x410243*/
@@ -13136,14 +13136,14 @@ int __thiscall AbstractClass::QueryInterface(AbstractClass *this)
   if ( !memcmp(iid, &IID_IRTTITypeInfo, 0x10u) ) /*0x4102ce*/
   {
     if ( thisa ) /*0x4102d6*/
-      p_vtable1 = &thisa->vtable1; /*0x4102d8*/
+      p_vtable1 = &thisa->ptr_4; /*0x4102d8*/
     else
       p_vtable1 = 0; /*0x4102dd*/
     *ppv = p_vtable1; /*0x4102df*/
   }
   if ( !*ppv ) /*0x4102e1*/
     return -2147467262; /*0x4102e6*/
-  (*((void (__stdcall **)(AbstractClass *))thisa->vtable0 + 1))(thisa); /*0x4102f2*/
+  (*((void (__stdcall **)(AbstractClass *))thisa->ptr_0 + 1))(thisa); /*0x4102f2*/
   return 0; /*0x41026e*/
 }
 
@@ -13338,7 +13338,7 @@ int __thiscall AbstractClass::GetCoordsEx(AbstractClass *this)
   _BYTE v3[12]; // [esp+4h] [ebp-Ch] BYREF
   _DWORD *v4; // [esp+14h] [ebp+4h]
 
-  v1 = (_DWORD *)(*((int (__thiscall **)(AbstractClass *, _BYTE *))this->vtable0 + 18))(this, v3); /*0x4104fe*/
+  v1 = (_DWORD *)(*((int (__thiscall **)(AbstractClass *, _BYTE *))this->ptr_0 + 18))(this, v3); /*0x4104fe*/
   *v4 = *v1; /*0x410508*/
   v4[1] = v1[1]; /*0x41050d*/
   v4[2] = v1[2]; /*0x410514*/
@@ -13376,7 +13376,7 @@ int __thiscall AbstractClass::GetCoords(AbstractClass *this)
   _BYTE v3[12]; // [esp+4h] [ebp-Ch] BYREF
   CoordStruct *out; // [esp+14h] [ebp+4h]
 
-  v1 = (int *)(*(int (__thiscall **)(AbstractClass *, _BYTE *))(this->vtable0 + 72))(this, v3); /*0x41054e*/
+  v1 = (int *)(*(int (__thiscall **)(AbstractClass *, _BYTE *))(this->ptr_0 + 72))(this, v3); /*0x41054e*/
   out->vfptr = (void *)*v1; /*0x410558*/
   out[1].vfptr = (void *)v1[1]; /*0x41055d*/
   out[2].vfptr = (void *)v1[2]; /*0x410564*/
@@ -13416,10 +13416,10 @@ int __thiscall AbstractClass::COMStub_8(AbstractClass *this)
 {
   char v3; // [esp+8h] [ebp+4h]
 
-  this->vtable0 = &AbstractClass::`vftable'; /*0x4105a9*/
-  this->vtable1 = &AbstractClass::`vftable'; /*0x4105af*/
-  this->vtable2 = &AbstractClass::`vftable'; /*0x4105b6*/
-  this->vtable3 = &AbstractClass::`vftable'; /*0x4105bd*/
+  this->ptr_0 = &AbstractClass::`vftable'; /*0x4105a9*/
+  this->ptr_4 = &AbstractClass::`vftable'; /*0x4105af*/
+  this->ptr_8 = &AbstractClass::`vftable'; /*0x4105b6*/
+  this->ptr_C = &AbstractClass::`vftable'; /*0x4105bd*/
   if ( (v3 & 1) != 0 ) /*0x4105c4*/
     __3_YAXPAX_Z(this); /*0x4105c7*/
   return (int)this; /*0x4105d1*/
@@ -16380,7 +16380,7 @@ int __thiscall VectorClass::RemoveObjectById(VectorClass *this)
   VectorClass *v2; // esi
   int v3; // eax
   int v4; // eax
-  char *vtable0; // ecx
+  char *ptr_0; // ecx
   char *v6; // ecx
   VectorClass *v7; // [esp+4h] [ebp-4h] BYREF
 
@@ -16393,11 +16393,11 @@ int __thiscall VectorClass::RemoveObjectById(VectorClass *this)
   v4 = (*(int (__thiscall **)(VectorClass *, VectorClass **))(v3 + 16))(this + 600, &v7); /*0x4137cb*/
   if ( v4 != -1 ) /*0x4137d1*/
   {
-    vtable0 = (char *)v2[1].vtable0; /*0x4137d3*/
-    if ( v4 < (int)vtable0 ) /*0x4137d8*/
+    ptr_0 = (char *)v2[1].ptr_0; /*0x4137d3*/
+    if ( v4 < (int)ptr_0 ) /*0x4137d8*/
     {
-      v6 = vtable0 - 1; /*0x4137da*/
-      for ( v2[1].vtable0 = v6; v4 < (int)v2[1].vtable0; *((_DWORD *)v2->Items + v4 - 1) = *((_DWORD *)v2->Items + v4) ) /*0x4137e0*/
+      v6 = ptr_0 - 1; /*0x4137da*/
+      for ( v2[1].ptr_0 = v6; v4 < (int)v2[1].ptr_0; *((_DWORD *)v2->Items + v4 - 1) = *((_DWORD *)v2->Items + v4) ) /*0x4137e0*/
         ++v4; /*0x4137e5*/
     }
   }
@@ -16772,7 +16772,7 @@ int __userpurge AircraftClass::Construct@<eax>(int this@<ecx>, int a2@<edi>, int
   const IID *v7; // ebx
   int v8; // eax
   int v9; // eax
-  int vtable2; // ebp
+  int ptr_8; // ebp
   _DWORD *v11; // edi
   int i; // eax
   _DWORD *v13; // edx
@@ -16832,15 +16832,15 @@ int __userpurge AircraftClass::Construct@<eax>(int this@<ecx>, int a2@<edi>, int
     goto LABEL_25; /*0x413ea0*/
   if ( g_BuildingLoadQueue_Array.? ) /*0x413ea8*/
   {
-    vtable2 = (int)g_BuildingLoadQueue_Array.?; /*0x413eb1*/
+    ptr_8 = (int)g_BuildingLoadQueue_Array.?; /*0x413eb1*/
     if ( (int)g_BuildingLoadQueue_Array.? < 0 ) /*0x413eb5*/
       return this; /*0x413eb5*/
   }
   else
   {
-    vtable2 = 10; /*0x413eaa*/
+    ptr_8 = 10; /*0x413eaa*/
   }
-  v11 = (_DWORD *)__2_YAPAXI_Z(8 * ((int)g_BuildingLoadQueue_Array.? + vtable2)); /*0x413ecb*/
+  v11 = (_DWORD *)__2_YAPAXI_Z(8 * ((int)g_BuildingLoadQueue_Array.? + ptr_8)); /*0x413ecb*/
   if ( v11 ) /*0x413ed2*/
   {
     for ( i = 0; i < (int)g_BuildingLoadQueue_Array.?; v11[2 * i - 1] = v13[1] ) /*0x413ee7*/
@@ -16850,7 +16850,7 @@ int __userpurge AircraftClass::Construct@<eax>(int this@<ecx>, int a2@<edi>, int
     }
     __3_YAXPAX_Z(g_BuildingLoadQueue_Array.TechnoTypeClass); /*0x413f10*/
     g_BuildingLoadQueue_Array.TechnoTypeClass = v11; /*0x413f1f*/
-    g_BuildingLoadQueue_Array.? = (char *)g_BuildingLoadQueue_Array.? + vtable2; /*0x413f25*/
+    g_BuildingLoadQueue_Array.? = (char *)g_BuildingLoadQueue_Array.? + ptr_8; /*0x413f25*/
     g_BuildingLoadQueue_Array.? = 0; /*0x413f2a*/
 LABEL_25:
     *((_DWORD *)g_BuildingLoadQueue_Array.TechnoTypeClass + 2 * (int)g_BuildingLoadQueue_Array.?) = ppv; /*0x413f34*/
@@ -16941,8 +16941,8 @@ int __thiscall AircraftClass::Destruct(AircraftClass *this)
   int *team; // ecx
   int v5; // eax
   int Vtable3; // eax
-  char *vtable1; // ebx
-  _DWORD *vtable0; // ebp
+  char *ptr_4; // ebx
+  _DWORD *ptr_0; // ebp
   int v9; // esi
   AircraftClass *v10; // edx
   char *v11; // ecx
@@ -16989,7 +16989,7 @@ int __thiscall AircraftClass::Destruct(AircraftClass *this)
     while ( v5 < dword_A8E3A0 ); /*0x414171*/
   }
   Vtable3 = AbstractClass::GetVtable3(p_vtable1); /*0x414174*/
-  vtable1 = (char *)g_BuildingLoadQueue_Array.?; /*0x414179*/
+  ptr_4 = (char *)g_BuildingLoadQueue_Array.?; /*0x414179*/
   v16 = (AircraftClass *)Vtable3; /*0x41417f*/
   if ( g_BuildingLoadQueue_Array.? ) /*0x414185*/
   {
@@ -17000,16 +17000,16 @@ int __thiscall AircraftClass::Destruct(AircraftClass *this)
         (size_t)g_BuildingLoadQueue_Array.?,
         8u,
         (_CoreCrtNonSecureSearchSortCompareFunction)CompareFunction);
-      vtable1 = (char *)g_BuildingLoadQueue_Array.?; /*0x4141a7*/
+      ptr_4 = (char *)g_BuildingLoadQueue_Array.?; /*0x4141a7*/
       g_BuildingLoadQueue_Array.? = 0; /*0x4141b0*/
       LOBYTE(g_BuildingLoadQueue_Array.?) = 1; /*0x4141b6*/
     }
-    vtable0 = g_BuildingLoadQueue_Array.TechnoTypeClass; /*0x4141bd*/
-    v9 = (int)vtable1; /*0x4141c3*/
+    ptr_0 = g_BuildingLoadQueue_Array.TechnoTypeClass; /*0x4141bd*/
+    v9 = (int)ptr_4; /*0x4141c3*/
     while ( v9 > 0 ) /*0x4141c7*/
     {
-      v10 = (AircraftClass *)vtable0[2 * (v9 / 2)]; /*0x4141d4*/
-      v11 = (char *)&vtable0[2 * (v9 / 2)]; /*0x4141d8*/
+      v10 = (AircraftClass *)ptr_0[2 * (v9 / 2)]; /*0x4141d4*/
+      v11 = (char *)&ptr_0[2 * (v9 / 2)]; /*0x4141d8*/
       if ( (int)v16 >= (int)v10 ) /*0x4141e0*/
       {
         if ( v10 == v16 ) /*0x4141ea*/
@@ -17020,18 +17020,18 @@ int __thiscall AircraftClass::Destruct(AircraftClass *this)
             if ( v12 != -1 ) /*0x41421e*/
             {
               v13 = v12 + 1; /*0x414220*/
-              if ( v13 < (int)vtable1 ) /*0x414223*/
+              if ( v13 < (int)ptr_4 ) /*0x414223*/
               {
                 do /*0x414242*/
                 {
                   v14 = (char *)g_BuildingLoadQueue_Array.TechnoTypeClass + 8 * v13++; /*0x41422b*/
                   *(v14 - 2) = *v14; /*0x414231*/
                   *(v14 - 1) = v14[1]; /*0x414237*/
-                  vtable1 = (char *)g_BuildingLoadQueue_Array.?; /*0x41423a*/
+                  ptr_4 = (char *)g_BuildingLoadQueue_Array.?; /*0x41423a*/
                 }
                 while ( v13 < (int)g_BuildingLoadQueue_Array.? ); /*0x414242*/
               }
-              g_BuildingLoadQueue_Array.? = vtable1 - 1; /*0x41424f*/
+              g_BuildingLoadQueue_Array.? = ptr_4 - 1; /*0x41424f*/
               *((_DWORD *)g_BuildingLoadQueue_Array.TechnoTypeClass + 2 * (int)g_BuildingLoadQueue_Array.?) = 0; /*0x414255*/
               *((_DWORD *)g_BuildingLoadQueue_Array.TechnoTypeClass + 2 * (int)g_BuildingLoadQueue_Array.? + 1) = 0; /*0x414263*/
               g_BuildingLoadQueue_Array.? = 0; /*0x414267*/
@@ -17039,7 +17039,7 @@ int __thiscall AircraftClass::Destruct(AircraftClass *this)
           }
           break; /*0x414267*/
         }
-        vtable0 = v11 + 8; /*0x4141ec*/
+        ptr_0 = v11 + 8; /*0x4141ec*/
         v9 += -1 - v9 / 2; /*0x4141f4*/
       }
       else
@@ -17067,12 +17067,12 @@ int __thiscall AircraftClass::QueryInterface(AircraftClass *this, AbstractClass 
       if ( a2 ) /*0x4142bf*/
       {
         *ppv = &a2[48]; /*0x4142c8*/
-        (*((void (__stdcall **)(AbstractClass *))a2->vtable0 + 1))(a2); /*0x4142cf*/
+        (*((void (__stdcall **)(AbstractClass *))a2->ptr_0 + 1))(a2); /*0x4142cf*/
         return 0; /*0x4142d7*/
       }
       *ppv = 0; /*0x4142dc*/
     }
-    (*((void (__stdcall **)(AbstractClass *))a2->vtable0 + 1))(a2); /*0x4142e4*/
+    (*((void (__stdcall **)(AbstractClass *))a2->ptr_0 + 1))(a2); /*0x4142e4*/
     return 0; /*0x4142e7*/
   }
   return result; /*0x4142d4*/
@@ -17133,13 +17133,13 @@ int __thiscall AircraftClass::MoveTo(AircraftClass *this, _DWORD *a2, int a3)
     }
   }
   v8 = a3; /*0x41438f*/
-  if ( FootClass::DispatchInput((double *)&this->vtable0, (int)&v15, a3) ) /*0x41439b*/
+  if ( FootClass::DispatchInput((double *)&this->ptr_0, (int)&v15, a3) ) /*0x41439b*/
   {
     v10 = this->Type; /*0x4143a8*/
     if ( !*(_BYTE *)(v10 + 560) /*0x4143e1*/
       || !*(_BYTE *)(v10 + 3594)
-      || *(_DWORD *)(*(int (__thiscall **)(AircraftClass *, _DWORD))(this->vtable0 + 1016))(this, 0)
-      && *(_BYTE *)(*(_DWORD *)(*(int (__thiscall **)(AircraftClass *, _DWORD))(this->vtable0 + 1016))(this, 0) + 327) )
+      || *(_DWORD *)(*(int (__thiscall **)(AircraftClass *, _DWORD))(this->ptr_0 + 1016))(this, 0)
+      && *(_BYTE *)(*(_DWORD *)(*(int (__thiscall **)(AircraftClass *, _DWORD))(this->ptr_0 + 1016))(this, 0) + 327) )
     {
       this->isALoaner[0] = 1; /*0x4143eb*/
     }
@@ -17157,10 +17157,10 @@ int __thiscall AircraftClass::MoveTo(AircraftClass *this, _DWORD *a2, int a3)
     v13 = this->Type; /*0x41443e*/
     this->animation[0] = 0; /*0x414444*/
     v14 = (*(int (__thiscall **)(int))(*(_DWORD *)v13 + 188))(v13); /*0x414456*/
-    if ( (*(int (__thiscall **)(AircraftClass *))(this->vtable0 + 456))(this) == v14 ) /*0x414464*/
-      result = (*(int (__thiscall **)(AircraftClass *, _DWORD, int))(this->vtable0 + 1348))(this, 0, 1072693248); /*0x414471*/
+    if ( (*(int (__thiscall **)(AircraftClass *))(this->ptr_0 + 456))(this) == v14 ) /*0x414464*/
+      result = (*(int (__thiscall **)(AircraftClass *, _DWORD, int))(this->ptr_0 + 1348))(this, 0, 1072693248); /*0x414471*/
     else
-      result = (*(int (__thiscall **)(AircraftClass *, _DWORD, _DWORD))(this->vtable0 + 1348))(this, 0, 0); /*0x41448a*/
+      result = (*(int (__thiscall **)(AircraftClass *, _DWORD, _DWORD))(this->ptr_0 + 1348))(this, 0, 0); /*0x41448a*/
     LOBYTE(result) = 1; /*0x414479*/
   }
   else
@@ -17195,7 +17195,7 @@ int __userpurge AircraftClass::Draw@<eax>(
   FootClass *v17; // esi
   int v18; // eax
   int v19; // edi
-  void *vtable0; // edx
+  void *ptr_0; // edx
   int *v21; // eax
   int v22; // ecx
   int v23; // eax
@@ -17228,7 +17228,7 @@ int __userpurge AircraftClass::Draw@<eax>(
   int v51; // [esp+40h] [ebp-D0h]
   char v52[4]; // [esp+50h] [ebp-C0h] BYREF
   int v53; // [esp+54h] [ebp-BCh] BYREF
-  char *vtable1; // [esp+58h] [ebp-B8h] BYREF
+  char *ptr_4; // [esp+58h] [ebp-B8h] BYREF
   int v55[2]; // [esp+5Ch] [ebp-B4h] BYREF
   int v56; // [esp+64h] [ebp-ACh] BYREF
   int v57; // [esp+68h] [ebp-A8h]
@@ -17241,7 +17241,7 @@ int __userpurge AircraftClass::Draw@<eax>(
   AudioConfig v64; // [esp+E8h] [ebp-28h] BYREF
 
   v8 = v7; /*0x4144bf*/
-  if ( stru_A8EB00.?[391] || !g_hWnd || ((int)dword_A8B230->vtable0 & 0x1000) == 0 ) /*0x4144de*/
+  if ( stru_A8EB00.?[391] || !g_hWnd || ((int)dword_A8B230->ptr_0 & 0x1000) == 0 ) /*0x4144de*/
     goto LABEL_9; /*0x4144de*/
   if ( !*(_DWORD *)(v7 + 1652) ) /*0x4144e4*/
     WinAPI::Wrapper(-2147467261); /*0x4144f3*/
@@ -17269,12 +17269,12 @@ LABEL_9:
       v15 = (*(int (__thiscall **)(int, int))(*(_DWORD *)v8 + 204))(v8, 1); /*0x4145ae*/
     v16 = *(_DWORD *)(v8 + 1336) % *(_DWORD *)(*(_DWORD *)(v15 + 180) + 8); /*0x4145bd*/
     v17 = (FootClass *)this; /*0x4145c0*/
-    vtable1 = (char *)this->?; /*0x4145cb*/
+    ptr_4 = (char *)this->?; /*0x4145cb*/
     v18 = *(_DWORD *)(v8 + 1652); /*0x4145cf*/
     v19 = v16; /*0x4145d7*/
-    vtable0 = this->FootClass; /*0x4145d9*/
+    ptr_0 = this->FootClass; /*0x4145d9*/
     v62 = v19; /*0x4145db*/
-    v53 = (int)vtable0; /*0x4145df*/
+    v53 = (int)ptr_0; /*0x4145df*/
     if ( !v18 ) /*0x4145e3*/
       WinAPI::Wrapper(-2147467261); /*0x4145ea*/
     v21 = (int *)(*(int (__stdcall **)(_DWORD, int *, int))(**(_DWORD **)(v8 + 1652) + 44))( /*0x4145fd*/
@@ -17283,14 +17283,14 @@ LABEL_9:
                    a3);
     v22 = *v21; /*0x414600*/
     v23 = v21[1]; /*0x414606*/
-    vtable1 += v22; /*0x41460f*/
+    ptr_4 += v22; /*0x41460f*/
     v24 = v23 + v55[0]; /*0x414613*/
     v25 = *(_DWORD *)(v8 + 280); /*0x414615*/
     v55[0] = v24; /*0x41461d*/
     if ( v25 && *(_BYTE *)(*(_DWORD *)(v8 + 1732) + 3580) ) /*0x414629*/
     {
       DB = CCINIClass::GetDB((CCINIClass *)(v8 + 276)); /*0x414639*/
-      (*(void (__thiscall **)(int, char **, int))(*(_DWORD *)DB + 276))(DB, &vtable1, a5); /*0x41464f*/
+      (*(void (__thiscall **)(int, char **, int))(*(_DWORD *)DB + 276))(DB, &ptr_4, a5); /*0x41464f*/
     }
     (*(void (__thiscall **)(int, char *))(*(_DWORD *)v8 + 440))(v8, v52); /*0x41465f*/
     v27 = *(_DWORD *)(v8 + 1732); /*0x414665*/
@@ -17319,7 +17319,7 @@ LABEL_9:
     v32 = (*(int (__thiscall **)(int))(*(_DWORD *)v8 + 192))(v8); /*0x414739*/
     v33 = *(_DWORD *)(v8 + 160); /*0x414741*/
     v61 = *(_DWORD *)(v8 + 156); /*0x414744*/
-    HIBYTE(vtable1) = v32; /*0x41474c*/
+    HIBYTE(ptr_4) = v32; /*0x41474c*/
     v34 = *(_DWORD *)(v8 + 164); /*0x414750*/
     *(_BYTE *)(v8 + 1718) = 0; /*0x414759*/
     v62 = v33; /*0x414760*/
@@ -17375,7 +17375,7 @@ LABEL_33:
       (*(void (__thiscall **)(int, int))(*(_DWORD *)v8 + 460))(v8, v31); /*0x4148ab*/
       v43 = v55[0]; /*0x4148b9*/
       v51 = v55[1]; /*0x4148bd*/
-      *(_BYTE *)(v8 + 1718) = HIBYTE(vtable1); /*0x4148be*/
+      *(_BYTE *)(v8 + 1718) = HIBYTE(ptr_4); /*0x4148be*/
       TacticalClass::AddToDrawQueue((TacticalClass *)g_TacticalClass_Instance, v8, v43, v51); /*0x4148cc*/
       LightningStorm::IsActive(); /*0x4148d1*/
       (*(int (__thiscall **)(int))(*(_DWORD *)v8 + 456))(v8); /*0x4148f9*/
@@ -17420,7 +17420,7 @@ int __thiscall AircraftClass::ProcessMissionTimeout(AircraftClass *this)
   int *team; // ecx
   char *MissionControl; // eax
   int v4; // eax
-  int (__thiscall **vtable0)(AircraftClass *, int, int *, _DWORD); // edi
+  int (__thiscall **ptr_0)(AircraftClass *, int, int *, _DWORD); // edi
   int v7; // eax
   void *v8; // edi
   int v9; // eax
@@ -17434,12 +17434,12 @@ int __thiscall AircraftClass::ProcessMissionTimeout(AircraftClass *this)
       goto LABEL_12; /*0x414ae5*/
     if ( *(_DWORD *)&dword_A8B238 ) /*0x414afb*/
     {
-      vtable0 = (int (__thiscall **)(AircraftClass *, int, int *, _DWORD))this->FootClass; /*0x414b03*/
+      ptr_0 = (int (__thiscall **)(AircraftClass *, int, int *, _DWORD))this->FootClass; /*0x414b03*/
       v10 = this->?[0]; /*0x414b09*/
       v11 = this->?[1]; /*0x414b15*/
       v12 = this->?[2]; /*0x414b20*/
-      v7 = vtable0[241](this, 64, &v10, 0); /*0x414b24*/
-      ((void (__thiscall *)(AircraftClass *, int))vtable0[242])(this, v7); /*0x414b2d*/
+      v7 = ptr_0[241](this, 64, &v10, 0); /*0x414b24*/
+      ((void (__thiscall *)(AircraftClass *, int))ptr_0[242])(this, v7); /*0x414b2d*/
     }
     if ( !this->? ) /*0x414b33*/
     {
@@ -17740,7 +17740,7 @@ int __thiscall UnitClass::Mission_Harvest(AircraftClass *this)
   int DB; // eax
   int v14; // edi
   int v15; // eax
-  void (__thiscall **vtable0)(AircraftClass *, void *, int); // ebx
+  void (__thiscall **ptr_0)(AircraftClass *, void *, int); // ebx
   __int16 *WaypointCoords; // eax
   void *v18; // eax
   void *NearbyCell; // eax
@@ -17770,7 +17770,7 @@ int __thiscall UnitClass::Mission_Harvest(AircraftClass *this)
          || (v3 = this->?[0],
              v4 = this->?[1],
              v5 = this->?[2],
-             v6 = (_DWORD *)(*((int (__thiscall **)(AbstractClass *, _BYTE *))movementDestination->vtable0 + 18))(
+             v6 = (_DWORD *)(*((int (__thiscall **)(AbstractClass *, _BYTE *))movementDestination->ptr_0 + 18))(
                               movementDestination,
                               v35),
              v3 == *v6)
@@ -17795,13 +17795,13 @@ int __thiscall UnitClass::Mission_Harvest(AircraftClass *this)
               && (v15 = *(_DWORD *)(DB + 1492)) != 0
               && *TechnoClass::GetWaypointCoords(*(TechnoClass **)(v15 + 36), &v30) != g_AircraftStatusFlag )
             {
-              vtable0 = (void (__thiscall **)(AircraftClass *, void *, int))this->FootClass; /*0x415375*/
+              ptr_0 = (void (__thiscall **)(AircraftClass *, void *, int))this->FootClass; /*0x415375*/
               WaypointCoords = (__int16 *)TechnoClass::GetWaypointCoords( /*0x415381*/
                                             *(TechnoClass **)(*(_DWORD *)(v14 + 1492) + 36),
                                             &v31);
               v18 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], WaypointCoords); /*0x41538c*/
               NearbyCell = InfantryClass::FindNearbyCell((InfantryClass *)this, (int)v18); /*0x415394*/
-              vtable0[288](this, NearbyCell, 1); /*0x41539c*/
+              ptr_0[288](this, NearbyCell, 1); /*0x41539c*/
             }
             else
             {
@@ -17913,7 +17913,7 @@ int __thiscall TechnoClass::ApplyIronCurtain(TechnoClass *this)
   double v1; // st7
   int v3; // ebx
   AbstractClass *target; // eax
-  void *vtable0; // edi
+  void *ptr_0; // edi
   int v6; // eax
   int v7; // eax
   int v8; // edx
@@ -17944,9 +17944,9 @@ int __thiscall TechnoClass::ApplyIronCurtain(TechnoClass *this)
           0,
           0,
           0);
-        vtable0 = this->RadioClass; /*0x415678*/
+        ptr_0 = this->RadioClass; /*0x415678*/
         v6 = (*((int (__thiscall **)(TechnoClass *, _DWORD))this->RadioClass + 254))(this, 0); /*0x41567e*/
-        (*((void (__thiscall **)(TechnoClass *, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD))vtable0 + 290))( /*0x415697*/
+        (*((void (__thiscall **)(TechnoClass *, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD))ptr_0 + 290))( /*0x415697*/
           this,
           0,
           0,
@@ -18008,7 +18008,7 @@ int __thiscall TechnoClass::ReturnToBase(TechnoClass *this)
 {
   double v1; // st7
   int v3; // edi
-  void *vtable0; // edi
+  void *ptr_0; // edi
   int v5; // eax
   int v6; // eax
   int *v7; // eax
@@ -18024,9 +18024,9 @@ int __thiscall TechnoClass::ReturnToBase(TechnoClass *this)
                        + 180) )
   {
     (*((void (__thiscall **)(TechnoClass *, _DWORD, _DWORD, _DWORD, _DWORD))this->RadioClass + 291))(this, 0, 0, 0, 0); /*0x4157f7*/
-    vtable0 = this->RadioClass; /*0x4157fd*/
+    ptr_0 = this->RadioClass; /*0x4157fd*/
     v5 = (*((int (__thiscall **)(TechnoClass *, _DWORD))this->RadioClass + 254))(this, 0); /*0x415803*/
-    (*((void (__thiscall **)(TechnoClass *, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD))vtable0 + 290))( /*0x41581c*/
+    (*((void (__thiscall **)(TechnoClass *, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD))ptr_0 + 290))( /*0x41581c*/
       this,
       0,
       0,
@@ -18076,21 +18076,21 @@ int __thiscall TechnoClass::ReturnToBaseAndReload(TechnoClass *this)
     {
       if ( ObjectClass::ComputeDistance(this, target) <= *(_DWORD *)&dword_8871E0->__pad_240[780] ) /*0x415940*/
       {
-        (*(void (__thiscall **)(TechnoClass *, int, _DWORD))(this->vtable0 + 488))(this, 27, 0); /*0x41594a*/
+        (*(void (__thiscall **)(TechnoClass *, int, _DWORD))(this->ptr_0 + 488))(this, 27, 0); /*0x41594a*/
         --*((_BYTE *)this + 1747); /*0x415950*/
       }
       return 3; /*0x415956*/
     }
     else
     {
-      (*(void (__thiscall **)(TechnoClass *, int, int))(this->vtable0 + 1152))(this, target, 1); /*0x41591f*/
+      (*(void (__thiscall **)(TechnoClass *, int, int))(this->ptr_0 + 1152))(this, target, 1); /*0x41591f*/
       return 3; /*0x415925*/
     }
   }
   else
   {
-    (*(void (__thiscall **)(TechnoClass *, _DWORD, int))(this->vtable0 + 1152))(this, 0, 1); /*0x4158f3*/
-    (*(void (__thiscall **)(TechnoClass *, int, _DWORD))(this->vtable0 + 488))(this, 4, 0); /*0x415901*/
+    (*(void (__thiscall **)(TechnoClass *, _DWORD, int))(this->ptr_0 + 1152))(this, 0, 1); /*0x4158f3*/
+    (*(void (__thiscall **)(TechnoClass *, int, _DWORD))(this->ptr_0 + 488))(this, 4, 0); /*0x415901*/
     return 3; /*0x415907*/
   }
 }
@@ -18110,9 +18110,9 @@ int __thiscall TechnoClass::ScatterFromThreat(TechnoClass *this)
   {
     *((_BYTE *)this + 1746) = 0; /*0x415a0a*/
 LABEL_9:
-    (*(void (__thiscall **)(TechnoClass *, _DWORD))(this->vtable0 + 968))(this, 0); /*0x415a11*/
-    (*(void (__thiscall **)(TechnoClass *, _DWORD, int))(this->vtable0 + 1152))(this, 0, 1); /*0x415a25*/
-    (*(void (__thiscall **)(TechnoClass *, int, _DWORD))(this->vtable0 + 488))(this, 4, 0); /*0x415a33*/
+    (*(void (__thiscall **)(TechnoClass *, _DWORD))(this->ptr_0 + 968))(this, 0); /*0x415a11*/
+    (*(void (__thiscall **)(TechnoClass *, _DWORD, int))(this->ptr_0 + 1152))(this, 0, 1); /*0x415a25*/
+    (*(void (__thiscall **)(TechnoClass *, int, _DWORD))(this->ptr_0 + 488))(this, 4, 0); /*0x415a33*/
     return 5; /*0x415a33*/
   }
   if ( ObjectClass::ComputeDistance(this, target) > *(_DWORD *)&dword_8871E0->__pad_240[780] ) /*0x41599d*/
@@ -18121,7 +18121,7 @@ LABEL_9:
     *((_BYTE *)this + 1746) = 0; /*0x4159a5*/
     if ( v3 > 0 ) /*0x4159ae*/
     {
-      (*(void (__thiscall **)(TechnoClass *, int, _DWORD))(this->vtable0 + 488))(this, 26, 0); /*0x4159b8*/
+      (*(void (__thiscall **)(TechnoClass *, int, _DWORD))(this->ptr_0 + 488))(this, 26, 0); /*0x4159b8*/
       return 5; /*0x4159c7*/
     }
     goto LABEL_9; /*0x4159ae*/
@@ -18145,7 +18145,7 @@ int __thiscall AircraftClass::ProcessReturnToBase(AircraftClass *this)
   double v1; // st7
   HouseClass *owner; // ecx
   int *TransitionCount; // eax
-  void (__thiscall **vtable0)(AircraftClass *, void *, int); // edi
+  void (__thiscall **ptr_0)(AircraftClass *, void *, int); // edi
   void *v6; // eax
   int v8; // [esp+0h] [ebp-Ch]
   __int16 v9[2]; // [esp+4h] [ebp-8h] BYREF
@@ -18174,9 +18174,9 @@ int __thiscall AircraftClass::ProcessReturnToBase(AircraftClass *this)
                        v8);
     if ( *(_DWORD *)v9 != g_AircraftStatusFlag ) /*0x415aa7*/
     {
-      vtable0 = (void (__thiscall **)(AircraftClass *, void *, int))this->FootClass; /*0x415ab8*/
+      ptr_0 = (void (__thiscall **)(AircraftClass *, void *, int))this->FootClass; /*0x415ab8*/
       v6 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v9); /*0x415ac6*/
-      vtable0[288](this, v6, 1); /*0x415ace*/
+      ptr_0[288](this, v6, 1); /*0x415ace*/
       return 3; /*0x415ade*/
     }
   }
@@ -18777,7 +18777,7 @@ int __thiscall AircraftClass::DeployWithAnim(
           v17);
   if ( v11 == 4 ) /*0x4165f6*/
   {
-    (*(void (__thiscall **)(AircraftClass *, _DWORD))(this->vtable0 + 952))(this, 0); /*0x416613*/
+    (*(void (__thiscall **)(AircraftClass *, _DWORD))(this->ptr_0 + 952))(this, 0); /*0x416613*/
     if ( *(int *)(this->Type + 1852) > 0 ) /*0x416627*/
     {
       v13 = (AnimClass *)__2_YAPAXI_Z(0x1C8u); /*0x416633*/
@@ -18787,12 +18787,12 @@ int __thiscall AircraftClass::DeployWithAnim(
                        + 4
                        * ((unsigned int)Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink)
                         % *(_DWORD *)(this->Type + 1852)));
-        v15 = (int *)(*(int (__thiscall **)(AircraftClass *, _BYTE *))(this->vtable0 + 164))(this, v18); /*0x41667b*/
+        v15 = (int *)(*(int (__thiscall **)(AircraftClass *, _BYTE *))(this->ptr_0 + 164))(this, v18); /*0x41667b*/
         AnimClass::ctor(v13, v14, v15, 0, 1, (void *)0x600, 0, 0); /*0x416685*/
       }
     }
-    if ( !(*(unsigned __int8 (__thiscall **)(AircraftClass *, int))(this->vtable0 + 988))(this, a6) ) /*0x416694*/
-      (*(void (__thiscall **)(AircraftClass *))(this->vtable0 + 248))(this); /*0x4166a3*/
+    if ( !(*(unsigned __int8 (__thiscall **)(AircraftClass *, int))(this->ptr_0 + 988))(this, a6) ) /*0x416694*/
+      (*(void (__thiscall **)(AircraftClass *))(this->ptr_0 + 248))(this); /*0x4166a3*/
   }
   else if ( v11 == 5 ) /*0x4165f9*/
   {
@@ -19012,7 +19012,7 @@ void __thiscall FootClass::MissionMoveCarryallLand(FootClass *this)
   int v8; // ecx
   int v9; // edx
   int v10; // eax
-  void (__thiscall **vtable0)(FootClass *, void *, int); // esi
+  void (__thiscall **ptr_0)(FootClass *, void *, int); // esi
   void *v12; // eax
   LPVOID ppv; // [esp+4Ch] [ebp-20h] BYREF
   CellClass *passengers; // [esp+50h] [ebp-1Ch] BYREF
@@ -19091,9 +19091,9 @@ void __thiscall FootClass::MissionMoveCarryallLand(FootClass *this)
     }
     else
     {
-      vtable0 = (void (__thiscall **)(FootClass *, void *, int))this->TechnoClass; /*0x416d10*/
+      ptr_0 = (void (__thiscall **)(FootClass *, void *, int))this->TechnoClass; /*0x416d10*/
       v12 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], (__int16 *)&ppv); /*0x416d1e*/
-      vtable0[288](this, v12, 1); /*0x416d26*/
+      ptr_0[288](this, v12, 1); /*0x416d26*/
     }
   }
   else
@@ -19400,7 +19400,7 @@ int __thiscall AircraftClass::GetCursorOverObject(AircraftClass *this, int *a2, 
   int v7; // ebx
   Object *v8; // eax
   _DWORD *v9; // eax
-  int (__thiscall **vtable0)(AircraftClass *, int **, _DWORD, int *); // eax
+  int (__thiscall **ptr_0)(AircraftClass *, int **, _DWORD, int *); // eax
   int v11; // ebp
   int v12; // ecx
   int v13; // edx
@@ -19442,9 +19442,9 @@ int __thiscall AircraftClass::GetCursorOverObject(AircraftClass *this, int *a2, 
     v9 = (_DWORD *)(*(int (__thiscall **)(int *, char *))(*v4 + 72))(v4, v18); /*0x417d89*/
     LOWORD(a3) = *v9 / 256; /*0x417d9e*/
     HIWORD(a3) = v9[1] / 256; /*0x417db7*/
-    vtable0 = (int (__thiscall **)(AircraftClass *, int **, _DWORD, int *))this->FootClass; /*0x417dc0*/
+    ptr_0 = (int (__thiscall **)(AircraftClass *, int **, _DWORD, int *))this->FootClass; /*0x417dc0*/
     a2 = a3; /*0x417dc4*/
-    v7 = vtable0[28](this, &a2, 0, v3); /*0x417dcb*/
+    v7 = ptr_0[28](this, &a2, 0, v3); /*0x417dcb*/
   }
 LABEL_18:
   if ( v7 == 4 ) /*0x417dd0*/
@@ -19555,7 +19555,7 @@ int __thiscall AircraftClass::Mission_Attack(AircraftClass *this)
   char v6; // al
   int ammo; // eax
   int v8; // eax
-  int vtable0; // edi
+  int ptr_0; // edi
   void *SpiralMoveTarget; // eax
   int v11; // eax
   int v12; // eax
@@ -19729,7 +19729,7 @@ int __thiscall AircraftClass::MissionDispatch(AircraftClass *this, _DWORD *a2, i
   void (__thiscall **v6)(AircraftClass *, void *, int); // ebx
   void *ClosestPlacementCell; // eax
   AbstractClass *v8; // edi
-  int (__thiscall **vtable0)(AircraftClass *, int, void *); // ebx
+  int (__thiscall **ptr_0)(AircraftClass *, int, void *); // ebx
   void *v10; // eax
   AbstractClass *movementDestination; // ecx
   AircraftTypeClass *Type; // eax
@@ -19806,11 +19806,11 @@ LABEL_4:
         case 18:
           FootClass::MissionDispatch((FootClass *)a2, a3, (_DWORD *)a3, (int)a4, v17); /*0x4191ff*/
           v8 = (AbstractClass *)*a4; /*0x419204*/
-          if ( *a4 && (*((int (__thiscall **)(AbstractClass *))v8->vtable0 + 11))(v8) == 6 ) /*0x419214*/
+          if ( *a4 && (*((int (__thiscall **)(AbstractClass *))v8->ptr_0 + 11))(v8) == 6 ) /*0x419214*/
           {
-            vtable0 = (int (__thiscall **)(AircraftClass *, int, void *))this->FootClass; /*0x419216*/
+            ptr_0 = (int (__thiscall **)(AircraftClass *, int, void *))this->FootClass; /*0x419216*/
             v10 = AbstractClass::IsTechnoType(v8); /*0x41921a*/
-            if ( vtable0[158](this, 15, v10) != 1 ) /*0x41922d*/
+            if ( ptr_0[158](this, 15, v10) != 1 ) /*0x41922d*/
               return 10; /*0x419238*/
             (*((void (__thiscall **)(AircraftClass *, int, _DWORD))this->FootClass + 122))(this, 7, 0); /*0x419241*/
           }
@@ -19832,7 +19832,7 @@ LABEL_4:
           if ( !movementDestination ) /*0x4192b6*/
             return 1; /*0x4192b6*/
           if ( this->Type[1].TechnoTypeClass[317] /*0x4192ee*/
-            && (*((int (__thiscall **)(AbstractClass *))movementDestination->vtable0 + 11))(movementDestination) == 11
+            && (*((int (__thiscall **)(AbstractClass *))movementDestination->ptr_0 + 11))(movementDestination) == 11
             && this->? == (AbstractClass *)(*((int (__thiscall **)(AircraftClass *))this->FootClass + 111))(this) )
           {
             return 1; /*0x4192f7*/
@@ -20027,7 +20027,7 @@ void *__thiscall FindSpiralMoveTarget(TechnoClass *this, int a2)
     return 0; /*0x4197d7*/
   if ( (*(int (__stdcall **)(char *))(this->health + 24))((char *)this + 1728) ) /*0x4197ea*/
     return (void *)a2; /*0x4197f9*/
-  v5 = (*(int (__thiscall **)(TechnoClass *, _DWORD))(this->vtable0 + 360))(this, 0); /*0x41980c*/
+  v5 = (*(int (__thiscall **)(TechnoClass *, _DWORD))(this->ptr_0 + 360))(this, 0); /*0x41980c*/
   v6 = (*(int (__thiscall **)(int, int *))(*(_DWORD *)a2 + 72))(a2, &v40); /*0x419813*/
   v38 = *(double *)v6; /*0x419818*/
   v7 = *(_DWORD *)(v6 + 8); /*0x419829*/
@@ -20480,7 +20480,7 @@ void *__thiscall TechnoClass::FindClosestPlacementCell(TechnoClass *this)
   int v8; // ebp
   int TileIndex; // eax
   int v10; // eax
-  int (__thiscall **vtable0)(TechnoClass *, _DWORD *); // eax
+  int (__thiscall **ptr_0)(TechnoClass *, _DWORD *); // eax
   __int16 *v12; // eax
   __int64 v13; // rax
   int v15; // eax
@@ -20578,10 +20578,10 @@ void *__thiscall TechnoClass::FindClosestPlacementCell(TechnoClass *this)
       {
         if ( v30 < 256 ) /*0x41a311*/
         {
-          vtable0 = (int (__thiscall **)(TechnoClass *, _DWORD *))this->RadioClass; /*0x41a327*/
+          ptr_0 = (int (__thiscall **)(TechnoClass *, _DWORD *))this->RadioClass; /*0x41a327*/
           v35 = 0; /*0x41a334*/
           v36 = 0; /*0x41a339*/
-          v12 = (__int16 *)vtable0[110](this, &v39); /*0x41a33e*/
+          v12 = (__int16 *)ptr_0[110](this, &v39); /*0x41a33e*/
           v29 = MapClass::GetTileIndex((MapClass *)&stru_87F5F0.__pad_58[416], v12, 0, 0); /*0x41a351*/
           v13 = ((__int64 (__thiscall *)(TechnoClass *, int *))*((_DWORD *)this->RadioClass + 110))(this, &v38); /*0x41a35a*/
           *(_DWORD *)v37 = *LayerClass::Pathfinding_Find( /*0x41a37c*/
@@ -20711,7 +20711,7 @@ char *__thiscall AircraftClass::CheckLandingClearance(AircraftClass *this, int a
 int __thiscall AircraftClass::GetMissionTimer(AircraftClass *this)
 {
   int v2; // edi
-  void (__thiscall **vtable0)(AircraftClass *, int, _DWORD); // eax
+  void (__thiscall **ptr_0)(AircraftClass *, int, _DWORD); // eax
   char *MissionControl; // eax
   int result; // eax
   void (__thiscall **v6)(AircraftClass *, CellClass *, int); // edi
@@ -20735,9 +20735,9 @@ int __thiscall AircraftClass::GetMissionTimer(AircraftClass *this)
     {
       if ( this->? ) /*0x41a5f3*/
       {
-        vtable0 = (void (__thiscall **)(AircraftClass *, int, _DWORD))this->FootClass; /*0x41a5fd*/
+        ptr_0 = (void (__thiscall **)(AircraftClass *, int, _DWORD))this->FootClass; /*0x41a5fd*/
         this->AircraftClass_field_bool_6D4 = 1; /*0x41a605*/
-        vtable0[122](this, 2, 0); /*0x41a60c*/
+        ptr_0[122](this, 2, 0); /*0x41a60c*/
       }
       MissionControl = MissionClass::GetMissionControl((MissionClass *)this); /*0x41a614*/
       LOWORD(result) = Math::RoundToInt(*((double *)MissionControl + 2) * 900.0); /*0x41a622*/
@@ -21097,7 +21097,7 @@ int __thiscall AircraftClass::RevealSight(AircraftClass *this, int a2, int a3)
   HouseClass *v8; // edx
   int result; // eax
   int v10; // ebx
-  int (__thiscall **vtable0)(AircraftClass *); // edx
+  int (__thiscall **ptr_0)(AircraftClass *); // edx
   int v12; // eax
   int v13; // ecx
   int v14; // edx
@@ -21127,15 +21127,15 @@ LABEL_4:
   }
   if ( v4 ) /*0x41ae19*/
     goto LABEL_4; /*0x41ae19*/
-  result = (int)dword_A8B230->vtable0; /*0x41aeaa*/
-  if ( ((int)dword_A8B230->vtable0 & 0x1000) != 0 ) /*0x41aeaf*/
+  result = (int)dword_A8B230->ptr_0; /*0x41aeaa*/
+  if ( ((int)dword_A8B230->ptr_0 & 0x1000) != 0 ) /*0x41aeaf*/
   {
     v10 = *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 244); /*0x41aec5*/
     v17 = this->?[0]; /*0x41aecd*/
     v18 = this->?[1]; /*0x41aed6*/
-    vtable0 = (int (__thiscall **)(AircraftClass *))this->FootClass; /*0x41aeda*/
+    ptr_0 = (int (__thiscall **)(AircraftClass *))this->FootClass; /*0x41aeda*/
     v19 = this->?[2]; /*0x41aedf*/
-    v12 = vtable0[114](this); /*0x41aee3*/
+    v12 = ptr_0[114](this); /*0x41aee3*/
     MapClass::RevealArea1( /*0x41af1a*/
       (MapClass *)&stru_87F5F0.__pad_58[416],
       &v17,
@@ -21401,7 +21401,7 @@ int __stdcall AircraftClass::LoadFromStream(AircraftClass *this, LPSTREAM pStm)
   int v10; // edi
   int v11; // ebp
   int v12; // edi
-  int vtable2; // eax
+  int ptr_8; // eax
 
   v2 = this; /*0x41b432*/
   p_vtable1 = &this->?; /*0x41b43a*/
@@ -21451,12 +21451,12 @@ int __stdcall AircraftClass::LoadFromStream(AircraftClass *this, LPSTREAM pStm)
     }
     (*(void (__stdcall **)(int))(*(_DWORD *)v10 + 8))(v10); /*0x41b52e*/
     v12 = (*((int (__stdcall **)(void **))*p_vtable1 + 4))(p_vtable1); /*0x41b53d*/
-    vtable2 = (int)g_BuildingLoadQueue_Array.?; /*0x41b53f*/
+    ptr_8 = (int)g_BuildingLoadQueue_Array.?; /*0x41b53f*/
     if ( (int)g_BuildingLoadQueue_Array.? + 1 <= (int)g_BuildingLoadQueue_Array.? ) /*0x41b548*/
       goto LABEL_18; /*0x41b548*/
     if ( !g_BuildingLoadQueue_Array.? ) /*0x41b54c*/
-      vtable2 = 10; /*0x41b54e*/
-    if ( BuildingTypeClass::Enqueue((int)&g_BuildingLoadQueue_Array, vtable2) ) /*0x41b559*/
+      ptr_8 = 10; /*0x41b54e*/
+    if ( BuildingTypeClass::Enqueue((int)&g_BuildingLoadQueue_Array, ptr_8) ) /*0x41b559*/
     {
 LABEL_18:
       *((_DWORD *)g_BuildingLoadQueue_Array.TechnoTypeClass + 2 * (int)g_BuildingLoadQueue_Array.?) = v12; /*0x41b56d*/
@@ -22540,10 +22540,10 @@ int __thiscall Vector3::Magnitude(int *this)
 // ==== 0x0041C3F0  BulletClass::NormalizeZeroVector  this=BulletClass  sig=csp ====
 void __thiscall sub_41C3F0(double *this)
 {
-  if ( *this == 0.0 && this->vtable2 == 0.0 && this->vtable3 == 0.0 ) /*0x41c41d*/
+  if ( *this == 0.0 && this->ptr_8 == 0.0 && this->ptr_C == 0.0 ) /*0x41c41d*/
   {
     *(_DWORD *)this = 0; /*0x41c41f*/
-    this->vtable2 = 1079574528; /*0x41c425*/
+    this->ptr_8 = 1079574528; /*0x41c425*/
   }
 }
 
@@ -22611,7 +22611,7 @@ char *__thiscall AbstractClass::processCleanup(AbstractClass *this, char a2)
     v4 = (char *)this - 4; /*0x41c4a1*/
     v5 = 3 * v3; /*0x41c4a4*/
     v6 = v3 - 1; /*0x41c4a7*/
-    v7 = &this->vtable0 + v5; /*0x41c4a8*/
+    v7 = &this->ptr_0 + v5; /*0x41c4a8*/
     if ( v6 >= 0 ) /*0x41c4ab*/
     {
       v8 = v6 + 1; /*0x41c4ae*/
@@ -22672,9 +22672,9 @@ char __thiscall BuildingTypeClass_Enqueue(int this, int a2)
 int __thiscall BuildingTypeClass::Dequeue(BuildingTypeClass *this, int *a2)
 {
   int result; // eax
-  char *vtable0; // edi
+  char *ptr_0; // edi
   int v5; // ebx
-  int vtable1; // ecx
+  int ptr_4; // ecx
   int v7; // esi
 
   result = (int)this->?; /*0x41c593*/
@@ -22686,26 +22686,26 @@ int __thiscall BuildingTypeClass::Dequeue(BuildingTypeClass *this, int *a2)
       this->? = 0; /*0x41c5b8*/
       LOBYTE(this->?) = 1; /*0x41c5bf*/
     }
-    vtable0 = (char *)this->TechnoTypeClass; /*0x41c5c9*/
+    ptr_0 = (char *)this->TechnoTypeClass; /*0x41c5c9*/
     v5 = *a2; /*0x41c5cb*/
-    vtable1 = (int)this->?; /*0x41c5cd*/
-    if ( vtable1 <= 0 ) /*0x41c5d2*/
+    ptr_4 = (int)this->?; /*0x41c5cd*/
+    if ( ptr_4 <= 0 ) /*0x41c5d2*/
       return 0; /*0x41c5fe*/
     while ( 1 ) /*0x41c5db*/
     {
-      v7 = *(_DWORD *)&vtable0[8 * (vtable1 / 2)]; /*0x41c5db*/
+      v7 = *(_DWORD *)&ptr_0[8 * (ptr_4 / 2)]; /*0x41c5db*/
       if ( v7 <= v5 ) /*0x41c5e3*/
       {
         if ( v7 == v5 ) /*0x41c5e9*/
-          return (int)&vtable0[8 * (vtable1 / 2)]; /*0x41c603*/
-        vtable0 += 8 * (vtable1 / 2) + 8; /*0x41c5eb*/
-        vtable1 += -1 - vtable1 / 2; /*0x41c5f3*/
+          return (int)&ptr_0[8 * (ptr_4 / 2)]; /*0x41c603*/
+        ptr_0 += 8 * (ptr_4 / 2) + 8; /*0x41c5eb*/
+        ptr_4 += -1 - ptr_4 / 2; /*0x41c5f3*/
       }
       else
       {
-        vtable1 /= 2; /*0x41c5e5*/
+        ptr_4 /= 2; /*0x41c5e5*/
       }
-      if ( vtable1 <= 0 ) /*0x41c5f7*/
+      if ( ptr_4 <= 0 ) /*0x41c5f7*/
         return 0; /*0x41c5f7*/
     }
   }
@@ -23518,10 +23518,10 @@ AbstractClass *__thiscall AbstractClass::Create(AbstractClass *this)
   int v2; // eax
 
   AbstractClass::Constructor(this); /*0x41d303*/
-  this->vtable0 = &AirstrikeClass::`vftable'; /*0x41d308*/
-  this->vtable1 = &AirstrikeClass::`vftable'; /*0x41d30e*/
-  this->vtable2 = &AirstrikeClass::`vftable'; /*0x41d315*/
-  this->vtable3 = &AirstrikeClass::`vftable'; /*0x41d31c*/
+  this->ptr_0 = &AirstrikeClass::`vftable'; /*0x41d308*/
+  this->ptr_4 = &AirstrikeClass::`vftable'; /*0x41d30e*/
+  this->ptr_8 = &AirstrikeClass::`vftable'; /*0x41d315*/
+  this->ptr_C = &AirstrikeClass::`vftable'; /*0x41d31c*/
   if ( dword_889FC8 < dword_889FC0 /*0x41d359*/
     || (byte_889FC5 || !dword_889FC0)
     && dword_889FCC > 0
@@ -24693,7 +24693,7 @@ char __thiscall TriggerClass::EvaluateCondition(int this, TriggerClass *a2, _DWO
   bool v7; // dl
   TriggerClass *v8; // edi
   char result; // al
-  void *vtable0; // eax
+  void *ptr_0; // eax
   int referenceCount; // eax
   int v12; // eax
   int v13; // eax
@@ -24756,17 +24756,17 @@ LABEL_28:
       goto LABEL_36; /*0x41e840*/
     goto LABEL_34; /*0x41e840*/
   }
-  vtable0 = dword_A8B230[43].vtable0; /*0x41e7f4*/
-  if ( !vtable0 ) /*0x41e7fc*/
+  ptr_0 = dword_A8B230[43].ptr_0; /*0x41e7f4*/
+  if ( !ptr_0 ) /*0x41e7fc*/
   {
 LABEL_34:
     if ( *(_BYTE *)(this + 210) ) /*0x41e842*/
       goto LABEL_36; /*0x41e84a*/
     return 0; /*0x41e852*/
   }
-  if ( vtable0 != (void *)1 ) /*0x41e800*/
+  if ( ptr_0 != (void *)1 ) /*0x41e800*/
   {
-    if ( vtable0 != (void *)2 ) /*0x41e805*/
+    if ( ptr_0 != (void *)2 ) /*0x41e805*/
       goto LABEL_36; /*0x41e805*/
     goto LABEL_28; /*0x41e805*/
   }

@@ -978,7 +978,7 @@ char __userpurge CaptureManagerClass::FreeUnit@<al>(
   int i; // ebx
   int v10; // ebp
   int v11; // ecx
-  int (__thiscall **vtable0)(CaptureManagerClass *); // edx
+  int (__thiscall **ptr_0)(CaptureManagerClass *); // edx
   int v13; // eax
   int controlNodeCount; // ecx
   HouseClass *originalOwner; // eax
@@ -1015,10 +1015,10 @@ char __userpurge CaptureManagerClass::FreeUnit@<al>(
       else
       {
         v20[0] = *((_DWORD *)this + 39); /*0x472069*/
-        vtable0 = (int (__thiscall **)(CaptureManagerClass *))this->AbstractClass; /*0x47206d*/
+        ptr_0 = (int (__thiscall **)(CaptureManagerClass *))this->AbstractClass; /*0x47206d*/
         v20[1] = this->controlNodeCount; /*0x472072*/
         v20[2] = *((_DWORD *)this + 41); /*0x472079*/
-        v13 = vtable0[33](this); /*0x47207f*/
+        v13 = ptr_0[33](this); /*0x47207f*/
         StartAudioControllerAt(*(_DWORD *)(v13 + 1456), v20, 0); /*0x47208d*/
         v10 = a5; /*0x472092*/
       }
@@ -2496,22 +2496,22 @@ int __thiscall CCINIClass::GetDB(CCINIClass *this)
 // ==== 0x00473460  HouseClass::SumPowerDrain  this=HouseClass  sig=csp ====
 int __thiscall HouseClass::SumPowerDrain(HouseClass *this)
 {
-  void *vtable0; // ebx
-  _DWORD *vtable1; // ecx
+  void *ptr_0; // ebx
+  _DWORD *ptr_4; // ecx
   int result; // eax
   _DWORD *v4; // esi
   int i; // edi
   int v6; // eax
   int v7; // [esp+Ch] [ebp-4h]
 
-  vtable0 = this->AbstractClass; /*0x473462*/
-  vtable1 = this->?; /*0x473464*/
+  ptr_0 = this->AbstractClass; /*0x473462*/
+  ptr_4 = this->?; /*0x473464*/
   result = 0; /*0x473467*/
   v7 = 0; /*0x47346d*/
-  if ( vtable1 ) /*0x473471*/
+  if ( ptr_4 ) /*0x473471*/
   {
-    v4 = vtable1; /*0x473473*/
-    for ( i = 0; i < (int)vtable0; v7 = result ) /*0x47347d*/
+    v4 = ptr_4; /*0x473473*/
+    for ( i = 0; i < (int)ptr_0; v7 = result ) /*0x47347d*/
     {
       if ( !v4 ) /*0x473481*/
         break; /*0x473481*/
@@ -2529,16 +2529,16 @@ int __thiscall HouseClass::SumPowerDrain(HouseClass *this)
 // ==== 0x004734B0  FootClass::updateMovementAnimation  this=FootClass  sig=csp ====
 void __thiscall FootClass::updateMovementAnimation(FootClass *this, int a2)
 {
-  _DWORD *vtable1; // edx
+  _DWORD *ptr_4; // edx
   _DWORD *v3; // eax
 
   if ( a2 ) /*0x4734b7*/
   {
-    vtable1 = this->?; /*0x4734b9*/
-    if ( vtable1 ) /*0x4734be*/
+    ptr_4 = this->?; /*0x4734b9*/
+    if ( ptr_4 ) /*0x4734be*/
     {
-      v3 = (_DWORD *)vtable1[12]; /*0x4734c0*/
-      if ( vtable1 == (_DWORD *)a2 ) /*0x4734c5*/
+      v3 = (_DWORD *)ptr_4[12]; /*0x4734c0*/
+      if ( ptr_4 == (_DWORD *)a2 ) /*0x4734c5*/
       {
         this->? = v3; /*0x4734c7*/
         --this->TechnoClass; /*0x4734ce*/
@@ -2547,12 +2547,12 @@ void __thiscall FootClass::updateMovementAnimation(FootClass *this, int a2)
       {
         while ( (_DWORD *)a2 != v3 ) /*0x4734d9*/
         {
-          vtable1 = v3; /*0x4734db*/
+          ptr_4 = v3; /*0x4734db*/
           v3 = (_DWORD *)v3[12]; /*0x4734dd*/
           if ( !v3 ) /*0x4734e2*/
             return; /*0x4734e2*/
         }
-        vtable1[12] = *(_DWORD *)(vtable1[12] + 48); /*0x4734ee*/
+        ptr_4[12] = *(_DWORD *)(ptr_4[12] + 48); /*0x4734ee*/
         --this->TechnoClass; /*0x4734f4*/
       }
     }
@@ -2564,27 +2564,27 @@ void __thiscall FootClass::updateMovementAnimation(FootClass *this, int a2)
 // ==== 0x00473500  TechnoClass::IndexOf  this=TechnoClass  sig=csp ====
 int __thiscall TechnoClass::IndexOf(TechnoClass *this, int a2)
 {
-  _DWORD *vtable1; // ecx
+  _DWORD *ptr_4; // ecx
   int result; // eax
   int v4; // edx
 
-  vtable1 = this->?; /*0x473500*/
+  ptr_4 = this->?; /*0x473500*/
   result = 0; /*0x473503*/
-  if ( !vtable1 ) /*0x473508*/
+  if ( !ptr_4 ) /*0x473508*/
     return 0; /*0x47352c*/
   while ( 1 ) /*0x47350e*/
   {
     ++result; /*0x47350e*/
-    if ( vtable1 == (_DWORD *)a2 ) /*0x473511*/
+    if ( ptr_4 == (_DWORD *)a2 ) /*0x473511*/
       break; /*0x473511*/
-    v4 = vtable1[12]; /*0x473513*/
+    v4 = ptr_4[12]; /*0x473513*/
     if ( v4 ) /*0x473518*/
     {
       if ( (*(_BYTE *)(v4 + 20) & 4) == 0 ) /*0x47351e*/
         return 0; /*0x47351e*/
-      vtable1 = (_DWORD *)vtable1[12]; /*0x473520*/
+      ptr_4 = (_DWORD *)ptr_4[12]; /*0x473520*/
     }
-    if ( !vtable1 ) /*0x473524*/
+    if ( !ptr_4 ) /*0x473524*/
       return 0; /*0x473524*/
   }
   return result; /*0x47352e*/
@@ -4589,7 +4589,7 @@ int __thiscall INIClass::ReadIntList(
     VectorClass::Construct(&v21, 0, 0); /*0x475da9*/
     v23 = 10; /*0x475db8*/
     v22 = 0; /*0x475dc0*/
-    v21.vtable0 = &TypeList<int>::`vftable'; /*0x475dc4*/
+    v21.ptr_0 = &TypeList<int>::`vftable'; /*0x475dc4*/
     for ( i = strtok(String, Str); i; i = strtok(0, Str) ) /*0x475dd6*/
     {
       if ( !*i ) /*0x475dd8*/
@@ -4598,7 +4598,7 @@ int __thiscall INIClass::ReadIntList(
       if ( v22 < v21.Capacity /*0x475e11*/
         || (v21.IsAllocated || !v21.Capacity)
         && v23 > 0
-        && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v21.vtable0 + 2))(
+        && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v21.ptr_0 + 2))(
              &v21,
              v23 + v21.Capacity,
              0) )
@@ -4615,7 +4615,7 @@ int __thiscall INIClass::ReadIntList(
     v17 = v21.Items == 0; /*0x475e5e*/
     *(_DWORD *)(a2 + 20) = v15; /*0x475e60*/
     *(_DWORD *)a2 = &TypeList<int>::`vftable'; /*0x475e63*/
-    v21.vtable0 = &VectorClass<int>::`vftable'; /*0x475e69*/
+    v21.ptr_0 = &VectorClass<int>::`vftable'; /*0x475e69*/
     if ( !v17 && v21.IsAllocated ) /*0x475e77*/
     {
       __3_YAXPAX_Z(Items); /*0x475e7a*/
@@ -4717,7 +4717,7 @@ int __thiscall INIClass::ReadExitCellList(
     VectorClass::Construct(&v26, 0, 0); /*0x476059*/
     v28 = 10; /*0x476068*/
     v27 = 0; /*0x476070*/
-    v26.vtable0 = &TypeList<int>::`vftable'; /*0x476074*/
+    v26.ptr_0 = &TypeList<int>::`vftable'; /*0x476074*/
     v11 = (Factory *)strtok((char *)v30.ScriptAction_field_0x10, Str); /*0x476081*/
     if ( v11 ) /*0x476088*/
     {
@@ -4752,7 +4752,7 @@ LABEL_8:
         if ( v27 < v26.Capacity /*0x47611e*/
           || (v26.IsAllocated || !v26.Capacity)
           && v28 > 0
-          && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v26.vtable0 + 2))(
+          && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v26.ptr_0 + 2))(
                &v26,
                v28 + v26.Capacity,
                0) )
@@ -4772,7 +4772,7 @@ LABEL_16:
     v22 = v26.Items == 0; /*0x476171*/
     *(_DWORD *)(a2 + 20) = v20; /*0x476173*/
     *(_DWORD *)a2 = &TypeList<int>::`vftable'; /*0x476176*/
-    v26.vtable0 = &VectorClass<int>::`vftable'; /*0x47617c*/
+    v26.ptr_0 = &VectorClass<int>::`vftable'; /*0x47617c*/
     if ( !v22 && v26.IsAllocated ) /*0x47618a*/
     {
       __3_YAXPAX_Z(Items); /*0x47618d*/
@@ -5097,7 +5097,7 @@ _DWORD *__thiscall INIClass::ReadSuperWeaponTypeList(
     VectorClass::Construct(&v27, 0, 0); /*0x4767fa*/
     v29 = 10; /*0x476809*/
     v28 = 0; /*0x476811*/
-    v27.vtable0 = &TypeList<int>::`vftable'; /*0x476819*/
+    v27.ptr_0 = &TypeList<int>::`vftable'; /*0x476819*/
     v11 = (SuperWeaponTypeClass *)strtok(String, Str); /*0x476826*/
     if ( v11 ) /*0x47682d*/
     {
@@ -5111,7 +5111,7 @@ _DWORD *__thiscall INIClass::ReadSuperWeaponTypeList(
           if ( v28 < v27.Capacity /*0x47687f*/
             || (v27.IsAllocated || !v27.Capacity)
             && v29 > 0
-            && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v27.vtable0 + 2))(
+            && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v27.ptr_0 + 2))(
                  &v27,
                  v29 + v27.Capacity,
                  0) )
@@ -5142,7 +5142,7 @@ LABEL_22:
           goto LABEL_19; /*0x4768d5*/
         if ( !v27.IsAllocated && Capacity || v29 <= 0 ) /*0x4768e9*/
           goto LABEL_21; /*0x4768e9*/
-        if ( (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v27.vtable0 + 2))(&v27, v29 + Capacity, 0) ) /*0x4768f8*/
+        if ( (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v27.ptr_0 + 2))(&v27, v29 + Capacity, 0) ) /*0x4768f8*/
         {
 LABEL_19:
           v19 = v28++; /*0x476907*/
@@ -5163,7 +5163,7 @@ LABEL_23:
     a2[4] = v28; /*0x476961*/
     a2[5] = v22; /*0x476964*/
     *a2 = &TypeList<int>::`vftable'; /*0x476967*/
-    v27.vtable0 = &VectorClass<int>::`vftable'; /*0x47696d*/
+    v27.ptr_0 = &VectorClass<int>::`vftable'; /*0x47696d*/
     if ( !v23 && v27.IsAllocated ) /*0x476979*/
     {
       __3_YAXPAX_Z(Items); /*0x47697c*/
@@ -5638,7 +5638,7 @@ DynamicVectorClass *__fastcall LoadBuildingTypeClassPrerequisites(
       }
     }
     DynamicVectorClass::Copy(a1, &v21); /*0x4773cb*/
-    a1->vtable0 = (int)&TypeList<int>::`vftable'; /*0x4773d9*/
+    a1->ptr_0 = (int)&TypeList<int>::`vftable'; /*0x4773d9*/
     *(_DWORD *)v21.__pad_0 = &VectorClass<int>::`vftable'; /*0x4773df*/
     VectorClass::Destroy((int)&v21); /*0x4773e3*/
     a5 = &VectorClass<int>::`vftable'; /*0x4773ef*/
@@ -5853,7 +5853,7 @@ _DWORD *__thiscall VectorClass::Copy(DynamicVectorClass *this, _DWORD *a2)
   this->Capacity = 0; /*0x4777c0*/
   this->IsInitialized[0] = 1; /*0x4777c3*/
   this->IsAllocated[0] = 0; /*0x4777c7*/
-  this->vtable0 = (int)&VectorClass<int>::`vftable'; /*0x4777ca*/
+  this->ptr_0 = (int)&VectorClass<int>::`vftable'; /*0x4777ca*/
   if ( this != (DynamicVectorClass *)a2 ) /*0x4777d0*/
   {
     VectorClass::Destroy((int)this); /*0x4777d2*/
@@ -5887,8 +5887,8 @@ _DWORD *__thiscall VectorClass::Copy(DynamicVectorClass *this, _DWORD *a2)
   }
   this->Count = a2[4]; /*0x477821*/
   this->CapacityIncrement = a2[5]; /*0x477827*/
-  this->vtable0 = (int)&TypeList<int>::`vftable'; /*0x47782a*/
-  return &this->vtable0; /*0x477832*/
+  this->ptr_0 = (int)&TypeList<int>::`vftable'; /*0x47782a*/
+  return &this->ptr_0; /*0x477832*/
 }
 
 
@@ -6196,18 +6196,18 @@ _DWORD *__thiscall VectorClass::Construct(VectorClass *this, int a2, int a3)
   this->Capacity = a2; /*0x477bee*/
   this->IsInitialized = 1; /*0x477bf1*/
   this->IsAllocated = 0; /*0x477bf5*/
-  this->vtable0 = &VectorClass<int>::`vftable'; /*0x477bf8*/
+  this->ptr_0 = &VectorClass<int>::`vftable'; /*0x477bf8*/
   if ( a2 ) /*0x477bfe*/
   {
     if ( a3 ) /*0x477c06*/
     {
       this->Items = (void *)a3; /*0x477c08*/
-      return &this->vtable0; /*0x477c0e*/
+      return &this->ptr_0; /*0x477c0e*/
     }
     this->Items = (void *)__2_YAPAXI_Z(4 * a2); /*0x477c1d*/
     this->IsAllocated = 1; /*0x477c20*/
   }
-  return &this->vtable0; /*0x477c0d*/
+  return &this->ptr_0; /*0x477c0d*/
 }
 
 
@@ -14081,7 +14081,7 @@ char __userpurge CaptureManagerClass::FreeUnit@<al>(
   int i; // ebx
   int v10; // ebp
   int v11; // ecx
-  int (__thiscall **vtable0)(CaptureManagerClass *); // edx
+  int (__thiscall **ptr_0)(CaptureManagerClass *); // edx
   int v13; // eax
   int controlNodeCount; // ecx
   HouseClass *originalOwner; // eax
@@ -14118,10 +14118,10 @@ char __userpurge CaptureManagerClass::FreeUnit@<al>(
       else
       {
         v20[0] = *((_DWORD *)this + 39); /*0x472069*/
-        vtable0 = (int (__thiscall **)(CaptureManagerClass *))this->AbstractClass; /*0x47206d*/
+        ptr_0 = (int (__thiscall **)(CaptureManagerClass *))this->AbstractClass; /*0x47206d*/
         v20[1] = this->controlNodeCount; /*0x472072*/
         v20[2] = *((_DWORD *)this + 41); /*0x472079*/
-        v13 = vtable0[33](this); /*0x47207f*/
+        v13 = ptr_0[33](this); /*0x47207f*/
         StartAudioControllerAt(*(_DWORD *)(v13 + 1456), v20, 0); /*0x47208d*/
         v10 = a5; /*0x472092*/
       }
@@ -15586,22 +15586,22 @@ int __thiscall CCINIClass::GetDB(CCINIClass *this)
 // ==== 0x00473460  HouseClass::SumPowerDrain  this=HouseClass  sig=csp ====
 int __thiscall HouseClass::SumPowerDrain(HouseClass *this)
 {
-  void *vtable0; // ebx
-  _DWORD *vtable1; // ecx
+  void *ptr_0; // ebx
+  _DWORD *ptr_4; // ecx
   int result; // eax
   _DWORD *v4; // esi
   int i; // edi
   int v6; // eax
   int v7; // [esp+Ch] [ebp-4h]
 
-  vtable0 = this->AbstractClass; /*0x473462*/
-  vtable1 = this->?; /*0x473464*/
+  ptr_0 = this->AbstractClass; /*0x473462*/
+  ptr_4 = this->?; /*0x473464*/
   result = 0; /*0x473467*/
   v7 = 0; /*0x47346d*/
-  if ( vtable1 ) /*0x473471*/
+  if ( ptr_4 ) /*0x473471*/
   {
-    v4 = vtable1; /*0x473473*/
-    for ( i = 0; i < (int)vtable0; v7 = result ) /*0x47347d*/
+    v4 = ptr_4; /*0x473473*/
+    for ( i = 0; i < (int)ptr_0; v7 = result ) /*0x47347d*/
     {
       if ( !v4 ) /*0x473481*/
         break; /*0x473481*/
@@ -15619,16 +15619,16 @@ int __thiscall HouseClass::SumPowerDrain(HouseClass *this)
 // ==== 0x004734B0  FootClass::updateMovementAnimation  this=FootClass  sig=csp ====
 void __thiscall FootClass::updateMovementAnimation(FootClass *this, int a2)
 {
-  _DWORD *vtable1; // edx
+  _DWORD *ptr_4; // edx
   _DWORD *v3; // eax
 
   if ( a2 ) /*0x4734b7*/
   {
-    vtable1 = this->?; /*0x4734b9*/
-    if ( vtable1 ) /*0x4734be*/
+    ptr_4 = this->?; /*0x4734b9*/
+    if ( ptr_4 ) /*0x4734be*/
     {
-      v3 = (_DWORD *)vtable1[12]; /*0x4734c0*/
-      if ( vtable1 == (_DWORD *)a2 ) /*0x4734c5*/
+      v3 = (_DWORD *)ptr_4[12]; /*0x4734c0*/
+      if ( ptr_4 == (_DWORD *)a2 ) /*0x4734c5*/
       {
         this->? = v3; /*0x4734c7*/
         --this->TechnoClass; /*0x4734ce*/
@@ -15637,12 +15637,12 @@ void __thiscall FootClass::updateMovementAnimation(FootClass *this, int a2)
       {
         while ( (_DWORD *)a2 != v3 ) /*0x4734d9*/
         {
-          vtable1 = v3; /*0x4734db*/
+          ptr_4 = v3; /*0x4734db*/
           v3 = (_DWORD *)v3[12]; /*0x4734dd*/
           if ( !v3 ) /*0x4734e2*/
             return; /*0x4734e2*/
         }
-        vtable1[12] = *(_DWORD *)(vtable1[12] + 48); /*0x4734ee*/
+        ptr_4[12] = *(_DWORD *)(ptr_4[12] + 48); /*0x4734ee*/
         --this->TechnoClass; /*0x4734f4*/
       }
     }
@@ -15654,27 +15654,27 @@ void __thiscall FootClass::updateMovementAnimation(FootClass *this, int a2)
 // ==== 0x00473500  TechnoClass::IndexOf  this=TechnoClass  sig=csp ====
 int __thiscall TechnoClass::IndexOf(TechnoClass *this, int a2)
 {
-  _DWORD *vtable1; // ecx
+  _DWORD *ptr_4; // ecx
   int result; // eax
   int v4; // edx
 
-  vtable1 = this->?; /*0x473500*/
+  ptr_4 = this->?; /*0x473500*/
   result = 0; /*0x473503*/
-  if ( !vtable1 ) /*0x473508*/
+  if ( !ptr_4 ) /*0x473508*/
     return 0; /*0x47352c*/
   while ( 1 ) /*0x47350e*/
   {
     ++result; /*0x47350e*/
-    if ( vtable1 == (_DWORD *)a2 ) /*0x473511*/
+    if ( ptr_4 == (_DWORD *)a2 ) /*0x473511*/
       break; /*0x473511*/
-    v4 = vtable1[12]; /*0x473513*/
+    v4 = ptr_4[12]; /*0x473513*/
     if ( v4 ) /*0x473518*/
     {
       if ( (*(_BYTE *)(v4 + 20) & 4) == 0 ) /*0x47351e*/
         return 0; /*0x47351e*/
-      vtable1 = (_DWORD *)vtable1[12]; /*0x473520*/
+      ptr_4 = (_DWORD *)ptr_4[12]; /*0x473520*/
     }
-    if ( !vtable1 ) /*0x473524*/
+    if ( !ptr_4 ) /*0x473524*/
       return 0; /*0x473524*/
   }
   return result; /*0x47352e*/
@@ -17679,7 +17679,7 @@ int __thiscall INIClass::ReadIntList(
     VectorClass::Construct(&v21, 0, 0); /*0x475da9*/
     v23 = 10; /*0x475db8*/
     v22 = 0; /*0x475dc0*/
-    v21.vtable0 = &TypeList<int>::`vftable'; /*0x475dc4*/
+    v21.ptr_0 = &TypeList<int>::`vftable'; /*0x475dc4*/
     for ( i = strtok(String, Str); i; i = strtok(0, Str) ) /*0x475dd6*/
     {
       if ( !*i ) /*0x475dd8*/
@@ -17688,7 +17688,7 @@ int __thiscall INIClass::ReadIntList(
       if ( v22 < v21.Capacity /*0x475e11*/
         || (v21.IsAllocated || !v21.Capacity)
         && v23 > 0
-        && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v21.vtable0 + 2))(
+        && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v21.ptr_0 + 2))(
              &v21,
              v23 + v21.Capacity,
              0) )
@@ -17705,7 +17705,7 @@ int __thiscall INIClass::ReadIntList(
     v17 = v21.Items == 0; /*0x475e5e*/
     *(_DWORD *)(a2 + 20) = v15; /*0x475e60*/
     *(_DWORD *)a2 = &TypeList<int>::`vftable'; /*0x475e63*/
-    v21.vtable0 = &VectorClass<int>::`vftable'; /*0x475e69*/
+    v21.ptr_0 = &VectorClass<int>::`vftable'; /*0x475e69*/
     if ( !v17 && v21.IsAllocated ) /*0x475e77*/
     {
       __3_YAXPAX_Z(Items); /*0x475e7a*/
@@ -17807,7 +17807,7 @@ int __thiscall INIClass::ReadExitCellList(
     VectorClass::Construct(&v26, 0, 0); /*0x476059*/
     v28 = 10; /*0x476068*/
     v27 = 0; /*0x476070*/
-    v26.vtable0 = &TypeList<int>::`vftable'; /*0x476074*/
+    v26.ptr_0 = &TypeList<int>::`vftable'; /*0x476074*/
     v11 = (Factory *)strtok((char *)v30.ScriptAction_field_0x10, Str); /*0x476081*/
     if ( v11 ) /*0x476088*/
     {
@@ -17842,7 +17842,7 @@ LABEL_8:
         if ( v27 < v26.Capacity /*0x47611e*/
           || (v26.IsAllocated || !v26.Capacity)
           && v28 > 0
-          && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v26.vtable0 + 2))(
+          && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v26.ptr_0 + 2))(
                &v26,
                v28 + v26.Capacity,
                0) )
@@ -17862,7 +17862,7 @@ LABEL_16:
     v22 = v26.Items == 0; /*0x476171*/
     *(_DWORD *)(a2 + 20) = v20; /*0x476173*/
     *(_DWORD *)a2 = &TypeList<int>::`vftable'; /*0x476176*/
-    v26.vtable0 = &VectorClass<int>::`vftable'; /*0x47617c*/
+    v26.ptr_0 = &VectorClass<int>::`vftable'; /*0x47617c*/
     if ( !v22 && v26.IsAllocated ) /*0x47618a*/
     {
       __3_YAXPAX_Z(Items); /*0x47618d*/
@@ -18187,7 +18187,7 @@ _DWORD *__thiscall INIClass::ReadSuperWeaponTypeList(
     VectorClass::Construct(&v27, 0, 0); /*0x4767fa*/
     v29 = 10; /*0x476809*/
     v28 = 0; /*0x476811*/
-    v27.vtable0 = &TypeList<int>::`vftable'; /*0x476819*/
+    v27.ptr_0 = &TypeList<int>::`vftable'; /*0x476819*/
     v11 = (SuperWeaponTypeClass *)strtok(String, Str); /*0x476826*/
     if ( v11 ) /*0x47682d*/
     {
@@ -18201,7 +18201,7 @@ _DWORD *__thiscall INIClass::ReadSuperWeaponTypeList(
           if ( v28 < v27.Capacity /*0x47687f*/
             || (v27.IsAllocated || !v27.Capacity)
             && v29 > 0
-            && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v27.vtable0 + 2))(
+            && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v27.ptr_0 + 2))(
                  &v27,
                  v29 + v27.Capacity,
                  0) )
@@ -18232,7 +18232,7 @@ LABEL_22:
           goto LABEL_19; /*0x4768d5*/
         if ( !v27.IsAllocated && Capacity || v29 <= 0 ) /*0x4768e9*/
           goto LABEL_21; /*0x4768e9*/
-        if ( (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v27.vtable0 + 2))(&v27, v29 + Capacity, 0) ) /*0x4768f8*/
+        if ( (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v27.ptr_0 + 2))(&v27, v29 + Capacity, 0) ) /*0x4768f8*/
         {
 LABEL_19:
           v19 = v28++; /*0x476907*/
@@ -18253,7 +18253,7 @@ LABEL_23:
     a2[4] = v28; /*0x476961*/
     a2[5] = v22; /*0x476964*/
     *a2 = &TypeList<int>::`vftable'; /*0x476967*/
-    v27.vtable0 = &VectorClass<int>::`vftable'; /*0x47696d*/
+    v27.ptr_0 = &VectorClass<int>::`vftable'; /*0x47696d*/
     if ( !v23 && v27.IsAllocated ) /*0x476979*/
     {
       __3_YAXPAX_Z(Items); /*0x47697c*/
@@ -18728,7 +18728,7 @@ DynamicVectorClass *__fastcall LoadBuildingTypeClassPrerequisites(
       }
     }
     DynamicVectorClass::Copy(a1, &v21); /*0x4773cb*/
-    a1->vtable0 = (int)&TypeList<int>::`vftable'; /*0x4773d9*/
+    a1->ptr_0 = (int)&TypeList<int>::`vftable'; /*0x4773d9*/
     *(_DWORD *)v21.__pad_0 = &VectorClass<int>::`vftable'; /*0x4773df*/
     VectorClass::Destroy((int)&v21); /*0x4773e3*/
     a5 = &VectorClass<int>::`vftable'; /*0x4773ef*/
@@ -18943,7 +18943,7 @@ _DWORD *__thiscall VectorClass::Copy(DynamicVectorClass *this, _DWORD *a2)
   this->Capacity = 0; /*0x4777c0*/
   this->IsInitialized[0] = 1; /*0x4777c3*/
   this->IsAllocated[0] = 0; /*0x4777c7*/
-  this->vtable0 = (int)&VectorClass<int>::`vftable'; /*0x4777ca*/
+  this->ptr_0 = (int)&VectorClass<int>::`vftable'; /*0x4777ca*/
   if ( this != (DynamicVectorClass *)a2 ) /*0x4777d0*/
   {
     VectorClass::Destroy((int)this); /*0x4777d2*/
@@ -18977,8 +18977,8 @@ _DWORD *__thiscall VectorClass::Copy(DynamicVectorClass *this, _DWORD *a2)
   }
   this->Count = a2[4]; /*0x477821*/
   this->CapacityIncrement = a2[5]; /*0x477827*/
-  this->vtable0 = (int)&TypeList<int>::`vftable'; /*0x47782a*/
-  return &this->vtable0; /*0x477832*/
+  this->ptr_0 = (int)&TypeList<int>::`vftable'; /*0x47782a*/
+  return &this->ptr_0; /*0x477832*/
 }
 
 
@@ -19286,18 +19286,18 @@ _DWORD *__thiscall VectorClass::Construct(VectorClass *this, int a2, int a3)
   this->Capacity = a2; /*0x477bee*/
   this->IsInitialized = 1; /*0x477bf1*/
   this->IsAllocated = 0; /*0x477bf5*/
-  this->vtable0 = &VectorClass<int>::`vftable'; /*0x477bf8*/
+  this->ptr_0 = &VectorClass<int>::`vftable'; /*0x477bf8*/
   if ( a2 ) /*0x477bfe*/
   {
     if ( a3 ) /*0x477c06*/
     {
       this->Items = (void *)a3; /*0x477c08*/
-      return &this->vtable0; /*0x477c0e*/
+      return &this->ptr_0; /*0x477c0e*/
     }
     this->Items = (void *)__2_YAPAXI_Z(4 * a2); /*0x477c1d*/
     this->IsAllocated = 1; /*0x477c20*/
   }
-  return &this->vtable0; /*0x477c0d*/
+  return &this->ptr_0; /*0x477c0d*/
 }
 
 

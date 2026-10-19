@@ -57,7 +57,7 @@ public:
     bool IsAvailable() const;                                                         // 0x4F6540
     int Construct(const char* pID);  // 0x5113F0
 
-    // vtable helpers
+    // ptr_0 helpers
     void SaveLoad_Prefix(IStream* stream);                                             // 0x6CE800
     void SaveLoad_Prefix_0(IStream* stream);                                           // 0x6CE8D0
     void SDDTOR();  // 0x6CEFE0
@@ -101,8 +101,8 @@ protected:
 
 class SuperClass : public AbstractClass
 {
-    unsigned int ptr_26;  // G57w8 raw-vocab (0x6CE320 &this->vtable26 首槽)
-    unsigned int *ptr_4;  // G57w8 raw-vocab (0x6CE33B this->vtable2 数组槽)
+    unsigned int ptr_26;  // G57w8 raw-vocab (0x6CE320 &this->ptr_68 首槽)
+    unsigned int *ptr_4;  // G57w8 raw-vocab (0x6CE33B this->ptr_8 数组槽)
 public:
     static constexpr AbstractType AbsID = AbstractType::Super;
     static DynamicVectorClass<SuperClass*>* Array; // data: 0x87F670

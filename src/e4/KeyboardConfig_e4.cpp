@@ -48,7 +48,7 @@ int KeyboardConfig::LoadINI()
 
   INIClass::INIClass((INIClass *)&v9); /*0x533d2b*/
   v9.ownsFile = 0; /*0x533d3b*/
-  /* X11: vtable install elided (X67 star-deref, RHS CCINIClass_Vtable) */  /*0x533d3f*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS CCINIClass_Vtable) */  /*0x533d3f*/
   CCFileClass::Construct(&v10, aKeyboardmdIni); /*0x533d47*/
   if ( CCINIClass::Load(&v9, (int)&v10, 0, 0) ) /*0x533d57*/
   {
@@ -97,7 +97,7 @@ LABEL_13:
 LABEL_14:
       ++i; /*0x533e98*/
     }
-    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x533ec0*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x533ec0*/
     v12 = 0; /*0x533ec8*/
     Vector::Clear((int)v11); /*0x533ecf*/
     *(unsigned int *)v10.__tail_0 = &off_7E1668; /*0x533ed8*/
@@ -108,7 +108,7 @@ LABEL_14:
   else
   {
     Debug::Log(); /*0x533efe*/
-    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x533f0d*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x533f0d*/
     v12 = 0; /*0x533f15*/
     Vector::Clear((int)v11); /*0x533f1c*/
     *(unsigned int *)v10.__tail_0 = &off_7E1668; /*0x533f25*/

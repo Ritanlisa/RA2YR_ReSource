@@ -74,7 +74,7 @@ public:
     int IndexOf(FootClass*) const;                                     // 0x472C60
     int PointerToIndex(void*) const;                                   // 0x472CA0
 
-    // Stub/vtable
+    // Stub/ptr_0
     void g_var_ffdfec();                                                      // 0x472A80
     void g_var_1d5e6b();                                                      // 0x472AD0
 

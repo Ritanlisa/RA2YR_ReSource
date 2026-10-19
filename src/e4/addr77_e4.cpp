@@ -125,7 +125,7 @@ void ObjectClass::sub_770E70(ObjectClass * aP1, ObjectClass * aP2, ObjectClass, 
 namespace gamemd {
 void E4Recv_771890::sub_771890()
 {
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7F7354) */  /*0x771890*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7F7354) */  /*0x771890*/
   VtableStub::sub_5CB6C0(); /*0x771896*/
 }
 }
@@ -819,7 +819,7 @@ int WindowProc_Main(int a1, int a2, HWND hWnd, UINT Msg, signed int wParam, LPAR
         {
           MainWindowProc_Helper_724000(v16, (int)v12); /*0x7777a3*/
           v17->u32_264 = 7; /*0x7777a8*/
-          /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7F74C4) */  /*0x7777b2*/
+          /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7F74C4) */  /*0x7777b2*/
           *(unsigned int *)&stru_887338.__pad_1C[20] = v17; /*0x7777b8*/
         }
         else
@@ -1139,14 +1139,14 @@ unsigned int * PlayerProfile_Load(unsigned int * a1, const char ** a2)
     v17.NeedsSaveOrLink = 0; /*0x778ac3*/
     v17.fallRate = 0; /*0x778ac7*/
     v17.nextObject = 0; /*0x778acb*/
-    /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E1B0C) */  /*0x778acf*/
+    /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E1B0C) */  /*0x778acf*/
     GenericNode::Constructor((MixFileClass *)&v17.attachedTag); /*0x778ad7*/
     LinkedList::Prepend((LinkedList *)&v17.owningHouseIndex, (int)&v17.attachedTag); /*0x778aed*/
-    /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E1AFC) */  /*0x778af9*/
+    /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E1AFC) */  /*0x778af9*/
     memset(&v17.ambientSoundController[1], 0, 13); /*0x778b07*/
     v17.customSound_controller[0] = 0; /*0x778b18*/
     v17.customSound_controller[1] = 0; /*0x778b1c*/
-    /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7EA5F4) */  /*0x778b20*/
+    /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7EA5F4) */  /*0x778b20*/
     FileStraw::Open((FileStraw *)&v17.nextArrayIndex, (int)&v17.spawnStatus, 0); /*0x778b28*/
     CCFileClass::Close((CCFileClass *)&v17.spawnStatus); /*0x778b34*/
     String::AssignFromPtr((String *)&v17.ptr_4, a2); /*0x778b3e*/
@@ -1250,7 +1250,7 @@ unsigned int * PlayerProfile_Load(unsigned int * a1, const char ** a2)
         AccountInfoWOL_Load = 0; /*0x778eb7*/
       v16 = *(ComPtr **)v17.bombVisible; /*0x778eb9*/
       ComPtr::Constructor(*(ComPtr **)v17.bombVisible); /*0x778ebf*/
-      /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7F3F44) */  /*0x778ec6*/
+      /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7F3F44) */  /*0x778ec6*/
       ComPtr::Set(v16, (int)AccountInfoWOL_Load); /*0x778ecd*/
       DeleteAndZero::Alt((DeleteAndZero *)&v17.uniqueId); /*0x778ed6*/
       DeleteAndZero::Alt((DeleteAndZero *)&v17.abstractFlags); /*0x778edf*/
@@ -3843,7 +3843,7 @@ unsigned int * E4Recv_771850::sub_771850(int a2)
   this->M16 = TimerGetTicks(); /*0x771867*/
   this->u32_18 = 0; /*0x77186e*/
   this->a2 = a2; /*0x771871*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7F7354) */  /*0x771874*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7F7354) */  /*0x771874*/
   return this; /*0x77187c*/
 }
 } // namespace gamemd
@@ -3857,7 +3857,7 @@ int E4Recv_7719E0::sub_7719E0()
   this->Items = 0; /*0x7719e6*/
   this->Capacity = 0; /*0x7719e9*/
   this->IsAllocated = 0; /*0x7719ec*/
-  /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x7719ef) */
+  /* X11: ptr_0 install elided (implicit via DynamicVectorClass virtuals 0x7719ef) */
   this->CapacityIncrement[0] = 10; /*0x7719f5*/
   this->Count = 0; /*0x7719fc*/
   return 0; /*0x7719ff*/
@@ -3873,7 +3873,7 @@ void E4Recv_771A00::sub_771A00()
 
   void *Items; // eax
   Items = this->Items; /*0x771a06*/
-  /* X11: vtable install elided (implicit via VectorClass virtuals 0x771a09) */
+  /* X11: ptr_0 install elided (implicit via VectorClass virtuals 0x771a09) */
   if ( Items && this->IsAllocated ) /*0x771a13*/
   {
     __3_YAXPAX_Z(Items); /*0x771a19*/
@@ -4174,7 +4174,7 @@ unsigned int * sub_773450(int a1, int a2)
     v4[2] = 0; /*0x773480*/
     v4->u8_40C = 0; /*0x773482*/
     v4[260] = 0; /*0x773488*/
-    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7F743C) */  /*0x77348e*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7F743C) */  /*0x77348e*/
     Debug::Log(); /*0x773494*/
     v4[260] = a1; /*0x77349c*/
     Debug::Log(); /*0x7734a7*/

@@ -46,10 +46,10 @@ AbstractClass * FootClass::Destruct(void *a1)
 
   int *team; // ecx
   team = (int *)this->team; /*0x4d3597*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8C68) */  /*0x4d359d*/
-  /* X11: vtable install elided (implicit via FootClass virtuals 0x4d35a5) */
-  /* X11: vtable install elided (implicit via FootClass virtuals 0x4d35ac) */
-  /* X11: vtable install elided (implicit via FootClass virtuals 0x4d35b3) */
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E8C68) */  /*0x4d359d*/
+  /* X11: ptr_0 install elided (implicit via FootClass virtuals 0x4d35a5) */
+  /* X11: ptr_0 install elided (implicit via FootClass virtuals 0x4d35ac) */
+  /* X11: ptr_0 install elided (implicit via FootClass virtuals 0x4d35b3) */
   if ( team && byte_A8E9A0 ) /*0x4d35c2*/
     (team)->LiberateMember_Start((int)this, 0xFFFFFFFF, 0); /*0x4d35c8*/
   FootClass *v11; // [esp+8h] [ebp-4h] BYREF
@@ -87,7 +87,7 @@ AbstractClass * FootClass::Destruct(void *a1)
     (*(void (**)(int))(*(unsigned int *)v7 + 8))(this->locomotor[0]); /*0x4d3690*/
   void *v8; // eax
   v8 = *(void **)this->q_5B0; /*0x4d3693*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x4d36a0*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x4d36a0*/
   if ( v8 && this->u32_5B9 ) /*0x4d36a8*/
   {
     __3_YAXPAX_Z(v8); /*0x4d36b1*/
@@ -97,7 +97,7 @@ AbstractClass * FootClass::Destruct(void *a1)
   *&this->q5B4 = 0; /*0x4d36c5*/
   void *v9; // eax
   v9 = *(void **)this->__pad_58C; /*0x4d36cb*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x4d36d1*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x4d36d1*/
   if ( v9 && this->u32_595 ) /*0x4d36dc*/
   {
     __3_YAXPAX_Z(v9); /*0x4d36e5*/

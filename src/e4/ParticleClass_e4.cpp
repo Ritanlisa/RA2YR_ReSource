@@ -215,7 +215,7 @@ int ParticleClass::LoadParticleData(ObjectClass * aP1, int aP1a)
     if ( aP1 ) /*0x62d7b6*/
     {
       ((ObjectClass *)aP1)->Init((int)&aP1a); /*0x62d7bf*/
-      /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EF928) */  /*0x62d7c4*/
+      /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EF928) */  /*0x62d7c4*/
       aP1[1] = &g_ptr_7EF928; /*0x62d7ca*/
       aP1[2] = &g_ptr_7EF928; /*0x62d7d1*/
       aP1[3] = &g_ptr_7EF928; /*0x62d7d8*/

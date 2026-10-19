@@ -66,7 +66,7 @@ int TeamTypeClass::Construct(void *a1, void *a2, void *a3, void *a4, void *a5, v
   this->taskForceCapacity = 0; /*0x4c98dd*/
   this->__pad_04C = 1; /*0x4c98e0*/
   this->__pad_4C[1] = 0; /*0x4c98e3*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E3238) */  /*0x4c98e6*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E3238) */  /*0x4c98e6*/
   *&this->taskForceCapacity = 10; /*0x4c98ed*/
   *&this->taskForceCount = 0; /*0x4c98f4*/
   this->TeamTypeClass_field_71 = 1; /*0x4c98f7*/
@@ -78,10 +78,10 @@ int TeamTypeClass::Construct(void *a1, void *a2, void *a3, void *a4, void *a5, v
   this->TeamTypeClass_field_68 = -1; /*0x4c990d*/
   this->TeamTypeClass_field_6C = 0; /*0x4c9914*/
   this->TeamTypeClass_field_70 = 0; /*0x4c9917*/
-  /* X11: vtable install elided (base-interface slot, RHS g_ptr_7E88A4) */  /*0x4c991a*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E88A4) */  /*0x4c9920*/
-  /* X11: vtable install elided (implicit via FactoryClass virtuals 0x4c9926) */
-  /* X11: vtable install elided (implicit via FactoryClass virtuals 0x4c992d) */
+  /* X11: ptr_0 install elided (base-interface slot, RHS g_ptr_7E88A4) */  /*0x4c991a*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E88A4) */  /*0x4c9920*/
+  /* X11: ptr_0 install elided (implicit via FactoryClass virtuals 0x4c9926) */
+  /* X11: ptr_0 install elided (implicit via FactoryClass virtuals 0x4c992d) */
   AbstractClass::GenerateUniqueID((AbstractClass *)&this->?); /*0x4c9934*/
   if ( *(int *)&stru_A83D50.__pad_C8[40] < *(int *)&stru_A83D50.__pad_C8[32] /*0x4c996d*/
     || (stru_A83D50.__pad_C8[37] || !*(unsigned int *)&stru_A83D50.__pad_C8[32])
@@ -145,10 +145,10 @@ LABEL_6:
       AbstractTypeClass::Constructor(v3, Source); /*0x691c7c*/
       v4->Coord_9C = 0; /*0x691c81*/
       v4->q0A0 = 0; /*0x691c8b*/
-      /* X11: vtable install elided (X67 star-deref, RHS g_var_a2536f) */  /*0x691c95*/
-      /* X11: vtable install elided (X67 recv-slot, RHS g_var_a2536f) */  /*0x691c9b*/
-      /* X11: vtable install elided (X67 recv-slot, RHS g_var_a2536f) */  /*0x691ca2*/
-      /* X11: vtable install elided (X67 recv-slot, RHS g_var_a2536f) */  /*0x691ca9*/
+      /* X11: ptr_0 install elided (X67 star-deref, RHS g_var_a2536f) */  /*0x691c95*/
+      /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_a2536f) */  /*0x691c9b*/
+      /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_a2536f) */  /*0x691ca2*/
+      /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_a2536f) */  /*0x691ca9*/
       v5 = dword_8B41D8; /*0x691cb0*/
       if ( dword_8B41D8 < dword_8B41D0 /*0x691cf1*/
         || (byte_8B41D5 || !dword_8B41D0)
@@ -1111,10 +1111,10 @@ int TeamTypeClass::LoadTypeData(AbstractTypeClass * aP0, int aP1)
     if ( aP0 ) /*0x6f1bc6*/
     {
       AbstractTypeClass::Init((int)aP0, (int)&aP1); /*0x6f1bcf*/
-      /* X11: vtable install elided (implicit via TeamTypeClass virtuals 0x6f1bd4) */
-      /* X11: vtable install elided (implicit via TeamTypeClass virtuals 0x6f1bda) */
-      /* X11: vtable install elided (implicit via TeamTypeClass virtuals 0x6f1be1) */
-      /* X11: vtable install elided (implicit via TeamTypeClass virtuals 0x6f1be8) */
+      /* X11: ptr_0 install elided (implicit via TeamTypeClass virtuals 0x6f1bd4) */
+      /* X11: ptr_0 install elided (implicit via TeamTypeClass virtuals 0x6f1bda) */
+      /* X11: ptr_0 install elided (implicit via TeamTypeClass virtuals 0x6f1be1) */
+      /* X11: ptr_0 install elided (implicit via TeamTypeClass virtuals 0x6f1be8) */
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->u32_C4); /*0x6f1bfb*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->q0D0); /*0x6f1c0c*/
@@ -1356,7 +1356,7 @@ VectorClass_flat * TeamTypeClass_28::QueryInterface(unsigned int * Block, char a
 {
 
   int v3 = *&Block->__pad_004; // eax /*0x6f2683*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_var_43a43e) */  /*0x6f2686*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_var_43a43e) */  /*0x6f2686*/
   if ( v3 && (Block->u32_D) ) /*0x6f2690*/
   {
     operator delete(((void *)(v3 - 4))); /*0x6f26a3*/
@@ -1377,7 +1377,7 @@ DynamicVector * TeamTypeClass_28::Constructor(unsigned int * Block, char a2, voi
 
 
   int v3 = *&Block->__pad_004; // eax /*0x6f2723*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_var_43a43e) */  /*0x6f2726*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_var_43a43e) */  /*0x6f2726*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x6f2730*/
   {
     __3_YAXPAX_Z((void *)(v3 - 4)); /*0x6f2743*/

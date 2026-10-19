@@ -126,7 +126,7 @@ namespace gamemd {
 std::locale::facet * RLEBlitTransZRemapXlatAlpha_ushort::Constructor_RLEBlitter(char a2)
 {
 
-  /* X11: vtable install elided (implicit via RLEBlitter virtuals 0x49a9a9) */
+  /* X11: ptr_0 install elided (implicit via RLEBlitter virtuals 0x49a9a9) */
   if ( (a2 & 1) != 0 ) /*0x49a9af*/
     __3_YAXPAX_Z(this); /*0x49a9b2*/
   return (std::locale::facet *)this; /*0x49a9bc*/
@@ -138,7 +138,7 @@ namespace gamemd {
 std::locale::facet * RLEBlitTransZRemapXlatAlpha_ushort::Constructor_RLEBlitter_0(char a2)
 {
 
-  /* X11: vtable install elided (implicit via RLEBlitter virtuals 0x49a9c9) */
+  /* X11: ptr_0 install elided (implicit via RLEBlitter virtuals 0x49a9c9) */
   if ( (a2 & 1) != 0 ) /*0x49a9cf*/
     __3_YAXPAX_Z(this); /*0x49a9d2*/
   return (std::locale::facet *)this; /*0x49a9dc*/
@@ -150,7 +150,7 @@ namespace gamemd {
 std::locale::facet * RLEBlitTransZRemapXlatAlpha_ushort::Constructor_RLEBlitter_1(char a2)
 {
 
-  /* X11: vtable install elided (implicit via RLEBlitter virtuals 0x49a9e9) */
+  /* X11: ptr_0 install elided (implicit via RLEBlitter virtuals 0x49a9e9) */
   if ( (a2 & 1) != 0 ) /*0x49a9ef*/
     __3_YAXPAX_Z(this); /*0x49a9f2*/
   return (std::locale::facet *)this; /*0x49a9fc*/
@@ -164,10 +164,10 @@ RLEBlitTransZRemapXlatAlpha_ushort * RLEBlitTransZRemapXlatAlpha_ushort::QueryIn
 
   void *m_C; // eax
   m_C = (void *)Block->u32_C; /*0x49aa48*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_var_477f70) */  /*0x49aa4b*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_var_477f70) */  /*0x49aa4b*/
   FractalNoise::Dtor(m_C); /*0x49aa52*/
   Block->u32_C = 0; /*0x49aa5b*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E5BA0) */  /*0x49aa64*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E5BA0) */  /*0x49aa64*/
   if ( (a2 & 1) != 0 ) /*0x49aa6a*/
     operator delete((Block)); /*0x49aa6d*/
   return Block->tail_0; /*0x49aa77*/

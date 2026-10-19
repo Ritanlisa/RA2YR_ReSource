@@ -1679,10 +1679,10 @@ int AircraftClass::LoadFromStream()
   AircraftClass *v16; // [esp+10h] [ebp-4h] BYREF
 
   p_vtable1 = (AbstractClass *)&disasm->ptr_1; /*0x414087*/
-  /* X11: vtable install elided (implicit via class virtuals 0x41408a) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x414090) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x414097) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x41409e) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x41408a) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x414090) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x414097) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x41409e) — binary-proven install, was 0 */
   *(unsigned int *)disasm->__pad_6C0 = 0; /*0x4140a4*/
   if ( byte_A8E9A0 ) /*0x4140b5*/
   {

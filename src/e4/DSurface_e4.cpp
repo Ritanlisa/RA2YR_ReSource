@@ -75,7 +75,7 @@ AbstractClass * DSurface::Construct(int aP1, int aP2, char aP3, char a5, void *a
   this->u32_64 = 0; /*0x4ba5c7*/
   this->DSurface_field_0x1C = 0; /*0x4ba5ca*/
   this->DSurface_field_0x20 = 0; /*0x4ba5cd*/
-  /* X11: vtable install elided (implicit via DSurface virtuals 0x4ba5d0) */
+  /* X11: ptr_0 install elided (implicit via DSurface virtuals 0x4ba5d0) */
   void *v7; // edi
   v7 = operator new(0x6Cu); /*0x4ba5db*/
   this->DSurface_field_0x20 = v7; /*0x4ba5e2*/
@@ -119,7 +119,7 @@ AbstractClass * * DSurface::Destroy(void *a1)
   int result; // eax
 
   DSurface_field_0x18 = (char)this->DSurface_field_0x18; /*0x4ba6b6*/
-  /* X11: vtable install elided (implicit via DSurface virtuals 0x4ba6b9) */
+  /* X11: ptr_0 install elided (implicit via DSurface virtuals 0x4ba6b9) */
   if ( DSurface_field_0x18 ) /*0x4ba6c1*/
   {
     v3 = this->DSurface_field_0x1C; /*0x4ba6c3*/
@@ -139,7 +139,7 @@ AbstractClass * * DSurface::Destroy(void *a1)
   if ( result ) /*0x4ba6fe*/
     result = (*(int (**)(int))(*(unsigned int *)result + 8))(result); /*0x4ba703*/
   this->DSurface_field_0x1C = 0; /*0x4ba706*/
-  /* X11: vtable install elided (implicit via Surface virtuals 0x4ba709) */
+  /* X11: ptr_0 install elided (implicit via Surface virtuals 0x4ba709) */
   return result; /*0x4ba70f*/
 
 }
@@ -196,7 +196,7 @@ AbstractClass * * DSurface::CreatePrimary(void *a1)
     *(unsigned char *)(v2 + 24) = 0; /*0x4ba80b*/
     *(unsigned char *)(v2 + 25) = 0; /*0x4ba80e*/
     *(unsigned int *)(v2 + 28) = 0; /*0x4ba811*/
-    /* X11: vtable install elided (X67 star-deref, RHS DSurface_Vtable) */  /*0x4ba814*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS DSurface_Vtable) */  /*0x4ba814*/
     v4 = (void *)__2_YAPAXI_Z(0x6Cu); /*0x4ba822*/
     v3[8] = v4; /*0x4ba82b*/
     v5 = v3; /*0x4ba82e*/
@@ -405,7 +405,7 @@ unsigned int * DSurface::CreateBackBuffer(int a2, void *a2_1)
   (this->DSurface_field_0x18) = ((this->DSurface_field_0x18) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x4bac7d*/
   this->DSurface_field_0x1C = a2; /*0x4bac80*/
   this->DSurface_field_0x20 = 0; /*0x4bac83*/
-  /* X11: vtable install elided (implicit via DSurface virtuals 0x4bac86) */
+  /* X11: ptr_0 install elided (implicit via DSurface virtuals 0x4bac86) */
   if ( a2 ) /*0x4bac8c*/
   {
     v3 = __2_YAPAXI_Z(0x6Cu); /*0x4bac96*/

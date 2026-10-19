@@ -10,7 +10,7 @@
 namespace gamemd {  // G42.18 ns repair
 unsigned int * CursorPositionCommandClass::Constructor(void *a1, void *a2, void *a3, void *a4)
 {
-  /* X11: vtable install elided (implicit via CursorPositionCommandClass virtuals 0x537e72) */
+  /* X11: ptr_0 install elided (implicit via CursorPositionCommandClass virtuals 0x537e72) */
   return (unsigned int *)(this->__tail_0); /*0x537e78*/
 }  // G42.18 ns repair
 } // namespace gamemd

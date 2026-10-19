@@ -14,14 +14,14 @@ struct SHPStruct;
 class ConvertClass;  // full definition in system/convert_class.hpp
 
 // Surface — abstract render-target base class.
-// IDA evidence: vtable 0x7E2198 (32 entries; 25 slots share the
+// IDA evidence: ptr_0 0x7E2198 (32 entries; 25 slots share the
 // `xor eax,eax` default stub 0x4C9150, i.e. never called through base).
 // Width@+0x04 / Height@+0x08 proven by Surface::GetWidth (0x411540:
 // mov eax,[ecx+4]) / Surface::GetHeight (0x411550: mov eax,[ecx+8]).
 class Surface
 {
 public:
-    // vtable [0]: scalar deleting destructor
+    // ptr_0 [0]: scalar deleting destructor
     virtual ~Surface() = 0
 ; // abstract base — deleting dtor defined in surface.cpp
 
@@ -93,14 +93,14 @@ public:
     virtual bool Unlock() = 0;
     virtual bool CanLock(uint32_t unk1, uint32_t unk2) = 0;
     virtual bool IsLocked() const = 0;  // 0x411580
-    // XSurface vtable slots [28]/[29] hold the shared `xor eax,eax` stub —
+    // XSurface ptr_0 slots [28]/[29] hold the shared `xor eax,eax` stub —
     // base default returns 0; BSurface/DSurface override.
     virtual int GetBytesPerPixel() const;  // default impl in surface.cpp
     virtual int GetPitch() const;          // default impl in surface.cpp
     virtual RectangleStruct* GetRect(RectangleStruct* out_rect);  // 0x411510: fills {0, 0, Width, Height}, returns out_rect
     virtual int GetWidth() const;   // 0x411540: mov eax,[ecx+4]
     virtual int GetHeight() const;  // 0x411550: mov eax,[ecx+8]
-    // XSurface vtable [33] = StubReturnFalse (0x411590) — base default false.
+    // XSurface ptr_0 [33] = StubReturnFalse (0x411590) — base default false.
     virtual bool IsDSurface() const;  // default impl in surface.cpp
     virtual bool PutPixel(
         const Point2D& point,
@@ -271,8 +271,8 @@ public:
         const Point2D& point,
         const RectangleStruct& clip_rect) override;
 
-    // XSurface vtable ends at [35] GetPixelAtCoords — these two introduce
-    // new virtuals here (DSurface vtable [36]/[37]); not overrides.
+    // XSurface ptr_0 ends at [35] GetPixelAtCoords — these two introduce
+    // new virtuals here (DSurface ptr_0 [36]/[37]); not overrides.
     virtual bool DrawGradientLine( // 0x4bf750
         const RectangleStruct& clip_rect,
         const Point2D& start, const Point2D& end,

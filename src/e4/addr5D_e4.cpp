@@ -700,7 +700,7 @@ char sub_5D6000(HWND hWnd, int a2)
     {
       g_MultiplayerMode |= 1u; /*0x5d603d*/
       MultiplayerGameMode::ConstructMultiplayerGameModeVectorClass(&g_MultiplayerModeConfig, 0, 0); /*0x5d6048*/
-      /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EED20) */  /*0x5d604d*/
+      /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EED20) */  /*0x5d604d*/
       dword_ABFDB4 = 10; /*0x5d6057*/
       dword_ABFDB0 = 0; /*0x5d6066*/
       result = atexit(MultiplayerConfig::Cleanup); /*0x5d606c*/
@@ -711,7 +711,7 @@ char sub_5D6000(HWND hWnd, int a2)
     {
       g_MultiplayerMode |= 1u; /*0x5d6090*/
       MultiplayerGameMode::ConstructMultiplayerGameModeVectorClass(&g_MultiplayerModeConfig, 0, 0); /*0x5d609b*/
-      /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EED20) */  /*0x5d60a0*/
+      /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EED20) */  /*0x5d60a0*/
       dword_ABFDB4 = 10; /*0x5d60aa*/
       dword_ABFDB0 = 0; /*0x5d60b9*/
       atexit(MultiplayerConfig::Cleanup); /*0x5d60bf*/
@@ -765,11 +765,11 @@ Coord * * LoadMultiplayerModesList(AbstractClass * a1, int edx0, void * aDRa2mdp
     v19.health = 0; /*0x5d75ce*/
     v19.estimatedHealth = 0; /*0x5d75d2*/
     GenericList::Constructor((GenericList *)v19.isOnMap); /*0x5d75d6*/
-    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E1AFC) */  /*0x5d75e8*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E1AFC) */  /*0x5d75e8*/
     memset(v19.isAliveFlag, 0, 13); /*0x5d75f3*/
     v19.location[1] = 0; /*0x5d760f*/
     v19.location[2] = 0; /*0x5d7616*/
-    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EA5F4) */  /*0x5d761d*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EA5F4) */  /*0x5d761d*/
     if ( FileStraw::Open((FileStraw *)v19.bombVisible, (int)&v19.lineTrailer, 0) > 0 ) /*0x5d762c*/
     {
       v19.customSound_controller[4] = INIClass::FindKey(v19.bombVisible, v2); /*0x5d763e*/
@@ -891,7 +891,7 @@ LABEL_46:
               g_MultiplayerMode = v16 | 1; /*0x5d79eb*/
               MultiplayerGameMode::ConstructMultiplayerGameModeVectorClass(&g_MultiplayerModeConfig, 0, 0); /*0x5d79f0*/
               dword_ABFDB4 = 10; /*0x5d79fa*/
-              /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EED20) */  /*0x5d7a05*/
+              /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EED20) */  /*0x5d7a05*/
               dword_ABFDB0 = 0; /*0x5d7a0b*/
               atexit(MultiplayerConfig::Cleanup); /*0x5d7a11*/
               v16 = g_MultiplayerMode; /*0x5d7a16*/
@@ -905,7 +905,7 @@ LABEL_46:
               dword_ABFDA8 = 0; /*0x5d7a43*/
               byte_ABFDAC = 1; /*0x5d7a49*/
               byte_ABFDAD = 0; /*0x5d7a50*/
-              /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EED20) */  /*0x5d7a56*/
+              /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EED20) */  /*0x5d7a56*/
               dword_ABFDB4 = 10; /*0x5d7a5c*/
               dword_ABFDB0 = 0; /*0x5d7a62*/
               atexit(MultiplayerConfig::Cleanup); /*0x5d7a68*/
@@ -924,7 +924,7 @@ LABEL_46:
               dword_ABFDA8 = 0; /*0x5d7b6a*/
               byte_ABFDAC = 1; /*0x5d7b70*/
               byte_ABFDAD = 0; /*0x5d7b77*/
-              /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EED20) */  /*0x5d7b7d*/
+              /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EED20) */  /*0x5d7b7d*/
               dword_ABFDB4 = 10; /*0x5d7b83*/
               dword_ABFDB0 = 0; /*0x5d7b89*/
               atexit(MultiplayerConfig::Cleanup); /*0x5d7b8f*/
@@ -957,7 +957,7 @@ LABEL_46:
               dword_ABFDA8 = 0; /*0x5d7aae*/
               byte_ABFDAC = 1; /*0x5d7ab4*/
               byte_ABFDAD = 0; /*0x5d7abb*/
-              /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EED20) */  /*0x5d7ac1*/
+              /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EED20) */  /*0x5d7ac1*/
               dword_ABFDB4 = 10; /*0x5d7ac7*/
               dword_ABFDB0 = 0; /*0x5d7acd*/
               atexit(MultiplayerConfig::Cleanup); /*0x5d7ad3*/
@@ -988,7 +988,7 @@ LABEL_45:
 LABEL_50:
     HashTable::DestroyHashTableINIClass((INIClass *)v19.bombVisible); /*0x5d7c82*/
   }
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E16B0) */  /*0x5d7c92*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E16B0) */  /*0x5d7c92*/
   v21 = 0; /*0x5d7c9d*/
   Vector::Clear((int)v20); /*0x5d7ca4*/
   v19.lineTrailer = (int)&off_7E1668; /*0x5d7cb0*/
@@ -2435,7 +2435,7 @@ int sub_5D7550(int a1)
 namespace gamemd {
 unsigned int * E4Recv_5D7580::sub_5D7580()
 {
-  /* X11: vtable install elided (implicit via MultiplayerGameModeInitializerBase virtuals 0x5d7582) */
+  /* X11: ptr_0 install elided (implicit via MultiplayerGameModeInitializerBase virtuals 0x5d7582) */
   return &this->ptr_0; /*0x5d7588*/
 }
 } // namespace gamemd
@@ -2444,7 +2444,7 @@ unsigned int * E4Recv_5D7580::sub_5D7580()
 namespace gamemd {
 void E4Recv_5D7CD0::sub_5D7CD0()
 {
-  /* X11: vtable install elided (X67 star-deref, RHS g_var_1d2f86) */  /*0x5d7cd0*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_var_1d2f86) */  /*0x5d7cd0*/
 }
 } // namespace gamemd
 
@@ -2452,7 +2452,7 @@ void E4Recv_5D7CD0::sub_5D7CD0()
 namespace gamemd {
 unsigned int * E4Recv_5D7FF0::___Gfacet_locale_std__UAEPAXI_Z_127(unsigned int * Block, char a2)
 {
-  /* X11: vtable install elided (X67 star-deref, RHS g_var_1d2f86) */  /*0x5d7ff9*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_var_1d2f86) */  /*0x5d7ff9*/
   if ( (a2 & 1) != 0 ) /*0x5d7fff*/
     operator delete((Block)); /*0x5d8002*/
   return Block; /*0x5d800c*/
@@ -2463,7 +2463,7 @@ unsigned int * E4Recv_5D7FF0::___Gfacet_locale_std__UAEPAXI_Z_127(unsigned int *
 namespace gamemd {
 unsigned int * E4Recv_5D8010::___Gfacet_locale_std__UAEPAXI_Z_128(unsigned int * Block, char a2)
 {
-  /* X11: vtable install elided (X67 star-deref, RHS g_var_1d2f86) */  /*0x5d8019*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_var_1d2f86) */  /*0x5d8019*/
   if ( (a2 & 1) != 0 ) /*0x5d801f*/
     operator delete((Block)); /*0x5d8022*/
   return Block; /*0x5d802c*/

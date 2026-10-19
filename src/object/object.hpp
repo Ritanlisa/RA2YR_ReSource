@@ -83,7 +83,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
 // ============================================================================
 // ObjectClass — root of all game object instances
 //
-// IDA: Primary vtable @ 0x7EF060 (contiguous with AbstractClass @ 0x7E1F50)
+// IDA: Primary ptr_0 @ 0x7EF060 (contiguous with AbstractClass @ 0x7E1F50)
 //      Secondary vtables: 0x7EF044, 0x7EF03C, 0x7EF034
 //      Constructor: ObjectClass::ctor @ 0x5F3900  Dtor: 0x5F3B80
 //      sizeof: 0xAC (confirmed via ctor init chain)
@@ -101,7 +101,7 @@ public:
     static constexpr AbstractType kObjectDeriveId = static_cast<AbstractType>(0x2);
 
     // === IPersistStream override (re-declared pure virtual) ===
-    // [5] 0x5F5E80 ObjectClass vtable stub for Load
+    // [5] 0x5F5E80 ObjectClass ptr_0 stub for Load
     // stub: not yet implemented from IDA
     virtual HRESULT __stdcall Load(IStream* stream) override = 0;
 
@@ -110,8 +110,8 @@ public:
     virtual ~ObjectClass();  // 0x5F3B80
 
     // ========================================================================
-    // ObjectClass virtuals (vtable[0] entries [24]-[121])
-    // =0 methods have no function body; address = vtable slot target function
+    // ObjectClass virtuals (ptr_0[0] entries [24]-[121])
+    // =0 methods have no function body; address = ptr_0 slot target function
     // ========================================================================
 
     // [24] 0x5F6DA0 ObjectClass::ResetPointerIfMatch
@@ -438,7 +438,7 @@ virtual CoordStruct * GetCellCoords_Alt(void *a2 = 0) const;  // W20M26 retype (
     // Member fields (IDA ctor 0x5F3900 confirmed offsets)
     // ========================================================================
 
-    // AbstractClass fields inherited: +0x00 vtable ptrs (4), +0x10 uniqueId,
+    // AbstractClass fields inherited: +0x00 ptr_0 ptrs (4), +0x10 uniqueId,
     //   +0x14 abstractFlags, +0x18 nextArrayIndex, +0x1C referenceCount,
     //   +0x20 NeedsSaveOrLink (gamemd::UnitClass*), reused as bool in IsDirty, as UnitClass* in updateHarvesting
     //
@@ -661,8 +661,8 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int QueueTechnoVoiceLine( TechnoClass * aP1, TechnoClass * aP2, TechnoClass * aP3, TechnoClass * aP4, TechnoClass * aP5, TechnoClass * aP6, TechnoClass * aP7, TechnoClass * aP8, TechnoClass * aP9, TechnoClass * aP10, TechnoClass * aP11);  // G42.39 supply
 
     void* RenderTechnoOverlaySHP( TechnoClass * aP1, int a3, TechnoClass * aP3, int a5, TechnoClass * aP5, TechnoClass * aP6, int a8, char a9, TechnoClass * aP9, TechnoClass * aP10, int a12);  // G42.39 supply
-    void* ptr_0;  // 0x0 (ml truth)  gB vtable supply
-    void* ptr_8;  // 0x8 (ml truth)  gB vtable supply
+    void* ptr_0;  // 0x0 (ml truth)  gB ptr_0 supply
+    void* ptr_8;  // 0x8 (ml truth)  gB ptr_0 supply
 public:  // g57c5 W6 owner supply
     unsigned int u32_61;  // 0x61 g57c5 W6 (ml ObjectClass@0x61 own)
 public:  // g57c5 W6 owner supply

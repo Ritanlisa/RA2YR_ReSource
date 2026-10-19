@@ -28,13 +28,13 @@ unsigned int * LightSourceClass::Construct(int a2, int a3, int a4, int a5, int a
   this->DetailLevel = 2; /*0x55478f*/
   this->Location[0] = a2; /*0x554796*/
   this->Activated = 0; /*0x55479c*/
-  /* X11: vtable install elided (base-interface slot, RHS g_ptr_7ECFFC) */  /*0x5547a0*/
+  /* X11: ptr_0 install elided (base-interface slot, RHS g_ptr_7ECFFC) */  /*0x5547a0*/
   this->Location[1] = a3; /*0x5547a6*/
   this->LightVisibility = a5; /*0x5547ad*/
-  /* X11: vtable install elided (implicit via LightSourceClass virtuals 0x5547b0) */
+  /* X11: ptr_0 install elided (implicit via LightSourceClass virtuals 0x5547b0) */
   this->Location[2] = a4; /*0x5547b7*/
-  /* X11: vtable install elided (implicit via LightSourceClass virtuals 0x5547ba) */
-  /* X11: vtable install elided (implicit via LightSourceClass virtuals 0x5547c1) */
+  /* X11: ptr_0 install elided (implicit via LightSourceClass virtuals 0x5547ba) */
+  /* X11: ptr_0 install elided (implicit via LightSourceClass virtuals 0x5547c1) */
   if ( g_MissionQueueFrame.random[133] < g_MissionQueueFrame.random[131] /*0x5547fd*/
     || (BYTE1(g_MissionQueueFrame.random[132]) || !g_MissionQueueFrame.random[131])
     && g_MissionQueueFrame.random[134] > 0
@@ -69,10 +69,10 @@ int LightSourceClass::Constructor(void *a1, void *a2, void *a3, void *a4)
   this->LightVisibility = 0; /*0x554860*/
   this->Activated = 0; /*0x554863*/
   this->Location[2] = v2; /*0x554866*/
-  /* X11: vtable install elided (base-interface slot, RHS g_ptr_7ECFFC) */  /*0x554869*/
-  /* X11: vtable install elided (implicit via LightSourceClass virtuals 0x55486f) */
-  /* X11: vtable install elided (implicit via LightSourceClass virtuals 0x554876) */
-  /* X11: vtable install elided (implicit via LightSourceClass virtuals 0x55487d) */
+  /* X11: ptr_0 install elided (base-interface slot, RHS g_ptr_7ECFFC) */  /*0x554869*/
+  /* X11: ptr_0 install elided (implicit via LightSourceClass virtuals 0x55486f) */
+  /* X11: ptr_0 install elided (implicit via LightSourceClass virtuals 0x554876) */
+  /* X11: ptr_0 install elided (implicit via LightSourceClass virtuals 0x55487d) */
   if ( g_MissionQueueFrame.random[133] < g_MissionQueueFrame.random[131] /*0x5548b6*/
     || (BYTE1(g_MissionQueueFrame.random[132]) || !g_MissionQueueFrame.random[131])
     && g_MissionQueueFrame.random[134] > 0
@@ -121,10 +121,10 @@ int LightSourceClass::Write(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x5550d6*/
     {
       AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x5550df*/
-      /* X11: vtable install elided (implicit via LightSourceClass virtuals 0x5550e4) */
-      /* X11: vtable install elided (implicit via LightSourceClass virtuals 0x5550ea) */
-      /* X11: vtable install elided (implicit via LightSourceClass virtuals 0x5550f1) */
-      /* X11: vtable install elided (implicit via LightSourceClass virtuals 0x5550f8) */
+      /* X11: ptr_0 install elided (implicit via LightSourceClass virtuals 0x5550e4) */
+      /* X11: ptr_0 install elided (implicit via LightSourceClass virtuals 0x5550ea) */
+      /* X11: ptr_0 install elided (implicit via LightSourceClass virtuals 0x5550f1) */
+      /* X11: ptr_0 install elided (implicit via LightSourceClass virtuals 0x5550f8) */
     }
     return 0; /*0x5550ff*/
   }
@@ -163,10 +163,10 @@ LightSourceClass * LightSourceClass::CopyTo(char a2)
 {
 
 
-  /* X11: vtable install elided (base-interface slot, RHS g_ptr_7ECFFC) */  /*0x555156*/
-  /* X11: vtable install elided (implicit via LightSourceClass virtuals 0x55515c) */
-  /* X11: vtable install elided (implicit via LightSourceClass virtuals 0x555163) */
-  /* X11: vtable install elided (implicit via LightSourceClass virtuals 0x55516a) */
+  /* X11: ptr_0 install elided (base-interface slot, RHS g_ptr_7ECFFC) */  /*0x555156*/
+  /* X11: ptr_0 install elided (implicit via LightSourceClass virtuals 0x55515c) */
+  /* X11: ptr_0 install elided (implicit via LightSourceClass virtuals 0x555163) */
+  /* X11: ptr_0 install elided (implicit via LightSourceClass virtuals 0x55516a) */
   AbstractClass::AnnounceExpiredPointer(&this->AbstractClass, 1); /*0x555171*/
   LightSourceClass *v5; // [esp+4h] [ebp-4h] BYREF
   v5 = this; /*0x555186*/

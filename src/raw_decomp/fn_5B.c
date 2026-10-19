@@ -1023,7 +1023,7 @@ char __thiscall BuildingClass::UpdateMovingPosition(BuildingClass *this, int *a2
   int *p_occupant; // esi
   CellClass *v8; // eax
   _BYTE *v9; // ecx
-  void *vtable3; // [esp-4h] [ebp-28h]
+  void *ptr_C; // [esp-4h] [ebp-28h]
   int v12; // [esp+Ch] [ebp-18h] BYREF
   int v13; // [esp+10h] [ebp-14h]
   int GroundHeight; // [esp+14h] [ebp-10h]
@@ -1056,9 +1056,9 @@ char __thiscall BuildingClass::UpdateMovingPosition(BuildingClass *this, int *a2
   {
     (*(void (__thiscall **)(void *, int *))(*(_DWORD *)this->? + 244))(this->?, &this->?); /*0x5b1879*/
   }
-  vtable3 = this->?; /*0x5b1886*/
+  ptr_C = this->?; /*0x5b1886*/
   v8 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &v12); /*0x5b188d*/
-  if ( !(unsigned __int8)CrateClass::ProcessPickup((CrateClass *)v8, (int)vtable3) || (v9 = this->?, v9[129]) ) /*0x5b18a0*/
+  if ( !(unsigned __int8)CrateClass::ProcessPickup((CrateClass *)v8, (int)ptr_C) || (v9 = this->?, v9[129]) ) /*0x5b18a0*/
   {
     *p_occupant = g_MissionQueueFrame.localVariables[227]; /*0x5b18ca*/
     this->? = g_MissionQueueFrame.localVariables[228]; /*0x5b18d1*/
@@ -1355,7 +1355,7 @@ double *__thiscall sub_5B1D90(double *this)
 
   *(_DWORD *)this = 0; /*0x5b1d9b*/
   v4 = 0; /*0x5b1da1*/
-  this->vtable2 = 1072693248; /*0x5b1da9*/
+  this->ptr_8 = 1072693248; /*0x5b1da9*/
   v2 = sub_5CAF70((LONG *)&v4); /*0x5b1db5*/
   if ( v2 || v4 ) /*0x5b1dc1*/
   {
@@ -2874,7 +2874,7 @@ char __thiscall MissionClass::LoadFromINI(MissionClass *this, _DWORD *a2)
   char *v8; // eax
   char *v9; // eax
   char *v10; // eax
-  void *vtable0; // eax
+  void *ptr_0; // eax
   char *v13; // eax
   int abstractFlags; // ecx
 
@@ -2948,13 +2948,13 @@ char __thiscall MissionClass::LoadFromINI(MissionClass *this, _DWORD *a2)
     (unsigned __int8 *)v10,
     (unsigned __int8 *)g_INI_Key_Rate,
     *(double *)&this->?);
-  vtable0 = this->ObjectClass; /*0x5b38b9*/
+  ptr_0 = this->ObjectClass; /*0x5b38b9*/
   __asm { fstp qword ptr [esi+10h] } /*0x5b38bb*/
   *(double *)&this->? = _RT1; /*0x5b38bb*/
-  if ( vtable0 == (void *)-1 ) /*0x5b38c1*/
+  if ( ptr_0 == (void *)-1 ) /*0x5b38c1*/
     v13 = g_Str__none_; /*0x5b38c3*/
   else
-    v13 = off_816CAC[(_DWORD)vtable0]; /*0x5b38ca*/
+    v13 = off_816CAC[(_DWORD)ptr_0]; /*0x5b38ca*/
   INIClass::ReadDouble_Overwrite((double *)a2, (unsigned __int8 *)v13, (unsigned __int8 *)&stru_82BA00.?[26], 0.0); /*0x5b38dd*/
   __asm { fst qword ptr [esi+18h] } /*0x5b38e2*/
   *(double *)&this->? = _RT1; /*0x5b38e2*/
@@ -3062,14 +3062,14 @@ int __thiscall IPersistStream::StubReturnFalse(ObjectClass *this)
 // ==== 0x005B3A60  AbstractClass::getWeaponRange  this=MissionClass  sig=csp ====
 _DWORD *__thiscall AbstractClass::getWeaponRange(AbstractClass *this, char a2)
 {
-  this->vtable0 = &MissionClass::`vftable'; /*0x5b3a63*/
-  this->vtable1 = &MissionClass::`vftable'; /*0x5b3a69*/
-  this->vtable2 = &MissionClass::`vftable'; /*0x5b3a70*/
-  this->vtable3 = &MissionClass::`vftable'; /*0x5b3a77*/
+  this->ptr_0 = &MissionClass::`vftable'; /*0x5b3a63*/
+  this->ptr_4 = &MissionClass::`vftable'; /*0x5b3a69*/
+  this->ptr_8 = &MissionClass::`vftable'; /*0x5b3a70*/
+  this->ptr_C = &MissionClass::`vftable'; /*0x5b3a77*/
   ObjectClass::Dtor((ObjectClass *)this); /*0x5b3a7e*/
   if ( (a2 & 1) != 0 ) /*0x5b3a88*/
     __3_YAXPAX_Z(this); /*0x5b3a8b*/
-  return &this->vtable0; /*0x5b3a95*/
+  return &this->ptr_0; /*0x5b3a95*/
 }
 
 
@@ -3824,32 +3824,32 @@ void *__thiscall BlowStraw::Constructor_MixFileClass(MixFileClass *this, char a2
 // ==== 0x005B46E0  AbstractClass::getWeaponSpeed  this=GenericList  sig=csp ====
 _DWORD *__thiscall AbstractClass::getWeaponSpeed(AbstractClass *this, char a2)
 {
-  _DWORD *vtable2; // eax
+  _DWORD *ptr_8; // eax
   int v4; // ecx
   int v5; // edx
   int abstractFlags; // edx
   int nextArrayIndex; // ecx
   void *v8; // edx
-  _DWORD *vtable3; // ecx
+  _DWORD *ptr_C; // ecx
 
-  this->vtable0 = &GenericList::`vftable'; /*0x5b46e6*/
+  this->ptr_0 = &GenericList::`vftable'; /*0x5b46e6*/
   while ( 1 ) /*0x5b46ec*/
   {
-    vtable2 = this->vtable2; /*0x5b46ec*/
-    if ( !vtable2 ) /*0x5b46f1*/
+    ptr_8 = this->ptr_8; /*0x5b46ec*/
+    if ( !ptr_8 ) /*0x5b46f1*/
       break; /*0x5b46f1*/
-    if ( !vtable2[1] ) /*0x5b46f3*/
+    if ( !ptr_8[1] ) /*0x5b46f3*/
       break; /*0x5b46f3*/
-    v4 = vtable2[2]; /*0x5b46f8*/
+    v4 = ptr_8[2]; /*0x5b46f8*/
     if ( !v4 ) /*0x5b46fd*/
       break; /*0x5b46fd*/
-    v5 = vtable2[1]; /*0x5b4703*/
+    v5 = ptr_8[1]; /*0x5b4703*/
     if ( v5 ) /*0x5b4708*/
     {
       *(_DWORD *)(v4 + 4) = v5; /*0x5b470e*/
-      *(_DWORD *)(vtable2[1] + 8) = vtable2[2]; /*0x5b4717*/
-      vtable2[2] = 0; /*0x5b471a*/
-      vtable2[1] = 0; /*0x5b471d*/
+      *(_DWORD *)(ptr_8[1] + 8) = ptr_8[2]; /*0x5b4717*/
+      ptr_8[2] = 0; /*0x5b471a*/
+      ptr_8[1] = 0; /*0x5b471d*/
     }
   }
   this->uniqueId = (int)&GenericNode::`vftable'; /*0x5b4727*/
@@ -3868,25 +3868,25 @@ _DWORD *__thiscall AbstractClass::getWeaponSpeed(AbstractClass *this, char a2)
       }
     }
   }
-  this->vtable1 = &GenericNode::`vftable'; /*0x5b4754*/
+  this->ptr_4 = &GenericNode::`vftable'; /*0x5b4754*/
   if ( this != (AbstractClass *)-4 ) /*0x5b475a*/
   {
-    v8 = this->vtable2; /*0x5b475c*/
+    v8 = this->ptr_8; /*0x5b475c*/
     if ( v8 ) /*0x5b4761*/
     {
-      vtable3 = this->vtable3; /*0x5b4763*/
-      if ( vtable3 ) /*0x5b4768*/
+      ptr_C = this->ptr_C; /*0x5b4763*/
+      if ( ptr_C ) /*0x5b4768*/
       {
-        vtable3[1] = v8; /*0x5b476a*/
-        *((_DWORD *)this->vtable2 + 2) = this->vtable3; /*0x5b4773*/
-        this->vtable3 = 0; /*0x5b4776*/
-        this->vtable2 = 0; /*0x5b4779*/
+        ptr_C[1] = v8; /*0x5b476a*/
+        *((_DWORD *)this->ptr_8 + 2) = this->ptr_C; /*0x5b4773*/
+        this->ptr_C = 0; /*0x5b4776*/
+        this->ptr_8 = 0; /*0x5b4779*/
       }
     }
   }
   if ( (a2 & 1) != 0 ) /*0x5b4781*/
     __3_YAXPAX_Z(this); /*0x5b4784*/
-  return &this->vtable0; /*0x5b478e*/
+  return &this->ptr_0; /*0x5b478e*/
 }
 
 
@@ -4536,7 +4536,7 @@ int __thiscall sub_5B57D0(ObjectClass *this)
   unsigned int v5; // edi
   HWND v6; // esi
   int (__usercall *v7)@<eax>(char@<cf>, char@<zf>); // edi
-  HWND vtable0; // [esp-8h] [ebp-518h]
+  HWND ptr_0; // [esp-8h] [ebp-518h]
   int v9; // [esp+0h] [ebp-510h] BYREF
   wchar_t *Format; // [esp+10h] [ebp-500h]
   int v11[62]; // [esp+14h] [ebp-4FCh] BYREF
@@ -4569,9 +4569,9 @@ int __thiscall sub_5B57D0(ObjectClass *this)
           Stream::ReadPacket((int)&unk_A8EA70); /*0x5b58d9*/
           v4 = CharToWideString(unk_A8B380); /*0x5b58e3*/
           v5 = dword_A8B394; /*0x5b58ea*/
-          vtable0 = (HWND)this->AbstractClass; /*0x5b58f5*/
+          ptr_0 = (HWND)this->AbstractClass; /*0x5b58f5*/
           Format = (wchar_t *)v4; /*0x5b58f6*/
-          result = (int)GetDlgItem(vtable0, 1343); /*0x5b58fa*/
+          result = (int)GetDlgItem(ptr_0, 1343); /*0x5b58fa*/
           v6 = (HWND)result; /*0x5b58fc*/
           if ( result ) /*0x5b5900*/
           {
@@ -5155,7 +5155,7 @@ char __stdcall ApplyGameOptions(int a1)
   int v5; // edx
   int v6; // eax
   int v7; // edx
-  void *vtable0; // ecx
+  void *ptr_0; // ecx
   bool v9; // al
   int v10; // edi
   int v11; // esi
@@ -5221,9 +5221,9 @@ char __stdcall ApplyGameOptions(int a1)
   v7 = *(_DWORD *)(a1 + 142) >> 7; /*0x5b6b19*/
   dword_A8E960[0] = v6; /*0x5b6b1c*/
   stru_A8B250.__pad_0[28] = v7 & 1; /*0x5b6b29*/
-  vtable0 = dword_A8B230->vtable0; /*0x5b6b2f*/
-  BYTE1(vtable0) = ((unsigned __int16)dword_A8B230->vtable0 >> 8) & 0xFB; /*0x5b6b31*/
-  dword_A8B230->vtable0 = vtable0; /*0x5b6b34*/
+  ptr_0 = dword_A8B230->ptr_0; /*0x5b6b2f*/
+  BYTE1(ptr_0) = ((unsigned __int16)dword_A8B230->ptr_0 >> 8) & 0xFB; /*0x5b6b31*/
+  dword_A8B230->ptr_0 = ptr_0; /*0x5b6b34*/
   byte_A8B31C = 1; /*0x5b6b3b*/
   nullsub_37(v13); /*0x5b6b42*/
   if ( _strcmpi(byte_A8B8E0, (char *)(a1 + 163)) /*0x5b6ba4*/
@@ -5517,7 +5517,7 @@ LABEL_31:
     Dialog::Destroy(v13); /*0x5b72ca*/
   EventClass::CheckFlag((EventClass *)&unk_A8EA70); /*0x5b72d4*/
   BYTE2(stru_A8D600.Network_field_0xC) = 0; /*0x5b72e4*/
-  dword_A8B230[130].vtable3 = *(void **)&stru_A8B250.__pad_0[4]; /*0x5b72eb*/
+  dword_A8B230[130].ptr_C = *(void **)&stru_A8B250.__pad_0[4]; /*0x5b72eb*/
   dword_A8B54C = dword_A8DA84; /*0x5b730b*/
   v17 = dword_A8E960[0]; /*0x5b7311*/
   BYTE1(v17) = BYTE1(dword_A8E960[0]) & 0x77; /*0x5b7319*/
@@ -6631,7 +6631,7 @@ int __thiscall sub_5B9250(ObjectClass *this)
   unsigned int v5; // edi
   HWND v6; // esi
   int (__usercall *v7)@<eax>(char@<cf>, char@<zf>); // edi
-  HWND vtable0; // [esp-8h] [ebp-518h]
+  HWND ptr_0; // [esp-8h] [ebp-518h]
   int v9; // [esp+0h] [ebp-510h] BYREF
   wchar_t *Format; // [esp+10h] [ebp-500h]
   int v11[62]; // [esp+14h] [ebp-4FCh] BYREF
@@ -6665,9 +6665,9 @@ int __thiscall sub_5B9250(ObjectClass *this)
           Stream::ReadPacket((int)&unk_A8EA70); /*0x5b9369*/
           v4 = CharToWideString(unk_A8B380); /*0x5b9373*/
           v5 = dword_A8B394; /*0x5b937a*/
-          vtable0 = (HWND)this->AbstractClass; /*0x5b9385*/
+          ptr_0 = (HWND)this->AbstractClass; /*0x5b9385*/
           Format = (wchar_t *)v4; /*0x5b9386*/
-          result = (int)GetDlgItem(vtable0, 1343); /*0x5b938a*/
+          result = (int)GetDlgItem(ptr_0, 1343); /*0x5b938a*/
           v6 = (HWND)result; /*0x5b938c*/
           if ( result ) /*0x5b9390*/
           {
@@ -7615,7 +7615,7 @@ char __thiscall ModemHost::StartGame(int this, char a2)
   int v24; // esi
   int v25; // eax
   int v26; // ecx
-  void *vtable0; // edx
+  void *ptr_0; // edx
   wchar_t *v28; // [esp-10h] [ebp-224h]
   ObjectClass *v29; // [esp+0h] [ebp-214h]
   char v31[4]; // [esp+18h] [ebp-1FCh] BYREF
@@ -7627,12 +7627,12 @@ char __thiscall ModemHost::StartGame(int this, char a2)
   Debug::Log(); /*0x5bac97*/
   if ( a2 == 1 ) /*0x5baca2*/
     return 0; /*0x5bacb0*/
-  dword_A8B230[130].vtable3 = *(void **)&stru_A8B250.__pad_0[4]; /*0x5bacc5*/
+  dword_A8B230[130].ptr_C = *(void **)&stru_A8B250.__pad_0[4]; /*0x5bacc5*/
   strcpy( /*0x5bacfc*/
     (char *)&dword_A8B230[130].abstractFlags,
     (const char *)(*(_DWORD *)(dword_A8B8CC + 4 * *(_DWORD *)&stru_A8B250.__pad_0[4]) + 88));
-  dword_A8B230[43].vtable1 = (void *)1; /*0x5bad10*/
-  dword_A8B230[43].vtable0 = (void *)1; /*0x5bad1c*/
+  dword_A8B230[43].ptr_4 = (void *)1; /*0x5bad10*/
+  dword_A8B230[43].ptr_0 = (void *)1; /*0x5bad1c*/
   dword_A8B54C = 0; /*0x5bad22*/
   v3 = __2_YAPAXI_Z(0x85u); /*0x5bad28*/
   v4 = v3; /*0x5bad2d*/
@@ -7770,7 +7770,7 @@ LABEL_57:
         Dialog::Destroy(v16); /*0x5bb1ae*/
       EventClass::CheckFlag((EventClass *)&unk_A8EA70); /*0x5bb1b8*/
       BYTE2(stru_A8D600.Network_field_0xC) = 0; /*0x5bb1c9*/
-      dword_A8B230[130].vtable3 = *(void **)&stru_A8B250.__pad_0[4]; /*0x5bb1d0*/
+      dword_A8B230[130].ptr_C = *(void **)&stru_A8B250.__pad_0[4]; /*0x5bb1d0*/
       dword_A8B54C = dword_A8DA84; /*0x5bb1f0*/
       v25 = dword_A8E960[0]; /*0x5bb1f5*/
       BYTE1(v25) = BYTE1(dword_A8E960[0]) & 0x77; /*0x5bb1fc*/
@@ -7779,9 +7779,9 @@ LABEL_57:
       *(_DWORD *)&stru_A8EB00.?[416] = 0; /*0x5bb20c*/
       dword_A8B24C = 2; /*0x5bb212*/
       dword_A8E960[0] = v26; /*0x5bb21c*/
-      vtable0 = dword_A8B230->vtable0; /*0x5bb222*/
-      BYTE1(vtable0) = ((unsigned __int16)dword_A8B230->vtable0 >> 8) & 0xFB; /*0x5bb229*/
-      dword_A8B230->vtable0 = vtable0; /*0x5bb22c*/
+      ptr_0 = dword_A8B230->ptr_0; /*0x5bb222*/
+      BYTE1(ptr_0) = ((unsigned __int16)dword_A8B230->ptr_0 >> 8) & 0xFB; /*0x5bb229*/
+      dword_A8B230->ptr_0 = ptr_0; /*0x5bb22c*/
       byte_A8B31C = 1; /*0x5bb22e*/
       nullsub_37(v29); /*0x5bb235*/
       Debug::Log(); /*0x5bb23f*/
@@ -7849,7 +7849,7 @@ void __usercall GenerateRandomMapPreview(ObjectClass *this)
     memset(v20, 0, sizeof(v20)); /*0x5bb2e2*/
     v21 = 0; /*0x5bb2e4*/
     v20[0] = 117; /*0x5bb2fa*/
-    Stream::WriteBlock(&unk_A8EA70.vtable0, (int)v20, 250, 1); /*0x5bb305*/
+    Stream::WriteBlock(&unk_A8EA70.ptr_0, (int)v20, 250, 1); /*0x5bb305*/
     v13 = 600; /*0x5bb31c*/
     Ticks = Timer::GetTicks(); /*0x5bb325*/
     v12 = v14; /*0x5bb329*/
@@ -13105,7 +13105,7 @@ char __thiscall BuildingClass::UpdateMovingPosition(BuildingClass *this, int *a2
   int *p_occupant; // esi
   CellClass *v8; // eax
   _BYTE *v9; // ecx
-  void *vtable3; // [esp-4h] [ebp-28h]
+  void *ptr_C; // [esp-4h] [ebp-28h]
   int v12; // [esp+Ch] [ebp-18h] BYREF
   int v13; // [esp+10h] [ebp-14h]
   int GroundHeight; // [esp+14h] [ebp-10h]
@@ -13138,9 +13138,9 @@ char __thiscall BuildingClass::UpdateMovingPosition(BuildingClass *this, int *a2
   {
     (*(void (__thiscall **)(void *, int *))(*(_DWORD *)this->? + 244))(this->?, &this->?); /*0x5b1879*/
   }
-  vtable3 = this->?; /*0x5b1886*/
+  ptr_C = this->?; /*0x5b1886*/
   v8 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &v12); /*0x5b188d*/
-  if ( !(unsigned __int8)CrateClass::ProcessPickup((CrateClass *)v8, (int)vtable3) || (v9 = this->?, v9[129]) ) /*0x5b18a0*/
+  if ( !(unsigned __int8)CrateClass::ProcessPickup((CrateClass *)v8, (int)ptr_C) || (v9 = this->?, v9[129]) ) /*0x5b18a0*/
   {
     *p_occupant = g_MissionQueueFrame.localVariables[227]; /*0x5b18ca*/
     this->? = g_MissionQueueFrame.localVariables[228]; /*0x5b18d1*/
@@ -13437,7 +13437,7 @@ double *__thiscall sub_5B1D90(double *this)
 
   *(_DWORD *)this = 0; /*0x5b1d9b*/
   v4 = 0; /*0x5b1da1*/
-  this->vtable2 = 1072693248; /*0x5b1da9*/
+  this->ptr_8 = 1072693248; /*0x5b1da9*/
   v2 = sub_5CAF70((LONG *)&v4); /*0x5b1db5*/
   if ( v2 || v4 ) /*0x5b1dc1*/
   {
@@ -14956,7 +14956,7 @@ char __thiscall MissionClass::LoadFromINI(MissionClass *this, _DWORD *a2)
   char *v8; // eax
   char *v9; // eax
   char *v10; // eax
-  void *vtable0; // eax
+  void *ptr_0; // eax
   char *v13; // eax
   int abstractFlags; // ecx
 
@@ -15030,13 +15030,13 @@ char __thiscall MissionClass::LoadFromINI(MissionClass *this, _DWORD *a2)
     (unsigned __int8 *)v10,
     (unsigned __int8 *)g_INI_Key_Rate,
     *(double *)&this->?);
-  vtable0 = this->ObjectClass; /*0x5b38b9*/
+  ptr_0 = this->ObjectClass; /*0x5b38b9*/
   __asm { fstp qword ptr [esi+10h] } /*0x5b38bb*/
   *(double *)&this->? = _RT1; /*0x5b38bb*/
-  if ( vtable0 == (void *)-1 ) /*0x5b38c1*/
+  if ( ptr_0 == (void *)-1 ) /*0x5b38c1*/
     v13 = g_Str__none_; /*0x5b38c3*/
   else
-    v13 = off_816CAC[(_DWORD)vtable0]; /*0x5b38ca*/
+    v13 = off_816CAC[(_DWORD)ptr_0]; /*0x5b38ca*/
   INIClass::ReadDouble_Overwrite((double *)a2, (unsigned __int8 *)v13, (unsigned __int8 *)&stru_82BA00.?[26], 0.0); /*0x5b38dd*/
   __asm { fst qword ptr [esi+18h] } /*0x5b38e2*/
   *(double *)&this->? = _RT1; /*0x5b38e2*/
@@ -15144,14 +15144,14 @@ int __thiscall IPersistStream::StubReturnFalse(ObjectClass *this)
 // ==== 0x005B3A60  AbstractClass::getWeaponRange  this=MissionClass  sig=csp ====
 _DWORD *__thiscall AbstractClass::getWeaponRange(AbstractClass *this, char a2)
 {
-  this->vtable0 = &MissionClass::`vftable'; /*0x5b3a63*/
-  this->vtable1 = &MissionClass::`vftable'; /*0x5b3a69*/
-  this->vtable2 = &MissionClass::`vftable'; /*0x5b3a70*/
-  this->vtable3 = &MissionClass::`vftable'; /*0x5b3a77*/
+  this->ptr_0 = &MissionClass::`vftable'; /*0x5b3a63*/
+  this->ptr_4 = &MissionClass::`vftable'; /*0x5b3a69*/
+  this->ptr_8 = &MissionClass::`vftable'; /*0x5b3a70*/
+  this->ptr_C = &MissionClass::`vftable'; /*0x5b3a77*/
   ObjectClass::Dtor((ObjectClass *)this); /*0x5b3a7e*/
   if ( (a2 & 1) != 0 ) /*0x5b3a88*/
     __3_YAXPAX_Z(this); /*0x5b3a8b*/
-  return &this->vtable0; /*0x5b3a95*/
+  return &this->ptr_0; /*0x5b3a95*/
 }
 
 
@@ -15906,32 +15906,32 @@ void *__thiscall BlowStraw::Constructor_MixFileClass(MixFileClass *this, char a2
 // ==== 0x005B46E0  AbstractClass::getWeaponSpeed  this=GenericList  sig=csp ====
 _DWORD *__thiscall AbstractClass::getWeaponSpeed(AbstractClass *this, char a2)
 {
-  _DWORD *vtable2; // eax
+  _DWORD *ptr_8; // eax
   int v4; // ecx
   int v5; // edx
   int abstractFlags; // edx
   int nextArrayIndex; // ecx
   void *v8; // edx
-  _DWORD *vtable3; // ecx
+  _DWORD *ptr_C; // ecx
 
-  this->vtable0 = &GenericList::`vftable'; /*0x5b46e6*/
+  this->ptr_0 = &GenericList::`vftable'; /*0x5b46e6*/
   while ( 1 ) /*0x5b46ec*/
   {
-    vtable2 = this->vtable2; /*0x5b46ec*/
-    if ( !vtable2 ) /*0x5b46f1*/
+    ptr_8 = this->ptr_8; /*0x5b46ec*/
+    if ( !ptr_8 ) /*0x5b46f1*/
       break; /*0x5b46f1*/
-    if ( !vtable2[1] ) /*0x5b46f3*/
+    if ( !ptr_8[1] ) /*0x5b46f3*/
       break; /*0x5b46f3*/
-    v4 = vtable2[2]; /*0x5b46f8*/
+    v4 = ptr_8[2]; /*0x5b46f8*/
     if ( !v4 ) /*0x5b46fd*/
       break; /*0x5b46fd*/
-    v5 = vtable2[1]; /*0x5b4703*/
+    v5 = ptr_8[1]; /*0x5b4703*/
     if ( v5 ) /*0x5b4708*/
     {
       *(_DWORD *)(v4 + 4) = v5; /*0x5b470e*/
-      *(_DWORD *)(vtable2[1] + 8) = vtable2[2]; /*0x5b4717*/
-      vtable2[2] = 0; /*0x5b471a*/
-      vtable2[1] = 0; /*0x5b471d*/
+      *(_DWORD *)(ptr_8[1] + 8) = ptr_8[2]; /*0x5b4717*/
+      ptr_8[2] = 0; /*0x5b471a*/
+      ptr_8[1] = 0; /*0x5b471d*/
     }
   }
   this->uniqueId = (int)&GenericNode::`vftable'; /*0x5b4727*/
@@ -15950,25 +15950,25 @@ _DWORD *__thiscall AbstractClass::getWeaponSpeed(AbstractClass *this, char a2)
       }
     }
   }
-  this->vtable1 = &GenericNode::`vftable'; /*0x5b4754*/
+  this->ptr_4 = &GenericNode::`vftable'; /*0x5b4754*/
   if ( this != (AbstractClass *)-4 ) /*0x5b475a*/
   {
-    v8 = this->vtable2; /*0x5b475c*/
+    v8 = this->ptr_8; /*0x5b475c*/
     if ( v8 ) /*0x5b4761*/
     {
-      vtable3 = this->vtable3; /*0x5b4763*/
-      if ( vtable3 ) /*0x5b4768*/
+      ptr_C = this->ptr_C; /*0x5b4763*/
+      if ( ptr_C ) /*0x5b4768*/
       {
-        vtable3[1] = v8; /*0x5b476a*/
-        *((_DWORD *)this->vtable2 + 2) = this->vtable3; /*0x5b4773*/
-        this->vtable3 = 0; /*0x5b4776*/
-        this->vtable2 = 0; /*0x5b4779*/
+        ptr_C[1] = v8; /*0x5b476a*/
+        *((_DWORD *)this->ptr_8 + 2) = this->ptr_C; /*0x5b4773*/
+        this->ptr_C = 0; /*0x5b4776*/
+        this->ptr_8 = 0; /*0x5b4779*/
       }
     }
   }
   if ( (a2 & 1) != 0 ) /*0x5b4781*/
     __3_YAXPAX_Z(this); /*0x5b4784*/
-  return &this->vtable0; /*0x5b478e*/
+  return &this->ptr_0; /*0x5b478e*/
 }
 
 
@@ -16618,7 +16618,7 @@ int __thiscall sub_5B57D0(ObjectClass *this)
   unsigned int v5; // edi
   HWND v6; // esi
   int (__usercall *v7)@<eax>(char@<cf>, char@<zf>); // edi
-  HWND vtable0; // [esp-8h] [ebp-518h]
+  HWND ptr_0; // [esp-8h] [ebp-518h]
   int v9; // [esp+0h] [ebp-510h] BYREF
   wchar_t *Format; // [esp+10h] [ebp-500h]
   int v11[62]; // [esp+14h] [ebp-4FCh] BYREF
@@ -16651,9 +16651,9 @@ int __thiscall sub_5B57D0(ObjectClass *this)
           Stream::ReadPacket((int)&unk_A8EA70); /*0x5b58d9*/
           v4 = CharToWideString(unk_A8B380); /*0x5b58e3*/
           v5 = dword_A8B394; /*0x5b58ea*/
-          vtable0 = (HWND)this->AbstractClass; /*0x5b58f5*/
+          ptr_0 = (HWND)this->AbstractClass; /*0x5b58f5*/
           Format = (wchar_t *)v4; /*0x5b58f6*/
-          result = (int)GetDlgItem(vtable0, 1343); /*0x5b58fa*/
+          result = (int)GetDlgItem(ptr_0, 1343); /*0x5b58fa*/
           v6 = (HWND)result; /*0x5b58fc*/
           if ( result ) /*0x5b5900*/
           {
@@ -17237,7 +17237,7 @@ char __stdcall ApplyGameOptions(int a1)
   int v5; // edx
   int v6; // eax
   int v7; // edx
-  void *vtable0; // ecx
+  void *ptr_0; // ecx
   bool v9; // al
   int v10; // edi
   int v11; // esi
@@ -17303,9 +17303,9 @@ char __stdcall ApplyGameOptions(int a1)
   v7 = *(_DWORD *)(a1 + 142) >> 7; /*0x5b6b19*/
   dword_A8E960[0] = v6; /*0x5b6b1c*/
   stru_A8B250.__pad_0[28] = v7 & 1; /*0x5b6b29*/
-  vtable0 = dword_A8B230->vtable0; /*0x5b6b2f*/
-  BYTE1(vtable0) = ((unsigned __int16)dword_A8B230->vtable0 >> 8) & 0xFB; /*0x5b6b31*/
-  dword_A8B230->vtable0 = vtable0; /*0x5b6b34*/
+  ptr_0 = dword_A8B230->ptr_0; /*0x5b6b2f*/
+  BYTE1(ptr_0) = ((unsigned __int16)dword_A8B230->ptr_0 >> 8) & 0xFB; /*0x5b6b31*/
+  dword_A8B230->ptr_0 = ptr_0; /*0x5b6b34*/
   byte_A8B31C = 1; /*0x5b6b3b*/
   nullsub_37(v13); /*0x5b6b42*/
   if ( _strcmpi(byte_A8B8E0, (char *)(a1 + 163)) /*0x5b6ba4*/
@@ -17599,7 +17599,7 @@ LABEL_31:
     Dialog::Destroy(v13); /*0x5b72ca*/
   EventClass::CheckFlag((EventClass *)&unk_A8EA70); /*0x5b72d4*/
   BYTE2(stru_A8D600.Network_field_0xC) = 0; /*0x5b72e4*/
-  dword_A8B230[130].vtable3 = *(void **)&stru_A8B250.__pad_0[4]; /*0x5b72eb*/
+  dword_A8B230[130].ptr_C = *(void **)&stru_A8B250.__pad_0[4]; /*0x5b72eb*/
   dword_A8B54C = dword_A8DA84; /*0x5b730b*/
   v17 = dword_A8E960[0]; /*0x5b7311*/
   BYTE1(v17) = BYTE1(dword_A8E960[0]) & 0x77; /*0x5b7319*/
@@ -18713,7 +18713,7 @@ int __thiscall sub_5B9250(ObjectClass *this)
   unsigned int v5; // edi
   HWND v6; // esi
   int (__usercall *v7)@<eax>(char@<cf>, char@<zf>); // edi
-  HWND vtable0; // [esp-8h] [ebp-518h]
+  HWND ptr_0; // [esp-8h] [ebp-518h]
   int v9; // [esp+0h] [ebp-510h] BYREF
   wchar_t *Format; // [esp+10h] [ebp-500h]
   int v11[62]; // [esp+14h] [ebp-4FCh] BYREF
@@ -18747,9 +18747,9 @@ int __thiscall sub_5B9250(ObjectClass *this)
           Stream::ReadPacket((int)&unk_A8EA70); /*0x5b9369*/
           v4 = CharToWideString(unk_A8B380); /*0x5b9373*/
           v5 = dword_A8B394; /*0x5b937a*/
-          vtable0 = (HWND)this->AbstractClass; /*0x5b9385*/
+          ptr_0 = (HWND)this->AbstractClass; /*0x5b9385*/
           Format = (wchar_t *)v4; /*0x5b9386*/
-          result = (int)GetDlgItem(vtable0, 1343); /*0x5b938a*/
+          result = (int)GetDlgItem(ptr_0, 1343); /*0x5b938a*/
           v6 = (HWND)result; /*0x5b938c*/
           if ( result ) /*0x5b9390*/
           {
@@ -19697,7 +19697,7 @@ char __thiscall ModemHost::StartGame(int this, char a2)
   int v24; // esi
   int v25; // eax
   int v26; // ecx
-  void *vtable0; // edx
+  void *ptr_0; // edx
   wchar_t *v28; // [esp-10h] [ebp-224h]
   ObjectClass *v29; // [esp+0h] [ebp-214h]
   char v31[4]; // [esp+18h] [ebp-1FCh] BYREF
@@ -19709,12 +19709,12 @@ char __thiscall ModemHost::StartGame(int this, char a2)
   Debug::Log(); /*0x5bac97*/
   if ( a2 == 1 ) /*0x5baca2*/
     return 0; /*0x5bacb0*/
-  dword_A8B230[130].vtable3 = *(void **)&stru_A8B250.__pad_0[4]; /*0x5bacc5*/
+  dword_A8B230[130].ptr_C = *(void **)&stru_A8B250.__pad_0[4]; /*0x5bacc5*/
   strcpy( /*0x5bacfc*/
     (char *)&dword_A8B230[130].abstractFlags,
     (const char *)(*(_DWORD *)(dword_A8B8CC + 4 * *(_DWORD *)&stru_A8B250.__pad_0[4]) + 88));
-  dword_A8B230[43].vtable1 = (void *)1; /*0x5bad10*/
-  dword_A8B230[43].vtable0 = (void *)1; /*0x5bad1c*/
+  dword_A8B230[43].ptr_4 = (void *)1; /*0x5bad10*/
+  dword_A8B230[43].ptr_0 = (void *)1; /*0x5bad1c*/
   dword_A8B54C = 0; /*0x5bad22*/
   v3 = __2_YAPAXI_Z(0x85u); /*0x5bad28*/
   v4 = v3; /*0x5bad2d*/
@@ -19852,7 +19852,7 @@ LABEL_57:
         Dialog::Destroy(v16); /*0x5bb1ae*/
       EventClass::CheckFlag((EventClass *)&unk_A8EA70); /*0x5bb1b8*/
       BYTE2(stru_A8D600.Network_field_0xC) = 0; /*0x5bb1c9*/
-      dword_A8B230[130].vtable3 = *(void **)&stru_A8B250.__pad_0[4]; /*0x5bb1d0*/
+      dword_A8B230[130].ptr_C = *(void **)&stru_A8B250.__pad_0[4]; /*0x5bb1d0*/
       dword_A8B54C = dword_A8DA84; /*0x5bb1f0*/
       v25 = dword_A8E960[0]; /*0x5bb1f5*/
       BYTE1(v25) = BYTE1(dword_A8E960[0]) & 0x77; /*0x5bb1fc*/
@@ -19861,9 +19861,9 @@ LABEL_57:
       *(_DWORD *)&stru_A8EB00.?[416] = 0; /*0x5bb20c*/
       dword_A8B24C = 2; /*0x5bb212*/
       dword_A8E960[0] = v26; /*0x5bb21c*/
-      vtable0 = dword_A8B230->vtable0; /*0x5bb222*/
-      BYTE1(vtable0) = ((unsigned __int16)dword_A8B230->vtable0 >> 8) & 0xFB; /*0x5bb229*/
-      dword_A8B230->vtable0 = vtable0; /*0x5bb22c*/
+      ptr_0 = dword_A8B230->ptr_0; /*0x5bb222*/
+      BYTE1(ptr_0) = ((unsigned __int16)dword_A8B230->ptr_0 >> 8) & 0xFB; /*0x5bb229*/
+      dword_A8B230->ptr_0 = ptr_0; /*0x5bb22c*/
       byte_A8B31C = 1; /*0x5bb22e*/
       nullsub_37(v29); /*0x5bb235*/
       Debug::Log(); /*0x5bb23f*/
@@ -19931,7 +19931,7 @@ void __usercall GenerateRandomMapPreview(ObjectClass *this)
     memset(v20, 0, sizeof(v20)); /*0x5bb2e2*/
     v21 = 0; /*0x5bb2e4*/
     v20[0] = 117; /*0x5bb2fa*/
-    Stream::WriteBlock(&unk_A8EA70.vtable0, (int)v20, 250, 1); /*0x5bb305*/
+    Stream::WriteBlock(&unk_A8EA70.ptr_0, (int)v20, 250, 1); /*0x5bb305*/
     v13 = 600; /*0x5bb31c*/
     Ticks = Timer::GetTicks(); /*0x5bb325*/
     v12 = v14; /*0x5bb329*/

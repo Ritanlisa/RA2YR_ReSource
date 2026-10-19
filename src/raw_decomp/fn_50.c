@@ -449,9 +449,9 @@ int __usercall HouseClass::LoadTypeList@<eax>(INIClass *this@<ecx>, double a2@<s
       if ( !*(_DWORD *)&dword_A8B238 ) /*0x500aab*/
       {
         if ( *(_BYTE *)(v11 + 492) || *(_BYTE *)(v11 + 493) ) /*0x500ab7*/
-          HouseClass::SetCombatPower((int *)v11, (int)dword_A8B230[43].vtable0); /*0x500ace*/
+          HouseClass::SetCombatPower((int *)v11, (int)dword_A8B230[43].ptr_0); /*0x500ace*/
         else
-          HouseClass::SetCombatPower((int *)v11, (int)dword_A8B230[43].vtable1); /*0x500ade*/
+          HouseClass::SetCombatPower((int *)v11, (int)dword_A8B230[43].ptr_4); /*0x500ade*/
       }
       result = stru_A80220.?; /*0x500ae3*/
       ++v9; /*0x500ae8*/
@@ -813,7 +813,7 @@ int __stdcall VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_5(Hous
   int v1; // edi
   BuildingClass *v2; // esi
   int v3; // eax
-  void *vtable0; // edx
+  void *ptr_0; // edx
   int *v5; // ecx
   int v7; // [esp+8h] [ebp-4h] BYREF
 
@@ -837,9 +837,9 @@ int __stdcall VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_5(Hous
           && !this->__pad_13C[140] )
         {
           v3 = (*((int (__thiscall **)(BuildingClass *))v2->TechnoClass + 33))(v2); /*0x50147b*/
-          vtable0 = v2->TechnoClass; /*0x501487*/
+          ptr_0 = v2->TechnoClass; /*0x501487*/
           v7 = *(_DWORD *)(v3 + 160); /*0x501489*/
-          (*((void (__thiscall **)(BuildingClass *, int *, _DWORD, _DWORD, _DWORD, int, int, _DWORD))vtable0 + 91))( /*0x5014aa*/
+          (*((void (__thiscall **)(BuildingClass *, int *, _DWORD, _DWORD, _DWORD, int, int, _DWORD))ptr_0 + 91))( /*0x5014aa*/
             v2,
             &v7,
             0,
@@ -950,7 +950,7 @@ int HouseClass::CanDetect(HouseClass *this)
     || v2 )
   {
     result = (int)dword_A8B230; /*0x501668*/
-    if ( !LOBYTE(dword_A8B230[127].vtable1) ) /*0x50166d*/
+    if ( !LOBYTE(dword_A8B230[127].ptr_4) ) /*0x50166d*/
     {
       nextArrayIndex = stru_A80220.?; /*0x50167b*/
       for ( i = 0; i < nextArrayIndex; ++i ) /*0x501685*/
@@ -2647,7 +2647,7 @@ int __thiscall HouseClass::GenerateAIBuildListEnsureSanity(HouseClass *this)
   (*(void (__thiscall **)(int *))(v3 + 12))(&this->base[7]); /*0x5054dc*/
   v4 = 1 << SuperWeaponTypeClass::FindByName((SuperWeaponTypeClass *)(this->relatedTagsCapacity + 152)); /*0x5054f6*/
   VectorClass::BuildingTypeConstructor(&v93, 0, 0); /*0x5054fe*/
-  v93.vtable0 = &DynamicVectorClass<BuildingTypeClass const *>::`vftable'; /*0x50550e*/
+  v93.ptr_0 = &DynamicVectorClass<BuildingTypeClass const *>::`vftable'; /*0x50550e*/
   v95 = 10; /*0x505516*/
   v94 = 0; /*0x50551a*/
   BoolVector::Construct(&v96, 0, 0); /*0x50551e*/
@@ -2694,7 +2694,7 @@ LABEL_18:
                   if ( v94 < v93.Capacity /*0x505661*/
                     || (v93.IsAllocated || !v93.Capacity)
                     && v95 > 0
-                    && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v93.vtable0 + 2))(
+                    && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v93.ptr_0 + 2))(
                          &v93,
                          v95 + v93.Capacity,
                          0) )
@@ -2728,7 +2728,7 @@ LABEL_17:
   v16 = v94; /*0x5056d8*/
   v91 = v94; /*0x5056e4*/
   VectorClass::BuildingTypeConstructor(&v85, 0, 0); /*0x5056e8*/
-  v85.vtable0 = &DynamicVectorClass<BuildingTypeClass const *>::`vftable'; /*0x5056fb*/
+  v85.ptr_0 = &DynamicVectorClass<BuildingTypeClass const *>::`vftable'; /*0x5056fb*/
   v87 = 10; /*0x505704*/
   v86 = 0; /*0x50570c*/
   BuildableFromArray = HouseClass::FirstBuildableFromArray(this, *(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 2220); /*0x505719*/
@@ -2747,7 +2747,7 @@ LABEL_17:
     if ( v86 < v85.Capacity /*0x505766*/
       || (v85.IsAllocated || !v85.Capacity)
       && v87 > 0
-      && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v85.vtable0 + 2))(&v85, v87 + v85.Capacity, 0) )
+      && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v85.ptr_0 + 2))(&v85, v87 + v85.Capacity, 0) )
     {
       v20 = v86++; /*0x505771*/
       *((_DWORD *)v85.Items + v20) = BuildableFromArray; /*0x50577c*/
@@ -2758,7 +2758,7 @@ LABEL_42:
   if ( v86 < v85.Capacity /*0x5057c2*/
     || (v85.IsAllocated || !v85.Capacity)
     && v87 > 0
-    && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v85.vtable0 + 2))(&v85, v87 + v85.Capacity, 0) )
+    && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v85.ptr_0 + 2))(&v85, v87 + v85.Capacity, 0) )
   {
     v22 = v86++; /*0x5057cd*/
     *((_DWORD *)v85.Items + v22) = v21; /*0x5057d8*/
@@ -2823,7 +2823,7 @@ LABEL_60:
             if ( v86 < v85.Capacity /*0x50591c*/
               || (v85.IsAllocated || !v85.Capacity)
               && v87 > 0
-              && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v85.vtable0 + 2))(
+              && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v85.ptr_0 + 2))(
                    &v85,
                    v87 + v85.Capacity,
                    0) )
@@ -2852,7 +2852,7 @@ LABEL_60:
       if ( v86 < v85.Capacity /*0x505992*/
         || (v85.IsAllocated || !v85.Capacity)
         && v87 > 0
-        && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v85.vtable0 + 2))(
+        && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v85.ptr_0 + 2))(
              &v85,
              v87 + v85.Capacity,
              0) )
@@ -2914,7 +2914,7 @@ LABEL_88:
         if ( v86 < v85.Capacity /*0x505ad4*/
           || (v85.IsAllocated || !v85.Capacity)
           && v87 > 0
-          && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v85.vtable0 + 2))(
+          && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v85.ptr_0 + 2))(
                &v85,
                v87 + v85.Capacity,
                0) )
@@ -3125,7 +3125,7 @@ LABEL_145:
   }
   BYTE1(v88.m_C) = 0; /*0x505eee*/
   v88.m_8 = 0; /*0x505ef5*/
-  v85.vtable0 = &VectorClass<BuildingTypeClass const *>::`vftable'; /*0x505ef9*/
+  v85.ptr_0 = &VectorClass<BuildingTypeClass const *>::`vftable'; /*0x505ef9*/
   if ( v85.Items && v85.IsAllocated ) /*0x505f05*/
   {
     __3_YAXPAX_Z(v85.Items); /*0x505f08*/
@@ -3141,7 +3141,7 @@ LABEL_145:
   }
   result = (int)v93.Items; /*0x505f42*/
   v98 = 0; /*0x505f46*/
-  v93.vtable0 = &VectorClass<BuildingTypeClass const *>::`vftable'; /*0x505f4c*/
+  v93.ptr_0 = &VectorClass<BuildingTypeClass const *>::`vftable'; /*0x505f4c*/
   BYTE1(v99) = 0; /*0x505f53*/
   if ( v93.Items ) /*0x505f59*/
   {
@@ -4167,10 +4167,10 @@ char __userpurge HouseClass::AutoBuildScanAndSort@<al>(int this@<ecx>, double a2
         *(float *)&v110 = COERCE_FLOAT((*(int (__thiscall **)(int))(*(_DWORD *)v23 + 732))(v23)); /*0x5071a2*/
         if ( v30 + LODWORD(v109) + v110 > 0 ) /*0x5071ac*/
         {
-          v31 = LODWORD(v109) + *((_DWORD *)&v119.vtable0 + v29); /*0x5071bf*/
+          v31 = LODWORD(v109) + *((_DWORD *)&v119.ptr_0 + v29); /*0x5071bf*/
           v32 = (int)*(&Base + v29); /*0x5071c1*/
           *((_DWORD *)&v129 + v29) += v30; /*0x5071c5*/
-          *((_DWORD *)&v119.vtable0 + v29) = v31; /*0x5071cc*/
+          *((_DWORD *)&v119.ptr_0 + v29) = v31; /*0x5071cc*/
           v33 = Block; /*0x5071d8*/
           *(&Base + v29) = (void *)(v110 + v32); /*0x5071de*/
           MapClass::CalcVisibleCellRange(v23, v30, (int)v33, (int *)(_EBP + 22356)); /*0x5071ec*/
@@ -4188,7 +4188,7 @@ char __userpurge HouseClass::AutoBuildScanAndSort@<al>(int this@<ecx>, double a2
   p_DynamicVector_field_0x10 = &v153.DynamicVector_field_0x10; /*0x50723c*/
   do /*0x50727b*/
   {
-    v37 = (char *)*(&Base + v35) + *((_DWORD *)&v119.vtable0 + v35) + *((_DWORD *)&v129 + v35); /*0x507254*/
+    v37 = (char *)*(&Base + v35) + *((_DWORD *)&v119.ptr_0 + v35) + *((_DWORD *)&v129 + v35); /*0x507254*/
     v38 = (int)v37 < v106; /*0x50725a*/
     v152[v35] = v37; /*0x50725c*/
     if ( v38 && (!v8 || (int)*p_DynamicVector_field_0x10 > 0) ) /*0x50726c*/
@@ -4200,7 +4200,7 @@ char __userpurge HouseClass::AutoBuildScanAndSort@<al>(int this@<ecx>, double a2
     p_DynamicVector_field_0x10 += 6; /*0x507275*/
   }
   while ( v35 < 4 ); /*0x50727b*/
-  v39 = *((int *)&v119.vtable0 + v34); /*0x50727d*/
+  v39 = *((int *)&v119.ptr_0 + v34); /*0x50727d*/
   v40 = *((_DWORD *)&v129 + v34); /*0x507281*/
   v124 = v34; /*0x507288*/
   v41 = *((float *)&Base + v34); /*0x50728c*/
@@ -4211,7 +4211,7 @@ char __userpurge HouseClass::AutoBuildScanAndSort@<al>(int this@<ecx>, double a2
   VectorClass::BuildingTypeConstructor(&v126, 0, 0); /*0x5072ae*/
   v42 = *(_DWORD *)(_EBP + 120); /*0x5072b3*/
   v43 = 0; /*0x5072b6*/
-  v126.vtable0 = &DynamicVectorClass<BuildingTypeClass const *>::`vftable'; /*0x5072ba*/
+  v126.ptr_0 = &DynamicVectorClass<BuildingTypeClass const *>::`vftable'; /*0x5072ba*/
   v128 = 10; /*0x5072c2*/
   v127 = 0; /*0x5072cd*/
   if ( v42 > 0 ) /*0x5072d8*/
@@ -4227,7 +4227,7 @@ char __userpurge HouseClass::AutoBuildScanAndSort@<al>(int this@<ecx>, double a2
           goto LABEL_34; /*0x50730d*/
         if ( !v126.IsAllocated && Capacity || v128 <= 0 ) /*0x507324*/
           goto LABEL_36; /*0x507324*/
-        if ( (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v126.vtable0 + 2))( /*0x507333*/
+        if ( (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v126.ptr_0 + 2))( /*0x507333*/
                &v126,
                v128 + Capacity,
                0) )
@@ -4466,7 +4466,7 @@ LABEL_87:
     LOBYTE(v116) = 0; /*0x507826*/
     v117 = 0; /*0x50782b*/
     VectorClass::CellConstructor(&v119, 0, 0); /*0x50782f*/
-    v119.vtable0 = &DynamicVectorClass<Cell>::`vftable'; /*0x507838*/
+    v119.ptr_0 = &DynamicVectorClass<Cell>::`vftable'; /*0x507838*/
     v121 = 10; /*0x507842*/
     v120 = 0; /*0x50784a*/
     if ( v119.Items && v119.IsAllocated ) /*0x507856*/
@@ -4516,7 +4516,7 @@ LABEL_107:
       if ( v120 < v119.Capacity /*0x50796c*/
         || (v119.IsAllocated || !v119.Capacity)
         && v121 > 0
-        && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v119.vtable0 + 2))(
+        && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v119.ptr_0 + 2))(
              &v119,
              v121 + v119.Capacity,
              0) )
@@ -4537,7 +4537,7 @@ LABEL_107:
       for ( v82[4] = v86; v84 < v82[4]; *(_DWORD *)(v82[1] + 4 * v84 - 4) = *(_DWORD *)(v82[1] + 4 * v84) ) /*0x5079ba*/
         ++v84; /*0x5079bf*/
     }
-    v119.vtable0 = &VectorClass<Cell>::`vftable'; /*0x5079d2*/
+    v119.ptr_0 = &VectorClass<Cell>::`vftable'; /*0x5079d2*/
     if ( v119.Items && v119.IsAllocated ) /*0x5079e4*/
     {
       __3_YAXPAX_Z(v119.Items); /*0x5079e7*/
@@ -4656,7 +4656,7 @@ LABEL_56:
   }
   BYTE1(v145) = 0; /*0x5075f5*/
   v144 = 0; /*0x5075ff*/
-  v126.vtable0 = &VectorClass<BuildingTypeClass const *>::`vftable'; /*0x507606*/
+  v126.ptr_0 = &VectorClass<BuildingTypeClass const *>::`vftable'; /*0x507606*/
   if ( v126.Items && v126.IsAllocated ) /*0x507616*/
   {
     __3_YAXPAX_Z(v126.Items); /*0x507619*/
@@ -5767,7 +5767,7 @@ LABEL_30:
       return result; /*0x508f4f*/
     }
 LABEL_6:
-    if ( LOBYTE(dword_A8B230[374].vtable3) ) /*0x508e3c*/
+    if ( LOBYTE(dword_A8B230[374].ptr_C) ) /*0x508e3c*/
       goto LABEL_29; /*0x508e3c*/
     powerOutput = this->powerOutput; /*0x508e4a*/
     powerDrain = this->powerDrain; /*0x508e50*/
@@ -9384,7 +9384,7 @@ _DWORD *__thiscall HouseClass::FindSWTarget(HouseClass *this, _DWORD *a2, int a3
   int SuperWeaponTypeFlag; // ebx
   int v5; // eax
   ParticleSystemClass *auxParticles1; // edx
-  HouseClass *vtable0; // ecx
+  HouseClass *ptr_0; // ecx
   _DWORD *BestBuildingToRepair; // esi
   int v9; // edi
   int v10; // eax
@@ -9400,16 +9400,16 @@ _DWORD *__thiscall HouseClass::FindSWTarget(HouseClass *this, _DWORD *a2, int a3
   auxParticles1 = FootClass_Array.?; /*0x50d193*/
   do /*0x50d1a6*/
   {
-    vtable0 = (HouseClass *)auxParticles1->ObjectClass; /*0x50d199*/
+    ptr_0 = (HouseClass *)auxParticles1->ObjectClass; /*0x50d199*/
     if ( *((HouseClass **)auxParticles1->ObjectClass + 11) == this ) /*0x50d19e*/
       break; /*0x50d19e*/
     ++v5; /*0x50d1a0*/
     auxParticles1 = (ParticleSystemClass *)((char *)auxParticles1 + 4); /*0x50d1a1*/
   }
   while ( v5 < (int)FootClass_Array.? ); /*0x50d1a6*/
-  if ( vtable0 && (HouseClass *)vtable0->relatedTags[0] == this ) /*0x50d1b3*/
+  if ( ptr_0 && (HouseClass *)ptr_0->relatedTags[0] == this ) /*0x50d1b3*/
   {
-    BestBuildingToRepair = HouseClass::FindBestBuildingToRepair(vtable0); /*0x50d1be*/
+    BestBuildingToRepair = HouseClass::FindBestBuildingToRepair(ptr_0); /*0x50d1be*/
     v9 = *BestBuildingToRepair; /*0x50d1c7*/
     v10 = (*(int (__thiscall **)(_DWORD *, _DWORD *, int))(*BestBuildingToRepair + 72))(BestBuildingToRepair, v14, 1); /*0x50d1cb*/
     v11 = (*(int (__thiscall **)(_DWORD *, int, int))(v9 + 964))(BestBuildingToRepair, SuperWeaponTypeFlag, v10); /*0x50d1d2*/
@@ -10552,7 +10552,7 @@ int AbstractClass::computeMovementCost(AbstractClass *this)
 // ==== 0x0050E370  AbstractClass::checkPassability  this=AbstractClass  sig=csp ====
 int __thiscall AbstractClass::checkPassability(AbstractClass *this)
 {
-  return this->vtable4; /*0x50e373*/
+  return this->ptr_10; /*0x50e373*/
 }
 
 
@@ -11270,7 +11270,7 @@ char __thiscall VectorClass::InsertAt(DynamicVectorClass *this, _DWORD *a2, int 
       return 0; /*0x50eb86*/
     CapacityIncrement = this->CapacityIncrement; /*0x50eb88*/
     if ( CapacityIncrement <= 0 /*0x50eb98*/
-      || !(*(unsigned __int8 (__thiscall **)(DynamicVectorClass *, int, _DWORD))(this->vtable0 + 8))(
+      || !(*(unsigned __int8 (__thiscall **)(DynamicVectorClass *, int, _DWORD))(this->ptr_0 + 8))(
             this,
             Capacity + CapacityIncrement,
             0) )
@@ -13055,31 +13055,31 @@ void __thiscall nullsub_145(void *this)
 // ==== 0x0050FF50  HouseClass::AddCoordTrackingEntry  this=HouseClass  sig=csp ====
 char __thiscall HouseClass::AddCoordTrackingEntry(HouseClass *this, _DWORD *a2)
 {
-  void *vtable2; // ecx
+  void *ptr_8; // ecx
   int abstractFlags; // eax
   int uniqueId; // eax
-  _DWORD *vtable1; // edx
+  _DWORD *ptr_4; // edx
 
-  vtable2 = this->?; /*0x50ff53*/
-  if ( this->? >= (int)vtable2 ) /*0x50ff5b*/
+  ptr_8 = this->?; /*0x50ff53*/
+  if ( this->? >= (int)ptr_8 ) /*0x50ff5b*/
   {
-    if ( !BYTE1(this->?) && vtable2 ) /*0x50ff66*/
+    if ( !BYTE1(this->?) && ptr_8 ) /*0x50ff66*/
       return 0; /*0x50ff66*/
     abstractFlags = this->?; /*0x50ff68*/
     if ( abstractFlags <= 0 /*0x50ff78*/
       || !(*((unsigned __int8 (__thiscall **)(HouseClass *, int, _DWORD))this->AbstractClass + 2))(
             this,
-            (int)vtable2 + abstractFlags,
+            (int)ptr_8 + abstractFlags,
             0) )
     {
       return 0; /*0x50ff7f*/
     }
   }
   uniqueId = this->?; /*0x50ff85*/
-  vtable1 = this->?; /*0x50ff88*/
+  ptr_4 = this->?; /*0x50ff88*/
   this->? = uniqueId + 1; /*0x50ff8e*/
-  vtable1[2 * uniqueId] = *a2; /*0x50ff97*/
-  vtable1[2 * uniqueId + 1] = a2[1]; /*0x50ff9e*/
+  ptr_4[2 * uniqueId] = *a2; /*0x50ff97*/
+  ptr_4[2 * uniqueId + 1] = a2[1]; /*0x50ff9e*/
   return 1; /*0x50ff81*/
 }
 
@@ -13576,9 +13576,9 @@ int __usercall HouseClass::LoadTypeList@<eax>(INIClass *this@<ecx>, double a2@<s
       if ( !*(_DWORD *)&dword_A8B238 ) /*0x500aab*/
       {
         if ( *(_BYTE *)(v11 + 492) || *(_BYTE *)(v11 + 493) ) /*0x500ab7*/
-          HouseClass::SetCombatPower((int *)v11, (int)dword_A8B230[43].vtable0); /*0x500ace*/
+          HouseClass::SetCombatPower((int *)v11, (int)dword_A8B230[43].ptr_0); /*0x500ace*/
         else
-          HouseClass::SetCombatPower((int *)v11, (int)dword_A8B230[43].vtable1); /*0x500ade*/
+          HouseClass::SetCombatPower((int *)v11, (int)dword_A8B230[43].ptr_4); /*0x500ade*/
       }
       result = stru_A80220.?; /*0x500ae3*/
       ++v9; /*0x500ae8*/
@@ -13940,7 +13940,7 @@ int __stdcall VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_5(Hous
   int v1; // edi
   BuildingClass *v2; // esi
   int v3; // eax
-  void *vtable0; // edx
+  void *ptr_0; // edx
   int *v5; // ecx
   int v7; // [esp+8h] [ebp-4h] BYREF
 
@@ -13964,9 +13964,9 @@ int __stdcall VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_5(Hous
           && !this->__pad_13C[140] )
         {
           v3 = (*((int (__thiscall **)(BuildingClass *))v2->TechnoClass + 33))(v2); /*0x50147b*/
-          vtable0 = v2->TechnoClass; /*0x501487*/
+          ptr_0 = v2->TechnoClass; /*0x501487*/
           v7 = *(_DWORD *)(v3 + 160); /*0x501489*/
-          (*((void (__thiscall **)(BuildingClass *, int *, _DWORD, _DWORD, _DWORD, int, int, _DWORD))vtable0 + 91))( /*0x5014aa*/
+          (*((void (__thiscall **)(BuildingClass *, int *, _DWORD, _DWORD, _DWORD, int, int, _DWORD))ptr_0 + 91))( /*0x5014aa*/
             v2,
             &v7,
             0,
@@ -14077,7 +14077,7 @@ int HouseClass::CanDetect(HouseClass *this)
     || v2 )
   {
     result = (int)dword_A8B230; /*0x501668*/
-    if ( !LOBYTE(dword_A8B230[127].vtable1) ) /*0x50166d*/
+    if ( !LOBYTE(dword_A8B230[127].ptr_4) ) /*0x50166d*/
     {
       nextArrayIndex = stru_A80220.?; /*0x50167b*/
       for ( i = 0; i < nextArrayIndex; ++i ) /*0x501685*/
@@ -15774,7 +15774,7 @@ int __thiscall HouseClass::GenerateAIBuildListEnsureSanity(HouseClass *this)
   (*(void (__thiscall **)(int *))(v3 + 12))(&this->base[7]); /*0x5054dc*/
   v4 = 1 << SuperWeaponTypeClass::FindByName((SuperWeaponTypeClass *)(this->relatedTagsCapacity + 152)); /*0x5054f6*/
   VectorClass::BuildingTypeConstructor(&v93, 0, 0); /*0x5054fe*/
-  v93.vtable0 = &DynamicVectorClass<BuildingTypeClass const *>::`vftable'; /*0x50550e*/
+  v93.ptr_0 = &DynamicVectorClass<BuildingTypeClass const *>::`vftable'; /*0x50550e*/
   v95 = 10; /*0x505516*/
   v94 = 0; /*0x50551a*/
   BoolVector::Construct(&v96, 0, 0); /*0x50551e*/
@@ -15821,7 +15821,7 @@ LABEL_18:
                   if ( v94 < v93.Capacity /*0x505661*/
                     || (v93.IsAllocated || !v93.Capacity)
                     && v95 > 0
-                    && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v93.vtable0 + 2))(
+                    && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v93.ptr_0 + 2))(
                          &v93,
                          v95 + v93.Capacity,
                          0) )
@@ -15855,7 +15855,7 @@ LABEL_17:
   v16 = v94; /*0x5056d8*/
   v91 = v94; /*0x5056e4*/
   VectorClass::BuildingTypeConstructor(&v85, 0, 0); /*0x5056e8*/
-  v85.vtable0 = &DynamicVectorClass<BuildingTypeClass const *>::`vftable'; /*0x5056fb*/
+  v85.ptr_0 = &DynamicVectorClass<BuildingTypeClass const *>::`vftable'; /*0x5056fb*/
   v87 = 10; /*0x505704*/
   v86 = 0; /*0x50570c*/
   BuildableFromArray = HouseClass::FirstBuildableFromArray(this, *(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 2220); /*0x505719*/
@@ -15874,7 +15874,7 @@ LABEL_17:
     if ( v86 < v85.Capacity /*0x505766*/
       || (v85.IsAllocated || !v85.Capacity)
       && v87 > 0
-      && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v85.vtable0 + 2))(&v85, v87 + v85.Capacity, 0) )
+      && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v85.ptr_0 + 2))(&v85, v87 + v85.Capacity, 0) )
     {
       v20 = v86++; /*0x505771*/
       *((_DWORD *)v85.Items + v20) = BuildableFromArray; /*0x50577c*/
@@ -15885,7 +15885,7 @@ LABEL_42:
   if ( v86 < v85.Capacity /*0x5057c2*/
     || (v85.IsAllocated || !v85.Capacity)
     && v87 > 0
-    && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v85.vtable0 + 2))(&v85, v87 + v85.Capacity, 0) )
+    && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v85.ptr_0 + 2))(&v85, v87 + v85.Capacity, 0) )
   {
     v22 = v86++; /*0x5057cd*/
     *((_DWORD *)v85.Items + v22) = v21; /*0x5057d8*/
@@ -15950,7 +15950,7 @@ LABEL_60:
             if ( v86 < v85.Capacity /*0x50591c*/
               || (v85.IsAllocated || !v85.Capacity)
               && v87 > 0
-              && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v85.vtable0 + 2))(
+              && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v85.ptr_0 + 2))(
                    &v85,
                    v87 + v85.Capacity,
                    0) )
@@ -15979,7 +15979,7 @@ LABEL_60:
       if ( v86 < v85.Capacity /*0x505992*/
         || (v85.IsAllocated || !v85.Capacity)
         && v87 > 0
-        && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v85.vtable0 + 2))(
+        && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v85.ptr_0 + 2))(
              &v85,
              v87 + v85.Capacity,
              0) )
@@ -16041,7 +16041,7 @@ LABEL_88:
         if ( v86 < v85.Capacity /*0x505ad4*/
           || (v85.IsAllocated || !v85.Capacity)
           && v87 > 0
-          && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v85.vtable0 + 2))(
+          && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v85.ptr_0 + 2))(
                &v85,
                v87 + v85.Capacity,
                0) )
@@ -16252,7 +16252,7 @@ LABEL_145:
   }
   BYTE1(v88.m_C) = 0; /*0x505eee*/
   v88.m_8 = 0; /*0x505ef5*/
-  v85.vtable0 = &VectorClass<BuildingTypeClass const *>::`vftable'; /*0x505ef9*/
+  v85.ptr_0 = &VectorClass<BuildingTypeClass const *>::`vftable'; /*0x505ef9*/
   if ( v85.Items && v85.IsAllocated ) /*0x505f05*/
   {
     __3_YAXPAX_Z(v85.Items); /*0x505f08*/
@@ -16268,7 +16268,7 @@ LABEL_145:
   }
   result = (int)v93.Items; /*0x505f42*/
   v98 = 0; /*0x505f46*/
-  v93.vtable0 = &VectorClass<BuildingTypeClass const *>::`vftable'; /*0x505f4c*/
+  v93.ptr_0 = &VectorClass<BuildingTypeClass const *>::`vftable'; /*0x505f4c*/
   BYTE1(v99) = 0; /*0x505f53*/
   if ( v93.Items ) /*0x505f59*/
   {
@@ -17294,10 +17294,10 @@ char __userpurge HouseClass::AutoBuildScanAndSort@<al>(int this@<ecx>, double a2
         *(float *)&v110 = COERCE_FLOAT((*(int (__thiscall **)(int))(*(_DWORD *)v23 + 732))(v23)); /*0x5071a2*/
         if ( v30 + LODWORD(v109) + v110 > 0 ) /*0x5071ac*/
         {
-          v31 = LODWORD(v109) + *((_DWORD *)&v119.vtable0 + v29); /*0x5071bf*/
+          v31 = LODWORD(v109) + *((_DWORD *)&v119.ptr_0 + v29); /*0x5071bf*/
           v32 = (int)*(&Base + v29); /*0x5071c1*/
           *((_DWORD *)&v129 + v29) += v30; /*0x5071c5*/
-          *((_DWORD *)&v119.vtable0 + v29) = v31; /*0x5071cc*/
+          *((_DWORD *)&v119.ptr_0 + v29) = v31; /*0x5071cc*/
           v33 = Block; /*0x5071d8*/
           *(&Base + v29) = (void *)(v110 + v32); /*0x5071de*/
           MapClass::CalcVisibleCellRange(v23, v30, (int)v33, (int *)(_EBP + 22356)); /*0x5071ec*/
@@ -17315,7 +17315,7 @@ char __userpurge HouseClass::AutoBuildScanAndSort@<al>(int this@<ecx>, double a2
   p_DynamicVector_field_0x10 = &v153.DynamicVector_field_0x10; /*0x50723c*/
   do /*0x50727b*/
   {
-    v37 = (char *)*(&Base + v35) + *((_DWORD *)&v119.vtable0 + v35) + *((_DWORD *)&v129 + v35); /*0x507254*/
+    v37 = (char *)*(&Base + v35) + *((_DWORD *)&v119.ptr_0 + v35) + *((_DWORD *)&v129 + v35); /*0x507254*/
     v38 = (int)v37 < v106; /*0x50725a*/
     v152[v35] = v37; /*0x50725c*/
     if ( v38 && (!v8 || (int)*p_DynamicVector_field_0x10 > 0) ) /*0x50726c*/
@@ -17327,7 +17327,7 @@ char __userpurge HouseClass::AutoBuildScanAndSort@<al>(int this@<ecx>, double a2
     p_DynamicVector_field_0x10 += 6; /*0x507275*/
   }
   while ( v35 < 4 ); /*0x50727b*/
-  v39 = *((int *)&v119.vtable0 + v34); /*0x50727d*/
+  v39 = *((int *)&v119.ptr_0 + v34); /*0x50727d*/
   v40 = *((_DWORD *)&v129 + v34); /*0x507281*/
   v124 = v34; /*0x507288*/
   v41 = *((float *)&Base + v34); /*0x50728c*/
@@ -17338,7 +17338,7 @@ char __userpurge HouseClass::AutoBuildScanAndSort@<al>(int this@<ecx>, double a2
   VectorClass::BuildingTypeConstructor(&v126, 0, 0); /*0x5072ae*/
   v42 = *(_DWORD *)(_EBP + 120); /*0x5072b3*/
   v43 = 0; /*0x5072b6*/
-  v126.vtable0 = &DynamicVectorClass<BuildingTypeClass const *>::`vftable'; /*0x5072ba*/
+  v126.ptr_0 = &DynamicVectorClass<BuildingTypeClass const *>::`vftable'; /*0x5072ba*/
   v128 = 10; /*0x5072c2*/
   v127 = 0; /*0x5072cd*/
   if ( v42 > 0 ) /*0x5072d8*/
@@ -17354,7 +17354,7 @@ char __userpurge HouseClass::AutoBuildScanAndSort@<al>(int this@<ecx>, double a2
           goto LABEL_34; /*0x50730d*/
         if ( !v126.IsAllocated && Capacity || v128 <= 0 ) /*0x507324*/
           goto LABEL_36; /*0x507324*/
-        if ( (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v126.vtable0 + 2))( /*0x507333*/
+        if ( (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v126.ptr_0 + 2))( /*0x507333*/
                &v126,
                v128 + Capacity,
                0) )
@@ -17593,7 +17593,7 @@ LABEL_87:
     LOBYTE(v116) = 0; /*0x507826*/
     v117 = 0; /*0x50782b*/
     VectorClass::CellConstructor(&v119, 0, 0); /*0x50782f*/
-    v119.vtable0 = &DynamicVectorClass<Cell>::`vftable'; /*0x507838*/
+    v119.ptr_0 = &DynamicVectorClass<Cell>::`vftable'; /*0x507838*/
     v121 = 10; /*0x507842*/
     v120 = 0; /*0x50784a*/
     if ( v119.Items && v119.IsAllocated ) /*0x507856*/
@@ -17643,7 +17643,7 @@ LABEL_107:
       if ( v120 < v119.Capacity /*0x50796c*/
         || (v119.IsAllocated || !v119.Capacity)
         && v121 > 0
-        && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v119.vtable0 + 2))(
+        && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v119.ptr_0 + 2))(
              &v119,
              v121 + v119.Capacity,
              0) )
@@ -17664,7 +17664,7 @@ LABEL_107:
       for ( v82[4] = v86; v84 < v82[4]; *(_DWORD *)(v82[1] + 4 * v84 - 4) = *(_DWORD *)(v82[1] + 4 * v84) ) /*0x5079ba*/
         ++v84; /*0x5079bf*/
     }
-    v119.vtable0 = &VectorClass<Cell>::`vftable'; /*0x5079d2*/
+    v119.ptr_0 = &VectorClass<Cell>::`vftable'; /*0x5079d2*/
     if ( v119.Items && v119.IsAllocated ) /*0x5079e4*/
     {
       __3_YAXPAX_Z(v119.Items); /*0x5079e7*/
@@ -17783,7 +17783,7 @@ LABEL_56:
   }
   BYTE1(v145) = 0; /*0x5075f5*/
   v144 = 0; /*0x5075ff*/
-  v126.vtable0 = &VectorClass<BuildingTypeClass const *>::`vftable'; /*0x507606*/
+  v126.ptr_0 = &VectorClass<BuildingTypeClass const *>::`vftable'; /*0x507606*/
   if ( v126.Items && v126.IsAllocated ) /*0x507616*/
   {
     __3_YAXPAX_Z(v126.Items); /*0x507619*/
@@ -18894,7 +18894,7 @@ LABEL_30:
       return result; /*0x508f4f*/
     }
 LABEL_6:
-    if ( LOBYTE(dword_A8B230[374].vtable3) ) /*0x508e3c*/
+    if ( LOBYTE(dword_A8B230[374].ptr_C) ) /*0x508e3c*/
       goto LABEL_29; /*0x508e3c*/
     powerOutput = this->powerOutput; /*0x508e4a*/
     powerDrain = this->powerDrain; /*0x508e50*/
@@ -22511,7 +22511,7 @@ _DWORD *__thiscall HouseClass::FindSWTarget(HouseClass *this, _DWORD *a2, int a3
   int SuperWeaponTypeFlag; // ebx
   int v5; // eax
   ParticleSystemClass *auxParticles1; // edx
-  HouseClass *vtable0; // ecx
+  HouseClass *ptr_0; // ecx
   _DWORD *BestBuildingToRepair; // esi
   int v9; // edi
   int v10; // eax
@@ -22527,16 +22527,16 @@ _DWORD *__thiscall HouseClass::FindSWTarget(HouseClass *this, _DWORD *a2, int a3
   auxParticles1 = FootClass_Array.?; /*0x50d193*/
   do /*0x50d1a6*/
   {
-    vtable0 = (HouseClass *)auxParticles1->ObjectClass; /*0x50d199*/
+    ptr_0 = (HouseClass *)auxParticles1->ObjectClass; /*0x50d199*/
     if ( *((HouseClass **)auxParticles1->ObjectClass + 11) == this ) /*0x50d19e*/
       break; /*0x50d19e*/
     ++v5; /*0x50d1a0*/
     auxParticles1 = (ParticleSystemClass *)((char *)auxParticles1 + 4); /*0x50d1a1*/
   }
   while ( v5 < (int)FootClass_Array.? ); /*0x50d1a6*/
-  if ( vtable0 && (HouseClass *)vtable0->relatedTags[0] == this ) /*0x50d1b3*/
+  if ( ptr_0 && (HouseClass *)ptr_0->relatedTags[0] == this ) /*0x50d1b3*/
   {
-    BestBuildingToRepair = HouseClass::FindBestBuildingToRepair(vtable0); /*0x50d1be*/
+    BestBuildingToRepair = HouseClass::FindBestBuildingToRepair(ptr_0); /*0x50d1be*/
     v9 = *BestBuildingToRepair; /*0x50d1c7*/
     v10 = (*(int (__thiscall **)(_DWORD *, _DWORD *, int))(*BestBuildingToRepair + 72))(BestBuildingToRepair, v14, 1); /*0x50d1cb*/
     v11 = (*(int (__thiscall **)(_DWORD *, int, int))(v9 + 964))(BestBuildingToRepair, SuperWeaponTypeFlag, v10); /*0x50d1d2*/
@@ -23679,7 +23679,7 @@ int AbstractClass::computeMovementCost(AbstractClass *this)
 // ==== 0x0050E370  AbstractClass::checkPassability  this=AbstractClass  sig=csp ====
 int __thiscall AbstractClass::checkPassability(AbstractClass *this)
 {
-  return this->vtable4; /*0x50e373*/
+  return this->ptr_10; /*0x50e373*/
 }
 
 
@@ -24397,7 +24397,7 @@ char __thiscall VectorClass::InsertAt(DynamicVectorClass *this, _DWORD *a2, int 
       return 0; /*0x50eb86*/
     CapacityIncrement = this->CapacityIncrement; /*0x50eb88*/
     if ( CapacityIncrement <= 0 /*0x50eb98*/
-      || !(*(unsigned __int8 (__thiscall **)(DynamicVectorClass *, int, _DWORD))(this->vtable0 + 8))(
+      || !(*(unsigned __int8 (__thiscall **)(DynamicVectorClass *, int, _DWORD))(this->ptr_0 + 8))(
             this,
             Capacity + CapacityIncrement,
             0) )
@@ -26182,31 +26182,31 @@ void __thiscall nullsub_145(void *this)
 // ==== 0x0050FF50  HouseClass::AddCoordTrackingEntry  this=HouseClass  sig=csp ====
 char __thiscall HouseClass::AddCoordTrackingEntry(HouseClass *this, _DWORD *a2)
 {
-  void *vtable2; // ecx
+  void *ptr_8; // ecx
   int abstractFlags; // eax
   int uniqueId; // eax
-  _DWORD *vtable1; // edx
+  _DWORD *ptr_4; // edx
 
-  vtable2 = this->?; /*0x50ff53*/
-  if ( this->? >= (int)vtable2 ) /*0x50ff5b*/
+  ptr_8 = this->?; /*0x50ff53*/
+  if ( this->? >= (int)ptr_8 ) /*0x50ff5b*/
   {
-    if ( !BYTE1(this->?) && vtable2 ) /*0x50ff66*/
+    if ( !BYTE1(this->?) && ptr_8 ) /*0x50ff66*/
       return 0; /*0x50ff66*/
     abstractFlags = this->?; /*0x50ff68*/
     if ( abstractFlags <= 0 /*0x50ff78*/
       || !(*((unsigned __int8 (__thiscall **)(HouseClass *, int, _DWORD))this->AbstractClass + 2))(
             this,
-            (int)vtable2 + abstractFlags,
+            (int)ptr_8 + abstractFlags,
             0) )
     {
       return 0; /*0x50ff7f*/
     }
   }
   uniqueId = this->?; /*0x50ff85*/
-  vtable1 = this->?; /*0x50ff88*/
+  ptr_4 = this->?; /*0x50ff88*/
   this->? = uniqueId + 1; /*0x50ff8e*/
-  vtable1[2 * uniqueId] = *a2; /*0x50ff97*/
-  vtable1[2 * uniqueId + 1] = a2[1]; /*0x50ff9e*/
+  ptr_4[2 * uniqueId] = *a2; /*0x50ff97*/
+  ptr_4[2 * uniqueId + 1] = a2[1]; /*0x50ff9e*/
   return 1; /*0x50ff81*/
 }
 

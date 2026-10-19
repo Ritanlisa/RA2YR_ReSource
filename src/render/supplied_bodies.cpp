@@ -150,7 +150,7 @@ extern int CompareFunction(void* a1, void* a2); // 0x6E7AC0 区 bsearch 比较�
 struct g_BuildingLoadQueue_Array_flat {
     unsigned char q000[0xF70];
     unsigned char qF70[0x1360 - 0xF70];
-    unsigned int* TechnoTypeClass;  // G42.35 til 槽词汇 (0x6E7AE8 vtable0 赋值形)
+    unsigned int* TechnoTypeClass;  // G42.35 til 槽词汇 (0x6E7AE8 ptr_0 赋值形)
     // G42.35: 裸整型视图（同槽双视图 -- 标量用法站点 0x6E7A8D 等; 声明即可 /Zs）
     operator unsigned int() const;
     operator unsigned int*() const;   // (unsigned int*)g_... 强转站点 0x6E7AA9
@@ -1048,10 +1048,10 @@ unsigned int * BlitPlainXlatAlpha_ushort::QueryInterface(char a2)
   void *v3; // eax
 
   v3 = (void *)this->u32_8; /*0x49a208*/
-  /* X11: vtable install elided (implicit via class virtuals 0x49a20b) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x49a20b) — binary-proven install, was 0 */
   FractalNoise::Dtor(v3); /*0x49a212*/
   this->u32_8 = 0; /*0x49a21b*/
-  /* X11: vtable install elided (implicit via class virtuals 0x49a224) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x49a224) — binary-proven install, was 0 */
   if ( (a2 & 1) != 0 ) /*0x49a22a*/
     operator delete((this)); /*0x49a22d*/
   return this->ptr_0; /*0x49a237*/
@@ -1065,10 +1065,10 @@ unsigned int * BlitTransZRemapXlatAlpha_ushort::Blit(char a2)
   void *m_C; // eax
 
   m_C = (void *)this->q00C; /*0x49a288*/
-  /* X11: vtable install elided (implicit via class virtuals 0x49a28b) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x49a28b) — binary-proven install, was 0 */
   FractalNoise::Dtor(m_C); /*0x49a292*/
   this->q00C = 0; /*0x49a29b*/
-  /* X11: vtable install elided (implicit via class virtuals 0x49a2a4) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x49a2a4) — binary-proven install, was 0 */
   if ( (a2 & 1) != 0 ) /*0x49a2aa*/
     operator delete((this)); /*0x49a2ad*/
   return this->ptr_0; /*0x49a2b7*/
@@ -1085,7 +1085,7 @@ unsigned int * BlitTransLucent75Alpha_ushort::Blit(char a2)
   *(unsigned int *)this->ptr_0 = 0; /*0x49a2cb*/
   FractalNoise::Dtor(m_8); /*0x49a2d2*/
   this->q008 = 0; /*0x49a2db*/
-  /* X11: vtable install elided (implicit via class virtuals 0x49a2e4) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x49a2e4) — binary-proven install, was 0 */
   if ( (a2 & 1) != 0 ) /*0x49a2ea*/
     operator delete((this)); /*0x49a2ed*/
   return this->ptr_0; /*0x49a2f7*/
@@ -1099,10 +1099,10 @@ unsigned int * BlitTransLucent50Alpha_ushort::Blit(char a2)
   void *m_8; // eax
 
   m_8 = (void *)this->q008; /*0x49a308*/
-  /* X11: vtable install elided (implicit via class virtuals 0x49a30b) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x49a30b) — binary-proven install, was 0 */
   FractalNoise::Dtor(m_8); /*0x49a312*/
   this->q008 = 0; /*0x49a31b*/
-  /* X11: vtable install elided (implicit via class virtuals 0x49a324) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x49a324) — binary-proven install, was 0 */
   if ( (a2 & 1) != 0 ) /*0x49a32a*/
     operator delete((this)); /*0x49a32d*/
   return this->ptr_0; /*0x49a337*/
@@ -1116,10 +1116,10 @@ unsigned int * BlitTransZRemapXlatAlphaZRead_ushort::Blit(char a2)
   void *m_C; // eax
 
   m_C = (void *)this->q00C; /*0x49a468*/
-  /* X11: vtable install elided (implicit via class virtuals 0x49a46b) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x49a46b) — binary-proven install, was 0 */
   FractalNoise::Dtor(m_C); /*0x49a472*/
   this->q00C = 0; /*0x49a47b*/
-  /* X11: vtable install elided (implicit via class virtuals 0x49a484) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x49a484) — binary-proven install, was 0 */
   if ( (a2 & 1) != 0 ) /*0x49a48a*/
     operator delete((this)); /*0x49a48d*/
   return this->ptr_0; /*0x49a497*/
@@ -1133,10 +1133,10 @@ unsigned int * BlitTransLucent75AlphaZRead_ushort::Blit(char a2)
   void *m_8; // eax
 
   m_8 = (void *)this->u32_8; /*0x49a4a8*/
-  /* X11: vtable install elided (implicit via class virtuals 0x49a4ab) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x49a4ab) — binary-proven install, was 0 */
   FractalNoise::Dtor(m_8); /*0x49a4b2*/
   this->u32_8 = 0; /*0x49a4bb*/
-  /* X11: vtable install elided (implicit via class virtuals 0x49a4c4) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x49a4c4) — binary-proven install, was 0 */
   if ( (a2 & 1) != 0 ) /*0x49a4ca*/
     operator delete((this)); /*0x49a4cd*/
   return this->ptr_0; /*0x49a4d7*/
@@ -1150,10 +1150,10 @@ unsigned int * BlitTransLucent50AlphaZRead_ushort::Blit(char a2)
   void *v3; // eax
 
   v3 = (void *)this->u32_8; /*0x49a4e8*/
-  /* X11: vtable install elided (implicit via class virtuals 0x49a4eb) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x49a4eb) — binary-proven install, was 0 */
   FractalNoise::Dtor(v3); /*0x49a4f2*/
   this->u32_8 = 0; /*0x49a4fb*/
-  /* X11: vtable install elided (implicit via class virtuals 0x49a504) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x49a504) — binary-proven install, was 0 */
   if ( (a2 & 1) != 0 ) /*0x49a50a*/
     operator delete((this)); /*0x49a50d*/
   return this->ptr_0; /*0x49a517*/
@@ -1167,10 +1167,10 @@ unsigned int * BlitTransLucent25AlphaZRead_ushort::Blit(char a2)
   void *m_8; // eax
 
   m_8 = (void *)this->q008; /*0x49a528*/
-  /* X11: vtable install elided (implicit via class virtuals 0x49a52b) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x49a52b) — binary-proven install, was 0 */
   FractalNoise::Dtor(m_8); /*0x49a532*/
   this->q008 = 0; /*0x49a53b*/
-  /* X11: vtable install elided (implicit via class virtuals 0x49a544) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x49a544) — binary-proven install, was 0 */
   if ( (a2 & 1) != 0 ) /*0x49a54a*/
     operator delete((this)); /*0x49a54d*/
   return this->ptr_0; /*0x49a557*/
@@ -1184,10 +1184,10 @@ unsigned int * BlitTransLucent75AlphaZReadWarp_ushort::Blit(char a2)
   void *m_8; // eax
 
   m_8 = (void *)this->q008; /*0x49a568*/
-  /* X11: vtable install elided (implicit via class virtuals 0x49a56b) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x49a56b) — binary-proven install, was 0 */
   FractalNoise::Dtor(m_8); /*0x49a572*/
   this->q008 = 0; /*0x49a57b*/
-  /* X11: vtable install elided (implicit via class virtuals 0x49a584) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x49a584) — binary-proven install, was 0 */
   if ( (a2 & 1) != 0 ) /*0x49a58a*/
     operator delete((this)); /*0x49a58d*/
   return this->ptr_0; /*0x49a597*/
@@ -1201,10 +1201,10 @@ unsigned int * BlitTransLucent50AlphaZReadWarp_ushort::Blit(char a2)
   void *m_8; // eax
 
   m_8 = (void *)this->q008; /*0x49a5a8*/
-  /* X11: vtable install elided (implicit via class virtuals 0x49a5ab) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x49a5ab) — binary-proven install, was 0 */
   FractalNoise::Dtor(m_8); /*0x49a5b2*/
   this->q008 = 0; /*0x49a5bb*/
-  /* X11: vtable install elided (implicit via class virtuals 0x49a5c4) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x49a5c4) — binary-proven install, was 0 */
   if ( (a2 & 1) != 0 ) /*0x49a5ca*/
     operator delete((this)); /*0x49a5cd*/
   return this->ptr_0; /*0x49a5d7*/
@@ -1218,10 +1218,10 @@ unsigned int * BlitTransLucent25AlphaZReadWarp_ushort::Blit(char a2)
   void *m_8; // eax
 
   m_8 = (void *)this->u32_8; /*0x49a5e8*/
-  /* X11: vtable install elided (implicit via class virtuals 0x49a5eb) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x49a5eb) — binary-proven install, was 0 */
   FractalNoise::Dtor(m_8); /*0x49a5f2*/
   this->u32_8 = 0; /*0x49a5fb*/
-  /* X11: vtable install elided (implicit via class virtuals 0x49a604) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x49a604) — binary-proven install, was 0 */
   if ( (a2 & 1) != 0 ) /*0x49a60a*/
     operator delete((this)); /*0x49a60d*/
   return this->ptr_0; /*0x49a617*/
@@ -1235,10 +1235,10 @@ unsigned int * BlitTransXlatAlphaZReadWrite_ushort::Blit(char a2)
   void *v3; // eax
 
   v3 = (void *)this->u32_8; /*0x49a628*/
-  /* X11: vtable install elided (implicit via class virtuals 0x49a62b) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x49a62b) — binary-proven install, was 0 */
   FractalNoise::Dtor(v3); /*0x49a632*/
   this->u32_8 = 0; /*0x49a63b*/
-  /* X11: vtable install elided (implicit via class virtuals 0x49a644) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x49a644) — binary-proven install, was 0 */
   if ( (a2 & 1) != 0 ) /*0x49a64a*/
     operator delete((this)); /*0x49a64d*/
   return this->ptr_0; /*0x49a657*/
@@ -1252,10 +1252,10 @@ unsigned int * BlitTransLucent75AlphaZReadWrite_ushort::Blit(char a2)
   void *m_8; // eax
 
   m_8 = (void *)this->q008; /*0x49a6a8*/
-  /* X11: vtable install elided (implicit via class virtuals 0x49a6ab) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x49a6ab) — binary-proven install, was 0 */
   FractalNoise::Dtor(m_8); /*0x49a6b2*/
   this->q008 = 0; /*0x49a6bb*/
-  /* X11: vtable install elided (implicit via class virtuals 0x49a6c4) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x49a6c4) — binary-proven install, was 0 */
   if ( (a2 & 1) != 0 ) /*0x49a6ca*/
     operator delete((this)); /*0x49a6cd*/
   return this->ptr_0; /*0x49a6d7*/
@@ -1269,10 +1269,10 @@ unsigned int * BlitTransLucent50AlphaZReadWrite_ushort::Blit(char a2)
   void *m_8; // eax
 
   m_8 = (void *)this->u32_8; /*0x49a6e8*/
-  /* X11: vtable install elided (implicit via class virtuals 0x49a6eb) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x49a6eb) — binary-proven install, was 0 */
   FractalNoise::Dtor(m_8); /*0x49a6f2*/
   this->u32_8 = 0; /*0x49a6fb*/
-  /* X11: vtable install elided (implicit via class virtuals 0x49a704) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x49a704) — binary-proven install, was 0 */
   if ( (a2 & 1) != 0 ) /*0x49a70a*/
     operator delete((this)); /*0x49a70d*/
   return this->ptr_0; /*0x49a717*/
@@ -1286,10 +1286,10 @@ unsigned int * RLEBlitTransXlatAlpha_ushort::QueryInterface(char a2)
   void *v3; // eax
 
   v3 = (void *)this->u32_8; /*0x49aa08*/
-  /* X11: vtable install elided (implicit via class virtuals 0x49aa0b) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x49aa0b) — binary-proven install, was 0 */
   FractalNoise::Dtor(v3); /*0x49aa12*/
   this->u32_8 = 0; /*0x49aa1b*/
-  /* X11: vtable install elided (implicit via class virtuals 0x49aa24) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x49aa24) — binary-proven install, was 0 */
   if ( (a2 & 1) != 0 ) /*0x49aa2a*/
     operator delete((this)); /*0x49aa2d*/
   return this->ptr_0; /*0x49aa37*/
@@ -1303,10 +1303,10 @@ unsigned int * RLEBlitTransLucent75Alpha_ushort::QueryInterface(char a2)
   void *v3; // eax
 
   v3 = (void *)this->u32_8; /*0x49aa88*/
-  /* X11: vtable install elided (implicit via class virtuals 0x49aa8b) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x49aa8b) — binary-proven install, was 0 */
   FractalNoise::Dtor(v3); /*0x49aa92*/
   this->u32_8 = 0; /*0x49aa9b*/
-  /* X11: vtable install elided (implicit via class virtuals 0x49aaa4) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x49aaa4) — binary-proven install, was 0 */
   if ( (a2 & 1) != 0 ) /*0x49aaaa*/
     operator delete((this)); /*0x49aaad*/
   return this->ptr_0; /*0x49aab7*/
@@ -1320,10 +1320,10 @@ unsigned int * RLEBlitTransLucent50Alpha_ushort::QueryInterface(char a2)
   void *m_8; // eax
 
   m_8 = (void *)this->u32_8; /*0x49aac8*/
-  /* X11: vtable install elided (implicit via class virtuals 0x49aacb) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x49aacb) — binary-proven install, was 0 */
   FractalNoise::Dtor(m_8); /*0x49aad2*/
   this->u32_8 = 0; /*0x49aadb*/
-  /* X11: vtable install elided (implicit via class virtuals 0x49aae4) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x49aae4) — binary-proven install, was 0 */
   if ( (a2 & 1) != 0 ) /*0x49aaea*/
     operator delete((this)); /*0x49aaed*/
   return this->ptr_0; /*0x49aaf7*/
@@ -1337,10 +1337,10 @@ unsigned int * RLEBlitTransLucent25Alpha_ushort::QueryInterface(char a2)
   void *v3; // eax
 
   v3 = (void *)this->u32_8; /*0x49ab08*/
-  /* X11: vtable install elided (implicit via class virtuals 0x49ab0b) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x49ab0b) — binary-proven install, was 0 */
   FractalNoise::Dtor(v3); /*0x49ab12*/
   this->u32_8 = 0; /*0x49ab1b*/
-  /* X11: vtable install elided (implicit via class virtuals 0x49ab24) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x49ab24) — binary-proven install, was 0 */
   if ( (a2 & 1) != 0 ) /*0x49ab2a*/
     operator delete((this)); /*0x49ab2d*/
   return this->ptr_0; /*0x49ab37*/
@@ -1354,10 +1354,10 @@ unsigned int * RLEBlitTransXlatAlphaZRead_ushort::QueryInterface(char a2)
   void *v3; // eax
 
   v3 = (void *)this->u32_8; /*0x49ab48*/
-  /* X11: vtable install elided (implicit via class virtuals 0x49ab4b) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x49ab4b) — binary-proven install, was 0 */
   FractalNoise::Dtor(v3); /*0x49ab52*/
   this->u32_8 = 0; /*0x49ab5b*/
-  /* X11: vtable install elided (implicit via class virtuals 0x49ab64) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x49ab64) — binary-proven install, was 0 */
   if ( (a2 & 1) != 0 ) /*0x49ab6a*/
     operator delete((this)); /*0x49ab6d*/
   return this->ptr_0; /*0x49ab77*/
@@ -1876,7 +1876,7 @@ unsigned int * PaletteClass::Load()
   CCFileClass::Construct2(&v11, (char **)this); /*0x5cb5a6*/
   if ( !(unsigned __int8)CCFileClass::Open(&v11, 0) || (v2 = (char *)CCFileClass::ReadEntireFile(&v11)) == 0 ) /*0x5cb5c5*/
   {
-    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x5cb5cb*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x5cb5cb*/
     v13 = 0; /*0x5cb5d3*/
     Vector::Clear((int)v12); /*0x5cb5db*/
     *(unsigned int *)v11.__tail_0 = &off_7E1668; /*0x5cb5e4*/
@@ -1903,7 +1903,7 @@ unsigned int * PaletteClass::Load()
     v9 = ConvertClass::Construct(v8, (int)&stru_886080, (int)&stru_886080, (int)g_DSurface_Primary, 1, 0); /*0x5cb67d*/
   else
     v9 = 0; /*0x5cb681*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x5cb687*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x5cb687*/
   v13 = 0; /*0x5cb68f*/
   Vector::Clear((int)v12); /*0x5cb697*/
   *(unsigned int *)v11.__tail_0 = &off_7E1668; /*0x5cb6a0*/
@@ -3181,7 +3181,7 @@ unsigned int * VoxClass_Vector::findItem(char a2)
   void *v3; // eax
 
   v3 = *&this->Items; /*0x753963*/
-  /* X11: vtable install elided (implicit via class virtuals 0x753966) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x753966) — binary-proven install, was 0 */
   if ( v3 && (this->IsAllocated) ) /*0x753970*/
   {
     operator delete((v3)); /*0x753978*/
@@ -3508,7 +3508,7 @@ void Voxel_Section::Draw()
          128) )
   {
     DynamicVectorClass::AnimTypeConstructor((DynamicVectorClass *)&v86, 0, 0); /*0x75d68c*/
-    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EB6D4) */  /*0x75d69b*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EB6D4) */  /*0x75d69b*/
     for ( i = strtok((char *)&v86.DynamicVector_field_0x1C, Delimiter); i; i = strtok(0, Delimiter) ) /*0x75d6ad*/
     {
       if ( !*i ) /*0x75d6af*/
@@ -3518,7 +3518,7 @@ void Voxel_Section::Draw()
         DynamicVector::Add_Alt4(&v86, &v84); /*0x75d6cc*/
     }
     TypeList::AnimTypeCopy(&v85, &v86); /*0x75d6ed*/
-    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EB6F4) */  /*0x75d6f6*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EB6F4) */  /*0x75d6f6*/
     DynamicVectorClass::Destroy_Alt((_VectorClass_PBVAnimTypeClass *)&v86); /*0x75d6fe*/
   }
   else
@@ -3532,7 +3532,7 @@ void Voxel_Section::Draw()
   Items = v85.Count; /*0x75d736*/
   *(unsigned int *)_ESI->__pad_118 = CapacityIncrement; /*0x75d73a*/
   *&_ESI->q018 = unknown_18; /*0x75d73f*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7EB6F4) */  /*0x75d742*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7EB6F4) */  /*0x75d742*/
   if ( Items && v85.unknown_18 ) /*0x75d752*/
     __3_YAXPAX_Z(Items); /*0x75d755*/
   _ESI->WarheadTypeClass_field_0x120 = INIClass::ReadInt_Overwrite( /*0x75d771*/
@@ -3760,7 +3760,7 @@ void Voxel_Section::Draw()
          128) )
   {
     DynamicVector::Constructor_VoxelAnim(&v86, 0, 0); /*0x75db12*/
-    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7F0D3C) */  /*0x75db21*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7F0D3C) */  /*0x75db21*/
     for ( j = strtok((char *)&v86.DynamicVector_field_0x1C, Delimiter); j; j = strtok(0, Delimiter) ) /*0x75db33*/
     {
       if ( !*j ) /*0x75db35*/
@@ -3780,14 +3780,14 @@ void Voxel_Section::Draw()
       }
     }
     Voxel_Section::Constructor((Voxel_Section *)&v85, &v86); /*0x75dba9*/
-    /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F0D3C) */  /*0x75dbb2*/
-    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7F0D5C) */  /*0x75dbba*/
+    /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F0D3C) */  /*0x75dbb2*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7F0D5C) */  /*0x75dbba*/
     Vector::Cleanup2((_VectorClass_PBVVoxelAnimTypeClass *)&v86); /*0x75dbc2*/
   }
   else
   {
     Voxel_Section::Constructor((Voxel_Section *)&v85, _ESI->DebrisTypes); /*0x75dbd4*/
-    /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F0D3C) */  /*0x75dbd9*/
+    /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F0D3C) */  /*0x75dbd9*/
   }
   if ( _ESI->DebrisTypes != (int *)&v85 ) /*0x75dbed*/
   {
@@ -3827,7 +3827,7 @@ void Voxel_Section::Draw()
   v60 = v85.?; /*0x75dc52*/
   *(unsigned int *)_ESI->__pad_1A0 = v58; /*0x75dc56*/
   *&_ESI->u32_1A4 = v59; /*0x75dc5b*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F0D5C) */  /*0x75dc5e*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F0D5C) */  /*0x75dc5e*/
   if ( v60 && v85.? ) /*0x75dc6e*/
     __3_YAXPAX_Z(v60); /*0x75dc71*/
   v79 = 0; /*0x75dc88*/
@@ -3908,7 +3908,7 @@ void Voxel_Section::Draw()
   v68 = *((unsigned int *)IntList + 6); /*0x75dda5*/
   v69 = v85.?; /*0x75dda8*/
   *(unsigned int *)_ESI->__pad_1C0 = v68; /*0x75ddac*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E4DB8) */  /*0x75ddb1*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E4DB8) */  /*0x75ddb1*/
   if ( v69 && v85.? ) /*0x75ddc1*/
     __3_YAXPAX_Z(v69); /*0x75ddc4*/
   if ( INIClass::GetString( /*0x75dde6*/
@@ -3990,7 +3990,7 @@ void Voxel_Section::Constructor()
   this->ptr_3 = 0; /*0x75e6c0*/
   this->ptr_4 = 1; /*0x75e6c3*/
   this->CombatLightSize = 0; /*0x75e6c7*/
-  /* X11: vtable install elided (implicit via class virtuals 0x75e6ca) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x75e6ca) — binary-proven install, was 0 */
   if ( this != (Voxel_Section *)a2 ) /*0x75e6d0*/
   {
     Vector::Cleanup2((_VectorClass_PBVVoxelAnimTypeClass *)this); /*0x75e6d2*/
@@ -4024,7 +4024,7 @@ void Voxel_Section::Constructor()
   }
   this->Items = a2[4]; /*0x75e721*/
   this->AnimList = a2[5]; /*0x75e727*/
-  /* X11: vtable install elided (implicit via class virtuals 0x75e72a) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x75e72a) — binary-proven install, was 0 */
   return this->ptr_0; /*0x75e732*/
 }
 } // namespace gamemd

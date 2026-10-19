@@ -22,10 +22,10 @@ int TubeClass::LoadState(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x7281b6*/
     {
       ((AbstractClass *)aP0)->Constructor(); /*0x7281ba*/
-      /* X11: vtable install elided (implicit via TubeClass virtuals 0x7281bf) */
-      /* X11: vtable install elided (implicit via TubeClass virtuals 0x7281c5) */
-      /* X11: vtable install elided (implicit via TubeClass virtuals 0x7281cc) */
-      /* X11: vtable install elided (implicit via TubeClass virtuals 0x7281d3) */
+      /* X11: ptr_0 install elided (implicit via TubeClass virtuals 0x7281bf) */
+      /* X11: ptr_0 install elided (implicit via TubeClass virtuals 0x7281c5) */
+      /* X11: ptr_0 install elided (implicit via TubeClass virtuals 0x7281cc) */
+      /* X11: ptr_0 install elided (implicit via TubeClass virtuals 0x7281d3) */
     }
     return 0; /*0x7281da*/
   }

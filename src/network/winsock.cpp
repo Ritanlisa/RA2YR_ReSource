@@ -30,7 +30,7 @@ WinsockInterfaceClass::WinsockInterfaceClass() noexcept
   void *v5; // eax
 
   v2 = this->u32_3F068; /*0x7b1ab6*/
-  /* X11: vtable install elided (implicit via WinsockInterfaceClass virtuals 0x7b1abc) */
+  /* X11: ptr_0 install elided (implicit via WinsockInterfaceClass virtuals 0x7b1abc) */
   if ( v2 ) /*0x7b1ac4*/
   {
     NetworkClass::UnregisterAsync((SOCKET *)this); /*0x7b1ac6*/
@@ -39,7 +39,7 @@ WinsockInterfaceClass::WinsockInterfaceClass() noexcept
     this->u32_3F068 = 0; /*0x7b1ad8*/
   }
   v3 = *&this->u32_3C; /*0x7b1ade*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x7b1ae1*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x7b1ae1*/
   if ( v3 && this->u32_45 ) /*0x7b1aec*/
   {
     __3_YAXPAX_Z(v3); /*0x7b1af2*/
@@ -48,7 +48,7 @@ WinsockInterfaceClass::WinsockInterfaceClass() noexcept
   this->u32_45 = 0; /*0x7b1afd*/
   this->u32_40 = 0; /*0x7b1b00*/
   v4 = *&this->u32_24; /*0x7b1b03*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x7b1b06*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x7b1b06*/
   if ( v4 && this->u32_2D ) /*0x7b1b11*/
   {
     __3_YAXPAX_Z(v4); /*0x7b1b17*/
@@ -57,7 +57,7 @@ WinsockInterfaceClass::WinsockInterfaceClass() noexcept
   this->u32_2D = 0; /*0x7b1b22*/
   this->u32_28 = 0; /*0x7b1b25*/
   v5 = *&this->u32_C; /*0x7b1b28*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x7b1b2b*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x7b1b2b*/
   if ( v5 && this->u32_15 ) /*0x7b1b36*/
   {
     __3_YAXPAX_Z(v5); /*0x7b1b3c*/

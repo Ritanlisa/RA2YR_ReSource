@@ -570,7 +570,7 @@ int InitCommands()
     v1 = (unsigned int *)__2_YAPAXI_Z(4u); /*0x532166*/
     if ( v1 ) /*0x532170*/
     {
-      /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EBE14) */  /*0x532172*/
+      /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EBE14) */  /*0x532172*/
       v2 = v1; /*0x532178*/
     }
     else
@@ -591,7 +591,7 @@ int InitCommands()
     v4 = (unsigned int *)__2_YAPAXI_Z(4u); /*0x5321d2*/
     if ( v4 ) /*0x5321dc*/
     {
-      /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EBDEC) */  /*0x5321de*/
+      /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EBDEC) */  /*0x5321de*/
       v5 = v4; /*0x5321e4*/
     }
     else
@@ -613,7 +613,7 @@ int InitCommands()
   v7 = (unsigned int *)__2_YAPAXI_Z(4u); /*0x53223f*/
   if ( v7 ) /*0x532249*/
   {
-    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EBDC4) */  /*0x53224b*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EBDC4) */  /*0x53224b*/
     v8 = v7; /*0x532251*/
   }
   else
@@ -634,7 +634,7 @@ int InitCommands()
   v10 = (unsigned int *)__2_YAPAXI_Z(4u); /*0x5322ac*/
   if ( v10 ) /*0x5322b6*/
   {
-    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EBD9C) */  /*0x5322b8*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EBD9C) */  /*0x5322b8*/
     v11 = v10; /*0x5322be*/
   }
   else
@@ -655,7 +655,7 @@ int InitCommands()
   v13 = (unsigned int *)__2_YAPAXI_Z(4u); /*0x532319*/
   if ( v13 ) /*0x532323*/
   {
-    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EBD74) */  /*0x532325*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EBD74) */  /*0x532325*/
     v14 = v13; /*0x53232b*/
   }
   else
@@ -676,7 +676,7 @@ int InitCommands()
   v16 = (unsigned int *)__2_YAPAXI_Z(4u); /*0x532386*/
   if ( v16 ) /*0x532390*/
   {
-    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EBD4C) */  /*0x532392*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EBD4C) */  /*0x532392*/
     v17 = v16; /*0x532398*/
   }
   else
@@ -697,7 +697,7 @@ int InitCommands()
   v19 = (unsigned int *)__2_YAPAXI_Z(4u); /*0x5323f3*/
   if ( v19 ) /*0x5323fd*/
   {
-    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EBD24) */  /*0x5323ff*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EBD24) */  /*0x5323ff*/
     v20 = v19; /*0x532405*/
   }
   else
@@ -718,7 +718,7 @@ int InitCommands()
   v22 = (unsigned int *)__2_YAPAXI_Z(4u); /*0x532460*/
   if ( v22 ) /*0x53246a*/
   {
-    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EBCFC) */  /*0x53246c*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EBCFC) */  /*0x53246c*/
     v23 = v22; /*0x532472*/
   }
   else
@@ -739,7 +739,7 @@ int InitCommands()
   v25 = (unsigned int *)__2_YAPAXI_Z(4u); /*0x5324cd*/
   if ( v25 ) /*0x5324d7*/
   {
-    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EBCD4) */  /*0x5324d9*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EBCD4) */  /*0x5324d9*/
     v26 = v25; /*0x5324df*/
   }
   else
@@ -760,7 +760,7 @@ int InitCommands()
   v28 = (unsigned int *)__2_YAPAXI_Z(4u); /*0x53253a*/
   if ( v28 ) /*0x532544*/
   {
-    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EBCAC) */  /*0x532546*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EBCAC) */  /*0x532546*/
     v29 = v28; /*0x53254c*/
   }
   else
@@ -781,7 +781,7 @@ int InitCommands()
   v31 = (unsigned int *)__2_YAPAXI_Z(4u); /*0x5325a7*/
   if ( v31 ) /*0x5325b1*/
   {
-    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EBC84) */  /*0x5325b3*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EBC84) */  /*0x5325b3*/
     v32 = v31; /*0x5325b9*/
   }
   else
@@ -802,7 +802,7 @@ int InitCommands()
   v34 = (unsigned int *)__2_YAPAXI_Z(4u); /*0x532614*/
   if ( v34 ) /*0x53261e*/
   {
-    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EBC5C) */  /*0x532620*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EBC5C) */  /*0x532620*/
     v175 = v34; /*0x532626*/
   }
   else
@@ -823,7 +823,7 @@ int InitCommands()
   v36 = (unsigned int *)__2_YAPAXI_Z(4u); /*0x532689*/
   if ( v36 ) /*0x532693*/
   {
-    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EBC34) */  /*0x532695*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EBC34) */  /*0x532695*/
     v37 = v36; /*0x53269b*/
   }
   else
@@ -844,7 +844,7 @@ int InitCommands()
   v39 = (unsigned int *)__2_YAPAXI_Z(4u); /*0x5326f5*/
   if ( v39 ) /*0x5326ff*/
   {
-    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EBC0C) */  /*0x532701*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EBC0C) */  /*0x532701*/
     v40 = v39; /*0x532707*/
   }
   else
@@ -865,7 +865,7 @@ int InitCommands()
   v42 = (unsigned int *)__2_YAPAXI_Z(4u); /*0x532762*/
   if ( v42 ) /*0x53276c*/
   {
-    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EBBE4) */  /*0x53276e*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EBBE4) */  /*0x53276e*/
     v176 = v42; /*0x532774*/
   }
   else
@@ -886,7 +886,7 @@ int InitCommands()
   v44 = (unsigned int *)__2_YAPAXI_Z(4u); /*0x5327d7*/
   if ( v44 ) /*0x5327e1*/
   {
-    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EBBBC) */  /*0x5327e3*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EBBBC) */  /*0x5327e3*/
     v45 = v44; /*0x5327e9*/
   }
   else
@@ -907,7 +907,7 @@ int InitCommands()
   v47 = (unsigned int *)__2_YAPAXI_Z(4u); /*0x532843*/
   if ( v47 ) /*0x53284d*/
   {
-    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EBB94) */  /*0x53284f*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EBB94) */  /*0x53284f*/
     v48 = v47; /*0x532855*/
   }
   else
@@ -928,7 +928,7 @@ int InitCommands()
   v50 = (unsigned int *)__2_YAPAXI_Z(4u); /*0x5328b0*/
   if ( v50 ) /*0x5328ba*/
   {
-    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EBB6C) */  /*0x5328bc*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EBB6C) */  /*0x5328bc*/
     v51 = v50; /*0x5328c2*/
   }
   else
@@ -949,7 +949,7 @@ int InitCommands()
   v53 = (unsigned int *)__2_YAPAXI_Z(4u); /*0x53291d*/
   if ( v53 ) /*0x532927*/
   {
-    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EBB44) */  /*0x532929*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EBB44) */  /*0x532929*/
     v54 = v53; /*0x53292f*/
   }
   else
@@ -970,7 +970,7 @@ int InitCommands()
   v56 = (unsigned int *)__2_YAPAXI_Z(4u); /*0x53298a*/
   if ( v56 ) /*0x532994*/
   {
-    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EBB1C) */  /*0x532996*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EBB1C) */  /*0x532996*/
     v57 = v56; /*0x53299c*/
   }
   else
@@ -991,7 +991,7 @@ int InitCommands()
   v59 = (unsigned int *)__2_YAPAXI_Z(4u); /*0x5329f7*/
   if ( v59 ) /*0x532a01*/
   {
-    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EBAF4) */  /*0x532a03*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EBAF4) */  /*0x532a03*/
     v60 = v59; /*0x532a09*/
   }
   else
@@ -1012,7 +1012,7 @@ int InitCommands()
   v62 = (unsigned int *)__2_YAPAXI_Z(4u); /*0x532a64*/
   if ( v62 ) /*0x532a6e*/
   {
-    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EBACC) */  /*0x532a70*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EBACC) */  /*0x532a70*/
     v63 = v62; /*0x532a76*/
   }
   else
@@ -1033,7 +1033,7 @@ int InitCommands()
   v65 = (unsigned int *)__2_YAPAXI_Z(4u); /*0x532ad1*/
   if ( v65 ) /*0x532adb*/
   {
-    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EBAA4) */  /*0x532add*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EBAA4) */  /*0x532add*/
     v66 = v65; /*0x532ae3*/
   }
   else
@@ -1054,7 +1054,7 @@ int InitCommands()
   v68 = (unsigned int *)__2_YAPAXI_Z(4u); /*0x532b3e*/
   if ( v68 ) /*0x532b48*/
   {
-    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EBA7C) */  /*0x532b4a*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EBA7C) */  /*0x532b4a*/
     v69 = v68; /*0x532b50*/
   }
   else
@@ -1075,7 +1075,7 @@ int InitCommands()
   v71 = (unsigned int *)__2_YAPAXI_Z(4u); /*0x532bab*/
   if ( v71 ) /*0x532bb5*/
   {
-    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EBA54) */  /*0x532bb7*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EBA54) */  /*0x532bb7*/
     v72 = v71; /*0x532bbd*/
   }
   else
@@ -1096,7 +1096,7 @@ int InitCommands()
   v74 = (unsigned int *)__2_YAPAXI_Z(4u); /*0x532c18*/
   if ( v74 ) /*0x532c22*/
   {
-    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EBA2C) */  /*0x532c24*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EBA2C) */  /*0x532c24*/
     v75 = v74; /*0x532c2a*/
   }
   else
@@ -1117,7 +1117,7 @@ int InitCommands()
   v77 = (unsigned int *)__2_YAPAXI_Z(4u); /*0x532c85*/
   if ( v77 ) /*0x532c8f*/
   {
-    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EBA04) */  /*0x532c91*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EBA04) */  /*0x532c91*/
     v78 = v77; /*0x532c97*/
   }
   else
@@ -1138,7 +1138,7 @@ int InitCommands()
   v80 = (unsigned int *)__2_YAPAXI_Z(4u); /*0x532cf2*/
   if ( v80 ) /*0x532cfc*/
   {
-    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EB9DC) */  /*0x532cfe*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EB9DC) */  /*0x532cfe*/
     v81 = v80; /*0x532d04*/
   }
   else
@@ -1159,7 +1159,7 @@ int InitCommands()
   v83 = (unsigned int *)__2_YAPAXI_Z(4u); /*0x532d5f*/
   if ( v83 ) /*0x532d69*/
   {
-    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EB9B4) */  /*0x532d6b*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EB9B4) */  /*0x532d6b*/
     v84 = v83; /*0x532d71*/
   }
   else
@@ -1180,7 +1180,7 @@ int InitCommands()
   v86 = (unsigned int *)__2_YAPAXI_Z(4u); /*0x532dcc*/
   if ( v86 ) /*0x532dd6*/
   {
-    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EB98C) */  /*0x532dd8*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EB98C) */  /*0x532dd8*/
     v87 = v86; /*0x532dde*/
   }
   else
@@ -1201,7 +1201,7 @@ int InitCommands()
   v89 = (unsigned int *)__2_YAPAXI_Z(4u); /*0x532e39*/
   if ( v89 ) /*0x532e43*/
   {
-    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EB964) */  /*0x532e45*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EB964) */  /*0x532e45*/
     v90 = v89; /*0x532e4b*/
   }
   else
@@ -1222,7 +1222,7 @@ int InitCommands()
   v92 = (unsigned int *)__2_YAPAXI_Z(4u); /*0x532ea6*/
   if ( v92 ) /*0x532eb0*/
   {
-    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EB93C) */  /*0x532eb2*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EB93C) */  /*0x532eb2*/
     v93 = v92; /*0x532eb8*/
   }
   else
@@ -1243,7 +1243,7 @@ int InitCommands()
   v95 = (unsigned int *)__2_YAPAXI_Z(4u); /*0x532f13*/
   if ( v95 ) /*0x532f1d*/
   {
-    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EB914) */  /*0x532f1f*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EB914) */  /*0x532f1f*/
     v96 = v95; /*0x532f25*/
   }
   else
@@ -1264,7 +1264,7 @@ int InitCommands()
   v98 = (unsigned int *)__2_YAPAXI_Z(4u); /*0x532f80*/
   if ( v98 ) /*0x532f8a*/
   {
-    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EB8EC) */  /*0x532f8c*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EB8EC) */  /*0x532f8c*/
     v99 = v98; /*0x532f92*/
   }
   else
@@ -1285,7 +1285,7 @@ int InitCommands()
   v101 = (unsigned int *)__2_YAPAXI_Z(4u); /*0x532fed*/
   if ( v101 ) /*0x532ff7*/
   {
-    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EB8C4) */  /*0x532ff9*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EB8C4) */  /*0x532ff9*/
     v102 = v101; /*0x532fff*/
   }
   else
@@ -1306,7 +1306,7 @@ int InitCommands()
   v104 = (unsigned int *)__2_YAPAXI_Z(4u); /*0x53305a*/
   if ( v104 ) /*0x533064*/
   {
-    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EB89C) */  /*0x533066*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EB89C) */  /*0x533066*/
     v105 = v104; /*0x53306c*/
   }
   else
@@ -1327,7 +1327,7 @@ int InitCommands()
   v107 = (unsigned int *)__2_YAPAXI_Z(4u); /*0x5330c7*/
   if ( v107 ) /*0x5330d1*/
   {
-    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EB874) */  /*0x5330d3*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EB874) */  /*0x5330d3*/
     v108 = v107; /*0x5330d9*/
   }
   else
@@ -1349,7 +1349,7 @@ int InitCommands()
   if ( v110 ) /*0x53313e*/
   {
     v110[1] = 1; /*0x533140*/
-    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EB84C) */  /*0x533147*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EB84C) */  /*0x533147*/
     v111 = v110; /*0x53314d*/
   }
   else
@@ -1371,7 +1371,7 @@ int InitCommands()
   if ( v113 ) /*0x5331b2*/
   {
     v113[1] = 2; /*0x5331b4*/
-    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EB84C) */  /*0x5331bb*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EB84C) */  /*0x5331bb*/
     v114 = v113; /*0x5331c1*/
   }
   else
@@ -1393,7 +1393,7 @@ int InitCommands()
   if ( v116 ) /*0x533226*/
   {
     v116[1] = 3; /*0x533228*/
-    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EB84C) */  /*0x53322f*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EB84C) */  /*0x53322f*/
     v117 = v116; /*0x533235*/
   }
   else
@@ -1415,7 +1415,7 @@ int InitCommands()
   if ( v119 ) /*0x53329a*/
   {
     v119[1] = 4; /*0x53329c*/
-    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EB84C) */  /*0x5332a3*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EB84C) */  /*0x5332a3*/
     v120 = v119; /*0x5332a9*/
   }
   else
@@ -1437,7 +1437,7 @@ int InitCommands()
   if ( v122 ) /*0x53330e*/
   {
     v122[1] = 5; /*0x533310*/
-    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EB84C) */  /*0x533317*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EB84C) */  /*0x533317*/
     v123 = v122; /*0x53331d*/
   }
   else

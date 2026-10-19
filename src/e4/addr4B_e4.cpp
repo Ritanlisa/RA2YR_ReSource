@@ -714,7 +714,7 @@ DropListClass * E4Recv_4B4E10::sub_4B4E10(DropListClass * aP1, wchar_t * String,
   this->M76 = a9; /*0x4b4e66*/
   ShapeButtonClass::Constructor(&this->q050, 0, a11, aP7 + aP5, aP6, 0, 0, 0); /*0x4b4e69*/
   ListClass::Construct((int)&this->u32_2C0, 0, aP5, aP6 + *(__int16 *)(a11 + 4), aP7 + *(__int16 *)(a11 + 2), a9, aP4, a10, a11); /*0x4b4ea3*/
-  /* X11: vtable install elided (implicit via DropListClass virtuals 0x4b4eac) */
+  /* X11: ptr_0 install elided (implicit via DropListClass virtuals 0x4b4eac) */
   int Instance; // eax
   Instance = TextRenderer::GetInstance(); /*0x4b4eb2*/
   int v13 = this->M176; // edx /*0x4b4eba*/
@@ -741,14 +741,14 @@ int E4Recv_4B53E0::sub_4B53E0(int a2)
   this->M60 = *(EditClass *)(a2 + 60); /*0x4b540e*/
   this->u32_40 = *(EditClass *)(a2 + 64); /*0x4b5414*/
   this->u32_44 = *(EditClass *)(a2 + 68); /*0x4b541a*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E81A4) */  /*0x4b541d*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E81A4) */  /*0x4b541d*/
   this->u32_48 = *(unsigned char *)(a2 + 72); /*0x4b5429*/
   this->M76 = *(EditClass *)(a2 + 76); /*0x4b5432*/
   ControlClass::CtorFromData(&this->u32_14, a2 + 80); /*0x4b5435*/
   this->M124 = *(unsigned char *)(a2 + 124); /*0x4b5443*/
   this->M125 = *(unsigned char *)(a2 + 125); /*0x4b5449*/
   this->M80 = *(EditClass *)(a2 + 128); /*0x4b544f*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8118) */  /*0x4b5452*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E8118) */  /*0x4b5452*/
   this->u32_84 = *(unsigned char *)(a2 + 132); /*0x4b545c*/
   this->M136 = *(EditClass *)(a2 + 136); /*0x4b5462*/
   this->M140 = *(EditClass *)(a2 + 140); /*0x4b5468*/
@@ -761,10 +761,10 @@ int E4Recv_4B53E0::sub_4B53E0(int a2)
   this->M165 = *(unsigned char *)(a2 + 165); /*0x4b5492*/
   this->M168 = *(EditClass *)(a2 + 168); /*0x4b5498*/
   this->M172 = *(unsigned char *)(a2 + 172); /*0x4b54a4*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8088) */  /*0x4b54a9*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E8088) */  /*0x4b54a9*/
   sub_557380((int)&this->M176, a2 + 176); /*0x4b54af*/
   int v3 = this->M176; // eax /*0x4b54b4*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E7FCC) */  /*0x4b54b9*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E7FCC) */  /*0x4b54b9*/
   (*(void (**)(EditClass *, EditClass *))(v3 + 132))(&this->M176, this); /*0x4b54bf*/
   (*(void (**)(EditClass *, EditClass *))(this->u32_50 + 132))(&this->u32_14, this); /*0x4b54ca*/
   return (int)this; /*0x4b54d3*/

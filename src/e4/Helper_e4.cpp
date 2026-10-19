@@ -63,12 +63,12 @@ char Helper::ProcessData(void ** a1, int a2, int * a3)
   v11.Width = *(unsigned int *)(a2 + 8); /*0x437205*/
   v11.Height = v8; /*0x437215*/
   v11.LockCount = 0; /*0x437219*/
-  /* X11: vtable install elided (X67 star-deref, RHS XSurface_Vtable) */  /*0x437221*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS XSurface_Vtable) */  /*0x437221*/
   v12 = v7; /*0x437229*/
   Buffer::Init((Buffer *)v13, v6, v7 * v8 * v11.Width); /*0x43722d*/
   v9 = *(void **)(a2 + 8); /*0x437235*/
   v10[3] = *(void **)(a2 + 12); /*0x437241*/
-  /* X11: vtable install elided (X67 star-deref, RHS BSurface_Vtable) */  /*0x43724b*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS BSurface_Vtable) */  /*0x43724b*/
   v10[0] = 0; /*0x437253*/
   v10[1] = 0; /*0x43725b*/
   v10[2] = v9; /*0x437263*/

@@ -1273,7 +1273,7 @@ int E4Recv_71FF20::sub_71FF20(int aP1, int a3, int a4, int aP2, int aP3, int aP4
   this->__pad_0[52] = a9; /*0x71ff5c*/
   this->field_38 = a3; /*0x71ff5f*/
   this->M60 = a4; /*0x71ff62*/
-  /* X11: vtable install elided (implicit via TextButtonClass virtuals 0x71ff65) */
+  /* X11: ptr_0 install elided (implicit via TextButtonClass virtuals 0x71ff65) */
   if ( aP4 == -1 || aP5 == -1 ) /*0x71ff70*/
   {
     int Instance; // ebx

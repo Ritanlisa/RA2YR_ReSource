@@ -321,7 +321,7 @@ namespace gamemd {
 MouseClass * WWMouseClass::updateHotspot(char a2)
 {
 
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7F7B78) */  /*0x7ba309*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7F7B78) */  /*0x7ba309*/
   if ( (a2 & 1) != 0 ) /*0x7ba30f*/
     __3_YAXPAX_Z(this); /*0x7ba312*/
   return this->HandleClick_ph; /*0x7ba31c*/

@@ -331,11 +331,11 @@ INIClass::INIClass()
   result->q008 = 0; /*0x535aaf*/
   sectionHead->Prev = 0; /*0x535ab2*/
   sectionHead->Next = 0; /*0x535ab5*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E1B0C) */  /*0x535ab8*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E1B0C) */  /*0x535ab8*/
   result[8] = 0; /*0x535abe*/
   result[9] = 0; /*0x535ac1*/
   result[7] = (unsigned int)(&g_ptr_7E1B0C); /*0x535ac4*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E1B04) */  /*0x535acd*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E1B04) */  /*0x535acd*/
   if ( result != (unsigned int *)-28 ) /*0x535ad4*/
   {
     int v4; // edi
@@ -360,14 +360,14 @@ INIClass::INIClass()
   if ( v7 ) /*0x535b04*/
     v7->Next = v3; /*0x535b06*/
   sectionHead->Prev = (int)v3; /*0x535b09*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_var_a3009f) */  /*0x535b0c*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_a3009f) */  /*0x535b0c*/
   result->needsSave_flag = 0; /*0x535b13*/
   result->INIClass_field_2C = 0; /*0x535b16*/
   result->unknown30 = 0; /*0x535b19*/
   result->needsSave_flag = 0; /*0x535b1c*/
   result->unknown38 = 0; /*0x535b1f*/
   result->INIClass_field_3C = 0; /*0x535b23*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EA5F4) */  /*0x535b27*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EA5F4) */  /*0x535b27*/
   return result; /*0x535b22*/
 
 }

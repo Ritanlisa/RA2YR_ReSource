@@ -634,7 +634,7 @@ bool Gap2Recv_659650::RenderProjectileTrail() {
   double v1; // st7
   int owningHouseIndex; // ebp
   int *v4; // eax
-  unsigned char *vtable1; // ecx
+  unsigned char *ptr_4; // ecx
   int v7; // edx
   ObjectClass **v8; // eax
   TagClass *v9; // edx
@@ -694,11 +694,11 @@ bool Gap2Recv_659650::RenderProjectileTrail() {
   }
   if ( LOBYTE(_ESI->customSound_controller[2]) ) /*0x6596d7*/
   {
-    vtable1 = ((unsigned int *)_ESI)[0]; /*0x6596e2*/
-    if ( vtable1 ) /*0x6596e7*/
+    ptr_4 = ((unsigned int *)_ESI)[0]; /*0x6596e2*/
+    if ( ptr_4 ) /*0x6596e7*/
     {
-      v7 = *(unsigned int *)vtable1; /*0x6596f0*/
-      if ( (vtable1[20] & 2) != 0 ) /*0x6596f4*/
+      v7 = *(unsigned int *)ptr_4; /*0x6596f0*/
+      if ( (ptr_4[20] & 2) != 0 ) /*0x6596f4*/
         v8 = (ObjectClass **)(*(int (**)(int *))(v7 + 164))(&v38); /*0x659705*/
       else
         v8 = (ObjectClass **)(*(int (**)(int *))(v7 + 88))(&v38); /*0x6596fb*/
@@ -1052,7 +1052,7 @@ void* Gap2Recv_65A7E0::Helper_65A7E0(TechnoClass * aP1) {
 
   ObjectClass::Init((ObjectClass *)this, aP1); /*0x65a7e8*/
   this->radioLinks[0] = (int)&g_ptr_7E8500; /*0x65a7ed*/
-  /* X11: vtable install elided (implicit via RadioClass virtuals 0x65a7f7) */
+  /* X11: ptr_0 install elided (implicit via RadioClass virtuals 0x65a7f7) */
   ((unsigned int *)this)[0] = &g_ptr_7F04DC; /*0x65a7fd*/
   ((unsigned int *)this)[0] = &g_ptr_7F04DC; /*0x65a804*/
   ((unsigned int *)this)[0] = &g_ptr_7F04DC; /*0x65a80b*/
@@ -1113,7 +1113,7 @@ void RadSiteClass::Constructor() {
   LightSource = this->LightSource; /*0x65b32f*/
   if ( LightSource ) /*0x65b334*/
   {
-    (*((void (**)(LightSourceClass *, int))LightSource->vtable1 + 8))(LightSource, 1); /*0x65b33a*/
+    (*((void (**)(LightSourceClass *, int))LightSource->ptr_4 + 8))(LightSource, 1); /*0x65b33a*/
     this->LightSource = 0; /*0x65b33d*/
   }
   v6 = this; /*0x65b354*/
@@ -1170,7 +1170,7 @@ int RadSiteClass::SaveLoad_Prefix(AbstractClass * aP0, int aP1)
       (&aP0->RadLevelTimer)[0] = v3; /*0x65b404*/
       (&aP0->RadLightTimer)[0] = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x65b40c*/
       (&aP0->RadLightTimer)[2] = 0; /*0x65b40f*/
-      /* X11: vtable install elided (implicit via RadSiteClass virtuals 0x65b416) */
+      /* X11: ptr_0 install elided (implicit via RadSiteClass virtuals 0x65b416) */
       ((unsigned int *)aP0)[0] = (unsigned int)(&g_ptr_7F07E4); /*0x65b41c*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&g_ptr_7F07E4); /*0x65b423*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&g_ptr_7F07E4); /*0x65b42a*/
@@ -1512,7 +1512,7 @@ void* Gap2Recv_65FB80::Team_Load_65FB80(int a2, IUnknown * aP2) {
   int *_6550C0; // eax
   int v9; // ecx
   void *v10; // eax
-  void *vtable1; // edi
+  void *ptr_4; // edi
   void *v12; // edx
   void *v13; // eax
   void *v14; // ecx
@@ -1546,16 +1546,16 @@ void* Gap2Recv_65FB80::Team_Load_65FB80(int a2, IUnknown * aP2) {
   v10 = (void *)(_6550C0[1] - v7); /*0x65fc0b*/
   ((unsigned int *)this)[0] = (void *)(v9 - v6); /*0x65fc0d*/
   ((unsigned int *)this)[0] = v10; /*0x65fc10*/
-  vtable1 = ((unsigned int *)this)[0]; /*0x65fc13*/
+  ptr_4 = ((unsigned int *)this)[0]; /*0x65fc13*/
   v12 = v10; /*0x65fc1c*/
   v13 = (void *)(*(unsigned int *)&stru_87F5F0.__pad_E12[2190] - (unsigned int)v10); /*0x65fc23*/
-  v14 = (void *)(*(unsigned int *)&stru_87F5F0.__pad_E12[2186] - (unsigned int)vtable1); /*0x65fc25*/
-  v15 = *(unsigned int *)&stru_87F5F0.__pad_E12[2186] - (unsigned int)vtable1; /*0x65fc29*/
-  if ( *(unsigned int *)&stru_87F5F0.__pad_E12[2186] - (int)vtable1 <= (int)v13 ) /*0x65fc2b*/
+  v14 = (void *)(*(unsigned int *)&stru_87F5F0.__pad_E12[2186] - (unsigned int)ptr_4); /*0x65fc25*/
+  v15 = *(unsigned int *)&stru_87F5F0.__pad_E12[2186] - (unsigned int)ptr_4; /*0x65fc29*/
+  if ( *(unsigned int *)&stru_87F5F0.__pad_E12[2186] - (int)ptr_4 <= (int)v13 ) /*0x65fc2b*/
     v15 = (int)v13; /*0x65fc2d*/
   if ( (int)v12 <= v15 ) /*0x65fc31*/
   {
-    v16 = *(unsigned int *)&stru_87F5F0.__pad_E12[2186] - (unsigned int)vtable1; /*0x65fc39*/
+    v16 = *(unsigned int *)&stru_87F5F0.__pad_E12[2186] - (unsigned int)ptr_4; /*0x65fc39*/
     if ( (int)v14 <= (int)v13 ) /*0x65fc3b*/
       v16 = (int)v13; /*0x65fc3d*/
   }
@@ -1563,9 +1563,9 @@ void* Gap2Recv_65FB80::Team_Load_65FB80(int a2, IUnknown * aP2) {
   {
     v16 = (int)v12; /*0x65fc33*/
   }
-  if ( (int)vtable1 <= v16 ) /*0x65fc41*/
+  if ( (int)ptr_4 <= v16 ) /*0x65fc41*/
   {
-    v17 = *(unsigned int *)&stru_87F5F0.__pad_E12[2186] - (unsigned int)vtable1; /*0x65fc4b*/
+    v17 = *(unsigned int *)&stru_87F5F0.__pad_E12[2186] - (unsigned int)ptr_4; /*0x65fc4b*/
     if ( (int)v14 <= (int)v13 ) /*0x65fc4d*/
       v17 = (int)v13; /*0x65fc4f*/
     if ( (int)v12 <= v17 ) /*0x65fc53*/

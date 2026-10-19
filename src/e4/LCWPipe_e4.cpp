@@ -16,7 +16,7 @@ int LCWPipe::Dtor(void *a1)
   
   void *v2; // eax
   v2 = (void *)this->u32_14; /*0x552063*/
-  /* X11: vtable install elided (implicit via LCWPipe virtuals 0x552066) */
+  /* X11: ptr_0 install elided (implicit via LCWPipe virtuals 0x552066) */
   __3_YAXPAX_Z(v2); /*0x55206d*/
   void *v3; // ecx
   v3 = (void *)this->u32_18; /*0x552072*/

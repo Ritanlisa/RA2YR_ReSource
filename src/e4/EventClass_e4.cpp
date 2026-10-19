@@ -700,7 +700,7 @@ DynamicVector * EventClass::executeAction(unsigned int * Block, char a2)
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x40bc13*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x40bc16*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x40bc16*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x40bc20*/
   {
     operator delete((v3)); /*0x40bc28*/
@@ -723,7 +723,7 @@ unsigned int * EventClass::resetEvent(int aP1, int aP2, void *a3)
   this->u32_8 = (void *)aP1; /*0x40bd0e*/
   (this->q00C) = ((this->q00C) & ~0xFF) | ((1) & 0xFF); /*0x40bd11*/
   (this->q00C) = ((this->q00C) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x40bd15*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x40bd18*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x40bd18*/
   if ( aP1 ) /*0x40bd1e*/
   {
     if ( aP2 ) /*0x40bd26*/
@@ -760,7 +760,7 @@ VectorClass_flat * EventClass::queueEvent(unsigned int * Block, char a2)
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x40c113*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x40c116*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x40c116*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x40c120*/
   {
     operator delete((v3)); /*0x40c128*/

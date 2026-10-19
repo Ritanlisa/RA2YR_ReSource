@@ -56,7 +56,7 @@ int Gap2Recv_551A30::ProcessAutoSave() {
 
   int v2; // ebx
   int result; // eax
-  unsigned int *vtable1; // eax
+  unsigned int *ptr_4; // eax
   int v5; // esi
   int v6; // edi
   int v7; // [esp+8h] [ebp-4h]
@@ -67,9 +67,9 @@ int Gap2Recv_551A30::ProcessAutoSave() {
   {
     do /*0x551a7d*/
     {
-      vtable1 = ((unsigned int *)this)[0]; /*0x551a41*/
-      v5 = vtable1[v2 + 1]; /*0x551a44*/
-      v6 = vtable1[v2]; /*0x551a48*/
+      ptr_4 = ((unsigned int *)this)[0]; /*0x551a41*/
+      v5 = ptr_4[v2 + 1]; /*0x551a44*/
+      v6 = ptr_4[v2]; /*0x551a48*/
       v7 = (*(int (**)(int))(*(unsigned int *)v5 + 184))(v5); /*0x551a55*/
       if ( v7 < (*(int (**)(int))(*(unsigned int *)v6 + 184))(v6) ) /*0x551a67*/
       {
@@ -134,7 +134,7 @@ int LightSourceClass::Write(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x5550d6*/
     {
       AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x5550df*/
-      /* X11: vtable install elided (implicit via LightSourceClass virtuals 0x5550e4) */
+      /* X11: ptr_0 install elided (implicit via LightSourceClass virtuals 0x5550e4) */
       ((unsigned int *)aP0)[0] = (unsigned int)(&g_ptr_7ECFFC); /*0x5550ea*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&g_ptr_7ECFFC); /*0x5550f1*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&g_ptr_7ECFFC); /*0x5550f8*/
@@ -281,7 +281,7 @@ int ObjectClass::updateMissionState(int a2)
 // ==== BACKFILL 0x00556B70  Render_Render_556B70  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int Gap2Recv_556B70::Render_Render_556B70() {
 
-  char *vtable1; // eax
+  char *ptr_4; // eax
   void **v2; // eax
   void *v3; // edx
   void *v4; // esi
@@ -294,10 +294,10 @@ int Gap2Recv_556B70::Render_Render_556B70() {
   int *v11; // eax
   signed int v12; // edi
 
-  vtable1 = (char *)((unsigned int *)this)[0]; /*0x556b70*/
-  if ( vtable1 ) /*0x556b78*/
+  ptr_4 = (char *)((unsigned int *)this)[0]; /*0x556b70*/
+  if ( ptr_4 ) /*0x556b78*/
   {
-    v2 = (void **)(vtable1 + 156); /*0x556b7a*/
+    v2 = (void **)(ptr_4 + 156); /*0x556b7a*/
     v3 = *v2; /*0x556b7f*/
     v4 = v2[1]; /*0x556b81*/
     v5 = v2[2]; /*0x556b84*/

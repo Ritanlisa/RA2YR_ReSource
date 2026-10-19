@@ -489,7 +489,7 @@ int __thiscall TechnoClass::MutateAll(TechnoClass *this, int a2, int a3)
   int result; // eax
   int nextArrayIndex; // esi
   int v6; // ecx
-  char *vtable3; // edx
+  char *ptr_C; // edx
   int *v8; // edi
   int v9; // ebp
   int v10; // ebx
@@ -511,11 +511,11 @@ int __thiscall TechnoClass::MutateAll(TechnoClass *this, int a2, int a3)
     v6 = 0; /*0x6b0b10*/
     if ( nextArrayIndex > 0 ) /*0x6b0b14*/
     {
-      vtable3 = (char *)stru_A80220.?; /*0x6b0b1c*/
-      while ( *(_DWORD *)(*(_DWORD *)(*(_DWORD *)vtable3 + 52) + 188) != result ) /*0x6b0b29*/
+      ptr_C = (char *)stru_A80220.?; /*0x6b0b1c*/
+      while ( *(_DWORD *)(*(_DWORD *)(*(_DWORD *)ptr_C + 52) + 188) != result ) /*0x6b0b29*/
       {
         ++v6; /*0x6b0b2b*/
-        vtable3 += 4; /*0x6b0b2c*/
+        ptr_C += 4; /*0x6b0b2c*/
         if ( v6 >= nextArrayIndex ) /*0x6b0b31*/
           goto LABEL_8; /*0x6b0b31*/
       }
@@ -4616,7 +4616,7 @@ void **__thiscall UnitClass::Create(UnitClass *this, void *a2, _DWORD *a3, int a
 char __thiscall UnitClass::UnloadPassengers(SmudgeClass *this, int a2)
 {
   int v2; // edi
-  void (__thiscall **vtable0)(SmudgeClass *); // edx
+  void (__thiscall **ptr_0)(SmudgeClass *); // edx
   _BYTE v6[4]; // [esp+8h] [ebp-4h] BYREF
 
   v2 = a2; /*0x6b4be3*/
@@ -4625,9 +4625,9 @@ char __thiscall UnitClass::UnloadPassengers(SmudgeClass *this, int a2)
   a2 = *(_DWORD *)(*((int (__thiscall **)(SmudgeClass *, _BYTE *))this->ObjectClass + 110))(this, v6); /*0x6b4c0e*/
   if ( (int)dword_A8E7AC > 0 || stru_A8EB00.?[391] || (unsigned __int8)Cell::IsWalkable((Cell *)this->Type, &a2, 1) ) /*0x6b4c31*/
     UnitClass::CreateUnloadPlacementCraters((int *)this->Type, &a2); /*0x6b4c45*/
-  vtable0 = (void (__thiscall **)(SmudgeClass *))this->ObjectClass; /*0x6b4c4a*/
+  ptr_0 = (void (__thiscall **)(SmudgeClass *))this->ObjectClass; /*0x6b4c4a*/
   this->? = 0; /*0x6b4c4e*/
-  vtable0[62](this); /*0x6b4c52*/
+  ptr_0[62](this); /*0x6b4c52*/
   return 1; /*0x6b4c58*/
 }
 
@@ -5007,9 +5007,9 @@ char *__thiscall SmudgeTypeClass::SmudgeTypeClass(char *this, char *Source)
   this->q2A0 = 0; /*0x6b528d*/
   this->q2A1 = 0; /*0x6b5294*/
   *(_DWORD *)this = &SmudgeTypeClass::`vftable'; /*0x6b529b*/
-  this->vtable2 = &SmudgeTypeClass::`vftable'; /*0x6b52a1*/
-  this->vtable3 = &SmudgeTypeClass::`vftable'; /*0x6b52a7*/
-  this->vtable4 = &SmudgeTypeClass::`vftable'; /*0x6b52ae*/
+  this->ptr_8 = &SmudgeTypeClass::`vftable'; /*0x6b52a1*/
+  this->ptr_C = &SmudgeTypeClass::`vftable'; /*0x6b52a7*/
+  this->ptr_10 = &SmudgeTypeClass::`vftable'; /*0x6b52ae*/
   AbstractClass::GenerateUniqueID((int)(this + 4)); /*0x6b52b5*/
   *(_WORD *)(this + 559) = 1; /*0x6b52ba*/
   this->LegalTarget = 0; /*0x6b52c7*/
@@ -6453,9 +6453,9 @@ void __thiscall SpawnManagerClass::Constructor_SpawnManagerClass(TaskManager *th
   TaskManager *v6; // [esp+8h] [ebp-4h] BYREF
 
   *this = (TaskManager)&SpawnManagerClass::`vftable'; /*0x6b7015*/
-  this->vtable2 = &SpawnManagerClass::`vftable'; /*0x6b701b*/
-  this->vtable3 = &SpawnManagerClass::`vftable'; /*0x6b7022*/
-  this->vtable4 = &SpawnManagerClass::`vftable'; /*0x6b7029*/
+  this->ptr_8 = &SpawnManagerClass::`vftable'; /*0x6b701b*/
+  this->ptr_C = &SpawnManagerClass::`vftable'; /*0x6b7022*/
+  this->ptr_10 = &SpawnManagerClass::`vftable'; /*0x6b7029*/
   if ( byte_A8E9A0 ) /*0x6b7037*/
     TaskManager::Update(this); /*0x6b7039*/
   for ( i = this->q048 - 1; i >= 0; --i ) /*0x6b7042*/
@@ -6577,7 +6577,7 @@ void __thiscall UnitClass::ProcessExitQueue(SpawnManagerClass *this)
   int v18; // eax
   BOOL v19; // ebp
   TechnoClass *v20; // ecx
-  void *vtable0; // ebx
+  void *ptr_0; // ebx
   _DWORD *v22; // eax
   int *v23; // eax
   int v24; // ecx
@@ -6749,9 +6749,9 @@ LABEL_21:
                     v20 = this->owner; /*0x6b743b*/
                     if ( v20->currentBurstIndex ) /*0x6b743e*/
                     {
-                      vtable0 = v20->RadioClass; /*0x6b7448*/
+                      ptr_0 = v20->RadioClass; /*0x6b7448*/
                       v22 = (_DWORD *)(*((int (__thiscall **)(TechnoClass *))v20->RadioClass + 33))(v20); /*0x6b744a*/
-                      v23 = (int *)(*((int (__thiscall **)(TechnoClass *, char *, BOOL, _DWORD, _DWORD, _DWORD))vtable0 /*0x6b7473*/
+                      v23 = (int *)(*((int (__thiscall **)(TechnoClass *, char *, BOOL, _DWORD, _DWORD, _DWORD))ptr_0 /*0x6b7473*/
                                     + 44))(
                                      this->owner,
                                      v92,
@@ -10541,8 +10541,8 @@ void __thiscall HashTable::RebuildEx(HashTable *this)
 // ==== 0x006BAFA0  ObjectClass::Render_Load_6BAFA0  this=ObjectClass  sig=csp ====
 void __thiscall Render_Load_6BAFA0(ObjectClass *this)
 {
-  int vtable2; // esi
-  _DWORD *vtable0; // ebp
+  int ptr_8; // esi
+  _DWORD *ptr_0; // ebp
   char *v4; // edi
   void *v5; // edi
   unsigned int v6; // edx
@@ -10556,20 +10556,20 @@ void __thiscall Render_Load_6BAFA0(ObjectClass *this)
 
   if ( LOBYTE(this->?) != 1 ) /*0x6bafa8*/
   {
-    vtable2 = (int)this->?; /*0x6bafb0*/
-    vtable0 = this->AbstractClass; /*0x6bafb3*/
+    ptr_8 = (int)this->?; /*0x6bafb0*/
+    ptr_0 = this->AbstractClass; /*0x6bafb3*/
     v4 = (char *)this->? + 1; /*0x6bafbc*/
-    this->? = (void *)(2 * vtable2); /*0x6bafbd*/
-    v13 = vtable0; /*0x6bafc0*/
+    this->? = (void *)(2 * ptr_8); /*0x6bafbd*/
+    v13 = ptr_0; /*0x6bafc0*/
     this->? = v4; /*0x6bafc8*/
-    v5 = (void *)__2_YAPAXI_Z(8 * vtable2); /*0x6bafd3*/
+    v5 = (void *)__2_YAPAXI_Z(8 * ptr_8); /*0x6bafd3*/
     v6 = 4 * (int)this->?; /*0x6bafd8*/
     this->AbstractClass = v5; /*0x6bafdf*/
     memset(v5, 0, v6); /*0x6bafe4*/
-    if ( vtable2 > 0 ) /*0x6bafef*/
+    if ( ptr_8 > 0 ) /*0x6bafef*/
     {
-      v7 = vtable0; /*0x6baff1*/
-      v8 = vtable2; /*0x6baff3*/
+      v7 = ptr_0; /*0x6baff1*/
+      v8 = ptr_8; /*0x6baff3*/
       do /*0x6bb02d*/
       {
         v9 = *v7; /*0x6baff5*/
@@ -10590,9 +10590,9 @@ void __thiscall Render_Load_6BAFA0(ObjectClass *this)
         --v8; /*0x6bb02c*/
       }
       while ( v8 ); /*0x6bb02d*/
-      vtable0 = v13; /*0x6bb02f*/
+      ptr_0 = v13; /*0x6bb02f*/
     }
-    __3_YAXPAX_Z(vtable0); /*0x6bb034*/
+    __3_YAXPAX_Z(ptr_0); /*0x6bb034*/
   }
 }
 
@@ -13494,7 +13494,7 @@ int __thiscall TechnoClass::MutateAll(TechnoClass *this, int a2, int a3)
   int result; // eax
   int nextArrayIndex; // esi
   int v6; // ecx
-  char *vtable3; // edx
+  char *ptr_C; // edx
   int *v8; // edi
   int v9; // ebp
   int v10; // ebx
@@ -13516,11 +13516,11 @@ int __thiscall TechnoClass::MutateAll(TechnoClass *this, int a2, int a3)
     v6 = 0; /*0x6b0b10*/
     if ( nextArrayIndex > 0 ) /*0x6b0b14*/
     {
-      vtable3 = (char *)stru_A80220.?; /*0x6b0b1c*/
-      while ( *(_DWORD *)(*(_DWORD *)(*(_DWORD *)vtable3 + 52) + 188) != result ) /*0x6b0b29*/
+      ptr_C = (char *)stru_A80220.?; /*0x6b0b1c*/
+      while ( *(_DWORD *)(*(_DWORD *)(*(_DWORD *)ptr_C + 52) + 188) != result ) /*0x6b0b29*/
       {
         ++v6; /*0x6b0b2b*/
-        vtable3 += 4; /*0x6b0b2c*/
+        ptr_C += 4; /*0x6b0b2c*/
         if ( v6 >= nextArrayIndex ) /*0x6b0b31*/
           goto LABEL_8; /*0x6b0b31*/
       }
@@ -17621,7 +17621,7 @@ void **__thiscall UnitClass::Create(UnitClass *this, void *a2, _DWORD *a3, int a
 char __thiscall UnitClass::UnloadPassengers(SmudgeClass *this, int a2)
 {
   int v2; // edi
-  void (__thiscall **vtable0)(SmudgeClass *); // edx
+  void (__thiscall **ptr_0)(SmudgeClass *); // edx
   _BYTE v6[4]; // [esp+8h] [ebp-4h] BYREF
 
   v2 = a2; /*0x6b4be3*/
@@ -17630,9 +17630,9 @@ char __thiscall UnitClass::UnloadPassengers(SmudgeClass *this, int a2)
   a2 = *(_DWORD *)(*((int (__thiscall **)(SmudgeClass *, _BYTE *))this->ObjectClass + 110))(this, v6); /*0x6b4c0e*/
   if ( (int)dword_A8E7AC > 0 || stru_A8EB00.?[391] || (unsigned __int8)Cell::IsWalkable((Cell *)this->Type, &a2, 1) ) /*0x6b4c31*/
     UnitClass::CreateUnloadPlacementCraters((int *)this->Type, &a2); /*0x6b4c45*/
-  vtable0 = (void (__thiscall **)(SmudgeClass *))this->ObjectClass; /*0x6b4c4a*/
+  ptr_0 = (void (__thiscall **)(SmudgeClass *))this->ObjectClass; /*0x6b4c4a*/
   this->? = 0; /*0x6b4c4e*/
-  vtable0[62](this); /*0x6b4c52*/
+  ptr_0[62](this); /*0x6b4c52*/
   return 1; /*0x6b4c58*/
 }
 
@@ -18012,9 +18012,9 @@ char *__thiscall SmudgeTypeClass::SmudgeTypeClass(char *this, char *Source)
   this->q2A0 = 0; /*0x6b528d*/
   this->q2A1 = 0; /*0x6b5294*/
   *(_DWORD *)this = &SmudgeTypeClass::`vftable'; /*0x6b529b*/
-  this->vtable2 = &SmudgeTypeClass::`vftable'; /*0x6b52a1*/
-  this->vtable3 = &SmudgeTypeClass::`vftable'; /*0x6b52a7*/
-  this->vtable4 = &SmudgeTypeClass::`vftable'; /*0x6b52ae*/
+  this->ptr_8 = &SmudgeTypeClass::`vftable'; /*0x6b52a1*/
+  this->ptr_C = &SmudgeTypeClass::`vftable'; /*0x6b52a7*/
+  this->ptr_10 = &SmudgeTypeClass::`vftable'; /*0x6b52ae*/
   AbstractClass::GenerateUniqueID((int)(this + 4)); /*0x6b52b5*/
   *(_WORD *)(this + 559) = 1; /*0x6b52ba*/
   this->LegalTarget = 0; /*0x6b52c7*/
@@ -19458,9 +19458,9 @@ void __thiscall SpawnManagerClass::Constructor_SpawnManagerClass(TaskManager *th
   TaskManager *v6; // [esp+8h] [ebp-4h] BYREF
 
   *this = (TaskManager)&SpawnManagerClass::`vftable'; /*0x6b7015*/
-  this->vtable2 = &SpawnManagerClass::`vftable'; /*0x6b701b*/
-  this->vtable3 = &SpawnManagerClass::`vftable'; /*0x6b7022*/
-  this->vtable4 = &SpawnManagerClass::`vftable'; /*0x6b7029*/
+  this->ptr_8 = &SpawnManagerClass::`vftable'; /*0x6b701b*/
+  this->ptr_C = &SpawnManagerClass::`vftable'; /*0x6b7022*/
+  this->ptr_10 = &SpawnManagerClass::`vftable'; /*0x6b7029*/
   if ( byte_A8E9A0 ) /*0x6b7037*/
     TaskManager::Update(this); /*0x6b7039*/
   for ( i = this->q048 - 1; i >= 0; --i ) /*0x6b7042*/
@@ -19582,7 +19582,7 @@ void __thiscall UnitClass::ProcessExitQueue(SpawnManagerClass *this)
   int v18; // eax
   BOOL v19; // ebp
   TechnoClass *v20; // ecx
-  void *vtable0; // ebx
+  void *ptr_0; // ebx
   _DWORD *v22; // eax
   int *v23; // eax
   int v24; // ecx
@@ -19754,9 +19754,9 @@ LABEL_21:
                     v20 = this->owner; /*0x6b743b*/
                     if ( v20->currentBurstIndex ) /*0x6b743e*/
                     {
-                      vtable0 = v20->RadioClass; /*0x6b7448*/
+                      ptr_0 = v20->RadioClass; /*0x6b7448*/
                       v22 = (_DWORD *)(*((int (__thiscall **)(TechnoClass *))v20->RadioClass + 33))(v20); /*0x6b744a*/
-                      v23 = (int *)(*((int (__thiscall **)(TechnoClass *, char *, BOOL, _DWORD, _DWORD, _DWORD))vtable0 /*0x6b7473*/
+                      v23 = (int *)(*((int (__thiscall **)(TechnoClass *, char *, BOOL, _DWORD, _DWORD, _DWORD))ptr_0 /*0x6b7473*/
                                     + 44))(
                                      this->owner,
                                      v92,
@@ -23546,8 +23546,8 @@ void __thiscall HashTable::RebuildEx(HashTable *this)
 // ==== 0x006BAFA0  ObjectClass::Render_Load_6BAFA0  this=ObjectClass  sig=csp ====
 void __thiscall Render_Load_6BAFA0(ObjectClass *this)
 {
-  int vtable2; // esi
-  _DWORD *vtable0; // ebp
+  int ptr_8; // esi
+  _DWORD *ptr_0; // ebp
   char *v4; // edi
   void *v5; // edi
   unsigned int v6; // edx
@@ -23561,20 +23561,20 @@ void __thiscall Render_Load_6BAFA0(ObjectClass *this)
 
   if ( LOBYTE(this->?) != 1 ) /*0x6bafa8*/
   {
-    vtable2 = (int)this->?; /*0x6bafb0*/
-    vtable0 = this->AbstractClass; /*0x6bafb3*/
+    ptr_8 = (int)this->?; /*0x6bafb0*/
+    ptr_0 = this->AbstractClass; /*0x6bafb3*/
     v4 = (char *)this->? + 1; /*0x6bafbc*/
-    this->? = (void *)(2 * vtable2); /*0x6bafbd*/
-    v13 = vtable0; /*0x6bafc0*/
+    this->? = (void *)(2 * ptr_8); /*0x6bafbd*/
+    v13 = ptr_0; /*0x6bafc0*/
     this->? = v4; /*0x6bafc8*/
-    v5 = (void *)__2_YAPAXI_Z(8 * vtable2); /*0x6bafd3*/
+    v5 = (void *)__2_YAPAXI_Z(8 * ptr_8); /*0x6bafd3*/
     v6 = 4 * (int)this->?; /*0x6bafd8*/
     this->AbstractClass = v5; /*0x6bafdf*/
     memset(v5, 0, v6); /*0x6bafe4*/
-    if ( vtable2 > 0 ) /*0x6bafef*/
+    if ( ptr_8 > 0 ) /*0x6bafef*/
     {
-      v7 = vtable0; /*0x6baff1*/
-      v8 = vtable2; /*0x6baff3*/
+      v7 = ptr_0; /*0x6baff1*/
+      v8 = ptr_8; /*0x6baff3*/
       do /*0x6bb02d*/
       {
         v9 = *v7; /*0x6baff5*/
@@ -23595,9 +23595,9 @@ void __thiscall Render_Load_6BAFA0(ObjectClass *this)
         --v8; /*0x6bb02c*/
       }
       while ( v8 ); /*0x6bb02d*/
-      vtable0 = v13; /*0x6bb02f*/
+      ptr_0 = v13; /*0x6bb02f*/
     }
-    __3_YAXPAX_Z(vtable0); /*0x6bb034*/
+    __3_YAXPAX_Z(ptr_0); /*0x6bb034*/
   }
 }
 

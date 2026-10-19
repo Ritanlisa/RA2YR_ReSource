@@ -306,7 +306,7 @@ void ParticleTypeClass::ParticleTypeClass_LoadFromINI(uint8_t *** aP1)
   this->ColorList = RGBColorList[4]; /*0x644fbd*/
   this->ParticleTypeClass_field_0x2CC = RGBColorList[5]; /*0x644fc6*/
   *(unsigned int *)this->__pad_2D0 = RGBColorList[6]; /*0x644fd3*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E4E38) */  /*0x644fd9*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E4E38) */  /*0x644fd9*/
   FilePipe_38::ddtor(&v52); /*0x644fe1*/
   Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x644ff5*/
                     (bool *)aP1,

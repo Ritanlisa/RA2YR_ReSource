@@ -1376,7 +1376,7 @@ void Gap2Recv_594870::PlaceRandomWaypoints(int a2) {
   v26[2] = *(unsigned int *)&stru_87F5F0.__pad_58[676] - 8; /*0x5948ac*/
   v26[3] = *(unsigned int *)&stru_87F5F0.__pad_58[680] - 8; /*0x5948b0*/
   VectorClass::CellConstructor(&v27, 0, 0); /*0x5948b4*/
-  /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x5948b9) */
+  /* X11: ptr_0 install elided (implicit via DynamicVectorClass virtuals 0x5948b9) */
   v29 = 10; /*0x5948c1*/
   v28 = 0; /*0x5948c9*/
   do /*0x5948f1*/
@@ -1410,7 +1410,7 @@ void Gap2Recv_594870::PlaceRandomWaypoints(int a2) {
       && (v28 < v27.Capacity
        || (v27.IsAllocated || !v27.Capacity)
        && v29 > 0
-       && (*((uint8_t (**)(VectorClass *, int, unsigned int))v27.vtable0 + 2))(&v27, v29 + v27.Capacity, 0)) )
+       && (*((uint8_t (**)(VectorClass *, int, unsigned int))v27.ptr_0 + 2))(&v27, v29 + v27.Capacity, 0)) )
     {
       v8 = v28++; /*0x5949f0*/
       *((unsigned int *)v27.Items + v8) = *(unsigned int *)v20; /*0x5949fb*/
@@ -1420,7 +1420,7 @@ void Gap2Recv_594870::PlaceRandomWaypoints(int a2) {
   if ( v9 ) /*0x594a23*/
   {
     for ( j = 4544; j < 4576; j += 4 ) /*0x594a58*/
-      *(void **)((char *)&dword_A8B230->vtable0 + j) = *(void **)&g_MissionQueueFrame.globalVariables[128]; /*0x594a69*/
+      *(void **)((char *)&dword_A8B230->ptr_0 + j) = *(void **)&g_MissionQueueFrame.globalVariables[128]; /*0x594a69*/
     v11 = 0; /*0x594a79*/
     if ( (int)((unsigned int *)this)[0] > 0 ) /*0x594a7d*/
     {
@@ -1433,7 +1433,7 @@ void Gap2Recv_594870::PlaceRandomWaypoints(int a2) {
         ++v11; /*0x594ac0*/
         v14[80] |= 4u; /*0x594ac1*/
         ++v12; /*0x594acc*/
-        *((unsigned int *)&dword_A8B230[126].vtable1 + v11) = *(unsigned int *)(v9[1] + 4 * v11 - 4); /*0x594ad1*/
+        *((unsigned int *)&dword_A8B230[126].ptr_4 + v11) = *(unsigned int *)(v9[1] + 4 * v11 - 4); /*0x594ad1*/
       }
       while ( v11 < (int)((unsigned int *)this)[0] ); /*0x594add*/
     }
@@ -1452,13 +1452,13 @@ void Gap2Recv_594870::PlaceRandomWaypoints(int a2) {
       (**(void (***)(void *, int))this->AbstractClass)(this->AbstractClass, 1); /*0x594b21*/
     Items = v27.Items; /*0x594b23*/
     this->AbstractClass = v9; /*0x594b27*/
-    /* X11: vtable install elided (implicit via VectorClass virtuals 0x594b2b) */
+    /* X11: ptr_0 install elided (implicit via VectorClass virtuals 0x594b2b) */
     if ( Items && v27.IsAllocated ) /*0x594b3b*/
       __3_YAXPAX_Z(Items); /*0x594b3e*/
   }
   else
   {
-    /* X11: vtable install elided (implicit via VectorClass virtuals 0x594a29) */
+    /* X11: ptr_0 install elided (implicit via VectorClass virtuals 0x594a29) */
     if ( v27.Items ) /*0x594a33*/
     {
       if ( v27.IsAllocated ) /*0x594a3f*/

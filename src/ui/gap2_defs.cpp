@@ -341,7 +341,7 @@ namespace gamemd {
 void* CheckListClass::QueryInterface(int a2) {
   void *Clamped; // edi
 
-  /* X11: vtable install elided (implicit via class virtuals 0x4886e3) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x4886e3) — binary-proven install, was 0 */
   while ( this->q044 ) /*0x4886e9*/
   {
     Clamped = (void *)Array::GetClamped((ListClass *)this, 0); /*0x4886fe*/
@@ -495,7 +495,7 @@ int DropListClass::ScrollDown(int a1) {
 // 0x4B55F0
 namespace gamemd { 
 void* DropListClass::QueryInterface(int a2) {
-  /* X11: vtable install elided (implicit via class virtuals 0x4b55f9) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x4b55f9) — binary-proven install, was 0 */
   ListClass::Destruct(&this->u32_B0); /*0x4b55ff*/
   ShapeButtonClass::Destructor((int)&this->q050); /*0x4b5607*/
   DropListClass::Constructor(this); /*0x4b560e*/
@@ -507,7 +507,7 @@ void* DropListClass::QueryInterface(int a2) {
 // 0x4C30B0
 namespace gamemd { 
 int DropListClass::Constructor() {
-  /* X11: vtable install elided (implicit via class virtuals 0x4c30b3) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x4c30b3) — binary-proven install, was 0 */
   if ( COMObject::IsPrimaryInstance((GadgetClass *)this) ) /*0x4c30b9*/
     COMObject::DeactivateGlobal((ShpButtonClass *)this); /*0x4c30c4*/
   return GadgetClass::Dtor((ShpButtonClass *)this); /*0x4c30d0*/
@@ -1117,7 +1117,7 @@ void* CheckListClass::toggleItem(int a2) {
   void *v3; // eax
 
   v3 = *&this->X; /*0x5571c3*/
-  /* X11: vtable install elided (implicit via class virtuals 0x5571c6) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x5571c6) — binary-proven install, was 0 */
   if ( v3 && (this->IsAllocated) ) /*0x5571d0*/
   {
     operator delete((v3)); /*0x5571d8*/
@@ -1429,7 +1429,7 @@ void* ListClass::Destru_vt00(int a2) {
   void *v5; // eax
 
   v3 = this->Enabled; /*0x558066*/
-  /* X11: vtable install elided (implicit via class virtuals 0x558069) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x558069) — binary-proven install, was 0 */
   if ( v3 ) /*0x558071*/
   {
     v4 = this->u32_118; /*0x55807c*/
@@ -1464,7 +1464,7 @@ void* CheckListClass::drawList(int a2) {
   void *v3; // eax
 
   v3 = *&this->X; /*0x558133*/
-  /* X11: vtable install elided (implicit via class virtuals 0x558136) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x558136) — binary-proven install, was 0 */
   if ( v3 && (this->IsAllocated) ) /*0x558140*/
   {
     operator delete((v3)); /*0x558148*/
@@ -1794,8 +1794,8 @@ int MouseClass::LoadGameAssets() {
         if ( this ) /*0x5be09f*/
         {
           MouseClass::drawCursor(this, (int)v72); /*0x5be0a8*/
-          /* X11: vtable install elided (X67 recv-slot, RHS g_var_8dbb83) */  /*0x5be0ad*/
-          /* X11: vtable install elided (X67 recv-slot, RHS g_var_8dbb83) */  /*0x5be0b4*/
+          /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_8dbb83) */  /*0x5be0ad*/
+          /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_8dbb83) */  /*0x5be0b4*/
         }
         v14 = &this->u32_15A8; /*0x5be0be*/
         v73 = 4; /*0x5be0c4*/
@@ -1939,7 +1939,7 @@ int MouseClass::LoadGameAssets() {
               do /*0x5be2ff*/
               {
                 SubzoneHashVector::Construct(v40, 0, 0); /*0x5be2e2*/
-                /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7ED520) */  /*0x5be2e7*/
+                /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7ED520) */  /*0x5be2e7*/
                 v40[5] = (SubzoneHashVector)10; /*0x5be2ed*/
                 v40[4] = 0; /*0x5be2f4*/
                 v40 += 6; /*0x5be2fb*/
@@ -2428,7 +2428,7 @@ void* MouseClass::loadCursor(int a2, int a3) {
       (this->IsAllocated) = 1; /*0x5bea86*/
     }
   }
-  /* X11: vtable install elided (implicit via class virtuals 0x5bea8a) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x5bea8a) — binary-proven install, was 0 */
   this->CapacityIncrement = 10; /*0x5bea90*/
   this->q_10 = 0; /*0x5bea97*/
   return &this->ptr_0; /*0x5beaa0*/
@@ -3426,7 +3426,7 @@ int SidebarClass::Load(int a1) {
       if ( this != (RadarClass *)-4700 ) /*0x6568ee*/
       {
         VectorClass::PointConstructor(&this->RadarPoints, 0, 0); /*0x6568f4*/
-        /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EEB54) */  /*0x6568f9*/
+        /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EEB54) */  /*0x6568f9*/
         *&this->q1270 = 10; /*0x6568ff*/
         *&this->q126C = 0; /*0x656906*/
       }
@@ -3441,7 +3441,7 @@ LABEL_14:
           if ( this != (RadarClass *)-4644 ) /*0x65699e*/
           {
             VectorClass::CellConstructor(&this->RadarCells, 0, 0); /*0x6569a4*/
-            /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E3890) */  /*0x6569a9*/
+            /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E3890) */  /*0x6569a9*/
             *&this->q1238 = 10; /*0x6569af*/
             *&this->q1234 = 0; /*0x6569b6*/
           }
@@ -3930,7 +3930,7 @@ void* TabClass::initTabData() {
   this->q53A8 = 0; /*0x6a4ecd*/
   this->q5514 = 0; /*0x6a4ed3*/
   this->q5515 = 0; /*0x6a4ed9*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_var_473345) */  /*0x6a4edf*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_var_473345) */  /*0x6a4edf*/
   v4 = &this->q1544; /*0x6a4ee5*/
   v5 = 4; /*0x6a4eeb*/
   do /*0x6a4f07*/
@@ -6433,7 +6433,7 @@ void* TabClass::Constructor() {
   this->u32_5544 = 1; /*0x6cfe74*/
   this->u32_5545 = 1; /*0x6cfe7a*/
   this->u32_5546 = 1; /*0x6cfe80*/
-  /* X11: vtable install elided (implicit via class virtuals 0x6cfe86) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x6cfe86) — binary-proven install, was 0 */
   v3 = 0; /*0x6cfe8c*/
   v4 = (const char **)off_8427D0; /*0x6cfe8e*/
   while ( strcmp(*v4, aAttackmove) ) /*0x6cfec5*/
@@ -7267,7 +7267,7 @@ void* ToolTipClass::compareString(int a2) {
   void *v3; // eax
 
   v3 = *&this->Items; /*0x724ef3*/
-  /* X11: vtable install elided (implicit via class virtuals 0x724ef6) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x724ef6) — binary-proven install, was 0 */
   if ( v3 && (this->IsAllocated) ) /*0x724f00*/
   {
     operator delete((v3)); /*0x724f08*/
@@ -7295,7 +7295,7 @@ int MessageListClass::clearMessages(int a1, int a2, int a3, int a4, int a5) {
   this->u32_41 = 0; /*0x72a485*/
   this->q044 = 0; /*0x72a488*/
   this->q012 = 0; /*0x72a48b*/
-  /* X11: vtable install elided (implicit via class virtuals 0x72a48e) — binary-proven install, was 0 */
+  /* X11: ptr_0 install elided (implicit via class virtuals 0x72a48e) — binary-proven install, was 0 */
   return this; /*0x72a496*/
 }
 }
@@ -7523,7 +7523,7 @@ void* MouseClass::Construct(int a1, int a2) {
 
   pad_2C = this->__pad_2C; /*0x7b8742*/
   *&this->outBuffer = a1; /*0x7b8745*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F7B78) */  /*0x7b8748*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F7B78) */  /*0x7b8748*/
   this->m_ScrollY = 0; /*0x7b874e*/
   this->m_MaxX = 0; /*0x7b8751*/
   this->m_MaxY = -1; /*0x7b8754*/
@@ -7565,7 +7565,7 @@ void* MouseClass::Construct(int a1, int a2) {
   *&this->q090 = -1; /*0x7b8841*/
   *&this->q094 = 0; /*0x7b8847*/
   *&this->LevelAndPassabilityStruct2pointer_70 = v9; /*0x7b884d*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_var_704190) */  /*0x7b8850*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_704190) */  /*0x7b8850*/
   if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7b8867*/
     Debug::Log(); /*0x7b8878*/
   MouseClass::CalcConfiningRect(this); /*0x7b8882*/

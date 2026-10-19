@@ -2017,7 +2017,7 @@ int RulesClass::LoadFromINI() {
       if ( INIClass::GetString((INIClass *)v338, g_INI_Key_General, aDamagefiretype, &g_INI_DefaultBuffer, String, 128) ) /*0x66d57b*/
       {
         DynamicVectorClass::AnimTypeConstructor((DynamicVectorClass *)&v332, 0, 0); /*0x66d590*/
-        /* X11: vtable install elided (implicit via TypeList_AnimTypeClass_const__ virtuals 0x66d59f) */
+        /* X11: ptr_0 install elided (implicit via TypeList_AnimTypeClass_const__ virtuals 0x66d59f) */
         for ( i = strtok(String, Str); i; i = strtok(0, Str) ) /*0x66d5b1*/
         {
           if ( !*i ) /*0x66d5b3*/
@@ -2027,7 +2027,7 @@ int RulesClass::LoadFromINI() {
             DynamicVector::Add_Alt4(&v332, &v332.q01C); /*0x66d5d0*/
         }
         TypeList::AnimTypeCopy((TypeList *)&v332.u32_24, &v332); /*0x66d5f1*/
-        /* X11: vtable install elided (implicit via VectorClass_AnimTypeClass_const__ virtuals 0x66d5fa) */
+        /* X11: ptr_0 install elided (implicit via VectorClass_AnimTypeClass_const__ virtuals 0x66d5fa) */
         DynamicVectorClass::Destroy_Alt((_VectorClass_PBVAnimTypeClass *)&v332); /*0x66d602*/
       }
       else
@@ -2057,7 +2057,7 @@ int RulesClass::LoadFromINI() {
       if ( INIClass::GetString((INIClass *)v338, g_INI_Key_General, aBarreldebris, &g_INI_DefaultBuffer, String, 128) ) /*0x66d6f5*/
       {
         DynamicVector::Constructor_VoxelAnim(&v332, 0, 0); /*0x66d70a*/
-        /* X11: vtable install elided (implicit via TypeList_VoxelAnimTypeClass_const__ virtuals 0x66d719) */
+        /* X11: ptr_0 install elided (implicit via TypeList_VoxelAnimTypeClass_const__ virtuals 0x66d719) */
         for ( j = strtok(String, Str); j; j = strtok(0, Str) ) /*0x66d72b*/
         {
           if ( !*j ) /*0x66d72d*/
@@ -2067,7 +2067,7 @@ int RulesClass::LoadFromINI() {
             DynamicVector::Add2(&v332, &v332.q01C); /*0x66d74a*/
         }
         TypeList::CopyVoxelAnim((TypeList *)&v332.u32_24, &v332); /*0x66d76b*/
-        /* X11: vtable install elided (implicit via VectorClass_VoxelAnimTypeClass_const__ virtuals 0x66d774) */
+        /* X11: ptr_0 install elided (implicit via VectorClass_VoxelAnimTypeClass_const__ virtuals 0x66d774) */
         Vector::Cleanup2((_VectorClass_PBVVoxelAnimTypeClass *)&v332); /*0x66d77c*/
       }
       else
@@ -2104,7 +2104,7 @@ int RulesClass::LoadFromINI() {
       if ( INIClass::GetString((INIClass *)v338, g_INI_Key_General, aDroppod, &g_INI_DefaultBuffer, String, v331[1]) ) /*0x66d8a8*/
       {
         DynamicVectorClass::AnimTypeConstructor((DynamicVectorClass *)&v332, 0, 0); /*0x66d8bd*/
-        /* X11: vtable install elided (implicit via TypeList_AnimTypeClass_const__ virtuals 0x66d8cc) */
+        /* X11: ptr_0 install elided (implicit via TypeList_AnimTypeClass_const__ virtuals 0x66d8cc) */
         for ( k = strtok(String, Str); k; k = strtok(0, Str) ) /*0x66d8de*/
         {
           if ( !*k ) /*0x66d8e0*/
@@ -2114,7 +2114,7 @@ int RulesClass::LoadFromINI() {
             DynamicVector::Add_Alt4(&v332, &v332.q01C); /*0x66d8fd*/
         }
         TypeList::AnimTypeCopy((TypeList *)&v332.u32_24, &v332); /*0x66d91e*/
-        /* X11: vtable install elided (implicit via VectorClass_AnimTypeClass_const__ virtuals 0x66d927) */
+        /* X11: ptr_0 install elided (implicit via VectorClass_AnimTypeClass_const__ virtuals 0x66d927) */
         DynamicVectorClass::Destroy_Alt((_VectorClass_PBVAnimTypeClass *)&v332); /*0x66d92f*/
       }
       else
@@ -2131,7 +2131,7 @@ int RulesClass::LoadFromINI() {
       if ( INIClass::GetString((INIClass *)v338, g_INI_Key_General, aDeadbodies, &g_INI_DefaultBuffer, String, 128) ) /*0x66d9aa*/
       {
         DynamicVectorClass::AnimTypeConstructor((DynamicVectorClass *)&v332, 0, 0); /*0x66d9bf*/
-        /* X11: vtable install elided (implicit via TypeList_AnimTypeClass_const__ virtuals 0x66d9ce) */
+        /* X11: ptr_0 install elided (implicit via TypeList_AnimTypeClass_const__ virtuals 0x66d9ce) */
         for ( m = strtok(String, Str); m; m = strtok(0, Str) ) /*0x66d9e0*/
         {
           if ( !*m ) /*0x66d9e2*/
@@ -2141,7 +2141,7 @@ int RulesClass::LoadFromINI() {
             DynamicVector::Add_Alt4(&v332, &v332.q01C); /*0x66d9ff*/
         }
         TypeList::AnimTypeCopy((TypeList *)&v332.u32_24, &v332); /*0x66da20*/
-        /* X11: vtable install elided (implicit via VectorClass_AnimTypeClass_const__ virtuals 0x66da29) */
+        /* X11: ptr_0 install elided (implicit via VectorClass_AnimTypeClass_const__ virtuals 0x66da29) */
         DynamicVectorClass::Destroy_Alt((_VectorClass_PBVAnimTypeClass *)&v332); /*0x66da31*/
       }
       else
@@ -2158,7 +2158,7 @@ int RulesClass::LoadFromINI() {
       if ( INIClass::GetString((INIClass *)v338, g_INI_Key_General, aMetallicdebris, &g_INI_DefaultBuffer, String, 128) ) /*0x66daad*/
       {
         DynamicVectorClass::AnimTypeConstructor((DynamicVectorClass *)&v332, 0, 0); /*0x66dac2*/
-        /* X11: vtable install elided (implicit via TypeList_AnimTypeClass_const__ virtuals 0x66dad1) */
+        /* X11: ptr_0 install elided (implicit via TypeList_AnimTypeClass_const__ virtuals 0x66dad1) */
         for ( n = strtok(String, Str); n; n = strtok(0, Str) ) /*0x66dae3*/
         {
           if ( !*n ) /*0x66dae5*/
@@ -2168,7 +2168,7 @@ int RulesClass::LoadFromINI() {
             DynamicVector::Add_Alt4(&v332, &v332.q01C); /*0x66db02*/
         }
         TypeList::AnimTypeCopy((TypeList *)&v332.u32_24, &v332); /*0x66db23*/
-        /* X11: vtable install elided (implicit via VectorClass_AnimTypeClass_const__ virtuals 0x66db2c) */
+        /* X11: ptr_0 install elided (implicit via VectorClass_AnimTypeClass_const__ virtuals 0x66db2c) */
         DynamicVectorClass::Destroy_Alt((_VectorClass_PBVAnimTypeClass *)&v332); /*0x66db34*/
       }
       else
@@ -2185,7 +2185,7 @@ int RulesClass::LoadFromINI() {
       if ( INIClass::GetString((INIClass *)v338, g_INI_Key_General, aBridgeexplosio, &g_INI_DefaultBuffer, String, 128) ) /*0x66dbb0*/
       {
         DynamicVectorClass::AnimTypeConstructor((DynamicVectorClass *)&v332, 0, 0); /*0x66dbc5*/
-        /* X11: vtable install elided (implicit via TypeList_AnimTypeClass_const__ virtuals 0x66dbd4) */
+        /* X11: ptr_0 install elided (implicit via TypeList_AnimTypeClass_const__ virtuals 0x66dbd4) */
         for ( ii = strtok(String, Str); ii; ii = strtok(0, Str) ) /*0x66dbe6*/
         {
           if ( !*ii ) /*0x66dbe8*/
@@ -2195,7 +2195,7 @@ int RulesClass::LoadFromINI() {
             DynamicVector::Add_Alt4(&v332, &v332.q01C); /*0x66dc05*/
         }
         TypeList::AnimTypeCopy((TypeList *)&v332.u32_24, &v332); /*0x66dc26*/
-        /* X11: vtable install elided (implicit via VectorClass_AnimTypeClass_const__ virtuals 0x66dc2f) */
+        /* X11: ptr_0 install elided (implicit via VectorClass_AnimTypeClass_const__ virtuals 0x66dc2f) */
         DynamicVectorClass::Destroy_Alt((_VectorClass_PBVAnimTypeClass *)&v332); /*0x66dc37*/
       }
       else
@@ -2225,7 +2225,7 @@ int RulesClass::LoadFromINI() {
       if ( INIClass::GetString((INIClass *)v338, g_INI_Key_General, aWeatherconclou, &g_INI_DefaultBuffer, String, 128) ) /*0x66dd30*/
       {
         DynamicVectorClass::AnimTypeConstructor((DynamicVectorClass *)&v332, 0, 0); /*0x66dd45*/
-        /* X11: vtable install elided (implicit via TypeList_AnimTypeClass_const__ virtuals 0x66dd54) */
+        /* X11: ptr_0 install elided (implicit via TypeList_AnimTypeClass_const__ virtuals 0x66dd54) */
         for ( jj = strtok(String, Str); jj; jj = strtok(0, Str) ) /*0x66dd66*/
         {
           if ( !*jj ) /*0x66dd68*/
@@ -2235,7 +2235,7 @@ int RulesClass::LoadFromINI() {
             DynamicVector::Add_Alt4(&v332, &v332.q01C); /*0x66dd85*/
         }
         TypeList::AnimTypeCopy((TypeList *)&v332.u32_24, &v332); /*0x66dda6*/
-        /* X11: vtable install elided (implicit via VectorClass_AnimTypeClass_const__ virtuals 0x66ddaf) */
+        /* X11: ptr_0 install elided (implicit via VectorClass_AnimTypeClass_const__ virtuals 0x66ddaf) */
         DynamicVectorClass::Destroy_Alt((_VectorClass_PBVAnimTypeClass *)&v332); /*0x66ddb7*/
       }
       else
@@ -2252,7 +2252,7 @@ int RulesClass::LoadFromINI() {
       if ( INIClass::GetString((INIClass *)v338, g_INI_Key_General, aWeatherconbolt, &g_INI_DefaultBuffer, String, 128) ) /*0x66de33*/
       {
         DynamicVectorClass::AnimTypeConstructor((DynamicVectorClass *)&v332, 0, 0); /*0x66de48*/
-        /* X11: vtable install elided (implicit via TypeList_AnimTypeClass_const__ virtuals 0x66de57) */
+        /* X11: ptr_0 install elided (implicit via TypeList_AnimTypeClass_const__ virtuals 0x66de57) */
         for ( kk = strtok(String, Str); kk; kk = strtok(0, Str) ) /*0x66de69*/
         {
           if ( !*kk ) /*0x66de6b*/
@@ -2262,7 +2262,7 @@ int RulesClass::LoadFromINI() {
             DynamicVector::Add_Alt4(&v332, &v332.q01C); /*0x66de88*/
         }
         TypeList::AnimTypeCopy((TypeList *)&v332.u32_24, &v332); /*0x66dea9*/
-        /* X11: vtable install elided (implicit via VectorClass_AnimTypeClass_const__ virtuals 0x66deb2) */
+        /* X11: ptr_0 install elided (implicit via VectorClass_AnimTypeClass_const__ virtuals 0x66deb2) */
         DynamicVectorClass::Destroy_Alt((_VectorClass_PBVAnimTypeClass *)&v332); /*0x66deba*/
       }
       else
@@ -2647,7 +2647,7 @@ int RulesClass::LoadFromINI() {
       v332.q01C->uniqueId = BuildingTypeClassPrerequisites->Count; /*0x66e7aa*/
       q01C->abstractFlags = BuildingTypeClassPrerequisites->CapacityIncrement; /*0x66e7b0*/
       q01C->nextArrayIndex = *BuildingTypeClassPrerequisites->FLH.VectorClass; /*0x66e7b6*/
-      /* X11: vtable install elided (implicit via VectorClass_int virtuals 0x66e7bf) */
+      /* X11: ptr_0 install elided (implicit via VectorClass_int virtuals 0x66e7bf) */
       if ( *(unsigned int *)&v332.Items && v332.ptr_C[1] ) /*0x66e7cf*/
         delete[] (*(void **)&v332.Items); /*0x66e7d2*/
       IntVector::Copy((IntVector *)&v329, &_ESI->DynamicVector_374); /*0x66e7e8*/
@@ -2669,7 +2669,7 @@ int RulesClass::LoadFromINI() {
       v332.q01C->uniqueId = v91->Count; /*0x66e83e*/
       v92->abstractFlags = v91->CapacityIncrement; /*0x66e844*/
       v92->nextArrayIndex = *v91->FLH.VectorClass; /*0x66e84a*/
-      /* X11: vtable install elided (implicit via VectorClass_int virtuals 0x66e853) */
+      /* X11: ptr_0 install elided (implicit via VectorClass_int virtuals 0x66e853) */
       if ( *(unsigned int *)&v332.Items && v332.ptr_C[1] ) /*0x66e863*/
         delete[] (*(void **)&v332.Items); /*0x66e866*/
       IntVector::Copy((IntVector *)&v329, &_ESI->DynamicVector_390); /*0x66e87c*/
@@ -2691,7 +2691,7 @@ int RulesClass::LoadFromINI() {
       v332.q01C->uniqueId = v93->Count; /*0x66e8d1*/
       v94->abstractFlags = v93->CapacityIncrement; /*0x66e8d7*/
       v94->nextArrayIndex = *v93->FLH.VectorClass; /*0x66e8dd*/
-      /* X11: vtable install elided (implicit via VectorClass_int virtuals 0x66e8e6) */
+      /* X11: ptr_0 install elided (implicit via VectorClass_int virtuals 0x66e8e6) */
       if ( *(unsigned int *)&v332.Items && v332.ptr_C[1] ) /*0x66e8f6*/
         delete[] (*(void **)&v332.Items); /*0x66e8f9*/
       IntVector::Copy((IntVector *)&v329, &_ESI->DynamicVector_3AC); /*0x66e90f*/
@@ -2713,7 +2713,7 @@ int RulesClass::LoadFromINI() {
       v332.q01C->uniqueId = v95->Count; /*0x66e965*/
       v96->abstractFlags = v95->CapacityIncrement; /*0x66e96b*/
       v96->nextArrayIndex = *v95->FLH.VectorClass; /*0x66e971*/
-      /* X11: vtable install elided (implicit via VectorClass_int virtuals 0x66e97a) */
+      /* X11: ptr_0 install elided (implicit via VectorClass_int virtuals 0x66e97a) */
       if ( *(unsigned int *)&v332.Items && v332.ptr_C[1] ) /*0x66e98a*/
         delete[] (*(void **)&v332.Items); /*0x66e98d*/
       IntVector::Copy((IntVector *)&v329, &_ESI->DynamicVector_3C8); /*0x66e9a3*/
@@ -2735,7 +2735,7 @@ int RulesClass::LoadFromINI() {
       v332.q01C->uniqueId = v97->Count; /*0x66e9f8*/
       v98->abstractFlags = v97->CapacityIncrement; /*0x66e9fe*/
       v98->nextArrayIndex = *v97->FLH.VectorClass; /*0x66ea04*/
-      /* X11: vtable install elided (implicit via VectorClass_int virtuals 0x66ea0d) */
+      /* X11: ptr_0 install elided (implicit via VectorClass_int virtuals 0x66ea0d) */
       if ( *(unsigned int *)&v332.Items && v332.ptr_C[1] ) /*0x66ea1d*/
         delete[] (*(void **)&v332.Items); /*0x66ea20*/
       IntVector::Copy((IntVector *)&v329, &_ESI->DynamicVector_3E4); /*0x66ea36*/
@@ -2757,7 +2757,7 @@ int RulesClass::LoadFromINI() {
       v332.q01C->uniqueId = v99->Count; /*0x66ea8c*/
       v100->abstractFlags = v99->CapacityIncrement; /*0x66ea92*/
       v100->nextArrayIndex = *v99->FLH.VectorClass; /*0x66ea98*/
-      /* X11: vtable install elided (implicit via VectorClass_int virtuals 0x66eaa1) */
+      /* X11: ptr_0 install elided (implicit via VectorClass_int virtuals 0x66eaa1) */
       if ( *(unsigned int *)&v332.Items && v332.ptr_C[1] ) /*0x66eab1*/
         delete[] (*(void **)&v332.Items); /*0x66eab4*/
       v101 = *&_ESI->u32_550; /*0x66eac2*/
@@ -2964,7 +2964,7 @@ int RulesClass::LoadFromINI() {
       if ( INIClass::GetString((INIClass *)v338, g_INI_Key_General, aExplosivevoxel, &g_INI_DefaultBuffer, String, 128) ) /*0x66efb7*/
       {
         DynamicVector::Constructor_VoxelAnim(&v332, 0, 0); /*0x66efcc*/
-        /* X11: vtable install elided (implicit via TypeList_VoxelAnimTypeClass_const__ virtuals 0x66efdb) */
+        /* X11: ptr_0 install elided (implicit via TypeList_VoxelAnimTypeClass_const__ virtuals 0x66efdb) */
         for ( mm = strtok(String, Str); mm; mm = strtok(0, Str) ) /*0x66efed*/
         {
           if ( !*mm ) /*0x66efef*/
@@ -2974,7 +2974,7 @@ int RulesClass::LoadFromINI() {
             DynamicVector::Add2(&v332, &v332.q01C); /*0x66f00c*/
         }
         TypeList::CopyVoxelAnim((TypeList *)&v332.u32_24, &v332); /*0x66f02d*/
-        /* X11: vtable install elided (implicit via VectorClass_VoxelAnimTypeClass_const__ virtuals 0x66f036) */
+        /* X11: ptr_0 install elided (implicit via VectorClass_VoxelAnimTypeClass_const__ virtuals 0x66f036) */
         Vector::Cleanup2((_VectorClass_PBVVoxelAnimTypeClass *)&v332); /*0x66f03e*/
       }
       else
@@ -3102,7 +3102,7 @@ int RulesClass::LoadFromINI() {
       if ( INIClass::GetString((INIClass *)v338, g_INI_Key_General, aRepairbay, &g_INI_DefaultBuffer, String, v331[1]) ) /*0x66f36a*/
       {
         DynamicVectorClass::BuildingTypeConstructor((DynamicVectorClass *)&v332, 0, 0); /*0x66f37f*/
-        /* X11: vtable install elided (implicit via TypeList_BuildingTypeClass_const__ virtuals 0x66f38e) */
+        /* X11: ptr_0 install elided (implicit via TypeList_BuildingTypeClass_const__ virtuals 0x66f38e) */
         for ( nn = strtok(String, Str); nn; nn = strtok(0, Str) ) /*0x66f3a0*/
         {
           if ( !*nn ) /*0x66f3a2*/
@@ -3112,7 +3112,7 @@ int RulesClass::LoadFromINI() {
             DynamicVector::Add_Alt3(&v332, &v332.q01C); /*0x66f3bf*/
         }
         TypeList::BuildingTypeCopy((TypeList *)&v332.u32_24, &v332); /*0x66f3e0*/
-        /* X11: vtable install elided (implicit via VectorClass_BuildingTypeClass_const__ virtuals 0x66f3e9) */
+        /* X11: ptr_0 install elided (implicit via VectorClass_BuildingTypeClass_const__ virtuals 0x66f3e9) */
         DynamicVectorClass::Destroy((_VectorClass_PBVBuildingTypeClass *)&v332); /*0x66f3f1*/
       }
       else
@@ -3162,7 +3162,7 @@ int RulesClass::LoadFromINI() {
       if ( INIClass::GetString((INIClass *)v338, g_INI_Key_General, aShipyard, &g_INI_DefaultBuffer, String, 128) ) /*0x66f5a6*/
       {
         DynamicVectorClass::BuildingTypeConstructor((DynamicVectorClass *)&v332, 0, 0); /*0x66f5bb*/
-        /* X11: vtable install elided (implicit via TypeList_BuildingTypeClass_const__ virtuals 0x66f5ca) */
+        /* X11: ptr_0 install elided (implicit via TypeList_BuildingTypeClass_const__ virtuals 0x66f5ca) */
         for ( i1 = strtok(String, Str); i1; i1 = strtok(0, Str) ) /*0x66f5dc*/
         {
           if ( !*i1 ) /*0x66f5de*/
@@ -3172,7 +3172,7 @@ int RulesClass::LoadFromINI() {
             DynamicVector::Add_Alt3(&v332, &v332.q01C); /*0x66f5fb*/
         }
         TypeList::BuildingTypeCopy((TypeList *)&v332.u32_24, &v332); /*0x66f61c*/
-        /* X11: vtable install elided (implicit via VectorClass_BuildingTypeClass_const__ virtuals 0x66f625) */
+        /* X11: ptr_0 install elided (implicit via VectorClass_BuildingTypeClass_const__ virtuals 0x66f625) */
         DynamicVectorClass::Destroy((_VectorClass_PBVBuildingTypeClass *)&v332); /*0x66f62d*/
       }
       else
@@ -3242,7 +3242,7 @@ int RulesClass::LoadFromINI() {
       if ( INIClass::GetString((INIClass *)v338, g_INI_Key_General, aBaseunit, &g_INI_DefaultBuffer, String, v331[1]) ) /*0x66f7e2*/
       {
         UnitTypeVector::Construct((UnitTypeVector *)&v332, 0, 0); /*0x66f7f7*/
-        /* X11: vtable install elided (implicit via TypeList_UnitTypeClass_const__ virtuals 0x66f806) */
+        /* X11: ptr_0 install elided (implicit via TypeList_UnitTypeClass_const__ virtuals 0x66f806) */
         for ( i2 = strtok(String, Str); i2; i2 = strtok(0, Str) ) /*0x66f818*/
         {
           if ( !*i2 ) /*0x66f81a*/
@@ -3252,7 +3252,7 @@ int RulesClass::LoadFromINI() {
             VectorClass::PushBack((VectorClass *)&v332, &v332.q01C); /*0x66f837*/
         }
         TypeList::CopyConstructor((TypeList *)&v332.u32_24, &v332); /*0x66f858*/
-        /* X11: vtable install elided (implicit via VectorClass_UnitTypeClass_const__ virtuals 0x66f861) */
+        /* X11: ptr_0 install elided (implicit via VectorClass_UnitTypeClass_const__ virtuals 0x66f861) */
         Vector::Destructor((_VectorClass_PBVUnitTypeClass *)&v332); /*0x66f869*/
       }
       else
@@ -3269,7 +3269,7 @@ int RulesClass::LoadFromINI() {
       if ( INIClass::GetString((INIClass *)v338, g_INI_Key_General, aHarvesterunit, &g_INI_DefaultBuffer, String, 128) ) /*0x66f8e5*/
       {
         UnitTypeVector::Construct((UnitTypeVector *)&v332, 0, 0); /*0x66f8fa*/
-        /* X11: vtable install elided (implicit via TypeList_UnitTypeClass_const__ virtuals 0x66f909) */
+        /* X11: ptr_0 install elided (implicit via TypeList_UnitTypeClass_const__ virtuals 0x66f909) */
         for ( i3 = strtok(String, Str); i3; i3 = strtok(0, Str) ) /*0x66f91b*/
         {
           if ( !*i3 ) /*0x66f91d*/
@@ -3279,7 +3279,7 @@ int RulesClass::LoadFromINI() {
             VectorClass::PushBack((VectorClass *)&v332, &v332.q01C); /*0x66f93a*/
         }
         TypeList::CopyConstructor((TypeList *)&v332.u32_24, &v332); /*0x66f95b*/
-        /* X11: vtable install elided (implicit via VectorClass_UnitTypeClass_const__ virtuals 0x66f964) */
+        /* X11: ptr_0 install elided (implicit via VectorClass_UnitTypeClass_const__ virtuals 0x66f964) */
         Vector::Destructor((_VectorClass_PBVUnitTypeClass *)&v332); /*0x66f96c*/
       }
       else
@@ -5343,7 +5343,7 @@ int RulesClass::ReadMultiplayerDefaults() {
       if ( INIClass::GetString((INIClass *)v103, (uint8_t *)aAi, aBuildconst, &g_INI_DefaultBuffer, String, 128) ) /*0x672b2b*/
       {
         DynamicVectorClass::BuildingTypeConstructor((DynamicVectorClass *)&v98, 0, 0); /*0x672b40*/
-        /* X11: vtable install elided (implicit via TypeList_BuildingTypeClass_const__ virtuals 0x672b4f) */
+        /* X11: ptr_0 install elided (implicit via TypeList_BuildingTypeClass_const__ virtuals 0x672b4f) */
         for ( i = strtok(String, Str); i; i = strtok(0, Str) ) /*0x672b61*/
         {
           if ( !*i ) /*0x672b63*/
@@ -5353,7 +5353,7 @@ int RulesClass::ReadMultiplayerDefaults() {
             DynamicVector::Add_Alt3(&v98, &IntList); /*0x672b80*/
         }
         TypeList::BuildingTypeCopy((TypeList *)&v98.CellSpread, &v98); /*0x672ba1*/
-        /* X11: vtable install elided (implicit via VectorClass_BuildingTypeClass_const__ virtuals 0x672baa) */
+        /* X11: ptr_0 install elided (implicit via VectorClass_BuildingTypeClass_const__ virtuals 0x672baa) */
         DynamicVectorClass::Destroy((_VectorClass_PBVBuildingTypeClass *)&v98); /*0x672bb2*/
       }
       else
@@ -5366,12 +5366,12 @@ int RulesClass::ReadMultiplayerDefaults() {
       this->BOMBCURS_SHP = v101; /*0x672be7*/
       this->IvanIconFlickerRate = v4; /*0x672bee*/
       this->DeathWeapon = v5; /*0x672bf1*/
-      /* X11: vtable install elided (X67 recv-slot, RHS VectorClass_BuildingTypeClass_const___vftable) */  /*0x672bf4*/
+      /* X11: ptr_0 install elided (X67 recv-slot, RHS VectorClass_BuildingTypeClass_const___vftable) */  /*0x672bf4*/
       DynamicVectorClass::Destroy((_VectorClass_PBVBuildingTypeClass *)&v98.CellSpread); /*0x672bfc*/
       if ( INIClass::GetString((INIClass *)v103, (uint8_t *)aAi, aBuildpower, &g_INI_DefaultBuffer, String, 128) ) /*0x672c1d*/
       {
         DynamicVectorClass::BuildingTypeConstructor((DynamicVectorClass *)&v98, 0, 0); /*0x672c32*/
-        /* X11: vtable install elided (implicit via TypeList_BuildingTypeClass_const__ virtuals 0x672c41) */
+        /* X11: ptr_0 install elided (implicit via TypeList_BuildingTypeClass_const__ virtuals 0x672c41) */
         for ( j = strtok(String, Str); j; j = strtok(0, Str) ) /*0x672c53*/
         {
           if ( !*j ) /*0x672c55*/
@@ -5381,7 +5381,7 @@ int RulesClass::ReadMultiplayerDefaults() {
             DynamicVector::Add_Alt3(&v98, &IntList); /*0x672c72*/
         }
         TypeList::BuildingTypeCopy((TypeList *)&v98.CellSpread, &v98); /*0x672c93*/
-        /* X11: vtable install elided (implicit via VectorClass_BuildingTypeClass_const__ virtuals 0x672c9c) */
+        /* X11: ptr_0 install elided (implicit via VectorClass_BuildingTypeClass_const__ virtuals 0x672c9c) */
         DynamicVectorClass::Destroy((_VectorClass_PBVBuildingTypeClass *)&v98); /*0x672ca4*/
       }
       else
@@ -5390,7 +5390,7 @@ int RulesClass::ReadMultiplayerDefaults() {
       }
       DynamicVector::Copy(&this->CHRONOSK_SHP, &v98.CellSpread); /*0x672cc8*/
       this->V3Rocket[3] = (int)v101; /*0x672cd5*/
-      /* X11: vtable install elided (X67 recv-slot, RHS VectorClass_BuildingTypeClass_const___vftable) */  /*0x672cd8*/
+      /* X11: ptr_0 install elided (X67 recv-slot, RHS VectorClass_BuildingTypeClass_const___vftable) */  /*0x672cd8*/
       DynamicVectorClass::Destroy((_VectorClass_PBVBuildingTypeClass *)&v98.CellSpread); /*0x672ce0*/
       if ( INIClass::GetString( /*0x672d02*/
              (INIClass *)v103,
@@ -5401,7 +5401,7 @@ int RulesClass::ReadMultiplayerDefaults() {
              128) )
       {
         DynamicVectorClass::BuildingTypeConstructor((DynamicVectorClass *)&v98, 0, 0); /*0x672d17*/
-        /* X11: vtable install elided (implicit via TypeList_BuildingTypeClass_const__ virtuals 0x672d26) */
+        /* X11: ptr_0 install elided (implicit via TypeList_BuildingTypeClass_const__ virtuals 0x672d26) */
         for ( k = strtok(String, Str); k; k = strtok(0, Str) ) /*0x672d38*/
         {
           if ( !*k ) /*0x672d3a*/
@@ -5411,7 +5411,7 @@ int RulesClass::ReadMultiplayerDefaults() {
             DynamicVector::Add_Alt3(&v98, &IntList); /*0x672d57*/
         }
         TypeList::BuildingTypeCopy((TypeList *)&v98.CellSpread, &v98); /*0x672d78*/
-        /* X11: vtable install elided (implicit via VectorClass_BuildingTypeClass_const__ virtuals 0x672d81) */
+        /* X11: ptr_0 install elided (implicit via VectorClass_BuildingTypeClass_const__ virtuals 0x672d81) */
         DynamicVectorClass::Destroy((_VectorClass_PBVBuildingTypeClass *)&v98); /*0x672d89*/
       }
       else
@@ -5420,7 +5420,7 @@ int RulesClass::ReadMultiplayerDefaults() {
       }
       DynamicVector::Copy(&this->DynamicVector_9A4, &v98.CellSpread); /*0x672dad*/
       this->V3Rocket[10] = (int)v101; /*0x672dba*/
-      /* X11: vtable install elided (X67 recv-slot, RHS VectorClass_BuildingTypeClass_const___vftable) */  /*0x672dbd*/
+      /* X11: ptr_0 install elided (X67 recv-slot, RHS VectorClass_BuildingTypeClass_const___vftable) */  /*0x672dbd*/
       DynamicVectorClass::Destroy((_VectorClass_PBVBuildingTypeClass *)&v98.CellSpread); /*0x672dc5*/
       if ( INIClass::GetString( /*0x672de7*/
              (INIClass *)v103,
@@ -5431,7 +5431,7 @@ int RulesClass::ReadMultiplayerDefaults() {
              128) )
       {
         DynamicVectorClass::BuildingTypeConstructor((DynamicVectorClass *)&v98, 0, 0); /*0x672dfc*/
-        /* X11: vtable install elided (implicit via TypeList_BuildingTypeClass_const__ virtuals 0x672e0b) */
+        /* X11: ptr_0 install elided (implicit via TypeList_BuildingTypeClass_const__ virtuals 0x672e0b) */
         for ( m = strtok(String, Str); m; m = strtok(0, Str) ) /*0x672e1d*/
         {
           if ( !*m ) /*0x672e1f*/
@@ -5441,7 +5441,7 @@ int RulesClass::ReadMultiplayerDefaults() {
             DynamicVector::Add_Alt3(&v98, &IntList); /*0x672e3c*/
         }
         TypeList::BuildingTypeCopy((TypeList *)&v98.CellSpread, &v98); /*0x672e5d*/
-        /* X11: vtable install elided (implicit via VectorClass_BuildingTypeClass_const__ virtuals 0x672e66) */
+        /* X11: ptr_0 install elided (implicit via VectorClass_BuildingTypeClass_const__ virtuals 0x672e66) */
         DynamicVectorClass::Destroy((_VectorClass_PBVBuildingTypeClass *)&v98); /*0x672e6e*/
       }
       else
@@ -5449,7 +5449,7 @@ int RulesClass::ReadMultiplayerDefaults() {
         TypeList::BuildingTypeCopy((TypeList *)&v98.CellSpread, &this->V3Rocket[11]); /*0x672e80*/
       }
       DynamicVector::Copy(&this->SurvivorRate, &v98.CellSpread); /*0x672e92*/
-      /* X11: vtable install elided (X67 recv-slot, RHS VectorClass_BuildingTypeClass_const___vftable) */  /*0x672e9b*/
+      /* X11: ptr_0 install elided (X67 recv-slot, RHS VectorClass_BuildingTypeClass_const___vftable) */  /*0x672e9b*/
       this->DMisl[4] = (int)v101; /*0x672ea3*/
       DynamicVectorClass::Destroy((_VectorClass_PBVBuildingTypeClass *)&v98.CellSpread); /*0x672eaa*/
       if ( INIClass::GetString((INIClass *)v103, (uint8_t *)aAi, aBuildtech, &g_INI_DefaultBuffer, String, 128) ) /*0x672ecb*/
@@ -5464,7 +5464,7 @@ int RulesClass::ReadMultiplayerDefaults() {
             DynamicVector::Add_Alt3((DynamicVector *)&v98.CellSpread, &IntList); /*0x672f10*/
         }
         TypeList::BuildingTypeCopy((TypeList *)&v98, &v98.CellSpread); /*0x672f31*/
-        /* X11: vtable install elided (X67 recv-slot, RHS VectorClass_BuildingTypeClass_const___vftable) */  /*0x672f3a*/
+        /* X11: ptr_0 install elided (X67 recv-slot, RHS VectorClass_BuildingTypeClass_const___vftable) */  /*0x672f3a*/
         DynamicVectorClass::Destroy((_VectorClass_PBVBuildingTypeClass *)&v98.CellSpread); /*0x672f42*/
       }
       else
@@ -5473,7 +5473,7 @@ int RulesClass::ReadMultiplayerDefaults() {
       }
       DynamicVector::Copy(&this->DynamicVector_A0C, &v98); /*0x672f66*/
       this->DMisl[11] = *(unsigned int *)&v98.InfDeath; /*0x672f73*/
-      /* X11: vtable install elided (implicit via VectorClass_BuildingTypeClass_const__ virtuals 0x672f76) */
+      /* X11: ptr_0 install elided (implicit via VectorClass_BuildingTypeClass_const__ virtuals 0x672f76) */
       DynamicVectorClass::Destroy((_VectorClass_PBVBuildingTypeClass *)&v98); /*0x672f7e*/
       if ( INIClass::GetString((INIClass *)v103, (uint8_t *)aAi, aBuildweapons, &g_INI_DefaultBuffer, String, 128) ) /*0x672fa0*/
       {
@@ -5487,7 +5487,7 @@ int RulesClass::ReadMultiplayerDefaults() {
             DynamicVector::Add_Alt3((DynamicVector *)&v98.CellSpread, &IntList); /*0x672fe5*/
         }
         TypeList::BuildingTypeCopy((TypeList *)&v98, &v98.CellSpread); /*0x673006*/
-        /* X11: vtable install elided (X67 recv-slot, RHS VectorClass_BuildingTypeClass_const___vftable) */  /*0x67300f*/
+        /* X11: ptr_0 install elided (X67 recv-slot, RHS VectorClass_BuildingTypeClass_const___vftable) */  /*0x67300f*/
         DynamicVectorClass::Destroy((_VectorClass_PBVBuildingTypeClass *)&v98.CellSpread); /*0x673017*/
       }
       else
@@ -5496,7 +5496,7 @@ int RulesClass::ReadMultiplayerDefaults() {
       }
       DynamicVector::Copy(&this->DynamicVector_B78, &v98); /*0x67303b*/
       this->CMisl[5] = *(unsigned int *)&v98.InfDeath; /*0x673048*/
-      /* X11: vtable install elided (implicit via VectorClass_BuildingTypeClass_const__ virtuals 0x67304b) */
+      /* X11: ptr_0 install elided (implicit via VectorClass_BuildingTypeClass_const__ virtuals 0x67304b) */
       DynamicVectorClass::Destroy((_VectorClass_PBVBuildingTypeClass *)&v98); /*0x673053*/
       if ( INIClass::GetString( /*0x673075*/
              (INIClass *)v103,
@@ -5516,7 +5516,7 @@ int RulesClass::ReadMultiplayerDefaults() {
             DynamicVector::Add_Alt3((DynamicVector *)&v98.CellSpread, &IntList); /*0x6730ba*/
         }
         TypeList::BuildingTypeCopy((TypeList *)&v98, &v98.CellSpread); /*0x6730db*/
-        /* X11: vtable install elided (X67 recv-slot, RHS VectorClass_BuildingTypeClass_const___vftable) */  /*0x6730e4*/
+        /* X11: ptr_0 install elided (X67 recv-slot, RHS VectorClass_BuildingTypeClass_const___vftable) */  /*0x6730e4*/
         DynamicVectorClass::Destroy((_VectorClass_PBVBuildingTypeClass *)&v98.CellSpread); /*0x6730ec*/
       }
       else
@@ -5524,7 +5524,7 @@ int RulesClass::ReadMultiplayerDefaults() {
         TypeList::BuildingTypeCopy((TypeList *)&v98, &this->CMisl[6]); /*0x6730fe*/
       }
       DynamicVector::Copy(&this->GuardArea, &v98); /*0x673110*/
-      /* X11: vtable install elided (implicit via VectorClass_BuildingTypeClass_const__ virtuals 0x673119) */
+      /* X11: ptr_0 install elided (implicit via VectorClass_BuildingTypeClass_const__ virtuals 0x673119) */
       this->CMisl[12] = *(unsigned int *)&v98.InfDeath; /*0x673121*/
       DynamicVectorClass::Destroy((_VectorClass_PBVBuildingTypeClass *)&v98); /*0x673128*/
       if ( INIClass::GetString( /*0x673149*/
@@ -5545,7 +5545,7 @@ int RulesClass::ReadMultiplayerDefaults() {
             DynamicVector::Add_Alt3((DynamicVector *)&v98.CellSpread, &IntList); /*0x67318e*/
         }
         TypeList::BuildingTypeCopy((TypeList *)&v98, &v98.CellSpread); /*0x6731af*/
-        /* X11: vtable install elided (X67 recv-slot, RHS VectorClass_BuildingTypeClass_const___vftable) */  /*0x6731b8*/
+        /* X11: ptr_0 install elided (X67 recv-slot, RHS VectorClass_BuildingTypeClass_const___vftable) */  /*0x6731b8*/
         DynamicVectorClass::Destroy((_VectorClass_PBVBuildingTypeClass *)&v98.CellSpread); /*0x6731c0*/
       }
       else
@@ -5554,7 +5554,7 @@ int RulesClass::ReadMultiplayerDefaults() {
       }
       DynamicVector::Copy((DynamicVector *)this->MyEffectivenessCoefficientDefault, &v98); /*0x6731e4*/
       this->TargetStrengthCoefficientDefault[0] = *(unsigned int *)&v98.InfDeath; /*0x6731f1*/
-      /* X11: vtable install elided (implicit via VectorClass_BuildingTypeClass_const__ virtuals 0x6731f4) */
+      /* X11: ptr_0 install elided (implicit via VectorClass_BuildingTypeClass_const__ virtuals 0x6731f4) */
       DynamicVectorClass::Destroy((_VectorClass_PBVBuildingTypeClass *)&v98); /*0x6731fc*/
       if ( INIClass::GetString( /*0x67321e*/
              (INIClass *)v103,
@@ -5574,7 +5574,7 @@ int RulesClass::ReadMultiplayerDefaults() {
             DynamicVector::Add_Alt3((DynamicVector *)&v98.CellSpread, &IntList); /*0x673263*/
         }
         TypeList::BuildingTypeCopy((TypeList *)&v98, &v98.CellSpread); /*0x673284*/
-        /* X11: vtable install elided (X67 recv-slot, RHS VectorClass_BuildingTypeClass_const___vftable) */  /*0x67328d*/
+        /* X11: ptr_0 install elided (X67 recv-slot, RHS VectorClass_BuildingTypeClass_const___vftable) */  /*0x67328d*/
         DynamicVectorClass::Destroy((_VectorClass_PBVBuildingTypeClass *)&v98.CellSpread); /*0x673295*/
       }
       else
@@ -5583,11 +5583,11 @@ int RulesClass::ReadMultiplayerDefaults() {
       }
       DynamicVector::Copy(&this->TargetDistanceCoefficientDefault, &v98); /*0x6732b9*/
       this->TurboBoost[1] = *(unsigned int *)&v98.InfDeath; /*0x6732c6*/
-      /* X11: vtable install elided (implicit via VectorClass_BuildingTypeClass_const__ virtuals 0x6732c9) */
+      /* X11: ptr_0 install elided (implicit via VectorClass_BuildingTypeClass_const__ virtuals 0x6732c9) */
       DynamicVectorClass::Destroy((_VectorClass_PBVBuildingTypeClass *)&v98); /*0x6732d1*/
       IntList = v93; /*0x6732e2*/
       DynamicVectorClass::Copy((DynamicVectorClass *)v93, this->AttackInterval); /*0x6732e6*/
-      /* X11: vtable install elided (X67 star-deref, RHS TypeList_int_vftable) */  /*0x6732f8*/
+      /* X11: ptr_0 install elided (X67 star-deref, RHS TypeList_int_vftable) */  /*0x6732f8*/
       IntList = (void ***)INIClass::ReadIntList( /*0x673310*/
                             (INIClass *)v103,
                             (int)&v98,
@@ -5602,7 +5602,7 @@ int RulesClass::ReadMultiplayerDefaults() {
                             (int)((v96) >> 32));
       Rules::CopyDataArray((Rules *)this->AttackInterval, IntList); /*0x673314*/
       v14 = (int)IntList[6]; /*0x67331d*/
-      /* X11: vtable install elided (implicit via VectorClass_int virtuals 0x673320) */
+      /* X11: ptr_0 install elided (implicit via VectorClass_int virtuals 0x673320) */
       this->AirstripRatio[0] = v14; /*0x673328*/
       VectorClass::Destroy((int)&v98); /*0x67332f*/
       if ( INIClass::GetString((INIClass *)v103, (uint8_t *)aAi, aBuilddefense, &g_INI_DefaultBuffer, String, 128) ) /*0x673350*/
@@ -5617,7 +5617,7 @@ int RulesClass::ReadMultiplayerDefaults() {
             DynamicVector::Add_Alt3((DynamicVector *)&v98.CellSpread, &IntList); /*0x673395*/
         }
         TypeList::BuildingTypeCopy((TypeList *)&v98, &v98.CellSpread); /*0x6733b6*/
-        /* X11: vtable install elided (X67 recv-slot, RHS VectorClass_BuildingTypeClass_const___vftable) */  /*0x6733bf*/
+        /* X11: ptr_0 install elided (X67 recv-slot, RHS VectorClass_BuildingTypeClass_const___vftable) */  /*0x6733bf*/
         DynamicVectorClass::Destroy((_VectorClass_PBVBuildingTypeClass *)&v98.CellSpread); /*0x6733c7*/
       }
       else
@@ -5626,7 +5626,7 @@ int RulesClass::ReadMultiplayerDefaults() {
       }
       DynamicVector::Copy(&this->AirstripLimit, &v98); /*0x6733eb*/
       this->TeslaRatio[1] = *(unsigned int *)&v98.InfDeath; /*0x6733f8*/
-      /* X11: vtable install elided (implicit via VectorClass_BuildingTypeClass_const__ virtuals 0x6733fb) */
+      /* X11: ptr_0 install elided (implicit via VectorClass_BuildingTypeClass_const__ virtuals 0x6733fb) */
       DynamicVectorClass::Destroy((_VectorClass_PBVBuildingTypeClass *)&v98); /*0x673403*/
       if ( INIClass::GetString( /*0x673425*/
              (INIClass *)v103,
@@ -5646,7 +5646,7 @@ int RulesClass::ReadMultiplayerDefaults() {
             DynamicVector::Add_Alt3((DynamicVector *)&v98.CellSpread, &IntList); /*0x67346a*/
         }
         TypeList::BuildingTypeCopy((TypeList *)&v98, &v98.CellSpread); /*0x67348b*/
-        /* X11: vtable install elided (X67 recv-slot, RHS VectorClass_BuildingTypeClass_const___vftable) */  /*0x673494*/
+        /* X11: ptr_0 install elided (X67 recv-slot, RHS VectorClass_BuildingTypeClass_const___vftable) */  /*0x673494*/
         DynamicVectorClass::Destroy((_VectorClass_PBVBuildingTypeClass *)&v98.CellSpread); /*0x67349c*/
       }
       else
@@ -5655,7 +5655,7 @@ int RulesClass::ReadMultiplayerDefaults() {
       }
       DynamicVector::Copy(&this->TeslaLimit, &v98); /*0x6734c0*/
       this->DefenseLimit = *(unsigned int *)&v98.InfDeath; /*0x6734cd*/
-      /* X11: vtable install elided (implicit via VectorClass_BuildingTypeClass_const__ virtuals 0x6734d0) */
+      /* X11: ptr_0 install elided (implicit via VectorClass_BuildingTypeClass_const__ virtuals 0x6734d0) */
       DynamicVectorClass::Destroy((_VectorClass_PBVBuildingTypeClass *)&v98); /*0x6734d8*/
       if ( INIClass::GetString((INIClass *)v103, (uint8_t *)aAi, aBuildaa, &g_INI_DefaultBuffer, String, 128) ) /*0x6734fa*/
       {
@@ -5669,7 +5669,7 @@ int RulesClass::ReadMultiplayerDefaults() {
             DynamicVector::Add_Alt3((DynamicVector *)&v98.CellSpread, &IntList); /*0x67353f*/
         }
         TypeList::BuildingTypeCopy((TypeList *)&v98, &v98.CellSpread); /*0x673560*/
-        /* X11: vtable install elided (X67 recv-slot, RHS VectorClass_BuildingTypeClass_const___vftable) */  /*0x673569*/
+        /* X11: ptr_0 install elided (X67 recv-slot, RHS VectorClass_BuildingTypeClass_const___vftable) */  /*0x673569*/
         DynamicVectorClass::Destroy((_VectorClass_PBVBuildingTypeClass *)&v98.CellSpread); /*0x673571*/
       }
       else
@@ -5677,7 +5677,7 @@ int RulesClass::ReadMultiplayerDefaults() {
         TypeList::BuildingTypeCopy((TypeList *)&v98, this->WarRatio); /*0x673583*/
       }
       DynamicVector::Copy((DynamicVector *)this->WarRatio, &v98); /*0x673595*/
-      /* X11: vtable install elided (implicit via VectorClass_BuildingTypeClass_const__ virtuals 0x67359e) */
+      /* X11: ptr_0 install elided (implicit via VectorClass_BuildingTypeClass_const__ virtuals 0x67359e) */
       this->RefineryLimit = *(unsigned int *)&v98.InfDeath; /*0x6735a6*/
       DynamicVectorClass::Destroy((_VectorClass_PBVBuildingTypeClass *)&v98); /*0x6735ad*/
       if ( INIClass::GetString((INIClass *)v103, (uint8_t *)aAi, aBuildhelipad, &g_INI_DefaultBuffer, String, 128) ) /*0x6735ce*/
@@ -5692,7 +5692,7 @@ int RulesClass::ReadMultiplayerDefaults() {
             DynamicVector::Add_Alt3((DynamicVector *)&v98.CellSpread, &IntList); /*0x673613*/
         }
         TypeList::BuildingTypeCopy((TypeList *)&v98, &v98.CellSpread); /*0x673634*/
-        /* X11: vtable install elided (X67 recv-slot, RHS VectorClass_BuildingTypeClass_const___vftable) */  /*0x67363d*/
+        /* X11: ptr_0 install elided (X67 recv-slot, RHS VectorClass_BuildingTypeClass_const___vftable) */  /*0x67363d*/
         DynamicVectorClass::Destroy((_VectorClass_PBVBuildingTypeClass *)&v98.CellSpread); /*0x673645*/
       }
       else
@@ -5701,7 +5701,7 @@ int RulesClass::ReadMultiplayerDefaults() {
       }
       DynamicVector::Copy((DynamicVector *)this->RefineryRatio, &v98); /*0x673669*/
       this->SoloCrateMoney = *(unsigned int *)&v98.InfDeath; /*0x673676*/
-      /* X11: vtable install elided (implicit via VectorClass_BuildingTypeClass_const__ virtuals 0x673679) */
+      /* X11: ptr_0 install elided (implicit via VectorClass_BuildingTypeClass_const__ virtuals 0x673679) */
       DynamicVectorClass::Destroy((_VectorClass_PBVBuildingTypeClass *)&v98); /*0x673681*/
       if ( INIClass::GetString((INIClass *)v103, (uint8_t *)aAi, aBuildradar, &g_INI_DefaultBuffer, String, 128) ) /*0x6736a3*/
       {
@@ -5715,7 +5715,7 @@ int RulesClass::ReadMultiplayerDefaults() {
             DynamicVector::Add_Alt3((DynamicVector *)&v98.CellSpread, &IntList); /*0x6736e8*/
         }
         TypeList::BuildingTypeCopy((TypeList *)&v98, &v98.CellSpread); /*0x673709*/
-        /* X11: vtable install elided (X67 recv-slot, RHS VectorClass_BuildingTypeClass_const___vftable) */  /*0x673712*/
+        /* X11: ptr_0 install elided (X67 recv-slot, RHS VectorClass_BuildingTypeClass_const___vftable) */  /*0x673712*/
         DynamicVectorClass::Destroy((_VectorClass_PBVBuildingTypeClass *)&v98.CellSpread); /*0x67371a*/
       }
       else
@@ -5724,7 +5724,7 @@ int RulesClass::ReadMultiplayerDefaults() {
       }
       DynamicVector::Copy(&this->TreeStrength, &v98); /*0x67373e*/
       this->GameSpeedBias[0] = *(unsigned int *)&v98.InfDeath; /*0x67374b*/
-      /* X11: vtable install elided (implicit via VectorClass_BuildingTypeClass_const__ virtuals 0x67374e) */
+      /* X11: ptr_0 install elided (implicit via VectorClass_BuildingTypeClass_const__ virtuals 0x67374e) */
       DynamicVectorClass::Destroy((_VectorClass_PBVBuildingTypeClass *)&v98); /*0x673756*/
       if ( INIClass::GetString( /*0x673778*/
              (INIClass *)v103,
@@ -5744,7 +5744,7 @@ int RulesClass::ReadMultiplayerDefaults() {
             DynamicVector::Add_Alt3((DynamicVector *)&v98.CellSpread, &IntList); /*0x6737bd*/
         }
         TypeList::BuildingTypeCopy((TypeList *)&v98, &v98.CellSpread); /*0x6737de*/
-        /* X11: vtable install elided (X67 recv-slot, RHS VectorClass_BuildingTypeClass_const___vftable) */  /*0x6737e7*/
+        /* X11: ptr_0 install elided (X67 recv-slot, RHS VectorClass_BuildingTypeClass_const___vftable) */  /*0x6737e7*/
         DynamicVectorClass::Destroy((_VectorClass_PBVBuildingTypeClass *)&v98.CellSpread); /*0x6737ef*/
       }
       else
@@ -5752,7 +5752,7 @@ int RulesClass::ReadMultiplayerDefaults() {
         TypeList::BuildingTypeCopy((TypeList *)&v98, &this->GameSpeedBias[1]); /*0x673801*/
       }
       DynamicVector::Copy(&this->BaseBias, &v98); /*0x673813*/
-      /* X11: vtable install elided (implicit via VectorClass_BuildingTypeClass_const__ virtuals 0x67381c) */
+      /* X11: ptr_0 install elided (implicit via VectorClass_BuildingTypeClass_const__ virtuals 0x67381c) */
       this->MaxIQLevels = *(unsigned int *)&v98.InfDeath; /*0x673824*/
       DynamicVectorClass::Destroy((_VectorClass_PBVBuildingTypeClass *)&v98); /*0x67382b*/
       IntList = (void ***)ReadINIClassBuildingTypeList( /*0x673851*/
@@ -5763,7 +5763,7 @@ int RulesClass::ReadMultiplayerDefaults() {
                             &this->SuperWeapons);
       DynamicVector::Copy(&this->SuperWeapons, IntList); /*0x673855*/
       v21 = (int)IntList[6]; /*0x67385e*/
-      /* X11: vtable install elided (implicit via VectorClass_BuildingTypeClass_const__ virtuals 0x673861) */
+      /* X11: ptr_0 install elided (implicit via VectorClass_BuildingTypeClass_const__ virtuals 0x673861) */
       this->ContentScan = v21; /*0x673869*/
       DynamicVectorClass::Destroy((_VectorClass_PBVBuildingTypeClass *)&v98); /*0x673870*/
       INIClassBuildingTypeList = (int *)ReadINIClassBuildingTypeList( /*0x67388e*/
@@ -5773,7 +5773,7 @@ int RulesClass::ReadMultiplayerDefaults() {
                                           (uint8_t *)aEwgates,
                                           &this->Aircraft);
       TypeList::CopyAircraft(&this->Aircraft, INIClassBuildingTypeList); /*0x673896*/
-      /* X11: vtable install elided (implicit via VectorClass_BuildingTypeClass_const__ virtuals 0x67389f) */
+      /* X11: ptr_0 install elided (implicit via VectorClass_BuildingTypeClass_const__ virtuals 0x67389f) */
       DynamicVectorClass::Destroy((_VectorClass_PBVBuildingTypeClass *)&v98); /*0x6738a7*/
       v23 = (int *)ReadINIClassBuildingTypeList( /*0x6738c4*/
                      (int)&v98,
@@ -5782,7 +5782,7 @@ int RulesClass::ReadMultiplayerDefaults() {
                      (uint8_t *)aBuildnavalyard,
                      &this->CrateMinimum);
       TypeList::CopyAircraft(&this->CrateMinimum, v23); /*0x6738cc*/
-      /* X11: vtable install elided (implicit via VectorClass_BuildingTypeClass_const__ virtuals 0x6738d5) */
+      /* X11: ptr_0 install elided (implicit via VectorClass_BuildingTypeClass_const__ virtuals 0x6738d5) */
       DynamicVectorClass::Destroy((_VectorClass_PBVBuildingTypeClass *)&v98); /*0x6738dd*/
       v24 = (int *)ReadINIClassBuildingTypeList( /*0x6738fb*/
                      (int)&v98,
@@ -5791,7 +5791,7 @@ int RulesClass::ReadMultiplayerDefaults() {
                      (uint8_t *)aBuilddummy,
                      &this->MinUnitCount);
       TypeList::CopyAircraft(&this->MinUnitCount, v24); /*0x673903*/
-      /* X11: vtable install elided (implicit via VectorClass_BuildingTypeClass_const__ virtuals 0x67390c) */
+      /* X11: ptr_0 install elided (implicit via VectorClass_BuildingTypeClass_const__ virtuals 0x67390c) */
       DynamicVectorClass::Destroy((_VectorClass_PBVBuildingTypeClass *)&v98); /*0x673914*/
       v25 = (int *)ReadINIClassBuildingTypeList( /*0x673932*/
                      (int)&v98,
@@ -5800,7 +5800,7 @@ int RulesClass::ReadMultiplayerDefaults() {
                      (uint8_t *)aNeutraltechbui,
                      &this->TiberiumGrows);
       TypeList::CopyAircraft(&this->TiberiumGrows, v25); /*0x67393a*/
-      /* X11: vtable install elided (implicit via VectorClass_BuildingTypeClass_const__ virtuals 0x673943) */
+      /* X11: ptr_0 install elided (implicit via VectorClass_BuildingTypeClass_const__ virtuals 0x673943) */
       DynamicVectorClass::Destroy((_VectorClass_PBVBuildingTypeClass *)&v98); /*0x67394b*/
       INIClass::ReadDouble_Overwrite( /*0x67396c*/
         (double *)v103,

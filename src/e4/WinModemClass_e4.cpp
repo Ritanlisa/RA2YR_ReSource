@@ -576,7 +576,7 @@ WinModemClass * WinModemClass::QueryInterface(char a2)
 
 
   int v3 = this->u32_5C; // eax /*0x775613*/
-  /* X11: vtable install elided (implicit via WinModemClass virtuals 0x775616) */
+  /* X11: ptr_0 install elided (implicit via WinModemClass virtuals 0x775616) */
   if ( v3 != -1 ) /*0x77561f*/
   {
     Debug::Log(); /*0x775626*/

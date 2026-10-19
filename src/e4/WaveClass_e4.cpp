@@ -62,9 +62,9 @@ int WaveClass::LoadWaveData(int a2, int a3)
       v4->AbstractClass_1A8 = 0; /*0x75f68c*/
       FrameSnapshot::Init(&v4->u32_1D8); /*0x75f692*/
       WaveClass::Constructor_7632D0(&v4->q_1F0, 0, 0); /*0x75f69f*/
-      /* X11: vtable install elided (X67 star-deref, RHS g_var_39797d) */  /*0x75f6a4*/
-      /* X11: vtable install elided (legacy slot spelling slot, RHS g_var_39797d) */  /*0x75f6aa*/
-      /* X11: vtable install elided (legacy slot spelling slot, RHS g_var_39797d) */  /*0x75f6b1*/
+      /* X11: ptr_0 install elided (X67 star-deref, RHS g_var_39797d) */  /*0x75f6a4*/
+      /* X11: ptr_0 install elided (legacy slot spelling slot, RHS g_var_39797d) */  /*0x75f6aa*/
+      /* X11: ptr_0 install elided (legacy slot spelling slot, RHS g_var_39797d) */  /*0x75f6b1*/
       v4->ptr_4 = &off_7F6BC8; /*0x75f6b8*/
     }
     v4->u32_14C = v4->q_B0 == 3 ? v4 + 384 : v4 + 336;
@@ -126,9 +126,9 @@ WaveClass * WaveClass::ddtor(char a2, int aP1, int a1, int a3)
   void *v4; // eax
   WaveClass *v6; // [esp+4h] [ebp-4h] BYREF
 
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F6BD0) */  /*0x763206*/
-  /* X11: vtable install elided (qmark slot, RHS g_ptr_7F6BD0) */  /*0x76320c*/
-  /* X11: vtable install elided (qmark slot, RHS g_ptr_7F6BD0) */  /*0x763213*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F6BD0) */  /*0x763206*/
+  /* X11: ptr_0 install elided (qmark slot, RHS g_ptr_7F6BD0) */  /*0x76320c*/
+  /* X11: ptr_0 install elided (qmark slot, RHS g_ptr_7F6BD0) */  /*0x763213*/
   aP1->? = &off_7F6BC8; /*0x76321a*/
   AbstractClass::AnnounceExpiredPointer((AbstractClass *)aP1, 1); /*0x763221*/
   v6 = (gamemd::WaveClass *)(aP1); /*0x763236*/

@@ -300,7 +300,7 @@ void* Gap2Recv_544E00::Map_Get(int a2) {
   v3 = a2; /*0x544e0c*/
   if ( a2 > v2 - 1 ) /*0x544e13*/
     v3 = a2 % v2; /*0x544e16*/
-  for ( result = &this->vtable0; v3; --v3 ) /*0x544e1e*/
+  for ( result = &this->ptr_0; v3; --v3 ) /*0x544e1e*/
     result = (unsigned int *)result[175]; /*0x544e20*/
   return result; /*0x544e18*/
 

@@ -173,7 +173,7 @@ char __thiscall sub_6A04C0(ObjectClass *this, _DWORD *a2)
   int v5; // eax
   int v6; // eax
   CellClass *v7; // eax
-  void *vtable3; // [esp-4h] [ebp-10h]
+  void *ptr_C; // [esp-4h] [ebp-10h]
 
   v2 = g_OverlayTypeConfig; /*0x6a04c1*/
   v4 = &this->ambientSoundController[1]; /*0x6a04cd*/
@@ -194,9 +194,9 @@ char __thiscall sub_6A04C0(ObjectClass *this, _DWORD *a2)
     v6 = a2[2]; /*0x6a053d*/
     HIBYTE(this->customSound_controller[4]) = 1; /*0x6a0540*/
     this->ambientSoundController[3] = v6; /*0x6a0544*/
-    vtable3 = this->?; /*0x6a054a*/
+    ptr_C = this->?; /*0x6a054a*/
     v7 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], a2); /*0x6a0551*/
-    if ( (unsigned __int8)CrateClass::ProcessPickup((CrateClass *)v7, (int)vtable3) && !*((_BYTE *)this->? + 129) ) /*0x6a0564*/
+    if ( (unsigned __int8)CrateClass::ProcessPickup((CrateClass *)v7, (int)ptr_C) && !*((_BYTE *)this->? + 129) ) /*0x6a0564*/
     {
       WalkLocomotion::MoveTo((int)this, a2, 1); /*0x6a0573*/
       return 1; /*0x6a057d*/
@@ -1633,7 +1633,7 @@ char __thiscall SidebarClass::Init(SidebarClass *this)
   SidebarClass *v11; // esi
   int v12; // eax
   int v13; // ecx
-  int *vtable3; // edx
+  int *ptr_C; // edx
   int i; // ebx
   int v16; // esi
   int v17; // eax
@@ -1754,17 +1754,17 @@ LABEL_17:
       }
       else
       {
-        vtable3 = (int *)stru_A80220.?; /*0x6a559b*/
+        ptr_C = (int *)stru_A80220.?; /*0x6a559b*/
         while ( 1 ) /*0x6a55a5*/
         {
-          v2 = *vtable3; /*0x6a55a5*/
-          if ( *vtable3 ) /*0x6a55a5*/
+          v2 = *ptr_C; /*0x6a55a5*/
+          if ( *ptr_C ) /*0x6a55a5*/
           {
             if ( *(_BYTE *)(*(_DWORD *)(v2 + 52) + 422) != 1 && v2 != HouseClass_Observer && *(_BYTE *)(v2 + 492) ) /*0x6a55bf*/
               break; /*0x6a55bf*/
           }
           ++v13; /*0x6a55cf*/
-          ++vtable3; /*0x6a55d0*/
+          ++ptr_C; /*0x6a55d0*/
           if ( v13 >= stru_A80220.? ) /*0x6a55d5*/
             goto LABEL_17; /*0x6a55d5*/
         }
@@ -5935,7 +5935,7 @@ _DWORD *__thiscall System_Init_6AC8D0(VectorClass *this, int a2, int a3)
   this->Capacity = a2; /*0x6ac8e1*/
   this->IsInitialized = 1; /*0x6ac8e4*/
   this->IsAllocated = 0; /*0x6ac8e8*/
-  this->vtable0 = &VectorClass<Point2D>::`vftable'; /*0x6ac8ec*/
+  this->ptr_0 = &VectorClass<Point2D>::`vftable'; /*0x6ac8ec*/
   if ( a2 ) /*0x6ac8f2*/
   {
     if ( a3 ) /*0x6ac8fa*/
@@ -5951,10 +5951,10 @@ _DWORD *__thiscall System_Init_6AC8D0(VectorClass *this, int a2, int a3)
       this->IsAllocated = 1; /*0x6ac926*/
     }
   }
-  this->vtable0 = &DynamicVectorClass<Point2D>::`vftable'; /*0x6ac92a*/
+  this->ptr_0 = &DynamicVectorClass<Point2D>::`vftable'; /*0x6ac92a*/
   *((_DWORD *)this + 5) = 10; /*0x6ac930*/
   this->Items = 0; /*0x6ac937*/
-  return &this->vtable0; /*0x6ac940*/
+  return &this->ptr_0; /*0x6ac940*/
 }
 
 
@@ -6893,7 +6893,7 @@ int __thiscall Skirmish::SetupGame(Skirmish *this, int a2)
   int v30; // eax
   int v31; // ecx
   int PlayerCountMap; // edi
-  void *vtable2; // ecx
+  void *ptr_8; // ecx
   int j; // edi
   int v35; // eax
   HWND (__stdcall *v36)(HWND, int); // edi
@@ -7128,11 +7128,11 @@ LABEL_44:
   dword_A8B23C = (ObjectClass *)v28; /*0x6aebdd*/
   PlayerCountMap = ReadPlayerCountMap(*(int *)&stru_A8B250.__pad_0[4]); /*0x6aebee*/
   if ( !(*((unsigned __int8 (__thiscall **)(ObjectClass *))dword_A8B23C->AbstractClass + 1))(dword_A8B23C) /*0x6aec07*/
-    || (vtable2 = dword_A8B230[127].vtable2, (int)vtable2 > PlayerCountMap) )
+    || (ptr_8 = dword_A8B230[127].ptr_8, (int)ptr_8 > PlayerCountMap) )
   {
-    vtable2 = (void *)PlayerCountMap; /*0x6aec09*/
+    ptr_8 = (void *)PlayerCountMap; /*0x6aec09*/
   }
-  ResetLobbyFactionTable((int)vtable2); /*0x6aec0b*/
+  ResetLobbyFactionTable((int)ptr_8); /*0x6aec0b*/
   Lobby::InvalidateFactionCombos((Lobby *)this); /*0x6aec12*/
   Lobby::InvalidatePlayerSlots((Lobby *)this); /*0x6aec19*/
   if ( this && dword_A8B23C ) /*0x6aec29*/
@@ -7661,14 +7661,14 @@ LABEL_5:
 // ==== 0x006AF650  SlaveManagerClass::CreateSlave  this=SlaveManagerClass  sig=csp ====
 wchar_t *__thiscall SlaveManagerClass::CreateSlave(SlaveManagerClass *this, wchar_t **a2)
 {
-  int (__thiscall **vtable0)(HouseClass *, int); // edi
+  int (__thiscall **ptr_0)(HouseClass *, int); // edi
   int v4; // eax
   wchar_t *result; // eax
   wchar_t *v6; // [esp+Ch] [ebp-8h]
 
-  vtable0 = (int (__thiscall **)(HouseClass *, int))this->house->AbstractClass; /*0x6af65f*/
+  ptr_0 = (int (__thiscall **)(HouseClass *, int))this->house->AbstractClass; /*0x6af65f*/
   v4 = (*((int (__thiscall **)(TechnoClass *))this->master->RadioClass + 15))(this->master); /*0x6af661*/
-  result = (wchar_t *)vtable0[35](this->house, v4); /*0x6af668*/
+  result = (wchar_t *)ptr_0[35](this->house, v4); /*0x6af668*/
   *a2 = result; /*0x6af674*/
   if ( result ) /*0x6af676*/
   {
@@ -7740,7 +7740,7 @@ int __usercall SlaveManagerClass::ProcessSlaves@<eax>(
   int v49; // ebx
   CellStruct *v50; // eax
   void **v51; // eax
-  unsigned __int16 vtable1; // bx
+  unsigned __int16 ptr_4; // bx
   int (__thiscall **v53)(wchar_t *); // edx
   _DWORD *v54; // eax
   int v55; // eax
@@ -7983,9 +7983,9 @@ int __usercall SlaveManagerClass::ProcessSlaves@<eax>(
           v53 = *(int (__thiscall ***)(wchar_t *))v9; /*0x6afb9f*/
           p_SlaveManagerClass_field_5C = &v78.SlaveManagerClass_field_5C; /*0x6afba7*/
           v78.? = *v51; /*0x6afba8*/
-          vtable1 = (unsigned __int16)v78.?; /*0x6afb9d*/
+          ptr_4 = (unsigned __int16)v78.?; /*0x6afb9d*/
           v54 = (_DWORD *)v53[110](v9); /*0x6afbac*/
-          if ( *v54 == __PAIR32__(HIWORD(v78.AbstractClass), vtable1) ) /*0x6afbb5*/
+          if ( *v54 == __PAIR32__(HIWORD(v78.AbstractClass), ptr_4) ) /*0x6afbb5*/
           {
             if ( !*((_DWORD *)v9 + 361) ) /*0x6afbc2*/
             {
@@ -8532,7 +8532,7 @@ char __thiscall sub_6A04C0(ObjectClass *this, _DWORD *a2)
   int v5; // eax
   int v6; // eax
   CellClass *v7; // eax
-  void *vtable3; // [esp-4h] [ebp-10h]
+  void *ptr_C; // [esp-4h] [ebp-10h]
 
   v2 = g_OverlayTypeConfig; /*0x6a04c1*/
   v4 = &this->ambientSoundController[1]; /*0x6a04cd*/
@@ -8553,9 +8553,9 @@ char __thiscall sub_6A04C0(ObjectClass *this, _DWORD *a2)
     v6 = a2[2]; /*0x6a053d*/
     HIBYTE(this->customSound_controller[4]) = 1; /*0x6a0540*/
     this->ambientSoundController[3] = v6; /*0x6a0544*/
-    vtable3 = this->?; /*0x6a054a*/
+    ptr_C = this->?; /*0x6a054a*/
     v7 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], a2); /*0x6a0551*/
-    if ( (unsigned __int8)CrateClass::ProcessPickup((CrateClass *)v7, (int)vtable3) && !*((_BYTE *)this->? + 129) ) /*0x6a0564*/
+    if ( (unsigned __int8)CrateClass::ProcessPickup((CrateClass *)v7, (int)ptr_C) && !*((_BYTE *)this->? + 129) ) /*0x6a0564*/
     {
       WalkLocomotion::MoveTo((int)this, a2, 1); /*0x6a0573*/
       return 1; /*0x6a057d*/
@@ -10013,7 +10013,7 @@ char __thiscall SidebarClass::Init(SidebarClass *this)
   SidebarClass *v11; // esi
   int v12; // eax
   int v13; // ecx
-  int *vtable3; // edx
+  int *ptr_C; // edx
   int i; // ebx
   int v16; // esi
   int v17; // eax
@@ -10134,17 +10134,17 @@ LABEL_17:
       }
       else
       {
-        vtable3 = (int *)stru_A80220.?; /*0x6a559b*/
+        ptr_C = (int *)stru_A80220.?; /*0x6a559b*/
         while ( 1 ) /*0x6a55a5*/
         {
-          v2 = *vtable3; /*0x6a55a5*/
-          if ( *vtable3 ) /*0x6a55a5*/
+          v2 = *ptr_C; /*0x6a55a5*/
+          if ( *ptr_C ) /*0x6a55a5*/
           {
             if ( *(_BYTE *)(*(_DWORD *)(v2 + 52) + 422) != 1 && v2 != HouseClass_Observer && *(_BYTE *)(v2 + 492) ) /*0x6a55bf*/
               break; /*0x6a55bf*/
           }
           ++v13; /*0x6a55cf*/
-          ++vtable3; /*0x6a55d0*/
+          ++ptr_C; /*0x6a55d0*/
           if ( v13 >= stru_A80220.? ) /*0x6a55d5*/
             goto LABEL_17; /*0x6a55d5*/
         }
@@ -14315,7 +14315,7 @@ _DWORD *__thiscall System_Init_6AC8D0(VectorClass *this, int a2, int a3)
   this->Capacity = a2; /*0x6ac8e1*/
   this->IsInitialized = 1; /*0x6ac8e4*/
   this->IsAllocated = 0; /*0x6ac8e8*/
-  this->vtable0 = &VectorClass<Point2D>::`vftable'; /*0x6ac8ec*/
+  this->ptr_0 = &VectorClass<Point2D>::`vftable'; /*0x6ac8ec*/
   if ( a2 ) /*0x6ac8f2*/
   {
     if ( a3 ) /*0x6ac8fa*/
@@ -14331,10 +14331,10 @@ _DWORD *__thiscall System_Init_6AC8D0(VectorClass *this, int a2, int a3)
       this->IsAllocated = 1; /*0x6ac926*/
     }
   }
-  this->vtable0 = &DynamicVectorClass<Point2D>::`vftable'; /*0x6ac92a*/
+  this->ptr_0 = &DynamicVectorClass<Point2D>::`vftable'; /*0x6ac92a*/
   *((_DWORD *)this + 5) = 10; /*0x6ac930*/
   this->Items = 0; /*0x6ac937*/
-  return &this->vtable0; /*0x6ac940*/
+  return &this->ptr_0; /*0x6ac940*/
 }
 
 
@@ -15273,7 +15273,7 @@ int __thiscall Skirmish::SetupGame(Skirmish *this, int a2)
   int v30; // eax
   int v31; // ecx
   int PlayerCountMap; // edi
-  void *vtable2; // ecx
+  void *ptr_8; // ecx
   int j; // edi
   int v35; // eax
   HWND (__stdcall *v36)(HWND, int); // edi
@@ -15508,11 +15508,11 @@ LABEL_44:
   dword_A8B23C = (ObjectClass *)v28; /*0x6aebdd*/
   PlayerCountMap = ReadPlayerCountMap(*(int *)&stru_A8B250.__pad_0[4]); /*0x6aebee*/
   if ( !(*((unsigned __int8 (__thiscall **)(ObjectClass *))dword_A8B23C->AbstractClass + 1))(dword_A8B23C) /*0x6aec07*/
-    || (vtable2 = dword_A8B230[127].vtable2, (int)vtable2 > PlayerCountMap) )
+    || (ptr_8 = dword_A8B230[127].ptr_8, (int)ptr_8 > PlayerCountMap) )
   {
-    vtable2 = (void *)PlayerCountMap; /*0x6aec09*/
+    ptr_8 = (void *)PlayerCountMap; /*0x6aec09*/
   }
-  ResetLobbyFactionTable((int)vtable2); /*0x6aec0b*/
+  ResetLobbyFactionTable((int)ptr_8); /*0x6aec0b*/
   Lobby::InvalidateFactionCombos((Lobby *)this); /*0x6aec12*/
   Lobby::InvalidatePlayerSlots((Lobby *)this); /*0x6aec19*/
   if ( this && dword_A8B23C ) /*0x6aec29*/
@@ -16041,14 +16041,14 @@ LABEL_5:
 // ==== 0x006AF650  SlaveManagerClass::CreateSlave  this=SlaveManagerClass  sig=csp ====
 wchar_t *__thiscall SlaveManagerClass::CreateSlave(SlaveManagerClass *this, wchar_t **a2)
 {
-  int (__thiscall **vtable0)(HouseClass *, int); // edi
+  int (__thiscall **ptr_0)(HouseClass *, int); // edi
   int v4; // eax
   wchar_t *result; // eax
   wchar_t *v6; // [esp+Ch] [ebp-8h]
 
-  vtable0 = (int (__thiscall **)(HouseClass *, int))this->house->AbstractClass; /*0x6af65f*/
+  ptr_0 = (int (__thiscall **)(HouseClass *, int))this->house->AbstractClass; /*0x6af65f*/
   v4 = (*((int (__thiscall **)(TechnoClass *))this->master->RadioClass + 15))(this->master); /*0x6af661*/
-  result = (wchar_t *)vtable0[35](this->house, v4); /*0x6af668*/
+  result = (wchar_t *)ptr_0[35](this->house, v4); /*0x6af668*/
   *a2 = result; /*0x6af674*/
   if ( result ) /*0x6af676*/
   {
@@ -16120,7 +16120,7 @@ int __usercall SlaveManagerClass::ProcessSlaves@<eax>(
   int v49; // ebx
   CellStruct *v50; // eax
   void **v51; // eax
-  unsigned __int16 vtable1; // bx
+  unsigned __int16 ptr_4; // bx
   int (__thiscall **v53)(wchar_t *); // edx
   _DWORD *v54; // eax
   int v55; // eax
@@ -16363,9 +16363,9 @@ int __usercall SlaveManagerClass::ProcessSlaves@<eax>(
           v53 = *(int (__thiscall ***)(wchar_t *))v9; /*0x6afb9f*/
           p_SlaveManagerClass_field_5C = &v78.SlaveManagerClass_field_5C; /*0x6afba7*/
           v78.? = *v51; /*0x6afba8*/
-          vtable1 = (unsigned __int16)v78.?; /*0x6afb9d*/
+          ptr_4 = (unsigned __int16)v78.?; /*0x6afb9d*/
           v54 = (_DWORD *)v53[110](v9); /*0x6afbac*/
-          if ( *v54 == __PAIR32__(HIWORD(v78.AbstractClass), vtable1) ) /*0x6afbb5*/
+          if ( *v54 == __PAIR32__(HIWORD(v78.AbstractClass), ptr_4) ) /*0x6afbb5*/
           {
             if ( !*((_DWORD *)v9 + 361) ) /*0x6afbc2*/
             {

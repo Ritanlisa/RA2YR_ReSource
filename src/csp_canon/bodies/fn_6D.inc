@@ -35,7 +35,7 @@ int Gap2Recv_6D04D0::SidebarUpdateAll() {
   v2 = &stru_B0C1C0; /*0x6d04d4*/
   do /*0x6d04ea*/
   {
-    result = (*((int (**)(ObjectClass *, ShapeButtonClass *))this->vtable1 + 13))(this, v2); /*0x6d04de*/
+    result = (*((int (**)(ObjectClass *, ShapeButtonClass *))this->ptr_4 + 13))(this, v2); /*0x6d04de*/
     v2 += 8; /*0x6d04e1*/
   }
   while ( (int)v2 < (int)&dword_B0CB20 ); /*0x6d04ea*/

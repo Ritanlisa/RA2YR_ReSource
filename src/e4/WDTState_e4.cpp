@@ -39,7 +39,7 @@ AbstractClass * * WDTState_4::Release(int a2, unsigned int * a3)
         do /*0x76baf5*/
         {
           ComPtr::Constructor(v8); /*0x76bae6*/
-          /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EBFA4) */  /*0x76baeb*/
+          /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EBFA4) */  /*0x76baeb*/
           v8 = (ComPtr *)((char *)v8 + 8); /*0x76baf1*/
           --v9; /*0x76baf4*/
         }
@@ -161,7 +161,7 @@ DynamicVector * WDTState_4::QueryInterface(unsigned int * Block, char a2)
   void (***v3)(unsigned int, int); // ecx
 
   v3 = *(void (****)(unsigned int, int))&Block->__pad_004; /*0x76bc13*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_var_18554b) */  /*0x76bc16*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_var_18554b) */  /*0x76bc16*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x76bc20*/
   {
     (**v3)(v3, 3); /*0x76bc2f*/
@@ -181,7 +181,7 @@ int WDTState_4::Constructor(void *a1, void *a2, void *a3, void *a4)
 {
 
   ComPtr::Constructor((ComPtr *)this); /*0x76bc63*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_var_5878c0) */  /*0x76bc68*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_5878c0) */  /*0x76bc68*/
   return this->__pad_0; /*0x76bc70*/
 
 }

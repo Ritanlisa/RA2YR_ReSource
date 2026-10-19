@@ -468,12 +468,12 @@ void* Gap2Recv_67BFA0::System_Load_67BFA0(void* a2) {
 
   void *v3; // eax
   void *v4; // eax
-  void *vtable2; // ecx
+  void *ptr_8; // ecx
   int v6; // eax
 
   if ( this == (ObjectClass *)a2 ) /*0x67bfaa*/
     return this; /*0x67bfaa*/
-  (*((void (**)(ObjectClass *))this->vtable1 + 3))(this); /*0x67bfae*/
+  (*((void (**)(ObjectClass *))this->ptr_4 + 3))(this); /*0x67bfae*/
   v3 = (void *)a2[2]; /*0x67bfb1*/
   ((unsigned int *)this)[0] = v3; /*0x67bfb6*/
   if ( !v3 ) /*0x67bfb9*/
@@ -486,10 +486,10 @@ void* Gap2Recv_67BFA0::System_Load_67BFA0(void* a2) {
   ((unsigned int *)this)[0] = v4; /*0x67bfcb*/
   if ( !v4 ) /*0x67bfd0*/
     return this; /*0x67bfd0*/
-  vtable2 = ((unsigned int *)this)[0]; /*0x67bfd2*/
+  ptr_8 = ((unsigned int *)this)[0]; /*0x67bfd2*/
   v6 = 0; /*0x67bfd5*/
   BYTE1(((unsigned int *)this)[0]) = 1; /*0x67bfd9*/
-  if ( (int)vtable2 <= 0 ) /*0x67bfdd*/
+  if ( (int)ptr_8 <= 0 ) /*0x67bfdd*/
     return this; /*0x67bfdd*/
   do /*0x67bff1*/
   {

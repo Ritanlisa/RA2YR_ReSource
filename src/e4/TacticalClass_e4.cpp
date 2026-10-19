@@ -1624,7 +1624,7 @@ unsigned int * TacticalClass::CollectSelectedIDs()
   if ( v0 ) /*0x732d26*/
   {
     TacticalClass::updateScroll(v0, 0, 0); /*0x732d2c*/
-    /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7EE0B4) */  /*0x732d31*/
+    /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7EE0B4) */  /*0x732d31*/
     v1->abstractFlags = 10; /*0x732d37*/
     v1->uniqueId = 0; /*0x732d3e*/
     v2 = v1; /*0x732d41*/

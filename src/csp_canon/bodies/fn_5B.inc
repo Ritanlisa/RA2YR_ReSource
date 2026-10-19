@@ -387,9 +387,9 @@ int MissionClass::QueueMission() {
     (result) = ((result) & ~0xFF) | ((v6) & 0xFF); /*0x5b3621*/
     if ( v6 ) /*0x5b3627*/
     {
-      result = (*((int (**)(MissionClass *))this->vtable1 + 128))(this); /*0x5b362d*/
+      result = (*((int (**)(MissionClass *))this->ptr_4 + 128))(this); /*0x5b362d*/
       if ( (unsigned char)result ) /*0x5b3635*/
-        return (*((int (**)(MissionClass *))this->vtable1 + 123))(this); /*0x5b363b*/
+        return (*((int (**)(MissionClass *))this->ptr_4 + 123))(this); /*0x5b363b*/
     }
   }
   return result; /*0x5b3641*/

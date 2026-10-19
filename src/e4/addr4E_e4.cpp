@@ -105,7 +105,7 @@ unsigned int VectorClass::sub_4E0A00(int a2, unsigned int * a3)
   this->Capacity = a2; /*0x4e0a11*/
   this->IsInitialized = 1; /*0x4e0a14*/
   this->IsAllocated = 0; /*0x4e0a18*/
-  /* X11: vtable install elided (legacy slot spelling slot, RHS g_ptr_7E9264) */  /*0x4e0a1c*/
+  /* X11: ptr_0 install elided (legacy slot spelling slot, RHS g_ptr_7E9264) */  /*0x4e0a1c*/
   if ( a2 ) /*0x4e0a22*/
   {
     if ( a3 ) /*0x4e0a2a*/
@@ -154,7 +154,7 @@ unsigned int VectorClass::sub_4E0A00(int a2, unsigned int * a3)
       this->IsAllocated = 1; /*0x4e0a86*/
     }
   }
-  /* X11: vtable install elided (legacy slot spelling slot, RHS g_ptr_7E928C) */  /*0x4e0a8a*/
+  /* X11: ptr_0 install elided (legacy slot spelling slot, RHS g_ptr_7E928C) */  /*0x4e0a8a*/
   this->u32_14 = 10; /*0x4e0a90*/
   this->q010 = 0; /*0x4e0a97*/
   return &this->ptr_0; /*0x4e0aa0*/
@@ -2109,7 +2109,7 @@ unsigned int * FoggedObjectClass_42::loc_4E0D30(unsigned int * Block, char a2)
 
 
   void *v3 = *&Block->__pad_004; // eax /*0x4e0ce3*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x4e0ce6*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x4e0ce6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4e0cf0*/
   {
     __3_YAXPAX_Z(v3); /*0x4e0cf8*/
@@ -2430,7 +2430,7 @@ int E4Recv_4E2A50::sub_4E2A50(ControlClass * aP1, int aP2, int aP3, ControlClass
 
   ControlClass::Construct((ControlClass *)this, aP1, aP2, aP3, aP4, aP5, 7, 1); /*0x4e2a74*/
   int v7 = this->M48; // ecx /*0x4e2a79*/
-  /* X11: vtable install elided (implicit via GaugeClass virtuals 0x4e2a83) */
+  /* X11: ptr_0 install elided (implicit via GaugeClass virtuals 0x4e2a83) */
   if ( v7 != 255 ) /*0x4e2a89*/
   {
     this->M48 = 255; /*0x4e2a8d*/
@@ -2450,7 +2450,7 @@ int E4Recv_4E2A50::sub_4E2A50(ControlClass * aP1, int aP2, int aP3, ControlClass
   this->M56 = 0; /*0x4e2ac0*/
   this->M60 = 0; /*0x4e2ac7*/
   this->u32_40 = 0; /*0x4e2ace*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E9430) */  /*0x4e2ad5*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E9430) */  /*0x4e2ad5*/
   return (int)this->ptr_0; /*0x4e2add*/
 
 }
@@ -4478,7 +4478,7 @@ gamemd::TiberianSunClassFactory pUnk;  // X74: object storage for 0xA8E8C8 (comp
 namespace gamemd {
 void sub_4E7CE0()
 {
-  /* X74: vtable install = compiler dynamic-init of typed global pUnk */  /*0x4e7ce0*/
+  /* X74: ptr_0 install = compiler dynamic-init of typed global pUnk */  /*0x4e7ce0*/
 }
 } // namespace gamemd
 
@@ -4947,7 +4947,7 @@ unsigned int *  VectorClass::HouseClass_vt_00(char a2)
 {
 
   void *v3 = this->Items; // eax /*0x4ef4e3*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x4ef4e6*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x4ef4e6*/
   if ( v3 && this->IsAllocated ) /*0x4ef4f0*/
   {
     operator delete((v3)); /*0x4ef4f8*/
@@ -4967,7 +4967,7 @@ unsigned int * _VectorClass_PAVParticleClass::ParticleSystemClass_vt_00(_VectorC
 {
 
   void *v3 = *&Block->u32_4; // eax /*0x4ef803*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x4ef806*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x4ef806*/
   if ( v3 && (Block->u8_D) ) /*0x4ef810*/
   {
     operator delete((v3)); /*0x4ef818*/

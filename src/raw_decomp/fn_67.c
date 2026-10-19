@@ -1902,7 +1902,7 @@ void __thiscall VectorClass::Dtor(VectorClass *this)
   void *Items; // eax
 
   Items = this->Items; /*0x679f76*/
-  this->vtable0 = &VectorClass<int>::`vftable'; /*0x679f79*/
+  this->ptr_0 = &VectorClass<int>::`vftable'; /*0x679f79*/
   if ( Items && this->IsAllocated ) /*0x679f83*/
   {
     __3_YAXPAX_Z(Items); /*0x679f89*/
@@ -2848,32 +2848,32 @@ _DWORD *__thiscall VectorClass::CopyAssign(VectorClass *this, _DWORD *a2)
   int v6; // eax
 
   if ( this == (VectorClass *)a2 ) /*0x67aa8a*/
-    return &this->vtable0; /*0x67aa8a*/
-  (*((void (__thiscall **)(VectorClass *))this->vtable0 + 3))(this); /*0x67aa8e*/
+    return &this->ptr_0; /*0x67aa8a*/
+  (*((void (__thiscall **)(VectorClass *))this->ptr_0 + 3))(this); /*0x67aa8e*/
   v3 = a2[2]; /*0x67aa91*/
   this->Capacity = v3; /*0x67aa96*/
   if ( !v3 ) /*0x67aa99*/
   {
     this->Items = 0; /*0x67aada*/
     this->IsAllocated = 0; /*0x67aae1*/
-    return &this->vtable0; /*0x67aae5*/
+    return &this->ptr_0; /*0x67aae5*/
   }
   v4 = (void *)__2_YAPAXI_Z(4 * v3); /*0x67aaa3*/
   this->Items = v4; /*0x67aaab*/
   if ( !v4 ) /*0x67aab0*/
-    return &this->vtable0; /*0x67aab0*/
+    return &this->ptr_0; /*0x67aab0*/
   Capacity = this->Capacity; /*0x67aab2*/
   v6 = 0; /*0x67aab5*/
   this->IsAllocated = 1; /*0x67aab9*/
   if ( Capacity <= 0 ) /*0x67aabd*/
-    return &this->vtable0; /*0x67aabd*/
+    return &this->ptr_0; /*0x67aabd*/
   do /*0x67aad1*/
   {
     *((_DWORD *)this->Items + v6) = *(_DWORD *)(a2[1] + 4 * v6); /*0x67aac8*/
     ++v6; /*0x67aace*/
   }
   while ( v6 < this->Capacity ); /*0x67aad1*/
-  return &this->vtable0; /*0x67aad5*/
+  return &this->ptr_0; /*0x67aad5*/
 }
 
 
@@ -3146,32 +3146,32 @@ _DWORD *__thiscall VectorClass::CopySmudge(VectorClass *this, _DWORD *a2)
   int v6; // eax
 
   if ( this == (VectorClass *)a2 ) /*0x67ae0a*/
-    return &this->vtable0; /*0x67ae0a*/
-  (*((void (__thiscall **)(VectorClass *))this->vtable0 + 3))(this); /*0x67ae0e*/
+    return &this->ptr_0; /*0x67ae0a*/
+  (*((void (__thiscall **)(VectorClass *))this->ptr_0 + 3))(this); /*0x67ae0e*/
   v3 = a2[2]; /*0x67ae11*/
   this->Capacity = v3; /*0x67ae16*/
   if ( !v3 ) /*0x67ae19*/
   {
     this->Items = 0; /*0x67ae5a*/
     this->IsAllocated = 0; /*0x67ae61*/
-    return &this->vtable0; /*0x67ae65*/
+    return &this->ptr_0; /*0x67ae65*/
   }
   v4 = (void *)__2_YAPAXI_Z(4 * v3); /*0x67ae23*/
   this->Items = v4; /*0x67ae2b*/
   if ( !v4 ) /*0x67ae30*/
-    return &this->vtable0; /*0x67ae30*/
+    return &this->ptr_0; /*0x67ae30*/
   Capacity = this->Capacity; /*0x67ae32*/
   v6 = 0; /*0x67ae35*/
   this->IsAllocated = 1; /*0x67ae39*/
   if ( Capacity <= 0 ) /*0x67ae3d*/
-    return &this->vtable0; /*0x67ae3d*/
+    return &this->ptr_0; /*0x67ae3d*/
   do /*0x67ae51*/
   {
     *((_DWORD *)this->Items + v6) = *(_DWORD *)(a2[1] + 4 * v6); /*0x67ae48*/
     ++v6; /*0x67ae4e*/
   }
   while ( v6 < this->Capacity ); /*0x67ae51*/
-  return &this->vtable0; /*0x67ae55*/
+  return &this->ptr_0; /*0x67ae55*/
 }
 
 
@@ -3439,32 +3439,32 @@ _DWORD *__thiscall VectorClass::CopyBuilding(VectorClass *this, _DWORD *a2)
   int v6; // eax
 
   if ( this == (VectorClass *)a2 ) /*0x67b18a*/
-    return &this->vtable0; /*0x67b18a*/
-  (*((void (__thiscall **)(VectorClass *))this->vtable0 + 3))(this); /*0x67b18e*/
+    return &this->ptr_0; /*0x67b18a*/
+  (*((void (__thiscall **)(VectorClass *))this->ptr_0 + 3))(this); /*0x67b18e*/
   v3 = a2[2]; /*0x67b191*/
   this->Capacity = v3; /*0x67b196*/
   if ( !v3 ) /*0x67b199*/
   {
     this->Items = 0; /*0x67b1da*/
     this->IsAllocated = 0; /*0x67b1e1*/
-    return &this->vtable0; /*0x67b1e5*/
+    return &this->ptr_0; /*0x67b1e5*/
   }
   v4 = (void *)__2_YAPAXI_Z(4 * v3); /*0x67b1a3*/
   this->Items = v4; /*0x67b1ab*/
   if ( !v4 ) /*0x67b1b0*/
-    return &this->vtable0; /*0x67b1b0*/
+    return &this->ptr_0; /*0x67b1b0*/
   Capacity = this->Capacity; /*0x67b1b2*/
   v6 = 0; /*0x67b1b5*/
   this->IsAllocated = 1; /*0x67b1b9*/
   if ( Capacity <= 0 ) /*0x67b1bd*/
-    return &this->vtable0; /*0x67b1bd*/
+    return &this->ptr_0; /*0x67b1bd*/
   do /*0x67b1d1*/
   {
     *((_DWORD *)this->Items + v6) = *(_DWORD *)(a2[1] + 4 * v6); /*0x67b1c8*/
     ++v6; /*0x67b1ce*/
   }
   while ( v6 < this->Capacity ); /*0x67b1d1*/
-  return &this->vtable0; /*0x67b1d5*/
+  return &this->ptr_0; /*0x67b1d5*/
 }
 
 
@@ -3768,7 +3768,7 @@ VectorClass *__fastcall ReadINIClassBuildingTypeList(
     VectorClass::BuildingTypeConstructor(&v17, 0, 0); /*0x67b591*/
     v19 = 10; /*0x67b59a*/
     v18 = 0; /*0x67b5a8*/
-    v17.vtable0 = &TypeList<BuildingTypeClass const *>::`vftable'; /*0x67b5ac*/
+    v17.ptr_0 = &TypeList<BuildingTypeClass const *>::`vftable'; /*0x67b5ac*/
     for ( i = strtok(String, Str); i; i = strtok(0, Str) ) /*0x67b5be*/
     {
       if ( !*i ) /*0x67b5c0*/
@@ -3778,7 +3778,7 @@ VectorClass *__fastcall ReadINIClassBuildingTypeList(
         && (v18 < v17.Capacity
          || (v17.IsAllocated || !v17.Capacity)
          && v19 > 0
-         && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v17.vtable0 + 2))(
+         && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v17.ptr_0 + 2))(
               &v17,
               v19 + v17.Capacity,
               0)) )
@@ -3791,12 +3791,12 @@ VectorClass *__fastcall ReadINIClassBuildingTypeList(
     a1->Capacity = 0; /*0x67b630*/
     a1->IsInitialized = 1; /*0x67b633*/
     a1->IsAllocated = 0; /*0x67b637*/
-    a1->vtable0 = &VectorClass<BuildingTypeClass const *>::`vftable'; /*0x67b63a*/
+    a1->ptr_0 = &VectorClass<BuildingTypeClass const *>::`vftable'; /*0x67b63a*/
     VectorClass::CopyBuilding(a1, &v17); /*0x67b640*/
-    a1->vtable0 = &TypeList<BuildingTypeClass const *>::`vftable'; /*0x67b645*/
-    v17.vtable0 = &VectorClass<BuildingTypeClass const *>::`vftable'; /*0x67b64b*/
+    a1->ptr_0 = &TypeList<BuildingTypeClass const *>::`vftable'; /*0x67b645*/
+    v17.ptr_0 = &VectorClass<BuildingTypeClass const *>::`vftable'; /*0x67b64b*/
     v9 = (void *)v19; /*0x67b657*/
-    a1[1].vtable0 = (void *)v18; /*0x67b65b*/
+    a1[1].ptr_0 = (void *)v18; /*0x67b65b*/
     Items = v17.Items; /*0x67b65e*/
     v11 = v17.Items == 0; /*0x67b662*/
     a1[1].Items = v9; /*0x67b664*/
@@ -3812,7 +3812,7 @@ VectorClass *__fastcall ReadINIClassBuildingTypeList(
     a1->Capacity = 0; /*0x67b69c*/
     a1->IsInitialized = 1; /*0x67b69f*/
     a1->IsAllocated = 0; /*0x67b6a3*/
-    a1->vtable0 = &VectorClass<BuildingTypeClass const *>::`vftable'; /*0x67b6a6*/
+    a1->ptr_0 = &VectorClass<BuildingTypeClass const *>::`vftable'; /*0x67b6a6*/
     if ( a1 != a5 ) /*0x67b6ac*/
     {
       DynamicVectorClass::Destroy((_VectorClass_PBVBuildingTypeClass *)a1); /*0x67b6b0*/
@@ -3844,9 +3844,9 @@ VectorClass *__fastcall ReadINIClassBuildingTypeList(
         a1->IsAllocated = 0; /*0x67b6fd*/
       }
     }
-    a1[1].vtable0 = a5[1].vtable0; /*0x67b703*/
+    a1[1].ptr_0 = a5[1].ptr_0; /*0x67b703*/
     a1[1].Items = a5[1].Items; /*0x67b709*/
-    a1->vtable0 = &TypeList<BuildingTypeClass const *>::`vftable'; /*0x67b70c*/
+    a1->ptr_0 = &TypeList<BuildingTypeClass const *>::`vftable'; /*0x67b70c*/
   }
   return a1; /*0x67b682*/
 }
@@ -3902,12 +3902,12 @@ VectorClass *__fastcall BuildingClass::LoadBuildingTypes(
     a1->Capacity = 0; /*0x67b800*/
     a1->IsInitialized = 1; /*0x67b803*/
     a1->IsAllocated = 0; /*0x67b807*/
-    a1->vtable0 = &VectorClass<UnitTypeClass const *>::`vftable'; /*0x67b80a*/
+    a1->ptr_0 = &VectorClass<UnitTypeClass const *>::`vftable'; /*0x67b80a*/
     VectorClass::CopyConstructor(a1, &v17); /*0x67b810*/
-    a1->vtable0 = &TypeList<UnitTypeClass const *>::`vftable'; /*0x67b815*/
+    a1->ptr_0 = &TypeList<UnitTypeClass const *>::`vftable'; /*0x67b815*/
     *(_DWORD *)v17.__pad_0 = &VectorClass<UnitTypeClass const *>::`vftable'; /*0x67b81b*/
     UnitTypeVector_field_0x14 = v17.UnitTypeVector_field_0x14; /*0x67b827*/
-    a1[1].vtable0 = (void *)v17.UnitTypeVector_field_0x10; /*0x67b82b*/
+    a1[1].ptr_0 = (void *)v17.UnitTypeVector_field_0x10; /*0x67b82b*/
     UnitTypeVector_field_0x04 = (void *)v17.UnitTypeVector_field_0x04; /*0x67b82e*/
     v11 = v17.UnitTypeVector_field_0x04 == 0; /*0x67b832*/
     a1[1].Items = (void *)UnitTypeVector_field_0x14; /*0x67b834*/
@@ -3923,7 +3923,7 @@ VectorClass *__fastcall BuildingClass::LoadBuildingTypes(
     a1->Capacity = 0; /*0x67b86c*/
     a1->IsInitialized = 1; /*0x67b86f*/
     a1->IsAllocated = 0; /*0x67b873*/
-    a1->vtable0 = &VectorClass<UnitTypeClass const *>::`vftable'; /*0x67b876*/
+    a1->ptr_0 = &VectorClass<UnitTypeClass const *>::`vftable'; /*0x67b876*/
     if ( a1 != a5 ) /*0x67b87c*/
     {
       Vector::Destructor((_VectorClass_PBVUnitTypeClass *)a1); /*0x67b880*/
@@ -3955,9 +3955,9 @@ VectorClass *__fastcall BuildingClass::LoadBuildingTypes(
         a1->IsAllocated = 0; /*0x67b8cd*/
       }
     }
-    a1[1].vtable0 = a5[1].vtable0; /*0x67b8d3*/
+    a1[1].ptr_0 = a5[1].ptr_0; /*0x67b8d3*/
     a1[1].Items = a5[1].Items; /*0x67b8d9*/
-    a1->vtable0 = &TypeList<UnitTypeClass const *>::`vftable'; /*0x67b8dc*/
+    a1->ptr_0 = &TypeList<UnitTypeClass const *>::`vftable'; /*0x67b8dc*/
   }
   return a1; /*0x67b852*/
 }
@@ -4366,7 +4366,7 @@ _DWORD *__thiscall System_Load_67BFA0(ObjectClass *this, _DWORD *a2)
 {
   void *v3; // eax
   void *v4; // eax
-  void *vtable2; // ecx
+  void *ptr_8; // ecx
   int v6; // eax
 
   if ( this == (ObjectClass *)a2 ) /*0x67bfaa*/
@@ -4384,10 +4384,10 @@ _DWORD *__thiscall System_Load_67BFA0(ObjectClass *this, _DWORD *a2)
   this->? = v4; /*0x67bfcb*/
   if ( !v4 ) /*0x67bfd0*/
     return &this->AbstractClass; /*0x67bfd0*/
-  vtable2 = this->?; /*0x67bfd2*/
+  ptr_8 = this->?; /*0x67bfd2*/
   v6 = 0; /*0x67bfd5*/
   BYTE1(this->?) = 1; /*0x67bfd9*/
-  if ( (int)vtable2 <= 0 ) /*0x67bfdd*/
+  if ( (int)ptr_8 <= 0 ) /*0x67bfdd*/
     return &this->AbstractClass; /*0x67bfdd*/
   do /*0x67bff1*/
   {
@@ -5212,7 +5212,7 @@ char __fastcall SaveScenarioClassGame_AdjustMPSaveFileName(LPCCH lpMultiByteStr,
   Map_Save((ObjectClass *)v9, 1); /*0x67cf98*/
   Map_Save_6810D0((ObjectClass *)v9, *((wchar_t **)dword_A83D4C->Object_field_0x34 + 24)); /*0x67cfb1*/
   Map_Save_681110((ObjectClass *)v9, dword_A8B230[375].uniqueId); /*0x67cfca*/
-  Map_Save_681130((ObjectClass *)v9, (int)dword_A8B230[130].vtable3); /*0x67cfe2*/
+  Map_Save_681130((ObjectClass *)v9, (int)dword_A8B230[130].ptr_C); /*0x67cfe2*/
   Map_Save_6811C0((char *)v9, aSunExe); /*0x67cff3*/
   Map_Save_6812C0((ObjectClass *)v9, *(int *)&dword_A8B238); /*0x67d006*/
   CoFileTimeNow((FILETIME *)&ppstgOpen[0].ComPtr_field_0x14); /*0x67d010*/
@@ -8172,7 +8172,7 @@ void __thiscall VectorClass::Dtor(VectorClass *this)
   void *Items; // eax
 
   Items = this->Items; /*0x679f76*/
-  this->vtable0 = &VectorClass<int>::`vftable'; /*0x679f79*/
+  this->ptr_0 = &VectorClass<int>::`vftable'; /*0x679f79*/
   if ( Items && this->IsAllocated ) /*0x679f83*/
   {
     __3_YAXPAX_Z(Items); /*0x679f89*/
@@ -9118,32 +9118,32 @@ _DWORD *__thiscall VectorClass::CopyAssign(VectorClass *this, _DWORD *a2)
   int v6; // eax
 
   if ( this == (VectorClass *)a2 ) /*0x67aa8a*/
-    return &this->vtable0; /*0x67aa8a*/
-  (*((void (__thiscall **)(VectorClass *))this->vtable0 + 3))(this); /*0x67aa8e*/
+    return &this->ptr_0; /*0x67aa8a*/
+  (*((void (__thiscall **)(VectorClass *))this->ptr_0 + 3))(this); /*0x67aa8e*/
   v3 = a2[2]; /*0x67aa91*/
   this->Capacity = v3; /*0x67aa96*/
   if ( !v3 ) /*0x67aa99*/
   {
     this->Items = 0; /*0x67aada*/
     this->IsAllocated = 0; /*0x67aae1*/
-    return &this->vtable0; /*0x67aae5*/
+    return &this->ptr_0; /*0x67aae5*/
   }
   v4 = (void *)__2_YAPAXI_Z(4 * v3); /*0x67aaa3*/
   this->Items = v4; /*0x67aaab*/
   if ( !v4 ) /*0x67aab0*/
-    return &this->vtable0; /*0x67aab0*/
+    return &this->ptr_0; /*0x67aab0*/
   Capacity = this->Capacity; /*0x67aab2*/
   v6 = 0; /*0x67aab5*/
   this->IsAllocated = 1; /*0x67aab9*/
   if ( Capacity <= 0 ) /*0x67aabd*/
-    return &this->vtable0; /*0x67aabd*/
+    return &this->ptr_0; /*0x67aabd*/
   do /*0x67aad1*/
   {
     *((_DWORD *)this->Items + v6) = *(_DWORD *)(a2[1] + 4 * v6); /*0x67aac8*/
     ++v6; /*0x67aace*/
   }
   while ( v6 < this->Capacity ); /*0x67aad1*/
-  return &this->vtable0; /*0x67aad5*/
+  return &this->ptr_0; /*0x67aad5*/
 }
 
 
@@ -9416,32 +9416,32 @@ _DWORD *__thiscall VectorClass::CopySmudge(VectorClass *this, _DWORD *a2)
   int v6; // eax
 
   if ( this == (VectorClass *)a2 ) /*0x67ae0a*/
-    return &this->vtable0; /*0x67ae0a*/
-  (*((void (__thiscall **)(VectorClass *))this->vtable0 + 3))(this); /*0x67ae0e*/
+    return &this->ptr_0; /*0x67ae0a*/
+  (*((void (__thiscall **)(VectorClass *))this->ptr_0 + 3))(this); /*0x67ae0e*/
   v3 = a2[2]; /*0x67ae11*/
   this->Capacity = v3; /*0x67ae16*/
   if ( !v3 ) /*0x67ae19*/
   {
     this->Items = 0; /*0x67ae5a*/
     this->IsAllocated = 0; /*0x67ae61*/
-    return &this->vtable0; /*0x67ae65*/
+    return &this->ptr_0; /*0x67ae65*/
   }
   v4 = (void *)__2_YAPAXI_Z(4 * v3); /*0x67ae23*/
   this->Items = v4; /*0x67ae2b*/
   if ( !v4 ) /*0x67ae30*/
-    return &this->vtable0; /*0x67ae30*/
+    return &this->ptr_0; /*0x67ae30*/
   Capacity = this->Capacity; /*0x67ae32*/
   v6 = 0; /*0x67ae35*/
   this->IsAllocated = 1; /*0x67ae39*/
   if ( Capacity <= 0 ) /*0x67ae3d*/
-    return &this->vtable0; /*0x67ae3d*/
+    return &this->ptr_0; /*0x67ae3d*/
   do /*0x67ae51*/
   {
     *((_DWORD *)this->Items + v6) = *(_DWORD *)(a2[1] + 4 * v6); /*0x67ae48*/
     ++v6; /*0x67ae4e*/
   }
   while ( v6 < this->Capacity ); /*0x67ae51*/
-  return &this->vtable0; /*0x67ae55*/
+  return &this->ptr_0; /*0x67ae55*/
 }
 
 
@@ -9709,32 +9709,32 @@ _DWORD *__thiscall VectorClass::CopyBuilding(VectorClass *this, _DWORD *a2)
   int v6; // eax
 
   if ( this == (VectorClass *)a2 ) /*0x67b18a*/
-    return &this->vtable0; /*0x67b18a*/
-  (*((void (__thiscall **)(VectorClass *))this->vtable0 + 3))(this); /*0x67b18e*/
+    return &this->ptr_0; /*0x67b18a*/
+  (*((void (__thiscall **)(VectorClass *))this->ptr_0 + 3))(this); /*0x67b18e*/
   v3 = a2[2]; /*0x67b191*/
   this->Capacity = v3; /*0x67b196*/
   if ( !v3 ) /*0x67b199*/
   {
     this->Items = 0; /*0x67b1da*/
     this->IsAllocated = 0; /*0x67b1e1*/
-    return &this->vtable0; /*0x67b1e5*/
+    return &this->ptr_0; /*0x67b1e5*/
   }
   v4 = (void *)__2_YAPAXI_Z(4 * v3); /*0x67b1a3*/
   this->Items = v4; /*0x67b1ab*/
   if ( !v4 ) /*0x67b1b0*/
-    return &this->vtable0; /*0x67b1b0*/
+    return &this->ptr_0; /*0x67b1b0*/
   Capacity = this->Capacity; /*0x67b1b2*/
   v6 = 0; /*0x67b1b5*/
   this->IsAllocated = 1; /*0x67b1b9*/
   if ( Capacity <= 0 ) /*0x67b1bd*/
-    return &this->vtable0; /*0x67b1bd*/
+    return &this->ptr_0; /*0x67b1bd*/
   do /*0x67b1d1*/
   {
     *((_DWORD *)this->Items + v6) = *(_DWORD *)(a2[1] + 4 * v6); /*0x67b1c8*/
     ++v6; /*0x67b1ce*/
   }
   while ( v6 < this->Capacity ); /*0x67b1d1*/
-  return &this->vtable0; /*0x67b1d5*/
+  return &this->ptr_0; /*0x67b1d5*/
 }
 
 
@@ -10038,7 +10038,7 @@ VectorClass *__fastcall ReadINIClassBuildingTypeList(
     VectorClass::BuildingTypeConstructor(&v17, 0, 0); /*0x67b591*/
     v19 = 10; /*0x67b59a*/
     v18 = 0; /*0x67b5a8*/
-    v17.vtable0 = &TypeList<BuildingTypeClass const *>::`vftable'; /*0x67b5ac*/
+    v17.ptr_0 = &TypeList<BuildingTypeClass const *>::`vftable'; /*0x67b5ac*/
     for ( i = strtok(String, Str); i; i = strtok(0, Str) ) /*0x67b5be*/
     {
       if ( !*i ) /*0x67b5c0*/
@@ -10048,7 +10048,7 @@ VectorClass *__fastcall ReadINIClassBuildingTypeList(
         && (v18 < v17.Capacity
          || (v17.IsAllocated || !v17.Capacity)
          && v19 > 0
-         && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v17.vtable0 + 2))(
+         && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v17.ptr_0 + 2))(
               &v17,
               v19 + v17.Capacity,
               0)) )
@@ -10061,12 +10061,12 @@ VectorClass *__fastcall ReadINIClassBuildingTypeList(
     a1->Capacity = 0; /*0x67b630*/
     a1->IsInitialized = 1; /*0x67b633*/
     a1->IsAllocated = 0; /*0x67b637*/
-    a1->vtable0 = &VectorClass<BuildingTypeClass const *>::`vftable'; /*0x67b63a*/
+    a1->ptr_0 = &VectorClass<BuildingTypeClass const *>::`vftable'; /*0x67b63a*/
     VectorClass::CopyBuilding(a1, &v17); /*0x67b640*/
-    a1->vtable0 = &TypeList<BuildingTypeClass const *>::`vftable'; /*0x67b645*/
-    v17.vtable0 = &VectorClass<BuildingTypeClass const *>::`vftable'; /*0x67b64b*/
+    a1->ptr_0 = &TypeList<BuildingTypeClass const *>::`vftable'; /*0x67b645*/
+    v17.ptr_0 = &VectorClass<BuildingTypeClass const *>::`vftable'; /*0x67b64b*/
     v9 = (void *)v19; /*0x67b657*/
-    a1[1].vtable0 = (void *)v18; /*0x67b65b*/
+    a1[1].ptr_0 = (void *)v18; /*0x67b65b*/
     Items = v17.Items; /*0x67b65e*/
     v11 = v17.Items == 0; /*0x67b662*/
     a1[1].Items = v9; /*0x67b664*/
@@ -10082,7 +10082,7 @@ VectorClass *__fastcall ReadINIClassBuildingTypeList(
     a1->Capacity = 0; /*0x67b69c*/
     a1->IsInitialized = 1; /*0x67b69f*/
     a1->IsAllocated = 0; /*0x67b6a3*/
-    a1->vtable0 = &VectorClass<BuildingTypeClass const *>::`vftable'; /*0x67b6a6*/
+    a1->ptr_0 = &VectorClass<BuildingTypeClass const *>::`vftable'; /*0x67b6a6*/
     if ( a1 != a5 ) /*0x67b6ac*/
     {
       DynamicVectorClass::Destroy((_VectorClass_PBVBuildingTypeClass *)a1); /*0x67b6b0*/
@@ -10114,9 +10114,9 @@ VectorClass *__fastcall ReadINIClassBuildingTypeList(
         a1->IsAllocated = 0; /*0x67b6fd*/
       }
     }
-    a1[1].vtable0 = a5[1].vtable0; /*0x67b703*/
+    a1[1].ptr_0 = a5[1].ptr_0; /*0x67b703*/
     a1[1].Items = a5[1].Items; /*0x67b709*/
-    a1->vtable0 = &TypeList<BuildingTypeClass const *>::`vftable'; /*0x67b70c*/
+    a1->ptr_0 = &TypeList<BuildingTypeClass const *>::`vftable'; /*0x67b70c*/
   }
   return a1; /*0x67b682*/
 }
@@ -10172,12 +10172,12 @@ VectorClass *__fastcall BuildingClass::LoadBuildingTypes(
     a1->Capacity = 0; /*0x67b800*/
     a1->IsInitialized = 1; /*0x67b803*/
     a1->IsAllocated = 0; /*0x67b807*/
-    a1->vtable0 = &VectorClass<UnitTypeClass const *>::`vftable'; /*0x67b80a*/
+    a1->ptr_0 = &VectorClass<UnitTypeClass const *>::`vftable'; /*0x67b80a*/
     VectorClass::CopyConstructor(a1, &v17); /*0x67b810*/
-    a1->vtable0 = &TypeList<UnitTypeClass const *>::`vftable'; /*0x67b815*/
+    a1->ptr_0 = &TypeList<UnitTypeClass const *>::`vftable'; /*0x67b815*/
     *(_DWORD *)v17.__pad_0 = &VectorClass<UnitTypeClass const *>::`vftable'; /*0x67b81b*/
     UnitTypeVector_field_0x14 = v17.UnitTypeVector_field_0x14; /*0x67b827*/
-    a1[1].vtable0 = (void *)v17.UnitTypeVector_field_0x10; /*0x67b82b*/
+    a1[1].ptr_0 = (void *)v17.UnitTypeVector_field_0x10; /*0x67b82b*/
     UnitTypeVector_field_0x04 = (void *)v17.UnitTypeVector_field_0x04; /*0x67b82e*/
     v11 = v17.UnitTypeVector_field_0x04 == 0; /*0x67b832*/
     a1[1].Items = (void *)UnitTypeVector_field_0x14; /*0x67b834*/
@@ -10193,7 +10193,7 @@ VectorClass *__fastcall BuildingClass::LoadBuildingTypes(
     a1->Capacity = 0; /*0x67b86c*/
     a1->IsInitialized = 1; /*0x67b86f*/
     a1->IsAllocated = 0; /*0x67b873*/
-    a1->vtable0 = &VectorClass<UnitTypeClass const *>::`vftable'; /*0x67b876*/
+    a1->ptr_0 = &VectorClass<UnitTypeClass const *>::`vftable'; /*0x67b876*/
     if ( a1 != a5 ) /*0x67b87c*/
     {
       Vector::Destructor((_VectorClass_PBVUnitTypeClass *)a1); /*0x67b880*/
@@ -10225,9 +10225,9 @@ VectorClass *__fastcall BuildingClass::LoadBuildingTypes(
         a1->IsAllocated = 0; /*0x67b8cd*/
       }
     }
-    a1[1].vtable0 = a5[1].vtable0; /*0x67b8d3*/
+    a1[1].ptr_0 = a5[1].ptr_0; /*0x67b8d3*/
     a1[1].Items = a5[1].Items; /*0x67b8d9*/
-    a1->vtable0 = &TypeList<UnitTypeClass const *>::`vftable'; /*0x67b8dc*/
+    a1->ptr_0 = &TypeList<UnitTypeClass const *>::`vftable'; /*0x67b8dc*/
   }
   return a1; /*0x67b852*/
 }
@@ -10636,7 +10636,7 @@ _DWORD *__thiscall System_Load_67BFA0(ObjectClass *this, _DWORD *a2)
 {
   void *v3; // eax
   void *v4; // eax
-  void *vtable2; // ecx
+  void *ptr_8; // ecx
   int v6; // eax
 
   if ( this == (ObjectClass *)a2 ) /*0x67bfaa*/
@@ -10654,10 +10654,10 @@ _DWORD *__thiscall System_Load_67BFA0(ObjectClass *this, _DWORD *a2)
   this->? = v4; /*0x67bfcb*/
   if ( !v4 ) /*0x67bfd0*/
     return &this->AbstractClass; /*0x67bfd0*/
-  vtable2 = this->?; /*0x67bfd2*/
+  ptr_8 = this->?; /*0x67bfd2*/
   v6 = 0; /*0x67bfd5*/
   BYTE1(this->?) = 1; /*0x67bfd9*/
-  if ( (int)vtable2 <= 0 ) /*0x67bfdd*/
+  if ( (int)ptr_8 <= 0 ) /*0x67bfdd*/
     return &this->AbstractClass; /*0x67bfdd*/
   do /*0x67bff1*/
   {
@@ -11482,7 +11482,7 @@ char __fastcall SaveScenarioClassGame_AdjustMPSaveFileName(LPCCH lpMultiByteStr,
   Map_Save((ObjectClass *)v9, 1); /*0x67cf98*/
   Map_Save_6810D0((ObjectClass *)v9, *((wchar_t **)dword_A83D4C->Object_field_0x34 + 24)); /*0x67cfb1*/
   Map_Save_681110((ObjectClass *)v9, dword_A8B230[375].uniqueId); /*0x67cfca*/
-  Map_Save_681130((ObjectClass *)v9, (int)dword_A8B230[130].vtable3); /*0x67cfe2*/
+  Map_Save_681130((ObjectClass *)v9, (int)dword_A8B230[130].ptr_C); /*0x67cfe2*/
   Map_Save_6811C0((char *)v9, aSunExe); /*0x67cff3*/
   Map_Save_6812C0((ObjectClass *)v9, *(int *)&dword_A8B238); /*0x67d006*/
   CoFileTimeNow((FILETIME *)&ppstgOpen[0].ComPtr_field_0x14); /*0x67d010*/

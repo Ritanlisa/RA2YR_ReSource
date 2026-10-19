@@ -134,7 +134,7 @@ unsigned int * RadarHashVector::Construct(MapClass * aP1, MapClass * aP2, void *
   aP1->q008 = (int)(aP2); /*0x658df0*/
   LOBYTE(aP1->RadarHashVector_field_0x0C) = 1; /*0x658df3*/
   BYTE1(aP1->RadarHashVector_field_0x0C) = 0; /*0x658df7*/
-  /* X11: vtable install elided (implicit via VectorClass virtuals 0x658dfa) */
+  /* X11: ptr_0 install elided (implicit via VectorClass virtuals 0x658dfa) */
   if ( aP2 ) /*0x658e00*/
   {
     if ( a3 ) /*0x658e08*/
@@ -187,7 +187,7 @@ unsigned int * RadarHashVector::Construct(MapClass * aP1, MapClass * aP2, void *
       BYTE1(aP1->RadarHashVector_field_0x0C) = 1; /*0x658e5a*/
     }
   }
-  /* X11: vtable install elided (X67 recv-slot, RHS g_var_154625) */  /*0x658e5e*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_154625) */  /*0x658e5e*/
   aP1->q014 = 10; /*0x658e64*/
   aP1->q010 = 0; /*0x658e6b*/
   return (unsigned int *)(aP1->MapClass_field_0x0); /*0x658e70*/
@@ -285,7 +285,7 @@ char * RadarHashVector::Destructor(char a2)
       {
         v9 = (void *)*((unsigned int *)v7 - 5); /*0x658c82*/
         v7 -= 24; /*0x658c85*/
-        /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7F044C) */  /*0x658c8a*/
+        /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7F044C) */  /*0x658c8a*/
         if ( v9 && v7[13] ) /*0x658c92*/
         {
           __3_YAXPAX_Z(v9); /*0x658c98*/
@@ -304,7 +304,7 @@ char * RadarHashVector::Destructor(char a2)
   else
   {
     v11 = *&this->q004; /*0x658cc5*/
-    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7F044C) */  /*0x658ccc*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7F044C) */  /*0x658ccc*/
     if ( v11 && (((this->m_C) >> 8) & 0xFF) ) /*0x658cd4*/
     {
       __3_YAXPAX_Z(v11); /*0x658cda*/
@@ -325,7 +325,7 @@ VectorClass_flat * RadarHashVector::QueryInterface(unsigned int * Block, char a2
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x658d13*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_var_a68180) */  /*0x658d16*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_var_a68180) */  /*0x658d16*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x658d20*/
   {
     operator delete((v3)); /*0x658d28*/

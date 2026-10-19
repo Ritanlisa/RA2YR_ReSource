@@ -32,17 +32,17 @@ unsigned int GScreenClass::queueMission(int a2)
 void FoggedObjectClass_42::ClearBuffer(void *a1_1)
 {
 
-  void *vtable1; // eax
+  void *ptr_4; // eax
 
-  vtable1 = (void *)this->vtable1; /*0x4e01f6*/
+  ptr_4 = (void *)this->ptr_4; /*0x4e01f6*/
   this->Count = 0; /*0x4e01f9*/
-  if ( vtable1 && BYTE1(this->vtable3) ) /*0x4e0200*/
+  if ( ptr_4 && BYTE1(this->ptr_C) ) /*0x4e0200*/
   {
-    __3_YAXPAX_Z(vtable1); /*0x4e0206*/
-    this->vtable1 = 0; /*0x4e020e*/
+    __3_YAXPAX_Z(ptr_4); /*0x4e0206*/
+    this->ptr_4 = 0; /*0x4e020e*/
   }
-  BYTE1(this->vtable3) = 0; /*0x4e0211*/
-  this->vtable2 = 0; /*0x4e0214*/
+  BYTE1(this->ptr_C) = 0; /*0x4e0211*/
+  this->ptr_8 = 0; /*0x4e0214*/
 
 }
 

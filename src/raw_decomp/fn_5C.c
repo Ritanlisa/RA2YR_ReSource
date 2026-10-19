@@ -1408,9 +1408,9 @@ _DWORD *__thiscall MPCooperative::ctor(
   do /*0x5c14f5*/
   {
     VectorClass::Construct(MPCooperative_field_0x1A4, 0, 0); /*0x5c14dc*/
-    MPCooperative_field_0x1A4->vtable0 = &DynamicVectorClass<int>::`vftable'; /*0x5c14e1*/
+    MPCooperative_field_0x1A4->ptr_0 = &DynamicVectorClass<int>::`vftable'; /*0x5c14e1*/
     MPCooperative_field_0x1A4[1].Items = (void *)10; /*0x5c14e7*/
-    MPCooperative_field_0x1A4[1].vtable0 = 0; /*0x5c14ee*/
+    MPCooperative_field_0x1A4[1].ptr_0 = 0; /*0x5c14ee*/
     MPCooperative_field_0x1A4 = (VectorClass *)((char *)MPCooperative_field_0x1A4 + 24); /*0x5c14f1*/
     --v11; /*0x5c14f4*/
   }
@@ -1420,9 +1420,9 @@ _DWORD *__thiscall MPCooperative::ctor(
   do /*0x5c151f*/
   {
     VectorClass::Construct(p_MPCooperative_field_0x264, 0, 0); /*0x5c1506*/
-    p_MPCooperative_field_0x264->vtable0 = &DynamicVectorClass<int>::`vftable'; /*0x5c150b*/
+    p_MPCooperative_field_0x264->ptr_0 = &DynamicVectorClass<int>::`vftable'; /*0x5c150b*/
     p_MPCooperative_field_0x264[1].Items = (void *)10; /*0x5c1511*/
-    p_MPCooperative_field_0x264[1].vtable0 = 0; /*0x5c1518*/
+    p_MPCooperative_field_0x264[1].ptr_0 = 0; /*0x5c1518*/
     p_MPCooperative_field_0x264 = (VectorClass *)((char *)p_MPCooperative_field_0x264 + 24); /*0x5c151b*/
     --v13; /*0x5c151e*/
   }
@@ -3029,7 +3029,7 @@ _DWORD *__stdcall MPCooperative::selectTeam(MPCooperative *this, int a2, int a3,
   House *v10; // ecx
   int j; // eax
   void *v12; // edx
-  int vtable2; // eax
+  int ptr_8; // eax
   char v15; // bl
   void *v16; // ecx
 
@@ -3057,29 +3057,29 @@ _DWORD *__stdcall MPCooperative::selectTeam(MPCooperative *this, int a2, int a3,
   }
   if ( v5 >= v8 ) /*0x5c2e37*/
   {
-    vtable2 = (int)dword_A8B230[127].vtable2; /*0x5c2ea2*/
-    if ( *(_BYTE *)(vtable2 + a4) ) /*0x5c2ea8*/
+    ptr_8 = (int)dword_A8B230[127].ptr_8; /*0x5c2ea2*/
+    if ( *(_BYTE *)(ptr_8 + a4) ) /*0x5c2ea8*/
     {
       do /*0x5c2ebc*/
       {
-        if ( vtable2 >= *(_DWORD *)(v4 + 16) ) /*0x5c2eb3*/
+        if ( ptr_8 >= *(_DWORD *)(v4 + 16) ) /*0x5c2eb3*/
           break; /*0x5c2eb3*/
-        v15 = *(_BYTE *)(vtable2 + a4 + 1); /*0x5c2eb5*/
-        ++vtable2; /*0x5c2eb9*/
+        v15 = *(_BYTE *)(ptr_8 + a4 + 1); /*0x5c2eb5*/
+        ++ptr_8; /*0x5c2eb9*/
       }
       while ( v15 ); /*0x5c2ebc*/
     }
-    *(_BYTE *)(vtable2 + a4) = 1; /*0x5c2ec2*/
-    *(&dword_A8B230[124].uniqueId + vtable2) = a2; /*0x5c2ecc*/
-    v16 = *(void **)(*(_DWORD *)(v4 + 4) + 4 * vtable2); /*0x5c2ed8*/
+    *(_BYTE *)(ptr_8 + a4) = 1; /*0x5c2ec2*/
+    *(&dword_A8B230[124].uniqueId + ptr_8) = a2; /*0x5c2ecc*/
+    v16 = *(void **)(*(_DWORD *)(v4 + 4) + 4 * ptr_8); /*0x5c2ed8*/
     this->MPCooperative_field_0x0 = v16; /*0x5c2ee0*/
     return &this->MPCooperative_field_0x0; /*0x5c2edb*/
   }
   else
   {
-    for ( j = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, (int)dword_A8B230[127].vtable2 - 1); /*0x5c2e54*/
+    for ( j = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, (int)dword_A8B230[127].ptr_8 - 1); /*0x5c2e54*/
           *(_BYTE *)(j + a4);
-          j = (j + 1) % (int)dword_A8B230[127].vtable2 )
+          j = (j + 1) % (int)dword_A8B230[127].ptr_8 )
     {
       ; /*0x5c2e6a*/
     }
@@ -3202,14 +3202,14 @@ char __thiscall MPCooperative::BroadcastMessage(MPCooperative *this)
   signed int v2; // ebp
   CampaignClass *MPCooperative_field_0x33C; // edx
   int *MPCooperative_field_0x40; // ecx
-  int vtable2; // edi
+  int ptr_8; // edi
   _DWORD *v7; // esi
   signed int v8; // eax
   int v9; // [esp+10h] [ebp-Ch] BYREF
   signed int v10; // [esp+14h] [ebp-8h]
   int v11; // [esp+18h] [ebp-4h] BYREF
 
-  v2 = ReadPlayerCountMap(*(int *)&stru_A8B250.__pad_0[4]) - (unsigned int)dword_A8B230[127].vtable2; /*0x5c30db*/
+  v2 = ReadPlayerCountMap(*(int *)&stru_A8B250.__pad_0[4]) - (unsigned int)dword_A8B230[127].ptr_8; /*0x5c30db*/
   Debug::Log(); /*0x5c30e7*/
   if ( v2 <= 0 ) /*0x5c30f3*/
     return 0; /*0x5c30f8*/
@@ -3227,10 +3227,10 @@ char __thiscall MPCooperative::BroadcastMessage(MPCooperative *this)
     v9 = 0; /*0x5c3159*/
   if ( v9 >= *(_DWORD *)(v11 + 56) ) /*0x5c3168*/
     return 0; /*0x5c316d*/
-  vtable2 = (int)dword_A8B230[127].vtable2; /*0x5c3179*/
-  if ( vtable2 < 8 ) /*0x5c3182*/
+  ptr_8 = (int)dword_A8B230[127].ptr_8; /*0x5c3179*/
+  if ( ptr_8 < 8 ) /*0x5c3182*/
   {
-    v7 = (_DWORD *)(4 * vtable2 + 11055740); /*0x5c3188*/
+    v7 = (_DWORD *)(4 * ptr_8 + 11055740); /*0x5c3188*/
     do /*0x5c320b*/
     {
       if ( v10 >= v2 ) /*0x5c3198*/
@@ -3257,7 +3257,7 @@ char __thiscall MPCooperative::BroadcastMessage(MPCooperative *this)
         v10 = v8 + 1; /*0x5c31e7*/
       }
       ++v7; /*0x5c3201*/
-      ++vtable2; /*0x5c3204*/
+      ++ptr_8; /*0x5c3204*/
     }
     while ( (int)v7 < (int)&stru_A8B250.__pad_0[76] ); /*0x5c320b*/
   }
@@ -3783,7 +3783,7 @@ void __thiscall MPCooperative::SetGameMode(MPCooperative *this)
           break; /*0x5c409e*/
       }
       *(_DWORD *)&stru_A8B250.__pad_0[4] = i; /*0x5c40ab*/
-      dword_A8B230[130].vtable3 = (void *)i; /*0x5c40b3*/
+      dword_A8B230[130].ptr_C = (void *)i; /*0x5c40b3*/
       LoadScenarioClassByIndex(i); /*0x5c40b9*/
     }
     GameUI = (HWND)Dialog::FindGameUI(); /*0x5c40be*/
@@ -4006,9 +4006,9 @@ char __thiscall MPCooperative::UpdateMovieScore(MPCooperative *this)
   if ( v25 ) /*0x5c43bb*/
   {
     uniqueId = dword_A8B230[43].uniqueId; /*0x5c43c9*/
-    if ( dword_A8B230[43].vtable2 != (void *)-1 ) /*0x5c43d8*/
+    if ( dword_A8B230[43].ptr_8 != (void *)-1 ) /*0x5c43d8*/
     {
-      p_vtable2 = &dword_A8B230[43].vtable2; /*0x5c43cf*/
+      p_vtable2 = &dword_A8B230[43].ptr_8; /*0x5c43cf*/
       uniqueId += Timer::GetTicks() - (_DWORD)*p_vtable2; /*0x5c43e4*/
     }
     v11 = *(_DWORD *)this->MPCooperative_field_0x50; /*0x5c43f0*/
@@ -4017,9 +4017,9 @@ char __thiscall MPCooperative::UpdateMovieScore(MPCooperative *this)
   else
   {
     uniqueId = dword_A8B230[43].uniqueId; /*0x5c43fa*/
-    if ( dword_A8B230[43].vtable2 != (void *)-1 ) /*0x5c440f*/
+    if ( dword_A8B230[43].ptr_8 != (void *)-1 ) /*0x5c440f*/
     {
-      v12 = &dword_A8B230[43].vtable2; /*0x5c4400*/
+      v12 = &dword_A8B230[43].ptr_8; /*0x5c4400*/
       uniqueId += Timer::GetTicks() - (_DWORD)*v12; /*0x5c441b*/
     }
     MPCooperative_field_0x50 = this->MPCooperative_field_0x50; /*0x5c441d*/
@@ -4313,7 +4313,7 @@ int __thiscall Network::SetupRematch(MPCooperative *this)
   *(_DWORD *)&stru_A8B250.__pad_0[24] = this->MPCooperative_field_0xC0; /*0x5c497b*/
   LoadScenarioClassByIndex(*(int *)&stru_A8B250.__pad_0[4]); /*0x5c4981*/
   dword_A8EB60 = *(AudioOptionsClass *)&stru_A8B250.__pad_0[24]; /*0x5c4997*/
-  dword_A8B230[130].vtable3 = *(_DWORD *)&stru_A8B250.__pad_0[4]; /*0x5c499c*/
+  dword_A8B230[130].ptr_C = *(_DWORD *)&stru_A8B250.__pad_0[4]; /*0x5c499c*/
   switch ( *(_DWORD *)&stru_A8B250.__pad_0[24] ) /*0x5c49b0*/
   {
     case 0: /*0x5c49b0*/
@@ -5496,22 +5496,22 @@ _DWORD *__thiscall MPCooperative::applyVoteResult(MPCooperative *this, int a2, i
 // ==== 0x005C5A30  AbstractClass::updateAnimationState  this=VectorClass  sig=csp ====
 _DWORD *__thiscall AbstractClass::updateAnimationState(AbstractClass *this, int a2, int a3)
 {
-  this->vtable1 = 0; /*0x5c5a3b*/
-  this->vtable2 = (void *)a2; /*0x5c5a3e*/
-  LOBYTE(this->vtable3) = 1; /*0x5c5a41*/
-  BYTE1(this->vtable3) = 0; /*0x5c5a45*/
-  this->vtable0 = &VectorClass<NodeNameType *>::`vftable'; /*0x5c5a48*/
+  this->ptr_4 = 0; /*0x5c5a3b*/
+  this->ptr_8 = (void *)a2; /*0x5c5a3e*/
+  LOBYTE(this->ptr_C) = 1; /*0x5c5a41*/
+  BYTE1(this->ptr_C) = 0; /*0x5c5a45*/
+  this->ptr_0 = &VectorClass<NodeNameType *>::`vftable'; /*0x5c5a48*/
   if ( a2 ) /*0x5c5a4e*/
   {
     if ( a3 ) /*0x5c5a56*/
     {
-      this->vtable1 = (void *)a3; /*0x5c5a58*/
-      return &this->vtable0; /*0x5c5a5e*/
+      this->ptr_4 = (void *)a3; /*0x5c5a58*/
+      return &this->ptr_0; /*0x5c5a5e*/
     }
-    this->vtable1 = (void *)__2_YAPAXI_Z(4 * a2); /*0x5c5a6d*/
-    BYTE1(this->vtable3) = 1; /*0x5c5a70*/
+    this->ptr_4 = (void *)__2_YAPAXI_Z(4 * a2); /*0x5c5a6d*/
+    BYTE1(this->ptr_C) = 1; /*0x5c5a70*/
   }
-  return &this->vtable0; /*0x5c5a5d*/
+  return &this->ptr_0; /*0x5c5a5d*/
 }
 
 
@@ -10221,9 +10221,9 @@ int __stdcall MPScore::DlgProc(HWND hWnd, unsigned int a2, int a3, HWND a4)
   SendMessageA(v10, 0x4B2u, 0, (LPARAM)lParam); /*0x5c9c4b*/
   uniqueId = dword_A8B230[43].uniqueId; /*0x5c9c52*/
   v51 = (int *)uniqueId; /*0x5c9c5e*/
-  if ( dword_A8B230[43].vtable2 != (void *)-1 ) /*0x5c9c66*/
+  if ( dword_A8B230[43].ptr_8 != (void *)-1 ) /*0x5c9c66*/
   {
-    p_vtable2 = &dword_A8B230[43].vtable2; /*0x5c9c58*/
+    p_vtable2 = &dword_A8B230[43].ptr_8; /*0x5c9c58*/
     uniqueId = (int)v51 + Timer::GetTicks() - (_DWORD)*p_vtable2; /*0x5c9c79*/
     v51 = (int *)uniqueId; /*0x5c9c7b*/
   }
@@ -11677,7 +11677,7 @@ void *__thiscall MSShapeAnim::Constructor(
 int __thiscall TerritoryUpdateDisplayWOL(ObjectClass *this, int a2)
 {
   int *v3; // eax
-  int (__thiscall **vtable0)(ObjectClass *, _BYTE *); // edx
+  int (__thiscall **ptr_0)(ObjectClass *, _BYTE *); // edx
   int v5; // eax
   _DWORD *v6; // eax
   int result; // eax
@@ -11691,11 +11691,11 @@ int __thiscall TerritoryUpdateDisplayWOL(ObjectClass *this, int a2)
   v8 = *v3; /*0x5cb7a4*/
   v9 = v3[1]; /*0x5cb7ab*/
   v10 = v3[2]; /*0x5cb7b6*/
-  vtable0 = (int (__thiscall **)(ObjectClass *, _BYTE *))this->AbstractClass; /*0x5cb7ba*/
+  ptr_0 = (int (__thiscall **)(ObjectClass *, _BYTE *))this->AbstractClass; /*0x5cb7ba*/
   v5 = v3[3]; /*0x5cb7bc*/
   this->owningHouseIndex = a2; /*0x5cb7bf*/
   v11 = v5; /*0x5cb7c2*/
-  v6 = (_DWORD *)vtable0[6](this, v12); /*0x5cb7cd*/
+  v6 = (_DWORD *)ptr_0[6](this, v12); /*0x5cb7cd*/
   if ( v8 != *v6 || v9 != v6[1] || v10 != v6[2] || v11 != v6[3] ) /*0x5cb7f9*/
     (*((void (__thiscall **)(ObjectClass *, int *, DSurface *, int *, _DWORD, int))g_DSurface_Hidden->AbstractClass + 2))( /*0x5cb818*/
       g_DSurface_Hidden,
@@ -14298,11 +14298,11 @@ char __thiscall sub_5CE0C0(ObjectClass *this, int a2, _DWORD *a3)
   int v5; // eax
   int fallRate; // edi
   int v7; // eax
-  char *vtable1; // ebx
+  char *ptr_4; // ebx
   char *v10; // ebp
   int i; // edi
   int v12; // edx
-  void *vtable2; // ecx
+  void *ptr_8; // ecx
   int v14; // eax
   unsigned int v15; // ecx
   char *NeedsSaveOrLink; // [esp+Ch] [ebp-20h]
@@ -14348,9 +14348,9 @@ LABEL_5:
       &this->customSound_controller[1],
       0,
       1);
-  vtable1 = (char *)this->?; /*0x5ce179*/
+  ptr_4 = (char *)this->?; /*0x5ce179*/
   if ( BYTE1(this->ambientSoundController[3]) ) /*0x5ce176*/
-    vtable1 += this->ambientSoundController[4]; /*0x5ce180*/
+    ptr_4 += this->ambientSoundController[4]; /*0x5ce180*/
   NeedsSaveOrLink = (char *)this->?; /*0x5ce18b*/
   v10 = NeedsSaveOrLink + 1; /*0x5ce18c*/
   for ( i = WideString::GetChar((const wchar_t **)&this->?, (size_t)NeedsSaveOrLink); /*0x5ce198*/
@@ -14363,20 +14363,20 @@ LABEL_5:
       this->attachedTag,
       a2,
       i,
-      vtable1,
+      ptr_4,
       this->customSound_controller[0],
       this->occupant,
       0);
-    vtable1 += (*((int (__thiscall **)(TagClass *, int))this->attachedTag->AbstractClass + 1))(this->attachedTag, i); /*0x5ce1c1*/
+    ptr_4 += (*((int (__thiscall **)(TagClass *, int))this->attachedTag->AbstractClass + 1))(this->attachedTag, i); /*0x5ce1c1*/
     v17 = (size_t)v10++; /*0x5ce1c5*/
   }
   v12 = this->ambientSoundController[1]; /*0x5ce1e0*/
-  vtable2 = this->attachedTag->?; /*0x5ce1e3*/
+  ptr_8 = this->attachedTag->?; /*0x5ce1e3*/
   v19 = this->customSound_controller[0]; /*0x5ce1e6*/
   *a3 = this->attachedBomb; /*0x5ce1ee*/
   a3[1] = v19; /*0x5ce1f4*/
   a3[2] = v12; /*0x5ce1f7*/
-  a3[3] = vtable2; /*0x5ce1fa*/
+  a3[3] = ptr_8; /*0x5ce1fa*/
   if ( this->occupant == 2 ) /*0x5ce203*/
   {
     this->customSound_controller[1] = 0; /*0x5ce20b*/
@@ -14443,7 +14443,7 @@ int __thiscall sub_5CE330(ObjectClass *this, const wchar_t **a2)
 {
   int v3; // ebp
   size_t v4; // esi
-  int (__thiscall **vtable0)(TagClass *, int); // ebp
+  int (__thiscall **ptr_0)(TagClass *, int); // ebp
   int Char; // eax
   int i; // [esp+Ch] [ebp-4h]
 
@@ -14453,9 +14453,9 @@ int __thiscall sub_5CE330(ObjectClass *this, const wchar_t **a2)
   {
     if ( (unsigned __int16)WideString::GetChar(a2, v4) == 10 ) /*0x5ce35c*/
       break; /*0x5ce35c*/
-    vtable0 = (int (__thiscall **)(TagClass *, int))this->attachedTag->AbstractClass; /*0x5ce364*/
+    ptr_0 = (int (__thiscall **)(TagClass *, int))this->attachedTag->AbstractClass; /*0x5ce364*/
     Char = WideString::GetChar(a2, v4); /*0x5ce366*/
-    v3 = vtable0[1](this->attachedTag, Char) + i; /*0x5ce378*/
+    v3 = ptr_0[1](this->attachedTag, Char) + i; /*0x5ce378*/
     ++v4; /*0x5ce37a*/
   }
   return v3; /*0x5ce38d*/
@@ -14469,15 +14469,15 @@ int __thiscall sub_5CE3A0(ObjectClass *this, int a2, int *a3)
   _DWORD *v4; // ecx
   int result; // eax
   int v6; // ecx
-  int *vtable2; // ebp
-  char *vtable1; // ebx
+  int *ptr_8; // ebp
+  char *ptr_4; // ebx
   size_t v9; // edi
   int (__thiscall **v10)(TagClass *, int); // ebp
   int v11; // eax
   int v12; // eax
   int Char; // [esp-Ch] [ebp-4Ch]
   void *v14; // [esp+18h] [ebp-28h]
-  void (__thiscall **vtable0)(TagClass *, int, int, void *, void *, int, int); // [esp+18h] [ebp-28h]
+  void (__thiscall **ptr_0)(TagClass *, int, int, void *, void *, int, int); // [esp+18h] [ebp-28h]
   unsigned int i; // [esp+1Ch] [ebp-24h]
   _DWORD v17[4]; // [esp+30h] [ebp-10h] BYREF
   int *v18; // [esp+48h] [ebp+8h]
@@ -14487,32 +14487,32 @@ int __thiscall sub_5CE3A0(ObjectClass *this, int a2, int *a3)
     && v6 > 0 )
   {
     result = (int)this->?; /*0x5ce3e7*/
-    vtable2 = (int *)this->?; /*0x5ce3ea*/
-    vtable1 = (char *)this->?; /*0x5ce3ed*/
+    ptr_8 = (int *)this->?; /*0x5ce3ea*/
+    ptr_4 = (char *)this->?; /*0x5ce3ed*/
     v9 = 0; /*0x5ce3f0*/
-    v18 = vtable2; /*0x5ce3f4*/
+    v18 = ptr_8; /*0x5ce3f4*/
     for ( i = result; v9 < i; ++v9 ) /*0x5ce3fc*/
     {
       if ( (unsigned __int16)WideString::GetChar((const wchar_t **)&this->?, v9) == 10 ) /*0x5ce40f*/
       {
-        vtable1 = (char *)this->?; /*0x5ce414*/
-        vtable2 = (int *)((char *)vtable2 + (unsigned int)this->attachedTag->?); /*0x5ce41e*/
+        ptr_4 = (char *)this->?; /*0x5ce414*/
+        ptr_8 = (int *)((char *)ptr_8 + (unsigned int)this->attachedTag->?); /*0x5ce41e*/
         v14 = this->attachedTag->?; /*0x5ce420*/
-        v18 = vtable2; /*0x5ce426*/
+        v18 = ptr_8; /*0x5ce426*/
         result = (*(int (__thiscall **)(int))(*(_DWORD *)a2 + 128))(a2); /*0x5ce42a*/
-        if ( (int)v14 + (int)vtable2 >= result ) /*0x5ce438*/
+        if ( (int)v14 + (int)ptr_8 >= result ) /*0x5ce438*/
           return result; /*0x5ce438*/
       }
       else
       {
-        vtable0 = (void (__thiscall **)(TagClass *, int, int, void *, void *, int, int))this->attachedTag->AbstractClass; /*0x5ce44b*/
+        ptr_0 = (void (__thiscall **)(TagClass *, int, int, void *, void *, int, int))this->attachedTag->AbstractClass; /*0x5ce44b*/
         Char = WideString::GetChar((const wchar_t **)&this->?, v9); /*0x5ce45b*/
-        vtable0[4](this->attachedTag, a2, Char, vtable1, vtable2, 2, 1); /*0x5ce461*/
+        ptr_0[4](this->attachedTag, a2, Char, ptr_4, ptr_8, 2, 1); /*0x5ce461*/
         v10 = (int (__thiscall **)(TagClass *, int))this->attachedTag->AbstractClass; /*0x5ce46b*/
         v11 = WideString::GetChar((const wchar_t **)&this->?, v9); /*0x5ce46d*/
         v12 = v10[1](this->attachedTag, v11); /*0x5ce476*/
-        vtable2 = v18; /*0x5ce479*/
-        vtable1 += v12; /*0x5ce47d*/
+        ptr_8 = v18; /*0x5ce479*/
+        ptr_4 += v12; /*0x5ce47d*/
       }
       result = i; /*0x5ce47f*/
     }
@@ -17412,9 +17412,9 @@ _DWORD *__thiscall MPCooperative::ctor(
   do /*0x5c14f5*/
   {
     VectorClass::Construct(MPCooperative_field_0x1A4, 0, 0); /*0x5c14dc*/
-    MPCooperative_field_0x1A4->vtable0 = &DynamicVectorClass<int>::`vftable'; /*0x5c14e1*/
+    MPCooperative_field_0x1A4->ptr_0 = &DynamicVectorClass<int>::`vftable'; /*0x5c14e1*/
     MPCooperative_field_0x1A4[1].Items = (void *)10; /*0x5c14e7*/
-    MPCooperative_field_0x1A4[1].vtable0 = 0; /*0x5c14ee*/
+    MPCooperative_field_0x1A4[1].ptr_0 = 0; /*0x5c14ee*/
     MPCooperative_field_0x1A4 = (VectorClass *)((char *)MPCooperative_field_0x1A4 + 24); /*0x5c14f1*/
     --v11; /*0x5c14f4*/
   }
@@ -17424,9 +17424,9 @@ _DWORD *__thiscall MPCooperative::ctor(
   do /*0x5c151f*/
   {
     VectorClass::Construct(p_MPCooperative_field_0x264, 0, 0); /*0x5c1506*/
-    p_MPCooperative_field_0x264->vtable0 = &DynamicVectorClass<int>::`vftable'; /*0x5c150b*/
+    p_MPCooperative_field_0x264->ptr_0 = &DynamicVectorClass<int>::`vftable'; /*0x5c150b*/
     p_MPCooperative_field_0x264[1].Items = (void *)10; /*0x5c1511*/
-    p_MPCooperative_field_0x264[1].vtable0 = 0; /*0x5c1518*/
+    p_MPCooperative_field_0x264[1].ptr_0 = 0; /*0x5c1518*/
     p_MPCooperative_field_0x264 = (VectorClass *)((char *)p_MPCooperative_field_0x264 + 24); /*0x5c151b*/
     --v13; /*0x5c151e*/
   }
@@ -19033,7 +19033,7 @@ _DWORD *__stdcall MPCooperative::selectTeam(MPCooperative *this, int a2, int a3,
   House *v10; // ecx
   int j; // eax
   void *v12; // edx
-  int vtable2; // eax
+  int ptr_8; // eax
   char v15; // bl
   void *v16; // ecx
 
@@ -19061,29 +19061,29 @@ _DWORD *__stdcall MPCooperative::selectTeam(MPCooperative *this, int a2, int a3,
   }
   if ( v5 >= v8 ) /*0x5c2e37*/
   {
-    vtable2 = (int)dword_A8B230[127].vtable2; /*0x5c2ea2*/
-    if ( *(_BYTE *)(vtable2 + a4) ) /*0x5c2ea8*/
+    ptr_8 = (int)dword_A8B230[127].ptr_8; /*0x5c2ea2*/
+    if ( *(_BYTE *)(ptr_8 + a4) ) /*0x5c2ea8*/
     {
       do /*0x5c2ebc*/
       {
-        if ( vtable2 >= *(_DWORD *)(v4 + 16) ) /*0x5c2eb3*/
+        if ( ptr_8 >= *(_DWORD *)(v4 + 16) ) /*0x5c2eb3*/
           break; /*0x5c2eb3*/
-        v15 = *(_BYTE *)(vtable2 + a4 + 1); /*0x5c2eb5*/
-        ++vtable2; /*0x5c2eb9*/
+        v15 = *(_BYTE *)(ptr_8 + a4 + 1); /*0x5c2eb5*/
+        ++ptr_8; /*0x5c2eb9*/
       }
       while ( v15 ); /*0x5c2ebc*/
     }
-    *(_BYTE *)(vtable2 + a4) = 1; /*0x5c2ec2*/
-    *(&dword_A8B230[124].uniqueId + vtable2) = a2; /*0x5c2ecc*/
-    v16 = *(void **)(*(_DWORD *)(v4 + 4) + 4 * vtable2); /*0x5c2ed8*/
+    *(_BYTE *)(ptr_8 + a4) = 1; /*0x5c2ec2*/
+    *(&dword_A8B230[124].uniqueId + ptr_8) = a2; /*0x5c2ecc*/
+    v16 = *(void **)(*(_DWORD *)(v4 + 4) + 4 * ptr_8); /*0x5c2ed8*/
     this->MPCooperative_field_0x0 = v16; /*0x5c2ee0*/
     return &this->MPCooperative_field_0x0; /*0x5c2edb*/
   }
   else
   {
-    for ( j = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, (int)dword_A8B230[127].vtable2 - 1); /*0x5c2e54*/
+    for ( j = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, (int)dword_A8B230[127].ptr_8 - 1); /*0x5c2e54*/
           *(_BYTE *)(j + a4);
-          j = (j + 1) % (int)dword_A8B230[127].vtable2 )
+          j = (j + 1) % (int)dword_A8B230[127].ptr_8 )
     {
       ; /*0x5c2e6a*/
     }
@@ -19206,14 +19206,14 @@ char __thiscall MPCooperative::BroadcastMessage(MPCooperative *this)
   signed int v2; // ebp
   CampaignClass *MPCooperative_field_0x33C; // edx
   int *MPCooperative_field_0x40; // ecx
-  int vtable2; // edi
+  int ptr_8; // edi
   _DWORD *v7; // esi
   signed int v8; // eax
   int v9; // [esp+10h] [ebp-Ch] BYREF
   signed int v10; // [esp+14h] [ebp-8h]
   int v11; // [esp+18h] [ebp-4h] BYREF
 
-  v2 = ReadPlayerCountMap(*(int *)&stru_A8B250.__pad_0[4]) - (unsigned int)dword_A8B230[127].vtable2; /*0x5c30db*/
+  v2 = ReadPlayerCountMap(*(int *)&stru_A8B250.__pad_0[4]) - (unsigned int)dword_A8B230[127].ptr_8; /*0x5c30db*/
   Debug::Log(); /*0x5c30e7*/
   if ( v2 <= 0 ) /*0x5c30f3*/
     return 0; /*0x5c30f8*/
@@ -19231,10 +19231,10 @@ char __thiscall MPCooperative::BroadcastMessage(MPCooperative *this)
     v9 = 0; /*0x5c3159*/
   if ( v9 >= *(_DWORD *)(v11 + 56) ) /*0x5c3168*/
     return 0; /*0x5c316d*/
-  vtable2 = (int)dword_A8B230[127].vtable2; /*0x5c3179*/
-  if ( vtable2 < 8 ) /*0x5c3182*/
+  ptr_8 = (int)dword_A8B230[127].ptr_8; /*0x5c3179*/
+  if ( ptr_8 < 8 ) /*0x5c3182*/
   {
-    v7 = (_DWORD *)(4 * vtable2 + 11055740); /*0x5c3188*/
+    v7 = (_DWORD *)(4 * ptr_8 + 11055740); /*0x5c3188*/
     do /*0x5c320b*/
     {
       if ( v10 >= v2 ) /*0x5c3198*/
@@ -19261,7 +19261,7 @@ char __thiscall MPCooperative::BroadcastMessage(MPCooperative *this)
         v10 = v8 + 1; /*0x5c31e7*/
       }
       ++v7; /*0x5c3201*/
-      ++vtable2; /*0x5c3204*/
+      ++ptr_8; /*0x5c3204*/
     }
     while ( (int)v7 < (int)&stru_A8B250.__pad_0[76] ); /*0x5c320b*/
   }
@@ -19787,7 +19787,7 @@ void __thiscall MPCooperative::SetGameMode(MPCooperative *this)
           break; /*0x5c409e*/
       }
       *(_DWORD *)&stru_A8B250.__pad_0[4] = i; /*0x5c40ab*/
-      dword_A8B230[130].vtable3 = (void *)i; /*0x5c40b3*/
+      dword_A8B230[130].ptr_C = (void *)i; /*0x5c40b3*/
       LoadScenarioClassByIndex(i); /*0x5c40b9*/
     }
     GameUI = (HWND)Dialog::FindGameUI(); /*0x5c40be*/
@@ -20010,9 +20010,9 @@ char __thiscall MPCooperative::UpdateMovieScore(MPCooperative *this)
   if ( v25 ) /*0x5c43bb*/
   {
     uniqueId = dword_A8B230[43].uniqueId; /*0x5c43c9*/
-    if ( dword_A8B230[43].vtable2 != (void *)-1 ) /*0x5c43d8*/
+    if ( dword_A8B230[43].ptr_8 != (void *)-1 ) /*0x5c43d8*/
     {
-      p_vtable2 = &dword_A8B230[43].vtable2; /*0x5c43cf*/
+      p_vtable2 = &dword_A8B230[43].ptr_8; /*0x5c43cf*/
       uniqueId += Timer::GetTicks() - (_DWORD)*p_vtable2; /*0x5c43e4*/
     }
     v11 = *(_DWORD *)this->MPCooperative_field_0x50; /*0x5c43f0*/
@@ -20021,9 +20021,9 @@ char __thiscall MPCooperative::UpdateMovieScore(MPCooperative *this)
   else
   {
     uniqueId = dword_A8B230[43].uniqueId; /*0x5c43fa*/
-    if ( dword_A8B230[43].vtable2 != (void *)-1 ) /*0x5c440f*/
+    if ( dword_A8B230[43].ptr_8 != (void *)-1 ) /*0x5c440f*/
     {
-      v12 = &dword_A8B230[43].vtable2; /*0x5c4400*/
+      v12 = &dword_A8B230[43].ptr_8; /*0x5c4400*/
       uniqueId += Timer::GetTicks() - (_DWORD)*v12; /*0x5c441b*/
     }
     MPCooperative_field_0x50 = this->MPCooperative_field_0x50; /*0x5c441d*/
@@ -20317,7 +20317,7 @@ int __thiscall Network::SetupRematch(MPCooperative *this)
   *(_DWORD *)&stru_A8B250.__pad_0[24] = this->MPCooperative_field_0xC0; /*0x5c497b*/
   LoadScenarioClassByIndex(*(int *)&stru_A8B250.__pad_0[4]); /*0x5c4981*/
   dword_A8EB60 = *(AudioOptionsClass *)&stru_A8B250.__pad_0[24]; /*0x5c4997*/
-  dword_A8B230[130].vtable3 = *(_DWORD *)&stru_A8B250.__pad_0[4]; /*0x5c499c*/
+  dword_A8B230[130].ptr_C = *(_DWORD *)&stru_A8B250.__pad_0[4]; /*0x5c499c*/
   switch ( *(_DWORD *)&stru_A8B250.__pad_0[24] ) /*0x5c49b0*/
   {
     case 0: /*0x5c49b0*/
@@ -21500,22 +21500,22 @@ _DWORD *__thiscall MPCooperative::applyVoteResult(MPCooperative *this, int a2, i
 // ==== 0x005C5A30  AbstractClass::updateAnimationState  this=VectorClass  sig=csp ====
 _DWORD *__thiscall AbstractClass::updateAnimationState(AbstractClass *this, int a2, int a3)
 {
-  this->vtable1 = 0; /*0x5c5a3b*/
-  this->vtable2 = (void *)a2; /*0x5c5a3e*/
-  LOBYTE(this->vtable3) = 1; /*0x5c5a41*/
-  BYTE1(this->vtable3) = 0; /*0x5c5a45*/
-  this->vtable0 = &VectorClass<NodeNameType *>::`vftable'; /*0x5c5a48*/
+  this->ptr_4 = 0; /*0x5c5a3b*/
+  this->ptr_8 = (void *)a2; /*0x5c5a3e*/
+  LOBYTE(this->ptr_C) = 1; /*0x5c5a41*/
+  BYTE1(this->ptr_C) = 0; /*0x5c5a45*/
+  this->ptr_0 = &VectorClass<NodeNameType *>::`vftable'; /*0x5c5a48*/
   if ( a2 ) /*0x5c5a4e*/
   {
     if ( a3 ) /*0x5c5a56*/
     {
-      this->vtable1 = (void *)a3; /*0x5c5a58*/
-      return &this->vtable0; /*0x5c5a5e*/
+      this->ptr_4 = (void *)a3; /*0x5c5a58*/
+      return &this->ptr_0; /*0x5c5a5e*/
     }
-    this->vtable1 = (void *)__2_YAPAXI_Z(4 * a2); /*0x5c5a6d*/
-    BYTE1(this->vtable3) = 1; /*0x5c5a70*/
+    this->ptr_4 = (void *)__2_YAPAXI_Z(4 * a2); /*0x5c5a6d*/
+    BYTE1(this->ptr_C) = 1; /*0x5c5a70*/
   }
-  return &this->vtable0; /*0x5c5a5d*/
+  return &this->ptr_0; /*0x5c5a5d*/
 }
 
 
@@ -26225,9 +26225,9 @@ int __stdcall MPScore::DlgProc(HWND hWnd, unsigned int a2, int a3, HWND a4)
   SendMessageA(v10, 0x4B2u, 0, (LPARAM)lParam); /*0x5c9c4b*/
   uniqueId = dword_A8B230[43].uniqueId; /*0x5c9c52*/
   v51 = (int *)uniqueId; /*0x5c9c5e*/
-  if ( dword_A8B230[43].vtable2 != (void *)-1 ) /*0x5c9c66*/
+  if ( dword_A8B230[43].ptr_8 != (void *)-1 ) /*0x5c9c66*/
   {
-    p_vtable2 = &dword_A8B230[43].vtable2; /*0x5c9c58*/
+    p_vtable2 = &dword_A8B230[43].ptr_8; /*0x5c9c58*/
     uniqueId = (int)v51 + Timer::GetTicks() - (_DWORD)*p_vtable2; /*0x5c9c79*/
     v51 = (int *)uniqueId; /*0x5c9c7b*/
   }
@@ -27681,7 +27681,7 @@ void *__thiscall MSShapeAnim::Constructor(
 int __thiscall TerritoryUpdateDisplayWOL(ObjectClass *this, int a2)
 {
   int *v3; // eax
-  int (__thiscall **vtable0)(ObjectClass *, _BYTE *); // edx
+  int (__thiscall **ptr_0)(ObjectClass *, _BYTE *); // edx
   int v5; // eax
   _DWORD *v6; // eax
   int result; // eax
@@ -27695,11 +27695,11 @@ int __thiscall TerritoryUpdateDisplayWOL(ObjectClass *this, int a2)
   v8 = *v3; /*0x5cb7a4*/
   v9 = v3[1]; /*0x5cb7ab*/
   v10 = v3[2]; /*0x5cb7b6*/
-  vtable0 = (int (__thiscall **)(ObjectClass *, _BYTE *))this->AbstractClass; /*0x5cb7ba*/
+  ptr_0 = (int (__thiscall **)(ObjectClass *, _BYTE *))this->AbstractClass; /*0x5cb7ba*/
   v5 = v3[3]; /*0x5cb7bc*/
   this->owningHouseIndex = a2; /*0x5cb7bf*/
   v11 = v5; /*0x5cb7c2*/
-  v6 = (_DWORD *)vtable0[6](this, v12); /*0x5cb7cd*/
+  v6 = (_DWORD *)ptr_0[6](this, v12); /*0x5cb7cd*/
   if ( v8 != *v6 || v9 != v6[1] || v10 != v6[2] || v11 != v6[3] ) /*0x5cb7f9*/
     (*((void (__thiscall **)(ObjectClass *, int *, DSurface *, int *, _DWORD, int))g_DSurface_Hidden->AbstractClass + 2))( /*0x5cb818*/
       g_DSurface_Hidden,
@@ -30302,11 +30302,11 @@ char __thiscall sub_5CE0C0(ObjectClass *this, int a2, _DWORD *a3)
   int v5; // eax
   int fallRate; // edi
   int v7; // eax
-  char *vtable1; // ebx
+  char *ptr_4; // ebx
   char *v10; // ebp
   int i; // edi
   int v12; // edx
-  void *vtable2; // ecx
+  void *ptr_8; // ecx
   int v14; // eax
   unsigned int v15; // ecx
   char *NeedsSaveOrLink; // [esp+Ch] [ebp-20h]
@@ -30352,9 +30352,9 @@ LABEL_5:
       &this->customSound_controller[1],
       0,
       1);
-  vtable1 = (char *)this->?; /*0x5ce179*/
+  ptr_4 = (char *)this->?; /*0x5ce179*/
   if ( BYTE1(this->ambientSoundController[3]) ) /*0x5ce176*/
-    vtable1 += this->ambientSoundController[4]; /*0x5ce180*/
+    ptr_4 += this->ambientSoundController[4]; /*0x5ce180*/
   NeedsSaveOrLink = (char *)this->?; /*0x5ce18b*/
   v10 = NeedsSaveOrLink + 1; /*0x5ce18c*/
   for ( i = WideString::GetChar((const wchar_t **)&this->?, (size_t)NeedsSaveOrLink); /*0x5ce198*/
@@ -30367,20 +30367,20 @@ LABEL_5:
       this->attachedTag,
       a2,
       i,
-      vtable1,
+      ptr_4,
       this->customSound_controller[0],
       this->occupant,
       0);
-    vtable1 += (*((int (__thiscall **)(TagClass *, int))this->attachedTag->AbstractClass + 1))(this->attachedTag, i); /*0x5ce1c1*/
+    ptr_4 += (*((int (__thiscall **)(TagClass *, int))this->attachedTag->AbstractClass + 1))(this->attachedTag, i); /*0x5ce1c1*/
     v17 = (size_t)v10++; /*0x5ce1c5*/
   }
   v12 = this->ambientSoundController[1]; /*0x5ce1e0*/
-  vtable2 = this->attachedTag->?; /*0x5ce1e3*/
+  ptr_8 = this->attachedTag->?; /*0x5ce1e3*/
   v19 = this->customSound_controller[0]; /*0x5ce1e6*/
   *a3 = this->attachedBomb; /*0x5ce1ee*/
   a3[1] = v19; /*0x5ce1f4*/
   a3[2] = v12; /*0x5ce1f7*/
-  a3[3] = vtable2; /*0x5ce1fa*/
+  a3[3] = ptr_8; /*0x5ce1fa*/
   if ( this->occupant == 2 ) /*0x5ce203*/
   {
     this->customSound_controller[1] = 0; /*0x5ce20b*/
@@ -30447,7 +30447,7 @@ int __thiscall sub_5CE330(ObjectClass *this, const wchar_t **a2)
 {
   int v3; // ebp
   size_t v4; // esi
-  int (__thiscall **vtable0)(TagClass *, int); // ebp
+  int (__thiscall **ptr_0)(TagClass *, int); // ebp
   int Char; // eax
   int i; // [esp+Ch] [ebp-4h]
 
@@ -30457,9 +30457,9 @@ int __thiscall sub_5CE330(ObjectClass *this, const wchar_t **a2)
   {
     if ( (unsigned __int16)WideString::GetChar(a2, v4) == 10 ) /*0x5ce35c*/
       break; /*0x5ce35c*/
-    vtable0 = (int (__thiscall **)(TagClass *, int))this->attachedTag->AbstractClass; /*0x5ce364*/
+    ptr_0 = (int (__thiscall **)(TagClass *, int))this->attachedTag->AbstractClass; /*0x5ce364*/
     Char = WideString::GetChar(a2, v4); /*0x5ce366*/
-    v3 = vtable0[1](this->attachedTag, Char) + i; /*0x5ce378*/
+    v3 = ptr_0[1](this->attachedTag, Char) + i; /*0x5ce378*/
     ++v4; /*0x5ce37a*/
   }
   return v3; /*0x5ce38d*/
@@ -30473,15 +30473,15 @@ int __thiscall sub_5CE3A0(ObjectClass *this, int a2, int *a3)
   _DWORD *v4; // ecx
   int result; // eax
   int v6; // ecx
-  int *vtable2; // ebp
-  char *vtable1; // ebx
+  int *ptr_8; // ebp
+  char *ptr_4; // ebx
   size_t v9; // edi
   int (__thiscall **v10)(TagClass *, int); // ebp
   int v11; // eax
   int v12; // eax
   int Char; // [esp-Ch] [ebp-4Ch]
   void *v14; // [esp+18h] [ebp-28h]
-  void (__thiscall **vtable0)(TagClass *, int, int, void *, void *, int, int); // [esp+18h] [ebp-28h]
+  void (__thiscall **ptr_0)(TagClass *, int, int, void *, void *, int, int); // [esp+18h] [ebp-28h]
   unsigned int i; // [esp+1Ch] [ebp-24h]
   _DWORD v17[4]; // [esp+30h] [ebp-10h] BYREF
   int *v18; // [esp+48h] [ebp+8h]
@@ -30491,32 +30491,32 @@ int __thiscall sub_5CE3A0(ObjectClass *this, int a2, int *a3)
     && v6 > 0 )
   {
     result = (int)this->?; /*0x5ce3e7*/
-    vtable2 = (int *)this->?; /*0x5ce3ea*/
-    vtable1 = (char *)this->?; /*0x5ce3ed*/
+    ptr_8 = (int *)this->?; /*0x5ce3ea*/
+    ptr_4 = (char *)this->?; /*0x5ce3ed*/
     v9 = 0; /*0x5ce3f0*/
-    v18 = vtable2; /*0x5ce3f4*/
+    v18 = ptr_8; /*0x5ce3f4*/
     for ( i = result; v9 < i; ++v9 ) /*0x5ce3fc*/
     {
       if ( (unsigned __int16)WideString::GetChar((const wchar_t **)&this->?, v9) == 10 ) /*0x5ce40f*/
       {
-        vtable1 = (char *)this->?; /*0x5ce414*/
-        vtable2 = (int *)((char *)vtable2 + (unsigned int)this->attachedTag->?); /*0x5ce41e*/
+        ptr_4 = (char *)this->?; /*0x5ce414*/
+        ptr_8 = (int *)((char *)ptr_8 + (unsigned int)this->attachedTag->?); /*0x5ce41e*/
         v14 = this->attachedTag->?; /*0x5ce420*/
-        v18 = vtable2; /*0x5ce426*/
+        v18 = ptr_8; /*0x5ce426*/
         result = (*(int (__thiscall **)(int))(*(_DWORD *)a2 + 128))(a2); /*0x5ce42a*/
-        if ( (int)v14 + (int)vtable2 >= result ) /*0x5ce438*/
+        if ( (int)v14 + (int)ptr_8 >= result ) /*0x5ce438*/
           return result; /*0x5ce438*/
       }
       else
       {
-        vtable0 = (void (__thiscall **)(TagClass *, int, int, void *, void *, int, int))this->attachedTag->AbstractClass; /*0x5ce44b*/
+        ptr_0 = (void (__thiscall **)(TagClass *, int, int, void *, void *, int, int))this->attachedTag->AbstractClass; /*0x5ce44b*/
         Char = WideString::GetChar((const wchar_t **)&this->?, v9); /*0x5ce45b*/
-        vtable0[4](this->attachedTag, a2, Char, vtable1, vtable2, 2, 1); /*0x5ce461*/
+        ptr_0[4](this->attachedTag, a2, Char, ptr_4, ptr_8, 2, 1); /*0x5ce461*/
         v10 = (int (__thiscall **)(TagClass *, int))this->attachedTag->AbstractClass; /*0x5ce46b*/
         v11 = WideString::GetChar((const wchar_t **)&this->?, v9); /*0x5ce46d*/
         v12 = v10[1](this->attachedTag, v11); /*0x5ce476*/
-        vtable2 = v18; /*0x5ce479*/
-        vtable1 += v12; /*0x5ce47d*/
+        ptr_8 = v18; /*0x5ce479*/
+        ptr_4 += v12; /*0x5ce47d*/
       }
       result = i; /*0x5ce47f*/
     }

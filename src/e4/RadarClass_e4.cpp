@@ -34,7 +34,7 @@ CampaignClass * RadarClass::Destruct(void *a1)
 {
 
 
-  /* X11: vtable install elided (implicit via RadarClass virtuals 0x652c0c) */
+  /* X11: ptr_0 install elided (implicit via RadarClass virtuals 0x652c0c) */
   AudioFileClass::Release(&this->RadarSoundChannel); /*0x652c12*/
   TacticalClass::FreeResources((TacticalClass *)this); /*0x652c19*/
   MapClass **p_RadarClass_field_0x1488 = &this->radarSizeFactor; // esi /*0x652c1e*/
@@ -44,7 +44,7 @@ CampaignClass * RadarClass::Destruct(void *a1)
     void *v4; // eax
     v4 = *(p_RadarClass_field_0x1488 - 5); /*0x652c2b*/
     p_RadarClass_field_0x1488 -= 6; /*0x652c2e*/
-    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x652c33*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x652c33*/
     if ( v4 && p_RadarClass_field_0x1488->IsAllocated ) /*0x652c3b*/
     {
       __3_YAXPAX_Z(v4); /*0x652c41*/
@@ -56,7 +56,7 @@ CampaignClass * RadarClass::Destruct(void *a1)
   }
   while ( v3 ); /*0x652c53*/
   CampaignClass *RadarClass_field_0x1260 = this->ptr_1260; // eax /*0x652c55*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x652c5b*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x652c5b*/
   if ( RadarClass_field_0x1260 && this->u8_1269 ) /*0x652c69*/
   {
     __3_YAXPAX_Z(RadarClass_field_0x1260); /*0x652c72*/
@@ -66,7 +66,7 @@ CampaignClass * RadarClass::Destruct(void *a1)
   *(unsigned int *)this->__pad_1264 = 0; /*0x652c86*/
   CampaignClass *RadarClass_field_0x1228; // eax
   RadarClass_field_0x1228 = this->RadarClass_field_0x1228; /*0x652c8c*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x652c92*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x652c92*/
   if ( RadarClass_field_0x1228 && this->u8_1231 ) /*0x652ca0*/
   {
     __3_YAXPAX_Z(RadarClass_field_0x1228); /*0x652ca9*/
@@ -375,7 +375,7 @@ unsigned int * RadarClass::initRadarSurface()
   this->__pad_004 = 0; /*0x4f4224*/
   this->q008 = 0; /*0x4f4227*/
   *(unsigned int *)this->u32_C = 2; /*0x4f422a*/
-  /* X11: vtable install elided (implicit via off_7EA6FC virtuals 0x4f4231) */
+  /* X11: ptr_0 install elided (implicit via off_7EA6FC virtuals 0x4f4231) */
   return &this->ptr_0; /*0x4f4237*/
 
 }

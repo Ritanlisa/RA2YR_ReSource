@@ -107,14 +107,14 @@ char __stdcall ProcessJumpjetMotion(DriveLocomotionClass *this)
   {
     movementDestination = v1->?->movementDestination; /*0x4b066f*/
     if ( movementDestination /*0x4b06ad*/
-      && (*((int (__thiscall **)(AbstractClass *))movementDestination->vtable0 + 11))(movementDestination) == 11
+      && (*((int (__thiscall **)(AbstractClass *))movementDestination->ptr_0 + 11))(movementDestination) == 11
       && (v12 = v1->?,
           v13 = v12->movementDestination + 1,
           v14 = (_WORD *)(*((int (__thiscall **)(FootClass *, DriveLocomotionClass **))v12->TechnoClass + 110))(
                            v12,
                            &this),
-          *v14 == LOWORD(v13->vtable0))
-      && v14[1] == HIWORD(v13->vtable0) )
+          *v14 == LOWORD(v13->ptr_0))
+      && v14[1] == HIWORD(v13->ptr_0) )
     {
       v15 = (FootClass *)*((_DWORD *)v2 + 3); /*0x4b06af*/
       if ( !*(_DWORD *)&v15->__pad_58C[12] ) /*0x4b06b2*/
@@ -170,7 +170,7 @@ char __stdcall ProcessJumpjetMotion(DriveLocomotionClass *this)
               v24 = v23->movementDestination; /*0x4b0971*/
               if ( v24 ) /*0x4b0979*/
               {
-                v25 = (_DWORD *)(*((int (__thiscall **)(AbstractClass *, int *, FootClass *))v24->vtable0 + 19))( /*0x4b0987*/
+                v25 = (_DWORD *)(*((int (__thiscall **)(AbstractClass *, int *, FootClass *))v24->ptr_0 + 19))( /*0x4b0987*/
                                   v24,
                                   &v30,
                                   v1->?);
@@ -252,9 +252,9 @@ LABEL_27:
       v6 = v1->?->movementDestination; /*0x4b05e4*/
       if ( v6 ) /*0x4b05ec*/
       {
-        if ( (*((int (__thiscall **)(AbstractClass *))v6->vtable0 + 11))(v6) == 15 ) /*0x4b05f6*/
+        if ( (*((int (__thiscall **)(AbstractClass *))v6->ptr_0 + 11))(v6) == 15 ) /*0x4b05f6*/
         {
-          v7 = (int *)(*((int (__thiscall **)(AbstractClass *, int *, FootClass *))v1->?->movementDestination->vtable0 /*0x4b060f*/
+          v7 = (int *)(*((int (__thiscall **)(AbstractClass *, int *, FootClass *))v1->?->movementDestination->ptr_0 /*0x4b060f*/
                        + 19))(
                         v1->?->movementDestination,
                         &v30,
@@ -501,7 +501,7 @@ char __thiscall sub_4B0DF0(ObjectClass *this, _DWORD *a2)
   int v5; // eax
   int v6; // eax
   CellClass *v7; // eax
-  void *vtable3; // [esp-4h] [ebp-10h]
+  void *ptr_C; // [esp-4h] [ebp-10h]
 
   v2 = g_DDraw_ClipRect; /*0x4b0df1*/
   v4 = &this->ambientSoundController[1]; /*0x4b0dfd*/
@@ -522,9 +522,9 @@ char __thiscall sub_4B0DF0(ObjectClass *this, _DWORD *a2)
     v6 = a2[2]; /*0x4b0e6d*/
     HIBYTE(this->customSound_controller[4]) = 1; /*0x4b0e70*/
     this->ambientSoundController[3] = v6; /*0x4b0e74*/
-    vtable3 = this->?; /*0x4b0e7a*/
+    ptr_C = this->?; /*0x4b0e7a*/
     v7 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], a2); /*0x4b0e81*/
-    if ( (unsigned __int8)CrateClass::ProcessPickup((CrateClass *)v7, (int)vtable3) && !*((_BYTE *)this->? + 129) ) /*0x4b0e94*/
+    if ( (unsigned __int8)CrateClass::ProcessPickup((CrateClass *)v7, (int)ptr_C) && !*((_BYTE *)this->? + 129) ) /*0x4b0e94*/
     {
       JumpjetLocomotion::MoveTo((int)this, a2, 1); /*0x4b0ea3*/
       return 1; /*0x4b0ead*/
@@ -1645,7 +1645,7 @@ _DWORD *__thiscall sub_4B5830(ObjectClass *this, _DWORD *a2)
 {
   void *v3; // eax
   void *v4; // eax
-  void *vtable2; // ecx
+  void *ptr_8; // ecx
   int v6; // eax
 
   if ( this == (ObjectClass *)a2 ) /*0x4b583a*/
@@ -1663,10 +1663,10 @@ _DWORD *__thiscall sub_4B5830(ObjectClass *this, _DWORD *a2)
   this->? = v4; /*0x4b585b*/
   if ( !v4 ) /*0x4b5860*/
     return &this->AbstractClass; /*0x4b5860*/
-  vtable2 = this->?; /*0x4b5862*/
+  ptr_8 = this->?; /*0x4b5862*/
   v6 = 0; /*0x4b5865*/
   BYTE1(this->?) = 1; /*0x4b5869*/
-  if ( (int)vtable2 <= 0 ) /*0x4b586d*/
+  if ( (int)ptr_8 <= 0 ) /*0x4b586d*/
     return &this->AbstractClass; /*0x4b586d*/
   do /*0x4b5881*/
   {
@@ -2757,22 +2757,22 @@ void nullsub_126(ObjectClass *this)
 // ==== 0x004B69E0  ObjectClass::method_4B69E0  this=ObjectClass  sig=csp ====
 char __thiscall sub_4B69E0(ObjectClass *this, int a2)
 {
-  void *vtable1; // edx
+  void *ptr_4; // edx
   int v3; // esi
   int v4; // eax
 
   if ( this->? >= 5 ) /*0x4b69f1*/
     return 0; /*0x4b69f1*/
-  vtable1 = dword_A8B230[376].vtable1; /*0x4b6a01*/
-  if ( vtable1 ) /*0x4b6a09*/
+  ptr_4 = dword_A8B230[376].ptr_4; /*0x4b6a01*/
+  if ( ptr_4 ) /*0x4b6a09*/
   {
     v4 = 0; /*0x4b6a10*/
-    if ( (int)vtable1 > 0 ) /*0x4b6a14*/
+    if ( (int)ptr_4 > 0 ) /*0x4b6a14*/
     {
       while ( *(_DWORD *)(dword_A8B230[375].referenceCount + 4 * v4) != a2 /*0x4b6a2c*/
            || *(_DWORD *)(dword_A8B230[376].abstractFlags + 4 * v4) == -1 )
       {
-        if ( ++v4 >= (int)vtable1 ) /*0x4b6a31*/
+        if ( ++v4 >= (int)ptr_4 ) /*0x4b6a31*/
         {
           v3 = -1; /*0x4b6a33*/
           goto LABEL_11; /*0x4b6a36*/
@@ -2780,7 +2780,7 @@ char __thiscall sub_4B69E0(ObjectClass *this, int a2)
       }
       v3 = v4; /*0x4b6a3b*/
       if ( v4 == -1 /*0x4b6a53*/
-        || *((_DWORD *)dword_A8B230[377].vtable3 + v4) < *(_DWORD *)(dword_A8B230[376].abstractFlags + 4 * v4) )
+        || *((_DWORD *)dword_A8B230[377].ptr_C + v4) < *(_DWORD *)(dword_A8B230[376].abstractFlags + 4 * v4) )
       {
         goto LABEL_11; /*0x4b6a53*/
       }
@@ -2792,7 +2792,7 @@ LABEL_11:
   *(&this->? + this->?++) = a2; /*0x4b6a55*/
   this->owningHouseIndex += (*(int (__thiscall **)(int))(*(_DWORD *)a2 + 172))(a2); /*0x4b6a74*/
   if ( v3 != -1 ) /*0x4b6a77*/
-    ++*((_DWORD *)dword_A8B230[377].vtable3 + v3); /*0x4b6a8b*/
+    ++*((_DWORD *)dword_A8B230[377].ptr_C + v3); /*0x4b6a8b*/
   return 1; /*0x4b6a8d*/
 }
 
@@ -2802,7 +2802,7 @@ LABEL_11:
 char __thiscall sub_4B6AB0(ObjectClass *this, int a2)
 {
   int uniqueId; // eax
-  void *vtable1; // edx
+  void *ptr_4; // edx
   int v5; // eax
   int v6; // ecx
   int v7; // eax
@@ -2813,20 +2813,20 @@ char __thiscall sub_4B6AB0(ObjectClass *this, int a2)
   uniqueId = this->?; /*0x4b6ab4*/
   if ( uniqueId <= 0 || a2 < 0 || a2 >= uniqueId ) /*0x4b6acd*/
     return 0; /*0x4b6b72*/
-  vtable1 = dword_A8B230[376].vtable1; /*0x4b6adb*/
-  if ( vtable1 ) /*0x4b6ae3*/
+  ptr_4 = dword_A8B230[376].ptr_4; /*0x4b6adb*/
+  if ( ptr_4 ) /*0x4b6ae3*/
   {
     v5 = 0; /*0x4b6ae5*/
-    if ( (int)vtable1 > 0 ) /*0x4b6ae9*/
+    if ( (int)ptr_4 > 0 ) /*0x4b6ae9*/
     {
       while ( *(_DWORD *)(dword_A8B230[375].referenceCount + 4 * v5) != *(&this->? + a2) /*0x4b6b05*/
            || *(_DWORD *)(dword_A8B230[376].abstractFlags + 4 * v5) == -1 )
       {
-        if ( ++v5 >= (int)dword_A8B230[376].vtable1 ) /*0x4b6b10*/
+        if ( ++v5 >= (int)dword_A8B230[376].ptr_4 ) /*0x4b6b10*/
           goto LABEL_12; /*0x4b6b10*/
       }
       if ( v5 != -1 ) /*0x4b6b17*/
-        --*((_DWORD *)dword_A8B230[377].vtable3 + v5); /*0x4b6b22*/
+        --*((_DWORD *)dword_A8B230[377].ptr_C + v5); /*0x4b6b22*/
     }
   }
 LABEL_12:
@@ -2914,19 +2914,19 @@ int __thiscall sub_4B6BE0(ObjectClass *this, int a2)
 // ==== 0x004B6BF0  ObjectClass::method_4B6BF0  this=ObjectClass  sig=csp ====
 int __thiscall sub_4B6BF0(ObjectClass *this)
 {
-  void *vtable1; // edx
+  void *ptr_4; // edx
   int result; // eax
 
-  vtable1 = dword_A8B230[376].vtable1; /*0x4b6bf9*/
-  if ( !vtable1 ) /*0x4b6c01*/
+  ptr_4 = dword_A8B230[376].ptr_4; /*0x4b6bf9*/
+  if ( !ptr_4 ) /*0x4b6c01*/
     return -1; /*0x4b6c01*/
   result = 0; /*0x4b6c03*/
-  if ( (int)vtable1 <= 0 ) /*0x4b6c07*/
+  if ( (int)ptr_4 <= 0 ) /*0x4b6c07*/
     return -1; /*0x4b6c25*/
   while ( *(ObjectClass **)(dword_A8B230[375].referenceCount + 4 * result) != this /*0x4b6c1e*/
        || *(_DWORD *)(dword_A8B230[376].abstractFlags + 4 * result) == -1 )
   {
-    if ( ++result >= (int)vtable1 ) /*0x4b6c23*/
+    if ( ++result >= (int)ptr_4 ) /*0x4b6c23*/
       return -1; /*0x4b6c23*/
   }
   return result; /*0x4b6c28*/
@@ -7842,14 +7842,14 @@ char __stdcall ProcessJumpjetMotion(DriveLocomotionClass *this)
   {
     movementDestination = v1->?->movementDestination; /*0x4b066f*/
     if ( movementDestination /*0x4b06ad*/
-      && (*((int (__thiscall **)(AbstractClass *))movementDestination->vtable0 + 11))(movementDestination) == 11
+      && (*((int (__thiscall **)(AbstractClass *))movementDestination->ptr_0 + 11))(movementDestination) == 11
       && (v12 = v1->?,
           v13 = v12->movementDestination + 1,
           v14 = (_WORD *)(*((int (__thiscall **)(FootClass *, DriveLocomotionClass **))v12->TechnoClass + 110))(
                            v12,
                            &this),
-          *v14 == LOWORD(v13->vtable0))
-      && v14[1] == HIWORD(v13->vtable0) )
+          *v14 == LOWORD(v13->ptr_0))
+      && v14[1] == HIWORD(v13->ptr_0) )
     {
       v15 = (FootClass *)*((_DWORD *)v2 + 3); /*0x4b06af*/
       if ( !*(_DWORD *)&v15->__pad_58C[12] ) /*0x4b06b2*/
@@ -7905,7 +7905,7 @@ char __stdcall ProcessJumpjetMotion(DriveLocomotionClass *this)
               v24 = v23->movementDestination; /*0x4b0971*/
               if ( v24 ) /*0x4b0979*/
               {
-                v25 = (_DWORD *)(*((int (__thiscall **)(AbstractClass *, int *, FootClass *))v24->vtable0 + 19))( /*0x4b0987*/
+                v25 = (_DWORD *)(*((int (__thiscall **)(AbstractClass *, int *, FootClass *))v24->ptr_0 + 19))( /*0x4b0987*/
                                   v24,
                                   &v30,
                                   v1->?);
@@ -7987,9 +7987,9 @@ LABEL_27:
       v6 = v1->?->movementDestination; /*0x4b05e4*/
       if ( v6 ) /*0x4b05ec*/
       {
-        if ( (*((int (__thiscall **)(AbstractClass *))v6->vtable0 + 11))(v6) == 15 ) /*0x4b05f6*/
+        if ( (*((int (__thiscall **)(AbstractClass *))v6->ptr_0 + 11))(v6) == 15 ) /*0x4b05f6*/
         {
-          v7 = (int *)(*((int (__thiscall **)(AbstractClass *, int *, FootClass *))v1->?->movementDestination->vtable0 /*0x4b060f*/
+          v7 = (int *)(*((int (__thiscall **)(AbstractClass *, int *, FootClass *))v1->?->movementDestination->ptr_0 /*0x4b060f*/
                        + 19))(
                         v1->?->movementDestination,
                         &v30,
@@ -8236,7 +8236,7 @@ char __thiscall sub_4B0DF0(ObjectClass *this, _DWORD *a2)
   int v5; // eax
   int v6; // eax
   CellClass *v7; // eax
-  void *vtable3; // [esp-4h] [ebp-10h]
+  void *ptr_C; // [esp-4h] [ebp-10h]
 
   v2 = g_DDraw_ClipRect; /*0x4b0df1*/
   v4 = &this->ambientSoundController[1]; /*0x4b0dfd*/
@@ -8257,9 +8257,9 @@ char __thiscall sub_4B0DF0(ObjectClass *this, _DWORD *a2)
     v6 = a2[2]; /*0x4b0e6d*/
     HIBYTE(this->customSound_controller[4]) = 1; /*0x4b0e70*/
     this->ambientSoundController[3] = v6; /*0x4b0e74*/
-    vtable3 = this->?; /*0x4b0e7a*/
+    ptr_C = this->?; /*0x4b0e7a*/
     v7 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], a2); /*0x4b0e81*/
-    if ( (unsigned __int8)CrateClass::ProcessPickup((CrateClass *)v7, (int)vtable3) && !*((_BYTE *)this->? + 129) ) /*0x4b0e94*/
+    if ( (unsigned __int8)CrateClass::ProcessPickup((CrateClass *)v7, (int)ptr_C) && !*((_BYTE *)this->? + 129) ) /*0x4b0e94*/
     {
       JumpjetLocomotion::MoveTo((int)this, a2, 1); /*0x4b0ea3*/
       return 1; /*0x4b0ead*/
@@ -9401,7 +9401,7 @@ _DWORD *__thiscall sub_4B5830(ObjectClass *this, _DWORD *a2)
 {
   void *v3; // eax
   void *v4; // eax
-  void *vtable2; // ecx
+  void *ptr_8; // ecx
   int v6; // eax
 
   if ( this == (ObjectClass *)a2 ) /*0x4b583a*/
@@ -9419,10 +9419,10 @@ _DWORD *__thiscall sub_4B5830(ObjectClass *this, _DWORD *a2)
   this->? = v4; /*0x4b585b*/
   if ( !v4 ) /*0x4b5860*/
     return &this->AbstractClass; /*0x4b5860*/
-  vtable2 = this->?; /*0x4b5862*/
+  ptr_8 = this->?; /*0x4b5862*/
   v6 = 0; /*0x4b5865*/
   BYTE1(this->?) = 1; /*0x4b5869*/
-  if ( (int)vtable2 <= 0 ) /*0x4b586d*/
+  if ( (int)ptr_8 <= 0 ) /*0x4b586d*/
     return &this->AbstractClass; /*0x4b586d*/
   do /*0x4b5881*/
   {
@@ -10513,22 +10513,22 @@ void nullsub_126(ObjectClass *this)
 // ==== 0x004B69E0  ObjectClass::method_4B69E0  this=ObjectClass  sig=csp ====
 char __thiscall sub_4B69E0(ObjectClass *this, int a2)
 {
-  void *vtable1; // edx
+  void *ptr_4; // edx
   int v3; // esi
   int v4; // eax
 
   if ( this->? >= 5 ) /*0x4b69f1*/
     return 0; /*0x4b69f1*/
-  vtable1 = dword_A8B230[376].vtable1; /*0x4b6a01*/
-  if ( vtable1 ) /*0x4b6a09*/
+  ptr_4 = dword_A8B230[376].ptr_4; /*0x4b6a01*/
+  if ( ptr_4 ) /*0x4b6a09*/
   {
     v4 = 0; /*0x4b6a10*/
-    if ( (int)vtable1 > 0 ) /*0x4b6a14*/
+    if ( (int)ptr_4 > 0 ) /*0x4b6a14*/
     {
       while ( *(_DWORD *)(dword_A8B230[375].referenceCount + 4 * v4) != a2 /*0x4b6a2c*/
            || *(_DWORD *)(dword_A8B230[376].abstractFlags + 4 * v4) == -1 )
       {
-        if ( ++v4 >= (int)vtable1 ) /*0x4b6a31*/
+        if ( ++v4 >= (int)ptr_4 ) /*0x4b6a31*/
         {
           v3 = -1; /*0x4b6a33*/
           goto LABEL_11; /*0x4b6a36*/
@@ -10536,7 +10536,7 @@ char __thiscall sub_4B69E0(ObjectClass *this, int a2)
       }
       v3 = v4; /*0x4b6a3b*/
       if ( v4 == -1 /*0x4b6a53*/
-        || *((_DWORD *)dword_A8B230[377].vtable3 + v4) < *(_DWORD *)(dword_A8B230[376].abstractFlags + 4 * v4) )
+        || *((_DWORD *)dword_A8B230[377].ptr_C + v4) < *(_DWORD *)(dword_A8B230[376].abstractFlags + 4 * v4) )
       {
         goto LABEL_11; /*0x4b6a53*/
       }
@@ -10548,7 +10548,7 @@ LABEL_11:
   *(&this->? + this->?++) = a2; /*0x4b6a55*/
   this->owningHouseIndex += (*(int (__thiscall **)(int))(*(_DWORD *)a2 + 172))(a2); /*0x4b6a74*/
   if ( v3 != -1 ) /*0x4b6a77*/
-    ++*((_DWORD *)dword_A8B230[377].vtable3 + v3); /*0x4b6a8b*/
+    ++*((_DWORD *)dword_A8B230[377].ptr_C + v3); /*0x4b6a8b*/
   return 1; /*0x4b6a8d*/
 }
 
@@ -10558,7 +10558,7 @@ LABEL_11:
 char __thiscall sub_4B6AB0(ObjectClass *this, int a2)
 {
   int uniqueId; // eax
-  void *vtable1; // edx
+  void *ptr_4; // edx
   int v5; // eax
   int v6; // ecx
   int v7; // eax
@@ -10569,20 +10569,20 @@ char __thiscall sub_4B6AB0(ObjectClass *this, int a2)
   uniqueId = this->?; /*0x4b6ab4*/
   if ( uniqueId <= 0 || a2 < 0 || a2 >= uniqueId ) /*0x4b6acd*/
     return 0; /*0x4b6b72*/
-  vtable1 = dword_A8B230[376].vtable1; /*0x4b6adb*/
-  if ( vtable1 ) /*0x4b6ae3*/
+  ptr_4 = dword_A8B230[376].ptr_4; /*0x4b6adb*/
+  if ( ptr_4 ) /*0x4b6ae3*/
   {
     v5 = 0; /*0x4b6ae5*/
-    if ( (int)vtable1 > 0 ) /*0x4b6ae9*/
+    if ( (int)ptr_4 > 0 ) /*0x4b6ae9*/
     {
       while ( *(_DWORD *)(dword_A8B230[375].referenceCount + 4 * v5) != *(&this->? + a2) /*0x4b6b05*/
            || *(_DWORD *)(dword_A8B230[376].abstractFlags + 4 * v5) == -1 )
       {
-        if ( ++v5 >= (int)dword_A8B230[376].vtable1 ) /*0x4b6b10*/
+        if ( ++v5 >= (int)dword_A8B230[376].ptr_4 ) /*0x4b6b10*/
           goto LABEL_12; /*0x4b6b10*/
       }
       if ( v5 != -1 ) /*0x4b6b17*/
-        --*((_DWORD *)dword_A8B230[377].vtable3 + v5); /*0x4b6b22*/
+        --*((_DWORD *)dword_A8B230[377].ptr_C + v5); /*0x4b6b22*/
     }
   }
 LABEL_12:
@@ -10670,19 +10670,19 @@ int __thiscall sub_4B6BE0(ObjectClass *this, int a2)
 // ==== 0x004B6BF0  ObjectClass::method_4B6BF0  this=ObjectClass  sig=csp ====
 int __thiscall sub_4B6BF0(ObjectClass *this)
 {
-  void *vtable1; // edx
+  void *ptr_4; // edx
   int result; // eax
 
-  vtable1 = dword_A8B230[376].vtable1; /*0x4b6bf9*/
-  if ( !vtable1 ) /*0x4b6c01*/
+  ptr_4 = dword_A8B230[376].ptr_4; /*0x4b6bf9*/
+  if ( !ptr_4 ) /*0x4b6c01*/
     return -1; /*0x4b6c01*/
   result = 0; /*0x4b6c03*/
-  if ( (int)vtable1 <= 0 ) /*0x4b6c07*/
+  if ( (int)ptr_4 <= 0 ) /*0x4b6c07*/
     return -1; /*0x4b6c25*/
   while ( *(ObjectClass **)(dword_A8B230[375].referenceCount + 4 * result) != this /*0x4b6c1e*/
        || *(_DWORD *)(dword_A8B230[376].abstractFlags + 4 * result) == -1 )
   {
-    if ( ++result >= (int)vtable1 ) /*0x4b6c23*/
+    if ( ++result >= (int)ptr_4 ) /*0x4b6c23*/
       return -1; /*0x4b6c23*/
   }
   return result; /*0x4b6c28*/

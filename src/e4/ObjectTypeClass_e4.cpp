@@ -223,10 +223,10 @@ int ObjectTypeClass::ConstructFull(char *aP1)
   this->u32_A2 = 0; /*0x5f723d*/
   this->u32_28C = 0; /*0x5f7243*/
   this->Image_d = 0; /*0x5f7249*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EF2AC) */  /*0x5f7251*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7EF2AC) */  /*0x5f7258*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7EF2AC) */  /*0x5f725f*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7EF2AC) */  /*0x5f7266*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EF2AC) */  /*0x5f7251*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7EF2AC) */  /*0x5f7258*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7EF2AC) */  /*0x5f725f*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7EF2AC) */  /*0x5f7266*/
   if ( &this->u8_9 != &this->u8_7E ) /*0x5f726d*/
     memcpy(&this->u8_7E, &this->u8_9, 0x19u); /*0x5f7274*/
   if ( &g_INI_DefaultBuffer ) /*0x5f727e*/
@@ -311,10 +311,10 @@ BulletTypeClass * ObjectTypeClass::Construct(int aP1, void *a2, void *a3, void *
   this->VoxelCaches[17] = 0; /*0x5f73c7*/
   LOBYTE(this->VoxelCaches[18]) = 0; /*0x5f73cd*/
   this->VoxelCaches[19] = 0; /*0x5f73d3*/
-  /* X11: vtable install elided (legacy slot spelling slot, RHS g_var_8780a4) */  /*0x5f73d9*/
-  /* X11: vtable install elided (legacy slot spelling slot, RHS g_var_8780a4) */  /*0x5f73df*/
-  /* X11: vtable install elided (legacy slot spelling slot, RHS g_var_8780a4) */  /*0x5f73e6*/
-  /* X11: vtable install elided (legacy slot spelling slot, RHS g_var_8780a4) */  /*0x5f73ed*/
+  /* X11: ptr_0 install elided (legacy slot spelling slot, RHS g_var_8780a4) */  /*0x5f73d9*/
+  /* X11: ptr_0 install elided (legacy slot spelling slot, RHS g_var_8780a4) */  /*0x5f73df*/
+  /* X11: ptr_0 install elided (legacy slot spelling slot, RHS g_var_8780a4) */  /*0x5f73e6*/
+  /* X11: ptr_0 install elided (legacy slot spelling slot, RHS g_var_8780a4) */  /*0x5f73ed*/
   return &this->ptr_0; /*0x5f73f6*/
 
 }
@@ -325,10 +325,10 @@ SomeVoxelCache * * ObjectTypeClass::Destruct(void *a1)
 {
 
 
-  /* X11: vtable install elided (implicit via ObjectTypeClass virtuals 0x5f740b) */
-  /* X11: vtable install elided (implicit via ObjectTypeClass virtuals 0x5f7411) */
-  /* X11: vtable install elided (implicit via ObjectTypeClass virtuals 0x5f7418) */
-  /* X11: vtable install elided (implicit via ObjectTypeClass virtuals 0x5f741f) */
+  /* X11: ptr_0 install elided (implicit via ObjectTypeClass virtuals 0x5f740b) */
+  /* X11: ptr_0 install elided (implicit via ObjectTypeClass virtuals 0x5f7411) */
+  /* X11: ptr_0 install elided (implicit via ObjectTypeClass virtuals 0x5f7418) */
+  /* X11: ptr_0 install elided (implicit via ObjectTypeClass virtuals 0x5f741f) */
   int v8; // [esp+Ch] [ebp-4h] BYREF
   v8 = this; /*0x5f7431*/
   int v2; // eax
@@ -1883,7 +1883,7 @@ int ObjectTypeClass::FreeLoaderBuffer()
   this->AbstractTypeClass = 0; /*0x5f9b70*/
   this->ptr_4 = 0; /*0x5f9b72*/
   this->ptr_8 = 0; /*0x5f9b75*/
-  (this->vtable4) = ((this->vtable4) & ~0xFF) | ((0) & 0xFF); /*0x5f9b78*/
+  (this->ptr_10) = ((this->ptr_10) & ~0xFF) | ((0) & 0xFF); /*0x5f9b78*/
   this->uniqueId = 0; /*0x5f9b7b*/
   return 0; /*0x5f9b7e*/
 
@@ -2026,7 +2026,7 @@ namespace gamemd {
 unsigned int * ObjectTypeClass::CheckFlag(int aP1)
 {
 
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E3238) */  /*0x717bf2*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E3238) */  /*0x717bf2*/
   return &this->AbstractTypeClass; /*0x717bf8*/
 
 }

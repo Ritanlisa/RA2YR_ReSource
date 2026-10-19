@@ -1860,7 +1860,7 @@ unsigned int * VoxelAnimTypeVector::Constructor(int a2, int a3) {
     this->Capacity = a2; /*0x67c31e*/
     this->IsInitialized = 1; /*0x67c321*/
     this->IsAllocated = 0; /*0x67c325*/
-    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EA3C4) */  /*0x67c328*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EA3C4) */  /*0x67c328*/
     if ( a2 ) /*0x67c32e*/
     {
       if ( a3 ) /*0x67c336*/

@@ -36,8 +36,8 @@ public:
     // wrapper: delegates to AbstractClass::queueMission at 0x4E01C0
     virtual bool revertMission();
     // wrapper: delegates to AbstractClass::queueMission at 0x4E01C0
-    virtual bool hasValidTarget() const;  // 0x5B3A10 (vtable byte 508)
-    virtual bool isMissionDone() const;  // default-true base 0x4E0140 (vtable byte 512)
+    virtual bool hasValidTarget() const;  // 0x5B3A10 (ptr_0 byte 508)
+    virtual bool isMissionDone() const;  // default-true base 0x4E0140 (ptr_0 byte 512)
 
     // wrapper: delegates to MissionClass::HasValidTarget at 0x5B3A10
     virtual int Mission_Sleep();

@@ -15,7 +15,7 @@ class HouseClass;
 
 // ============================================================================
 // ToolTipManager — tooltip display system
-// IDA vtbl @ 0x7E3D20, Constructor @ 0x724000
+// IDA ptr_0 @ 0x7E3D20, Constructor @ 0x724000
 // Virtual methods: Update, MarkToRedraw, Draw, DrawText, GetToolTipText
 // Non-virtual: SetState @ 0x7241A0, ProcessMessage @ 0x724200,
 //              GetTimerDelay @ 0x724510, SetTimerDelay @ 0x724520,

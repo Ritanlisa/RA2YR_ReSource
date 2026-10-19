@@ -149,10 +149,10 @@ UnitTypeClass::UnitTypeClass(char *Source, int aP1, int a2, int a1, int a3)
   this->WalkFrames = 12; /*0x7471ab*/
   this->FiringFrames_d = 0; /*0x7471b2*/
   this->AltImageFile = 0; /*0x7471b8*/
-  /* X11: vtable install elided (implicit via UnitTypeClass virtuals 0x7471bf) */
-  /* X11: vtable install elided (implicit via UnitTypeClass virtuals 0x7471c5) */
-  /* X11: vtable install elided (implicit via UnitTypeClass virtuals 0x7471cb) */
-  /* X11: vtable install elided (implicit via UnitTypeClass virtuals 0x7471d2) */
+  /* X11: ptr_0 install elided (implicit via UnitTypeClass virtuals 0x7471bf) */
+  /* X11: ptr_0 install elided (implicit via UnitTypeClass virtuals 0x7471c5) */
+  /* X11: ptr_0 install elided (implicit via UnitTypeClass virtuals 0x7471cb) */
+  /* X11: ptr_0 install elided (implicit via UnitTypeClass virtuals 0x7471d2) */
   this->ptr_4.GenerateUniqueID(); /*0x7471d9*/
   this->RotCount = 32; /*0x7471de*/
   v3 = dword_A83CF0; /*0x7471e8*/
@@ -745,10 +745,10 @@ int UnitTypeClass::LoadFromINI2(int a1, int a2)
     {
       char v3; // [esp+7h] [ebp-105h] BYREF
       TechnoTypeClass::Construct((int)a1, (int)&v3); /*0x748038*/
-      /* X11: vtable install elided (implicit via UnitTypeClass virtuals 0x74803d) */
-      /* X11: vtable install elided (implicit via UnitTypeClass virtuals 0x748043) */
-      /* X11: vtable install elided (implicit via UnitTypeClass virtuals 0x74804a) */
-      /* X11: vtable install elided (implicit via UnitTypeClass virtuals 0x748051) */
+      /* X11: ptr_0 install elided (implicit via UnitTypeClass virtuals 0x74803d) */
+      /* X11: ptr_0 install elided (implicit via UnitTypeClass virtuals 0x748043) */
+      /* X11: ptr_0 install elided (implicit via UnitTypeClass virtuals 0x74804a) */
+      /* X11: ptr_0 install elided (implicit via UnitTypeClass virtuals 0x748051) */
     }
     VoxelAnimType::LoadAnim((char *)a1); /*0x74805a*/
     ObjectTypeClass::Load2DArt((char *)a1); /*0x748061*/
@@ -808,10 +808,10 @@ namespace gamemd {
   UnitTypeClass *v6; // [esp+4h] [ebp-4h] BYREF
 
   v3 = (UnitTypeClass *)v2; /*0x748192*/
-  /* X11: vtable install elided (implicit via UnitTypeClass virtuals 0x748196) */
-  /* X11: vtable install elided (implicit via UnitTypeClass virtuals 0x74819c) */
-  /* X11: vtable install elided (implicit via UnitTypeClass virtuals 0x7481a3) */
-  /* X11: vtable install elided (implicit via UnitTypeClass virtuals 0x7481aa) */
+  /* X11: ptr_0 install elided (implicit via UnitTypeClass virtuals 0x748196) */
+  /* X11: ptr_0 install elided (implicit via UnitTypeClass virtuals 0x74819c) */
+  /* X11: ptr_0 install elided (implicit via UnitTypeClass virtuals 0x7481a3) */
+  /* X11: ptr_0 install elided (implicit via UnitTypeClass virtuals 0x7481aa) */
   AbstractClass::AnnounceExpiredPointer(v2, 1); /*0x7481b1*/
   v6 = v3; /*0x7481c6*/
   v4 = (*(int (**)(unsigned int *, UnitTypeClass **))(dword_A83CE0 + 16))(&dword_A83CE0, &v6); /*0x7481ca*/

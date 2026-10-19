@@ -14,7 +14,7 @@ namespace game {
 class rc_ptr_base;
 
 // sizeof 0xC8（Create 0x659110 new(0xC8) + InitState 0x6593F0 写图铁证）
-// 非多态：InitState 不安装 vtable（首字段清零为数据写非虚表指针）——
+// 非多态：InitState 不安装 ptr_0（首字段清零为数据写非虚表指针）——
 // G21 L6 二进制裁决：撤除 e4 时代误建模的 `: public AbstractClass` 继承。
 // draw* 族（0x6594xx-0x6595xx）真 owner = RadBeam：双调用方
 // （CreateFireBeamEffect 0x6FD620 / SpreadRadiationAreaEffect 0x6FD800）

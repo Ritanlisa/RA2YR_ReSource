@@ -2000,11 +2000,11 @@ int Gap2Recv_53B780::ApplyChronoScreenColorShift() {
   v2 = this; /*0x53b789*/
   if ( ChronoScreenEffect_Status == 3 ) /*0x53b792*/
   {
-    v15 = (*((int (**)(ObjectClass *))this->vtable1 + 31))(this); /*0x53b7a6*/
-    v3 = (*((int (**)(ObjectClass *))v2->vtable1 + 32))(v2) - 32; /*0x53b7cc*/
-    v4 = ((*((int (**)(ObjectClass *))v2->vtable1 + 29))(v2) - 2 * v15) / 2; /*0x53b7d0*/
+    v15 = (*((int (**)(ObjectClass *))this->ptr_4 + 31))(this); /*0x53b7a6*/
+    v3 = (*((int (**)(ObjectClass *))v2->ptr_4 + 32))(v2) - 32; /*0x53b7cc*/
+    v4 = ((*((int (**)(ObjectClass *))v2->ptr_4 + 29))(v2) - 2 * v15) / 2; /*0x53b7d0*/
     v18 = v4; /*0x53b7d6*/
-    v5 = (*((int (**)(ObjectClass *, unsigned int, unsigned int))v2->vtable1 + 23))(v2, 0, 0); /*0x53b7e3*/
+    v5 = (*((int (**)(ObjectClass *, unsigned int, unsigned int))v2->ptr_4 + 23))(v2, 0, 0); /*0x53b7e3*/
     v16 = 255 * ChronoScreenEffect_Duration / dword_A9FAA8; /*0x53b7f3*/
     v6 = DDraw_GetStatus() - 1; /*0x53b7fc*/
     if ( v6 ) /*0x53b7fd*/
@@ -2120,7 +2120,7 @@ int Gap2Recv_53B780::ApplyChronoScreenColorShift() {
         while ( v21 ); /*0x53bab1*/
       }
     }
-    return (*((int (**)(ObjectClass *))v2->vtable1 + 24))(v2); /*0x53babb*/
+    return (*((int (**)(ObjectClass *))v2->ptr_4 + 24))(v2); /*0x53babb*/
   }
   return result; /*0x53b8ef*/
 

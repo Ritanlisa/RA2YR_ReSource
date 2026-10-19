@@ -4612,20 +4612,20 @@ int Network::finalizeSession()
   this->q3F340 = 0; /*0x7b2dca*/
   this->q3F344 = 1; /*0x7b2dd0*/
   this->q3F345 = 0; /*0x7b2dd7*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E3238) */  /*0x7b2ddd*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E3238) */  /*0x7b2ddd*/
   this->q3F34C = 10; /*0x7b2de3*/
   this->q3F348 = 0; /*0x7b2de9*/
   this->q3F554 = 0; /*0x7b2def*/
   this->q3F558 = 0; /*0x7b2df5*/
   this->q3F55C = 1; /*0x7b2dfb*/
   this->q3F55D = 0; /*0x7b2e02*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7E3238) */  /*0x7b2e08*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E3238) */  /*0x7b2e08*/
   this->q3F564 = 10; /*0x7b2e0e*/
   this->q3F560 = 0; /*0x7b2e14*/
   this->q3F2FC = 0; /*0x7b2e1a*/
   this->q3F330 = 0; /*0x7b2e21*/
   this->q3F568 = 0; /*0x7b2e27*/
-  /* X11: vtable install elided (implicit via UDPInterfaceClass virtuals 0x7b2e2d) */
+  /* X11: ptr_0 install elided (implicit via UDPInterfaceClass virtuals 0x7b2e2d) */
   this->q3F334 = -1; /*0x7b2e33*/
   return (int)this; /*0x7b2e3f*/
 

@@ -124,17 +124,17 @@ int __thiscall AbstractClassVector::Seek(_VectorClass_PAVAbstractClass *this, in
 // ==== 0x004E01F0  FoggedObjectClass::ClearBuffer  this=FoggedObjectClass  sig=csp ====
 void __thiscall FoggedObjectClass_42::ClearBuffer(FoggedObjectClass *this)
 {
-  void *vtable1; // eax
+  void *ptr_4; // eax
 
-  vtable1 = (void *)this->vtable1; /*0x4e01f6*/
+  ptr_4 = (void *)this->ptr_4; /*0x4e01f6*/
   this->uniqueId = 0; /*0x4e01f9*/
-  if ( vtable1 && BYTE1(this->vtable3) ) /*0x4e0200*/
+  if ( ptr_4 && BYTE1(this->ptr_C) ) /*0x4e0200*/
   {
-    __3_YAXPAX_Z(vtable1); /*0x4e0206*/
-    this->vtable1 = 0; /*0x4e020e*/
+    __3_YAXPAX_Z(ptr_4); /*0x4e0206*/
+    this->ptr_4 = 0; /*0x4e020e*/
   }
-  BYTE1(this->vtable3) = 0; /*0x4e0211*/
-  this->vtable2 = 0; /*0x4e0214*/
+  BYTE1(this->ptr_C) = 0; /*0x4e0211*/
+  this->ptr_8 = 0; /*0x4e0214*/
 }
 
 
@@ -142,8 +142,8 @@ void __thiscall FoggedObjectClass_42::ClearBuffer(FoggedObjectClass *this)
 // ==== 0x004E0220  FoggedObjectClass::PointerToIndex  this=FoggedObjectClass  sig=csp ====
 unsigned int __thiscall FoggedObjectClass_42::PointerToIndex(FoggedObjectClass *this, int a2)
 {
-  if ( LOBYTE(this->vtable3) ) /*0x4e0220*/
-    return (unsigned int)(a2 - this->vtable1) >> 2; /*0x4e0235*/
+  if ( LOBYTE(this->ptr_C) ) /*0x4e0220*/
+    return (unsigned int)(a2 - this->ptr_4) >> 2; /*0x4e0235*/
   else
     return 0; /*0x4e0227*/
 }
@@ -557,42 +557,42 @@ unsigned int __thiscall FoggedObjectClass_42::Write(_VectorClass_PAVFootClass *t
 char __thiscall FoggedObjectClass_42::SetCapacity(FoggedObjectClass *this, int a2, _DWORD *a3)
 {
   _DWORD *v4; // edi
-  int vtable2; // ecx
+  int ptr_8; // ecx
   int i; // eax
   int v7; // eax
 
   if ( a2 ) /*0x4e070c*/
   {
-    LOBYTE(this->vtable3) = 0; /*0x4e0712*/
+    LOBYTE(this->ptr_C) = 0; /*0x4e0712*/
     if ( a3 ) /*0x4e0718*/
       v4 = a3; /*0x4e072e*/
     else
       v4 = (_DWORD *)__2_YAPAXI_Z(4 * a2); /*0x4e072a*/
-    LOBYTE(this->vtable3) = 1; /*0x4e0732*/
+    LOBYTE(this->ptr_C) = 1; /*0x4e0732*/
     if ( !v4 ) /*0x4e0736*/
       return 0; /*0x4e07aa*/
-    if ( this->vtable1 ) /*0x4e0738*/
+    if ( this->ptr_4 ) /*0x4e0738*/
     {
-      vtable2 = this->vtable2; /*0x4e073f*/
-      if ( a2 < vtable2 ) /*0x4e0744*/
-        vtable2 = a2; /*0x4e0746*/
-      for ( i = 0; i < vtable2; v4[i - 1] = *(_DWORD *)(this->vtable1 + 4 * i - 4) ) /*0x4e074c*/
+      ptr_8 = this->ptr_8; /*0x4e073f*/
+      if ( a2 < ptr_8 ) /*0x4e0744*/
+        ptr_8 = a2; /*0x4e0746*/
+      for ( i = 0; i < ptr_8; v4[i - 1] = *(_DWORD *)(this->ptr_4 + 4 * i - 4) ) /*0x4e074c*/
         ++i; /*0x4e0751*/
-      if ( BYTE1(this->vtable3) ) /*0x4e075e*/
+      if ( BYTE1(this->ptr_C) ) /*0x4e075e*/
       {
-        __3_YAXPAX_Z((void *)this->vtable1); /*0x4e0769*/
-        this->vtable1 = 0; /*0x4e0771*/
+        __3_YAXPAX_Z((void *)this->ptr_4); /*0x4e0769*/
+        this->ptr_4 = 0; /*0x4e0771*/
       }
     }
-    this->vtable1 = (int)v4; /*0x4e077a*/
-    this->vtable2 = a2; /*0x4e0782*/
-    BYTE1(this->vtable3) = a3 == 0; /*0x4e0785*/
+    this->ptr_4 = (int)v4; /*0x4e077a*/
+    this->ptr_8 = a2; /*0x4e0782*/
+    BYTE1(this->ptr_C) = a3 == 0; /*0x4e0785*/
   }
   else
   {
-    (*(void (__thiscall **)(FoggedObjectClass *))(this->vtable0 + 12))(this); /*0x4e078e*/
+    (*(void (__thiscall **)(FoggedObjectClass *))(this->ptr_0 + 12))(this); /*0x4e078e*/
   }
-  v7 = this->vtable2; /*0x4e0791*/
+  v7 = this->ptr_8; /*0x4e0791*/
   if ( v7 < this->uniqueId ) /*0x4e0799*/
     this->uniqueId = v7; /*0x4e079b*/
   return 1; /*0x4e079e*/
@@ -611,7 +611,7 @@ int __thiscall FoggedObjectClass_42::FindItem(FoggedObjectClass *this, _DWORD *a
   result = 0; /*0x4e07b3*/
   if ( uniqueId <= 0 ) /*0x4e07b8*/
     return -1; /*0x4e07cf*/
-  for ( i = (_DWORD *)this->vtable1; *i != *a2; ++i ) /*0x4e07be*/
+  for ( i = (_DWORD *)this->ptr_4; *i != *a2; ++i ) /*0x4e07be*/
   {
     if ( ++result >= uniqueId ) /*0x4e07cd*/
       return -1; /*0x4e07cd*/
@@ -840,7 +840,7 @@ _DWORD *__thiscall sub_4E0A00(VectorClass *this, int a2, _DWORD *a3)
   this->Capacity = a2; /*0x4e0a11*/
   this->IsInitialized = 1; /*0x4e0a14*/
   this->IsAllocated = 0; /*0x4e0a18*/
-  this->vtable0 = &VectorClass<DiscreteDistributionClass<CellClass>::DistributionObject<CellClass *>>::`vftable'; /*0x4e0a1c*/
+  this->ptr_0 = &VectorClass<DiscreteDistributionClass<CellClass>::DistributionObject<CellClass *>>::`vftable'; /*0x4e0a1c*/
   if ( a2 ) /*0x4e0a22*/
   {
     if ( a3 ) /*0x4e0a2a*/
@@ -889,10 +889,10 @@ _DWORD *__thiscall sub_4E0A00(VectorClass *this, int a2, _DWORD *a3)
       this->IsAllocated = 1; /*0x4e0a86*/
     }
   }
-  this->vtable0 = &DynamicVectorClass<DiscreteDistributionClass<CellClass>::DistributionObject<CellClass *>>::`vftable'; /*0x4e0a8a*/
+  this->ptr_0 = &DynamicVectorClass<DiscreteDistributionClass<CellClass>::DistributionObject<CellClass *>>::`vftable'; /*0x4e0a8a*/
   *((_DWORD *)this + 5) = 10; /*0x4e0a90*/
   this->Items = 0; /*0x4e0a97*/
-  return &this->vtable0; /*0x4e0aa0*/
+  return &this->ptr_0; /*0x4e0aa0*/
 }
 
 
@@ -18835,17 +18835,17 @@ int __thiscall AbstractClassVector::Seek(_VectorClass_PAVAbstractClass *this, in
 // ==== 0x004E01F0  FoggedObjectClass::ClearBuffer  this=FoggedObjectClass  sig=csp ====
 void __thiscall FoggedObjectClass_42::ClearBuffer(FoggedObjectClass *this)
 {
-  void *vtable1; // eax
+  void *ptr_4; // eax
 
-  vtable1 = (void *)this->vtable1; /*0x4e01f6*/
+  ptr_4 = (void *)this->ptr_4; /*0x4e01f6*/
   this->uniqueId = 0; /*0x4e01f9*/
-  if ( vtable1 && BYTE1(this->vtable3) ) /*0x4e0200*/
+  if ( ptr_4 && BYTE1(this->ptr_C) ) /*0x4e0200*/
   {
-    __3_YAXPAX_Z(vtable1); /*0x4e0206*/
-    this->vtable1 = 0; /*0x4e020e*/
+    __3_YAXPAX_Z(ptr_4); /*0x4e0206*/
+    this->ptr_4 = 0; /*0x4e020e*/
   }
-  BYTE1(this->vtable3) = 0; /*0x4e0211*/
-  this->vtable2 = 0; /*0x4e0214*/
+  BYTE1(this->ptr_C) = 0; /*0x4e0211*/
+  this->ptr_8 = 0; /*0x4e0214*/
 }
 
 
@@ -18853,8 +18853,8 @@ void __thiscall FoggedObjectClass_42::ClearBuffer(FoggedObjectClass *this)
 // ==== 0x004E0220  FoggedObjectClass::PointerToIndex  this=FoggedObjectClass  sig=csp ====
 unsigned int __thiscall FoggedObjectClass_42::PointerToIndex(FoggedObjectClass *this, int a2)
 {
-  if ( LOBYTE(this->vtable3) ) /*0x4e0220*/
-    return (unsigned int)(a2 - this->vtable1) >> 2; /*0x4e0235*/
+  if ( LOBYTE(this->ptr_C) ) /*0x4e0220*/
+    return (unsigned int)(a2 - this->ptr_4) >> 2; /*0x4e0235*/
   else
     return 0; /*0x4e0227*/
 }
@@ -19268,42 +19268,42 @@ unsigned int __thiscall FoggedObjectClass_42::Write(_VectorClass_PAVFootClass *t
 char __thiscall FoggedObjectClass_42::SetCapacity(FoggedObjectClass *this, int a2, _DWORD *a3)
 {
   _DWORD *v4; // edi
-  int vtable2; // ecx
+  int ptr_8; // ecx
   int i; // eax
   int v7; // eax
 
   if ( a2 ) /*0x4e070c*/
   {
-    LOBYTE(this->vtable3) = 0; /*0x4e0712*/
+    LOBYTE(this->ptr_C) = 0; /*0x4e0712*/
     if ( a3 ) /*0x4e0718*/
       v4 = a3; /*0x4e072e*/
     else
       v4 = (_DWORD *)__2_YAPAXI_Z(4 * a2); /*0x4e072a*/
-    LOBYTE(this->vtable3) = 1; /*0x4e0732*/
+    LOBYTE(this->ptr_C) = 1; /*0x4e0732*/
     if ( !v4 ) /*0x4e0736*/
       return 0; /*0x4e07aa*/
-    if ( this->vtable1 ) /*0x4e0738*/
+    if ( this->ptr_4 ) /*0x4e0738*/
     {
-      vtable2 = this->vtable2; /*0x4e073f*/
-      if ( a2 < vtable2 ) /*0x4e0744*/
-        vtable2 = a2; /*0x4e0746*/
-      for ( i = 0; i < vtable2; v4[i - 1] = *(_DWORD *)(this->vtable1 + 4 * i - 4) ) /*0x4e074c*/
+      ptr_8 = this->ptr_8; /*0x4e073f*/
+      if ( a2 < ptr_8 ) /*0x4e0744*/
+        ptr_8 = a2; /*0x4e0746*/
+      for ( i = 0; i < ptr_8; v4[i - 1] = *(_DWORD *)(this->ptr_4 + 4 * i - 4) ) /*0x4e074c*/
         ++i; /*0x4e0751*/
-      if ( BYTE1(this->vtable3) ) /*0x4e075e*/
+      if ( BYTE1(this->ptr_C) ) /*0x4e075e*/
       {
-        __3_YAXPAX_Z((void *)this->vtable1); /*0x4e0769*/
-        this->vtable1 = 0; /*0x4e0771*/
+        __3_YAXPAX_Z((void *)this->ptr_4); /*0x4e0769*/
+        this->ptr_4 = 0; /*0x4e0771*/
       }
     }
-    this->vtable1 = (int)v4; /*0x4e077a*/
-    this->vtable2 = a2; /*0x4e0782*/
-    BYTE1(this->vtable3) = a3 == 0; /*0x4e0785*/
+    this->ptr_4 = (int)v4; /*0x4e077a*/
+    this->ptr_8 = a2; /*0x4e0782*/
+    BYTE1(this->ptr_C) = a3 == 0; /*0x4e0785*/
   }
   else
   {
-    (*(void (__thiscall **)(FoggedObjectClass *))(this->vtable0 + 12))(this); /*0x4e078e*/
+    (*(void (__thiscall **)(FoggedObjectClass *))(this->ptr_0 + 12))(this); /*0x4e078e*/
   }
-  v7 = this->vtable2; /*0x4e0791*/
+  v7 = this->ptr_8; /*0x4e0791*/
   if ( v7 < this->uniqueId ) /*0x4e0799*/
     this->uniqueId = v7; /*0x4e079b*/
   return 1; /*0x4e079e*/
@@ -19322,7 +19322,7 @@ int __thiscall FoggedObjectClass_42::FindItem(FoggedObjectClass *this, _DWORD *a
   result = 0; /*0x4e07b3*/
   if ( uniqueId <= 0 ) /*0x4e07b8*/
     return -1; /*0x4e07cf*/
-  for ( i = (_DWORD *)this->vtable1; *i != *a2; ++i ) /*0x4e07be*/
+  for ( i = (_DWORD *)this->ptr_4; *i != *a2; ++i ) /*0x4e07be*/
   {
     if ( ++result >= uniqueId ) /*0x4e07cd*/
       return -1; /*0x4e07cd*/
@@ -19551,7 +19551,7 @@ _DWORD *__thiscall sub_4E0A00(VectorClass *this, int a2, _DWORD *a3)
   this->Capacity = a2; /*0x4e0a11*/
   this->IsInitialized = 1; /*0x4e0a14*/
   this->IsAllocated = 0; /*0x4e0a18*/
-  this->vtable0 = &VectorClass<DiscreteDistributionClass<CellClass>::DistributionObject<CellClass *>>::`vftable'; /*0x4e0a1c*/
+  this->ptr_0 = &VectorClass<DiscreteDistributionClass<CellClass>::DistributionObject<CellClass *>>::`vftable'; /*0x4e0a1c*/
   if ( a2 ) /*0x4e0a22*/
   {
     if ( a3 ) /*0x4e0a2a*/
@@ -19600,10 +19600,10 @@ _DWORD *__thiscall sub_4E0A00(VectorClass *this, int a2, _DWORD *a3)
       this->IsAllocated = 1; /*0x4e0a86*/
     }
   }
-  this->vtable0 = &DynamicVectorClass<DiscreteDistributionClass<CellClass>::DistributionObject<CellClass *>>::`vftable'; /*0x4e0a8a*/
+  this->ptr_0 = &DynamicVectorClass<DiscreteDistributionClass<CellClass>::DistributionObject<CellClass *>>::`vftable'; /*0x4e0a8a*/
   *((_DWORD *)this + 5) = 10; /*0x4e0a90*/
   this->Items = 0; /*0x4e0a97*/
-  return &this->vtable0; /*0x4e0aa0*/
+  return &this->ptr_0; /*0x4e0aa0*/
 }
 
 

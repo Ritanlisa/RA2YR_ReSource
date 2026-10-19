@@ -338,7 +338,7 @@ IPXGlobalConnClass * IPXGlobalConnClass::QueryInterface(char a2)
 
   void *v3; // eax
   v3 = (void *)this->u32_D0; /*0x540673*/
-  /* X11: vtable install elided (implicit via IPXGlobalConnClass virtuals 0x540679) */
+  /* X11: ptr_0 install elided (implicit via IPXGlobalConnClass virtuals 0x540679) */
   if ( v3 ) /*0x540681*/
   {
     __3_YAXPAX_Z(v3); /*0x540684*/
@@ -349,7 +349,7 @@ IPXGlobalConnClass * IPXGlobalConnClass::QueryInterface(char a2)
     __3_YAXPAX_Z(this->u32_CC); /*0x5406a1*/
     this->u32_CC = 0; /*0x5406a9*/
   }
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EC0CC) */  /*0x5406b5*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EC0CC) */  /*0x5406b5*/
   ((ConnectionClass *)this)->dtor(); /*0x5406bb*/
   if ( (a2 & 1) != 0 ) /*0x5406c5*/
     __3_YAXPAX_Z(this); /*0x5406c8*/

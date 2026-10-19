@@ -37,7 +37,7 @@ class UnitClass;
 // ============================================================================
 // MoveFeedback — unit movement command feedback (14 methods)
 // IDA: Constructor 0x40C160, ProcessCommand 0x7327D0
-// COM class: IUnknown-based, vtable at this+0
+// COM class: IUnknown-based, ptr_0 at this+0
 // ============================================================================
 #ifndef GAMEMD_E4_MoveFeedback  // G42.33 b3: e4 flat carrier wins in opt-in TUs
 #if !defined(GAMEMD_G2_MoveFeedback_DEF) && !defined(GAMEMD_DEF_MoveFeedback) // G42.57w14 twin-guard (shared; first-include wins)

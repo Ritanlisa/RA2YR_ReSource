@@ -1063,7 +1063,7 @@ LABEL_21:
           v15 = v14; /*0x75134b*/
           if ( v14 ) /*0x751352*/
           {
-            v14->vtable0 = 0; /*0x751354*/
+            v14->ptr_0 = 0; /*0x751354*/
             if ( g_VocPlayState < dword_B1D380 /*0x75138f*/
               || (byte_B1D385 || !dword_B1D380)
               && dword_B1D38C > 0
@@ -1075,7 +1075,7 @@ LABEL_21:
               v16 = g_VocPlayState++; /*0x75139c*/
               *((_DWORD *)g_VocAudioConfig + v16) = v15; /*0x7513ab*/
             }
-            v15->vtable0 = (int)Audio::ProcessMixerOutput(Destination); /*0x7513b7*/
+            v15->ptr_0 = (int)Audio::ProcessMixerOutput(Destination); /*0x7513b7*/
           }
           else
           {
@@ -7771,23 +7771,23 @@ LABEL_5:
 int __thiscall sub_758AD0(ObjectClass *this, int *a2)
 {
   int v3; // ebx
-  void *vtable2; // eax
-  void *vtable1; // edx
-  void *vtable3; // ecx
+  void *ptr_8; // eax
+  void *ptr_4; // edx
+  void *ptr_C; // ecx
   int v7; // edx
   _DWORD v9[4]; // [esp+Ch] [ebp-10h] BYREF
 
   v3 = 0; /*0x758ae2*/
   if ( !(*(int (__thiscall **)(int *, int))(*a2 + 28))(a2, 2) ) /*0x758ae4*/
     goto LABEL_5; /*0x758ae4*/
-  vtable2 = this->?; /*0x758aed*/
-  vtable1 = this->?; /*0x758af0*/
+  ptr_8 = this->?; /*0x758aed*/
+  ptr_4 = this->?; /*0x758af0*/
   v9[0] = this->AbstractClass; /*0x758af3*/
-  vtable3 = this->?; /*0x758af7*/
-  v9[2] = vtable2; /*0x758afa*/
-  v9[1] = vtable1; /*0x758afe*/
+  ptr_C = this->?; /*0x758af7*/
+  v9[2] = ptr_8; /*0x758afa*/
+  v9[1] = ptr_4; /*0x758afe*/
   v7 = *a2; /*0x758b02*/
-  v9[3] = vtable3; /*0x758b08*/
+  v9[3] = ptr_C; /*0x758b08*/
   if ( (*(int (__thiscall **)(int *, _DWORD *, int))(v7 + 48))(a2, v9, 16) != 16 /*0x758b4a*/
     || (*(int (__thiscall **)(int *, int, int))(*a2 + 48))(a2, this->?, 768) != 768
     || (*(int (__thiscall **)(int *, int, int))(*a2 + 48))(a2, this->?, (int)this->? << 8) != (int)this->? << 8 )
@@ -8825,14 +8825,14 @@ char __thiscall DSurface::FlipIfNeeded(DSurface *this)
 int __thiscall AbstractClass::finalizeConstruction(AbstractClass *this)
 {
   int result; // eax
-  _DWORD *vtable0; // ecx
+  _DWORD *ptr_0; // ecx
 
   result = AbstractClass::finalizeDestruction(this->needsSave); /*0x759e89*/
-  vtable0 = this->vtable0; /*0x759e8e*/
-  if ( this->vtable0 ) /*0x759e8e*/
+  ptr_0 = this->ptr_0; /*0x759e8e*/
+  if ( this->ptr_0 ) /*0x759e8e*/
   {
-    vtable0[1] = 0; /*0x6c9d22*/
-    vtable0[2] = 0; /*0x6c9d25*/
+    ptr_0[1] = 0; /*0x6c9d22*/
+    ptr_0[2] = 0; /*0x6c9d25*/
     return 0; /*0x6c9d20*/
   }
   return result; /*0x759e90*/
@@ -10767,10 +10767,10 @@ int __thiscall AbstractClass::ProcessInit(AbstractClass *this)
   void *v6; // eax
   AbstractClass *v8; // [esp+8h] [ebp-4h] BYREF
 
-  this->vtable0 = &WarheadTypeClass::`vftable'; /*0x75d237*/
-  this->vtable1 = &WarheadTypeClass::`vftable'; /*0x75d23d*/
-  this->vtable2 = &WarheadTypeClass::`vftable'; /*0x75d244*/
-  this->vtable3 = &WarheadTypeClass::`vftable'; /*0x75d24b*/
+  this->ptr_0 = &WarheadTypeClass::`vftable'; /*0x75d237*/
+  this->ptr_4 = &WarheadTypeClass::`vftable'; /*0x75d23d*/
+  this->ptr_8 = &WarheadTypeClass::`vftable'; /*0x75d244*/
+  this->ptr_C = &WarheadTypeClass::`vftable'; /*0x75d24b*/
   AbstractClass::AnnounceExpiredPointer(this, 1); /*0x75d252*/
   v8 = this; /*0x75d267*/
   v2 = ((int (__thiscall *)(WarheadTypeClass **, AbstractClass **))WarheadTypeClass_Array->WarheadTypeClass_field_0x10)( /*0x75d26b*/
@@ -12858,7 +12858,7 @@ int WaveClass::StubReturnFalse(WaveClass *this)
 // ==== 0x0075F8B0  WaveClass::DrawWave  this=WaveClass  sig=csp ====
 char __thiscall WaveClass::DrawWave(WaveClass *this, _DWORD *a2, int a3)
 {
-  int (__thiscall **vtable0)(WaveClass *, CellClass *, int, int, _DWORD, int); // ebp
+  int (__thiscall **ptr_0)(WaveClass *, CellClass *, int, int, _DWORD, int); // ebp
   CellClass *v5; // eax
   void (__thiscall **v6)(WaveClass *, _DWORD *); // edx
   int v8; // [esp-10h] [ebp-18h]
@@ -12871,10 +12871,10 @@ char __thiscall WaveClass::DrawWave(WaveClass *this, _DWORD *a2, int a3)
     return 0; /*0x75f8cf*/
   if ( !dword_A8E7AC ) /*0x75f8e5*/
   {
-    vtable0 = (int (__thiscall **)(WaveClass *, CellClass *, int, int, _DWORD, int))this->ObjectClass; /*0x75f8eb*/
+    ptr_0 = (int (__thiscall **)(WaveClass *, CellClass *, int, int, _DWORD, int))this->ObjectClass; /*0x75f8eb*/
     v8 = a2[2]; /*0x75f8f1*/
     v5 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], a2); /*0x75f8fa*/
-    if ( vtable0[107](this, v5, -1, v8, 0, 1) ) /*0x75f902*/
+    if ( ptr_0[107](this, v5, -1, v8, 0, 1) ) /*0x75f902*/
       return 0; /*0x75f902*/
   }
   v6 = (void (__thiscall **)(WaveClass *, _DWORD *))this->ObjectClass; /*0x75f90d*/
@@ -12899,11 +12899,11 @@ char __thiscall WaveClass::UpdateWavePosition(WaveClass *this)
 {
   if ( !byte_A8E9A0 || this->inLimbo[0] ) /*0x75f98c*/
     return 0; /*0x75f9de*/
-  (*(void (__thiscall **)(WaveClass *, int))(this->vtable0 + 220))(this, 1); /*0x75f99a*/
-  (*(void (__thiscall **)(WaveClass *, _DWORD))(this->vtable0 + 292))(this, 0); /*0x75f9a6*/
+  (*(void (__thiscall **)(WaveClass *, int))(this->ptr_0 + 220))(this, 1); /*0x75f99a*/
+  (*(void (__thiscall **)(WaveClass *, _DWORD))(this->ptr_0 + 292))(this, 0); /*0x75f9a6*/
   RemoveTarget((int)this); /*0x75f9b2*/
   VectorClass::RemoveItem((DynamicVectorClass *)&dword_87F778, (int)this); /*0x75f9bd*/
-  (*(void (__thiscall **)(WaveClass *))(this->vtable0 + 284))(this); /*0x75f9c6*/
+  (*(void (__thiscall **)(WaveClass *))(this->ptr_0 + 284))(this); /*0x75f9c6*/
   this->inLimbo[0] = 1; /*0x75f9cc*/
   this->needsRedraw[0] = 0; /*0x75f9d3*/
   return 1; /*0x75f9dc*/
@@ -12914,7 +12914,7 @@ char __thiscall WaveClass::UpdateWavePosition(WaveClass *this)
 // ==== 0x0075F9F0  WaveClass::ProcessWaveCollision  this=WaveClass  sig=csp ====
 void __thiscall WaveClass::ProcessWaveCollision(WaveClass *this, _DWORD *a2, int *a3)
 {
-  if ( ((int)dword_A8B230->vtable0 & 0x1000) == 0 /*0x75fa20*/
+  if ( ((int)dword_A8B230->ptr_0 & 0x1000) == 0 /*0x75fa20*/
     || !(unsigned __int8)Game::Stub3((int)this->someCoords)
     || !(unsigned __int8)Game::Stub3((int)&this->WaveClass_field_C0) )
   {
@@ -14364,7 +14364,7 @@ LABEL_21:
           v15 = v14; /*0x75134b*/
           if ( v14 ) /*0x751352*/
           {
-            v14->vtable0 = 0; /*0x751354*/
+            v14->ptr_0 = 0; /*0x751354*/
             if ( g_VocPlayState < dword_B1D380 /*0x75138f*/
               || (byte_B1D385 || !dword_B1D380)
               && dword_B1D38C > 0
@@ -14376,7 +14376,7 @@ LABEL_21:
               v16 = g_VocPlayState++; /*0x75139c*/
               *((_DWORD *)g_VocAudioConfig + v16) = v15; /*0x7513ab*/
             }
-            v15->vtable0 = (int)Audio::ProcessMixerOutput(Destination); /*0x7513b7*/
+            v15->ptr_0 = (int)Audio::ProcessMixerOutput(Destination); /*0x7513b7*/
           }
           else
           {
@@ -21072,23 +21072,23 @@ LABEL_5:
 int __thiscall sub_758AD0(ObjectClass *this, int *a2)
 {
   int v3; // ebx
-  void *vtable2; // eax
-  void *vtable1; // edx
-  void *vtable3; // ecx
+  void *ptr_8; // eax
+  void *ptr_4; // edx
+  void *ptr_C; // ecx
   int v7; // edx
   _DWORD v9[4]; // [esp+Ch] [ebp-10h] BYREF
 
   v3 = 0; /*0x758ae2*/
   if ( !(*(int (__thiscall **)(int *, int))(*a2 + 28))(a2, 2) ) /*0x758ae4*/
     goto LABEL_5; /*0x758ae4*/
-  vtable2 = this->?; /*0x758aed*/
-  vtable1 = this->?; /*0x758af0*/
+  ptr_8 = this->?; /*0x758aed*/
+  ptr_4 = this->?; /*0x758af0*/
   v9[0] = this->AbstractClass; /*0x758af3*/
-  vtable3 = this->?; /*0x758af7*/
-  v9[2] = vtable2; /*0x758afa*/
-  v9[1] = vtable1; /*0x758afe*/
+  ptr_C = this->?; /*0x758af7*/
+  v9[2] = ptr_8; /*0x758afa*/
+  v9[1] = ptr_4; /*0x758afe*/
   v7 = *a2; /*0x758b02*/
-  v9[3] = vtable3; /*0x758b08*/
+  v9[3] = ptr_C; /*0x758b08*/
   if ( (*(int (__thiscall **)(int *, _DWORD *, int))(v7 + 48))(a2, v9, 16) != 16 /*0x758b4a*/
     || (*(int (__thiscall **)(int *, int, int))(*a2 + 48))(a2, this->?, 768) != 768
     || (*(int (__thiscall **)(int *, int, int))(*a2 + 48))(a2, this->?, (int)this->? << 8) != (int)this->? << 8 )
@@ -22126,14 +22126,14 @@ char __thiscall DSurface::FlipIfNeeded(DSurface *this)
 int __thiscall AbstractClass::finalizeConstruction(AbstractClass *this)
 {
   int result; // eax
-  _DWORD *vtable0; // ecx
+  _DWORD *ptr_0; // ecx
 
   result = AbstractClass::finalizeDestruction(this->needsSave); /*0x759e89*/
-  vtable0 = this->vtable0; /*0x759e8e*/
-  if ( this->vtable0 ) /*0x759e8e*/
+  ptr_0 = this->ptr_0; /*0x759e8e*/
+  if ( this->ptr_0 ) /*0x759e8e*/
   {
-    vtable0[1] = 0; /*0x6c9d22*/
-    vtable0[2] = 0; /*0x6c9d25*/
+    ptr_0[1] = 0; /*0x6c9d22*/
+    ptr_0[2] = 0; /*0x6c9d25*/
     return 0; /*0x6c9d20*/
   }
   return result; /*0x759e90*/
@@ -24068,10 +24068,10 @@ int __thiscall AbstractClass::ProcessInit(AbstractClass *this)
   void *v6; // eax
   AbstractClass *v8; // [esp+8h] [ebp-4h] BYREF
 
-  this->vtable0 = &WarheadTypeClass::`vftable'; /*0x75d237*/
-  this->vtable1 = &WarheadTypeClass::`vftable'; /*0x75d23d*/
-  this->vtable2 = &WarheadTypeClass::`vftable'; /*0x75d244*/
-  this->vtable3 = &WarheadTypeClass::`vftable'; /*0x75d24b*/
+  this->ptr_0 = &WarheadTypeClass::`vftable'; /*0x75d237*/
+  this->ptr_4 = &WarheadTypeClass::`vftable'; /*0x75d23d*/
+  this->ptr_8 = &WarheadTypeClass::`vftable'; /*0x75d244*/
+  this->ptr_C = &WarheadTypeClass::`vftable'; /*0x75d24b*/
   AbstractClass::AnnounceExpiredPointer(this, 1); /*0x75d252*/
   v8 = this; /*0x75d267*/
   v2 = ((int (__thiscall *)(WarheadTypeClass **, AbstractClass **))WarheadTypeClass_Array->WarheadTypeClass_field_0x10)( /*0x75d26b*/
@@ -26628,7 +26628,7 @@ int WaveClass::StubReturnFalse(WaveClass *this)
 // ==== 0x0075F8B0  WaveClass::DrawWave  this=WaveClass  sig=csp ====
 char __thiscall WaveClass::DrawWave(WaveClass *this, _DWORD *a2, int a3)
 {
-  int (__thiscall **vtable0)(WaveClass *, CellClass *, int, int, _DWORD, int); // ebp
+  int (__thiscall **ptr_0)(WaveClass *, CellClass *, int, int, _DWORD, int); // ebp
   CellClass *v5; // eax
   void (__thiscall **v6)(WaveClass *, _DWORD *); // edx
   int v8; // [esp-10h] [ebp-18h]
@@ -26641,10 +26641,10 @@ char __thiscall WaveClass::DrawWave(WaveClass *this, _DWORD *a2, int a3)
     return 0; /*0x75f8cf*/
   if ( !dword_A8E7AC ) /*0x75f8e5*/
   {
-    vtable0 = (int (__thiscall **)(WaveClass *, CellClass *, int, int, _DWORD, int))this->ObjectClass; /*0x75f8eb*/
+    ptr_0 = (int (__thiscall **)(WaveClass *, CellClass *, int, int, _DWORD, int))this->ObjectClass; /*0x75f8eb*/
     v8 = a2[2]; /*0x75f8f1*/
     v5 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], a2); /*0x75f8fa*/
-    if ( vtable0[107](this, v5, -1, v8, 0, 1) ) /*0x75f902*/
+    if ( ptr_0[107](this, v5, -1, v8, 0, 1) ) /*0x75f902*/
       return 0; /*0x75f902*/
   }
   v6 = (void (__thiscall **)(WaveClass *, _DWORD *))this->ObjectClass; /*0x75f90d*/
@@ -26669,11 +26669,11 @@ char __thiscall WaveClass::UpdateWavePosition(WaveClass *this)
 {
   if ( !byte_A8E9A0 || this->inLimbo[0] ) /*0x75f98c*/
     return 0; /*0x75f9de*/
-  (*(void (__thiscall **)(WaveClass *, int))(this->vtable0 + 220))(this, 1); /*0x75f99a*/
-  (*(void (__thiscall **)(WaveClass *, _DWORD))(this->vtable0 + 292))(this, 0); /*0x75f9a6*/
+  (*(void (__thiscall **)(WaveClass *, int))(this->ptr_0 + 220))(this, 1); /*0x75f99a*/
+  (*(void (__thiscall **)(WaveClass *, _DWORD))(this->ptr_0 + 292))(this, 0); /*0x75f9a6*/
   RemoveTarget((int)this); /*0x75f9b2*/
   VectorClass::RemoveItem((DynamicVectorClass *)&dword_87F778, (int)this); /*0x75f9bd*/
-  (*(void (__thiscall **)(WaveClass *))(this->vtable0 + 284))(this); /*0x75f9c6*/
+  (*(void (__thiscall **)(WaveClass *))(this->ptr_0 + 284))(this); /*0x75f9c6*/
   this->inLimbo[0] = 1; /*0x75f9cc*/
   this->needsRedraw[0] = 0; /*0x75f9d3*/
   return 1; /*0x75f9dc*/
@@ -26684,7 +26684,7 @@ char __thiscall WaveClass::UpdateWavePosition(WaveClass *this)
 // ==== 0x0075F9F0  WaveClass::ProcessWaveCollision  this=WaveClass  sig=csp ====
 void __thiscall WaveClass::ProcessWaveCollision(WaveClass *this, _DWORD *a2, int *a3)
 {
-  if ( ((int)dword_A8B230->vtable0 & 0x1000) == 0 /*0x75fa20*/
+  if ( ((int)dword_A8B230->ptr_0 & 0x1000) == 0 /*0x75fa20*/
     || !(unsigned __int8)Game::Stub3((int)this->someCoords)
     || !(unsigned __int8)Game::Stub3((int)&this->WaveClass_field_C0) )
   {

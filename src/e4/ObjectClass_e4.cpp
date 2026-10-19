@@ -418,7 +418,7 @@ int ObjectClass::LoadFromStream_Common(FootClass * aP0, LPSTREAM pStm)
       if ( aP0 != -1416 ) /*0x4db413*/
       {
         AbstractClassVector::Construct(&aP0->FootClass_DVC_588, 0, 0); /*0x4db419*/
-        /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E91EC) */  /*0x4db41e*/
+        /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E91EC) */  /*0x4db41e*/
         *(unsigned int *)(aP0 + 1436) = 10; /*0x4db424*/
         *(unsigned int *)(aP0 + 1432) = 0; /*0x4db42b*/
       }
@@ -437,7 +437,7 @@ LABEL_16:
           if ( aP0 != -1452 ) /*0x4db4c1*/
           {
             AbstractClassVector::Construct(&aP0->FootClass_DVC_5AC, 0, 0); /*0x4db4c7*/
-            /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E91EC) */  /*0x4db4cc*/
+            /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E91EC) */  /*0x4db4cc*/
             *(unsigned int *)(aP0 + 1472) = 10; /*0x4db4d2*/
             *(unsigned int *)(aP0 + 1468) = 0; /*0x4db4d9*/
           }
@@ -1010,10 +1010,10 @@ ObjectClass * * ObjectClass::Dtor()
 
   ObjectClass *attachedBomb; // ecx
   attachedBomb = (ObjectClass *)this->attachedBomb; /*0x5f3b84*/
-  /* X11: vtable install elided (implicit via ObjectClass virtuals 0x5f3b87) */
-  /* X11: vtable install elided (implicit via ObjectClass virtuals 0x5f3b8f) */
-  /* X11: vtable install elided (implicit via ObjectClass virtuals 0x5f3b96) */
-  /* X11: vtable install elided (implicit via ObjectClass virtuals 0x5f3b9d) */
+  /* X11: ptr_0 install elided (implicit via ObjectClass virtuals 0x5f3b87) */
+  /* X11: ptr_0 install elided (implicit via ObjectClass virtuals 0x5f3b8f) */
+  /* X11: ptr_0 install elided (implicit via ObjectClass virtuals 0x5f3b96) */
+  /* X11: ptr_0 install elided (implicit via ObjectClass virtuals 0x5f3b9d) */
   if ( attachedBomb ) /*0x5f3ba4*/
     ObjectClass::CleanupAudioAndRefs(attachedBomb); /*0x5f3ba6*/
   ObjectClass *v10; // [esp+10h] [ebp-4h] BYREF

@@ -10,7 +10,7 @@ class DSurface;
 
 //
 // MovieHandle -- abstract base for movie playback
-// Matches BinkMovieHandle/VQMovieHandle vtable from IDA
+// Matches BinkMovieHandle/VQMovieHandle ptr_0 from IDA
 //
 class MovieHandle
 {

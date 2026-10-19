@@ -95,10 +95,10 @@ MSPCXAnim * MSPCXAnim::QueryInterface(char a2, int a3)
   void (***v3)(unsigned int, int); // ecx
 
   v3 = (void (***)(unsigned int, int))*((unsigned int *)a3 + 9); /*0x5ced73*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EEA2C) */  /*0x5ced76*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EEA2C) */  /*0x5ced76*/
   if ( v3 ) /*0x5ced7e*/
     (**v3)(v3, 1); /*0x5ced84*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7EE8E8) */  /*0x5ced8a*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EE8E8) */  /*0x5ced8a*/
   if ( (a3 & 1) != 0 ) /*0x5ced92*/
     operator delete((void *)(a3)); /*0x5ced95*/
   return a3->__pad_0; /*0x5ced9f*/
@@ -914,7 +914,7 @@ DynamicVector * MSPCXAnim_42::Constructor_VectorClass_Point2D_(unsigned int * Bl
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x5d1713*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x5d1716*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x5d1716*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x5d1720*/
   {
     operator delete((v3)); /*0x5d1728*/
@@ -934,7 +934,7 @@ DynamicVector * MSPCXAnim_42::Constructor_VectorClass_MSTextEntry___(unsigned in
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x5d17b3*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x5d17b6*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x5d17b6*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x5d17c0*/
   {
     operator delete((v3)); /*0x5d17c8*/
@@ -954,7 +954,7 @@ DynamicVector * MSPCXAnim_42::Constructor_VectorClass_MapSelection___(unsigned i
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x5d1853*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x5d1856*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x5d1856*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x5d1860*/
   {
     operator delete((v3)); /*0x5d1868*/
@@ -974,7 +974,7 @@ VectorClass_flat * MSPCXAnim_26::Constructor_VectorClass_MapStage___(unsigned in
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x5d18a3*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x5d18a6*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x5d18a6*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x5d18b0*/
   {
     operator delete((v3)); /*0x5d18b8*/
@@ -994,7 +994,7 @@ DynamicVector * MSPCXAnim_26::QueryInterface(unsigned int * Block, char a2)
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x5d18f3*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x5d18f6*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x5d18f6*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x5d1900*/
   {
     operator delete((v3)); /*0x5d1908*/
@@ -1014,7 +1014,7 @@ VectorClass_flat * MSPCXAnim_42::QueryInterface(unsigned int * Block, char a2)
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x5d1943*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x5d1946*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x5d1946*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x5d1950*/
   {
     operator delete((v3)); /*0x5d1958*/
@@ -1034,7 +1034,7 @@ DynamicVector * MSPCXAnim_26::Constructor_VectorClass_MSAnimEntry___(unsigned in
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x5d1993*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x5d1996*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x5d1996*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x5d19a0*/
   {
     operator delete((v3)); /*0x5d19a8*/
@@ -1054,7 +1054,7 @@ DynamicVector * MSPCXAnim_26::Constructor_VectorClass_MSSfxEntry___(unsigned int
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x5d1a33*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x5d1a36*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x5d1a36*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x5d1a40*/
   {
     operator delete((v3)); /*0x5d1a48*/

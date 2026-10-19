@@ -276,21 +276,21 @@ int SuperWeaponTypeClass::Construct(char *aP1, void *a2, void *a3, void *a4, voi
   (&this->q14C)->Construct2(0, 0); /*0x5114fc*/
   this->q160 = 10; /*0x511501*/
   this->q15C = 0; /*0x511508*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_var_131447) */  /*0x51150b*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_131447) */  /*0x51150b*/
   (&this->q168)->ConstructUnitTypeVectorClass(0, 0); /*0x51151b*/
   this->u32_17C = 10; /*0x511520*/
   this->u32_178 = 0; /*0x511527*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_var_131447) */  /*0x51152a*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_131447) */  /*0x51152a*/
   AircraftTypeVector::Constructor(&this->AbstractClass_184, 0, 0); /*0x51153a*/
   this->q198 = 10; /*0x511542*/
   this->q194 = 0; /*0x511549*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_var_131447) */  /*0x51154c*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_131447) */  /*0x51154c*/
   this->q1A4 = 16777281; /*0x511552*/
   this->WarheadTypeClass_1A8 = 0; /*0x51156c*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7EAB2C) */  /*0x511572*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7EAB2C) */  /*0x511578*/
-  /* X11: vtable install elided (implicit via HouseTypeClass virtuals 0x51157f) */
-  /* X11: vtable install elided (implicit via HouseTypeClass virtuals 0x511586) */
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7EAB2C) */  /*0x511572*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7EAB2C) */  /*0x511578*/
+  /* X11: ptr_0 install elided (implicit via HouseTypeClass virtuals 0x51157f) */
+  /* X11: ptr_0 install elided (implicit via HouseTypeClass virtuals 0x511586) */
   AbstractClass::GenerateUniqueID(&this->AbstractClass_184); /*0x51158d*/
   this->q1A0 = 0; /*0x511592*/
   v4 = dword_A83CA8; /*0x511598*/
@@ -612,10 +612,10 @@ unsigned int * SuperWeaponTypeClass::SDDTOR(char a2)
 {
 
 
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F4064) */  /*0x6cefed*/
-  /* X11: vtable install elided (implicit via SuperWeaponTypeClass virtuals 0x6ceff3) */
-  /* X11: vtable install elided (implicit via SuperWeaponTypeClass virtuals 0x6ceffa) */
-  /* X11: vtable install elided (implicit via SuperWeaponTypeClass virtuals 0x6cf001) */
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F4064) */  /*0x6cefed*/
+  /* X11: ptr_0 install elided (implicit via SuperWeaponTypeClass virtuals 0x6ceff3) */
+  /* X11: ptr_0 install elided (implicit via SuperWeaponTypeClass virtuals 0x6ceffa) */
+  /* X11: ptr_0 install elided (implicit via SuperWeaponTypeClass virtuals 0x6cf001) */
   SuperWeaponTypeClass *v5; // [esp+4h] [ebp-4h] BYREF
   v5 = this; /*0x6cf00f*/
   int v3; // eax
@@ -760,10 +760,10 @@ SuperWeaponTypeClass::SuperWeaponTypeClass(void * aP1)
   this->ManualControl_d = 0; /*0x6ce654*/
   this->Range_d = 0; /*0x6ce65a*/
   this->LineMultiplier_d = 0; /*0x6ce660*/
-  /* X11: vtable install elided (implicit via SuperWeaponTypeClass virtuals 0x6ce666) */
-  /* X11: vtable install elided (implicit via SuperWeaponTypeClass virtuals 0x6ce66d) */
-  /* X11: vtable install elided (implicit via SuperWeaponTypeClass virtuals 0x6ce673) */
-  /* X11: vtable install elided (implicit via SuperWeaponTypeClass virtuals 0x6ce67a) */
+  /* X11: ptr_0 install elided (implicit via SuperWeaponTypeClass virtuals 0x6ce666) */
+  /* X11: ptr_0 install elided (implicit via SuperWeaponTypeClass virtuals 0x6ce66d) */
+  /* X11: ptr_0 install elided (implicit via SuperWeaponTypeClass virtuals 0x6ce673) */
+  /* X11: ptr_0 install elided (implicit via SuperWeaponTypeClass virtuals 0x6ce67a) */
   this->ptr_4.GenerateUniqueID(); /*0x6ce681*/
   this->ArrayIndex = dword_A8E340; /*0x6ce68c*/
   if ( dword_A8E340 < dword_A8E338 /*0x6ce6c4*/
@@ -812,10 +812,10 @@ int SuperWeaponTypeClass::SaveLoad_Prefix(int a1, int a2)
       char v4; // [esp+7h] [ebp-201h] BYREF
       AbstractTypeClass::Init((int)a1, (int)&v4); /*0x6ce82c*/
       a1->SidebarImage = 0; /*0x6ce831*/
-      /* X11: vtable install elided (implicit via SuperWeaponTypeClass virtuals 0x6ce83b) */
-      /* X11: vtable install elided (implicit via SuperWeaponTypeClass virtuals 0x6ce841) */
-      /* X11: vtable install elided (implicit via SuperWeaponTypeClass virtuals 0x6ce848) */
-      /* X11: vtable install elided (implicit via SuperWeaponTypeClass virtuals 0x6ce84f) */
+      /* X11: ptr_0 install elided (implicit via SuperWeaponTypeClass virtuals 0x6ce83b) */
+      /* X11: ptr_0 install elided (implicit via SuperWeaponTypeClass virtuals 0x6ce841) */
+      /* X11: ptr_0 install elided (implicit via SuperWeaponTypeClass virtuals 0x6ce848) */
+      /* X11: ptr_0 install elided (implicit via SuperWeaponTypeClass virtuals 0x6ce84f) */
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&a1->WeaponType); /*0x6ce862*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&a1->AuxBuilding); /*0x6ce873*/

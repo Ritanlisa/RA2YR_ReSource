@@ -55,10 +55,10 @@ int Screen_Capture(void * a1, void * a2, void * a3, void * a4)
     v7[2] = v6; /*0x52ff16*/
     v7[1] = v5; /*0x52ff24*/
     v7[3] = 0; /*0x52ff27*/
-    /* X11: vtable install elided (X67 star-deref, RHS XSurface_Vtable) */  /*0x52ff2e*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS XSurface_Vtable) */  /*0x52ff2e*/
     v7[4] = 2; /*0x52ff34*/
     Buffer::Init(v7 + 5, 0, 2 * v5 * v6); /*0x52ff3b*/
-    /* X11: vtable install elided (X67 star-deref, RHS BSurface_Vtable) */  /*0x52ff40*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS BSurface_Vtable) */  /*0x52ff40*/
   }
   else
   {

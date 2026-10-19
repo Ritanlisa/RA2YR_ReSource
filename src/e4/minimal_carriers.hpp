@@ -281,7 +281,7 @@ struct Next { void* ptr_0; };  // minimal E2 (size-fix pending til evidence)
 } // namespace gamemd
 namespace gamemd {
 struct VectorClass_TagClass {  // G57w17h4: til VectorClass (ordinal 1500) layout, ?$VectorClass@PAVTagClass@@
-    void *ptr_0;                // 0x0 (til vtable0)
+    void *ptr_0;                // 0x0 (til ptr_0)
     unsigned int *Items;          // 0x4 (til int; raw reads as u32 item array)
     unsigned int Capacity;        // 0x8 (til int)
     unsigned char IsInitialized;  // 0xC (til char[1])
@@ -315,15 +315,15 @@ struct Add { void* ptr_0; };  // minimal E2 (size-fix pending til evidence)
 #define GAMEMD_E4_FLAT_MouseClass 1  // G57w8: twin-guard dedup, define restored
 struct MouseClass {
 void* ptr_0;
-    unsigned int q030;  // 0x30 (W16G3 raw vtable-slot vocab, Scenario/Dialog/addr48 sites)
-    unsigned int q040;  // 0x40 (W16G3 raw vtable-slot vocab)
-    unsigned int q_40;  // 0x40 alt-site (W16G3 raw vtable-slot vocab)
-    unsigned int u32_50;  // 0x50 (W16G3 raw vtable-slot vocab)
-    unsigned int q_A0;  // 0xA0 (W16G3 raw vtable-slot vocab)
-    unsigned int q0B0;  // 0xB0 (W16G3 raw vtable-slot vocab)
-    unsigned int __pad_0C0;  // 0xC0 (W16G3 raw vtable-slot vocab)
-    unsigned int q0F0;  // 0xF0 (W16G3 raw vtable-slot vocab)
-    unsigned int q100;  // 0x100 (W16G3 raw vtable-slot vocab)
+    unsigned int q030;  // 0x30 (W16G3 raw ptr_0-slot vocab, Scenario/Dialog/addr48 sites)
+    unsigned int q040;  // 0x40 (W16G3 raw ptr_0-slot vocab)
+    unsigned int q_40;  // 0x40 alt-site (W16G3 raw ptr_0-slot vocab)
+    unsigned int u32_50;  // 0x50 (W16G3 raw ptr_0-slot vocab)
+    unsigned int q_A0;  // 0xA0 (W16G3 raw ptr_0-slot vocab)
+    unsigned int q0B0;  // 0xB0 (W16G3 raw ptr_0-slot vocab)
+    unsigned int __pad_0C0;  // 0xC0 (W16G3 raw ptr_0-slot vocab)
+    unsigned int q0F0;  // 0xF0 (W16G3 raw ptr_0-slot vocab)
+    unsigned int q100;  // 0x100 (W16G3 raw ptr_0-slot vocab)
 };
   // minimal E2 (size-fix pending til evidence)
 #endif  // GAMEMD_E4_FLAT_MouseClass

@@ -710,10 +710,10 @@ void * TEventClass::Fire(void ** Block, char a2)
 {
 
 
-  /* X11: vtable install elided (base-interface slot, RHS g_ptr_7F554C) */  /*0x71fa86*/
-  /* X11: vtable install elided (qmark slot, RHS g_ptr_7F554C) */  /*0x71fa8c*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F554C) */  /*0x71fa93*/
-  /* X11: vtable install elided (qmark slot, RHS g_ptr_7F554C) */  /*0x71fa9a*/
+  /* X11: ptr_0 install elided (base-interface slot, RHS g_ptr_7F554C) */  /*0x71fa86*/
+  /* X11: ptr_0 install elided (qmark slot, RHS g_ptr_7F554C) */  /*0x71fa8c*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F554C) */  /*0x71fa93*/
+  /* X11: ptr_0 install elided (qmark slot, RHS g_ptr_7F554C) */  /*0x71fa9a*/
   AbstractClass::AnnounceExpiredPointer(&Block->AbstractClass, 1); /*0x71faa1*/
   TEventClass *v7; // [esp+8h] [ebp-4h] BYREF
   v7 = (gamemd::TEventClass *)(Block); /*0x71fab6*/
@@ -825,10 +825,10 @@ int TEventClass::SaveLoad_Prefix(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x71f8d6*/
     {
       AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x71f8df*/
-      /* X11: vtable install elided (implicit via TEventClass virtuals 0x71f8e4) */
-      /* X11: vtable install elided (implicit via TEventClass virtuals 0x71f8ea) */
-      /* X11: vtable install elided (implicit via TEventClass virtuals 0x71f8f1) */
-      /* X11: vtable install elided (implicit via TEventClass virtuals 0x71f8f8) */
+      /* X11: ptr_0 install elided (implicit via TEventClass virtuals 0x71f8e4) */
+      /* X11: ptr_0 install elided (implicit via TEventClass virtuals 0x71f8ea) */
+      /* X11: ptr_0 install elided (implicit via TEventClass virtuals 0x71f8f1) */
+      /* X11: ptr_0 install elided (implicit via TEventClass virtuals 0x71f8f8) */
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->TEventClass_field_28); /*0x71f908*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->TEventClass_field_30); /*0x71f916*/

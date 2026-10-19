@@ -83,10 +83,10 @@ OverlayTypeClass::OverlayTypeClass(ObjectClass * aP1)
   this->q2B6 = 0; /*0x5fe2de*/
   this->q2B7 = 0; /*0x5fe2e4*/
   this->ParticleTypeClass_2B8 = 0; /*0x5fe2ea*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7EF5D4) */  /*0x5fe2f1*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7EF5D4) */  /*0x5fe2f7*/
-  /* X11: vtable install elided (implicit via OverlayTypeClass virtuals 0x5fe2fd) */
-  /* X11: vtable install elided (implicit via OverlayTypeClass virtuals 0x5fe304) */
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7EF5D4) */  /*0x5fe2f1*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7EF5D4) */  /*0x5fe2f7*/
+  /* X11: ptr_0 install elided (implicit via OverlayTypeClass virtuals 0x5fe2fd) */
+  /* X11: ptr_0 install elided (implicit via OverlayTypeClass virtuals 0x5fe304) */
   AbstractClass::GenerateUniqueID((AbstractClass *)&this->?); /*0x5fe30b*/
   this->RadarInvisible_d = 1; /*0x5fe310*/
   this->Selectable_d = 0; /*0x5fe317*/
@@ -278,10 +278,10 @@ ScenarioClass * * OverlayTypeClass::SaveLoad_Prefix(int a1, int a2)
     if ( a1 ) /*0x5feb13*/
     {
       ObjectTypeClass::Construct((ObjectTypeClass *)a1, (int)v3); /*0x5feb1c*/
-      /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7EF5D4) */  /*0x5feb21*/
-      /* X11: vtable install elided (qmark slot, RHS g_ptr_7EF5D4) */  /*0x5feb27*/
-      /* X11: vtable install elided (qmark slot, RHS g_ptr_7EF5D4) */  /*0x5feb2e*/
-      /* X11: vtable install elided (qmark slot, RHS g_ptr_7EF5D4) */  /*0x5feb35*/
+      /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7EF5D4) */  /*0x5feb21*/
+      /* X11: ptr_0 install elided (qmark slot, RHS g_ptr_7EF5D4) */  /*0x5feb27*/
+      /* X11: ptr_0 install elided (qmark slot, RHS g_ptr_7EF5D4) */  /*0x5feb2e*/
+      /* X11: ptr_0 install elided (qmark slot, RHS g_ptr_7EF5D4) */  /*0x5feb35*/
     }
     ((char *)a1)->LoadAnim(); /*0x5feb3e*/
     ((char *)a1)->Load2DArt(); /*0x5feb45*/
@@ -336,7 +336,7 @@ AnimTypeClass * * OverlayTypeClass::GetCategory()
     this->Image = v3; /*0x5feeb1*/
     if ( v3 ) /*0x5feeb7*/
       this->ImageAllocated = 1; /*0x5feeb9*/
-    /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x5feec4*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x5feec4*/
     v6 = 0; /*0x5feecc*/
     Vector::Clear((int)v5); /*0x5feed4*/
     *(unsigned int *)v4.__tail_0 = &off_7E1668; /*0x5feedd*/
@@ -388,10 +388,10 @@ unsigned int *  OverlayTypeClass::Construct(char *aP1, void *a2, void *a3, void 
   this->u32_30A = 0; /*0x644189*/
   this->u32_30B = 0; /*0x644190*/
   this->u32_30C = 0; /*0x644196*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F007C) */  /*0x64419c*/
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7F007C) */  /*0x6441a2*/
-  /* X11: vtable install elided (implicit via ParticleSystemTypeClass virtuals 0x6441a8) */
-  /* X11: vtable install elided (implicit via ParticleSystemTypeClass virtuals 0x6441af) */
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F007C) */  /*0x64419c*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F007C) */  /*0x6441a2*/
+  /* X11: ptr_0 install elided (implicit via ParticleSystemTypeClass virtuals 0x6441a8) */
+  /* X11: ptr_0 install elided (implicit via ParticleSystemTypeClass virtuals 0x6441af) */
   AbstractClass::GenerateUniqueID(&this->LandType); /*0x6441b6*/
   if ( (int)g_InfantryTypeInitState < *(int *)&DataGlobal_A83D70 /*0x6441ef*/
     || (BYTE1(DataGlobal_A83D74) || !*(unsigned int *)&DataGlobal_A83D70)
@@ -654,10 +654,10 @@ namespace gamemd {
 int v3; // eax
 OverlayTypeClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-/* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7EF5D4) */
-/* X11: vtable install elided (implicit via OverlayTypeClass virtuals) */
-/* X11: vtable install elided (implicit via OverlayTypeClass virtuals) */
-/* X11: vtable install elided (implicit via OverlayTypeClass virtuals) */
+/* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7EF5D4) */
+/* X11: ptr_0 install elided (implicit via OverlayTypeClass virtuals) */
+/* X11: ptr_0 install elided (implicit via OverlayTypeClass virtuals) */
+/* X11: ptr_0 install elided (implicit via OverlayTypeClass virtuals) */
 AbstractClass::AnnounceExpiredPointer(&this->ptr_0, 1); /*0x5fef51*/
 v5 = this; /*0x5fef66*/
 v3 = (*((int (**)(void **, OverlayTypeClass **))DataGlobal_A83D80 + 4))( /*0x5fef6a*/

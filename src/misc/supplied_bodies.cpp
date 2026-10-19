@@ -2408,7 +2408,7 @@ unsigned int * ControlClass::Construct(int a2, int a3, int a4, int a5, int a6, i
     GadgetClass::Construct((ShpButtonClass *)this, a3, a4, a5, a6, a7, a8); /*0x48e543*/
     this->u32_28 = 0; /*0x48e54c*/
     this->u32_24 = a2; /*0x48e553*/
-    /* X11: vtable install elided (implicit via ControlClass virtuals 0x48e556) */
+    /* X11: ptr_0 install elided (implicit via ControlClass virtuals 0x48e556) */
     return this->ptr_0; /*0x48e55e*/
 }
 } // namespace ra2::gamemd::ra2::gamemd::ra2::gamemd::ra2::gamemd
@@ -2450,7 +2450,7 @@ namespace ra2::gamemd::ra2::gamemd::ra2::gamemd::ra2::gamemd {
 unsigned int * ControlClass::Constructor(int a2) {
     this->X = 0; /*0x4e1344*/
     this->Y = 0; /*0x4e1347*/
-    /* X11: vtable install elided (implicit via LinkClass virtuals 0x4e134e) */
+    /* X11: ptr_0 install elided (implicit via LinkClass virtuals 0x4e134e) */
     this->Width = a2->Width; /*0x4e1357*/
     this->X = a2->Height; /*0x4e135d*/
     this->Visible = a2->Visible; /*0x4e1363*/
@@ -2459,7 +2459,7 @@ unsigned int * ControlClass::Constructor(int a2) {
     this->u32_1D = a2->q01D; /*0x4e1375*/
     this->u32_1E = a2->q01E; /*0x4e137b*/
     this->DestinationCoords = a2->q020; /*0x4e1381*/
-    /* X11: vtable install elided (implicit via GadgetClass virtuals 0x4e1384) */
+    /* X11: ptr_0 install elided (implicit via GadgetClass virtuals 0x4e1384) */
     return this->ptr_0; /*0x4e138a*/
 }
 } // namespace ra2::gamemd::ra2::gamemd::ra2::gamemd::ra2::gamemd
@@ -2629,7 +2629,7 @@ int * SliderClass::Constructor(int a2, int a3, int a4, int a5, int a6, int a7) {
   int v33; // [esp-10h] [ebp-30h]
 
   ListClass::Constructor((int)this, a2, a3, a4, a5, a6); /*0x6b1b44*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7ED21C) */  /*0x6b1b51*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7ED21C) */  /*0x6b1b51*/
   this->u32_44 = a7 != 0; /*0x6b1b5c*/
   this->u32_3C = 0; /*0x6b1b5f*/
   this->u32_40 = 0; /*0x6b1b62*/
@@ -2725,7 +2725,7 @@ int SliderClass::Destructor() {
     void (__thiscall ***v3)(unsigned int, int); // ecx
 
     v2 = (void (__thiscall ***)(unsigned int, int))this->u32_3C; /*0x6b1d03*/
-    /* X11: vtable install elided (implicit via SliderClass virtuals 0x6b1d06) */
+    /* X11: ptr_0 install elided (implicit via SliderClass virtuals 0x6b1d06) */
     if ( v2 ) /*0x6b1d0e*/
     {
       (**v2)(v2, 1); /*0x6b1d14*/

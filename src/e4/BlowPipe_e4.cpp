@@ -583,7 +583,7 @@ VectorClass_flat * BlowPipe_23::Destructor(unsigned int * Block, char a2)
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x63ed93*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x63ed96*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x63ed96*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x63eda0*/
   {
     operator delete((v3)); /*0x63eda8*/
@@ -603,7 +603,7 @@ DynamicVector * BlowPipe_31::QueryInterface(unsigned int * Block, char a2)
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x63ede3*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x63ede6*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x63ede6*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x63edf0*/
   {
     operator delete((v3)); /*0x63edf8*/
@@ -623,7 +623,7 @@ VectorClass_flat * BlowPipe_23::QueryInterface(unsigned int * Block, char a2)
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x63ee33*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x63ee36*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x63ee36*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x63ee40*/
   {
     operator delete((v3)); /*0x63ee48*/
@@ -643,7 +643,7 @@ DynamicVector * BlowPipe_23::Destructor_0(unsigned int * Block, char a2)
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x63ee83*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x63ee86*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x63ee86*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x63ee90*/
   {
     operator delete((v3)); /*0x63ee98*/
@@ -663,7 +663,7 @@ DynamicVector * BlowPipe_23::Destructor_1(unsigned int * Block, char a2)
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x63ef23*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x63ef26*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x63ef26*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x63ef30*/
   {
     operator delete((v3)); /*0x63ef38*/

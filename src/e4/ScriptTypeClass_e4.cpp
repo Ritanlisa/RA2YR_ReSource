@@ -41,10 +41,10 @@ int ScriptTypeClass::LoadTypeData(AbstractTypeClass * aP0, int aP1)
     if ( aP0 ) /*0x691da6*/
     {
       AbstractTypeClass::Init((int)aP0, (int)&aP1); /*0x691daf*/
-      /* X11: vtable install elided (implicit via ScriptTypeClass virtuals 0x691db4) */
-      /* X11: vtable install elided (implicit via ScriptTypeClass virtuals 0x691dba) */
-      /* X11: vtable install elided (implicit via ScriptTypeClass virtuals 0x691dc1) */
-      /* X11: vtable install elided (implicit via ScriptTypeClass virtuals 0x691dc8) */
+      /* X11: ptr_0 install elided (implicit via ScriptTypeClass virtuals 0x691db4) */
+      /* X11: ptr_0 install elided (implicit via ScriptTypeClass virtuals 0x691dba) */
+      /* X11: ptr_0 install elided (implicit via ScriptTypeClass virtuals 0x691dc1) */
+      /* X11: ptr_0 install elided (implicit via ScriptTypeClass virtuals 0x691dc8) */
     }
     return 0; /*0x691dcf*/
   }
@@ -87,10 +87,10 @@ ScriptTypeClass * ScriptTypeClass::ddtor(char a2, int a1, int a3)
 {
 
 
-  /* X11: vtable install elided (base-interface slot, RHS g_ptr_7F0FDC) */  /*0x691fa6*/
-  /* X11: vtable install elided (qmark slot, RHS g_ptr_7F0FDC) */  /*0x691fac*/
-  /* X11: vtable install elided (qmark slot, RHS g_ptr_7F0FDC) */  /*0x691fb3*/
-  /* X11: vtable install elided (qmark slot, RHS g_ptr_7F0FDC) */  /*0x691fba*/
+  /* X11: ptr_0 install elided (base-interface slot, RHS g_ptr_7F0FDC) */  /*0x691fa6*/
+  /* X11: ptr_0 install elided (qmark slot, RHS g_ptr_7F0FDC) */  /*0x691fac*/
+  /* X11: ptr_0 install elided (qmark slot, RHS g_ptr_7F0FDC) */  /*0x691fb3*/
+  /* X11: ptr_0 install elided (qmark slot, RHS g_ptr_7F0FDC) */  /*0x691fba*/
   AbstractClass::AnnounceExpiredPointer(&a1->AbstractClass, 1); /*0x691fc1*/
   ScriptTypeClass *v5; // [esp+4h] [ebp-4h] BYREF
   v5 = (gamemd::ScriptTypeClass *)(a1); /*0x691fd6*/

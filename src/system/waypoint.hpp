@@ -16,7 +16,7 @@ class WaypointPathClass;
 class WaypointClass
 {
 public:
-    // required by embedded VectorClass<WaypointClass> vtable instantiation
+    // required by embedded VectorClass<WaypointClass> ptr_0 instantiation
     // (conservative identity compare; no binary call sites observed)
     bool operator==(const WaypointClass& other) const;
     // 0x502160 FindOrAddPath

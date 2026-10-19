@@ -240,10 +240,10 @@ unsigned int * SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
       *(unsigned int *)(v10 + 12) = 0; /*0x630429*/
       *(unsigned int *)(v10 + 4) = v54; /*0x630438*/
       *(unsigned int *)(v10 + 8) = v8; /*0x63043b*/
-      /* X11: vtable install elided (X67 star-deref, RHS XSurface_Vtable) */  /*0x63043e*/
+      /* X11: ptr_0 install elided (X67 star-deref, RHS XSurface_Vtable) */  /*0x63043e*/
       Buffer::Init((Buffer *)(v10 + 20), (int)&v65, v54 * v8 * v9); /*0x630444*/
       v12 = v11; /*0x630449*/
-      /* X11: vtable install elided (X67 star-deref, RHS BSurface_Vtable) */  /*0x63044f*/
+      /* X11: ptr_0 install elided (X67 star-deref, RHS BSurface_Vtable) */  /*0x63044f*/
       v55 = v11; /*0x630455*/
     }
     else
@@ -263,9 +263,9 @@ unsigned int * SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
     *(unsigned int *)(v13 + 4) = v54; /*0x630494*/
     *(unsigned int *)(v13 + 8) = v8; /*0x630497*/
     *(unsigned int *)(v13 + 12) = 0; /*0x63049a*/
-    /* X11: vtable install elided (X67 star-deref, RHS XSurface_Vtable) */  /*0x6304a1*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS XSurface_Vtable) */  /*0x6304a1*/
     Buffer::Init((Buffer *)(v13 + 20), 0, v54 * v8 * v9); /*0x6304a7*/
-    /* X11: vtable install elided (X67 star-deref, RHS BSurface_Vtable) */  /*0x6304ac*/
+    /* X11: ptr_0 install elided (X67 star-deref, RHS BSurface_Vtable) */  /*0x6304ac*/
     v12 = v14; /*0x6304b2*/
     v55 = v14; /*0x6304b4*/
   }
@@ -2403,7 +2403,7 @@ AbstractClass * * ExportSelectionAsScriptAction()
   }
   EventClass::resetEvent((EventClass *)&v25, 0, 0); /*0x63ad87*/
   v2 = 0; /*0x63ad8e*/
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E17AC) */  /*0x63ad92*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E17AC) */  /*0x63ad92*/
   v26 = 10; /*0x63ad9a*/
   *(unsigned int *)v25.__tail_10 = 0; /*0x63ada2*/
   v27 = 0; /*0x63ada6*/
@@ -2565,7 +2565,7 @@ LABEL_37:
       ++*(unsigned int *)stru_AC4B48.__pad_B8; /*0x63b008*/
     }
   }
-  /* X11: vtable install elided (X67 star-deref, RHS g_ptr_7E180C) */  /*0x63b012*/
+  /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E180C) */  /*0x63b012*/
   VectorClass_Techno::ddtor(&v25); /*0x63b01a*/
   return result; /*0x63b01f*/
 
@@ -3371,7 +3371,7 @@ int E4Recv_631F10::sub_631F10(int a2, int a3)
 namespace gamemd {
 void E4Recv_631F30::sub_631F30()
 {
-  /* X11: vtable install elided (X67 recv-slot, RHS g_ptr_7EFDA4) */  /*0x631f30*/
+  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7EFDA4) */  /*0x631f30*/
 }
 } // namespace gamemd
 

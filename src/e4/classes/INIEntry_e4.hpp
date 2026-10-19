@@ -12,7 +12,7 @@ namespace gamemd {
 // CCFileClass/FileClass/BufferIOFileClass + C2027 cascades). The INIEntry
 // definition below is a verbatim copy of ini_class.hpp's (single source of
 // truth for the layout; re-sync if ini_class.hpp changes). INISection/
-// INILinkNode/INIData have no type-uses in src/e4 (vtable globals only).
+// INILinkNode/INIData have no type-uses in src/e4 (ptr_0 globals only).
 struct INIData;  // ini_class.hpp companion fwd (kept for decl compat)
 
 struct INIEntry {
