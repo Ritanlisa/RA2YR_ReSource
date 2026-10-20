@@ -3960,7 +3960,7 @@
     "confidence": "ANCHORED"
   },
   "0x887644": {
-    "type": "uint32_t",
+    "type": "Stream *",
     "name": "g_ZBufferDescriptor",
     "confidence": "ANCHORED"
   },
