@@ -285,7 +285,7 @@ extern unsigned char byte_8B41D4;
 extern unsigned char byte_8B41D5;
 extern unsigned char byte_8B41EC;
 extern unsigned char byte_8B41ED;
-extern unsigned char byte_8B4204;
+extern unsigned char byte_8B4204[1818624];  // X88: &byte_8B4204[111*i], i<0x4000 (inline array)
 extern unsigned char byte_8B4205;
 extern unsigned char byte_8B4206;
 extern unsigned char byte_8B4211;
@@ -295,7 +295,7 @@ extern unsigned char byte_A80220;
 extern unsigned char byte_A80234;
 extern unsigned char byte_A80235;
 extern unsigned char byte_A802D4;
-extern unsigned char byte_A802D5;
+extern unsigned char byte_A802D5[14208];  // X88 inline array (111*i, i<0x80)
 extern unsigned char byte_A802D6;
 extern unsigned char byte_A802E6;
 extern unsigned char byte_A802EB;
@@ -3572,7 +3572,7 @@ extern unsigned int dword_87E878;
 extern unsigned int dword_87E898;
 extern unsigned int dword_87E89C;
 extern unsigned int dword_87E8A0;
-extern unsigned int dword_87E8A4;
+extern unsigned int* dword_87E8A4;  // X88: disasm mov ecx,[87e8a4]; [ecx+4] = pointer
 extern unsigned int dword_87F538;
 extern unsigned int dword_87F53C;
 extern unsigned int dword_87F540;
@@ -4994,7 +4994,7 @@ extern unsigned int dword_8A0DC8;
 extern unsigned int dword_8A0DF4;
 extern unsigned int dword_8A0E00;
 extern unsigned int dword_8A0E04;
-extern unsigned int dword_8A0E08;
+extern char* dword_8A0E08;  // X88: disasm mov esi,[8a0e08]; [esi+70h] = byte-offset pointer
 extern unsigned int dword_8A0E0C;
 extern unsigned int dword_8A0E10;
 extern unsigned int dword_8A0E20;
@@ -8256,7 +8256,7 @@ extern unsigned int dword_AC4B74;
 extern unsigned int dword_AC4B78;
 extern unsigned int dword_AC4B7C;
 extern unsigned int dword_AC4B80;
-extern unsigned int dword_AC4B84;
+extern unsigned int dword_AC4B84[24];  // X88 inline table (memset 0x60)
 extern unsigned int dword_AC4BF0;
 extern unsigned int dword_AC4BF4;
 extern unsigned int dword_AC4BF8;

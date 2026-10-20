@@ -977,7 +977,7 @@ void BuildingTypeClass::LoadVoxel()
 
   if ( this->TurretAnimIsVoxel || this->BarrelAnimIsVoxel ) /*0x45faa4*/
   {
-    strcpy(Destination, &this->q11B0); /*0x45fadf*/
+    strcpy(Destination, this->q11B0); /*0x45fadf*/
     _makepath(Buffer, 0, 0, Destination, g_Str_File__VXL); /*0x45faf3*/
     v20 = _strupr(off_8194A8); /*0x45fb05*/
     v2 = _strupr(String); /*0x45fb0e*/

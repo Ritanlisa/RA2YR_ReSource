@@ -25,7 +25,7 @@ struct CellClass {
     BuildingTypeClass* rubble;  // 0x1C
     int overlayTypeIndex;  // 0x20
     int smudgeTypeIndex;  // 0x24
-    int __pad_28;  // 0x28
+    char __pad_28[4];  // 0x28
     unsigned int q02C;  // 0x2C
     char __pad_30[3];  // 0x30
     unsigned char alignmentPadding;  // 0x33

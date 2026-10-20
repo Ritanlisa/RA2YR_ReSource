@@ -3,6 +3,7 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/AudioStream_e4.hpp"
+#include "e4/classes/Stream_e4.hpp"  // X88: g_ZBufferDescriptor is Stream* (C2027 supply)
 #include "e4/classes/Audio_e4.hpp"
 #include "e4/classes/AudioQueue_e4.hpp"
 #include "e4/classes/Math_e4.hpp"
@@ -82,7 +83,7 @@ void AudioStream::DestroyAll(void * Block)
   if ( v2 < 0 ) /*0x4033e5*/
     *(unsigned int *)off_815E98[3].__pad_0 = 0; /*0x4033ed*/
   AudioQueue *Next; // edi
-  Next = (AudioQueue *)((AudioQueue *)Block->AudioQueue_F8))->GetNext(); /*0x403401*/
+  Next = (AudioQueue *)((AudioQueue *)&Block->__pad_D8[32])->GetNext(); /*0x403401*/
   AudioStream *i; // ebx
   for ( i = (AudioStream *)Next; Next; i = (AudioStream *)Next ) /*0x403407*/
   {

@@ -875,8 +875,6 @@ public:
     // design: virtual function, no binary implementation matched in IDA
     virtual int sub_70D8F0();
     // design: virtual function, no binary implementation matched in IDA
-    virtual int sub_70DD90();
-    // design: virtual function, no binary implementation matched in IDA
     virtual int sub_70BE50();
     // design: virtual function, no binary implementation matched in IDA
     virtual int sub_70C620();

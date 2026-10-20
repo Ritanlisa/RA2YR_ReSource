@@ -508,7 +508,7 @@ int CanAcceptType(int,int);  // 0x452670
     virtual int ThunkTo636(int, int);
     virtual int Vt46Thunk();  // vt+0x2BC (canon)
     virtual void Destroy_0();  // vt+0xF8 (canon)  // W20M26 vt+0x278 (canon ('buildingclass', 'ObjectClass::ThunkTo636'))
-    virtual void ProcessDeploymentState();  // W20M26 vt+0x3A0 (canon ('buildingclass', 'TechnoClass::ProcessDeploymentState'))
+    virtual int ProcessDeploymentState();  // W20M26 vt+0x3A0 (base TechnoClass returns int; C2555) (canon ('buildingclass', 'TechnoClass::ProcessDeploymentState'))
     virtual int * ValidateFoundation_1(void *, int, int);  // W20M26 vt+0x4D4 (canon ('buildingclass', 'HouseClass::ValidateFoundation_1'))
     virtual int initAnimation(int);  // W20M26 vt+0x4D8 (canon ('buildingclass', 'AnimClass::initAnimation'))
     int32_t                               q0BC;  // 0xBC (PR disasm [ebp+..]; canon None; W20M26)

@@ -1890,7 +1890,7 @@ extern int g_WOL_UserList;  // data: 0xB778D8
 extern int g_WOLReturnCode;  // data: 0x825C84
 extern int g_WTFMode;  // data: 0xA8E9A0
 extern int g_WWMouseClass_Instance;  // data: 0x887640
-extern int g_ZBufferDescriptor;  // data: 0x887644
+extern int g_ZBufferDescriptor;  // data: 0x887644 (X88 banked: IDA Stream* but csp_canon/shp_blitter/gap2 declare int/void*; uniform retype needs generator lane)
 extern int Game_bAllowVRAMSidebar;  // data: 0xA8EB96
 extern int Game_bVideoBackBuffer;  // data: 0x840A6C
 extern int Game_PlayerCount;  // data: 0xA8DA84
@@ -1984,7 +1984,9 @@ extern int PsyDom_Owner;  // data: 0xA9FAC8
 extern int PsyDom_Status;  // data: 0xA9FAC0
 extern int psz;  // data: 0x8186E8
 extern int punk;  // data: 0x89A29C
-namespace gamemd { struct TiberianSunClassFactory; }  // X74 typed-global fwd
+
+// X25: fwd decl for qualified extern type (TiberianSunClassFactory) -- resolves in both universes
+namespace gamemd { class TiberianSunClassFactory; }
 extern gamemd::TiberianSunClassFactory pUnk;  // data: 0xA8E8C8 (X74 typed-global)
 extern int RadBeam_Array;  // data: 0xB04A60
 extern int RadSiteClass_Array;  // data: 0xB04BD0
@@ -15087,7 +15089,7 @@ extern gamemd::Timer stru_887338;  // data: 0x887338 [X55 W2 til type]
 
 // X25: fwd decl for qualified extern type (ObjectClass) -- resolves in both universes
 namespace gamemd { class ObjectClass; }
-extern gamemd::ObjectClass stru_A83CD9;  // data: 0xA83CD9 [X55 W2 til type]
+extern gamemd::ObjectClass &stru_A83CD9;  // X88: abstract class cannot be an object; reference decl  // data: 0xA83CD9 [X55 W2 til type]
 
 // X25: fwd decl for qualified extern type (WideString) -- resolves in both universes
 namespace gamemd { class WideString; }
@@ -15108,7 +15110,7 @@ extern gamemd::Vector4 stru_ABDF90;  // data: 0xABDF90 [X55 W2 til type]
 // X25: fwd decl for qualified extern type (MapResourceClass) -- resolves in both universes
 namespace gamemd { class MapResourceClass; }
 extern gamemd::MapResourceClass stru_ABDFD8;  // data: 0xABDFD8 [X55 W2 til type]
-extern gamemd::ObjectClass stru_ABE890;  // data: 0xABE890 [X55 W2 til type]
+extern gamemd::ObjectClass &stru_ABE890;  // X88: abstract class cannot be an object; reference decl  // data: 0xABE890 [X55 W2 til type]
 
 // X25: fwd decl for qualified extern type (Dialog) -- resolves in both universes
 namespace gamemd { class Dialog; }
@@ -15146,7 +15148,7 @@ extern gamemd::DynamicVector stru_B77820;  // data: 0xB77820 [X55 W2 til type]
 
 // X25: fwd decl for qualified extern type (String) -- resolves in both universes
 namespace gamemd { class String; }
-extern gamemd::String stru_B778FC;  // data: 0xB778FC [X55 W2 til type]
+extern class gamemd::String stru_B778FC;  // X88: elaborated type (variable named String shadows tag)  // data: 0xB778FC [X55 W2 til type]
 extern unsigned char unk_ABCF60[1];  // data: 0xABCF60 [X55 W2 no-til-type]
 extern char aGrey[];  // [X55 W2 string label]
 extern char aTxtNameColon[];  // [X55 W2 string label]

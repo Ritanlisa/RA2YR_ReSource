@@ -2070,7 +2070,7 @@ extern int g_WOL_UserList;  // data: 0xB778D8
 extern int g_WOLReturnCode;  // data: 0x825C84
 extern int g_WTFMode;  // data: 0xA8E9A0
 extern int g_WWMouseClass_Instance;  // data: 0x887640
-extern int g_ZBufferDescriptor;  // data: 0x887644
+extern int g_ZBufferDescriptor;  // data: 0x887644 (X88 banked: IDA Stream* but csp_canon/shp_blitter/gap2 declare int/void*; uniform retype needs generator lane)
 extern int Game_bAllowVRAMSidebar;  // data: 0xA8EB96
 extern int Game_bVideoBackBuffer;  // data: 0x840A6C
 extern int Game_PlayerCount;  // data: 0xA8DA84
@@ -15320,7 +15320,7 @@ extern gamemd::CellClass stru_87E8B8;  // data: 0x87E8B8 [X55 W2 til type]
 namespace gamemd { struct Timer; }  // X55 W2 fwd
 extern gamemd::Timer stru_887338;  // data: 0x887338 [X55 W2 til type]
 namespace gamemd { struct ObjectClass; }  // X55 W2 fwd
-extern gamemd::ObjectClass stru_A83CD9;  // data: 0xA83CD9 [X55 W2 til type]
+extern gamemd::ObjectClass &stru_A83CD9;  // X88: abstract class cannot be an object; reference decl  // data: 0xA83CD9 [X55 W2 til type]
 namespace gamemd { struct WideString; }  // X55 W2 fwd
 extern gamemd::WideString stru_A8D610;  // data: 0xA8D610 [X55 W2 til type]
 namespace gamemd { struct NetworkLobby; }  // X55 W2 fwd
@@ -15331,7 +15331,7 @@ namespace gamemd { struct Vector4; }  // X55 W2 fwd
 extern gamemd::Vector4 stru_ABDF90;  // data: 0xABDF90 [X55 W2 til type]
 namespace gamemd { struct MapResourceClass; }  // X55 W2 fwd
 extern gamemd::MapResourceClass stru_ABDFD8;  // data: 0xABDFD8 [X55 W2 til type]
-extern gamemd::ObjectClass stru_ABE890;  // data: 0xABE890 [X55 W2 til type]
+extern gamemd::ObjectClass &stru_ABE890;  // X88: abstract class cannot be an object; reference decl  // data: 0xABE890 [X55 W2 til type]
 namespace gamemd { struct Dialog; }  // X55 W2 fwd
 extern gamemd::Dialog stru_AC1B48;  // data: 0xAC1B48 [X55 W2 til type]
 namespace gamemd { struct SidebarClass; }  // X55 W2 fwd
@@ -15353,7 +15353,7 @@ extern gamemd::DynamicArray stru_B76AD0;  // data: 0xB76AD0 [X55 W2 til type]
 extern gamemd::DynamicArray stru_B777A0;  // data: 0xB777A0 [X55 W2 til type]
 extern gamemd::DynamicVector stru_B77820;  // data: 0xB77820 [X55 W2 til type]
 namespace gamemd { struct String; }  // X55 W2 fwd
-extern gamemd::String stru_B778FC;  // data: 0xB778FC [X55 W2 til type]
+extern class gamemd::String stru_B778FC;  // X88: elaborated type (variable named String shadows tag)  // data: 0xB778FC [X55 W2 til type]
 extern unsigned char unk_ABCF60[1];  // data: 0xABCF60 [X55 W2 no-til-type]
 extern char aGrey[];  // [X55 W2 string label]
 extern char aTxtNameColon[];  // [X55 W2 string label]

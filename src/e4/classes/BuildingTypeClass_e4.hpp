@@ -457,7 +457,7 @@ struct BuildingTypeClass {
     char BuildingAnim[84];  // 0xF1C
     unsigned char __pad_F70;  // 0xF70
     char __pad_F71[575];  // 0xF71
-    VectorClass* q11B0;  // 0x11B0
+    char q11B0[4];  // 0x11B0
     char __pad_11B4[812];  // 0x11B4
     int Upgrades_d;  // 0x14E0
     SHPStruct* DeployingAnim_2;  // 0x14E4

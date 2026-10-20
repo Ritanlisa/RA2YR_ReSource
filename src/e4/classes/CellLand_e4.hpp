@@ -7,7 +7,7 @@
 
 namespace gamemd {
 struct CellLand {
-    unsigned int __tail_0;  // 0x0
+    char __tail_0[4];  // 0x0
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     static int IsBuildable(CellLand *aP1);

@@ -70,7 +70,7 @@ namespace gamemd {
 int SidebarClass::draw2()
 {
 
-  return this->somecount_4C; /*0x4ca173*/
+  return this->SidebarClass_field_0x68; /*0x4ca173*/
 
 }
 } // namespace gamemd
@@ -78,7 +78,7 @@ int SidebarClass::draw2()
 namespace gamemd {
 int SidebarClass::InitPositions()
 {
-  if ( ((unsigned int *)(dword_A8B230))[374].NeedsSaveOrLink ) /*0x6a5095*/
+  if ( dword_A8B230[374].NeedsSaveOrLink ) /*0x6a5095*/
   {
     dword_B0B4E0 = g_DSurface_SidebarBounds + 7; /*0x6a50f4*/
     dword_B0B4EC = g_DSurface_SidebarBounds + 39; /*0x6a50fc*/

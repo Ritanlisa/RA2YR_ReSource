@@ -12,7 +12,7 @@ struct Stream {
     StreamClass* m_Stream;  // 0x0
     void* Stream_field_04;  // 0x4
     unsigned int Stream_field_08;  // 0x8
-    char Stream_field_0C[4];  // 0xC
+    int Stream_field_0C;  // 0xC
     unsigned int Stream_field_10;  // 0x10
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---

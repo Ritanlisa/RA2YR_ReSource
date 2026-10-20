@@ -30,6 +30,25 @@ LABEL = re.compile(
     r'|[A-Z]\w*_Instance'
     r'|[A-Z]\w*_Vtable'
     r'|CCINIClass_INI_[A-Za-z]+)\b')
+# X88: audited type overrides (IDA disassembly: value-load => pointer,
+# inline `lea ds:addr[reg*scale]` => array).  Keep in sync with
+# src/core/ida_globals.{h,cpp}; without this table a regen reverts them.
+FORCED_TYPE = {
+    'dword_87E8A4': 'unsigned int*',       # mov ecx,[87e8a4]; [ecx+4]
+    'dword_8A0E08': 'char*',               # mov esi,[8a0e08]; [esi+70h]
+    'byte_8B4204': 'unsigned char[1818624]',  # inline, 111*i i<0x4000
+    'byte_A802D5': 'unsigned char[14208]',    # inline, 111*i i<0x80
+    'dword_AC4B84': 'unsigned int[24]',       # inline, memset 0x60
+}
+
+
+def _array_split(ty):
+    """'unsigned char[16]' -> ('unsigned char', '[16]'); else (ty, '')."""
+    i = ty.find('[')
+    if i < 0:
+        return ty, ''
+    return ty[:i].strip(), ty[i:].strip()
+
 TYPE = {'dword': 'unsigned int', 'word': 'unsigned short',
         'byte': 'unsigned char', 'qword': 'unsigned long long',
         'float': 'float', 'double': 'double', 'dbl': 'double', 'off': 'void*',
@@ -203,11 +222,16 @@ cpp = ['// GENERATED bare-global definitions (gen_ida_globals.py).',
        '// later pipeline stage.',
        '#include "ida_globals.h"', '', 'namespace gamemd {', '']
 for n in new:
-    ty = def_types.get(n) or gtype(n)
-    hdr.append('extern %s %s;' % (ty, n))
+    ty = FORCED_TYPE.get(n) or def_types.get(n) or gtype(n)
+    base, dim = _array_split(ty)
+    hdr.append('extern %s %s%s;' % (base, n, dim))
 for n in undef_new:
-    ty = gtype(n)
-    cpp.append('%s %s = 0;' % (ty, n))
+    ty = FORCED_TYPE.get(n) or gtype(n)
+    base, dim = _array_split(ty)
+    if dim:
+        cpp.append('%s %s%s = {0};' % (base, n, dim))
+    else:
+        cpp.append('%s %s = 0;' % (base, n))
 hdr += ['', '} // namespace gamemd', '']
 cpp += ['', '} // namespace gamemd', '']
 if APPLY:

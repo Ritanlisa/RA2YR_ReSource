@@ -50,7 +50,7 @@ struct SidebarClass {
     int SidebarClass_field_0xAC;  // 0xAC
     char __pad_B0[4];  // 0xB0
     int SidebarClass_field_0xB4;  // 0xB4
-    unsigned int __pad_B8;  // 0xB8
+    char __pad_B8[4];  // 0xB8
     char __pad_BC[24];  // 0xBC
     unsigned int CellStructs1;  // 0xD4
     unsigned char __pad_0D8;  // 0xD8
@@ -79,7 +79,7 @@ struct SidebarClass {
     int SidebarClass_field_0x188;  // 0x188
     int SidebarClass_field_0x18C;  // 0x18C
     int SidebarClass_field_0x190;  // 0x190
-    unsigned int __pad_194;  // 0x194
+    char __pad_194[4];  // 0x194
     char __pad_198[144];  // 0x198
     int SidebarClass_field_0x228;  // 0x228
     int SidebarClass_field_0x22C;  // 0x22C
@@ -93,18 +93,18 @@ struct SidebarClass {
     int SidebarClass_field_0x2F0;  // 0x2F0
     char __pad_2F4[556];  // 0x2F4
     int SidebarClass_field_0x520;  // 0x520
-    unsigned int __pad_524;  // 0x524
+    char __pad_524[4];  // 0x524
     char __pad_528[472];  // 0x528
     int SidebarClass_field_0x700;  // 0x700
     char __pad_704[1482];  // 0x704
     char SidebarClass_field_0xCCE[4];  // 0xCCE
     char __pad_CD2[960];  // 0xCD2
-    unsigned int __pad_1092;  // 0x1092
+    char __pad_1092[4];  // 0x1092
     char __pad_1096[482];  // 0x1096
     unsigned int FoundationTypePixels;  // 0x1278
     unsigned char __pad_127C;  // 0x127C
     char __pad_127D[469];  // 0x127D
-    unsigned int __pad_1452;  // 0x1452
+    char __pad_1452[4];  // 0x1452
     char __pad_1456[50];  // 0x1456
     unsigned int RadarSizeFactor;  // 0x1488
     unsigned char __pad_148C;  // 0x148C

@@ -111,10 +111,10 @@ struct TerrainTypeClass {
     int PowerDrainUpdate(int * a2);
     int  SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1);
     int SaveLoad_Prefix_0(TechnoTypeClass * aP0, ObjectTypeClass * aP1, int aP2);
-    unsigned int * Construct(int a2, unsigned char a3, unsigned char a4, MapClass * aP4, char a6, void *a6_2, void *a7 = 0, void *a8 = 0, void *a9 = 0);
+    unsigned int * Construct(int a2, unsigned char a3, unsigned char a4, TerrainTypeClass * aP4, char a6, void *a6_2, void *a7 = 0, void *a8 = 0, void *a9 = 0);
     unsigned int *   GetWidth(int * a2, void *a2_1 = 0);
     TerrainTypeClass(char *Source, int aP1, int aP3, int a2, int a3, int a4, int a5, int a6, int a7, int aP2, int a1, int aP0);
-    unsigned int * Construct(int a2, unsigned char a3, unsigned char a4, MapClass * aP4, char a6, void *a6_2);
+    unsigned int * Construct(int a2, unsigned char a3, unsigned char a4, TerrainTypeClass * aP4, char a6, void *a6_2);
     int LoadFromINI(uint8_t ***a2, int aP1, int aP3, int a3, int a4, int a5, int a6, int a7, int aP2, int a1, int aP0, void * aAnimationproba, void * aAnimationrate, void * aIsanimated, void * aIsflammable, void * aRadarcolor, void * aSnowoccupation, void * aSpawnstiberium, void * aTemperateoccup, void * aWaterbound);
 };
 

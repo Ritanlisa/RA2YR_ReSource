@@ -35,7 +35,7 @@ struct House {
     unsigned int u32_38;  // 0x38
     char __pad_3C[4];  // 0x3C
     AbstractClass * ptr_40;  // 0x40
-    TypeList * ptr_44;  // 0x44
+    void * ptr_44;  // 0x44
     unsigned char __pad_048;  // 0x48
     char __pad_49[3];  // 0x49
     unsigned int u32_4C;  // 0x4C

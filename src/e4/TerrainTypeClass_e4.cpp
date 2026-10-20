@@ -52,7 +52,7 @@ extern unsigned char unk_7E95EC; // data: 0x7e95ec truth(IDA G42.57w9)
 
 // 0x5447C0
 namespace gamemd {  // G42.18 ns repair
-unsigned int * TerrainTypeClass::Construct(int a2, unsigned char a3, unsigned char a4, MapClass * aP4, char a6, void *a6_2, void *a7, void *a8, void *a9)
+unsigned int * TerrainTypeClass::Construct(int a2, unsigned char a3, unsigned char a4, TerrainTypeClass * aP4, char a6, void *a6_2, void *a7, void *a8, void *a9)
 {
 
   char Destination[48]; // [esp+10h] [ebp-34h] BYREF
@@ -129,18 +129,18 @@ unsigned int * TerrainTypeClass::Construct(int a2, unsigned char a3, unsigned ch
   {
     Destination[0] = 0; /*0x544993*/
   }
-  if ( Destination != aP4->? ) /*0x5449b6*/
+  if ( Destination != aP4->Name ) /*0x5449b6*/
   {
-    memcpy(aP4->?, Destination, 0x30u); /*0x5449c1*/
-    aP4->?[48] = v11; /*0x5449c3*/
+    memcpy(aP4->Name, Destination, 0x30u); /*0x5449c1*/
+    aP4->Name[48] = v11; /*0x5449c3*/
   }
   aP4->q2F5 = 0; /*0x5449c5*/
-  aP4->? = 1; /*0x5449cb*/
+  aP4->RadarInvisible[0] = 1; /*0x5449cb*/
   aP4->u32_230 = 0; /*0x5449d2*/
   aP4->u32_231 = 0; /*0x5449d8*/
-  aP4->? = 1; /*0x5449de*/
-  aP4->? = 1; /*0x5449e5*/
-  aP4->? = 0; /*0x5449ec*/
+  aP4->Insignificant = 1; /*0x5449de*/
+  aP4->__pad_233 = 1; /*0x5449e5*/
+  aP4->AllowCellContent[0] = 0; /*0x5449ec*/
   return &aP4->ObjectTypeClass; /*0x5449c4*/
 
 }

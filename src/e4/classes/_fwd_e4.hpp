@@ -19,10 +19,6 @@ typedef unsigned short u_short;
 typedef unsigned long u_long;
 
 #if !defined(GAMEMD_TREE_UNIVERSE) && !defined(GAMEMD_E4_VECTOR_TREE_TRUTH)
-struct DynamicVectorClass;
-struct LinkedList;
-struct TypeList;
-struct VectorClass;
 #endif  // X26: tree-template names yield to core/vector.hpp
 #if !defined(GAMEMD_TREE_UNIVERSE) && !defined(GAMEMD_E4_MATH_ALIASES) && !defined(GAMEMD_MATH_ALIAS_ACTIVE)
 struct CellStruct;
