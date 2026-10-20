@@ -9,7 +9,7 @@ Authority (NO invented owners/layouts):
   * field slots : the same two sources (offset existence) + the synthetic body
                   (`src/_gap2/gap2_global_defs.cpp`): every `this->NAME` must
                   map to an authority slot at the exact offset.
-  * vport @0    : the ctor-install channel proved the vtable store at [this];
+  * vport @0    : the ctor-install channel proved the vptr store at [this];
                   the body's `ptr_0` is that vport (X11 install comment).
 
 Layout rule: emit `void* ptr_0` at 0 (vport), then the fields the body touches
@@ -125,7 +125,7 @@ def render_header(owner, size, fields, methods, proof):
     lines = [
         GEN_TAG,
         "// Authority: tools/class_layouts.json size=0x%X == x60 til 0x%X; "
-        "ctor-install vtable proof." % (size, size),
+        "ctor-install vptr proof." % (size, size),
         "// Fields: %s; tail padded so C++ sizeof == authority size." % ", ".join(
             "%s@0x%X" % (n, o) for n, o in fields),
         "#pragma once",
