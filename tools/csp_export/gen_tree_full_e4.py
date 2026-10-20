@@ -130,6 +130,16 @@ VEC_GUARD = ('#if !defined(GAMEMD_TREE_UNIVERSE) && '
 # G42.9: static-method decls injected into generated flat structs. WinAPI::
 # Wrapper is the COM error trampoline -- 350+ corpus sites, all uniform
 # 1-arg (`WinAPI::Wrapper(-2147467261)` = 0x80004005), no ida_cache entry.
+# X93: CSP-ownership relocations (tools/gen_gap2_defs.py --x93-apply writes
+# this table). Declarations are additive/idempotent; the gap2 generator inserts
+# them into the live header, and a full regeneration reproduces them here.
+X93_TABLE = ROOT / 'tools' / 'csp_export' / 'x93_extra_method_decls.json'
+X93_DECLS = {}
+if X93_TABLE.exists():
+    try:
+        X93_DECLS = json.loads(X93_TABLE.read_text(encoding='utf-8'))
+    except Exception:
+        X93_DECLS = {}
 STATIC_DECLS = {
     'WinAPI': ['static int Wrapper(int a2);  // consensus: 350+ uniform 1-arg sites'],
     # G57a1: HashTable corpus call vocabulary -- utility_ext.hpp's gap2 twin
@@ -237,6 +247,8 @@ for cls in targets:
     # G42.9: corpus-consensus static-method decls (call-site-uniform anchors;
     # no ida_cache for these -- flagged with // consensus)
     for extra in STATIC_DECLS.get(cls, ()):
+        lines.append('    ' + extra)
+    for extra in X93_DECLS.get(cls, ()):
         lines.append('    ' + extra)
     lines.append('};')
     if cls in VEC_TMPL:

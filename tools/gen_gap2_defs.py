@@ -898,11 +898,891 @@ LNK_SKIP_MEMBERS = {
 }
 
 
+# =====================================================================
+# X93: CSP ownership is the ONLY class authority for gap2 receivers.
+#
+# The historical bulk path emitted `Gap2Recv_<HEX>` synthetic classes when
+# `backfill_cls` was empty.  X93 replaces that heuristic with CSP
+# (`tools/csp/full_report/csp_functions.json` -> inferred_real_class):
+#   * CSP owner + body-layout check passes -> real `Owner::Method`
+#   * CSP owner + body touches beyond the owner layout / names do not
+#     resolve -> keep synthetic fallback, record in csp_hint.json
+#   * no CSP entry -> keep synthetic fallback, record in csp_gap.json
+# `backfill.cls` is NEVER used for ownership (hint only).
+# =====================================================================
+CSP_REPORT = ROOT / "tools" / "csp" / "full_report" / "csp_functions.json"
+SIGNALS_JSON = ROOT / "signals.json"
+STRUCTURAL_TRUTH = ROOT / "anchors" / "structural_truth.json"
+RTTI_DIRECT = ROOT / "anchors" / "rtti_hierarchy.json"
+GAP2_DECL = SRC / "_gap2" / "gap2_global_decls.hpp"
+GAP2_DEF = SRC / "_gap2" / "gap2_global_defs.cpp"
+CSP_GAP_OUT = OMO / "csp_gap.json"
+CSP_HINT_OUT = OMO / "csp_hint.json"
+X93_PLAN_OUT = OMO / "x93_relocations.json"
+X93_REPORT_OUT = OMO / "x93_report.json"
+X93_DECL_BEGIN = "// --- x93 csp-relocation decls (BEGIN) ---"
+X93_DECL_END = "// --- x93 csp-relocation decls (END) ---"
+X93_CPP_BEGIN = "// --- x93 csp-relocation defs (BEGIN) ---"
+X93_CPP_END = "// --- x93 csp-relocation defs (END) ---"
+X93_EXTRA_TABLE = ROOT / "tools" / "csp_export" / "x93_extra_method_decls.json"
+X93_GATE_BANK = OMO / "x93_gate_bank.json"
+
+_X93_TYPE_WIDTH = {
+    "char": 1, "unsigned char": 1, "signed char": 1, "bool": 1, "BYTE": 1,
+    "short": 2, "unsigned short": 2, "__int16": 2, "WORD": 2,
+    "int": 4, "unsigned int": 4, "unsigned": 4, "long": 4, "unsigned long": 4,
+    "DWORD": 4, "float": 4, "BOOL": 4, "__int32": 4,
+    "double": 8, "long long": 8, "unsigned long long": 8, "__int64": 8,
+}
+_X93_STRUCT_RE = re.compile(r'^\s*(?:template\s*<[^>]*>\s*)?(?:struct|class)\s+(\w+)\b[^;{]*\{')
+_X93_MEMBER_RE = re.compile(
+    r'^\s*(?:static\s+)?([A-Za-z_][\w:<>,\s\*]*?)\s+([A-Za-z_]\w*)\s*(\[[^\]]*\])?\s*;\s*(?://\s*(.*))?$')
+_X93_METHOD_RE = re.compile(
+    r'^\s*([A-Za-z_][\w:<>,\s\*]*?)\s+([A-Za-z_]\w*)\s*\(([^;{}]*)\)\s*(const)?\s*;')
+_X93_OFF_RES = [
+    (re.compile(r'^M(\d+)$'), 10),
+    (re.compile(r'^(?:ptr_|u32_|u16_|u8_|q)([0-9A-Fa-f]+)$'), 16),
+    (re.compile(r'^alignmentPadding([0-9A-Fa-f]+)$'), 16),
+]
+
+
+def _x93_read_lines(path):
+    """Byte-preserving line read (latin-1, keeps CR)."""
+    return Path(path).read_bytes().decode("latin-1").split("\n")
+
+
+def _x93_write_lines(path, lines):
+    Path(path).write_bytes("\n".join(lines).encode("latin-1"))
+
+
+def _x93_code(line):
+    return re.sub(r'//.*', '', line)
+
+
+def _x93_type_size(ty, arr):
+    n = 1
+    if arr:
+        m = re.match(r"\[(\d+)\]", arr)
+        n = int(m.group(1)) if m else 1
+    if ty.count("*"):
+        return 4 * n
+    base = re.sub(r"\b(const|struct|class|enum)\b", "", ty).strip()
+    base = re.sub(r"\s+", " ", base)
+    return _X93_TYPE_WIDTH.get(base, 1) * n
+
+
+def _x93_scan_structs(lines):
+    code = []
+    for raw in lines:
+        s = re.sub(r"//[^\n]*", "", raw)
+        s = re.sub(r"/\*.*?\*/", "", s)
+        code.append(s)
+    out, stack, pending = [], [], None
+    for li, c in enumerate(code):
+        if pending is None:
+            m = _X93_STRUCT_RE.match(c)
+            if m:
+                pending = m.group(1)
+        for ch in c:
+            if ch == ";":
+                pending = None
+            elif ch == "{":
+                stack.append({"name": pending, "start": li})
+                pending = None
+            elif ch == "}":
+                if stack:
+                    fr = stack.pop()
+                    if fr["name"]:
+                        out.append((fr["name"], fr["start"], li))
+    return out
+
+
+def _x93_parse_members(lines, start, end):
+    out = []
+    for k in range(start + 1, end):
+        ln = lines[k]
+        if "(" in _x93_code(ln):
+            continue
+        m = _X93_MEMBER_RE.match(ln)
+        if not m:
+            continue
+        ty, name, arr, com = m.groups()
+        if ty.strip() == "static":
+            continue
+        off = None
+        if com and "no offset truth" not in com.lower():
+            cm = re.search(r'0x([0-9A-Fa-f]+)', com)
+            if cm:
+                off = int(cm.group(1), 16)
+        if off is None:
+            for rx, base in _X93_OFF_RES:
+                mm = rx.match(name)
+                if mm:
+                    off = int(mm.group(1), base)
+                    break
+        out.append({"name": name, "off": off,
+                    "size": _x93_type_size(ty, arr), "line": ln.strip()})
+    return out
+
+
+def _x93_parse_synthetic():
+    lines = _x93_read_lines(GAP2_DECL)
+    structs = {n: (s, e) for n, s, e in _x93_scan_structs(lines)}
+    out = {}
+    for name, (s, e) in structs.items():
+        if not name.startswith("Gap2Recv_"):
+            continue
+        methods = []
+        for ln in lines[s + 1:e]:
+            mm = _X93_METHOD_RE.match(_x93_code(ln))
+            if mm:
+                methods.append({"ret": mm.group(1).strip(),
+                                "method": mm.group(2),
+                                "params": mm.group(3).strip(),
+                                "const": bool(mm.group(4)),
+                                "line": ln})
+        out[name] = {"members": _x93_parse_members(lines, s, e),
+                     "methods": methods, "start": s, "end": e}
+    return out
+
+
+def _x93_parse_defs():
+    lines = _x93_read_lines(GAP2_DEF)
+    sig = re.compile(r'\b(Gap2Recv_[0-9A-Fa-f]+)::([A-Za-z_]\w*)\s*\(([^)]*)\)')
+    out = {}
+    for i, l in enumerate(lines):
+        m = sig.search(l)
+        if not m:
+            continue
+        cls, method = m.group(1), m.group(2)
+        brace = None
+        for j in range(i, min(len(lines), i + 8)):
+            if "{" in _x93_code(lines[j]):
+                brace = j
+                break
+        if brace is None:
+            continue
+        depth, end = 0, None
+        for j in range(brace, len(lines)):
+            c = _x93_code(lines[j])
+            c = re.sub(r"/\*.*?\*/", "", c)
+            for ch in c:
+                if ch == "{":
+                    depth += 1
+                elif ch == "}":
+                    depth -= 1
+                    if depth == 0:
+                        end = j
+                        break
+            if end is not None:
+                break
+        if end is None:
+            continue
+        addr = None
+        for j in range(i, max(-1, i - 6), -1):
+            cm = re.match(r'\s*//\s*0x([0-9A-Fa-f]{6,8})\s*$', lines[j])
+            if cm:
+                addr = int(cm.group(1), 16)
+                break
+        if addr is None:
+            addr = int(cls.split("_", 1)[1], 16)
+        out[cls] = {"method": method, "params": m.group(3).strip(),
+                    "addr": addr, "body": "\n".join(lines[i:end + 1]),
+                    "start": i, "end": end}
+    return out
+
+
+def _x93_e4_index():
+    idx = {}
+    for p in sorted((SRC / "e4").rglob("*.hpp")):
+        try:
+            lines = _x93_read_lines(p)
+        except Exception:
+            continue
+        for name, s, e in _x93_scan_structs(lines):
+            if name in idx and p.name != "_tree_full_e4.hpp":
+                continue
+            mems, maxend = {}, 0
+            for m in _x93_parse_members(lines, s, e):
+                if m["off"] is not None:
+                    mems.setdefault(m["name"], (m["off"], m["size"]))
+                    maxend = max(maxend, m["off"] + m["size"])
+            idx[name] = {"file": str(p), "members": mems, "maxend": maxend,
+                         "start": s, "end": e}
+    return idx
+
+
+def _x93_load_csp():
+    d = json.load(open(CSP_REPORT, encoding="utf-8"))["functions"]
+    return {int(k, 16): v for k, v in d.items()}
+
+
+def _x93_owner_size(owner, layouts, e4):
+    v = layouts.get(owner)
+    if isinstance(v, dict) and v.get("size"):
+        return int(v["size"])
+    if owner in e4:
+        return e4[owner]["maxend"]
+    return None
+
+
+def _x93_ancestors(hier, cls):
+    """All transitive bases (MI-safe BFS over the full `direct` list)."""
+    direct = hier.get("direct", {})
+    out, queue, seen = set(), [cls], {cls}
+    while queue:
+        cur = queue.pop(0)
+        for p in direct.get(cur) or []:
+            if p not in seen:
+                seen.add(p)
+                out.add(p)
+                queue.append(p)
+    return out
+
+
+def _x93_is_descendant(hier, cls, ancestor):
+    return ancestor in _x93_ancestors(hier, cls)
+
+
+def _x93_check_body(body, owner, info, e4, layouts, hier):
+    code = re.sub(r'/\*.*?\*/', '', body, flags=re.S)
+    code = re.sub(r'//[^\n]*', '', code)
+    used = sorted(set(re.findall(r'this\s*->\s*([A-Za-z_]\w*)', code)))
+    synth = {m["name"]: m["off"] for m in info["members"]}
+    own = e4[owner]["members"]
+    size = _x93_owner_size(owner, layouts, e4)
+    res = {"used": used, "missing": [], "offset_mismatch": [],
+           "out_of_size": [], "this_casts": [], "raw_this": 0,
+           "descendant_casts": [], "owner_size": size, "max_synth": None}
+    for nm in used:
+        so = synth.get(nm)
+        if so is not None:
+            res["max_synth"] = so if res["max_synth"] is None else max(res["max_synth"], so)
+            if size is not None and so >= size:
+                res["out_of_size"].append([nm, so])
+        if nm not in own:
+            res["missing"].append(nm)
+            continue
+        oo = own[nm][0]
+        if so is not None and so != oo:
+            res["offset_mismatch"].append([nm, so, oo])
+    for m in re.finditer(r'\(\s*(?:const\s+)?([A-Za-z_]\w*)\s*\*\s*\)\s*this\b', code):
+        t = m.group(1)
+        if t == owner or t in _x93_ancestors(hier, owner):
+            continue
+        if _x93_is_descendant(hier, t, owner):
+            res["descendant_casts"].append(t)
+        else:
+            res["this_casts"].append(t)
+    res["this_casts"] = sorted(set(res["this_casts"]))
+    res["descendant_casts"] = sorted(set(res["descendant_casts"]))
+    raw = len(re.findall(r'\)\s*this\s*\+', code))
+    raw += len(re.findall(r'this\s*\+\s*0x?[0-9A-Fa-f]+', code))
+    raw += len(re.findall(r'this\s*\[\s*[0-9]', code))
+    res["raw_this"] = raw
+    if res["out_of_size"]:
+        nm, off = max(res["out_of_size"], key=lambda x: x[1])
+        res["verdict"] = "owner_too_coarse"
+        res["reason"] = "body touches +0x%X (%s) beyond %s size 0x%X" % (
+            off, nm, owner, size)
+    elif res["descendant_casts"]:
+        res["verdict"] = "owner_too_coarse"
+        res["reason"] = "body casts this to descendant %s of %s" % (
+            ", ".join(res["descendant_casts"]), owner)
+    elif res["missing"]:
+        res["verdict"] = "owner_layout_mismatch"
+        res["reason"] = "names absent from %s: %s" % (
+            owner, ", ".join(res["missing"][:6]))
+    elif res["offset_mismatch"]:
+        res["verdict"] = "owner_layout_mismatch"
+        res["reason"] = "offset mismatch vs synthetic: %s" % ", ".join(
+            "%s 0x%X!=0x%X" % tuple(x) for x in res["offset_mismatch"][:6])
+    elif res["this_casts"]:
+        res["verdict"] = "this_cast"
+        res["reason"] = "this cast to unrelated " + ", ".join(res["this_casts"])
+    elif res["raw_this"]:
+        res["verdict"] = "raw_this_arith"
+        res["reason"] = "raw this arithmetic x%d" % res["raw_this"]
+    else:
+        res["verdict"] = "relocatable"
+        res["reason"] = ""
+    return res
+
+
+def _x93_rows():
+    decls = _x93_parse_synthetic()
+    defs = _x93_parse_defs()
+    csp = _x93_load_csp()
+    layouts = json.load(open(ROOT / "tools" / "class_layouts.json", encoding="utf-8"))
+    e4 = _x93_e4_index()
+    hier = json.load(open(RTTI_DIRECT, encoding="utf-8"))
+    rows = []
+    for cls in sorted(decls, key=lambda c: int(c.split("_", 1)[1], 16)):
+        addr = int(cls.split("_", 1)[1], 16)
+        c = csp.get(addr) or {}
+        owner = c.get("inferred_real_class")
+        if owner == "unknown":
+            owner = None
+        row = {"cls": cls, "address": "0x%08X" % addr, "addr": addr,
+               "owner": owner, "inferred_name": c.get("inferred_name"),
+               "calling_convention": c.get("calling_convention"),
+               "has_body": cls in defs, "method": None, "verdict": None,
+               "reason": "", "owner_header": None, "checks": None}
+        if cls in defs:
+            row["method"] = defs[cls]["method"]
+        if not row["has_body"]:
+            row["verdict"] = "csp_gap" if not owner else "no_body"
+            row["reason"] = "no definition in _gap2" if owner else "no CSP entry"
+            rows.append(row)
+            continue
+        if not owner:
+            row["verdict"] = "csp_gap"
+            row["reason"] = "no CSP inferred_real_class"
+            rows.append(row)
+            continue
+        if owner not in e4:
+            row["verdict"] = "no_e4_carrier"
+            row["reason"] = "owner is not defined in an e4 header"
+            rows.append(row)
+            continue
+        chk = _x93_check_body(defs[cls]["body"], owner, decls[cls], e4,
+                              layouts, hier)
+        row["checks"] = chk
+        row["verdict"] = chk["verdict"]
+        row["reason"] = chk["reason"]
+        row["owner_header"] = e4[owner]["file"]
+        rows.append(row)
+    return rows, decls, defs, csp, e4
+
+
+def _x93_owner_tu(owner):
+    cand = SRC / "e4" / (owner + "_e4.cpp")
+    if cand.exists():
+        return cand
+    low = (owner + "_e4.cpp").lower()
+    for p in sorted((SRC / "e4").glob("*.cpp")):
+        if p.name.lower() == low:
+            return p
+    for p in sorted((SRC / "e4").rglob("*.cpp")):
+        if p.name.lower() == low:
+            return p
+    for p in sorted(SRC.rglob(owner + "_bodies.cpp")):
+        return p
+    for p in sorted(SRC.rglob(owner.lower() + "_bodies.cpp")):
+        return p
+    return None
+
+
+def _x93_decl_text(defs, cls, owner, info):
+    d = defs[cls]
+    ret = ""
+    for m in info["methods"]:
+        if m["method"] == d["method"]:
+            ret = m["ret"]
+            break
+    return "%s %s(%s);  // 0x%08X" % (
+        ret or "int", d["method"], d["params"], d["addr"])
+
+
+def _x93_strip_blocks(lines, begin, end):
+    out, skip = [], False
+    for ln in lines:
+        if begin in ln:
+            skip = True
+            continue
+        if end in ln:
+            skip = False
+            continue
+        if not skip:
+            out.append(ln)
+    return out
+
+
+def _x93_insert_decl(lines, cls, decl):
+    """Insert a declaration into the class body of `lines` (in place)."""
+    for name, s, e in _x93_scan_structs(lines):
+        if name != cls:
+            continue
+        body = "\n".join(lines[s:e + 1])
+        if re.search(r'\b' + re.escape(decl.split("(")[0].split()[-1]) + r'\s*\(', body):
+            return False  # already declared (native or prior run)
+        block = ["    " + X93_DECL_BEGIN, "    " + decl, "    " + X93_DECL_END]
+        lines[e:e] = block
+        return True
+    return False
+
+
+def _x93_remove_synth_decl(lines, cls, method):
+    for name, s, e in _x93_scan_structs(lines):
+        if name != cls:
+            continue
+        pat = re.compile(r'\b' + re.escape(method) + r'\s*\(')
+        for k in range(e - 1, s, -1):
+            if pat.search(_x93_code(lines[k])):
+                del lines[k]
+                return True
+    return False
+
+
+def _x93_remove_synth_def(lines, cls, method):
+    sig = re.compile(r'\b' + re.escape(cls) + r'::' + re.escape(method) + r'\s*\(')
+    start = next((i for i, l in enumerate(lines) if sig.search(l)), None)
+    if start is None:
+        return False
+    rem_start = start
+    j = start - 1
+    while j >= 0 and lines[j].strip() == "":
+        j -= 1
+    if j >= 0 and re.match(r'^\s*//\s*0x[0-9A-Fa-f]{6,8}\s*$', lines[j]):
+        rem_start = j
+    brace = None
+    for k in range(start, min(len(lines), start + 8)):
+        if "{" in _x93_code(lines[k]):
+            brace = k
+            break
+    if brace is None:
+        return False
+    depth, end = 0, None
+    for k in range(brace, len(lines)):
+        c = _x93_code(lines[k])
+        for ch in c:
+            if ch == "{":
+                depth += 1
+            elif ch == "}":
+                depth -= 1
+                if depth == 0:
+                    end = k
+                    break
+        if end is not None:
+            break
+    if end is None:
+        return False
+    rem_end = end
+    while rem_end + 1 < len(lines) and lines[rem_end + 1].strip() == "":
+        rem_end += 1
+    del lines[rem_start:rem_end + 1]
+    return True
+
+
+def _x93_ensure_include(tu_path, header_path):
+    lines = _x93_read_lines(tu_path)
+    base = Path(header_path).name
+    if any(base in ln for ln in lines):
+        return False
+    rel = Path(header_path).relative_to(SRC).as_posix()
+    last = max((i for i, l in enumerate(lines) if l.startswith("#include")),
+               default=-1)
+    lines.insert(last + 1, '#include "%s"' % rel)
+    _x93_write_lines(tu_path, lines)
+    return True
+
+
+def _x93_call_rewrite(owner, old_method, new_method, root, owner_header=None):
+    """Memberize free-call sites `Old(recv, args)` -> `((Owner*)recv)->New(args)`."""
+    written = []
+    pat = re.compile(r'(?<![\w:])' + re.escape(old_method) + r'\s*\(')
+    # Only e4-universe TUs: the owner declaration lives in the e4 headers, and
+    # tree TUs may not see (or may define a conflicting twin of) the owner.
+    # Non-e4 call sites keep their free declaration (they compile unchanged;
+    # the free symbol is a pre-existing link debt, not introduced here).
+    files = sorted((root / "e4").rglob("*.cpp"))
+    for p in files:
+        rel = p.relative_to(root).as_posix()
+        try:
+            text = p.read_bytes().decode("latin-1")
+        except OSError:
+            continue
+        if old_method not in text:
+            continue
+        spans = []
+        for m in pat.finditer(text):
+            before = text[:m.start()]
+            tail = before.rstrip()
+            if tail.endswith("::") or tail.endswith("->") or tail.endswith("."):
+                continue
+            # statement start = after the last ; { } (declaration vs call)
+            stmt_start = max(before.rfind(";"), before.rfind("{"),
+                             before.rfind("}")) + 1
+            prefix = before[stmt_start:]
+            pc = re.sub(r'//[^\n]*', '', prefix)
+            pc = re.sub(r'/\*.*?\*/', '', pc, flags=re.S)
+            pp = pc.strip()
+            if re.match(r'^[A-Za-z_][\w:<>,\s\*&]*$', pp) and \
+                    not re.search(r'\b(return|new|delete|throw|case|else|if|'
+                                  r'while|for|switch|do)\b', pp):
+                op0 = m.end() - 1
+                depth, i, end0 = 0, op0, None
+                while i < len(text):
+                    if text[i] == "(":
+                        depth += 1
+                    elif text[i] == ")":
+                        depth -= 1
+                        if depth == 0:
+                            end0 = i
+                            break
+                    i += 1
+                if end0 is not None and \
+                        text[end0 + 1:].lstrip().startswith(";"):
+                    continue  # declaration
+            op = m.end() - 1
+            depth, i, end = 0, op, None
+            while i < len(text):
+                c = text[i]
+                if c == "(":
+                    depth += 1
+                elif c == ")":
+                    depth -= 1
+                    if depth == 0:
+                        end = i
+                        break
+                i += 1
+            if end is None:
+                continue
+            after = text[end + 1:end + 40].lstrip()
+            if after.startswith("{"):
+                continue  # definition head
+            args = text[op + 1:end]
+            depth, cur, parts, i = 0, [], [], 0
+            while i < len(args):
+                c = args[i]
+                if c in "([{":
+                    depth += 1
+                elif c in ")]}":
+                    depth -= 1
+                if c == "," and depth == 0:
+                    parts.append("".join(cur))
+                    cur = []
+                else:
+                    cur.append(c)
+                i += 1
+            parts.append("".join(cur))
+            if len(parts) < 1:
+                continue
+            arg0 = parts[0].strip()
+            rest = ", ".join(x.strip() for x in parts[1:] if x.strip())
+            if arg0 == "this":
+                rep = "this->%s(%s)" % (new_method, rest)
+            else:
+                rep = "((%s *)%s)->%s(%s)" % (owner, arg0, new_method, rest)
+            spans.append((m.start(), end + 1, rep))
+        if not spans:
+            continue
+        for a, b, rep in reversed(spans):
+            text = text[:a] + rep + text[b:]
+        p.write_bytes(text.encode("latin-1"))
+        if owner_header:
+            _x93_ensure_include(p, owner_header)
+        written.append({"file": rel, "sites": len(spans)})
+    return written
+
+
+def _x93_build_gap(rows, csp):
+    """Tree-wide Gap2Recv tokens WITHOUT a CSP owner (csp_gap.json)."""
+    signals = json.load(open(SIGNALS_JSON, encoding="utf-8")).get("symbols", {})
+    truth = json.load(open(STRUCTURAL_TRUTH, encoding="utf-8"))
+    slot = {int(k, 16) for k in truth.get("slot_this", {})}
+    ctor = {int(k, 16) for k in truth.get("vtable_install", {})}
+    tpass = {int(k, 16) for k in truth.get("this_pass", {})}
+    raw_this = set()
+    for p in (SRC / "raw_decomp").glob("*.c"):
+        try:
+            t = p.read_text(encoding="utf-8", errors="replace")
+        except OSError:
+            continue
+        for m in re.finditer(r'//\s*=+\s*0x([0-9A-Fa-f]{6,8})\s+\S+\s+this=',
+                             t):
+            raw_this.add(int(m.group(1), 16))
+    tok = re.compile(r'Gap2Recv_[0-9A-Fa-f]{4,6}\b')
+    gap = {}
+    for p in SRC.rglob("*"):
+        if p.suffix.lower() not in (".cpp", ".hpp", ".inc", ".h", ".c"):
+            continue
+        try:
+            t = p.read_text(encoding="utf-8", errors="replace")
+        except OSError:
+            continue
+        if "Gap2Recv_" not in t:
+            continue
+        for name in set(tok.findall(t)):
+            a = int(name.split("_", 1)[1], 16)
+            c = csp.get(a)
+            if c and c.get("inferred_real_class") and \
+                    c["inferred_real_class"] != "unknown":
+                continue
+            ent = gap.setdefault(name, {"name": name,
+                                        "address": "0x%08X" % a,
+                                        "files": []})
+            rel = p.relative_to(SRC).as_posix()
+            if rel not in ent["files"]:
+                ent["files"].append(rel)
+    owned = {r["cls"] for r in rows if r["owner"]}
+    for ent in gap.values():
+        a = int(ent["address"], 16)
+        sig = signals.get("0x%08x" % a) or {}
+        bf = sig.get("backfill") or {}
+        ch = {
+            "vtable_slot": a in slot,
+            "ctor_install": a in ctor,
+            "call_site_this": a in tpass or a in raw_this,
+        }
+        ent["signals_name"] = sig.get("name")
+        ent["backfill_status"] = bf.get("status")
+        ent["backfill_cls"] = bf.get("cls")
+        ent["channels"] = ch
+        ent["channel"] = "+".join(k for k, v in ch.items() if v) or "none"
+        trunc = [c for c in owned if c.startswith(ent["name"]) and c != ent["name"]]
+        ent["truncated_prefix_of"] = trunc[0] if trunc else None
+    return gap
+
+
+def _x93_write_csp_gap(rows, csp):
+    gap = _x93_build_gap(rows, csp)
+    ents = sorted(gap.values(), key=lambda e: (int(e["address"], 16), e["name"]))
+    chan = defaultdict(int)
+    for e in ents:
+        chan[e["channel"]] += 1
+    out = {
+        "schema": "csp-gap/v1",
+        "note": ("Gap2Recv_* receivers with NO CSP inferred_real_class. "
+                 "They keep the synthetic fallback. backfill.cls is a hint, "
+                 "never ownership."),
+        "count": len(ents),
+        "by_channel": dict(chan),
+        "truncated_prefix_count": sum(1 for e in ents
+                                      if e["truncated_prefix_of"]),
+        "entries": ents,
+    }
+    CSP_GAP_OUT.write_text(json.dumps(out, indent=1), encoding="utf-8")
+    return out
+
+
+def _x93_write_hint(rows, pilot_addrs):
+    ents = []
+    for r in rows:
+        if not r["has_body"] or not r["owner"]:
+            continue
+        chk = r["checks"] or {}
+        if r["verdict"] == "relocatable":
+            continue
+        oo = chk.get("out_of_size") or []
+        off = max((x[1] for x in oo), default=None)
+        ents.append({
+            "cls": r["cls"], "address": r["address"], "method": r["method"],
+            "csp_owner": r["owner"], "verdict": r["verdict"],
+            "reason": r["reason"],
+            "measured_offset": ("0x%X" % off) if off is not None else None,
+            "owner_size": ("0x%X" % chk["owner_size"])
+            if chk.get("owner_size") is not None else None,
+            "used_names": (chk.get("used") or [])[:12],
+            "missing_names": (chk.get("missing") or [])[:12],
+            "descendant_casts": chk.get("descendant_casts") or [],
+            "pilot": r["addr"] in pilot_addrs,
+        })
+    out = {"schema": "csp-hint/v1",
+           "note": ("CSP owner is correct-but-weak (LCA) for these bodies: "
+                    "relocating them without a layout rewrite would be wrong. "
+                    "Synthetic fallback kept."),
+           "count": len(ents), "entries": ents}
+    CSP_HINT_OUT.write_text(json.dumps(out, indent=1), encoding="utf-8")
+    return out
+
+
+def _x93_load_gate_bank():
+    """Measured AST-cohort delta table: addresses whose relocation would grow
+    a gate category (W2 measurement; X92 precedent = bank, never force)."""
+    if not X93_GATE_BANK.exists():
+        return {}
+    d = json.load(open(X93_GATE_BANK, encoding="utf-8"))
+    return {int(k, 16): v for k, v in (d.get("bank") or {}).items()}
+
+
+def _x93_plan(limit):
+    rows, decls, defs, csp, e4 = _x93_rows()
+    bank = _x93_load_gate_bank()
+    with_body = [r for r in rows if r["has_body"] and r["owner"]]
+    with_body.sort(key=lambda r: r["addr"])
+    pilot = with_body[:limit]
+    pilot_addrs = {r["addr"] for r in pilot}
+    plan = []
+    for r in pilot:
+        if r["verdict"] != "relocatable":
+            continue
+        if r["addr"] in bank:
+            r["verdict"] = "gate_growth_bank"
+            r["reason"] = "AST cohort delta %s (banked; synthetic fallback kept)" % (
+                json.dumps(bank[r["addr"]].get("delta") or {}, ensure_ascii=False))
+            continue
+        cls = r["cls"]
+        d = defs[cls]
+        method = d["method"]
+        inf = r.get("inferred_name") or ""
+        if inf.startswith(r["owner"] + "::"):
+            im = inf.split("::")[-1]
+            if re.match(r'^[A-Za-z_]\w*$', im):
+                method = im
+        tu = _x93_owner_tu(r["owner"])
+        ret = ""
+        for m in decls[cls]["methods"]:
+            if m["method"] == d["method"]:
+                ret = m["ret"]
+                break
+        plan.append({
+            "cls": cls, "address": r["address"], "addr": r["addr"],
+            "owner": r["owner"], "method_old": d["method"],
+            "method": method, "ret": ret or "int",
+            "params": d["params"], "owner_header": r["owner_header"],
+            "owner_tu": (str(tu.relative_to(ROOT)).replace("\\", "/")
+                         if tu else None),
+            "def_body": d["body"], "verdict": r["verdict"],
+        })
+    return rows, plan, pilot_addrs
+
+
+def _x93_apply(plan):
+    if not plan:
+        return {"applied": 0}
+    headers = defaultdict(lambda: defaultdict(list))
+    tus = defaultdict(list)
+    dlines = _x93_read_lines(GAP2_DECL)
+    flines = _x93_read_lines(GAP2_DEF)
+    for e in reversed(plan):  # defs: bottom-up keeps earlier offsets valid
+        _x93_remove_synth_def(flines, e["cls"], e["method_old"])
+    for e in plan:
+        _x93_remove_synth_decl(dlines, e["cls"], e["method_old"])
+        hdr = e["owner_header"]
+        headers[hdr][e["owner"]].append(
+            "%s %s(%s);  // 0x%08X" % (e["ret"], e["method"],
+                                       e["params"], e["addr"]))
+        body = e["def_body"].replace(
+            e["cls"] + "::" + e["method_old"],
+            e["owner"] + "::" + e["method"], 1)
+        tus[e["owner_tu"]].append("// 0x%08X\n%s" % (e["addr"], body))
+    _x93_write_lines(GAP2_DECL, dlines)
+    _x93_write_lines(GAP2_DEF, flines)
+
+    decl_headers = sorted({Path(h) for h in headers})
+    # strip our blocks everywhere first (idempotent), then re-insert
+    for p in sorted((SRC / "e4").rglob("*.hpp")):
+        lines = _x93_read_lines(p)
+        new = _x93_strip_blocks(lines, X93_DECL_BEGIN, X93_DECL_END)
+        if new != lines:
+            _x93_write_lines(p, new)
+    hdr_report = []
+    for hp in decl_headers:
+        lines = _x93_read_lines(hp)
+        n = 0
+        for cls, decls in headers[str(hp)].items():
+            for d in decls:
+                if _x93_insert_decl(lines, cls, d):
+                    n += 1
+        _x93_write_lines(hp, lines)
+        hdr_report.append({"file": str(hp.relative_to(ROOT)).replace("\\", "/"),
+                           "decls": n})
+    tu_report = []
+    for tu, defs_ in tus.items():
+        if not tu:
+            continue
+        p = ROOT / tu
+        _x93_ensure_include(p, headers_key_for(tu, plan))
+        lines = _x93_read_lines(p)
+        lines = _x93_strip_blocks(lines, X93_CPP_BEGIN, X93_CPP_END)
+        while lines and lines[-1].strip() == "":
+            lines.pop()
+        lines += ["", X93_CPP_BEGIN,
+                  "// X93: CSP inferred_real_class ownership "
+                  "(tools/gen_gap2_defs.py).", "namespace gamemd {"]
+        for d in defs_:
+            lines.append(d)
+        lines += ["} // namespace gamemd", X93_CPP_END, ""]
+        _x93_write_lines(p, lines)
+        tu_report.append({"file": str(tu).replace("\\", "/"),
+                          "defs": len(defs_)})
+    calls = []
+    for e in plan:
+        calls += _x93_call_rewrite(e["owner"], e["method_old"], e["method"],
+                                   SRC, e["owner_header"])
+    return {"applied": len(plan), "headers": hdr_report,
+            "tus": tu_report, "call_sites": calls}
+
+
+def headers_key_for(tu_path, plan):
+    """Owner header for the first plan row routed to this TU."""
+    t = str(tu_path).replace("\\", "/")
+    for e in plan:
+        if e["owner_tu"] == t:
+            return e["owner_header"]
+    return plan[0]["owner_header"]
+
+
+def _x93_write_extra_table(plan):
+    """Consumed by gen_tree_full_e4.py on a full regeneration."""
+    tbl = defaultdict(list)
+    for e in plan:
+        tbl[e["owner"]].append("%s %s(%s);  // 0x%08X" % (
+            e["ret"], e["method"], e["params"], e["addr"]))
+    X93_EXTRA_TABLE.parent.mkdir(parents=True, exist_ok=True)
+    X93_EXTRA_TABLE.write_text(json.dumps(dict(tbl), indent=1),
+                               encoding="utf-8")
+
+
+def run_x93(apply=False, limit=20):
+    rows, plan, pilot_addrs = _x93_plan(limit)
+    gap = _x93_write_csp_gap(rows, _x93_load_csp())
+    hint = _x93_write_hint(rows, pilot_addrs)
+    _x93_write_extra_table(plan)
+    applied = _x93_apply(plan) if apply else {"applied": 0}
+    verdicts = defaultdict(int)
+    for r in rows:
+        verdicts[r["verdict"]] += 1
+    report = {
+        "schema": "x93-report/v1",
+        "synthetic_classes": len(rows),
+        "bodies": sum(1 for r in rows if r["has_body"]),
+        "csp_owned": sum(1 for r in rows if r["owner"]),
+        "verdicts": dict(verdicts),
+        "pilot": [r["address"] for r in sorted(
+            (x for x in rows if x["has_body"] and x["owner"]),
+            key=lambda x: x["addr"])[:limit]],
+        "plan": [{k: v for k, v in e.items() if k != "def_body"}
+                 for e in plan],
+        "applied": applied,
+        "csp_gap": {"count": gap["count"],
+                    "by_channel": gap["by_channel"],
+                    "truncated_prefix_count": gap["truncated_prefix_count"]},
+        "csp_hint": hint["count"],
+        "apply": bool(apply),
+    }
+    X93_PLAN_OUT.write_text(json.dumps(report, indent=1), encoding="utf-8")
+    X93_REPORT_OUT.write_text(json.dumps(report, indent=1), encoding="utf-8")
+    print("=" * 70)
+    print("  X93 CSP-first gap2 ownership  (apply=%s, limit=%d)" % (apply, limit))
+    print("=" * 70)
+    print("  synthetic classes           : %d" % report["synthetic_classes"])
+    print("  bodies                      : %d" % report["bodies"])
+    print("  CSP-owned                   : %d" % report["csp_owned"])
+    for k in sorted(verdicts):
+        print("  %-28s: %d" % (k, verdicts[k]))
+    print("  pilot addresses             : %d" % len(report["pilot"]))
+    print("  planned relocations         : %d" % len(plan))
+    print("  csp_gap entries             : %d %s" % (
+        gap["count"], gap["by_channel"]))
+    print("  csp_hint entries            : %d" % hint["count"])
+    if apply:
+        print("  APPLIED                     : %d" % applied["applied"])
+    return 0
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--phase", choices=["lnk", "bulk", "both"], default="both")
     ap.add_argument("--apply", action="store_true")
+    ap.add_argument("--x93-plan", action="store_true")
+    ap.add_argument("--x93-apply", action="store_true")
+    ap.add_argument("--x93-limit", type=int, default=20)
     args = ap.parse_args()
+
+    if args.x93_plan or args.x93_apply:
+        return run_x93(apply=args.x93_apply, limit=args.x93_limit)
 
     classification = json.load(open(CLASSIFICATION, encoding="utf-8"))
     no_cpp_body = classification["no_cpp_body"]

@@ -16,6 +16,7 @@
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/File_e4.hpp"
 #include "e4/classes/Block_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/WeaponTypeClass_e4.hpp"
 
 // 0x432AB0
 namespace gamemd {  // G42.18 ns repair
@@ -214,7 +215,7 @@ int BinkMovieHandle::Pause(int a2, int a3)
 namespace gamemd {
 int BinkMovieHandle::RenderLoop(int a2, void *a2_2, void *a3, void *a4)
 {
-  return COMStub_432C10((WeaponTypeClass *)this->height, a2); /*0x5c05cd*/
+  return ((WeaponTypeClass *)(WeaponTypeClass *)this->height)->COMStub_432C10(a2); /*0x5c05cd*/
 }
 } // namespace gamemd
 // 0x5C05D0

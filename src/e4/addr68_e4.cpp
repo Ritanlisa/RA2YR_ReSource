@@ -855,7 +855,7 @@ int PostLoadInitScenario()
     }
   }
   RadarClass::SetGlobal((RadarClass *)dword_8871E0->DetailMinFrameRateNormal); /*0x6850fd*/
-  Map_Init((ObjectClass *)dword_8871E0->DetailBufferZoneWidth); /*0x68510b*/
+  ((ObjectClass *)dword_8871E0->DetailBufferZoneWidth)->Map_Init(); /*0x68510b*/
   return result; /*0x685110*/
 
 }

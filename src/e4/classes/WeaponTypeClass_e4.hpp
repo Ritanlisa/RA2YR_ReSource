@@ -117,6 +117,9 @@ struct WeaponTypeClass {
     void * Create(AbstractClass * Source, void *a2 = 0, void *a3 = 0, void *a4 = 0);
     void * Create(AbstractClass * Source);
     WeaponTypeClass * ddtor(void ** Block, char a2);
+    // --- x93 csp-relocation decls (BEGIN) ---
+    int COMStub_432C10(int a2);  // 0x00432C10
+    // --- x93 csp-relocation decls (END) ---
 };
 
 } // namespace gamemd

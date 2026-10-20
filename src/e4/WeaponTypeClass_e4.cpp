@@ -643,3 +643,20 @@ int WeaponTypeClass::GetTypeIdentifier()
 {
   return 49; /*0x7730e5*/
 }
+
+// --- x93 csp-relocation defs (BEGIN) ---
+// X93: CSP inferred_real_class ownership (tools/gen_gap2_defs.py).
+namespace gamemd {
+// 0x00432C10
+  int WeaponTypeClass::COMStub_432C10(int a2)
+  {
+    AbstractClass *NeedsSaveOrLink; // ecx
+    int result; // eax
+
+    NeedsSaveOrLink = (AbstractClass *)v23->NeedsSaveOrLink; /*0x432c10*/
+    if ( NeedsSaveOrLink ) /*0x432c15*/
+      return AbstractClass::getTotalValue(NeedsSaveOrLink, a2); /*0x432c1c*/
+    return result; /*0x432c21*/
+  }
+} // namespace gamemd
+// --- x93 csp-relocation defs (END) ---

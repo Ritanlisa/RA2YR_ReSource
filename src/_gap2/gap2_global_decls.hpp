@@ -240,12 +240,10 @@ public:  // g57c5 W4 supply slot
     struct Gap2Recv_41AF80 {
     };
     struct Gap2Recv_421350 {
-        int RenderAlphaShapes();  // G42.39 def-derived
     };
     struct Gap2Recv_429830 {
     int Items;  // G42.39a supply
     int u32_3C;  // G42.39a supply
-        double ComputeMovementWeight(int *a2, unsigned int *a3, char a4, int a5, int a6);  // W13-C raw-sync 0x429830 (raw: int* / unsigned int* / char / int / int)
     unsigned int M1;  // 0x1 [X30:canon]
     unsigned int M240;  // 0xF0 [X30:canon]
 };
@@ -268,7 +266,6 @@ public:  // g57c5 W4 supply slot
     int q028;  // 0x28 (tail store @0x42e3fd)
     int q02C;  // 0x2C (tail store @0x42e400)
     char q030;  // 0x30 (byte store @0x42e403)
-        int RenderTooltipBorder();  // G42.39 def-derived
     unsigned int M4;  // 0x4 [X30:canon]
     unsigned int M8;  // 0x8 [X30:canon]
     unsigned int M12;  // 0xC [X30:canon]
@@ -292,7 +289,6 @@ public:  // g57c5 W4 supply slot
     int q044;  // G42.39a supply
     int ptr_24;  // G42.39a supply
     int ptr_C;  // G42.39a supply
-        char RenderBuildingTag(int a2, int a3, int a4, int a5, int a6);  // G42.39 def-derived
     unsigned int M12;  // 0xC [X30:canon]
     unsigned int M1088;  // 0x440 [X30:canon]
 };
@@ -303,13 +299,11 @@ public:  // g57c5 W4 supply slot
 };
     struct Gap2Recv_430BA0 {
     int customSound_controller[8];  // G42.39a supply (indexed usage)
-        void PlacePlayerBeacon(int a2, int a3, int a4, int a5, int a6);  // G42.39 def-derived
     unsigned int M96;  // 0x60 [X30:canon]
 };
     struct Gap2Recv_432C10 {
     int nextObject;  // G42.39a supply
     int owningHouseIndex;  // G42.39a supply
-        int COMStub_432C10(int a2);  // G42.39 def-derived
     unsigned int M32;  // 0x20 [X30:canon]
 };
     struct Gap2Recv_438BF0 {
@@ -331,7 +325,6 @@ public:  // g57c5 W4 supply slot
     int needsRedraw8;  // G42.39a supply
     int u32_520;  // G42.39a supply
     int u32_0;  // G42.39a supply
-        void* CreateDominatorDestructionEffects();  // G42.39 def-derived
     unsigned int M1312;  // 0x520 [X30:canon]
     };
     struct Gap2Recv_4500F0 {

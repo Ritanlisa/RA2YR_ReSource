@@ -629,13 +629,8 @@ LABEL_25:
             }
             break; /*0x48da40*/
           case 0x20: /*0x48d583*/
-            PlacePlayerBeacon( /*0x48d7cb*/
-              &g_VisibilitySystem,
-              stru_A8D600.__pad_73[1],
-              *(int *)&DataGlobal_A8D667,
-              *(int *)&stru_A8D600.__pad_64[7],
-              *(int *)DataGlobal_A8D66F,
-              DataGlobal_A8D673);
+            ((ObjectClass *)/*0x48d7cb*/
+              &g_VisibilitySystem)->PlacePlayerBeacon(stru_A8D600.__pad_73[1], *(int *)&DataGlobal_A8D667, *(int *)&stru_A8D600.__pad_64[7], *(int *)DataGlobal_A8D66F, DataGlobal_A8D673);
             break; /*0x48d7d0*/
           case 0x21: /*0x48d583*/
             Network::SendBeaconDelete((Network *)&g_VisibilitySystem, stru_A8D600.__pad_73[1], DataGlobal_A8D673); /*0x48d7ea*/

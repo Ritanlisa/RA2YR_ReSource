@@ -706,6 +706,24 @@ struct ObjectClass {
 #if !defined(GAMEMD_TREE_UNIVERSE) && !defined(GAMEMD_E4_VECTOR_TREE_TRUTH)
 #else
 #endif  // X27: template-carrier universe fallback
+    // --- x93 csp-relocation decls (BEGIN) ---
+    int RenderAlphaShapes();  // 0x00421350
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    double ComputeMovementWeight(int *a2, unsigned int *a3, char a4, int a5, int a6);  // 0x00429830
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    int RenderTooltipBorder();  // 0x0042E1C0
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    char RenderBuildingTag(int a2, int a3, int a4, int a5, int a6);  // 0x00430250
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    void PlacePlayerBeacon(int a2, int a3, int a4, int a5, int a6);  // 0x00430BA0
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    void* CreateDominatorDestructionEffects();  // 0x0043C0D0
+    // --- x93 csp-relocation decls (END) ---
 };
 #endif // GAMEMD_TREE_UNIVERSE
 
