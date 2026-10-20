@@ -82,7 +82,7 @@ struct VoxelAnimTypeClass {
     char Selectable[1];  // 0x230
     char LegalTarget[1];  // 0x231
     unsigned char Insignificant_d;  // 0x232
-    unsigned char __pad_233;  // 0x233
+    char Immune[1];  // 0x233
     char IsLogic[1];  // 0x234
     char AllowCellContent[1];  // 0x235
     unsigned char Voxel_d;  // 0x236
@@ -99,7 +99,7 @@ struct VoxelAnimTypeClass {
     bool SourceShared;  // 0x296
     unsigned char __pad_297;  // 0x297
     int32_t VoxelIndex;  // 0x298
-    void* Duration;  // 0x29C
+    int Duration;  // 0x29C
     double Elasticity;  // 0x2A0
     double MinAngularVelocity;  // 0x2A8
     double MaxAngularVelocity;  // 0x2B0
@@ -109,13 +109,13 @@ struct VoxelAnimTypeClass {
     bool IsMeteor;  // 0x2D0
     char __pad_2D1[3];  // 0x2D1
     VoxelAnimTypeClass* Spawns;  // 0x2D4
-    void* SpawnCount;  // 0x2D8
+    int SpawnCount;  // 0x2D8
     int StartSound;  // 0x2DC
-    void* StopSound;  // 0x2E0
+    int StopSound;  // 0x2E0
     AnimTypeClass* BounceAnim;  // 0x2E4
     AnimTypeClass* ExpireAnim;  // 0x2E8
     AnimTypeClass* TrailerAnim;  // 0x2EC
-    void* Damage;  // 0x2F0
+    int Damage;  // 0x2F0
     int DamageRadius;  // 0x2F4
     WarheadTypeClass* Warhead;  // 0x2F8
     ParticleSystemTypeClass* AttachedSystem;  // 0x2FC

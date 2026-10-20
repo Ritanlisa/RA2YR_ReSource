@@ -515,7 +515,7 @@ int GameSetupDialogProc(HWND hWnd, unsigned int a2, unsigned int a3, unsigned in
 }
 // 0x5B67F0
 namespace gamemd {
-AbstractClass * * ApplyGameOptions(CampaignScore * aP0)
+AbstractClass * * ApplyGameOptions(ObjectClass * aP0)
 {
   int v1; // esi
   int v2; // eax

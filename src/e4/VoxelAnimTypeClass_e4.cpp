@@ -49,20 +49,15 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::Constructor(char *Source, void *a2, voi
   this->Normalized = 0; /*0x74ad9f*/
   this->Translucent = 0; /*0x74ada8*/
   this->SourceShared = 0; /*0x74adae*/
-  this->Elasticity[0] = -1610612736; /*0x74adb4*/
-  this->MinAngularVelocity[0] = 0; /*0x74adbe*/
-  this->MaxAngularVelocity[0] = 484854086; /*0x74adc4*/
-  this->MinZVel[0] = 0; /*0x74adce*/
-  this->MaxZVel[0] = 0; /*0x74add4*/
-  this->MaxXYVel[0] = 0; /*0x74adda*/
+  this->Elasticity = 0.800000011920929; /*0x74adb4*/ /*0x74adf1*/
+  this->MinAngularVelocity = 0.0; /*0x74adbe*/ /*0x74adfb*/
+  this->MaxAngularVelocity = 0.17452777777777778; /*0x74adc4*/ /*0x74ae01*/
+  this->MinZVel = 3.5; /*0x74adce*/ /*0x74ae0b*/
+  this->MaxZVel = 5.0; /*0x74add4*/ /*0x74ae15*/
+  this->MaxXYVel = 15.0; /*0x74adda*/ /*0x74ae1f*/
   this->VoxelIndex = 0; /*0x74ade1*/
   this->Duration = 30; /*0x74ade7*/
-  this->Elasticity[1] = 1072273817; /*0x74adf1*/
-  this->MinAngularVelocity[1] = 0; /*0x74adfb*/
-  this->MaxAngularVelocity[1] = 1069962989; /*0x74ae01*/
-  this->MinZVel[1] = 1074528256; /*0x74ae0b*/
-  this->MaxZVel[1] = 1075052544; /*0x74ae15*/
-  this->MaxXYVel[1] = 1076756480; /*0x74ae1f*/
+
   this->IsMeteor = 0; /*0x74ae29*/
   this->Spawns = 0; /*0x74ae2f*/
   this->SpawnCount = 0; /*0x74ae35*/
@@ -79,13 +74,13 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::Constructor(char *Source, void *a2, voi
   /* X11: ptr_0 install elided (implicit via VoxelAnimTypeClass virtuals 0x74ae77) */
   /* X11: ptr_0 install elided (implicit via VoxelAnimTypeClass virtuals 0x74ae7e) */
   AbstractClass::GenerateUniqueID((AbstractClass *)&this->ptr_4); /*0x74ae85*/
-  this->LegalTarget_d = 0; /*0x74ae8c*/
-  this->IsLogic_d = 1; /*0x74ae92*/
-  this->RadarInvisible_d = 1; /*0x74ae98*/
-  this->Selectable_d = 1; /*0x74ae9e*/
+  this->LegalTarget[0] = 0; /*0x74ae8c*/
+  this->IsLogic[0] = 1; /*0x74ae92*/
+  this->RadarInvisible[0] = 1; /*0x74ae98*/
+  this->Selectable[0] = 1; /*0x74ae9e*/
   this->Insignificant_d = 1; /*0x74aea4*/
-  this->Immune_d = 1; /*0x74aeaa*/
-  this->AllowCellContent_d = 0; /*0x74aeb0*/
+  this->Immune[0] = 1; /*0x74aeaa*/
+  this->AllowCellContent[0] = 0; /*0x74aeb0*/
   if ( g_BuildingLoadQueue_Array.LightBlueTint < g_BuildingLoadQueue_Array.LightRedTint /*0x74aeea*/
     || (BYTE1(g_BuildingLoadQueue_Array.LightGreenTint) || !g_BuildingLoadQueue_Array.LightRedTint)
     && g_BuildingLoadQueue_Array.PrimaryFirePixelOffset[0] > 0
@@ -110,7 +105,7 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::Constructor(char *Source, void *a2, voi
     v4 = stru_A8EB00.ObjectTypeClass[14]++; /*0x74af4a*/
     *(unsigned int *)(stru_A8EB00.ObjectTypeClass[11] + 4 * v4) = this; /*0x74af59*/
   }
-  return &this->ObjectTypeClass; /*0x74af5e*/
+  return this; /*0x74af5e*/
 
 }
 }  // G42.18 ns repair
@@ -132,28 +127,27 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   if ( !((ObjectTypeClass *)((ObjectTypeClass *)v4))->LoadFromINI((uint8_t ***)a2) ) /*0x74b06e*/
     return 0; /*0x74b614*/
   char Bool_Overwrite; // al
-  Bool_Overwrite = INIClass::ReadBool_Overwrite( /*0x74b08d*/
-                     (int *)a2,
+  Bool_Overwrite = INIClass::ReadBool_Overwrite( /*0x74b08d*/ (int *)a2, 
                      &v4->BarrelVoxel,
                      g_INI_Key_Normalized,
                      v4->Normalized);
   char v6 = v4->Translucent; // cl /*0x74b092*/
   v4->Normalized = Bool_Overwrite; /*0x74b098*/
   char v7; // al
-  v7 = INIClass::ReadBool_Overwrite((int *)a2, &v4->BarrelVoxel, aTranslucent, v6); /*0x74b0a7*/
+  v7 = INIClass::ReadBool_Overwrite((int *)a2,  &v4->BarrelVoxel, aTranslucent, v6); /*0x74b0a7*/
   char v45; // [esp-4h] [ebp-29Ch]
   v45 = v4->IsTiberium; /*0x74b0b4*/
   v4->Translucent = v7; /*0x74b0bb*/
-  v4->IsTiberium = INIClass::ReadBool_Overwrite((int *)a2, &v4->BarrelVoxel, aIstiberium, v45); /*0x74b0c6*/
+  v4->IsTiberium = INIClass::ReadBool_Overwrite((int *)a2,  &v4->BarrelVoxel, aIstiberium, v45); /*0x74b0c6*/
   char v8; // al
-  v8 = INIClass::ReadBool_Overwrite((int *)a2, &v4->BarrelVoxel, aIsmeteor, v4->IsMeteor); /*0x74b0db*/
+  v8 = INIClass::ReadBool_Overwrite((int *)a2,  &v4->BarrelVoxel, aIsmeteor, v4->IsMeteor); /*0x74b0db*/
   double v43; // [esp-8h] [ebp-2A0h]
   v43 = v4->Elasticity; /*0x74b0ed*/
   v4->IsMeteor = v8; /*0x74b0f6*/
-  INIClass::ReadDouble_Overwrite((double *)a2, &v4->BarrelVoxel, g_INI_Key_Elasticity, v43); /*0x74b0fc*/
+  INIClass::ReadDouble_Overwrite((double *)a2,  &v4->BarrelVoxel, g_INI_Key_Elasticity, v43); /*0x74b0fc*/
   __asm { fstp qword ptr [esi+2A0h] } /*0x74b101*/
   v4->Elasticity = _RT1; /*0x74b101*/
-  INIClass::ReadDouble_Overwrite((double *)a2, &v4->BarrelVoxel, aMinangularvelo, -1.0); /*0x74b116*/
+  INIClass::ReadDouble_Overwrite((double *)a2,  &v4->BarrelVoxel, aMinangularvelo, -1.0); /*0x74b116*/
   __asm /*0x74b11b*/
   {
     fcom ds:dbl_7E2800
@@ -172,7 +166,7 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
     }
     v4->MinAngularVelocity = _RT1; /*0x74b12e*/
   }
-  INIClass::ReadDouble_Overwrite((double *)a2, &v4->BarrelVoxel, aMaxangularvelo, -1.0); /*0x74b147*/
+  INIClass::ReadDouble_Overwrite((double *)a2,  &v4->BarrelVoxel, aMaxangularvelo, -1.0); /*0x74b147*/
   __asm /*0x74b14c*/
   {
     fcom ds:dbl_7E2800
@@ -192,28 +186,26 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
     v4->MaxAngularVelocity = _RT1; /*0x74b15f*/
   }
   int Int_Overwrite; // eax
-  Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x74b178*/
-                    (bool *)a2,
+  Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x74b178*/ (bool *)a2, 
                     &v4->BarrelVoxel,
                     aDuration,
                     v4->Duration);
   double v44; // [esp-8h] [ebp-2A0h]
   v44 = v4->MinZVel; /*0x74b18a*/
   v4->Duration = Int_Overwrite; /*0x74b193*/
-  INIClass::ReadDouble_Overwrite((double *)a2, &v4->BarrelVoxel, aMinzvel, v44); /*0x74b199*/
+  INIClass::ReadDouble_Overwrite((double *)a2,  &v4->BarrelVoxel, aMinzvel, v44); /*0x74b199*/
   unsigned int v15 = v4->q2C4; // eax /*0x74b19e*/
   unsigned int v16 = v4->MaxZVel; // ecx /*0x74b1a4*/
   __asm { fstp qword ptr [esi+2B8h] } /*0x74b1aa*/
   v4->MinZVel = _RT1; /*0x74b1aa*/
-  INIClass::ReadDouble_Overwrite( /*0x74b1ba*/
-    (double *)a2,
+  INIClass::ReadDouble_Overwrite( /*0x74b1ba*/ (double *)a2, 
     &v4->BarrelVoxel,
     aMaxzvel,
     COERCE_DOUBLE((((unsigned long)(unsigned int)(v16)) | ((unsigned long)(unsigned int)(v15) << 32))));
   double v18 = v4->MaxXYVel; // rax /*0x74b1c5*/
   __asm { fstp qword ptr [esi+2C0h] } /*0x74b1cb*/
   v4->MaxZVel = _RT1; /*0x74b1cb*/
-  INIClass::ReadDouble_Overwrite((double *)a2, &v4->BarrelVoxel, aMaxxyvel, v18); /*0x74b1db*/
+  INIClass::ReadDouble_Overwrite((double *)a2,  &v4->BarrelVoxel, aMaxxyvel, v18); /*0x74b1db*/
   unsigned int *v20 = v4->Spawns; // ecx /*0x74b1e0*/
   __asm { fstp qword ptr [esi+2C8h] } /*0x74b1ea*/
   v4->MaxXYVel = _RT1; /*0x74b1ea*/
@@ -234,19 +226,18 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
     v22 = v46; /*0x74b220*/
   }
   v4->Spawns = v22; /*0x74b224*/
-  v4->SpawnCount = INIClass::ReadInt_Overwrite( /*0x74b248*/
-                            (bool *)a2,
+  v4->SpawnCount = INIClass::ReadInt_Overwrite( /*0x74b248*/ (bool *)a2, 
                             &v4->BarrelVoxel,
                             aSpawncount,
                             v4->SpawnCount);
   char v56; // [esp+17h] [ebp-281h]
-  v56 = INIClass::ReadBool_Overwrite((int *)a2, &v4->BarrelVoxel, aSharebodydata, 0); /*0x74b25d*/
+  v56 = INIClass::ReadBool_Overwrite((int *)a2,  &v4->BarrelVoxel, aSharebodydata, 0); /*0x74b25d*/
   char v55; // [esp+16h] [ebp-282h]
-  v55 = INIClass::ReadBool_Overwrite((int *)a2, &v4->BarrelVoxel, aShareturretdat, 0); /*0x74b270*/
+  v55 = INIClass::ReadBool_Overwrite((int *)a2,  &v4->BarrelVoxel, aShareturretdat, 0); /*0x74b270*/
   char v54; // [esp+15h] [ebp-283h]
-  v54 = INIClass::ReadBool_Overwrite((int *)a2, &v4->BarrelVoxel, aSharebarreldat, 0); /*0x74b27f*/
+  v54 = INIClass::ReadBool_Overwrite((int *)a2,  &v4->BarrelVoxel, aSharebarreldat, 0); /*0x74b27f*/
   int v23; // eax
-  v23 = INIClass::ReadInt_Overwrite((bool *)a2, &v4->BarrelVoxel, aVoxelindex, v4->ShareBarrelData); /*0x74b28c*/
+  v23 = INIClass::ReadInt_Overwrite((bool *)a2,  &v4->BarrelVoxel, aVoxelindex, v4->ShareBarrelData); /*0x74b28c*/
   int v24 = v4->StartSound; // edx /*0x74b291*/
   v4->ShareBarrelData = v23; /*0x74b297*/
   int v47; // [esp+10h] [ebp-288h]
@@ -332,11 +323,11 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   }
   v4->TrailerAnim = v30; /*0x74b3d2*/
   int v31; // eax
-  v31 = INIClass::ReadInt_Overwrite((bool *)a2, &v4->BarrelVoxel, g_INI_Key_Damage, v4->Damage); /*0x74b3e7*/
+  v31 = INIClass::ReadInt_Overwrite((bool *)a2,  &v4->BarrelVoxel, g_INI_Key_Damage, v4->Damage); /*0x74b3e7*/
   int v32 = v4->DamageRadius; // ecx /*0x74b3ec*/
   v4->Damage = v31; /*0x74b3f2*/
   int v33; // eax
-  v33 = INIClass::ReadInt_Overwrite((bool *)a2, &v4->BarrelVoxel, aDamageradius, v32); /*0x74b401*/
+  v33 = INIClass::ReadInt_Overwrite((bool *)a2,  &v4->BarrelVoxel, aDamageradius, v32); /*0x74b401*/
   int v34 = v4->Warhead; // edx /*0x74b406*/
   v4->DamageRadius = v33; /*0x74b40c*/
   int v52; // [esp+10h] [ebp-288h]
@@ -559,10 +550,10 @@ int VoxelAnimTypeClass::SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1)
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->Warhead); /*0x74b85f*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->BounceAnim); /*0x74b870*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->u32_2E8); /*0x74b881*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->u32_2E8); /*0x74b892*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->u32_2E8); /*0x74b8a3*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->u32_2FC); /*0x74b8b4*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->ExpireAnim); /*0x74b881*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->TrailerAnim); /*0x74b892*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->Spawns); /*0x74b8a3*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->AttachedSystem); /*0x74b8b4*/
     ((char *)aP0)->LoadAnim(); /*0x74b8bb*/
     return 0; /*0x74b8c0*/
   }
