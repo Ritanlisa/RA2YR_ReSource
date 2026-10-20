@@ -206,7 +206,7 @@ void * SidebarClass::LoadAssets()
   int v15[192]; // [esp+410h] [ebp-300h] BYREF
 
   PowerClass::checkBlackout(v1); /*0x6a5849*/
-  qmemcpy(v14, UI_Load_72F4A0(), sizeof(v14)); /*0x6a5863*/
+  memcpy(v14, UI_Load_72F4A0(), sizeof(v14)); /*0x6a5863*/
   if ( *(unsigned int *)&g_SidebarConfig ) /*0x6a586d*/
   {
     (***(void (****)(unsigned int, int))&g_SidebarConfig)(*(unsigned int *)&g_SidebarConfig, 1); /*0x6a5873*/
@@ -258,7 +258,7 @@ void * SidebarClass::LoadAssets()
   dword_B0B46C = LoadFileSHP(aSide2Shp, (bool *)&byte_B0B489); /*0x6a5a25*/
   dword_B0B470 = LoadFileSHP(aSide3Shp, (bool *)&byte_B0B48A); /*0x6a5a39*/
   dword_B0B474 = LoadFileSHP(aAddonShp, (bool *)&byte_B0B48B); /*0x6a5a43*/
-  qmemcpy(v15, UI_Load_72F4E0(), sizeof(v15)); /*0x6a5a5b*/
+  memcpy(v15, UI_Load_72F4E0(), sizeof(v15)); /*0x6a5a5b*/
   if ( *(unsigned int *)&DataGlobal_87F6D0 ) /*0x6a5a65*/
   {
     (***(void (****)(unsigned int, int))&DataGlobal_87F6D0)(*(unsigned int *)&DataGlobal_87F6D0, 1); /*0x6a5a6b*/

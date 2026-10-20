@@ -1202,7 +1202,7 @@ LABEL_33:
               v8 = EventClass::AddEvent(v15, *(unsigned int *)(*(int *)((char *)&stru_A83CD9.estimatedHealth + 3) + 48), 8u); /*0x48cbc0*/
               if ( *(int *)&dword_A802C8 < 128 ) /*0x48cbcf*/
               {
-                qmemcpy(&byte_A802D4[111 * dword_A802D0], v8, 0x6Fu); /*0x48cbeb*/
+                memcpy(&byte_A802D4[111 * dword_A802D0], v8, 0x6Fu); /*0x48cbeb*/
                 dword_A83A54[dword_A802D0] = timeGetTime(); /*0x48cbfc*/
                 dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x48cc13*/
                 ++*(unsigned int *)&dword_A802C8; /*0x48cc19*/
@@ -1224,7 +1224,7 @@ LABEL_33:
                      8u);
               if ( *(int *)&dword_A802C8 < 128 ) /*0x48ca52*/
               {
-                qmemcpy(&byte_A802D4[111 * dword_A802D0], v5, 0x6Fu); /*0x48ca6e*/
+                memcpy(&byte_A802D4[111 * dword_A802D0], v5, 0x6Fu); /*0x48ca6e*/
                 dword_A83A54[dword_A802D0] = timeGetTime(); /*0x48ca7f*/
                 dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x48ca96*/
                 ++*(unsigned int *)&dword_A802C8; /*0x48ca9c*/
@@ -1235,7 +1235,7 @@ LABEL_33:
               v6 = EventClass::AddEvent(v14, *(unsigned int *)(*(int *)((char *)&stru_A83CD9.estimatedHealth + 3) + 48), 8u); /*0x48cac4*/
               if ( *(int *)&dword_A802C8 < 128 ) /*0x48cad3*/
               {
-                qmemcpy(&byte_A802D4[111 * dword_A802D0], v6, 0x6Fu); /*0x48caef*/
+                memcpy(&byte_A802D4[111 * dword_A802D0], v6, 0x6Fu); /*0x48caef*/
                 dword_A83A54[dword_A802D0] = timeGetTime(); /*0x48cb00*/
                 dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x48cb17*/
                 ++*(unsigned int *)&dword_A802C8; /*0x48cb1d*/
@@ -1495,7 +1495,7 @@ CellStruct * * sub_48E0B0()
     v2 = result; /*0x48e0cf*/
     if ( result )
     {
-      fprintf(result, "Frames: %d\n", *(unsigned int *)&MEMORY[0xA8EB00].?[416]);
+      fprintf(result, "Frames: %d\n", *(unsigned int *)&MEMORY[0xA8EB00 + 416]);
       if ( *(unsigned int *)&g_MissionQueueFrame.waypoints[290] ) /*0x48e0f8*/
         v3 = *(unsigned int *)&g_MissionQueueFrame.waypoints[286] / *(unsigned int *)&g_MissionQueueFrame.waypoints[290]; /*0x48e101*/
       else

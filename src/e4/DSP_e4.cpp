@@ -759,7 +759,7 @@ LABEL_104:
             v39[5] = v40 & 0xFFFFFFF7; /*0x7bfbfc*/
             if ( *(unsigned short *)(a1 + 1880) == 1 ) /*0x7bfc07*/
             {
-              qmemcpy((void *)(a1 + 452), (const void *)v39[2], v38); /*0x7bfc19*/
+              memcpy((void *)(a1 + 452), (const void *)v39[2], v38); /*0x7bfc19*/
               *(unsigned int *)(a1 + 448) = v39[10]; /*0x7bfc25*/
               v41 = *(unsigned int *)(a1 + 420); /*0x7bfc2b*/
               (v41) = ((v41) & ~0xFF) | ((v41 | 1) & 0xFF); /*0x7bfc31*/
@@ -1079,7 +1079,7 @@ LABEL_30:
                 *(unsigned int *)(v10 + 40) = v6; /*0x7c0d97*/
                 if ( *(unsigned short *)(aP0 + 1880) == 1 ) /*0x7c0da1*/
                 {
-                  qmemcpy((void *)(aP0 + 452), *(const void **)(v10 + 8), v6); /*0x7c0db3*/
+                  memcpy((void *)(aP0 + 452), *(const void **)(v10 + 8), v6); /*0x7c0db3*/
                   aP0->u32_1C0 = *(unsigned int *)(v10 + 40); /*0x7c0dbf*/
                   *(unsigned int *)(aP0 + 420) |= 1u; /*0x7c0dcd*/
                 }

@@ -326,21 +326,21 @@ int MovementAI::MainFootClass(int a1, char a2) {  // g57b5 W4: raw 真值补参 
   int v113; // [esp+80h] [ebp-8h]
 
   v3 = &this->q024; /*0x514f86*/
-  if ( this->q024 != *(unsigned int *)&MEMORY[0xA8EB00].?[1436] /*0x514fa4*/
-    || this->q028 != *(unsigned int *)&MEMORY[0xA8EB00].?[1440]
-    || this->u32_2C != *(unsigned int *)&MEMORY[0xA8EB00].?[1444] )
+  if ( this->q024 != *(unsigned int *)&stru_A8E960.waypoints[494] /*0x514fa4*/
+    || this->q028 != *(unsigned int *)&stru_A8E960.waypoints[498]
+    || this->u32_2C != *(unsigned int *)&stru_A8E960.waypoints[502] )
   {
     (*(void (**)(int, char *))(*(unsigned int *)this->m_State + 244))(this->m_State, &this->q024); /*0x514fac*/
-    v3->m_Target[0] = *(unsigned int *)&MEMORY[0xA8EB00].?[1436]; /*0x514fba*/
-    this->q028 = *(unsigned int *)&MEMORY[0xA8EB00].?[1440]; /*0x514fc1*/
-    this->u32_2C = *(unsigned int *)&MEMORY[0xA8EB00].?[1444]; /*0x514fca*/
+    v3->m_Target[0] = *(unsigned int *)&stru_A8E960.waypoints[494]; /*0x514fba*/
+    this->q028 = *(unsigned int *)&stru_A8E960.waypoints[498]; /*0x514fc1*/
+    this->u32_2C = *(unsigned int *)&stru_A8E960.waypoints[502]; /*0x514fca*/
   }
   if ( (*(unsigned __int8 (**)(int))(*(unsigned int *)this->m_State + 896))(this->m_State) ) /*0x514fd2*/
     return 7; /*0x514fe7*/
   if ( !(*(unsigned __int8 (**)(int *))(this->m_Target[1] + 16))(&this->m_Target[1]) /*0x51501f*/
-    || this->MovementAI_field_18 == *(unsigned int *)&MEMORY[0xA8EB00].?[1436]
-    && this->q01C == *(unsigned int *)&MEMORY[0xA8EB00].?[1440]
-    && this->u32_20 == *(unsigned int *)&MEMORY[0xA8EB00].?[1444] )
+    || this->MovementAI_field_18 == *(unsigned int *)&stru_A8E960.waypoints[494]
+    && this->q01C == *(unsigned int *)&stru_A8E960.waypoints[498]
+    && this->u32_20 == *(unsigned int *)&stru_A8E960.waypoints[502] )
   {
     return 0; /*0x51501f*/
   }
@@ -357,10 +357,10 @@ int MovementAI::MainFootClass(int a1, char a2) {  // g57b5 W4: raw 真值补参 
     if ( v7 < 0 || v7 >= FootClass_Array.primaryFacing[0] ) /*0x51507f*/
     {
       *(unsigned int *)(this->m_State + 1504) = -1; /*0x5152d7*/
-      v3->m_Target[0] = *(unsigned int *)&MEMORY[0xA8EB00].?[1436]; /*0x5152e7*/
+      v3->m_Target[0] = *(unsigned int *)&stru_A8E960.waypoints[494]; /*0x5152e7*/
       v31 = this->m_State; /*0x5152ef*/
-      this->q028 = *(unsigned int *)&MEMORY[0xA8EB00].?[1440]; /*0x5152f2*/
-      this->u32_2C = *(unsigned int *)&MEMORY[0xA8EB00].?[1444]; /*0x5152fa*/
+      this->q028 = *(unsigned int *)&stru_A8E960.waypoints[498]; /*0x5152f2*/
+      this->u32_2C = *(unsigned int *)&stru_A8E960.waypoints[502]; /*0x5152fa*/
       (*(void (**)(int, unsigned int, int))(*(unsigned int *)v31 + 1152))(v31, 0, 1); /*0x5152ff*/
       v32 = this->m_State; /*0x515305*/
       this->q050 = 0; /*0x515308*/
@@ -386,7 +386,7 @@ int MovementAI::MainFootClass(int a1, char a2) {  // g57b5 W4: raw 真值补参 
       v10 = this->m_State; /*0x5150f0*/
       this->q028 = v9 + 128; /*0x5150f9*/
       this->u32_2C = 0; /*0x515107*/
-      qmemcpy((void *)(v10 + 1504), (const void *)(v10 + 1508), 0x5Cu); /*0x515110*/
+      memcpy((void *)(v10 + 1504), (const void *)(v10 + 1508), 0x5Cu); /*0x515110*/
       v96[0] = this->q024 / 256; /*0x515121*/
       v11 = this->m_State; /*0x515132*/
       v96[1] = this->q028 / 256; /*0x515138*/
@@ -454,8 +454,8 @@ int MovementAI::MainFootClass(int a1, char a2) {  // g57b5 W4: raw 真值补参 
   v102 = *v37; /*0x5153a8*/
   v103 = v37[1]; /*0x5153af*/
   v104 = v37[2]; /*0x5153b6*/
-  if ( v104 >= v36 + 2 * *(unsigned int *)&MEMORY[0xA8EB00].?[1500] + *(unsigned int *)&MEMORY[0xA8EB00].?[1500] ) /*0x5153cb*/
-    this->u32_2C = *(unsigned int *)&MEMORY[0xA8EB00].?[1488] + v36; /*0x5153d5*/
+  if ( v104 >= v36 + 2 * *(unsigned int *)&stru_A8E960.waypoints[558] + *(unsigned int *)&stru_A8E960.waypoints[558] ) /*0x5153cb*/
+    this->u32_2C = *(unsigned int *)&stru_A8E960.waypoints[546] + v36; /*0x5153d5*/
   v93 = this->m_State; /*0x5153e0*/
   v38 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, &this->q024); /*0x5153e2*/
   if ( !(unsigned __int8)CrateClass::ProcessPickup((CrateClass *)v38, v93) ) /*0x5153e9*/
@@ -466,9 +466,9 @@ int MovementAI::MainFootClass(int a1, char a2) {  // g57b5 W4: raw 真值补参 
       if ( *(unsigned char *)(v39 + 144) && !*(unsigned char *)(v39 + 141) ) /*0x515411*/
       {
         *(unsigned int *)(v39 + 1504) = -1; /*0x51541f*/
-        v3->m_Target[0] = *(unsigned int *)&MEMORY[0xA8EB00].?[1436]; /*0x51542f*/
-        this->q028 = *(unsigned int *)&MEMORY[0xA8EB00].?[1440]; /*0x515436*/
-        this->u32_2C = *(unsigned int *)&MEMORY[0xA8EB00].?[1444]; /*0x51543f*/
+        v3->m_Target[0] = *(unsigned int *)&stru_A8E960.waypoints[494]; /*0x51542f*/
+        this->q028 = *(unsigned int *)&stru_A8E960.waypoints[498]; /*0x515436*/
+        this->u32_2C = *(unsigned int *)&stru_A8E960.waypoints[502]; /*0x51543f*/
         (*(void (**)(int, unsigned int, int))(*(unsigned int *)this->m_State + 1152))(this->m_State, 0, 1); /*0x51544c*/
         this->q050 = 0; /*0x515452*/
         this->q0048 = 0; /*0x515455*/
@@ -513,7 +513,7 @@ int MovementAI::MainFootClass(int a1, char a2) {  // g57b5 W4: raw 真值补参 
         return 7; /*0x515a49*/
       if ( v65[981] ) /*0x515a4f*/
         (*(void (**)(unsigned char *, char *))(*(unsigned int *)v65 + 240))(v65, &this->q024); /*0x515a5c*/
-      qmemcpy((void *)(this->m_State + 1504), (const void *)(this->m_State + 1508), 0x5Cu); /*0x515a76*/
+      memcpy((void *)(this->m_State + 1504), (const void *)(this->m_State + 1508), 0x5Cu); /*0x515a76*/
       *(unsigned int *)(this->m_State + 1596) = -1; /*0x515a7b*/
       *(unsigned short *)v97 = this->q024 / 256; /*0x515a94*/
       v66 = this->m_State; /*0x515aa5*/
@@ -532,17 +532,17 @@ int MovementAI::MainFootClass(int a1, char a2) {  // g57b5 W4: raw 真值补参 
         this->u32_54 = 0; /*0x5155b2*/
         this->u32_4C = 0; /*0x5155b5*/
         (*(void (**)(int, unsigned int, unsigned int))(*(unsigned int *)v48 + 1348))(v48, 0, 0); /*0x5155bc*/
-        if ( v3->m_Target[0] != *(unsigned int *)&MEMORY[0xA8EB00].?[1436] /*0x5155e4*/
-          || this->q028 != *(unsigned int *)&MEMORY[0xA8EB00].?[1440]
-          || this->u32_2C != *(unsigned int *)&MEMORY[0xA8EB00].?[1444] )
+        if ( v3->m_Target[0] != *(unsigned int *)&stru_A8E960.waypoints[494] /*0x5155e4*/
+          || this->q028 != *(unsigned int *)&stru_A8E960.waypoints[498]
+          || this->u32_2C != *(unsigned int *)&stru_A8E960.waypoints[502] )
         {
           (*(void (**)(int, char *))(*(unsigned int *)this->m_State + 244))(this->m_State, &this->q024); /*0x5155ec*/
-          v3->m_Target[0] = *(unsigned int *)&MEMORY[0xA8EB00].?[1436]; /*0x5155fa*/
-          this->q028 = *(unsigned int *)&MEMORY[0xA8EB00].?[1440]; /*0x515601*/
-          this->u32_2C = *(unsigned int *)&MEMORY[0xA8EB00].?[1444]; /*0x51560a*/
+          v3->m_Target[0] = *(unsigned int *)&stru_A8E960.waypoints[494]; /*0x5155fa*/
+          this->q028 = *(unsigned int *)&stru_A8E960.waypoints[498]; /*0x515601*/
+          this->u32_2C = *(unsigned int *)&stru_A8E960.waypoints[502]; /*0x51560a*/
         }
         v49 = (unsigned int *)(this->m_State + 1600); /*0x515615*/
-        *v49 = *(unsigned int *)&MEMORY[0xA8EB00].?[416]; /*0x51561c*/
+        *v49 = *(unsigned int *)&stru_A8E960.random[528]; /*0x51561c*/
         v49[1] = v109; /*0x515622*/
         v49[2] = 0; /*0x515625*/
         *(unsigned int *)(this->m_State + 1504) = -1; /*0x51562d*/
@@ -551,9 +551,9 @@ int MovementAI::MainFootClass(int a1, char a2) {  // g57b5 W4: raw 真值补参 
       }
       if ( *(unsigned int *)v96 ) /*0x515650*/
       {
-        v3->m_Target[0] = *(unsigned int *)&MEMORY[0xA8EB00].?[1436]; /*0x51565c*/
-        this->q028 = *(unsigned int *)&MEMORY[0xA8EB00].?[1440]; /*0x515663*/
-        v50 = *(unsigned int *)&MEMORY[0xA8EB00].?[1444]; /*0x515666*/
+        v3->m_Target[0] = *(unsigned int *)&stru_A8E960.waypoints[494]; /*0x51565c*/
+        this->q028 = *(unsigned int *)&stru_A8E960.waypoints[498]; /*0x515663*/
+        v50 = *(unsigned int *)&stru_A8E960.waypoints[502]; /*0x515666*/
         this->q050 = 0; /*0x51566c*/
         this->q0048 = 0; /*0x51566f*/
         this->u32_2C = v50; /*0x515672*/
@@ -561,35 +561,35 @@ int MovementAI::MainFootClass(int a1, char a2) {  // g57b5 W4: raw 真值补参 
         this->u32_54 = 0; /*0x515678*/
         this->u32_4C = 0; /*0x51567b*/
         (*(void (**)(int, unsigned int, unsigned int))(*(unsigned int *)v51 + 1348))(v51, 0, 0); /*0x515680*/
-        if ( v3->m_Target[0] != *(unsigned int *)&MEMORY[0xA8EB00].?[1436] /*0x5156a8*/
-          || this->q028 != *(unsigned int *)&MEMORY[0xA8EB00].?[1440]
-          || this->u32_2C != *(unsigned int *)&MEMORY[0xA8EB00].?[1444] )
+        if ( v3->m_Target[0] != *(unsigned int *)&stru_A8E960.waypoints[494] /*0x5156a8*/
+          || this->q028 != *(unsigned int *)&stru_A8E960.waypoints[498]
+          || this->u32_2C != *(unsigned int *)&stru_A8E960.waypoints[502] )
         {
           (*(void (**)(int, MovementAI *))(*(unsigned int *)this->m_State + 244))(this->m_State, v3); /*0x5156b2*/
-          v3->m_Target[0] = *(unsigned int *)&MEMORY[0xA8EB00].?[1436]; /*0x5156bd*/
-          v3->m_Target[1] = *(unsigned int *)&MEMORY[0xA8EB00].?[1440]; /*0x5156c5*/
-          v3->m_Target[2] = *(unsigned int *)&MEMORY[0xA8EB00].?[1444]; /*0x5156ce*/
+          v3->m_Target[0] = *(unsigned int *)&stru_A8E960.waypoints[494]; /*0x5156bd*/
+          v3->m_Target[1] = *(unsigned int *)&stru_A8E960.waypoints[498]; /*0x5156c5*/
+          v3->m_Target[2] = *(unsigned int *)&stru_A8E960.waypoints[502]; /*0x5156ce*/
         }
       }
       return *(unsigned int *)v96; /*0x5156db*/
     case 2: /*0x515583*/
       v3->m_Target[0] = *(unsigned int *)&MEMORY[0xA8EB00].?[1436]; /*0x515cb6*/
-      this->q028 = *(unsigned int *)&MEMORY[0xA8EB00].?[1440]; /*0x515cbe*/
+      this->q028 = *(unsigned int *)&stru_A8E960.waypoints[498]; /*0x515cbe*/
       v78 = this->m_State; /*0x515cc6*/
-      this->u32_2C = *(unsigned int *)&MEMORY[0xA8EB00].?[1444]; /*0x515cc9*/
+      this->u32_2C = *(unsigned int *)&stru_A8E960.waypoints[502]; /*0x515cc9*/
       this->q050 = 0; /*0x515cce*/
       this->q0048 = 0; /*0x515cd1*/
       this->u32_54 = 0; /*0x515cd4*/
       this->u32_4C = 0; /*0x515cd7*/
       (*(void (**)(int, unsigned int, unsigned int))(*(unsigned int *)v78 + 1348))(v78, 0, 0); /*0x515cde*/
-      if ( v3->m_Target[0] != *(unsigned int *)&MEMORY[0xA8EB00].?[1436] /*0x515d06*/
-        || this->q028 != *(unsigned int *)&MEMORY[0xA8EB00].?[1440]
-        || this->u32_2C != *(unsigned int *)&MEMORY[0xA8EB00].?[1444] )
+      if ( v3->m_Target[0] != *(unsigned int *)&stru_A8E960.waypoints[494] /*0x515d06*/
+        || this->q028 != *(unsigned int *)&stru_A8E960.waypoints[498]
+        || this->u32_2C != *(unsigned int *)&stru_A8E960.waypoints[502] )
       {
         (*(void (**)(int, char *))(*(unsigned int *)this->m_State + 244))(this->m_State, &this->q024); /*0x515d0e*/
-        v3->m_Target[0] = *(unsigned int *)&MEMORY[0xA8EB00].?[1436]; /*0x515d1a*/
-        this->q028 = *(unsigned int *)&MEMORY[0xA8EB00].?[1440]; /*0x515d22*/
-        this->u32_2C = *(unsigned int *)&MEMORY[0xA8EB00].?[1444]; /*0x515d2a*/
+        v3->m_Target[0] = *(unsigned int *)&stru_A8E960.waypoints[494]; /*0x515d1a*/
+        this->q028 = *(unsigned int *)&stru_A8E960.waypoints[498]; /*0x515d22*/
+        this->u32_2C = *(unsigned int *)&stru_A8E960.waypoints[502]; /*0x515d2a*/
       }
       v79 = this->m_State; /*0x515d2d*/
       if ( !*(unsigned char *)(v79 + 1719) ) /*0x515d30*/
@@ -597,25 +597,25 @@ int MovementAI::MainFootClass(int a1, char a2) {  // g57b5 W4: raw 真值补参 
         *(unsigned char *)(v79 + 1719) = 1; /*0x515d3a*/
         v80 = (unsigned int *)(this->m_State + 1640); /*0x515d4f*/
         v81 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5992); /*0x515d55*/
-        *v80 = *(unsigned int *)&MEMORY[0xA8EB00].?[416]; /*0x515d5b*/
+        *v80 = *(unsigned int *)&stru_A8E960.random[528]; /*0x515d5b*/
         v80[1] = v113; /*0x515d61*/
         v80[2] = v81; /*0x515d64*/
       }
       v82 = (unsigned int *)this->m_State; /*0x515d67*/
-      v83 = *(unsigned int *)&MEMORY[0xA8EB00].?[416]; /*0x515d6a*/
+      v83 = *(unsigned int *)&stru_A8E960.random[528]; /*0x515d6a*/
       v84 = v82[400]; /*0x515d70*/
       v85 = v82[402]; /*0x515d76*/
       if ( v84 == -1 ) /*0x515d7f*/
         goto LABEL_90; /*0x515d7f*/
-      if ( *(unsigned int *)&MEMORY[0xA8EB00].?[416] - v84 >= v85 ) /*0x515d87*/
+      if ( *(unsigned int *)&stru_A8E960.random[528] - v84 >= v85 ) /*0x515d87*/
         goto LABEL_91; /*0x515d87*/
-      v85 -= *(unsigned int *)&MEMORY[0xA8EB00].?[416] - v84; /*0x515d89*/
+      v85 -= *(unsigned int *)&stru_A8E960.random[528] - v84; /*0x515d89*/
 LABEL_90:
       if ( !v85 ) /*0x515d8d*/
       {
 LABEL_91:
         v82[376] = -1; /*0x515d8f*/
-        v83 = *(unsigned int *)&MEMORY[0xA8EB00].?[416]; /*0x515d99*/
+        v83 = *(unsigned int *)&stru_A8E960.random[528]; /*0x515d99*/
       }
       v86 = this->m_State; /*0x515d9f*/
       if ( !*(unsigned char *)(v86 + 1719) ) /*0x515daa*/
@@ -639,8 +639,8 @@ LABEL_97:
       return *(unsigned int *)v96; /*0x515ddc*/
     case 3: /*0x515583*/
       v3->m_Target[0] = *(unsigned int *)&MEMORY[0xA8EB00].?[1436]; /*0x5156e6*/
-      this->q028 = *(unsigned int *)&MEMORY[0xA8EB00].?[1440]; /*0x5156ee*/
-      this->u32_2C = *(unsigned int *)&MEMORY[0xA8EB00].?[1444]; /*0x5156fb*/
+      this->q028 = *(unsigned int *)&stru_A8E960.waypoints[498]; /*0x5156ee*/
+      this->u32_2C = *(unsigned int *)&stru_A8E960.waypoints[502]; /*0x5156fb*/
       Cell::IsPassableAllied(this->m_State, v95); /*0x515708*/
       v52 = this->m_State; /*0x51570d*/
       this->q050 = 0; /*0x515712*/
@@ -648,8 +648,8 @@ LABEL_97:
       this->u32_54 = 0; /*0x515718*/
       this->u32_4C = 0; /*0x51571b*/
       (*(void (**)(int, unsigned int, unsigned int))(*(unsigned int *)v52 + 1348))(v52, 0, 0); /*0x515722*/
-      if ( v3->m_Target[0] == *(unsigned int *)&MEMORY[0xA8EB00].?[1436] /*0x515742*/
-        && this->q028 == *(unsigned int *)&MEMORY[0xA8EB00].?[1440] )
+      if ( v3->m_Target[0] == *(unsigned int *)&stru_A8E960.waypoints[494] /*0x515742*/
+        && this->q028 == *(unsigned int *)&stru_A8E960.waypoints[498] )
       {
         goto LABEL_61; /*0x515742*/
       }
@@ -657,8 +657,8 @@ LABEL_97:
     case 4: /*0x515583*/
     case 5: /*0x515583*/
       v3->m_Target[0] = *(unsigned int *)&MEMORY[0xA8EB00].?[1436]; /*0x515acf*/
-      this->q028 = *(unsigned int *)&MEMORY[0xA8EB00].?[1440]; /*0x515ad6*/
-      this->u32_2C = *(unsigned int *)&MEMORY[0xA8EB00].?[1444]; /*0x515ae4*/
+      this->q028 = *(unsigned int *)&stru_A8E960.waypoints[498]; /*0x515ad6*/
+      this->u32_2C = *(unsigned int *)&stru_A8E960.waypoints[502]; /*0x515ae4*/
       if ( a2 ) /*0x515ae7*/
       {
         v67 = this->m_State; /*0x515aed*/
@@ -667,17 +667,17 @@ LABEL_97:
         this->u32_54 = 0; /*0x515af8*/
         this->u32_4C = 0; /*0x515afb*/
         (*(void (**)(int, unsigned int, unsigned int))(*(unsigned int *)v67 + 1348))(v67, 0, 0); /*0x515b02*/
-        if ( v3->m_Target[0] != *(unsigned int *)&MEMORY[0xA8EB00].?[1436] /*0x515b2a*/
-          || this->q028 != *(unsigned int *)&MEMORY[0xA8EB00].?[1440]
-          || this->u32_2C != *(unsigned int *)&MEMORY[0xA8EB00].?[1444] )
+        if ( v3->m_Target[0] != *(unsigned int *)&stru_A8E960.waypoints[494] /*0x515b2a*/
+          || this->q028 != *(unsigned int *)&stru_A8E960.waypoints[498]
+          || this->u32_2C != *(unsigned int *)&stru_A8E960.waypoints[502] )
         {
           (*(void (**)(int, char *))(*(unsigned int *)this->m_State + 244))(this->m_State, &this->q024); /*0x515b32*/
-          v3->m_Target[0] = *(unsigned int *)&MEMORY[0xA8EB00].?[1436]; /*0x515b3d*/
-          this->q028 = *(unsigned int *)&MEMORY[0xA8EB00].?[1440]; /*0x515b45*/
-          this->u32_2C = *(unsigned int *)&MEMORY[0xA8EB00].?[1444]; /*0x515b4e*/
+          v3->m_Target[0] = *(unsigned int *)&stru_A8E960.waypoints[494]; /*0x515b3d*/
+          this->q028 = *(unsigned int *)&stru_A8E960.waypoints[498]; /*0x515b45*/
+          this->u32_2C = *(unsigned int *)&stru_A8E960.waypoints[502]; /*0x515b4e*/
         }
         v68 = (unsigned int *)(this->m_State + 1600); /*0x515b59*/
-        *v68 = *(unsigned int *)&MEMORY[0xA8EB00].?[416]; /*0x515b62*/
+        *v68 = *(unsigned int *)&stru_A8E960.random[528]; /*0x515b62*/
         v68[1] = v113; /*0x515b68*/
         v68[2] = 0; /*0x515b6b*/
         *(unsigned int *)(this->m_State + 1504) = -1; /*0x515b71*/
@@ -736,7 +736,7 @@ LABEL_97:
           v105 = *v58; /*0x515889*/
           v106 = v58[1]; /*0x515890*/
           v59 = this->u32_20 - v58[2]; /*0x51589c*/
-          if ( (int)(((((v59) >> 32) & 0xFFFFFFFFu) ^ v59) - (((v59) >> 32) & 0xFFFFFFFFu)) < 2 * *(unsigned int *)&MEMORY[0xA8EB00].?[1500] ) /*0x5158ab*/
+          if ( (int)(((((v59) >> 32) & 0xFFFFFFFFu) ^ v59) - (((v59) >> 32) & 0xFFFFFFFFu)) < 2 * *(unsigned int *)&stru_A8E960.waypoints[558] ) /*0x5158ab*/
           {
             v108 = *v58; /*0x5158af*/
             v109 = v58[1]; /*0x5158b6*/
@@ -756,39 +756,39 @@ LABEL_97:
               v61 = v60[2],
               level = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, &this->q024)->level,
               v97[0] = 1,
-              (int)abs32(v61 / *(unsigned int *)&MEMORY[0xA8EB00].?[1500] - level) <= 2) )
+              (int)abs32(v61 / *(unsigned int *)&stru_A8E960.waypoints[558] - level) <= 2) )
         {
           v97[0] = 0; /*0x51595d*/
         }
         v94 = v97[0]; /*0x51596b*/
         v63 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, &this->q024); /*0x515976*/
-        Cell::ApplyDamage((Cell *)v63, (int)&MEMORY[0xA8EB00].?[1436], 1, 1, v94); /*0x51597d*/
-        v3->m_Target[0] = *(unsigned int *)&MEMORY[0xA8EB00].?[1436]; /*0x51598a*/
-        this->q028 = *(unsigned int *)&MEMORY[0xA8EB00].?[1440]; /*0x515992*/
-        this->u32_2C = *(unsigned int *)&MEMORY[0xA8EB00].?[1444]; /*0x51599b*/
+        Cell::ApplyDamage((Cell *)v63, (int)&stru_A8E960.waypoints[494], 1, 1, v94); /*0x51597d*/
+        v3->m_Target[0] = *(unsigned int *)&stru_A8E960.waypoints[494]; /*0x51598a*/
+        this->q028 = *(unsigned int *)&stru_A8E960.waypoints[498]; /*0x515992*/
+        this->u32_2C = *(unsigned int *)&stru_A8E960.waypoints[502]; /*0x51599b*/
         v64 = this->m_State; /*0x51599e*/
         this->q050 = 0; /*0x5159a3*/
         this->q0048 = 0; /*0x5159a6*/
         this->u32_54 = 0; /*0x5159a9*/
         this->u32_4C = 0; /*0x5159ac*/
         (*(void (**)(int, unsigned int, unsigned int))(*(unsigned int *)v64 + 1348))(v64, 0, 0); /*0x5159b3*/
-        if ( v3->m_Target[0] == *(unsigned int *)&MEMORY[0xA8EB00].?[1436] /*0x5159cf*/
-          && this->q028 == *(unsigned int *)&MEMORY[0xA8EB00].?[1440] )
+        if ( v3->m_Target[0] == *(unsigned int *)&stru_A8E960.waypoints[494] /*0x5159cf*/
+          && this->q028 == *(unsigned int *)&stru_A8E960.waypoints[498] )
         {
 LABEL_61:
-          if ( this->u32_2C == *(unsigned int *)&MEMORY[0xA8EB00].?[1444] ) /*0x5159db*/
+          if ( this->u32_2C == *(unsigned int *)&stru_A8E960.waypoints[502] ) /*0x5159db*/
             return *(unsigned int *)v96; /*0x515deb*/
         }
 LABEL_62:
         (*(void (**)(int, MovementAI *))(*(unsigned int *)this->m_State + 244))(this->m_State, v3); /*0x5159e1*/
-        v3->m_Target[0] = *(unsigned int *)&MEMORY[0xA8EB00].?[1436]; /*0x5159f5*/
-        v3->m_Target[1] = *(unsigned int *)&MEMORY[0xA8EB00].?[1440]; /*0x5159fd*/
-        v3->m_Target[2] = *(unsigned int *)&MEMORY[0xA8EB00].?[1444]; /*0x515a05*/
+        v3->m_Target[0] = *(unsigned int *)&stru_A8E960.waypoints[494]; /*0x5159f5*/
+        v3->m_Target[1] = *(unsigned int *)&stru_A8E960.waypoints[498]; /*0x5159fd*/
+        v3->m_Target[2] = *(unsigned int *)&stru_A8E960.waypoints[502]; /*0x515a05*/
         return *(unsigned int *)v96; /*0x515a12*/
       }
-      v3->m_Target[0] = *(unsigned int *)&MEMORY[0xA8EB00].?[1436]; /*0x515762*/
-      this->q028 = *(unsigned int *)&MEMORY[0xA8EB00].?[1440]; /*0x51576b*/
-      v53 = *(unsigned int *)&MEMORY[0xA8EB00].?[1444]; /*0x51576e*/
+      v3->m_Target[0] = *(unsigned int *)&stru_A8E960.waypoints[494]; /*0x515762*/
+      this->q028 = *(unsigned int *)&stru_A8E960.waypoints[498]; /*0x51576b*/
+      v53 = *(unsigned int *)&stru_A8E960.waypoints[502]; /*0x51576e*/
       this->q050 = 0; /*0x515774*/
       this->q0048 = 0; /*0x515777*/
       this->u32_2C = v53; /*0x51577a*/
@@ -796,17 +796,17 @@ LABEL_62:
       this->u32_54 = 0; /*0x515780*/
       this->u32_4C = 0; /*0x515783*/
       (*(void (**)(int, unsigned int, unsigned int))(*(unsigned int *)v54 + 1348))(v54, 0, 0); /*0x515788*/
-      if ( v3->m_Target[0] != *(unsigned int *)&MEMORY[0xA8EB00].?[1436] /*0x5157b0*/
-        || this->q028 != *(unsigned int *)&MEMORY[0xA8EB00].?[1440]
-        || this->u32_2C != *(unsigned int *)&MEMORY[0xA8EB00].?[1444] )
+      if ( v3->m_Target[0] != *(unsigned int *)&stru_A8E960.waypoints[494] /*0x5157b0*/
+        || this->q028 != *(unsigned int *)&stru_A8E960.waypoints[498]
+        || this->u32_2C != *(unsigned int *)&stru_A8E960.waypoints[502] )
       {
         (*(void (**)(int, char *))(*(unsigned int *)this->m_State + 244))(this->m_State, &this->q024); /*0x5157b8*/
-        v3->m_Target[0] = *(unsigned int *)&MEMORY[0xA8EB00].?[1436]; /*0x5157c3*/
-        this->q028 = *(unsigned int *)&MEMORY[0xA8EB00].?[1440]; /*0x5157cb*/
-        this->u32_2C = *(unsigned int *)&MEMORY[0xA8EB00].?[1444]; /*0x5157d4*/
+        v3->m_Target[0] = *(unsigned int *)&stru_A8E960.waypoints[494]; /*0x5157c3*/
+        this->q028 = *(unsigned int *)&stru_A8E960.waypoints[498]; /*0x5157cb*/
+        this->u32_2C = *(unsigned int *)&stru_A8E960.waypoints[502]; /*0x5157d4*/
       }
       v55 = (unsigned int *)(this->m_State + 1600); /*0x5157df*/
-      *v55 = *(unsigned int *)&MEMORY[0xA8EB00].?[416]; /*0x5157e8*/
+      *v55 = *(unsigned int *)&stru_A8E960.random[528]; /*0x5157e8*/
       v55[1] = v109; /*0x5157ee*/
       v55[2] = 0; /*0x5157f1*/
       *(unsigned int *)(this->m_State + 1504) = -1; /*0x5157f7*/

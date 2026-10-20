@@ -1249,7 +1249,7 @@ AbstractClass * * SessionClass_AssignHouses()
         }
         if ( Destination != (char *)(v9 + 90100) ) /*0x68802b*/
         {
-          qmemcpy((void *)(v9 + 90100), Destination, 0x14u); /*0x688038*/
+          memcpy((void *)(v9 + 90100), Destination, 0x14u); /*0x688038*/
           *(unsigned char *)(v9 + 90120) = v33; /*0x68803a*/
           DeleteAndZero_field_0x08 = v29.DeleteAndZero_field_0x08; /*0x68803b*/
         }
@@ -1268,7 +1268,7 @@ AbstractClass * * SessionClass_AssignHouses()
         }
         if ( v34 != (char *)(v9 + 90100) ) /*0x68807e*/
         {
-          qmemcpy((void *)(v9 + 90100), v34, 0x14u); /*0x68808b*/
+          memcpy((void *)(v9 + 90100), v34, 0x14u); /*0x68808b*/
           *(unsigned char *)(v9 + 90120) = v35; /*0x68808d*/
           DeleteAndZero_field_0x08 = v29.DeleteAndZero_field_0x08; /*0x68808e*/
         }
@@ -1336,7 +1336,7 @@ AbstractClass * * SessionClass_AssignHouses()
         }
         if ( v34 != v16[523].isAliveFlag ) /*0x688244*/
         {
-          qmemcpy(v16[523].isAliveFlag, v34, 0x14u); /*0x68824f*/
+          memcpy(v16[523].isAliveFlag, v34, 0x14u); /*0x68824f*/
           v16[523].location[2] = v35; /*0x688251*/
         }
         StringCSF = GetStringCSF(g_Str_TXT_COMPUTER, 0, g_Str_File_Scenario_CPP, 4032); /*0x688263*/
@@ -1481,7 +1481,7 @@ void GenerateScenarioUnits(char a1)
   v64 = 0; /*0x6886f1*/
   if ( MEMORY[0xA8B258] ) /*0x6886f9*/
     ppv = (char *)ppv - 1; /*0x6886fb*/
-  qmemcpy(v54, (char *)dword_A8B230 + 536, sizeof(v54)); /*0x68871d*/
+  memcpy(v54, (char *)dword_A8B230 + 536, sizeof(v54)); /*0x68871d*/
   Debug::Log(); /*0x688724*/
   Debug::Log(); /*0x68873a*/
   v1 = 0; /*0x68874a*/
@@ -2798,7 +2798,7 @@ int E4Recv_68F8A0::sub_68F8A0()
   int occupant; // ecx
   occupant = this->occupant; /*0x68f936*/
   int *p_referenceCount; // edi
-  p_referenceCount = &this->?; /*0x68f93c*/
+  p_referenceCount = &this->referenceCount; /*0x68f93c*/
   ObjectClass *nextObject; // eax
   if ( this->fallRate < occupant /*0x68f95e*/
     || (BYTE1(this->owningHouseIndex) || !occupant)

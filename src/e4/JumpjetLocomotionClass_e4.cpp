@@ -289,11 +289,11 @@ LABEL_32:
   v4[2] = (float)(v75 - 20); /*0x439d5d*/
 LABEL_35:
   Byte284 = CellClass::GetByte284(&v83); /*0x439d91*/
-  qmemcpy(v88, CopyAudioData(v90, Byte284), sizeof(v88)); /*0x439dc4*/
+  memcpy(v88, CopyAudioData(v90, Byte284), sizeof(v88)); /*0x439dc4*/
   v23 = InvertMatrix3x3Signs(v89, v88); /*0x439dcd*/
   v24 = v5->ptr_4; /*0x439dd2*/
   v25 = *(float *)v5; /*0x439de3*/
-  qmemcpy(v87, v23, sizeof(v87)); /*0x439de5*/
+  memcpy(v87, v23, sizeof(v87)); /*0x439de5*/
   *(float *)&v53 = -v24; /*0x439df2*/
   Triple::Set(v72, SLODWORD(v25), v53, v5->ptr_8); /*0x439df6*/
   v26 = (Triple *)Matrix3x3::TransformPoint(v86, (float *)v72, (float *)v62); /*0x439e0c*/
@@ -351,7 +351,7 @@ LABEL_35:
     v45 = JumpjetLocomotionClass::AdjustClimbFacing((JumpjetLocomotionClass *)v44, &v84); /*0x439ff8*/
     if ( v45 != -1 ) /*0x43a000*/
     {
-      qmemcpy(v87, Locomotor_Update((char *)v89, v45), sizeof(v87)); /*0x43a01f*/
+      memcpy(v87, Locomotor_Update((char *)v89, v45), sizeof(v87)); /*0x43a01f*/
       v46 = TransformMatrix3x4Point((float *)v86, v87, (float *)v5); /*0x43a02c*/
       *(float *)v5 = *v46; /*0x43a035*/
       *((float *)v5 + 1) = v46[1]; /*0x43a03a*/
@@ -644,7 +644,7 @@ LABEL_48:
         if ( !TurnRate ) /*0x4b0395*/
         {
 LABEL_51:
-          qmemcpy(v58, &v55, sizeof(v58)); /*0x4b03c9*/
+          memcpy(v58, &v55, sizeof(v58)); /*0x4b03c9*/
           v46 = (float *)v59; /*0x4b03cb*/
           v29 = (float *)v58; /*0x4b03cc*/
           v30 = (float *)v62; /*0x4b03d3*/
@@ -652,7 +652,7 @@ LABEL_51:
         }
         v40 = CopyAudioData((char *)v61, TurnRate); /*0x4b03a0*/
       }
-      qmemcpy(&v55, v40, sizeof(v55)); /*0x4b03b0*/
+      memcpy(&v55, v40, sizeof(v55)); /*0x4b03b0*/
       goto LABEL_51; /*0x4b03b0*/
     }
   }
@@ -728,16 +728,16 @@ LABEL_51:
   {
     v26 = CopyAudioData(v62, v27); /*0x4b024b*/
 LABEL_29:
-    qmemcpy(&v55, v26, sizeof(v55)); /*0x4b025b*/
+    memcpy(&v55, v26, sizeof(v55)); /*0x4b025b*/
   }
-  qmemcpy(v59, &v55, sizeof(v59)); /*0x4b0274*/
+  memcpy(v59, &v55, sizeof(v59)); /*0x4b0274*/
   v46 = (float *)&v57; /*0x4b0284*/
   v28 = MultiplyMatrix3x4(v61, (float *)v56.m_Data, (float *)&v59[0].Transform_field_00); /*0x4b0292*/
   v29 = MultiplyMatrix3x4(v63, v28, (float *)&v58[0].Transform_field_00); /*0x4b02a5*/
   v30 = v60; /*0x4b02a7*/
 LABEL_52:
-  qmemcpy(&v56, MultiplyMatrix3x4(v30, v29, v46), sizeof(v56)); /*0x4b03da*/
-  qmemcpy(a2, &v56, 0x30u); /*0x4b03fa*/
+  memcpy(&v56, MultiplyMatrix3x4(v30, v29, v46), sizeof(v56)); /*0x4b03da*/
+  memcpy(a2, &v56, 0x30u); /*0x4b03fa*/
   return a2; /*0x4b03fc*/
 
 }
@@ -1529,7 +1529,7 @@ void * JumpjetLocomotionClass::ComputeRotationMatrix(int a1, float * a2, signed 
   }
 LABEL_25:
   result = a2; /*0x4cf809*/
-  qmemcpy(a2, &v15, 0x30u); /*0x4cf818*/
+  memcpy(a2, &v15, 0x30u); /*0x4cf818*/
   return result; /*0x4cf81a*/
 
 }
@@ -2231,13 +2231,13 @@ void * JumpjetLocomotionClass::ComputeMovementTransform(signed int a1, float * a
     Transform::Copy(v33, Transform); /*0x54dec5*/
     v16 = MultiplyMatrix3x4(v36, (float *)v32.m_Data, (float *)&v33[0].Transform_field_00); /*0x54dee2*/
     v17 = MultiplyMatrix3x4(v34, v16, (float *)v31.m_Data); /*0x54def5*/
-    qmemcpy(a2, v17, 0x30u); /*0x54df06*/
+    memcpy(a2, v17, 0x30u); /*0x54df06*/
     return a2; /*0x54defc*/
   }
   else
   {
     v19 = Turret::GetTransform((LocomotionClass *)this, v34, a3); /*0x54df29*/
-    qmemcpy(a2, v19, 0x30u); /*0x54df39*/
+    memcpy(a2, v19, 0x30u); /*0x54df39*/
     return a2; /*0x54df30*/
   }
 
@@ -2377,7 +2377,7 @@ LABEL_13:
   }
 LABEL_15:
   result = a2; /*0x66358b*/
-  qmemcpy(a2, &v13, 0x30u); /*0x66359a*/
+  memcpy(a2, &v13, 0x30u); /*0x66359a*/
   return result; /*0x66359c*/
 
 }
@@ -2523,7 +2523,7 @@ LABEL_48:
         if ( !TurnRate ) /*0x69faa5*/
         {
 LABEL_51:
-          qmemcpy(v58, &v55, sizeof(v58)); /*0x69fad9*/
+          memcpy(v58, &v55, sizeof(v58)); /*0x69fad9*/
           v46 = (float *)v59; /*0x69fadb*/
           v29 = (float *)v58; /*0x69fadc*/
           v30 = (float *)v62; /*0x69fae3*/
@@ -2531,7 +2531,7 @@ LABEL_51:
         }
         v40 = CopyAudioData((char *)v61, TurnRate); /*0x69fab0*/
       }
-      qmemcpy(&v55, v40, sizeof(v55)); /*0x69fac0*/
+      memcpy(&v55, v40, sizeof(v55)); /*0x69fac0*/
       goto LABEL_51; /*0x69fac0*/
     }
   }
@@ -2607,16 +2607,16 @@ LABEL_51:
   {
     v26 = CopyAudioData(v62, v27); /*0x69f95b*/
 LABEL_29:
-    qmemcpy(&v55, v26, sizeof(v55)); /*0x69f96b*/
+    memcpy(&v55, v26, sizeof(v55)); /*0x69f96b*/
   }
-  qmemcpy(v59, &v55, sizeof(v59)); /*0x69f984*/
+  memcpy(v59, &v55, sizeof(v59)); /*0x69f984*/
   v46 = (float *)&v57; /*0x69f994*/
   v28 = MultiplyMatrix3x4(v61, (float *)v56.m_Data, (float *)&v59[0].Transform_field_00); /*0x69f9a2*/
   v29 = MultiplyMatrix3x4(v63, v28, (float *)&v58[0].Transform_field_00); /*0x69f9b5*/
   v30 = v60; /*0x69f9b7*/
 LABEL_52:
-  qmemcpy(&v56, MultiplyMatrix3x4(v30, v29, v46), sizeof(v56)); /*0x69faea*/
-  qmemcpy(a2, &v56, 0x30u); /*0x69fb0a*/
+  memcpy(&v56, MultiplyMatrix3x4(v30, v29, v46), sizeof(v56)); /*0x69faea*/
+  memcpy(a2, &v56, 0x30u); /*0x69fb0a*/
   return a2; /*0x69fb0c*/
 
 }

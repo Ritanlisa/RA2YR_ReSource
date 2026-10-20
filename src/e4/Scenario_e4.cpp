@@ -1493,10 +1493,10 @@ LABEL_64:
     }
     WinsockInterface::Init(dword_887628); /*0x685b56*/
     v20 = *(unsigned int *)&stru_A8B250.__pad_0[36]; /*0x685b69*/
-    qmemcpy(v33, &stru_A8D804.__pad_3D[591], sizeof(v33)); /*0x685b6f*/
-    qmemcpy(v31, &stru_A8B250.__pad_0[108], sizeof(v31)); /*0x685b7f*/
-    qmemcpy(v30, &stru_A8B250.__pad_0[76], sizeof(v30)); /*0x685b8f*/
-    qmemcpy(v32, &stru_A8B250.__pad_0[44], sizeof(v32)); /*0x685b9f*/
+    memcpy(v33, &stru_A8D804.__pad_3D[591], sizeof(v33)); /*0x685b6f*/
+    memcpy(v31, &stru_A8B250.__pad_0[108], sizeof(v31)); /*0x685b7f*/
+    memcpy(v30, &stru_A8B250.__pad_0[76], sizeof(v30)); /*0x685b8f*/
+    memcpy(v32, &stru_A8B250.__pad_0[44], sizeof(v32)); /*0x685b9f*/
     LOBYTE(result) = InitNetworkGameState(); /*0x685ba1*/
     if ( !(unsigned char)result ) /*0x685ba8*/
     {
@@ -1747,10 +1747,10 @@ LABEL_40:
   }
   WinsockInterface::Init(dword_887628); /*0x6861a1*/
   v19 = *(unsigned int *)&stru_A8B250.__pad_0[36]; /*0x6861b4*/
-  qmemcpy(v35, &stru_A8D804.__pad_3D[591], sizeof(v35)); /*0x6861ba*/
-  qmemcpy(v33, &stru_A8B250.__pad_0[108], sizeof(v33)); /*0x6861ca*/
-  qmemcpy(v34, &stru_A8B250.__pad_0[76], sizeof(v34)); /*0x6861da*/
-  qmemcpy(v32, &stru_A8B250.__pad_0[44], sizeof(v32)); /*0x6861ea*/
+  memcpy(v35, &stru_A8D804.__pad_3D[591], sizeof(v35)); /*0x6861ba*/
+  memcpy(v33, &stru_A8B250.__pad_0[108], sizeof(v33)); /*0x6861ca*/
+  memcpy(v34, &stru_A8B250.__pad_0[76], sizeof(v34)); /*0x6861da*/
+  memcpy(v32, &stru_A8B250.__pad_0[44], sizeof(v32)); /*0x6861ea*/
   (v15) = ((v15) & ~0xFF) | ((InitNetworkGameState()) & 0xFF); /*0x6861ec*/
   if ( (unsigned char)v15 ) /*0x6861f3*/
   {

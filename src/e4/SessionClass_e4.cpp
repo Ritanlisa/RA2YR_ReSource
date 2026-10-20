@@ -1389,14 +1389,14 @@ int SessionClass::CreateConnections()
         Network::SetPlayerCoords((Network *)&unk_A8E9C0, &qword_A8DBA4); /*0x697c5c*/
       }
       v4 = *(unsigned int *)(this->StartSpots[1] + 4 * v3); /*0x697c67*/
-      *(unsigned int *)(*((unsigned int *)stru_A80220.? + *(unsigned int *)(v4 + 111)) + 516) = *(unsigned int *)(v4 + 123); /*0x697c7e*/
+      *(unsigned int *)(*((unsigned int *)&dword_A8022C+ *(unsigned int *)(v4 + 111)) + 516) = *(unsigned int *)(v4 + 123); /*0x697c7e*/
       Network::CopyAddress((Network *)(dword_A8DA78[v3] + 40), &v13, (int)v17); /*0x697c94*/
       v5 = 0; /*0x697c99*/
       for ( i = 0; i < 4; ++i ) /*0x697c9b*/
         v5 = *((unsigned __int8 *)v17 + i) | (v5 << 8); /*0x697ca8*/
       Debug::Log(); /*0x697cc7*/
-      *(unsigned int *)(*((unsigned int *)stru_A80220.? + *(unsigned int *)(*(unsigned int *)(this->StartSpots[1] + 4 * v3) + 111)) + 512) = v5; /*0x697ce5*/
-      *(unsigned char *)(*((unsigned int *)stru_A80220.? + *(unsigned int *)(*(unsigned int *)(this->StartSpots[1] + 4 * v3) + 111)) + 520) = 0; /*0x697d00*/
+      *(unsigned int *)(*((unsigned int *)&dword_A8022C+ *(unsigned int *)(*(unsigned int *)(this->StartSpots[1] + 4 * v3) + 111)) + 512) = v5; /*0x697ce5*/
+      *(unsigned char *)(*((unsigned int *)&dword_A8022C+ *(unsigned int *)(*(unsigned int *)(this->StartSpots[1] + 4 * v3) + 111)) + 520) = 0; /*0x697d00*/
       if ( v3 > 0 ) /*0x697d06*/
       {
         v7 = *(unsigned int *)(this->StartSpots[1] + 4 * v3); /*0x697d0e*/

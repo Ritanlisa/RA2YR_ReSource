@@ -1278,12 +1278,12 @@ LABEL_342:
     v244 = dword_B0BD90[0]; /*0x6c85d3*/
     v268[0] = 0; /*0x6c85dc*/
     v245 = dword_B0BD90[0] >> 2; /*0x6c85e7*/
-    qmemcpy(&v268[2], v242, 4 * (dword_B0BD90[0] >> 2)); /*0x6c85ea*/
+    memcpy(&v268[2], v242, 4 * (dword_B0BD90[0] >> 2)); /*0x6c85ea*/
     v247 = &v242[2 * v245]; /*0x6c85ea*/
     v246 = &v268[v245 + 2]; /*0x6c85ea*/
     (v245) = ((v245) & ~0xFF) | ((v244) & 0xFF); /*0x6c85ec*/
     v248 = dword_B0BD54; /*0x6c85ee*/
-    qmemcpy(v246, v247, v245 & 3); /*0x6c85f6*/
+    memcpy(v246, v247, v245 & 3); /*0x6c85f6*/
     v249 = g_SidebarButtonState.ptr_0; /*0x6c85f8*/
     v265.abstractFlags = g_SidebarButtonState.ptr_0; /*0x6c8600*/
     if ( g_SidebarButtonState.ptr_0 < v248 ) /*0x6c8604*/
@@ -1302,8 +1302,8 @@ LABEL_342:
       {
         v253 = 8 * LOBYTE(g_SidebarButtonState.ptr_0); /*0x6c865b*/
         v254 = (unsigned int)(32776 * g_SidebarButtonState.ptr_0) >> 2; /*0x6c865d*/
-        qmemcpy(v251, dword_B0BD58, 4 * v254); /*0x6c8660*/
-        qmemcpy(&v251[4 * v254], &v252[v254], v253 & 3); /*0x6c8667*/
+        memcpy(v251, dword_B0BD58, 4 * v254); /*0x6c8660*/
+        memcpy(&v251[4 * v254], &v252[v254], v253 & 3); /*0x6c8667*/
         v252 = dword_B0BD58; /*0x6c8669*/
       }
       __3_YAXPAX_Z(v252); /*0x6c8670*/
@@ -1323,8 +1323,8 @@ LABEL_342:
         {
           v259 = 8 * LOBYTE(g_SidebarButtonState.ptr_0); /*0x6c86e5*/
           v260 = (unsigned int)(32776 * g_SidebarButtonState.ptr_0) >> 2; /*0x6c86e7*/
-          qmemcpy(v257, dword_B0BD58, 4 * v260); /*0x6c86ea*/
-          qmemcpy(&v257[4 * v260], &v258[v260], v259 & 3); /*0x6c86f1*/
+          memcpy(v257, dword_B0BD58, 4 * v260); /*0x6c86ea*/
+          memcpy(&v257[4 * v260], &v258[v260], v259 & 3); /*0x6c86f1*/
           v258 = dword_B0BD58; /*0x6c86f3*/
         }
         __3_YAXPAX_Z(v258); /*0x6c86fa*/
@@ -1346,7 +1346,7 @@ LABEL_342:
     v261 = &v255[8194 * v265.abstractFlags]; /*0x6c876e*/
     if ( v261 ) /*0x6c8773*/
     {
-      qmemcpy(v261, v268, 0x8008u); /*0x6c8783*/
+      memcpy(v261, v268, 0x8008u); /*0x6c8783*/
       v249 = g_SidebarButtonState.ptr_0; /*0x6c8785*/
     }
     v242 = (u_short *)v265.ptr_0; /*0x6c878b*/
@@ -1567,7 +1567,7 @@ int E4Recv_6CA1E0::sub_6CA1E0(char * Source)
 
   v15 = this; /*0x6ca1f5*/
   mbstowcs(Dest, Source, 0x20u); /*0x6ca1f9*/
-  pVal = (wchar_t *)&this->?; /*0x6ca201*/
+  pVal = (wchar_t *)&this->ptr_4; /*0x6ca201*/
   while ( 1 ) /*0x6ca27e*/
   {
     while ( 1 ) /*0x6ca208*/
@@ -2104,7 +2104,7 @@ int E4Recv_6C8B10::sub_6C8B10(int a2, int a3, short a4, short a5)
   if ( &pVal->u32_6 > (char *)this->? + (unsigned int)this->AbstractClass ) /*0x6c8b28*/
     return 0; /*0x6c8b28*/
   unsigned short *v12; // [esp+10h] [ebp-10h]
-  v12 = this->?; /*0x6c8b2c*/
+  v12 = this->ptr_8; /*0x6c8b2c*/
   this->M8 = pVal + 6; /*0x6c8b30*/
   if ( !pVal ) /*0x6c8b33*/
     return 0; /*0x6c8b35*/
@@ -2566,7 +2566,7 @@ void E4Recv_6C9960::sub_6C9960(wchar_t * String)
 
   if ( this->M20 ) /*0x6c9964*/
   {
-    __3_YAXPAX_Z((void *)this->?); /*0x6c996c*/
+    __3_YAXPAX_Z((void *)this->abstractFlags); /*0x6c996c*/
     this->M20 = 0; /*0x6c9974*/
   }
   if ( String ) /*0x6c9981*/

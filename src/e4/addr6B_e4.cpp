@@ -2304,7 +2304,7 @@ AbstractClass * * Palette_LoadFromFile(int a1, int a2, char * Source, int a4, in
     }
     else if ( a4 == 1 ) /*0x6b9eea*/
     {
-      qmemcpy(&v50[1], v49, 0x300u); /*0x6b9eff*/
+      memcpy(&v50[1], v49, 0x300u); /*0x6b9eff*/
     }
     if ( a5 && v12 == 1 ) /*0x6b9f0f*/
     {
@@ -2342,7 +2342,7 @@ AbstractClass * * Palette_LoadFromFile(int a1, int a2, char * Source, int a4, in
         v40 = (char *)v39 + 4; /*0x6b9fe6*/
         if ( v40 ) /*0x6b9feb*/
         {
-          qmemcpy(&v48[164], v40, 0x304u); /*0x6b9ff9*/
+          memcpy(&v48[164], v40, 0x304u); /*0x6b9ff9*/
           v38 = *(void (****)(unsigned int, int))&v48[164]; /*0x6b9ffb*/
         }
         *(unsigned int *)&v48[164] = 0; /*0x6ba011*/
@@ -2364,7 +2364,7 @@ LABEL_31:
       v42 = 0; /*0x6ba050*/
     }
     String::Reassign(v42, (const char **)v48); /*0x6ba059*/
-    qmemcpy(&v42->ptr_4, v50, 0x304u); /*0x6ba06d*/
+    memcpy(&v42->ptr_4, v50, 0x304u); /*0x6ba06d*/
     *v42->u32_184.__pad_0 = 0; /*0x6ba075*/
     v43 = (*(int (**)(unsigned char *))(v5 + 24))(v48) & ((1 << v5->ptr_C) - 1); /*0x6ba08b*/
     v44 = *(unsigned int *)(*(unsigned int *)v5 + 4 * v43); /*0x6ba08d*/
@@ -3562,7 +3562,7 @@ LABEL_56:
   Debug::Log(); /*0x6bd764*/
   FileStraw::Open((FileStraw *)v226, (int)&v225, 0); /*0x6bd77b*/
   Debug::Log(); /*0x6bd785*/
-  qmemcpy(dword_886980, WinMain_Init(v226, v224, 1), 0x204u); /*0x6bd7ad*/
+  memcpy(dword_886980, WinMain_Init(v226, v224, 1), 0x204u); /*0x6bd7ad*/
   v182 = (int)algn_886B84; /*0x6bd7ad*/
   HashTable::DestroyHashTableINIClass((INIClass *)v226); /*0x6bd7b5*/
   WinMain_Helper_65C2A0(&v225); /*0x6bd7c0*/

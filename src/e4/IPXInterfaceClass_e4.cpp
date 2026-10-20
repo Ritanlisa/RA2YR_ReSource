@@ -257,7 +257,7 @@ LABEL_6:
   v18 = (NetworkID *)IPXInterfaceClass::processPacket(this); /*0x7b1633*/
   *v18->u32_8.__pad_0 = v26 - 4; /*0x7b1646*/
   v18[3].NetworkID_field_0x04 = this->q3F074; /*0x7b1651*/
-  qmemcpy(&v18[4], &this->q3F078, v26 - 4); /*0x7b1657*/
+  memcpy(&v18[4], &this->q3F078, v26 - 4); /*0x7b1657*/
   if ( (*(unsigned __int8 (**)(IPXInterfaceClass *, NetworkID *))(this->Socket + 88))(this, v18) ) /*0x7b1665*/
   {
     NetworkID::Assign(v18, &a3, (int)&v27, 0); /*0x7b16d0*/
@@ -495,7 +495,7 @@ int16_t IPXInterfaceClass::Connect(const void * a1, unsigned int a3, char aP3)  
   UINT v15; // eax
 
   v5 = AudioQueue::AllocBuffer((AudioQueue *)this, aP3); /*0x7b24f4*/
-  qmemcpy(v5 + 32, a1, a3); /*0x7b2505*/
+  memcpy(v5 + 32, a1, a3); /*0x7b2505*/
   v5->q010 = a3; /*0x7b250e*/
   (*(void (**)(WinsockInterfaceClass *, unsigned char *))(this->Socket + 84))(this, v5); /*0x7b2516*/
   v5->q014 = 1; /*0x7b251d*/

@@ -129,7 +129,7 @@ WaveClass * WaveClass::ddtor(char a2, int aP1, int a1, int a3)
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F6BD0) */  /*0x763206*/
   /* X11: ptr_0 install elided (qmark slot, RHS g_ptr_7F6BD0) */  /*0x76320c*/
   /* X11: ptr_0 install elided (qmark slot, RHS g_ptr_7F6BD0) */  /*0x763213*/
-  aP1->? = &off_7F6BC8; /*0x76321a*/
+  aP1->ptr_C = &off_7F6BC8; /*0x76321a*/
   AbstractClass::AnnounceExpiredPointer((AbstractClass *)aP1, 1); /*0x763221*/
   v6 = (gamemd::WaveClass *)(aP1); /*0x763236*/
   v3 = (*(int (**)(unsigned char *, WaveClass **))(*(unsigned int *)&DataGlobal_A8EB00[312] + 16))(&DataGlobal_A8EB00[312], &v6); /*0x76323a*/

@@ -78,7 +78,7 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::Constructor(char *Source, void *a2, voi
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F651C) */  /*0x74ae71*/
   /* X11: ptr_0 install elided (implicit via VoxelAnimTypeClass virtuals 0x74ae77) */
   /* X11: ptr_0 install elided (implicit via VoxelAnimTypeClass virtuals 0x74ae7e) */
-  AbstractClass::GenerateUniqueID((AbstractClass *)&this->?); /*0x74ae85*/
+  AbstractClass::GenerateUniqueID((AbstractClass *)&this->ptr_4); /*0x74ae85*/
   this->LegalTarget_d = 0; /*0x74ae8c*/
   this->IsLogic_d = 1; /*0x74ae92*/
   this->RadarInvisible_d = 1; /*0x74ae98*/
@@ -516,7 +516,7 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::ddtor(void ** Block, char a2)
   if ( Block->SourceShared ) /*0x74bae8*/
   {
     Block->u32_B0 = 0; /*0x74baf4*/
-    Block->?[0] = 0; /*0x74bafa*/
+    Block->TurretVoxel[0] = 0; /*0x74bafa*/
   }
   ObjectTypeClass::Destruct((int)Block); /*0x74bb02*/
   if ( (a2 & 1) != 0 ) /*0x74bb0c*/

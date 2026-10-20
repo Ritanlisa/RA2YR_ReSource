@@ -7520,10 +7520,10 @@ int TechnoClass::FindDeployDestination()
   int v13; // [esp+14h] [ebp-8h]
   int v14; // [esp+18h] [ebp-4h] BYREF
 
-  v1 = *(unsigned int *)&MEMORY[0xA8EB00].?[164]; /*0x50c924*/
-  v13 = *(unsigned int *)&MEMORY[0xA8EB00].?[164]; /*0x50c92e*/
-  if ( this->u32_5494 == *(unsigned short *)&MEMORY[0xA8EB00].?[948] /*0x50c950*/
-    && this->u32_5496 == *(unsigned short *)&MEMORY[0xA8EB00].?[950] )
+  v1 = *(unsigned int *)&stru_A8E960.random[276]; /*0x50c924*/
+  v13 = *(unsigned int *)&stru_A8E960.random[276]; /*0x50c92e*/
+  if ( this->u32_5494 == *(unsigned short *)&stru_A8E960.waypoints[6] /*0x50c950*/
+    && this->u32_5496 == *(unsigned short *)&stru_A8E960.waypoints[8] )
   {
     v3 = this->u32_5490; /*0x50c952*/
   }
@@ -7554,7 +7554,7 @@ int TechnoClass::FindDeployDestination()
           0);
   (v6) = ((v6) & ~0xFFFF) | ((v5) & 0xFFFF); /*0x50c9a0*/
   *(unsigned int *)v11 = v5; /*0x50c9a3*/
-  if ( (unsigned short)v5 != *(unsigned short *)&MEMORY[0xA8EB00].?[948] || v11[1] != *(unsigned short *)&MEMORY[0xA8EB00].?[950] ) /*0x50c9bc*/
+  if ( (unsigned short)v5 != *(unsigned short *)&stru_A8E960.waypoints[6] || v11[1] != *(unsigned short *)&stru_A8E960.waypoints[8] ) /*0x50c9bc*/
   {
     ++v11[0]; /*0x50c9c2*/
     ++v11[1]; /*0x50c9c7*/
@@ -7562,12 +7562,12 @@ int TechnoClass::FindDeployDestination()
     {
       do /*0x50cab7*/
       {
-        v7 = *(int **)(*(unsigned int *)&MEMORY[0xA8EB00].?[152] + 4 * v4); /*0x50c9db*/
+        v7 = *(int **)(*(unsigned int *)&stru_A8E960.random[264] + 4 * v4); /*0x50c9db*/
         if ( v7 ) /*0x50c9e0*/
         {
           if ( v7->owner == this ) /*0x50c9ec*/
           {
-            v6 = v7->getAltitude(*(unsigned int *)(*(unsigned int *)&MEMORY[0xA8EB00].?[152] + 4 * v4)); /*0x50c9f6*/
+            v6 = v7->getAltitude(*(unsigned int *)(*(unsigned int *)&stru_A8E960.random[264] + 4 * v4)); /*0x50c9f6*/
             if ( v6 != 6 ) /*0x50c9fc*/
             {
               v6 = v7->getAltitude(); /*0x50ca06*/
@@ -7576,8 +7576,8 @@ int TechnoClass::FindDeployDestination()
                 if ( !*(unsigned int *)(v7->Vt34Thunk() + 1028) /*0x50ca36*/
                   || (v6 = *(unsigned int *)(v7->Vt34Thunk() + 1028), !*(unsigned char *)(v6 + 5817)) )
                 {
-                  if ( this->u32_5494 == *(unsigned short *)&MEMORY[0xA8EB00].?[948] /*0x50ca5d*/
-                    && this->u32_5496 == *(unsigned short *)&MEMORY[0xA8EB00].?[950] )
+                  if ( this->u32_5494 == *(unsigned short *)&stru_A8E960.waypoints[6] /*0x50ca5d*/
+                    && this->u32_5496 == *(unsigned short *)&stru_A8E960.waypoints[8] )
                   {
                     v6 = this->u32_5490; /*0x50ca5f*/
                   }
@@ -7586,7 +7586,7 @@ int TechnoClass::FindDeployDestination()
                     v6 = this->u32_5494; /*0x50ca67*/
                   }
                   v12 = v6; /*0x50ca70*/
-                  if ( v6 != *(unsigned int *)&MEMORY[0xA8EB00].?[948] ) /*0x50ca74*/
+                  if ( v6 != *(unsigned int *)&stru_A8E960.waypoints[6] ) /*0x50ca74*/
                   {
                     v8 = *v7; /*0x50ca7d*/
                     v9 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v11); /*0x50ca8b*/
@@ -10190,7 +10190,7 @@ int TechnoClass::ComputeTransform()
                           0);
     Transform::Copy(v46, v13); /*0x6f3ba3*/
     ptr_0 = this->ptr_0; /*0x6f3ba8*/
-    qmemcpy(&v45, v46, sizeof(v45)); /*0x6f3bb7*/
+    memcpy(&v45, v46, sizeof(v45)); /*0x6f3bb7*/
     v15 = (unsigned int *)(*(int (**)(TechnoClass *, unsigned char *))(ptr_0 + 680))(this, v43); /*0x6f3bd1*/
     v38 = (double)(int)((((unsigned int)((*v15 >> 10) + 1) >> 1) & 0x1F) - 8) * -0.1963495408493621 /*0x6f3c12*/
         - (double)(int)((((unsigned int)((*ProgressTimer::GetValue((ProgressTimer *)this->primaryFacing, &v38) >> 10) + 1) >> 1)
@@ -15809,9 +15809,9 @@ int TechnoClass::EvaluateMission()
                 v4 = *(unsigned int *)(a2 + 1624); /*0x708177*/
                 if ( v6 != -1 ) /*0x708180*/
                 {
-                  if ( *(unsigned int *)&MEMORY[0xA8EB00].?[416] - v6 >= v4 ) /*0x70818c*/
+                  if ( *(unsigned int *)&stru_A8E960.random[528] - v6 >= v4 ) /*0x70818c*/
                     goto LABEL_15; /*0x70818c*/
-                  v4 -= *(unsigned int *)&MEMORY[0xA8EB00].?[416] - v6; /*0x70818e*/
+                  v4 -= *(unsigned int *)&stru_A8E960.random[528] - v6; /*0x70818e*/
                 }
                 if ( v4 ) /*0x708192*/
                   return v4; /*0x708192*/
@@ -15982,7 +15982,7 @@ LABEL_89:
 LABEL_112:
                       if ( (*(unsigned char *)(v44 + 20) & 4) != 0 ) /*0x70877c*/
                       {
-                        v46 = *(unsigned int *)&MEMORY[0xA8EB00].?[416]; /*0x708783*/
+                        v46 = *(unsigned int *)&stru_A8E960.random[528]; /*0x708783*/
                         LOWORD(v4) = Math::RoundToInt(*(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5336) * 900.0); /*0x708795*/
                         v47 = v62; /*0x70879a*/
                         v48 = (unsigned int *)(v44 + 1616); /*0x70879e*/

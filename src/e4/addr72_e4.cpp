@@ -3152,7 +3152,7 @@ int E4Recv_7294E0::sub_7294E0()
     v7 -= v3; /*0x729542*/
     if ( v7 < -256 ) /*0x729546*/
       v7 = -256; /*0x729548*/
-    return (*(int (**)(void *, unsigned int *))(*(unsigned int *)this->? + 436))(this->?, v6); /*0x72955a*/
+    return (*(int (**)(void *, unsigned int *))(*(unsigned int *)this->ptr_C + 436))(this->ptr_C, v6); /*0x72955a*/
   }
   return result; /*0x729560*/
 

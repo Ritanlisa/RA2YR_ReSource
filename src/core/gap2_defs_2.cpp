@@ -802,12 +802,12 @@ int PlayerClass::UpdateAIUnits() {
     {
       v2 = 0; /*0x732644*/
     }
-    v4 = *(unsigned int *)&MEMORY[0xA8EB00].?[164]; /*0x732647*/
-    if ( *(int *)&MEMORY[0xA8EB00].?[164] > 0 ) /*0x73264f*/
+    v4 = *(unsigned int *)&MEMORY[0xA8EB00 + 164]; /*0x732647*/
+    if ( *(int *)&MEMORY[0xA8EB00 + 164] > 0 ) /*0x73264f*/
     {
       do /*0x7326a6*/
       {
-        v5 = *(unsigned int *)(*(unsigned int *)&MEMORY[0xA8EB00].?[152] + 4 * v3); /*0x73265a*/
+        v5 = *(unsigned int *)(*(unsigned int *)&MEMORY[0xA8EB00 + 152] + 4 * v3); /*0x73265a*/
         (HeightMap) = ((HeightMap) & ~0xFF) | ((StepTechnoClassCleanupIfHuman(v5, this)) & 0xFF); /*0x73265f*/
         if ( (unsigned char)HeightMap ) /*0x732666*/
         {

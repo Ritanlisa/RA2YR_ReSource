@@ -82,7 +82,7 @@ int TeamTypeClass::Construct(void *a1, void *a2, void *a3, void *a4, void *a5, v
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E88A4) */  /*0x4c9920*/
   /* X11: ptr_0 install elided (implicit via FactoryClass virtuals 0x4c9926) */
   /* X11: ptr_0 install elided (implicit via FactoryClass virtuals 0x4c992d) */
-  AbstractClass::GenerateUniqueID((AbstractClass *)&this->?); /*0x4c9934*/
+  AbstractClass::GenerateUniqueID((AbstractClass *)&this->ptr_4); /*0x4c9934*/
   if ( *(int *)&stru_A83D50.__pad_C8[40] < *(int *)&stru_A83D50.__pad_C8[32] /*0x4c996d*/
     || (stru_A83D50.__pad_C8[37] || !*(unsigned int *)&stru_A83D50.__pad_C8[32])
     && *(int *)&stru_A83D50.__pad_C8[44] > 0
@@ -608,7 +608,7 @@ AbstractClass * * TeamTypeClass::LoadFromINI(unsigned char *** aP1, void *a2, vo
     return 1; /*0x6f1532*/
   if ( *(int *)&DataGlobal_8B3DC0[1048] > 0 ) /*0x6f1518*/
   {
-    *((unsigned int *)aP1 + 56) = *(unsigned int *)FootClass_Array.?[5]; /*0x6f1522*/
+    *((unsigned int *)aP1 + 56) = *(unsigned int *)dword_8B41CC; /*0x6f1522*/
     return 1; /*0x6f1522*/
   }
   return 0; /*0x6f1528*/

@@ -53,17 +53,17 @@ int TemporalClass::Constructor(void *a1, void *a2, void *a3, void *a4)
   /* X11: ptr_0 install elided (implicit via TemporalClass virtuals 0x71a46d) */
   /* X11: ptr_0 install elided (implicit via TemporalClass virtuals 0x71a474) */
   /* X11: ptr_0 install elided (implicit via TemporalClass virtuals 0x71a47b) */
-  if ( g_BuildingLoadQueue_Array.?[0] < g_BuildingLoadQueue_Array.?[5] /*0x71a4b7*/
-    || (BYTE1(g_BuildingLoadQueue_Array.?[6]) || !g_BuildingLoadQueue_Array.?[5])
+  if ( dword_B0EC70 < dword_B0EC68 /*0x71a4b7*/
+    || (BYTE1(dword_B0EC68) || !g_BuildingLoadQueue_Array.?[5])
     && DataGlobal_B0E840[1076] > 0
     && (*(unsigned __int8 (**)(int *, int, unsigned int))(g_BuildingLoadQueue_Array.?[3] + 8))(
          &DataGlobal_B0E840[1056],
-         g_BuildingLoadQueue_Array.?[5] + g_BuildingLoadQueue_Array.?[1],
+         dword_B0EC74 + g_BuildingLoadQueue_Array.?[1],
          0) )
   {
     int v3; // eax
-    v3 = g_BuildingLoadQueue_Array.?[0]++; /*0x71a4c4*/
-    *(unsigned int *)(g_BuildingLoadQueue_Array.?[4] + 4 * v3) = this; /*0x71a4d3*/
+    v3 = dword_B0EC70++; /*0x71a4c4*/
+    *(unsigned int *)(dword_B0EC64 + 4 * v3) = this; /*0x71a4d3*/
   }
   return (int)this; /*0x71a4d8*/
 
@@ -91,17 +91,17 @@ TemporalClass::TemporalClass(TechnoClass * aP1)
   this->TemporalClass_field_34 = 0; /*0x71a52f*/
   this->q040 = 0; /*0x71a532*/
   this->u32_44 = 0; /*0x71a535*/
-  if ( g_BuildingLoadQueue_Array.?[0] < g_BuildingLoadQueue_Array.?[5] /*0x71a569*/
-    || (BYTE1(g_BuildingLoadQueue_Array.?[6]) || !g_BuildingLoadQueue_Array.?[5])
+  if ( dword_B0EC70 < dword_B0EC68 /*0x71a569*/
+    || (BYTE1(dword_B0EC68) || !g_BuildingLoadQueue_Array.?[5])
     && DataGlobal_B0E840[1076] > 0
     && (*(unsigned __int8 (**)(int *, int, unsigned int))(g_BuildingLoadQueue_Array.?[3] + 8))(
          &DataGlobal_B0E840[1056],
-         g_BuildingLoadQueue_Array.?[5] + g_BuildingLoadQueue_Array.?[1],
+         dword_B0EC74 + g_BuildingLoadQueue_Array.?[1],
          0) )
   {
     int v3; // eax
-    v3 = g_BuildingLoadQueue_Array.?[0]++; /*0x71a576*/
-    *(unsigned int *)(g_BuildingLoadQueue_Array.?[4] + 4 * v3) = this; /*0x71a585*/
+    v3 = dword_B0EC70++; /*0x71a576*/
+    *(unsigned int *)(dword_B0EC64 + 4 * v3) = this; /*0x71a585*/
   }
   this->u32_48 = 0; /*0x71a588*/
   this->q04C = 0; /*0x71a58b*/
@@ -385,7 +385,7 @@ void * TemporalClass::ProcessEvent(char a2, int aP1, int aP0, int a1, int aP2)
   TemporalClass *v5; // [esp+4h] [ebp-4h] BYREF
   v5 = (gamemd::TemporalClass *)(aP1); /*0x71b1df*/
   int v3; // eax
-  v3 = (*(int (**)(int *, TemporalClass **))(g_BuildingLoadQueue_Array.?[3] + 16))( /*0x71b1e3*/
+  v3 = (*(int (**)(int *, TemporalClass **))(dword_B0EC60 + 16))( /*0x71b1e3*/
          &DataGlobal_B0E840[1056],
          &v5);
   if ( v3 != -1 && v3 < g_BuildingLoadQueue_Array.?[0] ) /*0x71b1f3*/

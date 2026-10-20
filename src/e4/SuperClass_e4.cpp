@@ -1013,7 +1013,7 @@ AbstractClass * * SuperClass::Reset(void *a1, void *a2)
     a1->SuperClass_field_0x68 = 0; /*0x6ce0c4*/
     v12[0] = a1; /*0x6ce0db*/
     int v3; // eax
-    v3 = (*(int (**)(int *, unsigned int *))(g_BuildingLoadQueue_Array.?[0] + 16))( /*0x6ce0df*/
+    v3 = (*(int (**)(int *, unsigned int *))(g_BuildingInstanceCount + 16))( /*0x6ce0df*/
            g_BuildingLoadQueue_Array.?,
            v12);
     if ( v3 != -1 ) /*0x6ce0e5*/
@@ -1023,7 +1023,7 @@ AbstractClass * * SuperClass::Reset(void *a1, void *a2)
   {
     v12[0] = a1; /*0x6ce109*/
     int v4; // eax
-    v4 = (*(int (**)(int *, unsigned int *))(g_BuildingLoadQueue_Array.?[0] + 16))( /*0x6ce10d*/
+    v4 = (*(int (**)(int *, unsigned int *))(g_BuildingInstanceCount + 16))( /*0x6ce10d*/
            g_BuildingLoadQueue_Array.?,
            v12);
     if ( v4 != -1 ) /*0x6ce113*/
@@ -1084,7 +1084,7 @@ void ** SuperClass::CreateChronoAnim(AbstractClass * aP1, SuperClass * aP2, int 
     this->u32_68 = 0; /*0x6cb3b4*/
     v9 = this; /*0x6cb3cb*/
     int v6; // eax
-    v6 = (*(int (**)(int *, SuperClass **))(g_BuildingLoadQueue_Array.?[0] + 16))( /*0x6cb3cf*/
+    v6 = (*(int (**)(int *, SuperClass **))(g_BuildingInstanceCount + 16))( /*0x6cb3cf*/
            g_BuildingLoadQueue_Array.?,
            &v9);
     if ( v6 != -1 ) /*0x6cb3d5*/
@@ -1094,7 +1094,7 @@ void ** SuperClass::CreateChronoAnim(AbstractClass * aP1, SuperClass * aP2, int 
   {
     v9 = this; /*0x6cb3f9*/
     int v7; // eax
-    v7 = (*(int (**)(int *, SuperClass **))(g_BuildingLoadQueue_Array.?[0] + 16))( /*0x6cb3fd*/
+    v7 = (*(int (**)(int *, SuperClass **))(g_BuildingInstanceCount + 16))( /*0x6cb3fd*/
            g_BuildingLoadQueue_Array.?,
            &v9);
     if ( v7 != -1 ) /*0x6cb403*/
@@ -1122,7 +1122,7 @@ void ** SuperClass::CreateChronoAnim(AbstractClass * aP1, SuperClass * aP2, int 
     {
       this->u32_68 = result; /*0x6cb472*/
       result = (void **)DataGlobal_B0E840[3456]; /*0x6cb475*/
-      if ( g_BuildingLoadQueue_Array.?[1] < g_BuildingLoadQueue_Array.? /*0x6cb4ae*/
+      if ( Count < g_BuildingLoadQueue_Array.Capacity /*0x6cb4ae*/
         || (BYTE1(g_BuildingLoadQueue_Array) || !g_BuildingLoadQueue_Array.?)
         && DataGlobal_B0E840[3468] > 0
         && (result = (void **)(*(int (**)(int *, int, unsigned int))(g_BuildingLoadQueue_Array + 8))(
@@ -1131,7 +1131,7 @@ void ** SuperClass::CreateChronoAnim(AbstractClass * aP1, SuperClass * aP2, int 
                                 0),
             (unsigned char)result) )
       {
-        result = (void **)g_BuildingLoadQueue_Array.?[1]++; /*0x6cb4b6*/
+        result = (void **)Count++; /*0x6cb4b6*/
         *(unsigned int *)(g_BuildingLoadQueue_Array.?[0] + 4 * (unsigned int)result) = this; /*0x6cb4c5*/
       }
     }

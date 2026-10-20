@@ -398,7 +398,7 @@ AbstractClass * * ProcessNetworkEvents()
         if ( dword_8B41F8 < 0x4000 ) /*0x647418*/
         {
           v3 = &byte_8B4204[111 * dword_8B4200]; /*0x64742e*/
-          qmemcpy(v3, v8, 0x6Cu); /*0x647435*/
+          memcpy(v3, v8, 0x6Cu); /*0x647435*/
           v3 += 108; /*0x647435*/
           *(unsigned short *)v3 = v9; /*0x647437*/
           v3[2] = v10; /*0x647439*/
@@ -434,7 +434,7 @@ LABEL_31:
           {
             v4 = &byte_A802D4[111 * dword_A802CC]; /*0x647522*/
             v5 = &byte_8B4204[111 * dword_8B4200]; /*0x647539*/
-            qmemcpy(v5, v4, 0x6Cu); /*0x647540*/
+            memcpy(v5, v4, 0x6Cu); /*0x647540*/
             v4 += 108; /*0x647540*/
             v5 += 108; /*0x647540*/
             *(unsigned short *)v5 = *(unsigned short *)v4; /*0x647542*/
@@ -953,7 +953,7 @@ LABEL_38:
       v33 = v30; /*0x648c2b*/
       v30 += 24; /*0x648c32*/
       --v31; /*0x648c35*/
-      qmemcpy(v33, v32, 0x18u); /*0x648c36*/
+      memcpy(v33, v32, 0x18u); /*0x648c36*/
     }
     while ( v31 ); /*0x648c38*/
     v28 = v94 == 0; /*0x648c3a*/
@@ -1605,7 +1605,7 @@ int BuildNetworkEventPacket(int a1, int a2, int a3, int a4, int16_t a5)
             break; /*0x649e4b*/
           v13 = &byte_A802D4[111 * dword_A802CC]; /*0x649e61*/
           v14 = &byte_8B4204[111 * dword_8B4200]; /*0x649e73*/
-          qmemcpy(v14, v13, 0x6Cu); /*0x649e7a*/
+          memcpy(v14, v13, 0x6Cu); /*0x649e7a*/
           v13 += 108; /*0x649e7a*/
           v14 += 108; /*0x649e7a*/
           *(unsigned short *)v14 = *(unsigned short *)v13; /*0x649e7c*/
@@ -1615,7 +1615,7 @@ int BuildNetworkEventPacket(int a1, int a2, int a3, int a4, int16_t a5)
           dword_8B4200 = ((unsigned short)dword_8B4200 + 1) & 0x3FFF; /*0x649eb7*/
           v15 = &byte_A802D4[111 * dword_A802CC]; /*0x649ec5*/
           v16 = *v15; /*0x649ecc*/
-          qmemcpy((void *)(a2 + v9), v15, 0x6Cu); /*0x649ed3*/
+          memcpy((void *)(a2 + v9), v15, 0x6Cu); /*0x649ed3*/
           v15 += 108; /*0x649ed3*/
           v17 = a2 + v9 + 108; /*0x649ed3*/
           *(unsigned short *)v17 = *(unsigned short *)v15; /*0x649ed5*/
@@ -1623,7 +1623,7 @@ int BuildNetworkEventPacket(int a1, int a2, int a3, int a4, int16_t a5)
           if ( v16 == 31 ) /*0x649eda*/
           {
             v18 = v9 + 111; /*0x649ee1*/
-            qmemcpy( /*0x649f00*/
+            memcpy( /*0x649f00*/
               (void *)(a2 + v18),
               *(const void **)((char *)&dword_A802DB + 111 * dword_A802CC),
               *(int *)((char *)&dword_A802DF + 111 * dword_A802CC));
@@ -1830,7 +1830,7 @@ AbstractClass * * Network_ProcessFrameSync(int a1, int a2, int a3, unsigned int 
                     v22 = EventClass::Add2(v43, *((unsigned int *)MEMORY[0xA83D4C] + 12), 0x28u, *v12); /*0x64a301*/
                     if ( dword_A802C8 < 128 ) /*0x64a310*/
                     {
-                      qmemcpy(&byte_A802D4[111 * dword_A802D0], v22, 0x6Fu); /*0x64a32c*/
+                      memcpy(&byte_A802D4[111 * dword_A802D0], v22, 0x6Fu); /*0x64a32c*/
                       v6 = a2; /*0x64a33d*/
                       dword_A83A54[dword_A802D0] = timeGetTime(); /*0x64a341*/
                       dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x64a358*/
@@ -1919,7 +1919,7 @@ LABEL_52:
     v30 = __2_YAPAXI_Z(*(unsigned int *)(v29 + 11)); /*0x64a467*/
     v31 = *(unsigned int *)(v29 + 11); /*0x64a46c*/
     *(unsigned int *)(v29 + 7) = v30; /*0x64a472*/
-    qmemcpy(v30, &v6->u32_6F, v31); /*0x64a47f*/
+    memcpy(v30, &v6->u32_6F, v31); /*0x64a47f*/
     v32 = *(unsigned int *)(v29 + 11); /*0x64a488*/
     v6 = a2; /*0x64a48f*/
     v26 += v32; /*0x64a493*/
@@ -1927,7 +1927,7 @@ LABEL_52:
   }
   if ( dword_8B41F8 < 0x4000 ) /*0x64a4a5*/
   {
-    qmemcpy(&byte_8B4204[111 * dword_8B4200], v29, 0x6Fu); /*0x64a4c0*/
+    memcpy(&byte_8B4204[111 * dword_8B4200], v29, 0x6Fu); /*0x64a4c0*/
     v6 = a2; /*0x64a4d1*/
     dword_A70204[dword_8B4200] = timeGetTime(); /*0x64a4d5*/
     dword_8B4200 = ((unsigned short)dword_8B4200 + 1) & 0x3FFF; /*0x64a4ee*/

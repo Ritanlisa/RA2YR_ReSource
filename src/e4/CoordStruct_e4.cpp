@@ -10,7 +10,7 @@
 
 // 0x642740
 namespace gamemd {  // G42.18 ns repair
-unsigned int * CoordStruct::Set2(void* aP1, AbstractClass * aP2, void *a3, void *a4, void *a5)
+unsigned int * CoordStruct::Set2(void* a2, AbstractClass * a3, void *a4, void *a5, void *a6)
 {
 
   void *v4; // edx

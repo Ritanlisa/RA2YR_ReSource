@@ -51,7 +51,7 @@ char * GameConfig::ComputeCRC()
   unsigned char v11[256]; // [esp+14h] [ebp-100h] BYREF
 
   v0 = 0; /*0x5e84e8*/
-  qmemcpy(v11, &unk_ABE050, sizeof(v11)); /*0x5e84ea*/
+  memcpy(v11, &unk_ABE050, sizeof(v11)); /*0x5e84ea*/
   v1 = &dword_ABE010; /*0x5e84ec*/
   v10 = &dword_ABE010; /*0x5e84fd*/
   v2 = 320; /*0x5e8501*/
@@ -86,7 +86,7 @@ char * GameConfig::ComputeCRC()
   while ( v2 > 0 ); /*0x5e854a*/
   v8 = (char *)__2_YAPAXI_Z(0xCu); /*0x5e8553*/
   sprintf(v8, "%08X", v0); /*0x5e855c*/
-  qmemcpy(&unk_ABE050, v11, 0x100u); /*0x5e8572*/
+  memcpy(&unk_ABE050, v11, 0x100u); /*0x5e8572*/
   return v8; /*0x5e8574*/
 
 }

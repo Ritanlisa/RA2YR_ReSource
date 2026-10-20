@@ -389,9 +389,9 @@ LABEL_13:
     if ( v9 >= 75 ) /*0x6ac6fd*/
       goto LABEL_38; /*0x6ac6fd*/
   }
-  *(unsigned int *)&v10[52 * v9 + 136] = aP2 + *(unsigned int *)&MEMORY[0xA8EB00].?[416]; /*0x6ac713*/
+  *(unsigned int *)&v10[52 * v9 + 136] = aP2 + *(unsigned int *)&MEMORY[0xA8EB00 + 416]; /*0x6ac713*/
 LABEL_38:
-  result = (unsigned int *)(*(unsigned int *)&MEMORY[0xA8EB00].?[416] + aP2 + 1); /*0x6ac71a*/
+  result = (unsigned int *)(*(unsigned int *)&MEMORY[0xA8EB00 + 416] + aP2 + 1); /*0x6ac71a*/
   this->u32_53A0 = result; /*0x6ac728*/
   return result; /*0x6ac670*/
 

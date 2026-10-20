@@ -649,14 +649,14 @@ int Audio::LoadWAVFiles(void *a1_1)
   int v12; // [esp+94h] [ebp-208h]
   char Buffer[512]; // [esp+9Ch] [ebp-200h] BYREF
 
-  LOBYTE(IsSoundEnabled) = MEMORY[0xA8EB00].?[144]; /*0x7207f0*/
-  if ( MEMORY[0xA8EB00].?[144] ) /*0x720801*/
+  LOBYTE(IsSoundEnabled) = MEMORY[0xA8EB00 + 144]; /*0x7207f0*/
+  if ( MEMORY[0xA8EB00 + 144] ) /*0x720801*/
   {
     IsSoundEnabled = Audio::IsSoundEnabled(); /*0x720807*/
     if ( IsSoundEnabled ) /*0x72080e*/
     {
-      LOBYTE(IsSoundEnabled) = MEMORY[0xA8EB00].?[384]; /*0x720814*/
-      if ( !MEMORY[0xA8EB00].?[384] ) /*0x72081b*/
+      LOBYTE(IsSoundEnabled) = MEMORY[0xA8EB00 + 384]; /*0x720814*/
+      if ( !MEMORY[0xA8EB00 + 384] ) /*0x72081b*/
       {
         IsSoundEnabled = *&this->q024; /*0x720821*/
         for ( i = 0; i < IsSoundEnabled; ++i ) /*0x720828*/
@@ -1246,7 +1246,7 @@ int Audio_Helper_7C7F20(void * a1, void * a2, void * a3, void * a4)
             v6 += 2; /*0x7c7f95*/
           }
           v12 = v9 & 1; /*0x7c7f98*/
-          qmemcpy(v6, v5, v12); /*0x7c7f9a*/
+          memcpy(v6, v5, v12); /*0x7c7f9a*/
           v5 = (unsigned short *)((char *)v5 + v12); /*0x7c7f9a*/
           v13 = &v6[v12]; /*0x7c7f9a*/
           v34 += v9; /*0x7c7f9e*/
@@ -2271,8 +2271,8 @@ AbstractClass * * sub_6C6D00()
         {
           v6 = 8 * LOBYTE(g_SidebarButtonState.ptr_0); /*0x6c6dae*/
           v7 = (unsigned int)(32776 * (int)g_SidebarButtonState.ptr_0) >> 2; /*0x6c6db0*/
-          qmemcpy(v3, g_SidebarButtonState.ptr_8, 4 * v7); /*0x6c6db3*/
-          qmemcpy(&v3[4 * v7], &ptr_4[4 * v7], v6 & 3); /*0x6c6dba*/
+          memcpy(v3, g_SidebarButtonState.ptr_8, 4 * v7); /*0x6c6db3*/
+          memcpy(&v3[4 * v7], &ptr_4[4 * v7], v6 & 3); /*0x6c6dba*/
           ptr_4 = (char *)g_SidebarButtonState.ptr_8; /*0x6c6dbc*/
         }
         __3_YAXPAX_Z(ptr_4); /*0x6c6dc4*/

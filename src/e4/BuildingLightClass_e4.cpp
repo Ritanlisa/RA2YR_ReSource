@@ -52,7 +52,7 @@ unsigned int * BuildingLightClass::FindTarget(unsigned int *a2, int aP1, int a1,
     v19 = &unk_98967F; /*0x436c2d*/
     unsigned int *v22; // [esp+30h] [ebp-38h]
     v22 = 0; /*0x436c3b*/
-    nextArrayIndex = FollowingObject->ptr_C.?; /*0x436c3f*/
+    nextArrayIndex = *(Object **)(FollowingObject + 540); /*0x436c3f*/
     int v17; // [esp+1Ch] [ebp-4Ch]
     v17 = -1; /*0x436c43*/
     do /*0x436d74*/
@@ -232,7 +232,7 @@ signed int BuildingLightClass::UpdateOscillation()
     v16 = 1.0; /*0x513e00*/
   else
     v16 = 1.1; /*0x513e08*/
-  v17 = *(unsigned int *)&MEMORY[0xA8EB00].?[416] + 2 * v15; /*0x513e20*/
+  v17 = *(unsigned int *)&MEMORY[0xA8EB00 + 416] + 2 * v15; /*0x513e20*/
   v18 = v16 * *(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1488) * 900.0; /*0x513e23*/
   (v19) = ((v19) & ~0xFFFF) | ((Math::RoundToInt(v13)) & 0xFFFF); /*0x513e2b*/
   Math::SinCos((double)(v17 % v19) * 6.283185307179586 / v18); /*0x513e4f*/

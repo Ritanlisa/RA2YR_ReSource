@@ -2459,7 +2459,7 @@ int MapSeed_ScheduleBuildings(int * a1)
   v41[3] = v8; /*0x5a8a7f*/
   v41[2] = 0xFFFF; /*0x5a8a87*/
   v41[4] = -1; /*0x5a8a94*/
-  qmemcpy(&v50.__pad_8[20 * *(unsigned int *)&v50.__pad_8[20] + 24], v41, 0x14u); /*0x5a8ab2*/
+  memcpy(&v50.__pad_8[20 * *(unsigned int *)&v50.__pad_8[20] + 24], v41, 0x14u); /*0x5a8ab2*/
   v51[*(unsigned int *)&v50.q01C] = timeGetTime(); /*0x5a8abe*/
   *(unsigned int *)&v50.q01C = (*(unsigned short *)&v50.q01C + 1) & 0x3FF; /*0x5a8ad5*/
   v9 = ++*(unsigned int *)&v50.q014; /*0x5a8ad4*/
@@ -2625,7 +2625,7 @@ LABEL_59:
         {
           if ( *(int *)&v50.q014 < 1024 ) /*0x5a8d34*/
           {
-            qmemcpy(&v50.__pad_8[20 * v31 + 24], v30, 0x14u); /*0x5a8d44*/
+            memcpy(&v50.__pad_8[20 * v31 + 24], v30, 0x14u); /*0x5a8d44*/
             v51[*(unsigned int *)&v50.q01C] = timeGetTime(); /*0x5a8d50*/
             v31 = (*(unsigned short *)&v50.q01C + 1) & 0x3FF; /*0x5a8d60*/
             *(unsigned int *)&v50.q01C = v31; /*0x5a8d66*/

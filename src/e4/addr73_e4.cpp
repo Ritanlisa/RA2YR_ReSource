@@ -232,18 +232,18 @@ CellStruct * * sub_730D60()
 
   if ( (unsigned __int8)FactoryClass::GetFlag() ) /*0x730d65*/
     return System_Get(); /*0x730d6e*/
-  result = MEMORY[0xA8EB00].?[228]; /*0x730d79*/
-  if ( *(int *)&MEMORY[0xA8EB00].?[228] > 0 )
+  result = MEMORY[0xA8EB00 + 228]; /*0x730d79*/
+  if ( *(int *)&MEMORY[0xA8EB00 + 228] > 0 )
   {
     v2 = 0; /*0x730d86*/
     v3 = 1; /*0x730d88*/
-    v9 = *(unsigned int *)&MEMORY[0xA8EB00].?[228]; /*0x730d8c*/
+    v9 = *(unsigned int *)&MEMORY[0xA8EB00 + 228]; /*0x730d8c*/
     do
     {
-      v4 = *(unsigned char **)(*(unsigned int *)&MEMORY[0xA8EB00].?[216] + 4 * v2); /*0x730d9b*/
+      v4 = *(unsigned char **)(*(unsigned int *)&MEMORY[0xA8EB00 + 216] + 4 * v2); /*0x730d9b*/
       if ( v4 && (v4[20] & 1) != 0 )
       {
-        if ( (*(unsigned __int8 (**)(unsigned int))(*(unsigned int *)v4 + 160))(*(unsigned int *)(*(unsigned int *)&MEMORY[0xA8EB00].?[216]
+        if ( (*(unsigned __int8 (**)(unsigned int))(*(unsigned int *)v4 + 160))(*(unsigned int *)(*(unsigned int *)&MEMORY[0xA8EB00 + 216]
                                                                                          + 4 * v2))
           && (*(unsigned __int8 (**)(unsigned char *))(*(unsigned int *)v4 + 156))(v4)
           && (*(int (**)(unsigned char *))(*(unsigned int *)v4 + 44))(v4) != 6 )
@@ -539,12 +539,12 @@ int SelectAllOfType()
     {
       v4 = 0; /*0x7329c1*/
     }
-    v5 = *(unsigned int *)&MEMORY[0xA8EB00].?[164]; /*0x7329c3*/
-    if ( *(int *)&MEMORY[0xA8EB00].?[164] > 0 ) /*0x7329cb*/
+    v5 = *(unsigned int *)&MEMORY[0xA8EB00 + 164]; /*0x7329c3*/
+    if ( *(int *)&MEMORY[0xA8EB00 + 164] > 0 ) /*0x7329cb*/
     {
       do /*0x7329f3*/
       {
-        v23 = *(TechnoClass **)(*(unsigned int *)&MEMORY[0xA8EB00].?[152] + 4 * v2); /*0x7329d7*/
+        v23 = *(TechnoClass **)(*(unsigned int *)&MEMORY[0xA8EB00 + 152] + 4 * v2); /*0x7329d7*/
         if ( (unsigned __int8)TechnoClass::IsOwnedByHuman(v23) ) /*0x7329db*/
           DynamicVector::AddItem((DynamicVector *)v4, &v23); /*0x7329eb*/
         ++v2; /*0x7329f0*/
@@ -610,10 +610,10 @@ LABEL_25:
       v6 = (DynamicVector *)(v14)->Constructor_Techno(0, 0); /*0x732ae5*/
     else
       v6 = 0; /*0x732ae9*/
-    v15 = *(unsigned int *)&MEMORY[0xA8EB00].?[164]; /*0x732aeb*/
+    v15 = *(unsigned int *)&MEMORY[0xA8EB00 + 164]; /*0x732aeb*/
     for ( j = 0; j < v15; ++j ) /*0x732af5*/
     {
-      v23 = *(TechnoClass **)(*(unsigned int *)&MEMORY[0xA8EB00].?[152] + 4 * j); /*0x732b01*/
+      v23 = *(TechnoClass **)(*(unsigned int *)&MEMORY[0xA8EB00 + 152] + 4 * j); /*0x732b01*/
       if ( (unsigned __int8)TechnoClass::IsOwnedByHuman(v23) ) /*0x732b05*/
         DynamicVector::AddItem(v6, &v23); /*0x732b15*/
     }
@@ -626,7 +626,7 @@ LABEL_36:
     if ( IDTechnoClassMatches(v19, (int)v24) ) /*0x732b34*/
       (*(void (**)(void *))(*(unsigned int *)v19 + 332))(v19); /*0x732b41*/
   }
-  if ( *(unsigned int *)&MEMORY[0xA8EB00].?[228] ) /*0x732b55*/
+  if ( *(unsigned int *)&MEMORY[0xA8EB00 + 228] ) /*0x732b55*/
   {
     if ( g_BuildingLoadQueue_Array.__pad_1624[0] ) /*0x732b7c*/
       StringCSF = GetStringCSF(g_Str_MSG_SelAcrossMap, 0, g_Str_File_UICmnds_cpp, 1011); /*0x732b98*/
@@ -801,12 +801,12 @@ char sub_7331B0()
   {
     v3 = 0; /*0x7331f8*/
   }
-  v4 = *(unsigned int *)&MEMORY[0xA8EB00].?[228]; /*0x7331fa*/
-  if ( *(int *)&MEMORY[0xA8EB00].?[228] > 0 ) /*0x733202*/
+  v4 = *(unsigned int *)&MEMORY[0xA8EB00 + 228]; /*0x7331fa*/
+  if ( *(int *)&MEMORY[0xA8EB00 + 228] > 0 ) /*0x733202*/
   {
     do /*0x73325b*/
     {
-      v5 = *(unsigned int *)(*(unsigned int *)&MEMORY[0xA8EB00].?[216] + 4 * v1); /*0x73320a*/
+      v5 = *(unsigned int *)(*(unsigned int *)&MEMORY[0xA8EB00 + 216] + 4 * v1); /*0x73320a*/
       if ( v5 && (*(unsigned char *)(v5 + 20) & 1) != 0 ) /*0x73321b*/
       {
         EventClass_field_0x8 = v3->EventClass_field_0x8; /*0x73321d*/

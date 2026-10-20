@@ -297,7 +297,7 @@ int Movement::CalcVelocity(double *a1, Vector3 *a2, double a3, void **a4, int16_
     fstp [esp+98h+var_70]
   }
   *(double *)&v87[8] = v91; /*0x5b2489*/
-  qmemcpy(v94, v87, sizeof(v94)); /*0x5b248d*/
+  memcpy(v94, v87, sizeof(v94)); /*0x5b248d*/
   _ESI = *(unsigned int *)v88.__pad_0; /*0x5b248f*/
   __asm { fld qword ptr [esi+8] } /*0x5b2498*/
   __asm

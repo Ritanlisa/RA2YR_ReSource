@@ -253,9 +253,9 @@ int InfantryTypeClass::CreateInfantry(short * a2, AbstractClass * ppv)
       v14[1] = v10; /*0x523bd9*/
       v11 = v9->ptr_8; /*0x523bdd*/
       v14[2] = v11; /*0x523be0*/
-      if ( v14[0] != *(unsigned int *)&MEMORY[0xA8EB00].?[1692] /*0x523bf4*/
-        || v10 != *(unsigned int *)&MEMORY[0xA8EB00].?[1696]
-        || v11 != *(unsigned int *)&MEMORY[0xA8EB00].?[1700] )
+      if ( v14[0] != *(unsigned int *)&MEMORY[0xA8EB00 + 1692] /*0x523bf4*/
+        || v10 != *(unsigned int *)&MEMORY[0xA8EB00 + 1696]
+        || v11 != *(unsigned int *)&MEMORY[0xA8EB00 + 1700] )
       {
         return (*(char (**)(int, unsigned int *, int))(*(unsigned int *)v6 + 216))(v6, v14, 64); /*0x523c0b*/
       }

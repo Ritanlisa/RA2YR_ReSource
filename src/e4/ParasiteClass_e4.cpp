@@ -209,7 +209,7 @@ void ParasiteClass::DeploySquad()
 
   _ESI = this; /*0x6297fc*/
   v3 = (unsigned int *)(*(int (**)(int, unsigned int))(*(unsigned int *)this->creationFrame + 1016))(this->creationFrame, 0); /*0x629807*/
-  v4 = *(int **)_ESI->__pad_28; /*0x62980d*/
+  v4 = *(int **)this->__pad_028; /*0x62980d*/
   v48[1] = *v3; /*0x629812*/
   v5 = *(unsigned int **)(v48[1] + 172); /*0x629816*/
   v48[0] = v5; /*0x629822*/
@@ -221,14 +221,14 @@ void ParasiteClass::DeploySquad()
   if ( !v6 || (unsigned __int8)Cell::IsValidHeight(v6) ) /*0x629854*/
   {
     v10 = v5[92]; /*0x629898*/
-    v11 = (unsigned int *)(*(unsigned int *)_ESI->__pad_28 + 1696); /*0x62989e*/
+    v11 = (unsigned int *)(*(unsigned int *)this->__pad_028 + 1696); /*0x62989e*/
     *v11 = *(unsigned int *)&stru_A8E960.random[528]; /*0x6298a4*/
     v11[1] = v59; /*0x6298aa*/
     v11[2] = v10; /*0x6298ad*/
     switch ( _ESI[1].ptr_4 ) /*0x6298bc*/
     {
       case 0: /*0x6298bc*/
-        *(unsigned int *)(*(unsigned int *)_ESI->__pad_28 + 808) = 0; /*0x6298c6*/
+        *(unsigned int *)(*(unsigned int *)this->__pad_028 + 808) = 0; /*0x6298c6*/
         Index = AnimTypeClass::FindIndex(&stru_83665C); /*0x6298d1*/
         if ( Index != -1 ) /*0x6298d9*/
         {
@@ -270,7 +270,7 @@ void ParasiteClass::DeploySquad()
           _ESI[1].ptr_4 = 3 - (v17 != 0); /*0x6299ba*/
           _ESI[1].ptr_8 = 0; /*0x6299bd*/
           BuildingClass::AnimController((BuildingClass *)_ESI); /*0x6299c0*/
-          FootClass::CreateWakes(*(FootClass **)_ESI->__pad_28, v55, v56, v57); /*0x6299e1*/
+          FootClass::CreateWakes(*(FootClass **)this->__pad_028, v55, v56, v57); /*0x6299e1*/
         }
         goto LABEL_47; /*0x6299e6*/
       case 2: /*0x6298bc*/
@@ -294,14 +294,14 @@ LABEL_20:
         }
         Math::SinCos(*(double *)&v48[1]); /*0x629a35*/
         __asm { fmul ds:flt_7EF8F8 } /*0x629a3a*/
-        v18 = *(unsigned int *)_ESI->__pad_28; /*0x629a40*/
+        v18 = *(unsigned int *)this->__pad_028; /*0x629a40*/
         __asm { fstp dword ptr [ecx+328h] } /*0x629a46*/
         v18->q328 = _ET1; /*0x629a46*/
         goto LABEL_47; /*0x629a4c*/
       case 4: /*0x6298bc*/
-        *(unsigned int *)(*(unsigned int *)_ESI->__pad_28 + 808) = 0; /*0x629a59*/
+        *(unsigned int *)(*(unsigned int *)this->__pad_028 + 808) = 0; /*0x629a59*/
         v20 = dword_8871E0->Normal[13]; /*0x629a67*/
-        v45 = *(__int16 *)ProgressTimer::GetValue((ProgressTimer *)(*(unsigned int *)_ESI->__pad_28 + 904), &v50) - 0x3FFF; /*0x629a81*/
+        v45 = *(__int16 *)ProgressTimer::GetValue((ProgressTimer *)(*(unsigned int *)this->__pad_028 + 904), &v50) - 0x3FFF; /*0x629a81*/
         __asm /*0x629a85*/
         {
           fild dword ptr [esp+68h+var_5C+4]
@@ -365,27 +365,27 @@ LABEL_20:
           }
         }
         if ( *(unsigned char *)(v48[0] + 372) /*0x629be6*/
-          && (!BuildingClass::GetSellPriority(*(BuildingClass **)_ESI->__pad_28)
-           || BuildingClass::GetSellPriority(*(BuildingClass **)_ESI->__pad_28) == 1
-           && (unsigned __int8)Audio::IsLoud((int *)(_ESI->creationFrame + 336))) )
+          && (!BuildingClass::GetSellPriority(*(BuildingClass **)this->__pad_028)
+           || BuildingClass::GetSellPriority(*(BuildingClass **)this->__pad_028) == 1
+           && (unsigned __int8)Audio::IsLoud((int *)(this->creationFrame + 336))) )
         {
-          if ( *(unsigned char *)((*(int (**)(int))(*(unsigned int *)_ESI->creationFrame + 132))(_ESI->creationFrame) + 3214) ) /*0x629bfe*/
+          if ( *(unsigned char *)((*(int (**)(int))(*(unsigned int *)this->creationFrame + 132))(this->creationFrame) + 3214) ) /*0x629bfe*/
           {
-            v26 = (*(int (**)(unsigned int))(**(unsigned int **)_ESI->__pad_28 + 132))(*(unsigned int *)_ESI->__pad_28); /*0x629c16*/
-            v27 = (*(int (**)(int))(*(unsigned int *)_ESI->creationFrame + 132))(_ESI->creationFrame); /*0x629c23*/
-            v42 = *(unsigned int *)(*(unsigned int *)_ESI->__pad_28 + 540); /*0x629c2f*/
+            v26 = (*(int (**)(unsigned int))(**(unsigned int **)this->__pad_028 + 132))(*(unsigned int *)this->__pad_028); /*0x629c16*/
+            v27 = (*(int (**)(int))(*(unsigned int *)this->creationFrame + 132))(this->creationFrame); /*0x629c23*/
+            v42 = *(unsigned int *)(*(unsigned int *)this->__pad_028 + 540); /*0x629c2f*/
             v28 = (*(int (**)(int))(*(unsigned int *)v26 + 132))(v26); /*0x629c30*/
             v29 = (*(int (**)(int, unsigned int, int))(*(unsigned int *)v27 + 132))( /*0x629c46*/
                     v27,
-                    *(unsigned int *)(_ESI->creationFrame + 540),
+                    *(unsigned int *)(this->creationFrame + 540),
                     v28);
-            HouseClass::AccumulateScore((int *)(_ESI->creationFrame + 336), v29, v42); /*0x629c56*/
+            HouseClass::AccumulateScore((int *)(this->creationFrame + 336), v29, v42); /*0x629c56*/
           }
-          v30 = *(unsigned char **)_ESI->__pad_28; /*0x629c5d*/
+          v30 = *(unsigned char **)this->__pad_028; /*0x629c5d*/
           BuildingClass::Deploy(v43, 0, (int)v30); /*0x629c62*/
           v31 = *(unsigned int *)v30; /*0x629c67*/
           v30->u8_3CD = 1; /*0x629c69*/
-          (*(void (**)(unsigned char *, int))(v31 + 952))(v30, _ESI->creationFrame); /*0x629c76*/
+          (*(void (**)(unsigned char *, int))(v31 + 952))(v30, this->creationFrame); /*0x629c76*/
           (*(void (**)(unsigned char *))(*(unsigned int *)v30 + 928))(v30); /*0x629c80*/
           ptr_0 = _ESI[1].ptr_0; /*0x629c86*/
           _ESI[1].ptr_8 = 0; /*0x629c89*/
@@ -412,32 +412,32 @@ LABEL_20:
             }
             LOBYTE(_ESI[1].uniqueId) = 0; /*0x629cf1*/
           }
-          v34 = (unsigned int *)(_ESI->creationFrame + 1696); /*0x629cff*/
+          v34 = (unsigned int *)(this->creationFrame + 1696); /*0x629cff*/
           *v34 = *(unsigned int *)&stru_A8E960.random[528]; /*0x629d05*/
           v34[1] = v59; /*0x629d0b*/
           v34[2] = 0; /*0x629d0e*/
         }
         else
         {
-          v35 = *(unsigned int *)_ESI->__pad_28; /*0x629d27*/
+          v35 = *(unsigned int *)this->__pad_028; /*0x629d27*/
           v49 = *(unsigned int *)(v48[1] + 164); /*0x629d2a*/
           (*(void (**)(int, int *, unsigned int, unsigned int, int, unsigned int, int, unsigned int))(*(unsigned int *)v35 + 364))( /*0x629d3b*/
             v35,
             &v49,
             0,
             v48[0],
-            _ESI->creationFrame,
+            this->creationFrame,
             0,
             1,
             0);
-          if ( *(unsigned int *)_ESI->__pad_28 ) /*0x629d41*/
+          if ( *(unsigned int *)this->__pad_028 ) /*0x629d41*/
           {
             v36 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 1); /*0x629d58*/
             _ESI[1].ptr_C = 0; /*0x629d66*/
             _ESI[1].ptr_4 = 3 - (v36 != 0); /*0x629d69*/
             _ESI[1].ptr_8 = 0; /*0x629d6c*/
             BuildingClass::AnimController((BuildingClass *)_ESI); /*0x629d6f*/
-            FootClass::CreateWakes(*(FootClass **)_ESI->__pad_28, v55, v56, v57); /*0x629d90*/
+            FootClass::CreateWakes(*(FootClass **)this->__pad_028, v55, v56, v57); /*0x629d90*/
           }
           else
           {
@@ -470,19 +470,19 @@ LABEL_20:
             }
           }
 LABEL_47:
-          v37 = _ESI->ptr_4.ptr_0; /*0x629d97*/
+          v37 = this->ptr_4.ptr_0; /*0x629d97*/
           if ( v37 ) /*0x629d9c*/
           {
-            if ( _ESI->creationFrame ) /*0x629d9e*/
+            if ( this->creationFrame ) /*0x629d9e*/
             {
-              v38 = *(unsigned int *)_ESI->__pad_28; /*0x629da3*/
+              v38 = *(unsigned int *)this->__pad_028; /*0x629da3*/
               if ( v38 ) /*0x629da8*/
               {
                 v39 = (*(int (**)(int))(*(unsigned int *)v38 + 444))(v38); /*0x629db8*/
-                if ( *(unsigned int *)_ESI->__pad_28 != v37->missionTimer[1] ) /*0x629dbf*/
+                if ( *(unsigned int *)this->__pad_028 != v37->missionTimer[1] ) /*0x629dbf*/
                 {
-                  BuildingClass::AimTurret(v37, *(unsigned char **)_ESI->__pad_28); /*0x629dc4*/
-                  v37->lastCommands[0] = (*(int (**)(int))(*(unsigned int *)_ESI->creationFrame + 484))(_ESI->creationFrame); /*0x629dd6*/
+                  BuildingClass::AimTurret(v37, *(unsigned char **)this->__pad_028); /*0x629dc4*/
+                  v37->lastCommands[0] = (*(int (**)(int))(*(unsigned int *)this->creationFrame + 484))(this->creationFrame); /*0x629dd6*/
                   if ( v39 ) /*0x629ddc*/
                     v37->animation[1] = *(__int16 *)(v39 + 266); /*0x629de5*/
                 }
@@ -499,7 +499,7 @@ LABEL_47:
   else
   {
     BuildingClass::Deploy(v43, (int)&savedregs, (int)v5); /*0x62985f*/
-    creationFrame = _ESI->creationFrame; /*0x629864*/
+    creationFrame = this->creationFrame; /*0x629864*/
     if ( creationFrame ) /*0x629869*/
     {
       v8 = v59; /*0x629874*/
@@ -682,7 +682,7 @@ AbstractClass * * ParasiteClass::TryInfect(unsigned int * a2)
     int v14; // [esp+1Ch] [ebp-10h] BYREF
     v14 = this; /*0x62a9bd*/
     int v4; // eax
-    v4 = (*(int (**)(int *, int *))(g_BuildingLoadQueue_Array.?[0] + 16))(g_BuildingLoadQueue_Array.?, &v14); /*0x62a9c1*/
+    v4 = (*(int (**)(int *, int *))(g_BuildingInstanceCount + 16))(&stru_B0F5B8, &v14); /*0x62a9c1*/
     if ( v4 != -1 ) /*0x62a9c7*/
       DynamicVector::RemoveItem((DynamicVector *)stru_B0F5B8, v4); /*0x62a9cf*/
     this->u32_54 = 0; /*0x62a9d4*/
@@ -1067,11 +1067,11 @@ LABEL_47:
   v66 = (float)v67; /*0x62c1bd*/
 LABEL_39:
   Byte284 = CellClass::GetByte284(&v69); /*0x62c09e*/
-  qmemcpy(v72, CopyAudioData((char *)v74, Byte284), sizeof(v72)); /*0x62c0cb*/
+  memcpy(v72, CopyAudioData((char *)v74, Byte284), sizeof(v72)); /*0x62c0cb*/
   v21 = InvertMatrix3x3Signs(v74, v72); /*0x62c0d4*/
   v22 = this->q0D0; /*0x62c0d9*/
   v23 = *v8; /*0x62c0ea*/
-  qmemcpy(v73, v21, sizeof(v73)); /*0x62c0ec*/
+  memcpy(v73, v21, sizeof(v73)); /*0x62c0ec*/
   *(float *)&v48 = -v22; /*0x62c0f9*/
   Triple::Set(&v59, v23, v48, this->q0D4); /*0x62c0fd*/
   v24 = Matrix3x3::TransformPoint(v70, (float *)&v59, v53); /*0x62c113*/

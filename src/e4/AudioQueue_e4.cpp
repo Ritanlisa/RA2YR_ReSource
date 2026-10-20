@@ -437,12 +437,12 @@ int AudioQueue::ReadBuffer(void * a2, int a3, void * a4, unsigned int * v9, unsi
   if ( !this->u32_18 ) /*0x7b22ee*/
     return 0; /*0x7b22f5*/
   v8 = (void *)*this->u32_C; /*0x7b2304*/
-  qmemcpy(a2, (char *)v8 + 32, *((unsigned int *)v8 + 4)); /*0x7b2311*/
+  memcpy(a2, (char *)v8 + 32, *((unsigned int *)v8 + 4)); /*0x7b2311*/
   v9 = *v9; /*0x7b231e*/
   if ( *v9 > 0x10 ) /*0x7b2323*/
     v9 = 16; /*0x7b2325*/
   *v9 = v9; /*0x7b232e*/
-  qmemcpy(a4, v8, v9); /*0x7b2337*/
+  memcpy(a4, v8, v9); /*0x7b2337*/
   *a6 = *((unsigned short *)v8 + 13); /*0x7b234c*/
   *(unsigned int *)a3 = *((unsigned int *)v8 + 4); /*0x7b2352*/
   v10 = this->u32_18; /*0x7b2354*/
@@ -488,11 +488,11 @@ AnimClass * * AudioQueue::WriteBuffer(WinsockInterfaceClass * aP1, unsigned int 
   UINT v19; // eax
 
   v9 = AudioQueue::AllocBuffer((AudioQueue *)this, aP5); /*0x7b23c4*/
-  qmemcpy(v9 + 32, aP1, arg4); /*0x7b23d5*/
+  memcpy(v9 + 32, aP1, arg4); /*0x7b23d5*/
   *((unsigned int *)v9 + 4) = arg4; /*0x7b23e6*/
   v9[20] = 0; /*0x7b23f4*/
   v9[24] = a7; /*0x7b23f8*/
-  qmemcpy(v9, a3, a5); /*0x7b23fb*/
+  memcpy(v9, a3, a5); /*0x7b23fb*/
   *((unsigned short *)v9 + 13) = a8; /*0x7b2409*/
   (*(void (**)(WinsockInterfaceClass *, unsigned char *))(this->Socket + 84))(this, v9); /*0x7b2411*/
   if ( aP5 ) /*0x7b241a*/

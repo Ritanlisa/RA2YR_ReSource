@@ -826,7 +826,7 @@ unsigned int * E4Recv_74BCA0::sub_74BCA0(int a2)
   if ( !v4 ) /*0x74bcec*/
   {
     this->M4 = 0; /*0x74bd2c*/
-    BYTE1(this->?) = 0; /*0x74bd33*/
+    BYTE1(this->nextArrayIndex) = 0; /*0x74bd33*/
     LABEL_10:
     this->AbstractClass = *(void **)a2; /*0x74bd37*/
     return &this->AbstractClass; /*0x74bd39*/
@@ -837,7 +837,7 @@ unsigned int * E4Recv_74BCA0::sub_74BCA0(int a2)
     goto LABEL_10; /*0x74bcfc*/
   abstractFlags = this->M8; /*0x74bcfe*/
   v7 = 0; /*0x74bd01*/
-  BYTE1(this->?) = 1; /*0x74bd05*/
+  BYTE1(this->nextArrayIndex) = 1; /*0x74bd05*/
   if ( abstractFlags <= 0 ) /*0x74bd09*/
     goto LABEL_10; /*0x74bd09*/
   do /*0x74bd1d*/
@@ -1267,7 +1267,7 @@ AbstractClass * * E4Recv_74FAE0::sub_74FAE0()
     *(unsigned int *)&DataGlobal_A8EC40 |= 2u; /*0x74fc4e*/
   }
   char *pVal; // esi
-  pVal = (char *)&this->?; /*0x74fc60*/
+  pVal = (char *)&this->ptr_C; /*0x74fc60*/
   sprintf(pVal, "%d.%3.3d", v6, pN_high); /*0x74fc6a*/
   return pVal; /*0x74fc74*/
 

@@ -45,8 +45,8 @@ unsigned int * AnimTypeClass::Construct2(char *Source, void *a2)
   this->ChargerTurrets = 1072693248; /*0x41e386*/
   this->q0C4 = (IUnknown *)(1072693248); /*0x41e38c*/
   this->q0CC = (IUnknown *)(1072693248); /*0x41e392*/
-  BYTE2(this->?[5]) = 1; /*0x41e39a*/
-  HIBYTE(this->?[5]) = 1; /*0x41e3a0*/
+  BYTE2(this->ChargerTurrets[5]) = 1; /*0x41e39a*/
+  HIBYTE(this->ChargerTurrets[5]) = 1; /*0x41e3a0*/
   LOBYTE(this->u32_D4) = 1; /*0x41e3a6*/
   this->Armor = 0; /*0x41e3b9*/
   this->Strength = 0; /*0x41e3bf*/
@@ -54,7 +54,7 @@ unsigned int * AnimTypeClass::Construct2(char *Source, void *a2)
   this->AlphaImage = 0; /*0x41e3cb*/
   this->MainVoxel = 0; /*0x41e3d1*/
   (this->q0D0) = ((this->q0D0) & ~0xFF) | ((0) & 0xFF); /*0x41e3d7*/
-  BYTE1(this->?[5]) = 0; /*0x41e3dd*/
+  BYTE1(this->ChargerTurrets[5]) = 0; /*0x41e3dd*/
   this->q0D8 = 0; /*0x41e3e3*/
   this->u32_DC = 0; /*0x41e3e9*/
   this->FootClass_E0 = 0; /*0x41e3ef*/
@@ -181,7 +181,7 @@ AnimTypeClass * AnimTypeClass::Construct(char *aP1, void *a2, void *a3, void *a4
   this->Insignificant_d = 1; /*0x42776a*/
   this->Immune_d = 1; /*0x427771*/
   this->AllowCellContent_d = 0; /*0x427778*/
-  if ( FootClass_Array.?[0] < FootClass_Array.?[4] /*0x4277b0*/
+  if ( dword_8B4160 < dword_8B4158 /*0x4277b0*/
     || (BYTE1(FootClass_Array.?[5]) || !DataGlobal_8B3DC4)
     && DataGlobal_8B3DC0[932] > 0
     && (*(unsigned __int8 (**)(int *, int, unsigned int))(FootClass_Array.?[2] + 8))(
@@ -189,8 +189,8 @@ AnimTypeClass * AnimTypeClass::Construct(char *aP1, void *a2, void *a3, void *a4
          DataGlobal_8B3DC4 + FootClass_Array.?[1],
          0) )
   {
-    v3 = FootClass_Array.?[0]++; /*0x4277bd*/
-    *(unsigned int *)(FootClass_Array.?[3] + 4 * v3) = this; /*0x4277cc*/
+    v3 = dword_8B4160++; /*0x4277bd*/
+    *(unsigned int *)(dword_8B4154 + 4 * v3) = this; /*0x4277cc*/
   }
   if ( g_BuildingLoadQueue_Array.LightBlueTint < g_BuildingLoadQueue_Array.LightRedTint /*0x427803*/
     || (BYTE1(g_BuildingLoadQueue_Array.LightGreenTint) || !g_BuildingLoadQueue_Array.LightRedTint)
@@ -404,10 +404,10 @@ ScenarioClass * * AnimTypeClass::SaveLoad_Prefix(int a1, int a2)
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&a1->TiberiumSpawnType); /*0x4288cc*/
     if ( !a1->DemandLoad ) /*0x4288d1*/
     {
-      if ( a1->? ) /*0x4288db*/
+      if ( a1->Theater[0] ) /*0x4288db*/
       {
-        _makepath(&v3[1], 0, 0, (const char *)a1->?, (const char *)&off_7E1BC6 + 112 * dword_A8B230[130].uniqueId); /*0x428910*/
-        a1->? = (SHPStruct *)SearchMIXFile(&v3[1], 1); /*0x428923*/
+        _makepath(&v3[1], 0, 0, (const char *)a1->__pad_24, (const char *)&off_7E1BC6 + 112 * dword_A8B230[130].uniqueId); /*0x428910*/
+        a1->Image = (SHPStruct *)SearchMIXFile(&v3[1], 1); /*0x428923*/
         return 0; /*0x428932*/
       }
       if ( a1->? ) /*0x428935*/

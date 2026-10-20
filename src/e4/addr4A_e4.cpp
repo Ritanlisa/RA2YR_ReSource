@@ -2777,7 +2777,7 @@ void * E4Recv_4AF9B0::sub_4AF9B0(void * a2)
       {
         v7 = 1.0; /*0x4afa15*/
       }
-      v10 = InterpolateVoxelAnimPose(v14, (int)this->?, this->?, v7); /*0x4afa55*/
+      v10 = InterpolateVoxelAnimPose(v14, (int)this->NeedsSaveOrLink, this->referenceCount, v7); /*0x4afa55*/
       goto LABEL_17; /*0x4afa5a*/
     }
   }
@@ -3600,7 +3600,7 @@ int sub_4A4850(const void * a1, int a2)
   unsigned int *v6; // edx
 
   v2 = (void *)__2_YAPAXI_Z(0x6Cu); /*0x4a485e*/
-  qmemcpy(v2, a1, 0x6Cu); /*0x4a4867*/
+  memcpy(v2, a1, 0x6Cu); /*0x4a4867*/
   v3 = *(unsigned int *)(a2 + 8); /*0x4a4870*/
   if ( *(unsigned int *)(a2 + 16) < v3 /*0x4a4895*/
     || (*(unsigned char *)(a2 + 13) || !v3)

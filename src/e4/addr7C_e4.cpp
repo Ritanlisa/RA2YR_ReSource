@@ -580,7 +580,7 @@ LABEL_12:
   v9 = (int (__cdecl **)(int, int, char *, int))(v7 + 32); /*0x7c2635*/
   memset(v7, 0, 0x7DCu); /*0x7c2641*/
   v7->ptr_30 = 2012; /*0x7c264a*/
-  qmemcpy(v7 + 32, a1, 0x88u); /*0x7c2654*/
+  memcpy(v7 + 32, a1, 0x88u); /*0x7c2654*/
   if ( !*((unsigned int *)v7 + 17) ) /*0x7c2656*/
     *((unsigned int *)v7 + 17) = AllocCallback::Dispatch; /*0x7c265d*/
   if ( !*v9 ) /*0x7c2664*/
@@ -5266,7 +5266,7 @@ UnwindUp0:
             goto TrailUp3;
         }
       default:
-        qmemcpy(a0, aP1, 4 * v5); /*0x7ca0c3*/
+        memcpy(a0, aP1, 4 * v5); /*0x7ca0c3*/
         v3 = (char *)aP1 + 4 * v5; /*0x7ca0c3*/
         v4 = (char *)a0 + 4 * v5; /*0x7ca0c3*/
         switch ( Size & 3 ) /*0x7ca0c5*/
@@ -12464,7 +12464,7 @@ namespace gamemd {
 char * E4Recv_7C8B29::sub_7C8B29()
 {
 
-  return (char *)&this->?; /*0x7c8b2c*/
+  return (char *)&this->ptr_8; /*0x7c8b2c*/
 
 }
 } // namespace gamemd

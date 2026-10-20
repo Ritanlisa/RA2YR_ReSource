@@ -894,7 +894,7 @@ int MultiplyAddBigInteger(char * a1, unsigned short * a2, short a3, int a4)
     }
     return 0; /*0x5c6f7d*/
   }
-  qmemcpy(v44, a2, 4 * ((unsigned int)(4 * a4) >> 2)); /*0x5c6e05*/
+  memcpy(v44, a2, 4 * ((unsigned int)(4 * a4) >> 2)); /*0x5c6e05*/
   v6 = v44; /*0x5c6e09*/
   if ( a4 > 0 ) /*0x5c6e14*/
   {
@@ -1290,9 +1290,9 @@ char SubtractBigIntegerWithSign(char * a1, int * a2, const void * a3, const void
 
   v5 = a5; /*0x5c7528*/
   v40 = a1; /*0x5c752f*/
-  qmemcpy(v42, a3, 4 * ((unsigned int)(4 * a5) >> 2)); /*0x5c7553*/
+  memcpy(v42, a3, 4 * ((unsigned int)(4 * a5) >> 2)); /*0x5c7553*/
   v38 = 0; /*0x5c7557*/
-  qmemcpy(v41, a4, 4 * ((unsigned int)(4 * a5) >> 2)); /*0x5c7571*/
+  memcpy(v41, a4, 4 * ((unsigned int)(4 * a5) >> 2)); /*0x5c7571*/
   if ( (int)v41[a5 + 63] < 0 ) /*0x5c7583*/
   {
     v7 = v42; /*0x5c7587*/
@@ -1492,8 +1492,8 @@ int ModInverseBigInteger(char * a1, const void * a2, const void * a3, int a4)
   v4 = a4; /*0x5c7748*/
   v30 = a1; /*0x5c774f*/
   v29 = 4 * a4; /*0x5c776e*/
-  qmemcpy(v34, a3, 4 * ((unsigned int)(4 * a4) >> 2)); /*0x5c7775*/
-  qmemcpy(v35, a2, 4 * ((unsigned int)(4 * a4) >> 2)); /*0x5c7790*/
+  memcpy(v34, a3, 4 * ((unsigned int)(4 * a4) >> 2)); /*0x5c7775*/
+  memcpy(v35, a2, 4 * ((unsigned int)(4 * a4) >> 2)); /*0x5c7790*/
   memset(v31, 0, 4 * ((unsigned int)(4 * a4) >> 2)); /*0x5c77a2*/
   v5 = 1; /*0x5c77a6*/
   v25 = 1; /*0x5c77ae*/
@@ -1567,7 +1567,7 @@ int ModInverseBigInteger(char * a1, const void * a2, const void * a3, int a4)
     }
   }
   result = v18 << 8; /*0x5c7967*/
-  qmemcpy(v30, (char *)v31 + result, v29); /*0x5c7973*/
+  memcpy(v30, (char *)v31 + result, v29); /*0x5c7973*/
   return result; /*0x5c797c*/
 
 }
@@ -2056,7 +2056,7 @@ LABEL_45:
       v39 = a0; /*0x5c8727*/
       v40 = &a2[4 * ((v33 + 31) / 32) - 4]; /*0x5c872d*/
       v43 = v33 - 1; /*0x5c8734*/
-      qmemcpy(a0, aP1, v29); /*0x5c8741*/
+      memcpy(a0, aP1, v29); /*0x5c8741*/
       v41 = v38 >> 1; /*0x5c8748*/
       if ( !v41 ) /*0x5c874c*/
       {
@@ -2071,7 +2071,7 @@ LABEL_45:
           if ( (v41 & *(unsigned int *)v40) != 0 ) /*0x5c877e*/
             ComputeModularInverse(a0, aP1, v45); /*0x5c878e*/
           else
-            qmemcpy(a0, &v47, v46); /*0x5c87a6*/
+            memcpy(a0, &v47, v46); /*0x5c87a6*/
           v41 >>= 1; /*0x5c87af*/
           if ( !v41 ) /*0x5c87b1*/
           {
@@ -2260,7 +2260,7 @@ char ValidateRSAKey(int a1, char * a2, int a3, int a4)
     while ( v10 < 32 * a4 ); /*0x5c8b48*/
     v36 = v10; /*0x5c8b4a*/
   }
-  qmemcpy(v46, v42, 4 * ((unsigned int)(4 * a4) >> 2)); /*0x5c8b68*/
+  memcpy(v46, v42, 4 * ((unsigned int)(4 * a4) >> 2)); /*0x5c8b68*/
   RotateBitBufferRight(v42, v10, a4); /*0x5c8b7b*/
   v38 = 0; /*0x5c8b87*/
   if ( a3 <= 0 ) /*0x5c8b91*/
@@ -2592,7 +2592,7 @@ LABEL_17:
         break; /*0x5c90ce*/
       if ( (unsigned int)++v14 >= 0x82FCE2 ) /*0x5c90e5*/
       {
-        qmemcpy(v24, v2, 4 * ((unsigned int)(4 * edx0) >> 2)); /*0x5c90f9*/
+        memcpy(v24, v2, 4 * ((unsigned int)(4 * edx0) >> 2)); /*0x5c90f9*/
         v15 = edx0; /*0x5c90fd*/
         v16 = v24; /*0x5c9102*/
         if ( v24[0]-- == 0 ) /*0x5c910d*/
@@ -3053,7 +3053,7 @@ int ObjectClass::sub_5CE0C0(int a2, unsigned int * a3)
     v17 = (size_t)v10++; /*0x5ce1c5*/
   }
   v12 = this->ambientSoundController[1]; /*0x5ce1e0*/
-  ptr_4 = this->attachedTag->?; /*0x5ce1e3*/
+  ptr_4 = *(_DWORD *)(this->attachedTag + 8); /*0x5ce1e3*/
   v19 = this->customSound_controller[0]; /*0x5ce1e6*/
   *a3 = this->attachedBomb; /*0x5ce1ee*/
   a3[1] = v19; /*0x5ce1f4*/
@@ -3070,7 +3070,7 @@ int ObjectClass::sub_5CE0C0(int a2, unsigned int * a3)
     {
       (v14) = ((v14) & ~0xFFFF) | ((Math::RoundToInt(*(float *)&stru_A8EB00.ObjectTypeClass[38] * 64.0)) & 0xFFFF); /*0x5ce228*/
       sub_406670(aBleep1, v14); /*0x5ce234*/
-      this->customSound_controller[0] += (int)this->attachedTag->?; /*0x5ce244*/
+      this->customSound_controller[0] += (int)*(_DWORD *)(this->attachedTag + 8); /*0x5ce244*/
     }
   }
   else
@@ -4770,11 +4770,11 @@ int E4Recv_5CE3A0::sub_5CE3A0(int a2, int * a3)
     v18 = ptr_4; /*0x5ce3f4*/
     for ( i = result; v9 < i; ++v9 ) /*0x5ce3fc*/
     {
-      if ( (unsigned __int16)WideString::GetChar((const wchar_t **)&this->?, v9) == 10 ) /*0x5ce40f*/
+      if ( (unsigned __int16)WideString::GetChar((const wchar_t **)&this->referenceCount, v9) == 10 ) /*0x5ce40f*/
       {
         ptr_0 = (char *)this->M4; /*0x5ce414*/
-        ptr_4 = (int *)((char *)ptr_4 + (unsigned int)this->attachedTag->?); /*0x5ce41e*/
-        v14 = this->attachedTag->?; /*0x5ce420*/
+        ptr_4 = (int *)((char *)ptr_4 + (unsigned int)*(_DWORD *)(this->attachedTag + 8)); /*0x5ce41e*/
+        v14 = *(_DWORD *)(this->attachedTag + 8); /*0x5ce420*/
         v18 = ptr_4; /*0x5ce426*/
         result = (*(int (**)(int))(*(unsigned int *)a2 + 128))(a2); /*0x5ce42a*/
         if ( (int)v14 + (int)ptr_4 >= result ) /*0x5ce438*/
@@ -4786,7 +4786,7 @@ int E4Recv_5CE3A0::sub_5CE3A0(int a2, int * a3)
         Char = WideString::GetChar((const wchar_t **)&this->M52, v9); /*0x5ce45b*/
         ptr_0[4](this->attachedTag, a2, Char, ptr_0, ptr_4, 2, 1); /*0x5ce461*/
         v10 = (int (**)(TagClass *, int))this->attachedTag->AbstractClass; /*0x5ce46b*/
-        v11 = WideString::GetChar((const wchar_t **)&this->?, v9); /*0x5ce46d*/
+        v11 = WideString::GetChar((const wchar_t **)&this->referenceCount, v9); /*0x5ce46d*/
         v12 = v10[1](this->attachedTag, v11); /*0x5ce476*/
         ptr_4 = v18; /*0x5ce479*/
         ptr_0 += v12; /*0x5ce47d*/

@@ -3570,12 +3570,12 @@ AbstractClass * * RandomMap::Generate(char a2, HWND hDlg, void *a3)
   if ( off_82AF14 ) /*0x598977*/
     off_82AF14(); /*0x598979*/
   v33 = v3; /*0x59897f*/
-  qmemcpy(&stru_ABE890, SeedInitRNG(v42, *&this->ptr_74), 0x3F4u); /*0x59899b*/
+  memcpy(&stru_ABE890, SeedInitRNG(v42, *&this->ptr_74), 0x3F4u); /*0x59899b*/
   LOBYTE(v41[0]) = 0; /*0x5989ab*/
   v41[2] = 0; /*0x5989af*/
   v41[3] = 0; /*0x5989b7*/
   v41[4] = sub_598000; /*0x5989bf*/
-  qmemcpy(&byte_ABDFB8, v41, 0x18u); /*0x5989c9*/
+  memcpy(&byte_ABDFB8, v41, 0x18u); /*0x5989c9*/
   if ( off_82AF14 ) /*0x5989cb*/
     off_82AF14(); /*0x5989cd*/
   v38 = LOBYTE(dword_A8B230[381].ptr_4) == 0; /*0x5989e7*/

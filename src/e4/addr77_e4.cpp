@@ -492,8 +492,8 @@ LABEL_11:
             v16 = (char *)v14; /*0x775f89*/
             v17 = -112 * dword_B72F38; /*0x775f91*/
             v18 = (unsigned int)(144 * dword_B72F38) >> 2; /*0x775f93*/
-            qmemcpy(v16, dword_B72F40, 4 * v18); /*0x775f96*/
-            qmemcpy(&v16[4 * v18], &v15[4 * v18], v17 & 3); /*0x775f9d*/
+            memcpy(v16, dword_B72F40, 4 * v18); /*0x775f96*/
+            memcpy(&v16[4 * v18], &v15[4 * v18], v17 & 3); /*0x775f9d*/
             v15 = (char *)dword_B72F40; /*0x775f9f*/
           }
           __3_YAXPAX_Z(v15); /*0x775fa6*/
@@ -515,8 +515,8 @@ LABEL_11:
             v22 = (char *)v20; /*0x776009*/
             v23 = -112 * dword_B72F38; /*0x776011*/
             v24 = (unsigned int)(144 * dword_B72F38) >> 2; /*0x776013*/
-            qmemcpy(v22, dword_B72F40, 4 * v24); /*0x776016*/
-            qmemcpy(&v22[4 * v24], &v21[4 * v24], v23 & 3); /*0x77601d*/
+            memcpy(v22, dword_B72F40, 4 * v24); /*0x776016*/
+            memcpy(&v22[4 * v24], &v21[4 * v24], v23 & 3); /*0x77601d*/
             v21 = (char *)dword_B72F40; /*0x77601f*/
           }
           __3_YAXPAX_Z(v21); /*0x776026*/
@@ -532,7 +532,7 @@ LABEL_11:
         v25 = (char *)dword_B72F40 + 144 * v12; /*0x776082*/
         if ( v25 ) /*0x776084*/
         {
-          qmemcpy(v25, v30, 0x90u); /*0x776091*/
+          memcpy(v25, v30, 0x90u); /*0x776091*/
           v11 = dword_B72F38; /*0x776093*/
         }
         dword_B72F38 = v11 + 1; /*0x77609b*/
@@ -551,7 +551,7 @@ LABEL_11:
     while ( 1 ) /*0x775dd9*/
     {
       if ( v6 >= 0 && v6 < v5 ) /*0x775ddf*/
-        qmemcpy(v30, v8, sizeof(v30)); /*0x775dea*/
+        memcpy(v30, v8, sizeof(v30)); /*0x775dea*/
       if ( !strcmp((const char *)v30, a2) && v30[32] == a3 && v30[33] == a4 && v30[34] == a5 ) /*0x775e53*/
         return v30[35]; /*0x775e88*/
       v5 = dword_B72F38; /*0x775e59*/
@@ -2659,10 +2659,10 @@ LABEL_21:
         for ( *(unsigned int *)v23.__pad_0 = 0; ; v16 = *(unsigned int *)v23.__pad_0 ) /*0x77eabe*/
         {
           if ( v16 >= 0 && v17 < v15 ) /*0x77eace*/
-            qmemcpy(v25, (char *)dword_B77908 + v16, sizeof(v25)); /*0x77eae2*/
+            memcpy(v25, (char *)dword_B77908 + v16, sizeof(v25)); /*0x77eae2*/
           v18 = (unsigned int *)__2_YAPAXI_Z(0x6Cu); /*0x77eaeb*/
           v19 = *(unsigned int *)v24.owningHouseIndex; /*0x77eaed*/
-          qmemcpy(v18, v25, 0x6Cu); /*0x77eaff*/
+          memcpy(v18, v25, 0x6Cu); /*0x77eaff*/
           v20 = *(unsigned int *)v23.__pad_0; /*0x77eb01*/
           v18[8] = v19; /*0x77eb05*/
           v15 = *(unsigned int *)&stru_B778FC.m_3[1]; /*0x77eb08*/
@@ -2861,7 +2861,7 @@ char WOL_RequestChannelList2(int a1, unsigned char a2)
     v9 = dword_B76528; /*0x77f021*/
     if ( dword_B76528 ) /*0x77f028*/
     {
-      qmemcpy(v8, dword_B76528, 4 * dword_B76520); /*0x77f034*/
+      memcpy(v8, dword_B76528, 4 * dword_B76520); /*0x77f034*/
       v9 = dword_B76528; /*0x77f036*/
       v6 = v13; /*0x77f03b*/
     }
@@ -2880,7 +2880,7 @@ char WOL_RequestChannelList2(int a1, unsigned char a2)
     v11 = dword_B76528; /*0x77f098*/
     if ( dword_B76528 ) /*0x77f09f*/
     {
-      qmemcpy(v8, dword_B76528, 4 * dword_B76520); /*0x77f0ab*/
+      memcpy(v8, dword_B76528, 4 * dword_B76520); /*0x77f0ab*/
       v11 = dword_B76528; /*0x77f0ad*/
       v6 = v13; /*0x77f0b2*/
     }
@@ -4739,7 +4739,7 @@ void * E4Recv_776EB0::sub_776EB0()
   {
     this->isFallingDown = 1; /*0x776f11*/
   }
-  strncpy((char *)&this->?, VersionInformation.szCSDVersion, 0x7Fu); /*0x776f22*/
+  strncpy((char *)&this->ptr_C, VersionInformation.szCSDVersion, 0x7Fu); /*0x776f22*/
   HIBYTE(this->parachute) = 0; /*0x776f2a*/
   return this; /*0x776f32*/
 

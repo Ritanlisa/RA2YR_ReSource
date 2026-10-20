@@ -260,7 +260,7 @@ AbstractClass * * DSurface::CreatePrimary(void *a1)
       if ( !(*(int (**)(int, unsigned int, HWND))(v15 + 32))(g_DDraw_Clipper, 0, ActiveWindow) ) /*0x4ba994*/
         (*(void (**)(int, int))(*(unsigned int *)*v6 + 112))(*v6, g_DDraw_Clipper); /*0x4ba9a7*/
     }
-    qmemcpy(&g_DDraw_PixelFormatDesc, (const void *)(v5[8] + 72), 0x20u); /*0x4ba9ba*/
+    memcpy(&g_DDraw_PixelFormatDesc, (const void *)(v5[8] + 72), 0x20u); /*0x4ba9ba*/
     if ( (*(int (**)(unsigned int *))(*v5 + 112))(v5) != 2 ) /*0x4ba9c7*/
       goto LABEL_60; /*0x4ba9c7*/
     v17 = g_DDraw_RedMask; /*0x4ba9cd*/

@@ -27,7 +27,7 @@ HWND E4Recv_696AE0::sub_696AE0()
     if ( result ) /*0x696b15*/
     {
       char *pVal; // esi
-      pVal = (char *)&this->?; /*0x696b21*/
+      pVal = (char *)&this->ptr_8; /*0x696b21*/
       SendMessageA(DlgItem, 0x4B5u, 0x80u, (LPARAM)pVal); /*0x696b30*/
       SendMessageA(DlgItem, 0x4B4u, 0, (LPARAM)&g_INI_DefaultBuffer); /*0x696b3f*/
       (pVal)->Trim(); /*0x696b43*/

@@ -164,9 +164,9 @@ void sub_550150()
       v5 = v3[4]; /*0x550176*/
       if ( v4 != -1 ) /*0x55017c*/
       {
-        if ( *(unsigned int *)&MEMORY[0xA8EB00].?[416] - v4 >= v5 ) /*0x550188*/
+        if ( *(unsigned int *)&MEMORY[0xA8EB00 + 416] - v4 >= v5 ) /*0x550188*/
           goto LABEL_7; /*0x550188*/
-        v5 -= *(unsigned int *)&MEMORY[0xA8EB00].?[416] - v4; /*0x55018a*/
+        v5 -= *(unsigned int *)&MEMORY[0xA8EB00 + 416] - v4; /*0x55018a*/
       }
       if ( v5 ) /*0x55018e*/
         goto LABEL_9; /*0x55018e*/
@@ -181,7 +181,7 @@ LABEL_9:
       v7 = v3[6] + *v3; /*0x55019c*/
       *((unsigned char *)v3 + 4) = 1; /*0x55019e*/
       *v3 = v7; /*0x5501a2*/
-      v3[2] = *(unsigned int *)&MEMORY[0xA8EB00].?[416]; /*0x5501a9*/
+      v3[2] = *(unsigned int *)&MEMORY[0xA8EB00 + 416]; /*0x5501a9*/
       v3[3] = v2; /*0x5501ac*/
       v3[4] = v6; /*0x5501af*/
 LABEL_10:
@@ -1419,13 +1419,13 @@ int E4Recv_55B720::sub_55B720()
   {
     goto LABEL_8; /*0x55b74a*/
   }
-  v3 = *(void **)&MEMORY[0xA8EB00].?[416]; /*0x55b751*/
+  v3 = *(void **)&MEMORY[0xA8EB00 + 416]; /*0x55b751*/
   nextArrayIndex = dword_A8B230[128].nextArrayIndex; /*0x55b757*/
   p_nextArrayIndex = &dword_A8B230[128].nextArrayIndex; /*0x55b75d*/
   NeedsSaveOrLink = (char *)dword_A8B230[128].NeedsSaveOrLink; /*0x55b766*/
   if ( nextArrayIndex != -1 ) /*0x55b769*/
   {
-    if ( *(unsigned int *)&MEMORY[0xA8EB00].?[416] - nextArrayIndex >= (int)NeedsSaveOrLink ) /*0x55b771*/
+    if ( *(unsigned int *)&MEMORY[0xA8EB00 + 416] - nextArrayIndex >= (int)NeedsSaveOrLink ) /*0x55b771*/
     {
 LABEL_7:
       (v7) = ((v7) & ~0xFFFF) | ((Math::RoundToInt(*(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5696) * 900.0)) & 0xFFFF); /*0x55b779*/
@@ -1435,10 +1435,10 @@ LABEL_7:
       MapClass::ProcessVisibilityFlags((MapClass *)&DataGlobal_87F7E8); /*0x55b79b*/
       v1 = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x55b7a0*/
 LABEL_8:
-      v3 = *(void **)&MEMORY[0xA8EB00].?[416]; /*0x55b7a6*/
+      v3 = *(void **)&MEMORY[0xA8EB00 + 416]; /*0x55b7a6*/
       goto LABEL_9; /*0x55b7a6*/
     }
-    NeedsSaveOrLink -= *(unsigned int *)&MEMORY[0xA8EB00].?[416] - nextArrayIndex; /*0x55b773*/
+    NeedsSaveOrLink -= *(unsigned int *)&MEMORY[0xA8EB00 + 416] - nextArrayIndex; /*0x55b773*/
   }
   if ( !NeedsSaveOrLink ) /*0x55b777*/
     goto LABEL_7; /*0x55b777*/

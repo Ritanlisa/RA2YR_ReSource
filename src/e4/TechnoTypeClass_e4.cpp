@@ -1417,7 +1417,7 @@ int TechnoTypeClass::SaveLoad_Prefix_0(unsigned int *a2, int *a3, int a4, int a5
   if ( result >= 0 ) /*0x716dd8*/
   {
     int v7 = *a5; // edx /*0x716de4*/
-    a5 = *(int **)&a5->?[788]; /*0x716df1*/
+    a5 = *(int **)&a5->Dock[788]; /*0x716df1*/
     int v5; // ebx
     (*(void (**)(unsigned int *, int **, int, unsigned int, int))(v7 + 16))(a5, &a5, 4, 0, v5); /*0x716df5*/
     int i; // ebx
@@ -1430,58 +1430,58 @@ int TechnoTypeClass::SaveLoad_Prefix_0(unsigned int *a2, int *a3, int a4, int a5
     for ( j = 0; j < a5; ++j ) /*0x716e3e*/
       (*(void (**)(unsigned int *, int, int, unsigned int))(*a5 + 16))(a5, *(unsigned int *)&a5->?[564] + 4 * j, 4, 0); /*0x716e51*/
     int v11 = *a5; // edx /*0x716e61*/
-    a5 = *(unsigned int *)&a5->?[1264]; /*0x716e6d*/
+    a5 = *(unsigned int *)&a5->DebrisAnims[1264]; /*0x716e6d*/
     (*(void (**)(unsigned int *, int *, int, unsigned int))(v11 + 16))(a5, &a5, 4, 0); /*0x716e71*/
     int k; // ebx
     for ( k = 0; k < a5; ++k ) /*0x716e7c*/
       (*(void (**)(unsigned int *, int, int, unsigned int))(*a5 + 16))(a5, *(unsigned int *)&a5->?[1252] + 4 * k, 4, 0); /*0x716e8f*/
     int v13 = *a5; // edx /*0x716e9f*/
-    a5 = *(unsigned int *)&a5->?[832]; /*0x716eab*/
+    a5 = *(unsigned int *)&a5->VoiceSelect[832]; /*0x716eab*/
     (*(void (**)(unsigned int *, int *, int, unsigned int))(v13 + 16))(a5, &a5, 4, 0); /*0x716eaf*/
     int m; // ebx
     for ( m = 0; m < a5; ++m ) /*0x716eba*/
       (*(void (**)(unsigned int *, int, int, unsigned int))(*a5 + 16))(a5, *(unsigned int *)&a5->?[820] + 4 * m, 4, 0); /*0x716ecd*/
     int v15 = *a5; // edx /*0x716edd*/
-    a5 = *(unsigned int *)&a5->?[860]; /*0x716ee9*/
+    a5 = *(unsigned int *)&a5->VoiceSelectEnslaved[860]; /*0x716ee9*/
     (*(void (**)(unsigned int *, int *, int, unsigned int))(v15 + 16))(a5, &a5, 4, 0); /*0x716eed*/
     int n; // ebx
     for ( n = 0; n < a5; ++n ) /*0x716ef8*/
       (*(void (**)(unsigned int *, int, int, unsigned int))(*a5 + 16))(a5, *(unsigned int *)&a5->?[848] + 4 * n, 4, 0); /*0x716f0b*/
     int v17 = *a5; // edx /*0x716f1b*/
-    a5 = *(unsigned int *)&a5->?[888]; /*0x716f27*/
+    a5 = *(unsigned int *)&a5->VoiceSelectDeactivated[888]; /*0x716f27*/
     (*(void (**)(unsigned int *, int *, int, unsigned int))(v17 + 16))(a5, &a5, 4, 0); /*0x716f2b*/
     int ii; // ebx
     for ( ii = 0; ii < a5; ++ii ) /*0x716f36*/
       (*(void (**)(unsigned int *, int, int, unsigned int))(*a5 + 16))(a5, *(unsigned int *)&a5->?[876] + 4 * ii, 4, 0); /*0x716f49*/
     int v19 = *a5; // edx /*0x716f59*/
-    a5 = *(unsigned int *)&a5->?[916]; /*0x716f65*/
+    a5 = *(unsigned int *)&a5->VoiceMove[916]; /*0x716f65*/
     (*(void (**)(unsigned int *, int *, int, unsigned int))(v19 + 16))(a5, &a5, 4, 0); /*0x716f69*/
     int jj; // ebx
     for ( jj = 0; jj < a5; ++jj ) /*0x716f74*/
       (*(void (**)(unsigned int *, int, int, unsigned int))(*a5 + 16))(a5, *(unsigned int *)&a5->?[904] + 4 * jj, 4, 0); /*0x716f87*/
     int v21 = *a5; // edx /*0x716f97*/
-    a5 = *(unsigned int *)&a5->?[944]; /*0x716fa3*/
+    a5 = *(unsigned int *)&a5->VoiceAttack[944]; /*0x716fa3*/
     (*(void (**)(unsigned int *, int *, int, unsigned int))(v21 + 16))(a5, &a5, 4, 0); /*0x716fa7*/
     int kk; // ebx
     for ( kk = 0; kk < a5; ++kk ) /*0x716fb2*/
       (*(void (**)(unsigned int *, int, int, unsigned int))(*a5 + 16))(a5, *(unsigned int *)&a5->?[932] + 4 * kk, 4, 0); /*0x716fc5*/
     int v23 = *a5; // edx /*0x716fd5*/
-    a5 = *(unsigned int *)&a5->?[972]; /*0x716fe1*/
+    a5 = *(unsigned int *)&a5->VoiceSpecialAttack[972]; /*0x716fe1*/
     (*(void (**)(unsigned int *, int *, int))(v23 + 16))(a5, &a5, 4); /*0x716fe5*/
     int mm; // ebx
     for ( mm = 0; mm < (int)a5; ++mm ) /*0x716ff0*/
       (*(void (**)(unsigned int *, int, int, unsigned int))(*a5 + 16))(a5, *(unsigned int *)&a5->?[960] + 4 * mm, 4, 0); /*0x717003*/
-    DynamicVector::Read((DynamicVector *)&a5->?[984], a5); /*0x717014*/
-    DynamicVector::Read((DynamicVector *)&a5->?[1012], a5); /*0x717020*/
-    DynamicVector::Read((DynamicVector *)&a5->?[1040], a5); /*0x71702c*/
-    DynamicVector::Read((DynamicVector *)&a5->?[1068], a5); /*0x717038*/
-    Stream::WriteIntArray((Stream *)&a5->?[1608], a5); /*0x717044*/
-    Stream::WriteIntArray((Stream *)&a5->?[1636], a5); /*0x717050*/
-    DynamicVector::Read((DynamicVector *)&a5->?[588], a5); /*0x71705c*/
-    DynamicVector::Read((DynamicVector *)&a5->?[1364], a5); /*0x717068*/
-    DynamicVector::Read((DynamicVector *)&a5->?[1392], a5); /*0x717074*/
-    TechnoTypeClass::SaveLoadDataArray((TechnoTypeClass *)&a5->?[1684], a5); /*0x717080*/
-    TechnoTypeClass::SaveLoadDataArray((TechnoTypeClass *)&a5->?[1712], a5); /*0x71708c*/
+    DynamicVector::Read((DynamicVector *)&a5->VoiceDie[984], a5); /*0x717014*/
+    DynamicVector::Read((DynamicVector *)&a5->VoiceFeedback[1012], a5); /*0x717020*/
+    DynamicVector::Read((DynamicVector *)&a5->MoveSound[1040], a5); /*0x71702c*/
+    DynamicVector::Read((DynamicVector *)&a5->DieSound[1068], a5); /*0x717038*/
+    Stream::WriteIntArray((Stream *)&a5->Explosion[1608], a5); /*0x717044*/
+    Stream::WriteIntArray((Stream *)&a5->DestroyAnim[1636], a5); /*0x717050*/
+    DynamicVector::Read((DynamicVector *)&a5->DebrisMaximums[588], a5); /*0x71705c*/
+    DynamicVector::Read((DynamicVector *)&a5->Prerequisite[1364], a5); /*0x717068*/
+    DynamicVector::Read((DynamicVector *)&a5->PrerequisiteOverride[1392], a5); /*0x717074*/
+    TechnoTypeClass::SaveLoadDataArray((TechnoTypeClass *)&a5->DamageParticleSystems[1684], a5); /*0x717080*/
+    TechnoTypeClass::SaveLoadDataArray((TechnoTypeClass *)&a5->DestroyParticleSystems[1712], a5); /*0x71708c*/
     return 0; /*0x717091*/
   }
   return result; /*0x717094*/

@@ -248,7 +248,7 @@ int ScriptAction::ClassifyAction(int *a1, char *a2)
   else
     v9 = *(unsigned __int8 ***)(v7->Array_field_0x4 + 4 * Value); /*0x638d5a*/
   v10 = v9[1]; /*0x638d5d*/
-  qmemcpy(v11, v10, sizeof(v11)); /*0x638d69*/
+  memcpy(v11, v10, sizeof(v11)); /*0x638d69*/
   v10 += 108; /*0x638d69*/
   v12 = *(unsigned short *)v10; /*0x638d6b*/
   v13 = v10[2]; /*0x638d6d*/
@@ -300,7 +300,7 @@ int ScriptAction::CreatePlacementAction(unsigned int *a2, const void *a3)
     *v6 = 0; /*0x633fe5*/
   else
     v6 = 0; /*0x633fea*/
-  qmemcpy(v6, a3, 0x6Fu); /*0x633ff8*/
+  memcpy(v6, a3, 0x6Fu); /*0x633ff8*/
   v5->ptr_2 = v6; /*0x633ffd*/
   ScriptAction_field_0x8 = this->ScriptAction_field_0x8; /*0x634000*/
   if ( this->ScriptAction_field_0x10 < ScriptAction_field_0x8 /*0x634024*/
@@ -491,7 +491,7 @@ int ScriptAction::FindBuildingMatch(unsigned int *a2)
     Value = Array::FindValue((Array *)v6, (int)a2); /*0x634d39*/
     v13 = Value == -1 ? 0 : *(unsigned int *)(v6->ScriptAction_field_0x4 + 4 * Value);
     v14 = *(unsigned char **)(v13 + 4); /*0x634d4d*/
-    qmemcpy(v28, v14, sizeof(v28)); /*0x634d59*/
+    memcpy(v28, v14, sizeof(v28)); /*0x634d59*/
     v14 += 108; /*0x634d59*/
     v29 = *(unsigned short *)v14; /*0x634d5b*/
     v30 = v14[2]; /*0x634d5d*/
@@ -508,7 +508,7 @@ int ScriptAction::FindBuildingMatch(unsigned int *a2)
         v19 = *(unsigned int **)(v24->ScriptAction_field_0x24 + 4 * v18); /*0x634d97*/
         if ( v19[28] ) /*0x634d9a*/
         {
-          qmemcpy(v31, v19, sizeof(v31)); /*0x634dad*/
+          memcpy(v31, v19, sizeof(v31)); /*0x634dad*/
           v20 = v19 + 27; /*0x634dad*/
           v32 = *(unsigned short *)v20; /*0x634daf*/
           v33 = *((unsigned char *)v20 + 2); /*0x634dbc*/
@@ -870,7 +870,7 @@ LABEL_7:
   if ( Type && (*(unsigned int *)(*(unsigned int *)Type->__pad_0 + 172) == 28 || *(unsigned int *)(*(unsigned int *)Type->__pad_0 + 180) == 28) ) /*0x63b67a*/
   {
     v9 = &Type->__pad_18[5]; /*0x63b680*/
-    qmemcpy(v75, v9, 0x6Cu); /*0x63b696*/
+    memcpy(v75, v9, 0x6Cu); /*0x63b696*/
     v9 += 108; /*0x63b696*/
     v75[54] = *(unsigned short *)v9; /*0x63b698*/
     LOBYTE(v75[55]) = v9[2]; /*0x63b69e*/
@@ -1114,7 +1114,7 @@ LABEL_55:
   DrawTacticalFillScanline(v57, (int)v6, *(int *)v60.__pad_0, v60.Coord3D_field_0x04, v48, v62); /*0x63bd9d*/
   if ( v50 ) /*0x63bda4*/
     DSurface::DrawMarker((DSurface *)v6, v48, v62); /*0x63bdae*/
-  qmemcpy(v75, (const void *)BuildingClass::CopyTypeDataForRender((BuildingClass *)v70, (int)v76, (int)this), 0x6Fu); /*0x63bdd3*/
+  memcpy(v75, (const void *)BuildingClass::CopyTypeDataForRender((BuildingClass *)v70, (int)v76, (int)this), 0x6Fu); /*0x63bdd3*/
   updated = BuildingClass::updateAnimationState((char *)v75); /*0x63bddf*/
   if ( updated != -1 ) /*0x63bde7*/
     LOBYTE(updated) = BuildingClass::DrawSelectionBlip( /*0x63bdff*/
@@ -1682,7 +1682,7 @@ int ScriptAction::ExecuteMissionCmd()
       v9[25],
       v9[26],
       v10);
-    qmemcpy(v9, v14, sizeof(v9)); /*0x6ffca4*/
+    memcpy(v9, v14, sizeof(v9)); /*0x6ffca4*/
     (v10) = ((v10) & ~0xFFFF) | ((v15) & 0xFFFF); /*0x6ffca6*/
     (v10) = ((v10) & ~(0xFF << 16)) | (((v16) & 0xFF) << 16); /*0x6ffca8*/
     Object_Helper_637DD0( /*0x6ffca9*/

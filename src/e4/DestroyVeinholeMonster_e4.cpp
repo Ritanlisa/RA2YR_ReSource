@@ -18,7 +18,7 @@ void E4Recv_74F620::sub_74F620()
 
 
   int i; // eax
-  for ( i = 0; i <= (int)this->AbstractClass; *((unsigned int *)this->? + i - 1) = 0 ) /*0x74f626*/
+  for ( i = 0; i <= (int)this->AbstractClass; *((unsigned int *)this->ptr_8 + i - 1) = 0 ) /*0x74f626*/
     ++i; /*0x74f62b*/
   __Release__NonReentrantLock_details_Concurrency__QAEXXZ_0((Concurrency::details::_NonReentrantLock *)this); /*0x74f639*/
 

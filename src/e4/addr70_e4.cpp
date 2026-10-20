@@ -386,9 +386,9 @@ void * TechnoClass_RenderVoxel(int * a1, int a2, void * a3, unsigned int * a4, c
   float v52[12]; // [esp+DCh] [ebp-60h] BYREF
   float v53[12]; // [esp+10Ch] [ebp-30h] BYREF
 
-  qmemcpy(v50, a5, sizeof(v50)); /*0x706eeb*/
+  memcpy(v50, a5, sizeof(v50)); /*0x706eeb*/
   v12 = *a1; /*0x706ef4*/
-  qmemcpy(v51, a5, sizeof(v51)); /*0x706efe*/
+  memcpy(v51, a5, sizeof(v51)); /*0x706efe*/
   if ( *(unsigned char *)((*(int (**)(int *))(v12 + 132))(a1) + 3500) ) /*0x706f08*/
     dword_B43180 = 1; /*0x706f12*/
   v14 = a4[1]; /*0x706f36*/
@@ -404,11 +404,11 @@ void * TechnoClass_RenderVoxel(int * a1, int a2, void * a3, unsigned int * a4, c
     {
       if ( v14 ) /*0x706f66*/
       {
-        qmemcpy( /*0x706f92*/
+        memcpy( /*0x706f92*/
           v49,
           (const void *)(*(unsigned int *)&v14[3] + 48 * ((unsigned int)v15 + *(unsigned int *)&v14[1] * (a8 % *(unsigned int *)&v14[2]))),
           sizeof(v49));
-        qmemcpy(v50, MultiplyMatrix3x4(v52, (float *)v51, v49), sizeof(v50)); /*0x706fb3*/
+        memcpy(v50, MultiplyMatrix3x4(v52, (float *)v51, v49), sizeof(v50)); /*0x706fb3*/
         v13 = v47; /*0x706fb5*/
         v14 = (VoxelSection *)v39; /*0x706fb9*/
       }
@@ -420,7 +420,7 @@ void * TechnoClass_RenderVoxel(int * a1, int a2, void * a3, unsigned int * a4, c
   }
   v17 = Voxel::RenderFrame(v49); /*0x706fef*/
   v18 = *a1; /*0x706ff4*/
-  qmemcpy(v48, v17, sizeof(v48)); /*0x707002*/
+  memcpy(v48, v17, sizeof(v48)); /*0x707002*/
   if ( (*(unsigned __int8 (**)(int *))(v18 + 468))(a1)
     || (*(unsigned __int8 (**)(int *))(*a1 + 472))(a1) )
   {
@@ -513,7 +513,7 @@ void * TechnoClass_RenderVoxel(int * a1, int a2, void * a3, unsigned int * a4, c
     v37);
   if ( *(unsigned char *)((*(int (**)(int *))(*a1 + 132))(a1) + 3500) ) /*0x707245*/
     dword_B43180 = 0; /*0x70724f*/
-  qmemcpy(a3, v48, 0x18u); /*0x70726b*/
+  memcpy(a3, v48, 0x18u); /*0x70726b*/
   return a3; /*0x70726d*/
 
 }
@@ -1009,7 +1009,7 @@ int E4Recv_70F740::sub_70F740(int a2)
   int v4; // [esp+4h] [ebp-8h]
 
   v2 = &this->u32_180; /*0x70f74c*/
-  v2->ptr_0 = *(void **)&MEMORY[0xA8EB00].?[416]; /*0x70f752*/
+  v2->ptr_0 = *(void **)&MEMORY[0xA8EB00 + 416]; /*0x70f752*/
   v2->ptr_4 = (void *)v4; /*0x70f758*/
   v2->ptr_8 = (void *)a2; /*0x70f75b*/
   return v4; /*0x70f75e*/

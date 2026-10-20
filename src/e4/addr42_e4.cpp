@@ -1177,11 +1177,11 @@ void sub_4270D0(int a1, unsigned int a2, AnimFile * a3, int a4, char * a5, int a
                   break; /*0x42714e*/
                 a2 = v12; /*0x427157*/
                 v13 = (unsigned int)v12 >> 2; /*0x42715b*/
-                qmemcpy(v8, i, 4 * v13); /*0x42715e*/
+                memcpy(v8, i, 4 * v13); /*0x42715e*/
                 v14 = &v8[4 * v13]; /*0x42715e*/
                 v8 += v12; /*0x427162*/
                 v21 = v8; /*0x427167*/
-                qmemcpy(v14, &i[4 * v13], v12 & 3); /*0x42716b*/
+                memcpy(v14, &i[4 * v13], v12 & 3); /*0x42716b*/
                 i += v12; /*0x42716d*/
               }
               if ( v12 ) /*0x427171*/
@@ -1227,18 +1227,18 @@ LABEL_22:
           memset(&v18[4 * (a2 >> 2)], v19, a2 & 3); /*0x4271fd*/
           goto LABEL_22; /*0x4271fd*/
         }
-        qmemcpy(v8, i, 4 * (a2 >> 2)); /*0x427215*/
+        memcpy(v8, i, 4 * (a2 >> 2)); /*0x427215*/
         v20 = &v8[4 * (a2 >> 2)]; /*0x427215*/
         v8 += a2; /*0x427219*/
         v21 = v8; /*0x42721e*/
-        qmemcpy(v20, &i[4 * (a2 >> 2)], a2 & 3); /*0x427222*/
+        memcpy(v20, &i[4 * (a2 >> 2)], a2 & 3); /*0x427222*/
       }
     }
     return 0; /*0x427120*/
   }
   else if ( v7 == a6 ) /*0x42723d*/
   {
-    qmemcpy(a5, v10, v7); /*0x427254*/
+    memcpy(a5, v10, v7); /*0x427254*/
     return 1; /*0x42725d*/
   }
   else

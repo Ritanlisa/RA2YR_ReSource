@@ -296,7 +296,7 @@ int ShowLoadingScreen(void * a1, void * a2, void * a3)
   TextRenderer::Printf(v35, (size_t)v20, (int)g_DSurface_Hidden, (int)v38, (int)&v32, 0xFFFF, 0, 22, v28); /*0x5315d2*/
   Frame::Present((int)g_DSurface_Hidden, 10, (int)v5, v16, 0, v29, a3, v31); /*0x5315e4*/
   (v21) = ((v21) & 0xFFFFFFFF00000000ull) | ((Audio::Callback()) & 0xFFFFFFFFull); /*0x5315e9*/
-  *(unsigned long long *)&MEMORY[0xA8EB00].?[2980] = v21 + 5000; /*0x5315f6*/
+  *(unsigned long long *)&MEMORY[0xA8EB00 + 2980] = v21 + 5000; /*0x5315f6*/
   if ( v5 ) /*0x531603*/
     __3_YAXPAX_Z(v5); /*0x531606*/
   v22 = Block; /*0x53160e*/

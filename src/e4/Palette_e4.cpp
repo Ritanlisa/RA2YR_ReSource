@@ -271,8 +271,8 @@ LABEL_38:
   v39[1] = v61.Height; /*0x642562*/
   v39[2] = v21; /*0x64256a*/
   v40 = v54[0]; /*0x642570*/
-  qmemcpy(v39 + 3, Blocka, 2 * v21); /*0x642577*/
-  qmemcpy((char *)v39 + v40, v53, v61.Height * v61.Width); /*0x642595*/
+  memcpy(v39 + 3, Blocka, 2 * v21); /*0x642577*/
+  memcpy((char *)v39 + v40, v53, v61.Height * v61.Width); /*0x642595*/
   __3_YAXPAX_Z(Blocka); /*0x6425a3*/
   __3_YAXPAX_Z(v53); /*0x6425ad*/
   __3_YAXPAX_Z(v49); /*0x6425b7*/
@@ -350,7 +350,7 @@ unsigned char * Palette::ConvertIndices(int a2)
   do /*0x632c23*/
   {
     LOWORD(v4) = *v5; /*0x632c07*/
-    *v6 = ShiftBigIntAndScan(&MEMORY[0xA8EB00].?[1], a2, (int)v4, 64); /*0x632c19*/
+    *v6 = ShiftBigIntAndScan(&MEMORY[0xA8EB00 + 1], a2, (int)v4, 64); /*0x632c19*/
     ++v5; /*0x632c1c*/
     ++v6; /*0x632c1f*/
     --v3; /*0x632c22*/

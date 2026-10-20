@@ -224,9 +224,9 @@ Coord * * CComObject_CChatEventSink___ATL::DispatchStub_32(int a1, int a2, int a
       strcpy(v7 + 46, (const char *)(a4 + 360)); /*0x7a4fcb*/
       memset(&v20[120], 0, 0x6Cu); /*0x7a4ff0*/
       if ( v4 >= 0 && v19 < *(int *)&stru_B778FC.m_3[1] ) /*0x7a4ff8*/
-        qmemcpy(&v20[120], (char *)dword_B77908 + v4, 0x6Cu); /*0x7a5009*/
+        memcpy(&v20[120], (char *)dword_B77908 + v4, 0x6Cu); /*0x7a5009*/
       v8 = v19; /*0x7a500b*/
-      qmemcpy(&v20[12], &v20[120], 0x6Cu); /*0x7a501f*/
+      memcpy(&v20[12], &v20[120], 0x6Cu); /*0x7a501f*/
       *(unsigned int *)&v20[44] = 0; /*0x7a5023*/
       if ( *(unsigned int *)&stru_B778FC.m_3[1] ) /*0x7a502b*/
       {
@@ -253,8 +253,8 @@ Coord * * CComObject_CChatEventSink___ATL::DispatchStub_32(int a1, int a2, int a
             {
               v13 = 108 * stru_B778FC.m_3[1]; /*0x7a50c6*/
               v14 = (unsigned int)(108 * *(unsigned int *)&stru_B778FC.m_3[1]) >> 2; /*0x7a50c8*/
-              qmemcpy(v10, dword_B77908, 4 * v14); /*0x7a50cb*/
-              qmemcpy(&v10[4 * v14], &v11[4 * v14], v13 & 3); /*0x7a50d2*/
+              memcpy(v10, dword_B77908, 4 * v14); /*0x7a50cb*/
+              memcpy(&v10[4 * v14], &v11[4 * v14], v13 & 3); /*0x7a50d2*/
               v11 = (char *)dword_B77908; /*0x7a50d4*/
             }
             __3_YAXPAX_Z(v11); /*0x7a50db*/
@@ -572,7 +572,7 @@ Coord * * CComObject_CChatEventSink___ATL::DispatchStub_23(int a1, int a2, int a
       {
         if ( v9 >= 0 && v8 < *(int *)&stru_B778FC.m_3[1] ) /*0x7a7c0b*/
         {
-          qmemcpy(v24, (char *)dword_B77908 + v9, sizeof(v24)); /*0x7a7c1f*/
+          memcpy(v24, (char *)dword_B77908 + v9, sizeof(v24)); /*0x7a7c1f*/
           v6 = v22; /*0x7a7c21*/
         }
         String::Assign(&v19, &v24[36]); /*0x7a7c2e*/
@@ -635,7 +635,7 @@ v12 = (HWND)Dialog::FindByHandle((Dialog *)0xCF); /*0x7a7cf3*/
       while ( 1 ) /*0x7a7e29*/
       {
         if ( v15 >= 0 && v15 < *(int *)&stru_B778FC.m_3[1] ) /*0x7a7e2f*/
-          qmemcpy(&stru_B777A0.DynamicArray_field_0x10, v16, 0x6Cu); /*0x7a7e3d*/
+          memcpy(&stru_B777A0.DynamicArray_field_0x10, v16, 0x6Cu); /*0x7a7e3d*/
         if ( (stru_B777A0.DynamicArray_field_0x10 & 1) != 0 ) /*0x7a7e46*/
           break; /*0x7a7e46*/
         ++v15; /*0x7a7e48*/
@@ -796,7 +796,7 @@ Coord * * CComObject_CChatEventSink___ATL::DispatchStub_22(int a1, int a2, int a
     {
       sprintf(Buffer, "P%s", byte_A8B8E0); /*0x7a81cf*/
       if ( *(int *)&stru_B778FC.m_3[1] > 0 ) /*0x7a81de*/
-        qmemcpy(&Buffer[64], dword_B77908, 0x6Cu); /*0x7a81ef*/
+        memcpy(&Buffer[64], dword_B77908, 0x6Cu); /*0x7a81ef*/
       (*(void (**)(LPVOID, unsigned char *, unsigned char *))(*(unsigned int *)ppv + 56))(ppv, &Buffer[64], Buffer); /*0x7a8203*/
       Debug::Log(); /*0x7a820b*/
       Event_Play(v5); /*0x7a8213*/

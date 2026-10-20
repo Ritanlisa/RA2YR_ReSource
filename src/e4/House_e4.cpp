@@ -457,7 +457,7 @@ unsigned int * House::GetStartCoords(unsigned int *aP1)
     BuildingByTiberiumType = FindBuildingByTiberiumType(v3); /*0x47fbce*/
     if ( BuildingByTiberiumType == -1 ) /*0x47fbd6*/
       goto LABEL_12; /*0x47fbd6*/
-    v6 = *(unsigned int **)(g_BuildingLoadQueue_Array.?[2] + 4 * BuildingByTiberiumType); /*0x47fbe2*/
+    v6 = *(unsigned int **)(&dword_B0F4EC + 4 * BuildingByTiberiumType); /*0x47fbe2*/
     if ( this->u32_11C ) /*0x47fbe5*/
     {
       v7 = *(unsigned int *)(*(unsigned int *)g_BuildingTypeClass_Array /*0x47fc36*/

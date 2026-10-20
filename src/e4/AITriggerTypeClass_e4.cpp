@@ -369,7 +369,7 @@ ObjectClass * * AITriggerTypeClass::LoadFromINI(unsigned char *** a2, void *a2_2
   LOBYTE(v46[0].UIName) = 0; /*0x41f5fe*/
   if ( &v46[0].__pad_24[12] != &this->Name ) /*0x41f602*/
   {
-    qmemcpy(&this->Name, &v46[0].__pad_24[12], 0x30u); /*0x41f60d*/
+    memcpy(&this->Name, &v46[0].__pad_24[12], 0x30u); /*0x41f60d*/
     this->u32_94 = v46[0].UIName; /*0x41f60f*/
   }
   v5 = strtok(0, Delimiter); /*0x41f616*/

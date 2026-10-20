@@ -71,7 +71,7 @@ int SlaveManagerClass::IsMasterHarvester()
 
 // 0x6AF1A0
 namespace gamemd {
-void* SlaveManagerClass::ctor(TechnoClass * aP1, int a3, int a4, int a5, int a6, void *a6_1, void *a7, void *a8)
+void* SlaveManagerClass::ctor(TechnoClass * a2, int a3, int a4, int a5, int a6, void *a6_1, void *a7, void *a8)
 {
 
   int v7; // eax
@@ -767,7 +767,7 @@ int SlaveManagerClass::LostSlave(int aP1, void *a2)
     v5[1] = 6; /*0x6b0a66*/
     slaveType = this->slaveType; /*0x6b0a73*/
     result = (int)(v5 + 2); /*0x6b0a76*/
-    *(unsigned int *)result = *(unsigned int *)&MEMORY[0xA8EB00].?[416]; /*0x6b0a79*/
+    *(unsigned int *)result = *(unsigned int *)&MEMORY[0xA8EB00 + 416]; /*0x6b0a79*/
     *(unsigned int *)(result + 4) = v7; /*0x6b0a7f*/
     *(unsigned int *)(result + 8) = slaveType; /*0x6b0a82*/
   }

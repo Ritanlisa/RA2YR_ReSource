@@ -408,7 +408,7 @@ AbstractClass * * FactoryClass::Stat(int * a2)
   Debug::Log(); /*0x4ca4a7*/
   Debug::Log(); /*0x4ca4b5*/
   Debug::Log(); /*0x4ca4c3*/
-  (*((void (**)(void **))this->owner->? + 4))(&this->owner->?); /*0x4ca4d4*/
+  (*((void (**)(void **))this->owner->? + 4))(&*(_DWORD *)(this->owner + 4)); /*0x4ca4d4*/
   Debug::Log(); /*0x4ca4dd*/
   (*((void (**)(void **))this->balance + 4))(&this->balance); /*0x4ca4ec*/
   Debug::Log(); /*0x4ca4f5*/
@@ -426,7 +426,7 @@ AbstractClass * * FactoryClass::Stat(int * a2)
     Power::TimerProcess(v6); /*0x4ca549*/
   }
   Power::TimerProcess(this->specialItem); /*0x4ca554*/
-  v7 = (*((int (**)(void **))this->owner->? + 4))(&this->owner->?); /*0x4ca563*/
+  v7 = (*((int (**)(void **))this->owner->? + 4))(&*(_DWORD *)(this->owner + 4)); /*0x4ca563*/
   return Power::TimerProcess(v7); /*0x4ca56e*/
 
 }

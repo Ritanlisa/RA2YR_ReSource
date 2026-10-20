@@ -210,7 +210,7 @@ AbstractClass * HouseTypeClass::LoadFromINI(uint8_t *** aP1, void *a2)
   }
   if ( &Destination != &_EBX->buildtimeBuildingsMult ) /*0x51191a*/
   {
-    qmemcpy(&_EBX->buildtimeBuildingsMult, &Destination, 0x18u); /*0x511925*/
+    memcpy(&_EBX->buildtimeBuildingsMult, &Destination, 0x18u); /*0x511925*/
     *(unsigned char *)(_EBX + 176) = Destination.nextArrayIndex; /*0x511927*/
     v4 = this; /*0x511928*/
   }

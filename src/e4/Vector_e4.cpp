@@ -261,7 +261,7 @@ char Vector::Grow()
   memset(v5, 0, 4 * ((unsigned int)(4 * v4) >> 2)); /*0x7aef0a*/
   if ( this->Vector_field_0x8 ) /*0x7aef13*/
   {
-    qmemcpy(v5, this->Vector_field_0x8, 4 * *(unsigned int *)this->Cl_ph); /*0x7aef28*/
+    memcpy(v5, this->Vector_field_0x8, 4 * *(unsigned int *)this->Cl_ph); /*0x7aef28*/
     v4 = v6; /*0x7aef31*/
   }
   __3_YAXPAX_Z(this->Vector_field_0x8); /*0x7aef39*/

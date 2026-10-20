@@ -63,10 +63,10 @@ LABEL_9:
     v13 += Timer::GetTicks() - *(unsigned int *)stru_887338.__pad_0; /*0x48b7f4*/
   *(unsigned int *)(this->PhoneNumber[7] + v12 + 4) = v13; /*0x48b7fb*/
   *(unsigned int *)(this->PhoneNumber[7] + v12 + 8) = a3; /*0x48b806*/
-  qmemcpy(*(void **)(this->PhoneNumber[7] + v12 + 12), a2, a3); /*0x48b816*/
+  memcpy(*(void **)(this->PhoneNumber[7] + v12 + 12), a2, a3); /*0x48b816*/
   if ( a4 && a5 > 0 && a5 <= this->PacketsSent ) /*0x48b832*/
   {
-    qmemcpy(*(void **)(this->PhoneNumber[7] + v12 + 20), a4, a5); /*0x48b842*/
+    memcpy(*(void **)(this->PhoneNumber[7] + v12 + 20), a4, a5); /*0x48b842*/
     *(unsigned int *)(this->PhoneNumber[7] + v12 + 16) = a5; /*0x48b84e*/
   }
   else
@@ -375,7 +375,7 @@ LABEL_10:
   v11 = *(unsigned int *)(TileType + 8) == 14; /*0x48c37e*/
   *(unsigned int *)TileType |= 2u; /*0x48c380*/
   if ( v10 >= 0 && !v11 ) /*0x48c382*/
-    qmemcpy(a2, (const void *)(*(unsigned int *)(TileType + 12) + 14), v10); /*0x48c395*/
+    memcpy(a2, (const void *)(*(unsigned int *)(TileType + 12) + 14), v10); /*0x48c395*/
   *a3 = v10; /*0x48c3a5*/
   return 1; /*0x48c364*/
 

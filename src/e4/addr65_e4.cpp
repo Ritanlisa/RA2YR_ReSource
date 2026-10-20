@@ -1214,7 +1214,7 @@ int E4Recv_659590::sub_659590(unsigned int * a2, unsigned int * a3, short a4)
   if ( result ) /*0x6595fd*/
   {
     char *v6; // esi
-    v6 = (char *)this->? - ZCoordToScreenY(a2[2]) - 2; /*0x65960f*/
+    v6 = (char *)this->ptr_C - ZCoordToScreenY(a2[2]) - 2; /*0x65960f*/
     int v7; // eax
     v7 = ZCoordToScreenY(a3[2]); /*0x659612*/
     return (*(char (**)(AudioStream *, CellStruct *, int *, int *, unsigned int, char *, int, unsigned int))(*(unsigned int *)g_DSurface_Hidden_2 + 52))( /*0x65963f*/

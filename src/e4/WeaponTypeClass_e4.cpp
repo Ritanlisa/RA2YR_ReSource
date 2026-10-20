@@ -176,7 +176,7 @@ unsigned int * WeaponTypeClass::Constructor(ObjectClass * aP1, void *a2, void *a
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F738C) */  /*0x771e7d*/
   /* X11: ptr_0 install elided (implicit via WeaponTypeClass virtuals 0x771e83) */
   /* X11: ptr_0 install elided (implicit via WeaponTypeClass virtuals 0x771e8a) */
-  AbstractClass::GenerateUniqueID((AbstractClass *)&aP1->?); /*0x771e91*/
+  AbstractClass::GenerateUniqueID((AbstractClass *)&aP1->ptr_4); /*0x771e91*/
   if ( g_WeaponTypePool < dword_887570 /*0x771eca*/
     || (byte_887575 || !dword_887570)
     && dword_88757C > 0
@@ -209,7 +209,7 @@ int WeaponTypeClass::Destructor(void *a1)
   WeaponTypeClass *v7; // [esp+8h] [ebp-4h] BYREF
   v7 = a1; /*0x771f95*/
   int v2; // eax
-  v2 = ((int (*)(WeaponTypeClass **, WeaponTypeClass **))WeaponTypeClass_Array->?)( /*0x771f99*/
+  v2 = ((int (*)(WeaponTypeClass **, WeaponTypeClass **))WeaponTypeClass_Array->uniqueId)( /*0x771f99*/
          &WeaponTypeClass_Array,
          &v7);
   if ( v2 != -1 && v2 < g_WeaponTypePool && v2 < --g_WeaponTypePool ) /*0x771fb4*/

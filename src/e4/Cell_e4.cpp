@@ -1635,7 +1635,7 @@ void* Cell::CreateCrater(int a1, int a2, int a3, int a4, int a5)
                 v15 = (char *)g_CraterPool + v14 + 20; /*0x6d29a7*/
                 v16 = (char *)g_CraterPool + v14; /*0x6d29ab*/
                 v14 += 20; /*0x6d29b3*/
-                qmemcpy(v16, v15, 0x14u); /*0x6d29b6*/
+                memcpy(v16, v15, 0x14u); /*0x6d29b6*/
               }
               while ( v13 < g_CraterCreationState ); /*0x6d29be*/
             }
@@ -1679,7 +1679,7 @@ LABEL_43:
     {
       v19 = g_CraterCreationState++; /*0x6d2a9e*/
       v12 = 5 * v19; /*0x6d2aad*/
-      qmemcpy((char *)g_CraterPool + 4 * v12, v40, 0x14u); /*0x6d2ab8*/
+      memcpy((char *)g_CraterPool + 4 * v12, v40, 0x14u); /*0x6d2ab8*/
     }
   }
   else
@@ -1695,7 +1695,7 @@ LABEL_43:
     v39[2] = v22; /*0x6d2b1e*/
     v39[3] = v23; /*0x6d2b27*/
     LOBYTE(v39[4]) = v20; /*0x6d2b32*/
-    qmemcpy((char *)g_CraterPool + 20 * v29, v39, 0x14u); /*0x6d2b36*/
+    memcpy((char *)g_CraterPool + 20 * v29, v39, 0x14u); /*0x6d2b36*/
   }
   return v12; /*0x6d2aba*/
 

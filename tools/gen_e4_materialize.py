@@ -439,6 +439,28 @@ def trunc_cache_get(addr):
         return None
 
 
+QMARK_MEMBER_RE = re.compile(r"(?:->|\.)\?")
+
+
+class QMarkMemberError(RuntimeError):
+    """Raised when IDA pseudocode still carries the unnamed-member token.
+
+    `.?` / `->?` has no offset in the text (consecutive `this->?` can be
+    different members), so it can only be resolved from the binary.  The
+    materializer must never copy it into src/.
+    """
+
+
+def assert_no_qmark_members(pseudo, func_name, addr):
+    m = QMARK_MEMBER_RE.search(pseudo)
+    if m:
+        line_no = pseudo.count("\n", 0, m.start()) + 1
+        line = pseudo.splitlines()[line_no - 1][:180] if pseudo.splitlines() else ""
+        raise QMarkMemberError(
+            "unresolved IDA unnamed member: %s (0x%X) line %d: %r"
+            % (func_name or "?", addr, line_no, line))
+
+
 def emit_pseudo(pseudo):
     """截断记录（export_funcs 输出上限）→ 注释化伪码 + 空体，保持括号平衡。"""
     if TRUNC_MARK.search(pseudo):

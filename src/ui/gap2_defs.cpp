@@ -2878,10 +2878,10 @@ int SidebarClass::ResetProductionState() {
   v27 = this; /*0x637ab6*/
   result = 0; /*0x637aba*/
   v25 = 0; /*0x637ac2*/
-  v26 = *(unsigned int *)&MEMORY[0xA8EB00].?[164]; /*0x637ac8*/
+  v26 = *(unsigned int *)&MEMORY[0xA8EB00 + 164]; /*0x637ac8*/
   while ( v25 < v26 )
   {
-    v2 = *(BuildingClass **)(*(unsigned int *)&MEMORY[0xA8EB00].?[152] + 4 * result); /*0x637adc*/
+    v2 = *(BuildingClass **)(*(unsigned int *)&MEMORY[0xA8EB00 + 152] + 4 * result); /*0x637adc*/
     owner = v2->owner; /*0x637adf*/
     relatedTagsCount = (SidebarClass *)owner->relatedTagsCount; /*0x637ae5*/
     if ( (unsigned __int8)House::IsHumanPlayer((House *)owner) && MEMORY[0xA83D4C] ) /*0x637af8*/
@@ -2961,7 +2961,7 @@ LABEL_33:
             if ( (v21 == -1 || v21 > 0) && !*(unsigned char *)(v20 + 28) ) /*0x637c56*/
             {
               (*((void (**)(BuildingClass *, int, int))v2->ptr_0 + 122))(v2, 28, 1); /*0x637c65*/
-              qmemcpy( /*0x637c87*/
+              memcpy( /*0x637c87*/
                 v29.ScriptAction_field_0x8,
                 (const void *)FactoryClass::CompleteCurrentItem(v20, (int)v29.__pad_78),
                 0x6Fu);
@@ -2971,7 +2971,7 @@ LABEL_33:
               else
                 v22 = 0; /*0x637c9d*/
               v24 = v22; /*0x637caa*/
-              qmemcpy(v22, v29.ScriptAction_field_0x8, 0x6Cu); /*0x637cae*/
+              memcpy(v22, v29.ScriptAction_field_0x8, 0x6Cu); /*0x637cae*/
               *((unsigned short *)v22 + 54) = v29.ScriptAction_field_0x74; /*0x637cb0*/
               v22[110] = BYTE2(v29.ScriptAction_field_0x74); /*0x637cb2*/
               if ( *v24 == 4 ) /*0x637cba*/
@@ -4531,7 +4531,7 @@ void* TabClass::updateTabProduction(int a1) {
   result = this; /*0x6a80a0*/
   this->TabClass_field_0x0 = 0; /*0x6a80aa*/
   LOBYTE(this->TabClass_field_0x4) = 0; /*0x6a80ac*/
-  v3 = *(unsigned int *)&MEMORY[0xA8EB00].?[416]; /*0x6a80af*/
+  v3 = *(unsigned int *)&MEMORY[0xA8EB00 + 416]; /*0x6a80af*/
   result->Count = 0; /*0x6a80b5*/
   result->u32_8 = v3; /*0x6a80b8*/
   result->CapacityIncrement = 0; /*0x6a80bc*/
@@ -4560,7 +4560,7 @@ void* TabClass::updateTabProduction(int a1) {
   {
     *((unsigned int *)v5 - 1) = 0; /*0x6a811c*/
     *v5 = 0; /*0x6a811f*/
-    v7 = *(unsigned int *)&MEMORY[0xA8EB00].?[416]; /*0x6a8121*/
+    v7 = *(unsigned int *)&MEMORY[0xA8EB00 + 416]; /*0x6a8121*/
     *((unsigned int *)v5 + 3) = 0; /*0x6a8127*/
     *((unsigned int *)v5 + 1) = v7; /*0x6a812a*/
     *((unsigned int *)v5 + 4) = 0; /*0x6a812d*/
@@ -4933,7 +4933,7 @@ LABEL_44:
                     v26 = (const void *)EventClass::Init(v25, 11, v55, -1, v56, &word_B07DD8); /*0x6a8ee8*/
                     if ( dword_A802C8 < 128 ) /*0x6a8ef7*/
                     {
-                      qmemcpy(&byte_A802D4[111 * dword_A802D0], v26, 0x6Fu); /*0x6a8f13*/
+                      memcpy(&byte_A802D4[111 * dword_A802D0], v26, 0x6Fu); /*0x6a8f13*/
                       dword_A83A54[dword_A802D0] = timeGetTime(); /*0x6a8f20*/
                       dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x6a8f37*/
                       ++dword_A802C8; /*0x6a8f3d*/
@@ -5196,7 +5196,7 @@ int SidebarClass::UpdateProduction() {
   char v53[112]; // [esp+74h] [ebp-E0h] BYREF
   char v54[112]; // [esp+E4h] [ebp-70h] BYREF
 
-  if ( MEMORY[0xA8EB00].?[391] || !this->u32_54 ) /*0x6aa617*/
+  if ( MEMORY[0xA8EB00 + 391] || !this->u32_54 ) /*0x6aa617*/
     return 0; /*0x6aaca5*/
   v43 = 0; /*0x6aa629*/
   v2 = 26; /*0x6aa634*/
@@ -5239,7 +5239,7 @@ int SidebarClass::UpdateProduction() {
       if ( v8 < this->u32_54 ) /*0x6aa6e4*/
       {
         v3 = v51; /*0x6aa6ed*/
-        qmemcpy(v40, (const void *)((char *)this + 52 * v8 + 88), 0x34u); /*0x6aa6fd*/
+        memcpy(v40, (const void *)((char *)this + 52 * v8 + 88), 0x34u); /*0x6aa6fd*/
       }
       ++v7; /*0x6aa705*/
       v40 += 52; /*0x6aa70b*/
@@ -5279,7 +5279,7 @@ LABEL_25:
           v12 = EventClass::AddEventEx(v53, (int)MEMORY[0xA83D4C]->Object_field_0x30, 0x10u, *v44, *v9, v10[3278]); /*0x6aa7e7*/
           if ( (int)stru_A80220.lineTrailer < 128 ) /*0x6aa7f6*/
           {
-            qmemcpy((char *)&byte_A802D4 + 111 * dword_A802D0, v12, 0x6Fu); /*0x6aa812*/
+            memcpy((char *)&byte_A802D4 + 111 * dword_A802D0, v12, 0x6Fu); /*0x6aa812*/
             v9 = v41; /*0x6aa823*/
             dword_A83A54[dword_A802D0] = timeGetTime(); /*0x6aa827*/
             dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x6aa83e*/
@@ -5302,7 +5302,7 @@ LABEL_25:
             v14 = EventClass::AddEventEx(v54, (int)MEMORY[0xA83D4C]->Object_field_0x30, 0x2Eu, *v44, *v9, v10[3278]); /*0x6aa8cd*/
             if ( (int)stru_A80220.lineTrailer < 128 ) /*0x6aa8dc*/
             {
-              qmemcpy((char *)&byte_A802D4 + 111 * dword_A802D0, v14, 0x6Fu); /*0x6aa8f8*/
+              memcpy((char *)&byte_A802D4 + 111 * dword_A802D0, v14, 0x6Fu); /*0x6aa8f8*/
               v9 = v41; /*0x6aa909*/
               dword_A83A54[dword_A802D0] = timeGetTime(); /*0x6aa90d*/
               dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x6aa924*/
@@ -5320,12 +5320,12 @@ LABEL_25:
             {
               memset(v52, 0, 16); /*0x6aa957*/
               v52[5] = 0; /*0x6aa967*/
-              v52[7] = *(unsigned int *)&MEMORY[0xA8EB00].?[416]; /*0x6aa96b*/
+              v52[7] = *(unsigned int *)&MEMORY[0xA8EB00 + 416]; /*0x6aa96b*/
               v52[9] = 0; /*0x6aa96f*/
               v52[10] = 0; /*0x6aa973*/
               LOBYTE(v52[6]) = 0; /*0x6aa982*/
               v52[11] = 1; /*0x6aa987*/
-              qmemcpy(v15, v52, 0x34u); /*0x6aa98f*/
+              memcpy(v15, v52, 0x34u); /*0x6aa98f*/
               v9 = v41; /*0x6aa991*/
             }
             v15 += 52; /*0x6aa997*/
@@ -5346,7 +5346,7 @@ LABEL_25:
         v19[24] = 0; /*0x6aa9f7*/
         *(unsigned int *)((char *)this + 4 * (v18 + 4 * (3 * v18 + 6) + 2)) = 0; /*0x6aa9fd*/
         v19[27] = 0; /*0x6aaa01*/
-        v19[29] = *(unsigned int *)&MEMORY[0xA8EB00].?[416]; /*0x6aaa0b*/
+        v19[29] = *(unsigned int *)&MEMORY[0xA8EB00 + 416]; /*0x6aaa0b*/
         v20 = v52[14]; /*0x6aaa0d*/
         v19[32] = 0; /*0x6aaa11*/
         v19[30] = v20; /*0x6aaa17*/
@@ -5619,7 +5619,7 @@ int SidebarClass::ProcessInput(int a1, void* a2, int a3) {
                   *(unsigned __int8 *)(v12 + 3278));
           if ( *(int *)&dword_A802C8 < 128 ) /*0x6ab039*/
           {
-            qmemcpy(&byte_A802D4[111 * dword_A802D0], v16, 0x6Fu); /*0x6ab055*/
+            memcpy(&byte_A802D4[111 * dword_A802D0], v16, 0x6Fu); /*0x6ab055*/
             dword_A83A54[dword_A802D0] = timeGetTime(); /*0x6ab066*/
             dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x6ab07d*/
             ++*(unsigned int *)&dword_A802C8; /*0x6ab083*/
@@ -5646,7 +5646,7 @@ int SidebarClass::ProcessInput(int a1, void* a2, int a3) {
                     *(unsigned __int8 *)(v12 + 3278));
             if ( *(int *)&dword_A802C8 < 128 ) /*0x6ab13a*/
             {
-              qmemcpy(&byte_A802D4[111 * dword_A802D0], v19, 0x6Fu); /*0x6ab156*/
+              memcpy(&byte_A802D4[111 * dword_A802D0], v19, 0x6Fu); /*0x6ab156*/
               v12 = v75; /*0x6ab167*/
               dword_A83A54[dword_A802D0] = timeGetTime(); /*0x6ab16b*/
               dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x6ab182*/
@@ -5684,7 +5684,7 @@ LABEL_41:
             if ( *(int *)&dword_A802C8 >= 128 ) /*0x6ab20e*/
               goto LABEL_45; /*0x6ab20e*/
 LABEL_44:
-            qmemcpy(&byte_A802D4[111 * dword_A802D0], v21, 0x6Fu); /*0x6ab242*/
+            memcpy(&byte_A802D4[111 * dword_A802D0], v21, 0x6Fu); /*0x6ab242*/
             dword_A83A54[dword_A802D0] = timeGetTime(); /*0x6ab26d*/
             dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x6ab284*/
             ++*(unsigned int *)&dword_A802C8; /*0x6ab28a*/
@@ -5760,7 +5760,7 @@ LABEL_85:
                     (unsigned __int8)v69);
             if ( *(int *)&dword_A802C8 < 128 ) /*0x6ab77d*/
             {
-              qmemcpy(&byte_A802D4[111 * dword_A802D0], v43, 0x6Fu); /*0x6ab799*/
+              memcpy(&byte_A802D4[111 * dword_A802D0], v43, 0x6Fu); /*0x6ab799*/
               dword_A83A54[dword_A802D0] = timeGetTime(); /*0x6ab7aa*/
               dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x6ab7c1*/
               ++*(unsigned int *)&dword_A802C8; /*0x6ab7c7*/
@@ -5865,7 +5865,7 @@ LABEL_120:
                   v68);
           if ( *(int *)&dword_A802C8 < 128 ) /*0x6ab520*/
           {
-            qmemcpy(&byte_A802D4[111 * dword_A802D0], v30, 0x6Fu); /*0x6ab53c*/
+            memcpy(&byte_A802D4[111 * dword_A802D0], v30, 0x6Fu); /*0x6ab53c*/
             v28 = v73; /*0x6ab54d*/
             dword_A83A54[dword_A802D0] = timeGetTime(); /*0x6ab551*/
             dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x6ab568*/
@@ -5915,7 +5915,7 @@ LABEL_120:
           v25 = EventClass::AddEventEx(v78, v24, 0x10u, v10, v67, v63); /*0x6ab349*/
           if ( *(int *)&dword_A802C8 < 128 ) /*0x6ab358*/
           {
-            qmemcpy(&byte_A802D4[111 * dword_A802D0], v25, 0x6Fu); /*0x6ab374*/
+            memcpy(&byte_A802D4[111 * dword_A802D0], v25, 0x6Fu); /*0x6ab374*/
             dword_A83A54[dword_A802D0] = timeGetTime(); /*0x6ab385*/
             dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x6ab39c*/
             ++*(unsigned int *)&dword_A802C8; /*0x6ab3a2*/
@@ -5933,7 +5933,7 @@ LABEL_120:
 LABEL_60:
         if ( *(int *)&dword_A802C8 < 128 ) /*0x6ab40b*/
         {
-          qmemcpy(&byte_A802D4[111 * dword_A802D0], v15, 0x6Fu); /*0x6ab42b*/
+          memcpy(&byte_A802D4[111 * dword_A802D0], v15, 0x6Fu); /*0x6ab42b*/
           dword_A83A54[dword_A802D0] = timeGetTime(); /*0x6ab43c*/
           dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x6ab453*/
           ++*(unsigned int *)&dword_A802C8; /*0x6ab459*/
@@ -7501,7 +7501,7 @@ void* SidebarClass::FindProductionData() {
     if ( !v5 ) /*0x77db05*/
       goto LABEL_18; /*0x77db05*/
   }
-  qmemcpy(v2, v5, 0x6Cu); /*0x77db71*/
+  memcpy(v2, v5, 0x6Cu); /*0x77db71*/
 LABEL_18:
   DeleteAndZero((ObjectClass *)&v7); /*0x77db73*/
   return v2; /*0x77da87*/

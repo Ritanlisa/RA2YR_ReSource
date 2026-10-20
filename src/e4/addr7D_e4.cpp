@@ -626,7 +626,7 @@ UnwindUp0_0:
             goto TrailUp3_0;
         }
       default:
-        qmemcpy(a0, aP1, 4 * v5); /*0x7d0a53*/
+        memcpy(a0, aP1, 4 * v5); /*0x7d0a53*/
         v3 = (char *)aP1 + 4 * v5; /*0x7d0a53*/
         v4 = (char *)a0 + 4 * v5; /*0x7d0a53*/
         switch ( aP2 & 3 ) /*0x7d0a55*/

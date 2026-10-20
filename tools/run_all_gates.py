@@ -45,6 +45,9 @@ gates = [
     # unaccounted = 0). No baseline, no e4 exemption, scans all src/**.
     ("generated-quality", ["tools/check_generated_quality.py"]),
     ("oo-translation", ["tools/check_oo_translation.py"]),
+    # X91: IDA unnamed-member token `.?` / `->?` is never valid C++ and has no
+    # offset in the text; the materializer must resolve it from the binary.
+    ("qmark-members", ["tools/check_qmark_members.py"]),
     # exec-flow worker count: measured per-worker steady RSS is ~2.5GB
     # (signals.json + member_lookup.json parsed per spawn worker), so 4
     # workers = ~10GB, inside the 12GB memory discipline on the 32GB box.

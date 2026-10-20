@@ -5647,7 +5647,7 @@ LABEL_11:
   }
   if ( Destination != v7 ) /*0x500ca9*/
   {
-    qmemcpy(v7, Destination, 0x20u); /*0x500cb4*/
+    memcpy(v7, Destination, 0x20u); /*0x500cb4*/
     v4 = (bool *)a3; /*0x500cb6*/
   }
   if ( this->u32_16009 ) /*0x500cb9*/
@@ -8981,10 +8981,10 @@ int HouseClass::UpdateFogVisibility() {
   int i; // [esp+8h] [ebp-4h]
 
   memset(&this->threatPosed_estimates_padding[1], 0, 0x10810u); /*0x509412*/
-  result = *(unsigned int *)&MEMORY[0xA8EB00].?[164] - 1; /*0x509419*/
-  for ( i = *(unsigned int *)&MEMORY[0xA8EB00].?[164] - 1; i >= 0; --i ) /*0x509420*/
+  result = *(unsigned int *)&stru_A8E960.random[276] - 1; /*0x509419*/
+  for ( i = *(unsigned int *)&stru_A8E960.random[276] - 1; i >= 0; --i ) /*0x509420*/
   {
-    v3 = *(__int16 **)(*(unsigned int *)&MEMORY[0xA8EB00].?[152] + 4 * result); /*0x50942e*/
+    v3 = *(__int16 **)(*(unsigned int *)&stru_A8E960.random[264] + 4 * result); /*0x50942e*/
     if ( !*((unsigned char *)v3 + 129) ) /*0x509431*/
     {
       if ( *((unsigned char *)v3 + 144) ) /*0x50943f*/
@@ -8997,7 +8997,7 @@ int HouseClass::UpdateFogVisibility() {
              || (*(int (**)(__int16 *))(*(unsigned int *)v3 + 44))(v3) == 2)
             && v3 )
           {
-            if ( v3[686] != *(unsigned short *)&MEMORY[0xA8EB00].?[948] || v3[687] != *(unsigned short *)&MEMORY[0xA8EB00].?[950] ) /*0x5094b2*/
+            if ( v3[686] != *(unsigned short *)&stru_A8E960.waypoints[6] || v3[687] != *(unsigned short *)&stru_A8E960.waypoints[8] ) /*0x5094b2*/
             {
               v5 = Cell::PosToLinearIndex(v3 + 686); /*0x5094be*/
               v6 = (HouseClass *)*((unsigned int *)v3 + 135); /*0x5094c3*/

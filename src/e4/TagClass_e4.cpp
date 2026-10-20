@@ -75,12 +75,12 @@ TriggerClass * * TagClass::Destructor(void * a1)
           }
           else
           {
-            ambientParticles = FootClass_Array.?; /*0x6e4fbb*/
+            ambientParticles = dword_8B40CC; /*0x6e4fbb*/
             while ( ambientParticles->ObjectClass != a1 ) /*0x6e4fc3*/
             {
               ++v3; /*0x6e4fc5*/
               ambientParticles = (ParticleSystemClass *)((char *)&ambientParticles->ptr_4); /*0x6e4fc6*/
-              if ( v3 >= (int)FootClass_Array.? ) /*0x6e4fcb*/
+              if ( v3 >= (int)dword_8B40D8) /*0x6e4fcb*/
                 goto LABEL_9; /*0x6e4fcb*/
             }
           }
@@ -88,7 +88,7 @@ TriggerClass * * TagClass::Destructor(void * a1)
           if ( dword_A83CDC >= v3 ) /*0x6e4fd8*/
           {
             --dword_A83CDC; /*0x6e4fdd*/
-            if ( v5 - 1 < 0 && !FootClass_Array.? ) /*0x6e4fe6*/
+            if ( v5 - 1 < 0 && !FootClass_Array.ptr_0 ) /*0x6e4fe6*/
               dword_A83CDC = 0; /*0x6e4fe8*/
           }
         }
@@ -104,19 +104,19 @@ TriggerClass * * TagClass::Destructor(void * a1)
           if ( (((Debug *)v6)->AccumFlags() & 4) != 0 ) /*0x6e5012*/
           {
             v7 = 0; /*0x6e501a*/
-            if ( FootClass_Array.?[0] <= 0 ) /*0x6e501e*/
+            if ( dword_8B41B8 <= 0 ) /*0x6e501e*/
             {
               LABEL_22:
               v7 = -1; /*0x6e5032*/
             }
             else
             {
-              v8 = (TagClass **)FootClass_Array.?[5]; /*0x6e5020*/
+              v8 = (TagClass **)dword_8B41AC; /*0x6e5020*/
               while ( *v8 != a1 ) /*0x6e5028*/
               {
                 ++v7; /*0x6e502a*/
                 ++v8; /*0x6e502b*/
-                if ( v7 >= FootClass_Array.?[0] ) /*0x6e5030*/
+                if ( v7 >= dword_8B41B8 ) /*0x6e5030*/
                   goto LABEL_22; /*0x6e5030*/
               }
             }
@@ -124,7 +124,7 @@ TriggerClass * * TagClass::Destructor(void * a1)
             if ( (int)dword_A83DBC >= v7 ) /*0x6e503d*/
             {
               --dword_A83DBC; /*0x6e5042*/
-              if ( (int)SuperClass_field_0x6C - 1 < 0 && !FootClass_Array.?[0] ) /*0x6e504b*/
+              if ( (int)SuperClass_field_0x6C - 1 < 0 && !dword_8B41B8 ) /*0x6e504b*/
                 dword_A83DBC = 0; /*0x6e504d*/
             }
           }

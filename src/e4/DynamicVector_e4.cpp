@@ -525,7 +525,7 @@ char DynamicVector::RemoveAt2(int a2)
 
 // 0x6C6400
 namespace gamemd {
-char DynamicVector::Add(DynamicVector * aP1, void *a2_1, void *a3_1)
+char DynamicVector::Add(DynamicVector * aP1, void *a2, void *a3_1)
 {
 
   int DynamicVector_field_0x8; // ecx

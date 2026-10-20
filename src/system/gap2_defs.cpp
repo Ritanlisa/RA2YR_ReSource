@@ -24594,11 +24594,11 @@ int FactoryClass::CompleteCurrentItem(int a2) {
   else
     v5 = *(unsigned __int8 ***)(v3->Array_field_0x4 + 4 * Value); /*0x6365b5*/
   v6 = v5[1]; /*0x6365b8*/
-  qmemcpy(v24, v6, sizeof(v24)); /*0x6365c4*/
+  memcpy(v24, v6, sizeof(v24)); /*0x6365c4*/
   v6 += 108; /*0x6365c4*/
   v25 = *(unsigned short *)v6; /*0x6365c6*/
   v26 = v6[2]; /*0x6365c8*/
-  qmemcpy(&this->q01D, v24, 0x6Cu); /*0x6365d5*/
+  memcpy(&this->q01D, v24, 0x6Cu); /*0x6365d5*/
   *&this->u32_89 = v25; /*0x6365d7*/
   this->u32_8B = v26; /*0x6365d9*/
   v7 = this->abstractFlags; /*0x6365da*/
@@ -24682,7 +24682,7 @@ int FactoryClass::CompleteCurrentItem(int a2) {
     if ( v21 != -1 ) /*0x63677d*/
       FactoryClass::RemoveItem((FactoryClass *)&stru_AC4B48.__pad_B8[64], v21); /*0x636785*/
   }
-  qmemcpy((void *)a2, v24, 0x6Cu); /*0x63679c*/
+  memcpy((void *)a2, v24, 0x6Cu); /*0x63679c*/
   *(unsigned short *)(a2 + 108) = v25; /*0x63679e*/
   *(unsigned char *)(a2 + 110) = v26; /*0x6367a0*/
   return a2; /*0x6367a1*/
@@ -28814,11 +28814,11 @@ int FactoryClass::CompleteCurrentItem(int a2) {
   else
     v5 = *(unsigned __int8 ***)(v3->Array_field_0x4 + 4 * Value); /*0x6365b5*/
   v6 = v5[1]; /*0x6365b8*/
-  qmemcpy(v24, v6, sizeof(v24)); /*0x6365c4*/
+  memcpy(v24, v6, sizeof(v24)); /*0x6365c4*/
   v6 += 108; /*0x6365c4*/
   v25 = *(unsigned short *)v6; /*0x6365c6*/
   v26 = v6[2]; /*0x6365c8*/
-  qmemcpy(&this->q01D, v24, 0x6Cu); /*0x6365d5*/
+  memcpy(&this->q01D, v24, 0x6Cu); /*0x6365d5*/
   *&this->u32_89 = v25; /*0x6365d7*/
   this->u32_8B = v26; /*0x6365d9*/
   v7 = this->abstractFlags; /*0x6365da*/
@@ -28902,7 +28902,7 @@ int FactoryClass::CompleteCurrentItem(int a2) {
     if ( v21 != -1 ) /*0x63677d*/
       FactoryClass::RemoveItem((FactoryClass *)&stru_AC4B48.__pad_B8[64], v21); /*0x636785*/
   }
-  qmemcpy((void *)a2, v24, 0x6Cu); /*0x63679c*/
+  memcpy((void *)a2, v24, 0x6Cu); /*0x63679c*/
   *(unsigned short *)(a2 + 108) = v25; /*0x63679e*/
   *(unsigned char *)(a2 + 110) = v26; /*0x6367a0*/
   return a2; /*0x6367a1*/
@@ -31352,11 +31352,11 @@ int FactoryClass::CompleteCurrentItem(int a2) {
   else
     v5 = *(unsigned __int8 ***)(v3->Array_field_0x4 + 4 * Value); /*0x6365b5*/
   v6 = v5[1]; /*0x6365b8*/
-  qmemcpy(v24, v6, sizeof(v24)); /*0x6365c4*/
+  memcpy(v24, v6, sizeof(v24)); /*0x6365c4*/
   v6 += 108; /*0x6365c4*/
   v25 = *(unsigned short *)v6; /*0x6365c6*/
   v26 = v6[2]; /*0x6365c8*/
-  qmemcpy(&this->q01D, v24, 0x6Cu); /*0x6365d5*/
+  memcpy(&this->q01D, v24, 0x6Cu); /*0x6365d5*/
   *&this->u32_89 = v25; /*0x6365d7*/
   this->u32_8B = v26; /*0x6365d9*/
   v7 = this->abstractFlags; /*0x6365da*/
@@ -31440,7 +31440,7 @@ int FactoryClass::CompleteCurrentItem(int a2) {
     if ( v21 != -1 ) /*0x63677d*/
       FactoryClass::RemoveItem((FactoryClass *)&stru_AC4B48.__pad_B8[64], v21); /*0x636785*/
   }
-  qmemcpy((void *)a2, v24, 0x6Cu); /*0x63679c*/
+  memcpy((void *)a2, v24, 0x6Cu); /*0x63679c*/
   *(unsigned short *)(a2 + 108) = v25; /*0x63679e*/
   *(unsigned char *)(a2 + 110) = v26; /*0x6367a0*/
   return a2; /*0x6367a1*/

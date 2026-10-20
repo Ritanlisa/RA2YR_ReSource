@@ -84,7 +84,7 @@ int Buffer::CreateDirectSound()
   v16 = v2[2]; /*0x40a4ea*/
   v19 = 8 * v9; /*0x40a4f7*/
   v17 = v11; /*0x40a508*/
-  qmemcpy(v1 + 17, v2, 0x20u); /*0x40a50c*/
+  memcpy(v1 + 17, v2, 0x20u); /*0x40a50c*/
   v22 = 0; /*0x40a50e*/
   v23 = 0; /*0x40a515*/
   v24 = 0; /*0x40a51e*/

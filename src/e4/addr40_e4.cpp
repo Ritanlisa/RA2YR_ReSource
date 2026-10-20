@@ -569,7 +569,7 @@ ObjectClass * * CreateAudioChannel(int a1, const void * a2)
     Struct::ZeroInit32(v8 + 17); /*0x402e4a*/
     Struct::ZeroInit32(v8 + 9); /*0x402e52*/
     if ( a2 ) /*0x402e5d*/
-      qmemcpy(v8 + 17, a2, 0x20u); /*0x402e64*/
+      memcpy(v8 + 17, a2, 0x20u); /*0x402e64*/
     if ( (*(int (**)(int *))(v12 + 28))(v8) ) /*0x402e6c*/
     {
       if ( v8 ) /*0x402e75*/
@@ -1979,7 +1979,7 @@ int E4Recv_408970::sub_408970()
   }
   while ( v12 ); /*0x408a51*/
   result = *v11; /*0x408a53*/
-  *v11 += v1->?; /*0x408a5a*/
+  *v11 += v1->abstractFlags; /*0x408a5a*/
   return result; /*0x408a5c*/
 
 }

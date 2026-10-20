@@ -1397,10 +1397,10 @@ int E4Recv_661960::sub_661960(short a2)
       int v16; // [esp+50h] [ebp-4Ch]
       v16 = -1009589776; /*0x6619e6*/
       int *p_abstractFlags; // ebp
-      p_abstractFlags = &this->?; /*0x6619ee*/
+      p_abstractFlags = &this->abstractFlags; /*0x6619ee*/
       do /*0x661a35*/
       {
-        SHA1::Process(&v11, (int)&this->?, 256); /*0x6619fa*/
+        SHA1::Process(&v11, (int)&this->abstractFlags, 256); /*0x6619fa*/
         char Src[20]; // [esp+14h] [ebp-88h] BYREF
         SHA1::Compute(&v11, Src); /*0x661a08*/
         size_t v7 = 256 - v5; // eax /*0x661a12*/
@@ -1462,10 +1462,10 @@ int E4Recv_661A60::sub_661A60(int a2)
       int v17; // [esp+50h] [ebp-4Ch]
       v17 = -1009589776; /*0x661ae6*/
       int *p_abstractFlags; // ebp
-      p_abstractFlags = &this->?; /*0x661aee*/
+      p_abstractFlags = &this->abstractFlags; /*0x661aee*/
       do /*0x661b35*/
       {
-        SHA1::Process(&v12, (int)&this->?, 256); /*0x661afa*/
+        SHA1::Process(&v12, (int)&this->abstractFlags, 256); /*0x661afa*/
         char Src[20]; // [esp+14h] [ebp-88h] BYREF
         SHA1::Compute(&v12, Src); /*0x661b08*/
         size_t v7 = 256 - v5; // eax /*0x661b12*/
@@ -1497,7 +1497,7 @@ void * E4Recv_661B70::sub_661B70()
   SHA1 v7; // [esp+20h] [ebp-74h] BYREF
 
   int *p_abstractFlags; // ebx
-  p_abstractFlags = &this->?; /*0x661b7a*/
+  p_abstractFlags = &this->abstractFlags; /*0x661b7a*/
   v7.state = 0; /*0x661b7e*/
   int v13; // [esp+4Ch] [ebp-48h]
   v13 = 0; /*0x661b82*/
@@ -1515,7 +1515,7 @@ void * E4Recv_661B70::sub_661B70()
   v12 = -1009589776; /*0x661baa*/
   unsigned int v2 = 0; // esi /*0x661bb2*/
   int *v3; // edi
-  v3 = &this->?; /*0x661bb4*/
+  v3 = &this->abstractFlags; /*0x661bb4*/
   do /*0x661bfb*/
   {
     SHA1::Process(&v7, (int)p_abstractFlags, 256); /*0x661bc0*/

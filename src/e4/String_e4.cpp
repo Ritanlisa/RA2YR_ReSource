@@ -65,9 +65,9 @@ char * String::AllocAndCopy(RandomStruct * aP1, IUnknown * aP2)
   v4 = (char *)__2_YAPAXI_Z(1u); /*0x4cb600*/
   v5 = *((unsigned __int16 *)Destination + 3); /*0x4cb611*/
   *((unsigned int *)Destination + 2) = v4; /*0x4cb613*/
-  qmemcpy(v4, &aP2, 4 * (v5 >> 2)); /*0x4cb619*/
+  memcpy(v4, &aP2, 4 * (v5 >> 2)); /*0x4cb619*/
   v6 = &v4[4 * (v5 >> 2)]; /*0x4cb619*/
-  qmemcpy(v6, &aP2 + (v5 >> 2), v5 & 3); /*0x4cb625*/
+  memcpy(v6, &aP2 + (v5 >> 2), v5 & 3); /*0x4cb625*/
   *((unsigned int *)Destination + 3) = 0; /*0x4cb628*/
   return Destination; /*0x4cb627*/
 

@@ -543,7 +543,7 @@ char ReceiveNetworkFile(int a1, DWORD a2, int a3, char a4)
     v35 = 1800; /*0x69459f*/
     v41 = 1800; /*0x6945ad*/
     Debug::Log(); /*0x6945b1*/
-    qmemcpy((char *)lpBuffer + 192 * v6[12], v6 + 14, v6[13]); /*0x6945dd*/
+    memcpy((char *)lpBuffer + 192 * v6[12], v6 + 14, v6[13]); /*0x6945dd*/
     if ( a4 ) /*0x6945eb*/
     {
       v30 = v12 / v25; /*0x694604*/
@@ -604,7 +604,7 @@ LABEL_43:
   if ( v36 != -1 ) /*0x69448a*/
     Timer::GetTicks(); /*0x694490*/
   Debug::Log(); /*0x6944b5*/
-  qmemcpy((char *)lpBuffer + 192 * v6[12], v6 + 14, v6[13]); /*0x6944e1*/
+  memcpy((char *)lpBuffer + 192 * v6[12], v6 + 14, v6[13]); /*0x6944e1*/
   if ( a4 ) /*0x6944ef*/
   {
     v30 = v12 / v25; /*0x694508*/
@@ -2359,11 +2359,11 @@ HWND E4Recv_696950::sub_696950()
   {
     ShowWindow((HWND)result, 0); /*0x69696c*/
     EnableWindow(v3, 0); /*0x696975*/
-    SendMessageA(v3, 0x4B5u, 0x10u, (LPARAM)&this->?); /*0x696987*/
+    SendMessageA(v3, 0x4B5u, 0x10u, (LPARAM)&this->ptr_8); /*0x696987*/
     HIBYTE(this->M23) = 0; /*0x69698f*/
     String::Trim(&this->ptr_8); /*0x696993*/
     _strupr(this->ptr_8); /*0x696999*/
-    return ListBox::SetCustomEntry((ListBox *)this, 1625, 3, &this->?); /*0x6969ab*/
+    return ListBox::SetCustomEntry((ListBox *)this, 1625, 3, &this->ptr_8); /*0x6969ab*/
   }
   return result; /*0x6969b1*/
 

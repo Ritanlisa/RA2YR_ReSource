@@ -1400,7 +1400,7 @@ unsigned short * FrameSnapshot::InitMax(int a2)
   result = this; /*0x4c91e0*/
   *(unsigned short *)this->__pad_0 = 0; /*0x4c91e4*/
   LOWORD(this->FrameSnapshot_field_0x04) = 0; /*0x4c91e7*/
-  v3 = *(unsigned int *)&MEMORY[0xA8EB00].?[416]; /*0x4c91eb*/
+  v3 = *(unsigned int *)&MEMORY[0xA8EB00 + 416]; /*0x4c91eb*/
   this->u32_10 = 0; /*0x4c91f1*/
   this->u32_8 = v3; /*0x4c91f4*/
   this->u32_14 = 0; /*0x4c91f7*/
@@ -2425,7 +2425,7 @@ LABEL_33:
       v19 = (unsigned __int8)v32[282]; /*0x6d80eb*/
       if ( v18 != 0xFFFF && v18 != 255 ) /*0x6d80f8*/
       {
-        v20 = *(unsigned int *)(*(unsigned int *)&MEMORY[0xA8EB00].?[328] + 4 * v18); /*0x6d8104*/
+        v20 = *(unsigned int *)(*(unsigned int *)&MEMORY[0xA8EB00 + 328] + 4 * v18); /*0x6d8104*/
         if ( v20 ) /*0x6d8109*/
         {
           v21 = (unsigned int *)(*(int (**)(int))(*(unsigned int *)v20 + 156))(v20); /*0x6d8113*/
@@ -3792,9 +3792,9 @@ void Voxel_Section::Draw()
   if ( _ESI->DebrisTypes != (int *)&v85 ) /*0x75dbed*/
   {
     (*(void (**)(int *))(_ESI->DebrisTypes[0] + 12))(_ESI->DebrisTypes); /*0x75dbf3*/
-    Capacity = v85.?; /*0x75dbf6*/
-    v54 = v85.? == 0; /*0x75dbfa*/
-    _ESI->MaxDebris = v85.?; /*0x75dbfc*/
+    Capacity = v85.Capacity; /*0x75dbf6*/
+    v54 = v85.Capacity == 0; /*0x75dbfa*/
+    _ESI->MaxDebris = v85.Capacity; /*0x75dbfc*/
     if ( v54 ) /*0x75dbff*/
     {
       _ESI->WarheadTypeClass_field_0x190[0] = 0; /*0x75dc38*/
@@ -3813,7 +3813,7 @@ void Voxel_Section::Draw()
         {
           do /*0x75dc34*/
           {
-            *(unsigned int *)(_ESI->WarheadTypeClass_field_0x190[0] + 4 * v57) = *((unsigned int *)v85.? + v57); /*0x75dc2b*/
+            *(unsigned int *)(_ESI->WarheadTypeClass_field_0x190[0] + 4 * v57) = *((unsigned int *)v85.Items + v57); /*0x75dc2b*/
             ++v57; /*0x75dc31*/
           }
           while ( v57 < _ESI->MaxDebris ); /*0x75dc34*/
@@ -3821,14 +3821,14 @@ void Voxel_Section::Draw()
       }
     }
   }
-  v58 = v85.?; /*0x75dc47*/
+  v58 = v85.CapacityIncrement; /*0x75dc47*/
   v59 = v85.unknown_18; /*0x75dc4b*/
-  _ESI->unused_1CC[0] = v85.?; /*0x75dc4f*/
-  v60 = v85.?; /*0x75dc52*/
+  _ESI->unused_1CC[0] = v85.Count; /*0x75dc4f*/
+  v60 = v85.Items; /*0x75dc52*/
   *(unsigned int *)_ESI->__pad_1A0 = v58; /*0x75dc56*/
   *&_ESI->u32_1A4 = v59; /*0x75dc5b*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F0D5C) */  /*0x75dc5e*/
-  if ( v60 && v85.? ) /*0x75dc6e*/
+  if ( v60 && v85.IsAllocated[0] ) /*0x75dc6e*/
     __3_YAXPAX_Z(v60); /*0x75dc71*/
   v79 = 0; /*0x75dc88*/
   v80 = 0; /*0x75dc8b*/
@@ -3906,10 +3906,10 @@ void Voxel_Section::Draw()
   *&_ESI->u32_1B8 = *((unsigned int *)IntList + 4); /*0x75dd9c*/
   _ESI->WarheadTypeClass_field_0x1BC[0] = *((unsigned int *)IntList + 5); /*0x75dda2*/
   v68 = *((unsigned int *)IntList + 6); /*0x75dda5*/
-  v69 = v85.?; /*0x75dda8*/
+  v69 = v85.Items; /*0x75dda8*/
   *(unsigned int *)_ESI->__pad_1C0 = v68; /*0x75ddac*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E4DB8) */  /*0x75ddb1*/
-  if ( v69 && v85.? ) /*0x75ddc1*/
+  if ( v69 && v85.IsAllocated[0] ) /*0x75ddc1*/
     __3_YAXPAX_Z(v69); /*0x75ddc4*/
   if ( INIClass::GetString( /*0x75dde6*/
          (INIClass *)a2,

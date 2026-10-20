@@ -446,7 +446,7 @@ int E4Recv_4C2790::sub_4C2790()
     int v4[2]; // [esp+10h] [ebp-8h] BYREF
     ((Coord *)g_TacticalClass_Instance)->To_Screen(this, v4); /*0x4c27aa*/
     int v3[2]; // [esp+8h] [ebp-10h] BYREF
-    Coord::To_Screen((Coord *)g_TacticalClass_Instance, &this->?, v3); /*0x4c27be*/
+    Coord::To_Screen((Coord *)g_TacticalClass_Instance, &this->ptr_C, v3); /*0x4c27be*/
     if ( (unsigned __int8)ClipLine(v4, v3, &DSurface_ViewBounds.field_0) )
       Lightning::Draw(
         (Lightning *)this,
@@ -1996,7 +1996,7 @@ int E4Recv_4C4FC0::sub_4C4FC0(int a2)
     v5 = (*(int (**)(void *))(*(unsigned int *)ptr_0 + 44))(ptr_0); /*0x4c4fdb*/
     Power::TimerProcess(v5); /*0x4c4fe1*/
     int v6; // eax
-    v6 = (*(int (**)(char *))(*((unsigned int *)this->? + 1) + 16))((char *)this->? + 4); /*0x4c4ff0*/
+    v6 = (*(int (**)(char *))(*((unsigned int *)this->ptr_4 + 1) + 16))((char *)this->ptr_4 + 4); /*0x4c4ff0*/
     return Power::TimerProcess(v6); /*0x4c4ff6*/
   }
   return result; /*0x4c4ffb*/

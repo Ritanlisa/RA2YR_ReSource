@@ -1310,7 +1310,7 @@ void HandleNetworkPlayerDisconnect(wchar_t * a1, int a2)
       v6 = EventClass::Add2(v25, *(unsigned int *)(*(int *)((char *)&stru_A83CD9.estimatedHealth + 3) + 48), 0x23u, v2); /*0x5da893*/
       if ( *(int *)&dword_A802C8 < 128 ) /*0x5da8a2*/
       {
-        qmemcpy(&byte_A802D4[111 * dword_A802D0], v6, 0x6Fu); /*0x5da8c2*/
+        memcpy(&byte_A802D4[111 * dword_A802D0], v6, 0x6Fu); /*0x5da8c2*/
         dword_A83A54[dword_A802D0] = timeGetTime(); /*0x5da8d3*/
         dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x5da8ea*/
         ++*(unsigned int *)&dword_A802C8; /*0x5da8f0*/
@@ -3354,7 +3354,7 @@ unsigned char sub_5DAF20()
               v17 = (int)v15; /*0x77fdba*/
               if ( stru_B765F8.DynamicVector_field_0x8 ) /*0x77fdbc*/
               {
-                qmemcpy(v15, (const void *)stru_B765F8.DynamicVector_field_0x8, 4 * *(unsigned int *)stru_B765F8.__pad_0); /*0x77fdc6*/
+                memcpy(v15, (const void *)stru_B765F8.DynamicVector_field_0x8, 4 * *(unsigned int *)stru_B765F8.__pad_0); /*0x77fdc6*/
                 DynamicVector_field_0x8 = (void *)stru_B765F8.DynamicVector_field_0x8; /*0x77fdc8*/
               }
               __3_YAXPAX_Z(DynamicVector_field_0x8); /*0x77fdcf*/
@@ -3430,7 +3430,7 @@ unsigned char sub_5DAF20()
         do /*0x7800b2*/
         {
           if ( v22 >= 0 && v1 < v21 ) /*0x780023*/
-            qmemcpy(Buffer, (char *)dword_B77908 + v22, sizeof(Buffer)); /*0x780037*/
+            memcpy(Buffer, (char *)dword_B77908 + v22, sizeof(Buffer)); /*0x780037*/
           String::Assign(&v29, (const char *)&Buffer[9]); /*0x780042*/
           v23 = String::ToLowerCopy(&v29, (char **)&v31.ptr_4); /*0x780050*/
           v30.tail_7 = String::Compare(&v30, (const char **)v23); /*0x780063*/

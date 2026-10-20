@@ -1035,7 +1035,7 @@ LABEL_7:
     v10 = v8[v6]; /*0x636f38*/
 LABEL_9:
   v11 = v10[1]; /*0x636f3b*/
-  qmemcpy((void *)a2, v11, 0x6Cu); /*0x636f49*/
+  memcpy((void *)a2, v11, 0x6Cu); /*0x636f49*/
   v11 += 108; /*0x636f49*/
   *(unsigned short *)(a2 + 108) = *(unsigned short *)v11; /*0x636f4b*/
   *(unsigned char *)(a2 + 110) = v11[2]; /*0x636f4d*/
@@ -1112,7 +1112,7 @@ char ExecutePlanningQueue()
       else
         v8 = *(unsigned __int8 ***)(v6->Array_field_0x4 + 4 * Value); /*0x6372e5*/
       v9 = v8[1]; /*0x6372e8*/
-      qmemcpy(v35, v9, sizeof(v35)); /*0x6372f4*/
+      memcpy(v35, v9, sizeof(v35)); /*0x6372f4*/
       v9 += 108; /*0x6372f4*/
       v36 = *(unsigned short *)v9; /*0x6372f6*/
       v37 = v9[2]; /*0x6372f8*/
@@ -1272,7 +1272,7 @@ int E4Recv_6375B0::sub_6375B0()
   {
     v3 = 0; /*0x6375c9*/
   }
-  qmemcpy(v3, this, 0x6Cu); /*0x6375d3*/
+  memcpy(v3, this, 0x6Cu); /*0x6375d3*/
   p_health = &this->health; /*0x6375d3*/
   *((unsigned short *)v3 + 54) = *(unsigned short *)p_health; /*0x6375d5*/
   v3[110] = *((unsigned char *)p_health + 2); /*0x6375d7*/
@@ -1589,7 +1589,7 @@ LABEL_47:
   v32 = ExecuteActionPlanManager_Helper_636EB0(Type); /*0x63855e*/
   if ( v32 ) /*0x638565*/
   {
-    qmemcpy(v33, v2, 0x6Fu); /*0x638573*/
+    memcpy(v33, v2, 0x6Fu); /*0x638573*/
     ScriptAction::ExecutePlacement( /*0x638581*/
       (int)v35,
       v32,
@@ -2114,7 +2114,7 @@ TechnoClass * * CompleteBuildingProduction(IUnknown * a1, int edx0)
             ptr_0 = v8->ptr_0; /*0x639902*/
             v32 = *(ScriptAction **)(v8->ptr_8 + 4 * (unsigned int)v33); /*0x639903*/
             v18 = (unsigned char *)ScriptAction::FindItemByValue(v32, ptr_0)[1]; /*0x63990c*/
-            qmemcpy(v39, v18, sizeof(v39)); /*0x639918*/
+            memcpy(v39, v18, sizeof(v39)); /*0x639918*/
             v18 += 108; /*0x639918*/
             v40 = *(unsigned short *)v18; /*0x63991a*/
             v41 = v18[2]; /*0x63991c*/
@@ -2506,7 +2506,7 @@ LABEL_37:
     {
       v24 = 0; /*0x63af3c*/
       v16 = *(unsigned int **)(*(unsigned int *)&v25.m_1[3] + 4 * v15); /*0x63af3e*/
-      qmemcpy(&v29[132], (const void *)Team_Helper_6342E0(*(ObjectClass **)&v29[8], (int)v30, 0), 0x6Fu); /*0x63af55*/
+      memcpy(&v29[132], (const void *)Team_Helper_6342E0(*(ObjectClass **)&v29[8], (int)v30, 0), 0x6Fu); /*0x63af55*/
       _63B050 = Team_Load_63B050((ObjectClass *)&v29[132]); /*0x63af61*/
       if ( _63B050 ) /*0x63af68*/
       {
@@ -2524,7 +2524,7 @@ LABEL_37:
           v20->ptr_4,
           *(int *)&v23[104],
           v24);
-        qmemcpy(v23, &v29[20], sizeof(v23)); /*0x63afc2*/
+        memcpy(v23, &v29[20], sizeof(v23)); /*0x63afc2*/
         (v24) = ((v24) & ~0xFFFF) | ((*(unsigned short *)&v29[128]) & 0xFFFF); /*0x63afc4*/
         (v24) = ((v24) & ~(0xFF << 16)) | (((v29[130]) & 0xFF) << 16); /*0x63afc6*/
         Network::RecordEvent( /*0x63afc7*/
@@ -4093,7 +4093,7 @@ namespace gamemd {
 int E4Recv_6343B0::sub_6343B0()
 {
 
-  return *(unsigned int *)(**(unsigned int **)this->? + 540); /*0x6343bd*/
+  return *(unsigned int *)(**(unsigned int **)this->ptr_4 + 540); /*0x6343bd*/
 
 }
 } // namespace gamemd
@@ -4106,7 +4106,7 @@ BOOL E4Recv_634470::sub_634470(int a2, int a3)
 
   unsigned int *ScenarioClassActionCoords; // eax
   unsigned int v13[3]; // [esp+1Ch] [ebp-1Ch] BYREF
-  ScenarioClassActionCoords = GetScenarioClassActionCoords(v13, *(unsigned char **)(*(unsigned int *)this->? + 4)); /*0x634481*/
+  ScenarioClassActionCoords = GetScenarioClassActionCoords(v13, *(unsigned char **)(*(unsigned int *)this->ptr_4 + 4)); /*0x634481*/
   unsigned int v12[3]; // [esp+10h] [ebp-28h] BYREF
   v12[0] = *ScenarioClassActionCoords; /*0x634488*/
   v12[1] = ScenarioClassActionCoords->ptr_4; /*0x63448f*/
@@ -4297,7 +4297,7 @@ int ObjectClass::sub_635210()
   if ( result ) /*0x63522e*/
   {
     result = (int)this->nextObject; /*0x635240*/
-    qmemcpy(v15, &this->attachedBomb, 0x6Eu); /*0x635243*/
+    memcpy(v15, &this->attachedBomb, 0x6Eu); /*0x635243*/
     v3 = 0; /*0x635247*/
     v11 = result; /*0x635249*/
     v15[110] = this->location[4]; /*0x63524f*/
@@ -4306,7 +4306,7 @@ int ObjectClass::sub_635210()
       while ( 1 ) /*0x635265*/
       {
         v4 = *(unsigned char **)(this->occupant + 4 * v3); /*0x635265*/
-        qmemcpy(v16, v4, sizeof(v16)); /*0x635268*/
+        memcpy(v16, v4, sizeof(v16)); /*0x635268*/
         v4 += 108; /*0x635268*/
         v17 = *(unsigned short *)v4; /*0x63526a*/
         v18 = v4[2]; /*0x635270*/
@@ -4425,7 +4425,7 @@ unsigned int * E4Recv_635DF0::sub_635DF0(unsigned int * a2)
 
   unsigned int *ScenarioClassActionCoords; // eax
   unsigned int v7[4]; // [esp+20h] [ebp-10h] BYREF
-  ScenarioClassActionCoords = GetScenarioClassActionCoords(v7, *(unsigned char **)(*(unsigned int *)this->? + 4)); /*0x635e02*/
+  ScenarioClassActionCoords = GetScenarioClassActionCoords(v7, *(unsigned char **)(*(unsigned int *)this->ptr_4 + 4)); /*0x635e02*/
   unsigned int v6[3]; // [esp+14h] [ebp-1Ch] BYREF
   v6[0] = *ScenarioClassActionCoords; /*0x635e09*/
   v6[1] = ScenarioClassActionCoords->ptr_4; /*0x635e10*/
@@ -4452,7 +4452,7 @@ int * E4Recv_635E90::sub_635E90(int * a2)
 
   unsigned int *ScenarioClassActionCoords; // eax
   unsigned int v12[3]; // [esp+20h] [ebp-1Ch] BYREF
-  ScenarioClassActionCoords = GetScenarioClassActionCoords(v12, *(unsigned char **)(*(unsigned int *)this->? + 4)); /*0x635ea2*/
+  ScenarioClassActionCoords = GetScenarioClassActionCoords(v12, *(unsigned char **)(*(unsigned int *)this->ptr_4 + 4)); /*0x635ea2*/
   unsigned int v11[3]; // [esp+14h] [ebp-28h] BYREF
   v11[0] = *ScenarioClassActionCoords; /*0x635ea9*/
   v11[1] = ScenarioClassActionCoords->ptr_4; /*0x635eb0*/
@@ -4656,7 +4656,7 @@ char sub_6394E0(IUnknown * a1, int a2)
   char v14; // [esp+FAh] [ebp-2h]
 
   v3 = *(unsigned char **)(**(unsigned int **)(a2 + 4) + 4); /*0x6394ef*/
-  qmemcpy(&v12[16], v3, 0x6Cu); /*0x6394fc*/
+  memcpy(&v12[16], v3, 0x6Cu); /*0x6394fc*/
   v3 += 108; /*0x6394fc*/
   *(unsigned short *)&v12[124] = *(unsigned short *)v3; /*0x6394fe*/
   v12[126] = v3[2]; /*0x639500*/
@@ -4692,7 +4692,7 @@ char sub_6394E0(IUnknown * a1, int a2)
       v8->ptr_4,
       *(int *)&v10[104],
       v11);
-    qmemcpy(v10, &v12[128], sizeof(v10)); /*0x63958d*/
+    memcpy(v10, &v12[128], sizeof(v10)); /*0x63958d*/
     (v11) = ((v11) & ~0xFFFF) | ((v13) & 0xFFFF); /*0x63958f*/
     (v11) = ((v11) & ~(0xFF << 16)) | (((v14) & 0xFF) << 16); /*0x639591*/
     LOBYTE(Next) = Network::RecordEvent( /*0x639592*/

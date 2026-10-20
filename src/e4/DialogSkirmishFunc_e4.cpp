@@ -161,10 +161,10 @@ LABEL_151:
           Formatc = *(wchar_t **)stru_A8B250.__pad_0; /*0x6ad8f2*/
           v60 = strlen(byte_A8B8E0) + 1; /*0x6ad8ff*/
           v61 = *(unsigned int *)&stru_A8B250.__pad_0[4]; /*0x6ad905*/
-          qmemcpy(Destination, byte_A8B8E0, 4 * (v60 >> 2)); /*0x6ad919*/
+          memcpy(Destination, byte_A8B8E0, 4 * (v60 >> 2)); /*0x6ad919*/
           v62 = &byte_A8B8E0[4 * (v60 >> 2)]; /*0x6ad919*/
           v63 = v60 & 3; /*0x6ad91d*/
-          qmemcpy(&Destination[v60 >> 2], v62, v63); /*0x6ad920*/
+          memcpy(&Destination[v60 >> 2], v62, v63); /*0x6ad920*/
           v64 = (ObjectClass *)&v62[v63]; /*0x6ad920*/
           wcscpy((wchar_t *)Destination, (const wchar_t *)&dword_A8B320 + 1); /*0x6ad927*/
           (v76)->IdleProcess(v64); /*0x6ad931*/

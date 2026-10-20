@@ -1963,7 +1963,7 @@ unsigned int * E4Recv_58C320::sub_58C320(unsigned int * a2)
     while ( v4 > v2 - 1 ); /*0x58c372*/
     v5 = g_MissionQueueFrame.localVariables[163] + 80 * v4; /*0x58c380*/
   }
-  while ( *(void **)(v5 + 56) != this->? || !*(unsigned short *)v5 && !*(unsigned short *)(v5 + 2) ); /*0x58c38f*/
+  while ( *(void **)(v5 + 56) != this->ptr_8 || !*(unsigned short *)v5 && !*(unsigned short *)(v5 + 2) ); /*0x58c38f*/
   int v6; // ecx
   v6 = *(unsigned int *)(80 * v4 + g_MissionQueueFrame.localVariables[163]); /*0x58c39e*/
   *a2 = v6; /*0x58c3a6*/
@@ -2002,7 +2002,7 @@ unsigned int * E4Recv_58C3B0::sub_58C3B0(unsigned int * a2)
       while ( v4 > v3 - 1 ); /*0x58c406*/
       v5 = g_MissionQueueFrame.localVariables[163] + 80 * v4; /*0x58c414*/
     }
-    while ( *(void **)(v5 + 56) != this->? || !*(unsigned short *)v5 && !*(unsigned short *)(v5 + 2) ); /*0x58c423*/
+    while ( *(void **)(v5 + 56) != this->ptr_8 || !*(unsigned short *)v5 && !*(unsigned short *)(v5 + 2) ); /*0x58c423*/
     *(unsigned int *)v9 = *(unsigned int *)(80 * v4 + g_MissionQueueFrame.localVariables[163]); /*0x58c432*/
     if ( ++v8 > 200 ) /*0x58c444*/
     {
@@ -2042,7 +2042,7 @@ unsigned int * E4Recv_58C4A0::sub_58C4A0(ObjectClass * aP1)
     }
     while ( v4 > v7 - 1 ); /*0x58c508*/
     ++v3; /*0x58c518*/
-    qmemcpy(v2, (const void *)(g_MissionQueueFrame.localVariables[163] + 80 * v4), 0x50u); /*0x58c523*/
+    memcpy(v2, (const void *)(g_MissionQueueFrame.localVariables[163] + 80 * v4), 0x50u); /*0x58c523*/
     if ( v3 >= 100 ) /*0x58c525*/
     {
       *aP1 = 0; /*0x58c57e*/
@@ -2090,7 +2090,7 @@ unsigned int * sub_58C5A0(unsigned int * a1, int a2, int a3)
     }
     while ( v4 > v11 - 1 ); /*0x58c60a*/
     v5 = v9 + 1 < 100; /*0x58c626*/
-    qmemcpy(v3, (char *)dword_ABED10 + 80 * v4, 0x50u); /*0x58c629*/
+    memcpy(v3, (char *)dword_ABED10 + 80 * v4, 0x50u); /*0x58c629*/
     ++v9; /*0x58c62b*/
     if ( !v5 ) /*0x58c62f*/
     {

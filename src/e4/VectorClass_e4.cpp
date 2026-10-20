@@ -1333,7 +1333,7 @@ LABEL_14:
         v12 = (char *)this->Items + v10; /*0x6dc902*/
         v10 += 20; /*0x6dc909*/
         --Capacity; /*0x6dc90c*/
-        qmemcpy(v11, v12, 0x14u); /*0x6dc90d*/
+        memcpy(v11, v12, 0x14u); /*0x6dc90d*/
       }
       while ( Capacity ); /*0x6dc90f*/
       v3 = (void *)aP1; /*0x6dc911*/

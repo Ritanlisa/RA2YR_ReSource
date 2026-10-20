@@ -489,7 +489,7 @@ int FindBuildingByTiberiumType(int aP0)
   if ( dword_B0F4F8 <= 0 ) /*0x5fdd52*/
   {
 LABEL_11:
-    qmemcpy(v8, (const void *)(v1 + 100), 0x31u); /*0x5fdda4*/
+    memcpy(v8, (const void *)(v1 + 100), 0x31u); /*0x5fdda4*/
     Debug::Log("Overlay %s not really tiberium\n", v8[0]); /*0x5fddb9*/
     return 0; /*0x5fddc1*/
   }
@@ -1066,7 +1066,7 @@ int E4Recv_5F1F20::sub_5F1F20()
   int TileIndex; // eax
 
   v2 = 0; /*0x5f1f27*/
-  ptr_0 = (int *)this->attachedBomb->?; /*0x5f1f2c*/
+  ptr_0 = (int *)*(_DWORD *)(this->attachedBomb + 4); /*0x5f1f2c*/
   if ( ptr_0[10] <= 0 ) /*0x5f1f34*/
     return 0; /*0x5f1f5b*/
   while ( 1 ) /*0x5f1f37*/
@@ -1078,7 +1078,7 @@ int E4Recv_5F1F20::sub_5F1F20()
         break; /*0x5f1f4d*/
     }
     ++v2; /*0x5f1f52*/
-    ptr_0 = (int *)this->attachedBomb->?; /*0x5f1f53*/
+    ptr_0 = (int *)*(_DWORD *)(this->attachedBomb + 4); /*0x5f1f53*/
     if ( v2 >= ptr_0[10] ) /*0x5f1f59*/
       return 0; /*0x5f1f59*/
   }

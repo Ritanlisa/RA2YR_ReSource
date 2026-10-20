@@ -546,7 +546,7 @@ CampaignClass * * HashTable_flat::Clear(void *a1)
     v7 = *(const char ***)(*(unsigned int *)this->__pad_0 + 4 * v5); /*0x6b959c*/
     String::Reassign(v30, v7); /*0x6b95a4*/
     v8 = *(ObjectClass ***)this->__pad_0; /*0x6b95a9*/
-    qmemcpy(&v30[2].m_3[1], v7 + 1, 0x304u); /*0x6b95b8*/
+    memcpy(&v30[2].m_3[1], v7 + 1, 0x304u); /*0x6b95b8*/
     v9 = v8[v5]; /*0x6b95ba*/
     v10 = v9[4].customSound_controller[2]; /*0x6b95bf*/
     if ( v9 ) /*0x6b95c5*/
@@ -727,7 +727,7 @@ CampaignClass * * HashTable_flat::RemoveEntry(const char * a2)
   }
   v5 = (char *)v4 + 4; /*0x6ba2a5*/
   if ( v5 ) /*0x6ba2ab*/
-    qmemcpy(&v16[1].m_3[1], v5, 0x304u); /*0x6ba2b6*/
+    memcpy(&v16[1].m_3[1], v5, 0x304u); /*0x6ba2b6*/
   v6 = this->HashTable_field_0x04; /*0x6ba2b8*/
   if ( v6 ) /*0x6ba2bd*/
   {
@@ -839,7 +839,7 @@ AbstractClass * * HashTable_flat::RemoveHashTableEntry(ObjectClass * aP1, void *
     return 0; /*0x6baca5*/
   if ( (unsigned __int8)String::Compare((String *)v8, aP1) ) /*0x6bacb1*/
   {
-    qmemcpy(a2, (const void *)(v8 + 4), 0x304u); /*0x6bacca*/
+    memcpy(a2, (const void *)(v8 + 4), 0x304u); /*0x6bacca*/
     v9 = *(unsigned int **)(*(unsigned int *)this->__pad_0 + 4 * v7); /*0x6baccf*/
     v10 = v9->q308; /*0x6bacd4*/
     if ( v9 ) /*0x6bacda*/
@@ -910,7 +910,7 @@ AbstractClass * * HashTable_flat::RemoveHashTableEntry(ObjectClass * aP1, void *
         if ( !v24 ) /*0x6bade6*/
           goto LABEL_24; /*0x6bade6*/
       }
-      qmemcpy(a2, &v24->ptr_4, 0x304u); /*0x6badfa*/
+      memcpy(a2, &v24->ptr_4, 0x304u); /*0x6badfa*/
       v36->q308 = v24->q308; /*0x6bae02*/
       --this->HashTable_field_0x04; /*0x6bae0e*/
       DeleteAndZero((ObjectClass *)v24); /*0x6bae15*/
@@ -1409,7 +1409,7 @@ AbstractClass * * HashTable_flat::Insert(ObjectClass * aP1, void * a2)
     return 0; /*0x7add35*/
   if ( (unsigned __int8)String::Compare((String *)v8, aP1) ) /*0x7add41*/
   {
-    qmemcpy(a2, (const void *)(v8 + 4), 0x6Cu); /*0x7add5a*/
+    memcpy(a2, (const void *)(v8 + 4), 0x6Cu); /*0x7add5a*/
     v9 = *(unsigned int **)(*(unsigned int *)this->__pad_0 + 4 * v7); /*0x7add5f*/
     v10 = v9->estimatedHealth; /*0x7add64*/
     if ( v9 ) /*0x7add67*/
@@ -1480,7 +1480,7 @@ AbstractClass * * HashTable_flat::Insert(ObjectClass * aP1, void * a2)
         if ( !v24 ) /*0x7ade67*/
           goto LABEL_24; /*0x7ade67*/
       }
-      qmemcpy(a2, &v24->ptr_4, 0x6Cu); /*0x7ade7b*/
+      memcpy(a2, &v24->ptr_4, 0x6Cu); /*0x7ade7b*/
       v36->estimatedHealth = v24->estimatedHealth; /*0x7ade80*/
       --this->HashTable_field_0x04; /*0x7ade89*/
       DeleteAndZero((ObjectClass *)v24); /*0x7ade90*/
@@ -1821,7 +1821,7 @@ AbstractClass * * HashTable_flat::FindWOLHashTableEntry(const char ** a2, void *
     return 0; /*0x7ae9b5*/
   if ( (unsigned __int8)String::Compare((String *)v8, a2) ) /*0x7ae9c1*/
   {
-    qmemcpy(a3, (const void *)(v8 + 4), 0x10Cu); /*0x7ae9da*/
+    memcpy(a3, (const void *)(v8 + 4), 0x10Cu); /*0x7ae9da*/
     v9 = *(unsigned int **)(*(unsigned int *)this->__pad_0 + 4 * v7); /*0x7ae9df*/
     v10 = v9->ParticleSystemClass_110; /*0x7ae9e4*/
     if ( v9 ) /*0x7ae9ea*/
@@ -1892,7 +1892,7 @@ AbstractClass * * HashTable_flat::FindWOLHashTableEntry(const char ** a2, void *
         if ( !v24 ) /*0x7aeaf6*/
           goto LABEL_24; /*0x7aeaf6*/
       }
-      qmemcpy(a3, &v24->ptr_4, 0x10Cu); /*0x7aeb0a*/
+      memcpy(a3, &v24->ptr_4, 0x10Cu); /*0x7aeb0a*/
       v36->ParticleSystemClass_110 = v24->ParticleSystemClass_110; /*0x7aeb12*/
       --this->HashTable_field_0x04; /*0x7aeb1e*/
       DeleteAndZero((ObjectClass *)v24); /*0x7aeb25*/

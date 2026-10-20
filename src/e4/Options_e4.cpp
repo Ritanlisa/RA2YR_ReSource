@@ -383,7 +383,7 @@ char Options::Screen_Dialog()
     {
       do /*0x55fcca*/
       {
-        qmemcpy(&unk_ABCE70, MEMORY[0xA8EB60], 0xB8u); /*0x55fcb1*/
+        memcpy(&unk_ABCE70, MEMORY[0xA8EB60], 0xB8u); /*0x55fcb1*/
         dwNewLong = -1; /*0x55fcbd*/
         v0 = (HWND)CreateDialog(0); /*0x55fcc1*/
         v1 = v0; /*0x55fcc6*/

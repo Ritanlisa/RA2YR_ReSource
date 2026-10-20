@@ -897,7 +897,7 @@ LABEL_26:
             }
             if ( Destination != (char *)(v3 + 100) ) /*0x54640c*/
             {
-              qmemcpy((void *)(v3 + 100), Destination, 0x30u); /*0x54641c*/
+              memcpy((void *)(v3 + 100), Destination, 0x30u); /*0x54641c*/
               *(unsigned char *)(v3 + 148) = v154; /*0x54641e*/
             }
             v37 = v86; /*0x546423*/
@@ -1060,7 +1060,7 @@ LABEL_190:
           }
           if ( v155 != (char *)(v3 + 100) ) /*0x546a61*/
           {
-            qmemcpy((void *)(v3 + 100), v155, 0x30u); /*0x546a71*/
+            memcpy((void *)(v3 + 100), v155, 0x30u); /*0x546a71*/
             *(unsigned char *)(v3 + 148) = v156; /*0x546a73*/
           }
           v44 = v73; /*0x546a7b*/
@@ -2999,7 +2999,7 @@ void E4Recv_54E690::sub_54E690()
   ptr_8 = (void (**)(void **))this->M12; /*0x54e6ad*/
   p_vtable3 = &this->M12; /*0x54e6b0*/
   v5 = &this->q050; /*0x54e6b3*/
-  abstractFlags = this->?; /*0x54e6b5*/
+  abstractFlags = this->abstractFlags; /*0x54e6b5*/
   ptr_8[3](v5); /*0x54e6b8*/
   (*((void (**)(void **, int, unsigned int))*p_vtable3 + 2))(p_vtable3, abstractFlags, 0); /*0x54e6c3*/
   v7 = p_vtable3[1]; /*0x54e6c6*/

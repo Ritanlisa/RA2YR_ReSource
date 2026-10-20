@@ -1705,8 +1705,8 @@ unsigned int * BuildingTypeClass::Construct(AbstractClass * aP1, void *a2, void 
   aP1->u32_2D4 = 0; /*0x644c4c*/
   LOBYTE(aP1->q2D8) = 0; /*0x644c66*/
   BYTE1(aP1->?[0]) = 0; /*0x644c6c*/
-  BYTE1(aP1->?[1]) = -1; /*0x644c72*/
-  BYTE2(aP1->?[1]) = -1; /*0x644c78*/
+  BYTE1(aP1->AccelerationFactor[1]) = -1; /*0x644c72*/
+  BYTE2(aP1->AccelerationFactor[1]) = -1; /*0x644c78*/
   aP1->q2DC = 0; /*0x644c81*/
   aP1->q2E0 = 1; /*0x644c87*/
   aP1->u32_2E4 = 0; /*0x644c8d*/
@@ -1719,11 +1719,11 @@ unsigned int * BuildingTypeClass::Construct(AbstractClass * aP1, void *a2, void 
   aP1->q300 = 0; /*0x644cb7*/
   aP1->q304 = 0; /*0x644cbd*/
   LOBYTE(aP1->q308) = 0; /*0x644cc3*/
-  BYTE1(aP1->?[0]) = 0; /*0x644cc9*/
+  BYTE1(aP1->AccelerationFactor[0]) = 0; /*0x644cc9*/
   BYTE2(aP1->q30A) = 0; /*0x644ccf*/
-  HIBYTE(aP1->?[0]) = 4; /*0x644cd5*/
+  HIBYTE(aP1->AccelerationFactor[0]) = 4; /*0x644cd5*/
   LOBYTE(aP1->q30C) = 0; /*0x644cdc*/
-  HIBYTE(aP1->?[1]) = 0; /*0x644ce2*/
+  HIBYTE(aP1->AccelerationFactor[1]) = 0; /*0x644ce2*/
   aP1->q310 = -1; /*0x644ce8*/
   aP1->q314 = -1; /*0x644cee*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F015C) */  /*0x644cf4*/
@@ -2038,15 +2038,15 @@ unsigned int * BuildingTypeClass::GetUpgradeOffset(unsigned int * a2, double a3,
     else
       v14 = v13; /*0x717953*/
     a2->TechnoTypeClass = v11; /*0x71795f*/
-    a2->? = v12; /*0x717961*/
-    a2->? = (void *)v14; /*0x717966*/
+    a2->ptr_4 = v12; /*0x717961*/
+    a2->ptr_8 = (void *)v14; /*0x717966*/
     return &a2->TechnoTypeClass; /*0x717959*/
   }
   else
   {
     a2->TechnoTypeClass = *(void **)(v4 + 1968); /*0x71797f*/
-    a2->? = *(void **)(v4 + 1972); /*0x717984*/
-    a2->? = *(void **)(v4 + 1976); /*0x71798b*/
+    a2->ptr_4 = *(void **)(v4 + 1972); /*0x717984*/
+    a2->ptr_8 = *(void **)(v4 + 1976); /*0x71798b*/
     return &a2->TechnoTypeClass; /*0x717971*/
   }
 

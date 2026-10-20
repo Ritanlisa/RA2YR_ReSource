@@ -202,18 +202,18 @@ TiberiumClass::TiberiumClass(ObjectClass * aP1)
   /* X11: ptr_0 install elided (implicit via TiberiumClass virtuals 0x7217ac) */
   /* X11: ptr_0 install elided (implicit via TiberiumClass virtuals 0x7217b3) */
   /* X11: ptr_0 install elided (implicit via TiberiumClass virtuals 0x7217ba) */
-  *&this->isInLogic = g_BuildingLoadQueue_Array.?[0]; /*0x7217c6*/
-  if ( g_BuildingLoadQueue_Array.?[0] < g_BuildingLoadQueue_Array.?[3] /*0x7217fe*/
+  *&this->isInLogic = dword_B0F4F8; /*0x7217c6*/
+  if ( dword_B0F4F8 < dword_B0F4F0 /*0x7217fe*/
     || (g_BuildingLoadQueue_Array || !g_BuildingLoadQueue_Array.?[3])
     && g_BuildingLoadQueue_Array.?[1] > 0
     && (*(unsigned __int8 (**)(int *, int, unsigned int))(g_BuildingLoadQueue_Array.?[1] + 8))(
          &g_BuildingLoadQueue_Array.?[1],
-         g_BuildingLoadQueue_Array.?[3] + g_BuildingLoadQueue_Array.?[1],
+         dword_B0F4FC + g_BuildingLoadQueue_Array.?[1],
          0) )
   {
     int v4; // eax
-    v4 = g_BuildingLoadQueue_Array.?[0]++; /*0x72180b*/
-    *(unsigned int *)(g_BuildingLoadQueue_Array.?[2] + 4 * v4) = this; /*0x72181a*/
+    v4 = dword_B0F4F8++; /*0x72180b*/
+    *(unsigned int *)(&dword_B0F4EC + 4 * v4) = this; /*0x72181a*/
   }
   (*(void (**)(int *))(this->GrowthPercentage[1] + 12))(&this->GrowthPercentage[1]); /*0x721821*/
   if ( g_BuildingLoadQueue_Array.LightBlueTint < g_BuildingLoadQueue_Array.LightRedTint /*0x721857*/

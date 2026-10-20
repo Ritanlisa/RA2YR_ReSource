@@ -194,7 +194,7 @@ int SHA1::Transform(int *a1, unsigned int *a2)
   }
   while ( v7 ); /*0x69dba2*/
   v11 = 0; /*0x69dbb4*/
-  qmemcpy(v32, a2, sizeof(v32)); /*0x69dbb6*/
+  memcpy(v32, a2, sizeof(v32)); /*0x69dbb6*/
   v12 = v32[1]; /*0x69dbb8*/
   v13 = v32[2]; /*0x69dbbc*/
   v14 = v32[3]; /*0x69dbc0*/

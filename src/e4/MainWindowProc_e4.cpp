@@ -28,7 +28,7 @@ AbstractClass * * sub_777420(ObjectClass *self)
   Debug::Log(); /*0x777425*/
   sub_407040(v1); /*0x77742d*/
   Debug::Log(); /*0x77744b*/
-  if ( stru_887598.lineTrailer && byte_B73560 == 1 && !MEMORY[0xA8EB00].?[391] ) /*0x77746d*/
+  if ( stru_887598.lineTrailer && byte_B73560 == 1 && !MEMORY[0xA8EB00 + 391] ) /*0x77746d*/
     (*(void (**)(void))(*(unsigned int *)stru_887598.lineTrailer + 24))(); /*0x777471*/
   if ( !g_DDraw_Initialized ) /*0x77747c*/
   {
@@ -38,7 +38,7 @@ AbstractClass * * sub_777420(ObjectClass *self)
       DSurface::RestoreIfLost((DSurface *)g_DSurface_Hidden); /*0x77749b*/
     if ( DSurface_Composite /*0x7774c7*/
       && DSurface::RestoreIfLost((DSurface *)DSurface_Composite)
-      && (!MEMORY[0xA8EB00].?[376] || *(int *)&MEMORY[0xA8EB00].?[416] > 16) )
+      && (!MEMORY[0xA8EB00 + 376] || *(int *)&MEMORY[0xA8EB00 + 416] > 16) )
     {
       (*(void (**)(AudioStream *, unsigned int))(*(unsigned int *)DSurface_Composite->__pad_0 + 24))( /*0x7774d3*/
         DSurface_Composite,
@@ -46,7 +46,7 @@ AbstractClass * * sub_777420(ObjectClass *self)
     }
     if ( DSurface_Tile /*0x7774f8*/
       && DSurface::RestoreIfLost(DSurface_Tile)
-      && (!MEMORY[0xA8EB00].?[376] || *(int *)&MEMORY[0xA8EB00].?[416] > 16) )
+      && (!MEMORY[0xA8EB00 + 376] || *(int *)&MEMORY[0xA8EB00 + 416] > 16) )
     {
       (*((void (**)(DSurface *, unsigned int))DSurface_Tile->DSurface_field_0x0 + 6))(DSurface_Tile, 0); /*0x777504*/
     }
@@ -55,13 +55,13 @@ AbstractClass * * sub_777420(ObjectClass *self)
       if ( DSurface::RestoreIfLost(DSurface_Sidebar) ) /*0x777511*/
       {
         g_CameoRenderFlag = 1; /*0x77751f*/
-        if ( !MEMORY[0xA8EB00].?[376] || *(int *)&MEMORY[0xA8EB00].?[416] > 16 ) /*0x777530*/
+        if ( !MEMORY[0xA8EB00 + 376] || *(int *)&MEMORY[0xA8EB00 + 416] > 16 ) /*0x777530*/
           (*((void (**)(DSurface *, unsigned int))DSurface_Sidebar->DSurface_field_0x0 + 6))(DSurface_Sidebar, 0); /*0x77753c*/
       }
     }
     if ( g_DSurface_Primary /*0x777561*/
       && DSurface::RestoreIfLost(g_DSurface_Primary)
-      && (!MEMORY[0xA8EB00].?[376] || *(int *)&MEMORY[0xA8EB00].?[416] > 16) )
+      && (!MEMORY[0xA8EB00 + 376] || *(int *)&MEMORY[0xA8EB00 + 416] > 16) )
     {
       (*((void (**)(DSurface *, char *, unsigned int))g_DSurface_Primary->DSurface_field_0x0 + 5))( /*0x777572*/
         g_DSurface_Primary,

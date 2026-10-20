@@ -355,7 +355,7 @@ Game * * E4Recv_634B20::sub_634B20()
     do /*0x634bf7*/
     {
       v3 = *(unsigned char **)(this->occupant + 4 * v2); /*0x634b48*/
-      qmemcpy(v18, v3, 0x6Cu); /*0x634b57*/
+      memcpy(v18, v3, 0x6Cu); /*0x634b57*/
       v3 += 108; /*0x634b57*/
       v18[54] = *(unsigned short *)v3; /*0x634b59*/
       LOBYTE(v18[55]) = v3[2]; /*0x634b5f*/
@@ -384,7 +384,7 @@ Game * * E4Recv_634B20::sub_634B20()
   }
   if ( (int)this->lineTrailer > 0 ) /*0x634c05*/
   {
-    qmemcpy(v18, &this->attachedBomb, 0x6Fu); /*0x634c1b*/
+    memcpy(v18, &this->attachedBomb, 0x6Fu); /*0x634c1b*/
     GetScenarioClassActionCoords(v17, v18); /*0x634c24*/
     Debug::Log(); /*0x634c43*/
     v8 = this->uniqueId; /*0x634c48*/

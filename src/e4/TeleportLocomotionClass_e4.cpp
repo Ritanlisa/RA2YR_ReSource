@@ -22,12 +22,12 @@ TeleportLocomotionClass::TeleportLocomotionClass()
   
   
   LocomotionClass::Init((LocomotionClass *)this); /*0x718003*/
-  this->MovingDestination[0] = g_BuildingLoadQueue_Array.?; /*0x718011*/
-  this->MovingDestination[1] = g_BuildingLoadQueue_Array.?[0]; /*0x71801a*/
-  this->MovingDestination[2] = g_BuildingLoadQueue_Array.?[0]; /*0x718026*/
-  this->LastCoords[0] = g_BuildingLoadQueue_Array.?; /*0x71802e*/
-  this->LastCoords[1] = g_BuildingLoadQueue_Array.?[0]; /*0x718036*/
-  this->LastCoords[2] = g_BuildingLoadQueue_Array.?[0]; /*0x71803e*/
+  this->MovingDestination[0] = dword_B0EBF8; /*0x718011*/
+  this->MovingDestination[1] = dword_B0EBFC; /*0x71801a*/
+  this->MovingDestination[2] = dword_B0EC00; /*0x718026*/
+  this->LastCoords[0] = dword_B0EBF8; /*0x71802e*/
+  this->LastCoords[1] = dword_B0EBFC; /*0x718036*/
+  this->LastCoords[2] = dword_B0EC00; /*0x71803e*/
   this->Moving = 0; /*0x718043*/
   this->TeleportLocomotionClass_field_bool_35 = 0; /*0x718046*/
   this->TeleportLocomotionClass_field_bool_36 = 0; /*0x718049*/

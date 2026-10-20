@@ -1342,7 +1342,7 @@ int BuildingClass::HandleFactoryCommand() {
         v5 = EventClass::Add(v22, v4, 0x11u, v15, v17); /*0x443494*/
         if ( *(int *)&dword_A802C8 < 128 ) /*0x4434a3*/
         {
-          qmemcpy(&byte_A802D4[111 * dword_A802D0], v5, 0x6Fu); /*0x4434bf*/
+          memcpy(&byte_A802D4[111 * dword_A802D0], v5, 0x6Fu); /*0x4434bf*/
           dword_A83A54[dword_A802D0] = timeGetTime(); /*0x4434d0*/
           dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x4434e7*/
           ++*(unsigned int *)&dword_A802C8; /*0x4434ed*/
@@ -1410,7 +1410,7 @@ int BuildingClass::HandleFactoryCommand() {
   }
   if ( *(int *)&dword_A802C8 < 128 ) /*0x4435b7*/
   {
-    qmemcpy(&byte_A802D4[111 * dword_A802D0], (const void *)result, 0x6Fu); /*0x4435d7*/
+    memcpy(&byte_A802D4[111 * dword_A802D0], (const void *)result, 0x6Fu); /*0x4435d7*/
     dword_A83A54[dword_A802D0] = timeGetTime(); /*0x4435e8*/
     result = ++*(unsigned int *)&dword_A802C8; /*0x4435fe*/
     dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x443604*/
@@ -1773,7 +1773,7 @@ LABEL_71:
                 BuildingClass::ClearAnims(this, 9); /*0x4465cd*/
                 strcpy(v132, (const char *)&this->Type->ImageFile); /*0x4465fa*/
                 v74 = strlen(asc_818D7C) + 1; /*0x44661b*/
-                qmemcpy(&v132[strlen(v132)], asc_818D7C, v74); /*0x446628*/
+                memcpy(&v132[strlen(v132)], asc_818D7C, v74); /*0x446628*/
                 v75 = strlen(v132); /*0x446642*/
                 v132[v75] = SuperWeaponToken + 66; /*0x446645*/
                 v132[v75 + 1] = 0; /*0x446649*/

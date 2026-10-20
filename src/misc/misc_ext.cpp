@@ -4906,11 +4906,11 @@ int Lightning::Draw(int p0, int p1, int p2, int p3, int p4, int p5, int p6)
     v61 = this->u32_18; /*0x4c202c*/
     v63 = &v81.q088; /*0x4c2033*/
     v78[0] = p3; /*0x4c203c*/
-    qmemcpy(&v78[3], v78, 0x18u); /*0x4c2043*/
+    memcpy(&v78[3], v78, 0x18u); /*0x4c2043*/
     v80[1] = p1; /*0x4c2048*/
     v80[0] = p0; /*0x4c204f*/
     v80[2] = p2; /*0x4c2059*/
-    qmemcpy(&v80[3], v80, 0x18u); /*0x4c207c*/
+    memcpy(&v80[3], v80, 0x18u); /*0x4c207c*/
     v69 = &v81.__pad_0AC; /*0x4c207e*/
     v68 = 0; /*0x4c208d*/
     v65 = (char *)v78 - &v81.q088; /*0x4c209e*/
@@ -5056,7 +5056,7 @@ int Lightning::Draw(int p0, int p1, int p2, int p3, int p4, int p5, int p6)
         v69 += 88; /*0x4c23db*/
         ++v66; /*0x4c23ed*/
         result = v62; /*0x4c23f1*/
-        qmemcpy(v78, v77, sizeof(v78)); /*0x4c23f5*/
+        memcpy(v78, v77, sizeof(v78)); /*0x4c23f5*/
         v68 = (v68 + v61) >> 1; /*0x4c23f7*/
       }
       *(unsigned int *)&v81.q024 = v78[3]; /*0x4c2415*/
@@ -5142,9 +5142,9 @@ int Lightning::Draw(int p0, int p1, int p2, int p3, int p4, int p5, int p6)
       v13 = *((unsigned int *)v63 - 3); /*0x4c2749*/
       v53 = *((unsigned int *)v63 - 2); /*0x4c274c*/
       v69 -= 88; /*0x4c274f*/
-      qmemcpy(v78, v69, sizeof(v78)); /*0x4c2753*/
+      memcpy(v78, v69, sizeof(v78)); /*0x4c2753*/
       v63 -= 88; /*0x4c2763*/
-      qmemcpy(v80, v63, sizeof(v80)); /*0x4c2767*/
+      memcpy(v80, v63, sizeof(v80)); /*0x4c2767*/
       v68 = *((unsigned int *)v63 + 21); /*0x4c276f*/
       v62 = *((unsigned int *)v63 + 18); /*0x4c2773*/
       v57 = v13; /*0x4c2777*/
@@ -10428,7 +10428,7 @@ void ScoreScreen::Display()
     do /*0x68e547*/
     {
       --v221; /*0x68e542*/
-      qmemcpy(v220, v220 - 29, 0x74u); /*0x68e543*/
+      memcpy(v220, v220 - 29, 0x74u); /*0x68e543*/
       v220 -= 29; /*0x68e545*/
     }
     while ( v221 ); /*0x68e547*/
@@ -13937,7 +13937,7 @@ int __fastcall BigInt::ArrayArithmetic(int* p0, char* p1, int* p2, int p3)
     }
     else
     {
-      qmemcpy(v31, p2, 4 * (v6 >> 2)); /*0x5c713a*/
+      memcpy(v31, p2, 4 * (v6 >> 2)); /*0x5c713a*/
       v21 = v31; /*0x5c7145*/
       if ( p3 > 0 ) /*0x5c7149*/
       {
@@ -13990,7 +13990,7 @@ int __fastcall BigInt::ArrayArithmetic(int* p0, char* p1, int* p2, int p3)
     }
     return 0; /*0x5c71ab*/
   }
-  qmemcpy(v32, p1, 4 * (v6 >> 2)); /*0x5c701a*/
+  memcpy(v32, p1, 4 * (v6 >> 2)); /*0x5c701a*/
   v7 = v32; /*0x5c701e*/
   if ( p3 > 0 ) /*0x5c702c*/
   {
@@ -14036,7 +14036,7 @@ int __fastcall BigInt::ArrayArithmetic(int* p0, char* p1, int* p2, int p3)
     }
     return 0; /*0x5c71cf*/
   }
-  qmemcpy(v31, p2, 4 * (v6 >> 2)); /*0x5c7065*/
+  memcpy(v31, p2, 4 * (v6 >> 2)); /*0x5c7065*/
   v10 = v31; /*0x5c7069*/
   if ( p3 > 0 ) /*0x5c7074*/
   {
@@ -15269,7 +15269,7 @@ int __stdcall CChatEventSink::HandleServerList(int p0, int p1, int p2)
       {
         if ( !strcmp(&v4->u8_5F, aGam) && v47 == 1 ) /*0x7a47dc*/
         {
-          qmemcpy(&unk_B75E58, (const void *)v4, 0xF8u); /*0x7a47f0*/
+          memcpy(&unk_B75E58, (const void *)v4, 0xF8u); /*0x7a47f0*/
           strcpy(v50, byte_B75EBC); /*0x7a4815*/
           strtok(v50, asc_81C8FC); /*0x7a4826*/
           v29 = strtok(0, asc_81C8FC); /*0x7a4832*/
@@ -15282,7 +15282,7 @@ int __stdcall CChatEventSink::HandleServerList(int p0, int p1, int p2)
         }
         else if ( !strcmp(&v4->u8_5F, aWdt_1) ) /*0x7a489b*/
         {
-          qmemcpy(&stru_B76990.HashTable_field_0x38, (const void *)v4, 0xF8u); /*0x7a48d9*/
+          memcpy(&stru_B76990.HashTable_field_0x38, (const void *)v4, 0xF8u); /*0x7a48d9*/
           strcpy(v52, byte_B76A2C); /*0x7a48f7*/
           strtok(v52, asc_81C8FC); /*0x7a4908*/
           v31 = strtok(0, asc_81C8FC); /*0x7a4914*/
@@ -15303,7 +15303,7 @@ int __stdcall CChatEventSink::HandleServerList(int p0, int p1, int p2)
             v41 = 1; /*0x7a49b6*/
           }
           v33 = (char *)__2_YAPAXI_Z(0xF8u); /*0x7a49c5*/
-          qmemcpy(v33, (const void *)v4, 0xF8u); /*0x7a49d0*/
+          memcpy(v33, (const void *)v4, 0xF8u); /*0x7a49d0*/
           strcpy(v54, v33 + 100); /*0x7a49f5*/
           strtok(v54, asc_81C8FC); /*0x7a4a06*/
           v34 = strtok(0, asc_81C8FC); /*0x7a4a12*/
@@ -15321,7 +15321,7 @@ int __stdcall CChatEventSink::HandleServerList(int p0, int p1, int p2)
       }
       else
       {
-        qmemcpy(&unk_B75E58, (const void *)v4, 0xF8u); /*0x7a46f0*/
+        memcpy(&unk_B75E58, (const void *)v4, 0xF8u); /*0x7a46f0*/
         strcpy(v53, byte_B75EBC); /*0x7a4715*/
         strtok(v53, asc_81C8FC); /*0x7a4726*/
         v27 = strtok(0, asc_81C8FC); /*0x7a4732*/
@@ -15355,8 +15355,8 @@ LABEL_72:
         {
           v19 = -8 * LOBYTE(g_WOL_UserList.ptr_0); /*0x7a4447*/
           v20 = (unsigned int)(248 * g_WOL_UserList.ptr_0) >> 2; /*0x7a4449*/
-          qmemcpy(v17, dword_B778E0, 4 * v20); /*0x7a444c*/
-          qmemcpy(&v17[4 * v20], &v18[4 * v20], v19 & 3); /*0x7a4453*/
+          memcpy(v17, dword_B778E0, 4 * v20); /*0x7a444c*/
+          memcpy(&v17[4 * v20], &v18[4 * v20], v19 & 3); /*0x7a4453*/
           v18 = (char *)dword_B778E0; /*0x7a4455*/
         }
         __3_YAXPAX_Z(v18); /*0x7a445c*/
@@ -15379,7 +15379,7 @@ LABEL_72:
       v21 = (char *)dword_B778E0 + 248 * v9; /*0x7a44dc*/
       if ( v21 ) /*0x7a44e1*/
       {
-        qmemcpy(v21, (const void *)v4, 0xF8u); /*0x7a44ea*/
+        memcpy(v21, (const void *)v4, 0xF8u); /*0x7a44ea*/
         ptr_0 = g_WOL_UserList.ptr_0; /*0x7a44ec*/
       }
       g_WOL_UserList.ptr_0 = ptr_0 + 1; /*0x7a44f5*/
@@ -15428,8 +15428,8 @@ LABEL_35:
       {
         v13 = -8 * LOBYTE(g_WOL_UserList.ptr_0); /*0x7a430b*/
         v14 = (unsigned int)(248 * g_WOL_UserList.ptr_0) >> 2; /*0x7a430d*/
-        qmemcpy(v11, dword_B778E0, 4 * v14); /*0x7a4310*/
-        qmemcpy(&v11[4 * v14], &v12[4 * v14], v13 & 3); /*0x7a4317*/
+        memcpy(v11, dword_B778E0, 4 * v14); /*0x7a4310*/
+        memcpy(&v11[4 * v14], &v12[4 * v14], v13 & 3); /*0x7a4317*/
         v12 = (char *)dword_B778E0; /*0x7a4319*/
       }
       __3_YAXPAX_Z(v12); /*0x7a4320*/
@@ -15452,7 +15452,7 @@ LABEL_35:
     v15 = (char *)dword_B778E0 + 248 * v9; /*0x7a43a0*/
     if ( v15 ) /*0x7a43a5*/
     {
-      qmemcpy(v15, (const void *)v4, 0xF8u); /*0x7a43ae*/
+      memcpy(v15, (const void *)v4, 0xF8u); /*0x7a43ae*/
       ptr_0 = g_WOL_UserList.ptr_0; /*0x7a43b0*/
     }
     ++ptr_0; /*0x7a43b5*/
@@ -16028,7 +16028,7 @@ LABEL_159:
     }
     else
     {
-      qmemcpy(&stru_B76B00.StringVector_field_0x10, a3, 0x10Cu); /*0x7a5e1b*/
+      memcpy(&stru_B76B00.StringVector_field_0x10, a3, 0x10Cu); /*0x7a5e1b*/
       memset(&stru_B73BD8.StringVector_field_0x10, 0, 0x10Cu); /*0x7a5e27*/
       v29 = (HWND)Dialog::FindByHandle((Dialog *)0xC4); /*0x7a5e2e*/
       if ( v29 ) /*0x7a5e35*/
@@ -16066,7 +16066,7 @@ LABEL_159:
             v38 = SendMessageA(v36, 0x199u, v37, 0); /*0x7a5f56*/
             if ( v38 >= 0 && v38 < stru_B76AD0.DynamicArray_field_0x10 ) /*0x7a5f68*/
             {
-              qmemcpy(v160, (char *)dword_B76AE8 + 268 * v38, sizeof(v160)); /*0x7a5f9c*/
+              memcpy(v160, (char *)dword_B76AE8 + 268 * v38, sizeof(v160)); /*0x7a5f9c*/
               (v153) = ((v153) & ~0xFF) | ((ValidateGameJoinWOL((int)v160, 0, 0)) & 0xFF); /*0x7a5fb5*/
               v35 = (void (*)(HWND, BOOL))EnableWindow; /*0x7a5fbe*/
               (v153) = ((v153) & ~(0xFF << 8)) | (((ValidateGameJoinWOL((int)v160, 0, 1)) & 0xFF) << 8); /*0x7a5fc4*/
@@ -16182,7 +16182,7 @@ LABEL_159:
       }
     }
     v80 = a4; /*0x7a668c*/
-    qmemcpy(v158, a4, sizeof(v158)); /*0x7a66a1*/
+    memcpy(v158, a4, sizeof(v158)); /*0x7a66a1*/
     v81 = a3; /*0x7a66a3*/
     v82 = 0; /*0x7a66aa*/
     v158[8] = 0; /*0x7a66ac*/
@@ -16300,7 +16300,7 @@ LABEL_237:
               while ( 1 ) /*0x7a6b5f*/
               {
                 if ( v108 >= 0 && v109 < v107 ) /*0x7a6b65*/
-                  qmemcpy(v157, (char *)dword_B77908 + v108, sizeof(v157)); /*0x7a6b79*/
+                  memcpy(v157, (char *)dword_B77908 + v108, sizeof(v157)); /*0x7a6b79*/
                 v110 = String::GetOrEmpty_Alt(&v152); /*0x7a6b84*/
                 if ( !_strcmpi(v110, &v157[9]) ) /*0x7a6b8a*/
                   break; /*0x7a6b8a*/
@@ -16458,7 +16458,7 @@ LABEL_299:
                 {
                   if ( v130 >= 0 && v132 < *(int *)&stru_B778FC.m_3[1] ) /*0x7a6efc*/
                   {
-                    qmemcpy(v157, (char *)dword_B77908 + v130, sizeof(v157)); /*0x7a6f10*/
+                    memcpy(v157, (char *)dword_B77908 + v130, sizeof(v157)); /*0x7a6f10*/
                     v131 = v154; /*0x7a6f12*/
                   }
                   v133 = (struct in_addr)v157[6]; /*0x7a6f1b*/
@@ -16544,7 +16544,7 @@ LABEL_299:
       while ( 1 ) /*0x7a6776*/
       {
         if ( v84 >= 0 && v82 < v83 ) /*0x7a677c*/
-          qmemcpy(v157, (char *)dword_B77908 + v84, sizeof(v157)); /*0x7a678f*/
+          memcpy(v157, (char *)dword_B77908 + v84, sizeof(v157)); /*0x7a678f*/
         v85 = 0; /*0x7a6791*/
         v154 = 0; /*0x7a6798*/
         do /*0x7a67bd*/
@@ -16589,7 +16589,7 @@ LABEL_208:
         v95 = (char *)dword_B77908 + 108 * v88; /*0x7a691a*/
         if ( v95 ) /*0x7a691f*/
         {
-          qmemcpy(v95, v158, 0x6Cu); /*0x7a692d*/
+          memcpy(v95, v158, 0x6Cu); /*0x7a692d*/
           v87 = *(unsigned int *)&stru_B778FC.m_3[1]; /*0x7a692f*/
         }
         v80 = a4; /*0x7a6935*/
@@ -16608,8 +16608,8 @@ LABEL_208:
         v92 = *(unsigned int *)&v151.ptr_4; /*0x7a687f*/
         v93 = 108 * stru_B778FC.m_3[1]; /*0x7a688c*/
         v94 = (unsigned int)(108 * *(unsigned int *)&stru_B778FC.m_3[1]) >> 2; /*0x7a688e*/
-        qmemcpy(*(void **)&v151.ptr_4, dword_B77908, 4 * v94); /*0x7a6891*/
-        qmemcpy((void *)(v92 + 4 * v94), &v91[4 * v94], v93 & 3); /*0x7a6898*/
+        memcpy(*(void **)&v151.ptr_4, dword_B77908, 4 * v94); /*0x7a6891*/
+        memcpy((void *)(v92 + 4 * v94), &v91[4 * v94], v93 & 3); /*0x7a6898*/
         v91 = (char *)dword_B77908; /*0x7a689a*/
       }
       __3_YAXPAX_Z(v91); /*0x7a68a1*/
@@ -16740,7 +16740,7 @@ LABEL_13:
         v46.referenceCount = (int)Buffer; /*0x7a7289*/
         v8 = *(unsigned int *)a4; /*0x7a728f*/
         strcpy(Buffer, a4 + 36); /*0x7a72a2*/
-        qmemcpy(&v46.ambientSoundController[1], a4, 0x6Cu); /*0x7a72bb*/
+        memcpy(&v46.ambientSoundController[1], a4, 0x6Cu); /*0x7a72bb*/
         v46.customSound_controller[4] = 0; /*0x7a72bf*/
         if ( stru_B76B00.StringVector_field_0x10 ) /*0x7a72c7*/
         {
@@ -16975,7 +16975,7 @@ LABEL_56:
             {
               if ( v31 >= 0 && v30 < *(int *)&stru_B778FC.m_3[1] ) /*0x7a7849*/
               {
-                qmemcpy(&v46.ambientSoundController[1], (char *)dword_B77908 + v31, 0x6Cu); /*0x7a785c*/
+                memcpy(&v46.ambientSoundController[1], (char *)dword_B77908 + v31, 0x6Cu); /*0x7a785c*/
                 v32 = String::GetOrEmpty((String *)&stru_B73E10.CChatEventSink_field_0x30); /*0x7a7863*/
                 if ( !_strcmpi(&v46.customSound, v32) ) /*0x7a786e*/
                   break; /*0x7a786e*/
@@ -17068,7 +17068,7 @@ LABEL_105:
             Debug::Log(); /*0x7a7ac6*/
             if ( *(int *)&stru_B778FC.m_3[1] > 0 ) /*0x7a7ad5*/
             {
-              qmemcpy(&v46.ambientSoundController[1], dword_B77908, 0x6Cu); /*0x7a7af3*/
+              memcpy(&v46.ambientSoundController[1], dword_B77908, 0x6Cu); /*0x7a7af3*/
               (*(void (**)(LPVOID, int *, char *))(*(unsigned int *)ppv + 56))( /*0x7a7afd*/
                 ppv,
                 &v46.ambientSoundController[1],
@@ -17927,7 +17927,7 @@ LABEL_21:
         while ( 1 ) /*0x7a9aa8*/
         {
           if ( v11 >= 0 && v9 < DynamicArray_field_0x10 ) /*0x7a9aae*/
-            qmemcpy(Buffer, (char *)dword_B76AE8 + v11, sizeof(Buffer)); /*0x7a9ac2*/
+            memcpy(Buffer, (char *)dword_B76AE8 + v11, sizeof(Buffer)); /*0x7a9ac2*/
           v12 = String::GetOrEmpty_Alt((String *)&v87.DeleteAndZero_field_0x04); /*0x7a9ac8*/
           if ( !_strcmpi((char *)&Buffer[26], v12) ) /*0x7a9ad6*/
             break; /*0x7a9ad6*/
@@ -17980,7 +17980,7 @@ LABEL_21:
       else
         v14 = 0; /*0x7a9b7e*/
       String::Reassign(v14, (const char **)&unk_B73ACC); /*0x7a9b87*/
-      qmemcpy(&v14->ptr_4, v6, 0x10Cu); /*0x7a9b94*/
+      memcpy(&v14->ptr_4, v6, 0x10Cu); /*0x7a9b94*/
       *v14->ptr_88.__pad_0 = 0; /*0x7a9b9b*/
       v15 = ((int (*)(ObjectClass *))stru_B765F8.DynamicVector_field_0x28)(&unk_B73ACC) /*0x7a9bbf*/
           & ((1 << SLOBYTE(stru_B765F8.DynamicVector_field_0x1C)) - 1);
@@ -18237,7 +18237,7 @@ LABEL_66:
           v59 = (int)v57; /*0x7aa1c3*/
           if ( stru_B76970.StringVector_field_0x18 ) /*0x7aa1c5*/
           {
-            qmemcpy(v57, (const void *)stru_B76970.StringVector_field_0x18, 4 * stru_B76970.StringVector_field_0x10); /*0x7aa1cf*/
+            memcpy(v57, (const void *)stru_B76970.StringVector_field_0x18, 4 * stru_B76970.StringVector_field_0x10); /*0x7aa1cf*/
             StringVector_field_0x18 = (void *)stru_B76970.StringVector_field_0x18; /*0x7aa1d1*/
           }
           __3_YAXPAX_Z(StringVector_field_0x18); /*0x7aa1d8*/
@@ -19503,7 +19503,7 @@ char ChatEvent::ProcessStrings(const char* p0, int p1, int p2, int p3)
   Block[4] = *(void **)(p1 + 4); /*0x6b976a*/
   Block[5] = *(void **)(p1 + 8); /*0x6b9775*/
   LOWORD(Block[6]) = *(unsigned short *)(p1 + 12); /*0x6b9782*/
-  qmemcpy(&Block[10], (const void *)(p1 + 14), 0x28u); /*0x6b978c*/
+  memcpy(&Block[10], (const void *)(p1 + 14), 0x28u); /*0x6b978c*/
   v6 = __2_YAPAXI_Z(4 * (1 << SBYTE2(Block[13])) + 40); /*0x6b979c*/
   v7 = Block[10]; /*0x6b97a1*/
   v8 = (unsigned int *)v6; /*0x6b97a5*/
@@ -19528,7 +19528,7 @@ char ChatEvent::ProcessStrings(const char* p0, int p1, int p2, int p3)
   v13 *= 4; /*0x6b97f1*/
   v8->q024 = v14; /*0x6b97f4*/
   v8->nextArrayIndex = v15; /*0x6b97f9*/
-  qmemcpy(v8 + 10, (const void *)(p1 + 54), v13); /*0x6b9807*/
+  memcpy(v8 + 10, (const void *)(p1 + 54), v13); /*0x6b9807*/
   Block[2] = (void *)256; /*0x6b980b*/
   v16 = (unsigned __int8 *)(v8 + 10); /*0x6b981c*/
   v17 = &Block[21]; /*0x6b9821*/
@@ -19548,7 +19548,7 @@ char ChatEvent::ProcessStrings(const char* p0, int p1, int p2, int p3)
   }
   while ( Block[2] ); /*0x6b9881*/
   Block[2] = (void *)__2_YAPAXI_Z((char *)*(void **)((char *)&Block[3] + 2) - (char *)*(void **)((char *)&Block[5] + 2)); /*0x6b9899*/
-  qmemcpy(Block[2], Block[0], (char *)*(void **)((char *)&Block[3] + 2) - (char *)*(void **)((char *)&Block[5] + 2)); /*0x6b98a6*/
+  memcpy(Block[2], Block[0], (char *)*(void **)((char *)&Block[3] + 2) - (char *)*(void **)((char *)&Block[5] + 2)); /*0x6b98a6*/
   v22 = __2_YAPAXI_Z(0x20u); /*0x6b98af*/
   v23 = (int *)v22; /*0x6b98b4*/
   v24 = 0; /*0x6b98b6*/
@@ -19608,7 +19608,7 @@ char ChatEvent::ProcessStrings(const char* p0, int p1, int p2, int p3)
   }
   if ( p3 == 1 ) /*0x6b99d9*/
   {
-    qmemcpy(&v68[1], v8 + 10, 0x300u); /*0x6b99ea*/
+    memcpy(&v68[1], v8 + 10, 0x300u); /*0x6b99ea*/
     v24 = (int *)Block[8]; /*0x6b99ec*/
   }
   v33 = *v24; /*0x6b99f0*/
@@ -19635,7 +19635,7 @@ char ChatEvent::ProcessStrings(const char* p0, int p1, int p2, int p3)
       }
       v37 = (char *)v36 + 4; /*0x6b9a85*/
       if ( v37 ) /*0x6b9a8a*/
-        qmemcpy(&Block[21], v37, 0x304u); /*0x6b9a95*/
+        memcpy(&Block[21], v37, 0x304u); /*0x6b9a95*/
       v38 = this->q004; /*0x6b9a97*/
       if ( !v38 ) /*0x6b9a9e*/
         goto LABEL_38; /*0x6b9a9e*/
@@ -19703,7 +19703,7 @@ LABEL_40:
     v35 = v50; /*0x6b9bc4*/
   }
   String::Reassign(v35, (const char **)&Block[1]); /*0x6b9bcd*/
-  qmemcpy(&v35->ptr_4, v68, 0x304u); /*0x6b9be1*/
+  memcpy(&v35->ptr_4, v68, 0x304u); /*0x6b9be1*/
   *v35->u32_184.__pad_0 = 0; /*0x6b9be9*/
   v51 = (String **)(*(unsigned int *)this /*0x6b9c02*/
                   + 4 * ((*(int (**)(void **))(&this->q018))(&Block[1]) & ((1 << this->q00C) - 1)));
@@ -20047,7 +20047,7 @@ LABEL_17:
         else
           v15 = 0; /*0x7a3cc0*/
         String::Reassign(v15, (const char **)&a3); /*0x7a3cc9*/
-        qmemcpy(&v15->ptr_4, (const void *)v7, 0x44u); /*0x7a3cd8*/
+        memcpy(&v15->ptr_4, (const void *)v7, 0x44u); /*0x7a3cd8*/
         *v15->q024.__pad_0 = 0; /*0x7a3ce0*/
         v16 = ((int (*)(float *))stru_B76640.ComStreamClass_field_0x18)(&a3) /*0x7a3cfd*/
             & ((1 << SLOBYTE(stru_B76640.ComStreamClass_field_0x0C)) - 1);
@@ -23118,7 +23118,7 @@ LABEL_24:
   v20 = lstrlenA(::Buffer); /*0x4c89ef*/
   if ( lstrlenA(String) + v20 < 0xFFFF ) /*0x4c89fc*/
     lstrcatA(::Buffer, String); /*0x4c8a08*/
-  ModuleInternalVersion = GetModuleInternalVersion((ObjectClass *)&MEMORY[0xA8EB00].?[252]); /*0x4c8a13*/
+  ModuleInternalVersion = GetModuleInternalVersion((ObjectClass *)&MEMORY[0xA8EB00 + 252]); /*0x4c8a13*/
   wsprintfA(String, "Internal Version %s\r\n", ModuleInternalVersion); /*0x4c8a23*/
   v22 = lstrlenA(::Buffer); /*0x4c8a33*/
   if ( lstrlenA(String) + v22 < 0xFFFF ) /*0x4c8a40*/
@@ -43025,7 +43025,7 @@ NeuronClass::NeuronClass()
   this->u32_24 = 0; /*0x43a358*/
   this->u32_28 = 0; /*0x43a35f*/
   this->u32_2C = 0; /*0x43a366*/
-  this->q030 = *(unsigned int *)&stru_A8EB00.?[416]; /*0x43a372*/
+  this->q030 = *(unsigned int *)&stru_A8EB00.random[416]; /*0x43a372*/
   /* X11: ptr_0 install elided (implicit via NeuronClass virtuals 0x43a375) */
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E3DC4) */  /*0x43a37b*/
   /* X11: ptr_0 install elided (implicit via NeuronClass virtuals 0x43a382) */
@@ -43039,7 +43039,7 @@ NeuronClass::NeuronClass()
          0) )
   {
     v2 = g_BuildingLoadQueue_Array.?[1]++; /*0x43a3d2*/
-    *(unsigned int *)(g_BuildingLoadQueue_Array.?[0] + 4 * v2) = this; /*0x43a3e1*/
+    *(unsigned int *)(g_BuildingLoadQueue_Array.DynamicVector_field_0x1[0] + 4 * v2) = this; /*0x43a3e1*/
   }
   if ( g_BuildingLoadQueue_Array.LightBlueTint < g_BuildingLoadQueue_Array.LightRedTint /*0x43a41b*/
     || (BYTE1(g_BuildingLoadQueue_Array.LightGreenTint) || !g_BuildingLoadQueue_Array.LightRedTint)

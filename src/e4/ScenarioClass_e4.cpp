@@ -603,11 +603,11 @@ int ScenarioClass_Construct(void * a2)
       p_abstractFlags = &dword_A8B230[130].abstractFlags; /*0x68681f*/
       v6 = strlen(Source) + 1; /*0x686825*/
       v5 = &Source[v6]; /*0x686825*/
-      qmemcpy(&dword_A8B230[130].abstractFlags, &v5[-v6], 4 * (v6 >> 2)); /*0x686836*/
+      memcpy(&dword_A8B230[130].abstractFlags, &v5[-v6], 4 * (v6 >> 2)); /*0x686836*/
       v8 = &v5[4 * (v6 >> 2) - v6]; /*0x686836*/
       v7 = (char *)&p_abstractFlags[v6 >> 2]; /*0x686836*/
       v9 = v6 & 3; /*0x68683c*/
-      qmemcpy(v7, v8, v9); /*0x68683f*/
+      memcpy(v7, v8, v9); /*0x68683f*/
       Map = ScenarioClass::LoadMap(0, (INIClass *)&v11, a2, (ObjectClass *)&v7[v9]); /*0x686851*/
       /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x686853*/
       v14 = 0; /*0x68685b*/

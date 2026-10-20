@@ -848,7 +848,7 @@ unsigned int * GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)())
   else
     v11 = 0; /*0x5961d9*/
   dword_ABE150 = (int)v11; /*0x5961e7*/
-  qmemcpy(v11, &stru_ABDFD8, 0x178u); /*0x5961ec*/
+  memcpy(v11, &stru_ABDFD8, 0x178u); /*0x5961ec*/
   ScenarioClass::SetFileName((char *)dword_A8B230, aRandommap); /*0x5961f9*/
   LOBYTE(v12) = 0; /*0x5961fe*/
   ScreenSaver::Process(v12, v15); /*0x596200*/

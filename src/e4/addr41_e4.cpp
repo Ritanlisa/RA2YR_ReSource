@@ -570,7 +570,7 @@ int SubmitDirectSoundBufferData(unsigned int a1, char * a2, char * a3)
       }
       else
       {
-        qmemcpy(a2, *(const void **)(v14 + 4 * v15 + 80), (unsigned int)a1); /*0x41215f*/
+        memcpy(a2, *(const void **)(v14 + 4 * v15 + 80), (unsigned int)a1); /*0x41215f*/
         v17 = *(unsigned int *)(v14 + 4 * v15 + 88) - (unsigned int)a1; /*0x412174*/
         if ( v17 <= (unsigned int)v36 ) /*0x412178*/
         {
@@ -578,12 +578,12 @@ int SubmitDirectSoundBufferData(unsigned int a1, char * a2, char * a3)
           v21 = a3; /*0x41218a*/
           v22 = *(unsigned int *)(v14 + 4 * v15 + 88) - (unsigned int)a1; /*0x41218e*/
           v23 = v17 >> 2; /*0x412190*/
-          qmemcpy(a3, v20, 4 * v23); /*0x412193*/
+          memcpy(a3, v20, 4 * v23); /*0x412193*/
           v25 = &v20[4 * v23]; /*0x412193*/
           v24 = &v21[4 * v23]; /*0x412193*/
           v26 = v22; /*0x412195*/
 LABEL_18:
-          qmemcpy(v24, v25, v26 & 3); /*0x4121aa*/
+          memcpy(v24, v25, v26 & 3); /*0x4121aa*/
           (*(void (**)(unsigned int, char *, unsigned int *, char *, unsigned int *))(**(unsigned int **)(v14 + 140) + 76))( /*0x4121cc*/
             *(unsigned int *)(v14 + 140),
             a2,
@@ -608,7 +608,7 @@ LABEL_18:
       }
       v27 = (char)v16; /*0x4121a1*/
       v28 = (unsigned int)v16 >> 2; /*0x4121a3*/
-      qmemcpy(v19, v18, 4 * v28); /*0x4121a6*/
+      memcpy(v19, v18, 4 * v28); /*0x4121a6*/
       v25 = &v18[4 * v28]; /*0x4121a6*/
       v24 = &v19[4 * v28]; /*0x4121a6*/
       v26 = v27; /*0x4121a8*/

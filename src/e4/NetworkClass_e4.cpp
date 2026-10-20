@@ -96,7 +96,7 @@ AbstractClass * * NetworkClass::RecordEvent()
     if ( *(int *)&dword_A802C8 < 128 ) /*0x6ffe5f*/
     {
       v3 = &byte_A802D4[111 * dword_A802D0]; /*0x6ffe75*/
-      qmemcpy(v3, v5, 0x6Cu); /*0x6ffe7c*/
+      memcpy(v3, v5, 0x6Cu); /*0x6ffe7c*/
       v3 += 108; /*0x6ffe7c*/
       *(unsigned short *)v3 = v6; /*0x6ffe7e*/
       v3[2] = v7; /*0x6ffe80*/

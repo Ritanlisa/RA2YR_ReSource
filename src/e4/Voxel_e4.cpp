@@ -307,7 +307,7 @@ AbstractClass * Voxel::RenderFrame(void *a1)
   LODWORD(v27[5]) = v20; /*0x7546f8*/
   LODWORD(v27[2]) = ebx24; /*0x754707*/
   LODWORD(v27[3]) = v28; /*0x75470b*/
-  qmemcpy(this, v27, 0x18u); /*0x75470f*/
+  memcpy(this, v27, 0x18u); /*0x75470f*/
   return this; /*0x754711*/
 
 }
@@ -456,10 +456,10 @@ int Voxel::Projection_Setup()
   v69[2] = 0.0; /*0x754f0c*/
   Matrix3x4::Identity(&stru_B43F10); /*0x754f17*/
   v11 = v65; /*0x754f1c*/
-  qmemcpy(&unk_B43F40, Matrix3D::Constructor(&v66, 3.9268751, v65), 0x30u); /*0x754f3c*/
-  qmemcpy(&unk_B43F70, Matrix3D::Constructor(&v66, 2.3561251, v11), 0x30u); /*0x754f59*/
-  qmemcpy(&unk_B43FA0, Matrix3D::Constructor(&v66, 0.785375, v11), 0x30u); /*0x754f76*/
-  qmemcpy(&unk_B43FD0, Matrix3D::Constructor(&v66, 5.4976249, v11), 0x30u); /*0x754f93*/
+  memcpy(&unk_B43F40, Matrix3D::Constructor(&v66, 3.9268751, v65), 0x30u); /*0x754f3c*/
+  memcpy(&unk_B43F70, Matrix3D::Constructor(&v66, 2.3561251, v11), 0x30u); /*0x754f59*/
+  memcpy(&unk_B43FA0, Matrix3D::Constructor(&v66, 0.785375, v11), 0x30u); /*0x754f76*/
+  memcpy(&unk_B43FD0, Matrix3D::Constructor(&v66, 5.4976249, v11), 0x30u); /*0x754f93*/
   v12 = FromQuaternionAxisAngle(v58, v73, v11); /*0x754fa0*/
   Float4::Copy(flt_B44358, v57, v12); /*0x754fb0*/
   v13 = FromQuaternionAxisAngle(v58, v67, v11); /*0x754fbe*/
@@ -469,10 +469,10 @@ int Voxel::Projection_Setup()
   v15 = FromQuaternionAxisAngle(v58, v71, v11); /*0x755000*/
   Float4::Copy(flt_B44388, v57, v15); /*0x755010*/
   v16 = v75; /*0x755019*/
-  qmemcpy(&unk_B44000, Matrix3D::Constructor(&v66, 3.1415, v75), 0x30u); /*0x755038*/
-  qmemcpy(&unk_B44030, Matrix3D::Constructor(&v66, 1.57075, v16), 0x30u); /*0x755055*/
-  qmemcpy(&unk_B44060, Matrix3D::Constructor(&v66, 0.0, v16), 0x30u); /*0x75506f*/
-  qmemcpy(&unk_B44090, Matrix3D::Constructor(&v66, 4.7122502, v16), 0x30u); /*0x75508c*/
+  memcpy(&unk_B44000, Matrix3D::Constructor(&v66, 3.1415, v75), 0x30u); /*0x755038*/
+  memcpy(&unk_B44030, Matrix3D::Constructor(&v66, 1.57075, v16), 0x30u); /*0x755055*/
+  memcpy(&unk_B44060, Matrix3D::Constructor(&v66, 0.0, v16), 0x30u); /*0x75506f*/
+  memcpy(&unk_B44090, Matrix3D::Constructor(&v66, 4.7122502, v16), 0x30u); /*0x75508c*/
   v17 = FromQuaternionAxisAngle(v58, v68, v16); /*0x755099*/
   Float4::Copy(flt_B44398, v57, v17); /*0x7550a9*/
   v18 = FromQuaternionAxisAngle(v58, v72, v16); /*0x7550ba*/
@@ -481,10 +481,10 @@ int Voxel::Projection_Setup()
   Float4::Copy(flt_B443B8, v57, v19); /*0x7550eb*/
   v20 = FromQuaternionAxisAngle(v58, v69, v16); /*0x7550fc*/
   Float4::Copy(flt_B443C8, v57, v20); /*0x75510c*/
-  qmemcpy(&unk_B440C0, Matrix3D::Constructor(&v66, 3.1415, v16), 0x30u); /*0x75512d*/
-  qmemcpy(&unk_B440F0, Matrix3D::Constructor(&v66, 1.57075, v16), 0x30u); /*0x75514a*/
-  qmemcpy(&unk_B44120, Matrix3D::Constructor(&v66, 0.0, v16), 0x30u); /*0x755164*/
-  qmemcpy(&unk_B44150, Matrix3D::Constructor(&v66, 4.7122502, v16), 0x30u); /*0x755181*/
+  memcpy(&unk_B440C0, Matrix3D::Constructor(&v66, 3.1415, v16), 0x30u); /*0x75512d*/
+  memcpy(&unk_B440F0, Matrix3D::Constructor(&v66, 1.57075, v16), 0x30u); /*0x75514a*/
+  memcpy(&unk_B44120, Matrix3D::Constructor(&v66, 0.0, v16), 0x30u); /*0x755164*/
+  memcpy(&unk_B44150, Matrix3D::Constructor(&v66, 4.7122502, v16), 0x30u); /*0x755181*/
   v21 = FromQuaternionAxisAngle(v58, v68, v16); /*0x75518e*/
   Float4::Copy(flt_B443D8, v57, v21); /*0x75519e*/
   v22 = FromQuaternionAxisAngle(v58, v72, v16); /*0x7551af*/
@@ -493,10 +493,10 @@ int Voxel::Projection_Setup()
   Float4::Copy(flt_B443F8, v57, v23); /*0x7551e0*/
   v24 = FromQuaternionAxisAngle(v58, v69, v16); /*0x7551f1*/
   Float4::Copy(flt_B44408, v57, v24); /*0x755201*/
-  qmemcpy(&unk_B44180, Matrix3D::Constructor(&v66, 3.1415, v11), 0x30u); /*0x755221*/
-  qmemcpy(&unk_B441B0, Matrix3D::Constructor(&v66, 1.57075, v11), 0x30u); /*0x75523f*/
-  qmemcpy(&unk_B441E0, Matrix3D::Constructor(&v66, 0.0, v11), 0x30u); /*0x755259*/
-  qmemcpy(&unk_B44210, Matrix3D::Constructor(&v66, 4.7122502, v11), 0x30u); /*0x755276*/
+  memcpy(&unk_B44180, Matrix3D::Constructor(&v66, 3.1415, v11), 0x30u); /*0x755221*/
+  memcpy(&unk_B441B0, Matrix3D::Constructor(&v66, 1.57075, v11), 0x30u); /*0x75523f*/
+  memcpy(&unk_B441E0, Matrix3D::Constructor(&v66, 0.0, v11), 0x30u); /*0x755259*/
+  memcpy(&unk_B44210, Matrix3D::Constructor(&v66, 4.7122502, v11), 0x30u); /*0x755276*/
   v25 = FromQuaternionAxisAngle(v58, v68, v11); /*0x755283*/
   Float4::Copy(flt_B44418, v57, v25); /*0x755293*/
   v26 = FromQuaternionAxisAngle(v58, v72, v11); /*0x7552a4*/
@@ -547,22 +547,22 @@ int Voxel::Projection_Setup()
   }
   while ( v29 < 768 ); /*0x755459*/
   Matrix3x4::Identity(&stru_B45188); /*0x755464*/
-  qmemcpy(&unk_B451B8, Matrix3D::Constructor(&v66, 4.7122502, v11), 0x30u); /*0x755485*/
-  qmemcpy(&unk_B451E8, Matrix3D::Constructor(&v66, 3.1415, v11), 0x30u); /*0x7554a2*/
-  qmemcpy(&unk_B45218, Matrix3D::Constructor(&v66, 1.57075, v11), 0x30u); /*0x7554bf*/
-  qmemcpy(&unk_B45248, Matrix3D::Constructor(&v66, 0.0, v11), 0x30u); /*0x7554d9*/
-  qmemcpy(&unk_B45278, Matrix3D::Constructor(&v66, 3.9268751, v16), 0x30u); /*0x7554f6*/
-  qmemcpy(&unk_B452A8, Matrix3D::Constructor(&v66, 2.3561251, v16), 0x30u); /*0x755513*/
-  qmemcpy(&unk_B452D8, Matrix3D::Constructor(&v66, 0.785375, v16), 0x30u); /*0x755530*/
-  qmemcpy(&unk_B45308, Matrix3D::Constructor(&v66, 5.4976249, v16), 0x30u); /*0x75554d*/
-  qmemcpy(&unk_B45338, Matrix3D::Constructor(&v66, 3.9268751, v16), 0x30u); /*0x75556a*/
-  qmemcpy(&unk_B45368, Matrix3D::Constructor(&v66, 2.3561251, v16), 0x30u); /*0x755586*/
-  qmemcpy(&unk_B45398, Matrix3D::Constructor(&v66, 0.785375, v16), 0x30u); /*0x7555a4*/
-  qmemcpy(&unk_B453C8, Matrix3D::Constructor(&v66, 5.4976249, v16), 0x30u); /*0x7555c1*/
-  qmemcpy(&unk_B453F8, Matrix3D::Constructor(&v66, 3.9268751, v11), 0x30u); /*0x7555de*/
-  qmemcpy(&unk_B45428, Matrix3D::Constructor(&v66, 2.3561251, v11), 0x30u); /*0x7555fb*/
-  qmemcpy(&unk_B45458, Matrix3D::Constructor(&v66, 0.785375, v11), 0x30u); /*0x755618*/
-  qmemcpy(&unk_B45488, Matrix3D::Constructor(&v66, 5.4976249, v11), 0x30u); /*0x755639*/
+  memcpy(&unk_B451B8, Matrix3D::Constructor(&v66, 4.7122502, v11), 0x30u); /*0x755485*/
+  memcpy(&unk_B451E8, Matrix3D::Constructor(&v66, 3.1415, v11), 0x30u); /*0x7554a2*/
+  memcpy(&unk_B45218, Matrix3D::Constructor(&v66, 1.57075, v11), 0x30u); /*0x7554bf*/
+  memcpy(&unk_B45248, Matrix3D::Constructor(&v66, 0.0, v11), 0x30u); /*0x7554d9*/
+  memcpy(&unk_B45278, Matrix3D::Constructor(&v66, 3.9268751, v16), 0x30u); /*0x7554f6*/
+  memcpy(&unk_B452A8, Matrix3D::Constructor(&v66, 2.3561251, v16), 0x30u); /*0x755513*/
+  memcpy(&unk_B452D8, Matrix3D::Constructor(&v66, 0.785375, v16), 0x30u); /*0x755530*/
+  memcpy(&unk_B45308, Matrix3D::Constructor(&v66, 5.4976249, v16), 0x30u); /*0x75554d*/
+  memcpy(&unk_B45338, Matrix3D::Constructor(&v66, 3.9268751, v16), 0x30u); /*0x75556a*/
+  memcpy(&unk_B45368, Matrix3D::Constructor(&v66, 2.3561251, v16), 0x30u); /*0x755586*/
+  memcpy(&unk_B45398, Matrix3D::Constructor(&v66, 0.785375, v16), 0x30u); /*0x7555a4*/
+  memcpy(&unk_B453C8, Matrix3D::Constructor(&v66, 5.4976249, v16), 0x30u); /*0x7555c1*/
+  memcpy(&unk_B453F8, Matrix3D::Constructor(&v66, 3.9268751, v11), 0x30u); /*0x7555de*/
+  memcpy(&unk_B45428, Matrix3D::Constructor(&v66, 2.3561251, v11), 0x30u); /*0x7555fb*/
+  memcpy(&unk_B45458, Matrix3D::Constructor(&v66, 0.785375, v11), 0x30u); /*0x755618*/
+  memcpy(&unk_B45488, Matrix3D::Constructor(&v66, 5.4976249, v11), 0x30u); /*0x755639*/
   Int4::Set2(&stru_B43188, 0, 0, 0, 1065353216); /*0x755646*/
   v36 = FromQuaternionAxisAngle(v58, v69, v11); /*0x755657*/
   Float4::Copy(flt_B43198, v57, v36); /*0x755667*/
@@ -2764,7 +2764,7 @@ int Voxel::SectionProject(int * a2, int a3)
   result = *&this->u32_14C; /*0x76201a*/
   *(unsigned int *)(result + 40) = *&this->u32_EC; /*0x762026*/
   *(unsigned int *)(result + 44) = *&this->u32_F0; /*0x762034*/
-  qmemcpy(&this->u32_1D8, (const void *)(*&this->u32_1D4 + 928), 0x18u); /*0x762049*/
+  memcpy(&this->u32_1D8, (const void *)(*&this->u32_1D4 + 928), 0x18u); /*0x762049*/
   return result; /*0x76204b*/
 
 }
@@ -3347,7 +3347,7 @@ AbstractClass * * Voxel::LightRender(AbstractClass ** a2, int a3)
   result = *&this->u32_14C; /*0x762a9b*/
   *(unsigned int *)(result + 24) = *&this->u32_EC; /*0x762aa7*/
   *(unsigned int *)(result + 28) = *&this->u32_F0; /*0x762ab5*/
-  qmemcpy(&this->u32_1D8, (const void *)(*&this->u32_1D4 + 928), 0x18u); /*0x762aca*/
+  memcpy(&this->u32_1D8, (const void *)(*&this->u32_1D4 + 928), 0x18u); /*0x762aca*/
   return result; /*0x762acc*/
 
 }

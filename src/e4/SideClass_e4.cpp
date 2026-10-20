@@ -143,18 +143,18 @@ int SideClass::Construct(CCINIClass * aP1, void *a2, void *a3, void *a4, void *a
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F2E94) */  /*0x6a459d*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F2E94) */  /*0x6a45a3*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F2E94) */  /*0x6a45aa*/
-  AbstractClass::GenerateUniqueID((AbstractClass *)&aP1->?); /*0x6a45b1*/
-  if ( FootClass_Array.?[0] < FootClass_Array.?[1] /*0x6a45ea*/
-    || (BYTE1(FootClass_Array.?[2]) || !FootClass_Array.?[1])
+  AbstractClass::GenerateUniqueID((AbstractClass *)&aP1->ptr_4); /*0x6a45b1*/
+  if ( dword_8B4130 < dword_8B4128 /*0x6a45ea*/
+    || (BYTE1(dword_8B4128) || !FootClass_Array.?[1])
     && FootClass_Array.?[1] > 0
     && (*(unsigned __int8 (**)(int *, int, unsigned int))(FootClass_Array.? + 8))(
          &DataGlobal_8B3DC0[864],
-         FootClass_Array.?[1] + FootClass_Array.?[1],
+         dword_8B4134 + FootClass_Array.?[1],
          0) )
   {
     int v3; // eax
-    v3 = FootClass_Array.?[0]++; /*0x6a45f7*/
-    *(unsigned int *)(FootClass_Array.?[0] + 4 * v3) = aP1; /*0x6a4606*/
+    v3 = dword_8B4130++; /*0x6a45f7*/
+    *(unsigned int *)(dword_8B4124 + 4 * v3) = aP1; /*0x6a4606*/
   }
   return &aP1->AbstractClass; /*0x6a460b*/
 

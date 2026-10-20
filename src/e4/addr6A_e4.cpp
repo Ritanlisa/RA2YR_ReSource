@@ -875,12 +875,12 @@ char E4Recv_6A04C0::sub_6A04C0(IUnknown * aP1)
     ptr_8 = this->M12; /*0x6a054a*/
     CellClass *v7; // eax
     v7 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, aP1); /*0x6a0551*/
-    if ( (unsigned __int8)CrateClass::ProcessPickup((CrateClass *)v7, (int)ptr_8) && !*((unsigned char *)this->? + 129) ) /*0x6a0564*/
+    if ( (unsigned __int8)CrateClass::ProcessPickup((CrateClass *)v7, (int)ptr_8) && !*((unsigned char *)this->ptr_C + 129) ) /*0x6a0564*/
     {
       WalkLocomotion::MoveTo((int)this, aP1, 1); /*0x6a0573*/
       return 1; /*0x6a057d*/
     }
-    if ( *((unsigned char *)this->? + 144) ) /*0x6a0583*/
+    if ( *((unsigned char *)this->ptr_C + 144) ) /*0x6a0583*/
     {
       *v4 = g_OverlayTypeConfig; /*0x6a0593*/
       *(unsigned long long *)&this->ambientSoundController[2] = qword_B077FC; /*0x6a059b*/

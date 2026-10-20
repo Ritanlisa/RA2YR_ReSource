@@ -348,7 +348,7 @@ int E4Recv_4B69E0::sub_4B69E0(int a2)
   }
   v3 = -1; /*0x4b6a0b*/
   LABEL_11:
-  *(&this->? + this->?++) = a2; /*0x4b6a55*/
+  *(&this->abstractFlags + this->uniqueId++) = a2; /*0x4b6a55*/
   this->owningHouseIndex += (*(int (**)(int))(*(unsigned int *)a2 + 172))(a2); /*0x4b6a74*/
   if ( v3 != -1 ) /*0x4b6a77*/
     ++*(dword_A8B230[41].NeedsSaveOrLink.ptr_8 + v3); /*0x4b6a8b*/
@@ -379,7 +379,7 @@ int E4Recv_4B6AB0::sub_4B6AB0(int a2)
     v5 = 0; /*0x4b6ae5*/
     if ( (int)ptr_0 > 0 ) /*0x4b6ae9*/
     {
-      while ( *(unsigned int *)(dword_A8B230[375].referenceCount + 4 * v5) != *(&this->? + a2) /*0x4b6b05*/
+      while ( *(unsigned int *)(dword_A8B230[375].referenceCount + 4 * v5) != *(&this->abstractFlags + a2) /*0x4b6b05*/
            || *(unsigned int *)(dword_A8B230[376].abstractFlags + 4 * v5) == -1 )
       {
         if ( ++v5 >= (int)dword_A8B230[376].ptr_0 ) /*0x4b6b10*/
@@ -390,7 +390,7 @@ int E4Recv_4B6AB0::sub_4B6AB0(int a2)
     }
   }
   LABEL_12:
-  v6 = this->owningHouseIndex - (*(int (**)(unsigned int))(**((unsigned int **)&this->? + a2) + 172))(*(&this->? + a2)); /*0x4b6b24*/
+  v6 = this->owningHouseIndex - (*(int (**)(unsigned int))(**((unsigned int **)&this->abstractFlags + a2) + 172))(*(&this->abstractFlags + a2)); /*0x4b6b24*/
   v7 = this->M16 - 1; /*0x4b6b3c*/
   this->owningHouseIndex = v6; /*0x4b6b3d*/
   v8 = a2; /*0x4b6b42*/
@@ -664,15 +664,15 @@ char E4Recv_4B0DF0::sub_4B0DF0(unsigned int *a2, unsigned int *aP1, int a4, int 
     HIBYTE(aP1->customSound_controller[4]) = 1; /*0x4b0e70*/
     aP1->ambientSoundController[3] = v6; /*0x4b0e74*/
     void *ptr_8; // [esp-4h] [ebp-10h]
-    ptr_8 = aP1->?; /*0x4b0e7a*/
+    ptr_8 = aP1->ptr_C; /*0x4b0e7a*/
     CellClass *v7; // eax
     v7 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, aP1); /*0x4b0e81*/
-    if ( (unsigned __int8)CrateClass::ProcessPickup((CrateClass *)v7, (int)ptr_8) && !*((unsigned char *)aP1->? + 129) ) /*0x4b0e94*/
+    if ( (unsigned __int8)CrateClass::ProcessPickup((CrateClass *)v7, (int)ptr_8) && !*((unsigned char *)aP1->ptr_C + 129) ) /*0x4b0e94*/
     {
       JumpjetLocomotion::MoveTo((int)aP1, aP1, 1); /*0x4b0ea3*/
       return 1; /*0x4b0ead*/
     }
-    if ( *((unsigned char *)aP1->? + 144) ) /*0x4b0eb3*/
+    if ( *((unsigned char *)aP1->ptr_C + 144) ) /*0x4b0eb3*/
     {
       *v4 = g_DDraw_ClipRect; /*0x4b0ec3*/
       *(unsigned long long *)&aP1->ambientSoundController[2] = qword_8A0794; /*0x4b0ecb*/
@@ -1171,7 +1171,7 @@ namespace gamemd {
 int E4Recv_4B6BE0::sub_4B6BE0(int a2)
 {
 
-  return *(&this->? + a2); /*0x4b6be8*/
+  return *(&this->abstractFlags + a2); /*0x4b6be8*/
 
 }
 } // namespace gamemd

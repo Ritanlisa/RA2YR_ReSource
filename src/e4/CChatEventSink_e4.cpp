@@ -93,7 +93,7 @@ LABEL_103:
           do /*0x7aa985*/
           {
             if ( v5 >= 0 && v4 < DynamicArray_field_0x10 ) /*0x7aa945*/
-              qmemcpy(&v33[32], (char *)dword_B76AE8 + v5, 0x10Cu); /*0x7aa959*/
+              memcpy(&v33[32], (char *)dword_B76AE8 + v5, 0x10Cu); /*0x7aa959*/
             if ( *(unsigned int *)&v33[72] != -1 ) /*0x7aa962*/
             {
               Array::InsertElement((Array *)&v33[12], &v33[32], *(int *)&v33[12]); /*0x7aa972*/
@@ -161,7 +161,7 @@ LABEL_103:
               while ( 1 ) /*0x7aaa8b*/
               {
                 if ( v12 >= 0 && v12 < v13 ) /*0x7aaa91*/
-                  qmemcpy(&v33[32], v14, 0x10Cu); /*0x7aaa9e*/
+                  memcpy(&v33[32], v14, 0x10Cu); /*0x7aaa9e*/
                 if ( !strcmp(&v33[84], v6 + 52) ) /*0x7aaaad*/
                   break; /*0x7aaaad*/
                 v13 = *(unsigned int *)&v33[12]; /*0x7aaad4*/

@@ -1946,7 +1946,7 @@ LABEL_206:
               v124 = v121 + 1; /*0x60ec31*/
               if ( v214 != (unsigned char *)v124 ) /*0x60ec3d*/
               {
-                qmemcpy(v214, v124, sizeof(v214)); /*0x60ec4d*/
+                memcpy(v214, v124, sizeof(v214)); /*0x60ec4d*/
                 *(unsigned int *)&v214[40] = v123; /*0x60ec4f*/
                 *(unsigned int *)&v214[60] = Y[0]; /*0x60ec5a*/
                 *(unsigned int *)&v214[52] = v122; /*0x60ec61*/
@@ -2021,7 +2021,7 @@ LABEL_206:
                 v193 = *(unsigned int *)&v214[60]; /*0x60ede1*/
                 if ( v214 != v138 + 4 ) /*0x60edf1*/
                 {
-                  qmemcpy(v214, v138 + 4, sizeof(v214)); /*0x60ee01*/
+                  memcpy(v214, v138 + 4, sizeof(v214)); /*0x60ee01*/
                   *(unsigned int *)&v214[52] = v139; /*0x60ee07*/
                   *(unsigned int *)&v214[40] = Y[0]; /*0x60ee0e*/
                   *(unsigned int *)&v214[60] = v193; /*0x60ee19*/
@@ -7427,7 +7427,7 @@ LABEL_18:
           else
             v45 = 0; /*0x59672f*/
           dword_ABE150 = (int)v45; /*0x59673d*/
-          qmemcpy(v45, stru_ABDFD8, 0x178u); /*0x596742*/
+          memcpy(v45, stru_ABDFD8, 0x178u); /*0x596742*/
           (*(void (**)(int))(*(unsigned int *)dword_887640 + 16))(dword_887640); /*0x59674c*/
           Timer::PumpMessages((HWND *)dword_87F770); /*0x596755*/
           PostMessageA(hWnd, 0xFu, 0, 0); /*0x596761*/

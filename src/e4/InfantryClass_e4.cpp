@@ -261,11 +261,11 @@ void* InfantryClass::Destruct(IUnknown * a1, AbstractClass * edx0)
   int Vtable3; // eax
   Vtable3 = AbstractClass::GetVtable3(pVal); /*0x517ec3*/
   void *ptr_0; // edx
-  ptr_0 = g_BuildingLoadQueue_Array.?; /*0x517ec8*/
+  ptr_0 = NumOfElements; /*0x517ec8*/
   int v10 = Vtable3; // edi /*0x517ece*/
-  if ( g_BuildingLoadQueue_Array.? ) /*0x517ed2*/
+  if ( g_BuildingLoadQueue_Array.ptr_0 ) /*0x517ed2*/
   {
-    if ( !LOBYTE(g_BuildingLoadQueue_Array.?) ) /*0x517ede*/
+    if ( !LOBYTE(g_BuildingLoadQueue_Array.ptr_0) ) /*0x517ede*/
     {
       qsort( /*0x517eee*/
         g_BuildingLoadQueue_Array.TechnoTypeClass,
@@ -287,7 +287,7 @@ void* InfantryClass::Destruct(IUnknown * a1, AbstractClass * edx0)
       {
         int v13 = v12 + 1; // ecx /*0x517f2f*/
         char *i; // eax
-        for ( i = (char *)g_BuildingLoadQueue_Array.?; /*0x517f39*/
+        for ( i = (char *)NumOfElements; /*0x517f39*/
         v13 < (int)g_BuildingLoadQueue_Array.?;
         i = (char *)g_BuildingLoadQueue_Array.? )
         {
@@ -296,10 +296,10 @@ void* InfantryClass::Destruct(IUnknown * a1, AbstractClass * edx0)
           *(v15 - 2) = *v15; /*0x517f47*/
           *(v15 - 1) = v15[1]; /*0x517f4d*/
         }
-        g_BuildingLoadQueue_Array.? = i - 1; /*0x517f62*/
-        *((unsigned int *)g_BuildingLoadQueue_Array.TechnoTypeClass + 2 * (int)g_BuildingLoadQueue_Array.?) = 0; /*0x517f67*/
-        *((unsigned int *)g_BuildingLoadQueue_Array.TechnoTypeClass + 2 * (int)g_BuildingLoadQueue_Array.? + 1) = 0; /*0x517f77*/
-        g_BuildingLoadQueue_Array.? = 0; /*0x517f7b*/
+        NumOfElements= i - 1; /*0x517f62*/
+        *((unsigned int *)g_BuildingLoadQueue_Array.TechnoTypeClass + 2 * (int)NumOfElements) = 0; /*0x517f67*/
+        *((unsigned int *)g_BuildingLoadQueue_Array.TechnoTypeClass + 2 * (int)NumOfElements+ 1) = 0; /*0x517f77*/
+        dword_B0E850= 0; /*0x517f7b*/
       }
     }
   }

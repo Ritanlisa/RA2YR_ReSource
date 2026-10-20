@@ -14114,7 +14114,7 @@ LABEL_35:
       while ( v46 == -1 ); /*0x5c8394*/
     }
   }
-  qmemcpy(this, &dword_ABF6BC, 4 * a3); /*0x5c83a5*/
+  memcpy(this, &dword_ABF6BC, 4 * a3); /*0x5c83a5*/
   return 0; /*0x5c83a7*/
 
 }
@@ -17400,7 +17400,7 @@ int Gap2Recv_6342E0::Team_Helper_6342E0(TechnoClass * aP1, int a3) {
   unsigned char *v4; // esi
 
   v4 = *(unsigned char **)(*((unsigned int *)this->ptr_4 + a3) + 4); /*0x6342f7*/
-  qmemcpy((void *)aP1, v4, 0x6Cu); /*0x6342fa*/
+  memcpy((void *)aP1, v4, 0x6Cu); /*0x6342fa*/
   v4 += 108; /*0x6342fa*/
   *(unsigned short *)(aP1 + 108) = *(unsigned short *)v4; /*0x6342fc*/
   *(unsigned char *)(aP1 + 110) = v4[2]; /*0x6342fe*/
@@ -17673,7 +17673,7 @@ int Gap2Recv_63C690::RenderScenarioActionLines() {
   if ( uniqueId > 0 ) /*0x63c6e0*/
   {
     v5 = *(unsigned char **)(*(unsigned int *)this->ptr_4 + 4); /*0x63c6f3*/
-    qmemcpy(v51, v5, 0x6Cu); /*0x63c6f6*/
+    memcpy(v51, v5, 0x6Cu); /*0x63c6f6*/
     v5 += 108; /*0x63c6f6*/
     v51[54] = *(unsigned short *)v5; /*0x63c6f8*/
     LOBYTE(v51[55]) = v5[2]; /*0x63c6fa*/
@@ -17732,7 +17732,7 @@ LABEL_16:
         v9 = -1; /*0x63c823*/
         if ( v40 ) /*0x63c828*/
         {
-          qmemcpy(v51, v40, 0x6Fu); /*0x63c836*/
+          memcpy(v51, v40, 0x6Fu); /*0x63c836*/
           v14 = Render_Render_63CA80(v46, v51, v13); /*0x63c84a*/
           v39[0] = *v14; /*0x63c851*/
           v39[1] = v14[1]; /*0x63c858*/
@@ -17864,7 +17864,7 @@ int Gap2Recv_63CAE0::RenderScenarioActionLines2() {
   if ( uniqueId > 0 ) /*0x63cb30*/
   {
     v6 = *(unsigned char **)(*(unsigned int *)this->ptr_4 + 4); /*0x63cb40*/
-    qmemcpy(v48, v6, 0x6Cu); /*0x63cb43*/
+    memcpy(v48, v6, 0x6Cu); /*0x63cb43*/
     v6 += 108; /*0x63cb43*/
     v48[54] = *(unsigned short *)v6; /*0x63cb45*/
     LOBYTE(v48[55]) = v6[2]; /*0x63cb47*/
@@ -17927,7 +17927,7 @@ LABEL_17:
         v17 = -1; /*0x63cc6d*/
         if ( v13 ) /*0x63cc72*/
         {
-          qmemcpy(v48, v13, 0x6Fu); /*0x63cc80*/
+          memcpy(v48, v13, 0x6Fu); /*0x63cc80*/
           v18 = Render_Render_63CA80(v46, v48, v16); /*0x63cc8d*/
           v40 = *v18; /*0x63cc94*/
           v41 = v18[1]; /*0x63cc9f*/
@@ -24348,7 +24348,7 @@ int Gap2Recv_6B4100::Map_Get_6B4100() {
       {
         BombClass *attachedBomb; // eax
         attachedBomb = this->attachedBomb; /*0x6b41db*/
-        if ( (int)attachedBomb >= *(int *)&stru_A8EB00.?[340] /*0x6b41f8*/
+        if ( (int)attachedBomb >= *(int *)&stru_A8EB00.random[340] /*0x6b41f8*/
           || attachedBomb == 0xFFFF
           || *(unsigned char *)(*(unsigned int *)(*(unsigned int *)&DataGlobal_A8EC48 + 4 * (unsigned int)attachedBomb) + 736) )
         {
@@ -25920,13 +25920,13 @@ char* Gap2Recv_6DA9D0::RenderSelectionBeacons(int a2) {
   unsigned char v33[12]; // [esp+8Ch] [ebp-Ch] BYREF
 
   v19 = (0x7FFFFFFF - *(unsigned int *)&TeamTypeClass_Array) % 15; /*0x6da9f9*/
-  result = (char *)(*(unsigned int *)&stru_A8EB00.?[228] - 1); /*0x6daa44*/
+  result = (char *)(*(unsigned int *)&stru_A8EB00.random[228] - 1); /*0x6daa44*/
   v21 = (byte_A83CD9 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x6daa49*/
   | (word_A83CDA >> g_BitMask_Blue << g_BitMask_Green)
   | (MEMORY[0xA83CDB] >> g_BitMask_Red << g_BitShift_Blue);
-  for ( i = *(unsigned int *)&stru_A8EB00.?[228] - 1; i >= 0; --i ) /*0x6daa51*/
+  for ( i = *(unsigned int *)&stru_A8EB00.random[228] - 1; i >= 0; --i ) /*0x6daa51*/
   {
-      v4 = *(unsigned int **)(*(unsigned int *)&stru_A8EB00.?[216] + 4 * (unsigned int)result); /*0x6daa5e*/
+      v4 = *(unsigned int **)(*(unsigned int *)&stru_A8EB00.random[216] + 4 * (unsigned int)result); /*0x6daa5e*/
       if ( (*(int (**)(unsigned int *))(*v4 + 44))(v4) == 6 /*0x6daab2*/
       && *((unsigned char *)v4 + 144)
       && *((unsigned char *)v4 + 131)
@@ -26347,8 +26347,8 @@ int LWCViewClass::RenderCells() {
         v47[2] = Coords->ptr_8; /*0x6db73c*/
         v8 = Coord::To_ScreenRaw(&v61, v47); /*0x6db743*/
         v9 = v8[1]; /*0x6db74c*/
-        v10 = *v8 - (unsigned int)v1[1].? - 2; /*0x6db765*/
-        v11 = (char *)DSurface_ViewBounds.field_4 + v9 - (unsigned int)v1[1].? - 2; /*0x6db768*/
+        v10 = *v8 - (unsigned int)v1[1].ptr_4 - 2; /*0x6db765*/
+        v11 = (char *)DSurface_ViewBounds.field_4 + v9 - (unsigned int)v1[1].ptr_8 - 2; /*0x6db768*/
         v33 = 4; /*0x6db773*/
         v12 = v2->occupationFlags; /*0x6db777*/
         *(unsigned int *)v32.__pad_000 = v10; /*0x6db77d*/
@@ -27383,7 +27383,7 @@ LABEL_34:
 {
       while ( 1 ) /*0x6ef332*/
       {
-        v16 = *(TechnoClass **)&v11[1].?; /*0x6ef332*/
+        v16 = *(TechnoClass **)&v11[1].missionQueued; /*0x6ef332*/
         v10 = (*((int (**)(TechnoClass *))v11->RadioClass + 33))(v11); /*0x6ef33a*/
         if ( !v10->u32_5E0 ) /*0x6ef340*/
           break; /*0x6ef340*/

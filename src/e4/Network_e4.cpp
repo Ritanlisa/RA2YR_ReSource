@@ -1518,7 +1518,7 @@ void * Network::ReceiveLoop(void *a1)
                           if ( this->u32_44 ) /*0x541c00*/
                           {
                             v22 = dword_A8DA78[v10]; /*0x541c16*/
-                            if ( stru_A80220.? > *(unsigned int *)(v22 + 111) ) /*0x541c1c*/
+                            if ( dword_A80238> *(unsigned int *)(v22 + 111) ) /*0x541c1c*/
                             {
                               if ( SessionClass::IsValidHouse( /*0x541c36*/
                                      (int)&dword_A8B238,
@@ -3110,12 +3110,12 @@ LABEL_34:
                            + 154);
         v13 = strlen(v12) + 1; /*0x5ef6e2*/
         v14 = &byte_AC11E8[strlen(byte_AC11E8)]; /*0x5ef6f0*/
-        qmemcpy(v14, v12, 4 * (v13 >> 2)); /*0x5ef6f4*/
+        memcpy(v14, v12, 4 * (v13 >> 2)); /*0x5ef6f4*/
         v16 = &v12[4 * (v13 >> 2)]; /*0x5ef6f4*/
         v15 = &v14[4 * (v13 >> 2)]; /*0x5ef6f4*/
         v17 = v13; /*0x5ef6f6*/
         (v13) = ((v13) & ~0xFF) | ((0) & 0xFF); /*0x5ef6f8*/
-        qmemcpy(v15, v16, v17 & 3); /*0x5ef6fd*/
+        memcpy(v15, v16, v17 & 3); /*0x5ef6fd*/
         if ( Modem::CheckStatus(v9, v13) ) /*0x5ef701*/
         {
           *(unsigned int *)&stru_A8D804.__pad_3D[751] = 2; /*0x5ef716*/
@@ -4005,7 +4005,7 @@ LABEL_68:
                 do /*0x64c9a5*/
                 {
                   ++v29; /*0x64c993*/
-                  qmemcpy(v30, (char *)v30 + 24, 0x18u); /*0x64c994*/
+                  memcpy(v30, (char *)v30 + 24, 0x18u); /*0x64c994*/
                   v30 = (char *)v30 + 24; /*0x64c99a*/
                 }
                 while ( v29 < (*(int (**)(int))(*(unsigned int *)a1 + 16))(a1) - 1 ); /*0x64c9a5*/
@@ -4032,7 +4032,7 @@ LABEL_68:
           }
           if ( Destination != (char *)(v47 + 90100) ) /*0x64ca46*/
           {
-            qmemcpy((void *)(v47 + 90100), Destination, 0x14u); /*0x64ca51*/
+            memcpy((void *)(v47 + 90100), Destination, 0x14u); /*0x64ca51*/
             *(unsigned char *)(v47 + 90120) = v58; /*0x64ca53*/
             v31 = v47; /*0x64ca54*/
           }
@@ -4063,7 +4063,7 @@ LABEL_73:
       {
         v22 = &byte_8B4204[111 * (((unsigned short)dword_8B41FC + (unsigned short)v13) & 0x3FFF)]; /*0x64c762*/
         v23 = (char *)&unk_A83EDC + 111 * dword_A83ED8; /*0x64c774*/
-        qmemcpy(v23, v22, 0x6Cu); /*0x64c77b*/
+        memcpy(v23, v22, 0x6Cu); /*0x64c77b*/
         v22 += 108; /*0x64c77b*/
         v23 += 108; /*0x64c77b*/
         *(unsigned short *)v23 = *(unsigned short *)v22; /*0x64c77d*/
@@ -4138,7 +4138,7 @@ AbstractClass * * Network::RecordEvent(long long a1, int a2, int a3, int a4, int
   if ( dword_A802C8 >= 128 ) /*0x6521d3*/
     return 0; /*0x65222a*/
   v27 = &byte_A802D4[111 * dword_A802D0]; /*0x6521eb*/
-  qmemcpy(v27, &a1, 0x6Cu); /*0x6521f2*/
+  memcpy(v27, &a1, 0x6Cu); /*0x6521f2*/
   v27 += 108; /*0x6521f2*/
   *(unsigned short *)v27 = a27; /*0x6521f4*/
   v27[2] = BYTE2(a27); /*0x6521f6*/
@@ -4489,7 +4489,7 @@ AbstractClass * * Network::SyncPlayerList(void *a1)
     do /*0x79301a*/
     {
       if ( v3 >= 0 && v2 < owningHouseIndex ) /*0x792f38*/
-        qmemcpy(v16, (char *)g_WOL_UserList.nextObject + v3, sizeof(v16)); /*0x792f4b*/
+        memcpy(v16, (char *)g_WOL_UserList.nextObject + v3, sizeof(v16)); /*0x792f4b*/
       v4 = CharToWideString(&v16[9]); /*0x792f51*/
       v5 = Player::FindByName((Player *)v4); /*0x792f58*/
       v6 = v5; /*0x792f5d*/
@@ -5790,7 +5790,7 @@ bool Network::sendGameEvent(unsigned int *aP0, void *a2)
   v5 = this->q004 == 1; /*0x695737*/
   if ( this->q004 == 1 ) /*0x69573b*/
   {
-    qmemcpy(a2, &this->q088, 0x70u); /*0x695749*/
+    memcpy(a2, &this->q088, 0x70u); /*0x695749*/
     return this->q004 == 1; /*0x69574c*/
   }
   return v5; /*0x695750*/

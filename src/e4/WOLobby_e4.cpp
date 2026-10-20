@@ -440,7 +440,7 @@ CampaignScore * WOLobby_Get(wchar_t ** a1, HWND a2, WPARAM wParam)
     v5 = SendMessageA(a2, 0x199u, wParam, 0); /*0x7810af*/
     if ( v5 >= 0 && v5 < *(int *)&stru_B778FC.m_3[1] ) /*0x7810c1*/
     {
-      qmemcpy(v7, (char *)dword_B77908 + 108 * v5, sizeof(v7)); /*0x7810ee*/
+      memcpy(v7, (char *)dword_B77908 + 108 * v5, sizeof(v7)); /*0x7810ee*/
       FormatWOLPlayerInfo(a1, v7); /*0x7810f2*/
       return a1; /*0x7810ff*/
     }

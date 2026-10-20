@@ -1555,12 +1555,12 @@ CellStruct * * Game::SerializeGameSaveState()
                                    0);
                         if ( result < 0 ) /*0x67fc03*/
                           break; /*0x67fc03*/
-                        if ( FootClass_Array < FootClass_Array.?[6] /*0x67fc3f*/
-                          || (BYTE1(FootClass_Array.?[7]) || !FootClass_Array.?[6])
+                        if ( FootClass_Array < dword_8B41B0 /*0x67fc3f*/
+                          || (BYTE1(dword_8B41B0) || !FootClass_Array.?[6])
                           && DataGlobal_8B3DC0[1020] > 0
                           && (*(unsigned __int8 (**)(int *, int, unsigned int))(DataGlobal_8B3DC4 + 8))(
                                &DataGlobal_8B3DC4,
-                               FootClass_Array.?[6] + FootClass_Array.?[1],
+                               dword_8B41BC + FootClass_Array.?[1],
                                0) )
                         {
                           v10 = FootClass_Array++; /*0x67fc52*/
@@ -1583,8 +1583,8 @@ CellStruct * * Game::SerializeGameSaveState()
                                0);
                     if ( result < 0 ) /*0x67fb40*/
                       break; /*0x67fb40*/
-                    if ( (int)FootClass_Array.? < (int)FootClass_Array.? /*0x67fb7d*/
-                      || (BYTE1(FootClass_Array.?) || !FootClass_Array.?)
+                    if ( (int)dword_8B40D8< (int)dword_8B40D0/*0x67fb7d*/
+                      || (BYTE1(dword_8B40D0) || !FootClass_Array.?)
                       && FootClass_Array > 0
                       && ((unsigned __int8 (*)(ParticleSystemClass **, char *, unsigned int))FootClass_Array.?->?)(
                            &FootClass_Array.?,
@@ -2139,7 +2139,7 @@ Coord * * Game::ProcessIdle()
               v17 = (int)v15; /*0x77fdba*/
               if ( stru_B765F8.DynamicVector_field_0x8 ) /*0x77fdbc*/
               {
-                qmemcpy(v15, (const void *)stru_B765F8.DynamicVector_field_0x8, 4 * *(unsigned int *)stru_B765F8.__pad_0); /*0x77fdc6*/
+                memcpy(v15, (const void *)stru_B765F8.DynamicVector_field_0x8, 4 * *(unsigned int *)stru_B765F8.__pad_0); /*0x77fdc6*/
                 DynamicVector_field_0x8 = (void *)stru_B765F8.DynamicVector_field_0x8; /*0x77fdc8*/
               }
               __3_YAXPAX_Z(DynamicVector_field_0x8); /*0x77fdcf*/
@@ -2215,7 +2215,7 @@ Coord * * Game::ProcessIdle()
         do /*0x7800b2*/
         {
           if ( v22 >= 0 && v1 < v21 ) /*0x780023*/
-            qmemcpy(Buffer, (char *)dword_B77908 + v22, sizeof(Buffer)); /*0x780037*/
+            memcpy(Buffer, (char *)dword_B77908 + v22, sizeof(Buffer)); /*0x780037*/
           String::Assign(&v29, (const char *)&Buffer[9]); /*0x780042*/
           v23 = String::ToLowerCopy(&v29, (char **)&v31.ptr_4); /*0x780050*/
           v30.tail_7 = String::Compare(&v30, (const char **)v23); /*0x780063*/

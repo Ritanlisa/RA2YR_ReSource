@@ -915,7 +915,7 @@ AbstractClass * * ObjectClass::BuildTransform(unsigned int * a1, float * a2, uns
     v10 = Turret::GetTransform((LocomotionClass *)this, (float *)&v38[0].Transform_field_00, a3); /*0x51408d*/
 LABEL_16:
     v24 = v10; /*0x514275*/
-    qmemcpy(a2, v24, 0x30u); /*0x514285*/
+    memcpy(a2, v24, 0x30u); /*0x514285*/
     return a2; /*0x514277*/
   }
   v7 = (unsigned int *)&this->ptr_8->Coord_9C; /*0x513f97*/
@@ -923,7 +923,7 @@ LABEL_16:
   v36[1] = v7[1]; /*0x513fab*/
   v36[2] = v7[2]; /*0x513fb2*/
   v8 = (unsigned __int8)Coord::To_Cell((Coord *)&dword_87F7E8, v36)->slopeIndex[0]; /*0x513fc8*/
-  qmemcpy(&v37, CopyAudioData((char *)v38, v8), sizeof(v37)); /*0x513fe4*/
+  memcpy(&v37, CopyAudioData((char *)v38, v8), sizeof(v37)); /*0x513fe4*/
   v25 = (double)(int)((((unsigned int)((*ProgressTimer::GetValue(&this->ptr_8, &v33) >> 10) + 1) >> 1) /*0x514016*/
                      & 0x1F)
                     - 8)
@@ -938,7 +938,7 @@ LABEL_16:
            & 0x1F;
     }
   }
-  qmemcpy(a2, &v37, 0x30u); /*0x514070*/
+  memcpy(a2, &v37, 0x30u); /*0x514070*/
   return a2; /*0x514073*/
 
 }

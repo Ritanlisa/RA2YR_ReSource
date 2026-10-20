@@ -213,9 +213,9 @@ TechnoClass::TechnoClass(AbstractClass * aP1)
   this->cloakDelayTimer[0] = v8; /*0x6f2d5c*/
   this->warpFactor = 0.0; /*0x6f2d62*/
   this->isChronosphereImmune = 0; /*0x6f2d68*/
-  this->lastSightCoords[0] = g_BuildingLoadQueue_Array.?[3]; /*0x6f2d79*/
-  this->lastSightCoords[1] = g_BuildingLoadQueue_Array.?[4]; /*0x6f2d85*/
-  this->lastSightCoords[2] = g_BuildingLoadQueue_Array.?[5]; /*0x6f2d93*/
+  this->lastSightCoords[0] = g_BuildingLoadQueue_Array.__pad_1C[3]; /*0x6f2d79*/
+  this->lastSightCoords[1] = g_BuildingLoadQueue_Array.__pad_1C[4]; /*0x6f2d85*/
+  this->lastSightCoords[2] = g_BuildingLoadQueue_Array.__pad_1C[5]; /*0x6f2d93*/
   this->lastSightRange = 0; /*0x6f2d96*/
   this->lastSightHeight = 0; /*0x6f2d9c*/
   this->gapSuperCharged = 0; /*0x6f2da2*/
@@ -229,10 +229,10 @@ TechnoClass::TechnoClass(AbstractClass * aP1)
   this->isImmobilized = 0; /*0x6f2dd2*/
   this->owningHouseIndex0 = 0; /*0x6f2dd8*/
   this->chronoLockRemaining = 0; /*0x6f2dde*/
-  this->chronoDestCoords[0] = g_BuildingLoadQueue_Array.?[3]; /*0x6f2dea*/
-  this->chronoDestCoords[1] = g_BuildingLoadQueue_Array.?[4]; /*0x6f2df1*/
+  this->chronoDestCoords[0] = g_BuildingLoadQueue_Array.__pad_1C[3]; /*0x6f2dea*/
+  this->chronoDestCoords[1] = g_BuildingLoadQueue_Array.__pad_1C[4]; /*0x6f2df1*/
   int v9; // edx
-  v9 = g_BuildingLoadQueue_Array.?[5]; /*0x6f2df4*/
+  v9 = g_BuildingLoadQueue_Array.__pad_1C[5]; /*0x6f2df4*/
   this->bunkerLinkedUnit = 0; /*0x6f2dfa*/
   this->pitchAngle = 0.0; /*0x6f2e00*/
   this->chronoDestCoords[2] = v9; /*0x6f2e06*/
@@ -1457,7 +1457,7 @@ LABEL_10:
   v16 = (const void *)(*(int (**)(unsigned int, int *, int *))(*(unsigned int *)v10[413] + 36))(v10[413], v147, &v117); /*0x73b5cb*/
   Transform::Copy(v146, v16); /*0x73b5d6*/
   v17 = v117; /*0x73b5db*/
-  qmemcpy(v144, v146, sizeof(v144)); /*0x73b5f5*/
+  memcpy(v144, v146, sizeof(v144)); /*0x73b5f5*/
   v18 = v127; /*0x73b5f9*/
   if ( v117 != -1 ) /*0x73b5f7*/
   {
@@ -1632,7 +1632,7 @@ LABEL_53:
 LABEL_56:
   if ( v107 && (!v112 || v33) ) /*0x73ba24*/
   {
-    qmemcpy(v146, v144, sizeof(v146)); /*0x73ba39*/
+    memcpy(v146, v144, sizeof(v146)); /*0x73ba39*/
     v34 = v144; /*0x73ba40*/
   }
   else
@@ -1646,7 +1646,7 @@ LABEL_56:
     Matrix2D::Rotate(v144, v101); /*0x73bad3*/
     *(float *)v120 = -*(float *)&v144[3]; /*0x73baff*/
     v139 = v144[7]; /*0x73bb22*/
-    qmemcpy(v147, v144, sizeof(v147)); /*0x73bb2b*/
+    memcpy(v147, v144, sizeof(v147)); /*0x73bb2b*/
     v140 = v144[11]; /*0x73bb31*/
     *(float *)&v120[1] = -*(float *)&v144[7]; /*0x73bb38*/
     v138 = v144[3]; /*0x73bb44*/
@@ -1660,11 +1660,11 @@ LABEL_56:
     Matrix3D::RotateZ(v147, v102); /*0x73bbac*/
     Matrix3x3::Multiply(&v138, v105); /*0x73bbbd*/
     v35 = (float *)AudioConfig::InitDefault(v150); /*0x73bbd1*/
-    qmemcpy(v146, MultiplyMatrix3x4((float *)v149, v35, (float *)v144), sizeof(v146)); /*0x73bbf9*/
+    memcpy(v146, MultiplyMatrix3x4((float *)v149, v35, (float *)v144), sizeof(v146)); /*0x73bbf9*/
     v36 = (float *)AudioConfig::InitDefault(v149); /*0x73bc03*/
     v34 = MultiplyMatrix3x4((float *)v150, v36, (float *)v147); /*0x73bc1b*/
   }
-  qmemcpy(v148, v34, sizeof(v148)); /*0x73bc24*/
+  memcpy(v148, v34, sizeof(v148)); /*0x73bc24*/
   if ( !(unsigned __int8)TechnoClass::OwnerHasPower((TechnoClass *)v10) || *(unsigned char *)(v10[433] + 3285) ) /*0x73bc3b*/
   {
     if ( (((unsigned int)((*ProgressTimer::GetValue((ProgressTimer *)(v10 + 232), v120) >> 13) + 1) >> 1) & 3) == 0 /*0x73bdb1*/
@@ -1926,7 +1926,7 @@ LABEL_102:
                           v149,
                           &v117);
     Transform::Copy(v146, v68); /*0x73c2c0*/
-    qmemcpy(v144, v146, sizeof(v144)); /*0x73c2d8*/
+    memcpy(v144, v146, sizeof(v144)); /*0x73c2d8*/
     if ( *(unsigned char *)(v11 + 3367) ) /*0x73c2da*/
     {
       v136[0] = v10[39]; /*0x73c2f4*/

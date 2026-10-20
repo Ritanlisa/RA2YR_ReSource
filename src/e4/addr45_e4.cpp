@@ -149,7 +149,7 @@ char UpdateBuildingActiveAnim(int a1, int edx0, void * a2)
       {
         strcpy(v26, (const char *)(a1->Type + 504)); /*0x45156b*/
         v18 = strlen(asc_818D7C) + 1; /*0x45158c*/
-        qmemcpy(&v26[strlen(v26)], asc_818D7C, v18); /*0x451599*/
+        memcpy(&v26[strlen(v26)], asc_818D7C, v18); /*0x451599*/
         v19 = strlen(v26); /*0x4515b3*/
         v26[v19] = v17 + 66; /*0x4515b6*/
         v26[v19 + 1] = 0; /*0x4515ba*/

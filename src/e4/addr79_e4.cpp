@@ -584,7 +584,7 @@ LABEL_34:
             v26 = (char *)dword_B77908 + v28; /*0x7940a0*/
           if ( !_strcmpi(v24, v26 + 36) ) /*0x7940a8*/
           {
-            qmemcpy(v94, "Z4", sizeof(v94)); /*0x7940c3*/
+            memcpy(v94, "Z4", sizeof(v94)); /*0x7940c3*/
             sprintf(Buffer, "%d", v14); /*0x7940da*/
             Debug::Log(); /*0x7940ed*/
             (*(void (**)(LPVOID, char *, char *))(*(unsigned int *)ppv + 56))(ppv, v26, v94); /*0x794106*/
@@ -752,7 +752,7 @@ LABEL_70:
               if ( !_strcmpi(v45, v97) ) /*0x7944c3*/
               {
                 Debug::Log(); /*0x7944e0*/
-                qmemcpy(v92, "Z1;", sizeof(v92)); /*0x7944f1*/
+                memcpy(v92, "Z1;", sizeof(v92)); /*0x7944f1*/
                 if ( v97 ) /*0x794509*/
                   strcpy(v93, v97); /*0x79452d*/
                 else
@@ -4766,7 +4766,7 @@ AbstractClass * * WOL_SendGameList()
               v6 = (int)v4; /*0x79d200*/
               if ( g_WOL_BuddyList.DynamicVector_field_0x8 ) /*0x79d202*/
               {
-                qmemcpy( /*0x79d20c*/
+                memcpy( /*0x79d20c*/
                   v4,
                   (const void *)g_WOL_BuddyList.DynamicVector_field_0x8,
                   4 * *(unsigned int *)g_WOL_BuddyList.__pad_0);
@@ -4855,7 +4855,7 @@ AbstractClass * * WOL_RefreshGameList()
       v7 = dword_B779B8; /*0x79d3b6*/
       if ( dword_B779B8 ) /*0x79d3bd*/
       {
-        qmemcpy(v6, dword_B779B8, 4 * *(unsigned int *)g_WOL_BuddyList.__pad_0); /*0x79d3c9*/
+        memcpy(v6, dword_B779B8, 4 * *(unsigned int *)g_WOL_BuddyList.__pad_0); /*0x79d3c9*/
         v7 = dword_B779B8; /*0x79d3cb*/
         v4 = v13; /*0x79d3d0*/
       }
@@ -4875,7 +4875,7 @@ AbstractClass * * WOL_RefreshGameList()
       v10 = dword_B779B8; /*0x79d429*/
       if ( dword_B779B8 ) /*0x79d430*/
       {
-        qmemcpy(v9, dword_B779B8, 4 * *(unsigned int *)g_WOL_BuddyList.__pad_0); /*0x79d43c*/
+        memcpy(v9, dword_B779B8, 4 * *(unsigned int *)g_WOL_BuddyList.__pad_0); /*0x79d43c*/
         v10 = dword_B779B8; /*0x79d43e*/
         v4 = v13; /*0x79d443*/
       }
@@ -6085,7 +6085,7 @@ LABEL_48:
                 &v49) )
           goto LABEL_117; /*0x79f59b*/
         if ( v49 ) /*0x79f5ae*/
-          qmemcpy(v52, (const void *)v49, sizeof(v52)); /*0x79f5bc*/
+          memcpy(v52, (const void *)v49, sizeof(v52)); /*0x79f5bc*/
         v25 = 0; /*0x79f5cd*/
         v49 = 0; /*0x79f5cf*/
         if ( !GameOptionsScreenWOL_Helper_7AE7C0((ObjectClass *)&stru_B76990, (const char **)&unk_B76E24, &v49) ) /*0x79f5d3*/
@@ -6105,7 +6105,7 @@ LABEL_48:
             while ( 1 ) /*0x79fa99*/
             {
               if ( v47 >= 0 && v45 < v46 ) /*0x79fa9f*/
-                qmemcpy(&v51[4], (const void *)(stru_B73E10.CChatEventSink_field_0x08 + v47), 0x10Cu); /*0x79fab3*/
+                memcpy(&v51[4], (const void *)(stru_B73E10.CChatEventSink_field_0x08 + v47), 0x10Cu); /*0x79fab3*/
               if ( !_strcmpi(&v51[56], &v52[52]) ) /*0x79fac2*/
                 break; /*0x79fac2*/
               v46 = *(unsigned int *)stru_B73E10.__pad_0; /*0x79face*/
@@ -6164,7 +6164,7 @@ LABEL_94:
             while ( 1 ) /*0x79f70b*/
             {
               if ( v32 >= 0 && v27 < v31 ) /*0x79f711*/
-                qmemcpy(&v51[4], (char *)dword_B76AE8 + v32, 0x10Cu); /*0x79f725*/
+                memcpy(&v51[4], (char *)dword_B76AE8 + v32, 0x10Cu); /*0x79f725*/
               v33 = String::GetOrEmpty_Alt((String *)v51); /*0x79f72b*/
               if ( !_strcmpi(&v51[56], v33) ) /*0x79f736*/
                 break; /*0x79f736*/
@@ -6188,7 +6188,7 @@ LABEL_94:
         while ( 1 ) /*0x79f625*/
         {
           if ( (int)v12 >= 0 && v27 < DynamicArray_field_0x10 ) /*0x79f62b*/
-            qmemcpy(&v51[4], (char *)v12 + (unsigned int)dword_B76AE8, 0x10Cu); /*0x79f63f*/
+            memcpy(&v51[4], (char *)v12 + (unsigned int)dword_B76AE8, 0x10Cu); /*0x79f63f*/
           v29 = String::GetOrEmpty_Alt((String *)v51); /*0x79f645*/
           if ( !_strcmpi(&v51[56], v29) ) /*0x79f650*/
             break; /*0x79f650*/

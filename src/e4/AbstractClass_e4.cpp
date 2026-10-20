@@ -98,7 +98,7 @@ void AbstractClass::Initialize(TechnoClass * aP1, TechnoClass * aP2)
     v5[1].ptr_4 = (void *)(*(int (**)(void *))(*(unsigned int *)aP1 + 60))(aP1); /*0x438f62*/
     v5[1].ptr_0 = aP1; /*0x438f69*/
     v5[1].ptr_8 = aP2; /*0x438f6c*/
-    v5[1].uniqueId = *(unsigned int *)&MEMORY[0xA8EB00].?[416]; /*0x438f75*/
+    v5[1].uniqueId = *(unsigned int *)&MEMORY[0xA8EB00 + 416]; /*0x438f75*/
     v7 = v5[1].uniqueId + *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 4048); /*0x438f87*/
     v5[1].ptr_C = 0; /*0x438f89*/
     v5[1].abstractFlags = v7; /*0x438f8c*/

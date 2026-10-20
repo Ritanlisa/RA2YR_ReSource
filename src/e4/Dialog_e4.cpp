@@ -172,7 +172,7 @@ int Dialog::InitializeGameSettings()
 }
 // 0x5D3490
 namespace gamemd {
-int Dialog::ShowMessageBox(unsigned short *a2, unsigned short *aP2, unsigned short *aP3, unsigned short *a5, int a6, void *a6_1)
+int Dialog::ShowMessageBox(unsigned short *a2, unsigned short *aP2, unsigned short *a3, unsigned short *a4, int a6, void *a6_1)
 {
 
   int v6; // ebp
@@ -2726,7 +2726,7 @@ AbstractClass * * Dialog::BindGadgetData(int *a2, char *Block, void *a3)
     v37 = Block->__pad_3C; /*0x624d3c*/
     if ( !v11 ) /*0x624d40*/
     {
-      qmemcpy(Block, v10, 0x200u); /*0x624d4f*/
+      memcpy(Block, v10, 0x200u); /*0x624d4f*/
       Block->__pad_3C = v37; /*0x624d55*/
       Block->DiskLaserClass_field_0x28 = Blocka; /*0x624d5c*/
       Block->q034 = v40; /*0x624d5f*/
@@ -2832,7 +2832,7 @@ AbstractClass * * Dialog::BindGadgetData(int *a2, char *Block, void *a3)
       v41 = Block->__pad_3C; /*0x624f28*/
       if ( !v11 ) /*0x624f2c*/
       {
-        qmemcpy(Block, v32 + 1, 0x200u); /*0x624f37*/
+        memcpy(Block, v32 + 1, 0x200u); /*0x624f37*/
         Block->q034 = v35; /*0x624f3d*/
         Block->DiskLaserClass_field_0x28 = Blockc; /*0x624f40*/
         Block->__pad_3C = v41; /*0x624f47*/

@@ -162,7 +162,7 @@ AbstractClass * * ConnectionPointClass_9::Release(int a2, unsigned int * a3)
 }
 // 0x4A0630
 namespace gamemd {  // G42.18c ns repair
-int ConnectionPointClass::Unadvise(int a1, int (__stdcall ***)(unsigned int, int, int *), int * a3)
+int ConnectionPointClass::Unadvise(int a1, int (__stdcall ***a2)(unsigned int, int, int *), int * a3)
 {
 
   if ( !a2 || !a3 ) /*0x4a0648*/

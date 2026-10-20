@@ -1707,10 +1707,10 @@ int * E4Recv_4F2F10::sub_4F2F10(GraphicMenuAnimItem * a2, unsigned int * a3, Gra
   this->u32_24 = 0; /*0x4f2f5a*/
   /* X11: ptr_0 install elided (implicit via GraphicMenuAnimItem virtuals 0x4f2f5d) */
   CCFileClass::Construct2((CCFileClass *)&v15.estimatedHealth, a6); /*0x4f2f63*/
-  CCFileClass::Construct2((CCFileClass *)&v15.?, a7); /*0x4f2f74*/
+  CCFileClass::Construct2((CCFileClass *)&v15.ptr_4, a7); /*0x4f2f74*/
   if ( (unsigned __int8)CCFileClass::Open((CCFileClass *)&v15.estimatedHealth, 0) ) /*0x4f2f81*/
   {
-    if ( (unsigned __int8)CCFileClass::Open((CCFileClass *)&v15.?, 0) ) /*0x4f2f8f*/
+    if ( (unsigned __int8)CCFileClass::Open((CCFileClass *)&v15.ptr_4, 0) ) /*0x4f2f8f*/
     {
       char *v11; // eax
       v11 = String::GetOrEmpty_Alt((String *)a7); /*0x4f2f9a*/
@@ -1732,7 +1732,7 @@ int * E4Recv_4F2F10::sub_4F2F10(GraphicMenuAnimItem * a2, unsigned int * a3, Gra
   *(unsigned int *)&v15.bombVisible = 0; /*0x4f3015*/
   Vector::Clear((int)&v15.customSound_controller[3]); /*0x4f3019*/
   /* X11: ptr_0 install elided (implicit via off_7E1668 virtuals 0x4f3027) */
-  BufferIOFileClass::Dtor((BufferIOFileClass *)&v15.?); /*0x4f302b*/
+  BufferIOFileClass::Dtor((BufferIOFileClass *)&v15.ptr_4); /*0x4f302b*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E16B0) */  /*0x4f3037*/
   int v17; // [esp+E4h] [ebp-8h]
   v17 = 0; /*0x4f303e*/
@@ -2268,7 +2268,7 @@ char E4Recv_4FBD00::sub_4FBD00(int a2)
         }
       }
     }
-    if ( ++v2 >= stru_A80220.? ) /*0x4fbd5f*/
+    if ( ++v2 >= dword_A80238) /*0x4fbd5f*/
       return 0; /*0x4fbd5f*/
   }
   return 1; /*0x4fbd61*/

@@ -231,7 +231,7 @@ LABEL_21:
           * -0.1963495408493621;
       Matrix2D::Rotate(&v73[0].Transform_field_00, v47); /*0x73c922*/
       Transform_field_00 = v73[3].Transform_field_00; /*0x73c967*/
-      qmemcpy(v74, v73, sizeof(v74)); /*0x73c96d*/
+      memcpy(v74, v73, sizeof(v74)); /*0x73c96d*/
       v72[1] = *(float *)&v73[11].Transform_field_00; /*0x73c973*/
       *(float *)&v61 = -*(float *)&v73[3].Transform_field_00; /*0x73c977*/
       v72[0] = *(float *)&v73[7].Transform_field_00; /*0x73c97f*/
@@ -259,7 +259,7 @@ LABEL_21:
       v58 = v62; /*0x73ca84*/
       Matrix3x3::Multiply((int *)&v57, v52); /*0x73ca90*/
       v30 = *(unsigned int *)this; /*0x73ca95*/
-      qmemcpy(&v75, this + 880, sizeof(v75)); /*0x73caaa*/
+      memcpy(&v75, this + 880, sizeof(v75)); /*0x73caaa*/
       if ( *(unsigned char *)(*(unsigned int *)(*(unsigned int *)(*(int (**)(Class_7F5C70 *, unsigned int))(v30 + 1016))(this, 0) + 160) /*0x73cabe*/
                     + 670) )
       {

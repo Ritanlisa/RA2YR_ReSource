@@ -175,7 +175,7 @@ AbstractClass * * MultiplayerSiege::ProcessTurn(char a2)
     goto LABEL_26; /*0x5ca868*/
   }
   v6 = *(unsigned int *)(dword_A8DA78[v3] + 111); /*0x5ca876*/
-  if ( v6 < 0 || v6 >= stru_A80220.? ) /*0x5ca887*/
+  if ( v6 < 0 || v6 >= dword_A80238) /*0x5ca887*/
   {
     v5 = Block; /*0x5ca980*/
     /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x5ca984*/
@@ -185,7 +185,7 @@ AbstractClass * * MultiplayerSiege::ProcessTurn(char a2)
     __3_YAXPAX_Z(v5); /*0x5ca998*/
     return 0; /*0x5ca9a4*/
   }
-  v7 = (HouseClass *)*((unsigned int *)stru_A80220.? + v6); /*0x5ca893*/
+  v7 = (HouseClass *)*((unsigned int *)&dword_A8022C+ v6); /*0x5ca893*/
   if ( *(unsigned char *)(v7->relatedTagsCapacity + 422) ) /*0x5ca899*/
   {
     v5 = Block; /*0x5ca8a3*/
@@ -198,9 +198,9 @@ AbstractClass * * MultiplayerSiege::ProcessTurn(char a2)
   v8 = *(unsigned int *)Block; /*0x5ca8e0*/
   LOBYTE(v13[0]) = 1; /*0x5ca8e2*/
   (v7)->SetMapSeed(v8); /*0x5ca8e8*/
-  for ( i = 0; i < stru_A80220.?; ++i ) /*0x5ca8f6*/
+  for ( i = 0; i < dword_A80238; ++i ) /*0x5ca8f6*/
   {
-    v10 = (HouseClass *)*((unsigned int *)stru_A80220.? + i); /*0x5ca8fe*/
+    v10 = (HouseClass *)*((unsigned int *)&dword_A8022C+ i); /*0x5ca8fe*/
     if ( !*(unsigned char *)(v10->relatedTagsCapacity + 422) && v10 != v7 ) /*0x5ca910*/
     {
       Debug::Log(); /*0x5ca91c*/

@@ -383,7 +383,7 @@ File * * File::LoadPaletteData(unsigned short *aP1)
     v11 = (unsigned __int16)ntohs(*((unsigned short *)v7 + 3)); /*0x625b78*/
     v12 = (void *)__2_YAPAXI_Z(v11); /*0x625b7f*/
     *&v9->ptr_8 = v12; /*0x625b8a*/
-    qmemcpy(v12, v10, v11); /*0x625b90*/
+    memcpy(v12, v10, v11); /*0x625b90*/
     v13 = -(ntohs(*(unsigned short *)v9->__pad_6) & 3) & 3; /*0x625baf*/
     v17 = (u_short *)((char *)v10 + v13 + v11); /*0x625bbd*/
     v15 += -8 - v13 - v11; /*0x625bcc*/

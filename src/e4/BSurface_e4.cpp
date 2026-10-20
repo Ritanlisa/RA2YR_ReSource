@@ -34,9 +34,9 @@ unsigned int * BSurface::Construct(int a2, int a3, int v14, int a5, void *a5_2, 
   *(unsigned int *)v14->XSurface = v6; /*0x410cf8*/
   int v9 = v14; // edi /*0x410cfa*/
   *((unsigned int *)v14 + 10) = v7; /*0x410cfe*/
-  v14->? = v9; /*0x410d01*/
-  v14->? = v7; /*0x410d04*/
-  v14->? = v8; /*0x410d07*/
+  v14->Width = v9; /*0x410d01*/
+  v14->Height = v7; /*0x410d04*/
+  v14->LockCount = v8; /*0x410d07*/
   *((unsigned int *)v14 + 8) = 2 * v7 * v8; /*0x410d0f*/
   int v10; // edi
   v10 = (int)(__2_YAPAXI_Z(0x20u)); /*0x410d17*/

@@ -553,7 +553,7 @@ int AudioStream::ReadSamples(const void * a2, void *a2_2)
       }
       else if ( a2 ) /*0x4a3551*/
       {
-        qmemcpy((void *)v16[9], a2, v16[4] * (int)v2->AudioStream_field_0xC); /*0x4a3564*/
+        memcpy((void *)v16[9], a2, v16[4] * (int)v2->AudioStream_field_0xC); /*0x4a3564*/
       }
       return (*(int (**)(unsigned int, unsigned int))(**&v2->u32_70 + 128))(
                *&v2->u32_70,
@@ -1253,7 +1253,7 @@ int AudioStream::ProcessStream()
               (v23) = ((v23) & ~0xFF) | ((v23 & 0xF7) & 0xFF); /*0x7becd6*/
               *(unsigned int *)(v2 + 20) = v23; /*0x7becd8*/
             }
-            qmemcpy(v3 + 9, *(const void **)(v2 + 8), *(unsigned int *)(v2 + 40)); /*0x7bece9*/
+            memcpy(v3 + 9, *(const void **)(v2 + 8), *(unsigned int *)(v2 + 40)); /*0x7bece9*/
             v24 = v3[1]; /*0x7becf2*/
             v1 = this; /*0x7becf8*/
             (v24) = ((v24) & ~0xFF) | ((v24 | 1) & 0xFF); /*0x7becfc*/

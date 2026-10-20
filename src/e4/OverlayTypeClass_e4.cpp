@@ -87,7 +87,7 @@ OverlayTypeClass::OverlayTypeClass(ObjectClass * aP1)
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7EF5D4) */  /*0x5fe2f7*/
   /* X11: ptr_0 install elided (implicit via OverlayTypeClass virtuals 0x5fe2fd) */
   /* X11: ptr_0 install elided (implicit via OverlayTypeClass virtuals 0x5fe304) */
-  AbstractClass::GenerateUniqueID((AbstractClass *)&this->?); /*0x5fe30b*/
+  AbstractClass::GenerateUniqueID((AbstractClass *)&this->ptr_4); /*0x5fe30b*/
   this->RadarInvisible_d = 1; /*0x5fe310*/
   this->Selectable_d = 0; /*0x5fe317*/
   this->Insignificant_d = 1; /*0x5fe31d*/
@@ -288,16 +288,16 @@ ScenarioClass * * OverlayTypeClass::SaveLoad_Prefix(int a1, int a2)
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &a1->DamageLevels); /*0x5feb56*/
     if ( !a1->DrawFlat ) /*0x5feb5b*/
     {
-      if ( a1->? ) /*0x5feb69*/
+      if ( a1->Theater[0] ) /*0x5feb69*/
       {
-        _makepath(&v3[1], 0, 0, a1->?, (const char *)&off_7E1BC6 + 112 * dword_A8B230[130].uniqueId); /*0x5feba1*/
+        _makepath(&v3[1], 0, 0, a1->ImageFile, (const char *)&off_7E1BC6 + 112 * dword_A8B230[130].uniqueId); /*0x5feba1*/
       }
       else
       {
-        _makepath(&v3[1], 0, 0, a1->?, Ext); /*0x5febc0*/
+        _makepath(&v3[1], 0, 0, a1->ImageFile, Ext); /*0x5febc0*/
         TheaterObjectTypeClassSpecificID(&v3[1], dword_A8B230[130].uniqueId); /*0x5febd7*/
       }
-      if ( !a1->? ) /*0x5febdc*/
+      if ( !a1->Image ) /*0x5febdc*/
         a1->? = (SHPStruct *)SearchMIXFile(&v3[1], 1); /*0x5febf1*/
     }
     return 0; /*0x5febf7*/

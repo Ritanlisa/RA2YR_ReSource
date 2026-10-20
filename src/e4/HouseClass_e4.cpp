@@ -613,7 +613,7 @@ int HouseClass::Construct(int a2, void *a2_1, void *a3, void *a4, void *a5, void
     Destination[0] = 0; /*0x4f5e06*/
   }
   if ( Destination != &this->u32_16009 ) /*0x4f5e30*/
-    qmemcpy(&this->u32_16009, Destination, 0x20u); /*0x4f5e41*/
+    memcpy(&this->u32_16009, Destination, 0x20u); /*0x4f5e41*/
   this->ObjectClass_1602A = 0; /*0x4f5e46*/
   AbstractClass::GenerateUniqueID(&this->AbstractClass_1); /*0x4f5e4e*/
   v11 = (unsigned int *)*(&this->IsAllocated); /*0x4f5e53*/
@@ -800,7 +800,7 @@ int HouseClass::Construct(int a2, void *a2_1, void *a3, void *a4, void *a5, void
     }
     if ( Destination != &this->u8_57FD ) /*0x4f62e7*/
     {
-      qmemcpy(&this->u8_57FD, Destination, 0x14u); /*0x4f62f8*/
+      memcpy(&this->u8_57FD, Destination, 0x14u); /*0x4f62f8*/
       this->u32_16008 = Destination[20]; /*0x4f62fa*/
     }
     v50 = a2; /*0x4f62fb*/
@@ -3829,11 +3829,11 @@ char HouseClass::Set(void *a1, void *a2, void *a3)
   int v4; // ecx
   int v6; // [esp+Ch] [ebp-4h] BYREF
 
-  LOBYTE(v2) = (*((int (**)(void **))a1->? + 4))(&a1->?); /*0x54b98b*/
+  LOBYTE(v2) = (*((int (**)(void **))a1->ptr_4 + 4))(&a1->ptr_4); /*0x54b98b*/
   if ( (unsigned char)v2 ) /*0x54b990*/
   {
-    (*(void (**)(void *, unsigned int, int))(*(unsigned int *)a1->? + 1348))(a1->?, 0, 1072693248); /*0x54b9a4*/
-    Value = ProgressTimer::GetValue((ProgressTimer *)((char *)a1->? + 904), &v6); /*0x54b9b8*/
+    (*(void (**)(void *, unsigned int, int))(*(unsigned int *)a1->ptr_C + 1348))(a1->ptr_C, 0, 1072693248); /*0x54b9a4*/
+    Value = ProgressTimer::GetValue((ProgressTimer *)((char *)a1->ptr_C + 904), &v6); /*0x54b9b8*/
     FacingClass::Set_SyncLog((char *)&a1->repairStationsCount, Value); /*0x54b9c1*/
     v4 = a1->relatedTags[0]; /*0x54b9c6*/
     a1->absorbersCapacity = 0; /*0x54b9cc*/
@@ -3844,7 +3844,7 @@ char HouseClass::Set(void *a1, void *a2, void *a3)
     LOBYTE(v2) = HouseClass::IonSensitivesShouldBeOffline(); /*0x54b9e4*/
     if ( !(unsigned char)v2 ) /*0x54b9ec*/
     {
-      v2 = (unsigned int *)(*(int (**)(void *, int *))(*(unsigned int *)a1->? + 756))(a1->?, &v6); /*0x54b9f8*/
+      v2 = (unsigned int *)(*(int (**)(void *, int *))(*(unsigned int *)a1->ptr_C + 756))(a1->ptr_C, &v6); /*0x54b9f8*/
       if ( *v2 == dword_ABC588 ) /*0x54ba08*/
         LOBYTE(v2) = GadgetGrid::InsertItem((GadgetGrid *)&g_CellClassManager, (int)a1->?); /*0x54ba20*/
       a1->unitRepairStations[0] = 1; /*0x54ba25*/

@@ -2920,7 +2920,7 @@ unsigned int * MPCooperative::initGame()
   /* X11: ptr_0 install elided (implicit via CampaignScoreClass virtuals 0x46d334) */
   this->MPCooperative_field_0x4 = 0; /*0x46d33a*/
   dword_89E050 = 0; /*0x46d33d*/
-  stru_81AF8C.?[6] = -1; /*0x46d343*/
+  dword_81B1E8 = -1; /*0x46d343*/
   return &this->onBridge; /*0x46d34d*/
 
 }

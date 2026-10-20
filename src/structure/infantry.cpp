@@ -3551,7 +3551,7 @@ int InfantryClass::ProcessTunnelMovement()
         fdiv qword ptr [ecx+20h]
       }
       LOWORD(v10) = Math::RoundToInt(v1); /*0x7292ba*/
-      v11 = *(unsigned int *)&MEMORY[0xA8EB00].?[416]; /*0x7292bf*/
+      v11 = *(unsigned int *)&MEMORY[0xA8EB00 + 416]; /*0x7292bf*/
       this->nextArrayIndex = 2; /*0x7292c8*/
       this->owningHouseIndex = v11; /*0x7292d1*/
       this->fallRate = v19; /*0x7292d7*/

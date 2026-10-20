@@ -2004,7 +2004,7 @@ char CountdownTimer::UpdateDisplay(char a2) {
   int v12; // eax
   int v13; // ecx
 
-  dword_89F95C = *(unsigned int *)&MEMORY[0xA8EB00].?[416]; /*0x4a260f*/
+  dword_89F95C = *(unsigned int *)&MEMORY[0xA8EB00 + 416]; /*0x4a260f*/
   if ( MEMORY[0xA83D4C] == (Object *)HouseClass_Observer ) /*0x4a261b*/
   {
     uniqueId = dword_A8B230[43].uniqueId; /*0x4a262a*/
@@ -2035,9 +2035,9 @@ LABEL_26:
   ptr_8 = dword_A8B230[127].ptr_C; /*0x4a26af*/
   if ( ptr_8 != (void *)-1 ) /*0x4a26b8*/
   {
-    if ( *(unsigned int *)&MEMORY[0xA8EB00].?[416] - (int)ptr_8 >= abstractFlags ) /*0x4a26c4*/
+    if ( *(unsigned int *)&MEMORY[0xA8EB00 + 416] - (int)ptr_8 >= abstractFlags ) /*0x4a26c4*/
       goto LABEL_13; /*0x4a26c4*/
-    abstractFlags -= *(unsigned int *)&MEMORY[0xA8EB00].?[416] - (unsigned int)ptr_8; /*0x4a26c6*/
+    abstractFlags -= *(unsigned int *)&MEMORY[0xA8EB00 + 416] - (unsigned int)ptr_8; /*0x4a26c6*/
   }
   if ( abstractFlags ) /*0x4a26ca*/
   {
@@ -2503,7 +2503,7 @@ LABEL_92:
                     if ( *(int *)&dword_A802C8 < 128 ) /*0x4ac1c1*/
                     {
 LABEL_116:
-                      qmemcpy(&byte_A802D4[111 * dword_A802D0], v44, 0x6Fu); /*0x4ac1c3*/
+                      memcpy(&byte_A802D4[111 * dword_A802D0], v44, 0x6Fu); /*0x4ac1c3*/
                       dword_A83A54[dword_A802D0] = timeGetTime(); /*0x4ac1ea*/
                       dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x4ac201*/
                       ++*(unsigned int *)&dword_A802C8; /*0x4ac207*/
@@ -2520,7 +2520,7 @@ LABEL_117:
                               a3);
                       if ( *(int *)&dword_A802C8 < 128 ) /*0x4ac249*/
                       {
-                        qmemcpy(&byte_A802D4[111 * dword_A802D0], v46, 0x6Fu); /*0x4ac265*/
+                        memcpy(&byte_A802D4[111 * dword_A802D0], v46, 0x6Fu); /*0x4ac265*/
                         dword_A83A54[dword_A802D0] = timeGetTime(); /*0x4ac272*/
                         dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x4ac289*/
                         ++*(unsigned int *)&dword_A802C8; /*0x4ac28f*/
@@ -2608,7 +2608,7 @@ LABEL_121:
           &v55);
   if ( *(int *)&dword_A802C8 < 128 ) /*0x4abb64*/
   {
-    qmemcpy(&byte_A802D4[111 * dword_A802D0], v16, 0x6Fu); /*0x4abb80*/
+    memcpy(&byte_A802D4[111 * dword_A802D0], v16, 0x6Fu); /*0x4abb80*/
     dword_A83A54[dword_A802D0] = timeGetTime(); /*0x4abb91*/
     dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x4abba8*/
     ++*(unsigned int *)&dword_A802C8; /*0x4abbae*/
@@ -4384,7 +4384,7 @@ int * SHA1::ProcessBlock(const void **a2, int *a3) {
         v7 = 64 - v6; /*0x69d8eb*/
         if ( v5 < 64 - v6 ) /*0x69d8ef*/
           v7 = *a3; /*0x69d8f1*/
-        qmemcpy((char *)this + v6 + 52, *a2, v7); /*0x69d8ff*/
+        memcpy((char *)this + v6 + 52, *a2, v7); /*0x69d8ff*/
         *a2 = (char *)*a2 + v7; /*0x69d911*/
         this->u32_30 += v7; /*0x69d91a*/
         *a3 -= v7; /*0x69d926*/

@@ -35,7 +35,7 @@ int GameMode_e4::IsValid(unsigned int a2)
 }  // G42.18 ns repair
 // 0x6B8CA0
 namespace gamemd {
-unsigned int GameMode_e4::ReadFlagsFromINI(CCINIClass * aP1, void * aDestroyablebri, void * aFixedalliance, void * aHarvesterimmun, void * aInert, void * aInitialveteran, void * aIonstorms, void * aMcvdeploy, void * aMeteorites, void * aTiberiumspread, void * aVisceroids)
+unsigned int GameMode_e4::ReadFlagsFromINI(CCINIClass * a2, void * aDestroyablebri, void * aFixedalliance, void * aHarvesterimmun, void * aInert, void * aInitialveteran, void * aIonstorms, void * aMcvdeploy, void * aMeteorites, void * aTiberiumspread, void * aVisceroids)
 {
 
   INIClass::ResetSection((INIClass *)a2); /*0x6b8caa*/

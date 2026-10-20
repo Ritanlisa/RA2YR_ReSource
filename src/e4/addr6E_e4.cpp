@@ -787,7 +787,7 @@ char E4Recv_6E0790::sub_6E0790(int a2, int a3, int a4, int a5)
   v5 = *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 4008); /*0x6e07a3*/
   int *WorldCoords; // eax
   unsigned int v8[3]; // [esp+4h] [ebp-Ch] BYREF
-  WorldCoords = Cell::GetWorldCoords((Cell *)dword_A8B230, v8, *(unsigned int *)&this->?[44]); /*0x6e07b5*/
+  WorldCoords = Cell::GetWorldCoords((Cell *)dword_A8B230, v8, *(unsigned int *)&this->Name[44]); /*0x6e07b5*/
   CreateSmokeEffectAt(50, v5, *WorldCoords, WorldCoords[1], WorldCoords[2], 0, 0); /*0x6e07d6*/
   return 1; /*0x6e07dd*/
 
@@ -804,7 +804,7 @@ char E4Recv_6E07F0::sub_6E07F0(int a2, int a3, int a4, int a5)
   v5 = *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 4008); /*0x6e0803*/
   int *WorldCoords; // eax
   unsigned int v8[3]; // [esp+4h] [ebp-Ch] BYREF
-  WorldCoords = Cell::GetWorldCoords((Cell *)dword_A8B230, v8, *(unsigned int *)&this->?[44]); /*0x6e0815*/
+  WorldCoords = Cell::GetWorldCoords((Cell *)dword_A8B230, v8, *(unsigned int *)&this->Name[44]); /*0x6e0815*/
   CreateSmokeEffectAt(100, v5, *WorldCoords, WorldCoords[1], WorldCoords[2], 0, 0); /*0x6e0836*/
   return 1; /*0x6e083d*/
 
@@ -821,7 +821,7 @@ char E4Recv_6E0850::sub_6E0850(int a2, int a3, int a4, int a5)
   v5 = *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 4008); /*0x6e0863*/
   int *WorldCoords; // eax
   unsigned int v8[3]; // [esp+4h] [ebp-Ch] BYREF
-  WorldCoords = Cell::GetWorldCoords((Cell *)dword_A8B230, v8, *(unsigned int *)&this->?[44]); /*0x6e0875*/
+  WorldCoords = Cell::GetWorldCoords((Cell *)dword_A8B230, v8, *(unsigned int *)&this->Name[44]); /*0x6e0875*/
   CreateSmokeEffectAt(300, v5, *WorldCoords, WorldCoords[1], WorldCoords[2], 0, 0); /*0x6e0896*/
   return 1; /*0x6e089d*/
 

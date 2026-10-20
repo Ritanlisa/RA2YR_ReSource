@@ -284,7 +284,7 @@ LABEL_71:
       v13->referenceCount = this->q3F074; /*0x7b3f98*/
       v13->q017 = v39; /*0x7b3fa0*/
       v13->nextArrayIndex = 0; /*0x7b3fa6*/
-      qmemcpy(v13 + 32, this + 32271, v27 - 4); /*0x7b3fab*/
+      memcpy(v13 + 32, this + 32271, v27 - 4); /*0x7b3fab*/
       if ( !(*(unsigned __int8 (**)(UDPInterfaceClass *, unsigned char *))(this->Socket + 88))(this, v13) ) /*0x7b3fb9*/
       {
         v13->ptr_2 = *(unsigned int *)&netshort.sa_data[2]; /*0x7b3fc4*/
@@ -828,7 +828,7 @@ int UDPInterfaceClass_Destru_Connect(int a2, const void * a3, unsigned int a4, c
     do /*0x7b3875*/
     {
       v9 = AudioQueue::AllocBuffer((AudioQueue *)v7, a4); /*0x7b3759*/
-      qmemcpy(v9 + 32, this, (unsigned int)a3); /*0x7b376a*/
+      memcpy(v9 + 32, this, (unsigned int)a3); /*0x7b376a*/
       *((unsigned int *)v9 + 4) = a3; /*0x7b3773*/
       v9[20] = 1; /*0x7b377a*/
       *(unsigned int *)v9 = 0; /*0x7b377e*/

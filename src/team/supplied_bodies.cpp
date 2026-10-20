@@ -3778,7 +3778,7 @@ LABEL_15:
   }
   if ( Destination != this->Name ) /*0x7273ab*/
   {
-    qmemcpy(this->Name, Destination, 0x30u); /*0x7273b6*/
+    memcpy(this->Name, Destination, 0x30u); /*0x7273b6*/
     this->Name[48] = v28; /*0x7273b8*/
   }
   v10 = strtok(0, Delimiter); /*0x7273bf*/

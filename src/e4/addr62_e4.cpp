@@ -1537,7 +1537,7 @@ unsigned int ObjectClass::sub_623730(unsigned int * a2)
   attachedTag = this->attachedTag; /*0x623741*/
   owningHouseIndex = (void *)this->owningHouseIndex; /*0x623744*/
   v5 = this->ambientSoundController[0]; /*0x623747*/
-  qmemcpy(this, a2, 0x200u); /*0x62374a*/
+  memcpy(this, a2, 0x200u); /*0x62374a*/
   this->ambientSoundController[0] = v5; /*0x623750*/
   this->owningHouseIndex = (int)owningHouseIndex; /*0x623755*/
   this->attachedTag = attachedTag; /*0x623758*/
@@ -2231,12 +2231,12 @@ void E4Recv_629530::sub_629530()
     ObjectClass *v4; // [esp+8h] [ebp-4h] BYREF
     v4 = this; /*0x629567*/
     int v3; // eax
-    v3 = (*(int (**)(int *, ObjectClass **))(g_BuildingLoadQueue_Array.?[0] + 16))( /*0x62956b*/
+    v3 = (*(int (**)(int *, ObjectClass **))(g_BuildingInstanceCount + 16))( /*0x62956b*/
            g_BuildingLoadQueue_Array.?,
            &v4);
-    if ( v3 != -1 && v3 < g_BuildingLoadQueue_Array.?[1] ) /*0x62957b*/
+    if ( v3 != -1 && v3 < Count ) /*0x62957b*/
     {
-      --g_BuildingLoadQueue_Array.?[1]; /*0x629580*/
+      --Count; /*0x629580*/
       for ( ; /*0x629586*/
       v3 < g_BuildingLoadQueue_Array.?[1];
       *(unsigned int *)(g_BuildingLoadQueue_Array + 4 * v3 - 4) = *(unsigned int *)(g_BuildingLoadQueue_Array
