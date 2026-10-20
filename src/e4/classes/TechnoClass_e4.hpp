@@ -208,16 +208,16 @@ struct TechnoClass {
     char barrelFacing[24];  // 0x370
     char primaryFacing[24];  // 0x388
     char secondaryFacing[24];  // 0x3A0
-    int __pad_3B8;  // 0x3B8
+    int32_t currentBurstIndex;  // 0x3B8
     char targetLaserTimer[12];  // 0x3BC
     char unknown_short_3C8[2];  // 0x3C8
     unsigned short unknown_3CA;  // 0x3CA
     bool countedAsOwned;  // 0x3CC
-    bool __pad_3CD;  // 0x3CD
+    bool isSinking;  // 0x3CD
     char wasAlreadySinking[1];  // 0x3CE
     char isReceivingDamageEffect[1];  // 0x3CF
     bool isUseless;  // 0x3D0
-    bool __pad_3D1;  // 0x3D1
+    bool hasBeenAttacked;  // 0x3D1
     char isCloakableFlag[1];  // 0x3D2
     char isPrimaryFactory[1];  // 0x3D3
     bool isALoaner;  // 0x3D4
@@ -230,7 +230,7 @@ struct TechnoClass {
     bool isAlternativeTether;  // 0x419
     bool isOwnedByCurrentPlayer;  // 0x41A
     bool isDiscoveredByCurrentPlayer;  // 0x41B
-    bool __pad_41C;  // 0x41C
+    bool isDiscoveredByComputer;  // 0x41C
     char isSelectedByPlayer[1];  // 0x41D
     char isUnderCursor[1];  // 0x41E
     char isCommandLineTarget[1];  // 0x41F

@@ -16,7 +16,8 @@ struct Audio {
     unsigned int u32_14;  // 0x14
     unsigned char q018[4];  // 0x18
     unsigned int u32_1C;  // 0x1C
-    char __pad_20[20];  // 0x20
+    unsigned int u32_20;  // 0x20
+    char __pad_20[16];  // 0x24
     int q034;  // 0x34
     int q038;  // 0x38
     char __pad_3C[76];  // 0x3C

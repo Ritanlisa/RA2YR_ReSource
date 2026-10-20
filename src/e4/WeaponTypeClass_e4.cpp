@@ -283,15 +283,15 @@ int WeaponTypeClass::ProcessPower(int * a2, void *a2_2)
 
   ((AbstractTypeClass *)this)->ProcessPower(a2); /*0x772ae9*/
   Power::TimerProcess(this->AmbientDamage); /*0x772af7*/
-  LOBYTE(v3) = this->IsSonic[0]; /*0x772afc*/
+  LOBYTE(v3) = this->IsSonic_d[0]; /*0x772afc*/
   Power::FlagProcess((Power *)a2, (int)v3); /*0x772b05*/
   LOBYTE(v4) = this->TurboBoost[0]; /*0x772b0a*/
   v5 = (unsigned __int8 *)Power::FlagProcess((Power *)a2, (int)v4); /*0x772b13*/
-  LOBYTE(v5) = this->Supress[0]; /*0x772b18*/
+  LOBYTE(v5) = this->Supress_d[0]; /*0x772b18*/
   Power::FlagProcess((Power *)a2, (int)v5); /*0x772b21*/
-  LOBYTE(v6) = this->Camera[0]; /*0x772b26*/
+  LOBYTE(v6) = this->Camera_d[0]; /*0x772b26*/
   Power::FlagProcess((Power *)a2, (int)v6); /*0x772b2f*/
-  LOBYTE(v7) = this->IsLaser[0]; /*0x772b34*/
+  LOBYTE(v7) = this->IsLaser_d[0]; /*0x772b34*/
   v8 = (unsigned __int8 *)Power::FlagProcess((Power *)a2, (int)v7); /*0x772b3d*/
   LOBYTE(v8) = this->IsHouseColor[0]; /*0x772b42*/
   Power::FlagProcess((Power *)a2, (int)v8); /*0x772b4b*/

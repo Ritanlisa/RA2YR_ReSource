@@ -18,7 +18,8 @@ struct NetworkLobby {
     unsigned int u32_1C;  // 0x1C
     unsigned int q020;  // 0x20
     unsigned int u32_24;  // 0x24
-    char __pad_28[17];  // 0x28
+    unsigned int u32_28;  // 0x28
+    char __pad_28[13];  // 0x2C
     char NetworkLobby_field_0x39[4];  // 0x39
     char __pad_3D[303];  // 0x3D
     unsigned short u16_16C;  // 0x16C

@@ -84,7 +84,7 @@ struct SmudgeTypeClass {
     int Width;  // 0x298
     int Height;  // 0x29C
     bool Crater;  // 0x2A0
-    bool __pad_2A1;  // 0x2A1
+    bool Burn;  // 0x2A1
     unsigned short tail_2A2;  // 0x2A2
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---

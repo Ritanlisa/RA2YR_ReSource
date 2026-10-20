@@ -66,7 +66,7 @@ unsigned int * TerrainTypeClass::Construct(int a2, unsigned char a3, unsigned ch
   aP4->TemperateOccupationBits = 0; /*0x5447f8*/
   aP4->SnowOccupationBits = 0; /*0x5447fe*/
   aP4->WaterBound = 1; /*0x544804*/
-  aP4->SpawnsTiberium = 0; /*0x54480b*/
+  aP4->SpawnsTiberium_d = 0; /*0x54480b*/
   LODWORD(aP4->AnimationProbability) = &g_ptr_7E3238; /*0x544811*/
   aP4->FoundationData = (CellStruct *)10; /*0x54481b*/
   *&aP4->q2B4 = 0; /*0x544825*/

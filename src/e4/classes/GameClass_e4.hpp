@@ -51,7 +51,7 @@ struct GameClass {
     unsigned int u32_C;  // 0xC
     unsigned int q10;  // 0x10
     Pipe* m_14;  // 0x14
-    unsigned int u32_18;  // 0x18
+    unsigned int __pad_018;  // 0x18
     char __pad_1C[4];  // 0x1C
     CampaignClass * ptr_20;  // 0x20
     unsigned int q024;  // 0x24

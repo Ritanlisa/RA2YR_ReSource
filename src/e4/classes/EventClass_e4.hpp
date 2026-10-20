@@ -13,8 +13,9 @@ struct EventClass {
     int EventClass_field_0x0;  // 0x0
     int EventClass_field_0x4;  // 0x4
     int EventClass_field_0x8;  // 0x8
-    int EventClass_field_0xC;  // 0xC
-    char __pad_10[5];  // 0x10
+    int q00C;  // 0xC
+    int Count;  // 0x10
+    char __pad_10[1];  // 0x14
     unsigned int u32_15;  // 0x15
     char __pad_19[11];  // 0x19
     int EventClass_field_0x24;  // 0x24

@@ -392,7 +392,7 @@ int GameClass::ReadEncryptedStream(char * a2, signed int Size)
       if ( v9 != v10 ) /*0x6331d9*/
         return 0; /*0x6331e7*/
       BigInt::RSAOperation(v8, Src, v9, &this->u32_3C); /*0x6331f4*/
-      GameClass::updateUI(&this->ptr_14, (int)&this->m_3C, 56); /*0x6331fc*/
+      GameClass::updateUI(&this->m_14, (int)&this->m_3C, 56); /*0x6331fc*/
     }
     else
     {

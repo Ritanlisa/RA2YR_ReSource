@@ -15,7 +15,8 @@ struct Object {
     int Object_field_0x8;  // 0x8
     char __pad_C[24];  // 0xC
     unsigned int q024;  // 0x24
-    char __pad_28[8];  // 0x28
+    ProgressTimer* ptr_28;  // 0x28
+    char __pad_28[4];  // 0x2C
     int q030;  // 0x30
     int Object_field_0x34;  // 0x34
     char __pad_38[80];  // 0x38

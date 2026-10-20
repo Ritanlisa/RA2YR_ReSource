@@ -434,7 +434,8 @@ struct UnitTypeClass {
     SHPStruct* AltImage;  // 0xE58
     char WalkFrames;  // 0xE5C
     char FiringFrames_d;  // 0xE5D
-    char __tail_E5E[26];  // 0xE5E
+    char AltImageFile;  // 0xE5E
+    char __tail_E5E[25];  // 0xE5F
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     char CreateUnit(short *a2, void *ppv);

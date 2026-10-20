@@ -95,7 +95,7 @@ struct TerrainTypeClass {
     char IsVeinhole[1];  // 0x2B4
     unsigned char __pad_2B5;  // 0x2B5
     char __pad_2B6[2];  // 0x2B6
-    void * q2B8;  // 0x2B8
+    CellStruct* FoundationData;  // 0x2B8
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     TerrainClass * GetTileIndex(int a2, void *a2_2, void *a3, void *a4);

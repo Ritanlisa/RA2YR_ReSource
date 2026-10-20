@@ -404,7 +404,7 @@ int ObjectClass::LoadFromStream_Common(FootClass * aP0, LPSTREAM pStm)
   int v21; // [esp+5Ch] [ebp+4h]
   int v22; // [esp+5Ch] [ebp+4h]
 
-  v3 = aP0->Locomotor; /*0x4db3cb*/
+  v3 = aP0->locomotor; /*0x4db3cb*/
   if ( v3 ) /*0x4db3d3*/
     (*(void (**)(unsigned int))(*(unsigned int *)v3 + 8))(*(unsigned int *)(aP0 + 1652)); /*0x4db3d8*/
   v4 = pStm; /*0x4db3db*/
@@ -418,7 +418,7 @@ int ObjectClass::LoadFromStream_Common(FootClass * aP0, LPSTREAM pStm)
       v6 = aP0 + 1416; /*0x4db40b*/
       if ( aP0 != -1416 ) /*0x4db413*/
       {
-        AbstractClassVector::Construct(&aP0->FootClass_DVC_588, 0, 0); /*0x4db419*/
+        AbstractClassVector::Construct(&aP0->unknownAbstractArray588, 0, 0); /*0x4db419*/
         /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E91EC) */  /*0x4db41e*/
         *(unsigned int *)(aP0 + 1436) = 10; /*0x4db424*/
         *(unsigned int *)(aP0 + 1432) = 0; /*0x4db42b*/
@@ -449,7 +449,7 @@ LABEL_28:
             aP0->locomotor = 0; /*0x4db550*/
             ObjectClass::updateStateFlags(&aP0->locomotor); /*0x4db55a*/
             aP0->locomotor = 0; /*0x4db566*/
-            OleLoadFromStream(v4, &IID_ILocomotion, &aP0->Locomotor); /*0x4db568*/
+            OleLoadFromStream(v4, &IID_ILocomotion, &aP0->locomotor); /*0x4db568*/
             aP0->FootClass_field_5A0 = 0; /*0x4db574*/
             ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(aP0 + 1492)); /*0x4db580*/
             ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->FootClass_field_5D8); /*0x4db591*/

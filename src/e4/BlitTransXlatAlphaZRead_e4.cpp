@@ -27,7 +27,7 @@ unsigned short * BlitTransXlatAlphaZRead_ushort::Blit_Alpha_Lucent50(unsigned sh
       v13 = *a2++; /*0x494942*/
       if ( v13 && *result ) /*0x49494d*/
       {
-        *a1 = (this->ptr_8 & (*a1 >> 1)) + (this->ptr_8 & (*(unsigned short *)(*&this->Data + 2 * v13) >> 1)); /*0x494978*/
+        *a1 = (this->m_8 & (*a1 >> 1)) + (this->m_8 & (*(unsigned short *)(*&this->Data + 2 * v13) >> 1)); /*0x494978*/
         v12 = *(unsigned int *)&g_VisibleSurfaceDescriptor; /*0x49497b*/
       }
       ++result; /*0x494984*/
@@ -59,7 +59,7 @@ unsigned short * BlitTransXlatAlphaZRead_ushort::Blit_Alpha_Lucent50_0(unsigned 
       v13 = *a2++; /*0x494a62*/
       if ( v13 && !*result ) /*0x494a6d*/
       {
-        *a1 = (this->ptr_8 & (*a1 >> 1)) + (this->ptr_8 & (*(unsigned short *)(*&this->Data + 2 * v13) >> 1)); /*0x494a98*/
+        *a1 = (this->m_8 & (*a1 >> 1)) + (this->m_8 & (*(unsigned short *)(*&this->Data + 2 * v13) >> 1)); /*0x494a98*/
         v12 = *(unsigned int *)&g_VisibleSurfaceDescriptor; /*0x494a9b*/
       }
       ++result; /*0x494aa4*/
@@ -84,7 +84,7 @@ int BlitTransXlatAlphaZRead_ushort::AddRef(unsigned short * a2, unsigned char * 
   if ( v11 > 254 ) /*0x494b8b*/
     v11 = 254; /*0x494b8d*/
   int result; // eax
-  result = (int)(this->ptr_8 + (v11 << 9)); /*0x494b98*/
+  result = (int)(this->m_8 + (v11 << 9)); /*0x494b98*/
   unsigned __int16 *v17; // [esp+24h] [ebp+18h]
   v17 = (unsigned __int16 *)result; /*0x494ba0*/
   if ( a4 > 0 ) /*0x494ba4*/
@@ -128,7 +128,7 @@ int BlitTransXlatAlphaZRead_ushort::BlitRect(unsigned short * a2, unsigned char 
   if ( v12 > 254 ) /*0x494c6b*/
     v12 = 254; /*0x494c6d*/
   int result; // eax
-  result = (int)(this->ptr_8 + (v12 << 9)); /*0x494c78*/
+  result = (int)(this->m_8 + (v12 << 9)); /*0x494c78*/
   unsigned __int16 *v18; // [esp+24h] [ebp+18h]
   v18 = (unsigned __int16 *)result; /*0x494c80*/
   if ( a4 > 0 ) /*0x494c84*/

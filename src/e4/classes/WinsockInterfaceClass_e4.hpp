@@ -7,7 +7,7 @@ namespace gamemd {
 
 struct WinsockInterfaceClass {
     int Socket;  // 0x0
-    unsigned char __pad_004;  // 0x4
+    bool Initialized;  // 0x4
     char __pad_5[1];  // 0x5
     unsigned short BoundPort;  // 0x6
     unsigned int __pad_008;  // 0x8

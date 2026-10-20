@@ -23,8 +23,8 @@ struct Movie {
     unsigned int u32_4C;  // 0x4C
     unsigned int u32_50;  // 0x50
     unsigned int u32_54;  // 0x54
-    unsigned int q058;  // 0x58
-    unsigned int q05C;  // 0x5C
+    AbstractClass* ptr_58;  // 0x58
+    unsigned int __pad_05C;  // 0x5C
     unsigned int q060;  // 0x60
     unsigned int u32_64;  // 0x64
     unsigned int u32_68;  // 0x68

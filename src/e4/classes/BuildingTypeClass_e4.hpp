@@ -442,7 +442,7 @@ struct BuildingTypeClass {
     int TargetCoordOffset[3];  // 0xEBC
     int ExitCoord[3];  // 0xEC8
     int FoundationOutside;  // 0xED4
-    int unknown___2;  // 0xED8
+    int OccupyHeight;  // 0xED8
     int DeployFacing;  // 0xEDC
     int PowerBonus;  // 0xEE0
     int PowerDrain;  // 0xEE4

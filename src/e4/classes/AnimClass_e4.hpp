@@ -101,7 +101,8 @@ struct AnimClass {
     int AnimClass_field_0x114;  // 0x114
     int __pad_118;  // 0x118
     int AnimClass_field_0x11C;  // 0x11C
-    unsigned char __pad_120[20];  // 0x120
+    char __pad_120[16];  // 0x120
+    int q130;  // 0x130
     char __pad_134[62];  // 0x134
     unsigned char Animation;  // 0x172
     char __pad_173[1];  // 0x173
@@ -122,7 +123,9 @@ struct AnimClass {
     void * AnimClass_field_0x1B4;  // 0x1B4
     unsigned char __pad_1B8[60];  // 0x1B8
     unsigned int u32_1F4;  // 0x1F4
-    char __pad_1F8[13];  // 0x1F8
+    char __pad_1F8[8];  // 0x1F8
+    int q_200;  // 0x200
+    char __pad_204[1];  // 0x204
     char __pad_205[13];  // 0x205
     unsigned char LightConvert;  // 0x212
     char __pad_213[3];  // 0x213

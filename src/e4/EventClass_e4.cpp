@@ -733,7 +733,7 @@ unsigned int * EventClass::resetEvent(int aP1, int aP2, void *a3)
       return &this->EventClass_field_0x0; /*0x40bd2e*/
     }
     this->EventClass_field_0x4 = __2_YAPAXI_Z(4 * aP1); /*0x40bd3d*/
-    (this->EventClass_field_0xC) = ((this->EventClass_field_0xC) & ~(0xFF << 8)) | (((1) & 0xFF) << 8); /*0x40bd40*/
+    (this->q00C) = ((this->q00C) & ~(0xFF << 8)) | (((1) & 0xFF) << 8); /*0x40bd40*/
   }
   return &this->EventClass_field_0x0; /*0x40bd2d*/
 

@@ -808,15 +808,15 @@ LABEL_25:
               v48 = v45; /*0x6d9343*/
               v49 = ZCoordToScreenY(v47); /*0x6d934a*/
               *(unsigned int *)&v94.__pad_000 = v48 / 256; /*0x6d935f*/
-              v94.Vector2_field_0x04 = v103 / 256 - v49; /*0x6d936e*/
+              v94.q004 = v103 / 256 - v49; /*0x6d936e*/
               v50 = v42[45]; /*0x6d9378*/
               v100[0] = v42[44]; /*0x6d9383*/
               v100[1] = v50; /*0x6d938a*/
               (&v94)->Subtract(v100); /*0x6d9391*/
               if ( *(int *)&v94.__pad_000 >= -360 /*0x6d93ca*/
                 && *(int *)&v94.__pad_000 <= dword_B0CE30 + 360
-                && v94.Vector2_field_0x04 >= -180
-                && v94.Vector2_field_0x04 <= dword_B0CE34 + 180 )
+                && v94.q004 >= -180
+                && v94.q004 <= dword_B0CE34 + 180 )
               {
                 v51 = *v18; /*0x6d93cc*/
                 *((unsigned char *)v18 + 153) = 1; /*0x6d93da*/

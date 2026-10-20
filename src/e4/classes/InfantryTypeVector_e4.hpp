@@ -8,7 +8,7 @@ namespace gamemd {
 struct InfantryTypeVector {
     unsigned int __pad_0;  // 0x0
     unsigned int InfantryTypeVector_field_0x04;  // 0x4
-    unsigned int u32_8;  // 0x8
+    int q008;  // 0x8
     int InfantryTypeVector_field_0x0C;  // 0xC
     int q010;  // 0x10
     int q014;  // 0x14

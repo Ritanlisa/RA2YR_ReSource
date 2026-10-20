@@ -9,7 +9,7 @@ namespace gamemd {
 #define GAMEMD_G2_NetworkAddress_DEF 1
 struct NetworkAddress {
     unsigned int m_IP;  // 0x0
-    unsigned short __pad_004;  // 0x4
+    uint16_t m_Port;  // 0x4
     unsigned short pad_06;  // 0x6
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---

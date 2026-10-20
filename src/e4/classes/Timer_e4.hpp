@@ -19,14 +19,15 @@ struct Timer {
     unsigned int q020;  // 0x20
     unsigned int u32_24;  // 0x24
     unsigned int u32_28;  // 0x28
-    char __pad_2C[8];  // 0x2C
+    unsigned int u32_2C;  // 0x2C
+    char __pad_2C[4];  // 0x30
     unsigned int u32_34;  // 0x34
     char __pad_38[4];  // 0x38
     unsigned int u32_3C;  // 0x3C
     unsigned int u32_40;  // 0x40
     unsigned int u32_44;  // 0x44
     unsigned int u32_48;  // 0x48
-    char __pad_4C[4];  // 0x4C
+    unsigned int u32_4C;  // 0x4C
     unsigned int q050;  // 0x50
     char __pad_54[16];  // 0x54
     unsigned int u32_64;  // 0x64

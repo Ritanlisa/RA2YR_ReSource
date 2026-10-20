@@ -98,7 +98,7 @@ int BuildingTypeClass::ConstructFull(char * Source, void *a2)
   this->NotWorkingSound = -1; /*0x45de76*/
   this->PowersUpBuilding_0x18 = -1; /*0x45de7c*/
   this->FreeUnit = -1; /*0x45de82*/
-  this->SecretInfantry = -1; /*0x45de88*/
+  this->SecretInfantry_d = -1; /*0x45de88*/
   this->FreeUnit_d = 0; /*0x45de8e*/
   this->SecretInfantry_d = 0; /*0x45de94*/
   this->ExitCoord = 0; /*0x45de9a*/
