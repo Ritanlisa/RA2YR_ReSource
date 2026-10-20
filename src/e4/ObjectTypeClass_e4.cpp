@@ -1703,7 +1703,7 @@ char ObjectTypeClass::ReadTypeListINI(unsigned char * Block, char * a2, ObjectTy
     v6 = v5[i]; /*0x4762bc*/
     v8[4] = HIBYTE(v6); /*0x4762c6*/
     *(unsigned int *)v8 = v6 & 0xFFFFFF; /*0x4762ce*/
-    strcat(&v8[12], (const char *)(System_Read_6E7330((ObjectClass *)v8) + 36)); /*0x4762fa*/
+    strcat(&v8[12], (const char *)(((ObjectClass *)(ObjectClass *)v8)->System_Read_6E7330() + 36)); /*0x4762fa*/
   }
   return INIClass::SetString(*(char **)&v8[8], Block, a2, &v8[12]); /*0x47632e*/
 

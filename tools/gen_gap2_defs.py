@@ -1595,6 +1595,10 @@ def _x93_call_rewrite(owner, old_method, new_method, root, owner_header=None):
             parts.append("".join(cur))
             if len(parts) < 1:
                 continue
+            if len(parts) == 1 and not parts[0].strip():
+                # X96: zero-argument free call -- there is no receiver to
+                # memberize; rewriting emitted the invalid `((Owner *))->Method()`.
+                continue
             arg0 = parts[0].strip()
             rest = ", ".join(x.strip() for x in parts[1:] if x.strip())
             if arg0 == "this":

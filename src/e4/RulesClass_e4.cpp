@@ -392,7 +392,7 @@ INIClass * * RulesClass::ReadMovies(void * aMovies)
       result = (v7)->GetString((uint8_t *)aMovies, StringByIndex, g_Str__none_, Source, 32); /*0x6745b3*/
       if ( result ) /*0x6745ba*/
       {
-        result = LookupNameIndex((ObjectClass *)Source); /*0x6745c0*/
+        result = ((ObjectClass *)(ObjectClass *)Source)->LookupNameIndex(); /*0x6745c0*/
         if ( result == -1 ) /*0x6745c8*/
         {
           char *v5; // esi

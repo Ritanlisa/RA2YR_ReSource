@@ -3909,7 +3909,7 @@ int RepositionDialogControls(HWND hWnd, HWND a2)
       }
       else if ( GetDialogDefaultButton((int)Parent, v2) ) /*0x60c246*/
       {
-        UI_Get_60B420(v2); /*0x60c251*/
+        ((ObjectClass *)v2)->UI_Get_60B420(); /*0x60c251*/
         Control::RepositionControlsDialog(v2); /*0x60c258*/
         return 1; /*0x60c260*/
       }
@@ -3936,7 +3936,7 @@ int RepositionDialogControls(HWND hWnd, HWND a2)
         DlgCtrlID = GetDlgCtrlID(v2); /*0x60c2b4*/
         if ( Event::IsValidActionType(v8) && DlgCtrlID == 1685 ) /*0x60c2c5*/
         {
-          UI_Get_60B550(v2); /*0x60c2c9*/
+          ((ObjectClass *)v2)->UI_Get_60B550(); /*0x60c2c9*/
           Control::RepositionControlsDialog(v2); /*0x60c2d0*/
           return 1; /*0x60c2d8*/
         }
@@ -3951,7 +3951,7 @@ int RepositionDialogControls(HWND hWnd, HWND a2)
           v12 = GetDlgCtrlID(v2); /*0x60c322*/
           if ( v11 == 226 && v12 == 1821 ) /*0x60c336*/
           {
-            UI_Get_60B610(v2); /*0x60c33a*/
+            ((ObjectClass *)v2)->UI_Get_60B610(); /*0x60c33a*/
             Control::RepositionControlsDialog(v2); /*0x60c341*/
             return 1; /*0x60c349*/
           }
@@ -3989,7 +3989,7 @@ int RepositionDialogControls(HWND hWnd, HWND a2)
               || v14 == 255
               || v14 == 234 )
             {
-              UI_Get_60B7A0(v2); /*0x60c3f8*/
+              ((ObjectClass *)v2)->UI_Get_60B7A0(); /*0x60c3f8*/
               Control::RepositionControlsDialog(v2); /*0x60c3ff*/
               return 1; /*0x60c407*/
             }

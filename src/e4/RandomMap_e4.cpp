@@ -3739,10 +3739,10 @@ AbstractClass * * RandomMap::Generate(char a2, HWND hDlg, void *a3)
     while ( !DistributeRandomMapTerrain(v35) ) /*0x598eb2*/
       ; /*0x598eab*/
   }
-  while ( !SpreadMapSeedTerrainFromWaypoints(v40) ); /*0x598ebd*/
+  while ( !((ObjectClass *)v40)->SpreadMapSeedTerrainFromWaypoints() ); /*0x598ebd*/
   Debug::Log(); /*0x598ec4*/
   if ( v40->ambientSoundController[0] ) /*0x598ec9*/
-    PlaceRandomAIBuildings(v40); /*0x598ed5*/
+    ((ObjectClass *)v40)->PlaceRandomAIBuildings(); /*0x598ed5*/
   if ( off_82AF14 ) /*0x598ee1*/
     off_82AF14(); /*0x598ee3*/
   Debug::Log(); /*0x598eea*/
@@ -3849,7 +3849,7 @@ AbstractClass * * RandomMap::Generate(char a2, HWND hDlg, void *a3)
     off_82AF14(); /*0x59916f*/
   Debug::Log(); /*0x599176*/
   v25 = v40; /*0x59917b*/
-  GenerateTerrainHeightMap(v40); /*0x599184*/
+  ((ObjectClass *)v40)->GenerateTerrainHeightMap(); /*0x599184*/
   if ( LOBYTE(dword_A8B230[381].ptr_4) ) /*0x59918f*/
     Multiplayer::ShowProgress((Multiplayer *)&dword_A8B238, 189); /*0x5991a1*/
   else
@@ -7954,7 +7954,7 @@ LABEL_19:
       v20 = v29; /*0x5a8288*/
       if ( ScheduleMapSeedBuildings((int *)v21) ) /*0x5a8293*/
       {
-        ScatterMapSeedBuildings(v20, v21); /*0x5a82a3*/
+        ((ObjectClass *)v20)->ScatterMapSeedBuildings(v21); /*0x5a82a3*/
         PlaceNeutralCreeps(v21); /*0x5a82af*/
         ++v23; /*0x5a82b4*/
       }

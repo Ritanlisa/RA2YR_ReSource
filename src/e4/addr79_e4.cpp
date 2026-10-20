@@ -1087,7 +1087,7 @@ AbstractClass * * WOL_StartGame()
       --v2; /*0x794c85*/
     }
     while ( v2 ); /*0x794c86*/
-    StartGameWOL_Start((ObjectClass *)&unk_A8E9C0, 300); /*0x794c92*/
+    ((ObjectClass *)(ObjectClass *)&unk_A8E9C0)->StartGameWOL_Start(300); /*0x794c92*/
     v3 = WaitNetworkLobbyPlayers(); /*0x794c9c*/
     if ( !v3 ) /*0x794ca0*/
     {
@@ -3403,7 +3403,7 @@ void MainLobbyDlgProcWOL(HWND hWnd, LPARAM lParam, ObjectClass)
             if ( hWnd.m_3[1] ) /*0x79971e*/
             {
               String::Assign(&v54, &g_INI_DefaultBuffer); /*0x799729*/
-              ReadSettingsWOL((ObjectClass *)&v54); /*0x799732*/
+              ((ObjectClass *)(ObjectClass *)&v54)->ReadSettingsWOL(); /*0x799732*/
               DeleteAndZero((ObjectClass *)&v54); /*0x79973b*/
             }
             LoadConfigWOL((ObjectClass *)&v55); /*0x799744*/
@@ -3438,7 +3438,7 @@ void MainLobbyDlgProcWOL(HWND hWnd, LPARAM lParam, ObjectClass)
           v31 = GetDlgItem((HWND)v4, 1771); /*0x79981b*/
           EnableWindow(v31, 0); /*0x799822*/
           SendMessageA(v26, 0x14Eu, 0, 0); /*0x799832*/
-          LoadAccountInfoWOL((ObjectClass *)&v60); /*0x799838*/
+          ((ObjectClass *)(ObjectClass *)&v60)->LoadAccountInfoWOL(); /*0x799838*/
           if ( v61 ) /*0x799843*/
           {
             String::Assign((String *)&v55.DeleteAndZero_field_0x08, &g_INI_DefaultBuffer); /*0x79984e*/
@@ -3462,7 +3462,7 @@ void MainLobbyDlgProcWOL(HWND hWnd, LPARAM lParam, ObjectClass)
         case 1791: /*0x79955d*/
           if ( SendMessageA((HWND)ptr_4, 0xF0u, 0, 0) == 1 ) /*0x79958d*/
           {
-            ReadSettingsWOL((ObjectClass *)&stru_B73E10.CChatEventSink_field_0x30); /*0x799594*/
+            ((ObjectClass *)(ObjectClass *)&stru_B73E10.CChatEventSink_field_0x30)->ReadSettingsWOL(); /*0x799594*/
             result = 0; /*0x79959c*/
           }
           else
@@ -3476,7 +3476,7 @@ void MainLobbyDlgProcWOL(HWND hWnd, LPARAM lParam, ObjectClass)
             if ( v23 ) /*0x7995e9*/
             {
               String::Assign((String *)&a2, &g_INI_DefaultBuffer); /*0x7995f4*/
-              ReadSettingsWOL(&a2); /*0x7995fd*/
+              ((ObjectClass *)&a2)->ReadSettingsWOL(); /*0x7995fd*/
               DeleteAndZero(&a2); /*0x799606*/
             }
             DeleteAndZero((ObjectClass *)&hWnd.m_3[1]); /*0x79960f*/
@@ -3970,7 +3970,7 @@ LABEL_123:
             if ( LOBYTE(a2.ptr_4) ) /*0x79a74c*/
             {
               String::Assign((String *)&a2, &g_INI_DefaultBuffer); /*0x79a757*/
-              ReadSettingsWOL(&a2); /*0x79a760*/
+              ((ObjectClass *)&a2)->ReadSettingsWOL(); /*0x79a760*/
               DeleteAndZero(&a2); /*0x79a769*/
             }
             LoadConfigWOL((ObjectClass *)&v85.ptr_4); /*0x79a772*/
@@ -6873,7 +6873,7 @@ int sub_79AE00(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
       {
         if ( (uint16_t)a3 == 1 ) /*0x79aeb3*/
         {
-          ReadSettingsWOL(&dword_B73E40); /*0x79aeec*/
+          ((ObjectClass *)&dword_B73E40)->ReadSettingsWOL(); /*0x79aeec*/
           (*(void (**)(LONG, HWND, int))(*(unsigned int *)WindowLongA + 4))(WindowLongA, hWnd, 1); /*0x79aef8*/
         }
         else if ( (uint16_t)a3 == 2 ) /*0x79aeb6*/

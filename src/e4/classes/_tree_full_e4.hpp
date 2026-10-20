@@ -724,6 +724,372 @@ struct ObjectClass {
     // --- x93 csp-relocation decls (BEGIN) ---
     void* CreateDominatorDestructionEffects();  // 0x0043C0D0
     // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    char* PlayHealthDependentBuildingAnim();  // 0x00458330
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    char ProcessDataCellClass();  // 0x00459CA0
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    void* CalculateBuildingFoundationBounds(BuildingTypeClass * aP1);  // 0x00465570
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    int GetBridgeCellColor(char* a2, char a3);  // 0x0047BDB0
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    char GetCellRadarColors(int aThis, int a3);  // 0x0047C060
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    char IsCoordValidMap(ObjectClass * aP1);  // 0x004838E0
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    int Helper_486E30();  // 0x00486E30
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    int LookupNameIndex();  // 0x0048DF30
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    char UpdateScoreScreenStatistics();  // 0x0049B930
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    int RenderTactical3DScene(int a2);  // 0x004A3660
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    int ApplyEMPPulseEffect(int a2);  // 0x004C54E0
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    void* WalkPathfindingLine(void* a2, int a3, void* a4, int a5, int a6);  // 0x004CBC40
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    int ProcessDataHelper(void* a2, int a3);  // 0x004CE4B0
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    char DrawFootTargetLine();  // 0x004DC340
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    int GetResourceIDHardcodedCSF();  // 0x004E3320
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    char COMStub_4F9F70(int a2, char a3);  // 0x004F9F70
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    short SelectSimilarBuildingTypes(int a2);  // 0x0050D6D0
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    bool WinMain_Helper();  // 0x005176C0
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    int ApplyChronoScreenColorShift();  // 0x0053B780
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    int Network_Init_542FC0(int a2);  // 0x00542FC0
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    int StartGameWOL_Start(int a2);  // 0x005430C0
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    int UpdateFootMoveToState();  // 0x0054BD30
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    int ProcessAutoSave();  // 0x00551A30
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    void Map_Init();  // 0x0055AF50
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    int CheckNetworkSync(int a2, int a3);  // 0x0055F690
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    int GetRegionMap(void* aP1, int a3, int a4);  // 0x0056DA10
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    int Map_Create();  // 0x0057B870
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    int Map_Create_57CAB0();  // 0x0057CAB0
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    int CleanupMapSystems();  // 0x00581090
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    int BuildTileAdjacencyTable(IUnknown * aP1);  // 0x005851B0
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    char PlaceNeutralBuilding();  // 0x00595400
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    char SpreadMapSeedTerrainFromWaypoints();  // 0x005A1FB0
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    void SmoothTerrainMap();  // 0x005A2F50
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    int GenerateTerrainHeightMap();  // 0x005A35F0
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    void ScatterMapSeedBuildings(void* a2);  // 0x005A82E0
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    void* PlaceRandomAIBuildings();  // 0x005A95B0
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    int Surface_Lock();  // 0x005B6CD0
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    void UI_Setup(void* Format, unsigned int a3, int a4);  // 0x005B6EB0
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    unsigned int TerritoryUpdateDisplayWOL(int a2);  // 0x005CB790
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    int Network_Load();  // 0x005CF830
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    int UI_Load_5D1C90(int a2);  // 0x005D1C90
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    char ComputeMultiEngineerAdjustment();  // 0x005D6D80
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    void SmallFunc_5D9360();  // 0x005D9360
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    int PlayerSkirmishSlotHandler_Handle_5DB600();  // 0x005DB600
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    int SendMultiplayerStartSignal_Start();  // 0x005DBEC0
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    char Network_Check(int a2);  // 0x005E23D0
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    int RefreshLobbyAll_Helper_5EAAD0();  // 0x005EAAD0
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    int RefreshLobbyAll_Play_5EAB30();  // 0x005EAB30
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    int RefreshLobbyAll_Get_5EAC00();  // 0x005EAC00
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    int RefreshLobbyAll_Get_5EACD0();  // 0x005EACD0
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    char RefreshLobbyAll_Get_5EADA0();  // 0x005EADA0
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    char RefreshLobbyAll_Setup();  // 0x005EAE40
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    char RefreshLobbyAll_Play_5EAEE0();  // 0x005EAEE0
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    int UI_Get_60B420(HWND hWnd);  // 0x0060B420
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    int UI_Get_60B550(HWND hWnd);  // 0x0060B550
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    int UI_Get_60B610(HWND hWnd);  // 0x0060B610
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    char UI_Get_60B7A0(HWND hWnd);  // 0x0060B7A0
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    char UI_Helper_60C7D0();  // 0x0060C7D0
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    char UI_Helper_60C930();  // 0x0060C930
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    char UI_Helper_60CAF0();  // 0x0060CAF0
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    char UI_Helper_60CCC0();  // 0x0060CCC0
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    char UI_Helper_60CDB0();  // 0x0060CDB0
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    int Memory_Pop(HWND hWnd);  // 0x00623E00
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    bool UI_Pop_631500_Pop(int a2);  // 0x006316E0
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    int UI_Pop_631500_Pop_Pop();  // 0x00631B20
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    int Team_Helper_6342E0(TechnoClass * aP1, int a3);  // 0x006342E0
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    int Render_Render();  // 0x00634770
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    int ExecuteActionPlanManager_Helper_636EB0();  // 0x00636EB0
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    char UI_Delete_Delete();  // 0x00637D00
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    bool ExecuteActionPlanManager_Helper_638C40(int a2, char a3);  // 0x00638C40
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    int Render_Render_63D0F0();  // 0x0063D0F0
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    int DrawActionLineSegment(Tactical * aP1, ObjectClass * aP2);  // 0x0063D480
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    char Team_Destroy(int aP1);  // 0x0063E5D0
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    int GetSuperWeaponTypeFlag();  // 0x00645BB0
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    int RenderPlayerLatencyBars();  // 0x0064A7B0
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    char Network_Process(int a2);  // 0x00652560
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    int SpreadRadiationAreaEffect_Helper(int v7, int a3);  // 0x00659510
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    bool RenderProjectileTrail();  // 0x00659650
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    int Weapon_Update_Update_659EE0();  // 0x00659EE0
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    int ReadBuildingTypesBuildingTypeClass();  // 0x00672840
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    int Map_Save(int a2);  // 0x00681080
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    int Map_Read();  // 0x00683050
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    int ReleaseCOM();  // 0x00683060
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    int Render_Render_68FFE0(int a2, ScoreScreen * aP2);  // 0x0068FFE0
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    char SetLandTypeMap();  // 0x00691590
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    int DlgProcLoadGame_Load_696C40();  // 0x00696C40
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    int SmallFunc_6A94F0(int a2);  // 0x006A94F0
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    void* Event_Process_6B0490();  // 0x006B0490
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    int COM_SafeRelease();  // 0x006C61C0
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    void* Audio_Read_6C6B00(AbstractClass * aP1);  // 0x006C6B00
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    int SidebarUpdateAll();  // 0x006D04D0
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    int RenderRadarBlips(char a2, AbstractClass * aP2);  // 0x006D5C50
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    char PlayWaypointEffect(int a2, int a3, int a4, IUnknown * aP4);  // 0x006E0490
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    char ProcessDataObjectClass(int a2, int a3, int a4, int a5);  // 0x006E14A0
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    int System_Read_6E7330();  // 0x006E7330
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    void* Network_Process_6E7C20();  // 0x006E7C20
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    char SelectTeamMembers(ScriptClass * aP1, int a3);  // 0x006EE800
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    char DispatchTeamOrders(int a2, int a3);  // 0x006EF110
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    char Team_Create();  // 0x006EF470
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    int SpreadRadiationAreaEffect(InfantryClass * aP1);  // 0x006FD800
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    char SmallFunc_721D10();  // 0x00721D10
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    char SidebarHasAvailableUnit();  // 0x00730990
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    int SidebarCountAvailableUnits();  // 0x00730A10
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    void SidebarClearReferences();  // 0x007310D0
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    char SelectAllOfType_Helper();  // 0x007342C0
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    int ReadFootINI();  // 0x007436E0
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    char LoadVeinholeMonsters();  // 0x0074EA70
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    void DestroyVeinholeMonster_Destroy();  // 0x0074F620
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    char DestroyVeinholeMonster_Destroy_74F6F0(DynamicVector * aP1);  // 0x0074F6F0
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    int System_Get_7515C0();  // 0x007515C0
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    int InitializeTileAudioOcclusion(int a2, void* a3);  // 0x00756860
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    char WaypointClass_Find(void* a2);  // 0x007639A0
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    int FindWDTTerritoryClass_Find_Find();  // 0x00766060
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    void* TerritorySelectWDT_Create(void* a2);  // 0x007665D0
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    int ConstructWDTSelection_Create_76EEB0_Create(void* aP1, void* a2);  // 0x007692F0
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    void ConstructWDTSelection_Create_76CA60(Selection_WorldDominationTour * aP1, char ** a2);  // 0x0076CA60
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    void TerritorySelectWDT_Process(int a2, void* aP2);  // 0x0076FEB0
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    void* ConstructWDTSelection_Create();  // 0x00771800
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    int System_Read();  // 0x00776880
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    int System_Read_7768A0(HWND hWndMain);  // 0x007768A0
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    void* LoadAccountInfoWOL();  // 0x00778710
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    int ReadSettingsWOL();  // 0x00779C90
+    // --- x93 csp-relocation decls (END) ---
 };
 #endif // GAMEMD_TREE_UNIVERSE
 
@@ -804,6 +1170,24 @@ struct VectorClass {
     static int ResizeEx(void *aP1, int a2, int a3);
     static int Cleanup(void *aP1);
     // --- W16G3 supply (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    void* Map_Cleanup(int a2, int a3);  // 0x005AD9F0
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    void* Object_Set(int a2, int a3);  // 0x0063EFB0
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    void* ParseAndApplyAlliances_Parse(int a2, int a3);  // 0x0069D870
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    void* Render_Parse_6CABA0(int a2, int a3);  // 0x006CABA0
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    void* Team_Helper_6F27F0(int a2, void* a3);  // 0x006F27F0
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    void* ConstructWDTSelection_Create_76F210(int a2, int a3);  // 0x0076F210
+    // --- x93 csp-relocation decls (END) ---
 };
 #endif
 

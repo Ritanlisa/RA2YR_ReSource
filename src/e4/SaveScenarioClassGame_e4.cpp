@@ -57,7 +57,7 @@ char SaveScenarioClassGame_AdjustMPSaveFileName(LPCCH lpMultiByteStr, wchar_t * 
     return 0; /*0x67cf61*/
   }
   ((GameState *)((GameState *)v9))->Reset(); /*0x67cf6b*/
-  Map_Save_681080((ObjectClass *)v9, dword_83D560); /*0x67cf7d*/
+  ((ObjectClass *)(ObjectClass *)v9)->Map_Save(dword_83D560); /*0x67cf7d*/
   Map_Save_6810A0((ObjectClass *)v9, Source); /*0x67cf8a*/
   Map_Save((ObjectClass *)v9, 1); /*0x67cf98*/
   Map_Save_6810D0((ObjectClass *)v9, *((wchar_t **)dword_A83D4C->relatedTagsCapacity + 24)); /*0x67cfb1*/

@@ -138,7 +138,7 @@ CampaignScore * * Diplomacy::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3
         }
         else
         {
-          ResourceID_Hardcoded = GetResourceIDHardcodedCSF((void *)v32); /*0x657fe5*/
+          ResourceID_Hardcoded = ((ObjectClass *)(void *)v32)->GetResourceIDHardcodedCSF(); /*0x657fe5*/
           hDlgb = GetDlgItem(hDlg, ResourceID_Hardcoded); /*0x657ff1*/
           EnableWindow(hDlgb, 0); /*0x657ff5*/
           ShowWindow(hDlgb, 0); /*0x658002*/

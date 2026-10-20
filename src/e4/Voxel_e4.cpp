@@ -204,7 +204,7 @@ AbstractClass * Voxel::RenderFrame(void *a1)
     v2 = (ObjectClass **)&unk_B3FF78; /*0x754568*/
     do /*0x754585*/
     {
-      InitializeTileAudioOcclusion(*v2, (int)v2, v27); /*0x754575*/
+      ((ObjectClass *)*v2)->InitializeTileAudioOcclusion((int)v2, v27); /*0x754575*/
       ++v1; /*0x75457f*/
       v2 += 18; /*0x754580*/
     }

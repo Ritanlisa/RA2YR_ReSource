@@ -10893,3 +10893,167 @@ bool VectorClass_Wstring::SetCapacity(const char ** a2)
   return v3; /*0x7b4872*/
 
 }
+
+// --- x93 csp-relocation defs (BEGIN) ---
+// X93: CSP inferred_real_class ownership (tools/gen_gap2_defs.py).
+namespace gamemd {
+// 0x005AD9F0
+void* VectorClass::Map_Cleanup(int a2, int a3) {
+  this->Items = 0; /*0x5ad9fb*/
+  this->Capacity = a2; /*0x5ad9fe*/
+  this->IsInitialized = 1; /*0x5ada01*/
+  this->IsAllocated = 0; /*0x5ada05*/
+  /* X11: ptr_0 install elided (implicit via VectorClass virtuals 0x5ada08) */
+  if ( a2 ) /*0x5ada0e*/
+  {
+    if ( a3 ) /*0x5ada16*/
+    {
+      this->Items = (void *)a3; /*0x5ada18*/
+      return &this->ptr_0; /*0x5ada1e*/
+    }
+    this->Items = operator new(4 * a2); /*0x5ada2d*/
+    this->IsAllocated = 1; /*0x5ada30*/
+  }
+  return &this->ptr_0; /*0x5ada1d*/
+}
+} // namespace gamemd
+// 0x0063EFB0
+void* VectorClass::Object_Set(int a2, int a3) {
+  this->Items = 0; /*0x63efbb*/
+  this->Capacity = a2; /*0x63efbe*/
+  this->IsInitialized = 1; /*0x63efc1*/
+  this->IsAllocated = 0; /*0x63efc5*/
+  /* X11: ptr_0 install elided (implicit via VectorClass virtuals 0x63efc8) */
+  if ( a2 ) /*0x63efce*/
+  {
+    if ( a3 ) /*0x63efd6*/
+    {
+      this->Items = (void *)a3; /*0x63efd8*/
+      return &this->ptr_0; /*0x63efde*/
+    }
+    this->Items = operator new(4 * a2); /*0x63efed*/
+    this->IsAllocated = 1; /*0x63eff0*/
+  }
+  return &this->ptr_0; /*0x63efdd*/
+}
+} // namespace gamemd
+// 0x0069D870
+void* VectorClass::ParseAndApplyAlliances_Parse(int a2, int a3) {
+  this->Items = 0; /*0x69d87b*/
+  this->Capacity = a2; /*0x69d87e*/
+  this->IsInitialized = 1; /*0x69d881*/
+  this->IsAllocated = 0; /*0x69d885*/
+  /* X11: ptr_0 install elided (implicit via VectorClass virtuals 0x69d888) */
+  if ( a2 ) /*0x69d88e*/
+  {
+    if ( a3 ) /*0x69d896*/
+    {
+      this->Items = (void *)a3; /*0x69d898*/
+      return &this->ptr_0; /*0x69d89e*/
+    }
+    this->Items = operator new(4 * a2); /*0x69d8ad*/
+    this->IsAllocated = 1; /*0x69d8b0*/
+  }
+  return &this->ptr_0; /*0x69d89d*/
+}
+// 0x006CABA0
+void* VectorClass::Render_Parse_6CABA0(int a2, int a3) {
+  this->Items = 0; /*0x6cabab*/
+  this->Capacity = a2; /*0x6cabae*/
+  this->IsInitialized = 1; /*0x6cabb1*/
+  this->IsAllocated = 0; /*0x6cabb5*/
+  /* X11: ptr_0 install elided (implicit via VectorClass virtuals 0x6cabb8) */
+  if ( a2 ) /*0x6cabbe*/
+  {
+    if ( a3 ) /*0x6cabc6*/
+    {
+      this->Items = (void *)a3; /*0x6cabc8*/
+      return &this->ptr_0; /*0x6cabce*/
+    }
+    this->Items = (void *)operator new(4 * a2); /*0x6cabdd*/
+    this->IsAllocated = 1; /*0x6cabe0*/
+  }
+  return &this->ptr_0; /*0x6cabcd*/
+}
+} // namespace gamemd
+// 0x006F27F0
+void* VectorClass::Team_Helper_6F27F0(int a2, void* a3) {
+  unsigned int *v4; // eax
+  int v5; // ecx
+  int *v7; // eax
+  void *v8; // edx
+  unsigned int *v9; // eax
+  int v10; // ecx
+
+  this->Items = 0; /*0x6f27fa*/
+  this->Capacity = a2; /*0x6f2801*/
+  this->IsInitialized = 1; /*0x6f2804*/
+  this->IsAllocated = 0; /*0x6f2808*/
+  /* X11: ptr_0 install elided (implicit via VectorClassDiscreteDistributionClassDistributionObject virtuals 0x6f280c) */
+  if ( !a2 ) /*0x6f2812*/
+  return &this->ptr_0; /*0x6f2812*/
+  if ( a3 ) /*0x6f281a*/
+  {
+    *a3 = a2; /*0x6f281f*/
+    if ( a2 - 1 >= 0 ) /*0x6f2826*/
+    {
+      v4 = a3 + 2; /*0x6f2828*/
+      v5 = a2; /*0x6f282b*/
+      do /*0x6f2836*/
+      {
+        *v4 = 0; /*0x6f282c*/
+        v4 += 2; /*0x6f2832*/
+        --v5; /*0x6f2835*/
+      }
+      while ( v5 ); /*0x6f2836*/
+    }
+    this->Items = a3 + 1; /*0x6f2838*/
+    return &this->ptr_0; /*0x6f283f*/
+  }
+  v7 = (int *)operator new(8 * a2 + 4); /*0x6f284a*/
+  if ( !v7 ) /*0x6f2854*/
+  {
+    this->IsAllocated = 1; /*0x6f2884*/
+    this->Items = 0; /*0x6f2888*/
+    return &this->ptr_0; /*0x6f288b*/
+  }
+  *v7 = a2; /*0x6f2859*/
+  v8 = v7 + 1; /*0x6f285d*/
+  if ( a2 - 1 >= 0 ) /*0x6f2860*/
+  {
+    v9 = v7 + 2; /*0x6f2862*/
+    v10 = a2; /*0x6f2865*/
+    do /*0x6f2870*/
+    {
+      *v9 = 0; /*0x6f2866*/
+      v9 += 2; /*0x6f286c*/
+      --v10; /*0x6f286f*/
+    }
+    while ( v10 ); /*0x6f2870*/
+  }
+  this->IsAllocated = 1; /*0x6f2874*/
+  this->Items = v8; /*0x6f2878*/
+  return &this->ptr_0; /*0x6f283d*/
+}
+} // namespace gamemd
+// 0x0076F210
+void* VectorClass::ConstructWDTSelection_Create_76F210(int a2, int a3) {
+  this->Items = 0; /*0x76f21b*/
+  this->Capacity = a2; /*0x76f21e*/
+  this->IsInitialized = 1; /*0x76f221*/
+  this->IsAllocated = 0; /*0x76f225*/
+  /* X11: ptr_0 install elided (implicit via VectorClass virtuals 0x76f228) */
+  if ( a2 ) /*0x76f22e*/
+  {
+    if ( a3 ) /*0x76f236*/
+    {
+      this->Items = (void *)a3; /*0x76f238*/
+      return &this->ptr_0; /*0x76f23e*/
+    }
+    this->Items = (void *)operator new(4 * a2); /*0x76f24d*/
+    this->IsAllocated = 1; /*0x76f250*/
+  }
+  return &this->ptr_0; /*0x76f23d*/
+}
+} // namespace gamemd
+// --- x93 csp-relocation defs (END) ---

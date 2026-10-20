@@ -569,7 +569,7 @@ ObjectClass * * RandomMap_DistributeTerrain()
       if ( !*(unsigned int *)(*(unsigned int *)(*(unsigned int *)&v45.m_1[3] + 4 * ii) + 32) /*0x594ecc*/
         && (double)(unsigned int)Random::State((Random *)&stru_ABE890) * 2.328306437080797e-10 < 0.5 )
       {
-        PlaceNeutralBuilding(*(TechnoClass **)(*(unsigned int *)&v45.m_1[3] + 4 * ii)); /*0x594ed5*/
+        ((ObjectClass *)*(TechnoClass **)(*(unsigned int *)&v45.m_1[3] + 4 * ii))->PlaceNeutralBuilding(); /*0x594ed5*/
       }
     }
   }
@@ -610,7 +610,7 @@ AbstractTypeClass * * CleanupRandomMapCache()
   int j; // [esp+28h] [ebp-8h]
   int v17; // [esp+2Ch] [ebp-4h]
 
-  Map_Cleanup(&v15, 0, 0); /*0x595cef*/
+  ((VectorClass *)&v15)->Map_Cleanup(0, 0); /*0x595cef*/
   /* X11: ptr_0 install elided (legacy slot spelling slot, RHS g_ptr_7ED94C) */  /*0x595cf4*/
   v17 = 10; /*0x595cfc*/
   j = 0; /*0x595d09*/

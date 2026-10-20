@@ -535,7 +535,7 @@ int Surface::RenderRadar()
         v32 = 0; /*0x655377*/
         v11 = ((CellCoord *)&dword_87F7E8)->To_CellObj(v35); /*0x65537c*/
         v12 = v39 + v40 * this->u32_1240; /*0x655390*/
-        GetCellRadarColors((int)v11, (int)&v33, (int)&v31); /*0x65539e*/
+        ((ObjectClass *)(int)v11)->GetCellRadarColors((int)&v33, (int)&v31); /*0x65539e*/
         if ( v5 ) /*0x6553ab*/
         {
           if ( v41 != 1 ) /*0x6553d2*/

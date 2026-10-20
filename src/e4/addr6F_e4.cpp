@@ -176,7 +176,7 @@ int AISelectTeamHouseClass(IUnknown * aP0, int a2, int a3)
     if ( v6 < *(unsigned int *)(*&dword_8871E0->q13CC + 4 * *(unsigned int *)(a2 + 388)) ) /*0x6f0bf4*/
     {
       v17 = 0; /*0x6f0bfa*/
-      Team_Helper_6F27F0((VectorClass *)&v60, 0, 0); /*0x6f0c02*/
+      ((VectorClass *)(VectorClass *)&v60)->Team_Helper_6F27F0(0, 0); /*0x6f0c02*/
       /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7F4860) */  /*0x6f0c0b*/
       v61 = 10; /*0x6f0c13*/
       v60.m_10 = 0; /*0x6f0c1b*/

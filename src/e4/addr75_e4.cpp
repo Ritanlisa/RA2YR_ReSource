@@ -909,7 +909,7 @@ int InitializeAudioOcclusion(IUnknown * aP0, unsigned int *a1, unsigned int *a2)
     v5 = (unsigned int **)&unk_B3FF78; /*0x75434a*/
     do /*0x754367*/
     {
-      InitializeTileAudioOcclusion(*v5, (int)v5, &v33); /*0x754357*/
+      ((ObjectClass *)*v5)->InitializeTileAudioOcclusion((int)v5, &v33); /*0x754357*/
       ++v3; /*0x754361*/
       v5 += 18; /*0x754362*/
     }

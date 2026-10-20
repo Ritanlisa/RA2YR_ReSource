@@ -1131,7 +1131,7 @@ char * SaveScenarioToINI(char * Source, char a2, int a3)
   }
   MapClass::SaveCellTagsToINI((MapClass *)&dword_87F7E8, (char *)&v10.ptr_4); /*0x687e31*/
   ObjectTypeClass::ReadDestroyAnim((char *)&v10.ptr_4); /*0x687e3a*/
-  ReadFootINI((char *)&v10.ptr_4); /*0x687e43*/
+  ((ObjectClass *)(char *)&v10.ptr_4)->ReadFootINI(); /*0x687e43*/
   SaveInfantryToINI(v7, a3, (int)Source); /*0x687e4c*/
   SaveAircraftToINI((char *)&v10.ptr_4); /*0x687e55*/
   sub_44FE60((char *)&v10.ptr_4); /*0x687e5e*/

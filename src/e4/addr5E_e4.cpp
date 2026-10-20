@@ -563,7 +563,7 @@ int SendMultiplayerStartSignal()
   }
   else
   {
-    v0 = SendMultiplayerStartSignal_Start(0); /*0x5e3ae5*/
+    v0 = ((ObjectClass *)0)->SendMultiplayerStartSignal_Start(); /*0x5e3ae5*/
   }
   MEMORY[0xA8DAB0] = 0; /*0x5e3aec*/
   if ( ppv ) /*0x5e3af5*/
@@ -4242,7 +4242,7 @@ void RefreshLobbyAll(HWND hDlg, char a2)
     v3 = 0; /*0x5ea3fa*/
     while ( 1 ) /*0x5ea404*/
     {
-      ResourceID_Hardcoded = GetResourceIDHardcodedCSF((void *)v3); /*0x5ea404*/
+      ResourceID_Hardcoded = ((ObjectClass *)(void *)v3)->GetResourceIDHardcodedCSF(); /*0x5ea404*/
       DlgItem = GetDlgItem(v2, ResourceID_Hardcoded); /*0x5ea413*/
       v6 = (void *)GetPlayerSide(v3); /*0x5ea415*/
       Default = (HWND)BuildingType::FindDefault(v6); /*0x5ea41c*/
@@ -4295,7 +4295,7 @@ void RefreshLobbyAll(HWND hDlg, char a2)
     v26 = (const wchar_t **)&dword_A8DA90; /*0x5ea4f0*/
     while ( 1 ) /*0x5ea4f7*/
     {
-      v27 = RefreshLobbyAll_Helper_5EAAD0(v25); /*0x5ea4f7*/
+      v27 = ((ObjectClass *)v25)->RefreshLobbyAll_Helper_5EAAD0(); /*0x5ea4f7*/
       v28 = GetDlgItem(hDlg, v27); /*0x5ea502*/
       v29 = *v26; /*0x5ea508*/
       v30 = 0; /*0x5ea50a*/
@@ -4335,7 +4335,7 @@ void RefreshLobbyAll(HWND hDlg, char a2)
   v35 = (const wchar_t **)&dword_A8DA90; /*0x5ea5af*/
   while ( 1 ) /*0x5ea5da*/
   {
-    v36 = RefreshLobbyAll_Helper_5EAAD0(v34); /*0x5ea5bc*/
+    v36 = ((ObjectClass *)v34)->RefreshLobbyAll_Helper_5EAAD0(); /*0x5ea5bc*/
     v37 = GetDlgItem(v2, v36); /*0x5ea5c3*/
     v38 = *v35; /*0x5ea5c9*/
     v39 = 0; /*0x5ea5cb*/
@@ -4370,7 +4370,7 @@ void RefreshLobbyAll(HWND hDlg, char a2)
   }
   for ( n = 0; n < 8; ++n ) /*0x5ea67b*/
   {
-    v43 = GetResourceIDHardcodedCSF((void *)n); /*0x5ea67f*/
+    v43 = ((ObjectClass *)(void *)n)->GetResourceIDHardcodedCSF(); /*0x5ea67f*/
     v44 = GetDlgItem(hDlg, v43); /*0x5ea68e*/
     v45 = (void *)GetPlayerSide(n); /*0x5ea690*/
     v46 = (HWND)BuildingType::FindDefault(v45); /*0x5ea697*/
@@ -4397,18 +4397,18 @@ void RefreshLobbyAll(HWND hDlg, char a2)
     }
   }
   strcpy(&byte_AC0AC8, &byte_AC0AEC); /*0x5ea79e*/
-  RefreshLobbyAll_Play_5EAB30(&byte_AC0AEC); /*0x5ea7ac*/
+  ((ObjectClass *)&byte_AC0AEC)->RefreshLobbyAll_Play_5EAB30(); /*0x5ea7ac*/
   if ( strcmp(&byte_AC0AC8, &byte_AC0AEC) ) /*0x5ea7c3*/
-    RefreshLobbyAll_Play_5EAEE0(hDlg); /*0x5ea7ee*/
+    ((ObjectClass *)hDlg)->RefreshLobbyAll_Play_5EAEE0(); /*0x5ea7ee*/
   strcpy(byte_AC0A9C, byte_AC0B6C); /*0x5ea80f*/
-  RefreshLobbyAll_Get_5EAC00(byte_AC0B6C); /*0x5ea81d*/
+  ((ObjectClass *)byte_AC0B6C)->RefreshLobbyAll_Get_5EAC00(); /*0x5ea81d*/
   if ( strcmp(byte_AC0A9C, byte_AC0B6C) ) /*0x5ea834*/
-    RefreshLobbyAll_Get_5EADA0(hDlg); /*0x5ea85f*/
+    ((ObjectClass *)hDlg)->RefreshLobbyAll_Get_5EADA0(); /*0x5ea85f*/
   strcpy(byte_AC0278, byte_AC0B48); /*0x5ea880*/
-  RefreshLobbyAll_Get_5EACD0(byte_AC0B48); /*0x5ea88e*/
+  ((ObjectClass *)byte_AC0B48)->RefreshLobbyAll_Get_5EACD0(); /*0x5ea88e*/
   result = (HWND *)strcmp(byte_AC0278, byte_AC0B48); /*0x5ea8a5*/
   if ( result ) /*0x5ea8cc*/
-    return (HWND *)RefreshLobbyAll_Setup(hDlg); /*0x5ea8d0*/
+    return (HWND *)((ObjectClass *)hDlg)->RefreshLobbyAll_Setup(); /*0x5ea8d0*/
   return result; /*0x5ea595*/
 }
         }
@@ -4526,7 +4526,7 @@ int UpdateMultiplayerLobbySlots(HWND hDlg, ObjectClass *a2, int nIDDlgItem)
         nIDDlgItema = 1746; /*0x5eb7ee*/
         v8 = 1041; /*0x5eb7f6*/
       }
-      ResourceIDHardcodedCSF = GetResourceIDHardcodedCSF(v5); /*0x5eb8bb*/
+      ResourceIDHardcodedCSF = ((ObjectClass *)v5)->GetResourceIDHardcodedCSF(); /*0x5eb8bb*/
       ResourceIDCSF = (HWND)GetResourceIDCSF(v5); /*0x5eb8c4*/
       ResourceID2CSF = (HWND)GetResourceID2CSF(v5); /*0x5eb8cf*/
       ResourceID3CSF = GetResourceID3CSF(v5); /*0x5eb8da*/
@@ -4637,7 +4637,7 @@ void DisableCampaignSlots(HWND hDlg, int a2)
         nIDDlgItem = 1746; /*0x5ebc30*/
         hWnd = 1041; /*0x5ebc38*/
       }
-      ResourceIDHardcodedCSF = (HWND)GetResourceIDHardcodedCSF((ObjectClass *)i); /*0x5ebcfd*/
+      ResourceIDHardcodedCSF = (HWND)((ObjectClass *)(ObjectClass *)i)->GetResourceIDHardcodedCSF(); /*0x5ebcfd*/
       ResourceID2CSF = (HWND)GetResourceID2CSF((ObjectClass *)i); /*0x5ebd08*/
       ResourceIDCSF = (HWND)GetResourceIDCSF((ObjectClass *)i); /*0x5ebd13*/
       ResourceID3CSF = (HWND)GetResourceID3CSF((ObjectClass *)i); /*0x5ebd1e*/

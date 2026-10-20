@@ -429,7 +429,7 @@ int GameSetupDialogProc(HWND hWnd, unsigned int a2, unsigned int a3, unsigned in
                   Stream::ReadPacket((int)&unk_A8EA70); /*0x5b4d4d*/
                   char *v9; // eax
                   v9 = CharToWideString(unk_A8B380); /*0x5b4d57*/
-                  UI_Setup((wchar_t *)v9, dword_A8B394, (int)lParam); /*0x5b4d6e*/
+                  ((ObjectClass *)(wchar_t *)v9)->UI_Setup(dword_A8B394, (int)lParam); /*0x5b4d6e*/
                   return 0; /*0x5b4d7f*/
                 }
               }

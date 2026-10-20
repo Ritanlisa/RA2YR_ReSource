@@ -537,7 +537,7 @@ AbstractClass * * TacticalClass_RenderFrame(void * a1, void * a2, void * a3)
           (dword_8A0E10)->Append(&v6); /*0x4f4719*/
           (dword_8A0E10)->Append(&v7); /*0x4f4729*/
         }
-        RenderTactical3DScene((ObjectClass *)dword_8A0E10, (int)DSurface_Composite->AudioStream_field_0x1C); /*0x4f473e*/
+        ((ObjectClass *)(ObjectClass *)dword_8A0E10)->RenderTactical3DScene((int)DSurface_Composite->AudioStream_field_0x1C); /*0x4f473e*/
       }
     }
   }

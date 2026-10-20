@@ -1035,7 +1035,7 @@ LABEL_54:
       while ( dword_A8BB38 ) /*0x648dc7*/
       {
         __3_YAXPAX_Z(*(void **)dword_A8BB2C); /*0x648dd1*/
-        Network_Process_652560(&dword_A8BB28, 0); /*0x648de0*/
+        ((ObjectClass *)&dword_A8BB28)->Network_Process(0); /*0x648de0*/
       }
       memset(dword_A8BB40, 0, sizeof(dword_A8BB40)); /*0x648e00*/
       memset(&dword_A8BB60, 0xFFu, 0x100u); /*0x648e14*/
@@ -1133,7 +1133,7 @@ LABEL_75:
   {
     Network_Process_64AD10(*(unsigned int *)(*(unsigned int *)dword_A8BB2C + 51), *(unsigned int *)(*(unsigned int *)dword_A8BB2C + 47)); /*0x649126*/
     __3_YAXPAX_Z(*(void **)dword_A8BB2C); /*0x649134*/
-    Network_Process_652560(&dword_A8BB28, 0); /*0x649143*/
+    ((ObjectClass *)&dword_A8BB28)->Network_Process(0); /*0x649143*/
   }
   v52 = *(unsigned int *)&stru_A8D804.__pad_3D[579]; /*0x649148*/
   for ( i = 0; i < *(int *)&stru_A8D804.__pad_3D[579]; ++i ) /*0x649152*/
@@ -2991,7 +2991,7 @@ if ( lParam >= 0 && lParam < dword_A8DA84 ) /*0x64aafb*/
         v84 = a1; /*0x64cdc0*/
         if ( byte_A83EF3[111 * (uint8_t)(a1 + dword_A83ED4)] == 11 ) /*0x64cdd3*/
         {
-          v4 = (unsigned int *)Network_Process_6E7C20((char *)&dword_A83EEF + 111 * (uint8_t)(a1 + dword_A83ED4)); /*0x64cde9*/
+          v4 = (unsigned int *)((ObjectClass *)(char *)&dword_A83EEF + 111 * (uint8_t)(a1 + dword_A83ED4))->Network_Process_6E7C20(); /*0x64cde9*/
           if ( v4 ) /*0x64cdf0*/
           {
             if ( v4 != unk_ABDC50 ) /*0x64cdfb*/

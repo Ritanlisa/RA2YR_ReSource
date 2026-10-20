@@ -1478,7 +1478,7 @@ int CheckNetworkGameTimeout()
                &stru_A8D804.__pad_3D[539],
                *(unsigned int *)&stru_A8D804.__pad_3D[543] + 4 * i);
         if ( v5 != -1 ) /*0x5db7c7*/
-          Network_Check((ObjectClass *)&stru_A8D804.__pad_3D[539], v5); /*0x5db7cf*/
+          ((ObjectClass *)(ObjectClass *)&stru_A8D804.__pad_3D[539])->Network_Check(v5); /*0x5db7cf*/
         NetworkLobby::UpdatePlayerList(); /*0x5db7d4*/
         if ( i <= (int)g_NetworkSetupConfig ) /*0x5db7df*/
         {
@@ -3474,7 +3474,7 @@ LABEL_118:
           int v1; // [esp+0h] [ebp-Ch] BYREF
           unsigned char v2[8]; // [esp+4h] [ebp-8h] BYREF
           ((gamemd::Network*)(&stru_A8D600))->CopyAddress((unsigned int *)(&v1), (int)v2); /*0x5db6b8*/
-          Network_Init_542FC0(&v1); /*0x5db6c7*/
+          ((ObjectClass *)&v1)->Network_Init_542FC0(); /*0x5db6c7*/
         }
       }
       LoadNetworkShareStrings(); /*0x5db6cc*/

@@ -1121,7 +1121,7 @@ int Skirmish_Setup_6ADDF0_Setup(HWND hDlg, int a2, int nIDDlgItem)
         nIDDlgItema = 1291; /*0x6adf2e*/
       }
       v5 = (ObjectClass *)((char *)v5 + 1); /*0x6adf9a*/
-      ResourceIDHardcodedCSF = (HWND)GetResourceIDHardcodedCSF(v5); /*0x6adfa4*/
+      ResourceIDHardcodedCSF = (HWND)((ObjectClass *)v5)->GetResourceIDHardcodedCSF(); /*0x6adfa4*/
       ResourceIDCSF = (HWND)GetResourceIDCSF(v5); /*0x6adfaf*/
       ResourceID2CSF = (HWND)GetResourceID2CSF(v5); /*0x6adfba*/
       ResourceID3CSF = (HWND)GetResourceID3CSF(v5); /*0x6adfc5*/

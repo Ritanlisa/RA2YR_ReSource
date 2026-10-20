@@ -1265,7 +1265,7 @@ unsigned int * PlayerProfile_Load(unsigned int * a1, const char ** a2)
     }
     else
     {
-      LoadAccountInfoWOL(a1); /*0x778b65*/
+      ((ObjectClass *)a1)->LoadAccountInfoWOL(); /*0x778b65*/
       DeleteAndZero((ObjectClass *)&v17.ptr_4); /*0x778b6e*/
       HashTable::DestroyHashTableINIClass((INIClass *)&v17.nextArrayIndex); /*0x778b77*/
       v17.spawnStatus = (int)&off_7E1668; /*0x778b83*/
@@ -1275,7 +1275,7 @@ unsigned int * PlayerProfile_Load(unsigned int * a1, const char ** a2)
   }
   else
   {
-    LoadAccountInfoWOL(a1); /*0x778a93*/
+    ((ObjectClass *)a1)->LoadAccountInfoWOL(); /*0x778a93*/
     v17.spawnStatus = (int)&off_7E1668; /*0x778a9f*/
     BufferIOFileClass::Dtor((BufferIOFileClass *)&v17.spawnStatus); /*0x778aaa*/
     return a1; /*0x778aaf*/

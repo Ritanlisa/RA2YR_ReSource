@@ -1015,7 +1015,7 @@ HWND sub_5E2340(void * aGuiHostgamesta_0)
 
   Current = (HWND)(Dialog::GetCurrent());
   DlgItem = GetDlgItem(Current, 1439); /*0x5e2354*/
-  result = (HWND)SendMultiplayerStartSignal_Start(0); /*0x5e2356*/
+  result = (HWND)((ObjectClass *)0)->SendMultiplayerStartSignal_Start(); /*0x5e2356*/
   if ( result != (HWND)1 ) /*0x5e235e*/
   {
     SendMessageA(DlgItem, 0x4DCu, 0, 1); /*0x5e236a*/
@@ -1736,7 +1736,7 @@ char sub_731A10()
 
   v0 = (unsigned int **)UI_Delete_Delete_63AC60(); /*0x731a10*/
   if ( v0 ) /*0x731a17*/
-    return UI_Delete_Delete(v0); /*0x731a1b*/
+    return ((ObjectClass *)v0)->UI_Delete_Delete(); /*0x731a1b*/
   else
     return ((Network *)(g_VisibilitySystem))->SendBeaconDelete(-1, -1); /*0x731a29*/
 }

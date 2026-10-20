@@ -1265,7 +1265,7 @@ char TActionClass::executePatrolAction(void *a1, int a3, int a4, int aP4)
   v7 = this; /*0x6e1a40*/
   int *Waypoint_Location; // eax
   Waypoint_Location = ((char *)dword_A8B230)->Get_Waypoint_Location(&v7, (int)this->TActionClass_field_44); /*0x6e1a50*/
-  SelectSimilarBuildingTypes((ObjectClass *)a1, *Waypoint_Location); /*0x6e1a5c*/
+  ((ObjectClass *)(ObjectClass *)a1)->SelectSimilarBuildingTypes(*Waypoint_Location); /*0x6e1a5c*/
   return 1; /*0x6e1a64*/
 
 }

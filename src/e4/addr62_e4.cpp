@@ -1325,10 +1325,10 @@ CampaignScore * * BaseDialogProc(SkirmishDialog * aP0, unsigned int a2, int a3, 
       UI_Helper_60D2C0((int)aP0, v21); /*0x622f56*/
       if ( !(unsigned __int8)SessionClass::GetGameSpeed((SessionClass *)&dword_A8B238) ) /*0x622f60*/
         Control::CreateControlDialog((Control *)aP0); /*0x622f6b*/
-      UI_Helper_60CAF0((ObjectClass *)aP0); /*0x622f72*/
-      UI_Helper_60C930((ObjectClass *)aP0); /*0x622f79*/
-      UI_Helper_60CCC0((ObjectClass *)aP0); /*0x622f80*/
-      UI_Helper_60CDB0((ObjectClass *)aP0); /*0x622f87*/
+      ((ObjectClass *)(ObjectClass *)aP0)->UI_Helper_60CAF0(); /*0x622f72*/
+      ((ObjectClass *)(ObjectClass *)aP0)->UI_Helper_60C930(); /*0x622f79*/
+      ((ObjectClass *)(ObjectClass *)aP0)->UI_Helper_60CCC0(); /*0x622f80*/
+      ((ObjectClass *)(ObjectClass *)aP0)->UI_Helper_60CDB0(); /*0x622f87*/
       EnumChildWindows(aP0, GadgetClass::FindByWindow, 0); /*0x622f93*/
       if ( (unsigned __int8)Control::CheckControlTypeDialog((Control *)aP0) ) /*0x622f97*/
       {
@@ -1355,16 +1355,16 @@ LABEL_48:
         *(unsigned int *)(*(unsigned int *)aP2.__pad_0 + 108) = 0; /*0x622ffc*/
       if ( !(unsigned __int8)SessionClass::GetGameSpeed((SessionClass *)&dword_A8B238) ) /*0x623004*/
         Control::CreateControlDialog((Control *)aP0); /*0x62300f*/
-      UI_Helper_60CAF0((ObjectClass *)aP0); /*0x623016*/
-      UI_Helper_60C930((ObjectClass *)aP0); /*0x62301d*/
-      UI_Helper_60CCC0((ObjectClass *)aP0); /*0x623024*/
-      UI_Helper_60CDB0((ObjectClass *)aP0); /*0x62302b*/
+      ((ObjectClass *)(ObjectClass *)aP0)->UI_Helper_60CAF0(); /*0x623016*/
+      ((ObjectClass *)(ObjectClass *)aP0)->UI_Helper_60C930(); /*0x62301d*/
+      ((ObjectClass *)(ObjectClass *)aP0)->UI_Helper_60CCC0(); /*0x623024*/
+      ((ObjectClass *)(ObjectClass *)aP0)->UI_Helper_60CDB0(); /*0x62302b*/
       v22 = (void (*)(HWND, WNDENUMPROC, LPARAM))EnumChildWindows; /*0x623030*/
       EnumChildWindows(aP0, GadgetClass::FindByWindow, 0); /*0x62303d*/
       if ( (unsigned __int8)Control::CheckControlTypeDialog((Control *)aP0) ) /*0x623041*/
         goto LABEL_41; /*0x623048*/
     }
-    UI_Helper_60C7D0((ObjectClass *)aP0); /*0x62306c*/
+    ((ObjectClass *)(ObjectClass *)aP0)->UI_Helper_60C7D0(); /*0x62306c*/
     goto LABEL_48; /*0x62306c*/
   }
   if ( a2 != 132 ) /*0x622b65*/

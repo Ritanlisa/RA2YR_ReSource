@@ -267,7 +267,7 @@ LABEL_14:
   }
   v12 = String::GetOrEmpty_Alt((String *)(v11 + 4)); /*0x5ae09b*/
   ScenarioClass::SetFileName((char *)aP1, v12); /*0x5ae0a7*/
-  aP1->u16_35A0 = Network_Load((ObjectClass *)pad_50, v11); /*0x5ae0b8*/
+  aP1->u16_35A0 = ((ObjectClass *)(ObjectClass *)pad_50)->Network_Load(v11); /*0x5ae0b8*/
   DeleteAndZero((ObjectClass *)&v13); /*0x5ae0bf*/
   DeleteAndZero((ObjectClass *)&v13.m_3[1]); /*0x5ae0c8*/
 LABEL_17:

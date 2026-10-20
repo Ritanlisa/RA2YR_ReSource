@@ -70,7 +70,7 @@ bool Weapon_Update(void * a1, void * a2)
   }
   if ( (((v3->ptr_8) >> 8) & 0xFF) ) /*0x659cb7*/
   {
-    Weapon_Update_Update_659EE0(v3); /*0x659cc4*/
+    ((ObjectClass *)v3)->Weapon_Update_Update_659EE0(); /*0x659cc4*/
     v4 = *(unsigned int *)v3->onBridge; /*0x659cc9*/
     v3->parachute = 0; /*0x659ccf*/
     if ( v4 > 0 ) /*0x659cdb*/

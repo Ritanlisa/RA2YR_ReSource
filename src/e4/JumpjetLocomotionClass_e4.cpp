@@ -1785,7 +1785,7 @@ Coord * * JumpjetLocomotionClass::DispatchLocomotion(unsigned int * a1)
         UpdateFootMovement(v26, v1); /*0x54b050*/
         break; /*0x54b055*/
       case 2: /*0x54b03c*/
-        UpdateFootMoveToState(v26, v1); /*0x54b05a*/
+        ((ObjectClass *)v26)->UpdateFootMoveToState(v1); /*0x54b05a*/
         break; /*0x54b05f*/
       case 3: /*0x54b03c*/
         MovementClass::CalcSpeed((MovementClass *)v26, v1); /*0x54b064*/

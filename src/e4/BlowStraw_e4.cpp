@@ -88,7 +88,7 @@ int BlowStraw_29::Seek(int *aP1, unsigned int *a2)
       PlayVocClass(dword_8871E0->UpgradeVeteranSound, 0x2000, 1.0, 0); /*0x6d0860*/
       if ( this->u32_5544 ) /*0x6d0865*/
       {
-        SidebarUpdateAll((ObjectClass *)this); /*0x6d0875*/
+        ((ObjectClass *)(ObjectClass *)this)->SidebarUpdateAll(); /*0x6d0875*/
         (*(void (**)(TabClass *, GadgetClass *))(this->__pad_000 + 52))(this, &stru_B0CCB0); /*0x6d0883*/
         for ( i = 0; i < 25; ++i ) /*0x6d0886*/
         {
@@ -128,7 +128,7 @@ int BlowStraw_29::Seek(int *aP1, unsigned int *a2)
       (v9) &= ~(((~(0x3Fu)) & 0xFF) << 8); /*0x6d0977*/
       v19 = v9 - 214; /*0x6d097a*/
       if ( v19 >= dword_B0CC20 && v19 <= dword_B0CD28 ) /*0x6d0989*/
-        SidebarClearReferences((char *)(v19 - dword_B0CC20 + 1)); /*0x6d0990*/
+        ((ObjectClass *)(char *)(v19 - dword_B0CC20 + 1))->SidebarClearReferences(); /*0x6d0990*/
     }
   }
   else
@@ -179,9 +179,9 @@ int BlowStraw_29::Seek(int *aP1, unsigned int *a2)
     else
     {
       v13 = (char *)(v10 - dword_B0CC20 + 1); /*0x6d07ef*/
-      if ( SidebarCountAvailableUnits(v13) ) /*0x6d07f3*/
+      if ( ((ObjectClass *)v13)->SidebarCountAvailableUnits() ) /*0x6d07f3*/
       {
-        if ( SidebarHasAvailableUnit(v13) ) /*0x6d0808*/
+        if ( ((ObjectClass *)v13)->SidebarHasAvailableUnit() ) /*0x6d0808*/
           TacticalClass::ResetView(v13); /*0x6d0813*/
         else
           (v13)->SetObserverView(); /*0x6d081d*/

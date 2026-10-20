@@ -1382,7 +1382,7 @@ AbstractClass * * CreateCliffRampMap(IUnknown * aP0)
     v61[7] = -1; /*0x57df68*/
     v61[10] = 100; /*0x57df6f*/
     memset(&v61[11], 255, 20); /*0x57df7a*/
-    result = Map_Create((ObjectClass *)v1); /*0x57df9d*/
+    result = ((ObjectClass *)(ObjectClass *)v1)->Map_Create(); /*0x57df9d*/
     v20 = *v1 + (v1[1] << 9); /*0x57dfad*/
     if ( v20 >= 0x40000 || (v21 = *(CellClass **)(dword_87F924 + 4 * v20)) == 0 ) /*0x57dfc4*/
     {
@@ -1957,7 +1957,7 @@ AbstractClass * * CreateCliffBridgeMap(IUnknown * aP0)
     v61[7] = -1; /*0x57e9bc*/
     v61[10] = 231; /*0x57e9c3*/
     memset(&v61[11], 255, 20); /*0x57e9ce*/
-    result = Map_Create_57CAB0((ObjectClass *)v1); /*0x57e9f1*/
+    result = ((ObjectClass *)(ObjectClass *)v1)->Map_Create_57CAB0(); /*0x57e9f1*/
     v20 = *v1 + (v1[1] << 9); /*0x57ea01*/
     if ( v20 >= 0x40000 || (v21 = *(CellClass **)(dword_87F924 + 4 * v20)) == 0 ) /*0x57ea18*/
     {

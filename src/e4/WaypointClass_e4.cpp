@@ -71,7 +71,7 @@ WaypointPathClass * * WaypointClass::FindOrAddPath(unsigned int * a2)
           v15 = 0; /*0x50225c*/
         this->padding_18[v13 + 114] = v15; /*0x50225e*/
       }
-      return WaypointClass_Find((ObjectClass *)this->padding_18[this->padding_18[113] + 114], a2); /*0x502277*/
+      return ((ObjectClass *)(ObjectClass *)this->padding_18[this->padding_18[113] + 114])->WaypointClass_Find(a2); /*0x502277*/
     }
   }
   while ( 1 ) /*0x5021cf*/

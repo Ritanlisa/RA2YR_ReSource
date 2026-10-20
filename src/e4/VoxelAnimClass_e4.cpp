@@ -615,7 +615,7 @@ int VoxelAnimClass::VoxelAnimClass_Update()
             HIWORD(v89) = v98 / 256 + HIWORD(dword_89F688[v42]); /*0x74a372*/
             *(unsigned int *)v92 = v89; /*0x74a381*/
             v43 = (unsigned __int8 *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v92); /*0x74a38a*/
-            if ( (unsigned __int8)IsCoordValidMap((int)v43, 0) ) /*0x74a390*/
+            if ( (unsigned __int8)((ObjectClass *)(int)v43)->IsCoordValidMap(0) ) /*0x74a390*/
             {
               v44 = (CellClass *)*(&dword_B0F4EC->ptr_0 + FindBuildingByTiberiumType(127)); /*0x74a3b2*/
               if ( v43[284] ) /*0x74a3b8*/
@@ -714,7 +714,7 @@ int VoxelAnimClass::VoxelAnimClass_Update()
         {
           v54 = (unsigned int *)Coord::GetCoords(&v101, v86); /*0x74a5db*/
           v55 = Coord::To_Cell((Coord *)&dword_87F7E8, v54); /*0x74a5eb*/
-          if ( (unsigned __int8)IsCoordValidMap((int)v55, 0) ) /*0x74a5f0*/
+          if ( (unsigned __int8)((ObjectClass *)(int)v55)->IsCoordValidMap(0) ) /*0x74a5f0*/
           {
             v56 = (CellClass *)*(&dword_B0F4EC->ptr_0 + FindBuildingByTiberiumType(127)); /*0x74a612*/
             if ( v55->slopeIndex[0] ) /*0x74a618*/

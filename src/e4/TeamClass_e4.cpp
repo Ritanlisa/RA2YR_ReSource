@@ -400,8 +400,8 @@ LABEL_9:
               &p_vfptr);
       if ( v15 != -1 ) /*0x6341ed*/
         Array::RemoveAt((Array *)&stru_AC4B48.__pad_B8[152], v15); /*0x6341f5*/
-      Team_Destroy((ObjectClass *)&stru_AC4B30, (int)&p_vfptr); /*0x634204*/
-      Team_Destroy((ObjectClass *)&stru_AC4B48.__pad_B8[24], (int)&p_vfptr); /*0x634213*/
+      ((ObjectClass *)(ObjectClass *)&stru_AC4B30)->Team_Destroy((int)&p_vfptr); /*0x634204*/
+      ((ObjectClass *)(ObjectClass *)&stru_AC4B48.__pad_B8[24])->Team_Destroy((int)&p_vfptr); /*0x634213*/
       if ( *(unsigned int **)&stru_AC4B48.__pad_B8[204] == p_vfptr ) /*0x634224*/
         *(unsigned int *)&stru_AC4B48.__pad_B8[204] = 0; /*0x634226*/
       if ( *(unsigned int **)&stru_AC4B48.__pad_B8[56] == p_vfptr ) /*0x634232*/

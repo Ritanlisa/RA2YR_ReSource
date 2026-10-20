@@ -395,7 +395,7 @@ int INIClass::GetBool(uint8_t *aP1, uint8_t *a2, int a4)
   if ( !(this)->GetString(aP1, a2, &g_INI_DefaultBuffer, Destination, 128) ) /*0x4757f2*/
     return a4; /*0x4757f2*/
   int result; // eax
-  result = LookupNameIndex((ObjectClass *)Destination); /*0x4757ff*/
+  result = ((ObjectClass *)(ObjectClass *)Destination)->LookupNameIndex(); /*0x4757ff*/
   if ( result == -1 ) /*0x475807*/
     return a4; /*0x475809*/
   return result; /*0x475810*/

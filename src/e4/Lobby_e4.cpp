@@ -452,7 +452,7 @@ int Lobby::SetupPlayerWidgets(HWND hDlg)
         v4 = 1041; /*0x5eba31*/
       }
       int nIDDlgItem; // [esp+10h] [ebp-14h]
-      nIDDlgItem = GetResourceIDHardcodedCSF(v1); /*0x5ebabe*/
+      nIDDlgItem = ((ObjectClass *)v1)->GetResourceIDHardcodedCSF(); /*0x5ebabe*/
       HWND ResourceIDCSF; // [esp+Ch] [ebp-18h]
       ResourceIDCSF = (HWND)GetResourceIDCSF(v1); /*0x5ebac9*/
       HWND ResourceID2CSF; // [esp+14h] [ebp-10h]

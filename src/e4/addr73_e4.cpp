@@ -572,7 +572,7 @@ int SelectAllOfType()
     for ( i = 0; i < HeightMap; ++i ) /*0x732a39*/
     {
       CoordDataMap = (TechnoClass *)GetCoordDataMap(i); /*0x732a47*/
-      if ( SelectAllOfType_Helper((ObjectClass *)CoordDataMap) ) /*0x732a4b*/
+      if ( ((ObjectClass *)(ObjectClass *)CoordDataMap)->SelectAllOfType_Helper() ) /*0x732a4b*/
       {
         v23 = CoordDataMap; /*0x732a58*/
         if ( (unsigned __int8)TechnoClass::IsOwnedByHuman(CoordDataMap) ) /*0x732a5c*/

@@ -192,7 +192,7 @@ void * GetINIClassIntList(int a1, unsigned char *** edx0, INIClass * aP1, unsign
       _751520 = (ObjectClass *)System_Get_751520(i); /*0x5254a6*/
       if ( _751520 ) /*0x5254ad*/
       {
-        _7515C0 = System_Get_7515C0(_751520); /*0x5254ba*/
+        _7515C0 = ((ObjectClass *)_751520)->System_Get_7515C0(); /*0x5254ba*/
         if ( v23 < v22.Capacity /*0x5254e2*/
           || (v22.IsAllocated[0] || !v22.Capacity)
           && v24 > 0
@@ -3541,12 +3541,12 @@ INT_PTR ReadModConfigINI(HWND hDlg, UINT, WPARAM, int * a4)
   {
     if ( UINT == 83 ) /*0x52d44b*/
     {
-      System_Read_776880(a4); /*0x52d475*/
+      ((ObjectClass *)a4)->System_Read(); /*0x52d475*/
       return 0; /*0x52d483*/
     }
     if ( UINT == 123 ) /*0x52d450*/
     {
-      System_Read_7768A0((ObjectClass *)WPARAM); /*0x52d45d*/
+      ((ObjectClass *)(ObjectClass *)WPARAM)->System_Read_7768A0(); /*0x52d45d*/
       return 0; /*0x52d46b*/
     }
     return 0; /*0x52d59a*/

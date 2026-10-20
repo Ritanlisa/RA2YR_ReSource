@@ -2562,7 +2562,7 @@ LABEL_72:
           if ( CCFileClass::Read(&dword_A8D58C, v50.__pad_1C, 4) == 4 ) /*0x55db38*/
           {
             LOBYTE(v50.m_18) = 0; /*0x55db48*/
-            CheckNetworkSync((ObjectClass *)&v50.u32_14, (int)&v50.u32_30, *(int *)v50.__pad_1C); /*0x55db4d*/
+            ((ObjectClass *)(ObjectClass *)&v50.u32_14)->CheckNetworkSync((int)&v50.u32_30, *(int *)v50.__pad_1C); /*0x55db4d*/
             Object = BuildingLoadQueue::FindObject((BuildingLoadQueue *)&v50.u32_14); /*0x55db56*/
             if ( Object ) /*0x55db5d*/
             {
@@ -2582,7 +2582,7 @@ LABEL_72:
       TacticalMap::Redraw((GScreenClass *)&dword_87F7E8); /*0x55dbbe*/
     }
   }
-  ProcessAutoSave(&stru_8A0390); /*0x55dbc8*/
+  ((ObjectClass *)&stru_8A0390)->ProcessAutoSave(); /*0x55dbc8*/
   if ( !*(unsigned int *)&dword_A8B238 && !byte_ABCE08 ) /*0x55dbe0*/
   {
     byte_ABCE08 = 1; /*0x55dbee*/

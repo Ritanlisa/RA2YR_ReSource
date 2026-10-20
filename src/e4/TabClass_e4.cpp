@@ -92,7 +92,7 @@ int TabClass::DrawPower(void *a1, void * aGrey)
     DlgItem = GetDlgItem((HWND)hDlg, v3); /*0x65842e*/
     SendMessageA(DlgItem, 0x498u, 0, v6); /*0x658438*/
     SendMessageA(DlgItem, 0x4B2u, 0, (LPARAM)lParam); /*0x658447*/
-    ResourceIDHardcodedCSF = GetResourceIDHardcodedCSF(v29); /*0x658452*/
+    ResourceIDHardcodedCSF = ((ObjectClass *)v29)->GetResourceIDHardcodedCSF(); /*0x658452*/
     v9 = GetDlgItem((HWND)hDlg, ResourceIDHardcodedCSF); /*0x658460*/
     v10 = (BuildingType **)*((unsigned int *)other + 13); /*0x658466*/
     hWnd = v9; /*0x658469*/

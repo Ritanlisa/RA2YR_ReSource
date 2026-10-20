@@ -1270,7 +1270,7 @@ int LoadGame_DlgProc(HWND hWnd, WPARAM wParam, unsigned int a3, HWND a4)
       case 1632: /*0x695a7f*/
         if ( (*(((unsigned short *)&(a3)) + 1)) ) /*0x695b54*/
           return 0; /*0x695b57*/
-        DlgProcLoadGame_Load_696C40(WindowLongA); /*0x695b5b*/
+        ((ObjectClass *)WindowLongA)->DlgProcLoadGame_Load_696C40(); /*0x695b5b*/
         return 0; /*0x695b66*/
       case 1633: /*0x695a7f*/
         if ( (*(((unsigned short *)&(a3)) + 1)) ) /*0x695b3f*/

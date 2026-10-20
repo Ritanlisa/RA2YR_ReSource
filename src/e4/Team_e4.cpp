@@ -490,7 +490,7 @@ char sub_638B70(int * a1, int a2, char a3, char a4)
   v12 = v6; /*0x638baf*/
   v8 = *(unsigned int *)(*(int (**)(int *, int *))(v7 + 440))(a1, &v11); /*0x638bb9*/
   v11 = v8; /*0x638bbf*/
-  v9 = (unsigned int *)(Network_Process_6E7C20(&a3)); /*0x638bc3*/
+  v9 = (unsigned int *)(((ObjectClass *)&a3)->Network_Process_6E7C20()); /*0x638bc3*/
   if ( v9 ) /*0x638bca*/
   {
     v8 = v9[9]; /*0x638bcc*/

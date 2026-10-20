@@ -386,7 +386,7 @@ char ** LoadFromINIGraphicMenu(void * a1, void * a2, void * a3)
 LABEL_18:
           v21 = *(int (****)(unsigned int, int))(v8 + 84); /*0x4f1f6b*/
           if ( v21 ) /*0x4f1f71*/
-            UI_Load_5D1C90((ObjectClass *)(v8 + 4), v21, (int (***)(unsigned int, int))Config); /*0x4f1f77*/
+            ((ObjectClass *)(ObjectClass *)(v8 + 4))->UI_Load_5D1C90(v21, (int (***)(unsigned int, int))Config); /*0x4f1f77*/
           else
             PriorityQueue::Add((PriorityQueue *)(v8 + 4), (int)Config); /*0x4f1f81*/
           *(unsigned int *)(v8 + 84) = Config; /*0x4f1f86*/

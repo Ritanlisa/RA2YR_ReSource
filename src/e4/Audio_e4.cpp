@@ -2302,7 +2302,7 @@ AbstractClass * * sub_6C6DE0()
   {
     if ( (int)g_SidebarButtonState.ptr_0 > 0 ) /*0x6c6e06*/
     {
-      Audio_Read_6C6B00((ObjectClass *)v6, (unsigned int *)g_SidebarButtonState.ptr_8); /*0x6c6e12*/
+      ((ObjectClass *)(ObjectClass *)v6)->Audio_Read_6C6B00((unsigned int *)g_SidebarButtonState.ptr_8); /*0x6c6e12*/
       ptr_0 = (int)g_SidebarButtonState.ptr_0; /*0x6c6e17*/
     }
     LABEL_4:

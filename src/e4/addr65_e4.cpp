@@ -1157,7 +1157,7 @@ LABEL_35:
       LODWORD(v22) = 10; /*0x6592a9*/
     }
     *(double *)(v10 + 24) = (double)SLODWORD(v22); /*0x6592bf*/
-    v13 = RenderProjectileTrail((ObjectClass *)Block); /*0x6592c6*/
+    v13 = ((ObjectClass *)(ObjectClass *)Block)->RenderProjectileTrail(); /*0x6592c6*/
 LABEL_22:
     if ( v13 )
     {
@@ -1703,7 +1703,7 @@ bool DeployScriptActionPlane(int a1, int edx0, void * a2, void * a3)
         NeighbourContent = (Cell *)Cell::GetNeighbourContent(v17, v18); /*0x65da48*/
       v20 = (TechnoClass *)Cell::IsBridge(NeighbourContent); /*0x65da4f*/
       v21 = v20; /*0x65da54*/
-      if ( v20 && v20->health > 0 && ProcessDataCellClass(v20) ) /*0x65da63*/
+      if ( v20 && v20->health > 0 && ((ObjectClass *)v20)->ProcessDataCellClass() ) /*0x65da63*/
         v16 = v21; /*0x65da6c*/
       ++v18; /*0x65da6e*/
     }

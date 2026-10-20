@@ -488,7 +488,7 @@ LABEL_22:
           nIDDlgItema = 1291; /*0x6ae17e*/
         }
         v7 = (ObjectClass *)((char *)v7 + 1); /*0x6ae1ea*/
-        hWnda = (HWND)GetResourceIDHardcodedCSF(v7); /*0x6ae1f4*/
+        hWnda = (HWND)((ObjectClass *)v7)->GetResourceIDHardcodedCSF(); /*0x6ae1f4*/
         ResourceID2CSF = (HWND)GetResourceID2CSF(v7); /*0x6ae1ff*/
         ResourceIDCSF = (HWND)GetResourceIDCSF(v7); /*0x6ae20a*/
         ResourceID3CSF = (HWND)GetResourceID3CSF(v7); /*0x6ae215*/
@@ -829,7 +829,7 @@ int TechnoClass::ProcessDeployAction()
       v3 = (*(int (**)(int))(*(unsigned int *)this->occupant + 44))(this->occupant); /*0x6b0214*/
       if ( v3 == 1 ) /*0x6b021a*/
       {
-        (v3) = ((v3) & ~0xFF) | (((unsigned __int8)Event_Process_6B0490(this)) & 0xFF); /*0x6b021e*/
+        (v3) = ((v3) & ~0xFF) | (((unsigned __int8)this->Event_Process_6B0490()) & 0xFF); /*0x6b021e*/
 LABEL_51:
         this->customSound_controller[3] = 1; /*0x6b0223*/
         this->customSound_controller[4] = 0x7FFFFFFF; /*0x6b022a*/

@@ -3058,12 +3058,12 @@ LABEL_2:
       sub_7DC720(-2147467261); /*0x6bc3e3*/
     (*(void (**)(unsigned int))(**(unsigned int **)ppv + 8))(*(unsigned int *)ppv); /*0x6bc3f1*/
     *(unsigned int *)ppv = 0; /*0x6bc3f4*/
-    COM_SafeRelease((ObjectClass *)ppv); /*0x6bc404*/
+    ((ObjectClass *)(ObjectClass *)ppv)->COM_SafeRelease(); /*0x6bc404*/
     v22 = &v22->u32_8; /*0x6bc409*/
     if ( (int)v22 >= (int)&stru_7F3718 ) /*0x6bc412*/
       goto LABEL_56; /*0x6bc412*/
   }
-  COM_SafeRelease((ObjectClass *)ppv); /*0x6bc420*/
+  ((ObjectClass *)(ObjectClass *)ppv)->COM_SafeRelease(); /*0x6bc420*/
 LABEL_56:
   RegisterClassesCOM(v208); /*0x6bc425*/
   CoRegisterClassObject(&rguid, &pUnk, 1u, 1u, (LPDWORD)&ppv[8]); /*0x6bc445*/
@@ -3882,7 +3882,7 @@ LABEL_345:
   LOBYTE(v232.ptr_4) = 0; /*0x6bdf94*/
   ReadRegistryOptionsWOL((ObjectClass *)&v232); /*0x6bdfa1*/
   if ( !InfantryClass::SetField6(&v232) /*0x6bdfca*/
-    && !WinMain_Helper((ObjectClass *)&v232)
+    && !((ObjectClass *)(ObjectClass *)&v232)->WinMain_Helper()
     && !(unsigned __int8)Flag::IsNot2((Flag *)&v232) )
   {
     v201 = *(unsigned int *)stru_A8E960.nextScenario; /*0x6bdfd3*/
@@ -4163,7 +4163,7 @@ void WinMain_Setup()
     operator delete((void *)(dword_89DDBC)); /*0x6be554*/
     dword_89DDBC = 0; /*0x6be55c*/
   }
-  CleanupMapSystems(&dword_87F7E8); /*0x6be567*/
+  ((ObjectClass *)&dword_87F7E8)->CleanupMapSystems(); /*0x6be567*/
   for ( i = 0; i < dword_87F6A8; ++i ) /*0x6be575*/
   {
     v9 = (void (***)(unsigned int, int))*((unsigned int *)dword_87F69C + i); /*0x6be57c*/

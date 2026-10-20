@@ -5287,7 +5287,7 @@ char sub_5DA6C0()
     if ( dword_A8D5FC ) /*0x5da6e7*/
     {
       ((Network *)(&stru_A8D600))->CopyAddress(&v1, (int)v2); /*0x5da6f8*/
-      Network_Init_542FC0(unk_A8E9C0, (int)&v1); /*0x5da707*/
+      ((ObjectClass *)unk_A8E9C0)->Network_Init_542FC0((int)&v1); /*0x5da707*/
     }
   }
   return 1; /*0x5da6d3*/

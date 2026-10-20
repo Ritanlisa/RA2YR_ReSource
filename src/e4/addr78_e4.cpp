@@ -93,7 +93,7 @@ int WOL_ResetSystem()
 
   unsigned int *AccountInfoWOL; // eax
   unsigned int v25[2]; // [esp+10h] [ebp-8h] BYREF
-  AccountInfoWOL = (unsigned int *)((unsigned int)(LoadAccountInfoWOL((ObjectClass *)v25)));
+  AccountInfoWOL = (unsigned int *)((unsigned int)(((ObjectClass *)(ObjectClass *)v25)->LoadAccountInfoWOL()));
   ComPtr::Set(&stru_B75E48, AccountInfoWOL[1]); /*0x780129*/
   v25[0] = (unsigned int)(&g_var_5878c0); /*0x780132*/
   ComPtr::Release((ComPtr *)v25); /*0x78013a*/
@@ -356,7 +356,7 @@ void PopulateWOLLobbyListBox()  // G42.41i: truth 0x7806C0 = void
       if ( v4 != -1 ) /*0x78070e*/
         GetListBoxItemText(DlgItem, v4, (void **)v18); /*0x780719*/
       SendMessageA(DlgItem, 0x49Du, 0, 1); /*0x780729*/
-      Memory_Pop((ObjectClass *)DlgItem); /*0x78072d*/
+      ((ObjectClass *)(ObjectClass *)DlgItem)->Memory_Pop(); /*0x78072d*/
       v5 = 0; /*0x780737*/
       *(unsigned int *)&v18[16] = *(unsigned int *)&g_WOL_AuthPool; /*0x78073b*/
       v17 = 0; /*0x78073f*/
@@ -2760,7 +2760,7 @@ LABEL_48:
     DeleteAndZero((ObjectClass *)&v41.Flag_field_0x08); /*0x787395*/
   }
   String::Assign((String *)&v41, &g_INI_DefaultBuffer); /*0x7873a3*/
-  ReadSettingsWOL((ObjectClass *)&v41); /*0x7873ac*/
+  ((ObjectClass *)(ObjectClass *)&v41)->ReadSettingsWOL(); /*0x7873ac*/
   DeleteAndZero((ObjectClass *)&v41); /*0x7873b5*/
   if ( v38 ) /*0x7873c0*/
     return 0; /*0x7873cb*/
@@ -4202,7 +4202,7 @@ int PopulateWOLUserList(HWND hWnd, char a2)
   if ( a2 ) /*0x7896b0*/
     ListBox::Clear(hWnd); /*0x7896b2*/
   else
-    Memory_Pop((ObjectClass *)hWnd); /*0x7896b9*/
+    ((ObjectClass *)(ObjectClass *)hWnd)->Memory_Pop(); /*0x7896b9*/
   v4 = 1; /*0x7896c3*/
   if ( g_WOL_UserList.ptr_0 == 1 ) /*0x7896ca*/
   {

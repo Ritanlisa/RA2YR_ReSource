@@ -1888,7 +1888,7 @@ char E4Recv_6EA080::sub_6EA080()
       *(unsigned char *)(v2 + 1673) = 1; /*0x6ea0a5*/
   }
   char result; // al
-  result = SetLandTypeMap((ObjectClass *)this->owningHouseIndex); /*0x6ea0b8*/
+  result = ((ObjectClass *)(ObjectClass *)this->owningHouseIndex)->SetLandTypeMap(); /*0x6ea0b8*/
   this->needsRedraw = 1; /*0x6ea0bd*/
   return result; /*0x6ea0c3*/
 

@@ -1505,7 +1505,7 @@ LABEL_46:
       *(unsigned int *)&stru_AC4B48.__pad_B8[144] = v24; /*0x6383bf*/
       goto LABEL_47; /*0x6383bf*/
     }
-    if ( ExecuteActionPlanManager_Helper_638C40(v23, *(unsigned int *)(v2 + 14), v2[18]) ) /*0x6383a7*/
+    if ( ((ObjectClass *)v23)->ExecuteActionPlanManager_Helper_638C40(*(unsigned int *)(v2 + 14), v2[18]) ) /*0x6383a7*/
     {
       v24 = 0; /*0x6383b0*/
       goto LABEL_46; /*0x6383b2*/
@@ -1586,7 +1586,7 @@ LABEL_47:
     v2 = v37; /*0x638554*/
     v14 = v38; /*0x638558*/
   }
-  v32 = ExecuteActionPlanManager_Helper_636EB0(Type); /*0x63855e*/
+  v32 = ((ObjectClass *)Type)->ExecuteActionPlanManager_Helper_636EB0(); /*0x63855e*/
   if ( v32 ) /*0x638565*/
   {
     memcpy(v33, v2, 0x6Fu); /*0x638573*/
@@ -2506,7 +2506,7 @@ LABEL_37:
     {
       v24 = 0; /*0x63af3c*/
       v16 = *(unsigned int **)(*(unsigned int *)&v25.m_1[3] + 4 * v15); /*0x63af3e*/
-      memcpy(&v29[132], (const void *)Team_Helper_6342E0(*(ObjectClass **)&v29[8], (int)v30, 0), 0x6Fu); /*0x63af55*/
+      memcpy(&v29[132], (const void *)((ObjectClass *)*(ObjectClass **)&v29[8])->Team_Helper_6342E0((int)v30, 0), 0x6Fu); /*0x63af55*/
       _63B050 = Team_Load_63B050((ObjectClass *)&v29[132]); /*0x63af61*/
       if ( _63B050 ) /*0x63af68*/
       {

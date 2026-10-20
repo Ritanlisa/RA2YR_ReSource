@@ -670,7 +670,7 @@ LABEL_153:
       }
       return result; /*0x6de03d*/
     case 0x3F:
-      PlayWaypointEffect((ObjectClass *)a1, (int)a5, v9, (int)a7, (int)a8); /*0x6ddde4*/
+      ((ObjectClass *)(ObjectClass *)a1)->PlayWaypointEffect((int)a5, v9, (int)a7, (int)a8); /*0x6ddde4*/
       return result; /*0x6dddf3*/
     case 0x40:
       v24 = *&dword_8871E0->u32_FA8; /*0x6dde04*/

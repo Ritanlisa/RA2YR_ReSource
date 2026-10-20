@@ -1847,7 +1847,7 @@ int MapClass::GetTileIndex(int16_t *aP1, int aP2, char aP3)
     if ( (v7[80] & 0x100) != 0 )
     {
       int RegionMap; // eax
-      RegionMap = GetRegionMap((ObjectClass *)this, aP1, 1, 0); /*0x56d28f*/
+      RegionMap = ((ObjectClass *)(ObjectClass *)this)->GetRegionMap(aP1, 1, 0); /*0x56d28f*/
       if ( RegionMap == -1 ) /*0x56d297*/
         return -1; /*0x56d36d*/
       int v9; // ebx
@@ -2096,11 +2096,11 @@ int MapClass::ClearRegions(IUnknown * aP1)
 
 
   int RegionMap; // edi
-  RegionMap = GetRegionMap((ObjectClass *)this, aP1, 3, 0); /*0x56daf3*/
+  RegionMap = ((ObjectClass *)(ObjectClass *)this)->GetRegionMap(aP1, 3, 0); /*0x56daf3*/
   if ( RegionMap == -1 ) /*0x56daf8*/
   {
     MapClass::ProcessRegion(this); /*0x56dafc*/
-    RegionMap = GetRegionMap((ObjectClass *)this, aP1, 3, 0); /*0x56db0d*/
+    RegionMap = ((ObjectClass *)(ObjectClass *)this)->GetRegionMap(aP1, 3, 0); /*0x56db0d*/
     if ( RegionMap == -1 ) /*0x56db12*/
       return 0; /*0x56db16*/
   }
@@ -2114,7 +2114,7 @@ int MapClass::ClearRegions(IUnknown * aP1)
       v6 = 1; /*0x56db43*/
       *(unsigned char *)(*(unsigned int *)this->__pad_054 + 16 * RegionMap + 8) = 0; /*0x56db48*/
     }
-    RegionMap = GetRegionMap((ObjectClass *)this, aP1, 3, RegionMap + 1); /*0x56db59*/
+    RegionMap = ((ObjectClass *)(ObjectClass *)this)->GetRegionMap(aP1, 3, RegionMap + 1); /*0x56db59*/
   }
   while ( RegionMap != -1 ); /*0x56db5e*/
   return v6; /*0x56db14*/
