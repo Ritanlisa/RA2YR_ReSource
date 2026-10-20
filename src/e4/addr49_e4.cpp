@@ -118,6 +118,7 @@
 #include "e4/classes/E4Recv_4935D0_e4.hpp"
 #include "e4/classes/E4Recv_493600_e4.hpp"
 #include "e4/classes/E4Recv_493680_e4.hpp"
+#include "e4/classes/X99_vector_globals_e4.hpp"  // X99 S4b typed vector globals
 #include "e4/classes/E4Recv_4936B0_e4.hpp"
 #include "e4/classes/E4Recv_4936E0_e4.hpp"
 #include "e4/classes/E4Recv_493710_e4.hpp"
@@ -252,15 +253,15 @@ int E4Recv_490400::sub_490400()
   int v4; // [esp+4h] [ebp-4h] BYREF
   v4 = (int)(this); /*0x49044d*/
   int result; // eax
-  result = (*(int (**)(int *, int *))(dword_89ECF8 + 16))(&dword_89ECF8, &v4); /*0x490451*/
-  if ( result != -1 && result < dword_89ED08 && result < --dword_89ED08 ) /*0x49046d*/
+  result = (*(int (**)(int *, int *))(g_X99Vec_89ECF8.ptr_0 + 16))(&g_X99Vec_89ECF8.ptr_0, &v4); /*0x490451*/
+  if ( result != -1 && result < g_X99Vec_89ECF8.Count && result < --g_X99Vec_89ECF8.Count ) /*0x49046d*/
   {
     do /*0x490485*/
     {
       ++result; /*0x490475*/
-      *((unsigned int *)dword_89ECFC + result - 1) = *((unsigned int *)dword_89ECFC + result); /*0x490479*/
+      *((unsigned int *)g_X99Vec_89ECF8.Items + result - 1) = *((unsigned int *)g_X99Vec_89ECF8.Items + result); /*0x490479*/
     }
-    while ( result < dword_89ED08 ); /*0x490485*/
+    while ( result < g_X99Vec_89ECF8.Count ); /*0x490485*/
   }
   return result; /*0x490457*/
 
@@ -2627,10 +2628,10 @@ int sub_491100(ObjectClass * a1, char a2, int a3, ObjectClass * a4, short a5, ch
 
   int result = 0; // eax /*0x491107*/
   int i; // [esp+4h] [ebp-Ch]
-  for ( i = 0; result < dword_89ED08; i = result ) /*0x491118*/
+  for ( i = 0; result < g_X99Vec_89ECF8.Count; i = result ) /*0x491118*/
   {
     unsigned int *v9; // ecx
-    v9 = (unsigned int *)*((unsigned int *)dword_89ECFC + result); /*0x491127*/
+    v9 = (unsigned int *)*((unsigned int *)g_X99Vec_89ECF8.Items + result); /*0x491127*/
     int v18; // [esp+Ch] [ebp-4h]
     v18 = (int)v9; /*0x49112a*/
     if ( v9[1] == 2 ) /*0x491132*/

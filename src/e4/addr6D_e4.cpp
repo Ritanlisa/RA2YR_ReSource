@@ -37,6 +37,7 @@
 #include "e4/classes/Isometric_e4.hpp"
 #include "e4/classes/Rect_Point_e4.hpp"
 #include "e4/classes/ShapeButton_e4.hpp"
+#include "e4/classes/X99_vector_globals_e4.hpp"  // X99 S4b typed vector globals
 
 // 0x6D1130
 namespace gamemd {  // G42.18 ns repair
@@ -398,13 +399,13 @@ void sub_6D1AA0()
 namespace gamemd {
 int sub_6D1B10()
 {
-  dword_B0CDEC = 0; /*0x6d1b17*/
-  dword_B0CDF0 = 0; /*0x6d1b1c*/
-  byte_B0CDF4 = 1; /*0x6d1b21*/
-  byte_B0CDF5 = 0; /*0x6d1b28*/
-  dword_B0CDE8 = (int)&g_ptr_7E3238; /*0x6d1b2d*/
-  dword_B0CDFC = 10; /*0x6d1b37*/
-  dword_B0CDF8 = 0; /*0x6d1b41*/
+  g_X99Vec_B0CDE8.Items = 0; /*0x6d1b17*/
+  g_X99Vec_B0CDE8.Capacity = 0; /*0x6d1b1c*/
+  g_X99Vec_B0CDE8.IsInitialized = 1; /*0x6d1b21*/
+  g_X99Vec_B0CDE8.IsAllocated = 0; /*0x6d1b28*/
+  g_X99Vec_B0CDE8.ptr_0 = (int)&g_ptr_7E3238; /*0x6d1b2d*/
+  g_X99Vec_B0CDE8.CapacityIncrement = 10; /*0x6d1b37*/
+  g_X99Vec_B0CDE8.Count = 0; /*0x6d1b41*/
   return atexit(sub_6D1B50); /*0x6d1b4c*/
 }
 } // namespace gamemd
@@ -415,18 +416,18 @@ void sub_6D1B50()
 {
   if ( (byte_B0CD59 & 1) == 0 ) /*0x6d1b5a*/
   {
-    dword_B0CDE8 = (int)&g_ptr_7E8500; /*0x6d1b5e*/
+    g_X99Vec_B0CDE8.ptr_0 = (int)&g_ptr_7E8500; /*0x6d1b5e*/
     byte_B0CD59 |= 1u; /*0x6d1b71*/
-    if ( dword_B0CDEC ) /*0x6d1b77*/
+    if ( g_X99Vec_B0CDE8.Items ) /*0x6d1b77*/
     {
-      if ( byte_B0CDF5 ) /*0x6d1b81*/
+      if ( g_X99Vec_B0CDE8.IsAllocated ) /*0x6d1b81*/
       {
-        operator delete((void *)(dword_B0CDEC)); /*0x6d1b84*/
-        dword_B0CDEC = 0; /*0x6d1b8c*/
+        operator delete((void *)(g_X99Vec_B0CDE8.Items)); /*0x6d1b84*/
+        g_X99Vec_B0CDE8.Items = 0; /*0x6d1b8c*/
       }
     }
-    byte_B0CDF5 = 0; /*0x6d1b96*/
-    dword_B0CDF0 = 0; /*0x6d1b9d*/
+    g_X99Vec_B0CDE8.IsAllocated = 0; /*0x6d1b96*/
+    g_X99Vec_B0CDE8.Capacity = 0; /*0x6d1b9d*/
   }
 }
 } // namespace gamemd

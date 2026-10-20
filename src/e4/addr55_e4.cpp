@@ -62,6 +62,7 @@
 #include "e4/classes/Process_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/Theme_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/LogicClass_flat_e4.hpp"  // X74 typed-global (LogicClass cluster)
+#include "e4/classes/X99_vector_globals_e4.hpp"  // X99 S4b typed vector globals
 // [w18j2] C3861 supply (raw-evidenced)
 namespace gamemd { int sub_5581A0(int a2); }  // w18j2 raw 0x005581A0
 // [w18j2] C2065 function supply (raw-evidenced)
@@ -1191,11 +1192,11 @@ void UpdateDeferredLightSurfaces(int a1, char a2)
 
   HighPrecisionTimer = Timer::GetHighPrecision(&dbl_884D88); /*0x554d6e*/
   ++dword_ABCA74; /*0x554d73*/
-  if ( dword_ABCA50 && !byte_ABCA84 ) /*0x554d8e*/
+  if ( g_X99Vec_ABCA40.Count && !byte_ABCA84 ) /*0x554d8e*/
   {
     v4 = dword_ABCA7C; /*0x554d94*/
     if ( dword_ABCA7C > 0 /*0x554dac*/
-      || (dword_ABCA80 = dword_ABCA50, v4 = dword_ABCA50 - 1, dword_ABCA7C = dword_ABCA50 - 1, dword_ABCA50 - 1 >= 0) )
+      || (dword_ABCA80 = g_X99Vec_ABCA40.Count, v4 = g_X99Vec_ABCA40.Count - 1, dword_ABCA7C = g_X99Vec_ABCA40.Count - 1, g_X99Vec_ABCA40.Count - 1 >= 0) )
     {
       do /*0x554ed0*/
       {
@@ -1206,20 +1207,20 @@ void UpdateDeferredLightSurfaces(int a1, char a2)
             break; /*0x554dd9*/
           v4 = dword_ABCA7C; /*0x554ddf*/
         }
-        if ( **((unsigned int **)dword_ABCA44 + v4) ) /*0x554ded*/
+        if ( **((unsigned int **)g_X99Vec_ABCA40.Items + v4) ) /*0x554ded*/
         {
           --dword_ABCA80; /*0x554df2*/
         }
         else
         {
-          v6 = CellCoord::To_CellObj(&dword_87F7E8, (__int16 *)(*((unsigned int *)dword_ABCA44 + v4) + 16)); /*0x554e27*/
+          v6 = CellCoord::To_CellObj(&dword_87F7E8, (__int16 *)(*((unsigned int *)g_X99Vec_ABCA40.Items + v4) + 16)); /*0x554e27*/
           Tactical::CreateTacticalLightSurface((int)v6, &v24, &v25, &v26, &v27, (int)&v28, (int)&v29); /*0x554e2e*/
-          **((unsigned int **)dword_ABCA44 + dword_ABCA7C) = v24; /*0x554e46*/
-          *(unsigned int *)(*((unsigned int *)dword_ABCA44 + dword_ABCA7C) + 4) = v25; /*0x554e5a*/
-          *(unsigned short *)(*((unsigned int *)dword_ABCA44 + dword_ABCA7C) + 8) = v26; /*0x554e70*/
-          *(unsigned short *)(*((unsigned int *)dword_ABCA44 + dword_ABCA7C) + 10) = v27; /*0x554e88*/
-          *(unsigned short *)(*((unsigned int *)dword_ABCA44 + dword_ABCA7C) + 12) = LOWORD(v28); /*0x554e9f*/
-          *(unsigned short *)(*((unsigned int *)dword_ABCA44 + dword_ABCA7C) + 14) = v29; /*0x554eb6*/
+          **((unsigned int **)g_X99Vec_ABCA40.Items + dword_ABCA7C) = v24; /*0x554e46*/
+          *(unsigned int *)(*((unsigned int *)g_X99Vec_ABCA40.Items + dword_ABCA7C) + 4) = v25; /*0x554e5a*/
+          *(unsigned short *)(*((unsigned int *)g_X99Vec_ABCA40.Items + dword_ABCA7C) + 8) = v26; /*0x554e70*/
+          *(unsigned short *)(*((unsigned int *)g_X99Vec_ABCA40.Items + dword_ABCA7C) + 10) = v27; /*0x554e88*/
+          *(unsigned short *)(*((unsigned int *)g_X99Vec_ABCA40.Items + dword_ABCA7C) + 12) = LOWORD(v28); /*0x554e9f*/
+          *(unsigned short *)(*((unsigned int *)g_X99Vec_ABCA40.Items + dword_ABCA7C) + 14) = v29; /*0x554eb6*/
           --dword_ABCA80; /*0x554ec0*/
           v4 = dword_ABCA7C; /*0x554ec5*/
         }
@@ -1237,9 +1238,9 @@ void UpdateDeferredLightSurfaces(int a1, char a2)
   {
     if ( a2 || (v29 = a1 - 1, v8 >= (double)(a1 - 1)) ) /*0x554f23*/
     {
-      for ( i = 0; i < dword_ABCA50; ++i ) /*0x554f36*/
+      for ( i = 0; i < g_X99Vec_ABCA40.Count; ++i ) /*0x554f36*/
       {
-        v10 = (void *)*((unsigned int *)dword_ABCA44 + i); /*0x554f42*/
+        v10 = (void *)*((unsigned int *)g_X99Vec_ABCA40.Items + i); /*0x554f42*/
         v22 = *((unsigned short *)v10 + 7); /*0x554f53*/
         v21 = *((unsigned short *)v10 + 6); /*0x554f56*/
         v20 = *((unsigned short *)v10 + 5); /*0x554f5e*/
@@ -1250,14 +1251,14 @@ void UpdateDeferredLightSurfaces(int a1, char a2)
         TacticalClass::SetView((int)v11, v17, v18, v19, v20, v21, v22); /*0x554f74*/
         __3_YAXPAX_Z(v10); /*0x554f7a*/
       }
-      dword_ABCA50 = 0; /*0x554f91*/
-      if ( dword_ABCA44 && byte_ABCA4D ) /*0x554fa7*/
+      g_X99Vec_ABCA40.Count = 0; /*0x554f91*/
+      if ( g_X99Vec_ABCA40.Items && g_X99Vec_ABCA40.IsAllocated ) /*0x554fa7*/
       {
-        __3_YAXPAX_Z(dword_ABCA44); /*0x554faa*/
-        dword_ABCA44 = 0; /*0x554fb2*/
+        __3_YAXPAX_Z(g_X99Vec_ABCA40.Items); /*0x554faa*/
+        g_X99Vec_ABCA40.Items = 0; /*0x554fb2*/
       }
-      byte_ABCA4D = 0; /*0x554fc3*/
-      dword_ABCA48 = 0; /*0x554fca*/
+      g_X99Vec_ABCA40.IsAllocated = 0; /*0x554fc3*/
+      g_X99Vec_ABCA40.Capacity = 0; /*0x554fca*/
       byte_ABCA84 = 0; /*0x554fd4*/
       MapClass::MarkForRedraw(&dword_87F7E8, 1); /*0x554fdb*/
     }
@@ -3577,13 +3578,13 @@ void sub_554680()
 namespace gamemd {
 int sub_5546C0()
 {
-  dword_ABCA44 = 0; /*0x5546c7*/
-  dword_ABCA48 = 0; /*0x5546cc*/
-  byte_ABCA4C = 1; /*0x5546d1*/
-  byte_ABCA4D = 0; /*0x5546d8*/
-  dword_ABCA40 = (int)&g_ptr_7E3238; /*0x5546dd*/
-  dword_ABCA54 = 10; /*0x5546e7*/
-  dword_ABCA50 = 0; /*0x5546f1*/
+  g_X99Vec_ABCA40.Items = 0; /*0x5546c7*/
+  g_X99Vec_ABCA40.Capacity = 0; /*0x5546cc*/
+  g_X99Vec_ABCA40.IsInitialized = 1; /*0x5546d1*/
+  g_X99Vec_ABCA40.IsAllocated = 0; /*0x5546d8*/
+  g_X99Vec_ABCA40.ptr_0 = (int)&g_ptr_7E3238; /*0x5546dd*/
+  g_X99Vec_ABCA40.CapacityIncrement = 10; /*0x5546e7*/
+  g_X99Vec_ABCA40.Count = 0; /*0x5546f1*/
   return atexit(sub_554700); /*0x5546fc*/
 }
 } // namespace gamemd
@@ -3594,18 +3595,18 @@ void sub_554700()
 {
   if ( (byte_ABC9C0 & 1) == 0 ) /*0x55470a*/
   {
-    dword_ABCA40 = (int)&g_ptr_7E8500; /*0x55470e*/
+    g_X99Vec_ABCA40.ptr_0 = (int)&g_ptr_7E8500; /*0x55470e*/
     byte_ABC9C0 |= 1u; /*0x554721*/
-    if ( dword_ABCA44 ) /*0x554727*/
+    if ( g_X99Vec_ABCA40.Items ) /*0x554727*/
     {
-      if ( byte_ABCA4D ) /*0x554731*/
+      if ( g_X99Vec_ABCA40.IsAllocated ) /*0x554731*/
       {
-        operator delete((void *)(dword_ABCA44)); /*0x554734*/
-        dword_ABCA44 = 0; /*0x55473c*/
+        operator delete((void *)(g_X99Vec_ABCA40.Items)); /*0x554734*/
+        g_X99Vec_ABCA40.Items = 0; /*0x55473c*/
       }
     }
-    byte_ABCA4D = 0; /*0x554746*/
-    dword_ABCA48 = 0; /*0x55474d*/
+    g_X99Vec_ABCA40.IsAllocated = 0; /*0x554746*/
+    g_X99Vec_ABCA40.Capacity = 0; /*0x55474d*/
   }
 }
 } // namespace gamemd

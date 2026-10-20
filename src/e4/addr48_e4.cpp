@@ -60,6 +60,7 @@
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 #include "e4/classes/ScenarioClass_e4.hpp"  // w18j2 C3861 ScenarioClass:: supply
 #include "e4/classes/WTFMode_e4.hpp"  // w18j2 C3861 WTFMode:: supply
+#include "e4/classes/X99_vector_globals_e4.hpp"  // X99 S4b typed vector globals
 // [w18j2] C3861 supply (raw-evidenced)
 namespace gamemd { int sub_77D840(); }  // w18j2 raw 0x0077D840
 // [w18j2] C3861 supply (raw-evidenced)
@@ -2742,13 +2743,13 @@ int sub_48E680()
 namespace gamemd {
 int sub_48E6A0()
 {
-  dword_89ECFC = 0; /*0x48e6a7*/
-  dword_89ED00 = 0; /*0x48e6ac*/
-  byte_89ED04 = 1; /*0x48e6b1*/
-  byte_89ED05 = 0; /*0x48e6b8*/
-  dword_89ECF8 = (int)&g_ptr_7E3238; /*0x48e6bd*/
-  dword_89ED0C = 10; /*0x48e6c7*/
-  dword_89ED08 = 0; /*0x48e6d1*/
+  g_X99Vec_89ECF8.Items = 0; /*0x48e6a7*/
+  g_X99Vec_89ECF8.Capacity = 0; /*0x48e6ac*/
+  g_X99Vec_89ECF8.IsInitialized = 1; /*0x48e6b1*/
+  g_X99Vec_89ECF8.IsAllocated = 0; /*0x48e6b8*/
+  g_X99Vec_89ECF8.ptr_0 = (int)&g_ptr_7E3238; /*0x48e6bd*/
+  g_X99Vec_89ECF8.CapacityIncrement = 10; /*0x48e6c7*/
+  g_X99Vec_89ECF8.Count = 0; /*0x48e6d1*/
   return atexit(sub_48E6E0); /*0x48e6dc*/
 }
 } // namespace gamemd
@@ -2759,18 +2760,18 @@ void sub_48E6E0()
 {
   if ( (byte_89ED10 & 1) == 0 ) /*0x48e6ea*/
   {
-    dword_89ECF8 = (int)&g_ptr_7E8500; /*0x48e6ee*/
+    g_X99Vec_89ECF8.ptr_0 = (int)&g_ptr_7E8500; /*0x48e6ee*/
     byte_89ED10 |= 1u; /*0x48e701*/
-    if ( dword_89ECFC ) /*0x48e707*/
+    if ( g_X99Vec_89ECF8.Items ) /*0x48e707*/
     {
-      if ( byte_89ED05 ) /*0x48e711*/
+      if ( g_X99Vec_89ECF8.IsAllocated ) /*0x48e711*/
       {
-        operator delete((void *)(dword_89ECFC)); /*0x48e714*/
-        dword_89ECFC = 0; /*0x48e71c*/
+        operator delete((void *)(g_X99Vec_89ECF8.Items)); /*0x48e714*/
+        g_X99Vec_89ECF8.Items = 0; /*0x48e71c*/
       }
     }
-    byte_89ED05 = 0; /*0x48e726*/
-    dword_89ED00 = 0; /*0x48e72d*/
+    g_X99Vec_89ECF8.IsAllocated = 0; /*0x48e726*/
+    g_X99Vec_89ECF8.Capacity = 0; /*0x48e72d*/
   }
 }
 } // namespace gamemd

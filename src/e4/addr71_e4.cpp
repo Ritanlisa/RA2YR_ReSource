@@ -33,6 +33,7 @@
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 #include "e4/classes/ToggleClass_e4.hpp"  // G57w10 D supply
 #include "e4/classes/Text_e4.hpp"
+#include "e4/classes/X99_vector_globals_e4.hpp"  // X99 S4b typed vector globals
 
 // 0x710860
 namespace gamemd {  // G42.18 ns repair
@@ -1215,13 +1216,13 @@ int sub_71E600()
 namespace gamemd {
 int sub_71E620()
 {
-  dword_B0F1A4 = 0; /*0x71e627*/
-  dword_B0F1A8 = 0; /*0x71e62c*/
-  byte_B0F1AC = 1; /*0x71e631*/
-  byte_B0F1AD = 0; /*0x71e638*/
-  dword_B0F1A0 = (int)&g_ptr_7E3238; /*0x71e63d*/
-  dword_B0F1B4 = 10; /*0x71e647*/
-  dword_B0F1B0 = 0; /*0x71e651*/
+  g_X99Vec_B0F1A0.Items = 0; /*0x71e627*/
+  g_X99Vec_B0F1A0.Capacity = 0; /*0x71e62c*/
+  g_X99Vec_B0F1A0.IsInitialized = 1; /*0x71e631*/
+  g_X99Vec_B0F1A0.IsAllocated = 0; /*0x71e638*/
+  g_X99Vec_B0F1A0.ptr_0 = (int)&g_ptr_7E3238; /*0x71e63d*/
+  g_X99Vec_B0F1A0.CapacityIncrement = 10; /*0x71e647*/
+  g_X99Vec_B0F1A0.Count = 0; /*0x71e651*/
   return atexit(sub_71E660); /*0x71e65c*/
 }
 } // namespace gamemd
@@ -1230,14 +1231,14 @@ int sub_71E620()
 namespace gamemd {
 void sub_71E660()
 {
-  dword_B0F1A0 = (int)&g_ptr_7E8500; /*0x71e668*/
-  if ( dword_B0F1A4 && byte_B0F1AD ) /*0x71e67c*/
+  g_X99Vec_B0F1A0.ptr_0 = (int)&g_ptr_7E8500; /*0x71e668*/
+  if ( g_X99Vec_B0F1A0.Items && g_X99Vec_B0F1A0.IsAllocated ) /*0x71e67c*/
   {
-    operator delete((void *)(dword_B0F1A4)); /*0x71e67f*/
-    dword_B0F1A4 = 0; /*0x71e687*/
+    operator delete((void *)(g_X99Vec_B0F1A0.Items)); /*0x71e67f*/
+    g_X99Vec_B0F1A0.Items = 0; /*0x71e687*/
   }
-  byte_B0F1AD = 0; /*0x71e68d*/
-  dword_B0F1A8 = 0; /*0x71e693*/
+  g_X99Vec_B0F1A0.IsAllocated = 0; /*0x71e68d*/
+  g_X99Vec_B0F1A0.Capacity = 0; /*0x71e693*/
 }
 } // namespace gamemd
 

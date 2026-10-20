@@ -14,6 +14,7 @@
 #include "e4/classes/DSurface_e4.hpp"
 #include "e4/classes/Palette_e4.hpp"
 #include "e4/classes/CampaignClass_e4.hpp"
+#include "e4/classes/X99_vector_globals_e4.hpp"  // X99 S4b typed vector globals
 
 // 0x48E740
 namespace gamemd {  // G42.18 ns repair
@@ -218,16 +219,16 @@ unsigned int * ConvertClass::Construct(int a2, int a3, int a4, int a5, char a6, 
   }
   if ( !a6 ) /*0x48eb7a*/
     ConvertClass::InitTables(this); /*0x48eb7e*/
-  if ( dword_89ED08 < dword_89ED00 /*0x48ebb7*/
-    || (byte_89ED05 || !dword_89ED00)
-    && dword_89ED0C > 0
-    && (*(unsigned __int8 (**)(int *, int, unsigned int))(dword_89ECF8 + 8))(
-         &dword_89ECF8,
-         dword_89ED0C + dword_89ED00,
+  if ( g_X99Vec_89ECF8.Count < g_X99Vec_89ECF8.Capacity /*0x48ebb7*/
+    || (g_X99Vec_89ECF8.IsAllocated || !g_X99Vec_89ECF8.Capacity)
+    && g_X99Vec_89ECF8.CapacityIncrement > 0
+    && (*(unsigned __int8 (**)(int *, int, unsigned int))(g_X99Vec_89ECF8.ptr_0 + 8))(
+         &g_X99Vec_89ECF8.ptr_0,
+         g_X99Vec_89ECF8.CapacityIncrement + g_X99Vec_89ECF8.Capacity,
          0) )
   {
-    v26 = dword_89ED08++; /*0x48ebc4*/
-    *((unsigned int *)dword_89ECFC + v26) = this; /*0x48ebd3*/
+    v26 = g_X99Vec_89ECF8.Count++; /*0x48ebc4*/
+    *((unsigned int *)g_X99Vec_89ECF8.Items + v26) = this; /*0x48ebd3*/
   }
   return this->__pad_0; /*0x48ebd8*/
 

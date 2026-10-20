@@ -118,6 +118,7 @@
 #include "e4/classes/VectorClass_ptr_ScriptClass_e4.hpp"
 #include "e4/classes/VectorClass_ptr_ScriptTypeClass_e4.hpp"
 #include "e4/classes/VectorClass_ptr_SideClass_e4.hpp"
+#include "e4/classes/X99_vector_globals_e4.hpp"  // X99 S4b typed vector globals
 #include "e4/classes/VectorClass_ptr_SlaveManagerClass_e4.hpp"
 #include "e4/classes/VectorClass_ptr_SmudgeTypeClass_e4.hpp"
 #include "e4/classes/VectorClass_ptr_SpawnManagerClass_e4.hpp"
@@ -1208,15 +1209,15 @@ void * VectorClass_ptr_ConvertClass::Constructor_ConvertClass(void ** Block, cha
   VectorClass_ptr_ConvertClass *v6; // [esp+4h] [ebp-4h] BYREF
   v6 = Block; /*0x49125d*/
   int v4; // eax
-  v4 = (*(int (**)(int *, VectorClass_ptr_ConvertClass **))(dword_89ECF8 + 16))(&dword_89ECF8, &v6); /*0x491261*/
-  if ( v4 != -1 && v4 < dword_89ED08 && v4 < --dword_89ED08 ) /*0x49127c*/
+  v4 = (*(int (**)(int *, VectorClass_ptr_ConvertClass **))(g_X99Vec_89ECF8.ptr_0 + 16))(&g_X99Vec_89ECF8.ptr_0, &v6); /*0x491261*/
+  if ( v4 != -1 && v4 < g_X99Vec_89ECF8.Count && v4 < --g_X99Vec_89ECF8.Count ) /*0x49127c*/
   {
     do /*0x491294*/
     {
       ++v4; /*0x491284*/
-      *((unsigned int *)dword_89ECFC + v4 - 1) = *((unsigned int *)dword_89ECFC + v4); /*0x491288*/
+      *((unsigned int *)g_X99Vec_89ECF8.Items + v4 - 1) = *((unsigned int *)g_X99Vec_89ECF8.Items + v4); /*0x491288*/
     }
-    while ( v4 < dword_89ED08 ); /*0x491294*/
+    while ( v4 < g_X99Vec_89ECF8.Count ); /*0x491294*/
   }
   if ( (a2 & 1) != 0 ) /*0x49129b*/
     operator delete((Block)); /*0x49129e*/

@@ -27,6 +27,7 @@
 #include "e4/classes/Color_e4.hpp"
 #include "e4/classes/ObjectPtr_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/ParticleSystemClass_e4.hpp"
+#include "e4/classes/X99_vector_globals_e4.hpp"  // X99 S4b typed vector globals
 
 // 0x71E940
 namespace gamemd {  // G42.18 ns repair
@@ -752,9 +753,9 @@ void * TEventClass::Fire(void ** Block, char a2)
   v5 = (*(int (**)(int *, TEventClass **))(DataGlobal_B0E840[2250] + 16))( /*0x71fb4c*/
          &DataGlobal_B0E840[2250],
          &v7);
-  if ( v5 != -1 && v5 < dword_B0F1B0 ) /*0x71fb5c*/
+  if ( v5 != -1 && v5 < g_X99Vec_B0F1A0.Count ) /*0x71fb5c*/
   {
-    --dword_B0F1B0; /*0x71fb61*/
+    --g_X99Vec_B0F1A0.Count; /*0x71fb61*/
     for ( ; /*0x71fb67*/
     v5 < DataGlobal_B0E840[2254];
     *(unsigned int *)(DataGlobal_B0E840[2251] + 4 * v5 - 4) = *(unsigned int *)(DataGlobal_B0E840[2251]

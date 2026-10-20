@@ -64,6 +64,7 @@
 #include "e4/classes/HashTable_flat_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/CellClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/LayerClass_e4.hpp"
+#include "e4/classes/X99_vector_globals_e4.hpp"  // X99 S4b typed vector globals
 // [w18j2] C2065 function supply (raw-evidenced)
 namespace gamemd { void nullsub_20(); }  // w18j2 raw 0x00547CE0
 
@@ -476,22 +477,22 @@ char * * LoadTerrainTypeClassTheatre(AbstractClass * a1, char a2)
   lpBuffer = __2_YAPAXI_Z(Size); /*0x54524d*/
   v5 = CCFileClass::GetSize(v158); /*0x545252*/
   CCFileClass::Read(v158, lpBuffer, v5); /*0x545266*/
-  if ( dword_AA1088 ) /*0x545272*/
+  if ( g_X99Vec_AA1078.Count ) /*0x545272*/
   {
-    for ( i = dword_AA1088 - 1; i >= 0; --i ) /*0x545279*/
+    for ( i = g_X99Vec_AA1078.Count - 1; i >= 0; --i ) /*0x545279*/
     {
-      __3_YAXPAX_Z(*((void **)dword_AA107C + i)); /*0x545284*/
-      if ( i < dword_AA1088 ) /*0x545294*/
+      __3_YAXPAX_Z(*((void **)g_X99Vec_AA1078.Items + i)); /*0x545284*/
+      if ( i < g_X99Vec_AA1078.Count ) /*0x545294*/
       {
         v7 = i; /*0x545297*/
-        if ( i < --dword_AA1088 ) /*0x5452a1*/
+        if ( i < --g_X99Vec_AA1078.Count ) /*0x5452a1*/
         {
           do /*0x5452b9*/
           {
             ++v7; /*0x5452a9*/
-            *((unsigned int *)dword_AA107C + v7 - 1) = *((unsigned int *)dword_AA107C + v7); /*0x5452ad*/
+            *((unsigned int *)g_X99Vec_AA1078.Items + v7 - 1) = *((unsigned int *)g_X99Vec_AA1078.Items + v7); /*0x5452ad*/
           }
-          while ( v7 < dword_AA1088 ); /*0x5452b9*/
+          while ( v7 < g_X99Vec_AA1078.Count ); /*0x5452b9*/
         }
       }
     }
@@ -803,16 +804,16 @@ LABEL_26:
       v73 = v27 + v72; /*0x546027*/
       *v28 = v27 + v72; /*0x54602b*/
       v28[1] = v29; /*0x54602d*/
-      if ( dword_AA1088 < dword_AA1080 /*0x546069*/
-        || (byte_AA1085 || !dword_AA1080)
-        && dword_AA108C > 0
-        && (*(unsigned __int8 (**)(int *, int, unsigned int))(dword_AA1078 + 8))(
-             &dword_AA1078,
-             dword_AA108C + dword_AA1080,
+      if ( g_X99Vec_AA1078.Count < g_X99Vec_AA1078.Capacity /*0x546069*/
+        || (g_X99Vec_AA1078.IsAllocated || !g_X99Vec_AA1078.Capacity)
+        && g_X99Vec_AA1078.CapacityIncrement > 0
+        && (*(unsigned __int8 (**)(int *, int, unsigned int))(g_X99Vec_AA1078.ptr_0 + 8))(
+             &g_X99Vec_AA1078.ptr_0,
+             g_X99Vec_AA1078.CapacityIncrement + g_X99Vec_AA1078.Capacity,
              0) )
       {
-        v30 = dword_AA1088++; /*0x54607a*/
-        *((unsigned int *)dword_AA107C + v30) = v74; /*0x546089*/
+        v30 = g_X99Vec_AA1078.Count++; /*0x54607a*/
+        *((unsigned int *)g_X99Vec_AA1078.Items + v30) = v74; /*0x546089*/
       }
       v31 = v73; /*0x54608c*/
     }
@@ -2422,13 +2423,13 @@ unsigned char * sub_543E50()
 namespace gamemd {
 int sub_543E70()
 {
-  dword_AA107C = 0; /*0x543e77*/
-  dword_AA1080 = 0; /*0x543e7c*/
-  byte_AA1084 = 1; /*0x543e81*/
-  byte_AA1085 = 0; /*0x543e88*/
-  dword_AA1078 = (int)&g_ptr_7E3238; /*0x543e8d*/
-  dword_AA108C = 10; /*0x543e97*/
-  dword_AA1088 = 0; /*0x543ea1*/
+  g_X99Vec_AA1078.Items = 0; /*0x543e77*/
+  g_X99Vec_AA1078.Capacity = 0; /*0x543e7c*/
+  g_X99Vec_AA1078.IsInitialized = 1; /*0x543e81*/
+  g_X99Vec_AA1078.IsAllocated = 0; /*0x543e88*/
+  g_X99Vec_AA1078.ptr_0 = (int)&g_ptr_7E3238; /*0x543e8d*/
+  g_X99Vec_AA1078.CapacityIncrement = 10; /*0x543e97*/
+  g_X99Vec_AA1078.Count = 0; /*0x543ea1*/
   return atexit(sub_543EB0); /*0x543eac*/
 }
 } // namespace gamemd
@@ -2439,18 +2440,18 @@ void sub_543EB0()
 {
   if ( (byte_AA0E2C & 1) == 0 ) /*0x543eba*/
   {
-    dword_AA1078 = (int)&g_ptr_7E8500; /*0x543ebe*/
+    g_X99Vec_AA1078.ptr_0 = (int)&g_ptr_7E8500; /*0x543ebe*/
     byte_AA0E2C |= 1u; /*0x543ed1*/
-    if ( dword_AA107C ) /*0x543ed7*/
+    if ( g_X99Vec_AA1078.Items ) /*0x543ed7*/
     {
-      if ( byte_AA1085 ) /*0x543ee1*/
+      if ( g_X99Vec_AA1078.IsAllocated ) /*0x543ee1*/
       {
-        operator delete((void *)(dword_AA107C)); /*0x543ee4*/
-        dword_AA107C = 0; /*0x543eec*/
+        operator delete((void *)(g_X99Vec_AA1078.Items)); /*0x543ee4*/
+        g_X99Vec_AA1078.Items = 0; /*0x543eec*/
       }
     }
-    byte_AA1085 = 0; /*0x543ef6*/
-    dword_AA1080 = 0; /*0x543efd*/
+    g_X99Vec_AA1078.IsAllocated = 0; /*0x543ef6*/
+    g_X99Vec_AA1078.Capacity = 0; /*0x543efd*/
   }
 }
 } // namespace gamemd
@@ -2520,9 +2521,9 @@ int MIXFile_AccumulateIndex(int a1)
   if ( a1 != 0xFFFF ) /*0x544e38*/
   {
     int v2 = 0; // esi /*0x544e44*/
-    if ( dword_AA1088 > 0 ) /*0x544e49*/
+    if ( g_X99Vec_AA1078.Count > 0 ) /*0x544e49*/
     {
-      unsigned int *v3 = dword_AA107C; // edi /*0x544e4b*/
+      unsigned int *v3 = g_X99Vec_AA1078.Items; // edi /*0x544e4b*/
       do /*0x544e62*/
       {
         unsigned int *v4; // edx
@@ -2533,7 +2534,7 @@ int MIXFile_AccumulateIndex(int a1)
         result += v4[1]; /*0x544e5d*/
         ++v2; /*0x544e5f*/
       }
-      while ( v2 < dword_AA1088 ); /*0x544e62*/
+      while ( v2 < g_X99Vec_AA1078.Count ); /*0x544e62*/
     }
   }
   return result; /*0x544e3a*/
