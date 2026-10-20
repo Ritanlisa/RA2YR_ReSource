@@ -1,5 +1,6 @@
 #include "render/render_ext.hpp"
 
+extern unsigned int g_VisibleSurfaceDescriptor;  // data: 0x87E8A4 (x87 W1 supply, anchors/global_types.json)
 namespace gamemd {
 
 // --- BlitPlainXlatAlpha_ushort ---

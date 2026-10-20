@@ -4,6 +4,8 @@
 #include "object/foot.hpp"  // full FootClass for locomotor member access
 #include "structure/globals_structure.hpp"  // g_CurrentFrame (Frame @ 0xA8ED84)
 #include "core/ida_vtables.h"  // gC_vftable3
+
+extern const IID IID_ILocomotion;  // data: 0x7ed358 (x87 W1 supply; same decl as e4 locomotion TUs)
 extern int g_OverlayTypeConfig;  // data: 0xB077F8 (e4_globals_decls.hpp:1335)
 
 namespace gamemd {

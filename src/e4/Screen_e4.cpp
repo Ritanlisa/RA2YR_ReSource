@@ -20,6 +20,7 @@
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/FileTreeNode_e4.hpp"
 #include "e4/classes/MouseClass_e4.hpp"
+#include "e4/classes/AnimClass_e4.hpp"  // X87 W3 C2036 supply: AnimClass unknown size x2
 
 // 0x52FEC0
 namespace gamemd {  // G42.18 ns repair

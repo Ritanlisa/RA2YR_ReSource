@@ -20,6 +20,9 @@
 #include "e4/classes/CommandClass_e4.hpp"
 #include "e4/classes/OverlayTypeClass_e4.hpp"
 
+// [x87] C3861 declaration supply: call site scope is global (signals@0x72ade0)
+int LoadPaletteSimple(char * p0, int * p1, int * p2);
+
 // 0x4355B0
 namespace gamemd {  // G42.18 ns repair
 unsigned char * Palette::Palette_6BitTo16Bit(char a2, char a3, char a4)

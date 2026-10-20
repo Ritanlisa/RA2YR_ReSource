@@ -37,6 +37,7 @@
 #include "e4/classes/Viewport_e4.hpp"
 #include "e4/classes/MapClass_e4.hpp"
 #include "e4/classes/ScenarioClass_e4.hpp"
+#include "e4/classes/VoxelSection_e4.hpp"  // X87 W3 C2036 supply: VoxelSection unknown size x1
 
 // 0x7049C0
 namespace gamemd {  // G42.18 ns repair

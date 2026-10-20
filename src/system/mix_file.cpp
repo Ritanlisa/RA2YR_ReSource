@@ -15,6 +15,9 @@
 #include "e4/classes/Debug_e4.hpp"
 #include "system/minimal_carriers.hpp"  // G42.42q minimal carriersnamespace gamemd
 #include "core/hash_table.hpp"
+
+// [x87] C3861 declaration supply: call site scope is global (signals@0x4790b0)
+void SetSoundWarning(int p0);
 // ---- g57c5 W5 vocab (declaration-only) ----
 namespace mix {
 void SetSoundWarning(int p0);  // x4:signals@0x4790b0

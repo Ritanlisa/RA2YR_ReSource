@@ -37,6 +37,9 @@
 #include "misc/rules.hpp"
 #include "entity/particle.hpp"
 #include "e4/classes/VeinholeMonsterClass_e4.hpp"
+
+// [x87] C3861 declaration supply (signals@0x401c00)
+namespace gamemd { int * LoadSampleAudioMixer(int * p0, int p1); }
 // [w18j2] C3861 supply (raw-evidenced)
 namespace gamemd { wchar_t * CSF_GetString(wchar_t *Format, unsigned int *a2, const char *a3, int a4); }  // w18j2 raw 0x00734E60
 namespace gamemd { int VocClass_Play(int a1, int a2, float a3, int a4); }  // w18j2 raw 0x00750920

@@ -27,6 +27,7 @@
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/MessageListClass_e4.hpp"
 #include "e4/classes/LayerClass_e4.hpp"
+#include "e4/classes/AnimClass_e4.hpp"  // X87 W3 C2036 supply: AnimClass unknown size x1
 
 // 0x53AE00
 namespace gamemd {  // G42.18 ns repair

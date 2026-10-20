@@ -18,6 +18,9 @@
 #include "e4/classes/Math_e4.hpp"
 #include "e4/classes/Tactical_e4.hpp"
 
+// [x87] C3861 declaration supply (signals@0x6d20e0)
+namespace gamemd { __int64 ZCoordToScreenY(int p0); }
+
 namespace gamemd
 {
 

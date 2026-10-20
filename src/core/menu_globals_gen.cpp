@@ -3,6 +3,21 @@
 #include "core/reverse_marker.hpp"
 #include "e4/e4_globals_decls.hpp"  // X66 L2-F visibility supply
 #include "core/globals_core.hpp"  // X66 L2-F visibility supply
+#include "e4/classes/Debug_e4.hpp"  // X87 W1/W2 supply: Debug::Log (5 C3861 + 5 C2653)
+#include "e4/classes/Event_e4.hpp"  // X87 W1/W2 supply: Event::Dispatch (4 C3861 + 4 C2653)
+#include "e4/classes/Timer_e4.hpp"  // X87 W1/W2 supply: Timer::GetTicks (7 C3861 + 7 C2653)
+#include "e4/classes/IsRandMap_e4.hpp"  // X87 W1/W2 supply: IsRandMap type (2 C2065)
+#include "e4/classes/Progress_e4.hpp"  // X87 W1/W2 supply: Progress::GetWeighted (1 C3861); GetAverage 2 rows = cap-lift watch
+#include "e4/classes/Network_e4.hpp"  // X87 B6 measured supply: Network C2027 x11 + C3861 x8
+#include "e4/classes/Multiplayer_e4.hpp"  // X87 B6 measured supply: Multiplayer C2027 x2 + C3861 x2
+#include "e4/classes/EventQueue_e4.hpp"  // X87 B6 measured supply: EventQueue C2027 x2 + C3861 x1
+#include "e4/classes/TacticalClass_e4.hpp"  // X87 B6 measured supply: TacticalClass C2027 x1 + C3861 x1
+#include "e4/classes/Dialog_e4.hpp"  // X87 B6 measured supply: Dialog C2027 x1 + C3861 x1
+
+// [x87] C3861 declaration supply (signals.json authority)
+namespace gamemd { void SynchronizeMultiplayerGameStart_Start(); }  // x87:signals@0x58bc20
+namespace gamemd { char * ToWideStringChar(char * p0); }  // x87:signals@0x7350c0
+namespace gamemd { void HandleNetworkPlayerDisconnect(int p0, int p1); }  // x87:signals@0x5da750
 
 // Windows API name conflicts - prefix with gamemd_
 namespace gamemd {

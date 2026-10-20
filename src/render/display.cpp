@@ -4,6 +4,8 @@
 #include <windows.h>
 #include <cstring>
 #include "core/game_loop.hpp"  // G42.39: g_hWnd (HWND form)
+
+#include "core/cellcoord.hpp"  // X87 W1/W3 supply: gamemd::CellCoord + static To_CellObj
 namespace gamemd { extern void * g_ScrollOffsetX; extern void * g_ScrollOffsetY; }  // G42.39 decl supply (extern form)
 
 namespace gamemd
