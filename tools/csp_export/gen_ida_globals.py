@@ -39,7 +39,55 @@ FORCED_TYPE = {
     'byte_8B4204': 'unsigned char[1818624]',  # inline, 111*i i<0x4000
     'byte_A802D5': 'unsigned char[14208]',    # inline, 111*i i<0x80
     'dword_AC4B84': 'unsigned int[24]',       # inline, memset 0x60
+    # X89: blocked-global unification (binary use-kind evidence)
+    # BANK X89: 'dword_89F688': 'unsigned int[8]' -- measured +4 build
+    # (Cell_e4 cap-lift reveals a pre-existing C2440 at Cell_e4.cpp:1282);
+    # keep the scalar until the cap-lift line is repaired.
+    'dword_A83A54': 'unsigned int[134]',      # dword_A83A54[idx], 536B to next named global
+    'byte_A802D4': 'unsigned char[14976]',    # byte_A802D4[111*idx], blob to 0xA83A54
+    'dword_A70204': 'unsigned int[16384]',    # dword_A70204[idx<=0x3FFF]
 }
+
+
+FORCED_ONLY = '--forced-only' in sys.argv
+
+
+def _apply_forced_only():
+    """X89: surgical FORCED_TYPE application (no whole-file regen drift).
+
+    Full regen discovers unrelated labels and rewrites 600+ lines; this mode
+    changes only the declaration/definition lines of FORCED_TYPE names, so a
+    type-source fix can be landed without pulling in latent inventory drift.
+    """
+    h = SRC / 'core' / 'ida_globals.h'
+    c = SRC / 'core' / 'ida_globals.cpp'
+    for path, is_decl in ((h, True), (c, False)):
+        raw = path.read_bytes().decode('utf-8', 'replace')
+        lines = raw.split('\n')
+        hit = set()
+        for i, line in enumerate(lines):
+            cr = line.endswith('\r')
+            body = line[:-1] if cr else line
+            for name, ty in FORCED_TYPE.items():
+                if not re.search(r'\b%s\b' % re.escape(name), body):
+                    continue
+                base, dim = _array_split(ty)
+                if is_decl:
+                    m = re.match(r'^(\s*)extern\s+.*?\b%s\s*(\[[^\]]*\])?\s*;(.*)$' % re.escape(name), body)
+                    if not m:
+                        continue
+                    new = '%sextern %s %s%s;%s' % (m.group(1), base, name, dim, m.group(3))
+                else:
+                    m = re.match(r'^(\s*).*?\b%s\s*(\[[^\]]*\])?\s*=\s*.*?;(.*)$' % re.escape(name), body)
+                    if not m:
+                        continue
+                    new = '%s%s %s%s = %s;%s' % (m.group(1), base, name, dim, '{0}' if dim else '0', m.group(3))
+                if new != body:
+                    lines[i] = new + ('\r' if cr else '')
+                hit.add(name)
+        missing = set(FORCED_TYPE) - hit
+        path.write_bytes('\n'.join(lines).encode('utf-8'))
+        print('forced-only applied:', path, '(%d names; absent=%s)' % (len(hit), sorted(missing)))
 
 
 def _array_split(ty):
@@ -57,6 +105,11 @@ TYPE = {'dword': 'unsigned int', 'word': 'unsigned short',
         # G42.21: asc_ string labels (e4_globals G41.47 uses unsigned int)
         # and flt_ float labels were outside LABEL/TYPE -> 35 missing externs
         'asc': 'unsigned int', 'flt': 'float'}
+
+
+if FORCED_ONLY:
+    _apply_forced_only()
+    raise SystemExit(0)
 
 
 def gtype(name):

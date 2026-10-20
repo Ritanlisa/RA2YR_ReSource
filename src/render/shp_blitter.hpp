@@ -9,8 +9,12 @@
 namespace gamemd
 {
 
+// X89: elaborated fwd for the Z-buffer descriptor pointee (a `Stream`
+// variable exists in legacy universes; `struct` disambiguates the type)
+struct Stream;
+
 // External globals used by the blitter (defined by IDA analysis)
-extern void* g_ZBufferDescriptor;  // data: 0x887644
+extern struct Stream *g_ZBufferDescriptor;  // data: 0x887644 (binary: Stream*)
 extern void* g_VisibleSurfaceDescriptor;  // data: 0x87e8a4
 
 // Forward declares

@@ -175,6 +175,7 @@
 #include <cstdint>
 #include "e4/e4_abs_decls.hpp"
 #include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/Stream_e4.hpp"  // X89: E1 global pointee
 #include "e4/classes/Buffer_e4.hpp"  // G57a1 promoted flat carrier (utility_ext twin suppressed in e4 TUs)
 #include "e4/classes/ComPtr_e4.hpp"  // G57a1 promoted flat carrier (utility_ext twin suppressed in e4 TUs)
 #include "e4/classes/Random_e4.hpp"  // G57a1 promoted flat carrier (utility_ext twin suppressed in e4 TUs)
@@ -2070,7 +2071,7 @@ extern int g_WOL_UserList;  // data: 0xB778D8
 extern int g_WOLReturnCode;  // data: 0x825C84
 extern int g_WTFMode;  // data: 0xA8E9A0
 extern int g_WWMouseClass_Instance;  // data: 0x887640
-extern int g_ZBufferDescriptor;  // data: 0x887644 (X88 banked: IDA Stream* but csp_canon/shp_blitter/gap2 declare int/void*; uniform retype needs generator lane)
+extern struct gamemd::Stream *g_ZBufferDescriptor;  // data: 0x887644 (binary: mov edx,[887644]; [edx+1Ch] => Stream*)
 extern int Game_bAllowVRAMSidebar;  // data: 0xA8EB96
 extern int Game_bVideoBackBuffer;  // data: 0x840A6C
 extern int Game_PlayerCount;  // data: 0xA8DA84

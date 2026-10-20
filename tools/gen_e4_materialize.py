@@ -696,6 +696,67 @@ def preserved_names(preserved):
 
 
 # ---------------------------------------------------------------- apply phase
+# X89: E1 global-unification overrides (generator source of truth).
+# Binary evidence: g_ZBufferDescriptor is a pointer to gamemd::Stream
+# (mov edx,[887644]; [edx+1Ch]); the legacy "int" declaration was a
+# type-inference placeholder.  The elaborated `struct gamemd::Stream *`
+# form is required because the legacy universes also declare a variable
+# named `Stream` (CRT FILE* at 0xAA0468).
+E1_GLOBAL_OVERRIDES = {
+    'g_ZBufferDescriptor': 'struct gamemd::Stream *',  # 0x887644
+}
+E1_EXTRA_INCLUDES = {
+    'e4/classes/Stream_e4.hpp': 'struct gamemd::Stream',  # complete pointee
+}
+
+
+def apply_e1_global_overrides(gh):
+    """Apply E1_GLOBAL_OVERRIDES / E1_EXTRA_INCLUDES to e4_globals.hpp.
+
+    Idempotent; preserves the existing comment tail and line endings.
+    """
+    if not gh.exists():
+        return 0
+    raw = gh.read_bytes().decode('utf-8', 'replace')
+    lines = raw.split('\n')
+    changed = 0
+    # includes: insert after the first `_tree_full_e4.hpp` include
+    have = {inc for inc in E1_EXTRA_INCLUDES
+            if any(l.strip().startswith('#include "%s"' % inc) for l in lines)}
+    for inc in E1_EXTRA_INCLUDES:
+        if inc in have:
+            continue
+        for i, l in enumerate(lines):
+            if l.strip() == '#include "e4/classes/_tree_full_e4.hpp"':
+                lines.insert(i + 1, '#include "%s"  // X89: E1 global pointee' % inc)
+                changed += 1
+                break
+    # declarations
+    for name, ty in E1_GLOBAL_OVERRIDES.items():
+        for i, l in enumerate(lines):
+            if not re.match(r'^\s*extern\s+.*\b%s\s*;' % re.escape(name), l):
+                continue
+            cr = l.endswith('\r')
+            body = l[:-1] if cr else l
+            m = re.match(r'^(\s*)extern\s+.*?\b%s\s*;\s*(//.*)?$' % re.escape(name), body)
+            if not m:
+                continue
+            tytxt = ty.rstrip()
+            sep = '' if tytxt.endswith('*') else ' '
+            comment = m.group(2) or ''
+            if '0x887644' in comment:
+                comment = '// data: 0x887644 (binary: mov edx,[887644]; [edx+1Ch] => Stream*)'
+            new = '%sextern %s%s%s;  %s' % (m.group(1), tytxt, sep, name, comment)
+            new = new.rstrip()
+            if new != body:
+                lines[i] = new + ('\r' if cr else '')
+                changed += 1
+            break
+    if changed:
+        gh.write_bytes('\n'.join(lines).encode('utf-8'))
+    return changed
+
+
 def main_apply(bodyless, fns, src_classes, refresh=False, preserved=None):
     import time
     t0 = time.time()
@@ -974,6 +1035,7 @@ def main_apply(bodyless, fns, src_classes, refresh=False, preserved=None):
         "// E1: pseudo-body referenced globals missing from src (auto-generated)\n"
         "#pragma once\n#include <cstdint>\n\n" + "\n".join(missing_globals) + "\n",
         encoding="utf-8")
+    apply_e1_global_overrides(gh)
     print(f"E1 globals: {len(globals_used)} referenced, {len(missing_globals)} declared missing")
 
     # ---- E2: minimal class declarations
@@ -1169,9 +1231,14 @@ def main_apply(bodyless, fns, src_classes, refresh=False, preserved=None):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--phase", default="inventory",
-                    choices=["inventory", "apply", "refresh"])
+                    choices=["inventory", "apply", "refresh", "e1-globals"])
     ap.add_argument("--limit", type=int, default=0, help="只处理前 N 个（测试用）")
     args = ap.parse_args()
+
+    if args.phase == "e1-globals":
+        n = apply_e1_global_overrides(E4 / "e4_globals.hpp")
+        print("E1 global overrides applied: %d line(s)" % n)
+        return
 
     print("scanning src addresses ...")
     src_addrs, nfiles = scan_src_addrs()

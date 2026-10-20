@@ -20,6 +20,56 @@ OUT.mkdir(parents=True, exist_ok=True)
 def J(p):
     return json.loads(Path(p).read_text(encoding='utf-8'))
 
+
+# X89: single-symbol type overrides for the canonical global universe.
+# Address-keyed so the JSON remains the mechanical input; the value is
+# emitted verbatim (including `::` qualification where the type lives at
+# global scope, outside `namespace gamemd`).
+GLOBAL_OVERRIDES = {
+    '0x887644': ('::Stream *', 'class Stream;'),  # g_ZBufferDescriptor -> Stream*
+}
+
+
+def _apply_globals_overrides_only():
+    """Surgical override mode: update only the GLOBAL_OVERRIDES lines in
+    the existing globals.hpp (full regeneration of csp_canon has unrelated
+    drift and is not used for this one-symbol type fix)."""
+    p = OUT / 'globals.hpp'
+    raw = p.read_bytes().decode('utf-8', 'replace')
+    lines = raw.split('\n')
+    changed = 0
+
+    def _body(line):
+        return line[:-1] if line.endswith('\r') else line
+
+    for addr, (ty, fwd) in GLOBAL_OVERRIDES.items():
+        if fwd and not any(_body(l).strip() == fwd for l in lines):
+            for i, l in enumerate(lines):
+                if _body(l).strip() == '#pragma once':
+                    cr = '\r' if l.endswith('\r') else ''
+                    lines.insert(i + 1, fwd + cr)
+                    changed += 1
+                    break
+        pat = re.compile(r'^(\s*)extern\s+.*?\b([A-Za-z_]\w*)\s*;\s*(//\s*0x%s\b.*?)(\r?)$' % addr[2:], re.I)
+        for i, l in enumerate(lines):
+            m = pat.match(l)
+            if not m:
+                continue
+            tytxt = ty.rstrip()
+            sep = '' if tytxt.endswith('*') else ' '
+            new = '%sextern %s%s%s;  %s%s' % (m.group(1), tytxt, sep, m.group(2), m.group(3), m.group(4))
+            if new != l:
+                lines[i] = new
+                changed += 1
+            break
+    p.write_bytes('\n'.join(lines).encode('utf-8'))
+    print('canon globals overrides applied: %d line(s)' % changed)
+
+
+if '--globals-override-only' in sys.argv:
+    _apply_globals_overrides_only()
+    raise SystemExit(0)
+
 print('loading CSP layer...', flush=True)
 db = J(ROOT / 'anchors/class_db.json')['classes']
 layouts = J(ROOT / 'tools/class_layouts.json')
@@ -954,7 +1004,15 @@ fl.append('} // namespace gamemd')
 print('free functions emitted:', len(free_funcs))
 
 gl = ['// GENERATED canonical global declarations (mechanical, from global_types.json).',
-      '#pragma once', '', 'namespace gamemd {', '']
+      '#pragma once', '']
+_fwd_done = set()
+for _a, (_ty, _fwd) in sorted(GLOBAL_OVERRIDES.items()):
+    if _fwd and _fwd not in _fwd_done:
+        gl.append(_fwd)
+        _fwd_done.add(_fwd)
+gl.append('')
+gl.append('namespace gamemd {')
+gl.append('')
 n_g = 0
 for a, g in sorted(globals_.items(), key=lambda kv: int(kv[0], 16)):
     try:
@@ -962,7 +1020,8 @@ for a, g in sorted(globals_.items(), key=lambda kv: int(kv[0], 16)):
     except ValueError:
         continue
     n = ident(g.get('name') or '', 'g_%X' % ai)
-    t = cpptype(g.get('type'), 'unsigned int')
+    ov = GLOBAL_OVERRIDES.get('0x%X' % ai) or GLOBAL_OVERRIDES.get('0x%08X' % ai)
+    t = ov[0] if ov else cpptype(g.get('type'), 'unsigned int')
     gl.append('extern %s %s;  // 0x%X conf=%s' % (t, n, ai, g.get('confidence', '')))
     n_g += 1
 gl.append('')

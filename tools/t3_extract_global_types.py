@@ -141,6 +141,18 @@ def main():
                 "confidence": e["confidence"]
             }
 
+    # X89: binary-verified overrides that the header scan cannot see
+    # (g_ZBufferDescriptor's old globals_render declaration is gone; the
+    # binary `mov edx,[887644]; [edx+1Ch]` proves a Stream pointer).
+    FORCED_ENTRIES = {
+        '0x887644': {
+            'type': 'Stream *',
+            'name': 'g_ZBufferDescriptor',
+            'confidence': 'ANCHORED',
+        },
+    }
+    all_entries.update(FORCED_ENTRIES)
+
     sorted_entries = dict(sorted(all_entries.items(), key=lambda x: int(x[0], 16)))
 
     os.makedirs(OUT.parent, exist_ok=True)

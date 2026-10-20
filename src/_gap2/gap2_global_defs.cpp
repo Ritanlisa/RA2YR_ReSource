@@ -14,6 +14,7 @@
 #include "_gap2/gap2_global_decls.hpp"
 #include "misc/super_weapon.hpp"
 #include "e4/e4_globals_decls.hpp"
+namespace gamemd { struct Stream; }  // X89: LNK override pointee
 #include "e4/classes/AudioQueue_e4.hpp"
 #include "e4/classes/Audio_e4.hpp"
 #include "e4/classes/LoadScreen_e4.hpp"
@@ -121,7 +122,7 @@ namespace gamemd { void * g_HouseTypeArray = nullptr; }
 // LNK2019 data global
 extern "C" int BlitterCopySimpleSHP() { return 0; }  // LNK2019 cdecl
 // LNK2019 data global
-int g_ZBufferDescriptor = 0;  // data: 0x887644 (extern int per e4_globals_decls)
+struct gamemd::Stream *g_ZBufferDescriptor = nullptr; // data: 0x887644 (binary: Stream*)
 // 0x70E240
 namespace gamemd { 
 int IsNonNullPtr(int* ptr) {

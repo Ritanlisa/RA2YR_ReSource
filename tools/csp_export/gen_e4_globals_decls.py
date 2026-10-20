@@ -46,12 +46,20 @@ out = [
 # declaration is legal in every consumer (both universes) and makes the
 # qualified pointer type resolvable; a later full definition in the same
 # namespace makes it redundant-but-legal.
+# X89: authoritative class/struct keyword for fwd-declared pointee types.
+# `Stream` is defined as `struct Stream` in e4/classes/Stream_e4.hpp but also
+# exists as a variable name (CRT FILE* at 0xAA0468) in legacy universes; the
+# elaborated `struct gamemd::Stream *` declaration needs the matching keyword.
+FWD_KIND = {'Stream': 'struct'}
+
 QUALIFIED = re.compile(r'\bgamemd::(\w+)')
 _KW_CACHE = {}
 
 
 def _corpus_kw(ty):
     """class|struct keyword for `ty`, decided from the corpus sources."""
+    if ty in FWD_KIND:
+        return FWD_KIND[ty]
     if ty in _KW_CACHE:
         return _KW_CACHE[ty]
     cc = cs = 0

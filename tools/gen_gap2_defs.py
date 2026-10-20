@@ -1241,6 +1241,58 @@ def main():
         print(f"  {path}  ({n} defs)")
 
 
+# X89: LNK data-global type overrides (binary use-kind authority).
+# g_ZBufferDescriptor is a pointer to gamemd::Stream (mov edx,[887644];
+# [edx+1Ch]); the LNK signature only carried the placeholder `int`.
+GLOBAL_TYPE_OVERRIDES = {
+    'g_ZBufferDescriptor': ('struct gamemd::Stream *', 'nullptr',
+                            'namespace gamemd { struct Stream; }'),
+}
+GLOBAL_TYPE_COMMENTS = {
+    'g_ZBufferDescriptor': ' // data: 0x887644 (binary: Stream*)',
+}
+
+
+def apply_global_type_overrides():
+    """X89: surgical application of GLOBAL_TYPE_OVERRIDES to the current
+    gap2_global_defs.cpp (no full bulk regen).  Idempotent."""
+    path = SRC / "_gap2" / "gap2_global_defs.cpp"
+    if not path.exists():
+        raise SystemExit("missing %s" % path)
+    raw = path.read_bytes().decode("utf-8", "replace")
+    lines = raw.split("\n")
+    changed = 0
+    for name, (ty, init, fwd) in GLOBAL_TYPE_OVERRIDES.items():
+        # ensure the fwd declaration precedes the definition
+        if not any(l.strip().startswith(fwd) for l in lines):
+            for i, l in enumerate(lines):
+                if l.startswith('#include "e4/e4_globals_decls.hpp"'):
+                    lines.insert(i + 1, fwd + "  // X89: LNK override pointee")
+                    changed += 1
+                    break
+        for i, l in enumerate(lines):
+            if not re.search(r'\b%s\b' % re.escape(name), l):
+                continue
+            if not re.match(r'^\s*[A-Za-z_].*\b%s\s*=' % re.escape(name), l):
+                continue
+            cr = l.endswith("\r")
+            body = l[:-1] if cr else l
+            m = re.match(r'^(\s*).*?\b%s\s*=\s*.*?;(\s*//.*)?$' % re.escape(name), body)
+            if not m:
+                continue
+            tytxt = ty.rstrip()
+            sep = '' if tytxt.endswith('*') else ' '
+            comment = GLOBAL_TYPE_COMMENTS.get(name) or (m.group(2) or "")
+            new = "%s%s%s%s = %s;%s" % (m.group(1), tytxt, sep, name, init, comment)
+            new = new.rstrip()
+            if new != body:
+                lines[i] = new + ("\r" if cr else "")
+                changed += 1
+            break
+    path.write_bytes("\n".join(lines).encode("utf-8"))
+    print("gap2 global overrides applied: %d line(s)" % changed)
+
+
 def handle_lnk_data(dem, dec, global_defs, forward_decls):
     """Define storage for a data-global LNK symbol. Returns True if defined.
 
@@ -1270,21 +1322,29 @@ def handle_lnk_data(dem, dec, global_defs, forward_decls):
         kw = mkw.group(1)
     typ_clean = re.sub(r"\b(class|struct)\b", "", typ).strip()
     typ_clean = re.sub(r"\s+", " ", typ_clean)
+    ov = GLOBAL_TYPE_OVERRIDES.get(var)
+    ov_init = None
+    if ov:
+        typ_clean, ov_init, ov_fwd = ov
+        forward_decls.add(ov_fwd)
     # forward-declare any qualified class type in the (pointer) type
     base = typ_clean.replace("*", "").replace("const", "").strip()
-    if base and re.search(r"[A-Za-z_]\w*::", base):
+    if not ov and base and re.search(r"[A-Za-z_]\w*::", base):
         bparts = _split_top(base, "::")
         cname = bparts[-1].strip()
         cns = [x.strip() for x in bparts[:-1]]
         if cname and IDENT.match(cname):
             forward_decls.add(_ns_wrap(cns, f"{kw} {cname};"))
-    init = "nullptr" if typ_clean.endswith("*") else "{}"
+    init = ov_init or ("nullptr" if typ_clean.endswith("*") else "{}")
     body = _ns_wrap(ns, f"{typ_clean} {var} = {init};")
     global_defs.append("// LNK2019 data global\n" + body)
     return True
 
 
 if __name__ == "__main__":
+    if "--override-only" in sys.argv:
+        apply_global_type_overrides()
+        sys.exit(0)
     if "--index-test" in sys.argv:
         idx = build_class_index()
         print("classes indexed:", len(idx))

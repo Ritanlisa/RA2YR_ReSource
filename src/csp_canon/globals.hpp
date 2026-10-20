@@ -1,5 +1,6 @@
 // GENERATED canonical global declarations (mechanical, from global_types.json).
 #pragma once
+class Stream;
 
 namespace gamemd {
 
@@ -795,7 +796,7 @@ extern void* g_WeaponTypeConfig;  // 0x88756C conf=ANCHORED
 extern unsigned int g_WeaponTypePool;  // 0x887578 conf=ANCHORED
 extern unsigned int g_NetworkInterface;  // 0x887628 conf=ANCHORED
 extern void* g_WWMouseClass_Instance;  // 0x887640 conf=ANCHORED
-extern unsigned int g_ZBufferDescriptor;  // 0x887644 conf=ANCHORED
+extern ::Stream *g_ZBufferDescriptor;  // 0x887644 conf=ANCHORED
 extern unsigned short g_TypeClass_DefaultString;  // 0x887734 conf=ANCHORED
 extern unsigned int g_CellClassManager;  // 0x887888 conf=ANCHORED
 extern unsigned int g_AircraftStatusFlag;  // 0x889E68 conf=ANCHORED
