@@ -1,13 +1,209 @@
 {
- "ObjectClass": [
-  "int RenderAlphaShapes();  // 0x00421350",
-  "double ComputeMovementWeight(int *a2, unsigned int *a3, char a4, int a5, int a6);  // 0x00429830",
-  "int RenderTooltipBorder();  // 0x0042E1C0",
-  "char RenderBuildingTag(int a2, int a3, int a4, int a5, int a6);  // 0x00430250",
-  "void PlacePlayerBeacon(int a2, int a3, int a4, int a5, int a6);  // 0x00430BA0",
-  "void* CreateDominatorDestructionEffects();  // 0x0043C0D0"
+ "TechnoClass": [
+  "int Map_Save_681200(void* a2);  // 0x00681200",
+  "int Map_Save_681240(void* a2);  // 0x00681240",
+  "int Map_Save_681280(void* a2);  // 0x00681280",
+  "int Map_Save_6812C0(void * aP1);  // 0x006812C0",
+  "int sub_724510();  // 0x00724510",
+  "bool Render_Render_759850(int a2, int a3);  // 0x00759850",
+  "bool Render_Render_759880(int a2, int a3, int a4);  // 0x00759880",
+  "int Render_Load_759EA0();  // 0x00759EA0",
+  "int Team_Start_76E430(int a2, void* aP2);  // 0x0076E430",
+  "bool Team_Start_76E8B0(int a2, int a3);  // 0x0076E8B0"
  ],
- "WeaponTypeClass": [
-  "int COMStub_432C10(int a2);  // 0x00432C10"
+ "TClassFactory_SideClass": [
+  "void* WinMain_Helper_6BFD40();  // 0x006BFD40"
+ ],
+ "TClassFactory_TiberiumClass": [
+  "void* WinMain_Helper_6BFEC0();  // 0x006BFEC0"
+ ],
+ "TClassFactory_CampaignClass": [
+  "void* WinMain_Helper_6C01C0();  // 0x006C01C0"
+ ],
+ "TClassFactory_BuildingLightClass": [
+  "void* WinMain_Helper_6C0340();  // 0x006C0340"
+ ],
+ "TClassFactory_WaypointPathClass": [
+  "void* WinMain_Helper_6C04C0();  // 0x006C04C0"
+ ],
+ "TClassFactory_TemporalClass": [
+  "void* WinMain_Helper_6C0640();  // 0x006C0640"
+ ],
+ "TClassFactory_AirstrikeClass": [
+  "void* WinMain_Helper_6C07C0();  // 0x006C07C0"
+ ],
+ "TClassFactory_SpawnManagerClass": [
+  "void* WinMain_Helper_6C0940();  // 0x006C0940"
+ ],
+ "TClassFactory_CaptureManagerClass": [
+  "void* WinMain_Helper_6C0C40();  // 0x006C0C40"
+ ],
+ "TClassFactory_DiskLaserClass": [
+  "void* WinMain_Helper_6C0DC0();  // 0x006C0DC0"
+ ],
+ "TClassFactory_ParasiteClass": [
+  "void* WinMain_Helper_6C0F40();  // 0x006C0F40"
+ ],
+ "TClassFactory_BombClass": [
+  "void* WinMain_Helper_6C10C0();  // 0x006C10C0"
+ ],
+ "TClassFactory_RadSiteClass": [
+  "void* WinMain_Helper_6C1240();  // 0x006C1240"
+ ],
+ "TClassFactory_TEventClass": [
+  "void* WinMain_Helper_6C13C0();  // 0x006C13C0"
+ ],
+ "TClassFactory_VoxelAnimTypeClass": [
+  "void* WinMain_Helper_6C1540();  // 0x006C1540"
+ ],
+ "TClassFactory_VoxelAnimClass": [
+  "void* WinMain_Helper_6C16C0();  // 0x006C16C0"
+ ],
+ "TClassFactory_TActionClass": [
+  "void* WinMain_Helper_6C1840();  // 0x006C1840"
+ ],
+ "TClassFactory_TriggerClass": [
+  "void* WinMain_Helper_6C19C0();  // 0x006C19C0"
+ ],
+ "TClassFactory_TriggerTypeClass": [
+  "void* WinMain_Helper_6C1B40();  // 0x006C1B40"
+ ],
+ "TClassFactory_ScriptClass": [
+  "void* WinMain_Helper_6C1CC0();  // 0x006C1CC0"
+ ],
+ "TClassFactory_ScriptTypeClass": [
+  "void* WinMain_Helper_6C1E40();  // 0x006C1E40"
+ ],
+ "TClassFactory_TagClass": [
+  "void* WinMain_Helper_6C1FC0();  // 0x006C1FC0"
+ ],
+ "TClassFactory_TagTypeClass": [
+  "void* WinMain_Helper_6C2140();  // 0x006C2140"
+ ],
+ "TClassFactory_TeamClass": [
+  "void* WinMain_Helper_6C22C0();  // 0x006C22C0"
+ ],
+ "TClassFactory_TeamTypeClass": [
+  "void* WinMain_Helper_6C2440();  // 0x006C2440"
+ ],
+ "TClassFactory_TaskForceClass": [
+  "void* WinMain_Helper_6C25C0();  // 0x006C25C0"
+ ],
+ "TClassFactory_UnitTypeClass": [
+  "void* WinMain_Helper_6C2740();  // 0x006C2740"
+ ],
+ "TClassFactory_BuildingTypeClass": [
+  "void* WinMain_Helper_6C28C0();  // 0x006C28C0"
+ ],
+ "TClassFactory_AircraftTypeClass": [
+  "void* WinMain_Helper_6C2A40();  // 0x006C2A40"
+ ],
+ "TClassFactory_InfantryTypeClass": [
+  "void* WinMain_Helper_6C2BC0();  // 0x006C2BC0"
+ ],
+ "TClassFactory_BulletTypeClass": [
+  "void* WinMain_Helper_6C2D40();  // 0x006C2D40"
+ ],
+ "TClassFactory_IsometricTileTypeClass": [
+  "void* WinMain_Helper_6C2EC0();  // 0x006C2EC0"
+ ],
+ "TClassFactory_OverlayTypeClass": [
+  "void* WinMain_Helper_6C3040();  // 0x006C3040"
+ ],
+ "TClassFactory_SmudgeTypeClass": [
+  "void* WinMain_Helper_6C31C0();  // 0x006C31C0"
+ ],
+ "TClassFactory_UnitClass": [
+  "void* WinMain_Helper_6C3340();  // 0x006C3340"
+ ],
+ "TClassFactory_BuildingClass": [
+  "void* WinMain_Helper_6C34C0();  // 0x006C34C0"
+ ],
+ "TClassFactory_AircraftClass": [
+  "void* WinMain_Helper_6C3640();  // 0x006C3640"
+ ],
+ "TClassFactory_InfantryClass": [
+  "void* WinMain_Helper_6C37C0();  // 0x006C37C0"
+ ],
+ "TClassFactory_AnimClass": [
+  "void* WinMain_Helper_6C3940();  // 0x006C3940"
+ ],
+ "TClassFactory_AnimTypeClass": [
+  "void* WinMain_Helper_6C3AC0();  // 0x006C3AC0"
+ ],
+ "TClassFactory_HouseTypeClass": [
+  "void* WinMain_Helper_6C3C40();  // 0x006C3C40"
+ ],
+ "TClassFactory_HouseClass": [
+  "void* WinMain_Helper_6C3DC0();  // 0x006C3DC0"
+ ],
+ "TClassFactory_DriveLocomotionClass": [
+  "void* WinMain_Helper_6C3F40();  // 0x006C3F40"
+ ],
+ "TClassFactory_JumpjetLocomotionClass": [
+  "void* WinMain_Helper_6C40C0();  // 0x006C40C0"
+ ],
+ "TClassFactory_HoverLocomotionClass": [
+  "void* WinMain_Helper_6C4240();  // 0x006C4240"
+ ],
+ "TClassFactory_RocketLocomotionClass": [
+  "void* WinMain_Helper_6C43C0();  // 0x006C43C0"
+ ],
+ "TClassFactory_TunnelLocomotionClass": [
+  "void* WinMain_Helper_6C4540();  // 0x006C4540"
+ ],
+ "TClassFactory_WalkLocomotionClass": [
+  "void* WinMain_Helper_6C46C0();  // 0x006C46C0"
+ ],
+ "TClassFactory_DropPodLocomotionClass": [
+  "void* WinMain_Helper_6C4840();  // 0x006C4840"
+ ],
+ "TClassFactory_FlyLocomotionClass": [
+  "void* WinMain_Helper_6C49C0();  // 0x006C49C0"
+ ],
+ "TClassFactory_TeleportLocomotionClass": [
+  "void* WinMain_Helper_6C4B40();  // 0x006C4B40"
+ ],
+ "TClassFactory_ShipLocomotionClass": [
+  "void* WinMain_Helper_6C4E40();  // 0x006C4E40"
+ ],
+ "TClassFactory_BulletClass": [
+  "void* WinMain_Helper_6C4FC0();  // 0x006C4FC0"
+ ],
+ "TClassFactory_FactoryClass": [
+  "void* WinMain_Helper_6C5140();  // 0x006C5140"
+ ],
+ "TClassFactory_WarheadTypeClass": [
+  "void* WinMain_Helper_6C52C0();  // 0x006C52C0"
+ ],
+ "TClassFactory_WeaponTypeClass": [
+  "void* WinMain_Helper_6C5440();  // 0x006C5440"
+ ],
+ "TClassFactory_ParticleClass": [
+  "void* WinMain_Helper_6C55C0();  // 0x006C55C0"
+ ],
+ "TClassFactory_ParticleTypeClass": [
+  "void* WinMain_Helper_6C5740();  // 0x006C5740"
+ ],
+ "TClassFactory_ParticleSystemClass": [
+  "void* WinMain_Helper_6C58C0();  // 0x006C58C0"
+ ],
+ "TClassFactory_ParticleSystemTypeClass": [
+  "void* WinMain_Helper_6C5A40();  // 0x006C5A40"
+ ],
+ "TClassFactory_AITriggerTypeClass": [
+  "void* WinMain_Helper_6C5BC0();  // 0x006C5BC0"
+ ],
+ "TClassFactory_NeuronClass": [
+  "void* WinMain_Helper_6C5D40();  // 0x006C5D40"
+ ],
+ "TClassFactory_FoggedObjectClass": [
+  "void* WinMain_Helper_6C5EC0();  // 0x006C5EC0"
+ ],
+ "TClassFactory_AlphaShapeClass": [
+  "void* WinMain_Helper_6C6040();  // 0x006C6040"
+ ],
+ "INIClass": [
+  "int PlaceScenarioInfantry();  // 0x0051FB00"
  ]
 }

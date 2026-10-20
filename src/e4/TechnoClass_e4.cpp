@@ -2236,3 +2236,176 @@ void TechnoClass::GetField(void *a1, void *a2)
   byte_B0FE58 = 0; /*0x731cf0*/
 }
 } // namespace gamemd
+
+// --- x93 csp-relocation defs (BEGIN) ---
+// X93: CSP inferred_real_class ownership (tools/gen_gap2_defs.py).
+namespace gamemd {
+// 0x00681200
+int TechnoClass::Map_Save_681200(void* a2) {
+  int result; // eax
+
+  this->turretRecoil[0] = *a2; /*0x681206*/
+  result = a2[1]; /*0x68120c*/
+  this->turretRecoil[1] = result; /*0x68120f*/
+  return result; /*0x681215*/
+}
+// 0x00681240
+int TechnoClass::Map_Save_681240(void* a2) {
+  int result; // eax
+
+  this->turretRecoil[2] = *a2; /*0x681246*/
+  result = a2[1]; /*0x68124c*/
+  this->turretRecoil[3] = result; /*0x68124f*/
+  return result; /*0x681255*/
+}
+// 0x00681280
+int TechnoClass::Map_Save_681280(void* a2) {
+  int result; // eax
+
+  this->turretRecoil[4] = *a2; /*0x681286*/
+  result = a2[1]; /*0x68128c*/
+  this->turretRecoil[5] = result; /*0x68128f*/
+  return result; /*0x681295*/
+}
+// 0x006812C0
+int TechnoClass::Map_Save_6812C0(void * aP1) {
+  this->turretRecoil[6] = aP1; /*0x6812c4*/
+  return aP1; /*0x6812ca*/
+}
+} // namespace gamemd
+// 0x00724510
+int TechnoClass::sub_724510() {
+  return this->cloakProgress[1]; /*0x724516*/
+}
+} // namespace gamemd
+// 0x00759850
+bool TechnoClass::Render_Render_759850(int a2, int a3) {
+  int v3 = a3; // eax /*0x759850*/
+  if ( a3 < 0 ) /*0x759856*/
+    v3 = -1; /*0x759858*/
+  return Audio_Render_7C3430(this->reloadTimer[1], a2, v3, 1u) == -1; /*0x759873*/
+}
+// 0x00759880
+bool TechnoClass::Render_Render_759880(int a2, int a3, int a4) {
+  signed int v4; // edx
+  signed int v5; // eax
+  int v6; // esi
+
+  v4 = a2; /*0x759880*/
+  if ( a2 < 0 || a2 >= this->threatPosed ) /*0x75988e*/
+    v4 = 0; /*0x759890*/
+  v5 = a3; /*0x759892*/
+  if ( a3 < 0 || a3 >= this->threatPosed ) /*0x7598a1*/
+    v5 = this->threatPosed - 1; /*0x7598a9*/
+  v6 = a4; /*0x7598aa*/
+  if ( a4 < 0 ) /*0x7598b0*/
+    v6 = -1; /*0x7598b2*/
+  return SeekAudioStream(this->reloadTimer[1], v4, v5, v6, 0) == -1; /*0x7598cb*/
+}
+// 0x00759EA0
+int TechnoClass::Render_Load_759EA0() {
+  return this->shouldLoseTarget; /*0x759ea6*/
+}
+// 0x0076E430
+int TechnoClass::Team_Start_76E430(int a2, void* aP2) {
+  int v4; // eax
+  int v5; // ecx
+  int grindingAnimHandle; // ecx
+  void **v8; // [esp+4h] [ebp-8h] BYREF
+  WDTClass *v9; // [esp+8h] [ebp-4h]
+
+  ActivateScreenWDT((int)&v8, a2); /*0x76e449*/
+  if ( !v9 ) /*0x76e454*/
+    goto LABEL_6; /*0x76e454*/
+  v4 = WDTClass::CountCellType(v9, *(unsigned int *)(this->ambientSoundController[4] + 68)); /*0x76e45d*/
+  if ( v4 <= *(unsigned int *)this->isCountedAsOwned_special ) /*0x76e468*/
+  {
+    v5 = this->currentTargetThreatValues[0]; /*0x76e46a*/
+    v8 = &g_var_5878c0; /*0x76e476*/
+    *aP2 = v4 <= v5; /*0x76e481*/
+    ComPtr::Release((ComPtr *)&v8); /*0x76e487*/
+    return 1; /*0x76e495*/
+  }
+  if ( v4 >= this->previousTeam ) /*0x76e49e*/
+  {
+    grindingAnimHandle = this->grindingAnimHandle; /*0x76e4a0*/
+    v8 = &g_var_5878c0; /*0x76e4a6*/
+    *aP2 = v4 >= grindingAnimHandle; /*0x76e4b7*/
+    ComPtr::Release((ComPtr *)&v8); /*0x76e4bd*/
+    return 0; /*0x76e4c2*/
+  }
+  else
+  {
+  LABEL_6:
+    v8 = &g_var_5878c0; /*0x76e4d3*/
+    *aP2 = 0; /*0x76e4db*/
+    ComPtr::Release((ComPtr *)&v8); /*0x76e4de*/
+    return 2; /*0x76e4e3*/
+  }
+}
+// 0x0076E8B0
+bool TechnoClass::Team_Start_76E8B0(int a2, int a3) {
+  int v3; // ebx
+  int v5; // eax
+  int v6; // ebp
+  int v7; // edi
+  int v8; // eax
+  int v9; // ecx
+  int v10; // edi
+  char v11; // al
+  bool v12; // bl
+  DeleteAndZero v14; // [esp-8h] [ebp-28h]
+  unsigned int v15[2]; // [esp+10h] [ebp-10h] BYREF
+  unsigned int v16[2]; // [esp+18h] [ebp-8h] BYREF
+
+  v3 = a2; /*0x76e8b4*/
+  ActivateScreenWDT((int)v16, a2); /*0x76e8cc*/
+  v5 = WDTClass::CountCellType((WDTClass *)v16[1], *(unsigned int *)(this->ambientSoundController[4] + 68)); /*0x76e8dc*/
+  v6 = a3; /*0x76e8e1*/
+  v7 = v5; /*0x76e8e5*/
+  ActivateScreenWDT((int)v15, a3); /*0x76e8f6*/
+  v8 = WDTClass::CountCellType((WDTClass *)v15[1], *(unsigned int *)(this->ambientSoundController[4] + 68)); /*0x76e906*/
+  v9 = v8 - v7; /*0x76e90d*/
+  if ( v8 - v7 < -1 ) /*0x76e912*/
+  {
+    v10 = 1; /*0x76e917*/
+    if ( v9 < -3 || v8 <= this->currentTargetThreatValues[0] ) /*0x76e924*/
+    {
+      (*((unsigned char *)&(a2))) = 1; /*0x76e926*/
+      goto LABEL_12; /*0x76e92b*/
+    }
+    LABEL_11:
+    (*((unsigned char *)&(a2))) = 0; /*0x76e971*/
+      goto LABEL_12; /*0x76e971*/
+  }
+  if ( v9 > 1 ) /*0x76e930*/
+  {
+    v10 = 0; /*0x76e932*/
+    if ( v9 > 3 || v8 >= this->grindingAnimHandle ) /*0x76e93f*/
+    {
+      (*((unsigned char *)&(a2))) = 1; /*0x76e941*/
+      goto LABEL_12; /*0x76e946*/
+    }
+    goto LABEL_11; /*0x76e93f*/
+  }
+  v10 = 2; /*0x76e950*/
+  (*((unsigned char *)&(a2))) = 0; /*0x76e955*/
+  if ( this->Team_Start_76E430(v6, (bool *)&a2) != 1 ) /*0x76e962*/
+    goto LABEL_11; /*0x76e962*/
+  v11 = a2; /*0x76e964*/
+  (*((unsigned char *)&(a2))) = 1; /*0x76e968*/
+  if ( !v11 ) /*0x76e96f*/
+    goto LABEL_11; /*0x76e96f*/
+  LABEL_12:
+  ScoreScreen::RemoveItem(&this->spawnStatus, 1, v10, a2, 1, 0); /*0x76e976*/
+    v14.q004 = v6; /*0x76e98a*/
+    *(unsigned int *)v14.owningHouseIndex = v3; /*0x76e98b*/
+    v12 = WDTGame::ReviewHistory((int)this, v14) == 0; /*0x76e99e*/
+    v15[0] = &g_var_5878c0; /*0x76e9a1*/
+    ComPtr::Release((ComPtr *)v15); /*0x76e9a5*/
+    v16[0] = &g_var_5878c0; /*0x76e9ae*/
+    ComPtr::Release((ComPtr *)v16); /*0x76e9b2*/
+    return v12; /*0x76e9b7*/
+}
+} // namespace gamemd
+// --- x93 csp-relocation defs (END) ---

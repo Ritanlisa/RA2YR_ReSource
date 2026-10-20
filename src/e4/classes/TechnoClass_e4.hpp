@@ -351,6 +351,36 @@ struct TechnoClass {
     int sub_724A30(int * a2);
     static int CalcFacingFromMatrix(float *p_this);  // x4:ida@0x5af410
     static int ClearArrays();  // x4:empty@0x5f99e0
+    // --- x93 csp-relocation decls (BEGIN) ---
+    int Map_Save_681200(void* a2);  // 0x00681200
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    int Map_Save_681240(void* a2);  // 0x00681240
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    int Map_Save_681280(void* a2);  // 0x00681280
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    int Map_Save_6812C0(void * aP1);  // 0x006812C0
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    int sub_724510();  // 0x00724510
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    bool Render_Render_759850(int a2, int a3);  // 0x00759850
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    bool Render_Render_759880(int a2, int a3, int a4);  // 0x00759880
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    int Render_Load_759EA0();  // 0x00759EA0
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    int Team_Start_76E430(int a2, void* aP2);  // 0x0076E430
+    // --- x93 csp-relocation decls (END) ---
+    // --- x93 csp-relocation decls (BEGIN) ---
+    bool Team_Start_76E8B0(int a2, int a3);  // 0x0076E8B0
+    // --- x93 csp-relocation decls (END) ---
 };
 #endif // GAMEMD_TREE_UNIVERSE
 

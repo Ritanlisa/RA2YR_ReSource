@@ -1117,6 +1117,56 @@ def _x93_load_csp():
     return {int(k, 16): v for k, v in d.items()}
 
 
+# X95 W1: X94 sidecar (anchors/csp_this_refined.json) is the preferred owner
+# authority.  Consumers: sidecar resolved > CSP > synthetic; a non-resolved
+# sidecar entry explicitly rejects the CSP owner (no fall-through).
+X95_SIDECAR = ROOT / "anchors" / "csp_this_refined.json"
+_X95_ALIGN = None
+_X95_ALIAS = None
+
+
+def _x95_sidecar():
+    try:
+        d = json.load(open(X95_SIDECAR, encoding="utf-8"))
+    except Exception:
+        return {}
+    out = {}
+    for k, v in (d.get("entries") or {}).items():
+        try:
+            out[int(k, 16)] = v
+        except (TypeError, ValueError):
+            continue
+    return out
+
+
+def _x95_norm_owner(o):
+    """Canonicalise an owner token (RTTI/TClassFactory mangled forms, aliases)."""
+    global _X95_ALIGN, _X95_ALIAS
+    if not o:
+        return None
+    o = o.strip()
+    m = re.match(r"^\?\$TClassFactory@V(.+?)(?:@.*)?@@$", o)
+    if m:
+        o = "TClassFactory_" + m.group(1)
+    if _X95_ALIGN is None:
+        try:
+            _X95_ALIGN = json.load(open(ROOT / "anchors" / "class_name_align.json",
+                                        encoding="utf-8"))
+        except Exception:
+            _X95_ALIGN = {}
+        try:
+            _X95_ALIAS = json.load(open(ROOT / "anchors" / "mangled_alias.json",
+                                        encoding="utf-8"))
+        except Exception:
+            _X95_ALIAS = {}
+    r2c = {k: v.get("canon")
+           for k, v in (_X95_ALIGN.get("rtti_to_canon") or {}).items()}
+    o = (_X95_ALIAS or {}).get(o, r2c.get(o, o))
+    if not o or not re.match(r"^[A-Za-z_]\w*$", o):
+        return None
+    return o
+
+
 def _x93_owner_size(owner, layouts, e4):
     v = layouts.get(owner)
     if isinstance(v, dict) and v.get("size"):
@@ -1216,15 +1266,31 @@ def _x93_rows():
     layouts = json.load(open(ROOT / "tools" / "class_layouts.json", encoding="utf-8"))
     e4 = _x93_e4_index()
     hier = json.load(open(RTTI_DIRECT, encoding="utf-8"))
+    side = _x95_sidecar()
     rows = []
     for cls in sorted(decls, key=lambda c: int(c.split("_", 1)[1], 16)):
         addr = int(cls.split("_", 1)[1], 16)
         c = csp.get(addr) or {}
-        owner = c.get("inferred_real_class")
-        if owner == "unknown":
-            owner = None
+        csp_owner = c.get("inferred_real_class")
+        if csp_owner == "unknown":
+            csp_owner = None
+        # X95 W1: sidecar > CSP.  A non-resolved sidecar entry is an explicit
+        # rejection of the CSP owner for this body -- never fall through.
+        side_e = side.get(addr)
+        if side_e is not None:
+            if side_e.get("status") == "resolved" and side_e.get("owner"):
+                owner = _x95_norm_owner(side_e.get("owner"))
+                owner_source = "sidecar:%s" % side_e.get("rule")
+            else:
+                owner = None
+                owner_source = "sidecar:%s" % side_e.get("status")
+        else:
+            owner = _x95_norm_owner(csp_owner)
+            owner_source = "csp" if owner else None
         row = {"cls": cls, "address": "0x%08X" % addr, "addr": addr,
-               "owner": owner, "inferred_name": c.get("inferred_name"),
+               "owner": owner, "owner_source": owner_source,
+               "sidecar": side_e is not None,
+               "inferred_name": c.get("inferred_name"),
                "calling_convention": c.get("calling_convention"),
                "has_body": cls in defs, "method": None, "verdict": None,
                "reason": "", "owner_header": None, "checks": None}
@@ -1232,12 +1298,13 @@ def _x93_rows():
             row["method"] = defs[cls]["method"]
         if not row["has_body"]:
             row["verdict"] = "csp_gap" if not owner else "no_body"
-            row["reason"] = "no definition in _gap2" if owner else "no CSP entry"
+            row["reason"] = "no definition in _gap2" if owner else "no sidecar/CSP entry"
             rows.append(row)
             continue
         if not owner:
             row["verdict"] = "csp_gap"
-            row["reason"] = "no CSP inferred_real_class"
+            row["reason"] = "no sidecar/CSP owner (sidecar explicit rejection)" \
+                if owner_source else "no sidecar/CSP entry"
             rows.append(row)
             continue
         if owner not in e4:
@@ -1259,6 +1326,10 @@ def _x93_owner_tu(owner):
     cand = SRC / "e4" / (owner + "_e4.cpp")
     if cand.exists():
         return cand
+    # X95 W2: TClassFactory carriers share one dedicated owner TU (all carrier
+    # headers are included there by gen_x95_tclass_carriers.py).
+    if owner.startswith("TClassFactory_"):
+        return SRC / "e4" / "TClassFactory_carriers_e4.cpp"
     low = (owner + "_e4.cpp").lower()
     for p in sorted((SRC / "e4").glob("*.cpp")):
         if p.name.lower() == low:
@@ -1298,6 +1369,36 @@ def _x93_strip_blocks(lines, begin, end):
     return out
 
 
+def _x93_block_lines(lines, begin, end):
+    """Raw lines between the marker pair (markers excluded)."""
+    out, inside = [], False
+    for ln in lines:
+        if begin in ln:
+            inside = True
+            continue
+        if end in ln:
+            inside = False
+            continue
+        if inside:
+            out.append(ln)
+    return out
+
+
+def _x93_split_records(lines):
+    """Split a def block into `// 0xADDR`-headed records (text, markers out)."""
+    recs, cur = [], []
+    for ln in lines:
+        if re.match(r'^\s*//\s*0x[0-9A-Fa-f]{6,8}\s*$', ln):
+            if cur:
+                recs.append("\n".join(cur))
+            cur = [ln]
+        elif cur:
+            cur.append(ln)
+    if cur:
+        recs.append("\n".join(cur))
+    return recs
+
+
 def _x93_insert_decl(lines, cls, decl):
     """Insert a declaration into the class body of `lines` (in place)."""
     for name, s, e in _x93_scan_structs(lines):
@@ -1335,6 +1436,15 @@ def _x93_remove_synth_def(lines, cls, method):
         j -= 1
     if j >= 0 and re.match(r'^\s*//\s*0x[0-9A-Fa-f]{6,8}\s*$', lines[j]):
         rem_start = j
+        j -= 1
+        while j >= 0 and lines[j].strip() == "":
+            j -= 1
+    # X95: also drop the `namespace gamemd {` wrapper of a removed record so
+    # no empty annotated blocks accumulate in the synthetic file.
+    ns_open = False
+    if j >= 0 and re.match(r'^\s*namespace\s+gamemd\s*\{\s*$', lines[j]):
+        rem_start = j
+        ns_open = True
     brace = None
     for k in range(start, min(len(lines), start + 8)):
         if "{" in _x93_code(lines[k]):
@@ -1358,10 +1468,37 @@ def _x93_remove_synth_def(lines, cls, method):
     if end is None:
         return False
     rem_end = end
+    if ns_open:
+        k = end + 1
+        while k < len(lines) and lines[k].strip() == "":
+            k += 1
+        if k < len(lines) and re.match(r'^\s*\}\s*(//.*)?$', lines[k]):
+            rem_end = k
     while rem_end + 1 < len(lines) and lines[rem_end + 1].strip() == "":
         rem_end += 1
     del lines[rem_start:rem_end + 1]
     return True
+
+
+def _x93_cleanup_empty_records(lines):
+    """Drop `// 0xADDR` + `namespace gamemd {` + `}` residue left by an
+    earlier (pre-X95) removal of a synthetic definition."""
+    out, i = [], 0
+    while i < len(lines):
+        if (re.match(r'^\s*//\s*0x[0-9A-Fa-f]{6,8}\s*$', lines[i])
+                and i + 1 < len(lines)
+                and re.match(r'^\s*namespace\s+gamemd\s*\{\s*$', lines[i + 1])):
+            k = i + 2
+            while k < len(lines) and lines[k].strip() == "":
+                k += 1
+            if k < len(lines) and re.match(r'^\s*\}\s*$', lines[k]):
+                i = k + 1
+                while i < len(lines) and lines[i].strip() == "":
+                    i += 1
+                continue
+        out.append(lines[i])
+        i += 1
+    return out
 
 
 def _x93_ensure_include(tu_path, header_path):
@@ -1596,10 +1733,14 @@ def _x93_load_gate_bank():
     return {int(k, 16): v for k, v in (d.get("bank") or {}).items()}
 
 
-def _x93_plan(limit):
+def _x93_plan(limit, sidecar_only=False, batch=None):
     rows, decls, defs, csp, e4 = _x93_rows()
     bank = _x93_load_gate_bank()
     with_body = [r for r in rows if r["has_body"] and r["owner"]]
+    if sidecar_only:
+        # X95 W1: only bodies whose owner came from the X94 sidecar.
+        with_body = [r for r in with_body
+                     if (r.get("owner_source") or "").startswith("sidecar:")]
     with_body.sort(key=lambda r: r["addr"])
     pilot = with_body[:limit]
     pilot_addrs = {r["addr"] for r in pilot}
@@ -1628,13 +1769,18 @@ def _x93_plan(limit):
                 break
         plan.append({
             "cls": cls, "address": r["address"], "addr": r["addr"],
-            "owner": r["owner"], "method_old": d["method"],
+            "owner": r["owner"], "owner_source": r.get("owner_source"),
+            "method_old": d["method"],
             "method": method, "ret": ret or "int",
             "params": d["params"], "owner_header": r["owner_header"],
             "owner_tu": (str(tu.relative_to(ROOT)).replace("\\", "/")
                          if tu else None),
             "def_body": d["body"], "verdict": r["verdict"],
         })
+    if batch:
+        # X95: cap the number of relocated bodies per apply run (<=10).
+        plan = plan[:batch]
+        pilot_addrs = {e["addr"] for e in plan}
     return rows, plan, pilot_addrs
 
 
@@ -1647,6 +1793,7 @@ def _x93_apply(plan):
     flines = _x93_read_lines(GAP2_DEF)
     for e in reversed(plan):  # defs: bottom-up keeps earlier offsets valid
         _x93_remove_synth_def(flines, e["cls"], e["method_old"])
+    flines = _x93_cleanup_empty_records(flines)
     for e in plan:
         _x93_remove_synth_decl(dlines, e["cls"], e["method_old"])
         hdr = e["owner_header"]
@@ -1661,13 +1808,10 @@ def _x93_apply(plan):
     _x93_write_lines(GAP2_DEF, flines)
 
     decl_headers = sorted({Path(h) for h in headers})
-    # strip our blocks everywhere first (idempotent), then re-insert
-    for p in sorted((SRC / "e4").rglob("*.hpp")):
-        lines = _x93_read_lines(p)
-        new = _x93_strip_blocks(lines, X93_DECL_BEGIN, X93_DECL_END)
-        if new != lines:
-            _x93_write_lines(p, new)
     hdr_report = []
+    # X95 W1: do NOT strip decl blocks globally.  Batched applies would delete
+    # the declarations of earlier batches (their defs stay).  _x93_insert_decl
+    # is idempotent per method name, so appending is safe.
     for hp in decl_headers:
         lines = _x93_read_lines(hp)
         n = 0
@@ -1683,16 +1827,28 @@ def _x93_apply(plan):
         if not tu:
             continue
         p = ROOT / tu
-        _x93_ensure_include(p, headers_key_for(tu, plan))
+        # X95 W1: one TU may own several headers (TClassFactory carriers share
+        # TClassFactory_carriers_e4.cpp) -- ensure every routed header include.
+        for hdr_path in sorted({e["owner_header"] for e in plan
+                                if e["owner_tu"] == tu}):
+            _x93_ensure_include(p, hdr_path)
         lines = _x93_read_lines(p)
+        old_recs = _x93_split_records(
+            _x93_block_lines(lines, X93_CPP_BEGIN, X93_CPP_END))
         lines = _x93_strip_blocks(lines, X93_CPP_BEGIN, X93_CPP_END)
         while lines and lines[-1].strip() == "":
             lines.pop()
+        # X95 W1: merge earlier batches in the same TU (keyed by address).
+        recs = {}
+        for rec in old_recs + defs_:
+            m = re.search(r'//\s*0x([0-9A-Fa-f]{6,8})', rec)
+            if m:
+                recs[int(m.group(1), 16)] = rec.strip("\n")
         lines += ["", X93_CPP_BEGIN,
                   "// X93: CSP inferred_real_class ownership "
                   "(tools/gen_gap2_defs.py).", "namespace gamemd {"]
-        for d in defs_:
-            lines.append(d)
+        for addr in sorted(recs):
+            lines.append(recs[addr])
         lines += ["} // namespace gamemd", X93_CPP_END, ""]
         _x93_write_lines(p, lines)
         tu_report.append({"file": str(tu).replace("\\", "/"),
@@ -1715,18 +1871,32 @@ def headers_key_for(tu_path, plan):
 
 
 def _x93_write_extra_table(plan):
-    """Consumed by gen_tree_full_e4.py on a full regeneration."""
-    tbl = defaultdict(list)
+    """Consumed by gen_tree_full_e4.py on a full regeneration.
+
+    X95 W1: merge with the existing table so batched applies do not drop the
+    declarations of earlier batches (dedupe by `// 0xADDR`).
+    """
+    tbl = {}
+    if X93_EXTRA_TABLE.exists():
+        try:
+            old = json.loads(X93_EXTRA_TABLE.read_text(encoding="utf-8"))
+            if isinstance(old, dict):
+                tbl = {k: list(v) for k, v in old.items()}
+        except Exception:
+            tbl = {}
     for e in plan:
-        tbl[e["owner"]].append("%s %s(%s);  // 0x%08X" % (
-            e["ret"], e["method"], e["params"], e["addr"]))
+        line = "%s %s(%s);  // 0x%08X" % (
+            e["ret"], e["method"], e["params"], e["addr"])
+        cur = tbl.setdefault(e["owner"], [])
+        cur[:] = [d for d in cur if "// 0x%08X" % e["addr"] not in d]
+        cur.append(line)
     X93_EXTRA_TABLE.parent.mkdir(parents=True, exist_ok=True)
-    X93_EXTRA_TABLE.write_text(json.dumps(dict(tbl), indent=1),
-                               encoding="utf-8")
+    X93_EXTRA_TABLE.write_text(json.dumps(tbl, indent=1), encoding="utf-8")
 
 
-def run_x93(apply=False, limit=20):
-    rows, plan, pilot_addrs = _x93_plan(limit)
+def run_x93(apply=False, limit=20, sidecar_only=False, batch=None):
+    rows, plan, pilot_addrs = _x93_plan(limit, sidecar_only=sidecar_only,
+                                        batch=batch)
     gap = _x93_write_csp_gap(rows, _x93_load_csp())
     hint = _x93_write_hint(rows, pilot_addrs)
     _x93_write_extra_table(plan)
@@ -1734,11 +1904,16 @@ def run_x93(apply=False, limit=20):
     verdicts = defaultdict(int)
     for r in rows:
         verdicts[r["verdict"]] += 1
+    owners = defaultdict(int)
+    for r in rows:
+        if r["has_body"] and r["owner"]:
+            owners[r.get("owner_source") or "?"] += 1
     report = {
         "schema": "x93-report/v1",
         "synthetic_classes": len(rows),
         "bodies": sum(1 for r in rows if r["has_body"]),
         "csp_owned": sum(1 for r in rows if r["owner"]),
+        "owner_sources": dict(owners),
         "verdicts": dict(verdicts),
         "pilot": [r["address"] for r in sorted(
             (x for x in rows if x["has_body"] and x["owner"]),
@@ -1751,15 +1926,18 @@ def run_x93(apply=False, limit=20):
                     "truncated_prefix_count": gap["truncated_prefix_count"]},
         "csp_hint": hint["count"],
         "apply": bool(apply),
+        "sidecar_only": bool(sidecar_only),
     }
     X93_PLAN_OUT.write_text(json.dumps(report, indent=1), encoding="utf-8")
     X93_REPORT_OUT.write_text(json.dumps(report, indent=1), encoding="utf-8")
     print("=" * 70)
-    print("  X93 CSP-first gap2 ownership  (apply=%s, limit=%d)" % (apply, limit))
+    print("  X93 CSP-first gap2 ownership  (apply=%s, limit=%d, sidecar_only=%s)"
+          % (apply, limit, sidecar_only))
     print("=" * 70)
     print("  synthetic classes           : %d" % report["synthetic_classes"])
     print("  bodies                      : %d" % report["bodies"])
-    print("  CSP-owned                   : %d" % report["csp_owned"])
+    print("  owned receivers             : %d %s" % (
+        report["csp_owned"], dict(owners)))
     for k in sorted(verdicts):
         print("  %-28s: %d" % (k, verdicts[k]))
     print("  pilot addresses             : %d" % len(report["pilot"]))
@@ -1779,10 +1957,17 @@ def main():
     ap.add_argument("--x93-plan", action="store_true")
     ap.add_argument("--x93-apply", action="store_true")
     ap.add_argument("--x93-limit", type=int, default=20)
+    ap.add_argument("--x93-sidecar-only", action="store_true",
+                    help="X95: plan only bodies whose owner came from the "
+                         "X94 sidecar (anchors/csp_this_refined.json)")
+    ap.add_argument("--x93-batch", type=int, default=0,
+                    help="X95: cap the number of relocated bodies per run")
     args = ap.parse_args()
 
     if args.x93_plan or args.x93_apply:
-        return run_x93(apply=args.x93_apply, limit=args.x93_limit)
+        return run_x93(apply=args.x93_apply, limit=args.x93_limit,
+                       sidecar_only=args.x93_sidecar_only,
+                       batch=args.x93_batch)
 
     classification = json.load(open(CLASSIFICATION, encoding="utf-8"))
     no_cpp_body = classification["no_cpp_body"]

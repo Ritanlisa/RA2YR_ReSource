@@ -5386,6 +5386,7 @@ for ( i = 0; i < v47; ++i ) /*0x51fb27*/
 }
 return result; /*0x51fed9*/
 }
+
 // 0x5202F0
 char Gap2Recv_5202F0::ProcessTechnoSquadResponse() {
 
@@ -21393,46 +21394,6 @@ char* Gap2Recv_6811C0::Map_Save_6811C0(char* Source) {
   return strncpy(&this->M9834, Source, 0x103u); /*0x6811e0*/
 }
 }
-// 0x681200
-namespace gamemd { 
-int Gap2Recv_681200::Map_Save_681200(void* a2) {
-  int result; // eax
-
-  this->turretRecoil[0] = *a2; /*0x681206*/
-  result = a2[1]; /*0x68120c*/
-  this->turretRecoil[1] = result; /*0x68120f*/
-  return result; /*0x681215*/
-}
-}
-// 0x681240
-namespace gamemd { 
-int Gap2Recv_681240::Map_Save_681240(void* a2) {
-  int result; // eax
-
-  this->turretRecoil[2] = *a2; /*0x681246*/
-  result = a2[1]; /*0x68124c*/
-  this->turretRecoil[3] = result; /*0x68124f*/
-  return result; /*0x681255*/
-}
-}
-// 0x681280
-namespace gamemd { 
-int Gap2Recv_681280::Map_Save_681280(void* a2) {
-  int result; // eax
-
-  this->turretRecoil[4] = *a2; /*0x681286*/
-  result = a2[1]; /*0x68128c*/
-  this->turretRecoil[5] = result; /*0x68128f*/
-  return result; /*0x681295*/
-}
-}
-// 0x6812C0
-namespace gamemd { 
-int Gap2Recv_6812C0::Map_Save_6812C0(void * aP1) {
-  this->turretRecoil[6] = aP1; /*0x6812c4*/
-  return aP1; /*0x6812ca*/
-}
-}
 // 0x681840
 namespace gamemd { 
 int Gap2Recv_681840::ScenarioPropertyReadCOM(void* a2) {
@@ -23696,22 +23657,6 @@ int Gap2Recv_6BB990::TopLevelExceptionFilter(void* ExceptionInfo, int a3, int a4
   return 1; /*0x4c90ee*/
 }
 }
-// 0x6BFD40
-namespace gamemd { 
-void* Gap2Recv_6BFD40::WinMain_Helper_6BFD40() {
-  this->ptr_1 = 0; /*0x6bfd42*/
-  /* X11: ptr_0 install elided (implicit via TClassFactory virtuals 0x6bfd49) */
-  return &this->ptr_0; /*0x6bfd4f*/
-}
-}
-// 0x6BFEC0
-namespace gamemd { 
-void* Gap2Recv_6BFEC0::WinMain_Helper_6BFEC0() {
-  this->ptr_1 = 0; /*0x6bfec2*/
-  /* X11: ptr_0 install elided (implicit via TClassFactory virtuals 0x6bfec9) */
-  return &this->ptr_0; /*0x6bfecf*/
-}
-}
 // 0x6C0040
 namespace gamemd { 
 void* Gap2Recv_6C0040::WinMain_Helper_6C0040() {
@@ -23720,398 +23665,52 @@ void* Gap2Recv_6C0040::WinMain_Helper_6C0040() {
   return &this->ptr_0; /*0x6c004f*/
 }
 }
-// 0x6C01C0
-namespace gamemd { 
-void* Gap2Recv_6C01C0::WinMain_Helper_6C01C0() {
-  this->ptr_1 = 0; /*0x6c01c2*/
-  /* X11: ptr_0 install elided (implicit via TClassFactory virtuals 0x6c01c9) */
-  return &this->ptr_0; /*0x6c01cf*/
-}
-}
-// 0x6C0340
-namespace gamemd { 
-void* Gap2Recv_6C0340::WinMain_Helper_6C0340() {
-  this->ptr_1 = 0; /*0x6c0342*/
-  /* X11: ptr_0 install elided (implicit via TClassFactory virtuals 0x6c0349) */
-  return &this->ptr_0; /*0x6c034f*/
-}
-}
-// 0x6C04C0
-namespace gamemd { 
-void* Gap2Recv_6C04C0::WinMain_Helper_6C04C0() {
-  this->ptr_1 = 0; /*0x6c04c2*/
-  /* X11: ptr_0 install elided (implicit via TClassFactory virtuals 0x6c04c9) */
-  return &this->ptr_0; /*0x6c04cf*/
-}
-}
 // 0x6C0640
-namespace gamemd { 
-void* Gap2Recv_6C0640::WinMain_Helper_6C0640() {
-  this->ptr_1 = 0; /*0x6c0642*/
-  /* X11: ptr_0 install elided (implicit via TClassFactory virtuals 0x6c0649) */
-  return &this->ptr_0; /*0x6c064f*/
-}
-}
 // 0x6C07C0
-namespace gamemd { 
-void* Gap2Recv_6C07C0::WinMain_Helper_6C07C0() {
-  this->ptr_1 = 0; /*0x6c07c2*/
-  /* X11: ptr_0 install elided (implicit via TClassFactory virtuals 0x6c07c9) */
-  return &this->ptr_0; /*0x6c07cf*/
-}
-}
 // 0x6C0940
-namespace gamemd { 
-void* Gap2Recv_6C0940::WinMain_Helper_6C0940() {
-  this->ptr_1 = 0; /*0x6c0942*/
-  /* X11: ptr_0 install elided (implicit via TClassFactory virtuals 0x6c0949) */
-  return &this->ptr_0; /*0x6c094f*/
-}
-}
 // 0x6C0C40
-namespace gamemd { 
-void* Gap2Recv_6C0C40::WinMain_Helper_6C0C40() {
-  this->ptr_1 = 0; /*0x6c0c42*/
-  /* X11: ptr_0 install elided (implicit via TClassFactory virtuals 0x6c0c49) */
-  return &this->ptr_0; /*0x6c0c4f*/
-}
-}
 // 0x6C0DC0
-namespace gamemd { 
-void* Gap2Recv_6C0DC0::WinMain_Helper_6C0DC0() {
-  this->ptr_1 = 0; /*0x6c0dc2*/
-  /* X11: ptr_0 install elided (implicit via TClassFactory virtuals 0x6c0dc9) */
-  return &this->ptr_0; /*0x6c0dcf*/
-}
-}
 // 0x6C0F40
-namespace gamemd { 
-void* Gap2Recv_6C0F40::WinMain_Helper_6C0F40() {
-  this->ptr_1 = 0; /*0x6c0f42*/
-  /* X11: ptr_0 install elided (implicit via TClassFactory virtuals 0x6c0f49) */
-  return &this->ptr_0; /*0x6c0f4f*/
-}
-}
 // 0x6C10C0
-namespace gamemd { 
-void* Gap2Recv_6C10C0::WinMain_Helper_6C10C0() {
-  this->ptr_1 = 0; /*0x6c10c2*/
-  /* X11: ptr_0 install elided (implicit via TClassFactory virtuals 0x6c10c9) */
-  return &this->ptr_0; /*0x6c10cf*/
-}
-}
 // 0x6C1240
-namespace gamemd { 
-void* Gap2Recv_6C1240::WinMain_Helper_6C1240() {
-  this->ptr_1 = 0; /*0x6c1242*/
-  /* X11: ptr_0 install elided (implicit via TClassFactory virtuals 0x6c1249) */
-  return &this->ptr_0; /*0x6c124f*/
-}
-}
 // 0x6C13C0
-namespace gamemd { 
-void* Gap2Recv_6C13C0::WinMain_Helper_6C13C0() {
-  this->ptr_1 = 0; /*0x6c13c2*/
-  /* X11: ptr_0 install elided (implicit via TClassFactory virtuals 0x6c13c9) */
-  return &this->ptr_0; /*0x6c13cf*/
-}
-}
 // 0x6C1540
-namespace gamemd { 
-void* Gap2Recv_6C1540::WinMain_Helper_6C1540() {
-  this->ptr_1 = 0; /*0x6c1542*/
-  /* X11: ptr_0 install elided (implicit via TClassFactory virtuals 0x6c1549) */
-  return &this->ptr_0; /*0x6c154f*/
-}
-}
 // 0x6C16C0
-namespace gamemd { 
-void* Gap2Recv_6C16C0::WinMain_Helper_6C16C0() {
-  this->ptr_1 = 0; /*0x6c16c2*/
-  /* X11: ptr_0 install elided (implicit via TClassFactory virtuals 0x6c16c9) */
-  return &this->ptr_0; /*0x6c16cf*/
-}
-}
 // 0x6C1840
-namespace gamemd { 
-void* Gap2Recv_6C1840::WinMain_Helper_6C1840() {
-  this->ptr_1 = 0; /*0x6c1842*/
-  /* X11: ptr_0 install elided (implicit via TClassFactory virtuals 0x6c1849) */
-  return &this->ptr_0; /*0x6c184f*/
-}
-}
 // 0x6C19C0
-namespace gamemd { 
-void* Gap2Recv_6C19C0::WinMain_Helper_6C19C0() {
-  this->ptr_1 = 0; /*0x6c19c2*/
-  /* X11: ptr_0 install elided (implicit via TClassFactory virtuals 0x6c19c9) */
-  return &this->ptr_0; /*0x6c19cf*/
-}
-}
 // 0x6C1B40
-namespace gamemd { 
-void* Gap2Recv_6C1B40::WinMain_Helper_6C1B40() {
-  this->ptr_1 = 0; /*0x6c1b42*/
-  /* X11: ptr_0 install elided (implicit via TClassFactory virtuals 0x6c1b49) */
-  return &this->ptr_0; /*0x6c1b4f*/
-}
-}
 // 0x6C1CC0
-namespace gamemd { 
-void* Gap2Recv_6C1CC0::WinMain_Helper_6C1CC0() {
-  this->ptr_1 = 0; /*0x6c1cc2*/
-  /* X11: ptr_0 install elided (implicit via TClassFactory virtuals 0x6c1cc9) */
-  return &this->ptr_0; /*0x6c1ccf*/
-}
-}
 // 0x6C1E40
-namespace gamemd { 
-void* Gap2Recv_6C1E40::WinMain_Helper_6C1E40() {
-  this->ptr_1 = 0; /*0x6c1e42*/
-  /* X11: ptr_0 install elided (implicit via TClassFactory virtuals 0x6c1e49) */
-  return &this->ptr_0; /*0x6c1e4f*/
-}
-}
 // 0x6C1FC0
-namespace gamemd { 
-void* Gap2Recv_6C1FC0::WinMain_Helper_6C1FC0() {
-  this->ptr_1 = 0; /*0x6c1fc2*/
-  /* X11: ptr_0 install elided (implicit via TClassFactory virtuals 0x6c1fc9) */
-  return &this->ptr_0; /*0x6c1fcf*/
-}
-}
 // 0x6C2140
-namespace gamemd { 
-void* Gap2Recv_6C2140::WinMain_Helper_6C2140() {
-  this->ptr_1 = 0; /*0x6c2142*/
-  /* X11: ptr_0 install elided (implicit via TClassFactory virtuals 0x6c2149) */
-  return &this->ptr_0; /*0x6c214f*/
-}
-}
 // 0x6C22C0
-namespace gamemd { 
-void* Gap2Recv_6C22C0::WinMain_Helper_6C22C0() {
-  this->ptr_1 = 0; /*0x6c22c2*/
-  /* X11: ptr_0 install elided (implicit via TClassFactory virtuals 0x6c22c9) */
-  return &this->ptr_0; /*0x6c22cf*/
-}
-}
 // 0x6C2440
-namespace gamemd { 
-void* Gap2Recv_6C2440::WinMain_Helper_6C2440() {
-  this->ptr_1 = 0; /*0x6c2442*/
-  /* X11: ptr_0 install elided (implicit via TClassFactory virtuals 0x6c2449) */
-  return &this->ptr_0; /*0x6c244f*/
-}
-}
 // 0x6C25C0
-namespace gamemd { 
-void* Gap2Recv_6C25C0::WinMain_Helper_6C25C0() {
-  this->ptr_1 = 0; /*0x6c25c2*/
-  /* X11: ptr_0 install elided (implicit via TClassFactory virtuals 0x6c25c9) */
-  return &this->ptr_0; /*0x6c25cf*/
-}
-}
 // 0x6C2740
-namespace gamemd { 
-void* Gap2Recv_6C2740::WinMain_Helper_6C2740() {
-  this->ptr_1 = 0; /*0x6c2742*/
-  /* X11: ptr_0 install elided (implicit via TClassFactory virtuals 0x6c2749) */
-  return &this->ptr_0; /*0x6c274f*/
-}
-}
 // 0x6C28C0
-namespace gamemd { 
-void* Gap2Recv_6C28C0::WinMain_Helper_6C28C0() {
-  this->ptr_1 = 0; /*0x6c28c2*/
-  /* X11: ptr_0 install elided (implicit via TClassFactory virtuals 0x6c28c9) */
-  return &this->ptr_0; /*0x6c28cf*/
-}
-}
 // 0x6C2A40
-namespace gamemd { 
-void* Gap2Recv_6C2A40::WinMain_Helper_6C2A40() {
-  this->ptr_1 = 0; /*0x6c2a42*/
-  /* X11: ptr_0 install elided (implicit via TClassFactory virtuals 0x6c2a49) */
-  return &this->ptr_0; /*0x6c2a4f*/
-}
-}
 // 0x6C2BC0
-namespace gamemd { 
-void* Gap2Recv_6C2BC0::WinMain_Helper_6C2BC0() {
-  this->ptr_1 = 0; /*0x6c2bc2*/
-  /* X11: ptr_0 install elided (implicit via TClassFactory virtuals 0x6c2bc9) */
-  return &this->ptr_0; /*0x6c2bcf*/
-}
-}
 // 0x6C2D40
-namespace gamemd { 
-void* Gap2Recv_6C2D40::WinMain_Helper_6C2D40() {
-  this->ptr_1 = 0; /*0x6c2d42*/
-  /* X11: ptr_0 install elided (implicit via TClassFactory virtuals 0x6c2d49) */
-  return &this->ptr_0; /*0x6c2d4f*/
-}
-}
 // 0x6C2EC0
-namespace gamemd { 
-void* Gap2Recv_6C2EC0::WinMain_Helper_6C2EC0() {
-  this->ptr_1 = 0; /*0x6c2ec2*/
-  /* X11: ptr_0 install elided (implicit via TClassFactory virtuals 0x6c2ec9) */
-  return &this->ptr_0; /*0x6c2ecf*/
-}
-}
 // 0x6C3040
-namespace gamemd { 
-void* Gap2Recv_6C3040::WinMain_Helper_6C3040() {
-  this->ptr_1 = 0; /*0x6c3042*/
-  /* X11: ptr_0 install elided (implicit via TClassFactory virtuals 0x6c3049) */
-  return &this->ptr_0; /*0x6c304f*/
-}
-}
 // 0x6C31C0
-namespace gamemd { 
-void* Gap2Recv_6C31C0::WinMain_Helper_6C31C0() {
-  this->ptr_1 = 0; /*0x6c31c2*/
-  /* X11: ptr_0 install elided (implicit via TClassFactory virtuals 0x6c31c9) */
-  return &this->ptr_0; /*0x6c31cf*/
-}
-}
 // 0x6C3340
-namespace gamemd { 
-void* Gap2Recv_6C3340::WinMain_Helper_6C3340() {
-  this->ptr_1 = 0; /*0x6c3342*/
-  /* X11: ptr_0 install elided (implicit via TClassFactory virtuals 0x6c3349) */
-  return &this->ptr_0; /*0x6c334f*/
-}
-}
 // 0x6C34C0
-namespace gamemd { 
-void* Gap2Recv_6C34C0::WinMain_Helper_6C34C0() {
-  this->ptr_1 = 0; /*0x6c34c2*/
-  /* X11: ptr_0 install elided (implicit via TClassFactory virtuals 0x6c34c9) */
-  return &this->ptr_0; /*0x6c34cf*/
-}
-}
 // 0x6C3640
-namespace gamemd { 
-void* Gap2Recv_6C3640::WinMain_Helper_6C3640() {
-  this->ptr_1 = 0; /*0x6c3642*/
-  /* X11: ptr_0 install elided (implicit via TClassFactory virtuals 0x6c3649) */
-  return &this->ptr_0; /*0x6c364f*/
-}
-}
 // 0x6C37C0
-namespace gamemd { 
-void* Gap2Recv_6C37C0::WinMain_Helper_6C37C0() {
-  this->ptr_1 = 0; /*0x6c37c2*/
-  /* X11: ptr_0 install elided (implicit via TClassFactory virtuals 0x6c37c9) */
-  return &this->ptr_0; /*0x6c37cf*/
-}
-}
 // 0x6C3940
-namespace gamemd { 
-void* Gap2Recv_6C3940::WinMain_Helper_6C3940() {
-  this->ptr_1 = 0; /*0x6c3942*/
-  /* X11: ptr_0 install elided (implicit via TClassFactory virtuals 0x6c3949) */
-  return &this->ptr_0; /*0x6c394f*/
-}
-}
 // 0x6C3AC0
-namespace gamemd { 
-void* Gap2Recv_6C3AC0::WinMain_Helper_6C3AC0() {
-  this->ptr_1 = 0; /*0x6c3ac2*/
-  /* X11: ptr_0 install elided (implicit via TClassFactory virtuals 0x6c3ac9) */
-  return &this->ptr_0; /*0x6c3acf*/
-}
-}
 // 0x6C3C40
-namespace gamemd { 
-void* Gap2Recv_6C3C40::WinMain_Helper_6C3C40() {
-  this->ptr_1 = 0; /*0x6c3c42*/
-  /* X11: ptr_0 install elided (implicit via TClassFactory virtuals 0x6c3c49) */
-  return &this->ptr_0; /*0x6c3c4f*/
-}
-}
 // 0x6C3DC0
-namespace gamemd { 
-void* Gap2Recv_6C3DC0::WinMain_Helper_6C3DC0() {
-  this->ptr_1 = 0; /*0x6c3dc2*/
-  /* X11: ptr_0 install elided (implicit via TClassFactory virtuals 0x6c3dc9) */
-  return &this->ptr_0; /*0x6c3dcf*/
-}
-}
 // 0x6C3F40
-namespace gamemd { 
-void* Gap2Recv_6C3F40::WinMain_Helper_6C3F40() {
-  this->ptr_1 = 0; /*0x6c3f42*/
-  /* X11: ptr_0 install elided (implicit via TClassFactory virtuals 0x6c3f49) */
-  return &this->ptr_0; /*0x6c3f4f*/
-}
-}
 // 0x6C40C0
-namespace gamemd { 
-void* Gap2Recv_6C40C0::WinMain_Helper_6C40C0() {
-  this->ptr_1 = 0; /*0x6c40c2*/
-  /* X11: ptr_0 install elided (implicit via TClassFactory virtuals 0x6c40c9) */
-  return &this->ptr_0; /*0x6c40cf*/
-}
-}
 // 0x6C4240
-namespace gamemd { 
-void* Gap2Recv_6C4240::WinMain_Helper_6C4240() {
-  this->ptr_1 = 0; /*0x6c4242*/
-  /* X11: ptr_0 install elided (implicit via TClassFactory virtuals 0x6c4249) */
-  return &this->ptr_0; /*0x6c424f*/
-}
-}
 // 0x6C43C0
-namespace gamemd { 
-void* Gap2Recv_6C43C0::WinMain_Helper_6C43C0() {
-  this->ptr_1 = 0; /*0x6c43c2*/
-  /* X11: ptr_0 install elided (implicit via TClassFactory virtuals 0x6c43c9) */
-  return &this->ptr_0; /*0x6c43cf*/
-}
-}
 // 0x6C4540
-namespace gamemd { 
-void* Gap2Recv_6C4540::WinMain_Helper_6C4540() {
-  this->ptr_1 = 0; /*0x6c4542*/
-  /* X11: ptr_0 install elided (implicit via TClassFactory virtuals 0x6c4549) */
-  return &this->ptr_0; /*0x6c454f*/
-}
-}
 // 0x6C46C0
-namespace gamemd { 
-void* Gap2Recv_6C46C0::WinMain_Helper_6C46C0() {
-  this->ptr_1 = 0; /*0x6c46c2*/
-  /* X11: ptr_0 install elided (implicit via TClassFactory virtuals 0x6c46c9) */
-  return &this->ptr_0; /*0x6c46cf*/
-}
-}
 // 0x6C4840
-namespace gamemd { 
-void* Gap2Recv_6C4840::WinMain_Helper_6C4840() {
-  this->ptr_1 = 0; /*0x6c4842*/
-  /* X11: ptr_0 install elided (implicit via TClassFactory virtuals 0x6c4849) */
-  return &this->ptr_0; /*0x6c484f*/
-}
-}
 // 0x6C49C0
-namespace gamemd { 
-void* Gap2Recv_6C49C0::WinMain_Helper_6C49C0() {
-  this->ptr_1 = 0; /*0x6c49c2*/
-  /* X11: ptr_0 install elided (implicit via TClassFactory virtuals 0x6c49c9) */
-  return &this->ptr_0; /*0x6c49cf*/
-}
-}
 // 0x6C4B40
-namespace gamemd { 
-void* Gap2Recv_6C4B40::WinMain_Helper_6C4B40() {
-  this->ptr_1 = 0; /*0x6c4b42*/
-  /* X11: ptr_0 install elided (implicit via TClassFactory virtuals 0x6c4b49) */
-  return &this->ptr_0; /*0x6c4b4f*/
-}
-}
 // 0x6C4CC0
 namespace gamemd { 
 void* Gap2Recv_6C4CC0::WinMain_Helper_6C4CC0() {
@@ -24121,109 +23720,18 @@ void* Gap2Recv_6C4CC0::WinMain_Helper_6C4CC0() {
 }
 }
 // 0x6C4E40
-namespace gamemd { 
-void* Gap2Recv_6C4E40::WinMain_Helper_6C4E40() {
-  this->ptr_1 = 0; /*0x6c4e42*/
-  /* X11: ptr_0 install elided (implicit via TClassFactory virtuals 0x6c4e49) */
-  return &this->ptr_0; /*0x6c4e4f*/
-}
-}
 // 0x6C4FC0
-namespace gamemd { 
-void* Gap2Recv_6C4FC0::WinMain_Helper_6C4FC0() {
-  this->ptr_1 = 0; /*0x6c4fc2*/
-  /* X11: ptr_0 install elided (implicit via TClassFactory virtuals 0x6c4fc9) */
-  return &this->ptr_0; /*0x6c4fcf*/
-}
-}
 // 0x6C5140
-namespace gamemd { 
-void* Gap2Recv_6C5140::WinMain_Helper_6C5140() {
-  this->ptr_1 = 0; /*0x6c5142*/
-  /* X11: ptr_0 install elided (implicit via TClassFactory virtuals 0x6c5149) */
-  return &this->ptr_0; /*0x6c514f*/
-}
-}
 // 0x6C52C0
-namespace gamemd { 
-void* Gap2Recv_6C52C0::WinMain_Helper_6C52C0() {
-  this->ptr_1 = 0; /*0x6c52c2*/
-  /* X11: ptr_0 install elided (implicit via TClassFactory virtuals 0x6c52c9) */
-  return &this->ptr_0; /*0x6c52cf*/
-}
-}
 // 0x6C5440
-namespace gamemd { 
-void* Gap2Recv_6C5440::WinMain_Helper_6C5440() {
-  this->ptr_1 = 0; /*0x6c5442*/
-  /* X11: ptr_0 install elided (implicit via TClassFactory virtuals 0x6c5449) */
-  return &this->ptr_0; /*0x6c544f*/
-}
-}
 // 0x6C55C0
-namespace gamemd { 
-void* Gap2Recv_6C55C0::WinMain_Helper_6C55C0() {
-  this->ptr_1 = 0; /*0x6c55c2*/
-  /* X11: ptr_0 install elided (implicit via TClassFactory virtuals 0x6c55c9) */
-  return &this->ptr_0; /*0x6c55cf*/
-}
-}
 // 0x6C5740
-namespace gamemd { 
-void* Gap2Recv_6C5740::WinMain_Helper_6C5740() {
-  this->ptr_1 = 0; /*0x6c5742*/
-  /* X11: ptr_0 install elided (implicit via TClassFactory virtuals 0x6c5749) */
-  return &this->ptr_0; /*0x6c574f*/
-}
-}
 // 0x6C58C0
-namespace gamemd { 
-void* Gap2Recv_6C58C0::WinMain_Helper_6C58C0() {
-  this->ptr_1 = 0; /*0x6c58c2*/
-  /* X11: ptr_0 install elided (implicit via TClassFactory virtuals 0x6c58c9) */
-  return &this->ptr_0; /*0x6c58cf*/
-}
-}
 // 0x6C5A40
-namespace gamemd { 
-void* Gap2Recv_6C5A40::WinMain_Helper_6C5A40() {
-  this->ptr_1 = 0; /*0x6c5a42*/
-  /* X11: ptr_0 install elided (implicit via TClassFactory virtuals 0x6c5a49) */
-  return &this->ptr_0; /*0x6c5a4f*/
-}
-}
 // 0x6C5BC0
-namespace gamemd { 
-void* Gap2Recv_6C5BC0::WinMain_Helper_6C5BC0() {
-  this->ptr_1 = 0; /*0x6c5bc2*/
-  /* X11: ptr_0 install elided (implicit via TClassFactory virtuals 0x6c5bc9) */
-  return &this->ptr_0; /*0x6c5bcf*/
-}
-}
 // 0x6C5D40
-namespace gamemd { 
-void* Gap2Recv_6C5D40::WinMain_Helper_6C5D40() {
-  this->ptr_1 = 0; /*0x6c5d42*/
-  /* X11: ptr_0 install elided (implicit via TClassFactory virtuals 0x6c5d49) */
-  return &this->ptr_0; /*0x6c5d4f*/
-}
-}
 // 0x6C5EC0
-namespace gamemd { 
-void* Gap2Recv_6C5EC0::WinMain_Helper_6C5EC0() {
-  this->ptr_1 = 0; /*0x6c5ec2*/
-  /* X11: ptr_0 install elided (implicit via TClassFactory virtuals 0x6c5ec9) */
-  return &this->ptr_0; /*0x6c5ecf*/
-}
-}
 // 0x6C6040
-namespace gamemd { 
-void* Gap2Recv_6C6040::WinMain_Helper_6C6040() {
-  this->ptr_1 = 0; /*0x6c6042*/
-  /* X11: ptr_0 install elided (implicit via TClassFactory virtuals 0x6c6049) */
-  return &this->ptr_0; /*0x6c604f*/
-}
-}
 // 0x6C61C0
 namespace gamemd { 
 int Gap2Recv_6C61C0::COM_SafeRelease() {
@@ -28455,11 +27963,6 @@ void Gap2Recv_724200::HandleToolTipMessage(int a2) {
 }
 }
 // 0x724510
-namespace gamemd { 
-int Gap2Recv_724510::sub_724510() {
-  return this->cloakProgress[1]; /*0x724516*/
-}
-}
 // 0x727880
 namespace gamemd { 
 int Gap2Recv_727880::ReadAudioEventINI() {
@@ -30877,39 +30380,8 @@ int Gap2Recv_759830::Render_Load_759830(int a2) {
 }
 }
 // 0x759850
-namespace gamemd { 
-bool Gap2Recv_759850::Render_Render_759850(int a2, int a3) {
-  int v3 = a3; // eax /*0x759850*/
-  if ( a3 < 0 ) /*0x759856*/
-    v3 = -1; /*0x759858*/
-  return Audio_Render_7C3430(this->reloadTimer[1], a2, v3, 1u) == -1; /*0x759873*/
-}
-}
 // 0x759880
-namespace gamemd { 
-bool Gap2Recv_759880::Render_Render_759880(int a2, int a3, int a4) {
-  signed int v4; // edx
-  signed int v5; // eax
-  int v6; // esi
-
-  v4 = a2; /*0x759880*/
-  if ( a2 < 0 || a2 >= this->threatPosed ) /*0x75988e*/
-    v4 = 0; /*0x759890*/
-  v5 = a3; /*0x759892*/
-  if ( a3 < 0 || a3 >= this->threatPosed ) /*0x7598a1*/
-    v5 = this->threatPosed - 1; /*0x7598a9*/
-  v6 = a4; /*0x7598aa*/
-  if ( a4 < 0 ) /*0x7598b0*/
-    v6 = -1; /*0x7598b2*/
-  return SeekAudioStream(this->reloadTimer[1], v4, v5, v6, 0) == -1; /*0x7598cb*/
-}
-}
 // 0x759EA0
-namespace gamemd { 
-int Gap2Recv_759EA0::Render_Load_759EA0() {
-  return this->shouldLoseTarget; /*0x759ea6*/
-}
-}
 // 0x759EB0
 namespace gamemd { 
 bool Gap2Recv_759EB0::Render_Load_759EB0(int a2, unsigned int a3, unsigned int a4, int a5, int a6) {
@@ -32782,44 +32254,6 @@ char* Gap2Recv_76E2F0::Team_Start_76E2F0(int a2) {
 }
 }
 // 0x76E430
-namespace gamemd { 
-int Gap2Recv_76E430::Team_Start_76E430(int a2, void* aP2) {
-  int v4; // eax
-  int v5; // ecx
-  int grindingAnimHandle; // ecx
-  void **v8; // [esp+4h] [ebp-8h] BYREF
-  WDTClass *v9; // [esp+8h] [ebp-4h]
-
-  ActivateScreenWDT((int)&v8, a2); /*0x76e449*/
-  if ( !v9 ) /*0x76e454*/
-    goto LABEL_6; /*0x76e454*/
-  v4 = WDTClass::CountCellType(v9, *(unsigned int *)(this->ambientSoundController[4] + 68)); /*0x76e45d*/
-  if ( v4 <= *(unsigned int *)this->isCountedAsOwned_special ) /*0x76e468*/
-  {
-    v5 = this->currentTargetThreatValues[0]; /*0x76e46a*/
-    v8 = &g_var_5878c0; /*0x76e476*/
-    *aP2 = v4 <= v5; /*0x76e481*/
-    ComPtr::Release((ComPtr *)&v8); /*0x76e487*/
-    return 1; /*0x76e495*/
-  }
-  if ( v4 >= this->previousTeam ) /*0x76e49e*/
-  {
-    grindingAnimHandle = this->grindingAnimHandle; /*0x76e4a0*/
-    v8 = &g_var_5878c0; /*0x76e4a6*/
-    *aP2 = v4 >= grindingAnimHandle; /*0x76e4b7*/
-    ComPtr::Release((ComPtr *)&v8); /*0x76e4bd*/
-    return 0; /*0x76e4c2*/
-  }
-  else
-  {
-  LABEL_6:
-    v8 = &g_var_5878c0; /*0x76e4d3*/
-    *aP2 = 0; /*0x76e4db*/
-    ComPtr::Release((ComPtr *)&v8); /*0x76e4de*/
-    return 2; /*0x76e4e3*/
-  }
-}
-}
 // 0x76E750
 namespace gamemd { 
 void* Gap2Recv_76E750::Team_Start_76E750(ScoreScreen * aP1) {
@@ -32874,71 +32308,6 @@ void* Gap2Recv_76E750::Team_Start_76E750(ScoreScreen * aP1) {
 }
 }
 // 0x76E8B0
-namespace gamemd { 
-bool Gap2Recv_76E8B0::Team_Start_76E8B0(int a2, int a3) {
-  int v3; // ebx
-  int v5; // eax
-  int v6; // ebp
-  int v7; // edi
-  int v8; // eax
-  int v9; // ecx
-  int v10; // edi
-  char v11; // al
-  bool v12; // bl
-  DeleteAndZero v14; // [esp-8h] [ebp-28h]
-  unsigned int v15[2]; // [esp+10h] [ebp-10h] BYREF
-  unsigned int v16[2]; // [esp+18h] [ebp-8h] BYREF
-
-  v3 = a2; /*0x76e8b4*/
-  ActivateScreenWDT((int)v16, a2); /*0x76e8cc*/
-  v5 = WDTClass::CountCellType((WDTClass *)v16[1], *(unsigned int *)(this->ambientSoundController[4] + 68)); /*0x76e8dc*/
-  v6 = a3; /*0x76e8e1*/
-  v7 = v5; /*0x76e8e5*/
-  ActivateScreenWDT((int)v15, a3); /*0x76e8f6*/
-  v8 = WDTClass::CountCellType((WDTClass *)v15[1], *(unsigned int *)(this->ambientSoundController[4] + 68)); /*0x76e906*/
-  v9 = v8 - v7; /*0x76e90d*/
-  if ( v8 - v7 < -1 ) /*0x76e912*/
-  {
-    v10 = 1; /*0x76e917*/
-    if ( v9 < -3 || v8 <= this->currentTargetThreatValues[0] ) /*0x76e924*/
-    {
-      (*((unsigned char *)&(a2))) = 1; /*0x76e926*/
-      goto LABEL_12; /*0x76e92b*/
-    }
-    LABEL_11:
-    (*((unsigned char *)&(a2))) = 0; /*0x76e971*/
-      goto LABEL_12; /*0x76e971*/
-  }
-  if ( v9 > 1 ) /*0x76e930*/
-  {
-    v10 = 0; /*0x76e932*/
-    if ( v9 > 3 || v8 >= this->grindingAnimHandle ) /*0x76e93f*/
-    {
-      (*((unsigned char *)&(a2))) = 1; /*0x76e941*/
-      goto LABEL_12; /*0x76e946*/
-    }
-    goto LABEL_11; /*0x76e93f*/
-  }
-  v10 = 2; /*0x76e950*/
-  (*((unsigned char *)&(a2))) = 0; /*0x76e955*/
-  if ( Team_Start_76E430(this, v6, (bool *)&a2) != 1 ) /*0x76e962*/
-    goto LABEL_11; /*0x76e962*/
-  v11 = a2; /*0x76e964*/
-  (*((unsigned char *)&(a2))) = 1; /*0x76e968*/
-  if ( !v11 ) /*0x76e96f*/
-    goto LABEL_11; /*0x76e96f*/
-  LABEL_12:
-  ScoreScreen::RemoveItem(&this->spawnStatus, 1, v10, a2, 1, 0); /*0x76e976*/
-    v14.q004 = v6; /*0x76e98a*/
-    *(unsigned int *)v14.owningHouseIndex = v3; /*0x76e98b*/
-    v12 = WDTGame::ReviewHistory((int)this, v14) == 0; /*0x76e99e*/
-    v15[0] = &g_var_5878c0; /*0x76e9a1*/
-    ComPtr::Release((ComPtr *)v15); /*0x76e9a5*/
-    v16[0] = &g_var_5878c0; /*0x76e9ae*/
-    ComPtr::Release((ComPtr *)v16); /*0x76e9b2*/
-    return v12; /*0x76e9b7*/
-}
-}
 // 0x76EEB0
 namespace gamemd { 
 int Gap2Recv_76EEB0::ConstructWDTSelection_Create_76EEB0() {

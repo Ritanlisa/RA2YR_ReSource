@@ -24,6 +24,7 @@
 #include "e4/classes/Movie_e4.hpp"
 #include "e4/classes/GameOptions_e4.hpp"
 #include "e4/classes/GameState_e4.hpp"
+#include "e4/classes/TechnoClass_e4.hpp"
 // [w16g4] C3861 supply (raw call-form evidence)
 namespace gamemd { int Map_Save_681080(int p0); }  // x4:signals@0x681080
 namespace gamemd { int Map_Save_681110(int p0); }  // x4:signals@0x681110
@@ -63,11 +64,11 @@ char SaveScenarioClassGame_AdjustMPSaveFileName(LPCCH lpMultiByteStr, wchar_t * 
   Map_Save_681110((ObjectClass *)v9, ((unsigned int *)(dword_A8B230))[375].uniqueId); /*0x67cfca*/
   Map_Save_681130((ObjectClass *)v9, (int)((unsigned int *)(dword_A8B230))[130].ptr_C); /*0x67cfe2*/
   Map_Save_6811C0((char *)v9,(char *)(aSunExe)); /*0x67cff3*/
-  Map_Save_6812C0((ObjectClass *)v9, *(int *)&dword_A8B238); /*0x67d006*/
+  ((TechnoClass *)(ObjectClass *)v9)->Map_Save_6812C0(*(int *)&dword_A8B238); /*0x67d006*/
   CoFileTimeNow((FILETIME *)&ppstgOpen[0].ComPtr_field_0x14); /*0x67d010*/
-  Map_Save_681280((ObjectClass *)v9, &ppstgOpen[0].ComPtr_field_0x14); /*0x67d022*/
-  Map_Save_681200((ObjectClass *)v9, &ppstgOpen[0].ComPtr_field_0x14); /*0x67d033*/
-  Map_Save_681240((ObjectClass *)v9, &ppstgOpen[0].ComPtr_field_0x14); /*0x67d044*/
+  ((TechnoClass *)(ObjectClass *)v9)->Map_Save_681280(&ppstgOpen[0].ComPtr_field_0x14); /*0x67d022*/
+  ((TechnoClass *)(ObjectClass *)v9)->Map_Save_681200(&ppstgOpen[0].ComPtr_field_0x14); /*0x67d033*/
+  ((TechnoClass *)(ObjectClass *)v9)->Map_Save_681240(&ppstgOpen[0].ComPtr_field_0x14); /*0x67d044*/
   GameOptions::SaveLoad((int *)((int)v9), *&ppstgOpen->__pad_0.__pad_0); /*0x67d055*/
   ppstgOpen[0].ComPtr_field_0x08 = 0; /*0x67d05a*/
   if ( !*&ppstgOpen->__pad_0.__pad_0 ) /*0x67d064*/

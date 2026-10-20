@@ -96,6 +96,7 @@
 #include "e4/classes/MixFileClass_e4.hpp"
 #include "e4/classes/List_MixFileClass_e4.hpp"  // X74 typed-global merge
 #include "e4/classes/ScenarioClass_e4.hpp"
+#include "e4/classes/TechnoClass_e4.hpp"
 // [w18j2] C2065 function supply (raw-evidenced)
 namespace gamemd { int sub_5BF360(int p0); }  // x4:signals@0x5bf360
 // [w18j2] C3861 supply (raw-evidenced)
@@ -1380,7 +1381,7 @@ void* * LoadVQMovie(char * Source, int * a2, int a3, int a4, IUnknown * a5, int 
   }
   Width = MovieClass::GetWidth(*(MovieClass **)v15); /*0x5bfc2a*/
   Height = MovieClass::GetHeight(*(MovieClass **)v15); /*0x5bfc35*/
-  _759EA0 = Render_Load_759EA0(*(ObjectClass **)v15); /*0x5bfc43*/
+  _759EA0 = ((TechnoClass *)*(ObjectClass **)v15)->Render_Load_759EA0(); /*0x5bfc43*/
   if ( _759EA0 == 4 ) /*0x5bfc47*/
     _759EA0 = 1; /*0x5bfc49*/
   if ( !a3 && !a4 && !a5 && !a6 ) /*0x5bfc73*/
@@ -1505,9 +1506,9 @@ int Movie_RenderFrame(int a1, char a2, int a3, char a4)
         int v10; // [esp-10h] [ebp-1Ch]
         v10 = *(unsigned int *)(a1 + 28); /*0x5bffbd*/
         if ( *(unsigned int *)(a1 + 24) ) /*0x5bffba*/
-          Render_Render_759880(v12, v6, v10); /*0x5bffd7*/
+          ((TechnoClass *)v12)->Render_Render_759880(v6, v10); /*0x5bffd7*/
         else
-          Render_Render_759850(*(unsigned int *)(a1 + 32), v10); /*0x5bffc8*/
+          ((TechnoClass *)*(unsigned int *)(a1 + 32))->Render_Render_759850(v10); /*0x5bffc8*/
       }
     }
     if ( a2 ) /*0x5bffe2*/
