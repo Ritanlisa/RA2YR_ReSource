@@ -762,8 +762,8 @@ Coord * * CComObject_CChatEventSink___ATL::DispatchStub_22(int a1, int a2, int a
     {
       (v16) = ((v16) & ~0xFF) | ((dword_A8BB08) & 0xFF); /*0x7a80ef*/
       if ( !FindAndValidateMap(byte_A8B8E0, dword_A8BB04, &byte_A8BAE2, v16, 0) /*0x7a813d*/
-        || (RawFileClass::Construct((BufferIOFileClass *)Buffer, (int)byte_A8B8E0),
-            v17 = (unsigned __int8)FileClass::Open((RawFileClass *)Buffer, 0) != 0,
+        || (((RawFileClass *)Buffer)->Construct((int)byte_A8B8E0),
+            v17 = (unsigned __int8)((FileClass *)Buffer)->Open(0) != 0,
             RawFileClass::Dtor((BufferIOFileClass *)Buffer),
             v17) )
       {

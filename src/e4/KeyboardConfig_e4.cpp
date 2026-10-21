@@ -99,7 +99,7 @@ LABEL_14:
     }
     /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x533ec0*/
     v12 = 0; /*0x533ec8*/
-    Vector::Clear((int)v11); /*0x533ecf*/
+    ((Vector *)v11)->Clear(); /*0x533ecf*/
     *(unsigned int *)v10.__tail_0 = &off_7E1668; /*0x533ed8*/
     BufferIOFileClass::Dtor((BufferIOFileClass *)&v10); /*0x533ee0*/
     HashTable::DestroyHashTableINIClass((INIClass *)&v9); /*0x533ee9*/
@@ -110,7 +110,7 @@ LABEL_14:
     Debug::Log(); /*0x533efe*/
     /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x533f0d*/
     v12 = 0; /*0x533f15*/
-    Vector::Clear((int)v11); /*0x533f1c*/
+    ((Vector *)v11)->Clear(); /*0x533f1c*/
     *(unsigned int *)v10.__tail_0 = &off_7E1668; /*0x533f25*/
     BufferIOFileClass::Dtor((BufferIOFileClass *)&v10); /*0x533f2d*/
     HashTable::DestroyHashTableINIClass((INIClass *)&v9); /*0x533f36*/

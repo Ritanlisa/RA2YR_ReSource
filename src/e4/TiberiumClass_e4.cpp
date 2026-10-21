@@ -165,7 +165,7 @@ TiberiumClass::TiberiumClass(ObjectClass * aP1)
 {
 
 
-  AbstractTypeClass::Constructor((int *)this, aP1); /*0x7216ca*/
+  this->AbstractTypeClass::Constructor(aP1); /*0x7216ca*/
   this->u32_A0 = -1717986918; /*0x7216dc*/
   this->Spread = -1717986918; /*0x7216e7*/
   *&this->isInLogic = (void *)(-1); /*0x7216f1*/

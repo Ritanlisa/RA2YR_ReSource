@@ -328,17 +328,17 @@ int WinModemClass::SaveToINI(const char * NumberOfBytesWritten, void * aP)
   Debug::Log(); /*0x775084*/
   unsigned int v3; // kr18_4
   v3 = strlen(Buffer) + 1; /*0x775095*/
-  AsyncIO::WaitCompletion((int)aP); /*0x77509e*/
+  ((AsyncIO *)aP)->WaitCompletion(); /*0x77509e*/
   if ( !WriteFile(*((HANDLE *)aP + 23), Buffer, v3 - 1, (LPDWORD)&aP, (LPOVERLAPPED)aP + 3) ) /*0x7750b6*/
   {
     if ( GetLastError() == 997 ) /*0x7750cb*/
     {
       *((unsigned char *)aP + 81) = 1; /*0x7750cf*/
-      return AsyncIO::WaitCompletion((int)aP); /*0x7750df*/
+      return ((AsyncIO *)aP)->WaitCompletion(); /*0x7750df*/
     }
     Debug::Log(); /*0x7750e9*/
   }
-  return AsyncIO::WaitCompletion((int)aP); /*0x7750d8*/
+  return ((AsyncIO *)aP)->WaitCompletion(); /*0x7750d8*/
 }
 } // namespace gamemd
 // 0x775110
@@ -381,7 +381,7 @@ AbstractClass * * WinModemClass::Dial(const char * a2, unsigned char a3, char * 
     Ticks = Timer::GetTicks(); /*0x7751d1*/
     v9 = strlen(Buffer) + 1; /*0x7751de*/
     v27 = a6; /*0x7751ea*/
-    AsyncIO::WaitCompletion((int)this); /*0x7751f2*/
+    ((AsyncIO *)this)->WaitCompletion(); /*0x7751f2*/
     if ( !WriteFile(this->u32_5C, Buffer, v9 - 1, &NumberOfBytesWritten, (LPOVERLAPPED)&this->u32_C) ) /*0x77520d*/
     {
       if ( GetLastError() == 997 ) /*0x77521e*/
@@ -389,7 +389,7 @@ AbstractClass * * WinModemClass::Dial(const char * a2, unsigned char a3, char * 
       else
         Debug::Log(); /*0x77522d*/
     }
-    AsyncIO::WaitCompletion((int)this); /*0x775237*/
+    ((AsyncIO *)this)->WaitCompletion(); /*0x775237*/
     v10 = Ticks; /*0x77523c*/
     v11 = v27; /*0x775240*/
     v12 = v27; /*0x775247*/
@@ -472,7 +472,7 @@ AbstractClass * * WinModemClass::Dial(const char * a2, unsigned char a3, char * 
       v22 = 80; /*0x77539c*/
     strncpy(Destination, Str, v22); /*0x7753af*/
     Sleep(0x64u); /*0x7753bf*/
-    AsyncIO::WaitCompletion((int)this); /*0x7753c3*/
+    ((AsyncIO *)this)->WaitCompletion(); /*0x7753c3*/
     if ( !WriteFile(this->u32_5C, &word_8327A0, 1u, &v28, (LPOVERLAPPED)&this->u32_C) ) /*0x7753dc*/
     {
       if ( GetLastError() == 997 ) /*0x7753ed*/
@@ -480,7 +480,7 @@ AbstractClass * * WinModemClass::Dial(const char * a2, unsigned char a3, char * 
       else
         Debug::Log(); /*0x7753fc*/
     }
-    AsyncIO::WaitCompletion((int)this); /*0x775406*/
+    ((AsyncIO *)this)->WaitCompletion(); /*0x775406*/
     Sleep(0x64u); /*0x77540d*/
   }
   return 0; /*0x775428*/

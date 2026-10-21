@@ -530,7 +530,7 @@ int SelectAllOfType()
     v4 = v3; /*0x73299d*/
     if ( v3 ) /*0x7329a4*/
     {
-      EventClass::resetEvent(v3, 0, 0); /*0x7329aa*/
+      ((EventClass *)v3)->resetEvent(0, 0); /*0x7329aa*/
       /* X11: ptr_0 install elided (legacy slot spelling slot, RHS g_ptr_7E17AC) */  /*0x7329af*/
       *&v4->CapacityIncrement = 10; /*0x7329b5*/
       *(unsigned int *)v4->Count = 0; /*0x7329bc*/
@@ -677,7 +677,7 @@ char sub_732FF0(void * a1, int (__fastcall *)(unsigned int, int), int a3)
     int v5 = 0; // ebx /*0x733015*/
     if ( HeightMap ) /*0x73301c*/
     {
-      (*((unsigned char *)&(HeightMap))) = (uint8_t)EventClass::resetEvent((int *)HeightMap, 0, 0); /*0x733022*/
+      (*((unsigned char *)&(HeightMap))) = (uint8_t)((EventClass *)HeightMap)->resetEvent(0, 0); /*0x733022*/
       /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E3238) */  /*0x733027*/
       v4->u32_14 = 10; /*0x73302d*/
       v4->q010 = 0; /*0x733034*/
@@ -721,7 +721,7 @@ char sub_732FF0(void * a1, int (__fastcall *)(unsigned int, int), int a3)
     v4 = v10; /*0x7330aa*/
     if ( v10 ) /*0x7330b1*/
     {
-      EventClass::resetEvent(v10, 0, 0); /*0x7330b9*/
+      ((EventClass *)v10)->resetEvent(0, 0); /*0x7330b9*/
       /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E3238) */  /*0x7330be*/
       v4->u32_14 = 10; /*0x7330c4*/
       v4->q010 = 0; /*0x7330cb*/
@@ -792,7 +792,7 @@ char sub_7331B0()
   v3 = v2; /*0x7331d4*/
   if ( v2 ) /*0x7331db*/
   {
-    EventClass::resetEvent(v2, 0, 0); /*0x7331e1*/
+    ((EventClass *)v2)->resetEvent(0, 0); /*0x7331e1*/
     /* X11: ptr_0 install elided (legacy slot spelling slot, RHS g_ptr_7E17AC) */  /*0x7331e6*/
     *&v3->CapacityIncrement = 10; /*0x7331ec*/
     *(unsigned int *)v3->Count = 0; /*0x7331f3*/
@@ -840,7 +840,7 @@ char sub_7331B0()
     v12 = v11; /*0x733289*/
     if ( v11 ) /*0x733290*/
     {
-      EventClass::resetEvent(v11, 0, 0); /*0x733296*/
+      ((EventClass *)v11)->resetEvent(0, 0); /*0x733296*/
       /* X11: ptr_0 install elided (legacy slot spelling slot, RHS g_ptr_7E17AC) */  /*0x73329b*/
       *&v12->CapacityIncrement = 10; /*0x7332a1*/
       *(unsigned int *)v12->Count = 0; /*0x7332a8*/

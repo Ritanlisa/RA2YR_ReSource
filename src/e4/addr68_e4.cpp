@@ -668,7 +668,7 @@ int PostLoadInitScenario()
   int result; // eax
   Voxel *v34; // [esp+14h] [ebp-1Ch]
   int k; // [esp+20h] [ebp-10h]
-  int v36; // [esp+24h] [ebp-Ch] BYREF
+  unsigned int v36; // [esp+24h] [ebp-Ch] BYREF
   int v37; // [esp+28h] [ebp-8h]
   int GroundHeight; // [esp+2Ch] [ebp-4h]
 
@@ -1096,7 +1096,7 @@ char * SaveScenarioToINI(char * Source, char a2, int a3)
     /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E16B0) */  /*0x687d48*/
     v8 = v5; /*0x687d50*/
     v12 = 0; /*0x687d54*/
-    Vector::Clear((int)v11); /*0x687d5b*/
+    ((Vector *)v11)->Clear(); /*0x687d5b*/
     v10.customSound_controller[3] = (int)&off_7E1668; /*0x687d64*/
     BufferIOFileClass::Dtor((BufferIOFileClass *)&v10.customSound_controller[3]); /*0x687d6c*/
     if ( v8 ) /*0x687d75*/
@@ -1105,7 +1105,7 @@ char * SaveScenarioToINI(char * Source, char a2, int a3)
       ((CCINIClass *)&v10.ptr_4)->Load((int)&v10.customSound_controller[3], 1, 0); /*0x687d8d*/
       /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E16B0) */  /*0x687d99*/
       v12 = 0; /*0x687da1*/
-      Vector::Clear((int)v11); /*0x687da8*/
+      ((Vector *)v11)->Clear(); /*0x687da8*/
       v10.customSound_controller[3] = (int)&off_7E1668; /*0x687db1*/
       BufferIOFileClass::Dtor((BufferIOFileClass *)&v10.customSound_controller[3]); /*0x687db9*/
     }

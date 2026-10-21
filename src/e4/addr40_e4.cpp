@@ -183,7 +183,7 @@ LABEL_30:
     }
     v19[0] = (int)&g_ptr_7E16B0; /*0x401547*/
     v21 = 0; /*0x40154f*/
-    Vector::Clear((int)v20); /*0x401556*/
+    ((Vector *)v20)->Clear(); /*0x401556*/
     v19[0] = (int)&off_7E1668; /*0x40155f*/
     BufferIOFileClass::Dtor(v19); /*0x401567*/
     return 0; /*0x40156c*/
@@ -233,7 +233,7 @@ LABEL_24:
   }
   v19[0] = (int)&g_ptr_7E16B0; /*0x4014ac*/
   v21 = 0; /*0x4014b4*/
-  Vector::Clear((int)v20); /*0x4014bb*/
+  ((Vector *)v20)->Clear(); /*0x4014bb*/
   v19[0] = (int)&off_7E1668; /*0x4014c4*/
   BufferIOFileClass::Dtor(v19); /*0x4014cc*/
   return v3; /*0x4014d3*/

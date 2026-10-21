@@ -202,7 +202,7 @@ int Session::PrepareGame(HWND hWnd)
       /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x5e7864*/
       v15 = v14 == 0; /*0x5e786c*/
       *(unsigned int *)&Str[100] = 0; /*0x5e786f*/
-      Vector::Clear((int)&Str[88]); /*0x5e7876*/
+      ((Vector *)&Str[88])->Clear(); /*0x5e7876*/
       *(unsigned int *)Str = (unsigned int)(&off_7E1668); /*0x5e787f*/
       result = ((BufferIOFileClass *)((BufferIOFileClass *)Str))->Dtor(); /*0x5e7887*/
       if ( !v15 ) /*0x5e788e*/

@@ -1979,26 +1979,26 @@ char sub_5C0640(const char * a1, char * a2, int a3)
   strcpy(v3, aBik_0); /*0x5c06c9*/
   unsigned int *v5; // eax
   unsigned int v11[22]; // [esp+14h] [ebp-134h] BYREF
-  v5 = CCFileClass::Construct(v11, Source); /*0x5c06d6*/
+  v5 = ((CCFileClass *)v11)->Construct(Source); /*0x5c06d6*/
   char v6; // bl
   v6 = v5->vt_slot_20(0); /*0x5c06e8*/
   v11[0] = &g_ptr_7E16B0; /*0x5c06ea*/
   int v13; // [esp+78h] [ebp-D0h]
   v13 = 0; /*0x5c06f2*/
   unsigned char v12[12]; // [esp+6Ch] [ebp-DCh] BYREF
-  Vector::Clear((int)v12); /*0x5c06fa*/
+  ((Vector *)v12)->Clear(); /*0x5c06fa*/
   v11[0] = (unsigned int)&off_7E1668; /*0x5c0703*/
   ((BufferIOFileClass *)(v11))->Dtor(); /*0x5c070b*/
   if ( !v6 ) /*0x5c0712*/
   {
     strcpy(v3, aVqa); /*0x5c0735*/
     unsigned int *v7; // eax
-    v7 = CCFileClass::Construct(v11, Source); /*0x5c0742*/
+    v7 = ((CCFileClass *)v11)->Construct(Source); /*0x5c0742*/
     char v8; // bl
     v8 = v7->vt_slot_20(0); /*0x5c0754*/
     v11[0] = &g_ptr_7E16B0; /*0x5c0756*/
     v13 = 0; /*0x5c075e*/
-    Vector::Clear((int)v12); /*0x5c0766*/
+    ((Vector *)v12)->Clear(); /*0x5c0766*/
     v11[0] = (unsigned int)&off_7E1668; /*0x5c076f*/
     ((BufferIOFileClass *)(v11))->Dtor(); /*0x5c0777*/
     if ( !v8 ) /*0x5c077e*/

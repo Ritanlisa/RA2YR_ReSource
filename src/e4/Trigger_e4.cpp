@@ -203,7 +203,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
         }
         /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E16B0) */  /*0x76d73d*/
         v28.location[2] = 0; /*0x76d745*/
-        Vector::Clear((int)v28.isInLogic); /*0x76d74c*/
+        ((Vector *)v28.isInLogic)->Clear(); /*0x76d74c*/
         v28.ambientSoundController[1] = (int)&off_7E1668; /*0x76d755*/
         BufferIOFileClass::Dtor((BufferIOFileClass *)&v28.ambientSoundController[1]); /*0x76d75d*/
       }
@@ -242,7 +242,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
       }
       /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x76d841*/
       v31 = 0; /*0x76d84c*/
-      Vector::Clear((int)v30); /*0x76d853*/
+      ((Vector *)v30)->Clear(); /*0x76d853*/
       BufferIOFileClass::Destruct((BufferIOFileClass *)&v29); /*0x76d85f*/
     }
     (*(void (**)(int *))(v25.VectorCursor_field_0x0C + 8))(&v25.VectorCursor_field_0x0C); /*0x76d86c*/

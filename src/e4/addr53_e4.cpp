@@ -309,7 +309,7 @@ int ShowLoadingScreen(void * a1, void * a2, void * a3)
     (**(void (***)(int, int))v34)(v34, 1); /*0x531636*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x53163f*/
   v44 = 0; /*0x531647*/
-  Vector::Clear((int)v43); /*0x531652*/
+  ((Vector *)v43)->Clear(); /*0x531652*/
   *(unsigned int *)v42.__tail_0 = &off_7E1668; /*0x53165b*/
   return BufferIOFileClass::Dtor((BufferIOFileClass *)&v42); /*0x531668*/
 
@@ -376,7 +376,7 @@ LABEL_11:
 LABEL_12:
     /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x53179c*/
     v9 = 0; /*0x5317a8*/
-    Vector::Clear((int)v8); /*0x5317ac*/
+    ((Vector *)v8)->Clear(); /*0x5317ac*/
     *(unsigned int *)v7.__tail_0 = &off_7E1668; /*0x5317b5*/
     BufferIOFileClass::Dtor((BufferIOFileClass *)&v7); /*0x5317bd*/
     return 0; /*0x5317cb*/
@@ -395,19 +395,19 @@ LABEL_16:
     Debug::Log(); /*0x531805*/
     /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x531819*/
     v12 = 0; /*0x531821*/
-    Vector::Clear((int)v11); /*0x531828*/
+    ((Vector *)v11)->Clear(); /*0x531828*/
     *(unsigned int *)v10.__tail_0 = &off_7E1668; /*0x531831*/
     BufferIOFileClass::Dtor((BufferIOFileClass *)&v10); /*0x531839*/
     goto LABEL_12; /*0x53183e*/
   }
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x531852*/
   v12 = 0; /*0x53185a*/
-  Vector::Clear((int)v11); /*0x531861*/
+  ((Vector *)v11)->Clear(); /*0x531861*/
   *(unsigned int *)v10.__tail_0 = &off_7E1668; /*0x53186a*/
   BufferIOFileClass::Dtor((BufferIOFileClass *)&v10); /*0x531872*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x53187b*/
   v9 = 0; /*0x531883*/
-  Vector::Clear((int)v8); /*0x531887*/
+  ((Vector *)v8)->Clear(); /*0x531887*/
   *(unsigned int *)v7.__tail_0 = &off_7E1668; /*0x531890*/
   BufferIOFileClass::Dtor((BufferIOFileClass *)&v7); /*0x531898*/
   return 1; /*0x5317c4*/

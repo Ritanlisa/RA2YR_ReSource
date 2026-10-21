@@ -60,7 +60,7 @@ int Event::Dispatch(void *a1_1, void *a2_1, void *a3_1, void *a4_1, void *a5_1)
   if ( result == 2 ) /*0x48d0cb*/
   {
     LABEL_11:
-    Stream::ReadPacket((int)&unk_A8EA70); /*0x48d0e0*/
+    ((Stream *)&unk_A8EA70)->ReadPacket(); /*0x48d0e0*/
     if ( ((unsigned int *)(dword_A8B230))[13720] && ObjectTypeClass::CreateInstance((int)&unk_A8EA70, (int)v2, (int)v1) > 0 ) /*0x48d10f*/
     {
       do /*0x48d15f*/

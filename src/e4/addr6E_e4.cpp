@@ -213,7 +213,7 @@ int E4Recv_6E2790::sub_6E2790(int a2, int a3, int a4, int a5)
   {
     GroundHeight += dword_B0E6D4; /*0x6e2827*/
   }
-  Tactical::SetTacticalPosition((TacticalClass *)g_TacticalClass_Instance, v8); /*0x6e2836*/
+  ((Tactical *)g_TacticalClass_Instance)->SetTacticalPosition(v8); /*0x6e2836*/
   return 1; /*0x6e283d*/
 
 }
@@ -260,7 +260,7 @@ int E4Recv_6E3380::sub_6E3380(int a2, int a3, int a4, int a5)
   GroundHeight = 0; /*0x6e339f*/
   int v9; // [esp+8h] [ebp-8h]
   v9 = ((short)(((v7) >> 16) & 0xFFFF) << 8) + 128; /*0x6e33c0*/
-  int v8; // [esp+4h] [ebp-Ch] BYREF
+  unsigned int v8; // [esp+4h] [ebp-Ch] BYREF
   v8 = ((__int16)v7 << 8) + 128; /*0x6e33ca*/
   GroundHeight = Cell::GetGroundHeight(&v8); /*0x6e33d5*/
   unsigned int *v5; // eax
@@ -911,7 +911,7 @@ char E4Recv_6E35F0::sub_6E35F0(void * a2, int a3, int a4, int a5)
   GroundHeight = 0; /*0x6e360f*/
   int v9; // [esp+Ch] [ebp-8h]
   v9 = (v6[1] << 8) + 128; /*0x6e3630*/
-  int v8; // [esp+8h] [ebp-Ch] BYREF
+  unsigned int v8; // [esp+8h] [ebp-Ch] BYREF
   v8 = (v6[0] << 8) + 128; /*0x6e363a*/
   GroundHeight = Cell::GetGroundHeight(&v8); /*0x6e3643*/
   if ( (*((unsigned int *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v6) + 80) & 0x100) != 0 ) /*0x6e365f*/

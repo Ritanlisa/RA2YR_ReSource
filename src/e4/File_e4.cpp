@@ -468,7 +468,7 @@ AbstractClass * * File::ParseCSFString(char * Source)
 LABEL_42:
       /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x734cad*/
       v25 = 0; /*0x734cbc*/
-      Vector::Clear((int)v24); /*0x734cc3*/
+      ((Vector *)v24)->Clear(); /*0x734cc3*/
       *(unsigned int *)v23.__tail_0 = &off_7E1668; /*0x734ccc*/
       BufferIOFileClass::Dtor((BufferIOFileClass *)&v23); /*0x734cd4*/
       return 1; /*0x734ce8*/
@@ -598,7 +598,7 @@ LABEL_31:
 LABEL_43:
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x734ce9*/
   v25 = 0; /*0x734cf8*/
-  Vector::Clear((int)v24); /*0x734cff*/
+  ((Vector *)v24)->Clear(); /*0x734cff*/
   *(unsigned int *)v23.__tail_0 = &off_7E1668; /*0x734d08*/
   BufferIOFileClass::Dtor((BufferIOFileClass *)&v23); /*0x734d10*/
   return 0; /*0x734cde*/

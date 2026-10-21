@@ -1849,7 +1849,7 @@ unsigned short sub_734120()
     v3 = (*((char *)(&dword_87F7E8)->To_Cell(&v5) + 283) << 8) / 2; /*0x7341c6*/
     v6 -= v3; /*0x7341cc*/
     v5 -= v3; /*0x7341df*/
-    Tactical::SetTacticalPosition((int)g_TacticalClass_Instance, &v5); /*0x7341e3*/
+    ((Tactical *)g_TacticalClass_Instance)->SetTacticalPosition(&v5); /*0x7341e3*/
     result = dword_880990; /*0x7341e8*/
     if ( dword_880990 ) /*0x7341ef*/
       return (uint16_t)Tactical::MouseMove((int)&dword_87F7E8, &v4, &word_B0FDF0); /*0x734200*/

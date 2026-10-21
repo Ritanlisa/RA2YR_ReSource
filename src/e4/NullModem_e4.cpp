@@ -61,7 +61,7 @@ char NullModem_TestConnection(void * a1)
   v6 = v5; /*0x5f043c*/
   while ( (uint8_t)Dialog::PumpMessages() != 1 && !g_NetworkTestFlag ) /*0x5f0452*/
   {
-    Stream::ReadPacket((int)&unk_A8EA70); /*0x5f045d*/
+    ((Stream *)&unk_A8EA70)->ReadPacket(); /*0x5f045d*/
     v7 = dword_887338; /*0x5f0462*/
     v8 = dword_887340; /*0x5f0467*/
     if ( dword_887338 != -1 ) /*0x5f0470*/
@@ -80,7 +80,7 @@ char NullModem_TestConnection(void * a1)
       v6 = v10; /*0x5f04d1*/
       v23[0] = 100; /*0x5f04d3*/
       (*((unsigned char *)&(v23[6]))) = dword_A8B394; /*0x5f04db*/
-      Stream::WriteBlock(&unk_A8EA70, (int)v23, 250, 0); /*0x5f04df*/
+      ((Stream *)&unk_A8EA70)->WriteBlock((int)v23, 250, 0); /*0x5f04df*/
     }
     if ( ObjectTypeClass::CreateInstance((int)&unk_A8EA70, (int)v25, (int)v22) > 0 ) /*0x5f04fd*/
     {
@@ -101,7 +101,7 @@ char NullModem_TestConnection(void * a1)
         v24 = 0; /*0x5f0571*/
         v23[0] = 100; /*0x5f0573*/
         (*((unsigned char *)&(v23[6]))) = dword_A8B394; /*0x5f057b*/
-        Stream::WriteBlock(&unk_A8EA70, (int)v23, 250, 1); /*0x5f057f*/
+        ((Stream *)&unk_A8EA70)->WriteBlock((int)v23, 250, 1); /*0x5f057f*/
         v12 = dword_887340; /*0x5f0589*/
         if ( dword_887338 != -1 ) /*0x5f0594*/
           v12 += TimerGetTicks() - dword_887338; /*0x5f05a6*/
@@ -113,7 +113,7 @@ char NullModem_TestConnection(void * a1)
             v13 += TimerGetTicks() - dword_887338; /*0x5f05c9*/
           if ( (unsigned int)(v13 - v12) >= 0x3C ) /*0x5f05d0*/
             break; /*0x5f05d0*/
-          Stream::ReadPacket((int)&unk_A8EA70); /*0x5f05d7*/
+          ((Stream *)&unk_A8EA70)->ReadPacket(); /*0x5f05d7*/
         }
         v1 = 1; /*0x5f05de*/
         v19 = 0; /*0x5f05e0*/

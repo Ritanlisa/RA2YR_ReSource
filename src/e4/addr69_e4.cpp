@@ -218,7 +218,7 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
     memset(v41, 0, sizeof(v41)); /*0x693cd4*/
     v42 = 0; /*0x693ce5*/
     v41[0] = 110; /*0x693ce7*/
-    Stream::WriteBlock((int)&unk_A8EA70, (int)v41, 250, 1); /*0x693cef*/
+    ((Stream *)&unk_A8EA70)->WriteBlock((int)v41, 250, 1); /*0x693cef*/
     while ( Count::GetCountQueue(&unk_A8EA70) > 0 ) /*0x693d00*/
     {
       v8 = 3600; /*0x693d06*/
@@ -361,7 +361,7 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
     memset(v41, 0, sizeof(v41)); /*0x6940b8*/
     v42 = 0; /*0x6940ba*/
     v41[0] = 113; /*0x6940cb*/
-    Stream::WriteBlock((int)&unk_A8EA70, (int)v41, 250, 1); /*0x6940d3*/
+    ((Stream *)&unk_A8EA70)->WriteBlock((int)v41, 250, 1); /*0x6940d3*/
     while ( Count::GetCountQueue(&unk_A8EA70) > 0 ) /*0x6940e4*/
     {
       v26 = 3600; /*0x6940ea*/
@@ -484,8 +484,8 @@ char ReceiveNetworkFile(int a1, DWORD a2, int a3, char a4)
   v23 = 0; /*0x6941cc*/
   v6 = (unsigned __int16 *)__2_YAPAXI_Z(0x1E7u); /*0x6941e1*/
   Debug::Log(); /*0x6941e3*/
-  RawFileClass::Construct((BufferIOFileClass *)v43, a1); /*0x6941f0*/
-  if ( (unsigned __int8)FileClass::Open((RawFileClass *)v43, 0) ) /*0x6941fb*/
+  ((RawFileClass *)v43)->Construct(a1); /*0x6941f0*/
+  if ( (unsigned __int8)((FileClass *)v43)->Open(0) ) /*0x6941fb*/
     FileClass::Delete((RawFileClass *)v43); /*0x694208*/
   FileClass::Open2((RawFileClass *)v43, (const CHAR *)2); /*0x694213*/
   v7 = a2 / 0xC0; /*0x69422c*/
@@ -624,7 +624,7 @@ LABEL_54:
   Debug::Log(); /*0x6946fa*/
   FileClass::CloseHandle((RawFileClass *)v43); /*0x694706*/
   Debug::Log(); /*0x694710*/
-  if ( !v21 && (unsigned __int8)FileClass::Open((RawFileClass *)v43, 0) ) /*0x694722*/
+  if ( !v21 && (unsigned __int8)((FileClass *)v43)->Open(0) ) /*0x694722*/
   {
     FileClass::Delete((RawFileClass *)v43); /*0x69472f*/
     Debug::Log(); /*0x694739*/
@@ -710,7 +710,7 @@ int Network_SendFile(char * Source, int a2, char a3, char a4)
   {
     /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x6947b7*/
     v56 = 0; /*0x6947bf*/
-    Vector::Clear((int)v55); /*0x6947c6*/
+    ((Vector *)v55)->Clear(); /*0x6947c6*/
     *(unsigned int *)v54.__tail_0 = &off_7E1668; /*0x6947cf*/
     result = BufferIOFileClass::Dtor((BufferIOFileClass *)&v54); /*0x6947d7*/
     (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x6947dc*/
@@ -823,7 +823,7 @@ LABEL_20:
   *(unsigned int *)v58 = 111; /*0x694a1d*/
   strcpy(v59, Source); /*0x694a2b*/
   *(unsigned int *)&v58[158] = Size; /*0x694a42*/
-  Stream::WriteBlock((int *)&stru_A8E960.altNextScenario[12], (int)v58, 250, 1); /*0x694a4f*/
+  ((Stream *)&stru_A8E960.altNextScenario[12])->WriteBlock((int)v58, 250, 1); /*0x694a4f*/
   while ( ((Count *)&stru_A8E960.altNextScenario[12])->GetCountQueue() > 0 ) /*0x694a60*/
   {
     v16 = 3600; /*0x694a66*/
@@ -849,7 +849,7 @@ LABEL_38:
       Debug::Log(); /*0x694abd*/
       /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x694ad1*/
       v56 = 0; /*0x694ad9*/
-      Vector::Clear((int)v55); /*0x694ae4*/
+      ((Vector *)v55)->Clear(); /*0x694ae4*/
       *(unsigned int *)v54.__tail_0 = &off_7E1668; /*0x694aed*/
       result = BufferIOFileClass::Dtor((BufferIOFileClass *)&v54); /*0x694af5*/
       (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x694afa*/
@@ -986,7 +986,7 @@ LABEL_115:
           if ( v45 != -1 ) /*0x69504f*/
             Timer::GetTicks(); /*0x695055*/
           Debug::Log(); /*0x695072*/
-          Stream::WriteBlock((int *)&stru_A8E960.altNextScenario[12], (int)&Buffer.u32_C, 220, 1); /*0x69508e*/
+          ((Stream *)&stru_A8E960.altNextScenario[12])->WriteBlock((int)&Buffer.u32_C, 220, 1); /*0x69508e*/
         }
         ++v27; /*0x69509e*/
         v48 += 100; /*0x6950a4*/

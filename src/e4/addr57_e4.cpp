@@ -276,7 +276,7 @@ void* CreateMapObject(ProgressScreenClass * aP0, int aP1)
   v6 = g_MapCellWidth * g_MapCellWidth; /*0x578ed1*/
   for ( i = 0; i < v6; Entry[74] = 1 ) /*0x578ed8*/
     Entry = GetTileDataEntry(i++); /*0x578edc*/
-  Mouse::SetBounds((int)&dword_87F7E8, 0); /*0x578ef0*/
+  ((Mouse *)&dword_87F7E8)->SetBounds(0); /*0x578ef0*/
   dword_87F8F8 = dword_87F8DC; /*0x578f00*/
   dword_87F8F4 = 1; /*0x578f0d*/
   dword_87F8FC = dword_87F8DC - 1; /*0x578f16*/

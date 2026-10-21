@@ -582,7 +582,7 @@ TechnoClass * * SlaveManagerClass_ProcessSlaves(unsigned int *a1, void * a2, voi
               v78.ptr_0 = v35; /*0x6afa3f*/
               v37 = BuildingTypeClass::GetFoundationHeight(v36, 0); /*0x6afa43*/
               v38 = *(unsigned int *)(v4 + 36); /*0x6afa4c*/
-              v73 = CellStruct::Set((CellStruct *)v80, LOWORD(v78.ptr_0) - 1, v37 / 2); /*0x6afa67*/
+              v73 = ((CellStruct *)v80)->Set(LOWORD(v78.ptr_0) - 1, v37 / 2); /*0x6afa67*/
               v39 = (CellStruct *)(*(int (**)(int, int *, int *))(*(unsigned int *)v38 + 440))( /*0x6afa75*/
                                     v38,
                                     &v82,

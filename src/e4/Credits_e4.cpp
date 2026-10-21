@@ -50,7 +50,7 @@ char Credits::Screen()
       cAlternateFileName = FindFileData.cAlternateFileName; /*0x52cbdc*/
       if ( !strlen(FindFileData.cAlternateFileName) ) /*0x52cbe3*/
         cAlternateFileName = FindFileData.cFileName; /*0x52cbea*/
-      CCFileClass::Construct(v11, cAlternateFileName); /*0x52cbf6*/
+      ((CCFileClass *)v11)->Construct(cAlternateFileName); /*0x52cbf6*/
       v2 = (unsigned int *)(__2_YAPAXI_Z(0x58u)); /*0x52cbfd*/
       v3 = v2; /*0x52cc02*/
       if ( v2 ) /*0x52cc09*/

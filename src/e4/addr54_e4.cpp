@@ -467,7 +467,7 @@ char * * LoadTerrainTypeClassTheatre(AbstractClass * a1, char a2)
   v89 = 0; /*0x5451fa*/
   dword_AA1038 = 0; /*0x545201*/
   dword_AA103C = 0; /*0x545207*/
-  CCFileClass::Construct(v158, aCShadowShp); /*0x545214*/
+  ((CCFileClass *)v158)->Construct(aCShadowShp); /*0x545214*/
   if ( lpBuffer ) /*0x545220*/
   {
     __3_YAXPAX_Z(lpBuffer); /*0x545223*/
@@ -511,25 +511,25 @@ char * * LoadTerrainTypeClassTheatre(AbstractClass * a1, char a2)
   v9 = 112 * a1; /*0x5452e8*/
   v113 = 112 * a1; /*0x5452eb*/
   sprintf(Buffer, "SLOP01Z.%s", (const char *)&off_7E1BC6 + 112 * a1); /*0x545306*/
-  CCFileClass::Construct(v149, Buffer); /*0x54531d*/
+  ((CCFileClass *)v149)->Construct(Buffer); /*0x54531d*/
   v10 = CCFileClass::GetSize(v149); /*0x545329*/
   dword_AA1060 = __2_YAPAXI_Z(v10); /*0x54533e*/
   v11 = CCFileClass::GetSize(v149); /*0x545343*/
   CCFileClass::Read(v149, dword_AA1060, v11); /*0x545357*/
   v148 = 50; /*0x54536b*/
-  FileClass::SetFileName(v149, Buffer); /*0x545373*/
+  ((FileClass *)v149)->SetFileName(Buffer); /*0x545373*/
   v12 = CCFileClass::GetSize(v149); /*0x54537f*/
   dword_AA1064 = __2_YAPAXI_Z(v12); /*0x545394*/
   v13 = CCFileClass::GetSize(v149); /*0x545399*/
   CCFileClass::Read(v149, dword_AA1064, v13); /*0x5453ad*/
   v148 = 51; /*0x5453c1*/
-  FileClass::SetFileName(v149, Buffer); /*0x5453c9*/
+  ((FileClass *)v149)->SetFileName(Buffer); /*0x5453c9*/
   v14 = CCFileClass::GetSize(v149); /*0x5453d5*/
   dword_AA1068 = __2_YAPAXI_Z(v14); /*0x5453ea*/
   v15 = CCFileClass::GetSize(v149); /*0x5453ef*/
   CCFileClass::Read(v149, dword_AA1068, v15); /*0x545402*/
   v148 = 52; /*0x54540e*/
-  FileClass::SetFileName(v149, Buffer); /*0x54541e*/
+  ((FileClass *)v149)->SetFileName(Buffer); /*0x54541e*/
   v16 = CCFileClass::GetSize(v149); /*0x54542a*/
   dword_AA106C = __2_YAPAXI_Z(v16); /*0x54543f*/
   v17 = CCFileClass::GetSize(v149); /*0x545444*/
@@ -540,7 +540,7 @@ char * * LoadTerrainTypeClassTheatre(AbstractClass * a1, char a2)
       (*(void (**)(unsigned int, int))(**(unsigned int **)MEMORY[0xA8ED2C] + 32))(*(unsigned int *)MEMORY[0xA8ED2C], 1); /*0x545474*/
   }
   sprintf(v180, "ISO%s.PAL", (const char *)&off_7E1BC6 + v9); /*0x545493*/
-  CCFileClass::Construct(v161, v180); /*0x5454aa*/
+  ((CCFileClass *)v161)->Construct(v180); /*0x5454aa*/
   if ( CCFileClass::Open(v161, 0) ) /*0x5454b7*/
   {
     CCFileClass::Read(v161, &unk_ABBED0, 768); /*0x5454d1*/
@@ -555,7 +555,7 @@ char * * LoadTerrainTypeClassTheatre(AbstractClass * a1, char a2)
   }
   TheatreClass::InitView(); /*0x5454eb*/
   sprintf(v157, "%sMD.INI", &aTemperat[v9]); /*0x545504*/
-  CCFileClass::Construct(v168, v157); /*0x54551b*/
+  ((CCFileClass *)v168)->Construct(v157); /*0x54551b*/
   CCINIClass::Load(v75, (int)v168, 0, 0); /*0x545530*/
   v20 = 0; /*0x545538*/
   v21 = 0; /*0x54553b*/

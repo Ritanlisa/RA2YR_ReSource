@@ -628,7 +628,7 @@ LABEL_6:
         *aP1 = !v7; /*0x4a392f*/
         /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x4a3938*/
         v9[3] = 0; /*0x4a3940*/
-        Vector::Clear((int)v9); /*0x4a3948*/
+        ((Vector *)v9)->Clear(); /*0x4a3948*/
         *(unsigned int *)v8.__tail_0 = &off_7E1668; /*0x4a3951*/
         BufferIOFileClass::Dtor((BufferIOFileClass *)&v8); /*0x4a3959*/
         return (void *)v5; /*0x4a395e*/
@@ -659,7 +659,7 @@ AbstractClass * * FileClass_LoadToBuffer(char ** a1, bool * a2)
   result = (int)(SearchMIXFile(v3, 0)); /*0x4a3985*/
   if ( !result ) /*0x4a398c*/
   {
-    CCFileClass::Construct(v8, v3); /*0x4a3994*/
+    ((CCFileClass *)v8)->Construct(v3); /*0x4a3994*/
     v5 = 0; /*0x4a3999*/
     if ( (*(uint8_t (**)(unsigned int *, unsigned int))(v8[0] + 20))(v8, 0) ) /*0x4a39a4*/
     {
@@ -671,7 +671,7 @@ AbstractClass * * FileClass_LoadToBuffer(char ** a1, bool * a2)
         LABEL_6: *a2 = (gamemd::AbstractClass **)(!v7);
         v8[0] = (unsigned int)(&g_ptr_7E16B0); /*0x4a39df*/
         v9[3] = 0; /*0x4a39e7*/
-        Vector::Clear((int)v9); /*0x4a39ef*/
+        ((Vector *)v9)->Clear(); /*0x4a39ef*/
         v8[0] = (unsigned int)&off_7E1668; /*0x4a39f8*/
         ((BufferIOFileClass *)(v8))->Dtor(); /*0x4a3a00*/
         return (gamemd::AbstractClass **)((int)v5); /*0x4a3a05*/

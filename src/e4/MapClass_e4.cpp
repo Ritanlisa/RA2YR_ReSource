@@ -363,7 +363,7 @@ INIClass * * MapClass::SaveCellTagsToINI(char * a2, void * aIsomappack, void * a
         if ( v6 && *(unsigned int *)(v6 + 36) ) /*0x4ad8af*/
         {
           wsprintfA(v17, "%d", &i[j]); /*0x4ad8c7*/
-          INIClass::SetString(a2, g_INI_Key_CellTags, v17, (char *)(*(unsigned int *)(v6 + 36) + 36)); /*0x4ad8e4*/
+          ((INIClass *)a2)->SetString(g_INI_Key_CellTags, v17, (char *)(*(unsigned int *)(v6 + 36) + 36)); /*0x4ad8e4*/
         }
         v4 = (CellCoord *)v16; /*0x4ad8e9*/
       }
@@ -399,7 +399,7 @@ INIClass * * MapClass::SaveCellTagsToINI(char * a2, void * aIsomappack, void * a
     (*(void (**)(DSurface *))(DSurface_Alternate->DSurface_field_0x0 + 96))(DSurface_Alternate); /*0x4ad9fb*/
   }
   (*(void (**)(DSurface *))(DSurface_Alternate->DSurface_field_0x0 + 96))(DSurface_Alternate); /*0x4ada06*/
-  Vector::Clear((int)&v18.Pipe_field_0x0C); /*0x4ada0d*/
+  ((Vector *)&v18.Pipe_field_0x0C)->Clear(); /*0x4ada0d*/
   return Pipe::Dtor(&v18); /*0x4ada1b*/
 
 }
@@ -548,7 +548,7 @@ ObjectClass * * MapClass::LoadFileData()
   TerrainClass::InitTheatre((TerrainClass *)this); /*0x5470cf*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x5470d8*/
   v14 = 0; /*0x5470e0*/
-  Vector::Clear((int)v13); /*0x5470e8*/
+  ((Vector *)v13)->Clear(); /*0x5470e8*/
   *(unsigned int *)v12.__tail_0 = &off_7E1668; /*0x5470f1*/
   BufferIOFileClass::Dtor((BufferIOFileClass *)&v12); /*0x5470f9*/
   return Size; /*0x5470fe*/

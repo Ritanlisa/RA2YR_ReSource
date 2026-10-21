@@ -86,7 +86,7 @@ char sub_5F0070()
       }
       if ( (unsigned int)(v2 - v1) >= 0x1E ) /*0x5f010b*/
         break; /*0x5f010b*/
-      Stream::ReadPacket((int)&unk_A8EA70); /*0x5f0112*/
+      ((Stream *)&unk_A8EA70)->ReadPacket(); /*0x5f0112*/
     }
   }
   return v0; /*0x5f0119*/
@@ -781,7 +781,7 @@ AbstractClass * * GenerateRangeRingTextures()
           0,
           1);
       }
-      Vector::Clear((int)v33); /*0x5ff584*/
+      ((Vector *)v33)->Clear(); /*0x5ff584*/
       ++v2; /*0x5ff58d*/
       /* X11: ptr_0 install elided (X67 star-deref, RHS Surface_Vtable) */  /*0x5ff593*/
     }
@@ -839,7 +839,7 @@ AbstractClass * * GenerateRangeRingTextures()
           0,
           1);
       }
-      Vector::Clear((int)v33); /*0x5ff702*/
+      ((Vector *)v33)->Clear(); /*0x5ff702*/
       v11 -= 6; /*0x5ff70b*/
       ++v10; /*0x5ff70f*/
       /* X11: ptr_0 install elided (X67 star-deref, RHS Surface_Vtable) */  /*0x5ff715*/

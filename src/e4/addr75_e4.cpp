@@ -385,7 +385,7 @@ int ThemeManager_Update(int a1, int a2, int a3)
               dword_B1D4C4 = 0; /*0x752532*/
             }
             if ( g_InfantryDrawState ) /*0x752544*/
-              Audio::Release(g_InfantryDrawState); /*0x752546*/
+              ((Audio *)g_InfantryDrawState)->Release(); /*0x752546*/
             ThemeClass::ClearQueues(); /*0x75254b*/
             qword_B1D4D0 = 0; /*0x752552*/
           }
@@ -739,7 +739,7 @@ int E4Recv_7531A0::EVA_LoadINI()
     dword_B1D4C4 = 0; /*0x7531b1*/
   }
   if ( g_InfantryDrawState ) /*0x7531c3*/
-    Audio::Release(g_InfantryDrawState); /*0x7531c5*/
+    ((Audio *)g_InfantryDrawState)->Release(); /*0x7531c5*/
   ThemeClass::ClearQueues(); /*0x7531ca*/
   int result; // eax
   for ( result = g_InfantrySelectState; g_InfantrySelectState > 0; result = g_InfantrySelectState ) /*0x7531d6*/

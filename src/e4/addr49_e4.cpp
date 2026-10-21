@@ -1922,7 +1922,7 @@ AbstractClass * * E4Recv_49C0D0::CampaignClass_LoadCoopSave(void * aScore_0)
   }
   g_IsWindowed[v12] = 0; /*0x49c256*/
   strcat(v28, g_IsWindowed); /*0x49c278*/
-  CCFileClass::Construct(v29, g_Str_File_coopsave_ini); /*0x49c28d*/
+  ((CCFileClass *)v29)->Construct(g_Str_File_coopsave_ini); /*0x49c28d*/
   v24[1] = 0; /*0x49c298*/
   v24[2] = 0; /*0x49c29c*/
   (v25)->Constructor(); /*0x49c2a0*/
@@ -1936,7 +1936,7 @@ AbstractClass * * E4Recv_49C0D0::CampaignClass_LoadCoopSave(void * aScore_0)
     (v24)->DestroyHashTableINIClass(); /*0x49c553*/
     v29[0] = &g_ptr_7E16B0; /*0x49c563*/
     v31 = 0; /*0x49c56e*/
-    Vector::Clear((int)v30); /*0x49c575*/
+    ((Vector *)v30)->Clear(); /*0x49c575*/
     v29[0] = (unsigned int)&off_7E1668; /*0x49c581*/
     ((BufferIOFileClass *)(v29))->Dtor(); /*0x49c58c*/
     return 0; /*0x49c594*/
@@ -1993,7 +1993,7 @@ AbstractClass * * E4Recv_49C0D0::CampaignClass_LoadCoopSave(void * aScore_0)
   HashTable::DestroyHashTableINIClass(v24); /*0x49c509*/
   v29[0] = &g_ptr_7E16B0; /*0x49c515*/
   v31 = 0; /*0x49c520*/
-  Vector::Clear((int)v30); /*0x49c527*/
+  ((Vector *)v30)->Clear(); /*0x49c527*/
   v29[0] = (unsigned int)&off_7E1668; /*0x49c533*/
   ((BufferIOFileClass *)(v29))->Dtor(); /*0x49c53e*/
   return 1; /*0x49c543*/
@@ -2279,7 +2279,7 @@ int E4Recv_49D390::LoadCoopCampaignSave(IUnknown * aP1)
   v3 = &this->M28; /*0x49d3a8*/
   if ( !this->M28 ) /*0x49d3a5*/
     return 0; /*0x49d3ad*/
-  CCFileClass::Construct(v17, g_Str_File_coopsave_ini); /*0x49d3bc*/
+  ((CCFileClass *)v17)->Construct(g_Str_File_coopsave_ini); /*0x49d3bc*/
   v20[1] = 0; /*0x49d3c8*/
   v20[2] = 0; /*0x49d3cc*/
   INISectionList::Constructor(v21); /*0x49d3d3*/

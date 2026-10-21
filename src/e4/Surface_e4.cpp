@@ -416,7 +416,7 @@ AbstractClass * * Surface::LoadToSurfaceSHP(char *Source)
     (*(void (**)(unsigned int *, int))*v3)(v3, 1); /*0x641e74*/
     /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x641e7a*/
     v11 = 0; /*0x641e82*/
-    Vector::Clear((int)v10); /*0x641e8a*/
+    ((Vector *)v10)->Clear(); /*0x641e8a*/
     *(unsigned int *)v9.__tail_0 = &off_7E1668; /*0x641e93*/
     BufferIOFileClass::Dtor((BufferIOFileClass *)&v9); /*0x641e9b*/
     return 1; /*0x641ea2*/
@@ -426,7 +426,7 @@ AbstractClass * * Surface::LoadToSurfaceSHP(char *Source)
 LABEL_11:
     /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x641eaf*/
     v11 = 0; /*0x641eb7*/
-    Vector::Clear((int)v10); /*0x641ebf*/
+    ((Vector *)v10)->Clear(); /*0x641ebf*/
     *(unsigned int *)v9.__tail_0 = &off_7E1668; /*0x641ec8*/
     BufferIOFileClass::Dtor((BufferIOFileClass *)&v9); /*0x641ed0*/
     return 0; /*0x641ed6*/
@@ -1281,7 +1281,7 @@ TechnoClass * * Surface::BlitTechnoTo(short * a1, TechnoClass * aP2, TechnoClass
       0,
       aP6);
   }
-  Vector::Clear((int)v40); /*0x70773f*/
+  ((Vector *)v40)->Clear(); /*0x70773f*/
 
 }
 }  // G42.18c ns repair

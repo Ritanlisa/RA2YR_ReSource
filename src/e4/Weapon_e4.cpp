@@ -160,7 +160,7 @@ int * Weapon::DestroyTerrain(int *a1, int *aP2, int *aP3, int aP4)
   ObjectVector v43; // [esp+30h] [ebp-ACh] BYREF
   int v44; // [esp+48h] [ebp-94h]
   __int16 v48[2]; // [esp+58h] [ebp-84h] BYREF
-  int v49; // [esp+5Ch] [ebp-80h] BYREF
+  unsigned int v49; // [esp+5Ch] [ebp-80h] BYREF
   int v50; // [esp+60h] [ebp-7Ch]
   int v51; // [esp+64h] [ebp-78h]
   int v52; // [esp+68h] [ebp-74h] BYREF

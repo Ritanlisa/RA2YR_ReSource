@@ -71,7 +71,7 @@ void* BuildingPlacement::Activate(int a2, unsigned int *a3)
   *(unsigned int *)&DataGlobal_880994 = this->q030; /*0x4fb8c7*/
   const void *v7; // eax
   v7 = (const void *)v5->vt_slot_264(1); /*0x4fb8d3*/
-  Mouse::SetBounds((int)&DataGlobal_87F7E8, v7); /*0x4fb8df*/
+  ((Mouse *)&DataGlobal_87F7E8)->SetBounds(v7); /*0x4fb8df*/
   unsigned int *v8; // eax
   v8 = (unsigned int *)(*(int (**)(int, int *))(*(unsigned int *)v4 + 440))(v4, &a2); /*0x4fb8ed*/
   ((Tactical *)&DataGlobal_87F7E8)->MouseMove(&a3, v8); /*0x4fb8fe*/
@@ -130,7 +130,7 @@ VectorClass_flat * * BuildingPlacement::ProcessBuildingPlacementAction()
   int v45; // [esp+48h] [ebp-24h]
   char v46; // [esp+5Bh] [ebp-11h]
   int v47; // [esp+5Ch] [ebp-10h] BYREF
-  int v48; // [esp+60h] [ebp-Ch] BYREF
+  unsigned int v48; // [esp+60h] [ebp-Ch] BYREF
   int v49; // [esp+64h] [ebp-8h]
   int v50; // [esp+68h] [ebp-4h]
 

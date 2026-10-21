@@ -1278,7 +1278,7 @@ HouseClass * * Cell::GetAdjacencyFlags(MouseClass * aP0)
     v29 |= 0x20u; /*0x579f55*/
   }
   unsigned short *v30; // eax
-  v30 = CellStruct::Set((CellStruct *)v43, 1, 0); /*0x579f60*/
+  v30 = ((CellStruct *)v43)->Set(1, 0); /*0x579f60*/
   aP0 = *CellStruct::Add((CellStruct *)v44, &v42, v30); /*0x579f80*/
   if ( (uint8_t)((LayerClass *)((LayerClass *)&dword_87F7E8))->CoordinatesLegal((int16_t *)&aP0) /*0x579f9f*/
     && v38[70].__tail_0[3] == v28 + 4

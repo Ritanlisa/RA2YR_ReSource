@@ -41,7 +41,7 @@ int Delegate::ProcessBitmapStream(char * Src, int a3)
 
   v3 = Src; /*0x42ddb4*/
   if ( !Src || a3 < 1 ) /*0x42ddc8*/
-    return Delegate::Dispatch((Pipe *)this, (int)Src, a3); /*0x42df25*/
+    return ((Delegate *)this)->Dispatch((int)Src, a3); /*0x42df25*/
   v13 = 0; /*0x42ddd5*/
   if ( this->field_C ) /*0x42ddce*/
   {
@@ -74,7 +74,7 @@ int Delegate::ProcessBitmapStream(char * Src, int a3)
         v9 = DecodeBitmapRGB(pad_14, v5, v6, Srca); /*0x42de88*/
       else
         v9 = EncodeBitmapRGB((char *)pad_14, v5, v6, Srca); /*0x42de75*/
-      v13 = Delegate::Dispatch((Pipe *)this, (int)v6, v9); /*0x42de96*/
+      v13 = ((Delegate *)this)->Dispatch((int)v6, v9); /*0x42de96*/
       this->field_10 = 0; /*0x42de9a*/
     }
   }
@@ -85,7 +85,7 @@ int Delegate::ProcessBitmapStream(char * Src, int a3)
     else
       v10 = EncodeBitmapRGB(v3, v5, v6, Srca); /*0x42deb8*/
     v3 += v5; /*0x42ded2*/
-    v13 += Delegate::Dispatch((Pipe *)this, (int)v6, v10); /*0x42dee5*/
+    v13 += ((Delegate *)this)->Dispatch((int)v6, v10); /*0x42dee5*/
   }
   if ( a3 > 0 ) /*0x42def9*/
   {
@@ -283,7 +283,7 @@ namespace gamemd {
 int * Delegate::ClearVectorAndStraw(char a2)
 {
 
-  Vector::Clear((int)&this->m_allocated); /*0x52ae76*/
+  ((Vector *)&this->m_allocated)->Clear(); /*0x52ae76*/
   ((Straw *)this)->Dtor(); /*0x52ae7d*/
   if ( (a2 & 1) != 0 ) /*0x52ae87*/
     __3_YAXPAX_Z(this); /*0x52ae8a*/

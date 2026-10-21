@@ -355,7 +355,7 @@ int WarheadTypeClass::Construct(WarheadTypeClass * aP1, void *a2, void *a3, void
 {
 
 
-  AbstractTypeClass::Constructor(aP1, a2); /*0x75cecb*/
+  aP1->AbstractTypeClass::Constructor(a2); /*0x75cecb*/
   aP1->u32_98 = 0; /*0x75ced8*/
   aP1->Coord_9C = 0; /*0x75cede*/
   aP1->WarheadTypeClass_field_0xF8 = 0; /*0x75cee4*/

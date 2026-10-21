@@ -210,7 +210,7 @@ void Mouse::DrawCursor(int * aP1, int aP2, int a4)
       v12 = (unsigned int *)(*(int (**)(int *, unsigned char *))(v11 + 120))(aP1, v19); /*0x7b94f9*/
     }
     BlitterDrawSHP(aP1, *(int *)&DataGlobal_87F6C8, v20, &v15, &v13, v12, 0, 0, 0, 0, 1000, 0, 0); /*0x7b94c8*/
-    Vector::Clear((int)v21); /*0x7b951f*/
+    ((Vector *)v21)->Clear(); /*0x7b951f*/
   }
 
 }

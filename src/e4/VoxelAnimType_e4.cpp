@@ -103,12 +103,12 @@ AbstractClass * * VoxelAnimType::LoadSection(const char *a2, int a3)
       (*((Matrix **)this + 2 * a3 + 51))->Scale(*(float *)(Info + 12)); /*0x5f7c9c*/
       /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x5f7cad*/
       v22 = 0; /*0x5f7cb4*/
-      Vector::Clear((int)v21); /*0x5f7cbb*/
+      ((Vector *)v21)->Clear(); /*0x5f7cbb*/
       *(unsigned int *)v20.__tail_0 = &off_7E1668; /*0x5f7ccc*/
       BufferIOFileClass::Dtor((BufferIOFileClass *)&v20); /*0x5f7cd3*/
       /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x5f7cdc*/
       v19 = 0; /*0x5f7ce0*/
-      Vector::Clear((int)v18); /*0x5f7ce4*/
+      ((Vector *)v18)->Clear(); /*0x5f7ce4*/
       *(unsigned int *)v17.__tail_0 = &off_7E1668; /*0x5f7ced*/
       BufferIOFileClass::Dtor((BufferIOFileClass *)&v17); /*0x5f7cf1*/
       return 1; /*0x5f7d02*/
@@ -129,19 +129,19 @@ AbstractClass * * VoxelAnimType::LoadSection(const char *a2, int a3)
     }
     /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x5f7d55*/
     v22 = 0; /*0x5f7d5c*/
-    Vector::Clear((int)v21); /*0x5f7d63*/
+    ((Vector *)v21)->Clear(); /*0x5f7d63*/
     *(unsigned int *)v20.__tail_0 = &off_7E1668; /*0x5f7d74*/
     BufferIOFileClass::Dtor((BufferIOFileClass *)&v20); /*0x5f7d7b*/
     /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x5f7d84*/
     v19 = 0; /*0x5f7d88*/
-    Vector::Clear((int)v18); /*0x5f7d8c*/
+    ((Vector *)v18)->Clear(); /*0x5f7d8c*/
     *(unsigned int *)v17.__tail_0 = &off_7E1668; /*0x5f7d91*/
   }
   else
   {
     /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x5f7b28*/
     v19 = 0; /*0x5f7b30*/
-    Vector::Clear((int)v18); /*0x5f7b34*/
+    ((Vector *)v18)->Clear(); /*0x5f7b34*/
     *(unsigned int *)v17.__tail_0 = &off_7E1668; /*0x5f7b39*/
   }
   BufferIOFileClass::Dtor((BufferIOFileClass *)&v17); /*0x5f7d99*/
@@ -210,12 +210,12 @@ AbstractClass * * VoxelAnimType::LoadBarrel(const char *a2, int a3)
       (*((Matrix **)this + 2 * a3 + 87))->Scale(*(float *)(Info + 12)); /*0x5f7f7a*/
       /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x5f7f8b*/
       v19 = 0; /*0x5f7f92*/
-      Vector::Clear((int)v18); /*0x5f7f99*/
+      ((Vector *)v18)->Clear(); /*0x5f7f99*/
       *(unsigned int *)v17.__tail_0 = &off_7E1668; /*0x5f7faa*/
       BufferIOFileClass::Dtor((BufferIOFileClass *)&v17); /*0x5f7fb1*/
       /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x5f7fba*/
       v16 = 0; /*0x5f7fbe*/
-      Vector::Clear((int)v15); /*0x5f7fc2*/
+      ((Vector *)v15)->Clear(); /*0x5f7fc2*/
       *(unsigned int *)v14.__tail_0 = &off_7E1668; /*0x5f7fcb*/
       BufferIOFileClass::Dtor((BufferIOFileClass *)&v14); /*0x5f7fcf*/
       return 1; /*0x5f7fd7*/
@@ -236,12 +236,12 @@ AbstractClass * * VoxelAnimType::LoadBarrel(const char *a2, int a3)
       }
       /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x5f8027*/
       v19 = 0; /*0x5f802e*/
-      Vector::Clear((int)v18); /*0x5f8035*/
+      ((Vector *)v18)->Clear(); /*0x5f8035*/
       *(unsigned int *)v17.__tail_0 = &off_7E1668; /*0x5f8046*/
       BufferIOFileClass::Dtor((BufferIOFileClass *)&v17); /*0x5f804d*/
       /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x5f8056*/
       v16 = 0; /*0x5f805a*/
-      Vector::Clear((int)v15); /*0x5f805e*/
+      ((Vector *)v15)->Clear(); /*0x5f805e*/
       *(unsigned int *)v14.__tail_0 = &off_7E1668; /*0x5f8067*/
       BufferIOFileClass::Dtor((BufferIOFileClass *)&v14); /*0x5f806b*/
       return 0; /*0x5f8073*/
@@ -251,7 +251,7 @@ AbstractClass * * VoxelAnimType::LoadBarrel(const char *a2, int a3)
   {
     /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x5f7e48*/
     v16 = 0; /*0x5f7e50*/
-    Vector::Clear((int)v15); /*0x5f7e54*/
+    ((Vector *)v15)->Clear(); /*0x5f7e54*/
     *(unsigned int *)v14.__tail_0 = &off_7E1668; /*0x5f7e5d*/
     BufferIOFileClass::Dtor((BufferIOFileClass *)&v14); /*0x5f7e65*/
     return 1; /*0x5f7e6d*/
@@ -369,7 +369,7 @@ int VoxelAnimType::LoadAnim(void *a1)
     }
     /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x5f824e*/
     v53 = 0; /*0x5f8256*/
-    Vector::Clear((int)v52); /*0x5f825a*/
+    ((Vector *)v52)->Clear(); /*0x5f825a*/
     *(unsigned int *)v51.__tail_0 = &off_7E1668; /*0x5f8263*/
     BufferIOFileClass::Dtor((BufferIOFileClass *)&v51); /*0x5f826b*/
   }
@@ -428,7 +428,7 @@ int VoxelAnimType::LoadAnim(void *a1)
         }
         /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x5f87f0*/
         v56 = 0; /*0x5f87fb*/
-        Vector::Clear((int)v55); /*0x5f8802*/
+        ((Vector *)v55)->Clear(); /*0x5f8802*/
         *(unsigned int *)v54.__tail_0 = &off_7E1668; /*0x5f880e*/
         BufferIOFileClass::Dtor((BufferIOFileClass *)&v54); /*0x5f8819*/
       }
@@ -495,13 +495,13 @@ int VoxelAnimType::LoadAnim(void *a1)
         }
         /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x5f842c*/
         v56 = 0; /*0x5f8437*/
-        Vector::Clear((int)v55); /*0x5f843e*/
+        ((Vector *)v55)->Clear(); /*0x5f843e*/
         *(unsigned int *)v54.__tail_0 = &off_7E1668; /*0x5f844a*/
         BufferIOFileClass::Dtor((BufferIOFileClass *)&v54); /*0x5f8455*/
       }
       /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x5f845e*/
       v53 = 0; /*0x5f8466*/
-      Vector::Clear((int)v52); /*0x5f846a*/
+      ((Vector *)v52)->Clear(); /*0x5f846a*/
       *(unsigned int *)v51.__tail_0 = &off_7E1668; /*0x5f8473*/
       BufferIOFileClass::Dtor((BufferIOFileClass *)&v51); /*0x5f847b*/
     }
@@ -552,7 +552,7 @@ int VoxelAnimType::LoadAnim(void *a1)
         }
         /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x5f85ec*/
         v56 = 0; /*0x5f85f7*/
-        Vector::Clear((int)v55); /*0x5f85fe*/
+        ((Vector *)v55)->Clear(); /*0x5f85fe*/
         *(unsigned int *)v54.__tail_0 = &off_7E1668; /*0x5f860a*/
         BufferIOFileClass::Dtor((BufferIOFileClass *)&v54); /*0x5f8615*/
       }

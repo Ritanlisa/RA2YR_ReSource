@@ -338,7 +338,7 @@ AnimTypeClass * * OverlayTypeClass::GetCategory()
       this->ImageAllocated = 1; /*0x5feeb9*/
     /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x5feec4*/
     v6 = 0; /*0x5feecc*/
-    Vector::Clear((int)v5); /*0x5feed4*/
+    ((Vector *)v5)->Clear(); /*0x5feed4*/
     *(unsigned int *)v4.__tail_0 = &off_7E1668; /*0x5feedd*/
     BufferIOFileClass::Dtor((BufferIOFileClass *)&v4); /*0x5feee5*/
     return v3; /*0x5feeea*/

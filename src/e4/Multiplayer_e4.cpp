@@ -300,8 +300,8 @@ int Multiplayer::ShowProgress(int a2)
           LOWORD(v10) = Math::RoundToInt(v3); /*0x69b0b5*/
           *(int *)((char *)&v16[6] + 1) = (int)v10; /*0x69b0c0*/
           LOBYTE(v16[6]) = stru_A8D804.__pad_3D[751]; /*0x69b0d5*/
-          Stream::WriteBlock((int *)&stru_A8E960.altNextScenario[12], (int)v16, 250, 0); /*0x69b0d9*/
-          Stream::ReadPacket((int)&stru_A8E960.altNextScenario[12]); /*0x69b0e3*/
+          ((Stream *)&stru_A8E960.altNextScenario[12])->WriteBlock((int)v16, 250, 0); /*0x69b0d9*/
+          ((Stream *)&stru_A8E960.altNextScenario[12])->ReadPacket(); /*0x69b0e3*/
           while ( Count::GetCountQueue((Count *)&stru_A8E960.altNextScenario[12]) > 5 ) /*0x69b0f5*/
           {
             v11 = 240; /*0x69b101*/
@@ -316,7 +316,7 @@ int Multiplayer::ShowProgress(int a2)
               break; /*0x69b11e*/
             Sleep(0x14u); /*0x69b122*/
             EventQueue::Process((EventQueue *)dword_87F770); /*0x69b12a*/
-            Stream::ReadPacket((int)&stru_A8E960.altNextScenario[12]); /*0x69b134*/
+            ((Stream *)&stru_A8E960.altNextScenario[12])->ReadPacket(); /*0x69b134*/
           }
           break; /*0x69b146*/
         case 3: /*0x69af3e*/

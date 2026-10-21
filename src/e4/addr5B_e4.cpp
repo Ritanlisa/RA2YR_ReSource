@@ -268,7 +268,7 @@ AbstractClass * * SearchMIXFile(char *Source, char aP1)
     v9[3] = (unsigned int)(SHPFile); /*0x5b422a*/
     /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E16B0) */  /*0x5b4231*/
     v16 = 0; /*0x5b4239*/
-    Vector::Clear((int)v15); /*0x5b4240*/
+    ((Vector *)v15)->Clear(); /*0x5b4240*/
     v14.buffer = (int)&off_7E1668; /*0x5b4249*/
     ((BufferIOFileClass *)((BufferIOFileClass *)&v14.buffer))->Dtor(); /*0x5b4251*/
     return (gamemd::AbstractClass **)(SHPFile); /*0x5b4256*/
@@ -277,7 +277,7 @@ AbstractClass * * SearchMIXFile(char *Source, char aP1)
   {
     /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E16B0) */  /*0x5b4169*/
     v16 = 0; /*0x5b4171*/
-    Vector::Clear((int)v15); /*0x5b4178*/
+    ((Vector *)v15)->Clear(); /*0x5b4178*/
     v14.buffer = (int)&off_7E1668; /*0x5b4181*/
     ((BufferIOFileClass *)((BufferIOFileClass *)&v14.buffer))->Dtor(); /*0x5b4189*/
     return 0; /*0x5b418e*/
@@ -425,8 +425,8 @@ int GameSetupDialogProc(HWND hWnd, unsigned int a2, unsigned int a3, unsigned in
                   strcpy((char *)&v18[1], unk_A8B380); /*0x5b4d11*/
                   (*((unsigned char *)&(v18[6]))) = dword_A8B394; /*0x5b4d26*/
                   wcscpy((wchar_t *)((char *)&v18[6] + 1), lParam); /*0x5b4d2a*/
-                  Stream::WriteBlock((int)&unk_A8EA70, (int)v18, 250, 1); /*0x5b4d43*/
-                  Stream::ReadPacket((int)&unk_A8EA70); /*0x5b4d4d*/
+                  ((Stream *)&unk_A8EA70)->WriteBlock((int)v18, 250, 1); /*0x5b4d43*/
+                  ((Stream *)&unk_A8EA70)->ReadPacket(); /*0x5b4d4d*/
                   char *v9; // eax
                   v9 = CharToWideString(unk_A8B380); /*0x5b4d57*/
                   ((ObjectClass *)(wchar_t *)v9)->UI_Setup(dword_A8B394, (int)lParam); /*0x5b4d6e*/
@@ -465,7 +465,7 @@ int GameSetupDialogProc(HWND hWnd, unsigned int a2, unsigned int a3, unsigned in
         memset(v18, 0, sizeof(v18)); /*0x5b4c13*/
         v19 = 0; /*0x5b4c1e*/
         v18[0] = 116; /*0x5b4c26*/
-        Stream::WriteBlock((int)&unk_A8EA70, (int)v18, 250, 1); /*0x5b4c2e*/
+        ((Stream *)&unk_A8EA70)->WriteBlock((int)v18, 250, 1); /*0x5b4c2e*/
         return 0; /*0x5b4c3f*/
       }
       return 0; /*0x5b4ed1*/
@@ -668,7 +668,7 @@ LZOPipe * * GenerateRandomMapPreview(int a1, void * aPreviewBin)
     memset(v19, 0, sizeof(v19)); /*0x5bb2e2*/
     v20 = 0; /*0x5bb2e4*/
     v19[0] = 117; /*0x5bb2fa*/
-    Stream::WriteBlock((int *)&stru_A8E960.altNextScenario[12], (int)v19, 250, 1); /*0x5bb305*/
+    ((Stream *)&stru_A8E960.altNextScenario[12])->WriteBlock((int)v19, 250, 1); /*0x5bb305*/
     v13 = 600; /*0x5bb31c*/
     Ticks = Timer::GetTicks(); /*0x5bb325*/
     v12 = v14; /*0x5bb329*/
@@ -739,7 +739,7 @@ LABEL_15:
     SendNetworkFile(aPreviewBin, 1, 0, 0); /*0x5bb521*/
     RawFileClass::Dtor(&v18); /*0x5bb52a*/
     LZOPipe::Destructor((LZOPipe *)&v18.BufferOffset); /*0x5bb533*/
-    Vector::Clear((int)&v15.Pipe_field_0x0C); /*0x5bb53c*/
+    ((Vector *)&v15.Pipe_field_0x0C)->Clear(); /*0x5bb53c*/
     Pipe::Dtor(&v15); /*0x5bb545*/
   }
 

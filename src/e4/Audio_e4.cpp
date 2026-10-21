@@ -680,7 +680,7 @@ int Audio::LoadWAVFiles(void *a1_1)
           }
           /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x7208f9*/
           v12 = 0; /*0x720901*/
-          Vector::Clear((int)v11); /*0x72090c*/
+          ((Vector *)v11)->Clear(); /*0x72090c*/
           *(unsigned int *)v10.__tail_0 = &off_7E1668; /*0x720915*/
           BufferIOFileClass::Dtor((BufferIOFileClass *)&v10); /*0x72091d*/
           IsSoundEnabled = *&this->q024; /*0x720922*/

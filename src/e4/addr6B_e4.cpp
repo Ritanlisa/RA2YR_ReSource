@@ -2294,7 +2294,7 @@ AbstractClass * * Palette_LoadFromFile(int a1, int a2, char * Source, int a4, in
   }
   while ( v7 ); /*0x6b9d2b*/
   v50[0] = 0; /*0x6b9d3b*/
-  CCFileClass::Construct((CCFileClass *)&v48[56], Source); /*0x6b9d42*/
+  ((CCFileClass *)&v48[56])->Construct(Source); /*0x6b9d42*/
   v9 = DecodeFrameSHP((int)&v48[56], (int)v49, 0, 0); /*0x6b9d59*/
   v10 = v9; /*0x6b9d5d*/
   if ( v9 ) /*0x6b9d5f*/

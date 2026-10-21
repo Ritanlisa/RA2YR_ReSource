@@ -227,7 +227,7 @@ int TagTypeClass::GetParameter(char * a2)
     wsprintfA(Source, "%d,%s,%s", this->Coord_9C, (const char *)&this->q0A0, (const char *)(v3 + 36)); /*0x6e61b4*/
   else
     wsprintfA(Source, "%s,<none>", (const char *)&this->q0A0); /*0x6e6181*/
-  INIClass::SetString((uint8_t *)(/*0x6e6199*/     a2),     (unsigned __int8 *)&DataGlobal_842C3C,     &this->arrayIndex,     Source);
+  ((INIClass *)(/*0x6e6199*/     a2))->SetString((unsigned __int8 *)&DataGlobal_842C3C, &this->arrayIndex, Source);
   return 1; /*0x6e61db*/
 
 }

@@ -36,7 +36,7 @@ unsigned int * AnimTypeClass::Construct2(char *Source, void *a2)
 {
 
 
-  AbstractTypeClass::Constructor((int *)this, Source); /*0x41e359*/
+  this->AbstractTypeClass::Constructor(Source); /*0x41e359*/
   *(unsigned int *)this->ptr_98 = -1; /*0x41e363*/
   *&this->ImageAllocated = -1; /*0x41e369*/
   this->BarrelVoxel = 0; /*0x41e374*/
@@ -565,7 +565,7 @@ int AnimTypeClass::GetDamage()
         this->ImageAllocated = 1; /*0x428d55*/
       /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x428d63*/
       v12 = 0; /*0x428d6b*/
-      Vector::Clear((int)v11); /*0x428d76*/
+      ((Vector *)v11)->Clear(); /*0x428d76*/
       *(unsigned int *)v10.__tail_0 = &off_7E1668; /*0x428d7f*/
       BufferIOFileClass::Dtor((BufferIOFileClass *)&v10); /*0x428d87*/
     }
@@ -573,7 +573,7 @@ int AnimTypeClass::GetDamage()
     Image = this->Image; /*0x428da2*/
     /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x428dac*/
     v9 = 0; /*0x428db4*/
-    Vector::Clear((int)v8); /*0x428dbc*/
+    ((Vector *)v8)->Clear(); /*0x428dbc*/
     *(unsigned int *)v7.__tail_0 = &off_7E1668; /*0x428dc5*/
     BufferIOFileClass::Dtor((BufferIOFileClass *)&v7); /*0x428dcd*/
     return (int)Image; /*0x428dd2*/

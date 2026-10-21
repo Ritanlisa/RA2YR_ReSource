@@ -58,7 +58,7 @@ unsigned int * ScoreScreen::LoadScoreFont(int aP1)
     Debug::Log(); /*0x690a85*/
     /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x690a91*/
     v7 = 0; /*0x690a99*/
-    Vector::Clear((int)v6); /*0x690a9d*/
+    ((Vector *)v6)->Clear(); /*0x690a9d*/
     *(unsigned int *)v5.__tail_0 = &off_7E1668; /*0x690aa6*/
     BufferIOFileClass::Dtor((BufferIOFileClass *)&v5); /*0x690aae*/
   }
@@ -99,7 +99,7 @@ unsigned int * ScoreScreen::LoadCountryFlags(int a2)
     Debug::Log(); /*0x690b55*/
     /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x690b61*/
     v7 = 0; /*0x690b69*/
-    Vector::Clear((int)v6); /*0x690b6d*/
+    ((Vector *)v6)->Clear(); /*0x690b6d*/
     *(unsigned int *)v5.__tail_0 = &off_7E1668; /*0x690b76*/
     BufferIOFileClass::Dtor((BufferIOFileClass *)&v5); /*0x690b7e*/
   }
@@ -267,7 +267,7 @@ AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3,
   unsigned char v41[20]; // [esp+CCh] [ebp-14h] BYREF
   void *retaddr; // [esp+E0h] [ebp+0h] BYREF
 
-  CCFileClass::Construct((char *)(&v38), Source); /*0x77821f*/
+  ((CCFileClass *)(&v38))->Construct(Source); /*0x77821f*/
   int *v8; // esi
   v8 = (int *)(DecodeFrameSHP((int)&v38,(int)(a5), 0, 0)); /*0x778238*/
   if ( v8 ) /*0x77823c*/

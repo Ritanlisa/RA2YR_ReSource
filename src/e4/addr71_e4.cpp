@@ -194,25 +194,25 @@ int InitializeCellSpreadTables()
   int v4; // [esp+4h] [ebp-4h] BYREF
   v4 = 0; /*0x71d582*/
   dword_B0EDC0 = 0; /*0x71d5a2*/
-  dword_B0EDC4 = *(unsigned int *)CellStruct::Set(&v4, 0x7FFF, 0x7FFF); /*0x71d5b3*/
+  dword_B0EDC4 = *(unsigned int *)((CellStruct *)&v4)->Set(0x7FFF, 0x7FFF); /*0x71d5b3*/
   memset(&unk_B0EDC8, 0, 0x20u); /*0x71d5c9*/
   Array::For  Array::ForEach((gamemd::Array*)(&unk_B0EDC8), 4, 8, (int (__thiscall *)(int))__0Iostream_init_QAE_XZ_2); 
-  dword_B0EDE8 = *(unsigned int *)CellStruct::Set(&v4, 0, 0); /*0x71d5ec*/
-  dword_B0EDEC = *(unsigned int *)CellStruct::Set(&v4, 1, 0); /*0x71d607*/
-  dword_B0EDF0 = *(unsigned int *)CellStruct::Set(&v4, 0x7FFF, 0x7FFF); /*0x71d618*/
+  dword_B0EDE8 = *(unsigned int *)((CellStruct *)&v4)->Set(0, 0); /*0x71d5ec*/
+  dword_B0EDEC = *(unsigned int *)((CellStruct *)&v4)->Set(1, 0); /*0x71d607*/
+  dword_B0EDF0 = *(unsigned int *)((CellStruct *)&v4)->Set(0x7FFF, 0x7FFF); /*0x71d618*/
   memset(&unk_B0EDF4, 0, 0x1Cu); /*0x71d62e*/
   Array::For  Array::ForEach((gamemd::Array*)(&unk_B0EDF4), 4, 7, (int (__thiscall *)(int))__0Iostream_init_QAE_XZ_2); 
-  dword_B0EE10 = *(unsigned int *)CellStruct::Set(&v4, 0, 0); /*0x71d651*/
-  dword_B0EE14 = *(unsigned int *)CellStruct::Set(&v4, 0, 1); /*0x71d66c*/
-  dword_B0EE18 = *(unsigned int *)CellStruct::Set(&v4, 0x7FFF, 0x7FFF); /*0x71d67d*/
+  dword_B0EE10 = *(unsigned int *)((CellStruct *)&v4)->Set(0, 0); /*0x71d651*/
+  dword_B0EE14 = *(unsigned int *)((CellStruct *)&v4)->Set(0, 1); /*0x71d66c*/
+  dword_B0EE18 = *(unsigned int *)((CellStruct *)&v4)->Set(0x7FFF, 0x7FFF); /*0x71d67d*/
   memset(&unk_B0EE1C, 0, 0x1Cu); /*0x71d693*/
   Array::For  Array::ForEach((gamemd::Array*)(&unk_B0EE1C), 4, 7, (int (__thiscall *)(int))__0Iostream_init_QAE_XZ_2); 
-  dword_B0EE38 = *(unsigned int *)CellStruct::Set(&v4, 0, 0); /*0x71d6b0*/
-  dword_B0EE3C = *(unsigned int *)CellStruct::Set(&v4, 1, 0); /*0x71d6cb*/
-  dword_B0EE40 = *(unsigned int *)CellStruct::Set(&v4, 0, 1); /*0x71d6d9*/
-  dword_B0EE44 = *(unsigned int *)CellStruct::Set(&v4, 1, 1); /*0x71d6fa*/
+  dword_B0EE38 = *(unsigned int *)((CellStruct *)&v4)->Set(0, 0); /*0x71d6b0*/
+  dword_B0EE3C = *(unsigned int *)((CellStruct *)&v4)->Set(1, 0); /*0x71d6cb*/
+  dword_B0EE40 = *(unsigned int *)((CellStruct *)&v4)->Set(0, 1); /*0x71d6d9*/
+  dword_B0EE44 = *(unsigned int *)((CellStruct *)&v4)->Set(1, 1); /*0x71d6fa*/
   int v0; // eax
-  v0 = *(unsigned int *)CellStruct::Set(&v4, 0x7FFF, 0x7FFF); /*0x71d705*/
+  v0 = *(unsigned int *)((CellStruct *)&v4)->Set(0x7FFF, 0x7FFF); /*0x71d705*/
   dword_B0EE4C = 0; /*0x71d709*/
   dword_B0EE50 = 0; /*0x71d714*/
   dword_B0EE54 = 0; /*0x71d71c*/
@@ -220,50 +220,50 @@ int InitializeCellSpreadTables()
   dword_B0EE48 = v0; /*0x71d72f*/
   dword_B0EE5C = 0; /*0x71d734*/
   Array::For  Array::ForEach((gamemd::Array*)(&dword_B0EE4C), 4, 5, (int (__thiscall *)(int))__0Iostream_init_QAE_XZ_2); 
-  dword_B0EE60 = *(unsigned int *)CellStruct::Set(&v4, 0, 0); /*0x71d756*/
-  dword_B0EE64 = *(unsigned int *)CellStruct::Set(&v4, 1, 0); /*0x71d76b*/
-  dword_B0EE68 = *(unsigned int *)CellStruct::Set(&v4, 0, 1); /*0x71d779*/
-  dword_B0EE6C = *(unsigned int *)CellStruct::Set(&v4, 1, 1); /*0x71d794*/
-  dword_B0EE70 = *(unsigned int *)CellStruct::Set(&v4, 0, 2); /*0x71d7a9*/
-  dword_B0EE74 = *(unsigned int *)CellStruct::Set(&v4, 1, 2); /*0x71d7ba*/
+  dword_B0EE60 = *(unsigned int *)((CellStruct *)&v4)->Set(0, 0); /*0x71d756*/
+  dword_B0EE64 = *(unsigned int *)((CellStruct *)&v4)->Set(1, 0); /*0x71d76b*/
+  dword_B0EE68 = *(unsigned int *)((CellStruct *)&v4)->Set(0, 1); /*0x71d779*/
+  dword_B0EE6C = *(unsigned int *)((CellStruct *)&v4)->Set(1, 1); /*0x71d794*/
+  dword_B0EE70 = *(unsigned int *)((CellStruct *)&v4)->Set(0, 2); /*0x71d7a9*/
+  dword_B0EE74 = *(unsigned int *)((CellStruct *)&v4)->Set(1, 2); /*0x71d7ba*/
   int v1; // edx
-  v1 = *(unsigned int *)CellStruct::Set(&v4, 0x7FFF, 0x7FFF); /*0x71d7ce*/
+  v1 = *(unsigned int *)((CellStruct *)&v4)->Set(0x7FFF, 0x7FFF); /*0x71d7ce*/
   dword_B0EE7C = 0; /*0x71d7d2*/
   dword_B0EE78 = v1; /*0x71d7d7*/
   dword_B0EE80 = 0; /*0x71d7dd*/
   dword_B0EE84 = 0; /*0x71d7e7*/
   Array::For  Array::ForEach((gamemd::Array*)(&dword_B0EE7C), 4, 3, (int (__thiscall *)(int))__0Iostream_init_QAE_XZ_2); 
-  dword_B0EE88 = *(unsigned int *)CellStruct::Set(&v4, 0, 0); /*0x71d80b*/
-  dword_B0EE8C = *(unsigned int *)CellStruct::Set(&v4, 1, 0); /*0x71d826*/
-  dword_B0EE90 = *(unsigned int *)CellStruct::Set(&v4, 2, 0); /*0x71d83b*/
-  dword_B0EE94 = *(unsigned int *)CellStruct::Set(&v4, 0, 1); /*0x71d849*/
-  dword_B0EE98 = *(unsigned int *)CellStruct::Set(&v4, 1, 1); /*0x71d864*/
-  dword_B0EE9C = *(unsigned int *)CellStruct::Set(&v4, 2, 1); /*0x71d87f*/
+  dword_B0EE88 = *(unsigned int *)((CellStruct *)&v4)->Set(0, 0); /*0x71d80b*/
+  dword_B0EE8C = *(unsigned int *)((CellStruct *)&v4)->Set(1, 0); /*0x71d826*/
+  dword_B0EE90 = *(unsigned int *)((CellStruct *)&v4)->Set(2, 0); /*0x71d83b*/
+  dword_B0EE94 = *(unsigned int *)((CellStruct *)&v4)->Set(0, 1); /*0x71d849*/
+  dword_B0EE98 = *(unsigned int *)((CellStruct *)&v4)->Set(1, 1); /*0x71d864*/
+  dword_B0EE9C = *(unsigned int *)((CellStruct *)&v4)->Set(2, 1); /*0x71d87f*/
   int v2; // ecx
-  v2 = *(unsigned int *)CellStruct::Set(&v4, 0x7FFF, 0x7FFF); /*0x71d889*/
+  v2 = *(unsigned int *)((CellStruct *)&v4)->Set(0x7FFF, 0x7FFF); /*0x71d889*/
   dword_B0EEA4 = 0; /*0x71d88d*/
   dword_B0EEA8 = 0; /*0x71d89a*/
   dword_B0EEA0 = v2; /*0x71d8a7*/
   dword_B0EEAC = 0; /*0x71d8ad*/
   Array::For  Array::ForEach((gamemd::Array*)(&dword_B0EEA4), 4, 3, (int (__thiscall *)(int))__0Iostream_init_QAE_XZ_2); 
-  dword_B0EEB0 = *(unsigned int *)CellStruct::Set(&v4, 0, 0); /*0x71d8cf*/
-  dword_B0EEB4 = *(unsigned int *)CellStruct::Set(&v4, 1, 0); /*0x71d8dd*/
-  dword_B0EEB8 = *(unsigned int *)CellStruct::Set(&v4, 2, 0); /*0x71d8f8*/
-  dword_B0EEBC = *(unsigned int *)CellStruct::Set(&v4, 0, 1); /*0x71d907*/
-  dword_B0EEC0 = *(unsigned int *)CellStruct::Set(&v4, 1, 1); /*0x71d91b*/
-  dword_B0EEC4 = *(unsigned int *)CellStruct::Set(&v4, 2, 1); /*0x71d936*/
-  dword_B0EEC8 = *(unsigned int *)CellStruct::Set(&v4, 0, 2); /*0x71d94b*/
-  dword_B0EECC = *(unsigned int *)CellStruct::Set(&v4, 1, 2); /*0x71d959*/
-  dword_B0EED0 = *(unsigned int *)CellStruct::Set(&v4, 2, 2); /*0x71d97a*/
-  dword_B0EED4 = *(unsigned int *)CellStruct::Set(&v4, 0x7FFF, 0x7FFF); /*0x71d98f*/
-  dword_B0EED8 = *(unsigned int *)CellStruct::Set(&v4, 0, 0); /*0x71d99d*/
-  dword_B0EEDC = *(unsigned int *)CellStruct::Set(&v4, 1, 0); /*0x71d9b8*/
-  dword_B0EEE0 = *(unsigned int *)CellStruct::Set(&v4, 2, 0); /*0x71d9cd*/
-  dword_B0EEE4 = *(unsigned int *)CellStruct::Set(&v4, 3, 0); /*0x71d9db*/
-  dword_B0EEE8 = *(unsigned int *)CellStruct::Set(&v4, 0, 1); /*0x71d9f6*/
-  dword_B0EEEC = *(unsigned int *)CellStruct::Set(&v4, 1, 1); /*0x71da0b*/
-  dword_B0EEF0 = *(unsigned int *)CellStruct::Set(&v4, 2, 1); /*0x71da19*/
-  dword_B0EEF4 = *(unsigned int *)CellStruct::Set(&v4, 3, 1); /*0x71da3a*/
+  dword_B0EEB0 = *(unsigned int *)((CellStruct *)&v4)->Set(0, 0); /*0x71d8cf*/
+  dword_B0EEB4 = *(unsigned int *)((CellStruct *)&v4)->Set(1, 0); /*0x71d8dd*/
+  dword_B0EEB8 = *(unsigned int *)((CellStruct *)&v4)->Set(2, 0); /*0x71d8f8*/
+  dword_B0EEBC = *(unsigned int *)((CellStruct *)&v4)->Set(0, 1); /*0x71d907*/
+  dword_B0EEC0 = *(unsigned int *)((CellStruct *)&v4)->Set(1, 1); /*0x71d91b*/
+  dword_B0EEC4 = *(unsigned int *)((CellStruct *)&v4)->Set(2, 1); /*0x71d936*/
+  dword_B0EEC8 = *(unsigned int *)((CellStruct *)&v4)->Set(0, 2); /*0x71d94b*/
+  dword_B0EECC = *(unsigned int *)((CellStruct *)&v4)->Set(1, 2); /*0x71d959*/
+  dword_B0EED0 = *(unsigned int *)((CellStruct *)&v4)->Set(2, 2); /*0x71d97a*/
+  dword_B0EED4 = *(unsigned int *)((CellStruct *)&v4)->Set(0x7FFF, 0x7FFF); /*0x71d98f*/
+  dword_B0EED8 = *(unsigned int *)((CellStruct *)&v4)->Set(0, 0); /*0x71d99d*/
+  dword_B0EEDC = *(unsigned int *)((CellStruct *)&v4)->Set(1, 0); /*0x71d9b8*/
+  dword_B0EEE0 = *(unsigned int *)((CellStruct *)&v4)->Set(2, 0); /*0x71d9cd*/
+  dword_B0EEE4 = *(unsigned int *)((CellStruct *)&v4)->Set(3, 0); /*0x71d9db*/
+  dword_B0EEE8 = *(unsigned int *)((CellStruct *)&v4)->Set(0, 1); /*0x71d9f6*/
+  dword_B0EEEC = *(unsigned int *)((CellStruct *)&v4)->Set(1, 1); /*0x71da0b*/
+  dword_B0EEF0 = *(unsigned int *)((CellStruct *)&v4)->Set(2, 1); /*0x71da19*/
+  dword_B0EEF4 = *(unsigned int *)((CellStruct *)&v4)->Set(3, 1); /*0x71da3a*/
   dword_B0EEF8 = *(unsigned int *)CellStruct::Set(&v4, 0x7FFF, 0x7FFF); /*0x71da4c*/
   dword_B0EEFC = 0; /*0x71da62*/
   memset(&unk_B0EF00, 0, 0x230u); /*0x71da73*/

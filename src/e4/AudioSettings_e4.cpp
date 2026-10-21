@@ -255,7 +255,7 @@ AbstractClass * * AudioSettings::DlgProc(HWND hDlg, unsigned int a2, unsigned in
               v31 = dword_A83D18; /*0x6b6809*/
             if ( v31 != v30 ) /*0x6b6810*/
             {
-              Theme::Stop(&unk_A83D10, 1); /*0x6b681d*/
+              ((Theme *)&unk_A83D10)->Stop(1); /*0x6b681d*/
               Theme::QueueSong((int)&unk_A83D10, v30); /*0x6b6828*/
               return 0; /*0x6b6839*/
             }
@@ -280,7 +280,7 @@ AbstractClass * * AudioSettings::DlgProc(HWND hDlg, unsigned int a2, unsigned in
   {
     if ( !HIWORD(a3) ) /*0x6b69c8*/
     {
-      Theme::Stop(&unk_A83D10, 1); /*0x6b69d4*/
+      ((Theme *)&unk_A83D10)->Stop(1); /*0x6b69d4*/
       Theme::QueueSong((int)&unk_A83D10, -3); /*0x6b69e0*/
       byte_A8EBA5 = 0; /*0x6b69e5*/
     }
@@ -299,7 +299,7 @@ AbstractClass * * AudioSettings::DlgProc(HWND hDlg, unsigned int a2, unsigned in
       if ( dword_A83D14 == -1 ) /*0x6b6920*/
         v34 = dword_A83D18; /*0x6b6922*/
       Theme::QueueSong((int)&unk_A83D10, v34); /*0x6b692d*/
-      Theme::Stop(&unk_A83D10, 0); /*0x6b6939*/
+      ((Theme *)&unk_A83D10)->Stop(0); /*0x6b6939*/
     }
   }
   v35 = GetDlgItem(hDlg, 1330); /*0x6b6944*/

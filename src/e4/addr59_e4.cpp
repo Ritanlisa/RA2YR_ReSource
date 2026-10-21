@@ -812,7 +812,7 @@ unsigned int * GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)())
     }
     if ( Surface::LoadToSurfaceSHP((Surface *)v6, Destination) ) /*0x5960d5*/
     {
-      RawFileClass::Construct((BufferIOFileClass *)&v17.ComPtr_field_0x10, (int)ExistingFileName); /*0x5960e7*/
+      ((RawFileClass *)&v17.ComPtr_field_0x10)->Construct((int)ExistingFileName); /*0x5960e7*/
       CompressScreenshot(&v17.ComPtr_field_0x10, *(int **)dword_ABE154->__pad_0, &FileSystem_TEMPERAT_PAL); /*0x5960fc*/
       v8 = dword_ABE154; /*0x596101*/
       if ( dword_ABE154 ) /*0x596109*/
@@ -857,7 +857,7 @@ unsigned int * GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)())
   {
     if ( *(unsigned int *)dword_ABE154->__pad_0 ) /*0x596215*/
     {
-      RawFileClass::Construct((BufferIOFileClass *)&v17.ComPtr_field_0x10, (int)ExistingFileName); /*0x596222*/
+      ((RawFileClass *)&v17.ComPtr_field_0x10)->Construct((int)ExistingFileName); /*0x596222*/
       CompressScreenshot(&v17.ComPtr_field_0x10, *(int **)dword_ABE154->__pad_0, &FileSystem_TEMPERAT_PAL); /*0x596237*/
       if ( FindFirstFileA(PathName, &FindFileData) == (HANDLE)-1 ) /*0x596252*/
         CreateDirectoryA(PathName, 0); /*0x59625a*/
@@ -881,7 +881,7 @@ unsigned int * GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)())
 LABEL_39:
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x5962b8*/
   v20 = 0; /*0x5962c7*/
-  Vector::Clear((int)v19); /*0x5962ce*/
+  ((Vector *)v19)->Clear(); /*0x5962ce*/
   *(unsigned int *)v18.__tail_0 = &off_7E1668; /*0x5962d7*/
   BufferIOFileClass::Dtor((BufferIOFileClass *)&v18); /*0x5962df*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EBFA4) */  /*0x5962e8*/

@@ -1422,7 +1422,7 @@ int AnimClass_GetAnimation(int *a1, int a2)  // a2 = edi reg param (IDA sub_7298
   int *v11; // eax
   int v12; // eax
   int v13; // ecx
-  int v14; // [esp+Ch] [ebp-1Ch] BYREF
+  unsigned int v14; // [esp+Ch] [ebp-1Ch] BYREF
   int v15; // [esp+10h] [ebp-18h] BYREF
   int v16; // [esp+14h] [ebp-14h]
   int v17; // [esp+18h] [ebp-10h] BYREF

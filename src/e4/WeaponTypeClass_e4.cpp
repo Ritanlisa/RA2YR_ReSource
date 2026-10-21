@@ -93,7 +93,7 @@ unsigned int * WeaponTypeClass::Constructor(WeaponTypeClass * aP1, void *a2, voi
 {
 
 
-  AbstractTypeClass::Constructor((int *)aP1, a2); /*0x771c7a*/
+  aP1->AbstractTypeClass::Constructor(a2); /*0x771c7a*/
   aP1->AmbientDamage = 0; /*0x771c87*/
   aP1->Burst = 1; /*0x771c8d*/
   aP1->Projectile = 0; /*0x771c97*/
@@ -574,7 +574,7 @@ char  WeaponTypeClass::ReadVeteranData(uint8_t * a2, char * a3, int a4, int * Bl
     }
     while ( v11 ); /*0x475d17*/
   }
-  v13 = INIClass::SetString((char *)this, a2, a3, Source); /*0x475d39*/
+  v13 = ((INIClass *)this)->SetString(a2, a3, Source); /*0x475d39*/
   if ( Block && (*(((unsigned char *)&(a7)) + (sizeof(a7) - 1))) ) /*0x475d4f*/
     operator delete((Block)); /*0x475d52*/
   return v13; /*0x475d5c*/

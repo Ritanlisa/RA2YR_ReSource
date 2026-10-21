@@ -112,7 +112,7 @@ AbstractClass * * Turret::LoadVoxelTurretAndBarrel()
             Matrix::Scale(this->qBC, *(float *)(Info + 12)); /*0x5f8e67*/
             /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x5f8e70*/
             v22 = 0; /*0x5f8e78*/
-            Vector::Clear((int)v21); /*0x5f8e7c*/
+            ((Vector *)v21)->Clear(); /*0x5f8e7c*/
             *(unsigned int *)v20.__tail_0 = &off_7E1668; /*0x5f8e85*/
             BufferIOFileClass::Dtor((BufferIOFileClass *)&v20); /*0x5f8e8d*/
           }
@@ -156,19 +156,19 @@ AbstractClass * * Turret::LoadVoxelTurretAndBarrel()
             Matrix::Scale(this->qC4, v18[3]); /*0x5f8fd1*/
             /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x5f8fda*/
             v22 = 0; /*0x5f8fe2*/
-            Vector::Clear((int)v21); /*0x5f8fe6*/
+            ((Vector *)v21)->Clear(); /*0x5f8fe6*/
             *(unsigned int *)v20.__tail_0 = &off_7E1668; /*0x5f8fef*/
             BufferIOFileClass::Dtor((BufferIOFileClass *)&v20); /*0x5f8ff7*/
           }
         }
         /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x5f9008*/
         v25 = 0; /*0x5f900c*/
-        Vector::Clear((int)v24); /*0x5f9013*/
+        ((Vector *)v24)->Clear(); /*0x5f9013*/
         *(unsigned int *)v23.__tail_0 = &off_7E1668; /*0x5f9021*/
         BufferIOFileClass::Dtor((BufferIOFileClass *)&v23); /*0x5f9025*/
         /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x5f9031*/
         v28 = 0; /*0x5f9038*/
-        Vector::Clear((int)v27); /*0x5f903f*/
+        ((Vector *)v27)->Clear(); /*0x5f903f*/
         *(unsigned int *)v26.__tail_0 = &off_7E1668; /*0x5f904b*/
         (v2) = ((v2) & ~0xFF) | ((BufferIOFileClass::Dtor((BufferIOFileClass *)&v26)) & 0xFF); /*0x5f9052*/
       }

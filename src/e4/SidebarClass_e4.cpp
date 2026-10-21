@@ -226,11 +226,11 @@ void * SidebarClass::LoadAssets()
   dword_B0B484 = LoadFileSHP(aGclock2Shp, (bool *)&byte_B0B48F); /*0x6a58d4*/
   v12 = 0; /*0x6a58d9*/
   FileSHP = LoadFileSHP(aSellShp, (bool *)&v12); /*0x6a58dd*/
-  ShapeButton::SetShape(&stru_B07DF8, (int)FileSHP, 0, 0); /*0x6a58e8*/
+  ((ShapeButton *)&stru_B07DF8)->SetShape((int)FileSHP, 0, 0); /*0x6a58e8*/
   ((ButtonClass *)&stru_B07DF8)->SetState(v12); /*0x6a58f7*/
   dword_B07E48 = *(unsigned int *)&g_SidebarConfig; /*0x6a590c*/
   v4 = LoadFileSHP(aRepairShp, (bool *)&v12); /*0x6a5911*/
-  ShapeButton::SetShape(&stru_B0B3A0, (int)v4, 0, 0); /*0x6a591c*/
+  ((ShapeButton *)&stru_B0B3A0)->SetShape((int)v4, 0, 0); /*0x6a591c*/
   ((ButtonClass *)&stru_B0B3A0)->SetState(v12); /*0x6a592b*/
   v5 = 0; /*0x6a5936*/
   dword_B0B3F0 = *(unsigned int *)&g_SidebarConfig; /*0x6a5938*/
@@ -239,7 +239,7 @@ void * SidebarClass::LoadAssets()
   {
     sprintf(Buffer, "TAB%02d.SHP", v5); /*0x6a594e*/
     v7 = LoadFileSHP(Buffer, (bool *)&v12); /*0x6a5960*/
-    ShapeButton::SetShape(v6, (int)v7, 0, 0); /*0x6a5968*/
+    ((ShapeButton *)v6)->SetShape((int)v7, 0, 0); /*0x6a5968*/
     ((ButtonClass *)v6)->SetState(v12); /*0x6a5974*/
     ++v5; /*0x6a597f*/
     v6[6].ShapeButtonClass_field_0x08 = *(unsigned int *)&g_SidebarConfig; /*0x6a5980*/
@@ -247,11 +247,11 @@ void * SidebarClass::LoadAssets()
   }
   while ( (int)v6 < (int)&dword_B07DC8 ); /*0x6a598c*/
   v8 = LoadFileSHP(aRDnShp, (bool *)&v12); /*0x6a5999*/
-  ShapeButton::SetShape(&stru_B0B328, (int)v8, 0, 0); /*0x6a59a4*/
+  ((ShapeButton *)&stru_B0B328)->SetShape((int)v8, 0, 0); /*0x6a59a4*/
   ((ButtonClass *)&stru_B0B328)->SetState(v12); /*0x6a59b3*/
   dword_B0B378 = *(unsigned int *)&g_SidebarConfig; /*0x6a59bf*/
   v9 = LoadFileSHP(aRUpShp, (bool *)&v12); /*0x6a59cf*/
-  ShapeButton::SetShape(&g_SidebarFlag, (int)v9, 0, 0); /*0x6a59da*/
+  ((ShapeButton *)&g_SidebarFlag)->SetShape((int)v9, 0, 0); /*0x6a59da*/
   ((ButtonClass *)&g_SidebarFlag)->SetState(v12); /*0x6a59e9*/
   dword_B0B458 = *(unsigned int *)&g_SidebarConfig; /*0x6a59fd*/
   dword_B0B468 = LoadFileSHP(aSide1Shp, (bool *)&byte_B0B488); /*0x6a5a11*/
@@ -415,17 +415,17 @@ int SidebarClass::Redraw(char a2)
         0);
       v2 = this; /*0x6a6e74*/
     }
-    ShapeButton::Draw(&stru_B07DF8, v17); /*0x6a6e88*/
-    ShapeButton::Draw(&stru_B0B3A0, v17); /*0x6a6e93*/
+    ((ShapeButton *)&stru_B07DF8)->Draw(v17); /*0x6a6e88*/
+    ((ShapeButton *)&stru_B0B3A0)->Draw(v17); /*0x6a6e93*/
     v8 = &stru_B07C48; /*0x6a6e98*/
     do /*0x6a6eaf*/
     {
-      ShapeButton::Draw(v8, 1); /*0x6a6ea1*/
+      ((ShapeButton *)v8)->Draw(1); /*0x6a6ea1*/
       v8 += 8; /*0x6a6ea6*/
     }
     while ( (int)v8 < (int)&dword_B07DC8 ); /*0x6a6eaf*/
-    ShapeButton::Draw(&stru_B0B328, v17); /*0x6a6eb7*/
-    ShapeButton::Draw(&g_SidebarFlag, v17); /*0x6a6ec2*/
+    ((ShapeButton *)&stru_B0B328)->Draw(v17); /*0x6a6eb7*/
+    ((ShapeButton *)&g_SidebarFlag)->Draw(v17); /*0x6a6ec2*/
     if ( *(unsigned int *)&v2[3].__pad_1092[814] ) /*0x6a6ec7*/
     {
       v21 = g_SidebarBounds; /*0x6a6eef*/

@@ -447,7 +447,7 @@ int VoxelAnimClass::VoxelAnimClass_Update()
   Object *v94; // [esp+24h] [ebp-58h]
   __int16 v95[2]; // [esp+28h] [ebp-54h] BYREF
   __int16 v96[2]; // [esp+2Ch] [ebp-50h] BYREF
-  int v97; // [esp+30h] [ebp-4Ch] BYREF
+  unsigned int v97; // [esp+30h] [ebp-4Ch] BYREF
   int v98; // [esp+34h] [ebp-48h]
   int v99; // [esp+38h] [ebp-44h]
   int v100[4]; // [esp+3Ch] [ebp-40h] BYREF

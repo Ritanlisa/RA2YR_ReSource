@@ -57,7 +57,7 @@ int ArtConfig::validateConfig(Selection_WorldDominationTour * aP1, int a3, Selec
   int v13; // [esp+74h] [ebp-8h]
   v13 = 0; /*0x76fce7*/
   unsigned char v12[12]; // [esp+68h] [ebp-14h] BYREF
-  Vector::Clear((int)v12); /*0x76fcef*/
+  ((Vector *)v12)->Clear(); /*0x76fcef*/
   v11[0] = (unsigned int)(&off_7E1668); /*0x76fcf8*/
   return (v11)->Dtor(); /*0x76fd05*/
 

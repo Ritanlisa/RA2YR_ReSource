@@ -313,7 +313,7 @@ IUnknown * CCINIClass::WriteHouses()
     strcpy(Source, (const char *)(*&dword_A8022C->psychicDetectionBuildings + 90100)); /*0x5011ac*/
     char Buffer[32]; // [esp+2Ch] [ebp-20h] BYREF
     sprintf(Buffer, g_Str_Trace, i); /*0x5011ba*/
-    INIClass::SetString(this, (unsigned __int8 *)g_INI_Key_Houses, Buffer, Source); /*0x5011d3*/
+    ((INIClass *)this)->SetString((unsigned __int8 *)g_INI_Key_Houses, Buffer, Source); /*0x5011d3*/
     result = dword_A80238; /*0x5011d8*/
   }
   int v4 = 0; // esi /*0x5011e3*/

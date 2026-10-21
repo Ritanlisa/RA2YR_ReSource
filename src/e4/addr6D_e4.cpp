@@ -520,7 +520,7 @@ long long sub_6D6A90(unsigned int * a1)
   unsigned int v4[2]; // [esp+4h] [ebp-8h] BYREF
   v4[0] = *a1; /*0x6d6aa8*/
   v4[1] = v2; /*0x6d6ab3*/
-  return Isometric::InitTables((int)v1, v4); /*0x6d6abc*/
+  return ((Isometric *)v1)->InitTables(v4); /*0x6d6abc*/
 }
 }
 // 0x6D84D0

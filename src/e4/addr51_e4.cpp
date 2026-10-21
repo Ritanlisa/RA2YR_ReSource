@@ -172,7 +172,7 @@ v7 = *ProgressTimer::GetValue((ProgressTimer *)v6->primaryFacing, &v37); /*0x51f
         v25,
         v27,
         v29);
-      INIClass::SetString(queuedMission, (unsigned __int8 *)aInfantry_0, Buffer, Source); /*0x520085*/
+      ((INIClass *)queuedMission)->SetString((unsigned __int8 *)aInfantry_0, Buffer, Source); /*0x520085*/
       result = i; /*0x52008a*/
     }
     ++result; /*0x520094*/

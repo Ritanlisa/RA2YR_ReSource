@@ -85,7 +85,7 @@ int Theme::Stop(char aP1, void *a2)
         if ( !v4 ) /*0x720ee0*/
           goto LABEL_14; /*0x720ee0*/
         if ( this->u32_11 && !(v4)->IsBuffering() ) /*0x720ee9*/
-          Audio::Release(this->ptr_41)); /*0x720ef5*/
+          ((Audio *)this->ptr_41)->Release()); /*0x720ef5*/
         if ( Audio::IsSoundPlaying(this->ptr_41)) != 0 ) /*0x720f04*/
         {
           result = Debug::Log(); /*0x720f14*/
@@ -123,7 +123,7 @@ bool Theme::IsPlaying(void *a1)
   if ( this->u32_11 ) /*0x720fda*/
   {
     if ( !(v2)->IsBuffering() ) /*0x720fe1*/
-      Audio::Release(this->ptr_41)); /*0x720fed*/
+      ((Audio *)this->ptr_41)->Release()); /*0x720fed*/
   }
   return Audio::IsSoundPlaying(this->ptr_41)) != 0; /*0x720ffe*/
 }

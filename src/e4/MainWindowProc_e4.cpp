@@ -33,7 +33,7 @@ AbstractClass * * sub_777420(ObjectClass *self)
   if ( !g_DDraw_Initialized ) /*0x77747c*/
   {
     if ( DSurface_Alternate ) /*0x77748a*/
-      DSurface::RestoreIfLost(DSurface_Alternate); /*0x77748c*/
+      ((DSurface *)DSurface_Alternate)->RestoreIfLost(); /*0x77748c*/
     if ( g_DSurface_Hidden ) /*0x777499*/
       DSurface::RestoreIfLost((DSurface *)g_DSurface_Hidden); /*0x77749b*/
     if ( DSurface_Composite /*0x7774c7*/
@@ -45,14 +45,14 @@ AbstractClass * * sub_777420(ObjectClass *self)
         0);
     }
     if ( DSurface_Tile /*0x7774f8*/
-      && DSurface::RestoreIfLost(DSurface_Tile)
+      && ((DSurface *)DSurface_Tile)->RestoreIfLost()
       && (!MEMORY[0xA8EB00 + 376] || *(int *)&MEMORY[0xA8EB00 + 416] > 16) )
     {
       (*((void (**)(DSurface *, unsigned int))DSurface_Tile->DSurface_field_0x0 + 6))(DSurface_Tile, 0); /*0x777504*/
     }
     if ( DSurface_Sidebar ) /*0x77750f*/
     {
-      if ( DSurface::RestoreIfLost(DSurface_Sidebar) ) /*0x777511*/
+      if ( ((DSurface *)DSurface_Sidebar)->RestoreIfLost() ) /*0x777511*/
       {
         g_CameoRenderFlag = 1; /*0x77751f*/
         if ( !MEMORY[0xA8EB00 + 376] || *(int *)&MEMORY[0xA8EB00 + 416] > 16 ) /*0x777530*/
@@ -60,7 +60,7 @@ AbstractClass * * sub_777420(ObjectClass *self)
       }
     }
     if ( g_DSurface_Primary /*0x777561*/
-      && DSurface::RestoreIfLost(g_DSurface_Primary)
+      && ((DSurface *)g_DSurface_Primary)->RestoreIfLost()
       && (!MEMORY[0xA8EB00 + 376] || *(int *)&MEMORY[0xA8EB00 + 416] > 16) )
     {
       (*((void (**)(DSurface *, char *, unsigned int))g_DSurface_Primary->DSurface_field_0x0 + 5))( /*0x777572*/

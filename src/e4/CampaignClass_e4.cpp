@@ -41,7 +41,7 @@ CampaignClass::CampaignClass(ObjectClass * aP1)
 {
 
 
-  AbstractTypeClass::Constructor((int *)this, aP1); /*0x46cb68*/
+  this->AbstractTypeClass::Constructor(aP1); /*0x46cb68*/
   /* X11: ptr_0 install elided (base-interface slot, RHS g_ptr_7E49FC) */  /*0x46cb70*/
   this->scenario[28] = -1; /*0x46cb76*/
   this->description[28] = -1; /*0x46cb7c*/
@@ -103,7 +103,7 @@ int CampaignClass::LoadFromINIList(void *a1)
       v6 = (int)(__2_YAPAXI_Z(0x3A0u)); /*0x46ce97*/
       if ( v6 ) /*0x46cea8*/
       {
-        AbstractTypeClass::Constructor((int *)v6, Source); /*0x46ceb5*/
+        ((AbstractTypeClass *)v6)->Constructor(Source); /*0x46ceb5*/
         *(unsigned int *)(v6 + 152) = -1; /*0x46ceba*/
         *(unsigned int *)(v6 + 668) = -1; /*0x46cec0*/
         /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E49FC) */  /*0x46cec6*/
@@ -329,13 +329,13 @@ LABEL_47:
   CCFileClass::Reset(&v30); /*0x49ca5d*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x49ca67*/
   v32 = 0; /*0x49ca77*/
-  Vector::Clear((int)v31); /*0x49ca7e*/
+  ((Vector *)v31)->Clear(); /*0x49ca7e*/
   *(unsigned int *)v30.__tail_0 = &off_7E1668; /*0x49ca8f*/
   BufferIOFileClass::Dtor((BufferIOFileClass *)&v30); /*0x49ca96*/
   HashTable::DestroyHashTableINIClass((INIClass *)&v28); /*0x49ca9f*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x49caab*/
   v35 = 0; /*0x49cab2*/
-  Vector::Clear((int)v34); /*0x49cab9*/
+  ((Vector *)v34)->Clear(); /*0x49cab9*/
   *(unsigned int *)v33.__tail_0 = &off_7E1668; /*0x49cac5*/
   BufferIOFileClass::Dtor((BufferIOFileClass *)&v33); /*0x49cacc*/
   this->scenario[68] = 1; /*0x49cad2*/

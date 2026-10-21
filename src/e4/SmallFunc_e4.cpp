@@ -175,7 +175,7 @@ char sub_5A1F60()
 {
 
   char v0 = 1; // bl /*0x5a1f68*/
-  Mouse::SetBounds((int)&dword_87F7E8, 0); /*0x5a1f6a*/
+  ((Mouse *)&dword_87F7E8)->SetBounds(0); /*0x5a1f6a*/
   (&dword_87F7E8)->CellIteratorReset(); /*0x5a1f74*/
   int i; // eax
   for ( i = (&dword_87F7E8)->CellIteratorNext(); i; i = (&dword_87F7E8)->CellIteratorNext() ) /*0x5a1f85*/
@@ -257,7 +257,7 @@ char sub_6E2660(int a1, int a2, int a3, int a4)
   *(unsigned int *)&g_RadarBlipPool = 0; /*0x6e2669*/
   *(unsigned int *)&g_RadarBlipManager = 0; /*0x6e266f*/
   *(unsigned int *)&DataGlobal_880994 = -1; /*0x6e2675*/
-  Mouse::SetBounds((int)&DataGlobal_87F7E8, 0); /*0x6e267f*/
+  ((Mouse *)&DataGlobal_87F7E8)->SetBounds(0); /*0x6e267f*/
   ((BuildingClass *)&DataGlobal_87F7E8)->TogglePower2(0); /*0x6e268a*/
   ((BuildingClass *)&DataGlobal_87F7E8)->TogglePower(0); /*0x6e2695*/
   DataGlobal_88099A = 0; /*0x6e269a*/

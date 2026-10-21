@@ -574,7 +574,7 @@ char TActionClass::CreateWeaponImpactAtWaypoint(int a2, int a3, int a4, int aP4)
   void *v12; // eax
   __int16 v14[2]; // [esp+10h] [ebp-14h] BYREF
   int v15; // [esp+14h] [ebp-10h] BYREF
-  int v16; // [esp+18h] [ebp-Ch] BYREF
+  unsigned int v16; // [esp+18h] [ebp-Ch] BYREF
   int v17; // [esp+1Ch] [ebp-8h]
   int GroundHeight; // [esp+20h] [ebp-4h]
 

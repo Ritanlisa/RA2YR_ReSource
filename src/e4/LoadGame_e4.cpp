@@ -356,7 +356,7 @@ int LoadGame::LoadMagicAndAudio()
     dword_B1D4C4 = 0; /*0x753406*/
   }
   if ( g_InfantryDrawState ) /*0x753418*/
-    Audio::Release(g_InfantryDrawState); /*0x75341a*/
+    ((Audio *)g_InfantryDrawState)->Release(); /*0x75341a*/
   ThemeClass::ClearQueues(); /*0x75341f*/
   int result; // eax
   int v3; // [esp+30h] [ebp-10h] BYREF

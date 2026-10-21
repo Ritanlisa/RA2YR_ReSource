@@ -196,7 +196,7 @@ signed int BuildingLightClass::UpdateOscillation()
   int v26; // [esp+1Ch] [ebp-18h]
   int v27; // [esp+1Ch] [ebp-18h]
   int v28; // [esp+20h] [ebp-14h]
-  int v29; // [esp+28h] [ebp-Ch] BYREF
+  unsigned int v29; // [esp+28h] [ebp-Ch] BYREF
   int v30; // [esp+2Ch] [ebp-8h]
   int v31; // [esp+30h] [ebp-4h]
 

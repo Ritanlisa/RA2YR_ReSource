@@ -142,7 +142,7 @@ LABEL_6:
     v4 = v3; /*0x691c6c*/
     if ( v3 ) /*0x691c73*/
     {
-      AbstractTypeClass::Constructor(v3, Source); /*0x691c7c*/
+      ((AbstractTypeClass *)v3)->Constructor(Source); /*0x691c7c*/
       v4->Coord_9C = 0; /*0x691c81*/
       v4->q0A0 = 0; /*0x691c8b*/
       /* X11: ptr_0 install elided (X67 star-deref, RHS g_var_a2536f) */  /*0x691c95*/

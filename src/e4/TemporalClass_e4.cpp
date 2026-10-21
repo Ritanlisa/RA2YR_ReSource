@@ -482,7 +482,7 @@ char TemporalClass::CanWarpTarget(unsigned int * a1)
     return 0; /*0x71ae94*/
   if ( (*(int (**)(unsigned int *))(*a1 + 44))(a1) == 1 ) /*0x71aea7*/
   {
-    Member = Team::GetMember(a1, 0); /*0x71aead*/
+    Member = ((Team *)a1)->GetMember(0); /*0x71aead*/
     v3 = (unsigned int *)Member; /*0x71aeb2*/
     if ( Member ) /*0x71aeb6*/
     {

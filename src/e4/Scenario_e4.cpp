@@ -962,7 +962,7 @@ LABEL_82:
     v64 = *v54; /*0x55b6d6*/
     v65 = v54[1]; /*0x55b6e8*/
     v66 = v54[2]; /*0x55b6ef*/
-    Tactical::SetTacticalPosition((TacticalClass *)g_TacticalClass_Instance, &v64); /*0x55b6f3*/
+    ((Tactical *)g_TacticalClass_Instance)->SetTacticalPosition(&v64); /*0x55b6f3*/
   }
   v67 = &g_ptr_7E9F84; /*0x55b6fc*/
   if ( Block ) /*0x55b706*/

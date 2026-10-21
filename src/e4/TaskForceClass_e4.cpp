@@ -80,7 +80,7 @@ int TaskForceClass::Construct(char *aP1, void *a2, void *a3, void *a4, void *a5,
 {
 
 
-  AbstractTypeClass::Constructor((int *)this->__pad_0, aP1); /*0x6e7e8a*/
+  ((AbstractTypeClass *)this->__pad_0)->Constructor(aP1); /*0x6e7e8a*/
   this->ptr_98 = (AbstractClass *)-1; /*0x6e7e8f*/
   this->Coord_9C = 0; /*0x6e7e99*/
   *(unsigned int *)this->q0A0 = 0; /*0x6e7ea3*/
@@ -279,7 +279,7 @@ char TaskForceClass::GetUnitType(char * a2)
     {
       char *v5; // eax
       v5 = (char *)(TaskForceClass::Check((TaskForceClass *)p_TaskForceClass_field_0xA4)); /*0x6e854e*/
-      INIClass::SetString(a2, (unsigned __int8 *)&this->q024, Buffer, v5); /*0x6e855f*/
+      ((INIClass *)a2)->SetString((unsigned __int8 *)&this->q024, Buffer, v5); /*0x6e855f*/
     }
     ++v3; /*0x6e8576*/
     p_TaskForceClass_field_0xA4 += 2; /*0x6e8577*/

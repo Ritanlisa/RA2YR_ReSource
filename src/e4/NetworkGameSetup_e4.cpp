@@ -63,8 +63,8 @@ void NetworkGameSetup::SendGameSetupPacket(wchar_t * Source)
     strcpy((char *)&v8[1], unk_A8B380); /*0x5ba9c4*/
     LOBYTE(v8[6]) = dword_A8B394; /*0x5ba9d4*/
     wcscpy((wchar_t *)((char *)&v8[6] + 1), Source); /*0x5ba9d8*/
-    Stream::WriteBlock((int *)&MEMORY[0xA8EA70], (int)v8, 250, 1); /*0x5ba9f1*/
-    Stream::ReadPacket((int)&MEMORY[0xA8EA70]); /*0x5ba9fb*/
+    ((Stream *)&MEMORY[0xA8EA70])->WriteBlock((int)v8, 250, 1); /*0x5ba9f1*/
+    ((Stream *)&MEMORY[0xA8EA70])->ReadPacket(); /*0x5ba9fb*/
     v3 = CharToWideString(unk_A8B380); /*0x5baa05*/
     v4 = dword_A8B394; /*0x5baa0d*/
     Format = (wchar_t *)v3; /*0x5baa19*/

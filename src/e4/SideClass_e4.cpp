@@ -131,7 +131,7 @@ int SideClass::Construct(SideClass * aP1, void *a2, void *a3, void *a4, void *a5
 {
 
 
-  AbstractTypeClass::Constructor((int *)aP1, a2); /*0x6a4559*/
+  aP1->AbstractTypeClass::Constructor(a2); /*0x6a4559*/
   aP1->houseTypesCount = 0; /*0x6a4563*/
   aP1->q0A0 = 0; /*0x6a4569*/
   aP1->q0A4 = 1; /*0x6a456f*/

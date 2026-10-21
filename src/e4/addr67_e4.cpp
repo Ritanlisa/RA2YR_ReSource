@@ -68,15 +68,15 @@ int sub_679CC0()
     v6 = 0; /*0x679d10*/
     v1[0] = (void*)(&CCINIClass_Vtable); /*0x679d14*/
     unsigned int v7[22]; // [esp+5Ch] [ebp-6Ch] BYREF
-    CCFileClass::Construct(v7, g_Str_File_CoopCampMD_ini); /*0x679d1c*/
+    ((CCFileClass *)v7)->Construct(g_Str_File_CoopCampMD_ini); /*0x679d1c*/
     if ( CCINIClass::Load(v1, (int)v7, 0, 0) ) /*0x679d2c*/
-      dword_B053B4 = Hash::ComputeHashSHA1((int)v1); /*0x679d3e*/
+      dword_B053B4 = ((Hash *)v1)->ComputeHashSHA1(); /*0x679d3e*/
     byte_B053B8 = 1; /*0x679d4a*/
     v7[0] = (unsigned int)(&g_ptr_7E16B0); /*0x679d51*/
     int v9; // [esp+C0h] [ebp-8h]
     v9 = 0; /*0x679d59*/
     unsigned char v8[12]; // [esp+B4h] [ebp-14h] BYREF
-    Vector::Clear((int)v8); /*0x679d60*/
+    ((Vector *)v8)->Clear(); /*0x679d60*/
     v7[0] = (unsigned int)&off_7E1668; /*0x679d69*/
     ((BufferIOFileClass *)(v7))->Dtor(); /*0x679d71*/
     (v1)->DestroyHashTableINIClass(); /*0x679d7a*/
@@ -314,7 +314,7 @@ int RulesClass::sub_674500()
 namespace gamemd {
 int unknown_libname_29()
 {
-  return Hash::ComputeHashSHA1((int)&dword_887180);
+  return ((Hash *)&dword_887180)->ComputeHashSHA1();
 }
 } // namespace gamemd
 
@@ -322,7 +322,7 @@ int unknown_libname_29()
 namespace gamemd {
 int unknown_libname_30()
 {
-  return Hash::ComputeHashSHA1((int)&dword_887128);
+  return ((Hash *)&dword_887128)->ComputeHashSHA1();
 }
 } // namespace gamemd
 
@@ -333,13 +333,13 @@ int ArtINI_Load()
 
   INIClass::ClearSection((gamemd::INIClass*)(&dword_887180), 0, 0); /*0x679eec*/
   unsigned int v1[22]; // [esp+0h] [ebp-6Ch] BYREF
-  CCFileClass::Construct(v1, aArtmdIni); /*0x679efa*/
+  ((CCFileClass *)v1)->Construct(aArtmdIni); /*0x679efa*/
   CCINIClass::Load(&dword_887180, (int)v1, 0, 0); /*0x679f0d*/
   v1[0] = (unsigned int)(&g_ptr_7E16B0); /*0x679f16*/
   int v3; // [esp+64h] [ebp-8h]
   v3 = 0; /*0x679f1e*/
   unsigned char v2[12]; // [esp+58h] [ebp-14h] BYREF
-  Vector::Clear((int)v2); /*0x679f26*/
+  ((Vector *)v2)->Clear(); /*0x679f26*/
   v1[0] = (unsigned int)&off_7E1668; /*0x679f2f*/
   return ((BufferIOFileClass *)(v1))->Dtor(); /*0x679f3c*/
 }

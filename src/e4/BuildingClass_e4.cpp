@@ -718,7 +718,7 @@ LABEL_202:
       LOBYTE(v8) = FootClass::UpdateAI((FootClass *)this, _EBP, (int)v96, a3, (int)v107); /*0x73b0a0*/
     return v8; /*0x73b0a0*/
   }
-  v110.ComPtr_field_0x04 = Team::GetMember((Team *)_EBP, 0); /*0x739f1d*/
+  v110.ComPtr_field_0x04 = ((Team *)_EBP)->GetMember(0); /*0x739f1d*/
   if ( *(unsigned char *)(*(unsigned int *)(_EBP + 1732) + 1040) ) /*0x739f27*/
   {
     if ( !HouseClass::GainedPoweredCenter(*(HouseClass **)(_EBP + 540), *(unsigned int *)(_EBP + 1732)) ) /*0x739f38*/

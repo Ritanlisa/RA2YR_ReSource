@@ -89,7 +89,7 @@ struct Cell {
     static char UpdateTileType(int16_t *aP0, int aP1, int a3);  // G57w10-S raw 0x0056E990 IUnknown 占位清除
     static char SetTileType(int16_t *a1, int a2, int a3, int a4, int a5);  // G57w10-S raw 0x0056EB80 IUnknown 占位清除
     char IsPassableAllied(int aP0, int16_t *aP1);  // G57w10-S raw 0x00578AD0 IUnknown 占位清除
-    HouseClass * * GetAdjacencyFlags(MouseClass * aP0);  // 0x579B70
+    static HouseClass * * GetAdjacencyFlags(int aP0);  // 0x579B70 (IDA: int __stdcall GetAdjacencyFlags(int))
     int GetTerrainMask(int *aP1, int a3);  // 0x57B210
     void * Clear(Cell *aP1);
     int  IsWalkable(unsigned short * a2, char a3);  // 0x6B5F80

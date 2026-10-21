@@ -415,7 +415,7 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
     v4->MainVoxel = FileVXL; /*0x74b5db*/
     /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E16B0) */  /*0x74b5e1*/
     Destination.MaxFDelta = 0; /*0x74b5e9*/
-    Vector::Clear((int)&Destination.MinDelay); /*0x74b5f1*/
+    ((Vector *)&Destination.MinDelay)->Clear(); /*0x74b5f1*/
     Destination.Header[0] = (int)&off_7E1668; /*0x74b5fa*/
     ((BufferIOFileClass *)((BufferIOFileClass *)&Destination))->Dtor(); /*0x74b602*/
   }

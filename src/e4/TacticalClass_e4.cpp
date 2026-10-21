@@ -491,7 +491,7 @@ void TacticalClass::InterpolateView()
       v21 = v16; /*0x4ae424*/
       v22 = v17; /*0x4ae428*/
     }
-    return Tactical::SetTacticalPosition((int)g_TacticalClass_Instance, &v20); /*0x4ae437*/
+    return ((Tactical *)g_TacticalClass_Instance)->SetTacticalPosition(&v20); /*0x4ae437*/
   }
   int result; // eax
   return result; /*0x4ae43e*/

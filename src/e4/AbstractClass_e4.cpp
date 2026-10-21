@@ -537,7 +537,7 @@ AbstractClass * * AbstractClass::AnnounceExpiredPointer(AbstractClass *a1, int a
   if ( *(AbstractClass **)&g_RadarBlipManager == a1 ) /*0x7258fb*/
   {
     *(unsigned int *)&g_RadarBlipManager = 0; /*0x725903*/
-    Mouse::SetBounds((int)&DataGlobal_87F7E8, 0); /*0x725909*/
+    ((Mouse *)&DataGlobal_87F7E8)->SetBounds(0); /*0x725909*/
   }
   switch ( v4 ) /*0x725911*/
   {
@@ -1202,7 +1202,7 @@ namespace gamemd {
 int AbstractClass_queryInterface(AbstractClass *aP0, unsigned int * a2, int * a3)
 {
 
-  int v6; // [esp+4h] [ebp-Ch] BYREF
+  unsigned int v6; // [esp+4h] [ebp-Ch] BYREF
   v6 = *a2; /*0x464a7a*/
   void *v7; // [esp+8h] [ebp-8h]
   v7 = (void *)a2[1]; /*0x464a8b*/

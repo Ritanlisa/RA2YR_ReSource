@@ -510,7 +510,7 @@ void* Object::HandleAction(int * a2, int * a3)
   int v29; // [esp+10h] [ebp-18h]
   int v30; // [esp+14h] [ebp-14h] BYREF
   int v31; // [esp+18h] [ebp-10h]
-  int v32; // [esp+1Ch] [ebp-Ch] BYREF
+  unsigned int v32; // [esp+1Ch] [ebp-Ch] BYREF
   int v33; // [esp+20h] [ebp-8h]
   int v34; // [esp+24h] [ebp-4h]
 

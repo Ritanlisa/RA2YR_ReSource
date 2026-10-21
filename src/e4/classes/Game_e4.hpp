@@ -83,7 +83,7 @@ struct Game {
     static int ResetReadyStates();  // 0x5E9850
     int readIniSettings(void *a1 = 0);  // 0x67FDE0
     char InitializeToolTipColor();  // 0x72F440
-    char Stub3(IUnknown * aP0);  // 0x5865E0
+    static char Stub3(int aP0);  // 0x5865E0 (IDA: int __stdcall Stub3(int))
     int LoadSaved(void *a1_1);
     CellStruct * * Game_DumpMultiplayerGameInfo();
     int ReadTeams();

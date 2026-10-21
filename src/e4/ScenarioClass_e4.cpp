@@ -437,7 +437,7 @@ LABEL_21:
   }
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x683cc9*/
   v22 = 0; /*0x683cd1*/
-  Vector::Clear((int)v21); /*0x683cd8*/
+  ((Vector *)v21)->Clear(); /*0x683cd8*/
   *(unsigned int *)v20.__tail_0 = &off_7E1668; /*0x683ce1*/
   BufferIOFileClass::Dtor((BufferIOFileClass *)&v20); /*0x683ce9*/
   HashTable::DestroyHashTableINIClass((INIClass *)&v19); /*0x683cf2*/
@@ -611,7 +611,7 @@ int ScenarioClass_Construct(void * a2)
       Map = ScenarioClass::LoadMap(0, (INIClass *)&v11, a2, (ObjectClass *)&v7[v9]); /*0x686851*/
       /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x686853*/
       v14 = 0; /*0x68685b*/
-      Vector::Clear((int)v13); /*0x686862*/
+      ((Vector *)v13)->Clear(); /*0x686862*/
       *(unsigned int *)v12.__tail_0 = &off_7E1668; /*0x68686b*/
       BufferIOFileClass::Dtor((BufferIOFileClass *)&v12); /*0x686873*/
       HashTable::DestroyHashTableINIClass((INIClass *)&v11); /*0x68687c*/
@@ -622,7 +622,7 @@ int ScenarioClass_Construct(void * a2)
       Debug::Log(); /*0x6867cc*/
       /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x6867db*/
       v14 = 0; /*0x6867e3*/
-      Vector::Clear((int)v13); /*0x6867ea*/
+      ((Vector *)v13)->Clear(); /*0x6867ea*/
       *(unsigned int *)v12.__tail_0 = &off_7E1668; /*0x6867f3*/
       BufferIOFileClass::Dtor((BufferIOFileClass *)&v12); /*0x6867fb*/
       HashTable::DestroyHashTableINIClass((INIClass *)&v11); /*0x686804*/

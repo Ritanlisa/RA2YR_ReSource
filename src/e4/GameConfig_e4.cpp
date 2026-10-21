@@ -98,7 +98,7 @@ int GameConfig::ComputeHash()
 {
 
   int v0; // edi
-  v0 = Hash::ComputeHashSHA1(dword_887048); /*0x679da5*/
+  v0 = ((Hash *)dword_887048)->ComputeHashSHA1(); /*0x679da5*/
   int v1; // ebp
   v1 = MultiplayerGameMode::ListGet(); /*0x679dac*/
   int i; // esi
@@ -110,7 +110,7 @@ int GameConfig::ComputeHash()
     {
       int v4; // eax
       v4 = (int)(GameConfig::Constructor(v3)); /*0x679dc6*/
-      v0 += Hash::ComputeHashSHA1(v4); /*0x679dd2*/
+      v0 += ((Hash *)v4)->ComputeHashSHA1(); /*0x679dd2*/
     }
   }
   if ( byte_B053B8 ) /*0x679ddf*/
@@ -132,15 +132,15 @@ int GameConfig::ComputeHash()
   v11 = 0; /*0x679e1f*/
   v6[0] = (void*)(&CCINIClass_Vtable); /*0x679e23*/
   unsigned int v12[22]; // [esp+68h] [ebp-6Ch] BYREF
-  CCFileClass::Construct(v12, g_Str_File_CoopCampMD_ini); /*0x679e2b*/
+  ((CCFileClass *)v12)->Construct(g_Str_File_CoopCampMD_ini); /*0x679e2b*/
   if ( CCINIClass::Load(v6, (int)v12, 0, 0) ) /*0x679e3b*/
-    dword_B053B4 = Hash::ComputeHashSHA1((int)v6); /*0x679e4d*/
+    dword_B053B4 = ((Hash *)v6)->ComputeHashSHA1(); /*0x679e4d*/
   byte_B053B8 = 1; /*0x679e59*/
   v12[0] = (unsigned int)(&g_ptr_7E16B0); /*0x679e60*/
   int v14; // [esp+CCh] [ebp-8h]
   v14 = 0; /*0x679e68*/
   unsigned char v13[12]; // [esp+C0h] [ebp-14h] BYREF
-  Vector::Clear((int)v13); /*0x679e6f*/
+  ((Vector *)v13)->Clear(); /*0x679e6f*/
   v12[0] = (unsigned int)&off_7E1668; /*0x679e78*/
   ((BufferIOFileClass *)(v12))->Dtor(); /*0x679e80*/
   (v6)->DestroyHashTableINIClass(); /*0x679e89*/
@@ -196,7 +196,7 @@ void GameConfig::Constructor(void *a1, void *a2, void *a3, void *a4)
       (*&v1->q038)->Load((int)&v6, 0, 0); /*0x5d685a*/
     /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x5d6863*/
     v8 = 0; /*0x5d686b*/
-    Vector::Clear((int)v7); /*0x5d686f*/
+    ((Vector *)v7)->Clear(); /*0x5d686f*/
     *(unsigned int *)v6.__tail_0 = &off_7E1668; /*0x5d6878*/
     BufferIOFileClass::Dtor((BufferIOFileClass *)&v6); /*0x5d6880*/
   }

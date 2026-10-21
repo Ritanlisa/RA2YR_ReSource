@@ -141,7 +141,7 @@ int ObjectTypeClass::ConstructFull(char *aP1)
   char Destination[24]; // [esp+8h] [ebp-1Ch] BYREF
   char v10; // [esp+20h] [ebp-4h]
 
-  AbstractTypeClass::Constructor(this, aP1); /*0x5f709c*/
+  this->AbstractTypeClass::Constructor(aP1); /*0x5f709c*/
   int *v3 = &this->TurretVoxel_d; // eax /*0x5f70a3*/
   this->u32_98 = 0; /*0x5f70a9*/
   this->__pad_099 = 0; /*0x5f70af*/

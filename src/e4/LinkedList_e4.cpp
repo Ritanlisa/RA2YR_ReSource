@@ -172,7 +172,7 @@ LABEL_61:
   v16 = v15->vt_slot_20(0, a2); /*0x47953f*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E16B0) */  /*0x479541*/
   v28 = 0; /*0x479545*/
-  Vector::Clear((int)v26); /*0x47954c*/
+  ((Vector *)v26)->Clear(); /*0x47954c*/
   v24.FilePointer = (int)&off_7E1668; /*0x47955a*/
   BufferIOFileClass::Dtor((BufferIOFileClass *)&v24.FilePointer); /*0x47955e*/
   if ( v16 ) /*0x47956a*/
@@ -203,7 +203,7 @@ LABEL_58:
   v20 = v19->vt_slot_20(0); /*0x479609*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x47960b*/
   v27 = 0; /*0x47960f*/
-  Vector::Clear((int)&v25); /*0x479616*/
+  ((Vector *)&v25)->Clear(); /*0x479616*/
   *(unsigned int *)v24.__tail_0 = &off_7E1668; /*0x47961f*/
   BufferIOFileClass::Dtor((BufferIOFileClass *)&v24); /*0x479623*/
   if ( v20 ) /*0x47962b*/
