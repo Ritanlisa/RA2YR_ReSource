@@ -270,47 +270,47 @@ int HouseClass::Construct(int a2, void *a2_1, void *a3, void *a4, void *a5, void
   /* X11: ptr_0 install elided (X68 star-amp-named, RHS g_ptr_7EA5A4) */  /*0x4f54cf*/
   this->abstractFlags = 10; /*0x4f54d5*/
   this->uniqueId = 0; /*0x4f54d8*/
-  VectorClass::BuildingConstructor(&this->abstractFlags, 0, 0); /*0x4f54e2*/
+  (&this->abstractFlags)->BuildingConstructor(0, 0); /*0x4f54e2*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E9E24) */  /*0x4f54e7*/
   this->abstractFlags = 10; /*0x4f54ed*/
   this->uniqueId = 0; /*0x4f54f0*/
-  VectorClass::BuildingConstructor(&this->q01A, 0, 0); /*0x4f54fa*/
+  (&this->q01A)->BuildingConstructor(0, 0); /*0x4f54fa*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E9E24) */  /*0x4f54ff*/
   this->abstractFlags = 10; /*0x4f5505*/
   this->uniqueId = 0; /*0x4f5508*/
-  VectorClass::BuildingConstructor(&this->NeedsSaveOrLink, 0, 0); /*0x4f5515*/
+  (&this->NeedsSaveOrLink)->BuildingConstructor(0, 0); /*0x4f5515*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E9E24) */  /*0x4f551a*/
   this->abstractFlags = 10; /*0x4f5520*/
   this->uniqueId = 0; /*0x4f5523*/
-  VectorClass::BuildingConstructor(&this->u32_26, 0, 0); /*0x4f5530*/
+  (&this->u32_26)->BuildingConstructor(0, 0); /*0x4f5530*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E9E24) */  /*0x4f5535*/
   this->abstractFlags = 10; /*0x4f553b*/
   this->uniqueId = 0; /*0x4f553e*/
-  VectorClass::BuildingConstructor(&this->ptr_2C, 0, 0); /*0x4f554b*/
+  (&this->ptr_2C)->BuildingConstructor(0, 0); /*0x4f554b*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E9E24) */  /*0x4f5550*/
   this->abstractFlags = 10; /*0x4f5556*/
   this->uniqueId = 0; /*0x4f5559*/
-  VectorClass::BuildingConstructor(&this->q032, 0, 0); /*0x4f5566*/
+  (&this->q032)->BuildingConstructor(0, 0); /*0x4f5566*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E9E24) */  /*0x4f556b*/
   this->abstractFlags = 10; /*0x4f5571*/
   this->uniqueId = 0; /*0x4f5574*/
-  VectorClass::BuildingConstructor(&this->conYards, 0, 0); /*0x4f5581*/
+  (&this->conYards)->BuildingConstructor(0, 0); /*0x4f5581*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E9E24) */  /*0x4f5586*/
   this->abstractFlags = 10; /*0x4f558c*/
   this->uniqueId = 0; /*0x4f558f*/
-  VectorClass::BuildingConstructor(&this->q03E, 0, 0); /*0x4f559c*/
+  (&this->q03E)->BuildingConstructor(0, 0); /*0x4f559c*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E9E24) */  /*0x4f55a1*/
   this->abstractFlags = 10; /*0x4f55a7*/
   this->uniqueId = 0; /*0x4f55aa*/
-  VectorClass::BuildingConstructor(&this->buildings, 0, 0); /*0x4f55b7*/
+  (&this->buildings)->BuildingConstructor(0, 0); /*0x4f55b7*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E9E24) */  /*0x4f55bc*/
   this->abstractFlags = 10; /*0x4f55c2*/
   this->uniqueId = 0; /*0x4f55c5*/
-  VectorClass::BuildingConstructor(&this->u32_4A, 0, 0); /*0x4f55d2*/
+  (&this->u32_4A)->BuildingConstructor(0, 0); /*0x4f55d2*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E9E24) */  /*0x4f55d7*/
   this->abstractFlags = 10; /*0x4f55dd*/
   this->uniqueId = 0; /*0x4f55e0*/
-  VectorClass::BuildingConstructor(&this->unitRepairStations, 0, 0); /*0x4f55ed*/
+  (&this->unitRepairStations)->BuildingConstructor(0, 0); /*0x4f55ed*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E9E24) */  /*0x4f55f2*/
   this->abstractFlags = 10; /*0x4f55f8*/
   this->uniqueId = 0; /*0x4f55fb*/
@@ -427,16 +427,16 @@ int HouseClass::Construct(int a2, void *a2_1, void *a3, void *a4, void *a5, void
   this->balance = 0; /*0x4f58d8*/
   this->totalStorage = 0; /*0x4f58de*/
   Delegate::GetField(&this->Delegate_C5); /*0x4f58e4*/
-  HouseClass::ClearStatArray(&this->HouseClass_CA); /*0x4f58ef*/
-  HouseClass::ClearStatArray(&this->aircraftAltOwner); /*0x4f58fa*/
-  HouseClass::ClearStatArray(&this->HouseClass_4CE); /*0x4f5905*/
-  HouseClass::ClearStatArray(&this->q6D0); /*0x4f5910*/
-  HouseClass::ClearStatArray(&this->HouseClass_8D2); /*0x4f591b*/
-  HouseClass::ClearStatArray(&this->HouseClass_AD4); /*0x4f5926*/
-  HouseClass::ClearStatArray(&this->HouseClass_CD6); /*0x4f5931*/
-  HouseClass::ClearStatArray(&this->HouseClass_ED8); /*0x4f593c*/
-  HouseClass::ClearStatArray(&this->HouseClass_10DA); /*0x4f5947*/
-  HouseClass::ClearStatArray(&this->HouseClass_12DC); /*0x4f5952*/
+  (&this->HouseClass_CA)->ClearStatArray(); /*0x4f58ef*/
+  (&this->aircraftAltOwner)->ClearStatArray(); /*0x4f58fa*/
+  (&this->HouseClass_4CE)->ClearStatArray(); /*0x4f5905*/
+  (&this->q6D0)->ClearStatArray(); /*0x4f5910*/
+  (&this->HouseClass_8D2)->ClearStatArray(); /*0x4f591b*/
+  (&this->HouseClass_AD4)->ClearStatArray(); /*0x4f5926*/
+  (&this->HouseClass_CD6)->ClearStatArray(); /*0x4f5931*/
+  (&this->HouseClass_ED8)->ClearStatArray(); /*0x4f593c*/
+  (&this->HouseClass_10DA)->ClearStatArray(); /*0x4f5947*/
+  (&this->HouseClass_12DC)->ClearStatArray(); /*0x4f5952*/
   this->numAirpads = 0; /*0x4f595c*/
   this->numBarracks = 0; /*0x4f5962*/
   this->numWarFactories = 0; /*0x4f5968*/

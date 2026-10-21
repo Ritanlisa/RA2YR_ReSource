@@ -708,7 +708,7 @@ CampaignClass * * HashTable_flat::RemoveEntry(const char * a2)
   ObjectClass *v15; // esi
   String v16[98]; // [esp+Ch] [ebp-310h] BYREF
 
-  String::Assign(v16, a2); /*0x6ba247*/
+  (v16)->Assign(a2); /*0x6ba247*/
   HashTable_field_0x04 = this->HashTable_field_0x04; /*0x6ba24c*/
   *(unsigned int *)&v16[1].m_3[1] = 0; /*0x6ba253*/
   if ( !HashTable_field_0x04 ) /*0x6ba257*/

@@ -427,7 +427,7 @@ char TActionClass::ConvertHouseUnits(int a2, int _14, unsigned int *a3, int aP4)
     if ( v5 == (BuildingType *)-1 ) /*0x6e0b85*/
       return 0; /*0x6e0bab*/
     if ( (unsigned __int8)BuildingType::IsSpecialType(v5) ) /*0x6e0b89*/
-      Field11 = BuildingType::FindOwnerHouse(v5); /*0x6e0b94*/
+      Field11 = (v5)->FindOwnerHouse(); /*0x6e0b94*/
     else
       Field11 = HouseClass::FindOwner((HouseClass *)v5); /*0x6e0b9b*/
   }
@@ -970,7 +970,7 @@ char TActionClass::executeEnterAction(int a2, int _10, unsigned int *a3, int aP4
     if ( v5 == (BuildingType *)-1 ) /*0x6e0ac2*/
       return 0; /*0x6e0ae7*/
     if ( (unsigned __int8)BuildingType::IsSpecialType(v5) ) /*0x6e0ac6*/
-      Field11 = BuildingType::FindOwnerHouse(v5); /*0x6e0ad1*/
+      Field11 = (v5)->FindOwnerHouse(); /*0x6e0ad1*/
     else
       Field11 = HouseClass::FindOwner((HouseClass *)v5); /*0x6e0ad8*/
   }
@@ -1025,7 +1025,7 @@ char TActionClass::executeCaptureAction(void *a1, int _C, unsigned int *a3, int 
     if ( v5 == (HouseClass *)-1 ) /*0x6e0cc1*/
       return 0; /*0x6e0ce3*/
     if ( (unsigned __int8)BuildingType::IsSpecialType(v5) ) /*0x6e0cc5*/
-      Field11 = BuildingType::FindOwnerHouse(v5); /*0x6e0cd0*/
+      Field11 = (v5)->FindOwnerHouse(); /*0x6e0cd0*/
     else
       Field11 = HouseClass::FindOwner(v5); /*0x6e0cd7*/
   }

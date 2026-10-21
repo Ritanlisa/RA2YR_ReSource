@@ -428,7 +428,7 @@ ObjectClass * * sub_402990()
     Next = (AudioQueue *)AudioQueue::GetNext((AudioQueue *)&off_815E98[1].DListNode_field_0x04); /*0x4029c0*/
     for ( i = Next; Next; i = Next ) /*0x4029ca*/
     {
-      NextAlt = AudioQueue::GetNextAlt(Next); /*0x4029d7*/
+      NextAlt = (Next)->GetNextAlt(); /*0x4029d7*/
       Next = (AudioQueue *)NextAlt; /*0x4029db*/
       ++*(unsigned int *)off_815E98[3].__pad_0; /*0x4029e6*/
       LinkedList::Init((LinkedList *)i); /*0x4029eb*/
@@ -617,7 +617,7 @@ ObjectClass * * sub_403210()
   {
     while ( 1 ) /*0x403252*/
     {
-      NextAlt = AudioQueue::GetNextAlt(Next); /*0x403252*/
+      NextAlt = (Next)->GetNextAlt(); /*0x403252*/
       ++*(unsigned int *)off_815E98[3].__pad_0; /*0x40325f*/
       LinkedList::Init((LinkedList *)v2); /*0x403264*/
       v3 = *(unsigned int *)off_815E98[3].__pad_0 - 1; /*0x403272*/

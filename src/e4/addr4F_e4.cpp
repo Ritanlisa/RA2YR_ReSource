@@ -132,7 +132,7 @@ LABEL_10:
   if ( v1 ) /*0x4f113e*/
   {
     SetWindowLongA(v1, 8, (LONG)&dwNewLong); /*0x4f1148*/
-    Dialog::Show(v2); /*0x4f1150*/
+    (v2)->Show(); /*0x4f1150*/
     if ( !dwNewLong ) /*0x4f115b*/
     {
       while ( Dialog::PumpMessages() != 1 ) /*0x4f1164*/
@@ -712,23 +712,23 @@ int ParseINIAnimGadgetDefinition(void * a2, void * a4, void * a3, void * aOrigin
   int v26; // [esp+3Ch] [ebp-8h]
   int v27; // [esp+40h] [ebp-4h]
 
-  String::Assign(&v20, ValueName); /*0x4f2c83*/
+  (&v20)->Assign(ValueName); /*0x4f2c83*/
   v6 = INIClass::ReadInt((bool *)a2->__pad_0, Source, &v20, -1); /*0x4f2c97*/
   *(unsigned int *)&v21.headNode = v6; /*0x4f2c9d*/
   j_DeleteAndZero((ObjectClass *)&v20); /*0x4f2ca1*/
   if ( v6 == -1 ) /*0x4f2ca9*/
     return 0; /*0x4f2cad*/
   unknown_libname_73(&v19); /*0x4f2cba*/
-  String::Assign(&v21, &g_INI_DefaultBuffer); /*0x4f2cc8*/
-  String::Assign(&v20, g_INI_Key_Image); /*0x4f2cd6*/
+  (&v21)->Assign(&g_INI_DefaultBuffer); /*0x4f2cc8*/
+  (&v20)->Assign(g_INI_Key_Image); /*0x4f2cd6*/
   INIClass::ReadString(a2, (char **)Source, (char **)&v20, (char **)&v21, (int)&v19); /*0x4f2ced*/
   j_DeleteAndZero((ObjectClass *)&v20); /*0x4f2cf6*/
   j_DeleteAndZero((ObjectClass *)&v21); /*0x4f2cff*/
   if ( String::Length(&v19) ) /*0x4f2d08*/
   {
     unknown_libname_73(&v19.m_3[1]); /*0x4f2d29*/
-    String::Assign(&v20, &g_INI_DefaultBuffer); /*0x4f2d37*/
-    String::Assign(&v21, g_INI_Key_Palette); /*0x4f2d45*/
+    (&v20)->Assign(&g_INI_DefaultBuffer); /*0x4f2d37*/
+    (&v21)->Assign(g_INI_Key_Palette); /*0x4f2d45*/
     INIClass::ReadString(a2, (char **)Source, (char **)&v21, (char **)&v20, (int)&v19.m_3[1]); /*0x4f2d5c*/
     j_DeleteAndZero((ObjectClass *)&v21); /*0x4f2d65*/
     j_DeleteAndZero((ObjectClass *)&v20); /*0x4f2d6e*/
@@ -737,7 +737,7 @@ int ParseINIAnimGadgetDefinition(void * a2, void * a4, void * a3, void * aOrigin
       v8 = 0; /*0x4f2d9e*/
       v22 = 0; /*0x4f2da9*/
       v23 = 0; /*0x4f2dad*/
-      String::Assign(&v21, aOrigin); /*0x4f2db1*/
+      (&v21)->Assign(aOrigin); /*0x4f2db1*/
       CoordPair = INIClass::GetCoordPair(a2, &v20, Source->__pad_0, (char **)&v21, &v22); /*0x4f2dc8*/
       v10 = *CoordPair; /*0x4f2dcd*/
       v11 = CoordPair[1]; /*0x4f2dcf*/

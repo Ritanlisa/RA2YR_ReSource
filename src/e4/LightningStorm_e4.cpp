@@ -75,7 +75,7 @@ int LightningStorm::Start(int a1, int a2, int a3, void * a4)
           int v9; // ecx
           v9 = *(unsigned int *)&dword_A8022C->AbstractClass[4 * v8]; /*0x539fd3*/
           if ( !*(unsigned char *)(v9 + 501) && !dword_A8B538 ) /*0x539fe7*/
-            HouseClass::CreateRadarOutage(v9, a1); /*0x539fea*/
+            (v9)->CreateRadarOutage(a1); /*0x539fea*/
         }
       }
       if ( dword_A83D4C ) /*0x53a000*/
@@ -254,10 +254,10 @@ int LightningStorm::Strike2(int a1, int a2, int a3)
       AnimClass::ctor(v16, WarheadVersusMultiplier, &v31, 0, 1, (void *)0x2600, v17, 0); /*0x53a50e*/
     }
     v25 = 0; /*0x53a515*/
-    v18 = Cell::IsBridge(v3); /*0x53a51f*/
+    v18 = (v3)->IsBridge(); /*0x53a51f*/
     v29 = 0; /*0x53a524*/
     v30 = 0; /*0x53a528*/
-    ClosestObjectCell = Object::FindClosestObjectCell(v3, &v29, 0, 0); /*0x53a538*/
+    ClosestObjectCell = (v3)->FindClosestObjectCell(&v29, 0, 0); /*0x53a538*/
     v20 = ClosestObjectCell; /*0x53a53d*/
     if ( !ClosestObjectCell /*0x53a552*/
       || (v26 = 1, (*(int (**)(int))(*(unsigned int *)ClosestObjectCell + 44))(ClosestObjectCell) != 15) )
@@ -280,8 +280,8 @@ int LightningStorm::Strike2(int a1, int a2, int a3)
     }
     CreateSmokeEffectAt(Climb, HIDWORD(dword_8871E0[1].?), v31, v32, (int)v33, 0, 0); /*0x53a581*/
     PlaySoundEffectAt(&v31, Climb, 0, HIDWORD(dword_8871E0[1].?), 1, (int)LightningStorm_Owner); /*0x53a5d0*/
-    if ( v18 == Cell::IsBridge(v3) /*0x53a607*/
-      && (v29 = 0, v30 = 0, v20 == Object::FindClosestObjectCell(v3, &v29, 0, 0))
+    if ( v18 == (v3)->IsBridge() /*0x53a607*/
+      && (v29 = 0, v30 = 0, v20 == (v3)->FindClosestObjectCell(&v29, 0, 0))
       && v3->u32_11B == v28 )
     {
       LOBYTE(v11) = v25; /*0x53a60d*/

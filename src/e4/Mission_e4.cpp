@@ -462,7 +462,7 @@ char Mission_e4::AssignTeamMemberMissions(ScriptClass * aP1, int a3)
           v8 = dword_8871E0[1].?[1]; /*0x6ed867*/
         else
           v8 = dword_8871E0[1].?[0]; /*0x6ed85a*/
-        if ( ObjectClass::DistanceTo(i, this->ptr_34) <= v8 ) /*0x6ed87a*/
+        if ( (i)->DistanceTo(this->ptr_34) <= v8 ) /*0x6ed87a*/
         {
           *((unsigned char *)i + 1673) = 1; /*0x6ed8b2*/
         }

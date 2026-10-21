@@ -381,7 +381,7 @@ LABEL_70:
     (v47->ptr_C) = ((v47->ptr_C) & ~0xFF) | ((1) & 0xFF); /*0x6f0f1c*/
     (v47->ptr_C) = ((v47->ptr_C) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x6f0f20*/
     /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7EA9E4) */  /*0x6f0f24*/
-    Team_Helper_6F2780(v47, &v57); /*0x6f0f2a*/
+    (v47)->Team_Helper_6F2780(&v57); /*0x6f0f2a*/
     /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7EA9C4) */  /*0x6f0f2f*/
     /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7EA9E4) */  /*0x6f0f35*/
     v48 = (void *)v57.Items; /*0x6f0f3d*/

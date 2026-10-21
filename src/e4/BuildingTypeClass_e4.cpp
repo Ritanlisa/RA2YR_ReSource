@@ -594,7 +594,7 @@ AbstractClass * * BuildingTypeClass::LoadRepairAnimations()
           v4->u32_E00 = 0; /*0x45eb26*/
           v4->qE04 = 0; /*0x45eb2c*/
         }
-        BuildingTypeClass::LoadAnimations(v4, v2); /*0x45eb35*/
+        (v4)->LoadAnimations(v2); /*0x45eb35*/
       }
       ++v3; /*0x45eb3f*/
     }

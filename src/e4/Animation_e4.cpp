@@ -286,7 +286,7 @@ ObjectClass * * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass 
     String::Assign((String *)&a1, g_INI_Key_Lose); /*0x7705a7*/
     INIClass::ReadTokenizedPair(v5, v4, v3, v6, 1, (char **)&a1); /*0x7705b8*/
     j_DeleteAndZero((ObjectClass *)&a1); /*0x7705c1*/
-    String::Assign(&v23, aDraw); /*0x7705cf*/
+    (&v23)->Assign(aDraw); /*0x7705cf*/
     INIClass::ReadTokenizedPair(v5, v4, v3, v6, 2, (char **)&v23); /*0x7705e0*/
     j_DeleteAndZero((ObjectClass *)&v23); /*0x7705e9*/
     v5 = &v5->__pad_094; /*0x7705f2*/
@@ -294,7 +294,7 @@ ObjectClass * * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass 
       break; /*0x7705fd*/
     this = v22; /*0x770570*/
   }
-  String::Assign(&v23, aStartup); /*0x77060c*/
+  (&v23)->Assign(aStartup); /*0x77060c*/
   v7 = StaticString::Factory(*(StaticString **)v22); /*0x77061c*/
   ConcatStringAlloc((char **)&v23.m_3[1], (const char **)v7, (char **)&v23); /*0x770627*/
   unknown_libname_73(&a1); /*0x770630*/
@@ -333,7 +333,7 @@ ObjectClass * * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass 
   j_DeleteAndZero((ObjectClass *)&a1); /*0x77070b*/
   j_DeleteAndZero((ObjectClass *)&v23.m_3[1]); /*0x770714*/
   j_DeleteAndZero((ObjectClass *)&v23); /*0x77071d*/
-  String::Assign(&v23, aTerritoryselec); /*0x77072b*/
+  (&v23)->Assign(aTerritoryselec); /*0x77072b*/
   v14 = StaticString::Factory(*(StaticString **)v22); /*0x77073b*/
   ConcatStringAlloc((char **)&v23.m_3[1], (const char **)v14, (char **)&v23); /*0x770746*/
   unknown_libname_73(&a1); /*0x77074f*/

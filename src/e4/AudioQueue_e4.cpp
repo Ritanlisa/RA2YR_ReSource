@@ -151,7 +151,7 @@ int AudioQueue::StopAllVoices(void *a1, void *a2)
   {
     do /*0x403766*/
     {
-      result = AudioQueue::GetNextAlt(v5); /*0x40374a*/
+      result = (v5)->GetNextAlt(); /*0x40374a*/
       v5 = (AudioQueue *)result; /*0x403752*/
       if ( v3 == -1 || v6->u32_C == v3 ) /*0x403759*/
         result = Voice::Stop(v7); /*0x40375d*/
@@ -273,7 +273,7 @@ LABEL_5:
     }
     else
     {
-      v8 = String::GetOrEmpty(this->u32_3C4); /*0x7716d1*/
+      v8 = (this->u32_3C4)->GetOrEmpty(); /*0x7716d1*/
       v9 = VocClass::FindByName((VocClass *)v8); /*0x7716d8*/
       UpdateThemeManager(v9, -1, -1); /*0x7716e2*/
       this->u32_3B8 = 0; /*0x7716e7*/
@@ -764,13 +764,13 @@ int AudioQueue::DrainAll()
   int *v1; // esi
   int Next_Alt; // edi
 
-  result = AudioQueue::GetNext(stru_B1D320); /*0x750fa6*/
+  result = (stru_B1D320)->GetNext(); /*0x750fa6*/
   v1 = (int *)result; /*0x750fab*/
   if ( result ) /*0x750faf*/
   {
     do /*0x750fe8*/
     {
-      Next_Alt = AudioQueue::GetNextAlt(v1); /*0x750fbc*/
+      Next_Alt = (v1)->GetNextAlt(); /*0x750fbc*/
       AudioController::Stop(v1 + 3); /*0x750fbe*/
       LinkedList::Init((unsigned int **)v1); /*0x750fc5*/
       result = PushFrontLinkedListAlt(dword_B1D3A4, (int)v1); /*0x750fd2*/

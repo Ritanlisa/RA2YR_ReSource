@@ -126,7 +126,7 @@ char LinkedList_flat::LoadScenarioMixFiles(int a2, int a3, int a4, int aP0, int 
     return 1; /*0x47939b*/
   v8 = (MixFileClass *)__2_YAPAXI_Z(0x28u); /*0x4793a0*/
   if ( v8 ) /*0x4793aa*/
-    v9 = MixFileClass::FromFile(v8, aMainMix, (int)dword_886980); /*0x4793b8*/
+    v9 = (v8)->FromFile(aMainMix, (int)dword_886980); /*0x4793b8*/
   else
     v9 = 0; /*0x4793bf*/
   dword_884E34 = (int)v9; /*0x4793c1*/

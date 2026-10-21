@@ -263,7 +263,7 @@ LABEL_40:
       {
         do /*0x48c1ae*/
         {
-          TileType = Terrain::GetTileType(v14, v15); /*0x48c1ae*/
+          TileType = (v14)->GetTileType(v15); /*0x48c1ae*/
           if ( TileType ) /*0x48c1b5*/
           {
             v17 = *(unsigned __int8 **)(TileType + 12); /*0x48c1b7*/
@@ -355,7 +355,7 @@ int ConnectionClass::processTileUpdate(void *a2, signed int *a3)
     return 0; /*0x48c36a*/
   while ( 1 ) /*0x48c333*/
   {
-    TileType = Terrain::GetTileType(PlayerIndex, v4); /*0x48c333*/
+    TileType = (PlayerIndex)->GetTileType(v4); /*0x48c333*/
     if ( !TileType || (*(unsigned char *)TileType & 2) != 0 ) /*0x48c33f*/
       goto LABEL_7; /*0x48c33f*/
     v7 = *(unsigned __int8 **)(TileType + 12); /*0x48c341*/

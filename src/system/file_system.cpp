@@ -172,15 +172,15 @@ void* FileSystem::LoadFirstSHP()
             if (!mix->Peek(i, head, 12)) continue;
 
             // Try TD header: frames(2), width(2), height(2)
-            uint16_t td_frames = head->u32_0;
-            uint16_t td_w = head->u32_2;
-            uint16_t td_h = head->u32_4;
+            uint16_t td_frames = head[0] | (head[1] << 8);
+            uint16_t td_w = head[2] | (head[3] << 8);
+            uint16_t td_h = head[4] | (head[5] << 8);
             bool td_valid = (td_frames > 0 && td_frames <= 500 && td_w > 0 && td_w <= 1024 && td_h > 0 && td_h <= 1024);
 
             // Try TS/RA2 header: size(4), width(2), height(2), frames(2)
-            uint16_t ts_w = head->u32_4;
-            uint16_t ts_h = head->u32_6;
-            uint16_t ts_frames = head->u32_8;
+            uint16_t ts_w = head[4] | (head[5] << 8);
+            uint16_t ts_h = head[6] | (head[7] << 8);
+            uint16_t ts_frames = head[8] | (head[9] << 8);
             bool ts_valid = (ts_frames > 0 && ts_frames <= 500 && ts_w > 0 && ts_w <= 1024 && ts_h > 0 && ts_h <= 1024);
 
             if (!td_valid && !ts_valid) continue;

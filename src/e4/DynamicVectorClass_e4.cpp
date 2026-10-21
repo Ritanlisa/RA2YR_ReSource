@@ -337,7 +337,7 @@ AbstractClass * * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Rem
         v8 = aP1; /*0x628c27*/
         do /*0x628c38*/
         {
-          Byte::Zero(v5); /*0x628c2c*/
+          (v5)->Zero(); /*0x628c2c*/
           v5 += 65; /*0x628c31*/
           --v8; /*0x628c37*/
         }
@@ -356,7 +356,7 @@ AbstractClass * * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Rem
           v15 = aP1; /*0x628bf4*/
           do /*0x628c0e*/
           {
-            Byte::Zero(v7); /*0x628bfa*/
+            (v7)->Zero(); /*0x628bfa*/
             v7 += 65; /*0x628c03*/
             --v15; /*0x628c0a*/
           }

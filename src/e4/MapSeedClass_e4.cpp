@@ -491,7 +491,7 @@ LABEL_23:
               v6 = (Value *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v12); /*0x5a7824*/
               Value_field_00 = v6[14].Value_field_00; /*0x5a7829*/
               if ( (Value_field_00 < g_CellTileTypeCache || Value_field_00 > g_CellTileTypeCache + 1) /*0x5a783d*/
-                && !Value::InRange(v6) )
+                && !(v6)->InRange() )
               {
                 break; /*0x5a783d*/
               }

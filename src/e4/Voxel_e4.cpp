@@ -606,7 +606,7 @@ int Voxel::Projection_Setup()
   ((Int4 *)&stru_B432C8)->Set2(0, 0, 0, 1065353216); /*0x7558c9*/
   Matrix3x4::Identity(&stru_B44318); /*0x7558d3*/
   v55 = -dbl_B43F00; /*0x7558e6*/
-  Matrix3x3::RotateX(stru_B44318.m_Data, v55); /*0x7558e9*/
+  (stru_B44318.m_Data)->RotateX(v55); /*0x7558e9*/
   v56 = -dbl_B44498; /*0x7558f7*/
   Matrix2D::Rotate(stru_B44318.m_Data, v56); /*0x7558ff*/
   v52 = &stru_B450B8; /*0x755904*/

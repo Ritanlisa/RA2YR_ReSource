@@ -690,7 +690,7 @@ void TheaterClass_LoadMIX(int a1)
   wsprintfA(v35, "%sMD.MIX", v3); /*0x534a3a*/
   Debug::Log(); /*0x534a48*/
   *((unsigned int *)dword_A8B230 + 1174) = a1; /*0x534a5d*/
-  Multiplayer::ShowProgress(dword_A8B238, 8); /*0x534a63*/
+  (dword_A8B238)->ShowProgress(8); /*0x534a63*/
   if ( *((unsigned int *)dword_A8B230 + 1174) != dword_822CF8 ) /*0x534a7a*/
   {
     if ( dword_884E0C ) /*0x534a8a*/
@@ -723,7 +723,7 @@ void TheaterClass_LoadMIX(int a1)
     dword_884E10 = (int)v8; /*0x534b48*/
     ReturnTrue(0); /*0x534b4d*/
     ReturnTrue(0); /*0x534b59*/
-    Multiplayer::ShowProgress(dword_A8B238, 6); /*0x534b65*/
+    (dword_A8B238)->ShowProgress(6); /*0x534b65*/
     if ( dword_884E20 ) /*0x534b72*/
       (**(void (***)(int, int))dword_884E20)(dword_884E20, 1); /*0x534b78*/
     v9 = __2_YAPAXI_Z(0x28u); /*0x534b7c*/
@@ -738,7 +738,7 @@ void TheaterClass_LoadMIX(int a1)
       dword_884E1C = (int)MixFileClass::FromFile(v10, v38, (int)&dword_886980); /*0x534bd5*/
     else
       dword_884E1C = 0; /*0x534bdc*/
-    Multiplayer::ShowProgress(dword_A8B238, 12); /*0x534be9*/
+    (dword_A8B238)->ShowProgress(12); /*0x534be9*/
     wsprintfA(Source, "%s.PAL", v3); /*0x534bf9*/
     v11 = (unsigned char *)SearchMIXFile(Source, 0); /*0x534c04*/
     if ( v11 ) /*0x534c0b*/

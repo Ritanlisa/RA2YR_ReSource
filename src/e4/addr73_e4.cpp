@@ -134,7 +134,7 @@ LABEL_24:
             v9 = (*(int (**)(unsigned char *))(*(unsigned int *)v8 + 44))(v8) == 15 ? (TechnoClass *)v8 : 0;
             v10 = (*(int (**)(unsigned char *))(*(unsigned int *)v8 + 44))(v8) == 1 ? (TechnoClass *)v8 : 0;
             if ( (!v9 /*0x730d06*/
-               || !TechnoClass::GetTypeFlag(v9)
+               || !(v9)->GetTypeFlag()
                || !v12
                || !v13
                || !(unsigned __int8)TechnoClass::IsMission27to30(v9))
@@ -160,7 +160,7 @@ LABEL_24:
       if ( v6 ) /*0x730b9a*/
       {
         if ( (*(int (**)(unsigned int))(v6->ptr_0 + 44))(*((unsigned int *)MEMORY[0xA8ECBC] + v5)) == 15 /*0x730baa*/
-          && TechnoClass::GetTypeFlag(v6) )
+          && (v6)->GetTypeFlag() )
         {
           if ( !(unsigned __int8)TechnoClass::IsMission27to30(v6) ) /*0x730bbc*/
             goto LABEL_17; /*0x730bbc*/
@@ -615,7 +615,7 @@ LABEL_25:
     {
       v23 = *(TechnoClass **)(*(unsigned int *)&MEMORY[0xA8EB00 + 152] + 4 * j); /*0x732b01*/
       if ( (unsigned __int8)TechnoClass::IsOwnedByHuman(v23) ) /*0x732b05*/
-        DynamicVector::AddItem(v6, &v23); /*0x732b15*/
+        (v6)->AddItem(&v23); /*0x732b15*/
     }
   }
 LABEL_36:
@@ -1300,7 +1300,7 @@ int SelectUnitsByTheme(char a1)
         if ( v13[20] & 1 ) /*0x733b2c*/
         {
           v19 = (int)v13; /*0x733b39*/
-          DynamicVector::AddItem(v10, &v19); /*0x733b3d*/
+          (v10)->AddItem(&v19); /*0x733b3d*/
         }
       }
     }

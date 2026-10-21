@@ -646,7 +646,7 @@ GadgetClass * SidebarClass::LoadResources(void *a1, void * aSidegdi1Shp, void * 
     dword_B0B470 = SearchMIXFile(aSidegdi3Shp, 0); /*0x6abd7e*/
   }
   Rect_Point::Set(&stru_B07E58, DSurface_SidebarBounds + 16, (int)DSurface_ViewBounds.field_4); /*0x6abd98*/
-  VectorClass_ptr_ConvertClass::MarkDirty(&stru_B07E58); /*0x6abda2*/
+  (&stru_B07E58)->MarkDirty(); /*0x6abda2*/
   v2 = stru_B04A10.ID + stru_B04A10.Height; /*0x6abdb2*/
   v23 = stru_B04A10.ID + stru_B04A10.Height; /*0x6abdbc*/
   if ( LOBYTE(MEMORY[0xA8EB00].ptr_0[31]) ) /*0x6abdbd*/
@@ -655,7 +655,7 @@ GadgetClass * SidebarClass::LoadResources(void *a1, void * aSidegdi1Shp, void * 
     Rect_Point::Set(&stru_B07E58, 0, v23); /*0x6abdd7*/
   v24 = (*((int (**)(DSurface *))DSurface_Sidebar->DSurface_field_0x0 + 32))(DSurface_Sidebar) - v2; /*0x6abdf2*/
   v3 = (*((int (**)(DSurface *))DSurface_Sidebar->DSurface_field_0x0 + 31))(DSurface_Sidebar); /*0x6abdf5*/
-  ObjectClass::SetPositionXY(&stru_B07E58, v3, v24); /*0x6abdfe*/
+  (&stru_B07E58)->SetPositionXY(v3, v24); /*0x6abdfe*/
   Rect_Point::Set((GadgetClass *)&stru_B0B3A0, dword_B0B4DC, dword_B0B4E0); /*0x6abe15*/
   VectorClass_ptr_ConvertClass::MarkDirty((GadgetClass *)&stru_B0B3A0); /*0x6abe1f*/
   dword_B0B3E4 = -DSurface_SidebarBounds; /*0x6abe37*/

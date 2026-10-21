@@ -1623,7 +1623,7 @@ LABEL_47:
   }
   else
   {
-    ScriptAction::CreatePlacementAction(v35, v14, v2); /*0x63858e*/
+    (v35)->CreatePlacementAction(v14, v2); /*0x63858e*/
   }
   if ( v22 ) /*0x638595*/
     PlayVocClass(dword_8871E0->EnterGrinderSound, 0x2000u, 1.0, 0); /*0x6385ae*/
@@ -2086,7 +2086,7 @@ TechnoClass * * CompleteBuildingProduction(IUnknown * a1, int edx0)
   v34 = (int)v2; /*0x63982e*/
   v7 = (*(int (**)(int, int *))(v6 + 16))(Type + 4, &v34); /*0x639838*/
   v8 = (TeamClass *)BuildingClass::GetType(v4); /*0x63983f*/
-  TeamClass::UpdateBuildQueue(v8, a1, v7, v8->abstractFlags - v7); /*0x63984b*/
+  (v8)->UpdateBuildQueue(a1, v7, v8->abstractFlags - v7); /*0x63984b*/
   v32 = (ScriptAction *)-1; /*0x639855*/
   v34 = -1; /*0x639859*/
   v33 = 0; /*0x63985d*/
@@ -2122,7 +2122,7 @@ TechnoClass * * CompleteBuildingProduction(IUnknown * a1, int edx0)
             WaypointCoords = ScriptAction::GetWaypointCoords((ScriptAction *)v38, v37); /*0x639926*/
             *(unsigned int *)&v39[7] = *(unsigned int *)WaypointCoords; /*0x63992d*/
             v39[11] = WaypointCoords[4]; /*0x63993e*/
-            ScriptAction::CreatePlacementAction(v32, v19, v39); /*0x639942*/
+            (v32)->CreatePlacementAction(v19, v39); /*0x639942*/
             v33 = (ScriptAction *)((char *)v33 + 1); /*0x63994e*/
           }
           while ( (int)v33 < v7 ); /*0x639952*/
@@ -2291,7 +2291,7 @@ LABEL_4:
     v17[0] = v5; /*0x63a5fd*/
     v7 = (unsigned int **)*((unsigned int *)dword_AC4B34 + v6); /*0x63a601*/
     v17[1] = v4; /*0x63a604*/
-    ScreenPosScriptAction = ScriptAction::GetScreenPos(v7, &v18); /*0x63a60a*/
+    ScreenPosScriptAction = (v7)->GetScreenPos(&v18); /*0x63a60a*/
     v9 = ComputeBounds(v27, 8, *ScreenPosScriptAction, ScreenPosScriptAction[1]); /*0x63a61f*/
     v22 = *v9; /*0x63a626*/
     v23 = v9->u32_4; /*0x63a62d*/

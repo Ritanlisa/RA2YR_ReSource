@@ -357,7 +357,7 @@ CoordStruct* MapClass::FindFirstFirestorm(CoordStruct* a1, const int* a2, const 
           v10 = (Cell *)&unk_ABDC50; /*0x58818c*/
           dword_ABDC74 = v34; /*0x588191*/
         }
-        v11 = Cell::IsBridge(v10); /*0x588196*/
+        v11 = (v10)->IsBridge(); /*0x588196*/
         if ( v11 ) /*0x58819d*/
         {
           if ( *(unsigned char *)(v11[328] + 5824) ) /*0x5881a5*/
@@ -400,7 +400,7 @@ CoordStruct* MapClass::FindFirstFirestorm(CoordStruct* a1, const int* a2, const 
             v21 = (Cell *)&unk_ABDC50; /*0x588279*/
             dword_ABDC74 = v34; /*0x58827e*/
           }
-          v22 = Cell::IsBridge(v21); /*0x588283*/
+          v22 = (v21)->IsBridge(); /*0x588283*/
           if ( v22 ) /*0x58828a*/
           {
             if ( *(unsigned char *)(v22[328] + 5824) ) /*0x588292*/
@@ -456,7 +456,7 @@ LABEL_31:
             v31 = (Cell *)&unk_ABDC50; /*0x588491*/
             dword_ABDC74 = (int)v38; /*0x588496*/
           }
-          v32 = Cell::IsBridge(v31); /*0x58849b*/
+          v32 = (v31)->IsBridge(); /*0x58849b*/
           if ( v32 ) /*0x5884a2*/
           {
             if ( *(unsigned char *)(v32[328] + 5824) ) /*0x5884aa*/

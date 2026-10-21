@@ -130,7 +130,7 @@ char Team_Start(void * a1, void * a2, void * a3, void * a4)
       goto LABEL_13; /*0x561225*/
     v12 = a3; /*0x56122f*/
     SetWindowLongA((HWND)Dialog, 8, (LONG)&dwNewLong); /*0x561234*/
-    Dialog::Show(Dialog); /*0x56123c*/
+    (Dialog)->Show(); /*0x56123c*/
     Ticks = Timer::GetTicks(); /*0x56124a*/
     v23 = 600; /*0x561254*/
     while ( dwNewLong < 0 ) /*0x56125c*/

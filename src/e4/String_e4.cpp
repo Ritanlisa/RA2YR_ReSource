@@ -103,22 +103,22 @@ ObjectClass * * String::SplitComma(ObjectClass * aP1)
   this->ptr_8 = 0; /*0x5d0395*/
   this->u32_C = 0; /*0x5d0398*/
   unknown_libname_73(&v10); /*0x5d039b*/
-  v3 = String::Tokenize(aP1, 0, Delimiter, (void **)&v10); /*0x5d03ba*/
+  v3 = (aP1)->Tokenize(0, Delimiter, (void **)&v10); /*0x5d03ba*/
   if ( String::Length((String *)&v10) ) /*0x5d03bc*/
     ((String *)this)->Reassign((const char **)&v10); /*0x5d03cc*/
-  v4 = String::Tokenize(aP1, v3, Delimiter, (void **)&v10); /*0x5d03e7*/
+  v4 = (aP1)->Tokenize(v3, Delimiter, (void **)&v10); /*0x5d03e7*/
   if ( String::Length((String *)&v10) ) /*0x5d03e9*/
   {
     __1_Timevec_std__QAE_XZ((const char **)&v10); /*0x5d03f6*/
     this->ptr_4 = v5; /*0x5d03fb*/
   }
-  v6 = String::Tokenize(aP1, v4, Delimiter, (void **)&v10); /*0x5d0414*/
+  v6 = (aP1)->Tokenize(v4, Delimiter, (void **)&v10); /*0x5d0414*/
   if ( String::Length((String *)&v10) ) /*0x5d0416*/
   {
     __1_Timevec_std__QAE_XZ((const char **)&v10); /*0x5d0423*/
     this->ptr_8 = v7; /*0x5d0428*/
   }
-  String::Tokenize(aP1, v6, Delimiter, (void **)&v10); /*0x5d0438*/
+  (aP1)->Tokenize(v6, Delimiter, (void **)&v10); /*0x5d0438*/
   if ( String::Length((String *)&v10) ) /*0x5d0441*/
   {
     __1_Timevec_std__QAE_XZ((const char **)&v10); /*0x5d044e*/

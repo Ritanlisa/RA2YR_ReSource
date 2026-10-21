@@ -311,7 +311,7 @@ int sub_626C60()
     v5 = v4; /*0x626ccd*/
     if ( v4 ) /*0x626cd4*/
     {
-      VectorClass::ConstructHSV(v4, 0, 0); /*0x626cdc*/
+      (v4)->ConstructHSV(0, 0); /*0x626cdc*/
       /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EF750) */  /*0x626ce1*/
       v5->u32_14 = 10; /*0x626ce7*/
       v5->q010 = 0; /*0x626cea*/

@@ -992,14 +992,14 @@ LABEL_110:
           v98[0] = v77; /*0x6b36c7*/
           v98[1] = v82; /*0x6b36d2*/
           v63 = (CellClass *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v98); /*0x6b36dc*/
-          v64 = CellClass::GetScreenRect(v63, v108); /*0x6b36e8*/
+          v64 = (v63)->GetScreenRect(v108); /*0x6b36e8*/
           v65 = *v64; /*0x6b36ed*/
           v105 = v64[1]; /*0x6b36f2*/
           v66 = v64[2]; /*0x6b36fb*/
           v67 = v64[3]; /*0x6b36fe*/
           if ( CellClass::DetermineTileType(v63) ) /*0x6b3701*/
           {
-            v68 = CellClass::GetScreenRect(v63, v109); /*0x6b3718*/
+            v68 = (v63)->GetScreenRect(v109); /*0x6b3718*/
             if ( v66 <= 0 || v67 <= 0 ) /*0x6b3727*/
             {
               v71 = *v68; /*0x6b37ad*/
@@ -1940,7 +1940,7 @@ void sub_6B6230()
   if ( Dialog ) /*0x6b6285*/
   {
     SetWindowLongA(Dialog, 8, (LONG)&dwNewLong); /*0x6b628f*/
-    Dialog::Show(Dialog); /*0x6b6297*/
+    (Dialog)->Show(); /*0x6b6297*/
     while ( dwNewLong == -1 ) /*0x6b62a0*/
     {
       if ( Dialog::PumpMessages() == 1 ) /*0x6b62a9*/

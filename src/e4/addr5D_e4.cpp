@@ -772,7 +772,7 @@ Coord * * LoadMultiplayerModesList(AbstractClass * a1, int edx0, void * aDRa2mdp
     /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EA5F4) */  /*0x5d761d*/
     if ( FileStraw::Open((FileStraw *)v19.bombVisible, (int)&v19.lineTrailer, 0) > 0 ) /*0x5d762c*/
     {
-      v19.customSound_controller[4] = INIClass::FindKey(v19.bombVisible, v2); /*0x5d763e*/
+      v19.customSound_controller[4] = (v19.bombVisible)->FindKey(v2); /*0x5d763e*/
       v19.owningHouseIndex = 0; /*0x5d7642*/
       if ( v19.customSound_controller[4] > 0 ) /*0x5d7646*/
       {

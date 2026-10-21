@@ -106,7 +106,7 @@ int ReadINIClassBuildingTypeList(TypeList_BuildingType * aP0, unsigned char *** 
 
   if ( INIClass::GetString((INIClass *)edx0, aP2, a3, &g_INI_DefaultBuffer, String, 128) ) /*0x67b57c*/
   {
-    VectorClass::BuildingTypeConstructor(&v17, 0, 0); /*0x67b591*/
+    (&v17)->BuildingTypeConstructor(0, 0); /*0x67b591*/
     v19 = 10; /*0x67b59a*/
     v18 = 0; /*0x67b5a8*/
     /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7ED90C) */  /*0x67b5ac*/
@@ -131,7 +131,7 @@ int ReadINIClassBuildingTypeList(TypeList_BuildingType * aP0, unsigned char *** 
     aP0->IsInitialized = 1; /*0x67b633*/
     aP0->IsAllocated = 0; /*0x67b637*/
     /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7EAA08) */  /*0x67b63a*/
-    VectorClass::CopyBuilding(aP0, &v17); /*0x67b640*/
+    (aP0)->CopyBuilding(&v17); /*0x67b640*/
     /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7ED90C) */  /*0x67b645*/
     /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7EAA08) */  /*0x67b64b*/
     v9 = v19; /*0x67b657*/

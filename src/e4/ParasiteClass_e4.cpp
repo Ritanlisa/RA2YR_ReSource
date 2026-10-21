@@ -559,7 +559,7 @@ void ParasiteClass::TickDamage()
   if ( *(unsigned char *)((*(int (**)(int))(*(unsigned int *)this->creationFrame + 132))(this->creationFrame) + 3278) /*0x62a004*/
     && *(unsigned char *)((*(int (**)(int))(*(unsigned int *)this->creationFrame + 132))(this->creationFrame) + 3479) )
   {
-    ParasiteClass::DeploySquad(this); /*0x62a010*/
+    (this)->DeploySquad(); /*0x62a010*/
     return; /*0x62a01c*/
   }
   v4 = (unsigned int **)(*(int (**)(int, unsigned int))(*(unsigned int *)this->creationFrame + 1016))( /*0x62a024*/
@@ -788,7 +788,7 @@ int ParasiteClass::CanExistOnVictimCell(void *a1)
   }
   LABEL_20:
   v9 = (Cell *)(*(int (**)(unsigned int))(**(unsigned int **)this->__pad_028 + 444))(*(unsigned int *)this->__pad_028); /*0x62ac14*/
-  return Cell::IsBridge(v9) == 0; /*0x62ab4b*/
+  return (v9)->IsBridge() == 0; /*0x62ab4b*/
 
 }
 } // namespace ra2

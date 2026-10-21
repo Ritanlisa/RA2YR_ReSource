@@ -567,7 +567,7 @@ LABEL_151:
                 *(unsigned int *)(*(unsigned int *)&stru_A8D804.__pad_3D[567] + 4 * v50) = v48; /*0x6ad6f6*/
               }
             }
-            Player::RandomAssign(&dword_A8B238); /*0x6ad6fe*/
+            (&dword_A8B238)->RandomAssign(); /*0x6ad6fe*/
             v51 = GetDlgItem((HWND)hWnd, 1321); /*0x6ad70f*/
             if ( v51 ) /*0x6ad713*/
             {

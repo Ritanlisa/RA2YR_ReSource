@@ -915,7 +915,7 @@ char Cell::UpdateTileType(int16_t *aP0, int aP1, int a3)
     v22[0] = (*aP0 << 8) + 128; /*0x56ea2d*/
     v22[1] = v8 + 128; /*0x56ea3b*/
     v22[2] = 0; /*0x56ea47*/
-    Coord::To_Screen(g_TacticalClass_Instance, v22, &v20); /*0x56ea4f*/
+    (g_TacticalClass_Instance)->To_Screen(v22, &v20); /*0x56ea4f*/
     v21 -= 15 * *((char *)v6 + 283); /*0x56ea78*/
     Cell::CreateCrater(v20 - 128, v21 - 128, 256, 256, 0); /*0x56ea98*/
   }

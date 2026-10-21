@@ -448,7 +448,7 @@ char sub_5FBEF0()
   if ( Dialog ) /*0x5fbf0f*/
   {
     SetWindowLongA(Dialog, 8, (LONG)&dwNewLong); /*0x5fbf19*/
-    Dialog::Show(Dialog); /*0x5fbf21*/
+    (Dialog)->Show(); /*0x5fbf21*/
     while ( dwNewLong < 0 ) /*0x5fbf2c*/
     {
       if ( Dialog::PumpMessages() == 1 ) /*0x5fbf35*/

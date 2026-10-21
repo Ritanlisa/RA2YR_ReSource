@@ -67,7 +67,7 @@ int TiberiumClass::Spread(int a1, int a2, int a3, int a4, int a5, int a6, char a
     v9 = v8; /*0x5a018e*/
     if ( v8 ) /*0x5a0195*/
     {
-      VectorClass::CellConstructor(v8, 0, 0); /*0x5a019b*/
+      (v8)->CellConstructor(0, 0); /*0x5a019b*/
       /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E3890) */  /*0x5a01a0*/
       v9->u32_14 = 10; /*0x5a01a6*/
       v9->q010 = 0; /*0x5a01ad*/
@@ -111,7 +111,7 @@ int TiberiumClass::Spread(int a1, int a2, int a3, int a4, int a5, int a6, char a
             v19 = a7 && v18 == a1 - 1; /*0x5a02b6*/
             v20 = (int *)CellCoord::To_CellObj(&dword_87F7E8, (__int16 *)&v30); /*0x5a02c6*/
             v21 = v20; /*0x5a02cd*/
-            if ( (!v18 || v19) && (Cell::IsEmpty(v20) || v19 && Cell::IsGroundTypeRange(v21)) ) /*0x5a02e6*/
+            if ( (!v18 || v19) && (Cell::IsEmpty(v20) || v19 && (v21)->IsGroundTypeRange()) ) /*0x5a02e6*/
             {
               v22 = v29->Capacity; /*0x5a02ff*/
               if ( v29->q010 < v22 /*0x5a0324*/

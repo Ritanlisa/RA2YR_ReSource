@@ -160,7 +160,7 @@ int E4Recv_542F30::sub_542F30()
         goto LABEL_12; /*0x542f5c*/
       while ( 1 ) /*0x542f5f*/
       {
-        TileIndex = Terrain::GetTileIndex(v6, v5); /*0x542f5f*/
+        TileIndex = (v6)->GetTileIndex(v5); /*0x542f5f*/
         if ( TileIndex ) /*0x542f66*/
           break; /*0x542f66*/
 LABEL_8:

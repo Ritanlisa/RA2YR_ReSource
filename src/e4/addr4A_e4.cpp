@@ -1428,7 +1428,7 @@ ControlClass * * RenderTextLabelWordWrap(int * a1, const wchar_t * a2, int a3, u
         do /*0x4a6409*/
         {
           ++v18; /*0x4a63eb*/
-          v17 += FontClass::GetPixelData(v24, v16); /*0x4a63f3*/
+          v17 += (v24)->GetPixelData(v16); /*0x4a63f3*/
           v16 = *v18; /*0x4a63f5*/
         }
         while ( *v18 && v17 + v13 < a9 ); /*0x4a6409*/

@@ -278,7 +278,7 @@ LABEL_10:
             v30 = this->u32_3C; /*0x71a9de*/
             if ( v30 ) /*0x71a9e3*/
             {
-              SuperClass::SetOnHold(v30, 0); /*0x71a9e6*/
+              (v30)->SetOnHold(0); /*0x71a9e6*/
               this->u32_3C = 0; /*0x71a9eb*/
             }
             v31 = *(unsigned int **)this->__pad_28; /*0x71a9ee*/
@@ -494,7 +494,7 @@ char TemporalClass::CanWarpTarget(unsigned int * a1)
           v5[1] = a1[40]; /*0x71aeed*/
           v5[2] = a1[41]; /*0x71aef4*/
           v4 = Coord::To_Cell(&dword_87F7E8, v5); /*0x71aef8*/
-          if ( Cell::IsBridge(v4) == v3 ) /*0x71af06*/
+          if ( (v4)->IsBridge() == v3 ) /*0x71af06*/
             return 0; /*0x71af09*/
         }
       }

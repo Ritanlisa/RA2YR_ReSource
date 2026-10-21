@@ -223,7 +223,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
                           512)
             : 0;
         MSAnim::SetField(v21, this->u32_478 - 1); /*0x76d7c8*/
-        MSAnim::GetField(v21, 0); /*0x76d7d0*/
+        (v21)->GetField(0); /*0x76d7d0*/
         ((ObjectClass *)(ObjectClass *)v21)->TerritoryUpdateDisplayWOL(0); /*0x76d7d8*/
         Trigger::executeActions( /*0x76d7f0*/
           *(Trigger **)(*(unsigned int *)(v25.VectorCursor_field_0x10 + 4) + 8 * v25.VectorCursor_field_0x14 + 4),

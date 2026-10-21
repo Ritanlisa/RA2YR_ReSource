@@ -128,8 +128,8 @@ int CollectWOLConnectionTokens(void *a1)
       }
       else
       {
-        String::Assign(&v15, &v17[36]); /*0x7a04e6*/
-        String::GetOrEmpty(&v15); /*0x7a04ef*/
+        (&v15)->Assign(&v17[36]); /*0x7a04e6*/
+        (&v15)->GetOrEmpty(); /*0x7a04ef*/
         Debug::Log(); /*0x7a04fa*/
         ptr_8 = (int)dword_B76AC4.ptr_C; /*0x7a04ff*/
         v6 = (int)dword_B76AC4.ptr_C; /*0x7a0507*/
@@ -404,7 +404,7 @@ LABEL_49:
   }
 LABEL_50:
   ((String *)v31)->Append(aRat); /*0x7a0b67*/
-  v19 = Performance::Profile(v29); /*0x7a0b75*/
+  v19 = (v29)->Profile(); /*0x7a0b75*/
   v20 = FromStringInt((char **)&v31[4], v19); /*0x7a0b80*/
   ((String *)v31)->Append2(v20); /*0x7a0b8a*/
   j_DeleteAndZero((ObjectClass *)&v31[4]); /*0x7a0b93*/
@@ -512,9 +512,9 @@ Coord * * WOL_ProcessPingRequests()
         unknown_libname_73(&v13); /*0x7a10ce*/
         if ( (int)dword_B76AC4.ptr_C > 0 ) /*0x7a10da*/
           (&v13)->Reassign((const char **)dword_B76AC4.abstractFlags); /*0x7a10e7*/
-        String::GetOrEmpty(&v13); /*0x7a10f0*/
+        (&v13)->GetOrEmpty(); /*0x7a10f0*/
         Debug::Log(); /*0x7a10fb*/
-        v3 = String::GetOrEmpty(&v13); /*0x7a1107*/
+        v3 = (&v13)->GetOrEmpty(); /*0x7a1107*/
         String::Assign((String *)&v13.ptr_4, v3); /*0x7a1111*/
         owningHouseIndex = g_WOL_UserList.owningHouseIndex; /*0x7a1116*/
         v5 = 0; /*0x7a111b*/
@@ -570,7 +570,7 @@ LABEL_15:
         }
         if ( !S_addr ) /*0x7a119c*/
           break; /*0x7a119c*/
-        String::GetOrEmpty(&v13); /*0x7a11a6*/
+        (&v13)->GetOrEmpty(); /*0x7a11a6*/
         Debug::Log(); /*0x7a11b1*/
         v9 = *(unsigned int *)g_UIPointerTable; /*0x7a11c3*/
         v10 = ntoainet((struct in_addr)S_addr); /*0x7a11cc*/
@@ -587,7 +587,7 @@ LABEL_15:
             DynamicArray::Remove((DynamicArray *)&dword_B76AC4.ptr_C, 0); /*0x7a121c*/
           }
 LABEL_36:
-          String::GetOrEmpty(&v13); /*0x7a12fb*/
+          (&v13)->GetOrEmpty(); /*0x7a12fb*/
           Debug::Log(); /*0x7a130a*/
           goto LABEL_37; /*0x7a130a*/
         }
@@ -672,10 +672,10 @@ Coord * * UpdateWOLLobbyPings()
               VectorClass::Shrink((VectorClass *)&stru_B76900.estimatedHealth); /*0x7a1425*/
           }
         }
-        String::GetOrEmpty(&v19); /*0x7a142e*/
+        (&v19)->GetOrEmpty(); /*0x7a142e*/
         Debug::Log(); /*0x7a1439*/
-        v3 = String::GetOrEmpty(&v19); /*0x7a1445*/
-        String::Assign(&v22, v3); /*0x7a144f*/
+        v3 = (&v19)->GetOrEmpty(); /*0x7a1445*/
+        (&v22)->Assign(v3); /*0x7a144f*/
         owningHouseIndex = g_WOL_UserList.owningHouseIndex; /*0x7a1454*/
         v5 = 0; /*0x7a1459*/
         v6 = 0; /*0x7a145b*/
@@ -715,16 +715,16 @@ LABEL_18:
               v20 == -1) )
         {
 LABEL_27:
-          String::GetOrEmpty(&v19); /*0x7a15dc*/
+          (&v19)->GetOrEmpty(); /*0x7a15dc*/
           Debug::Log(); /*0x7a15e7*/
         }
         else
         {
-          String::GetOrEmpty(&v19); /*0x7a152d*/
+          (&v19)->GetOrEmpty(); /*0x7a152d*/
           Debug::Log(); /*0x7a1538*/
-          v18 = String::Assign(&v25, asc_81C8FC); /*0x7a1556*/
+          v18 = (&v25)->Assign(asc_81C8FC); /*0x7a1556*/
           v17 = FromStringInt((char **)&v23.ptr_4, v20); /*0x7a1565*/
-          v9 = String::Assign(&v23, Delimiter); /*0x7a1570*/
+          v9 = (&v23)->Assign(Delimiter); /*0x7a1570*/
           v10 = String::Concat(&v19, &v24, v9); /*0x7a157f*/
           v11 = String::Concat((String *)v10, (char **)&v25.ptr_4, v17); /*0x7a1586*/
           v12 = String::Concat((String *)v11, (char **)&v22.ptr_4, v18); /*0x7a158d*/

@@ -439,7 +439,7 @@ void ThemeClass_Update()
   }
   v11 = 0; /*0x7527fd*/
   v10 = 0; /*0x752801*/
-  v2 = AudioQueue::GetNext(&stru_B1D3C8); /*0x752805*/
+  v2 = (&stru_B1D3C8)->GetNext(); /*0x752805*/
   v3 = (unsigned int *)v2; /*0x75280a*/
   if ( v2 ) /*0x75280e*/
   {
@@ -448,7 +448,7 @@ void ThemeClass_Update()
       goto LABEL_22; /*0x75281e*/
     goto LABEL_11; /*0x75281e*/
   }
-  v4 = AudioQueue::GetNext(&stru_B1D3F0); /*0x75283a*/
+  v4 = (&stru_B1D3F0)->GetNext(); /*0x75283a*/
   v3 = (unsigned int *)v4; /*0x75283f*/
   if ( !v4 ) /*0x752843*/
   {
@@ -462,7 +462,7 @@ void ThemeClass_Update()
       v5 = (char *)&stru_B1D474; /*0x752878*/
       while ( 1 ) /*0x75287f*/
       {
-        v6 = AudioQueue::GetNext(v5); /*0x75287f*/
+        v6 = (v5)->GetNext(); /*0x75287f*/
         v3 = (unsigned int *)v6; /*0x752884*/
         if ( v6 ) /*0x752888*/
           break; /*0x752888*/

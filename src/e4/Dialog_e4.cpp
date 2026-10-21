@@ -244,7 +244,7 @@ int Dialog::ShowMessageBox(unsigned short *a2, unsigned short *aP2, unsigned sho
       SendMessageA(v15, 0x4B2u, 0, (LPARAM)a4); /*0x5d35ec*/
       v7 = 3; /*0x5d35ee*/
     }
-    Dialog::Show(v11); /*0x5d35f5*/
+    (v11)->Show(); /*0x5d35f5*/
     if ( v7 <= 0 ) /*0x5d35fd*/
     {
       dwNewLong = 0; /*0x5d3653*/

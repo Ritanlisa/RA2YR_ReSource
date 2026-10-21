@@ -419,7 +419,7 @@ LABEL_24:
             HIWORD(a1) = v9; /*0x590440*/
             v11 = (int *)CellCoord::To_CellObj(&dword_87F7E8, (__int16 *)&a1); /*0x590445*/
             v12 = v11; /*0x59044a*/
-            if ( v11->u32_44 != -1 || v11->u32_11B != v16 || !Cell::IsEmpty(v11) && !Cell::IsGroundTypeRange(v12) ) /*0x59046c*/
+            if ( v11->u32_44 != -1 || v11->u32_11B != v16 || !Cell::IsEmpty(v11) && !(v12)->IsGroundTypeRange() ) /*0x59046c*/
               break; /*0x59046c*/
             v7 = v1->__pad_008; /*0x590475*/
             v5 = *v1; /*0x590478*/

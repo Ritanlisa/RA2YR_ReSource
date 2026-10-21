@@ -788,7 +788,7 @@ int TechnoClass::ProcessDeployAction()
           v20 = (CellStruct *)(*(int (**)(int, unsigned char *))(*(unsigned int *)this->occupant + 440))( /*0x6b014d*/
                                 this->occupant,
                                 v35);
-          v21 = CellStruct::Sub(v20, &v34, v29); /*0x6b015f*/
+          v21 = (v20)->Sub(&v34, v29); /*0x6b015f*/
           v22 = *(__int16 *)v21; /*0x6b0168*/
           v31 = *((__int16 *)v21 + 1); /*0x6b016b*/
           __asm { fild [esp+38h+var_20] } /*0x6b0172*/

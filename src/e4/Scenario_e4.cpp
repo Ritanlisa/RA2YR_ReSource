@@ -327,7 +327,7 @@ int Scenario::ReadTeams()
                           HouseClass::UpdateProduction(v29->owner, v44, v39, 0); /*0x44fcfc*/
                         }
                         if ( (unsigned __int8)House::IsHumanPlayer(v29->owner) ) /*0x44fd07*/
-                          VoxClass::FindAndPlay(&stru_8190C8, -1); /*0x44fd1a*/
+                          (&stru_8190C8)->FindAndPlay(-1); /*0x44fd1a*/
                       }
                     }
                     else
@@ -930,7 +930,7 @@ LABEL_82:
   for ( k = dword_B04BE0 - 1; k >= 0; --k ) /*0x55b5d7*/
     (*(void (**)(unsigned int))(**((unsigned int **)dword_B04BD4 + k) + 92))(*((unsigned int *)dword_B04BD4 + k)); /*0x55b5e4*/
   UpdateDeferredLightSurfaces(6, 0); /*0x55b5f1*/
-  LocomotionClass::UpdateAll(v60); /*0x55b5f6*/
+  (v60)->UpdateAll(); /*0x55b5f6*/
   for ( m = 0; m < this->Scenario_field_0x10; ++m ) /*0x55b606*/
   {
     v49 = *(unsigned int *)(this->Scenario_field_0x4 + 4 * m); /*0x55b60b*/
@@ -945,7 +945,7 @@ LABEL_82:
     }
   }
   ProcessIonCannonEffect(v61); /*0x55b64b*/
-  AirstrikeClass::UpdateAll(v62); /*0x55b650*/
+  (v62)->UpdateAll(); /*0x55b650*/
   CrateClass::Update((MapClass *)&dword_87F7E8); /*0x55b65a*/
   (*(void (**)(LPPERSISTSTREAM))(*(unsigned int *)g_TacticalClass_Instance + 92))(g_TacticalClass_Instance); /*0x55b667*/
   for ( ii = 0; ii < dword_A83E40; ++ii ) /*0x55b673*/

@@ -1990,7 +1990,7 @@ AbstractClass * * E4Recv_49C0D0::CampaignClass_LoadCoopSave(void * aScore_0)
       260);
   }
   *(aScore_0 + 108) = 1; /*0x49c505*/
-  HashTable::DestroyHashTableINIClass(v24); /*0x49c509*/
+  (v24)->DestroyHashTableINIClass(); /*0x49c509*/
   v29[0] = &g_ptr_7E16B0; /*0x49c515*/
   v31 = 0; /*0x49c520*/
   ((Vector *)v30)->Clear(); /*0x49c527*/
@@ -2291,7 +2291,7 @@ int E4Recv_49D390::LoadCoopCampaignSave(IUnknown * aP1)
   {
     CCFileClass::Reset(v17); /*0x49d418*/
     LABEL_5:
-    HashTable::DestroyHashTableINIClass(v20); /*0x49d41d*/
+    (v20)->DestroyHashTableINIClass(); /*0x49d41d*/
     v17[0] = &g_ptr_7E16B0; /*0x49d42a*/
     v19 = 0; /*0x49d432*/
     Vector::Clear((int)v18); /*0x49d436*/

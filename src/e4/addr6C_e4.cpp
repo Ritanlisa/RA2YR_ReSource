@@ -425,14 +425,14 @@ int ProcessGameResults(char a1)
   LOBYTE(v265.ptr_0) = byte_A8B8C2 == 1; /*0x6c70bf*/
   v15 = (char *)__2_YAPAXI_Z(0x10u); /*0x6c70c3*/
   if ( v15 ) /*0x6c70cd*/
-    v16 = String::AllocAndCopy(v15, aOosy, v265.ptr_0); /*0x6c70db*/
+    v16 = (v15)->AllocAndCopy(aOosy, v265.ptr_0); /*0x6c70db*/
   else
     v16 = 0; /*0x6c70e2*/
   LinkedList::PushFront(&v263, (int)v16); /*0x6c70e9*/
   LOBYTE(v265.ptr_0) = byte_A8B8C1 == 1; /*0x6c70fc*/
   v17 = (char *)__2_YAPAXI_Z(0x10u); /*0x6c7100*/
   if ( v17 ) /*0x6c710a*/
-    v18 = String::AllocAndCopy(v17, aFini, v265.ptr_0); /*0x6c7118*/
+    v18 = (v17)->AllocAndCopy(aFini, v265.ptr_0); /*0x6c7118*/
   else
     v18 = 0; /*0x6c711f*/
   LinkedList::PushFront(&v263, (int)v18); /*0x6c7126*/
@@ -481,7 +481,7 @@ int ProcessGameResults(char a1)
   LOBYTE(v265.ptr_0) = stru_A8B250.__pad_0[8] != 0; /*0x6c7289*/
   v37 = (char *)__2_YAPAXI_Z(0x10u); /*0x6c728d*/
   if ( v37 ) /*0x6c7297*/
-    v38 = String::AllocAndCopy(v37, aBase, v265.ptr_0); /*0x6c72a5*/
+    v38 = (v37)->AllocAndCopy(aBase, v265.ptr_0); /*0x6c72a5*/
   else
     v38 = 0; /*0x6c72ac*/
   LinkedList::PushFront(&v263, (int)v38); /*0x6c72b3*/

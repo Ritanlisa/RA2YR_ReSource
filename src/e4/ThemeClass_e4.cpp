@@ -194,13 +194,13 @@ int ThemeClass::ClearQueues()
       __3_YAXPAX_Z(dword_B1D4B8); /*0x75239b*/
       dword_B1D4B8 = 0; /*0x7523a3*/
     }
-    for ( i = AudioQueue::GetNext(&stru_B1D3F0); i; i = AudioQueue::GetNext(&stru_B1D3F0) ) /*0x7523bb*/
+    for ( i = (&stru_B1D3F0)->GetNext(); i; i = (&stru_B1D3F0)->GetNext() ) /*0x7523bb*/
     {
       LinkedList::Init((unsigned int **)i); /*0x7523bf*/
       *(unsigned int *)(*(unsigned int *)(i + 12) + 80) = 2; /*0x7523c8*/
       __3_YAXPAX_Z((void *)i); /*0x7523cb*/
     }
-    for ( j = AudioQueue::GetNext(&stru_B1D3C8); j; j = AudioQueue::GetNext(&stru_B1D3C8) ) /*0x7523f1*/
+    for ( j = (&stru_B1D3C8)->GetNext(); j; j = (&stru_B1D3C8)->GetNext() ) /*0x7523f1*/
     {
       LinkedList::Init((unsigned int **)j); /*0x7523f5*/
       *(unsigned int *)(*(unsigned int *)(j + 12) + 80) = 2; /*0x7523fe*/
@@ -209,13 +209,13 @@ int ThemeClass::ClearQueues()
     v3 = (int *)stru_B1D450; /*0x752419*/
     do /*0x752457*/
     {
-      result = AudioQueue::GetNext(v3); /*0x752420*/
+      result = (v3)->GetNext(); /*0x752420*/
       for ( k = result; result; k = result ) /*0x752429*/
       {
         LinkedList::Init((unsigned int **)k); /*0x75242d*/
         *(unsigned int *)(k->u32_C + 80) = 2; /*0x752436*/
         __3_YAXPAX_Z((void *)k); /*0x752439*/
-        result = AudioQueue::GetNext(v3); /*0x752443*/
+        result = (v3)->GetNext(); /*0x752443*/
       }
       v3 += 3; /*0x75244e*/
     }

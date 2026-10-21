@@ -575,8 +575,8 @@ Coord * * CComObject_CChatEventSink___ATL::DispatchStub_23(int a1, int a2, int a
           memcpy(v24, (char *)dword_B77908 + v9, sizeof(v24)); /*0x7a7c1f*/
           v6 = v22; /*0x7a7c21*/
         }
-        String::Assign(&v19, &v24[36]); /*0x7a7c2e*/
-        String::ToLower(&v19); /*0x7a7c37*/
+        (&v19)->Assign(&v24[36]); /*0x7a7c2e*/
+        (&v19)->ToLower(); /*0x7a7c37*/
         if ( (unsigned __int8)((String *)&v19.m_3[1])->Compare((const char **)&v19) ) /*0x7a7c45*/
           break; /*0x7a7c45*/
         j_DeleteAndZero((ObjectClass *)&v19); /*0x7a7c52*/

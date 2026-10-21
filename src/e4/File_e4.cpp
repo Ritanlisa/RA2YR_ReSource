@@ -657,7 +657,7 @@ AbstractClass * * File::LoadWDT(ObjectClass * aP1)
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7F7250) */  /*0x76acbe*/
   v3 = (File *)__2_YAPAXI_Z(0xCu); /*0x76acc4*/
   if ( v3 ) /*0x76acce*/
-    PaletteData = File::LoadPaletteData(v3, aP1); /*0x76acdc*/
+    PaletteData = (v3)->LoadPaletteData(aP1); /*0x76acdc*/
   else
     PaletteData = 0; /*0x76ace0*/
   v5 = &this->__pad_01C; /*0x76ace6*/

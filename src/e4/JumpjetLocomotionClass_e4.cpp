@@ -234,7 +234,7 @@ void* JumpjetLocomotionClass::Update2(void * a1, void * a2)
     v19 = (double)GroundHeight; /*0x439c89*/
     if ( v19 <= v4[2] && v4[2] - 150.0 < v19 ) /*0x439ca9*/
     {
-      v20 = Cell::IsBridge(v18); /*0x439cad*/
+      v20 = (v18)->IsBridge(); /*0x439cad*/
       v72[0] = (Triple)v20; /*0x439cb4*/
       if ( !v20 ) /*0x439cb8*/
       {

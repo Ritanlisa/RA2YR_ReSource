@@ -470,7 +470,7 @@ wchar_t ** FormatWOLPlayerInfo(wchar_t ** a1, const char * a2)
   v4 = CharStringToWide((wchar_t **)&v25.DeleteAndZero_field_0x04, (const char **)&v23); /*0x780abd*/
   WideString::AssignConcat((WideString *)v4, (wchar_t **)&v23.m_3[1], (wchar_t *)L" : ");
   DeleteAndZero::Alt((DeleteAndZero *)&v25.DeleteAndZero_field_0x04); /*0x780acd*/
-  String::ToLower(&v23); /*0x780ad6*/
+  (&v23)->ToLower(); /*0x780ad6*/
   v5 = g_WOL_HashTable; /*0x780adb*/
   memset(v27, 0, sizeof(v27)); /*0x780aee*/
   if ( g_WOL_HashTable /*0x780b14*/
@@ -492,7 +492,7 @@ wchar_t ** FormatWOLPlayerInfo(wchar_t ** a1, const char * a2)
     v22 = FormatWideString((wchar_t **)&v24.m_3[1], v27[7]); /*0x780c36*/
     v21 = WideString::Assign((WideString *)&v25, (wchar_t *)asc_82083C); /*0x780c49*/
     StringCSF = GetStringCSF(g_Str_TXT_RANK, 0, g_Str_File_wonline_cpp, 2937); /*0x780c59*/
-    v13 = WideString::Assign(&v26, StringCSF); /*0x780c63*/
+    v13 = (&v26)->Assign(StringCSF); /*0x780c63*/
     v14 = WideString::ConcatAlloc((WideString *)v13, (wchar_t **)&v25.DeleteAndZero_field_0x08, (const wchar_t **)v21); /*0x780c6a*/
     v15 = WideString::ConcatAlloc((WideString *)v14, (wchar_t **)&v25.DeleteAndZero_field_0x04, (const wchar_t **)v22); /*0x780c71*/
     WideString::Append((WideString *)&v23.m_3[1], (const wchar_t **)v15); /*0x780c7b*/
@@ -608,7 +608,7 @@ LABEL_14:
   String::Assign(&v13, (const char *)&v19[13]); /*0x780eb2*/
   CChatEventSink::EncodeString((CChatEventSink *)&v13, 39); /*0x780ebd*/
   memset(v18, 0, sizeof(v18)); /*0x780ecf*/
-  v6 = String::GetOrEmpty(&v13); /*0x780ed5*/
+  v6 = (&v13)->GetOrEmpty(); /*0x780ed5*/
   strncpy(&v18[36], v6, 0xAu); /*0x780ee0*/
   FormatWOLPlayerInfo((wchar_t **)&v12, v18); /*0x780ef0*/
   v7 = WideString::Assign((WideString *)&v12.DeleteAndZero_field_0x04, (wchar_t *)L", "); /*0x780efe*/

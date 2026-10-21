@@ -390,7 +390,7 @@ char Options::Screen_Dialog()
       }
       while ( !v0 ); /*0x55fcca*/
       SetWindowLongA(v0, 8, (LONG)&dwNewLong); /*0x55fcd4*/
-      Dialog::Show(v1); /*0x55fcd8*/
+      (v1)->Show(); /*0x55fcd8*/
       while ( dwNewLong < 0 ) /*0x55fce3*/
       {
         if ( (unsigned __int8)Dialog::PumpMessages() == 1 ) /*0x55fcec*/
@@ -409,7 +409,7 @@ char Options::Screen_Dialog()
       if ( v3 ) /*0x55fd4b*/
       {
         SetWindowLongA(v3, 8, (LONG)&v9); /*0x55fd59*/
-        Dialog::Show(v4); /*0x55fd5d*/
+        (v4)->Show(); /*0x55fd5d*/
         while ( v9 < 0 ) /*0x55fd68*/
         {
           if ( (unsigned __int8)Dialog::PumpMessages() == 1 ) /*0x55fd71*/

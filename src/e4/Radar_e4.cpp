@@ -604,7 +604,7 @@ LABEL_65:
       {
         v107[0] = v51; /*0x58297f*/
         v107[1] = (unsigned short)v115 - 1; /*0x582984*/
-        Radar::ProcessSubzone(this, v47, aP2, aP3, aP4, v107); /*0x582989*/
+        (this)->ProcessSubzone(v47, aP2, aP3, aP4, v107); /*0x582989*/
         goto LABEL_73; /*0x58298e*/
       }
     }
@@ -1242,7 +1242,7 @@ LABEL_72:
         {
           v108[0] = v29; /*0x58491b*/
           v108[1] = v28; /*0x584920*/
-          Radar::ProcessSubzone(v2, v91, i, v86, &v104, v108); /*0x584925*/
+          (v2)->ProcessSubzone(v91, i, v86, &v104, v108); /*0x584925*/
           VectorClass::ConstructSubzone(&v122, 0, 0); /*0x584932*/
           /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7ED5A0) */  /*0x58493b*/
           v124 = 10; /*0x584943*/

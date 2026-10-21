@@ -667,7 +667,7 @@ int Audio::LoadWAVFiles(void *a1_1)
           *(unsigned char *)(*(unsigned int *)v4 + 650) = CCFileClass::Open(&v10, 0); /*0x720881*/
           if ( *(unsigned char *)(*(unsigned int *)(*(unsigned int *)this->__pad_18 + 4 * i) + 650) ) /*0x72088d*/
           {
-            Struct::ZeroInit32(v9); /*0x72089b*/
+            (v9)->ZeroInit32(); /*0x72089b*/
             FileClass::Load(&v10, (const CHAR *)1); /*0x7208a6*/
             if ( ParseWaveFileHeader((int)&v10, v9, v8) ) /*0x7208b8*/
             {

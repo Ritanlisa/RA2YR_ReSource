@@ -220,7 +220,7 @@ int WinModemClass::LoadTypeData(int a2, char * Str, int a4, WinModemClass * aP4)
     }
     if ( !DataGlobal_A8EB00[640] ) /*0x774d7b*/
       return 0; /*0x774d7b*/
-    Bytes = WinModemClass::ReadBytes(v5, &Str[v6], a4 - v6 < 0 ? 0 : a4 - v6);
+    Bytes = (v5)->ReadBytes(&Str[v6], a4 - v6 < 0 ? 0 : a4 - v6);
     if ( Bytes ) /*0x774da0*/
     {
       v6 += Bytes; /*0x774da6*/

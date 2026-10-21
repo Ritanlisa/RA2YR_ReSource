@@ -618,7 +618,7 @@ int BuildingClass::Dtor()
   Vtable3 = (int)this; /*0x43bdaa*/
   v7 = (*(int (**)(Vector *, int *))(*(unsigned int *)DataGlobal_8B41E0 + 16))(&dword_8B41E0, &Vtable3); /*0x43bdae*/
   if ( v7 != -1 ) /*0x43bdb4*/
-    Vector::RemoveAt(&dword_8B41E0, v7); /*0x43bdbc*/
+    (&dword_8B41E0)->RemoveAt(v7); /*0x43bdbc*/
   BuildingClass::ClearAnims(this, -2); /*0x43bdc5*/
   BuildingTypeClass::IsPowered((BuildingTypeClass *)this->Type); /*0x43bdd0*/
   DamageFireAnims = this->DamageFireAnims; /*0x43bdd5*/

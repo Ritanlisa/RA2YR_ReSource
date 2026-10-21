@@ -193,7 +193,7 @@ VectorClass_flat * * LoadBuildingTypeClassPrerequisites(unsigned int * a1, unsig
         *(unsigned int *)(*(unsigned int *)&v21.Items + 4 * v19) = -6; /*0x477380*/
       }
     }
-    DynamicVectorClass::Copy(a1, &v21); /*0x4773cb*/
+    (a1)->Copy(&v21); /*0x4773cb*/
     /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E4DD8) */  /*0x4773d9*/
     /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E4DB8) */  /*0x4773df*/
     VectorClass::Destroy((int)&v21); /*0x4773e3*/

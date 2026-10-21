@@ -180,7 +180,7 @@ int sub_6269A0()
       v7 = v6; /*0x626a06*/
       if ( v6 ) /*0x626a0d*/
       {
-        VectorClass::ConstructHSV(v6, 0, 0); /*0x626a15*/
+        (v6)->ConstructHSV(0, 0); /*0x626a15*/
         /* X11: ptr_0 install elided (legacy slot spelling slot, RHS g_ptr_7EF750) */  /*0x626a1a*/
         v7[1].Items = (void *)10; /*0x626a20*/
         v7[1].ptr_0 = 0; /*0x626a27*/
@@ -271,7 +271,7 @@ char sub_626AB0(const char * a1, int a2)
       v7 = v6; /*0x626b24*/
       if ( v6 ) /*0x626b2b*/
       {
-        VectorClass::ConstructHSV(v6, 0, 0); /*0x626b33*/
+        (v6)->ConstructHSV(0, 0); /*0x626b33*/
         /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7EF750) */  /*0x626b38*/
         v7[1].Items = 10; /*0x626b3e*/
         v7[1].ptr_0 = 0; /*0x626b41*/

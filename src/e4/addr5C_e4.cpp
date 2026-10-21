@@ -2067,9 +2067,9 @@ LABEL_45:
       {
         while ( 1 ) /*0x5c8776*/
         {
-          ComputeModularInverse(&v47, v39, v45); /*0x5c8776*/
+          (&v47)->ComputeModularInverse(v39, v45); /*0x5c8776*/
           if ( (v41 & *(unsigned int *)v40) != 0 ) /*0x5c877e*/
-            ComputeModularInverse(a0, aP1, v45); /*0x5c878e*/
+            (a0)->ComputeModularInverse(aP1, v45); /*0x5c878e*/
           else
             memcpy(a0, &v47, v46); /*0x5c87a6*/
           v41 >>= 1; /*0x5c87af*/
@@ -2718,7 +2718,7 @@ unsigned int * E4Recv_5CD690::sub_5CD690(int * a2)
   if ( a2[2] <= 0 || a2[3] <= 0 ) /*0x5cd6ac*/
   {
     v20 = &this->u32_38; /*0x5cd81e*/
-    v21 = WideString::GetOrEmpty(&this->u32_1C); /*0x5cd825*/
+    v21 = (&this->u32_1C)->GetOrEmpty(); /*0x5cd825*/
     result = sub_5D30C0(*&this->M52, v21, &this->u32_38); /*0x5cd82e*/
     v22 = this->M8; /*0x5cd836*/
     *v20 = this->M4; /*0x5cd839*/

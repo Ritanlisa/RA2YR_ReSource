@@ -1005,7 +1005,7 @@ int FootClass_LandAtPosition(int a1, int a2, char a3, float a4, int a5, int a6)
   LOWORD(v56.ComPtr_field_0x04) = a4 / 256; /*0x4cf08c*/
   HIWORD(v56.ComPtr_field_0x04) = a5 / 256; /*0x4cf09f*/
   v13 = (Cell *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)&v56.ComPtr_field_0x04); /*0x4cf0ac*/
-  v14 = Cell::IsBridge(v13); /*0x4cf0b8*/
+  v14 = (v13)->IsBridge(); /*0x4cf0b8*/
   if ( v14 && !*(unsigned char *)((*(int (**)(int))(*(unsigned int *)*v6 + 132))(*v6) + 3367) ) /*0x4cf0cc*/
   {
     if ( (unsigned __int8)Array::Contains((Array *)*v6, (int)v14) ) /*0x4cf0d9*/

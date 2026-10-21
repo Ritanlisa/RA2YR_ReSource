@@ -258,7 +258,7 @@ LABEL_14:
   String::AssignFromPtr((String *)&v13.m_3[1], (const char **)(v11 + 4)); /*0x5ae041*/
   String::ToLower((String *)&v13.m_3[1]); /*0x5ae04a*/
   (&v13)->AssignFromPtr(aP2); /*0x5ae058*/
-  String::ToLower(&v13); /*0x5ae061*/
+  (&v13)->ToLower(); /*0x5ae061*/
   if ( !v11 || !(unsigned __int8)String::Compare((String *)&v13.m_3[1], (const char **)&v13) ) /*0x5ae073*/
   {
     j_DeleteAndZero((ObjectClass *)&v13); /*0x5ae080*/

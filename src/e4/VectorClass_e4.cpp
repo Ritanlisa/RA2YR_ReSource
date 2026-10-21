@@ -1112,7 +1112,7 @@ AbstractClass * * VectorClass_ptr_ColorScheme::SetCapacity_0(CCINIClass * aP1, u
         v8 = aP1; /*0x628967*/
         do /*0x628978*/
         {
-          Byte::Zero(v5); /*0x62896c*/
+          (v5)->Zero(); /*0x62896c*/
           v5 += 65; /*0x628971*/
           --v8; /*0x628977*/
         }
@@ -1131,7 +1131,7 @@ AbstractClass * * VectorClass_ptr_ColorScheme::SetCapacity_0(CCINIClass * aP1, u
           v14 = aP1; /*0x628934*/
           do /*0x62894e*/
           {
-            Byte::Zero(v7); /*0x62893a*/
+            (v7)->Zero(); /*0x62893a*/
             v7 += 65; /*0x628943*/
             --v14; /*0x62894a*/
           }
