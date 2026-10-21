@@ -64,33 +64,35 @@ extern int MapClass_Instance;
 // ============================================================================
 
 // IDA 0x558740: LoadOptions::Construct
-void LoadOptions::Construct() {
+int LoadOptions::Construct() {
     mode         = 0;
     extension    = (const char*)(0x829EA0); // off_829EA0
-    q00C     = 0;
+    field_0C = 0;
     max_entries  = 2048;
-    q014     = 0;
+    field_14 = 0;
     count        = 0;
     capacity     = 0;
     entries      = nullptr;
     is_active    = 1;
     owns_memory  = 0;
     grow_step    = 10;
+    return 0;
 }
 
 // 0x558740
 const char ** LoadOptions::GetExtension() {
-  char *p_is_active; // ecx
+  uint8_t *p_is_active; // ecx
   int v3; // eax
 
   p_is_active = &this->is_active;
-  p_is_active->__pad_004 = 0; /*0x558748*/
-  p_is_active->u32_8 = 0; /*0x55874b*/
+  memset(&p_is_active[0x04], 0, 4); /*0x558748*/
+  memset(&p_is_active[0x08], 0, 4); /*0x55874b*/
   p_is_active[12] = 1; /*0x55874e*/
   p_is_active[13] = 0; /*0x558752*/
   *(unsigned int *)p_is_active = 0; /*0x558755*/
-  p_is_active->Straw_14 = 10; /*0x55875b*/
-  p_is_active->u32_10 = 0; /*0x558762*/
+  int ten = 10;
+  memcpy(&p_is_active[0x14], &ten, sizeof(ten)); /*0x55875b*/
+  memset(&p_is_active[0x10], 0, 4); /*0x558762*/
   *(unsigned int *)this->mode = 0; /*0x558765*/
   this->field_0C = 0; /*0x558768*/
   this->field_14 = 0; /*0x55876b*/
@@ -98,7 +100,7 @@ const char ** LoadOptions::GetExtension() {
   this->extension = 0; /*0x558770*/
   *&this->Capacity = &off_829EA0; /*0x558776*/
   this->max_entries = 2048; /*0x55877d*/
-  (*(void (__thiscall **)(char *))(v3 + 12))(p_is_active); /*0x558784*/
+  (*(void (__thiscall **)(unsigned char *))(v3 + 12))(p_is_active); /*0x558784*/
   return &this->extension; /*0x558789*/
 }
 LoadOptions::~LoadOptions() {
@@ -109,7 +111,7 @@ LoadOptions::~LoadOptions() {
 int LoadOptions::Cleanup() {
   int v2; // edi
   int v3; // edx
-  char *p_is_active; // esi
+  uint8_t *p_is_active; // esi
   int result; // eax
 
   v2 = (int)((char *)(0));
@@ -117,7 +119,7 @@ int LoadOptions::Cleanup() {
     operator delete((*(void **)(*&this->entries + 4 * v2))); /*0x5587ad*/
   v3 = *&this->is_active; /*0x5587bd*/
   p_is_active = &this->is_active; /*0x5587c0*/
-  (*(void (__thiscall **)(char *))(v3 + 12))(p_is_active); /*0x5587c5*/
+  (*(void (__thiscall **)(unsigned char *))(v3 + 12))(p_is_active); /*0x5587c5*/
   result = *((unsigned int *)p_is_active + 1); /*0x5587c8*/
   *(unsigned int *)p_is_active = 0; /*0x5587cb*/
   if ( result && p_is_active[13] ) /*0x5587d5*/
@@ -171,7 +173,6 @@ char LoadOptions::Check()
   char v16; // [esp+201h] [ebp-147h]
   int v17; // [esp+204h] [ebp-144h]
   struct _WIN32_FIND_DATAA FindFileData; // [esp+208h] [ebp-140h] BYREF
-
   v2 = 0; /*0x559c2f*/
   v3 = *(const char **)&this->Capacity; /*0x559c31*/
   v9 = 0; /*0x559c34*/
@@ -190,7 +191,7 @@ char LoadOptions::Check()
   if ( FirstFileA != (HANDLE)-1 ) /*0x559cb0*/
   {
     while ( (FindFileData.dwFileAttributes & 0x116) != 0 /*0x559cf7*/
-         || !_strcmpi(FindFileData.cFileName, MultiByteStr)
+         || !_strcmpi(FindFileData.cFileName, "SAVEGAME.NET")
          || (*((uint8_t (__thiscall **)(LoadOptions *, unsigned short *, struct _WIN32_FIND_DATAA *))this->extension + 4))(
               this,
               v7,
@@ -224,7 +225,6 @@ bool LoadOptions::SaveGame(const char* filename, const wchar_t* description) {
     char v16; // [esp+201h] [ebp-147h]
     int v17; // [esp+204h] [ebp-144h]
     struct _WIN32_FIND_DATAA FindFileData; // [esp+208h] [ebp-140h] BYREF
-
     v2 = 0; /*0x559c2f*/
     v3 = *(const char **)&(&this->mode)[4]; /*0x559c31*/
     v9 = 0; /*0x559c34*/
@@ -243,7 +243,7 @@ bool LoadOptions::SaveGame(const char* filename, const wchar_t* description) {
     if ( FirstFileA != (HANDLE)-1 ) /*0x559cb0*/
     {
       while ( (FindFileData.dwFileAttributes & 0x116) != 0 /*0x559cf7*/
-           || !_strcmpi(FindFileData.cFileName, MultiByteStr)
+           || !_strcmpi(FindFileData.cFileName, "SAVEGAME.NET")
            || (*((uint8_t (__thiscall **)(LoadOptions *, unsigned short *, struct _WIN32_FIND_DATAA *))this->extension + 4))(
                 this,
                 v7,
@@ -293,19 +293,19 @@ char LoadOptions::CopyItems(int new_size, unsigned int * out_buffer) {
     {
       if ( *&this->__pad_004 ) /*0x55a235*/
       {
-        m_8 = this->Capacity; /*0x55a23c*/
+        m_8 = this->count; /*0x55a23c*/
         if ( new_size < m_8 ) /*0x55a241*/
           m_8 = new_size; /*0x55a243*/
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->__pad_004 + 4 * i - 4) ) /*0x55a249*/
           ++i; /*0x55a24e*/
         if ( BYTE1(this->m_C) ) /*0x55a25b*/
         {
-          __3_YAXPAX_Z(*&this->__pad_004); /*0x55a266*/
-          *&this->__pad_004 = 0; /*0x55a26e*/
+          __3_YAXPAX_Z(this->Capacity); /*0x55a266*/
+          this->Capacity = 0; /*0x55a26e*/
         }
       }
-      *&this->__pad_004 = v4; /*0x55a277*/
-      this->Capacity = new_size; /*0x55a27f*/
+      this->Capacity = v4; /*0x55a277*/
+      this->capacity = new_size; /*0x55a27f*/
       BYTE1(this->m_C) = out_buffer == 0; /*0x55a282*/
       return 1; /*0x55a288*/
     }
@@ -316,7 +316,7 @@ char LoadOptions::CopyItems(int new_size, unsigned int * out_buffer) {
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVFileEntryClass *))(*(unsigned int *)this->extension + 12))(this); /*0x55a292*/
+    (*(void (**)(LoadOptions *))(*(unsigned int *)this->extension + 12))(this); /*0x55a292*/
     return 1; /*0x55a298*/
   }
 
@@ -336,7 +336,7 @@ int LoadOptions::FindItem(FileEntryClass* const* a2)
 {
   int result; // eax
   int m_8; // edx
-  unsigned int *i; // ecx
+  FileEntryClass** i; // ecx
 
   if ( !(this->__pad_00C) ) /*0x55a2d0*/
     return 0; /*0x55a2d8*/
@@ -344,7 +344,7 @@ int LoadOptions::FindItem(FileEntryClass* const* a2)
   result = 0; /*0x55a2e1*/
   if ( m_8 <= 0 ) /*0x55a2e5*/
     return -1; /*0x55a2fc*/
-  for ( i = *&this->mode; *i != *a2; ++i ) /*0x55a2eb*/
+  for ( i = this->entries; *i != *a2; ++i ) /*0x55a2eb*/
   {
     if ( ++result >= m_8 ) /*0x55a2fa*/
       return -1; /*0x55a2fa*/
@@ -428,13 +428,15 @@ const wchar_t* LoadOptions::GetGameSavedStr() {
 // IDA 0x55A410: VectorClass_Dtor (dynamic heap)
 void LoadOptions::VectorClass_Dtor(void* block, char free_self) {
     char* base = (char*)(block);
-    char** data_ptr = &base->__pad_004;
-    if (*data_ptr && base[0x0D]) { // offset +13 = owns_memory byte
-        delete[] *data_ptr;
-        *data_ptr = nullptr;
+    char* data = nullptr;
+    memcpy(&data, &base[0x04], sizeof(data));
+    if (data && base[0x0D]) { // offset +13 = owns_memory byte
+        delete[] data;
+        data = nullptr;
+        memcpy(&base[0x04], &data, sizeof(data));
     }
     base[0x0D] = 0;
-    base->u32_8 = 0; // count = 0
+    memset(&base[0x08], 0, 4); // count = 0
     if (free_self & 1) {
         delete[] base;
     }
@@ -465,7 +467,7 @@ void LoadSaveDialog_FillList(LoadOptions* opts, HWND hWnd) {
     // Scan directory for save files
     char pattern[64];
     snprintf(pattern, sizeof(pattern), "*.%s",
-             opts->GetExtension() ? opts->GetExtension() : (char *)"SAV");
+             *opts->GetExtension() ? *opts->GetExtension() : (char *)"SAV");
 
     WIN32_FIND_DATAA fd;
     HANDLE hFind = FindFirstFileA(pattern, &fd);
@@ -574,10 +576,10 @@ uint32_t LoadOptions::GetFlag252() const
 {
   return this->u32_3F0; /*0x6812d6*/
 }
-uint32_t LoadOptions::GetMode() const { return m; }
-void LoadOptions::SetMode(uint32_t m) { m = m; }
-const char* LoadOptions::GetExtension() const { return ext; }
-void LoadOptions::SetExtension(const char* ext) { ext = ext; }
+uint32_t LoadOptions::GetMode() const { return mode; }
+void LoadOptions::SetMode(uint32_t m) { this->mode = m; }
+const char* LoadOptions::GetExtension() const { return extension; }
+void LoadOptions::SetExtension(const char* ext) { this->extension = ext; }
 uint32_t LoadOptions::GetCount() const { return count; }
 FileEntryClass** LoadOptions::GetEntries() { return entries; }
 uint32_t LoadOptions::GetCapacity() const { return capacity; }

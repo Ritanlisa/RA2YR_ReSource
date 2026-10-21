@@ -228,22 +228,24 @@ void DialogClass::DrawBackground(DSurface* surface)
 
 // IDA 0x4E12F0: GadgetClass::Construct — initialize gadget fields
 // params: this, x, y, w, h, flags, isSticky
-void GadgetClass::Construct(int x, int y, int w, int h, unsigned flags, bool isSticky)
+int GadgetClass::Construct(int x, int y, int w, int h, unsigned flags, bool isSticky)
 {
     uint8_t* p = (uint8_t*)(this);
     // Set q000 (IDA: *this = &GadgetClass::vftable) — skip for modern C++
-    p->u32_C = x;
-    p->ptr_10 = y;
-    p->ptr_14 = w;
-    p->q018 = h;
-    p->u32_0 = 0; // LinkClass::Next
-    p->u32_4 = 0; // LinkClass::Prev
+    memcpy(&p[0x0C], &x, sizeof(x));
+    memcpy(&p[0x10], &y, sizeof(y));
+    memcpy(&p[0x14], &w, sizeof(w));
+    memcpy(&p[0x18], &h, sizeof(h));
+    memset(&p[0x00], 0, 8); // LinkClass::Next/Prev
     p[0x1C] = 0; // NeedsRedraw = false
     p[0x1E] = 0; // Disabled = false
     p[0x1D] = isSticky ? 1 : 0;
-    p->q020 = flags;
-    if (isSticky)
-        p->q020 = flags | 5;
+    memcpy(&p[0x20], &flags, sizeof(flags));
+    if (isSticky) {
+        unsigned stickyFlags = flags | 5;
+        memcpy(&p[0x20], &stickyFlags, sizeof(stickyFlags));
+    }
+    return 0;
 }
 
 
@@ -270,20 +272,22 @@ void GadgetClass::Hide()
 void GadgetClass::SetTooltip(const wchar_t* tooltip)
 {
     uint8_t* p = (uint8_t*)(this);
-    wchar_t** tooltipPtr = &p->u16_28; // offset +10 dwords = 0x28
+    wchar_t* tooltipPtr = nullptr; // offset +10 dwords = 0x28
+    memcpy(&tooltipPtr, &p[0x28], sizeof(tooltipPtr));
 
     // Free existing tooltip
-    if (*tooltipPtr) {
-        delete[] *tooltipPtr;
-        *tooltipPtr = nullptr;
+    if (tooltipPtr) {
+        delete[] tooltipPtr;
+        tooltipPtr = nullptr;
     }
 
     // Copy new tooltip
     if (tooltip && *tooltip) {
         size_t len = wcslen(tooltip);
-        *tooltipPtr = new wchar_t[len + 1];
-        wcscpy(*tooltipPtr, tooltip);
+        tooltipPtr = new wchar_t[len + 1];
+        wcscpy(tooltipPtr, tooltip);
     }
+    memcpy(&p[0x28], &tooltipPtr, sizeof(tooltipPtr));
 }
 
 // IDA 0x77A700: GadgetClass::TrackState — track gadget state changes
@@ -293,7 +297,10 @@ void GadgetClass::SetTooltip(const wchar_t* tooltip)
 char GadgetClass::TrackState(int newState, int eventType)
 {
     uint8_t* p = (uint8_t*)(this);
-    int curState = p->ptr_10;
+    int curState;
+    memcpy(&curState, &p[0x10], sizeof(curState));
+    int stateLimit;
+    memcpy(&stateLimit, &p[0x18], sizeof(stateLimit));
 
     if (newState == curState) {
         if (eventType == 2) {
@@ -302,11 +309,11 @@ char GadgetClass::TrackState(int newState, int eventType)
                 p[0x08] = 1; // NeedsRedraw-like byte at +0x08
             }
         }
-    } else if ((!curState || eventType >= p->q018) && newState) {
+    } else if ((!curState || eventType >= stateLimit) && newState) {
         if (eventType == 3)
             p[0x14] = 0;
-        p->ptr_10 = newState;
-        p->q018 = eventType;
+        memcpy(&p[0x10], &newState, sizeof(newState));
+        memcpy(&p[0x18], &eventType, sizeof(eventType));
         p[0x08] = 1;
     }
     return (char)(curState);
@@ -323,10 +330,11 @@ void Gadget_InitProperties(void* self)
     uint8_t* p = (uint8_t*)(self);
     // IDA: unknown_libname_74(this+1) — sub-object init
     //       unknown_libname_74(this+2) — sub-object init
-    p->u32_0 = 0;  // clear
-    p->u32_C = -1; // index = -1
-    p->ptr_14 = -1; // end index = -1
-    p->ptr_10 = 0;  // start index = 0
+    int minusOne = -1;
+    memset(&p[0x00], 0, 4);  // clear
+    memcpy(&p[0x0C], &minusOne, sizeof(minusOne)); // index = -1
+    memcpy(&p[0x14], &minusOne, sizeof(minusOne)); // end index = -1
+    memset(&p[0x10], 0, 4);  // start index = 0
 }
 
 // ============================================================================
@@ -339,7 +347,7 @@ void Gadget_InitProperties(void* self)
 static void SimpleDialogControl_Construct(void* self)
 {
     uint8_t* p = (uint8_t*)(self);
-    p->u32_0 = 0; // +0: q000 placeholder
+    memset(&p[0x00], 0, 4); // +0: q000 placeholder
     p[0x08] = 0; // +8: flag byte = 0
 }
 
@@ -376,25 +384,30 @@ void GadgetGrid::InsertItem(int index, void* item)
 {
     // IDA: array insert at position index
     uint8_t* p = (uint8_t*)(this);
-    int count = p->u32_4; // item count at +4
-    void** items = (void**)(p->u32_8); // array ptr at +8
+    int count;
+    memcpy(&count, &p[0x04], sizeof(count)); // item count at +4
+    void** items = nullptr;
+    memcpy(&items, &p[0x08], sizeof(items)); // array ptr at +8
 
     // Shift items down
     if (index < count) {
         memmove(&items[index + 1], &items[index], (count - index) * sizeof(void*));
     }
     items[index] = item;
-    p->u32_4 = count + 1;
+    int newCount = count + 1;
+    memcpy(&p[0x04], &newCount, sizeof(newCount));
 }
 
 // IDA 0x4135D0: GadgetGrid::RemoveItem
 int GadgetGrid::RemoveItem(int index)
 {
     uint8_t* p = (uint8_t*)(this);
-    int count = p->u32_4;
-    if (index < 0 || index >= count) return;
+    int count;
+    memcpy(&count, &p[0x04], sizeof(count));
+    if (index < 0 || index >= count) return 0;
 
-    void** items = (void**)(p->u32_8);
+    void** items = nullptr;
+    memcpy(&items, &p[0x08], sizeof(items));
     delete items[index]; // free the item
 
     // Shift items up
@@ -402,7 +415,9 @@ int GadgetGrid::RemoveItem(int index)
     if (tail > 0)
         memmove(&items[index], &items[index + 1], tail * sizeof(void*));
     items[count - 1] = nullptr;
-    p->u32_4 = count - 1;
+    int newCount = count - 1;
+    memcpy(&p[0x04], &newCount, sizeof(newCount));
+    return 0;
 }
 
 // ============================================================================
@@ -414,12 +429,14 @@ int GadgetGrid::RemoveItem(int index)
 void DialogQueue::PushEntry(int entryType, int param)
 {
     uint8_t* p = (uint8_t*)(this);
-    int count = p->u32_0;
+    int count;
+    memcpy(&count, &p[0x00], sizeof(count));
     if (count >= 16) return; // max 16 entries
 
     *(int*)(p + 0x04 + count * 8) = entryType;
     *(int*)(p + 0x08 + count * 8) = param;
-    p->u32_0 = count + 1;
+    int newCount = count + 1;
+    memcpy(&p[0x00], &newCount, sizeof(newCount));
 }
 
 
@@ -431,7 +448,9 @@ void DialogQueue::PushEntry(int entryType, int param)
 bool DialogClass_GetFlag(void* self)
 {
     uint8_t* p = (uint8_t*)(self);
-    return p->q034 != 0;
+    int flag;
+    memcpy(&flag, &p[0x34], sizeof(flag));
+    return flag != 0;
 }
 
 // IDA 0x623610: DialogClass::CopyTemplateStruct — copy DLGTEMPLATE into internal buffer
@@ -512,7 +531,7 @@ static TextLabelResult RenderTextLabel(TextLabelResult* out, int surfaceObj,
     int yTop  = bounds[1] + yPos;
 
     // Text::Layout — compute text layout
-    TextTextLayout(surfaceObj, &totalWidth, &bounds, bounds->ptr_8);
+    TextTextLayout(surfaceObj, &totalWidth, &bounds, bounds[2]);
 
     // Apply alignment flags
     if (flags & 0x100) { // center horizontally
@@ -564,12 +583,12 @@ static void RenderTextLabelWordWrap(int surfaceObj, int strObj,
 {
     if (!strObj) return;
 
-    int totalWidth = textBounds->Y; // text width
+    int totalWidth = textBounds[1]; // text width
     int offset = 0;
     int* bounds = textBounds;
 
     while (offset < totalWidth) {
-        TextTextLayout(surfaceObj, &totalWidth, &bounds, bounds->Y);
+        TextTextLayout(surfaceObj, &totalWidth, &bounds, bounds[1]);
 
         if (xPos + bounds[0] + totalWidth > maxWidth) {
             // Would overflow — break here (word wrap)
@@ -578,8 +597,8 @@ static void RenderTextLabelWordWrap(int surfaceObj, int strObj,
 
         TextLabelResult result;
         RenderTextLabel(&result, surfaceObj, strObj, bounds, totalWidth, flags, xPos, yPos);
-        yPos += bounds->Width; // move to next line
-        offset += bounds->Y;
+        yPos += bounds[2]; // move to next line
+        offset += bounds[1];
     }
 }
 

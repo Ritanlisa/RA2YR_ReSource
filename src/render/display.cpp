@@ -94,7 +94,7 @@ bool FramePresent(Surface* composite_surface, int flags, int arg3, int arg4)
     }
     else if ((int)(long)g_ScrollOffsetX > 0)
     {
-        dst_x = (int)(long)g_ScrollOffsetX);
+        dst_x = (int)(long)g_ScrollOffsetX;
     }
 
     if ((int)(long)g_ScrollOffsetY < 0)
@@ -104,7 +104,7 @@ bool FramePresent(Surface* composite_surface, int flags, int arg3, int arg4)
     }
     else if ((int)(long)g_ScrollOffsetY > 0)
     {
-        dst_y = (int)(long)g_ScrollOffsetY);
+        dst_y = (int)(long)g_ScrollOffsetY;
     }
 
     // Clamp to window size
@@ -234,65 +234,67 @@ int DisplayClass::CloseWindow() { return 0; }
 void DisplayClass::g_var_5463b9() {}
 bool DisplayClass::g_var_487457(const CellStruct& cell, HouseClass* house) { return false; }
 // 0x4a9ca0
-bool DisplayClass::g_var_72f2d5(const CellStruct& cell, HouseClass* house, bool unk) { return false; 
-  DisplayClass *v5; // esi
-  void *DisplayClass_field_0x140; // eax
-  bool v7; // bl
-  char AdjacentPassableMask; // al
-  void *DisplayClass_field_0x12C; // eax
-  char v10; // cl
-  char result; // al
-  char v12; // [esp+Ch] [ebp-4h]
-  char v13; // [esp+14h] [ebp+4h]
-
-  v5 = (DisplayClass *)CellCoord::To_CellObj((CellCoord *)this, cell); /*0x4a9cae*/
-  DisplayClass_field_0x140 = v5->__pad_140; /*0x4a9cb0*/
-  v7 = ((uint8_t)DisplayClass_field_0x140 & 2) == 0; /*0x4a9cbc*/
-  if ( ((uint8_t)DisplayClass_field_0x140 & 2) == 0 || (v13 = 0, ((int)v5->q12C & 8) == 0) ) /*0x4a9cd1*/
-    v13 = 1; /*0x4a9cd3*/
-  (*((unsigned char *)&(DisplayClass_field_0x140))) = (uint8_t)DisplayClass_field_0x140 & 0xBD | 2; /*0x4a9cde*/
-  v12 = v13; /*0x4a9ce0*/
-  v5->__pad_140 = DisplayClass_field_0x140; /*0x4a9ce4*/
-  if ( unk ) /*0x4a9cf2*/
-    (v5)->AdvanceFrameCounter(); /*0x4a9cf4*/
-  else
-    (v5)->UpdateDisplayTimer(); /*0x4a9cfb*/
-  AdjacentPassableMask = Cell::GetAdjacentPassableMask(cell, 0); /*0x4a9d09*/
-  if ( AdjacentPassableMask != v5->ZoneIterator_Y ) /*0x4a9d14*/
-  {
-    v13 = 1; /*0x4a9d16*/
-    v5->ZoneIterator_Y = AdjacentPassableMask; /*0x4a9d1b*/
-  }
-  if ( v5->ZoneIterator_Y == -1 ) /*0x4a9d28*/
-  {
-    DisplayClass_field_0x12C = v5->q12C; /*0x4a9d2a*/
-    (*((unsigned char *)&(DisplayClass_field_0x12C))) = (uint8_t)DisplayClass_field_0x12C | 0x10; /*0x4a9d30*/
-    v5->q12C = DisplayClass_field_0x12C; /*0x4a9d32*/
-  }
-  v10 = Cell::GetAdjacentPassableMask(cell, 1); /*0x4a9d46*/
-  if ( v10 == v5->q121 ) /*0x4a9d50*/
-  {
-    result = v13; /*0x4a9d60*/
-  }
-  else
-  {
-    result = 1; /*0x4a9d52*/
-    v5->q121 = v10; /*0x4a9d54*/
-    v13 = 1; /*0x4a9d5a*/
-  }
-  if ( v5->q121 == -1 ) /*0x4a9d6b*/
-    v5->__pad_140 = (void *)((int)v5->__pad_140 | 1); /*0x4a9d6d*/
-  if ( result ) /*0x4a9d76*/
-  {
-    Tactical::AddCellToDrawList((int *)g_TacticalClass_Instance, (int)v5); /*0x4a9d7f*/
-    CellClass::SpiralFindClosest((int)v5, house, v12); /*0x4a9d94*/
-    result = v13; /*0x4a9d99*/
-  }
-  if ( ((int)v5->__pad_140 & 2) != 0 && v7 && ((int)dword_A8B230[0].ptr_0 & 0x1000) != 0 ) /*0x4a9db5*/
-  {
-    CellClass::UpdateZone((CellClass *)v5); /*0x4a9db9*/
-    return v13; /*0x4a9dbe*/
-  }
-  return result; /*0x4a9dc2*/
-}
+bool DisplayClass::g_var_72f2d5(const CellStruct& cell, HouseClass* house, bool unk) { return false; }
+// X107: raw decomp residue retained (unreachable: the stub above returns false first).
+// Live implementation of this body: src/e4/DisplayClass_e4.cpp. Kept as commentary so the
+// decompiler line anchors stay with the source they document.
+//   DisplayClass *v5; // esi
+//   void *DisplayClass_field_0x140; // eax
+//   bool v7; // bl
+//   char AdjacentPassableMask; // al
+//   void *DisplayClass_field_0x12C; // eax
+//   char v10; // cl
+//   char result; // al
+//   char v12; // [esp+Ch] [ebp-4h]
+//   char v13; // [esp+14h] [ebp+4h]
+//
+//   v5 = (DisplayClass *)CellCoord::To_CellObj((CellCoord *)this, cell); /*0x4a9cae*/
+//   DisplayClass_field_0x140 = v5->__pad_140; /*0x4a9cb0*/
+//   v7 = ((uint8_t)DisplayClass_field_0x140 & 2) == 0; /*0x4a9cbc*/
+//   if ( ((uint8_t)DisplayClass_field_0x140 & 2) == 0 || (v13 = 0, ((int)v5->q12C & 8) == 0) ) /*0x4a9cd1*/
+//     v13 = 1; /*0x4a9cd3*/
+//   (*((unsigned char *)&(DisplayClass_field_0x140))) = (uint8_t)DisplayClass_field_0x140 & 0xBD | 2; /*0x4a9cde*/
+//   v12 = v13; /*0x4a9ce0*/
+//   v5->__pad_140 = DisplayClass_field_0x140; /*0x4a9ce4*/
+//   if ( unk ) /*0x4a9cf2*/
+//     (v5)->AdvanceFrameCounter(); /*0x4a9cf4*/
+//   else
+//     (v5)->UpdateDisplayTimer(); /*0x4a9cfb*/
+//   AdjacentPassableMask = Cell::GetAdjacentPassableMask(cell, 0); /*0x4a9d09*/
+//   if ( AdjacentPassableMask != v5->ZoneIterator_Y ) /*0x4a9d14*/
+//   {
+//     v13 = 1; /*0x4a9d16*/
+//     v5->ZoneIterator_Y = AdjacentPassableMask; /*0x4a9d1b*/
+//   }
+//   if ( v5->ZoneIterator_Y == -1 ) /*0x4a9d28*/
+//   {
+//     DisplayClass_field_0x12C = v5->q12C; /*0x4a9d2a*/
+//     (*((unsigned char *)&(DisplayClass_field_0x12C))) = (uint8_t)DisplayClass_field_0x12C | 0x10; /*0x4a9d30*/
+//     v5->q12C = DisplayClass_field_0x12C; /*0x4a9d32*/
+//   }
+//   v10 = Cell::GetAdjacentPassableMask(cell, 1); /*0x4a9d46*/
+//   if ( v10 == v5->q121 ) /*0x4a9d50*/
+//   {
+//     result = v13; /*0x4a9d60*/
+//   }
+//   else
+//   {
+//     result = 1; /*0x4a9d52*/
+//     v5->q121 = v10; /*0x4a9d54*/
+//     v13 = 1; /*0x4a9d5a*/
+//   }
+//   if ( v5->q121 == -1 ) /*0x4a9d6b*/
+//     v5->__pad_140 = (void *)((int)v5->__pad_140 | 1); /*0x4a9d6d*/
+//   if ( result ) /*0x4a9d76*/
+//   {
+//     Tactical::AddCellToDrawList((int *)g_TacticalClass_Instance, (int)v5); /*0x4a9d7f*/
+//     CellClass::SpiralFindClosest((int)v5, house, v12); /*0x4a9d94*/
+//     result = v13; /*0x4a9d99*/
+//   }
+//   if ( ((int)v5->__pad_140 & 2) != 0 && v7 && ((int)dword_A8B230[0].ptr_0 & 0x1000) != 0 ) /*0x4a9db5*/
+//   {
+//     CellClass::UpdateZone((CellClass *)v5); /*0x4a9db9*/
+//     return v13; /*0x4a9dbe*/
+//   }
+//   return result; /*0x4a9dc2*/
 } // namespace gamemd

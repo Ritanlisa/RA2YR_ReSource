@@ -18,7 +18,7 @@ uint32_t Hash::ComputeHashSHA1(const void* data, uint32_t size)
     sha1.Init();
     sha1.Process((int)(data), size);
     uint8_t digest[20];
-    sha1.Compute(digest);
+    sha1.Compute(digest, 0);
     // Return first 4 bytes as uint32_t hash
     return ((uint32_t)(digest[0]) << 24) |
            ((uint32_t)(digest[1]) << 16) |
@@ -56,8 +56,8 @@ int SHA1::Process(int a2, int a3)  // g57c5 W5g2: raw param-name sync (69d960)
   int *v5; // edi
   int v6; // ebx
 
-  this->state = 0; /*0x69d96f*/
-  SHA1::ProcessBlock(this, (const void **)&a2, &a3); /*0x69d972*/
+  this->state[0] = 0; /*0x69d96f*/
+  ProcessBlock(this, (const void **)&a2, &a3); /*0x69d972*/
   a3 = a3; /*0x69d977*/
   if ( a3 ) /*0x69d97d*/
   {
@@ -67,7 +67,7 @@ int SHA1::Process(int a2, int a3)  // g57c5 W5g2: raw param-name sync (69d960)
       v6 = a3 / 64; /*0x69d996*/
       do /*0x69d9bb*/
       {
-        SHA1::Transform(v5, &this->u32_18); /*0x69d99c*/
+        this->Transform(v5, &this->u32_18); /*0x69d99c*/
         v5 += 16; /*0x69d9ab*/
         this->u32_2C += 64; /*0x69d9ad*/
         --v6; /*0x69d9b6*/
@@ -76,31 +76,31 @@ int SHA1::Process(int a2, int a3)  // g57c5 W5g2: raw param-name sync (69d960)
       while ( v6 ); /*0x69d9bb*/
     }
     a2 = (int)v5; /*0x69d9cb*/
-    return (int)SHA1::ProcessBlock(this, (const void **)&a2, &a3); /*0x69d9cf*/
+    return (int)ProcessBlock(this, (const void **)&a2, &a3); /*0x69d9cf*/
   }
 }
 // 0x69d9e0
-int SHA1::Compute(char *a2, int a1)
+int SHA1::Compute(uint8_t *a2, int a1)
 {
   int v3; // edx
   int v4; // ebx
   unsigned int v5; // ebx
   int v6; // edx
   uint16_t v7; // cx
-  int *p_SHA1_field_0x04; // ecx
+  unsigned int *p_SHA1_field_0x04; // ecx
   int v9; // esi
   unsigned int v10; // eax
   unsigned int v12[5]; // [esp+14h] [ebp-54h] BYREF
   int v13[16]; // [esp+28h] [ebp-40h] BYREF
 
-  if ( a1->__pad_0[0] ) /*0x69d9e9*/
-    memcpy(a1, &a1->SHA1_field_0x04, 0x14u); /*0x69d9fb*/
-  v3 = *((unsigned int *)a1 + 12); /*0x69d9fd*/
-  v4 = *((unsigned int *)a1 + 11); /*0x69da00*/
-  memcpy(v13, (char *)a1 + 52, sizeof(v13)); /*0x69da14*/
+  if ( this->state[0] ) /*0x69d9e9*/
+    memcpy(a2, &this->SHA1_field_0x04, 0x14u); /*0x69d9fb*/
+  v3 = *((unsigned int *)this + 12); /*0x69d9fd*/
+  v4 = *((unsigned int *)this + 11); /*0x69da00*/
+  memcpy(v13, (char *)this + 52, sizeof(v13)); /*0x69da14*/
   v5 = v3 + v4; /*0x69da18*/
   *((unsigned char *)v13 + v3) = 0x80; /*0x69da29*/
-  memcpy(v12,(const void *)(a1 + 1), sizeof(v12)); /*0x69da2e*/
+  memcpy(v12, &this->SHA1_field_0x04, sizeof(v12)); /*0x69da2e*/
   if ( 64 - v3 >= 9 ) /*0x69da30*/
   {
     v6 = v3 + 1; /*0x69da6a*/
@@ -109,16 +109,16 @@ int SHA1::Compute(char *a2, int a1)
   {
     if ( v3 + 1 < 64 ) /*0x69da38*/
       memset((char *)v13 + v3 + 1, 0, 63 - v3); /*0x69da4c*/
-    SHA1::Transform(v13, v12); /*0x69da61*/
+    this->Transform(v13, v12); /*0x69da61*/
     v6 = 0; /*0x69da66*/
   }
   memset((char *)v13 + v6, 0, 64 - v6); /*0x69da7d*/
   (*((unsigned char *)&(v7))) = (8 * v5) >> 24; /*0x69da99*/
   (*(((unsigned char *)&(v7)) + (sizeof(v7) - 1))) = v5 >> 13; /*0x69da9e*/
   v13[15] = (v5 << 27) | (v5 << 11) & 0xFF0000 | v7; /*0x69dab8*/
-  SHA1::Transform(v13, v12); /*0x69dac3*/
-  memcpy(&a1->SHA1_field_0x04, v12, 0x14u); /*0x69dad6*/
-  p_SHA1_field_0x04 = &a1->SHA1_field_0x04; /*0x69dad8*/
+  this->Transform(v13, v12); /*0x69dac3*/
+  memcpy(&this->SHA1_field_0x04, v12, 0x14u); /*0x69dad6*/
+  p_SHA1_field_0x04 = &this->SHA1_field_0x04; /*0x69dad8*/
   v9 = 5; /*0x69dada*/
   do /*0x69db0b*/
   {
@@ -127,8 +127,8 @@ int SHA1::Compute(char *a2, int a1)
     *(p_SHA1_field_0x04 - 1) = ((v10 & 0xFF00 | (v10 << 16)) << 8) | (((*(((unsigned short *)&(v10)) + 1)) | v10 & 0xFF0000) >> 8); /*0x69db08*/
   }
   while ( v9 ); /*0x69db0b*/
-  a1->__pad_0[0] = 1; /*0x69db18*/
-  memcpy(a1, &a1->SHA1_field_0x04, 0x14u); /*0x69db1c*/
+  this->state[0] = 1; /*0x69db18*/
+  memcpy(a2, &this->SHA1_field_0x04, 0x14u); /*0x69db1c*/
   return 20; /*0x69db1e*/
 }
 // 0x69db30
@@ -166,7 +166,7 @@ int SHA1::Transform(int *a1, unsigned int *a2)
   int v30; // [esp+14h] [ebp-15Ch]
   int v31; // [esp+18h] [ebp-158h]
   unsigned int v32[5]; // [esp+1Ch] [ebp-154h] BYREF
-  unsigned char v33[8]; // [esp+30h] [ebp-140h] BYREF
+  unsigned int v33[2]; // [esp+30h] [ebp-140h] BYREF
   char v34; // [esp+38h] [ebp-138h] BYREF
 
   v2 = a1; /*0x69db30*/
@@ -178,7 +178,7 @@ int SHA1::Transform(int *a1, unsigned int *a2)
     (v4) = ((v4) & ~0xFF) | ((0) & 0xFF); /*0x69db69*/
     (v4) = ((v4) & ~(0xFF << 8)) | ((((((v4) >> 16) & 0xFF)) & 0xFF) << 8); /*0x69db6b*/
     --v3; /*0x69db71*/
-    *(int *)((char *)v2 + v33 - (unsigned char *)a1 - 4) = (unsigned __int16)v4 | v5; /*0x69db72*/
+    v33[16 - v3] = (unsigned __int16)v4 | v5; /*0x69db72*/
   }
   while ( v3 ); /*0x69db76*/
   v6 = (int *)&v34; /*0x69db78*/
@@ -267,7 +267,9 @@ void SHA1::PadMessage()
     buffer[buffer_index++] = 0x80;
     if (buffer_index > 56) {
         while (buffer_index < 64) buffer[buffer_index++] = 0;
-        Transform();
+        int padbuf1[16];
+        memcpy(padbuf1, buffer, sizeof(padbuf1));
+        this->Transform(padbuf1, state);
         buffer_index = 0;
     }
     while (buffer_index < 56) buffer[buffer_index++] = 0;
@@ -276,7 +278,9 @@ void SHA1::PadMessage()
         buffer[56 + i] = (uint8_t)(original_bits & 0xFF);
         original_bits >>= 8;
     }
-    Transform();
+    int padbuf2[16];
+    memcpy(padbuf2, buffer, sizeof(padbuf2));
+    this->Transform(padbuf2, state);
 }
 
 // SHA1::DigestToHex -- digest-to-hex string helper (no standalone IDA function).
@@ -354,7 +358,7 @@ uint32_t CRC32::Compute(uint8_t *a1, int a2, int a3)
     v6 = v4 + 1; /*0x4a1fbf*/
     do /*0x4a1fde*/
     {
-      v5 = CRC32_Table[*a1++ ^ (uint8_t)v5] ^ (v5 >> 8); /*0x4a1fda*/
+      v5 = crc32_table[*a1++ ^ (uint8_t)v5] ^ (v5 >> 8); /*0x4a1fda*/
       --v6; /*0x4a1fdd*/
     }
     while ( v6 ); /*0x4a1fde*/
