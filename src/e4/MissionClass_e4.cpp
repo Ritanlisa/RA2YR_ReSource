@@ -21,83 +21,83 @@ AbstractClass * * MissionClass::LoadFromINI(unsigned int *a2, void *a2_1)
 
   INIClass::ResetSection((INIClass *)a2); /*0x5b376a*/
   char *v3; // eax
-  if ( this->ObjectClass == (void *)-1 ) /*0x5b3774*/
+  if ( this->ptr_0 == (void *)-1 ) /*0x5b3774*/
     v3 = g_Str__none_; /*0x5b3776*/
   else
-    v3 = off_816CAC[(int)this->ObjectClass]; /*0x5b377d*/
+    v3 = off_816CAC[(int)this->ptr_0]; /*0x5b377d*/
   if ( !INIClass::BinarySearchSection((int)a2, (unsigned __int8 *)v3) ) /*0x5b3787*/
     return 0; /*0x5b3906*/
   char *v4; // eax
-  if ( this->ObjectClass == (void *)-1 ) /*0x5b379e*/
+  if ( this->ptr_0 == (void *)-1 ) /*0x5b379e*/
     v4 = g_Str__none_; /*0x5b37a0*/
   else
-    v4 = off_816CAC[(int)this->ObjectClass]; /*0x5b37a7*/
+    v4 = off_816CAC[(int)this->ptr_0]; /*0x5b37a7*/
   LOBYTE(this->ptr_4) = INIClass::ReadBool_Overwrite( /*0x5b37bf*/
                       a2,
                       (unsigned __int8 *)v4,
                       (unsigned __int8 *)&g_INI_Key_Neutral,
                       (char)this->?);
   char *v5; // eax
-  if ( this->ObjectClass == (void *)-1 ) /*0x5b37c7*/
+  if ( this->ptr_0 == (void *)-1 ) /*0x5b37c7*/
     v5 = g_Str__none_; /*0x5b37c9*/
   else
-    v5 = off_816CAC[(int)this->ObjectClass]; /*0x5b37d0*/
+    v5 = off_816CAC[(int)this->ptr_0]; /*0x5b37d0*/
   BYTE1(this->q005) = INIClass::ReadBool_Overwrite( /*0x5b37e8*/
                      a2,
                      (unsigned __int8 *)v5,
                      (unsigned __int8 *)&DataGlobal_82BA00[2206],
                      BYTE1(this->?));
   char *v6; // eax
-  if ( this->ObjectClass == (void *)-1 ) /*0x5b37f0*/
+  if ( this->ptr_0 == (void *)-1 ) /*0x5b37f0*/
     v6 = g_Str__none_; /*0x5b37f2*/
   else
-    v6 = off_816CAC[(int)this->ObjectClass]; /*0x5b37f9*/
+    v6 = off_816CAC[(int)this->ptr_0]; /*0x5b37f9*/
   BYTE2(this->q006) = INIClass::ReadBool_Overwrite( /*0x5b3811*/
                      a2,
                      (unsigned __int8 *)v6,
                      (unsigned __int8 *)&DataGlobal_82BA00[2203],
                      BYTE2(this->?));
   char *v7; // eax
-  if ( this->ObjectClass == (void *)-1 ) /*0x5b3819*/
+  if ( this->ptr_0 == (void *)-1 ) /*0x5b3819*/
     v7 = g_Str__none_; /*0x5b381b*/
   else
-    v7 = off_816CAC[(int)this->ObjectClass]; /*0x5b3822*/
+    v7 = off_816CAC[(int)this->ptr_0]; /*0x5b3822*/
   HIBYTE(this->q007) = INIClass::ReadBool_Overwrite( /*0x5b383a*/
                       a2,
                       (unsigned __int8 *)v7,
                       (unsigned __int8 *)DataGlobal_82BA00[2200],
                       HIBYTE(this->?));
   char *v8; // eax
-  if ( this->ObjectClass == (void *)-1 ) /*0x5b3842*/
+  if ( this->ptr_0 == (void *)-1 ) /*0x5b3842*/
     v8 = g_Str__none_; /*0x5b3844*/
   else
-    v8 = off_816CAC[(int)this->ObjectClass]; /*0x5b384b*/
+    v8 = off_816CAC[(int)this->ptr_0]; /*0x5b384b*/
   LOBYTE(this->ptr_8) = INIClass::ReadBool_Overwrite( /*0x5b3863*/
                       a2,
                       (unsigned __int8 *)v8,
                       (unsigned __int8 *)&DataGlobal_82BA00[2188],
                       (char)this->?);
   char *v9; // eax
-  if ( this->ObjectClass == (void *)-1 ) /*0x5b386b*/
+  if ( this->ptr_0 == (void *)-1 ) /*0x5b386b*/
     v9 = g_Str__none_; /*0x5b386d*/
   else
-    v9 = off_816CAC[(int)this->ObjectClass]; /*0x5b3874*/
+    v9 = off_816CAC[(int)this->ptr_0]; /*0x5b3874*/
   BYTE1(this->q009) = INIClass::ReadBool_Overwrite( /*0x5b388c*/
                      a2,
                      (unsigned __int8 *)v9,
                      (unsigned __int8 *)&DataGlobal_82BA00[2180],
                      BYTE1(this->?));
   char *v10; // eax
-  if ( this->ObjectClass == (void *)-1 ) /*0x5b3894*/
+  if ( this->ptr_0 == (void *)-1 ) /*0x5b3894*/
     v10 = g_Str__none_; /*0x5b3896*/
   else
-    v10 = off_816CAC[(int)this->ObjectClass]; /*0x5b389d*/
+    v10 = off_816CAC[(int)this->ptr_0]; /*0x5b389d*/
   INIClass::ReadDouble_Overwrite( /*0x5b38b4*/
     (double *)a2,
     (unsigned __int8 *)v10,
     (unsigned __int8 *)g_INI_Key_Rate,
     *(double *)&this->?);
-  void *ptr_0 = this->ObjectClass; // eax /*0x5b38b9*/
+  void *ptr_0 = this->ptr_0; // eax /*0x5b38b9*/
   __asm { fstp qword ptr [esi+10h] } /*0x5b38bb*/
   *&this->uniqueId = _RT1; /*0x5b38bb*/
   char *v13; // eax

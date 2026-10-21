@@ -27,7 +27,10 @@ struct House {
     char House_field_0x2[4];  // 0x2
     char __pad_6[2];  // 0x6
     int q008;  // 0x8
-    unsigned char u32_C[29];  // 0xC
+    unsigned char u32_C[24];  // 0xC
+    unsigned short u32_24;  // 0x24
+    unsigned short u32_26;  // 0x26
+    char __pad_28[1];  // 0x28
     char House_field_0x29[4];  // 0x29
     char __pad_2D[3];  // 0x2D
     unsigned int u32_30;  // 0x30

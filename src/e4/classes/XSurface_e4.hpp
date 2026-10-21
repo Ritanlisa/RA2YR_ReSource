@@ -6,7 +6,7 @@
 namespace gamemd {
 
 struct XSurface {
-    unsigned int __pad_0;  // 0x0
+    void* Surface;  // 0x0
     void* Width;  // 0x4
     void* Height;  // 0x8
     int LockCount;  // 0xC

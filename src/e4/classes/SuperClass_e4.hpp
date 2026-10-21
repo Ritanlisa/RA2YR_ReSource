@@ -52,7 +52,10 @@ struct SuperClass {
     unsigned char __pad_066;  // 0x66
     char __pad_67[1];  // 0x67
     unsigned int u32_68;  // 0x68
-    int SuperClass_field_0x6C;  // 0x6C
+    union {
+        unsigned int u32_6C;  // 0x6C
+        struct { unsigned char __pad_6C; unsigned char Granted; unsigned char OneTime; unsigned char IsCharged; };  // 0x6C
+    };
     int q070;  // 0x70
     unsigned int u32_74;  // 0x74
     unsigned int u32_78;  // 0x78

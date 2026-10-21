@@ -15,7 +15,7 @@ struct RadSiteClass;  // fix_fwd_type_supply
 struct HouseClass;  // fix_fwd_type_supply
 
 struct CellClass {
-    void* RevealFogRect_ph;  // 0x0
+    void* mapCoords;  // 0x0
     void* ptr_4;  // 0x4
     void* ptr_8;  // 0x8
     void* ptr_C;  // 0xC

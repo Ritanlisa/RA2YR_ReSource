@@ -16,11 +16,12 @@ struct Color;  // fix_fwd_type_supply
 struct TypeList_flat;  // fix_fwd_type_supply
 
 struct ParticleTypeClass {
-    void* ptr_0;  // 0x0
-    void* ptr_4;  // 0x4
-    void* m_8;  // 0x8
+    void* ArrayIndex;  // 0x0
+    void* ParticleTypeClass_field_28C;  // 0x4
+    void* BehavesLike;  // 0x8
     unsigned int ParticleTypeClass_field_0xC;  // 0xC
-    unsigned int m_10;  // 0x10
+    char __pad_010[3];  // 0x10
+    unsigned char IsAllocated;  // 0x13
     int Damage;  // 0x14
     int StartScale;  // 0x18
     int ParticleTypeClass_field_2A4;  // 0x1C
@@ -59,7 +60,9 @@ struct ParticleTypeClass {
     void * AlphaImage;  // 0xAC
     unsigned int MainVoxel;  // 0xB0
     unsigned char __pad_0B4;  // 0xB4
-    char __pad_B5[308];  // 0xB5
+    char __pad_B5[3];  // 0xB5
+    char BarrelVoxel[24];  // 0xB8
+    char __pad_D0[281];  // 0xD0
     char align_1E9_3_[4];  // 0x1E9
     char __pad_1ED[3];  // 0x1ED
     int CrushSound;  // 0x1F0
@@ -90,12 +93,12 @@ struct ParticleTypeClass {
     IUnknown* YVelocity;  // 0x2A4
     void* MinZVelocity;  // 0x2A8
     unsigned int ZVelocityRange;  // 0x2AC
-    unsigned int ParticleTypeClass_field_0x2B0;  // 0x2B0
+    unsigned int __pad_2B0;  // 0x2B0
     unsigned int ParticleTypeClass_field_0x2B4;  // 0x2B4
     void* ParticleTypeClass_field_0x2B8;  // 0x2B8
     CampaignClass* ParticleTypeClass_field_0x2BC;  // 0x2BC
     char __pad_2C0[8];  // 0x2C0
-    VectorClass* ParticleTypeClass_field_0x2C8;  // 0x2C8
+    int ColorList;  // 0x2C8
     VectorClass* ParticleTypeClass_field_0x2CC;  // 0x2CC
     unsigned char __pad_2D0;  // 0x2D0
     char __pad_2D1[3];  // 0x2D1
@@ -114,8 +117,15 @@ struct ParticleTypeClass {
     unsigned char u32_2FC[4];  // 0x2FC
     int q300;  // 0x300
     int Deacc;  // 0x304
-    unsigned int DeleteOnStateLimit_d;  // 0x308
-    ObjectClass* FinalDamageState;  // 0x30C
+    unsigned char DeleteOnStateLimit_d;  // 0x308
+    unsigned char EndStateAI_d;  // 0x309
+    unsigned char StartStateAI_d;  // 0x30A
+    unsigned char StateAIAdvance_d;  // 0x30B
+    unsigned char FinalDamageState;  // 0x30C
+    unsigned char Translucent25State;  // 0x30D
+    unsigned char Translucent50State;  // 0x30E
+    unsigned char Normalized;  // 0x30F
+
     int ParticleTypeClass_field_0x310;  // 0x310
     int ParticleTypeClass_field_0x314;  // 0x314
 // --- flat members (BEGIN) ---

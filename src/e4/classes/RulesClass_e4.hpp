@@ -22,7 +22,10 @@ struct RulesClass {
     int DetailMinFrameRateNormal;  // 0x0
     int DetailMinFrameRateMovie;  // 0x4
     int DetailBufferZoneWidth;  // 0x8
-    char AmmoCrateDamage[4];  // 0xC
+    union {
+        int AmmoCrateDamage;  // 0xC
+        struct { char __pad_C; unsigned char u8_D; char __pad_E[2]; };  // 0xC
+    };
     UnitTypeClass* LargeVisceroid;  // 0x10
     UnitTypeClass* SmallVisceroid;  // 0x14
     int AttackingAircraftSightRange;  // 0x18
@@ -576,7 +579,7 @@ struct RulesClass {
     int LaserTargetColor;  // 0x1844
     int IronCurtainColor;  // 0x1848
     int BerserkColor;  // 0x184C
-    int AlliedWallTransparency_d;  // 0x1850
+    int ForceShieldColor;  // 0x1850
     float DirectRockingCoefficient;  // 0x1854
     float FallBackCoefficient;  // 0x1858
     int CrewCount;  // 0x185C
