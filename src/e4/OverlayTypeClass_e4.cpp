@@ -69,11 +69,11 @@ OverlayTypeClass::OverlayTypeClass(ObjectClass * aP1)
   this->CellAnim = 0; /*0x5fe28a*/
   this->DamageLevels = 0; /*0x5fe290*/
   this->NoUseTileLandType = 0; /*0x5fe296*/
-  this->IsVeinholeMonster = 0; /*0x5fe29c*/
-  this->IsVeins = 0; /*0x5fe2a2*/
+  this->IsVeinholeMonster_d = 0; /*0x5fe29c*/
+  this->IsVeins_d = 0; /*0x5fe2a2*/
   this->ImageLoaded = 0; /*0x5fe2a8*/
-  this->ChainReaction = 0; /*0x5fe2ae*/
-  this->Overrides = 0; /*0x5fe2b4*/
+  this->ChainReaction_d = 0; /*0x5fe2ae*/
+  this->Overrides_d = 0; /*0x5fe2b4*/
   this->DrawFlat_d = 0; /*0x5fe2ba*/
   this->IsRubble = 0; /*0x5fe2c0*/
   this->IsARock = 0; /*0x5fe2c6*/

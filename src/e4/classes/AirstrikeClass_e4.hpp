@@ -68,7 +68,7 @@ struct AirstrikeClass {
     int Seek(TechnoTypeClass * aP0, int * a1, int aP2);
     int SpawnAircraft(int * a2, void *a2_2);
     int Stat(AbstractClass * aP1);
-    int Write(AbstractClass * aP0, int aP1);
+    int Write(AirstrikeClass * aP0, int aP1);
     int ddtor(int a1, unsigned int * a2);
     void * CopyTo(char a2, int aP1, int aP0, int a1, int aP2);
 };

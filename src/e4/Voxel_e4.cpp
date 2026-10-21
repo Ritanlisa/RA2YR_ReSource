@@ -402,7 +402,7 @@ int Voxel::Projection_Setup()
   v62 = 0; /*0x754cfc*/
   v63 = 0; /*0x754d04*/
   v64 = 1065353216; /*0x754d0c*/
-  v1 = Math::BuildRotationMatrix((float *)v66.__pad_0, (float *)&v62, 0.785375); /*0x754d14*/
+  v1 = Math::BuildRotationMatrix((float *)v66.u32_0, (float *)&v62, 0.785375); /*0x754d14*/
   v2 = TransformMatrix3x4Point(v57, v1, (float *)&v59); /*0x754d1f*/
   v70[0] = *v2; /*0x754d26*/
   v70[1] = v2[1]; /*0x754d30*/
@@ -413,7 +413,7 @@ int Voxel::Projection_Setup()
   *(float *)&v59 = 0.0; /*0x754d6c*/
   v60 = 0.0; /*0x754d74*/
   v61 = 1065353216; /*0x754d7c*/
-  v3 = Math::BuildRotationMatrix((float *)v66.__pad_0, (float *)&v59, 2.3561251); /*0x754d84*/
+  v3 = Math::BuildRotationMatrix((float *)v66.u32_0, (float *)&v59, 2.3561251); /*0x754d84*/
   v4 = TransformMatrix3x4Point(v57, v3, (float *)&v62); /*0x754d8f*/
   v67[0] = *v4; /*0x754d96*/
   v67[1] = v4[1]; /*0x754d9d*/
@@ -424,7 +424,7 @@ int Voxel::Projection_Setup()
   *(float *)&v59 = 0.0; /*0x754dd9*/
   v60 = 0.0; /*0x754de1*/
   v61 = 1065353216; /*0x754de9*/
-  v5 = Math::BuildRotationMatrix((float *)v66.__pad_0, (float *)&v59, 3.9268751); /*0x754df1*/
+  v5 = Math::BuildRotationMatrix((float *)v66.u32_0, (float *)&v59, 3.9268751); /*0x754df1*/
   v6 = TransformMatrix3x4Point(v57, v5, (float *)&v62); /*0x754dfc*/
   v73[0] = *v6; /*0x754e03*/
   v73[1] = v6[1]; /*0x754e0d*/
@@ -436,7 +436,7 @@ int Voxel::Projection_Setup()
   *(float *)&v59 = 0.0; /*0x754e36*/
   v60 = 0.0; /*0x754e3e*/
   v61 = 1065353216; /*0x754e46*/
-  v8 = Math::BuildRotationMatrix((float *)v66.__pad_0, (float *)&v59, 5.4976249); /*0x754e61*/
+  v8 = Math::BuildRotationMatrix((float *)v66.u32_0, (float *)&v59, 5.4976249); /*0x754e61*/
   v9 = TransformMatrix3x4Point(v57, v8, (float *)&v62); /*0x754e6c*/
   v71[0] = *v9; /*0x754e73*/
   v71[1] = v9[1]; /*0x754e7d*/
@@ -537,8 +537,8 @@ int Voxel::Projection_Setup()
     v60 = v34; /*0x755406*/
     v33[1] = v60; /*0x75540e*/
     *((unsigned int *)v33 + 2) = v61; /*0x755415*/
-    Math::BuildRotationMatrix((float *)v66.__pad_0, &flt_B444A0[v29], *(float *)&stru_887460.Buffer_field_0C); /*0x755424*/
-    v35 = TransformMatrix3x4Point(v58, (float *)v66.__pad_0, &flt_B432D8[v29]); /*0x755432*/
+    Math::BuildRotationMatrix((float *)v66.u32_0, &flt_B444A0[v29], *(float *)&stru_887460.Buffer_field_0C); /*0x755424*/
+    v35 = TransformMatrix3x4Point(v58, (float *)v66.u32_0, &flt_B432D8[v29]); /*0x755432*/
     v29 += 3; /*0x755439*/
     *v30 = *v35; /*0x75543c*/
     v30[1] = v35[1]; /*0x755441*/
@@ -723,12 +723,12 @@ AbstractClass * * Voxel::SortDepth(ObjectClass * aP1, int a3, void *a3_2)
   v4 = 0; /*0x755dbc*/
   if ( aP1->ptr_10 ) /*0x755dbe*/
     operator delete((aP1->ptr_10)); /*0x755dc6*/
-  v5 = aP1->__pad_014; /*0x755dce*/
+  v5 = aP1->abstractFlags; /*0x755dce*/
   aP1->ptr_10 = 0; /*0x755dd1*/
   if ( v5 ) /*0x755dd6*/
     operator delete((v5)); /*0x755dd9*/
   v6 = aP1->ptr_18; /*0x755de1*/
-  aP1->__pad_014 = 0; /*0x755de4*/
+  aP1->abstractFlags = 0; /*0x755de4*/
   if ( v6 ) /*0x755de9*/
     operator delete((v6)); /*0x755dec*/
   v7 = (int)(a3_2); /*0x755df4*/

@@ -180,10 +180,10 @@ MultiplayerGameMode * * CCINIClass::Load(int a2, char a3, char a4, void *a4_1)
   v17 = -1009589776; /*0x4742bd*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E4D78) */  /*0x4742c5*/
   INIClass::WriteToString((INIClass *)this, (int)&v12); /*0x4742cd*/
-  (&v12)->ComputeThunk(this->__pad_041); /*0x4742da*/
+  (&v12)->ComputeThunk(this->__pad_41); /*0x4742da*/
   this->ownsFile = 1; /*0x4742e3*/
   ((Pipe *)&v12)->Dtor(); /*0x4742e7*/
-  v8 = memcmp(v20, this->__pad_041, 0x14u) == 0; /*0x4742fa*/
+  v8 = memcmp(v20, this->__pad_41, 0x14u) == 0; /*0x4742fa*/
   v7 = 2; /*0x4742fd*/
   if ( v8 ) /*0x474302*/
     LABEL_7:

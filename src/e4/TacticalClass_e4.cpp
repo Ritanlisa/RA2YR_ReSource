@@ -528,12 +528,12 @@ AbstractClass * * TacticalClass_RenderFrame(void * a1, void * a2, void * a3)
         {
           ColorStruct::SetRGB((uint8_t)(&v6), 0x80u, 0x80u, 0x80u); /*0x4f463d*/
           (&v7)->SetRGB(0x80u, 0x80u, 0x80u); /*0x4f4655*/
-          ((int)(v6.q000))->SetCellTransform(0, 0, 0, 1008981770, 0, 0); /*0x4f466d*/
-          Tactical::SetCellTransform((int)(v6.q000), 1, 0, 1132396544, 1008981770, 0, 1065353216); /*0x4f468b*/
-          Tactical::SetCellTransform((int)(v6.q000), 2, 1132396544, 1132396544, 1008981770, 1065353216, 1065353216); /*0x4f46af*/
-          Tactical::SetCellTransform(v7.q000, 0, 0, 0, 1008981770, 0, 0); /*0x4f46c7*/
-          Tactical::SetCellTransform(v7.q000, 1, 1132396544, 1132396544, 1008981770, 1065353216, 1065353216); /*0x4f46eb*/
-          Tactical::SetCellTransform(v7.q000, 2, 1132396544, 0, 1008981770, 1065353216, 0); /*0x4f4709*/
+          ((int)(v6.__pad_0))->SetCellTransform(0, 0, 0, 1008981770, 0, 0); /*0x4f466d*/
+          Tactical::SetCellTransform((int)(v6.__pad_0), 1, 0, 1132396544, 1008981770, 0, 1065353216); /*0x4f468b*/
+          Tactical::SetCellTransform((int)(v6.__pad_0), 2, 1132396544, 1132396544, 1008981770, 1065353216, 1065353216); /*0x4f46af*/
+          Tactical::SetCellTransform(v7.__pad_0, 0, 0, 0, 1008981770, 0, 0); /*0x4f46c7*/
+          Tactical::SetCellTransform(v7.__pad_0, 1, 1132396544, 1132396544, 1008981770, 1065353216, 1065353216); /*0x4f46eb*/
+          Tactical::SetCellTransform(v7.__pad_0, 2, 1132396544, 0, 1008981770, 1065353216, 0); /*0x4f4709*/
           (dword_8A0E10)->Append(&v6); /*0x4f4719*/
           (dword_8A0E10)->Append(&v7); /*0x4f4729*/
         }

@@ -32,7 +32,7 @@ struct TriggerClass {
 // --- flat members (END) ---
     static char FindByEventType(char a1);
     int GetValue(void *a1 = 0, void *a2 = 0);
-    int LoadTrigger(AbstractClass * aP0, int aP1);
+    int LoadTrigger(TriggerClass * aP0, int aP1);
     char RegisterEvent(int a2, int a3, char a4, char a5, int a6);
     int SaveTrigger(TechnoTypeClass * aP0, int * a1, int aP2);
     int StubReturn38();

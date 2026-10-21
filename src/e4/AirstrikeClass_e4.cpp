@@ -90,7 +90,7 @@ int AirstrikeClass::SpawnAircraft(int * a2, void *a2_2)
       v19[2] = v12[2]; /*0x41d961*/
       result = StartAudioControllerAt(*&dword_8871E0->q260, v19, 0); /*0x41d96b*/
     }
-    this->__pad_050 = a2_2; /*0x41d972*/
+    this->AirstrikeClass_field_50 = a2_2; /*0x41d972*/
     if ( a2_2 ) /*0x41d975*/
     {
       result = (int *)(*(int (**)(int *))(*a2_2 + 44))(a2_2); /*0x41d97f*/
@@ -153,9 +153,9 @@ int AirstrikeClass::ReassignTarget(int a2, void *a2_2)
   else
   {
 LABEL_6:
-    v6 = this->__pad_050; /*0x41da4f*/
+    v6 = this->AirstrikeClass_field_50; /*0x41da4f*/
     if ( v6 )
-      v7 = (*(int (**)(unsigned int))(*(unsigned int *)v6 + 44))(this->__pad_050) == 6 ? (unsigned int *)v6 : 0;
+      v7 = (*(int (**)(unsigned int))(*(unsigned int *)v6 + 44))(this->AirstrikeClass_field_50) == 6 ? (unsigned int *)v6 : 0;
     else
       v7 = 0; /*0x41da56*/
     if ( a2 )
@@ -169,7 +169,7 @@ LABEL_6:
       (*(void (**)(unsigned int *))(v10 + 344))(v7); /*0x41daae*/
       (*(void (**)(unsigned int *, int))(*v7 + 292))(v7, 2); /*0x41daba*/
     }
-    this->__pad_050 = 0; /*0x41dac2*/
+    this->AirstrikeClass_field_50 = 0; /*0x41dac2*/
     if ( v9 ) /*0x41dac9*/
     {
       v11 = *v9; /*0x41dacb*/
@@ -180,7 +180,7 @@ LABEL_6:
     v8 = this->EliteAirstrikeTeamTypeIndex; /*0x41daec*/
     v12 = this->AirstrikeClass_field_5C; /*0x41daef*/
     v13 = 0; /*0x41daf2*/
-    for ( this->__pad_050 = a2; v13 < v8; ++v13 ) /*0x41daf9*/
+    for ( this->AirstrikeClass_field_50 = a2; v13 < v8; ++v13 ) /*0x41daf9*/
     {
       if ( v12 ) /*0x41dafd*/
       {
@@ -412,7 +412,7 @@ int AirstrikeClass::Stat(AbstractClass * aP1)
 
 // 0x41D6F0
 namespace gamemd {
-int AirstrikeClass::Write(AbstractClass * aP0, int aP1)
+int AirstrikeClass::Write(AirstrikeClass * aP0, int aP1)
 {
 
   int Prefix_0; // edi

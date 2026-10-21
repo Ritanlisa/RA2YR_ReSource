@@ -87,7 +87,31 @@ struct ObjectTypeClass {
     char LineTrailColor_d[3];  // 0x23B
     unsigned short __pad_23E;  // 0x23E
     int LineTrailColor_2;  // 0x240
-    int VoxelCaches[20];  // 0x244
+    union {
+        int VoxelCaches[20];  // 0x244
+        struct {
+            int VoxelCaches_4;
+            unsigned int u32_248;
+            unsigned int u32_24C;
+            unsigned int u32_250;
+            SomeVoxelCache* q254;
+            unsigned int u32_258;
+            unsigned int u32_25C;
+            unsigned int u32_260;
+            char __pad_264[4];
+            unsigned int u32_268;
+            SomeVoxelCache* q26C;
+            SomeVoxelCache* q270;
+            unsigned int u32_274;
+            unsigned int u32_278;
+            unsigned int u32_27C;
+            char __pad_280[4];
+            unsigned int u32_284;
+            unsigned int u32_288;
+            unsigned int u32_28C;
+            SomeVoxelCache* q290;
+        };
+    };  // 0x244
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     AbstractClass * * Load2DArt(void *a1 = 0);

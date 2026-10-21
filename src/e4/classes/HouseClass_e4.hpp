@@ -159,7 +159,8 @@ struct HouseClass {
     bool firestormActive;  // 0x1FA
     bool hasThreatNode;  // 0x1FB
     bool recheckTechTree;  // 0x1FC
-    char HouseClass_field_1FD[15];  // 0x1FD
+    char HouseClass_field_1FD[11];  // 0x1FD
+    unsigned int u32_208;  // 0x208
     char selectedPathIndex[4];  // 0x20C
     int planningPaths[12];  // 0x210
     char visionary[1];  // 0x240
@@ -184,14 +185,20 @@ struct HouseClass {
     int lastBuiltAircraftType;  // 0x268
     char lastBuiltVehicleType[4];  // 0x26C
     int allowWinBlocks;  // 0x270
-    char repairTimer[12];  // 0x274
+    char repairTimer[4];  // 0x274
+    unsigned int u32_278;  // 0x278
+    unsigned int u32_27C;  // 0x27C
     int __pad_280;  // 0x280
     char __pad_284[4];  // 0x284
     int u32_288;  // 0x288
-    char HouseClass_field_timer_28C[12];  // 0x28C
-    char savourTimer[12];  // 0x298
-    char powerBlackoutTimer[12];  // 0x2A4
-    char radarBlackoutTimer[12];  // 0x2B0
+    char HouseClass_field_timer_28C[8];  // 0x28C
+    unsigned int u32_294;  // 0x294
+    char savourTimer[8];  // 0x298
+    unsigned int q2A0;  // 0x2A0
+    char powerBlackoutTimer[8];  // 0x2A4
+    unsigned int u32_2AC;  // 0x2AC
+    char radarBlackoutTimer[8];  // 0x2B0
+    unsigned int u32_2B8;  // 0x2B8
     bool side2TechInfiltrated;  // 0x2BC
     bool side1TechInfiltrated;  // 0x2BD
     bool side0TechInfiltrated;  // 0x2BE

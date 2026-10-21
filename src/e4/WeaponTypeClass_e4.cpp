@@ -89,7 +89,7 @@ int WeaponTypeClass::Process(ObjectClass * Source)
 } // namespace gamemd
 // 0x771C70
 namespace gamemd {
-unsigned int * WeaponTypeClass::Constructor(ObjectClass * aP1, void *a2, void *a3, void *a4, void *a5)
+unsigned int * WeaponTypeClass::Constructor(WeaponTypeClass * aP1, void *a2, void *a3, void *a4, void *a5)
 {
 
 
@@ -116,58 +116,58 @@ unsigned int * WeaponTypeClass::Constructor(ObjectClass * aP1, void *a2, void *a
   aP1->Anim[4] = 0; /*0x771d0f*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_131447) */  /*0x771d12*/
   aP1->OccupantAnim = 0; /*0x771d18*/
-  aP1->AssaultAnim = 0; /*0x771d1e*/
-  aP1->OpenToppedAnim = 0; /*0x771d24*/
+  aP1->AssaultAnim_d = 0; /*0x771d1e*/
+  aP1->OpenToppedAnim_d = 0; /*0x771d24*/
   aP1->AttachedParticleSystem = 0; /*0x771d2a*/
-  aP1->LaserInnerColor[0] = 0; /*0x771d30*/
-  aP1->LaserInnerColor[1] = 0; /*0x771d36*/
-  aP1->LaserInnerColor[2] = 0; /*0x771d3c*/
+  aP1->LaserInnerColor_d[0] = 0; /*0x771d30*/
+  aP1->LaserInnerColor_d[1] = 0; /*0x771d36*/
+  aP1->LaserInnerColor_d[2] = 0; /*0x771d3c*/
   aP1->LaserOuterColor[0] = 0; /*0x771d42*/
   aP1->LaserOuterColor[1] = 0; /*0x771d48*/
   aP1->LaserOuterColor[2] = 0; /*0x771d4e*/
   aP1->LaserOuterSpread[0] = 0; /*0x771d54*/
   aP1->LaserOuterSpread[1] = 0; /*0x771d5a*/
   aP1->LaserOuterSpread[2] = 0; /*0x771d60*/
-  aP1->UseFireParticles = 0; /*0x771d66*/
+  aP1->UseFireParticles_d = 0; /*0x771d66*/
   aP1->UseSparkParticles = 0; /*0x771d6c*/
   aP1->OmniFire = 0; /*0x771d72*/
   aP1->DistributedWeaponFire = 0; /*0x771d78*/
   aP1->IsRailgun = 0; /*0x771d7e*/
   aP1->Lobber = 0; /*0x771d84*/
   aP1->Bright = 0; /*0x771d8a*/
-  aP1->IsSonic = 0; /*0x771d90*/
-  aP1->Spawner = 0; /*0x771d96*/
-  aP1->LimboLaunch = 0; /*0x771d9c*/
-  aP1->DecloakToFire = 1; /*0x771da2*/
-  aP1->CellRangefinding = 0; /*0x771da9*/
+  aP1->IsSonic_d = 0; /*0x771d90*/
+  aP1->Spawner_d = 0; /*0x771d96*/
+  aP1->LimboLaunch_d = 0; /*0x771d9c*/
+  aP1->DecloakToFire_d = 1; /*0x771da2*/
+  aP1->CellRangefinding_d = 0; /*0x771da9*/
   aP1->FireOnce = 0; /*0x771daf*/
-  aP1->NeverUse = 0; /*0x771db5*/
-  aP1->RevealOnFire = 1; /*0x771dbb*/
+  aP1->NeverUse_d = 0; /*0x771db5*/
+  aP1->RevealOnFire_d = 1; /*0x771dbb*/
   aP1->TerrainFire = 0; /*0x771dc2*/
   aP1->SabotageCursor = 0; /*0x771dc8*/
   aP1->MigAttackCursor = 0; /*0x771dce*/
   aP1->DisguiseFireOnly = 0; /*0x771dd4*/
   aP1->DisguiseFakeBlinkTime = 0; /*0x771dda*/
-  aP1->InfiniteMindControl = 0; /*0x771de0*/
-  aP1->FireWhileMoving = 1; /*0x771de6*/
+  aP1->InfiniteMindControl_d = 0; /*0x771de0*/
+  aP1->FireWhileMoving_d = 1; /*0x771de6*/
   aP1->DrainWeapon = 0; /*0x771ded*/
   aP1->FireInTransport = 1; /*0x771df3*/
-  aP1->Suicide = 0; /*0x771dfa*/
+  aP1->Suicide_d = 0; /*0x771dfa*/
   aP1->TurboBoost = 0; /*0x771e00*/
-  aP1->Supress = 0; /*0x771e06*/
-  aP1->Camera = 0; /*0x771e0f*/
-  aP1->Charges = 0; /*0x771e16*/
-  aP1->IsLaser = 0; /*0x771e1c*/
+  aP1->Supress_d = 0; /*0x771e06*/
+  aP1->Camera_d = 0; /*0x771e0f*/
+  aP1->Charges_d = 0; /*0x771e16*/
+  aP1->IsLaser_d = 0; /*0x771e1c*/
   aP1->DiskLaser = 0; /*0x771e22*/
   aP1->IsLine = 0; /*0x771e28*/
   aP1->IsBigLaser = 0; /*0x771e2e*/
   aP1->IsHouseColor = 0; /*0x771e34*/
   aP1->LaserDuration = 10; /*0x771e3a*/
   aP1->IonSensitive = 0; /*0x771e41*/
-  aP1->AreaFire = 0; /*0x771e47*/
-  aP1->IsElectricBolt = 0; /*0x771e4d*/
-  aP1->DrawBoltAsLaser = 0; /*0x771e53*/
-  aP1->IsAlternateColor = 0; /*0x771e59*/
+  aP1->AreaFire_d = 0; /*0x771e47*/
+  aP1->IsElectricBolt_d = 0; /*0x771e4d*/
+  aP1->DrawBoltAsLaser_d = 0; /*0x771e53*/
+  aP1->IsAlternateColor_d = 0; /*0x771e59*/
   aP1->IsRadBeam = 0; /*0x771e5f*/
   aP1->IsRadEruption = 0; /*0x771e65*/
   aP1->RadLevel = 0; /*0x771e6b*/

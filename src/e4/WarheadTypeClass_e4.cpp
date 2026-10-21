@@ -351,35 +351,35 @@ LABEL_6:
 } // namespace gamemd
 // 0x75CEC0
 namespace gamemd {
-int WarheadTypeClass::Construct(ObjectClass * aP1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8, void *a9)
+int WarheadTypeClass::Construct(WarheadTypeClass * aP1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8, void *a9)
 {
 
 
   AbstractTypeClass::Constructor(aP1, a2); /*0x75cecb*/
   aP1->u32_98 = 0; /*0x75ced8*/
   aP1->Coord_9C = 0; /*0x75cede*/
-  aP1->u32_F8 = 0; /*0x75cee4*/
-  aP1->u32_FC = 1072693248; /*0x75ceeb*/
-  aP1->q100 = 0; /*0x75cef8*/
+  aP1->WarheadTypeClass_field_0xF8 = 0; /*0x75cee4*/
+  aP1->__pad_FC = 1072693248; /*0x75ceeb*/
+  aP1->WarheadTypeClass_field_0x100 = 0; /*0x75cef8*/
   AnimTypeVector::Constructor(&aP1->q104, 0, 0); /*0x75cefe*/
   *(unsigned int *)(aP1 + 276) = 0; /*0x75cf08*/
-  *&aP1->q118 = 10; /*0x75cf0b*/
+  *&aP1->OpenToppedAnim = 10; /*0x75cf0b*/
   /* X11: ptr_0 install elided (X68 star-arith-named, RHS g_var_131447) */  /*0x75cf0e*/
-  aP1->q120 = 0; /*0x75cf14*/
+  aP1->WarheadTypeClass_field_0x120 = 0; /*0x75cf14*/
   aP1->q124 = 0; /*0x75cf1a*/
   aP1->q128 = 0; /*0x75cf25*/
   aP1->q12C = 1065353216; /*0x75cf2b*/
-  aP1->q130 = 0; /*0x75cf31*/
-  aP1->q134 = 5; /*0x75cf37*/
-  aP1->q138 = 1065353216; /*0x75cf41*/
-  aP1->q13C = 0; /*0x75cf47*/
-  aP1->q140 = 0; /*0x75cf4d*/
-  aP1->u32_144 = 0; /*0x75cf53*/
+  aP1->IsSonic = 0; /*0x75cf31*/
+  aP1->CellRangefinding = 5; /*0x75cf37*/
+  aP1->TerrainFire = 1065353216; /*0x75cf41*/
+  aP1->DisguiseFakeBlinkTime = 0; /*0x75cf47*/
+  aP1->InfiniteMindControl = 0; /*0x75cf4d*/
+  aP1->Suicide = 0; /*0x75cf53*/
   aP1->u8_145 = 0; /*0x75cf59*/
-  aP1->q146 = 0; /*0x75cf5f*/
-  aP1->u8_147 = 0; /*0x75cf65*/
-  aP1->q148 = 0; /*0x75cf6b*/
-  aP1->u8_149 = 0; /*0x75cf71*/
+  aP1->Supress = 0; /*0x75cf5f*/
+  aP1->pad_147 = 0; /*0x75cf65*/
+  aP1->Charges = 0; /*0x75cf6b*/
+  aP1->WarheadTypeClass_field_bool_149 = 0; /*0x75cf71*/
   aP1->u8_14A = 0; /*0x75cf77*/
   aP1->u8_14B = 0; /*0x75cf7d*/
   aP1->u32_14C = 0; /*0x75cf83*/
@@ -387,7 +387,7 @@ int WarheadTypeClass::Construct(ObjectClass * aP1, void *a2, void *a3, void *a4,
   aP1->u8_14E = 0; /*0x75cf8f*/
   aP1->u8_14F = 0; /*0x75cf95*/
   aP1->q150 = 0; /*0x75cf9b*/
-  aP1->q151 = 0; /*0x75cfa1*/
+  aP1->CLDisableRed = 0; /*0x75cfa1*/
   aP1->q152 = 0; /*0x75cfa7*/
   aP1->q153 = 0; /*0x75cfad*/
   aP1->q154 = 0; /*0x75cfb3*/
@@ -401,23 +401,23 @@ int WarheadTypeClass::Construct(ObjectClass * aP1, void *a2, void *a3, void *a4,
   aP1->q15C = 1247291207; /*0x75cfee*/
   *(unsigned int *)(aP1 + 352) = 298948665; /*0x75cff9*/
   *(unsigned int *)(aP1 + 356) = -1610610249; /*0x75d001*/
-  aP1->q16C = 0; /*0x75d009*/
+  aP1->Airstrike = 0; /*0x75d009*/
   aP1->q16D = 0; /*0x75d00f*/
   *(unsigned int *)(aP1 + 360) = -777003740; /*0x75d015*/
   aP1->u8_16E = 0; /*0x75d01a*/
-  aP1->q170 = 0; /*0x75d020*/
-  aP1->q174 = 0; /*0x75d026*/
+  aP1->Paralyzes = 0; /*0x75d020*/
+  aP1->Culling = 0; /*0x75d026*/
   aP1->q175 = 0; /*0x75d02c*/
   aP1->q176 = 0; /*0x75d032*/
   aP1->u8_177 = 0; /*0x75d038*/
-  aP1->u32_178 = 0; /*0x75d03e*/
+  aP1->PsychicDamage = 0; /*0x75d03e*/
   aP1->u8_179 = 1; /*0x75d044*/
   aP1->u8_17A = 0; /*0x75d04a*/
   aP1->u8_17B = 0; /*0x75d050*/
-  aP1->u32_17C = 0; /*0x75d056*/
-  aP1->u32_180 = 0; /*0x75d05c*/
-  aP1->u32_184 = 0; /*0x75d06e*/
-  aP1->u32_188 = 0; /*0x75d074*/
+  aP1->WarheadTypeClass_field_0x17C = 0; /*0x75d056*/
+  aP1->WarheadTypeClass_field_0x180 = 0; /*0x75d05c*/
+  aP1->WarheadTypeClass_field_0x184 = 0; /*0x75d06e*/
+  aP1->WarheadTypeClass_field_0x188 = 0; /*0x75d074*/
   *(unsigned int *)(aP1 + 400) = 0; /*0x75d07a*/
   *(unsigned int *)(aP1 + 404) = 0; /*0x75d07d*/
   *(unsigned char *)(aP1 + 408) = 1; /*0x75d080*/
@@ -432,8 +432,8 @@ int WarheadTypeClass::Construct(ObjectClass * aP1, void *a2, void *a3, void *a4,
   *(unsigned int *)(aP1 + 444) = 10; /*0x75d0a1*/
   *(unsigned int *)(aP1 + 440) = 0; /*0x75d0a4*/
   /* X11: ptr_0 install elided (X68 star-arith-named, RHS g_var_131447) */  /*0x75d0a7*/
-  aP1->u32_1C4 = 0; /*0x75d0ae*/
-  aP1->u32_1C8 = 0; /*0x75d0b4*/
+  aP1->WarheadTypeClass_field_0x1C4 = 0; /*0x75d0ae*/
+  aP1->WarheadTypeClass_field_0x1C8 = 0; /*0x75d0b4*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7F6B04) */  /*0x75d0ba*/
   /* X11: ptr_0 install elided (X68 star-arith-named, RHS g_ptr_7F6B04) */  /*0x75d0c1*/
   /* X11: ptr_0 install elided (implicit via WarheadTypeClass virtuals 0x75d0c7) */

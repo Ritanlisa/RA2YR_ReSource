@@ -654,7 +654,7 @@ struct BuildingTypeClass {
     unsigned int __pad_1794;  // 0x1794
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
-    AbstractClass * * CleanupMembers(AbstractClass * a1, AbstractClass * a2);
+    AbstractClass * * CleanupMembers(BuildingTypeClass * a1, BuildingTypeClass * a2);
     AbstractClass * * FindOrCreateAlt();
     AbstractClass * * LoadRepairAnimations();
     AbstractClass * * SaveLoad_Prefix();

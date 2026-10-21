@@ -67,7 +67,7 @@ struct TeamTypeClass {
     void * CreateScriptType(char *Source, int a2, int a3, int aP1);
     AbstractClass * * FindOrCreateTaskForce(char *Source, int a2, int a3, int aP1);
     AbstractClass * * LoadFromINI(unsigned char *** aP1, void *a2, void * aTaskforce, void * aWaypoint);
-    AbstractClass * * GetMaxCount(CCINIClass * aP1, void * aTaskforce, void * aWaypoint);
+    AbstractClass * * GetMaxCount(TeamTypeClass * aP1, void * aTaskforce, void * aWaypoint);
 };
 
 } // namespace gamemd

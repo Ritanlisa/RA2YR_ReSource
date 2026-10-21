@@ -353,7 +353,7 @@ int TagClass::ProcessTag(int * a2)
 
 // 0x6E5730
 namespace gamemd {
-int TagClass::LoadTag(AbstractClass * aP0, int aP1)
+int TagClass::LoadTag(TagClass * aP0, int aP1)
 {
 
   int result; // eax

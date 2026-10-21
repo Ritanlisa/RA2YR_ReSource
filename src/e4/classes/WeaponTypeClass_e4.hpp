@@ -50,13 +50,13 @@ struct WeaponTypeClass {
     int OccupantAnim;  // 0x110
     AnimTypeClass* AssaultAnim_d;  // 0x114
     AnimTypeClass* OpenToppedAnim_d;  // 0x118
-    ParticleSystemTypeClass* __pad_11C;  // 0x11C
+    ParticleSystemTypeClass* AttachedParticleSystem;  // 0x11C
     char LaserInnerColor_d[3];  // 0x120
     char LaserOuterColor[3];  // 0x123
     char LaserOuterSpread[3];  // 0x126
     bool UseFireParticles_d;  // 0x129
     char UseSparkParticles[1];  // 0x12A
-    bool __pad_12B;  // 0x12B
+    bool OmniFire;  // 0x12B
     char DistributedWeaponFire[1];  // 0x12C
     char IsRailgun[1];  // 0x12D
     char Lobber[1];  // 0x12E
@@ -66,25 +66,25 @@ struct WeaponTypeClass {
     bool LimboLaunch_d;  // 0x132
     bool DecloakToFire_d;  // 0x133
     bool CellRangefinding_d;  // 0x134
-    bool __pad_135;  // 0x135
+    bool FireOnce;  // 0x135
     bool NeverUse_d;  // 0x136
     bool RevealOnFire_d;  // 0x137
-    bool __pad_138;  // 0x138
+    bool TerrainFire;  // 0x138
     char SabotageCursor[1];  // 0x139
     char MigAttackCursor[1];  // 0x13A
     char DisguiseFireOnly[1];  // 0x13B
     int DisguiseFakeBlinkTime;  // 0x13C
     bool InfiniteMindControl_d;  // 0x140
     bool FireWhileMoving_d;  // 0x141
-    bool __pad_142;  // 0x142
+    bool DrainWeapon;  // 0x142
     char FireInTransport[1];  // 0x143
     bool Suicide_d;  // 0x144
-    bool __pad_145;  // 0x145
+    bool TurboBoost;  // 0x145
     bool Supress_d;  // 0x146
     bool Camera_d;  // 0x147
     bool Charges_d;  // 0x148
     bool IsLaser_d;  // 0x149
-    bool __pad_14A;  // 0x14A
+    bool DiskLaser;  // 0x14A
     char IsLine[1];  // 0x14B
     char IsBigLaser[1];  // 0x14C
     char IsHouseColor[1];  // 0x14D
@@ -94,7 +94,7 @@ struct WeaponTypeClass {
     bool IsElectricBolt_d;  // 0x151
     bool DrawBoltAsLaser_d;  // 0x152
     bool IsAlternateColor_d;  // 0x153
-    bool __pad_154;  // 0x154
+    bool IsRadBeam;  // 0x154
     char IsRadEruption[1];  // 0x155
     char __pad_156[2];  // 0x156
     int RadLevel;  // 0x158
@@ -112,7 +112,7 @@ struct WeaponTypeClass {
     int GetTypeIdentifier();
     int Process(ObjectClass * Source);
     int ProcessPower(int * a2, void *a2_2);
-    unsigned int * Constructor(ObjectClass * aP1, void *a2, void *a3, void *a4, void *a5);
+    unsigned int * Constructor(WeaponTypeClass * aP1, void *a2, void *a3, void *a4, void *a5);
     unsigned int *  loadWeaponProperties(int aP1, void *a2 = 0);
     void * Create(AbstractClass * Source, void *a2 = 0, void *a3 = 0, void *a4 = 0);
     void * Create(AbstractClass * Source);

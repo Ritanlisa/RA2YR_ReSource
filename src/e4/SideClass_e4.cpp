@@ -127,7 +127,7 @@ int SideClass::LoadAllFromINI(CCINIClass * aP0)
 }  // G42.18 ns repair
 // 0x6A4550
 namespace gamemd {
-int SideClass::Construct(CCINIClass * aP1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8, void *a9)
+int SideClass::Construct(SideClass * aP1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8, void *a9)
 {
 
 

@@ -127,7 +127,7 @@ void FilePipe_30::ddtor(void *a1)
     operator delete((v2)); /*0x4778b6*/
     *&this->u32_4 = 0; /*0x4778be*/
   }
-  (((unsigned char *)&(*&this->__pad_00C))[1]) = 0; /*0x4778c1*/
+  (((unsigned char *)&(*&this->m_C))[1]) = 0; /*0x4778c1*/
   this->Capacity = 0; /*0x4778c4*/
 }
 } // namespace gamemd
@@ -136,7 +136,7 @@ void FilePipe_30::ddtor(void *a1)
 namespace gamemd {
 unsigned int FilePipe_30::Write(int a2)
 {
-  if ( (*((unsigned char *)&(*&this->__pad_00C))) ) /*0x4778d0*/
+  if ( (*((unsigned char *)&(*&this->m_C))) ) /*0x4778d0*/
     return (unsigned int)(a2 - *&this->u32_4) >> 2; /*0x4778e5*/
   else
     return 0; /*0x4778d7*/
@@ -370,7 +370,7 @@ void FilePipe_30::Clear(void *a1_1)
 namespace gamemd {
 unsigned int FilePipe_30::GetCount(int a2)
 {
-  if ( (*((unsigned char *)&(*&this->__pad_00C))) ) /*0x4b9c10*/
+  if ( (*((unsigned char *)&(*&this->m_C))) ) /*0x4b9c10*/
     return (unsigned int)(a2 - *&this->u32_4) >> 2; /*0x4b9c25*/
   else
     return 0; /*0x4b9c17*/
@@ -390,7 +390,7 @@ void FilePipe_30::Clear_0()
     operator delete((v2)); /*0x4b9c56*/
     *&this->u32_4 = 0; /*0x4b9c5e*/
   }
-  (((unsigned char *)&(*&this->__pad_00C))[1]) = 0; /*0x4b9c61*/
+  (((unsigned char *)&(*&this->m_C))[1]) = 0; /*0x4b9c61*/
   this->Capacity = 0; /*0x4b9c64*/
 }
 } // namespace gamemd
@@ -399,7 +399,7 @@ void FilePipe_30::Clear_0()
 namespace gamemd {
 unsigned int FilePipe_30::GetCount_0(int a2)
 {
-  if ( (*((unsigned char *)&(*&this->__pad_00C))) ) /*0x4b9c70*/
+  if ( (*((unsigned char *)&(*&this->m_C))) ) /*0x4b9c70*/
     return (unsigned int)(a2 - *&this->u32_4) >> 2; /*0x4b9c85*/
   else
     return 0; /*0x4b9c77*/

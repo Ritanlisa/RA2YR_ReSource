@@ -430,7 +430,7 @@ unsigned int * BuildingTypeClass::loadBuildingProperty_b_545E520(int aP1)
 } // namespace gamemd
 // 0x45E580
 namespace gamemd {
-AbstractClass * * BuildingTypeClass::CleanupMembers(AbstractClass * a1, AbstractClass * a2)
+AbstractClass * * BuildingTypeClass::CleanupMembers(BuildingTypeClass * a1, BuildingTypeClass * a2)
 {
 
 

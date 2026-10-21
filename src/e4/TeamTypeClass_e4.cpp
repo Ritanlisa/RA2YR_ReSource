@@ -617,7 +617,7 @@ AbstractClass * * TeamTypeClass::LoadFromINI(unsigned char *** aP1, void *a2, vo
 }
 // 0x6F1550
 namespace gamemd {
-AbstractClass * * TeamTypeClass::GetMaxCount(CCINIClass * aP1, void * aTaskforce, void * aWaypoint)
+AbstractClass * * TeamTypeClass::GetMaxCount(TeamTypeClass * aP1, void * aTaskforce, void * aWaypoint)
 {
 
 

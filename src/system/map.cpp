@@ -614,7 +614,7 @@ int MapClass::RevealArea1(CoordStruct* coords, int radius, HouseClass* owner, Ce
   if ( owner != *(void **)((char *)&stru_A83CD9.estimatedHealth + 3) ) /*0x567abf*/
   {
     if ( ((1 << *(unsigned int *)(*(unsigned int *)(*(int *)((char *)&stru_A83CD9.estimatedHealth + 3) + 52) + 184)) /*0x567ad7*/
-        & owner->u32_54E4) != 0 )
+        & owner->radarVisibleTo) != 0 )
     {
       v25 = *(HouseClass **)((char *)&stru_A83CD9.estimatedHealth + 3); /*0x567ad9*/
       owner = *(void **)((char *)&stru_A83CD9.estimatedHealth + 3); /*0x567adb*/

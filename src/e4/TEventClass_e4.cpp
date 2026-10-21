@@ -816,7 +816,7 @@ int TEventClass::ddtor(int a1, unsigned int * a2)
 
 // 0x71F8C0
 namespace gamemd {
-int TEventClass::SaveLoad_Prefix(AbstractClass * aP0, int aP1)
+int TEventClass::SaveLoad_Prefix(TEventClass * aP0, int aP1)
 {
 
   int result; // eax

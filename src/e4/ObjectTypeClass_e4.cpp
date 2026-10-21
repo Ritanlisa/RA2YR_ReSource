@@ -142,7 +142,7 @@ int ObjectTypeClass::ConstructFull(char *aP1)
   char v10; // [esp+20h] [ebp-4h]
 
   AbstractTypeClass::Constructor(this, aP1); /*0x5f709c*/
-  int *v3 = &this->TurretVoxel; // eax /*0x5f70a3*/
+  int *v3 = &this->TurretVoxel_d; // eax /*0x5f70a3*/
   this->u32_98 = 0; /*0x5f70a9*/
   this->__pad_099 = 0; /*0x5f70af*/
   this->u32_9A = 0; /*0x5f70b5*/
@@ -637,13 +637,13 @@ void* ObjectTypeClass::LoadFromINI(uint8_t ***aP1, void *a2)
   if ( !(unsigned __int8)AbstractTypeClass::LoadFromINI((AbstractTypeClass *)this, aP1) ) /*0x5f92eb*/
     return 0; /*0x5f969e*/
   char Source[28]; // [esp+Ch] [ebp-1A0h] BYREF
-  strcpy(Source, this->ImageFile); /*0x5f931c*/
+  strcpy(Source, this->ImageFile_0x19); /*0x5f931c*/
   INIClass::GetString( /*0x5f933b*/
     (INIClass *)aP1,
     (unsigned __int8 *)this->?,
     (unsigned __int8 *)g_INI_Key_Image,
     Source,
-    this->ImageFile,
+    this->ImageFile_0x19,
     25);
   int v34; // [esp+8h] [ebp-1A4h] BYREF
   v34 = (int)strcpy(Source, this->AlphaImageFile); /*0x5f9366*/
@@ -679,23 +679,23 @@ void* ObjectTypeClass::LoadFromINI(uint8_t ***aP1, void *a2)
     v6 = AmbientSound; /*0x5f93fb*/
   }
   char Crushable; // cl
-  Crushable = this->Crushable; /*0x5f93fd*/
+  Crushable = this->Crushable_d; /*0x5f93fd*/
   this->AmbientSound = v6; /*0x5f9403*/
   char Bool_Overwrite; // al
   Bool_Overwrite = INIClass::ReadBool_Overwrite((int *)aP1, (unsigned __int8 *)this->ptr_4, aCrushable, Crushable); /*0x5f9412*/
   char Bombable; // [esp-Ch] [ebp-1B8h]
-  Bombable = this->Bombable; /*0x5f941f*/
-  this->Crushable = Bool_Overwrite; /*0x5f9426*/
-  this->Bombable = INIClass::ReadBool_Overwrite((int *)aP1, (unsigned __int8 *)this->Bombable_d, aBombable, Bombable); /*0x5f9431*/
+  Bombable = this->Bombable_d; /*0x5f941f*/
+  this->Crushable_d = Bool_Overwrite; /*0x5f9426*/
+  this->Bombable_d = INIClass::ReadBool_Overwrite((int *)aP1, (unsigned __int8 *)this->Bombable_d, aBombable, Bombable); /*0x5f9431*/
   char v9; // al
   v9 = INIClass::ReadBool_Overwrite((int *)aP1, (unsigned __int8 *)this->ptr_4, aNospawnalt, this->NoSpawnAlt_2); /*0x5f9446*/
   char AlternateArcticArt; // cl
-  AlternateArcticArt = this->AlternateArcticArt; /*0x5f944b*/
+  AlternateArcticArt = this->AlternateArcticArt_d; /*0x5f944b*/
   this->NoSpawnAlt_2 = v9; /*0x5f9451*/
   char v11; // al
   v11 = INIClass::ReadBool_Overwrite((int *)aP1, (unsigned __int8 *)this->ptr_4, aAlternatearcti, AlternateArcticArt); /*0x5f9460*/
   char RadarInvisible; // [esp-Ch] [ebp-1B8h]
-  RadarInvisible = this->RadarInvisible; /*0x5f946d*/
+  RadarInvisible = this->RadarInvisible_d; /*0x5f946d*/
   this->AlternateArcticArt = v11; /*0x5f9474*/
   this->RadarInvisible = INIClass::ReadBool_Overwrite( /*0x5f947f*/
                            (int *)aP1,
@@ -751,14 +751,14 @@ void* ObjectTypeClass::LoadFromINI(uint8_t ***aP1, void *a2)
   this->IgnoresFirestorm = v20; /*0x5f958c*/
   this->UseLineTrail = INIClass::ReadBool_Overwrite( /*0x5f959d*/
                          (int *)&DataGlobal_887180,
-                         (unsigned __int8 *)this->ImageFile,
+                         (unsigned __int8 *)this->ImageFile_0x19,
                          aUselinetrail,
                          UseLineTrail);
   int v21; // eax
   v21 = INIClass::GetCoord( /*0x5f95b4*/
           (INIClass *)&DataGlobal_887180,
           (int)&v34,
-          (unsigned __int8 *)this->ImageFile,
+          (unsigned __int8 *)this->ImageFile_0x19,
           aLinetrailcolor,
           (unsigned __int8 *)this->LineTrailColor);
   *(unsigned short *)this->LineTrailColor = *(unsigned short *)v21; /*0x5f95bc*/
@@ -768,7 +768,7 @@ void* ObjectTypeClass::LoadFromINI(uint8_t ***aP1, void *a2)
   int v22; // eax
   v22 = INIClass::ReadInt_Overwrite( /*0x5f95d7*/
           (bool *)&DataGlobal_887180,
-          (unsigned __int8 *)this->ImageFile,
+          (unsigned __int8 *)this->ImageFile_0x19,
           aLinetrailcolor_0,
           LineTrailColorDecrement);
   char Theater; // cl
@@ -777,7 +777,7 @@ void* ObjectTypeClass::LoadFromINI(uint8_t ***aP1, void *a2)
   char v24; // al
   v24 = INIClass::ReadBool_Overwrite( /*0x5f95f4*/
           (int *)&DataGlobal_887180,
-          (unsigned __int8 *)this->ImageFile,
+          (unsigned __int8 *)this->ImageFile_0x19,
           (unsigned __int8 *)g_INI_Key_Theater,
           Theater);
   char NewTheater; // [esp-Ch] [ebp-1B8h]
@@ -785,13 +785,13 @@ void* ObjectTypeClass::LoadFromINI(uint8_t ***aP1, void *a2)
   this->Theater = v24; /*0x5f960b*/
   this->NewTheater = INIClass::ReadBool_Overwrite( /*0x5f9616*/
                        (int *)&DataGlobal_887180,
-                       (unsigned __int8 *)this->ImageFile,
+                       (unsigned __int8 *)this->ImageFile_0x19,
                        aNewtheater,
                        NewTheater);
   char v25; // al
   v25 = INIClass::ReadBool_Overwrite( /*0x5f962e*/
           (int *)&DataGlobal_887180,
-          (unsigned __int8 *)this->ImageFile,
+          (unsigned __int8 *)this->ImageFile_0x19,
           aVoxel,
           this->Voxel);
   this->Voxel = v25; /*0x5f9634*/

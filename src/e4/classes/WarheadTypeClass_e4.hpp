@@ -122,7 +122,7 @@ struct WarheadTypeClass {
     TypeList_flat * QueryInterface(char a2);
     WarheadTypeClass * parseAnimations(char a2);
     char AddRef(int a2);
-    int Construct(ObjectClass * aP1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7 = 0, void *a8 = 0, void *a9 = 0);  // G42.35f: ida truth 0x75CEC0 int return
+    int Construct(WarheadTypeClass * aP1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7 = 0, void *a8 = 0, void *a9 = 0);  // G42.35f: ida truth 0x75CEC0 int return
     TypeList_flat * QueryInterface(unsigned int * Block, char a2);
     WarheadTypeClass * parseAnimations(char * Block, char a2);
     int FindOrCreate(ObjectClass * Source);

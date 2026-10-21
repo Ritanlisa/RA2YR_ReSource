@@ -158,7 +158,7 @@ int FactoryClass::DemandProduction(int a2, void *a3, char a4)
     BuildingClass::AbandonProduction(this); /*0x4c9c89*/
   if ( (*(int (**)(int))(*(unsigned int *)a2 + 44))(a2) == 7 /*0x4c9ccf*/
     || (!this->queuedCapacity || this->isSuspended)
-    && this->q050 <= 0
+    && this->u32_50 <= 0
     && (!this->q058 || !this->isSuspended)
     || a4 )
   {
@@ -191,7 +191,7 @@ int FactoryClass::DemandProduction(int a2, void *a3, char a4)
     }
     return this->q058 != 0; /*0x4c9dfc*/
   }
-  else if ( this->q050 >= dword_8871E0->BaseUnderAttackSound /*0x4c9cea*/
+  else if ( this->u32_50 >= dword_8871E0->BaseUnderAttackSound /*0x4c9cea*/
          || HouseClass::ShouldDisableCameo(*&this->owner, a2) )
   {
     if ( (unsigned __int8)House::IsHumanPlayer(a3) ) /*0x4c9d3f*/
@@ -201,7 +201,7 @@ int FactoryClass::DemandProduction(int a2, void *a3, char a4)
   else
   {
     v5 = this->u32_48; /*0x4c9cf3*/
-    v6 = this->q050; /*0x4c9cf6*/
+    v6 = this->u32_50; /*0x4c9cf6*/
     v7 = &this->onHold; /*0x4c9cf9*/
     if ( v6 < v5 /*0x4c9d1b*/
       || (*(unsigned char *)(v7 + 13) || !v5)
@@ -323,7 +323,7 @@ int FactoryClass::LoadFromStream(int a1, int * a2)
       TechnoTypeVector::Constructor((TechnoTypeVector *)v3->onHold, 0, 0); /*0x4ca2b2*/
       /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E8934) */  /*0x4ca2b7*/
       *&v3->u32_54 = 10; /*0x4ca2bd*/
-      *&v3->q050 = 0; /*0x4ca2c4*/
+      *&v3->u32_50 = 0; /*0x4ca2c4*/
       /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_fbe4b4) */  /*0x4ca2c7*/
       /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_fbe4b4) */  /*0x4ca2cd*/
       /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_fbe4b4) */  /*0x4ca2d4*/
@@ -362,7 +362,7 @@ LABEL_14:
           if ( result < 0 ) /*0x4ca31e*/
             break; /*0x4ca31e*/
           v8 = *&v3->u32_48; /*0x4ca324*/
-          if ( *&v3->q050 < v8 /*0x4ca349*/
+          if ( *&v3->u32_50 < v8 /*0x4ca349*/
             || (v3->u32_4D || !v8)
             && (v9 = *&v3->u32_54, v9 > 0)
             && (*(unsigned __int8 (**)(char *, int, unsigned int))(*(unsigned int *)v3->onHold + 8))(
@@ -370,9 +370,9 @@ LABEL_14:
                  v8 + v9,
                  0) )
           {
-            v10 = *&v3->q050; /*0x4ca350*/
+            v10 = *&v3->u32_50; /*0x4ca350*/
             v11 = *&v3->u32_44; /*0x4ca353*/
-            *&v3->q050 = v10 + 1; /*0x4ca359*/
+            *&v3->u32_50 = v10 + 1; /*0x4ca359*/
             v11[v10] = (unsigned int)a2; /*0x4ca360*/
           }
           v6 = this; /*0x4ca367*/

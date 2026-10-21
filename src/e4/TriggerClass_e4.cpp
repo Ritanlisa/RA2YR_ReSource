@@ -177,7 +177,7 @@ int TriggerClass::ddtor(int a1, unsigned int * a2)
 
 // 0x726860
 namespace gamemd {
-int TriggerClass::LoadTrigger(AbstractClass * aP0, int aP1)
+int TriggerClass::LoadTrigger(TriggerClass * aP0, int aP1)
 {
 
   int result; // eax

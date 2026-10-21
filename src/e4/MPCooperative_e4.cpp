@@ -471,15 +471,15 @@ unsigned int * MPCooperative::ctor(MultiplayerGameMode * aP1, MPCooperative * aP
     --v13; /*0x5c151e*/
   }
   while ( v13 ); /*0x5c151f*/
-  int *p_MPCooperative_field_0x324 = &this->q324; // esi /*0x5c1521*/
-  this->q324)->Construct(0, 0); /*0x5c152b*/
+  int *p_MPCooperative_field_0x324 = &this->MPCooperative_field_0x324; // esi /*0x5c1521*/
+  this->MPCooperative_field_0x324)->Construct(0, 0); /*0x5c152b*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E3238) */  /*0x5c1530*/
   *&this->q014 = (unsigned int)(10); /*0x5c1536*/
   *&this->q334 = 0; /*0x5c153d*/
   /* X11: ptr_0 install elided (implicit via MPCooperative virtuals) */
   this->u32_40 = 0;
   this->q044 = 0;
-  this->q33C = 0;
+  this->MPCooperative_field_0x33C = 0;
   this->ptr_50 = 0;
   this->__pad_004)[0] = 0; /*0x5c1555*/
   (this->q048) = 0; /*0x5c1559*/
@@ -500,8 +500,8 @@ unsigned int * MPCooperative::ctor(MultiplayerGameMode * aP1, MPCooperative * aP
     }
   }
   int v18 = *&this->q32C; // ebp /*0x5c1598*/
-  p_MPCooperative_field_0x324->Cleanup5(&this->q324);
-  p_MPCooperative_field_0x324->Release(&this->q324, v18, 0);
+  p_MPCooperative_field_0x324->Cleanup5(&this->MPCooperative_field_0x324);
+  p_MPCooperative_field_0x324->Release(&this->MPCooperative_field_0x324, v18, 0);
   ((CampaignClass *)((int *)&g_DDrawSurfaceManager))->GetValue((unsigned int *)(&aP4)); /*0x5c15b3*/
   for ( aP6 = 0; (int)aP6 < (int)aP4; ++aP6 ) /*0x5c15c2*/
   {
@@ -521,7 +521,7 @@ unsigned int * MPCooperative::ctor(MultiplayerGameMode * aP1, MPCooperative * aP
       int v22 = *&this->q014; // ecx /*0x5c1600*/
       if ( v22 <= 0 /*0x5c160f*/
         || !(*(uint8_t (**)(int *, int, unsigned int))(this->q32C)(
-              &this->q324,
+              &this->MPCooperative_field_0x324,
               v21 + v22,
               0) )
       {

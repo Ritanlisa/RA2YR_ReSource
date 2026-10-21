@@ -31,7 +31,7 @@ struct TagClass {
     TagClass * ProcessTrigger(char a2);
     int CheckEvent(int a2, TagTypeClass * aP2);
     char HasValidHouse(void *a1 = 0);
-    int LoadTag(AbstractClass * aP0, int aP1);
+    int LoadTag(TagClass * aP0, int aP1);
     int ProcessTag(int * a2);
     int SaveTag(TechnoTypeClass * aP0, int * a1, int aP2);
     int StubReturn44();

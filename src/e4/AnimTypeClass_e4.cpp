@@ -101,7 +101,7 @@ AnimTypeClass * AnimTypeClass::Construct(char *aP1, void *a2, void *a3, void *a4
   this->Damage[1] = 0; /*0x427568*/
   this->Rate = 1; /*0x42756e*/
   this->Start = 0; /*0x427578*/
-  this->LoopStart = 0; /*0x42757e*/
+  this->LoopStart_d = 0; /*0x42757e*/
   this->LoopEnd_d = 0; /*0x427584*/
   this->End_d = 0; /*0x42758a*/
   this->LoopCount = 0; /*0x427590*/
@@ -110,10 +110,10 @@ AnimTypeClass * AnimTypeClass::Construct(char *aP1, void *a2, void *a3, void *a4
   this->NumParticles = 0; /*0x4275a2*/
   this->DetailLevel_d = 0; /*0x4275a8*/
   this->TranslucencyDetailLevel_d = 0; /*0x4275ae*/
-  this->RandomLoopDelay[0] = 0; /*0x4275b4*/
-  this->RandomLoopDelay[1] = 0; /*0x4275ba*/
-  this->RandomRate[0] = 0; /*0x4275c0*/
-  this->RandomRate[1] = 0; /*0x4275c6*/
+  this->RandomLoopDelay_d[0] = 0; /*0x4275b4*/
+  this->RandomLoopDelay_d[1] = 0; /*0x4275ba*/
+  this->RandomRate_d[0] = 0; /*0x4275c0*/
+  this->RandomRate_d[1] = 0; /*0x4275c6*/
   this->Translucency_d = 0; /*0x4275cc*/
   this->Spawns_d = 0; /*0x4275d2*/
   this->SpawnCount = 0; /*0x4275d8*/
@@ -251,7 +251,7 @@ void* AnimTypeClass::GetWarhead(int a2)
       ImageFile = (const char *)(this->ImageFile); /*0x427ba5*/
       this->Image = 0; /*0x427bad*/
       if ( !v4 ) /*0x427bb7*/
-        ImageFile = (const char *)this->LoopStart; /*0x427bb9*/
+        ImageFile = (const char *)this->LoopStart_d; /*0x427bb9*/
       char Buffer[512]; // [esp+4h] [ebp-200h] BYREF
       _makepath(Buffer, 0, 0, ImageFile, Ext); /*0x427bcb*/
       TheaterObjectTypeClassSpecificID(Buffer, a2); /*0x427bde*/
@@ -464,7 +464,7 @@ int AnimTypeClass::PowerDrainUpdate(int * a2)
   ((Power *)a2)->FlagProcess(v13); /*0x428aa4*/
   Power::TimerProcess(this->Rate); /*0x428ab2*/
   Power::TimerProcess(this->Start); /*0x428ac0*/
-  Power::TimerProcess(this->LoopStart); /*0x428ace*/
+  Power::TimerProcess(this->LoopStart_d); /*0x428ace*/
   Power::TimerProcess(this->LoopEnd_d); /*0x428adc*/
   Power::TimerProcess(this->End_d); /*0x428aea*/
   Power::TimerProcess(this->Report_d); /*0x428af8*/
@@ -472,8 +472,8 @@ int AnimTypeClass::PowerDrainUpdate(int * a2)
   Power::TimerProcess(this->NumParticles); /*0x428b14*/
   Power::TimerProcess(this->DetailLevel_d); /*0x428b22*/
   Power::TimerProcess(this->TranslucencyDetailLevel_d); /*0x428b30*/
-  Power::TimerProcess(this->RandomLoopDelay[0]); /*0x428b3e*/
-  Power::TimerProcess(this->RandomLoopDelay[1]); /*0x428b4c*/
+  Power::TimerProcess(this->RandomLoopDelay_d[0]); /*0x428b3e*/
+  Power::TimerProcess(this->RandomLoopDelay_d[1]); /*0x428b4c*/
   Power::TimerProcess(this->Translucency_d); /*0x428b5a*/
   int v14; // ecx
   LOBYTE(v14) = this->Tiled; /*0x428b5f*/
@@ -533,15 +533,15 @@ int AnimTypeClass::GetDamage()
     Debug::Log(); /*0x428c5e*/
     ImageFile = this->ImageFile; /*0x428c69*/
     if ( !this->ImageFile[0] ) /*0x428c63*/
-      ImageFile = (const char *)this->LoopStart; /*0x428c76*/
+      ImageFile = (const char *)this->LoopStart_d; /*0x428c76*/
     _makepath(Buffer, 0, 0, ImageFile, Ext); /*0x428c8b*/
-    if ( this->Theater ) /*0x428c90*/
+    if ( this->Theater_d ) /*0x428c90*/
     {
       _makepath( /*0x428ccc*/
         Buffer,
         0,
         0,
-        (const char *)this->LoopStart,
+        (const char *)this->LoopStart_d,
         (const char *)&off_7E1BC6 + 112 * dword_A8B230[130].uniqueId);
     }
     else if ( this->NewTheater_d ) /*0x428cd6*/
