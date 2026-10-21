@@ -27,7 +27,6 @@ State::State()
     , ScenIndex(0)
     , MapIndex(0)
     , LastSave(0)
-    , q034(0)
 {
 }
 
@@ -90,7 +89,7 @@ WDTError Map::Load()
   int result; // eax
 
   result = -1; /*0x552c96*/
-  if ( dword_A8B238[0] )
+  if ( g_GameMode_Current )
     return (gamemd::wdt::WDTError)(g_DisplayWidth != 640 ? 406 : 326);
   return (gamemd::wdt::WDTError)(result);
 }
@@ -109,7 +108,6 @@ Territory::Territory()
     : OwnerIndex(-1)
     , IncomePerTurn(0)
     , Center{}
-    , q058(0)
 {
     std::memset(Name, 0, sizeof(Name));
 }
@@ -156,7 +154,6 @@ Conflict::Conflict()
     : Attacker(nullptr)
     , Defender(nullptr)
     , Outcome(0)
-    , q014(0)
 {
 }
 
@@ -224,9 +221,11 @@ WDTError Campaign::Load(const char* filename)
 
 History::History()
 {
+}
 
 History::~History()
 {
+}
 
 void History::Record(const char* event)
 {
@@ -235,16 +234,15 @@ void History::Record(const char* event)
     entry.Frame = 0;
     std::strncpy(entry.Text, event ? event : "", sizeof(entry.Text) - 1);
     entries.push_back(entry);
+}
 
-void History::Clear()
+int History::Clear()
 {
     entries.clear();
+    return 0;
+}
 
 // TODO: complete WDT implementations
 
 } // namespace wdt
 } // namespace gamemd
-} // namespace wdt
-} // namespace gamemd
-} // namespace gamemd
-} // namespace wdt

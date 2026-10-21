@@ -280,7 +280,9 @@ bool GetField(HWND hWnd)
 int GetMode3(void* dialog_data)
 {
     uint8_t* ptr = (uint8_t*)(dialog_data);
-    return ptr->u32_3C != 0 ? 3 : -2;
+    uint32_t value = 0;
+    memcpy(&value, &ptr[0x3C], sizeof(value));
+    return value != 0 ? 3 : -2;
 }
 
 // IDA 0x5D5DC0: Dialog::GetModeNeg2 — returns 0 if *(this+63) else -2
@@ -345,9 +347,12 @@ void CleanupTree(void* dialog_data)
 {
     // IDA: free *(&this->q0100), cleanup linked list at *(&this->u32_142), DeleteAndZero::Alt *(&this->u32_180)
     uint8_t* base = (uint8_t*)(dialog_data);
-    uint32_t* ptr40 = &base->u16_28;
-    uint32_t* ptr52 = &base->q034;
-    uint32_t* ptr60 = &base->u32_3C;
+    uint32_t* ptr40 = nullptr;
+    uint32_t* ptr52 = nullptr;
+    uint32_t* ptr60 = nullptr;
+    memcpy(&ptr40, &base[0x28], sizeof(ptr40));
+    memcpy(&ptr52, &base[0x34], sizeof(ptr52));
+    memcpy(&ptr60, &base[0x3C], sizeof(ptr60));
 
     if (*ptr40) {
         // IDA: operator delete(*(&this->q0100))
@@ -433,7 +438,7 @@ int SideIDToIndex(int side_id)
 }
 
 // IDA 0x5EE350: Dialog::RefreshDialogsGame — refresh observe buttons on game dialogs
-void RefreshDialogsGame()
+int RefreshDialogsGame()
 {
     HWND hWnd;
     hWnd = FindByPtr_impl(0x116);
@@ -442,6 +447,7 @@ void RefreshDialogsGame()
     if (hWnd) { /* UpdateObserveButtonWOL(hWnd) */ }
     hWnd = FindByPtr_impl(0xBB);
     if (hWnd) { /* UpdateObserveButtonWOL(hWnd) */ }
+    return 0;
 }
 
 // IDA 0x49F740: Dialog::sub_49F740 — copy protection message handler
@@ -778,6 +784,7 @@ void DestroyDialogSystem()
     g_count = 0;
     g_currentHwnd = 0;
     g_currentType = 0;
+}
 
 // IDA 0x5D3490: Dialog::ShowMessageBox — show CSF-message dialog
 // 524 bytes — Creates dialog from resource, loads CSF strings, shows message
@@ -795,8 +802,7 @@ int ShowMessageBox(const wchar_t* msg, const wchar_t* ok, const wchar_t* cancel,
         ok ? ok : L"OK", type | MB_ICONINFORMATION);
 
     return (result == IDOK) ? 1 : 0;
+}
 
 } // namespace Dialog
 } // namespace gamemd
-} // namespace gamemd
-} // namespace Dialog

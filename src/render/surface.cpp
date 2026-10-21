@@ -336,10 +336,9 @@ REVERSE(0x4C1A90, "DSurface::BlitWhole: Thin wrapper around Blit", "None")
 // NOTE: parameter type must be spelled `class Surface*` here - inside the
 // scope of DSurface:: the plain name `Surface` resolves to the data member
 // DSurface::Surface (LPDIRECTDRAWSURFACE7).
+bool DSurface::BlitWhole(class Surface* src, bool option1, bool option2)
 {
-  XSurface *v3; // ecx
-
-  return XSurface::BlitWhole(v3, (int *)this, a2, a3); /*0x4c1aa4*/
+  return XSurface::BlitWhole(src, option1, option2); /*0x4c1aa4*/
 }
 // IDA: 0x4BB080 — DSurface::BlitPart (80B) thin wrapper
 // GetRect(src) -> v11 (src surface bounds), GetRect(this) -> v12 (dest surface
@@ -348,21 +347,15 @@ REVERSE(0x4C1A90, "DSurface::BlitWhole: Thin wrapper around Blit", "None")
 // MSVC6 thiscall argument-reuse noise.
 // 0x4bb080
 bool DSurface::BlitPart(
+    const RectangleStruct& dest_rect, class Surface* src,
+    const RectangleStruct& src_rect, bool option1, bool option2)
 {
-  int (__thiscall **DSurface_field_0x0)(DSurface *, int); // ebx
-  int v8; // eax
-  int v9; // eax
-  unsigned char v11[28]; // [esp+Ch] [ebp-20h] BYREF
-  unsigned char v12[4]; // [esp+28h] [ebp-4h] BYREF
+  RectangleStruct src_bounds;
+  RectangleStruct dest_bounds;
 
-  DSurface_field_0x0 = (int (__thiscall **)(DSurface *, int))this->ptr_0; /*0x4bb098*/
-  v8 = (*(int (__thiscall **)(int, unsigned char *, int, int, int))(*(unsigned int *)a3 + 120))(a3, v11, a4, a5, a6); /*0x4bb0a6*/
-  v9 = (*((int (__thiscall **)(DSurface *, unsigned char *, int, int, int))this->ptr_0 + 30))( /*0x4bb0b9*/
-         this,
-         v12,
-         a5,
-         a3,
-         v8);
-  return DSurface_field_0x0[3](this, v9); /*0x4bb0c2*/
+  src->GetRect(&src_bounds); /*0x4bb0a6*/
+  this->GetRect(&dest_bounds); /*0x4bb0b9*/
+  return XSurface::Blit(dest_bounds, dest_rect, src, src_bounds, src_rect,
+                        option1, option2); /*0x4bb0c2*/ /*0x4bb098*/
 }
 } // namespace gamemd

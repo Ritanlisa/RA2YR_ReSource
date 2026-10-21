@@ -80,19 +80,19 @@ namespace {
 struct FoggedDrawEntry { void* obj; int dx, dy, dz, flags; };
 static constexpr int kMax = 512;
 static FoggedDrawEntry g_list[kMax];
-static int g_count = 0;
+static int g_fogDrawCount = 0;
 
 }
 
 void FoggedObjectDrawList_Add(void* obj, int dx, int dy, int dz, int flags)
 {
-    if (g_count < (int)(kMax)) { g_list[(unsigned int)(g_count)++] = {obj, dx, dy, dz, flags}; }
+    if (g_fogDrawCount < (int)(kMax)) { g_list[(unsigned int)(g_fogDrawCount)++] = {obj, dx, dy, dz, flags}; }
 }
-void FoggedObjectDrawList_Clear() { g_count = 0; std::memset(g_list, 0, sizeof(g_list)); }
-int FoggedObjectDrawList_GetCount() { return g_count; }
+void FoggedObjectDrawList_Clear() { g_fogDrawCount = 0; std::memset(g_list, 0, sizeof(g_list)); }
+int FoggedObjectDrawList_GetCount() { return g_fogDrawCount; }
 const FoggedDrawEntry* FoggedObjectDrawList_Get(int i)
 {
-    return (i >= 0 && (int)(i) < (int)(g_count)) ? &g_list[i] : nullptr;
+    return (i >= 0 && (int)(i) < (int)(g_fogDrawCount)) ? &g_list[i] : nullptr;
 }
 
 } // namespace gamemd
