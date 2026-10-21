@@ -28,7 +28,7 @@ struct CampaignClass {
     char description[256];  // 0x22C
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
-    AbstractClass * * SaveProgress();
+    char SaveProgress();
     CampaignClass(ObjectClass * aP1);
     void ** DTOR(char a2);
     int LoadFromINIList(void *a1 = 0);

@@ -1253,7 +1253,7 @@ AbstractClass * * SessionClass_AssignHouses()
           *(unsigned char *)(v9 + 90120) = v33; /*0x68803a*/
           DeleteAndZero_field_0x08 = v29.DeleteAndZero_field_0x08; /*0x68803b*/
         }
-        DeleteAndZero((ObjectClass *)&v29.DeleteAndZero_field_0x04); /*0x688043*/
+        j_DeleteAndZero((ObjectClass *)&v29.DeleteAndZero_field_0x04); /*0x688043*/
       }
       else
       {

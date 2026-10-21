@@ -141,7 +141,7 @@ int CampaignClass::LoadFromINIList(void *a1)
 }
 // 0x49C5A0
 namespace gamemd {
-AbstractClass * * CampaignClass::SaveProgress()
+char CampaignClass::SaveProgress()
 {
 
   int *p_referenceCount; // ebx

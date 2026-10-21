@@ -24,8 +24,8 @@ struct WinModemClass {
     int WinModemClass_field_0x38;  // 0x38
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
-    AbstractClass * * Dial(const char * a2, unsigned char a3, char * Destination, signed int Count, int a6, int a7, int a8);
-    WinModemClass * * LoadTypeData(int a2, char * Str, int a4, WinModemClass * aP4);
+    int Dial(const char * a2, unsigned char a3, char * Destination, signed int Count, int a6, int a7, int a8);
+    int LoadTypeData(int a2, char * Str, int a4, WinModemClass * aP4);
     WinModemClass * QueryInterface(char a2);
     int HangUp(int a2);
     int LogCommErrors(int aP1, char a3, int a4, int a5);

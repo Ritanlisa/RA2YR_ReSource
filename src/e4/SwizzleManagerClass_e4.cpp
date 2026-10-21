@@ -127,7 +127,7 @@ int SwizzleManagerClass_19::Release(int a2, unsigned int * a3)
 }  // G42.18 ns repair
 // 0x6CF720
 namespace gamemd {
-AbstractClass * * SwizzleManagerClass_19::SetCapacity(int a2, unsigned int * a3)
+char SwizzleManagerClass_19::SetCapacity(int a2, unsigned int * a3)
 {
 
   int v3; // ebp

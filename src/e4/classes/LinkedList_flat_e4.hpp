@@ -16,7 +16,7 @@ struct LinkedList_flat {
     unsigned int u32_28;  // 0x28
     unsigned int u32_34;  // 0x34
 // --- flat members (END) ---
-AbstractClass * * LoadScenarioMixFiles(int a2, int a3, int a4, int aP0, int aP1);
+char LoadScenarioMixFiles(int a2, int a3, int a4, int aP0, int aP1);
 LinkClass * * Append(int a2, void *a2_2);
 LinkClass * * InsertAfter(int a2);
 int * Next();

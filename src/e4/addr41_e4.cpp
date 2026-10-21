@@ -287,7 +287,7 @@ int ManageMultimediaTimer(struct _RTL_CRITICAL_SECTION * dwUser, int a2, int a3,
 }
 // 0x411B20
 namespace gamemd {
-AbstractClass * * sub_411B20(DWORD_PTR dwUser, AnimClass * aP1, int a3)
+int sub_411B20(DWORD_PTR dwUser, AnimClass * aP1, int a3)
 {
 
   int v3; // eax
@@ -723,7 +723,7 @@ bool sub_413CD0(int a1)
 }
 // 0x41B110
 namespace gamemd {
-INIClass * * PlaceAircraftFromINI(void * a1, void * a2, void * aAircraft)
+int PlaceAircraftFromINI(void * a1, void * a2, void * aAircraft)
 {
 
   int result; // eax

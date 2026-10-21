@@ -179,7 +179,7 @@ int WinModemClass::WriteSerial(LPCVOID lpBuffer, DWORD aP2)
 } // namespace gamemd
 // 0x774CD0
 namespace gamemd {
-WinModemClass * * WinModemClass::LoadTypeData(int a2, char * Str, int a4, WinModemClass * aP4)
+int WinModemClass::LoadTypeData(int a2, char * Str, int a4, WinModemClass * aP4)
 {
 
   WinModemClass *v5; // esi
@@ -343,7 +343,7 @@ int WinModemClass::SaveToINI(const char * NumberOfBytesWritten, void * aP)
 } // namespace gamemd
 // 0x775110
 namespace gamemd {
-AbstractClass * * WinModemClass::Dial(const char * a2, unsigned char a3, char * Destination, signed int Count, int a6, int a7, int a8)
+int WinModemClass::Dial(const char * a2, unsigned char a3, char * Destination, signed int Count, int a6, int a7, int a8)
 {
 
   unsigned int v9; // kr0C_4

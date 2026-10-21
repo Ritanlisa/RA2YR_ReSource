@@ -15,7 +15,7 @@
 
 // 0x7228B0
 namespace gamemd {  // G42.18 ns repair
-BuildingTypeClass * * AudioClass::ProcessEvent()
+int AudioClass::ProcessEvent()
 {
 
   int v2; // ecx

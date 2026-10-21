@@ -208,7 +208,7 @@ int Array::CleanupArrayWOL(void *a1)
   int i; // edi
   for ( i = 0; i < this->__pad_0; ++i ) /*0x7acd39*/
   {
-    DeleteAndZero((ObjectClass *)(*(unsigned int *)this->q008 + 4 * i)); /*0x7acd41*/
+    j_DeleteAndZero((ObjectClass *)(*(unsigned int *)this->q008 + 4 * i)); /*0x7acd41*/
     result = this->__pad_0; /*0x7acd46*/
   }
   this->__pad_0 = 0; /*0x7acd4d*/

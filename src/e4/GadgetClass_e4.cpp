@@ -41,7 +41,7 @@ ControlClass GadgetClass::Construct(int a2, int a3, int a4, int a5, int a6, char
 }  // G42.18 ns repair
 // 0x4E1390
 namespace gamemd {
-ControlClass GadgetClass::Dtor(void *a1)
+int GadgetClass::Dtor(void *a1)
 {
 
 
@@ -113,7 +113,7 @@ ControlClass GadgetClass::DrawBuildingPlacement(ControlClass * aP1)
 }
 // 0x60AAB0
 namespace gamemd {
-AbstractClass * * GadgetClass::FindByWindow(HWND hWnd, LPARAM)
+BOOL GadgetClass::FindByWindow(HWND hWnd, LPARAM)
 {
 
   HWND Parent; // edi

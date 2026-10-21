@@ -503,7 +503,7 @@ int SkirmishSetup::PlayButtonClickAnim(HWND hWnd)
 }  // G42.18c ns repair
 // 0x5E8590
 namespace gamemd {
-AbstractClass * * SkirmishSetup_Setup_5E8590()
+int SkirmishSetup_Setup_5E8590()
 {
 
   CCFileClass *v1; // ecx

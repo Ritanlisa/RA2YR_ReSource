@@ -234,7 +234,7 @@ MixFileClass * SessionClass::LoadGameSession(int aP1, const char **aP2)
   String::Assign((String *)&v13.m_3[1], v4 + 36); /*0x5adf91*/
   pad_50 = this->__pad_50; /*0x5adf96*/
   v7 = SessionClass::LoadMapSelection((SessionClass *)pad_50, (char **)&v13.m_3[1]) == 0; /*0x5adfab*/
-  DeleteAndZero((ObjectClass *)&v13.m_3[1]); /*0x5adfae*/
+  j_DeleteAndZero((ObjectClass *)&v13.m_3[1]); /*0x5adfae*/
   if ( v7 || (v8 = CampaignClass::Check((CampaignClass *)pad_50, aP1->u16_35A0)) == 0 ) /*0x5adfea*/
   {
     SessionClass::Destruct((SessionClass *)pad_50); /*0x5adfb9*/
@@ -261,15 +261,15 @@ LABEL_14:
   String::ToLower(&v13); /*0x5ae061*/
   if ( !v11 || !(unsigned __int8)String::Compare((String *)&v13.m_3[1], (const char **)&v13) ) /*0x5ae073*/
   {
-    DeleteAndZero((ObjectClass *)&v13); /*0x5ae080*/
-    DeleteAndZero((ObjectClass *)&v13.m_3[1]); /*0x5ae089*/
+    j_DeleteAndZero((ObjectClass *)&v13); /*0x5ae080*/
+    j_DeleteAndZero((ObjectClass *)&v13.m_3[1]); /*0x5ae089*/
     goto LABEL_14; /*0x5ae089*/
   }
   v12 = String::GetOrEmpty_Alt((String *)(v11 + 4)); /*0x5ae09b*/
   ScenarioClass::SetFileName((char *)aP1, v12); /*0x5ae0a7*/
   aP1->u16_35A0 = ((ObjectClass *)(ObjectClass *)pad_50)->Network_Load(v11); /*0x5ae0b8*/
-  DeleteAndZero((ObjectClass *)&v13); /*0x5ae0bf*/
-  DeleteAndZero((ObjectClass *)&v13.m_3[1]); /*0x5ae0c8*/
+  j_DeleteAndZero((ObjectClass *)&v13); /*0x5ae0bf*/
+  j_DeleteAndZero((ObjectClass *)&v13.m_3[1]); /*0x5ae0c8*/
 LABEL_17:
   SessionClass::Destruct((SessionClass *)pad_50); /*0x5ae0cd*/
   return strlen((const char *)(aP1 + 4700)) != 0; /*0x5adf6f*/
@@ -352,7 +352,7 @@ AbstractClass * * SessionClass::LoadMapSelection(char **a1)
     String::Assign((String *)&v43, 0); /*0x5cefa2*/
     v42 = FromStringInt((char **)&v43.ptr_8, v4); /*0x5cefbc*/
     v5 = INIClass::ReadString((INIClass *)&v43.nextArrayIndex, a1, v42, (char **)&v43, (int)&v43.ptr_4) == 0; /*0x5cefd4*/
-    DeleteAndZero((ObjectClass *)&v43.ptr_8); /*0x5cefd7*/
+    j_DeleteAndZero((ObjectClass *)&v43.ptr_8); /*0x5cefd7*/
     DeleteAndZero(&v43); /*0x5cefe0*/
     if ( v5 ) /*0x5cefe7*/
       break; /*0x5cefe7*/

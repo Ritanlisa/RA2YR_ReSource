@@ -77,7 +77,7 @@ CaptureManagerClass::CaptureManagerClass(int a2, int a3, char a4)
 
 // 0x471A50
 namespace gamemd {
-ScenarioClass * * CaptureManagerClass::HandleOverload()
+char CaptureManagerClass::HandleOverload()
 {
 
   int v2; // eax
@@ -797,7 +797,7 @@ int CaptureManagerClass::IsOverloading(bool * a2)
 
 // 0x472720
 namespace gamemd {
-TechnoClass * * CaptureManagerClass::LoadFromStream(int a1, int * a2)
+int CaptureManagerClass::LoadFromStream(int a1, int * a2)
 {
 
   int *v2; // ebx

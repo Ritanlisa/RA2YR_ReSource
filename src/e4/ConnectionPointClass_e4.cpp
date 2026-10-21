@@ -112,7 +112,7 @@ unsigned int * ConnectionPointClass::Construct(unsigned int * a1, ConnectionPoin
 } // namespace gamemd
 // 0x4A1280
 namespace gamemd {
-AbstractClass * * ConnectionPointClass_9::Release(int a2, unsigned int * a3)
+char ConnectionPointClass_9::Release(int a2, unsigned int * a3)
 {
 
   unsigned int *v4; // edi

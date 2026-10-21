@@ -45,7 +45,7 @@ extern unsigned char aUsechargedrain;  // data: 0x842654 truth(IDA G42.57w9)
 
 // 0x4F6540
 namespace gamemd {  // G42.18 ns repair
-AbstractClass * * SuperWeaponTypeClass::IsAvailable()
+bool SuperWeaponTypeClass::IsAvailable()
 {
 
   int *p_ThirdSurvivorDivisor; // edi

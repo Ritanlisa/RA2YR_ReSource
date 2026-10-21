@@ -666,7 +666,7 @@ LABEL_19:
 }
 // 0x52A4D0
 namespace gamemd {
-ObjectClass * * E4Recv_52A4D0::sub_52A4D0(uint8_t * a2)
+int E4Recv_52A4D0::sub_52A4D0(uint8_t * a2)
 {
 
   unsigned __int8 *v3; // eax

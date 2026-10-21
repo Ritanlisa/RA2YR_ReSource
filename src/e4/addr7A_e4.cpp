@@ -188,7 +188,7 @@ int CollectWOLConnectionTokens(void *a1)
           ptr_8 = (int)dword_B76AC4.ptr_C; /*0x7a0644*/
         }
         dword_B76AC4.ptr_C = (void *)(ptr_8 + 1); /*0x7a064e*/
-        DeleteAndZero((ObjectClass *)&v15); /*0x7a0653*/
+        j_DeleteAndZero((ObjectClass *)&v15); /*0x7a0653*/
         v3 = v16; /*0x7a0658*/
         v2 = *(unsigned int *)&v15.m_3[1]; /*0x7a065c*/
       }
@@ -249,10 +249,10 @@ v1 = (HWND)Dialog::FindByHandle((Dialog *)0x11F); /*0x7a06a9*/
   if ( *(int *)&stru_B778FC.m_3[1] < 2 ) /*0x7a06cf*/
     goto LABEL_17; /*0x7a06cf*/
   for ( i = 0; i < *(int *)stru_B76AD0.__pad_0; ++i ) /*0x7a06de*/
-    DeleteAndZero((ObjectClass *)(stru_B76AD0.DynamicArray_field_0x08 + 4 * i)); /*0x7a06e8*/
+    j_DeleteAndZero((ObjectClass *)(stru_B76AD0.DynamicArray_field_0x08 + 4 * i)); /*0x7a06e8*/
   v3 = 0; /*0x7a06fc*/
   for ( *(unsigned int *)stru_B76AD0.__pad_0 = 0; v3 < *(int *)stru_B76970.__pad_0; ++v3 ) /*0x7a0706*/
-    DeleteAndZero((ObjectClass *)(stru_B76970.StringVector_field_0x08 + 4 * v3)); /*0x7a0711*/
+    j_DeleteAndZero((ObjectClass *)(stru_B76970.StringVector_field_0x08 + 4 * v3)); /*0x7a0711*/
   *(unsigned int *)stru_B76970.__pad_0 = 0; /*0x7a0720*/
   dword_B736F4 = 0; /*0x7a0726*/
   CollectWOLConnectionTokens(v28); /*0x7a072c*/
@@ -330,8 +330,8 @@ LABEL_17:
         g_WOL_GameListPool = time(0); /*0x7a091a*/
         *(unsigned int *)&v31[16] = &g_ptr_7F6F24; /*0x7a091f*/
         ComPtr::Release((ComPtr *)&v31[16]); /*0x7a0923*/
-        DeleteAndZero((ObjectClass *)&v31[8]); /*0x7a092c*/
-        DeleteAndZero((ObjectClass *)&v31[32]); /*0x7a0935*/
+        j_DeleteAndZero((ObjectClass *)&v31[8]); /*0x7a092c*/
+        j_DeleteAndZero((ObjectClass *)&v31[32]); /*0x7a0935*/
         *(unsigned int *)&v31[24] = &g_ptr_7F3F44; /*0x7a093e*/
         ComPtr::Release((ComPtr *)&v31[24]); /*0x7a0946*/
         return 0; /*0x7a0957*/
@@ -348,7 +348,7 @@ LABEL_34:
   ((String *)&v31[8])->Append(aWdt); /*0x7a0987*/
   v11 = FromStringInt((char **)&v31[4], *(int *)dword_A8B240); /*0x7a099f*/
   ((String *)&v31[8])->Append2(v11); /*0x7a09a9*/
-  DeleteAndZero((ObjectClass *)&v31[4]); /*0x7a09b2*/
+  j_DeleteAndZero((ObjectClass *)&v31[4]); /*0x7a09b2*/
   *(unsigned int *)&v31[16] = &g_ptr_7F6F24; /*0x7a09bb*/
   ComPtr::Release((ComPtr *)&v31[16]); /*0x7a09bf*/
 LABEL_35:
@@ -358,11 +358,11 @@ LABEL_35:
   ((String *)v31)->Append(aCou); /*0x7a0a05*/
   v13 = FromStringInt((char **)&v31[4], v9); /*0x7a0a10*/
   ((String *)v31)->Append2(v13); /*0x7a0a1a*/
-  DeleteAndZero((ObjectClass *)&v31[4]); /*0x7a0a23*/
+  j_DeleteAndZero((ObjectClass *)&v31[4]); /*0x7a0a23*/
   ((String *)v31)->Append(aCol); /*0x7a0a31*/
   v14 = FromStringInt((char **)&v31[4], *(unsigned int *)(*(unsigned int *)&v31[28] + 32)); /*0x7a0a41*/
   ((String *)v31)->Append2(v14); /*0x7a0a4b*/
-  DeleteAndZero((ObjectClass *)&v31[4]); /*0x7a0a54*/
+  j_DeleteAndZero((ObjectClass *)&v31[4]); /*0x7a0a54*/
   ((String *)v31)->Append(aMbr); /*0x7a0a62*/
   if ( *(unsigned char *)(*(unsigned int *)&v31[28] + 56) ) /*0x7a0a6b*/
     ((String *)v31)->Append((const char *)a1); /*0x7a0a77*/
@@ -400,32 +400,32 @@ LABEL_49:
     ((String *)v31)->Append(aLoc); /*0x7a0b3b*/
     v18 = FromStringInt((char **)&v31[4], v16); /*0x7a0b4f*/
     ((String *)v31)->Append2(v18); /*0x7a0b59*/
-    DeleteAndZero((ObjectClass *)&v31[4]); /*0x7a0b62*/
+    j_DeleteAndZero((ObjectClass *)&v31[4]); /*0x7a0b62*/
   }
 LABEL_50:
   ((String *)v31)->Append(aRat); /*0x7a0b67*/
   v19 = Performance::Profile(v29); /*0x7a0b75*/
   v20 = FromStringInt((char **)&v31[4], v19); /*0x7a0b80*/
   ((String *)v31)->Append2(v20); /*0x7a0b8a*/
-  DeleteAndZero((ObjectClass *)&v31[4]); /*0x7a0b93*/
+  j_DeleteAndZero((ObjectClass *)&v31[4]); /*0x7a0b93*/
   ((String *)v31)->Append(aRes); /*0x7a0ba1*/
   v21 = FromStringInt((char **)&v31[4], *(int *)&stru_A8E960.random[16]); /*0x7a0bb0*/
   ((String *)v31)->Append2(v21); /*0x7a0bba*/
-  DeleteAndZero((ObjectClass *)&v31[4]); /*0x7a0bc3*/
+  j_DeleteAndZero((ObjectClass *)&v31[4]); /*0x7a0bc3*/
   Network::GetAddress((Network *)&stru_A8D804.__pad_3D[895], &v31[56], (int)&v31[48], &v31[46]); /*0x7a0bdc*/
   v22 = *(unsigned int *)&v31[48]; /*0x7a0be1*/
   ((String *)v31)->Append(aAdr); /*0x7a0bee*/
   v23 = FromStringInt((char **)&v31[4], v22); /*0x7a0bf9*/
   ((String *)v31)->Append2(v23); /*0x7a0c03*/
-  DeleteAndZero((ObjectClass *)&v31[4]); /*0x7a0c0c*/
+  j_DeleteAndZero((ObjectClass *)&v31[4]); /*0x7a0c0c*/
   ((String *)v31)->Append(aNat); /*0x7a0c1a*/
   v24 = FromStringInt((char **)&v31[4], dword_ABFEC8); /*0x7a0c2f*/
   ((String *)v31)->Append2(v24); /*0x7a0c39*/
-  DeleteAndZero((ObjectClass *)&v31[4]); /*0x7a0c42*/
+  j_DeleteAndZero((ObjectClass *)&v31[4]); /*0x7a0c42*/
   ((String *)v31)->Append(aPrt); /*0x7a0c50*/
   v25 = FromStringInt((char **)&v31[4], dword_A8E228); /*0x7a0c5f*/
   ((String *)v31)->Append2(v25); /*0x7a0c69*/
-  DeleteAndZero((ObjectClass *)&v31[4]); /*0x7a0c72*/
+  j_DeleteAndZero((ObjectClass *)&v31[4]); /*0x7a0c72*/
   ((String *)v31)->Append2((char **)&v31[8]); /*0x7a0c80*/
   v26 = *(unsigned int *)ppv; /*0x7a0c8e*/
   v27 = String::GetOrEmpty((String *)v31); /*0x7a0c90*/
@@ -435,10 +435,10 @@ LABEL_50:
   g_WOL_GameProcessState = 180; /*0x7a0cb6*/
   g_WOL_GameListPool = time(0); /*0x7a0cc8*/
   ProcessPingRequestsWOL(v30); /*0x7a0ccd*/
-  DeleteAndZero((ObjectClass *)&v31[12]); /*0x7a0cd6*/
-  DeleteAndZero((ObjectClass *)v31); /*0x7a0cdf*/
-  DeleteAndZero((ObjectClass *)&v31[8]); /*0x7a0ce8*/
-  DeleteAndZero((ObjectClass *)&v31[32]); /*0x7a0cf1*/
+  j_DeleteAndZero((ObjectClass *)&v31[12]); /*0x7a0cd6*/
+  j_DeleteAndZero((ObjectClass *)v31); /*0x7a0cdf*/
+  j_DeleteAndZero((ObjectClass *)&v31[8]); /*0x7a0ce8*/
+  j_DeleteAndZero((ObjectClass *)&v31[32]); /*0x7a0cf1*/
   *(unsigned int *)&v31[24] = &g_ptr_7F3F44; /*0x7a0cfa*/
   ComPtr::Release((ComPtr *)&v31[24]); /*0x7a0cfe*/
   return 1; /*0x7a07c7*/
@@ -593,7 +593,7 @@ LABEL_36:
         }
         v12 = 1; /*0x7a1235*/
 LABEL_37:
-        DeleteAndZero((ObjectClass *)&v13); /*0x7a1312*/
+        j_DeleteAndZero((ObjectClass *)&v13); /*0x7a1312*/
         result = (char)dword_B76AC4.ptr_C; /*0x7a131b*/
         if ( !dword_B76AC4.ptr_C ) /*0x7a1322*/
           return result; /*0x7a1322*/
@@ -701,7 +701,7 @@ LABEL_18:
               goto LABEL_18; /*0x7a1499*/
           }
         }
-        DeleteAndZero((ObjectClass *)&v22); /*0x7a14a2*/
+        j_DeleteAndZero((ObjectClass *)&v22); /*0x7a14a2*/
         if ( v6 == -1 ) /*0x7a14aa*/
           goto LABEL_27; /*0x7a14aa*/
         if ( v6 >= 0 && v6 < g_WOL_UserList.owningHouseIndex ) /*0x7a14ca*/
@@ -731,13 +731,13 @@ LABEL_27:
           String::Append2((String *)&v19.ptr_4, v12); /*0x7a1597*/
           DeleteAndZero((ObjectClass *)&v22.ptr_4); /*0x7a15a0*/
           DeleteAndZero((ObjectClass *)&v25.ptr_4); /*0x7a15a9*/
-          DeleteAndZero((ObjectClass *)&v24); /*0x7a15b2*/
-          DeleteAndZero((ObjectClass *)&v23); /*0x7a15bb*/
+          j_DeleteAndZero((ObjectClass *)&v24); /*0x7a15b2*/
+          j_DeleteAndZero((ObjectClass *)&v23); /*0x7a15bb*/
           DeleteAndZero((ObjectClass *)&v23.ptr_4); /*0x7a15c4*/
-          DeleteAndZero((ObjectClass *)&v25); /*0x7a15cd*/
+          j_DeleteAndZero((ObjectClass *)&v25); /*0x7a15cd*/
           ++v21; /*0x7a15d2*/
         }
-        DeleteAndZero((ObjectClass *)&v19); /*0x7a15f3*/
+        j_DeleteAndZero((ObjectClass *)&v19); /*0x7a15f3*/
       }
       while ( stru_B76900.estimatedHealth ); /*0x7a15ff*/
     }

@@ -29,7 +29,7 @@
 
 // 0x6E4F60
 namespace gamemd {  // G42.18 ns repair
-TriggerClass * * TagClass::Destructor(void * a1)
+int TagClass::Destructor(void * a1)
 {
 
   TagTypeClass *buildingType; // ecx

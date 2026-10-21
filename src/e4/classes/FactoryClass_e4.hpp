@@ -43,7 +43,7 @@ struct FactoryClass {
 // --- flat members (END) ---
     static char RemoveItem(void *aP1, int a2);
     static unsigned int RemoveItemAt(int p0);  // x4:signals@0x63dfd0
-    AbstractClass * * Stat(int * a2);
+    int Stat(int * a2);
     static char GetFlag();
     char RemoveOneFromQueue(char a2);
     int CountType(int aP1);  // G57w10-S raw 0x004CA670 IUnknown 占位清除

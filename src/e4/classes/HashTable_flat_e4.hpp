@@ -25,14 +25,14 @@ struct HashTable_flat {
     unsigned int u32_25C;  // 0x25C
     unsigned int u32_8D0;  // 0x8D0
 // --- flat members (END) ---
-AbstractClass * * FindWOLHashTableEntry(const char ** a2, void * a3);
+char FindWOLHashTableEntry(const char ** a2, void * a3);
 AbstractClass * * Grow();
 AbstractClass * * Grow2();
-AbstractClass * * Insert(ObjectClass * aP1, void * a2);
-AbstractClass * * Lookup(ObjectClass * aP1, TechnoTypeClass * aP2);
+char Insert(ObjectClass * aP1, void * a2);
+char Lookup(ObjectClass * aP1, TechnoTypeClass * aP2);
 AbstractClass * * RebuildEx(void *a1);
-AbstractClass * * RemoveAndResize(unsigned int * a2, unsigned char * a3);
-AbstractClass * * RemoveHashTableEntry(ObjectClass * aP1, void * a2);
+char RemoveAndResize(unsigned int * a2, unsigned char * a3);
+char RemoveHashTableEntry(ObjectClass * aP1, void * a2);
 CampaignClass * * Clear(void *a1);
 CampaignClass * * RemoveEntry(const char * a2);
 ObjectClass * * Remove(int a2, void *a2_1 = 0);

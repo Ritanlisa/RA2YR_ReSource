@@ -536,14 +536,14 @@ int Lobby::BuildPlayerList()
       WideString::Assign((wchar_t **)&v7.ptr_4, v2); /*0x77dbde*/
       v3 = ToWideStringCharAlt((char **)&v7.ptr_8, (const wchar_t **)&v7.ptr_4); /*0x77dbeb*/
       String::Reassign((String *)&v7, (const char **)v3); /*0x77dbf5*/
-      DeleteAndZero((ObjectClass *)&v7.ptr_8); /*0x77dbfe*/
+      j_DeleteAndZero((ObjectClass *)&v7.ptr_8); /*0x77dbfe*/
       DeleteAndZero::Alt((DeleteAndZero *)&v7.ptr_4); /*0x77dc07*/
     }
     else
     {
       PlayerTypeString = (const char **)GetPlayerTypeString((String *)&v7.ptr_C, v2); /*0x77dc14*/
       String::Reassign((String *)&v7, PlayerTypeString); /*0x77dc1e*/
-      DeleteAndZero((ObjectClass *)&v7.ptr_C); /*0x77dc27*/
+      j_DeleteAndZero((ObjectClass *)&v7.ptr_C); /*0x77dc27*/
     }
     v5 = String::GetOrEmpty((String *)&v7); /*0x77dc35*/
     strncat((char *)&v7.uniqueId, v5, 0x100u); /*0x77dc40*/

@@ -31,7 +31,7 @@
 
 // 0x71E940
 namespace gamemd {  // G42.18 ns repair
-DynamicVector * TEventClass::Execute(int a2, int a3, int a4, int *a5, int a6, int a7)
+char TEventClass::Execute(int a2, int a3, int a4, int *a5, int a6, int a7)
 {
 
   double v7; // st7

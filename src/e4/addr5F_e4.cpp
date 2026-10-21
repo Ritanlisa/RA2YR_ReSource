@@ -180,7 +180,7 @@ char HandlePlayerDisconnection(int a1, int a2)
 }
 // 0x5F2CE0
 namespace gamemd {
-AbstractClass * * WaitModemConnection(void * a1, void * a2, void * a3)
+int WaitModemConnection(void * a1, void * a2, void * a3)
 {
 
   int v3; // ebp

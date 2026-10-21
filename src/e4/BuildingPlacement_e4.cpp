@@ -82,7 +82,7 @@ void* BuildingPlacement::Activate(int a2, unsigned int *a3)
 } // namespace gamemd
 // 0x54C550
 namespace gamemd {
-VectorClass_flat * * BuildingPlacement::ProcessBuildingPlacementAction()
+char BuildingPlacement::ProcessBuildingPlacementAction()
 {
 
   BuildingPlacement *v2; // ebp

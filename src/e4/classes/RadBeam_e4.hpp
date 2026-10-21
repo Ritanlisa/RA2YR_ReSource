@@ -22,7 +22,7 @@ struct RadBeam {
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     unsigned int * InitState(int aP1, void *a2 = 0);
-    void * Create(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0);
+    int Create(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0);
 #pragma pack(pop)
 };
 

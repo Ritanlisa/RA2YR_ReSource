@@ -376,7 +376,7 @@ int AnimTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
 }
 // 0x428800
 namespace gamemd {
-ScenarioClass * * AnimTypeClass::SaveLoad_Prefix(int a1, int a2)
+int AnimTypeClass::SaveLoad_Prefix(int a1, int a2)
 {
 
   char v3[513]; // [esp+7h] [ebp-201h] BYREF

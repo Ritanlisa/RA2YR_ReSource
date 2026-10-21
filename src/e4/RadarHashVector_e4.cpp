@@ -14,7 +14,7 @@
 
 // 0x658B10
 namespace gamemd {  // G42.18 ns repair
-AbstractClass * * RadarHashVector::ComputeHashIndex(int a2, char * a3)
+char RadarHashVector::ComputeHashIndex(int a2, char * a3)
 {
 
   int v3; // ebp

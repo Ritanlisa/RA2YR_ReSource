@@ -32,7 +32,7 @@ struct ScriptTypeClass {
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     ScriptTypeClass * ddtor(char a2, int a1, int a3);
-    TaskForceClass * ReadINI(char * a1, int a2, void *a3);
+    int ReadINI(char * a1, int a2, void *a3);
     int GetClassIdentifier(int a1, unsigned int * a2);
     int GetObjectSize();
     int GetTypeIdentifier();

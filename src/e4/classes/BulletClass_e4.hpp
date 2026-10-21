@@ -140,7 +140,7 @@ struct BulletClass {
 // --- flat members (END) ---
     static unsigned int * ResetDetonationTimer(BulletClass *pThis);
     BulletClass();
-    BulletClass * * Dtor(void *a1);
+    int Dtor(void *a1);
     LONG CheckTargetValidity(int a1);
     LONG ValidateTarget(volatile LONG * a1);
     int * CalculateSpreadAngle(int a1);

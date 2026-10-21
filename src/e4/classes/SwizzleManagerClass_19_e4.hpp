@@ -17,7 +17,7 @@ struct SwizzleManagerClass_19 {
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int  Release(int a2, unsigned int * a3);  // 0x6CF5A0
-    AbstractClass * *  SetCapacity(int a2, unsigned int * a3);  // 0x6CF720
+    char SetCapacity(int a2, unsigned int * a3);  // 0x6CF720
     void ClearBuffer(void *a1_1);  // 0x6CF4F0
     unsigned int *  Lookup(unsigned int * a2, int a3);  // 0x6CF540
     char  AddRef(int a2);  // 0x6CF560

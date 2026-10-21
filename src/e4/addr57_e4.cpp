@@ -527,7 +527,7 @@ MapClass * * RecursiveCellClassNeighbourUpdate(MapClass * aP0, IUnknown * aP1, I
 }
 // 0x57ACF0
 namespace gamemd {
-MapClass * * GenerateMapClassCliffTransitions(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6)
+bool GenerateMapClassCliffTransitions(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6)
 {
   int v7; // eax
   void * v8;

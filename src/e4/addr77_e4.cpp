@@ -112,13 +112,13 @@ void ObjectClass::sub_770E70(ObjectClass * aP1, ObjectClass * aP2, ObjectClass, 
   String::Assign((String *)&v6, off_83E188); /*0x770e80*/
   v5 = aP3; /*0x770e85*/
   INIClass::ReadTokenizedPair((INIClass *)this, aP2, ObjectClass, aP3, 0, &v6); /*0x770e9d*/
-  DeleteAndZero((ObjectClass *)&v6); /*0x770ea6*/
+  j_DeleteAndZero((ObjectClass *)&v6); /*0x770ea6*/
   String::Assign((String *)&aP3, g_INI_Key_Lose); /*0x770eb4*/
   INIClass::ReadTokenizedPair((INIClass *)this, aP2, ObjectClass, v5, 1, (char **)&aP3); /*0x770ec5*/
-  DeleteAndZero((ObjectClass *)&aP3); /*0x770ece*/
+  j_DeleteAndZero((ObjectClass *)&aP3); /*0x770ece*/
   String::Assign((String *)&aP3, aDraw); /*0x770edc*/
   INIClass::ReadTokenizedPair((INIClass *)this, aP2, ObjectClass, v5, 2, (char **)&aP3); /*0x770eed*/
-  DeleteAndZero((ObjectClass *)&aP3); /*0x770ef6*/
+  j_DeleteAndZero((ObjectClass *)&aP3); /*0x770ef6*/
 
 }
 }  // G42.18 ns repair

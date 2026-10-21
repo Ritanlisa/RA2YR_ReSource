@@ -35,7 +35,7 @@
 
 // 0x4791F0
 namespace gamemd {  // G42.18 ns repair
-AbstractClass * * LinkedList_flat::LoadScenarioMixFiles(int a2, int a3, int a4, int aP0, int aP1)
+char LinkedList_flat::LoadScenarioMixFiles(int a2, int a3, int a4, int aP0, int aP1)
 {
 
   int v4; // ecx

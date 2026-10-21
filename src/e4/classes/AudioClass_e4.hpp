@@ -14,7 +14,7 @@ struct AudioClass {
     unsigned int tail_40;  // 0x40
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
-    BuildingTypeClass * * ProcessEvent();  // 0x7228B0
+    int ProcessEvent();  // 0x7228B0
 #pragma pack(pop)
 };
 } // namespace gamemd

@@ -63,7 +63,7 @@ struct SuperWeaponTypeClass {
     void* LineMultiplier_d;  // 0xFC
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
-    AbstractClass * * IsAvailable();
+    bool IsAvailable();
     unsigned int * SDDTOR(char a2);
     int FindByName(void *a1 = 0);
     int FindFirstOfAction();

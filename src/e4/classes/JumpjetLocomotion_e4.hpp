@@ -104,7 +104,7 @@ struct JumpjetLocomotion {
     AbstractClass * ProcessCollision(char a2, void *a2_2);  // 0x4B0F20
     int Update(unsigned char * a2, int a3, int a4, void *a4_2);  // 0x4B2630
     unsigned int * TransformCoords(unsigned int *aP1, int *aP2, int *aP3, void *a4 = 0);  // 0x4B4780
-    void* Land();  // 0x54CA90
+    char Land();  // 0x54CA90
     void* UpdateFacing();  // 0x54D0F0
 };
 } // namespace gamemd

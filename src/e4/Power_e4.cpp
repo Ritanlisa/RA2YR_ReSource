@@ -289,7 +289,7 @@ unsigned int * Power::UpdateAll()
 }
 // 0x68B940
 namespace gamemd {
-void* Power::ComputeHousePowerChecksum(unsigned int * a2, void *a2_2)
+int Power::ComputeHousePowerChecksum(unsigned int * a2, void *a2_2)
 {
 
   Checksum::AddString(a2_2, (uint8_t *)((unsigned int)(a2_2)+ 5050)); /*0x68b952*/

@@ -52,7 +52,7 @@ struct SpawnManagerClass {
     int ddtor(int a1, unsigned int * a2);
     unsigned int * Constructor_6B83A0(int aP1, int aP2);
     void Constructor_SpawnManagerClass();
-    void* Constructor(void *a1, void *a2, void *a3, void *a4 = 0);
+    int Constructor(void *a1, void *a2, void *a3, void *a4 = 0);
     SpawnManagerClass * ProcessEvent(void * Block, char a2);
 };
 

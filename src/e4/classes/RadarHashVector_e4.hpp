@@ -23,7 +23,7 @@ struct RadarHashVector {
     int RadarHashVector_field_0x30;  // 0x30
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
-    AbstractClass * * ComputeHashIndex(int a2, char * a3);
+    char ComputeHashIndex(int a2, char * a3);
     VectorClass_flat * QueryInterface(unsigned int * Block, char a2);
     char * Destructor(char a2);
     int FindItemIndex(unsigned int * a2);

@@ -629,7 +629,7 @@ unsigned int * JumpjetLocomotion::TransformCoords(unsigned int *aP1, int *aP2, i
 }
 // 0x54CA90
 namespace gamemd {
-void* JumpjetLocomotion::Land()
+char JumpjetLocomotion::Land()
 {
 
   unsigned int *v2; // ecx

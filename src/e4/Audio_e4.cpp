@@ -457,8 +457,8 @@ ObjectClass * * Audio::ParseVolume(const char ** a1, ObjectClass * aP2)
     }
     if ( this->u32_C > 0 && (unsigned __int8)String::NotEquals((String *)&v7.m_3[1], 0) ) /*0x5d054f*/
       String::Reassign((String *)this, a1); /*0x5d055f*/
-    DeleteAndZero((ObjectClass *)&v7); /*0x5d0568*/
-    DeleteAndZero((ObjectClass *)&v7.m_3[1]); /*0x5d0571*/
+    j_DeleteAndZero((ObjectClass *)&v7); /*0x5d0568*/
+    j_DeleteAndZero((ObjectClass *)&v7.m_3[1]); /*0x5d0571*/
   }
   return this; /*0x5d0578*/
 

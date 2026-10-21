@@ -37,7 +37,7 @@ struct TagClass {
     int StubReturn44();
     int StubReturn56();
     int ddtor(int a1, unsigned int * a2);
-    TriggerClass * * Destructor(void * a1);
+    int Destructor(void * a1);
 };
 
 } // namespace gamemd

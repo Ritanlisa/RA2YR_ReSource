@@ -47,7 +47,7 @@ int sub_710860(unsigned int * a1, unsigned int * a2)
 }  // G42.18 ns repair
 // 0x7187A0
 namespace gamemd {
-UnitTypeClass * * E4Recv_7187A0::ProcessUnitDeploymentAtCell(int a2, int a3, int a4)
+char E4Recv_7187A0::ProcessUnitDeploymentAtCell(int a2, int a3, int a4)
 {
 
   unsigned int *i; // edi

@@ -19,9 +19,9 @@ struct GadgetClass {
     unsigned int ID;  // 0x18
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
-    AbstractClass * * FindByWindow(HWND hWnd, LPARAM);
+    BOOL FindByWindow(HWND hWnd, LPARAM);
     AbstractClass * * SetTooltip(void * String);
-    ControlClass Dtor();
+    int Dtor();
     ControlClass DrawBuildingPlacement(ControlClass * aP1);
     ControlClass Show();
     ControlClass Construct(int a2, int a3, int a4, int a5, int a6, char a7);

@@ -19,7 +19,7 @@
 
 // 0x5ACD30
 namespace gamemd {  // G42.18 ns repair
-AbstractClass * * MSEngine::Release(int a2, char * a3)
+char MSEngine::Release(int a2, char * a3)
 {
 
   int v3; // ebx
@@ -100,7 +100,7 @@ AbstractClass * * MSEngine::Release(int a2, char * a3)
 }  // G42.18 ns repair
 // 0x5ACED0
 namespace gamemd {
-AbstractClass * * MSEngine::SetCapacity(int a2, char * a3)
+char MSEngine::SetCapacity(int a2, char * a3)
 {
 
   int v3; // ebx
@@ -204,7 +204,7 @@ CampaignClass * MSEngine::Destructor(void *a1)
   }
   this->u32_39 = 0; /*0x5ceeb2*/
   this->q034 = 0; /*0x5ceeb5*/
-  DeleteAndZero(&this->MSEngine_field_0x8); /*0x5ceeb8*/
+  j_DeleteAndZero(&this->MSEngine_field_0x8); /*0x5ceeb8*/
   void *MSEngine_field_0x4 = this->__pad_004; // eax /*0x5ceebd*/
   /* X11: ptr_0 install elided (implicit via VectorClass virtuals 0x5ceec0) */
   if ( MSEngine_field_0x4 && (((this->m_C) >> 8) & 0xFF) ) /*0x5ceeca*/
@@ -444,7 +444,7 @@ CampaignClass * MSEngine::ddtor(void *a1)
 
 // 0x5ACE50
 namespace gamemd {
-CampaignClass * MSEngine::Init(unsigned int * a2, void *a2_2, void *a3_1, void *a4_1, void *a5_1, void *a6_1, void *a7_1, void *a8_1)
+int MSEngine::Init(unsigned int * a2, void *a2_2, void *a3_1, void *a4_1, void *a5_1, void *a6_1, void *a7_1, void *a8_1)
 {
 
   if ( !(this->m_C) ) /*0x5ace50*/

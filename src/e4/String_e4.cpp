@@ -124,7 +124,7 @@ ObjectClass * * String::SplitComma(ObjectClass * aP1)
     __1_Timevec_std__QAE_XZ((const char **)&v10); /*0x5d044e*/
     this->u32_C = v8; /*0x5d0453*/
   }
-  DeleteAndZero((ObjectClass *)&v10); /*0x5d045a*/
+  j_DeleteAndZero((ObjectClass *)&v10); /*0x5d045a*/
   return this; /*0x5d0461*/
 
 }
@@ -169,7 +169,7 @@ LABEL_6:
 }
 // 0x763690
 namespace gamemd {
-ControlClass * * String::To_Waypoint()
+int String::To_Waypoint()
 {
 
   int v2; // esi

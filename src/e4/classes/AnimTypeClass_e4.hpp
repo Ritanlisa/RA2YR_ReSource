@@ -157,7 +157,7 @@ struct AnimTypeClass {
 // --- flat members (END) ---
     AnimTypeClass * * FindOrCreate(char *Source);
     AnimTypeClass * ddtor(char a2, int aP0, int aP1, int aP2, int a1, int a3);
-    ScenarioClass * * SaveLoad_Prefix(int a1, int a2);
+    int SaveLoad_Prefix(int a1, int a2);
     char GetLoopCount(int a2);
     char Stub(int a1, int a2);
     int FindIndex(void *a1 = 0);

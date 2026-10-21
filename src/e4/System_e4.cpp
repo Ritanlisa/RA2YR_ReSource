@@ -369,7 +369,7 @@ int sub_7A2EA0(int (__stdcall ***a1)(unsigned int, void *, int *), int a2, int a
 }
 // 0x68C9C0
 namespace gamemd {
-AbstractClass * * System_Read_68C9C0(BlowStraw * aP0, ObjectClass * a1, ObjectClass * aP3, int a4, int a5)
+int System_Read_68C9C0(BlowStraw * aP0, ObjectClass * a1, ObjectClass * aP3, int a4, int a5)
 {
 
   int v6; // esi

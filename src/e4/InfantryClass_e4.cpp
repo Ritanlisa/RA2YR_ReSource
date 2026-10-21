@@ -112,7 +112,7 @@ int InfantryClass::ScanTarget(int * a1)
 }  // G42.18 ns repair
 // 0x4D5350
 namespace gamemd {
-AbstractClass * * InfantryClass::ProcessDeploy(void ** a1)
+int InfantryClass::ProcessDeploy(void ** a1)
 {
   void *v2; // edx
   int v3; // eax

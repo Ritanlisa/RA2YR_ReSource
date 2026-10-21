@@ -217,7 +217,7 @@ LABEL_47:
 }
 // 0x730D60
 namespace gamemd {
-CellStruct * * sub_730D60()
+char sub_730D60()
 {
 
   char result; // al

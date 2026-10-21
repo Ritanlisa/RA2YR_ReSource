@@ -23,7 +23,7 @@
 
 // 0x657DA0
 namespace gamemd {  // G42.18 ns repair
-CampaignScore * * Diplomacy::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND a4)
+int Diplomacy::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND a4)
 {
 
   int result; // eax

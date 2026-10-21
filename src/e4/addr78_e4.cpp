@@ -432,7 +432,7 @@ void PopulateWOLLobbyListBox()  // G42.41i: truth 0x7806C0 = void
         v3(DlgItem, 0x197u, v15, 0); /*0x7809d5*/
       v3(DlgItem, 0x49Du, 0, 0); /*0x7809e1*/
       InvalidateRect(DlgItem, 0, 0); /*0x7809e8*/
-      DeleteAndZero((ObjectClass *)v18); /*0x7809f2*/
+      j_DeleteAndZero((ObjectClass *)v18); /*0x7809f2*/
     }
   }
 }
@@ -560,9 +560,9 @@ LABEL_6:
   }
 LABEL_27:
   WideString::AssignFromPtr((WideString *)a1, (const wchar_t **)&v23.m_3[1]); /*0x780d52*/
-  DeleteAndZero((ObjectClass *)&v24); /*0x780d62*/
+  j_DeleteAndZero((ObjectClass *)&v24); /*0x780d62*/
   DeleteAndZero::Alt((DeleteAndZero *)&v23.m_3[1]); /*0x780d6b*/
-  DeleteAndZero((ObjectClass *)&v23); /*0x780d74*/
+  j_DeleteAndZero((ObjectClass *)&v23); /*0x780d74*/
   return a1; /*0x780d7b*/
 
 }
@@ -645,9 +645,9 @@ LABEL_14:
     DeleteAndZero::Alt((DeleteAndZero *)&v12.DeleteAndZero_field_0x04); /*0x78101e*/
   }
   WideString::AssignFromPtr((WideString *)a1, (const wchar_t **)&v12); /*0x78102a*/
-  DeleteAndZero((ObjectClass *)&v12.DeleteAndZero_field_0x08); /*0x781033*/
+  j_DeleteAndZero((ObjectClass *)&v12.DeleteAndZero_field_0x08); /*0x781033*/
   DeleteAndZero::Alt(&v12); /*0x78103c*/
-  DeleteAndZero((ObjectClass *)&v13); /*0x781045*/
+  j_DeleteAndZero((ObjectClass *)&v13); /*0x781045*/
   return a1; /*0x78104c*/
 
 }

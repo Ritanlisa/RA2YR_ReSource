@@ -19,7 +19,7 @@
 
 // 0x655C50
 namespace gamemd {  // G42.18 ns repair
-MapClass * * FogOfWar::RevealArea(int *a2, int *aP1, int a1)
+int FogOfWar::RevealArea(int *a2, int *aP1, int a1)
 {
 
   int result; // eax

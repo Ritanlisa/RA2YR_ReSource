@@ -77,7 +77,7 @@ struct WalkLocomotion {
     int WalkLocomotion_field_0x1768;  // 0x1768
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
-    AbstractClass * * MoveTo(unsigned int *aP1, int aP3, void *a3 = 0);  // 0x6A01A0
+    char MoveTo(unsigned int *aP1, int aP3, void *a3 = 0);  // 0x6A01A0
     char ProcessCollision(char a2, void *a2_2);
     int Update(unsigned char * a2, int a3, int a4, void *a4_2);  // 0x6A1C80
     unsigned int * TransformCoords(unsigned int *aP1, int *aP2, int *aP3, void *a4 = 0);  // 0x6A3DB0

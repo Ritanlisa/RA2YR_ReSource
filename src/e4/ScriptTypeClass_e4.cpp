@@ -116,7 +116,7 @@ ScriptTypeClass * ScriptTypeClass::ddtor(char a2, int a1, int a3)
 
 // 0x6E8340
 namespace gamemd {
-TaskForceClass * ScriptTypeClass::ReadINI(char * a1, int a2, void *a3)
+int ScriptTypeClass::ReadINI(char * a1, int a2, void *a3)
 {
 
   signed int KeyCount; // ebx

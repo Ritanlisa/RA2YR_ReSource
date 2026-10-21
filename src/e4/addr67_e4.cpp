@@ -346,7 +346,7 @@ int ArtINI_Load()
 }
 // 0x67BAC0
 namespace gamemd {
-InfantryTypeClass * GetINIClassInt(unsigned char *** a0, INIClass * aP1, unsigned char * a2, int a4)
+int GetINIClassInt(unsigned char *** a0, INIClass * aP1, unsigned char * a2, int a4)
 {
 
   char Destination[128]; // [esp+0h] [ebp-80h] BYREF
@@ -360,7 +360,7 @@ InfantryTypeClass * GetINIClassInt(unsigned char *** a0, INIClass * aP1, unsigne
 }
 // 0x67BD30
 namespace gamemd {
-AircraftTypeClass * GetINIClassKeyword(unsigned char *** a0, INIClass * aP1, unsigned char * a2, int a4)
+int GetINIClassKeyword(unsigned char *** a0, INIClass * aP1, unsigned char * a2, int a4)
 {
 
   char Destination[128]; // [esp+0h] [ebp-80h] BYREF

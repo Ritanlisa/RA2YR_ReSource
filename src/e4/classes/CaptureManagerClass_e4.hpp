@@ -43,8 +43,8 @@ struct CaptureManagerClass {
     char FreeUnit(int a2, int a3, unsigned int *a1, int aP1, unsigned int *aP0, int a5);
     CaptureManagerClass(int a2, int a3, char a4);
     CaptureManagerClass * ddtor(char a2);
-    ScenarioClass * * HandleOverload();
-    TechnoClass * * LoadFromStream(int a1, int * a2);
+    char HandleOverload();
+    int LoadFromStream(int a1, int * a2);
     char AddMember(TechnoClass * aP1, void *a2, void *a3);
     bool CanCapture(unsigned int *a2, void *a2_1 = 0);
     int CannotControlAnyMore();

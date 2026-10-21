@@ -8,7 +8,7 @@
 
 // 0x659110
 namespace gamemd {  // G42.18 ns repair
-void * RadBeam::Create(void *a1, void *a2, void *a3, void *a4)
+int RadBeam::Create(void *a1, void *a2, void *a3, void *a4)
 {
 
 

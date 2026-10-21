@@ -16,6 +16,6 @@ struct E4Recv_52A4D0 {
     void* attachedBomb;  // 0x0 (no offset truth)
     void* nextObject;  // 0x0 (no offset truth)
     void* fallRate;  // 0x0 (no offset truth)
-    ObjectClass * *  sub_52A4D0(uint8_t * a2);  // 0x52A4D0
+    int sub_52A4D0(uint8_t * a2);  // 0x52A4D0
 };
 } // namespace gamemd

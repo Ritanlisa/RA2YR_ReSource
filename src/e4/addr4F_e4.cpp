@@ -715,23 +715,23 @@ int ParseINIAnimGadgetDefinition(void * a2, void * a4, void * a3, void * aOrigin
   String::Assign(&v20, ValueName); /*0x4f2c83*/
   v6 = INIClass::ReadInt((bool *)a2->__pad_0, Source, &v20, -1); /*0x4f2c97*/
   *(unsigned int *)&v21.headNode = v6; /*0x4f2c9d*/
-  DeleteAndZero((ObjectClass *)&v20); /*0x4f2ca1*/
+  j_DeleteAndZero((ObjectClass *)&v20); /*0x4f2ca1*/
   if ( v6 == -1 ) /*0x4f2ca9*/
     return 0; /*0x4f2cad*/
   unknown_libname_73(&v19); /*0x4f2cba*/
   String::Assign(&v21, &g_INI_DefaultBuffer); /*0x4f2cc8*/
   String::Assign(&v20, g_INI_Key_Image); /*0x4f2cd6*/
   INIClass::ReadString(a2, (char **)Source, (char **)&v20, (char **)&v21, (int)&v19); /*0x4f2ced*/
-  DeleteAndZero((ObjectClass *)&v20); /*0x4f2cf6*/
-  DeleteAndZero((ObjectClass *)&v21); /*0x4f2cff*/
+  j_DeleteAndZero((ObjectClass *)&v20); /*0x4f2cf6*/
+  j_DeleteAndZero((ObjectClass *)&v21); /*0x4f2cff*/
   if ( String::Length(&v19) ) /*0x4f2d08*/
   {
     unknown_libname_73(&v19.m_3[1]); /*0x4f2d29*/
     String::Assign(&v20, &g_INI_DefaultBuffer); /*0x4f2d37*/
     String::Assign(&v21, g_INI_Key_Palette); /*0x4f2d45*/
     INIClass::ReadString(a2, (char **)Source, (char **)&v21, (char **)&v20, (int)&v19.m_3[1]); /*0x4f2d5c*/
-    DeleteAndZero((ObjectClass *)&v21); /*0x4f2d65*/
-    DeleteAndZero((ObjectClass *)&v20); /*0x4f2d6e*/
+    j_DeleteAndZero((ObjectClass *)&v21); /*0x4f2d65*/
+    j_DeleteAndZero((ObjectClass *)&v20); /*0x4f2d6e*/
     if ( String::Length((String *)&v19.ptr_4) ) /*0x4f2d77*/
     {
       v8 = 0; /*0x4f2d9e*/
@@ -743,7 +743,7 @@ int ParseINIAnimGadgetDefinition(void * a2, void * a4, void * a3, void * aOrigin
       v11 = CoordPair[1]; /*0x4f2dcf*/
       v22 = v10; /*0x4f2dd2*/
       v23 = v11; /*0x4f2dda*/
-      DeleteAndZero((ObjectClass *)&v21); /*0x4f2dde*/
+      j_DeleteAndZero((ObjectClass *)&v21); /*0x4f2dde*/
       ptr_0 = (unsigned int *)a4.ptr_0; /*0x4f2de3*/
       v13 = *(unsigned int *)a4.ptr_0; /*0x4f2df4*/
       v24 = 0; /*0x4f2df6*/

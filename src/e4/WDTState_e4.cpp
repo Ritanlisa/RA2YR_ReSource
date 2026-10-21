@@ -11,7 +11,7 @@
 
 // 0x76BA70
 namespace gamemd {  // G42.18 ns repair
-AbstractClass * * WDTState_4::Release(int a2, unsigned int * a3)
+char WDTState_4::Release(int a2, unsigned int * a3)
 {
 
   int m_8; // ebp

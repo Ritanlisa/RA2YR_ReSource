@@ -132,7 +132,7 @@ struct RadarClass {
     static int SetFlag(void *aP1, int a2);
     static int SetGlobal(void *aP1);
     static int IsActiveMode(void *aP1);
-    CampaignClass * Destruct(void *a1 = 0);
+    int Destruct(void *a1 = 0);
     int GetBlip(int a1, int a2, int a3, ObjectClass * aP3);
     unsigned int * initRadarSurface();
     static void Destru_vt50();

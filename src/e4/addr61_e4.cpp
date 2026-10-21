@@ -33,7 +33,7 @@
 
 // 0x610570
 namespace gamemd {  // G42.18 ns repair
-AbstractClass * * DestroyDialogChildWindow(HWND hWnd, LPARAM)
+BOOL DestroyDialogChildWindow(HWND hWnd, LPARAM)
 {
 
   void *v2; // eax
@@ -357,7 +357,7 @@ void sub_612930()
 }
 // 0x612A60
 namespace gamemd {
-AbstractClass * * sub_612A60(HWND v4, UINT Msg, HDC hdc, LPARAM lParam)
+HGDIOBJ sub_612A60(HWND v4, UINT Msg, HDC hdc, LPARAM lParam)
 {
 
   LRESULT (*v4)(HWND, UINT, WPARAM, LPARAM); // esi

@@ -77,7 +77,7 @@ BulletClass::BulletClass()
 }  // G42.18 ns repair
 // 0x466560
 namespace gamemd {
-BulletClass * * BulletClass::Dtor(void *a1)
+int BulletClass::Dtor(void *a1)
 {
   BulletClass *v5; // [esp+4h] [ebp-4h] BYREF
 

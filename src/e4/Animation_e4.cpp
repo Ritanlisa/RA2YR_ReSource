@@ -282,13 +282,13 @@ ObjectClass * * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass 
     v6 = *(void **)this; /*0x770574*/
     String::Assign((String *)&aP2, off_83E188); /*0x77057f*/
     INIClass::ReadTokenizedPair(v5, v4, v3, v6, 0, (char **)&aP2); /*0x770590*/
-    DeleteAndZero((ObjectClass *)&aP2); /*0x770599*/
+    j_DeleteAndZero((ObjectClass *)&aP2); /*0x770599*/
     String::Assign((String *)&a1, g_INI_Key_Lose); /*0x7705a7*/
     INIClass::ReadTokenizedPair(v5, v4, v3, v6, 1, (char **)&a1); /*0x7705b8*/
-    DeleteAndZero((ObjectClass *)&a1); /*0x7705c1*/
+    j_DeleteAndZero((ObjectClass *)&a1); /*0x7705c1*/
     String::Assign(&v23, aDraw); /*0x7705cf*/
     INIClass::ReadTokenizedPair(v5, v4, v3, v6, 2, (char **)&v23); /*0x7705e0*/
-    DeleteAndZero((ObjectClass *)&v23); /*0x7705e9*/
+    j_DeleteAndZero((ObjectClass *)&v23); /*0x7705e9*/
     v5 = &v5->__pad_094; /*0x7705f2*/
     if ( !--*(unsigned int *)&v23.m_3[1] ) /*0x7705fd*/
       break; /*0x7705fd*/
@@ -300,7 +300,7 @@ ObjectClass * * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass 
   unknown_libname_73(&a1); /*0x770630*/
   String::Assign((String *)&aP2, &g_INI_DefaultBuffer); /*0x77063e*/
   INIClass::ReadString(v4, v3, (char **)&v23.m_3[1], (char **)&aP2, (int)&a1); /*0x770655*/
-  DeleteAndZero((ObjectClass *)&aP2); /*0x77065e*/
+  j_DeleteAndZero((ObjectClass *)&aP2); /*0x77065e*/
   (*(void (**)(Animation *))(*(unsigned int *)&v22[892] + 12))(v22 + 892); /*0x770671*/
   unknown_libname_73(&aP2); /*0x770678*/
   for ( i = String::Tokenize((String *)&a1, 0, Delimiter, (void **)&aP2); /*0x770697*/
@@ -329,17 +329,17 @@ ObjectClass * * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass 
     *(unsigned int *)&v22[908] = v12 + 1; /*0x7706d9*/
     v13[v12] = v24; /*0x7706e0*/
   }
-  DeleteAndZero((ObjectClass *)&aP2); /*0x770702*/
-  DeleteAndZero((ObjectClass *)&a1); /*0x77070b*/
-  DeleteAndZero((ObjectClass *)&v23.m_3[1]); /*0x770714*/
-  DeleteAndZero((ObjectClass *)&v23); /*0x77071d*/
+  j_DeleteAndZero((ObjectClass *)&aP2); /*0x770702*/
+  j_DeleteAndZero((ObjectClass *)&a1); /*0x77070b*/
+  j_DeleteAndZero((ObjectClass *)&v23.m_3[1]); /*0x770714*/
+  j_DeleteAndZero((ObjectClass *)&v23); /*0x77071d*/
   String::Assign(&v23, aTerritoryselec); /*0x77072b*/
   v14 = StaticString::Factory(*(StaticString **)v22); /*0x77073b*/
   ConcatStringAlloc((char **)&v23.m_3[1], (const char **)v14, (char **)&v23); /*0x770746*/
   unknown_libname_73(&a1); /*0x77074f*/
   String::Assign((String *)&aP2, &g_INI_DefaultBuffer); /*0x77075d*/
   INIClass::ReadString(v4, v3, (char **)&v23.m_3[1], (char **)&aP2, (int)&a1); /*0x770774*/
-  DeleteAndZero((ObjectClass *)&aP2); /*0x77077d*/
+  j_DeleteAndZero((ObjectClass *)&aP2); /*0x77077d*/
   (*(void (**)(Animation *))(*(unsigned int *)&v22[916] + 12))(v22 + 916); /*0x770790*/
   unknown_libname_73(&aP2); /*0x770797*/
   for ( j = String::Tokenize((String *)&a1, 0, Delimiter, (void **)&aP2); /*0x7707b6*/
@@ -368,10 +368,10 @@ ObjectClass * * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass 
     *(unsigned int *)&v22[932] = v20 + 1; /*0x7707f6*/
     v21[v20] = v18; /*0x7707f9*/
   }
-  DeleteAndZero((ObjectClass *)&aP2); /*0x77081b*/
-  DeleteAndZero((ObjectClass *)&a1); /*0x770824*/
-  DeleteAndZero((ObjectClass *)&v23.m_3[1]); /*0x77082d*/
-  DeleteAndZero((ObjectClass *)&v23); /*0x770836*/
+  j_DeleteAndZero((ObjectClass *)&aP2); /*0x77081b*/
+  j_DeleteAndZero((ObjectClass *)&a1); /*0x770824*/
+  j_DeleteAndZero((ObjectClass *)&v23.m_3[1]); /*0x77082d*/
+  j_DeleteAndZero((ObjectClass *)&v23); /*0x770836*/
 
 }
 } // namespace gamemd

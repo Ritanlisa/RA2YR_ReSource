@@ -73,12 +73,12 @@ int MapSeed::CheckName(void *a1)
     || (v7 = ((String *)&g_WebBrowser)->ToLowerCopy(&v9),
         v2 = (&v8)->ToLowerCopy((char **)&v8.m_3[1]),
         v3 = ((String *)v2)->Compare((const char **)v7),
-        DeleteAndZero((ObjectClass *)&v8.m_3[1]),
-        DeleteAndZero((ObjectClass *)&v9),
+        j_DeleteAndZero((ObjectClass *)&v8.m_3[1]),
+        j_DeleteAndZero((ObjectClass *)&v9),
         v3)
     || (unsigned __int8)ValidateStringContains((const char **)this, v4, asc_84BA18) )
   {
-    result = (int)(DeleteAndZero((ObjectClass *)&v8)); /*0x79c5b7*/
+    result = (int)(j_DeleteAndZero((ObjectClass *)&v8)); /*0x79c5b7*/
     (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x79c5bc*/
   }
   else
@@ -87,7 +87,7 @@ int MapSeed::CheckName(void *a1)
     if ( *(int *)g_WindowManager <= 0 ) /*0x79c5cc*/
     {
       LABEL_12:
-      result = (int)(DeleteAndZero((ObjectClass *)&v8)); /*0x79c624*/
+      result = (int)(j_DeleteAndZero((ObjectClass *)&v8)); /*0x79c624*/
       (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x79c62d*/
     }
     else
@@ -100,12 +100,12 @@ int MapSeed::CheckName(void *a1)
         ((String *)&v8.m_3[1])->ToLower(); /*0x79c5fa*/
         if ( (unsigned __int8)((String *)&v8.m_3[1])->Compare((const char **)&v8) ) /*0x79c608*/
           break; /*0x79c608*/
-        DeleteAndZero((ObjectClass *)&v8.m_3[1]); /*0x79c615*/
+        j_DeleteAndZero((ObjectClass *)&v8.m_3[1]); /*0x79c615*/
         if ( ++v6 >= *(int *)g_WindowManager ) /*0x79c622*/
           goto LABEL_12; /*0x79c622*/
       }
-      DeleteAndZero((ObjectClass *)&v8.m_3[1]); /*0x79c634*/
-      result = (int)(DeleteAndZero((ObjectClass *)&v8)); /*0x79c63d*/
+      j_DeleteAndZero((ObjectClass *)&v8.m_3[1]); /*0x79c634*/
+      result = (int)(j_DeleteAndZero((ObjectClass *)&v8)); /*0x79c63d*/
       (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x79c642*/
     }
   }
@@ -213,7 +213,7 @@ AbstractClass * * MapSeed::InsertName()
       if ( (unsigned int)(time(0) - dword_B779D0) < 5 ) /*0x79c825*/
       {
 LABEL_33:
-        DeleteAndZero((ObjectClass *)&v11); /*0x79c8b7*/
+        j_DeleteAndZero((ObjectClass *)&v11); /*0x79c8b7*/
         return; /*0x79c8bb*/
       }
       DeleteAndZero::Alt2((DeleteAndZero *)&unk_B73ACC); /*0x79c830*/

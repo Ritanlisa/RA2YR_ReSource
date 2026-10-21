@@ -388,7 +388,7 @@ LABEL_14:
 }
 // 0x4CA430
 namespace gamemd {
-AbstractClass * * FactoryClass::Stat(int * a2)
+int FactoryClass::Stat(int * a2)
 {
 
   int v3; // eax

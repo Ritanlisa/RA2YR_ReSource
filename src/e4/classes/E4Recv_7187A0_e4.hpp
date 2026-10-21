@@ -10,7 +10,7 @@ struct E4Recv_7187A0 {
     unsigned int ptr_0;  // 0x0
     unsigned int M12;  // 0xC
 // --- flat members (END) ---
-    UnitTypeClass * *  ProcessUnitDeploymentAtCell(int a2, int a3, int a4);  // 0x7187A0
+    char ProcessUnitDeploymentAtCell(int a2, int a3, int a4);  // 0x7187A0
     unsigned int ptr_8;  // 0x8 [X30:default]
 
 

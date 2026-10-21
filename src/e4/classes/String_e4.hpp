@@ -21,7 +21,7 @@ struct String {
     int Release(void *a1 = 0);  // 0x5BD5A0
     ObjectClass * * SplitComma(ObjectClass * aP1);  // 0x5D0380
     int NormalizeNewlines();  // 0x5F3350
-    ControlClass * * To_Waypoint();  // 0x763690
+    int To_Waypoint();  // 0x763690
     int TrimLeft(const char **a2, const char **aP1, int a1, int a3, int aP2, int aP3, int a4, int a5);
     unsigned int Length(void *a1 = 0);  // 0x7B54B0
     AbstractClass * * Replace(char * SubStr, const char * a3);  // 0x7B57A0

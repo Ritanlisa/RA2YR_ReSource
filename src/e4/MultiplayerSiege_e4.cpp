@@ -134,7 +134,7 @@ int MultiplayerSiege::Write(void ** a1)
 } // namespace gamemd
 // 0x5CA800
 namespace gamemd {
-AbstractClass * * MultiplayerSiege::ProcessTurn(char a2)
+char MultiplayerSiege::ProcessTurn(char a2)
 {
 
   int v3; // eax

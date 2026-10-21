@@ -20,7 +20,7 @@ struct BuildingPlacement {
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     static bool IsPlacementFlagSet(BuildingPlacement *pThis, unsigned int a2, char a3);
-    VectorClass_flat * * ProcessBuildingPlacementAction();
+    char ProcessBuildingPlacementAction();
     unsigned int * FindPosition(int * a0, IUnknown * aP1, IUnknown);  // G57w10-S raw 0x00500200 IUnknown 占位清除
     unsigned int * SelectBuildingPlacementCells(int a2);
     void* Activate(int a2, unsigned int *a3);

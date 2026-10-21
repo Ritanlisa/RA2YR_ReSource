@@ -193,7 +193,7 @@ void E4Recv_7714B0::sub_7714B0(int a2, char a3, int a4)
         ++this->targetLaserTimer[0]; /*0x771601*/
     }
   }
-  DeleteAndZero((ObjectClass *)&v17); /*0x77160b*/
+  j_DeleteAndZero((ObjectClass *)&v17); /*0x77160b*/
 
 }
 }

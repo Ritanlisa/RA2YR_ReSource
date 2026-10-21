@@ -13,7 +13,7 @@ struct ConnectionPointClass_9 {
     unsigned int m_C;  // 0xC
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
-    AbstractClass * *  Release(int a2, unsigned int * a3);  // 0x4A1280
+    char Release(int a2, unsigned int * a3);  // 0x4A1280
     int  EnumConnections(int a2);  // 0x4A0F70
     char  AddRef(int a2);  // 0x4A1240
     int  Advise(unsigned int * a2);  // 0x4A1360

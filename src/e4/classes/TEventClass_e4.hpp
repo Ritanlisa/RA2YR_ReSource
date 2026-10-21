@@ -31,7 +31,7 @@ struct TEventClass {
     char TEventClass_field_5C[4];  // 0x5C
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
-    DynamicVector * Execute(int a2, int a3, int a4, int *a5, int a6, int a7);
+    char Execute(int a2, int a3, int a4, int *a5, int a6, int a7);
     int CheckConditions(int a2, int a3);
     int PrepareSaveToINI(const char * a2);
     int ProcessEvent(int a2);

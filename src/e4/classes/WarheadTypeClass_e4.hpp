@@ -118,7 +118,7 @@ struct WarheadTypeClass {
     CCINIClass * checkImmunity(int aP1);
     CampaignClass * * Destructor(char a2, int a3, int a1);
     DynamicVector * calculateDamage(int aP1);
-    ParticleSystemTypeClass * * applyDamage(char *Source, int aP1, int a2, int a3, int a4, int a5, int a6, int a1, int aP0);
+    int applyDamage(char *Source, int aP1, int a2, int a3, int a4, int a5, int a6, int a1, int aP0);
     TypeList_flat * QueryInterface(char a2);
     WarheadTypeClass * parseAnimations(char a2);
     char AddRef(int a2);

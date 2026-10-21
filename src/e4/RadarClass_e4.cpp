@@ -30,7 +30,7 @@ int GenerateImageThumbnail(int* p0, int* p1, int* p2, char p3);  // x4:signals@0
 
 // 0x652C00
 namespace gamemd {  // G42.18 ns repair
-CampaignClass * RadarClass::Destruct(void *a1)
+int RadarClass::Destruct(void *a1)
 {
 
 

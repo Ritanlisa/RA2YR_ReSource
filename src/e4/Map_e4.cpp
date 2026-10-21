@@ -314,7 +314,7 @@ int E4Recv_5ADD10::Map_Delete()
   /* X11: ptr_0 install elided (implicit via MapSelect virtuals 0x5add5b) */
   bool v2; // bl
   v2 = ((ScenarioClass *)&v7)->Load((int)this) == 0; /*0x5add71*/
-  DeleteAndZero((ObjectClass *)v9); /*0x5add74*/
+  j_DeleteAndZero((ObjectClass *)v9); /*0x5add74*/
   ((MSEngine *)v8)->Destructor(); /*0x5add7d*/
   (&v7)->Destruct(); /*0x5add86*/
   if ( v2 )
