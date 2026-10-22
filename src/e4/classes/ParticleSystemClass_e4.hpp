@@ -10,10 +10,10 @@ struct VectorClass_flat;  // fix_fwd_type_supply
 
 struct ParticleSystemClass {
     unsigned int ptr_0;  // 0x0
-    void* ptr_4;  // 0x4
+    void * ptr_4;  // 0x4
     unsigned int m_8;  // 0x8
     unsigned int m_C;  // 0xC
-    AbstractClass* uniqueId;  // 0x10
+    AbstractClass * uniqueId;  // 0x10
     int abstractFlags;  // 0x14
     int nextArrayIndex;  // 0x18
     int referenceCount;  // 0x1C
@@ -29,7 +29,7 @@ struct ParticleSystemClass {
     int customSound;  // 0x64
     char bombVisible;  // 0x68
     char alignmentPadding69[3];  // 0x69
-    IUnknown* health;  // 0x6C
+    IUnknown * health;  // 0x6C
     int estimatedHealth;  // 0x70
     char isOnMap;  // 0x74
     char alignmentPadding75[3];  // 0x75
@@ -54,22 +54,22 @@ struct ParticleSystemClass {
     unsigned short alignmentPadding99;  // 0x9A
     int location[3];  // 0x9C
     void * lineTrailer;  // 0xA8
-    ParticleSystemTypeClass* Type;  // 0xAC
+    ParticleSystemTypeClass * Type;  // 0xAC
     char SpawnDistanceToOwner[12];  // 0xB0
-    void* Particles;  // 0xBC
+    void * Particles;  // 0xBC
     char TargetCoords[12];  // 0xC0
-    TechnoClass* Owner;  // 0xCC
+    TechnoClass * Owner;  // 0xCC
     unsigned int Target;  // 0xD0
     int SpawnFrames;  // 0xD4
     int Lifetime;  // 0xD8
     int SparkSpawnFrames;  // 0xDC
-    void* SpotlightRadius;  // 0xE0
+    void * SpotlightRadius;  // 0xE0
     bool TimeToDie;  // 0xE4
     char __pad_E5[20];  // 0xE5
     bool ParticleSystemClass_field_bool_F9;  // 0xF9
     unsigned char __pad_0FA;  // 0xFA
     char __pad_FB[1];  // 0xFB
-    AbstractClass* OwnerHouse;  // 0xFC
+    AbstractClass * OwnerHouse;  // 0xFC
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     static int CreateParticle(void *aP1, void *a2, void *a3);

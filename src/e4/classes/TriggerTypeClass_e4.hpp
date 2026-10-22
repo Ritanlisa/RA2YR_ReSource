@@ -12,9 +12,9 @@ struct TActionClass;  // fix_fwd_type_supply
 
 struct TriggerTypeClass {
     void * ptr_0;  // 0x0
-    void* ptr_4;  // 0x4
-    void* ptr_8;  // 0x8
-    void* ptr_C;  // 0xC
+    void * ptr_4;  // 0x4
+    void * ptr_8;  // 0x8
+    void * ptr_C;  // 0xC
     int uniqueId;  // 0x10
     int abstractFlags;  // 0x14
     int nextArrayIndex;  // 0x18
@@ -28,15 +28,15 @@ struct TriggerTypeClass {
     void * UIName;  // 0x60
     char Name[49];  // 0x64
     char tail_95[3];  // 0x95
-    void* ArrayIndex;  // 0x98
+    void * ArrayIndex;  // 0x98
     char Difficulty[3];  // 0x9C
     bool Enabled;  // 0x9F
     bool MustTransfer;  // 0xA0
     char m_align_A1[3];  // 0xA1
-    HouseTypeClass* House;  // 0xA4
-    TriggerTypeClass* NextTrigger;  // 0xA8
-    TEventClass* FirstEvent;  // 0xAC
-    TActionClass* FirstAction;  // 0xB0
+    HouseTypeClass * House;  // 0xA4
+    TriggerTypeClass * NextTrigger;  // 0xA8
+    TEventClass * FirstEvent;  // 0xAC
+    TActionClass * FirstAction;  // 0xB0
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     TechnoClass * * ReadINI(unsigned int * a0, TechnoClass * aP1, TechnoClass * aP2, int a4, TechnoClass * aP4);

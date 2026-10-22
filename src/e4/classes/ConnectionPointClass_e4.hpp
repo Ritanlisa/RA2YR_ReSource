@@ -6,7 +6,7 @@
 namespace gamemd {
 
 struct ConnectionPointClass {
-    void* ptr_0;  // 0x0
+    void * ptr_0;  // 0x0
     void* __pad_004;  // 0x4
     int u32_8;  // 0x8
     int u32_C;  // 0xC
@@ -15,6 +15,12 @@ struct ConnectionPointClass {
     int q018;  // 0x18
     int q01C;  // 0x1C
     int q020;  // 0x20
+    unsigned int u32_24;  // 0x24
+    unsigned char u8_28;  // 0x28
+    unsigned char u8_29;  // 0x29
+    char __pad_2A[2];  // 0x2A
+    unsigned int u32_2C;  // 0x2C
+    unsigned int u32_30;  // 0x30
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int EnumConnections(int a2);  // G42.41c: truth 0x4A0700

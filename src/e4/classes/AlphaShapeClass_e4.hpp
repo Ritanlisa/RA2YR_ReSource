@@ -6,16 +6,23 @@
 namespace gamemd {
 
 struct AlphaShapeClass {
-    void* ptr_0;  // 0x0
-    void* ptr_4;  // 0x4
-    void* ptr_8;  // 0x8
-    void* ptr_C;  // 0xC
+    void * ptr_0;  // 0x0
+    void * ptr_4;  // 0x4
+    void * ptr_8;  // 0x8
+    void * ptr_C;  // 0xC
     unsigned int __pad_010;  // 0x10
     int u32_14;  // 0x14
     int q018;  // 0x18
     int q01C;  // 0x1C
     int q020;  // 0x20
     int q024;  // 0x24
+    unsigned int u32_28;  // 0x28
+    unsigned int u32_2C;  // 0x2C
+    unsigned int u32_30;  // 0x30
+    unsigned int u32_34;  // 0x34
+    unsigned int u32_38;  // 0x38
+    unsigned char u32_3C;  // 0x3C
+    char __pad_3D[3];  // 0x3D
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     AlphaShapeClass * SDDTOR(char a2, int aP0, int aP1);

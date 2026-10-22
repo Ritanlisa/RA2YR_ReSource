@@ -20,9 +20,9 @@ struct ObjectTypeClass;  // fix_fwd_type_supply
 struct WeaponTypeClass;  // fix_fwd_type_supply
 
 struct SuperClass {
-    void* ptr_0;  // 0x0
-    void* ptr_4;  // 0x4
-    void* ptr_8;  // 0x8
+    void * ptr_0;  // 0x0
+    void * ptr_4;  // 0x4
+    void * ptr_8;  // 0x8
     unsigned int q00C;  // 0xC
     unsigned int __pad_010;  // 0x10
     char __pad_14[3];  // 0x14
@@ -40,8 +40,8 @@ struct SuperClass {
     unsigned int u32_3C;  // 0x3C
     bool BlinkState;  // 0x40
     char __pad_41[3];  // 0x41
-    HouseClass* Owner;  // 0x44
-    void* BlinkTimer;  // 0x48
+    HouseClass * Owner;  // 0x44
+    void * BlinkTimer;  // 0x48
     void* __pad_04C;  // 0x4C
     int SpecialSoundDuration;  // 0x50
     char SpecialSoundLocation[4];  // 0x54
@@ -52,10 +52,7 @@ struct SuperClass {
     unsigned char __pad_066;  // 0x66
     char __pad_67[1];  // 0x67
     unsigned int u32_68;  // 0x68
-    union {
-        unsigned int u32_6C;  // 0x6C
-        struct { unsigned char __pad_6C; unsigned char Granted; unsigned char OneTime; unsigned char IsCharged; };  // 0x6C
-    };
+    unsigned int u32_6C;  // 0x6C
     int q070;  // 0x70
     unsigned int u32_74;  // 0x74
     unsigned int u32_78;  // 0x78
@@ -69,7 +66,7 @@ struct SuperClass {
     char __pad_B4[16];  // 0xB4
     int q0C4;  // 0xC4
     char __pad_C8[60];  // 0xC8
-    AnimClass* Animation;  // 0x104
+    AnimClass * Animation;  // 0x104
     bool AnimationGotInvalid;  // 0x108
     char __pad_109[3];  // 0x109
     unsigned char __pad_10C;  // 0x10C
@@ -106,6 +103,9 @@ struct SuperClass {
     int qF98;  // 0xF98
     char __pad_F9C[76];  // 0xF9C
     int qFE8;  // 0xFE8
+    union {
+        struct { unsigned char __pad_6C; unsigned char Granted; unsigned char OneTime; unsigned char IsCharged; };  // 0x6C
+    };
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     static wchar_t * SetCurrentFrame(SuperClass *pThis);

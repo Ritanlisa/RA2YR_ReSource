@@ -37,6 +37,9 @@ struct ScriptAction {
     int q0A8;  // 0xA8
     char __pad_AC[4];  // 0xAC
     int q0B0;  // 0xB0
+    unsigned int u32_B4;  // 0xB4
+    char __pad_B8[508];  // 0xB8
+    unsigned int u32_2B4;  // 0x2B4
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     void*  InitActionFields(int a2, int a3, char a4, char a5, int a6, char a7, int a8, char a9, int a10, char a11, void *a1 = 0);  // 0x4C6860

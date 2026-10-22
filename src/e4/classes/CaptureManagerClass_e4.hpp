@@ -16,16 +16,16 @@ struct CaptureManagerClass {
     void * ptr_4;  // 0x4
     void * ptr_8;  // 0x8
     void * ptr_C;  // 0xC
-    void* uniqueId;  // 0x10
+    void * uniqueId;  // 0x10
     int abstractFlags;  // 0x14
     int nextArrayIndex;  // 0x18
     int referenceCount;  // 0x1C
     void * NeedsSaveOrLink;  // 0x20
     unsigned int controlNodes;  // 0x24
     int controlNodeCount;  // 0x28
-    HouseClass* controlNodeCapacity;  // 0x2C
-    TechnoClass* owner;  // 0x30
-    HouseClass* originalOwner;  // 0x34
+    HouseClass * controlNodeCapacity;  // 0x2C
+    TechnoClass * owner;  // 0x30
+    HouseClass * originalOwner;  // 0x34
     bool CaptureManagerClass_field_30;  // 0x38
     bool u32_31;  // 0x39
     char pad_32[2];  // 0x3A

@@ -24,6 +24,7 @@ struct Array {
     int q0E8;  // 0xE8
     char __pad_EC[1812];  // 0xEC
     int q800;  // 0x800
+    unsigned int u32_804;  // 0x804
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int GetClamped(int aP1);  // 0x634290

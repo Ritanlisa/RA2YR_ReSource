@@ -17,9 +17,9 @@ struct HouseClass;  // fix_fwd_type_supply
 struct MSShapeAnim;  // fix_fwd_type_supply
 
 struct BulletClass {
-    void* ptr_0;  // 0x0
+    void * ptr_0;  // 0x0
     int BulletClass_field_0x4;  // 0x4
-    void* ptr_8;  // 0x8
+    void * ptr_8;  // 0x8
     unsigned int q00C;  // 0xC
     unsigned char __pad_010;  // 0x10
     char __pad_11[2];  // 0x11
@@ -28,7 +28,7 @@ struct BulletClass {
     bool __pad_017;  // 0x17
     int q018;  // 0x18
     char __pad_1C[20];  // 0x1C
-    ObjectClass* nextObject;  // 0x30
+    ObjectClass * nextObject;  // 0x30
     char __pad_34[3];  // 0x34
     unsigned char __pad_037;  // 0x37
     char __pad_38[44];  // 0x38
@@ -64,7 +64,7 @@ struct BulletClass {
     char __pad_9B[3];  // 0x9B
     unsigned char __pad_09E;  // 0x9E
     char __pad_9F[13];  // 0x9F
-    void* u32_AC;  // 0xAC
+    void * u32_AC;  // 0xAC
     int q0B0;  // 0xB0
     char __pad_B4[4];  // 0xB4
     unsigned int Data;  // 0xB8
@@ -87,9 +87,9 @@ struct BulletClass {
     unsigned int TargetCoords;  // 0x138
     ParticleSystemClass* __pad_13C;  // 0x13C
     int q140;  // 0x140
-    ParticleSystemClass* q144;  // 0x144
+    ParticleSystemClass * q144;  // 0x144
     unsigned int DamageMultiplier;  // 0x148
-    CellStruct* NextAnim;  // 0x14C
+    CellStruct * NextAnim;  // 0x14C
     unsigned int SpawnNextAnim;  // 0x150
     ParticleSystemClass* __pad_154;  // 0x154
     unsigned int q158;  // 0x158

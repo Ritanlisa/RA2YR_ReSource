@@ -10,6 +10,9 @@ namespace gamemd {
 struct RefCount {
     int m_RefCount;  // 0x0
     int RefCount_field_04;  // 0x4
+    unsigned int u32_8;  // 0x8
+    unsigned int u32_C;  // 0xC
+    unsigned int q010;  // 0x10
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int32_t Decrement(void *a1 = 0);

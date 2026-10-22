@@ -6,13 +6,17 @@
 namespace gamemd {
 
 struct Player {
-// --- flat members (BEGIN) ---
-unsigned int q004;  // 0x4 [X35-L7 kind=unsigned int]
+    unsigned short u16_0;  // 0x0
+    char __pad_2[2];  // 0x2
+    unsigned int q004;  // 0x4
     unsigned int u32_8;  // 0x8
     unsigned int u32_C;  // 0xC
+    char __pad_10[68];  // 0x10
     unsigned int u32_54;  // 0x54
+    char __pad_58[24];  // 0x58
     unsigned int u32_70;  // 0x70
     unsigned int u32_74;  // 0x74
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int IsObserver(void *a1 = 0);
     static void BuildListString(wchar_t * Destination);

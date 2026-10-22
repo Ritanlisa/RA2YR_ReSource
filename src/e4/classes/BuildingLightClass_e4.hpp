@@ -11,9 +11,9 @@ namespace gamemd {
 #ifndef GAMEMD_CORE_OWNS_BUILDINGLIGHT
 struct BuildingLightClass {
 #pragma pack(push, 1)  // X60: binary-packed layout
-    void* ptr_0;  // 0x0
-    void* ptr_4;  // 0x4
-    void* ptr_8;  // 0x8
+    void * ptr_0;  // 0x0
+    void * ptr_4;  // 0x4
+    void * ptr_8;  // 0x8
     void * ptr_C;  // 0xC
     int uniqueId;  // 0x10
     int abstractFlags;  // 0x14
@@ -67,8 +67,8 @@ struct BuildingLightClass {
     unsigned char __pad_0D9;  // 0xD9
     char __pad_DA[2];  // 0xDA
     int BehaviourMode;  // 0xDC
-    void* BuildingLightClass_field_E0;  // 0xE0
-    ObjectClass* FollowingObject;  // 0xE4
+    void * BuildingLightClass_field_E0;  // 0xE0
+    ObjectClass * FollowingObject;  // 0xE4
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     BuildingLightClass * SDDTOR(char a2, int a1, int aP0, int aP2);

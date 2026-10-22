@@ -10,7 +10,12 @@ struct Rect {
     int X;  // 0x0
     int Y;  // 0x4
     int Width;  // 0x8
-    Rect* Height;  // 0xC
+    Rect * Height;  // 0xC
+    char __pad_10[4];  // 0x10
+    unsigned int u32_14;  // 0x14
+    unsigned int u32_18;  // 0x18
+    unsigned int u32_1C;  // 0x1C
+    unsigned int u32_20;  // 0x20
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     unsigned int * Construct(unsigned int *aP1, int aP2, int aP3, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0, void *a9 = 0);

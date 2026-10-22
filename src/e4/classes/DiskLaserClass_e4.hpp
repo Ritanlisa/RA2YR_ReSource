@@ -6,10 +6,10 @@
 namespace gamemd {
 
 struct DiskLaserClass {
-    void* ptr_0;  // 0x0
-    void* ptr_4;  // 0x4
-    void* ptr_8;  // 0x8
-    void* ptr_C;  // 0xC
+    void * ptr_0;  // 0x0
+    void * ptr_4;  // 0x4
+    void * ptr_8;  // 0x8
+    void * ptr_C;  // 0xC
     unsigned int __pad_010;  // 0x10
     int q014;  // 0x14
     int q018;  // 0x18
@@ -17,6 +17,11 @@ struct DiskLaserClass {
     int q020;  // 0x20
     int q024;  // 0x24
     int q028;  // 0x28
+    unsigned int u32_2C;  // 0x2C
+    unsigned int u32_30;  // 0x30
+    unsigned int u32_34;  // 0x34
+    unsigned int u32_38;  // 0x38
+    unsigned int u32_3C;  // 0x3C
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     DiskLaserClass();

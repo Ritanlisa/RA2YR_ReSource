@@ -23,9 +23,9 @@ struct WeaponTypeClass;  // fix_fwd_type_supply
 struct Color;  // fix_fwd_type_supply
 
 struct AnimClass {
-    void* AnimClass_field_0x0;  // 0x0
+    void * AnimClass_field_0x0;  // 0x0
     int AnimClass_field_0x4;  // 0x4
-    void* ptr_8;  // 0x8
+    void * ptr_8;  // 0x8
     unsigned int q00C;  // 0xC
     unsigned int __pad_010;  // 0x10
     int q014;  // 0x14
@@ -59,7 +59,7 @@ struct AnimClass {
     bool hasParachute;  // 0x84
     unsigned char alignmentPadding85;  // 0x85
     char __pad_86[2];  // 0x86
-    AnimClass* parachute;  // 0x88
+    AnimClass * parachute;  // 0x88
     unsigned char __pad_08C;  // 0x8C
     bool isFallingDown;  // 0x8D
     bool wasFallingDown;  // 0x8E
@@ -74,19 +74,19 @@ struct AnimClass {
     char __pad_9B[1];  // 0x9B
     int q09C;  // 0x9C
     char __pad_A0[4];  // 0xA0
-    CampaignClass* q0A4;  // 0xA4
+    CampaignClass * q0A4;  // 0xA4
     unsigned char __pad_A8[4];  // 0xA8
-    IUnknown* q0AC;  // 0xAC
+    IUnknown * q0AC;  // 0xAC
     char __pad_B0[4];  // 0xB0
-    IUnknown* q0B4;  // 0xB4
+    IUnknown * q0B4;  // 0xB4
     int q0B8;  // 0xB8
-    IUnknown* q0BC;  // 0xBC
-    CellStruct* q0C0;  // 0xC0
+    IUnknown * q0BC;  // 0xBC
+    CellStruct * q0C0;  // 0xC0
     char __pad_C4[4];  // 0xC4
     Coord * u32_C8;  // 0xC8
     int q0CC;  // 0xCC
     int q0D0;  // 0xD0
-    IUnknown* q0D4;  // 0xD4
+    IUnknown * q0D4;  // 0xD4
     char __pad_D8[4];  // 0xD8
     unsigned int PaletteName;  // 0xDC
     unsigned char __pad_0E0;  // 0xE0
@@ -171,7 +171,7 @@ struct AnimClass {
     char __pad_414[4];  // 0x414
     int q418;  // 0x418
     char __pad_41C[60];  // 0x41C
-    DynamicVectorClass_flat * ptr_458;  // 0x458
+    void * ptr_458;  // 0x458
     unsigned char __pad_45C;  // 0x45C
     char __pad_45D[439];  // 0x45D
     LightSourceClass * ptr_614;  // 0x614

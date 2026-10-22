@@ -9,10 +9,10 @@
 namespace gamemd {
 
 struct BombClass {
-    void* ptr_0;  // 0x0
-    void* ptr_4;  // 0x4
-    void* ptr_8;  // 0x8
-    void* ptr_C;  // 0xC
+    void * ptr_0;  // 0x0
+    void * ptr_4;  // 0x4
+    void * ptr_8;  // 0x8
+    void * ptr_C;  // 0xC
     int uniqueId;  // 0x10
     int abstractFlags;  // 0x14
     int nextArrayIndex;  // 0x18
@@ -21,7 +21,7 @@ struct BombClass {
     unsigned char __pad_024;  // 0x24
     char __pad_25[3];  // 0x25
     int BombClass_field_28;  // 0x28
-    void* BombClass_field_2C;  // 0x2C
+    void * BombClass_field_2C;  // 0x2C
     int audioController[5];  // 0x30
     int soundIndex;  // 0x44
     unsigned char __pad_048;  // 0x48

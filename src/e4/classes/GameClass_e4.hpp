@@ -11,9 +11,22 @@ struct CampaignClass;  // fix_fwd_type_supply
 struct BufferIOFileClass;  // fix_fwd_type_supply
 struct PKPipe;  // fix_fwd_type_supply
 struct PKStrawClass {
-    void* ptr_0;  // 0x0
+    void * ptr_0;  // 0x0
     int __pad_004;  // 0x4
     int q008;  // 0x8
+    unsigned char u8_C;  // 0xC
+    char __pad_D[3];  // 0xD
+    unsigned int u32_10;  // 0x10
+    char __pad_14[4];  // 0x14
+    unsigned int u32_18;  // 0x18
+    unsigned int u32_1C;  // 0x1C
+    unsigned int u32_20;  // 0x20
+    char __pad_24[16];  // 0x24
+    unsigned int u32_34;  // 0x34
+    unsigned int u32_38;  // 0x38
+    char __pad_3C[256];  // 0x3C
+    unsigned int u32_13C;  // 0x13C
+    unsigned int u32_140;  // 0x140
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int  initGameMode(int a2, int a3, void *a1 = 0);  // 0x437FD0
@@ -50,7 +63,7 @@ struct GameClass {
     unsigned int u32_8;  // 0x8
     unsigned int u32_C;  // 0xC
     unsigned int u32_10;  // 0x10
-    Pipe* ptr_14;  // 0x14
+    Pipe * ptr_14;  // 0x14
     unsigned int __pad_018;  // 0x18
     char __pad_1C[4];  // 0x1C
     CampaignClass * ptr_20;  // 0x20
@@ -114,7 +127,7 @@ struct GameClass {
     char __pad_1AC[8];  // 0x1AC
     unsigned int u32_1B4;  // 0x1B4
     char __pad_1B8[72];  // 0x1B8
-    void* q200;  // 0x200
+    void * q200;  // 0x200
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     unsigned int *  processFrame(int a2, int a3);  // 0x4381D0

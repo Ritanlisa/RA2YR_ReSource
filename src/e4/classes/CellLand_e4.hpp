@@ -8,6 +8,11 @@
 namespace gamemd {
 struct CellLand {
     char __tail_0[4];  // 0x0
+    char __pad_4[52];  // 0x4
+    unsigned int u32_38;  // 0x38
+    char __pad_3C[222];  // 0x3C
+    unsigned char u8_11A;  // 0x11A
+    char __pad_11B[1];  // 0x11B
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     static int IsBuildable(CellLand *aP1);

@@ -2250,7 +2250,7 @@ unsigned int * JumpjetLocomotionClass::ClampToCellBounds(MouseClass * aP1, IUnkn
 
   int v11; // eax
 
-  int v4 = this->q0F4; // ebx /*0x586ac8*/
+  int v4 = this->u32_F4; // ebx /*0x586ac8*/
   int v5 = *aP2; // ebp /*0x586acf*/
   int v6; // edi
   v6 = aP2[1]; /*0x586ad4*/
@@ -2260,8 +2260,8 @@ unsigned int * JumpjetLocomotionClass::ClampToCellBounds(MouseClass * aP1, IUnkn
   else
     v7 = v5 - v6; /*0x586ae8*/
   int v8; // esi
-  v8 = v4 / 2 + (v7 >> 1) - this->q0FC; /*0x586b05*/
-  int v9 = v5 + v6 - v4 - this->q100; // edi /*0x586b0d*/
+  v8 = v4 / 2 + (v7 >> 1) - this->u32_FC; /*0x586b05*/
+  int v9 = v5 + v6 - v4 - this->u32_100; // edi /*0x586b0d*/
   int v15; // [esp+24h] [ebp+8h]
   v15 = this->u32_104 / 2; /*0x586b2d*/
   int v10 = this->u32_108 / 2; // ebp /*0x586b36*/
@@ -2291,8 +2291,8 @@ unsigned int * JumpjetLocomotionClass::ClampToCellBounds(MouseClass * aP1, IUnkn
     v8 = a4 != 0; /*0x586b58*/
     v11 = v9; /*0x586b5a*/
   }
-  int v12 = this->q100 + v11; // eax /*0x586bb1*/
-  int v13 = v8 + this->q0FC; // edx /*0x586bb3*/
+  int v12 = this->u32_100 + v11; // eax /*0x586bb1*/
+  int v13 = v8 + this->u32_FC; // edx /*0x586bb3*/
   int v16; // [esp+28h] [ebp+Ch]
   (v16) = ((v16) & ~0xFFFF) | ((v13 + ((v12 + 1) >> 1)) & 0xFFFF); /*0x586bc7*/
   (v16) = ((v16) & ~(0xFFFF << 16)) | (((v4 + (v12 >> 1) - v13) & 0xFFFF) << 16); /*0x586bcf*/

@@ -14,11 +14,11 @@ struct VectorClass_flat;  // fix_fwd_type_supply
 struct LoadOptions {
     void * extension;  // 0x0
     void* __pad_004;  // 0x4
-    void* Capacity;  // 0x8
+    void * Capacity;  // 0x8
     unsigned int m_C;  // 0xC
     unsigned int max_entries;  // 0x10
     int field_14;  // 0x14
-    FileEntryClass** entries;  // 0x18
+    FileEntryClass * * entries;  // 0x18
     unsigned int count;  // 0x1C
     unsigned char is_active;  // 0x20
     unsigned char owns_memory;  // 0x21
@@ -27,6 +27,11 @@ struct LoadOptions {
     unsigned short pad_2E;  // 0x2E
     unsigned int capacity;  // 0x30
     unsigned int grow_step;  // 0x34
+    char __pad_38[336];  // 0x38
+    unsigned int u32_188;  // 0x188
+    unsigned int u32_18C;  // 0x18C
+    char __pad_190[608];  // 0x190
+    unsigned int u32_3F0;  // 0x3F0
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     static unsigned int GetFlag252(LoadOptions *p_this);  // x4:ida@0x6812d0

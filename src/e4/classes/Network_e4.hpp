@@ -11,7 +11,6 @@ struct HashTable_flat;  // fix_fwd_type_supply
 #ifndef GAMEMD_G2_NETWORK_FLAT_DEF  // W13A: shared twin guard w/ network_ext.hpp (was one-sided; nesting accident silently deduped)
 #define GAMEMD_G2_NETWORK_FLAT_DEF 1
 struct Network {
-#pragma pack(push, 1)  // X60: binary-packed layout
     unsigned int Network_field_0x0;  // 0x0
     int u32_4;  // 0x4
     int u32_8;  // 0x8
@@ -77,6 +76,32 @@ struct Network {
     char __pad_1AA[75];  // 0x1AA
     char Network_field_0x1F5[4];  // 0x1F5
     char __pad_1F9[1];  // 0x1F9
+    char __pad_1FA[9506];  // 0x1FA
+    unsigned int u32_271C;  // 0x271C
+    unsigned int u32_2720;  // 0x2720
+    char __pad_2724[248792];  // 0x2724
+    unsigned short u16_3F2FC;  // 0x3F2FC
+    char __pad_3F2FE[50];  // 0x3F2FE
+    unsigned int u32_3F330;  // 0x3F330
+    unsigned int u32_3F334;  // 0x3F334
+    unsigned int u32_3F338;  // 0x3F338
+    unsigned int u32_3F33C;  // 0x3F33C
+    unsigned int u32_3F340;  // 0x3F340
+    unsigned char u8_3F344;  // 0x3F344
+    unsigned char u8_3F345;  // 0x3F345
+    char __pad_3F346[2];  // 0x3F346
+    unsigned int u32_3F348;  // 0x3F348
+    unsigned int u32_3F34C;  // 0x3F34C
+    char __pad_3F350[512];  // 0x3F350
+    unsigned int u32_3F550;  // 0x3F550
+    unsigned int u32_3F554;  // 0x3F554
+    unsigned int u32_3F558;  // 0x3F558
+    unsigned char u8_3F55C;  // 0x3F55C
+    unsigned char u8_3F55D;  // 0x3F55D
+    char __pad_3F55E[2];  // 0x3F55E
+    unsigned int u32_3F560;  // 0x3F560
+    unsigned int u32_3F564;  // 0x3F564
+    unsigned int u32_3F568;  // 0x3F568
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     static unsigned int UpdateLatencyDisplay(int p0, double p1, double p2);  // x4:signals@0x643c50
@@ -148,7 +173,6 @@ int GetSendCount();
     static char IsLobbyFeature();  // 0x77D970
     void Network_resetConnectionState();
     void Network_UpdateLatencyDisplay(ProgressScreenClass * aP1, ProgressScreenClass * aP2, ProgressScreenClass * aP3);
-#pragma pack(pop)
 };
 #endif  // GAMEMD_G2_NETWORK_FLAT_DEF
 } // namespace gamemd

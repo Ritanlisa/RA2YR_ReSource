@@ -26,9 +26,9 @@ struct AircraftClass;  // fix_fwd_type_supply
 
 struct AircraftTypeClass {
     unsigned int ptr_0;  // 0x0
-    void* ptr_4;  // 0x4
-    void* ptr_8;  // 0x8
-    void* ptr_C;  // 0xC
+    void * ptr_4;  // 0x4
+    void * ptr_8;  // 0x8
+    void * ptr_C;  // 0xC
     unsigned int uniqueId;  // 0x10
     unsigned int abstractFlags;  // 0x14
     unsigned int nextArrayIndex;  // 0x18
@@ -55,10 +55,10 @@ struct AircraftTypeClass {
     unsigned char unused_9B;  // 0x9B
     char Armor[4];  // 0x9C
     int Strength;  // 0xA0
-    SHPStruct* Image;  // 0xA4
+    SHPStruct * Image;  // 0xA4
     bool ImageAllocated;  // 0xA8
     char __pad_0A9[3];  // 0xA9
-    SHPStruct* AlphaImage;  // 0xAC
+    SHPStruct * AlphaImage;  // 0xAC
     char MainVoxel[4];  // 0xB0
     char TurretVoxel[4];  // 0xB4
     unsigned int __pad_0B8;  // 0xB8
@@ -379,16 +379,16 @@ struct AircraftTypeClass {
     char __pad_D9A[6];  // 0xD9A
     int ZFudgeBridge;  // 0xDA0
     int PaletteFile[8];  // 0xDA4
-    void* Palette;  // 0xDC4
+    void * Palette;  // 0xDC4
     unsigned char __pad_DC8;  // 0xDC8
     char __pad_DC9[43];  // 0xDC9
     int align_DF4;  // 0xDF4
-    void* ArrayIndex;  // 0xDF8
+    void * ArrayIndex;  // 0xDF8
     bool Carryall_d;  // 0xDFC
     unsigned char __pad_DFD;  // 0xDFD
     char __pad_DFE[2];  // 0xDFE
     int Trailer;  // 0xE00
-    void* SpawnDelay_d;  // 0xE04
+    void * SpawnDelay_d;  // 0xE04
     bool Rotors_d;  // 0xE08
     bool CustomRotor_2;  // 0xE09
     bool Landable_2;  // 0xE0A

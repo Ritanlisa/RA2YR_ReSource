@@ -17,6 +17,11 @@ struct GadgetClass {
     unsigned char __pad_016;  // 0x16
     char __pad_17[1];  // 0x17
     unsigned int ID;  // 0x18
+    unsigned char u8_1C;  // 0x1C
+    unsigned char u8_1D;  // 0x1D
+    unsigned char u8_1E;  // 0x1E
+    char __pad_1F[1];  // 0x1F
+    unsigned int u32_20;  // 0x20
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     BOOL FindByWindow(HWND hWnd, LPARAM);

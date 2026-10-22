@@ -6,18 +6,24 @@
 namespace gamemd {
 
 struct Theme {
-// --- flat members (BEGIN) ---
+#pragma pack(push, 1)  // X60: binary-packed layout
+    unsigned int u32_0;  // 0x0
     AbstractClass * ptr_4;  // 0x4
-    void* audioSample;  // 0x2C
+    unsigned int u32_8;  // 0x8
+    char __pad_C[5];  // 0xC
+    unsigned int u32_11;  // 0x11
+    char __pad_15[23];  // 0x15
+    void * audioSample;  // 0x2C
+    char __pad_30[17];  // 0x30
+    unsigned char ptr_41;  // 0x41
+    char __pad_42[2];  // 0x42
+    void * ptr_44;  // 0x44
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     bool IsPlaying(void *a1 = 0);
     int QueueSong(int aP1, void *a2 = 0);
     int Stop(char aP1, void *a2 = 0);
-    unsigned char ptr_41;  // 0x41 (offset-truth)
-    void * ptr_44;  // 0x44 (offset-truth)
-
-    unsigned int u32_11;  // X10 supply (member_lookup)
-    unsigned int u32_8;  // X10 supply (member_lookup)
+#pragma pack(pop)
 };
 
 } // namespace gamemd

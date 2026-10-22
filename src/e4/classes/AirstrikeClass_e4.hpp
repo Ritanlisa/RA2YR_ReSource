@@ -7,6 +7,34 @@
 namespace gamemd {
 
 struct AirstrikeClass {
+    int u32_0;  // 0x0
+    void * ptr_4;  // 0x4
+    void * ptr_8;  // 0x8
+    void * ptr_C;  // 0xC
+    unsigned int uniqueId;  // 0x10
+    int abstractFlags;  // 0x14
+    unsigned int nextArrayIndex;  // 0x18
+    int referenceCount;  // 0x1C
+    unsigned int NeedsSaveOrLink;  // 0x20
+    int AirstrikeClass_field_24;  // 0x24
+    int AirstrikeClass_field_28;  // 0x28
+    unsigned char __pad_02C;  // 0x2C
+    char __pad_2D[3];  // 0x2D
+    void * EliteAirstrikeTeamTypeIndex;  // 0x30
+    unsigned int u32_34;  // 0x34
+    char __pad_38[4];  // 0x38
+    unsigned char AirstrikeClass_field_3C;  // 0x3C
+    unsigned char AirstrikeClass_field_3D;  // 0x3D
+    char pad_3E[2];  // 0x3E
+    unsigned char __pad_040;  // 0x40
+    char __pad_41[3];  // 0x41
+    int AirstrikeClass_field_44;  // 0x44
+    int AirstrikeClass_field_48;  // 0x48
+    TechnoClass * owner;  // 0x4C
+    unsigned int AirstrikeClass_field_50;  // 0x50
+    int AirstrikeClass_field_54;  // 0x54
+    int AirstrikeClass_field_58;  // 0x58
+    int AirstrikeClass_field_5C;  // 0x5C
     virtual int QueryInterface();  // X75: slot 0 (0x410260) = QueryInterface
     virtual int COMStub_AddRef();  // X75: slot 1 (0x410300) = COMStub_AddRef
     virtual int COMStub_Release();  // X75: slot 2 (0x410310) = COMStub_Release
@@ -31,33 +59,6 @@ struct AirstrikeClass {
     virtual int COMStub_Return0_21();  // X75: slot 21 (0x410530) = COMStub_Return0_21
     virtual int GetCoords();  // X75: slot 22 (0x410540) = GetCoords
     virtual void StubReturnFalse_S23();  // X75: slot 23 (0x41dc50) = StubReturnFalse_S23
-    void * ptr_4;  // 0x4
-    void * ptr_8;  // 0x8
-    void * ptr_C;  // 0xC
-    unsigned int uniqueId;  // 0x10
-    int abstractFlags;  // 0x14
-    unsigned int nextArrayIndex;  // 0x18
-    int referenceCount;  // 0x1C
-    unsigned int NeedsSaveOrLink;  // 0x20
-    int AirstrikeClass_field_24;  // 0x24
-    int AirstrikeClass_field_28;  // 0x28
-    unsigned char __pad_02C;  // 0x2C
-    char __pad_2D[3];  // 0x2D
-    void* EliteAirstrikeTeamTypeIndex;  // 0x30
-    unsigned int u32_34;  // 0x34
-    char __pad_38[4];  // 0x38
-    unsigned char AirstrikeClass_field_3C;  // 0x3C
-    unsigned char AirstrikeClass_field_3D;  // 0x3D
-    char pad_3E[2];  // 0x3E
-    unsigned char __pad_040;  // 0x40
-    char __pad_41[3];  // 0x41
-    int AirstrikeClass_field_44;  // 0x44
-    int AirstrikeClass_field_48;  // 0x48
-    TechnoClass* owner;  // 0x4C
-    unsigned int AirstrikeClass_field_50;  // 0x50
-    int AirstrikeClass_field_54;  // 0x54
-    int AirstrikeClass_field_58;  // 0x58
-    int AirstrikeClass_field_5C;  // 0x5C
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     AbstractClass * * UpdateAll();

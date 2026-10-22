@@ -210,7 +210,7 @@ LABEL_26:
               goto LABEL_55; /*0x434f29*/
           }
           ++v14; /*0x434f37*/
-          v27 = *GlyphDataForChar + aP0->q02C; /*0x434f3b*/
+          v27 = *GlyphDataForChar + aP0->SuperClass_field_0x2C; /*0x434f3b*/
           v11 += v27; /*0x434f41*/
           if ( !aP5 || v11 <= aP5 ) /*0x434f4d*/
             goto LABEL_55; /*0x434f4d*/

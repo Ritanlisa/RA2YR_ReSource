@@ -26,6 +26,8 @@ struct IPXManagerClass {
     unsigned int u32_6C;  // 0x6C
     char __pad_70[48];  // 0x70
     unsigned int u32_A0;  // 0xA0
+    unsigned int u32_A4;  // 0xA4
+    unsigned int u32_A8;  // 0xA8
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     static unsigned int processPacket(char *p_this);  // x4:ida@0x5409f0

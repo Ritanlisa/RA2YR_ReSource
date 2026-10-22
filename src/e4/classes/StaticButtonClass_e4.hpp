@@ -12,6 +12,12 @@ struct StaticButtonClass {
     int q00C;  // 0xC
     int q010;  // 0x10
     int q014;  // 0x14
+    unsigned int u32_18;  // 0x18
+    char __pad_1C[8];  // 0x1C
+    unsigned int u32_24;  // 0x24
+    char __pad_28[8];  // 0x28
+    unsigned int u32_30;  // 0x30
+    unsigned int u32_34;  // 0x34
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     StaticButtonClass * QueryInterface(char a2);

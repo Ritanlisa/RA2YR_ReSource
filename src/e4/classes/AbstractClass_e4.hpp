@@ -109,11 +109,14 @@ struct AbstractClass {
     unsigned int ptr_4;  // 0x4
     unsigned int ptr_8;  // 0x8
     unsigned int ptr_C;  // 0xC
-    ObjectClass* uniqueId;  // 0x10
+    ObjectClass * uniqueId;  // 0x10
     unsigned int abstractFlags;  // 0x14
     unsigned int nextArrayIndex;  // 0x18
     int referenceCount;  // 0x1C
     unsigned int needsSave;  // 0x20
+    unsigned int u32_24;  // 0x24
+    unsigned int q028;  // 0x28
+    unsigned int SuperClass_field_0x2C;  // 0x2C
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     void Initialize(TechnoClass * aP1, TechnoClass * aP2);  // 0x438E70

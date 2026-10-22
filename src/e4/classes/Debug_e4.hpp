@@ -10,6 +10,17 @@ struct Debug {
     unsigned char q004;  // 0x4
     char __pad_5[155];  // 0x5
     int q0A0;  // 0xA0
+    char __pad_A4[9836];  // 0xA4
+    unsigned int u32_2710;  // 0x2710
+    char __pad_2714[8];  // 0x2714
+    unsigned int u32_271C;  // 0x271C
+    unsigned int u32_2720;  // 0x2720
+    unsigned int u32_2724;  // 0x2724
+    unsigned int u32_2728;  // 0x2728
+    unsigned int u32_272C;  // 0x272C
+    char __pad_2730[4];  // 0x2730
+    unsigned char u32_2734;  // 0x2734
+    char __pad_2735[3];  // 0x2735
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     char ScrollText(const char * aP1);  // 0x5BD0D0

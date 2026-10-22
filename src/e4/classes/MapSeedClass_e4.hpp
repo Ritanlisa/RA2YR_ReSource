@@ -6,7 +6,7 @@
 namespace gamemd {
 
 struct MapSeedClass {
-    void* ptr_0;  // 0x0
+    void * ptr_0;  // 0x0
     int MapSeedClass_field_0x04;  // 0x4
     unsigned int u32_8;  // 0x8
     unsigned int u32_C;  // 0xC
@@ -18,6 +18,23 @@ struct MapSeedClass {
     int q024;  // 0x24
     int q028;  // 0x28
     int q02C;  // 0x2C
+    char __pad_30[8];  // 0x30
+    unsigned int u32_38;  // 0x38
+    unsigned int u32_3C;  // 0x3C
+    unsigned int u32_40;  // 0x40
+    unsigned int u32_44;  // 0x44
+    unsigned int u32_48;  // 0x48
+    unsigned int u32_4C;  // 0x4C
+    unsigned int u32_50;  // 0x50
+    unsigned int u32_54;  // 0x54
+    unsigned int u32_58;  // 0x58
+    unsigned int u32_5C;  // 0x5C
+    unsigned int u32_60;  // 0x60
+    unsigned int u32_64;  // 0x64
+    unsigned int u32_68;  // 0x68
+    unsigned int u32_6C;  // 0x6C
+    unsigned int u32_70;  // 0x70
+    unsigned int u32_74;  // 0x74
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     MapSeedClass * * PlaceBuildingClusters(MapSeedClass * aP1);

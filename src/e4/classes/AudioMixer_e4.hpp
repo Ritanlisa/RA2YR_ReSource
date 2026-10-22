@@ -10,10 +10,16 @@ namespace gamemd {
 struct AudioMixer {
     unsigned int AudioMixer_field_00;  // 0x0
     unsigned int AudioMixer_field_04;  // 0x4
-    AudioMixer* ptr_8;  // 0x8
+    AudioMixer * ptr_8;  // 0x8
     unsigned int AudioMixer_field_0C;  // 0xC
     unsigned int AudioMixer_field_10;  // 0x10
     unsigned int AudioMixer_field_14;  // 0x14
+    unsigned int u32_18;  // 0x18
+    unsigned int u32_1C;  // 0x1C
+    char __pad_20[44];  // 0x20
+    unsigned int u32_4C;  // 0x4C
+    char __pad_50[48];  // 0x50
+    unsigned int u32_80;  // 0x80
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     static unsigned int ProcessAudioFrame(ObjectClass *p_this);  // x4:ida@0x4041d0

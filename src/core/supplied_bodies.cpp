@@ -4391,7 +4391,7 @@ int * SHA1::ProcessBlock(const void **a2, int *a3) {
         result = (int *)this->u32_30; /*0x69d928*/
         if ( result == 64 ) /*0x69d92d*/
         {
-          SHA1::Transform(&this->q034, &this->u32_18); /*0x69d939*/
+          SHA1::Transform(&this->u8_34, &this->u32_18); /*0x69d939*/
           v8 = (int *)this->u32_2C; /*0x69d93e*/
           this->u32_30 = 0; /*0x69d941*/
           result = v8 + 16; /*0x69d948*/

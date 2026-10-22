@@ -17,12 +17,12 @@ struct ScenarioClass;  // fix_fwd_type_supply
 
 struct AnimTypeClass {
     void * ptr_0;  // 0x0
-    void* ptr_4;  // 0x4
-    void* ptr_8;  // 0x8
-    void* ptr_C;  // 0xC
+    void * ptr_4;  // 0x4
+    void * ptr_8;  // 0x8
+    void * ptr_C;  // 0xC
     int uniqueId;  // 0x10
     int abstractFlags;  // 0x14
-    SHPStruct* nextArrayIndex;  // 0x18
+    SHPStruct * nextArrayIndex;  // 0x18
     int referenceCount;  // 0x1C
     int NeedsSaveOrLink;  // 0x20
     char __pad_24[12];  // 0x24
@@ -39,7 +39,7 @@ struct AnimTypeClass {
     unsigned char unused_9B;  // 0x9B
     unsigned int Armor;  // 0x9C
     int Strength;  // 0xA0
-    AbstractClass* Image;  // 0xA4
+    AbstractClass * Image;  // 0xA4
     char ImageAllocated;  // 0xA8
     char __pad_0A9[3];  // 0xA9
     void * AlphaImage;  // 0xAC
@@ -80,7 +80,7 @@ struct AnimTypeClass {
     char VoxelCaches[80];  // 0x244
     int MiddleFrameIndex;  // 0x294
     int MiddleFrameWidth;  // 0x298
-    AbstractTypeClass* MiddleFrameHeight_d;  // 0x29C
+    AbstractTypeClass * MiddleFrameHeight_d;  // 0x29C
     unsigned char __pad_2A0;  // 0x2A0
     char __pad_2A1[3];  // 0x2A1
     unsigned char AnimTypeClass_field_2A4;  // 0x2A4
@@ -92,31 +92,31 @@ struct AnimTypeClass {
     int LoopStart_d;  // 0x2B8
     int LoopEnd_d;  // 0x2BC
     int End_d;  // 0x2C0
-    void* LoopCount_d;  // 0x2C4
-    AnimTypeClass* Next_d;  // 0x2C8
-    ParticleTypeClass* SpawnsParticle_d;  // 0x2CC
+    void * LoopCount_d;  // 0x2C4
+    AnimTypeClass * Next_d;  // 0x2C8
+    ParticleTypeClass * SpawnsParticle_d;  // 0x2CC
     int NumParticles;  // 0x2D0
     int DetailLevel_d;  // 0x2D4
     int TranslucencyDetailLevel_d;  // 0x2D8
     char RandomLoopDelay_d[8];  // 0x2DC
     char RandomRate_d[8];  // 0x2E4
     int Translucency_d;  // 0x2EC
-    AnimTypeClass* Spawns_d;  // 0x2F0
-    void* SpawnCount_d;  // 0x2F4
+    AnimTypeClass * Spawns_d;  // 0x2F0
+    void * SpawnCount_d;  // 0x2F4
     int Report_d;  // 0x2F8
     int StopSound_d;  // 0x2FC
-    AnimTypeClass* BounceAnim_d;  // 0x300
-    AnimTypeClass* ExpireAnim_d;  // 0x304
-    AnimTypeClass* TrailerAnim_d;  // 0x308
-    void* TrailerSeperation_d;  // 0x30C
+    AnimTypeClass * BounceAnim_d;  // 0x300
+    AnimTypeClass * ExpireAnim_d;  // 0x304
+    AnimTypeClass * TrailerAnim_d;  // 0x308
+    void * TrailerSeperation_d;  // 0x30C
     double Elasticity_d;  // 0x310
     double MinZVel_d;  // 0x318
     double AnimTypeClass_field_double_320;  // 0x320
     double MaxXYVel;  // 0x328
-    WarheadTypeClass* Warhead;  // 0x330
+    WarheadTypeClass * Warhead;  // 0x330
     int DamageRadius;  // 0x334
-    OverlayTypeClass* TiberiumSpawnType;  // 0x338
-    void* TiberiumSpreadRadius;  // 0x33C
+    OverlayTypeClass * TiberiumSpawnType;  // 0x338
+    void * TiberiumSpreadRadius;  // 0x33C
     int YSortAdjust;  // 0x340
     int YDrawOffset;  // 0x344
     int ZAdjust;  // 0x348
@@ -138,7 +138,7 @@ struct AnimTypeClass {
     bool AltPalette;  // 0x361
     bool Normalized;  // 0x362
     unsigned char __pad_363;  // 0x363
-    void* Layer;  // 0x364
+    void * Layer;  // 0x364
     bool DoubleThick;  // 0x368
     bool Flat_flag;  // 0x369
     bool Translucent;  // 0x36A

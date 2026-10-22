@@ -10,6 +10,11 @@ struct NetworkManager {
     unsigned char __pad_000;  // 0x0
     char __pad_1[3];  // 0x1
     int u32_4;  // 0x4
+    char __pad_8[8];  // 0x8
+    unsigned int u32_10;  // 0x10
+    char __pad_14[4];  // 0x14
+    unsigned char u8_18;  // 0x18
+    char __pad_19[3];  // 0x19
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     static char RemovePlayer(int aP1, int a2);

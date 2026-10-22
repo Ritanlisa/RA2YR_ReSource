@@ -2845,39 +2845,39 @@ CampaignClass * * RandomMap::CleanupRandomMapData()
   VectorClass::Destroy((int)&this->u32_A10); /*0x5959da*/
   v8 = (void *)this->u32_26C; /*0x5959df*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x5959e5*/
-  if ( v8 && this->u32_275 ) /*0x5959ef*/
+  if ( v8 && this->u8_275 ) /*0x5959ef*/
   {
     __3_YAXPAX_Z(v8); /*0x5959f8*/
     this->u32_26C = 0; /*0x595a00*/
   }
-  this->u32_275 = 0; /*0x595a06*/
+  this->u8_275 = 0; /*0x595a06*/
   this->u32_270 = 0; /*0x595a0c*/
   v9 = (void *)this->u32_250; /*0x595a12*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x595a18*/
-  if ( v9 && this->u32_259 ) /*0x595a22*/
+  if ( v9 && this->u8_259 ) /*0x595a22*/
   {
     __3_YAXPAX_Z(v9); /*0x595a2b*/
     this->u32_250 = 0; /*0x595a33*/
   }
-  this->u32_259 = 0; /*0x595a39*/
+  this->u8_259 = 0; /*0x595a39*/
   this->u32_254 = 0; /*0x595a3f*/
   v10 = (void *)this->u32_234; /*0x595a45*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x595a4b*/
-  if ( v10 && this->u32_23D ) /*0x595a55*/
+  if ( v10 && this->u8_23D ) /*0x595a55*/
   {
     __3_YAXPAX_Z(v10); /*0x595a5e*/
     this->u32_234 = 0; /*0x595a66*/
   }
-  this->u32_23D = 0; /*0x595a6c*/
+  this->u8_23D = 0; /*0x595a6c*/
   this->u32_238 = 0; /*0x595a72*/
   v11 = (void *)this->u32_218; /*0x595a78*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x595a7e*/
-  if ( v11 && this->u32_221 ) /*0x595a88*/
+  if ( v11 && this->u8_221 ) /*0x595a88*/
   {
     __3_YAXPAX_Z(v11); /*0x595a91*/
     this->u32_218 = 0; /*0x595a99*/
   }
-  this->u32_221 = 0; /*0x595a9f*/
+  this->u8_221 = 0; /*0x595a9f*/
   this->u32_21C = 0; /*0x595aa5*/
   v12 = *&this->q1FC; /*0x595aab*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x595ab1*/

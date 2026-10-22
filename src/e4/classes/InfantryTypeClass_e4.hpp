@@ -23,9 +23,9 @@ struct InfantryClass;  // fix_fwd_type_supply
 
 struct InfantryTypeClass {
     void * ptr_0;  // 0x0
-    void* ptr_4;  // 0x4
-    void* ptr_8;  // 0x8
-    void* ptr_C;  // 0xC
+    void * ptr_4;  // 0x4
+    void * ptr_8;  // 0x8
+    void * ptr_C;  // 0xC
     unsigned int uniqueId;  // 0x10
     unsigned int abstractFlags;  // 0x14
     unsigned int nextArrayIndex;  // 0x18
@@ -52,10 +52,10 @@ struct InfantryTypeClass {
     unsigned char unused_9B;  // 0x9B
     char Armor[4];  // 0x9C
     int Strength;  // 0xA0
-    SHPStruct* Image;  // 0xA4
+    SHPStruct * Image;  // 0xA4
     bool ImageAllocated;  // 0xA8
     char __pad_0A9[3];  // 0xA9
-    SHPStruct* AlphaImage;  // 0xAC
+    SHPStruct * AlphaImage;  // 0xAC
     char MainVoxel[4];  // 0xB0
     char TurretVoxel[4];  // 0xB4
     unsigned int __pad_0B8;  // 0xB8
@@ -396,9 +396,9 @@ struct InfantryTypeClass {
     int Palette;  // 0xDC4
     char __pad_DC8[44];  // 0xDC8
     int align_DF4;  // 0xDF4
-    void* ArrayIndex;  // 0xDF8
-    void* Pip_d;  // 0xDFC
-    void* OccupyPip_d;  // 0xE00
+    void * ArrayIndex;  // 0xDF8
+    void * Pip_d;  // 0xDFC
+    void * OccupyPip_d;  // 0xE00
     char OccupyWeapon_d[28];  // 0xE04
     char EliteOccupyWeapon[28];  // 0xE20
     SequenceStruct* __pad_E3C;  // 0xE3C
@@ -424,7 +424,7 @@ struct InfantryTypeClass {
     bool NotHuman_2;  // 0xEAD
     bool Ivan_2;  // 0xEAE
     unsigned char __pad_EAF;  // 0xEAF
-    void* DetectionDistance;  // 0xEB0
+    void * DetectionDistance;  // 0xEB0
     bool Occupier_d;  // 0xEB4
     bool Assaulter_2;  // 0xEB5
     unsigned char __pad_EB6;  // 0xEB6

@@ -23,10 +23,10 @@ struct INIClass;  // fix_fwd_type_supply
 struct VoxelAnimTypeClass;  // fix_fwd_type_supply
 
 struct UnitTypeClass {
-    void* ptr_0;  // 0x0
-    void* ptr_4;  // 0x4
-    void* ptr_8;  // 0x8
-    void* ptr_C;  // 0xC
+    void * ptr_0;  // 0x0
+    void * ptr_4;  // 0x4
+    void * ptr_8;  // 0x8
+    void * ptr_C;  // 0xC
     unsigned int uniqueId;  // 0x10
     unsigned int abstractFlags;  // 0x14
     unsigned int nextArrayIndex;  // 0x18
@@ -53,10 +53,10 @@ struct UnitTypeClass {
     unsigned char unused_9B;  // 0x9B
     char Armor[4];  // 0x9C
     int Strength;  // 0xA0
-    SHPStruct* Image;  // 0xA4
+    SHPStruct * Image;  // 0xA4
     bool ImageAllocated;  // 0xA8
     char __pad_0A9[3];  // 0xA9
-    SHPStruct* AlphaImage;  // 0xAC
+    SHPStruct * AlphaImage;  // 0xAC
     char MainVoxel[4];  // 0xB0
     char TurretVoxel[4];  // 0xB4
     char BarrelVoxel[4];  // 0xB8
@@ -65,7 +65,7 @@ struct UnitTypeClass {
     unsigned char __pad_14C;  // 0x14C
     char __pad_14D[156];  // 0x14D
     char align_1E9[3];  // 0x1E9
-    void* MaxDimension;  // 0x1EC
+    void * MaxDimension;  // 0x1EC
     int CrushSound;  // 0x1F0
     int AmbientSound;  // 0x1F4
     char ImageFile[25];  // 0x1F8
@@ -397,7 +397,7 @@ struct UnitTypeClass {
     int Palette;  // 0xDC4
     char __pad_DC8[44];  // 0xDC8
     int align_DF4;  // 0xDF4
-    AircraftTypeClass* ArrayIndex;  // 0xDF8
+    AircraftTypeClass * ArrayIndex;  // 0xDF8
     unsigned int __pad_DFC;  // 0xDFC
     int HalfDamageSmokeLocation[3];  // 0xE00
     bool Passive;  // 0xE0C
@@ -417,21 +417,21 @@ struct UnitTypeClass {
     bool CarriesCrate_d;  // 0xE1A
     bool NonVehicle_d;  // 0xE1B
     int StandingFrames_d;  // 0xE1C
-    void* DeathFrames;  // 0xE20
+    void * DeathFrames;  // 0xE20
     int DeathFrameRate;  // 0xE24
     int StartStandFrame;  // 0xE28
     int StartWalkFrame;  // 0xE2C
     int StartFiringFrame;  // 0xE30
     int StartDeathFrame;  // 0xE34
-    void* MaxDeathCounter_d;  // 0xE38
+    void * MaxDeathCounter_d;  // 0xE38
     int Facings_d;  // 0xE3C
     int FiringSyncFrame0_d;  // 0xE40
-    AircraftTypeClass* FiringSyncFrame1_d;  // 0xE44
+    AircraftTypeClass * FiringSyncFrame1_d;  // 0xE44
     int BurstDelay0_d;  // 0xE48
-    AircraftTypeClass* BurstDelay1_d;  // 0xE4C
-    AircraftTypeClass* BurstDelay2_d;  // 0xE50
-    AircraftTypeClass* BurstDelay3_d;  // 0xE54
-    SHPStruct* AltImage;  // 0xE58
+    AircraftTypeClass * BurstDelay1_d;  // 0xE4C
+    AircraftTypeClass * BurstDelay2_d;  // 0xE50
+    AircraftTypeClass * BurstDelay3_d;  // 0xE54
+    SHPStruct * AltImage;  // 0xE58
     char WalkFrames;  // 0xE5C
     char FiringFrames_d;  // 0xE5D
     char AltImageFile;  // 0xE5E

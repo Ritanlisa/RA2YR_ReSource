@@ -17,7 +17,7 @@ struct GadgetClass;  // fix_fwd_type_supply
 struct CampaignClass;  // fix_fwd_type_supply
 
 struct RadarClass {
-    void* ptr_0;  // 0x0
+    void * ptr_0;  // 0x0
     unsigned int __pad_004;  // 0x4
     int q008;  // 0x8
     unsigned int u32_C;  // 0xC
@@ -79,8 +79,8 @@ struct RadarClass {
     char __pad_1208[20];  // 0x1208
     int u32_121C;  // 0x121C
     int u32_1220;  // 0x1220
-    VectorClass* q1224;  // 0x1224
-    CampaignClass* ptr_1228;  // 0x1228
+    VectorClass * q1224;  // 0x1224
+    CampaignClass * ptr_1228;  // 0x1228
     unsigned char __pad_122C;  // 0x122C
     char __pad_122D[4];  // 0x122D
     unsigned char u8_1231;  // 0x1231
@@ -94,7 +94,7 @@ struct RadarClass {
     int q1254;  // 0x1254
     int u32_1258;  // 0x1258
     int q125C;  // 0x125C
-    CampaignClass* ptr_1260;  // 0x1260
+    CampaignClass * ptr_1260;  // 0x1260
     char __pad_1264[5];  // 0x1264
     unsigned char u8_1269;  // 0x1269
     char __pad_126A[10];  // 0x126A

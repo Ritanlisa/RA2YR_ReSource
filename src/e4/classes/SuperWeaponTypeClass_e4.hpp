@@ -20,7 +20,7 @@ struct SuperWeaponTypeClass {
     int abstractFlags;  // 0x14
     int nextArrayIndex;  // 0x18
     char referenceCount[4];  // 0x1C
-    SHPStruct* NeedsSaveOrLink;  // 0x20
+    SHPStruct * NeedsSaveOrLink;  // 0x20
     unsigned int ActionValue;  // 0x24
     char __pad_28[12];  // 0x28
     char SidebarImageFile_0x18;  // 0x34

@@ -10,9 +10,9 @@ struct NullModemClass {
     int PlayerIndex;  // 0x4
     char Active[1];  // 0x8
     char __pad_9[3];  // 0x9
-    void* LastPacketTime;  // 0xC
-    void* PacketsSent;  // 0x10
-    void* PacketsReceived;  // 0x14
+    void * LastPacketTime;  // 0xC
+    void * PacketsSent;  // 0x10
+    void * PacketsReceived;  // 0x14
     unsigned int q018;  // 0x18
     unsigned int u32_1C;  // 0x1C
     unsigned int u32_20;  // 0x20

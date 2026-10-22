@@ -7,6 +7,8 @@ namespace gamemd {
 
 struct Color {
     int Color_field_00;  // 0x0
+    unsigned int u32_4;  // 0x4
+    unsigned int u32_8;  // 0x8
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int ConvertToRGB(int a2, void *a2_1 = 0);

@@ -7,6 +7,9 @@ namespace gamemd {
 
 struct AudioFileClass {
     unsigned int tail_0;  // 0x0
+    unsigned int u32_4;  // 0x4
+    unsigned int u32_8;  // 0x8
+    unsigned int u32_C;  // 0xC
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     static unsigned int * Release(AudioFileClass * aP1);

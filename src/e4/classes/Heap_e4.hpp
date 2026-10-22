@@ -6,6 +6,8 @@
 namespace gamemd {
 struct Heap {
     unsigned int tail_0;  // 0x0
+    char __pad_4[4];  // 0x4
+    unsigned int u32_8;  // 0x8
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     static void SiftDown(void *aP1, int a2);

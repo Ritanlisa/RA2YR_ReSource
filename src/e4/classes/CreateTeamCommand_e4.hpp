@@ -161,12 +161,11 @@ struct DeployCommandClass {
     DynamicVector * performAction_244(unsigned int * Block, char a2);
 };  // G42.37 class-body supply (defs in CreateTeamCommand_e4.cpp)
 struct CreateTeamCommand {
-#pragma pack(push, 1)  // X60: binary-packed layout
     unsigned int * __pad_0;  // 0x0
     unsigned int CreateTeamCommand_field_0x4;  // 0x4
     int Capacity;  // 0x8
     unsigned int qC;  // 0xC
-    void* q010;  // 0x10
+    void * q010;  // 0x10
     unsigned char q014;  // 0x14
     unsigned char q015;  // 0x15
     unsigned char Count;  // 0x16
@@ -252,6 +251,8 @@ struct CreateTeamCommand {
     char __pad_145[168];  // 0x145
     char CreateTeamCommand_field_0x1ED[4];  // 0x1ED
     char __pad_1F1[1];  // 0x1F1
+    char __pad_1F2[20906];  // 0x1F2
+    unsigned int u32_539C;  // 0x539C
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int vt02();  // 0x535CF0
@@ -521,6 +522,5 @@ struct CreateTeamCommand {
     wchar_t * performAction_5(void * aTxtStructureTa_0);
     wchar_t * performAction_8(void * aTxtDefenseTab);
     wchar_t * performAction_27(void * aTxtNextObject);
-#pragma pack(pop)
 };
 } // namespace gamemd

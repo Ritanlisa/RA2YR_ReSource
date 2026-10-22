@@ -15,7 +15,7 @@ struct Object {
     int q008;  // 0x8
     char __pad_C[24];  // 0xC
     unsigned int q024;  // 0x24
-    ProgressTimer* ptr_28;  // 0x28
+    ProgressTimer * ptr_28;  // 0x28
     char __pad_28[4];  // 0x2C
     int q030;  // 0x30
     int q034;  // 0x34
@@ -34,6 +34,8 @@ struct Object {
     unsigned int q13C;  // 0x13C
     char __pad_140[348];  // 0x140
     int q29C;  // 0x29C
+    char __pad_2A0[21736];  // 0x2A0
+    unsigned int u32_5788;  // 0x5788
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int FindClosestObjectCell(unsigned int *aP1, char aP2, int aP3);

@@ -11,8 +11,8 @@ struct TriggerTypeClass;  // fix_fwd_type_supply
 struct TagTypeClass {
     unsigned int ptr_0;  // 0x0
     void * ptr_4;  // 0x4
-    void* ptr_8;  // 0x8
-    void* ptr_C;  // 0xC
+    void * ptr_8;  // 0x8
+    void * ptr_C;  // 0xC
     int uniqueId;  // 0x10
     int abstractFlags;  // 0x14
     int nextArrayIndex;  // 0x18
@@ -20,6 +20,10 @@ struct TagTypeClass {
     void * NeedsSaveOrLink;  // 0x20
     int arrayIndex;  // 0x24
     int persistence;  // 0x28
+    char __pad_2C[108];  // 0x2C
+    unsigned int u32_98;  // 0x98
+    unsigned int Coord_9C;  // 0x9C
+    unsigned int q0A0;  // 0xA0
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     AbstractClass * * CleanupMembers(void *a1);

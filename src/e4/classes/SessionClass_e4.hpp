@@ -32,7 +32,7 @@ struct MixFileClass;  // fix_fwd_type_supply
 
 struct SessionClass {
     char GameMode[4];  // 0x0
-    MPGameModeClass* MPGameMode;  // 0x4
+    MPGameModeClass * MPGameMode;  // 0x4
     unsigned int SessionClass_field_08;  // 0x8
     unsigned int SessionClass_field_0C;  // 0xC
     unsigned int SessionClass_field_10;  // 0x10
@@ -49,7 +49,7 @@ struct SessionClass {
     int unknown_160;  // 0x160
     unsigned int SessionClass_field_164;  // 0x164
     unsigned int SessionClass_field_168;  // 0x168
-    AbstractClass* unknown_16C;  // 0x16C
+    AbstractClass * unknown_16C;  // 0x16C
     unsigned int SessionClass_field_170;  // 0x170
     int idxSide;  // 0x174
     int idxSide2;  // 0x178

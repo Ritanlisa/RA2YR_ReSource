@@ -13,6 +13,7 @@ struct Random {
     int q004;  // 0x4
     int q008;  // 0x8
     int q00C;  // 0xC
+    unsigned int u32_10;  // 0x10
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int __thiscall AdvanceRandomBytes(char a2);

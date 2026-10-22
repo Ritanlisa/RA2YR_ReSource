@@ -650,7 +650,7 @@ AbstractClass * * TeamTypeClass::GetMaxCount(TeamTypeClass * aP1, void * aTaskfo
     aTaskforce,
     (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
     (char *)g_INI_Key_TRUCKA.?,
-    aP1->q0A4);
+    aP1->u8_A4);
   INIClass::SetBool( /*0x6f15e7*/
     aTaskforce,
     (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
@@ -767,7 +767,7 @@ AbstractClass * * TeamTypeClass::GetMaxCount(TeamTypeClass * aP1, void * aTaskfo
     &DataGlobal_842DCC[536],
     aP1->u8_F7);
   int v6; // eax
-  v6 = *(&aP1->u32_D0); /*0x6f17ce*/
+  v6 = *(&aP1->q0D0); /*0x6f17ce*/
   if ( v6 ) /*0x6f17d6*/
     INIClass::SetString(aTaskforce, (unsigned __int8 *)&aP1->TeamTypeClass_field_24, off_81728C, (char *)(v6 + 36)); /*0x6f17e4*/
   char *v7; // eax
@@ -776,14 +776,14 @@ AbstractClass * * TeamTypeClass::GetMaxCount(TeamTypeClass * aP1, void * aTaskfo
   char *v8; // eax
   v8 = Waypoint::To_String(*(&aP1->u32_D8)); /*0x6f1808*/
   INIClass::SetString(aTaskforce, (unsigned __int8 *)&aP1->TeamTypeClass_field_24, &g_INI_Key_TRUCKA.q018, v8); /*0x6f1816*/
-  int v9 = aP1->u32_E0; // eax /*0x6f181b*/
+  int v9 = aP1->FootClass_E0; // eax /*0x6f181b*/
   if ( v9 ) /*0x6f1823*/
     INIClass::SetString( /*0x6f1831*/
       aTaskforce,
       (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
       &g_INI_Key_Special.?[8],
       (char *)(v9 + 36));
-  int v10 = aP1->u32_E4; // esi /*0x6f1836*/
+  int v10 = aP1->Tactical_E4; // esi /*0x6f1836*/
   if ( v10 ) /*0x6f183e*/
     INIClass::SetString(aTaskforce, (unsigned __int8 *)p_TeamTypeClass_field_24, aTaskforce, (char *)(v10 + 36)); /*0x6f184c*/
   return 1; /*0x6f1853*/

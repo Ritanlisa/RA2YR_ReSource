@@ -8,6 +8,7 @@ namespace gamemd {
 struct MSChoiceClass {
     int __pad_000;  // 0x0
     int u32_4;  // 0x4
+    unsigned int u32_8;  // 0x8
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     char ** LoadFromINI(unsigned int *arg0, const char **aP2);

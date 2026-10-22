@@ -16,6 +16,11 @@ struct VtableStub {
     int q018;  // 0x18
     int q01C;  // 0x1C
     int q020;  // 0x20
+    char __pad_24[64];  // 0x24
+    unsigned int u32_64;  // 0x64
+    char __pad_68[310];  // 0x68
+    unsigned char u8_19E;  // 0x19E
+    char __pad_19F[1];  // 0x19F
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     char RetZero_eax_35(int a1);

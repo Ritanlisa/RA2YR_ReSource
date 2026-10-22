@@ -10,6 +10,9 @@ struct CComObject_CChatEventSink___ATL {
     unsigned char __pad_000;  // 0x0
     char __pad_1[7];  // 0x1
     int q008;  // 0x8
+    unsigned int u32_C;  // 0xC
+    char __pad_10[8];  // 0x10
+    unsigned int u32_18;  // 0x18
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int DispatchConnectionPairs(void *a1_1);  // 0x7937B0

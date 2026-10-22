@@ -8,10 +8,9 @@ namespace gamemd {
 struct ILocomotion;  // fix_fwd_type_supply
 
 struct HoverLocomotionClass {
-#pragma pack(push, 1)  // X60: binary-packed layout
-    void* ptr_0;  // 0x0
-    void* ptr_4;  // 0x4
-    void* Owner;  // 0x8
+    void * ptr_0;  // 0x0
+    void * ptr_4;  // 0x4
+    void * Owner;  // 0x8
     int LinkedTo;  // 0xC
     char Powered[1];  // 0x10
     bool Dirty;  // 0x11
@@ -30,13 +29,16 @@ struct HoverLocomotionClass {
     int HoverLocomotionClass_field_6C;  // 0x6C
     bool HoverLocomotionClass_field_bool_70;  // 0x70
     char __pad_071[3];  // 0x71
+    unsigned char u8_74;  // 0x74
+    char __pad_75[1551];  // 0x75
+    unsigned char u8_684;  // 0x684
+    char __pad_685[3];  // 0x685
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     HoverLocomotionClass * ProcessMove(unsigned int * Block, char a2);
     int BeginMove(int a1, int * a2);
     int StubReturn120();
     int ddtor(int a1, unsigned int * a2);
-#pragma pack(pop)
 };
 
 } // namespace gamemd

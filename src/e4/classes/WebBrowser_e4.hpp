@@ -10,6 +10,9 @@ struct WebBrowser {
     unsigned int u32_8;  // 0x8
     unsigned char q00C[4];  // 0xC
     int q010;  // 0x10
+    char __pad_14[1016];  // 0x14
+    unsigned char u32_40C;  // 0x40C
+    char __pad_40D[3];  // 0x40D
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int LoadURLFromRegistry(const char * a2);  // 0x773600

@@ -14,6 +14,9 @@ struct VoxelRenderer {
     int u32_10;  // 0x10
     int q014;  // 0x14
     int q018;  // 0x18
+    char __pad_1C[84];  // 0x1C
+    unsigned char u32_70;  // 0x70
+    char __pad_71[3];  // 0x71
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int InitializeBuffers(int a2, unsigned int * a3, int a4);

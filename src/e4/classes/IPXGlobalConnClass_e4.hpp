@@ -18,12 +18,22 @@ struct IPXGlobalConnClass {
     int u32_14;  // 0x14
     int q018;  // 0x18
     int q01C;  // 0x1C
-    void* q020;  // 0x20
+    void * q020;  // 0x20
     int q024;  // 0x24
     int q028;  // 0x28
     int q02C;  // 0x2C
     int q030;  // 0x30
     int q034;  // 0x34
+    char __pad_38[128];  // 0x38
+    unsigned short u16_B8;  // 0xB8
+    char __pad_BA[10];  // 0xBA
+    unsigned int u32_C4;  // 0xC4
+    unsigned char u8_C8;  // 0xC8
+    char __pad_C9[3];  // 0xC9
+    unsigned int u32_CC;  // 0xCC
+    unsigned int u32_D0;  // 0xD0
+    unsigned int u32_D4;  // 0xD4
+    unsigned int u32_D8;  // 0xD8
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     HashTable_flat * * SetAddress(int a2, int arg4, int * a3, IPXGlobalConnClass * aP4, int a6, int aP3);

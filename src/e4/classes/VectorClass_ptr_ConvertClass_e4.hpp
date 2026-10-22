@@ -10,16 +10,21 @@ struct ConvertClass;  // fix_fwd_type_supply
 struct VectorClass_flat;  // fix_fwd_type_supply
 struct DynamicVector;  // fix_fwd_type_supply
 struct VectorClass_ptr_ConvertClass {
+#pragma pack(push, 1)  // X60: binary-packed layout
     unsigned int vfptr;  // 0x0
-    void* Items;  // 0x4
-    void* Capacity;  // 0x8
+    void * Items;  // 0x4
+    void * Capacity;  // 0x8
     char IsInitialized[1];  // 0xC
     unsigned char IsAllocated;  // 0xD
     unsigned char __pad_00E;  // 0xE
     char __pad_F[1];  // 0xF
-    void* Count;  // 0x10
+    void * Count;  // 0x10
     unsigned int CapacityIncrement;  // 0x14
     unsigned long long tail_18;  // 0x18
+    char __pad_20[336];  // 0x20
+    unsigned int u32_170;  // 0x170
+    char __pad_174[4];  // 0x174
+    unsigned int u32_178;  // 0x178
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     void *  Constructor_ConvertClass(char a2);  // 0x491210
@@ -36,5 +41,6 @@ struct VectorClass_ptr_ConvertClass {
     int  FindItemIndex(unsigned int * a2);  // 0x49B0B0
     VectorClass_flat *  QueryInterface(char a2);  // 0x49B0E0
     DynamicVector *  Constructor_VectorClass_ConvertClass___(char a2);  // 0x49B130
+#pragma pack(pop)
 };
 } // namespace gamemd

@@ -6,7 +6,7 @@
 namespace gamemd {
 
 struct IPXConnClass {
-    void* ptr_0;  // 0x0
+    void * ptr_0;  // 0x0
     int PlayerIndex;  // 0x4
     char Active;  // 0x8
     unsigned char __pad_009;  // 0x9
@@ -18,6 +18,9 @@ struct IPXConnClass {
     int RemoteAddress[3];  // 0x1C
     unsigned short RemoteSocket;  // 0x28
     char padding[2];  // 0x2A
+    char __pad_2C[52];  // 0x2C
+    unsigned int u32_60;  // 0x60
+    unsigned int u32_64;  // 0x64
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     void * constructor(int aP1, SessionClass * aP2, IPXConnClass * aP3, IPXConnClass * aP4, unsigned int * a5, int a7, wchar_t * Source, int aP8, void *a9);

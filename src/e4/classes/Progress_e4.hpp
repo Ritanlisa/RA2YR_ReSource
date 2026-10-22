@@ -9,6 +9,9 @@ struct Progress {
     int m_Values[8];  // 0x0
     int m_Index;  // 0x20
     int m_Count;  // 0x24
+    char __pad_28[57];  // 0x28
+    unsigned char u32_61;  // 0x61
+    char __pad_62[2];  // 0x62
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int GetAverage(void *a1 = 0);

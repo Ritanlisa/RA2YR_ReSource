@@ -22,6 +22,8 @@ struct LoadingScreen {
     int q034;  // 0x34
     int q038;  // 0x38
     int q03C;  // 0x3C
+    char __pad_40[64];  // 0x40
+    unsigned int u32_80;  // 0x80
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     char * GetBackgroundImage(ScenarioClass * aP1);

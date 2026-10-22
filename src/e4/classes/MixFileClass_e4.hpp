@@ -9,8 +9,8 @@ class Bootstrap;  // G42.36 fwd supply
 struct MixHeaderData;  // fix_fwd_type_supply
 
 struct MixFileClass {
-    void* ptr_0;  // 0x0
-    void* Previous;  // 0x4
+    void * ptr_0;  // 0x0
+    void * Previous;  // 0x4
     bool Blowfish;  // 0x8
     bool Encryption;  // 0x9
     unsigned char __pad_00A;  // 0xA
@@ -18,11 +18,11 @@ struct MixFileClass {
     int CountFiles;  // 0xC
     int FileSize;  // 0x10
     int FileStartOffset;  // 0x14
-    MixHeaderData* Headers;  // 0x18
+    MixHeaderData * Headers;  // 0x18
     void* __pad_01C;  // 0x1C
     int q020;  // 0x20
     int MixFileClass_field_24;  // 0x24
-    unsigned char* MemoryData;  // 0x28
+    unsigned char * MemoryData;  // 0x28
     int MemoryDataSize;  // 0x2C
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---

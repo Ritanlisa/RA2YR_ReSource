@@ -225,7 +225,9 @@ def cp_type(t, size):
             vis = base in TIL or (CANON.get(base) or {}).get('size')
             if not vis:
                 return 'void*'
-        return re.sub(r'\s+', '', t).replace('*', ' *').strip()
+        # multi-word builtins keep their space: `unsigned int *`, not
+        # `unsignedint *` (X116: sidecar pointer types hit this path)
+        return re.sub(r'\s+', ' ', t.replace('*', ' * ')).strip()
     if re.match(r'^[A-Za-z_][\w ]*$', t):
         return t
     return 'char[%d]' % max(1, size or 1)

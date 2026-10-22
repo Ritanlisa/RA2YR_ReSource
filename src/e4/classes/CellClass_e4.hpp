@@ -15,21 +15,22 @@ struct RadSiteClass;  // fix_fwd_type_supply
 struct HouseClass;  // fix_fwd_type_supply
 
 struct CellClass {
-    void* mapCoords;  // 0x0
-    void* ptr_4;  // 0x4
-    void* ptr_8;  // 0x8
-    void* ptr_C;  // 0xC
-    LightConvertClass* lightConvert;  // 0x10
-    void* isoTileTypeIndex;  // 0x14
-    TagClass* attachedTag;  // 0x18
-    BuildingTypeClass* rubble;  // 0x1C
+#pragma pack(push, 1)  // X60: binary-packed layout
+    void * mapCoords;  // 0x0
+    void * ptr_4;  // 0x4
+    void * ptr_8;  // 0x8
+    void * ptr_C;  // 0xC
+    LightConvertClass * lightConvert;  // 0x10
+    void * isoTileTypeIndex;  // 0x14
+    TagClass * attachedTag;  // 0x18
+    BuildingTypeClass * rubble;  // 0x1C
     int overlayTypeIndex;  // 0x20
     int smudgeTypeIndex;  // 0x24
     char __pad_28[4];  // 0x28
     unsigned int q02C;  // 0x2C
     char __pad_30[3];  // 0x30
     unsigned char alignmentPadding;  // 0x33
-    ObjectClass* attached3;  // 0x34
+    ObjectClass * attached3;  // 0x34
     unsigned char __pad_038;  // 0x38
     char __pad_39[19];  // 0x39
     unsigned int CellClass_field_4C;  // 0x4C
@@ -46,13 +47,13 @@ struct CellClass {
     unsigned int cloakedByHouses;  // 0x78
     int sensorsOfHouses[12];  // 0x7C
     int disguiseAsType_sensors_of_houses[12];  // 0xAC
-    AbstractClass* baseSpacerOfHouses;  // 0xDC
-    FootClass* jumpjet;  // 0xE0
-    ObjectClass* firstObject;  // 0xE4
-    ObjectClass* altObject;  // 0xE8
-    AbstractClass* landType;  // 0xEC
+    AbstractClass * baseSpacerOfHouses;  // 0xDC
+    FootClass * jumpjet;  // 0xE0
+    ObjectClass * firstObject;  // 0xE4
+    ObjectClass * altObject;  // 0xE8
+    AbstractClass * landType;  // 0xEC
     double radLevel;  // 0xF0
-    RadSiteClass* radSite;  // 0xF8
+    RadSiteClass * radSite;  // 0xF8
     unsigned int CellClass_field_FC;  // 0xFC
     int occupyHeightsCoveringMe;  // 0x100
     unsigned int unknown104;  // 0x104
@@ -84,8 +85,27 @@ struct CellClass {
     bool visibilityChanged;  // 0x138
     char align139[3];  // 0x139
     unsigned int CellClass_field_13C;  // 0x13C
-    void* flags;  // 0x140
+    void * flags;  // 0x140
     int padding144;  // 0x144
+    char __pad_148[428];  // 0x148
+    unsigned char u32_2F4;  // 0x2F4
+    char __pad_2F5[555];  // 0x2F5
+    unsigned int u32_520;  // 0x520
+    char __pad_524[3320];  // 0x524
+    unsigned int u32_121C;  // 0x121C
+    char __pad_1220[32];  // 0x1220
+    unsigned int u32_1240;  // 0x1240
+    unsigned int u32_1244;  // 0x1244
+    char __pad_1248[584];  // 0x1248
+    unsigned int u32_1490;  // 0x1490
+    char __pad_1494[4];  // 0x1494
+    unsigned int u32_1498;  // 0x1498
+    char __pad_149C[17004];  // 0x149C
+    unsigned int u32_5708;  // 0x5708
+    char __pad_570C[8];  // 0x570C
+    unsigned int u32_5714;  // 0x5714
+    char __pad_5718[112];  // 0x5718
+    unsigned int u32_5788;  // 0x5788
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     static unsigned int RevealFogRect(int16_t* p0);  // x4:signals@0x6565a0
@@ -149,6 +169,7 @@ static int * GetCoords(CellClass * aP1, int *a2);
     static int InitRandomOffsets(int p0, int p1);  // x4:signals@0x4814f0
     static int ProcessUpdate(CellClass *p_this);  // x4:ida@0x5a7b40
     static int FindOpenNeighbor(int* p0, int p1, int p2, int p3, int p4, int p5, int p6);  // x4:signals@0x4aa440
+#pragma pack(pop)
 };
 
 } // namespace gamemd

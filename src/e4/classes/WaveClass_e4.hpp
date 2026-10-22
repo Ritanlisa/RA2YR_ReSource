@@ -8,10 +8,10 @@
 namespace gamemd {
 
 struct WaveClass {
-    void* ptr_0;  // 0x0
-    void* ptr_4;  // 0x4
-    void* ptr_8;  // 0x8
-    void* ptr_C;  // 0xC
+    void * ptr_0;  // 0x0
+    void * ptr_4;  // 0x4
+    void * ptr_8;  // 0x8
+    void * ptr_C;  // 0xC
     int uniqueId;  // 0x10
     int abstractFlags;  // 0x14
     int nextArrayIndex;  // 0x18
@@ -95,7 +95,7 @@ struct WaveClass {
     unsigned int WaveClass_field_140_d;  // 0x140
     unsigned int WaveClass_field_144_d;  // 0x144
     unsigned int WaveClass_field_148_d;  // 0x148
-    void* WaveClass_field_14C_d;  // 0x14C
+    void * WaveClass_field_14C_d;  // 0x14C
     unsigned int WaveClass_field_150_d;  // 0x150
     unsigned int WaveClass_field_154_d;  // 0x154
     unsigned int WaveClass_field_158_d;  // 0x158
@@ -118,7 +118,7 @@ struct WaveClass {
     unsigned int WaveClass_field_19C_d;  // 0x19C
     unsigned int WaveClass_field_1A0_d;  // 0x1A0
     unsigned int WaveClass_field_1A4_d;  // 0x1A4
-    void* WaveClass_field_1A8_d;  // 0x1A8
+    void * WaveClass_field_1A8_d;  // 0x1A8
     unsigned int WaveClass_field_1AC_d;  // 0x1AC
     unsigned int WaveClass_field_1B0_d;  // 0x1B0
     unsigned int WaveClass_field_1B4_d;  // 0x1B4
@@ -130,8 +130,17 @@ struct WaveClass {
     unsigned int WaveClass_field_1CC_d;  // 0x1CC
     unsigned int LaserIntensity_d;  // 0x1D0
     unsigned int Owner;  // 0x1D4
-    FacingStruct* Facing_d;  // 0x1D8
+    FacingStruct * Facing_d;  // 0x1D8
     unsigned int Cells_d;  // 0x1DC
+    char __pad_1E0[16];  // 0x1E0
+    unsigned int u32_1F0;  // 0x1F0
+    unsigned int u32_1F4;  // 0x1F4
+    unsigned int u32_1F8;  // 0x1F8
+    unsigned char u8_1FC;  // 0x1FC
+    unsigned char u8_1FD;  // 0x1FD
+    char __pad_1FE[2];  // 0x1FE
+    unsigned int u32_200;  // 0x200
+    unsigned int u32_204;  // 0x204
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     static unsigned int * Constructor_7632D0(WaveClass *pThis, int a2, int a3);

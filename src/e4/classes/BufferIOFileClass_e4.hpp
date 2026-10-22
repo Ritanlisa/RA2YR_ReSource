@@ -8,11 +8,11 @@ namespace gamemd {
 #ifndef GAMEMD_G2_BufferIOFileClass_DEF  // G42.57w14 twin-guard (shared; first-include wins)
 #define GAMEMD_G2_BufferIOFileClass_DEF 1
 struct BufferIOFileClass {
-    void* __tail_0;  // 0x0
+    void * __tail_0;  // 0x0
     int FilePointer;  // 0x4
     int FileSize;  // 0x8
     void * Handle;  // 0xC
-    void* FileName;  // 0x10
+    void * FileName;  // 0x10
     char FileTimeDateLo[2];  // 0x14
     char FileTimeDateHi[2];  // 0x16
     char FileNameAllocated;  // 0x18

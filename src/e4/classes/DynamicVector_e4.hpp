@@ -15,9 +15,8 @@ class Constructor_VectorClass_TEventClass___;  // G42.36 fwd supply
 class Constructor_VectorClass_TagTypeClass___;  // G42.36 fwd supply
 struct BufferIOFileClass;  // fix_fwd_type_supply
 struct DynamicVector {
-#pragma pack(push, 1)  // X60: binary-packed layout
     unsigned char __pad_0[4];  // 0x0
-    unsigned int *Items;  // 0x4
+    unsigned int * Items;  // 0x4
     unsigned int DynamicVector_field_0x8;  // 0x8
     bool IsInitialized;  // 0xC
     bool IsAllocated;  // 0xD
@@ -31,6 +30,15 @@ struct DynamicVector {
     int q020;  // 0x20
     char __pad_24[4];  // 0x24
     int u32_28;  // 0x28
+    char __pad_2C[24];  // 0x2C
+    unsigned int u32_44;  // 0x44
+    unsigned int u32_48;  // 0x48
+    unsigned int u32_4C;  // 0x4C
+    unsigned char u8_50;  // 0x50
+    unsigned char u8_51;  // 0x51
+    char __pad_52[2];  // 0x52
+    unsigned int u32_54;  // 0x54
+    unsigned int u32_58;  // 0x58
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     unsigned int * Copy(VectorClass_flat * aP1, void *a2_1);  // 0x5AC430
@@ -145,6 +153,5 @@ struct DynamicVector {
     DynamicVector * Constructor_VectorClass_MovieHandle___(unsigned int * Block, char a2);
     wchar_t * ddtor(void *a1_1);  // 0x4EA390
     char Remove(signed int Size, char * a3);
-#pragma pack(pop)
 };
 } // namespace gamemd

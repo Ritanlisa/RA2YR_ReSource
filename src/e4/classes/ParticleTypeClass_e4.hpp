@@ -16,9 +16,9 @@ struct Color;  // fix_fwd_type_supply
 struct TypeList_flat;  // fix_fwd_type_supply
 
 struct ParticleTypeClass {
-    void* ArrayIndex;  // 0x0
-    void* q28C;  // 0x4
-    void* BehavesLike;  // 0x8
+    void * ArrayIndex;  // 0x0
+    void * q28C;  // 0x4
+    void * BehavesLike;  // 0x8
     unsigned int ParticleTypeClass_field_0xC;  // 0xC
     char __pad_010[3];  // 0x10
     unsigned char IsAllocated;  // 0x13
@@ -86,20 +86,20 @@ struct ParticleTypeClass {
     char __pad_249[75];  // 0x249
     unsigned char q294;  // 0x294
     char __pad_295[3];  // 0x295
-    IUnknown* q298;  // 0x298
+    IUnknown * q298;  // 0x298
     unsigned char q29C;  // 0x29C
     char __pad_29D[3];  // 0x29D
-    IUnknown* XVelocity;  // 0x2A0
-    IUnknown* YVelocity;  // 0x2A4
-    void* MinZVelocity;  // 0x2A8
+    IUnknown * XVelocity;  // 0x2A0
+    IUnknown * YVelocity;  // 0x2A4
+    void * MinZVelocity;  // 0x2A8
     unsigned int ZVelocityRange;  // 0x2AC
     unsigned int __pad_2B0;  // 0x2B0
     unsigned int ParticleTypeClass_field_0x2B4;  // 0x2B4
-    void* q2B8;  // 0x2B8
-    CampaignClass* ParticleTypeClass_field_0x2BC;  // 0x2BC
+    void * q2B8;  // 0x2B8
+    CampaignClass * ParticleTypeClass_field_0x2BC;  // 0x2BC
     char __pad_2C0[8];  // 0x2C0
     int ColorList;  // 0x2C8
-    VectorClass* ParticleTypeClass_field_0x2CC;  // 0x2CC
+    VectorClass * ParticleTypeClass_field_0x2CC;  // 0x2CC
     unsigned char __pad_2D0;  // 0x2D0
     char __pad_2D1[3];  // 0x2D1
     unsigned int q2D4;  // 0x2D4
@@ -107,11 +107,11 @@ struct ParticleTypeClass {
     unsigned char u8_2D9;  // 0x2D9
     char __pad_2DA[2];  // 0x2DA
     unsigned int MaxDC_d;  // 0x2DC
-    void* MaxEC_d;  // 0x2E0
+    void * MaxEC_d;  // 0x2E0
     unsigned int ParticleTypeClass_field_0x2E4;  // 0x2E4
-    void* Damage_d;  // 0x2E8
-    void* StartFrame;  // 0x2EC
-    void* NumLoopFrames;  // 0x2F0
+    void * Damage_d;  // 0x2E8
+    void * StartFrame;  // 0x2EC
+    void * NumLoopFrames;  // 0x2F0
     unsigned int Translucency_d;  // 0x2F4
     unsigned int WindEffect_d;  // 0x2F8
     unsigned char u32_2FC[4];  // 0x2FC
@@ -125,7 +125,6 @@ struct ParticleTypeClass {
     unsigned char Translucent25State;  // 0x30D
     unsigned char Translucent50State;  // 0x30E
     unsigned char Normalized;  // 0x30F
-
     int q310;  // 0x310
     int q314;  // 0x314
 // --- flat members (BEGIN) ---

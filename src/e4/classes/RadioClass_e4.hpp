@@ -12,10 +12,10 @@ struct AnimClass;  // fix_fwd_type_supply
 struct LineTrail;  // fix_fwd_type_supply
 
 struct RadioClass {
-    void* ptr_0;  // 0x0
-    void* ptr_4;  // 0x4
-    void* ptr_8;  // 0x8
-    void* ptr_C;  // 0xC
+    void * ptr_0;  // 0x0
+    void * ptr_4;  // 0x4
+    void * ptr_8;  // 0x8
+    void * ptr_C;  // 0xC
     unsigned int uniqueId;  // 0x10
     unsigned int abstractFlags;  // 0x14
     unsigned int nextArrayIndex;  // 0x18
@@ -24,9 +24,9 @@ struct RadioClass {
     unsigned int objectTypeFlags;  // 0x24
     unsigned int owningHouseIndex;  // 0x28
     char fallRate[4];  // 0x2C
-    ObjectClass* nextObject;  // 0x30
-    TagClass* attachedTag;  // 0x34
-    BombClass* attachedBomb;  // 0x38
+    ObjectClass * nextObject;  // 0x30
+    TagClass * attachedTag;  // 0x34
+    BombClass * attachedBomb;  // 0x38
     char ambientSoundController[20];  // 0x3C
     char customSound_controller[20];  // 0x50
     int customSound;  // 0x64
@@ -44,7 +44,7 @@ struct RadioClass {
     bool isSelected;  // 0x83
     bool hasParachute;  // 0x84
     char alignmentPadding85[3];  // 0x85
-    AnimClass* parachute;  // 0x88
+    AnimClass * parachute;  // 0x88
     bool onBridge;  // 0x8C
     bool isFallingDown;  // 0x8D
     bool wasFallingDown;  // 0x8E
@@ -56,7 +56,7 @@ struct RadioClass {
     bool isVisible;  // 0x99
     char alignmentPadding99[2];  // 0x9A
     char location[12];  // 0x9C
-    LineTrail* lineTrailer;  // 0xA8
+    void * lineTrailer;  // 0xA8
     char currentMission[4];  // 0xAC
     char suspendedMission[4];  // 0xB0
     char queuedMission[4];  // 0xB4

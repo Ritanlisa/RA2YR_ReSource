@@ -9,9 +9,9 @@ namespace gamemd {
 
 struct FlyLocomotionClass {
 #pragma pack(push, 1)  // X60: binary-packed layout
-    void* ptr_0;  // 0x0
-    void* ptr_4;  // 0x4
-    void* Owner;  // 0x8
+    void * ptr_0;  // 0x0
+    void * ptr_4;  // 0x4
+    void * Owner;  // 0x8
     unsigned int LinkedTo;  // 0xC
     unsigned char __pad_010;  // 0x10
     unsigned char Dirty;  // 0x11
@@ -42,6 +42,8 @@ struct FlyLocomotionClass {
     bool FlyLocomotionClass_field_bool_5D;  // 0x5D
     bool FlyLocomotionClass_field_bool_5E;  // 0x5E
     bool FlyLocomotionClass_field_bool_5F;  // 0x5F
+    char __pad_60[12];  // 0x60
+    unsigned int u32_6C;  // 0x6C
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     FlyLocomotionClass * ProcessMove(char a2);

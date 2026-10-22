@@ -20,6 +20,22 @@ struct PlayerClass {
     int q024;  // 0x24
     int q028;  // 0x28
     int q02C;  // 0x2C
+    char __pad_30[36];  // 0x30
+    unsigned int u32_54;  // 0x54
+    char __pad_58[8];  // 0x58
+    unsigned int u32_60;  // 0x60
+    char __pad_64[29];  // 0x64
+    unsigned char u8_81;  // 0x81
+    char __pad_82[46];  // 0x82
+    unsigned int u32_B0;  // 0xB0
+    unsigned int u32_B4;  // 0xB4
+    char __pad_B8[3288];  // 0xB8
+    unsigned int u32_D90;  // 0xD90
+    unsigned int u32_D94;  // 0xD94
+    unsigned int u32_D98;  // 0xD98
+    unsigned int u32_D9C;  // 0xD9C
+    char __pad_DA0[16];  // 0xDA0
+    unsigned int u32_DB0;  // 0xDB0
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     bool IsValidIndex(int a1);

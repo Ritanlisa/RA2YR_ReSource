@@ -17,7 +17,7 @@ struct TypeList_flat;  // fix_fwd_type_supply
 struct WarheadTypeClass {
 #pragma pack(push, 1)  // X60: binary-packed layout
     void * q0;  // 0x0
-    void* ptr_4;  // 0x4
+    void * ptr_4;  // 0x4
     unsigned int m_8;  // 0x8
     unsigned int m_C;  // 0xC
     unsigned int m_10;  // 0x10
@@ -30,7 +30,7 @@ struct WarheadTypeClass {
     int DelayKillFrames;  // 0x2C
     float DelayKillAtMax;  // 0x30
     float CombatLightSize;  // 0x34
-    ParticleTypeClass* Particle;  // 0x38
+    ParticleTypeClass * Particle;  // 0x38
     int Wall;  // 0x3C
     int Tiberium;  // 0x40
     char pad_44[84];  // 0x44
@@ -98,7 +98,7 @@ struct WarheadTypeClass {
     int q180;  // 0x180
     int u32_184;  // 0x184
     int u32_188;  // 0x188
-    void* DebrisTypes;  // 0x18C
+    void * DebrisTypes;  // 0x18C
     unsigned int __pad_190;  // 0x190
     int MaxDebris;  // 0x194
     int MinDebris;  // 0x198

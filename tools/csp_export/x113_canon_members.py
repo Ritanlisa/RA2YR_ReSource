@@ -1377,6 +1377,7 @@ def apply_plan(plan, dry, ast_sites=None, tu_files=None):
 
 
 def main():
+    global SIDECAR_PATH
     ap = argparse.ArgumentParser()
     ap.add_argument("--scan", action="store_true")
     ap.add_argument("--scan-missing", action="store_true")
@@ -1386,7 +1387,13 @@ def main():
     ap.add_argument("--class", dest="classes", default=None)
     ap.add_argument("--jobs", type=int, default=8)
     ap.add_argument("--limit", type=int, default=None)
+    ap.add_argument("--layout-sidecar", default=str(SIDECAR_PATH),
+                    help="layout sidecar authority (X112 default; X116 passes "
+                         "anchors/class_layouts_csp.json)")
     args = ap.parse_args()
+    SIDECAR_PATH = Path(args.layout_sidecar)
+    if not SIDECAR_PATH.is_absolute():
+        SIDECAR_PATH = ROOT / SIDECAR_PATH
     if args.scan or args.scan_missing:
         cmd_scan(args)
     elif args.report:

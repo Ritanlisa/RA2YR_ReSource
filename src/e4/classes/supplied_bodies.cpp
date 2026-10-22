@@ -1841,7 +1841,7 @@ char NetworkManager::RemovePlayer(int aP1, int a2) {
         v3[39] = 0; /*0x6646fd*/
       }
     }
-    result = this->u32_18; /*0x664708*/
+    result = this->u8_18; /*0x664708*/
     if ( result ) /*0x664710*/
     {
       v5[0] = 2; /*0x664717*/

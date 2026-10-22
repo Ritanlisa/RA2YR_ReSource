@@ -36,13 +36,15 @@ struct VocClass {
     unsigned int VocClass_field_A4;  // 0xA4
     unsigned int ActiveBufferCount;  // 0xA8
     unsigned int VocClass_field_AC;  // 0xAC
-    void* pVoiceChannel;  // 0xB0
+    void * pVoiceChannel;  // 0xB0
     char SampleIndex[128];  // 0xB4
     int NumSamples;  // 0x134
     int Attack;  // 0x138
     char Decay[4];  // 0x13C
     unsigned int VocClass_field_140;  // 0x140
     unsigned int VocClass_field_144;  // 0x144
+    char __pad_148[304];  // 0x148
+    unsigned int u32_278;  // 0x278
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     char * GetSampleNameByIndex(int a1);

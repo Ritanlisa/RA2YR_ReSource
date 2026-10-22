@@ -45,6 +45,34 @@ struct Dialog {
     int q6B4;  // 0x6B4
     char __pad_6B8[12];  // 0x6B8
     int q6C4;  // 0x6C4
+    char __pad_6C8[3512];  // 0x6C8
+    unsigned int u32_1480;  // 0x1480
+    unsigned int u32_1484;  // 0x1484
+    unsigned int u32_1488;  // 0x1488
+    unsigned int u32_148C;  // 0x148C
+    unsigned int u32_1490;  // 0x1490
+    unsigned int u32_1494;  // 0x1494
+    unsigned int u32_1498;  // 0x1498
+    unsigned int u32_149C;  // 0x149C
+    unsigned int u32_14A0;  // 0x14A0
+    unsigned int u32_14A4;  // 0x14A4
+    unsigned int u32_14A8;  // 0x14A8
+    unsigned char u8_14AC;  // 0x14AC
+    unsigned char u8_14AD;  // 0x14AD
+    unsigned char u8_14AE;  // 0x14AE
+    unsigned char u8_14AF;  // 0x14AF
+    unsigned char u8_14B0;  // 0x14B0
+    unsigned char u8_14B1;  // 0x14B1
+    unsigned char u8_14B2;  // 0x14B2
+    unsigned char u8_14B3;  // 0x14B3
+    unsigned char u8_14B4;  // 0x14B4
+    unsigned char u8_14B5;  // 0x14B5
+    unsigned char u8_14B6;  // 0x14B6
+    unsigned char u8_14B7;  // 0x14B7
+    unsigned char u8_14B8;  // 0x14B8
+    unsigned char u8_14B9;  // 0x14B9
+    unsigned char u8_14BA;  // 0x14BA
+    unsigned char u8_14BB;  // 0x14BB
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     static int TabControlPaint(int a1, int a2, int a3, int a4);

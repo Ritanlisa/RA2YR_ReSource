@@ -23,6 +23,10 @@ struct ComStreamClass {
     int q034;  // 0x34
     int q038;  // 0x38
     int q03C;  // 0x3C
+    char __pad_40[4];  // 0x40
+    unsigned int u32_44;  // 0x44
+    unsigned char u8_48;  // 0x48
+    char __pad_49[3];  // 0x49
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     AbstractClass * * readData();

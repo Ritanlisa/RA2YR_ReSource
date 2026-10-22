@@ -18,9 +18,9 @@ struct SpawnManagerClass {
     int nextArrayIndex;  // 0x18
     int referenceCount;  // 0x1C
     void * NeedsSaveOrLink;  // 0x20
-    TechnoClass* owner;  // 0x24
-    HouseClass* spawnOwner;  // 0x28
-    HouseClass* spawnType;  // 0x2C
+    TechnoClass * owner;  // 0x24
+    HouseClass * spawnOwner;  // 0x28
+    HouseClass * spawnType;  // 0x2C
     int spawnCount;  // 0x30
     int SpawnManagerClass_field_34;  // 0x34
     unsigned int spawns;  // 0x38
@@ -31,11 +31,11 @@ struct SpawnManagerClass {
     char __pad_4C[8];  // 0x4C
     int SpawnManagerClass_field_54;  // 0x54
     int SpawnManagerClass_field_58;  // 0x58
-    IUnknown* SpawnManagerClass_field_5C;  // 0x5C
+    IUnknown * SpawnManagerClass_field_5C;  // 0x5C
     int SpawnManagerClass_field_60;  // 0x60
     int SpawnManagerClass_field_64;  // 0x64
     int SpawnManagerClass_field_68;  // 0x68
-    void* SpawnManagerClass_field_6C;  // 0x6C
+    void * SpawnManagerClass_field_6C;  // 0x6C
     int SpawnManagerClass_field_70;  // 0x70
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---

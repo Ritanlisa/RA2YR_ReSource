@@ -11,15 +11,19 @@ namespace gamemd {
 #ifndef GAMEMD_G2_RawFileClass_DEF  // G42.57w14 twin-guard (shared; first-include wins)
 #define GAMEMD_G2_RawFileClass_DEF 1
 struct RawFileClass {
-    void* __tail_0;  // 0x0
+    void * __tail_0;  // 0x0
     int FilePointer;  // 0x4
     int FileSize;  // 0x8
-    CCFileClass* Handle;  // 0xC
-    const char* FileName;  // 0x10
+    CCFileClass * Handle;  // 0xC
+    const char * FileName;  // 0x10
     char FileTimeDateLo[2];  // 0x14
     short FileTimeDateHi;  // 0x16
     bool FileNameAllocated;  // 0x18
     char tail_19[3];  // 0x19
+    unsigned short u16_1C;  // 0x1C
+    unsigned short u16_1E;  // 0x1E
+    unsigned char u8_20;  // 0x20
+    char __pad_21[3];  // 0x21
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int Close(int a2, int a3);

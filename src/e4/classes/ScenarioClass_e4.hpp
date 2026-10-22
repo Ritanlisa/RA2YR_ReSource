@@ -22,12 +22,12 @@ struct ScenarioClass {
     char elapsedTimer[12];  // 0x610
     char pauseTimer[12];  // 0x61C
     int __pad_628;  // 0x628
-    IUnknown* ScenarioClass_field_62C;  // 0x62C
+    IUnknown * ScenarioClass_field_62C;  // 0x62C
     unsigned short unknown630;  // 0x630
     char waypoints[2808];  // 0x632
     unsigned char __pad_112A;  // 0x112A
     char __pad_112B[1];  // 0x112B
-    void* startX;  // 0x112C
+    void * startX;  // 0x112C
     int startY;  // 0x1130
     int width;  // 0x1134
     int height;  // 0x1138
@@ -38,7 +38,7 @@ struct ScenarioClass {
     bool teamsPresent;  // 0x11E0
     unsigned char __pad_11E1;  // 0x11E1
     char __pad_11E2[2];  // 0x11E2
-    void* numCoopHumanStartSpots;  // 0x11E4
+    void * numCoopHumanStartSpots;  // 0x11E4
     char missionTimer[12];  // 0x11E8
     unsigned int missionTimer_text_csf;  // 0x11F4
     int missionTimer_text[8];  // 0x11F8
@@ -74,7 +74,7 @@ struct ScenarioClass {
     char view2[4];  // 0x3494
     char view3[4];  // 0x3498
     char view4[4];  // 0x349C
-    IUnknown* ScenarioClass_field_34A0;  // 0x34A0
+    IUnknown * ScenarioClass_field_34A0;  // 0x34A0
     bool freeRadar;  // 0x34A4
     bool trainCrate;  // 0x34A5
     bool storedTiberium_growth_enabled;  // 0x34A6
@@ -95,7 +95,7 @@ struct ScenarioClass {
     bool ScenarioClass_field_bool_34B5;  // 0x34B5
     bool ScenarioClass_field_bool_34B6;  // 0x34B6
     bool ScenarioClass_field_bool_34B7;  // 0x34B7
-    IUnknown* playerSideIndex;  // 0x34B8
+    IUnknown * playerSideIndex;  // 0x34B8
     bool multiplayerOnly;  // 0x34BC
     bool isRandom;  // 0x34BD
     bool pickedUpAnyCrate;  // 0x34BE
@@ -103,21 +103,21 @@ struct ScenarioClass {
     char ScenarioClass_field_timer_34C0[12];  // 0x34C0
     int campaignIndex;  // 0x34CC
     int startingDropships;  // 0x34D0
-    TechnoTypeClass** allowableUnits;  // 0x34D4
+    TechnoTypeClass * * allowableUnits;  // 0x34D4
     int allowableUnitsCount;  // 0x34D8
-    void* allowableUnitMaximums;  // 0x34DC
+    void * allowableUnitMaximums;  // 0x34DC
     char allowableMaximumsCount[4];  // 0x34E0
-    void* dropshipUnitCounts;  // 0x34E4
+    void * dropshipUnitCounts;  // 0x34E4
     int dropshipCountsCount;  // 0x34E8
     char ambientOriginal[4];  // 0x34EC
-    void* ambientCurrent;  // 0x34F0
+    void * ambientCurrent;  // 0x34F0
     int ambientTarget;  // 0x34F4
     char red[4];  // 0x34F8
     char green[4];  // 0x34FC
     int blue;  // 0x3500
     int ground;  // 0x3504
     int level;  // 0x3508
-    void* ionAmbient;  // 0x350C
+    void * ionAmbient;  // 0x350C
     int ionRed;  // 0x3510
     int ionGreen;  // 0x3514
     int ionBlue;  // 0x3518
@@ -151,7 +151,7 @@ struct ScenarioClass {
     unsigned int u32_3590;  // 0x3590
     unsigned int u32_3594;  // 0x3594
     char __pad_3598[4];  // 0x3598
-    void* InitTime;  // 0x359C
+    void * InitTime;  // 0x359C
     char __pad_35A0[2];  // 0x35A0
     bool ScenarioClass_field_35A2;  // 0x35A2
     unsigned char ScenarioClass_field_35A3;  // 0x35A3
@@ -166,7 +166,7 @@ struct ScenarioClass {
     char lsBrief[31];  // 0x364B
     unsigned char __pad_366A;  // 0x366A
     char __pad_366B[1];  // 0x366B
-    IUnknown* ls640BriefLocX;  // 0x366C
+    IUnknown * ls640BriefLocX;  // 0x366C
     int ls640BriefLocY;  // 0x3670
     int ls800BriefLocX;  // 0x3674
     int ls800BriefLocY;  // 0x3678

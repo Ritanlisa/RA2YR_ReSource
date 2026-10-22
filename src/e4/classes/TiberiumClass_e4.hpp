@@ -12,21 +12,21 @@ struct LineTrail;  // fix_fwd_type_supply
 
 struct TiberiumClass {
 #pragma pack(push, 1)  // X60: binary-packed layout
-    void* ptr_0;  // 0x0
-    void* ptr_4;  // 0x4
-    void* ptr_8;  // 0x8
-    void* ptr_C;  // 0xC
-    void* uniqueId;  // 0x10
+    void * ptr_0;  // 0x0
+    void * ptr_4;  // 0x4
+    void * ptr_8;  // 0x8
+    void * ptr_C;  // 0xC
+    void * uniqueId;  // 0x10
     int abstractFlags;  // 0x14
     char nextArrayIndex[4];  // 0x18
     char referenceCount[4];  // 0x1C
     int NeedsSaveOrLink;  // 0x20
     int objectTypeFlags;  // 0x24
     unsigned int owningHouseIndex;  // 0x28
-    OverlayTypeClass* fallRate;  // 0x2C
+    OverlayTypeClass * fallRate;  // 0x2C
     int nextObject_d;  // 0x30
     int attachedTag;  // 0x34
-    MapSeed* attachedBomb;  // 0x38
+    MapSeed * attachedBomb;  // 0x38
     char ambientSoundController[20];  // 0x3C
     char customSound_controller[20];  // 0x50
     int customSound;  // 0x64
@@ -44,7 +44,7 @@ struct TiberiumClass {
     unsigned char isSelected_d;  // 0x83
     bool hasParachute;  // 0x84
     char alignmentPadding85[3];  // 0x85
-    AnimClass* parachute;  // 0x88
+    AnimClass * parachute;  // 0x88
     bool onBridge;  // 0x8C
     bool isFallingDown;  // 0x8D
     unsigned char __pad_08E;  // 0x8E
@@ -56,17 +56,17 @@ struct TiberiumClass {
     bool isVisible;  // 0x99
     unsigned short alignmentPadding99;  // 0x9A
     int location[3];  // 0x9C
-    LineTrail* Growth_d;  // 0xA8
+    void * Growth_d;  // 0xA8
     char ArrayIndex[4];  // 0xAC
-    void* Spread_d;  // 0xB0
+    void * Spread_d;  // 0xB0
     double SpreadPercentage;  // 0xB4
     int Power_d;  // 0xBC
     double GrowthPercentage_d;  // 0xC0
     int Value;  // 0xC8
     int Power_2;  // 0xCC
     char Color_d[4];  // 0xD0
-    void* Debris;  // 0xD4
-    OverlayTypeClass* Image;  // 0xD8
+    void * Debris;  // 0xD4
+    OverlayTypeClass * Image;  // 0xD8
     char NumFrames[4];  // 0xDC
     int Image_d;  // 0xE0
     char __pad_E4[4];  // 0xE4
@@ -79,9 +79,12 @@ struct TiberiumClass {
     char SpreadTimer_d[12];  // 0x100
     int TiberiumClass_field_10C_d;  // 0x10C
     int TiberiumClass_field_110_d;  // 0x110
-    void* TiberiumClass_field_114_d;  // 0x114
-    void* TiberiumClass_field_118;  // 0x118
+    void * TiberiumClass_field_114_d;  // 0x114
+    void * TiberiumClass_field_118;  // 0x118
     char GrowthTimer_d[12];  // 0x11C
+    char __pad_128[476];  // 0x128
+    unsigned int u32_304;  // 0x304
+    unsigned int u32_308;  // 0x308
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     AbstractClass * * SaveLoad_Prefix(int a1, int a2);

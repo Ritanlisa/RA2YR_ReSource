@@ -11,6 +11,8 @@ struct SuperWeaponClass {
     int q008;  // 0x8
     int q00C;  // 0xC
     int q010;  // 0x10
+    char __pad_14[48];  // 0x14
+    unsigned int u32_44;  // 0x44
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     static int UpdateAll(void *aP1);

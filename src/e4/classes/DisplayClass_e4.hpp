@@ -16,7 +16,7 @@ struct Tactical;  // fix_fwd_type_supply
 struct VectorClass_flat;  // fix_fwd_type_supply
 
 struct DisplayClass {
-    void* ptr_0;  // 0x0
+    void * ptr_0;  // 0x0
     AbstractClass * ptr_4;  // 0x4
     unsigned int q008;  // 0x8
     unsigned int u32_C;  // 0xC

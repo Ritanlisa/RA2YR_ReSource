@@ -39,7 +39,7 @@ struct TActionClass {
     char TActionClass_field_6D[1];  // 0x6D
     char pad_6E[73];  // 0x6E
     unsigned char __pad_0B7;  // 0xB7
-    void* Value;  // 0xB8
+    void * Value;  // 0xB8
     char __pad_BC[56];  // 0xBC
     unsigned int u32_F4;  // 0xF4
     char __pad_F8[4];  // 0xF8

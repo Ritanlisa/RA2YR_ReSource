@@ -8,17 +8,62 @@ Approach:
 - Each entry: "ClassName+0xOFF" -> {"type": "...", "name": "...", "confidence": "..."}
 - Union/bitfield members -> confidence=UNKNOWN
 - Nested types: DynamicVectorClass<T> -> T* (effective inner type stored in "inner_type")
+
+X116: --layout-sidecar <json> overrides class_layouts for the classes it
+covers (the CSP-driven layout authority; til untouched).
 """
+import argparse
 import json, os, re
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(ROOT)
+
+_ap = argparse.ArgumentParser()
+_ap.add_argument('--layout-sidecar', default='',
+                 help='X116: layout sidecar (classes[cls].members[].off/name/'
+                      'type/width) overriding tools/class_layouts.json')
+_ap.add_argument('--out', default='anchors/member_types.json')
+_ap.add_argument('--merge-existing', action='store_true',
+                 help='X116: union the regenerated entries with the existing '
+                      'output (the file is a union of supply channels; the '
+                      'sidecar overlays its covered classes, nothing else is '
+                      'deleted)')
+_ARGS = _ap.parse_args()
 
 # --- Load sources ---
 with open('tools/class_layouts.json') as f:
     class_layouts = json.load(f)
 with open('tools/member_lookup.json') as f:
     member_lookup = json.load(f)
+
+# --- X116 layout sidecar: override the layout table for covered classes ----
+SIDE = {}
+if _ARGS.layout_sidecar:
+    with open(_ARGS.layout_sidecar) as f:
+        _side = json.load(f).get('classes') or {}
+    _covered = 0
+    for _cls, _e in _side.items():
+        _offs = {}
+        for _m in _e.get('members') or []:
+            _off = int(_m['off'])
+            _w = int(_m.get('width') or _m.get('size') or 4)
+            _offs[str(_off)] = {
+                'ida_name': _m.get('name') or '',
+                'size': _w,
+                'type': _m.get('type') or '',
+            }
+            # strict name/type for the covered offset (layout authority)
+            SIDE[(_cls, _off)] = (_m.get('name') or '',
+                                  _m.get('type') or '', _w)
+        if _offs:
+            class_layouts[_cls] = {
+                'size': int(_e.get('computed_size') or 0),
+                'parent': (class_layouts.get(_cls) or {}).get('parent'),
+                'offsets': _offs,
+                'source': 'x116-csp-layout',
+            }
+            _covered += 1
+    print(f"layout sidecar: {_covered} classes override class_layouts")
 
 print(f"class_layouts: {len(class_layouts)} classes")
 print(f"member_lookup: {len(member_lookup)} classes")
@@ -67,7 +112,14 @@ for class_name, layout in class_layouts.items():
         # Try to enrich from member_lookup (same offset, same class)
         lookup_entry = lookup_members.get(offset_str) if isinstance(lookup_members, dict) else None
 
-        if lookup_entry and isinstance(lookup_entry, dict):
+        side_entry = SIDE.get((class_name, offset_int))
+        if side_entry:
+            # X116 layout authority wins for the classes it covers
+            member_name, member_type, _sw = side_entry
+            is_union = False
+            is_bitfield = False
+            inherited_from = None
+        elif lookup_entry and isinstance(lookup_entry, dict):
             member_name = lookup_entry.get('name', entry.get('ida_name', ''))
             member_type = lookup_entry.get('type', entry.get('type', ''))
             is_union = lookup_entry.get('union', False)
@@ -147,8 +199,29 @@ if os.path.exists(constraints_path):
 
 # --- Write output ---
 os.makedirs('anchors', exist_ok=True)
-with open('anchors/member_types.json', 'w') as f:
-    json.dump(output, f, indent=2, sort_keys=True)
+if _ARGS.merge_existing and os.path.exists(_ARGS.out):
+    with open(_ARGS.out) as f:
+        _old = json.load(f)
+    _new_keys = set(output)
+    _added = len(_new_keys - set(_old))
+    _updated = 0
+    _merged = dict(_old)
+    for k, v in output.items():
+        if k in _old and isinstance(_old[k], dict) and isinstance(v, dict):
+            # keep supply-channel metadata (size/evidence/inherited_from)
+            # and let the layout authority override name/type/confidence
+            merged = dict(_old[k])
+            if merged != v:
+                _updated += 1
+            merged.update(v)
+            _merged[k] = merged
+        else:
+            _merged[k] = v
+    output = _merged
+    print(f"[merge] existing {len(_old)} + new {len(_new_keys)} -> "
+          f"{len(output)} (added {_added}, updated {_updated})")
+with open(_ARGS.out, 'w', newline='\n') as f:
+    json.dump(output, f, indent=1, sort_keys=False)
 
 print(f"\n--- Results ---")
 print(f"Classes with members: {stats['total_classes']}")
@@ -158,7 +231,7 @@ print(f"UNKNOWN: {stats['UNKNOWN']}")
 print(f"Nested types expanded: {stats['nested_expanded']}")
 print(f"Union members: {stats['union_members']}")
 print(f"Bitfield members: {stats['bitfield_members']}")
-print(f"Output: {os.path.getsize('anchors/member_types.json')} bytes")
+print(f"Output: {os.path.getsize(_ARGS.out)} bytes")
 
 # --- Spot checks ---
 print(f"\n--- Spot Checks ---")

@@ -16,6 +16,11 @@ struct ConnectionClass {
     unsigned int LastPacketTime;  // 0xC
     unsigned int PacketsSent;  // 0x10
     unsigned int PacketsReceived;  // 0x14
+    unsigned int u32_18;  // 0x18
+    unsigned int u32_1C;  // 0x1C
+    unsigned int q020;  // 0x20
+    unsigned int u32_24;  // 0x24
+    unsigned int u32_28;  // 0x28
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     AbstractClass * * sendAck(AnimClass * aP1, AnimClass * aP2, AnimClass * aP3, AnimClass * aP4, void *a5);

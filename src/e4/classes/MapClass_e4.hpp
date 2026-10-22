@@ -100,9 +100,9 @@ struct MapClass {
     unsigned int u32_2F4;  // 0x2F4
     char __pad_2F8[12];  // 0x2F8
     int q304;  // 0x304
-    IUnknown* q308;  // 0x308
+    IUnknown * q308;  // 0x308
     char __pad_30C[1020];  // 0x30C
-    void* u32_708;  // 0x708
+    void * u32_708;  // 0x708
     unsigned char __pad_70C;  // 0x70C
     char __pad_70D[248];  // 0x70D
     unsigned char q0805;  // 0x805

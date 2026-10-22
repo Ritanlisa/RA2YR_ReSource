@@ -25,30 +25,30 @@ struct Coord;  // fix_fwd_type_supply
 #ifndef GAMEMD_TREE_UNIVERSE
 struct TechnoClass {
     unsigned int ptr_0;  // 0x0
-    void* ptr_4;  // 0x4
-    void* ptr_8;  // 0x8
-    void* ptr_C;  // 0xC
-    void* uniqueId;  // 0x10
-    void* abstractFlags;  // 0x14
-    void* nextArrayIndex;  // 0x18
-    void* referenceCount;  // 0x1C
-    void* NeedsSaveOrLink;  // 0x20
-    void* occupant;  // 0x24
-    void* owningHouseIndex;  // 0x28
-    void* fallRate;  // 0x2C
-    void* nextObject;  // 0x30
-    void* attachedTag;  // 0x34
-    BombClass* attachedBomb;  // 0x38
+    void * ptr_4;  // 0x4
+    void * ptr_8;  // 0x8
+    void * ptr_C;  // 0xC
+    void * uniqueId;  // 0x10
+    void * abstractFlags;  // 0x14
+    void * nextArrayIndex;  // 0x18
+    void * referenceCount;  // 0x1C
+    void * NeedsSaveOrLink;  // 0x20
+    void * occupant;  // 0x24
+    void * owningHouseIndex;  // 0x28
+    void * fallRate;  // 0x2C
+    void * nextObject;  // 0x30
+    void * attachedTag;  // 0x34
+    BombClass * attachedBomb;  // 0x38
     int ambientSoundController[5];  // 0x3C
     int customSound_controller[5];  // 0x50
     int customSound;  // 0x64
     char bombVisible[1];  // 0x68
     char alignmentPadding69[3];  // 0x69
-    void* health;  // 0x6C
-    Int4* estimatedHealth;  // 0x70
+    void * health;  // 0x6C
+    Int4 * estimatedHealth;  // 0x70
     bool isOnMap;  // 0x74
     char alignmentPadding75[3];  // 0x75
-    ScoreScreen* spawnStatus;  // 0x78
+    ScoreScreen * spawnStatus;  // 0x78
     unsigned int visibilityFlags;  // 0x7C
     bool needsRedraw;  // 0x80
     char inLimbo[1];  // 0x81
@@ -56,7 +56,7 @@ struct TechnoClass {
     char isSelected[1];  // 0x83
     bool hasParachute;  // 0x84
     char alignmentPadding85[3];  // 0x85
-    AnimClass* parachute;  // 0x88
+    AnimClass * parachute;  // 0x88
     char onBridge[1];  // 0x8C
     bool isFallingDown;  // 0x8D
     bool wasFallingDown;  // 0x8E
@@ -68,10 +68,10 @@ struct TechnoClass {
     bool isVisible;  // 0x99
     char alignmentPadding99[2];  // 0x9A
     int location[3];  // 0x9C
-    void* lineTrailer;  // 0xA8
-    void* currentMission;  // 0xAC
-    void* suspendedMission;  // 0xB0
-    void* queuedMission;  // 0xB4
+    void * lineTrailer;  // 0xA8
+    void * currentMission;  // 0xAC
+    void * suspendedMission;  // 0xB0
+    void * queuedMission;  // 0xB4
     char missionQueued[1];  // 0xB8
     char alignmentPaddingB9[3];  // 0xB9
     int missionStatus;  // 0xBC
@@ -83,16 +83,16 @@ struct TechnoClass {
     unsigned long long flashing_d;  // 0xF0
     int animation[7];  // 0xF8
     int passengers[2];  // 0x114
-    void* transporter_2;  // 0x11C
-    void* turretChargeTimer_d;  // 0x120
-    void* currentTurretNumber_2;  // 0x124
+    void * transporter_2;  // 0x11C
+    void * turretChargeTimer_d;  // 0x120
+    void * currentTurretNumber_2;  // 0x124
     int secondaryTurretIndex_d;  // 0x128
-    AnimClass* behindAnim;  // 0x12C
-    void* deployAnim;  // 0x130
+    AnimClass * behindAnim;  // 0x12C
+    void * deployAnim;  // 0x130
     bool inAirFlag;  // 0x134
     char alignmentPadding139[3];  // 0x135
     int currentWeaponSlot;  // 0x138
-    WaveClass* currentWeaponSlot_d;  // 0x13C
+    WaveClass * currentWeaponSlot_d;  // 0x13C
     int gattlingStage;  // 0x140
     int gattlingValue;  // 0x144
     int ammoReloadTimer;  // 0x148
@@ -107,18 +107,18 @@ struct TechnoClass {
     int q18C;  // 0x18C
     char ironCurtainTimer[12];  // 0x190
     char ironTintTimer[12];  // 0x19C
-    IUnknown* ironTintStage;  // 0x1A8
+    IUnknown * ironTintStage;  // 0x1A8
     char ironTintStage_d[12];  // 0x1AC
     char airstrikeTintTimer[12];  // 0x1B8
     unsigned int airstrikeTintStage_d;  // 0x1C4
     unsigned int airstrikeTintStage_2;  // 0x1C8
-    void* drainTarget;  // 0x1CC
+    void * drainTarget;  // 0x1CC
     int drainingMe;  // 0x1D0
-    TechnoClass* drainAnim;  // 0x1D4
+    TechnoClass * drainAnim;  // 0x1D4
     char isDisguisedFlag[1];  // 0x1D8
     unsigned char __pad_1D9;  // 0x1D9
     char __pad_1DA[2];  // 0x1DA
-    AnimClass* disguiseCreationFrame;  // 0x1DC
+    AnimClass * disguiseCreationFrame;  // 0x1DC
     int infantryBlinkTimer[3];  // 0x1E0
     int disguiseBlinkTimer[3];  // 0x1EC
     bool isTargetedByChrono;  // 0x1F8
@@ -129,11 +129,11 @@ struct TechnoClass {
     unsigned int displayProductionTo;  // 0x210
     unsigned int controlGroup;  // 0x214
     unsigned int focus;  // 0x218
-    HouseClass* owner;  // 0x21C
-    AbstractClass* cloakState;  // 0x220
+    HouseClass * owner;  // 0x21C
+    AbstractClass * cloakState;  // 0x220
     int cloakProgress[7];  // 0x224
     char warpFactor_d[12];  // 0x240
-    void* warpFactor_2;  // 0x24C
+    void * warpFactor_2;  // 0x24C
     char isChronosphereImmune[1];  // 0x250
     char alignmentPadding251[3];  // 0x251
     char lastSightCoords[12];  // 0x254
@@ -147,8 +147,8 @@ struct TechnoClass {
     bool isWarpingOut;  // 0x271
     bool isWarpEffectActive;  // 0x272
     unsigned char unusedField273;  // 0x273
-    TemporalClass* temporalUsing;  // 0x274
-    TemporalClass* temporalTargetingMe;  // 0x278
+    TemporalClass * temporalUsing;  // 0x274
+    TemporalClass * temporalTargetingMe;  // 0x278
     bool isImmobilized;  // 0x27C
     char __pad_27D[3];  // 0x27D
     int owningHouseIndex0;  // 0x280
@@ -157,47 +157,47 @@ struct TechnoClass {
     unsigned int airstrike;  // 0x294
     char isBerserk[1];  // 0x298
     char __pad_299[3];  // 0x299
-    Coord* isBerserk_duration_left;  // 0x29C
+    Coord * isBerserk_duration_left;  // 0x29C
     unsigned int sprayOffsetIndex;  // 0x2A0
     char isUncrushable[1];  // 0x2A4
     char __pad_2A5[3];  // 0x2A5
-    AirstrikeClass* rockerLinkedUnit;  // 0x2A8
+    AirstrikeClass * rockerLinkedUnit;  // 0x2A8
     int locomotorTarget;  // 0x2AC
     unsigned int locomotorSource;  // 0x2B0
-    void* target;  // 0x2B4
+    void * target;  // 0x2B4
     int lastTarget;  // 0x2B8
-    FootClass* captureManager;  // 0x2BC
-    FootClass* mindControlledBy;  // 0x2C0
+    FootClass * captureManager;  // 0x2BC
+    FootClass * mindControlledBy;  // 0x2C0
     char mindControlledBy_a_unit[1];  // 0x2C4
     char __pad_2C5[3];  // 0x2C5
-    AbstractClass* mindControlRingAnim;  // 0x2C8
-    AbstractClass* mindControlledBy_house;  // 0x2CC
-    CaptureManagerClass* spawnManager;  // 0x2D0
-    TechnoClass* spawnOwner;  // 0x2D4
+    AbstractClass * mindControlRingAnim;  // 0x2C8
+    AbstractClass * mindControlledBy_house;  // 0x2CC
+    CaptureManagerClass * spawnManager;  // 0x2D0
+    TechnoClass * spawnOwner;  // 0x2D4
     int slaveManager;  // 0x2D8
-    AnimClass* slaveOwner;  // 0x2DC
-    HouseClass* originalOwnerHouse;  // 0x2E0
-    SpawnManagerClass* bunkerLinkedUnit;  // 0x2E4
-    TechnoClass* pitchAngle;  // 0x2E8
+    AnimClass * slaveOwner;  // 0x2DC
+    HouseClass * originalOwnerHouse;  // 0x2E0
+    SpawnManagerClass * bunkerLinkedUnit;  // 0x2E4
+    TechnoClass * pitchAngle;  // 0x2E8
     int diskLaserTimer[3];  // 0x2EC
-    TechnoClass* diskLaserChargeState;  // 0x2F8
+    TechnoClass * diskLaserChargeState;  // 0x2F8
     float ammo;  // 0x2FC
-    TimerStruct* unitValue;  // 0x300
-    ParticleSystemClass* fireParticles;  // 0x304
-    void* sparkParticles;  // 0x308
+    TimerStruct * unitValue;  // 0x300
+    ParticleSystemClass * fireParticles;  // 0x304
+    void * sparkParticles;  // 0x308
     unsigned int ambientParticles;  // 0x30C
     int damageParticles;  // 0x310
     int railgunParticles;  // 0x314
-    ParticleSystemClass* unk1Particles;  // 0x318
-    ParticleSystemClass* sparkParticles_d;  // 0x31C
-    ParticleSystemClass* ambientParticles_d;  // 0x320
-    ParticleSystemClass* damageParticles_2;  // 0x324
-    ParticleSystemClass* railgunParticles_2;  // 0x328
-    ParticleSystemClass* auxParticles1;  // 0x32C
-    ParticleSystemClass* auxParticles2;  // 0x330
-    ParticleSystemClass* firingParticles;  // 0x334
-    WaveClass* waveEffect;  // 0x338
-    Float4* tiltSidewaysAngle;  // 0x33C
+    ParticleSystemClass * unk1Particles;  // 0x318
+    ParticleSystemClass * sparkParticles_d;  // 0x31C
+    ParticleSystemClass * ambientParticles_d;  // 0x320
+    ParticleSystemClass * damageParticles_2;  // 0x324
+    ParticleSystemClass * railgunParticles_2;  // 0x328
+    ParticleSystemClass * auxParticles1;  // 0x32C
+    ParticleSystemClass * auxParticles2;  // 0x330
+    ParticleSystemClass * firingParticles;  // 0x334
+    WaveClass * waveEffect;  // 0x338
+    Float4 * tiltSidewaysAngle;  // 0x33C
     float tiltForwardsAngle;  // 0x340
     float tiltSidewaysRate;  // 0x344
     float tiltForwardsRate;  // 0x348
@@ -242,13 +242,13 @@ struct TechnoClass {
     unsigned char isCrashing_d;  // 0x425
     char wasAlreadyCrashing[1];  // 0x426
     char isBeingManipulated[1];  // 0x427
-    TechnoClass* manipulatedByUnit_d;  // 0x428
-    HouseClass* chronoWarpedByHouse_d;  // 0x42C
+    TechnoClass * manipulatedByUnit_d;  // 0x428
+    HouseClass * chronoWarpedByHouse_d;  // 0x42C
     bool isChronoImmuneFlag_d;  // 0x430
     bool isMouseHovering;  // 0x431
     bool shouldBeReselectOnUnlimbo;  // 0x432
     unsigned char alignmentPadding433;  // 0x433
-    TeamClass* previousTeam;  // 0x434
+    TeamClass * previousTeam;  // 0x434
     bool isCountedAsOwned_special;  // 0x438
     bool isAbsorbed;  // 0x439
     bool isGrindingInProgress;  // 0x43A
@@ -259,19 +259,19 @@ struct TechnoClass {
     char __pad_470[24];  // 0x470
     char turretRotateSoundController[20];  // 0x488
     unsigned int isTurretRotateSoundPlaying;  // 0x49C
-    ComPtr* turretIsRotating;  // 0x4A0
+    ComPtr * turretIsRotating;  // 0x4A0
     char gattlingSoundController[20];  // 0x4A4
     bool isGattlingSoundPlaying;  // 0x4B8
     unsigned char alignmentPadding4B9;  // 0x4B9
     unsigned char __pad_4BA;  // 0x4BA
     char __pad_4BB[1];  // 0x4BB
-    ComPtr* unknown_4BC;  // 0x4BC
+    ComPtr * unknown_4BC;  // 0x4BC
     char unusedGattlingSoundController[20];  // 0x4C0
     bool isUnusedGattlingSoundPlaying;  // 0x4D4
     unsigned char alignmentPadding4D5;  // 0x4D5
     unsigned char __pad_4D6;  // 0x4D6
     char __pad_4D7[1];  // 0x4D7
-    ComPtr* unknown_4D8;  // 0x4D8
+    ComPtr * unknown_4D8;  // 0x4D8
     char queuedVoiceSoundController[20];  // 0x4DC
     unsigned int queuedVoiceIndex;  // 0x4F0
     unsigned int unknown_4F4;  // 0x4F4
@@ -279,15 +279,87 @@ struct TechnoClass {
     unsigned char alignmentPadding4F9;  // 0x4F9
     unsigned char __pad_4FA;  // 0x4FA
     char __pad_4FB[1];  // 0x4FB
-    IUnknown* unknown_4FC;  // 0x4FC
+    IUnknown * unknown_4FC;  // 0x4FC
     unsigned int voiceVolumeModifier;  // 0x500
     unsigned int empLockRemaining;  // 0x504
     unsigned int threatPosed;  // 0x508
     unsigned int shouldLoseTarget;  // 0x50C
-    RadBeam* firingRadBeam;  // 0x510
-    void* planningToken;  // 0x514
-    ObjectTypeClass* disguiseAsType;  // 0x518
-    HouseClass* disguisedAsHouse;  // 0x51C
+    RadBeam * firingRadBeam;  // 0x510
+    void * planningToken;  // 0x514
+    ObjectTypeClass * disguiseAsType;  // 0x518
+    HouseClass * disguisedAsHouse;  // 0x51C
+    unsigned int u32_520;  // 0x520
+    unsigned int u32_524;  // 0x524
+    unsigned char u8_528;  // 0x528
+    char __pad_529[15];  // 0x529
+    unsigned int u32_538;  // 0x538
+    unsigned int u32_53C;  // 0x53C
+    char __pad_540[16];  // 0x540
+    unsigned int u32_550;  // 0x550
+    unsigned int u32_554;  // 0x554
+    unsigned int u32_558;  // 0x558
+    char __pad_55C[12];  // 0x55C
+    unsigned int u32_568;  // 0x568
+    unsigned int u32_56C;  // 0x56C
+    unsigned int u32_570;  // 0x570
+    unsigned int u32_574;  // 0x574
+    char __pad_578[8];  // 0x578
+    unsigned int u32_580;  // 0x580
+    char __pad_584[8];  // 0x584
+    unsigned int u32_58C;  // 0x58C
+    char __pad_590[8];  // 0x590
+    unsigned int u32_598;  // 0x598
+    unsigned int u32_59C;  // 0x59C
+    unsigned int u32_5A0;  // 0x5A0
+    unsigned int u32_5A4;  // 0x5A4
+    char __pad_5A8[28];  // 0x5A8
+    unsigned int u32_5C4;  // 0x5C4
+    unsigned int u32_5C8;  // 0x5C8
+    unsigned int u32_5CC;  // 0x5CC
+    char __pad_5D0[1];  // 0x5D0
+    unsigned char u8_5D1;  // 0x5D1
+    char __pad_5D2[2];  // 0x5D2
+    unsigned int u32_5D4;  // 0x5D4
+    char __pad_5D8[116];  // 0x5D8
+    unsigned int u32_64C;  // 0x64C
+    unsigned int u32_650;  // 0x650
+    unsigned int u32_654;  // 0x654
+    unsigned int u32_658;  // 0x658
+    unsigned int u32_65C;  // 0x65C
+    char __pad_660[1];  // 0x660
+    unsigned char u8_661;  // 0x661
+    char __pad_662[2];  // 0x662
+    unsigned int u32_664;  // 0x664
+    char __pad_668[12];  // 0x668
+    unsigned int u32_674;  // 0x674
+    char __pad_678[12];  // 0x678
+    unsigned char u8_684;  // 0x684
+    char __pad_685[3];  // 0x685
+    unsigned int u32_688;  // 0x688
+    unsigned char u8_68C;  // 0x68C
+    unsigned char u8_68D;  // 0x68D
+    char __pad_68E[1];  // 0x68E
+    unsigned char u8_68F;  // 0x68F
+    unsigned char u8_690;  // 0x690
+    unsigned char u8_691;  // 0x691
+    char __pad_692[2];  // 0x692
+    unsigned int u32_694;  // 0x694
+    char __pad_698[4];  // 0x698
+    unsigned int u32_69C;  // 0x69C
+    char __pad_6A0[5];  // 0x6A0
+    unsigned char u8_6A5;  // 0x6A5
+    char __pad_6A6[7];  // 0x6A6
+    unsigned char u8_6AD;  // 0x6AD
+    char __pad_6AE[1];  // 0x6AE
+    unsigned char u8_6AF;  // 0x6AF
+    char __pad_6B0[4];  // 0x6B0
+    unsigned char u8_6B4;  // 0x6B4
+    unsigned char u8_6B5;  // 0x6B5
+    char __pad_6B6[2];  // 0x6B6
+    unsigned int u32_6B8;  // 0x6B8
+    unsigned int u32_6BC;  // 0x6BC
+    unsigned int u32_6C0;  // 0x6C0
+    unsigned int u32_6C4;  // 0x6C4
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     static void Find(int aP1, int aP2);

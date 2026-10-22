@@ -24,20 +24,20 @@ struct InfantryTypeClass;  // fix_fwd_type_supply
 
 struct InfantryClass {
     unsigned int ptr_0;  // 0x0
-    void* ptr_4;  // 0x4
-    void* ptr_8;  // 0x8
-    void* ptr_C;  // 0xC
-    void* uniqueId;  // 0x10
-    void* abstractFlags;  // 0x14
+    void * ptr_4;  // 0x4
+    void * ptr_8;  // 0x8
+    void * ptr_C;  // 0xC
+    void * uniqueId;  // 0x10
+    void * abstractFlags;  // 0x14
     unsigned int nextArrayIndex;  // 0x18
     int referenceCount;  // 0x1C
     unsigned int needsSave;  // 0x20
-    void* objectTypeFlags;  // 0x24
-    void* owningHouseIndex;  // 0x28
-    void* fallRate;  // 0x2C
-    ObjectClass* nextObject;  // 0x30
-    void* attachedTag;  // 0x34
-    BombClass* attachedBomb;  // 0x38
+    void * objectTypeFlags;  // 0x24
+    void * owningHouseIndex;  // 0x28
+    void * fallRate;  // 0x2C
+    ObjectClass * nextObject;  // 0x30
+    void * attachedTag;  // 0x34
+    BombClass * attachedBomb;  // 0x38
     int ambientSoundController[5];  // 0x3C
     int customSound_controller[5];  // 0x50
     int customSound;  // 0x64
@@ -55,48 +55,48 @@ struct InfantryClass {
     bool isSelected;  // 0x83
     bool hasParachute;  // 0x84
     char alignmentPadding85[3];  // 0x85
-    AnimClass* parachute;  // 0x88
+    AnimClass * parachute;  // 0x88
     char onBridge[1];  // 0x8C
     char isFallingDown[1];  // 0x8D
     bool wasFallingDown;  // 0x8E
     bool isBomb;  // 0x8F
     char isAliveFlag[1];  // 0x90
     char alignmentPadding91[3];  // 0x91
-    BuildingTypeClass* lastLayer;  // 0x94
+    BuildingTypeClass * lastLayer;  // 0x94
     bool isInLogic;  // 0x98
     bool isVisible;  // 0x99
     char alignmentPadding99[2];  // 0x9A
     int location[3];  // 0x9C
-    void* lineTrailer;  // 0xA8
-    void* currentMission;  // 0xAC
-    BuildingTypeClass* suspendedMission;  // 0xB0
-    void* queuedMission;  // 0xB4
+    void * lineTrailer;  // 0xA8
+    void * currentMission;  // 0xAC
+    BuildingTypeClass * suspendedMission;  // 0xB0
+    void * queuedMission;  // 0xB4
     bool missionQueued;  // 0xB8
     char alignmentPaddingB9[3];  // 0xB9
     char missionStatus[4];  // 0xBC
     int missionStartTime;  // 0xC0
-    IUnknown* missionData;  // 0xC4
+    IUnknown * missionData;  // 0xC4
     int missionTimer[3];  // 0xC8
     int lastCommands[3];  // 0xD4
     int radioLinks[4];  // 0xE0
     char flashing[8];  // 0xF0
     char radioContact[28];  // 0xF8
     char passengers[8];  // 0x114
-    TechnoClass* transporter;  // 0x11C
+    TechnoClass * transporter;  // 0x11C
     int turretChargeTimer;  // 0x120
-    void* currentTurretNumber;  // 0x124
+    void * currentTurretNumber;  // 0x124
     int secondaryTurretIndex;  // 0x128
-    AnimClass* behindAnim;  // 0x12C
-    AnimClass* deployAnim;  // 0x130
+    AnimClass * behindAnim;  // 0x12C
+    AnimClass * deployAnim;  // 0x130
     bool inAirFlag;  // 0x134
     char alignmentPadding139[3];  // 0x135
     int radioQueueCount;  // 0x138
     char currentRank[4];  // 0x13C
-    void* gattlingStage;  // 0x140
+    void * gattlingStage;  // 0x140
     int gattlingValue;  // 0x144
     unsigned int ammoReloadTimer;  // 0x148
-    HouseClass* initialOwner;  // 0x14C
-    void* veterancy;  // 0x150
+    HouseClass * initialOwner;  // 0x14C
+    void * veterancy;  // 0x150
     unsigned int alignmentPadding154;  // 0x154
     double armorMultiplier;  // 0x158
     double firepowerMultiplier;  // 0x160
@@ -126,8 +126,8 @@ struct InfantryClass {
     unsigned int currentBarrelIndex;  // 0x20C
     unsigned int displayProductionTo;  // 0x210
     unsigned int __pad_214;  // 0x214
-    AbstractClass* focus;  // 0x218
-    HouseClass* owner;  // 0x21C
+    AbstractClass * focus;  // 0x218
+    HouseClass * owner;  // 0x21C
     unsigned int cloakState;  // 0x220
     int cloakProgress[7];  // 0x224
     int cloakDelayTimer[3];  // 0x240
@@ -161,20 +161,20 @@ struct InfantryClass {
     char q2A5[3];  // 0x2A5
     int rockerLinkedUnit;  // 0x2A8
     int locomotorTarget;  // 0x2AC
-    FootClass* locomotorSource;  // 0x2B0
-    AbstractClass* target;  // 0x2B4
+    FootClass * locomotorSource;  // 0x2B0
+    AbstractClass * target;  // 0x2B4
     int lastTarget;  // 0x2B8
-    CaptureManagerClass* facing;  // 0x2BC
-    TechnoClass* turretFacing;  // 0x2C0
+    CaptureManagerClass * facing;  // 0x2BC
+    TechnoClass * turretFacing;  // 0x2C0
     char mindControlledBy_a_unit[1];  // 0x2C4
     char q2C5[3];  // 0x2C5
-    AnimClass* target_laser_timer;  // 0x2C8
-    HouseClass* mindControlledBy_house;  // 0x2CC
+    AnimClass * target_laser_timer;  // 0x2C8
+    HouseClass * mindControlledBy_house;  // 0x2CC
     unsigned int __pad_2D0;  // 0x2D0
-    TechnoClass* targetLaserOpacity;  // 0x2D4
-    void* isCountedAsOwned;  // 0x2D8
-    TechnoClass* slaveOwner;  // 0x2DC
-    HouseClass* isSpawned;  // 0x2E0
+    TechnoClass * targetLaserOpacity;  // 0x2D4
+    void * isCountedAsOwned;  // 0x2D8
+    TechnoClass * slaveOwner;  // 0x2DC
+    HouseClass * isSpawned;  // 0x2E0
     int bunkerLinkedUnit;  // 0x2E4
     unsigned int __pad_2E8;  // 0x2E8
     int diskLaserTimer[3];  // 0x2EC
@@ -185,7 +185,7 @@ struct InfantryClass {
     int sparkParticles;  // 0x308
     int ambientParticles;  // 0x30C
     int damageParticles;  // 0x310
-    ParticleSystemClass* isTurretLocked;  // 0x314
+    ParticleSystemClass * isTurretLocked;  // 0x314
     int unk1Particles;  // 0x318
     char __pad_31C[4];  // 0x31C
     int ambientParticles_2;  // 0x320
@@ -239,7 +239,7 @@ struct InfantryClass {
     bool __pad_425;  // 0x425
     char wasAlreadyCrashing[1];  // 0x426
     char isBeingManipulated[1];  // 0x427
-    TechnoClass* manipulatedByUnit_d;  // 0x428
+    TechnoClass * manipulatedByUnit_d;  // 0x428
     unsigned int __pad_42C;  // 0x42C
     bool isChronoImmuneFlag_d;  // 0x430
     bool isMouseHovering;  // 0x431
@@ -277,15 +277,15 @@ struct InfantryClass {
     unsigned char __pad_4FA;  // 0x4FA
     char __pad_4FB[1];  // 0x4FB
     unsigned int unknown_4FC;  // 0x4FC
-    TechnoClass* queueUpToEnter;  // 0x500
+    TechnoClass * queueUpToEnter;  // 0x500
     unsigned int empLockRemaining;  // 0x504
     unsigned int threatPosed;  // 0x508
     unsigned int shouldLoseTarget;  // 0x50C
-    RadBeam* firingRadBeam;  // 0x510
-    void* planningToken;  // 0x514
+    RadBeam * firingRadBeam;  // 0x510
+    void * planningToken;  // 0x514
     HouseClass * disguiseAsType;  // 0x518
     HouseClass * disguisedAsHouse;  // 0x51C
-    void* FootClass_field_520;  // 0x520
+    void * FootClass_field_520;  // 0x520
     unsigned short FootClass_field_524;  // 0x524
     unsigned short FootClass_field_526;  // 0x526
     unsigned short FootClass_field_528;  // 0x528
@@ -312,7 +312,7 @@ struct InfantryClass {
     char FootClass_field_5A0[4];  // 0x5A0
     int Archive;  // 0x5A4
     char FootClass_field_5A8[4];  // 0x5A8
-    void* FootClass_DVC_5AC;  // 0x5AC
+    void * FootClass_DVC_5AC;  // 0x5AC
     int __pad_5B0;  // 0x5B0
     char __pad_5B4[16];  // 0x5B4
     char FootClass_field_5C4[4];  // 0x5C4
@@ -330,7 +330,7 @@ struct InfantryClass {
     char FootClass_field_650[12];  // 0x650
     char FootClass_field_65C[12];  // 0x65C
     char FootClass_field_668[12];  // 0x668
-    ILocomotion* locomotor;  // 0x674
+    ILocomotion * locomotor;  // 0x674
     char Locomotor_ptr[12];  // 0x678
     unsigned char FootClass_field_684;  // 0x684
     char unknownBool685;  // 0x685
@@ -349,7 +349,7 @@ struct InfantryClass {
     char __pad_692[2];  // 0x692
     int FootClass_field_694;  // 0x694
     int FootClass_field_698;  // 0x698
-    void* FootClass_field_69C;  // 0x69C
+    void * FootClass_field_69C;  // 0x69C
     char FootClass_field_6A0[12];  // 0x6A0
     char FootClass_field_bool_6AC[1];  // 0x6AC
     char isAttackedByLocomotor;  // 0x6AD
@@ -366,8 +366,8 @@ struct InfantryClass {
     bool FootClass_field_6B8;  // 0x6B8
     char FootClass_field_6B9[3];  // 0x6B9
     unsigned int FootClass_field_6BC;  // 0x6BC
-    InfantryTypeClass* Type;  // 0x6C0
-    void* SequenceAnim;  // 0x6C4
+    InfantryTypeClass * Type;  // 0x6C0
+    void * SequenceAnim;  // 0x6C4
     char InfantryClass_field_timer_6C8[12];  // 0x6C8
     unsigned int PanicDurationLeft;  // 0x6D4
     bool PermanentBerzerk;  // 0x6D8
@@ -378,12 +378,33 @@ struct InfantryClass {
     bool InfantryClass_field_bool_6DD;  // 0x6DD
     unsigned char __pad_6DE;  // 0x6DE
     char __pad_6DF[1];  // 0x6DF
-    EBolt* InfantryClass_field_6E0;  // 0x6E0
+    EBolt * InfantryClass_field_6E0;  // 0x6E0
     bool ShouldDeploy;  // 0x6E4
     unsigned char __pad_6E5;  // 0x6E5
     char __pad_6E6[2];  // 0x6E6
     int unknown_int_6E8;  // 0x6E8
     unsigned int unused_6EC;  // 0x6EC
+    char __pad_6F0[1868];  // 0x6F0
+    unsigned int u32_E3C;  // 0xE3C
+    char __pad_E40[16];  // 0xE40
+    unsigned int u32_E50;  // 0xE50
+    unsigned int u32_E54;  // 0xE54
+    unsigned int u32_E58;  // 0xE58
+    char __pad_E5C[1];  // 0xE5C
+    unsigned char u8_E5D;  // 0xE5D
+    char __pad_E5E[14];  // 0xE5E
+    unsigned int u32_E6C;  // 0xE6C
+    unsigned int u32_E70;  // 0xE70
+    unsigned int u32_E74;  // 0xE74
+    char __pad_E78[1];  // 0xE78
+    unsigned char u8_E79;  // 0xE79
+    char __pad_E7A[14];  // 0xE7A
+    unsigned int u32_E88;  // 0xE88
+    unsigned int u32_E8C;  // 0xE8C
+    unsigned int u32_E90;  // 0xE90
+    char __pad_E94[1];  // 0xE94
+    unsigned char u8_E95;  // 0xE95
+    char __pad_E96[2];  // 0xE96
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     static int SlaveGiveMoney_RecordBalanceBefore(int aP1);

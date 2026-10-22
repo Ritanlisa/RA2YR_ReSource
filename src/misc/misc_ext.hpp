@@ -1881,8 +1881,8 @@ public:
     virtual int SD_vt12();  // G42 sig-sync // 0x420D90
     // +5 more virtual methods
 
-    uint8_t AlphaShapeClass_field_0x04[4];
-    uint8_t AlphaShapeClass_field_0x08[4];
+    uint8_t ptr_4[4];
+    uint8_t ptr_8[4];
     uint8_t AlphaShapeClass_field_0x0C[4];
     uint8_t AlphaShapeClass_field_0x10[4];
     uint8_t u32_14[4];
@@ -2710,8 +2710,8 @@ public:
     virtual int Stat(int p0);  // 0x4A7B80 (x13:signals; virt=slot)
     // +6 more virtual methods
 
-    uint8_t DiskLaserClass_field_0x04[4];
-    uint8_t DiskLaserClass_field_0x08[4];
+    uint8_t ptr_4[4];
+    uint8_t ptr_8[4];
     uint8_t DiskLaserClass_field_0x0C[4];
     uint8_t DiskLaserClass_field_0x10[4];
     uint8_t q014[4];
@@ -3936,9 +3936,9 @@ public:
     virtual int StubReturn56(); // 0x43A9B0
     // +1 more virtual methods
 
-    uint8_t NeuronClass_field_0x04[4];
-    uint8_t NeuronClass_field_0x08[4];
-    uint8_t NeuronClass_field_0x0C[4];
+    uint8_t ptr_4[4];
+    uint8_t ptr_8[4];
+    uint8_t ptr_C[4];
     uint8_t NeuronClass_field_0x10[4];
     uint8_t q014[4];
     public:  // symbol-anchor

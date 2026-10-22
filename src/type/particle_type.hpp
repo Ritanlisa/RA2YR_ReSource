@@ -45,7 +45,7 @@ public:
     int ArrayIndex;
     int q28C;
     BehavesLike BehavesLike;
-    int ParticleTypeClass_field_294;
+    int q294;
     int ImpactParticle;
     int Damage;
     int StartScale;

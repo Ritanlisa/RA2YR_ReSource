@@ -262,6 +262,14 @@ struct AudioChannel {
     unsigned char * __pad_0;  // 0x0
     unsigned int q004;  // 0x4
     unsigned int q008;  // 0x8
+    char __pad_C[28];  // 0xC
+    unsigned char u8_28;  // 0x28
+    char __pad_29[39];  // 0x29
+    unsigned char u8_50;  // 0x50
+    char __pad_51[83];  // 0x51
+    unsigned int u32_A4;  // 0xA4
+    char __pad_A8[44];  // 0xA8
+    unsigned int u32_D4;  // 0xD4
     int DeactivatePlay();  // 0x402600
 };
 #endif  // GAMEMD_G2_AudioChannel_DEF
@@ -426,6 +434,12 @@ struct HashTable {
     unsigned int q048;  // 0x48
     unsigned int q04C;  // 0x4C
     unsigned int q050;  // 0x50
+    char __pad_54[28];  // 0x54
+    unsigned int u32_70;  // 0x70
+    char __pad_74[448];  // 0x74
+    unsigned int u32_234;  // 0x234
+    char __pad_238[24];  // 0x238
+    unsigned int u32_250;  // 0x250
     static int Shrink2(void *aP0);  // A_c2039 R5 static-form sync
     static int Shrink(void *aP0);
     static int LookupString(void *aP0, const char **a2, unsigned int *a3);  // G42.33 b2 static-form sync
@@ -464,14 +478,19 @@ struct KeywordType {
 
 struct Locomotor {
     int Locomotor_field_00;  // 0x0
+    char __pad_4[4];  // 0x4
+    unsigned int u32_8;  // 0x8
     static int GetSpeed(void *aP1);
 };
 
 #ifndef GAMEMD_TREE_UNIVERSE  // G42.35a: tree TU real class supplied elsewhere
 struct MSAnim {
-    void* ptr_0;  // 0x0
+    void * ptr_0;  // 0x0
     int __pad_004;  // 0x4
     int q008;  // 0x8
+    unsigned char u8_C;  // 0xC
+    char __pad_D[3];  // 0xD
+    unsigned int u32_10;  // 0x10
     static int Reset(void *aP1, int a2);
     int  GetField(unsigned int a2);  // 0x5cb840
     int  SetField(unsigned int a2);  // 0x5cb860
@@ -482,6 +501,22 @@ struct MSAnim {
 struct MSShapeAnim {
     char __pad_0[4];  // 0x0
     int __pad_004;  // 0x4
+    unsigned int u32_8;  // 0x8
+    unsigned int u32_C;  // 0xC
+    unsigned int u32_10;  // 0x10
+    unsigned int u32_14;  // 0x14
+    unsigned int u32_18;  // 0x18
+    unsigned int u32_1C;  // 0x1C
+    unsigned int u32_20;  // 0x20
+    unsigned int u32_24;  // 0x24
+    unsigned int u32_28;  // 0x28
+    unsigned int u32_2C;  // 0x2C
+    unsigned int u32_30;  // 0x30
+    unsigned char u8_34;  // 0x34
+    char __pad_35[3];  // 0x35
+    unsigned int u32_38;  // 0x38
+    unsigned char u8_3C;  // 0x3C
+    char __pad_3D[3];  // 0x3D
     static void * Constructor(void *aP1, void *a2, int a3, int a4, int a5, int a6, char a7, int a8);
     int EnableOnce(char aP1);
     MSShapeAnim * * initTrigger(char **aP1, int aP2, int a4, int a5, int a6, int a7, int aP7);
@@ -494,21 +529,21 @@ struct MSShapeAnim {
 
 #ifndef GAMEMD_TREE_UNIVERSE
 struct ObjectClass {
-    void* ptr_0;  // 0x0
+    void * ptr_0;  // 0x0
     unsigned int ptr_4;  // 0x4
     unsigned int ptr_8;  // 0x8
     unsigned int ptr_C;  // 0xC
-    ObjectClass* uniqueId;  // 0x10
-    void* abstractFlags;  // 0x14
-    ObjectClass* nextArrayIndex;  // 0x18
-    ObjectClass* referenceCount;  // 0x1C
-    void* NeedsSaveOrLink;  // 0x20
+    ObjectClass * uniqueId;  // 0x10
+    void * abstractFlags;  // 0x14
+    ObjectClass * nextArrayIndex;  // 0x18
+    ObjectClass * referenceCount;  // 0x1C
+    void * NeedsSaveOrLink;  // 0x20
     unsigned int occupant;  // 0x24
     unsigned int owningHouseIndex;  // 0x28
     int fallRate;  // 0x2C
-    ObjectClass* nextObject;  // 0x30
-    TagClass* attachedTag;  // 0x34
-    BombClass* attachedBomb;  // 0x38
+    ObjectClass * nextObject;  // 0x30
+    TagClass * attachedTag;  // 0x34
+    BombClass * attachedBomb;  // 0x38
     char ambientSoundController[20];  // 0x3C
     char customSound_controller[20];  // 0x50
     int customSound;  // 0x64
@@ -518,7 +553,7 @@ struct ObjectClass {
     int estimatedHealth;  // 0x70
     bool isOnMap;  // 0x74
     char alignmentPadding75[3];  // 0x75
-    Int4* spawnStatus;  // 0x78
+    Int4 * spawnStatus;  // 0x78
     unsigned int visibilityFlags;  // 0x7C
     bool needsRedraw;  // 0x80
     bool inLimbo;  // 0x81
@@ -526,7 +561,7 @@ struct ObjectClass {
     bool isSelected;  // 0x83
     bool hasParachute;  // 0x84
     char alignmentPadding85[3];  // 0x85
-    AnimClass* parachute;  // 0x88
+    AnimClass * parachute;  // 0x88
     bool onBridge;  // 0x8C
     bool isFallingDown;  // 0x8D
     bool wasFallingDown;  // 0x8E
@@ -538,7 +573,8 @@ struct ObjectClass {
     bool isVisible;  // 0x99
     char alignmentPadding99[2];  // 0x9A
     char location[12];  // 0x9C
-    LineTrail* lineTrailer;  // 0xA8
+    void * lineTrailer;  // 0xA8
+    unsigned int u32_AC;  // 0xAC
     static int CleanupAudioAndRefs(void *aP1);
     static int CheckFlagD0(void *aP1, int a2);
     static int CalcDrawRect(void *aP1);
@@ -1103,6 +1139,33 @@ struct ShapeButtonClass {
     char __pad_0[4];  // 0x0
     unsigned int ShapeButtonClass_field_0x04;  // 0x4
     unsigned int u32_8;  // 0x8
+    unsigned int u32_C;  // 0xC
+    unsigned int u32_10;  // 0x10
+    unsigned int u32_14;  // 0x14
+    unsigned int u32_18;  // 0x18
+    char __pad_1C[2];  // 0x1C
+    unsigned char u8_1E;  // 0x1E
+    char __pad_1F[13];  // 0x1F
+    unsigned char u8_2C;  // 0x2C
+    unsigned char u8_2D;  // 0x2D
+    char __pad_2E[6];  // 0x2E
+    unsigned char u8_34;  // 0x34
+    char __pad_35[3];  // 0x35
+    unsigned int u32_38;  // 0x38
+    unsigned int u32_3C;  // 0x3C
+    unsigned char u8_40;  // 0x40
+    char __pad_41[3];  // 0x41
+    unsigned int u32_44;  // 0x44
+    unsigned int u32_48;  // 0x48
+    unsigned char u8_4C;  // 0x4C
+    char __pad_4D[3];  // 0x4D
+    unsigned int u32_50;  // 0x50
+    unsigned char u8_54;  // 0x54
+    unsigned char u8_55;  // 0x55
+    char __pad_56[2];  // 0x56
+    unsigned int u32_58;  // 0x58
+    unsigned char u8_5C;  // 0x5C
+    char __pad_5D[3];  // 0x5D
     static int Destructor(void *aP1);
     static unsigned int Constructor(int p0, int p1, int p2, int p3, int p4, int p5, char p6);  // x4:signals@0x69dd30
 };
@@ -1136,12 +1199,14 @@ struct State {
 
 #if !defined(GAMEMD_TREE_UNIVERSE) && !defined(GAMEMD_E4_VECTOR_TREE_TRUTH)
 struct VectorClass {
-    void* ptr_0;  // 0x0
-    void* Items;  // 0x4
-    AbstractClass* Capacity;  // 0x8
+    void * ptr_0;  // 0x0
+    void * Items;  // 0x4
+    AbstractClass * Capacity;  // 0x8
     char IsInitialized[1];  // 0xC
     char IsAllocated[1];  // 0xD
     unsigned short tail_E;  // 0xE
+    unsigned int u32_10;  // 0x10
+    unsigned int u32_14;  // 0x14
     static void Cleanup3(int a1);  // [w14e3] raw 0x5EED00 void __thiscall VectorClass_Cleanup3
     static void * CopyConstructor(void *aP1, void *a2);
     static char PushBack(void *aP1, void *a2);
@@ -1292,9 +1357,21 @@ struct _VectorClass_G;  // supplied (R_fix): ?$Blit*@G mangled-template family, 
 // AnimTypeList  size=4  (TiberiumClass_e4.cpp C2027 carrier)
 struct AnimTypeList {
     unsigned int tail_0;  // 0x0
+    unsigned int u32_4;  // 0x4
+    unsigned int u32_8;  // 0x8
+    unsigned char u8_C;  // 0xC
+    unsigned char u8_D;  // 0xD
+    char __pad_E[2];  // 0xE
+    unsigned int u32_10;  // 0x10
+    unsigned int u32_14;  // 0x14
 };
 // VoxelAnimTypeVector  size=4  (TechnoTypeClass_e4.cpp C2027 carrier)
 struct VoxelAnimTypeVector {
     unsigned int tail_0;  // 0x0
+    unsigned int u32_4;  // 0x4
+    unsigned int u32_8;  // 0x8
+    unsigned char u8_C;  // 0xC
+    unsigned char u8_D;  // 0xD
+    char __pad_E[2];  // 0xE
 };
 } // namespace gamemd

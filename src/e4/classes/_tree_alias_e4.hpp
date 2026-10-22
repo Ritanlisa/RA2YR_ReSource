@@ -14,6 +14,8 @@ namespace gamemd {
 // call it static-style with (MapClass_Instance*, coord*) — interim stub.
 struct CellCoord {
     unsigned int tail_0;  // 0x0
+    char __pad_4[312];  // 0x4
+    unsigned int u32_13C;  // 0x13C
     void* To_CellObj(int16_t *a3);
 };
 

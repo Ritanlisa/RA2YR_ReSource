@@ -15,8 +15,7 @@ struct Coord;  // fix_fwd_type_supply
 struct GadgetClass;  // fix_fwd_type_supply
 
 struct SidebarClass {
-#pragma pack(push, 1)  // X60: binary-packed layout
-    void* GetProductionState_ph;  // 0x0
+    void * GetProductionState_ph;  // 0x0
     int __pad_004;  // 0x4
     int u32_8;  // 0x8
     char __pad_C[8];  // 0xC
@@ -113,6 +112,35 @@ struct SidebarClass {
     unsigned char __pad_14DC;  // 0x14DC
     char __pad_14DD[103];  // 0x14DD
     int q1544;  // 0x1544
+    char __pad_1548[12020];  // 0x1548
+    unsigned char u8_443C;  // 0x443C
+    char __pad_443D[3927];  // 0x443D
+    unsigned int u32_5394;  // 0x5394
+    unsigned int u32_5398;  // 0x5398
+    unsigned int u32_539C;  // 0x539C
+    unsigned int u32_53A0;  // 0x53A0
+    unsigned char u8_53A4;  // 0x53A4
+    unsigned char u8_53A5;  // 0x53A5
+    unsigned char u8_53A6;  // 0x53A6
+    unsigned char u32_53A7;  // 0x53A7
+    unsigned char u8_53A8;  // 0x53A8
+    char __pad_53A9[3];  // 0x53A9
+    unsigned int u32_53AC;  // 0x53AC
+    char __pad_53B0[32];  // 0x53B0
+    unsigned char u8_53D0;  // 0x53D0
+    unsigned char u8_53D1;  // 0x53D1
+    unsigned char u8_53D2;  // 0x53D2
+    unsigned char u8_53D3;  // 0x53D3
+    unsigned char u8_53D4;  // 0x53D4
+    char __pad_53D5[3];  // 0x53D5
+    unsigned char u8_53D8;  // 0x53D8
+    char __pad_53D9[307];  // 0x53D9
+    unsigned char u8_550C;  // 0x550C
+    char __pad_550D[3];  // 0x550D
+    unsigned int u32_5510;  // 0x5510
+    unsigned char u8_5514;  // 0x5514
+    unsigned char u8_5515;  // 0x5515
+    char __pad_5516[2];  // 0x5516
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     static unsigned int calcSidebarRect(SidebarClass *p_this);  // x4:ida@0x72ad90
@@ -139,7 +167,6 @@ struct SidebarClass {
     static int updateStripVisibility(SidebarClass *p_this);  // x4:ida@0x724530
     static int initializeStrip(int p0);  // x4:signals@0x724520
     static int updateStripPosition(SidebarClass *p_this);  // x4:ida@0x724540
-#pragma pack(pop)
 };
 
 } // namespace gamemd

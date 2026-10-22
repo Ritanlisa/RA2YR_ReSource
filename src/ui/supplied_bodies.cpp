@@ -420,14 +420,14 @@ int FontClass::RenderText(uint16_t *a2, int v14, int yTop, int a5, int a6) {
   v6 = *a2; /*0x43450a*/
   v8 = a2 + 1; /*0x434510*/
   v9 = *a2 == 0; /*0x434513*/
-  v10 = this->u32_24; /*0x434516*/
+  v10 = this->u16_24; /*0x434516*/
   v18 = 0; /*0x43451a*/
   ++a2; /*0x434522*/
   if ( v9 ) /*0x434526*/
   {
 LABEL_14:
     result = v14; /*0x43467b*/
-    this->u32_24 = v10; /*0x43467f*/
+    this->u16_24 = v10; /*0x43467f*/
     return result; /*0x43468a*/
   }
   v11 = a6; /*0x43452c*/
@@ -463,7 +463,7 @@ LABEL_8:
       Color::Lerp(&v17, v12, (unsigned __int8 *)&stru_A80220); /*0x4345be*/
       (v13) = ((v13) & ~0xFFFF) | (((unsigned __int8)(BYTE2(v17.Color_field_00) >> g_BitMask_Red)) & 0xFFFF); /*0x4345ee*/
       v11 = a6; /*0x43460e*/
-      this->u32_24 = ((unsigned __int8)(LOBYTE(v17.Color_field_00) >> g_BitShift_Green_0) << g_BitShift_Red) /*0x434614*/
+      this->u16_24 = ((unsigned __int8)(LOBYTE(v17.Color_field_00) >> g_BitShift_Green_0) << g_BitShift_Red) /*0x434614*/
                             | (v13 << g_BitShift_Blue)
                             | ((unsigned __int8)(BYTE1(v17.Color_field_00) >> g_BitMask_Blue) << g_BitMask_Green);
     }
@@ -472,7 +472,7 @@ LABEL_8:
     --v19; /*0x434629*/
     goto LABEL_8; /*0x434629*/
   }
-  this->u32_24 = v10; /*0x434699*/
+  this->u16_24 = v10; /*0x434699*/
   Text::Layout((Text *)this, v8, (int *)&a2, 0, 0); /*0x43469d*/
   return (int)a2 + v14; /*0x434683*/
 
@@ -2511,14 +2511,14 @@ char FontClass::LoadFontResources(int16_t a2) {
   CCFileClass::Construct3((int)v16); /*0x5d2e9c*/
   if ( !dword_ABFBE0 )
   {
-    this->u32_1C = 0; /*0x5d2eb7*/
+    this->u8_1C = 0; /*0x5d2eb7*/
     v3 = SearchMIXFile(g_Str_File_FULLFNT3_SHP, 0); /*0x5d2eba*/
     this->__pad_014 = v3; /*0x5d2ec1*/
     if ( !v3 ) /*0x5d2ec4*/
     {
       FileClass::SetFileName(v16, g_Str_File_FULLFNT3_SHP); /*0x5d2ecf*/
       this->__pad_014 = CCFileClass::ReadEntireFile(v16); /*0x5d2ee2*/
-      this->u32_1C = 1; /*0x5d2ee5*/
+      this->u8_1C = 1; /*0x5d2ee5*/
       Debug::Log(); /*0x5d2ee9*/
     }
     if ( !this->__pad_014 ) /*0x5d2ef1*/
@@ -3282,7 +3282,7 @@ void ToolTipClass::updateString() {
   this->u32_24C = 0; /*0x7240ea*/
   this->u32_250 = 0; /*0x7240f0*/
   this->u32_254 = 0; /*0x7240f6*/
-  this->u32_258 = 0; /*0x7240fc*/
+  this->u8_258 = 0; /*0x7240fc*/
   this->u32_25C = 0; /*0x724102*/
   for ( i = 0; i < this->__pad_244; ++i ) /*0x724115*/
   {
@@ -3291,11 +3291,11 @@ void ToolTipClass::updateString() {
       operator delete((*(void **)(v4 + 4 * i))); /*0x724125*/
   }
   this->__pad_234->ddtor(&this->__pad_234); /*0x724146*/
-  operator delete((void *)(this->CommandClass_24C))); /*0x724150*/
-  this->CommandClass_24C = 0; /*0x724155*/
+  operator delete((void *)(this->u32_24C))); /*0x724150*/
+  this->u32_24C = 0; /*0x724155*/
   this->u32_250 = 0; /*0x72415b*/
   this->u32_254 = 0; /*0x724161*/
-  this->u32_258 = 0; /*0x724167*/
+  this->u8_258 = 0; /*0x724167*/
   this->u32_25C = 0; /*0x72416d*/
   v5 = (void *)this->__pad_238; /*0x724173*/
   this->__pad_234 = 0; /*0x72417b*/

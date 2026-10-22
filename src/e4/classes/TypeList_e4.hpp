@@ -8,11 +8,11 @@
 namespace gamemd {
 // TypeList  size=28  (bare-template collapse name; e4 corpus static-form qualified calls)
 struct TypeList {
-    void* DynamicVectorClass;  // 0x0
-    void* Items;  // 0x4
-    void* Capacity;  // 0x8
-    void* IsInitialized;  // 0xC
-    void* Count;  // 0x10
+    void * DynamicVectorClass;  // 0x0
+    void * Items;  // 0x4
+    void * Capacity;  // 0x8
+    void * IsInitialized;  // 0xC
+    void * Count;  // 0x10
     int CapacityIncrement;  // 0x14
     int unknown_18;  // 0x18
 // --- flat members (BEGIN) ---

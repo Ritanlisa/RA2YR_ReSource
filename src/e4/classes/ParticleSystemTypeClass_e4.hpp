@@ -15,10 +15,10 @@ struct ParticleSystemClass;  // fix_fwd_type_supply
 struct Color;  // fix_fwd_type_supply
 
 struct ParticleSystemTypeClass {
-    void* ptr_0;  // 0x0
-    void* ptr_4;  // 0x4
-    void* ptr_8;  // 0x8
-    void* ptr_C;  // 0xC
+    void * ptr_0;  // 0x0
+    void * ptr_4;  // 0x4
+    void * ptr_8;  // 0x8
+    void * ptr_C;  // 0xC
     int SlowdownDistance;  // 0x10
     int ParticleSystemTypeClass_field_29C;  // 0x14
     int ParticleSystemTypeClass_field_2A0;  // 0x18
@@ -85,22 +85,24 @@ struct ParticleSystemTypeClass {
     int DamageDelay;  // 0x2B0
     unsigned int __pad_2B4;  // 0x2B4
     int q2B8;  // 0x2B8
-    void* ParticleSystemTypeClass_field_2C0;  // 0x2BC
+    void * ParticleSystemTypeClass_field_2C0;  // 0x2BC
     int StartScale;  // 0x2C0
     int ParticleSystemTypeClass_field_2C8;  // 0x2C4
     int Beam;  // 0x2C8
     int q2CC;  // 0x2CC
-    IUnknown* q2D0;  // 0x2D0
+    IUnknown * q2D0;  // 0x2D0
     int ParticleSystemTypeClass_field_bool_2D4;  // 0x2D4
     char __pad_2D8[1];  // 0x2D8
     unsigned char __pad_2D9;  // 0x2D9
     char __pad_2DA[10];  // 0x2DA
     int q2E4;  // 0x2E4
-    IUnknown* q2E8;  // 0x2E8
+    IUnknown * q2E8;  // 0x2E8
     char __pad_2EC[20];  // 0x2EC
     int q300;  // 0x300
     char __pad_304[4];  // 0x304
-    AnimTypeClass* q308;  // 0x308
+    AnimTypeClass * q308;  // 0x308
+    unsigned char u8_30C;  // 0x30C
+    char __pad_30D[3];  // 0x30D
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     void ** ddtor(char a2);

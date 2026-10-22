@@ -9,8 +9,8 @@ namespace gamemd {
 #ifndef GAMEMD_G2_CCFileClass_DEF  // G42.57w14 twin-guard (shared; first-include wins)
 #define GAMEMD_G2_CCFileClass_DEF 1
 struct CCFileClass {
-    void* __tail_0;  // 0x0
-    void* FilePointer;  // 0x4
+    void * __tail_0;  // 0x0
+    void * FilePointer;  // 0x4
     int FileSize;  // 0x8
     void * Handle;  // 0xC
     void * FileName;  // 0x10
@@ -36,6 +36,18 @@ struct CCFileClass {
     int TotalBytesWritten;  // 0x48
     unsigned int FileID;  // 0x4C
     unsigned int MixFileIndex;  // 0x50
+    unsigned char u8_54;  // 0x54
+    char __pad_55[3];  // 0x55
+    unsigned int u32_58;  // 0x58
+    unsigned int u32_5C;  // 0x5C
+    char __pad_60[4];  // 0x60
+    unsigned int u32_64;  // 0x64
+    unsigned int u32_68;  // 0x68
+    unsigned int u32_6C;  // 0x6C
+    unsigned int u32_70;  // 0x70
+    unsigned int u32_74;  // 0x74
+    unsigned int u32_78;  // 0x78
+    unsigned int u32_7C;  // 0x7C
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     AudioController * * Close(void * a1, void *a2 = 0);

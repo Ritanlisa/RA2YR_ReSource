@@ -9,8 +9,8 @@ struct ILocomotion;  // fix_fwd_type_supply
 struct State;  // fix_fwd_type_supply
 
 struct TunnelLocomotionClass {
-    void* ptr_0;  // 0x0
-    void* ptr_4;  // 0x4
+    void * ptr_0;  // 0x0
+    void * ptr_4;  // 0x4
     unsigned int Owner;  // 0x8
     unsigned int LinkedTo;  // 0xC
     unsigned char Powered;  // 0x10

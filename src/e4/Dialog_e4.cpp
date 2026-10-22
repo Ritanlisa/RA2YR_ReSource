@@ -2918,39 +2918,39 @@ INIClass * * Dialog::ReadMultiplayerDialogSettings()
     this->u32_14A4 = INIClass::ReadInt_Overwrite(v37, (uint8_t *)aMultiplayerdia, aAidifficulty, v14); /*0x671ff9*/
     int v15; // eax
     v15 = INIClass::ReadInt_Overwrite(v37, (uint8_t *)aMultiplayerdia, aAiplayers, this->u32_14A8); /*0x672014*/
-    char v16 = this->u32_14AC; // dl /*0x672019*/
+    char v16 = this->u8_14AC; // dl /*0x672019*/
     this->u32_14A8 = v15; /*0x67201f*/
     char Bool_Overwrite; // al
     Bool_Overwrite = INIClass::ReadBool_Overwrite((int *)v37, (uint8_t *)aMultiplayerdia, aBridgedestruct, v16); /*0x672033*/
-    char v18 = this->u32_14AD; // cl /*0x672038*/
-    this->u32_14AC = Bool_Overwrite; /*0x67203e*/
-    this->u32_14AD = INIClass::ReadBool_Overwrite( /*0x672058*/
+    char v18 = this->u8_14AD; // cl /*0x672038*/
+    this->u8_14AC = Bool_Overwrite; /*0x67203e*/
+    this->u8_14AD = INIClass::ReadBool_Overwrite( /*0x672058*/
                                 (int *)v37,
                                 (uint8_t *)aMultiplayerdia,
                                 aShadowgrow,
                                 v18);
     char v19; // al
-    v19 = INIClass::ReadBool_Overwrite((int *)v37, (uint8_t *)aMultiplayerdia, aShroud, this->u32_14AE); /*0x672073*/
-    char v20 = this->u32_14AF; // dl /*0x672078*/
-    this->u32_14AE = v19; /*0x67207e*/
+    v19 = INIClass::ReadBool_Overwrite((int *)v37, (uint8_t *)aMultiplayerdia, aShroud, this->u8_14AE); /*0x672073*/
+    char v20 = this->u8_14AF; // dl /*0x672078*/
+    this->u8_14AE = v19; /*0x67207e*/
     char v21; // al
     v21 = INIClass::ReadBool_Overwrite((int *)v37, (uint8_t *)aMultiplayerdia, aBases, v20); /*0x672092*/
-    char v22 = this->u32_14B0; // cl /*0x672097*/
-    this->u32_14AF = v21; /*0x67209d*/
-    this->u32_14B0 = INIClass::ReadBool_Overwrite( /*0x6720b7*/
+    char v22 = this->u8_14B0; // cl /*0x672097*/
+    this->u8_14AF = v21; /*0x67209d*/
+    this->u8_14B0 = INIClass::ReadBool_Overwrite( /*0x6720b7*/
                                 (int *)v37,
                                 (uint8_t *)aMultiplayerdia,
                                 (uint8_t *)g_INI_Key_TiberiumGrows,
                                 v22);
     char v23; // al
-    v23 = INIClass::ReadBool_Overwrite((int *)v37, (uint8_t *)aMultiplayerdia, aCrates, this->u32_14B1); /*0x6720d2*/
-    char v24 = this->u32_14B2; // dl /*0x6720d7*/
-    this->u32_14B1 = v23; /*0x6720dd*/
+    v23 = INIClass::ReadBool_Overwrite((int *)v37, (uint8_t *)aMultiplayerdia, aCrates, this->u8_14B1); /*0x6720d2*/
+    char v24 = this->u8_14B2; // dl /*0x6720d7*/
+    this->u8_14B1 = v23; /*0x6720dd*/
     char v25; // al
     v25 = INIClass::ReadBool_Overwrite((int *)v37, (uint8_t *)aMultiplayerdia, aCapturetheflag, v24); /*0x6720f1*/
-    char v26 = this->u32_14B3; // cl /*0x6720f6*/
-    this->u32_14B2 = v25; /*0x6720fc*/
-    this->u32_14B3 = INIClass::ReadBool_Overwrite( /*0x672116*/
+    char v26 = this->u8_14B3; // cl /*0x6720f6*/
+    this->u8_14B2 = v25; /*0x6720fc*/
+    this->u8_14B3 = INIClass::ReadBool_Overwrite( /*0x672116*/
                                 (int *)v37,
                                 (uint8_t *)aMultiplayerdia,
                                 aHarvestertruce,
@@ -2960,14 +2960,14 @@ INIClass * * Dialog::ReadMultiplayerDialogSettings()
             (int *)v37,
             (uint8_t *)aMultiplayerdia,
             aMultiengineer,
-            this->u32_14B4);
-    char v28 = this->u32_14B5; // dl /*0x672136*/
-    this->u32_14B4 = v27; /*0x67213c*/
+            this->u8_14B4);
+    char v28 = this->u8_14B5; // dl /*0x672136*/
+    this->u8_14B4 = v27; /*0x67213c*/
     char v29; // al
     v29 = INIClass::ReadBool_Overwrite((int *)v37, (uint8_t *)aMultiplayerdia, aAlliesallowed, v28); /*0x672150*/
-    char v30 = this->u32_14BB; // cl /*0x672155*/
-    this->u32_14B5 = v29; /*0x67215b*/
-    this->u32_14BB = INIClass::ReadBool_Overwrite( /*0x672175*/
+    char v30 = this->u8_14BB; // cl /*0x672155*/
+    this->u8_14B5 = v29; /*0x67215b*/
+    this->u8_14BB = INIClass::ReadBool_Overwrite( /*0x672175*/
                                 (int *)v37,
                                 (uint8_t *)aMultiplayerdia,
                                 aAllychangeallo,
@@ -2977,18 +2977,18 @@ INIClass * * Dialog::ReadMultiplayerDialogSettings()
             (int *)v37,
             (uint8_t *)aMultiplayerdia,
             (uint8_t *)g_INI_Key_ShortGame,
-            this->u32_14B6);
-    char v32 = this->u32_14B9; // dl /*0x672195*/
-    this->u32_14B6 = v31; /*0x67219b*/
+            this->u8_14B6);
+    char v32 = this->u8_14B9; // dl /*0x672195*/
+    this->u8_14B6 = v31; /*0x67219b*/
     char v33; // al
     v33 = INIClass::ReadBool_Overwrite( /*0x6721af*/
             (int *)v37,
             (uint8_t *)aMultiplayerdia,
             (uint8_t *)g_INI_Key_SuperWeaponsAllowed,
             v32);
-    char v34 = this->u32_14BA; // cl /*0x6721b4*/
-    this->u32_14B9 = v33; /*0x6721ba*/
-    this->u32_14BA = INIClass::ReadBool_Overwrite( /*0x6721d4*/
+    char v34 = this->u8_14BA; // cl /*0x6721b4*/
+    this->u8_14B9 = v33; /*0x6721ba*/
+    this->u8_14BA = INIClass::ReadBool_Overwrite( /*0x6721d4*/
                                 (int *)v37,
                                 (uint8_t *)aMultiplayerdia,
                                 (uint8_t *)g_INI_Key_BuildOffAlly,
@@ -2998,11 +2998,11 @@ INIClass * * Dialog::ReadMultiplayerDialogSettings()
             (int *)v37,
             (uint8_t *)aMultiplayerdia,
             (uint8_t *)g_INI_Key_FogOfWar,
-            this->u32_14B7);
-    char v36 = this->u32_14B8; // dl /*0x6721f4*/
-    this->u32_14B7 = v35; /*0x6721fa*/
+            this->u8_14B7);
+    char v36 = this->u8_14B8; // dl /*0x6721f4*/
+    this->u8_14B7 = v35; /*0x6721fa*/
     result = INIClass::ReadBool_Overwrite((int *)v37, (uint8_t *)aMultiplayerdia, aMcvredeploys, v36); /*0x67220e*/
-    this->u32_14B8 = result; /*0x672213*/
+    this->u8_14B8 = result; /*0x672213*/
     (*((unsigned char *)&(result))) = 1; /*0x67221a*/
   }
   else

@@ -6,10 +6,12 @@
 namespace gamemd {
 
 struct XSurface {
-    void* Surface;  // 0x0
-    void* Width;  // 0x4
-    void* Height;  // 0x8
+    void * Surface;  // 0x0
+    void * Width;  // 0x4
+    void * Height;  // 0x8
     int LockCount;  // 0xC
+    char __pad_10[244];  // 0x10
+    unsigned int u32_104;  // 0x104
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     XSurface * * Blit(int a2, void **a3, int arg8, int a5, unsigned int *a6, void **a4, int a8);

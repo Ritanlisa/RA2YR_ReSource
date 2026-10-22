@@ -8,13 +8,13 @@ namespace gamemd {
 struct VectorClass_flat;  // fix_fwd_type_supply
 struct VectorClass_ptr_BuildChoiceClass_int_ouseClass {
     unsigned int vfptr;  // 0x0
-    void* Items;  // 0x4
-    void* Capacity;  // 0x8
+    void * Items;  // 0x4
+    void * Capacity;  // 0x8
     char IsInitialized[1];  // 0xC
     unsigned char IsAllocated;  // 0xD
     unsigned char __pad_00E;  // 0xE
     char __pad_F[1];  // 0xF
-    void* Count;  // 0x10
+    void * Count;  // 0x10
     unsigned int CapacityIncrement;  // 0x14
     char tail_18[960];  // 0x18
     char tail_3D8[960];  // 0x3D8

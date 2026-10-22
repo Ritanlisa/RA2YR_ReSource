@@ -5,13 +5,14 @@
 
 namespace gamemd {
 struct Vector {
-    void* Cl_ph;  // 0x0
+    void * Cl_ph;  // 0x0
     int q004;  // 0x4
     int u32_8;  // 0x8
     bool IsInitialized;  // 0xC
     unsigned char u32_D;  // 0xD
     char __pad_E[2];  // 0xE
     unsigned int Vector_field_0x10;  // 0x10
+    unsigned int u32_14;  // 0x14
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int Cleanup(void *a1 = 0, void *a2 = 0);  // 0x512D30

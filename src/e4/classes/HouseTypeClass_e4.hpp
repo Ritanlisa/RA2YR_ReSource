@@ -12,9 +12,9 @@ struct AbstractTypeClass;  // fix_fwd_type_supply
 
 struct HouseTypeClass {
     void * ptr_0;  // 0x0
-    void* ptr_4;  // 0x4
-    void* ptr_8;  // 0x8
-    void* ptr_C;  // 0xC
+    void * ptr_4;  // 0x4
+    void * ptr_8;  // 0x8
+    void * ptr_C;  // 0xC
     int uniqueId;  // 0x10
     int abstractFlags;  // 0x14
     int nextArrayIndex;  // 0x18
@@ -61,11 +61,11 @@ struct HouseTypeClass {
     float buildtimeBuildingsMult_d;  // 0x140
     float buildtimeDefensesMult_d;  // 0x144
     float incomeMult_d;  // 0x148
-    InfantryTypeClass** veteranInfantry_d;  // 0x14C
+    InfantryTypeClass * * veteranInfantry_d;  // 0x14C
     int veteranInfantryCount_d;  // 0x150
-    UnitTypeClass** veteranUnits_d;  // 0x154
+    UnitTypeClass * * veteranUnits_d;  // 0x154
     int veteranUnitsCount_d;  // 0x158
-    AircraftTypeClass** veteranAircraft_d;  // 0x15C
+    AircraftTypeClass * * veteranAircraft_d;  // 0x15C
     int veteranAircraftCount_d;  // 0x160
     int suffix;  // 0x164
     char prefix_d;  // 0x168

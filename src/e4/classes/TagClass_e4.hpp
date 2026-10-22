@@ -9,22 +9,28 @@ struct TagTypeClass;  // fix_fwd_type_supply
 struct TriggerClass;  // fix_fwd_type_supply
 
 struct TagClass {
-    void* ptr_0;  // 0x0
-    void* ptr_4;  // 0x4
-    void* ptr_8;  // 0x8
-    void* ptr_C;  // 0xC
+    void * ptr_0;  // 0x0
+    void * ptr_4;  // 0x4
+    void * ptr_8;  // 0x8
+    void * ptr_C;  // 0xC
     int uniqueId;  // 0x10
     int abstractFlags;  // 0x14
     int nextArrayIndex;  // 0x18
     int referenceCount;  // 0x1C
     void * NeedsSaveOrLink;  // 0x20
-    TagTypeClass* buildingType;  // 0x24
-    TriggerClass* firstTrigger;  // 0x28
-    TriggerClass* instanceCount;  // 0x2C
+    TagTypeClass * buildingType;  // 0x24
+    TriggerClass * firstTrigger;  // 0x28
+    TriggerClass * instanceCount;  // 0x2C
     int defaultCoords;  // 0x30
     bool destroyed;  // 0x34
     bool isExecuting;  // 0x35
     char align36[2];  // 0x36
+    unsigned int u32_38;  // 0x38
+    unsigned int u32_3C;  // 0x3C
+    unsigned int u32_40;  // 0x40
+    unsigned int u32_44;  // 0x44
+    char __pad_48[88];  // 0x48
+    unsigned int u32_A0;  // 0xA0
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int Unlink(void *a1 = 0);

@@ -13,10 +13,10 @@ struct CampaignClass;  // fix_fwd_type_supply
 struct Color;  // fix_fwd_type_supply
 
 struct WeaponTypeClass {
-    void* ptr_0;  // 0x0
-    void* ptr_4;  // 0x4
-    void* ptr_8;  // 0x8
-    void* ptr_C;  // 0xC
+    void * ptr_0;  // 0x0
+    void * ptr_4;  // 0x4
+    void * ptr_8;  // 0x8
+    void * ptr_C;  // 0xC
     int uniqueId;  // 0x10
     int abstractFlags;  // 0x14
     int nextArrayIndex;  // 0x18
@@ -36,21 +36,21 @@ struct WeaponTypeClass {
     char Name[49];  // 0x64
     char tail_95[3];  // 0x95
     int AmbientDamage;  // 0x98
-    BulletTypeClass* Burst;  // 0x9C
+    BulletTypeClass * Burst;  // 0x9C
     int Projectile;  // 0xA0
     int Damage;  // 0xA4
-    WarheadTypeClass* Speed;  // 0xA8
+    WarheadTypeClass * Speed;  // 0xA8
     int Warhead;  // 0xAC
     int ROF;  // 0xB0
     int Range;  // 0xB4
-    void* MinimumRange;  // 0xB8
+    void * MinimumRange;  // 0xB8
     int Report[7];  // 0xBC
     int DownReport[7];  // 0xD8
     int Anim[7];  // 0xF4
     int OccupantAnim;  // 0x110
-    AnimTypeClass* AssaultAnim_d;  // 0x114
-    AnimTypeClass* OpenToppedAnim_d;  // 0x118
-    ParticleSystemTypeClass* AttachedParticleSystem;  // 0x11C
+    AnimTypeClass * AssaultAnim_d;  // 0x114
+    AnimTypeClass * OpenToppedAnim_d;  // 0x118
+    ParticleSystemTypeClass * AttachedParticleSystem;  // 0x11C
     char LaserInnerColor_d[3];  // 0x120
     char LaserOuterColor[3];  // 0x123
     char LaserOuterSpread[3];  // 0x126

@@ -11,16 +11,16 @@ struct FactoryClass {
     void * ptr_4;  // 0x4
     void * ptr_8;  // 0x8
     void * ptr_C;  // 0xC
-    void* uniqueId;  // 0x10
-    void* abstractFlags;  // 0x14
+    void * uniqueId;  // 0x10
+    void * abstractFlags;  // 0x14
     int nextArrayIndex;  // 0x18
     int referenceCount;  // 0x1C
     void * NeedsSaveOrLink;  // 0x20
     int production[3];  // 0x24
-    TechnoTypeClass** queuedObjects;  // 0x30
+    TechnoTypeClass * * queuedObjects;  // 0x30
     int queuedCount;  // 0x34
     int queuedCapacity;  // 0x38
-    TechnoClass* object;  // 0x3C
+    TechnoClass * object;  // 0x3C
     bool onHold;  // 0x40
     bool isDifferent;  // 0x41
     char __pad_42[2];  // 0x42
@@ -35,10 +35,21 @@ struct FactoryClass {
     int balance;  // 0x60
     int originalBalance;  // 0x64
     int specialItem;  // 0x68
-    HouseClass* owner;  // 0x6C
+    HouseClass * owner;  // 0x6C
     bool isSuspended;  // 0x70
     bool isManual;  // 0x71
     char align72[2];  // 0x72
+    char __pad_74[24];  // 0x74
+    unsigned int u32_8C;  // 0x8C
+    unsigned int u32_90;  // 0x90
+    unsigned int u32_94;  // 0x94
+    unsigned char u8_98;  // 0x98
+    unsigned char u8_99;  // 0x99
+    char __pad_9A[14];  // 0x9A
+    unsigned int u32_A8;  // 0xA8
+    char __pad_AC[4];  // 0xAC
+    unsigned int u32_B0;  // 0xB0
+    unsigned int u32_B4;  // 0xB4
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     static char RemoveItem(void *aP1, int a2);

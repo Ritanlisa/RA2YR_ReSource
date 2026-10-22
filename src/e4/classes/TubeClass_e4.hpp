@@ -6,10 +6,10 @@
 namespace gamemd {
 
 struct TubeClass {
-    void* ptr_0;  // 0x0
-    void* ptr_4;  // 0x4
-    void* ptr_8;  // 0x8
-    void* ptr_C;  // 0xC
+    void * ptr_0;  // 0x0
+    void * ptr_4;  // 0x4
+    void * ptr_8;  // 0x8
+    void * ptr_C;  // 0xC
     int uniqueId;  // 0x10
     int abstractFlags;  // 0x14
     int nextArrayIndex;  // 0x18
@@ -58,6 +58,8 @@ struct TubeClass {
     char TubeClass_field_BC[4];  // 0xBC
     unsigned int __pad_0C0;  // 0xC0
     char TubeClass_field_C4[4];  // 0xC4
+    char __pad_C8[248];  // 0xC8
+    unsigned int u32_1C0;  // 0x1C0
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int LoadState(AbstractClass * aP0, int aP1);

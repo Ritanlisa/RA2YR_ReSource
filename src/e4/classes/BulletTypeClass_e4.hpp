@@ -18,10 +18,10 @@ struct AnimTypeClass;  // fix_fwd_type_supply
 struct BuildingTypeClass;  // fix_fwd_type_supply
 
 struct BulletTypeClass {
-    void* ObjectTypeClass;  // 0x0
-    void* ptr_4;  // 0x4
-    void* ptr_8;  // 0x8
-    void* ptr_C;  // 0xC
+    void * ObjectTypeClass;  // 0x0
+    void * ptr_4;  // 0x4
+    void * ptr_8;  // 0x8
+    void * ptr_C;  // 0xC
     unsigned int uniqueId;  // 0x10
     unsigned int abstractFlags;  // 0x14
     unsigned int nextArrayIndex;  // 0x18
@@ -108,20 +108,20 @@ struct BulletTypeClass {
     bool AnimPalette;  // 0x2A8
     bool FirersPalette_d;  // 0x2A9
     unsigned short __pad_2AA;  // 0x2AA
-    void* cluster;  // 0x2AC
-    WeaponTypeClass* airburstWeapon;  // 0x2B0
-    WeaponTypeClass* shrapnelWeapon;  // 0x2B4
-    void* shrapnelCount;  // 0x2B8
-    void* detonationAltitude;  // 0x2BC
+    void * cluster;  // 0x2AC
+    WeaponTypeClass * airburstWeapon;  // 0x2B0
+    WeaponTypeClass * shrapnelWeapon;  // 0x2B4
+    void * shrapnelCount;  // 0x2B8
+    void * detonationAltitude;  // 0x2BC
     bool Vertical;  // 0x2C0
     char __pad_2C1[7];  // 0x2C1
     double elasticity;  // 0x2C8
-    ColorScheme* Elasticity_d;  // 0x2D0
-    AnimTypeClass* Color;  // 0x2D4
-    WeaponTypeClass* Trailer_d;  // 0x2D8
+    ColorScheme * Elasticity_d;  // 0x2D0
+    AnimTypeClass * Color;  // 0x2D4
+    WeaponTypeClass * Trailer_d;  // 0x2D8
     int rot;  // 0x2DC
-    void* courseLockDuration;  // 0x2E0
-    void* SpawnDelay_d;  // 0x2E4
+    void * courseLockDuration;  // 0x2E0
+    void * SpawnDelay_d;  // 0x2E4
     int scaledSpawnDelay;  // 0x2E8
     unsigned char Scalable_d;  // 0x2EC
     char __pad_2ED[3];  // 0x2ED

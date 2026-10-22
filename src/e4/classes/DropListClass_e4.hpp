@@ -6,7 +6,7 @@
 namespace gamemd {
 
 struct DropListClass {
-    void* ptr_0;  // 0x0
+    void * ptr_0;  // 0x0
     unsigned int __pad_004;  // 0x4
     int u32_8;  // 0x8
     int u32_C;  // 0xC
@@ -27,6 +27,15 @@ struct DropListClass {
     int q048;  // 0x48
     int q04C;  // 0x4C
     int q050;  // 0x50
+    char __pad_54[84];  // 0x54
+    unsigned int u32_A8;  // 0xA8
+    char __pad_AC[4];  // 0xAC
+    unsigned int u32_B0;  // 0xB0
+    char __pad_B4[8];  // 0xB4
+    unsigned int u32_BC;  // 0xBC
+    unsigned int u32_C0;  // 0xC0
+    unsigned int u32_C4;  // 0xC4
+    unsigned int u32_C8;  // 0xC8
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int COMStub();

@@ -7,6 +7,11 @@
 namespace gamemd {
 struct SubzoneHashVector {
     unsigned int tail_0;  // 0x0
+    unsigned int u32_4;  // 0x4
+    unsigned int u32_8;  // 0x8
+    unsigned char u8_C;  // 0xC
+    unsigned char u8_D;  // 0xD
+    char __pad_E[2];  // 0xE
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     static unsigned int * Construct(void *aP1, int a2, int a3);

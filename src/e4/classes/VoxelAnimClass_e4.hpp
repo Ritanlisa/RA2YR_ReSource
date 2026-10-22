@@ -21,9 +21,9 @@ struct MSShapeAnim;  // fix_fwd_type_supply
 
 struct VoxelAnimClass {
     unsigned int VoxelAnimClass_field_0x0;  // 0x0
-    void* ptr_4;  // 0x4
-    void* ptr_8;  // 0x8
-    void* ptr_C;  // 0xC
+    void * ptr_4;  // 0x4
+    void * ptr_8;  // 0x8
+    void * ptr_C;  // 0xC
     unsigned int uniqueId;  // 0x10
     unsigned int abstractFlags;  // 0x14
     unsigned char __pad_018;  // 0x18
@@ -33,8 +33,8 @@ struct VoxelAnimClass {
     char __pad_21[3];  // 0x21
     unsigned char __pad_024;  // 0x24
     char __pad_25[11];  // 0x25
-    ObjectClass* nextObject;  // 0x30
-    TagClass* attachedTag;  // 0x34
+    ObjectClass * nextObject;  // 0x30
+    TagClass * attachedTag;  // 0x34
     unsigned char __pad_038;  // 0x38
     char __pad_39[43];  // 0x39
     int customSound;  // 0x64
@@ -54,7 +54,7 @@ struct VoxelAnimClass {
     bool hasParachute;  // 0x84
     unsigned char alignmentPadding85;  // 0x85
     char __pad_86[2];  // 0x86
-    AnimClass* parachute;  // 0x88
+    AnimClass * parachute;  // 0x88
     unsigned char __pad_08C;  // 0x8C
     bool isFallingDown;  // 0x8D
     bool wasFallingDown;  // 0x8E
@@ -67,7 +67,7 @@ struct VoxelAnimClass {
     bool isVisible;  // 0x99
     unsigned char alignmentPadding99;  // 0x9A
     char __pad_9B[1];  // 0x9B
-    Coord* location;  // 0x9C
+    Coord * location;  // 0x9C
     unsigned char __pad_0A0;  // 0xA0
     char __pad_A1[3];  // 0xA1
     unsigned int q0A4;  // 0xA4
@@ -81,7 +81,7 @@ struct VoxelAnimClass {
     int q108;  // 0x108
     int q10C;  // 0x10C
     char __pad_110[4];  // 0x110
-    Mixer* q114;  // 0x114
+    Mixer * q114;  // 0x114
     char __pad_118[16];  // 0x118
     int q128;  // 0x128
     char __pad_12C[16];  // 0x12C

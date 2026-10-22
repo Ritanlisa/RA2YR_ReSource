@@ -10,15 +10,15 @@ struct SlaveManagerClass {
     unsigned int ptr_0;  // 0x0
     void * ptr_4;  // 0x4
     void * ptr_8;  // 0x8
-    void* ptr_C;  // 0xC
+    void * ptr_C;  // 0xC
     int uniqueId;  // 0x10
     int abstractFlags;  // 0x14
     int nextArrayIndex;  // 0x18
     int referenceCount;  // 0x1C
     void * NeedsSaveOrLink;  // 0x20
-    TechnoClass* master;  // 0x24
-    HouseClass* house;  // 0x28
-    HouseClass* slaveOwner;  // 0x2C
+    TechnoClass * master;  // 0x24
+    HouseClass * house;  // 0x28
+    HouseClass * slaveOwner;  // 0x2C
     int slaveType;  // 0x30
     int slaveCount;  // 0x34
     unsigned int slaves;  // 0x38
@@ -31,6 +31,8 @@ struct SlaveManagerClass {
     int SlaveManagerClass_field_58;  // 0x58
     int SlaveManagerClass_field_5C;  // 0x5C
     int SlaveManagerClass_field_60;  // 0x60
+    char __pad_64[72];  // 0x64
+    unsigned int u32_AC;  // 0xAC
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     AbstractClass * * LoadManager(unsigned int * a1, int a2);

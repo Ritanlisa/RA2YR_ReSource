@@ -22,8 +22,8 @@ struct ParticleClass {
     char ptr_0[2];  // 0x0
     char ParticleClass_field_0x2[4];  // 0x2
     char __pad_6[2];  // 0x6
-    void* ptr_8;  // 0x8
-    void* ptr_C;  // 0xC
+    void * ptr_8;  // 0x8
+    void * ptr_C;  // 0xC
     unsigned int __pad_010;  // 0x10
     int q014;  // 0x14
     char __pad_18[4];  // 0x18
@@ -32,8 +32,8 @@ struct ParticleClass {
     char __pad_21[3];  // 0x21
     unsigned int __pad_024;  // 0x24
     char __pad_28[8];  // 0x28
-    ObjectClass* nextObject;  // 0x30
-    TagClass* attachedTag;  // 0x34
+    ObjectClass * nextObject;  // 0x30
+    TagClass * attachedTag;  // 0x34
     unsigned char __pad_038;  // 0x38
     char __pad_39[43];  // 0x39
     int customSound;  // 0x64
@@ -52,7 +52,7 @@ struct ParticleClass {
     bool hasParachute;  // 0x84
     unsigned char alignmentPadding85;  // 0x85
     char __pad_86[2];  // 0x86
-    AnimClass* parachute;  // 0x88
+    AnimClass * parachute;  // 0x88
     unsigned char __pad_08C;  // 0x8C
     bool isFallingDown;  // 0x8D
     bool wasFallingDown;  // 0x8E
@@ -75,7 +75,7 @@ struct ParticleClass {
     unsigned int u32_B4;  // 0xB4
     int q0B8;  // 0xB8
     int u32_BC;  // 0xBC
-    IUnknown* q0C0;  // 0xC0
+    IUnknown * q0C0;  // 0xC0
     int u32_C4;  // 0xC4
     int u32_C8;  // 0xC8
     int q0CC;  // 0xCC

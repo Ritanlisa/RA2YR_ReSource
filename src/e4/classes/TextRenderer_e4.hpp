@@ -21,6 +21,14 @@ struct TextRenderer {
     char __pad_1C[52];  // 0x1C
     unsigned int u32_50;  // 0x50
     int q054;  // 0x54
+    char __pad_58[9];  // 0x58
+    unsigned char u32_61;  // 0x61
+    char __pad_62[6];  // 0x62
+    unsigned int u32_68;  // 0x68
+    unsigned int u32_6C;  // 0x6C
+    unsigned char u32_70;  // 0x70
+    unsigned char u32_71;  // 0x71
+    char __pad_72[2];  // 0x72
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     TriggerTypeClass * Destructor(char a2);

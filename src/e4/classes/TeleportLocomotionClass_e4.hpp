@@ -20,7 +20,7 @@ struct TeleportLocomotionClass {
     unsigned char __pad_012;  // 0x12
     char __pad_13[1];  // 0x13
     unsigned int RefCount;  // 0x14
-    void* ptr_8;  // 0x18
+    void * ptr_8;  // 0x18
     char MovingDestination[12];  // 0x1C
     char LastCoords[12];  // 0x28
     bool Moving;  // 0x34
@@ -29,7 +29,14 @@ struct TeleportLocomotionClass {
     bool __pad_037;  // 0x37
     int State;  // 0x38
     char Timer[12];  // 0x3C
-    ILocomotion* Piggybackee;  // 0x48
+    ILocomotion * Piggybackee;  // 0x48
+    char __pad_4C[548];  // 0x4C
+    unsigned char u8_270;  // 0x270
+    unsigned char u8_271;  // 0x271
+    char __pad_272[10];  // 0x272
+    unsigned char u8_27C;  // 0x27C
+    char __pad_27D[3];  // 0x27D
+    unsigned int u32_280;  // 0x280
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     TeleportLocomotionClass();  // 0x718000 sig=csp

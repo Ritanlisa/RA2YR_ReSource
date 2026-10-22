@@ -2269,10 +2269,10 @@ unsigned int TacticalMapClass::SetCameraPosition(int *a2)
     v4 = v7; /*0x6d6031*/
     v5 = v8; /*0x6d6035*/
   }
-  this->TacticalClass_field_D64 = v4; /*0x6d6040*/
-  this->TacticalClass_field_D74 = v4; /*0x6d6046*/
-  this->TacticalClass_field_D68 = v5; /*0x6d604c*/
-  this->TacticalClass_field_D78 = v5; /*0x6d6052*/
+  this->u32_D64 = v4; /*0x6d6040*/
+  this->u32_D74 = v4; /*0x6d6046*/
+  this->u32_D68 = v5; /*0x6d604c*/
+  this->u32_D78 = v5; /*0x6d6052*/
   result = TacticalClass::CalcViewportCells(this); /*0x6d605a*/
   this->redrawing = 1; /*0x6d605f*/
   return result; /*0x6d6066*/

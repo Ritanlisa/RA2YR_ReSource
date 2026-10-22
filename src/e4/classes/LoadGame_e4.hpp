@@ -9,15 +9,19 @@ struct LoadGame {
     int __pad_0;  // 0x0
     int q004;  // 0x4
     int q008;  // 0x8
-    void* q00C;  // 0xC
+    void * q00C;  // 0xC
     int q010;  // 0x10
     int q014;  // 0x14
-    void* q018;  // 0x18
+    void * q018;  // 0x18
     int q01C;  // 0x1C
     int q020;  // 0x20
     int q024;  // 0x24
     int q028;  // 0x28
     int q02C;  // 0x2C
+    char __pad_30[9552];  // 0x30
+    unsigned int u32_2580;  // 0x2580
+    char __pad_2584[4];  // 0x2584
+    unsigned int u32_2588;  // 0x2588
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     static wchar_t * CleanupArray(void *aP1);

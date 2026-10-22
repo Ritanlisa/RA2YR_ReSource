@@ -21,8 +21,10 @@ struct INIClass {
     int unknown30;  // 0x30
     bool needsSave_flag;  // 0x34
     char __pad_035[3];  // 0x35
-    SortedArray* unknown38;  // 0x38
-    void* INIClass_field_3C;  // 0x3C
+    SortedArray * unknown38;  // 0x38
+    void * INIClass_field_3C;  // 0x3C
+    unsigned char u8_40;  // 0x40
+    char __pad_41[3];  // 0x41
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     static char SetIntFormat(char *a1, char **a2, char **a3, int a4, int a5);  // [w14e3] raw 0x527640

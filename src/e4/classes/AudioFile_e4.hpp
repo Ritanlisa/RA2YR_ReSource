@@ -10,6 +10,10 @@ namespace gamemd {
 struct AudioFile {
     int __pad_000;  // 0x0
     int q004;  // 0x4
+    unsigned int u32_8;  // 0x8
+    unsigned int u32_C;  // 0xC
+    char __pad_10[196];  // 0x10
+    unsigned int u32_D4;  // 0xD4
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int GetCallback(void *a1 = 0);

@@ -22,12 +22,9 @@ struct RulesClass {
     int DetailMinFrameRateNormal;  // 0x0
     int DetailMinFrameRateMovie;  // 0x4
     int DetailBufferZoneWidth;  // 0x8
-    union {
-        int AmmoCrateDamage;  // 0xC
-        struct { char __pad_C; unsigned char u8_D; char __pad_E[2]; };  // 0xC
-    };
-    UnitTypeClass* LargeVisceroid;  // 0x10
-    UnitTypeClass* SmallVisceroid;  // 0x14
+    int AmmoCrateDamage;  // 0xC
+    UnitTypeClass * LargeVisceroid;  // 0x10
+    UnitTypeClass * SmallVisceroid;  // 0x14
     int AttackingAircraftSightRange;  // 0x18
     unsigned int Buildable;  // 0x1C
     double TunnelSpeed;  // 0x20
@@ -35,7 +32,7 @@ struct RulesClass {
     int SelfHealInfantryFrames;  // 0x30
     int SelfHealInfantryAmount;  // 0x34
     int SelfHealUnitFrames;  // 0x38
-    void* SelfHealUnitAmount;  // 0x3C
+    void * SelfHealUnitAmount;  // 0x3C
     bool FreeMCV;  // 0x40
     bool BerzerkAllowed;  // 0x41
     unsigned char __pad_042;  // 0x42
@@ -45,64 +42,64 @@ struct RulesClass {
     int FlashFrameTime;  // 0x4C
     int RadarCombatFlashTime;  // 0x50
     int MaxWaypointPathLength;  // 0x54
-    void* RadarEventColorSpeed;  // 0x58
-    void* RadarEventMinRadius;  // 0x5C
+    void * RadarEventColorSpeed;  // 0x58
+    void * RadarEventMinRadius;  // 0x5C
     float RadarEventSpeed;  // 0x60
     float RadarEventRotationSpeed;  // 0x64
-    AnimTypeClass* DropPodPuff;  // 0x68
-    AnimTypeClass* BarrelExplode_d;  // 0x6C
+    AnimTypeClass * DropPodPuff;  // 0x68
+    AnimTypeClass * BarrelExplode_d;  // 0x6C
     unsigned int BarrelDebris;  // 0x70
-    ParticleSystemTypeClass* BarrelParticle;  // 0x74
-    AnimTypeClass* Wake;  // 0x78
-    AnimTypeClass* NukeTakeOff;  // 0x7C
-    AnimTypeClass* InfantryExplode;  // 0x80
-    AnimTypeClass* FlamingInfantry;  // 0x84
-    AnimTypeClass* InfantryHeadPop;  // 0x88
-    AnimTypeClass* InfantryNuked;  // 0x8C
-    AnimTypeClass* InfantryVirus;  // 0x90
-    AnimTypeClass* Wake_d;  // 0x94
-    AnimTypeClass* NukeTakeOff_d;  // 0x98
-    AnimTypeClass* Behind;  // 0x9C
+    ParticleSystemTypeClass * BarrelParticle;  // 0x74
+    AnimTypeClass * Wake;  // 0x78
+    AnimTypeClass * NukeTakeOff;  // 0x7C
+    AnimTypeClass * InfantryExplode;  // 0x80
+    AnimTypeClass * FlamingInfantry;  // 0x84
+    AnimTypeClass * InfantryHeadPop;  // 0x88
+    AnimTypeClass * InfantryNuked;  // 0x8C
+    AnimTypeClass * InfantryVirus;  // 0x90
+    AnimTypeClass * Wake_d;  // 0x94
+    AnimTypeClass * NukeTakeOff_d;  // 0x98
+    AnimTypeClass * Behind;  // 0x9C
     int __pad_0A0;  // 0xA0
     char __pad_A4[24];  // 0xA4
     int align_BC;  // 0xBC
     double AITriggerSuccessWeightDelta;  // 0xC0
     double AITriggerFailureWeightDelta;  // 0xC8
     double AITriggerTrackRecordCoefficient;  // 0xD0
-    void* MaximumQueuedObjects;  // 0xD8
+    void * MaximumQueuedObjects;  // 0xD8
     int AircraftFogReveal;  // 0xDC
-    void* DigSound;  // 0xE0
-    void* CreateUnitSound;  // 0xE4
+    void * DigSound;  // 0xE0
+    void * CreateUnitSound;  // 0xE4
     int CreateInfantrySound;  // 0xE8
     int CreateAircraftSound;  // 0xEC
-    AnimTypeClass* BaseUnderAttackSound;  // 0xF0
+    AnimTypeClass * BaseUnderAttackSound;  // 0xF0
     int GUIMainButtonSound;  // 0xF4
-    void* GUIBuildSound;  // 0xF8
-    void* GUITabSound;  // 0xFC
+    void * GUIBuildSound;  // 0xF8
+    void * GUITabSound;  // 0xFC
     int GUIOpenSound;  // 0x100
-    void* GUICloseSound;  // 0x104
+    void * GUICloseSound;  // 0x104
     int GUIMoveOutSound;  // 0x108
     int GUIMoveInSound;  // 0x10C
     int GUIScrollSound;  // 0x110
     int GUIComboOpenSound;  // 0x114
     int GUIComboCloseSound;  // 0x118
     char GUICheckboxSound[4];  // 0x11C
-    void* ScoreAnimSound;  // 0x120
+    void * ScoreAnimSound;  // 0x120
     int IFVTransformSound;  // 0x124
     int PsychicSensorDetectSound;  // 0x128
     char BuildingGarrisonedSound[4];  // 0x12C
     int BuildingAbandonedSound;  // 0x130
     int BuildingRepairedSound;  // 0x134
     int CheerSound;  // 0x138
-    void* PlaceBeaconSound;  // 0x13C
+    void * PlaceBeaconSound;  // 0x13C
     int DefaultChronoSound;  // 0x140
     int StartPlanningModeSound;  // 0x144
     int AddPlanningModeCommandSound;  // 0x148
     int ExecutePlanSound;  // 0x14C
     int EndPlanningModeSound;  // 0x150
     int CrateMoneySound;  // 0x154
-    void* CrateRevealSound;  // 0x158
-    void* CrateFireSound;  // 0x15C
+    void * CrateRevealSound;  // 0x158
+    void * CrateFireSound;  // 0x15C
     int CrateArmourSound;  // 0x160
     int CrateSpeedSound;  // 0x164
     int CrateUnitSound;  // 0x168
@@ -141,10 +138,10 @@ struct RulesClass {
     int DeactivateSound;  // 0x1EC
     int SpyPlaneCamera;  // 0x1F0
     int SpyPlaneCameraFrames;  // 0x1F4
-    AnimTypeClass* Dig;  // 0x1F8
-    AnimTypeClass* IonBlast;  // 0x1FC
-    AnimTypeClass* IonBeam;  // 0x200
-    void* DamageFireTypes;  // 0x204
+    AnimTypeClass * Dig;  // 0x1F8
+    AnimTypeClass * IonBlast;  // 0x1FC
+    AnimTypeClass * IonBeam;  // 0x200
+    void * DamageFireTypes;  // 0x204
     int ParadropRadius;  // 0x208
     double ZoomInFactor;  // 0x20C
     double ConditionRedSparkingProbability;  // 0x214
@@ -183,23 +180,23 @@ struct RulesClass {
     double TreeFlammability;  // 0x588
     double MissileSpeedVar;  // 0x590
     double MissileROTVar;  // 0x598
-    void* MissileSafetyAltitude;  // 0x5A0
-    WeaponTypeClass* DropPodWeapon;  // 0x5A4
+    void * MissileSafetyAltitude;  // 0x5A0
+    WeaponTypeClass * DropPodWeapon;  // 0x5A4
     int DropPodHeight;  // 0x5A8
-    void* DropPodSpeed;  // 0x5AC
+    void * DropPodSpeed;  // 0x5AC
     double DropPodAngle;  // 0x5B0
     double ScrollMultiplier;  // 0x5B8
     double CrewEscape;  // 0x5C0
-    void* ShakeScreen;  // 0x5C8
-    void* HoverHeight;  // 0x5CC
+    void * ShakeScreen;  // 0x5C8
+    void * HoverHeight;  // 0x5CC
     double HoverBob;  // 0x5D0
     double HoverBoost;  // 0x5D8
     double HoverAcceleration;  // 0x5E0
     double HoverBrake;  // 0x5E8
     double HoverDampen;  // 0x5F0
     double PlacementDelay;  // 0x5F8
-    void* CloakingStages;  // 0x600
-    void* RevealTriggerRadius;  // 0x604
+    void * CloakingStages;  // 0x600
+    void * RevealTriggerRadius;  // 0x604
     double ShipSinkingWeight;  // 0x608
     double IceCrackingWeight;  // 0x610
     double IceBreakingWeight;  // 0x618
@@ -219,10 +216,10 @@ struct RulesClass {
     int GameForming;  // 0x670
     int PlayerLeft;  // 0x674
     int PlayerJoined;  // 0x678
-    void* MessageCharTyped;  // 0x67C
+    void * MessageCharTyped;  // 0x67C
     int Construction;  // 0x680
     int CreditTicks[6];  // 0x684
-    void* BuildingDieSound;  // 0x69C
+    void * BuildingDieSound;  // 0x69C
     int BuildingSlam;  // 0x6A0
     int RadarOn;  // 0x6A4
     int RadarOff;  // 0x6A8
@@ -234,8 +231,8 @@ struct RulesClass {
     int GenericClick;  // 0x6C0
     int GenericBeep;  // 0x6C4
     int BuildingDamageSound;  // 0x6C8
-    DynamicVector* HealCrateSound;  // 0x6CC
-    void* ChuteSound;  // 0x6D0
+    DynamicVector * HealCrateSound;  // 0x6CC
+    void * ChuteSound;  // 0x6D0
     int StopSound;  // 0x6D4
     char GuardSound[4];  // 0x6D8
     int ScatterSound;  // 0x6DC
@@ -249,23 +246,23 @@ struct RulesClass {
     double WallBuildSpeedCoefficient;  // 0x758
     double ChargeToDrainRatio;  // 0x760
     int WindDirection;  // 0x768
-    BuildingTypeClass* CameraRange;  // 0x76C
+    BuildingTypeClass * CameraRange;  // 0x76C
     int FlightLevel;  // 0x770
     int ParachuteMaxFallRate;  // 0x774
     int NoParachuteMaxFallRate;  // 0x778
-    BuildingTypeClass* BuildingDrop;  // 0x77C
-    BuildingTypeClass* GDIGateOne;  // 0x780
-    BuildingTypeClass* GDIGateTwo;  // 0x784
-    BuildingTypeClass* NodGateOne;  // 0x788
-    BuildingTypeClass* NodGateTwo;  // 0x78C
-    BuildingTypeClass* WallTower;  // 0x790
-    void* BuildConst;  // 0x794
-    void* BuildPower;  // 0x798
-    void* BuildRefinery;  // 0x79C
-    void* BuildBarracks;  // 0x7A0
-    void* BuildTech;  // 0x7A4
-    void* BuildWeapons;  // 0x7A8
-    void* BuildNavalYard;  // 0x7AC
+    BuildingTypeClass * BuildingDrop;  // 0x77C
+    BuildingTypeClass * GDIGateOne;  // 0x780
+    BuildingTypeClass * GDIGateTwo;  // 0x784
+    BuildingTypeClass * NodGateOne;  // 0x788
+    BuildingTypeClass * NodGateTwo;  // 0x78C
+    BuildingTypeClass * WallTower;  // 0x790
+    void * BuildConst;  // 0x794
+    void * BuildPower;  // 0x798
+    void * BuildRefinery;  // 0x79C
+    void * BuildBarracks;  // 0x7A0
+    void * BuildTech;  // 0x7A4
+    void * BuildWeapons;  // 0x7A8
+    void * BuildNavalYard;  // 0x7AC
     double GDIWallDefense;  // 0x7B0
     double GDIWallDefenseCoefficient;  // 0x7B8
     double NodBaseDefenseCoefficient;  // 0x7C0
@@ -274,30 +271,30 @@ struct RulesClass {
     int MaximumBaseDefenseValue;  // 0x7D4
     unsigned int BaseUnit;  // 0x7D8
     unsigned int HarvesterUnit;  // 0x7DC
-    void* PadAircraft;  // 0x7E0
-    void* OnFire;  // 0x7E4
-    void* TreeFire;  // 0x7E8
-    AnimTypeClass* Smoke;  // 0x7EC
-    AnimTypeClass* SmokeAlt;  // 0x7F0
-    AnimTypeClass* MoveFlash;  // 0x7F4
-    AnimTypeClass* BombParachute;  // 0x7F8
-    AnimTypeClass* Parachute;  // 0x7FC
-    void* SplashList;  // 0x800
-    AnimTypeClass* SmallFire;  // 0x804
-    AnimTypeClass* LargeFire;  // 0x808
-    InfantryTypeClass* Paratrooper;  // 0x80C
+    void * PadAircraft;  // 0x7E0
+    void * OnFire;  // 0x7E4
+    void * TreeFire;  // 0x7E8
+    AnimTypeClass * Smoke;  // 0x7EC
+    AnimTypeClass * SmokeAlt;  // 0x7F0
+    AnimTypeClass * MoveFlash;  // 0x7F4
+    AnimTypeClass * BombParachute;  // 0x7F8
+    AnimTypeClass * Parachute;  // 0x7FC
+    void * SplashList;  // 0x800
+    AnimTypeClass * SmallFire;  // 0x804
+    AnimTypeClass * LargeFire;  // 0x808
+    InfantryTypeClass * Paratrooper;  // 0x80C
     int EliteFlashTimer;  // 0x810
     int ChronoDelay;  // 0x814
-    SmudgeTypeVector* ChronoReinfDelay;  // 0x818
-    void* ChronoDistanceFactor;  // 0x81C
+    SmudgeTypeVector * ChronoReinfDelay;  // 0x818
+    void * ChronoDistanceFactor;  // 0x81C
     bool ChronoTrigger;  // 0x820
     unsigned char __pad_821;  // 0x821
     char __pad_822[2];  // 0x822
     int ChronoMinimumDelay;  // 0x824
     int ChronoRangeMinimum;  // 0x828
-    InfantryTypeClass* AlliedDisguise;  // 0x82C
-    InfantryTypeClass* SovietDisguise;  // 0x830
-    InfantryTypeClass* ThirdDisguise;  // 0x834
+    InfantryTypeClass * AlliedDisguise;  // 0x82C
+    InfantryTypeClass * SovietDisguise;  // 0x830
+    InfantryTypeClass * ThirdDisguise;  // 0x834
     int SpyPowerBlackout;  // 0x838
     float SpyMoneyStealPercent;  // 0x83C
     bool AttackCursorOnDisguise;  // 0x840
@@ -305,41 +302,41 @@ struct RulesClass {
     float AIMinorSuperReadyPercent;  // 0x844
     int AISafeDistance;  // 0x848
     char HarvesterTooFarDistance[4];  // 0x84C
-    void* ChronoHarvTooFarDistance;  // 0x850
-    InfantryTypeClass* Technician;  // 0x854
-    InfantryTypeClass* Engineer;  // 0x858
-    InfantryTypeClass* Pilot;  // 0x85C
-    InfantryTypeClass* AlliedCrew;  // 0x860
-    InfantryTypeClass* SovietCrew;  // 0x864
-    InfantryTypeClass* ThirdCrew;  // 0x868
-    WarheadTypeClass* FlameDamage;  // 0x86C
-    WarheadTypeClass* FlameDamage2;  // 0x870
-    WarheadTypeClass* NukeWarhead;  // 0x874
-    BulletTypeClass* NukeProjectile;  // 0x878
-    BulletTypeClass* NukeDown;  // 0x87C
-    WarheadTypeClass* MutateWarhead;  // 0x880
-    WarheadTypeClass* MutateExplosionWarhead;  // 0x884
-    WarheadTypeClass* C4Warhead;  // 0x888
-    WarheadTypeClass* CrushWarhead;  // 0x88C
-    WarheadTypeClass* V3Warhead;  // 0x890
-    WarheadTypeClass* DMislWarhead;  // 0x894
-    WarheadTypeClass* CMislWarhead;  // 0x898
-    WarheadTypeClass* V3EliteWarhead;  // 0x89C
-    WarheadTypeClass* DMislEliteWarhead;  // 0x8A0
-    WarheadTypeClass* CMislEliteWarhead;  // 0x8A4
-    WarheadTypeClass* IvanWarhead;  // 0x8A8
-    WarheadTypeClass* IonCannonWarhead;  // 0x8AC
-    void* IvanDamage;  // 0x8B0
+    void * ChronoHarvTooFarDistance;  // 0x850
+    InfantryTypeClass * Technician;  // 0x854
+    InfantryTypeClass * Engineer;  // 0x858
+    InfantryTypeClass * Pilot;  // 0x85C
+    InfantryTypeClass * AlliedCrew;  // 0x860
+    InfantryTypeClass * SovietCrew;  // 0x864
+    InfantryTypeClass * ThirdCrew;  // 0x868
+    WarheadTypeClass * FlameDamage;  // 0x86C
+    WarheadTypeClass * FlameDamage2;  // 0x870
+    WarheadTypeClass * NukeWarhead;  // 0x874
+    BulletTypeClass * NukeProjectile;  // 0x878
+    BulletTypeClass * NukeDown;  // 0x87C
+    WarheadTypeClass * MutateWarhead;  // 0x880
+    WarheadTypeClass * MutateExplosionWarhead;  // 0x884
+    WarheadTypeClass * C4Warhead;  // 0x888
+    WarheadTypeClass * CrushWarhead;  // 0x88C
+    WarheadTypeClass * V3Warhead;  // 0x890
+    WarheadTypeClass * DMislWarhead;  // 0x894
+    WarheadTypeClass * CMislWarhead;  // 0x898
+    WarheadTypeClass * V3EliteWarhead;  // 0x89C
+    WarheadTypeClass * DMislEliteWarhead;  // 0x8A0
+    WarheadTypeClass * CMislEliteWarhead;  // 0x8A4
+    WarheadTypeClass * IvanWarhead;  // 0x8A8
+    WarheadTypeClass * IonCannonWarhead;  // 0x8AC
+    void * IvanDamage;  // 0x8B0
     int IvanTimedDelay;  // 0x8B4
     bool CanDetonateTimeBomb;  // 0x8B8
     bool CanDetonateDeathBomb;  // 0x8B9
     unsigned char __pad_8BA;  // 0x8BA
     char __pad_8BB[1];  // 0x8BB
     int IvanIconFlickerRate;  // 0x8BC
-    WeaponTypeClass* DeathWeapon;  // 0x8C0
-    SHPStruct* BOMBCURS_SHP;  // 0x8C4
-    SHPStruct* CHRONOSK_SHP;  // 0x8C8
-    void* IronCurtainDuration;  // 0x8CC
+    WeaponTypeClass * DeathWeapon;  // 0x8C0
+    SHPStruct * BOMBCURS_SHP;  // 0x8C4
+    SHPStruct * CHRONOSK_SHP;  // 0x8C8
+    void * IronCurtainDuration;  // 0x8CC
     int PsychicRevealRadius;  // 0x8D0
     char V3Rocket[52];  // 0x8D4
     char DMisl[52];  // 0x908
@@ -355,11 +352,11 @@ struct RulesClass {
     double AttackDelay;  // 0x9B0
     double PowerEmergency;  // 0x9B8
     double AirstripRatio;  // 0x9C0
-    DynamicVector* AirstripLimit;  // 0x9C8
+    DynamicVector * AirstripLimit;  // 0x9C8
     double HelipadRatio;  // 0x9CC
     int HelipadLimit;  // 0x9D4
     double TeslaRatio;  // 0x9D8
-    DynamicVector* TeslaLimit;  // 0x9E0
+    DynamicVector * TeslaLimit;  // 0x9E0
     double AARatio;  // 0x9E4
     char AALimit[4];  // 0x9EC
     double DefenseRatio;  // 0x9F0
@@ -375,8 +372,8 @@ struct RulesClass {
     int InfantryReserve;  // 0xA28
     char InfantryBaseMult[4];  // 0xA2C
     char SoloCrateMoney[4];  // 0xA30
-    DynamicVector* TreeStrength;  // 0xA34
-    UnitTypeClass* UnitCrateType;  // 0xA38
+    DynamicVector * TreeStrength;  // 0xA34
+    UnitTypeClass * UnitCrateType;  // 0xA38
     double PatrolScan;  // 0xA3C
     double CloakDelay;  // 0xA44
     double GameSpeedBias;  // 0xA4C
@@ -384,28 +381,28 @@ struct RulesClass {
     double ExpSpread;  // 0xA5C
     char FireSupress[4];  // 0xA64
     char MaxIQLevels[4];  // 0xA68
-    DynamicVector* SuperWeapons;  // 0xA6C
-    void* Production;  // 0xA70
-    DynamicVector* GuardArea;  // 0xA74
+    DynamicVector * SuperWeapons;  // 0xA6C
+    void * Production;  // 0xA70
+    DynamicVector * GuardArea;  // 0xA74
     char RepairSell[4];  // 0xA78
     int AutoCrush;  // 0xA7C
     char Scatter[4];  // 0xA80
     char ContentScan[4];  // 0xA84
-    DynamicVector* Aircraft;  // 0xA88
-    void* Harvester;  // 0xA8C
+    DynamicVector * Aircraft;  // 0xA88
+    void * Harvester;  // 0xA8C
     int SellBack;  // 0xA90
     char AIBaseSpacing[4];  // 0xA94
-    Power* SilverCrate;  // 0xA98
+    Power * SilverCrate;  // 0xA98
     char WoodCrate[4];  // 0xA9C
     char WaterCrate[4];  // 0xAA0
-    DynamicVector* CrateMinimum;  // 0xAA4
+    DynamicVector * CrateMinimum;  // 0xAA4
     int CrateMaximum;  // 0xAA8
     char Money[4];  // 0xAAC
     char MinMoney[4];  // 0xAB0
     int MaxMoney;  // 0xAB4
     char MoneyIncrement[4];  // 0xAB8
     char UnitCount[4];  // 0xABC
-    DynamicVector* MinUnitCount;  // 0xAC0
+    DynamicVector * MinUnitCount;  // 0xAC0
     int MaxUnitCount;  // 0xAC4
     char TechLevel[4];  // 0xAC8
     char GameSpeed[4];  // 0xACC
@@ -434,13 +431,13 @@ struct RulesClass {
     int SuspendPriority;  // 0xB04
     double SuspendDelay;  // 0xB08
     int SurvivorRate[2];  // 0xB10
-    void* AlliedSurvivorDivisor;  // 0xB18
+    void * AlliedSurvivorDivisor;  // 0xB18
     int SovietSurvivorDivisor;  // 0xB1C
-    void* ThirdSurvivorDivisor;  // 0xB20
+    void * ThirdSurvivorDivisor;  // 0xB20
     double ReloadRate;  // 0xB24
     double AutocreateTime;  // 0xB2C
     double BuildupTime;  // 0xB34
-    void* HarvesterLoadRate;  // 0xB3C
+    void * HarvesterLoadRate;  // 0xB3C
     double HarvesterDumpRate;  // 0xB40
     char AtomDamage[4];  // 0xB48
     char Easy[80];  // 0xB4C
@@ -450,7 +447,7 @@ struct RulesClass {
     char __pad_C40[2036];  // 0xC40
     unsigned int MaxIQLevels_d;  // 0x1434
     unsigned int SuperWeapons_d;  // 0x1438
-    void* Production_d;  // 0x143C
+    void * Production_d;  // 0x143C
     unsigned int GuardArea_d;  // 0x1440
     unsigned int RepairSell_d;  // 0x1444
     unsigned int AutoCrush_d;  // 0x1448
@@ -458,7 +455,7 @@ struct RulesClass {
     unsigned int ContentScan_d;  // 0x1450
     unsigned int Aircraft_d;  // 0x1454
     unsigned int Harvester_d;  // 0x1458
-    void* SellBack_d;  // 0x145C
+    void * SellBack_d;  // 0x145C
     unsigned int __pad_1460;  // 0x1460
     char __pad_1464[452];  // 0x1464
     int align_1628[4];  // 0x1628
@@ -489,9 +486,9 @@ struct RulesClass {
     double ConditionRed;  // 0x16D8
     double IdleActionFrequency;  // 0x16E0
     int CloseEnough;  // 0x16E8
-    WarheadTypeClass* Stray;  // 0x16EC
+    WarheadTypeClass * Stray;  // 0x16EC
     int RelaxedStray;  // 0x16F0
-    WarheadTypeClass* GuardModeStray;  // 0x16F4
+    WarheadTypeClass * GuardModeStray;  // 0x16F4
     int Crush;  // 0x16F8
     int CrateRadius;  // 0x16FC
     int HomingScatter;  // 0x1700
@@ -516,7 +513,7 @@ struct RulesClass {
     bool LightningPrintText;  // 0x1760
     unsigned char __pad_1761;  // 0x1761
     char __pad_1762[2];  // 0x1762
-    WarheadTypeClass* LightningWarhead;  // 0x1764
+    WarheadTypeClass * LightningWarhead;  // 0x1764
     int ForceShieldRadius;  // 0x1768
     char ForceShieldDuration[4];  // 0x176C
     int ForceShieldBlackoutDuration;  // 0x1770
@@ -524,7 +521,7 @@ struct RulesClass {
     bool MutateExplosion;  // 0x1778
     unsigned char __pad_1779;  // 0x1779
     char __pad_177A[2];  // 0x177A
-    IUnknown* CollapseChance;  // 0x177C
+    IUnknown * CollapseChance;  // 0x177C
     int WeedCapacity;  // 0x1780
     float ExtraUnitLight;  // 0x1784
     float ExtraInfantryLight;  // 0x1788
@@ -553,15 +550,15 @@ struct RulesClass {
     float TalkBubbleTime;  // 0x17A8
     int RadDurationMultiple;  // 0x17AC
     int RadApplicationDelay;  // 0x17B0
-    void* RadLevelMax;  // 0x17B4
-    void* RadLevelDelay;  // 0x17B8
-    void* RadLightDelay;  // 0x17BC
+    void * RadLevelMax;  // 0x17B4
+    void * RadLevelDelay;  // 0x17B8
+    void * RadLightDelay;  // 0x17BC
     double RadLevelFactor;  // 0x17C0
     double RadLightFactor;  // 0x17C8
     double RadTintFactor;  // 0x17D0
     char RadColor[3];  // 0x17D8
     unsigned char __pad_17DB;  // 0x17DB
-    WarheadTypeClass* RadSiteWarhead;  // 0x17DC
+    WarheadTypeClass * RadSiteWarhead;  // 0x17DC
     int ElevationIncrement;  // 0x17E0
     double ElevationIncrementBonus;  // 0x17E4
     double ElevationBonusCap;  // 0x17EC
@@ -573,8 +570,8 @@ struct RulesClass {
     char LineTrailColorOverride[3];  // 0x1803
     char ChronoBeamColor[3];  // 0x1806
     char MagnaBeamColor[3];  // 0x1809
-    void* RadLevelMax_d;  // 0x180C
-    AnimTypeClass* RadLevelDelay_d;  // 0x1810
+    void * RadLevelMax_d;  // 0x180C
+    AnimTypeClass * RadLevelDelay_d;  // 0x1810
     char RadLightDelay_d[48];  // 0x1814
     int LaserTargetColor;  // 0x1844
     int IronCurtainColor;  // 0x1848
@@ -583,6 +580,30 @@ struct RulesClass {
     float DirectRockingCoefficient;  // 0x1854
     float FallBackCoefficient;  // 0x1858
     int CrewCount;  // 0x185C
+    unsigned char u8_1860;  // 0x1860
+    unsigned char u8_1861;  // 0x1861
+    unsigned char u8_1862;  // 0x1862
+    unsigned char u8_1863;  // 0x1863
+    unsigned char u8_1864;  // 0x1864
+    unsigned char u8_1865;  // 0x1865
+    unsigned char u8_1866;  // 0x1866
+    unsigned char u8_1867;  // 0x1867
+    unsigned char u8_1868;  // 0x1868
+    unsigned char u8_1869;  // 0x1869
+    unsigned char u8_186A;  // 0x186A
+    unsigned char u8_186B;  // 0x186B
+    unsigned int u32_186C;  // 0x186C
+    unsigned int u32_1870;  // 0x1870
+    char __pad_1874[48];  // 0x1874
+    unsigned int u32_18A4;  // 0x18A4
+    unsigned int u32_18A8;  // 0x18A8
+    unsigned int u32_18AC;  // 0x18AC
+    unsigned int u32_18B0;  // 0x18B0
+    unsigned int u32_18B4;  // 0x18B4
+    unsigned int u32_18B8;  // 0x18B8
+    union {
+        struct { char __pad_C; unsigned char u8_D; char __pad_E[2]; };  // 0xC
+    };
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     static int Addition(void *aP1);

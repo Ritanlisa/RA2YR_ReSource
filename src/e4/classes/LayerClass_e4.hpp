@@ -8,7 +8,7 @@ namespace gamemd {
 #ifndef GAMEMD_G2_LAYERCLASS_DEF  // X10: first-include-wins twin guard
 #define GAMEMD_G2_LAYERCLASS_DEF 1
 struct LayerClass {
-    void* items;  // 0x0
+    void * items;  // 0x0
     unsigned char count;  // 0x4
     char __pad_5[3];  // 0x5
     int capacity;  // 0x8

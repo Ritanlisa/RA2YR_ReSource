@@ -7,8 +7,9 @@
 namespace gamemd {
 
 struct BulkData {
-// --- flat members (BEGIN) ---
+    char __pad_0[324];  // 0x0
     AbstractClass * ptr_144;  // 0x144
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     void InitMissionHashing(void *a1 = 0);
 };

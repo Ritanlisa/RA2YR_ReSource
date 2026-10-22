@@ -55,6 +55,10 @@ int Remove(unsigned int * a2);
 struct LinkedList {
     char __pad_0[4];  // 0x0
     int Tail[2];  // 0x4
+    char __pad_C[28];  // 0xC
+    unsigned int u32_28;  // 0x28
+    char __pad_2C[8];  // 0x2C
+    unsigned int u32_34;  // 0x34
     static int Init(void *aP0);  // 136 corpus sites
     static int Prepend(void *aP0);  // 86
     static void * Pop(void *aP0);  // 38

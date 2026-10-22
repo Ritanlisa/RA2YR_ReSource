@@ -6,7 +6,7 @@
 namespace gamemd {
 
 struct CheckListClass {
-    void* ptr_0;  // 0x0
+    void * ptr_0;  // 0x0
     unsigned int __pad_004;  // 0x4
     int q008;  // 0x8
     int q00C;  // 0xC
@@ -27,6 +27,11 @@ struct CheckListClass {
     int u32_48;  // 0x48
     int q04C;  // 0x4C
     int q050;  // 0x50
+    char __pad_54[280];  // 0x54
+    unsigned int u32_16C;  // 0x16C
+    char __pad_170[4];  // 0x170
+    unsigned char u8_174;  // 0x174
+    char __pad_175[3];  // 0x175
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int  g_var_1d7b82(int a2);  // 0x488310

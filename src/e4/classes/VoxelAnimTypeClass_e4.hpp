@@ -19,13 +19,13 @@ struct ParticleSystemTypeClass;  // fix_fwd_type_supply
 
 struct VoxelAnimTypeClass {
 #pragma pack(push, 1)  // X60: binary-packed layout
-    void* ptr_0;  // 0x0
-    void* ptr_4;  // 0x4
-    void* ptr_8;  // 0x8
-    void* ptr_C;  // 0xC
-    SHPStruct* uniqueId;  // 0x10
+    void * ptr_0;  // 0x0
+    void * ptr_4;  // 0x4
+    void * ptr_8;  // 0x8
+    void * ptr_C;  // 0xC
+    SHPStruct * uniqueId;  // 0x10
     int abstractFlags;  // 0x14
-    SHPStruct* nextArrayIndex;  // 0x18
+    SHPStruct * nextArrayIndex;  // 0x18
     char referenceCount[4];  // 0x1C
     char NeedsSaveOrLink[4];  // 0x20
     char __pad_24[4];  // 0x24
@@ -53,7 +53,7 @@ struct VoxelAnimTypeClass {
     char ImageAllocated;  // 0xA8
     char __pad_0A9[3];  // 0xA9
     void * AlphaImage;  // 0xAC
-    void* MainVoxel;  // 0xB0
+    void * MainVoxel;  // 0xB0
     int TurretVoxel_d;  // 0xB4
     unsigned int __pad_0B8;  // 0xB8
     int ChargerTurrets[18];  // 0xBC
@@ -108,17 +108,17 @@ struct VoxelAnimTypeClass {
     double MaxXYVel;  // 0x2C8
     bool IsMeteor;  // 0x2D0
     char __pad_2D1[3];  // 0x2D1
-    VoxelAnimTypeClass* Spawns;  // 0x2D4
+    VoxelAnimTypeClass * Spawns;  // 0x2D4
     int SpawnCount;  // 0x2D8
     int StartSound;  // 0x2DC
     int StopSound;  // 0x2E0
-    AnimTypeClass* BounceAnim;  // 0x2E4
-    AnimTypeClass* ExpireAnim;  // 0x2E8
-    AnimTypeClass* TrailerAnim;  // 0x2EC
+    AnimTypeClass * BounceAnim;  // 0x2E4
+    AnimTypeClass * ExpireAnim;  // 0x2E8
+    AnimTypeClass * TrailerAnim;  // 0x2EC
     int Damage;  // 0x2F0
     int DamageRadius;  // 0x2F4
-    WarheadTypeClass* Warhead;  // 0x2F8
-    ParticleSystemTypeClass* AttachedSystem;  // 0x2FC
+    WarheadTypeClass * Warhead;  // 0x2F8
+    ParticleSystemTypeClass * AttachedSystem;  // 0x2FC
     bool IsTiberium;  // 0x300
     char __pad_301[3];  // 0x301
 // --- flat members (BEGIN) ---

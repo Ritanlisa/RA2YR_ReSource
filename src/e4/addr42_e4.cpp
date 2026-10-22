@@ -3210,12 +3210,12 @@ void AnimFile::sub_4266D0()
 
   void (***v3)(unsigned int, int); // ecx
 
-  char v2 = this->u32_89; // al /*0x4266d6*/
+  char v2 = this->u8_89; // al /*0x4266d6*/
   /* X11: ptr_0 install elided (implicit via AnimFile virtuals 0x4266dc) */
   if ( v2 ) /*0x4266e4*/
   {
     (*(void (**)(unsigned int))(*this->u32_343) + 52))(this->u32_84); /*0x4266ee*/
-    this->u32_89 = 0; /*0x4266f1*/
+    this->u8_89 = 0; /*0x4266f1*/
   }
   v3 = (void (***)(unsigned int, int))this->u32_E0C; /*0x4266f7*/
   this->u32_84 = 0; /*0x4266fd*/
@@ -3229,7 +3229,7 @@ void AnimFile::sub_4266D0()
     __3_YAXPAX_Z(this->u32_E0C0)); /*0x42671e*/
     this->u32_E10 = 0; /*0x426726*/
   }
-  this->u32_88 = 0; /*0x42672c*/
+  this->u8_88 = 0; /*0x42672c*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E35A8) */  /*0x426732*/
 
 }

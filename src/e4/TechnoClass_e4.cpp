@@ -857,7 +857,7 @@ Coord * * TechnoClass::RegisterKill()
         {
           HouseClass::IncrementStat( /*0x703152*/
               (HouseClass *)(*(unsigned int *)(v28 + 540) + 11088),
-              *(unsigned int *)&this->q6C0->qDF8);
+              *(unsigned int *)&this->u32_6C0->qDF8);
           v27 = 1; /*0x703157*/
         }
         LABEL_59:
@@ -893,7 +893,7 @@ Coord * * TechnoClass::RegisterKill()
         {
           HouseClass::IncrementStat( /*0x703093*/
               (HouseClass *)(*(unsigned int *)(v28 + 540) + 15200),
-              *(unsigned int *)&this->BuildingTypeClass_520->qDF8);
+              *(unsigned int *)&this->u32_520->qDF8);
           v17 = (unsigned int *)(*(unsigned int *)(v28 + 540) /*0x7030a5*/
             + 4 * (*((int (**)(TechnoClass *))this->RadioClass + 14))(this)
             + 21560);

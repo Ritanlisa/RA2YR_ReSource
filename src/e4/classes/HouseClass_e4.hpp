@@ -38,58 +38,58 @@ struct VectorCursor;  // fix_fwd_type_supply
 #define GAMEMD_G2_HouseClass_DEF 1
 struct HouseClass {
     unsigned int ptr_0;  // 0x0
-    void* ptr_4;  // 0x4
-    void* ptr_8;  // 0x8
-    void* ptr_C;  // 0xC
-    void* uniqueId;  // 0x10
+    void * ptr_4;  // 0x4
+    void * ptr_8;  // 0x8
+    void * ptr_C;  // 0xC
+    void * uniqueId;  // 0x10
     int abstractFlags;  // 0x14
     int nextArrayIndex;  // 0x18
-    void* referenceCount;  // 0x1C
+    void * referenceCount;  // 0x1C
     void * NeedsSaveOrLink;  // 0x20
-    void* ptr_24;  // 0x24
-    void* ptr_28;  // 0x28
-    void* ptr_2C;  // 0x2C
+    void * ptr_24;  // 0x24
+    void * ptr_28;  // 0x28
+    void * ptr_2C;  // 0x2C
     int relatedTagsCount;  // 0x30
     int relatedTagsCapacity;  // 0x34
-    BuildingClass** conYards;  // 0x38
+    BuildingClass * * conYards;  // 0x38
     int conYardsCount;  // 0x3C
     int conYardsCapacity;  // 0x40
-    BuildingClass** buildings;  // 0x44
+    BuildingClass * * buildings;  // 0x44
     int buildingsCount;  // 0x48
-    BuildingClass* buildingsCapacity;  // 0x4C
-    BuildingClass** unitRepairStations;  // 0x50
+    BuildingClass * buildingsCapacity;  // 0x4C
+    BuildingClass * * unitRepairStations;  // 0x50
     int repairStationsCount;  // 0x54
     int repairStationsCapacity;  // 0x58
-    BuildingClass** grinders;  // 0x5C
+    BuildingClass * * grinders;  // 0x5C
     int grindersCount;  // 0x60
     int grindersCapacity;  // 0x64
-    BuildingClass** absorbers;  // 0x68
+    BuildingClass * * absorbers;  // 0x68
     int absorbersCount;  // 0x6C
     int absorbersCapacity;  // 0x70
-    BuildingClass** bunkers;  // 0x74
+    BuildingClass * * bunkers;  // 0x74
     int bunkersCount;  // 0x78
     int bunkersCapacity;  // 0x7C
-    BuildingClass** occupiables;  // 0x80
+    BuildingClass * * occupiables;  // 0x80
     int occupiablesCount;  // 0x84
     int occupiablesCapacity;  // 0x88
-    BuildingClass** cloningVats;  // 0x8C
+    BuildingClass * * cloningVats;  // 0x8C
     int cloningVatsCount;  // 0x90
     int cloningVatsCapacity;  // 0x94
-    BuildingClass** secretLabs;  // 0x98
+    BuildingClass * * secretLabs;  // 0x98
     int secretLabsCount;  // 0x9C
     int secretLabsCapacity;  // 0xA0
-    BuildingClass** psychicDetectionBuildings;  // 0xA4
+    BuildingClass * * psychicDetectionBuildings;  // 0xA4
     int psychicDetectionCount;  // 0xA8
-    void* psychicDetectionCapacity;  // 0xAC
-    BuildingClass** productionFactory_plants;  // 0xB0
+    void * psychicDetectionCapacity;  // 0xAC
+    BuildingClass * * productionFactory_plants;  // 0xB0
     int productionFactory_plants_count;  // 0xB4
     int productionFactory_plants_capacity;  // 0xB8
     char countResourceGatherers[4];  // 0xBC
     char countResourceDestinations[4];  // 0xC0
     char countWarfactories[4];  // 0xC4
-    void* infantrySelfHeal;  // 0xC8
-    void* unitsSelfHeal;  // 0xCC
-    StartingTechnoStruct** startingUnits;  // 0xD0
+    void * infantrySelfHeal;  // 0xC8
+    void * unitsSelfHeal;  // 0xCC
+    StartingTechnoStruct * * startingUnits;  // 0xD0
     char startingUnitsCount[4];  // 0xD4
     char startingUnitsCapacity[4];  // 0xD8
     char aiDifficulty[4];  // 0xDC
@@ -103,7 +103,7 @@ struct HouseClass {
     double repairDelay;  // 0x118
     double buildDelay;  // 0x120
     int iqLevel;  // 0x128
-    void* techLevel;  // 0x12C
+    void * techLevel;  // 0x12C
     unsigned int altAllies;  // 0x130
     int startingCredits;  // 0x134
     int startingEdge;  // 0x138
@@ -135,7 +135,7 @@ struct HouseClass {
     unsigned int u32_1C4;  // 0x1C4
     unsigned int u32_1C8;  // 0x1C8
     unsigned int u32_1CC;  // 0x1CC
-    AbstractClass* IQ;  // 0x1D0
+    AbstractClass * IQ;  // 0x1D0
     unsigned int TechLevel;  // 0x1D4
     unsigned char __pad_1D8;  // 0x1D8
     char __pad_1D9[3];  // 0x1D9
@@ -177,7 +177,7 @@ struct HouseClass {
     bool HouseClass_field_bool_24B;  // 0x24B
     int iqLevel2;  // 0x24C
     int aiMode;  // 0x250
-    SuperClass** supers;  // 0x254
+    SuperClass * * supers;  // 0x254
     int supersCount;  // 0x258
     int supersCapacity;  // 0x25C
     int lastBuiltBuildingType;  // 0x260
@@ -248,17 +248,17 @@ struct HouseClass {
     float costDefensesMult;  // 0x53A0
     int powerOutput;  // 0x53A4
     int powerDrain;  // 0x53A8
-    FactoryClass* primaryForAircraft;  // 0x53AC
-    FactoryClass* primaryForInfantry;  // 0x53B0
-    FactoryClass* primaryForVehicles;  // 0x53B4
-    FactoryClass* primaryForShips;  // 0x53B8
-    FactoryClass* primaryForBuildings;  // 0x53BC
-    FactoryClass* primaryUnused1;  // 0x53C0
-    FactoryClass* primaryUnused2;  // 0x53C4
-    FactoryClass* primaryUnused3;  // 0x53C8
-    FactoryClass* primaryForDefenses;  // 0x53CC
+    FactoryClass * primaryForAircraft;  // 0x53AC
+    FactoryClass * primaryForInfantry;  // 0x53B0
+    FactoryClass * primaryForVehicles;  // 0x53B4
+    FactoryClass * primaryForShips;  // 0x53B8
+    FactoryClass * primaryForBuildings;  // 0x53BC
+    FactoryClass * primaryUnused1;  // 0x53C0
+    FactoryClass * primaryUnused2;  // 0x53C4
+    FactoryClass * primaryUnused3;  // 0x53C8
+    FactoryClass * primaryForDefenses;  // 0x53CC
     int HouseClass_field_53D0[3];  // 0x53D0
-    void* ourFlagCoords;  // 0x53DC
+    void * ourFlagCoords;  // 0x53DC
     char killedUnitsOfHouses[80];  // 0x53E0
     int totalKilledUnits;  // 0x5430
     char killedBuildingsOfHouses[80];  // 0x5434
@@ -266,8 +266,8 @@ struct HouseClass {
     unsigned char __pad_5488;  // 0x5488
     char __pad_5489[3];  // 0x5489
     unsigned int HouseClass_field_548C;  // 0x548C
-    void* baseSpawnCell;  // 0x5490
-    void* baseCenter;  // 0x5494
+    void * baseSpawnCell;  // 0x5490
+    void * baseCenter;  // 0x5494
     unsigned int unknown5498;  // 0x5498
     unsigned int HouseClass_field_549C;  // 0x549C
     unsigned int HouseClass_field_54A0;  // 0x54A0
@@ -286,13 +286,13 @@ struct HouseClass {
     unsigned int HouseClass_field_54D4;  // 0x54D4
     unsigned int HouseClass_field_54D8;  // 0x54D8
     unsigned int HouseClass_field_54DC;  // 0x54DC
-    FactoryClass* HouseClass_field_54E0;  // 0x54E0
+    FactoryClass * HouseClass_field_54E0;  // 0x54E0
     char radarVisibleTo[4];  // 0x54E4
     int siloMoney;  // 0x54E8
     int preferredTargetType;  // 0x54EC
-    void* preferredTargetCell;  // 0x54F0
-    void* preferredDefensiveCell;  // 0x54F4
-    void* preferredDefensiveCell2;  // 0x54F8
+    void * preferredTargetCell;  // 0x54F0
+    void * preferredDefensiveCell;  // 0x54F4
+    void * preferredDefensiveCell2;  // 0x54F8
     int preferredDefensiveCellStartTime;  // 0x54FC
     int ownedBuildingTypes[2];  // 0x5500
     char ownedUnitTypes[8];  // 0x5508
@@ -314,10 +314,10 @@ struct HouseClass {
     char attackDelayA[4];  // 0x55F8
     char attackDelayB[4];  // 0x55FC
     int enemyHouseIndex;  // 0x5600
-    AngerStruct* angerNodes;  // 0x5604
+    AngerStruct * angerNodes;  // 0x5604
     int angerNodesCount;  // 0x5608
     int angerNodesCapacity;  // 0x560C
-    ScoutStruct* scoutNodes;  // 0x5610
+    ScoutStruct * scoutNodes;  // 0x5610
     int scoutNodesCount;  // 0x5614
     char scoutNodesCapacity[4];  // 0x5618
     char unkTimer3[12];  // 0x561C
@@ -367,10 +367,10 @@ struct HouseClass {
     unsigned char __pad_16025;  // 0x16025
     char uiName[42];  // 0x16026
     int colorSchemeIndex;  // 0x16050
-    void* startingCell;  // 0x16054
+    void * startingCell;  // 0x16054
     unsigned int startingAllies;  // 0x16058
     unsigned int unknown16060;  // 0x1605C
-    void** waypointPath;  // 0x16060
+    void * * waypointPath;  // 0x16060
     int waypointPathCount;  // 0x16064
     int waypointPathCapacity;  // 0x16068
     unsigned int u32_1607C;  // 0x1606C
@@ -386,6 +386,10 @@ struct HouseClass {
     char totalOwnedVehicleCost[4];  // 0x1609C
     char totalOwnedAircraftCost[4];  // 0x160A0
     unsigned int HouseClass_field_160B4;  // 0x160A4
+    unsigned int u32_160A8;  // 0x160A8
+    unsigned int u32_160AC;  // 0x160AC
+    unsigned int u32_160B0;  // 0x160B0
+    unsigned int u32_160B4;  // 0x160B4
 // --- flat members (BEGIN) ---
 #if !defined(GAMEMD_TREE_UNIVERSE) && !defined(GAMEMD_E4_VECTOR_TREE_TRUTH)
 #else

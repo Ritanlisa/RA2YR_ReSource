@@ -26,11 +26,11 @@ struct ParticleTypeClass;  // fix_fwd_type_supply
 
 struct BuildingTypeClass {
     void * ptr_0;  // 0x0
-    void* ptr_4;  // 0x4
-    void* ptr_8;  // 0x8
-    void* ptr_C;  // 0xC
+    void * ptr_4;  // 0x4
+    void * ptr_8;  // 0x8
+    void * ptr_C;  // 0xC
     unsigned int uniqueId;  // 0x10
-    void* abstractFlags;  // 0x14
+    void * abstractFlags;  // 0x14
     unsigned int nextArrayIndex;  // 0x18
     char referenceCount[4];  // 0x1C
     unsigned int NeedsSaveOrLink;  // 0x20
@@ -55,10 +55,10 @@ struct BuildingTypeClass {
     unsigned char unused_9B;  // 0x9B
     char Armor[4];  // 0x9C
     int Strength;  // 0xA0
-    SHPStruct* Image;  // 0xA4
+    SHPStruct * Image;  // 0xA4
     bool ImageAllocated;  // 0xA8
     char __pad_0A9[3];  // 0xA9
-    SHPStruct* AlphaImage;  // 0xAC
+    SHPStruct * AlphaImage;  // 0xAC
     char MainVoxel[4];  // 0xB0
     char TurretVoxel[4];  // 0xB4
     VoxelStruct* __pad_0B8;  // 0xB8
@@ -134,7 +134,7 @@ struct BuildingTypeClass {
     unsigned int __pad_3C4;  // 0x3C4
     double DeployTime;  // 0x3C8
     int FireAngle;  // 0x3D0
-    void* PipScale;  // 0x3D4
+    void * PipScale;  // 0x3D4
     bool PipsDrawForAll;  // 0x3D8
     char __pad_3D9[3];  // 0x3D9
     int LeptonMindControlOffset;  // 0x3DC
@@ -367,7 +367,7 @@ struct BuildingTypeClass {
     unsigned int Spawned;  // 0xD2C
     unsigned int Spawns;  // 0xD30
     unsigned int SpawnsNumber;  // 0xD34
-    UnitTypeClass* SpawnRegenRate;  // 0xD38
+    UnitTypeClass * SpawnRegenRate;  // 0xD38
     char SpawnReloadRate[2];  // 0xD3C
     bool BalloonHover;  // 0xD3E
     char __pad_D3F[1];  // 0xD3F
@@ -400,7 +400,7 @@ struct BuildingTypeClass {
     int Palette;  // 0xDC4
     char __pad_DC8[44];  // 0xDC8
     int align_DF4;  // 0xDF4
-    void* ArrayIndex;  // 0xDF8
+    void * ArrayIndex;  // 0xDF8
     SHPStruct* __pad_DFC;  // 0xDFC
     unsigned int qE00;  // 0xE00
     unsigned char u32_E04;  // 0xE04
@@ -417,8 +417,8 @@ struct BuildingTypeClass {
     int LightBlueTint;  // 0xE40
     int PrimaryFirePixelOffset[2];  // 0xE44
     int SecondaryFirePixelOffset[2];  // 0xE4C
-    OverlayTypeClass* ToOverlay;  // 0xE54
-    SHPStruct* ToTile;  // 0xE58
+    OverlayTypeClass * ToOverlay;  // 0xE54
+    SHPStruct * ToTile;  // 0xE58
     char BuildupFile_0x10;  // 0xE5C
     char __pad_E5D[3];  // 0xE5D
     unsigned char __pad_E60;  // 0xE60
@@ -433,8 +433,8 @@ struct BuildingTypeClass {
     char __pad_E88[4];  // 0xE88
     unsigned char __pad_E8C;  // 0xE8C
     char __pad_E8D[19];  // 0xE8D
-    UnitTypeClass* FreeUnit_d;  // 0xEA0
-    InfantryTypeClass* SecretInfantry_d;  // 0xEA4
+    UnitTypeClass * FreeUnit_d;  // 0xEA0
+    InfantryTypeClass * SecretInfantry_d;  // 0xEA4
     char __pad_EA8[8];  // 0xEA8
     int BuildingTypeClass_field_EB0;  // 0xEB0
     int Adjacent;  // 0xEB4
@@ -446,13 +446,13 @@ struct BuildingTypeClass {
     int DeployFacing;  // 0xEDC
     int PowerBonus;  // 0xEE0
     int PowerDrain;  // 0xEE4
-    BuildingAnimStruct* BuildingAnim_0x15;  // 0xEE8
+    BuildingAnimStruct * BuildingAnim_0x15;  // 0xEE8
     int ExtraPowerDrain;  // 0xEEC
-    SHPStruct* DeployingAnim_d;  // 0xEF0
+    SHPStruct * DeployingAnim_d;  // 0xEF0
     unsigned int DeployingAnimLoaded;  // 0xEF4
-    SHPStruct* UnderDoorAnim;  // 0xEF8
+    SHPStruct * UnderDoorAnim;  // 0xEF8
     unsigned int UnderDoorAnimLoaded;  // 0xEFC
-    SHPStruct* Rubble;  // 0xF00
+    SHPStruct * Rubble;  // 0xF00
     int BuildingAnimFrame[6];  // 0xF04
     char BuildingAnim[84];  // 0xF1C
     unsigned char __pad_F70;  // 0xF70
@@ -460,32 +460,32 @@ struct BuildingTypeClass {
     char q11B0[4];  // 0x11B0
     char __pad_11B4[812];  // 0x11B4
     int Upgrades_d;  // 0x14E0
-    SHPStruct* DeployingAnim_2;  // 0x14E4
+    SHPStruct * DeployingAnim_2;  // 0x14E4
     bool DeployingAnimLoaded_d;  // 0x14E8
     char __pad_14E9[3];  // 0x14E9
-    SHPStruct* UnderDoorAnim_d;  // 0x14EC
+    SHPStruct * UnderDoorAnim_d;  // 0x14EC
     bool UnderDoorAnimLoaded_d;  // 0x14F0
     char __pad_14F1[3];  // 0x14F1
-    SHPStruct* Rubble_d;  // 0x14F4
+    SHPStruct * Rubble_d;  // 0x14F4
     bool RubbleLoaded_d;  // 0x14F8
     char __pad_14F9[3];  // 0x14F9
-    SHPStruct* RoofDeployingAnim;  // 0x14FC
+    SHPStruct * RoofDeployingAnim;  // 0x14FC
     bool RoofDeployingAnimLoaded;  // 0x1500
     char __pad_1501[3];  // 0x1501
-    SHPStruct* UnderRoofDoorAnim;  // 0x1504
+    SHPStruct * UnderRoofDoorAnim;  // 0x1504
     bool UnderRoofDoorAnimLoaded;  // 0x1508
     char __pad_1509[3];  // 0x1509
-    SHPStruct* DoorAnim;  // 0x150C
-    SHPStruct* SpecialZOverlay;  // 0x1510
+    SHPStruct * DoorAnim;  // 0x150C
+    SHPStruct * SpecialZOverlay;  // 0x1510
     int SpecialZOverlayZAdjust;  // 0x1514
-    SHPStruct* BibShape;  // 0x1518
+    SHPStruct * BibShape;  // 0x1518
     bool BibShapeLoaded;  // 0x151C
     char __pad_151D[3];  // 0x151D
     int NormalZAdjust;  // 0x1520
     int AntiAirValue;  // 0x1524
     int AntiArmorValue;  // 0x1528
-    SHPStruct* AntiInfantryValue;  // 0x152C
-    void* ZShapePointMove;  // 0x1530
+    SHPStruct * AntiInfantryValue;  // 0x152C
+    void * ZShapePointMove;  // 0x1530
     SHPStruct* __pad_1534;  // 0x1534
     int BuildingTypeClass_field_1538;  // 0x1538
     int BuildingTypeClass_field_153C;  // 0x153C
@@ -504,7 +504,7 @@ struct BuildingTypeClass {
     unsigned char __pad_1553;  // 0x1553
     int CaptureEvaEvent;  // 0x1554
     int ProduceCashStartup;  // 0x1558
-    SHPStruct* ProduceCashAmount;  // 0x155C
+    SHPStruct * ProduceCashAmount;  // 0x155C
     int ProduceCashDelay;  // 0x1560
     int InfantryGainSelfHeal;  // 0x1564
     int UnitsGainSelfHeal;  // 0x1568
@@ -527,7 +527,7 @@ struct BuildingTypeClass {
     int MaxNumberOccupants;  // 0x1580
     bool ShowOccupantPips;  // 0x1584
     char __pad_1585[3];  // 0x1585
-    void* MuzzleFlash;  // 0x1588
+    void * MuzzleFlash;  // 0x1588
     unsigned char __pad_158C;  // 0x158C
     char __pad_158D[75];  // 0x158D
     int DamageFireOffset;  // 0x15D8
@@ -538,7 +538,7 @@ struct BuildingTypeClass {
     char RemoveOccupy[4];  // 0x1624
     unsigned char __pad_1628;  // 0x1628
     char __pad_1629[59];  // 0x1629
-    void* AddOccupy;  // 0x1664
+    void * AddOccupy;  // 0x1664
     unsigned char __pad_1668;  // 0x1668
     char __pad_1669[59];  // 0x1669
     bool Radar;  // 0x16A4
@@ -611,7 +611,7 @@ struct BuildingTypeClass {
     bool ConcentricRadialIndicator;  // 0x1708
     unsigned char __pad_1709;  // 0x1709
     char __pad_170A[2];  // 0x170A
-    SHPStruct* PsychicDetectionRadius;  // 0x170C
+    SHPStruct * PsychicDetectionRadius;  // 0x170C
     int BarrelStartPitch;  // 0x1710
     char VoxelBarrelFile;  // 0x1714
     char __pad_1715[3];  // 0x1715

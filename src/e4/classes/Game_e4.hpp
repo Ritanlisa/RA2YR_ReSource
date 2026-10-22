@@ -54,6 +54,22 @@ struct Game {
     int q680;  // 0x680
     char __pad_684[116];  // 0x684
     int q6F8;  // 0x6F8
+    char __pad_6FC[2792];  // 0x6FC
+    unsigned int u32_11E4;  // 0x11E4
+    char __pad_11E8[4];  // 0x11E8
+    unsigned int u32_11EC;  // 0x11EC
+    char __pad_11F0[700];  // 0x11F0
+    unsigned int u32_14AC;  // 0x14AC
+    char __pad_14B0[4];  // 0x14B0
+    unsigned int u32_14B4;  // 0x14B4
+    char __pad_14B8[4];  // 0x14B8
+    unsigned char u8_14BC;  // 0x14BC
+    unsigned char u8_14BD;  // 0x14BD
+    char __pad_14BE[27];  // 0x14BE
+    unsigned char u8_14D9;  // 0x14D9
+    unsigned char u8_14DA;  // 0x14DA
+    char __pad_14DB[33];  // 0x14DB
+    unsigned int u32_14FC;  // 0x14FC
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     char LoadSaved();

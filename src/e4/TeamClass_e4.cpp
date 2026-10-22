@@ -1996,7 +1996,7 @@ AbstractClass * * TeamClass::FindClosestEnemy(AbstractClass * aP1, AbstractClass
                   v41 = *(unsigned int *)(v6 + 164); /*0x6eb251*/
                   v33 += v26; /*0x6eb25e*/
                   ++v22; /*0x6eb262*/
-                  if ( *(unsigned char *)&this->buildingType->u32_A7 /*0x6eb271*/
+                  if ( *(unsigned char *)&this->buildingType->u8_A7 /*0x6eb271*/
                     && (*(unsigned __int8 (**)(int))(*&v6->q1380))(v6) )
                   {
                     v5 += *v24; /*0x6eb27f*/

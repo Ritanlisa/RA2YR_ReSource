@@ -7,7 +7,7 @@
 namespace gamemd {
 
 struct LocomotionClass {
-    void* ptr_0;  // 0x0
+    void * ptr_0;  // 0x0
     void * ptr_4;  // 0x4
     int Owner;  // 0x8
     FootClass * LinkedTo;  // 0xC

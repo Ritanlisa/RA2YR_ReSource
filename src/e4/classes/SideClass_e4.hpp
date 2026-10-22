@@ -26,8 +26,14 @@ struct SideClass {
     char name[49];  // 0x64
     unsigned char tail_95;  // 0x95
     char __pad_96[2];  // 0x96
-    int* houseTypes_d;  // 0x98
-    void* houseTypesCount_d;  // 0x9C
+    int * houseTypes_d;  // 0x98
+    void * houseTypesCount_d;  // 0x9C
+    unsigned int q0A0;  // 0xA0
+    unsigned char q0A4;  // 0xA4
+    unsigned char u8_A5;  // 0xA5
+    char __pad_A6[2];  // 0xA6
+    unsigned int u32_A8;  // 0xA8
+    unsigned int u32_AC;  // 0xAC
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int FindByName(void *a1);

@@ -22,12 +22,12 @@ struct DSurface {
     int q010;  // 0x10
     unsigned int u32_14;  // 0x14
     unsigned int u32_18;  // 0x18
-    void* u32_1C;  // 0x1C
+    void * u32_1C;  // 0x1C
     unsigned int u32_20;  // 0x20
     int q024;  // 0x24
     int q028;  // 0x28
     char __pad_2C[20];  // 0x2C
-    void* q040;  // 0x40
+    void * q040;  // 0x40
     unsigned int q044;  // 0x44
     char __pad_48[16];  // 0x48
     unsigned char q058;  // 0x58
@@ -77,6 +77,51 @@ struct DSurface {
     unsigned char q440;  // 0x440
     char __pad_441[211];  // 0x441
     int q514;  // 0x514
+    char __pad_518[460];  // 0x518
+    unsigned int u32_6E4;  // 0x6E4
+    unsigned int u32_6E8;  // 0x6E8
+    unsigned int u32_6EC;  // 0x6EC
+    unsigned int u32_6F0;  // 0x6F0
+    unsigned int u32_6F4;  // 0x6F4
+    unsigned int u32_6F8;  // 0x6F8
+    char __pad_6FC[24];  // 0x6FC
+    unsigned short u16_714;  // 0x714
+    char __pad_716[6];  // 0x716
+    unsigned int u32_71C;  // 0x71C
+    unsigned int u32_720;  // 0x720
+    unsigned int u32_724;  // 0x724
+    char __pad_728[8];  // 0x728
+    unsigned int u32_730;  // 0x730
+    unsigned int u32_734;  // 0x734
+    unsigned int u32_738;  // 0x738
+    unsigned int u32_73C;  // 0x73C
+    char __pad_740[4];  // 0x740
+    unsigned int u32_744;  // 0x744
+    unsigned int u32_748;  // 0x748
+    unsigned short u16_74C;  // 0x74C
+    char __pad_74E[6];  // 0x74E
+    unsigned int u32_754;  // 0x754
+    unsigned short u16_758;  // 0x758
+    char __pad_75A[6];  // 0x75A
+    unsigned int u32_760;  // 0x760
+    unsigned int u32_764;  // 0x764
+    unsigned int u32_768;  // 0x768
+    unsigned int u32_76C;  // 0x76C
+    unsigned int u32_770;  // 0x770
+    unsigned int u32_774;  // 0x774
+    unsigned int u32_778;  // 0x778
+    char __pad_77C[16];  // 0x77C
+    unsigned int u32_78C;  // 0x78C
+    char __pad_790[4];  // 0x790
+    unsigned int u32_794;  // 0x794
+    unsigned int u32_798;  // 0x798
+    unsigned int u32_79C;  // 0x79C
+    char __pad_7A0[8];  // 0x7A0
+    unsigned int u32_7A8;  // 0x7A8
+    char __pad_7AC[8];  // 0x7AC
+    unsigned int u32_7B4;  // 0x7B4
+    unsigned int u32_7B8;  // 0x7B8
+    unsigned int u32_7BC;  // 0x7BC
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     AbstractClass * Construct(int aP1, int aP2, char aP3, char a5, void *a5_1 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0, void *a9 = 0);

@@ -27,9 +27,9 @@ struct AircraftTypeClass;  // fix_fwd_type_supply
 
 struct AircraftClass {
     unsigned int ptr_0;  // 0x0
-    void* ptr_4;  // 0x4
-    void* ptr_8;  // 0x8
-    void* ptr_C;  // 0xC
+    void * ptr_4;  // 0x4
+    void * ptr_8;  // 0x8
+    void * ptr_C;  // 0xC
     unsigned int uniqueId;  // 0x10
     unsigned int abstractFlags;  // 0x14
     unsigned int nextArrayIndex;  // 0x18
@@ -38,9 +38,9 @@ struct AircraftClass {
     unsigned int objectTypeFlags;  // 0x24
     unsigned int owningHouseIndex;  // 0x28
     char fallRate[4];  // 0x2C
-    ObjectClass* nextObject;  // 0x30
-    TagClass* attachedTag;  // 0x34
-    BombClass* attachedBomb;  // 0x38
+    ObjectClass * nextObject;  // 0x30
+    TagClass * attachedTag;  // 0x34
+    BombClass * attachedBomb;  // 0x38
     char ambientSoundController[20];  // 0x3C
     char customSound_controller[20];  // 0x50
     int customSound;  // 0x64
@@ -58,7 +58,7 @@ struct AircraftClass {
     bool isSelected;  // 0x83
     bool hasParachute;  // 0x84
     char alignmentPadding85[3];  // 0x85
-    AnimClass* parachute;  // 0x88
+    AnimClass * parachute;  // 0x88
     bool onBridge;  // 0x8C
     bool isFallingDown;  // 0x8D
     bool wasFallingDown;  // 0x8E
@@ -70,9 +70,9 @@ struct AircraftClass {
     bool isVisible;  // 0x99
     unsigned short alignmentPadding99;  // 0x9A
     char location[12];  // 0x9C
-    LineTrail* lineTrailer;  // 0xA8
-    void* currentMission;  // 0xAC
-    void* suspendedMission;  // 0xB0
+    void * lineTrailer;  // 0xA8
+    void * currentMission;  // 0xAC
+    void * suspendedMission;  // 0xB0
     char queuedMission[4];  // 0xB4
     bool missionQueued;  // 0xB8
     char alignmentPaddingB9[3];  // 0xB9
@@ -114,7 +114,7 @@ struct AircraftClass {
     char airstrikeTintTimer[12];  // 0x1B8
     unsigned int airstrikeTintStage;  // 0x1C4
     unsigned int forceShielded;  // 0x1C8
-    TechnoClass* isDeactivated;  // 0x1CC
+    TechnoClass * isDeactivated;  // 0x1CC
     int drainingMe;  // 0x1D0
     int drainAnim;  // 0x1D4
     char isDisguisedFlag[1];  // 0x1D8
@@ -129,7 +129,7 @@ struct AircraftClass {
     unsigned int __pad_20C;  // 0x20C
     int displayProductionTo;  // 0x210
     int controlGroup;  // 0x214
-    AbstractClass* Owner;  // 0x218
+    AbstractClass * Owner;  // 0x218
     int owner;  // 0x21C
     int cloakState;  // 0x220
     int cloakProgress[7];  // 0x224
@@ -148,21 +148,21 @@ struct AircraftClass {
     bool isWarpingOut;  // 0x271
     bool isWarpEffectActive;  // 0x272
     unsigned char unusedField273;  // 0x273
-    TemporalClass* temporalUsing;  // 0x274
-    TemporalClass* temporalTargetingMe;  // 0x278
+    TemporalClass * temporalUsing;  // 0x274
+    TemporalClass * temporalTargetingMe;  // 0x278
     bool isImmobilized;  // 0x27C
     char q27D[3];  // 0x27D
     int owningHouseIndex0;  // 0x280
     int isBeingWarpedOut_d;  // 0x284
     char temporalUsing_d[12];  // 0x288
-    void* airstrike;  // 0x294
+    void * airstrike;  // 0x294
     char isBerserk[1];  // 0x298
     char q299[3];  // 0x299
     int isBerserk_duration_left;  // 0x29C
     unsigned int sprayOffsetIndex;  // 0x2A0
     bool isUncrushable;  // 0x2A4
     char q2A5[3];  // 0x2A5
-    FootClass* airstrike_d;  // 0x2A8
+    FootClass * airstrike_d;  // 0x2A8
     int locomotorTarget;  // 0x2AC
     int locomotorSource;  // 0x2B0
     AbstractClass* __pad_2B4;  // 0x2B4
@@ -184,8 +184,8 @@ struct AircraftClass {
     int diskLaserChargeState;  // 0x2F8
     int ammo;  // 0x2FC
     int unitValue;  // 0x300
-    ParticleSystemClass* fireParticles;  // 0x304
-    ParticleSystemClass* sparkParticles;  // 0x308
+    ParticleSystemClass * fireParticles;  // 0x304
+    ParticleSystemClass * sparkParticles;  // 0x308
     int ambientParticles;  // 0x30C
     int ammo_d;  // 0x310
     unsigned int __pad_314;  // 0x314
@@ -196,7 +196,7 @@ struct AircraftClass {
     int damageParticles_2;  // 0x324
     int railgunParticles_2;  // 0x328
     int auxParticles1;  // 0x32C
-    TeamClass* auxParticles2;  // 0x330
+    TeamClass * auxParticles2;  // 0x330
     int firingParticles;  // 0x334
     int waveEffect_d;  // 0x338
     unsigned int tiltSidewaysAngle;  // 0x33C
@@ -243,13 +243,13 @@ struct AircraftClass {
     bool __pad_425;  // 0x425
     char wasAlreadyCrashing[1];  // 0x426
     char isBeingManipulated[1];  // 0x427
-    TechnoClass* manipulatedByUnit_d;  // 0x428
-    HouseClass* chronoWarpedByHouse_d;  // 0x42C
+    TechnoClass * manipulatedByUnit_d;  // 0x428
+    HouseClass * chronoWarpedByHouse_d;  // 0x42C
     bool isChronoImmuneFlag_d;  // 0x430
     bool isMouseHovering;  // 0x431
     bool shouldBeReselectOnUnlimbo;  // 0x432
     unsigned char alignmentPadding433;  // 0x433
-    TeamClass* previousTeam;  // 0x434
+    TeamClass * previousTeam;  // 0x434
     bool isCountedAsOwned_special;  // 0x438
     bool isAbsorbed_d;  // 0x439
     unsigned char __pad_43A;  // 0x43A
@@ -281,14 +281,14 @@ struct AircraftClass {
     unsigned char __pad_4FA;  // 0x4FA
     char __pad_4FB[1];  // 0x4FB
     unsigned int unknown_4FC;  // 0x4FC
-    TechnoClass* queueUpToEnter;  // 0x500
+    TechnoClass * queueUpToEnter;  // 0x500
     unsigned int empLockRemaining;  // 0x504
     unsigned int threatPosed;  // 0x508
     unsigned int shouldLoseTarget;  // 0x50C
-    RadBeam* firingRadBeam;  // 0x510
-    void* planningToken;  // 0x514
-    ObjectTypeClass* disguiseAsType;  // 0x518
-    HouseClass* disguisedAsHouse;  // 0x51C
+    RadBeam * firingRadBeam;  // 0x510
+    void * planningToken;  // 0x514
+    ObjectTypeClass * disguiseAsType;  // 0x518
+    HouseClass * disguisedAsHouse;  // 0x51C
     int planningPathIdx;  // 0x520
     short unknownShort524;  // 0x524
     short unknownShort526;  // 0x526
@@ -334,7 +334,7 @@ struct AircraftClass {
     char FootClass_field_timer_650[12];  // 0x650
     char sightTimer[12];  // 0x65C
     char blockagePathTimer[12];  // 0x668
-    ILocomotion* locomotor;  // 0x674
+    ILocomotion * locomotor;  // 0x674
     int unknownPoint3d678[3];  // 0x678
     char tubeIndex[1];  // 0x684
     char unknownBool685;  // 0x685
@@ -371,13 +371,13 @@ struct AircraftClass {
     bool FootClass_field_bool_6B8;  // 0x6B8
     char m_padding_6B9[3];  // 0x6B9
     int m_unused_6BC;  // 0x6BC
-    void* ptr_6C0;  // 0x6C0
-    AircraftTypeClass* Type;  // 0x6C4
+    void * ptr_6C0;  // 0x6C0
+    AircraftTypeClass * Type;  // 0x6C4
     bool AircraftClass_field_bool_6C8;  // 0x6C8
     bool HasPassengers;  // 0x6C9
     bool IsKamikaze;  // 0x6CA
     unsigned char __pad_6CB;  // 0x6CB
-    AircraftTypeClass* AircraftClass_field_6CC;  // 0x6CC
+    AircraftTypeClass * AircraftClass_field_6CC;  // 0x6CC
     bool AircraftClass_field_bool_6D0;  // 0x6D0
     bool AircraftClass_field_bool_6D1;  // 0x6D1
     bool AircraftClass_field_bool_6D2;  // 0x6D2

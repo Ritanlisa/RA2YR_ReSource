@@ -19,6 +19,14 @@ struct Coord {
     unsigned int u32_B4;  // 0xB4
     char __pad_B8[132];  // 0xB8
     int q13C;  // 0x13C
+    unsigned int u32_140;  // 0x140
+    char __pad_144[4940];  // 0x144
+    unsigned int u32_1490;  // 0x1490
+    char __pad_1494[4];  // 0x1494
+    unsigned int u32_1498;  // 0x1498
+    char __pad_149C[8];  // 0x149C
+    unsigned int u32_14A4;  // 0x14A4
+    unsigned int u32_14A8;  // 0x14A8
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int ToGridIndex(int aP1, int aP2, int aP3);  // 0x4138C0

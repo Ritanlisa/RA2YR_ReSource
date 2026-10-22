@@ -14,6 +14,10 @@ struct Function {
     int q010;  // 0x10
     int q014;  // 0x14
     unsigned int q018;  // 0x18
+    char __pad_1C[276];  // 0x1C
+    unsigned int u32_130;  // 0x130
+    char __pad_134[76];  // 0x134
+    unsigned int u32_180;  // 0x180
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int Method_424CA0(int a2);

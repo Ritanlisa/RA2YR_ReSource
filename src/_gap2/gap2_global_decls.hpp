@@ -4894,6 +4894,9 @@ public:  // g57c5 W4 supply slot
     struct ObjectPlacement {
     int __pad_0;  // 0x0
     int q004;  // 0x4
+    char __pad_8[284];  // 0x8
+    unsigned int u32_124;  // 0x124
+    unsigned int u32_128;  // 0x128
         static int * CalcPosition(void * aP1, void * aP2, void * aP3, void * aP4, void * aP5, void * aP6);  // 0x481180 (G42.39a static-call supply)
 };
 #ifndef GAMEMD_E4_LinkedList  // G57w8: e4 flat carrier wins where explicitly included (C2011 vs LinkedList_flat_e4.hpp)

@@ -11,16 +11,16 @@ struct Coord;  // fix_fwd_type_supply
 struct TeleportLocomotionClass;  // fix_fwd_type_supply
 
 struct JumpjetLocomotionClass {
-    void* ptr_0;  // 0x0
-    void* ptr_4;  // 0x4
-    void* Owner;  // 0x8
-    void* LinkedTo;  // 0xC
+    void * ptr_0;  // 0x0
+    void * ptr_4;  // 0x4
+    void * Owner;  // 0x8
+    void * LinkedTo;  // 0xC
     char Powered[1];  // 0x10
     char Dirty;  // 0x11
     unsigned char __pad_012;  // 0x12
     char __pad_13[1];  // 0x13
-    void* RefCount;  // 0x14
-    void* ptr_8;  // 0x18
+    void * RefCount;  // 0x14
+    void * ptr_8;  // 0x18
     char Speed[4];  // 0x1C
     int Climb;  // 0x20
     float Crash;  // 0x24
@@ -40,7 +40,7 @@ struct JumpjetLocomotionClass {
     unsigned char unknown_4D;  // 0x4D
     unsigned char unknown_4E;  // 0x4E
     unsigned char unknown_4F;  // 0x4F
-    State* CurrentState;  // 0x50
+    State * CurrentState;  // 0x50
     unsigned char __pad_054;  // 0x54
     char __pad_55[23];  // 0x55
     char unknown_6C[1];  // 0x6C
@@ -60,7 +60,25 @@ struct JumpjetLocomotionClass {
     unsigned char unknown_91;  // 0x91
     unsigned char unknown_92;  // 0x92
     unsigned char unknown_93;  // 0x93
-    ILocomotion* Piggybackee;  // 0x94
+    ILocomotion * Piggybackee;  // 0x94
+    char __pad_98[76];  // 0x98
+    unsigned int q0E4;  // 0xE4
+    char __pad_E8[12];  // 0xE8
+    unsigned int u32_F4;  // 0xF4
+    char __pad_F8[4];  // 0xF8
+    unsigned int u32_FC;  // 0xFC
+    unsigned int u32_100;  // 0x100
+    unsigned int u32_104;  // 0x104
+    unsigned int u32_108;  // 0x108
+    char __pad_10C[424];  // 0x10C
+    unsigned int u32_2B4;  // 0x2B4
+    char __pad_2B8[285];  // 0x2B8
+    unsigned char u8_3D5;  // 0x3D5
+    char __pad_3D6[294];  // 0x3D6
+    unsigned int u32_4FC;  // 0x4FC
+    char __pad_500[12];  // 0x500
+    unsigned char u8_50C;  // 0x50C
+    char __pad_50D[3];  // 0x50D
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int Update2(void * a2);

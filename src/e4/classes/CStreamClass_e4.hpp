@@ -6,7 +6,7 @@
 namespace gamemd {
 
 struct CStreamClass {
-    void* Release_slot;  // 0x0
+    void * Release_slot;  // 0x0
     unsigned int CStreamClass_field_0x04;  // 0x4
     int CStreamClass_field_0x08;  // 0x8
     int q00C;  // 0xC

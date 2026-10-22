@@ -1476,10 +1476,10 @@ public:
     virtual int ProcessCell(int16_t* a2, int a3); // 0x6D7F20  // G42.35 def-truth sync
 
     uint8_t q004[4];
-    unsigned int TacticalClass_field_D64;  // G42.35 til-name member sync (SetCameraPosition 0x6D6040)
-    unsigned int TacticalClass_field_D68;  // G42.35
-    unsigned int TacticalClass_field_D74;  // G42.35
-    unsigned int TacticalClass_field_D78;  // G42.35
+    unsigned int u32_D64;  // G42.35 til-name member sync (SetCameraPosition 0x6D6040)
+    unsigned int u32_D68;  // G42.35
+    unsigned int u32_D74;  // G42.35
+    unsigned int u32_D78;  // G42.35
     int redrawing;  // G42.35 (0x6D605F)
 
     unsigned int u32_B0;  // X10 supply (member_lookup)

@@ -6,7 +6,7 @@
 namespace gamemd {
 
 struct SwizzleManagerClass {
-    void* ptr_0;  // 0x0
+    void * ptr_0;  // 0x0
     int __pad_004;  // 0x4
     int q008;  // 0x8
     int q00C;  // 0xC
@@ -16,6 +16,10 @@ struct SwizzleManagerClass {
     int u32_1C;  // 0x1C
     int q020;  // 0x20
     int q024;  // 0x24
+    char __pad_28[1];  // 0x28
+    unsigned char u8_29;  // 0x29
+    char __pad_2A[2];  // 0x2A
+    unsigned int u32_2C;  // 0x2C
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int Add(SwizzleManagerClass * aP0, SwizzleManagerClass * aP1, unsigned int * a2);

@@ -6,8 +6,10 @@
 namespace gamemd {
 
 struct Queue {
-// --- flat members (BEGIN) ---
+    unsigned int u32_0;  // 0x0
+    char __pad_4[4];  // 0x4
     unsigned int u32_8;  // 0x8
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int GetNext(void *a1 = 0);
 };
