@@ -7,15 +7,39 @@ namespace gamemd {
 
 struct ScoreScreen {
     int __pad_0;  // 0x0
-    unsigned int ScoreScreen_field_0x04;  // 0x4
-    unsigned int ScoreScreen_field_0x08;  // 0x8
-    unsigned int ScoreScreen_field_0x0C;  // 0xC
-    unsigned int ScoreScreen_field_0x10;  // 0x10
-    AbstractClass* ScoreScreen_field_0x14;  // 0x14
+    unsigned int u32_4;  // 0x4
+    unsigned int u32_8;  // 0x8
+    unsigned int u32_C;  // 0xC
+    unsigned int u32_10;  // 0x10
+    int q014;  // 0x14
     unsigned int u32_18;  // 0x18
-    int ScoreScreen_field_0x1C;  // 0x1C
-    int ScoreScreen_field_0x20;  // 0x20
-    int ScoreScreen_field_0x24;  // 0x24
+    int u32_1C;  // 0x1C
+    unsigned int u32_20;  // 0x20
+    unsigned char u32_24;  // 0x24
+    char __pad_25[7];  // 0x25
+    unsigned int u32_2C;  // 0x2C
+    char __pad_30[4];  // 0x30
+    unsigned int q034;  // 0x34
+    unsigned int u32_38;  // 0x38
+    unsigned int u32_3C;  // 0x3C
+    char __pad_40[4];  // 0x40
+    unsigned int u32_44;  // 0x44
+    char __pad_48[88];  // 0x48
+    unsigned char q0A0;  // 0xA0
+    char __pad_A1[479];  // 0xA1
+    unsigned int q280;  // 0x280
+    char __pad_284[296];  // 0x284
+    unsigned int u32_3AC;  // 0x3AC
+    unsigned int u32_3B0;  // 0x3B0
+    unsigned int u32_3B4;  // 0x3B4
+    unsigned char u32_3B8;  // 0x3B8
+    char __pad_3B9[3];  // 0x3B9
+    unsigned int u32_3BC;  // 0x3BC
+    unsigned int q3C0;  // 0x3C0
+    unsigned int u32_3C4;  // 0x3C4
+    unsigned int u32_3C8;  // 0x3C8
+    char __pad_3CC[4];  // 0x3CC
+    unsigned int u32_3D0;  // 0x3D0
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     unsigned int * Constructor(int aP1, int a3, int a4, void *a4_1 = 0);

@@ -326,16 +326,16 @@ int IPXManagerClass::GetAddress(int a2)
   IPXManagerClass *v6; // edx
   int v7; // esi
 
-  if ( !this->Initialized ) /*0x542353*/
+  if ( !this->Initialized[0] ) /*0x542353*/
     return 0; /*0x542353*/
-  if ( !this->Active ) /*0x54235a*/
+  if ( !this->Active[0] ) /*0x54235a*/
     return 0; /*0x54235a*/
   v3 = this->u32_44; /*0x542361*/
   if ( !v3 ) /*0x542366*/
     return 0; /*0x5423af*/
   if ( a2 != -1 ) /*0x54236f*/
   {
-    v4 = this->send(a2); /*0x542376*/
+    v4 = this->Socket(a2); /*0x542376*/
     if ( v4 != -1 ) /*0x54237c*/
       return *(unsigned int *)(*(unsigned int *)(*((unsigned int *)this + v4 + 10) + 4) + 40); /*0x542389*/
     return 0; /*0x54237c*/
@@ -343,7 +343,7 @@ int IPXManagerClass::GetAddress(int a2)
   result = 0; /*0x54238c*/
   if ( v3 > 0 ) /*0x542390*/
   {
-    v6 = &this->Active; /*0x542392*/
+    v6 = &this->Active[0]; /*0x542392*/
     v7 = this->u32_44; /*0x542395*/
     do /*0x5423a9*/
     {
@@ -368,16 +368,16 @@ int IPXManagerClass::SetAddress(int a2)
   IPXManagerClass *v6; // edx
   int v7; // esi
 
-  if ( !this->Initialized ) /*0x5423c3*/
+  if ( !this->Initialized[0] ) /*0x5423c3*/
     return 0; /*0x5423c3*/
-  if ( !this->Active ) /*0x5423ca*/
+  if ( !this->Active[0] ) /*0x5423ca*/
     return 0; /*0x5423ca*/
   v3 = this->u32_44; /*0x5423d1*/
   if ( !v3 ) /*0x5423d6*/
     return 0; /*0x54241f*/
   if ( a2 != -1 ) /*0x5423df*/
   {
-    v4 = this->send(a2); /*0x5423e6*/
+    v4 = this->Socket(a2); /*0x5423e6*/
     if ( v4 != -1 ) /*0x5423ec*/
       return *(unsigned int *)(*(unsigned int *)(*((unsigned int *)this + v4 + 10) + 4) + 56); /*0x5423f9*/
     return 0; /*0x5423ec*/
@@ -385,7 +385,7 @@ int IPXManagerClass::SetAddress(int a2)
   result = 0; /*0x5423fc*/
   if ( v3 > 0 ) /*0x542400*/
   {
-    v6 = &this->Active; /*0x542402*/
+    v6 = &this->Active[0]; /*0x542402*/
     v7 = this->u32_44; /*0x542405*/
     do /*0x542419*/
     {
@@ -415,7 +415,7 @@ unsigned int IPXManagerClass::GetQueueSize()
   v3 = 0; /*0x542457*/
   if ( this->u32_44 > 0 ) /*0x54245e*/
   {
-    v4 = &this->Active; /*0x542461*/
+    v4 = &this->Active[0]; /*0x542461*/
     do /*0x54247d*/
     {
       BridgeIndex = CellClass::GetBridgeIndex(*(CellClass **)(v4->Socket + 4)); /*0x542469*/
@@ -462,7 +462,7 @@ int IPXManagerClass::ProcessQueue() {
   result = this->u32_44; /*0x542526*/
   if ( result > 0 ) /*0x54252b*/
   {
-    v4 = &this->q014; /*0x542533*/
+    v4 = &this->q028; /*0x542533*/
     v5 = (int *)&unk_A8B5B4; /*0x542536*/
     do /*0x54260c*/
     {
@@ -516,7 +516,7 @@ int IPXManagerClass::Flush(char a2)  // g57b5 W4: raw 真值补参 (a2)
   v3 = 0; /*0x542ec4*/
   if ( this->u32_44 > 0 ) /*0x542ecb*/
   {
-    v4 = &this->Active; /*0x542ed3*/
+    v4 = &this->Active[0]; /*0x542ed3*/
     do /*0x542eea*/
     {
       Rect::SetRedraw(*(Rect **)(v4->Socket + 4), a2); /*0x542edc*/
@@ -545,7 +545,7 @@ int32_t IPXManagerClass::getPlayerName(char a2)
   /* X11: ptr_0 install elided (implicit via class virtuals 0x543109) — binary-proven install, was 0 */
   if ( (a2 & 1) != 0 ) /*0x54310f*/
     operator delete((this)); /*0x543112*/
-  return &this->ptr_0; /*0x54311c*/
+  return &this->Socket; /*0x54311c*/
 }
 } // namespace gamemd
 
@@ -3639,10 +3639,10 @@ bool NullModemClass::Init()
   Debug::Log(); /*0x5f16eb*/
   v9 = 0; /*0x5f16f6*/
   if ( g_ClipboardBuffer ) /*0x5f16fd*/
-    *(&this->PlayerIndex6) = NullModemClass::GetMember23(g_ClipboardBuffer); /*0x5f1704*/
+    *(&this->q180) = NullModemClass::GetMember23(g_ClipboardBuffer); /*0x5f1704*/
   else
-    *(&this->PlayerIndex6) = -1; /*0x5f1709*/
-  if ( *(&this->PlayerIndex4) ) /*0x5f1710*/
+    *(&this->q180) = -1; /*0x5f1709*/
+  if ( *(&this->q150) ) /*0x5f1710*/
   {
     Debug::Log(); /*0x5f17a3*/
   }
@@ -3651,26 +3651,26 @@ bool NullModemClass::Init()
     Debug::Log(); /*0x5f171e*/
     v10 = (unsigned int *)operator new(0x54u); /*0x5f1725*/
     if ( v10 ) /*0x5f172f*/
-      inited = NullModemClass::initConnection(v10, *(&this->PlayerIndex7), *(&this->PlayerIndex8), this->Active, this->u32_4C); /*0x5f1744*/
+      inited = NullModemClass::initConnection(v10, *(&this->u32_4C), *(&this->u32_4C), this->u32_38, this->u32_4C); /*0x5f1744*/
     else
       inited = 0; /*0x5f174b*/
-    v12 = *(&this->Active3); /*0x5f174d*/
-    *(&this->PlayerIndex4) = (int)inited; /*0x5f1750*/
+    v12 = *(&this->q228); /*0x5f174d*/
+    *(&this->q150) = (int)inited; /*0x5f1750*/
     inited->u32_28 = v12; /*0x5f1753*/
-    *(unsigned int *)(*(&this->PlayerIndex4) + 44) = *(&this->Active4); /*0x5f175c*/
-    *(unsigned int *)(*(&this->PlayerIndex4) + 48) = *(&this->Active5); /*0x5f1765*/
-    v23 = *(&this->PlayerIndex8) * (*(unsigned int *)(*(&this->PlayerIndex4) + 28) + 11); /*0x5f1775*/
-    *(&this->Active1) = v23; /*0x5f1776*/
+    *(unsigned int *)(*(&this->q150) + 44) = *(&this->q240); /*0x5f175c*/
+    *(unsigned int *)(*(&this->q150) + 48) = *(&this->q258); /*0x5f1765*/
+    v23 = *(&this->q1B0) * (*(unsigned int *)(*(&this->q150) + 28) + 11); /*0x5f1775*/
+    *(&this->q1F8) = v23; /*0x5f1776*/
     v13 = operator new(v23); /*0x5f1779*/
-    v14 = this->Active; /*0x5f177e*/
-    *(&this->Active0) = v13; /*0x5f1781*/
+    v14 = this->u32_38; /*0x5f177e*/
+    *(&this->q1E0) = v13; /*0x5f1781*/
     v15 = operator new(v14); /*0x5f1785*/
-    v16 = this->PacketsSent; /*0x5f178a*/
-    this->PlayerIndex = v15; /*0x5f178d*/
-    this->LastPacketTime = operator new(v16); /*0x5f1799*/
+    v16 = this->q040; /*0x5f178a*/
+    this->q018 = v15; /*0x5f178d*/
+    this->q030 = operator new(v16); /*0x5f1799*/
   }
-  *(&this->Active2) = 0; /*0x5f17ab*/
-  this->PacketsReceived = 0; /*0x5f17ae*/
+  *(&this->q210) = 0; /*0x5f17ab*/
+  this->q078 = 0; /*0x5f17ae*/
   if ( !g_ClipboardBuffer ) /*0x5f17b7*/
   {
     v17 = (unsigned int *)operator new(0x2088u); /*0x5f17be*/
@@ -3712,13 +3712,13 @@ bool NullModemClass::Init()
       }
       goto LABEL_35; /*0x5f17fb*/
     }
-    v18 = (void **)*(&this->PlayerIndex3); /*0x5f180e*/
+    v18 = (void **)*(&this->q138); /*0x5f180e*/
     v24 = a4; /*0x5f1817*/
     if ( v18 ) /*0x5f181b*/
     {
       FileFind::Close(v18); /*0x5f181f*/
       operator delete((v18)); /*0x5f1825*/
-      *(&this->PlayerIndex3) = 0; /*0x5f182d*/
+      *(&this->q138) = 0; /*0x5f182d*/
     }
     v19 = 0; /*0x5f1830*/
     while ( 1 ) /*0x5f1838*/
@@ -3726,7 +3726,7 @@ bool NullModemClass::Init()
       v20 = operator new(0x1Cu); /*0x5f1838*/
       if ( v20 ) /*0x5f1842*/
         v9 = Modem::EnumerateDevices(v20, v19); /*0x5f184c*/
-      *(&this->PlayerIndex3) = v9; /*0x5f184e*/
+      *(&this->q138) = v9; /*0x5f184e*/
       if ( *(unsigned int *)v9 ) /*0x5f1851*/
       {
         if ( !strcmp(a4, *(const char **)v9) ) /*0x5f1862*/
@@ -3738,7 +3738,7 @@ bool NullModemClass::Init()
         operator delete(((void *)v9)); /*0x5f1895*/
       }
       ++v19; /*0x5f189d*/
-      *(&this->PlayerIndex3) = 0; /*0x5f189e*/
+      *(&this->q138) = 0; /*0x5f189e*/
       if ( v19 >= 10 ) /*0x5f18a8*/
         goto LABEL_38; /*0x5f18a8*/
       v9 = 0; /*0x5f1834*/
@@ -3753,12 +3753,12 @@ bool NullModemClass::Init()
           a6,
           a7,
           a8);
-  *(&this->PlayerIndex6) = v21; /*0x5f190b*/
+  *(&this->q180) = v21; /*0x5f190b*/
   if ( v21 == -1 ) /*0x5f190e*/
     return 0; /*0x5f1913*/
   Debug::Log(); /*0x5f191e*/
-  NullModemClass::closeConnection((unsigned int *)*(&this->PlayerIndex4), *(&this->PlayerIndex6)); /*0x5f192d*/
-  *(&this->PlayerIndex5) = 1; /*0x5f1937*/
+  NullModemClass::closeConnection((unsigned int *)*(&this->q150), *(&this->q180)); /*0x5f192d*/
+  *(&this->q168) = 1; /*0x5f1937*/
   return 1; /*0x5f1910*/
 }
 } // namespace gamemd
@@ -3875,14 +3875,14 @@ bool NullModemClass::Connect()
   int v5; // edx
   int result; // eax
 
-  this->a3 = a3; /*0x5f1bc8*/
-  this->a4 = a4; /*0x5f1bcf*/
+  this->u32_60 = a3; /*0x5f1bc8*/
+  this->q064 = a4; /*0x5f1bcf*/
   v5 = this->u32_38; /*0x5f1bd2*/
-  this->a2 = a2; /*0x5f1bd5*/
+  this->u32_5C = a2; /*0x5f1bd5*/
   *(unsigned int *)(v5 + 40) = a2; /*0x5f1bd8*/
   *(unsigned int *)&this->u32_38->BombClass_field_2C = this->u32_60; /*0x5f1be1*/
   result = this->u32_38; /*0x5f1be4*/
-  result->u32_30 = this->a4; /*0x5f1bea*/
+  result->q064 = this->q064; /*0x5f1bea*/
   return result; /*0x5f1bed*/
 }
 } // namespace gamemd
@@ -4274,7 +4274,7 @@ bool NullModemClass::Negotiate()
   unsigned char Buffer[4]; // [esp+78h] [ebp-58h] BYREF
   char Str1[84]; // [esp+7Ch] [ebp-54h] BYREF
 
-  if ( this->PacketsSent == -1 || !g_ClipboardBuffer ) /*0x5f3189*/
+  if ( this->q040 == -1 || !g_ClipboardBuffer ) /*0x5f3189*/
     return 0; /*0x5f3189*/
   dword_A8DAB8 &= ~1u; /*0x5f319e*/
   if ( (*(int (__thiscall **)(HWND, char *, int, char *, int, int, int, int))(*(unsigned int *)g_ClipboardBuffer + 28))( /*0x5f31be*/
@@ -4319,7 +4319,7 @@ bool NullModemClass::Negotiate()
   {
     ; /*0x5f3248*/
   }
-  Buffer[0] = this->LastPacketTime; /*0x5f3258*/
+  Buffer[0] = this->q030; /*0x5f3258*/
   Buffer[1] = Buffer[0]; /*0x5f325c*/
   Buffer[2] = Buffer[0]; /*0x5f3260*/
   Buffer[3] = 0; /*0x5f326b*/
@@ -5990,17 +5990,17 @@ void UDPInterfaceClass_Destru::GetQueueSize()
   int v4; // ecx
   int v5; // eax
 
-  for ( result = this->u32_3F348; result; result = this->u32_3F348 ) /*0x7b2f9b*/
+  for ( result = this->q3F348; result; result = this->q3F348 ) /*0x7b2f9b*/
   {
-    operator delete((void *)(*this->u32_3F33C)); /*0x7b2fa6*/
-    v3 = this->u32_3F348; /*0x7b2fab*/
+    operator delete((void *)(*this->q3F33C)); /*0x7b2fa6*/
+    v3 = this->q3F348; /*0x7b2fab*/
     if ( v3 > 0 ) /*0x7b2fb6*/
     {
       v4 = v3 - 1; /*0x7b2fb8*/
       v5 = 0; /*0x7b2fbb*/
-      for ( this->u32_3F348 = v4; /*0x7b2fc5*/
-            v5 < this->u32_3F348;
-            *(unsigned int *)(this->u32_3F33C + 4 * v5 - 4) = *(unsigned int *)(this->u32_3F33C + 4 * v5) )
+      for ( this->q3F348 = v4; /*0x7b2fc5*/
+            v5 < this->q3F348;
+            *(unsigned int *)(this->q3F33C + 4 * v5 - 4) = *(unsigned int *)(this->q3F33C + 4 * v5) )
       {
         ++v5; /*0x7b2fcd*/
       }
@@ -6036,8 +6036,8 @@ void UDPInterfaceClass_Destru::Flush()
   v4[3] = v14; /*0x7b3045*/
   if ( !a3 ) /*0x7b3048*/
     v5 = hostshort; /*0x7b304a*/
-  v6 = this->u32_3F348; /*0x7b304f*/
-  v7 = &this->u32_3F348; /*0x7b3055*/
+  v6 = this->q3F348; /*0x7b304f*/
+  v7 = &this->q3F348; /*0x7b3055*/
   *((unsigned short *)&v7[3].Socket + v6) = v5; /*0x7b305b*/
   result = v7[1].Socket; /*0x7b3060*/
   if ( v7[2].Socket < result /*0x7b3088*/

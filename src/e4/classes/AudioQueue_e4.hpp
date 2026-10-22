@@ -6,12 +6,45 @@
 namespace gamemd {
 struct AnimClass;  // fix_fwd_type_supply
 struct AudioQueue {
-    AudioQueue* __pad_0;  // 0x0
-    unsigned int q004;  // 0x4
-    unsigned int q008;  // 0x8
-    unsigned int u32_C;  // 0xC
+    unsigned char q000;  // 0x0
+    char __pad_1[7];  // 0x1
+    unsigned char q008;  // 0x8
+    char __pad_9[3];  // 0x9
+    unsigned char u32_C;  // 0xC
+    char __pad_D[3];  // 0xD
     char __pad_10[4];  // 0x10
-    unsigned int AudioQueue_field_0x14;  // 0x14
+    int u32_14;  // 0x14
+    unsigned int u32_18;  // 0x18
+    char __pad_1C[8];  // 0x1C
+    unsigned int u32_24;  // 0x24
+    unsigned int u32_28;  // 0x28
+    char __pad_2C[4];  // 0x2C
+    unsigned int u32_30;  // 0x30
+    char __pad_34[8];  // 0x34
+    unsigned int u32_3C;  // 0x3C
+    unsigned int u32_40;  // 0x40
+    char __pad_44[4];  // 0x44
+    unsigned int u32_48;  // 0x48
+    char __pad_4C[864];  // 0x4C
+    unsigned int u32_3AC;  // 0x3AC
+    char __pad_3B0[4];  // 0x3B0
+    unsigned int u32_3B4;  // 0x3B4
+    unsigned char u32_3B8;  // 0x3B8
+    char __pad_3B9[3];  // 0x3B9
+    unsigned int u32_3BC;  // 0x3BC
+    char __pad_3C0[4];  // 0x3C0
+    unsigned int u32_3C4;  // 0x3C4
+    char __pad_3C8[8];  // 0x3C8
+    unsigned int u32_3D0;  // 0x3D0
+    char __pad_3D4[257152];  // 0x3D4
+    unsigned int u32_3F054;  // 0x3F054
+    unsigned int u32_3F058;  // 0x3F058
+    unsigned int u32_3F05C;  // 0x3F05C
+    unsigned int u32_3F060;  // 0x3F060
+    unsigned int u32_3F064;  // 0x3F064
+    char __pad_3F068[4];  // 0x3F068
+    unsigned int u32_3F06C;  // 0x3F06C
+    unsigned int u32_3F070;  // 0x3F070
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     unsigned int * CreateNode();  // 0x402AF0

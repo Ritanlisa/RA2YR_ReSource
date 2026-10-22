@@ -15,52 +15,87 @@ struct TagClass;  // fix_fwd_type_supply
 struct CampaignClass;  // fix_fwd_type_supply
 
 struct TeamClass {
-    unsigned int ptr_0;  // 0x0
-    void * ptr_4;  // 0x4
-    unsigned int ptr_8;  // 0x8
-    void * ptr_C;  // 0xC
+    int vfptr;  // 0x0
+    int vfptr1;  // 0x4
+    int vfptr2;  // 0x8
+    unsigned char vfptr3;  // 0xC
+    char __pad_D[3];  // 0xD
     int uniqueId;  // 0x10
     int abstractFlags;  // 0x14
     int nextArrayIndex;  // 0x18
-    int referenceCount;  // 0x1C
+    unsigned char referenceCount;  // 0x1C
+    char __pad_1D[3];  // 0x1D
     void * NeedsSaveOrLink;  // 0x20
-    TeamTypeClass* buildingType;  // 0x24
-    ScriptClass* currentScript;  // 0x28
-    HouseClass* owner;  // 0x2C
-    HouseClass* target;  // 0x30
-    CellClass* spawnCell;  // 0x34
-    unsigned int unknown38;  // 0x38
-    AbstractClass* queuedFocus;  // 0x3C
-    AbstractClass* focus;  // 0x40
+    void * buildingType;  // 0x24
+    void * currentScript;  // 0x28
+    void * owner;  // 0x2C
+    void * target;  // 0x30
+    unsigned char spawnCell;  // 0x34
+    unsigned char q035;  // 0x35
+    char __pad_36[2];  // 0x36
+    int unknown38;  // 0x38
+    void * queuedFocus;  // 0x3C
+    void * focus;  // 0x40
     int unknown44;  // 0x44
     int totalObjects;  // 0x48
     int totalThreatValue;  // 0x4C
     int creationFrame;  // 0x50
-    FootClass* firstUnit;  // 0x54
-    char guardAreaTimer[12];  // 0x58
-    char suspendTimer[12];  // 0x64
-    TagClass* tag;  // 0x70
-    bool unknown74;  // 0x74
+    void * firstUnit;  // 0x54
+    int guardAreaTimer[3];  // 0x58
+    int suspendTimer[3];  // 0x64
+    void * tag;  // 0x70
+    char unknown74[1];  // 0x74
     bool unknown75;  // 0x75
-    bool unknown76;  // 0x76
-    bool unknown77;  // 0x77
-    bool spawnStatus;  // 0x78
-    bool unknown79;  // 0x79
+    unsigned char unknown76;  // 0x76
+    unsigned char unknown77;  // 0x77
+    char spawnStatus;  // 0x78
+    unsigned char unknown79;  // 0x79
     bool TeamClass_field_7A;  // 0x7A
     bool TeamClass_field_7B;  // 0x7B
-    bool visibilityFlags;  // 0x7C
-    bool needsToDisappear;  // 0x7D
+    char visibilityFlags;  // 0x7C
+    char needsToDisappear;  // 0x7D
     bool TeamClass_field_7E;  // 0x7E
-    bool TeamClass_field_7F;  // 0x7F
-    bool stepCompleted;  // 0x80
+    char TeamClass_field_7F[1];  // 0x7F
+    char stepCompleted[1];  // 0x80
     bool unknown81;  // 0x81
-    bool unknown82;  // 0x82
-    bool isSuspended;  // 0x83
-    bool achievedGreatSuccess;  // 0x84
+    unsigned char unknown82;  // 0x82
+    char isSuspended;  // 0x83
+    char achievedGreatSuccess[1];  // 0x84
     bool unknown85;  // 0x85
     bool unknown86;  // 0x86
     bool unknown87;  // 0x87
     int countObjects[6];  // 0x88
+    char __pad_A0[4];  // 0xA0
+    unsigned char q0A4;  // 0xA4
+    char __pad_A5[3];  // 0xA5
+    unsigned int u32_A8;  // 0xA8
+    unsigned int u32_AC;  // 0xAC
+    unsigned int u32_B0;  // 0xB0
+    unsigned int u32_B4;  // 0xB4
+    unsigned int q0B8;  // 0xB8
+    char __pad_BC[8];  // 0xBC
+    unsigned int u32_C4;  // 0xC4
+    unsigned int q0C8;  // 0xC8
+    char __pad_CC[16];  // 0xCC
+    unsigned int q0DC;  // 0xDC
+    char __pad_E0[20];  // 0xE0
+    unsigned int u32_F4;  // 0xF4
+    char __pad_F8[20];  // 0xF8
+    unsigned int q10C;  // 0x10C
+    unsigned int q110;  // 0x110
+    unsigned int u32_114;  // 0x114
+    unsigned int u32_118;  // 0x118
+    char __pad_11C[32];  // 0x11C
+    unsigned int u32_13C;  // 0x13C
+    char __pad_140[220];  // 0x140
+    unsigned int q21C;  // 0x21C
+    char __pad_220[896];  // 0x220
+    unsigned int q5A0;  // 0x5A0
+    char __pad_5A4[235];  // 0x5A4
+    unsigned char u32_68F;  // 0x68F
+    unsigned char u32_690;  // 0x690
+    unsigned char u32_691;  // 0x691
+    char __pad_692[2];  // 0x692
 // --- flat members (BEGIN) ---
 #if !defined(GAMEMD_TREE_UNIVERSE) && !defined(GAMEMD_E4_VECTOR_TREE_TRUTH)
 #else

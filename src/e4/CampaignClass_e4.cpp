@@ -61,7 +61,7 @@ CampaignClass::CampaignClass(ObjectClass * aP1)
     *((unsigned int *)dword_A83CFC + v3) = (unsigned int)(this); /*0x46cbe8*/
   }
   LOBYTE(this->scenario[29]) = 0; /*0x46cbf7*/
-  wcscpy(this->u32_1F2C, &g_TypeClass_DefaultString); /*0x46cbfe*/
+  wcscpy(this->description[29], &g_TypeClass_DefaultString); /*0x46cbfe*/
   return (int)this; /*0x46cc08*/
 
 }
@@ -80,12 +80,12 @@ int CampaignClass::LoadFromINIList(void *a1)
   int i; // [esp+8h] [ebp-24h]
   char Source[32]; // [esp+Ch] [ebp-20h] BYREF
 
-  result = INIClass::GetKeyCount(this->ptr_0, (unsigned __int8 *)&DataGlobal_81AF8C[588]); /*0x46ce1c*/
+  result = INIClass::GetKeyCount(this->vfptr, (unsigned __int8 *)&DataGlobal_81AF8C[588]); /*0x46ce1c*/
   v3 = 0; /*0x46ce21*/
   for ( i = result; v3 < i; ++v3 ) /*0x46ce29*/
   {
     StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex( /*0x46ce48*/
-                                         this->ptr_0,
+                                         this->vfptr,
                                          (unsigned __int8 *)&DataGlobal_81AF8C[588],
                                          v3);
     (this)->GetString((unsigned __int8 *)&DataGlobal_81AF8C[588], StringByIndex, &g_INI_DefaultBuffer, Source, 32); /*0x46ce55*/
@@ -181,18 +181,18 @@ char CampaignClass::SaveProgress()
 
   if ( !this->scenario[68] ) /*0x49c5ac*/
     return 0; /*0x49c5ac*/
-  if ( !LOBYTE(this->ptr_0) ) /*0x49c5b7*/
+  if ( !LOBYTE(this->vfptr) ) /*0x49c5b7*/
     return 0; /*0x49c5b7*/
   p_referenceCount = &this->referenceCount; /*0x49c5c4*/
   if ( !((this->referenceCount) & 0xFF) ) /*0x49c5c1*/
     return 0; /*0x49c5c1*/
-  v3 = *&this->u32_3828; /*0x49c5d4*/
+  v3 = *&this->scenario[28]; /*0x49c5d4*/
   if ( !byte_89F578 ) /*0x49c5d9*/
     CampaignClass::LoadFromINI(&g_DDrawSurfaceManager); /*0x49c5e0*/
   if ( v3 < 0 || v3 >= dword_89F574 ) /*0x49c5f5*/
     return 0; /*0x49cae5*/
   v27 = (char *)(dword_89F570 + 76 * v3); /*0x49c60d*/
-  if ( *&this->u32_3028 == *&this->u32_2028 ) /*0x49c616*/
+  if ( *&this->scenario[24] == *&this->scenario[16] ) /*0x49c616*/
     return 1; /*0x49c61b*/
   (&v33)->Construct(g_Str_File_coopsave_ini); /*0x49c631*/
   v28.headNode[0] = 0; /*0x49c63a*/
@@ -206,7 +206,7 @@ char CampaignClass::SaveProgress()
   CCFileClass::Reset(&v33); /*0x49c67b*/
   v5 = 0; /*0x49c683*/
   v6 = (char *)this; /*0x49c687*/
-  if ( LOBYTE(this->ptr_0) )
+  if ( LOBYTE(this->vfptr) )
   {
     do
     {
@@ -278,8 +278,8 @@ char CampaignClass::SaveProgress()
   (*(void (**)(CCFileClass *, char *))(*(unsigned int *)v30.__tail_0 + 8))(&v30, g_Str_File_coopsave_ini); /*0x49c807*/
   (*(void (**)(CCFileClass *, int))(*(unsigned int *)v30.__tail_0 + 28))(&v30, 2); /*0x49c81a*/
   INIClass::ClearSection((int *)v28.__pad_0, (int)Block, 0); /*0x49c828*/
-  INIClass::SetInt(v28.__pad_0, (unsigned __int8 *)Block, g_INI_Key_CurrentMap, *&this->u32_2028, 0); /*0x49c841*/
-  INIClass::SetInt(v28.__pad_0, (unsigned __int8 *)Block, aCampaigntype, *&this->u32_3828, 0); /*0x49c85a*/
+  INIClass::SetInt(v28.__pad_0, (unsigned __int8 *)Block, g_INI_Key_CurrentMap, *&this->scenario[16], 0); /*0x49c841*/
+  INIClass::SetInt(v28.__pad_0, (unsigned __int8 *)Block, aCampaigntype, *&this->scenario[28], 0); /*0x49c85a*/
   for ( j = 0; /*0x49c863*/
         j < v27[8];
         INIClass::SetString(
@@ -316,15 +316,15 @@ char CampaignClass::SaveProgress()
     INIClass::SetInt(v28.__pad_0, (unsigned __int8 *)Block, aColor2, v26, 0); /*0x49c95d*/
   }
 LABEL_47:
-  INIClass::SetInt(v28.__pad_0, (unsigned __int8 *)Block, g_INI_Key_Time, *&this->u32_8028, 0); /*0x49c962*/
-  INIClass::SetInt(v28.__pad_0, (unsigned __int8 *)Block, aKills1, *&this->u32_4028, 0); /*0x49c98f*/
-  INIClass::SetInt(v28.__pad_0, (unsigned __int8 *)Block, aKills2, *&this->u32_4828, 0); /*0x49c9a8*/
-  INIClass::SetInt(v28.__pad_0, (unsigned __int8 *)Block, aBuilt1, *&this->u32_5028, 0); /*0x49c9c1*/
-  INIClass::SetInt(v28.__pad_0, (unsigned __int8 *)Block, aBuilt2, *&this->u32_5828, 0); /*0x49c9da*/
-  INIClass::SetInt(v28.__pad_0, (unsigned __int8 *)Block, aLost1, *&this->q6028, 0); /*0x49c9f3*/
-  INIClass::SetInt(v28.__pad_0, (unsigned __int8 *)Block, aLost2, *&this->u32_6828, 0); /*0x49ca0c*/
-  INIClass::SetInt(v28.__pad_0, (unsigned __int8 *)Block, aScore1, *&this->u32_7028, 0); /*0x49ca25*/
-  INIClass::SetInt(v28.__pad_0, (unsigned __int8 *)Block, aScore2, *&this->u32_7828, 0); /*0x49ca3e*/
+  INIClass::SetInt(v28.__pad_0, (unsigned __int8 *)Block, g_INI_Key_Time, *&this->scenario[64], 0); /*0x49c962*/
+  INIClass::SetInt(v28.__pad_0, (unsigned __int8 *)Block, aKills1, *&this->scenario[32], 0); /*0x49c98f*/
+  INIClass::SetInt(v28.__pad_0, (unsigned __int8 *)Block, aKills2, *&this->scenario[36], 0); /*0x49c9a8*/
+  INIClass::SetInt(v28.__pad_0, (unsigned __int8 *)Block, aBuilt1, *&this->scenario[40], 0); /*0x49c9c1*/
+  INIClass::SetInt(v28.__pad_0, (unsigned __int8 *)Block, aBuilt2, *&this->scenario[44], 0); /*0x49c9da*/
+  INIClass::SetInt(v28.__pad_0, (unsigned __int8 *)Block, aLost1, *&this->scenario[48], 0); /*0x49c9f3*/
+  INIClass::SetInt(v28.__pad_0, (unsigned __int8 *)Block, aLost2, *&this->scenario[52], 0); /*0x49ca0c*/
+  INIClass::SetInt(v28.__pad_0, (unsigned __int8 *)Block, aScore1, *&this->scenario[56], 0); /*0x49ca25*/
+  INIClass::SetInt(v28.__pad_0, (unsigned __int8 *)Block, aScore2, *&this->scenario[60], 0); /*0x49ca3e*/
   INIClass::WriteDigest(&v28, (int)&v30, 0); /*0x49ca51*/
   CCFileClass::Reset(&v30); /*0x49ca5d*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x49ca67*/

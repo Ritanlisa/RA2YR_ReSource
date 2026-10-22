@@ -49,7 +49,7 @@ int NullModemClass::Release(int a2, int a3, int a4, int a5)
   if ( !this->u32_3C ) /*0x5f3563*/
     return 0; /*0x5f356a*/
   int result; // eax
-  result = (*(int (**)(unsigned int, int, int, int, unsigned int))(*this->Active) + 8))( /*0x5f3586*/
+  result = (*(int (**)(unsigned int, int, int, int, unsigned int))(*this->u32_38) + 8))( /*0x5f3586*/
              this->u32_38,
              a2,
              a3,
@@ -65,7 +65,7 @@ namespace gamemd {
 int NullModemClass::ddtor(int a2, int a3, int a4)
 {
   if ( this->u32_3C ) /*0x5f35a0*/
-    return (*(int (**)(unsigned int, int, int))(*this->u32_68) + 16))(this->u32_38, a2, a3); /*0x5f35bb*/
+    return (*(int (**)(unsigned int, int, int))(*this->u32_38) + 16))(this->u32_38, a2, a3); /*0x5f35bb*/
   else
     return 0; /*0x5f35a7*/
 }
@@ -194,8 +194,8 @@ int NullModemClass::sendData()
   }
   DWORD EvtMask; // [esp+10h] [ebp-2Ch] BYREF
   GetCommMask(this->u32_5C, &EvtMask); /*0x774728*/
-  (*(void (**)(NullModemClass *, int))(*(unsigned int *)this->ConnectionClass + 16))(this, 1); /*0x774734*/
-  (*(void (**)(NullModemClass *))(*(unsigned int *)this->ConnectionClass + 12))(this); /*0x77473b*/
+  (*(void (**)(NullModemClass *, int))(*(unsigned int *)this->ptr_0 + 16))(this, 1); /*0x774734*/
+  (*(void (**)(NullModemClass *))(*(unsigned int *)this->ptr_0 + 12))(this); /*0x77473b*/
   if ( !EscapeCommFunction(this->u32_5C, 3u) ) /*0x774744*/
   {
     GetLastError(); /*0x77474f*/
@@ -257,7 +257,7 @@ int NullModemClass::receiveData()
     if ( !v5 ) /*0x77486f*/
       ((WinModemClass *)this)->LogCommErrors(v2, *(unsigned char *)&Stat, cbInQue, cbOutQue); /*0x774885*/
   }
-  return (*(int (**)(NullModemClass *, int))(*(unsigned int *)this->ConnectionClass + 16))(this, 1); /*0x774893*/
+  return (*(int (**)(NullModemClass *, int))(*(unsigned int *)this->ptr_0 + 16))(this, 1); /*0x774893*/
 
 }
 } // namespace gamemd
@@ -287,7 +287,7 @@ namespace gamemd {
 int NullModemClass::Disconnect(int a2, int a3, int a4)
 {
 
-  return (*(int (**)(NullModemClass *, int, int, int, int))(*(unsigned int *)this->ConnectionClass + 52))( /*0x5f3556*/
+  return (*(int (**)(NullModemClass *, int, int, int, int))(*(unsigned int *)this->ptr_0 + 52))( /*0x5f3556*/
            this,
            a2,
            a3,

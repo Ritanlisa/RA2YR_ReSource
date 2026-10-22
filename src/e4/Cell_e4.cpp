@@ -83,7 +83,7 @@ TechnoClass * * Cell::IsOccupied(short * a2, char a3)
   while ( 1 ) /*0x419bea*/
   {
     v10 = (Cell *)*((unsigned int *)dword_8B3DC4 + v9); /*0x419bea*/
-    if ( v10 && (!v16 || this->u32_5A4 != v10) && (a3 || v10 != this) && !v10->u32_81 && v10->u32_74 ) /*0x419c1d*/
+    if ( v10 && (!v16 || this->u32_5A4 != v10) && (a3 || v10 != this) && !v10->u32_5A4 && v10->u32_5A4 ) /*0x419c1d*/
     {
       v11 = (unsigned short *)(*(int (**)(Cell *, unsigned int *))(v10->Cell_field_0x0 + 440))(v10, v15); /*0x419c2d*/
       if ( *v11 == *a2 && v11[1] == a2->ptr_2 ) /*0x419c44*/
@@ -103,9 +103,9 @@ namespace gamemd {
 int Cell::PosToIndex(void *a1)
 {
 
-  return ((SLOWORD(this->__pad_000) - SHIWORD(this->__pad_000) + *(unsigned int *)&g_Cell_PositionLUT - 1) >> 1) /*0x42b1e3*/
+  return ((SLOWORD(this->Cell_field_0x0) - SHIWORD(this->Cell_field_0x0) + *(unsigned int *)&g_Cell_PositionLUT - 1) >> 1) /*0x42b1e3*/
   + *(unsigned int *)&g_Cell_PositionLUT
-  * (SLOWORD(this->__pad_000) - *(unsigned int *)&g_Cell_PositionLUT + SHIWORD(this->__pad_000) - 1);
+  * (SLOWORD(this->Cell_field_0x0) - *(unsigned int *)&g_Cell_PositionLUT + SHIWORD(this->Cell_field_0x0) - 1);
 
 }
 }
@@ -328,7 +328,7 @@ int Cell::IsBuildable(int a2, char a3, char a4, int aP4, int aP5, int aP6, char 
   result = aP6; /*0x4834e1*/
   if ( aP6 != -1 ) /*0x4834ed*/
   {
-    v10 = this->u32_46C; /*0x4834ef*/
+    v10 = this->q2E6E0; /*0x4834ef*/
     if ( aP6 == v10 ) /*0x4834f8*/
     {
       if ( (this->u32_140 & 0x100) != 0 && !aP7 ) /*0x48351c*/
@@ -344,14 +344,14 @@ int Cell::IsBuildable(int a2, char a3, char a4, int aP4, int aP5, int aP6, char 
     }
   }
   v11 = 0; /*0x483527*/
-  if ( (aP6 == -1 || aP6 == this->u32_46C + 4) && (this->u32_140 & 0x100) != 0 ) /*0x483542*/
+  if ( (aP6 == -1 || aP6 == this->u32_140 + 4) && (this->u32_140 & 0x100) != 0 ) /*0x483542*/
   {
     v11 = 1; /*0x483546*/
-    result = this->u32_4A0; /*0x483548*/
+    result = this->q30900; /*0x483548*/
   }
   else
   {
-    result = this->u32_490; /*0x483552*/
+    result = this->q2FE80; /*0x483552*/
   }
   if ( a3 ) /*0x48355e*/
     result &= 0xE0u; /*0x483560*/
@@ -493,7 +493,7 @@ int Cell::IsBuildableAdvanced()
   {
     goto LABEL_21; /*0x487022*/
   }
-  if ( this->u32_11C ) /*0x48702c*/
+  if ( this->Cell_field_0x11B[1] ) /*0x48702c*/
     goto LABEL_21; /*0x48702c*/
   result = (int)this->u32_140; /*0x487036*/
   if ( (result & 0x500) != 0 ) /*0x48703f*/
@@ -673,8 +673,8 @@ long long Cell::GetTraversability()
 
   double v1; // st7
   v1 = (double)dword_8871E0->RadLevelMax_d; /*0x487cb5*/
-  if ( this->u32_78 < v1 ) /*0x487cc8*/
-    v1 = this->u32_78; /*0x487ccc*/
+  if ( this->q4EC0 < v1 ) /*0x487cc8*/
+    v1 = this->q4EC0; /*0x487ccc*/
   return Math::RoundToInt(v1);
 }
 }
@@ -682,7 +682,7 @@ long long Cell::GetTraversability()
 namespace gamemd {
 int Cell::GetSlopeIndex()
 {
-  return this->u32_11B + 4 * ((this->u32_140 >> 7) & 1); /*0x487d66*/
+  return this->u32_11B[0] + 4 * ((this->u32_140 >> 7) & 1); /*0x487d66*/
 }
 }
 // 0x487DF0
@@ -802,10 +802,10 @@ int Cell::SetRadar(int16_t *aP1)
   unsigned int v17[8]; // [esp+14h] [ebp-20h] BYREF
   int v18; // [esp+38h] [ebp+4h]
 
-  v2 = *aP1 + aP1[1] * (this->Cell_field_0xF8 + this->Cell_field_0xF4 + 1); /*0x56d484*/
+  v2 = *aP1 + aP1[1] * (this->q0F8 + this->q0F4 + 1); /*0x56d484*/
   if ( v2 >= 0 ) /*0x56d486*/
   {
-    Cell_field_0x6C = this->Cell_field_0x6C; /*0x56d48c*/
+    Cell_field_0x6C = this->q06C; /*0x56d48c*/
     if ( v2 >= Cell_field_0x6C ) /*0x56d491*/
       v2 = Cell_field_0x6C - 1; /*0x56d493*/
   }
@@ -813,7 +813,7 @@ int Cell::SetRadar(int16_t *aP1)
   {
     v2 = 0; /*0x56d488*/
   }
-  Cell_field_0x68 = this->Cell_field_0x68; /*0x56d496*/
+  Cell_field_0x68 = this->q068; /*0x56d496*/
   v17[2] = 1; /*0x56d499*/
   v17[6] = -1; /*0x56d4a1*/
   v5 = Cell_field_0x68 + 4 * v2; /*0x56d4a9*/
@@ -840,7 +840,7 @@ int Cell::SetRadar(int16_t *aP1)
     }
     if ( !(v5 + 4 * *i) ) /*0x56d4fc*/
       return Terrain::ConnectivityGraph((Terrain *)&dword_87F7E8); /*0x56d4fc*/
-    v11 = (unsigned __int16 *)this->Cell_field_0x18; /*0x56d528*/
+    v11 = (unsigned __int16 *)this->u32_18; /*0x56d528*/
     v18 = 0; /*0x56d52c*/
     v12 = 0; /*0x56d534*/
     v13 = v17; /*0x56d536*/
@@ -1343,7 +1343,7 @@ int Cell::GetTerrainMask(int *aP1, int a3)
   {
     if ( a3 == 1 ) /*0x57b2a1*/
     {
-      int v8 = aP1->__pad_038; // eax /*0x57b2a3*/
+      int v8 = aP1->__pad_38; // eax /*0x57b2a3*/
       if ( v8 >= v3 && v8 < v30 ) /*0x57b2ae*/
         return 0; /*0x57b2b9*/
     }
@@ -1431,7 +1431,7 @@ int Cell::GetTerrainMask(int *aP1, int a3)
 namespace gamemd {
 void * Cell::Clear(Cell *aP1)
 {
-  aP1->__pad_000 = 0; /*0x5a9942*/
+  aP1->Cell_field_0x0 = 0; /*0x5a9942*/
   aP1->q004 = (void *)-1; /*0x5a994d*/
   return aP1; /*0x5a9954*/
 }
@@ -1843,7 +1843,7 @@ unsigned short * Cell::GetHeight(int *aP1, int *a2)
   _EAX = aP1; /*0x4265b0*/
   _ECX = a2; /*0x4265b8*/
   if ( *aP1 == *a2 && aP1->q004 == a2[1] ) /*0x4265ca*/
-    LOWORD(this->__pad_000) = 0; /*0x4265cc*/
+    LOWORD(this->Cell_field_0x0) = 0; /*0x4265cc*/
   __asm { fild dword ptr [ecx] } /*0x4265d1*/
   __asm
   {
@@ -1860,7 +1860,7 @@ unsigned short * Cell::GetHeight(int *aP1, int *a2)
   __asm { fmul ds:dbl_7E2818 }
   double v3; // st7
   LOWORD(aP1) = Math::RoundToInt(v3); /*0x426601*/
-  this->__pad_000 = (int)aP1; /*0x42660a*/
+  this->Cell_field_0x0 = (int)aP1; /*0x42660a*/
   return this; /*0x42660e*/
 
 }
@@ -1871,7 +1871,7 @@ namespace gamemd {
 BOOL Cell::IsPassableOffset(int aP1)
 {
 
-  return *(unsigned short *)&this->__pad_70[2 * aP1 + 12] > 0; /*0x4870de*/
+  return *(unsigned short *)&this->u32_70 > 0; /*0x4870de*/
 
 }
 } // namespace gamemd
@@ -1889,7 +1889,7 @@ namespace gamemd {
 int Cell::DecodeFlags()
 {
 
-  return this->__pad_000 & 0xF | ((unsigned __int16)this->__pad_000 >> 12); /*0x56cb8f*/
+  return this->Cell_field_0x0 & 0xF | ((unsigned __int16)this->Cell_field_0x0 >> 12); /*0x56cb8f*/
 
 }
 } // namespace gamemd

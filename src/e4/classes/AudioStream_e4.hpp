@@ -7,16 +7,16 @@ namespace gamemd {
 struct MouseClass;  // fix_fwd_type_supply
 struct AudioStream {
     unsigned int __pad_0;  // 0x0
-    int AudioStream_field_0x4;  // 0x4
-    int AudioStream_field_0x8;  // 0x8
-    unsigned int AudioStream_field_0xC;  // 0xC
+    int u8_4;  // 0x4
+    int q008;  // 0x8
+    int q00C;  // 0xC
     int u32_10;  // 0x10
     int u32_14;  // 0x14
     unsigned int u32_18;  // 0x18
     unsigned int u32_1C;  // 0x1C
     int q020;  // 0x20
-    int AudioStream_field_0x24;  // 0x24
-    int AudioStream_field_0x28;  // 0x28
+    int q024;  // 0x24
+    int q028;  // 0x28
     int u32_2C;  // 0x2C
     int q030;  // 0x30
     int u32_34;  // 0x34
@@ -29,56 +29,79 @@ struct AudioStream {
     int q050;  // 0x50
     int q054;  // 0x54
     int q058;  // 0x58
-    char __pad_5C[20];  // 0x5C
-    unsigned int u32_70;  // 0x70
-    unsigned int u32_74;  // 0x74
-    unsigned int u32_78;  // 0x78
-    char __pad_7C[8];  // 0x7C
-    unsigned int u32_84;  // 0x84
+    unsigned char q05C;  // 0x5C
+    char __pad_5D[19];  // 0x5D
+    unsigned char u32_70;  // 0x70
+    char __pad_71[3];  // 0x71
+    unsigned char u32_74;  // 0x74
+    char __pad_75[15];  // 0x75
+    unsigned char u32_84;  // 0x84
+    char __pad_85[3];  // 0x85
     char __pad_88[8];  // 0x88
     int q090;  // 0x90
     char __pad_94[4];  // 0x94
     int q098;  // 0x98
-    unsigned char u32_9C[8];  // 0x9C
-    unsigned int u32_A4;  // 0xA4
+    unsigned int u32_9C;  // 0x9C
+    char __pad_A0[4];  // 0xA0
+    unsigned char u32_A4;  // 0xA4
+    char __pad_A5[3];  // 0xA5
     unsigned int u32_A8;  // 0xA8
-    unsigned int AudioStream_field_0xAC;  // 0xAC
+    unsigned int u32_AC;  // 0xAC
     int AudioStream_field_0xB0;  // 0xB0
     char __pad_B4[8];  // 0xB4
-    int AudioStream_field_0xBC;  // 0xBC
-    unsigned int AudioStream_field_0xC0;  // 0xC0
+    int u32_BC;  // 0xBC
+    int u32_C0;  // 0xC0
     char __pad_C4[16];  // 0xC4
     int u32_D4;  // 0xD4
-    char __pad_D8[56];  // 0xD8
-    unsigned int u32_110;  // 0x110
-    char __pad_114[4];  // 0x114
-    void* q118;  // 0x118
-    char __pad_11C[44];  // 0x11C
-    unsigned int q148;  // 0x148
-    char __pad_14C[4];  // 0x14C
-    unsigned int u32_150;  // 0x150
-    char __pad_154[12];  // 0x154
+    unsigned int q0D8;  // 0xD8
+    char __pad_DC[28];  // 0xDC
+    unsigned char q0F8;  // 0xF8
+    char __pad_F9[23];  // 0xF9
+    unsigned char u32_110;  // 0x110
+    char __pad_111[7];  // 0x111
+    unsigned char q118;  // 0x118
+    char __pad_119[55];  // 0x119
+    unsigned char u32_150;  // 0x150
+    char __pad_151[15];  // 0x151
     unsigned char q160;  // 0x160
-    char __pad_161[3];  // 0x161
-    int q164;  // 0x164
-    int q168;  // 0x168
-    char __pad_16C[4];  // 0x16C
-    unsigned int u32_170;  // 0x170
-    unsigned int u32_174;  // 0x174
-    unsigned int u32_178;  // 0x178
-    char __pad_17C[7];  // 0x17C
-    unsigned char u32_183[4];  // 0x183
-    char __pad_187[5];  // 0x187
-    unsigned int u32_18C;  // 0x18C
+    char __pad_161[7];  // 0x161
+    unsigned char q168;  // 0x168
+    char __pad_169[7];  // 0x169
+    unsigned char u32_170;  // 0x170
+    char __pad_171[3];  // 0x171
+    unsigned char u32_174;  // 0x174
+    char __pad_175[3];  // 0x175
+    unsigned char u32_178;  // 0x178
+    char __pad_179[19];  // 0x179
+    unsigned char u32_18C;  // 0x18C
+    char __pad_18D[3];  // 0x18D
     char __pad_190[8];  // 0x190
     unsigned int u32_198;  // 0x198
     unsigned int u32_19C;  // 0x19C
     unsigned int u32_1A0;  // 0x1A0
-    unsigned int u32_1A4;  // 0x1A4
+    unsigned char u32_1A4;  // 0x1A4
+    char __pad_1A5[3];  // 0x1A5
     char __pad_1A8[24];  // 0x1A8
     unsigned int u32_1C0;  // 0x1C0
     char __pad_1C4[28];  // 0x1C4
-    unsigned int AudioStream_field_0x1E0;  // 0x1E0
+    unsigned int u32_1E0;  // 0x1E0
+    unsigned int u32_1E4;  // 0x1E4
+    char __pad_1E8[1256];  // 0x1E8
+    unsigned int u32_6D0;  // 0x6D0
+    char __pad_6D4[4];  // 0x6D4
+    unsigned int u32_6D8;  // 0x6D8
+    char __pad_6DC[176];  // 0x6DC
+    unsigned int u32_78C;  // 0x78C
+    unsigned int u32_790;  // 0x790
+    unsigned int u32_794;  // 0x794
+    char __pad_798[4];  // 0x798
+    unsigned int u32_79C;  // 0x79C
+    char __pad_7A0[8];  // 0x7A0
+    unsigned int u32_7A8;  // 0x7A8
+    unsigned int u32_7AC;  // 0x7AC
+    unsigned int u32_7B0;  // 0x7B0
+    char __pad_7B4[8];  // 0x7B4
+    unsigned int u32_7BC;  // 0x7BC
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int ReleaseSubsystem();  // 0x401910

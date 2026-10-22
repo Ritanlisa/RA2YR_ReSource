@@ -194,7 +194,7 @@ int TacticalClass::FillScanlinesTransparent(int a2, int a3, int a4, int a5) {
 // 0x41BFA0
 namespace gamemd { 
 int TacticalClass::ProcessFrame() {
-  return *(unsigned char *)((*((int (__thiscall **)(TechnoClass *))this->ptr_0 + 33))(this) + 3233); /*0x41bfae*/
+  return *(unsigned char *)((*((int (__thiscall **)(TechnoClass *))this->vfptr + 33))(this) + 3233); /*0x41bfae*/
 }
 }
 // 0x41C030
@@ -1048,7 +1048,7 @@ int TacticalClass::initTacticalMap(void* a1, void* a2) {
     }
     else
     {
-      v4 = (__int16 *)(*(int (**)(TacticalClass *))(this->ptr_0 + 156))(this); /*0x45f1ef*/
+      v4 = (__int16 *)(*(int (**)(TacticalClass *))(this->vfptr + 156))(this); /*0x45f1ef*/
       *a1 = (int)v4; /*0x45f1f7*/
       if ( v4 ) /*0x45f1f9*/
       {
@@ -7623,25 +7623,25 @@ int TacticalClass::DispatchMode(int a1) {
     *(unsigned int *)this->q11AC = -1; /*0x4aad5f*/
     v4 = Mouse::SetBounds((int)this, 0); /*0x4aad69*/
     (*((unsigned char *)&(v4))) = byte_884D44; /*0x4aad6e*/
-    return (*((int (__thiscall **)(DisplayClass *, unsigned int, int))this->ptr_0 + 18))(this, 0, v4); /*0x4aad7a*/
+    return (*((int (__thiscall **)(DisplayClass *, unsigned int, int))this->vfptr + 18))(this, 0, v4); /*0x4aad7a*/
   }
   else if ( (this->q11B0) ) /*0x4aad82*/
   {
     v6 = BuildingClass::TogglePower2((BuildingClass *)this, 0); /*0x4aad90*/
     (*((unsigned char *)&(v6))) = byte_884D44; /*0x4aad95*/
-    return (*((int (__thiscall **)(DisplayClass *, unsigned int, int))this->ptr_0 + 18))(this, 0, v6); /*0x4aada1*/
+    return (*((int (__thiscall **)(DisplayClass *, unsigned int, int))this->vfptr + 18))(this, 0, v6); /*0x4aada1*/
   }
   else if ( (this->u32_11B1) ) /*0x4aada9*/
   {
     v7 = BuildingClass::TogglePower((BuildingClass *)this, 0); /*0x4aadb7*/
     (*((unsigned char *)&(v7))) = byte_884D44; /*0x4aadbc*/
-    return (*((int (__thiscall **)(DisplayClass *, unsigned int, int))this->ptr_0 + 18))(this, 0, v7); /*0x4aadc8*/
+    return (*((int (__thiscall **)(DisplayClass *, unsigned int, int))this->vfptr + 18))(this, 0, v7); /*0x4aadc8*/
   }
   else if ( (this->u32_11B2) ) /*0x4aadd0*/
   {
     v8 = TacticalClass::SetObserverMode((TacticalClass *)this, 0); /*0x4aadde*/
     (*((unsigned char *)&(v8))) = byte_884D44; /*0x4aade3*/
-    return (*((int (__thiscall **)(DisplayClass *, unsigned int, int))this->ptr_0 + 18))(this, 0, v8); /*0x4aadef*/
+    return (*((int (__thiscall **)(DisplayClass *, unsigned int, int))this->vfptr + 18))(this, 0, v8); /*0x4aadef*/
   }
   else
   {
@@ -7652,7 +7652,7 @@ int TacticalClass::DispatchMode(int a1) {
       {
         v11 = TacticalClass::SetDisplayMode((TacticalClass *)this, 0, 0); /*0x4aae2e*/
         (*((unsigned char *)&(v11))) = byte_884D44; /*0x4aae33*/
-        return (*((int (__thiscall **)(DisplayClass *, unsigned int, unsigned int *))this->ptr_0 + 18))( /*0x4aae3f*/
+        return (*((int (__thiscall **)(DisplayClass *, unsigned int, unsigned int *))this->vfptr + 18))( /*0x4aae3f*/
                  this,
                  0,
                  v11);
@@ -7664,12 +7664,12 @@ int TacticalClass::DispatchMode(int a1) {
         else
           v12 = MapClass::UnselectAll_ClearLimboLaunchers(v13); /*0x4aae6e*/
         (*((unsigned char *)&(v12))) = byte_884D44; /*0x4aae5a*/
-        return (*((int (__thiscall **)(DisplayClass *, unsigned int, int))this->ptr_0 + 18))(this, 0, v12); /*0x4aae66*/
+        return (*((int (__thiscall **)(DisplayClass *, unsigned int, int))this->vfptr + 18))(this, 0, v12); /*0x4aae66*/
       }
     }
     else
     {
-      DisplayClass_field_0x0 = (int (__thiscall **)(DisplayClass *, unsigned int, int))this->ptr_0; /*0x4aae04*/
+      DisplayClass_field_0x0 = (int (__thiscall **)(DisplayClass *, unsigned int, int))this->vfptr; /*0x4aae04*/
       *&this->q11B8 = -1; /*0x4aae06*/
       (*((unsigned char *)&(v9))) = byte_884D44; /*0x4aae0c*/
       return DisplayClass_field_0x0[18](this, 0, v9); /*0x4aae16*/
@@ -7792,16 +7792,16 @@ int TacticalClass::HandlePlayerAction(void* a1, int a2, void* a3, int a4, int a5
   {
     v13 = a4; /*0x4ab00c*/
   }
-  v14 = &this->__pad_11B4[24]; /*0x4ab016*/
+  v14 = &this->q11CC; /*0x4ab016*/
   v54 = (TacticalClass *)v13; /*0x4ab01e*/
-  if ( !this->q002 && !this->q002 && !this->q002 ) /*0x4ab02b*/
+  if ( !this->q11CC && !this->q11CC && !this->q11CC ) /*0x4ab02b*/
   {
     v15 = *(unsigned short *)(*(unsigned int *)(dword_87F6C8 + 372) + 2); /*0x4ab03d*/
     LOBYTE(a4) = (unsigned __int8)(v15 >> g_BitShift_Red) << g_BitShift_Green_0; /*0x4ab05c*/
     BYTE1(a4) = (unsigned __int8)(v15 >> g_BitMask_Green) << g_BitMask_Blue; /*0x4ab074*/
     v16 = (unsigned __int8)(v15 >> g_BitShift_Blue) << g_BitMask_Red; /*0x4ab088*/
     *(unsigned short *)v14 = a4; /*0x4ab08c*/
-    this->q002 = v16; /*0x4ab08f*/
+    this->q11CE = v16; /*0x4ab08f*/
   }
   v17 = v13 - 42; /*0x4ab092*/
   switch ( v13 ) /*0x4ab0a6*/
@@ -7868,8 +7868,8 @@ int TacticalClass::HandlePlayerAction(void* a1, int a2, void* a3, int a4, int a5
       while ( v28 < 8 ); /*0x4ab23f*/
       break; /*0x4ab23f*/
     default:
-      (v17) = ((v17) & ~0xFFFF) | (((unsigned __int8)((unsigned __int8)this->__pad_11B4[25] >> g_BitMask_Blue)) & 0xFFFF); /*0x4ab261*/
-      (v13) = ((v13) & ~0xFFFF) | (((unsigned __int8)((unsigned __int8)this->__pad_11B4[26] >> g_BitMask_Red)) & 0xFFFF); /*0x4ab279*/
+      (v17) = ((v17) & ~0xFFFF) | (((unsigned __int8)((unsigned __int8)this->q11CD >> g_BitMask_Blue)) & 0xFFFF); /*0x4ab261*/
+      (v13) = ((v13) & ~0xFFFF) | (((unsigned __int8)((unsigned __int8)this->q11CE >> g_BitMask_Red)) & 0xFFFF); /*0x4ab279*/
       v34 = v13 << g_BitShift_Blue; /*0x4ab27d*/
       v35 = v34 | (v17 << g_BitMask_Green); /*0x4ab285*/
       (v34) = ((v34) & ~0xFF) | (((unsigned __int8)*v14 >> g_BitShift_Green_0) & 0xFF); /*0x4ab289*/
@@ -8199,7 +8199,7 @@ int TacticalClass::SetObserverMode(int a2) {
     result = this->u32_11A8; /*0x4ac84f*/
     if ( !result ) /*0x4ac857*/
     {
-      (*((void (__thiscall **)(TacticalClass *, unsigned int, unsigned int))this->ptr_0 + 18))(this, 0, 0); /*0x4ac861*/
+      (*((void (__thiscall **)(TacticalClass *, unsigned int, unsigned int))this->vfptr + 18))(this, 0, 0); /*0x4ac861*/
       this->q11B0 = 0; /*0x4ac866*/
       this->u32_11B1 = 0; /*0x4ac86d*/
       this->u32_11B3 = 0; /*0x4ac874*/
@@ -8211,7 +8211,7 @@ int TacticalClass::SetObserverMode(int a2) {
       }
       else
       {
-        ptr_0 = (int (__thiscall **)(TacticalClass *))this->ptr_0; /*0x4ac8a5*/
+        ptr_0 = (int (__thiscall **)(TacticalClass *))this->vfptr; /*0x4ac8a5*/
         this->u32_11B2 = 0; /*0x4ac8a9*/
         return ptr_0[20](this); /*0x4ac8b0*/
       }
@@ -8784,7 +8784,7 @@ int TacticalClass::Initialize() {
   {
     TacticalClass::SetView(v2, 0, 0x10000, 0, 1000, 1000, 1000); /*0x4ae494*/
   }
-  return (*((int (__thiscall **)(TacticalClass *, int))this->ptr_0 + 14))(this, 1); /*0x4ae4b0*/
+  return (*((int (__thiscall **)(TacticalClass *, int))this->vfptr + 14))(this, 1); /*0x4ae4b0*/
 }
 }
 // 0x4C6780
@@ -12633,7 +12633,7 @@ int LayerClass::Save(void* v5) {
   v5 = v5; /*0x551b22*/
   if ( !v5 ) /*0x551b2b*/
     return -2147467261; /*0x551b2f*/
-  v5 = (unsigned int *)this->Items; /*0x551b38*/
+  v5 = (unsigned int *)this->q010; /*0x551b38*/
   v6 = *v5; /*0x551b3b*/
   v5 = v5; /*0x551b46*/
   v5 = v5; /*0x551b47*/
@@ -12705,14 +12705,14 @@ int LayerClass::Load(unsigned int * a2) {
         if ( result < 0 ) /*0x551be4*/
           break; /*0x551be4*/
         capacity = this->capacity; /*0x551be6*/
-        if ( this->count < capacity /*0x551c0b*/
+        if ( this->q010 < capacity /*0x551c0b*/
           || (this->IsAllocated || !capacity)
           && (v9 = this->CapacityIncrement, v9 > 0)
           && this->checkCondition(capacity + v9, 0) )
         {
-          v10 = this->count; /*0x551c12*/
+          v10 = this->q010; /*0x551c12*/
           count = this->count; /*0x551c15*/
-          this->count = v10 + 1; /*0x551c1b*/
+          this->q010 = v10 + 1; /*0x551c1b*/
           *(unsigned int *)(count + 4 * v10) = v13; /*0x551c22*/
         }
         v6 = a2; /*0x551c25*/
@@ -12972,11 +12972,11 @@ namespace gamemd {
 int TacticalClass::GetField() {
   int result; // eax
 
-  result = (int)this->ptr_4; /*0x556b30*/
+  result = (int)this->vfptr1; /*0x556b30*/
   if ( result ) /*0x556b37*/
   {
     result->TacticalClass_field_A8 = 0; /*0x556b39*/
-    this->ptr_4 = 0; /*0x556b3f*/
+    this->vfptr1 = 0; /*0x556b3f*/
   }
   return result; /*0x556b42*/
 }
@@ -21923,22 +21923,22 @@ namespace gamemd {
 void TacticalClass::ClearVector() {
   void *v2; // eax
 
-  v2 = this->ptr_4; /*0x5c0a76*/
+  v2 = this->vfptr1; /*0x5c0a76*/
   this->uniqueId = 0; /*0x5c0a79*/
   if ( v2 && this->q00D ) /*0x5c0a80*/
   {
     operator delete((v2)); /*0x5c0a86*/
-    this->ptr_4 = 0; /*0x5c0a8e*/
+    this->vfptr1 = 0; /*0x5c0a8e*/
   }
   this->q00D = 0; /*0x5c0a91*/
-  this->ptr_8 = 0; /*0x5c0a94*/
+  this->vfptr2 = 0; /*0x5c0a94*/
 }
 }
 // 0x5C0AA0
 namespace gamemd { 
 int TacticalClass::ProbeCalling(int a2) {
-  if ( this->IsInitialized ) /*0x5c0aa0*/
-    return (unsigned int)(a2 - this->Items) >> 2; /*0x5c0ab5*/
+  if ( this->vfptr3 ) /*0x5c0aa0*/
+    return (unsigned int)(a2 - this->vfptr1) >> 2; /*0x5c0ab5*/
   else
     return 0; /*0x5c0aa7*/
 }
@@ -21953,38 +21953,38 @@ int TacticalClass::ReallocVector(int a1, void* a2) {
 
   if ( a1 ) /*0x5c0c5c*/
   {
-    this->IsInitialized = 0; /*0x5c0c62*/
+    this->vfptr3 = 0; /*0x5c0c62*/
     if ( a2 ) /*0x5c0c68*/
       v4 = a2; /*0x5c0c7e*/
     else
       v4 = operator new(4 * a1); /*0x5c0c7a*/
-    this->ptr_C = 1; /*0x5c0c82*/
+    this->vfptr3 = 1; /*0x5c0c82*/
     if ( !v4 ) /*0x5c0c86*/
       return 0; /*0x5c0cfa*/
-    if ( this->Items ) /*0x5c0c88*/
+    if ( this->vfptr1 ) /*0x5c0c88*/
     {
-      v5 = this->Capacity; /*0x5c0c8f*/
+      v5 = this->vfptr2; /*0x5c0c8f*/
       if ( a1 < v5 ) /*0x5c0c94*/
         v5 = a1; /*0x5c0c96*/
-      for ( i = 0; i < v5; v4[i - 1] = *(unsigned int *)(this->Items + 4 * i - 4) ) /*0x5c0c9c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(unsigned int *)(this->vfptr1 + 4 * i - 4) ) /*0x5c0c9c*/
         ++i; /*0x5c0ca1*/
-      if ( this->IsAllocated ) /*0x5c0cae*/
+      if ( this->q00D ) /*0x5c0cae*/
       {
-        operator delete((this->ptr_4)); /*0x5c0cb9*/
-        this->Items = 0; /*0x5c0cc1*/
+        operator delete((this->vfptr1)); /*0x5c0cb9*/
+        this->vfptr1 = 0; /*0x5c0cc1*/
       }
     }
-    this->Items = v4; /*0x5c0cca*/
-    this->Capacity = a1; /*0x5c0cd2*/
-    this->IsAllocated = a2 == 0; /*0x5c0cd5*/
+    this->vfptr1 = v4; /*0x5c0cca*/
+    this->vfptr2 = a1; /*0x5c0cd2*/
+    this->q00D = a2 == 0; /*0x5c0cd5*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x5c0cde*/
+    (*(void (__thiscall **)(void *))(this->vfptr3)(this); /*0x5c0cde*/
   }
-  v7 = this->Capacity; /*0x5c0ce1*/
-  if ( v7 < this->Count ) /*0x5c0ce9*/
-    this->Count = v7; /*0x5c0ceb*/
+  v7 = this->vfptr2; /*0x5c0ce1*/
+  if ( v7 < this->uniqueId ) /*0x5c0ce9*/
+    this->uniqueId = v7; /*0x5c0ceb*/
   return 1; /*0x5c0cee*/
 }
 }
@@ -21995,11 +21995,11 @@ int TacticalClass::FindInVector(void* a1) {
   int result; // eax
   unsigned int *i; // ecx
 
-  v2 = this->Items; /*0x5c0d00*/
+  v2 = this->vfptr1; /*0x5c0d00*/
   result = 0; /*0x5c0d03*/
   if ( v2 <= 0 ) /*0x5c0d08*/
     return -1; /*0x5c0d1f*/
-  for ( i = (unsigned int *)this->Items; *i != *a1; ++i ) /*0x5c0d0e*/
+  for ( i = (unsigned int *)this->vfptr1; *i != *a1; ++i ) /*0x5c0d0e*/
   {
     if ( ++result >= v2 ) /*0x5c0d1d*/
       return -1; /*0x5c0d1d*/
@@ -22526,8 +22526,8 @@ int TacticalClass::processInput(int a1) {
   v2 = a1 - 8; /*0x5d4ad6*/
   this->visibleCells[120] = a1 - 8; /*0x5d4ae1*/
   Debug::Log(); /*0x5d4ae7*/
-  ptr_0 = (int *)this->ptr_0; /*0x5d4aec*/
-  if ( this->ptr_0 ) /*0x5d4aec*/
+  ptr_0 = (int *)this->vfptr; /*0x5d4aec*/
+  if ( this->vfptr ) /*0x5d4aec*/
   {
     do /*0x5d4b01*/
     {
@@ -22537,7 +22537,7 @@ int TacticalClass::processInput(int a1) {
     }
     while ( ptr_0 ); /*0x5d4b01*/
   }
-  (*((unsigned char *)&(field24))) = (this->q019); /*0x5d4b03*/
+  (*((unsigned char *)&(field24))) = (this->nextArrayIndex); /*0x5d4b03*/
   if ( (unsigned char)field24 ) /*0x5d4b08*/
   {
     field24 = this->field24; /*0x5d4b0a*/
@@ -22643,38 +22643,38 @@ int TacticalClass::ReallocVector(int a1, void* a2) {
 
   if ( a1 ) /*0x5c0c5c*/
   {
-    this->IsInitialized = 0; /*0x5c0c62*/
+    this->vfptr3 = 0; /*0x5c0c62*/
     if ( a2 ) /*0x5c0c68*/
       v4 = a2; /*0x5c0c7e*/
     else
       v4 = operator new(4 * a1); /*0x5c0c7a*/
-    this->IsInitialized = 1; /*0x5c0c82*/
+    this->vfptr3 = 1; /*0x5c0c82*/
     if ( !v4 ) /*0x5c0c86*/
       return 0; /*0x5c0cfa*/
-    if ( this->Items ) /*0x5c0c88*/
+    if ( this->vfptr1 ) /*0x5c0c88*/
     {
       v5 = this->a1; /*0x5c0c8f*/
       if ( a1 < v5 ) /*0x5c0c94*/
         v5 = a1; /*0x5c0c96*/
-      for ( i = 0; i < v5; v4[i - 1] = *(unsigned int *)(this->ptr_4 + 4 * i - 4) ) /*0x5c0c9c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(unsigned int *)(this->vfptr1 + 4 * i - 4) ) /*0x5c0c9c*/
         ++i; /*0x5c0ca1*/
-      if ( this->IsAllocated ) /*0x5c0cae*/
+      if ( this->q00D ) /*0x5c0cae*/
       {
-        operator delete((this->ptr_4)); /*0x5c0cb9*/
-        this->Items = 0; /*0x5c0cc1*/
+        operator delete((this->vfptr1)); /*0x5c0cb9*/
+        this->vfptr1 = 0; /*0x5c0cc1*/
       }
     }
-    this->Items = v4; /*0x5c0cca*/
+    this->vfptr1 = v4; /*0x5c0cca*/
     this->a1 = a1; /*0x5c0cd2*/
-    this->IsAllocated = a2 == 0; /*0x5c0cd5*/
+    this->q00D = a2 == 0; /*0x5c0cd5*/
   }
   else
   {
     (*(void (__thiscall **)(void *))(*&this->u8_42))(this); /*0x5c0cde*/
   }
   v7 = this->a1; /*0x5c0ce1*/
-  if ( v7 < this->Items ) /*0x5c0ce9*/
-    this->Items = v7; /*0x5c0ceb*/
+  if ( v7 < this->vfptr1 ) /*0x5c0ce9*/
+    this->vfptr1 = v7; /*0x5c0ceb*/
   return 1; /*0x5c0cee*/
 }
 }
@@ -22685,11 +22685,11 @@ int TacticalClass::FindInVector(void* a1) {
   int result; // eax
   unsigned int *i; // ecx
 
-  v2 = this->Items; /*0x5c0d00*/
+  v2 = this->vfptr1; /*0x5c0d00*/
   result = 0; /*0x5c0d03*/
   if ( v2 <= 0 ) /*0x5c0d08*/
     return -1; /*0x5c0d1f*/
-  for ( i = (unsigned int *)this->Items; *i != *a1; ++i ) /*0x5c0d0e*/
+  for ( i = (unsigned int *)this->vfptr1; *i != *a1; ++i ) /*0x5c0d0e*/
   {
     if ( ++result >= v2 ) /*0x5c0d1d*/
       return -1; /*0x5c0d1d*/
@@ -23216,8 +23216,8 @@ int TacticalClass::processInput(int a1) {
   v2 = a1 - 8; /*0x5d4ad6*/
   this->visibleCells[120] = a1 - 8; /*0x5d4ae1*/
   Debug::Log(); /*0x5d4ae7*/
-  ptr_0 = (int *)this->ptr_0; /*0x5d4aec*/
-  if ( this->ptr_0 ) /*0x5d4aec*/
+  ptr_0 = (int *)this->vfptr; /*0x5d4aec*/
+  if ( this->vfptr ) /*0x5d4aec*/
   {
     do /*0x5d4b01*/
     {
@@ -23227,7 +23227,7 @@ int TacticalClass::processInput(int a1) {
     }
     while ( ptr_0 ); /*0x5d4b01*/
   }
-  (*((unsigned char *)&(field24))) = (this->q019); /*0x5d4b03*/
+  (*((unsigned char *)&(field24))) = (this->nextArrayIndex); /*0x5d4b03*/
   if ( (unsigned char)field24 ) /*0x5d4b08*/
   {
     field24 = this->field24; /*0x5d4b0a*/
@@ -24349,7 +24349,7 @@ namespace gamemd {
 void* TacticalClass::saveConfig(int a2) {
   /* X11: ptr_0 install elided (implicit via PixelFXClass virtuals 0x631e38) */
   BuildingDebris::Init((BuildingDebris *)this, a2); /*0x631e3e*/
-  return &this->ptr_0; /*0x631e45*/
+  return &this->vfptr; /*0x631e45*/
 }
 }
 // 0x633B90
@@ -25649,35 +25649,35 @@ void TacticalClass::FreeResources() {
   void (__thiscall ***v3)(unsigned int, int); // ecx
   unsigned int *v4; // edi
 
-  v2 = (void (__thiscall ***)(unsigned int, int))this->RadarSurfaceAlt; /*0x655a96*/
+  v2 = (void (__thiscall ***)(unsigned int, int))this->q121C; /*0x655a96*/
   if ( v2 ) /*0x655a9e*/
   {
     (**v2)(v2, 1); /*0x655aa4*/
-    this->RadarSurfaceAlt = 0; /*0x655aa6*/
+    this->q121C = 0; /*0x655aa6*/
   }
-  v3 = (void (__thiscall ***)(unsigned int, int))this->RadarSurface; /*0x655aac*/
+  v3 = (void (__thiscall ***)(unsigned int, int))this->q1220; /*0x655aac*/
   if ( v3 ) /*0x655ab4*/
   {
     (**v3)(v3, 1); /*0x655aba*/
-    this->RadarSurface = 0; /*0x655abc*/
+    this->q1220 = 0; /*0x655abc*/
   }
-  if ( this->RadarCellBuffer ) /*0x655ac2*/
+  if ( this->q123C ) /*0x655ac2*/
   {
-    operator delete((void *)(this->u32_1F5))); /*0x655acd*/
-    this->RadarCellBuffer = 0; /*0x655ad5*/
+    operator delete((void *)(this->q123C))); /*0x655acd*/
+    this->q123C = 0; /*0x655ad5*/
   }
-  v4 = (unsigned int *)this->RadarHash; /*0x655adc*/
+  v4 = (unsigned int *)this->q1258; /*0x655adc*/
   if ( v4 ) /*0x655ae4*/
   {
     if ( *v4 ) /*0x655ae6*/
       (**(void (__thiscall ***)(unsigned int, int))*v4)(*v4, 3); /*0x655af0*/
     operator delete((v4)); /*0x655af3*/
-    this->RadarHash = 0; /*0x655afb*/
+    this->q1258 = 0; /*0x655afb*/
   }
-  if ( this->RadarPointBuffer ) /*0x655b01*/
+  if ( this->q1274 ) /*0x655b01*/
   {
-    operator delete((void *)(this->u32_1F51))); /*0x655b0d*/
-    this->RadarPointBuffer = 0; /*0x655b15*/
+    operator delete((void *)(this->q1274))); /*0x655b0d*/
+    this->q1274 = 0; /*0x655b15*/
   }
 }
 }
@@ -26122,7 +26122,7 @@ void TacticalClass::ProcessChronoEffect() {
         }
       }
       RadarClass::SetViewMode((int *)this, 3, 0); /*0x65793b*/
-      v4 = &this->RadarSoundChannel; /*0x657940*/
+      v4 = &this->q14C0; /*0x657940*/
       Mixer::ReleaseChannel(v4); /*0x657948*/
       v5 = (unsigned int *)PlayVocClass(*(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 1784), 0x2000, 1.0, 0); /*0x657966*/
       SetAudioSource((int)v4, v5, 0); /*0x65796f*/
@@ -26132,7 +26132,7 @@ void TacticalClass::ProcessChronoEffect() {
     {
       if ( g_AsyncIOState ) /*0x657999*/
         sub_408390(); /*0x65799b*/
-      this->RadarClass_field_14B8 = 2; /*0x6579a0*/
+      this->u32_14B8 = 2; /*0x6579a0*/
     }
   }
   else
@@ -26217,7 +26217,7 @@ int TacticalClass::UpdateObjects() {
     do /*0x65ad1c*/
     {
       if ( *(unsigned int *)(this->radioLinks[1] + 4 * v2) ) /*0x65acfb*/
-        (*((void (__thiscall **)(RadioClass *, int, unsigned char *, unsigned int))this->ptr_0 + 159))( /*0x65ad0d*/
+        (*((void (__thiscall **)(RadioClass *, int, unsigned char *, unsigned int))this->vfptr + 159))( /*0x65ad0d*/
           this,
           v4,
           &((unsigned int *)&stru_A8EB00)[76],
@@ -28569,7 +28569,7 @@ namespace gamemd {
 void* TacticalClass::saveConfig(int a2) {
   /* X11: ptr_0 install elided (implicit via PixelFXClass virtuals 0x631e38) */
   BuildingDebris::Init((BuildingDebris *)this, a2); /*0x631e3e*/
-  return &this->ptr_0; /*0x631e45*/
+  return &this->vfptr; /*0x631e45*/
 }
 }
 // 0x633B90
@@ -29868,35 +29868,35 @@ void TacticalClass::FreeResources() {
   void (__thiscall ***v3)(unsigned int, int); // ecx
   unsigned int *v4; // edi
 
-  v2 = (void (__thiscall ***)(unsigned int, int))this->RadarSurfaceAlt; /*0x655a96*/
+  v2 = (void (__thiscall ***)(unsigned int, int))this->q121C; /*0x655a96*/
   if ( v2 ) /*0x655a9e*/
   {
     (**v2)(v2, 1); /*0x655aa4*/
-    this->RadarSurfaceAlt = 0; /*0x655aa6*/
+    this->q121C = 0; /*0x655aa6*/
   }
-  v3 = (void (__thiscall ***)(unsigned int, int))this->RadarSurface; /*0x655aac*/
+  v3 = (void (__thiscall ***)(unsigned int, int))this->q1220; /*0x655aac*/
   if ( v3 ) /*0x655ab4*/
   {
     (**v3)(v3, 1); /*0x655aba*/
-    this->RadarSurface = 0; /*0x655abc*/
+    this->q1220 = 0; /*0x655abc*/
   }
-  if ( this->RadarCellBuffer ) /*0x655ac2*/
+  if ( this->q123C ) /*0x655ac2*/
   {
-    operator delete((void *)(this->u32_1F5))); /*0x655acd*/
-    this->RadarCellBuffer = 0; /*0x655ad5*/
+    operator delete((void *)(this->q123C))); /*0x655acd*/
+    this->q123C = 0; /*0x655ad5*/
   }
-  v4 = (unsigned int *)this->RadarHash; /*0x655adc*/
+  v4 = (unsigned int *)this->q1258; /*0x655adc*/
   if ( v4 ) /*0x655ae4*/
   {
     if ( *v4 ) /*0x655ae6*/
       (**(void (__thiscall ***)(unsigned int, int))*v4)(*v4, 3); /*0x655af0*/
     operator delete((v4)); /*0x655af3*/
-    this->RadarHash = 0; /*0x655afb*/
+    this->q1258 = 0; /*0x655afb*/
   }
-  if ( this->RadarPointBuffer ) /*0x655b01*/
+  if ( this->q1274 ) /*0x655b01*/
   {
-    operator delete((void *)(this->u32_1F51))); /*0x655b0d*/
-    this->RadarPointBuffer = 0; /*0x655b15*/
+    operator delete((void *)(this->q1274))); /*0x655b0d*/
+    this->q1274 = 0; /*0x655b15*/
   }
 }
 }
@@ -30341,7 +30341,7 @@ void TacticalClass::ProcessChronoEffect() {
         }
       }
       RadarClass::SetViewMode((int *)this, 3, 0); /*0x65793b*/
-      v4 = &this->RadarSoundChannel; /*0x657940*/
+      v4 = &this->q14C0; /*0x657940*/
       Mixer::ReleaseChannel(v4); /*0x657948*/
       v5 = (unsigned int *)PlayVocClass(*(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 1784), 0x2000, 1.0, 0); /*0x657966*/
       SetAudioSource((int)v4, v5, 0); /*0x65796f*/
@@ -30357,9 +30357,9 @@ void TacticalClass::ProcessChronoEffect() {
   else
   {
     ThemeClass::ClearQueues(); /*0x6579ac*/
-    UpdateThemeManager(this->RadarClass_field_14D4, 0, 3); /*0x6579bb*/
+    UpdateThemeManager(this->u32_14D4, 0, 3); /*0x6579bb*/
     Map_Process_753570(); /*0x6579c0*/
-    this->RadarClass_field_14B8 = 1; /*0x6579c5*/
+    this->u32_14B8 = 1; /*0x6579c5*/
   }
 }
 }
@@ -30436,7 +30436,7 @@ int TacticalClass::UpdateObjects() {
     do /*0x65ad1c*/
     {
       if ( *(unsigned int *)(this->radioLinks[1] + 4 * v2) ) /*0x65acfb*/
-        (*((void (__thiscall **)(RadioClass *, int, unsigned char *, unsigned int))this->ptr_0 + 159))( /*0x65ad0d*/
+        (*((void (__thiscall **)(RadioClass *, int, unsigned char *, unsigned int))this->vfptr + 159))( /*0x65ad0d*/
           this,
           v4,
           &((unsigned int *)&stru_A8EB00)[76],
@@ -31107,7 +31107,7 @@ namespace gamemd {
 void* TacticalClass::saveConfig(int a2) {
   /* X11: ptr_0 install elided (implicit via PixelFXClass virtuals 0x631e38) */
   BuildingDebris::Init((BuildingDebris *)this, a2); /*0x631e3e*/
-  return &this->ptr_0; /*0x631e45*/
+  return &this->vfptr; /*0x631e45*/
 }
 }
 // 0x633B90
@@ -32408,35 +32408,35 @@ void TacticalClass::FreeResources() {
   void (__thiscall ***v3)(unsigned int, int); // ecx
   unsigned int *v4; // edi
 
-  v2 = (void (__thiscall ***)(unsigned int, int))this->RadarSurfaceAlt; /*0x655a96*/
+  v2 = (void (__thiscall ***)(unsigned int, int))this->q121C; /*0x655a96*/
   if ( v2 ) /*0x655a9e*/
   {
     (**v2)(v2, 1); /*0x655aa4*/
-    this->RadarSurfaceAlt = 0; /*0x655aa6*/
+    this->q121C = 0; /*0x655aa6*/
   }
-  v3 = (void (__thiscall ***)(unsigned int, int))this->RadarSurface; /*0x655aac*/
+  v3 = (void (__thiscall ***)(unsigned int, int))this->q1220; /*0x655aac*/
   if ( v3 ) /*0x655ab4*/
   {
     (**v3)(v3, 1); /*0x655aba*/
-    this->RadarSurface = 0; /*0x655abc*/
+    this->q1220 = 0; /*0x655abc*/
   }
-  if ( this->RadarCellBuffer ) /*0x655ac2*/
+  if ( this->q123C ) /*0x655ac2*/
   {
-    operator delete((void *)(this->u32_1F5))); /*0x655acd*/
-    this->RadarCellBuffer = 0; /*0x655ad5*/
+    operator delete((void *)(this->q123C))); /*0x655acd*/
+    this->q123C = 0; /*0x655ad5*/
   }
-  v4 = (unsigned int *)this->RadarHash; /*0x655adc*/
+  v4 = (unsigned int *)this->q1258; /*0x655adc*/
   if ( v4 ) /*0x655ae4*/
   {
     if ( *v4 ) /*0x655ae6*/
       (**(void (__thiscall ***)(unsigned int, int))*v4)(*v4, 3); /*0x655af0*/
     operator delete((v4)); /*0x655af3*/
-    this->RadarHash = 0; /*0x655afb*/
+    this->q1258 = 0; /*0x655afb*/
   }
-  if ( this->RadarPointBuffer ) /*0x655b01*/
+  if ( this->q1274 ) /*0x655b01*/
   {
-    operator delete((void *)(this->u32_1F51))); /*0x655b0d*/
-    this->RadarPointBuffer = 0; /*0x655b15*/
+    operator delete((void *)(this->q1274))); /*0x655b0d*/
+    this->q1274 = 0; /*0x655b15*/
   }
 }
 }
@@ -32899,7 +32899,7 @@ void TacticalClass::ProcessChronoEffect() {
     ThemeClass::ClearQueues(); /*0x6579ac*/
     UpdateThemeManager(this->u32_14D4, 0, 3); /*0x6579bb*/
     Map_Process_753570(); /*0x6579c0*/
-    this->RadarClass_field_14B8 = 1; /*0x6579c5*/
+    this->u32_14B8 = 1; /*0x6579c5*/
   }
 }
 }
@@ -32976,7 +32976,7 @@ int TacticalClass::UpdateObjects() {
     do /*0x65ad1c*/
     {
       if ( *(unsigned int *)(this->radioLinks[1] + 4 * v2) ) /*0x65acfb*/
-        (*((void (__thiscall **)(RadioClass *, int, unsigned char *, unsigned int))this->ptr_0 + 159))( /*0x65ad0d*/
+        (*((void (__thiscall **)(RadioClass *, int, unsigned char *, unsigned int))this->vfptr + 159))( /*0x65ad0d*/
           this,
           v4,
           &((unsigned int *)&stru_A8EB00)[76],
@@ -36214,7 +36214,7 @@ int TacticalClass::ClickFindBuilding(void* a1, void* a2, int a3) {
   if ( this->visibleCellCount > 0 ) /*0x6d3881*/
   {
     v16 = 0; /*0x6d3887*/
-    visibleCells = this->visibleCells; /*0x6d388f*/
+    visibleCells = this->visibleCells[0]; /*0x6d388f*/
     do /*0x6d3982*/
     {
       Coord::Subtract( /*0x6d38df*/
@@ -36317,7 +36317,7 @@ int TacticalClass::ClickFindOverlay(void* a1, void* a2, int a3) {
   if ( this->visibleCellCount > 0 ) /*0x6d3ad1*/
   {
     v16 = 0; /*0x6d3ad7*/
-    visibleCells = this->visibleCells; /*0x6d3adf*/
+    visibleCells = this->visibleCells[0]; /*0x6d3adf*/
     do /*0x6d3bd2*/
     {
       Coord::Subtract( /*0x6d3b2f*/
@@ -37054,7 +37054,7 @@ int TacticalClass::Get(int a2, int a3) {
   int GroundHeight; // [esp+Ch] [ebp-10h]
   unsigned char v8[12]; // [esp+10h] [ebp-Ch] BYREF
 
-  v4 = (unsigned int *)this->vt_slot_72(this->field34, v8); /*0x6ee110*/
+  v4 = (unsigned int *)this->field34(this->field34, v8); /*0x6ee110*/
   v6[0] = *v4; /*0x6ee115*/
   v6[1] = v4[1]; /*0x6ee121*/
   GroundHeight = v4[2]; /*0x6ee12d*/
@@ -37065,7 +37065,7 @@ int TacticalClass::Get(int a2, int a3) {
     GroundHeight += *(unsigned int *)&DataGlobal_B0E99C; /*0x6ee17a*/
   }
   result = TacticalClass::SetPosition((TacticalClass *)g_TacticalClass_Instance, v6, *(unsigned int *)(a2 + 4)); /*0x6ee191*/
-  (this->u32_1F5) = 1; /*0x6ee196*/
+  (this->field80) = 1; /*0x6ee196*/
   return result; /*0x6ee19d*/
 }
 }
@@ -37433,22 +37433,22 @@ int TacticalClass::ResetView() {
 // 0x7343E0
 namespace gamemd { 
 void* TacticalClass::updateScroll(int a2, int a3) {
-  this->ptr_4 = 0; /*0x7343eb*/
-  this->ptr_8 = (void *)a2; /*0x7343ee*/
-  (this->ptr_C) = 1; /*0x7343f1*/
-  (this->q00D) = 0; /*0x7343f5*/
+  this->vfptr1 = 0; /*0x7343eb*/
+  this->vfptr2 = (void *)a2; /*0x7343ee*/
+  (this->vfptr3) = 1; /*0x7343f1*/
+  (this->vfptr3) = 0; /*0x7343f5*/
   /* X11: ptr_0 install elided (implicit via VectorClass virtuals 0x7343f8) */
   if ( a2 ) /*0x7343fe*/
   {
     if ( a3 ) /*0x734406*/
     {
-      this->ptr_4 = (void *)a3; /*0x734408*/
-      return &this->ptr_0; /*0x73440e*/
+      this->vfptr1 = (void *)a3; /*0x734408*/
+      return &this->vfptr; /*0x73440e*/
     }
-    this->ptr_4 = operator new(4 * a2); /*0x73441d*/
-    (this->q00D) = 1; /*0x734420*/
+    this->vfptr1 = operator new(4 * a2); /*0x73441d*/
+    (this->vfptr3) = 1; /*0x734420*/
   }
-  return &this->ptr_0; /*0x73440d*/
+  return &this->vfptr; /*0x73440d*/
 }
 }
 // 0x73D630
@@ -38252,9 +38252,9 @@ void* TacticalClass::CalcInverseAlpha(int a2, float a3) {
   (*((unsigned short *)&(v5))) = Math::RoundToInt(v3); /*0x75f5e2*/
   v5 = v5; /*0x75f5ea*/
   (*((unsigned short *)&(v7))) = Math::RoundToInt(v3); /*0x75f5f7*/
-  this->ptr_0 = v5; /*0x75f5fc*/
-  this->v7 = v7; /*0x75f5fe*/
-  return &this->ptr_0; /*0x75f609*/
+  this->vfptr = v5; /*0x75f5fc*/
+  this->vfptr1 = v7; /*0x75f5fe*/
+  return &this->vfptr; /*0x75f609*/
 }
 }
 // 0x7710B0

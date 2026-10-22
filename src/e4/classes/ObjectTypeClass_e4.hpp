@@ -17,17 +17,16 @@ struct SomeVoxelCache;  // fix_fwd_type_supply
 struct BulletTypeClass;  // fix_fwd_type_supply
 
 struct ObjectTypeClass {
-    void * ptr_0;  // 0x0
-    void * ptr_4;  // 0x4
-    void * ptr_8;  // 0x8
-    void * ptr_C;  // 0xC
-    void* uniqueId;  // 0x10
-    int abstractFlags;  // 0x14
-    SHPStruct* nextArrayIndex;  // 0x18
-    char referenceCount[4];  // 0x1C
-    char NeedsSaveOrLink[4];  // 0x20
-    char __pad_24[3];  // 0x24
-    char u8_27;  // 0x27
+    int vfptr;  // 0x0
+    int vfptr1;  // 0x4
+    int vfptr2;  // 0x8
+    unsigned char vfptr3;  // 0xC
+    unsigned char u8_D;  // 0xD
+    char __pad_E[2];  // 0xE
+    SHPStruct * uniqueId;  // 0x10
+    char __pad_14[12];  // 0x14
+    int NeedsSaveOrLink;  // 0x20
+    unsigned int BarrelVoxel;  // 0x24
     char ChargerTurrets_0x12[4];  // 0x28
     char ChargerBarrels_0x12[4];  // 0x2C
     char __pad_30[1];  // 0x30
@@ -35,81 +34,87 @@ struct ObjectTypeClass {
     char __pad_32[4];  // 0x32
     unsigned char __pad_036;  // 0x36
     char __pad_37[5];  // 0x37
-    char zero_3C[1];  // 0x3C
-    char UINameLabel[32];  // 0x3D
+    void * zero_3C;  // 0x3C
+    char __pad_40[29];  // 0x40
     unsigned char __pad_05D;  // 0x5D
     char __pad_5E[2];  // 0x5E
     void * UIName;  // 0x60
     char Name[49];  // 0x64
     char tail_95[3];  // 0x95
-    char u32_98[3];  // 0x98
+    unsigned char u32_98;  // 0x98
+    char __pad_99[1];  // 0x99
+    unsigned char u32_9A;  // 0x9A
     unsigned char unused_9B;  // 0x9B
-    void* Armor;  // 0x9C
-    void* Strength_d;  // 0xA0
-    SHPStruct* Image_d;  // 0xA4
-    bool ImageAllocated;  // 0xA8
+    int Armor;  // 0x9C
+    int Strength_d;  // 0xA0
+    int Image_d;  // 0xA4
+    char ImageAllocated;  // 0xA8
     char __pad_0A9[3];  // 0xA9
-    SHPStruct* AlphaImage;  // 0xAC
-    WaveClass* MainVoxel;  // 0xB0
-    void* TurretVoxel_d;  // 0xB4
-    WaveClass* BarrelVoxel_d;  // 0xB8
-    char ChargerTurrets[72];  // 0xBC
+    void * AlphaImage;  // 0xAC
+    int MainVoxel;  // 0xB0
+    int TurretVoxel_d;  // 0xB4
+    int BarrelVoxel_d;  // 0xB8
+    int ChargerTurrets[18];  // 0xBC
     char ChargerBarrels[72];  // 0x104
     bool NoSpawnAlt_d;  // 0x14C
-    unsigned char __pad_14D;  // 0x14D
+    unsigned char q14D;  // 0x14D
     char __pad_14E[10];  // 0x14E
-    unsigned int u32_158;  // 0x158
-    char __pad_15C[140];  // 0x15C
-    char NoSpawnAlt_2[1];  // 0x1E8
+    unsigned char u32_158;  // 0x158
+    char __pad_159[143];  // 0x159
+    unsigned char NoSpawnAlt_2;  // 0x1E8
     char align_1E9[3];  // 0x1E9
     int MaxDimension;  // 0x1EC
     int CrushSound;  // 0x1F0
     int AmbientSound;  // 0x1F4
-    char ImageFile_0x19[25];  // 0x1F8
-    bool AlternateArcticArt_d;  // 0x211
-    bool ArcticArtInUse_d;  // 0x212
+    unsigned int ImageFile_0x19;  // 0x1F8
+    char __pad_1FC[20];  // 0x1FC
+    unsigned char u32_210;  // 0x210
+    char AlternateArcticArt_d[1];  // 0x211
+    unsigned char ArcticArtInUse_d;  // 0x212
     char AlphaImageFile[25];  // 0x213
-    bool Theater_d;  // 0x22C
-    bool Crushable_d;  // 0x22D
-    bool Bombable_d;  // 0x22E
-    bool RadarInvisible_d;  // 0x22F
-    bool Selectable_d;  // 0x230
-    bool LegalTarget_d;  // 0x231
-    bool Insignificant_d;  // 0x232
-    bool Immune_d;  // 0x233
-    bool IsLogic_d;  // 0x234
-    bool AllowCellContent_d;  // 0x235
-    bool Voxel_d;  // 0x236
-    bool NewTheater_d;  // 0x237
-    bool HasRadialIndicator_d;  // 0x238
-    bool IgnoresFirestorm_d;  // 0x239
-    bool UseLineTrail_d;  // 0x23A
+    char Theater_d[1];  // 0x22C
+    char Crushable_d[1];  // 0x22D
+    char Bombable_d[1];  // 0x22E
+    char RadarInvisible_d[1];  // 0x22F
+    char Selectable_d[1];  // 0x230
+    char LegalTarget_d[1];  // 0x231
+    char Insignificant_d[1];  // 0x232
+    char Immune_d[1];  // 0x233
+    unsigned char IsLogic_d;  // 0x234
+    unsigned char AllowCellContent_d;  // 0x235
+    char Voxel_d[1];  // 0x236
+    char NewTheater_d[1];  // 0x237
+    char HasRadialIndicator_d[1];  // 0x238
+    char IgnoresFirestorm_d[1];  // 0x239
+    char UseLineTrail_d[1];  // 0x23A
     char LineTrailColor_d[3];  // 0x23B
     unsigned short __pad_23E;  // 0x23E
-    int LineTrailColor_2;  // 0x240
+    int LineTrailColorDecrement;  // 0x240
+    int VoxelCaches_4[20];  // 0x244
+    unsigned int q294;  // 0x294
+    char __pad_298[368];  // 0x298
+    unsigned int q408;  // 0x408
+    char __pad_40C[284];  // 0x40C
+    unsigned int q528;  // 0x528
+    char __pad_52C[452];  // 0x52C
+    unsigned int u32_6F0;  // 0x6F0
+    char __pad_6F4[28];  // 0x6F4
+    unsigned int q710;  // 0x710
+    char __pad_714[168];  // 0x714
+    unsigned int q7BC;  // 0x7BC
+    char __pad_7C0[656];  // 0x7C0
+    unsigned int qA50;  // 0xA50
+    char __pad_A54[570];  // 0xA54
+    unsigned char u8_C8E;  // 0xC8E
+    char __pad_C8F[313];  // 0xC8F
+    unsigned char qDC8;  // 0xDC8
+    char __pad_DC9[7];  // 0xDC9
+    unsigned char qDD0;  // 0xDD0
+    char __pad_DD1[31];  // 0xDD1
+    unsigned char u32_DF0;  // 0xDF0
+    char __pad_DF1[3];  // 0xDF1
     union {
-        int VoxelCaches[20];  // 0x244
         struct {
-            int VoxelCaches_4;
-            unsigned int u32_248;
-            unsigned int u32_24C;
-            unsigned int u32_250;
-            SomeVoxelCache* q254;
-            unsigned int u32_258;
-            unsigned int u32_25C;
-            unsigned int u32_260;
-            char __pad_264[4];
-            unsigned int u32_268;
-            SomeVoxelCache* q26C;
-            SomeVoxelCache* q270;
-            unsigned int u32_274;
-            unsigned int u32_278;
-            unsigned int u32_27C;
-            char __pad_280[4];
-            unsigned int u32_284;
-            unsigned int u32_288;
-            unsigned int u32_28C;
-            SomeVoxelCache* q290;
         };
     };  // 0x244
 // --- flat members (BEGIN) ---

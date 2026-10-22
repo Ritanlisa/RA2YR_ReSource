@@ -15,18 +15,18 @@
 namespace gamemd { class ObjectClass; class FootClass; }
 #include <windows.h>
 #include <cstdint>
-#include "src/core/cellcoord.hpp"
-#include "src/core/utility_ext.hpp"
-#include "src/csp_canon/classes.hpp"
-#include "src/misc/locomotion.hpp"
+#include "core/cellcoord.hpp"
+#include "core/utility_ext.hpp"
+#include "csp_canon/classes.hpp"
+#include "misc/locomotion.hpp"
 #include "e4/e4_globals_decls.hpp"
-#include "src/render/display.hpp"
-#include "src/render/palette.hpp"
-#include "src/render/surface.hpp"
-#include "src/system/cd_file.hpp"
-#include "src/system/mix_file.hpp"
-#include "src/team/tevent.hpp"
-#include "src/type/particle_system_type.hpp"
+#include "render/display.hpp"
+#include "render/palette.hpp"
+#include "render/surface.hpp"
+#include "system/cd_file.hpp"
+#include "system/mix_file.hpp"
+#include "team/tevent.hpp"
+#include "type/particle_system_type.hpp"
 
 // G57w10: q000 externs (truth e4_globals_decls)
 extern unsigned char g_ptr_7E1FD4[4];  // data: 0x7E1FD4  // G57w10 vftable residue fix
@@ -437,7 +437,7 @@ void gamemd::ObjectTypeClass::ObjectTypeClass(gamemd::ObjectTypeClass::noinit_t)
   AbstractTypeClass::Init((int)this, a2); /*0x5f7328*/
   int *v3; // eax
   v3 = &this->ChargerTurrets[3]; /*0x5f732f*/
-  this->Image = 0; /*0x5f7335*/
+  this->Image_d = 0; /*0x5f7335*/
   int v4 = 18; // edx /*0x5f733b*/
   do /*0x5f7349*/
   {
@@ -448,7 +448,7 @@ void gamemd::ObjectTypeClass::ObjectTypeClass(gamemd::ObjectTypeClass::noinit_t)
   }
   while ( v4 ); /*0x5f7349*/
   char *v5; // eax
-  v5 = &this->q14D[11]; /*0x5f734b*/
+  v5 = &this->u32_158D[11]; /*0x5f734b*/
   int v6 = 18; // edx /*0x5f7351*/
   do /*0x5f735f*/
   {
@@ -482,7 +482,7 @@ void gamemd::ObjectTypeClass::ObjectTypeClass(gamemd::ObjectTypeClass::noinit_t)
   ((unsigned int *)this)[0] = (void *)&g_ptr_7EF2AC; /*0x5f73df*/
   ((unsigned int *)this)[0] = (void *)&g_ptr_7EF2AC; /*0x5f73e6*/
   ((unsigned int *)this)[0] = (void *)&g_ptr_7EF2AC; /*0x5f73ed*/
-  return &this->AbstractTypeClass; /*0x5f73f6*/
+  return &this->ptr_0; /*0x5f73f6*/
 }
 // link stub (no binary body yet)
 gamemd::ParticleSystemTypeClass::ParticleSystemTypeClass(gamemd::ParticleSystemTypeClass::noinit_t) {}
@@ -500,23 +500,23 @@ void gamemd::SuperWeaponTypeClass::SuperWeaponTypeClass(gamemd::AbstractTypeClas
   v3 = 0; /*0x5113ff*/
   LOBYTE(this->ArrayIndex) = 0; /*0x511404*/
   this->Type = (BuildingTypeClass *)-1; /*0x51140a*/
-  this->SidebarImage = (SHPStruct *)-1; /*0x511410*/
+  this->SidebarImage_d = (SHPStruct *)-1; /*0x511410*/
   this->ActionValue[0] = -1; /*0x511416*/
-  this->SpecialSound = 0; /*0x51141c*/
-  this->AuxBuilding = 0; /*0x511427*/
+  this->SpecialSound_d = 0; /*0x51141c*/
+  this->AuxBuilding_d = 0; /*0x511427*/
   this->SidebarImageFile[0] = 1072693248; /*0x51142d*/
   this->SidebarImageFile[1] = 0; /*0x511433*/
   this->SidebarImageFile[2] = 1072693248; /*0x511439*/
   this->SidebarImageFile[3] = 0; /*0x51143f*/
   this->SidebarImageFile[4] = 1072693248; /*0x511445*/
   this->SidebarImageFile[5] = 0; /*0x51144b*/
-  *(_DWORD *)&this->zero_E4 = 1072693248; /*0x511451*/
+  *(_DWORD *)&this->zero_E4_d = 1072693248; /*0x511451*/
   this->FlashSidebarTabFrames = 0; /*0x511457*/
-  this->PreDependent = 0; /*0x51145d*/
-  this->Range = 0.0; /*0x511463*/
-  *(_DWORD *)&this->AIDefendAgainst = 1072693248; /*0x511469*/
-  *(_DWORD *)&this->ShowTimer = 1072693248; /*0x51146f*/
-  this->LineMultiplier = 1072693248; /*0x511475*/
+  this->PreDependent_d = 0; /*0x51145d*/
+  this->Range_d = 0.0; /*0x511463*/
+  *(_DWORD *)&this->AIDefendAgainst_d = 1072693248; /*0x511469*/
+  *(_DWORD *)&this->ShowTimer_d = 1072693248; /*0x51146f*/
+  this->LineMultiplier_d = 1072693248; /*0x511475*/
   *((_DWORD *)this + 64) = 1065353216; /*0x51148a*/
   *((_DWORD *)this + 65) = 1065353216; /*0x511490*/
   *((_DWORD *)this + 66) = 1065353216; /*0x511496*/
@@ -588,7 +588,7 @@ void gamemd::SuperWeaponTypeClass::SuperWeaponTypeClass(gamemd::AbstractTypeClas
         goto LABEL_11; /*0x511603*/
     }
   }
-  this->SidebarImage = (SHPStruct *)v6; /*0x511608*/
+  this->SidebarImage_d = (SHPStruct *)v6; /*0x511608*/
   if ( dword_A83CA8 <= 0 ) /*0x511615*/
   {
     LABEL_16:
@@ -5576,11 +5576,11 @@ long gamemd::TActionClass::GetClassID(GUID* a0)
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x71e6a4*/
   this->idxArray = -1; /*0x71e6ab*/
-  this->TActionClass_field_28 = 0; /*0x71e6b2*/
-  this->TActionClass_field_2C = 0; /*0x71e6b5*/
-  this->TActionClass_field_30 = 0; /*0x71e6b8*/
-  LOBYTE(this->TActionClass_field_38) = 0; /*0x71e6bb*/
-  *(_DWORD *)&this->TActionClass_field_54 = 0; /*0x71e6be*/
+  this->q028 = 0; /*0x71e6b2*/
+  this->q02C = 0; /*0x71e6b5*/
+  this->q030 = 0; /*0x71e6b8*/
+  LOBYTE(this->q038) = 0; /*0x71e6bb*/
+  *(_DWORD *)&this->q054 = 0; /*0x71e6be*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F554C) */  /*0x71e6c1*/
   ((unsigned int *)this)[0] = (void *)&g_ptr_7F554C; /*0x71e6c7*/
   ((unsigned int *)this)[0] = (void *)&g_ptr_7F554C; /*0x71e6ce*/
@@ -5640,7 +5640,7 @@ long gamemd::TActionClass::GetClassID(GUID* a0)
     v7 = g_BuildingLoadQueue_Array.LightBlueTint++; /*0x71e7e6*/
     *(_DWORD *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v7) = this; /*0x71e7f5*/
   }
-  this->TActionClass_field_34 = 0; /*0x71e7f8*/
+  this->q034 = 0; /*0x71e7f8*/
   return (int)this; /*0x71e7fd*/
 }
 // truth-filled 0x71E6A0 (G42.52 truth-emitting generator)
@@ -5655,11 +5655,11 @@ long gamemd::TActionClass::Load(struct IStream* a0)
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x71e6a4*/
   this->idxArray = -1; /*0x71e6ab*/
-  this->TActionClass_field_28 = 0; /*0x71e6b2*/
-  this->TActionClass_field_2C = 0; /*0x71e6b5*/
-  this->TActionClass_field_30 = 0; /*0x71e6b8*/
-  LOBYTE(this->TActionClass_field_38) = 0; /*0x71e6bb*/
-  *(_DWORD *)&this->TActionClass_field_54 = 0; /*0x71e6be*/
+  this->q028 = 0; /*0x71e6b2*/
+  this->q02C = 0; /*0x71e6b5*/
+  this->q030 = 0; /*0x71e6b8*/
+  LOBYTE(this->q038) = 0; /*0x71e6bb*/
+  *(_DWORD *)&this->q054 = 0; /*0x71e6be*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F554C) */  /*0x71e6c1*/
   ((unsigned int *)this)[0] = (void *)&g_ptr_7F554C; /*0x71e6c7*/
   ((unsigned int *)this)[0] = (void *)&g_ptr_7F554C; /*0x71e6ce*/
@@ -5719,7 +5719,7 @@ long gamemd::TActionClass::Load(struct IStream* a0)
     v7 = g_BuildingLoadQueue_Array.LightBlueTint++; /*0x71e7e6*/
     *(_DWORD *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v7) = this; /*0x71e7f5*/
   }
-  this->TActionClass_field_34 = 0; /*0x71e7f8*/
+  this->q034 = 0; /*0x71e7f8*/
   return (int)this; /*0x71e7fd*/
 }
 // truth-filled 0x71E6A0 (G42.52 truth-emitting generator)
@@ -5734,11 +5734,11 @@ long gamemd::TActionClass::Save(struct IStream* a0, int a1)
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x71e6a4*/
   this->idxArray = -1; /*0x71e6ab*/
-  this->TActionClass_field_28 = 0; /*0x71e6b2*/
-  this->TActionClass_field_2C = 0; /*0x71e6b5*/
-  this->TActionClass_field_30 = 0; /*0x71e6b8*/
-  LOBYTE(this->TActionClass_field_38) = 0; /*0x71e6bb*/
-  *(_DWORD *)&this->TActionClass_field_54 = 0; /*0x71e6be*/
+  this->q028 = 0; /*0x71e6b2*/
+  this->q02C = 0; /*0x71e6b5*/
+  this->q030 = 0; /*0x71e6b8*/
+  LOBYTE(this->q038) = 0; /*0x71e6bb*/
+  *(_DWORD *)&this->q054 = 0; /*0x71e6be*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F554C) */  /*0x71e6c1*/
   ((unsigned int *)this)[0] = (void *)&g_ptr_7F554C; /*0x71e6c7*/
   ((unsigned int *)this)[0] = (void *)&g_ptr_7F554C; /*0x71e6ce*/
@@ -5798,7 +5798,7 @@ long gamemd::TActionClass::Save(struct IStream* a0, int a1)
     v7 = g_BuildingLoadQueue_Array.LightBlueTint++; /*0x71e7e6*/
     *(_DWORD *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v7) = this; /*0x71e7f5*/
   }
-  this->TActionClass_field_34 = 0; /*0x71e7f8*/
+  this->q034 = 0; /*0x71e7f8*/
   return (int)this; /*0x71e7fd*/
 }
 // truth-filled 0x71F880 (G42.52 truth-emitting generator)
@@ -8400,11 +8400,11 @@ void gamemd::TActionClass::pointerExpired(class ra2::game::AbstractClass* a0, bo
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x71e6a4*/
   this->idxArray = -1; /*0x71e6ab*/
-  this->TActionClass_field_28 = 0; /*0x71e6b2*/
-  this->TActionClass_field_2C = 0; /*0x71e6b5*/
-  this->TActionClass_field_30 = 0; /*0x71e6b8*/
-  LOBYTE(this->TActionClass_field_38) = 0; /*0x71e6bb*/
-  *(_DWORD *)&this->TActionClass_field_54 = 0; /*0x71e6be*/
+  this->q028 = 0; /*0x71e6b2*/
+  this->q02C = 0; /*0x71e6b5*/
+  this->q030 = 0; /*0x71e6b8*/
+  LOBYTE(this->q038) = 0; /*0x71e6bb*/
+  *(_DWORD *)&this->q054 = 0; /*0x71e6be*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F554C) */  /*0x71e6c1*/
   ((unsigned int *)this)[0] = (void *)&g_ptr_7F554C; /*0x71e6c7*/
   ((unsigned int *)this)[0] = (void *)&g_ptr_7F554C; /*0x71e6ce*/
@@ -8464,7 +8464,7 @@ void gamemd::TActionClass::pointerExpired(class ra2::game::AbstractClass* a0, bo
     v7 = g_BuildingLoadQueue_Array.LightBlueTint++; /*0x71e7e6*/
     *(_DWORD *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v7) = this; /*0x71e7f5*/
   }
-  this->TActionClass_field_34 = 0; /*0x71e7f8*/
+  this->q034 = 0; /*0x71e7f8*/
   return (int)this; /*0x71e7fd*/
 }
 // link stub (no binary body yet)
@@ -9198,11 +9198,11 @@ void gamemd::TActionClass::ExecuteAction(int a0, ra2::game::ObjectClass* a1, ra2
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x71e6a4*/
   this->idxArray = -1; /*0x71e6ab*/
-  this->TActionClass_field_28 = 0; /*0x71e6b2*/
-  this->TActionClass_field_2C = 0; /*0x71e6b5*/
-  this->TActionClass_field_30 = 0; /*0x71e6b8*/
-  LOBYTE(this->TActionClass_field_38) = 0; /*0x71e6bb*/
-  *(_DWORD *)&this->TActionClass_field_54 = 0; /*0x71e6be*/
+  this->q028 = 0; /*0x71e6b2*/
+  this->q02C = 0; /*0x71e6b5*/
+  this->q030 = 0; /*0x71e6b8*/
+  LOBYTE(this->q038) = 0; /*0x71e6bb*/
+  *(_DWORD *)&this->q054 = 0; /*0x71e6be*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F554C) */  /*0x71e6c1*/
   ((unsigned int *)this)[0] = (void *)&g_ptr_7F554C; /*0x71e6c7*/
   ((unsigned int *)this)[0] = (void *)&g_ptr_7F554C; /*0x71e6ce*/
@@ -9262,7 +9262,7 @@ void gamemd::TActionClass::ExecuteAction(int a0, ra2::game::ObjectClass* a1, ra2
     v7 = g_BuildingLoadQueue_Array.LightBlueTint++; /*0x71e7e6*/
     *(_DWORD *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v7) = this; /*0x71e7f5*/
   }
-  this->TActionClass_field_34 = 0; /*0x71e7f8*/
+  this->q034 = 0; /*0x71e7f8*/
   return (int)this; /*0x71e7fd*/
 }
 // truth-filled 0x71E6A0 (G42.52 truth-emitting generator)
@@ -9277,11 +9277,11 @@ void gamemd::TActionClass::ddtor()
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x71e6a4*/
   this->idxArray = -1; /*0x71e6ab*/
-  this->TActionClass_field_28 = 0; /*0x71e6b2*/
-  this->TActionClass_field_2C = 0; /*0x71e6b5*/
-  this->TActionClass_field_30 = 0; /*0x71e6b8*/
-  LOBYTE(this->TActionClass_field_38) = 0; /*0x71e6bb*/
-  *(_DWORD *)&this->TActionClass_field_54 = 0; /*0x71e6be*/
+  this->q028 = 0; /*0x71e6b2*/
+  this->q02C = 0; /*0x71e6b5*/
+  this->q030 = 0; /*0x71e6b8*/
+  LOBYTE(this->q038) = 0; /*0x71e6bb*/
+  *(_DWORD *)&this->q054 = 0; /*0x71e6be*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F554C) */  /*0x71e6c1*/
   ((unsigned int *)this)[0] = (void *)&g_ptr_7F554C; /*0x71e6c7*/
   ((unsigned int *)this)[0] = (void *)&g_ptr_7F554C; /*0x71e6ce*/
@@ -9341,7 +9341,7 @@ void gamemd::TActionClass::ddtor()
     v7 = g_BuildingLoadQueue_Array.LightBlueTint++; /*0x71e7e6*/
     *(_DWORD *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v7) = this; /*0x71e7f5*/
   }
-  this->TActionClass_field_34 = 0; /*0x71e7f8*/
+  this->q034 = 0; /*0x71e7f8*/
   return (int)this; /*0x71e7fd*/
 }
 // truth-filled 0x71FA80 (G42.52 truth-emitting generator)

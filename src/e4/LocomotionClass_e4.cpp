@@ -36,7 +36,7 @@ int LocomotionClass::Initialize()
   this->u32_24 = v2; /*0x4af55c*/
   this->ptr_30 = 0; /*0x4af55f*/
   this->u32_34 = g_DDraw_ClipRect; /*0x4af568*/
-  *((unsigned long long *)&this->ptr_4) = qword_8A0794; /*0x4af570*/
+  *((unsigned long long *)&this->u32_38) = qword_8A0794; /*0x4af570*/
   this->q040 = g_DDraw_ClipRect; /*0x4af585*/
   this->q044 = qword_8A0794; /*0x4af58e*/
   int v3; // ecx
@@ -176,13 +176,13 @@ int LocomotionClass::Update(void *a1, void *a2, void *a3, void *a4)
     (FrameSnapshot *)&a1->__pad_50[4],
     *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 1036));
   a1->CurrentHeight = 0; /*0x54ac87*/
-  *(unsigned int *)&a1->__pad_74[4] = 0; /*0x54ac8a*/
+  *(unsigned int *)&a1->q078 = 0; /*0x54ac8a*/
   *(unsigned int *)&a1->DestinationReached = 0; /*0x54ac8d*/
-  *(unsigned int *)a1->__pad_74 = 0; /*0x54ac93*/
-  *(unsigned int *)&a1->__pad_74[8] = 0; /*0x54ac96*/
-  *(unsigned int *)&a1->__pad_74[12] = 0; /*0x54ac99*/
-  *(unsigned int *)&a1->__pad_89[3] = 0; /*0x54ac9f*/
-  a1->__pad_89[7] = 0; /*0x54aca5*/
+  *(unsigned int *)a1->q074 = 0; /*0x54ac93*/
+  *(unsigned int *)&a1->q07C = 0; /*0x54ac96*/
+  *(unsigned int *)&a1->q080 = 0; /*0x54ac99*/
+  *(unsigned int *)&a1->q08C = 0; /*0x54ac9f*/
+  a1->q090 = 0; /*0x54aca5*/
   a1->unknown_91 = 0; /*0x54acab*/
   a1->Piggybackee = 0; /*0x54acb5*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7ECD44) */  /*0x54acc3*/
@@ -190,9 +190,9 @@ int LocomotionClass::Update(void *a1, void *a2, void *a3, void *a4)
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7ECD44) */  /*0x54acd0*/
   int v4; // [esp+Ch] [ebp-4h] BYREF
   (v4) = ((v4) & ~0xFFFF) | ((0x4000) & 0xFFFF); /*0x54acd7*/
-  FacingClass::Update(&a1->__pad_50[4], &v4); /*0x54acdc*/
+  FacingClass::Update(&a1->u32_54, &v4); /*0x54acdc*/
   (v4) = ((v4) & ~0xFFFF) | ((0x4000) & 0xFFFF); /*0x54ace8*/
-  FacingClass::Set_SyncLog(&a1->__pad_50[4], &v4); /*0x54aced*/
+  FacingClass::Set_SyncLog(&a1->u32_54, &v4); /*0x54aced*/
   return (int)a1->LocomotionClass; /*0x54acf4*/
 
 }

@@ -555,7 +555,7 @@ int AITriggerTypeClass::ProcessPower(int * a2)
 
   AbstractTypeClass::ProcessPower((AbstractTypeClass *)this, a2); /*0x41e5e9*/
   Power::TimerProcess(this->q098); /*0x41e5f7*/
-  Power::TimerProcess(this->Coord_9C); /*0x41e605*/
+  Power::TimerProcess(this->q09C); /*0x41e605*/
   Power::TimerProcess(this->q0A0); /*0x41e613*/
   Power::TimerProcess(this->q0A8); /*0x41e621*/
   Power::TimerProcess(this->u32_B0); /*0x41e62f*/
@@ -565,7 +565,7 @@ int AITriggerTypeClass::ProcessPower(int * a2)
     case 1: /*0x41e63f*/
     case 4: /*0x41e63f*/
     case 7: /*0x41e63f*/
-      Power::TimerProcess(this->Tactical_E4); /*0x41e64f*/
+      Power::TimerProcess(this->q0E4); /*0x41e64f*/
       Power::TimerProcess(this->q0E8); /*0x41e65d*/
       break; /*0x41e65d*/
     default:
@@ -632,22 +632,22 @@ bool AITriggerTypeClass::EnemyHouseOwns(int a2, unsigned int * a3)
   switch ( this->q0E8 ) /*0x41ebab*/
   {
     case 0: /*0x41ebab*/
-      result = v7 < this->Tactical_E4; /*0x41ebc0*/
+      result = v7 < this->q0E4; /*0x41ebc0*/
       break; /*0x41ebc5*/
     case 1: /*0x41ebab*/
-      result = v7 <= this->Tactical_E4; /*0x41ebd6*/
+      result = v7 <= this->q0E4; /*0x41ebd6*/
       break; /*0x41ebdb*/
     case 2: /*0x41ebab*/
-      result = v7 == this->Tactical_E4; /*0x41ebec*/
+      result = v7 == this->q0E4; /*0x41ebec*/
       break; /*0x41ebf1*/
     case 3: /*0x41ebab*/
-      result = v7 >= this->Tactical_E4; /*0x41ec02*/
+      result = v7 >= this->q0E4; /*0x41ec02*/
       break; /*0x41ec07*/
     case 4: /*0x41ebab*/
-      result = v7 > this->Tactical_E4; /*0x41ec18*/
+      result = v7 > this->q0E4; /*0x41ec18*/
       break; /*0x41ec1d*/
     case 5: /*0x41ebab*/
-      return v7 != this->Tactical_E4; /*0x41ec26*/
+      return v7 != this->q0E4; /*0x41ec26*/
     default:
       return v9;
   }
@@ -4723,14 +4723,14 @@ void IsometricTileTypeClass::CleanupMembers()
       i = i; /*0x544b6f*/
       for ( this->u32_2B4 = v7; /*0x544b79*/
             i < this->u32_2B4;
-            *(unsigned int *)(this->u32_2A8 + 4 * i - 4) = *(unsigned int *)(this->u32_2A8 + 4 * i) )
+            *(unsigned int *)(this->qD480 + 4 * i - 4) = *(unsigned int *)(this->qD480 + 4 * i) )
       {
         ++i; /*0x544b81*/
       }
     }
   }
   v9 = this->u32_2A8; /*0x544b96*/
-  this->u32_2A4 = 0; /*0x544b9c*/
+  this->q2A4 = 0; /*0x544b9c*/
   if ( v9 && this->u32_2B1 ) /*0x544bab*/
   {
     operator delete((v9)); /*0x544bb4*/
@@ -4745,13 +4745,13 @@ void IsometricTileTypeClass::LoadTileFileData()
 {
   int result; // eax
 
-  result = this->Image_d; /*0x544cb3*/
+  result = this->q0A4; /*0x544cb3*/
   if ( !result ) /*0x544cbb*/
   {
     if ( this->u32_2F4 ) /*0x544cbd*/
     {
       MapClass::LoadFileData((MapClass *)this); /*0x544cc9*/
-      return this->Image_d; /*0x544cce*/
+      return this->q0A4; /*0x544cce*/
     }
   }
   return result; /*0x544cd4*/
@@ -4769,7 +4769,7 @@ IsometricTileClass * IsometricTileTypeClass::GetHeight(int p0)
 {
   IsometricTileClass *v3; // eax
 
-  if ( !this->Image_d && this->u32_2F4 ) /*0x549aed*/
+  if ( !this->q0A4 && this->u32_2F4 ) /*0x549aed*/
     MapClass::LoadFileData((MapClass *)this); /*0x549af7*/
   v3 = (IsometricTileClass *)operator new(0xB0u); /*0x549b01*/
   if ( v3 ) /*0x549b0b*/
@@ -4780,10 +4780,10 @@ IsometricTileClass * IsometricTileTypeClass::GetHeight(int p0)
 // 0x549b50
 _DWORD * __stdcall IsometricTileTypeClass::g_var_4f9ac2(int* p0, int* p1)
 {
-  *(unsigned int *)this->__pad_0 = *p1; /*0x549b5d*/
+  *(unsigned int *)this->ptr_0 = *p1; /*0x549b5d*/
   this->IsometricTileTypeClass_field_0x04 = p1[1]; /*0x549b62*/
   this->IsometricTileTypeClass_field_0x08 = p1[2]; /*0x549b69*/
-  return this->__pad_0; /*0x549b65*/
+  return this->ptr_0; /*0x549b65*/
 }
 // 0x4c1f20
 int Lightning::Draw(int p0, int p1, int p2, int p3, int p4, int p5, int p6)
@@ -9232,10 +9232,10 @@ void ScoreScreen::Display()
   char v314; // [esp+7F4h] [ebp-120h] BYREF
 
   CCFileClass::Construct3((int)&v303); /*0x68cd30*/
-  *(unsigned int *)this->__pad_0 = ((*(int (**)(ObjectClass *))(g_DSurface_Hidden->ptr_0 + 124))(g_DSurface_Hidden) /*0x68cd4a*/
+  *(unsigned int *)this->__pad_0 = ((*(int (**)(ObjectClass *))(g_DSurface_Hidden->__pad_0 + 124))(g_DSurface_Hidden) /*0x68cd4a*/
                             - 640)
                            / 2;
-  this->ScoreScreen_field_0x04 = ((*(int (**)(ObjectClass *))(g_DSurface_Hidden->ptr_0 + 128))(g_DSurface_Hidden) /*0x68cd65*/
+  this->u32_4 = ((*(int (**)(ObjectClass *))(g_DSurface_Hidden->u32_4 + 128))(g_DSurface_Hidden) /*0x68cd65*/
                                 - 400)
                                / 2;
   (*(void (**)(MouseClass *))(dword_887640->HandleClick_ph + 12))(dword_887640); /*0x68cd70*/
@@ -9262,7 +9262,7 @@ void ScoreScreen::Display()
     v8[2] = 4 * v7; /*0x68ce1c*/
   }
   while ( v4 < 256 ); /*0x68ce1f*/
-  this->ScoreScreen_field_0x18 = ((4 * v3[204]) >> g_BitShift_Green_0 << g_BitShift_Red) /*0x68ce7b*/
+  this->u32_18 = ((4 * v3[204]) >> g_BitShift_Green_0 << g_BitShift_Red) /*0x68ce7b*/
                                | ((4 * v3[205]) >> g_BitMask_Blue << g_BitMask_Green)
                                | ((4 * v3[206]) >> g_BitMask_Red << g_BitShift_Blue);
   __3_YAXPAX_Z(v3); /*0x68ce7e*/
@@ -9282,11 +9282,11 @@ void ScoreScreen::Display()
   {
     v12 = 0; /*0x68cef1*/
   }
-  this->ScoreScreen_field_0x08 = (int)v12; /*0x68cef3*/
+  this->u32_8 = (int)v12; /*0x68cef3*/
   (*(void (**)(char *, unsigned int))(*(unsigned int *)v12 + 24))(v12, 0); /*0x68cefb*/
   ScoreScreen::DrawSHPBackground( /*0x68cf0b*/
     aScorePcx,
-    (int *)this->ScoreScreen_field_0x08,
+    (int *)this->u32_8,
     (int)v3,
     (int)this,
     (int)&stru_886080,
@@ -9508,16 +9508,16 @@ void ScoreScreen::Display()
     ScoreFont = ScoreScreen::LoadScoreFont(v56, v302); /*0x68d3de*/
   else
     ScoreFont = 0; /*0x68d3e5*/
-  this->ScoreScreen_field_0x0C = (int)ScoreFont; /*0x68d3e9*/
+  this->u32_C = (int)ScoreFont; /*0x68d3e9*/
   v58 = (ScoreScreen *)__2_YAPAXI_Z(0x18u); /*0x68d3ec*/
   if ( v58 ) /*0x68d3f6*/
     CountryFlags = ScoreScreen::LoadCountryFlags(v58, v302); /*0x68d3ff*/
   else
     CountryFlags = 0; /*0x68d406*/
-  this->ScoreScreen_field_0x10 = (int)CountryFlags; /*0x68d408*/
+  this->u32_10 = (int)CountryFlags; /*0x68d408*/
   Event::Dispatch(); /*0x68d40b*/
-  p_ScoreScreen_field_0x1C = &this->ScoreScreen_field_0x1C; /*0x68d413*/
-  (*(void (**)(int *))(this->ScoreScreen_field_0x1C + 12))(&this->ScoreScreen_field_0x1C); /*0x68d418*/
+  p_ScoreScreen_field_0x1C = &this->u32_1C; /*0x68d413*/
+  (*(void (**)(int *))(this->u32_1C + 12))(&this->u32_1C); /*0x68d418*/
   Timer::PumpMessages((Timer *)dword_87F770); /*0x68d421*/
   if ( g_INI_Key_Wipe ) /*0x68d42d*/
   {
@@ -9533,12 +9533,12 @@ void ScoreScreen::Display()
   Movie::Play(-1, (int)this, i, aScoreVqa, 0, 0, 1, 0); /*0x68d470*/
   (*(void (**)(ObjectClass *, int, unsigned int, int))(g_DSurface_Hidden->ptr_0 + 4))( /*0x68d484*/
     g_DSurface_Hidden,
-    this->ScoreScreen_field_0x08,
+    this->u32_8,
     0,
     1);
   (*(void (**)(DSurface *, int, unsigned int, int))(DSurface_Alternate->DSurface_field_0x0 + 4))( /*0x68d496*/
     DSurface_Alternate,
-    this->ScoreScreen_field_0x08,
+    this->u32_8,
     0,
     1);
   v61 = (ConvertClass *)__2_YAPAXI_Z(0x188u); /*0x68d49e*/
@@ -9546,12 +9546,12 @@ void ScoreScreen::Display()
     v62 = ConvertClass::Construct(v61, (int)&stru_886080, (int)&stru_886080, (int)g_DSurface_Primary, 1, 0); /*0x68d4c0*/
   else
     v62 = 0; /*0x68d4c7*/
-  this->ScoreScreen_field_0x14 = (int)v62; /*0x68d4cb*/
+  this->q014 = (int)v62; /*0x68d4cb*/
   v63 = __2_YAPAXI_Z(0x2Cu); /*0x68d4d3*/
   if ( v63 ) /*0x68d4da*/
   {
-    ScoreScreen_field_0x14 = this->ScoreScreen_field_0x14; /*0x68d4e2*/
-    v65 = this->ScoreScreen_field_0x04 + 6; /*0x68d4e5*/
+    ScoreScreen_field_0x14 = this->q014; /*0x68d4e2*/
+    v65 = this->u32_4 + 6; /*0x68d4e5*/
     *(unsigned int *)(v63 + 4) = *(unsigned int *)this->__pad_0 + 7; /*0x68d4f0*/
     v63->ptr_3 = v65; /*0x68d4f3*/
     Timer::Init((Timer *)(v63 + 12), 0); /*0x68d4f6*/
@@ -9583,14 +9583,14 @@ void ScoreScreen::Display()
   for ( k = 0; k < 10; ++k ) /*0x68d575*/
   {
     v69 = *(unsigned int *)this->__pad_0; /*0x68d57c*/
-    Rect.top = this->ScoreScreen_field_0x04 + 23; /*0x68d588*/
+    Rect.top = this->u32_4 + 23; /*0x68d588*/
     Rect.left = v69 + 480; /*0x68d5a1*/
     v70 = (int *)(*(int (**)(ObjectClass *, char *))(g_DSurface_Hidden->ptr_0 + 120))( /*0x68d5b4*/
                    g_DSurface_Hidden,
                    v310);
     DrawToSurfaceSHP( /*0x68d5cc*/
       (int)g_DSurface_Hidden,
-      this->ScoreScreen_field_0x14,
+      this->q014,
       v286,
       k,
       &Rect.left,
@@ -9607,10 +9607,10 @@ void ScoreScreen::Display()
       0);
     Screen::TransitionLoop((Screen *)this, 4); /*0x68d5d5*/
   }
-  ScoreScreen_field_0x04 = this->ScoreScreen_field_0x04; /*0x68d5e3*/
+  ScoreScreen_field_0x04 = this->u32_4; /*0x68d5e3*/
   v289 = *(unsigned int *)this->__pad_0 + 480; /*0x68d5ed*/
   v290 = ScoreScreen_field_0x04 + 23; /*0x68d600*/
-  ScoreScreen_field_0x08 = this->ScoreScreen_field_0x08; /*0x68d604*/
+  ScoreScreen_field_0x08 = this->u32_8; /*0x68d604*/
   v291 = 160; /*0x68d608*/
   v292 = 120; /*0x68d610*/
   (*(void (**)(int, int *, ObjectClass *, int *, unsigned int, int))(*(unsigned int *)ScoreScreen_field_0x08 + 8))( /*0x68d61f*/
@@ -9629,21 +9629,21 @@ void ScoreScreen::Display()
     0,
     1);
   StringCSF = (char *)GetStringCSF(aTxtMissionEffi, 0, g_Str_File_Score_CPP, 506); /*0x68d652*/
-  ScoreScreen_field_0x0C = this->ScoreScreen_field_0x0C; /*0x68d657*/
+  ScoreScreen_field_0x0C = this->u32_C; /*0x68d657*/
   v75 = StringCSF; /*0x68d65a*/
   v288 = StringCSF; /*0x68d65d*/
   (*(void (**)(int, char *))(*(unsigned int *)ScoreScreen_field_0x0C + 8))(ScoreScreen_field_0x0C, StringCSF); /*0x68d663*/
   v76 = *(unsigned int *)this->__pad_0 /*0x68d67b*/
-      - (*(int (**)(int, char *))(*(unsigned int *)this->ScoreScreen_field_0x0C + 8))(
-          this->ScoreScreen_field_0x0C,
+      - (*(int (**)(int, char *))(*(unsigned int *)this->u32_C + 8))(
+          this->u32_C,
           v75)
       / 2
       + 552;
   v77 = __2_YAPAXI_Z(0x2Cu); /*0x68d686*/
   if ( v77 ) /*0x68d68d*/
   {
-    v78 = this->ScoreScreen_field_0x04; /*0x68d692*/
-    Rect.left = this->ScoreScreen_field_0x0C; /*0x68d695*/
+    v78 = this->u32_4; /*0x68d692*/
+    Rect.left = this->u32_C; /*0x68d695*/
     *(unsigned int *)(v77 + 4) = v76; /*0x68d6a1*/
     v77->ptr_3 = v78 + 13; /*0x68d6a4*/
     Timer::Init((Timer *)(v77 + 12), 0); /*0x68d6a7*/
@@ -9664,7 +9664,7 @@ void ScoreScreen::Display()
   VectorClass::PushBack2(&this->u32_1C, &Rect); /*0x68d6da*/
   v81 = *p_ScoreScreen_field_0x1C; /*0x68d6df*/
   v286 = v77; /*0x68d6e8*/
-  if ( (*(int (**)(int *, int *))(v81 + 16))(&this->ScoreScreen_field_0x1C, &v286) != -1 ) /*0x68d6f2*/
+  if ( (*(int (**)(int *, int *))(v81 + 16))(&this->u32_1C, &v286) != -1 ) /*0x68d6f2*/
   {
     do /*0x68d710*/
     {
@@ -9672,7 +9672,7 @@ void ScoreScreen::Display()
       v82 = *p_ScoreScreen_field_0x1C; /*0x68d6fd*/
       v286 = v77; /*0x68d706*/
     }
-    while ( (*(int (**)(int *, int *))(v82 + 16))(&this->ScoreScreen_field_0x1C, &v286) != -1 ); /*0x68d710*/
+    while ( (*(int (**)(int *, int *))(v82 + 16))(&this->u32_1C, &v286) != -1 ); /*0x68d710*/
   }
   Timer::PumpMessages((Timer *)dword_87F770); /*0x68d718*/
   Rect.left = Render_Get(*(#375 **)((char *)&stru_A83CD9.estimatedHealth + 3)); /*0x68d739*/
@@ -9680,8 +9680,8 @@ void ScoreScreen::Display()
   v83 = __2_YAPAXI_Z(0x2Cu); /*0x68d749*/
   if ( v83 ) /*0x68d750*/
   {
-    ScoreScreen_field_0x10 = this->ScoreScreen_field_0x10; /*0x68d758*/
-    v85 = this->ScoreScreen_field_0x04 + 60; /*0x68d761*/
+    ScoreScreen_field_0x10 = this->u32_10; /*0x68d758*/
+    v85 = this->u32_4 + 60; /*0x68d761*/
     *(unsigned int *)(v83 + 4) = *(unsigned int *)this->__pad_0 + 520; /*0x68d764*/
     v83->ptr_3 = v85; /*0x68d76c*/
     Timer::Init((Timer *)(v83 + 12), 0); /*0x68d76f*/
@@ -9700,7 +9700,7 @@ void ScoreScreen::Display()
   VectorClass::PushBack2(&this->u32_1C, &v286); /*0x68d7a1*/
   v86 = *p_ScoreScreen_field_0x1C; /*0x68d7a6*/
   v286 = v83; /*0x68d7af*/
-  if ( (*(int (**)(int *, int *))(v86 + 16))(&this->ScoreScreen_field_0x1C, &v286) != -1 ) /*0x68d7b9*/
+  if ( (*(int (**)(int *, int *))(v86 + 16))(&this->u32_1C, &v286) != -1 ) /*0x68d7b9*/
   {
     do /*0x68d7d7*/
     {
@@ -9708,11 +9708,11 @@ void ScoreScreen::Display()
       v87 = *p_ScoreScreen_field_0x1C; /*0x68d7c4*/
       v286 = v83; /*0x68d7cd*/
     }
-    while ( (*(int (**)(int *, int *))(v87 + 16))(&this->ScoreScreen_field_0x1C, &v286) != -1 ); /*0x68d7d7*/
+    while ( (*(int (**)(int *, int *))(v87 + 16))(&this->u32_1C, &v286) != -1 ); /*0x68d7d7*/
   }
   for ( m = 0; m < 10; ++m ) /*0x68d7d9*/
   {
-    v89 = this->ScoreScreen_field_0x04; /*0x68d7e0*/
+    v89 = this->u32_4; /*0x68d7e0*/
     v286 = *(unsigned int *)this->__pad_0 + 481; /*0x68d7f0*/
     v287 = v89 + 148; /*0x68d806*/
     v90 = (int *)(*(int (**)(ObjectClass *, char *))(g_DSurface_Hidden->ptr_0 + 120))( /*0x68d81b*/
@@ -9720,7 +9720,7 @@ void ScoreScreen::Display()
                    v310);
     DrawToSurfaceSHP( /*0x68d833*/
       (int)g_DSurface_Hidden,
-      this->ScoreScreen_field_0x14,
+      this->q014,
       v297[0],
       m,
       &v286,
@@ -9738,8 +9738,8 @@ void ScoreScreen::Display()
     Screen::TransitionLoop((Screen *)this, 4); /*0x68d83c*/
   }
   v91 = *(unsigned int *)this->__pad_0; /*0x68d84a*/
-  v92 = this->ScoreScreen_field_0x08; /*0x68d84d*/
-  v290 = this->ScoreScreen_field_0x04 + 148; /*0x68d855*/
+  v92 = this->u32_8; /*0x68d84d*/
+  v290 = this->u32_4 + 148; /*0x68d855*/
   v289 = v91 + 481; /*0x68d86e*/
   v291 = 144; /*0x68d872*/
   v292 = 86; /*0x68d87a*/
@@ -9759,21 +9759,21 @@ void ScoreScreen::Display()
     0,
     1);
   v93 = (char *)GetStringCSF(aTxtCurrency, 0, g_Str_File_Score_CPP, 543); /*0x68d8bc*/
-  v94 = this->ScoreScreen_field_0x0C; /*0x68d8c1*/
+  v94 = this->u32_C; /*0x68d8c1*/
   v95 = v93; /*0x68d8c4*/
   v288 = v93; /*0x68d8c7*/
   (*(void (**)(int, char *))(*(unsigned int *)v94 + 8))(v94, v93); /*0x68d8cd*/
   v96 = *(unsigned int *)this->__pad_0 /*0x68d8e5*/
-      - (*(int (**)(int, char *))(*(unsigned int *)this->ScoreScreen_field_0x0C + 8))(
-          this->ScoreScreen_field_0x0C,
+      - (*(int (**)(int, char *))(*(unsigned int *)this->u32_C + 8))(
+          this->u32_C,
           v95)
       / 2
       + 560;
   v97 = __2_YAPAXI_Z(0x2Cu); /*0x68d8f0*/
   if ( v97 ) /*0x68d8f7*/
   {
-    v98 = this->ScoreScreen_field_0x04; /*0x68d8fc*/
-    v286 = this->ScoreScreen_field_0x0C; /*0x68d8ff*/
+    v98 = this->u32_4; /*0x68d8fc*/
+    v286 = this->u32_C; /*0x68d8ff*/
     *(unsigned int *)(v97 + 4) = v96; /*0x68d90d*/
     v97->ptr_3 = v98 + 193; /*0x68d910*/
     Timer::Init((Timer *)(v97 + 12), 0); /*0x68d913*/
@@ -9794,7 +9794,7 @@ void ScoreScreen::Display()
   VectorClass::PushBack2(&this->u32_1C, &v286); /*0x68d946*/
   v101 = *p_ScoreScreen_field_0x1C; /*0x68d94b*/
   v286 = v97; /*0x68d954*/
-  if ( (*(int (**)(int *, int *))(v101 + 16))(&this->ScoreScreen_field_0x1C, &v286) != -1 ) /*0x68d95e*/
+  if ( (*(int (**)(int *, int *))(v101 + 16))(&this->u32_1C, &v286) != -1 ) /*0x68d95e*/
   {
     do /*0x68d97c*/
     {
@@ -9802,12 +9802,12 @@ void ScoreScreen::Display()
       v102 = *p_ScoreScreen_field_0x1C; /*0x68d969*/
       v286 = v97; /*0x68d972*/
     }
-    while ( (*(int (**)(int *, int *))(v102 + 16))(&this->ScoreScreen_field_0x1C, &v286) != -1 ); /*0x68d97c*/
+    while ( (*(int (**)(int *, int *))(v102 + 16))(&this->u32_1C, &v286) != -1 ); /*0x68d97c*/
   }
   v103 = *(unsigned int *)this->__pad_0; /*0x68d981*/
-  v290 = this->ScoreScreen_field_0x04 + 148; /*0x68d98c*/
+  v290 = this->u32_4 + 148; /*0x68d98c*/
   v289 = v103 + 481; /*0x68d9a3*/
-  v104 = this->ScoreScreen_field_0x08; /*0x68d9a7*/
+  v104 = this->u32_8; /*0x68d9a7*/
   v291 = 150; /*0x68d9ab*/
   v292 = 120; /*0x68d9b3*/
   (*(void (**)(int, int *, ObjectClass *, int *, unsigned int, int))(*(unsigned int *)v104 + 8))( /*0x68d9c2*/
@@ -9831,8 +9831,8 @@ void ScoreScreen::Display()
   v107 = __2_YAPAXI_Z(0x2Cu); /*0x68da2b*/
   if ( v107 ) /*0x68da32*/
   {
-    v108 = this->ScoreScreen_field_0x04; /*0x68da37*/
-    v286 = this->ScoreScreen_field_0x0C; /*0x68da3a*/
+    v108 = this->u32_4; /*0x68da37*/
+    v286 = this->u32_C; /*0x68da3a*/
     ScoreScreen::Constructor( /*0x68da54*/
       (ScoreScreen *)v107,
       590 - 12 * (v106 - 1) + *(unsigned int *)this->__pad_0,
@@ -9855,7 +9855,7 @@ void ScoreScreen::Display()
     Screen::TransitionLoop((Screen *)this, 1); /*0x68da95*/
   for ( n = 0; n < 10; ++n ) /*0x68daa6*/
   {
-    v111 = this->ScoreScreen_field_0x04; /*0x68daad*/
+    v111 = this->u32_4; /*0x68daad*/
     v286 = *(unsigned int *)this->__pad_0 + 444; /*0x68dabd*/
     v287 = v111 + 273; /*0x68dad3*/
     v112 = (int *)(*(int (**)(ObjectClass *, char *))(g_DSurface_Hidden->ptr_0 + 120))( /*0x68dae8*/
@@ -9863,7 +9863,7 @@ void ScoreScreen::Display()
                     v310);
     DrawToSurfaceSHP( /*0x68db00*/
       (int)g_DSurface_Hidden,
-      this->ScoreScreen_field_0x14,
+      this->q014,
       v293,
       n,
       &v286,
@@ -9881,8 +9881,8 @@ void ScoreScreen::Display()
     Screen::TransitionLoop((Screen *)this, 4); /*0x68db09*/
   }
   v113 = *(unsigned int *)this->__pad_0; /*0x68db17*/
-  v114 = this->ScoreScreen_field_0x08; /*0x68db1a*/
-  v290 = this->ScoreScreen_field_0x04 + 273; /*0x68db22*/
+  v114 = this->u32_8; /*0x68db1a*/
+  v290 = this->u32_4 + 273; /*0x68db22*/
   v289 = v113 + 444; /*0x68db3b*/
   v291 = 196; /*0x68db3f*/
   v292 = 118; /*0x68db47*/
@@ -9902,21 +9902,21 @@ void ScoreScreen::Display()
     0,
     1);
   v115 = (char *)GetStringCSF(aTxtMissionTime, 0, g_Str_File_Score_CPP, 571); /*0x68db89*/
-  v116 = this->ScoreScreen_field_0x0C; /*0x68db8e*/
+  v116 = this->u32_C; /*0x68db8e*/
   v117 = v115; /*0x68db91*/
   v288 = v115; /*0x68db94*/
   (*(void (**)(int, char *))(*(unsigned int *)v116 + 8))(v116, v115); /*0x68db9a*/
   v118 = *(unsigned int *)this->__pad_0 /*0x68dbb2*/
-       - (*(int (**)(int, char *))(*(unsigned int *)this->ScoreScreen_field_0x0C + 8))(
-           this->ScoreScreen_field_0x0C,
+       - (*(int (**)(int, char *))(*(unsigned int *)this->u32_C + 8))(
+           this->u32_C,
            v117)
        / 2
        + 542;
   v119 = __2_YAPAXI_Z(0x2Cu); /*0x68dbbd*/
   if ( v119 ) /*0x68dbc4*/
   {
-    v120 = this->ScoreScreen_field_0x04; /*0x68dbc9*/
-    v286 = this->ScoreScreen_field_0x0C; /*0x68dbcc*/
+    v120 = this->u32_4; /*0x68dbc9*/
+    v286 = this->u32_C; /*0x68dbcc*/
     *(unsigned int *)(v119 + 4) = v118; /*0x68dbda*/
     v119->ptr_3 = v120 + 366; /*0x68dbdd*/
     Timer::Init((Timer *)(v119 + 12), 0); /*0x68dbe0*/
@@ -9937,7 +9937,7 @@ void ScoreScreen::Display()
   VectorClass::PushBack2(&this->u32_1C, &v286); /*0x68dc13*/
   v123 = *p_ScoreScreen_field_0x1C; /*0x68dc18*/
   v286 = v119; /*0x68dc21*/
-  if ( (*(int (**)(int *, int *))(v123 + 16))(&this->ScoreScreen_field_0x1C, &v286) != -1 ) /*0x68dc2b*/
+  if ( (*(int (**)(int *, int *))(v123 + 16))(&this->u32_1C, &v286) != -1 ) /*0x68dc2b*/
   {
     do /*0x68dc49*/
     {
@@ -9945,7 +9945,7 @@ void ScoreScreen::Display()
       v124 = *p_ScoreScreen_field_0x1C; /*0x68dc36*/
       v286 = v119; /*0x68dc3f*/
     }
-    while ( (*(int (**)(int *, int *))(v124 + 16))(&this->ScoreScreen_field_0x1C, &v286) != -1 ); /*0x68dc49*/
+    while ( (*(int (**)(int *, int *))(v124 + 16))(&this->u32_1C, &v286) != -1 ); /*0x68dc49*/
   }
   uniqueId = dword_A8B230[43].uniqueId; /*0x68dc57*/
   if ( dword_A8B230[43].ptr_8 != -1 ) /*0x68dc66*/
@@ -9967,7 +9967,7 @@ void ScoreScreen::Display()
   }
   for ( jj = 0; jj < 10; ++jj ) /*0x68dccc*/
   {
-    v129 = this->ScoreScreen_field_0x04; /*0x68dcd3*/
+    v129 = this->u32_4; /*0x68dcd3*/
     v286 = *(unsigned int *)this->__pad_0 + 186; /*0x68dce3*/
     v287 = v129 + 54; /*0x68dcf6*/
     v130 = (int *)(*(int (**)(ObjectClass *, char *))(g_DSurface_Hidden->ptr_0 + 120))( /*0x68dd0b*/
@@ -9975,7 +9975,7 @@ void ScoreScreen::Display()
                     v310);
     DrawToSurfaceSHP( /*0x68dd26*/
       (int)g_DSurface_Hidden,
-      this->ScoreScreen_field_0x14,
+      this->q014,
       v306,
       jj,
       &v286,
@@ -9991,14 +9991,14 @@ void ScoreScreen::Display()
       0,
       0);
     v131 = *(unsigned int *)this->__pad_0; /*0x68dd2e*/
-    v297[1] = this->ScoreScreen_field_0x04 + 254; /*0x68dd3c*/
+    v297[1] = this->u32_4 + 254; /*0x68dd3c*/
     v297[0] = v131 + 186; /*0x68dd55*/
     v132 = (int *)(*(int (**)(ObjectClass *, char *))(g_DSurface_Hidden->ptr_0 + 120))( /*0x68dd68*/
                     g_DSurface_Hidden,
                     v311);
     DrawToSurfaceSHP( /*0x68dd80*/
       (int)g_DSurface_Hidden,
-      this->ScoreScreen_field_0x14,
+      this->q014,
       v298,
       jj,
       v297,
@@ -10015,10 +10015,10 @@ void ScoreScreen::Display()
       0);
     Screen::TransitionLoop((Screen *)this, 4); /*0x68dd89*/
   }
-  v133 = this->ScoreScreen_field_0x04; /*0x68dd9b*/
+  v133 = this->u32_4; /*0x68dd9b*/
   v289 = *(unsigned int *)this->__pad_0 + 186; /*0x68dda5*/
   v290 = v133 + 54; /*0x68ddb8*/
-  v134 = this->ScoreScreen_field_0x08; /*0x68ddbc*/
+  v134 = this->u32_8; /*0x68ddbc*/
   v291 = 262; /*0x68ddc0*/
   v292 = 326; /*0x68ddc8*/
   (*(void (**)(int, int *, ObjectClass *, int *, unsigned int, int))(*(unsigned int *)v134 + 8))( /*0x68ddd7*/
@@ -10037,21 +10037,21 @@ void ScoreScreen::Display()
     0,
     1);
   v135 = (char *)GetStringCSF(aTxtCasualties, 0, g_Str_File_Score_CPP, 601); /*0x68de0a*/
-  v136 = this->ScoreScreen_field_0x0C; /*0x68de0f*/
+  v136 = this->u32_C; /*0x68de0f*/
   v137 = v135; /*0x68de12*/
   v288 = v135; /*0x68de15*/
   (*(void (**)(int, char *))(*(unsigned int *)v136 + 8))(v136, v135); /*0x68de1b*/
   v138 = *(unsigned int *)this->__pad_0 /*0x68de33*/
-       - (*(int (**)(int, char *))(*(unsigned int *)this->ScoreScreen_field_0x0C + 8))(
-           this->ScoreScreen_field_0x0C,
+       - (*(int (**)(int, char *))(*(unsigned int *)this->u32_C + 8))(
+           this->u32_C,
            v137)
        / 2
        + 316;
   v139 = __2_YAPAXI_Z(0x2Cu); /*0x68de3e*/
   if ( v139 ) /*0x68de45*/
   {
-    v140 = this->ScoreScreen_field_0x04; /*0x68de4a*/
-    v298 = this->ScoreScreen_field_0x0C; /*0x68de4d*/
+    v140 = this->u32_4; /*0x68de4a*/
+    v298 = this->u32_C; /*0x68de4d*/
     *(unsigned int *)(v139 + 4) = v138; /*0x68de59*/
     *(unsigned int *)(v139 + 8) = v140 + 300; /*0x68de5c*/
     Ticks = Timer::GetTicks(); /*0x68de5f*/
@@ -10070,20 +10070,20 @@ void ScoreScreen::Display()
   {
     v139 = 0; /*0x68de8b*/
   }
-  ScoreScreen_field_0x24 = this->ScoreScreen_field_0x24; /*0x68de8d*/
+  ScoreScreen_field_0x24 = this->u32_24; /*0x68de8d*/
   if ( this->u32_2C < ScoreScreen_field_0x24 /*0x68deb2*/
     || (this->u32_29 || !ScoreScreen_field_0x24)
     && (v145 = this->u32_30, v145 > 0)
-    && p_ScoreScreen_field_0x1C->vt_slot_8(&this->ScoreScreen_field_0x1C, ScoreScreen_field_0x24 + v145, 0) )
+    && p_ScoreScreen_field_0x1C->vt_slot_8(&this->u32_1C, ScoreScreen_field_0x24 + v145, 0) )
   {
     v146 = this->u32_2C; /*0x68deb9*/
-    ScoreScreen_field_0x20 = this->ScoreScreen_field_0x20; /*0x68debc*/
+    ScoreScreen_field_0x20 = this->u32_20; /*0x68debc*/
     this->u32_2C = v146 + 1; /*0x68dec2*/
     *(unsigned int *)(ScoreScreen_field_0x20 + 4 * v146) = v139; /*0x68dec5*/
   }
   v148 = *p_ScoreScreen_field_0x1C; /*0x68dec8*/
   v286 = v139; /*0x68ded1*/
-  if ( (*(int (**)(int *, int *))(v148 + 16))(&this->ScoreScreen_field_0x1C, &v286) != -1 ) /*0x68dedb*/
+  if ( (*(int (**)(int *, int *))(v148 + 16))(&this->u32_1C, &v286) != -1 ) /*0x68dedb*/
   {
     do /*0x68def9*/
     {
@@ -10091,7 +10091,7 @@ void ScoreScreen::Display()
       v149 = *p_ScoreScreen_field_0x1C; /*0x68dee6*/
       v286 = v139; /*0x68deef*/
     }
-    while ( (*(int (**)(int *, int *))(v149 + 16))(&this->ScoreScreen_field_0x1C, &v286) != -1 ); /*0x68def9*/
+    while ( (*(int (**)(int *, int *))(v149 + 16))(&this->u32_1C, &v286) != -1 ); /*0x68def9*/
   }
   v150 = (char *)GetStringCSF(aTxtStructures, 0, g_Str_File_Score_CPP, 613); /*0x68df0c*/
   v151 = *(unsigned int *)this->__pad_0; /*0x68df11*/
@@ -10100,8 +10100,8 @@ void ScoreScreen::Display()
   v153 = __2_YAPAXI_Z(0x2Cu); /*0x68df25*/
   if ( v153 ) /*0x68df2c*/
   {
-    v154 = this->ScoreScreen_field_0x04; /*0x68df31*/
-    v298 = this->ScoreScreen_field_0x0C; /*0x68df34*/
+    v154 = this->u32_4; /*0x68df31*/
+    v298 = this->u32_C; /*0x68df34*/
     *(unsigned int *)(v153 + 4) = v152; /*0x68df40*/
     *(unsigned int *)(v153 + 8) = v154 + 247; /*0x68df43*/
     v155 = Timer::GetTicks(); /*0x68df46*/
@@ -10120,14 +10120,14 @@ void ScoreScreen::Display()
   {
     v153 = 0; /*0x68df72*/
   }
-  v158 = this->ScoreScreen_field_0x24; /*0x68df74*/
+  v158 = this->u32_24; /*0x68df74*/
   if ( this->u32_2C < v158 /*0x68df99*/
     || (this->u32_29 || !v158)
     && (v159 = this->u32_30, v159 > 0)
-    && p_ScoreScreen_field_0x1C->vt_slot_8(&this->ScoreScreen_field_0x1C, v158 + v159, 0) )
+    && p_ScoreScreen_field_0x1C->vt_slot_8(&this->u32_1C, v158 + v159, 0) )
   {
     v160 = this->u32_2C; /*0x68dfa0*/
-    v161 = (unsigned int *)this->ScoreScreen_field_0x20; /*0x68dfa3*/
+    v161 = (unsigned int *)this->u32_20; /*0x68dfa3*/
     this->u32_2C = v160 + 1; /*0x68dfa9*/
     v161[v160] = v153; /*0x68dfac*/
   }
@@ -10135,8 +10135,8 @@ void ScoreScreen::Display()
   v163 = __2_YAPAXI_Z(0x2Cu); /*0x68dfbf*/
   if ( v163 ) /*0x68dfc6*/
   {
-    v298 = this->ScoreScreen_field_0x0C; /*0x68dfce*/
-    v164 = this->ScoreScreen_field_0x04 + 247; /*0x68dfd5*/
+    v298 = this->u32_C; /*0x68dfce*/
+    v164 = this->u32_4 + 247; /*0x68dfd5*/
     *(unsigned int *)(v163 + 4) = v162; /*0x68dfda*/
     *(unsigned int *)(v163 + 8) = v164; /*0x68dfdd*/
     v165 = Timer::GetTicks(); /*0x68dfe0*/
@@ -10155,20 +10155,20 @@ void ScoreScreen::Display()
   {
     v163 = 0; /*0x68e00c*/
   }
-  v168 = this->ScoreScreen_field_0x24; /*0x68e00e*/
+  v168 = this->u32_24; /*0x68e00e*/
   if ( this->u32_2C < v168 /*0x68e033*/
     || (this->u32_29 || !v168)
     && (v169 = this->u32_30, v169 > 0)
-    && p_ScoreScreen_field_0x1C->vt_slot_8(&this->ScoreScreen_field_0x1C, v168 + v169, 0) )
+    && p_ScoreScreen_field_0x1C->vt_slot_8(&this->u32_1C, v168 + v169, 0) )
   {
     v170 = this->u32_2C; /*0x68e03a*/
-    v171 = (unsigned int *)this->ScoreScreen_field_0x20; /*0x68e03d*/
+    v171 = (unsigned int *)this->u32_20; /*0x68e03d*/
     this->u32_2C = v170 + 1; /*0x68e043*/
     v171[v170] = v163; /*0x68e046*/
   }
   v172 = *p_ScoreScreen_field_0x1C; /*0x68e049*/
   v286 = v163; /*0x68e052*/
-  if ( (*(int (**)(int *, int *))(v172 + 16))(&this->ScoreScreen_field_0x1C, &v286) != -1 ) /*0x68e05c*/
+  if ( (*(int (**)(int *, int *))(v172 + 16))(&this->u32_1C, &v286) != -1 ) /*0x68e05c*/
   {
     do /*0x68e07a*/
     {
@@ -10176,17 +10176,17 @@ void ScoreScreen::Display()
       v173 = *p_ScoreScreen_field_0x1C; /*0x68e067*/
       v286 = v163; /*0x68e070*/
     }
-    while ( (*(int (**)(int *, int *))(v173 + 16))(&this->ScoreScreen_field_0x1C, &v286) != -1 ); /*0x68e07a*/
+    while ( (*(int (**)(int *, int *))(v173 + 16))(&this->u32_1C, &v286) != -1 ); /*0x68e07a*/
   }
   v174 = (char *)GetStringCSF(aTxtUnits, 0, g_Str_File_Score_CPP, 628); /*0x68e08d*/
-  v175 = this->ScoreScreen_field_0x0C; /*0x68e092*/
+  v175 = this->u32_C; /*0x68e092*/
   v288 = v174; /*0x68e096*/
   v176 = *(unsigned int *)this->__pad_0 - (*(int (**)(int, char *))(*(unsigned int *)v175 + 8))(v175, v174) / 2 + 290; /*0x68e0ab*/
   v177 = __2_YAPAXI_Z(0x2Cu); /*0x68e0b6*/
   if ( v177 ) /*0x68e0bd*/
   {
-    v298 = this->ScoreScreen_field_0x0C; /*0x68e0c5*/
-    v178 = this->ScoreScreen_field_0x04 + 247; /*0x68e0cc*/
+    v298 = this->u32_C; /*0x68e0c5*/
+    v178 = this->u32_4 + 247; /*0x68e0cc*/
     *(unsigned int *)(v177 + 4) = v176; /*0x68e0d1*/
     *(unsigned int *)(v177 + 8) = v178; /*0x68e0d4*/
     v179 = Timer::GetTicks(); /*0x68e0d7*/
@@ -10205,28 +10205,28 @@ void ScoreScreen::Display()
   {
     v177 = 0; /*0x68e103*/
   }
-  v182 = this->ScoreScreen_field_0x24; /*0x68e105*/
+  v182 = this->u32_24; /*0x68e105*/
   if ( this->u32_2C < v182 /*0x68e12a*/
     || (this->u32_29 || !v182)
     && (v183 = this->u32_30, v183 > 0)
-    && p_ScoreScreen_field_0x1C->vt_slot_8(&this->ScoreScreen_field_0x1C, v182 + v183, 0) )
+    && p_ScoreScreen_field_0x1C->vt_slot_8(&this->u32_1C, v182 + v183, 0) )
   {
     v184 = this->u32_2C; /*0x68e131*/
-    v185 = (unsigned int *)this->ScoreScreen_field_0x20; /*0x68e134*/
+    v185 = (unsigned int *)this->u32_20; /*0x68e134*/
     this->u32_2C = v184 + 1; /*0x68e13a*/
     v185[v184] = v177; /*0x68e13d*/
   }
   v186 = *(unsigned int *)this->__pad_0 /*0x68e159*/
-       - (*(int (**)(int, char *))(*(unsigned int *)this->ScoreScreen_field_0x0C + 8))(
-           this->ScoreScreen_field_0x0C,
+       - (*(int (**)(int, char *))(*(unsigned int *)this->u32_C + 8))(
+           this->u32_C,
            v288)
        / 2
        + 422;
   v187 = __2_YAPAXI_Z(0x2Cu); /*0x68e164*/
   if ( v187 ) /*0x68e16b*/
   {
-    v298 = this->ScoreScreen_field_0x0C; /*0x68e173*/
-    v188 = this->ScoreScreen_field_0x04 + 247; /*0x68e17a*/
+    v298 = this->u32_C; /*0x68e173*/
+    v188 = this->u32_4 + 247; /*0x68e17a*/
     *(unsigned int *)(v187 + 4) = v186; /*0x68e17f*/
     *(unsigned int *)(v187 + 8) = v188; /*0x68e182*/
     v189 = Timer::GetTicks(); /*0x68e185*/
@@ -10245,20 +10245,20 @@ void ScoreScreen::Display()
   {
     v187 = 0; /*0x68e1b1*/
   }
-  v192 = this->ScoreScreen_field_0x24; /*0x68e1b3*/
+  v192 = this->u32_24; /*0x68e1b3*/
   if ( this->u32_2C < v192 /*0x68e1d8*/
     || (this->u32_29 || !v192)
     && (v193 = this->u32_30, v193 > 0)
-    && p_ScoreScreen_field_0x1C->vt_slot_8(&this->ScoreScreen_field_0x1C, v192 + v193, 0) )
+    && p_ScoreScreen_field_0x1C->vt_slot_8(&this->u32_1C, v192 + v193, 0) )
   {
     v194 = this->u32_2C; /*0x68e1df*/
-    v195 = (unsigned int *)this->ScoreScreen_field_0x20; /*0x68e1e2*/
+    v195 = (unsigned int *)this->u32_20; /*0x68e1e2*/
     this->u32_2C = v194 + 1; /*0x68e1e8*/
     v195[v194] = v187; /*0x68e1eb*/
   }
   v196 = *p_ScoreScreen_field_0x1C; /*0x68e1ee*/
   v286 = v187; /*0x68e1f7*/
-  if ( (*(int (**)(int *, int *))(v196 + 16))(&this->ScoreScreen_field_0x1C, &v286) != -1 ) /*0x68e201*/
+  if ( (*(int (**)(int *, int *))(v196 + 16))(&this->u32_1C, &v286) != -1 ) /*0x68e201*/
   {
     do /*0x68e21f*/
     {
@@ -10266,7 +10266,7 @@ void ScoreScreen::Display()
       v197 = *p_ScoreScreen_field_0x1C; /*0x68e20c*/
       v286 = v187; /*0x68e215*/
     }
-    while ( (*(int (**)(int *, int *))(v197 + 16))(&this->ScoreScreen_field_0x1C, &v286) != -1 ); /*0x68e21f*/
+    while ( (*(int (**)(int *, int *))(v197 + 16))(&this->u32_1C, &v286) != -1 ); /*0x68e21f*/
   }
   ScoreScreen::AccumulateScoreStats(this); /*0x68e223*/
   while ( byte_B05584 ) /*0x68e22f*/
@@ -10285,7 +10285,7 @@ void ScoreScreen::Display()
   }
   for ( mm = 0; mm < 10; ++mm ) /*0x68e28b*/
   {
-    v200 = this->ScoreScreen_field_0x04; /*0x68e292*/
+    v200 = this->u32_4; /*0x68e292*/
     v298 = *(unsigned int *)this->__pad_0; /*0x68e297*/
     v299 = v200 + 188; /*0x68e2b2*/
     v201 = (int *)(*(int (**)(ObjectClass *, char *))(g_DSurface_Hidden->ptr_0 + 120))( /*0x68e2c7*/
@@ -10293,7 +10293,7 @@ void ScoreScreen::Display()
                     v311);
     DrawToSurfaceSHP( /*0x68e2df*/
       (int)g_DSurface_Hidden,
-      this->ScoreScreen_field_0x14,
+      this->q014,
       v295,
       mm,
       &v298,
@@ -10309,14 +10309,14 @@ void ScoreScreen::Display()
       0,
       0);
     v202 = *(unsigned int *)this->__pad_0; /*0x68e2e7*/
-    v307 = this->ScoreScreen_field_0x04 + 388; /*0x68e2f5*/
+    v307 = this->u32_4 + 388; /*0x68e2f5*/
     v306 = v202; /*0x68e30b*/
     v203 = (int *)(*(int (**)(ObjectClass *, char *))(g_DSurface_Hidden->ptr_0 + 120))( /*0x68e321*/
                     g_DSurface_Hidden,
                     v310);
     DrawToSurfaceSHP( /*0x68e33c*/
       (int)g_DSurface_Hidden,
-      this->ScoreScreen_field_0x14,
+      this->q014,
       v294,
       mm,
       &v306,
@@ -10333,10 +10333,10 @@ void ScoreScreen::Display()
       0);
     Screen::TransitionLoop((Screen *)this, 4); /*0x68e345*/
   }
-  v204 = this->ScoreScreen_field_0x04; /*0x68e357*/
+  v204 = this->u32_4; /*0x68e357*/
   v289 = *(unsigned int *)this->__pad_0; /*0x68e35a*/
   v290 = v204 + 188; /*0x68e372*/
-  v205 = this->ScoreScreen_field_0x08; /*0x68e376*/
+  v205 = this->u32_8; /*0x68e376*/
   v291 = 182; /*0x68e37a*/
   v292 = 212; /*0x68e382*/
   (*(void (**)(int, int *, ObjectClass *, int *, unsigned int, int))(*(unsigned int *)v205 + 8))( /*0x68e391*/
@@ -10355,21 +10355,21 @@ void ScoreScreen::Display()
     0,
     1);
   v206 = (char *)GetStringCSF(aTxtBestScores, 0, g_Str_File_Score_CPP, 669); /*0x68e3c4*/
-  v207 = this->ScoreScreen_field_0x0C; /*0x68e3c9*/
+  v207 = this->u32_C; /*0x68e3c9*/
   v208 = v206; /*0x68e3cc*/
   v288 = v206; /*0x68e3cf*/
   (*(void (**)(int, char *))(*(unsigned int *)v207 + 8))(v207, v206); /*0x68e3d5*/
   v294 = *(unsigned int *)this->__pad_0 /*0x68e3f2*/
-       - (*(int (**)(int, char *))(*(unsigned int *)this->ScoreScreen_field_0x0C + 8))(
-           this->ScoreScreen_field_0x0C,
+       - (*(int (**)(int, char *))(*(unsigned int *)this->u32_C + 8))(
+           this->u32_C,
            v208)
        / 2
        + 84;
   v209 = __2_YAPAXI_Z(0x2Cu); /*0x68e3fb*/
   if ( v209 ) /*0x68e402*/
   {
-    v210 = this->ScoreScreen_field_0x0C; /*0x68e40b*/
-    v211 = this->ScoreScreen_field_0x04 + 217; /*0x68e40e*/
+    v210 = this->u32_C; /*0x68e40b*/
+    v211 = this->u32_4 + 217; /*0x68e40e*/
     *(unsigned int *)(v209 + 4) = v294; /*0x68e413*/
     v295 = v210; /*0x68e419*/
     v209->ptr_3 = v211; /*0x68e41d*/
@@ -10389,14 +10389,14 @@ void ScoreScreen::Display()
   {
     v209 = 0; /*0x68e44c*/
   }
-  v215 = this->ScoreScreen_field_0x24; /*0x68e44e*/
+  v215 = this->u32_24; /*0x68e44e*/
   if ( this->u32_2C < v215 /*0x68e473*/
     || (this->u32_29 || !v215)
     && (v216 = this->u32_30, v216 > 0)
-    && p_ScoreScreen_field_0x1C->vt_slot_8(&this->ScoreScreen_field_0x1C, v215 + v216, 0) )
+    && p_ScoreScreen_field_0x1C->vt_slot_8(&this->u32_1C, v215 + v216, 0) )
   {
     v217 = this->u32_2C; /*0x68e47a*/
-    v218 = (unsigned int *)this->ScoreScreen_field_0x20; /*0x68e47d*/
+    v218 = (unsigned int *)this->u32_20; /*0x68e47d*/
     this->u32_2C = v217 + 1; /*0x68e483*/
     v218[v217] = v209; /*0x68e486*/
   }
@@ -10451,8 +10451,8 @@ LABEL_222:
     v227 = __2_YAPAXI_Z(0x2Cu); /*0x68e5bd*/
     if ( v227 ) /*0x68e5c4*/
     {
-      v228 = this->ScoreScreen_field_0x0C; /*0x68e5d0*/
-      v229 = this->ScoreScreen_field_0x04 + v297[0] + 242; /*0x68e5d6*/
+      v228 = this->u32_C; /*0x68e5d0*/
+      v229 = this->u32_4 + v297[0] + 242; /*0x68e5d6*/
       *(unsigned int *)(v227 + 4) = *(unsigned int *)this->__pad_0 + 7; /*0x68e5dd*/
       *(unsigned int *)(v227 + 8) = v229; /*0x68e5e3*/
       v230 = Timer::GetTicks(); /*0x68e5e6*/
@@ -10470,14 +10470,14 @@ LABEL_222:
     {
       v227 = 0; /*0x68e611*/
     }
-    v232 = this->ScoreScreen_field_0x24; /*0x68e613*/
+    v232 = this->u32_24; /*0x68e613*/
     if ( this->u32_2C < v232 /*0x68e638*/
       || (this->u32_29 || !v232)
       && (v233 = this->u32_30, v233 > 0)
-      && p_ScoreScreen_field_0x1C->vt_slot_8(&this->ScoreScreen_field_0x1C, v233 + v232, 0) )
+      && p_ScoreScreen_field_0x1C->vt_slot_8(&this->u32_1C, v233 + v232, 0) )
     {
       v234 = this->u32_2C; /*0x68e63f*/
-      v235 = (unsigned int *)this->ScoreScreen_field_0x20; /*0x68e642*/
+      v235 = (unsigned int *)this->u32_20; /*0x68e642*/
       this->u32_2C = v234 + 1; /*0x68e648*/
       v235[v234] = v227; /*0x68e64b*/
     }
@@ -10487,8 +10487,8 @@ LABEL_222:
       v236 = __2_YAPAXI_Z(0x2Cu); /*0x68e673*/
       if ( v236 ) /*0x68e67a*/
       {
-        v237 = this->ScoreScreen_field_0x0C; /*0x68e686*/
-        v238 = this->ScoreScreen_field_0x04 + v297[0] + 242; /*0x68e68c*/
+        v237 = this->u32_C; /*0x68e686*/
+        v238 = this->u32_4 + v297[0] + 242; /*0x68e68c*/
         *(unsigned int *)(v236 + 4) = *(unsigned int *)this->__pad_0 + 109; /*0x68e693*/
         *(unsigned int *)(v236 + 8) = v238; /*0x68e699*/
         v239 = Timer::GetTicks(); /*0x68e69c*/
@@ -10506,14 +10506,14 @@ LABEL_222:
       {
         v236 = 0; /*0x68e6c4*/
       }
-      v241 = this->ScoreScreen_field_0x24; /*0x68e6c6*/
+      v241 = this->u32_24; /*0x68e6c6*/
       if ( this->u32_2C < v241 /*0x68e6eb*/
         || (this->u32_29 || !v241)
         && (v242 = this->u32_30, v242 > 0)
-        && p_ScoreScreen_field_0x1C->vt_slot_8(&this->ScoreScreen_field_0x1C, v242 + v241, 0) )
+        && p_ScoreScreen_field_0x1C->vt_slot_8(&this->u32_1C, v242 + v241, 0) )
       {
         v243 = this->u32_2C; /*0x68e6f2*/
-        v244 = (unsigned int *)this->ScoreScreen_field_0x20; /*0x68e6f5*/
+        v244 = (unsigned int *)this->u32_20; /*0x68e6f5*/
         this->u32_2C = v243 + 1; /*0x68e6fb*/
         v244[v243] = v236; /*0x68e6fe*/
       }
@@ -10522,8 +10522,8 @@ LABEL_222:
       v246 = __2_YAPAXI_Z(0x2Cu); /*0x68e722*/
       if ( v246 ) /*0x68e729*/
       {
-        v247 = this->ScoreScreen_field_0x04; /*0x68e72e*/
-        v294 = this->ScoreScreen_field_0x0C; /*0x68e735*/
+        v247 = this->u32_4; /*0x68e72e*/
+        v294 = this->u32_C; /*0x68e735*/
         v248 = v247 + v297[0] + 242; /*0x68e739*/
         v249 = *(unsigned int *)this->__pad_0 + 151; /*0x68e743*/
         *(unsigned int *)(v246 + 8) = v248; /*0x68e749*/
@@ -10543,20 +10543,20 @@ LABEL_222:
       {
         v246 = 0; /*0x68e77a*/
       }
-      v252 = this->ScoreScreen_field_0x24; /*0x68e77c*/
+      v252 = this->u32_24; /*0x68e77c*/
       if ( this->u32_2C < v252 /*0x68e7a1*/
         || (this->u32_29 || !v252)
         && (v253 = this->u32_30, v253 > 0)
-        && p_ScoreScreen_field_0x1C->vt_slot_8(&this->ScoreScreen_field_0x1C, v253 + v252, 0) )
+        && p_ScoreScreen_field_0x1C->vt_slot_8(&this->u32_1C, v253 + v252, 0) )
       {
         v254 = this->u32_2C; /*0x68e7a8*/
-        v255 = (unsigned int *)this->ScoreScreen_field_0x20; /*0x68e7ab*/
+        v255 = (unsigned int *)this->u32_20; /*0x68e7ab*/
         this->u32_2C = v254 + 1; /*0x68e7b1*/
         v255[v254] = v246; /*0x68e7b4*/
       }
       v256 = *p_ScoreScreen_field_0x1C; /*0x68e7b7*/
       Rect.left = v246; /*0x68e7c0*/
-      if ( (*(int (**)(int *, struct tagRECT *))(v256 + 16))(&this->ScoreScreen_field_0x1C, &Rect) != -1 ) /*0x68e7ca*/
+      if ( (*(int (**)(int *, struct tagRECT *))(v256 + 16))(&this->u32_1C, &Rect) != -1 ) /*0x68e7ca*/
       {
         do /*0x68e7e8*/
         {
@@ -10564,7 +10564,7 @@ LABEL_222:
           v257 = *p_ScoreScreen_field_0x1C; /*0x68e7d5*/
           Rect.left = v246; /*0x68e7de*/
         }
-        while ( (*(int (**)(int *, struct tagRECT *))(v257 + 16))(&this->ScoreScreen_field_0x1C, &Rect) != -1 ); /*0x68e7e8*/
+        while ( (*(int (**)(int *, struct tagRECT *))(v257 + 16))(&this->u32_1C, &Rect) != -1 ); /*0x68e7e8*/
       }
     }
     Screen::TransitionLoop((Screen *)this, 1); /*0x68e7ee*/
@@ -10581,17 +10581,17 @@ LABEL_222:
   if ( v286 >= 9 ) /*0x68e857*/
   {
     v259 = GetStringCSF(aTxtClickContin, 0, g_Str_File_Score_CPP, 749); /*0x68e8a1*/
-    v260 = this->ScoreScreen_field_0x0C; /*0x68e8a6*/
+    v260 = this->u32_C; /*0x68e8a6*/
     v295 = (int)v259; /*0x68e8aa*/
     v261 = *(unsigned int *)this->__pad_0 /*0x68e8c8*/
          + (640 - (*(int (**)(int, wchar_t *))(*(unsigned int *)v260 + 8))(v260, v259)) / 2;
-    v262 = *(int *)(this->ScoreScreen_field_0x0C + 8); /*0x68e8d0*/
-    v294 = this->ScoreScreen_field_0x04 - (((int)v262 - (((v262) >> 32) & 0xFFFFFFFFu)) >> 1) + 357; /*0x68e8e1*/
+    v262 = *(int *)(this->u32_C + 8); /*0x68e8d0*/
+    v294 = this->u32_4 - (((int)v262 - (((v262) >> 32) & 0xFFFFFFFFu)) >> 1) + 357; /*0x68e8e1*/
     v263 = __2_YAPAXI_Z(0x2Cu); /*0x68e8ea*/
     if ( v263 ) /*0x68e8f1*/
     {
       v264 = v294; /*0x68e8f6*/
-      v298 = this->ScoreScreen_field_0x0C; /*0x68e8fd*/
+      v298 = this->u32_C; /*0x68e8fd*/
       *(unsigned int *)(v263 + 4) = v261; /*0x68e901*/
       v263->ptr_3 = v264; /*0x68e904*/
       v265 = Timer::GetTicks(); /*0x68e907*/
@@ -10610,14 +10610,14 @@ LABEL_222:
     {
       v263 = 0; /*0x68e933*/
     }
-    v268 = this->ScoreScreen_field_0x24; /*0x68e935*/
+    v268 = this->u32_24; /*0x68e935*/
     if ( this->u32_2C < v268 /*0x68e95a*/
       || (this->u32_29 || !v268)
       && (v269 = this->u32_30, v269 > 0)
-      && p_ScoreScreen_field_0x1C->vt_slot_8(&this->ScoreScreen_field_0x1C, v269 + v268, 0) )
+      && p_ScoreScreen_field_0x1C->vt_slot_8(&this->u32_1C, v269 + v268, 0) )
     {
       v270 = this->u32_2C; /*0x68e961*/
-      v271 = (unsigned int *)this->ScoreScreen_field_0x20; /*0x68e964*/
+      v271 = (unsigned int *)this->u32_20; /*0x68e964*/
       this->u32_2C = v270 + 1; /*0x68e96a*/
       v271[v270] = v263; /*0x68e96d*/
     }
@@ -10629,7 +10629,7 @@ LABEL_222:
       (int)this,
       (int)&v313[29 * v286],
       *(unsigned int *)this->__pad_0 + 7,
-      16 * v286 + this->ScoreScreen_field_0x04 + 242);
+      16 * v286 + this->q0A0 + 242);
   }
   Timer::PumpMessages((Timer *)dword_87F770); /*0x68e97f*/
   (*(void (**)(CCFileClass *, char *))(*(unsigned int *)v303.__tail_0 + 8))(&v303, aHallfameDat); /*0x68e991*/
@@ -10652,34 +10652,34 @@ LABEL_222:
   (*(void (**)(char *))(this->q034 + 12))(&this->q034); /*0x68ea09*/
   for ( i1 = 0; i1 < this->u32_2C; ++i1 ) /*0x68ea15*/
   {
-    v275 = *(void (****)(unsigned int, int))(this->ScoreScreen_field_0x20 + 4 * i1); /*0x68ea1a*/
+    v275 = *(void (****)(unsigned int, int))(this->u32_20 + 4 * i1); /*0x68ea1a*/
     if ( v275 ) /*0x68ea1f*/
       (**v275)(v275, 1); /*0x68ea25*/
   }
-  p_ScoreScreen_field_0x1C->vt_slot_12(&this->ScoreScreen_field_0x1C); /*0x68ea33*/
-  v276 = (void (***)(unsigned int, int))this->ScoreScreen_field_0x14; /*0x68ea36*/
+  p_ScoreScreen_field_0x1C->vt_slot_12(&this->u32_1C); /*0x68ea33*/
+  v276 = (void (***)(unsigned int, int))this->q014; /*0x68ea36*/
   if ( v276 ) /*0x68ea3b*/
   {
     (**v276)(v276, 1); /*0x68ea41*/
-    this->ScoreScreen_field_0x14 = 0; /*0x68ea43*/
+    this->q014 = 0; /*0x68ea43*/
   }
-  v277 = (void (***)(unsigned int, int))this->ScoreScreen_field_0x0C; /*0x68ea46*/
+  v277 = (void (***)(unsigned int, int))this->u32_C; /*0x68ea46*/
   if ( v277 ) /*0x68ea4b*/
   {
     (**v277)(v277, 1); /*0x68ea51*/
-    this->ScoreScreen_field_0x0C = 0; /*0x68ea53*/
+    this->u32_C = 0; /*0x68ea53*/
   }
-  v278 = (void (***)(unsigned int, int))this->ScoreScreen_field_0x10; /*0x68ea56*/
+  v278 = (void (***)(unsigned int, int))this->u32_10; /*0x68ea56*/
   if ( v278 ) /*0x68ea5b*/
   {
     (**v278)(v278, 1); /*0x68ea61*/
-    this->ScoreScreen_field_0x10 = 0; /*0x68ea63*/
+    this->u32_10 = 0; /*0x68ea63*/
   }
-  v279 = (void (***)(unsigned int, int))this->ScoreScreen_field_0x08; /*0x68ea66*/
+  v279 = (void (***)(unsigned int, int))this->u32_8; /*0x68ea66*/
   if ( v279 ) /*0x68ea6b*/
   {
     (**v279)(v279, 1); /*0x68ea71*/
-    this->ScoreScreen_field_0x08 = 0; /*0x68ea73*/
+    this->u32_8 = 0; /*0x68ea73*/
   }
   if ( v302 ) /*0x68ea7c*/
     (**(void (***)(int, int))v302)(v302, 1); /*0x68ea82*/
@@ -10687,7 +10687,7 @@ LABEL_222:
   GetClientRect(g_hWnd, &Rect); /*0x68ea9c*/
   ClientToScreen(g_hWnd, (LPPOINT)&Rect); /*0x68eaae*/
   v280 = *(unsigned int *)this->__pad_0; /*0x68eab4*/
-  v281 = this->ScoreScreen_field_0x04; /*0x68eabb*/
+  v281 = this->u32_4; /*0x68eabb*/
   v298 = v280; /*0x68eabe*/
   v306 = v280 + Rect.left; /*0x68eac9*/
   v299 = v281; /*0x68ead0*/
@@ -10813,7 +10813,7 @@ int ScoreScreen::DisplayTimeText(unsigned int p0)
     v3 % 0xE10 / 0x3C,
     v3 % 0xE10 % 0x3C);
   v4 = *(unsigned int *)this /*0x68fa33*/
-     - this->u32_10->vt_slot_8(Buffer) / 2
+     - this->q280->vt_slot_8(Buffer) / 2
      + 542;
   v5 = operator new(0x2Cu); /*0x68fa3e*/
   if ( v5 ) /*0x68fa45*/
@@ -10840,7 +10840,7 @@ int ScoreScreen::DisplayTimeText(unsigned int p0)
   if ( this->u32_2C < v8 /*0x68faaf*/
     || (this->u32_29 || !v8)
     && (v10 = this->u32_30, v10 > 0)
-    && (*(uint8_t (__thiscall **)(int, int, unsigned int))(this->u32_24)(&this->u32_1C, v8 + v10, 0) )
+    && (*(uint8_t (__thiscall **)(int, int, unsigned int))(this->q5A0)(&this->u32_1C, v8 + v10, 0) )
   {
     v11 = this->u32_2C; /*0x68fab6*/
     v12 = this->u32_20; /*0x68fab9*/
@@ -10849,7 +10849,7 @@ int ScoreScreen::DisplayTimeText(unsigned int p0)
   }
   v13 = *v9; /*0x68fac5*/
   p0 = v5; /*0x68face*/
-  for ( result = (*(int (__thiscall **)(int, unsigned int *))(v13 + 16))(&this->q088, &p0); /*0x68fad8*/
+  for ( result = (*(int (__thiscall **)(int, unsigned int *))(v13 + 16))(&this->u32_1C, &p0); /*0x68fad8*/
         result != -1;
         result = (*(int (__thiscall **)(int, unsigned int *))(v15 + 16))(&this->u32_1C, &p0) )
   {
@@ -26134,10 +26134,10 @@ void MSEngine_Destru::CheckStringNotEmpty()
 {
   char result; // al
 
-  result = String::NotEquals(&this->String_C8, 0); /*0x5ae4cb*/
+  result = String::NotEquals(&this->q0C8, 0); /*0x5ae4cb*/
   if ( result ) /*0x5ae4d2*/
   {
-    if ( this->m_CC != -1 ) /*0x5ae4db*/
+    if ( this->q0CC != -1 ) /*0x5ae4db*/
       return TimerGetTicks(); /*0x5ae4e3*/
   }
   return result; /*0x5ae4e8*/
@@ -26150,8 +26150,8 @@ unknown MSEngine_Destru::StubReturnFalse()
 // 0x5ae5a0
 void ** MSEngine_Destru::DestroyComposite(char p0)
 {
-  DeleteAndZero(this->String_C8); /*0x5ae5a9*/
-  MSEngine::Destructor(&this->MSEngine_50); /*0x5ae5b1*/
+  DeleteAndZero(this->q0C8); /*0x5ae5a9*/
+  MSEngine::Destructor(&this->q050); /*0x5ae5b1*/
   MSEngine::Destruct((MSEngine *)this); /*0x5ae5b8*/
   if ( (p0 & 1) != 0 ) /*0x5ae5c2*/
     operator delete((void *)(this)); /*0x5ae5c5*/
@@ -26168,7 +26168,7 @@ _DWORD * MSEngine_Destru::QueryInterface(char p0)
   MSEngine::Destruct(this); /*0x5d2703*/
   if ( (p0 & 1) != 0 ) /*0x5d270d*/
     operator delete((void *)(this)); /*0x5d2710*/
-  return this->tail_0; /*0x5d271a*/
+  return this->vtable1; /*0x5d271a*/
 }
 // 0x5d2e30
 void MSFont::Constructor_MSFont()
@@ -42557,7 +42557,7 @@ int sub_7DC720(int a2)
 // 0x774120
 unsigned int * WinModemClass::Construct()
 {
-  *(unsigned int *)this->tail_0 = 0; /*0x774128*/
+  *(unsigned int *)this->ptr_0 = 0; /*0x774128*/
   this->u32_24 = operator new(0x2000u); /*0x774133*/
   this->u32_54 = 0; /*0x77413b*/
   this->u32_58 = 0; /*0x77413e*/
@@ -42565,7 +42565,7 @@ unsigned int * WinModemClass::Construct()
   this->u32_51 = 0; /*0x774144*/
   this->u32_68 = 0; /*0x774147*/
   this->u32_64 = 0; /*0x77414a*/
-  this->__pad_004 = 0; /*0x77414d*/
+  this->WinModemClass_field_0x04 = 0; /*0x77414d*/
   this->u32_8 = 0; /*0x774150*/
   this->u32_C = 0; /*0x774153*/
   this->u32_10 = 0; /*0x774156*/
@@ -42641,7 +42641,7 @@ int WinModemClass::AddRef(const char *a2, DWORD a3, BYTE a4, BYTE a5, char a6)
     CommTimeouts.WriteTotalTimeoutConstant = 1000; /*0x7745f0*/
     if ( !SetCommTimeouts(FileA, &CommTimeouts) ) /*0x7745f4*/
       Debug::Log(); /*0x774604*/
-    this->Init(1); /*0x774612*/
+    this->ptr_0(1); /*0x774612*/
     if ( ClearCommError(this->u32_5C, &Errors, &Stat) ) /*0x774623*/
     {
       v9 = Errors; /*0x77462d*/

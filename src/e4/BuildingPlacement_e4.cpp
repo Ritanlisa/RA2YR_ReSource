@@ -136,7 +136,7 @@ char BuildingPlacement::ProcessBuildingPlacementAction()
 
   v2 = &this->q040; /*0x54c55e*/
   v3 = Coord::To_Cell((Coord *)&dword_87F7E8, &this->q040); /*0x54c562*/
-  BuildingPlacement_field_0x0C = this->BuildingPlacement_field_0x0C; /*0x54c567*/
+  BuildingPlacement_field_0x0C = this->q00C; /*0x54c567*/
   v5 = (BuildingPlacement *)v3; /*0x54c56a*/
   if ( !*(unsigned char *)(BuildingPlacement_field_0x0C + 1709) ) /*0x54c56c*/
   {
@@ -145,37 +145,37 @@ char BuildingPlacement::ProcessBuildingPlacementAction()
       && *(unsigned int *)(BuildingPlacement_field_0x0C + 180) != 7
       && (*(int (**)(int))(*(unsigned int *)BuildingPlacement_field_0x0C + 388))(BuildingPlacement_field_0x0C) != 7 )
     {
-      if ( (unsigned __int8)ObjectClass::HasLinkedObject(this->BuildingPlacement_field_0x0C) ) /*0x54c5b5*/
+      if ( (unsigned __int8)ObjectClass::HasLinkedObject(this->q00C) ) /*0x54c5b5*/
       {
         v7 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 7); /*0x54c5d6*/
-        v8 = (Cell *)(*(int (**)(int))(*(unsigned int *)this->BuildingPlacement_field_0x0C + 444))(this->BuildingPlacement_field_0x0C); /*0x54c5da*/
-        v9 = *(unsigned int *)this->BuildingPlacement_field_0x0C; /*0x54c5e6*/
+        v8 = (Cell *)(*(int (**)(int))(*(unsigned int *)this->q00C + 444))(this->q00C); /*0x54c5da*/
+        v9 = *(unsigned int *)this->q00C; /*0x54c5e6*/
         NeighbourContent = (v8)->GetNeighbourContent(v7); /*0x54c5ea*/
-        (*(void (**)(int, void *, int))(v9 + 1152))(this->BuildingPlacement_field_0x0C, NeighbourContent, 1); /*0x54c5f3*/
-        v11 = (unsigned char *)this->BuildingPlacement_field_0x0C; /*0x54c5f9*/
+        (*(void (**)(int, void *, int))(v9 + 1152))(this->q00C, NeighbourContent, 1); /*0x54c5f3*/
+        v11 = (unsigned char *)this->q00C; /*0x54c5f9*/
         LOBYTE(v9) = v11[116]; /*0x54c600*/
         (*(void (**)(unsigned char *, unsigned int))(*(unsigned int *)v11 + 292))(v11, 0); /*0x54c603*/
-        v12 = (CellClass *)this->BuildingPlacement_field_0x0C; /*0x54c609*/
+        v12 = (CellClass *)this->q00C; /*0x54c609*/
         LOBYTE(v12->unknown74) = v9; /*0x54c60d*/
         this->u32_50 = 3; /*0x54c610*/
       }
       else
       {
-        v13 = (CellClass *)(*(int (**)(int))(*(unsigned int *)this->BuildingPlacement_field_0x0C + 444))(this->BuildingPlacement_field_0x0C); /*0x54c624*/
+        v13 = (CellClass *)(*(int (**)(int))(*(unsigned int *)this->q00C + 444))(this->q00C); /*0x54c624*/
         CellClass::AttachObject(v13, v45); /*0x54c62c*/
-        v14 = (unsigned char *)this->BuildingPlacement_field_0x0C; /*0x54c631*/
+        v14 = (unsigned char *)this->q00C; /*0x54c631*/
         v15 = v14[116]; /*0x54c638*/
         LOBYTE(v12) = (*(int (**)(unsigned char *, unsigned int))(*(unsigned int *)v14 + 292))(v14, 0); /*0x54c63b*/
-        *(unsigned char *)(this->BuildingPlacement_field_0x0C + 116) = v15; /*0x54c645*/
+        *(unsigned char *)(this->q00C + 116) = v15; /*0x54c645*/
         v16 = this->u32_2C; /*0x54c648*/
         this->u32_50 = 2; /*0x54c64b*/
         this->u32_80 = v16; /*0x54c652*/
       }
       return (char)v12; /*0x54c61d*/
     }
-    v47 = (*(int (**)(int, BuildingPlacement *, int, int, unsigned int, int))(*(unsigned int *)this->BuildingPlacement_field_0x0C /*0x54c675*/
+    v47 = (*(int (**)(int, BuildingPlacement *, int, int, unsigned int, int))(*(unsigned int *)this->q00C /*0x54c675*/
                                                                                  + 428))(
-            this->BuildingPlacement_field_0x0C,
+            this->q00C,
             v5,
             -1,
             -1,
@@ -187,37 +187,37 @@ char BuildingPlacement::ProcessBuildingPlacementAction()
     {
       v46 = 1; /*0x54c6a8*/
     }
-    if ( (*(int (**)(int))(*(unsigned int *)this->BuildingPlacement_field_0x0C + 44))(this->BuildingPlacement_field_0x0C) == 1 /*0x54c6bc*/
+    if ( (*(int (**)(int))(*(unsigned int *)this->q00C + 44))(this->q00C) == 1 /*0x54c6bc*/
       && !v17 )
     {
       v46 = 1; /*0x54c6be*/
     }
-    v18 = (unsigned int *)this->BuildingPlacement_field_0x0C; /*0x54c6c2*/
+    v18 = (unsigned int *)this->q00C; /*0x54c6c2*/
     if ( v18[45] != 7 && (*(int (**)(unsigned int *))(*v18 + 388))(v18) != 7 ) /*0x54c6d9*/
     {
       if ( !v46 /*0x54c70c*/
         || (Coord::To_Cell((Coord *)&dword_87F7E8, &this->q040)->flags & 0x100) == 0
         && (v47 > 2 || v47 == 2 && !this->u32_90) )
       {
-        LOBYTE(v12) = (*(char (**)(int *))(this->BuildingPlacement_field_0x04 + 72))(&this->BuildingPlacement_field_0x04); /*0x54ca43*/
+        LOBYTE(v12) = (*(char (**)(int *))(this->q004 + 72))(&this->q004); /*0x54ca43*/
         return (char)v12; /*0x54ca4d*/
       }
       if ( !this->u32_90 ) /*0x54c71a*/
       {
-        v19 = this->BuildingPlacement_field_0x0C; /*0x54c724*/
+        v19 = this->q00C; /*0x54c724*/
         this->u32_90 = 1; /*0x54c727*/
         (*(void (**)(int, char *))(*(unsigned int *)v19 + 240))(v19, &this->q040); /*0x54c731*/
       }
     }
   }
-  v20 = (unsigned int *)this->BuildingPlacement_field_0x0C; /*0x54c737*/
+  v20 = (unsigned int *)this->q00C; /*0x54c737*/
   if ( v20 ) /*0x54c73c*/
   {
-    if ( (*(int (**)(int))(*v20 + 44))(this->BuildingPlacement_field_0x0C) == 1 ) /*0x54c748*/
+    if ( (*(int (**)(int))(*v20 + 44))(this->q00C) == 1 ) /*0x54c748*/
     {
       if ( *(unsigned char *)(v20[433] + 3603) ) /*0x54c750*/
       {
-        if ( !*(unsigned char *)(this->BuildingPlacement_field_0x0C + 1709) ) /*0x54c75d*/
+        if ( !*(unsigned char *)(this->q00C + 1709) ) /*0x54c75d*/
         {
           DeployDir = dword_8871E0->DeployDir; /*0x54c776*/
           Value = ProgressTimer::GetValue(&this->q054, &v47); /*0x54c77a*/
@@ -234,10 +234,10 @@ char BuildingPlacement::ProcessBuildingPlacementAction()
       }
     }
   }
-  v25 = this->BuildingPlacement_field_0x0C; /*0x54c7a3*/
+  v25 = this->q00C; /*0x54c7a3*/
   this->u32_80 = 0; /*0x54c7a6*/
   v26 = (*(int (**)(int))(*(unsigned int *)v25 + 456))(v25); /*0x54c7b8*/
-  v12 = (CellClass *)this->BuildingPlacement_field_0x0C; /*0x54c7ba*/
+  v12 = (CellClass *)this->q00C; /*0x54c7ba*/
   if ( !LOBYTE(v12->sensorsOfHouses[4]) ) /*0x54c7bd*/
   {
     v27 = &v12->sensorsOfHouses[8]; /*0x54c7c7*/
@@ -254,17 +254,17 @@ char BuildingPlacement::ProcessBuildingPlacementAction()
   }
   if ( !v26 )
   {
-    (*(void (**)(int, unsigned int, unsigned int))(*(unsigned int *)this->BuildingPlacement_field_0x0C + 1348))( /*0x54c814*/
-      this->BuildingPlacement_field_0x0C,
+    (*(void (**)(int, unsigned int, unsigned int))(*(unsigned int *)this->q00C + 1348))( /*0x54c814*/
+      this->q00C,
       0,
       0);
-    (*(void (**)(int, unsigned int))(*(unsigned int *)this->BuildingPlacement_field_0x0C + 292))( /*0x54c820*/
-      this->BuildingPlacement_field_0x0C,
+    (*(void (**)(int, unsigned int))(*(unsigned int *)this->q00C + 292))( /*0x54c820*/
+      this->q00C,
       0);
-    v28 = (unsigned char *)this->BuildingPlacement_field_0x0C; /*0x54c826*/
+    v28 = (unsigned char *)this->q00C; /*0x54c826*/
     if ( !v28[1709] ) /*0x54c829*/
       (*(void (**)(unsigned char *, char *))(*(unsigned int *)v28 + 436))(v28, &this->q040); /*0x54c836*/
-    v29 = (int *)(this->BuildingPlacement_field_0x0C + 156); /*0x54c83f*/
+    v29 = (int *)(this->q00C + 156); /*0x54c83f*/
     v48 = *v29; /*0x54c848*/
     v49 = v29[1]; /*0x54c84f*/
     v30 = v29[2]; /*0x54c853*/
@@ -273,27 +273,27 @@ char BuildingPlacement::ProcessBuildingPlacementAction()
     v50 = v29[2]; /*0x54c870*/
     if ( v30 > (int)Cell::GetGroundHeight(&v48) ) /*0x54c87b*/
     {
-      v31 = (int *)(this->BuildingPlacement_field_0x0C + 156); /*0x54c880*/
+      v31 = (int *)(this->q00C + 156); /*0x54c880*/
       v48 = *v31; /*0x54c888*/
       v49 = v31[1]; /*0x54c894*/
       v50 = v31[2]; /*0x54c8a0*/
       if ( (Coord::To_Cell((Coord *)&dword_87F7E8, &v48)->flags & 0x100) != 0 ) /*0x54c8b2*/
-        *(unsigned char *)(this->BuildingPlacement_field_0x0C + 140) = 1; /*0x54c8b7*/
+        *(unsigned char *)(this->q00C + 140) = 1; /*0x54c8b7*/
     }
-    (*(void (**)(int, int))(*(unsigned int *)this->BuildingPlacement_field_0x0C + 292))( /*0x54c8c5*/
-      this->BuildingPlacement_field_0x0C,
+    (*(void (**)(int, int))(*(unsigned int *)this->q00C + 292))( /*0x54c8c5*/
+      this->q00C,
       1);
     *(unsigned int *)v2->__pad_0 = dword_ABC5A8; /*0x54c8d2*/
     this->u32_44 = dword_ABC5AC; /*0x54c8db*/
-    v32 = this->BuildingPlacement_field_0x0C; /*0x54c8e4*/
+    v32 = this->q00C; /*0x54c8e4*/
     this->u32_48 = dword_ABC5B0; /*0x54c8e7*/
     this->u32_4C = 0; /*0x54c8ea*/
     (*(void (**)(int, int))(*(unsigned int *)v32 + 396))(v32, 2); /*0x54c8f0*/
-    (*(void (**)(int, unsigned int, int))(*(unsigned int *)this->BuildingPlacement_field_0x0C + 1152))( /*0x54c8ff*/
-      this->BuildingPlacement_field_0x0C,
+    (*(void (**)(int, unsigned int, int))(*(unsigned int *)this->q00C + 1152))( /*0x54c8ff*/
+      this->q00C,
       0,
       1);
-    v33 = (unsigned char *)this->BuildingPlacement_field_0x0C; /*0x54c905*/
+    v33 = (unsigned char *)this->q00C; /*0x54c905*/
     LOBYTE(v12) = v33[144]; /*0x54c908*/
     if ( (unsigned char)v12 )
     {
@@ -304,7 +304,7 @@ char BuildingPlacement::ProcessBuildingPlacementAction()
         if ( !(unsigned char)v12 )
         {
           (*(void (**)(unsigned char *, unsigned int, unsigned int, unsigned int, unsigned int))(*(unsigned int *)v33 + 1164))(v33, 0, 0, 0, 0); /*0x54c93c*/
-          v34 = (unsigned char *)this->BuildingPlacement_field_0x0C; /*0x54c942*/
+          v34 = (unsigned char *)this->q00C; /*0x54c942*/
           if ( v34[144] ) /*0x54c945*/
             (*(void (**)(unsigned char *, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int))(*(unsigned int *)v34 + 1160))( /*0x54c95b*/
               v34,
@@ -313,7 +313,7 @@ char BuildingPlacement::ProcessBuildingPlacementAction()
               0,
               0,
               0);
-          v35 = this->BuildingPlacement_field_0x0C; /*0x54c961*/
+          v35 = this->q00C; /*0x54c961*/
           if ( *(unsigned char *)(v35 + 144) ) /*0x54c964*/
           {
             v48 = *(unsigned int *)(v35 + 156); /*0x54c978*/
@@ -326,33 +326,33 @@ char BuildingPlacement::ProcessBuildingPlacementAction()
               *(unsigned int *)(v35 + 608) + 3,
               0);
           }
-          v47 = this->BuildingPlacement_field_0x0C; /*0x54c9ac*/
+          v47 = this->q00C; /*0x54c9ac*/
           v36 = v47; /*0x54c9aa*/
           if ( *(unsigned int *)((*(int (**)(void))(*(unsigned int *)v47 + 444))() + 224) == v36 ) /*0x54c9be*/
           {
             v37 = (CellClass *)(*(int (**)(int))(*(unsigned int *)v36 + 444))(v36); /*0x54c9c6*/
             CellClass::AttachObject(v37, 0); /*0x54c9ce*/
           }
-          ((GadgetGrid *)&g_CellClassManager)->RemoveItem(this->BuildingPlacement_field_0x0C); /*0x54c9dc*/
-          v38 = this->BuildingPlacement_field_0x0C; /*0x54c9e1*/
+          ((GadgetGrid *)&g_CellClassManager)->RemoveItem(this->q00C); /*0x54c9dc*/
+          v38 = this->q00C; /*0x54c9e1*/
           this->u32_50 = 0; /*0x54c9e4*/
           v44 = v38; /*0x54c9eb*/
           v39 = (CrateClass *)(*(int (**)(int))(*(unsigned int *)v38 + 444))(v38); /*0x54c9ee*/
           CrateClass::ProcessPickup(v39, v44); /*0x54c9f6*/
-          v12 = (CellClass *)this->BuildingPlacement_field_0x0C; /*0x54c9fb*/
+          v12 = (CellClass *)this->q00C; /*0x54c9fb*/
           v12[5].__pad_28[30] = 1; /*0x54c9fe*/
-          *(unsigned char *)(this->BuildingPlacement_field_0x0C + 1063) = 0; /*0x54ca08*/
-          *(unsigned char *)(this->BuildingPlacement_field_0x0C + 1061) = 0; /*0x54ca12*/
-          v40 = this->BuildingPlacement_field_0x0C; /*0x54ca19*/
+          *(unsigned char *)(this->q00C + 1063) = 0; /*0x54ca08*/
+          *(unsigned char *)(this->q00C + 1061) = 0; /*0x54ca12*/
+          v40 = this->q00C; /*0x54ca19*/
           this->u32_90 = 0; /*0x54ca1e*/
           if ( v40 )
           {
             v12 = (CellClass *)(*(int (**)(int))(*(unsigned int *)v40 + 44))(v40); /*0x54ca29*/
             if ( v12 == 1 )
             {
-              v41 = this->BuildingPlacement_field_0x0C; /*0x54ca31*/
+              v41 = this->q00C; /*0x54ca31*/
               if ( v41 )
-                v42 = (*(int (**)(int))(*(unsigned int *)v41 + 44))(this->BuildingPlacement_field_0x0C) == 1
+                v42 = (*(int (**)(int))(*(unsigned int *)v41 + 44))(this->q00C) == 1
                     ? v41
                     : 0;
               else
@@ -360,7 +360,7 @@ char BuildingPlacement::ProcessBuildingPlacementAction()
               v12 = (CellClass *)(*(int (**)(int))(*(unsigned int *)v42 + 132))(v42); /*0x54ca62*/
               if ( v12[5].__pad_28[29] ) /*0x54ca68*/
               {
-                v12 = (CellClass *)this->BuildingPlacement_field_0x0C; /*0x54ca72*/
+                v12 = (CellClass *)this->q00C; /*0x54ca72*/
                 LOBYTE(v12->gapsCoveringThisCell) = 0; /*0x54ca75*/
               }
             }
@@ -668,7 +668,7 @@ unsigned int * BuildingPlacement::SelectBuildingPlacementCells(int a2)
     return &v8->q010; /*0x5951a4*/
   }
   v21 = v8->Capacity; /*0x5951e1*/
-  v22 = v5->__pad_004; /*0x5951e7*/
+  v22 = v5->__pad_4; /*0x5951e7*/
   if ( (int)v8[1].ptr_0 < v21 /*0x595211*/
     || (v8->IsAllocated || !v21)
     && (v23 = (int)v8[1].Items, v23 > 0)

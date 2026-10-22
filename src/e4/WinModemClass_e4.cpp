@@ -32,9 +32,9 @@ int WinModemClass::ReadSerial()
   if ( v2 ) /*0x774994*/
   {
     void *v3; // edx
-    v3 = (void *)(*(unsigned int *)this->__pad_158 + 24)); /*0x774996*/
+    v3 = (void *)(*(unsigned int *)this->u32_5C + 24)); /*0x774996*/
     NumberOfBytesTransferred = 0; /*0x7749a4*/
-    if ( GetOverlappedResult(v3, (LPOVERLAPPED)(&this->q040), &NumberOfBytesTransferred, 0) ) /*0x7749a8*/
+    if ( GetOverlappedResult(v3, (LPOVERLAPPED)(&this->u32_28), &NumberOfBytesTransferred, 0) ) /*0x7749a8*/
     {
       DWORD v4 = NumberOfBytesTransferred; // ecx /*0x7749b2*/
       this->u32_50 = 0; /*0x7749b6*/
@@ -43,7 +43,7 @@ int WinModemClass::ReadSerial()
         DWORD v5 = 0; // eax /*0x7749bd*/
         do /*0x7749e4*/
         {
-          *(unsigned char *)(this->WinModemClass_field_0x24 + this->u32_58) = *(unsigned char *)(this + v5++ + 108); /*0x7749cd*/
+          *(unsigned char *)(this->u32_24 + this->u32_58) = *(unsigned char *)(this + v5++ + 108); /*0x7749cd*/
           this->u32_58 = ((uint16_t)this->u32_58 + 1) & 0x1FFF; /*0x7749db*/
         }
         while ( v5 < NumberOfBytesTransferred ); /*0x7749e4*/
@@ -57,10 +57,10 @@ int WinModemClass::ReadSerial()
       Debug::Log(); /*0x774a09*/
     }
   }
-  ResetEvent(*(unsigned int *)this->u32_CC + 20)); /*0x774a15*/
+  ResetEvent(*(unsigned int *)this->q038 + 20)); /*0x774a15*/
   int cbInQue = 1; // edi /*0x774a29*/
   DWORD Errors; // [esp+18h] [ebp-10h] BYREF
-  if ( ClearCommError(*(unsigned int *)this->__pad_158 + 24), &Errors, &Stat) ) /*0x774a2e*/
+  if ( ClearCommError(*(unsigned int *)this->u32_5C + 24), &Errors, &Stat) ) /*0x774a2e*/
   {
     DWORD v8 = Errors; // ecx /*0x774a38*/
     cbInQue = Stat.cbInQue; /*0x774a3c*/
@@ -87,10 +87,10 @@ int WinModemClass::ReadSerial()
   while ( 1 ) /*0x774a86*/
   {
     void *v11; // ecx
-    v11 = (void *)(*(unsigned int *)this->__pad_158 + 24)); /*0x774a86*/
+    v11 = (void *)(*(unsigned int *)this->u32_5C + 24)); /*0x774a86*/
     NumberOfBytesTransferred = 0; /*0x774a95*/
     BOOL v12; // eax
-    v12 = ReadFile(v11, (LPVOID)this->__pad_158 + 88), cbInQue, &NumberOfBytesTransferred, (LPOVERLAPPED)(&this->q040)); /*0x774a99*/
+    v12 = ReadFile(v11, (LPVOID)this->q06C + 88), cbInQue, &NumberOfBytesTransferred, (LPOVERLAPPED)(&this->u32_28)); /*0x774a99*/
     v12 = v12; /*0x774aa1*/
     if ( !v12 ) /*0x774aa6*/
       break; /*0x774aa6*/
@@ -99,7 +99,7 @@ int WinModemClass::ReadSerial()
       DWORD i; // eax
       for ( i = 0; i < NumberOfBytesTransferred; ++i ) /*0x774ab0*/
       {
-        *(unsigned char *)(this->WinModemClass_field_0x24 + this->u32_58) = *(unsigned char *)(i + &this->q06C); /*0x774abf*/
+        *(unsigned char *)(this->u32_24 + this->u32_58) = *(unsigned char *)(i + &this->q06C); /*0x774abf*/
         this->u32_58 = ((uint16_t)this->u32_58 + 1) & 0x1FFF; /*0x774acd*/
       }
       v16 += NumberOfBytesTransferred; /*0x774ada*/
@@ -140,10 +140,10 @@ int WinModemClass::ReadBytes(unsigned char *a2, int a3)
     v8 = (void (*)(void))this->u32_64; /*0x774b65*/
     if ( v8 ) /*0x774b6a*/
     {
-      if ( *(unsigned char *)(this->u32_54 + this->WinModemClass_field_0x24) != 13 ) /*0x774b78*/
+      if ( *(unsigned char *)(this->u32_54 + this->u32_24) != 13 ) /*0x774b78*/
         v8(); /*0x774b7a*/
     }
-    *a2++ = *(unsigned char *)(this->u32_54 + this->WinModemClass_field_0x24); /*0x774b86*/
+    *a2++ = *(unsigned char *)(this->u32_54 + this->u32_24); /*0x774b86*/
     --v7; /*0x774b92*/
     this->u32_54 = ((unsigned __int16)this->u32_54 + 1) & 0x1FFF; /*0x774b93*/
   }
@@ -515,8 +515,8 @@ int WinModemClass::LogCommErrors(int aP1, char a3, int a4, int a5)
     if ( (aP1 & 8) != 0 ) /*0x7754e3*/
     {
       Debug::Log(); /*0x7754ea*/
-      result = this->__pad_004 + 1; /*0x7754f5*/
-      this->__pad_004 = result; /*0x7754f6*/
+      result = this->WinModemClass_field_0x04 + 1; /*0x7754f5*/
+      this->WinModemClass_field_0x04 = result; /*0x7754f6*/
     }
     if ( (aP1 & 0x10) != 0 ) /*0x7754fc*/
       result = Debug::Log(); /*0x775503*/
@@ -583,8 +583,8 @@ WinModemClass * WinModemClass::QueryInterface(char a2)
     CloseHandle(this->u32_5C); /*0x775632*/
     this->u32_5C = -1; /*0x775638*/
   }
-  if ( this->WinModemClass_field_0x24 ) /*0x77563f*/
-    __3_YAXPAX_Z((void *)this->WinModemClass_field_0x24); /*0x775647*/
+  if ( this->u32_24 ) /*0x77563f*/
+    __3_YAXPAX_Z((void *)this->u32_24); /*0x775647*/
   if ( (a2 & 1) != 0 ) /*0x775654*/
     __3_YAXPAX_Z(this); /*0x775657*/
   return this; /*0x775661*/

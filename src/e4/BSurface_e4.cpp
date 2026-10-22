@@ -249,7 +249,7 @@ unsigned int * BSurface::ConstructEx(int a2, int a3, int a4, int a5)
   v7 = a4; /*0x7bc979*/
   v8 = a5; /*0x7bc97f*/
   this->u32_2C = a5; /*0x7bc983*/
-  *(unsigned int *)this->__pad_0 = v6; /*0x7bc988*/
+  *(unsigned int *)this->q000 = v6; /*0x7bc988*/
   v9 = (void *)a3; /*0x7bc98a*/
   this->u32_28 = v7; /*0x7bc98e*/
   this->Width = (int)v9; /*0x7bc991*/
@@ -291,7 +291,7 @@ unsigned int * BSurface::ConstructEx(int a2, int a3, int a4, int a5)
   Buffer = this->Buffer; /*0x7bca36*/
   this->u32_1C = v18; /*0x7bca39*/
   (*(void (**)(int))(*(unsigned int *)Buffer + 96))(Buffer); /*0x7bca3e*/
-  return this->__pad_0; /*0x7bca43*/
+  return this->q000; /*0x7bca43*/
 
 }
 }

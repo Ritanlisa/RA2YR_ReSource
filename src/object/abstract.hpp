@@ -171,10 +171,10 @@ public:
     virtual int arrayIndex() const;
     virtual bool isDead() const;
     // unmatched: no callgraph reference and no git history record
-    virtual CoordStruct* fetchCoordinatesHere(CoordStruct* out) const;
+    virtual CoordStruct* fetchCoordinatesHere(CoordStruct* out);
     // unmatched: no callgraph reference and no git history record
     virtual CoordStruct* fetchDestination(CoordStruct* out, TechnoClass* docker = nullptr) const;
-    virtual CoordStruct* GetCoords(CoordStruct* out) const;  // 0x410540
+    virtual CoordStruct* GetCoords(CoordStruct* out);  // 0x410540
     // wrapper: delegates to AbstractClass::GetCoords at 0x410540
     virtual bool isOnGround() const;
     // unmatched: no callgraph reference and no git history record
@@ -185,7 +185,7 @@ public:
     virtual void updateLogic();
 
     // unmatched: no callgraph reference and no git history record
-    CoordStruct fetchCoordinatesHere() const;
+    CoordStruct fetchCoordinatesHere();
     // unmatched: no callgraph reference and no git history record
     CoordStruct fetchDestination(TechnoClass* docker = nullptr) const;
     // unmatched: no callgraph reference and no git history record

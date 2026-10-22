@@ -101,8 +101,8 @@ namespace gamemd {
 unsigned char * Struct::Zero3(void *a1)
 {
   (this->Struct_field_00) = 0; /*0x4b9bd4*/
-  (this->u32_1) = 0; /*0x4b9bd6*/
-  (this->u32_2) = 0; /*0x4b9bd9*/
+  (this->Struct_field_00) = 0; /*0x4b9bd6*/
+  (this->Struct_field_00) = 0; /*0x4b9bd9*/
   return (unsigned char *)(this); /*0x4b9bdc*/
 }
 } // namespace gamemd

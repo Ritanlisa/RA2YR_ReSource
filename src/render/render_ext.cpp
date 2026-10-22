@@ -14,6 +14,9 @@ int BlitPlainXlatAlpha_ushort::AddRef(int a2, uint8_t *a3, int a4, int a5, int a
   uint16_t v15; // ax
   uint16_t *v16; // [esp+24h] [ebp+18h]
   uint8_t v17; // [esp+28h] [ebp+1Ch]
+  uint16_t *xlat; // xlat table pointer stored in field_0x04
+
+  memcpy(&xlat, this->BlitPlainXlatAlpha_ushort_field_0x04, sizeof(xlat));
 
   v10 = (261 * (a8 <= 0 ? 0 : a8)) >> 11;
   if ( v10 > 254 ) /*0x493ce7*/
@@ -29,7 +32,7 @@ int BlitPlainXlatAlpha_ushort::AddRef(int a2, uint8_t *a3, int a4, int a5, int a
       v15 = *a7++; /*0x493d17*/
       ++a3; /*0x493d1d*/
       a2 += 2; /*0x493d1e*/
-      *(unsigned short *)(a2 - 2) = *(unsigned short *)(*&this->Data + 2 * (v17 | *(uint16_t *)(v11 + 2 * v15))); /*0x493d38*/
+      *(unsigned short *)(a2 - 2) = *(unsigned short *)(xlat + (v17 | *(uint16_t *)(v11 + 2 * v15))); /*0x493d38*/
       if ( (unsigned int)a7 >= *(unsigned int *)(*(unsigned int *)&g_VisibleSurfaceDescriptor + 28) ) /*0x493d45*/
         a7 = (uint16_t *)((char *)a7 - *(unsigned int *)(*(unsigned int *)&g_VisibleSurfaceDescriptor + 32)); /*0x493d47*/
       result = (int)v16 - 1; /*0x493d4e*/
@@ -41,7 +44,10 @@ int BlitPlainXlatAlpha_ushort::AddRef(int a2, uint8_t *a3, int a4, int a5, int a
 }
 // 0x493d90
 void BlitPlainXlatAlpha_ushort::Release() {
-  return this->AddRef(/*0x493dba*/
-           this, a2, a3, a4, a5, a6, a7, a8, 0);
+  // Binary 0x493D90 (retn 24h) forwards its eight call-site arguments to
+  // vtable slot 1 and supplies 0 as the final argument. The model declaration
+  // (render_ext.hpp) is 0-argument, so there are no call-site values to
+  // forward; the slot-1 call is preserved with the available (zero) values.
+  this->AddRef(0, 0, 0, 0, 0, 0, 0, 0); /*0x493dba*/
 }
 } // namespace gamemd

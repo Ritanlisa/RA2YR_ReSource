@@ -61,37 +61,37 @@ OverlayTypeClass::OverlayTypeClass(ObjectClass * aP1)
   OverlayTypeClass **v6; // edx
 
   ((int *)this)->ConstructFull(aP1); /*0x5fe259*/
-  this->Strength = 1; /*0x5fe265*/
+  this->DamageLevels_d = 1; /*0x5fe265*/
   *&this->Wall = 1; /*0x5fe26b*/
-  this->Explodes = 1; /*0x5fe271*/
+  this->Explodes[0] = 1; /*0x5fe271*/
   this->RadarColor[1] = 1; /*0x5fe277*/
   this->LandType[0] = -1; /*0x5fe280*/
   this->CellAnim = 0; /*0x5fe28a*/
-  this->DamageLevels = 0; /*0x5fe290*/
-  this->NoUseTileLandType = 0; /*0x5fe296*/
-  this->IsVeinholeMonster_d = 0; /*0x5fe29c*/
-  this->IsVeins_d = 0; /*0x5fe2a2*/
-  this->ImageLoaded = 0; /*0x5fe2a8*/
-  this->ChainReaction_d = 0; /*0x5fe2ae*/
-  this->Overrides_d = 0; /*0x5fe2b4*/
-  this->DrawFlat_d = 0; /*0x5fe2ba*/
-  this->IsRubble = 0; /*0x5fe2c0*/
-  this->IsARock = 0; /*0x5fe2c6*/
+  this->CellAnim_d = 0; /*0x5fe290*/
+  this->NoUseTileLandType[0] = 0; /*0x5fe296*/
+  this->Tiberium_2[0] = 0; /*0x5fe29c*/
+  this->Crate_2[0] = 0; /*0x5fe2a2*/
+  this->CrateTrigger_2[0] = 0; /*0x5fe2a8*/
+  this->IsVeinholeMonster_d[0] = 0; /*0x5fe2ae*/
+  this->IsVeins_d[0] = 0; /*0x5fe2b4*/
+  this->DrawFlat_d[0] = 0; /*0x5fe2ba*/
+  this->Explodes_2[0] = 0; /*0x5fe2c0*/
+  this->ChainReaction_d[0] = 0; /*0x5fe2c6*/
   this->RadarColor[0] = 0; /*0x5fe2cc*/
   this->RadarColor[2] = 0; /*0x5fe2d2*/
-  this->IsARock_d = 0; /*0x5fe2d8*/
-  this->q2B6 = 0; /*0x5fe2de*/
-  this->q2B7 = 0; /*0x5fe2e4*/
-  this->ParticleTypeClass_2B8 = 0; /*0x5fe2ea*/
+  this->tail_2B5[0] = 0; /*0x5fe2d8*/
+  this->tail_2B5[1] = 0; /*0x5fe2de*/
+  this->tail_2B5[2] = 0; /*0x5fe2e4*/
+  this->q2B8 = 0; /*0x5fe2ea*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7EF5D4) */  /*0x5fe2f1*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7EF5D4) */  /*0x5fe2f7*/
   /* X11: ptr_0 install elided (implicit via OverlayTypeClass virtuals 0x5fe2fd) */
   /* X11: ptr_0 install elided (implicit via OverlayTypeClass virtuals 0x5fe304) */
-  AbstractClass::GenerateUniqueID((AbstractClass *)&this->ptr_4); /*0x5fe30b*/
-  this->RadarInvisible_d = 1; /*0x5fe310*/
-  this->Selectable_d = 0; /*0x5fe317*/
+  AbstractClass::GenerateUniqueID((AbstractClass *)&this->vfptr1); /*0x5fe30b*/
+  this->q22F = 1; /*0x5fe310*/
+  this->q230 = 0; /*0x5fe317*/
   this->Insignificant_d = 1; /*0x5fe31d*/
-  this->AllowCellContent_d = 0; /*0x5fe324*/
+  this->q235 = 0; /*0x5fe324*/
   v3 = *(unsigned int *)&g_ObjectTypeConfig; /*0x5fe32a*/
   if ( *(int *)&g_ObjectTypeConfig < (int)DataGlobal_A83D88 /*0x5fe368*/
     || (DataGlobal_A83D8D || !DataGlobal_A83D88)
@@ -112,7 +112,7 @@ OverlayTypeClass::OverlayTypeClass(ObjectClass * aP1)
   {
     LABEL_11:
     this->LandType[0] = -1; /*0x5fe397*/
-    return &this->ObjectTypeClass; /*0x5fe3a0*/
+    return &this->vfptr; /*0x5fe3a0*/
   }
   else
   {
@@ -125,7 +125,7 @@ OverlayTypeClass::OverlayTypeClass(ObjectClass * aP1)
         goto LABEL_11; /*0x5fe395*/
     }
     this->LandType[0] = v5; /*0x5fe3a7*/
-    return &this->ObjectTypeClass; /*0x5fe3ad*/
+    return &this->vfptr; /*0x5fe3ad*/
   }
 
 }
@@ -149,7 +149,7 @@ AnimTypeClass * * OverlayTypeClass::LoadFromINI(unsigned char *** aP1, void *a2)
   v4 = *(unsigned int *)&aP1->Wall; /*0x5fe7b1*/
   aP1->CellAnim = INIString; /*0x5fe7b7*/
   int Int_Overwrite; // eax
-  Int_Overwrite = INIClass::ReadInt_Overwrite((bool *)a2, (uint8_t *)aP1->__pad_24, aStrength, v4); /*0x5fe7c6*/
+  Int_Overwrite = INIClass::ReadInt_Overwrite((bool *)a2, (uint8_t *)aP1->RadarColor, aStrength, v4); /*0x5fe7c6*/
   char NoUseTileLandType; // [esp-Ch] [ebp-298h]
   NoUseTileLandType = aP1->NoUseTileLandType; /*0x5fe7d3*/
   *(unsigned int *)&aP1->Wall = Int_Overwrite; /*0x5fe7da*/
@@ -168,7 +168,7 @@ AnimTypeClass * * OverlayTypeClass::LoadFromINI(unsigned char *** aP1, void *a2)
   IsVeins = aP1->IsVeins; /*0x5fe7ff*/
   aP1->IsVeinholeMonster = Bool_Overwrite; /*0x5fe805*/
   char v8; // al
-  v8 = INIClass::ReadBool_Overwrite((int *)a2, (uint8_t *)aP1->__pad_24, aCrate, IsVeins); /*0x5fe814*/
+  v8 = INIClass::ReadBool_Overwrite((int *)a2, (uint8_t *)aP1->RadarColor, aCrate, IsVeins); /*0x5fe814*/
   char ImageLoaded; // [esp-Ch] [ebp-298h]
   ImageLoaded = aP1->ImageLoaded; /*0x5fe821*/
   aP1->IsVeins = v8; /*0x5fe828*/
@@ -183,7 +183,7 @@ AnimTypeClass * * OverlayTypeClass::LoadFromINI(unsigned char *** aP1, void *a2)
   v10 = aP1->RadarColor[0]; /*0x5fe84d*/
   aP1->IsRubble = v9; /*0x5fe853*/
   char v11; // al
-  v11 = INIClass::ReadBool_Overwrite((int *)a2, (uint8_t *)aP1->__pad_24, aOverrides, v10); /*0x5fe862*/
+  v11 = INIClass::ReadBool_Overwrite((int *)a2, (uint8_t *)aP1->RadarColor, aOverrides, v10); /*0x5fe862*/
   int DamageLevels; // ebp
   DamageLevels = aP1->DamageLevels; /*0x5fe867*/
   aP1->RadarColor[0] = v11; /*0x5fe884*/
@@ -235,12 +235,12 @@ AnimTypeClass * * OverlayTypeClass::LoadFromINI(unsigned char *** aP1, void *a2)
   Explodes = aP1->Explodes; /*0x5fe95e*/
   *((unsigned char *)aP1 + 696) = *(unsigned char *)(Coord + 2); /*0x5fe965*/
   char v16; // al
-  v16 = INIClass::ReadBool_Overwrite((int *)a2, (uint8_t *)aP1->__pad_24, aNousetilelandt, Explodes); /*0x5fe968*/
+  v16 = INIClass::ReadBool_Overwrite((int *)a2, (uint8_t *)aP1->RadarColor, aNousetilelandt, Explodes); /*0x5fe968*/
   char ChainReaction; // cl
   ChainReaction = aP1->ChainReaction; /*0x5fe96d*/
   aP1->Explodes = v16; /*0x5fe973*/
   char v18; // al
-  v18 = INIClass::ReadBool_Overwrite((int *)a2, (uint8_t *)aP1->__pad_24, aIsveinholemons, ChainReaction); /*0x5fe982*/
+  v18 = INIClass::ReadBool_Overwrite((int *)a2, (uint8_t *)aP1->RadarColor, aIsveinholemons, ChainReaction); /*0x5fe982*/
   char Overrides; // [esp-Ch] [ebp-298h]
   Overrides = aP1->Overrides; /*0x5fe98f*/
   aP1->ChainReaction = v18; /*0x5fe996*/
@@ -251,7 +251,7 @@ AnimTypeClass * * OverlayTypeClass::LoadFromINI(unsigned char *** aP1, void *a2)
   v20 = aP1->RadarColor[1]; /*0x5fe9bb*/
   aP1->IsARock = v19; /*0x5fe9c1*/
   char v21; // al
-  v21 = INIClass::ReadBool_Overwrite((int *)a2, (uint8_t *)aP1->__pad_24, aDrawflat, v20); /*0x5fe9d0*/
+  v21 = INIClass::ReadBool_Overwrite((int *)a2, (uint8_t *)aP1->RadarColor, aDrawflat, v20); /*0x5fe9d0*/
   char v27; // [esp-Ch] [ebp-298h]
   v27 = aP1->__tail_2B5[0]; /*0x5fe9dd*/
   aP1->RadarColor[1] = v21; /*0x5fe9e4*/
@@ -319,10 +319,10 @@ AnimTypeClass * * OverlayTypeClass::GetCategory()
   char Buffer[512]; // [esp+70h] [ebp-200h] BYREF
 
   result = this->Image; /*0x5fede9*/
-  if ( !result && this->DrawFlat_d ) /*0x5fedf7*/
+  if ( !result && this->DrawFlat_d[0] ) /*0x5fedf7*/
   {
     Debug::Log(); /*0x5fee0e*/
-    if ( this->Theater ) /*0x5fee13*/
+    if ( this->Theater[0] ) /*0x5fee13*/
     {
       _makepath(Buffer, 0, 0, this->ImageFile, (const char *)&off_7E1BC6 + 112 * dword_A8B230[130].uniqueId); /*0x5fee4f*/
     }
@@ -355,15 +355,15 @@ unsigned int *  OverlayTypeClass::Construct(char *aP1, void *a2, void *a3, void 
 
   ((int *)this)->ConstructFull(aP1); /*0x6440a9*/
   this->LandType[0] = -1; /*0x6440b3*/
-  *&this->ChargerBarrels_0x12 = -1; /*0x6440b9*/
-  this->ParticleTypeClass_2B8 = -1; /*0x6440bf*/
+  *&this->Overrides_d[2] = -1; /*0x6440b9*/
+  this->q2B8 = -1; /*0x6440bf*/
   LOBYTE(this->CellAnim) = 0; /*0x6440c5*/
-  this->DamageLevels = 1; /*0x6440cb*/
-  this->Strength = 0; /*0x6440d5*/
+  this->CellAnim_d = 1; /*0x6440cb*/
+  this->DamageLevels_d = 0; /*0x6440d5*/
   *&this->Wall = 50; /*0x6440db*/
-  *&this->NoUseTileLandType = 0; /*0x6440e5*/
-  *&this->Explodes = 0; /*0x6440eb*/
-  *&this->IsRubble = 0; /*0x6440f1*/
+  *&this->NoUseTileLandType[0] = 0; /*0x6440e5*/
+  *&this->Explodes[0] = 0; /*0x6440eb*/
+  *&this->Explodes_2[0] = 0; /*0x6440f1*/
   this->u32_2BC = 0; /*0x6440fc*/
   this->q2C0 = 0; /*0x644102*/
   this->u32_2C4 = 0; /*0x644108*/
@@ -392,7 +392,7 @@ unsigned int *  OverlayTypeClass::Construct(char *aP1, void *a2, void *a3, void 
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F007C) */  /*0x6441a2*/
   /* X11: ptr_0 install elided (implicit via ParticleSystemTypeClass virtuals 0x6441a8) */
   /* X11: ptr_0 install elided (implicit via ParticleSystemTypeClass virtuals 0x6441af) */
-  AbstractClass::GenerateUniqueID(&this->LandType); /*0x6441b6*/
+  AbstractClass::GenerateUniqueID(&this->vfptr1); /*0x6441b6*/
   if ( (int)g_InfantryTypeInitState < *(int *)&DataGlobal_A83D70 /*0x6441ef*/
     || (BYTE1(DataGlobal_A83D74) || !*(unsigned int *)&DataGlobal_A83D70)
     && (int)DataGlobal_A83D7C > 0
@@ -405,8 +405,8 @@ unsigned int *  OverlayTypeClass::Construct(char *aP1, void *a2, void *a3, void 
     v3 = (void *)(g_InfantryTypeInitState++); /*0x6441fc*/
     *(unsigned int *)(*(unsigned int *)&DataGlobal_A83D6C + 4 * (unsigned int)v3) = (unsigned int)(this); /*0x64420b*/
   }
-  this->IsLogic_d = 1; /*0x64420e*/
-  return &this->ObjectTypeClass; /*0x644217*/
+  this->q234 = 1; /*0x64420e*/
+  return &this->vfptr; /*0x644217*/
 
 }
 }  // G42.18c ns repair
@@ -495,7 +495,7 @@ void OverlayTypeClass::GetLandType(unsigned int * a2, int * a3, unsigned int a4)
   v6[0] = DSurface_ViewBounds.field_0 + *a2 + 30; /*0x5fe5c4*/
   v6[1] = (int)v4; /*0x5fe5c8*/
   int v5; // eax
-  v5 = (*((int (**)(OverlayTypeClass *))this->ObjectTypeClass + 39))(this); /*0x5fe5f3*/
+  v5 = (*((int (**)(OverlayTypeClass *))this->vfptr + 39))(this); /*0x5fe5f3*/
   DrawToSurfaceSHP( /*0x5fe606*/
     (int)g_DSurface_Hidden_2,
     *(int *)&DataGlobal_87F6B8,
@@ -520,10 +520,10 @@ void OverlayTypeClass::GetLandType(unsigned int * a2, int * a3, unsigned int a4)
 namespace gamemd {  // G42.18c ns repair
 unsigned int * OverlayTypeClass::g_var_4f9ac2(unsigned int * a0, OverlayTypeClass * aP1)
 {
-  a0->ptr_0 = (void *)*aP1; /*0x5fea3d*/
-  a0->ptr_1 = aP1->ptr_4; /*0x5fea42*/
-  a0->ptr_2 = aP1->ptr_8; /*0x5fea49*/
-  return &a0->ptr_0; /*0x5fea45*/
+  a0->vtable1 = (void *)*aP1; /*0x5fea3d*/
+  a0->vtable2 = aP1->vfptr1; /*0x5fea42*/
+  a0->vtable3 = aP1->vfptr2; /*0x5fea49*/
+  return &a0->vtable1; /*0x5fea45*/
 }
 }  // G42.18c ns repair
 // 0x5FEA50
@@ -535,22 +535,22 @@ int OverlayTypeClass::PowerDrainUpdate(int * a2)
   AbstractTypeClass::ProcessPower((AbstractTypeClass *)this, a2); /*0x5fea59*/
   Power::TimerProcess(this->LandType[0]); /*0x5fea67*/
   Power::TimerProcess((int)this->CellAnim); /*0x5fea75*/
-  Power::TimerProcess(this->Strength); /*0x5fea83*/
+  Power::TimerProcess(this->DamageLevels_d); /*0x5fea83*/
   Power::TimerProcess(*&this->Wall); /*0x5fea91*/
   int v3; // ecx
-  LOBYTE(v3) = this->NoUseTileLandType; /*0x5fea96*/
+  LOBYTE(v3) = this->NoUseTileLandType[0]; /*0x5fea96*/
   ((Power *)a2)->FlagProcess(v3); /*0x5fea9f*/
   int v4; // edx
-  LOBYTE(v4) = this->IsVeinholeMonster; /*0x5feaa4*/
+  LOBYTE(v4) = this->Tiberium_2[0]; /*0x5feaa4*/
   int v5; // eax
   v5 = ((Power *)a2)->FlagProcess(v4); /*0x5feaad*/
-  LOBYTE(v5) = this->IsVeins; /*0x5feab2*/
+  LOBYTE(v5) = this->Crate_2[0]; /*0x5feab2*/
   ((Power *)a2)->FlagProcess(v5); /*0x5feabb*/
   int v6; // ecx
-  LOBYTE(v6) = this->ImageLoaded; /*0x5feac0*/
+  LOBYTE(v6) = this->CrateTrigger_2[0]; /*0x5feac0*/
   ((Power *)a2)->FlagProcess(v6); /*0x5feac9*/
   int v7; // edx
-  LOBYTE(v7) = this->IsRubble; /*0x5feace*/
+  LOBYTE(v7) = this->Explodes_2[0]; /*0x5feace*/
   return ((Power *)a2)->FlagProcess(v7); /*0x5feadc*/
 
 }
@@ -593,9 +593,9 @@ int OverlayTypeClass::GetRadarColor(int a2, unsigned int a3)
   int PixelData; // ecx
   unsigned __int16 v11; // [esp+4h] [ebp-4h]
 
-  v4 = (MixFileClass *)(*(int (**)(OverlayTypeClass *))(this->ptr_0 + 156))(this); /*0x5fed06*/
+  v4 = (MixFileClass *)(*(int (**)(OverlayTypeClass *))(this->vfptr + 156))(this); /*0x5fed06*/
   if ( v4 /*0x5fed28*/
-    || (DamageLevels = this->DamageLevels) != 0
+    || (DamageLevels = this->CellAnim_d) != 0
     && (v4 = (MixFileClass *)(*(int (**)(int))(*(unsigned int *)DamageLevels + 156))(DamageLevels)) != 0 )
   {
     LandType = this->LandType; /*0x5fed2e*/

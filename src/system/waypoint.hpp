@@ -20,7 +20,7 @@ public:
     // (conservative identity compare; no binary call sites observed)
     bool operator==(const WaypointClass& other) const;
     // 0x502160 FindOrAddPath
-    bool IsCoordinateUsed(const CellStruct&) const;  // 0x5022F0
+    bool IsCoordinateUsed(const CellStruct& a2);  // 0x5022F0
     // 0x502460 FindOrCreate
     bool FindOrCreate(int, unsigned int*, unsigned char*); // 0x502460
 

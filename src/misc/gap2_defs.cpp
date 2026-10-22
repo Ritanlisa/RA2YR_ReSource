@@ -8003,9 +8003,9 @@ int ThemeClass::Play(int a1) {
     ThemeClass_field_2C = (AudioSample *)this->ThemeClass_field_2C; /*0x720bdc*/
     if ( !ThemeClass_field_2C ) /*0x720be5*/
       goto LABEL_13; /*0x720be5*/
-    if ( (this->u8_9) && !AudioSample::IsBuffering(ThemeClass_field_2C) ) /*0x720bee*/
+    if ( (this->m_Name[2]) && !AudioSample::IsBuffering(ThemeClass_field_2C) ) /*0x720bee*/
       Audio::Release((Audio *)this->ThemeClass_field_2C); /*0x720bfa*/
-    if ( !Audio::IsSoundPlaying((Audio *)this->ThemeClass_field_2C) || this->ThemeClass_field_04 != a1 )
+    if ( !Audio::IsSoundPlaying((Audio *)this->ThemeClass_field_2C) || this->ptr_4 != a1 )
     {
   LABEL_13:
       if ( ((unsigned int *)&stru_A8EB00)[144] && Audio::IsSoundEnabled() && !((unsigned int *)&stru_A8EB00)[384] && this->ThemeClass_field_00 != -1 ) /*0x720c37*/
@@ -8015,15 +8015,15 @@ int ThemeClass::Play(int a1) {
         if ( v4 ) /*0x720c4f*/
           Audio::Release(v4); /*0x720c51*/
         this->ThemeClass_field_00 = -1; /*0x720c56*/
-        this->ThemeClass_field_04 = -1; /*0x720c5c*/
+        this->ptr_4 = -1; /*0x720c5c*/
         this->m_Name[0] = -1; /*0x720c63*/
       }
-      (this->u8_9) = 0; /*0x720c6d*/
+      (this->m_Name[2]) = 0; /*0x720c6d*/
       if ( a1 != -1 && a1 != -3 )
       {
         if ( a1 <= -1 || this->m_Name[1] <= 0 ) /*0x720c8e*/
           goto LABEL_47; /*0x720c8e*/
-        this->ThemeClass_field_04 = a1; /*0x720c94*/
+        this->ptr_4 = a1; /*0x720c94*/
         v5 = byte_89E3A0 ? 0 : Game::CheckForGameCD(0);
         v6 = this->ThemeClass_field_2C; /*0x720cab*/
         if ( v6 && v5 > -1 ) /*0x720cba*/
@@ -8080,7 +8080,7 @@ int ThemeClass::Play(int a1) {
           }
         }
         Debug::Log(); /*0x720de8*/
-        if ( (this->m_Name) == 1 || *(unsigned char *)(*(unsigned int *)(this->m_Name[4] + 4 * a1) + 649) == 1 ) /*0x720e03*/
+        if ( (this->m_Name[2]) == 1 || *(unsigned char *)(*(unsigned int *)(this->m_Name[4] + 4 * a1) + 649) == 1 ) /*0x720e03*/
   LABEL_47:
           this->m_Name[0] = a1; /*0x720e05*/
       }

@@ -17,16 +17,18 @@ struct OverlayClass;  // fix_fwd_type_supply
 struct ScenarioClass;  // fix_fwd_type_supply
 
 struct OverlayTypeClass {
-    void * ptr_0;  // 0x0
-    void* ptr_4;  // 0x4
-    void* ptr_8;  // 0x8
-    void* ptr_C;  // 0xC
+    unsigned char vfptr;  // 0x0
+    char __pad_1[3];  // 0x1
+    int vfptr1;  // 0x4
+    int vfptr2;  // 0x8
+    int vfptr3;  // 0xC
     int uniqueId;  // 0x10
     int abstractFlags;  // 0x14
     int nextArrayIndex;  // 0x18
     int referenceCount;  // 0x1C
     int NeedsSaveOrLink;  // 0x20
-    char __pad_24[4];  // 0x24
+    unsigned char RadarColor;  // 0x24
+    char __pad_25[3];  // 0x25
     char ChargerTurrets_0x12[4];  // 0x28
     char ChargerBarrels_0x12[4];  // 0x2C
     char __pad_30[1];  // 0x30
@@ -46,7 +48,7 @@ struct OverlayTypeClass {
     unsigned char __pad_099;  // 0x99
     char __pad_9A[1];  // 0x9A
     char unused_9B;  // 0x9B
-    unsigned int Armor;  // 0x9C
+    int Armor;  // 0x9C
     int Strength;  // 0xA0
     void * Image;  // 0xA4
     char ImageAllocated;  // 0xA8
@@ -59,26 +61,27 @@ struct OverlayTypeClass {
     int ChargerBarrels[18];  // 0x104
     unsigned char __pad_14C;  // 0x14C
     char __pad_14D[156];  // 0x14D
-    char align_1E9[3];  // 0x1E9
+    char __pad_1E9[3];  // 0x1E9
     int MaxDimension;  // 0x1EC
     int CrushSound;  // 0x1F0
     int AmbientSound;  // 0x1F4
-    char ImageFile[25];  // 0x1F8
+    unsigned int ImageFile;  // 0x1F8
+    char __pad_1FC[21];  // 0x1FC
     char __pad_211;  // 0x211
     unsigned char ArcticArtInUse_d;  // 0x212
     char AlphaImageFile[25];  // 0x213
-    unsigned char __pad_22C;  // 0x22C
+    char Theater[1];  // 0x22C
     char Crushable[1];  // 0x22D
     char Bombable[1];  // 0x22E
-    char RadarInvisible[1];  // 0x22F
-    char Selectable[1];  // 0x230
+    unsigned char q22F;  // 0x22F
+    unsigned char q230;  // 0x230
     char LegalTarget[1];  // 0x231
     unsigned char Insignificant_d;  // 0x232
     char __pad_233;  // 0x233
-    char IsLogic[1];  // 0x234
-    char AllowCellContent[1];  // 0x235
+    unsigned char q234;  // 0x234
+    unsigned char q235;  // 0x235
     unsigned char Voxel_d;  // 0x236
-    unsigned char __pad_237;  // 0x237
+    unsigned char NewTheater;  // 0x237
     char HasRadialIndicator[1];  // 0x238
     char IgnoresFirestorm[1];  // 0x239
     char UseLineTrail[1];  // 0x23A
@@ -86,26 +89,50 @@ struct OverlayTypeClass {
     char align_23E[2];  // 0x23E
     int LineTrailColorDecrement;  // 0x240
     char VoxelCaches[80];  // 0x244
-    void* LandType;  // 0x294
-    AnimTypeClass* CellAnim;  // 0x298
+    int LandType;  // 0x294
+    void * CellAnim;  // 0x298
     int CellAnim_d;  // 0x29C
-    void* Strength_2;  // 0x2A0
-    bool Strength_d;  // 0x2A4
-    bool Tiberium_d;  // 0x2A5
-    bool Crate_d;  // 0x2A6
-    bool CrateTrigger_d;  // 0x2A7
+    int DamageLevels_d;  // 0x2A0
+    unsigned int Wall;  // 0x2A4
     char NoUseTileLandType[1];  // 0x2A8
-    bool Tiberium_2;  // 0x2A9
-    bool Crate_2;  // 0x2AA
-    bool CrateTrigger_2;  // 0x2AB
+    char Tiberium_2[1];  // 0x2A9
+    char Crate_2[1];  // 0x2AA
+    char CrateTrigger_2[1];  // 0x2AB
     char Explodes[1];  // 0x2AC
-    bool IsVeinholeMonster_d;  // 0x2AD
-    bool IsVeins_d;  // 0x2AE
-    bool DrawFlat_d;  // 0x2AF
-    char IsRubble[1];  // 0x2B0
-    bool ChainReaction_d;  // 0x2B1
+    char IsVeinholeMonster_d[1];  // 0x2AD
+    char IsVeins_d[1];  // 0x2AE
+    char DrawFlat_d[1];  // 0x2AF
+    char Explodes_2[1];  // 0x2B0
+    char ChainReaction_d[1];  // 0x2B1
     char Overrides_d[3];  // 0x2B2
-    unsigned char __tail_2B5[3];  // 0x2B5
+    char tail_2B5[3];  // 0x2B5
+    unsigned char q2B8;  // 0x2B8
+    char __pad_2B9[3];  // 0x2B9
+    unsigned int u32_2BC;  // 0x2BC
+    unsigned int q2C0;  // 0x2C0
+    unsigned int u32_2C4;  // 0x2C4
+    unsigned int u32_2C8;  // 0x2C8
+    unsigned int u32_2CC;  // 0x2CC
+    unsigned int u32_2D0;  // 0x2D0
+    unsigned int u32_2D4;  // 0x2D4
+    unsigned int u32_2D8;  // 0x2D8
+    unsigned int u32_2DC;  // 0x2DC
+    unsigned int q2E0;  // 0x2E0
+    unsigned int u32_2E4;  // 0x2E4
+    unsigned int u32_2E8;  // 0x2E8
+    unsigned int u32_2EC;  // 0x2EC
+    unsigned int u32_2F0;  // 0x2F0
+    unsigned int u32_2F4;  // 0x2F4
+    unsigned int u32_2F8;  // 0x2F8
+    unsigned int u32_2FC;  // 0x2FC
+    unsigned int u32_300;  // 0x300
+    unsigned int u32_304;  // 0x304
+    unsigned char u32_308;  // 0x308
+    unsigned char u32_309;  // 0x309
+    unsigned char u32_30A;  // 0x30A
+    unsigned char u32_30B;  // 0x30B
+    unsigned char u32_30C;  // 0x30C
+    char __pad_30D[3];  // 0x30D
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     AnimTypeClass * * GetCategory();

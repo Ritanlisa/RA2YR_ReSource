@@ -381,16 +381,16 @@ namespace gamemd {
 int Stream::WriteBlock(int a1, int a2, int a3) {
   int result; // eax
 
-  if ( !*(&this->Stream_field_045) ) /*0x5f1bf3*/
+  if ( !*(&this->q12C) ) /*0x5f1bf3*/
     return 0; /*0x5f1bfa*/
-  result = (*(int (__thiscall **)(unsigned int, int, int, int, unsigned int))(*(unsigned int *)*(&this->Stream_field_044) + 8))( /*0x5f1c16*/
-             *(&this->Stream_field_044),
+  result = (*(int (__thiscall **)(unsigned int, int, int, int, unsigned int))(*(unsigned int *)*(&this->q118) + 8))( /*0x5f1c16*/
+             *(&this->q118),
              a1,
              a2,
              a3,
              0);
   if ( !result ) /*0x5f1c1b*/
-    ++*(&this->Stream_field_086); /*0x5f1c1d*/
+    ++*(&this->q208); /*0x5f1c1d*/
   return result; /*0x5f1bfc*/
 }
 }
@@ -461,7 +461,7 @@ LABEL_11:
         if ( Audio_Read(v7 + 6, v11) == *(unsigned int *)&v5[v11 + 6 + v4] ) /*0x5f1e06*/
         {
           if ( !(*(int (**)(unsigned int, int, int))(**&this->u32_38 + 12))( /*0x5f1e58*/
-                  this->u32_38,
+                  this->q460,
                   this->q050 + v4 + 6,
                   v11) )
             ++this->u32_6C; /*0x5f1e5f*/

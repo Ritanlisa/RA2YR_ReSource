@@ -9,11 +9,38 @@ struct CampaignClass;  // fix_fwd_type_supply
 struct VectorClass_flat;  // fix_fwd_type_supply
 struct DynamicVector;  // fix_fwd_type_supply
 struct MSEngine {
-    char __pad_0[4];  // 0x0
-    void* MSEngine_field_0x4;  // 0x4
-    int MSEngine_field_0x8;  // 0x8
-    unsigned int m_C;  // 0xC
-    unsigned int m_10;  // 0x10
+    void * ptr_0;  // 0x0
+    unsigned char MSEngine_field_0x4;  // 0x4
+    char __pad_5[3];  // 0x5
+    int q008;  // 0x8
+    int u32_C;  // 0xC
+    int q010;  // 0x10
+    char __pad_14[4];  // 0x14
+    unsigned int u32_18;  // 0x18
+    unsigned int u32_1C;  // 0x1C
+    unsigned int u32_20;  // 0x20
+    unsigned char u32_24;  // 0x24
+    unsigned char u32_25;  // 0x25
+    char __pad_26[2];  // 0x26
+    unsigned int u32_28;  // 0x28
+    unsigned int u32_2C;  // 0x2C
+    unsigned int u32_30;  // 0x30
+    unsigned int q034;  // 0x34
+    unsigned char u32_38;  // 0x38
+    unsigned char u32_39;  // 0x39
+    char __pad_3A[2];  // 0x3A
+    unsigned char u32_3C;  // 0x3C
+    unsigned char u32_3D;  // 0x3D
+    char __pad_3E[2];  // 0x3E
+    unsigned int u32_40;  // 0x40
+    unsigned int u32_44;  // 0x44
+    unsigned int u32_48;  // 0x48
+    unsigned int u32_4C;  // 0x4C
+    unsigned char q050;  // 0x50
+    unsigned char u32_51;  // 0x51
+    char __pad_52[118];  // 0x52
+    unsigned int q0C8;  // 0xC8
+    unsigned int q0CC;  // 0xCC
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     char Release(int a2, char * a3);  // 0x5ACD30

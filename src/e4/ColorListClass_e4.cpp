@@ -87,12 +87,12 @@ ColorListClass * ColorListClass::QueryInterface(char * Block, char a2)
   (*(void (**)(char *))(v3 + 12))((char *)Block + 372); /*0x488f19*/
   *((unsigned int *)Block + 100) = 0; /*0x488f1e*/
   void *v5; // eax
-  v5 = (void *)v4->__pad_004; /*0x488f24*/
+  v5 = (void *)v4->__pad_4; /*0x488f24*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x488f29*/
   if ( v5 && v4[13] ) /*0x488f31*/
   {
     operator delete((v5)); /*0x488f37*/
-    v4->__pad_004 = 0; /*0x488f3f*/
+    v4->__pad_4 = 0; /*0x488f3f*/
   }
   v4[13] = 0; /*0x488f44*/
   v4->u32_8 = 0; /*0x488f47*/

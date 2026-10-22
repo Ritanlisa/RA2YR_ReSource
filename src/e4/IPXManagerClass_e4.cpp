@@ -43,7 +43,7 @@ int IPXManagerClass::send(int a2)
   if ( v2 <= 0 ) /*0x541049*/
     return -1; /*0x541061*/
   IPXManagerClass *i; // ecx
-  for ( i = &this->Active; *(unsigned int *)(i->Socket + 100) != a2; i = (IPXManagerClass *)((char *)i + 4) ) /*0x54104f*/
+  for ( i = &this->Active[0]; *(unsigned int *)(i->Socket + 100) != a2; i = (IPXManagerClass *)((char *)i + 4) ) /*0x54104f*/
   {
     if ( ++result >= v2 ) /*0x54105f*/
       return -1; /*0x54105f*/
@@ -79,7 +79,7 @@ int IPXManagerClass::receivePacket(int a2)
   }
   else
   {
-    v4 = &this->Active; /*0x54107f*/
+    v4 = &this->Active[0]; /*0x54107f*/
     while ( v4->Socket != a2 ) /*0x541084*/
     {
       ++result; /*0x541086*/

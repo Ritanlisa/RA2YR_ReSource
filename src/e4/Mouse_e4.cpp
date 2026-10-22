@@ -170,7 +170,7 @@ void Mouse::DrawCursor(int * aP1, int aP2, int a4)
   int v13; // [esp+4h] [ebp-48h] BYREF
   v13 = (int)this; /*0x7b93f5*/
   MixFileClass *v5; // ecx
-  v5 = (gamemd::MixFileClass *)(*&this->u32_4); /*0x7b93f9*/
+  v5 = (gamemd::MixFileClass *)(*&this->q001[3]); /*0x7b93f9*/
   if ( v5 && aP1 && *(unsigned int *)&DataGlobal_87F6C8 ) /*0x7b9418*/
   {
     int v6 = this->u32_50; // ebx /*0x7b942e*/

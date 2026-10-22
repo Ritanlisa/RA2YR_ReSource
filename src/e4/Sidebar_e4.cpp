@@ -88,24 +88,24 @@ AbstractClass * * Sidebar::StartSidebarProduction(HouseClass *a1, int aP2, char 
     case 1u: /*0x4fa3b0*/
     case 0x28u: /*0x4fa3b0*/
       if ( aP3 ) /*0x4fa3c9*/
-        v21 = this->u32_53D3; /*0x4fa3d1*/
+        v21 = this->q53D3; /*0x4fa3d1*/
       else
-        v21 = this->u32_53D2; /*0x4fa3dd*/
+        v21 = this->q53D2; /*0x4fa3dd*/
       break; /*0x4fa3d5*/
     case 2u: /*0x4fa3b0*/
     case 3u: /*0x4fa3b0*/
-      v21 = this->u32_53D0; /*0x4fa406*/
+      v21 = this->q53D0; /*0x4fa406*/
       break; /*0x4fa40a*/
     case 6u: /*0x4fa3b0*/
     case 7u: /*0x4fa3b0*/
       if ( v7 == 5 ) /*0x4fa3e6*/
-        v21 = this->u32_53D8; /*0x4fa3ee*/
+        v21 = this->q53D8; /*0x4fa3ee*/
       else
-        v21 = this->u32_53D4; /*0x4fa3fa*/
+        v21 = this->q53D4; /*0x4fa3fa*/
       break; /*0x4fa3f2*/
     case 0xFu: /*0x4fa3b0*/
     case 0x10u: /*0x4fa3b0*/
-      v21 = this->u32_53D1; /*0x4fa3bd*/
+      v21 = this->q53D1; /*0x4fa3bd*/
       break; /*0x4fa3c1*/
     default:
       v21 = 0; /*0x4fa40c*/
@@ -292,29 +292,29 @@ int Sidebar::Dispatch(IUnknown * aP1, char a3, int a4, char a5, void *a5_2)
       goto LABEL_3;
     case 2: /*0x5007b7*/
     case 3: /*0x5007b7*/
-      aP1->HouseClass_field_53D0 = a5_2; /*0x500807*/
+      aP1->q53D0 = a5_2; /*0x500807*/
       break; /*0x500807*/
     case 6: /*0x5007b7*/
     case 7: /*0x5007b7*/
       if ( a5_2 == 5 ) /*0x5007e5*/
     {
-        aP1->u32_53D8 = a5_2; /*0x5007ec*/
+        aP1->q53D8 = a5_2; /*0x5007ec*/
     }
       else
     {
-        aP1->u32_53D4 = a5_2; /*0x5007fa*/
+        aP1->q53D4 = a5_2; /*0x5007fa*/
         result = (char)(a5_2); /*0x5007f5*/
     }
       break; /*0x5007f2*/
     case 15: /*0x5007b7*/
     case 16: /*0x5007b7*/
-      aP1->u32_53D1 = a5_2; /*0x5007be*/
+      aP1->q53D1 = a5_2; /*0x5007be*/
     LABEL_3:
       result = (char)(a5_2); /*0x5007c4*/
       if ( a5_2 ) /*0x5007ca*/
-        aP1->u32_53D3 = a5_2; /*0x5007cc*/
+        aP1->q53D3 = a5_2; /*0x5007cc*/
       else
-        aP1->u32_53D2 = a5_2; /*0x5007d6*/
+        aP1->q53D2 = a5_2; /*0x5007d6*/
       break; /*0x5007d3*/
     default:
       return result;
@@ -372,10 +372,10 @@ TechnoClass * * Sidebar::CancelSidebarProductionQueue(int * Block)
   void *Block; // [esp+14h] [ebp-8h] BYREF
   int v17; // [esp+18h] [ebp-4h] BYREF
 
-  v2 = *(unsigned int *)this->__pad_14; /*0x636319*/
+  v2 = *(unsigned int *)this->q014; /*0x636319*/
   for ( i = 0; i < v2; ++i ) /*0x636327*/
   {
-    v4 = *(Array **)(this->Sidebar_field_0x8 + 4 * i); /*0x63632c*/
+    v4 = *(Array **)(this->q008 + 4 * i); /*0x63632c*/
     Value = (v4)->FindValue(*(unsigned int *)this->__pad_0); /*0x636334*/
     if ( Value == -1 ) /*0x63633c*/
       v6 = 0; /*0x63633e*/
@@ -404,8 +404,8 @@ TechnoClass * * Sidebar::CancelSidebarProductionQueue(int * Block)
     DecFactoryClassCounter(v9); /*0x6363d5*/
     VectorClass::EraseAt((DynamicVectorClass *)&stru_AC4B48.__pad_B8[64], (int)&Block); /*0x6363e4*/
   }
-  p_Sidebar_field_0x4 = &this->Sidebar_field_0x4; /*0x6363ec*/
-  (*(void (**)(int *))(this->Sidebar_field_0x4 + 12))(&this->Sidebar_field_0x4); /*0x6363f1*/
+  p_Sidebar_field_0x4 = &this->u32_4; /*0x6363ec*/
+  (*(void (**)(int *))(this->u32_4 + 12))(&this->u32_4); /*0x6363f1*/
   this->u8_98 = 0; /*0x6363f7*/
   *&this->u32_8C = -1; /*0x636400*/
   *&this->u32_90 = -1; /*0x636406*/
@@ -425,9 +425,9 @@ TechnoClass * * Sidebar::CancelSidebarProductionQueue(int * Block)
       if ( v11 != -1 ) /*0x636454*/
         Sidebar::RemoveItem((Sidebar *)&stru_AC4B48.__pad_B8[120], v11); /*0x63645c*/
     }
-    v12 = *(unsigned int *)this->__pad_14; /*0x636461*/
+    v12 = *(unsigned int *)this->q014; /*0x636461*/
     for ( j = 0; j < v12; ++j ) /*0x63646f*/
-      TeamClass::DestroyAllMembers(*(TeamClass **)(this->Sidebar_field_0x8 + 4 * j), *(unsigned int **)this->__pad_0); /*0x63647a*/
+      TeamClass::DestroyAllMembers(*(TeamClass **)(this->q008 + 4 * j), *(unsigned int **)this->__pad_0); /*0x63647a*/
     if ( v12 ) /*0x63648a*/
     {
       v17 = *(unsigned int *)this->__pad_0; /*0x63648e*/
@@ -435,24 +435,24 @@ TechnoClass * * Sidebar::CancelSidebarProductionQueue(int * Block)
       DecFactoryClassCounter(LeaderIndex); /*0x636499*/
       VectorClass::EraseAt((DynamicVectorClass *)&stru_AC4B48.__pad_B8[64], (int)&v17); /*0x6364a8*/
     }
-    (*(void (**)(int *))(*p_Sidebar_field_0x4 + 12))(&this->Sidebar_field_0x4); /*0x6364b1*/
+    (*(void (**)(int *))(*p_Sidebar_field_0x4 + 12))(&this->u32_4); /*0x6364b1*/
     this->u8_98 = 0; /*0x6364b7*/
     *&this->u32_8C = -1; /*0x6364be*/
     *&this->u32_90 = -1; /*0x6364c4*/
     *&this->u32_94 = -1; /*0x6364ca*/
     this->u8_99 = 0; /*0x6364d0*/
-    Sidebar_field_0x8 = (void *)this->Sidebar_field_0x8; /*0x6364d7*/
+    Sidebar_field_0x8 = (void *)this->q008; /*0x6364d7*/
     /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EFE64) */  /*0x6364de*/
     if ( Sidebar_field_0x8 ) /*0x6364e4*/
     {
-      if ( BYTE1(this->Sidebar_field_0x10) ) /*0x6364e6*/
+      if ( BYTE1(this->q010) ) /*0x6364e6*/
       {
         __3_YAXPAX_Z(Sidebar_field_0x8); /*0x6364ee*/
-        this->Sidebar_field_0x8 = 0; /*0x6364f6*/
+        this->q008 = 0; /*0x6364f6*/
       }
     }
-    BYTE1(this->Sidebar_field_0x10) = 0; /*0x6364fa*/
-    this->Sidebar_field_0xC = 0; /*0x6364fe*/
+    BYTE1(this->q010) = 0; /*0x6364fa*/
+    this->u32_C = 0; /*0x6364fe*/
     __3_YAXPAX_Z(this); /*0x636501*/
   }
 
@@ -467,20 +467,20 @@ char Sidebar::RemoveItem(int a2, void *a2_2)
   int v3; // eax
   char *v4; // edx
 
-  Sidebar_field_0x10 = (char *)a2_2->Sidebar_field_0x10; /*0x63f040*/
+  Sidebar_field_0x10 = (char *)a2_2->q010; /*0x63f040*/
   v3 = (int)(a2_2); /*0x63f043*/
   if ( a2_2 >= (int)Sidebar_field_0x10 ) /*0x63f049*/
     return 0; /*0x63f06c*/
   v4 = Sidebar_field_0x10 - 1; /*0x63f04b*/
-  a2_2->Sidebar_field_0x10 = v4; /*0x63f04e*/
+  a2_2->q010 = v4; /*0x63f04e*/
   if ( a2_2 < (int)v4 ) /*0x63f051*/
   {
     do /*0x63f064*/
     {
       ++v3; /*0x63f057*/
-      *(unsigned int *)(a2_2->Sidebar_field_0x4[0] + 4 * v3 - 4) = *(unsigned int *)(a2_2->Sidebar_field_0x4[0] + 4 * v3); /*0x63f05b*/
+      *(unsigned int *)(a2_2->u32_4 + 4 * v3 - 4) = *(unsigned int *)(a2_2->u32_4 + 4 * v3); /*0x63f05b*/
     }
-    while ( v3 < (int)a2_2->Sidebar_field_0x10 ); /*0x63f064*/
+    while ( v3 < (int)a2_2->q010 ); /*0x63f064*/
   }
   return 1; /*0x63f069*/
 

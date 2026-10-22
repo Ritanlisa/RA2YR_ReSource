@@ -244,10 +244,10 @@ char CampaignClass::GetMapData(uint8_t ***a2) {
     (INIClass *)a2,
     &this->idxCd,
     (uint8_t *)&stru_81AF8C.Selectable,
-    &this->u8_3A28,
-    &this->u8_3A28,
+    &this->scenario[116],
+    &this->scenario[116],
     512);
-  _strupr(this->u8_3A28); /*0x46cd4c*/
+  _strupr(this->scenario[116]); /*0x46cd4c*/
   if ( (uint8_t)INIClass::ReadBool_Overwrite( /*0x46cd5e*/
                           (int *)a2,
                           &this->idxCd,
@@ -270,7 +270,7 @@ char CampaignClass::GetMapData(uint8_t ***a2) {
       (int)a2,
       &this->idxCd,
       (uint8_t *)&stru_81AF8C.AlphaImageFile[5],
-      &this->u32_1F2C,
+      &this->description[29],
       0x80u);
   }
   return 1; /*0x46cd82*/
@@ -282,7 +282,7 @@ namespace gamemd {
 int CampaignClass::Stat(int *a2) {
   AbstractTypeClass::ProcessPower((AbstractTypeClass *)this, a2); /*0x46cfc9*/
   Power::TimerProcess(this->scenario[28]); /*0x46cfd7*/
-  Checksum::AddString((Checksum *)a2, &this->u8_3A28); /*0x46cfe5*/
+  Checksum::AddString((Checksum *)a2, &this->scenario[116]); /*0x46cfe5*/
   return Power::TimerProcess(this->description[28]); /*0x46cff8*/
 }
 } // namespace gamemd
@@ -292,11 +292,11 @@ namespace gamemd {
 int CampaignClass::GetValue(unsigned int *result) {
   int result; // eax
 
-  if ( !this->nextArrayIndex ) /*0x49e4f3*/
+  if ( !this->scenario[56] ) /*0x49e4f3*/
     CampaignClass::LoadFromINI((int)this); /*0x49e4fa*/
-  result = *(&this->ptr_33); /*0x49e503*/
+  result = *(&this->q48F4); /*0x49e503*/
   *result = result; /*0x49e506*/
-  (*((unsigned char *)&(result))) = this->nextArrayIndex; /*0x49e508*/
+  (*((unsigned char *)&(result))) = this->scenario[56]; /*0x49e508*/
   return result; /*0x49e50b*/
 }
 } // namespace gamemd
@@ -304,22 +304,22 @@ int CampaignClass::GetValue(unsigned int *result) {
 // 0x49F090
 namespace gamemd {
 unsigned int * CampaignClass::Constructor_0(int a2, int a3) {
-  this->ptr_4 = 0; /*0x49f09b*/
-  this->ptr_8 = (void *)a2; /*0x49f09e*/
-  (this->ptr_C) = 1; /*0x49f0a1*/
-  (this->q00D) = 0; /*0x49f0a5*/
+  this->vfptr1 = 0; /*0x49f09b*/
+  this->vfptr2 = (void *)a2; /*0x49f09e*/
+  (this->vfptr3) = 1; /*0x49f0a1*/
+  (this->vfptr3) = 0; /*0x49f0a5*/
   /* X11: ptr_0 install elided (implicit via class virtuals 0x49f0a8) — binary-proven install, was 0 */
   if ( a2 ) /*0x49f0ae*/
   {
     if ( a3 ) /*0x49f0b6*/
     {
-      this->ptr_4 = (void *)a3; /*0x49f0b8*/
-      return &this->ptr_0; /*0x49f0be*/
+      this->vfptr1 = (void *)a3; /*0x49f0b8*/
+      return &this->vfptr; /*0x49f0be*/
     }
-    this->ptr_4 = operator new(4 * a2); /*0x49f0cd*/
-    (this->q00D) = 1; /*0x49f0d0*/
+    this->vfptr1 = operator new(4 * a2); /*0x49f0cd*/
+    (this->vfptr3) = 1; /*0x49f0d0*/
   }
-  return &this->ptr_0; /*0x49f0bd*/
+  return &this->vfptr; /*0x49f0bd*/
 }
 } // namespace gamemd
 
@@ -405,7 +405,7 @@ int CampaignClass::ReleaseSubobjectsAndDestruct() {
     (**v4)(v4, 1); /*0x5ae4a5*/
     this->scenario[33] = 0; /*0x5ae4a7*/
   }
-  return SessionClass::Destruct(&this->q1428); /*0x5ae4b9*/
+  return SessionClass::Destruct(&this->scenario[40]); /*0x5ae4b9*/
 }
 } // namespace gamemd
 
@@ -428,7 +428,7 @@ int CampaignClass::DeleteAndZero(const char **a2) {
   {
     String::AssignFromPtr((String *)&v7, v2); /*0x5cf785*/
     String::ToLower((String *)&v7); /*0x5cf78e*/
-    String::AssignFromPtr((String *)&a2, (const char **)(*((unsigned int *)this->ptr_4 + v4) + 4)); /*0x5cf7a1*/
+    String::AssignFromPtr((String *)&a2, (const char **)(*((unsigned int *)this->vfptr1 + v4) + 4)); /*0x5cf7a1*/
     String::ToLower((String *)&a2); /*0x5cf7aa*/
     if ( (unsigned __int8)String::Compare((String *)&v7, (const char **)&a2) ) /*0x5cf7b8*/
       break; /*0x5cf7b8*/
@@ -437,7 +437,7 @@ int CampaignClass::DeleteAndZero(const char **a2) {
     if ( ++v4 >= this->uniqueId ) /*0x5cf7d9*/
       return 0; /*0x5cf7d9*/
   }
-  v6 = *((unsigned int *)this->ptr_4 + v4); /*0x5cf7eb*/
+  v6 = *((unsigned int *)this->vfptr1 + v4); /*0x5cf7eb*/
   DeleteAndZero((ObjectClass *)&a2); /*0x5cf7ee*/
   DeleteAndZero((ObjectClass *)&v7); /*0x5cf7f7*/
   return v6; /*0x5cf7db*/
@@ -448,7 +448,7 @@ int CampaignClass::DeleteAndZero(const char **a2) {
 namespace gamemd {
 int CampaignClass::Check(int a2) {
     if ( *(int *)this->q01A) > a2 ) /*0x5cf81e +10 count*/
-      return *((unsigned int *)(*&this->ptr_4) + a2); /*0x5cf828 +4 items*/
+      return *((unsigned int *)(*&this->vfptr1) + a2); /*0x5cf828 +4 items*/
     else
       return 0; /*0x5cf820*/
 }
@@ -688,7 +688,7 @@ int TeamClass::SumMemberCounts() {
   result = 0; /*0x6e8166*/
   if ( v1 > 0 ) /*0x6e816a*/
   {
-    v3 = (TeamClass *)this->Coord_9C); /*0x6e816d*/
+    v3 = (TeamClass *)this->q0A4); /*0x6e816d*/
     do /*0x6e817b*/
     {
       ptr_0 = v3->ptr_0; /*0x6e8173*/
@@ -808,11 +808,11 @@ int TeamClass::Create(int a1, int a2) {
   }
   for ( i = this->firstUnit; i; i = this->firstUnit ) /*0x6ecfef*/
   {
-    TeamClass::LiberateMember_Start(&this->ptr_0, i, 0xFFFFFFFF, 0); /*0x6ecff8*/
+    TeamClass::LiberateMember_Start(&this->vfptr, i, 0xFFFFFFFF, 0); /*0x6ecff8*/
     (v4) = ((v4) & ~0xFF) | ((TeamClass::AddMember(v5, i, 0)) & 0xFF); /*0x6ed002*/
   }
   if ( this ) /*0x6ed010*/
-    LOBYTE(v4) = this->vt_slot_32(this, 1); /*0x6ed018*/
+    LOBYTE(v4) = this->vfptr(this, 1); /*0x6ed018*/
   return v4; /*0x6ed01b*/
 
 }
@@ -887,7 +887,7 @@ void * TeamClass::ProcessEvent(int a2) {
   TeamClass::Destructor(this); /*0x6f0453*/
   if ( (a2 & 1) != 0 ) /*0x6f045d*/
     operator delete((this)); /*0x6f0460*/
-  return &this->ptr_0; /*0x6f046a*/
+  return &this->vfptr; /*0x6f046a*/
 }
 } // namespace gamemd
 
@@ -905,9 +905,9 @@ int TeamClass::CreateOneOf(int a2) {
     OwnerHouse = *&this->u32_C4; /*0x6f09d9*/
     if ( !OwnerHouse ) /*0x6f09e1*/
     {
-      if ( !(uint8_t)BuildingType::IsSpecialType(*&this->Coord_9C) ) /*0x6f09e9*/
+      if ( !(uint8_t)BuildingType::IsSpecialType(*&this->q0C8) ) /*0x6f09e9*/
         return 0; /*0x6f09e9*/
-      OwnerHouse = (TeamClass *)BuildingType::FindOwnerHouse(*&this->Coord_9C); /*0x6f09fd*/
+      OwnerHouse = (TeamClass *)BuildingType::FindOwnerHouse(*&this->q0C8); /*0x6f09fd*/
       if ( !OwnerHouse ) /*0x6f0a01*/
         return 0; /*0x6f0a01*/
     }
@@ -1855,8 +1855,8 @@ int CampaignClass::LoadFromINI() {
   v2 = 0; /*0x49db18*/
   if ( !CCINIClass::Load((CCINIClass *)this, (int)&v71, 0, 0) ) /*0x49db23*/
   {
-    *&this->u32_6828 = 0; /*0x49db33*/
-    *&this->q6028 = 0; /*0x49db36*/
+    *&this->scenario[52] = 0; /*0x49db33*/
+    *&this->scenario[48] = 0; /*0x49db36*/
     this->scenario[56] = 0; /*0x49db39*/
     /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x49db3c*/
     v73 = 0; /*0x49db44*/
@@ -1865,7 +1865,7 @@ int CampaignClass::LoadFromINI() {
     return BufferIOFileClass::Dtor((BufferIOFileClass *)&v71); /*0x49db69*/
   }
   KeyCount = INIClass::GetKeyCount((char *)this, g_INI_Key_Campaigns); /*0x49db78*/
-  *&this->u32_6828 = KeyCount; /*0x49db7c*/
+  *&this->scenario[52] = KeyCount; /*0x49db7c*/
   if ( KeyCount > 0 ) /*0x49db7f*/
   {
     v5 = (int *)__2_YAPAXI_Z(76 * KeyCount + 4); /*0x49db9a*/
@@ -1899,12 +1899,12 @@ int CampaignClass::LoadFromINI() {
     {
       v10 = 0; /*0x49dbff*/
     }
-    *&this->q6028 = v10; /*0x49dc03*/
+    *&this->scenario[48] = v10; /*0x49dc03*/
     if ( !v10 ) /*0x49dc06*/
       goto LABEL_80; /*0x49dc06*/
     v11 = 0; /*0x49dc0f*/
     v68 = 0; /*0x49dc13*/
-    if ( *&this->u32_6828 <= 0 ) /*0x49dc17*/
+    if ( *&this->scenario[52] <= 0 ) /*0x49dc17*/
       goto LABEL_80; /*0x49dc17*/
     while ( 1 ) /*0x49dc25*/
     {
@@ -1922,8 +1922,8 @@ int CampaignClass::LoadFromINI() {
                128) )
         {
           StringCSF = GetStringCSF(word_89F5D8, 0, aDRa2mdpostCoop, 1048); /*0x49dca7*/
-          *(unsigned int *)(*&this->q6028 + v2 + 4) = __2_YAPAXI_Z(0x102u); /*0x49dcb4*/
-          v14 = *(wchar_t **)(*&this->q6028 + v2 + 4); /*0x49dcbb*/
+          *(unsigned int *)(*&this->scenario[48] + v2 + 4) = __2_YAPAXI_Z(0x102u); /*0x49dcb4*/
+          v14 = *(wchar_t **)(*&this->scenario[48] + v2 + 4); /*0x49dcbb*/
           if ( v14 ) /*0x49dcc1*/
             wcscpy(v14, StringCSF); /*0x49dcc5*/
         }
@@ -1934,7 +1934,7 @@ int CampaignClass::LoadFromINI() {
           0,
           (char *)word_89F5D8,
           128);
-        String::Assign_Alt((String *)(*&this->q6028 + v2 + 68), (const char *)word_89F5D8); /*0x49dcf9*/
+        String::Assign_Alt((String *)(*&this->scenario[48] + v2 + 68), (const char *)word_89F5D8); /*0x49dcf9*/
         INIClass::GetString( /*0x49dd19*/
           (INIClass *)this,
           (unsigned __int8 *)Destination,
@@ -1942,7 +1942,7 @@ int CampaignClass::LoadFromINI() {
           0,
           (char *)word_89F5D8,
           128);
-        String::Assign_Alt((String *)(*&this->q6028 + v2 + 72), (const char *)word_89F5D8); /*0x49dd2a*/
+        String::Assign_Alt((String *)(*&this->scenario[48] + v2 + 72), (const char *)word_89F5D8); /*0x49dd2a*/
         INIClass::GetString( /*0x49dd4d*/
           (INIClass *)this,
           (unsigned __int8 *)Destination,
@@ -1950,11 +1950,11 @@ int CampaignClass::LoadFromINI() {
           g_INI_Key_Easy,
           (char *)word_89F5D8,
           128);
-        *(unsigned int *)(*&this->q6028 + v2 + 64) = __2_YAPAXI_Z(strlen((const char *)word_89F5D8) + 1); /*0x49dd71*/
-        strcpy(*(char **)(*&this->q6028 + v2 + 64), (const char *)word_89F5D8); /*0x49dd8f*/
-        *(unsigned int *)(*&this->q6028 + v2) = v68; /*0x49dd9b*/
-        *(unsigned char *)(*&this->q6028 + v2 + 8) = Int_Overwrite; /*0x49dda5*/
-        *(unsigned int *)(*&this->q6028 + v2 + 12) = __2_YAPAXI_Z(780 * Int_Overwrite); /*0x49ddc7*/
+        *(unsigned int *)(*&this->scenario[48] + v2 + 64) = __2_YAPAXI_Z(strlen((const char *)word_89F5D8) + 1); /*0x49dd71*/
+        strcpy(*(char **)(*&this->scenario[48] + v2 + 64), (const char *)word_89F5D8); /*0x49dd8f*/
+        *(unsigned int *)(*&this->scenario[48] + v2) = v68; /*0x49dd9b*/
+        *(unsigned char *)(*&this->scenario[48] + v2 + 8) = Int_Overwrite; /*0x49dda5*/
+        *(unsigned int *)(*&this->scenario[48] + v2 + 12) = __2_YAPAXI_Z(780 * Int_Overwrite); /*0x49ddc7*/
         v15 = 1; /*0x49ddcb*/
         v67 = 1; /*0x49ddd2*/
         v69 = Int_Overwrite + 1; /*0x49ddd6*/
@@ -1975,13 +1975,13 @@ int CampaignClass::LoadFromINI() {
             {
               v16 = strtok((char *)word_89F5D8, Delimiter); /*0x49de35*/
               if ( v16 ) /*0x49de3f*/
-                strcpy((char *)(*(unsigned int *)(*&this->q6028 + v2 + 12) + v61 - 780), v16); /*0x49de69*/
+                strcpy((char *)(*(unsigned int *)(*&this->scenario[48] + v2 + 12) + v61 - 780), v16); /*0x49de69*/
               v17 = strtok(0, Delimiter); /*0x49de79*/
               if ( v17 ) /*0x49de83*/
-                strcpy((char *)(*(unsigned int *)(*&this->q6028 + v2 + 12) + v61 - 520), v17); /*0x49dead*/
+                strcpy((char *)(*(unsigned int *)(*&this->scenario[48] + v2 + 12) + v61 - 520), v17); /*0x49dead*/
               v18 = strtok(0, Delimiter); /*0x49debd*/
               if ( v18 ) /*0x49dec7*/
-                strcpy((char *)(*(unsigned int *)(*&this->q6028 + v2 + 12) + v61 - 260), v18); /*0x49def1*/
+                strcpy((char *)(*(unsigned int *)(*&this->scenario[48] + v2 + 12) + v61 - 260), v18); /*0x49def1*/
             }
             v19 = __2_YAPAXI_Z(0x18u); /*0x49df01*/
             if ( !v19 ) /*0x49df0a*/
@@ -1993,7 +1993,7 @@ int CampaignClass::LoadFromINI() {
             /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E5BC4) */  /*0x49df1d*/
             v19->abstractFlags = 10; /*0x49df23*/
             v19->uniqueId = 0; /*0x49df2a*/
-            v20 = *&this->q6028; /*0x49df2d*/
+            v20 = *&this->scenario[48]; /*0x49df2d*/
             v21 = *(unsigned int *)(v20 + v2 + 24); /*0x49df30*/
             v22 = (unsigned int *)(v20 + v2 + 16); /*0x49df34*/
             if ( *(unsigned int *)(v20 + v2 + 32) < v21 /*0x49df5b*/
@@ -2022,7 +2022,7 @@ int CampaignClass::LoadFromINI() {
                 v28 = (char *)__2_YAPAXI_Z(strlen(v26) + 1); /*0x49dfe2*/
                 v62 = v28; /*0x49dfee*/
                 strcpy(v28, v27); /*0x49e001*/
-                v29 = *(unsigned int *)(*(unsigned int *)(*&this->q6028 + v2 + 20) + v66 - 4); /*0x49e015*/
+                v29 = *(unsigned int *)(*(unsigned int *)(*&this->scenario[48] + v2 + 20) + v66 - 4); /*0x49e015*/
                 v30 = *(unsigned int *)(v29 + 8); /*0x49e019*/
                 if ( *(unsigned int *)(v29 + 16) < v30 ) /*0x49e021*/
                   goto LABEL_42; /*0x49e021*/
@@ -2047,7 +2047,7 @@ LABEL_42:
                 v34 = (char *)__2_YAPAXI_Z(strlen(i) + 1); /*0x49e082*/
                 v63 = v34; /*0x49e08e*/
                 strcpy(v34, i); /*0x49e0a1*/
-                v35 = *(unsigned int *)(*(unsigned int *)(*&this->q6028 + v2 + 20) + v66 - 4); /*0x49e0b5*/
+                v35 = *(unsigned int *)(*(unsigned int *)(*&this->scenario[48] + v2 + 20) + v66 - 4); /*0x49e0b5*/
                 v36 = *(unsigned int *)(v35 + 8); /*0x49e0b9*/
                 if ( *(unsigned int *)(v35 + 16) >= v36 ) /*0x49e0c1*/
                 {
@@ -2076,7 +2076,7 @@ LABEL_42:
               /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E5BC4) */  /*0x49e134*/
               *(unsigned int *)(v39 + 20) = 10; /*0x49e13a*/
               *(unsigned int *)(v39 + 16) = 0; /*0x49e141*/
-              v40 = *&this->q6028; /*0x49e144*/
+              v40 = *&this->scenario[48]; /*0x49e144*/
               v41 = *(unsigned int *)(v40 + v2 + 48); /*0x49e147*/
               v42 = (unsigned int *)(v40 + v2 + 40); /*0x49e14f*/
               if ( *(unsigned int *)(v40 + v2 + 56) < v41 /*0x49e172*/
@@ -2105,7 +2105,7 @@ LABEL_42:
                   v48 = (char *)__2_YAPAXI_Z(strlen(v46) + 1); /*0x49e1f9*/
                   v64 = v48; /*0x49e205*/
                   strcpy(v48, v47); /*0x49e218*/
-                  v49 = *(unsigned int *)(*(unsigned int *)(*&this->q6028 + v2 + 44) + v66 - 4); /*0x49e22c*/
+                  v49 = *(unsigned int *)(*(unsigned int *)(*&this->scenario[48] + v2 + 44) + v66 - 4); /*0x49e22c*/
                   v50 = *(unsigned int *)(v49 + 8); /*0x49e230*/
                   if ( *(unsigned int *)(v49 + 16) < v50 ) /*0x49e238*/
                     goto LABEL_67; /*0x49e238*/
@@ -2130,7 +2130,7 @@ LABEL_67:
                   v54 = (char *)__2_YAPAXI_Z(strlen(j) + 1); /*0x49e299*/
                   v65 = v54; /*0x49e2a5*/
                   strcpy(v54, j); /*0x49e2b8*/
-                  v55 = *(unsigned int *)(*(unsigned int *)(*&this->q6028 + v2 + 44) + v66 - 4); /*0x49e2cc*/
+                  v55 = *(unsigned int *)(*(unsigned int *)(*&this->scenario[48] + v2 + 44) + v66 - 4); /*0x49e2cc*/
                   v56 = *(unsigned int *)(v55 + 8); /*0x49e2d0*/
                   if ( *(unsigned int *)(v55 + 16) >= v56 ) /*0x49e2d8*/
                   {
@@ -2165,12 +2165,12 @@ LABEL_77:
       ++v11; /*0x49e35d*/
       v2 += 76; /*0x49e35e*/
       v68 = v11; /*0x49e363*/
-      if ( v11 >= *&this->u32_6828 ) /*0x49e367*/
+      if ( v11 >= *&this->scenario[52] ) /*0x49e367*/
         goto LABEL_80; /*0x49e367*/
     }
   }
-  *&this->u32_6828 = 0; /*0x49db81*/
-  *&this->q6028 = 0; /*0x49db84*/
+  *&this->scenario[52] = 0; /*0x49db81*/
+  *&this->scenario[48] = 0; /*0x49db84*/
 LABEL_80:
   this->scenario[56] = 1; /*0x49e36f*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x49e37a*/
@@ -2185,27 +2185,27 @@ LABEL_80:
 // 0x49ECD0
 namespace gamemd {
 void * CampaignClass::Constructor(int a2, int a3) {
-  this->ptr_4 = 0; /*0x49ecd9*/
-  this->ptr_8 = (void *)a2; /*0x49ece0*/
-  (this->ptr_C) = 1; /*0x49ece3*/
-  (this->q00D) = 0; /*0x49ece7*/
+  this->vfptr1 = 0; /*0x49ecd9*/
+  this->vfptr2 = (void *)a2; /*0x49ece0*/
+  (this->vfptr3) = 1; /*0x49ece3*/
+  (this->vfptr3) = 0; /*0x49ece7*/
   /* X11: ptr_0 install elided (implicit via class virtuals 0x49eceb) — binary-proven install, was 0 */
   if ( a2 ) /*0x49ecf1*/
   {
     if ( a3 ) /*0x49ecf9*/
     {
-      this->ptr_4 = (void *)a3; /*0x49ecfb*/
+      this->vfptr1 = (void *)a3; /*0x49ecfb*/
     }
     else
     {
-      this->ptr_4 = operator new(4 * a2); /*0x49ed0c*/
-      (this->q00D) = 1; /*0x49ed0f*/
+      this->vfptr1 = operator new(4 * a2); /*0x49ed0c*/
+      (this->vfptr3) = 1; /*0x49ed0f*/
     }
   }
   /* X11: ptr_0 install elided (implicit via class virtuals 0x49ed13) — binary-proven install, was 0 */
   this->abstractFlags = 10; /*0x49ed19*/
   this->uniqueId = 0; /*0x49ed20*/
-  return &this->ptr_0; /*0x49ed29*/
+  return &this->vfptr; /*0x49ed29*/
 }
     *(void **)(char *)this = 0; /*0x49ed13 ptr_0(DynamicVectorClass)*/
     *(unsigned int *)&this->abstractFlags = 10; /*0x49ed19 +14 growth*/
@@ -2216,9 +2216,9 @@ void * CampaignClass::Constructor(int a2, int a3) {
 // 0x5D2E00
 namespace gamemd {
 void * CampaignClass::Constructor_1(int a2) {
-  (this->ptr_C) = 0; /*0x5d2e05*/
-  (this->q00D) = 0; /*0x5d2e08*/
-  (this->q00E) = 0; /*0x5d2e0b*/
+  (this->vfptr3) = 0; /*0x5d2e05*/
+  (this->vfptr3) = 0; /*0x5d2e08*/
+  (this->vfptr3) = 0; /*0x5d2e0b*/
   /* X11: ptr_0 install elided (implicit via class virtuals 0x5d2e13) — binary-proven install, was 0 */
   FontClass::LoadFontResources((int)this, a2); /*0x5d2e19*/
   ++*(unsigned int *)&g_MissionQueueFrame.underParMessage[25]; /*0x5d2e24*/
@@ -2476,8 +2476,8 @@ int TActionClass::ctor() {
     v7 = g_BuildingLoadQueue_Array.GateCloseDelay[0]++; /*0x6dd15b*/
     *(unsigned int *)(g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[1] + 4 * v7) = this; /*0x6dd16a*/
   }
-  this->TActionClass_field_6D = 0; /*0x6dd16d*/
-  *&this->HouseClass_A20 = 0; /*0x6dd170*/
+  this->TActionClass_field_6D[0] = 0; /*0x6dd16d*/
+  *&this->pad_6E[34] = 0; /*0x6dd170*/
   return (int)this; /*0x6dd178*/
 }
 } // namespace gamemd
@@ -2494,7 +2494,7 @@ void * TActionClass::Destructor(char a2) {
   /* X11: ptr_0 install elided (implicit via class virtuals 0x6e466c) — binary-proven install, was 0 */
   /* X11: ptr_0 install elided (implicit via class virtuals 0x6e4673) — binary-proven install, was 0 */
   /* X11: ptr_0 install elided (implicit via class virtuals 0x6e467a) — binary-proven install, was 0 */
-  AbstractClass::AnnounceExpiredPointer(&this->ptr_0, 1); /*0x6e4681*/
+  AbstractClass::AnnounceExpiredPointer(&this->vfptr, 1); /*0x6e4681*/
   v7 = this; /*0x6e4696*/
   v3 = (*(int (__thiscall **)(int *, TActionClass **))(g_BuildingLoadQueue_Array.LightVisibility + 16))( /*0x6e469a*/
          &g_BuildingLoadQueue_Array.LightVisibility,
@@ -2535,11 +2535,11 @@ void * TActionClass::Destructor(char a2) {
     }
     while ( v5 < dword_B0E668 ); /*0x6e475f*/
   }
-  this->TActionClass_field_6D = 0; /*0x6e4763*/
+  this->TActionClass_field_6D[0] = 0; /*0x6e4763*/
   AbstractClass::DTOR((AbstractClass *)this); /*0x6e4767*/
   if ( (a2 & 1) != 0 ) /*0x6e4771*/
     operator delete((this)); /*0x6e4774*/
-  return &this->ptr_0; /*0x6e477e*/
+  return &this->vfptr; /*0x6e477e*/
 }
 } // namespace gamemd
 
@@ -2586,7 +2586,7 @@ int TeamClass::SelectWaypointTarget(int a2, int a3) {
   {
   LABEL_12:
     result = TeamClass::SelectMember((int)this, 0); /*0x6eca40*/
-    this->stepCompleted = 1; /*0x6eca49*/
+    this->stepCompleted[0] = 1; /*0x6eca49*/
   }
   return result; /*0x6eca50*/
 }
@@ -2635,7 +2635,7 @@ int TeamClass::SelectAttackTarget(int a2, int a3) {
   {
   LABEL_13:
     result = TeamClass::SelectMember((int)this, 0); /*0x6ecb1e*/
-    this->stepCompleted = 1; /*0x6ecb27*/
+    this->stepCompleted[0] = 1; /*0x6ecb27*/
   }
   return result; /*0x6ecb2e*/
 }
@@ -2679,7 +2679,7 @@ int TeamClass::AssignMemberToCoordinator(int a2, int a3) {
     if ( this->queuedFocus ) /*0x6ecef1*/
       goto LABEL_10; /*0x6ecef6*/
     (*((unsigned char *)&(ObjectCell))) = TeamClass::SelectMember((int)this, 0); /*0x6ecefc*/
-    this->stepCompleted = 1; /*0x6ecf01*/
+    this->stepCompleted[0] = 1; /*0x6ecf01*/
   }
   return ObjectCell; /*0x6eceea*/
 }
@@ -2751,7 +2751,7 @@ int TeamClass::CoordinateSuperWeaponAttack(int a2, int a3) {
       else
       {
 LABEL_19:
-        this->stepCompleted = 1; /*0x6ed1a4*/
+        this->stepCompleted[0] = 1; /*0x6ed1a4*/
       }
     }
     if ( !v3->queuedFocus ) /*0x6ed1ab*/
@@ -2812,7 +2812,7 @@ int TeamClass::SelectAreaAttackTarget(int a2, int a3) {
   {
   LABEL_13:
     result = TeamClass::SelectMember((int)this, 0); /*0x6ee3be*/
-    this->stepCompleted = 1; /*0x6ee3c8*/
+    this->stepCompleted[0] = 1; /*0x6ee3c8*/
     return result; /*0x6ee3d1*/
   }
   LABEL_9:
@@ -3446,7 +3446,7 @@ void TeamClass::CheckMemberSuperWeapon(int a2, int a3) {
 LABEL_33:
     this = v25; /*0x6f038d*/
 LABEL_34:
-    this->stepCompleted = 1; /*0x6f0391*/
+    this->stepCompleted[0] = 1; /*0x6f0391*/
     return; /*0x6f0391*/
   }
   if ( !*(unsigned char *)(v7 + 111) ) /*0x6f01ed*/
@@ -3861,8 +3861,8 @@ LABEL_15:
 // 0x5CF810
 namespace gamemd {
 int CampaignClass::Check(uint16_t a2) {
-    if ( this->ptr_0_2 > a2 ) /*0x5cf81e*/
-      return *((unsigned int *)this->ptr_0_2 + a2); /*0x5cf828*/
+    if ( this->uniqueId > a2 ) /*0x5cf81e*/
+      return *((unsigned int *)this->vfptr1 + a2); /*0x5cf828*/
     else
       return 0; /*0x5cf820*/
 }

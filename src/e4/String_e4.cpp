@@ -45,7 +45,7 @@ int String::AssignWideToChar(char *aP1, char *aP2)
   }
   else
   {
-    *(&this->ptr_88) = 0; /*0x49b7cc*/
+    *(&this->u32_1C) = 0; /*0x49b7cc*/
   }
   return result; /*0x49b7c5*/
 }
@@ -78,10 +78,10 @@ namespace gamemd {
 int String::Release(void *a1)
 {
 
-  int result = this->m_3; // eax /*0x5bd5a3*/
+  int result = this->u32_C; // eax /*0x5bd5a3*/
   if ( result ) /*0x5bd5a8*/
     operator delete((void *)(*&this->u32_C)); /*0x5bd5ab*/
-  this->m_3 = 0; /*0x5bd5b3*/
+  this->u32_C = 0; /*0x5bd5b3*/
   return result; /*0x5bd5ba*/
 }
 }
@@ -193,10 +193,10 @@ int String::TrimLeft(const char **a2, const char **aP1, int a1, int a3, int aP2,
   int i; // esi
   for ( i = 0; ; ++i ) /*0x7b51da*/
   {
-    if ( *(unsigned int *)aP1->__pad_0 ) /*0x7b51dc*/
+    if ( *(unsigned int *)aP1->q000 ) /*0x7b51dc*/
     {
       result = 0; /*0x7b51eb*/
-      v5 = strlen(*(const char **)aP1->__pad_0); /*0x7b51f1*/
+      v5 = strlen(*(const char **)aP1->q000); /*0x7b51f1*/
     }
     else
     {
@@ -208,7 +208,7 @@ int String::TrimLeft(const char **a2, const char **aP1, int a1, int a3, int aP2,
     v6 = (char *)*aP1; /*0x7b51f6*/
     if ( !*aP1 ) /*0x7b51f6*/
       v6 = &g_INI_DefaultBuffer; /*0x7b51fd*/
-    result = (int)strchr(v6, *(char *)(*(unsigned int *)aP1->__pad_0 + i)); /*0x7b5208*/
+    result = (int)strchr(v6, *(char *)(*(unsigned int *)aP1->q000 + i)); /*0x7b5208*/
     if ( !result ) /*0x7b5212*/
       break; /*0x7b5212*/
   }
@@ -223,8 +223,8 @@ namespace gamemd {
 unsigned int String::Length(void *a1)
 {
 
-  if ( *(unsigned int *)this->__pad_0 ) /*0x7b54b1*/
-    return strlen(*(const char **)this->__pad_0); /*0x7b54c6*/
+  if ( *(unsigned int *)this->q000 ) /*0x7b54b1*/
+    return strlen(*(const char **)this->q000); /*0x7b54c6*/
   else
     return 0; /*0x7b54b7*/
 
@@ -262,8 +262,8 @@ AbstractClass * * String::Replace(char * SubStr, const char * a3, void *a3_1)
 
   v3 = (void **)this; /*0x7b57a6*/
   v4 = 0; /*0x7b57a8*/
-  v5 = *(const char **)this->__pad_0; /*0x7b57ae*/
-  if ( !*(unsigned int *)this->__pad_0 ) /*0x7b57ae*/
+  v5 = *(const char **)this->q000; /*0x7b57ae*/
+  if ( !*(unsigned int *)this->q000 ) /*0x7b57ae*/
     v5 = &g_INI_DefaultBuffer; /*0x7b57b4*/
   if ( !v5 ) /*0x7b57bc*/
     goto LABEL_33; /*0x7b57bc*/
@@ -359,10 +359,10 @@ AbstractClass * * String::Replace(char * SubStr, const char * a3, void *a3_1)
   else
     v21 = 1; /*0x7b59e8*/
   v22 = (unsigned char *)__2_YAPAXI_Z(v21); /*0x7b59ee*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)(v22); /*0x7b59fc*/
+  *(unsigned int *)this->q000 = (unsigned int)(v22); /*0x7b59fc*/
   *v22 = 0; /*0x7b59fe*/
   if ( v20 ) /*0x7b5a01*/
-    strcpy(*(char **)this->__pad_0, v20); /*0x7b5a1d*/
+    strcpy(*(char **)this->q000, v20); /*0x7b5a1d*/
   if ( v4 ) /*0x7b5a29*/
     __3_YAXPAX_Z(v4); /*0x7b5a2c*/
   return (gamemd::AbstractClass **)(1); /*0x7b5a34*/
@@ -381,14 +381,14 @@ AbstractClass * * String::Tokenize(int a2, ObjectClass * aP2, ObjectClass * aP3)
   while ( 1 )
   {
     signed int v7; // ecx
-    v7 = *(unsigned int *)this->__pad_0 ? strlen(*(const char **)this->__pad_0) : 0;
-    if ( v4 >= v7 || !strchr(aP2, *(char *)(*(unsigned int *)this->__pad_0 + v4)) ) /*0x7b5f4c*/
+    v7 = *(unsigned int *)this->q000 ? strlen(*(const char **)this->q000) : 0;
+    if ( v4 >= v7 || !strchr(aP2, *(char *)(*(unsigned int *)this->q000 + v4)) ) /*0x7b5f4c*/
       break; /*0x7b5f4c*/
     ++v4; /*0x7b5f58*/
   }
   signed int v8; // ecx
-  if ( *(unsigned int *)this->__pad_0 ) /*0x7b5f5b*/
-    v8 = strlen(*(const char **)this->__pad_0); /*0x7b5f6e*/
+  if ( *(unsigned int *)this->q000 ) /*0x7b5f5b*/
+    v8 = strlen(*(const char **)this->q000); /*0x7b5f6e*/
   else
     v8 = 0; /*0x7b5f61*/
   if ( v4 >= v8 ) /*0x7b5f71*/
@@ -398,15 +398,15 @@ AbstractClass * * String::Tokenize(int a2, ObjectClass * aP2, ObjectClass * aP3)
   while ( 1 )
   {
     signed int v9; // ecx
-    v9 = *(unsigned int *)this->__pad_0 ? strlen(*(const char **)this->__pad_0) : 0;
-    if ( v4 >= v9 || strchr(aP2, *(char *)(*(unsigned int *)this->__pad_0 + v4)) ) /*0x7b5fa1*/
+    v9 = *(unsigned int *)this->q000 ? strlen(*(const char **)this->q000) : 0;
+    if ( v4 >= v9 || strchr(aP2, *(char *)(*(unsigned int *)this->q000 + v4)) ) /*0x7b5fa1*/
       break; /*0x7b5fa1*/
     ++v4; /*0x7b5fad*/
   }
   char *v10; // ebp
   v10 = (char *)(v4 - 1); /*0x7b5fb4*/
   const char *v11; // esi
-  v11 = (const char *)(v21 + *(unsigned int *)this->__pad_0); /*0x7b5fbd*/
+  v11 = (const char *)(v21 + *(unsigned int *)this->q000); /*0x7b5fbd*/
   char *Stra; // [esp+18h] [ebp+8h]
   Stra = v10; /*0x7b5fbf*/
   if ( *aP3 ) /*0x7b5fc3*/
@@ -470,27 +470,27 @@ AbstractClass * * String::Tokenize2(int a2, wchar_t * Str, void ** a4)
   while ( 1 ) /*0x7b7a7a*/
   {
     int v7; // eax
-    v7 = *(unsigned int *)this->__pad_0; /*0x7b7a7a*/
-    if ( *(unsigned int *)this->__pad_0 ) /*0x7b7a7a*/
-      v7 = wcslen(*(const wchar_t **)this->__pad_0); /*0x7b7a81*/
-    if ( v4 >= v7 || !wcschr(Str, *(unsigned short *)(*(unsigned int *)this->__pad_0 + 2 * v4)) ) /*0x7b7a95*/
+    v7 = *(unsigned int *)this->q000; /*0x7b7a7a*/
+    if ( *(unsigned int *)this->q000 ) /*0x7b7a7a*/
+      v7 = wcslen(*(const wchar_t **)this->q000); /*0x7b7a81*/
+    if ( v4 >= v7 || !wcschr(Str, *(unsigned short *)(*(unsigned int *)this->q000 + 2 * v4)) ) /*0x7b7a95*/
       break; /*0x7b7a95*/
     ++v4; /*0x7b7aa1*/
   }
   int v8; // eax
-  v8 = *(unsigned int *)this->__pad_0; /*0x7b7aa4*/
-  if ( *(unsigned int *)this->__pad_0 ) /*0x7b7aa4*/
-    v8 = wcslen(*(const wchar_t **)this->__pad_0); /*0x7b7aab*/
+  v8 = *(unsigned int *)this->q000; /*0x7b7aa4*/
+  if ( *(unsigned int *)this->q000 ) /*0x7b7aa4*/
+    v8 = wcslen(*(const wchar_t **)this->q000); /*0x7b7aab*/
   if ( v4 >= v8 ) /*0x7b7ab5*/
     return (gamemd::AbstractClass **)(-1); /*0x7b7ab9*/
   int v9 = v4; // ebp /*0x7b7ac1*/
   while ( 1 ) /*0x7b7ac3*/
   {
     int v10; // eax
-    v10 = *(unsigned int *)this->__pad_0; /*0x7b7ac3*/
-    if ( *(unsigned int *)this->__pad_0 ) /*0x7b7ac3*/
-      v10 = wcslen(*(const wchar_t **)this->__pad_0); /*0x7b7aca*/
-    if ( v4 >= v10 || wcschr(Str, *(unsigned short *)(*(unsigned int *)this->__pad_0 + 2 * v4)) ) /*0x7b7ade*/
+    v10 = *(unsigned int *)this->q000; /*0x7b7ac3*/
+    if ( *(unsigned int *)this->q000 ) /*0x7b7ac3*/
+      v10 = wcslen(*(const wchar_t **)this->q000); /*0x7b7aca*/
+    if ( v4 >= v10 || wcschr(Str, *(unsigned short *)(*(unsigned int *)this->q000 + 2 * v4)) ) /*0x7b7ade*/
       break; /*0x7b7ade*/
     ++v4; /*0x7b7aea*/
   }
@@ -498,7 +498,7 @@ AbstractClass * * String::Tokenize2(int a2, wchar_t * Str, void ** a4)
   int v23; // [esp+10h] [ebp+4h]
   v23 = v4 - 1; /*0x7b7af8*/
   const wchar_t *v12; // esi
-  v12 = (const wchar_t *)(*(unsigned int *)this->__pad_0 + 2 * v9); /*0x7b7afe*/
+  v12 = (const wchar_t *)(*(unsigned int *)this->q000 + 2 * v9); /*0x7b7afe*/
   if ( *a4 ) /*0x7b7af6*/
     __3_YAXPAX_Z(*a4); /*0x7b7b04*/
   *a4 = 0; /*0x7b7b0e*/
@@ -736,7 +736,7 @@ char ** String::Assign(const char *a2)
 {
 
 
-  *(unsigned int *)this->__pad_0 = 0; /*0x7b463b*/
+  *(unsigned int *)this->q000 = 0; /*0x7b463b*/
   size_t v3; // ecx
   if ( a2 ) /*0x7b4641*/
     v3 = strlen(a2) + 1; /*0x7b464a*/
@@ -744,10 +744,10 @@ char ** String::Assign(const char *a2)
     v3 = 1; /*0x7b4650*/
   unsigned char *v4; // eax
   v4 = (unsigned char *)__2_YAPAXI_Z(v3); /*0x7b4656*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)(v4); /*0x7b465e*/
+  *(unsigned int *)this->q000 = (unsigned int)(v4); /*0x7b465e*/
   *v4 = 0; /*0x7b4662*/
   if ( a2 ) /*0x7b4665*/
-    strcpy(*(char **)this->__pad_0, a2); /*0x7b467d*/
+    strcpy(*(char **)this->q000, a2); /*0x7b467d*/
   return (char **)this; /*0x7b4686*/
 
 }
@@ -759,12 +759,12 @@ char ** String::AssignFromPtr(const char **a2, void *a2_1)
 {
 
 
-  *(unsigned int *)this->__pad_0 = 0; /*0x7b4699*/
+  *(unsigned int *)this->q000 = 0; /*0x7b4699*/
   if ( *a2 ) /*0x7b469f*/
   {
     char *v3; // edx
     v3 = (char *)__2_YAPAXI_Z(strlen(*a2) + 1); /*0x7b46b4*/
-    *(unsigned int *)this->__pad_0 = (unsigned int)(v3); /*0x7b46b9*/
+    *(unsigned int *)this->q000 = (unsigned int)(v3); /*0x7b46b9*/
     strcpy(v3, *a2); /*0x7b46d1*/
   }
   return (char **)this; /*0x7b46da*/
@@ -779,8 +779,8 @@ bool String::Equals_Alt(const char *a2)
 
 
   int result; // eax
-  result = *(unsigned int *)this->__pad_0; /*0x7b4710*/
-  if ( *(unsigned int *)this->__pad_0 || a2 ) /*0x7b471d*/
+  result = *(unsigned int *)this->q000; /*0x7b4710*/
+  if ( *(unsigned int *)this->q000 || a2 ) /*0x7b471d*/
   {
     if ( result && a2 ) /*0x7b472b*/
     {

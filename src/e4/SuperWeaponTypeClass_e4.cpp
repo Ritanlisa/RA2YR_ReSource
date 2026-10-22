@@ -112,7 +112,7 @@ LABEL_5:
     }
     v9 = *(unsigned int **)(v7 + 4 * v6); /*0x4f65f4*/
   }
-  if ( DynamicVector::GetOrGrow(&this->DynamicVector_5564, v9[894]) ) /*0x4f65cc*/
+  if ( DynamicVector::GetOrGrow(&this->q5564, v9[894]) ) /*0x4f65cc*/
     v32 = 1; /*0x4f65d5*/
   if ( v36 && v33 ) /*0x4f65e8*/
     return 1; /*0x4f65f3*/
@@ -249,16 +249,16 @@ int SuperWeaponTypeClass::Construct(char *aP1, void *a2, void *a3, void *a4, voi
   this->SidebarImageFile[5] = 0; /*0x51144b*/
   *&this->zero_E4_d = 1072693248; /*0x511451*/
   this->FlashSidebarTabFrames = 0; /*0x511457*/
-  this->PreDependent = 0; /*0x51145d*/
+  this->PreDependent_d = 0; /*0x51145d*/
   this->Range_d = 0.0; /*0x511463*/
   *&this->AIDefendAgainst_d = 1072693248; /*0x511469*/
   *&this->ShowTimer_d = 1072693248; /*0x51146f*/
-  this->LineMultiplier = 1072693248; /*0x511475*/
+  this->LineMultiplier_d = 1072693248; /*0x511475*/
   this->q100 = 1065353216; /*0x51148a*/
   this->q104 = 1065353216; /*0x511490*/
   this->q108 = (gamemd::ObjectClass *)(1065353216); /*0x511496*/
-  this->AbstractClass_10C = 1065353216; /*0x51149c*/
-  this->ParticleSystemClass_110 = 1065353216; /*0x5114a2*/
+  this->q10C = 1065353216; /*0x51149c*/
+  this->q110 = 1065353216; /*0x5114a2*/
   this->q114 = 1065353216; /*0x5114a8*/
   this->q118 = 1065353216; /*0x5114ae*/
   this->q11C = 1065353216; /*0x5114b4*/
@@ -281,17 +281,17 @@ int SuperWeaponTypeClass::Construct(char *aP1, void *a2, void *a3, void *a4, voi
   this->u32_17C = 10; /*0x511520*/
   this->u32_178 = 0; /*0x511527*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_131447) */  /*0x51152a*/
-  AircraftTypeVector::Constructor(&this->AbstractClass_184, 0, 0); /*0x51153a*/
+  AircraftTypeVector::Constructor(&this->vfptr1, 0, 0); /*0x51153a*/
   this->q198 = 10; /*0x511542*/
   this->q194 = 0; /*0x511549*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_131447) */  /*0x51154c*/
   this->q1A4 = 16777281; /*0x511552*/
-  this->WarheadTypeClass_1A8 = 0; /*0x51156c*/
+  this->q1A8 = 0; /*0x51156c*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7EAB2C) */  /*0x511572*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7EAB2C) */  /*0x511578*/
   /* X11: ptr_0 install elided (implicit via HouseTypeClass virtuals 0x51157f) */
   /* X11: ptr_0 install elided (implicit via HouseTypeClass virtuals 0x511586) */
-  AbstractClass::GenerateUniqueID(&this->AbstractClass_184); /*0x51158d*/
+  AbstractClass::GenerateUniqueID(&this->vfptr1); /*0x51158d*/
   this->q1A0 = 0; /*0x511592*/
   v4 = dword_A83CA8; /*0x511598*/
   if ( dword_A83CA8 < dword_A83CA0 /*0x5115d6*/
@@ -632,7 +632,7 @@ unsigned int * SuperWeaponTypeClass::SDDTOR(char a2)
   AbstractTypeClass::Dtor((AbstractTypeClass *)this); /*0x6cf04a*/
   if ( (a2 & 1) != 0 ) /*0x6cf054*/
     __3_YAXPAX_Z(this); /*0x6cf057*/
-  return &this->AbstractTypeClass; /*0x6cf061*/
+  return &this->vfptr; /*0x6cf061*/
 
 }
 } // namespace gamemd
@@ -747,7 +747,7 @@ SuperWeaponTypeClass::SuperWeaponTypeClass(void * aP1)
   this->SpecialSound_d = -1; /*0x6ce605*/
   this->StartSound_d = -1; /*0x6ce60b*/
   this->AuxBuilding_d = 0; /*0x6ce611*/
-  this->SidebarImageFile = 0; /*0x6ce617*/
+  this->SidebarImageFile[0] = 0; /*0x6ce617*/
   this->FlashSidebarTabFrames = -1; /*0x6ce619*/
   this->PreDependent_d = -1; /*0x6ce61f*/
   this->UseChargeDrain_d = 0; /*0x6ce628*/
@@ -764,7 +764,7 @@ SuperWeaponTypeClass::SuperWeaponTypeClass(void * aP1)
   /* X11: ptr_0 install elided (implicit via SuperWeaponTypeClass virtuals 0x6ce66d) */
   /* X11: ptr_0 install elided (implicit via SuperWeaponTypeClass virtuals 0x6ce673) */
   /* X11: ptr_0 install elided (implicit via SuperWeaponTypeClass virtuals 0x6ce67a) */
-  this->ptr_4.GenerateUniqueID(); /*0x6ce681*/
+  this->vfptr1.GenerateUniqueID(); /*0x6ce681*/
   this->ArrayIndex = dword_A8E340; /*0x6ce68c*/
   if ( dword_A8E340 < dword_A8E338 /*0x6ce6c4*/
     || (byte_A8E33D || !dword_A8E338)
@@ -778,8 +778,8 @@ SuperWeaponTypeClass::SuperWeaponTypeClass(void * aP1)
     v3 = dword_A8E340++; /*0x6ce6d1*/
     *((unsigned int *)dword_A8E334 + v3) = this; /*0x6ce6e0*/
   }
-  if ( &this->ActionValue != &this->LineMultiplier4 ) /*0x6ce6e8*/
-    memcpy(&this->Type, (const void *)(&this->ptr_46), 0x19u); /*0x6ce6ef*/
+  if ( &this->ActionValue != &this->SidebarImageFile[0] ) /*0x6ce6e8*/
+    memcpy(&this->SidebarImageFile[0], (const void *)(&this->ActionValue), 0x19u); /*0x6ce6ef*/
   return this; /*0x6ce6f2*/
 }
 } // namespace gamemd
@@ -871,32 +871,32 @@ int SuperWeaponTypeClass::SD_vt13(int * a2)
   Power::TimerProcess(this->ArrayIndex); /*0x6ce927*/
   Power::TimerProcess(this->ActionValue[0]); /*0x6ce935*/
   Power::TimerProcess(this->RechargeVoice); /*0x6ce943*/
-  Power::TimerProcess(this->ChargingVoice); /*0x6ce951*/
-  Power::TimerProcess(this->ImpatientVoice); /*0x6ce95f*/
+  Power::TimerProcess(this->ChargingVoice_d); /*0x6ce951*/
+  Power::TimerProcess(this->ImpatientVoice_d); /*0x6ce95f*/
   int v3; // eax
   v3 = Power::TimerProcess(this->SuspendVoice); /*0x6ce96d*/
-  LOBYTE(v3) = this->IsPowered; /*0x6ce972*/
+  LOBYTE(v3) = this->IsPowered_d; /*0x6ce972*/
   Power::FlagProcess((Power *)a2, v3); /*0x6ce97b*/
   int v4; // ecx
-  LOBYTE(v4) = this->DisableableFromShell; /*0x6ce980*/
+  LOBYTE(v4) = this->DisableableFromShell_d; /*0x6ce980*/
   Power::FlagProcess((Power *)a2, v4); /*0x6ce989*/
   int v5; // edx
-  LOBYTE(v5) = this->PreClick; /*0x6ce98e*/
+  LOBYTE(v5) = this->PreClick_d; /*0x6ce98e*/
   int v6; // eax
   v6 = Power::FlagProcess((Power *)a2, v5); /*0x6ce997*/
-  LOBYTE(v6) = this->PostClick; /*0x6ce99c*/
+  LOBYTE(v6) = this->PostClick_d; /*0x6ce99c*/
   Power::FlagProcess((Power *)a2, v6); /*0x6ce9a5*/
-  Power::TimerProcess(this->PreDependent); /*0x6ce9b3*/
+  Power::TimerProcess(this->PreDependent_d); /*0x6ce9b3*/
   int v7; // edx
-  LOBYTE(v7) = this->ShowTimer; /*0x6ce9b8*/
+  LOBYTE(v7) = this->ShowTimer_d; /*0x6ce9b8*/
   Power::FlagProcess((Power *)a2, v7); /*0x6ce9c1*/
   Power::TimerProcess(this->RechargeTime); /*0x6ce9cf*/
   Power::TimerProcess((int)this->Type); /*0x6ce9dd*/
   int v8; // edx
-  LOBYTE(v8) = this->UseChargeDrain; /*0x6ce9e2*/
+  LOBYTE(v8) = this->UseChargeDrain_d; /*0x6ce9e2*/
   int v9; // eax
   v9 = Power::FlagProcess((Power *)a2, v8); /*0x6ce9eb*/
-  LOBYTE(v9) = this->ManualControl; /*0x6ce9f0*/
+  LOBYTE(v9) = this->ManualControl_d; /*0x6ce9f0*/
   return Power::FlagProcess((Power *)a2, v9); /*0x6ce9fe*/
 
 }

@@ -10,7 +10,7 @@
 #include "e4/classes/Factory_e4.hpp"
 #include "e4/classes/Waypoint_e4.hpp"
 #include "e4/classes/EventClass_e4.hpp"
-#include "e4/classes/Debug_e4.hpp"namespace gamemd
+#include "e4/classes/Debug_e4.hpp"
 // ---- g57c5 W5 vocab (declaration-only) ----
 namespace gamemd {
 void Network_Helper();  // g57c5 W5 vocab (csp)
@@ -304,12 +304,12 @@ int IPXManagerClass::processPacket()
   char *v8; // edi
   ObjectClass *v9; // [esp+0h] [ebp-Ch]
 
-  v2 = this->Active; /*0x5409f7*/
+  v2 = this->Active[0]; /*0x5409f7*/
   /* X11: ptr_0 install elided (implicit via class virtuals 0x5409fa) — binary-proven install, was 0 */
   if ( v2 ) /*0x540a02*/
   {
     Network_Helper(v9); /*0x540a04*/
-    this->Active = 0; /*0x540a09*/
+    this->Active[0] = 0; /*0x540a09*/
   }
   v3 = (void (__thiscall ***)(unsigned int, int))this->u32_48; /*0x540a0c*/
   if ( v3 ) /*0x540a11*/
@@ -338,7 +338,7 @@ int IPXManagerClass::processPacket()
   }
   else
   {
-    v8 = &this->q280; /*0x540a46*/
+    v8 = &this->q028; /*0x540a46*/
     do /*0x540a60*/
     {
       if ( *(unsigned int *)v8 ) /*0x540a49*/
@@ -362,7 +362,7 @@ IPXConnClass* IPXManagerClass::createConnection()
   result = (unsigned int *)this->u32_48; /*0x540d40*/
   if ( result ) /*0x540d45*/
   {
-    this->u32_64 = result->u32_28; /*0x540d4a*/
+    this->u32_64 = result->u32_64; /*0x540d4a*/
     this->u32_68 = result[11]; /*0x540d50*/
     result = result->q030; /*0x540d53*/
     this->u32_6C = result; /*0x540d56*/
@@ -374,13 +374,13 @@ void IPXManagerClass::destroyConnection(IPXConnClass* conn)
 {
   int result; // eax
 
-  result = conn->q048; /*0x540d60*/
+  result = conn->u32_48; /*0x540d60*/
   if ( result ) /*0x540d65*/
   {
-    result->u32_28 = conn->u32_64; /*0x540d6a*/
+    result->u32_64 = conn->u32_64; /*0x540d6a*/
     *(unsigned int *)(conn->q048 + 44) = conn->q068; /*0x540d73*/
-    result = conn->q048; /*0x540d76*/
-    result->q030 = conn->q06C; /*0x540d7c*/
+    result = conn->u32_48; /*0x540d76*/
+    result->u32_6C = conn->u32_6C; /*0x540d7c*/
   }
   return result; /*0x540d7f*/
 }
@@ -416,16 +416,16 @@ int IPXManagerClass::release(int a5, int a2, int a3, int a4)
   int v13; // eax
   unsigned int *v14; // ecx
 
-  if ( !this->Initialized ) /*0x5414c6*/
+  if ( !this->Initialized[0] ) /*0x5414c6*/
     return 0; /*0x5414c6*/
-  if ( !this->Active ) /*0x5414d1*/
+  if ( !this->Active[0] ) /*0x5414d1*/
     return 0; /*0x5414d1*/
   v6 = this->u32_44; /*0x5414dc*/
   if ( !v6 ) /*0x5414e1*/
     return 0; /*0x5414e1*/
   if ( a4 != -1 ) /*0x5414ee*/
   {
-    v13 = this->send(a4); /*0x54159b*/
+    v13 = this->Socket(a4); /*0x54159b*/
     if ( v13 != -1 ) /*0x5415a1*/
     {
       v14 = (unsigned int *)*((unsigned int *)this + v13 + 10); /*0x5415a3*/
@@ -447,7 +447,7 @@ int IPXManagerClass::release(int a5, int a2, int a3, int a4)
   v9 = 0; /*0x54153a*/
   if ( v6 > 0 ) /*0x54153e*/
   {
-    v10 = &this->Active; /*0x541540*/
+    v10 = &this->Active[0]; /*0x541540*/
     while ( *(unsigned int *)(*(unsigned int *)(v10->Socket + 4) + 40) != *(unsigned int *)(*(unsigned int *)(v10->Socket + 4) + 4) ) /*0x541550*/
     {
       ++v9; /*0x541556*/
@@ -463,7 +463,7 @@ int IPXManagerClass::release(int a5, int a2, int a3, int a4)
   v11 = 0; /*0x54155e*/
   if ( v6 > 0 ) /*0x541562*/
   {
-    v12 = &this->Active; /*0x541568*/
+    v12 = &this->Active[0]; /*0x541568*/
     do /*0x541588*/
     {
       v12->release(v12->Socket, a4, a2, a3, 0); /*0x54157c*/
@@ -478,7 +478,7 @@ int IPXManagerClass::release(int a5, int a2, int a3, int a4)
 int32_t IPXManagerClass::GetConnectionCount() { return 0; 
   int v1; // ecx
 
-  if ( this->Initialized && this->Active && (v1 = this->u32_4C) != 0 ) /*0x542343*/
+  if ( this->Initialized[0] && this->Active[0] && (v1 = this->u32_4C) != 0 ) /*0x542343*/
     return *(unsigned int *)(*(unsigned int *)(v1 + 4) + 56); /*0x542348*/
   else
     return 0; /*0x54234c*/

@@ -6,12 +6,18 @@
 
 namespace gamemd {
 struct RAMFileClass {
-    void* __pad_0;  // 0x0
+    unsigned int q000;  // 0x0
     unsigned char __pad_004;  // 0x4
     char __pad_5[3];  // 0x5
-    AbstractClass* RAMFileClass_field_0x8;  // 0x8
-    unsigned int __pad_00C;  // 0xC
-    unsigned int RAMFileClass_field_0x10;  // 0x10
+    void * ptr_8;  // 0x8
+    int RAMFileClass_field_0xC;  // 0xC
+    int q010;  // 0x10
+    unsigned int u32_14;  // 0x14
+    unsigned char u32_18;  // 0x18
+    char __pad_19[3];  // 0x19
+    unsigned char u32_1C;  // 0x1C
+    unsigned char u32_1D;  // 0x1D
+    char __pad_1E[38];  // 0x1E
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int nullsub_0_1();  // 0x65C300

@@ -61,15 +61,15 @@ unsigned int * TerrainTypeClass::Construct(int a2, unsigned char a3, unsigned ch
   ((int *)aP4)->ConstructFull(a6_2); /*0x5447ce*/
   aP4->ArrayIndex = aP4; /*0x5447d9*/
   aP4->Foundation = 0xFFFF; /*0x5447e4*/
-  *(unsigned int *)aP4->RadarColor = 0xFFFF; /*0x5447ea*/
+  *(unsigned int *)aP4->RadarColor[0] = 0xFFFF; /*0x5447ea*/
   aP4->AnimationRate = 0; /*0x5447f0*/
   aP4->TemperateOccupationBits = 0; /*0x5447f8*/
   aP4->SnowOccupationBits = 0; /*0x5447fe*/
-  aP4->WaterBound = 1; /*0x544804*/
-  aP4->SpawnsTiberium_d = 0; /*0x54480b*/
+  aP4->WaterBound[0] = 1; /*0x544804*/
+  aP4->SpawnsTiberium_d[0] = 0; /*0x54480b*/
   LODWORD(aP4->AnimationProbability) = &g_ptr_7E3238; /*0x544811*/
-  aP4->FoundationData = (CellStruct *)10; /*0x54481b*/
-  *&aP4->q2B4 = 0; /*0x544825*/
+  aP4->q2B8 = (CellStruct *)10; /*0x54481b*/
+  *&aP4->IsVeinhole[0] = 0; /*0x544825*/
   aP4->u32_2CC = 0; /*0x544830*/
   aP4->u32_2C0 = -1; /*0x544836*/
   aP4->u32_2C4 = -1; /*0x54483c*/
@@ -129,19 +129,19 @@ unsigned int * TerrainTypeClass::Construct(int a2, unsigned char a3, unsigned ch
   {
     Destination[0] = 0; /*0x544993*/
   }
-  if ( Destination != aP4->Name ) /*0x5449b6*/
+  if ( Destination != aP4->Name[0] ) /*0x5449b6*/
   {
-    memcpy(aP4->Name, Destination, 0x30u); /*0x5449c1*/
+    memcpy(aP4->Name[0], Destination, 0x30u); /*0x5449c1*/
     aP4->Name[48] = v11; /*0x5449c3*/
   }
   aP4->q2F5 = 0; /*0x5449c5*/
   aP4->RadarInvisible[0] = 1; /*0x5449cb*/
-  aP4->u32_230 = 0; /*0x5449d2*/
-  aP4->u32_231 = 0; /*0x5449d8*/
+  aP4->Selectable = 0; /*0x5449d2*/
+  aP4->LegalTarget[0] = 0; /*0x5449d8*/
   aP4->Insignificant = 1; /*0x5449de*/
-  aP4->__pad_233 = 1; /*0x5449e5*/
+  aP4->Immune = 1; /*0x5449e5*/
   aP4->AllowCellContent[0] = 0; /*0x5449ec*/
-  return &aP4->ObjectTypeClass; /*0x5449c4*/
+  return &aP4->vfptr; /*0x5449c4*/
 
 }
 } // namespace gamemd
@@ -175,7 +175,7 @@ TerrainTypeClass::TerrainTypeClass(char *Source, int aP1, int aP3, int a2, int a
   /* X11: ptr_0 install elided (qmark slot, RHS g_ptr_7F542C) */  /*0x71dafd*/
   /* X11: ptr_0 install elided (qmark slot, RHS g_ptr_7F542C) */  /*0x71db03*/
   /* X11: ptr_0 install elided (qmark slot, RHS g_ptr_7F542C) */  /*0x71db0a*/
-  AbstractClass::GenerateUniqueID((AbstractClass *)&aP1->ptr_4); /*0x71db11*/
+  AbstractClass::GenerateUniqueID((AbstractClass *)&aP1->vtable2); /*0x71db11*/
   aP1->Selectable[0] = 0; /*0x71db18*/
   aP1->IsLogic[0] = 1; /*0x71db1e*/
   aP1->RadarInvisible[0] = 1; /*0x71db24*/
@@ -247,7 +247,7 @@ int TerrainTypeClass::LoadFromINI(uint8_t ***a2, int aP1, int aP3, int a3, int a
     SpawnsTiberium = aP1->SpawnsTiberium; /*0x71df27*/
     aP1->WaterBound = v6; /*0x71df2d*/
     char v8; // al
-    v8 = INIClass::ReadBool_Overwrite((int *)aP1, (unsigned __int8 *)aP1->__pad_24, aSpawnstiberium, SpawnsTiberium); /*0x71df3c*/
+    v8 = INIClass::ReadBool_Overwrite((int *)aP1, (unsigned __int8 *)aP1->q024, aSpawnstiberium, SpawnsTiberium); /*0x71df3c*/
     char IsFlammable; // [esp+4h] [ebp-218h]
     IsFlammable = aP1->IsFlammable; /*0x71df49*/
     aP1->SpawnsTiberium = v8; /*0x71df50*/
@@ -289,7 +289,7 @@ int TerrainTypeClass::LoadFromINI(uint8_t ***a2, int aP1, int aP3, int a3, int a
     *(unsigned short *)aP1->RadarColor = *(unsigned short *)Coord; /*0x71e01a*/
     aP1->RadarColor[2] = *(unsigned char *)(Coord + 2); /*0x71e02a*/
     char v15; // al
-    v15 = INIClass::ReadBool_Overwrite((int *)aP1, (unsigned __int8 *)aP1->__pad_24, aIsanimated, IsAnimated); /*0x71e02d*/
+    v15 = INIClass::ReadBool_Overwrite((int *)aP1, (unsigned __int8 *)aP1->q024, aIsanimated, IsAnimated); /*0x71e02d*/
     int AnimationRate; // [esp+4h] [ebp-218h]
     AnimationRate = aP1->AnimationRate; /*0x71e03a*/
     aP1->IsAnimated = v15; /*0x71e041*/
@@ -298,7 +298,7 @@ int TerrainTypeClass::LoadFromINI(uint8_t ***a2, int aP1, int aP3, int a3, int a
     double AnimationProbability; // st6
     AnimationProbability = aP1->AnimationProbability; /*0x71e04c*/
     aP1->AnimationRate = Int_Overwrite; /*0x71e057*/
-    INIClass::ReadDouble_Overwrite((double *)aP1, (unsigned __int8 *)aP1->__pad_24, aAnimationproba, AnimationProbability); /*0x71e066*/
+    INIClass::ReadDouble_Overwrite((double *)aP1, (unsigned __int8 *)aP1->q024, aAnimationproba, AnimationProbability); /*0x71e066*/
     int TemperateOccupationBits; // eax
     TemperateOccupationBits = aP1->TemperateOccupationBits; /*0x71e06b*/
     double v2; // st7
@@ -383,7 +383,7 @@ int TerrainTypeClass::GetTileData(int a2, void * a3, signed int * v10, unsigned 
 {
 
   unsigned int *v7; // ecx
-  v7 = (unsigned int *)this->ptr_4; /*0x53ffa0*/
+  v7 = (unsigned int *)this->vfptr1; /*0x53ffa0*/
   if ( v7->q038 < a2 ) /*0x53ffaa*/
     return 0; /*0x53ffaa*/
   int TileType; // eax
@@ -442,10 +442,10 @@ unsigned int *   TerrainTypeClass::GetWidth(int * a2, void *a2_1)
   v3 = (void *)v7; /*0x71e0fa*/
   if ( v7 < GroundHeight ) /*0x71e100*/
     v3 = (void *)Cell::GetGroundHeight(&v5); /*0x71e111*/
-  this->ptr_0 = v5; /*0x71e11e*/
-  this->ptr_4 = v6; /*0x71e124*/
-  this->ptr_8 = v3; /*0x71e128*/
-  return &this->ptr_0; /*0x71e12b*/
+  this->vfptr = v5; /*0x71e11e*/
+  this->vfptr1 = v6; /*0x71e124*/
+  this->vfptr2 = v3; /*0x71e128*/
+  return &this->vfptr; /*0x71e12b*/
 }
 // 0x71E140
 int TerrainTypeClass::PowerDrainUpdate(int * a2)
@@ -455,17 +455,17 @@ int TerrainTypeClass::PowerDrainUpdate(int * a2)
   AbstractTypeClass::ProcessPower((AbstractTypeClass *)this, a2); /*0x71e149*/
   Power::TimerProcess(this->ArrayIndex); /*0x71e157*/
   int v3; // ecx
-  LOBYTE(v3) = this->WaterBound; /*0x71e15c*/
+  LOBYTE(v3) = this->WaterBound[0]; /*0x71e15c*/
   Power::FlagProcess((Power *)a2, v3); /*0x71e165*/
   int v4; // edx
-  LOBYTE(v4) = this->SpawnsTiberium; /*0x71e16a*/
+  LOBYTE(v4) = this->SpawnsTiberium_d[0]; /*0x71e16a*/
   int v5; // eax
   v5 = Power::FlagProcess((Power *)a2, v4); /*0x71e173*/
-  LOBYTE(v5) = this->IsFlammable; /*0x71e178*/
+  LOBYTE(v5) = this->IsFlammable_d[0]; /*0x71e178*/
   Power::FlagProcess((Power *)a2, v5); /*0x71e181*/
   Power::TimerProcess(this->Foundation); /*0x71e18f*/
   int v6; // edx
-  LOBYTE(v6) = this->IsAnimated; /*0x71e194*/
+  LOBYTE(v6) = this->IsAnimated_d[0]; /*0x71e194*/
   Power::FlagProcess((Power *)a2, v6); /*0x71e19d*/
   Power::TimerProcess(this->AnimationRate); /*0x71e1ab*/
   return Checksummer::Add_float((Checksummer *)a2, LODWORD(this->AnimationProbability)); /*0x71e1be*/

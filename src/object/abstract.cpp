@@ -29,31 +29,24 @@ AbstractClass::AbstractClass() noexcept
 REVERSE(0x410260, "AbstractClass::QueryInterface: IDA verified", "None")
 // 0x410260
 HRESULT AbstractClass::QueryInterface(const IID& iid, void** ppv) {
-  void **p_vtable1; // ecx
-  AbstractClass *thisa; // [esp+8h] [ebp+4h]
-  const void *iid; // [esp+Ch] [ebp+8h]
-  void **ppv; // [esp+10h] [ebp+Ch]
-
   if ( !ppv ) /*0x410267*/
     return -2147467261; /*0x410269*/
   *ppv = 0; /*0x410286*/
-  if ( !memcmp((const void *)(iid), &IID_IUnknown, 0x10u) ) /*0x410290*/
-    *ppv = thisa; /*0x410294*/
-  if ( !memcmp((const void *)(iid), &IID_IPersistStream, 0x10u) ) /*0x4102a5*/
-    *ppv = thisa; /*0x4102a9*/
-  if ( !memcmp((const void *)(iid), &IID_IPersist, 0x10u) ) /*0x4102b9*/
-    *ppv = thisa; /*0x4102be*/
-  if ( !memcmp((const void *)(iid), &IID_IRTTITypeInfo, 0x10u) ) /*0x4102ce*/
+  if ( !memcmp(&iid, &IID_IUnknown, 0x10u) ) /*0x410290*/
+    *ppv = this; /*0x410294*/
+  if ( !memcmp(&iid, &IID_IPersistStream, 0x10u) ) /*0x4102a5*/
+    *ppv = this; /*0x4102a9*/
+  if ( !memcmp(&iid, &IID_IPersist, 0x10u) ) /*0x4102b9*/
+    *ppv = this; /*0x4102be*/
+  if ( !memcmp(&iid, &IID_IRTTITypeInfo, 0x10u) ) /*0x4102ce*/
   {
-    if ( thisa ) /*0x4102d6*/
-      p_vtable1 = &thisa->ptr_4; /*0x4102d8*/
-    else
-      p_vtable1 = 0; /*0x4102dd*/
+    IRTTITypeInfo *p_vtable1; /*0x4102d8*/
+    p_vtable1 = this; /*0x4102d8*/
     *ppv = p_vtable1; /*0x4102df*/
   }
   if ( !*ppv ) /*0x4102e1*/
     return -2147467262; /*0x4102e6*/
-  (*((void (__stdcall **)(AbstractClass *))thisa->ptr_0 + 1))(thisa); /*0x4102f2*/
+  this->AddRef(); /*0x4102f2*/
   return 0; /*0x41026e*/
 }
 // IDA: 0x410300 -- q000[0][1] (COMStub_AddRef)
@@ -112,21 +105,20 @@ void AbstractClass::createId() {
 // overridden e.g. by BuildingClass::GetExitCoords @ 0x447AC0) into a local
 // buffer, then copies the returned XYZ to the out param.
 // 0x410540
-CoordStruct* AbstractClass::GetCoords(CoordStruct* out) const
+CoordStruct* AbstractClass::GetCoords(CoordStruct* out)
 {
   int *v1; // ecx
-  unsigned char v3[12]; // [esp+4h] [ebp-Ch] BYREF
-  CoordStruct *out; // [esp+14h] [ebp+4h]
+  int v3[3]; // [esp+4h] [ebp-Ch] BYREF
 
-  v1 = (gamemd::CoordStruct *)((int *)out->vt_slot_72(v3));
-  out->ptr_0 = (void *)*v1; /*0x410558*/
-  out[1].ptr_0 = (void *)v1[1]; /*0x41055d*/
-  out[2].ptr_0 = (void *)v1[2]; /*0x410564*/
-  return (gamemd::CoordStruct *)((int)out); /*0x410560*/
+  v1 = this->GetCoordsEx(v3, this); /*0x41054e*/
+  out->X = v1[0]; /*0x410558*/
+  out->Y = v1[1]; /*0x41055d*/
+  out->Z = v1[2]; /*0x410564*/
+  return out; /*0x410560*/
 }
 // src-model helper kept for the existing callers (techno.cpp): the pointer
 // flavor simply forwards to the virtual GetCoords above.
-CoordStruct* AbstractClass::fetchCoordinatesHere(CoordStruct* out) const {
+CoordStruct* AbstractClass::fetchCoordinatesHere(CoordStruct* out) {
     return GetCoords(out);
 }
 
@@ -155,12 +147,10 @@ bool AbstractClass::isOnGround() const { return false; }
 bool AbstractClass::isAirborne() const { return false; }
 CoordStruct* AbstractClass::fetchAlternateCoordinates(CoordStruct* out) const { return nullptr; }
 void AbstractClass::updateLogic() {}
-CoordStruct AbstractClass::fetchCoordinatesHere() const { CoordStruct crd; fetchCoordinatesHere(&crd); return crd; }
+CoordStruct AbstractClass::fetchCoordinatesHere() { CoordStruct crd; fetchCoordinatesHere(&crd); return crd; }
 CoordStruct AbstractClass::fetchDestination(TechnoClass* docker) const { CoordStruct crd; fetchDestination(&crd, docker); return crd; }
-CoordStruct AbstractClass::fetchAlternateCoordinates() const { CoordStruct crd; fetchAlternateCoordinates(&crd); return crd;  
-bool AbstractClass::operator<(const AbstractClass& rhs) const { return uniqueId < rhs.uniqueId;  
+CoordStruct AbstractClass::fetchAlternateCoordinates() const { CoordStruct crd; fetchAlternateCoordinates(&crd); return crd; }
+bool AbstractClass::operator<(const AbstractClass& rhs) const { return uniqueId < rhs.uniqueId; }
 
-} // namespace game
-} // namespace ra2
 } // namespace game
 } // namespace ra2

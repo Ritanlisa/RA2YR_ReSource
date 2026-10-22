@@ -837,7 +837,7 @@ unsigned int * BrainClass::sub_43AA90(char a2)
   this->u32_C = 0; /*0x43aafe*/
   if ( (a2 & 1) != 0 ) /*0x43ab05*/
     operator delete((this)); /*0x43ab08*/
-  return &this->ptr_0; /*0x43ab12*/
+  return &this->vtable1; /*0x43ab12*/
 }
 }
 // 0x430010

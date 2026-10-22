@@ -1,5 +1,5 @@
 #include "network/network_ext.hpp"
-#include "e4/e4_globals_decls.hpp"namespace gamemd {
+#include "e4/e4_globals_decls.hpp"
 #include "e4/classes/ConnectionClass_e4.hpp"  // g57c5 W5d scope supply
 #include "e4/classes/IPXInterfaceClass_e4.hpp"  // g57c5 W5d scope supply
 #include "e4/classes/Waypoint_e4.hpp"  // g57c5 W5d scope supply

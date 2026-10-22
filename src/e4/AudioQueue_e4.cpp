@@ -38,7 +38,7 @@ unsigned int * AudioQueue::CreateNode()
   (v2)->InitEmpty(); /*0x402b0e*/
   *v2->q008.__pad_0 = 0; /*0x402b13*/
   v2[1].DListNode_field_0x04 = (int)this; /*0x402b1c*/
-  if ( ((int (*)(DListNode *))this->AudioQueue_field_0x14)(v2) ) /*0x402b1f*/
+  if ( ((int (*)(DListNode *))this->u32_14)(v2) ) /*0x402b1f*/
   {
     if ( v2 ) /*0x402b28*/
     {
@@ -55,7 +55,7 @@ unsigned int * AudioQueue::CreateNode()
   InsertAfterDListNode((int)off_815E98, v2); /*0x402b67*/
   if ( (this->q008 & 2) != 0 ) /*0x402b70*/
     dword_87DE28 = 1; /*0x402b72*/
-  return v2->__pad_000; /*0x402b44*/
+  return v2->__pad_0; /*0x402b44*/
 
 }
 }  // G42.18 ns repair
@@ -494,7 +494,7 @@ AnimClass * * AudioQueue::WriteBuffer(WinsockInterfaceClass * aP1, unsigned int 
   v9[24] = a7; /*0x7b23f8*/
   memcpy(v9, a3, a5); /*0x7b23fb*/
   *((unsigned short *)v9 + 13) = a8; /*0x7b2409*/
-  (*(void (**)(WinsockInterfaceClass *, unsigned char *))(this->Socket + 84))(this, v9); /*0x7b2411*/
+  (*(void (**)(WinsockInterfaceClass *, unsigned char *))(this->__pad_0 + 84))(this, v9); /*0x7b2411*/
   if ( aP5 ) /*0x7b241a*/
   {
     v10 = this->u32_40; /*0x7b241c*/
@@ -531,7 +531,7 @@ AnimClass * * AudioQueue::WriteBuffer(WinsockInterfaceClass * aP1, unsigned int 
     }
     v14 = this->u32_3F06C; /*0x7b24a0*/
   }
-  v19 = (*(int (**)(WinsockInterfaceClass *, int))(this->Socket + 56))(this, v14); /*0x7b24af*/
+  v19 = (*(int (**)(WinsockInterfaceClass *, int))(this->__pad_0 + 56))(this, v14); /*0x7b24af*/
   SendMessageA(g_hWnd, v19, 0, 2); /*0x7b24b9*/
   return EventQueue::Process((EventQueue *)dword_87F770); /*0x7b24ca*/
 
@@ -575,10 +575,10 @@ int * AudioQueue::IteratorNext()
 
 
   AudioQueue *v2; // ecx
-  v2 = *(AudioQueue **)this->Socket; /*0x4035d3*/
+  v2 = *(AudioQueue **)this->__pad_0; /*0x4035d3*/
   if ( v2 ) /*0x4035d7*/
-    *(unsigned int *)this->Socket = (v2)->GetNextAlt(); /*0x4035de*/
-  return *(int **)this->Socket; /*0x4035e2*/
+    *(unsigned int *)this->__pad_0 = (v2)->GetNextAlt(); /*0x4035de*/
+  return *(int **)this->__pad_0; /*0x4035e2*/
 
 }
 } // namespace gamemd
@@ -612,8 +612,8 @@ int AudioQueue::GetNext()
   if ( !this ) /*0x4073c2*/
     return 0; /*0x4073c2*/
   int result; // eax
-  result = *(unsigned int *)this->Socket; /*0x4073c4*/
-  if ( *(unsigned int *)this->Socket ) /*0x4073c4*/
+  result = *(unsigned int *)this->__pad_0; /*0x4073c4*/
+  if ( *(unsigned int *)this->__pad_0 ) /*0x4073c4*/
   {
     if ( result == result->VtableStub_8 ) /*0x4073cd*/
       return 0; /*0x4073cf*/
@@ -632,8 +632,8 @@ int AudioQueue::GetNextAlt()
   if ( !this ) /*0x4073e2*/
     return 0; /*0x4073e2*/
   int result; // eax
-  result = *(unsigned int *)this->Socket; /*0x4073e4*/
-  if ( *(unsigned int *)this->Socket ) /*0x4073e4*/
+  result = *(unsigned int *)this->__pad_0; /*0x4073e4*/
+  if ( *(unsigned int *)this->__pad_0 ) /*0x4073e4*/
   {
     if ( result == result->VtableStub_8 ) /*0x4073ed*/
       return 0; /*0x4073ef*/

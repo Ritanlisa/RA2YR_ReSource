@@ -38,22 +38,22 @@ unsigned int * ScoreScreen::LoadScoreFont(int aP1)
   int v6[3]; // [esp+60h] [ebp-14h] BYREF
   int v7; // [esp+6Ch] [ebp-8h]
 
-  this->ScoreScreen_field_0x04 = 0; /*0x690a19*/
-  this->ScoreScreen_field_0x08 = 0; /*0x690a1c*/
-  this->ScoreScreen_field_0x0C = 0; /*0x690a1f*/
-  this->ScoreScreen_field_0x14 = 0; /*0x690a22*/
+  this->u32_4 = 0; /*0x690a19*/
+  this->u32_8 = 0; /*0x690a1c*/
+  this->u32_C = 0; /*0x690a1f*/
+  this->q014 = 0; /*0x690a22*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7F0EF0) */  /*0x690a25*/
   ScoreScreen::LoadAudio(); /*0x690a2b*/
   ++dword_B0558C; /*0x690a3c*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7F0F08) */  /*0x690a44*/
-  (this->ScoreScreen_field_0x10) = ((this->ScoreScreen_field_0x10) & ~0xFF) | ((0) & 0xFF); /*0x690a4a*/
+  (this->u32_10) = ((this->u32_10) & ~0xFF) | ((0) & 0xFF); /*0x690a4a*/
   v3 = SearchMIXFile(g_Str_File_FULLFNT3_SHP, 0); /*0x690a4d*/
-  this->ScoreScreen_field_0x0C = (int)v3; /*0x690a54*/
+  this->u32_C = (int)v3; /*0x690a54*/
   if ( !v3 ) /*0x690a57*/
   {
     (&v5)->Construct(g_Str_File_FULLFNT3_SHP); /*0x690a62*/
-    this->ScoreScreen_field_0x0C = (int)CCFileClass::ReadEntireFile(&v5); /*0x690a74*/
-    LOBYTE(this->ScoreScreen_field_0x10) = 1; /*0x690a77*/
+    this->u32_C = (int)CCFileClass::ReadEntireFile(&v5); /*0x690a74*/
+    LOBYTE(this->u32_10) = 1; /*0x690a77*/
     CCFileClass::Reset(&v5); /*0x690a7b*/
     Debug::Log(); /*0x690a85*/
     /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x690a91*/
@@ -62,9 +62,9 @@ unsigned int * ScoreScreen::LoadScoreFont(int aP1)
     *(unsigned int *)v5.__tail_0 = &off_7E1668; /*0x690aa6*/
     BufferIOFileClass::Dtor((BufferIOFileClass *)&v5); /*0x690aae*/
   }
-  this->ScoreScreen_field_0x04 = 11; /*0x690ab7*/
-  this->ScoreScreen_field_0x14 = aP1; /*0x690abe*/
-  this->ScoreScreen_field_0x08 = 21; /*0x690ac1*/
+  this->u32_4 = 11; /*0x690ab7*/
+  this->q014 = aP1; /*0x690abe*/
+  this->u32_8 = 21; /*0x690ac1*/
   return this->__pad_0; /*0x690aca*/
 
 }
@@ -79,22 +79,22 @@ unsigned int * ScoreScreen::LoadCountryFlags(int a2)
   int v6[3]; // [esp+60h] [ebp-14h] BYREF
   int v7; // [esp+6Ch] [ebp-8h]
 
-  this->ScoreScreen_field_0x04 = 0; /*0x690ae9*/
-  this->ScoreScreen_field_0x08 = 0; /*0x690aec*/
-  this->ScoreScreen_field_0x0C = 0; /*0x690aef*/
-  this->ScoreScreen_field_0x14 = 0; /*0x690af2*/
+  this->u32_4 = 0; /*0x690ae9*/
+  this->u32_8 = 0; /*0x690aec*/
+  this->u32_C = 0; /*0x690aef*/
+  this->q014 = 0; /*0x690af2*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7F0EF0) */  /*0x690af5*/
   ScoreScreen::LoadAudio(); /*0x690afb*/
   ++dword_B0558C; /*0x690b0c*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7F0F20) */  /*0x690b14*/
-  (this->ScoreScreen_field_0x10) = ((this->ScoreScreen_field_0x10) & ~0xFF) | ((0) & 0xFF); /*0x690b1a*/
+  (this->u32_10) = ((this->u32_10) & ~0xFF) | ((0) & 0xFF); /*0x690b1a*/
   v3 = SearchMIXFile(aBigfontShp, 0); /*0x690b1d*/
-  this->ScoreScreen_field_0x0C = (int)v3; /*0x690b24*/
+  this->u32_C = (int)v3; /*0x690b24*/
   if ( !v3 ) /*0x690b27*/
   {
     (&v5)->Construct(aBigfontShp); /*0x690b32*/
-    this->ScoreScreen_field_0x0C = (int)CCFileClass::ReadEntireFile(&v5); /*0x690b44*/
-    LOBYTE(this->ScoreScreen_field_0x10) = 1; /*0x690b47*/
+    this->u32_C = (int)CCFileClass::ReadEntireFile(&v5); /*0x690b44*/
+    LOBYTE(this->u32_10) = 1; /*0x690b47*/
     CCFileClass::Reset(&v5); /*0x690b4b*/
     Debug::Log(); /*0x690b55*/
     /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x690b61*/
@@ -103,9 +103,9 @@ unsigned int * ScoreScreen::LoadCountryFlags(int a2)
     *(unsigned int *)v5.__tail_0 = &off_7E1668; /*0x690b76*/
     BufferIOFileClass::Dtor((BufferIOFileClass *)&v5); /*0x690b7e*/
   }
-  this->ScoreScreen_field_0x04 = 20; /*0x690b87*/
-  this->ScoreScreen_field_0x14 = a2; /*0x690b8e*/
-  this->ScoreScreen_field_0x08 = 35; /*0x690b91*/
+  this->u32_4 = 20; /*0x690b87*/
+  this->q014 = a2; /*0x690b8e*/
+  this->u32_8 = 35; /*0x690b91*/
   return this->__pad_0; /*0x690b9a*/
 
 }
@@ -115,9 +115,9 @@ namespace gamemd {
 unsigned int * ScoreScreen::Constructor(int aP1, int a3, int a4, void *a4_1)
 {
 
-  this->ScoreScreen_field_0x08 = a3; /*0x690f3b*/
-  this->ScoreScreen_field_0x04 = aP1; /*0x690f41*/
-  this->ScoreScreen_field_0x0C = Timer::GetTicks(); /*0x690f4d*/
+  this->u32_8 = a3; /*0x690f3b*/
+  this->u32_4 = aP1; /*0x690f41*/
+  this->u32_C = Timer::GetTicks(); /*0x690f4d*/
   this->q014 = 0; /*0x690f50*/
   this->u32_18 = a4; /*0x690f57*/
   /* X11: ptr_0 install elided (X68 star-amp-named, RHS g_ptr_7F0EDC) */  /*0x690f5a*/
@@ -172,7 +172,7 @@ int ScoreScreen::RemoveItem(int a2, int a3, char aP3, char a5, int a6)
   if ( !this->u32_3BC ) /*0x77131e*/
     this->u32_3B8 = 1; /*0x771328*/
   unknown_libname_73(&v25); /*0x771333*/
-  v13 = &this->__pad_0[148 * a2 + 48 * a3]; /*0x771352*/
+  v13 = &this->__pad_0; /*0x771352*/
   if ( Map_Remove(*(unsigned int *)this->__pad_0, (int)(v13 + 8), (void **)&v25) )
   {
     if ( !(unsigned __int8)Audio::IsPlaying() ) /*0x77136a*/
@@ -182,12 +182,12 @@ int ScoreScreen::RemoveItem(int a2, int a3, char aP3, char a5, int a6)
       this->u32_3B4 = a6; /*0x771393*/
     }
     v14 = this->u32_3C8; /*0x771396*/
-    v15 = &this->u32_60; /*0x7713a2*/
+    v15 = &this->q3C0; /*0x7713a2*/
     if ( this->u32_3D0 < v14 /*0x7713c7*/
       || (this->u32_3CD || !v14)
       && (v16 = this->u32_3D4, v16 > 0)
       && (*(unsigned __int8 (**)(ScoreScreen *, int, unsigned int))(*(unsigned int *)v15->__pad_0 + 8))(
-           &this->u32_60,
+           &this->q3C0,
            v14 + v16,
            0) )
     {
@@ -212,7 +212,7 @@ int ScoreScreen::RemoveItem(int a2, int a3, char aP3, char a5, int a6)
             || (this->u32_3CD || !v21)
             && (v22 = this->u32_3D4, v22 > 0)
             && (*(unsigned __int8 (**)(ScoreScreen *, int, unsigned int))(*(unsigned int *)v15->__pad_0 + 8))(
-                 &this->u32_60,
+                 &this->q3C0,
                  v21 + v22,
                  0) )
           {

@@ -377,7 +377,7 @@ int VoxelAnimType::LoadAnim(void *a1)
   {
     v50 = 1; /*0x5f8272*/
   }
-  if ( (*(int (**)(char *))(*&this->u32_B0))(this) != 40 || *(this + 3233) ) /*0x5f8287*/
+  if ( (*(int (**)(char *))(*&this->qCA1))(this) != 40 || *(this + 3233) ) /*0x5f8287*/
   {
     if ( (*(int (**)(char *))(*&this->u32_B0))(this) != 40 /*0x5f8657*/
       || !(unsigned __int8)HouseClass::HasPower((HouseClass *)this)
@@ -565,7 +565,7 @@ LABEL_92:
     }
   }
 LABEL_93:
-  if ( (*(int (**)(char *))(*&this->u32_B0))(this) != 40 || *(this + 3233) ) /*0x5f8850*/
+  if ( (*(int (**)(char *))(*&this->qCA1))(this) != 40 || *(this + 3233) ) /*0x5f8850*/
   {
     if ( (*(int (**)(char *))(*&this->u32_B0))(this) == 40 /*0x5f8873*/
       && (unsigned __int8)HouseClass::HasPower((HouseClass *)this)

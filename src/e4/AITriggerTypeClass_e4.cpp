@@ -167,22 +167,22 @@ DynamicVector * * AITriggerTypeClass::OwnerHouseOwns(unsigned int * a2, int a3)
   switch ( this->q0E8 ) /*0x41ef4b*/
   {
     case 0: /*0x41ef4b*/
-      result = v7 < this->Tactical_E4; /*0x41ef60*/
+      result = v7 < this->q0E4; /*0x41ef60*/
       break; /*0x41ef65*/
     case 1: /*0x41ef4b*/
-      result = v7 <= this->Tactical_E4; /*0x41ef76*/
+      result = v7 <= this->q0E4; /*0x41ef76*/
       break; /*0x41ef7b*/
     case 2: /*0x41ef4b*/
-      result = v7 == this->Tactical_E4; /*0x41ef8c*/
+      result = v7 == this->q0E4; /*0x41ef8c*/
       break; /*0x41ef91*/
     case 3: /*0x41ef4b*/
-      result = v7 >= this->Tactical_E4; /*0x41efa2*/
+      result = v7 >= this->q0E4; /*0x41efa2*/
       break; /*0x41efa7*/
     case 4: /*0x41ef4b*/
-      result = v7 > this->Tactical_E4; /*0x41efb8*/
+      result = v7 > this->q0E4; /*0x41efb8*/
       break; /*0x41efbd*/
     case 5: /*0x41ef4b*/
-      return v7 != this->Tactical_E4; /*0x41efc6*/
+      return v7 != this->q0E4; /*0x41efc6*/
     default:
       return (gamemd::DynamicVector **)(v9);
   }
@@ -285,22 +285,22 @@ int AITriggerTypeClass::HouseCredits(int a2, int a3)
   switch ( this->q0E8 ) /*0x41f253*/
   {
     case 0: /*0x41f253*/
-      result = v5 < this->Tactical_E4; /*0x41f266*/
+      result = v5 < this->q0E4; /*0x41f266*/
       break; /*0x41f269*/
     case 1: /*0x41f253*/
-      result = v5 <= this->Tactical_E4; /*0x41f278*/
+      result = v5 <= this->q0E4; /*0x41f278*/
       break; /*0x41f27b*/
     case 2: /*0x41f253*/
-      result = v5 == this->Tactical_E4; /*0x41f28a*/
+      result = v5 == this->q0E4; /*0x41f28a*/
       break; /*0x41f28d*/
     case 3: /*0x41f253*/
-      result = v5 >= this->Tactical_E4; /*0x41f29c*/
+      result = v5 >= this->q0E4; /*0x41f29c*/
       break; /*0x41f29f*/
     case 4: /*0x41f253*/
-      result = v5 > this->Tactical_E4; /*0x41f2ae*/
+      result = v5 > this->q0E4; /*0x41f2ae*/
       break; /*0x41f2b1*/
     case 5: /*0x41f253*/
-      return v5 != this->Tactical_E4; /*0x41f2ba*/
+      return v5 != this->q0E4; /*0x41f2ba*/
     default:
       return v3;
   }
@@ -537,9 +537,9 @@ LABEL_26:
     strncpy((char *)&v46[0].nextArrayIndex, v34, 0x18u); /*0x41f9a8*/
     v46[0].__pad_24[11] = 0; /*0x41f9b4*/
     String::Trim((char *)&v46[0].nextArrayIndex); /*0x41f9b8*/
-    this->FootClass_E0 = 0; /*0x41f9bd*/
+    this->q0E0 = 0; /*0x41f9bd*/
     if ( _strcmpi((char *)&v46[0].nextArrayIndex, (char *)off_818114) ) /*0x41f9cf*/
-      this->FootClass_E0 = TeamTypeClass::FindByName((TeamTypeClass *)&v46[0].nextArrayIndex); /*0x41f9e4*/
+      this->q0E0 = TeamTypeClass::FindByName((TeamTypeClass *)&v46[0].nextArrayIndex); /*0x41f9e4*/
   }
   v35 = strtok(0, Delimiter); /*0x41f9f0*/
   if ( v35 ) /*0x41f9fa*/
@@ -560,7 +560,7 @@ LABEL_26:
       MaxBuildLevel = v39; /*0x41fa7b*/
     this->u32_B0 = MaxBuildLevel; /*0x41fa90*/
   }
-  v41 = this->FootClass_E0; /*0x41fa96*/
+  v41 = this->q0E0; /*0x41fa96*/
   if ( v41 ) /*0x41fa9e*/
   {
     v42 = this->u32_B0; /*0x41faa6*/
@@ -569,7 +569,7 @@ LABEL_26:
       this->u32_B0 = v42; /*0x41fab8*/
       return 1; /*0x41fac9*/
     }
-    this->u32_B0 = HouseClass::GetMaxBuildLevel(*(HouseClass **)&this->FootClass_E0->Tactical_E4); /*0x41fadd*/
+    this->u32_B0 = HouseClass::GetMaxBuildLevel(*(HouseClass **)&this->q0E0->Tactical_E4); /*0x41fadd*/
   }
   return 1; /*0x41fab7*/
 
@@ -599,7 +599,7 @@ int AITriggerTypeClass::RegisterSuccess()
   if ( this->u32_B8 > this->q0C8 ) /*0x41fdef*/
   {
     this->u32_B8 = this->q0C8; /*0x41fdf7*/
-    this->u32_BC = this->alignmentPadding; /*0x41fe03*/
+    this->u32_BC = this->q0CC; /*0x41fe03*/
   }
   int result = this->u32_104 + 1; // eax /*0x41fe0f*/
   this->u32_104 = result; /*0x41fe11*/
@@ -642,7 +642,7 @@ int AITriggerTypeClass::RegisterFailure()
   if ( v6 > this->q0C8 ) /*0x41feb8*/
   {
     this->u32_B8 = this->q0C8; /*0x41fec0*/
-    result = this->alignmentPadding; /*0x41fec6*/
+    result = this->q0CC; /*0x41fec6*/
     this->u32_BC = result; /*0x41fecc*/
   }
   this->u32_108 = v1 + 1; /*0x41fed3*/

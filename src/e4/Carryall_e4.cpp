@@ -75,7 +75,7 @@ FootClass * * Carryall::MissionStateMachine()
         goto LABEL_18; /*0x416ddc*/
       if ( this->u32_118 ) /*0x416de2*/
         goto LABEL_18; /*0x416de2*/
-      if ( !(unsigned __int8)Object::IsAlliedWithObjectHouse(this->Object_21C5), (int)v6) ) /*0x416df7*/
+      if ( !(unsigned __int8)Object::IsAlliedWithObjectHouse(this->q21C), (int)v6) ) /*0x416df7*/
         goto LABEL_18; /*0x416df7*/
       if ( (v6->u32_14 & 1) != 0 ) /*0x416e0e*/
       {
@@ -124,7 +124,7 @@ FootClass * * Carryall::MissionStateMachine()
       v12 = (unsigned int *)(*(int (**)(int, unsigned char *))(*(unsigned int *)v11 + 72))(v11, v29); /*0x416f54*/
       if ( !this->u32_674 ) /*0x416f5f*/
         sub_7DC720(-2147467261); /*0x416f6e*/
-      (*(void (**)(unsigned int, unsigned int, unsigned int, unsigned int))(*this->u32_293) + 68))( /*0x416f89*/
+      (*(void (**)(unsigned int, unsigned int, unsigned int, unsigned int))(*this->u32_674) + 68))( /*0x416f89*/
           this->u32_674,
           *v12,
           v12[1],
@@ -159,7 +159,7 @@ FootClass * * Carryall::MissionStateMachine()
     }
       if ( !this->u32_674 ) /*0x417025*/
         sub_7DC720(-2147467261); /*0x417032*/
-      if ( (*(int (**)(unsigned int))(*this->u32_293) + 144))(this->u32_674) != 1 ) /*0x417049*/
+      if ( (*(int (**)(unsigned int))(*this->u32_674) + 144))(this->u32_674) != 1 ) /*0x417049*/
         goto LABEL_44; /*0x417049*/
       Debug::Log(); /*0x417054*/
       v15 = this->u32_5A4; /*0x417059*/
@@ -179,7 +179,7 @@ FootClass * * Carryall::MissionStateMachine()
       LABEL_44:
       if ( !this->u32_674 ) /*0x417116*/
         sub_7DC720(-2147467261); /*0x417125*/
-      if ( !(*(unsigned __int8 (**)(unsigned int))(*this->u32_293) + 16))(this->u32_674) ) /*0x417133*/
+      if ( !(*(unsigned __int8 (**)(unsigned int))(*this->u32_674) + 16))(this->u32_674) ) /*0x417133*/
       {
         Debug::Log(); /*0x41713f*/
         this->u32_BC = 3; /*0x417147*/

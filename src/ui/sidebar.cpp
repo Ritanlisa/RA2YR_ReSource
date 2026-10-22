@@ -19,7 +19,7 @@ using ra2::game::TechnoClass;
 #include "e4/e4_globals_decls.hpp"
 #include "e4/e4_globals_decls.hpp"
 #include "e4/classes/Tactical_e4.hpp"
-#include "e4/classes/GadgetClass_e4.hpp"namespace gamemd
+#include "e4/classes/GadgetClass_e4.hpp"
 #include "core/hash_table.hpp"
 // ---- g57c5 W5 vocab (declaration-only) ----
 namespace gamemd {

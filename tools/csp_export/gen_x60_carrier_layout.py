@@ -44,10 +44,26 @@ ap.add_argument('--apply', action='store_true')
 ap.add_argument('--limit', type=int, default=0, help='max files per apply batch')
 ap.add_argument('--files', default='', help='comma-separated file names to restrict to')
 ap.add_argument('--plan', default=str(EV / 'x60_plan.json'))
+ap.add_argument('--layout-sidecar', default='',
+                help='X112: JSON sidecar of binary-rebuilt layouts; overrides the '
+                     'til authority for the classes it contains (til untouched)')
+ap.add_argument('--sidecar-only', action='store_true',
+                help='X112: only rewrite structs present in the sidecar; leave every '
+                     'other struct byte-identical')
 ARGS = ap.parse_args()
 
 # ------------------------------------------------------------------ authority
 TIL = json.loads((EV / 'x60_til.json').read_text(encoding='utf-8'))
+SIDECAR = {}
+if ARGS.layout_sidecar:
+    _sp = Path(ARGS.layout_sidecar)
+    if not _sp.is_absolute():
+        _sp = ROOT / _sp
+    if _sp.exists():
+        SIDECAR = json.loads(_sp.read_text(encoding='utf-8'))
+    else:
+        print('ABORT: layout sidecar not found: %s' % _sp)
+        sys.exit(2)
 try:
     TILT = json.loads((EV / 'x60_til_types.json').read_text(encoding='utf-8'))
 except OSError:
@@ -78,7 +94,26 @@ for c, e in ML.items():
 
 
 def authority(cls):
-    """(size, slots=[(off, size, name|'', type|'')]) — til first, canon fallback."""
+    """(size, slots=[(off, size, name|'', type|'')]) — til first, canon fallback.
+
+    X112: when a binary-rebuilt sidecar class entry exists it is the authority
+    (the til for that class is a proven stub; the sidecar was rebuilt from
+    capstone-verified this-relative accesses).
+    """
+    se = (SIDECAR.get('classes') or {}).get(cls)
+    if se:
+        size = int(se.get('computed_size') or 0)
+        slots = []
+        for m in se.get('members') or []:
+            off = int(m.get('off') or 0)
+            sz = int(m.get('width') or m.get('size') or 0)
+            nm = m.get('name') or ''
+            ty = m.get('type') or ''
+            if size > 0 and sz > 0 and off >= 0 and off + sz <= size:
+                slots.append((off, sz, nm, ty))
+        if size > 0 and slots:
+            slots.sort()
+            return size, slots
     t = TIL.get(cls)
     if t:
         slots = [(int(m['off']), int(m['size']), m.get('name') or '',
@@ -409,6 +444,16 @@ def build_layout(cls, members, stats, method_names=frozenset()):
             continue
         slot = slot_at.get(off)
         cov = slot_covering(off)
+        # X112: for a sidecar class the binary-rebuilt slot is the single
+        # authority (name AND type AND width).  Any carrier member sitting on
+        # that offset is dropped so slot emission declares it verbatim; this
+        # also prevents a stale stub-til type (e.g. `unsigned char ptr_8`)
+        # from overriding the rebuilt pointer type.
+        if (SIDECAR.get('classes') or {}).get(cls) and slot is not None:
+            notes.append({'op': 'drop_sidecar_slot', 'name': nm, 'off': off,
+                          'kept': slot[1]})
+            stats['drop_sidecar_slot'] += 1
+            continue
         if slot is None and cov is not None and cov[2] and not cov[2].startswith('__pad'):
             # inside a real authority member -> lie vs binary
             notes.append({'op': 'drop_overlap_real', 'name': nm, 'off': off,
@@ -694,6 +739,8 @@ for path in FILES:
     new_lines = list(lines)
     edits = []   # (open_idx, close_idx, [new body lines])
     for st in structs:
+        if ARGS.sidecar_only and st['name'] not in (SIDECAR.get('classes') or {}):
+            continue
         st_stats = collections.Counter()
         layout, notes, pack_p = build_layout(
             st['name'], st['members'], st_stats,

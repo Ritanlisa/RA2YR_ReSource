@@ -152,13 +152,13 @@ char TacticalClass::CompareVector(int a2) {
   unsigned int *v4; // eax
   int v5; // ecx
 
-  v2 = this->ptr_8; /*0x5c0ad2*/
+  v2 = this->vfptr2; /*0x5c0ad2*/
   if ( v2 == *(unsigned int *)(a2 + 8) ) /*0x5c0add*/
   {
     v3 = 0; /*0x5c0adf*/
     if ( v2 <= 0 ) /*0x5c0ae3*/
       return 1; /*0x5c0b03*/
-    v4 = *&this->ptr_4; /*0x5c0ae5*/
+    v4 = *&this->vfptr1; /*0x5c0ae5*/
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x5c0aeb*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x5c0af4*/
     {
@@ -577,7 +577,7 @@ LABEL_4:
 // 0x5C0AC0
 namespace gamemd {
 int TacticalClass::ProbeCalling2(int a2) {
-  return *(unsigned int *)(*&this->ptr_4 + 4 * a2); /*0x5c0aca*/
+  return *(unsigned int *)(*&this->vfptr1 + 4 * a2); /*0x5c0aca*/
 }
 } // namespace gamemd
 
@@ -623,14 +623,14 @@ unsigned int * TacticalClass::PixelToCellCheck(int *a2) {
   v3 = TacticalClass::TransformPixel((TacticalClass *)g_TacticalClass_Instance, v7, v6); /*0x653785*/
   if ( *v3 == dword_B04900 && v3->ptr_2 == dword_B04904 && v3->ptr_3 == dword_B04908 ) /*0x6537ad*/
   {
-    this->ptr_0 = (void *)dword_B048C0; /*0x653803*/
-    return &this->ptr_0; /*0x6537f9*/
+    this->vfptr = (void *)dword_B048C0; /*0x653803*/
+    return &this->vfptr; /*0x6537f9*/
   }
   else
   {
     v4 = (void *)*Tactical::PixelToCell((Tactical *)g_TacticalClass_Instance, &a2, v6); /*0x6537cd*/
-    this->ptr_0 = v4; /*0x6537d3*/
-    return &this->ptr_0; /*0x6537cf*/
+    this->vfptr = v4; /*0x6537d3*/
+    return &this->vfptr; /*0x6537cf*/
   }
 }
 } // namespace gamemd

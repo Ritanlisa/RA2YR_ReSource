@@ -792,14 +792,14 @@ namespace gamemd {
 int Buffer::Cleanup() {
   int result; // eax
 
-  result = *&this->Items; /*0x42f7c6*/
-  if ( result && (this->IsAllocated) ) /*0x42f7cd*/
+  result = *&this->Buffer_field_04; /*0x42f7c6*/
+  if ( result && (this->Buffer_field_0C) ) /*0x42f7cd*/
   {
-    operator delete((void *)(*&this->Items)); /*0x42f7d3*/
-    *&this->Items = 0; /*0x42f7db*/
+    operator delete((void *)(*&this->Buffer_field_04)); /*0x42f7d3*/
+    *&this->Buffer_field_04 = 0; /*0x42f7db*/
   }
-  (this->IsAllocated) = 0; /*0x42f7de*/
-  this->Capacity = 0; /*0x42f7e1*/
+  (this->Buffer_field_0C) = 0; /*0x42f7de*/
+  this->Buffer_field_08 = 0; /*0x42f7e1*/
   return result; /*0x42f7e4*/
 }
 } // namespace gamemd

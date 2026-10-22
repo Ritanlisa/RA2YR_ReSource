@@ -4,9 +4,10 @@
 #include "core/ida_vtables.h"  // gC_vftable3
 // [w16g4] C3861 supply (raw call-form evidence)
 namespace gamemd { int DeleteAndZero(ObjectClass *p_this); }  // x4:ida@0x7b46f0
+namespace gamemd { void GraphicMenuItem_Destructor(void *p_this); }  // 0x4F3A70 free-form (menu_globals_gen.cpp)
 namespace gamemd {
 // ---- g57c5 W5 vocab (declaration-only) ----
-void j_DeleteAndZero();  // g57c5 W5 vocab (csp)
+extern void j_DeleteAndZero(void *a1);  // 0x5D0580 thunk -> DeleteAndZero
 // ---- g57c5 W5 end ----
 
 
@@ -39,7 +40,7 @@ int AllocCallback::Dispatch(int a1, int a2, unsigned int Block, size_t Size)
   return (int)(result);
 }
 // 0x4f3840
-int GraphicMenuImageItem::QueryInterface(char a2)
+GraphicMenuImageItem* GraphicMenuImageItem::QueryInterface(char a2)
 {
   ObjectClass *v3; // edi
 
@@ -50,8 +51,8 @@ int GraphicMenuImageItem::QueryInterface(char a2)
     j_DeleteAndZero(v3); /*0x4f3853*/
     operator delete((v3)); /*0x4f3859*/
   }
-  DeleteAndZero(&this->q034); /*0x4f3864*/
-  GraphicMenuItem::Dtor((GraphicMenuItem *)this); /*0x4f386b*/
+  j_DeleteAndZero(&this->q034); /*0x4f3864*/
+  GraphicMenuItem_Destructor(this); /*0x4f386b*/
   if ( (a2 & 1) != 0 ) /*0x4f3875*/
     operator delete((this)); /*0x4f3878*/
   return this; /*0x4f3882*/
@@ -69,7 +70,8 @@ int StringVector::Add(unsigned int a2)  // g57b5 W4: raw 真值补参 (a2)
   result = 0; /*0x49ef51*/
   if ( m_8 <= 0 ) /*0x49ef55*/
     return -1; /*0x49ef6c*/
-  for ( i = *&this->q004; *i != *(unsigned int *)(a2); ++i ) /*0x49ef5b*/
+  memcpy(&i, &this->q004, sizeof(i));
+  for ( ; *i != *(unsigned int *)(a2); ++i ) /*0x49ef5b*/
   {
     if ( ++result >= m_8 ) /*0x49ef6a*/
       return -1; /*0x49ef6a*/

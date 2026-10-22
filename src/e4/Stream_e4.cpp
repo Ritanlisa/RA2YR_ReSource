@@ -65,7 +65,7 @@ int Stream::ReadIntArray(int a2)
   if ( result >= 0 ) /*0x49fb89*/
   {
     v5 = *v2; /*0x49fb8e*/
-    a2 = this->a2; /*0x49fb9a*/
+    a2 = this->Stream_field_08; /*0x49fb9a*/
     result = (*(int (**)(unsigned int *, int *, int, unsigned int))(v5 + 16))(v2, &a2, 4, 0); /*0x49fb9e*/
     if ( result >= 0 ) /*0x49fba3*/
     {

@@ -8,12 +8,18 @@
 namespace gamemd {
 struct ControlClass;  // fix_fwd_type_supply
 struct String {
+    unsigned char q000;  // 0x0
+    unsigned char u8_1;  // 0x1
+    char __pad_2[1];  // 0x2
+    unsigned char m_3;  // 0x3
+    void * ptr_4;  // 0x4
+    void * ptr_8;  // 0x8
+    unsigned int u32_C;  // 0xC
+    char __pad_10[12];  // 0x10
+    unsigned int u32_1C;  // 0x1C
     union {
-        char q000[3];  // 0x0
         struct { char __pad_0; unsigned char u8_1; char __pad_2; };  // 0x0
     };
-    char m_3[4];  // 0x3
-    char __tail_7[1];  // 0x7
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int AssignWideToChar(char *aP1, char *aP2);  // 0x49B760

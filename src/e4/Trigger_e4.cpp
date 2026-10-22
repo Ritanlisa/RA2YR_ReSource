@@ -64,26 +64,26 @@ MSShapeAnim * * Trigger::initTrigger(char **aP1, int aP2, int a4, int a5, int a6
 {
 
 
-  *(unsigned int *)this->__pad_008 = a4; /*0x5cbd2c*/
-  this->Trigger_field_0x4 = (MSAnim *)aP2; /*0x5cbd32*/
+  *(unsigned int *)this->q008 = a4; /*0x5cbd2c*/
+  this->ptr_4 = (MSAnim *)aP2; /*0x5cbd32*/
   this->q00C = 1; /*0x5cbd35*/
   this->q010 = (int)((void *)Timer::GetTicks()); /*0x5cbd48*/
-  *(unsigned int *)this->q018 = 0; /*0x5cbd4f*/
+  *(unsigned int *)this->ptr_18 = 0; /*0x5cbd4f*/
   *&this->q020 = a5; /*0x5cbd52*/
   *&this->u32_38 = a7; /*0x5cbd58*/
   *&this->q024 = (gamemd::MSShapeAnim *)(a6); /*0x5cbd5f*/
-  *&this->u32_28 = 0; /*0x5cbd62*/
-  this->__pad_30[4] = 0; /*0x5cbd65*/
+  *&this->u32_38 = 0; /*0x5cbd62*/
+  this->u32_38 = 0; /*0x5cbd65*/
   this->u32_3C = 0; /*0x5cbd68*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7EE910) */  /*0x5cbd6a*/
   int FileClassToBuffer; // eax
   FileClassToBuffer = LoadFileClassToBuffer(aP1, &this->u32_3C); /*0x5cbd70*/
-  *&this->__pad_01C = FileClassToBuffer; /*0x5cbd75*/
-  this->Trigger_field_0x2C = 0; /*0x5cbd78*/
+  *&this->__pad_1C = FileClassToBuffer; /*0x5cbd75*/
+  this->q02C = 0; /*0x5cbd78*/
   int v10; // edx
   v10 = *(__int16 *)(FileClassToBuffer + 6) - 1; /*0x5cbd83*/
   *&this->u32_44 = aP7; /*0x5cbd84*/
-  *(unsigned int *)this->__pad_30 = v10; /*0x5cbd87*/
+  *(unsigned int *)this->q030 = v10; /*0x5cbd87*/
   *&this->q040 = 0; /*0x5cbd8a*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7EE938) */  /*0x5cbd8d*/
   return (gamemd::MSShapeAnim **)(this); /*0x5cbd95*/
@@ -148,7 +148,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
   while ( (*(unsigned __int8 (**)(int *))(v25.VectorCursor_field_0x0C + 4))(&v25.VectorCursor_field_0x0C) )
   {
     v11 = *(void **)(*(unsigned int *)(*(unsigned int *)(v25.VectorCursor_field_0x10 + 4) + 8 * v25.VectorCursor_field_0x14 + 4) + 8); /*0x76d5bc*/
-    CellType = WDTClass::GetCellType(this->WDTClass_48C, (unsigned int)v11); /*0x76d5cd*/
+    CellType = WDTClass::GetCellType(this->q48C, (unsigned int)v11); /*0x76d5cd*/
     v13 = WDTClass::GetCellType(a3->FilePointer, (unsigned int)v11); /*0x76d5d7*/
     if ( v13 != CellType ) /*0x76d5db*/
     {
@@ -187,7 +187,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
                        this->u32_46C,
                        3,
                        512,
-                       &this->q018);
+                       &this->ptr_18);
           if ( v28.attachedBomb < v28.nextObject /*0x76d71b*/
             || (BYTE1(v28.attachedTag) || !v28.nextObject)
             && v28.ambientSoundController[0] > 0
@@ -301,7 +301,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
     }
     while ( (*(unsigned __int8 (**)(int *))(v28.ptr_4 + 4))(&v28.ptr_4) ); /*0x76da41*/
   }
-  ComPtr::Set(&this->ComPtr_488, a3->FilePointer); /*0x76da5d*/
+  ComPtr::Set(&this->q488, a3->FilePointer); /*0x76da5d*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F72EC) */  /*0x76da66*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F72EC) */  /*0x76da6a*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F72D8) */  /*0x76da76*/
@@ -327,8 +327,8 @@ namespace gamemd {
 unsigned int * Trigger::processTrigger(int a2, int a3)
 {
 
-  this->Trigger_field_0x4 = (MSAnim *)a2; /*0x76f09a*/
-  *(unsigned int *)this->__pad_008 = a3; /*0x76f09d*/
+  this->ptr_4 = (MSAnim *)a2; /*0x76f09a*/
+  *(unsigned int *)this->q008 = a3; /*0x76f09d*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_36820e) */  /*0x76f0a0*/
   return this->__pad_0; /*0x76f0a6*/
 
@@ -339,20 +339,20 @@ namespace gamemd {
 unsigned int * Trigger::checkCondition(int aP1, int aP2, void *a3)
 {
 
-  this->Trigger_field_0x4 = 0; /*0x76f1cb*/
-  *(unsigned int *)this->__pad_008 = aP1; /*0x76f1ce*/
+  this->ptr_4 = 0; /*0x76f1cb*/
+  *(unsigned int *)this->q008 = aP1; /*0x76f1ce*/
   this->q00C = 1; /*0x76f1d1*/
-  this->__pad_8[5] = 0; /*0x76f1d5*/
+  this->q00D = 0; /*0x76f1d5*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x76f1d8*/
   if ( aP1 ) /*0x76f1de*/
   {
     if ( aP2 ) /*0x76f1e6*/
     {
-      this->Trigger_field_0x4 = (MSAnim *)aP2; /*0x76f1e8*/
+      this->ptr_4 = (MSAnim *)aP2; /*0x76f1e8*/
       return this->__pad_0; /*0x76f1ee*/
     }
-    this->Trigger_field_0x4 = (MSAnim *)__2_YAPAXI_Z(4 * aP1); /*0x76f1fd*/
-    this->__pad_8[5] = 1; /*0x76f200*/
+    this->ptr_4 = (MSAnim *)__2_YAPAXI_Z(4 * aP1); /*0x76f1fd*/
+    this->q00D = 1; /*0x76f200*/
   }
   return this->__pad_0; /*0x76f1ed*/
 
@@ -363,7 +363,7 @@ namespace gamemd {
 int Trigger::executeActions(int a2, void *a2_1)
 {
 
-  this->Trigger_field_0x2C = (void *)a2; /*0x76ff24*/
+  this->q02C = (void *)a2; /*0x76ff24*/
   return a2; /*0x76ff27*/
 
 }

@@ -48,7 +48,7 @@ int TemporalClass::Constructor(void *a1, void *a2, void *a3, void *a4)
   int v2; // eax
   v2 = *(unsigned int *)&TeamTypeClass_Array; /*0x71a458*/
   this->TemporalClass_field_34 = 0; /*0x71a45d*/
-  *&this->creationFrame = v2; /*0x71a464*/
+  *&this->q02C = v2; /*0x71a464*/
   /* X11: ptr_0 install elided (base-interface slot, RHS g_ptr_7F5154) */  /*0x71a467*/
   /* X11: ptr_0 install elided (implicit via TemporalClass virtuals 0x71a46d) */
   /* X11: ptr_0 install elided (implicit via TemporalClass virtuals 0x71a474) */
@@ -77,15 +77,15 @@ TemporalClass::TemporalClass(TechnoClass * aP1)
 
 
   ((AbstractClass *)this)->Constructor(); /*0x71a4e7*/
-  *&this->creationFrame = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x71a4fb*/
+  *&this->q02C = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x71a4fb*/
   this->TemporalClass_field_34 = 0; /*0x71a4fe*/
   /* X11: ptr_0 install elided (base-interface slot, RHS g_ptr_7F5154) */  /*0x71a501*/
   /* X11: ptr_0 install elided (implicit via TemporalClass virtuals 0x71a507) */
   /* X11: ptr_0 install elided (implicit via TemporalClass virtuals 0x71a50e) */
   /* X11: ptr_0 install elided (implicit via TemporalClass virtuals 0x71a515) */
   this->creationFrame = aP1; /*0x71a51c*/
-  *(unsigned int *)this->__pad_028 = 0; /*0x71a51f*/
-  *&this->creationFrame = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x71a529*/
+  *(unsigned int *)this->__pad_28 = 0; /*0x71a51f*/
+  *&this->q02C = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x71a529*/
   int v5; // [esp+Ch] [ebp-8h]
   this->TemporalClass_field_30 = v5; /*0x71a52c*/
   this->TemporalClass_field_34 = 0; /*0x71a52f*/
@@ -107,7 +107,7 @@ TemporalClass::TemporalClass(TechnoClass * aP1)
   this->q04C = 0; /*0x71a58b*/
   this->u32_38 = 0; /*0x71a58e*/
   this->u32_3C = 0; /*0x71a591*/
-  return &this->AbstractClass; /*0x71a596*/
+  return &this->vfptr; /*0x71a596*/
 
 }
 } // namespace ra2
@@ -262,7 +262,7 @@ LABEL_10:
             v28 = *(LinkedList **)this->__pad_28; /*0x71a98e*/
             if ( v28 ) /*0x71a993*/
             {
-              if ( (*(int (**)(unsigned int))(*(unsigned int *)v28->__pad_0 + 1032))(*(unsigned int *)this->__pad_28) > 0 ) /*0x71a9a2*/
+              if ( (*(int (**)(unsigned int))(*(unsigned int *)v28->__pad_28 + 1032))(*(unsigned int *)this->__pad_28) > 0 ) /*0x71a9a2*/
                 BuildingClass::AnimateUnloadUnits((BuildingClass *)v28, 0); /*0x71a9a7*/
               if ( !dword_A8E7AC && v28[23].Tail[0] ) /*0x71a9b4*/
               {
@@ -432,7 +432,7 @@ int TemporalClass::LoadTemporal(AbstractClass * aP0, int aP1)
       /* X11: ptr_0 install elided (implicit via TemporalClass virtuals 0x71a69b) */
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->creationFrame); /*0x71a6ab*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)aP0->DiskLaserClass_field_0x28); /*0x71a6b9*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)aP0->__pad_28); /*0x71a6b9*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->q040); /*0x71a6c7*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->u32_44); /*0x71a6d5*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->u32_38); /*0x71a6e3*/

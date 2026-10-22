@@ -24,8 +24,8 @@ using ra2::game::AbstractClass;
 #include "core/utility_ext.hpp"
 #include "e4/e4_globals_decls.hpp"
 #include "e4/classes/IPXManagerClass_e4.hpp"
-#include "src/misc/misc_ext.hpp"
-#include "src/network/network_ext.hpp"
+#include "misc/misc_ext.hpp"
+#include "network/network_ext.hpp"
 struct GadgetClass;  // fix_tu_missing_types
 struct ShpButtonClass;  // fix_tu_missing_types
 
@@ -484,8 +484,8 @@ void* Struct::WideStringCopy(int a1) {
   this->Struct_field_00 = *(int *)a1; /*0x6247e1*/
   WideString::AssignFromPtr(&this->u32_4, (const wchar_t **)(a1 + 4)); /*0x6247e3*/
   WideString::AssignFromPtr(&this->u32_8, (const wchar_t **)(a1 + 8)); /*0x6247ef*/
-  this->u32_C = a1->q00C; /*0x6247f7*/
-  this->u32_10 = a1->__pad_10; /*0x6247fd*/
+  this->u32_C = a1->u32_C; /*0x6247f7*/
+  this->u32_10 = a1->u32_10; /*0x6247fd*/
   this->u32_14 = a1->u32_14; /*0x624803*/
   return (wchar_t **)this; /*0x624808*/
 }

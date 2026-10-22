@@ -86,7 +86,7 @@ int Radar::FindNearestRadarTarget(int a2, int a3, int a4)
           int v8; // eax
           (v8) = ((v8) & ~0xFFFF) | ((Math::RoundToInt(v4)) & 0xFFFF); /*0x431114*/
           if ( v8 < 128 ) /*0x43111e*/
-            return *(unsigned int *)&this->__pad_0[8 * v13 + 4 * i + 4 * v13]; /*0x431161*/
+            return *(unsigned int *)&this->__pad_0; /*0x431161*/
         }
         p_Radar_field_0xC = (Radar *)((char *)p_Radar_field_0xC + 4); /*0x431121*/
       }
@@ -208,7 +208,7 @@ int Radar::IsRadarTargetEligible()
   unsigned int Radar_field_0x20C; // eax
   unsigned int *v2; // eax
 
-  Radar_field_0x20C = this->Radar_field_0x20C; /*0x5090f0*/
+  Radar_field_0x20C = this->q20C; /*0x5090f0*/
   if ( Radar_field_0x20C >= 0xC ) /*0x5090f8*/
     return 0; /*0x50912a*/
   v2 = (unsigned int *)*((unsigned int *)this + Radar_field_0x20C + 132); /*0x5090ff*/
@@ -348,7 +348,7 @@ void* Radar::ProcessSubzone(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnk
   v94 = v9; /*0x582508*/
   v99 = v10; /*0x58250c*/
   v111 = v12 + v106 - 1; /*0x582518*/
-  v102 = *(unsigned int **)&this->__pad_64[4 * aP2 + 28]; /*0x582527*/
+  v102 = *(unsigned int **)&this->q064; /*0x582527*/
   v13 = *(unsigned __int8 *)(aP1 + 8); /*0x58252d*/
   while ( v9 >= v10 ) /*0x582538*/
   {
@@ -1331,7 +1331,7 @@ void * Radar::CopyDataArray(int * a2, void *a2_1)
   {
     (*(void (**)(Radar *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x58abe0*/
     v3 = a2->u32_8; /*0x58abe3*/
-    *&this->u32_8 = v3; /*0x58abea*/
+    *&this->Radar_field_0x6[2] = v3; /*0x58abea*/
     if ( v3 ) /*0x58abed*/
     {
       v4 = __2_YAPAXI_Z(8 * v3); /*0x58abf7*/
@@ -1355,34 +1355,34 @@ void * Radar::CopyDataArray(int * a2, void *a2_1)
       {
         v4 = 0; /*0x58ac1a*/
       }
-      *&this->q004 = v4; /*0x58ac1e*/
+      *&this->Radar_field_0x2[2] = v4; /*0x58ac1e*/
       if ( v4 ) /*0x58ac21*/
       {
-        v7 = *&this->u32_8; /*0x58ac23*/
+        v7 = *&this->Radar_field_0x6[2]; /*0x58ac23*/
         v8 = 0; /*0x58ac26*/
-        (this->Radar_field_0xC) = ((this->Radar_field_0xC) & ~(0xFF << 8)) | (((1) & 0xFF) << 8); /*0x58ac2a*/
+        (this->q00C) = ((this->q00C) & ~(0xFF << 8)) | (((1) & 0xFF) << 8); /*0x58ac2a*/
         if ( v7 > 0 ) /*0x58ac2e*/
         {
           do /*0x58ac4a*/
           {
             v9 = a2->q004; /*0x58ac30*/
-            v10 = *&this->q004; /*0x58ac33*/
+            v10 = *&this->Radar_field_0x2[2]; /*0x58ac33*/
             v10[2 * v8] = *(unsigned int *)(v9 + 8 * v8); /*0x58ac39*/
             v10[2 * v8 + 1] = *(unsigned int *)(v9 + 8 * v8 + 4); /*0x58ac40*/
             ++v8; /*0x58ac47*/
           }
-          while ( v8 < *&this->u32_8 ); /*0x58ac4a*/
+          while ( v8 < *&this->Radar_field_0x6[2] ); /*0x58ac4a*/
         }
       }
     }
     else
     {
-      *&this->q004 = 0; /*0x58ac4e*/
-      (this->Radar_field_0xC) = ((this->Radar_field_0xC) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x58ac51*/
+      *&this->Radar_field_0x2[2] = 0; /*0x58ac4e*/
+      (this->q00C) = ((this->q00C) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x58ac51*/
     }
   }
-  *(unsigned int *)this->__pad_10 = a2->q010; /*0x58ac58*/
-  this->Radar_field_0x14 = a2->q014; /*0x58ac5e*/
+  *(unsigned int *)this->q010 = a2->q010; /*0x58ac58*/
+  this->q014 = a2->q014; /*0x58ac5e*/
   return (int *)this->__pad_0; /*0x58ac57*/
 
 }
@@ -1392,7 +1392,7 @@ namespace gamemd {
 int Radar::PixelIndex()
 {
 
-  return *&this->q004 + 251 * *&this->u32_8; /*0x6558c4*/
+  return *&this->q002[2] + 251 * *&this->q006[2]; /*0x6558c4*/
 
 }
 }
@@ -1639,7 +1639,7 @@ MapClass * * Radar::RenderMinimap()
     v34 = &this->__pad_1248; /*0x657325*/
     if ( this->u32_1250 > 0 && this->u32_1254 > 0 ) /*0x657338*/
     {
-      (*(void (**)(unsigned int, char *, unsigned int, char *, unsigned int, int))(*this->u32_89) + 8))( /*0x657353*/
+      (*(void (**)(unsigned int, char *, unsigned int, char *, unsigned int, int))(*this->u32_121C) + 8))( /*0x657353*/
         this->u32_121C,
         &this->__pad_1248,
         this->u32_1220,
@@ -1907,7 +1907,7 @@ MapClass * * Radar::RenderMinimap()
     v101 = this->u32_121C; /*0x657884*/
     v83 = v101; /*0x657882*/
     v84 = (*(int (**)(int))(*(unsigned int *)v101 + 128))(v101); /*0x657896*/
-    memset(this->u32_761), 0, v84 * (*(int (**)(int))(*(unsigned int *)v83 + 124))(v83) / 8 + 1); /*0x6578b7*/
+    memset(this->u32_1274), 0, v84 * (*(int (**)(int))(*(unsigned int *)v83 + 124))(v83) / 8 + 1); /*0x6578b7*/
   }
   (v85) = ((v85) & ~0xFF) | ((v91) & 0xFF); /*0x6578c0*/
   if ( !v91 ) /*0x6578c6*/

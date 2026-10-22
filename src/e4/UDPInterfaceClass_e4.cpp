@@ -67,7 +67,7 @@ void UDPInterfaceClass::CheckStatus(short a2)
     if ( v3 > 0 ) /*0x7b332c*/
     {
       UDPInterfaceClass *i; // eax
-      for ( i = this->__pad_644 + 30752); (i->u32_3F320) != a2; i = (UDPInterfaceClass *)((char *)i + 2) ) /*0x7b3332*/
+      for ( i = this->q3F320 + 30752); (i->q3F320) != a2; i = (UDPInterfaceClass *)((char *)i + 2) ) /*0x7b3332*/
       {
         if ( ++v4 >= v3 ) /*0x7b3343*/
           return; /*0x7b3343*/
@@ -115,7 +115,7 @@ void UDPInterfaceClass::GetStatistics(unsigned short a2)
   }
   else
   {
-    v4 = this->__pad_644 + 30752); /*0x7b33f8*/
+    v4 = this->q3F320 + 30752); /*0x7b33f8*/
     while ( (v4->u32_3F330) != a2 ) /*0x7b3401*/
     {
       ++v3; /*0x7b3403*/
@@ -144,7 +144,7 @@ AbstractClass * * UDPInterfaceClass::Flush(void *a1)
     int v1; // esi
     v1 = v1; /*0x7b3a30*/
     AnimClass **v5; // esi
-    v5 = (AnimClass **)this->u32_3F330 + 2); /*0x7b3a31*/
+    v5 = (AnimClass **)this->u32_3F300 + 2); /*0x7b3a31*/
     do /*0x7b3a6e*/
     {
       Debug::Log(); /*0x7b3a3f*/
@@ -573,13 +573,13 @@ void UDPInterfaceClass::disconnect()
   void *v2; // eax
   v2 = (void *)(*&this->Initialized); /*0x7b42c6*/
   this->q010 = 0; /*0x7b42c9*/
-  if ( v2 && BYTE1(this->q00C) ) /*0x7b42d0*/
+  if ( v2 && BYTE1(this->m_C) ) /*0x7b42d0*/
   {
     __3_YAXPAX_Z(v2); /*0x7b42d6*/
     *&this->Initialized = 0; /*0x7b42de*/
   }
-  BYTE1(this->q00C) = 0; /*0x7b42e1*/
-  this->__pad_008 = 0; /*0x7b42e4*/
+  BYTE1(this->m_C) = 0; /*0x7b42e1*/
+  this->m_8 = 0; /*0x7b42e4*/
 
 }
 } // namespace gamemd
@@ -588,7 +588,7 @@ namespace gamemd {
 unsigned int UDPInterfaceClass::reset(int a2)
 {
 
-  if ( LOBYTE(this->q00C) ) /*0x7b42f0*/
+  if ( LOBYTE(this->m_C) ) /*0x7b42f0*/
     return (unsigned int)(a2 - *&this->Initialized) >> 2; /*0x7b4305*/
   else
     return 0; /*0x7b42f7*/
@@ -634,11 +634,11 @@ AbstractClass * * UDPInterfaceClass::flush(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAE *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x7b452e*/
+    (*(void (**)(_DynamicVectorClass_PAE *))(*(unsigned int *)this->Socket + 12))(this); /*0x7b452e*/
   }
   v7 = (void *)this->m_8; /*0x7b4531*/
-  if ( (int)v7 < this->m_10 ) /*0x7b4539*/
-    this->m_10 = (int)v7; /*0x7b453b*/
+  if ( (int)v7 < this->q010 ) /*0x7b4539*/
+    this->q010 = (int)v7; /*0x7b453b*/
   return 1; /*0x7b453e*/
 
 }
@@ -688,7 +688,7 @@ AbstractClass * * UDPInterfaceClass_Destru::Bind(int a2)
   struct sockaddr v19; // [esp+18h] [ebp-90h] BYREF
   char name[128]; // [esp+28h] [ebp-80h] BYREF
 
-  if ( this->u32_3F068 /*0x7b346b*/
+  if ( this->q3F068 /*0x7b346b*/
     || (result = (*(int (**)(UDPInterfaceClass *))(this->Socket + 100))(this)) != 0 )
   {
     (*(void (**)(UDPInterfaceClass *, u_short))(this->Socket + 92))(this, hostshort); /*0x7b3483*/
@@ -726,12 +726,12 @@ AbstractClass * * UDPInterfaceClass_Destru::Bind(int a2)
       Debug::Log(); /*0x7b3587*/
       v9 = (unsigned int *)__2_YAPAXI_Z(4u); /*0x7b3593*/
       *v9 = v18; /*0x7b3598*/
-      v10 = this->u32_3F558; /*0x7b359b*/
+      v10 = this->q3F558; /*0x7b359b*/
       if ( this->u32_3F560 >= v10 ) /*0x7b35a1*/
       {
-        if ( !this->u32_3F55D && v10 ) /*0x7b35ac*/
+        if ( !this->q3F55D && v10 ) /*0x7b35ac*/
           continue; /*0x7b35ac*/
-        v11 = this->u32_3F564; /*0x7b35ae*/
+        v11 = this->q3F564; /*0x7b35ae*/
         if ( v11 <= 0 /*0x7b35be*/
           || !(*(unsigned __int8 (**)(UDPInterfaceClass *, int, unsigned int))(this->u32_3F550 + 8))(
                 &this->u32_1FAA8,
@@ -994,7 +994,7 @@ DynamicVector * UDPInterfaceClass::receivePacket(unsigned int * Block, char a2, 
 {
 
 
-  void *v3 = *&Block->__pad_004; // eax /*0x7b45d3*/
+  void *v3 = *&Block->__pad_4; // eax /*0x7b45d3*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x7b45d6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x7b45e0*/
   {

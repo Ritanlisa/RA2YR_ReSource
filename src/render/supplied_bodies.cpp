@@ -464,7 +464,7 @@ char BuildingPlacement::RenderBuildingPlacementPreview(unsigned int *a2, int *a3
     }
     v24 = 0; /*0x47edd3*/
     v25 = 0; /*0x47edd9*/
-    if ( byte_A8E9A0 && (v11 = *&this->u32_E48) != 0 ) /*0x47ede7*/
+    if ( byte_A8E9A0 && (v11 = *&this->u32_E4) != 0 ) /*0x47ede7*/
     {
       while ( v11->getAltitude() != 2 ) /*0x47edf3*/
       {
@@ -481,7 +481,7 @@ char BuildingPlacement::RenderBuildingPlacementPreview(unsigned int *a2, int *a3
       {
         v11 = (bool *)ClosestObjectCell; /*0x47ee16*/
       }
-      else if ( byte_A8E9A0 && (v11 = *&this->u32_E48) != 0 ) /*0x47ee2b*/
+      else if ( byte_A8E9A0 && (v11 = *&this->u32_E4) != 0 ) /*0x47ee2b*/
       {
         while ( v11->getAltitude() != 36 ) /*0x47ee37*/
         {
@@ -506,7 +506,7 @@ char BuildingPlacement::RenderBuildingPlacementPreview(unsigned int *a2, int *a3
     }
   }
   LABEL_43:
-  if ( (this->u32_12C & 4) != 0 )
+  if ( (this->q2A30 & 4) != 0 )
   {
     v13 = a2->u32_4; /*0x47eee4*/
     v24 = *a2 + 30; /*0x47eef7*/

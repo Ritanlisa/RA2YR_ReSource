@@ -212,7 +212,7 @@
 #include "e4/classes/ScenarioClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 #include "e4/classes/GameState_e4.hpp"  // G42.36 C2027 supply
-#include <e4/classes/NetworkLobby_e4.hpp<
+#include "e4/classes/NetworkLobby_e4.hpp"
 // [w18j2] C2065 function supply (raw-evidenced)
 namespace gamemd { int Thunk(); }  // x4:empty@0x77d710
 // [w18j2] C3861 supply (raw-evidenced)

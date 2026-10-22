@@ -414,7 +414,7 @@ class BlitPlainXlatAlpha_ushort
 public:
     virtual ~BlitPlainXlatAlpha_ushort() = default;  // 0x493D60
 
-    virtual void AddRef(int a2, uint8_t *a3, int a4, int a5, int a6, uint16_t *a7, int a8, int a9); // 0x493CC0
+    virtual int AddRef(int a2, uint8_t *a3, int a4, int a5, int a6, uint16_t *a7, int a8, int a9); // 0x493CC0
     virtual void ddtor();  // 0x493D60
     virtual void Release(); // 0x493D90
     virtual void Blit(const RectangleStruct& clip_rect, const RectangleStruct& clip_rect2, class Surface* src, const RectangleStruct& dest_rect, const RectangleStruct& src_rect, bool option1, bool option2, int a2, int a3, unsigned int *a4, int a5, int a6, int a7, char a8); // 0x493DC0  // g57b5 W4

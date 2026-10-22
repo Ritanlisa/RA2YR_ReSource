@@ -159,12 +159,12 @@ int House::AnnounceUpgrade(int aP1)
           || (v15 = this->u32_26 + 1,
               LOWORD(aP1) = *v4 - 1,
               HIWORD(aP1) = v15,
-              this->u32_11B + 4 <= *((char *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)&aP1)
+              this->q5AECC + 4 <= *((char *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)&aP1)
                                            + 283))
           || (v16 = this->u32_26 - 1,
               LOWORD(aP1) = *v4 + 1,
               HIWORD(aP1) = v16,
-              this->u32_11B + 4 <= *((char *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)&aP1)
+              this->q5AECC + 4 <= *((char *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)&aP1)
                                            + 283)) )
         {
 LABEL_19:
@@ -334,12 +334,12 @@ LABEL_48:
           || (v25 = this->u32_26 + 1,
               LOWORD(aP1) = *v4 - 1,
               HIWORD(aP1) = v25,
-              this->u32_11B + 4 <= *((char *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)&aP1)
+              this->q5AECC + 4 <= *((char *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)&aP1)
                                            + 283))
           || (v26 = this->u32_26 - 1,
               LOWORD(aP1) = *v4 + 1,
               HIWORD(aP1) = v26,
-              this->u32_11B + 4 <= *((char *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)&aP1)
+              this->q5AECC + 4 <= *((char *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)&aP1)
                                            + 283)) )
         {
 LABEL_98:
@@ -391,11 +391,11 @@ LABEL_82:
       || (v50 = this->u32_26 + 1,
           LOWORD(aP1) = *v4 - 1,
           HIWORD(aP1) = v50,
-          this->u32_11B + 4 <= *((char *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)&aP1) + 283))
+          this->q5AECC + 4 <= *((char *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)&aP1) + 283))
       || (v51 = this->u32_26 - 1,
           LOWORD(aP1) = *v4 + 1,
           HIWORD(aP1) = v51,
-          this->u32_11B + 4 <= *((char *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)&aP1) + 283)) )
+          this->q5AECC + 4 <= *((char *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)&aP1) + 283)) )
     {
 LABEL_89:
       if ( LOBYTE(dword_8871E0->IncomingMessage) == 2 ) /*0x47dd0f*/
@@ -1128,7 +1128,7 @@ int House::LoadMapFileData(int a2, char a3, void *a3_1)
   if ( a3 && !*&this->u32_A4 && this->u8_2F4 ) /*0x544c35*/
     ((MapClass *)this)->LoadFileData(); /*0x544c3f*/
   unsigned int *v4; // eax
-  v4 = (unsigned int *)(*(int (**)(House *))(*(unsigned int *)this->__pad_000 + 156))(this); /*0x544c48*/
+  v4 = (unsigned int *)(*(int (**)(House *))(*(unsigned int *)this->__pad_0 + 156))(this); /*0x544c48*/
   return v4 && a2 < *v4 * v4[1] && v4[a2 + 4]; /*0x544c50*/
 
 }
@@ -1140,7 +1140,7 @@ void House::Constructor(void *a1, void *a2, void *a3, void *a4)
 
   CCFileClass v3; // [esp+4h] [ebp-6Ch] BYREF
 
-  if ( *(unsigned short *)this->__pad_000 == 0xFFFF && !this->q010 ) /*0x69e09c*/
+  if ( *(unsigned short *)this->__pad_0 == 0xFFFF && !this->q010 ) /*0x69e09c*/
   {
     CCFileClass::Construct(&v3, (char *)this->q008); /*0x69e0ab*/
     void *v2; // eax

@@ -29,7 +29,7 @@
 #include "e4/classes/CenterTeamCommand_e4.hpp"  // X66 L2-C command-class supply
 #include "e4/classes/TauntCommandClass_e4.hpp"  // X66 L2-C command-class supply
 #include "e4/e4_abs_decls.hpp"  // X66 L2-F visibility supply
-#include "core/cmdline.hpp"  // X67 L2-R4 visibility supply
+#include "app/cmdline.hpp"  // X67 L2-R4 visibility supply
 
 namespace gamemd {
 

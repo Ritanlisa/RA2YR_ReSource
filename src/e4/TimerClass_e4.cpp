@@ -13,7 +13,7 @@ namespace gamemd {  // G42.18 ns repair
 int TimerClass::Active(void *a1)
 {
 
-  if ( *&this->q028 <= 0 ) /*0x4c9485*/
+  if ( *&this->u32_14 <= 0 ) /*0x4c9485*/
     return 0; /*0x4c9485*/
   int v1 = this->u32_8; // edx /*0x4c9487*/
   int v2 = this->u32_10; // eax /*0x4c948a*/
@@ -32,7 +32,7 @@ void * TimerClass::Construct(int a2, int a3, TechnoTypeClass * aP3, int a5, int 
 {
 
   *(unsigned int *)this = 0; /*0x54fe6a*/
-  this->u32_10 = 0; /*0x54fe6c*/
+  this->u32_4 = 0; /*0x54fe6c*/
   this->u32_8 = dword_A8ED84; /*0x54fe75*/
   unsigned int *v18 = &this->q024; // ecx /*0x54fe78*/
   this->u32_10 = 0; /*0x54fe7b*/
@@ -41,27 +41,27 @@ void * TimerClass::Construct(int a2, int a3, TechnoTypeClass * aP3, int a5, int 
   this->u32_18 = 1; /*0x54fe8c*/
   v18[1] = a3; /*0x54fe8f*/
   this->u32_1C = 1; /*0x54fe96*/
-  this->u32_80 = 0; /*0x54fe99*/
+  this->q020 = 0; /*0x54fe99*/
   v18[2] = (unsigned int)(aP3); /*0x54fe9c*/
-  this->u32_84 = 0; /*0x54fea6*/
+  this->q021 = 0; /*0x54fea6*/
   this->u32_30 = a5; /*0x54fea9*/
   this->u32_34 = a6; /*0x54feaf*/
   this->u32_38 = a7; /*0x54feb6*/
   this->u32_3C = a8; /*0x54febd*/
-  this->u32_100 = a9; /*0x54fec4*/
-  this->u32_104 = 0; /*0x54fecb*/
-  this->u32_108 = 0; /*0x54fece*/
-  this->u32_10C = 0; /*0x54fed1*/
-  this->u32_110 = 0; /*0x54fed4*/
-  this->u32_114 = 0; /*0x54fed7*/
-  this->u32_118 = 0; /*0x54feda*/
-  this->u32_11C = 0; /*0x54fedd*/
-  this->u32_120 = 0; /*0x54fee0*/
-  this->u32_124 = 0; /*0x54fee3*/
+  this->q040 = a9; /*0x54fec4*/
+  this->u32_41 = 0; /*0x54fecb*/
+  this->q042 = 0; /*0x54fece*/
+  this->q043 = 0; /*0x54fed1*/
+  this->u32_44 = 0; /*0x54fed4*/
+  this->q045 = 0; /*0x54fed7*/
+  this->q046 = 0; /*0x54feda*/
+  this->u32_47 = 0; /*0x54fedd*/
+  this->q048 = 0; /*0x54fee0*/
+  this->q049 = 0; /*0x54fee3*/
   this->u32_4C = a13; /*0x54fee6*/
-  this->u32_144 = 0; /*0x54feed*/
-  this->u32_140 = a14; /*0x54fef0*/
-  this->u32_148 = a15; /*0x54fef7*/
+  this->q051 = 0; /*0x54feed*/
+  this->q050 = a14; /*0x54fef0*/
+  this->q052 = a15; /*0x54fef7*/
   this->u32_54 = a16; /*0x54fefe*/
   this->u32_58 = a17; /*0x54ff05*/
   *(unsigned int *)this = 0; /*0x54ff08*/
@@ -71,11 +71,11 @@ void * TimerClass::Construct(int a2, int a3, TechnoTypeClass * aP3, int a5, int 
   this->u32_C = a3; /*0x54ff1a*/
   this->u32_10 = 1; /*0x54ff21*/
   this->u32_41 = a10; /*0x54ff29*/
-  this->u32_10C = (((unsigned char *)&(a10))[2]); /*0x54ff32*/
+  this->q043 = (((unsigned char *)&(a10))[2]); /*0x54ff32*/
   this->u32_44 = a11; /*0x54ff39*/
-  this->u32_118 = (((unsigned char *)&(a11))[2]); /*0x54ff42*/
+  this->q046 = (((unsigned char *)&(a11))[2]); /*0x54ff42*/
   this->u32_47 = a12; /*0x54ff49*/
-  this->u32_124 = (((unsigned char *)&(a12))[2]); /*0x54ff4d*/
+  this->q049 = (((unsigned char *)&(a12))[2]); /*0x54ff4d*/
   if ( dword_ABC888 < dword_ABC880 /*0x54ff85*/
     || (byte_ABC885 || !dword_ABC880)
     && dword_ABC88C > 0
@@ -96,19 +96,19 @@ namespace gamemd {
 signed int TimerClass::GetRemaining()
 {
 
-  signed int result = this->u32_4; // eax /*0x5cead3*/
+  signed int result = this->u32_10; // eax /*0x5cead3*/
   if ( result != -1 ) /*0x5cead9*/
   {
     signed int v3 = this->u32_18; // edi /*0x5ceadc*/
-    result = TimerGetTicks() - this->u32_4; /*0x5ceaec*/
+    result = TimerGetTicks() - this->u32_10; /*0x5ceaec*/
     if ( result >= v3 ) /*0x5ceaf1*/
     {
       this->u32_18 = 0; /*0x5ceb04*/
-      this->u32_4 = -1; /*0x5ceb07*/
+      this->u32_10 = -1; /*0x5ceb07*/
     }
     else
     {
-      this->u32_4 = -1; /*0x5ceaf5*/
+      this->u32_10 = -1; /*0x5ceaf5*/
       this->u32_18 = v3 - result; /*0x5ceafc*/
     }
   }

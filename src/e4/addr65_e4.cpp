@@ -1264,7 +1264,7 @@ namespace gamemd {
 int RAMFileClass::nullsub_0_1()
 {
 
-  if ( (*(unsigned __int8 (**)(RAMFileClass *))(*(unsigned int *)this->__pad_0 + 24))(this) ) /*0x65c305*/
+  if ( (*(unsigned __int8 (**)(RAMFileClass *))(*(unsigned int *)this->q000 + 24))(this) ) /*0x65c305*/
     return 0; /*0x65c31a*/
   this->q010 = 0; /*0x65c30c*/
   return 1; /*0x65c318*/
@@ -1277,7 +1277,7 @@ int RAMFileClass::nullsub_0_2(int a2)
 {
 
   if ( !this->ptr_8 /*0x65c35c*/
-    || (*(unsigned __int8 (**)(RAMFileClass *))(*(unsigned int *)this->__pad_0 + 24))(this) )
+    || (*(unsigned __int8 (**)(RAMFileClass *))(*(unsigned int *)this->q000 + 24))(this) )
   {
     return 0; /*0x65c391*/
   }
@@ -1286,7 +1286,7 @@ int RAMFileClass::nullsub_0_2(int a2)
   this->u32_1C = 1; /*0x65c374*/
   if ( a2 == 2 ) /*0x65c378*/
     this->q010 = 0; /*0x65c37a*/
-  return (*(unsigned __int8 (**)(RAMFileClass *))(*(unsigned int *)this->__pad_0 + 24))(this); /*0x65c38d*/
+  return (*(unsigned __int8 (**)(RAMFileClass *))(*(unsigned int *)this->q000 + 24))(this); /*0x65c38d*/
 
 }
 }
@@ -1299,7 +1299,7 @@ AbstractClass * *  RAMFileClass::nullsub_0_3(void * a1, signed int Size)
   char v5; // bl
   int v6; // eax
 
-  if ( !this->RAMFileClass_field_0x8 ) /*0x65c3a6*/
+  if ( !this->ptr_8 ) /*0x65c3a6*/
     return 0; /*0x65c3a6*/
   if ( !a1 ) /*0x65c3b3*/
     return 0; /*0x65c3b3*/
@@ -1307,22 +1307,22 @@ AbstractClass * *  RAMFileClass::nullsub_0_3(void * a1, signed int Size)
   if ( !Size ) /*0x65c3bb*/
     return 0; /*0x65c3bb*/
   v5 = 0; /*0x65c3bf*/
-  if ( (*(unsigned __int8 (**)(RAMFileClass *))(*(unsigned int *)this->__pad_0 + 24))(this) ) /*0x65c3c1*/
+  if ( (*(unsigned __int8 (**)(RAMFileClass *))(*(unsigned int *)this->q000 + 24))(this) ) /*0x65c3c1*/
   {
     if ( (this->u32_18 & 1) != 0 ) /*0x65c3d9*/
       goto LABEL_7; /*0x65c3d9*/
     return 0; /*0x65c418*/
   }
-  (*(void (**)(RAMFileClass *, int))(*(unsigned int *)this->__pad_0 + 28))(this, 1); /*0x65c3ce*/
+  (*(void (**)(RAMFileClass *, int))(*(unsigned int *)this->q000 + 28))(this, 1); /*0x65c3ce*/
   v5 = 1; /*0x65c3d1*/
 LABEL_7:
-  v6 = this->q14; /*0x65c3db*/
-  if ( Size >= (int)this->RAMFileClass_field_0x10 - v6 ) /*0x65c3e5*/
-    v4 = (signed int)this->RAMFileClass_field_0x10 - v6; /*0x65c3e7*/
-  memcpy(a1, (char *)this->RAMFileClass_field_0x8 + v6, v4); /*0x65c3f1*/
-  this->q14 += v4; /*0x65c400*/
+  v6 = this->u32_14; /*0x65c3db*/
+  if ( Size >= (int)this->q010 - v6 ) /*0x65c3e5*/
+    v4 = (signed int)this->q010 - v6; /*0x65c3e7*/
+  memcpy(a1, (char *)this->ptr_8 + v6, v4); /*0x65c3f1*/
+  this->u32_14 += v4; /*0x65c400*/
   if ( v5 ) /*0x65c403*/
-    (*(void (**)(RAMFileClass *))(*(unsigned int *)this->__pad_0 + 52))(this); /*0x65c409*/
+    (*(void (**)(RAMFileClass *))(*(unsigned int *)this->q000 + 52))(this); /*0x65c409*/
   return v4; /*0x65c40e*/
 
 }
@@ -1338,14 +1338,14 @@ AbstractClass * * RAMFileClass::nullsub_0_4(int a2, int a3)
   int result; // eax
 
   if ( !this->ptr_8 /*0x65c42c*/
-    || !(*(unsigned __int8 (**)(RAMFileClass *))(*(unsigned int *)this->__pad_0 + 24))(this) )
+    || !(*(unsigned __int8 (**)(RAMFileClass *))(*(unsigned int *)this->q000 + 24))(this) )
   {
     return (gamemd::AbstractClass **)(this->u32_14); /*0x65c494*/
   }
   RAMFileClass_field_0x10 = (gamemd::AbstractClass *)(this->q010); /*0x65c436*/
   RAMFileClass_field_0xC = RAMFileClass_field_0x10; /*0x65c43b*/
   if ( (this->u32_18 & 2) != 0 ) /*0x65c43d*/
-    RAMFileClass_field_0xC = (gamemd::AbstractClass *)(this->__pad_00C); /*0x65c43f*/
+    RAMFileClass_field_0xC = (gamemd::AbstractClass *)(this->RAMFileClass_field_0xC); /*0x65c43f*/
   switch ( a3 ) /*0x65c449*/
   {
     case 0: /*0x65c449*/
@@ -1389,8 +1389,8 @@ void * RAMFileClass::nullsub_0_10(char a2)
   this->u32_1C = 0; /*0x65c5ae*/
   if ( v3 ) /*0x65c5b2*/
   {
-    __3_YAXPAX_Z(this->RAMFileClass_field_0x8); /*0x65c5b8*/
-    this->RAMFileClass_field_0x8 = 0; /*0x65c5c0*/
+    __3_YAXPAX_Z(this->ptr_8); /*0x65c5b8*/
+    this->ptr_8 = 0; /*0x65c5c0*/
     this->u32_1D = 0; /*0x65c5c7*/
   }
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7F08BC) */  /*0x65c5cf*/

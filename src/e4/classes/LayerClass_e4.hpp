@@ -9,8 +9,26 @@ namespace gamemd {
 #define GAMEMD_G2_LAYERCLASS_DEF 1
 struct LayerClass {
     void* items;  // 0x0
-    int count;  // 0x4
+    unsigned char count;  // 0x4
+    char __pad_5[3];  // 0x5
     int capacity;  // 0x8
+    char __pad_C[4];  // 0xC
+    unsigned int q010;  // 0x10
+    char __pad_14[88];  // 0x14
+    unsigned int u32_6C;  // 0x6C
+    unsigned int u32_70;  // 0x70
+    char __pad_74[128];  // 0x74
+    unsigned int u32_F4;  // 0xF4
+    unsigned int u32_F8;  // 0xF8
+    char __pad_FC[4];  // 0xFC
+    unsigned int u32_100;  // 0x100
+    char __pad_104[8];  // 0x104
+    unsigned int u32_10C;  // 0x10C
+    unsigned int u32_110;  // 0x110
+    unsigned int u32_114;  // 0x114
+    unsigned int u32_118;  // 0x118
+    char __pad_11C[32];  // 0x11C
+    unsigned int u32_13C;  // 0x13C
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     static unsigned int Load(int* p0);  // x4:signals@0x551b90

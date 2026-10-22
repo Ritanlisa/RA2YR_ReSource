@@ -13,33 +13,63 @@ struct AnimClass;  // fix_fwd_type_supply
 struct ScenarioClass;  // fix_fwd_type_supply
 
 struct TActionClass {
-    void* ptr_0;  // 0x0
-    void* ptr_4;  // 0x4
-    void* ptr_8;  // 0x8
-    void* ptr_C;  // 0xC
+    int vfptr;  // 0x0
+    int vfptr1;  // 0x4
+    int vfptr2;  // 0x8
+    int vfptr3;  // 0xC
     int uniqueId;  // 0x10
     int abstractFlags;  // 0x14
     int nextArrayIndex;  // 0x18
     int referenceCount;  // 0x1C
     void * NeedsSaveOrLink;  // 0x20
     int idxArray;  // 0x24
-    void* TActionClass_field_28;  // 0x28
-    AbstractClass* TActionClass_field_2C;  // 0x2C
-    void* TActionClass_field_30;  // 0x30
-    void* TActionClass_field_34;  // 0x34
-    void* TActionClass_field_38;  // 0x38
-    AbstractClass* TActionClass_field_3C;  // 0x3C
-    void* TActionClass_field_40;  // 0x40
+    TActionClass * TActionClass_field_28;  // 0x28
+    int TActionClass_field_2C;  // 0x2C
+    TeamTypeClass * TActionClass_field_30;  // 0x30
+    int TActionClass_field_34;  // 0x34
+    void * TActionClass_field_38;  // 0x38
+    void * TActionClass_field_3C;  // 0x3C
+    void * TActionClass_field_40;  // 0x40
     AbstractClass * TActionClass_field_44;  // 0x44
-    void* TActionClass_field_48;  // 0x48
-    AbstractClass* TActionClass_field_4C;  // 0x4C
-    void* TActionClass_field_50;  // 0x50
+    void * TActionClass_field_48;  // 0x48
+    TagTypeClass * TActionClass_field_4C;  // 0x4C
+    TriggerTypeClass * TActionClass_field_50;  // 0x50
     unsigned char TActionClass_field_54;  // 0x54
     char pad_55[24];  // 0x55
-    unsigned char TActionClass_field_6D;  // 0x6D
+    char TActionClass_field_6D[1];  // 0x6D
     char pad_6E[73];  // 0x6E
     unsigned char __pad_0B7;  // 0xB7
     void* TActionClass_field_90;  // 0xB8
+    char __pad_BC[56];  // 0xBC
+    unsigned int u32_F4;  // 0xF4
+    char __pad_F8[4];  // 0xF8
+    unsigned int u32_FC;  // 0xFC
+    unsigned int q100;  // 0x100
+    char __pad_104[8];  // 0x104
+    unsigned int q10C;  // 0x10C
+    unsigned int q110;  // 0x110
+    unsigned int u32_114;  // 0x114
+    unsigned int u32_118;  // 0x118
+    unsigned int u32_11C;  // 0x11C
+    unsigned int q120;  // 0x120
+    char __pad_124[24];  // 0x124
+    unsigned int u32_13C;  // 0x13C
+    char __pad_140[183];  // 0x140
+    unsigned char u32_1F7;  // 0x1F7
+    unsigned char u32_1F8;  // 0x1F8
+    char __pad_1F9[159];  // 0x1F9
+    unsigned int u32_298;  // 0x298
+    char __pad_29C[15124];  // 0x29C
+    unsigned char q3DB0;  // 0x3DB0
+    char __pad_3DB1[5615];  // 0x3DB1
+    unsigned int u32_53A0;  // 0x53A0
+    char __pad_53A4[240];  // 0x53A4
+    unsigned int u32_5494;  // 0x5494
+    char __pad_5498[88];  // 0x5498
+    unsigned int u32_54F0;  // 0x54F0
+    unsigned int u32_54F4;  // 0x54F4
+    char __pad_54F8[4];  // 0x54F8
+    unsigned int u32_54FC;  // 0x54FC
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     char ConvertHouseUnits(int a2, int _14, unsigned int *a3, int aP4);  // G57w10-S raw 0x006E0B60 IUnknown 占位清除

@@ -10,21 +10,65 @@
 namespace gamemd {
 
 struct UDPInterfaceClass_Destru {
-    unsigned char __pad_000;  // 0x0
+    unsigned char Socket;  // 0x0
     char __pad_1[3];  // 0x1
-    int UDPInterfaceClass_Destru_field_0x04;  // 0x4
-    int UDPInterfaceClass_Destru_field_0x08;  // 0x8
-    int UDPInterfaceClass_Destru_field_0x0C;  // 0xC
-    int UDPInterfaceClass_Destru_field_0x10;  // 0x10
+    char Initialized;  // 0x4
+    char __pad_5[3];  // 0x5
+    unsigned int m_8;  // 0x8
+    unsigned char m_C;  // 0xC
+    char __pad_D[3];  // 0xD
+    unsigned int q010;  // 0x10
     int UDPInterfaceClass_Destru_field_0x14;  // 0x14
-    int UDPInterfaceClass_Destru_field_0x18;  // 0x18
+    unsigned int q018;  // 0x18
     int UDPInterfaceClass_Destru_field_0x1C;  // 0x1C
     int UDPInterfaceClass_Destru_field_0x20;  // 0x20
-    int UDPInterfaceClass_Destru_field_0x24;  // 0x24
+    unsigned int u32_24;  // 0x24
     int UDPInterfaceClass_Destru_field_0x28;  // 0x28
     int UDPInterfaceClass_Destru_field_0x2C;  // 0x2C
-    int UDPInterfaceClass_Destru_field_0x30;  // 0x30
+    unsigned int u32_30;  // 0x30
     int UDPInterfaceClass_Destru_field_0x34;  // 0x34
+    char __pad_38[4];  // 0x38
+    unsigned int u32_3C;  // 0x3C
+    char __pad_40[8];  // 0x40
+    unsigned int u32_48;  // 0x48
+    char __pad_4C[258068];  // 0x4C
+    unsigned int u32_3F060;  // 0x3F060
+    unsigned int u32_3F064;  // 0x3F064
+    unsigned char q3F068;  // 0x3F068
+    char __pad_3F069[3];  // 0x3F069
+    unsigned int u32_3F06C;  // 0x3F06C
+    unsigned int u32_3F070;  // 0x3F070
+    unsigned int q3F074;  // 0x3F074
+    unsigned int q3F078;  // 0x3F078
+    char __pad_3F07C[640];  // 0x3F07C
+    unsigned short u32_3F2FC;  // 0x3F2FC
+    char __pad_3F2FE[2];  // 0x3F2FE
+    unsigned int u32_3F300;  // 0x3F300
+    char __pad_3F304[28];  // 0x3F304
+    unsigned int q3F320;  // 0x3F320
+    char __pad_3F324[12];  // 0x3F324
+    unsigned int u32_3F330;  // 0x3F330
+    unsigned int u32_3F334;  // 0x3F334
+    unsigned int q3F338;  // 0x3F338
+    unsigned int q3F33C;  // 0x3F33C
+    unsigned int q3F340;  // 0x3F340
+    char __pad_3F344[1];  // 0x3F344
+    unsigned char q3F345;  // 0x3F345
+    char __pad_3F346[2];  // 0x3F346
+    unsigned int q3F348;  // 0x3F348
+    char __pad_3F34C[516];  // 0x3F34C
+    unsigned int q3F550;  // 0x3F550
+    unsigned int u32_3F554;  // 0x3F554
+    unsigned int q3F558;  // 0x3F558
+    char __pad_3F55C[1];  // 0x3F55C
+    unsigned char q3F55D;  // 0x3F55D
+    char __pad_3F55E[2];  // 0x3F55E
+    unsigned int u32_3F560;  // 0x3F560
+    unsigned int q3F564;  // 0x3F564
+    unsigned int u32_3F568;  // 0x3F568
+    unsigned int u32_3F56C;  // 0x3F56C
+    char __pad_3F570[60];  // 0x3F570
+    unsigned int u32_3F5AC;  // 0x3F5AC
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     AbstractClass * * Bind(int a2);

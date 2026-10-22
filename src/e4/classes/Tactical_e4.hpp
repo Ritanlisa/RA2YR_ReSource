@@ -18,41 +18,49 @@ struct BuildingTypeClass;  // fix_fwd_type_supply
 struct ScenarioClass;  // fix_fwd_type_supply
 struct MouseClass;  // fix_fwd_type_supply
 struct Tactical {
-    char ptr_0[2];  // 0x0
-    unsigned char Tactical_field_0x2[4];  // 0x2
+    unsigned char q000;  // 0x0
+    unsigned char u32_1;  // 0x1
+    char Tactical_field_0x2[4];  // 0x2
     char __pad_6[2];  // 0x6
-    void* ptr_8;  // 0x8
-    void* ptr_C;  // 0xC
-    char __pad_10[8];  // 0x10
+    int Tactical_field_0x8;  // 0x8
+    int Tactical_field_0xC;  // 0xC
+    unsigned int q010;  // 0x10
+    unsigned int u32_14;  // 0x14
     unsigned int nextArrayIndex;  // 0x18
     int referenceCount;  // 0x1C
-    char __pad_20[4];  // 0x20
-    unsigned int u32_24;  // 0x24
+    unsigned int q020;  // 0x20
+    unsigned char u32_24;  // 0x24
+    char __pad_25[1];  // 0x25
+    unsigned char u16_26;  // 0x26
+    char __pad_27[1];  // 0x27
     unsigned int u32_28;  // 0x28
     unsigned int u32_2C;  // 0x2C
     int Tactical_field_0x30;  // 0x30
-    unsigned int q034;  // 0x34
-    unsigned int u32_38;  // 0x38
+    unsigned int u32_34;  // 0x34
+    unsigned char u32_38;  // 0x38
+    char __pad_39[3];  // 0x39
     unsigned int u32_3C;  // 0x3C
     char __pad_40[12];  // 0x40
     unsigned int q04C;  // 0x4C
     char __pad_50[20];  // 0x50
     unsigned int u32_64;  // 0x64
     unsigned int u32_68;  // 0x68
-    char __pad_6C[4];  // 0x6C
-    unsigned char q070;  // 0x70
-    char __pad_71[1];  // 0x71
-    unsigned char u32_72;  // 0x72
-    char __pad_73[1];  // 0x73
-    bool q074;  // 0x74
-    char __pad_75[47];  // 0x75
-    unsigned int q0A4;  // 0xA4
+    unsigned int u32_6C;  // 0x6C
+    unsigned short q070;  // 0x70
+    unsigned short u32_72;  // 0x72
+    unsigned int q074;  // 0x74
+    char __pad_78[44];  // 0x78
+    unsigned char q0A4;  // 0xA4
+    char __pad_A5[3];  // 0xA5
     int Tactical_field_0xA8;  // 0xA8
-    char __pad_AC[4];  // 0xAC
-    unsigned int u32_B0;  // 0xB0
-    unsigned int u32_B4;  // 0xB4
+    unsigned char q0AC;  // 0xAC
+    char __pad_AD[3];  // 0xAD
+    unsigned char u32_B0;  // 0xB0
+    char __pad_B1[3];  // 0xB1
+    unsigned char u32_B4;  // 0xB4
+    char __pad_B5[3];  // 0xB5
     char __pad_B8[4];  // 0xB8
-    unsigned int u32_BC;  // 0xBC
+    unsigned int q0BC;  // 0xBC
     char __pad_C0[32];  // 0xC0
     unsigned int u32_E0;  // 0xE0
     char __pad_E4[16];  // 0xE4
@@ -62,14 +70,45 @@ struct Tactical {
     bool q105;  // 0x105
     char __pad_106[21];  // 0x106
     char Tactical_field_0x11B[4];  // 0x11B
-    char __pad_11F[39];  // 0x11F
-    unsigned char u32_146;  // 0x146
-    char __pad_147[3126];  // 0x147
+    unsigned char q11F;  // 0x11F
+    char __pad_120[3140];  // 0x120
+    unsigned char u32_D64;  // 0xD64
+    char __pad_D65[3];  // 0xD65
+    unsigned char u32_D68;  // 0xD68
+    char __pad_D69[11];  // 0xD69
+    unsigned char qD74;  // 0xD74
+    char __pad_D75[3];  // 0xD75
+    unsigned char qD78;  // 0xD78
+    char __pad_D79[4];  // 0xD79
     unsigned char u32_D7D;  // 0xD7D
     char __pad_D7E[38];  // 0xD7E
-    int Tactical_field_0xDA4;  // 0xDA4
-    char __pad_DA8[12];  // 0xDA8
+    int qDA4;  // 0xDA4
+    unsigned int qDA8;  // 0xDA8
+    unsigned char qDAC;  // 0xDAC
+    char __pad_DAD[3];  // 0xDAD
+    unsigned char qDB0;  // 0xDB0
+    char __pad_DB1[3];  // 0xDB1
     int Tactical_field_0xDB4;  // 0xDB4
+    unsigned char qDB8;  // 0xDB8
+    char __pad_DB9[43];  // 0xDB9
+    unsigned int u32_DE4;  // 0xDE4
+    char __pad_DE8[908];  // 0xDE8
+    unsigned short u32_1174;  // 0x1174
+    unsigned short u32_1176;  // 0x1176
+    unsigned short u32_1178;  // 0x1178
+    unsigned short u32_117A;  // 0x117A
+    unsigned int u32_117C;  // 0x117C
+    unsigned char u32_1180;  // 0x1180
+    unsigned char u32_1181;  // 0x1181
+    char __pad_1182[2542];  // 0x1182
+    unsigned char q1B70;  // 0x1B70
+    char __pad_1B71[3511];  // 0x1B71
+    unsigned char q2928;  // 0x2928
+    char __pad_2929[10867];  // 0x2929
+    unsigned int q539C;  // 0x539C
+    char __pad_53A0[442];  // 0x53A0
+    unsigned char u32_555A;  // 0x555A
+    char __pad_555B[1];  // 0x555B
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     void * ConstructTacticalSurface();  // 0x42A6D0

@@ -49,11 +49,11 @@ int ThemeClass::ReadThemeEntry(uint8_t ***a2, void * aRepeat, void * aScenario, 
   if ( !INIClass::BinarySearchSection((gamemd::INIClass *)((int)a2), (uint8_t *)this) ) /*0x720492*/
     return 0; /*0x720584*/
   const char *v3; // edi
-  v3 = (const char *)this->__pad_37E + 130); /*0x7204a6*/
-  INIClass::GetString((INIClass *)a2, (uint8_t *)this, aSound, &g_INI_DefaultBuffer, (char *)this->__pad_37E + 130), 256); /*0x7204bf*/
+  v3 = (const char *)this->q100 + 130); /*0x7204a6*/
+  INIClass::GetString((INIClass *)a2, (uint8_t *)this, aSound, &g_INI_DefaultBuffer, (char *)this->q100 + 130), 256); /*0x7204bf*/
   while ( *v3 == 36 || *v3 == 35 ) /*0x7204cc*/
     ++v3; /*0x7204ce*/
-  strcpy((char *)this->__pad_37E + 130), v3); /*0x7204e9*/
+  strcpy((char *)this->q100 + 130), v3); /*0x7204e9*/
   int Int_Overwrite; // eax
   Int_Overwrite = INIClass::ReadInt_Overwrite((bool *)a2, (uint8_t *)this,(uint8_t *)(aScenario), this->u32_280); /*0x720501*/
   char v8; // [esp-Ch] [ebp-14h]
@@ -108,11 +108,11 @@ void * ThemeClass::InitializeThemes(char * a2)
       if ( !strlen(Destination) ) /*0x7205f7*/
         goto LABEL_10; /*0x7205f7*/
       v7 = 0; /*0x720606*/
-      if ( this->u32_24 <= 0 ) /*0x72060a*/
+      if ( this->m_Name[7] <= 0 ) /*0x72060a*/
         goto LABEL_10; /*0x72060a*/
       while ( _strcmpi(*(char **)(&this->m_Name[16] + 4 * v7), Destination) ) /*0x720622*/
       {
-        if ( ++v7 >= this->u32_24 ) /*0x72062a*/
+        if ( ++v7 >= this->m_Name[7] ) /*0x72062a*/
           goto LABEL_10; /*0x72062a*/
       }
       if ( v7 == -1 ) /*0x720631*/
@@ -134,15 +134,15 @@ LABEL_10:
           v9 = (char *)v8; /*0x720686*/
         }
         strcpy(v9, Destination); /*0x7206a0*/
-        v10 = this->u32_1C; /*0x7206a9*/
-        if ( this->u32_24 < v10 /*0x7206d1*/
+        v10 = this->m_Name[5]; /*0x7206a9*/
+        if ( this->m_Name[7] < v10 /*0x7206d1*/
           || (this->u32_21 || !v10)
           && (v11 = this->ThemeClass_field_28, v11 > 0)
           && (*(unsigned __int8 (**)(int, int, unsigned int))(this->u32_14 + 8))(&this->m_Name[12], v10 + v11, 0) )
         {
-          v12 = this->u32_24; /*0x7206d8*/
-          v13 = *&this->u32_18; /*0x7206db*/
-          this->u32_24 = v12 + 1; /*0x7206e1*/
+          v12 = this->m_Name[7]; /*0x7206d8*/
+          v13 = *&this->m_Name[4]; /*0x7206db*/
+          this->m_Name[7] = v12 + 1; /*0x7206e1*/
           v13[v12] = (unsigned int)v9; /*0x7206e4*/
         }
       }

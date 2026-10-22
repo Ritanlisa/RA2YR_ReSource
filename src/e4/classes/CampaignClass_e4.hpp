@@ -13,19 +13,24 @@ struct ConnectionPointClass;  // fix_fwd_type_supply
 struct Coord;  // fix_fwd_type_supply
 
 struct CampaignClass {
-    void * ptr_0;  // 0x0
-    void* ptr_4;  // 0x4
-    void* ptr_8;  // 0x8
-    void* ptr_C;  // 0xC
-    void* uniqueId;  // 0x10
-    unsigned int abstractFlags;  // 0x14
+    unsigned char vfptr;  // 0x0
+    char __pad_1[3];  // 0x1
+    int vfptr1;  // 0x4
+    int vfptr2;  // 0x8
+    unsigned char vfptr3;  // 0xC
+    unsigned char q00D;  // 0xD
+    unsigned char q00E;  // 0xE
+    char __pad_F[1];  // 0xF
+    int uniqueId;  // 0x10
+    int abstractFlags;  // 0x14
     unsigned int nextArrayIndex;  // 0x18
-    int referenceCount;  // 0x1C
+    unsigned char referenceCount;  // 0x1C
+    char __pad_1D[3];  // 0x1D
     int NeedsSaveOrLink;  // 0x20
     int idxCd;  // 0x24
     char scenario[512];  // 0x28
     int finalMovie;  // 0x228
-    char description[256];  // 0x22C
+    int description[64];  // 0x22C
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     char SaveProgress();

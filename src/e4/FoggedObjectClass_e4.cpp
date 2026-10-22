@@ -68,7 +68,7 @@ int FoggedObjectClass::InitBuildingFog(unsigned int * a2, int a3, int a4)
   FoggedObject::DrawVector_Constructor(&this->q5C, 0, 0); /*0x4d09e7*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E8BA0) */  /*0x4d09ec*/
   this->q070 = 10; /*0x4d09f2*/
-  this->HouseClass_6C = 0; /*0x4d09f9*/
+  this->q06C = 0; /*0x4d09f9*/
   this->u32_74 = 1; /*0x4d0a02*/
   /* X11: ptr_0 install elided (legacy slot spelling slot, RHS g_var_b5181c) */  /*0x4d0a06*/
   /* X11: ptr_0 install elided (legacy slot spelling slot, RHS g_var_b5181c) */  /*0x4d0a0c*/
@@ -204,7 +204,7 @@ int FoggedObjectClass::InitTerrainFog(unsigned int *aP1, int a3, int a4)
   FoggedObject::DrawVector_Constructor(&this->q5C, 0, 0); /*0x4d0c92*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E8BA0) */  /*0x4d0c97*/
   this->q070 = 10; /*0x4d0c9e*/
-  this->HouseClass_6C = 0; /*0x4d0ca5*/
+  this->q06C = 0; /*0x4d0ca5*/
   this->u32_74 = 1; /*0x4d0cae*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_b5181c) */  /*0x4d0cb2*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_b5181c) */  /*0x4d0cb8*/
@@ -367,7 +367,7 @@ AbstractClass * FoggedObjectClass::Constructor(BuildingClass * aP1, FoggedObject
   FoggedObject::DrawVector_Constructor(&this->q5C, 0, 0); /*0x4d0f81*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E8BA0) */  /*0x4d0f8a*/
   this->q070 = 10; /*0x4d0f90*/
-  this->HouseClass_6C = 0; /*0x4d0f97*/
+  this->q06C = 0; /*0x4d0f97*/
   this->u32_74 = a3; /*0x4d0fa2*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_var_b5181c) */  /*0x4d0fa5*/
   /* X11: ptr_0 install elided (legacy slot spelling slot, RHS g_var_b5181c) */  /*0x4d0fab*/
@@ -419,13 +419,13 @@ LABEL_11:
     LOBYTE(v53) = 1; /*0x4d1114*/
   }
   v16 = this->u32_64; /*0x4d1119*/
-  if ( this->HouseClass_6C < v16 /*0x4d113e*/
+  if ( this->q06C < v16 /*0x4d113e*/
     || (this->u32_69 || !v16)
     && (v17 = this->q070, v17 > 0)
     && (*(unsigned __int8 (**)(int, int, unsigned int))(*(unsigned int *)v7 + 8))(&this->q5C, v16 + v17, 0) )
   {
-    v18 = this->HouseClass_6C; /*0x4d1145*/
-    this->HouseClass_6C = v18 + 1; /*0x4d114b*/
+    v18 = this->q06C; /*0x4d1145*/
+    this->q06C = v18 + 1; /*0x4d114b*/
     v19 = (int)v53; /*0x4d1156*/
     v20 = (int *)(this->q060 + 16 * v18); /*0x4d115a*/
     *v20 = Type; /*0x4d1160*/
@@ -502,7 +502,7 @@ LABEL_41:
     this->q048 = v34; /*0x4d1282*/
     this->q04C = v31; /*0x4d1285*/
     Anims = v45; /*0x4d1288*/
-    v35 = this->HouseClass_6C; /*0x4d1292*/
+    v35 = this->q06C; /*0x4d1292*/
     v36 = v56[173] + *(unsigned int *)(*v45 + 172); /*0x4d129d*/
     v37 = this->u32_64; /*0x4d12a5*/
     v54 = *(unsigned int **)(*v45 + 256); /*0x4d12a8*/
@@ -511,8 +511,8 @@ LABEL_41:
       && (v38 = this->q070, v38 > 0)
       && (*(unsigned __int8 (**)(int, int, unsigned int))(*(unsigned int *)v7 + 8))(&this->q5C, v37 + v38, 0) )
     {
-      v39 = this->HouseClass_6C; /*0x4d12d2*/
-      this->HouseClass_6C = v39 + 1; /*0x4d12dc*/
+      v39 = this->q06C; /*0x4d12d2*/
+      this->q06C = v39 + 1; /*0x4d12dc*/
       v40 = (unsigned int **)(this->q060 + 16 * v39); /*0x4d12e5*/
       v41 = v53; /*0x4d12e7*/
       *v40 = v56; /*0x4d12eb*/
@@ -577,10 +577,10 @@ AbstractClass * * FoggedObjectClass::InitDrawRecord(unsigned int * a2)
   this->q050 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, v22)->level; /*0x4d13e4*/
   this->u32_54 = -1; /*0x4d13e7*/
   this->u32_58 = 0; /*0x4d13ee*/
-  FoggedObject::DrawVector_Constructor(&this->u32_5C, 0, 0); /*0x4d13f1*/
+  FoggedObject::DrawVector_Constructor(&this->q5C, 0, 0); /*0x4d13f1*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E3238) */  /*0x4d13f6*/
   this->q070 = 10; /*0x4d13fc*/
-  this->HouseClass_6C = 0; /*0x4d1403*/
+  this->q06C = 0; /*0x4d1403*/
   this->u32_74 = 1; /*0x4d140a*/
   /* X11: ptr_0 install elided (base-interface slot, RHS g_ptr_7E8B0C) */  /*0x4d140e*/
   /* X11: ptr_0 install elided (implicit via FoggedObjectClass virtuals 0x4d1414) */
@@ -606,19 +606,19 @@ AbstractClass * * FoggedObjectClass::InitDrawRecord(unsigned int * a2)
     *((unsigned int *)dword_8B3D14 + v7) = this; /*0x4d14c7*/
   }
   v8 = this->u32_64; /*0x4d14ca*/
-  v9 = this->HouseClass_6C; /*0x4d14cd*/
+  v9 = this->q06C; /*0x4d14cd*/
   v10 = a2[50]; /*0x4d14d0*/
   (v23) = ((v23) & ~0xFF) | ((0) & 0xFF); /*0x4d14da*/
   if ( v9 < v8 /*0x4d14fc*/
     || (this->u32_69 || !v8)
     && (v11 = this->q070, v11 > 0)
-    && (*(unsigned __int8 (**)(char *, int, unsigned int))&this->u32_5C->Capacity)(
-         &this->u32_5C,
+    && (*(unsigned __int8 (**)(char *, int, unsigned int))&this->q5C->Capacity)(
+         &this->q5C,
          v8 + v11,
          0) )
   {
-    v12 = this->HouseClass_6C; /*0x4d1503*/
-    this->HouseClass_6C = v12 + 1; /*0x4d1509*/
+    v12 = this->q06C; /*0x4d1503*/
+    this->q06C = v12 + 1; /*0x4d1509*/
     v13 = (unsigned int *)(this->q060 + 16 * v12); /*0x4d1514*/
     v14 = v23; /*0x4d1516*/
     *v13 = v10; /*0x4d151a*/
@@ -779,7 +779,7 @@ LABEL_22:
       v3[2].ptr_C = ptr_C + 1; /*0x4d2616*/
       v11 = (unsigned int *)(v3[2].ptr_0 + 16 * ptr_C); /*0x4d261f*/
       *v11 = v10; /*0x4d2621*/
-      v11->__pad_004 = v19; /*0x4d2627*/
+      v11->__pad_4 = v19; /*0x4d2627*/
       v11->q008 = v20; /*0x4d262e*/
       v11->q00C = v21; /*0x4d2635*/
     }
@@ -809,7 +809,7 @@ HouseClass * * FoggedObjectClass::PowerDrainUpdate(int a2)
   Power::TimerProcess(this->q050); /*0x4d2892*/
   Power::TimerProcess(this->u32_54); /*0x4d289d*/
   Power::TimerProcess(this->u32_58); /*0x4d28a8*/
-  return Power::TimerProcess(this->HouseClass_6C); /*0x4d28b8*/
+  return Power::TimerProcess(this->q06C); /*0x4d28b8*/
 
 }
 } // namespace gamemd
@@ -846,7 +846,7 @@ AbstractClass * * FoggedObjectClass::ResizeArray(int a2, char * a3)
   if ( a2 ) /*0x4d2bce*/
   {
     v5 = a3; /*0x4d2bd4*/
-    LOBYTE(this->m_C) = 0; /*0x4d2bd8*/
+    LOBYTE(this->vfptr3) = 0; /*0x4d2bd8*/
     if ( a3 ) /*0x4d2bdd*/
     {
       if ( a2 - 1 >= 0 ) /*0x4d2c1a*/
@@ -892,12 +892,12 @@ AbstractClass * * FoggedObjectClass::ResizeArray(int a2, char * a3)
         v5 = 0; /*0x4d2c11*/
       }
     }
-    LOBYTE(this->m_C) = 1; /*0x4d2c33*/
+    LOBYTE(this->vfptr3) = 1; /*0x4d2c33*/
     if ( !v5 ) /*0x4d2c37*/
       return 0; /*0x4d2cc7*/
-    if ( *&this->ptr_4 ) /*0x4d2c3d*/
+    if ( *&this->vfptr1 ) /*0x4d2c3d*/
     {
-      v11 = *&this->ptr_8; /*0x4d2c42*/
+      v11 = *&this->vfptr2; /*0x4d2c42*/
       if ( a2 < v11 ) /*0x4d2c47*/
         v11 = a2; /*0x4d2c49*/
       if ( v11 > 0 ) /*0x4d2c4d*/
@@ -905,7 +905,7 @@ AbstractClass * * FoggedObjectClass::ResizeArray(int a2, char * a3)
         v12 = 0; /*0x4d2c4f*/
         do /*0x4d2c75*/
         {
-          v13 = (unsigned int *)(*&this->ptr_4 + v12); /*0x4d2c56*/
+          v13 = (unsigned int *)(*&this->vfptr1 + v12); /*0x4d2c56*/
           v14 = &v5[v12]; /*0x4d2c58*/
           v12 += 16; /*0x4d2c5b*/
           --v11; /*0x4d2c5e*/
@@ -917,21 +917,21 @@ AbstractClass * * FoggedObjectClass::ResizeArray(int a2, char * a3)
         while ( v11 ); /*0x4d2c75*/
         v3 = a2; /*0x4d2c77*/
       }
-      if ( BYTE1(this->m_C) ) /*0x4d2c7d*/
+      if ( BYTE1(this->vfptr3) ) /*0x4d2c7d*/
       {
-        __3_YAXPAX_Z(*&this->ptr_4); /*0x4d2c86*/
-        *&this->ptr_4 = 0; /*0x4d2c8e*/
+        __3_YAXPAX_Z(*&this->vfptr1); /*0x4d2c86*/
+        *&this->vfptr1 = 0; /*0x4d2c8e*/
       }
     }
-    *&this->ptr_4 = v5; /*0x4d2c99*/
-    *&this->ptr_8 = v3; /*0x4d2c9f*/
-    BYTE1(this->m_C) = a3 == 0; /*0x4d2ca2*/
+    *&this->vfptr1 = v5; /*0x4d2c99*/
+    *&this->vfptr2 = v3; /*0x4d2c9f*/
+    BYTE1(this->vfptr3) = a3 == 0; /*0x4d2ca2*/
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_UDrawRecord_FoggedObjectClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4d2cab*/
+    (*(void (**)(_DynamicVectorClass_UDrawRecord_FoggedObjectClass *))(*(unsigned int *)this->vfptr + 12))(this); /*0x4d2cab*/
   }
-  v15 = *&this->ptr_8; /*0x4d2cae*/
+  v15 = *&this->vfptr2; /*0x4d2cae*/
   if ( v15 < *(unsigned int *)this->Count ) /*0x4d2cb6*/
     *(unsigned int *)this->Count = v15; /*0x4d2cb8*/
   return 1; /*0x4d2cbb*/
@@ -949,7 +949,7 @@ int FoggedObjectClass::Read(unsigned int * a2, void *a2_2, void *a3)
   if ( v2 <= 0 ) /*0x4d2cdb*/
     return -1; /*0x4d2cfc*/
   unsigned int *i; // ecx
-  for ( i = *(unsigned int **)&a2_2->ptr_4; *i != *a2_2 || i->ptr_4 != a2_2[1]; i += 4 ) /*0x4d2ce1*/
+  for ( i = *(unsigned int **)&a2_2->vtable2; *i != *a2_2 || i->vtable2 != a2_2[1]; i += 4 ) /*0x4d2ce1*/
   {
     if ( ++result >= v2 ) /*0x4d2cfa*/
       return -1; /*0x4d2cfa*/
@@ -1054,7 +1054,7 @@ char FoggedObjectClass::AddRef(int a2)
 {
 
 
-  int m_8 = this->ptr_8; // edi /*0x4d29bb*/
+  int m_8 = this->vfptr2; // edi /*0x4d29bb*/
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x4d29c0*/
   {
     int v3 = 0; // esi /*0x4d29c2*/
@@ -1062,7 +1062,7 @@ char FoggedObjectClass::AddRef(int a2)
       return 1; /*0x4d29f6*/
     int v4; // edx
     v4 = *(unsigned int *)(a2 + 4); /*0x4d29c8*/
-    unsigned int *v5 = *&this->ptr_4; // eax /*0x4d29cb*/
+    unsigned int *v5 = *&this->vfptr1; // eax /*0x4d29cb*/
     unsigned int *v6; // ecx
     v6 = (unsigned int *)(v4 + 4); /*0x4d29ce*/
     int v7; // edx
