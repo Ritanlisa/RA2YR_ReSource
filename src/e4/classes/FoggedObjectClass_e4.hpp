@@ -62,7 +62,7 @@ struct FoggedObjectClass {
     int GetTypeIdentifier();
     int InitBuildingFog(unsigned int * a2, int a3, int a4);
     int LoadTypeData(int * a1, int a2);
-    int Read(unsigned int * a2, void *a2_2, void *a3 = 0);
+    int Read(unsigned int * a2, DynamicVectorClass_PAD_16 *a2_2, void *a3 = 0);
     int   SaveToINI(TechnoTypeClass * aP0, int * a1, int aP2);
     unsigned int * CheckVisibility(unsigned int * v3);
 #pragma pack(pop)

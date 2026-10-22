@@ -39,7 +39,7 @@ RocketLocomotionClass::RocketLocomotionClass()
   this->SpawnerIsElite = 0; /*0x661f0c*/
   this->CurrentPitch = 0.0; /*0x661f0f*/
   this->RocketLocomotionClass_field_58 = 0; /*0x661f12*/
-  this->RocketLocomotionClass_field_bool_4C = 1; /*0x661f15*/
+  this->u32_4C = 1; /*0x661f15*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7F0B1C) */  /*0x661f19*/
   /* X11: ptr_0 install elided (implicit via RocketLocomotionClass virtuals 0x661f1f) */
   return (int)this->LocomotionClass; /*0x661f28*/

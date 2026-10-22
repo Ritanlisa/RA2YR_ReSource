@@ -162,7 +162,7 @@ protected:
 public:
     BytePalette const* UsedPalette1 = nullptr;
     BytePalette const* UsedPalette2 = nullptr;
-    uint8_t* LightConvertClass_field_buffer_190 = nullptr;
+    uint8_t* u32_190 = nullptr;
     int UsageCount = 0;
     uint32_t Color1 = 0;
     uint32_t Color2 = 0;

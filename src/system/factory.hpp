@@ -122,8 +122,8 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int FindExitCellByName();  // 0x523c90 -- Factory::FindExitCellByName
     int GetLinkedIndex(int a1);  // 0x663d60 -- Factory::GetLinkedIndex
     // === SYMBOL-ANCHOR (END) ===
-    unsigned int q02C;  // 0x2C (canon-mt)
-    void* q058;  // 0x58 (canon-mt)
+    unsigned int u32_2C;  // 0x2C (canon-mt)
+    void* u32_58;  // 0x58 (canon-mt)
     unsigned char u32_5D;  // 0x5D (canon-mt)
 
     bool IsAllocated;  // X10 supply (csp_canon_members)

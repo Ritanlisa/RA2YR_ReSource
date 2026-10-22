@@ -65,7 +65,7 @@ namespace gamemd {
 AbstractClass * DSurface::Construct(int aP1, int aP2, char aP3, char a5, void *a5_1, void *a6, void *a7, void *a8, void *a9)
 {
 
-  unsigned int *v6 = &this->DSurface_field_0x1C; // ebp /*0x4ba5b0*/
+  unsigned int *v6 = &this->u32_1C; // ebp /*0x4ba5b0*/
   this->Width = aP1; /*0x4ba5b5*/
   this->Height = aP2; /*0x4ba5b8*/
   this->LockCount = 0; /*0x4ba5bb*/
@@ -73,35 +73,35 @@ AbstractClass * DSurface::Construct(int aP1, int aP2, char aP3, char a5, void *a
   this->u32_14 = 0; /*0x4ba5c1*/
   this->q_60 = 0; /*0x4ba5c4*/
   this->u32_64 = 0; /*0x4ba5c7*/
-  this->DSurface_field_0x1C = 0; /*0x4ba5ca*/
-  this->DSurface_field_0x20 = 0; /*0x4ba5cd*/
+  this->u32_1C = 0; /*0x4ba5ca*/
+  this->u32_20 = 0; /*0x4ba5cd*/
   /* X11: ptr_0 install elided (implicit via DSurface virtuals 0x4ba5d0) */
   void *v7; // edi
   v7 = operator new(0x6Cu); /*0x4ba5db*/
-  this->DSurface_field_0x20 = v7; /*0x4ba5e2*/
+  this->u32_20 = v7; /*0x4ba5e2*/
   if ( v7 ) /*0x4ba5e5*/
   {
     memset(v7, 0, 0x6Cu); /*0x4ba5f2*/
-    *this->DSurface_field_0x20 = 108; /*0x4ba5f7*/
-    *(unsigned int *)&this->DSurface_field_0x20->ptr_2 = 7; /*0x4ba604*/
-    *(unsigned int *)&this->DSurface_field_0x20->ptr_4 = aP1; /*0x4ba60e*/
-    *(unsigned int *)&this->DSurface_field_0x20->ptr_3 = aP2; /*0x4ba618*/
+    *this->u32_20 = 108; /*0x4ba5f7*/
+    *(unsigned int *)&this->u32_20->ptr_2 = 7; /*0x4ba604*/
+    *(unsigned int *)&this->u32_20->ptr_4 = aP1; /*0x4ba60e*/
+    *(unsigned int *)&this->u32_20->ptr_3 = aP2; /*0x4ba618*/
     if ( aP3 == 1 ) /*0x4ba621*/
-      *(unsigned int *)&this->DSurface_field_0x20->SuperClass_field_0x68 = 2048; /*0x4ba626*/
+      *(unsigned int *)&this->u32_20->SuperClass_field_0x68 = 2048; /*0x4ba626*/
     if ( g_DDraw_Force3D && a5 ) /*0x4ba639*/
-      *(unsigned int *)&this->DSurface_field_0x20->SuperClass_field_0x68 = 8256; /*0x4ba63e*/
+      *(unsigned int *)&this->u32_20->SuperClass_field_0x68 = 8256; /*0x4ba63e*/
     g_lpDirectDraw7->lpVtbl->CreateSurface( /*0x4ba653*/
       g_lpDirectDraw7,
-      (LPDDSURFACEDESC)this->DSurface_field_0x20,
+      (LPDDSURFACEDESC)this->u32_20,
       &this->u32_70,
       0);
     if ( *v6 ) /*0x4ba656*/
     {
-      memset(this->DSurface_field_0x20, 0, 0x6Cu); /*0x4ba665*/
-      *this->DSurface_field_0x20 = 108; /*0x4ba66a*/
+      memset(this->u32_20, 0, 0x6Cu); /*0x4ba665*/
+      *this->u32_20 = 108; /*0x4ba66a*/
       int v8; // eax
-      (*(void (__stdcall **)(unsigned int, unsigned int))(*(unsigned int *)this->u32_74)(*v6, this->DSurface_field_0x20); /*0x4ba67a*/
-      v8 = this->DSurface_field_0x20; /*0x4ba67d*/
+      (*(void (__stdcall **)(unsigned int, unsigned int))(*(unsigned int *)this->u32_74)(*v6, this->u32_20); /*0x4ba67a*/
+      v8 = this->u32_20; /*0x4ba67d*/
       this->Width = (unsigned int)(v8->u32_54 + 7) >> 3; /*0x4ba689*/
       this->u32_64 = (v8->SuperClass_field_0x68 & 0x4000) != 0; /*0x4ba695*/
     }
@@ -118,11 +118,11 @@ AbstractClass * * DSurface::Destroy(void *a1)
   int v3; // eax
   int result; // eax
 
-  DSurface_field_0x18 = (char)this->DSurface_field_0x18; /*0x4ba6b6*/
+  DSurface_field_0x18 = (char)this->u32_18; /*0x4ba6b6*/
   /* X11: ptr_0 install elided (implicit via DSurface virtuals 0x4ba6b9) */
   if ( DSurface_field_0x18 ) /*0x4ba6c1*/
   {
-    v3 = this->DSurface_field_0x1C; /*0x4ba6c3*/
+    v3 = this->u32_1C; /*0x4ba6c3*/
     if ( v3 ) /*0x4ba6c8*/
     {
       if ( g_DDraw_Clipper ) /*0x4ba6d0*/
@@ -133,12 +133,12 @@ AbstractClass * * DSurface::Destroy(void *a1)
       }
     }
   }
-  __3_YAXPAX_Z(this->DSurface_field_0x20); /*0x4ba6ee*/
-  result = this->DSurface_field_0x1C; /*0x4ba6f3*/
-  this->DSurface_field_0x20 = 0; /*0x4ba6fb*/
+  __3_YAXPAX_Z(this->u32_20); /*0x4ba6ee*/
+  result = this->u32_1C; /*0x4ba6f3*/
+  this->u32_20 = 0; /*0x4ba6fb*/
   if ( result ) /*0x4ba6fe*/
     result = (*(int (**)(int))(*(unsigned int *)result + 8))(result); /*0x4ba703*/
-  this->DSurface_field_0x1C = 0; /*0x4ba706*/
+  this->u32_1C = 0; /*0x4ba706*/
   /* X11: ptr_0 install elided (implicit via Surface virtuals 0x4ba709) */
   return result; /*0x4ba70f*/
 
@@ -401,24 +401,24 @@ unsigned int * DSurface::CreateBackBuffer(int a2, void *a2_1)
   this->LockCount = 0; /*0x4bac71*/
   this->q010 = 0; /*0x4bac74*/
   this->u32_14 = 0; /*0x4bac77*/
-  (this->DSurface_field_0x18) = ((this->DSurface_field_0x18) & ~0xFF) | ((0) & 0xFF); /*0x4bac7a*/
-  (this->DSurface_field_0x18) = ((this->DSurface_field_0x18) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x4bac7d*/
-  this->DSurface_field_0x1C = a2; /*0x4bac80*/
-  this->DSurface_field_0x20 = 0; /*0x4bac83*/
+  (this->u32_18) = ((this->u32_18) & ~0xFF) | ((0) & 0xFF); /*0x4bac7a*/
+  (this->u32_18) = ((this->u32_18) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x4bac7d*/
+  this->u32_1C = a2; /*0x4bac80*/
+  this->u32_20 = 0; /*0x4bac83*/
   /* X11: ptr_0 install elided (implicit via DSurface virtuals 0x4bac86) */
   if ( a2 ) /*0x4bac8c*/
   {
     v3 = __2_YAPAXI_Z(0x6Cu); /*0x4bac96*/
-    this->DSurface_field_0x20 = v3; /*0x4bac9f*/
+    this->u32_20 = v3; /*0x4bac9f*/
     memset(v3, 0, 0x6Cu); /*0x4baca2*/
-    *(unsigned int *)this->DSurface_field_0x20 = 108; /*0x4bacaa*/
-    if ( !(*(int (**)(int, void *))(*(unsigned int *)this->DSurface_field_0x1C + 88))( /*0x4bacba*/
-            this->DSurface_field_0x1C,
-            this->DSurface_field_0x20) )
+    *(unsigned int *)this->u32_20 = 108; /*0x4bacaa*/
+    if ( !(*(int (**)(int, void *))(*(unsigned int *)this->u32_1C + 88))( /*0x4bacba*/
+            this->u32_1C,
+            this->u32_20) )
     {
-      DSurface_field_0x20 = this->DSurface_field_0x20; /*0x4bacc2*/
+      DSurface_field_0x20 = this->u32_20; /*0x4bacc2*/
       this->q010 = (int)((void *)((unsigned int)(*((unsigned int *)DSurface_field_0x20 + 21) + 7) >> 3)); /*0x4bacce*/
-      BYTE1(this->DSurface_field_0x18) = (*((unsigned int *)DSurface_field_0x20 + 26) & 0x4000) != 0; /*0x4bacda*/
+      BYTE1(this->u32_18) = (*((unsigned int *)DSurface_field_0x20 + 26) & 0x4000) != 0; /*0x4bacda*/
       this->Width = (void *)*((unsigned int *)DSurface_field_0x20 + 3); /*0x4bace0*/
       this->Height = (void *)*((unsigned int *)DSurface_field_0x20 + 2); /*0x4bace6*/
     }
@@ -447,22 +447,22 @@ int DSurface::RestoreIfLost(void *a1)
 
   if ( !g_DDraw_Initialized && !byte_A8ED80 ) /*0x4bb014*/
     return 0; /*0x4bb014*/
-  v3 = this->DSurface_field_0x1C; /*0x4bb01b*/
-  if ( v3 && (*(int (**)(int))(*(unsigned int *)v3 + 96))(this->DSurface_field_0x1C) == -2005532222 ) /*0x4bb02d*/
+  v3 = this->u32_1C; /*0x4bb01b*/
+  if ( v3 && (*(int (**)(int))(*(unsigned int *)v3 + 96))(this->u32_1C) == -2005532222 ) /*0x4bb02d*/
   {
-    if ( (*(int (**)(int))(*(unsigned int *)this->DSurface_field_0x1C + 108))(this->DSurface_field_0x1C) /*0x4bb042*/
-      || (*(int (**)(int))(*(unsigned int *)this->DSurface_field_0x1C + 96))(this->DSurface_field_0x1C) )
+    if ( (*(int (**)(int))(*(unsigned int *)this->u32_1C + 108))(this->u32_1C) /*0x4bb042*/
+      || (*(int (**)(int))(*(unsigned int *)this->u32_1C + 96))(this->u32_1C) )
     {
       return 0; /*0x4bb01a*/
     }
     DSurface_field_0xC = this->LockCount; /*0x4bb049*/
     if ( (int)DSurface_field_0xC > 0 ) /*0x4bb04e*/
     {
-      DSurface_field_0x0 = this->ptr_0; /*0x4bb050*/
+      DSurface_field_0x0 = this->DSurface_field_0x0; /*0x4bb050*/
       this->LockCount = 0; /*0x4bb058*/
       (*((void (**)(DSurface *, unsigned int, unsigned int))DSurface_field_0x0 + 23))(this, 0, 0); /*0x4bb05b*/
       ++this->LockCount; /*0x4bb064*/
-      (*((void (**)(DSurface *))this->ptr_0 + 24))(this); /*0x4bb069*/
+      (*((void (**)(DSurface *))this->DSurface_field_0x0 + 24))(this); /*0x4bb069*/
       this->LockCount = DSurface_field_0xC; /*0x4bb06c*/
     }
   }
@@ -545,19 +545,19 @@ DSurface * * DSurface::Blit(int * a1, int * a2, unsigned int * a3, int * a4, DSu
     || (*(unsigned __int8 (**)(unsigned int *))(*a3 + 108))(a3) == 1
     || (unsigned char)a7 == 1
     || (v11 = (*(int (**)(unsigned int *))(*a3 + 112))(a3),
-        v12 = (*((int (**)(DSurface *))this->ptr_0 + 28))(this) == v11,
+        v12 = (*((int (**)(DSurface *))this->DSurface_field_0x0 + 28))(this) == v11,
         v10 = (void **)a3,
         !v12) )
   {
     v42 = 1; /*0x4bb19f*/
   }
-  if ( LOBYTE(this->DSurface_field_0x18) == 1 && g_DDraw_Initialized == 1 ) /*0x4bb1b1*/
+  if ( LOBYTE(this->u32_18) == 1 && g_DDraw_Initialized == 1 ) /*0x4bb1b1*/
     v13 = 0; /*0x4bb1b3*/
   else
     v13 = a8; /*0x4bb1b7*/
   if ( !v42 /*0x4bb1f8*/
     && v13 == 1
-    && (!(((this->DSurface_field_0x18) >> 8) & 0xFF)
+    && (!(((this->u32_18) >> 8) & 0xFF)
      || (*((unsigned __int8 (**)(void **))*v10 + 33))(v10) == 1 && !*((unsigned char *)v10 + 25))
     && aP5[2] == a2[2]
     && aP5[3] == a2[3] )
@@ -566,22 +566,22 @@ DSurface * * DSurface::Blit(int * a1, int * a2, unsigned int * a3, int * a4, DSu
   }
   if ( !g_DDraw_Initialized && !DataGlobal_A8EB00[640] ) /*0x4bb20f*/
     return 0; /*0x4bb20f*/
-  v14 = this->DSurface_field_0x1C; /*0x4bb215*/
-  if ( v14 && (*(int (**)(int))(*(unsigned int *)v14 + 96))(this->DSurface_field_0x1C) == -2005532222 ) /*0x4bb227*/
+  v14 = this->u32_1C; /*0x4bb215*/
+  if ( v14 && (*(int (**)(int))(*(unsigned int *)v14 + 96))(this->u32_1C) == -2005532222 ) /*0x4bb227*/
   {
-    if ( (*(int (**)(int))(*(unsigned int *)this->DSurface_field_0x1C + 108))(this->DSurface_field_0x1C) /*0x4bb240*/
-      || (*(int (**)(int))(*(unsigned int *)this->DSurface_field_0x1C + 96))(this->DSurface_field_0x1C) )
+    if ( (*(int (**)(int))(*(unsigned int *)this->u32_1C + 108))(this->u32_1C) /*0x4bb240*/
+      || (*(int (**)(int))(*(unsigned int *)this->u32_1C + 96))(this->u32_1C) )
     {
       return 0; /*0x4bb245*/
     }
     DSurface_field_0xC = this->LockCount; /*0x4bb250*/
     if ( (int)DSurface_field_0xC > 0 ) /*0x4bb254*/
     {
-      DSurface_field_0x0 = this->ptr_0; /*0x4bb256*/
+      DSurface_field_0x0 = this->DSurface_field_0x0; /*0x4bb256*/
       this->LockCount = 0; /*0x4bb25d*/
       (*((void (**)(DSurface *, unsigned int, unsigned int))DSurface_field_0x0 + 23))(this, 0, 0); /*0x4bb264*/
       ++this->LockCount; /*0x4bb26d*/
-      (*((void (**)(DSurface *))this->ptr_0 + 24))(this); /*0x4bb273*/
+      (*((void (**)(DSurface *))this->DSurface_field_0x0 + 24))(this); /*0x4bb273*/
       this->LockCount = DSurface_field_0xC; /*0x4bb27a*/
     }
   }
@@ -654,7 +654,7 @@ LABEL_53:
   v61 = Y; /*0x4bb40c*/
   v60 = X; /*0x4bb414*/
   v62 = Width; /*0x4bb418*/
-  v33 = (int (**)(DSurface *, int *))v48->ptr_0; /*0x4bb41c*/
+  v33 = (int (**)(DSurface *, int *))v48->DSurface_field_0x0; /*0x4bb41c*/
   v63 = v28; /*0x4bb426*/
   v34 = (int *)v33[30](v48, v68); /*0x4bb439*/
   (&v43)->Set(0, 0, 0, 0); /*0x4bb43b*/
@@ -713,8 +713,8 @@ LABEL_71:
     v43.Y = v61 + v57; /*0x4bb588*/
     v43.Height = v57 + v61 + v59; /*0x4bb5a0*/
     v43.Width = v56 + v60 + v58; /*0x4bb5a4*/
-    return (*(int (**)(int, unsigned int *, unsigned int, Rect *, int, unsigned int))(*(unsigned int *)v48->DSurface_field_0x1C + 20))( /*0x4bb5d5*/
-             v48->DSurface_field_0x1C,
+    return (*(int (**)(int, unsigned int *, unsigned int, Rect *, int, unsigned int))(*(unsigned int *)v48->u32_1C + 20))( /*0x4bb5d5*/
+             v48->u32_1C,
              v53,
              a3[7],
              &v43,
@@ -759,36 +759,36 @@ void* DSurface::FillRectEx(int a2, int a3, int a4)
   char v32[16]; // [esp+60h] [ebp-74h] BYREF
   unsigned int v33[25]; // [esp+70h] [ebp-64h] BYREF
 
-  if ( this->DSurface_field_0x1C && *(int *)(a3 + 8) > 0 && *(int *)(a3 + 12) > 0 ) /*0x4bb64d*/
+  if ( this->u32_1C && *(int *)(a3 + 8) > 0 && *(int *)(a3 + 12) > 0 ) /*0x4bb64d*/
   {
     if ( !LOBYTE(stru_820320.Start) /*0x4bb675*/
-      || (*((unsigned __int8 (**)(DSurface *))this->ptr_0 + 27))(this)
-      || (*(int (**)(int, int))(*(unsigned int *)this->DSurface_field_0x1C + 52))(
-           this->DSurface_field_0x1C,
+      || (*((unsigned __int8 (**)(DSurface *))this->DSurface_field_0x0 + 27))(this)
+      || (*(int (**)(int, int))(*(unsigned int *)this->u32_1C + 52))(
+           this->u32_1C,
            1) )
     {
       return ((XSurface *)this)->FillRectEx((unsigned int *)a2, (int *)a3, a4); /*0x4bb81d*/
     }
     if ( g_DDraw_Initialized || DataGlobal_A8EB00[640] ) /*0x4bb690*/
     {
-      v5 = this->DSurface_field_0x1C; /*0x4bb696*/
-      if ( !v5 || (*(int (**)(int))(*(unsigned int *)v5 + 96))(this->DSurface_field_0x1C) != -2005532222 ) /*0x4bb6a8*/
+      v5 = this->u32_1C; /*0x4bb696*/
+      if ( !v5 || (*(int (**)(int))(*(unsigned int *)v5 + 96))(this->u32_1C) != -2005532222 ) /*0x4bb6a8*/
         goto LABEL_15; /*0x4bb6a8*/
-      if ( !(*(int (**)(int))(*(unsigned int *)this->DSurface_field_0x1C + 108))(this->DSurface_field_0x1C) /*0x4bb6c1*/
-        && !(*(int (**)(int))(*(unsigned int *)this->DSurface_field_0x1C + 96))(this->DSurface_field_0x1C) )
+      if ( !(*(int (**)(int))(*(unsigned int *)this->u32_1C + 108))(this->u32_1C) /*0x4bb6c1*/
+        && !(*(int (**)(int))(*(unsigned int *)this->u32_1C + 96))(this->u32_1C) )
       {
               DSurface_field_0xC = this->LockCount; /*0x4bb6cc*/
               if ( (int)DSurface_field_0xC > 0 ) /*0x4bb6d1*/
               {
-          DSurface_field_0x0 = this->ptr_0; /*0x4bb6d3*/
+          DSurface_field_0x0 = this->DSurface_field_0x0; /*0x4bb6d3*/
           this->LockCount = 0; /*0x4bb6db*/
           (*((void (**)(DSurface *, unsigned int, unsigned int))DSurface_field_0x0 + 23))(this, 0, 0); /*0x4bb6de*/
           ++this->LockCount; /*0x4bb6e7*/
-          (*((void (**)(DSurface *))this->ptr_0 + 24))(this); /*0x4bb6ec*/
+          (*((void (**)(DSurface *))this->DSurface_field_0x0 + 24))(this); /*0x4bb6ec*/
           this->LockCount = DSurface_field_0xC; /*0x4bb6ef*/
             }
               LABEL_15:
-        v8 = (int *)(*((int (**)(DSurface *, char *))this->ptr_0 + 30))(this, v32); /*0x4bb6f2*/
+        v8 = (int *)(*((int (**)(DSurface *, char *))this->DSurface_field_0x0 + 30))(this, v32); /*0x4bb6f2*/
                 v9 = ClipRectIntersection(v31, (int *)a2, v8, 0, 0); /*0x4bb710*/
                 v30[0] = *v9; /*0x4bb719*/
                 v30[1] = v9->ptr_4; /*0x4bb722*/
@@ -817,7 +817,7 @@ void* DSurface::FillRectEx(int a2, int a3, int a4)
                 v28 = v22; /*0x4bb786*/
                 if ( v21 > 0 && v22 > 0 ) /*0x4bb792*/
               {
-          v23 = this->DSurface_field_0x1C; /*0x4bb79c*/
+          v23 = this->u32_1C; /*0x4bb79c*/
           v29[0] = v19; /*0x4bb79f*/
           v29[2] = v19 + v21; /*0x4bb7a3*/
           v29[3] = v20 + v22; /*0x4bb7a7*/
@@ -4165,21 +4165,21 @@ ObjectClass * *  DSurface::RenderToSurface(int *aP1)
     (*(void (**)(int *, int))(v9 + 8))(aP1, v10); /*0x5d1f12*/
     for ( i = 0; i < this->q028; ++i ) /*0x5d1f1c*/
     {
-      v12 = *(unsigned int *)(this->DSurface_field_0x1C + 4 * i); /*0x5d1f24*/
+      v12 = *(unsigned int *)(this->u32_1C + 4 * i); /*0x5d1f24*/
       (*(void (**)(int, int *, unsigned int))(*(unsigned int *)v12 + 20))(v12, aP1, 0); /*0x5d1f29*/
     }
     this->Width = 0; /*0x5d1f38*/
     v13 = (int *)aP1->GetThreatLevel(v25); /*0x5d1f44*/
     Surface::CopyRect((XSurface *)this, v13); /*0x5d1f4a*/
-    (*(void (**)(DSurface *, int *))&this->ptr_0->u32_4)(this, aP1); /*0x5d1f54*/
+    (*(void (**)(DSurface *, int *))&this->DSurface_field_0x0->u32_4)(this, aP1); /*0x5d1f54*/
   }
   result = this->q028; /*0x5d1f57*/
   for ( j = 0; j < result; ++j ) /*0x5d1f5e*/
   {
-    v16 = *(unsigned int *)(this->DSurface_field_0x1C + 4 * j); /*0x5d1f63*/
+    v16 = *(unsigned int *)(this->u32_1C + 4 * j); /*0x5d1f63*/
     if ( (*(unsigned __int8 (**)(int, int *, int *))(*(unsigned int *)v16 + 16))(v16, aP1, &v21) == 1 ) /*0x5d1f73*/
     {
-      v17 = *(void (****)(unsigned int, int))(this->DSurface_field_0x1C + 4 * j); /*0x5d1f78*/
+      v17 = *(void (****)(unsigned int, int))(this->u32_1C + 4 * j); /*0x5d1f78*/
       if ( v17 ) /*0x5d1f7d*/
         (**v17)(v17, 1); /*0x5d1f83*/
       DSurface_field_0x28 = this->q028; /*0x5d1f85*/
@@ -4189,7 +4189,7 @@ ObjectClass * *  DSurface::RenderToSurface(int *aP1)
         v20 = j; /*0x5d1f8f*/
         for ( this->q028 = v19; /*0x5d1f96*/
         v20 < this->q028;
-        *(unsigned int *)(this->DSurface_field_0x1C + 4 * v20 - 4) = *(unsigned int *)(this->DSurface_field_0x1C + 4 * v20) )
+        *(unsigned int *)(this->u32_1C + 4 * v20 - 4) = *(unsigned int *)(this->u32_1C + 4 * v20) )
         {
           ++v20; /*0x5d1f9b*/
         }
@@ -4430,7 +4430,7 @@ int DSurface::CommitBuffers()
     (*(void (__cdecl **)(DSurface *, int, unsigned int, unsigned int))&this->q044)(this, 3, this->u32_7B8, 0); /*0x7be0b8*/
   }
   v9 = 0; /*0x7be0c6*/
-  for ( i = this->u32_6E4; v9 < *&this->q0088; i = v11 ) /*0x7be0d1*/
+  for ( i = this->u32_6E4; v9 < *&this->u32_88; i = v11 ) /*0x7be0d1*/
   {
     if ( !i ) /*0x7be0d5*/
       break; /*0x7be0d5*/
@@ -4624,7 +4624,7 @@ int DSurface::Flip()
 
   int v2; // eax
 
-  if ( (this->q0084 & 1) != 0 && (this->u8_EA & 3) != 0 ) /*0x7c2c73*/
+  if ( (this->u32_84 & 1) != 0 && (this->u8_EA & 3) != 0 ) /*0x7c2c73*/
   {
     DSurface::LockAndPrepareRect(this); /*0x7c2c75*/
     if ( (this->u32_7BC & 0x40000000) != 0 ) /*0x7c2c84*/
@@ -4681,9 +4681,9 @@ int DSurface::BlitPart(int a2, int a3, int a4, int a5, int a6)
   unsigned char v11[28]; // [esp+Ch] [ebp-20h] BYREF
   unsigned char v12[4]; // [esp+28h] [ebp-4h] BYREF
 
-  DSurface_field_0x0 = (int (**)(DSurface *, int))this->ptr_0; /*0x4bb098*/
+  DSurface_field_0x0 = (int (**)(DSurface *, int))this->DSurface_field_0x0; /*0x4bb098*/
   v8 = (*(int (**)(int, unsigned char *, int, int, int))(*(unsigned int *)a3 + 120))(a3, v11, a4, a5, a6); /*0x4bb0a6*/
-  v9 = (*((int (**)(DSurface *, unsigned char *, int, int, int))this->ptr_0 + 30))( /*0x4bb0b9*/
+  v9 = (*((int (**)(DSurface *, unsigned char *, int, int, int))this->DSurface_field_0x0 + 30))( /*0x4bb0b9*/
          this,
          v12,
          a5,

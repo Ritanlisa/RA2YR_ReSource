@@ -7,16 +7,16 @@ namespace gamemd {
 struct ObjectClass;  // fix_fwd_type_supply (G42.33b2: ForEachReverse param)
 struct Array {
     unsigned int __pad_0;  // 0x0
-    int Array_field_0x4;  // 0x4
+    int q004;  // 0x4
     unsigned char q008[8];  // 0x8
-    unsigned int Array_field_0x10;  // 0x10
+    unsigned int u32_10;  // 0x10
     char __pad_14[24];  // 0x14
     int q02C;  // 0x2C
     char __pad_30[8];  // 0x30
     unsigned int u32_38;  // 0x38
     unsigned int u32_3C;  // 0x3C
     unsigned int u32_40;  // 0x40
-    unsigned int q0044;  // 0x44
+    unsigned int u32_44;  // 0x44
     char __pad_48[36];  // 0x48
     unsigned int u32_6C;  // 0x6C
     char __pad_70[116];  // 0x70

@@ -135,7 +135,7 @@ public:
     uint8_t     pad_55[24];         // +0x55..+0x6C
     uint8_t     TActionClass_field_6D;           // +0x6D (this+109)
     uint8_t     pad_6E[73];         // +0x6E..+0x8F
-    void*       TActionClass_field_90;           // +0x90 (this+144)
+    void*       Value;           // +0x90 (this+144)
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int ctor();  // 0x6DD000
     // --- gap2 auto-generated stub declarations (END) ---

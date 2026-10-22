@@ -2175,7 +2175,7 @@ LPDIRECTDRAW Surface::CreateSurfacePalette(AbstractClass * Src)
       v5 = (char *)&unk_89FC95; /*0x4a47b6*/
       do /*0x4a47e5*/
       {
-        v6 = (unsigned __int8)v4->ptr_0; /*0x4a47bf*/
+        v6 = (unsigned __int8)v4->q000; /*0x4a47bf*/
         v9 = v4->__pad_0[1]; /*0x4a47c5*/
         v7 = &v4->__pad_0[2]; /*0x4a47c9*/
         v5 += 4; /*0x4a47cc*/

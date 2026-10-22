@@ -122,7 +122,7 @@ bool LocomotionClass::Process()
 
   LocomotionClass::Init(this); /*0x69ec53*/
   this->u32_1C = 0; /*0x69ec5d*/
-  this->q020 = 0; /*0x69ec60*/
+  this->Powered = 0; /*0x69ec60*/
   v2 = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x69ec63*/
   this->u32_2C = 0; /*0x69ec69*/
   this->u32_24 = v2; /*0x69ec6c*/

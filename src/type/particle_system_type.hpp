@@ -44,15 +44,15 @@ protected:
 
 public:
     int ArrayIndex;
-    int ParticleSystemTypeClass_field_28C;
+    int q28C;
     int HoldsWhat;
     int SpawnCount;
     int SlowdownDistance;
-    int ParticleSystemTypeClass_field_29C;
-    int ParticleSystemTypeClass_field_2A0;
+    int q29C;
+    int q2A0;
     float Velocity;
-    float ParticleSystemTypeClass_field_float_2A4;
-    int ParticleSystemTypeClass_field_2AC;
+    float q2A4;
+    int q2AC;
     int ParticleSystemTypeClass_field_2B0;
     int DamageDelay;
     int WarheadKey;

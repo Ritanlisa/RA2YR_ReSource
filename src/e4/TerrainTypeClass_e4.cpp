@@ -147,7 +147,7 @@ unsigned int * TerrainTypeClass::Construct(int a2, unsigned char a3, unsigned ch
 } // namespace gamemd
 // 0x71DA80
 namespace gamemd {  // G42.18c ns repair
-TerrainTypeClass::TerrainTypeClass(char *Source, int aP1, int aP3, int a2, int a3, int a4, int a5, int a6, int a7, int aP2, int a1, int aP0)
+TerrainTypeClass::TerrainTypeClass(char *Source, TerrainTypeClass *aP1, int aP3, int a2, int a3, int a4, int a5, int a6, int a7, int aP2, int a1, int aP0)
 {
 
   int v3; // eax
@@ -175,7 +175,7 @@ TerrainTypeClass::TerrainTypeClass(char *Source, int aP1, int aP3, int a2, int a
   /* X11: ptr_0 install elided (qmark slot, RHS g_ptr_7F542C) */  /*0x71dafd*/
   /* X11: ptr_0 install elided (qmark slot, RHS g_ptr_7F542C) */  /*0x71db03*/
   /* X11: ptr_0 install elided (qmark slot, RHS g_ptr_7F542C) */  /*0x71db0a*/
-  AbstractClass::GenerateUniqueID((AbstractClass *)&aP1->vtable2); /*0x71db11*/
+  AbstractClass::GenerateUniqueID((AbstractClass *)&aP1->vfptr1); /*0x71db11*/
   aP1->Selectable[0] = 0; /*0x71db18*/
   aP1->IsLogic[0] = 1; /*0x71db1e*/
   aP1->RadarInvisible[0] = 1; /*0x71db24*/
@@ -193,7 +193,7 @@ TerrainTypeClass::TerrainTypeClass(char *Source, int aP1, int aP3, int a2, int a
         !v4) )
   {
     dword_A8E328 = v3 + 1; /*0x71db79*/
-    *((unsigned int *)dword_A8E31C + v3) = aP1; /*0x71db83*/
+    *((TerrainTypeClass **)dword_A8E31C + v3) = aP1; /*0x71db83*/
     v3 = dword_A8E328; /*0x71db86*/
   }
   v5 = 0; /*0x71db8b*/

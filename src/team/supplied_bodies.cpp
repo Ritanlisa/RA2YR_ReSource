@@ -162,7 +162,7 @@ char TriggerTypeClass::SaveToINI(char * a2) {
   v4 = (void *)this->u32_DC; /*0x41fb2e*/
   if ( v4 ) /*0x41fb37*/
     v12 = (char *)v4 + 36; /*0x41fb3c*/
-  v5 = this->FootClass_E0; /*0x41fb40*/
+  v5 = this->u32_E0; /*0x41fb40*/
   if ( v5 ) /*0x41fb48*/
     v13 = (const char *)(v5 + 36); /*0x41fb4d*/
   if ( this->MustTransfer == 1 ) /*0x41fb58*/
@@ -1598,7 +1598,7 @@ int TriggerClass::EvaluateCondition(void *a2, int a3, int a4) {
   v7 = 1; /*0x41e74e*/
   if ( !v5 || !*(unsigned char *)(v5 + 246) ) /*0x41e730*/
   {
-    v6 = this->FootClass_E0; /*0x41e73a*/
+    v6 = this->u32_E0; /*0x41e73a*/
     if ( !v6 || !*(unsigned char *)(v6 + 246) ) /*0x41e744*/
       v7 = 0; /*0x41e738*/
   }
@@ -1742,14 +1742,14 @@ LABEL_70:
   result = globalHelper_01FEE0(this->u32_DC, v8, a3); /*0x41e9ea*/
   if ( result ) /*0x41e9fc*/
   {
-    v16 = this->FootClass_E0; /*0x41ea05*/
+    v16 = this->u32_E0; /*0x41ea05*/
     if ( !v16 || (result = globalHelper_01FEE0(v16, v8, a3)) != 0 ) /*0x41ea1b*/
     {
       result = TriggerClass::ValidateTeamTriggerConditions(v8, this->u32_DC); /*0x41ea2d*/
       if ( result ) /*0x41ea34*/
       {
-        if ( !this->FootClass_E0 /*0x41ea51*/
-          || (result = TriggerClass::ValidateTeamTriggerConditions(v8, this->FootClass_E0)) != 0 )
+        if ( !this->u32_E0 /*0x41ea51*/
+          || (result = TriggerClass::ValidateTeamTriggerConditions(v8, this->u32_E0)) != 0 )
         {
           v17 = this->u32_DC; /*0x41ea5a*/
           if ( v17 /*0x41ea82*/
@@ -1760,10 +1760,10 @@ LABEL_70:
           }
           else
           {
-            v18 = this->FootClass_E0; /*0x41ea8d*/
+            v18 = this->u32_E0; /*0x41ea8d*/
             return !v18 /*0x41eaba*/
                 || *(int *)(v18 + 184) < 0
-                || TeamClass::CountActiveTeamsForType((TeamClass *)v8, this->FootClass_E0) < *(unsigned int *)(this->FootClass_E0 + 184);
+                || TeamClass::CountActiveTeamsForType((TeamClass *)v8, this->u32_E0) < *(unsigned int *)(this->u32_E0 + 184);
           }
         }
       }
@@ -3550,7 +3550,7 @@ int TriggerClass::Construct(int a2) {
   this->house = 0; /*0x725fb5*/
   this->ptr_C = 0; /*0x725fb8*/
   v3 = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x725fbb*/
-  this->q03C = 0; /*0x725fc1*/
+  this->u32_3C = 0; /*0x725fc1*/
   this->timer = v3; /*0x725fc4*/
   this->occuredEvents = 0; /*0x725fc7*/
   this->enabled = 1; /*0x725fca*/

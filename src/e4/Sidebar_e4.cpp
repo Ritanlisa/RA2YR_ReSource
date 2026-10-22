@@ -380,7 +380,7 @@ TechnoClass * * Sidebar::CancelSidebarProductionQueue(int * Block)
     if ( Value == -1 ) /*0x63633c*/
       v6 = 0; /*0x63633e*/
     else
-      v6 = *(void **)(v4->Array_field_0x4 + 4 * Value); /*0x636345*/
+      v6 = *(void **)(v4->q004 + 4 * Value); /*0x636345*/
     Block = v6; /*0x63634a*/
     if ( v6 ) /*0x63634e*/
     {
@@ -390,7 +390,7 @@ TechnoClass * * Sidebar::CancelSidebarProductionQueue(int * Block)
       if ( v7 != -1 ) /*0x636377*/
         Vector4::EraseAt_Copy((Vector4 *)v4, v7); /*0x63637c*/
       __3_YAXPAX_Z(Block); /*0x636386*/
-      if ( !v4->Array_field_0x10 && v4 ) /*0x636397*/
+      if ( !v4->u32_10 && v4 ) /*0x636397*/
         FactoryClass::RemoveFromArrays((FactoryClass *)v4, 1); /*0x63639d*/
     }
   }

@@ -1045,9 +1045,9 @@ SessionClass::SessionClass()
 
   this->MPGameMode = 0; /*0x6970b8*/
   this->SkirmishPreferences = 0; /*0x6970bb*/
-  this->u32_190 = 0; /*0x6970c1*/
-  this->u32_194 = 1; /*0x6970c7*/
-  this->u32_198 = 10000; /*0x6970cd*/
+  this->Color2 = 0; /*0x6970c1*/
+  this->Side = 1; /*0x6970c7*/
+  this->Side2 = 10000; /*0x6970cd*/
   this->ptr_67 = 10; /*0x6970d3*/
   this->u32_680 = 1; /*0x6970d9*/
   this->u32_684 = 1; /*0x6970df*/
@@ -1070,7 +1070,7 @@ SessionClass::SessionClass()
   this->u32_20C = 0; /*0x697116*/
   this->u32_210 = 1; /*0x69711c*/
   this->u32_214 = 10000; /*0x697122*/
-  this->u32_218 = 10; /*0x697128*/
+  this->LANPreferences = 10; /*0x697128*/
   this->u32_870 = 1; /*0x69712e*/
   this->u32_874 = 1; /*0x697135*/
   this->u32_878 = 1; /*0x69713c*/
@@ -1091,7 +1091,7 @@ SessionClass::SessionClass()
   this->u32_288 = 0; /*0x697170*/
   this->u32_28C = 1; /*0x697176*/
   this->u32_290 = 10000; /*0x69717c*/
-  this->u32_294 = 10; /*0x697182*/
+  this->WOLPreferences = 10; /*0x697182*/
   this->u32_A60 = 1; /*0x697188*/
   this->u32_A64 = 1; /*0x69718f*/
   this->u32_A68 = 1; /*0x697196*/
@@ -1207,7 +1207,7 @@ SessionClass::SessionClass()
   this->u32_C320 = 0; /*0x6973f1*/
   *(unsigned int *)this = 0; /*0x6973fc*/
   this->SessionClass_field_14 = 2; /*0x6973ff*/
-  this->u32_1C = 0; /*0x697402*/
+  this->unknown_14 = 0; /*0x697402*/
   *(&this->SessionClass_field_0C2) = 1; /*0x697405*/
   this->u32_24 = 0; /*0x697409*/
   *(&this->SessionClass_field_100) = 0; /*0x69740c*/
@@ -1275,10 +1275,10 @@ SessionClass::SessionClass()
   this->u32_1A24 = 0; /*0x6975a5*/
   this->u32_1A28 = 0; /*0x6975b0*/
   this->SessionClass_field_310 = 8; /*0x6975b6*/
-  this->u32_318 = 15; /*0x6975c0*/
+  this->WOLLimitResolution = 15; /*0x6975c0*/
   this->u32_330 = 15; /*0x6975c6*/
   this->u32_314 = 0; /*0x6975cc*/
-  this->u32_31C = 5; /*0x6975df*/
+  this->LastNickSlot = 5; /*0x6975df*/
   memset(this->q339 + 3), 0, 0x340u); /*0x6975e9*/
   int v13 = this->u32_1FBC; // eax /*0x6975eb*/
   int v14 = this->u32_2354; // edx /*0x6975f1*/
@@ -1326,7 +1326,7 @@ SessionClass::SessionClass()
   this->u32_30D0 = 0; /*0x697763*/
   this->u32_30D4 = 0; /*0x697769*/
   this->u32_A1E0 = 0; /*0x69776f*/
-  this->u32_3C = 0; /*0x697775*/
+  this->UniqueID = 0; /*0x697775*/
   int v16 = 8; // ecx /*0x697778*/
   do /*0x69778e*/
   {

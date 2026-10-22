@@ -3438,7 +3438,7 @@ unsigned int * unknown::QueryInterface(char a2) {
   this->Capacity = 0; /*0x58a451*/
   if ( (a2 & 1) != 0 ) /*0x58a458*/
     operator delete((this)); /*0x58a45b*/
-  return this->ptr_0; /*0x58a465*/
+  return this->m_Data; /*0x58a465*/
 }
 } // namespace gamemd
 
@@ -4337,11 +4337,11 @@ int RandomStraw::Release(int a2, int a3) {
     return Delegate::Invoke((Straw *)this, a2, a3); /*0x661c5d*/
   do /*0x661c4d*/
   {
-    v6 = this->Delegate_field_10; /*0x661c30*/
-    this->Delegate_field_10 = v6 + 1; /*0x661c38*/
+    v6 = this->q010; /*0x661c30*/
+    this->q010 = v6 + 1; /*0x661c38*/
     *v4++ = RandomStraw::AdvanceState((RandomStraw *)this->q010 * v6 + 20)); /*0x661c40*/
     --v3; /*0x661c49*/
-    this->Delegate_field_10 &= 0x1Fu; /*0x661c4a*/
+    this->q010 &= 0x1Fu; /*0x661c4a*/
   }
   while ( v3 ); /*0x661c4d*/
   return a3; /*0x661c53*/
@@ -4353,7 +4353,7 @@ namespace gamemd {
 int * RandomStraw::QueryInterface(char a2) {
   /* X11: ptr_0 install elided (implicit via class virtuals 0x661c7e) — binary-proven install, was 0 */
   this->m_allocated = 0; /*0x661c84*/
-  this->Delegate_field_10 = 0; /*0x661c87*/
+  this->q010 = 0; /*0x661c87*/
   memset(this->q010, 0, 0x100u); /*0x661c8a*/
   Straw::Dtor((Straw *)this); /*0x661c8e*/
   if ( (a2 & 1) != 0 ) /*0x661c98*/
@@ -4647,7 +4647,7 @@ unsigned int * COMClass::getInterface(char a2) {
   void (__thiscall ***v3)(unsigned int, int); // ecx
 
   v3 = *(void (__thiscall ****)(unsigned int, int))&this->Items; /*0x765c23*/
-  *(unsigned int *)this->ptr_1 = 0; /*0x765c26*/
+  *(unsigned int *)this->m_1 = 0; /*0x765c26*/
   if ( v3 && (this->IsAllocated) ) /*0x765c30*/
   {
     (**v3)(v3, 3); /*0x765c3f*/

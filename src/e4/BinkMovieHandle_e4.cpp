@@ -125,14 +125,14 @@ unsigned int * BinkMovieHandle::CopyFrameToSurface()
     v4 = Rect.top + this->currentFrame; /*0x4330ae*/
     width = (DSurface *)this->width; /*0x4330b0*/
     ((BinkMovie *)this)->AdjustSurfaceFormat((int)width); /*0x4330b4*/
-    v12 = (*((int (**)(DSurface *, unsigned int, unsigned int))width->ptr_0 + 23))(width, 0, 0); /*0x4330c8*/
+    v12 = (*((int (**)(DSurface *, unsigned int, unsigned int))width->DSurface_field_0x0 + 23))(width, 0, 0); /*0x4330c8*/
     if ( v12 ) /*0x4330cc*/
     {
-      v10 = (*((int (**)(DSurface *))width->ptr_0 + 29))(width); /*0x4330dd*/
-      v5 = (*((int (**)(DSurface *))width->ptr_0 + 32))(width); /*0x4330e1*/
+      v10 = (*((int (**)(DSurface *))width->DSurface_field_0x0 + 29))(width); /*0x4330dd*/
+      v5 = (*((int (**)(DSurface *))width->DSurface_field_0x0 + 32))(width); /*0x4330e1*/
       BinkCopyToBuffer(this->tempPath, v12, v10, v5, v3, v4, (int)this->renderTarget | 0x80000000); /*0x4330fe*/
       LABEL_6:
-      (*((void (**)(DSurface *))width->ptr_0 + 24))(width); /*0x43315b*/
+      (*((void (**)(DSurface *))width->DSurface_field_0x0 + 24))(width); /*0x43315b*/
     }
   }
   else
@@ -140,11 +140,11 @@ unsigned int * BinkMovieHandle::CopyFrameToSurface()
     currentFrame = this->currentFrame; /*0x433103*/
     height = this->height; /*0x433109*/
     ((BinkMovie *)this)->AdjustSurfaceFormat(this->width); /*0x43310d*/
-    v7 = (*((int (**)(DSurface *, unsigned int, unsigned int))width->ptr_0 + 23))(width, 0, 0); /*0x43311f*/
+    v7 = (*((int (**)(DSurface *, unsigned int, unsigned int))width->DSurface_field_0x0 + 23))(width, 0, 0); /*0x43311f*/
     if ( v7 ) /*0x433123*/
     {
-      v11 = (*((int (**)(DSurface *))width->ptr_0 + 29))(width); /*0x433130*/
-      v8 = (*((int (**)(DSurface *))width->ptr_0 + 32))(width); /*0x433134*/
+      v11 = (*((int (**)(DSurface *))width->DSurface_field_0x0 + 29))(width); /*0x433130*/
+      v8 = (*((int (**)(DSurface *))width->DSurface_field_0x0 + 32))(width); /*0x433134*/
       BinkCopyToBuffer(this->tempPath, v7, v11, v8, height, currentFrame, (int)this->renderTarget | 0x80000000); /*0x433155*/
       goto LABEL_6; /*0x433155*/
     }

@@ -33,7 +33,7 @@ int AudioMixer::PlaySample(void *a1)
   int v19; // eax
 
   int AudioMixer_field_08; // eax
-  AudioMixer_field_08 = this->AudioMixer_field_08; /*0x4071c7*/
+  AudioMixer_field_08 = this->ptr_8; /*0x4071c7*/
   int AudioMixer_field_04; // ecx
   AudioMixer_field_04 = this->AudioMixer_field_04; /*0x4071ca*/
   int v4 = AudioMixer_field_08 - AudioMixer_field_04; // ebx /*0x4071cf*/

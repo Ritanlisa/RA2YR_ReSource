@@ -1110,7 +1110,7 @@ char ExecutePlanningQueue()
       if ( Value == -1 ) /*0x6372dc*/
         v8 = 0; /*0x6372de*/
       else
-        v8 = *(unsigned __int8 ***)(v6->Array_field_0x4 + 4 * Value); /*0x6372e5*/
+        v8 = *(unsigned __int8 ***)(v6->q004 + 4 * Value); /*0x6372e5*/
       v9 = v8[1]; /*0x6372e8*/
       memcpy(v35, v9, sizeof(v35)); /*0x6372f4*/
       v9 += 108; /*0x6372f4*/
@@ -1673,7 +1673,7 @@ int FactoryClass_ClearProduction(unsigned int * a1, int a2)
               if ( Value == -1 ) /*0x638755*/
                 v11 = 0; /*0x638757*/
               else
-                v11 = *(void **)(v9->Array_field_0x4 + 4 * Value); /*0x63875e*/
+                v11 = *(void **)(v9->q004 + 4 * Value); /*0x63875e*/
               Block = v11; /*0x638763*/
               if ( v11 ) /*0x638767*/
               {
@@ -1681,7 +1681,7 @@ int FactoryClass_ClearProduction(unsigned int * a1, int a2)
                 __3_YAXPAX_Z(*((void **)Block + 1)); /*0x638779*/
                 FactoryClass::RemoveItemAt((FactoryClass *)v9, (int)&Block); /*0x638788*/
                 __3_YAXPAX_Z(Block); /*0x638792*/
-                if ( !v9->Array_field_0x10 ) /*0x638797*/
+                if ( !v9->u32_10 ) /*0x638797*/
                 {
                   if ( v9 ) /*0x6387a3*/
                     FactoryClass::RemoveFromArrays((FactoryClass *)v9, 1); /*0x6387a9*/

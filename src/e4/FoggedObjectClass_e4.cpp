@@ -10,6 +10,7 @@
 #include "e4/classes/Power_e4.hpp"
 #include "e4/classes/Vector_e4.hpp"
 #include "e4/classes/FoggedObjectClass_e4.hpp"
+#include "e4/classes/DynamicVectorClass_PAD_16_e4.hpp"  // X114: Read receiver (raw _DynamicVectorClass_UDrawRecord_*)
 #include "e4/classes/BuildingClass_e4.hpp"
 #include "e4/classes/Frame_e4.hpp"
 #include "e4/classes/Math_e4.hpp"
@@ -940,7 +941,7 @@ AbstractClass * * FoggedObjectClass::ResizeArray(int a2, char * a3)
 } // namespace gamemd
 // 0x4D2CD0
 namespace gamemd {
-int FoggedObjectClass::Read(unsigned int * a2, void *a2_2, void *a3)
+int FoggedObjectClass::Read(unsigned int * a2, DynamicVectorClass_PAD_16 *a2_2, void *a3)
 {
 
   int v2; // edx
@@ -949,7 +950,7 @@ int FoggedObjectClass::Read(unsigned int * a2, void *a2_2, void *a3)
   if ( v2 <= 0 ) /*0x4d2cdb*/
     return -1; /*0x4d2cfc*/
   unsigned int *i; // ecx
-  for ( i = *(unsigned int **)&a2_2->vtable2; *i != *a2_2 || i[1] != a2_2[1]; i += 4 ) /*0x4d2ce1*/
+  for ( i = *(unsigned int **)&a2_2->Items; *i != *a2 || i[1] != a2[1]; i += 4 ) /*0x4d2ce1*/
   {
     if ( ++result >= v2 ) /*0x4d2cfa*/
       return -1; /*0x4d2cfa*/

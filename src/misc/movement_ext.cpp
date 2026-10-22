@@ -13,13 +13,13 @@ void MoveFeedback::ClearBuffer()
   void *v2; // eax
 
   v2 = (void *)(*&this->m_Capacity); /*0x40b646*/
-  this->m_10 = 0; /*0x40b649*/
+  this->q010 = 0; /*0x40b649*/
   if ( v2 && (this->IsAllocated) ) /*0x40b650*/
   {
     operator delete((v2)); /*0x40b656*/
     *&this->m_Capacity = 0; /*0x40b65e*/
   }
   (this->IsAllocated) = 0; /*0x40b661*/
-  this->m_8 = 0; /*0x40b664*/
+  this->q008 = 0; /*0x40b664*/
 }
 } // namespace gamemd

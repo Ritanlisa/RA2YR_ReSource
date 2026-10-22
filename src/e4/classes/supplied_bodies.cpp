@@ -246,7 +246,7 @@ int ScriptAction::ClassifyAction(int *a1, char *a2)
   if ( Value == -1 ) /*0x638d51*/
     v9 = 0; /*0x638d53*/
   else
-    v9 = *(unsigned __int8 ***)(v7->Array_field_0x4 + 4 * Value); /*0x638d5a*/
+    v9 = *(unsigned __int8 ***)(v7->q004 + 4 * Value); /*0x638d5a*/
   v10 = v9[1]; /*0x638d5d*/
   memcpy(v11, v10, sizeof(v11)); /*0x638d69*/
   v10 += 108; /*0x638d69*/
@@ -839,7 +839,7 @@ char ScriptAction::ProcessIdleAction()
   v74[2] = v4[2]; /*0x63b59d*/
   Coord::To_Screen((Coord *)g_TacticalClass_Instance, v74, (int *)v61); /*0x63b5a4*/
   v62 += dword_886FA4; /*0x63b5c1*/
-  v60.Coord3D_field_0x04 = v62; /*0x63b5c5*/
+  v60.q004 = v62; /*0x63b5c5*/
   *(unsigned int *)v61 += DSurface_ViewBounds.field_0; /*0x63b5ce*/
   *(unsigned int *)v60.__pad_0 = *(unsigned int *)v61; /*0x63b5d2*/
   v5 = (BuildingClass *)PackRGBFromBytes(&stru_A83CD9); /*0x63b5dd*/
@@ -880,7 +880,7 @@ LABEL_7:
     {
       v11 = (unsigned int *)(*(int (**)(ScriptAction *, ArrayClass **))(*(unsigned int *)this->__pad_0 + 88))(this, &v70); /*0x63b6e3*/
       *(unsigned int *)v55.__pad_0 = *v11; /*0x63b6e8*/
-      v55.Coord3D_field_0x04 = v11[1]; /*0x63b6ef*/
+      v55.q004 = v11[1]; /*0x63b6ef*/
       Coord3D_field_0x08 = v11[2]; /*0x63b6f3*/
     }
     else
@@ -895,7 +895,7 @@ LABEL_7:
     v58 += dword_886FA4; /*0x63b741*/
     Viewport = (Coord3D *)Display::GetViewport((Display *)&v72); /*0x63b745*/
     v55 = *Viewport; /*0x63b74c*/
-    v56 = *Viewport->Coord3D_field_0x04.__pad_0; /*0x63b76f*/
+    v56 = *Viewport->q004.__pad_0; /*0x63b76f*/
     v16 = ComputeBounds(&v72, 6, *(int *)v61, v62); /*0x63b778*/
     v63 = *v16; /*0x63b77f*/
     v64 = v16->u32_4; /*0x63b787*/
@@ -922,7 +922,7 @@ LABEL_7:
 LABEL_32:
         v24 = (Coord3D *)Display::GetViewport((Display *)&v72); /*0x63b8ac*/
         v55 = *v24; /*0x63b8b7*/
-        v56 = *v24->Coord3D_field_0x04.__pad_0; /*0x63b8d5*/
+        v56 = *v24->q004.__pad_0; /*0x63b8d5*/
         v25 = ComputeBounds(&v72, 6, (int)v14, v13); /*0x63b8de*/
         v63 = *v25; /*0x63b8e5*/
         v64 = v25[1]; /*0x63b8ed*/
@@ -942,13 +942,13 @@ LABEL_32:
       *(unsigned int *)v60.__pad_0 = *(unsigned int *)v61; /*0x63b801*/
       v70 = v14; /*0x63b813*/
       v71 = v13; /*0x63b817*/
-      v60.Coord3D_field_0x04 = v62; /*0x63b81b*/
+      v60.q004 = v62; /*0x63b81b*/
       v19 = Coord2D::Sub((Coord2D *)&v60, (int *)v55.__pad_0, &v70); /*0x63b81f*/
       Vector::TwoDMagnitudeMath((Vector *)v19); /*0x63b826*/
       if ( v20 >= 37 ) /*0x63b82e*/
       {
         v21 = (int)&v70->__pad_0[*(unsigned int *)v60.__pad_0] / 2 - 10; /*0x63b857*/
-        v22 = (v71 + v60.Coord3D_field_0x04) / 2 - 10; /*0x63b85a*/
+        v22 = (v71 + v60.q004) / 2 - 10; /*0x63b85a*/
         v23 = Display::GetViewport((Display *)&v72); /*0x63b85d*/
         v63 = *v23; /*0x63b864*/
         v64 = v23[1]; /*0x63b86f*/
@@ -995,7 +995,7 @@ LABEL_32:
     Coord2D_field_0x04 = v33[1].Coord2D_field_0x04; /*0x63b9d6*/
     v34 = (Coord3D *)ComputeBounds(&v72, 6, v31, v32); /*0x63b9da*/
     v55 = *v34; /*0x63b9e1*/
-    v56 = *v34->Coord3D_field_0x04.__pad_0; /*0x63b9fd*/
+    v56 = *v34->q004.__pad_0; /*0x63b9fd*/
     LOBYTE(updated) = (*(char (**)(AudioStream *, Coord2D *, Coord3D *, BuildingClass *))(*(unsigned int *)DSurface_Composite->__pad_0 + 84))( /*0x63ba0d*/
                         DSurface_Composite,
                         &v67,
@@ -1009,7 +1009,7 @@ LABEL_32:
   Coord2D_field_0x04 = v35[1].Coord2D_field_0x04; /*0x63ba44*/
   v36 = (Coord3D *)ComputeBounds(&v72, 6, *(int *)v61, v62); /*0x63ba55*/
   v55 = *v36; /*0x63ba5c*/
-  v56 = *v36->Coord3D_field_0x04.__pad_0; /*0x63ba78*/
+  v56 = *v36->q004.__pad_0; /*0x63ba78*/
   (*(void (**)(AudioStream *, Coord2D *, Coord3D *, BuildingClass *))(*(unsigned int *)DSurface_Composite->__pad_0 /*0x63ba88*/
                                                                                + 84))(
     DSurface_Composite,
@@ -1034,7 +1034,7 @@ LABEL_32:
 LABEL_44:
     if ( v38 != -1 ) /*0x63baf6*/
     {
-      v55.Coord3D_field_0x04 = v58; /*0x63bb08*/
+      v55.q004 = v58; /*0x63bb08*/
       *(unsigned int *)v67.__pad_0 = *(unsigned int *)v61; /*0x63bb0c*/
       *(unsigned int *)v55.__pad_0 = v31; /*0x63bb1e*/
       v67.Coord2D_field_0x04 = v62; /*0x63bb22*/
@@ -1043,7 +1043,7 @@ LABEL_44:
       if ( v40 >= 37 ) /*0x63bb35*/
       {
         v41 = (*(unsigned int *)v55.__pad_0 + *(unsigned int *)v67.__pad_0) / 2 - 10; /*0x63bb61*/
-        v42 = (v67.Coord2D_field_0x04 + v55.Coord3D_field_0x04) / 2 - 10; /*0x63bb64*/
+        v42 = (v67.Coord2D_field_0x04 + v55.q004) / 2 - 10; /*0x63bb64*/
         v73 = *(Rect *)Display::GetViewport(v61); /*0x63bb6e*/
         Rect::Set(&v72, v41, v42, 21, 21); /*0x63bba0*/
         (*(void (**)(AudioStream *, Rect *, Rect *, BuildingClass *))(*(unsigned int *)DSurface_Composite->__pad_0 /*0x63bbbb*/
@@ -1059,7 +1059,7 @@ LABEL_44:
   v43 = (Coord3D *)Display::GetViewport((Display *)&v72); /*0x63bbc2*/
   v44 = v58; /*0x63bbcd*/
   v55 = *v43; /*0x63bbd1*/
-  v56 = *v43->Coord3D_field_0x04.__pad_0; /*0x63bbef*/
+  v56 = *v43->q004.__pad_0; /*0x63bbef*/
   v73 = *(Rect *)ComputeBounds(&v72, 6, v31, v58); /*0x63bbff*/
   (*(void (**)(AudioStream *, Coord3D *, Rect *, BuildingClass *))(*(unsigned int *)DSurface_Composite->__pad_0 + 84))( /*0x63bc3a*/
     DSurface_Composite,
@@ -1071,26 +1071,26 @@ LABEL_44:
     v55 = *(Coord3D *)(*(int (**)(ScriptAction *, Coord2D *))(*(unsigned int *)this->__pad_0 + 1208))(this, &v67); /*0x63bc5b*/
     Coord::To_Screen((Coord *)g_TacticalClass_Instance, &v55, (int *)v60.__pad_0); /*0x63bc7d*/
     v45 = DSurface_ViewBounds.field_0 + *(unsigned int *)v60.__pad_0; /*0x63bc98*/
-    v60.Coord3D_field_0x04 += dword_886FA4; /*0x63bc9a*/
+    v60.q004 += dword_886FA4; /*0x63bc9a*/
     DrawTacticalFillScanline( /*0x63bcad*/
       3,
       (int)v6,
       v31,
       v58,
       DSurface_ViewBounds.field_0 + *(unsigned int *)v60.__pad_0,
-      v60.Coord3D_field_0x04);
+      v60.q004);
     if ( (*(int (**)(ScriptAction *))(*(unsigned int *)this->__pad_0 + 1204))(this) == 29 /*0x63bcca*/
       && Factory::IdleHandler() != -1 )
     {
-      BuildingClass::DrawSelectionBlip(v6, v31, v58, v45, v60.Coord3D_field_0x04); /*0x63bcda*/
+      BuildingClass::DrawSelectionBlip(v6, v31, v58, v45, v60.q004); /*0x63bcda*/
     }
-    (updated) = ((updated) & ~0xFF) | ((DSurface::DrawMarker((DSurface *)v6, v45, v60.Coord3D_field_0x04)) & 0xFF); /*0x63bce7*/
+    (updated) = ((updated) & ~0xFF) | ((DSurface::DrawMarker((DSurface *)v6, v45, v60.q004)) & 0xFF); /*0x63bce7*/
     return updated; /*0x63bcf6*/
   }
   (updated) = ((updated) & ~0xFF) | ((v53) & 0xFF); /*0x63bcf7*/
   if ( !v53 ) /*0x63bcfd*/
     return updated; /*0x63bcfd*/
-  v60.Coord3D_field_0x04 = v44; /*0x63bd03*/
+  v60.q004 = v44; /*0x63bd03*/
   Type = v70; /*0x63bd07*/
   *(unsigned int *)v60.__pad_0 = v31; /*0x63bd0b*/
   v57 = 3; /*0x63bd0f*/
@@ -1110,8 +1110,8 @@ LABEL_55:
     v48 = *(unsigned int *)v61; /*0x63bd6d*/
     v62 = v51[1]; /*0x63bd72*/
   }
-  DSurface::DrawMarker((DSurface *)v6, *(int *)v60.__pad_0, v60.Coord3D_field_0x04); /*0x63bd82*/
-  DrawTacticalFillScanline(v57, (int)v6, *(int *)v60.__pad_0, v60.Coord3D_field_0x04, v48, v62); /*0x63bd9d*/
+  DSurface::DrawMarker((DSurface *)v6, *(int *)v60.__pad_0, v60.q004); /*0x63bd82*/
+  DrawTacticalFillScanline(v57, (int)v6, *(int *)v60.__pad_0, v60.q004, v48, v62); /*0x63bd9d*/
   if ( v50 ) /*0x63bda4*/
     DSurface::DrawMarker((DSurface *)v6, v48, v62); /*0x63bdae*/
   memcpy(v75, (const void *)BuildingClass::CopyTypeDataForRender((BuildingClass *)v70, (int)v76, (int)this), 0x6Fu); /*0x63bdd3*/
@@ -1120,7 +1120,7 @@ LABEL_55:
     LOBYTE(updated) = BuildingClass::DrawSelectionBlip( /*0x63bdff*/
                         v6,
                         *(int *)v60.__pad_0,
-                        v60.Coord3D_field_0x04,
+                        v60.q004,
                         *(int *)v61,
                         v62);
   return updated; /*0x63b914*/

@@ -59,6 +59,6 @@ struct MSEngine {
     CampaignClass * Constructor(unsigned int * Block, char a2, void *a3_1, void *a4 = 0);  // 0x5AD520
     unsigned int  PointerToIndex(int a2);  // 0x5AC550
     unsigned int  Run(int a2);  // 0x5ACEB0
-    void DestroyData(void *a1_1);  // 0x5D5850
+    void DestroyData(MSEngine *a1_1);  // 0x5D5850 (raw thiscall this=MSEngine)
 };
 } // namespace gamemd

@@ -22,7 +22,7 @@ int Array::GetClamped(int aP1)
   int v3; // edx
   int v4; // eax
 
-  result = this->q0044; /*0x557ac0*/
+  result = this->u32_44; /*0x557ac0*/
   if ( result ) /*0x557ac5*/
   {
     v3 = aP1; /*0x557aca*/
@@ -41,13 +41,13 @@ int Array::FindValue(int aP1, void *a2)
 
 
   void *Array_field_0x10; // esi
-  Array_field_0x10 = (void *)(this->Array_field_0x10); /*0x634292*/
+  Array_field_0x10 = (void *)(this->u32_10); /*0x634292*/
   int result = -1; // eax /*0x634295*/
   int v4 = 0; // edx /*0x634298*/
   if ( (int)Array_field_0x10 > 0 ) /*0x63429d*/
   {
     unsigned int **i; // ecx
-    for ( i = (unsigned int **)this->Array_field_0x4; **i != aP1; ++i ) /*0x63429f*/
+    for ( i = (unsigned int **)this->q004; **i != aP1; ++i ) /*0x63429f*/
     {
       if ( ++v4 >= (int)Array_field_0x10 ) /*0x6342b2*/
         return result; /*0x6342b2*/
@@ -231,7 +231,7 @@ AbstractClass * * Array::InsertElement(const void *a1, int aP2, void *a3)
     v4 = v5; /*0x7ad7a4*/
   }
   void *Array_field_0x4; // eax
-  Array_field_0x4 = (void *)(this->Array_field_0x4); /*0x7ad7a6*/
+  Array_field_0x4 = (void *)(this->q004); /*0x7ad7a6*/
   if ( v4 >= (int)Array_field_0x4 && v5 >= (int)Array_field_0x4 ) /*0x7ad7b4*/
   {
     int v7 = 2 * v5; // ebp /*0x7ad7b6*/
@@ -249,11 +249,11 @@ AbstractClass * * Array::InsertElement(const void *a1, int aP2, void *a3)
     __3_YAXPAX_Z(*(void **)this->q008); /*0x7ad81c*/
     v4 = aP2; /*0x7ad825*/
     *(unsigned int *)this->q008 = (unsigned int)(v16); /*0x7ad82c*/
-    this->Array_field_0x4 = (int)((void *)v7); /*0x7ad82f*/
+    this->q004 = (int)((void *)v7); /*0x7ad82f*/
   }
   int v10; // eax
   v10 = this->__pad_0; /*0x7ad832*/
-  if ( this->__pad_0 >= (int)this->Array_field_0x4 ) /*0x7ad839*/
+  if ( this->__pad_0 >= (int)this->q004 ) /*0x7ad839*/
   {
     int v11 = 2 * v10; // ebp /*0x7ad83b*/
     if ( 2 * v10 < 10 ) /*0x7ad841*/
@@ -270,7 +270,7 @@ AbstractClass * * Array::InsertElement(const void *a1, int aP2, void *a3)
     __3_YAXPAX_Z(*(void **)this->q008); /*0x7ad8a1*/
     v4 = aP2; /*0x7ad8aa*/
     *(unsigned int *)this->q008 = (unsigned int)(v17); /*0x7ad8b1*/
-    this->Array_field_0x4 = (int)((void *)v11); /*0x7ad8b4*/
+    this->q004 = (int)((void *)v11); /*0x7ad8b4*/
   }
   if ( v4 < this->__pad_0 ) /*0x7ad8bc*/
     memcpy( /*0x7ad8f2*/

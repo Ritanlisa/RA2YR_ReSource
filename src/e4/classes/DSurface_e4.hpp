@@ -17,14 +17,14 @@ struct DSurface {
 #pragma pack(push, 1)  // X60: binary-packed layout
     unsigned int DSurface_field_0x0;  // 0x0
     AbstractClass* __pad_004;  // 0x4
-    int DSurface_field_0x8;  // 0x8
-    int DSurface_field_0xC;  // 0xC
+    int u32_8;  // 0x8
+    int u32_C;  // 0xC
     int q010;  // 0x10
     unsigned int u32_14;  // 0x14
-    unsigned int DSurface_field_0x18;  // 0x18
-    void* DSurface_field_0x1C;  // 0x1C
-    unsigned int DSurface_field_0x20;  // 0x20
-    int DSurface_field_0x24;  // 0x24
+    unsigned int u32_18;  // 0x18
+    void* u32_1C;  // 0x1C
+    unsigned int u32_20;  // 0x20
+    int q024;  // 0x24
     int q028;  // 0x28
     char __pad_2C[20];  // 0x2C
     void* q040;  // 0x40
@@ -38,8 +38,8 @@ struct DSurface {
     unsigned int u32_70;  // 0x70
     unsigned int u32_74;  // 0x74
     char __pad_78[12];  // 0x78
-    unsigned int q0084;  // 0x84
-    unsigned int q0088;  // 0x88
+    unsigned int u32_84;  // 0x84
+    unsigned int u32_88;  // 0x88
     unsigned int u32_8C;  // 0x8C
     char __pad_90[4];  // 0x90
     unsigned int u32_94;  // 0x94
@@ -50,7 +50,7 @@ struct DSurface {
     char __pad_EB[1];  // 0xEB
     unsigned int u32_EC;  // 0xEC
     char __pad_F0[28];  // 0xF0
-    int DSurface_field_0x10C;  // 0x10C
+    int q10C;  // 0x10C
     char __pad_110[11];  // 0x110
     unsigned int u32_11B;  // 0x11B
     char __pad_11F[49];  // 0x11F
@@ -62,7 +62,7 @@ struct DSurface {
     unsigned int u32_15C;  // 0x15C
     unsigned int q160;  // 0x160
     char __pad_164[32];  // 0x164
-    int DSurface_field_0x184;  // 0x184
+    int q184;  // 0x184
     char __pad_188[14];  // 0x188
     unsigned char q196;  // 0x196
     char __pad_197[73];  // 0x197

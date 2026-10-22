@@ -890,7 +890,7 @@ int GameOptionsClass::PopulateMovieList(HWND hWnd)
         SendMessageA(hWnd, 0x19Au, v4, (LPARAM)off_832C20); /*0x5fc055*/
     }
   }
-  GameOptionsClass_field_0x04 = v2[9].GameOptionsClass_field_0x04; /*0x5fc057*/
+  GameOptionsClass_field_0x04 = v2[9].q004; /*0x5fc057*/
   if ( GameOptionsClass_field_0x04 >= 0 ) /*0x5fc05c*/
   {
     v6 = GameOptionsClass_field_0x04 + 1; /*0x5fc05e*/
@@ -3985,8 +3985,8 @@ LABEL_56:
   v263 = 0; /*0x4b74ff*/
   LoadScreen::InitVtable(&v321, 0, 0); /*0x4b7504*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_var_34ef2f) */  /*0x4b750e*/
-  v321.LoadScreen_field_0x14 = 10; /*0x4b7519*/
-  v321.LoadScreen_field_0x10 = 0; /*0x4b7520*/
+  v321.q014 = 10; /*0x4b7519*/
+  v321.q010 = 0; /*0x4b7520*/
   Time = timeGetTime(); /*0x4b7534*/
   v329 = Time; /*0x4b753b*/
   v337 = 0; /*0x4b7542*/
@@ -4254,7 +4254,7 @@ LABEL_119:
           }
           v100 = 0; /*0x4b7c40*/
           v263 = 1; /*0x4b7c44*/
-          if ( v321.LoadScreen_field_0x10 <= 0 ) /*0x4b7c49*/
+          if ( v321.q010 <= 0 ) /*0x4b7c49*/
           {
             v102 = v296; /*0x4b7c6b*/
 LABEL_152:
@@ -4278,15 +4278,15 @@ LABEL_152:
               v295 = 1; /*0x4b7cc0*/
               *(unsigned char *)(v103 + 16) = 1; /*0x4b7cc5*/
             }
-            if ( v321.LoadScreen_field_0x10 < v321.LoadScreen_field_0x08 /*0x4b7d08*/
+            if ( v321.q010 < v321.LoadScreen_field_0x08 /*0x4b7d08*/
               || (BYTE1(v321.LoadScreen_field_0x0C) || !v321.LoadScreen_field_0x08)
-              && v321.LoadScreen_field_0x14 > 0
+              && v321.q014 > 0
               && (*(unsigned __int8 (**)(LoadScreen *, int, unsigned int))(*(unsigned int *)v321.Render_ph + 8))(
                    &v321,
-                   v321.LoadScreen_field_0x14 + v321.LoadScreen_field_0x08,
+                   v321.q014 + v321.LoadScreen_field_0x08,
                    0) )
             {
-              v104 = v321.LoadScreen_field_0x10++; /*0x4b7d16*/
+              v104 = v321.q010++; /*0x4b7d16*/
               *(unsigned int *)(v321.LoadScreen_field_0x04 + 4 * v104) = v103; /*0x4b7d27*/
             }
           }
@@ -4298,7 +4298,7 @@ LABEL_152:
             {
               ++v100; /*0x4b7c61*/
               LoadScreen_field_0x04 += 4; /*0x4b7c62*/
-              if ( v100 >= v321.LoadScreen_field_0x10 ) /*0x4b7c67*/
+              if ( v100 >= v321.q010 ) /*0x4b7c67*/
                 goto LABEL_152; /*0x4b7c67*/
             }
           }
@@ -4438,15 +4438,15 @@ LABEL_182:
                   }
                   *(unsigned int *)(v121 + 12) = 1065353216; /*0x4b7fe3*/
                   *(unsigned int *)(v121 + 8) = 1115422720; /*0x4b7fea*/
-                  if ( v321.LoadScreen_field_0x10 < v321.LoadScreen_field_0x08 /*0x4b8030*/
+                  if ( v321.q010 < v321.LoadScreen_field_0x08 /*0x4b8030*/
                     || (BYTE1(v321.LoadScreen_field_0x0C) || !v321.LoadScreen_field_0x08)
-                    && v321.LoadScreen_field_0x14 > 0
+                    && v321.q014 > 0
                     && (*(unsigned __int8 (**)(LoadScreen *, int, unsigned int))(*(unsigned int *)v321.Render_ph + 8))(
                          &v321,
-                         v321.LoadScreen_field_0x14 + v321.LoadScreen_field_0x08,
+                         v321.q014 + v321.LoadScreen_field_0x08,
                          0) )
                   {
-                    v122 = v321.LoadScreen_field_0x10++; /*0x4b803e*/
+                    v122 = v321.q010++; /*0x4b803e*/
                     *(unsigned int *)(v321.LoadScreen_field_0x04 + 4 * v122) = v121; /*0x4b804f*/
                   }
                   v115 = dword_A8B230; /*0x4b8052*/
@@ -4723,8 +4723,8 @@ LABEL_252:
       }
       n += 4; /*0x4b867c*/
     }
-    v162 = v321.LoadScreen_field_0x10 - 1; /*0x4b8693*/
-    for ( ii = v321.LoadScreen_field_0x10 - 1; v162 >= 0; ii = v162 ) /*0x4b869c*/
+    v162 = v321.q010 - 1; /*0x4b8693*/
+    for ( ii = v321.q010 - 1; v162 >= 0; ii = v162 ) /*0x4b869c*/
     {
       _EDI = *(unsigned int *)(v321.LoadScreen_field_0x04 + 4 * v162); /*0x4b86a9*/
       __asm /*0x4b86ac*/
@@ -4780,10 +4780,10 @@ LABEL_252:
         if ( *(unsigned int *)(_EDI + 8) == 1123942400 || *(unsigned char *)(_EDI + 16) && *(unsigned int *)(_EDI + 8) == 1115422720 ) /*0x4b8808*/
         {
           __3_YAXPAX_Z((void *)_EDI); /*0x4b880b*/
-          if ( v162 < v321.LoadScreen_field_0x10 ) /*0x4b881c*/
+          if ( v162 < v321.q010 ) /*0x4b881c*/
           {
             v169 = v162; /*0x4b881f*/
-            if ( v162 < --v321.LoadScreen_field_0x10 ) /*0x4b882a*/
+            if ( v162 < --v321.q010 ) /*0x4b882a*/
             {
               do /*0x4b8844*/
               {
@@ -4791,7 +4791,7 @@ LABEL_252:
                 *(unsigned int *)(v321.LoadScreen_field_0x04 + 4 * v169 - 4) = *(unsigned int *)(v321.LoadScreen_field_0x04 /*0x4b8837*/
                                                                                    + 4 * v169);
               }
-              while ( v169 < v321.LoadScreen_field_0x10 ); /*0x4b8844*/
+              while ( v169 < v321.q010 ); /*0x4b8844*/
             }
           }
         }

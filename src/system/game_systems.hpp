@@ -245,7 +245,7 @@ public:
     virtual void QueryInterface(); // 0x766A60
     void* Constructor(); // 0x767300
 
-    uint8_t GameOption_WorldDominationTour_field_0x04[4];
+    uint8_t u32_4[4];
 
     unsigned char __pad_000;  // X10 supply (csp_canon_members)
 };
@@ -264,7 +264,7 @@ public:
 
     uint8_t GameOptions_field_0x04[4];
     uint8_t GameOptions_field_0x08[4];
-    uint8_t GameOptions_field_0x0C[4];
+    uint8_t q00C[4];
 public:  // g57c5 W4b supply slot
     unsigned char *__pad_0;  // 0x0 g57c5 W4b (self-desc vocab, ml slot witness)
 
@@ -289,7 +289,7 @@ public:
     virtual char *UnlockMovieIfNeeded_MoviesList(void *a2); // 0x5FBF80  // G57w8: raw fn_5F.c 签名对齐 (char* thiscall(this, void*))
     virtual void PopulateMovieList(HWND hWnd); // 0x5FC000
 
-    uint8_t GameOptionsClass_field_0x04[4];
+    uint8_t q004[4];
 };
 // 1 methods in IDA
 class GameResult
@@ -331,12 +331,12 @@ public:
     virtual void CompareWideString(); // 0x5E2670
     // +2 more virtual methods
 
-    uint8_t GameSetup_field_0x04[4];
-    uint8_t GameSetup_field_0x08[4];
+    uint8_t u32_4[4];
+    uint8_t ptr_8[4];
     uint8_t GameSetup_field_0x0C[4];
-    uint8_t GameSetup_field_0x10[4];
-    uint8_t GameSetup_field_0x14[4];
-    uint8_t GameSetup_field_0x18[4];
+    uint8_t u32_10[4];
+    uint8_t u32_14[4];
+    uint8_t u32_18[4];
     public:  // symbol-anchor
     // === SYMBOL-ANCHOR (BEGIN) ===
     int LookupDialogHash();  // 0x60d320 -- GameSetup::LookupDialogHash
@@ -382,7 +382,7 @@ public:
     virtual void ReleaseBuffer(); // 0x554370
 
     uint8_t LoadProgressMgr_field_0x04[4];
-    uint8_t LoadProgressMgr_field_0x08[4];
+    uint8_t q008[4];
 };
 // 1 methods in IDA
 // CSP: LoadSaveDialog matched via T1
@@ -422,8 +422,8 @@ public:
     uint8_t LoadScreen_field_0x04[4];
     uint8_t LoadScreen_field_0x08[4];
     uint8_t LoadScreen_field_0x0C[4];
-    uint8_t LoadScreen_field_0x10[4];
-    uint8_t LoadScreen_field_0x14[4];
+    uint8_t q010[4];
+    uint8_t q014[4];
     public:  // symbol-anchor
     // === SYMBOL-ANCHOR (BEGIN) ===
     int IsActive();  // 0x643e60 -- LoadScreen::IsActive
@@ -453,19 +453,19 @@ public:
     // +11 more virtual methods
 
     uint8_t LoadingScreen_field_0x04[4];
-    uint8_t LoadingScreen_field_0x08[4];
+    uint8_t q008[4];
     uint8_t LoadingScreen_field_0x0C[4];
     uint8_t LoadingScreen_field_0x10[4];
-    uint8_t LoadingScreen_field_0x14[4];
+    uint8_t q014[4];
     uint8_t LoadingScreen_field_0x18[4];
     uint8_t LoadingScreen_field_0x1C[4];
     uint8_t LoadingScreen_field_0x20[4];
-    uint8_t LoadingScreen_field_0x24[4];
-    uint8_t LoadingScreen_field_0x28[4];
+    uint8_t q024[4];
+    uint8_t q028[4];
     uint8_t LoadingScreen_field_0x2C[4];
     uint8_t LoadingScreen_field_0x30[4];
-    uint8_t LoadingScreen_field_0x34[4];
-    uint8_t LoadingScreen_field_0x38[4];
+    uint8_t q034[4];
+    uint8_t q038[4];
     uint8_t LoadingScreen_field_0x3C[4];
     public:  // symbol-anchor
     // === SYMBOL-ANCHOR (BEGIN) ===
@@ -522,7 +522,7 @@ public:
     uint8_t MultiplayerGameMode_field_0x08[4];
     uint8_t MultiplayerGameMode_field_0x0C[4];
     uint8_t MultiplayerGameMode_field_0x10[4];
-    uint8_t MultiplayerGameMode_field_0x14[4];
+    uint8_t q014[4];
     uint8_t MultiplayerGameMode_field_0x18[4];
     public:  // symbol-anchor
     // === SYMBOL-ANCHOR (BEGIN) ===
@@ -591,7 +591,7 @@ public:
     virtual void HandleGameStart(); // 0x5B9A60
     virtual void Show(); // 0x5E68A0
 
-    uint8_t SkirmishDialog_field_0x04[4];
+    uint8_t q004[4];
     uint8_t SkirmishDialog_field_0x08[4];
 
     unsigned char __pad_000;  // X10 supply (csp_canon_members)
@@ -608,7 +608,7 @@ public:
     virtual void DlgProc(); // 0x596300
     int LookupDialogHash(); // 0x6067A0
 
-    uint8_t SkirmishMapGen_field_0x04[4];
+    uint8_t q004[4];
 };
 // 1 methods in IDA
 class SkirmishVector

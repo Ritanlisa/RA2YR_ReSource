@@ -39,6 +39,7 @@ import argparse
 import bisect
 import concurrent.futures as cf
 import json
+import os
 import re
 import sys
 import time
@@ -48,6 +49,20 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 CACHE = ROOT / ".omo" / "x113"
+
+
+def _norm_path(p):
+    """Canonical filesystem path for declaration identity.
+
+    The same header is reached through different include spellings
+    (`src/core/math.hpp` vs `src\\core/math.hpp`); storing the raw spelling
+    made one FieldDecl look like two declarations, which X113 then flagged as
+    a name collision and skipped (5,358 duplicate field rows / 1,458 false
+    collision pairs).  Identity is path-normalized; edits still use the
+    canonical path (same file).
+    """
+    return os.path.normcase(os.path.normpath(os.path.abspath(str(p))))
+
 SCAN_PATH = CACHE / "scan.json"
 ML_PATH = ROOT / "tools" / "member_lookup.json"
 SIDECAR_PATH = ROOT / "anchors" / "class_layouts_rebuilt.json"
@@ -244,8 +259,14 @@ def scan_tu(tu_path):
            "accesses": [], "fns": 0, "tokens": 0, "wall": 0}
     index = ci.Index.create()
     t0 = time.time()
+    # X114: parse through an ABSOLUTE path.  With a relative TU path clang
+    # reports the main file relatively, `is_proj()` rejected it, recursion
+    # stopped at the namespace and no function/parameter/local cursor was
+    # ever visited (fns == 0 for all 850 TUs) -- which is why 42k access
+    # sites had no receiver type and 9.6k `this` sites resolved to nothing.
+    tu_abs = str(Path(tu_path).resolve()) if not os.path.isabs(tu_path) else tu_path
     try:
-        tu = index.parse(tu_path, args=_get_default_compile_args(),
+        tu = index.parse(tu_abs, args=_get_default_compile_args(),
                          options=ci.TranslationUnit.PARSE_INCOMPLETE)
     except Exception as e:  # noqa: BLE001
         rec["err"] = "parse-exc: %s" % e
@@ -259,7 +280,7 @@ def scan_tu(tu_path):
     except Exception:  # noqa: BLE001
         pass
 
-    main = str(Path(tu_path)).replace("\\", "/").lower()
+    main = str(Path(tu_abs)).replace("\\", "/").lower()
     proj_src = str(ROOT / "src").replace("\\", "/").lower()
     proj_app = str(ROOT / "app").replace("\\", "/").lower()
 
@@ -285,8 +306,8 @@ def scan_tu(tu_path):
         kname = cur.kind.name
         if kname in ("STRUCT_DECL", "CLASS_DECL", "UNION_DECL"):
             _scan_record(cur, fields, methods, field_types)
-        elif kname in ("CXX_METHOD", "FUNCTION_DECL", "CXX_CONSTRUCTOR",
-                       "CXX_DESTRUCTOR"):
+        elif kname in ("CXX_METHOD", "FUNCTION_DECL", "CONSTRUCTOR",
+                       "DESTRUCTOR"):
             if locf is not None and locf.name.replace("\\", "/").lower() == main:
                 _scan_function(cur, fns)
         elif kname == "VAR_DECL" and depth <= 4:
@@ -307,7 +328,7 @@ def scan_tu(tu_path):
     rec["fns"] = len(fns)
     fns.sort(key=lambda f: (f[0], -f[1]))
     try:
-        _scan_tokens(tu, tu_path, fields, methods, field_types, globals_, fns,
+        _scan_tokens(tu, tu_abs, fields, methods, field_types, globals_, fns,
                      rec, ci)
     except Exception as e:  # noqa: BLE001
         rec["err"] = (rec["err"] or "") + " token-exc: %s" % e
@@ -350,8 +371,8 @@ def _scan_record(cur, fields, methods, field_types):
             width = -1
         st = ch.extent.start
         en = ch.extent.end
-        fields.append([qn, name, offb // 8, width, f.name, st.offset, en.offset,
-                       ch.type.spelling])
+        fields.append([qn, name, offb // 8, width, _norm_path(f.name),
+                       st.offset, en.offset, ch.type.spelling])
         c, raw = _class_of_type(ch.type)
         field_types.setdefault(qn, {})[name] = (c, raw)
 
@@ -593,7 +614,7 @@ def _scan_tokens(tu, tu_path, fields, methods, field_types, globals_, fns, rec, 
                 kind = "unres"
         if moff is None and kind != "nonfield":
             moff = offset_from_name(name)
-        acc.append([str(path), left.extent.start.offset,
+        acc.append([_norm_path(path), left.extent.start.offset,
                     right.extent.start.offset, right.extent.end.offset,
                     name, recv, raw, kind, moff, right.location.line,
                     dfile, dstart])
@@ -610,8 +631,6 @@ def _scan_tokens(tu, tu_path, fields, methods, field_types, globals_, fns, rec, 
         nxt = toks[i + 1].spelling if i + 1 < len(toks) else ""
         if prev in ("->", ".", "::", "~") or nxt == "::":
             continue
-        if nxt == "(":
-            continue                      # call, not a data member
         off = tok.extent.start.offset
         fn = fn_at(off)
         if fn is None or not fn[2]:
@@ -619,10 +638,22 @@ def _scan_tokens(tu, tu_path, fields, methods, field_types, globals_, fns, rec, 
         if name in fn[3]:
             continue                      # shadowed by a local/parameter
         ent = (by_cls.get(fn[2]) or {}).get(name)
+        if nxt == "(":
+            # `Field(...)` in a constructor initializer list is a member
+            # reference, not a call.  A class cannot have a data member and a
+            # method with one name, so a field-name hit here is unambiguous.
+            # X114: convert_class.cpp's initializer kept the old name after
+            # the declaration rename and clang gained one error.
+            if ent and ent[0] >= 0:
+                moff, _w, dfile, dstart = ent
+                acc.append([_norm_path(path), off, off, tok.extent.end.offset,
+                            name, fn[2], "bare-init", "field_bare", moff,
+                            tok.location.line, dfile, dstart])
+            continue
         if not ent or ent[0] < 0:
             continue
         moff, _w, dfile, dstart = ent
-        acc.append([str(path), off, off, tok.extent.end.offset, name, fn[2],
+        acc.append([_norm_path(path), off, off, tok.extent.end.offset, name, fn[2],
                     "bare", "field_bare", moff, tok.location.line, dfile, dstart])
 
 
@@ -806,6 +837,33 @@ def choose_canon(cls_unq, off, carrier_names, ml, side):
 GENERATED_FORMS = ("u32_", "qNNN", "ptr_NN", "m_NN", "Class_field_0x",
                    "Type_NN", "vtableN")
 
+ARRAY_TYPE_RE = re.compile(r"^(.*)\[(\d+)\]$")
+
+
+def array_member(field, off):
+    """(member name, element index) when `off` lies inside an array member.
+
+    `field` is a fields_by_cls tuple (off, name, width, file, st, en, tspell).
+    Element width comes from the declared total width / element count, so this
+    works for `int[3]` and `T *[N]` alike (both are 4-byte elements here).
+    """
+    off0, name, width, _file, _st, _en, tspell = field
+    m = ARRAY_TYPE_RE.match((tspell or "").strip())
+    if not m or width <= 0:
+        return None
+    try:
+        count = int(m.group(2))
+    except (TypeError, ValueError):
+        return None
+    if count <= 1 or width % count:
+        return None
+    elem = width // count
+    if elem <= 0 or off < off0 or off >= off0 + width:
+        return None
+    if (off - off0) % elem:
+        return None
+    return name, (off - off0) // elem
+
 
 def build_plan(scan, ml, side, only=None):
     """Declaration-identity canonicalization.
@@ -817,9 +875,16 @@ def build_plan(scan, ml, side, only=None):
     when there is one (that is the author's intent and the key member_lookup uses),
     otherwise its real layout offset.
     """
-    fields_by_cls = defaultdict(list)          # ckey -> [(off,name,width,file,st,en)]
+    fields_by_cls = defaultdict(list)      # ckey -> [(off,name,width,file,st,en,tspell)]
+    seen_field = set()
     for (qn, name, off, width, file, st, en, tspell) in scan["fields"]:
-        fields_by_cls[qn].append((off, name, width, file, st, en))
+        # X114: the same FieldDecl can be reached through two include
+        # spellings; path-normalized identity keeps it one declaration.
+        fkey = (qn, name, off, file, st)
+        if fkey in seen_field:
+            continue
+        seen_field.add(fkey)
+        fields_by_cls[qn].append((off, name, width, file, st, en, tspell))
 
     decl_canon = {}                            # (file, decl_st) -> (name, src, notes)
     decl_cls = {}                              # (file, decl_st) -> ckey
@@ -827,7 +892,7 @@ def build_plan(scan, ml, side, only=None):
     bin_index = {}                             # ckey -> {bin_off: [(file, decl_st, name)]}
     for qn, fs in fields_by_cls.items():
         idx = defaultdict(list)
-        for (off, name, width, file, st, en) in fs:
+        for (off, name, width, file, st, en, tspell) in fs:
             names_by_cls[qn][name].add(off)
             decl_cls[(file, st)] = qn
             if is_pad(name):
@@ -851,7 +916,7 @@ def build_plan(scan, ml, side, only=None):
     rename_coll = 0
     for qn, fs in fields_by_cls.items():
         finals = {}
-        for (off, name, width, file, st, en) in fs:
+        for (off, name, width, file, st, en, tspell) in fs:
             cname = decl_canon.get((file, st), (name, "", []))[0]
             if cname in finals:
                 other = finals[cname]
@@ -948,7 +1013,25 @@ def build_plan(scan, ml, side, only=None):
                                     "ambiguous-bin-offset"])
             continue
         if not hit:
-            has = any(o == off for (o, _n, _w, _f, _s, _e) in fields_by_cls[recv])
+            # X114: an encoded generated name can point inside an array-typed
+            # member (`CCINIClass::headNode[3]` at 0x4 covers `vtable3/4` at
+            # 0x8/0xC).  The canonical expression is `member[index]`.
+            if form == "vtableN":
+                arr = None
+                for fld in fields_by_cls[recv]:
+                    arr = array_member(fld, off)
+                    if arr:
+                        break
+                if arr:
+                    cname = "%s[%d]" % arr
+                    rew.append([file, recv_st, st, en, cname, recv, off, name,
+                                "array", form, line, "body"])
+                    stats["body-rewrite"] += 1
+                    stats["array-rewrite"] += 1
+                    form_stat[form]["rewritten"] += 1
+                    continue
+            has = any(o == off for (o, _n, _w, _f, _s, _e, _t)
+                      in fields_by_cls[recv])
             reason = "pad-only-at-offset" if has else "no-declared-field-at-offset"
             unresolved[reason] += 1
             unresolved_rows.append([file, line, name,
@@ -979,7 +1062,7 @@ def build_plan(scan, ml, side, only=None):
         old = None
         en = None
         doff = None
-        for (off, nm, width, f2, s2, e2) in fields_by_cls[qn]:
+        for (off, nm, width, f2, s2, e2, _t) in fields_by_cls[qn]:
             if f2 == file and s2 == st:
                 old, en, doff = nm, e2, off
                 break
@@ -1065,12 +1148,18 @@ def residual_scan(words, tu_files=None):
         files.extend((ROOT / "src").rglob(e))
         files.extend((ROOT / "app").rglob(e))
     expected = {f.lower().replace("\\", "/") for f in (tu_files or [])}
+    root_low = str(ROOT).replace("\\", "/").lower().rstrip("/")
     for p in files:
         if not p.is_file():
             continue
         low = str(p).replace("\\", "/").lower()
-        if p.suffix.lower() == ".cpp" and expected and low not in expected:
-            continue
+        if p.suffix.lower() == ".cpp" and expected:
+            # X114 fix: `expected` holds repo-relative TU names, `low` is
+            # absolute -- the old comparison never matched and silently
+            # skipped every .cpp, hiding stale refs behind `#if 0`.
+            rel = low[len(root_low) + 1:] if low.startswith(root_low + "/") else low
+            if rel not in expected:
+                continue
         if "/csp_canon/bodies/" in low or "/raw_decomp/" in low:
             continue
         try:

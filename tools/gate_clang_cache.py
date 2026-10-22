@@ -6,7 +6,8 @@ through libclang on every build (~7s/TU x ~870 cpp + ~135 hpp = hours after a
 full corpus regen), serially.
 
 Fix: cache each file's full violation list keyed by
-    sha1(schema + checker source + compile args + baseline commit + file content)
+    sha1(schema + checker source + compile args + baseline commit
+         + project-header namespace + file content)
 All four inputs fully determine `ClangChecker.run_all_checks()` output
 (including check_new_symbols, whose git-diff added-line set is a pure function
 of file content x baseline commit). Same key => byte-identical verdicts; any
@@ -25,14 +26,22 @@ import sys
 from concurrent.futures import ProcessPoolExecutor
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-CACHE_DIR = os.path.join(REPO, '.omo', 'cache', 'gate_clang')
+# X114: an explicit cache root makes clean-cache measurements reproducible
+# (HEAD-vs-tree comparisons).  Unset => the normal shared gate cache.
+CACHE_DIR = (os.environ.get('GATE_CLANG_CACHE_DIR')
+             or os.path.join(REPO, '.omo', 'cache', 'gate_clang'))
 # v2 (X24): payload additionally carries the allowed-usage ledger
 # (R5 array subscript, never a violation) and the parse diagnostics count.
-SCHEMA = 'gate-clang-v2'
+# v3 (X114): the key also covers every project header (the checker's verdict
+# for a .cpp depends on included declarations; without them a header-only
+# change could read a stale verdict -- the X113 "+68 visibility" cohort was
+# measured across such a header change).
+SCHEMA = 'gate-clang-v3'
 _PRUNE_KEEP = 6000
 
 _ING = None
 _BASELINE = None
+_HEADERS = None
 
 
 def _sha1_file(path):
@@ -44,6 +53,35 @@ def _sha1_file(path):
     except OSError:
         return 'missing'
     return h.hexdigest()
+
+
+def _headers_digest():
+    """Digest every project header/body file a TU can include.
+
+    The old key covered only the main file's bytes.  A rename in a carrier
+    header therefore left every untouched .cpp's cached verdict valid even
+    though its parse result had changed -- the X113 five-category delta was
+    first measured across exactly such a header change.  Hashing the project
+    header namespace (deterministically ordered) closes that hole.
+    """
+    global _HEADERS
+    if _HEADERS is None:
+        h = hashlib.sha1()
+        exts = ('.hpp', '.h', '.inl', '.ipp', '.inc')
+        entries = []
+        for sub in ('src', 'app'):
+            base = os.path.join(REPO, sub)
+            for root, _dirs, files in os.walk(base):
+                for fn in files:
+                    if fn.lower().endswith(exts):
+                        p = os.path.join(root, fn)
+                        rel = os.path.relpath(p, REPO).replace('\\', '/')
+                        entries.append((rel, p))
+        for rel, p in sorted(entries):
+            h.update(rel.encode())
+            h.update(_sha1_file(p).encode())
+        _HEADERS = h.hexdigest()
+    return _HEADERS
 
 
 def _ingredients_digest():
@@ -60,6 +98,7 @@ def _ingredients_digest():
             h.update(repr(_get_default_compile_args()).encode())
         except Exception:
             pass
+        h.update(_headers_digest().encode())
         _ING = h.hexdigest()
     return _ING
 

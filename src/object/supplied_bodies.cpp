@@ -2434,7 +2434,7 @@ namespace gamemd {
       v68 = this->location[2]; /*0x441a69*/
       v34 = globalHelper_09F550(&v73, &v66, v61); /*0x441a6d*/
       v63 = *v34; /*0x441a74*/
-      v64 = v34->u32_4; /*0x441a7b*/
+      v64 = v34->q004; /*0x441a7b*/
       v65 = v34->u32_8; /*0x441a8c*/
       if ( *(unsigned int *)&Coord::To_Cell((Coord *)&DataGlobal_87F7E8, &v63)->__pad_28[28] != -1 ) /*0x441a99*/
       {
@@ -9184,7 +9184,7 @@ namespace gamemd {
     {
       v15 = (unsigned int *)(*((int (__thiscall **)(BuildingClass *, int *))hpp->ptr_0 + 22))(hpp, &v53); /*0x63c08b*/
       *(unsigned int *)v65.__pad_000 = *v15; /*0x63c090*/
-      v65.u32_4 = v15[1]; /*0x63c097*/
+      v65.q004 = v15[1]; /*0x63c097*/
       q008 = v15[2]; /*0x63c09b*/
     }
     else
@@ -9193,13 +9193,13 @@ namespace gamemd {
     }
     v69 = q008; /*0x63c0ac*/
     v67 = *(unsigned int *)v65.__pad_000; /*0x63c0b3*/
-    q004 = v65.u32_4; /*0x63c0c7*/
+    q004 = v65.q004; /*0x63c0c7*/
     Coord::To_Screen((Coord *)g_TacticalClass_Instance, &v67, &v63); /*0x63c0ce*/
     v17 = DSurface_ViewBounds.field_0 + v63; /*0x63c0e6*/
     v18 = (char *)g_Map_VisibleRect + v64; /*0x63c0ec*/
     Viewport = (Coord3D *)Display::GetViewport((int *)v65.q000); /*0x63c0ee*/
     v61 = *Viewport; /*0x63c0f5*/
-    v62 = *Viewport->Coord3D_field_0x04.q000; /*0x63c119*/
+    v62 = *Viewport->q004.q000; /*0x63c119*/
     v20 = ComputeBounds(&v65, 6, v5, v59); /*0x63c11d*/
     v53 = *v20; /*0x63c124*/
     v54 = v20[1]; /*0x63c12b*/
@@ -9221,7 +9221,7 @@ namespace gamemd {
   LABEL_29:
         v23 = (Coord3D *)Display::GetViewport((int *)v65.q000); /*0x63c1ad*/
         v61 = *v23; /*0x63c1b8*/
-        v62 = *v23->Coord3D_field_0x04.q000; /*0x63c1d3*/
+        v62 = *v23->q004.q000; /*0x63c1d3*/
         v24 = ComputeBounds(&v65, 6, v17, (int)v18); /*0x63c1dc*/
         v53 = *v24; /*0x63c1e3*/
         v54 = v24[1]; /*0x63c1ea*/
@@ -9260,7 +9260,7 @@ namespace gamemd {
   {
     v29 = (Coord3D *)Display::GetViewport(&v63); /*0x63c2b6*/
     v61 = *v29; /*0x63c2bd*/
-    v62 = *v29->Coord3D_field_0x04.q000; /*0x63c2dd*/
+    v62 = *v29->q004.q000; /*0x63c2dd*/
     v30 = ComputeBounds(&v63, 6, v27, (int)v28); /*0x63c2e1*/
     v53 = *v30; /*0x63c2e8*/
     v54 = v30[1]; /*0x63c2ef*/
@@ -9273,7 +9273,7 @@ namespace gamemd {
   }
   v31 = (Coord3D *)Display::GetViewport(&v67); /*0x63c336*/
   v61 = *v31; /*0x63c33d*/
-  v62 = *v31->Coord3D_field_0x04.q000; /*0x63c35a*/
+  v62 = *v31->q004.q000; /*0x63c35a*/
   v32 = ComputeBounds(&v67, 6, v5, v59); /*0x63c365*/
   v53 = *v32; /*0x63c36c*/
   v54 = v32[1]; /*0x63c373*/
@@ -9300,7 +9300,7 @@ namespace gamemd {
   }
   v34 = (Coord3D *)Display::GetViewport(&v58); /*0x63c417*/
   v61 = *v34; /*0x63c422*/
-  v62 = *v34->Coord3D_field_0x04.q000; /*0x63c43d*/
+  v62 = *v34->q004.q000; /*0x63c43d*/
   v35 = ComputeBounds(&v58, 6, v27, (int)v28); /*0x63c446*/
   v53 = *v35; /*0x63c44d*/
   v54 = v35[1]; /*0x63c454*/

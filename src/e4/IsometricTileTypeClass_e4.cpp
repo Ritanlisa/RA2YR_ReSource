@@ -4,6 +4,7 @@
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/Power_e4.hpp"
 #include "e4/classes/IsometricTileTypeClass_e4.hpp"
+#include "e4/classes/DynamicVectorClass_PAD_16_e4.hpp"  // X114: ClearBuffer receiver (raw _DynamicVectorClass_PAG)
 #include "e4/classes/AbstractTypeClass_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/TechnoTypeClass_e4.hpp"
@@ -169,19 +170,19 @@ IsometricTileTypeClass * IsometricTileTypeClass::ddtor(char a2, int a1, int a3, 
 } // namespace gamemd
 // 0x54A190
 namespace gamemd {
-void IsometricTileTypeClass::ClearBuffer(void *a1)
+void IsometricTileTypeClass::ClearBuffer(DynamicVectorClass_PAD_16 *a1)
 {
 
   void *v2; // eax
-  v2 = *(void **)&a1->vtable2; /*0x54a196*/
+  v2 = *(void **)&a1->Items; /*0x54a196*/
   *(unsigned int *)&a1->__pad_10 = 0; /*0x54a199*/
-  if ( v2 && (((unsigned char *)&(a1->vtable4))[1]) ) /*0x54a1a0*/
+  if ( v2 && (((unsigned char *)&(a1->IsInitialized))[1]) ) /*0x54a1a0*/
   {
     operator delete((v2)); /*0x54a1a6*/
-    *(unsigned int *)&a1->vtable2 = 0; /*0x54a1ae*/
+    *(unsigned int *)&a1->Items = 0; /*0x54a1ae*/
   }
-  (((unsigned char *)&(a1->vtable4))[1]) = 0; /*0x54a1b1*/
-  *(unsigned int *)&a1->vtable3 = 0; /*0x54a1b4*/
+  (((unsigned char *)&(a1->IsInitialized))[1]) = 0; /*0x54a1b1*/
+  *(unsigned int *)&a1->Capacity = 0; /*0x54a1b4*/
 }
 } // namespace gamemd
 // 0x54A1C0

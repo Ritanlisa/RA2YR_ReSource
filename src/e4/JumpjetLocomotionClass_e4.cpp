@@ -981,7 +981,7 @@ void ** JumpjetLocomotionClass::UpdateMovementPosition(unsigned int * a1, double
         v19[0] = (int)v9; /*0x4b60f4*/
         if ( !(unsigned __int8)IsCoordVisibleMap((ObjectClass *)&dword_87F7E8, v19) ) /*0x4b6102*/
         {
-          v4->ptr_8 = 1; /*0x4b610c*/
+          v4->Owner = 1; /*0x4b610c*/
           _EAX = dword_8871E0; /*0x4b6110*/
           __asm { fild dword ptr [esi] } /*0x4b6115*/
           v17 = *(double *)dword_8871E0->DropPodAngle; /*0x4b6124*/

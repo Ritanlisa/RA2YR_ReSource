@@ -3419,7 +3419,7 @@ unsigned int * VectorClass_ReestablishPtr::Construct(BuildingClass * aP1, Buildi
       return aP1->__pad_0; /*0x45ae7e*/
     }
     *&aP1->ptr_4 = __2_YAPAXI_Z(4 * aP2); /*0x45ae8d*/
-    BYTE1(aP1->m_C) = 1; /*0x45ae90*/
+    BYTE1(aP1->ptr_C) = 1; /*0x45ae90*/
   }
   return aP1->__pad_0; /*0x45ae7d*/
 

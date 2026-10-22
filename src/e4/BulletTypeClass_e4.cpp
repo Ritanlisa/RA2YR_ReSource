@@ -905,8 +905,8 @@ int BulletTypeClass::SaveLoad_Prefix(gamemd::ObjectTypeClass* aP0, int aP1)
       /* X11: ptr_0 install elided (X68 star-amp-named, RHS g_ptr_7E491C) */  /*0x46c6d1*/
       /* X11: ptr_0 install elided (X68 star-amp-named, RHS g_ptr_7E491C) */  /*0x46c6d8*/
     }
-    VoxelAnimType::LoadAnim(aP0->ptr_0); /*0x46c6e1*/
-    ObjectTypeClass::Load2DArt(aP0->ptr_0); /*0x46c6e8*/
+    VoxelAnimType::LoadAnim(aP0->vfptr); /*0x46c6e1*/
+    ObjectTypeClass::Load2DArt(aP0->vfptr); /*0x46c6e8*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)aP0 + 182); /*0x46c6f9*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)aP0 + 172); /*0x46c70a*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)aP0 + 173); /*0x46c71b*/

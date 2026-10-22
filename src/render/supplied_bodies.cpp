@@ -1367,7 +1367,7 @@ unsigned int * RLEBlitTransXlatAlphaZRead_ushort::QueryInterface(char a2)
 // 0x4BAD70
 namespace gamemd {
 int DSurface::GetPitch() const { /*G42.35: const 对齐载体 override 链（语义不变 getter）*/
-  return *((unsigned int *)this->DSurface_field_0x20 + 4); /*0x4bad76*/
+  return *((unsigned int *)this->u32_20 + 4); /*0x4bad76*/
 }
 } // namespace gamemd
 

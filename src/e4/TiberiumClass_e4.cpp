@@ -166,7 +166,7 @@ TiberiumClass::TiberiumClass(ObjectClass * aP1)
 
 
   this->AbstractTypeClass::Constructor(aP1); /*0x7216ca*/
-  this->u32_A0 = -1717986918; /*0x7216dc*/
+  this->hasParachute = -1717986918; /*0x7216dc*/
   this->Spread = -1717986918; /*0x7216e7*/
   *&this->isInLogic = (void *)(-1); /*0x7216f1*/
   this->Spread = 0; /*0x7216fb*/
@@ -186,12 +186,12 @@ TiberiumClass::TiberiumClass(ObjectClass * aP1)
   this->TiberiumClass_field_EC = 0; /*0x72174c*/
   this->TiberiumClass_field_F0 = 0; /*0x721752*/
   this->TiberiumClass_field_F4 = 0; /*0x721758*/
-  this->TiberiumClass_field_F8 = 0; /*0x72175e*/
+  this->GrowthPercentage_d = 0; /*0x72175e*/
   this->TiberiumClass_field_FC = 0; /*0x721764*/
   this->SpreadTimer[0] = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x721770*/
   this->SpreadTimer[2] = 0; /*0x721776*/
   this->TiberiumClass_field_10C = 0; /*0x72177c*/
-  this->TiberiumClass_field_110 = 0; /*0x721782*/
+  this->Debris = 0; /*0x721782*/
   this->TiberiumClass_field_114 = 0; /*0x721788*/
   this->TiberiumClass_field_118 = 0; /*0x72178e*/
   int v3; // edx

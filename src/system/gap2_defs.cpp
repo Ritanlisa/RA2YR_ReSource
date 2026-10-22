@@ -1409,7 +1409,7 @@ int CCINIClass::LoadAndVerifyDigest(int a1, int a2, int a3) {
   if ( Base64Data <= 0 ) /*0x474386*/
     return File; /*0x474386*/
   INIClass::ClearSection(this, (int)g_INI_Key_Digest, 0); /*0x474395*/
-  memset(&v8.SHA1_field_0x04, 0, 9); /*0x4743a1*/
+  memset(&v8.u32_4, 0, 9); /*0x4743a1*/
   v14 = 0; /*0x4743ad*/
   v15 = 0; /*0x4743b1*/
   v9 = 1732584193; /*0x4743b5*/
@@ -1451,7 +1451,7 @@ int INIClass::WriteDigest(int a1, int a2) {
   if ( a2 ) /*0x474465*/
   {
     INIClass::ClearSection((int *)this->ptr_0.__pad_0, (int)g_INI_Key_Digest, 0); /*0x474482*/
-    memset(&v8.SHA1_field_0x04, 0, 9); /*0x47448e*/
+    memset(&v8.u32_4, 0, 9); /*0x47448e*/
     v14 = 0; /*0x47449a*/
     v15 = 0; /*0x47449e*/
     v9 = 1732584193; /*0x4744a2*/
@@ -10345,7 +10345,7 @@ LABEL_5:
         {
           memset(v23, 0, sizeof(v23)); /*0x527709*/
           v8 = (unsigned __int8 *)Checksummer::Add_Buffer((Checksummer *)v23, v6, strlen((const char *)v6)); /*0x527727*/
-          HashTable_field_0x30 = v7->HashTable_field_0x30; /*0x52772c*/
+          HashTable_field_0x30 = v7->q030; /*0x52772c*/
           p_HashTable_field_0x2C = &v7->q02C; /*0x52772f*/
           a3 = v8; /*0x527734*/
           if ( HashTable_field_0x30 ) /*0x527738*/
@@ -10676,7 +10676,7 @@ LABEL_6:
     v25 = 0; /*0x527d12*/
     v26 = 0; /*0x527d16*/
     v9 = (unsigned __int8 *)Checksummer::Add_Buffer((Checksummer *)&v24.buffer, v7, strlen((const char *)v7)); /*0x527d2c*/
-    HashTable_field_0x30 = v8->HashTable_field_0x30; /*0x527d31*/
+    HashTable_field_0x30 = v8->q030; /*0x527d31*/
     p_HashTable_field_0x2C = &v8->q02C; /*0x527d34*/
     a3 = v9; /*0x527d39*/
     if ( HashTable_field_0x30 ) /*0x527d40*/
@@ -11308,7 +11308,7 @@ LABEL_6:
   {
     memset(&v26, 0, 12); /*0x528c73*/
     v9 = (unsigned __int8 *)Checksummer::Add_Buffer(&v26, v23, strlen((const char *)v6)); /*0x528c8e*/
-    HashTable_field_0x30 = v8->HashTable_field_0x30; /*0x528c93*/
+    HashTable_field_0x30 = v8->q030; /*0x528c93*/
     p_HashTable_field_0x2C = &v8->q02C; /*0x528c96*/
     v23 = v9; /*0x528c9b*/
     if ( HashTable_field_0x30 ) /*0x528c9f*/
@@ -11463,7 +11463,7 @@ LABEL_6:
     goto LABEL_27; /*0x528f4a*/
   memset(&v26, 0, 12); /*0x528f50*/
   v9 = Checksummer::Add_Buffer(&v26, v7, strlen((const char *)v7)); /*0x528f6e*/
-  HashTable_field_0x30 = v8->HashTable_field_0x30; /*0x528f73*/
+  HashTable_field_0x30 = v8->q030; /*0x528f73*/
   p_HashTable_field_0x2C = &v8->q02C; /*0x528f76*/
   v24 = v9; /*0x528f7b*/
   if ( !HashTable_field_0x30 ) /*0x528f7f*/
@@ -11699,7 +11699,7 @@ LABEL_6:
     goto LABEL_27; /*0x529398*/
   memset(&v23, 0, 12); /*0x5293a8*/
   v9 = Checksummer::Add_Buffer(&v23, v7, strlen((const char *)v7)); /*0x5293ba*/
-  HashTable_field_0x30 = v8->HashTable_field_0x30; /*0x5293bf*/
+  HashTable_field_0x30 = v8->q030; /*0x5293bf*/
   p_HashTable_field_0x2C = &v8->q02C; /*0x5293c2*/
   v22 = v9; /*0x5293c7*/
   if ( !HashTable_field_0x30 ) /*0x5293cb*/
@@ -23724,8 +23724,8 @@ void FileSystem::InitExtensionState() {
     {
       StringVector::Construct(v4, 0, 0); /*0x6267f3*/
       /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E5BC4) */  /*0x6267f8*/
-      v5->StringVector_field_0x14 = 10; /*0x6267fe*/
-      v5->StringVector_field_0x10 = 0; /*0x626801*/
+      v5->q014 = 10; /*0x6267fe*/
+      v5->q010 = 0; /*0x626801*/
     }
     else
     {
@@ -27153,8 +27153,8 @@ void FileSystem::InitExtensionState() {
     {
       StringVector::Construct(v4, 0, 0); /*0x6267f3*/
       /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E5BC4) */  /*0x6267f8*/
-      v5->StringVector_field_0x14 = 10; /*0x6267fe*/
-      v5->StringVector_field_0x10 = 0; /*0x626801*/
+      v5->q014 = 10; /*0x6267fe*/
+      v5->q010 = 0; /*0x626801*/
     }
     else
     {
@@ -27942,8 +27942,8 @@ void FileSystem::InitExtensionState() {
     {
       StringVector::Construct(v4, 0, 0); /*0x6267f3*/
       /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E5BC4) */  /*0x6267f8*/
-      v5->StringVector_field_0x14 = 10; /*0x6267fe*/
-      v5->StringVector_field_0x10 = 0; /*0x626801*/
+      v5->q014 = 10; /*0x6267fe*/
+      v5->q010 = 0; /*0x626801*/
     }
     else
     {

@@ -677,7 +677,7 @@ int UnitClass::Deploy()
         *(unsigned int *)v55 = this; /*0x71966d*/
         v32 = (CrateClass *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v55); /*0x71967f*/
         (*(void (**)(int, int *))(*(unsigned int *)v2->Owner + 436))(v2->Owner, &v2->MovingDestination[2]); /*0x719684*/
-        *(unsigned char *)(v2->Owner + 140) = (v32[26].CrateClass_field_0x08 & 0x100) != 0; /*0x719698*/
+        *(unsigned char *)(v2->Owner + 140) = (v32[26].u32_8 & 0x100) != 0; /*0x719698*/
         (*(void (**)(int, unsigned int))(*(unsigned int *)v2->Owner + 460))(v2->Owner, 0); /*0x7196b2*/
         (*(void (**)(int, int))(*(unsigned int *)v2->Owner + 292))(v2->Owner, 1); /*0x7196bf*/
         v33 = (int *)v2->Owner; /*0x7196c5*/
@@ -2637,7 +2637,7 @@ int UnitClass::CalcMoveTarget()
     v5 = (unsigned int *)*((unsigned int *)dword_8B413C + this->tubeIndex[0]); /*0x735a5f*/
     v6 = (int *)(*(int (**)(UnitClass *, int *, int *))&this->ptr_0->u32_48)( /*0x735a69*/
                   this,
-                  &v78.ObjectVector_field_0x14,
+                  &v78.q014,
                   this->unknownCoords568);
     Height = Cell::GetHeight((Cell *)v73, v6, &v79); /*0x735a71*/
     Type = this->Type; /*0x735a76*/
@@ -2652,12 +2652,12 @@ int UnitClass::CalcMoveTarget()
     v68 = v5[9]; /*0x735ac1*/
     ObjectVector_field_0x04 = v12; /*0x735aca*/
     ObjectVector_field_0x08 = 0; /*0x735ad9*/
-    v78.ObjectVector_field_0x08 = 0; /*0x735add*/
+    v78.q008 = 0; /*0x735add*/
     v13 = v5[112]; /*0x735ae1*/
     *(unsigned int *)v78.__pad_0 = (v11 << 8) + 128; /*0x735ae7*/
     v14 = ((short)(((v68) >> 16) & 0xFFFF) << 8) + 128; /*0x735af2*/
     v69 = v13; /*0x735af7*/
-    v78.ObjectVector_field_0x04 = v14; /*0x735b01*/
+    v78.q004 = v14; /*0x735b01*/
     GroundHeight = Cell::GetGroundHeight(&v78); /*0x735b0a*/
     v70 = (int)(Cell::GetGroundHeight(&v75) - GroundHeight) / v69; /*0x735b26*/
     if ( v71 > (int)v65 ) /*0x735b30*/
@@ -2679,8 +2679,8 @@ int UnitClass::CalcMoveTarget()
       v44 = v38 & 0x80000001; /*0x735ddd*/
       v43 = v44 == 0; /*0x735ddd*/
       v75 = *(unsigned int *)v78.__pad_0; /*0x735de3*/
-      ObjectVector_field_0x04 = v78.ObjectVector_field_0x04; /*0x735de7*/
-      ObjectVector_field_0x08 = v78.ObjectVector_field_0x08; /*0x735deb*/
+      ObjectVector_field_0x04 = v78.q004; /*0x735de7*/
+      ObjectVector_field_0x08 = v78.q008; /*0x735deb*/
       if ( v44 < 0 ) /*0x735def*/
         v43 = (((unsigned char)v44 - 1) | 0xFFFFFFFE) == -1; /*0x735df5*/
       if ( v43 ) /*0x735df6*/
@@ -2738,8 +2738,8 @@ int UnitClass::CalcMoveTarget()
       v34 = v18 & 0x80000001; /*0x735cdc*/
       v33 = v34 == 0; /*0x735cdc*/
       *(unsigned int *)v78.__pad_0 = v75; /*0x735ce2*/
-      v78.ObjectVector_field_0x04 = ObjectVector_field_0x04; /*0x735ce6*/
-      v78.ObjectVector_field_0x08 = ObjectVector_field_0x08; /*0x735cea*/
+      v78.q004 = ObjectVector_field_0x04; /*0x735ce6*/
+      v78.q008 = ObjectVector_field_0x08; /*0x735cea*/
       if ( v34 < 0 ) /*0x735cee*/
         v33 = (((unsigned char)v34 - 1) | 0xFFFFFFFE) == -1; /*0x735cf4*/
       if ( v33 ) /*0x735cf5*/
@@ -2748,7 +2748,7 @@ int UnitClass::CalcMoveTarget()
         v35 = 362.0386719675124; /*0x735cf7*/
       LOWORD(v36) = Math::RoundToInt(v35); /*0x735d13*/
       v37 = this->ptr_0; /*0x735d18*/
-      v78.ObjectVector_field_0x08 = (int)v36; /*0x735d1a*/
+      v78.q008 = (int)v36; /*0x735d1a*/
       (*(void (**)(UnitClass *, ObjectVector *))(v37 + 436))(this, &v78); /*0x735d27*/
       return; /*0x735d34*/
     }
@@ -2761,14 +2761,14 @@ int UnitClass::CalcMoveTarget()
   if ( firstObject ) /*0x735e6e*/
   {
     ObjectVector::Construct(&v78, 0, 0); /*0x735e7c*/
-    v51 = v78.ObjectVector_field_0x08; /*0x735e81*/
+    v51 = v78.q008; /*0x735e81*/
     ObjectVector_field_0x14 = 10; /*0x735e85*/
     /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E4F64) */  /*0x735e8c*/
-    v78.ObjectVector_field_0x14 = 10; /*0x735e94*/
-    v78.ObjectVector_field_0x10 = 0; /*0x735e98*/
+    v78.q014 = 10; /*0x735e94*/
+    v78.q010 = 0; /*0x735e98*/
     while ( 1 ) /*0x735ea2*/
     {
-      if ( v78.ObjectVector_field_0x10 < v51 ) /*0x735ea6*/
+      if ( v78.q010 < v51 ) /*0x735ea6*/
         goto LABEL_24; /*0x735ea6*/
       if ( (BYTE1(v78.ObjectVector_field_0x0C) || !v51) && ObjectVector_field_0x14 > 0 ) /*0x735eb6*/
         break; /*0x735eb6*/
@@ -2776,9 +2776,9 @@ LABEL_26:
       firstObject = *(unsigned int *)(firstObject + 48); /*0x735ee1*/
       if ( !firstObject ) /*0x735ee6*/
       {
-        for ( i = 0; i < v78.ObjectVector_field_0x10; ++i ) /*0x735ef0*/
+        for ( i = 0; i < v78.q010; ++i ) /*0x735ef0*/
         {
-          v55 = *(unsigned int **)(v78.ObjectVector_field_0x04 + 4 * i); /*0x735ef6*/
+          v55 = *(unsigned int **)(v78.q004 + 4 * i); /*0x735ef6*/
           if ( (*(int (**)(unsigned int *))(*v55 + 44))(v55) == 1 /*0x735f0f*/
             || (*(int (**)(unsigned int *))(*v55 + 44))(v55) == 15 )
           {
@@ -2796,11 +2796,11 @@ LABEL_26:
         }
         this->vt_slot_1348(this, 0, 0); /*0x735f6a*/
         /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E192C) */  /*0x735f74*/
-        if ( v78.ObjectVector_field_0x04 && BYTE1(v78.ObjectVector_field_0x0C) ) /*0x735f8a*/
-          __3_YAXPAX_Z((void *)v78.ObjectVector_field_0x04); /*0x735f91*/
+        if ( v78.q004 && BYTE1(v78.ObjectVector_field_0x0C) ) /*0x735f8a*/
+          __3_YAXPAX_Z((void *)v78.q004); /*0x735f91*/
         return; /*0x735fa0*/
       }
-      ObjectVector_field_0x14 = v78.ObjectVector_field_0x14; /*0x735e9e*/
+      ObjectVector_field_0x14 = v78.q014; /*0x735e9e*/
     }
     if ( (*(unsigned __int8 (**)(ObjectVector *, int, unsigned int))(*(unsigned int *)v78.__pad_0 + 8))( /*0x735ec4*/
            &v78,
@@ -2808,10 +2808,10 @@ LABEL_26:
            0) )
     {
 LABEL_24:
-      v53 = v78.ObjectVector_field_0x10++; /*0x735ecb*/
-      *(unsigned int *)(v78.ObjectVector_field_0x04 + 4 * v53) = firstObject; /*0x735eda*/
+      v53 = v78.q010++; /*0x735ecb*/
+      *(unsigned int *)(v78.q004 + 4 * v53) = firstObject; /*0x735eda*/
     }
-    v51 = v78.ObjectVector_field_0x08; /*0x735edd*/
+    v51 = v78.q008; /*0x735edd*/
     goto LABEL_26; /*0x735edd*/
   }
   v57 = this->unknownCoords568[2]; /*0x735fb4*/
@@ -2836,8 +2836,8 @@ LABEL_24:
   v61 = this->location[1]; /*0x736057*/
   v62 = this->location[2]; /*0x73605a*/
   *(unsigned int *)v78.__pad_0 = this->location[0]; /*0x73605d*/
-  v78.ObjectVector_field_0x04 = v61; /*0x736065*/
-  v78.ObjectVector_field_0x08 = v62; /*0x73606f*/
+  v78.q004 = v61; /*0x736065*/
+  v78.q008 = v62; /*0x73606f*/
   v63 = Coord::To_Cell((Coord *)&dword_87F7E8, &v78); /*0x736073*/
   v64 = (unsigned int *)InfantryClass::GetType((InfantryClass *)v63); /*0x73607a*/
   if ( v64 ) /*0x736081*/
@@ -3005,16 +3005,16 @@ int UnitClass::AssignDestination_SyncLog(int64_t a2)
               ? (v9 = (*(int (**)(unsigned int))(*(unsigned int *)v8 + 44))(this->FootClass_field_5A4) == 11 ? v8 : 0)
               : (v9 = 0),
                 *(unsigned int *)(v9 + 228) == this->AbstractClass_2B4)
-            || (LOWORD(v135.ComPtr_field_0x08) = 0x4000,
-                Value = ProgressTimer::GetValue(&this->primaryFacing, &v135.ComPtr_field_0x10),
-                LOWORD(v135.ComPtr_field_0x0C) = *(unsigned short *)ObjectClass::CalcTargetFacing(
+            || (LOWORD(v135.q008) = 0x4000,
+                Value = ProgressTimer::GetValue(&this->primaryFacing, &v135.q010),
+                LOWORD(v135.q00C) = *(unsigned short *)ObjectClass::CalcTargetFacing(
                                                              (ObjectClass *)this,
                                                              &v135.ComPtr_field_0x04,
                                                              this->AbstractClass_2B4)
                                                - *(unsigned short *)Value,
                 (unsigned __int8)UnitClass::CompareCoordinateMagnitude(
-                                   (UnitClass *)&v135.ComPtr_field_0x08,
-                                   (__int16 *)&v135.ComPtr_field_0x0C)) )
+                                   (UnitClass *)&v135.q008,
+                                   (__int16 *)&v135.q00C)) )
           {
             if ( (*(int (**)(Class_7F5C70 *))(*&this->q_610))(this) != 1 ) /*0x741a60*/
               (*(void (**)(Class_7F5C70 *, int))(*&this->q7C0))(this, 1); /*0x741a6d*/
@@ -3080,18 +3080,18 @@ LABEL_366:
       v15 = (*(int (**)(unsigned int))(*(unsigned int *)LODWORD(a2) + 44))(LODWORD(a2)) == 6 ? (Team *)LODWORD(a2) : 0;
 LABEL_36:
       v16 = *(unsigned int *)this; /*0x741bbe*/
-      v135.ComPtr_field_0x0C = (int)v15; /*0x741bc3*/
+      v135.q00C = (int)v15; /*0x741bc3*/
       if ( (*(int (**)(Class_7F5C70 *))(v16 + 388))(this) == 16 || this->queuedMission == 16 ) /*0x741bd9*/
       {
         v17 = (__int16 *)(*(int (**)(Class_7F5C70 *, int *))(*&this->Deployed))( /*0x741be5*/
                            this,
-                           &v135.ComPtr_field_0x10);
+                           &v135.q010);
         v18 = *v17; /*0x741beb*/
         LOWORD(v17) = *(&dword_89F6A0 + 1) + v17[1]; /*0x741bf9*/
         LOWORD(v135.ComPtr_field_0x04) = dword_89F6A0 + v18; /*0x741c00*/
         HIWORD(v135.ComPtr_field_0x04) = (unsigned short)v17; /*0x741c05*/
-        v135.ComPtr_field_0x08 = v135.ComPtr_field_0x04; /*0x741c12*/
-        v19 = (Cell *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)&v135.ComPtr_field_0x08); /*0x741c1c*/
+        v135.q008 = v135.ComPtr_field_0x04; /*0x741c12*/
+        v19 = (Cell *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)&v135.q008); /*0x741c1c*/
         v20 = (BuildingClass *)Cell::IsBridge(v19); /*0x741c23*/
         if ( v20 ) /*0x741c2a*/
         {
@@ -3246,10 +3246,10 @@ LABEL_90:
                 *(unsigned short *)&v135.ComPtr_2 = 0; /*0x741fff*/
                 v126 = v33[365]; /*0x742022*/
                 TileIndex = MapClass::GetTileIndex((MapClass *)&dword_87F7E8, v5 + 18, v126, 0); /*0x74202f*/
-                v135.ComPtr_field_0x08 = *LayerClass::Pathfinding_Find( /*0x742050*/
+                v135.q008 = *LayerClass::Pathfinding_Find( /*0x742050*/
                                             (Type *)&dword_87F7E8,
                                             v35,
-                                            &v135.ComPtr_field_0x10,
+                                            &v135.q010,
                                             v5 + 18,
                                             1,
                                             TileIndex,
@@ -3264,9 +3264,9 @@ LABEL_90:
                                             (__int16 *)v135.__pad_0,
                                             0,
                                             0);
-                if ( v135.ComPtr_field_0x08 != g_UnitSelectionState ) /*0x742054*/
+                if ( v135.q008 != g_UnitSelectionState ) /*0x742054*/
                 {
-                  v5 = (__int16 *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)&v135.ComPtr_field_0x08); /*0x742073*/
+                  v5 = (__int16 *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)&v135.q008); /*0x742073*/
                   LODWORD(a2) = v5; /*0x742075*/
                 }
               }
@@ -3311,13 +3311,13 @@ LABEL_90:
           {
             if ( *((unsigned char *)dword_87F83C + 16 * RegionMap + 8) ) /*0x7421f4*/
               goto LABEL_116; /*0x7421f4*/
-            v134.m_Data = *Pathfinding::SelectRegionPath(&v135.ComPtr_field_0x10, (__int16 *)v135.__pad_0, (int)&v135); /*0x74222f*/
-            v135.ComPtr_field_0x10 = *Pathfinding::SelectRegionPath( /*0x74223d*/
-                                        &v135.ComPtr_field_0x10,
+            v134.m_Data = *Pathfinding::SelectRegionPath(&v135.q010, (__int16 *)v135.__pad_0, (int)&v135); /*0x74222f*/
+            v135.q010 = *Pathfinding::SelectRegionPath( /*0x74223d*/
+                                        &v135.q010,
                                         (__int16 *)&v134.StreamClass_field_0C,
                                         (int)&v134.StreamClass_field_0C);
-            v42 = (__int16)(HIWORD(v134.m_Data) - HIWORD(v135.ComPtr_field_0x10)); /*0x742250*/
-            v134.m_Data = (__int16)(LOWORD(v134.m_Data) - LOWORD(v135.ComPtr_field_0x10)); /*0x742253*/
+            v42 = (__int16)(HIWORD(v134.m_Data) - HIWORD(v135.q010)); /*0x742250*/
+            v134.m_Data = (__int16)(LOWORD(v134.m_Data) - LOWORD(v135.q010)); /*0x742253*/
             __asm { fild [esp+98h+var_78.m_Data] } /*0x742257*/
             v134.m_Data = v42; /*0x74225b*/
             __asm /*0x74225f*/
@@ -3432,10 +3432,10 @@ LABEL_228:
                 if ( !v68 ) /*0x742805*/
                   goto LABEL_240; /*0x742805*/
                 Checked = (int (***)(unsigned int, void *, int *))Stream::GetChecked(&this->Locomotor); /*0x742809*/
-                v70 = (**Checked)(Checked, &unk_818858, &v135.ComPtr_field_0x10); /*0x74281d*/
+                v70 = (**Checked)(Checked, &unk_818858, &v135.q010); /*0x74281d*/
                 if ( v70 >= 0 ) /*0x742821*/
                 {
-                  ComPtr_field_0x10 = v135.ComPtr_field_0x10; /*0x742830*/
+                  ComPtr_field_0x10 = v135.q010; /*0x742830*/
                   ComPtr::Release_Alt(&v135); /*0x742838*/
                   v71 = ComPtr_field_0x10; /*0x74283d*/
                 }
@@ -3456,11 +3456,11 @@ LABEL_240:
                 {
                   v73 = (int *)(*(int (**)(unsigned int, int *))(*(unsigned int *)LODWORD(a2) + 72))( /*0x7428b0*/
                                  LODWORD(a2),
-                                 &v135.ComPtr_field_0x10);
-                  v135.ComPtr_field_0x1C = *v73; /*0x7428b5*/
-                  v135.ComPtr_field_0x20 = v73[1]; /*0x7428bc*/
+                                 &v135.q010);
+                  v135.q01C = *v73; /*0x7428b5*/
+                  v135.q020 = v73[1]; /*0x7428bc*/
                   v136 = v73[2]; /*0x7428cd*/
-                  GroundHeight = Cell::GetGroundHeight(&v135.ComPtr_field_0x1C); /*0x7428d1*/
+                  GroundHeight = Cell::GetGroundHeight(&v135.q01C); /*0x7428d1*/
                   if ( v136 < GroundHeight ) /*0x7428da*/
                     v136 = GroundHeight; /*0x7428dc*/
                   if ( v129 ) /*0x7428e6*/
@@ -3469,7 +3469,7 @@ LABEL_240:
                     goto LABEL_251; /*0x7428f3*/
                   v75 = (unsigned int *)(*(int (**)(unsigned int, int *))(*(unsigned int *)LODWORD(a2) + 72))( /*0x74290a*/
                                     LODWORD(a2),
-                                    &v135.ComPtr_field_0x10);
+                                    &v135.q010);
                   if ( (Coord::To_Cell((Coord *)&dword_87F7E8, v75)->flags & 0x100) != 0 ) /*0x742921*/
                     goto LABEL_251; /*0x742921*/
                   v76 = (unsigned int *)(*(int (**)(Class_7F5C70 *, int *, unsigned int))(*&this->deployAnim))( /*0x742933*/
@@ -3488,11 +3488,11 @@ LABEL_240:
                         LOWORD(v134.m_Size) = *v80 / 256,
                         HIWORD(v134.m_Size) = v80[1] / 256,
                         v81 = *(unsigned int *)this,
-                        v135.ComPtr_field_0x0C = v134.m_Size,
+                        v135.q00C = v134.m_Size,
                         v82 = (__int16 *)(*(int (**)(Class_7F5C70 *, StreamClass *, int *))(v81 + 448))(
                                            this,
                                            &v134,
-                                           &v135.ComPtr_field_0x0C),
+                                           &v135.q00C),
                         !BuildingTypeClass::IsPlacementValid((BuildingTypeClass *)this, v82, v138)) )
                   {
 LABEL_251:
@@ -3502,10 +3502,10 @@ LABEL_251:
                     if ( v83 ) /*0x7429ea*/
                     {
                       v85 = (int (***)(unsigned int, void *, int *))Stream::GetChecked(&this->Locomotor); /*0x7429f2*/
-                      v86 = (**v85)(v85, &unk_819088, &v135.ComPtr_field_0x10); /*0x742a06*/
+                      v86 = (**v85)(v85, &unk_819088, &v135.q010); /*0x742a06*/
                       if ( v86 >= 0 ) /*0x742a0a*/
                       {
-                        v88 = v135.ComPtr_field_0x10; /*0x742a19*/
+                        v88 = v135.q010; /*0x742a19*/
                         Release2COM((ObjectClass *)&v134); /*0x742a21*/
                         v87 = v88; /*0x742a26*/
                       }
@@ -3540,10 +3540,10 @@ LABEL_251:
                     if ( v134.m_Data ) /*0x742ad3*/
                     {
                       v92 = (int (***)(unsigned int, void *, int *))Stream::GetChecked((Stream *)&v134.m_Data); /*0x742ad9*/
-                      v93 = (**v92)(v92, &unk_819088, &v135.ComPtr_field_0x10); /*0x742aed*/
+                      v93 = (**v92)(v92, &unk_819088, &v135.q010); /*0x742aed*/
                       if ( v93 >= 0 ) /*0x742af1*/
                       {
-                        v94 = v135.ComPtr_field_0x10; /*0x742b00*/
+                        v94 = v135.q010; /*0x742b00*/
                         Release2COM((ObjectClass *)&v134.StreamClass_field_0C); /*0x742b08*/
                         StreamClass_field_0C = v94; /*0x742b0d*/
                       }
@@ -3593,14 +3593,14 @@ LABEL_251:
                         if ( v97 ) /*0x742b90*/
                           (*(void (**)(int *))(*v97 + 8))(v97); /*0x742b95*/
                       }
-                      v135.ComPtr_field_0x10 = this->location; /*0x742ba4*/
-                      v135.ComPtr_field_0x14 = this->locationY; /*0x742bab*/
-                      v135.ComPtr_field_0x18 = this->locationZ; /*0x742bb2*/
+                      v135.q010 = this->location; /*0x742ba4*/
+                      v135.q014 = this->locationY; /*0x742bab*/
+                      v135.q018 = this->locationZ; /*0x742bb2*/
                       if ( !*(unsigned int *)v84 ) /*0x742bb6*/
                         sub_7DC720(-2147467261); /*0x742bc1*/
                       v99 = *(int **)v84; /*0x742bc6*/
                       v100 = **(unsigned int **)v84; /*0x742bd2*/
-                      v101 = Coord::To_Cell((Coord *)&dword_87F7E8, &v135.ComPtr_field_0x10); /*0x742bd4*/
+                      v101 = Coord::To_Cell((Coord *)&dword_87F7E8, &v135.q010); /*0x742bd4*/
                       (*(void (**)(int *, unsigned int))(v100 + 124))(v99, (unsigned __int8)v101->slopeIndex[0]); /*0x742be3*/
                       v95 = *(unsigned int *)v134.m_Position; /*0x742be6*/
                     }
@@ -3617,15 +3617,15 @@ LABEL_251:
                   (*(void (**)(unsigned int))(**(unsigned int **)v135.__pad_0 + 8))(*(unsigned int *)v135.__pad_0); /*0x742c11*/
               }
             }
-            ComPtr_field_0x0C = v135.ComPtr_field_0x0C; /*0x742c14*/
-            if ( !v135.ComPtr_field_0x0C ) /*0x742c1a*/
+            ComPtr_field_0x0C = v135.q00C; /*0x742c14*/
+            if ( !v135.q00C ) /*0x742c1a*/
             {
               v103 = (void *)LODWORD(a2); /*0x742d3f*/
               goto LABEL_318; /*0x742d3f*/
             }
-            if ( *(unsigned char *)(*(unsigned int *)(v135.ComPtr_field_0x0C + 1312) + 5801) ) /*0x742c26*/
+            if ( *(unsigned char *)(*(unsigned int *)(v135.q00C + 1312) + 5801) ) /*0x742c26*/
             {
-              if ( (unsigned __int8)Team::AllMembersValid((Team *)v135.ComPtr_field_0x0C) /*0x742c46*/
+              if ( (unsigned __int8)Team::AllMembersValid((Team *)v135.q00C) /*0x742c46*/
                 && (Class_7F5C70 *)Team::GetMember((Team *)ComPtr_field_0x0C, 0) != this )
               {
                 v103 = (void *)LODWORD(a2); /*0x742c48*/
@@ -3680,12 +3680,12 @@ LABEL_318:
                 v106 = *v105; /*0x742d9e*/
                 v107 = v105[1]; /*0x742da0*/
                 v139 = v105[2]; /*0x742da6*/
-                LOWORD(v135.ComPtr_field_0x10) = v106 / 256; /*0x742db6*/
-                HIWORD(v135.ComPtr_field_0x10) = v107 / 256; /*0x742dc9*/
-                LOWORD(v135.ComPtr_field_0x0C) = LOWORD(v135.ComPtr_field_0x10) + 4; /*0x742dda*/
-                HIWORD(v135.ComPtr_field_0x0C) = HIWORD(v135.ComPtr_field_0x10) + 1; /*0x742ddf*/
-                v135.ComPtr_field_0x10 = v135.ComPtr_field_0x0C; /*0x742df2*/
-                if ( v103 != CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)&v135.ComPtr_field_0x10) ) /*0x742dfd*/
+                LOWORD(v135.q010) = v106 / 256; /*0x742db6*/
+                HIWORD(v135.q010) = v107 / 256; /*0x742dc9*/
+                LOWORD(v135.q00C) = LOWORD(v135.q010) + 4; /*0x742dda*/
+                HIWORD(v135.q00C) = HIWORD(v135.q010) + 1; /*0x742ddf*/
+                v135.q010 = v135.q00C; /*0x742df2*/
+                if ( v103 != CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)&v135.q010) ) /*0x742dfd*/
                 {
                   (*(void (**)(Class_7F5C70 *))(this->FootClass_DVC_5AC + 12))(&this->qD2C); /*0x742e0b*/
                   (*(void (**)(Class_7F5C70 *))(this->FootClass_DVC_588 + 12))(&this->qD2C); /*0x742e1a*/
@@ -3733,24 +3733,24 @@ LABEL_318:
               }
               v116 = (int *)(ComPtr_field_0x0C + 156); /*0x74301e*/
               v117 = ComPtr_field_0x0C + 156; /*0x743026*/
-              v135.ComPtr_field_0x08 = 0; /*0x743028*/
+              v135.q008 = 0; /*0x743028*/
               v118 = *(unsigned int *)(ComPtr_field_0x0C + 156); /*0x743034*/
               v119 = *(unsigned int *)(ComPtr_field_0x0C + 160); /*0x74303d*/
               v139 = *(unsigned int *)(v117 + 8); /*0x743045*/
-              LOWORD(v135.ComPtr_field_0x0C) = v118 / 256; /*0x743055*/
+              LOWORD(v135.q00C) = v118 / 256; /*0x743055*/
               v120 = v119; /*0x74305a*/
               v121 = v116[1]; /*0x743063*/
-              HIWORD(v135.ComPtr_field_0x0C) = v120 / 256; /*0x74306b*/
-              v135.ComPtr_field_0x10 = v135.ComPtr_field_0x0C; /*0x743074*/
+              HIWORD(v135.q00C) = v120 / 256; /*0x74306b*/
+              v135.q010 = v135.q00C; /*0x743074*/
               v122 = *v116; /*0x743084*/
               v139 = v116[2]; /*0x743086*/
-              LOWORD(v135.ComPtr_field_0x0C) = v122 / 256; /*0x74308d*/
-              HIWORD(v135.ComPtr_field_0x0C) = v121 / 256; /*0x7430a7*/
+              LOWORD(v135.q00C) = v122 / 256; /*0x74308d*/
+              HIWORD(v135.q00C) = v121 / 256; /*0x7430a7*/
               v123 = this->Type; /*0x7430b0*/
-              v135.ComPtr_field_0x04 = v135.ComPtr_field_0x0C; /*0x7430bb*/
+              v135.ComPtr_field_0x04 = v135.q00C; /*0x7430bb*/
               v127 = *(unsigned int *)(v123 + 1460); /*0x7430c9*/
-              v124 = MapClass::GetTileIndex((MapClass *)&dword_87F7E8, (__int16 *)&v135.ComPtr_field_0x10, v127, 0); /*0x7430d7*/
-              v135.ComPtr_field_0x0C = *LayerClass::Pathfinding_Find( /*0x7430fc*/
+              v124 = MapClass::GetTileIndex((MapClass *)&dword_87F7E8, (__int16 *)&v135.q010, v127, 0); /*0x7430d7*/
+              v135.q00C = *LayerClass::Pathfinding_Find( /*0x7430fc*/
                                           (Type *)&dword_87F7E8,
                                           v125,
                                           &v135,
@@ -3765,12 +3765,12 @@ LABEL_318:
                                           1,
                                           0,
                                           0,
-                                          (__int16 *)&v135.ComPtr_field_0x08,
+                                          (__int16 *)&v135.q008,
                                           0,
                                           0);
-              if ( v135.ComPtr_field_0x0C != g_UnitSelectionState ) /*0x743100*/
+              if ( v135.q00C != g_UnitSelectionState ) /*0x743100*/
               {
-                LODWORD(a2) = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)&v135.ComPtr_field_0x0C); /*0x743123*/
+                LODWORD(a2) = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)&v135.q00C); /*0x743123*/
                 goto LABEL_345; /*0x74312a*/
               }
             }
@@ -3854,10 +3854,10 @@ LABEL_182:
             if ( v134.StreamClass_field_0C ) /*0x7426d8*/
             {
               v60 = (int (***)(unsigned int, void *, int *))Stream::GetChecked((Stream *)&v134.StreamClass_field_0C); /*0x7426de*/
-              v61 = (**v60)(v60, &unk_819088, &v135.ComPtr_field_0x10); /*0x7426f2*/
+              v61 = (**v60)(v60, &unk_819088, &v135.q010); /*0x7426f2*/
               if ( v61 >= 0 ) /*0x7426f6*/
               {
-                v62 = v135.ComPtr_field_0x10; /*0x742705*/
+                v62 = v135.q010; /*0x742705*/
                 Release2COM((ObjectClass *)&v134.m_Data); /*0x74270d*/
                 v59 = v62; /*0x742712*/
               }

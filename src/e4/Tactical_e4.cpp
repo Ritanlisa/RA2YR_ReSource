@@ -3,6 +3,7 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Tactical_42_e4.hpp"
 #include "e4/classes/Tactical_e4.hpp"
+#include "e4/classes/DynamicVectorClass_PAD_16_e4.hpp"  // X114: Init receiver (raw _VectorClass_PAVTActionClass)
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/Cell_e4.hpp"
 #include "e4/classes/Coord_e4.hpp"
@@ -2210,14 +2211,14 @@ void Tactical_42::ddtor(void *a1_1, void *a2_1)
 
 // 0x6E4970
 namespace gamemd {
-int Tactical::Init(unsigned int * a2, void *a2_2, void *a3_1, void *a4_1, void *a5_1, void *a6_1, void *a7_1, void *a8_1)
+int Tactical::Init(unsigned int * a2, DynamicVectorClass_PAD_16 *a2_2, void *a3_1, void *a4_1, void *a5_1, void *a6_1, void *a7_1, void *a8_1)
 {
 
 
-  if ( !LOBYTE(a2_2->vtable4) ) /*0x6e4970*/
+  if ( !LOBYTE(a2_2->IsInitialized) ) /*0x6e4970*/
     return 0; /*0x6e4978*/
   int m_8; // edx
-  m_8 = a2_2->vtable3; /*0x6e497e*/
+  m_8 = a2_2->Capacity; /*0x6e497e*/
   int result = 0; // eax /*0x6e4981*/
   if ( m_8 <= 0 ) /*0x6e4985*/
     return -1; /*0x6e499c*/

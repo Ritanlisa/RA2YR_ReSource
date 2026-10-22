@@ -166,7 +166,7 @@ struct ObjectTypeClass {
     unsigned int * loadTypeMember_5717C00(unsigned int * a2);
     unsigned int * g_var_773e90(unsigned int * a1);
     void CleanupWeapons();
-    void ReleaseWaveAndString(void *a1);
+    void ReleaseWaveAndString(ObjectTypeClass *a1);
     int SetRTTI71(void *a1 = 0);
     void UnloadPipsSHP();
     void* LoadFromINI(uint8_t ***aP1, void *a2 = 0);

@@ -10,7 +10,7 @@ namespace gamemd {
 struct AudioMixer {
     unsigned int AudioMixer_field_00;  // 0x0
     unsigned int AudioMixer_field_04;  // 0x4
-    AudioMixer* AudioMixer_field_08;  // 0x8
+    AudioMixer* ptr_8;  // 0x8
     unsigned int AudioMixer_field_0C;  // 0xC
     unsigned int AudioMixer_field_10;  // 0x10
     unsigned int AudioMixer_field_14;  // 0x14

@@ -83,22 +83,22 @@ public:
     int32_t     m_Count;                // 0x08 (DynamicVectorClass::Count)
     bool        m_IsAllocated;          // 0x0C
     int32_t     m_CapacityIncrement;    // 0x10
-    int32_t     MoveFeedback_field_14;               // 0x14
-    int32_t     MoveFeedback_field_18;               // 0x18
-    int32_t     MoveFeedback_field_1C;               // 0x1C
-    int32_t     MoveFeedback_field_20;               // 0x20
-    int32_t     MoveFeedback_field_24;               // 0x24
-    int32_t     MoveFeedback_field_28;               // 0x28
-    int32_t     MoveFeedback_field_2C;               // 0x2C
+    int32_t     q014;               // 0x14
+    int32_t     q018;               // 0x18
+    int32_t     q01C;               // 0x1C
+    int32_t     q020;               // 0x20
+    int32_t     q024;               // 0x24
+    int32_t     q028;               // 0x28
+    int32_t     q02C;               // 0x2C
     unsigned int *q000;  // 0x0 (offset-truth)
     unsigned char q00C;  // 0xC (canon-mt)
-    unsigned int m_8;  // 0x8 (offset-truth)
+    unsigned int q008;  // 0x8 (offset-truth)
     unsigned int m_C;  // 0xC (offset-truth)
 
     bool IsAllocated;  // X10 supply (csp_canon_members)
 
 
-    unsigned int m_10;  // 0x10 [X55 W3 supply (render vocab)]
+    unsigned int q010;  // 0x10 [X55 W3 supply (render vocab)]
 };
 #endif  // GAMEMD_G2_MoveFeedback_DEF
 #endif  // GAMEMD_E4_MoveFeedback
@@ -1241,26 +1241,26 @@ public:
     virtual int GetMember09(); // 0x48E610 (G42.33 b3: 体真值 int 返回)
     // +22 more virtual methods
 
-    uint8_t COMObject_field_0x04[4];
-    uint8_t COMObject_field_0x08[4];
-    uint8_t COMObject_field_0x0C[4];
-    uint8_t COMObject_field_0x10[4];
-    uint8_t COMObject_field_0x14[4];
-    uint8_t COMObject_field_0x18[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
+    uint8_t q010[4];
+    uint8_t q014[4];
+    uint8_t q018[4];
     uint8_t COMObject_field_0x1C[4];
-    uint8_t COMObject_field_0x20[4];
-    uint8_t COMObject_field_0x24[4];
-    uint8_t COMObject_field_0x28[4];
-    uint8_t COMObject_field_0x2C[4];
+    uint8_t q020[4];
+    uint8_t q024[4];
+    uint8_t q028[4];
+    uint8_t q02C[4];
     uint8_t COMObject_field_0x30[4];
-    uint8_t COMObject_field_0x34[4];
-    uint8_t COMObject_field_0x38[4];
+    uint8_t q034[4];
+    uint8_t q038[4];
     uint8_t COMObject_field_0x3C[4];
     uint8_t COMObject_field_0x40[4];
-    uint8_t COMObject_field_0x44[4];
-    uint8_t COMObject_field_0x48[4];
-    uint8_t COMObject_field_0x4C[4];
-    uint8_t COMObject_field_0x50[4];
+    uint8_t q044[4];
+    uint8_t q048[4];
+    uint8_t q04C[4];
+    uint8_t q050[4];
     void* Hovered;  // 0x0 (no offset truth)
     void* ptr_0;  // 0x0 (no offset truth)
     void* Image;  // 0x0 (no offset truth)
@@ -1327,13 +1327,13 @@ public:
     // +4 more virtual methods
 
     uint8_t ComPtr_field_0x04[4];
-    uint8_t ComPtr_field_0x08[4];
-    uint8_t ComPtr_field_0x0C[4];
-    uint8_t ComPtr_field_0x10[4];
-    uint8_t ComPtr_field_0x14[4];
-    uint8_t ComPtr_field_0x18[4];
-    uint8_t ComPtr_field_0x1C[4];
-    uint8_t ComPtr_field_0x20[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
+    uint8_t q010[4];
+    uint8_t q014[4];
+    uint8_t q018[4];
+    uint8_t q01C[4];
+    uint8_t q020[4];
     unsigned int *__pad_0;  // 0x0 G42.35 C7 指针形 (return this->__pad_0 体)
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int Set(int a1);  // 0x65D480
@@ -1406,11 +1406,11 @@ public:
     unsigned int EnumConnectionPointsClass_field_0x0C;  // G42.33 b3
     unsigned int EnumConnectionPointsClass_field_0x10;  // G42.33 b3
     unsigned int EnumConnectionPointsClass_field_0x14;  // G42.33 b3
-    unsigned int EnumConnectionPointsClass_field_0x18;  // G42.33 b3
+    unsigned int q018;  // G42.33 b3
     unsigned int EnumConnectionPointsClass_field_0x1C;  // G42.33 b3
-    unsigned int EnumConnectionPointsClass_field_0x20;  // G42.33 b3
-    unsigned int EnumConnectionPointsClass_field_0x24;  // G42.33 b3
-    uint8_t EnumConnectionPointsClass_field_0x28[4];
+    unsigned int q020;  // G42.33 b3
+    unsigned int q024;  // G42.33 b3
+    uint8_t q028[4];
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* Constructor_VectorClass_IConnectionPoint___(int a1);  // 0x4A0E60
     void ClearBuffer();  // 0x4A0F20
@@ -1458,7 +1458,7 @@ public:
     unsigned int EnumConnectionsClass_field_0x04;  // G42.33 b3: 标量形 (体表 uint/ptr 用法)
     unsigned int EnumConnectionsClass_field_0x08;  // G42.33 b3
     unsigned int EnumConnectionsClass_field_0x0C;  // G42.33 b3
-    unsigned int EnumConnectionsClass_field_0x10;  // G42.33 b3
+    unsigned int q010;  // G42.33 b3
     unsigned int EnumConnectionsClass_field_0x14;  // G42.33 b3
     public:  // funcs-move
     // === FUNCS-MOVE (BEGIN) ===
@@ -1507,8 +1507,8 @@ public:
     virtual int IsZero(); // 0x4F4CA0 G42.35 C6 体签名
     virtual int IsNot2(); // 0x5176B0 G42.35 C6 体签名
 
-    uint8_t Flag_field_0x04[4];
-    uint8_t Flag_field_0x08[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
     unsigned int *__pad_0;  // G42.35 C6 体词汇 (0x4f4ca9 指针解引用)
 
     unsigned int u32_19;  // G42.39 data supply
@@ -1550,7 +1550,7 @@ public:
     virtual void Copy(); // 0x645D20
     virtual void Sum(); // 0x6C9650
 
-    uint8_t Float4_field_0x04[4];
+    uint8_t q004[4];
 };
 #endif  // GAMEMD_E4_Float4
 
@@ -1585,8 +1585,8 @@ public:
     // +1 more virtual methods
 
     uint8_t GraphicMenuAnimItem_field_0x04[4];
-    uint8_t GraphicMenuAnimItem_field_0x08[4];
-    uint8_t GraphicMenuAnimItem_field_0x0C[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
     uint8_t GraphicMenuAnimItem_field_0x10[4];
     uint8_t GraphicMenuAnimItem_field_0x14[4];
     unsigned int *__pad_0;  // G42.35 C6 体词汇 (0x4f30e6 ptr_0 槽)
@@ -1620,7 +1620,7 @@ virtual unsigned int * ddtor(unsigned int *);  // 0x4F37A0
 
     uint8_t GraphicMenuImageItem_field_0x04[4];
     uint8_t GraphicMenuImageItem_field_0x08[4];
-    uint8_t GraphicMenuImageItem_field_0x0C[4];
+    uint8_t q00C[4];
     uint8_t GraphicMenuImageItem_field_0x10[4];
 
     unsigned int u32_14;  // G42.39 data supply
@@ -1681,7 +1681,7 @@ public:
     virtual char Release(); // 0x4F3AF0 G42.35 C6 体签名
     virtual void ***QueryInterface(char a2); // 0x4F3B20 G42.35 C6 体签名
 
-    uint8_t GraphicMenuItem_Destru_field_0x04[4];
+    uint8_t q004[4];
     unsigned int *__pad_0;  // G42.35 C6 体词汇 (0x4f3b27 ptr_0 槽)
 
     unsigned int u32_C;  // G42.39 data supply
@@ -1729,7 +1729,7 @@ public:
     virtual int ComputeIndex_2(int a2); // 0x7AE0C0 G42.35 C8 体签名
     virtual int Shrink(); // 0x7AE460 G42.35 C9 体签名
 
-    uint8_t HashMap_field_0x04[4];
+    uint8_t q004[4];
     unsigned int *__pad_0;  // G42.35 C7 体词汇 (0x7adf90)
     uint8_t HashMap_field_0x08[4];
     uint8_t HashMap_field_0x0C[4];
@@ -1767,22 +1767,22 @@ public:
     uint8_t HashTable_field_0x08[4];
     uint8_t HashTable_field_0x0C[4];
     uint8_t HashTable_field_0x10[4];
-    uint8_t HashTable_field_0x14[4];
-    uint8_t HashTable_field_0x18[4];
-    uint8_t HashTable_field_0x1C[4];
-    uint8_t HashTable_field_0x20[4];
-    uint8_t HashTable_field_0x24[4];
-    uint8_t HashTable_field_0x28[4];
-    uint8_t HashTable_field_0x2C[4];
-    uint8_t HashTable_field_0x30[4];
-    uint8_t HashTable_field_0x34[4];
-    uint8_t HashTable_field_0x38[4];
-    uint8_t HashTable_field_0x3C[4];
-    uint8_t HashTable_field_0x40[4];
-    uint8_t HashTable_field_0x44[4];
-    uint8_t HashTable_field_0x48[4];
-    uint8_t HashTable_field_0x4C[4];
-    uint8_t HashTable_field_0x50[4];
+    uint8_t u32_14[4];
+    uint8_t u32_18[4];
+    uint8_t q01C[4];
+    uint8_t q020[4];
+    uint8_t q024[4];
+    uint8_t q028[4];
+    uint8_t q02C[4];
+    uint8_t q030[4];
+    uint8_t q034[4];
+    uint8_t u32_38[4];
+    uint8_t u32_3C[4];
+    uint8_t q040[4];
+    uint8_t q044[4];
+    uint8_t q048[4];
+    uint8_t q04C[4];
+    uint8_t q050[4];
     unsigned int *__pad_0;  // G42.35 C6 体词汇 (0x52b510 数组基)
     unsigned int m_4;  // G42.35 C8 体词汇 (0x62414c)
     unsigned int m_8;  // G42.35 C8 体词汇 (0x6241af)
@@ -1890,17 +1890,17 @@ public:
     virtual char AssignPlayerIndex_0(); // 0x5C5D30 G42.35 C9 体签名
     // +7 more virtual methods
 
-    uint8_t PlayerClass_field_0x04[4];
-    uint8_t PlayerClass_field_0x08[4];
+    uint8_t q004[4];
+    uint8_t u32_8[4];
     uint8_t PlayerClass_field_0x0C[4];
-    uint8_t PlayerClass_field_0x10[4];
-    uint8_t PlayerClass_field_0x14[4];
+    uint8_t q010[4];
+    uint8_t q014[4];
     uint8_t PlayerClass_field_0x18[4];
-    uint8_t PlayerClass_field_0x1C[4];
+    uint8_t q01C[4];
     uint8_t PlayerClass_field_0x20[4];
-    uint8_t PlayerClass_field_0x24[4];
-    uint8_t PlayerClass_field_0x28[4];
-    uint8_t PlayerClass_field_0x2C[4];
+    uint8_t q024[4];
+    uint8_t q028[4];
+    uint8_t q02C[4];
     // G42.33 b4 C1: flat-carrier vocab (ExecuteCommand 体表槽位, 0x41E/0x1198..0x11D0)
     unsigned char __pad_41E[0xD6A];  // G42.33 b4 C3: 扩容 ([3426] 站点)
     unsigned char __pad_1198[0x11A8 - 0x1198];
@@ -1978,7 +1978,7 @@ public:
     virtual int NameToDialogID(const char *a1); // 0x510FB0 G42.35 C6 体签名 (ecx 字串形)
     virtual int IndexToDlgID(); // 0x5E98F0 G42.35 C6 体签名
 
-    uint8_t PlayerSlot_field_0x04[4];
+    uint8_t q004[4];
 };
 #endif
 // 1 methods in IDA
@@ -2027,7 +2027,7 @@ public:
     virtual int Range(int a1, int a2);  // 0x65C7E0  // G42.35 def-truth sync (调用形 (Random*,min,max) @0x73E62B)
     virtual void AdvanceRandomBytes(); // 0x661850
 
-    uint8_t Random_field_0x04[4];
+    uint8_t q004[4];
     uint8_t Random_field_0x08[4];
     uint8_t Random_field_0x0C[4];
     unsigned int *__pad_0;  // G42.35 C8 体词汇 (0x65c780 指针解引用)
@@ -2055,7 +2055,7 @@ public:
 
     uint8_t RandomStraw_field_0x04[4];
     unsigned int *__pad_0;  // G42.35 C7 体词汇 (0x65c8ba)
-    uint8_t RandomStraw_field_0x08[4];
+    uint8_t q008[4];
 
     unsigned char __pad_004;  // X10 supply (csp_canon_members)
     unsigned char q010;  // X10 supply (member_lookup)
@@ -2115,11 +2115,11 @@ public:
     int Reset(); // 0x69DFF0
     // +1 more virtual methods
 
-    uint8_t SHA1_field_0x04[4];
-    uint8_t SHA1_field_0x08[4];
-    uint8_t SHA1_field_0x0C[4];
-    uint8_t SHA1_field_0x10[4];
-    uint8_t SHA1_field_0x14[4];
+    uint8_t u32_4[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
+    uint8_t q010[4];
+    uint8_t q014[4];
 };
 #endif  // GAMEMD_G2_SHA1_DEF (X10)
 
@@ -2242,9 +2242,9 @@ public:
     uint8_t StringVector_field_0x04[4];
     uint8_t StringVector_field_0x08[4];
     uint8_t StringVector_field_0x0C[4];
-    uint8_t StringVector_field_0x10[4];
-    uint8_t StringVector_field_0x14[4];
-    uint8_t StringVector_field_0x18[4];
+    uint8_t q010[4];
+    uint8_t q014[4];
+    uint8_t q018[4];
     unsigned char m_1[4];  // 0x1
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* Construct(int a1, int a2);  // 0x5AD6F0
@@ -2462,10 +2462,10 @@ public:
     uint8_t VectorCursor_field_0x04[4];
     unsigned int *__pad_0;  // G42.35 C7 体词汇 (0x76f0d0)
     uint8_t VectorCursor_field_0x08[4];
-    uint8_t VectorCursor_field_0x0C[4];
-    uint8_t VectorCursor_field_0x10[4];
-    uint8_t VectorCursor_field_0x14[4];
-    uint8_t VectorCursor_field_0x18[4];
+    uint8_t q00C[4];
+    uint8_t q010[4];
+    uint8_t q014[4];
+    uint8_t q018[4];
 
     unsigned char __pad_004;  // X10 supply (csp_canon_members)
     void* ptr_0;  // X10 supply (csp_canon_members)

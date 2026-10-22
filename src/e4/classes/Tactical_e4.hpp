@@ -137,6 +137,6 @@ ScenarioClass * * CalculateTacticalLighting(int * a1, IUnknown * aP2, int * a3, 
     int StubReturn56();  // 0x6DC450
     int StubReturn3608();  // 0x6DC460
     int UpdateUIVisibility(void *a1_1);
-    int Init(unsigned int * a2, void *a2_2, void *a3_1, void *a4_1, void *a5_1, void *a6_1, void *a7_1, void *a8_1);
+    int Init(unsigned int * a2, DynamicVectorClass_PAD_16 *a2_2, void *a3_1, void *a4_1, void *a5_1, void *a6_1, void *a7_1, void *a8_1);
 };
 } // namespace gamemd

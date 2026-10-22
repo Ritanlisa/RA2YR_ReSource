@@ -43,19 +43,19 @@ protected:
 
 public:
     int ArrayIndex;
-    int ParticleTypeClass_field_28C;
+    int q28C;
     BehavesLike BehavesLike;
     int ParticleTypeClass_field_294;
     int ImpactParticle;
     int Damage;
     int StartScale;
-    int ParticleTypeClass_field_2A4;
+    int YVelocity;
     int StartStateAI;
     int EndStateAI;
     int StateAIAdvance;
     int ParticleTypeClass_field_2B4;
     int Translucency;
-    int ParticleTypeClass_field_2BC;
+    int q2BC;
     int Velocity;
     int ParticleTypeClass_field_2C4;
     int DeleteOnStateLimit;
@@ -64,7 +64,7 @@ public:
     int Elasticity;
     int MaxDC;
     int MaxEC;
-    int ParticleTypeClass_field_2E0;
+    int MaxEC_d;
     int ParticleTypeClass_field_2E4;
     uint32_t VelocityRandom;
     uint32_t Regenerate;
@@ -72,7 +72,7 @@ public:
     bool Flamer;
     bool SpawnsFromOwnerCoords;
     bool OneFrame;
-    bool ParticleTypeClass_field_bool_2F4;
+    bool Translucency_d;
     bool Gas;
     bool Spark;
     bool Railgun;
@@ -80,7 +80,7 @@ public:
     bool Smoke;
     bool SpawnFrames;
     bool UpdateUI;
-    bool ParticleTypeClass_field_bool_300;
+    bool q300;
     bool ParticleTypeClass_field_bool_301;
     bool Translucent;
     bool ShowShadow;
@@ -108,13 +108,13 @@ public:
     unsigned int u32_EF0;  // X10 supply (member_lookup)
 
 
-    unsigned int ParticleTypeClass_field_0x2D4;  // 0x2D4 [X55 W3 supply (render vocab)]
+    unsigned int q2D4;  // 0x2D4 [X55 W3 supply (render vocab)]
     unsigned int ParticleTypeClass_field_0xC;  // 0xC [X55 W3 supply (render vocab)]
     unsigned int ParticleTypeClass_field_0x2E4;  // 0x2E4 [X55 W3 supply (render vocab)]
     unsigned int __pad_2FC;  // 0x2FC [X55 W3 supply (render vocab)]
     unsigned int ParticleTypeClass_field_0x2B4;  // 0x2B4 [X55 W3 supply (render vocab)]
     unsigned int ParticleTypeClass_field_0x2B0;  // 0x2B0 [X55 W3 supply (render vocab)]
-    int ParticleTypeClass_field_0x310;  // 0x310 [X55 W3 supply (render vocab)]
+    int q310;  // 0x310 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

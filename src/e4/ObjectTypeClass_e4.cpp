@@ -1783,24 +1783,24 @@ int ObjectTypeClass::CreateInstance(int aP1, int aP2, void *a3)
 } // namespace gamemd
 // 0x5F61A0
 namespace gamemd {
-void ObjectTypeClass::ReleaseWaveAndString(void *a1)
+void ObjectTypeClass::ReleaseWaveAndString(ObjectTypeClass *a1)
 {
 
-  void *ptr_0 = a1->vtable1; // edi /*0x5f61a4*/
-  if ( a1->vtable1 ) /*0x5f61a4*/
+  void *ptr_0 = a1->vfptr; // edi /*0x5f61a4*/
+  if ( a1->vfptr ) /*0x5f61a4*/
   {
-    WaveClass::Destroy((WaveClass *)a1->vtable1); /*0x5f61ac*/
+    WaveClass::Destroy((WaveClass *)a1->vfptr); /*0x5f61ac*/
     operator delete((ptr_0)); /*0x5f61b2*/
   }
   String *ptr_0; // edi
-  ptr_0 = (String *)a1->vtable2; /*0x5f61ba*/
-  a1->vtable1 = 0; /*0x5f61bd*/
+  ptr_0 = (String *)a1->vfptr1; /*0x5f61ba*/
+  a1->vfptr = 0; /*0x5f61bd*/
   if ( ptr_0 ) /*0x5f61c5*/
   {
     ((String *)(ptr_0))->Release(); /*0x5f61c9*/
     operator delete((ptr_0)); /*0x5f61cf*/
   }
-  a1->vtable2 = 0; /*0x5f61d7*/
+  a1->vfptr1 = 0; /*0x5f61d7*/
 }
 } // namespace gamemd
 // 0x5F75C0
@@ -1920,8 +1920,8 @@ int ObjectTypeClass::loadTypeMember_57179D0(WeaponTypeClass * aP1, CCINIClass * 
   {
     this->vfptr = (void *)*aP2; /*0x7179dd*/
     this->vfptr1 = aP2->headNode; /*0x7179e2*/
-    this->vfptr2 = aP2->vtable3; /*0x7179e8*/
-    this->vfptr3 = aP2->vtable4; /*0x7179ee*/
+    this->vfptr2 = aP2->headNode[1]; /*0x7179e8*/
+    this->vfptr3 = aP2->headNode[2]; /*0x7179ee*/
     LOWORD(this->uniqueId) = aP2->sectionHead; /*0x7179f5*/
   }
   *(unsigned int *)aP1 = this->vfptr; /*0x717a01*/

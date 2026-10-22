@@ -136,15 +136,15 @@ public:
     // === FUNCS-MOVE (END) ===
 
 
-    int WarheadTypeClass_field_0x100;  // 0x100 [X55 W3 supply (render vocab)]
-    unsigned int WarheadTypeClass_field_0xF8;  // 0xF8 [X55 W3 supply (render vocab)]
+    int q100;  // 0x100 [X55 W3 supply (render vocab)]
+    unsigned int q0F8;  // 0xF8 [X55 W3 supply (render vocab)]
     unsigned int __pad_FC;  // 0xFC [X55 W3 supply (render vocab)]
-    unsigned int WarheadTypeClass_field_0x17C;  // 0x17C [X55 W3 supply (render vocab)]
-    int WarheadTypeClass_field_0x180;  // 0x180 [X55 W3 supply (render vocab)]
-    int WarheadTypeClass_field_0x184;  // 0x184 [X55 W3 supply (render vocab)]
-    int WarheadTypeClass_field_0x188;  // 0x188 [X55 W3 supply (render vocab)]
-    int WarheadTypeClass_field_0x114;  // 0x114 [X55 W3 supply (render vocab)]
-    int WarheadTypeClass_field_0x120;  // 0x120 [X55 W3 supply (render vocab)]
+    unsigned int u32_17C;  // 0x17C [X55 W3 supply (render vocab)]
+    int q180;  // 0x180 [X55 W3 supply (render vocab)]
+    int u32_184;  // 0x184 [X55 W3 supply (render vocab)]
+    int u32_188;  // 0x188 [X55 W3 supply (render vocab)]
+    int u32_114;  // 0x114 [X55 W3 supply (render vocab)]
+    int q120;  // 0x120 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

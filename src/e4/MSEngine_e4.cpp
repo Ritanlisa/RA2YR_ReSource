@@ -538,9 +538,9 @@ CampaignClass * MSEngine::Constructor(unsigned int * Block, char a2, void *a3_1,
 
 // 0x5D5850
 namespace gamemd {
-void MSEngine::DestroyData(void *a1_1)
+void MSEngine::DestroyData(MSEngine *a1_1)
 {
-  if ( *(unsigned int *)a1_1->vtable1 ) /*0x5d5850*/
-    free(*(void **)a1_1->vtable1); /*0x5d5857*/
+  if ( *(unsigned int *)a1_1->ptr_0 ) /*0x5d5850*/
+    free(*(void **)a1_1->ptr_0); /*0x5d5857*/
 }
 } // namespace gamemd

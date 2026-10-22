@@ -431,7 +431,7 @@ int BuildingClass::AnimController(void *a1)
   unsigned int v12[4]; // [esp+Ch] [ebp-10h] BYREF
 
   Value = (&this->LightSource)->GetValue(v12); /*0x629736*/
-  v3 = this->q048; /*0x62973b*/
+  v3 = this->owningHouseIndex; /*0x62973b*/
   v4 = *Value; /*0x62973e*/
   if ( v3 < 0 ) /*0x629742*/
     goto LABEL_6; /*0x629742*/

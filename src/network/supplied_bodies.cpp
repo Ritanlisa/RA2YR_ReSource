@@ -3665,9 +3665,9 @@ bool NullModemClass::Init()
     v14 = this->u32_38; /*0x5f177e*/
     *(&this->q1E0) = v13; /*0x5f1781*/
     v15 = operator new(v14); /*0x5f1785*/
-    v16 = this->q040; /*0x5f178a*/
+    v16 = this->PacketsReceived; /*0x5f178a*/
     this->q018 = v15; /*0x5f178d*/
-    this->q030 = operator new(v16); /*0x5f1799*/
+    this->Active = operator new(v16); /*0x5f1799*/
   }
   *(&this->q210) = 0; /*0x5f17ab*/
   this->q078 = 0; /*0x5f17ae*/
@@ -4274,7 +4274,7 @@ bool NullModemClass::Negotiate()
   unsigned char Buffer[4]; // [esp+78h] [ebp-58h] BYREF
   char Str1[84]; // [esp+7Ch] [ebp-54h] BYREF
 
-  if ( this->q040 == -1 || !g_ClipboardBuffer ) /*0x5f3189*/
+  if ( this->PacketsReceived == -1 || !g_ClipboardBuffer ) /*0x5f3189*/
     return 0; /*0x5f3189*/
   dword_A8DAB8 &= ~1u; /*0x5f319e*/
   if ( (*(int (__thiscall **)(HWND, char *, int, char *, int, int, int, int))(*(unsigned int *)g_ClipboardBuffer + 28))( /*0x5f31be*/
@@ -4319,7 +4319,7 @@ bool NullModemClass::Negotiate()
   {
     ; /*0x5f3248*/
   }
-  Buffer[0] = this->q030; /*0x5f3258*/
+  Buffer[0] = this->Active; /*0x5f3258*/
   Buffer[1] = Buffer[0]; /*0x5f325c*/
   Buffer[2] = Buffer[0]; /*0x5f3260*/
   Buffer[3] = 0; /*0x5f326b*/

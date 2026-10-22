@@ -143,7 +143,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     // === FUNCS-MOVE (BEGIN) ===
     int FindByEventType(int a1);  // 0x610950
     // === FUNCS-MOVE (END) ===
-    unsigned int q03C; // 0x3C  gB member supply
+    unsigned int u32_3C; // 0x3C  gB member supply
     void* q184; // 0x184  gB member supply
     void* q1E8; // 0x1E8  gB member supply
     bool q278; // 0x278  gB member supply

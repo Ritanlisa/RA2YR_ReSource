@@ -465,8 +465,8 @@ public:
     int Clear();
 
     int32_t     m_RefCount;     // 0x00
-    int32_t     InputManager_ProcessEvents_field_04;       // 0x04
-    int32_t     InputManager_ProcessEvents_field_08;       // 0x08
+    int32_t     q004;       // 0x04
+    int32_t     q008;       // 0x08
 
     int Stub();  // G42.39 supply (0x4AEBE0)
 };
@@ -492,17 +492,17 @@ virtual int GetClassIdentifier(unsigned int *a2);  // 0x41E500 (G42 sig-sync: ID
     uint8_t AITriggerTypeClass_field_0x08[4];
     uint8_t AITriggerTypeClass_field_0x0C[4];
     uint8_t AITriggerTypeClass_field_0x10[4];
-    uint8_t AITriggerTypeClass_field_0x14[4];
-    uint8_t AITriggerTypeClass_field_0x18[4];
-    uint8_t AITriggerTypeClass_field_0x1C[4];
-    uint8_t AITriggerTypeClass_field_0x20[4];
-    uint8_t AITriggerTypeClass_field_0x24[4];
-    uint8_t AITriggerTypeClass_field_0x28[4];
-    uint8_t AITriggerTypeClass_field_0x2C[4];
-    uint8_t AITriggerTypeClass_field_0x30[4];
-    uint8_t AITriggerTypeClass_field_0x34[4];
-    uint8_t AITriggerTypeClass_field_0x38[4];
-    uint8_t AITriggerTypeClass_field_0x3C[4];
+    uint8_t q014[4];
+    uint8_t q018[4];
+    uint8_t q01C[4];
+    uint8_t q020[4];
+    uint8_t q024[4];
+    uint8_t u32_28[4];
+    uint8_t q02C[4];
+    uint8_t q030[4];
+    uint8_t q034[4];
+    uint8_t q038[4];
+    uint8_t q03C[4];
     public:  // symbol-anchor
     // === SYMBOL-ANCHOR (BEGIN) ===
     bool CivilianHouseOwns(int a1, int a2);  // 0x41ec90 -- AITriggerTypeClass::CivilianHouseOwns
@@ -547,7 +547,7 @@ public:  // g57c5 W4b supply slot
     unsigned int u32_BC;  // X10 supply (member_lookup)
     unsigned int u32_D8;  // X10 supply (member_lookup)
     int u32_DC;  // X10 supply (member_lookup)
-    unsigned int u32_E0;  // X10 supply (member_lookup)
+    unsigned int q0E0;  // X10 supply (member_lookup)
     void* ptr_0;  // X10 supply (csp_canon_members)
     void* ptr_4;  // X10 supply (csp_canon_members)
     void* ptr_8;  // X10 supply (csp_canon_members)
@@ -572,11 +572,11 @@ public:
     // +2 more virtual methods
 
     uint8_t AnimFile_field_0x04[4];
-    uint8_t AnimFile_field_0x08[4];
+    uint8_t q008[4];
     uint8_t AnimFile_field_0x0C[4];
-    uint8_t AnimFile_field_0x10[4];
-    uint8_t AnimFile_field_0x14[4];
-    uint8_t AnimFile_field_0x18[4];
+    uint8_t q010[4];
+    uint8_t q014[4];
+    uint8_t q018[4];
     public:  // g57w20m1 supply slot
     void* ptr_0;  // 0x0 (ml 真值 AnimFile@0x0; AddRef 0x426763 读) g57w20m1
     public:  // symbol-anchor
@@ -651,8 +651,8 @@ public:
     virtual int LoadMissingStrings(); // 0x6977C0 (truth int __thiscall; g57w20m1 C2556)
     virtual int LoadFile(); // 0x7346A0 (truth int __thiscall; g57w20m1 C2556)
 
-    uint8_t CSFClass_field_0x04[4];
-    uint8_t CSFClass_field_0x08[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
 };
 // 1 methods in IDA
 #ifndef GAMEMD_CAPTUREMANAGER_DECLARED  // G42.34: first-wins (game_systems.hpp twin)
@@ -690,13 +690,13 @@ public:
     virtual int Read(unsigned int *a2); // 0x5C5710 (G42 sig-sync: IDA int(this,DWORD*); def quarantined)
     // +3 more virtual methods
 
-    uint8_t CoopCampaignVector_field_0x04[4];
+    uint8_t q004[4];
     uint8_t CoopCampaignVector_field_0x08[4];
     uint8_t CoopCampaignVector_field_0x0C[4];
-    uint8_t CoopCampaignVector_field_0x10[4];
-    uint8_t CoopCampaignVector_field_0x14[4];
-    uint8_t CoopCampaignVector_field_0x18[4];
-    uint8_t CoopCampaignVector_field_0x1C[4];
+    uint8_t q010[4];
+    uint8_t q014[4];
+    uint8_t q018[4];
+    uint8_t q01C[4];
     unsigned int *m_1;   // g57w10 C2039 supply (e4 flat carrier name; bodies 0x5c5120/0x5c55f0 use m_1/m_8/m_C)
     unsigned int m_8;
     unsigned int m_C;
@@ -734,7 +734,7 @@ public:
     virtual int Equals(unsigned int *a2); // 0x459F60 (G42 sig-sync: IDA int(this,unsigned int*))
     unsigned int* Add(unsigned int *a2, unsigned int *a3); // 0x6CE240 (G42 sig-sync: def)
 
-    uint32_t Coord3D_field_0x04; // G42: scalar per IDA til (array form broke Add/Equals arithmetic)
+    uint32_t q004; // G42: scalar per IDA til (array form broke Add/Equals arithmetic)
     uint32_t Coord3D_field_0x08; // G42: scalar per IDA til
     // --- W16G3 supply (BEGIN) ---
     char __pad_0[4];  // 0x0 vocab alias (W16G3 raw *(unsigned int*)x.__pad_0 usages, supplied_bodies x17)
@@ -754,7 +754,7 @@ public:
     long long Constructor(int a2, int a3); // 0x403870 (G42 sig-sync: def)
 
     public:  // g57w20m1 supply slot
-    unsigned char q000[1];  // 0x0 (ml q000@0x0; raw 0x403891 u64 读首 8 字节) g57w20m1
+    unsigned char tail_0[1];  // 0x0 (ml q000@0x0; raw 0x403891 u64 读首 8 字节) g57w20m1
 };
 // 1 methods in IDA
 // CSP: CoordList matched via T1
@@ -786,7 +786,7 @@ public:
     void* Constructor(int a2, int *a3, int a4); // 0x7493B0 (G42 sig-sync: def)
 
     // --- g57w20m1 supply: til VoxelAnimClass 布局 (IDA live 2026-10-08; 0x7493B0 raw this 型) ---
-    int VoxelAnimClass_field_0x0;   // 0x0 (ptr_0 安装站 0x749434)
+    int tail_0;   // 0x0 (ptr_0 安装站 0x749434)
     int VoxelAnimClass_field_0x4;   // 0x4 (0x74943a; GenerateUniqueID 0x74944e 经此)
     int VoxelAnimClass_field_0x8;   // 0x8 (0x749440)
     char __pad_C[16];               // 0xC (til 名; raw 0x749447 *(unsigned int*)this->__pad_C)
@@ -823,9 +823,9 @@ public:
     uint8_t EMPulseClass_field_0x08[4];
     uint8_t EMPulseClass_field_0x0C[4];
     uint8_t EMPulseClass_field_0x10[4];
-    uint8_t EMPulseClass_field_0x14[4];
-    uint8_t EMPulseClass_field_0x18[4];
-    uint8_t EMPulseClass_field_0x1C[4];
+    uint8_t q014[4];
+    uint8_t q018[4];
+    uint8_t q01C[4];
     public:  // symbol-anchor
     // === SYMBOL-ANCHOR (BEGIN) ===
     void* CopyTo(int a1);  // 0x4c5ac0 -- EMPulseClass::CopyTo
@@ -861,9 +861,9 @@ public:
     virtual char CheckExtensionMatch(int a2); // 0x628D10 (G42 sig-sync: IDA char(this,int); def quarantined)
     int Check(const char * a2, unsigned int * a3); // 0x628DD0 (G42 sig-sync: def)
 
-    uint8_t FileExtension_field_0x04[4];
-    uint8_t FileExtension_field_0x08[4];
-    uint8_t FileExtension_field_0x0C[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
 };
 // 4 methods in IDA
 // CSP: FileFind matched via T1
@@ -904,8 +904,8 @@ public:
     virtual int Read(int a2, int a3); // 0x7BA480 (G42 sig-sync: IDA int(this,int,int); def quarantined)
 
     uint8_t FilePipe_field_0x04[4];
-    uint8_t FilePipe_field_0x08[4];
-    uint8_t FilePipe_field_0x0C[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
 };
 // 2 methods in IDA
 // CSP: FileStraw matched via T1
@@ -929,7 +929,7 @@ public:
     void* QueryInterface(char a2); // 0x477770 (G42 sig-sync: def)
     virtual int Release(int a2, int a3); // 0x7BA530 (G42 sig-sync; def quarantined)
 
-    uint8_t FileStraw_Destru_field_0x04[4];
+    uint8_t q004[4];
 };
 // 1 methods in IDA
 class FileTree
@@ -968,13 +968,13 @@ public:
     _DWORD * Construct(int p0, int p1);  // 0x512DC0 (x13:signals; virt=nonvirtual)
     // +3 more virtual methods
 
-    void *InfantryTypeVector_field_0x04;
+    void *u32_4;
     int InfantryTypeVector_field_0x08;
-    uint8_t InfantryTypeVector_field_0x0C[4];
+    uint8_t q00C[4];
     uint8_t InfantryTypeVector_field_0x10[4];
     uint8_t InfantryTypeVector_field_0x14[4];
-    uint8_t InfantryTypeVector_field_0x18[4];
-    uint8_t InfantryTypeVector_field_0x1C[4];
+    uint8_t q018[4];
+    uint8_t q01C[4];
     public:  // symbol-anchor
     // === SYMBOL-ANCHOR (BEGIN) ===
     int Add(int a1);  // 0x512f20 -- InfantryTypeVector::Add
@@ -987,7 +987,7 @@ public:
 
 
     int __pad_004;  // 0x4 [X55 W3 supply (render vocab)]
-    unsigned int u32_D;  // 0xD [X55 W3 supply (render vocab)]
+    unsigned int u8_D;  // 0xD [X55 W3 supply (render vocab)]
     unsigned int u32_8;  // 0x8 [X55 W3 supply (render vocab)]
 };
 // 2 methods in IDA
@@ -1001,7 +1001,7 @@ public:
     _DWORD * ToPixel(int p0, int p1);  // 0x6D1EB0 (x13:signals; virt=dropped(no-binary-ptr_0))
     int __stdcall ToScreenOffset(int p0, int p1, int* p2, int* p3);  // 0x6D62E0 (x13:signals; virt=dropped(no-binary-ptr_0))
 
-    uint8_t IsoCoord_field_0x04[4];
+    uint8_t q004[4];
 
     unsigned char __pad_000;  // X10 supply (csp_canon_members)
 };
@@ -1017,9 +1017,9 @@ public:
     char * __cdecl Decode16BitV2(int p0, uint16_t* p1, int* p2, int p3, int p4, int p5);  // 0x7C39C0 (x13:signals; virt=dropped(no-binary-ptr_0))
     unsigned int __cdecl Decode8Bit(int p0, uint8_t* p1, int* p2, unsigned int p3, int p4, int p5);  // 0x7C3EB0 (x13:signals; virt=dropped(no-binary-ptr_0))
 
-    uint8_t IsoTile_field_0x04[4];
-    uint8_t IsoTile_field_0x08[4];
-    uint8_t IsoTile_field_0x0C[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
 };
 // 1 methods in IDA
 // CSP: IsometricTileClass matched via T1
@@ -1050,21 +1050,21 @@ public:
     uint8_t IsometricTileTypeClass_field_0x08[4];
     uint8_t IsometricTileTypeClass_field_0x0C[4];
     uint8_t IsometricTileTypeClass_field_0x10[4];
-    uint8_t IsometricTileTypeClass_field_0x14[4];
-    uint8_t IsometricTileTypeClass_field_0x18[4];
-    uint8_t IsometricTileTypeClass_field_0x1C[4];
-    uint8_t IsometricTileTypeClass_field_0x20[4];
-    uint8_t IsometricTileTypeClass_field_0x24[4];
-    uint8_t IsometricTileTypeClass_field_0x28[4];
-    uint8_t IsometricTileTypeClass_field_0x2C[4];
-    uint8_t IsometricTileTypeClass_field_0x30[4];
-    uint8_t IsometricTileTypeClass_field_0x34[4];
-    uint8_t IsometricTileTypeClass_field_0x38[4];
-    uint8_t IsometricTileTypeClass_field_0x3C[4];
-    uint8_t IsometricTileTypeClass_field_0x40[4];
-    uint8_t IsometricTileTypeClass_field_0x44[4];
-    uint8_t IsometricTileTypeClass_field_0x48[4];
-    uint8_t IsometricTileTypeClass_field_0x4C[4];
+    uint8_t q014[4];
+    uint8_t q018[4];
+    uint8_t q01C[4];
+    uint8_t q020[4];
+    uint8_t q024[4];
+    uint8_t q028[4];
+    uint8_t q02C[4];
+    uint8_t q030[4];
+    uint8_t q034[4];
+    uint8_t q038[4];
+    uint8_t q03C[4];
+    uint8_t q040[4];
+    uint8_t q044[4];
+    uint8_t q048[4];
+    uint8_t q04C[4];
     public:  // symbol-anchor
     // === SYMBOL-ANCHOR (BEGIN) ===
     int ProcessPower(int a1);  // 0x549b70 -- IsometricTileTypeClass::ProcessPower
@@ -1083,7 +1083,7 @@ public:
     // === FUNCS-MOVE (END) ===
 
     unsigned int u32_294;  // X10 supply (member_lookup)
-    unsigned int u32_2A4;  // X10 supply (member_lookup)
+    unsigned int q2A4;  // X10 supply (member_lookup)
     unsigned int u32_2A8;  // X10 supply (member_lookup)
     unsigned int u32_2AC;  // X10 supply (member_lookup)
     unsigned int u32_2B1;  // X10 supply (member_lookup)
@@ -1154,12 +1154,12 @@ public:
     virtual int Read(const char** p0);  // 0x69CD00 (x13:signals; virt=slot)
     // +2 more virtual methods
 
-    uint8_t MapFile_field_0x04[4];
-    uint8_t MapFile_field_0x08[4];
-    uint8_t MapFile_field_0x0C[4];
-    uint8_t MapFile_field_0x10[4];
-    uint8_t MapFile_field_0x14[4];
-    uint8_t MapFile_field_0x18[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
+    uint8_t q010[4];
+    uint8_t q014[4];
+    uint8_t q018[4];
     public:  // symbol-anchor
     // === SYMBOL-ANCHOR (BEGIN) ===
     void* QueryInterface(int a1);  // 0x69d520 -- MapFile::QueryInterface
@@ -1178,7 +1178,7 @@ public:
     char Check(int p0);  // 0x5D63E0 (x13:signals; virt=dropped(no-binary-ptr_0))
     virtual void Upload(); // 0x5E7EB0
 
-    uint8_t MapPreview_field_0x04[4];
+    uint8_t q004[4];
 
     unsigned int u32_180;  // X10 supply (member_lookup)
 };
@@ -1237,14 +1237,14 @@ public:
     char PlaceCityBlock2(int16_t* p0, int16_t* p1, void* p2);  // 0x593550 (x13:signals; virt=dropped(no-binary-ptr_0))
     // +4 more virtual methods
 
-    uint8_t MapSeed_field_0x04[4];
+    uint8_t q004[4];
     uint8_t MapSeed_field_0x08[4];
-    uint8_t MapSeed_field_0x0C[4];
+    uint8_t q00C[4];
     uint8_t MapSeed_field_0x10[4];
-    uint8_t MapSeed_field_0x14[4];
-    uint8_t MapSeed_field_0x18[4];
-    uint8_t MapSeed_field_0x1C[4];
-    uint8_t MapSeed_field_0x20[4];
+    uint8_t q014[4];
+    uint8_t q018[4];
+    uint8_t q01C[4];
+    uint8_t q020[4];
     public:  // symbol-anchor
     // === SYMBOL-ANCHOR (BEGIN) ===
     int ValidateName(int a1);  // 0x597730 -- MapSeed::ValidateName
@@ -1274,16 +1274,16 @@ public:
     // +7 more virtual methods
 
     uint8_t MapSeedClass_field_0x04[4];
-    uint8_t MapSeedClass_field_0x08[4];
-    uint8_t MapSeedClass_field_0x0C[4];
-    uint8_t MapSeedClass_field_0x10[4];
-    uint8_t MapSeedClass_field_0x14[4];
-    uint8_t MapSeedClass_field_0x18[4];
-    uint8_t MapSeedClass_field_0x1C[4];
-    uint8_t MapSeedClass_field_0x20[4];
-    uint8_t MapSeedClass_field_0x24[4];
-    uint8_t MapSeedClass_field_0x28[4];
-    uint8_t MapSeedClass_field_0x2C[4];
+    uint8_t u32_8[4];
+    uint8_t u32_C[4];
+    uint8_t q010[4];
+    uint8_t q014[4];
+    uint8_t q018[4];
+    uint8_t q01C[4];
+    uint8_t q020[4];
+    uint8_t q024[4];
+    uint8_t q028[4];
+    uint8_t q02C[4];
     public:  // symbol-anchor
     // === SYMBOL-ANCHOR (BEGIN) ===
     int PlaceBuildingClusters(int a1);  // 0x5a5b50 -- MapSeedClass::PlaceBuildingClusters
@@ -1329,7 +1329,7 @@ public:
     virtual _DWORD * QueryInterface(char p0);  // 0x7678C0 (x13:signals; virt=slot)
 
     uint8_t MapSizeGameOption_WorldDominationTour_field_0x04[4];
-    uint8_t MapSizeGameOption_WorldDominationTour_field_0x08[4];
+    uint8_t q008[4];
 
     int q004;  // X10 supply (member_lookup)
 };
@@ -1387,7 +1387,7 @@ public:
     uint8_t Matrix3x3_field_0x04[4];
     uint8_t Matrix3x3_field_0x08[4];
     uint8_t Matrix3x3_field_0x0C[4];
-    uint8_t Matrix3x3_field_0x10[4];
+    uint8_t q010[4];
 
     unsigned int u32_14;  // X10 supply (member_lookup)
     unsigned int u32_18;  // X10 supply (member_lookup)
@@ -1410,7 +1410,7 @@ public:
     _DWORD * FindByID(int p0, char p1);  // 0x47C4D0 (x13:signals; virt=dropped(no-binary-ptr_0))
     _DWORD * FindByType(char p0);  // 0x47EBF0 (x13:signals; virt=dropped(no-binary-ptr_0))
 
-    uint8_t PlacementList_field_0x04[4];
+    uint8_t q004[4];
 
     unsigned int u32_E4;  // X10 supply (member_lookup)
     unsigned int u32_E8;  // X10 supply (member_lookup)
@@ -1444,17 +1444,17 @@ public:
     // +8 more virtual methods
 
     uint8_t RadarHashVector_field_0x04[4];
-    uint8_t RadarHashVector_field_0x08[4];
-    uint8_t RadarHashVector_field_0x0C[4];
-    uint8_t RadarHashVector_field_0x10[4];
-    uint8_t RadarHashVector_field_0x14[4];
-    uint8_t RadarHashVector_field_0x18[4];
-    uint8_t RadarHashVector_field_0x1C[4];
-    uint8_t RadarHashVector_field_0x20[4];
-    uint8_t RadarHashVector_field_0x24[4];
-    uint8_t RadarHashVector_field_0x28[4];
-    uint8_t RadarHashVector_field_0x2C[4];
-    uint8_t RadarHashVector_field_0x30[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
+    uint8_t q010[4];
+    uint8_t q014[4];
+    uint8_t q018[4];
+    uint8_t q01C[4];
+    uint8_t q020[4];
+    uint8_t q024[4];
+    uint8_t q028[4];
+    uint8_t q02C[4];
+    uint8_t q030[4];
     public:  // symbol-anchor
     // === SYMBOL-ANCHOR (BEGIN) ===
     int Read(int a1);  // 0x658aa0 -- RadarHashVector::Read
@@ -1485,7 +1485,7 @@ public:
 
     uint8_t ScoreAnimClass_field_0x04[4];
     uint8_t ScoreAnimClass_field_0x08[4];
-    uint32_t ScoreAnimClass_field_0x0C; // G42: scalar per IDA til (AddRef timer math)
+    uint32_t u32_C; // G42: scalar per IDA til (AddRef timer math)
     uint8_t ScoreAnimClass_field_0x10[4];
     uint32_t ScoreAnimClass_field_0x14; // G42: scalar per IDA til (AddRef timer math)
     uint8_t ScoreAnimClass_field_0x18[4];
@@ -1541,8 +1541,8 @@ public:
     virtual _DWORD * Constructor_ScoreFontClass(char p0);  // 0x691100 (x13:signals; virt=slot)
 
     uint8_t ScoreFontClass_field_0x04[4];
-    uint8_t ScoreFontClass_field_0x08[4];
-    uint8_t ScoreFontClass_field_0x0C[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
 };
 // 10 methods in IDA
 class ScoreScreen
@@ -1618,7 +1618,7 @@ public:
     void ShowAlt(const int** p0, int p1);  // 0x76EA20 (x13:signals; virt=dropped(no-binary-ptr_0))
     void Show(const int** p0);  // 0x76EAF0 (x13:signals; virt=dropped(no-binary-ptr_0))
 
-    uint8_t ScoreText_field_0x04[4];
+    uint8_t q004[4];
 
     unsigned int u32_45C;  // X10 supply (member_lookup)
     unsigned int u32_47C;  // X10 supply (member_lookup)
@@ -1681,10 +1681,10 @@ public:
     char CreateChemLauncher(int p0, int p1, int p2, int p3);  // 0x6E38F0 (x13:signals; virt=dropped(no-binary-ptr_0))
     virtual int FindByName(); // 0x773030
 
-    uint8_t SuperWeaponClass_field_0x04[4];
-    uint8_t SuperWeaponClass_field_0x08[4];
-    uint8_t SuperWeaponClass_field_0x0C[4];
-    uint8_t SuperWeaponClass_field_0x10[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
+    uint8_t q010[4];
 
     unsigned char __pad_000;  // X10 supply (csp_canon_members)
     unsigned int u32_44;  // X10 supply (member_lookup)
@@ -1700,9 +1700,9 @@ public:
     virtual int ddtor(); // 0x6C3A10
     virtual int GetSize(); // 0x6C3A90
 
-    uint8_t TClassFactory_AnimClass_field_0x04[4];
-    uint8_t TClassFactory_AnimClass_field_0x08[4];
-    uint8_t TClassFactory_AnimClass_field_0x0C[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
 };
 // 4 methods in IDA
 class TClassFactory_BulletClass
@@ -1715,9 +1715,9 @@ public:
     virtual int ddtor(); // 0x6C5090
     virtual int GetSize(); // 0x6C5110
 
-    uint8_t TClassFactory_BulletClass_field_0x04[4];
-    uint8_t TClassFactory_BulletClass_field_0x08[4];
-    uint8_t TClassFactory_BulletClass_field_0x0C[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
 };
 // 8 methods in IDA
 class TClassFactory_CampaignClass
@@ -1732,13 +1732,13 @@ public:
     virtual int AddRef(); // 0x6C0240
     // +3 more virtual methods
 
-    uint8_t TClassFactory_CampaignClass_field_0x04[4];
-    uint8_t TClassFactory_CampaignClass_field_0x08[4];
-    uint8_t TClassFactory_CampaignClass_field_0x0C[4];
-    uint8_t TClassFactory_CampaignClass_field_0x10[4];
-    uint8_t TClassFactory_CampaignClass_field_0x14[4];
-    uint8_t TClassFactory_CampaignClass_field_0x18[4];
-    uint8_t TClassFactory_CampaignClass_field_0x1C[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
+    uint8_t q010[4];
+    uint8_t q014[4];
+    uint8_t q018[4];
+    uint8_t q01C[4];
     public:  // funcs-move
     // === FUNCS-MOVE (BEGIN) ===
     int GetSize(int a1, int a2);  // 0x6c0310
@@ -1755,9 +1755,9 @@ public:
     virtual int ddtor(); // 0x6BF990
     virtual int GetSize(); // 0x6BFA10
 
-    uint8_t TClassFactory_CellClass_field_0x04[4];
-    uint8_t TClassFactory_CellClass_field_0x08[4];
-    uint8_t TClassFactory_CellClass_field_0x0C[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
 };
 // 4 methods in IDA
 class TClassFactory_EMPulseClass
@@ -1770,9 +1770,9 @@ public:
     virtual int ddtor(); // 0x6BFB10
     int GetSize(); // 0x6BFB90 (G42 sig-sync: def)
 
-    uint8_t TClassFactory_EMPulseClass_field_0x04[4];
-    uint8_t TClassFactory_EMPulseClass_field_0x08[4];
-    uint8_t TClassFactory_EMPulseClass_field_0x0C[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
 };
 // 1 methods in IDA
 class TeamTypeVector
@@ -1802,13 +1802,13 @@ public:
     virtual void ddtor(); // 0x4E0410
     // +3 more virtual methods
 
-    uint8_t AbstractClassVector_field_0x04[4];
+    uint8_t q004[4];
     uint8_t AbstractClassVector_field_0x08[4];
-    uint8_t AbstractClassVector_field_0x0C[4];
-    uint8_t AbstractClassVector_field_0x10[4];
-    uint8_t AbstractClassVector_field_0x14[4];
-    uint8_t AbstractClassVector_field_0x18[4];
-    uint8_t AbstractClassVector_field_0x1C[4];
+    uint8_t q00C[4];
+    uint8_t q010[4];
+    uint8_t q014[4];
+    uint8_t q018[4];
+    uint8_t q01C[4];
     public:  // symbol-anchor
     // === SYMBOL-ANCHOR (BEGIN) ===
     int Read(int a1);  // 0x4e0440 -- AbstractClassVector::Read
@@ -1885,10 +1885,10 @@ public:
     uint8_t AlphaShapeClass_field_0x08[4];
     uint8_t AlphaShapeClass_field_0x0C[4];
     uint8_t AlphaShapeClass_field_0x10[4];
-    uint8_t AlphaShapeClass_field_0x14[4];
-    uint8_t AlphaShapeClass_field_0x18[4];
-    uint8_t AlphaShapeClass_field_0x1C[4];
-    uint8_t AlphaShapeClass_field_0x20[4];
+    uint8_t u32_14[4];
+    uint8_t q018[4];
+    uint8_t q01C[4];
+    uint8_t q020[4];
     uint8_t AlphaShapeClass_field_0x24[4];
 
     bool IsAllocated;  // X10 supply (csp_canon_members)
@@ -1942,7 +1942,7 @@ public:
     int FindIndex(uint8_t* p0, uint8_t* p1, int p2);  // 0x4753F0 (x13:signals; virt=nonvirtual)
     virtual int LookupByName();  // G42 sig-sync: returns index // 0x772A50
 
-    uint8_t ArmorType_field_0x04[4];
+    uint8_t q004[4];
 };
 // 6 methods in IDA
 // CSP: ArtConfig matched via T1
@@ -2044,10 +2044,10 @@ public:
     virtual unsigned int Write(int p0);  // 0x42FB30 (x13:signals; virt=slot)
     virtual _DWORD * QueryInterface(char p0);  // 0x42FB50 (x13:signals; virt=slot)
 
-    uint8_t BaseNodeClass_Vector_field_0x04[4];
-    uint8_t BaseNodeClass_Vector_field_0x08[4];
-    uint8_t BaseNodeClass_Vector_field_0x0C[4];
-    uint8_t BaseNodeClass_Vector_field_0x10[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
+    uint8_t q010[4];
 
     bool IsAllocated;  // X10 supply (csp_canon_members)
 };
@@ -2063,9 +2063,9 @@ public:
     int RSAOperation(char* p0, int p1, char* p2);  // 0x632870 (x13:signals; virt=dropped(no-binary-ptr_0))
     bool Compare(int p0);  // 0x632BC0 (x13:signals; virt=nonvirtual)
 
-    uint8_t BigInt_field_0x04[4];
-    uint8_t BigInt_field_0x08[4];
-    uint8_t BigInt_field_0x0C[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
 
     unsigned int u32_200;  // X10 supply (member_lookup)
     char u8_100;  // X10 supply (member_lookup)
@@ -2087,7 +2087,7 @@ public:
     uint8_t BinkMovieClass_field_0x04[4];
     uint8_t BinkMovieClass_field_0x08[4];
     uint8_t BinkMovieClass_field_0x0C[4];
-    uint8_t BinkMovieClass_field_0x10[4];
+    uint8_t q010[4];
     public:  // symbol-anchor
     // === SYMBOL-ANCHOR (BEGIN) ===
     void* Close(int a1);  // 0x432690 -- BinkMovie::Close
@@ -2129,7 +2129,7 @@ public:
     virtual _DWORD * QueryInterface(char p0);  // 0x632F90 (x13:signals; virt=slot)
 
     uint8_t BlowPipe_field_0x04[4];
-    uint8_t BlowPipe_field_0x08[4];
+    uint8_t q008[4];
     uint8_t BlowPipe_field_0x0C[4];
     uint8_t BlowPipe_field_0x10[4];
 
@@ -2150,7 +2150,7 @@ public:
     virtual void * Constructor_MixFileClass(char p0);  // 0x5B4630 (x13:signals; virt=flagged(rdata-ptr))
 
     uint8_t BlowStraw_field_0x04[4];
-    uint8_t BlowStraw_field_0x08[4];
+    uint8_t q008[4];
 
     unsigned char q010;  // X10 supply (member_lookup)
     unsigned int u32_18;  // X10 supply (member_lookup)
@@ -2231,10 +2231,10 @@ public:
     virtual int StubReturn1(); // 0x746E20
     virtual void ** Seek(char p0);  // 0x746E80 (x13:signals; virt=slot)
 
-    uint8_t C07F5C70_field_0x04[4];
-    uint8_t C07F5C70_field_0x08[4];
-    uint8_t C07F5C70_field_0x0C[4];
-    uint8_t C07F5C70_field_0x10[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
+    uint8_t q010[4];
 };
 // 6 methods in IDA
 class CCToolTip
@@ -2252,9 +2252,9 @@ public:
 
     uint8_t CCToolTip_field_0x04[4];
     uint8_t CCToolTip_field_0x08[4];
-    uint8_t CCToolTip_field_0x0C[4];
-    uint8_t CCToolTip_field_0x10[4];
-    uint8_t CCToolTip_field_0x14[4];
+    uint8_t q00C[4];
+    uint8_t q010[4];
+    uint8_t q014[4];
     public:  // symbol-anchor
     // === SYMBOL-ANCHOR (BEGIN) ===
     void* QueryInterface(int a1);  // 0x7784a0 -- CCToolTip::QueryInterface
@@ -2280,17 +2280,17 @@ public:
     // +8 more virtual methods
 
     uint8_t CChatEventSink_field_0x04[4];
-    uint8_t CChatEventSink_field_0x08[4];
-    uint8_t CChatEventSink_field_0x0C[4];
-    uint8_t CChatEventSink_field_0x10[4];
-    uint8_t CChatEventSink_field_0x14[4];
-    uint8_t CChatEventSink_field_0x18[4];
-    uint8_t CChatEventSink_field_0x1C[4];
-    uint8_t CChatEventSink_field_0x20[4];
-    uint8_t CChatEventSink_field_0x24[4];
-    uint8_t CChatEventSink_field_0x28[4];
-    uint8_t CChatEventSink_field_0x2C[4];
-    uint8_t CChatEventSink_field_0x30[4];
+    uint8_t u32_8[4];
+    uint8_t u32_C[4];
+    uint8_t q010[4];
+    uint8_t q014[4];
+    uint8_t q018[4];
+    uint8_t q01C[4];
+    uint8_t q020[4];
+    uint8_t q024[4];
+    uint8_t q028[4];
+    uint8_t q02C[4];
+    uint8_t q030[4];
     public:  // symbol-anchor
     // === SYMBOL-ANCHOR (BEGIN) ===
     int GrowBuffer();  // 0x7ad930 -- CChatEventSink::GrowBuffer
@@ -2319,7 +2319,7 @@ public:
     bool __stdcall DeviceIoControl(HANDLE hDevice, int a2);  // 0x47A3F0 (x13:signals; virt=nonvirtual)
     char __stdcall LockVolume(int a1, HANDLE hDevice, unsigned __int8 a3, DWORD BytesReturned, __int16 a5);  // 0x47A6F0 (x13:signals; virt=dropped(no-binary-ptr_0))
 
-    uint8_t CDROM_field_0x04[4];
+    uint8_t q004[4];
 };
 // 1 methods in IDA
 class CarryoverClass
@@ -2394,7 +2394,7 @@ public:
     virtual void ProcessMessages(); // 0x55E420
     virtual void RefreshMessagePositions(); // 0x5D4390
 
-    uint8_t Chat_field_0x04[4];
+    uint8_t q004[4];
 
     unsigned char __pad_000;  // X10 supply (csp_canon_members)
     unsigned int u32_14;  // X10 supply (member_lookup)
@@ -2469,21 +2469,21 @@ public:
     virtual void Commit(); // 0x7A3B30
     // +11 more virtual methods
 
-    uint8_t ComStreamClass_field_0x04[4];
-    uint8_t ComStreamClass_field_0x08[4];
-    uint8_t ComStreamClass_field_0x0C[4];
-    uint8_t ComStreamClass_field_0x10[4];
-    uint8_t ComStreamClass_field_0x14[4];
-    uint8_t ComStreamClass_field_0x18[4];
-    uint8_t ComStreamClass_field_0x1C[4];
-    uint8_t ComStreamClass_field_0x20[4];
-    uint8_t ComStreamClass_field_0x24[4];
-    uint8_t ComStreamClass_field_0x28[4];
-    uint8_t ComStreamClass_field_0x2C[4];
-    uint8_t ComStreamClass_field_0x30[4];
-    uint8_t ComStreamClass_field_0x34[4];
-    uint8_t ComStreamClass_field_0x38[4];
-    uint8_t ComStreamClass_field_0x3C[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
+    uint8_t q010[4];
+    uint8_t q014[4];
+    uint8_t q018[4];
+    uint8_t q01C[4];
+    uint8_t q020[4];
+    uint8_t q024[4];
+    uint8_t q028[4];
+    uint8_t q02C[4];
+    uint8_t q030[4];
+    uint8_t q034[4];
+    uint8_t q038[4];
+    uint8_t q03C[4];
     public:  // symbol-anchor
     // === SYMBOL-ANCHOR (BEGIN) ===
     void readData();  // 0x7ae0e0 -- ComStreamClass::readData
@@ -2532,7 +2532,7 @@ public:
     virtual bool __stdcall CheckResult(int p0, int p1);  // 0x653810 (x13:signals; virt=slot)
     virtual bool __stdcall CheckResult3(int p0, int p1, char p2);  // 0x653830 (x13:signals; virt=slot)
 
-    uint8_t Conditions_field_0x04[4];
+    uint8_t q004[4];
 };
 // 1 methods in IDA
 class Conflict_WorldDominationTour
@@ -2561,13 +2561,13 @@ public:
 
 
     uint8_t ConnectionPointClass_field_0x04[4];
-    uint8_t ConnectionPointClass_field_0x08[4];
-    uint8_t ConnectionPointClass_field_0x0C[4];
-    uint8_t ConnectionPointClass_field_0x10[4];
-    uint8_t ConnectionPointClass_field_0x14[4];
-    uint8_t ConnectionPointClass_field_0x18[4];
-    uint8_t ConnectionPointClass_field_0x1C[4];
-    uint8_t ConnectionPointClass_field_0x20[4];
+    uint8_t u32_8[4];
+    uint8_t u32_C[4];
+    uint8_t u32_10[4];
+    uint8_t q014[4];
+    uint8_t q018[4];
+    uint8_t q01C[4];
+    uint8_t q020[4];
     public:  // funcs-move
     // === FUNCS-MOVE (BEGIN) ===
     // === FUNCS-MOVE (END) ===
@@ -2596,8 +2596,8 @@ public:
     virtual void Update(); // 0x56BBE0
     virtual void FindPlacement(); // 0x56BD40
 
-    uint8_t CrateClass_field_0x04[4];
-    uint8_t CrateClass_field_0x08[4];
+    uint8_t q004[4];
+    uint8_t u32_8[4];
 
     unsigned char __pad_000;  // X10 supply (csp_canon_members)
     void* q158;  // X10 supply (member_lookup)
@@ -2661,8 +2661,8 @@ public:
     virtual _DWORD * QueryInterface(char p0);  // 0x4A59A0 (x13:signals; virt=slot)
 
     uint8_t Dial8Class_field_0x04[4];
-    uint8_t Dial8Class_field_0x08[4];
-    uint8_t Dial8Class_field_0x0C[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
 
     char Visible;  // X10 supply (member_lookup)
     unsigned int u32_2C;  // X10 supply (member_lookup)
@@ -2714,10 +2714,10 @@ public:
     uint8_t DiskLaserClass_field_0x08[4];
     uint8_t DiskLaserClass_field_0x0C[4];
     uint8_t DiskLaserClass_field_0x10[4];
-    uint8_t DiskLaserClass_field_0x14[4];
-    uint8_t DiskLaserClass_field_0x18[4];
-    uint8_t DiskLaserClass_field_0x1C[4];
-    uint8_t DiskLaserClass_field_0x20[4];
+    uint8_t q014[4];
+    uint8_t q018[4];
+    uint8_t q01C[4];
+    uint8_t q020[4];
     uint8_t DiskLaserClass_field_0x24[4];
     uint8_t DiskLaserClass_field_0x28[4];
     public:  // symbol-anchor
@@ -2776,7 +2776,7 @@ public:
     uint8_t DynamicArray_field_0x04[4];
     uint8_t DynamicArray_field_0x08[4];
     uint8_t DynamicArray_field_0x0C[4];
-    uint8_t DynamicArray_field_0x10[4];
+    uint8_t q010[4];
 
     unsigned char __pad_000;  // X10 supply (csp_canon_members)
     int q00C;  // X10 supply (member_lookup)
@@ -2903,11 +2903,11 @@ public:
     // +2 more virtual methods
 
     uint8_t Function_field_0x04[4];
-    uint8_t Function_field_0x08[4];
-    uint8_t Function_field_0x0C[4];
-    uint8_t Function_field_0x10[4];
-    uint8_t Function_field_0x14[4];
-    uint8_t Function_field_0x18[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
+    uint8_t q010[4];
+    uint8_t q014[4];
+    uint8_t q018[4];
 
     void* q130;  // X10 supply (member_lookup)
     void* q180;  // X10 supply (member_lookup)
@@ -2941,12 +2941,12 @@ public:
     // +3 more virtual methods
 
     uint8_t GaugeClass_field_0x04[4];
-    uint8_t GaugeClass_field_0x08[4];
-    uint8_t GaugeClass_field_0x0C[4];
-    uint8_t GaugeClass_field_0x10[4];
-    uint8_t GaugeClass_field_0x14[4];
-    uint8_t GaugeClass_field_0x18[4];
-    uint8_t GaugeClass_field_0x1C[4];
+    uint8_t u32_8[4];
+    uint8_t u32_C[4];
+    uint8_t u32_10[4];
+    uint8_t q014[4];
+    uint8_t q018[4];
+    uint8_t q01C[4];
     public:  // symbol-anchor
     // === SYMBOL-ANCHOR (BEGIN) ===
     void* QueryInterface(int a1);  // 0x4e30d0 -- GaugeClass::QueryInterface
@@ -2967,8 +2967,8 @@ public:
     virtual char Resize(int p0, int* p1);  // 0x40CE50 (x13:signals; virt=slot)
     virtual char Resize2(int p0, int* p1);  // 0x50EA90 (x13:signals; virt=slot)
 
-    uint8_t GenericVector_field_0x04[4];
-    uint8_t GenericVector_field_0x08[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
 };
 // 1 methods in IDA
 // CSP: GlobalArray matched via T1
@@ -2991,7 +2991,7 @@ public:
     virtual int * __stdcall RegisterSingleton(int p0);  // 0x5F7640 (x13:signals; virt=slot)
     virtual int * SingletonGetter(int p0);  // 0x71DE40 (x13:signals; virt=slot)
 
-    uint8_t GlobalInit_field_0x04[4];
+    uint8_t q004[4];
 };
 // 1 methods in IDA
 class GroupLabel
@@ -3097,11 +3097,11 @@ public:
     BOOL __stdcall DragMove(int x, int y);  // 0x7C8A0A (x13:signals; virt=dropped(no-binary-ptr_0))
     // +1 more virtual methods
 
-    uint8_t ImageList_field_0x04[4];
-    uint8_t ImageList_field_0x08[4];
-    uint8_t ImageList_field_0x0C[4];
-    uint8_t ImageList_field_0x10[4];
-    uint8_t ImageList_field_0x14[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
+    uint8_t q010[4];
+    uint8_t q014[4];
 };
 // 2 methods in IDA
 // CSP: Int4 matched via T1
@@ -3146,7 +3146,7 @@ public:
     virtual _DWORD * QueryInterface(char p0);  // 0x477B10 (x13:signals; virt=slot)
     _DWORD * Construct(int p0);  // 0x717BD0 (x13:signals; virt=nonvirtual)
 
-    uint8_t IntDynamicVector_field_0x04[4];
+    uint8_t q004[4];
 };
 // 2 methods in IDA
 // CSP: IntVector matched via T1
@@ -3157,7 +3157,7 @@ public:
     void Copy(void * aP1); // 0x477B60 (G42 sig-sync: def; VectorClass->void*)
     virtual void Destructor(); // 0x49F9D0
 
-    uint8_t IntVector_field_0x04[4];
+    uint8_t q004[4];
 };
 // 2 methods in IDA
 // CSP: IsRandMap matched via T1
@@ -3170,7 +3170,7 @@ public:
     virtual void Sed(); // 0x69ADF0
     virtual int Sed2(); // 0x69AE70
 
-    uint8_t IsRandMap_field_0x04[4];
+    uint8_t q004[4];
 };
 // 1 methods in IDA
 class KeyValuePair
@@ -3216,7 +3216,7 @@ public:
     virtual int Decompress(char* p0, int p1);  // 0x55C7C0 (x13:signals; virt=slot)
 
     uint8_t LCW_field_0x04[4];
-    uint8_t LCW_field_0x08[4];
+    uint8_t q008[4];
 
     unsigned char __pad_00C;  // X10 supply (member_lookup)
     int q004;  // X10 supply (member_lookup)
@@ -3376,14 +3376,14 @@ public:
     int InvalidateFactionCombos();  // 0x4E5310 (x13:signals; virt=dropped(no-binary-ptr_0))
     // +4 more virtual methods
 
-    uint8_t Lobby_field_0x04[4];
-    uint8_t Lobby_field_0x08[4];
-    uint8_t Lobby_field_0x0C[4];
-    uint8_t Lobby_field_0x10[4];
-    uint8_t Lobby_field_0x14[4];
-    uint8_t Lobby_field_0x18[4];
-    uint8_t Lobby_field_0x1C[4];
-    uint8_t Lobby_field_0x20[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
+    uint8_t q010[4];
+    uint8_t q014[4];
+    uint8_t q018[4];
+    uint8_t q01C[4];
+    uint8_t q020[4];
     public:  // symbol-anchor
     // === SYMBOL-ANCHOR (BEGIN) ===
     int InvalidatePlayerSlots();  // 0x4e5d60 -- Lobby::InvalidatePlayerSlots
@@ -3425,9 +3425,9 @@ public:
     LRESULT AddToList(MultiplayerGameMode * aP1); // 0x5D8D10 (G42 sig-sync: def)
     LRESULT AddToList(HWND aP1);  // G42.34k: HWND overload (core/supplied call sites; dialog list form)
 
-    uint8_t MPCombatTeam_field_0x04[4];
+    uint8_t q004[4];
     uint8_t MPCombatTeam_field_0x08[4];
-    uint8_t MPCombatTeam_field_0x0C[4];
+    uint8_t q00C[4];
 
     int q008;  // X10 supply (member_lookup)
 };
@@ -3453,7 +3453,7 @@ public:
     int Reset(int p0);  // 0x5CC6A0 (x13:signals; virt=nonvirtual)
 
     uint8_t MSAnim_field_0x04[4];
-    uint8_t MSAnim_field_0x08[4];
+    uint8_t q008[4];
 
     unsigned int u32_1C;  // X10 supply (member_lookup)
     unsigned int u32_28;  // X10 supply (member_lookup)
@@ -3475,9 +3475,9 @@ public:
     virtual _DWORD * QueryInterface(char p0);  // 0x5CEC70 (x13:signals; virt=slot)
 
     uint8_t MSBinkAnim_field_0x04[4];
-    uint8_t MSBinkAnim_field_0x08[4];
-    uint8_t MSBinkAnim_field_0x0C[4];
-    uint8_t MSBinkAnim_field_0x10[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
+    uint8_t q010[4];
 
     unsigned int u32_1C;  // X10 supply (member_lookup)
     unsigned int u32_24;  // X10 supply (member_lookup)
@@ -3506,8 +3506,8 @@ public:
     uint8_t MSBitPrintAnim_field_0x04[4];
     uint8_t MSBitPrintAnim_field_0x08[4];
     uint8_t MSBitPrintAnim_field_0x0C[4];
-    uint8_t MSBitPrintAnim_field_0x10[4];
-    uint8_t MSBitPrintAnim_field_0x14[4];
+    uint8_t q010[4];
+    uint8_t q014[4];
     public:  // symbol-anchor
     // === SYMBOL-ANCHOR (BEGIN) ===
     void* QueryInterface(int a1);  // 0x5ced10 -- MSBitPrintAnim::QueryInterface
@@ -3560,10 +3560,10 @@ public:
     virtual void Release(); // 0x5D26F0
     virtual _DWORD * QueryInterface(char p0);  // 0x5D2700 (x13:signals; virt=slot)
 
-    uint8_t MSEngine_Destru_field_0x04[4];
-    uint8_t MSEngine_Destru_field_0x08[4];
-    uint8_t MSEngine_Destru_field_0x0C[4];
-    uint8_t MSEngine_Destru_field_0x10[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
+    uint8_t q010[4];
 };
 // 6 methods in IDA
 class MSFont
@@ -3580,8 +3580,8 @@ public:
 
     uint8_t MSFont_field_0x04[4];
     uint8_t MSFont_field_0x08[4];
-    uint8_t MSFont_field_0x0C[4];
-    uint8_t MSFont_field_0x10[4];
+    uint8_t u32_C[4];
+    uint8_t q010[4];
     uint8_t MSFont_field_0x14[4];
     public:  // symbol-anchor
     // === SYMBOL-ANCHOR (BEGIN) ===
@@ -3611,8 +3611,8 @@ public:
     uint8_t MSOverlayAnim_field_0x04[4];
     uint8_t MSOverlayAnim_field_0x08[4];
     uint8_t MSOverlayAnim_field_0x0C[4];
-    uint8_t MSOverlayAnim_field_0x10[4];
-    uint8_t MSOverlayAnim_field_0x14[4];
+    uint8_t q010[4];
+    uint8_t q014[4];
     uint8_t MSOverlayAnim_field_0x18[4];
     public:  // symbol-anchor
     // === SYMBOL-ANCHOR (BEGIN) ===
@@ -3653,8 +3653,8 @@ public:
     uint8_t MSPCXAnim_field_0x04[4];
     uint8_t MSPCXAnim_field_0x08[4];
     uint8_t MSPCXAnim_field_0x0C[4];
-    uint8_t MSPCXAnim_field_0x10[4];
-    uint8_t MSPCXAnim_field_0x14[4];
+    uint8_t q010[4];
+    uint8_t q014[4];
     uint8_t MSPCXAnim_field_0x18[4];
     public:  // symbol-anchor
     // === SYMBOL-ANCHOR (BEGIN) ===
@@ -3695,7 +3695,7 @@ public:
     uint8_t MSPrintAnim_field_0x04[4];
     uint8_t MSPrintAnim_field_0x08[4];
     uint8_t MSPrintAnim_field_0x0C[4];
-    uint8_t MSPrintAnim_field_0x10[4];
+    uint8_t q010[4];
     uint8_t MSPrintAnim_field_0x14[4];
     public:  // symbol-anchor
     // === SYMBOL-ANCHOR (BEGIN) ===
@@ -3774,8 +3774,8 @@ public:
     uint8_t MSVQAnim_field_0x04[4];
     uint8_t MSVQAnim_field_0x08[4];
     uint8_t MSVQAnim_field_0x0C[4];
-    uint8_t MSVQAnim_field_0x10[4];
-    uint8_t MSVQAnim_field_0x14[4];
+    uint8_t u32_10[4];
+    uint8_t q014[4];
     uint8_t MSVQAnim_field_0x18[4];
     uint8_t MSVQAnim_field_0x1C[4];
     public:  // symbol-anchor
@@ -3829,7 +3829,7 @@ public:
     virtual void Render(); // 0x641140
     bool SavePreviewToINI(char* p0);  // 0x6418B0 (x13:signals; virt=dropped(no-binary-ptr_0))
 
-    uint8_t MiniMap_field_0x04[4];
+    uint8_t q004[4];
 
     unsigned char __pad_000;  // X10 supply (csp_canon_members)
 };
@@ -3847,11 +3847,11 @@ public:
     virtual void GetHeight(); // 0x759F80
     // +1 more virtual methods
 
-    uint8_t MovieClass_field_0x04[4];
-    uint8_t MovieClass_field_0x08[4];
-    uint8_t MovieClass_field_0x0C[4];
-    uint8_t MovieClass_field_0x10[4];
-    uint8_t MovieClass_field_0x14[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
+    uint8_t q010[4];
+    uint8_t q014[4];
     public:  // symbol-anchor
     // === SYMBOL-ANCHOR (BEGIN) ===
     int ComputeTime();  // 0x7c3990 -- MovieClass::ComputeTime
@@ -3920,7 +3920,7 @@ public:
     char * Pack4(char* p0, char p1);  // 0x4CB700 (x13:signals; virt=dropped(no-binary-ptr_0))
     char * Pack(char* p0, char* p1, uint16_t p2);  // 0x4CB830 (x13:signals; virt=dropped(no-binary-ptr_0))
 
-    uint8_t NetMessage_field_0x04[4];
+    uint8_t q004[4];
 };
 // 6 methods in IDA
 // CSP: NeuronClass matched via T1
@@ -3940,7 +3940,7 @@ public:
     uint8_t NeuronClass_field_0x08[4];
     uint8_t NeuronClass_field_0x0C[4];
     uint8_t NeuronClass_field_0x10[4];
-    uint8_t NeuronClass_field_0x14[4];
+    uint8_t q014[4];
     public:  // symbol-anchor
     // === SYMBOL-ANCHOR (BEGIN) ===
     void* Reset(int a1);  // 0x43a9c0 -- NeuronClass::Reset
@@ -3967,7 +3967,7 @@ public:
     virtual int InitMessageList(); // 0x5D3A40
     virtual void CleanupArrays(); // 0x697840
 
-    uint8_t ObjectManager_field_0x04[4];
+    uint8_t q004[4];
 
     unsigned int u32_2354;  // X10 supply (member_lookup)
     unsigned int u32_280C;  // X10 supply (member_lookup)
@@ -4015,7 +4015,7 @@ public:
     int * CalcPosition(int* p0, int* p1, char p2, char p3, char p4);  // 0x481180 (x13:signals; virt=dropped(no-binary-ptr_0))
     int * __stdcall CalcPosition_Wrapper(int* p0, int* p1, char p2);  // 0x4ACA10 (x13:signals; virt=dropped(no-binary-ptr_0))
 
-    uint8_t ObjectPlacement_field_0x04[4];
+    uint8_t q004[4];
 
     unsigned int u32_124;  // X10 supply (member_lookup)
     unsigned int u32_128;  // X10 supply (member_lookup)
@@ -4045,11 +4045,11 @@ public:
     virtual _DWORD * QueryInterface(char p0);  // 0x40CF30 (x13:signals; virt=slot)
     // +1 more virtual methods
 
-    uint8_t ObjectVector_field_0x04[4];
-    uint8_t ObjectVector_field_0x08[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
     uint8_t ObjectVector_field_0x0C[4];
-    uint8_t ObjectVector_field_0x10[4];
-    uint8_t ObjectVector_field_0x14[4];
+    uint8_t q010[4];
+    uint8_t q014[4];
 
     bool IsAllocated;  // X10 supply (csp_canon_members)
 
@@ -4186,7 +4186,7 @@ public:
     int ExtractEntry(void* p0, int* p1, int p2, void* p3, int* p4, uint16_t* p5);  // 0x48B570 (x13:signals; virt=dropped(no-binary-ptr_0))
     int ReleaseEntry(void* p0, int* p1, int p2, void* p3, int* p4);  // 0x48B890 (x13:signals; virt=dropped(no-binary-ptr_0))
 
-    uint8_t PacketQueue_field_0x04[4];
+    uint8_t q004[4];
 
     unsigned int u32_24;  // X10 supply (member_lookup)
     unsigned int u32_28;  // X10 supply (member_lookup)
@@ -4206,7 +4206,7 @@ public:
     virtual int Profile(); // 0x5355D0
     virtual int MeasureTicks(); // 0x5CAFC0
 
-    uint8_t Performance_field_0x04[4];
+    uint8_t q004[4];
 };
 // 1 methods in IDA
 // CSP: PhoneEditor matched via T1
@@ -4241,8 +4241,8 @@ public:
     bool GetField(); // 0x7B7D80
 
     uint8_t Pipe_field_0x04[4];
-    uint8_t Pipe_field_0x08[4];
-    uint8_t Pipe_field_0x0C[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
 
     void* ptr_0;  // X10 supply (csp_canon_members)
 
@@ -4269,7 +4269,7 @@ public:
     virtual int CalcFill(); // 0x63F850
     int __stdcall ComputeFill(int* p0, int* p1, int* p2);  // 0x63F960 (x13:signals; virt=nonvirtual)
 
-    uint8_t PowerBar_field_0x04[4];
+    uint8_t q004[4];
 };
 // 2 methods in IDA
 // CSP: PreviewClass matched via T1
@@ -4282,7 +4282,7 @@ public:
     char ReadPreview(char* p0);  // 0x641EE0 (x13:signals; virt=dropped(no-binary-ptr_0))
     char RenderMapPreview(int* p0);  // 0x689D30 (x13:signals; virt=dropped(no-binary-ptr_0))
 
-    uint8_t PreviewClass_field_0x04[4];
+    uint8_t q004[4];
 
     unsigned char __pad_1140;  // X10 supply (member_lookup)
     int u32_112C;  // X10 supply (member_lookup)
@@ -4324,7 +4324,7 @@ public:
     int Pop(); // 0x5AC960 (G42 sig-sync: def)
     int Add(int p0);  // 0x5D1C20 (x13:signals; virt=dropped(no-binary-ptr_0))
 
-    uint8_t PriorityQueue_field_0x04[4];
+    uint8_t q004[4];
 
     unsigned char __pad_000;  // X10 supply (csp_canon_members)
 };
@@ -4374,7 +4374,7 @@ public:
     __int16 Set(int16_t p0);  // 0x433C70 (x13:signals; virt=dropped(no-binary-ptr_0))
     virtual void GetField11(); // 0x726910
 
-    uint8_t Property_field_0x04[4];
+    uint8_t q004[4];
 
     void* q024;  // X10 supply (member_lookup)
     void* q02C;  // X10 supply (member_lookup)
@@ -4456,7 +4456,7 @@ public:
     virtual char __stdcall Conditional(int p0, int p1, void* p2, int p3, int16_t p4, int p5, int p6);  // 0x5C0EB0 (x13:signals; virt=slot)
     virtual int Ptr(); // 0x7B7040
 
-    uint8_t SafeDelete_field_0x04[4];
+    uint8_t u32_4[4];
 };
 // 1 methods in IDA
 class Scalar
@@ -4549,7 +4549,7 @@ public:
     virtual int SetShape(int p0, int p1, int p2);  // 0x69DE00 (x13:signals; virt=slot)
     virtual int Draw(int p0);  // 0x69DEB0 (x13:signals; virt=slot)
 
-    uint8_t ShapeButton_field_0x04[4];
+    uint8_t q004[4];
 
     unsigned char __pad_022;  // X10 supply (member_lookup)
     unsigned int u32_14;  // X10 supply (member_types)
@@ -4578,7 +4578,7 @@ public:
     static int Destructor(void *aP0);  // 0x69DDC0 G42.35 static-form sync (ui/supplied sites 0x557663/0x55766B)
 
     uint8_t ShapeButtonClass_field_0x04[4];
-    uint8_t ShapeButtonClass_field_0x08[4];
+    uint8_t u32_8[4];
 
     int ID;  // X10 supply (member_lookup)
     unsigned int u32_34;  // X10 supply (member_lookup)
@@ -4661,9 +4661,9 @@ public:
     char Add(int* p0);  // 0x67B100 (x13:signals; virt=dropped(no-binary-ptr_0))
     // +1 more virtual methods
 
-    uint8_t SmudgeTypeVector_field_0x04[4];
-    uint8_t SmudgeTypeVector_field_0x08[4];
-    uint8_t SmudgeTypeVector_field_0x0C[4];
+    uint8_t u32_4[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
     uint8_t SmudgeTypeVector_field_0x10[4];
     uint8_t SmudgeTypeVector_field_0x14[4];
     public:  // symbol-anchor
@@ -4689,14 +4689,14 @@ public:
     bool CheckCache(int* p0);  // 0x52B600 (x13:signals; virt=dropped(no-binary-ptr_0))
     // +4 more virtual methods
 
-    uint8_t SortedArray_field_0x04[4];
-    uint8_t SortedArray_field_0x08[4];
+    uint8_t u32_4[4];
+    uint8_t q008[4];
     uint8_t SortedArray_field_0x0C[4];
     uint8_t SortedArray_field_0x10[4];
-    uint8_t SortedArray_field_0x14[4];
-    uint8_t SortedArray_field_0x18[4];
-    uint8_t SortedArray_field_0x1C[4];
-    uint8_t SortedArray_field_0x20[4];
+    uint8_t q014[4];
+    uint8_t q018[4];
+    uint8_t q01C[4];
+    uint8_t u32_20[4];
     public:  // symbol-anchor
     // === SYMBOL-ANCHOR (BEGIN) ===
     int BinarySearch(int *a2);  // 0x52b620 -- SortedArray::BinarySearch G42.35 C6 体签名
@@ -4745,7 +4745,7 @@ public:
     virtual int SelectAllMembers(); // 0x7314C0
     virtual void ProcessMove(); // 0x731840
 
-    uint8_t SquadClass_field_0x04[4];
+    uint8_t u32_4[4];
 };
 // 1 methods in IDA
 class StartCombo
@@ -4796,10 +4796,10 @@ public:
     // +1 more virtual methods
 
     uint8_t StaticButtonClass_field_0x04[4];
-    uint8_t StaticButtonClass_field_0x08[4];
-    uint8_t StaticButtonClass_field_0x0C[4];
-    uint8_t StaticButtonClass_field_0x10[4];
-    uint8_t StaticButtonClass_field_0x14[4];
+    uint8_t u32_8[4];
+    uint8_t q00C[4];
+    uint8_t q010[4];
+    uint8_t q014[4];
     public:  // symbol-anchor
     // === SYMBOL-ANCHOR (BEGIN) ===
     void* QueryInterface(int a1);  // 0x6c6880 -- StaticButtonClass::QueryInterface
@@ -4871,8 +4871,8 @@ public:
     virtual void ClearAndFree(); // 0x588D60
     virtual int FindByCoord(int p0);  // 0x589C10 (x13:signals; virt=slot)
 
-    uint8_t SubzoneConnectionVector_field_0x04[4];
-    uint8_t SubzoneConnectionVector_field_0x08[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
 };
 // 1 methods in IDA
 // CSP: SubzoneHashVector matched via T1
@@ -4904,7 +4904,7 @@ public:
     int __stdcall SaveLoad(int* p0, int* p1);  // 0x55AAC0 (x13:signals; virt=dropped(no-binary-ptr_0))
     virtual int __stdcall ConvertWrapper(int p0);  // 0x6CF230 (x13:signals; virt=slot)
 
-    uint8_t SwizzleManager_field_0x04[4];
+    uint8_t q004[4];
 };
 // 10 methods in IDA
 // CSP: SwizzleManagerClass matched via T1
@@ -4922,14 +4922,14 @@ public:
     // +5 more virtual methods
 
     uint8_t SwizzleManagerClass_field_0x04[4];
-    uint8_t SwizzleManagerClass_field_0x08[4];
-    uint8_t SwizzleManagerClass_field_0x0C[4];
-    uint8_t SwizzleManagerClass_field_0x10[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
+    uint8_t q010[4];
     uint8_t SwizzleManagerClass_field_0x14[4];
-    uint8_t SwizzleManagerClass_field_0x18[4];
+    uint8_t q018[4];
     uint8_t SwizzleManagerClass_field_0x1C[4];
     uint8_t SwizzleManagerClass_field_0x20[4];
-    uint8_t SwizzleManagerClass_field_0x24[4];
+    uint8_t q024[4];
     public:  // funcs-move
     // === FUNCS-MOVE (BEGIN) ===
     int Add(int a1, int a2, int a3);  // 0x6cf490
@@ -4988,9 +4988,9 @@ public:
     virtual int GetClassIdentifier(); // 0x6C5C90
     virtual int GetSize(); // 0x6C5D10
 
-    uint8_t TClassFactory_AITriggerTypeClass_field_0x04[4];
-    uint8_t TClassFactory_AITriggerTypeClass_field_0x08[4];
-    uint8_t TClassFactory_AITriggerTypeClass_field_0x0C[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
 };
 // 4 methods in IDA
 class TClassFactory_AircraftClass
@@ -5003,9 +5003,9 @@ public:
     virtual int ddtor(); // 0x6C3710
     virtual int GetSize(); // 0x6C3790
 
-    uint8_t TClassFactory_AircraftClass_field_0x04[4];
-    uint8_t TClassFactory_AircraftClass_field_0x08[4];
-    uint8_t TClassFactory_AircraftClass_field_0x0C[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
 };
 // 4 methods in IDA
 class TClassFactory_AircraftTypeClass
@@ -5019,9 +5019,9 @@ public:
     virtual int GetClassIdentifier(); // 0x6C2B10
     virtual int GetSize(); // 0x6C2B90
 
-    uint8_t TClassFactory_AircraftTypeClass_field_0x04[4];
-    uint8_t TClassFactory_AircraftTypeClass_field_0x08[4];
-    uint8_t TClassFactory_AircraftTypeClass_field_0x0C[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
 };
 // 4 methods in IDA
 class TClassFactory_AirstrikeClass
@@ -5034,9 +5034,9 @@ public:
     virtual void ddtor(); // 0x6C0890
     virtual int GetSize(); // 0x6C0910
 
-    uint8_t TClassFactory_AirstrikeClass_field_0x04[4];
-    uint8_t TClassFactory_AirstrikeClass_field_0x08[4];
-    uint8_t TClassFactory_AirstrikeClass_field_0x0C[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
 };
 // 4 methods in IDA
 class TClassFactory_AlphaShapeClass
@@ -5049,9 +5049,9 @@ public:
     virtual int ddtor(); // 0x6C6110
     virtual int GetSize(); // 0x6C6190
 
-    uint8_t TClassFactory_AlphaShapeClass_field_0x04[4];
-    uint8_t TClassFactory_AlphaShapeClass_field_0x08[4];
-    uint8_t TClassFactory_AlphaShapeClass_field_0x0C[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
 };
 // 4 methods in IDA
 class TClassFactory_AnimTypeClass
@@ -5065,9 +5065,9 @@ public:
     virtual int GetClassIdentifier(); // 0x6C3B90
     virtual int GetSize(); // 0x6C3C10
 
-    uint8_t TClassFactory_AnimTypeClass_field_0x04[4];
-    uint8_t TClassFactory_AnimTypeClass_field_0x08[4];
-    uint8_t TClassFactory_AnimTypeClass_field_0x0C[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
 };
 // 4 methods in IDA
 class TClassFactory_BombClass
@@ -5080,9 +5080,9 @@ public:
     virtual int ddtor(); // 0x6C1190
     virtual int GetSize(); // 0x6C1210
 
-    uint8_t TClassFactory_BombClass_field_0x04[4];
-    uint8_t TClassFactory_BombClass_field_0x08[4];
-    uint8_t TClassFactory_BombClass_field_0x0C[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
 };
 // 4 methods in IDA
 class TClassFactory_BuildingClass
@@ -5095,9 +5095,9 @@ public:
     virtual int ddtor(); // 0x6C3590
     virtual int GetSize(); // 0x6C3610
 
-    uint8_t TClassFactory_BuildingClass_field_0x04[4];
-    uint8_t TClassFactory_BuildingClass_field_0x08[4];
-    uint8_t TClassFactory_BuildingClass_field_0x0C[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
 };
 // 4 methods in IDA
 class TClassFactory_BuildingLightClass
@@ -5110,9 +5110,9 @@ public:
     virtual int ddtor(); // 0x6C0410
     virtual int GetSize(); // 0x6C0490
 
-    uint8_t TClassFactory_BuildingLightClass_field_0x04[4];
-    uint8_t TClassFactory_BuildingLightClass_field_0x08[4];
-    uint8_t TClassFactory_BuildingLightClass_field_0x0C[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
 };
 // 4 methods in IDA
 class TClassFactory_BuildingTypeClass
@@ -5126,9 +5126,9 @@ public:
     virtual int GetClassIdentifier(); // 0x6C2990
     virtual int GetSize(); // 0x6C2A10
 
-    uint8_t TClassFactory_BuildingTypeClass_field_0x04[4];
-    uint8_t TClassFactory_BuildingTypeClass_field_0x08[4];
-    uint8_t TClassFactory_BuildingTypeClass_field_0x0C[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
 };
 // 4 methods in IDA
 class TClassFactory_BulletTypeClass
@@ -5142,9 +5142,9 @@ public:
     virtual int GetClassIdentifier(); // 0x6C2E10
     virtual int GetSize(); // 0x6C2E90
 
-    uint8_t TClassFactory_BulletTypeClass_field_0x04[4];
-    uint8_t TClassFactory_BulletTypeClass_field_0x08[4];
-    uint8_t TClassFactory_BulletTypeClass_field_0x0C[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
 };
 // 4 methods in IDA
 class TClassFactory_CaptureManagerClass
@@ -5157,9 +5157,9 @@ public:
     virtual int ddtor(); // 0x6C0D10
     virtual int GetSize(); // 0x6C0D90
 
-    uint8_t TClassFactory_CaptureManagerClass_field_0x04[4];
-    uint8_t TClassFactory_CaptureManagerClass_field_0x08[4];
-    uint8_t TClassFactory_CaptureManagerClass_field_0x0C[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
 };
 // 4 methods in IDA
 class TClassFactory_DiskLaserClass
@@ -5172,9 +5172,9 @@ public:
     virtual int ddtor(); // 0x6C0E90
     virtual int GetSize(); // 0x6C0F10
 
-    uint8_t TClassFactory_DiskLaserClass_field_0x04[4];
-    uint8_t TClassFactory_DiskLaserClass_field_0x08[4];
-    uint8_t TClassFactory_DiskLaserClass_field_0x0C[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
 };
 // 4 methods in IDA
 class TClassFactory_DriveLocomotionClass
@@ -5187,9 +5187,9 @@ public:
     virtual int ddtor(); // 0x6C4010
     virtual int GetSize(); // 0x6C4090
 
-    uint8_t TClassFactory_DriveLocomotionClass_field_0x04[4];
-    uint8_t TClassFactory_DriveLocomotionClass_field_0x08[4];
-    uint8_t TClassFactory_DriveLocomotionClass_field_0x0C[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
 };
 // 4 methods in IDA
 class TClassFactory_DropPodLocomotionClass
@@ -5202,9 +5202,9 @@ public:
     virtual int ddtor(); // 0x6C4910
     virtual int GetSize(); // 0x6C4990
 
-    uint8_t TClassFactory_DropPodLocomotionClass_field_0x04[4];
-    uint8_t TClassFactory_DropPodLocomotionClass_field_0x08[4];
-    uint8_t TClassFactory_DropPodLocomotionClass_field_0x0C[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
 };
 // 4 methods in IDA
 class TClassFactory_FactoryClass
@@ -5217,9 +5217,9 @@ public:
     virtual int ddtor(); // 0x6C5210
     virtual int GetSize(); // 0x6C5290
 
-    uint8_t TClassFactory_FactoryClass_field_0x04[4];
-    uint8_t TClassFactory_FactoryClass_field_0x08[4];
-    uint8_t TClassFactory_FactoryClass_field_0x0C[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
 };
 // 4 methods in IDA
 class TClassFactory_FlyLocomotionClass
@@ -5232,9 +5232,9 @@ public:
     virtual int ddtor(); // 0x6C4A90
     virtual int GetSize(); // 0x6C4B10
 
-    uint8_t TClassFactory_FlyLocomotionClass_field_0x04[4];
-    uint8_t TClassFactory_FlyLocomotionClass_field_0x08[4];
-    uint8_t TClassFactory_FlyLocomotionClass_field_0x0C[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
 };
 // 4 methods in IDA
 class TClassFactory_FoggedObjectClass
@@ -5247,9 +5247,9 @@ public:
     virtual int ddtor(); // 0x6C5F90
     virtual int GetSize(); // 0x6C6010
 
-    uint8_t TClassFactory_FoggedObjectClass_field_0x04[4];
-    uint8_t TClassFactory_FoggedObjectClass_field_0x08[4];
-    uint8_t TClassFactory_FoggedObjectClass_field_0x0C[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
 };
 // 4 methods in IDA
 class TClassFactory_HouseClass
@@ -5262,9 +5262,9 @@ public:
     virtual int ddtor(); // 0x6C3E90
     virtual int GetSize(); // 0x6C3F10
 
-    uint8_t TClassFactory_HouseClass_field_0x04[4];
-    uint8_t TClassFactory_HouseClass_field_0x08[4];
-    uint8_t TClassFactory_HouseClass_field_0x0C[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
 };
 // 4 methods in IDA
 class TClassFactory_HouseTypeClass
@@ -5278,9 +5278,9 @@ public:
     virtual int GetClassIdentifier(); // 0x6C3D10
     virtual int GetSize(); // 0x6C3D90
 
-    uint8_t TClassFactory_HouseTypeClass_field_0x04[4];
-    uint8_t TClassFactory_HouseTypeClass_field_0x08[4];
-    uint8_t TClassFactory_HouseTypeClass_field_0x0C[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
 };
 // 4 methods in IDA
 class TClassFactory_HoverLocomotionClass
@@ -5293,9 +5293,9 @@ public:
     virtual int ddtor(); // 0x6C4310
     virtual int GetSize(); // 0x6C4390
 
-    uint8_t TClassFactory_HoverLocomotionClass_field_0x04[4];
-    uint8_t TClassFactory_HoverLocomotionClass_field_0x08[4];
-    uint8_t TClassFactory_HoverLocomotionClass_field_0x0C[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
 };
 // 4 methods in IDA
 class TClassFactory_InfantryClass
@@ -5308,9 +5308,9 @@ public:
     virtual int ddtor(); // 0x6C3890
     virtual int GetSize(); // 0x6C3910
 
-    uint8_t TClassFactory_InfantryClass_field_0x04[4];
-    uint8_t TClassFactory_InfantryClass_field_0x08[4];
-    uint8_t TClassFactory_InfantryClass_field_0x0C[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
 };
 // 4 methods in IDA
 class TClassFactory_InfantryTypeClass
@@ -5324,9 +5324,9 @@ public:
     virtual int GetClassIdentifier(); // 0x6C2C90
     virtual int GetSize(); // 0x6C2D10
 
-    uint8_t TClassFactory_InfantryTypeClass_field_0x04[4];
-    uint8_t TClassFactory_InfantryTypeClass_field_0x08[4];
-    uint8_t TClassFactory_InfantryTypeClass_field_0x0C[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
 };
 // 4 methods in IDA
 class TClassFactory_IsometricTileTypeClass
@@ -5340,9 +5340,9 @@ public:
     virtual int GetClassIdentifier(); // 0x6C2F90
     virtual int GetSize(); // 0x6C3010
 
-    uint8_t TClassFactory_IsometricTileTypeClass_field_0x04[4];
-    uint8_t TClassFactory_IsometricTileTypeClass_field_0x08[4];
-    uint8_t TClassFactory_IsometricTileTypeClass_field_0x0C[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
 };
 // 4 methods in IDA
 class TClassFactory_JumpjetLocomotionClass
@@ -5355,9 +5355,9 @@ public:
     virtual int ddtor(); // 0x6C4190
     virtual int GetSize(); // 0x6C4210
 
-    uint8_t TClassFactory_JumpjetLocomotionClass_field_0x04[4];
-    uint8_t TClassFactory_JumpjetLocomotionClass_field_0x08[4];
-    uint8_t TClassFactory_JumpjetLocomotionClass_field_0x0C[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
 };
 // 4 methods in IDA
 class TClassFactory_LightSourceClass
@@ -5370,9 +5370,9 @@ public:
     virtual int ddtor(); // 0x6BFC90
     virtual int GetSize(); // 0x6BFD10
 
-    uint8_t TClassFactory_LightSourceClass_field_0x04[4];
-    uint8_t TClassFactory_LightSourceClass_field_0x08[4];
-    uint8_t TClassFactory_LightSourceClass_field_0x0C[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
 };
 // 4 methods in IDA
 class TClassFactory_NeuronClass
@@ -5385,9 +5385,9 @@ public:
     virtual int ddtor(); // 0x6C5E10
     virtual int GetSize(); // 0x6C5E90
 
-    uint8_t TClassFactory_NeuronClass_field_0x04[4];
-    uint8_t TClassFactory_NeuronClass_field_0x08[4];
-    uint8_t TClassFactory_NeuronClass_field_0x0C[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
 };
 // 4 methods in IDA
 class TClassFactory_OverlayTypeClass
@@ -5401,9 +5401,9 @@ public:
     virtual int GetClassIdentifier(); // 0x6C3110
     virtual int GetSize(); // 0x6C3190
 
-    uint8_t TClassFactory_OverlayTypeClass_field_0x04[4];
-    uint8_t TClassFactory_OverlayTypeClass_field_0x08[4];
-    uint8_t TClassFactory_OverlayTypeClass_field_0x0C[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
 };
 // 4 methods in IDA
 class TClassFactory_ParasiteClass
@@ -5416,9 +5416,9 @@ public:
     virtual int ddtor(); // 0x6C1010
     virtual int GetSize(); // 0x6C1090
 
-    uint8_t TClassFactory_ParasiteClass_field_0x04[4];
-    uint8_t TClassFactory_ParasiteClass_field_0x08[4];
-    uint8_t TClassFactory_ParasiteClass_field_0x0C[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
 };
 // 3 methods in IDA
 class TClassFactory_ParticleClass
@@ -5430,8 +5430,8 @@ public:
     virtual int ddtor(); // 0x6C5690
     virtual int GetSize(); // 0x6C5710
 
-    uint8_t TClassFactory_ParticleClass_field_0x04[4];
-    uint8_t TClassFactory_ParticleClass_field_0x08[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
 };
 // 4 methods in IDA
 class TClassFactory_ParticleSystemClass
@@ -5444,9 +5444,9 @@ public:
     virtual int ddtor(); // 0x6C5990
     virtual int GetSize(); // 0x6C5A10
 
-    uint8_t TClassFactory_ParticleSystemClass_field_0x04[4];
-    uint8_t TClassFactory_ParticleSystemClass_field_0x08[4];
-    uint8_t TClassFactory_ParticleSystemClass_field_0x0C[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
 };
 // 4 methods in IDA
 class TClassFactory_ParticleSystemTypeClass
@@ -5460,9 +5460,9 @@ public:
     virtual int GetClassIdentifier(); // 0x6C5B10
     virtual int GetSize(); // 0x6C5B90
 
-    uint8_t TClassFactory_ParticleSystemTypeClass_field_0x04[4];
-    uint8_t TClassFactory_ParticleSystemTypeClass_field_0x08[4];
-    uint8_t TClassFactory_ParticleSystemTypeClass_field_0x0C[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
 };
 // 4 methods in IDA
 class TClassFactory_ParticleTypeClass
@@ -5476,9 +5476,9 @@ public:
     virtual int GetClassIdentifier(); // 0x6C5810
     virtual int GetSize(); // 0x6C5890
 
-    uint8_t TClassFactory_ParticleTypeClass_field_0x04[4];
-    uint8_t TClassFactory_ParticleTypeClass_field_0x08[4];
-    uint8_t TClassFactory_ParticleTypeClass_field_0x0C[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
 };
 // 4 methods in IDA
 class TClassFactory_RadSiteClass
@@ -5491,9 +5491,9 @@ public:
     virtual int ddtor(); // 0x6C1310
     virtual int GetSize(); // 0x6C1390
 
-    uint8_t TClassFactory_RadSiteClass_field_0x04[4];
-    uint8_t TClassFactory_RadSiteClass_field_0x08[4];
-    uint8_t TClassFactory_RadSiteClass_field_0x0C[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
 };
 // 4 methods in IDA
 class TClassFactory_RocketLocomotionClass
@@ -5506,9 +5506,9 @@ public:
     virtual int ddtor(); // 0x6C4490
     virtual int GetSize(); // 0x6C4510
 
-    uint8_t TClassFactory_RocketLocomotionClass_field_0x04[4];
-    uint8_t TClassFactory_RocketLocomotionClass_field_0x08[4];
-    uint8_t TClassFactory_RocketLocomotionClass_field_0x0C[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
 };
 // 4 methods in IDA
 class TClassFactory_ScriptClass
@@ -5521,9 +5521,9 @@ public:
     virtual void ddtor(); // 0x6C1D90
     virtual int GetSize(); // 0x6C1E10
 
-    uint8_t TClassFactory_ScriptClass_field_0x04[4];
-    uint8_t TClassFactory_ScriptClass_field_0x08[4];
-    uint8_t TClassFactory_ScriptClass_field_0x0C[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
 };
 // 4 methods in IDA
 class TClassFactory_ScriptTypeClass
@@ -5537,9 +5537,9 @@ public:
     virtual int GetClassIdentifier(); // 0x6C1F10
     virtual int GetSize(); // 0x6C1F90
 
-    uint8_t TClassFactory_ScriptTypeClass_field_0x04[4];
-    uint8_t TClassFactory_ScriptTypeClass_field_0x08[4];
-    uint8_t TClassFactory_ScriptTypeClass_field_0x0C[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
 };
 // 4 methods in IDA
 class TClassFactory_ShipLocomotionClass
@@ -5552,9 +5552,9 @@ public:
     virtual int ddtor(); // 0x6C4F10
     virtual int GetSize(); // 0x6C4F90
 
-    uint8_t TClassFactory_ShipLocomotionClass_field_0x04[4];
-    uint8_t TClassFactory_ShipLocomotionClass_field_0x08[4];
-    uint8_t TClassFactory_ShipLocomotionClass_field_0x0C[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
 };
 // 4 methods in IDA
 class TClassFactory_SideClass
@@ -5567,9 +5567,9 @@ public:
     virtual int ddtor(); // 0x6BFE10
     virtual int GetSize(); // 0x6BFE90
 
-    uint8_t TClassFactory_SideClass_field_0x04[4];
-    uint8_t TClassFactory_SideClass_field_0x08[4];
-    uint8_t TClassFactory_SideClass_field_0x0C[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
 };
 // 4 methods in IDA
 class TClassFactory_SlaveManagerClass
@@ -5582,9 +5582,9 @@ public:
     virtual int ddtor(); // 0x6C0B90
     virtual int GetSize(); // 0x6C0C10
 
-    uint8_t TClassFactory_SlaveManagerClass_field_0x04[4];
-    uint8_t TClassFactory_SlaveManagerClass_field_0x08[4];
-    uint8_t TClassFactory_SlaveManagerClass_field_0x0C[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
 };
 // 4 methods in IDA
 class TClassFactory_SmudgeTypeClass
@@ -5598,9 +5598,9 @@ public:
     virtual int GetClassIdentifier(); // 0x6C3290
     virtual int GetSize(); // 0x6C3310
 
-    uint8_t TClassFactory_SmudgeTypeClass_field_0x04[4];
-    uint8_t TClassFactory_SmudgeTypeClass_field_0x08[4];
-    uint8_t TClassFactory_SmudgeTypeClass_field_0x0C[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
 };
 // 4 methods in IDA
 class TClassFactory_SpawnManagerClass
@@ -5613,9 +5613,9 @@ public:
     virtual int ddtor(); // 0x6C0A10
     virtual int GetSize(); // 0x6C0A90
 
-    uint8_t TClassFactory_SpawnManagerClass_field_0x04[4];
-    uint8_t TClassFactory_SpawnManagerClass_field_0x08[4];
-    uint8_t TClassFactory_SpawnManagerClass_field_0x0C[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
 };
 // 4 methods in IDA
 class TClassFactory_TActionClass
@@ -5628,9 +5628,9 @@ public:
     virtual int ddtor(); // 0x6C1910
     virtual int GetSize(); // 0x6C1990
 
-    uint8_t TClassFactory_TActionClass_field_0x04[4];
-    uint8_t TClassFactory_TActionClass_field_0x08[4];
-    uint8_t TClassFactory_TActionClass_field_0x0C[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
 };
 // 4 methods in IDA
 class TClassFactory_TEventClass
@@ -5643,9 +5643,9 @@ public:
     virtual int ddtor(); // 0x6C1490
     virtual int GetSize(); // 0x6C1510
 
-    uint8_t TClassFactory_TEventClass_field_0x04[4];
-    uint8_t TClassFactory_TEventClass_field_0x08[4];
-    uint8_t TClassFactory_TEventClass_field_0x0C[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
 };
 // 4 methods in IDA
 class TClassFactory_TagClass
@@ -5658,9 +5658,9 @@ public:
     virtual int ddtor(); // 0x6C2090
     virtual int GetSize(); // 0x6C2110
 
-    uint8_t TClassFactory_TagClass_field_0x04[4];
-    uint8_t TClassFactory_TagClass_field_0x08[4];
-    uint8_t TClassFactory_TagClass_field_0x0C[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
 };
 // 4 methods in IDA
 class TClassFactory_TagTypeClass
@@ -5674,9 +5674,9 @@ public:
     virtual int GetClassIdentifier(); // 0x6C2210
     virtual int GetSize(); // 0x6C2290
 
-    uint8_t TClassFactory_TagTypeClass_field_0x04[4];
-    uint8_t TClassFactory_TagTypeClass_field_0x08[4];
-    uint8_t TClassFactory_TagTypeClass_field_0x0C[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
 };
 // 4 methods in IDA
 class TClassFactory_TaskForceClass
@@ -5689,9 +5689,9 @@ public:
     virtual int ddtor(); // 0x6C2690
     virtual int GetSize(); // 0x6C2710
 
-    uint8_t TClassFactory_TaskForceClass_field_0x04[4];
-    uint8_t TClassFactory_TaskForceClass_field_0x08[4];
-    uint8_t TClassFactory_TaskForceClass_field_0x0C[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
 };
 // 4 methods in IDA
 class TClassFactory_TeamClass
@@ -5704,9 +5704,9 @@ public:
     virtual int ddtor(); // 0x6C2390
     virtual int GetSize(); // 0x6C2410
 
-    uint8_t TClassFactory_TeamClass_field_0x04[4];
-    uint8_t TClassFactory_TeamClass_field_0x08[4];
-    uint8_t TClassFactory_TeamClass_field_0x0C[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
 };
 // 4 methods in IDA
 class TClassFactory_TeamTypeClass
@@ -5720,9 +5720,9 @@ public:
     virtual int GetClassIdentifier(); // 0x6C2510
     virtual int GetSize(); // 0x6C2590
 
-    uint8_t TClassFactory_TeamTypeClass_field_0x04[4];
-    uint8_t TClassFactory_TeamTypeClass_field_0x08[4];
-    uint8_t TClassFactory_TeamTypeClass_field_0x0C[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
 };
 // 4 methods in IDA
 class TClassFactory_TeleportLocomotionClass
@@ -5735,9 +5735,9 @@ public:
     virtual int ddtor(); // 0x6C4C10
     virtual int GetSize(); // 0x6C4C90
 
-    uint8_t TClassFactory_TeleportLocomotionClass_field_0x04[4];
-    uint8_t TClassFactory_TeleportLocomotionClass_field_0x08[4];
-    uint8_t TClassFactory_TeleportLocomotionClass_field_0x0C[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
 };
 // 4 methods in IDA
 class TClassFactory_TemporalClass
@@ -5750,9 +5750,9 @@ public:
     virtual int ddtor(); // 0x6C0710
     virtual int GetSize(); // 0x6C0790
 
-    uint8_t TClassFactory_TemporalClass_field_0x04[4];
-    uint8_t TClassFactory_TemporalClass_field_0x08[4];
-    uint8_t TClassFactory_TemporalClass_field_0x0C[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
 };
 // 4 methods in IDA
 class TClassFactory_TiberiumClass
@@ -5765,9 +5765,9 @@ public:
     virtual int ddtor(); // 0x6BFF90
     virtual int GetSize(); // 0x6C0010
 
-    uint8_t TClassFactory_TiberiumClass_field_0x04[4];
-    uint8_t TClassFactory_TiberiumClass_field_0x08[4];
-    uint8_t TClassFactory_TiberiumClass_field_0x0C[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
 };
 // 4 methods in IDA
 class TClassFactory_TriggerClass
@@ -5780,9 +5780,9 @@ public:
     virtual int ddtor(); // 0x6C1A90
     virtual int GetSize(); // 0x6C1B10
 
-    uint8_t TClassFactory_TriggerClass_field_0x04[4];
-    uint8_t TClassFactory_TriggerClass_field_0x08[4];
-    uint8_t TClassFactory_TriggerClass_field_0x0C[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
 };
 // 4 methods in IDA
 class TClassFactory_TriggerTypeClass
@@ -5796,9 +5796,9 @@ public:
     virtual int GetClassIdentifier(); // 0x6C1C10
     virtual int GetSize(); // 0x6C1C90
 
-    uint8_t TClassFactory_TriggerTypeClass_field_0x04[4];
-    uint8_t TClassFactory_TriggerTypeClass_field_0x08[4];
-    uint8_t TClassFactory_TriggerTypeClass_field_0x0C[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
 };
 // 4 methods in IDA
 class TClassFactory_TunnelLocomotionClass
@@ -5811,9 +5811,9 @@ public:
     virtual int ddtor(); // 0x6C4610
     virtual int GetSize(); // 0x6C4690
 
-    uint8_t TClassFactory_TunnelLocomotionClass_field_0x04[4];
-    uint8_t TClassFactory_TunnelLocomotionClass_field_0x08[4];
-    uint8_t TClassFactory_TunnelLocomotionClass_field_0x0C[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
 };
 // 4 methods in IDA
 class TClassFactory_UnitClass
@@ -5826,9 +5826,9 @@ public:
     virtual int ddtor(); // 0x6C3410
     virtual int GetSize(); // 0x6C3490
 
-    uint8_t TClassFactory_UnitClass_field_0x04[4];
-    uint8_t TClassFactory_UnitClass_field_0x08[4];
-    uint8_t TClassFactory_UnitClass_field_0x0C[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
 };
 // 4 methods in IDA
 class TClassFactory_UnitTypeClass
@@ -5842,9 +5842,9 @@ public:
     virtual int GetClassIdentifier(); // 0x6C2810
     virtual int GetSize(); // 0x6C2890
 
-    uint8_t TClassFactory_UnitTypeClass_field_0x04[4];
-    uint8_t TClassFactory_UnitTypeClass_field_0x08[4];
-    uint8_t TClassFactory_UnitTypeClass_field_0x0C[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
 };
 // 4 methods in IDA
 class TClassFactory_VoxelAnimClass
@@ -5857,9 +5857,9 @@ public:
     virtual int ddtor(); // 0x6C1790
     virtual int GetSize(); // 0x6C1810
 
-    uint8_t TClassFactory_VoxelAnimClass_field_0x04[4];
-    uint8_t TClassFactory_VoxelAnimClass_field_0x08[4];
-    uint8_t TClassFactory_VoxelAnimClass_field_0x0C[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
 };
 // 4 methods in IDA
 class TClassFactory_VoxelAnimTypeClass
@@ -5873,9 +5873,9 @@ public:
     virtual int GetClassIdentifier(); // 0x6C1610
     virtual int GetSize(); // 0x6C1690
 
-    uint8_t TClassFactory_VoxelAnimTypeClass_field_0x04[4];
-    uint8_t TClassFactory_VoxelAnimTypeClass_field_0x08[4];
-    uint8_t TClassFactory_VoxelAnimTypeClass_field_0x0C[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
 };
 // 4 methods in IDA
 class TClassFactory_WalkLocomotionClass
@@ -5888,9 +5888,9 @@ public:
     virtual int ddtor(); // 0x6C4790
     virtual int GetSize(); // 0x6C4810
 
-    uint8_t TClassFactory_WalkLocomotionClass_field_0x04[4];
-    uint8_t TClassFactory_WalkLocomotionClass_field_0x08[4];
-    uint8_t TClassFactory_WalkLocomotionClass_field_0x0C[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
 };
 // 4 methods in IDA
 class TClassFactory_WarheadTypeClass
@@ -5904,9 +5904,9 @@ public:
     virtual int GetClassIdentifier(); // 0x6C5390
     virtual int GetSize(); // 0x6C5410
 
-    uint8_t TClassFactory_WarheadTypeClass_field_0x04[4];
-    uint8_t TClassFactory_WarheadTypeClass_field_0x08[4];
-    uint8_t TClassFactory_WarheadTypeClass_field_0x0C[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
 };
 // 4 methods in IDA
 class TClassFactory_WaypointPathClass
@@ -5919,9 +5919,9 @@ public:
     virtual int ddtor(); // 0x6C0590
     virtual int GetSize(); // 0x6C0610
 
-    uint8_t TClassFactory_WaypointPathClass_field_0x04[4];
-    uint8_t TClassFactory_WaypointPathClass_field_0x08[4];
-    uint8_t TClassFactory_WaypointPathClass_field_0x0C[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
 };
 // 4 methods in IDA
 class TClassFactory_WeaponTypeClass
@@ -5935,9 +5935,9 @@ public:
     virtual int GetClassIdentifier(); // 0x6C5510
     virtual int GetSize(); // 0x6C5590
 
-    uint8_t TClassFactory_WeaponTypeClass_field_0x04[4];
-    uint8_t TClassFactory_WeaponTypeClass_field_0x08[4];
-    uint8_t TClassFactory_WeaponTypeClass_field_0x0C[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
 };
 // 1 methods in IDA
 class TagClassVector
@@ -6184,12 +6184,12 @@ public:
     _DWORD * Construct(int p0, int p1);  // 0x513190 (x13:signals; virt=nonvirtual)
     // +2 more virtual methods
 
-    uint8_t UnitTypeVector_field_0x04[4];
+    uint8_t ptr_4[4];
     uint8_t UnitTypeVector_field_0x08[4];
     uint8_t UnitTypeVector_field_0x0C[4];
     uint8_t UnitTypeVector_field_0x10[4];
-    uint8_t UnitTypeVector_field_0x14[4];
-    uint8_t UnitTypeVector_field_0x18[4];
+    uint8_t q014[4];
+    uint8_t q018[4];
     public:  // symbol-anchor
     // === SYMBOL-ANCHOR (BEGIN) ===
     void* ConstructUnitTypeVectorClass(int a1, int a2);  // 0x513940 -- UnitTypeVector::ConstructUnitTypeVectorClass
@@ -6231,7 +6231,7 @@ public:
     virtual void SelectGrowthPosition(); // 0x74DC00
     virtual int GetState(); // 0x74FFF0
 
-    uint8_t VeinholeClass_field_0x04[4];
+    uint8_t q004[4];
 
     unsigned int u32_58;  // X10 supply (member_lookup)
     unsigned int u32_B0;  // X10 supply (member_lookup)
@@ -6254,12 +6254,12 @@ public:
     uint8_t VeinholeMonsterClass_field_0x08[4];
     uint8_t VeinholeMonsterClass_field_0x0C[4];
     uint8_t VeinholeMonsterClass_field_0x10[4];
-    uint8_t VeinholeMonsterClass_field_0x14[4];
-    uint8_t VeinholeMonsterClass_field_0x18[4];
-    uint8_t VeinholeMonsterClass_field_0x1C[4];
-    uint8_t VeinholeMonsterClass_field_0x20[4];
-    uint8_t VeinholeMonsterClass_field_0x24[4];
-    uint8_t VeinholeMonsterClass_field_0x28[4];
+    uint8_t q014[4];
+    uint8_t q018[4];
+    uint8_t q01C[4];
+    uint8_t q020[4];
+    uint8_t q024[4];
+    uint8_t q028[4];
     public:  // symbol-anchor
     // === SYMBOL-ANCHOR (BEGIN) ===
     void* SpreadTiberium(int a1);  // 0x74f340 -- VeinholeMonsterClass::SpreadTiberium
@@ -6324,7 +6324,7 @@ public:
     void ProcessScroll(int* p0);  // 0x692B60 (x13:signals; virt=dropped(no-binary-ptr_0))
     virtual int Clear(); // 0x753E00
 
-    uint8_t Viewport_field_0x04[4];
+    uint8_t q004[4];
 
     unsigned char __pad_000;  // X10 supply (csp_canon_members)
     unsigned int u32_5548;  // X10 supply (member_lookup)
@@ -6345,14 +6345,14 @@ public:
     virtual int Method_55CBF0(); // 0x55CBF0
     // +4 more virtual methods
 
-    uint8_t VtableStub_field_0x04[4];
-    uint8_t VtableStub_field_0x08[4];
-    uint8_t VtableStub_field_0x0C[4];
-    uint8_t VtableStub_field_0x10[4];
-    uint8_t VtableStub_field_0x14[4];
-    uint8_t VtableStub_field_0x18[4];
-    uint8_t VtableStub_field_0x1C[4];
-    uint8_t VtableStub_field_0x20[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t u32_C[4];
+    uint8_t u32_10[4];
+    uint8_t q014[4];
+    uint8_t q018[4];
+    uint8_t q01C[4];
+    uint8_t q020[4];
 
     uint8_t u8_19E;  // X10 supply (member_lookup)
 };
@@ -6367,7 +6367,7 @@ public:
     int GetCellType(unsigned int p0);  // 0x76F600 (x13:signals; virt=dropped(no-binary-ptr_0))
     int CountCellType(int p0);  // 0x76F670 (x13:signals; virt=dropped(no-binary-ptr_0))
 
-    uint8_t WDTClass_field_0x04[4];
+    uint8_t q004[4];
 
     void* q00C;  // X10 supply (member_lookup)
     void* q010;  // X10 supply (member_lookup)
@@ -6385,9 +6385,9 @@ public:
     virtual void ReviewHistory(); // 0x76E4F0
     _DWORD * Constructor(int p0);  // 0x76F030 (x13:signals; virt=nonvirtual)
 
-    uint8_t WDTGame_field_0x04[4];
-    uint8_t WDTGame_field_0x08[4];
-    uint8_t WDTGame_field_0x0C[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
 
     unsigned char Count_458[4];  /* Count */  // X10 supply (member_lookup)
     unsigned char WDTSurface_45C9[4];  /* WDTSurface */  // X10 supply (member_lookup)
@@ -6409,7 +6409,7 @@ public:
     virtual void GetSize(); // 0x76BFA0
     virtual void GetAndClearFlag(); // 0x76FF30
 
-    uint8_t WDTObject_field_0x04[4];
+    uint8_t q004[4];
 
     int u32_2C;  // X10 supply (member_lookup)
 };
@@ -6440,7 +6440,7 @@ public:
     char ToggleState(int* p0, char p1);  // 0x7693A0 (x13:signals; virt=dropped(no-binary-ptr_0))
     BOOL PointInRect(_DWORD *a2);  // 0x769440 (x13:signals; virt=dropped(no-binary-ptr_0))
 
-    uint8_t WDTSurface_field_0x04[4];
+    uint8_t q004[4];
 
     void* q060;  // X10 supply (member_lookup)
     int u32_54;  // X10 supply (member_lookup)
@@ -6457,7 +6457,7 @@ public:
     char Append(int* p0);  // 0x7B6970 (x13:signals; virt=dropped(no-binary-ptr_0))
     void TrimRight(const int** p0);  // 0x7B6F40 (x13:signals; virt=dropped(no-binary-ptr_0))
 
-    uint8_t WString_field_0x04[4];
+    uint8_t u32_4[4];
 
     unsigned char __pad_000;  // X10 supply (csp_canon_members)
 };

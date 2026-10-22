@@ -44,7 +44,7 @@ CaptureManagerClass::CaptureManagerClass(int a2, int a3, char a4)
   this->owner = (gamemd::TechnoClass *)(1); /*0x4717e2*/
   this->controlNodeCount = 0; /*0x4717e6*/
   this->controlNodeCapacity = 0; /*0x4717e9*/
-  this->CaptureManagerClass_field_31 = 0; /*0x4717ec*/
+  this->u32_31 = 0; /*0x4717ec*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E3238) */  /*0x4717ef*/
   this->CaptureManagerClass_field_30 = 10; /*0x4717f6*/
   this->originalOwner = 0; /*0x4717fd*/

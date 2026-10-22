@@ -433,7 +433,7 @@ private:
         char option2);
     // G42.35 til-name machine slot: 真实 DSurface 0x20 槽（csp_canon q020 实证）。
     // cache-verbatim body 0x4BAD70 (DSurface::GetPitch 读 *(u32*)field_0x20 + 16) 的载体。
-    void* DSurface_field_0x20;  // 0x20
+    void* u32_20;  // 0x20
     public:  // symbol-anchor
     // === SYMBOL-ANCHOR (BEGIN) ===
     void* CreatePrimary();  // 0x4ba770 -- DSurface::CreatePrimary
@@ -448,11 +448,11 @@ private:
 public:  // g57c5 W4b supply slot
     void* DSurface_field_0x0;  // 0x0 g57c5 W4b (self-desc vocab, ml slot witness)
 public:  // g57c5 W4b supply slot
-    void* DSurface_field_0x18;  // 0x18 g57c5 W4b (self-desc vocab, ml slot witness)
+    void* u32_18;  // 0x18 g57c5 W4b (self-desc vocab, ml slot witness)
 public:  // g57c5 W4b supply slot
-    void* DSurface_field_0x1C[4];  // 0x1C g57c5 W4b (subscripted usage, ml slot witness)
+    void* u32_1C[4];  // 0x1C g57c5 W4b (subscripted usage, ml slot witness)
 public:  // g57c5 W4b supply slot
-    void* DSurface_field_0xC;  // 0xC g57c5 W4b (self-desc vocab, ml slot witness)
+    void* u32_C;  // 0xC g57c5 W4b (self-desc vocab, ml slot witness)
 
     void* ptr_0;  // X10 supply (csp_canon_members)
 

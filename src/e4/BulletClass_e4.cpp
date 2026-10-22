@@ -35,7 +35,7 @@ BulletClass::BulletClass()
   this->Bright = 0; /*0x4663bf*/
   *&this->q100 = 0; /*0x4663c5*/
   *&this->q108 = 0; /*0x4663cb*/
-  this->AbstractClass_10C = 0; /*0x4663d1*/
+  this->u32_10C = 0; /*0x4663d1*/
   *(unsigned int *)this->ParticleSystemClass_110 = 0; /*0x4663d7*/
   *&this->InheritedColor = -1; /*0x4663dd*/
   *&this->__pad_118 = 0; /*0x4663e3*/
