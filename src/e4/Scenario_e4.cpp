@@ -574,8 +574,8 @@ unsigned int * Scenario::ComputeDialogPos(unsigned int * a2)
   }
   else
   {
-    Scenario_field_0x2C = (char *)this->Scenario_field_0x2C; /*0x552bf8*/
-    Scenario_field_0x30 = (char *)this->Scenario_field_0x30; /*0x552bff*/
+    Scenario_field_0x2C = (char *)this->q02C; /*0x552bf8*/
+    Scenario_field_0x30 = (char *)this->q030; /*0x552bff*/
     result = a2; /*0x552c02*/
     if ( g_DisplayWidth == 640 ) /*0x552bfd*/
       v5 = Scenario_field_0x2C + 84; /*0x552c06*/
@@ -931,9 +931,9 @@ LABEL_82:
     (*(void (**)(unsigned int))(**((unsigned int **)dword_B04BD4 + k) + 92))(*((unsigned int *)dword_B04BD4 + k)); /*0x55b5e4*/
   UpdateDeferredLightSurfaces(6, 0); /*0x55b5f1*/
   (v60)->UpdateAll(); /*0x55b5f6*/
-  for ( m = 0; m < this->Scenario_field_0x10; ++m ) /*0x55b606*/
+  for ( m = 0; m < this->q010; ++m ) /*0x55b606*/
   {
-    v49 = *(unsigned int *)(this->Scenario_field_0x4 + 4 * m); /*0x55b60b*/
+    v49 = *(unsigned int *)(this->q004 + 4 * m); /*0x55b60b*/
     (*(void (**)(int))(*(unsigned int *)v49 + 92))(v49); /*0x55b610*/
   }
   if ( *(unsigned int *)&dword_A8B238 ) /*0x55b622*/
@@ -1843,7 +1843,7 @@ namespace gamemd {
 int Scenario::SetDword32(int a2)
 {
 
-  this->Scenario_field_0x80 = (void *)a2; /*0x642b14*/
+  this->q080 = (void *)a2; /*0x642b14*/
   return a2; /*0x642b1a*/
 
 }
@@ -1854,7 +1854,7 @@ namespace gamemd {
 int Scenario::SetDword30(int a2)
 {
 
-  this->Scenario_field_0x78 = (void *)a2; /*0x642df4*/
+  this->q078 = (void *)a2; /*0x642df4*/
   return a2; /*0x642df7*/
 
 }

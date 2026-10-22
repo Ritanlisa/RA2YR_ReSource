@@ -24,8 +24,8 @@ struct INIClass;  // fix_fwd_type_supply
 struct Dialog {
     unsigned int __pad_0;  // 0x0
     unsigned int q004;  // 0x4
-    unsigned int Dialog_field_0x8;  // 0x8
-    unsigned int Dialog_field_0xC;  // 0xC
+    unsigned int u32_8;  // 0x8
+    unsigned int q00C;  // 0xC
     char __pad_10[20];  // 0x10
     unsigned int q024;  // 0x24
     int q028;  // 0x28
@@ -38,13 +38,13 @@ struct Dialog {
     char __pad_44[36];  // 0x44
     unsigned char q068;  // 0x68
     char __pad_69[307];  // 0x69
-    int Dialog_field_0x19C;  // 0x19C
+    int q19C;  // 0x19C
     char __pad_1A0[100];  // 0x1A0
-    int Dialog_field_0x204;  // 0x204
+    int q204;  // 0x204
     char __pad_208[1196];  // 0x208
-    int Dialog_field_0x6B4;  // 0x6B4
+    int q6B4;  // 0x6B4
     char __pad_6B8[12];  // 0x6B8
-    int Dialog_field_0x6C4;  // 0x6C4
+    int q6C4;  // 0x6C4
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     static int TabControlPaint(int a1, int a2, int a3, int a4);

@@ -11,10 +11,10 @@ struct AlphaShapeClass {
     void* ptr_8;  // 0x8
     void* ptr_C;  // 0xC
     unsigned int __pad_010;  // 0x10
-    int AlphaShapeClass_field_0x14;  // 0x14
-    int AlphaShapeClass_field_0x18;  // 0x18
-    int AlphaShapeClass_field_0x1C;  // 0x1C
-    int AlphaShapeClass_field_0x20;  // 0x20
+    int u32_14;  // 0x14
+    int q018;  // 0x18
+    int q01C;  // 0x1C
+    int q020;  // 0x20
     int q024;  // 0x24
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---

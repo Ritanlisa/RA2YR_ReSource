@@ -25,7 +25,7 @@ struct ParticleClass {
     void* ptr_8;  // 0x8
     void* ptr_C;  // 0xC
     unsigned int __pad_010;  // 0x10
-    int ParticleClass_field_0x14;  // 0x14
+    int q014;  // 0x14
     char __pad_18[4];  // 0x18
     int referenceCount;  // 0x1C
     unsigned char needsSave;  // 0x20
@@ -74,18 +74,18 @@ struct ParticleClass {
     char __pad_B0[4];  // 0xB0
     unsigned int u32_B4;  // 0xB4
     int q0B8;  // 0xB8
-    int ParticleClass_field_0xBC;  // 0xBC
-    IUnknown* ptr_C0;  // 0xC0
-    int ParticleClass_field_0xC4;  // 0xC4
-    int ParticleClass_field_0xC8;  // 0xC8
-    int ParticleClass_field_0xCC;  // 0xCC
-    int ParticleClass_field_0xD0;  // 0xD0
+    int u32_BC;  // 0xBC
+    IUnknown* q0C0;  // 0xC0
+    int u32_C4;  // 0xC4
+    int u32_C8;  // 0xC8
+    int q0CC;  // 0xCC
+    int q0D0;  // 0xD0
     char __pad_D4[4];  // 0xD4
-    int ParticleClass_field_0xD8;  // 0xD8
-    int ParticleClass_field_0xDC;  // 0xDC
-    int ParticleClass_field_0xE0;  // 0xE0
+    int u32_D8;  // 0xD8
+    int u32_DC;  // 0xDC
+    int q0E0;  // 0xE0
     char __pad_E4[28];  // 0xE4
-    unsigned int q0100;  // 0x100
+    unsigned int u32_100;  // 0x100
     unsigned int u32_104;  // 0x104
     unsigned int u32_108;  // 0x108
     char __pad_10C[4];  // 0x10C
@@ -94,7 +94,7 @@ struct ParticleClass {
     unsigned int StateAIAdvance;  // 0x118
     int __pad_11C;  // 0x11C
     char __pad_120[4];  // 0x120
-    int ParticleClass_field_0x124;  // 0x124
+    int u32_124;  // 0x124
     char __pad_128[5];  // 0x128
     unsigned char u32_12D;  // 0x12D
     unsigned char StartStateAI;  // 0x12E
@@ -117,18 +117,18 @@ struct ParticleClass {
     unsigned int RemainingDC;  // 0x278
     unsigned char __pad_27C;  // 0x27C
     char __pad_27D[23];  // 0x27D
-    int ParticleClass_field_0x294;  // 0x294
+    int q294;  // 0x294
     char __pad_298[48];  // 0x298
-    int ParticleClass_field_0x2C8;  // 0x2C8
+    int q2C8;  // 0x2C8
     char __pad_2CC[48];  // 0x2CC
-    int ParticleClass_field_0x2FC;  // 0x2FC
+    int q2FC;  // 0x2FC
     char __pad_300[20];  // 0x300
-    int ParticleClass_field_0x314;  // 0x314
+    int q314;  // 0x314
     char __pad_318[320];  // 0x318
     DynamicVectorClass * ptr_458;  // 0x458
     unsigned char __pad_45C;  // 0x45C
     char __pad_45D[847];  // 0x45D
-    int ParticleClass_field_0x7AC;  // 0x7AC
+    int q7AC;  // 0x7AC
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     static void CheckWaterImpact(ParticleClass *pThis);

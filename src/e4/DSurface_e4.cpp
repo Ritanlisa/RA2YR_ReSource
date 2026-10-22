@@ -1126,7 +1126,7 @@ Coord * * DSurface::DrawLineModulated(int * a1, int a2, int a3, unsigned int * a
   DSurface_field_0x0 = this->DSurface_field_0x0; /*0x4bbca3*/
   v93 = this; /*0x4bbcae*/
   v11 = (int *)(*(int (**)(double *))(DSurface_field_0x0 + 120))(&v94); /*0x4bbcb2*/
-  v12 = ClipRectIntersection(&v92.Vector_field_0x8, (int *)a3, v11, 0, 0); /*0x4bbcc2*/
+  v12 = ClipRectIntersection(&v92.u32_8, (int *)a3, v11, 0, 0); /*0x4bbcc2*/
   v13 = *v12; /*0x4bbcc9*/
   v98 = *v12; /*0x4bbccb*/
   v14 = v12->u32_4; /*0x4bbccf*/
@@ -1167,10 +1167,10 @@ Coord * * DSurface::DrawLineModulated(int * a1, int a2, int a3, unsigned int * a
       if ( *(unsigned long long *)v97 != *(unsigned long long *)&v94 ) /*0x4bbd9b*/
       {
         *(unsigned int *)v92.Cl_ph = v23 - v97[0]; /*0x4bbdb3*/
-        v92.Vector_field_0x4 = v24 - v97[1]; /*0x4bbdb7*/
-        v92.Vector_field_0x8 = v23 - LODWORD(v94); /*0x4bbdc7*/
+        v92.q004 = v24 - v97[1]; /*0x4bbdb7*/
+        v92.u32_8 = v23 - LODWORD(v94); /*0x4bbdc7*/
         *(unsigned int *)v92.IsInitialized = v24 - HIDWORD(v94); /*0x4bbdcb*/
-        Vector::TwoDMagnitudeMath((Vector *)&v92.Vector_field_0x8); /*0x4bbdd3*/
+        Vector::TwoDMagnitudeMath((Vector *)&v92.u32_8); /*0x4bbdd3*/
         v102 = v25; /*0x4bbddc*/
         v9 = Vector::TwoDMagnitudeMath(&v92); /*0x4bbde0*/
         v111 = v26; /*0x4bbde5*/
@@ -1191,7 +1191,7 @@ Coord * * DSurface::DrawLineModulated(int * a1, int a2, int a3, unsigned int * a
       }
       if ( v95 != v23 || v96 != v24 ) /*0x4bbe3d*/
       {
-        v92.Vector_field_0x8 = v95 - LODWORD(v94); /*0x4bbe52*/
+        v92.u32_8 = v95 - LODWORD(v94); /*0x4bbe52*/
         *(unsigned int *)v92.IsInitialized = v96 - HIDWORD(v94); /*0x4bbe56*/
         __asm /*0x4bbe5a*/
         {
@@ -1209,7 +1209,7 @@ Coord * * DSurface::DrawLineModulated(int * a1, int a2, int a3, unsigned int * a
         Math::Sqrt(v81); /*0x4bbe73*/
         LOWORD(v29) = Math::RoundToInt(v9); /*0x4bbe78*/
         v113 = v29; /*0x4bbe81*/
-        v92.Vector_field_0x8 = v23 - LODWORD(v94); /*0x4bbe90*/
+        v92.u32_8 = v23 - LODWORD(v94); /*0x4bbe90*/
         *(unsigned int *)v92.IsInitialized = v24 - HIDWORD(v94); /*0x4bbe94*/
         __asm /*0x4bbe98*/
         {
@@ -1291,7 +1291,7 @@ Coord * * DSurface::DrawLineModulated(int * a1, int a2, int a3, unsigned int * a
             {
               v47 = g_ZBufferDescriptor; /*0x4bc052*/
               v106 = 0; /*0x4bc058*/
-              v92.Vector_field_0x8 = v44; /*0x4bc05f*/
+              v92.u32_8 = v44; /*0x4bc05f*/
               do /*0x4bc27e*/
               {
                 if ( (unsigned __int16)v110 < *SamplePosition ) /*0x4bc075*/
@@ -1354,9 +1354,9 @@ Coord * * DSurface::DrawLineModulated(int * a1, int a2, int a3, unsigned int * a
                 }
                 v110 = v83 + v54; /*0x4bc25e*/
                 v90 = v85 + v56; /*0x4bc26b*/
-                v58 = v92.Vector_field_0x8 == 1; /*0x4bc275*/
+                v58 = v92.u32_8 == 1; /*0x4bc275*/
                 *(unsigned int *)v92.Cl_ph = v84 + v52; /*0x4bc276*/
-                --v92.Vector_field_0x8; /*0x4bc27a*/
+                --v92.u32_8; /*0x4bc27a*/
               }
               while ( !v58 ); /*0x4bc27e*/
             }
@@ -1364,7 +1364,7 @@ Coord * * DSurface::DrawLineModulated(int * a1, int a2, int a3, unsigned int * a
           }
           if ( v39 <= v42 ) /*0x4bc29b*/
           {
-            v92.Vector_field_0x8 = v45 - v42; /*0x4bc501*/
+            v92.u32_8 = v45 - v42; /*0x4bc501*/
             *(unsigned int *)v92.Cl_ph = v46 - v42; /*0x4bc50b*/
             if ( v42 > 0 ) /*0x4bc50f*/
             {
@@ -1395,8 +1395,8 @@ Coord * * DSurface::DrawLineModulated(int * a1, int a2, int a3, unsigned int * a
                     *SamplePosition = v110; /*0x4bc65c*/
                   v70 = g_ZBufferDescriptor; /*0x4bc65f*/
                 }
-                Vector_field_0x8 = v92.Vector_field_0x8; /*0x4bc665*/
-                if ( v92.Vector_field_0x8 <= 0 ) /*0x4bc66b*/
+                Vector_field_0x8 = v92.u32_8; /*0x4bc665*/
+                if ( v92.u32_8 <= 0 ) /*0x4bc66b*/
                 {
                   v76 = SamplePosition; /*0x4bc698*/
                 }
@@ -1406,7 +1406,7 @@ Coord * * DSurface::DrawLineModulated(int * a1, int a2, int a3, unsigned int * a
                   v108 = (unsigned int *)((char *)v108 + 2); /*0x4bc686*/
                   if ( (unsigned int)(SamplePosition + 1) >= v70[1].Stream_field_08 ) /*0x4bc68d*/
                     v76 = (unsigned short *)((char *)v76 - v70[1].Stream_field_0C); /*0x4bc68f*/
-                  Vector_field_0x8 = v92.Vector_field_0x8 - v84; /*0x4bc692*/
+                  Vector_field_0x8 = v92.u32_8 - v84; /*0x4bc692*/
                 }
                 v77 = *(unsigned int *)v92.Cl_ph; /*0x4bc69f*/
                 v78 = v110; /*0x4bc6a3*/
@@ -1415,7 +1415,7 @@ Coord * * DSurface::DrawLineModulated(int * a1, int a2, int a3, unsigned int * a
                   v78 = v83 + v110; /*0x4bc6b6*/
                   v77 = *(unsigned int *)v92.Cl_ph - v84; /*0x4bc6b8*/
                 }
-                v92.Vector_field_0x8 = v85 + Vector_field_0x8; /*0x4bc6c4*/
+                v92.u32_8 = v85 + Vector_field_0x8; /*0x4bc6c4*/
                 *(unsigned int *)v92.Cl_ph = v86 + v77; /*0x4bc6d5*/
                 v79 = &v76[m_Stream]; /*0x4bc6e2*/
                 v103 += v87; /*0x4bc6e4*/
@@ -1441,7 +1441,7 @@ Coord * * DSurface::DrawLineModulated(int * a1, int a2, int a3, unsigned int * a
             goto LABEL_49; /*0x4bc728*/
           }
           v107 = 0; /*0x4bc2a3*/
-          v92.Vector_field_0x8 = v43 - v39; /*0x4bc2ac*/
+          v92.u32_8 = v43 - v39; /*0x4bc2ac*/
           *(unsigned int *)v92.Cl_ph = v46 - v39; /*0x4bc2b6*/
           if ( v39 <= 0 ) /*0x4bc2ba*/
           {
@@ -1474,13 +1474,13 @@ LABEL_49:
                 *SamplePosition = v110; /*0x4bc3fc*/
               v60 = g_ZBufferDescriptor; /*0x4bc3ff*/
             }
-            v65 = v92.Vector_field_0x8; /*0x4bc405*/
-            if ( v92.Vector_field_0x8 <= 0 ) /*0x4bc40b*/
+            v65 = v92.u32_8; /*0x4bc405*/
+            if ( v92.u32_8 <= 0 ) /*0x4bc40b*/
             {
               v66 = SamplePosition; /*0x4bc47c*/
               goto LABEL_72; /*0x4bc47c*/
             }
-            v65 = v92.Vector_field_0x8 - v85; /*0x4bc429*/
+            v65 = v92.u32_8 - v85; /*0x4bc429*/
             v103 += v87; /*0x4bc42b*/
             v66 = &SamplePosition[m_Stream]; /*0x4bc431*/
             if ( m_Stream <= 0 ) /*0x4bc434*/
@@ -1497,7 +1497,7 @@ LABEL_72:
               v68 = *(unsigned int *)v92.Cl_ph - v85; /*0x4bc4a3*/
             }
             v69 = v66 + 1; /*0x4bc4a9*/
-            v92.Vector_field_0x8 = v84 + v65; /*0x4bc4ae*/
+            v92.u32_8 = v84 + v65; /*0x4bc4ae*/
             *(unsigned int *)v92.Cl_ph = v86 + v68; /*0x4bc4b8*/
             if ( (unsigned int)v69 >= v60[1].Stream_field_08 ) /*0x4bc4c1*/
               v69 = (unsigned short *)((char *)v69 - v60[1].Stream_field_0C); /*0x4bc4c3*/

@@ -9,7 +9,7 @@ struct CampaignScore;  // fix_fwd_type_supply
 struct CComObject_CChatEventSink___ATL {
     unsigned char __pad_000;  // 0x0
     char __pad_1[7];  // 0x1
-    int CComObject_CChatEventSink___ATL_field_0x8;  // 0x8
+    int q008;  // 0x8
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int DispatchConnectionPairs(void *a1_1);  // 0x7937B0

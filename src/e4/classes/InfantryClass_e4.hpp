@@ -319,7 +319,7 @@ struct InfantryClass {
     char FootClass_field_5C8[4];  // 0x5C8
     char FootClass_field_5CC[4];  // 0x5CC
     bool FootClass_field_5D0;  // 0x5D0
-    char FootClass_field_bool_5D1[1];  // 0x5D1
+    char q5D1[1];  // 0x5D1
     char m_padding_5D2[2];  // 0x5D2
     int team;  // 0x5D4
     char FootClass_field_5D8[4];  // 0x5D8
@@ -339,10 +339,10 @@ struct InfantryClass {
     unsigned char FootClass_bools_688;  // 0x688
     char isTeamLeader;  // 0x689
     char shouldScanForTarget;  // 0x68A
-    char FootClass_field_bool_68B[1];  // 0x68B
-    char FootClass_field_bool_68C[1];  // 0x68C
+    char q68B[1];  // 0x68B
+    char q68C[1];  // 0x68C
     bool unknownBool68D;  // 0x68D
-    char FootClass_field_bool_68E[1];  // 0x68E
+    char q68E[1];  // 0x68E
     char shouldEnterAbsorber;  // 0x68F
     char shouldEnterOccupiable;  // 0x690
     char shouldGarrisonStructure;  // 0x691
@@ -354,7 +354,7 @@ struct InfantryClass {
     char FootClass_field_bool_6AC[1];  // 0x6AC
     char isAttackedByLocomotor;  // 0x6AD
     char isLetGoByLocomotor;  // 0x6AE
-    char FootClass_field_bool_6AF[1];  // 0x6AF
+    char q6AF[1];  // 0x6AF
     bool FootClass_field_6B0;  // 0x6B0
     bool FootClass_field_6B1;  // 0x6B1
     bool FootClass_field_6B2;  // 0x6B2

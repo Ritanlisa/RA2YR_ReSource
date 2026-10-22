@@ -75,7 +75,7 @@ AbstractClass * * DynamicVectorClass_AnimType::Release(int a2, unsigned int * a3
   }
   else
   {
-    (*(void (**)(_VectorClass_PBVAnimTypeClass *))(*(unsigned int *)this->ptr_0 + 12))(this); /*0x5251b2*/
+    (*(void (**)(_VectorClass_PBVAnimTypeClass *))(*(unsigned int *)this->vfptr + 12))(this); /*0x5251b2*/
     return (gamemd::AbstractClass **)(1); /*0x5251b8*/
   }
 
@@ -1024,7 +1024,7 @@ char DynamicVectorClass_PAD::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAV_DynamicVectorClass_PAD *))(*(unsigned int *)this->ptr_0 + 12))(this); /*0x49edbe*/
+    (*(void (**)(_DynamicVectorClass_PAV_DynamicVectorClass_PAD *))(*(unsigned int *)this->vfptr + 12))(this); /*0x49edbe*/
   }
   int v7 = this->Capacity; // eax /*0x49edc1*/
   if ( v7 < this->Count ) /*0x49edc9*/
@@ -1325,7 +1325,7 @@ char DynamicVectorClass_ptr_NodeNameType::Remove(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAUNodeNameType *))(*(unsigned int *)this->ptr_0 + 12))(this); /*0x5c559e*/
+    (*(void (**)(_DynamicVectorClass_PAUNodeNameType *))(*(unsigned int *)this->vfptr + 12))(this); /*0x5c559e*/
   }
   int v7 = this->Capacity; // eax /*0x5c55a1*/
   if ( v7 < this->Count ) /*0x5c55a9*/

@@ -27,7 +27,7 @@ int BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25(unsigned short * a
     {
       if ( argC < (unsigned __int16)*a5 && *a2 ) /*0x493967*/
       {
-        *a1 = 3 * (this->m_8 & (*a1 >> 2)) + (this->m_8 & (*(unsigned short *)(this->Data + 2 * (unsigned __int8)*a2) >> 2)); /*0x493996*/
+        *a1 = 3 * (this->ptr_8 & (*a1 >> 2)) + (this->ptr_8 & (*(unsigned short *)(this->Data + 2 * (unsigned __int8)*a2) >> 2)); /*0x493996*/
         *a5 = argC; /*0x493999*/
         v11 = (gamemd::Stream *)(g_ZBufferDescriptor); /*0x49399c*/
       }
@@ -64,7 +64,7 @@ int BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent50(unsigned short * a
       if ( v12 < (uint16_t)*a5 && *a2 ) /*0x493a97*/
       {
         v12 = argC; /*0x493ac2*/
-        *a1 = (this->m_8 & (*a1 >> 1)) + (this->m_8 & (*(unsigned short *)(this->Data + 2 * (uint8_t)*a2) >> 1)); /*0x493ac6*/
+        *a1 = (this->ptr_8 & (*a1 >> 1)) + (this->ptr_8 & (*(unsigned short *)(this->Data + 2 * (uint8_t)*a2) >> 1)); /*0x493ac6*/
         *a5 = argC; /*0x493ac9*/
         v14 = (gamemd::Stream *)(g_ZBufferDescriptor); /*0x493acc*/
       }
@@ -99,7 +99,7 @@ int BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25_0(unsigned short *
     {
       if ( argC < (unsigned __int16)*a5 && *a2 ) /*0x493bc7*/
       {
-        *a1 = (this->m_8 & (*a1 >> 2)) + 3 * (this->m_8 & (*(unsigned short *)(this->Data + 2 * (unsigned __int8)*a2) >> 2)); /*0x493bf6*/
+        *a1 = (this->ptr_8 & (*a1 >> 2)) + 3 * (this->ptr_8 & (*(unsigned short *)(this->Data + 2 * (unsigned __int8)*a2) >> 2)); /*0x493bf6*/
         *a5 = argC; /*0x493bf9*/
         v11 = (gamemd::Stream *)(g_ZBufferDescriptor); /*0x493bfc*/
       }
@@ -131,7 +131,7 @@ int BlitTransXlatAlpha_ushort::AddRef(unsigned short * a2, unsigned char * a3, i
   v11 = (261 * (a8 <= 0 ? 0 : a8)) >> 11;
   if ( v11 > 254 ) /*0x493e18*/
     v11 = 254; /*0x493e1a*/
-  result = (gamemd::AbstractClass *)((int)(this->m_8 + (v11 << 9))); /*0x493e25*/
+  result = (gamemd::AbstractClass *)((int)(this->ptr_8 + (v11 << 9))); /*0x493e25*/
   if ( a4 > 0 ) /*0x493e2d*/
   {
     v14 = *(unsigned int *)&g_VisibleSurfaceDescriptor; /*0x493e35*/

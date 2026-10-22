@@ -8,7 +8,7 @@ namespace gamemd {
 struct WDTClass {
     unsigned char __pad_000;  // 0x0
     char __pad_1[3];  // 0x1
-    int WDTClass_field_0x04;  // 0x4
+    int q004;  // 0x4
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int GetCellType(unsigned int a2, void *a1 = 0);

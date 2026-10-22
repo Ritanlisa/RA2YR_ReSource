@@ -13,7 +13,7 @@ struct DialogClass {
     char __pad_24[4];  // 0x24
     unsigned int q028;  // 0x28
     char __pad_2C[8];  // 0x2C
-    void* q034;  // 0x34
+    void* u32_34;  // 0x34
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     static unsigned int * CopyTemplateStruct(void *aP1, void *a2);

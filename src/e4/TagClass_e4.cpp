@@ -266,14 +266,14 @@ int TagClass::Unlink(void *a1)
   {
     if ( result->enabled == this ) /*0x71ae1c*/
       result->enabled = 0; /*0x71ae1e*/
-    result = TagClass::Unlink(this->q040)); /*0x71ae24*/
+    result = TagClass::Unlink(this->firstTrigger)); /*0x71ae24*/
   }
   TagTypeClass *buildingType; // ecx
   buildingType = this->buildingType; /*0x71ae29*/
   this->u32_44 = 0; /*0x71ae2c*/
   this->uniqueId = 0; /*0x71ae31*/
   this->u32_3C = 0; /*0x71ae34*/
-  this->u32_38 = 0; /*0x71ae37*/
+  this->buildingType = 0; /*0x71ae37*/
   if ( buildingType ) /*0x71ae3a*/
     return (*((int (**)(TagTypeClass *, unsigned int, int))buildingType->ptr_0 + 289))(buildingType, 0, 1); /*0x71ae41*/
   return result; /*0x71ae47*/

@@ -21,15 +21,15 @@ struct MPCooperative {
     unsigned int u32_C;  // 0xC
     int q010;  // 0x10
     int q014;  // 0x14
-    unsigned int q018;  // 0x18
+    unsigned int u32_18;  // 0x18
     unsigned int u32_1C;  // 0x1C
     char __pad_20[12];  // 0x20
-    int MPCooperative_field_0x2C;  // 0x2C
+    int q02C;  // 0x2C
     unsigned int u32_30;  // 0x30
     char __pad_34[4];  // 0x34
     unsigned int u32_38;  // 0x38
     unsigned int u32_3C;  // 0x3C
-    int MPCooperative_field_0x40;  // 0x40
+    int u32_40;  // 0x40
     int q044;  // 0x44
     int q048;  // 0x48
     unsigned int u32_4C;  // 0x4C
@@ -44,13 +44,13 @@ struct MPCooperative {
     char __pad_70[24];  // 0x70
     unsigned int q0088;  // 0x88
     char __pad_8C[16];  // 0x8C
-    int MPCooperative_field_0x9C;  // 0x9C
-    int MPCooperative_field_0xA0;  // 0xA0
-    int MPCooperative_field_0xA4;  // 0xA4
+    int q09C;  // 0x9C
+    int q0A0;  // 0xA0
+    int q0A4;  // 0xA4
     char __pad_A8[16];  // 0xA8
-    int MPCooperative_field_0xB8;  // 0xB8
-    int MPCooperative_field_0xBC;  // 0xBC
-    int MPCooperative_field_0xC0;  // 0xC0
+    int q0B8;  // 0xB8
+    int q0BC;  // 0xBC
+    int q0C0;  // 0xC0
     int q0C4;  // 0xC4
     char __pad_C8[220];  // 0xC8
     int u32_1A4;  // 0x1A4
@@ -59,20 +59,20 @@ struct MPCooperative {
     char __pad_1B0[180];  // 0x1B0
     int q264;  // 0x264
     char __pad_268[188];  // 0x268
-    unsigned int MPCooperative_field_0x324;  // 0x324
+    unsigned int q324;  // 0x324
     unsigned int __pad_328;  // 0x328
     unsigned char q32C;  // 0x32C
     char __pad_32D[7];  // 0x32D
     unsigned char q334;  // 0x334
     char __pad_335[7];  // 0x335
-    unsigned int MPCooperative_field_0x33C;  // 0x33C
+    unsigned int q33C;  // 0x33C
     int q340;  // 0x340
     char __pad_344[720];  // 0x344
-    int MPCooperative_field_0x614;  // 0x614
+    int q614;  // 0x614
     char __pad_618[4];  // 0x618
-    int MPCooperative_field_0x61C;  // 0x61C
+    int q61C;  // 0x61C
     char __pad_620[3012];  // 0x620
-    int MPCooperative_field_0x11E4;  // 0x11E4
+    int q11E4;  // 0x11E4
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int  processTurn(char * a2, char * a3);  // 0x49B660

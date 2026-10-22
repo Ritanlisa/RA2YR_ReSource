@@ -1601,31 +1601,31 @@ AbstractClass * * E4Recv_4A6840::sub_4A6840(HWND hWnd, int a3, int a4, int a5)
   if ( !v6 ) /*0x4a687c*/
     goto LABEL_12; /*0x4a687c*/
   *v6 = 40; /*0x4a6882*/
-  *((unsigned int *)this->ptr_4 + 1) = a3; /*0x4a688d*/
-  *((unsigned int *)this->ptr_4 + 2) = -a4; /*0x4a6893*/
-  *((unsigned short *)this->ptr_4 + 6) = 1; /*0x4a689d*/
-  *((unsigned short *)this->ptr_4 + 7) = 8; /*0x4a68a6*/
-  *((unsigned int *)this->ptr_4 + 4) = 0; /*0x4a68af*/
-  *((unsigned int *)this->ptr_4 + 5) = 0; /*0x4a68b5*/
-  *((unsigned int *)this->ptr_4 + 6) = 0; /*0x4a68bb*/
-  *((unsigned int *)this->ptr_4 + 7) = 0; /*0x4a68c6*/
-  *((unsigned int *)this->ptr_4 + 8) = 256; /*0x4a68cc*/
-  *((unsigned int *)this->ptr_4 + 9) = 256; /*0x4a68d2*/
-  for ( i = 0; i < 256; *((unsigned char *)this->ptr_4 + 4 * i + 39) = 0 ) /*0x4a68d5*/
+  *((unsigned int *)this->M4 + 1) = a3; /*0x4a688d*/
+  *((unsigned int *)this->M4 + 2) = -a4; /*0x4a6893*/
+  *((unsigned short *)this->M4 + 6) = 1; /*0x4a689d*/
+  *((unsigned short *)this->M4 + 7) = 8; /*0x4a68a6*/
+  *((unsigned int *)this->M4 + 4) = 0; /*0x4a68af*/
+  *((unsigned int *)this->M4 + 5) = 0; /*0x4a68b5*/
+  *((unsigned int *)this->M4 + 6) = 0; /*0x4a68bb*/
+  *((unsigned int *)this->M4 + 7) = 0; /*0x4a68c6*/
+  *((unsigned int *)this->M4 + 8) = 256; /*0x4a68cc*/
+  *((unsigned int *)this->M4 + 9) = 256; /*0x4a68d2*/
+  for ( i = 0; i < 256; *((unsigned char *)this->M4 + 4 * i + 39) = 0 ) /*0x4a68d5*/
   {
     v8 = (unsigned char *)(a5 + 2 * (i % 256) + i % 256); /*0x4a68ef*/
     ++i; /*0x4a68f1*/
-    *((unsigned char *)this->ptr_4 + 4 * i + 36) = v8[2]; /*0x4a68fa*/
-    *((unsigned char *)this->ptr_4 + 4 * i + 37) = v8[1]; /*0x4a6904*/
-    *((unsigned char *)this->ptr_4 + 4 * i + 38) = *v8; /*0x4a690d*/
+    *((unsigned char *)this->M4 + 4 * i + 36) = v8[2]; /*0x4a68fa*/
+    *((unsigned char *)this->M4 + 4 * i + 37) = v8[1]; /*0x4a6904*/
+    *((unsigned char *)this->M4 + 4 * i + 38) = *v8; /*0x4a690d*/
   }
   pVal = &this->M12; /*0x4a6929*/
   DC = GetDC(hWnd); /*0x4a692e*/
   this->ptr_2 = CreateDIBSection(DC, (const BITMAPINFO *)this->ptr_1, 0, &this->ptr_3, 0, 0); /*0x4a693f*/
   ReleaseDC(hWnd, DC); /*0x4a6942*/
-  if ( !this->ptr_8 ) /*0x4a6948*/
+  if ( !this->M8 ) /*0x4a6948*/
     goto LABEL_12; /*0x4a6948*/
-  ptr_0 = this->ptr_4; /*0x4a6951*/
+  ptr_0 = this->M4; /*0x4a6951*/
   this->uniqueId = ptr_0->ptr_4; /*0x4a6957*/
   uniqueId = this->uniqueId; /*0x4a6962*/
   this->abstractFlags = abs32(ptr_0[2]); /*0x4a6965*/
@@ -1647,7 +1647,7 @@ AbstractClass * * E4Recv_4A6840::sub_4A6840(HWND hWnd, int a3, int a4, int a5)
   if ( v15 ) /*0x4a69a6*/
   {
     abstractFlags = this->abstractFlags; /*0x4a69a8*/
-    ptr_8 = this->ptr_C; /*0x4a69ab*/
+    ptr_8 = this->M12; /*0x4a69ab*/
     *((unsigned int *)v15 + 2) = abstractFlags; /*0x4a69ae*/
     *((unsigned int *)v15 + 1) = v14; /*0x4a69b9*/
     *((unsigned int *)v15 + 3) = 0; /*0x4a69bc*/
@@ -2897,7 +2897,7 @@ unsigned int * E4Recv_4A0CE0::sub_4A0CE0(unsigned int * a2)
     }
   }
   this->M28 = a2[7]; /*0x4a0d67*/
-  this->EnumConnectionPointsClass_field_0x20 = a2[8]; /*0x4a0d6d*/
+  this->M24 = a2[8]; /*0x4a0d6d*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E3238) */  /*0x4a0d70*/
   /* X11: ptr_0 install elided (implicit via EnumConnectionPointsClass virtuals 0x4a0d76) */
   int i; // esi

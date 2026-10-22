@@ -75,7 +75,7 @@ int  DiskLaserClass::Write(AbstractClass * aP0, int aP1)
       /* X11: ptr_0 install elided (implicit via DiskLaserClass virtuals 0x4a7bc4) */
       /* X11: ptr_0 install elided (implicit via DiskLaserClass virtuals 0x4a7bcb) */
     }
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->u32_24); /*0x4a7bdb*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->needsSave); /*0x4a7bdb*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->DiskLaserClass_field_0x28); /*0x4a7be9*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->SuperClass_field_0x2C); /*0x4a7bf7*/
   }

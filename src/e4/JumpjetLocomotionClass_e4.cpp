@@ -216,14 +216,14 @@ void* JumpjetLocomotionClass::Update2(void * a1, void * a2)
   v18 = (Cell *)Coord::To_Cell((Coord *)&dword_87F7E8, &v83); /*0x439c17*/
   v68 = 0; /*0x439c19*/
   v67 = 0; /*0x439c1e*/
-  if ( (v18->Cell_field_0x140 & 0x100) != 0 || (Coord::To_Cell((Coord *)&dword_87F7E8, &v84)->flags & 0x100) != 0 ) /*0x439c46*/
+  if ( (v18->u32_140 & 0x100) != 0 || (Coord::To_Cell((Coord *)&dword_87F7E8, &v84)->flags & 0x100) != 0 ) /*0x439c46*/
   {
-    if ( v83.Coord3D_field_0x08 < v75 ) /*0x439c56*/
+    if ( v83.q008 < v75 ) /*0x439c56*/
     {
-      if ( v84.Coord3D_field_0x08 >= v75 ) /*0x439c65*/
+      if ( v84.q008 >= v75 ) /*0x439c65*/
         v68 = 1; /*0x439c67*/
     }
-    else if ( v84.Coord3D_field_0x08 < v75 ) /*0x439c5a*/
+    else if ( v84.q008 < v75 ) /*0x439c5a*/
     {
       v67 = 1; /*0x439c5c*/
     }

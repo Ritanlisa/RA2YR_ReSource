@@ -7,9 +7,9 @@ namespace gamemd {
 
 struct ArtConfig {
     int __pad_000;  // 0x0
-    int ArtConfig_field_0x04;  // 0x4
-    int ArtConfig_field_0x08;  // 0x8
-    int ArtConfig_field_0x0C;  // 0xC
+    int q004;  // 0x4
+    int u32_8;  // 0x8
+    int u32_C;  // 0xC
     INIClass * ptr_10;  // 0x10
     void* __pad_014;  // 0x14
 // --- flat members (BEGIN) ---

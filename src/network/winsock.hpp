@@ -177,7 +177,7 @@ protected:
     int u32_24;  // 0x24 [X55 W3 supply (render vocab)]
     unsigned int m_8;  // 0x8 [X55 W3 supply (render vocab)]
     unsigned int u32_3F300;  // 0x3F300 [X55 W3 supply (render vocab)]
-    int m_10;  // 0x10 [X55 W3 supply (render vocab)]
+    int q010;  // 0x10 [X55 W3 supply (render vocab)]
     unsigned int u32_3F06C;  // 0x3F06C [X55 W3 supply (render vocab)]
     unsigned int u32_3F070;  // 0x3F070 [X55 W3 supply (render vocab)]
     unsigned int u32_3F560;  // 0x3F560 [X55 W3 supply (render vocab)]

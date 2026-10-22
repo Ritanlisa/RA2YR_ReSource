@@ -11,7 +11,7 @@ struct WDTState_4 {
     int q004;  // 0x4
     int Capacity;  // 0x8
     unsigned int m_C;  // 0xC
-    int m_10;  // 0x10
+    int q010;  // 0x10
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     char Release(int a2, unsigned int * a3);  // 0x76BA70

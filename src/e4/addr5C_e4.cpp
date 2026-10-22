@@ -209,13 +209,13 @@ CampaignClass * * MPCooperative::MPCooperative___vt07(int a2)
   unsigned int *v12; // [esp+10h] [ebp-4h] BYREF
 
   v3 = 0; /*0x5c17c3*/
-  MPCooperative_field_0x33C = this->MPCooperative_field_0x33C; /*0x5c17c5*/
+  MPCooperative_field_0x33C = this->q33C; /*0x5c17c5*/
   v11 = 0; /*0x5c17cb*/
   Movie::GetSection((int)&g_DDrawSurfaceManager, MPCooperative_field_0x33C, &v12); /*0x5c17cf*/
   v4 = v12; /*0x5c17d4*/
   if ( !v12 ) /*0x5c17da*/
     return 1; /*0x5c17e4*/
-  MPCooperative_field_0x40 = (int *)this->MPCooperative_field_0x40; /*0x5c17e7*/
+  MPCooperative_field_0x40 = (int *)this->u32_40; /*0x5c17e7*/
   if ( MPCooperative_field_0x40 ) /*0x5c17ec*/
   {
     if ( (unsigned __int8)Movie::GetState(MPCooperative_field_0x40, &v11) ) /*0x5c17f3*/
@@ -2918,42 +2918,42 @@ LABEL_25:
           v7 -= (*(int (**)(int *, int))(v17 + 4))(a2, v16); /*0x5cda14*/
           WideString::AssignFromPtr((WideString *)&v31, ecx0); /*0x5cda17*/
           String::TruncateTo(&v31, v3); /*0x5cda21*/
-          WideString::AssignFromPtr((WideString *)&v30.DeleteAndZero_field_0x08, ecx0); /*0x5cda2b*/
-          WideString::Erase((WideString *)&v30.DeleteAndZero_field_0x08, 0, v3); /*0x5cda37*/
-          v18 = WideString::Assign((WideString *)&v35.DeleteAndZero_field_0x08, asc_830174); /*0x5cda4f*/
+          WideString::AssignFromPtr((WideString *)&v30.u32_8, ecx0); /*0x5cda2b*/
+          WideString::Erase((WideString *)&v30.u32_8, 0, v3); /*0x5cda37*/
+          v18 = WideString::Assign((WideString *)&v35.u32_8, asc_830174); /*0x5cda4f*/
           v19 = WideString::ConcatAlloc( /*0x5cda5e*/
                   (WideString *)&v31,
-                  (wchar_t **)&v35.DeleteAndZero_field_0x04,
+                  (wchar_t **)&v35.q004,
                   (const wchar_t **)v18);
           v20 = WideString::ConcatAlloc( /*0x5cda65*/
                   (WideString *)v19,
                   (wchar_t **)&v35,
-                  (const wchar_t **)&v30.DeleteAndZero_field_0x08);
+                  (const wchar_t **)&v30.u32_8);
           WideString::Reassign_Alt((WideString *)ecx0, (const wchar_t **)v20); /*0x5cda6d*/
           DeleteAndZero::Alt(&v35); /*0x5cda76*/
-          DeleteAndZero::Alt((DeleteAndZero *)&v35.DeleteAndZero_field_0x04); /*0x5cda7f*/
-          DeleteAndZero::Alt((DeleteAndZero *)&v35.DeleteAndZero_field_0x08); /*0x5cda88*/
-          DeleteAndZero::Alt((DeleteAndZero *)&v30.DeleteAndZero_field_0x08); /*0x5cda91*/
+          DeleteAndZero::Alt((DeleteAndZero *)&v35.q004); /*0x5cda7f*/
+          DeleteAndZero::Alt((DeleteAndZero *)&v35.u32_8); /*0x5cda88*/
+          DeleteAndZero::Alt((DeleteAndZero *)&v30.u32_8); /*0x5cda91*/
           p_DeleteAndZero_field_0x04 = (DeleteAndZero *)&v31; /*0x5cda96*/
         }
         else
         {
-          WideString::AssignFromPtr((WideString *)&v30.DeleteAndZero_field_0x04, ecx0); /*0x5cdaf1*/
-          String::TruncateTo((String *)&v30.DeleteAndZero_field_0x04, ++v3); /*0x5cdafc*/
+          WideString::AssignFromPtr((WideString *)&v30.q004, ecx0); /*0x5cdaf1*/
+          String::TruncateTo((String *)&v30.q004, ++v3); /*0x5cdafc*/
           WideString::AssignFromPtr((WideString *)&v30, ecx0); /*0x5cdb06*/
           WideString::Erase((WideString *)&v30, 0, v3); /*0x5cdb12*/
-          v23 = WideString::Assign((WideString *)&v34.DeleteAndZero_field_0x08, asc_830174); /*0x5cdb2a*/
+          v23 = WideString::Assign((WideString *)&v34.u32_8, asc_830174); /*0x5cdb2a*/
           v24 = WideString::ConcatAlloc( /*0x5cdb39*/
-                  (WideString *)&v30.DeleteAndZero_field_0x04,
-                  (wchar_t **)&v34.DeleteAndZero_field_0x04,
+                  (WideString *)&v30.q004,
+                  (wchar_t **)&v34.q004,
                   (const wchar_t **)v23);
           v25 = WideString::ConcatAlloc((WideString *)v24, (wchar_t **)&v34, (const wchar_t **)&v30); /*0x5cdb40*/
           WideString::Reassign_Alt((WideString *)ecx0, (const wchar_t **)v25); /*0x5cdb48*/
           DeleteAndZero::Alt(&v34); /*0x5cdb51*/
-          DeleteAndZero::Alt((DeleteAndZero *)&v34.DeleteAndZero_field_0x04); /*0x5cdb5a*/
-          DeleteAndZero::Alt((DeleteAndZero *)&v34.DeleteAndZero_field_0x08); /*0x5cdb63*/
+          DeleteAndZero::Alt((DeleteAndZero *)&v34.q004); /*0x5cdb5a*/
+          DeleteAndZero::Alt((DeleteAndZero *)&v34.u32_8); /*0x5cdb63*/
           DeleteAndZero::Alt(&v30); /*0x5cdb6c*/
-          p_DeleteAndZero_field_0x04 = (DeleteAndZero *)&v30.DeleteAndZero_field_0x04; /*0x5cdb71*/
+          p_DeleteAndZero_field_0x04 = (DeleteAndZero *)&v30.q004; /*0x5cdb71*/
         }
         DeleteAndZero::Alt(p_DeleteAndZero_field_0x04); /*0x5cda9a*/
       }
@@ -4638,12 +4638,12 @@ int E4Recv_5CD570::sub_5CD570(const wchar_t ** a2, int a3, int a4, int a5, int *
   this->M16 = Timer::GetTicks(); /*0x5cd59c*/
   this->u32_18 = 0; /*0x5cd59f*/
   /* X11: ptr_0 install elided (implicit via MSAnim virtuals 0x5cd5a5) */
-  WideString::AssignFromPtr(&this->u32_1C, a2); /*0x5cd5ab*/
+  WideString::AssignFromPtr(&this->M44, a2); /*0x5cd5ab*/
   this->M44 = a8; /*0x5cd5c0*/
   this->M48 = a9; /*0x5cd5c7*/
-  this->q020 = 0; /*0x5cd5ce*/
+  this->M48 = 0; /*0x5cd5ce*/
   this->M24 = a7; /*0x5cd5d1*/
-  this->u32_28 = 0; /*0x5cd5d4*/
+  this->M36 = 0; /*0x5cd5d4*/
   this->u32_34 = a5; /*0x5cd5d7*/
   this->u32_48 = 0; /*0x5cd5da*/
   this->M73 = a10; /*0x5cd5dd*/
@@ -4660,19 +4660,19 @@ int E4Recv_5CD570::sub_5CD570(const wchar_t ** a2, int a3, int a4, int a5, int *
     v17 = 0; /*0x5cd611*/
     int v16; // [esp+3Ch] [ebp+20h]
     v16 = *(unsigned int *)(this->u32_34 + 4); /*0x5cd618*/
-    if ( (unsigned __int16)WideString::GetChar(&this->u32_1C, 0) ) /*0x5cd61e*/
+    if ( (unsigned __int16)WideString::GetChar(&this->M44, 0) ) /*0x5cd61e*/
     {
       do /*0x5cd658*/
       {
-        if ( (unsigned __int16)WideString::GetChar(&this->u32_1C, v11) == 10 ) /*0x5cd634*/
+        if ( (unsigned __int16)WideString::GetChar(&this->M44, v11) == 10 ) /*0x5cd634*/
           break; /*0x5cd634*/
         int v12; // ebp
         v12 = *this->u32_343); /*0x5cd63c*/
         int Char; // eax
-        Char = WideString::GetChar(&this->u32_1C, v11++); /*0x5cd63e*/
+        Char = WideString::GetChar(&this->M44, v11++); /*0x5cd63e*/
         v17 += (*(int (**)(unsigned int, int))(v12 + 4))(this->u32_34, Char); /*0x5cd651*/
       }
-      while ( (unsigned __int16)WideString::GetChar(&this->u32_1C, v11) ); /*0x5cd658*/
+      while ( (unsigned __int16)WideString::GetChar(&this->M44, v11) ); /*0x5cd658*/
     }
     this->M76 = (this->M40 - v17 - v16) / 2; /*0x5cd676*/
   }

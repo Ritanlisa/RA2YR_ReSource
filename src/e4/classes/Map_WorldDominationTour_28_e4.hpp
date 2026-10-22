@@ -9,9 +9,9 @@ struct VectorClass_flat;  // fix_fwd_type_supply
 struct Map_WorldDominationTour_28 {
     unsigned char __pad_000;  // 0x0
     char __pad_1[3];  // 0x1
-    int Map_WorldDominationTour_28_field_0x4;  // 0x4
-    int Map_WorldDominationTour_28_field_0x8;  // 0x8
-    int Map_WorldDominationTour_28_field_0xC;  // 0xC
+    int q004;  // 0x4
+    int q008;  // 0x8
+    int q00C;  // 0xC
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     char  AddRef(int a2);  // 0x76A130

@@ -9,11 +9,11 @@ struct Function {
     unsigned char __pad_000;  // 0x0
     char __pad_1[3];  // 0x1
     int q004;  // 0x4
-    int Function_field_0x08;  // 0x8
-    int Function_field_0x0C;  // 0xC
-    int Function_field_0x10;  // 0x10
-    int Function_field_0x14;  // 0x14
-    unsigned int Function_field_0x18;  // 0x18
+    int q008;  // 0x8
+    int q00C;  // 0xC
+    int q010;  // 0x10
+    int q014;  // 0x14
+    unsigned int q018;  // 0x18
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int Method_424CA0(int a2);

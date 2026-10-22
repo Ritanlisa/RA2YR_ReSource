@@ -19,12 +19,12 @@ struct CCINIClass {
     int sectionHead[3];  // 0x10
     int sectionCount;  // 0x1C
     char __pad_20[12];  // 0x20
-    int SuperClass_field_0x2C;  // 0x2C
+    int q02C;  // 0x2C
     int unknown30;  // 0x30
     char needsSave_flag[1];  // 0x34
     char __pad_35[3];  // 0x35
     unsigned int unknown38;  // 0x38
-    int INIClass_field_3C;  // 0x3C
+    int q03C;  // 0x3C
     bool ownsFile;  // 0x40
     unsigned char __pad_41[4];  // 0x41
     char padding45[3];  // 0x45

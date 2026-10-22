@@ -7,7 +7,7 @@ namespace gamemd {
 
 struct DListNode {
     char __pad_0[4];  // 0x0
-    int DListNode_field_0x04;  // 0x4
+    int q004;  // 0x4
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int Init(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0);

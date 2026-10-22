@@ -6,8 +6,8 @@
 namespace gamemd {
 struct Vector {
     void* Cl_ph;  // 0x0
-    int Vector_field_0x4;  // 0x4
-    int Vector_field_0x8;  // 0x8
+    int q004;  // 0x4
+    int u32_8;  // 0x8
     bool IsInitialized;  // 0xC
     unsigned char u32_D;  // 0xD
     char __pad_E[2];  // 0xE

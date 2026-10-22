@@ -74,9 +74,9 @@ struct House {
     unsigned char u32_250;  // 0x250
     char __pad_251[3];  // 0x251
     char __pad_254[68];  // 0x254
-    int House_field_0x298;  // 0x298
+    int q298;  // 0x298
     char __pad_29C[16];  // 0x29C
-    int House_field_0x2AC;  // 0x2AC
+    int q2AC;  // 0x2AC
     unsigned char q2B0;  // 0x2B0
     char __pad_2B1[63];  // 0x2B1
     unsigned char u32_2F0;  // 0x2F0
@@ -90,7 +90,7 @@ struct House {
     char __pad_339[154];  // 0x339
     char House_field_0x3D3[4];  // 0x3D3
     char __pad_3D7[329];  // 0x3D7
-    int House_field_0x520;  // 0x520
+    int q520;  // 0x520
     char __pad_524[20404];  // 0x524
     unsigned int u32_54D8;  // 0x54D8
     char __pad_54DC[292];  // 0x54DC

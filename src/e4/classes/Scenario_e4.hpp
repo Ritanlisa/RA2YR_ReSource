@@ -10,18 +10,18 @@ struct Game;  // fix_fwd_type_supply
 struct Scenario {
 #pragma pack(push, 1)  // X60: binary-packed layout
     unsigned int __pad_000;  // 0x0
-    unsigned int Scenario_field_0x4;  // 0x4
-    int Scenario_field_0x8;  // 0x8
+    unsigned int q004;  // 0x4
+    int q008;  // 0x8
     int q00C;  // 0xC
-    int Scenario_field_0x10;  // 0x10
+    int q010;  // 0x10
     int q014;  // 0x14
     int q018;  // 0x18
     int q01C;  // 0x1C
     int q020;  // 0x20
     int q024;  // 0x24
     int q028;  // 0x28
-    unsigned int Scenario_field_0x2C;  // 0x2C
-    int Scenario_field_0x30;  // 0x30
+    unsigned int q02C;  // 0x2C
+    int q030;  // 0x30
     int q034;  // 0x34
     int q038;  // 0x38
     unsigned char q03C[4];  // 0x3C
@@ -35,7 +35,7 @@ struct Scenario {
     char __pad_7C[4];  // 0x7C
     int q080;  // 0x80
     char __pad_84[20];  // 0x84
-    int Scenario_field_0x98;  // 0x98
+    int u32_98;  // 0x98
     char __pad_9C[212];  // 0x9C
     unsigned int u32_170;  // 0x170
     unsigned int u32_174;  // 0x174
@@ -43,11 +43,11 @@ struct Scenario {
     unsigned int u32_17C;  // 0x17C
     unsigned int u32_180;  // 0x180
     char __pad_180[280];  // 0x184
-    int Scenario_field_0x29C;  // 0x29C
+    int q29C;  // 0x29C
     char __pad_2A0[3912];  // 0x2A0
-    int Scenario_field_0x11E8;  // 0x11E8
+    int q11E8;  // 0x11E8
     char __pad_11EC[4];  // 0x11EC
-    int Scenario_field_0x11F0;  // 0x11F0
+    int q11F0;  // 0x11F0
     char __pad_11F4[698];  // 0x11F4
     char Scenario_field_0x14AE[4];  // 0x14AE
     char __pad_14B2[2087];  // 0x14B2

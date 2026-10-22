@@ -205,13 +205,13 @@ int Movement::CalcVelocity(double *a1, Vector3 *a2, double a3, void **a4, int16_
     LOWORD(v25) = Math::RoundToInt(a3); /*0x5b22d8*/
     HIDWORD(v92) = v25; /*0x5b22dd*/
     (v26) = ((v26) & ~0xFFFF) | ((Math::RoundToInt(a3)) & 0xFFFF); /*0x5b22e1*/
-    v78 = (((v26 + a2->Vector3_field_0x08 & 0xFFFFFFFFull)) << 32 | (HIDWORD(v92) + a2->Vector3_field_0x04 & 0xFFFFFFFFull)); /*0x5b22f9*/
+    v78 = (((v26 + a2->u32_8 & 0xFFFFFFFFull)) << 32 | (HIDWORD(v92) + a2->u32_4 & 0xFFFFFFFFull)); /*0x5b22f9*/
     v27 = Coord::Subtract((Coord *)&v92, (int)v24 + *(unsigned int *)a2->__pad_0, v78, (int)(((v78) >> 32) & 0xFFFFFFFFu)); /*0x5b22ff*/
     v28 = v27->q004; /*0x5b2308*/
     v29 = v27->q008; /*0x5b230b*/
     *(unsigned int *)a2->__pad_0 = *v27; /*0x5b230e*/
-    a2->Vector3_field_0x04 = v28; /*0x5b2310*/
-    a2->Vector3_field_0x08 = v29; /*0x5b2313*/
+    a2->u32_4 = v28; /*0x5b2310*/
+    a2->u32_8 = v29; /*0x5b2313*/
     __asm /*0x5b2316*/
     {
       fld qword ptr [esi+10h]
@@ -252,13 +252,13 @@ int Movement::CalcVelocity(double *a1, Vector3 *a2, double a3, void **a4, int16_
   v36 = Coord::Subtract( /*0x5b23a6*/
           (Coord *)&v90,
           (int)v33 + *(unsigned int *)a2->__pad_0,
-          a2->Vector3_field_0x04 + HIDWORD(v92),
-          a2->Vector3_field_0x08 + v35);
+          a2->u32_4 + HIDWORD(v92),
+          a2->u32_8 + v35);
   v37 = v36->q004; /*0x5b23b2*/
   v38 = v36->q008; /*0x5b23b5*/
   *(unsigned int *)a2->__pad_0 = *v36; /*0x5b23b8*/
-  a2->Vector3_field_0x04 = v37; /*0x5b23be*/
-  a2->Vector3_field_0x08 = v38; /*0x5b23c4*/
+  a2->u32_4 = v37; /*0x5b23be*/
+  a2->u32_8 = v38; /*0x5b23c4*/
   v39 = Vector3::Subtract(a2, (int *)&v90, a4); /*0x5b23c7*/
   v40 = Coord::Length((Coord *)v39); /*0x5b23ce*/
   v41 = *a4; /*0x5b23d3*/
@@ -266,20 +266,20 @@ int Movement::CalcVelocity(double *a1, Vector3 *a2, double a3, void **a4, int16_
   LODWORD(v89) = v40; /*0x5b23d8*/
   v43 = *(unsigned int *)a2->__pad_0; /*0x5b23dc*/
   v88.field_4 = v41; /*0x5b23de*/
-  Vector3_field_0x04 = a2->Vector3_field_0x04; /*0x5b23e2*/
+  Vector3_field_0x04 = a2->u32_4; /*0x5b23e2*/
   v88.field_8 = v42; /*0x5b23e5*/
   *(unsigned int *)v87 = v43; /*0x5b23e9*/
   *(unsigned int *)&v87[4] = Vector3_field_0x04; /*0x5b23f5*/
   v45 = Coord2D::Sub((Coord2D *)v87, (int *)&v90, &v88.field_4); /*0x5b23ff*/
   v46 = Vector::TwoDMagnitudeMath((Vector *)v45); /*0x5b2406*/
   v47 = a4[2]; /*0x5b240b*/
-  Vector3_field_0x08 = a2->Vector3_field_0x08; /*0x5b240e*/
+  Vector3_field_0x08 = a2->u32_8; /*0x5b240e*/
   v49 = a4[1]; /*0x5b2411*/
   v88.field_4 = v50; /*0x5b2414*/
   v51 = (double *)Coord::Subtract( /*0x5b242c*/
                     (Coord *)&v90,
                     (int)*a4 - *(unsigned int *)a2->__pad_0,
-                    (int)v49 - a2->Vector3_field_0x04,
+                    (int)v49 - a2->u32_4,
                     (int)v47 - Vector3_field_0x08);
   v92 = *v51; /*0x5b2433*/
   __asm { fild dword ptr [esp+98h+var_30] } /*0x5b243e*/
@@ -399,8 +399,8 @@ int Movement::CalcVelocity(double *a1, Vector3 *a2, double a3, void **a4, int16_
   v62 = (double *)Coord::Subtract( /*0x5b26b9*/
                     (Coord *)v87,
                     *(unsigned int *)a2->__pad_0 + *v61,
-                    a2->Vector3_field_0x04 + v61->q004,
-                    a2->Vector3_field_0x08 + v61->q008);
+                    a2->u32_4 + v61->q004,
+                    a2->u32_8 + v61->q008);
   v90 = *v62; /*0x5b26c0*/
   LODWORD(v91) = *((unsigned int *)v62 + 2); /*0x5b26d8*/
   GroundHeight = Cell::GetGroundHeight(&v90); /*0x5b26eb*/
@@ -417,7 +417,7 @@ int Movement::CalcVelocity(double *a1, Vector3 *a2, double a3, void **a4, int16_
   }
   if ( !a9 ) /*0x5b2737*/
   {
-    v65 = a2->Vector3_field_0x08; /*0x5b2744*/
+    v65 = a2->u32_8; /*0x5b2744*/
     v66 = v65 - dword_ABEF50 * v64 - GroundHeight; /*0x5b274b*/
     if ( v66 >= -20 ) /*0x5b2750*/
     {
@@ -429,7 +429,7 @@ int Movement::CalcVelocity(double *a1, Vector3 *a2, double a3, void **a4, int16_
     {
       v67 = v65 + 18; /*0x5b2752*/
     }
-    a2->Vector3_field_0x08 = v67; /*0x5b275f*/
+    a2->u32_8 = v67; /*0x5b275f*/
 LABEL_34:
     if ( v66 >= dword_ABEF50 / -2 ) /*0x5b2773*/
     {

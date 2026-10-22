@@ -302,18 +302,18 @@ int ScriptAction::CreatePlacementAction(unsigned int *a2, const void *a3)
     v6 = 0; /*0x633fea*/
   memcpy(v6, a3, 0x6Fu); /*0x633ff8*/
   v5->ptr_2 = v6; /*0x633ffd*/
-  ScriptAction_field_0x8 = this->ScriptAction_field_0x8; /*0x634000*/
-  if ( this->ScriptAction_field_0x10 < ScriptAction_field_0x8 /*0x634024*/
+  ScriptAction_field_0x8 = this->u32_8; /*0x634000*/
+  if ( this->u32_10 < ScriptAction_field_0x8 /*0x634024*/
     || (this->u8_D || !ScriptAction_field_0x8)
-    && (ScriptAction_field_0x14 = this->ScriptAction_field_0x14, ScriptAction_field_0x14 > 0)
+    && (ScriptAction_field_0x14 = this->q014, ScriptAction_field_0x14 > 0)
     && (*(unsigned __int8 (**)(ScriptAction *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 8))(
          this,
          ScriptAction_field_0x8 + ScriptAction_field_0x14,
          0) )
   {
-    ScriptAction_field_0x10 = this->ScriptAction_field_0x10; /*0x63402b*/
-    v10 = (unsigned int *)this->ScriptAction_field_0x4; /*0x63402e*/
-    this->ScriptAction_field_0x10 = ScriptAction_field_0x10 + 1; /*0x634034*/
+    ScriptAction_field_0x10 = this->u32_10; /*0x63402b*/
+    v10 = (unsigned int *)this->u32_4; /*0x63402e*/
+    this->u32_10 = ScriptAction_field_0x10 + 1; /*0x634034*/
     v10[ScriptAction_field_0x10] = (unsigned int)v5; /*0x634037*/
   }
   Type = BuildingClass::GetType((BuildingClass *)a2); /*0x634043*/
@@ -402,11 +402,11 @@ unsigned int * ScriptAction::FindItemByValue(int a2)
   unsigned int **v4; // esi
   unsigned int **i; // ecx
 
-  ScriptAction_field_0x10 = this->ScriptAction_field_0x10; /*0x6346b0*/
+  ScriptAction_field_0x10 = this->u32_10; /*0x6346b0*/
   v3 = 0; /*0x6346b4*/
   if ( ScriptAction_field_0x10 <= 0 ) /*0x6346ba*/
     return 0; /*0x6346ba*/
-  v4 = (unsigned int **)this->ScriptAction_field_0x4; /*0x6346bc*/
+  v4 = (unsigned int **)this->u32_4; /*0x6346bc*/
   for ( i = v4; **i != a2; ++i ) /*0x6346c3*/
   {
     if ( ++v3 >= ScriptAction_field_0x10 ) /*0x6346d1*/
@@ -489,13 +489,13 @@ int ScriptAction::FindBuildingMatch(unsigned int *a2)
   if ( v6 != v11 )
   {
     Value = Array::FindValue((Array *)v6, (int)a2); /*0x634d39*/
-    v13 = Value == -1 ? 0 : *(unsigned int *)(v6->ScriptAction_field_0x4 + 4 * Value);
+    v13 = Value == -1 ? 0 : *(unsigned int *)(v6->u32_4 + 4 * Value);
     v14 = *(unsigned char **)(v13 + 4); /*0x634d4d*/
     memcpy(v28, v14, sizeof(v28)); /*0x634d59*/
     v14 += 108; /*0x634d59*/
     v29 = *(unsigned short *)v14; /*0x634d5b*/
     v30 = v14[2]; /*0x634d5d*/
-    ScriptAction_field_0x30 = (ScriptAction *)this->ScriptAction_field_0x30; /*0x634d63*/
+    ScriptAction_field_0x30 = (ScriptAction *)this->q030; /*0x634d63*/
     v15 = ScriptAction_field_0x30; /*0x634d5e*/
     if ( ScriptAction_field_0x30 ) /*0x634d67*/
     {
@@ -505,7 +505,7 @@ int ScriptAction::FindBuildingMatch(unsigned int *a2)
       v25 = ScenarioClassActionCoords->Coord3D_field_0x04; /*0x634d83*/
       for ( i = ScenarioClassActionCoords->q008; v18 < (int)v15; ++v18 ) /*0x634d8e*/
       {
-        v19 = *(unsigned int **)(v24->ScriptAction_field_0x24 + 4 * v18); /*0x634d97*/
+        v19 = *(unsigned int **)(v24->q024 + 4 * v18); /*0x634d97*/
         if ( v19[28] ) /*0x634d9a*/
         {
           memcpy(v31, v19, sizeof(v31)); /*0x634dad*/

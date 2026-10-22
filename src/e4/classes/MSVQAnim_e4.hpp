@@ -8,12 +8,12 @@ namespace gamemd {
 struct MSVQAnim {
     void* __pad_0;  // 0x0
     int __pad_004;  // 0x4
-    int MSVQAnim_field_0x08;  // 0x8
-    int MSVQAnim_field_0x0C;  // 0xC
-    int MSVQAnim_field_0x10;  // 0x10
-    int MSVQAnim_field_0x14;  // 0x14
-    int MSVQAnim_field_0x18;  // 0x18
-    int MSVQAnim_field_0x1C;  // 0x1C
+    int q008;  // 0x8
+    int q00C;  // 0xC
+    int u32_10;  // 0x10
+    int q014;  // 0x14
+    int q018;  // 0x18
+    int q01C;  // 0x1C
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     MSVQAnim * QueryInterface(char a2);

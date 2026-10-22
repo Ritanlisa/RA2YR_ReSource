@@ -62,7 +62,7 @@ int AITriggerTypeClass::CivilianHouseOwns(int a2, int a3)
   v6 = (DynamicVector *)*(&dword_A8022C->ptr_0 + v4); /*0x41ece5*/
   if ( !v6 ) /*0x41ecea*/
     return v11; /*0x41ee23*/
-  AITriggerTypeClass_field_0x18 = v3[3].AITriggerTypeClass_field_0x18; /*0x41ecf0*/
+  AITriggerTypeClass_field_0x18 = v3[3].q018; /*0x41ecf0*/
   if ( AITriggerTypeClass_field_0x18 ) /*0x41ecf8*/
   {
     v8 = (*(int (**)(int))(*(unsigned int *)AITriggerTypeClass_field_0x18 + 64))(AITriggerTypeClass_field_0x18); /*0x41ed0a*/
@@ -95,25 +95,25 @@ LABEL_12:
   {
     v10 = 0; /*0x41ed7e*/
   }
-  switch ( v3[3].AITriggerTypeClass_field_0x28 ) /*0x41ed8f*/
+  switch ( v3[3].u32_28 ) /*0x41ed8f*/
   {
     case 0: /*0x41ed8f*/
-      result = v10 < v3[3].AITriggerTypeClass_field_0x24; /*0x41eda5*/
+      result = v10 < v3[3].q024; /*0x41eda5*/
       break; /*0x41edad*/
     case 1: /*0x41ed8f*/
-      result = v10 <= v3[3].AITriggerTypeClass_field_0x24; /*0x41edbf*/
+      result = v10 <= v3[3].q024; /*0x41edbf*/
       break; /*0x41edc7*/
     case 2: /*0x41ed8f*/
-      result = v10 == v3[3].AITriggerTypeClass_field_0x24; /*0x41edd9*/
+      result = v10 == v3[3].q024; /*0x41edd9*/
       break; /*0x41ede1*/
     case 3: /*0x41ed8f*/
-      result = v10 >= v3[3].AITriggerTypeClass_field_0x24; /*0x41edf3*/
+      result = v10 >= v3[3].q024; /*0x41edf3*/
       break; /*0x41edfb*/
     case 4: /*0x41ed8f*/
-      result = v10 > v3[3].AITriggerTypeClass_field_0x24; /*0x41ee0d*/
+      result = v10 > v3[3].q024; /*0x41ee0d*/
       break; /*0x41ee15*/
     case 5: /*0x41ed8f*/
-      return v10 != v3[3].AITriggerTypeClass_field_0x24; /*0x41ee1e*/
+      return v10 != v3[3].q024; /*0x41ee1e*/
     default:
       return v11;
   }
@@ -357,7 +357,7 @@ ObjectClass * * AITriggerTypeClass::LoadFromINI(unsigned char *** a2, void *a2_2
   if ( !INIClass::GetString( /*0x41f5b9*/
           (INIClass *)a2,
           (unsigned __int8 *)aAitriggertypes,
-          (unsigned __int8 *)&this->AITriggerTypeClass_field_0x24,
+          (unsigned __int8 *)&this->q024,
           &g_INI_DefaultBuffer,
           v46[0].Name,
           512) )
@@ -766,30 +766,30 @@ char AITriggerTypeClass_40::Release(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x42041c*/
   {
-    LOBYTE(this->m_C) = 0; /*0x420426*/
+    LOBYTE(this->q00C) = 0; /*0x420426*/
     if ( a3 ) /*0x42042c*/
       v4 = a3; /*0x420442*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x42043e*/
-    LOBYTE(this->m_C) = 1; /*0x420446*/
+    LOBYTE(this->q00C) = 1; /*0x420446*/
     if ( v4 ) /*0x42044a*/
     {
       if ( *&this->q004 ) /*0x420455*/
       {
-        m_8 = this->m_8; /*0x42045c*/
+        m_8 = this->q008; /*0x42045c*/
         if ( a2 < m_8 ) /*0x420461*/
           m_8 = a2; /*0x420463*/
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x420469*/
           ++i; /*0x42046e*/
-        if ( BYTE1(this->m_C) ) /*0x42047b*/
+        if ( BYTE1(this->q00C) ) /*0x42047b*/
         {
           __3_YAXPAX_Z(*&this->q004); /*0x420486*/
           *&this->q004 = 0; /*0x42048e*/
         }
       }
       *&this->q004 = v4; /*0x420497*/
-      this->m_8 = a2; /*0x42049f*/
-      BYTE1(this->m_C) = a3 == 0; /*0x4204a2*/
+      this->q008 = a2; /*0x42049f*/
+      BYTE1(this->q00C) = a3 == 0; /*0x4204a2*/
       return 1; /*0x4204a8*/
     }
     else

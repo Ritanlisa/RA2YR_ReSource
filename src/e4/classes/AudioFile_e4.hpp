@@ -9,7 +9,7 @@ namespace gamemd {
 #define GAMEMD_G2_AudioFile_DEF 1
 struct AudioFile {
     int __pad_000;  // 0x0
-    int AudioFile_field_0x04;  // 0x4
+    int q004;  // 0x4
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int GetCallback(void *a1 = 0);

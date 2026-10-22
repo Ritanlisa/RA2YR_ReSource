@@ -12,18 +12,18 @@ struct HashTable_flat;  // fix_fwd_type_supply
 struct IPXGlobalConnClass {
     int __pad_0;  // 0x0
     void* __pad_004;  // 0x4
-    int IPXGlobalConnClass_field_0x08;  // 0x8
-    int IPXGlobalConnClass_field_0x0C;  // 0xC
-    int IPXGlobalConnClass_field_0x10;  // 0x10
-    int IPXGlobalConnClass_field_0x14;  // 0x14
-    int IPXGlobalConnClass_field_0x18;  // 0x18
-    int IPXGlobalConnClass_field_0x1C;  // 0x1C
-    void* IPXGlobalConnClass_field_0x20;  // 0x20
-    int IPXGlobalConnClass_field_0x24;  // 0x24
-    int IPXGlobalConnClass_field_0x28;  // 0x28
-    int IPXGlobalConnClass_field_0x2C;  // 0x2C
-    int IPXGlobalConnClass_field_0x30;  // 0x30
-    int IPXGlobalConnClass_field_0x34;  // 0x34
+    int q008;  // 0x8
+    int q00C;  // 0xC
+    int q010;  // 0x10
+    int u32_14;  // 0x14
+    int q018;  // 0x18
+    int q01C;  // 0x1C
+    void* q020;  // 0x20
+    int q024;  // 0x24
+    int q028;  // 0x28
+    int q02C;  // 0x2C
+    int q030;  // 0x30
+    int q034;  // 0x34
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     HashTable_flat * * SetAddress(int a2, int arg4, int * a3, IPXGlobalConnClass * aP4, int a6, int aP3);

@@ -10,7 +10,7 @@ struct HouseClass_24 {
     unsigned char __pad_000;  // 0x0
     char __pad_1[3];  // 0x1
     int q004;  // 0x4
-    int HouseClass_24_field_0x8;  // 0x8
+    int q008;  // 0x8
     int q00C;  // 0xC
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---

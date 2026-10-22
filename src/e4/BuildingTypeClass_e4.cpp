@@ -107,11 +107,11 @@ int BuildingTypeClass::ConstructFull(char * Source, void *a2)
   this->FoundationOutside = 3; /*0x45deac*/
   this->BuildingTypeClass_field_ED8 = 0; /*0x45deb6*/
   this->DeployFacing = 0; /*0x45debc*/
-  this->qEC0 = 0; /*0x45dec2*/
-  this->u32_EC4 = 0; /*0x45dec8*/
+  this->UnitEnterSound = 0; /*0x45dec2*/
+  this->WorkingSound = 0; /*0x45dec8*/
   this->ExtraPowerBonus = 0; /*0x45dece*/
-  this->u32_ECC = 0; /*0x45ded4*/
-  this->qED0 = 0; /*0x45deda*/
+  this->FreeUnit = 0; /*0x45ded4*/
+  this->PowersUpBuilding_0x18 = 0; /*0x45deda*/
   this->Height = 0; /*0x45dee0*/
   this->OccupyHeight = 0; /*0x45dee6*/
   this->MidPoint = 128; /*0x45deec*/
@@ -262,10 +262,10 @@ int BuildingTypeClass::ConstructFull(char * Source, void *a2)
   this->PreventsPlacementOverlap = 0; /*0x45e292*/
   this->ProductionCompletionThreshold = 1; /*0x45e298*/
   this->CostRatePerFrame = 1; /*0x45e29e*/
-  this->u32_1791 = 0; /*0x45e2a5*/
+  this->Hospital = 0; /*0x45e2a5*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E4638) */  /*0x45e2ab*/
   this->PreventsPlacementOverlap = __2_YAPAXI_Z(0xCu); /*0x45e2ba*/
-  this->u32_1791 = 1; /*0x45e2c6*/
+  this->Hospital = 1; /*0x45e2c6*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_var_293e34) */  /*0x45e2cd*/
   /* X11: ptr_0 install elided (legacy slot spelling slot, RHS g_var_293e34) */  /*0x45e2d3*/
   /* X11: ptr_0 install elided (legacy slot spelling slot, RHS g_var_293e34) */  /*0x45e2d9*/
@@ -308,17 +308,17 @@ LABEL_11:
   this->u32_F08 = 1; /*0x45e368*/
   this->u32_F0C = 0; /*0x45e36e*/
   this->qF10 = 0; /*0x45e374*/
-  this->u32_F14 = 1; /*0x45e37a*/
+  this->Adjacent = 1; /*0x45e37a*/
   this->u32_F18 = 0; /*0x45e380*/
   this->BuildingAnim = 0; /*0x45e386*/
   this->qF20 = 1; /*0x45e38c*/
   this->u32_F24 = 0; /*0x45e392*/
-  this->u32_F34 = 0; /*0x45e398*/
+  this->FoundationOutside = 0; /*0x45e398*/
   this->u32_F38 = 1; /*0x45e39e*/
-  this->u32_F3C = 0; /*0x45e3a4*/
-  this->qF40 = 0; /*0x45e3aa*/
-  this->u32_F44 = 1; /*0x45e3b0*/
-  this->u32_F48 = 0; /*0x45e3b6*/
+  this->DeployFacing = 0; /*0x45e3a4*/
+  this->PowerBonus = 0; /*0x45e3aa*/
+  this->PowerDrain = 1; /*0x45e3b0*/
+  this->BuildingAnim_0x15 = 0; /*0x45e3b6*/
   v8 = &this->u32_F5C; /*0x45e3be*/
   v9 = 21; /*0x45e3c4*/
   do /*0x45e414*/
@@ -418,7 +418,7 @@ unsigned int * BuildingTypeClass::loadBuildingProperty_b_545E520(int aP1)
   *&this->PreventsPlacementOverlap = 0; /*0x45e535*/
   *&this->ProductionCompletionThreshold = 0; /*0x45e53b*/
   this->CostRatePerFrame = 1; /*0x45e541*/
-  this->u32_1791 = 0; /*0x45e548*/
+  this->Hospital = 0; /*0x45e548*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_var_dc1bd7) */  /*0x45e54e*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E4544) */  /*0x45e558*/
   /* X11: ptr_0 install elided (implicit via BuildingTypeClass virtuals 0x45e55e) */
@@ -498,12 +498,12 @@ AbstractClass * * BuildingTypeClass::CleanupMembers(BuildingTypeClass * a1, Buil
   }
   void *v4 = *&a1->PreventsPlacementOverlap; // eax /*0x45e707*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_var_dc1bd7) */  /*0x45e70d*/
-  if ( v4 && a1->u32_1791 ) /*0x45e71b*/
+  if ( v4 && a1->Hospital ) /*0x45e71b*/
   {
     __3_YAXPAX_Z(v4); /*0x45e724*/
     *&a1->PreventsPlacementOverlap = 0; /*0x45e72c*/
   }
-  a1->u32_1791 = 0; /*0x45e734*/
+  a1->Hospital = 0; /*0x45e734*/
   *&a1->ProductionCompletionThreshold = 0; /*0x45e73a*/
   return TechnoTypeClass::DTOR((int)a1); /*0x45e745*/
 
@@ -1852,9 +1852,9 @@ void* BuildingTypeClass::ProcessPower(int *aP1, void *a2)
   Checksummer::Add_double(a2, this->AccelerationFactor, this->q30C); /*0x7171f6*/
   Power::TimerProcess(this->CloakingSpeed); /*0x717204*/
   Power::TimerProcess(this->q324); /*0x717212*/
-  Power::TimerProcess(this->q5D4); /*0x717220*/
+  Power::TimerProcess(this->LeaveGrinderSound); /*0x717220*/
   Power::TimerProcess(this->PoweredUnit); /*0x71722e*/
-  Power::TimerProcess(this->q340); /*0x71723c*/
+  Power::TimerProcess(this->CloakingSpeed); /*0x71723c*/
   Checksummer::Add_Buffer(a2, (unsigned __int8 *)(&this->Locomotor), 16); /*0x71724c*/
   Checksummer::Add_double(a2, this->TechnoTypeClass_field_double_360, this->__pad_364); /*0x717261*/
   Checksummer::Add_double(a2, this->TechnoTypeClass_field_double_368, this->__pad_36C); /*0x717276*/
@@ -1900,7 +1900,7 @@ void* BuildingTypeClass::ProcessPower(int *aP1, void *a2)
   Power::TimerProcess(this->Cost); /*0x7174a6*/
   Power::TimerProcess(this->Soylent); /*0x7174b4*/
   Power::TimerProcess(this->TechLevel); /*0x7174c2*/
-  Power::TimerProcess(this->q648); /*0x7174d0*/
+  Power::TimerProcess(this->Cost); /*0x7174d0*/
   Power::TimerProcess(this->IdleRate); /*0x7174de*/
   Power::TimerProcess(this->ThreatPosed); /*0x7174ec*/
   Power::TimerProcess(this->Points); /*0x7174fa*/
@@ -1915,7 +1915,7 @@ void* BuildingTypeClass::ProcessPower(int *aP1, void *a2)
   Power::TimerProcess(this->TurretOffset); /*0x717578*/
   Power::TimerProcess(this->Points2); /*0x717586*/
   Power::TimerProcess(this->__pad_73C); /*0x717594*/
-  Power::TimerProcess(this->ptr_758); /*0x7175a2*/
+  Power::TimerProcess(this->TurretOffset); /*0x7175a2*/
   Power::TimerProcess(this->ShadowIndex); /*0x7175b0*/
   v7 = (unsigned __int8 *)Power::TimerProcess(this->Storage); /*0x7175be*/
   LOBYTE(v7) = this->IsTrain; /*0x7175c3*/

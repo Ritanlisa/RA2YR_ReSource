@@ -41,7 +41,7 @@ int CampaignProperties_WorldDominationTour_22::Read(unsigned int * a2, void *a2_
 namespace gamemd {
 unsigned int CampaignProperties_WorldDominationTour_22::Write(int a2)
 {
-  if ( (this->m_C) ) /*0x5d2940*/
+  if ( (this->q00C) ) /*0x5d2940*/
     return (unsigned int)(a2 - *&this->q004) >> 2; /*0x5d2955*/
   else
     return 0; /*0x5d2947*/

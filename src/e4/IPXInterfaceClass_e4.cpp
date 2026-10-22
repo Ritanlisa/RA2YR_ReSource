@@ -256,7 +256,7 @@ LABEL_6:
     return 0; /*0x7b1717*/
   v18 = (NetworkID *)IPXInterfaceClass::processPacket(this); /*0x7b1633*/
   *v18->u32_8.__pad_0 = v26 - 4; /*0x7b1646*/
-  v18[3].NetworkID_field_0x04 = this->q3F074; /*0x7b1651*/
+  v18[3].q004 = this->q3F074; /*0x7b1651*/
   memcpy(&v18[4], &this->q3F078, v26 - 4); /*0x7b1657*/
   if ( (*(unsigned __int8 (**)(IPXInterfaceClass *, NetworkID *))(this->Socket + 88))(this, v18) ) /*0x7b1665*/
   {
@@ -279,13 +279,13 @@ LABEL_6:
   Debug::Log(); /*0x7b1671*/
   if ( !byte_B7801C ) /*0x7b1680*/
     byte_B7801C = 1; /*0x7b1682*/
-  if ( BYTE2(v18[2].NetworkID_field_0x04) ) /*0x7b1689*/
+  if ( BYTE2(v18[2].q004) ) /*0x7b1689*/
   {
     __3_YAXPAX_Z(v18); /*0x7b1691*/
   }
   else
   {
-    BYTE1(v18[2].NetworkID_field_0x04) = 0; /*0x7b16a5*/
+    BYTE1(v18[2].q004) = 0; /*0x7b16a5*/
     --this->u32_3F060; /*0x7b16b1*/
   }
   return 0; /*0x7b13e4*/

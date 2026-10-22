@@ -11,7 +11,7 @@ struct CampaignProperties_WorldDominationTour_22 {
     char __pad_1[3];  // 0x1
     int q004;  // 0x4
     unsigned int u32_8;  // 0x8
-    unsigned int m_C;  // 0xC
+    unsigned int q00C;  // 0xC
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int  Seek(int a2, void *a2_2 = 0, void *a3_1 = 0);  // 0x5D2770

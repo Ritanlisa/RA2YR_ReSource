@@ -6,7 +6,7 @@
 namespace gamemd {
 struct SymbolTable {
     void* __pad_000;  // 0x0
-    int SymbolTable_field_0x04;  // 0x4
+    int q004;  // 0x4
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     static char Insert(void *aP1, void *a2);

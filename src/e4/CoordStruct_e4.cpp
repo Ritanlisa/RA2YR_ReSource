@@ -18,8 +18,8 @@ unsigned int * CoordStruct::Set2(void* a2, AbstractClass * a3, void *a4, void *a
   v4 = (void *)(*a2 << 8); /*0x642756*/
   this->Y = (a2[1] << 8) + 128; /*0x642759*/
   this->Z = a3; /*0x642766*/
-  this->ptr_0 = (char *)v4 + 128; /*0x642769*/
-  return &this->ptr_0; /*0x64276b*/
+  this->X = (char *)v4 + 128; /*0x642769*/
+  return &this->X; /*0x64276b*/
 
 }
 }  // G42.18 ns repair

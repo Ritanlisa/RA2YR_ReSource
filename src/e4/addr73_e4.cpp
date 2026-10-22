@@ -809,7 +809,7 @@ char sub_7331B0()
       v5 = *(unsigned int *)(*(unsigned int *)&MEMORY[0xA8EB00 + 216] + 4 * v1); /*0x73320a*/
       if ( v5 && (*(unsigned char *)(v5 + 20) & 1) != 0 ) /*0x73321b*/
       {
-        EventClass_field_0x8 = v3->EventClass_field_0x8; /*0x73321d*/
+        EventClass_field_0x8 = v3->Items; /*0x73321d*/
         if ( *(unsigned int *)v3->Count < (int)EventClass_field_0x8 /*0x733242*/
           || ((((v3->EventClass_field_0xC) >> 8) & 0xFF) || !EventClass_field_0x8)
           && (v7 = *&v3->CapacityIncrement, v7 > 0)
@@ -867,13 +867,13 @@ char sub_7331B0()
               if ( *(unsigned int *)&dword_A8B238 ) /*0x7332f7*/
                 (HeightMap) = ((HeightMap) & ~0xFF) | ((House::IsHumanPlayer(v14[135])) & 0xFF); /*0x73330d*/
               else
-                HeightMap = BYTE1(v14[135]->House_field_0x1EC); /*0x7332ff*/
+                HeightMap = BYTE1(v14[135]->q1EC); /*0x7332ff*/
               if ( (unsigned char)HeightMap ) /*0x733314*/
               {
                 HeightMap = (*(int (**)(House **))&(*v14)->House_field_0x29[3])(v14); /*0x73331a*/
                 if ( HeightMap != 6 ) /*0x733320*/
                 {
-                  v15 = v12->EventClass_field_0x8; /*0x733322*/
+                  v15 = v12->Items; /*0x733322*/
                   if ( *(unsigned int *)v12->Count < (int)v15 /*0x73334c*/
                     || (((HeightMap) = ((HeightMap) & ~0xFF) | (((((v12->EventClass_field_0xC) >> 8) & 0xFF)) & 0xFF), (unsigned char)HeightMap) || !v15)
                     && (HeightMap = *&v12->CapacityIncrement, HeightMap > 0)

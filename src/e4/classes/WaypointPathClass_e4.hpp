@@ -19,8 +19,8 @@ struct WaypointPathClass {
     int waypoints[6];  // 0x28
     int waypointCount;  // 0x40
     int waypointCapacity;  // 0x44
-    unsigned char WaypointClass_field_34;  // 0x48
-    unsigned char WaypointClass_field_35;  // 0x49
+    unsigned char u32_34;  // 0x48
+    unsigned char u32_35;  // 0x49
     char pad_36[2];  // 0x4A
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---

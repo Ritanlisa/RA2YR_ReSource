@@ -14,19 +14,19 @@ struct UDPInterfaceClass_Destru {
     char __pad_1[3];  // 0x1
     char Initialized;  // 0x4
     char __pad_5[3];  // 0x5
-    unsigned int m_8;  // 0x8
-    unsigned char m_C;  // 0xC
+    unsigned int q008;  // 0x8
+    unsigned char q00C;  // 0xC
     char __pad_D[3];  // 0xD
     unsigned int q010;  // 0x10
-    int UDPInterfaceClass_Destru_field_0x14;  // 0x14
+    int q014;  // 0x14
     unsigned int q018;  // 0x18
-    int UDPInterfaceClass_Destru_field_0x1C;  // 0x1C
-    int UDPInterfaceClass_Destru_field_0x20;  // 0x20
-    unsigned int u32_24;  // 0x24
-    int UDPInterfaceClass_Destru_field_0x28;  // 0x28
-    int UDPInterfaceClass_Destru_field_0x2C;  // 0x2C
-    unsigned int u32_30;  // 0x30
-    int UDPInterfaceClass_Destru_field_0x34;  // 0x34
+    int q01C;  // 0x1C
+    int q020;  // 0x20
+    unsigned int q024;  // 0x24
+    int q028;  // 0x28
+    int q02C;  // 0x2C
+    unsigned int q030;  // 0x30
+    int q034;  // 0x34
     char __pad_38[4];  // 0x38
     unsigned int u32_3C;  // 0x3C
     char __pad_40[8];  // 0x40

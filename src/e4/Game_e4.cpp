@@ -1024,7 +1024,7 @@ void Game::BuildGameSettingsPacket(char * Buffer)
   if ( &dword_A8B320 == (int *)-2 ) /*0x5dbb7c*/
   {
     v2 = 4; /*0x5dbba5*/
-    v3 = String::Assign((String *)&v17.DeleteAndZero_field_0x08, &g_INI_DefaultBuffer); /*0x5dbbaa*/
+    v3 = String::Assign((String *)&v17.u32_8, &g_INI_DefaultBuffer); /*0x5dbbaa*/
   }
   else
   {
@@ -1032,11 +1032,11 @@ void Game::BuildGameSettingsPacket(char * Buffer)
     v2 = 3; /*0x5dbb90*/
     v3 = Game_Set((char **)&Option, (const wchar_t **)&v17); /*0x5dbb95*/
   }
-  String::AssignFromPtr((String *)&v17.DeleteAndZero_field_0x04, (const char **)v3); /*0x5dbbb4*/
+  String::AssignFromPtr((String *)&v17.q004, (const char **)v3); /*0x5dbbb4*/
   if ( (v2 & 4) != 0 ) /*0x5dbbbc*/
   {
     v2 &= ~4u; /*0x5dbbc2*/
-    DeleteAndZero((ObjectClass *)&v17.DeleteAndZero_field_0x08); /*0x5dbbc5*/
+    DeleteAndZero((ObjectClass *)&v17.u32_8); /*0x5dbbc5*/
   }
   if ( (v2 & 2) != 0 ) /*0x5dbbcd*/
   {
@@ -1048,7 +1048,7 @@ void Game::BuildGameSettingsPacket(char * Buffer)
   v16 = dword_A8BB04; /*0x5dbc0a*/
   v14 = (unsigned __int8)dword_A8BB08; /*0x5dbc0b*/
   v12 = dword_A8BB0C; /*0x5dbc0c*/
-  v4 = String::GetOrEmpty((String *)&v17.DeleteAndZero_field_0x04); /*0x5dbc11*/
+  v4 = String::GetOrEmpty((String *)&v17.q004); /*0x5dbc11*/
   sprintf( /*0x5dbc7e*/
     v1,
     "%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%s,%d,%d,%d,%s,%s:",
@@ -1072,7 +1072,7 @@ void Game::BuildGameSettingsPacket(char * Buffer)
     &byte_A8BAE2);
   memset(byte_ABFF94, 0, 0x200u); /*0x5dbc92*/
   v5 = 0; /*0x5dbc99*/
-  v17.DeleteAndZero_field_0x08 = *(unsigned int *)&stru_A8D804.__pad_3D[579]; /*0x5dbc9d*/
+  v17.u32_8 = *(unsigned int *)&stru_A8D804.__pad_3D[579]; /*0x5dbc9d*/
   if ( *(int *)&stru_A8D804.__pad_3D[579] > 0 ) /*0x5dbca1*/
   {
     do /*0x5dbd16*/
@@ -1097,7 +1097,7 @@ void Game::BuildGameSettingsPacket(char * Buffer)
         0);
       ++v5; /*0x5dbd13*/
     }
-    while ( v5 < v17.DeleteAndZero_field_0x08 ); /*0x5dbd16*/
+    while ( v5 < v17.u32_8 ); /*0x5dbd16*/
     v1 = v19; /*0x5dbd18*/
   }
   byte_ABFF92[strlen(byte_ABFF94) + 1] = 58; /*0x5dbd2f*/
@@ -1123,7 +1123,7 @@ void Game::BuildGameSettingsPacket(char * Buffer)
   Debug::Log(); /*0x5dbdbf*/
   Debug::Log(); /*0x5dbdce*/
   strcat(v1, byte_ABFF94); /*0x5dbdf7*/
-  DeleteAndZero((ObjectClass *)&v17.DeleteAndZero_field_0x04); /*0x5dbe04*/
+  DeleteAndZero((ObjectClass *)&v17.q004); /*0x5dbe04*/
 
 }
 }
@@ -1279,10 +1279,10 @@ unsigned int * Game::LockMutex(int aP1, int aP2)
   {
     if ( aP2 ) /*0x67c3c6*/
     {
-      this->Game_field_0x4 = (AbstractClass *)aP2; /*0x67c3c8*/
+      this->ptr_4 = (AbstractClass *)aP2; /*0x67c3c8*/
       return this->__pad_0; /*0x67c3ce*/
     }
-    this->Game_field_0x4 = (AbstractClass *)__2_YAPAXI_Z(4 * aP1); /*0x67c3dd*/
+    this->ptr_4 = (AbstractClass *)__2_YAPAXI_Z(4 * aP1); /*0x67c3dd*/
     this->__pad_8[5] = 1; /*0x67c3e0*/
   }
   return this->__pad_0; /*0x67c3cd*/
@@ -1311,10 +1311,10 @@ int Game::LoadSaved(void *a1_1)
   Debug::Log(); /*0x67e452*/
   GameState::Reset((GameState *)&v15); /*0x67e461*/
   ppstgOpen = 0; /*0x67e47a*/
-  MultiByteToWideChar(0, 0, a1_1, -1, (LPWSTR)&v13.ComPtr_field_0x0C, 64); /*0x67e47e*/
+  MultiByteToWideChar(0, 0, a1_1, -1, (LPWSTR)&v13.q00C, 64); /*0x67e47e*/
   ComPtr::ReleaseSimple((ComPtr *)&ppstgOpen); /*0x67e484*/
   ppstgOpen = 0; /*0x67e49e*/
-  if ( StgOpenStorage((const WCHAR *)&v13.ComPtr_field_0x0C, 0, 0x12u, 0, 0, &ppstgOpen) < 0 ) /*0x67e4a6*/
+  if ( StgOpenStorage((const WCHAR *)&v13.q00C, 0, 0x12u, 0, 0, &ppstgOpen) < 0 ) /*0x67e4a6*/
   {
     ComPtr::ReleaseSimple((ComPtr *)&ppstgOpen); /*0x67e4ac*/
     return 0; /*0x67e4bd*/
@@ -1337,7 +1337,7 @@ LABEL_6:
     ComPtr::ReleaseSimple(p_ppstgOpen); /*0x67e535*/
     return 0; /*0x67e546*/
   }
-  v13.ComPtr_field_0x04 = 0; /*0x67e54b*/
+  v13.q004 = 0; /*0x67e54b*/
   if ( !*(unsigned int *)v13.__pad_0 ) /*0x67e551*/
     sub_7DC720(-2147467261); /*0x67e558*/
   if ( (*(int (**)(unsigned int, _UNKNOWN **, unsigned int, int, unsigned int, int *))(**(unsigned int **)v13.__pad_0 + 16))( /*0x67e577*/
@@ -1346,7 +1346,7 @@ LABEL_6:
          0,
          16,
          0,
-         &v13.ComPtr_field_0x04) >= 0 )
+         &v13.q004) >= 0 )
   {
     v12 = 0; /*0x67e5a6*/
     Game::readIniSettings((Game *)&v12); /*0x67e5aa*/
@@ -1358,16 +1358,16 @@ LABEL_6:
     }
     if ( !v12 ) /*0x67e5fd*/
       sub_7DC720(-2147467261); /*0x67e604*/
-    (*(void (**)(int, int))(*(unsigned int *)v12 + 12))(v12, v13.ComPtr_field_0x04); /*0x67e615*/
-    v13.ComPtr_field_0x08 = 0; /*0x67e618*/
+    (*(void (**)(int, int))(*(unsigned int *)v12 + 12))(v12, v13.q004); /*0x67e615*/
+    v13.q008 = 0; /*0x67e618*/
     if ( v12 ) /*0x67e620*/
     {
-      v5 = Game::validateScenario((Game *)&v13.ComPtr_field_0x08, &v12); /*0x67e62b*/
+      v5 = Game::validateScenario((Game *)&v13.q008, &v12); /*0x67e62b*/
       if ( v5 < 0 && v5 != -2147467262 ) /*0x67e639*/
         sub_7DC720(v5); /*0x67e63c*/
     }
     ProgressAnim::Init((int)&stru_AC4B48.__pad_2F4[284], 0, 1079574528, 0, 0); /*0x67e64e*/
-    LoadGame::Start((LoadGame *)v13.ComPtr_field_0x08); /*0x67e659*/
+    LoadGame::Start((LoadGame *)v13.q008); /*0x67e659*/
     if ( !v12 ) /*0x67e664*/
       sub_7DC720(-2147467261); /*0x67e66b*/
     (*(void (**)(int, unsigned int))(*(unsigned int *)v12 + 16))(v12, 0); /*0x67e678*/
@@ -1384,20 +1384,20 @@ LABEL_6:
     ToggleDisplayMode(1); /*0x67e6d0*/
     LoadingScreen::FreeResources3(); /*0x67e6d5*/
     Debug::Log(); /*0x67e6e0*/
-    if ( v13.ComPtr_field_0x08 ) /*0x67e6ee*/
-      (*(void (**)(int))(*(unsigned int *)v13.ComPtr_field_0x08 + 8))(v13.ComPtr_field_0x08); /*0x67e6f3*/
+    if ( v13.q008 ) /*0x67e6ee*/
+      (*(void (**)(int))(*(unsigned int *)v13.q008 + 8))(v13.q008); /*0x67e6f3*/
     if ( v12 ) /*0x67e6fc*/
       (*(void (**)(int))(*(unsigned int *)v12 + 8))(v12); /*0x67e701*/
-    if ( v13.ComPtr_field_0x04 ) /*0x67e70a*/
-      (*(void (**)(int))(*(unsigned int *)v13.ComPtr_field_0x04 + 8))(v13.ComPtr_field_0x04); /*0x67e70f*/
+    if ( v13.q004 ) /*0x67e70a*/
+      (*(void (**)(int))(*(unsigned int *)v13.q004 + 8))(v13.q004); /*0x67e70f*/
     if ( *(unsigned int *)v13.__pad_0 ) /*0x67e718*/
       (*(void (**)(unsigned int))(**(unsigned int **)v13.__pad_0 + 8))(*(unsigned int *)v13.__pad_0); /*0x67e71d*/
     return 1; /*0x67e722*/
   }
   else
   {
-    if ( v13.ComPtr_field_0x04 ) /*0x67e57f*/
-      (*(void (**)(int))(*(unsigned int *)v13.ComPtr_field_0x04 + 8))(v13.ComPtr_field_0x04); /*0x67e584*/
+    if ( v13.q004 ) /*0x67e57f*/
+      (*(void (**)(int))(*(unsigned int *)v13.q004 + 8))(v13.q004); /*0x67e584*/
     if ( *(unsigned int *)v13.__pad_0 ) /*0x67e58d*/
       (*(void (**)(unsigned int))(**(unsigned int **)v13.__pad_0 + 8))(*(unsigned int *)v13.__pad_0); /*0x67e592*/
     return 0; /*0x67e598*/
@@ -1827,24 +1827,24 @@ void Game::EncodeGameSetupState(char * Buffer)
   if ( &dword_A8B320 == (int *)-2 ) /*0x77e44c*/
   {
     v2 = 4; /*0x77e475*/
-    v3 = String::Assign((String *)&v22.DeleteAndZero_field_0x08, &g_INI_DefaultBuffer); /*0x77e47a*/
+    v3 = String::Assign((String *)&v22.u32_8, &g_INI_DefaultBuffer); /*0x77e47a*/
   }
   else
   {
     WideString::Assign((WideString *)&v22, (wchar_t *)&dword_A8B320 + 1); /*0x77e453*/
     v2 = 3; /*0x77e460*/
-    v3 = Game_Set((char **)&v22.DeleteAndZero_field_0x04, (const wchar_t **)&v22); /*0x77e465*/
+    v3 = Game_Set((char **)&v22.q004, (const wchar_t **)&v22); /*0x77e465*/
   }
   String::AssignFromPtr(&v23, (const char **)v3); /*0x77e484*/
   if ( (v2 & 4) != 0 ) /*0x77e48c*/
   {
     v2 &= ~4u; /*0x77e492*/
-    DeleteAndZero((ObjectClass *)&v22.DeleteAndZero_field_0x08); /*0x77e495*/
+    DeleteAndZero((ObjectClass *)&v22.u32_8); /*0x77e495*/
   }
   if ( (v2 & 2) != 0 ) /*0x77e49d*/
   {
     v2 &= ~2u; /*0x77e4a3*/
-    DeleteAndZero((ObjectClass *)&v22.DeleteAndZero_field_0x04); /*0x77e4a6*/
+    DeleteAndZero((ObjectClass *)&v22.q004); /*0x77e4a6*/
   }
   if ( (v2 & 1) != 0 ) /*0x77e4ae*/
     DeleteAndZero::Alt(&v22); /*0x77e4b4*/
@@ -1912,17 +1912,17 @@ void Game::EncodeGameSetupState(char * Buffer)
       v12 = dword_A8E230[v8]; /*0x77e62e*/
 LABEL_16:
       WideString::Assign( /*0x77e635*/
-        (WideString *)&v22.DeleteAndZero_field_0x04,
+        (WideString *)&v22.q004,
         *(wchar_t **)(*(unsigned int *)&stru_A8D804.__pad_3D[567] + 4 * v5));
-      ToWideStringCharAlt((char **)&v22.DeleteAndZero_field_0x08, (const wchar_t **)&v22.DeleteAndZero_field_0x04); /*0x77e650*/
-      DeleteAndZero::Alt((DeleteAndZero *)&v22.DeleteAndZero_field_0x04); /*0x77e659*/
+      ToWideStringCharAlt((char **)&v22.u32_8, (const wchar_t **)&v22.q004); /*0x77e650*/
+      DeleteAndZero::Alt((DeleteAndZero *)&v22.q004); /*0x77e659*/
       v20 = Option2; /*0x77e66d*/
       v18 = Option; /*0x77e672*/
       v16 = PlayerColor; /*0x77e673*/
       v15 = PlayerSide; /*0x77e674*/
-      v14 = String::GetOrEmpty((String *)&v22.DeleteAndZero_field_0x08); /*0x77e686*/
+      v14 = String::GetOrEmpty((String *)&v22.u32_8); /*0x77e686*/
       sprintf(&byte_B76C24[strlen(byte_B76C24)], "%s,%d,%d,%d,%d,%x,%x,%x,", v14, v15, v16, v18, v20, v7, v11, v12); /*0x77e69a*/
-      DeleteAndZero((ObjectClass *)&v22.DeleteAndZero_field_0x08); /*0x77e6a6*/
+      DeleteAndZero((ObjectClass *)&v22.u32_8); /*0x77e6a6*/
       ++v5; /*0x77e6af*/
     }
     while ( v5 < v31 ); /*0x77e6b2*/
@@ -2041,7 +2041,7 @@ Coord * * Game::ProcessIdle()
   if ( *(int *)stru_B777A0.__pad_0 > 200 ) /*0x77fa8b*/
   {
     for ( i = 0; i < *(int *)stru_B777A0.__pad_0; ++i ) /*0x77fa91*/
-      DeleteAndZero((ObjectClass *)(stru_B777A0.DynamicArray_field_0x08 + 4 * i)); /*0x77fa9b*/
+      DeleteAndZero((ObjectClass *)(stru_B777A0.u32_8 + 4 * i)); /*0x77fa9b*/
     *(unsigned int *)stru_B777A0.__pad_0 = 0; /*0x77faaa*/
   }
   if ( dword_B76180 < (unsigned int)(time(0) - 2) && *(int *)stru_B777A0.__pad_0 > 65 /*0x77fb0e*/
@@ -2060,7 +2060,7 @@ Coord * * Game::ProcessIdle()
       v7 = *(unsigned int *)stru_B777A0.__pad_0 - 1; /*0x77fb4e*/
       if ( *(unsigned int *)stru_B777A0.__pad_0 - 1 >= 0 && v7 < *(int *)stru_B777A0.__pad_0 ) /*0x77fb57*/
       {
-        String::Reassign(&v31, (const char **)(stru_B777A0.DynamicArray_field_0x08 + 4 * v7)); /*0x77fb67*/
+        String::Reassign(&v31, (const char **)(stru_B777A0.u32_8 + 4 * v7)); /*0x77fb67*/
         DynamicArray::Remove(&stru_B777A0, v7); /*0x77fb72*/
       }
       v8 = String::GetOrEmpty(&v31); /*0x77fb80*/

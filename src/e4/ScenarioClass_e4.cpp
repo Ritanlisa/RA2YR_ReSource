@@ -593,7 +593,7 @@ int ScenarioClass_Construct(void * a2)
     GenericList::Constructor((GenericList *)&v11.headNode[2]); /*0x686773*/
     /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E1AFC) */  /*0x68677c*/
     Node::Init((MixFileClass *)&v11.needsSave_flag); /*0x686784*/
-    v11.INIClass_field_3C = 0; /*0x68678d*/
+    v11.q03C = 0; /*0x68678d*/
     v11.ownsFile[0] = 0; /*0x686792*/
     /* X11: ptr_0 install elided (X67 star-deref, RHS CCINIClass_Vtable) */  /*0x686797*/
     (&v12)->Construct(Source); /*0x68679f*/

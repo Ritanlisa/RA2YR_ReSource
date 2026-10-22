@@ -70,7 +70,7 @@ namespace gamemd {
 int SidebarClass::draw2()
 {
 
-  return this->SidebarClass_field_0x68; /*0x4ca173*/
+  return this->q068; /*0x4ca173*/
 
 }
 } // namespace gamemd
@@ -242,7 +242,7 @@ void * SidebarClass::LoadAssets()
     ((ShapeButton *)v6)->SetShape((int)v7, 0, 0); /*0x6a5968*/
     ((ButtonClass *)v6)->SetState(v12); /*0x6a5974*/
     ++v5; /*0x6a597f*/
-    v6[6].ShapeButtonClass_field_0x08 = *(unsigned int *)&g_SidebarConfig; /*0x6a5980*/
+    v6[6].u32_8 = *(unsigned int *)&g_SidebarConfig; /*0x6a5980*/
     v6 += 8; /*0x6a5983*/
   }
   while ( (int)v6 < (int)&dword_B07DC8 ); /*0x6a598c*/

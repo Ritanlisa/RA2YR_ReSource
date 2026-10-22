@@ -99,7 +99,7 @@ int ConnectionClass::connect()
 
   v2 = 0; /*0x48c5a4*/
   PlayerIndex = (Terrain *)this->PlayerIndex; /*0x48c5a6*/
-  if ( PlayerIndex->u32_38 > 0 ) /*0x48c5ae*/
+  if ( PlayerIndex->q038 > 0 ) /*0x48c5ae*/
   {
     do /*0x48c5e7*/
     {
@@ -113,7 +113,7 @@ int ConnectionClass::connect()
       PlayerIndex = (Terrain *)this->PlayerIndex; /*0x48c5e0*/
       ++v2; /*0x48c5e3*/
     }
-    while ( v2 < PlayerIndex->u32_38 ); /*0x48c5e7*/
+    while ( v2 < PlayerIndex->q038 ); /*0x48c5e7*/
   }
   return 1; /*0x48c5e9*/
 }

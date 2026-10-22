@@ -41,11 +41,11 @@ void Player::BuildListString(wchar_t * Destination)
       || v3 == (wchar_t *)g_Lobby_PlayerSide
       || v3 == (wchar_t *)g_Lobby_PlayerColor )
     {
-      GetPlayerTypeString((String *)&v6.DeleteAndZero_field_0x04, v3); /*0x5e8e2b*/
-      v4 = CharStringToWide((wchar_t **)&v6.DeleteAndZero_field_0x08, (const char **)&v6.DeleteAndZero_field_0x04); /*0x5e8e38*/
+      GetPlayerTypeString((String *)&v6.q004, v3); /*0x5e8e2b*/
+      v4 = CharStringToWide((wchar_t **)&v6.u32_8, (const char **)&v6.q004); /*0x5e8e38*/
       WideString::Reassign_Alt((WideString *)&v6, (const wchar_t **)v4); /*0x5e8e42*/
-      DeleteAndZero::Alt((DeleteAndZero *)&v6.DeleteAndZero_field_0x08); /*0x5e8e4b*/
-      j_DeleteAndZero((ObjectClass *)&v6.DeleteAndZero_field_0x04); /*0x5e8e54*/
+      DeleteAndZero::Alt((DeleteAndZero *)&v6.u32_8); /*0x5e8e4b*/
+      j_DeleteAndZero((ObjectClass *)&v6.q004); /*0x5e8e54*/
     }
     else
     {

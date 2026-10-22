@@ -46,14 +46,14 @@ int GadgetGrid::InsertItem(int a2)
   GadgetGrid *v12 = this + v10; // esi /*0x413548*/
   int v13; // ecx
   if ( *(unsigned int *)v12[2].__pad_0 < result /*0x413574*/
-    || ((((unsigned char *)&(v12[1].GadgetGrid_field_0x04))[1]) || !result)
-    && (v13 = v12[2].GadgetGrid_field_0x04, v13 > 0)
+    || ((((unsigned char *)&(v12[1].q004))[1]) || !result)
+    && (v13 = v12[2].q004, v13 > 0)
     && (result = (*(int (**)(GadgetGrid *, int, unsigned int))(*(unsigned int *)v12->__pad_0 + 8))(v12, result + v13, 0),
         (unsigned char)result) )
   {
     result = *(unsigned int *)v12[2].__pad_0; /*0x413576*/
     int GadgetGrid_field_0x04; // edx
-    GadgetGrid_field_0x04 = v12->GadgetGrid_field_0x04; /*0x413579*/
+    GadgetGrid_field_0x04 = v12->q004; /*0x413579*/
     *(unsigned int *)v12[2].__pad_0 = result + 1; /*0x41357f*/
     *(unsigned int *)(GadgetGrid_field_0x04 + 4 * result) = a2; /*0x413582*/
   }
@@ -104,7 +104,7 @@ int GadgetGrid::RemoveItem(int a2, void *a2_1)
       int v12 = v11 - 1; // ecx /*0x413697*/
       for ( *(unsigned int *)v9[2].__pad_0 = v12; /*0x41369d*/
       result < *(unsigned int *)v9[2].__pad_0;
-      *(unsigned int *)(v9->GadgetGrid_field_0x04 + 4 * result - 4) = *(unsigned int *)(v9->GadgetGrid_field_0x04 + 4 * result) )
+      *(unsigned int *)(v9->q004 + 4 * result - 4) = *(unsigned int *)(v9->q004 + 4 * result) )
       {
         ++result; /*0x4136a2*/
       }

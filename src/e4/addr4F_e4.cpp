@@ -1791,7 +1791,7 @@ unsigned int * E4Recv_4F3C40::sub_4F3C40(int a2, const char ** a3)
   int *p_uniqueId = &v3->uniqueId; // esi /*0x4f3c55*/
   v3->abstractFlags = 0; /*0x4f3c5e*/
   v3->nextArrayIndex = 0; /*0x4f3c61*/
-  (v3->u8_C) = 1; /*0x4f3c64*/
+  (v3->ptr_C) = 1; /*0x4f3c64*/
   (v3->u8_E) = 0; /*0x4f3c68*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E3238) */  /*0x4f3c6b*/
   v3->occupant = 10; /*0x4f3c71*/

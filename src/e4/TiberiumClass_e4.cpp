@@ -296,12 +296,12 @@ char TiberiumClass::LoadFromINI(uint8_t *** aP1, void *a2)
          (unsigned __int8 *)(v5 + 36),
          aDebris,
          &g_INI_DefaultBuffer,
-         (char *)&v25.DynamicVector_field_0x1C,
+         (char *)&v25.q01C,
          128) )
   {
     DynamicVectorClass::AnimTypeConstructor((DynamicVectorClass *)&v25, 0, 0); /*0x721b6c*/
     /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EB6D4) */  /*0x721b7b*/
-    for ( i = strtok((char *)&v25.DynamicVector_field_0x1C, Delimiter); i; i = strtok(0, Delimiter) ) /*0x721b8d*/
+    for ( i = strtok((char *)&v25.q01C, Delimiter); i; i = strtok(0, Delimiter) ) /*0x721b8d*/
     {
       if ( !*i ) /*0x721b8f*/
         break; /*0x721b92*/
@@ -388,13 +388,13 @@ AbstractClass * * TiberiumClass::SaveLoad_Prefix(int a1, int a2)
     __3_YAXPAX_Z((void *)v2->TiberiumClass_field_FC); /*0x721ece*/
     v2->TiberiumClass_field_FC = 0; /*0x721ed6*/
   }
-  if ( v2->TiberiumClass_field_F8 ) /*0x721edc*/
+  if ( v2->GrowthPercentage_d ) /*0x721edc*/
   {
-    __3_YAXPAX_Z((void *)v2->TiberiumClass_field_F8); /*0x721ee7*/
-    v2->TiberiumClass_field_F8 = 0; /*0x721eef*/
+    __3_YAXPAX_Z((void *)v2->GrowthPercentage_d); /*0x721ee7*/
+    v2->GrowthPercentage_d = 0; /*0x721eef*/
   }
   unsigned int *TiberiumClass_field_110; // eax
-  TiberiumClass_field_110 = (unsigned int *)v2->TiberiumClass_field_110; /*0x721ef5*/
+  TiberiumClass_field_110 = (unsigned int *)v2->Debris; /*0x721ef5*/
   v2->TiberiumClass_field_F0 = 0; /*0x721efb*/
   if ( TiberiumClass_field_110 ) /*0x721f03*/
   {
@@ -403,10 +403,10 @@ AbstractClass * * TiberiumClass::SaveLoad_Prefix(int a1, int a2)
       ++j; /*0x721f10*/
     *TiberiumClass_field_110 = 0; /*0x721f1b*/
     Scalar *v9; // ecx
-    v9 = (Scalar *)v2->TiberiumClass_field_110; /*0x721f1d*/
+    v9 = (Scalar *)v2->Debris; /*0x721f1d*/
     if ( v9 ) /*0x721f25*/
       Scalar::Dtor(v9, 1); /*0x721f29*/
-    v2->TiberiumClass_field_110 = 0; /*0x721f2e*/
+    v2->Debris = 0; /*0x721f2e*/
   }
   if ( v2->TiberiumClass_field_118 ) /*0x721f34*/
   {
@@ -463,11 +463,11 @@ AbstractClass * * TiberiumClass::SaveLoad_Prefix(int a1, int a2)
       while ( v13 < v2->Debris[0] ); /*0x722064*/
       result = 0; /*0x722066*/
     }
-    v2->TiberiumClass_field_110 = 0; /*0x722068*/
+    v2->Debris = 0; /*0x722068*/
     v2->TiberiumClass_field_114 = 0; /*0x72206e*/
     v2->TiberiumClass_field_118 = 0; /*0x722074*/
     v2->TiberiumClass_field_F4 = 0; /*0x72207a*/
-    v2->TiberiumClass_field_F8 = 0; /*0x722080*/
+    v2->GrowthPercentage_d = 0; /*0x722080*/
     v2->TiberiumClass_field_FC = 0; /*0x722086*/
   }
   return result; /*0x72208c*/

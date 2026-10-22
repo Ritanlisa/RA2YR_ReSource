@@ -129,10 +129,10 @@ void* ParticleSystemTypeClass::GetType(unsigned char *** aP1)
     &this->BarrelVoxel,
     aSpawntransluce,
     v39);
-  int ParticleSystemTypeClass_field_0x2B8 = this->ParticleSystemTypeClass_field_0x2B8; // edx /*0x6443e2*/
+  int ParticleSystemTypeClass_field_0x2B8 = this->q2B8; // edx /*0x6443e2*/
   __asm { fstp dword ptr [esi+2B0h] } /*0x6443ea*/
   *&this->DamageDelay = _ET1; /*0x6443ea*/
-  this->ParticleSystemTypeClass_field_0x2B8 = INIClass::ReadInt_Overwrite( /*0x6443fc*/
+  this->q2B8 = INIClass::ReadInt_Overwrite( /*0x6443fc*/
                                                 (bool *)aP1,
                                                 &this->BarrelVoxel,
                                                 aLifetime,
@@ -182,7 +182,7 @@ void* ParticleSystemTypeClass::GetType(unsigned char *** aP1)
     &this->BarrelVoxel,
     aParticlesperco,
     v40);
-  double v16 = *&this->ParticleSystemTypeClass_field_0x2D0; // rax /*0x6444bb*/
+  double v16 = *&this->q2D0; // rax /*0x6444bb*/
   __asm { fstp qword ptr [esi+2C8h] } /*0x6444c1*/
   *&this->Beam = _RT1; /*0x6444c1*/
   INIClass::ReadDouble_Overwrite( /*0x6444d1*/
@@ -194,14 +194,14 @@ void* ParticleSystemTypeClass::GetType(unsigned char *** aP1)
   unsigned int v19; // edx
   v19 = *(unsigned int *)this->__pad_2D8; /*0x6444dc*/
   __asm { fstp qword ptr [esi+2D0h] } /*0x6444e2*/
-  *&this->ParticleSystemTypeClass_field_0x2D0 = _RT1; /*0x6444e2*/
+  *&this->q2D0 = _RT1; /*0x6444e2*/
   INIClass::ReadDouble_Overwrite( /*0x6444f2*/
     (double *)aP1,
     &this->BarrelVoxel,
     aSpiralradius,
     COERCE_DOUBLE((((unsigned long)(unsigned int)(v19)) | ((unsigned long)(unsigned int)(v18) << 32))));
   IUnknown *ParticleSystemTypeClass_field_0x2E4; // eax
-  ParticleSystemTypeClass_field_0x2E4 = this->ParticleSystemTypeClass_field_0x2E4; /*0x6444f7*/
+  ParticleSystemTypeClass_field_0x2E4 = this->q2E4; /*0x6444f7*/
   unsigned int v22 = *&_ESI->q2E0; // ecx /*0x6444fd*/
   __asm { fstp qword ptr [esi+2D8h] } /*0x644503*/
   *(double *)this->__pad_2D8 = _RT1; /*0x644503*/
@@ -210,7 +210,7 @@ void* ParticleSystemTypeClass::GetType(unsigned char *** aP1)
     &this->BarrelVoxel,
     aPositionpertur,
     COERCE_DOUBLE((((unsigned long)(unsigned int)(v22)) | ((unsigned long)(unsigned int)((unsigned int)ParticleSystemTypeClass_field_0x2E4) << 32))));
-  double v24 = *&this->ParticleSystemTypeClass_field_0x2E8; // rax /*0x64451e*/
+  double v24 = *&this->q2E8; // rax /*0x64451e*/
   __asm { fstp qword ptr [esi+2E0h] } /*0x644524*/
   *&_ESI->q2E0 = _RT1; /*0x644524*/
   INIClass::ReadDouble_Overwrite( /*0x644534*/
@@ -221,17 +221,17 @@ void* ParticleSystemTypeClass::GetType(unsigned char *** aP1)
   unsigned int v26 = *&this->u32_2F4; // ecx /*0x644539*/
   unsigned int v27 = *&this->q2F0; // edx /*0x64453f*/
   __asm { fstp qword ptr [esi+2E8h] } /*0x644545*/
-  *&this->ParticleSystemTypeClass_field_0x2E8 = _RT1; /*0x644545*/
+  *&this->q2E8 = _RT1; /*0x644545*/
   INIClass::ReadDouble_Overwrite( /*0x644555*/
     (double *)aP1,
     &this->BarrelVoxel,
     aVelocitypertur,
     COERCE_DOUBLE((((unsigned long)(unsigned int)(v27)) | ((unsigned long)(unsigned int)(v26) << 32))));
   char ParticleSystemTypeClass_field_0x308_high; // al
-  ParticleSystemTypeClass_field_0x308_high = (*(this->ParticleSystemTypeClass_field_0x308 + (sizeof(this->ParticleSystemTypeClass_field_0x308) - 1))); /*0x64455a*/
+  ParticleSystemTypeClass_field_0x308_high = (*(this->q308 + (sizeof(this->q308) - 1))); /*0x64455a*/
   __asm { fstp qword ptr [esi+2F0h] } /*0x644562*/
   *&this->q2F0 = _RT1; /*0x644562*/
-  (*(this->ParticleSystemTypeClass_field_0x308 + (sizeof(this->ParticleSystemTypeClass_field_0x308) - 1))) = INIClass::ReadBool_Overwrite( /*0x644574*/
+  (*(this->q308 + (sizeof(this->q308) - 1))) = INIClass::ReadBool_Overwrite( /*0x644574*/
                                                         (int *)aP1,
                                                         &this->BarrelVoxel,
                                                         aLaser,
@@ -242,10 +242,10 @@ void* ParticleSystemTypeClass::GetType(unsigned char *** aP1)
             (int)&v44,
             &this->BarrelVoxel,
             aLasercolor,
-            &this->ParticleSystemTypeClass_field_0x308);
+            &this->q308);
   int ParticleSystemTypeClass_field_0x300; // ecx
-  ParticleSystemTypeClass_field_0x300 = this->ParticleSystemTypeClass_field_0x300; /*0x644596*/
-  (this->ParticleSystemTypeClass_field_0x308) = *(unsigned short *)Coord; /*0x64459c*/
+  ParticleSystemTypeClass_field_0x300 = this->q300; /*0x644596*/
+  (this->q308) = *(unsigned short *)Coord; /*0x64459c*/
   (this->q30A) = *(unsigned char *)(Coord + 2); /*0x6445af*/
   int v33; // eax
   v33 = INIClass::ReadInt_Overwrite( /*0x6445b5*/
@@ -255,7 +255,7 @@ void* ParticleSystemTypeClass::GetType(unsigned char *** aP1)
           ParticleSystemTypeClass_field_0x300);
   int v43; // [esp+4h] [ebp-64h]
   v43 = *(unsigned int *)this->__pad_304; /*0x6445c2*/
-  this->ParticleSystemTypeClass_field_0x300 = v33; /*0x6445c9*/
+  this->q300 = v33; /*0x6445c9*/
   *(unsigned int *)this->__pad_304 = INIClass::ReadInt_Overwrite( /*0x6445d4*/
                                  (bool *)aP1,
                                  &this->BarrelVoxel,
@@ -298,7 +298,7 @@ void* ParticleSystemTypeClass::PowerDrainUpdate(int * a2)
   Checksummer::Add_float((Checksummer *)a2, this->q2AC); /*0x64476b*/
   Checksummer::Add_float((Checksummer *)a2, this->DamageDelay); /*0x644779*/
   Power::TimerProcess(this->__pad_2B4); /*0x644787*/
-  return Power::TimerProcess(this->ParticleTypeClass_2B8); /*0x64479a*/
+  return Power::TimerProcess(this->q2B8); /*0x64479a*/
 
 }
 }

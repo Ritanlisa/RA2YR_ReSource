@@ -27,7 +27,7 @@ struct CaptureManagerClass {
     TechnoClass* owner;  // 0x30
     HouseClass* originalOwner;  // 0x34
     bool CaptureManagerClass_field_30;  // 0x38
-    bool CaptureManagerClass_field_31;  // 0x39
+    bool u32_31;  // 0x39
     char pad_32[2];  // 0x3A
     int __pad_03C;  // 0x3C
     bool CaptureManagerClass_field_40;  // 0x40

@@ -35,7 +35,7 @@ int Math_InitDegToRad(void * a1, void * a2)
 namespace gamemd {
 int Math::Hypotenuse2D(void *a1)
 {
-  return Math::Sqrt(*(double *)this * *(double *)this + this->q008 * this->q008); /*0x41c36e*/
+  return Math::Sqrt(*(double *)this * *(double *)this + this->u32_8 * this->u32_8); /*0x41c36e*/
 }
 }
 // 0x4CAC40

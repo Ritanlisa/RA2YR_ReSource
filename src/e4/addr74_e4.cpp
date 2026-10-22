@@ -1267,7 +1267,7 @@ AbstractClass * * E4Recv_74FAE0::sub_74FAE0()
     *(unsigned int *)&DataGlobal_A8EC40 |= 2u; /*0x74fc4e*/
   }
   char *pVal; // esi
-  pVal = (char *)&this->ptr_C; /*0x74fc60*/
+  pVal = (char *)&this->M57; /*0x74fc60*/
   sprintf(pVal, "%d.%3.3d", v6, pN_high); /*0x74fc6a*/
   return pVal; /*0x74fc74*/
 

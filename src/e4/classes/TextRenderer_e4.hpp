@@ -10,9 +10,9 @@ struct TriggerTypeClass;  // fix_fwd_type_supply
 struct TextRenderer {
     unsigned char __pad_000;  // 0x0
     char __pad_1[3];  // 0x1
-    int TextRenderer_field_0x4;  // 0x4
-    int TextRenderer_field_0x8;  // 0x8
-    int TextRenderer_field_0xC;  // 0xC
+    int q004;  // 0x4
+    int u32_8;  // 0x8
+    int q00C;  // 0xC
     char __pad_10[4];  // 0x10
     unsigned int u32_14;  // 0x14
     char __pad_18[2];  // 0x18
@@ -20,7 +20,7 @@ struct TextRenderer {
     unsigned char u32_1B;  // 0x1B
     char __pad_1C[52];  // 0x1C
     unsigned int u32_50;  // 0x50
-    int TextRenderer_field_0x54;  // 0x54
+    int q054;  // 0x54
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     TriggerTypeClass * Destructor(char a2);

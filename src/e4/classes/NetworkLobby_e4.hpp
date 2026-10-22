@@ -7,8 +7,8 @@ namespace gamemd {
 struct NetworkLobby {
 #pragma pack(push, 1)  // X60: binary-packed layout
     int __pad_0;  // 0x0
-    int NetworkLobby_field_0x4;  // 0x4
-    int NetworkLobby_field_0x8;  // 0x8
+    int u32_4;  // 0x4
+    int u32_8;  // 0x8
     unsigned char q00C[8];  // 0xC
     unsigned int u32_14;  // 0x14
     char __pad_18[1];  // 0x18
@@ -33,8 +33,8 @@ struct NetworkLobby {
     char __pad_2CC[305];  // 0x2CC
     unsigned int __pad_3FD;  // 0x3FD
     char __pad_401[683];  // 0x401
-    int NetworkLobby_field_0x6AC;  // 0x6AC
-    int NetworkLobby_field_0x6B0;  // 0x6B0
+    int q6AC;  // 0x6AC
+    int q6B0;  // 0x6B0
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     static int UpdatePlayerList();

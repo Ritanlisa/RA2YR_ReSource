@@ -7,7 +7,7 @@ namespace gamemd {
 struct LoadProgressMgr {
     void* ptr_0;  // 0x0
     CampaignClass* __pad_004;  // 0x4
-    int LoadProgressMgr_field_0x08;  // 0x8
+    int q008;  // 0x8
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     static void ReleaseBuffer(void *aP1);

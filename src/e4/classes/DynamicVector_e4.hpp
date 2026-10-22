@@ -23,14 +23,14 @@ struct DynamicVector {
     bool IsAllocated;  // 0xD
     unsigned char tail_E;  // 0xE
     char __pad_F[1];  // 0xF
-    unsigned int DynamicVector_field_0x10;  // 0x10
+    unsigned int q010;  // 0x10
     int CapacityIncrement;  // 0x14
     unsigned char __pad_018;  // 0x18
     char __pad_19[3];  // 0x19
-    int DynamicVector_field_0x1C;  // 0x1C
+    int q01C;  // 0x1C
     int q020;  // 0x20
     char __pad_24[4];  // 0x24
-    int DynamicVector_field_0x28;  // 0x28
+    int u32_28;  // 0x28
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     unsigned int * Copy(VectorClass_flat * aP1, void *a2_1);  // 0x5AC430

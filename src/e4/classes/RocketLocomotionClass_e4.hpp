@@ -24,7 +24,7 @@ struct RocketLocomotionClass {
     int MissionState;  // 0x40
     unsigned int RocketLocomotionClass_field_44;  // 0x44
     double CurrentSpeed;  // 0x48
-    bool RocketLocomotionClass_field_bool_4C;  // 0x50
+    bool u32_4C;  // 0x50
     bool SpawnerIsElite;  // 0x51
     unsigned char __pad_052;  // 0x52
     char __pad_53[1];  // 0x53

@@ -11,13 +11,13 @@ struct rc_ptr;  // fix_fwd_type_supply
 struct MSFrameAnim {
     unsigned int __pad_0;  // 0x0
     unsigned int __pad_004;  // 0x4
-    unsigned int m_8;  // 0x8
-    unsigned int m_C;  // 0xC
-    unsigned int m_10;  // 0x10
+    unsigned int q008;  // 0x8
+    unsigned int q00C;  // 0xC
+    unsigned int q010;  // 0x10
     char __pad_14[2];  // 0x14
     unsigned char Count;  // 0x16
     char __pad_17[1];  // 0x17
-    int MSFrameAnim_field_0x18;  // 0x18
+    int q018;  // 0x18
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     void *  QueryInterface(char a2);  // 0x769BD0

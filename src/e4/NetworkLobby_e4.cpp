@@ -172,9 +172,9 @@ int NetworkLobby::MessageList_Append(int a2, int a3, wchar_t *aP3, char a5, int 
     if ( this->u8_1A ) /*0x5d4343*/
     {
       if ( this->u8_19 ) /*0x5d434a*/
-        NetworkLobby_field_0x8 = this->NetworkLobby_field_0x8 + *&this->u32_14; /*0x5d4357*/
+        NetworkLobby_field_0x8 = this->u32_8 + *&this->u32_14; /*0x5d4357*/
       else
-        NetworkLobby_field_0x8 = this->NetworkLobby_field_0x8; /*0x5d435b*/
+        NetworkLobby_field_0x8 = this->u32_8; /*0x5d435b*/
       v22 = *(int **)this->__pad_0; /*0x5d435e*/
       if ( *(unsigned int *)this->__pad_0 ) /*0x5d435e*/
       {
@@ -587,10 +587,10 @@ Dialog::StopBink((Dialog *)hDlg); /*0x5de66b*/
         hWnd = GetDlgItem(hDlg, 1685); /*0x5de594*/
         if ( !hWnd ) /*0x5de598*/
           return 0; /*0x5de598*/
-        GetWindowRect(hDlg, (LPRECT)&v37.DeleteAndZero_field_0x04); /*0x5de5af*/
+        GetWindowRect(hDlg, (LPRECT)&v37.q004); /*0x5de5af*/
         StringCSF = &g_TypeClass_DefaultString; /*0x5de5c3*/
-        v30.y = HIWORD(lParam) - v37.DeleteAndZero_field_0x08; /*0x5de5c8*/
-        v30.x = (unsigned __int16)lParam - v37.DeleteAndZero_field_0x04; /*0x5de5c9*/
+        v30.y = HIWORD(lParam) - v37.u32_8; /*0x5de5c8*/
+        v30.x = (unsigned __int16)lParam - v37.q004; /*0x5de5c9*/
         v5 = ChildWindowFromPointEx(hDlg, v30, 1u); /*0x5de5cb*/
         if ( v5 ) /*0x5de5d3*/
         {

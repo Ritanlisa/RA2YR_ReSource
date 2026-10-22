@@ -7,9 +7,9 @@ namespace gamemd {
 struct WebBrowser {
     int __pad_0;  // 0x0
     unsigned int __pad_004;  // 0x4
-    unsigned int WebBrowser_field_0x8;  // 0x8
+    unsigned int u32_8;  // 0x8
     unsigned char q00C[4];  // 0xC
-    int WebBrowser_field_0x10;  // 0x10
+    int q010;  // 0x10
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int LoadURLFromRegistry(const char * a2);  // 0x773600

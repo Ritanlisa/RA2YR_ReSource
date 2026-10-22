@@ -292,21 +292,21 @@ LABEL_5:
           a3 = v8; /*0x528284*/
           if ( v9 ) /*0x528288*/
           {
-            HashTable_field_0x10 = (unsigned __int8 **)v10->HashTable_field_0x10; /*0x52828e*/
+            HashTable_field_0x10 = (unsigned __int8 **)v10->u32_10; /*0x52828e*/
             if ( HashTable_field_0x10 && *HashTable_field_0x10 == v8 ) /*0x528297*/
             {
 LABEL_11:
-              if ( v10->HashTable_field_0x04 ) /*0x5282b4*/
+              if ( v10->u32_4 ) /*0x5282b4*/
               {
-                v13 = (unsigned __int8 **)v10->HashTable_field_0x10; /*0x5282bf*/
+                v13 = (unsigned __int8 **)v10->u32_10; /*0x5282bf*/
                 if ( v13 && *v13 == v8 ) /*0x5282c8*/
                   goto LABEL_16; /*0x5282c8*/
                 v14 = HashTable::BinarySearchAlt(v10, (int *)&a3); /*0x5282d1*/
                 if ( v14 ) /*0x5282d8*/
                 {
-                  v10->HashTable_field_0x10 = v14; /*0x5282de*/
+                  v10->u32_10 = v14; /*0x5282de*/
 LABEL_16:
-                  v15 = (char ***)(v10->HashTable_field_0x10 + 4); /*0x5282e1*/
+                  v15 = (char ***)(v10->u32_10 + 4); /*0x5282e1*/
                   goto LABEL_29; /*0x5282e7*/
                 }
               }
@@ -324,7 +324,7 @@ LABEL_29:
             v12 = HashTable::BinarySearchAlt(v10, (int *)&a3); /*0x5282a0*/
             if ( v12 ) /*0x5282a7*/
             {
-              v10->HashTable_field_0x10 = v12; /*0x5282ad*/
+              v10->u32_10 = v12; /*0x5282ad*/
               v8 = a3; /*0x5282b0*/
               goto LABEL_11; /*0x5282b0*/
             }

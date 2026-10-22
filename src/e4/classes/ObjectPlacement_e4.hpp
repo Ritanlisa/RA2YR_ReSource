@@ -6,7 +6,7 @@
 namespace gamemd {
 struct ObjectPlacement {
     int __pad_0;  // 0x0
-    int ObjectPlacement_field_0x04;  // 0x4
+    int q004;  // 0x4
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     static int * CalcPosition(void *aP1, void *a2, void *a3, char a4, char a5, char a6);

@@ -17,7 +17,7 @@ struct TypeList_flat;  // fix_fwd_type_supply
 
 struct ParticleTypeClass {
     void* ArrayIndex;  // 0x0
-    void* ParticleTypeClass_field_28C;  // 0x4
+    void* q28C;  // 0x4
     void* BehavesLike;  // 0x8
     unsigned int ParticleTypeClass_field_0xC;  // 0xC
     char __pad_010[3];  // 0x10
@@ -95,14 +95,14 @@ struct ParticleTypeClass {
     unsigned int ZVelocityRange;  // 0x2AC
     unsigned int __pad_2B0;  // 0x2B0
     unsigned int ParticleTypeClass_field_0x2B4;  // 0x2B4
-    void* ParticleTypeClass_field_0x2B8;  // 0x2B8
+    void* q2B8;  // 0x2B8
     CampaignClass* ParticleTypeClass_field_0x2BC;  // 0x2BC
     char __pad_2C0[8];  // 0x2C0
     int ColorList;  // 0x2C8
     VectorClass* ParticleTypeClass_field_0x2CC;  // 0x2CC
     unsigned char __pad_2D0;  // 0x2D0
     char __pad_2D1[3];  // 0x2D1
-    unsigned int ParticleTypeClass_field_0x2D4;  // 0x2D4
+    unsigned int q2D4;  // 0x2D4
     char __pad_2D8[1];  // 0x2D8
     unsigned char u8_2D9;  // 0x2D9
     char __pad_2DA[2];  // 0x2DA
@@ -126,8 +126,8 @@ struct ParticleTypeClass {
     unsigned char Translucent50State;  // 0x30E
     unsigned char Normalized;  // 0x30F
 
-    int ParticleTypeClass_field_0x310;  // 0x310
-    int ParticleTypeClass_field_0x314;  // 0x314
+    int q310;  // 0x310
+    int q314;  // 0x314
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     AbstractClass * * Release(int a2, char * a3);

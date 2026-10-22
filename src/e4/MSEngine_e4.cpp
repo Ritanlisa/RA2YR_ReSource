@@ -531,7 +531,7 @@ CampaignClass * MSEngine::Constructor(unsigned int * Block, char a2, void *a3_1,
   Block->q008 = 0; /*0x5ad551*/
   if ( (a2 & 1) != 0 ) /*0x5ad558*/
     __3_YAXPAX_Z(Block); /*0x5ad55b*/
-  return Block->vtable1; /*0x5ad565*/
+  return Block[0]; /*0x5ad565*/
 
 }
 } // namespace gamemd

@@ -285,7 +285,7 @@ struct DialogControl_OwnerDraw {
 
 #if !defined(GAMEMD_TREE_UNIVERSE) && !defined(GAMEMD_E4_VECTOR_TREE_TRUTH)
 struct DynamicVectorClass {
-    void* ptr_0;  // 0x0
+    void* vfptr;  // 0x0
     void* Items;  // 0x4
     int Capacity;  // 0x8
     bool IsInitialized;  // 0xC
@@ -406,26 +406,26 @@ unsigned int q120;  // 0x120 [X35-L7 kind=unsigned int]
 #ifndef GAMEMD_TREE_UNIVERSE  // G42.35a: tree TU real class supplied elsewhere
 struct HashTable {
     unsigned char * __pad_0;  // 0x0
-    int HashTable_field_0x04;  // 0x4
+    int u32_4;  // 0x4
     unsigned int u32_8;  // 0x8
-    unsigned int HashTable_field_0x0C;  // 0xC
-    unsigned int HashTable_field_0x10;  // 0x10
-    unsigned int q014;  // 0x14
-    unsigned int HashTable_field_0x18;  // 0x18
+    unsigned int u32_C;  // 0xC
+    unsigned int u32_10;  // 0x10
+    unsigned int u32_14;  // 0x14
+    unsigned int u32_18;  // 0x18
     unsigned int q01C;  // 0x1C
     unsigned int q020;  // 0x20
     unsigned int q024;  // 0x24
     unsigned int q028;  // 0x28
     unsigned int q02C;  // 0x2C
-    int HashTable_field_0x30;  // 0x30
+    int q030;  // 0x30
     unsigned int q034;  // 0x34
-    unsigned int HashTable_field_0x38;  // 0x38
-    unsigned int HashTable_field_0x3C;  // 0x3C
-    unsigned int HashTable_field_0x40;  // 0x40
-    unsigned int HashTable_field_0x44;  // 0x44
-    unsigned int HashTable_field_0x48;  // 0x48
-    unsigned int HashTable_field_0x4C;  // 0x4C
-    unsigned int HashTable_field_0x50;  // 0x50
+    unsigned int u32_38;  // 0x38
+    unsigned int u32_3C;  // 0x3C
+    unsigned int q040;  // 0x40
+    unsigned int q044;  // 0x44
+    unsigned int q048;  // 0x48
+    unsigned int q04C;  // 0x4C
+    unsigned int q050;  // 0x50
     static int Shrink2(void *aP0);  // A_c2039 R5 static-form sync
     static int Shrink(void *aP0);
     static int LookupString(void *aP0, const char **a2, unsigned int *a3);  // G42.33 b2 static-form sync
@@ -471,7 +471,7 @@ struct Locomotor {
 struct MSAnim {
     void* ptr_0;  // 0x0
     int __pad_004;  // 0x4
-    int MSAnim_field_0x08;  // 0x8
+    int q008;  // 0x8
     static int Reset(void *aP1, int a2);
     int  GetField(unsigned int a2);  // 0x5cb840
     int  SetField(unsigned int a2);  // 0x5cb860
@@ -1102,7 +1102,7 @@ struct ObjectClass {
 struct ShapeButtonClass {
     char __pad_0[4];  // 0x0
     unsigned int ShapeButtonClass_field_0x04;  // 0x4
-    unsigned int ShapeButtonClass_field_0x08;  // 0x8
+    unsigned int u32_8;  // 0x8
     static int Destructor(void *aP1);
     static unsigned int Constructor(int p0, int p1, int p2, int p3, int p4, int p5, char p6);  // x4:signals@0x69dd30
 };

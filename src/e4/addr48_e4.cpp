@@ -1006,10 +1006,10 @@ AbstractClass * * CommBufferClass::sub_48B0E0(int a2, int a3, size_t Size, int a
 
   /* X11: ptr_0 install elided (implicit via CommBufferClass virtuals 0x48b0fd) */
   *&this->__pad_004 = a2; /*0x48b103*/
-  this->CommBufferClass_field_0x8 = a3; /*0x48b106*/
+  this->q008 = a3; /*0x48b106*/
   *(unsigned int *)this->__pad_C = Size; /*0x48b109*/
-  this->CommBufferClass_field_0x10 = (AbstractClass *)a5; /*0x48b10c*/
-  this->CommBufferClass_field_0x24 = __2_YAPAXI_Z(36 * a2); /*0x48b117*/
+  this->q010 = (AbstractClass *)a5; /*0x48b10c*/
+  this->q024 = __2_YAPAXI_Z(36 * a2); /*0x48b117*/
   this->CommBufferClass_field_0x34 = __2_YAPAXI_Z(24 * a3); /*0x48b123*/
   *&this->ptr_30 = __2_YAPAXI_Z(4 * a2); /*0x48b13a*/
   this->u32_40 = __2_YAPAXI_Z(4 * a3); /*0x48b143*/
@@ -1019,31 +1019,31 @@ AbstractClass * * CommBufferClass::sub_48B0E0(int a2, int a3, size_t Size, int a
     int v7 = 0; // edi /*0x48b152*/
     do /*0x48b191*/
     {
-      *(unsigned int *)(this->CommBufferClass_field_0x24 + v7 + 20) = __2_YAPAXI_Z(Size); /*0x48b160*/
-      if ( (int)this->CommBufferClass_field_0x10 <= 0 ) /*0x48b169*/
-        *(unsigned int *)(this->CommBufferClass_field_0x24 + v7 + 28) = 0; /*0x48b180*/
+      *(unsigned int *)(this->q024 + v7 + 20) = __2_YAPAXI_Z(Size); /*0x48b160*/
+      if ( (int)this->q010 <= 0 ) /*0x48b169*/
+        *(unsigned int *)(this->q024 + v7 + 28) = 0; /*0x48b180*/
       else
-        *(unsigned int *)(this->CommBufferClass_field_0x24 + v7 + 28) = __2_YAPAXI_Z((size_t)this->CommBufferClass_field_0x10); /*0x48b177*/
+        *(unsigned int *)(this->q024 + v7 + 28) = __2_YAPAXI_Z((size_t)this->q010); /*0x48b177*/
       ++v6; /*0x48b18b*/
       v7 += 36; /*0x48b18c*/
     }
     while ( v6 < *&this->__pad_004 ); /*0x48b191*/
   }
   int v8 = 0; // ebx /*0x48b196*/
-  if ( this->CommBufferClass_field_0x8 > 0 ) /*0x48b19a*/
+  if ( this->q008 > 0 ) /*0x48b19a*/
   {
     int v9 = 0; // edi /*0x48b19c*/
     do /*0x48b1db*/
     {
       *(unsigned int *)(v9 + this->CommBufferClass_field_0x34 + 12) = __2_YAPAXI_Z(Size); /*0x48b1aa*/
-      if ( (int)this->CommBufferClass_field_0x10 <= 0 ) /*0x48b1b3*/
+      if ( (int)this->q010 <= 0 ) /*0x48b1b3*/
         *(unsigned int *)(v9 + this->CommBufferClass_field_0x34 + 20) = 0; /*0x48b1ca*/
       else
-        *(unsigned int *)(v9 + this->CommBufferClass_field_0x34 + 20) = __2_YAPAXI_Z((size_t)this->CommBufferClass_field_0x10); /*0x48b1c1*/
+        *(unsigned int *)(v9 + this->CommBufferClass_field_0x34 + 20) = __2_YAPAXI_Z((size_t)this->q010); /*0x48b1c1*/
       ++v8; /*0x48b1d5*/
       v9 += 24; /*0x48b1d6*/
     }
-    while ( v8 < this->CommBufferClass_field_0x8 ); /*0x48b1db*/
+    while ( v8 < this->q008 ); /*0x48b1db*/
   }
   ((Struct *)this)->ClearAllMemberFlags(); /*0x48b1df*/
   return this->__pad_0; /*0x48b1e6*/
@@ -2155,9 +2155,9 @@ void CommBufferClass::sub_48B1F0()
     int v4 = 0; // edi /*0x48b204*/
     do /*0x48b233*/
     {
-      __3_YAXPAX_Z(*(void **)(this->CommBufferClass_field_0x24 + v4 + 20)); /*0x48b20e*/
+      __3_YAXPAX_Z(*(void **)(this->q024 + v4 + 20)); /*0x48b20e*/
       int CommBufferClass_field_0x24; // edx
-      CommBufferClass_field_0x24 = this->CommBufferClass_field_0x24; /*0x48b213*/
+      CommBufferClass_field_0x24 = this->q024; /*0x48b213*/
       if ( *(unsigned int *)(CommBufferClass_field_0x24 + v4 + 28) ) /*0x48b219*/
         __3_YAXPAX_Z(*(void **)(CommBufferClass_field_0x24 + v4 + 28)); /*0x48b222*/
       ++v2; /*0x48b22d*/
@@ -2166,7 +2166,7 @@ void CommBufferClass::sub_48B1F0()
     while ( v2 < *&this->__pad_004 ); /*0x48b233*/
   }
   int v6 = 0; // ebx /*0x48b238*/
-  if ( this->CommBufferClass_field_0x8 > 0 ) /*0x48b23c*/
+  if ( this->q008 > 0 ) /*0x48b23c*/
   {
     int v7 = 0; // edi /*0x48b23e*/
     do /*0x48b26d*/
@@ -2179,9 +2179,9 @@ void CommBufferClass::sub_48B1F0()
       ++v6; /*0x48b267*/
       v7 += 24; /*0x48b268*/
     }
-    while ( v6 < this->CommBufferClass_field_0x8 ); /*0x48b26d*/
+    while ( v6 < this->q008 ); /*0x48b26d*/
   }
-  __3_YAXPAX_Z((void *)this->CommBufferClass_field_0x24); /*0x48b273*/
+  __3_YAXPAX_Z((void *)this->q024); /*0x48b273*/
   __3_YAXPAX_Z((void *)this->CommBufferClass_field_0x34); /*0x48b27c*/
   __3_YAXPAX_Z(*&this->ptr_30); /*0x48b285*/
   __3_YAXPAX_Z(this->u32_346)); /*0x48b28e*/

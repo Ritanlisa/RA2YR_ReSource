@@ -162,7 +162,7 @@ int BlowStraw_29::Seek(int *aP1, unsigned int *a2)
         v12 = 0; /*0x6d07a9*/
       else
         v12 = (gamemd::ShapeButtonClass *)(&stru_B0C1C0 + 8 * v11); /*0x6d07a2*/
-      if ( BYTE1(v12[3].ShapeButtonClass_field_0x08) ) /*0x6d07ab*/
+      if ( BYTE1(v12[3].u32_8) ) /*0x6d07ab*/
         UI_Create_731A50(1); /*0x6d07b4*/
       else
         UI_Create_731A70(1); /*0x6d07be*/

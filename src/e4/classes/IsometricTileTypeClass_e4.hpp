@@ -15,21 +15,21 @@ struct IsometricTileTypeClass {
     unsigned char IsometricTileTypeClass_field_0x0C;  // 0xC
     char __pad_D[3];  // 0xD
     int IsometricTileTypeClass_field_0x10;  // 0x10
-    int IsometricTileTypeClass_field_0x14;  // 0x14
-    int IsometricTileTypeClass_field_0x18;  // 0x18
-    int IsometricTileTypeClass_field_0x1C;  // 0x1C
-    int IsometricTileTypeClass_field_0x20;  // 0x20
-    int IsometricTileTypeClass_field_0x24;  // 0x24
-    int IsometricTileTypeClass_field_0x28;  // 0x28
-    int IsometricTileTypeClass_field_0x2C;  // 0x2C
-    int IsometricTileTypeClass_field_0x30;  // 0x30
-    int IsometricTileTypeClass_field_0x34;  // 0x34
-    int IsometricTileTypeClass_field_0x38;  // 0x38
-    int IsometricTileTypeClass_field_0x3C;  // 0x3C
-    int IsometricTileTypeClass_field_0x40;  // 0x40
-    int IsometricTileTypeClass_field_0x44;  // 0x44
-    int IsometricTileTypeClass_field_0x48;  // 0x48
-    int IsometricTileTypeClass_field_0x4C;  // 0x4C
+    int q014;  // 0x14
+    int q018;  // 0x18
+    int q01C;  // 0x1C
+    int q020;  // 0x20
+    int q024;  // 0x24
+    int q028;  // 0x28
+    int q02C;  // 0x2C
+    int q030;  // 0x30
+    int q034;  // 0x34
+    int q038;  // 0x38
+    int q03C;  // 0x3C
+    int q040;  // 0x40
+    int q044;  // 0x44
+    int q048;  // 0x48
+    int q04C;  // 0x4C
     char __pad_50[84];  // 0x50
     unsigned int q0A4;  // 0xA4
     char __pad_A8[152];  // 0xA8

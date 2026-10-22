@@ -520,10 +520,10 @@ void OverlayTypeClass::GetLandType(unsigned int * a2, int * a3, unsigned int a4)
 namespace gamemd {  // G42.18c ns repair
 unsigned int * OverlayTypeClass::g_var_4f9ac2(unsigned int * a0, OverlayTypeClass * aP1)
 {
-  a0->vtable1 = (void *)*aP1; /*0x5fea3d*/
-  a0->vtable2 = aP1->vfptr1; /*0x5fea42*/
-  a0->vtable3 = aP1->vfptr2; /*0x5fea49*/
-  return &a0->vtable1; /*0x5fea45*/
+  a0[0] = (void *)*aP1; /*0x5fea3d*/
+  a0[1] = aP1->vfptr1; /*0x5fea42*/
+  a0[2] = aP1->vfptr2; /*0x5fea49*/
+  return &a0[0]; /*0x5fea45*/
 }
 }  // G42.18c ns repair
 // 0x5FEA50

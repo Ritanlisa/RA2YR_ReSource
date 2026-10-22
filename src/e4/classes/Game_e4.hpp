@@ -53,7 +53,7 @@ struct Game {
     char __pad_31C[868];  // 0x31C
     int q680;  // 0x680
     char __pad_684[116];  // 0x684
-    int Game_field_0x6F8;  // 0x6F8
+    int q6F8;  // 0x6F8
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     char LoadSaved();

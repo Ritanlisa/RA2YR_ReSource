@@ -8,12 +8,12 @@ namespace gamemd {
 struct GaugeClass {
     void* ptr_0;  // 0x0
     int __pad_004;  // 0x4
-    int GaugeClass_field_0x08;  // 0x8
-    int GaugeClass_field_0x0C;  // 0xC
-    int GaugeClass_field_0x10;  // 0x10
-    int GaugeClass_field_0x14;  // 0x14
-    int GaugeClass_field_0x18;  // 0x18
-    int GaugeClass_field_0x1C;  // 0x1C
+    int u32_8;  // 0x8
+    int u32_C;  // 0xC
+    int u32_10;  // 0x10
+    int q014;  // 0x14
+    int q018;  // 0x18
+    int q01C;  // 0x1C
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     GaugeClass * QueryInterface(unsigned int * Block, char a2);

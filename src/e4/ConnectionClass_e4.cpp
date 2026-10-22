@@ -259,7 +259,7 @@ LABEL_40:
       }
       v14 = (Terrain *)this->PlayerIndex; /*0x48c1a1*/
       v15 = 0; /*0x48c1a4*/
-      if ( v14->Terrain_field_0x38 > 0 ) /*0x48c1ab*/
+      if ( v14->q038 > 0 ) /*0x48c1ab*/
       {
         do /*0x48c1ae*/
         {
@@ -272,7 +272,7 @@ LABEL_40:
           }
           v14 = (Terrain *)this->PlayerIndex; /*0x48c1cf*/
         }
-        while ( ++v15 < v14->Terrain_field_0x38 ); /*0x48c1ae*/
+        while ( ++v15 < v14->q038 ); /*0x48c1ae*/
       }
       v18 = this->PlayerIndex; /*0x48c1d8*/
       if ( (*(unsigned int *)(v18 + 8) - *(unsigned int *)(v18 + 56) > 1 || *(unsigned int *)(a2 + 4) == this->PhoneNumber[11] + 1) /*0x48c216*/
@@ -288,7 +288,7 @@ LABEL_40:
             v21 = (Terrain *)this->PlayerIndex; /*0x48c24a*/
             this->PhoneNumber[11] = v20; /*0x48c24d*/
             v22 = 0; /*0x48c250*/
-            if ( v21->Terrain_field_0x38 <= 0 ) /*0x48c257*/
+            if ( v21->q038 <= 0 ) /*0x48c257*/
               break; /*0x48c257*/
             while ( 1 ) /*0x48c25a*/
             {
@@ -300,7 +300,7 @@ LABEL_40:
                   break; /*0x48c276*/
               }
               v21 = (Terrain *)this->PlayerIndex; /*0x48c278*/
-              if ( ++v22 >= v21->Terrain_field_0x38 ) /*0x48c27f*/
+              if ( ++v22 >= v21->q038 ) /*0x48c27f*/
                 goto LABEL_40; /*0x48c27f*/
             }
             v20 = v24[1]; /*0x48c283*/
@@ -351,7 +351,7 @@ int ConnectionClass::processTileUpdate(void *a2, signed int *a3)
 
   v4 = 0; /*0x48c326*/
   PlayerIndex = (Terrain *)this->PlayerIndex; /*0x48c328*/
-  if ( PlayerIndex->Terrain_field_0x38 <= 0 ) /*0x48c330*/
+  if ( PlayerIndex->q038 <= 0 ) /*0x48c330*/
     return 0; /*0x48c36a*/
   while ( 1 ) /*0x48c333*/
   {
@@ -366,7 +366,7 @@ int ConnectionClass::processTileUpdate(void *a2, signed int *a3)
       goto LABEL_10; /*0x48c359*/
 LABEL_7:
     PlayerIndex = (Terrain *)this->PlayerIndex; /*0x48c35b*/
-    if ( ++v4 >= PlayerIndex->Terrain_field_0x38 ) /*0x48c362*/
+    if ( ++v4 >= PlayerIndex->q038 ) /*0x48c362*/
       return 0; /*0x48c362*/
   }
   this->PhoneNumber[12] = *((unsigned int *)v7 + 1); /*0x48c370*/

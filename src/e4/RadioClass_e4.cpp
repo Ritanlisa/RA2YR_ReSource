@@ -158,12 +158,12 @@ int RadioClass::FindLinkIndex(int a2)
 
   if ( !a2 ) /*0x65ad97*/
     return -1; /*0x65ad97*/
-  int v2 = this->u32_E8; // edx /*0x65ad99*/
+  int v2 = this->missionStatus; // edx /*0x65ad99*/
   int result = 0; // eax /*0x65ad9f*/
   if ( v2 <= 0 ) /*0x65ada3*/
     return -1; /*0x65adb7*/
   unsigned int *i; // ecx
-  for ( i = (unsigned int *)this->Tactical_E4; *i != a2; ++i ) /*0x65ada5*/
+  for ( i = (unsigned int *)this->missionQueued; *i != a2; ++i ) /*0x65ada5*/
   {
     if ( ++result >= v2 ) /*0x65adb5*/
       return -1; /*0x65adb5*/
@@ -177,12 +177,12 @@ namespace gamemd {
 int RadioClass::HasFreeLink()
 {
 
-  int v1 = this->u32_E8; // edx /*0x65adc0*/
+  int v1 = this->missionStatus; // edx /*0x65adc0*/
   int v2 = 0; // eax /*0x65adc6*/
   if ( v1 <= 0 ) /*0x65adca*/
     return 0; /*0x65addf*/
   unsigned int *i; // ecx
-  for ( i = (unsigned int *)this->Tactical_E4; *i; ++i ) /*0x65adcc*/
+  for ( i = (unsigned int *)this->missionQueued; *i; ++i ) /*0x65adcc*/
   {
     if ( ++v2 >= v1 ) /*0x65addd*/
       return 0; /*0x65addd*/

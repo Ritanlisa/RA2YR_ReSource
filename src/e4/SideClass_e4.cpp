@@ -135,9 +135,9 @@ int SideClass::Construct(SideClass * aP1, void *a2, void *a3, void *a4, void *a5
   aP1->houseTypesCount = 0; /*0x6a4563*/
   aP1->q0A0 = 0; /*0x6a4569*/
   aP1->q0A4 = 1; /*0x6a456f*/
-  aP1->u32_A5 = 0; /*0x6a4576*/
+  aP1->tail_95 = 0; /*0x6a4576*/
   aP1->u32_AC = 10; /*0x6a457c*/
-  aP1->u32_A8 = 0; /*0x6a4586*/
+  aP1->houseTypes_d = 0; /*0x6a4586*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_131447) */  /*0x6a458c*/
   /* X11: ptr_0 install elided (base-interface slot, RHS g_ptr_7F2E94) */  /*0x6a4597*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F2E94) */  /*0x6a459d*/
@@ -165,7 +165,7 @@ namespace gamemd {
 int SideClass::GetCountry(int * a2)
 {
   ((AbstractTypeClass *)(a2))->ProcessPower(); /*0x6a4719*/
-  return Power::TimerProcess(this->u32_A8); /*0x6a472c*/
+  return Power::TimerProcess(this->houseTypes_d); /*0x6a472c*/
 }
 }
 // 0x6A4780

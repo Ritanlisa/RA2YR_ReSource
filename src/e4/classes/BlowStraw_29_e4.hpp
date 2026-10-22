@@ -9,10 +9,10 @@ struct TabClass;  // fix_fwd_type_supply
 struct BlowStraw_29 {
     unsigned char __pad_000;  // 0x0
     char __pad_1[3];  // 0x1
-    int BlowStraw_29_field_0x4;  // 0x4
+    int q004;  // 0x4
     char __pad_8[396];  // 0x8
-    int BlowStraw_29_field_0x194;  // 0x194
-    int BlowStraw_29_field_0x198;  // 0x198
+    int q194;  // 0x194
+    int q198;  // 0x198
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int Seek(int *aP1, unsigned int *a2);  // 0x6D0680

@@ -7,11 +7,11 @@ namespace gamemd {
 
 struct SHA1 {
     int __pad_000;  // 0x0
-    unsigned int SHA1_field_0x04;  // 0x4
-    int SHA1_field_0x08;  // 0x8
+    unsigned int u32_4;  // 0x4
+    int q008;  // 0x8
     unsigned char q00C[4];  // 0xC
-    int SHA1_field_0x10;  // 0x10
-    int SHA1_field_0x14;  // 0x14
+    int q010;  // 0x10
+    int q014;  // 0x14
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int *  ProcessBlock(void * a2, int * a3);  // 0x69D8C0

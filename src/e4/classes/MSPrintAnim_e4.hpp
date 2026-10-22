@@ -8,10 +8,10 @@ namespace gamemd {
 struct MSPrintAnim {
     void* ptr_0;  // 0x0
     void* __pad_004;  // 0x4
-    int MSPrintAnim_field_0x08;  // 0x8
-    int MSPrintAnim_field_0x0C;  // 0xC
-    int MSPrintAnim_field_0x10;  // 0x10
-    int MSPrintAnim_field_0x14;  // 0x14
+    int u32_8;  // 0x8
+    int u32_C;  // 0xC
+    int q010;  // 0x10
+    int q014;  // 0x14
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     wchar_t GetCharAt(size_t a2);

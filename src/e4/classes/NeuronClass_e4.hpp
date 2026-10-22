@@ -11,7 +11,7 @@ struct NeuronClass {
     void* ptr_8;  // 0x8
     void* ptr_C;  // 0xC
     unsigned int __pad_010;  // 0x10
-    int NeuronClass_field_0x14;  // 0x14
+    int q014;  // 0x14
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     NeuronClass();

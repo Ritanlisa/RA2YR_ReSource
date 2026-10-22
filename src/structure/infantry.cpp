@@ -2276,7 +2276,7 @@ int InfantryClass::CalcMoveTarget()
   v84 = this->location[1]; /*0x51b7ae*/
   v85 = this->location[2]; /*0x51b7b5*/
   v47 = (ObjectPlacement *)Coord::To_Cell((Coord *)&dword_87F7E8, &v83); /*0x51b7c7*/
-  ObjectPlacement_field_0x04 = v47[28].ObjectPlacement_field_0x04; /*0x51b7cf*/
+  ObjectPlacement_field_0x04 = v47[28].q004; /*0x51b7cf*/
   if ( (*(int (**)(InfantryClass *, ObjectPlacement *, int, unsigned int, unsigned int, int))&this->ptr_0->airstrikeTimer)( /*0x51b7d8*/
          this,
          v47,

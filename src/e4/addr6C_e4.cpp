@@ -596,7 +596,7 @@ int ProcessGameResults(char a1)
   if ( v69 ) /*0x6c74ae*/
   {
     v75 = &v265.ambientSoundController[3]; /*0x6c74b0*/
-    while ( _strcmpi((char *)(*v75 + 90100), (char *)&stru_B77820.DynamicVector_field_0x10) ) /*0x6c74cb*/
+    while ( _strcmpi((char *)(*v75 + 90100), (char *)&stru_B77820.q010) ) /*0x6c74cb*/
     {
       ++v74; /*0x6c74cd*/
       ++v75; /*0x6c74ce*/
@@ -620,7 +620,7 @@ LABEL_95:
   LinkedList::PushFront(&v263, (int)v79); /*0x6c752c*/
   if ( *(unsigned int *)dword_B779C4 == 1 ) /*0x6c7538*/
   {
-    LoadPlayerProfile(&v265, (const char **)&stru_B73E10.CChatEventSink_field_0x30); /*0x6c7547*/
+    LoadPlayerProfile(&v265, (const char **)&stru_B73E10.q030); /*0x6c7547*/
     if ( !HIBYTE(v265.ptr_8) ) /*0x6c7552*/
     {
       if ( !byte_A8B8C1 || *(unsigned char *)(*(int *)((char *)&stru_A83CD9.estimatedHealth + 3) + 520) ) /*0x6c7562*/
@@ -636,7 +636,7 @@ LABEL_95:
       {
         Event_Process_77A870((ObjectClass *)v265.ptr_4, 1); /*0x6c7590*/
       }
-      SaveProfileWOL(v265.ptr_4, (const char **)&stru_B73E10.CChatEventSink_field_0x30); /*0x6c75b8*/
+      SaveProfileWOL(v265.ptr_4, (const char **)&stru_B73E10.q030); /*0x6c75b8*/
     }
     /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F3F44) */  /*0x6c75c1*/
     ComPtr::Release((ComPtr *)&v265); /*0x6c75c9*/
@@ -2104,7 +2104,7 @@ int E4Recv_6C8B10::sub_6C8B10(int a2, int a3, short a4, short a5)
   if ( &pVal->u32_6 > (char *)this->? + (unsigned int)this->AbstractClass ) /*0x6c8b28*/
     return 0; /*0x6c8b28*/
   unsigned short *v12; // [esp+10h] [ebp-10h]
-  v12 = this->ptr_8; /*0x6c8b2c*/
+  v12 = this->M8; /*0x6c8b2c*/
   this->M8 = pVal + 6; /*0x6c8b30*/
   if ( !pVal ) /*0x6c8b33*/
     return 0; /*0x6c8b35*/

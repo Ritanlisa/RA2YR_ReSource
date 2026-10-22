@@ -11,7 +11,7 @@ struct VectorCursor;  // fix_fwd_type_supply
 struct COMClass {
     unsigned char __pad_000;  // 0x0
     char __pad_1[3];  // 0x1
-    int COMClass_field_0x04;  // 0x4
+    int q004;  // 0x4
     int q008;  // 0x8
     int q00C;  // 0xC
     int q010;  // 0x10

@@ -32,7 +32,7 @@ unsigned short * RLEBlitTransZRemapXlatAlpha_ushort::AddRef(int arg0, unsigned c
   v14 = (261 * (a9 <= 0 ? 0 : a9)) >> 11;
   if ( v14 > 254 ) /*0x497a51*/
     v14 = 254; /*0x497a53*/
-  v23 = (unsigned __int16 *)(this->m_C + (v14 << 9)); /*0x497a60*/
+  v23 = (unsigned __int16 *)(this->u32_C + (v14 << 9)); /*0x497a60*/
   v15 = aP4; /*0x497a64*/
   if ( aP4 <= 0 ) /*0x497a6a*/
   {
@@ -64,7 +64,7 @@ unsigned short * RLEBlitTransZRemapXlatAlpha_ushort::AddRef(int arg0, unsigned c
       v22 = v24[v19] | v23[*result]; /*0x497b03*/
       --v18; /*0x497b09*/
       ++result; /*0x497b0a*/
-      *(unsigned short *)(arg0 - 2) = *(unsigned short *)(this->m_8 + 2 * v22); /*0x497b14*/
+      *(unsigned short *)(arg0 - 2) = *(unsigned short *)(this->q008 + 2 * v22); /*0x497b14*/
     }
     else
     {

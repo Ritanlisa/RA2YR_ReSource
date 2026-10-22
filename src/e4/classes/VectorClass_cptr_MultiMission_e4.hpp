@@ -8,7 +8,7 @@ namespace gamemd {
 struct VectorClass_flat;  // fix_fwd_type_supply
 struct DynamicVector;  // fix_fwd_type_supply
 struct VectorClass_cptr_MultiMission {
-    unsigned int ptr_0;  // 0x0
+    unsigned int vfptr;  // 0x0
     void* Items;  // 0x4
     char __pad_8[4];  // 0x8
     char IsInitialized[1];  // 0xC

@@ -167,7 +167,7 @@ public:
     bool IsThemeValid(int32_t index);
 
     int32_t     ThemeClass_field_00;       // 0x00
-    int32_t     ThemeClass_field_04;       // 0x04
+    int32_t     ptr_4;       // 0x04
     char        m_Name[32];     // 0x08
     int32_t     ThemeClass_field_28;       // 0x28
     int32_t     ThemeClass_field_2C;       // 0x2C
@@ -273,8 +273,8 @@ public:
     virtual int DeactivatePlay(); // 0x402600
     virtual int ActivatePlay(); // 0x402650
 
-    uint8_t AudioChannel_field_0x04[4];
-    uint8_t AudioChannel_field_0x08[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
     unsigned int u32_28;  // g57w10 C2039 supply (ml offset name)
     unsigned int u32_50;
     unsigned int u32_A4;
@@ -330,7 +330,7 @@ public:
     virtual int GetCallback(); // 0x4026A0
     virtual void Stop(); // 0x405FD0
 
-    uint8_t AudioFile_field_0x04[4];
+    uint8_t q004[4];
 
     unsigned int u32_D4;  // X10 supply (member_lookup)
 };
@@ -358,7 +358,7 @@ public:
     virtual void ProcessAudioFrame(); // 0x407FB0
     virtual void CounterInc(); // 0x7535B0
 
-    uint8_t AudioFrame_field_0x04[4];
+    uint8_t q004[4];
 };
 // 1 methods in IDA
 #ifndef GAMEMD_G2_AudioIndex_DEF  // G42.57w14 twin-guard (shared; first-include wins)
@@ -460,7 +460,7 @@ public:
 
     uint8_t AudioSample_field_0x04[4];
     uint8_t AudioSample_field_0x08[4];
-    uint8_t AudioSample_field_0x0C[4];
+    uint8_t q00C[4];
     uint8_t AudioSample_field_0x10[4];
 
     int q004;  // X10 supply (member_lookup)

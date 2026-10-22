@@ -60,7 +60,7 @@ size_t Memory_Helper_6149B0(HWND hWnd, WCHAR * a2, int cchWideChar, size_t * a4)
   {
     v5 = (*(int (**)(HWND *))&stru_AC1B48.__pad_10[8])(&hWnda); /*0x6149d1*/
     hWnd = hWnda; /*0x6149e4*/
-    v6 = *(unsigned int *)(*(unsigned int *)stru_AC1B48.__pad_0 + 4 * (v5 & ((1 << SLOBYTE(stru_AC1B48.Dialog_field_0xC)) - 1))); /*0x6149f0*/
+    v6 = *(unsigned int *)(*(unsigned int *)stru_AC1B48.__pad_0 + 4 * (v5 & ((1 << SLOBYTE(stru_AC1B48.q00C)) - 1))); /*0x6149f0*/
     if ( v6 ) /*0x6149f5*/
     {
       while ( *(HWND *)v6 != hWnda ) /*0x6149f9*/

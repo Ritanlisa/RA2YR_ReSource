@@ -449,7 +449,7 @@ bool FogOfWar_Get(IUnknown * aP0)
       dword_ABDC74 = (int)v11; /*0x586524*/
       v4 = (Cell *)&unk_ABDC50; /*0x586529*/
     }
-    if ( v4->Cell_field_0x13C <= 0 ) /*0x586536*/
+    if ( v4->q13C <= 0 ) /*0x586536*/
       return 0; /*0x586536*/
     NeighbourContent = (CellClass *)(v4)->GetNeighbourContent(3u); /*0x586540*/
   }

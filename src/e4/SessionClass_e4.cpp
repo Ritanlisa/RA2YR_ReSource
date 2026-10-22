@@ -547,7 +547,7 @@ AbstractClass * * SessionClass::LoadMapSelection(char **a1)
                 else if ( v37 ) /*0x5cf52c*/
                 {
                   PlayerColor = uniqueId->PlayerColor; /*0x5cf52e*/
-                  if ( *&uniqueId->u32_54 < PlayerColor /*0x5cf556*/
+                  if ( *&uniqueId->PlayerColor < PlayerColor /*0x5cf556*/
                     || (uniqueId->__pad_50[1] || !PlayerColor)
                     && (v39 = *&uniqueId->q058, v39 > 0)
                     && (*(unsigned __int8 (**)(int *, int, unsigned int))(uniqueId->Handle[3] + 8))(
@@ -555,9 +555,9 @@ AbstractClass * * SessionClass::LoadMapSelection(char **a1)
                          PlayerColor + v39,
                          0) )
                   {
-                    v40 = *&uniqueId->u32_54; /*0x5cf55d*/
+                    v40 = *&uniqueId->PlayerColor; /*0x5cf55d*/
                     v41 = (unsigned int *)uniqueId->Handle[4]; /*0x5cf560*/
-                    *&uniqueId->u32_54 = v40 + 1; /*0x5cf566*/
+                    *&uniqueId->PlayerColor = v40 + 1; /*0x5cf566*/
                     v41[v40] = (unsigned int)v37; /*0x5cf569*/
                   }
                 }
@@ -612,7 +612,7 @@ int SessionClass::Destruct(void *a1)
   SessionClass **v9; // eax
   SessionClass *v10; // edi
 
-  for ( i = 0; i < *&this->u32_54; ++i ) /*0x5cf5fc*/
+  for ( i = 0; i < *&this->PlayerColor; ++i ) /*0x5cf5fc*/
   {
     v3 = (ObjectClass **)this->Handle[4]; /*0x5cf5fe*/
     v4 = v3[i]; /*0x5cf601*/

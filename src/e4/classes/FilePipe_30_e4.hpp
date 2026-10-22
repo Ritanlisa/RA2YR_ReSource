@@ -12,7 +12,7 @@ struct FilePipe_30 {
     unsigned int u32_4;  // 0x4
     int Capacity;  // 0x8
     unsigned int m_C;  // 0xC
-    int m_10;  // 0x10
+    int q010;  // 0x10
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     void ddtor(void *a1 = 0);  // 0x4778A0

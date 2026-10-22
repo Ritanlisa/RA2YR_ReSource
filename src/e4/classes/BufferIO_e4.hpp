@@ -7,8 +7,8 @@ namespace gamemd {
 
 struct BufferIO {
     int __pad_000;  // 0x0
-    int BufferIO_field_0x04;  // 0x4
-    int BufferIO_field_0x08;  // 0x8
+    int q004;  // 0x4
+    int q008;  // 0x8
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int Cleanup(int a2, void *a1 = 0);

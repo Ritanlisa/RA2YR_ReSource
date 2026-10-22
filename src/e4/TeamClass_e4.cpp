@@ -780,8 +780,8 @@ int TeamClass::UpdateBuildQueue(AbstractClass * aP1, TechnoClass * aP2, TechnoCl
     {
       while ( 1 ) /*0x6367fa*/
       {
-        ptr_8 = v4->ptr_8; /*0x6367fa*/
-        ptr_0 = v4->ptr_0; /*0x636801*/
+        ptr_8 = v4->vfptr2; /*0x6367fa*/
+        ptr_0 = v4->vfptr; /*0x636801*/
         v8 = *(unsigned int *)(ptr_8 + 4 * v27); /*0x636803*/
         v9 = 0; /*0x636806*/
         v10 = *(unsigned int *)(v8 + 16); /*0x636808*/
@@ -914,13 +914,13 @@ TeamClass * * TeamClass::ProcessScriptActions(unsigned int * a2, int a3)
     {
       while ( 1 ) /*0x6369d1*/
       {
-        v6 = *(unsigned int *)(v3->ptr_8 + 4 * v25); /*0x6369d1*/
+        v6 = *(unsigned int *)(v3->vfptr2 + 4 * v25); /*0x6369d1*/
         v7 = 0; /*0x6369d4*/
         v8 = *(unsigned int *)(v6 + 16); /*0x6369d6*/
         if ( v8 <= 0 ) /*0x6369db*/
           goto LABEL_11; /*0x6369db*/
         v9 = *(unsigned int ***)(v6 + 4); /*0x6369e0*/
-        while ( **v9 != v3->ptr_0 ) /*0x6369e6*/
+        while ( **v9 != v3->vfptr ) /*0x6369e6*/
         {
           ++v7; /*0x6369e8*/
           ++v9; /*0x6369e9*/
@@ -1177,10 +1177,10 @@ int TeamClass::Update_0(TeamClass *aP0, int aP1, int aP2, int aP3, char aP4, int
              aP1,
              aP2,
              aP4,
-             *&aP0->currentScript.TeamTypeClass_field_28 == 2,
+             *&aP0->currentScript.buildingType == 2,
              aP5) )
       {
-        v10 = *&aP0->currentScript.TeamTypeClass_field_28; /*0x6e5420*/
+        v10 = *&aP0->currentScript.buildingType; /*0x6e5420*/
         if ( !v10 ) /*0x6e5429*/
         {
           BuildingClass::ExecuteTriggers((int)currentScript, aP2, aP3); /*0x6e546d*/
@@ -1270,7 +1270,7 @@ void TeamClass::Destructor(void * a2)
   for ( this->vfptr3 = (int)&g_ptr_7F4730; v2 < dword_A8B210; ++v2 ) /*0x6e8e09*/
   {
     v3 = (AITriggerTypeClass *)*((unsigned int *)dword_A8B204 + v2); /*0x6e8e10*/
-    if ( v3[3].AITriggerTypeClass_field_0x1C == this->buildingType ) /*0x6e8e1e*/
+    if ( v3[3].q01C == this->buildingType ) /*0x6e8e1e*/
     {
       if ( this->achievedGreatSuccess[0] ) /*0x6e8e20*/
         AITriggerTypeClass::RegisterSuccess(v3); /*0x6e8e2a*/
@@ -1460,7 +1460,7 @@ int TeamClass::UpdateReadinessState()
   char TeamClass_field_7A; // [esp+Fh] [ebp-1h]
 
   TeamClass_field_7A = this->TeamClass_field_7A; /*0x6ea3ec*/
-  v2 = TeamClass::SumMemberCounts(*&this->currentScript.TeamTypeClass_field_70); /*0x6ea3f6*/
+  v2 = TeamClass::SumMemberCounts(*&this->currentScript.firstUnit); /*0x6ea3f6*/
   totalObjects = this->totalObjects; /*0x6ea3fb*/
   if ( totalObjects > 0 ) /*0x6ea404*/
   {
@@ -1700,7 +1700,7 @@ TeamTypeClass * * TeamClass::RecruitMember(int a2)
   int Group; // [esp+14h] [ebp-28h]
   Group = TeamTypeClass::GetGroup(v10); /*0x6eab54*/
   int v11; // ecx
-  v11 = *(unsigned int *)(*&v2->currentScript.TeamTypeClass_field_70 + 8 * a2 + 168); /*0x6eab61*/
+  v11 = *(unsigned int *)(*&v2->currentScript.firstUnit + 8 * a2 + 168); /*0x6eab61*/
   switch ( (*(int (**)(int))(*(unsigned int *)v11 + 44))(v11) ) /*0x6eab7f*/
   {
     int v23; // eax
@@ -1724,7 +1724,7 @@ TeamTypeClass * * TeamClass::RecruitMember(int a2)
           if ( v24->controlGroup != Group ) /*0x6ead5c*/
             v26 = v25 + 12800; /*0x6ead5e*/
           if ( v24->owner == this->owner /*0x6eada4*/
-              && v24->u32_6C4 == *(unsigned int *)(*&this->currentScript.TeamTypeClass_field_70
+              && v24->u32_6C4 == *(unsigned int *)(*&this->currentScript.firstUnit
                 + 8 * a2
               + 168)
               && (v26 < v33 || v33 == -1)
@@ -1879,7 +1879,7 @@ AbstractClass * * TeamClass::FindClosestEnemy(AbstractClass * aP1, AbstractClass
                 unsigned int *v12; // eax
                 v12 = (unsigned int *)(*(int (**)(int, unsigned char *))(*(unsigned int *)v6 + 72))(v6, v42); /*0x6eafb0*/
                 int *v13; // eax
-                v13 = Coord::Subtract(v43, *v12 - *v11, v12[1] - v11->u32_4, v12[2] - v11->u32_8); /*0x6eafd0*/
+                v13 = Coord::Subtract(v43, *v12 - *v11, v12[1] - v11->ptr_4, v12[2] - v11->ptr_8); /*0x6eafd0*/
                 v36 = *v13; /*0x6eafd7*/
                 v37 = v13->u32_4; /*0x6eafe2*/
                 v38 = v13->u32_8; /*0x6eafe9*/
@@ -2976,7 +2976,7 @@ bool TeamClass::ValidateMember(int aP1, int *a2, char a4)
       goto LABEL_39; /*0x6ea693*/
   }
   *a2 = 0; /*0x6ea6a5*/
-  if ( *(int *)(*&this->currentScript.TeamTypeClass_field_70 + 156) > 0 ) /*0x6ea6bc*/
+  if ( *(int *)(*&this->currentScript.firstUnit + 156) > 0 ) /*0x6ea6bc*/
   {
     do /*0x6ea6f0*/
     {
@@ -2985,7 +2985,7 @@ bool TeamClass::ValidateMember(int aP1, int *a2, char a4)
         break; /*0x6ea6da*/
       *a2 = v6 + 1; /*0x6ea6df*/
     }
-    while ( v6 + 1 < *(unsigned int *)(*&this->currentScript.TeamTypeClass_field_70 + 156) ); /*0x6ea6f0*/
+    while ( v6 + 1 < *(unsigned int *)(*&this->currentScript.firstUnit + 156) ); /*0x6ea6f0*/
   }
   result = (int)this->buildingType; /*0x6ea6f2*/
   if ( *a2 == *(unsigned int *)(*(unsigned int *)(result + 228) + 156) && !a4 ) /*0x6ea70b*/
@@ -3032,7 +3032,7 @@ bool TeamClass::ValidateMember(int aP1, int *a2, char a4)
      || !*(unsigned int *)(*(int (**)(int, unsigned int))(*&aP1->u32_FE0))(aP1, 0)
      || (result = aP1->ammo) != 0)
     && ((result = *a2,
-         this->countObjects[*a2] < *(unsigned int *)(*&this->currentScript.TeamTypeClass_field_70 + 8 * *a2 + 164))
+         this->countObjects[*a2] < *(unsigned int *)(*&this->currentScript.firstUnit + 8 * *a2 + 164))
      || a4)
     && (result = aP1->bunkerLinkedUnit) == 0 )
   {

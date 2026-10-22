@@ -35,7 +35,7 @@ struct Tactical {
     char __pad_27[1];  // 0x27
     unsigned int u32_28;  // 0x28
     unsigned int u32_2C;  // 0x2C
-    int Tactical_field_0x30;  // 0x30
+    int q030;  // 0x30
     unsigned int u32_34;  // 0x34
     unsigned char u32_38;  // 0x38
     char __pad_39[3];  // 0x39
@@ -52,7 +52,7 @@ struct Tactical {
     char __pad_78[44];  // 0x78
     unsigned char q0A4;  // 0xA4
     char __pad_A5[3];  // 0xA5
-    int Tactical_field_0xA8;  // 0xA8
+    int q0A8;  // 0xA8
     unsigned char q0AC;  // 0xAC
     char __pad_AD[3];  // 0xAD
     unsigned char u32_B0;  // 0xB0
@@ -88,7 +88,7 @@ struct Tactical {
     char __pad_DAD[3];  // 0xDAD
     unsigned char qDB0;  // 0xDB0
     char __pad_DB1[3];  // 0xDB1
-    int Tactical_field_0xDB4;  // 0xDB4
+    int qDB4;  // 0xDB4
     unsigned char qDB8;  // 0xDB8
     char __pad_DB9[43];  // 0xDB9
     unsigned int u32_DE4;  // 0xDE4

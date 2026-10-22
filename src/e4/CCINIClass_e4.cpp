@@ -170,7 +170,7 @@ MultiplayerGameMode * * CCINIClass::Load(int a2, char a3, char a4, void *a4_1)
   if ( Base64Data <= 0 ) /*0x47426e*/
     goto LABEL_7; /*0x47426e*/
   INIClass::ClearSection((int *)this->INIClass, (int)g_INI_Key_Digest, 0); /*0x47427d*/
-  memset(&v12.SHA1_field_0x04, 0, 9); /*0x474286*/
+  memset(&v12.u32_4, 0, 9); /*0x474286*/
   v18 = 0; /*0x474295*/
   v19 = 0; /*0x474299*/
   v13 = 1732584193; /*0x47429d*/

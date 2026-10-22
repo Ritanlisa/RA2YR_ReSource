@@ -15,9 +15,9 @@ namespace gamemd
 #define GAMEMD_G2_NETWORK_FLAT_DEF 1
 struct Network {
     unsigned int *q000;   // 0x0
-    unsigned int q004;   // 0x4
-    unsigned int q008;   // 0x8
-    unsigned int q00C;   // 0xC
+    unsigned int u32_4;   // 0x4
+    unsigned int u32_8;   // 0x8
+    unsigned int u32_C;   // 0xC
     unsigned int q010;   // 0x10
     unsigned char __pad_14;  // 0x14
     unsigned char Network_field_0x22;  // 0x22
@@ -29,7 +29,7 @@ struct Network {
 
 
     unsigned int Network_field_0x0;  // 0x0 [X55 W3 supply (render vocab)]
-    int Network_field_0x60;  // 0x60 [X55 W3 supply (render vocab)]
+    int u32_60;  // 0x60 [X55 W3 supply (render vocab)]
     int Network_field_0x10;  // 0x10 [X55 W3 supply (render vocab)]
 };
 #endif  // GAMEMD_G2_NETWORK_FLAT_DEF
@@ -198,18 +198,18 @@ virtual unsigned int * Disconnect(int, int, int a2);  // 0x540030
 
 
     uint8_t IPXGlobalConnClass_field_0x04[4];
-    uint8_t IPXGlobalConnClass_field_0x08[4];
-    uint8_t IPXGlobalConnClass_field_0x0C[4];
-    uint8_t IPXGlobalConnClass_field_0x10[4];
-    uint8_t IPXGlobalConnClass_field_0x14[4];
-    uint8_t IPXGlobalConnClass_field_0x18[4];
-    uint8_t IPXGlobalConnClass_field_0x1C[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
+    uint8_t q010[4];
+    uint8_t u32_14[4];
+    uint8_t q018[4];
+    uint8_t q01C[4];
     uint8_t IPXGlobalConnClass_field_0x20[4];
     uint8_t IPXGlobalConnClass_field_0x24[4];
-    uint8_t IPXGlobalConnClass_field_0x28[4];
-    uint8_t IPXGlobalConnClass_field_0x2C[4];
-    uint8_t IPXGlobalConnClass_field_0x30[4];
-    uint8_t IPXGlobalConnClass_field_0x34[4];
+    uint8_t q028[4];
+    uint8_t q02C[4];
+    uint8_t q030[4];
+    uint8_t q034[4];
     public:  // symbol-anchor
     // === SYMBOL-ANCHOR (BEGIN) ===
     // === SYMBOL-ANCHOR (END) ===
@@ -265,7 +265,7 @@ public:
     uint8_t ModemGame_field_0x04[4];
     uint8_t ModemGame_field_0x08[4];
     uint8_t ModemGame_field_0x0C[4];
-    uint8_t ModemGame_field_0x10[4];
+    uint8_t q010[4];
 
     unsigned char __pad_000;  // X10 supply (csp_canon_members)
     int q004;  // X10 supply (member_lookup)
@@ -358,7 +358,7 @@ public:
     virtual void QueryInterface(); // 0x5C10D0
 
     uint8_t MultiplayerBattleTeam_field_0x04[4];
-    uint8_t MultiplayerBattleTeam_field_0x08[4];
+    uint8_t q008[4];
 };
 // 1 methods in IDA
 class MultiplayerConfig
@@ -507,9 +507,9 @@ public:
     virtual void GetField2(); // 0x74FDA0
     virtual void GetField3(); // 0x74FDB0
 
-    uint8_t NetworkBuffer_field_0x04[4];
-    uint8_t NetworkBuffer_field_0x08[4];
-    uint8_t NetworkBuffer_field_0x0C[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
 
     unsigned int u32_3C;  // X10 supply (member_lookup)
     unsigned int u32_40;  // X10 supply (member_lookup)
@@ -527,8 +527,8 @@ public:
     virtual void Dispatch(); // 0x6964C0
     virtual void UpdateListBox(); // 0x696610
 
-    uint8_t NetworkDialog_field_0x04[4];
-    uint8_t NetworkDialog_field_0x08[4];
+    uint8_t u32_4[4];
+    uint8_t q008[4];
 
     unsigned char __pad_000;  // X10 supply (csp_canon_members)
     unsigned int u32_88;  // X10 supply (member_lookup)
@@ -577,13 +577,13 @@ public:
     virtual void ReadRulesEngineerCount(); // 0x5B9710
     // +3 more virtual methods
 
-    uint8_t NetworkGameSetup_field_0x04[4];
-    uint8_t NetworkGameSetup_field_0x08[4];
-    uint8_t NetworkGameSetup_field_0x0C[4];
-    uint8_t NetworkGameSetup_field_0x10[4];
-    uint8_t NetworkGameSetup_field_0x14[4];
-    uint8_t NetworkGameSetup_field_0x18[4];
-    uint8_t NetworkGameSetup_field_0x1C[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
+    uint8_t q010[4];
+    uint8_t q014[4];
+    uint8_t q018[4];
+    uint8_t q01C[4];
     public:  // symbol-anchor
     // === SYMBOL-ANCHOR (BEGIN) ===
     int ReadRulesUnknown();  // 0x5b9750 -- NetworkGameSetup::ReadRulesUnknown
@@ -630,7 +630,7 @@ public:
     virtual void DlgProc(HWND hWnd, unsigned int a2, int a3, HWND hCtl); // 0x560480  // g57b5 W4: raw 真值补参
     virtual void ApplySettings(int a2, char a3, int a4); // 0x7B0F50
 
-    uint8_t NetworkOptions_field_0x04[4];
+    uint8_t q004[4];
 
     unsigned int u32_3F068;  // X10 supply (member_lookup)
 };
@@ -713,19 +713,19 @@ public:
     virtual void GetAddress(); // 0x7B3430
     // +9 more virtual methods
 
-    uint8_t UDPInterfaceClass_Destru_field_0x04[4];
-    uint8_t UDPInterfaceClass_Destru_field_0x08[4];
-    uint8_t UDPInterfaceClass_Destru_field_0x0C[4];
-    uint8_t UDPInterfaceClass_Destru_field_0x10[4];
-    uint8_t UDPInterfaceClass_Destru_field_0x14[4];
-    uint8_t UDPInterfaceClass_Destru_field_0x18[4];
-    uint8_t UDPInterfaceClass_Destru_field_0x1C[4];
-    uint8_t UDPInterfaceClass_Destru_field_0x20[4];
-    uint8_t UDPInterfaceClass_Destru_field_0x24[4];
-    uint8_t UDPInterfaceClass_Destru_field_0x28[4];
-    uint8_t UDPInterfaceClass_Destru_field_0x2C[4];
-    uint8_t UDPInterfaceClass_Destru_field_0x30[4];
-    uint8_t UDPInterfaceClass_Destru_field_0x34[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
+    uint8_t q010[4];
+    uint8_t q014[4];
+    uint8_t q018[4];
+    uint8_t q01C[4];
+    uint8_t q020[4];
+    uint8_t q024[4];
+    uint8_t q028[4];
+    uint8_t q02C[4];
+    uint8_t q030[4];
+    uint8_t q034[4];
     public:  // symbol-anchor
     // === SYMBOL-ANCHOR (BEGIN) ===
     int Bind(int a1);  // 0x7b3450 -- UDPInterfaceClass_Destru::Bind
@@ -771,7 +771,7 @@ public:
     uint8_t WOLGameList_field_0x04[4];
     uint8_t WOLGameList_field_0x08[4];
     uint8_t WOLGameList_field_0x0C[4];
-    uint8_t WOLGameList_field_0x10[4];
+    uint8_t q010[4];
 
     unsigned char __pad_000;  // X10 supply (csp_canon_members)
     int q004;  // X10 supply (member_lookup)
@@ -832,12 +832,12 @@ public:
     virtual void FormatLatencyText(); // 0x78F5C0
     // +2 more virtual methods
 
-    uint8_t WOLobby_field_0x04[4];
-    uint8_t WOLobby_field_0x08[4];
-    uint8_t WOLobby_field_0x0C[4];
-    uint8_t WOLobby_field_0x10[4];
-    uint8_t WOLobby_field_0x14[4];
-    uint8_t WOLobby_field_0x18[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
+    uint8_t q010[4];
+    uint8_t q014[4];
+    uint8_t q018[4];
     public:  // funcs-move
     // === FUNCS-MOVE (BEGIN) ===
     int SetupDlgProc();  // 0x78f7f0

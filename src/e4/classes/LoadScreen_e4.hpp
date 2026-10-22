@@ -7,11 +7,11 @@ namespace gamemd {
 
 struct LoadScreen {
     void* Render_ph;  // 0x0
-    int LoadScreen_field_0x04;  // 0x4
-    int LoadScreen_field_0x08;  // 0x8
-    int LoadScreen_field_0x0C;  // 0xC
-    int LoadScreen_field_0x10;  // 0x10
-    int LoadScreen_field_0x14;  // 0x14
+    int q004;  // 0x4
+    int q008;  // 0x8
+    int q00C;  // 0xC
+    int q010;  // 0x10
+    int q014;  // 0x14
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     static int RenderLoop(void *aP1);

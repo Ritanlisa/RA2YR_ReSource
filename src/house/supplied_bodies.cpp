@@ -295,7 +295,7 @@ void HouseClass::Update_TogglePower(double a2)
   {
     v6 = v119; /*0x4f8471*/
     *(unsigned int *)&v3[1].Object_field_0x2[2] = *(unsigned int *)&stru_A8E960.random[528]; /*0x4f8477*/
-    v3[1].Object_field_0x8 = v6; /*0x4f847d*/
+    v3[1].q008 = v6; /*0x4f847d*/
     *v3->ptr_4.__pad_C = 0; /*0x4f8483*/
     v3[33].__pad_B0[40] = 1; /*0x4f8489*/
   }
@@ -617,7 +617,7 @@ LABEL_136:
     if ( *(Object **)((char *)&stru_A83CD9.estimatedHealth + 3) == v3 ) /*0x4f8b36*/
     {
       v45 = *(unsigned int *)&v3[33].__pad_EC[72]; /*0x4f8b3c*/
-      Object_field_0x13C = v3[33].Object_field_0x13C; /*0x4f8b42*/
+      Object_field_0x13C = v3[33].q13C; /*0x4f8b42*/
       v47 = &v3[33].__pad_EC[72]; /*0x4f8b48*/
       if ( v45 != -1 ) /*0x4f8b51*/
       {
@@ -642,11 +642,11 @@ LABEL_145:
             ProductionTimeMult = Rules::GetProductionTimeMult((Rules *)&stru_A8E960.altNextScenario[252], v49); /*0x4f8bcb*/
             *(unsigned int *)v47 = *(unsigned int *)&stru_A8E960.random[528]; /*0x4f8bd8*/
             *(unsigned int *)&v3[33].__pad_EC[76] = v119; /*0x4f8bde*/
-            v3[33].Object_field_0x13C = (int)ProductionTimeMult; /*0x4f8be1*/
+            v3[33].q13C = (int)ProductionTimeMult; /*0x4f8be1*/
           }
 LABEL_148:
           v51 = *(unsigned int *)v47; /*0x4f8be4*/
-          v52 = v3[33].Object_field_0x13C; /*0x4f8be6*/
+          v52 = v3[33].q13C; /*0x4f8be6*/
           if ( *(unsigned int *)v47 != -1 ) /*0x4f8bec*/
           {
             if ( *(unsigned int *)&stru_A8E960.random[528] - v51 >= v52 ) /*0x4f8bf7*/
@@ -737,7 +737,7 @@ LABEL_152:
             v57 = Rules::GetProductionTimeMult((Rules *)&stru_A8E960.altNextScenario[252], v56); /*0x4f8c3f*/
             *(unsigned int *)v47 = *(unsigned int *)&stru_A8E960.random[528]; /*0x4f8c4a*/
             *(unsigned int *)&v3[33].__pad_EC[76] = v119; /*0x4f8c50*/
-            v3[33].Object_field_0x13C = (int)v57; /*0x4f8c53*/
+            v3[33].q13C = (int)v57; /*0x4f8c53*/
           }
           goto LABEL_155; /*0x4f8c53*/
         }

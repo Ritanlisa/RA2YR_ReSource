@@ -682,7 +682,7 @@ long long Cell::GetTraversability()
 namespace gamemd {
 int Cell::GetSlopeIndex()
 {
-  return this->u32_11B[0] + 4 * ((this->u32_140 >> 7) & 1); /*0x487d66*/
+  return this->Cell_field_0x11B[0] + 4 * ((this->u32_140 >> 7) & 1); /*0x487d66*/
 }
 }
 // 0x487DF0
@@ -1094,8 +1094,8 @@ HouseClass * * Cell::GetAdjacencyFlags(MouseClass * aP0)
   CellLand *v41; // [esp+24h] [ebp-14h]
 
   int v35; // [esp+Ch] [ebp-2Ch]
-  v35 = aP0->u32_11B; /*0x579b89*/
-  aP0 = aP0->u32_24; /*0x579b8d*/
+  v35 = aP0->q11B; /*0x579b89*/
+  aP0 = aP0->ptr_24; /*0x579b8d*/
   int16_t v44[4]; // [esp+30h] [ebp-8h] BYREF
   *(unsigned int *)v44 = (unsigned int)(aP0); /*0x579b91*/
   if ( (*((signed short *)(((unsigned char *)&(aP0)) + 2))) + (int16_t)aP0 <= dword_87F8DC /*0x579bdf*/

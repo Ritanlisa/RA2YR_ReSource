@@ -211,7 +211,7 @@ int WinModemClass::LoadTypeData(int a2, char * Str, int a4, WinModemClass * aP4)
   v19 = Timer::GetTicks(); /*0x774d38*/
   while ( 1 )
   {
-    WinModemClass_field_0x2C = (int (*)(void))v5[1].WinModemClass_field_0x2C; /*0x774d63*/
+    WinModemClass_field_0x2C = (int (*)(void))v5[1].q02C; /*0x774d63*/
     if ( WinModemClass_field_0x2C ) /*0x774d68*/
     {
       result = WinModemClass_field_0x2C(); /*0x774d6a*/

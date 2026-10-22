@@ -212,11 +212,11 @@ LABEL_23:
           if ( MapClass::CheckCellsBuildable(&v76, aP8, aP9, aP4, aP5, aP6, -1, aP7, aP10) ) /*0x56de0e*/
           {
             if ( !aP11 /*0x56de4c*/
-              || (v31 = v84 - 4 * (((unsigned int)v30->Cell_field_0x140 >> 8) & 1) - v30->u32_11B,
+              || (v31 = v84 - 4 * (((unsigned int)v30->u32_140 >> 8) & 1) - v30->Cell_field_0x11B,
                   (int)(((((v31) >> 32) & 0xFFFFFFFFu) ^ v31) - (((v31) >> 32) & 0xFFFFFFFFu)) < 2) )
             {
               if ( (!aP12 || (unsigned __int8)Cell::IsBuildableAdvanced(v30)) /*0x56de9d*/
-                && (aP13 || (v30->Cell_field_0x140 & 0x100) == 0)
+                && (aP13 || (v30->u32_140 & 0x100) == 0)
                 && (!a17 || (unsigned __int8)MapClass::IsAreaFree((MapClass *)v17, v99, -1)) )
               {
                 v32 = v87; /*0x56deaa*/
@@ -271,11 +271,11 @@ LABEL_44:
           if ( MapClass::CheckCellsBuildable(&v76, aP8, aP9, aP4, aP5, aP6, -1, aP7, aP10) ) /*0x56e024*/
           {
             if ( !aP11 /*0x56e062*/
-              || (v40 = v84 - 4 * (((unsigned int)v39->Cell_field_0x140 >> 8) & 1) - v39->u32_11B,
+              || (v40 = v84 - 4 * (((unsigned int)v39->u32_140 >> 8) & 1) - v39->Cell_field_0x11B,
                   (int)(((((v40) >> 32) & 0xFFFFFFFFu) ^ v40) - (((v40) >> 32) & 0xFFFFFFFFu)) < 2) )
             {
               if ( (!aP12 || (unsigned __int8)Cell::IsBuildableAdvanced(v39)) /*0x56e0b3*/
-                && (aP13 || (v39->Cell_field_0x140 & 0x100) == 0)
+                && (aP13 || (v39->u32_140 & 0x100) == 0)
                 && (!a17 || (unsigned __int8)MapClass::IsAreaFree((MapClass *)v17, v98, -1)) )
               {
                 v41 = v87; /*0x56e0c0*/
@@ -339,11 +339,11 @@ LABEL_67:
           if ( MapClass::CheckCellsBuildable(&v76, aP8, aP9, aP4, aP5, aP6, -1, aP7, aP10) ) /*0x56e265*/
           {
             if ( !aP11 /*0x56e2a5*/
-              || (v50 = v84 - 4 * (((unsigned int)v49->Cell_field_0x140 >> 8) & 1) - v49->u32_11B,
+              || (v50 = v84 - 4 * (((unsigned int)v49->u32_140 >> 8) & 1) - v49->Cell_field_0x11B,
                   (int)(((((v50) >> 32) & 0xFFFFFFFFu) ^ v50) - (((v50) >> 32) & 0xFFFFFFFFu)) < 2) )
             {
               if ( (!aP12 || (unsigned __int8)Cell::IsBuildableAdvanced(v49)) /*0x56e2f6*/
-                && (aP13 || (v49->Cell_field_0x140 & 0x100) == 0)
+                && (aP13 || (v49->u32_140 & 0x100) == 0)
                 && (!a17 || (unsigned __int8)MapClass::IsAreaFree((MapClass *)v17, v100, -1)) )
               {
                 v51 = (__int16)v76; /*0x56e303*/
@@ -393,11 +393,11 @@ LABEL_86:
           if ( MapClass::CheckCellsBuildable(&v76, aP8, aP9, aP4, aP5, aP6, -1, aP7, aP10) ) /*0x56e467*/
           {
             if ( !aP11 /*0x56e4a7*/
-              || (v57 = v84 - 4 * (((unsigned int)v56->Cell_field_0x140 >> 8) & 1) - v56->u32_11B,
+              || (v57 = v84 - 4 * (((unsigned int)v56->u32_140 >> 8) & 1) - v56->Cell_field_0x11B,
                   (int)(((((v57) >> 32) & 0xFFFFFFFFu) ^ v57) - (((v57) >> 32) & 0xFFFFFFFFu)) < 2) )
             {
               if ( (!aP12 || (unsigned __int8)Cell::IsBuildableAdvanced(v56)) /*0x56e4f8*/
-                && (aP13 || (v56->Cell_field_0x140 & 0x100) == 0)
+                && (aP13 || (v56->u32_140 & 0x100) == 0)
                 && (!a17 || (unsigned __int8)MapClass::IsAreaFree((MapClass *)v17, v97, -1)) )
               {
                 v58 = (__int16)v76; /*0x56e501*/

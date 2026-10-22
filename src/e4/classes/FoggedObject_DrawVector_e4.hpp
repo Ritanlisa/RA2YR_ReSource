@@ -9,11 +9,11 @@ struct VectorClass_flat;  // fix_fwd_type_supply
 
 struct FoggedObject_DrawVector {
     char __pad_0[4];  // 0x0
-    int FoggedObject_DrawVector_field_0x04;  // 0x4
-    int FoggedObject_DrawVector_field_0x08;  // 0x8
-    int FoggedObject_DrawVector_field_0x0C;  // 0xC
-    int FoggedObject_DrawVector_field_0x10;  // 0x10
-    int FoggedObject_DrawVector_field_0x14;  // 0x14
+    int q004;  // 0x4
+    int q008;  // 0x8
+    int q00C;  // 0xC
+    int q010;  // 0x10
+    int q014;  // 0x14
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     VectorClass_flat * QueryInterface(char a2);

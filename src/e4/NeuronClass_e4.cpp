@@ -91,7 +91,7 @@ char NeuronClass_25::AddRef(int a2)
 {
 
   int m_8; // esi
-  m_8 = this->m_8; /*0x43ab32*/
+  m_8 = this->q008; /*0x43ab32*/
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x43ab3d*/
   {
     int v3 = 0; // edx /*0x43ab3f*/
@@ -124,30 +124,30 @@ char NeuronClass_25::Release(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x43ab7c*/
   {
-    (this->m_C) = ((this->m_C) & ~0xFF) | ((0) & 0xFF); /*0x43ab86*/
+    (this->q00C) = ((this->q00C) & ~0xFF) | ((0) & 0xFF); /*0x43ab86*/
     if ( a3 ) /*0x43ab8c*/
       v4 = a3; /*0x43aba2*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x43ab9e*/
-    (this->m_C) = ((this->m_C) & ~0xFF) | ((1) & 0xFF); /*0x43aba6*/
+    (this->q00C) = ((this->q00C) & ~0xFF) | ((1) & 0xFF); /*0x43aba6*/
     if ( v4 ) /*0x43abaa*/
     {
       if ( *&this->q004 ) /*0x43abb5*/
       {
-        m_8 = this->m_8; /*0x43abbc*/
+        m_8 = this->q008; /*0x43abbc*/
         if ( a2 < m_8 ) /*0x43abc1*/
           m_8 = a2; /*0x43abc3*/
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x43abc9*/
           ++i; /*0x43abce*/
-        if ( (((this->m_C) >> 8) & 0xFF) ) /*0x43abdb*/
+        if ( (((this->q00C) >> 8) & 0xFF) ) /*0x43abdb*/
         {
           __3_YAXPAX_Z(*&this->q004); /*0x43abe6*/
           *&this->q004 = 0; /*0x43abee*/
         }
       }
       *&this->q004 = v4; /*0x43abf7*/
-      this->m_8 = a2; /*0x43abff*/
-      (this->m_C) = ((this->m_C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x43ac02*/
+      this->q008 = a2; /*0x43abff*/
+      (this->q00C) = ((this->q00C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x43ac02*/
       return 1; /*0x43ac08*/
     }
     else
@@ -173,8 +173,8 @@ int NeuronClass_25::ddtor(void *a1)
     operator delete((void *)(*&this->q004)); /*0x43ac33*/
     *&this->q004 = 0; /*0x43ac3b*/
   }
-  (((unsigned char *)&(*&this->m_C))[1]) = 0; /*0x43ac3e*/
-  this->m_8 = 0; /*0x43ac41*/
+  (((unsigned char *)&(*&this->q00C))[1]) = 0; /*0x43ac3e*/
+  this->q008 = 0; /*0x43ac41*/
 }
 } // namespace gamemd
 
@@ -183,10 +183,10 @@ namespace gamemd {
 int NeuronClass_25::Activate(unsigned int * a2)
 {
 
-  if ( !(*((unsigned char *)&(*&this->m_C))) ) /*0x43ac50*/
+  if ( !(*((unsigned char *)&(*&this->q00C))) ) /*0x43ac50*/
     return 0; /*0x43ac58*/
   int m_8; // edx
-  m_8 = this->m_8; /*0x43ac5e*/
+  m_8 = this->q008; /*0x43ac5e*/
   int result = 0; // eax /*0x43ac61*/
   if ( m_8 <= 0 ) /*0x43ac65*/
     return -1; /*0x43ac7c*/
@@ -204,7 +204,7 @@ int NeuronClass_25::Activate(unsigned int * a2)
 namespace gamemd {
 unsigned int NeuronClass_25::Fire(int a2)
 {
-  if ( (*((unsigned char *)&(*&this->m_C))) ) /*0x43ac90*/
+  if ( (*((unsigned char *)&(*&this->q00C))) ) /*0x43ac90*/
     return (unsigned int)(a2 - *&this->q004) >> 2; /*0x43aca5*/
   else
     return 0; /*0x43ac97*/

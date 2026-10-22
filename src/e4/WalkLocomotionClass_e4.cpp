@@ -88,7 +88,7 @@ int WalkLocomotionClass::SetWaypointTarget(int a1, int a2, unsigned int a3, long
       else
       {
         WalkLocomotion::MoveTo((int)this - 4, &v12, 1); /*0x6a040a*/
-        LOBYTE(v4) = (unsigned char)&this->ptr_30; /*0x6a040f*/
+        LOBYTE(v4) = (unsigned char)&this->Dest; /*0x6a040f*/
         this->SlopeTimer[3] = a3; /*0x6a041a*/
         *(unsigned long long *)this->Dest = a4; /*0x6a041c*/
         this->SpeedAccum = 0; /*0x6a0422*/

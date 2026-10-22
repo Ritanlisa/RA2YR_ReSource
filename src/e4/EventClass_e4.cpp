@@ -94,14 +94,14 @@ void * EventClass::Add(AbstractClass * aP1, unsigned char a3, int a4, char a5)
   Debug::Log("Adding event %s\n", off_82091C[a3]); /*0x4c65fc*/
   if ( aP1 < 0 ) /*0x4c660a*/
   {
-    this->EventClass_field_0x8 = -1; /*0x4c6631*/
+    this->u32_8 = -1; /*0x4c6631*/
     *this = 0; /*0x4c6635*/
     this->u32_3 = dword_A8ED84; /*0x4c663d*/
     return this; /*0x4c6640*/
   }
   else
   {
-    this->EventClass_field_0x8 = (unsigned int)(aP1); /*0x4c6610*/
+    this->u32_8 = (unsigned int)(aP1); /*0x4c6610*/
     *this = a3; /*0x4c661a*/
     this->u32_7 = a4; /*0x4c661c*/
     this->u32_2C = a5; /*0x4c6620*/
@@ -423,7 +423,7 @@ AbstractClass * * EventClass::validateEventType()
     {
       do /*0x66447c*/
       {
-        v5 = *(char **)(this->EventClass_field_0x4 + 4 * v4); /*0x664461*/
+        v5 = *(char **)(this->q004 + 4 * v4); /*0x664461*/
         if ( v5[41] && !v5[39] ) /*0x66446a*/
         {
           v1 = *v5; /*0x664470*/
@@ -442,7 +442,7 @@ AbstractClass * * EventClass::validateEventType()
     {
       do /*0x6644a7*/
       {
-        v8 = *(char **)(this->EventClass_field_0x4 + 4 * v7); /*0x66448e*/
+        v8 = *(char **)(this->q004 + 4 * v7); /*0x66448e*/
         v8[39] = *v8 == v1; /*0x664498*/
         ++v7; /*0x6644a4*/
       }
@@ -508,30 +508,30 @@ char EventClass::processEvent(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x40b74c*/
   {
-    (this->m_C) = ((this->m_C) & ~0xFF) | ((0) & 0xFF); /*0x40b756*/
+    (this->q00C) = ((this->q00C) & ~0xFF) | ((0) & 0xFF); /*0x40b756*/
     if ( a3 ) /*0x40b75c*/
       v4 = a3; /*0x40b772*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x40b76e*/
-    (this->m_C) = ((this->m_C) & ~0xFF) | ((1) & 0xFF); /*0x40b776*/
+    (this->q00C) = ((this->q00C) & ~0xFF) | ((1) & 0xFF); /*0x40b776*/
     if ( v4 ) /*0x40b77a*/
     {
-      if ( *&this->EventClass_field_0x4 ) /*0x40b785*/
+      if ( *&this->q004 ) /*0x40b785*/
       {
-        m_8 = this->m_8; /*0x40b78c*/
+        m_8 = this->u32_8; /*0x40b78c*/
         if ( a2 < m_8 ) /*0x40b791*/
           m_8 = a2; /*0x40b793*/
-        for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->EventClass_field_0x4 + 4 * i - 4) ) /*0x40b799*/
+        for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x40b799*/
           ++i; /*0x40b79e*/
-        if ( (((this->m_C) >> 8) & 0xFF) ) /*0x40b7ab*/
+        if ( (((this->q00C) >> 8) & 0xFF) ) /*0x40b7ab*/
         {
-          __3_YAXPAX_Z(*&this->EventClass_field_0x4); /*0x40b7b6*/
-          *&this->EventClass_field_0x4 = 0; /*0x40b7be*/
+          __3_YAXPAX_Z(*&this->q004); /*0x40b7b6*/
+          *&this->q004 = 0; /*0x40b7be*/
         }
       }
-      *&this->EventClass_field_0x4 = v4; /*0x40b7c7*/
-      this->m_8 = a2; /*0x40b7cf*/
-      (this->m_C) = ((this->m_C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x40b7d2*/
+      *&this->q004 = v4; /*0x40b7c7*/
+      this->u32_8 = a2; /*0x40b7cf*/
+      (this->q00C) = ((this->q00C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x40b7d2*/
       return 1; /*0x40b7d8*/
     }
     else
@@ -560,36 +560,36 @@ char EventClass::validateEvent(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x40b88c*/
   {
-    (this->m_C) = ((this->m_C) & ~0xFF) | ((0) & 0xFF); /*0x40b892*/
+    (this->q00C) = ((this->q00C) & ~0xFF) | ((0) & 0xFF); /*0x40b892*/
     if ( a3 ) /*0x40b898*/
       v4 = a3; /*0x40b8ae*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x40b8aa*/
-    (this->m_C) = ((this->m_C) & ~0xFF) | ((1) & 0xFF); /*0x40b8b2*/
+    (this->q00C) = ((this->q00C) & ~0xFF) | ((1) & 0xFF); /*0x40b8b2*/
     if ( !v4 ) /*0x40b8b6*/
       return 0; /*0x40b92a*/
-    if ( *&this->EventClass_field_0x4 ) /*0x40b8b8*/
+    if ( *&this->q004 ) /*0x40b8b8*/
     {
-      m_8 = this->m_8; /*0x40b8bf*/
+      m_8 = this->u32_8; /*0x40b8bf*/
       if ( a2 < m_8 ) /*0x40b8c4*/
         m_8 = a2; /*0x40b8c6*/
-      for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->EventClass_field_0x4 + 4 * i - 4) ) /*0x40b8cc*/
+      for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x40b8cc*/
         ++i; /*0x40b8d1*/
-      if ( (((this->m_C) >> 8) & 0xFF) ) /*0x40b8de*/
+      if ( (((this->q00C) >> 8) & 0xFF) ) /*0x40b8de*/
       {
-        __3_YAXPAX_Z(*&this->EventClass_field_0x4); /*0x40b8e9*/
-        *&this->EventClass_field_0x4 = 0; /*0x40b8f1*/
+        __3_YAXPAX_Z(*&this->q004); /*0x40b8e9*/
+        *&this->q004 = 0; /*0x40b8f1*/
       }
     }
-    *&this->EventClass_field_0x4 = v4; /*0x40b8fa*/
-    this->m_8 = a2; /*0x40b902*/
-    (this->m_C) = ((this->m_C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x40b905*/
+    *&this->q004 = v4; /*0x40b8fa*/
+    this->u32_8 = a2; /*0x40b902*/
+    (this->q00C) = ((this->q00C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x40b905*/
   }
   else
   {
     (*(void (**)(_DynamicVectorClass_PAVBombClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x40b90e*/
   }
-  v7 = this->m_8; /*0x40b911*/
+  v7 = this->u32_8; /*0x40b911*/
   if ( v7 < this->Count ) /*0x40b919*/
     this->Count = v7; /*0x40b91b*/
   return 1; /*0x40b91e*/
@@ -608,30 +608,30 @@ char EventClass::dispatchEvent(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x40b9ac*/
   {
-    (this->m_C) = ((this->m_C) & ~0xFF) | ((0) & 0xFF); /*0x40b9b6*/
+    (this->q00C) = ((this->q00C) & ~0xFF) | ((0) & 0xFF); /*0x40b9b6*/
     if ( a3 ) /*0x40b9bc*/
       v4 = a3; /*0x40b9d2*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x40b9ce*/
-    (this->m_C) = ((this->m_C) & ~0xFF) | ((1) & 0xFF); /*0x40b9d6*/
+    (this->q00C) = ((this->q00C) & ~0xFF) | ((1) & 0xFF); /*0x40b9d6*/
     if ( v4 ) /*0x40b9da*/
     {
-      if ( *&this->EventClass_field_0x4 ) /*0x40b9e5*/
+      if ( *&this->q004 ) /*0x40b9e5*/
       {
-        m_8 = this->m_8; /*0x40b9ec*/
+        m_8 = this->u32_8; /*0x40b9ec*/
         if ( a2 < m_8 ) /*0x40b9f1*/
           m_8 = a2; /*0x40b9f3*/
-        for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->EventClass_field_0x4 + 4 * i - 4) ) /*0x40b9f9*/
+        for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x40b9f9*/
           ++i; /*0x40b9fe*/
-        if ( (((this->m_C) >> 8) & 0xFF) ) /*0x40ba0b*/
+        if ( (((this->q00C) >> 8) & 0xFF) ) /*0x40ba0b*/
         {
-          __3_YAXPAX_Z(*&this->EventClass_field_0x4); /*0x40ba16*/
-          *&this->EventClass_field_0x4 = 0; /*0x40ba1e*/
+          __3_YAXPAX_Z(*&this->q004); /*0x40ba16*/
+          *&this->q004 = 0; /*0x40ba1e*/
         }
       }
-      *&this->EventClass_field_0x4 = v4; /*0x40ba27*/
-      this->m_8 = a2; /*0x40ba2f*/
-      (this->m_C) = ((this->m_C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x40ba32*/
+      *&this->q004 = v4; /*0x40ba27*/
+      this->u32_8 = a2; /*0x40ba2f*/
+      (this->q00C) = ((this->q00C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x40ba32*/
       return 1; /*0x40ba38*/
     }
     else
@@ -729,10 +729,10 @@ unsigned int * EventClass::resetEvent(int aP1, int aP2, void *a3)
   {
     if ( aP2 ) /*0x40bd26*/
     {
-      this->EventClass_field_0x4 = (void *)aP2; /*0x40bd28*/
+      this->q004 = (void *)aP2; /*0x40bd28*/
       return &this->EventClass_field_0x0; /*0x40bd2e*/
     }
-    this->EventClass_field_0x4 = __2_YAPAXI_Z(4 * aP1); /*0x40bd3d*/
+    this->q004 = __2_YAPAXI_Z(4 * aP1); /*0x40bd3d*/
     (this->q00C) = ((this->q00C) & ~(0xFF << 8)) | (((1) & 0xFF) << 8); /*0x40bd40*/
   }
   return &this->EventClass_field_0x0; /*0x40bd2d*/

@@ -7,7 +7,7 @@ namespace gamemd {
 
 struct ScoreText {
     int __pad_000;  // 0x0
-    int ScoreText_field_0x04;  // 0x4
+    int q004;  // 0x4
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     void Show(void * a2, void *a1 = 0);

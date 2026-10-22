@@ -2559,7 +2559,7 @@ int HouseClass::HandleAlliance(int a1, int a2) {
           if ( !v11->inLimbo && (*(int (__thiscall **)(int))(v11->attachedBomb)(v11) == this->relatedTagsCount )
           {
             ScriptAction::GetWaypointCoords((ScriptAction *)&v22, v11->AbstractClass_2B4); /*0x4f9cd3*/
-            if ( (*((unsigned char *)&(v22.ptr_4))) )
+            if ( (*((unsigned char *)&(v22.q004))) )
             {
               if ( BuildingLoadQueue::Find(&v22) )
               {
@@ -2595,7 +2595,7 @@ int HouseClass::HandleAlliance(int a1, int a2) {
       || *(unsigned char *)(a1->relatedTagsCapacity + 422)
       || (StringCSF = GetStringCSF(aTxtHasAllied, 0, g_Str_File_House_CPP, 3357),
           swprintf(
-            (wchar_t *const)&v22.ptr_8,
+            (wchar_t *const)&v22.q008,
             (const size_t)StringCSF,
             (const wchar_t *const)this + 45077,
             a1 + 90154),
@@ -2604,7 +2604,7 @@ int HouseClass::HandleAlliance(int a1, int a2) {
             (MessageListClass *)&g_GameNetworkObject,
             0,
             0,
-            (wchar_t *)&v22.ptr_8,
+            (wchar_t *)&v22.q008,
             *(unsigned int *)(this->relatedTagsCapacity + 192),
             16454,
             v18,
@@ -8511,7 +8511,7 @@ void HouseClass::FindAutoBuildLocation() {
       *(unsigned int *)v112 = v106; /*0x508546*/
       v17 = (Cell *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v112); /*0x508559*/
       v18 = *&v15->u32_EC; /*0x508564*/
-      v19 = v15->u32_11B - v113; /*0x50856a*/
+      v19 = v15->Cell_field_0x11B - v113; /*0x50856a*/
       v20 = *&v17->u32_EC; /*0x50856b*/
       v90 = (int)(((((v19) >> 32) & 0xFFFFFFFFu) ^ v19) - (((v19) >> 32) & 0xFFFFFFFFu)) <= 2; /*0x508578*/
       if ( v18 == 3 || v18 == 2 || v18 == 8 || v20 == 3 || v20 == 2 || (v85 = 1, v20 == 8) ) /*0x50859e*/

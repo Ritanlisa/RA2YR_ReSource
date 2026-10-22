@@ -6,7 +6,7 @@
 namespace gamemd {
 struct IsoCoord {
     unsigned char __pad_0[4];  // 0x0
-    void* IsoCoord_field_0x04;  // 0x4
+    void* q004;  // 0x4
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     static unsigned int * ToPixel(void *aP1, int a2, int a3);

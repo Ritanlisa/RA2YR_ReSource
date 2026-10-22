@@ -21,7 +21,7 @@ AbstractClass * * FilePipe_38::Release(int a2, char * a3)
   if ( a2 ) /*0x47834e*/
   {
     char *v5 = a3; // edi /*0x478354*/
-    (this->m_C) = ((this->m_C) & ~0xFF) | ((0) & 0xFF); /*0x478358*/
+    (this->q00C) = ((this->q00C) & ~0xFF) | ((0) & 0xFF); /*0x478358*/
     if ( a3 ) /*0x47835d*/
     {
       if ( a2 - 1 >= 0 ) /*0x478396*/
@@ -66,7 +66,7 @@ AbstractClass * * FilePipe_38::Release(int a2, char * a3)
         v5 = 0; /*0x47838d*/
       }
     }
-    (this->m_C) = ((this->m_C) & ~0xFF) | ((1) & 0xFF); /*0x4783ac*/
+    (this->q00C) = ((this->q00C) & ~0xFF) | ((1) & 0xFF); /*0x4783ac*/
     if ( v5 ) /*0x4783b0*/
     {
       if ( *&this->Items ) /*0x4783bb*/
@@ -91,7 +91,7 @@ AbstractClass * * FilePipe_38::Release(int a2, char * a3)
           while ( m_8 ); /*0x4783e9*/
           v3 = a2; /*0x4783eb*/
         }
-        if ( (((this->m_C) >> 8) & 0xFF) ) /*0x4783f1*/
+        if ( (((this->q00C) >> 8) & 0xFF) ) /*0x4783f1*/
         {
           __3_YAXPAX_Z(*&this->Items); /*0x4783fa*/
           *&this->Items = 0; /*0x478402*/
@@ -99,7 +99,7 @@ AbstractClass * * FilePipe_38::Release(int a2, char * a3)
       }
       *&this->Items = v5; /*0x47840d*/
       this->__pad_008 = v3; /*0x478413*/
-      (this->m_C) = ((this->m_C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x478416*/
+      (this->q00C) = ((this->q00C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x478416*/
       return (gamemd::AbstractClass **)(1); /*0x47841c*/
     }
     else
@@ -121,7 +121,7 @@ void FilePipe_30::ddtor(void *a1)
 {
 
   void *v2 = *&this->u32_4; // eax /*0x4778a6*/
-  this->m_10 = 0; /*0x4778a9*/
+  this->q010 = 0; /*0x4778a9*/
   if ( v2 && (((unsigned char *)&(*&this->m_C))[1]) ) /*0x4778b0*/
   {
     operator delete((v2)); /*0x4778b6*/
@@ -221,8 +221,8 @@ char FilePipe_30::Release(int a2, unsigned int * a3)
     (*(void (**)(_DynamicVectorClass_PAVTechnoTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4781ce*/
   }
   v7 = this->Capacity; /*0x4781d1*/
-  if ( v7 < this->m_10 ) /*0x4781d9*/
-    this->m_10 = v7; /*0x4781db*/
+  if ( v7 < this->q010 ) /*0x4781d9*/
+    this->q010 = v7; /*0x4781db*/
   return 1; /*0x4781de*/
 
 }
@@ -237,7 +237,7 @@ int FilePipe_30::Read(unsigned int * a2, void *a2_2, void *a3)
   int result; // eax
   unsigned int *i; // ecx
 
-  m_10 = this->m_10; /*0x4781f0*/
+  m_10 = this->q010; /*0x4781f0*/
   result = 0; /*0x4781f3*/
   if ( m_10 <= 0 ) /*0x4781f8*/
     return -1; /*0x47820f*/
@@ -321,7 +321,7 @@ int FilePipe_38::Read(unsigned char * a2, void *a2_2, void *a3)
 namespace gamemd {
 unsigned int FilePipe_38::Write(int a2)
 {
-  if ( (this->m_C) ) /*0x4784c0*/
+  if ( (this->q00C) ) /*0x4784c0*/
     return (a2 - *&this->Items) / 3u; /*0x4784de*/
   else
     return 0; /*0x4784c7*/
@@ -384,7 +384,7 @@ void FilePipe_30::Clear_0()
 
   void *v2; // eax
   v2 = (void *)(*&this->u32_4); /*0x4b9c46*/
-  this->m_10 = 0; /*0x4b9c49*/
+  this->q010 = 0; /*0x4b9c49*/
   if ( v2 && (((unsigned char *)&(*&this->m_C))[1]) ) /*0x4b9c50*/
   {
     operator delete((v2)); /*0x4b9c56*/
@@ -448,8 +448,8 @@ char FilePipe_30::SetCapacity(int a2, unsigned int * a3)
     (*(void (**)(_DynamicVectorClass_PAUButtonFadeEffect *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4b9eae*/
   }
   v7 = this->Capacity; /*0x4b9eb1*/
-  if ( v7 < this->m_10 ) /*0x4b9eb9*/
-    this->m_10 = v7; /*0x4b9ebb*/
+  if ( v7 < this->q010 ) /*0x4b9eb9*/
+    this->q010 = v7; /*0x4b9ebb*/
   return 1; /*0x4b9ebe*/
 
 }
@@ -461,7 +461,7 @@ int FilePipe_30::FindItemIndex(unsigned int * a2)
 {
 
   int m_10; // edx
-  m_10 = this->m_10; /*0x4b9ed0*/
+  m_10 = this->q010; /*0x4b9ed0*/
   int result = 0; // eax /*0x4b9ed3*/
   if ( m_10 <= 0 ) /*0x4b9ed8*/
     return -1; /*0x4b9eef*/
@@ -516,8 +516,8 @@ char FilePipe_30::SetCapacity_0(int a2, unsigned int * a3)
     (*(void (**)(_DynamicVectorClass_PAUCrossDissolveEffect *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4ba10e*/
   }
   v7 = this->Capacity; /*0x4ba111*/
-  if ( v7 < this->m_10 ) /*0x4ba119*/
-    this->m_10 = v7; /*0x4ba11b*/
+  if ( v7 < this->q010 ) /*0x4ba119*/
+    this->q010 = v7; /*0x4ba11b*/
   return 1; /*0x4ba11e*/
 
 }
@@ -529,7 +529,7 @@ int FilePipe_30::FindItemIndex_0(unsigned int * a2)
 {
 
   int m_10; // edx
-  m_10 = this->m_10; /*0x4ba130*/
+  m_10 = this->q010; /*0x4ba130*/
   int result = 0; // eax /*0x4ba133*/
   if ( m_10 <= 0 ) /*0x4ba138*/
     return -1; /*0x4ba14f*/

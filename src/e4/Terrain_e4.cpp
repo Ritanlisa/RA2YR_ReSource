@@ -593,7 +593,7 @@ AbstractClass * * Terrain::ConnectivityGraph(void *a1_1)
   v1 = this; /*0x56c515*/
   v81 = -1; /*0x56c51a*/
   v95 = -1; /*0x56c51e*/
-  Terrain_field_0x14 = (unsigned int *)this->Terrain_field_0x14; /*0x56c529*/
+  Terrain_field_0x14 = (unsigned int *)this->q014; /*0x56c529*/
   v3 = 0; /*0x56c52c*/
   v4 = (unsigned __int8 *)(*(unsigned int *)this->__pad_68 + 4 * *&this->u32_6C); /*0x56c52e*/
   v100 = 0; /*0x56c531*/
@@ -677,12 +677,12 @@ AbstractClass * * Terrain::ConnectivityGraph(void *a1_1)
     while ( v12 < v87 ); /*0x56c6bc*/
   }
   *&v1->q04C = (unsigned __int16)v10; /*0x56c6c8*/
-  v17 = v1->Terrain_field_0x60 - 1; /*0x56c6ce*/
+  v17 = v1->u32_60 - 1; /*0x56c6ce*/
   if ( v17 >= 0 ) /*0x56c6cf*/
   {
     v18 = 16 * v17; /*0x56c6d7*/
     v88 = (char *)(16 * v17); /*0x56c6db*/
-    Terrain_field_0x60 = v1->Terrain_field_0x60; /*0x56c6df*/
+    Terrain_field_0x60 = v1->u32_60; /*0x56c6df*/
     do /*0x56c7e0*/
     {
       v19 = (__int16 *)(*&v1->q054 + v18); /*0x56c6ea*/
@@ -722,7 +722,7 @@ AbstractClass * * Terrain::ConnectivityGraph(void *a1_1)
             v24 = v23[2 * v25 + 1]; /*0x56c759*/
           }
           v28 = v27 | (v24 << 16); /*0x56c763*/
-          v29 = *(unsigned int *)v1->Terrain_field_0x14 + 24 * (v27 & 0xF | (16 * (v24 & 0xF))); /*0x56c775*/
+          v29 = *(unsigned int *)v1->q014 + 24 * (v27 & 0xF | (16 * (v24 & 0xF))); /*0x56c775*/
           v30 = *(unsigned int *)(v29 + 16); /*0x56c778*/
           v31 = *(unsigned int **)(v29 + 4); /*0x56c77c*/
           v32 = v30 - 1; /*0x56c77f*/
@@ -778,7 +778,7 @@ LABEL_48:
   }
   for ( j = 0; j < 6144; j += 24 ) /*0x56c815*/
   {
-    v44 = j + *(unsigned int *)v1->Terrain_field_0x14; /*0x56c81c*/
+    v44 = j + *(unsigned int *)v1->q014; /*0x56c81c*/
     v45 = *(unsigned int *)(v44 + 16); /*0x56c81e*/
     if ( v45 > 0 ) /*0x56c823*/
     {
@@ -823,7 +823,7 @@ LABEL_48:
   v85 = 0; /*0x56c8c9*/
   do /*0x56c953*/
   {
-    v53 = *(unsigned int *)v1->Terrain_field_0x14; /*0x56c8d0*/
+    v53 = *(unsigned int *)v1->q014; /*0x56c8d0*/
     v54 = *(char **)(v53 + v52 + 16); /*0x56c8d2*/
     v55 = v52 + v53; /*0x56c8d6*/
     if ( (int)v54 > 0 ) /*0x56c8da*/
@@ -1071,7 +1071,7 @@ int Terrain::FloodFillConnectivity(uint8_t *a1, int a2, unsigned int *a3, void *
     if ( ((int)(((((v12) >> 32) & 0xFFFFFFFFu) ^ v12) - (((v12) >> 32) & 0xFFFFFFFFu)) < 2 || v74) && v11 != dword_ABDE8C && v11 != (unsigned __int16)a3 ) /*0x56cc34*/
     {
       v13 = (unsigned __int16)a3 | ((unsigned __int16)v11 << 16); /*0x56cc46*/
-      v14 = *this->Terrain_field_0x14; /*0x56cc5a*/
+      v14 = *this->q014; /*0x56cc5a*/
       v15 = *(unsigned int *)(v14 + 24 * (a3 & 0xF | (16 * (v11 & 0xF))) + 16); /*0x56cc5c*/
       v16 = v14 + 24 * (a3 & 0xF | (16 * (v11 & 0xF))); /*0x56cc60*/
       v17 = v15 - 1; /*0x56cc63*/
@@ -1128,7 +1128,7 @@ LABEL_12:
     if ( ((int)(((((v26) >> 32) & 0xFFFFFFFFu) ^ v26) - (((v26) >> 32) & 0xFFFFFFFFu)) < 2 || v74) && v25 != dword_ABDE8C && v25 != (unsigned __int16)a3 ) /*0x56cd4a*/
     {
       v27 = (unsigned __int16)a3 | ((unsigned __int16)v25 << 16); /*0x56cd5c*/
-      v28 = *this->Terrain_field_0x14; /*0x56cd70*/
+      v28 = *this->q014; /*0x56cd70*/
       v29 = *(unsigned int *)(v28 + 24 * (a3 & 0xF | (16 * (v25 & 0xF))) + 16); /*0x56cd72*/
       v30 = v28 + 24 * (a3 & 0xF | (16 * (v25 & 0xF))); /*0x56cd76*/
       v31 = v29 - 1; /*0x56cd79*/
@@ -1204,7 +1204,7 @@ LABEL_63:
       if ( (int)(((((v45) >> 32) & 0xFFFFFFFFu) ^ v45) - (((v45) >> 32) & 0xFFFFFFFFu)) < 2 || v74 ) /*0x56cf0a*/
       {
         v46 = (unsigned __int16)a3 | (v42 << 16); /*0x56cf16*/
-        v47 = *this->Terrain_field_0x14; /*0x56cf2a*/
+        v47 = *this->q014; /*0x56cf2a*/
         v48 = *(unsigned int *)(v47 + 24 * (a3 & 0xF | (16 * (v42 & 0xF))) + 16); /*0x56cf2c*/
         v49 = v47 + 24 * (a3 & 0xF | (16 * (v42 & 0xF))); /*0x56cf30*/
         v50 = v48 - 1; /*0x56cf33*/
@@ -1266,7 +1266,7 @@ LABEL_64:
         if ( (int)(((((v62) >> 32) & 0xFFFFFFFFu) ^ v62) - (((v62) >> 32) & 0xFFFFFFFFu)) < 2 || v74 ) /*0x56d05e*/
         {
           v63 = (unsigned __int16)a3 | (v58 << 16); /*0x56d06a*/
-          v64 = *this->Terrain_field_0x14; /*0x56d07e*/
+          v64 = *this->q014; /*0x56d07e*/
           v65 = *(unsigned int *)(v64 + 24 * (a3 & 0xF | (16 * (v58 & 0xF))) + 16); /*0x56d080*/
           v66 = v64 + 24 * (a3 & 0xF | (16 * (v58 & 0xF))); /*0x56d084*/
           v67 = v65 - 1; /*0x56d087*/
@@ -1559,7 +1559,7 @@ void Terrain::ProcessCellModification(int16_t *aP1)
         goto LABEL_139; /*0x5703e8*/
       }
       v34 = (__int16)v32 + (v81[1] << 9); /*0x5703f1*/
-      if ( !*((unsigned int *)this->Terrain_field_0x13C + v34) ) /*0x570401*/
+      if ( !*((unsigned int *)this->q13C + v34) ) /*0x570401*/
         goto LABEL_74; /*0x570401*/
       if ( v34 < 0x40000 && (v35 = *(int **)(*(unsigned int *)&g_Shroud_CellArray + 4 * v34)) != 0 ) /*0x57041d*/
       {
@@ -2039,13 +2039,13 @@ AbstractClass * * Terrain::RecursiveModify(IUnknown * aP1)
       goto LABEL_141; /*0x5738a4*/
     while ( 1 ) /*0x5738aa*/
     {
-      if ( (__int16)v38 > (int)this->Terrain_field_0x12C + v39 ) /*0x5738bb*/
+      if ( (__int16)v38 > (int)this->q12C + v39 ) /*0x5738bb*/
         goto LABEL_141; /*0x5738bb*/
-      Terrain_field_0x128 = this->Terrain_field_0x128; /*0x5738ca*/
+      Terrain_field_0x128 = this->q128; /*0x5738ca*/
       if ( v87[1] < (int)Terrain_field_0x128 || v87[1] > (int)Terrain_field_0x128 + *(unsigned int *)this->__pad_130 ) /*0x5738e6*/
         goto LABEL_141; /*0x5738e6*/
       v41 = (__int16)v38 + (v87[1] << 9); /*0x5738ef*/
-      if ( *((unsigned int *)this->Terrain_field_0x13C + v41) ) /*0x5738fb*/
+      if ( *((unsigned int *)this->q13C + v41) ) /*0x5738fb*/
       {
         if ( v41 < 0x40000 && (v42 = *(int **)(*(unsigned int *)&g_Shroud_CellArray + 4 * v41)) != 0 ) /*0x57391b*/
         {
@@ -2428,7 +2428,7 @@ int Terrain::CreateCrater(IUnknown * aP1, void *a2_1, void *a3_1, void *a4_1, vo
       return v10; /*0x576990*/
     }
     v24 = (__int16)v21 + (SHIWORD(a2) << 9); /*0x57699d*/
-    if ( !*((unsigned int *)this->Terrain_field_0x13C + v24) ) /*0x5769a9*/
+    if ( !*((unsigned int *)this->q13C + v24) ) /*0x5769a9*/
       goto LABEL_49; /*0x5769a9*/
     if ( v24 < 0x40000 && (v25 = *(int **)(*(unsigned int *)&g_Shroud_CellArray + 4 * v24)) != 0 ) /*0x5769c5*/
     {

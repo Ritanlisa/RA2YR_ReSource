@@ -65,9 +65,9 @@ struct SuperClass {
     char __pad_97[3];  // 0x97
     unsigned char __pad_09A;  // 0x9A
     char __pad_9B[21];  // 0x9B
-    int SuperClass_field_0xB0;  // 0xB0
+    int q0B0;  // 0xB0
     char __pad_B4[16];  // 0xB4
-    int SuperClass_field_0xC4;  // 0xC4
+    int q0C4;  // 0xC4
     char __pad_C8[60];  // 0xC8
     AnimClass* Animation;  // 0x104
     bool AnimationGotInvalid;  // 0x108
@@ -84,28 +84,28 @@ struct SuperClass {
     char ChargeDrainState[4];  // 0x124
     unsigned char __pad_128;  // 0x128
     char __pad_129[75];  // 0x129
-    int SuperClass_field_0x174;  // 0x174
+    int q174;  // 0x174
     char __pad_178[132];  // 0x178
-    int SuperClass_field_0x1FC;  // 0x1FC
+    int q1FC;  // 0x1FC
     char __pad_200[152];  // 0x200
-    int SuperClass_field_0x298;  // 0x298
+    int q298;  // 0x298
     char __pad_29C[140];  // 0x29C
-    int SuperClass_field_0x328;  // 0x328
+    int q328;  // 0x328
     char __pad_32C[4];  // 0x32C
-    int SuperClass_field_0x330;  // 0x330
+    int q330;  // 0x330
     char __pad_334[20];  // 0x334
-    int SuperClass_field_0x348;  // 0x348
-    int SuperClass_field_0x34C;  // 0x34C
+    int q348;  // 0x348
+    int q34C;  // 0x34C
     char __pad_350[844];  // 0x350
-    int SuperClass_field_0x69C;  // 0x69C
+    int q69C;  // 0x69C
     char __pad_6A0[1452];  // 0x6A0
-    int SuperClass_field_0xC4C;  // 0xC4C
+    int qC4C;  // 0xC4C
     char __pad_C50[24];  // 0xC50
-    int SuperClass_field_0xC68;  // 0xC68
+    int qC68;  // 0xC68
     char __pad_C6C[812];  // 0xC6C
-    int SuperClass_field_0xF98;  // 0xF98
+    int qF98;  // 0xF98
     char __pad_F9C[76];  // 0xF9C
-    int SuperClass_field_0xFE8;  // 0xFE8
+    int qFE8;  // 0xFE8
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     static wchar_t * SetCurrentFrame(SuperClass *pThis);

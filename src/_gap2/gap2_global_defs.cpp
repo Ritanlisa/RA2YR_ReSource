@@ -4439,26 +4439,26 @@ int Gap2Recv_556B70::Render_Render_556B70() {
     v3 = *v2; /*0x556b7f*/
     v4 = v2[1]; /*0x556b81*/
     v5 = v2[2]; /*0x556b84*/
-    v6 = &this->ptr_0 + 4 * ((int)this->ptr_C + 1); /*0x556b8e*/
+    v6 = &this->ptr_0 + 4 * ((int)this->M8 + 1); /*0x556b8e*/
     if ( v3 != *v6 || v4 != v6[1] || v5 != v6[2] ) /*0x556b9c*/
     {
-      v7 = (char *)this->ptr_C - 1; /*0x556ba1*/
+      v7 = (char *)this->M8 - 1; /*0x556ba1*/
       this->ptr_3 = v7; /*0x556ba2*/
       if ( (int)v7 < 0 ) /*0x556ba5*/
         this->ptr_3 = (void *)31; /*0x556ba7*/
-      v8 = &this->ptr_0 + 4 * ((int)this->ptr_C + 1); /*0x556bb7*/
+      v8 = &this->ptr_0 + 4 * ((int)this->M8 + 1); /*0x556bb7*/
       v8[3] = (void *)255; /*0x556bb9*/
       *v8 = v3; /*0x556bc0*/
       v8[1] = v4; /*0x556bc3*/
       v8[2] = v5; /*0x556bc6*/
     }
   }
-  result = (int)this->ptr_C; /*0x556bc9*/
+  result = (int)this->M8; /*0x556bc9*/
   do /*0x556bf6*/
   {
     v10 = result + 1; /*0x556bcc*/
     v11 = &this->uniqueId + 4 * result; /*0x556bd7*/
-    v12 = v11[3] - (unsigned int)this->ptr_8; /*0x556bdc*/
+    v12 = v11[3] - (unsigned int)this->M4; /*0x556bdc*/
     v11[3] = v12; /*0x556bde*/
     if ( v12 < 0 ) /*0x556be1*/
       v11[3] = 0; /*0x556be3*/
@@ -4466,7 +4466,7 @@ int Gap2Recv_556B70::Render_Render_556B70() {
     if ( v10 >= 32 ) /*0x556bef*/
       result = 0; /*0x556bf1*/
   }
-  while ( (void *)result != this->ptr_C ); /*0x556bf6*/
+  while ( (void *)result != this->M8 ); /*0x556bf6*/
   return result; /*0x556bf8*/
 }
 }
@@ -4484,16 +4484,16 @@ void* Gap2Recv_556C00::Render_Render_556C00() {
   int v10[2]; // [esp+14h] [ebp-10h] BYREF
   int v11[2]; // [esp+1Ch] [ebp-8h] BYREF
 
-  v1 = (int)this->ptr_C + 1; /*0x556c09*/
+  v1 = (int)this->M48 + 1; /*0x556c09*/
   if ( v1 >= 32 ) /*0x556c14*/
     v1 = 0; /*0x556c16*/
-  result = &this->ptr_0 + 4 * ((int)this->ptr_C + 1); /*0x556c21*/
+  result = &this->ptr_0 + 4 * ((int)this->M48 + 1); /*0x556c21*/
   if ( *result != g_MissionQueueFrame.random[209] /*0x556c41*/
     || result[1] != g_MissionQueueFrame.random[210]
     || result[2] != g_MissionQueueFrame.random[211] )
   {
     v3 = v1 + 1; /*0x556c47*/
-    v4 = &this->ptr_0 + 4 * ((int)this->ptr_C + 1); /*0x556c48*/
+    v4 = &this->ptr_0 + 4 * ((int)this->M48 + 1); /*0x556c48*/
     result = result->u32_C; /*0x556c4c*/
     for ( i = &this->ptr_0 + 4 * v3; result; i = &this->ptr_0 + 4 * (unsigned int)v8 ) /*0x556c56*/
     {
@@ -4519,7 +4519,7 @@ void* Gap2Recv_556C00::Render_Render_556C00() {
         result = (unsigned int *)v3; /*0x556cea*/
         if ( v3 >= 32 ) /*0x556cef*/
           result = 0; /*0x556cf1*/
-        if ( result == this->ptr_C ) /*0x556cf6*/
+        if ( result == this->M48 ) /*0x556cf6*/
           break; /*0x556cf6*/
         v3 = (int)result + 1; /*0x556cf8*/
         v4 = i; /*0x556cfb*/
@@ -7541,7 +7541,7 @@ char Gap2Recv_591740::PlaceMapSeedCityArea(void* a2, void* a3, void* a4) {
               *(unsigned short *)&v69.__pad_002 = MapSeed_field_0x08; /*0x591967*/
               if ( (unsigned __int8)MapSeed::IsCellInBounds(&v69) ) /*0x59196c*/
               {
-                SetLayerDataMap((__int16 *)v69.__pad_0, (int)this->ptr_8); /*0x591980*/
+                SetLayerDataMap((__int16 *)v69.__pad_0, (int)this->M16); /*0x591980*/
                 v32 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, (__int16 *)v69.__pad_0); /*0x59198f*/
                 MapSeed_field_0x08 = v69.MapSeed_field_0x08; /*0x591997*/
                 v32->u32_11B = this->uniqueId; /*0x59199b*/
@@ -7578,7 +7578,7 @@ char Gap2Recv_591740::PlaceMapSeedCityArea(void* a2, void* a3, void* a4) {
               *(unsigned short *)&v69.__pad_002 = v38; /*0x5919fb*/
               if ( (unsigned __int8)MapSeed::IsCellInBounds(&v69) ) /*0x591a00*/
               {
-                SetLayerDataMap((__int16 *)v69.__pad_0, (int)this->ptr_8); /*0x591a14*/
+                SetLayerDataMap((__int16 *)v69.__pad_0, (int)this->M16); /*0x591a14*/
                 v40 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, (__int16 *)v69.__pad_0); /*0x591a23*/
                 v33 = v73; /*0x591a2b*/
                 v40->u32_11B = this->uniqueId; /*0x591a2f*/
@@ -8928,17 +8928,17 @@ char Gap2Recv_5AD930::Map_Helper_5AD930(int a2) {
 
   if ( a2 < 0 ) /*0x5ad93c*/
     return 0; /*0x5ad93c*/
-  v3 = (char *)__2_YAPAXI_Z(8 * (a2 + this->ptr_8)); /*0x5ad950*/
+  v3 = (char *)__2_YAPAXI_Z(8 * (a2 + this->M16)); /*0x5ad950*/
   if ( !v3 ) /*0x5ad957*/
     return 0; /*0x5ad9b0*/
-  for ( i = 0; i < this->ptr_4; *(unsigned int *)&v3[v5 + 4] = v6[1] ) /*0x5ad965*/
+  for ( i = 0; i < this->M8; *(unsigned int *)&v3[v5 + 4] = v6[1] ) /*0x5ad965*/
   {
     v5 = 8 * i; /*0x5ad969*/
     v6 = (unsigned int *)(*(unsigned int *)this + 8 * i++); /*0x5ad972*/
     *(unsigned int *)&v3[v5] = *v6; /*0x5ad977*/
   }
   __3_YAXPAX_Z(*(void **)this); /*0x5ad98b*/
-  v7 = a2 + this->ptr_8; /*0x5ad996*/
+  v7 = a2 + this->M16; /*0x5ad996*/
   *(unsigned int *)this = v3; /*0x5ad998*/
   this->ptr_3 = v7; /*0x5ad99a*/
   this->uniqueId = 0; /*0x5ad99d*/
@@ -11293,10 +11293,10 @@ void Gap2Recv_6319C0::Network_Set() {
   DlgItem = GetDlgItem((HWND)this->ptr_0, 1509); /*0x6319d4*/
   if ( DlgItem ) /*0x6319de*/
   {
-    SendMessageA(DlgItem, 0x4B3u, 0x15u, (LPARAM)this->ptr_8 + 112); /*0x6319ef*/
-    if ( wcslen((const wchar_t *)this->ptr_8 + 56) ) /*0x6319f8*/
+    SendMessageA(DlgItem, 0x4B3u, 0x15u, (LPARAM)this->M8 + 112); /*0x6319ef*/
+    if ( wcslen((const wchar_t *)this->M8 + 56) ) /*0x6319f8*/
     {
-      _wcsupr((wchar_t *)this->ptr_8 + 56); /*0x631a0b*/
+      _wcsupr((wchar_t *)this->M8 + 56); /*0x631a0b*/
     }
     else
     {
@@ -11305,28 +11305,28 @@ void Gap2Recv_6319C0::Network_Set() {
                     0,
                     (const char *)&stru_83665C.ChargerBarrels[6],
                     757);
-                    wcscpy((wchar_t *)this->ptr_8 + 56, StringCSF); /*0x631a33*/
+                    wcscpy((wchar_t *)this->M8 + 56, StringCSF); /*0x631a33*/
     }
   }
   Debug::Log(); /*0x631a47*/
   v4 = GetDlgItem((HWND)this->ptr_0, 1503); /*0x631a58*/
   if ( v4 ) /*0x631a5c*/
-    SendMessageA(v4, 0x4B5u, 0x15u, (LPARAM)this->ptr_8 + 154); /*0x631a70*/
+    SendMessageA(v4, 0x4B5u, 0x15u, (LPARAM)this->M8 + 154); /*0x631a70*/
   Debug::Log(); /*0x631a81*/
   v5 = GetDlgItem((HWND)this->ptr_0, 1636); /*0x631a92*/
   if ( v5 && SendMessageA(v5, 0xF0u, 0, 0) == 1 ) /*0x631aa7*/
   {
-    memcpy(this->ptr_8, &this->ptr_C, 0x70u); /*0x631ab9*/
+    memcpy(this->M8, &this->ptr_C, 0x70u); /*0x631ab9*/
   }
   else
   {
     *(unsigned int *)this->ptr_2 = 0; /*0x631ac3*/
-    *((unsigned int *)this->ptr_8 + 1) = -1; /*0x631acc*/
-    *((unsigned int *)this->ptr_8 + 2) = -1; /*0x631ad2*/
-    *((unsigned int *)this->ptr_8 + 3) = 0; /*0x631ad8*/
-    *((unsigned int *)this->ptr_8 + 4) = -1; /*0x631ae2*/
-    *((unsigned int *)this->ptr_8 + 5) = 3; /*0x631ae8*/
-    *((unsigned char *)this->ptr_8 + 32) = 0; /*0x631af2*/
+    *((unsigned int *)this->M8 + 1) = -1; /*0x631acc*/
+    *((unsigned int *)this->M8 + 2) = -1; /*0x631ad2*/
+    *((unsigned int *)this->M8 + 3) = 0; /*0x631ad8*/
+    *((unsigned int *)this->M8 + 4) = -1; /*0x631ae2*/
+    *((unsigned int *)this->M8 + 5) = 3; /*0x631ae8*/
+    *((unsigned char *)this->M8 + 32) = 0; /*0x631af2*/
   }
   Debug::Log(); /*0x631b06*/
 }
@@ -11393,7 +11393,7 @@ int Gap2Recv_634970::Helper_634970() {
   FactoryClass::ClearObjects((FactoryClass *)this); /*0x634975*/
   uniqueId = this->uniqueId; /*0x63497a*/
   for ( i = 0; i < uniqueId; ++i ) /*0x634981*/
-    ScriptAction::PlaceObject((int)this, *((unsigned int **)this->ptr_4 + i)); /*0x63498c*/
+    ScriptAction::PlaceObject((int)this, *((unsigned int **)this->M4 + i)); /*0x63498c*/
   result = ScriptAction::FindSquadMember((ScriptAction *)this); /*0x634998*/
   (this->M28) = 0; /*0x63499d*/
   return result; /*0x6349a1*/
@@ -11670,7 +11670,7 @@ int Gap2Recv_63CAE0::RenderScenarioActionLines2() {
   v34 = v4; /*0x63cb2c*/
   if ( uniqueId > 0 ) /*0x63cb30*/
   {
-    v6 = *(unsigned char **)(*(unsigned int *)this->ptr_4 + 4); /*0x63cb40*/
+    v6 = *(unsigned char **)(*(unsigned int *)this->u32_4 + 4); /*0x63cb40*/
     memcpy(v48, v6, 0x6Cu); /*0x63cb43*/
     v6 += 108; /*0x63cb43*/
     v48[54] = *(unsigned short *)v6; /*0x63cb45*/
@@ -11720,7 +11720,7 @@ LABEL_17:
         }
         else
         {
-          ptr_4 = (int **)this->ptr_4; /*0x63cc52*/
+          ptr_4 = (int **)this->u32_4; /*0x63cc52*/
           while ( (*ptr_4)[2] != v8 ) /*0x63cc5a*/
           {
             ++v14; /*0x63cc60*/
@@ -11788,8 +11788,8 @@ LABEL_17:
 namespace gamemd { 
 int Gap2Recv_DAD0::PackRGBFromBytes() {
        return ((this->u32_4) >> g_BitShift_Green_0 << g_BitShift_Red) /*0x63db15*/
-       | ((((unsigned char *)&(this->ptr_0))[1]) >> g_BitMask_Blue << g_BitMask_Green)
-       | ((((unsigned char *)&(this->ptr_0))[2]) >> g_BitMask_Red << g_BitShift_Blue);
+       | ((((unsigned char *)&(this->AbstractClass_v))[1]) >> g_BitMask_Blue << g_BitMask_Green)
+       | ((((unsigned char *)&(this->AbstractClass_v))[2]) >> g_BitMask_Red << g_BitShift_Blue);
 }
 }
 // 0x63DB20
@@ -11798,11 +11798,11 @@ bool Gap2Recv_63DB20::HandlePlanningModeClick_Handle(void* a2) {
   int v2; // eax
   void *ptr_0; // edx
   BOOL result = 0; // eax /*0x63db54*/
-  if ( *a2 >= (int)this->ptr_0 && *a2 < (int)((int)this->ptr_0 + (unsigned int)this->ptr_8) ) /*0x63db36*/
+  if ( *a2 >= (int)this->ptr_0 && *a2 < (int)((int)this->ptr_0 + (unsigned int)this->M4) ) /*0x63db36*/
   {
     v2 = a2[1]; /*0x63db38*/
     ptr_0 = this->ptr_4; /*0x63db3b*/
-    if ( v2 >= (int)ptr_0 && v2 < (int)((int)ptr_0 + (unsigned int)this->ptr_C) ) /*0x63db49*/
+    if ( v2 >= (int)ptr_0 && v2 < (int)((int)ptr_0 + (unsigned int)this->M8) ) /*0x63db49*/
       return 1; /*0x63db2b*/
   }
   return result; /*0x63db50*/
@@ -12036,7 +12036,7 @@ int Gap2Recv_643720::RenderBuildingProductionButton(int a2, ProgressScreenClass 
   }
   else
   {
-    v7 = this->u32_4C; /*0x643738*/
+    v7 = this->q04C; /*0x643738*/
     LODWORD(v39) = this->u32_48; /*0x64373b*/
     HIDWORD(v39) = v7; /*0x64373f*/
   }
@@ -12191,17 +12191,17 @@ char Gap2Recv_6525A0::Network_Process_6525A0(int a2) {
 
   if ( a2 < 0 ) /*0x6525ac*/
     return 0; /*0x6525ac*/
-  v3 = (char *)__2_YAPAXI_Z(8 * (a2 + this->ptr_8)); /*0x6525c0*/
+  v3 = (char *)__2_YAPAXI_Z(8 * (a2 + this->M16)); /*0x6525c0*/
   if ( !v3 ) /*0x6525c7*/
     return 0; /*0x652620*/
-  for ( i = 0; i < this->ptr_4; *(unsigned int *)&v3[v5 + 4] = v6[1] ) /*0x6525d5*/
+  for ( i = 0; i < this->M8; *(unsigned int *)&v3[v5 + 4] = v6[1] ) /*0x6525d5*/
   {
     v5 = 8 * i; /*0x6525d9*/
     v6 = (unsigned int *)(*(unsigned int *)this + 8 * i++); /*0x6525e2*/
     *(unsigned int *)&v3[v5] = *v6; /*0x6525e7*/
   }
   __3_YAXPAX_Z(*(void **)this); /*0x6525fb*/
-  v7 = a2 + this->ptr_8; /*0x652606*/
+  v7 = a2 + this->M16; /*0x652606*/
   *(unsigned int *)this = v3; /*0x652608*/
   this->ptr_3 = v7; /*0x65260a*/
   this->uniqueId = 0; /*0x65260d*/
@@ -12827,7 +12827,7 @@ void* Gap2Recv_65C6D0::SeedInitRNG(int aP1) {
   v2 = 0; /*0x65c6d3*/
   this->ptr_1 = 0; /*0x65c6da*/
   this->ptr_2 = 103; /*0x65c6dd*/
-  p_vfptr3 = &this->ptr_C; /*0x65c6ea*/
+  p_vfptr3 = &this->M8; /*0x65c6ea*/
   v11 = 250; /*0x65c6ee*/
   while ( 1 ) /*0x65c6fc*/
   {
@@ -13095,7 +13095,7 @@ void* Gap2Recv_65FB80::Team_Load_65FB80(int a2, IUnknown * aP2) {
   v10 = (void *)(_6550C0[1] - v7); /*0x65fc0b*/
   this->ptr_1 = (void *)(v9 - v6); /*0x65fc0d*/
   this->v10 = v10; /*0x65fc10*/
-  ptr_0 = this->ptr_4; /*0x65fc13*/
+  ptr_0 = this->ambientSoundController; /*0x65fc13*/
   v12 = v10; /*0x65fc1c*/
   v13 = (void *)(*(unsigned int *)&dword_880C90 - (unsigned int)v10); /*0x65fc23*/
   v14 = (void *)(*(unsigned int *)&dword_880C8C - (unsigned int)ptr_0); /*0x65fc25*/
@@ -13130,7 +13130,7 @@ void* Gap2Recv_65FB80::Team_Load_65FB80(int a2, IUnknown * aP2) {
   }
   else
   {
-    v23 = this->ptr_4; /*0x65fc43*/
+    v23 = this->ambientSoundController; /*0x65fc43*/
   }
   *&this->u8_17 = (float)(int)v23; /*0x65fc6b*/
   LoadGame_field_0x10 = g_TriggerEventState; /*0x65fc87*/
@@ -13488,8 +13488,8 @@ int Gap2Recv_660540::Map_Helper_660540() {
   int v40[7]; // [esp+64h] [ebp-1Ch] BYREF
 
   Render_Render_660730((float *)this, &v39); /*0x66054e*/
-  ptr_0 = this->ptr_4; /*0x660553*/
-  ptr_4 = (char *)this->ptr_8; /*0x660556*/
+  ptr_0 = this->M8; /*0x660553*/
+  ptr_4 = (char *)this->M16; /*0x660556*/
   v4 = &v39; /*0x660559*/
   v5 = 4; /*0x66055d*/
   do /*0x660574*/
@@ -13646,13 +13646,13 @@ void* Gap2Recv_660BB0::UI_Create_734120_Create() {
   result = (int *)this; /*0x660bb0*/
   if ( dword_B04D88 == -1 ) /*0x660bbb*/
   {
-    this->ptr_0 = (void *)dword_B04D68; /*0x660bc3*/
+    this->AbstractClass_v = (void *)dword_B04D68; /*0x660bc3*/
   }
   else
   {
     v2 = (void *)dword_B04D48[dword_B04D88]; /*0x660bc6*/
     dword_B04DD8 = dword_B04D88; /*0x660bcd*/
-    this->ptr_0 = v2; /*0x660bd3*/
+    this->AbstractClass_v = v2; /*0x660bd3*/
   }
   return result; /*0x660bc5*/
 }
@@ -13668,7 +13668,7 @@ void* Gap2Recv_660BE0::UI_Create_734120_Create_660BE0() {
   result = (int *)this; /*0x660bea*/
   if ( dword_B04D88 == -1 )
   {
-    this->ptr_0 = (void *)dword_B04D68; /*0x660bf5*/
+    this->AbstractClass_v = (void *)dword_B04D68; /*0x660bf5*/
   }
   else
   {
@@ -14365,26 +14365,26 @@ if ( v2 == this->M160 )
   this->M160 = 0;
 if ( v2 == this->InfantryMutate )
   this->InfantryMutate = 0;
-if ( v2 == this->ptr_0 )
-  this->ptr_0 = 0;
-if ( v2 == this->ptr_0 )
-  this->ptr_0 = 0;
-if ( v2 == this->ptr_0 )
-  this->ptr_0 = 0;
-if ( v2 == *(unsigned int *)this->ptr_0 )
-  *(unsigned int *)this->ptr_0 = 0;
+if ( v2 == this->AALimit )
+  this->AALimit = 0;
+if ( v2 == this->AALimit )
+  this->AALimit = 0;
+if ( v2 == this->AALimit )
+  this->AALimit = 0;
+if ( v2 == *(unsigned int *)this->AALimit )
+  *(unsigned int *)this->AALimit = 0;
 if ( v2 == *&this->M16 )
   *&this->M16 = 0;
-if ( v2 == ((unsigned int)(this->ptr_0)) )
-  (this->ptr_0) = (unsigned int)(0);
+if ( v2 == ((unsigned int)(this->AALimit)) )
+  (this->AALimit) = (unsigned int)(0);
 if ( v2 == (unsigned int)((this->MissileSafetyAltitude) >> 32) )
   this->MissileSafetyAltitude = ((this->MissileSafetyAltitude) & 0xFFFFFFFFull) | (((unsigned long)(0) & 0xFFFFFFFFull) << 32);
-if ( v2 == this->ptr_0 )
-  this->ptr_0 = 0;
-if ( v2 == this->ptr_0 )
-  this->ptr_0 = 0;
-if ( v2 == this->ptr_0 )
-  this->ptr_0 = 0;
+if ( v2 == this->AALimit )
+  this->AALimit = 0;
+if ( v2 == this->AALimit )
+  this->AALimit = 0;
+if ( v2 == this->AALimit )
+  this->AALimit = 0;
 if ( v2 == this->u32_4 )
   this->u32_4 = 0;
 if ( v2 == this->u32_8 )
@@ -14395,8 +14395,8 @@ if ( v2 == this->M20 )
   this->M20 = 0;
 if ( v2 == this->u32_18 )
   this->M20 = 0;
-if ( v2 == this->ptr_0 )
-  this->ptr_0 = 0;
+if ( v2 == this->AALimit )
+  this->AALimit = 0;
 if ( v2 == this->u32_4 )
   this->u32_4 = 0;
 if ( v2 == this->u32_8 )
@@ -14407,90 +14407,90 @@ if ( v2 == this->M16 )
   this->M16 = 0;
 if ( v2 == this->M20 )
   this->M20 = 0;
-if ( v2 == ((unsigned int)(this->ptr_0)) )
-  (this->ptr_0) = (unsigned int)(0);
-if ( v2 == this->ptr_0 )
-  this->ptr_0 = 0;
-if ( v2 == this->ptr_0 )
-  this->ptr_0 = 0;
+if ( v2 == ((unsigned int)(this->AALimit)) )
+  (this->AALimit) = (unsigned int)(0);
+if ( v2 == this->AALimit )
+  this->AALimit = 0;
+if ( v2 == this->AALimit )
+  this->AALimit = 0;
 if ( v2 == this->u32_18 )
   this->u32_18 = 0;
 if ( v2 == this->M16 )
   this->M16 = 0;
-if ( v2 == this->ptr_0 )
-  this->ptr_0 = 0;
+if ( v2 == this->AALimit )
+  this->AALimit = 0;
 if ( v2 == this->M6132 )
   this->M6132 = 0;
-if ( v2 == this->ptr_0 )
-  this->ptr_0 = 0;
-if ( v2 == this->ptr_0 )
-  this->ptr_0 = 0;
-if ( v2 == this->ptr_0 )
-  this->ptr_0 = 0;
-if ( v2 == *&this->ptr_0 )
-  *&this->ptr_0 = 0;
-if ( v2 == *&this->ptr_0 )
-  *&this->ptr_0 = 0;
-if ( v2 == *&this->ptr_0 )
-  *&this->ptr_0 = 0;
-if ( v2 == *&this->ptr_0 )
-  *&this->ptr_0 = 0;
-if ( v2 == this->ptr_0 )
-  this->ptr_0 = 0;
-if ( v2 == ((unsigned int)(this->ptr_0)) )
-  (this->ptr_0) = (unsigned int)(0);
-if ( v2 == this->ptr_0 )
-  this->ptr_0 = 0;
-if ( v2 == this->ptr_0 )
-  this->ptr_0 = 0;
-if ( v2 == this->ptr_0 )
-  this->ptr_0 = 0;
+if ( v2 == this->AALimit )
+  this->AALimit = 0;
+if ( v2 == this->AALimit )
+  this->AALimit = 0;
+if ( v2 == this->AALimit )
+  this->AALimit = 0;
+if ( v2 == *&this->AALimit )
+  *&this->AALimit = 0;
+if ( v2 == *&this->AALimit )
+  *&this->AALimit = 0;
+if ( v2 == *&this->AALimit )
+  *&this->AALimit = 0;
+if ( v2 == *&this->AALimit )
+  *&this->AALimit = 0;
+if ( v2 == this->AALimit )
+  this->AALimit = 0;
+if ( v2 == ((unsigned int)(this->AALimit)) )
+  (this->AALimit) = (unsigned int)(0);
+if ( v2 == this->AALimit )
+  this->AALimit = 0;
+if ( v2 == this->AALimit )
+  this->AALimit = 0;
+if ( v2 == this->AALimit )
+  this->AALimit = 0;
 if ( v2 == this->u32_4 )
   this->u32_4 = 0;
-if ( v2 == this->ptr_0 )
-  this->ptr_0 = 0;
+if ( v2 == this->AALimit )
+  this->AALimit = 0;
 if ( v2 == this->u32_4 )
   this->u32_4 = 0;
 if ( v2 == this->u32_8 )
   this->u32_8 = 0;
-if ( v2 == this->ptr_0 )
-  this->ptr_0 = 0;
-if ( v2 == this->ptr_0 )
-  this->ptr_0 = 0;
-if ( v2 == ((unsigned int)(this->ptr_0)) )
-  this->ptr_0 = 0.0;
-if ( v2 == *&this->ptr_0 )
-  *&this->ptr_0 = 0;
-if ( v2 == this->ptr_0 )
-  this->ptr_0 = 0;
-if ( v2 == this->ptr_0 )
-  this->ptr_0 = 0;
-if ( v2 == this->ptr_0 )
-  this->ptr_0 = 0;
+if ( v2 == this->AALimit )
+  this->AALimit = 0;
+if ( v2 == this->AALimit )
+  this->AALimit = 0;
+if ( v2 == ((unsigned int)(this->AALimit)) )
+  this->AALimit = 0.0;
+if ( v2 == *&this->AALimit )
+  *&this->AALimit = 0;
+if ( v2 == this->AALimit )
+  this->AALimit = 0;
+if ( v2 == this->AALimit )
+  this->AALimit = 0;
+if ( v2 == this->AALimit )
+  this->AALimit = 0;
 if ( v2 == this->M5244 )
   this->M5244 = 0;
 if ( v2 == this->u32_48 )
   this->u32_48 = 0;
-if ( v2 == this->ptr_0 )
-  this->ptr_0 = 0;
-if ( v2 == this->ptr_0 )
-  this->ptr_0 = 0;
-if ( v2 == *(unsigned int *)this->ptr_0 )
-  *(unsigned int *)this->ptr_0 = 0;
-if ( v2 == ((unsigned int)(this->ptr_0)) )
-  (this->ptr_0) = (unsigned int)(0);
-if ( v2 == this->ptr_0 )
-  this->ptr_0 = 0;
-if ( v2 == this->ptr_0 )
-  this->ptr_0 = 0;
-if ( v2 == this->ptr_0 )
-  this->ptr_0 = 0;
-if ( v2 == this->ptr_0 )
-  this->ptr_0 = 0;
-if ( v2 == this->ptr_0 )
-  this->ptr_0 = 0;
-if ( v2 == this->ptr_0 )
-  this->ptr_0 = 0;
+if ( v2 == this->AALimit )
+  this->AALimit = 0;
+if ( v2 == this->AALimit )
+  this->AALimit = 0;
+if ( v2 == *(unsigned int *)this->AALimit )
+  *(unsigned int *)this->AALimit = 0;
+if ( v2 == ((unsigned int)(this->AALimit)) )
+  (this->AALimit) = (unsigned int)(0);
+if ( v2 == this->AALimit )
+  this->AALimit = 0;
+if ( v2 == this->AALimit )
+  this->AALimit = 0;
+if ( v2 == this->AALimit )
+  this->AALimit = 0;
+if ( v2 == this->AALimit )
+  this->AALimit = 0;
+if ( v2 == this->AALimit )
+  this->AALimit = 0;
+if ( v2 == this->AALimit )
+  this->AALimit = 0;
 if ( v2 == this->ThirdCrew[1] )
   this->ThirdCrew[1] = 0;
 if ( v2 == this->ThirdCrew[2] )
@@ -14511,44 +14511,44 @@ if ( v2 == this->IvanWarhead[0] )
   this->IvanWarhead[0] = 0;
 if ( v2 == this->M20 )
   this->IvanWarhead[0] = 0;
-if ( v2 == this->ptr_0 )
-  this->ptr_0 = 0;
-if ( v2 == this->ptr_0 )
-  this->ptr_0 = 0;
+if ( v2 == this->AALimit )
+  this->AALimit = 0;
+if ( v2 == this->AALimit )
+  this->AALimit = 0;
 if ( v2 == this->M16 )
   this->M16 = 0;
-if ( v2 == this->ptr_0 )
-  this->ptr_0 = 0;
+if ( v2 == this->AALimit )
+  this->AALimit = 0;
 if ( v2 == this->VeteranRatio )
   this->VeteranRatio = 0;
 if ( v2 == this->u32_8 )
   this->u32_8 = 0;
 if ( v2 == this->Behind )
   this->Behind = 0;
-if ( v2 == this->ptr_0 )
-  this->ptr_0 = 0;
-if ( v2 == this->ptr_0 )
-  this->ptr_0 = 0;
+if ( v2 == this->AALimit )
+  this->AALimit = 0;
+if ( v2 == this->AALimit )
+  this->AALimit = 0;
 if ( v2 == this->u32_C )
   this->u32_C = 0;
-if ( v2 == this->ptr_0 )
-  this->ptr_0 = 0;
+if ( v2 == this->AALimit )
+  this->AALimit = 0;
 if ( v2 == this->u32_4 )
   this->u32_4 = 0;
 if ( v2 == this->u32_8 )
   this->u32_8 = 0;
 if ( v2 == this->u32_C )
   this->u32_C = 0;
-if ( v2 == this->ptr_0 )
-  this->ptr_0 = 0;
+if ( v2 == this->AALimit )
+  this->AALimit = 0;
 if ( v2 == this->u32_4 )
   this->u32_4 = 0;
 if ( v2 == this->u32_8 )
   this->u32_8 = 0;
 if ( v2 == this->u32_C )
   this->u32_C = 0;
-if ( v2 == this->ptr_0 )
-  this->ptr_0 = 0;
+if ( v2 == this->AALimit )
+  this->AALimit = 0;
 if ( v2 == this->u32_4 )
   this->u32_4 = 0;
 if ( v2 == this->u32_C )
@@ -14561,8 +14561,8 @@ if ( v2 == this->FlashFrameTime )
   this->FlashFrameTime = 0;
 if ( v2 == this->M6068 )
   this->M6068 = 0;
-if ( v2 == this->ptr_0 )
-  this->ptr_0 = 0;
+if ( v2 == this->AALimit )
+  this->AALimit = 0;
 if ( v2 == this->M6196 )
   this->M6196 = 0;
 v3 = this->RadarEventColorSpeed[0];
@@ -14595,33 +14595,33 @@ if ( v8 != -1 )
         ++v8;
     }
 }
-OccupyDamageMultiplier = this->ptr_0;
+OccupyDamageMultiplier = this->AALimit;
 v193 = v2;
-v12 = (*(int (**)(float *, int *))(((unsigned int)(OccupyDamageMultiplier)) + 16))(&this->ptr_0, &v193);
+v12 = (*(int (**)(float *, int *))(((unsigned int)(OccupyDamageMultiplier)) + 16))(&this->AALimit, &v193);
 if ( v12 != -1 )
 {
-    BunkerROFMultiplier = this->ptr_0;
+    BunkerROFMultiplier = this->AALimit;
     if ( v12 < ((int)(BunkerROFMultiplier)) )
     {
       v14 = ((unsigned int)(BunkerROFMultiplier)) - 1;
-      for ( this->ptr_0 = v14;
-      v12 < ((int)(this->ptr_0));
-      *(unsigned int *)(((unsigned int)(this->ptr_0)) + 4 * v12 - 4) = *(unsigned int *)(((unsigned int)(this->ptr_0)) + 4 * v12) )
+      for ( this->AALimit = v14;
+      v12 < ((int)(this->AALimit));
+      *(unsigned int *)(((unsigned int)(this->AALimit)) + 4 * v12 - 4) = *(unsigned int *)(((unsigned int)(this->AALimit)) + 4 * v12) )
       {
         ++v12;
       }
     }
 }
-Engineer = this->ptr_0;
+Engineer = this->AALimit;
 v193 = v2;
-v16 = (*(int (**)(int *, int *))(Engineer + 16))(&this->ptr_0, &v193);
+v16 = (*(int (**)(int *, int *))(Engineer + 16))(&this->AALimit, &v193);
 if ( v16 != -1 )
 {
-    ThirdCrew = this->ptr_0;
+    ThirdCrew = this->AALimit;
     if ( v16 < ThirdCrew )
     {
       v18 = ThirdCrew - 1;
-      for ( this->ptr_0 = v18; v16 < this->ptr_0; *(unsigned int *)(this->ptr_0 + 4 * v16 - 4) = *(unsigned int *)(this->ptr_0 + 4 * v16) )
+      for ( this->AALimit = v18; v16 < this->AALimit; *(unsigned int *)(this->AALimit + 4 * v16 - 4) = *(unsigned int *)(this->AALimit + 4 * v16) )
         ++v16;
     }
 }
@@ -14729,16 +14729,16 @@ if ( v40 != -1 )
       }
     }
 }
-MinMoney = this->ptr_0;
+MinMoney = this->AALimit;
 v193 = v2;
-v44 = (*(int (**)(int *, int *))(MinMoney + 16))(&this->ptr_0, &v193);
+v44 = (*(int (**)(int *, int *))(MinMoney + 16))(&this->AALimit, &v193);
 if ( v44 != -1 )
 {
-    MinUnitCount = this->ptr_0;
+    MinUnitCount = this->AALimit;
     if ( v44 < MinUnitCount )
     {
       v46 = MinUnitCount - 1;
-      for ( this->ptr_0 = v46; v44 < this->ptr_0; *(unsigned int *)(this->ptr_0 + 4 * v44 - 4) = *(unsigned int *)(this->ptr_0 + 4 * v44) )
+      for ( this->AALimit = v46; v44 < this->AALimit; *(unsigned int *)(this->AALimit + 4 * v44 - 4) = *(unsigned int *)(this->AALimit + 4 * v44) )
         ++v44;
     }
 }
@@ -14759,52 +14759,52 @@ if ( v48 != -1 )
       }
     }
 }
-AirstripRatio = this->ptr_0;
+AirstripRatio = this->AALimit;
 v193 = v2;
-v52 = (*(int (**)(int64_t *, int *))(AirstripRatio + 16))(&this->ptr_0, &v193);
+v52 = (*(int (**)(int64_t *, int *))(AirstripRatio + 16))(&this->AALimit, &v193);
 if ( v52 != -1 )
 {
-    HelipadRatio = this->ptr_0;
+    HelipadRatio = this->AALimit;
     if ( v52 < HelipadRatio )
     {
       v54 = HelipadRatio - 1;
-      for ( ((unsigned int)(this->ptr_0)) = v54;
-      v52 < ((int)(this->ptr_0));
-      *(unsigned int *)(((unsigned int)((uint64_t)(this->ptr_0) >> 32)) + 4 * v52 - 4) = *(unsigned int *)(((unsigned int)((uint64_t)(this->ptr_0) >> 32)) + 4 * v52) )
+      for ( ((unsigned int)(this->AALimit)) = v54;
+      v52 < ((int)(this->AALimit));
+      *(unsigned int *)(((unsigned int)((uint64_t)(this->AALimit) >> 32)) + 4 * v52 - 4) = *(unsigned int *)(((unsigned int)((uint64_t)(this->AALimit) >> 32)) + 4 * v52) )
       {
         ++v52;
       }
     }
 }
-v55 = *(unsigned int *)this->ptr_0;
+v55 = *(unsigned int *)this->AALimit;
 v193 = v2;
-v56 = (*(int (**)(unsigned char *, int *))(v55 + 16))(this->ptr_0, &v193);
+v56 = (*(int (**)(unsigned char *, int *))(v55 + 16))(this->AALimit, &v193);
 if ( v56 != -1 )
 {
-    v57 = *(unsigned int *)this->ptr_0;
+    v57 = *(unsigned int *)this->AALimit;
     if ( v56 < v57 )
     {
       v58 = v57 - 1;
-      for ( *(unsigned int *)this->ptr_0 = v58;
-      v56 < *(unsigned int *)this->ptr_0;
-      *(unsigned int *)(((unsigned int)(this->ptr_0)) + 4 * v56 - 4) = *(unsigned int *)(((unsigned int)(this->ptr_0)) + 4 * v56) )
+      for ( *(unsigned int *)this->AALimit = v58;
+      v56 < *(unsigned int *)this->AALimit;
+      *(unsigned int *)(((unsigned int)(this->AALimit)) + 4 * v56 - 4) = *(unsigned int *)(((unsigned int)(this->AALimit)) + 4 * v56) )
       {
         ++v56;
       }
     }
 }
-AALimit = this->ptr_0;
+AALimit = this->AALimit;
 v193 = v2;
-v60 = (*(int (**)(int *, int *))(AALimit + 16))(&this->ptr_0, &v193);
+v60 = (*(int (**)(int *, int *))(AALimit + 16))(&this->AALimit, &v193);
 if ( v60 != -1 )
 {
-    DefenseLimit = this->ptr_0;
+    DefenseLimit = this->AALimit;
     if ( v60 < DefenseLimit )
     {
       v62 = DefenseLimit - 1;
-      for ( this->ptr_0 = v62;
-      v60 < this->ptr_0;
-      *(unsigned int *)(*(unsigned int *)this->ptr_0 + 4 * v60 - 4) = *(unsigned int *)(*(unsigned int *)this->ptr_0 + 4 * v60) )
+      for ( this->AALimit = v62;
+      v60 < this->AALimit;
+      *(unsigned int *)(*(unsigned int *)this->AALimit + 4 * v60 - 4) = *(unsigned int *)(*(unsigned int *)this->AALimit + 4 * v60) )
       {
         ++v60;
       }
@@ -14866,41 +14866,41 @@ v193 = v2;
 v76 = (*(int (**)(int64_t *, int *))(GDIWallDefense + 16))(&this->CHRONOSK_SHP, &v193);
 if ( v76 != -1 )
 {
-    NodBaseDefenseCoefficient = this->ptr_0;
+    NodBaseDefenseCoefficient = this->AALimit;
     if ( v76 < NodBaseDefenseCoefficient )
     {
       v78 = NodBaseDefenseCoefficient - 1;
-      for ( ((unsigned int)(this->ptr_0)) = v78;
-      v76 < ((int)(this->ptr_0));
+      for ( ((unsigned int)(this->AALimit)) = v78;
+      v76 < ((int)(this->AALimit));
       *(unsigned int *)((unsigned int)((this->CHRONOSK_SHP) >> 32) + 4 * v76 - 4) = *(unsigned int *)((unsigned int)((this->CHRONOSK_SHP) >> 32) + 4 * v76) )
       {
         ++v76;
       }
     }
 }
-GDIBaseDefenseCoefficient_high = ((unsigned int)((uint64_t)(this->ptr_0) >> 32));
+GDIBaseDefenseCoefficient_high = ((unsigned int)((uint64_t)(this->AALimit) >> 32));
 v193 = v2;
-v80 = (*(int (**)(char *, int *))(GDIBaseDefenseCoefficient_high + 16))this->ptr_0 + 4, &v193);
+v80 = (*(int (**)(char *, int *))(GDIBaseDefenseCoefficient_high + 16))this->AALimit + 4, &v193);
 if ( v80 != -1 )
 {
     v81 = this->u32_4;
     if ( v80 < v81 )
     {
       v82 = v81 - 1;
-      for ( this->u32_4 = v82; v80 < this->u32_4; *(unsigned int *)(this->ptr_0 + 4 * v80 - 4) = *(unsigned int *)(this->ptr_0 + 4 * v80) )
+      for ( this->u32_4 = v82; v80 < this->u32_4; *(unsigned int *)(this->AALimit + 4 * v80 - 4) = *(unsigned int *)(this->AALimit + 4 * v80) )
         ++v80;
     }
 }
-v83 = this->ptr_0;
+v83 = this->AALimit;
 v193 = v2;
-v84 = (*(int (**)(int *, int *))(v83 + 16))(this->ptr_0, &v193);
+v84 = (*(int (**)(int *, int *))(v83 + 16))(this->AALimit, &v193);
 if ( v84 != -1 )
 {
-    v85 = this->ptr_0;
+    v85 = this->AALimit;
     if ( v84 < v85 )
     {
       v86 = v85 - 1;
-      for ( this->ptr_0 = v86; v84 < this->ptr_0; *(unsigned int *)(this->u32_4 + 4 * v84 - 4) = *(unsigned int *)(this->u32_4 + 4 * v84) )
+      for ( this->AALimit = v86; v84 < this->AALimit; *(unsigned int *)(this->u32_4 + 4 * v84 - 4) = *(unsigned int *)(this->u32_4 + 4 * v84) )
         ++v84;
     }
 }
@@ -14913,7 +14913,7 @@ if ( v88 != -1 )
     if ( v88 < v89 )
     {
       v90 = v89 - 1;
-      for ( this->u32_C = v90; v88 < this->u32_C; *(unsigned int *)(this->ptr_0 + 4 * v88 - 4) = *(unsigned int *)(this->ptr_0 + 4 * v88) )
+      for ( this->u32_C = v90; v88 < this->u32_C; *(unsigned int *)(this->AALimit + 4 * v88 - 4) = *(unsigned int *)(this->AALimit + 4 * v88) )
         ++v88;
     }
 }
@@ -14922,24 +14922,24 @@ v193 = v2;
 v92 = (*(int (**)(int *, int *))(v91 + 16))(&this->u32_8, &v193);
 if ( v92 != -1 )
 {
-    MoveFlash = this->ptr_0;
+    MoveFlash = this->AALimit;
     if ( v92 < MoveFlash )
     {
       v94 = MoveFlash - 1;
-      for ( this->ptr_0 = v94; v92 < this->ptr_0; *(unsigned int *)(this->u32_C + 4 * v92 - 4) = *(unsigned int *)(this->u32_C + 4 * v92) )
+      for ( this->AALimit = v94; v92 < this->AALimit; *(unsigned int *)(this->u32_C + 4 * v92 - 4) = *(unsigned int *)(this->u32_C + 4 * v92) )
         ++v92;
     }
 }
-v95 = this->ptr_0;
+v95 = this->AALimit;
 v193 = v2;
-v96 = (*(int (**)(int *, int *))(v95 + 16))(this->ptr_0, &v193);
+v96 = (*(int (**)(int *, int *))(v95 + 16))(this->AALimit, &v193);
 if ( v96 != -1 )
 {
-    SmallFire = this->ptr_0;
+    SmallFire = this->AALimit;
     if ( v96 < SmallFire )
     {
       v98 = SmallFire - 1;
-      for ( this->ptr_0 = v98; v96 < this->ptr_0; *(unsigned int *)(this->u32_4 + 4 * v96 - 4) = *(unsigned int *)(this->u32_4 + 4 * v96) )
+      for ( this->AALimit = v98; v96 < this->AALimit; *(unsigned int *)(this->u32_4 + 4 * v96 - 4) = *(unsigned int *)(this->u32_4 + 4 * v96) )
         ++v96;
     }
 }
@@ -14954,23 +14954,23 @@ if ( v100 != -1 )
       v102 = v101 - 1;
       for ( *(unsigned int *)&this->TargetSpecialThreatCoefficientDefault = v102;
       v100 < *(unsigned int *)&this->TargetSpecialThreatCoefficientDefault;
-      *(unsigned int *)(this->ptr_0 + 4 * v100 - 4) = *(unsigned int *)(this->ptr_0 + 4 * v100) )
+      *(unsigned int *)(this->AALimit + 4 * v100 - 4) = *(unsigned int *)(this->AALimit + 4 * v100) )
       {
         ++v100;
       }
     }
 }
-v103 = this->ptr_0;
+v103 = this->AALimit;
 v193 = v2;
-v104 = (*(int (**)(int *, int *))(v103 + 16))(this->ptr_0, &v193);
+v104 = (*(int (**)(int *, int *))(v103 + 16))(this->AALimit, &v193);
 if ( v104 != -1 )
 {
-    v105 = this->ptr_0;
+    v105 = this->AALimit;
     if ( v104 < v105 )
     {
       v106 = v105 - 1;
-      for ( this->ptr_0 = v106;
-      v104 < this->ptr_0;
+      for ( this->AALimit = v106;
+      v104 < this->AALimit;
       *(unsigned int *)(this->u32_4 + 4 * v104 - 4) = *(unsigned int *)(this->u32_4 + 4 * v104) )
       {
         ++v104;
@@ -15016,12 +15016,12 @@ v193 = v2;
 v116 = (*(int (**)(int *, int *))(v115 + 16))(this->WarRatio, &v193);
 if ( v116 != -1 )
 {
-    v117 = this->ptr_0;
+    v117 = this->AALimit;
     if ( v116 < v117 )
     {
       v118 = v117 - 1;
-      for ( this->ptr_0 = v118;
-      v116 < this->ptr_0;
+      for ( this->AALimit = v118;
+      v116 < this->AALimit;
       *(unsigned int *)(this->WarRatio[1] + 4 * v116 - 4) = *(unsigned int *)(this->WarRatio[1] + 4 * v116) )
       {
         ++v116;
@@ -15039,7 +15039,7 @@ if ( v120 != -1 )
       v122 = v121 - 1;
       for ( this->u32_C = v122;
       v120 < this->u32_C;
-      *(unsigned int *)(this->ptr_0 + 4 * v120 - 4) = *(unsigned int *)(this->ptr_0 + 4 * v120) )
+      *(unsigned int *)(this->AALimit + 4 * v120 - 4) = *(unsigned int *)(this->AALimit + 4 * v120) )
       {
         ++v120;
       }
@@ -15062,17 +15062,17 @@ if ( v124 != -1 )
       }
     }
 }
-AlliedDisguise = this->ptr_0;
+AlliedDisguise = this->AALimit;
 v193 = v2;
-v128 = (*(int (**)(int *, int *))(AlliedDisguise + 16))(&this->ptr_0, &v193);
+v128 = (*(int (**)(int *, int *))(AlliedDisguise + 16))(&this->AALimit, &v193);
 if ( v128 != -1 )
 {
-    SpyMoneyStealPercent = this->ptr_0;
+    SpyMoneyStealPercent = this->AALimit;
     if ( v128 < ((int)(SpyMoneyStealPercent)) )
     {
       v130 = ((unsigned int)(SpyMoneyStealPercent)) - 1;
-      for ( this->ptr_0 = v130;
-      v128 < ((int)(this->ptr_0));
+      for ( this->AALimit = v130;
+      v128 < ((int)(this->AALimit));
       *(unsigned int *)(this->BaseBias + 4 * v128 - 4) = *(unsigned int *)(this->BaseBias + 4 * v128) )
       {
         ++v128;
@@ -15164,9 +15164,9 @@ if ( v148 != -1 )
       }
     }
 }
-AISuperDefenseDistance = this->ptr_0;
+AISuperDefenseDistance = this->AALimit;
 v193 = v2;
-v152 = (*(int (**)(float *, int *))(((unsigned int)(AISuperDefenseDistance)) + 16))(&this->ptr_0, &v193);
+v152 = (*(int (**)(float *, int *))(((unsigned int)(AISuperDefenseDistance)) + 16))(&this->AALimit, &v193);
 if ( v152 != -1 )
 {
     v153 = this->u32_C;
@@ -15175,7 +15175,7 @@ if ( v152 != -1 )
       v154 = v153 - 1;
       for ( this->u32_C = v154;
       v152 < this->u32_C;
-      *(unsigned int *)(this->ptr_0 + 4 * v152 - 4) = *(unsigned int *)(this->ptr_0 + 4 * v152) )
+      *(unsigned int *)(this->AALimit + 4 * v152 - 4) = *(unsigned int *)(this->AALimit + 4 * v152) )
       {
         ++v152;
       }
@@ -15237,29 +15237,29 @@ if ( v166 != -1 )
       }
     }
 }
-DrainMoneyAmount = this->ptr_0;
+DrainMoneyAmount = this->AALimit;
 v193 = v2;
-v170 = (*(int (**)(int *, int *))(DrainMoneyAmount + 16))(&this->ptr_0, &v193);
+v170 = (*(int (**)(int *, int *))(DrainMoneyAmount + 16))(&this->AALimit, &v193);
 if ( v170 != -1 )
-  DynamicVector::RemoveAt(&this->ptr_0, v170);
-ChronoBeam = this->ptr_0;
+  DynamicVector::RemoveAt(&this->AALimit, v170);
+ChronoBeam = this->AALimit;
 v193 = v2;
-v172 = (*(int (**)(int *, int *))(ChronoBeam + 16))(&this->ptr_0, &v193);
+v172 = (*(int (**)(int *, int *))(ChronoBeam + 16))(&this->AALimit, &v193);
 if ( v172 != -1 )
 {
-    ChronoSparkle1 = this->ptr_0;
+    ChronoSparkle1 = this->AALimit;
     if ( v172 < ChronoSparkle1 )
     {
       v174 = ChronoSparkle1 - 1;
-      for ( this->ptr_0 = v174; v172 < this->ptr_0; *(unsigned int *)(this->ptr_0 + 4 * v172 - 4) = *(unsigned int *)(this->ptr_0 + 4 * v172) )
+      for ( this->AALimit = v174; v172 < this->AALimit; *(unsigned int *)(this->AALimit + 4 * v172 - 4) = *(unsigned int *)(this->AALimit + 4 * v172) )
         ++v172;
     }
 }
-DMislWarhead = this->ptr_0;
+DMislWarhead = this->AALimit;
 v193 = v2;
-v176 = (*(int (**)(int *, int *))(DMislWarhead + 16))(&this->ptr_0, &v193);
+v176 = (*(int (**)(int *, int *))(DMislWarhead + 16))(&this->AALimit, &v193);
 if ( v176 != -1 )
-  DynamicVector::RemoveAt2(&this->ptr_0, v176);
+  DynamicVector::RemoveAt2(&this->AALimit, v176);
 PsychicRevealRadius = this->M3132;
 v193 = v2;
 v178 = (*(int (**)(int *, int *))(PsychicRevealRadius + 16))(&this->M3132, &v193);
@@ -15269,40 +15269,40 @@ if ( v178 != -1 )
     if ( v178 < v179 )
     {
       v180 = v179 - 1;
-      for ( this->u32_4 = v180; v178 < this->u32_4; *(unsigned int *)(this->ptr_0 + 4 * v178 - 4) = *(unsigned int *)(this->ptr_0 + 4 * v178) )
+      for ( this->u32_4 = v180; v178 < this->u32_4; *(unsigned int *)(this->AALimit + 4 * v178 - 4) = *(unsigned int *)(this->AALimit + 4 * v178) )
         ++v178;
     }
 }
-DefaultFireStreamSystem = this->ptr_0;
+DefaultFireStreamSystem = this->AALimit;
 v193 = v2;
-v182 = (*(int (**)(int *, int *))(DefaultFireStreamSystem + 16))(&this->ptr_0, &v193);
+v182 = (*(int (**)(int *, int *))(DefaultFireStreamSystem + 16))(&this->AALimit, &v193);
 if ( v182 != -1 )
-  DynamicVector::RemoveAt2(&this->ptr_0, v182);
-TargetDistanceCoefficientDefault_high = ((unsigned int)((uint64_t)(this->ptr_0) >> 32));
+  DynamicVector::RemoveAt2(&this->AALimit, v182);
+TargetDistanceCoefficientDefault_high = ((unsigned int)((uint64_t)(this->AALimit) >> 32));
 v193 = v2;
-v184 = (*(int (**)(char *, int *))(TargetDistanceCoefficientDefault_high + 16))this->ptr_0 + 4,
+v184 = (*(int (**)(char *, int *))(TargetDistanceCoefficientDefault_high + 16))this->AALimit + 4,
            &v193);
 if ( v184 != -1 )
-  DynamicVector::RemoveAt2(&this->ptr_0 + 1, v184);
-TurboBoost_high = ((unsigned int)((uint64_t)(this->ptr_0) >> 32));
+  DynamicVector::RemoveAt2(&this->AALimit + 1, v184);
+TurboBoost_high = ((unsigned int)((uint64_t)(this->AALimit) >> 32));
 v193 = v2;
-v186 = (*(int (**)(char *, int *))(TurboBoost_high + 16))this->ptr_0 + 4, &v193);
+v186 = (*(int (**)(char *, int *))(TurboBoost_high + 16))this->AALimit + 4, &v193);
 if ( v186 != -1 )
 {
-    AttackDelay_high = ((unsigned int)((uint64_t)(this->ptr_0) >> 32));
+    AttackDelay_high = ((unsigned int)((uint64_t)(this->AALimit) >> 32));
     if ( v186 < AttackDelay_high )
     {
       v188 = AttackDelay_high - 1;
-      for ( ((unsigned int)((uint64_t)(this->ptr_0) >> 32)) = v188;
-      v186 < (int)((this->ptr_0) >> 32);
-      *(unsigned int *)(((unsigned int)(this->ptr_0)) + 4 * v186 - 4) = *(unsigned int *)(((unsigned int)(this->ptr_0)) + 4 * v186) )
+      for ( ((unsigned int)((uint64_t)(this->AALimit) >> 32)) = v188;
+      v186 < (int)((this->AALimit) >> 32);
+      *(unsigned int *)(((unsigned int)(this->AALimit)) + 4 * v186 - 4) = *(unsigned int *)(((unsigned int)(this->AALimit)) + 4 * v186) )
       {
         ++v186;
       }
     }
 }
-DominatorFirstAnim = this->ptr_0;
-p_DominatorFirstAnim = &this->ptr_0;
+DominatorFirstAnim = this->AALimit;
+p_DominatorFirstAnim = &this->AALimit;
 v193 = v2;
 result = (*(int (**)(int *, int *))(DominatorFirstAnim + 16))(p_DominatorFirstAnim, &v193);
 if ( result != -1 )
@@ -15784,7 +15784,7 @@ char Gap2Recv_68C260::DynamicVector_PushBack(void* aP1) {
     }
   }
   uniqueId = this->uniqueId; /*0x68c295*/
-  ptr_0 = this->ptr_4; /*0x68c298*/
+  ptr_0 = this->M13; /*0x68c298*/
   this->uniqueId = uniqueId + 1; /*0x68c29e*/
   ptr_0[uniqueId] = *aP1; /*0x68c2a8*/
   return 1; /*0x68c291*/
@@ -16798,7 +16798,7 @@ void Gap2Recv_6990A0::SaveConfigWOL() {
   INIClass::SetHouseName(CCINIClass_INI_RA2MD, aMultiplayer, aSide, (void *)this->targetingTimer[1]); /*0x69917e*/
   INIClass::SetInt(CCINIClass_INI_RA2MD, aMultiplayer, aSideex, this->targetingTimer[2], 0); /*0x69919b*/
   int ptr_4; // eax
-  ptr_4 = this->ptr_4; /*0x6991a0*/
+  ptr_4 = this->ambientParticles; /*0x6991a0*/
   if ( ptr_4 ) /*0x6991a7*/
     INIClass::SetInt(CCINIClass_INI_RA2MD, aMultiplayer, g_INI_Key_GameMode, ptr_4->DiskLaserClass_field_0x28, 0); /*0x6991ad*/
   else
@@ -17143,10 +17143,10 @@ int Gap2Recv_6A4F20::UI_Init(int a2) {
   do /*0x6a4fdf*/
   {
     *(unsigned int *)v5 = 0; /*0x6a4fab*/
-    this->q1548 = 0; /*0x6a4fad*/
+    this->u32_1548 = 0; /*0x6a4fad*/
     this->dword_A8ED84 = dword_A8ED84; /*0x6a4fc2*/
-    this->q1554 = 0; /*0x6a4fc5*/
-    this->q1558 = 0; /*0x6a4fc9*/
+    this->u32_1554 = 0; /*0x6a4fc5*/
+    this->u32_1558 = 0; /*0x6a4fc9*/
     this->q018 = 1; /*0x6a4fcc*/
     Array::ForEach(v5 + 88, 52, 75, TabClass::drawTabBackground); /*0x6a4fd3*/
     v5 += 3988; /*0x6a4fd8*/
@@ -17340,7 +17340,7 @@ void Gap2Recv_6BAFA0::Render_Load_6BAFA0() {
   if ( (this->abstractFlags) != 1 ) /*0x6bafa8*/
   {
     int pN; // esi
-    pN = (int)this->ptr_8; /*0x6bafb0*/
+    pN = (int)this->M8; /*0x6bafb0*/
     unsigned int *ptr_0 = this->v5; // ebp /*0x6bafb3*/
     char *v4; // edi
     v4 = (char *)this->v4 + 1; /*0x6bafbc*/
@@ -17350,7 +17350,7 @@ void Gap2Recv_6BAFA0::Render_Load_6BAFA0() {
     void *v5; // edi
     v5 = (void *)operator new(8 * pN); /*0x6bafd3*/
     unsigned int v6; // edx
-    v6 = 4 * (int)this->ptr_8; /*0x6bafd8*/
+    v6 = 4 * (int)this->M8; /*0x6bafd8*/
     this->v5 = v5; /*0x6bafdf*/
     memset(v5, 0, v6); /*0x6bafe4*/
     if ( pN > 0 ) /*0x6bafef*/
@@ -17365,7 +17365,7 @@ void Gap2Recv_6BAFA0::Render_Load_6BAFA0() {
           do /*0x6bb027*/
           {
             int v10; // edx
-            v10 = ((int (__thiscall *)(int))this->nextArrayIndex)(v9) & ((1 << (int)this->ptr_C) - 1); /*0x6bb00b*/
+            v10 = ((int (__thiscall *)(int))this->nextArrayIndex)(v9) & ((1 << (int)this->M12) - 1); /*0x6bb00b*/
             int v11; // ecx
             v11 = *((unsigned int *)this->ptr_0 + v10); /*0x6bb00f*/
             *((unsigned int *)this->ptr_0 + v10) = v9; /*0x6bb015*/
@@ -17390,7 +17390,7 @@ namespace gamemd {
 int Gap2Recv_6BB990::TopLevelExceptionFilter(void* ExceptionInfo, int a3, int a4, int a5) {
 
   DWORD v9; // [esp-E40h] [ebp-E40h] BYREF
-  v9 = *(unsigned int *)this->ptr_0; /*0x4c8fe0*/
+  v9 = *(unsigned int *)this->AbstractClass_v; /*0x4c8fe0*/
   Debug::Log(); /*0x4c8fe9*/
   WinMain_Write_53E6B0(); /*0x4c8ff1*/
   if ( !++dword_820E5C ) /*0x4c9001*/
@@ -17541,11 +17541,11 @@ char Gap2Recv_6C8870::Audio_Read_6C8870() {
   if ( v5 >= ptr_0 ) /*0x6c889d*/
     return 0; /*0x6c88a0*/
   v6 = (void *)operator new(32776 * v5); /*0x6c88b1*/
-  ptr_4 = this->ptr_8; /*0x6c88b6*/
+  ptr_4 = this->M4; /*0x6c88b6*/
   v8 = v6; /*0x6c88be*/
   if ( ptr_4 ) /*0x6c88c2*/
     memcpy(v6, ptr_4, 32776 * (int)this->ptr_0); /*0x6c88d9*/
-  operator delete((void *)(this->ptr_8)); /*0x6c88e7*/
+  operator delete((void *)(this->M4)); /*0x6c88e7*/
   this->ptr_2 = v8; /*0x6c88f3*/
   this->ptr_1 = (void *)v5; /*0x6c88f6*/
   return 1; /*0x6c8882*/
@@ -17598,7 +17598,7 @@ int Gap2Recv_6C9F10::ParseMovieSubtitles(char* Source) {
     {
       v3 = Render_Parse_6CA940(1024); /*0x6c9f45*/
       ++this->M2052; /*0x6c9f48*/
-      v4 = WideString::Trim(&this->ptr_8); /*0x6c9f55*/
+      v4 = WideString::Trim(&this->M2052); /*0x6c9f55*/
       if ( wcslen(v4) ) /*0x6c9f58*/
       {
         if ( *v4 != 59 ) /*0x6c9f68*/
@@ -17818,7 +17818,7 @@ int Gap2Recv_6D3290::DrawBuildingAnimFrame(AbstractClass * aP1, int * a2, char a
     v6 = &this->Tactical_E4; /*0x6d32fc*/
     do /*0x6d33bb*/
     {
-      v22 = *(unsigned int *)(this->u32_108; /*0x6d3307*/
+      v22 = *(unsigned int *)(this->q108; /*0x6d3307*/
       v18 = ((((*((signed short *)(((unsigned char *)&(v22)) + 2))) << 8) + 128) / 256) << 8; /*0x6d334b*/
       v17 = ((((int16_t)v22 << 8) + 128) / 256) << 8; /*0x6d3358*/
       v19 = 0; /*0x6d335c*/
@@ -19319,7 +19319,7 @@ char Gap2Recv_6F25E0::Team_Helper_6F25E0(void* a2) {
     }
   }
   uniqueId = this->uniqueId; /*0x6f2615*/
-  ptr_0 = this->ptr_4; /*0x6f2618*/
+  ptr_0 = this->M13; /*0x6f2618*/
   this->uniqueId = uniqueId + 1; /*0x6f261e*/
   ptr_0[2 * uniqueId] = *a2; /*0x6f2627*/
   ptr_0[2 * uniqueId + 1] = a2[1]; /*0x6f262e*/
@@ -19376,7 +19376,7 @@ void* Gap2Recv_6F2780::Team_Helper_6F2780(void* aP1) {
     return &this->ptr_0; /*0x6f27bd*/
   do /*0x6f27d1*/
   {
-    *((unsigned int *)this->ptr_4 + v6) = *(unsigned int *)(aP1[1] + 4 * v6); /*0x6f27c8*/
+    *((unsigned int *)this->M13 + v6) = *(unsigned int *)(aP1[1] + 4 * v6); /*0x6f27c8*/
     ++v6; /*0x6f27ce*/
   }
   while ( v6 < (int)this->ptr_8 ); /*0x6f27d1*/
@@ -20188,19 +20188,19 @@ char Gap2Recv_710750::Object_Helper_710750(int a2) {
 
   if ( a2 < 0 ) /*0x71075c*/
     return 0; /*0x71075c*/
-  v3 = (char *)operator new(8 * (a2 + this->ptr_8)); /*0x710770*/
+  v3 = (char *)operator new(8 * (a2 + this->M16)); /*0x710770*/
   if ( !v3 ) /*0x710777*/
     return 0; /*0x7107d0*/
-  for ( i = 0; i < this->u32_4; *(unsigned int *)&v3[v5 + 4] = v6[1] ) /*0x710785*/
+  for ( i = 0; i < this->M8; *(unsigned int *)&v3[v5 + 4] = v6[1] ) /*0x710785*/
   {
     v5 = 8 * i; /*0x710789*/
     v6 = (unsigned int *)(*&this->NeedsSaveOrLink * i++); /*0x710792*/
     *(unsigned int *)&v3[v5] = *v6; /*0x710797*/
   }
   operator delete((void *)(*(void **)this)); /*0x7107ab*/
-  v7 = a2 + this->ptr_8; /*0x7107b6*/
+  v7 = a2 + this->M16; /*0x7107b6*/
   *(unsigned int *)this = v3; /*0x7107b8*/
-  this->ptr_8 = v7; /*0x7107ba*/
+  this->M16 = v7; /*0x7107ba*/
   this->uniqueId = 0; /*0x7107bd*/
   return 1; /*0x7107c4*/
 }
@@ -20451,7 +20451,7 @@ void Gap2Recv_722F00::RebuildBuildingOccupancy() {
   int16_t *v33; // [esp+1Ch] [ebp-8h]
   float v34; // [esp+20h] [ebp-4h]
 
-  v2 = (int *)this->ParticleSystemClass_110; /*0x722f09*/
+  v2 = (int *)this->ptr_110; /*0x722f09*/
   if ( v2 && *v2 && this->fallRate > 0.00001 ) /*0x722f36*/
   {
     (*((unsigned short *)&(v3))) = Math::RoundToInt((double)*v2 * this->fallRate); /*0x722f46*/
@@ -20468,12 +20468,12 @@ void Gap2Recv_722F00::RebuildBuildingOccupancy() {
       v4 = 50; /*0x722f55*/
     }
     v5 = Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink); /*0x722f75*/
-    v6 = *this->ptr_4); /*0x722f88*/
+    v6 = *this->isInLogic); /*0x722f88*/
     v7 = (int)abs32(v5) % v4 + 1; /*0x722f8c*/
     v31 = v7; /*0x722f8d*/
     if ( v6 > Object::ComputeAllocationSize() - 2 * v7 ) /*0x722f9d*/
       BuildingClass::RebuildOccupancy2((BuildingClass *)this); /*0x722fa1*/
-    v8 = (Heap *)this->ParticleSystemClass_110; /*0x722fa6*/
+    v8 = (Heap *)this->ptr_110; /*0x722fa6*/
     v30 = 0; /*0x722fac*/
     if ( *v8 ) /*0x722fb4*/
     {
@@ -20507,16 +20507,16 @@ void Gap2Recv_722F00::RebuildBuildingOccupancy() {
             }
             else
             {
-              *(unsigned int *)(this->ptr_118 + 8 * this->AbstractClass_10C) = *(unsigned int *)v9; /*0x72303c*/
-              *(float *)(this->ptr_118 + 8 * this->AbstractClass_10C + 4) = (float)(int)(*(unsigned int *)&((unsigned int *)&stru_A8EB00)[416] /*0x72307c*/
+              *(unsigned int *)(this->ptr_118 + 8 * this->u32_10C) = *(unsigned int *)v9; /*0x72303c*/
+              *(float *)(this->ptr_118 + 8 * this->u32_10C + 4) = (float)(int)(*(unsigned int *)&((unsigned int *)&stru_A8EB00)[416] /*0x72307c*/
               + abs32(
                                                                                                    Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink)
               % 50));
               *(unsigned char *)(Cell::PosToIndex((Cell *)v9) + this->ptr_114) = 1; /*0x72308b*/
-              v12 = this->AbstractClass_10C; /*0x72308f*/
-              v13 = (unsigned int *)this->ParticleSystemClass_110; /*0x72309b*/
+              v12 = this->u32_10C; /*0x72308f*/
+              v13 = (unsigned int *)this->ptr_110; /*0x72309b*/
               v14 = this->ptr_118 + 8 * v12; /*0x7230a1*/
-              this->AbstractClass_10C = v12 + 1; /*0x7230a5*/
+              this->u32_10C = v12 + 1; /*0x7230a5*/
               v15 = *v13 + 1; /*0x7230b0*/
               v34 = *(float *)(v14 + 4); /*0x7230b3*/
               v14 = v14; /*0x7230ba*/
@@ -20553,7 +20553,7 @@ void Gap2Recv_722F00::RebuildBuildingOccupancy() {
           }
           if ( ++v30 >= v7 ) /*0x72313a*/
             return; /*0x72313a*/
-          v20 = (int *)this->ParticleSystemClass_110; /*0x723140*/
+          v20 = (int *)this->ptr_110; /*0x723140*/
           if ( *v20 ) /*0x723146*/
             break; /*0x723146*/
           v28 = 0; /*0x72314c*/
@@ -20636,11 +20636,11 @@ void Gap2Recv_724200::HandleToolTipMessage(int a2) {
       case 0x113: /*0x72422f*/
         if ( *(unsigned int *)(a2 + 8) == 1414809936 ) /*0x724339*/
       {
-          KillTimer(this->ptr_8, 0x54544950u); /*0x724348*/
+          KillTimer(this->onBridge, 0x54544950u); /*0x724348*/
           if ( this->ptr_4 ) /*0x72434e*/
             goto LABEL_8; /*0x724353*/
           GetCursorPos((LPPOINT)(&this->ptr_26)); /*0x72435d*/
-          ScreenToClient(this->ptr_8, (LPPOINT)(&this->ptr_26)); /*0x724368*/
+          ScreenToClient(this->onBridge, (LPPOINT)(&this->ptr_26)); /*0x724368*/
           v16 = 0; /*0x724374*/
           if ( this->alignmentPadding91 <= 0 ) /*0x72437e*/
           {
@@ -20675,12 +20675,12 @@ void Gap2Recv_724200::HandleToolTipMessage(int a2) {
       case 0x200: /*0x72422f*/
         if ( this->M552 && !(*((unsigned char *)&(stru_A8EB00.__pad_CD4[1]))) ) /*0x724258*/
       {
-          KillTimer(this->ptr_8, 0x54544950u); /*0x724263*/
-          SetTimer(this->ptr_8, 0x54544950u, this->M552, 0); /*0x72427b*/
+          KillTimer(this->onBridge, 0x54544950u); /*0x724263*/
+          SetTimer(this->onBridge, 0x54544950u, this->M552, 0); /*0x72427b*/
           goto LABEL_7; /*0x72427b*/
       }
         GetCursorPos((LPPOINT)(&this->ptr_26)); /*0x7242a2*/
-        ScreenToClient(this->ptr_8, (LPPOINT)(&this->ptr_26)); /*0x7242ad*/
+        ScreenToClient(this->onBridge, (LPPOINT)(&this->ptr_26)); /*0x7242ad*/
         v15 = 0; /*0x7242b9*/
         if ( this->alignmentPadding91 <= 0 ) /*0x7242c3*/
       {
@@ -21012,7 +21012,7 @@ char Gap2Recv_734390::SelectFactionThemeMusic_Helper_734390(void* a2) {
     }
   }
   uniqueId = this->uniqueId; /*0x7343c5*/
-  ptr_0 = this->ptr_4; /*0x7343c8*/
+  ptr_0 = this->M13; /*0x7343c8*/
   this->uniqueId = uniqueId + 1; /*0x7343ce*/
   ptr_0[uniqueId] = *a2; /*0x7343d8*/
   return 1; /*0x7343c1*/
@@ -21376,14 +21376,14 @@ int Gap2Recv_74C9F0::DestroyVeinholeMonster() {
     v35 = -2; /*0x74ca25*/
     do /*0x74cc04*/
     {
-      (*(((unsigned short *)&(v32)) + 1)) = v2 + (*(((unsigned short *)&(v1[5].VeinholeMonsterClass_field_0x1C)) + 1)); /*0x74ca3f*/
-      (*((unsigned short *)&(v32))) = v31 + (*((unsigned short *)&(v1[5].VeinholeMonsterClass_field_0x1C))); /*0x74ca48*/
+      (*(((unsigned short *)&(v32)) + 1)) = v2 + (*(((unsigned short *)&(v1[5].q01C)) + 1)); /*0x74ca3f*/
+      (*((unsigned short *)&(v32))) = v31 + (*((unsigned short *)&(v1[5].q01C))); /*0x74ca48*/
       *(unsigned int *)v33 = v32; /*0x74ca51*/
       v3 = Cell::PosToIndex((Cell *)v33); /*0x74ca5a*/
       if ( v3 >= 0 && v3 < Object::ComputeAllocationSize() ) /*0x74ca67*/
       {
         *(unsigned char *)(stru_B1D290.customSound_controller[4] + v3) = 0; /*0x74ca6e*/
-        *(unsigned char *)(v1[4].VeinholeMonsterClass_field_0x14 + v3) = 0; /*0x74ca78*/
+        *(unsigned char *)(v1[4].q014 + v3) = 0; /*0x74ca78*/
       }
       v5 = (BuildingClass *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v33); /*0x74ca8b*/
       v38 = v5; /*0x74ca8d*/
@@ -21458,10 +21458,10 @@ int Gap2Recv_74C9F0::DestroyVeinholeMonster() {
     ++v31; /*0x74cc12*/
   }
   while ( v31 <= 2 ); /*0x74cc16*/
-  VeinholeMonsterClass_field_0x14 = v1[2].VeinholeMonsterClass_field_0x14; /*0x74cc1c*/
+  VeinholeMonsterClass_field_0x14 = v1[2].q014; /*0x74cc1c*/
   (*((unsigned char *)&(v4))) = 1; /*0x74cc21*/
-  (((unsigned char *)&(v1[2].VeinholeMonsterClass_field_0x28))[1]) = 1; /*0x74cc25*/
-  (*((unsigned char *)&(v1[2].VeinholeMonsterClass_field_0x1C))) = 0; /*0x74cc2b*/
+  (((unsigned char *)&(v1[2].q028))[1]) = 1; /*0x74cc25*/
+  (*((unsigned char *)&(v1[2].q01C))) = 0; /*0x74cc2b*/
   if ( VeinholeMonsterClass_field_0x14 > 0 ) /*0x74cc2f*/
     AbstractClass::AnnounceExpiredPointer((AbstractClass *)v1, v4); /*0x74cc33*/
   v20 = *v1->uniqueId.__pad_0; /*0x74cc38*/
@@ -21476,17 +21476,17 @@ int Gap2Recv_74C9F0::DestroyVeinholeMonster() {
     }
     *v1->uniqueId.__pad_0 = 0; /*0x74cc63*/
   }
-  if ( v1[4].VeinholeMonsterClass_field_0x04 ) /*0x74cc69*/
+  if ( v1[4].ptr_4 ) /*0x74cc69*/
   {
     operator delete((void *)(v1->uniqueId.VeinholeMonsterClass_field_0x04)); /*0x74cc74*/
-    v1[4].VeinholeMonsterClass_field_0x04 = 0; /*0x74cc7c*/
+    v1[4].ptr_4 = 0; /*0x74cc7c*/
   }
-  if ( v1[4].VeinholeMonsterClass_field_0x14 ) /*0x74cc82*/
+  if ( v1[4].q014 ) /*0x74cc82*/
   {
     operator delete((void *)(v1->uniqueId.VeinholeMonsterClass_field_0x14)); /*0x74cc8d*/
-    v1[4].VeinholeMonsterClass_field_0x14 = 0; /*0x74cc95*/
+    v1[4].q014 = 0; /*0x74cc95*/
   }
-  v1[3].VeinholeMonsterClass_field_0x28 = 0; /*0x74cc9b*/
+  v1[3].q028 = 0; /*0x74cc9b*/
   Vtable3 = (int)v1; /*0x74ccb0*/
   v22 = (*((int (**)(ObjectClass *, int *))stru_B1D290.ptr_0 + 4))(&stru_B1D290, &Vtable3); /*0x74ccb4*/
   if ( v22 != -1 ) /*0x74ccba*/
@@ -22127,13 +22127,13 @@ char VocClass::LoadFromINI(CCINIClass * aP1, void *a2) {
   char String[2048]; // [esp+20h] [ebp-800h] BYREF
 
   INIClass::ResetSection((INIClass *)aP1); /*0x750453*/
-  if ( !this->ptr_0 ) /*0x750458*/
+  if ( !this->Header ) /*0x750458*/
     return 0; /*0x750458*/
-  SampleName = (uint8_t *)VocClass::GetSampleName((char *)this->ptr_0); /*0x750462*/
+  SampleName = (uint8_t *)VocClass::GetSampleName((char *)this->Header); /*0x750462*/
   if ( !INIClass::BinarySearchSection((int)aP1, SampleName) ) /*0x75046a*/
     return 0; /*0x750912*/
-  if ( this->ptr_0 ) /*0x75047c*/
-    v5 = VocClass::GetSampleName((char *)this->ptr_0); /*0x750482*/
+  if ( this->Header ) /*0x75047c*/
+    v5 = VocClass::GetSampleName((char *)this->Header); /*0x750482*/
   else
     v5 = g_Str_Invalid_Voc; /*0x750489*/
   INIClass::GetString( /*0x7504a5*/
@@ -22144,9 +22144,9 @@ char VocClass::LoadFromINI(CCINIClass * aP1, void *a2) {
     String,
     2048);
   for ( i = strtok(String, asc_846570); i; i = strtok(0, asc_846570) ) /*0x7504be*/
-    AddSampleVocClass((int)this->ptr_0, i); /*0x7504c4*/
-  if ( this->ptr_0 ) /*0x7504dc*/
-    v7 = VocClass::GetSampleName((char *)this->ptr_0); /*0x7504e2*/
+    AddSampleVocClass((int)this->Header, i); /*0x7504c4*/
+  if ( this->Header ) /*0x7504dc*/
+    v7 = VocClass::GetSampleName((char *)this->Header); /*0x7504e2*/
   else
     v7 = g_Str_Invalid_Voc; /*0x7504e9*/
   __asm { fld flt_8464B4 } /*0x7504ee*/
@@ -22184,15 +22184,15 @@ char VocClass::LoadFromINI(CCINIClass * aP1, void *a2) {
   }
   __asm { fmul ds:flt_7EF38C } /*0x750539*/
   (*((unsigned short *)&(v10))) = Math::RoundToInt(v2); /*0x75053f*/
-  sub_406550((int)this->ptr_0, v10); /*0x750548*/
-  if ( this->ptr_0 ) /*0x75054d*/
-    v11 = VocClass::GetSampleName((char *)this->ptr_0); /*0x750553*/
+  sub_406550((int)this->Header, v10); /*0x750548*/
+  if ( this->Header ) /*0x75054d*/
+    v11 = VocClass::GetSampleName((char *)this->Header); /*0x750553*/
   else
     v11 = g_Str_Invalid_Voc; /*0x75055a*/
   Int_Overwrite = INIClass::ReadInt_Overwrite((bool *)aP1, (uint8_t *)v11, aVshift, 0); /*0x750569*/
-  sub_406620((int)this->ptr_0, Int_Overwrite); /*0x750572*/
-  if ( this->ptr_0 ) /*0x750577*/
-    v13 = VocClass::GetSampleName((char *)this->ptr_0); /*0x75057d*/
+  sub_406620((int)this->Header, Int_Overwrite); /*0x750572*/
+  if ( this->Header ) /*0x750577*/
+    v13 = VocClass::GetSampleName((char *)this->Header); /*0x75057d*/
   else
     v13 = g_Str_Invalid_Voc; /*0x750584*/
   __asm { fld flt_8464B8 } /*0x750589*/
@@ -22215,14 +22215,14 @@ char VocClass::LoadFromINI(CCINIClass * aP1, void *a2) {
     }
     if ( (_AX & 0x4100) != 0 ) /*0x7505d2*/
       v42 = 0.0; /*0x7505d4*/
-    sub_4065F0((ObjectClass *)this->ptr_0, (*((signed int *)&(v42)))); /*0x7505e3*/
+    sub_4065F0((ObjectClass *)this->Header, (*((signed int *)&(v42)))); /*0x7505e3*/
   }
   else
   {
-    sub_4065F0((ObjectClass *)this->ptr_0, 1065353216); /*0x7505c1*/
+    sub_4065F0((ObjectClass *)this->Header, 1065353216); /*0x7505c1*/
   }
-  if ( this->ptr_0 ) /*0x7505e8*/
-    v16 = VocClass::GetSampleName((char *)this->ptr_0); /*0x7505ee*/
+  if ( this->Header ) /*0x7505e8*/
+    v16 = VocClass::GetSampleName((char *)this->Header); /*0x7505ee*/
   else
     v16 = g_Str_Invalid_Voc; /*0x7505f5*/
   INIClass::GetString( /*0x750611*/
@@ -22234,21 +22234,21 @@ char VocClass::LoadFromINI(CCINIClass * aP1, void *a2) {
     2048);
   v45 = dword_8464B0; /*0x750620*/
   sub_4067D0(String, &v45); /*0x750628*/
-  sub_406540((int)this->ptr_0, v45); /*0x750633*/
-  if ( this->ptr_0 ) /*0x750638*/
-    v17 = VocClass::GetSampleName((char *)this->ptr_0); /*0x75063e*/
+  sub_406540((int)this->Header, v45); /*0x750633*/
+  if ( this->Header ) /*0x750638*/
+    v17 = VocClass::GetSampleName((char *)this->Header); /*0x75063e*/
   else
     v17 = g_Str_Invalid_Voc; /*0x750645*/
   v18 = INIClass::ReadInt_Overwrite((bool *)aP1, (uint8_t *)v17, g_INI_Key_Attack, 0); /*0x750654*/
-  sub_406520((int)this->ptr_0, v18); /*0x75065d*/
-  if ( this->ptr_0 ) /*0x750662*/
-    v19 = VocClass::GetSampleName((char *)this->ptr_0); /*0x750668*/
+  sub_406520((int)this->Header, v18); /*0x75065d*/
+  if ( this->Header ) /*0x750662*/
+    v19 = VocClass::GetSampleName((char *)this->Header); /*0x750668*/
   else
     v19 = g_Str_Invalid_Voc; /*0x75066f*/
   v20 = INIClass::ReadInt_Overwrite((bool *)aP1, (uint8_t *)v19, aDecay, 0); /*0x75067e*/
-  sub_406530((int)this->ptr_0, v20); /*0x750687*/
-  if ( this->ptr_0 ) /*0x75068c*/
-    v21 = VocClass::GetSampleName((char *)this->ptr_0); /*0x750692*/
+  sub_406530((int)this->Header, v20); /*0x750687*/
+  if ( this->Header ) /*0x75068c*/
+    v21 = VocClass::GetSampleName((char *)this->Header); /*0x750692*/
   else
     v21 = g_Str_Invalid_Voc; /*0x750699*/
   INIClass::GetString((INIClass *)aP1, (uint8_t *)v21, aControl, &g_INI_DefaultBuffer, String, 2048); /*0x7506b5*/
@@ -22264,9 +22264,9 @@ char VocClass::LoadFromINI(CCINIClass * aP1, void *a2) {
     }
     while ( v22 ); /*0x7506fe*/
   }
-  sub_406570(this->ptr_0, v44); /*0x750706*/
-  if ( this->ptr_0 ) /*0x75070b*/
-    v23 = VocClass::GetSampleName((char *)this->ptr_0); /*0x750711*/
+  sub_406570(this->Header, v44); /*0x750706*/
+  if ( this->Header ) /*0x75070b*/
+    v23 = VocClass::GetSampleName((char *)this->Header); /*0x750711*/
   else
     v23 = g_Str_Invalid_Voc; /*0x750718*/
   INIClass::GetString( /*0x750734*/
@@ -22288,27 +22288,27 @@ char VocClass::LoadFromINI(CCINIClass * aP1, void *a2) {
     }
     while ( v24 ); /*0x75077d*/
   }
-  sub_4065C0((int)this->ptr_0, v43); /*0x750785*/
-  if ( this->ptr_0 ) /*0x75078a*/
-    v25 = VocClass::GetSampleName((char *)this->ptr_0); /*0x750790*/
+  sub_4065C0((int)this->Header, v43); /*0x750785*/
+  if ( this->Header ) /*0x75078a*/
+    v25 = VocClass::GetSampleName((char *)this->Header); /*0x750790*/
   else
     v25 = g_Str_Invalid_Voc; /*0x750797*/
   v26 = INIClass::ReadInt_Overwrite((bool *)aP1, (uint8_t *)v25, aLimit, dword_8464C4); /*0x7507ab*/
-  sub_4065D0((int)this->ptr_0, v26); /*0x7507b4*/
-  if ( this->ptr_0 ) /*0x7507b9*/
-    v27 = VocClass::GetSampleName((char *)this->ptr_0); /*0x7507bf*/
+  sub_4065D0((int)this->Header, v26); /*0x7507b4*/
+  if ( this->Header ) /*0x7507b9*/
+    v27 = VocClass::GetSampleName((char *)this->Header); /*0x7507bf*/
   else
     v27 = g_Str_Invalid_Voc; /*0x7507c6*/
   v28 = INIClass::ReadInt_Overwrite((bool *)aP1, (uint8_t *)v27, aLoop, 0); /*0x7507d5*/
-  sub_406640((int)this->ptr_0, v28); /*0x7507de*/
-  if ( this->ptr_0 ) /*0x7507e3*/
-    v29 = VocClass::GetSampleName((char *)this->ptr_0); /*0x7507e9*/
+  sub_406640((int)this->Header, v28); /*0x7507de*/
+  if ( this->Header ) /*0x7507e3*/
+    v29 = VocClass::GetSampleName((char *)this->Header); /*0x7507e9*/
   else
     v29 = g_Str_Invalid_Voc; /*0x7507f0*/
   v30 = INIClass::ReadInt_Overwrite((bool *)aP1, (uint8_t *)v29, g_INI_Key_Range, dword_8464C0); /*0x750804*/
-  sub_4065E0((int)this->ptr_0, v30); /*0x75080d*/
-  if ( this->ptr_0 ) /*0x750812*/
-    v31 = VocClass::GetSampleName((char *)this->ptr_0); /*0x750818*/
+  sub_4065E0((int)this->Header, v30); /*0x75080d*/
+  if ( this->Header ) /*0x750812*/
+    v31 = VocClass::GetSampleName((char *)this->Header); /*0x750818*/
   else
     v31 = g_Str_Invalid_Voc; /*0x75081f*/
   INIClass::GetString((INIClass *)aP1, (uint8_t *)v31, aDelay, &g_INI_DefaultBuffer, String, 2048); /*0x75083c*/
@@ -22322,9 +22322,9 @@ char VocClass::LoadFromINI(CCINIClass * aP1, void *a2) {
   v34 = v33; /*0x750872*/
   if ( v32 ) /*0x750874*/
     v34 = atoi(v32); /*0x75087f*/
-  sub_406600((int)this->ptr_0, v33, v34); /*0x750886*/
-  if ( this->ptr_0 ) /*0x75088b*/
-    v35 = VocClass::GetSampleName((char *)this->ptr_0); /*0x750892*/
+  sub_406600((int)this->Header, v33, v34); /*0x750886*/
+  if ( this->Header ) /*0x75088b*/
+    v35 = VocClass::GetSampleName((char *)this->Header); /*0x750892*/
   else
     v35 = g_Str_Invalid_Voc; /*0x750899*/
   INIClass::GetString((INIClass *)aP1, (uint8_t *)v35, aFshift, &g_INI_DefaultBuffer, String, 2048); /*0x7508b5*/
@@ -22338,7 +22338,7 @@ char VocClass::LoadFromINI(CCINIClass * aP1, void *a2) {
   v38 = v37; /*0x7508eb*/
   if ( v36 ) /*0x7508ed*/
     v38 = atoi(v36); /*0x7508f8*/
-  sub_406610((int)this->ptr_0, v37, v38); /*0x7508ff*/
+  sub_406610((int)this->Header, v37, v38); /*0x7508ff*/
   return 1; /*0x750904*/
 }
 }
@@ -22547,7 +22547,7 @@ bool Gap2Recv_759EB0::Render_Load_759EB0(int a2, unsigned int a3, unsigned int a
 
   v6 = a3; /*0x759eb2*/
   if ( a3 == -1 ) /*0x759eb9*/
-    v6 = this->BuildingTypeClass_520; /*0x759ebb*/
+    v6 = this->u32_520; /*0x759ebb*/
   else
     this->gattlingValue = a3; /*0x759ec3*/
   v7 = a4; /*0x759ec9*/
@@ -22680,7 +22680,7 @@ void* Gap2Recv_765C90::Team_Create_765C90(int a2, void* a3) {
   v3 = a2; /*0x765c93*/
   this->ptr_1 = 0; /*0x765c9c*/
   this->ptr_2 = (void *)a2; /*0x765ca3*/
-  (this->ptr_C) = 1; /*0x765ca6*/
+  (this->M4) = 1; /*0x765ca6*/
   (this->M13) = 0; /*0x765caa*/
   /* X11: ptr_0 install elided (implicit via VectorClassrc_ptr virtuals 0x765cae) */
   if ( !a2 ) /*0x765cb5*/
@@ -22796,7 +22796,7 @@ char Gap2Recv_766EE0::System_Init_766EE0(int aP1) {
   }
   uniqueId = this->uniqueId; /*0x766f15*/
   this->uniqueId = uniqueId + 1; /*0x766f1f*/
-  ComPtr::Set((ComPtr *)((char *)this->ptr_4 + 8 * uniqueId), *(unsigned int *)(aP1 + 4)); /*0x766f2c*/
+  ComPtr::Set((ComPtr *)((char *)this->M13 + 8 * uniqueId), *(unsigned int *)(aP1 + 4)); /*0x766f2c*/
   return 1; /*0x766f11*/
 }
 }
@@ -22849,7 +22849,7 @@ void* Gap2Recv_768000::ConstructWDTSelection_Create_767FB0_Create(int a2, int a3
   this->q040 = 10; /*0x768058*/
   this->M60 = 0; /*0x76805b*/
   this->AbstractClass_44 = 0; /*0x76805e*/
-  this->AbstractClass_48 = 0; /*0x768061*/
+  this->M116 = 0; /*0x768061*/
   this->M64 = 0; /*0x768064*/
   this->M68 = 0; /*0x768067*/
   this->M108 = 0; /*0x76806a*/
@@ -22876,7 +22876,7 @@ void* Gap2Recv_7694C0::Map_Load_7694C0(int * a2) {
   int v4; // [esp+4h] [ebp-8h]
   int v5; // [esp+8h] [ebp-4h]
 
-  ptr_4 = (int)this->ptr_8; /*0x7694c6*/
+  ptr_4 = (int)this->M8; /*0x7694c6*/
   if ( ptr_4 <= 0 ) /*0x7694cb*/
   {
     v4 = 0; /*0x7694e6*/
@@ -22885,7 +22885,7 @@ void* Gap2Recv_7694C0::Map_Load_7694C0(int * a2) {
   else
   {
     v4 = (int)this->AbstractClass / ptr_4; /*0x7694d2*/
-    v5 = (int)this->ptr_4 / ptr_4; /*0x7694e0*/
+    v5 = (int)this->M4 / ptr_4; /*0x7694e0*/
   }
   *a2 = v4; /*0x7694fc*/
   a2[1] = v5; /*0x7694fe*/
@@ -22913,7 +22913,7 @@ void* Gap2Recv_76A7E0::ConstructWDTSelection_Create_767FB0_Create_Create(HashTab
   v3 = aP1; /*0x76a7e3*/
   this->ptr_1 = 0; /*0x76a7ec*/
   this->ptr_2 = (void *)aP1; /*0x76a7f3*/
-  (this->ptr_C) = 1; /*0x76a7f6*/
+  (this->M4) = 1; /*0x76a7f6*/
   (this->M13) = 0; /*0x76a7fa*/
   /* X11: ptr_0 install elided (implicit via VectorClassrc_ptr virtuals 0x76a7fe) */
   if ( !aP1 ) /*0x76a805*/
@@ -23442,7 +23442,7 @@ int Gap2Recv_76C290::ConstructWDTSelection(int arg0, int arg4) {
   this->u32_484 = v7; /*0x76c39b*/
   ConstructWDTSelection_Create_76F500(&this->u32_488); /*0x76c3a1*/
   String::Assign(&this->String_490, 0); /*0x76c3ad*/
-  ConstructWDTSelection_Create_76F210(&this->VectorClass_494, 0, 0); /*0x76c3bc*/
+  ConstructWDTSelection_Create_76F210(&this->ptr_494, 0, 0); /*0x76c3bc*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E3238) */  /*0x76c3c1*/
   this->AudioBuffer_14 = 10; /*0x76c3c8*/
   this->u32_10 = 0; /*0x76c3cf*/
@@ -24115,7 +24115,7 @@ char* Gap2Recv_76E2F0::Team_Start_76E2F0(int a2) {
   DeleteAndZero::Alt((DeleteAndZero *)v12); /*0x76e315*/
   OwnerHouse = Conflict::GetOwnerHouse(*(Conflict **)(this->deployAnim + 12)); /*0x76e323*/
   v4 = *(void **)a2.__pad_000; /*0x76e328*/
-  v5 = *&this->ObjectClass_44; /*0x76e32c*/
+  v5 = *&this->ScoreScreen_44; /*0x76e32c*/
   v6 = (ObjectClass *)OwnerHouse; /*0x76e330*/
   v12[0] = (WideString)1; /*0x76e332*/
   v7 = sub_764FF0(v5, *(int *)a2.__pad_000); /*0x76e337*/

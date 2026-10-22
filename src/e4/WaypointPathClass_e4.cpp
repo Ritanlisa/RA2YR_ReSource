@@ -60,10 +60,10 @@ int WaypointPathClass::Construct(unsigned int aP1, void *a2, void *a3, void *a4,
 
   AbstractClass::Constructor(); /*0x763813*/
   this->idxArray = -1; /*0x76381e*/
-  this->u32_2C = 0; /*0x763825*/
+  this->idxArray = 0; /*0x763825*/
   this->ptr_C = 0; /*0x763828*/
-  this->WaypointClass_field_34 = 1; /*0x76382b*/
-  this->WaypointClass_field_35 = 0; /*0x76382f*/
+  this->u32_34 = 1; /*0x76382b*/
+  this->u32_35 = 0; /*0x76382f*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E3238) */  /*0x763832*/
   this->waypointCapacity = 10; /*0x763839*/
   this->waypointCount = 0; /*0x763840*/

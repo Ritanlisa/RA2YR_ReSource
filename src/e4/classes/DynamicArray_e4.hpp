@@ -7,10 +7,10 @@ namespace gamemd {
 
 struct DynamicArray {
     unsigned int __pad_0;  // 0x0
-    int DynamicArray_field_0x04;  // 0x4
-    int DynamicArray_field_0x08;  // 0x8
-    int DynamicArray_field_0x0C;  // 0xC
-    unsigned int DynamicArray_field_0x10;  // 0x10
+    int u32_4;  // 0x4
+    int u32_8;  // 0x8
+    int q00C;  // 0xC
+    unsigned int q010;  // 0x10
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     char Resize(int *a1, unsigned int *aP2, void *a2 = 0);

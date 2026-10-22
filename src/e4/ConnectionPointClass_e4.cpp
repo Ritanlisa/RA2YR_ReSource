@@ -121,30 +121,30 @@ char ConnectionPointClass_9::Release(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x4a128c*/
   {
-    (this->m_C) = ((this->m_C) & ~0xFF) | ((0) & 0xFF); /*0x4a1296*/
+    (this->q00C) = ((this->q00C) & ~0xFF) | ((0) & 0xFF); /*0x4a1296*/
     if ( a3 ) /*0x4a129c*/
       v4 = a3; /*0x4a12b2*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x4a12ae*/
-    (this->m_C) = ((this->m_C) & ~0xFF) | ((1) & 0xFF); /*0x4a12b6*/
+    (this->q00C) = ((this->q00C) & ~0xFF) | ((1) & 0xFF); /*0x4a12b6*/
     if ( v4 ) /*0x4a12ba*/
     {
       if ( *&this->q004 ) /*0x4a12c5*/
       {
-        m_8 = this->m_8; /*0x4a12cc*/
+        m_8 = this->q008; /*0x4a12cc*/
         if ( a2 < m_8 ) /*0x4a12d1*/
           m_8 = a2; /*0x4a12d3*/
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x4a12d9*/
           ++i; /*0x4a12de*/
-        if ( (((this->m_C) >> 8) & 0xFF) ) /*0x4a12eb*/
+        if ( (((this->q00C) >> 8) & 0xFF) ) /*0x4a12eb*/
         {
           __3_YAXPAX_Z(*&this->q004); /*0x4a12f6*/
           *&this->q004 = 0; /*0x4a12fe*/
         }
       }
       *&this->q004 = v4; /*0x4a1307*/
-      this->m_8 = a2; /*0x4a130f*/
-      (this->m_C) = ((this->m_C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x4a1312*/
+      this->q008 = a2; /*0x4a130f*/
+      (this->q00C) = ((this->q00C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x4a1312*/
       return 1; /*0x4a1318*/
     }
     else
@@ -252,7 +252,7 @@ char ConnectionPointClass_9::AddRef(int a2)
 {
 
   int m_8; // esi
-  m_8 = this->m_8; /*0x4a1242*/
+  m_8 = this->q008; /*0x4a1242*/
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x4a124d*/
   {
     int v3 = 0; // edx /*0x4a124f*/
@@ -279,10 +279,10 @@ namespace gamemd {
 int ConnectionPointClass_9::Advise(unsigned int * a2)
 {
 
-  if ( !(*((unsigned char *)&(*&this->m_C))) ) /*0x4a1360*/
+  if ( !(*((unsigned char *)&(*&this->q00C))) ) /*0x4a1360*/
     return 0; /*0x4a1368*/
   int m_8; // edx
-  m_8 = this->m_8; /*0x4a136e*/
+  m_8 = this->q008; /*0x4a136e*/
   int result = 0; // eax /*0x4a1371*/
   if ( m_8 <= 0 ) /*0x4a1375*/
     return -1; /*0x4a138c*/
@@ -300,7 +300,7 @@ int ConnectionPointClass_9::Advise(unsigned int * a2)
 namespace gamemd {
 unsigned int ConnectionPointClass_9::Unadvise(int a2)
 {
-  if ( (*((unsigned char *)&(*&this->m_C))) ) /*0x4a13a0*/
+  if ( (*((unsigned char *)&(*&this->q00C))) ) /*0x4a13a0*/
     return (unsigned int)(a2 - *&this->q004) >> 2; /*0x4a13b5*/
   else
     return 0; /*0x4a13a7*/
@@ -316,13 +316,13 @@ unsigned int * ConnectionPointClass_9::QueryInterface(char a2)  // G42.41d: trut
   void *v3; // eax
   v3 = (void *)(*&this->q004); /*0x4a14f3*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x4a14f6*/
-  if ( v3 && (((this->m_C) >> 8) & 0xFF) ) /*0x4a1500*/
+  if ( v3 && (((this->q00C) >> 8) & 0xFF) ) /*0x4a1500*/
   {
     __3_YAXPAX_Z(v3); /*0x4a1508*/
     *&this->q004 = 0; /*0x4a1510*/
   }
-  (this->m_C) = ((this->m_C) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x4a151b*/
-  this->m_8 = 0; /*0x4a1521*/
+  (this->q00C) = ((this->q00C) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x4a151b*/
+  this->q008 = 0; /*0x4a1521*/
   if ( (a2 & 1) != 0 ) /*0x4a1528*/
     __3_YAXPAX_Z(this); /*0x4a152b*/
   return this->__pad_0; /*0x4a1535*/

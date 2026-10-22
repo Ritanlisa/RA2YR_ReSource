@@ -1312,9 +1312,9 @@ LABEL_59:
                     v37 = (const wchar_t *)v36; /*0x6a9c86*/
                     if ( v36 > 1 /*0x6a9cc3*/
                       || v36 > 0
-                      && ((v38 = *&BuildLimit->q058) == 0
+                      && ((v38 = *&BuildLimit->u32_58) == 0
                        || (*(int (**)(int))(*(unsigned int *)v38 + 132))(v38)
-                       && (*(int (**)(unsigned int))(**&BuildLimit->q058 + 132))(*&BuildLimit->q058) != v85) )
+                       && (*(int (**)(unsigned int))(**&BuildLimit->u32_58 + 132))(*&BuildLimit->u32_58) != v85) )
                     {
                       swprintf(Buffer, (const size_t)g_Str_Fmt_PctD, v37); /*0x6a9cd7*/
                       v114[1] = v17 + 1; /*0x6a9ce5*/

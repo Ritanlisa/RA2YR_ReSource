@@ -9,7 +9,7 @@ namespace gamemd {
 struct NetworkManager {
     unsigned char __pad_000;  // 0x0
     char __pad_1[3];  // 0x1
-    int NetworkManager_field_0x04;  // 0x4
+    int u32_4;  // 0x4
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     static char RemovePlayer(int aP1, int a2);

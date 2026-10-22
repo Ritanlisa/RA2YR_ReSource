@@ -7,7 +7,7 @@ namespace gamemd {
 
 struct FontRenderer {
     void* DrawTextA_ph;  // 0x0
-    int FontRenderer_field_0x04;  // 0x4
+    int q004;  // 0x4
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int InitContext(int *a2);

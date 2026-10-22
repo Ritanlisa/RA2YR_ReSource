@@ -261,7 +261,7 @@ void* TacticalClass::ProcessScroll(int * a2)
       (v4) = ((v4) & ~0xFFFF) | ((Math::RoundToInt(v2)) & 0xFFFF); /*0x4ac48c*/
       if ( v4 > 4 ) /*0x4ac494*/
       {
-        DisplayClass_field_0x11B0_high = HIBYTE(this->DisplayClass_field_0x11B0); /*0x4ac496*/
+        DisplayClass_field_0x11B0_high = HIBYTE(this->q11B0); /*0x4ac496*/
         (v4) = ((v4) & ~0xFF) | ((1) & 0xFF); /*0x4ac49c*/
         this->__pad_11B4[27] = 1; /*0x4ac4a0*/
         LOBYTE(this->DisplayClass_field_0x11D0) = 0; /*0x4ac4a6*/
@@ -1649,17 +1649,17 @@ unsigned int * TacticalClass::CollectSelectedIDs()
     if ( uniqueId <= 0 ) /*0x732d87*/
     {
 LABEL_12:
-      ptr_8 = v2->ptr_8; /*0x732de8*/
+      ptr_8 = v2->vfptr2; /*0x732de8*/
       if ( uniqueId < ptr_8 /*0x732e0a*/
-        || (BYTE1(v2->ptr_C) || !ptr_8)
+        || (BYTE1(v2->vfptr3) || !ptr_8)
         && (abstractFlags = v2->abstractFlags, abstractFlags > 0)
-        && (*(unsigned __int8 (**)(TacticalClass *, int, unsigned int))(v2->ptr_0 + 8))(
+        && (*(unsigned __int8 (**)(TacticalClass *, int, unsigned int))(v2->vfptr + 8))(
              v2,
              ptr_8 + abstractFlags,
              0) )
       {
         v10 = v2->uniqueId; /*0x732e11*/
-        ptr_4 = v2->ptr_4; /*0x732e14*/
+        ptr_4 = v2->vfptr1; /*0x732e14*/
         v2->uniqueId = v10 + 1; /*0x732e1a*/
         *(unsigned int *)(ptr_4 + 4 * v10) = v6; /*0x732e1d*/
       }
@@ -1670,21 +1670,21 @@ LABEL_12:
         if ( v2->uniqueId <= 0 ) /*0x732e52*/
         {
 LABEL_26:
-          v14 = v2->ptr_8; /*0x732eae*/
+          v14 = v2->vfptr2; /*0x732eae*/
           if ( v2->uniqueId < v14 /*0x732ed3*/
-            || (BYTE1(v2->ptr_C) || !v14)
+            || (BYTE1(v2->vfptr3) || !v14)
             && (v15 = v2->abstractFlags, v15 > 0)
-            && (*(unsigned __int8 (**)(TacticalClass *, int, unsigned int))(v2->ptr_0 + 8))(v2, v14 + v15, 0) )
+            && (*(unsigned __int8 (**)(TacticalClass *, int, unsigned int))(v2->vfptr + 8))(v2, v14 + v15, 0) )
           {
             v16 = v2->uniqueId; /*0x732eda*/
-            v17 = v2->ptr_4; /*0x732edd*/
+            v17 = v2->vfptr1; /*0x732edd*/
             v2->uniqueId = v16 + 1; /*0x732ee3*/
             *(unsigned int *)(v17 + 4 * v16) = v12; /*0x732ee6*/
           }
         }
         else
         {
-          v28 = (const char **)v2->ptr_4; /*0x732e57*/
+          v28 = (const char **)v2->vfptr1; /*0x732e57*/
           while ( strcmp(v12, *v28) ) /*0x732e8e*/
           {
             ++v13; /*0x732e97*/
@@ -1707,7 +1707,7 @@ LABEL_25:
         v19 = 0; /*0x732f1d*/
         if ( v2->uniqueId <= 0 ) /*0x732f21*/
           goto LABEL_40; /*0x732f21*/
-        v29 = (const char **)v2->ptr_4; /*0x732f26*/
+        v29 = (const char **)v2->vfptr1; /*0x732f26*/
         while ( strcmp(v18, *v29) ) /*0x732f5d*/
         {
           ++v19; /*0x732f66*/
@@ -1718,14 +1718,14 @@ LABEL_25:
         if ( v19 == -1 ) /*0x732f77*/
         {
 LABEL_40:
-          v20 = v2->ptr_8; /*0x732f79*/
+          v20 = v2->vfptr2; /*0x732f79*/
           if ( v2->uniqueId < v20 /*0x732f9e*/
-            || (BYTE1(v2->ptr_C) || !v20)
+            || (BYTE1(v2->vfptr3) || !v20)
             && (v21 = v2->abstractFlags, v21 > 0)
-            && (*(unsigned __int8 (**)(TacticalClass *, int, unsigned int))(v2->ptr_0 + 8))(v2, v20 + v21, 0) )
+            && (*(unsigned __int8 (**)(TacticalClass *, int, unsigned int))(v2->vfptr + 8))(v2, v20 + v21, 0) )
           {
             v22 = v2->uniqueId; /*0x732fa5*/
-            v23 = v2->ptr_4; /*0x732fa8*/
+            v23 = v2->vfptr1; /*0x732fa8*/
             v2->uniqueId = v22 + 1; /*0x732fae*/
             *(unsigned int *)(v23 + 4 * v22) = v18; /*0x732fb1*/
           }
@@ -1734,7 +1734,7 @@ LABEL_40:
     }
     else
     {
-      v27 = (const char **)v2->ptr_4; /*0x732d8c*/
+      v27 = (const char **)v2->vfptr1; /*0x732d8c*/
       while ( strcmp(v6, *v27) ) /*0x732dc3*/
       {
         ++v7; /*0x732dc9*/

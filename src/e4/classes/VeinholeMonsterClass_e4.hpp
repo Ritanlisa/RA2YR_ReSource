@@ -11,12 +11,12 @@ struct VeinholeMonsterClass {
     void* ptr_8;  // 0x8
     void* ptr_C;  // 0xC
     unsigned int __pad_010;  // 0x10
-    int VeinholeMonsterClass_field_0x14;  // 0x14
-    int VeinholeMonsterClass_field_0x18;  // 0x18
-    int VeinholeMonsterClass_field_0x1C;  // 0x1C
-    int VeinholeMonsterClass_field_0x20;  // 0x20
-    int VeinholeMonsterClass_field_0x24;  // 0x24
-    int VeinholeMonsterClass_field_0x28;  // 0x28
+    int q014;  // 0x14
+    int q018;  // 0x18
+    int q01C;  // 0x1C
+    int q020;  // 0x20
+    int q024;  // 0x24
+    int q028;  // 0x28
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     VeinholeMonsterClass * SpreadTiberium(char a2);

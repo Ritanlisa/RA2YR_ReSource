@@ -157,33 +157,33 @@ AbstractClass * * MapSeed::InsertName()
       v2 = *(unsigned int *)g_WindowManager.__pad_0; /*0x79c6e9*/
     }
     *(unsigned int *)g_WindowManager.__pad_0 = v2 + 1; /*0x79c6ef*/
-    StringVector_field_0x10 = stru_B76970.StringVector_field_0x10; /*0x79c6f4*/
-    v6 = stru_B76970.StringVector_field_0x10; /*0x79c6f9*/
-    if ( stru_B76970.StringVector_field_0x10 >= stru_B76970.StringVector_field_0x14 ) /*0x79c705*/
+    StringVector_field_0x10 = stru_B76970.q010; /*0x79c6f4*/
+    v6 = stru_B76970.q010; /*0x79c6f9*/
+    if ( stru_B76970.q010 >= stru_B76970.q014 ) /*0x79c705*/
     {
-      DynamicVector::EnsureCapacity((DynamicVector *)&stru_B76970.StringVector_field_0x10); /*0x79c70c*/
-      StringVector_field_0x10 = stru_B76970.StringVector_field_0x10; /*0x79c711*/
+      DynamicVector::EnsureCapacity((DynamicVector *)&stru_B76970.q010); /*0x79c70c*/
+      StringVector_field_0x10 = stru_B76970.q010; /*0x79c711*/
     }
-    if ( StringVector_field_0x10 >= stru_B76970.StringVector_field_0x14 ) /*0x79c71c*/
+    if ( StringVector_field_0x10 >= stru_B76970.q014 ) /*0x79c71c*/
     {
-      DynamicVector::EnsureCapacity((DynamicVector *)&stru_B76970.StringVector_field_0x10); /*0x79c723*/
-      StringVector_field_0x10 = stru_B76970.StringVector_field_0x10; /*0x79c728*/
+      DynamicVector::EnsureCapacity((DynamicVector *)&stru_B76970.q010); /*0x79c723*/
+      StringVector_field_0x10 = stru_B76970.q010; /*0x79c728*/
     }
     if ( v6 < StringVector_field_0x10 ) /*0x79c72f*/
     {
       memcpy( /*0x79c74c*/
-        (void *)(stru_B76970.StringVector_field_0x18 + 4 * v6 + 4),
-        (const void *)(stru_B76970.StringVector_field_0x18 + 4 * v6),
+        (void *)(stru_B76970.q018 + 4 * v6 + 4),
+        (const void *)(stru_B76970.q018 + 4 * v6),
         4 * (StringVector_field_0x10 + 0x3FFFFFFF * v6));
-      StringVector_field_0x10 = stru_B76970.StringVector_field_0x10; /*0x79c751*/
+      StringVector_field_0x10 = stru_B76970.q010; /*0x79c751*/
     }
-    v7 = (String *)(stru_B76970.StringVector_field_0x18 + 4 * v6); /*0x79c75f*/
+    v7 = (String *)(stru_B76970.q018 + 4 * v6); /*0x79c75f*/
     if ( v7 ) /*0x79c764*/
     {
       (v7)->AssignFromPtr(&v11); /*0x79c76b*/
-      StringVector_field_0x10 = stru_B76970.StringVector_field_0x10; /*0x79c770*/
+      StringVector_field_0x10 = stru_B76970.q010; /*0x79c770*/
     }
-    stru_B76970.StringVector_field_0x10 = StringVector_field_0x10 + 1; /*0x79c776*/
+    stru_B76970.q010 = StringVector_field_0x10 + 1; /*0x79c776*/
     v8 = *(unsigned int *)g_WOL_BuddyList.__pad_0; /*0x79c77b*/
     v9 = *(unsigned int *)g_WOL_BuddyList.__pad_0; /*0x79c780*/
     if ( *(int *)g_WOL_BuddyList.__pad_0 >= dword_B779B4 ) /*0x79c78c*/
@@ -218,12 +218,12 @@ LABEL_33:
       }
       DeleteAndZero::Alt2((DeleteAndZero *)&unk_B73ACC); /*0x79c830*/
     }
-    if ( stru_B76970.StringVector_field_0x10 ) /*0x79c83c*/
+    if ( stru_B76970.q010 ) /*0x79c83c*/
     {
-      if ( stru_B76970.StringVector_field_0x10 > 0 ) /*0x79c83e*/
+      if ( stru_B76970.q010 > 0 ) /*0x79c83e*/
       {
-        ((String *)&unk_B73ACC)->Reassign((const char **)stru_B76970.StringVector_field_0x18); /*0x79c84b*/
-        DynamicArray::Remove((DynamicArray *)&stru_B76970.StringVector_field_0x10, 0); /*0x79c857*/
+        ((String *)&unk_B73ACC)->Reassign((const char **)stru_B76970.q018); /*0x79c84b*/
+        DynamicArray::Remove((DynamicArray *)&stru_B76970.q010, 0); /*0x79c857*/
       }
       dword_B779D0 = time(0); /*0x79c864*/
       memset(v12, 0, sizeof(v12)); /*0x79c874*/

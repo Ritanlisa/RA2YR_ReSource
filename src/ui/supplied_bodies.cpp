@@ -244,7 +244,7 @@ void ToolTipClass::ddtor() {
     *&this->Position = 0; /*0x724c4e*/
   }
   (this->IsAllocated) = 0; /*0x724c51*/
-  this->m_8 = 0; /*0x724c54*/
+  this->q008 = 0; /*0x724c54*/
 }
 } // namespace gamemd
 
@@ -256,7 +256,7 @@ char ToolTipClass::addRef(int a2) {
   unsigned int *v4; // eax
   int v5; // ecx
 
-  m_8 = this->m_8; /*0x724c92*/
+  m_8 = this->q008; /*0x724c92*/
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x724c9d*/
   {
     v3 = 0; /*0x724c9f*/

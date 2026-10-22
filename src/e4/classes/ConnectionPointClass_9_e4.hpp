@@ -9,8 +9,8 @@ struct VectorClass_flat;  // fix_fwd_type_supply
 struct ConnectionPointClass_9 {
     unsigned int __pad_0;  // 0x0
     int q004;  // 0x4
-    unsigned int m_8;  // 0x8
-    unsigned int m_C;  // 0xC
+    unsigned int q008;  // 0x8
+    unsigned int q00C;  // 0xC
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     char Release(int a2, unsigned int * a3);  // 0x4A1280

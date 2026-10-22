@@ -143,7 +143,7 @@ struct Map_WorldDominationTour;  // G57c2 dedup: fwd only -- other def lives in 
 namespace gamemd {
 #ifndef GAMEMD_E4_FLAT_MIXFile  // G57c2 dedup: full flat carrier MIXFile_e4.hpp wins (include order verified carrier-first)
 #define GAMEMD_E4_FLAT_MIXFile 1  // G57w8: twin-guard dedup, define restored
-struct MIXFile { void* ptr_0; };  // minimal E2 (size-fix pending til evidence)
+struct MIXFile { void* q000; };  // minimal E2 (size-fix pending til evidence)
 #endif  // GAMEMD_E4_FLAT_MIXFile
 } // namespace gamemd
 namespace gamemd {

@@ -7,12 +7,12 @@ namespace gamemd {
 
 struct StringVector {
     int __pad_0;  // 0x0
-    unsigned int StringVector_field_0x04;  // 0x4
-    unsigned int StringVector_field_0x08;  // 0x8
-    unsigned int StringVector_field_0x0C;  // 0xC
-    int StringVector_field_0x10;  // 0x10
-    int StringVector_field_0x14;  // 0x14
-    unsigned int StringVector_field_0x18;  // 0x18
+    unsigned int q004;  // 0x4
+    unsigned int q008;  // 0x8
+    unsigned int q00C;  // 0xC
+    int q010;  // 0x10
+    int q014;  // 0x14
+    unsigned int q018;  // 0x18
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     unsigned int * Construct(int a2, int a3, void *a1 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0);

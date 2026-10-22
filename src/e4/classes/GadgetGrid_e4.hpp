@@ -7,7 +7,7 @@ namespace gamemd {
 
 struct GadgetGrid {
     int __pad_0;  // 0x0
-    int GadgetGrid_field_0x04;  // 0x4
+    int q004;  // 0x4
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int InsertItem(int a2);

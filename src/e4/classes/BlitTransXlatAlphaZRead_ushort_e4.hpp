@@ -9,25 +9,25 @@ namespace gamemd {
 struct BlitTransXlatAlphaZRead_ushort {
     void* ptr_0;  // 0x0
     unsigned int m_4;  // 0x4
-    AbstractClass* m_8;  // 0x8
+    AbstractClass* ptr_8;  // 0x8
     unsigned int __pad_00C;  // 0xC
-    int BlitTransXlatAlphaZRead_ushort_field_0x10;  // 0x10
-    int BlitTransXlatAlphaZRead_ushort_field_0x14;  // 0x14
-    int BlitTransXlatAlphaZRead_ushort_field_0x18;  // 0x18
-    int BlitTransXlatAlphaZRead_ushort_field_0x1C;  // 0x1C
-    int BlitTransXlatAlphaZRead_ushort_field_0x20;  // 0x20
-    int BlitTransXlatAlphaZRead_ushort_field_0x24;  // 0x24
-    int BlitTransXlatAlphaZRead_ushort_field_0x28;  // 0x28
-    int BlitTransXlatAlphaZRead_ushort_field_0x2C;  // 0x2C
-    int BlitTransXlatAlphaZRead_ushort_field_0x30;  // 0x30
-    int BlitTransXlatAlphaZRead_ushort_field_0x34;  // 0x34
-    int BlitTransXlatAlphaZRead_ushort_field_0x38;  // 0x38
-    int BlitTransXlatAlphaZRead_ushort_field_0x3C;  // 0x3C
-    int BlitTransXlatAlphaZRead_ushort_field_0x40;  // 0x40
-    int BlitTransXlatAlphaZRead_ushort_field_0x44;  // 0x44
-    int BlitTransXlatAlphaZRead_ushort_field_0x48;  // 0x48
-    int BlitTransXlatAlphaZRead_ushort_field_0x4C;  // 0x4C
-    int BlitTransXlatAlphaZRead_ushort_field_0x50;  // 0x50
+    int q010;  // 0x10
+    int q014;  // 0x14
+    int q018;  // 0x18
+    int q01C;  // 0x1C
+    int q020;  // 0x20
+    int q024;  // 0x24
+    int q028;  // 0x28
+    int q02C;  // 0x2C
+    int q030;  // 0x30
+    int q034;  // 0x34
+    int q038;  // 0x38
+    int q03C;  // 0x3C
+    int q040;  // 0x40
+    int q044;  // 0x44
+    int q048;  // 0x48
+    int q04C;  // 0x4C
+    int q050;  // 0x50
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     BlitTransXlatAlphaZRead_ushort * Blit(unsigned int * Block, char a2);

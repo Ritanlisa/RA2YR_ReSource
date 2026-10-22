@@ -618,9 +618,9 @@ unsigned int * JumpjetLocomotion::TransformCoords(unsigned int *aP1, int *aP2, i
   }
   *aP3 = v4; /*0x4b47df*/
   char *JumpjetLocomotion_field_0x40; // edx
-  JumpjetLocomotion_field_0x40 = (char *)this->JumpjetLocomotion_field_0x40; /*0x4b47e2*/
+  JumpjetLocomotion_field_0x40 = (char *)this->q040; /*0x4b47e2*/
   char *JumpjetLocomotion_field_0x44; // ecx
-  JumpjetLocomotion_field_0x44 = (char *)this->JumpjetLocomotion_field_0x44; /*0x4b47e5*/
+  JumpjetLocomotion_field_0x44 = (char *)this->q044; /*0x4b47e5*/
   *aP1 = (unsigned int)(&JumpjetLocomotion_field_0x40[v6]); /*0x4b47f2*/
   aP1->ptr_2 = &JumpjetLocomotion_field_0x44[v7]; /*0x4b47f5*/
   return aP1; /*0x4b47f0*/
@@ -701,7 +701,7 @@ char JumpjetLocomotion::Land()
     *&this->u32_70 = 0; /*0x54cad8*/
     *(unsigned int *)this->__pad_78 = 0; /*0x54cadb*/
     v6 = v5 - *&this->u32_28; /*0x54cade*/
-    this->JumpjetLocomotion_field_0x74 = 0; /*0x54cae1*/
+    this->q074 = 0; /*0x54cae1*/
     *&this->u32_7C = 0; /*0x54cae4*/
     (v7) = ((v7) & ~0xFFFF) | ((Math::RoundToInt(v6)) & 0xFFFF); /*0x54cae7*/
     v8 = *&this->u32_28 + 1.0; /*0x54caef*/
@@ -1052,8 +1052,8 @@ void* JumpjetLocomotion::UpdateFacing()
     this->u32_C,
     v9,
     (((v9) >> 32) & 0xFFFFFFFFu));
-  v10 = this->JumpjetLocomotion_field_0x40 / 256; /*0x54d1da*/
-  v11 = this->JumpjetLocomotion_field_0x44 / 256; /*0x54d1dd*/
+  v10 = this->q040 / 256; /*0x54d1da*/
+  v11 = this->q044 / 256; /*0x54d1dd*/
   v12 = (unsigned short *)(*(int (**)(unsigned int, double *))(**(unsigned int **)&this->u32_C + 440))( /*0x54d1e0*/
                    *(unsigned int *)this->u32_C,
                    &v61);
@@ -1068,7 +1068,7 @@ void* JumpjetLocomotion::UpdateFacing()
   else
   {
     *&this->q088 = 0; /*0x54d22e*/
-    this->JumpjetLocomotion_field_0x8C = 0; /*0x54d234*/
+    this->q08C = 0; /*0x54d234*/
   }
   Math::SinCos(*&this->q088); /*0x54d248*/
   v14 = *(double *)&v9 * (double)*&this->__pad_038 + (double)*&this->u32_80; /*0x54d253*/
@@ -1176,8 +1176,8 @@ LABEL_49:
     goto LABEL_49; /*0x54d4b9*/
   }
 LABEL_50:
-  v36 = this->JumpjetLocomotion_field_0x40 / 256; /*0x54d4c0*/
-  v37 = this->JumpjetLocomotion_field_0x44 / 256; /*0x54d4e9*/
+  v36 = this->q040 / 256; /*0x54d4c0*/
+  v37 = this->q044 / 256; /*0x54d4e9*/
   v38 = (unsigned short *)(*(int (**)(unsigned int, double *))(**(unsigned int **)this->u32_C + 440))( /*0x54d4ec*/
                    *(unsigned int *)this->u32_C,
                    &v61);
@@ -1187,12 +1187,12 @@ LABEL_50:
     if ( v26 < SLODWORD(v60) / 2 ) /*0x54d50a*/
     {
       *&this->u32_70 = 0; /*0x54d50e*/
-      this->JumpjetLocomotion_field_0x74 = 0; /*0x54d511*/
+      this->q074 = 0; /*0x54d511*/
     }
     if ( v26 < v39 / 4 ) /*0x54d525*/
     {
       *&this->u32_70 = 0; /*0x54d527*/
-      this->JumpjetLocomotion_field_0x74 = 0; /*0x54d52a*/
+      this->q074 = 0; /*0x54d52a*/
     }
   }
   if ( v57 ) /*0x54d537*/

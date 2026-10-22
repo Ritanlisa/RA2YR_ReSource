@@ -17,8 +17,8 @@ namespace gamemd {
 struct Math {
     unsigned int __pad_0;  // 0x0
     unsigned int u32_4;  // 0x4
-    unsigned int q008;  // 0x8
-    void* q00C;  // 0xC
+    unsigned int u32_8;  // 0x8
+    void* u32_C;  // 0xC
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int Hypotenuse2D();  // 0x41C350

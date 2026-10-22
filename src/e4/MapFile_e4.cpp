@@ -52,20 +52,20 @@ namespace gamemd {
 unsigned int * MapFile::Constructor(int a2, int a3, void *a3_1, void *a4)
 {
 
-  this->MapFile_field_0x04 = 0; /*0x69d77b*/
+  this->q004 = 0; /*0x69d77b*/
   this->q008 = a2; /*0x69d77e*/
-  (this->MapFile_field_0x0C) = ((this->MapFile_field_0x0C) & ~0xFF) | ((1) & 0xFF); /*0x69d781*/
-  (this->MapFile_field_0x0C) = ((this->MapFile_field_0x0C) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x69d785*/
+  (this->q00C) = ((this->q00C) & ~0xFF) | ((1) & 0xFF); /*0x69d781*/
+  (this->q00C) = ((this->q00C) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x69d785*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x69d788*/
   if ( a2 ) /*0x69d78e*/
   {
     if ( a3 ) /*0x69d796*/
     {
-      this->MapFile_field_0x04 = a3; /*0x69d798*/
+      this->q004 = a3; /*0x69d798*/
       return this->__pad_0; /*0x69d79e*/
     }
-    this->MapFile_field_0x04 = __2_YAPAXI_Z(4 * a2); /*0x69d7ad*/
-    (this->MapFile_field_0x0C) = ((this->MapFile_field_0x0C) & ~(0xFF << 8)) | (((1) & 0xFF) << 8); /*0x69d7b0*/
+    this->q004 = __2_YAPAXI_Z(4 * a2); /*0x69d7ad*/
+    (this->q00C) = ((this->q00C) & ~(0xFF << 8)) | (((1) & 0xFF) << 8); /*0x69d7b0*/
   }
   return this->__pad_0; /*0x69d79d*/
 

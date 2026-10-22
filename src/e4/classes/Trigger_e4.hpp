@@ -16,7 +16,7 @@ struct Trigger {
     unsigned char q00D;  // 0xD
     char __pad_E[2];  // 0xE
     int q010;  // 0x10
-    int Trigger_field_0x14;  // 0x14
+    int u32_14;  // 0x14
     void * ptr_18;  // 0x18
     char __pad_1C[4];  // 0x1C
     unsigned char q020;  // 0x20

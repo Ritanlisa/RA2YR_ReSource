@@ -51,12 +51,12 @@ AbstractClass * * Movie::SetupScreen(int aP1)
   this->u32_6C = 1; /*0x49cb2f*/
   this->u32_38 = -1; /*0x49cb33*/
   int v5 = v4 + 76 * aP1; // ebp /*0x49cb3a*/
-  int v6 = this->q0044; // ecx /*0x49cb3d*/
+  int v6 = this->u32_44; // ecx /*0x49cb3d*/
   this->u32_48 = 0; /*0x49cb42*/
   this->u32_4C = 0; /*0x49cb45*/
   this->u32_50 = 0; /*0x49cb48*/
   this->u32_54 = 0; /*0x49cb4b*/
-  this->q060 = 0; /*0x49cb4e*/
+  this->u32_60 = 0; /*0x49cb4e*/
   this->u32_64 = 0; /*0x49cb51*/
   this->ptr_58 = 0; /*0x49cb54*/
   this->__pad_05C = 0; /*0x49cb57*/
@@ -99,7 +99,7 @@ AbstractClass * * Movie::SetupScreen(int aP1)
     this->u32_40 = *(char *)(v5 + 8); /*0x49cc32*/
     this->u32_38 = 0; /*0x49cc35*/
   }
-  this->q0044 = v3; /*0x49cc39*/
+  this->u32_44 = v3; /*0x49cc39*/
   return (gamemd::AbstractClass **)(1); /*0x49cc3d*/
 
 }
@@ -108,7 +108,7 @@ AbstractClass * * Movie::SetupScreen(int aP1)
 namespace gamemd {
 CampaignClass * * Movie::GetSection(CCINIClass * aP1, CCINIClass * aP2, void *a3)
 {
-  if ( !this->q060 ) /*0x49e3b3*/
+  if ( !this->u32_60 ) /*0x49e3b3*/
     CampaignClass::LoadFromINI(); /*0x49e3ba*/
   if ( aP1 < 0 || aP1 >= this->__pad_05C ) /*0x49e3ca*/
   {
@@ -398,7 +398,7 @@ char Movie::GetSectionID(unsigned int *result)
 
   if ( this->u32_6C )
   {
-    result = (unsigned int *)(this->q0044);
+    result = (unsigned int *)(this->u32_44);
     *result = (unsigned int)(result); /*0x49bc93*/
     (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x49bc95*/
   }

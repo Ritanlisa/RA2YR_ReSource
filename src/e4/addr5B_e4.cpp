@@ -553,7 +553,7 @@ AbstractClass * * ApplyGameOptions(ObjectClass * aP0)
           && g_Rules_ShortGame == ((v3 & 0x40) != 0)
           && MultiEngineer == ((v3 & 0x80) != 0)
           && !_strcmpi(byte_A8B8E0, &aP0->q0A3)
-          && !strcmp(&byte_A8BAE2, &aP0->u32_B0)
+          && !strcmp(&byte_A8BAE2, &aP0->visibilityFlags)
           && dword_A8BB04 == aP0->u32_9E )
         {
           return 0; /*0x5b69de*/
@@ -601,7 +601,7 @@ AbstractClass * * ApplyGameOptions(ObjectClass * aP0)
   {
     Debug::Log(); /*0x5b6baf*/
     strcpy(byte_A8B8E0, (const char *)(aP0 + 163)); /*0x5b6bce*/
-    strcpy(&byte_A8BAE2, &aP0->u32_B0); /*0x5b6bf4*/
+    strcpy(&byte_A8BAE2, &aP0->visibilityFlags); /*0x5b6bf4*/
     v9 = (aP0->inOpenToppedTransport & 0x10) != 0; /*0x5b6c0b*/
     v9 = v9; /*0x5b6c12*/
     dword_A8BB04 = aP0->u32_9E; /*0x5b6c1d*/
@@ -717,9 +717,9 @@ LABEL_15:
     Debug::Log(); /*0x5bb418*/
     v6 = (void *)__2_YAPAXI_Z(4 * Buffer); /*0x5bb435*/
     v15.Pipe_field_0x04 = 0; /*0x5bb437*/
-    v15.Pipe_field_0x08 = 0; /*0x5bb448*/
+    v15.q008 = 0; /*0x5bb448*/
     /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E6218) */  /*0x5bb44c*/
-    Buffer::Init((Buffer *)&v15.Pipe_field_0x0C, (int)v6, 4 * Buffer); /*0x5bb454*/
+    Buffer::Init((Buffer *)&v15.q00C, (int)v6, 4 * Buffer); /*0x5bb454*/
     v16 = 0; /*0x5bb463*/
     /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E6200) */  /*0x5bb467*/
     LZOPipe::Constructor((LZOPipe *)&v18.BufferOffset, 0, 0x2000); /*0x5bb46f*/
@@ -739,7 +739,7 @@ LABEL_15:
     SendNetworkFile(aPreviewBin, 1, 0, 0); /*0x5bb521*/
     RawFileClass::Dtor(&v18); /*0x5bb52a*/
     LZOPipe::Destructor((LZOPipe *)&v18.BufferOffset); /*0x5bb533*/
-    ((Vector *)&v15.Pipe_field_0x0C)->Clear(); /*0x5bb53c*/
+    ((Vector *)&v15.q00C)->Clear(); /*0x5bb53c*/
     Pipe::Dtor(&v15); /*0x5bb545*/
   }
 
@@ -3654,7 +3654,7 @@ int E4Recv_5BF360::sub_5BF360()
              (wchar_t *)this->abstractFlags,
              0,
              16454,
-             (int)this->ptr_4,
+             (int)this->M4,
              0);
   int result; // eax
   return result; /*0x5bf383*/

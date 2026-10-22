@@ -301,7 +301,7 @@ Coord * * VoxelAnimClass::ProcessAnim(int * a2, unsigned int * a3)
         v29 = v11; /*0x749e1f*/
         v28 = v12; /*0x749e29*/
         v13 = (gamemd::CellClass *)(Coord::To_Cell((Coord *)&DataGlobal_87F7E8, &v27)); /*0x749e2d*/
-        VoxelAnimClass_field_0x10C = this->AbstractClass_10C; /*0x749e32*/
+        VoxelAnimClass_field_0x10C = this->q10C; /*0x749e32*/
         v15 = *(__int16 *)v13->CellClass_field_10A; /*0x749e38*/
         if ( VoxelAnimClass_field_0x10C ) /*0x749e41*/
         {
@@ -320,7 +320,7 @@ Coord * * VoxelAnimClass::ProcessAnim(int * a2, unsigned int * a3)
         }
         v27 = v31 + v36; /*0x749e8b*/
         v25 = v15; /*0x749e97*/
-        VoxelAnimClass_field_0x0 = (int (**)(VoxelAnimClass *))this->ptr_0; /*0x749e98*/
+        VoxelAnimClass_field_0x0 = (int (**)(VoxelAnimClass *))this->VoxelAnimClass_field_0x0; /*0x749e98*/
         v28 = v30 + v37; /*0x749ea0*/
         v18 = VoxelAnimClass_field_0x0[116](this); /*0x749ea4*/
         v24 = -2 - ZCoordToScreenY(v18); /*0x749eb8*/
@@ -463,7 +463,7 @@ int VoxelAnimClass::VoxelAnimClass_Update()
   int v110; // [esp+78h] [ebp-4h]
 
   v1 = this; /*0x749f34*/
-  VoxelAnimClass_field_0x104 = this->VoxelAnimClass_field_0x104; /*0x749f38*/
+  VoxelAnimClass_field_0x104 = this->q104; /*0x749f38*/
   *(unsigned int *)v96 = this; /*0x749f3f*/
   if ( *(unsigned int *)(VoxelAnimClass_field_0x104 + 732) != -1 ) /*0x749f4a*/
   {
@@ -472,11 +472,11 @@ int VoxelAnimClass::VoxelAnimClass_Update()
   }
   if ( v1->ParticleSystemClass_110 ) /*0x749f67*/
     return (*(int (**)(VoxelAnimClass *))(v1->VoxelAnimClass_field_0x0 + 248))(v1); /*0x749f82*/
-  VoxelAnimClass_field_0x140 = v1->VoxelAnimClass_field_0x140; /*0x749f83*/
+  VoxelAnimClass_field_0x140 = v1->q140; /*0x749f83*/
   v6 = 0; /*0x749f89*/
   if ( VoxelAnimClass_field_0x140 ) /*0x749f8d*/
-    v1->VoxelAnimClass_field_0x140 = VoxelAnimClass_field_0x140 - 1; /*0x749f90*/
-  if ( v1->VoxelAnimClass_field_0x140 <= 0 ) /*0x749f9c*/
+    v1->q140 = VoxelAnimClass_field_0x140 - 1; /*0x749f90*/
+  if ( v1->q140 <= 0 ) /*0x749f9c*/
   {
     v7 = &v1->location; /*0x749fa2*/
     v97 = *&v1->location; /*0x749fac*/
@@ -494,7 +494,7 @@ int VoxelAnimClass::VoxelAnimClass_Update()
     v87 = v10; /*0x74a023*/
     if ( !v88 || v10 ) /*0x74a02f*/
     {
-      if ( *(unsigned int *)(v1->VoxelAnimClass_field_0x104 + 744) ) /*0x74a144*/
+      if ( *(unsigned int *)(v1->q104 + 744) ) /*0x74a144*/
       {
         v20 = (AnimClass *)__2_YAPAXI_Z(0x1C8u); /*0x74a15a*/
         if ( v20 ) /*0x74a161*/
@@ -506,23 +506,23 @@ int VoxelAnimClass::VoxelAnimClass_Update()
           v24 = *&v1->q0D0; /*0x74a17d*/
           v98 = v23; /*0x74a183*/
           (v25) = ((v25) & ~0xFFFF) | ((Math::RoundToInt(v24)) & 0xFFFF); /*0x74a187*/
-          v26 = v1->VoxelAnimClass_field_0x104; /*0x74a18c*/
+          v26 = v1->q104; /*0x74a18c*/
           v99 = v25; /*0x74a19a*/
           AnimClass::ctor(v20, *(void **)(v26 + 744), &v97, 0, 1, (void *)0x2600, (void *)0xFFFFFFE2, 0); /*0x74a1af*/
         }
-        v27 = v1->VoxelAnimClass_field_0x104; /*0x74a1b4*/
+        v27 = v1->q104; /*0x74a1b4*/
         v28 = *(unsigned int *)(v27 + 752); /*0x74a1c9*/
         v84 = *(unsigned int *)(v27 + 760); /*0x74a1cf*/
         Coords = (unsigned int *)Coord::GetCoords(&v101, 0); /*0x74a1d8*/
         PlaySoundEffectAt(Coords, v28, v83, v84, 1, 0); /*0x74a1e1*/
-        v30 = v1->VoxelAnimClass_field_0x104; /*0x74a1e6*/
+        v30 = v1->q104; /*0x74a1e6*/
         v90 = *(unsigned int *)(v30 + 760); /*0x74a1f6*/
         v31 = *(unsigned int *)(v30 + 752); /*0x74a1fa*/
         v32 = (int *)Coord::GetCoords(&v101, 0); /*0x74a205*/
         CreateSmokeEffectAt(v31, v90, *v32, v32->q004, v32->q008, v85, 0); /*0x74a225*/
       }
     }
-    else if ( *(unsigned char *)(v1->VoxelAnimClass_field_0x104 + 720) ) /*0x74a040*/
+    else if ( *(unsigned char *)(v1->q104 + 720) ) /*0x74a040*/
     {
       v11 = (AnimClass *)__2_YAPAXI_Z(0x1C8u); /*0x74a04a*/
       if ( v11 ) /*0x74a054*/
@@ -568,7 +568,7 @@ int VoxelAnimClass::VoxelAnimClass_Update()
     }
     if ( !v88 || v87 ) /*0x74a238*/
     {
-      v33 = v1->VoxelAnimClass_field_0x104; /*0x74a23e*/
+      v33 = v1->q104; /*0x74a23e*/
       v108 = 0; /*0x74a244*/
       v109 = 0; /*0x74a248*/
       v110 = 0; /*0x74a24c*/
@@ -578,7 +578,7 @@ int VoxelAnimClass::VoxelAnimClass_Update()
         v97 = *v34; /*0x74a270*/
         v98 = v34->q004; /*0x74a277*/
         v99 = v34->q008; /*0x74a27e*/
-        v35 = v1->VoxelAnimClass_field_0x104; /*0x74a282*/
+        v35 = v1->q104; /*0x74a282*/
         if ( *(unsigned int *)(v35 + 724) ) /*0x74a288*/
         {
           v36 = *(unsigned int *)(v35 + 728); /*0x74a290*/
@@ -589,7 +589,7 @@ int VoxelAnimClass::VoxelAnimClass_Update()
                 + Random::Range(
                     (Random *)&dword_A8B230[14].NeedsSaveOrLink,
                     0,
-                    *(unsigned int *)(v1->VoxelAnimClass_field_0x104 + 728));
+                    *(unsigned int *)(v1->q104 + 728));
             if ( v38 > 0 ) /*0x74a2d1*/
             {
               v39 = v38; /*0x74a2d3*/
@@ -597,14 +597,14 @@ int VoxelAnimClass::VoxelAnimClass_Update()
               {
                 v40 = (VoxelAnimClass *)__2_YAPAXI_Z(0x148u); /*0x74a2da*/
                 if ( v40 ) /*0x74a2e4*/
-                  DamageAnimClass::Constructor(v40, *(unsigned int *)(v1->VoxelAnimClass_field_0x104 + 724), &v97, 0); /*0x74a2fb*/
+                  DamageAnimClass::Constructor(v40, *(unsigned int *)(v1->q104 + 724), &v97, 0); /*0x74a2fb*/
                 --v39; /*0x74a300*/
               }
               while ( v39 ); /*0x74a301*/
             }
           }
         }
-        if ( *(unsigned char *)(v1->VoxelAnimClass_field_0x104 + 768) && !v87 ) /*0x74a31d*/
+        if ( *(unsigned char *)(v1->q104 + 768) && !v87 ) /*0x74a31d*/
         {
           v41 = 0; /*0x74a323*/
           v91 = 0; /*0x74a325*/
@@ -762,7 +762,7 @@ int VoxelAnimClass::VoxelAnimClass_Update()
     }
     return (*(int (**)(VoxelAnimClass *))(v1->VoxelAnimClass_field_0x0 + 248))(v1); /*0x74a70d*/
   }
-  if ( *(unsigned int *)(v1->VoxelAnimClass_field_0x104 + 748) ) /*0x74a714*/
+  if ( *(unsigned int *)(v1->q104 + 748) ) /*0x74a714*/
   {
     if ( !(*(unsigned int *)&stru_A8E960.random[528] % 2) ) /*0x74a732*/
     {
@@ -777,18 +777,18 @@ int VoxelAnimClass::VoxelAnimClass_Update()
         v98 = v64; /*0x74a76e*/
         (v66) = ((v66) & ~0xFFFF) | ((Math::RoundToInt(v65 * 0.01924500897298839 + 0.5)) & 0xFFFF); /*0x74a77e*/
         v99 = v66; /*0x74a783*/
-        AnimClass::ctor(v61, *(void **)(v1->VoxelAnimClass_field_0x104 + 748), &v97, (void *)1, 1, (void *)0x600, 0, 0); /*0x74a7a6*/
+        AnimClass::ctor(v61, *(void **)(v1->q104 + 748), &v97, (void *)1, 1, (void *)0x600, 0, 0); /*0x74a7a6*/
       }
     }
   }
   v67 = JumpjetLocomotionClass::Update2(&v1->q_B0, &v1->q_B0); /*0x74a7b3*/
-  if ( *(unsigned char *)(v1->VoxelAnimClass_field_0x104 + 720) ) /*0x74a7be*/
-    *&v1->q0DC = *&v1->q0DC + *&v1->q0B8; /*0x74a7d4*/
+  if ( *(unsigned char *)(v1->q104 + 720) ) /*0x74a7be*/
+    *&v1->q0DC = *&v1->q0DC + *&v1->location; /*0x74a7d4*/
   v68 = v67 - 1; /*0x74a7da*/
   if ( v68 ) /*0x74a7db*/
   {
     if ( v68 == 1 ) /*0x74a7de*/
-      v1->VoxelAnimClass_field_0x140 = 0; /*0x74a7e4*/
+      v1->q140 = 0; /*0x74a7e4*/
   }
   else
   {
@@ -797,11 +797,11 @@ int VoxelAnimClass::VoxelAnimClass_Update()
     v99 = *&v1->q0A4; /*0x74a811*/
     if ( Coord::To_Cell((Coord *)&dword_87F7E8, &v97)->landType == 2 ) /*0x74a821*/
     {
-      v1->VoxelAnimClass_field_0x140 = 0; /*0x74a823*/
+      v1->q140 = 0; /*0x74a823*/
     }
     else
     {
-      if ( *(unsigned int *)(v1->VoxelAnimClass_field_0x104 + 740) ) /*0x74a834*/
+      if ( *(unsigned int *)(v1->q104 + 740) ) /*0x74a834*/
       {
         v69 = (AnimClass *)__2_YAPAXI_Z(0x1C8u); /*0x74a841*/
         if ( v69 ) /*0x74a84b*/
@@ -811,7 +811,7 @@ int VoxelAnimClass::VoxelAnimClass_Update()
           v71 = *&v1->q0A4; /*0x74a856*/
           v100[1] = v70; /*0x74a85b*/
           v100[2] = v71; /*0x74a85f*/
-          AnimClass::ctor(v69, *(void **)(v1->VoxelAnimClass_field_0x104 + 740), v100, 0, 1, (void *)0x600, 0, 0); /*0x74a87f*/
+          AnimClass::ctor(v69, *(void **)(v1->q104 + 740), v100, 0, 1, (void *)0x600, 0, 0); /*0x74a87f*/
         }
       }
       v72 = (unsigned int *)Coord::GetCoords(&v105, v86); /*0x74a88b*/
@@ -822,7 +822,7 @@ int VoxelAnimClass::VoxelAnimClass_Update()
         v103 = i[41]; /*0x74a8ca*/
         v75 = (unsigned int *)Coord::GetCoords(&v108, v86); /*0x74a8ce*/
         v76 = abs32(*v75 - v74) + abs32(v75[1] - v102); /*0x74a8ee*/
-        v77 = v1->VoxelAnimClass_field_0x104; /*0x74a8f0*/
+        v77 = v1->q104; /*0x74a8f0*/
         if ( v76 <= *(unsigned int *)(v77 + 756) ) /*0x74a8fc*/
         {
           v78 = *i; /*0x74a904*/
@@ -830,7 +830,7 @@ int VoxelAnimClass::VoxelAnimClass_Update()
           v79 = ZCoordToScreenY(v76); /*0x74a90f*/
           (*(void (**)(int *, int, int, int, unsigned int, unsigned int, unsigned int, unsigned int))(v78 + 364))( /*0x74a923*/
             i,
-            v1->VoxelAnimClass_field_0x104 + 752,
+            v1->q104 + 752,
             v79,
             v82,
             0,
@@ -892,7 +892,7 @@ AbstractClass * * VoxelAnimClass::GetFrameCount(int * a2)
     Power::TimerProcess(v5); /*0x74aa7a*/
   }
   int v6; // eax
-  v6 = (*((int (**)(void **))this->AbstractClass_10C->ptr_0 + 4))(&this->AbstractClass_10C->ptr_0); /*0x74aa8b*/
+  v6 = (*((int (**)(void **))this->q10C->ptr_0 + 4))(&this->q10C->ptr_0); /*0x74aa8b*/
   Power::TimerProcess(v6); /*0x74aa91*/
   int v7; // edx
   LOBYTE(v7) = this->ParticleSystemClass_110; /*0x74aa96*/
@@ -1066,7 +1066,7 @@ int VoxelAnimClass::DrawVoxelFrame(int a2, int a3, int a4)
 
   unsigned int *v5; // eax
   unsigned char v7[12]; // [esp+4h] [ebp-Ch] BYREF
-  v5 = (unsigned int *)(*((int (**)(VoxelAnimClass *, unsigned char *))this->ptr_0 + 18))(this, v7); /*0x749b2f*/
+  v5 = (unsigned int *)(*((int (**)(VoxelAnimClass *, unsigned char *))this->VoxelAnimClass_field_0x0 + 18))(this, v7); /*0x749b2f*/
   if ( (Coord::To_Cell((Coord *)&DataGlobal_87F7E8, v5)->copyFlags & 0x10) != 0 ) /*0x749b44*/
     this->needsRedraw = 1; /*0x749b46*/
   return ObjectClass::CalcDrawRect((ObjectClass *)this); /*0x749b60*/

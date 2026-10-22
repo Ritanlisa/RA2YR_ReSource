@@ -21,14 +21,14 @@ struct Voxel {
     unsigned int u32_C;  // 0xC
     unsigned int u32_10;  // 0x10
     unsigned int u32_14;  // 0x14
-    int Voxel_field_0x18;  // 0x18
-    int Voxel_field_0x1C;  // 0x1C
+    int u32_18;  // 0x18
+    int u32_1C;  // 0x1C
     char __pad_20[4];  // 0x20
-    int Voxel_field_0x24;  // 0x24
+    int q024;  // 0x24
     int u32_28;  // 0x28
     int u32_2C;  // 0x2C
     unsigned char u32_30[108];  // 0x30
-    int Voxel_field_0x9C;  // 0x9C
+    int q09C;  // 0x9C
     char __pad_A0[16];  // 0xA0
     unsigned int u32_B0;  // 0xB0
     unsigned int u32_B4;  // 0xB4
@@ -81,7 +81,7 @@ struct Voxel {
     unsigned int u32_234;  // 0x234
     unsigned int u32_238;  // 0x238
     char __pad_23C[156];  // 0x23C
-    int Voxel_field_0x2D8;  // 0x2D8
+    int q2D8;  // 0x2D8
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int BuildIndexTable();  // 0x748220

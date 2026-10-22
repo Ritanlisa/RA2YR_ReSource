@@ -358,7 +358,7 @@ LABEL_158:
         v58 = &dword_A8B230[127].ptr_C; /*0x6de59a*/
         dword_A8B230[127].ptr_C = *(unsigned int *)v120.__pad_0; /*0x6de5a0*/
         v58[1] = *(unsigned int *)&v120.Coord_field_0x2[2]; /*0x6de5a6*/
-        v58[2] = v120.Coord_field_0x8; /*0x6de5ad*/
+        v58[2] = v120.u32_8; /*0x6de5ad*/
         ObjectClass::PreDraw((ObjectClass *)&dword_87F7E8); /*0x6de5b5*/
       }
       else
@@ -505,12 +505,12 @@ LABEL_153:
       v79 = CoordStruct::Set2((CoordStruct *)&v120.u32_10, v119, 0); /*0x6dee23*/
       *(unsigned int *)v120.__pad_0 = *v79; /*0x6dee2a*/
       *(unsigned int *)&v120.q004 = v79[1]; /*0x6dee31*/
-      v120.Coord_field_0x8 = v79[2]; /*0x6dee42*/
-      v120.Coord_field_0x8 = Cell::GetGroundHeight(&v120); /*0x6dee4f*/
+      v120.u32_8 = v79[2]; /*0x6dee42*/
+      v120.u32_8 = Cell::GetGroundHeight(&v120); /*0x6dee4f*/
       if ( (*((unsigned int *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v119) + 80) & 0x100) != 0 /*0x6dee81*/
         || (*((unsigned int *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v119) + 80) & 0x400) != 0 )
       {
-        v120.Coord_field_0x8 += dword_B0E6D4; /*0x6dee8e*/
+        v120.u32_8 += dword_B0E6D4; /*0x6dee8e*/
       }
       TacticalClass::SetPosition((TacticalClass *)g_TacticalClass_Instance, &v120, *(unsigned int *)(a1 + 144)); /*0x6deea4*/
       return result; /*0x6deeb5*/
@@ -834,9 +834,9 @@ LABEL_60:
       v97 = CoordStruct::Set2((CoordStruct *)&v120.u32_20, v119, 0); /*0x6df41b*/
       *(unsigned int *)v120.__pad_0 = *v97; /*0x6df423*/
       *(unsigned int *)&v120.q004 = v97[1]; /*0x6df42f*/
-      v120.Coord_field_0x8 = v97[2]; /*0x6df43a*/
+      v120.u32_8 = v97[2]; /*0x6df43a*/
       CoordStruct::Set2((CoordStruct *)&v120.u32_10, v119, 0); /*0x6df43e*/
-      v120.Coord_field_0x8 = Cell::GetGroundHeight(&v120.u32_10); /*0x6df457*/
+      v120.u32_8 = Cell::GetGroundHeight(&v120.u32_10); /*0x6df457*/
       v98 = (int *)__2_YAPAXI_Z(0x100u); /*0x6df45b*/
       if ( v98 ) /*0x6df465*/
         ParticleSystemClass::Constructor( /*0x6df48a*/
@@ -894,11 +894,11 @@ LABEL_60:
       Coord::Subtract((Coord *)&v120.u32_10, ((__int16)*v11 << 8) + 128, ((__int16)(((*v11) >> 16) & 0xFFFF) << 8) + 128, 0); /*0x6dd94e*/
       *(unsigned int *)v120.__pad_0 = *(unsigned int *)&v120.u32_10; /*0x6dd95f*/
       *(unsigned int *)&v120.q004 = *(unsigned int *)&v120.u32_14; /*0x6dd967*/
-      v120.Coord_field_0x8 = *(unsigned int *)&v120.q018; /*0x6dd971*/
-      v120.Coord_field_0x8 = Cell::GetGroundHeight(&v120); /*0x6dd97c*/
+      v120.u32_8 = *(unsigned int *)&v120.q018; /*0x6dd971*/
+      v120.u32_8 = Cell::GetGroundHeight(&v120); /*0x6dd97c*/
       v12 = (ActionQueue *)__2_YAPAXI_Z(0x14u); /*0x6dd980*/
       if ( v12 ) /*0x6dd98a*/
-        ActionQueue::PushEntry(v12, *(int *)v120.__pad_0, *(int *)&v120.q004, v120.Coord_field_0x8); /*0x6dd9ab*/
+        ActionQueue::PushEntry(v12, *(int *)v120.__pad_0, *(int *)&v120.q004, v120.u32_8); /*0x6dd9ab*/
       return result; /*0x6dd9bc*/
     case 0x5F:
       TActionClass::CreateNukeEffect((TActionClass *)a1, (int)a5, v9, (int)a7, (int)a8); /*0x6dd9da*/
@@ -935,7 +935,7 @@ LABEL_60:
       v67 = Cell::GetWorldCoords((Cell *)dword_A8B230, &v120.u32_10, *(unsigned int *)(a1 + 68)); /*0x6de854*/
       *(unsigned int *)v120.__pad_0 = *v67; /*0x6de85b*/
       *(unsigned int *)&v120.q004 = v67[1]; /*0x6de866*/
-      v120.Coord_field_0x8 = v67[2]; /*0x6de86d*/
+      v120.u32_8 = v67[2]; /*0x6de86d*/
       Parameter = (ObjectClass *)ScriptAction::ReadParameter((ScriptAction *)&v120); /*0x6de871*/
       if ( Parameter ) /*0x6de878*/
         ObjectClass::CheckFlagD0(Parameter, *(unsigned int *)(a1 + 144)); /*0x6de883*/
@@ -953,10 +953,10 @@ LABEL_60:
       Coord::Subtract((Coord *)&v120.u32_10, (v119[0] << 8) + 128, (v119[1] << 8) + 128, 0); /*0x6dda27*/
       *(unsigned int *)v120.__pad_0 = *(unsigned int *)&v120.u32_10; /*0x6dda38*/
       *(unsigned int *)&v120.q004 = *(unsigned int *)&v120.u32_14; /*0x6dda40*/
-      v120.Coord_field_0x8 = *(unsigned int *)&v120.q018; /*0x6dda4a*/
-      v120.Coord_field_0x8 = Cell::GetGroundHeight(&v120); /*0x6dda57*/
+      v120.u32_8 = *(unsigned int *)&v120.q018; /*0x6dda4a*/
+      v120.u32_8 = Cell::GetGroundHeight(&v120); /*0x6dda57*/
       if ( (*((unsigned int *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v119) + 80) & 0x100) != 0 ) /*0x6dda6f*/
-        v120.Coord_field_0x8 += dword_B0E6D4; /*0x6dda7d*/
+        v120.u32_8 += dword_B0E6D4; /*0x6dda7d*/
       v13 = *Coord::ToCell(&v120, v120.__pad_C); /*0x6dda8f*/
       if ( !(unsigned __int8)LightningStorm::IsActive() ) /*0x6dda91*/
         LightningStorm::Start( /*0x6ddab8*/
@@ -1054,12 +1054,12 @@ LABEL_279:
       v114 = CoordStruct::Set2((CoordStruct *)&v120.u32_20, v119, 0); /*0x6df7b9*/
       *(unsigned int *)v120.__pad_0 = *v114; /*0x6df7c0*/
       *(unsigned int *)&v120.q004 = v114[1]; /*0x6df7cc*/
-      v120.Coord_field_0x8 = v114[2]; /*0x6df7d8*/
-      v120.Coord_field_0x8 = Cell::GetGroundHeight(&v120); /*0x6df7eb*/
+      v120.u32_8 = v114[2]; /*0x6df7d8*/
+      v120.u32_8 = Cell::GetGroundHeight(&v120); /*0x6df7eb*/
       if ( (*((unsigned int *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v119) + 80) & 0x100) != 0 /*0x6df817*/
         || (*((unsigned int *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v119) + 80) & 0x400) != 0 )
       {
-        v120.Coord_field_0x8 += dword_B0E6D4; /*0x6df825*/
+        v120.u32_8 += dword_B0E6D4; /*0x6df825*/
       }
       Tactical::SetTacticalPosition((TacticalClass *)g_TacticalClass_Instance, (int *)v120.__pad_0); /*0x6df834*/
       return result; /*0x6df845*/

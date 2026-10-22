@@ -103,7 +103,7 @@ unsigned int * Surface::CopyRect(int *aP1, void * a1)
   int *v49; // [esp+40h] [ebp+4h]
   unsigned int v50; // [esp+40h] [ebp+4h]
 
-  result = aP1->vtable1; /*0x5d1fdc*/
+  result = aP1[0]; /*0x5d1fdc*/
   v4 = a1[2]; /*0x5d1fde*/
   v37 = v4; /*0x5d1fe8*/
   if ( v4 <= 0 ) /*0x5d1fec*/
@@ -163,7 +163,7 @@ unsigned int * Surface::CopyRect(int *aP1, void * a1)
             break; /*0x5d2227*/
           v23 = v42; /*0x5d21b6*/
         }
-        result = aP1->vtable1; /*0x5d2229*/
+        result = aP1[0]; /*0x5d2229*/
       }
       v30 = result->LockCount; /*0x5d222d*/
       v31 = v45; /*0x5d2230*/
@@ -220,7 +220,7 @@ unsigned int * Surface::CopyRect(int *aP1, void * a1)
     v8 += 4; /*0x5d2063*/
     if ( ++v34 >= Width ) /*0x5d2071*/
     {
-      result = aP1->vtable1; /*0x5d2073*/
+      result = aP1[0]; /*0x5d2073*/
       goto LABEL_18; /*0x5d2073*/
     }
     v4 = v37; /*0x5d201a*/
@@ -2216,7 +2216,7 @@ unsigned int * Surface::Construct(ObjectClass * aP1, IUnknown * aP2, void *a3, v
   aP1->Width = aP2; /*0x4aec6a*/
   aP1->Height = a3; /*0x4aec6d*/
   /* X11: ptr_0 install elided (implicit via Surface virtuals 0x4aec70) */
-  return aP1->vtable1; /*0x4aec76*/
+  return aP1->ptr_0; /*0x4aec76*/
 
 }
 }  // G42.18c ns repair

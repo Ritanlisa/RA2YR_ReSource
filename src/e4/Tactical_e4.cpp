@@ -640,7 +640,7 @@ namespace gamemd {
 void * Tactical::GetCellData(void *a1)
 {
   return (char *)(g_MissionQueueFrame.localVariables[163] /*0x58c2be*/
-  + 80 * (*(int16_t *)this->ptr_0 + g_MapCellWidth * *(int16_t *)this->q1B70));
+  + 80 * (*(int16_t *)this->q000 + g_MapCellWidth * *(int16_t *)this->q1B70));
 }
 }
 // 0x640A40
@@ -1354,10 +1354,10 @@ unsigned int Tactical::SetTacticalPosition(int *aP1, void *a2)
     v5 = v8; /*0x6d6137*/
     v6 = v9; /*0x6d613b*/
   }
-  this->TacticalClass_field_D64 = v5; /*0x6d613f*/
-  this->TacticalClass_field_D74 = v5; /*0x6d6145*/
-  this->TacticalClass_field_D68 = v6; /*0x6d614d*/
-  this->TacticalClass_field_D78 = v6; /*0x6d6153*/
+  this->u32_D64 = v5; /*0x6d613f*/
+  this->qD74 = v5; /*0x6d6145*/
+  this->u32_D68 = v6; /*0x6d614d*/
+  this->qD78 = v6; /*0x6d6153*/
   unsigned int result; // eax
   result = TacticalClass::CalcViewportCells(this); /*0x6d6159*/
   this->redrawing = 1; /*0x6d615e*/
@@ -1467,35 +1467,35 @@ unsigned int * Tactical::PixelToCell(unsigned int *aP1, int *aP2)
     v40[0] = v16 / 256; /*0x6d672a*/
     v40[1] = v17 / 256; /*0x6d6747*/
     v18 = (Cell *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v40); /*0x6d6751*/
-    v35 = v12 - 15 * v18->u32_11B; /*0x6d6768*/
-    if ( ((int)v18->Cell_field_0x140 & 0x100) != 0 )
+    v35 = v12 - 15 * v18->Cell_field_0x11B; /*0x6d6768*/
+    if ( ((int)v18->u32_140 & 0x100) != 0 )
     {
       NeighbourContent = Cell::GetNeighbourContent(v18, 2u); /*0x6d6786*/
       v37 = Cell::GetNeighbourContent(v18, 4u); /*0x6d678f*/
-      if ( ((int)v18->Cell_field_0x140 & 0x800) == 0 /*0x6d67b7*/
+      if ( ((int)v18->u32_140 & 0x800) == 0 /*0x6d67b7*/
         || (v54 = 1, (*((unsigned int *)Cell::GetNeighbourContent(v18, 0) + 80) & 0x100) != 0) )
       {
         v54 = 0; /*0x6d67b9*/
       }
-      if ( ((int)v18->Cell_field_0x140 & 0x800) != 0 /*0x6d67e2*/
+      if ( ((int)v18->u32_140 & 0x800) != 0 /*0x6d67e2*/
         || (v30 = 1, (*((unsigned int *)Cell::GetNeighbourContent(v18, 6u) + 80) & 0x100) != 0) )
       {
         v30 = 0; /*0x6d67e4*/
       }
-      v19 = (int)v18->Cell_field_0x140 & 0x800; /*0x6d67ef*/
+      v19 = (int)v18->u32_140 & 0x800; /*0x6d67ef*/
       if ( !v19 || (v31 = 1, (v37->u32_140 & 0x100) != 0) ) /*0x6d6806*/
         v31 = 0; /*0x6d6808*/
       if ( v19 || (v33 = 1, (NeighbourContent[80] & 0x100) != 0) ) /*0x6d6820*/
         v33 = 0; /*0x6d6822*/
       if ( !v19 /*0x6d6858*/
-        || (v20 = v18->u32_11B - *((char *)NeighbourContent + 283),
+        || (v20 = v18->Cell_field_0x11B - *((char *)NeighbourContent + 283),
             (int)(((((v20) >> 32) & 0xFFFFFFFFu) ^ v20) - (((v20) >> 32) & 0xFFFFFFFFu)) > 1)
         || (v34 = 1, (NeighbourContent[80] & 0x100) != 0) )
       {
         v34 = 0; /*0x6d685a*/
       }
       if ( v19 /*0x6d688e*/
-        || (v21 = v18->u32_11B - v37->u32_11B, (int)(((((v21) >> 32) & 0xFFFFFFFFu) ^ v21) - (((v21) >> 32) & 0xFFFFFFFFu)) > 1)
+        || (v21 = v18->Cell_field_0x11B - v37->u32_11B, (int)(((((v21) >> 32) & 0xFFFFFFFFu) ^ v21) - (((v21) >> 32) & 0xFFFFFFFFu)) > 1)
         || (v32 = 1, (v37->u32_140 & 0x100) != 0) )
       {
         v32 = 0; /*0x6d6890*/
@@ -1527,12 +1527,12 @@ unsigned int * Tactical::PixelToCell(unsigned int *aP1, int *aP2)
         v26 = v43 - (*v24 - *&this->u32_B0); /*0x6d6971*/
         v27 = v44 - v25; /*0x6d6977*/
         if ( v54 && (int)(v27 - v26 / 2) > 15 || v30 && (int)(v27 + v26 / 2) > 15 )
-          v35 -= ((int)v18->Cell_field_0x140 & 0x100) != 0 ? 0x3C : 0;
+          v35 -= ((int)v18->u32_140 & 0x100) != 0 ? 0x3C : 0;
         v11 = v44; /*0x6d69c0*/
       }
       else
       {
-        v35 -= ((int)v18->Cell_field_0x140 & 0x100) != 0 ? 0x3C : 0;
+        v35 -= ((int)v18->u32_140 & 0x100) != 0 ? 0x3C : 0;
       }
     }
     if ( v35 <= v11 ) /*0x6d69c8*/
@@ -1841,7 +1841,7 @@ int Tactical::DrawOverlay(int * a1, BuildingTypeClass * aP2, int a4, int a5)
   int v16 = v15->IsoCoord_field_0x04; // ecx /*0x6dbbe1*/
   __int64 v17; // rax
   v17 = (int)*v15; /*0x6dbbe4*/
-  v30.IsoCoord_field_0x04 = v16; /*0x6dbbeb*/
+  v30.q004 = v16; /*0x6dbbeb*/
   int v18; // esi
   v18 = ((((v17) >> 32) & 0xFF) + (int)v17) >> 8; /*0x6dbbf6*/
   int v19; // eax
@@ -1849,7 +1849,7 @@ int Tactical::DrawOverlay(int * a1, BuildingTypeClass * aP2, int a4, int a5)
   unsigned int v31[2]; // [esp+20h] [ebp-10h] BYREF
   v31[0] = v18; /*0x6dbc0b*/
   int v20 = v18 - *&this->u32_B0; // esi /*0x6dbc22*/
-  v31[1] = v30.IsoCoord_field_0x04 / 256 - v19 - *&this->u32_B4; /*0x6dbc28*/
+  v31[1] = v30.q004 / 256 - v19 - *&this->u32_B4; /*0x6dbc28*/
   int v21; // eax
   v21 = aP2[2]; /*0x6dbc2c*/
   v31[0] = v20; /*0x6dbc34*/
@@ -2034,7 +2034,7 @@ int Tactical::UpdateMapView(TechnoTypeClass * aP0, int * a1, int aP2)
 {
 
   int result; // eax
-  result = AbstractClass::SaveLoad_Prefix((int *)aP0->vtable1, a1, aP2); /*0x6dbe0f*/
+  result = AbstractClass::SaveLoad_Prefix((int *)aP0->ptr_0, a1, aP2); /*0x6dbe0f*/
   if ( result >= 0 ) /*0x6dbe16*/
     return 0; /*0x6dbe18*/
   return result; /*0x6dbe1a*/

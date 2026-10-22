@@ -12,9 +12,9 @@ struct Conflict_WorldDominationTour_12 {
     unsigned char __pad_000;  // 0x0
     char __pad_1[3];  // 0x1
     unsigned int u32_4;  // 0x4
-    unsigned int m_8;  // 0x8
-    unsigned int m_C;  // 0xC
-    int m_10;  // 0x10
+    unsigned int u32_8;  // 0x8
+    unsigned int q00C;  // 0xC
+    int q010;  // 0x10
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int  Release(int a2, unsigned int * a3);  // 0x766C10

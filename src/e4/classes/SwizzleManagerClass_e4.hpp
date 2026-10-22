@@ -8,14 +8,14 @@ namespace gamemd {
 struct SwizzleManagerClass {
     void* ptr_0;  // 0x0
     int __pad_004;  // 0x4
-    int SwizzleManagerClass_field_0x08;  // 0x8
-    int SwizzleManagerClass_field_0x0C;  // 0xC
-    int SwizzleManagerClass_field_0x10;  // 0x10
-    int SwizzleManagerClass_field_0x14;  // 0x14
-    int SwizzleManagerClass_field_0x18;  // 0x18
-    int SwizzleManagerClass_field_0x1C;  // 0x1C
-    int SwizzleManagerClass_field_0x20;  // 0x20
-    int SwizzleManagerClass_field_0x24;  // 0x24
+    int q008;  // 0x8
+    int q00C;  // 0xC
+    int q010;  // 0x10
+    int u32_14;  // 0x14
+    int q018;  // 0x18
+    int u32_1C;  // 0x1C
+    int q020;  // 0x20
+    int q024;  // 0x24
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int Add(SwizzleManagerClass * aP0, SwizzleManagerClass * aP1, unsigned int * a2);

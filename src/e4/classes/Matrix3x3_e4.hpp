@@ -8,10 +8,10 @@ namespace gamemd {
 struct Matrix3x3 {
     unsigned char __pad_000;  // 0x0
     char __pad_1[3];  // 0x1
-    int Matrix3x3_field_0x04;  // 0x4
-    int Matrix3x3_field_0x08;  // 0x8
-    int Matrix3x3_field_0x0C;  // 0xC
-    int Matrix3x3_field_0x10;  // 0x10
+    int u32_4;  // 0x4
+    int u32_8;  // 0x8
+    int u32_C;  // 0xC
+    int q010;  // 0x10
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     static int ApplyCol0(void *aP1, float a2);

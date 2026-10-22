@@ -137,29 +137,29 @@ int INIClass::GetKeyCount(INIClass * aP1, void *a2)
   v2 = &this->needsSave_flag; /*0x5269a2*/
   v3 = (unsigned __int8 *)Checksummer::Add_Buffer((Checksummer *)v12, a2, strlen((const char *)a2)); /*0x5269a5*/
   a2 = v3; /*0x5269a7*/
-  if ( !v2->SortedArray_field_0x04 ) /*0x5269ab*/
+  if ( !v2->u32_4 ) /*0x5269ab*/
     return 0; /*0x5269b0*/
-  SortedArray_field_0x10 = (unsigned __int8 **)v2->SortedArray_field_0x10; /*0x5269b2*/
+  SortedArray_field_0x10 = (unsigned __int8 **)v2->u32_10; /*0x5269b2*/
   if ( !SortedArray_field_0x10 || *SortedArray_field_0x10 != v3 ) /*0x5269bb*/
   {
     v5 = (v2)->BinarySearch((int *)&a2); /*0x5269c4*/
     if ( !v5 ) /*0x5269cb*/
       return 0; /*0x5269cb*/
-    v2->SortedArray_field_0x10 = v5; /*0x5269cd*/
+    v2->u32_10 = v5; /*0x5269cd*/
   }
-  SortedArray_field_0x04 = v2->SortedArray_field_0x04; /*0x5269d0*/
+  SortedArray_field_0x04 = v2->u32_4; /*0x5269d0*/
   a2 = v3; /*0x5269d3*/
   if ( SortedArray_field_0x04 ) /*0x5269d9*/
   {
-    v7 = (unsigned __int8 **)v2->SortedArray_field_0x10; /*0x5269db*/
+    v7 = (unsigned __int8 **)v2->u32_10; /*0x5269db*/
     if ( v7 && *v7 == v3 ) /*0x5269e4*/
       goto LABEL_12; /*0x5269e4*/
     v8 = (v2)->BinarySearch((int *)&a2); /*0x5269ed*/
     if ( v8 ) /*0x5269f4*/
     {
-      v2->SortedArray_field_0x10 = v8; /*0x5269f6*/
+      v2->u32_10 = v8; /*0x5269f6*/
 LABEL_12:
-      v9 = (unsigned int **)(v2->SortedArray_field_0x10 + 4); /*0x5269f9*/
+      v9 = (unsigned int **)(v2->u32_10 + 4); /*0x5269f9*/
       goto LABEL_14; /*0x5269ff*/
     }
   }
@@ -250,26 +250,26 @@ LABEL_7:
   {
     memset(v26, 0, sizeof(v26)); /*0x528a60*/
     v11 = (unsigned __int8 *)Checksummer::Add_Buffer((Checksummer *)v26, v9, strlen((const char *)v9)); /*0x528a7e*/
-    HashTable_field_0x30 = v10->HashTable_field_0x30; /*0x528a83*/
+    HashTable_field_0x30 = v10->q030; /*0x528a83*/
     p_HashTable_field_0x2C = &v10->q02C; /*0x528a86*/
     a3 = v11; /*0x528a8b*/
     if ( HashTable_field_0x30 ) /*0x528a8f*/
     {
-      HashTable_field_0x10 = (unsigned __int8 **)p_HashTable_field_0x2C->HashTable_field_0x10; /*0x528a95*/
+      HashTable_field_0x10 = (unsigned __int8 **)p_HashTable_field_0x2C->u32_10; /*0x528a95*/
       if ( HashTable_field_0x10 && *HashTable_field_0x10 == v11 ) /*0x528a9e*/
       {
 LABEL_13:
-        if ( p_HashTable_field_0x2C->HashTable_field_0x04 ) /*0x528abb*/
+        if ( p_HashTable_field_0x2C->u32_4 ) /*0x528abb*/
         {
-          v16 = (unsigned __int8 **)p_HashTable_field_0x2C->HashTable_field_0x10; /*0x528ac6*/
+          v16 = (unsigned __int8 **)p_HashTable_field_0x2C->u32_10; /*0x528ac6*/
           if ( v16 && *v16 == v11 ) /*0x528acf*/
             goto LABEL_18; /*0x528acf*/
           v17 = HashTable::BinarySearchAlt(p_HashTable_field_0x2C, (int *)&a3); /*0x528ad8*/
           if ( v17 ) /*0x528adf*/
           {
-            p_HashTable_field_0x2C->HashTable_field_0x10 = v17; /*0x528ae5*/
+            p_HashTable_field_0x2C->u32_10 = v17; /*0x528ae5*/
 LABEL_18:
-            v18 = (char ***)(p_HashTable_field_0x2C->HashTable_field_0x10 + 4); /*0x528ae8*/
+            v18 = (char ***)(p_HashTable_field_0x2C->u32_10 + 4); /*0x528ae8*/
 LABEL_31:
             v24 = *v18; /*0x528b97*/
             if ( v24 ) /*0x528b9b*/
@@ -290,7 +290,7 @@ LABEL_31:
       v15 = HashTable::BinarySearchAlt(p_HashTable_field_0x2C, (int *)&a3); /*0x528aa7*/
       if ( v15 ) /*0x528aae*/
       {
-        p_HashTable_field_0x2C->HashTable_field_0x10 = v15; /*0x528ab4*/
+        p_HashTable_field_0x2C->u32_10 = v15; /*0x528ab4*/
         v11 = a3; /*0x528ab7*/
         goto LABEL_13; /*0x528ab7*/
       }
@@ -421,14 +421,14 @@ int INIClass::GetStringByIndex(CCINIClass * aP1, CCINIClass * aP2, void *a3)
   v3 = &this->needsSave_flag; /*0x526d02*/
   v4 = (unsigned __int8 *)Checksummer::Add_Buffer((Checksummer *)v10, aP2, strlen((const char *)aP2)); /*0x526d05*/
   aP2 = v4; /*0x526d07*/
-  if ( !v3->SortedArray_field_0x04 ) /*0x526d0b*/
+  if ( !v3->u32_4 ) /*0x526d0b*/
     return 0; /*0x526d10*/
   if ( !(unsigned __int8)SortedArray::CheckCache(v3, &aP2) ) /*0x526d19*/
   {
     v5 = (v3)->BinarySearch((int *)&aP2); /*0x526d29*/
     if ( !v5 ) /*0x526d30*/
       return 0; /*0x526d30*/
-    v3->SortedArray_field_0x10 = v5; /*0x526d32*/
+    v3->u32_10 = v5; /*0x526d32*/
   }
   aP2 = v4; /*0x526d3c*/
   v6 = *(unsigned int **)(v3)->FindValue((int *)&aP2); /*0x526d45*/

@@ -5624,16 +5624,16 @@ int SidebarClass::ProcessInput(int a1, void* a2, int a3) {
             dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x6ab07d*/
             ++*(unsigned int *)&dword_A802C8; /*0x6ab083*/
           }
-          byte_880D68[3988 * *(unsigned int *)(v73[2].ControlClass_field_0x0C + 56)] = 1; /*0x6ab09f*/
+          byte_880D68[3988 * *(unsigned int *)(v73[2].q00C + 56)] = 1; /*0x6ab09f*/
         }
         else
         {
           v17 = v73; /*0x6ab0ac*/
-          v18 = (unsigned int *)(v73[2].ControlClass_field_0x0C + 4 * (v8 + 4 * (3 * v8 + 6) + 2)); /*0x6ab0bb*/
+          v18 = (unsigned int *)(v73[2].q00C + 4 * (v8 + 4 * (3 * v8 + 6) + 2)); /*0x6ab0bb*/
           if ( *v18 == 1 ) /*0x6ab0c1*/
           {
             *v18 = 2; /*0x6ab0c9*/
-            *(unsigned char *)(v17[2].ControlClass_field_0x0C + 60) = 1; /*0x6ab0d9*/
+            *(unsigned char *)(v17[2].q00C + 60) = 1; /*0x6ab0d9*/
             MapClass::MarkForRedraw((GScreenClass *)&dword_87F7E8, 0); /*0x6ab0dd*/
             PlayVocClass(dword_8871E0->ChronoOutSound, 0x2000u, 1.0, 0); /*0x6ab0f9*/
             VoxClass::FindAndPlay(aEvaOnhold, -1); /*0x6ab108*/
@@ -5702,8 +5702,8 @@ LABEL_45:
                   v75->u8_CCE,
                   v74);
           v41 = TechnoTypeClass::GetByTypeAndIndex( /*0x6ab632*/
-                  *(unsigned int *)(v9 + v73[2].ControlClass_field_0x0C + 92),
-                  *(unsigned int *)(v9 + v73[2].ControlClass_field_0x0C + 88));
+                  *(unsigned int *)(v9 + v73[2].q00C + 92),
+                  *(unsigned int *)(v9 + v73[2].q00C + 88));
           if ( !v41 || (v42 = *(unsigned char *)(v41 + 3278), LOBYTE(v69) = 1, !v42) ) /*0x6ab648*/
             LOBYTE(v69) = 0; /*0x6ab64a*/
           ShouldDisableCameo = HouseClass::ShouldDisableCameo( /*0x6ab65d*/
@@ -5755,8 +5755,8 @@ LABEL_85:
                     v78,
                     *(unsigned int *)(*(int *)((char *)&stru_A83CD9.estimatedHealth + 3) + 48),
                     0xEu,
-                    *(unsigned int *)(v9 + v73[2].ControlClass_field_0x0C + 92),
-                    *(unsigned int *)(v9 + v73[2].ControlClass_field_0x0C + 88),
+                    *(unsigned int *)(v9 + v73[2].q00C + 92),
+                    *(unsigned int *)(v9 + v73[2].q00C + 88),
                     (unsigned __int8)v69);
             if ( *(int *)&dword_A802C8 < 128 ) /*0x6ab77d*/
             {
@@ -5774,12 +5774,12 @@ LABEL_120:
             if ( !v72 && !ShouldDisableCameo ) /*0x6ab7f2*/
             {
               v44 = v73; /*0x6ab7fc*/
-              *(unsigned int *)(v73[2].ControlClass_field_0x0C + 4 * (v76 + 4 * (3 * v76 + 6) + 2)) = 1; /*0x6ab80d*/
-              *(unsigned char *)(v44[2].ControlClass_field_0x0C + 60) = 1; /*0x6ab817*/
+              *(unsigned int *)(v73[2].q00C + 4 * (v76 + 4 * (3 * v76 + 6) + 2)) = 1; /*0x6ab80d*/
+              *(unsigned char *)(v44[2].q00C + 60) = 1; /*0x6ab817*/
               MapClass::MarkForRedraw((GScreenClass *)&dword_87F7E8, 0); /*0x6ab820*/
               v45 = (unsigned char *)TechnoTypeClass::GetByTypeAndIndex( /*0x6ab833*/
                                v10,
-                               *(unsigned int *)(v9 + v44[2].ControlClass_field_0x0C + 88));
+                               *(unsigned int *)(v9 + v44[2].q00C + 88));
               if ( v45 ) /*0x6ab837*/
               {
                 v46 = dword_A8B550; /*0x6ab842*/
@@ -5823,8 +5823,8 @@ LABEL_120:
                       v53 = 1; /*0x6ab90c*/
                     }
                     v54 = v73; /*0x6ab920*/
-                    *(unsigned int *)(v9 + v73[2].ControlClass_field_0x0C + 108) = 0; /*0x6ab927*/
-                    v55 = (unsigned int *)(v9 + v54[2].ControlClass_field_0x0C + 108); /*0x6ab932*/
+                    *(unsigned int *)(v9 + v73[2].q00C + 108) = 0; /*0x6ab927*/
+                    v55 = (unsigned int *)(v9 + v54[2].q00C + 108); /*0x6ab932*/
                     v56 = *(unsigned int *)&stru_A8E960.random[528]; /*0x6ab936*/
                     v55[5] = v53; /*0x6ab93e*/
                     v55[2] = v56; /*0x6ab941*/
@@ -5847,8 +5847,8 @@ LABEL_120:
           VoxClass::FindAndPlay(v27, -1); /*0x6ab498*/
           v28 = v73; /*0x6ab49d*/
           v29 = TechnoTypeClass::GetByTypeAndIndex( /*0x6ab4af*/
-                  *(unsigned int *)(v9 + v73[2].ControlClass_field_0x0C + 92),
-                  *(unsigned int *)(v9 + v73[2].ControlClass_field_0x0C + 88));
+                  *(unsigned int *)(v9 + v73[2].q00C + 92),
+                  *(unsigned int *)(v9 + v73[2].q00C + 88));
           if ( !v29 || (v68 = 1, !*(unsigned char *)(v29 + 3278)) ) /*0x6ab4b8*/
             v68 = 0; /*0x6ab4c7*/
           SidebarClass::MarkTabForRebuild( /*0x6ab4e3*/
@@ -5860,8 +5860,8 @@ LABEL_120:
                   v78,
                   *(unsigned int *)(*(int *)((char *)&stru_A83CD9.estimatedHealth + 3) + 48),
                   0xEu,
-                  *(unsigned int *)(v9 + v73[2].ControlClass_field_0x0C + 92),
-                  *(unsigned int *)(v9 + v73[2].ControlClass_field_0x0C + 88),
+                  *(unsigned int *)(v9 + v73[2].q00C + 92),
+                  *(unsigned int *)(v9 + v73[2].q00C + 88),
                   v68);
           if ( *(int *)&dword_A802C8 < 128 ) /*0x6ab520*/
           {
@@ -5873,8 +5873,8 @@ LABEL_120:
           }
           Member09 = 0; /*0x6ab582*/
           v32 = 4 * (v76 + 4 * (3 * v76 + 6) + 2); /*0x6ab584*/
-          *(unsigned int *)(v32 + v28[2].ControlClass_field_0x0C) = 1; /*0x6ab587*/
-          ControlClass_field_0x0C = v28[2].ControlClass_field_0x0C; /*0x6ab58e*/
+          *(unsigned int *)(v32 + v28[2].q00C) = 1; /*0x6ab587*/
+          ControlClass_field_0x0C = v28[2].q00C; /*0x6ab58e*/
           v34 = *(ObjectClass **)(v9 + ControlClass_field_0x0C + 100); /*0x6ab591*/
           if ( v34 ) /*0x6ab597*/
             Member09 = ObjectClass::GetMember09(v34); /*0x6ab599*/
@@ -5885,16 +5885,16 @@ LABEL_120:
               Member09 = (v35 + Member09) / 2; /*0x6ab5b1*/
           }
           v36 = v69; /*0x6ab5b6*/
-          *(unsigned int *)(v9 + v28[2].ControlClass_field_0x0C + 108) = Member09; /*0x6ab5ba*/
+          *(unsigned int *)(v9 + v28[2].q00C + 108) = Member09; /*0x6ab5ba*/
           BuildTimeFrames = FactoryClass::GetBuildTimeFrames((FactoryClass *)v36); /*0x6ab5be*/
           v38 = *(unsigned int *)&stru_A8E960.random[528]; /*0x6ab5c6*/
           ++BuildTimeFrames; /*0x6ab5cc*/
-          v39 = (unsigned int *)(v9 + v28[2].ControlClass_field_0x0C + 116); /*0x6ab5d3*/
-          *(unsigned int *)(v9 + v28[2].ControlClass_field_0x0C + 128) = BuildTimeFrames; /*0x6ab5d6*/
+          v39 = (unsigned int *)(v9 + v28[2].q00C + 116); /*0x6ab5d3*/
+          *(unsigned int *)(v9 + v28[2].q00C + 128) = BuildTimeFrames; /*0x6ab5d6*/
           *v39 = v38; /*0x6ab5de*/
           v39[1] = v77; /*0x6ab5e4*/
           v39[2] = BuildTimeFrames; /*0x6ab5e7*/
-          *(unsigned char *)(v28[2].ControlClass_field_0x0C + 60) = 1; /*0x6ab5ed*/
+          *(unsigned char *)(v28[2].q00C + 60) = 1; /*0x6ab5ed*/
           MapClass::MarkForRedraw((GScreenClass *)&dword_87F7E8, 0); /*0x6ab5f1*/
           g_CameoRenderFlag = 1; /*0x6ab5f6*/
           goto LABEL_117; /*0x6ab5fd*/

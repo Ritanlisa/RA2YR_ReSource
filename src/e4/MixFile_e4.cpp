@@ -187,7 +187,7 @@ AbstractClass * * MixFile::LoadSide(void * aUimdIni)
   v20 = 0; /*0x53511f*/
   int v19[3]; // [esp+B8h] [ebp-80h] BYREF
   ((Vector *)v19)->Clear(); /*0x535126*/
-  v18.ptr_0.__tail_0.__tail_0.__tail_0 = (FileClass)&off_7E1668; /*0x535134*/
+  v18.__tail_0.__tail_0.__tail_0.__tail_0 = (FileClass)&off_7E1668; /*0x535134*/
   ((BufferIOFileClass *)(&v18))->Dtor(); /*0x535138*/
   if ( v7 ) /*0x53513f*/
   {
@@ -208,7 +208,7 @@ AbstractClass * * MixFile::LoadSide(void * aUimdIni)
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E16B0) */  /*0x5351ba*/
   v20 = 0; /*0x5351c2*/
   ((Vector *)v19)->Clear(); /*0x5351c9*/
-  v18.ptr_0.__tail_0.__tail_0.__tail_0 = (FileClass)&off_7E1668; /*0x5351d2*/
+  v18.__tail_0.__tail_0.__tail_0.__tail_0 = (FileClass)&off_7E1668; /*0x5351d2*/
   ((BufferIOFileClass *)(&v18))->Dtor(); /*0x5351d6*/
   if ( v10 ) /*0x5351dd*/
   {
@@ -239,7 +239,7 @@ AbstractClass * * MixFile::LoadSide(void * aUimdIni)
     /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E16B0) */  /*0x535296*/
     v20 = 0; /*0x53529a*/
     ((Vector *)v19)->Clear(); /*0x5352a1*/
-    v18.ptr_0.__tail_0.__tail_0.__tail_0 = (FileClass)&off_7E1668; /*0x5352aa*/
+    v18.__tail_0.__tail_0.__tail_0.__tail_0 = (FileClass)&off_7E1668; /*0x5352aa*/
     ((gamemd::BufferIOFileClass *)(&v18))->Dtor(); /*0x5352ae*/
     if ( v14 ) /*0x5352b5*/
     {
@@ -260,7 +260,7 @@ AbstractClass * * MixFile::LoadSide(void * aUimdIni)
       /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E16B0) */  /*0x535353*/
       v23 = 0; /*0x53535a*/
       ((Vector *)v22)->Clear(); /*0x535361*/
-      v21.ptr_0.__tail_0.__tail_0.__tail_0 = (FileClass)&off_7E1668; /*0x53536d*/
+      v21.__tail_0.__tail_0.__tail_0.__tail_0 = (FileClass)&off_7E1668; /*0x53536d*/
       ((BufferIOFileClass *)(&v21))->Dtor(); /*0x535374*/
       return (gamemd::AbstractClass **)(1); /*0x535379*/
     }
@@ -270,7 +270,7 @@ AbstractClass * * MixFile::LoadSide(void * aUimdIni)
       /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E16B0) */  /*0x53539a*/
       v23 = 0; /*0x5353a1*/
       ((Vector *)v22)->Clear(); /*0x5353a8*/
-      v21.ptr_0.__tail_0.__tail_0.__tail_0 = (FileClass)&off_7E1668; /*0x5353b4*/
+      v21.__tail_0.__tail_0.__tail_0.__tail_0 = (FileClass)&off_7E1668; /*0x5353b4*/
       ((BufferIOFileClass *)(&v21))->Dtor(); /*0x5353bb*/
       return 0; /*0x5353c0*/
     }

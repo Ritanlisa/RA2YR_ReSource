@@ -199,7 +199,7 @@ char CampaignClass::SaveProgress()
   v28.headNode[1] = 0; /*0x49c63e*/
   INISectionList::Constructor((INISectionList *)&v28.headNode[2]); /*0x49c642*/
   Node::Init((MixFileClass *)&v28.needsSave_flag); /*0x49c64b*/
-  v28.INIClass_field_3C = 0; /*0x49c65e*/
+  v28.q03C = 0; /*0x49c65e*/
   v28.ownsFile[0] = 0; /*0x49c662*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS CCINIClass_Vtable) */  /*0x49c667*/
   (&v28)->Load((int)&v33, 0, 0); /*0x49c66f*/

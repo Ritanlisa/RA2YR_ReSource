@@ -60,12 +60,12 @@ int RadarClass::Destruct(void *a1)
   if ( RadarClass_field_0x1260 && this->u8_1269 ) /*0x652c69*/
   {
     __3_YAXPAX_Z(RadarClass_field_0x1260); /*0x652c72*/
-    this->RadarClass_field_0x1260 = 0; /*0x652c7a*/
+    this->ptr_1260 = 0; /*0x652c7a*/
   }
   this->u8_1269 = 0; /*0x652c80*/
   *(unsigned int *)this->__pad_1264 = 0; /*0x652c86*/
   CampaignClass *RadarClass_field_0x1228; // eax
-  RadarClass_field_0x1228 = this->RadarClass_field_0x1228; /*0x652c8c*/
+  RadarClass_field_0x1228 = this->ptr_1228; /*0x652c8c*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x652c92*/
   if ( RadarClass_field_0x1228 && this->u8_1231 ) /*0x652ca0*/
   {

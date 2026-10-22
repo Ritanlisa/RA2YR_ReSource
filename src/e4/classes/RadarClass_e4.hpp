@@ -21,7 +21,7 @@ struct RadarClass {
     unsigned int __pad_004;  // 0x4
     int q008;  // 0x8
     unsigned int u32_C;  // 0xC
-    int RadarClass_field_0x10;  // 0x10
+    int q010;  // 0x10
     char __pad_14[16];  // 0x14
     unsigned int outBuffer;  // 0x24
     unsigned char __pad_028;  // 0x28
@@ -32,15 +32,15 @@ struct RadarClass {
     VectorClass * ptr_50;  // 0x50
     unsigned char __pad_054;  // 0x54
     char __pad_55[11];  // 0x55
-    int RadarClass_field_0x60;  // 0x60
+    int u32_60;  // 0x60
     char __pad_64[4];  // 0x64
     unsigned int somecount_4C;  // 0x68
     unsigned int ZoneConnections;  // 0x6C
     unsigned int __pad_070;  // 0x70
     char __pad_74[60];  // 0x74
-    int RadarClass_field_0xB0;  // 0xB0
+    int q0B0;  // 0xB0
     char __pad_B4[8];  // 0xB4
-    int RadarClass_field_0xBC;  // 0xBC
+    int q0BC;  // 0xBC
     char __pad_C0[44];  // 0xC0
     unsigned int MapRect;  // 0xEC
     unsigned char __pad_0F0;  // 0xF0
@@ -62,66 +62,66 @@ struct RadarClass {
     char __pad_293[3];  // 0x293
     unsigned char __pad_296;  // 0x296
     char __pad_297[649];  // 0x297
-    int RadarClass_field_0x520;  // 0x520
+    int q520;  // 0x520
     char __pad_524[148];  // 0x524
-    int RadarClass_field_0x5B8;  // 0x5B8
+    int q5B8;  // 0x5B8
     char __pad_5BC[312];  // 0x5BC
-    int RadarClass_field_0x6F4;  // 0x6F4
+    int q6F4;  // 0x6F4
     char __pad_6F8[2800];  // 0x6F8
-    int RadarClass_field_0x11E8;  // 0x11E8
-    int RadarClass_field_0x11EC;  // 0x11EC
-    int RadarClass_field_0x11F0;  // 0x11F0
-    int RadarClass_field_0x11F4;  // 0x11F4
-    int RadarClass_field_0x11F8;  // 0x11F8
-    int RadarClass_field_0x11FC;  // 0x11FC
-    int RadarClass_field_0x1200;  // 0x1200
-    int RadarClass_field_0x1204;  // 0x1204
+    int q11E8;  // 0x11E8
+    int u32_11EC;  // 0x11EC
+    int q11F0;  // 0x11F0
+    int q11F4;  // 0x11F4
+    int q11F8;  // 0x11F8
+    int q11FC;  // 0x11FC
+    int q1200;  // 0x1200
+    int q1204;  // 0x1204
     char __pad_1208[20];  // 0x1208
-    int RadarClass_field_0x121C;  // 0x121C
-    int RadarClass_field_0x1220;  // 0x1220
-    VectorClass* RadarClass_field_0x1224;  // 0x1224
-    CampaignClass* RadarClass_field_0x1228;  // 0x1228
+    int u32_121C;  // 0x121C
+    int u32_1220;  // 0x1220
+    VectorClass* q1224;  // 0x1224
+    CampaignClass* ptr_1228;  // 0x1228
     unsigned char __pad_122C;  // 0x122C
     char __pad_122D[4];  // 0x122D
     unsigned char u8_1231;  // 0x1231
     char __pad_1232[10];  // 0x1232
-    int RadarClass_field_0x123C;  // 0x123C
-    int RadarClass_field_0x1240;  // 0x1240
-    int RadarClass_field_0x1244;  // 0x1244
-    int RadarClass_field_0x1248;  // 0x1248
-    int RadarClass_field_0x124C;  // 0x124C
-    int RadarClass_field_0x1250;  // 0x1250
-    int RadarClass_field_0x1254;  // 0x1254
-    int RadarClass_field_0x1258;  // 0x1258
-    int RadarClass_field_0x125C;  // 0x125C
-    CampaignClass* RadarClass_field_0x1260;  // 0x1260
+    int u32_123C;  // 0x123C
+    int u32_1240;  // 0x1240
+    int u32_1244;  // 0x1244
+    int q1248;  // 0x1248
+    int q124C;  // 0x124C
+    int q1250;  // 0x1250
+    int q1254;  // 0x1254
+    int u32_1258;  // 0x1258
+    int q125C;  // 0x125C
+    CampaignClass* ptr_1260;  // 0x1260
     char __pad_1264[5];  // 0x1264
     unsigned char u8_1269;  // 0x1269
     char __pad_126A[10];  // 0x126A
-    int RadarClass_field_0x1274;  // 0x1274
-    int RadarClass_field_0x1278;  // 0x1278
+    int u32_1274;  // 0x1274
+    int q1278;  // 0x1278
     char __pad_127C[524];  // 0x127C
-    int RadarClass_field_0x1488;  // 0x1488
+    int u32_1488;  // 0x1488
     char __pad_148C[4];  // 0x148C
-    int RadarClass_field_0x1490;  // 0x1490
-    int RadarClass_field_0x1494;  // 0x1494
-    int RadarClass_field_0x1498;  // 0x1498
-    int RadarClass_field_0x149C;  // 0x149C
+    int u32_1490;  // 0x1490
+    int q1494;  // 0x1494
+    int u32_1498;  // 0x1498
+    int u32_149C;  // 0x149C
     char __pad_14A0[4];  // 0x14A0
-    int RadarClass_field_0x14A4;  // 0x14A4
+    int q14A4;  // 0x14A4
     char __pad_14A8[4];  // 0x14A8
-    int RadarClass_field_0x14AC;  // 0x14AC
-    int RadarClass_field_0x14B0;  // 0x14B0
-    int RadarClass_field_0x14B4;  // 0x14B4
+    int u32_14AC;  // 0x14AC
+    int u32_14B0;  // 0x14B0
+    int u32_14B4;  // 0x14B4
     char __pad_14B8[8];  // 0x14B8
-    int RadarClass_field_0x14C0;  // 0x14C0
+    int q14C0;  // 0x14C0
     char __pad_14C4[20];  // 0x14C4
     char IsAvailableNow[1];  // 0x14D8
-    char RadarClass_field_0x14D9[4];  // 0x14D9
+    char u32_14D9[4];  // 0x14D9
     char __pad_14DD[31];  // 0x14DD
-    int RadarClass_field_0x14FC;  // 0x14FC
+    int u32_14FC;  // 0x14FC
     char __pad_1500[8];  // 0x1500
-    int RadarClass_field_0x1508;  // 0x1508
+    int q1508;  // 0x1508
     char __pad_150C[427];  // 0x150C
     char RadarClass_field_0x16B7[4];  // 0x16B7
     char __pad_16BB[1];  // 0x16BB

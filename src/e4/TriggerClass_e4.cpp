@@ -108,7 +108,7 @@ char TriggerClass::FindByEventType(char a1)
 namespace gamemd {
 int TriggerClass::GetValue(void *a1, void *a2)
 {
-  return this->u32_54; /*0x71fa33*/
+  return this->timer; /*0x71fa33*/
 }
 }
 // 0x7264C0

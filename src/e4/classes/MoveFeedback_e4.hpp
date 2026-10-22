@@ -10,19 +10,19 @@ struct DynamicVector;  // fix_fwd_type_supply
 struct MoveFeedback {
     unsigned char __pad_000;  // 0x0
     char __pad_1[3];  // 0x1
-    int MoveFeedback_field_0x04;  // 0x4
-    unsigned int m_8;  // 0x8
-    unsigned int m_C;  // 0xC
-    unsigned int m_10;  // 0x10
-    int MoveFeedback_field_0x14;  // 0x14
-    int MoveFeedback_field_0x18;  // 0x18
-    int MoveFeedback_field_0x1C;  // 0x1C
-    int MoveFeedback_field_0x20;  // 0x20
-    int MoveFeedback_field_0x24;  // 0x24
-    int MoveFeedback_field_0x28;  // 0x28
-    int MoveFeedback_field_0x2C;  // 0x2C
-    int MoveFeedback_field_0x30;  // 0x30
-    int MoveFeedback_field_0x34;  // 0x34
+    int q004;  // 0x4
+    unsigned int q008;  // 0x8
+    unsigned int q00C;  // 0xC
+    unsigned int q010;  // 0x10
+    int q014;  // 0x14
+    int q018;  // 0x18
+    int q01C;  // 0x1C
+    int q020;  // 0x20
+    int q024;  // 0x24
+    int q028;  // 0x28
+    int q02C;  // 0x2C
+    int q030;  // 0x30
+    int q034;  // 0x34
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     unsigned int  PointerToIndex(int a2);  // 0x40B670

@@ -415,7 +415,7 @@ int AudioSample::Destructor() {
 // 0x4080D0
 namespace gamemd {
 int AudioSample::IsBuffering() {
-  return (this->AudioSample_field_0x0C & 1) != 0 /*0x4080e8*/
+  return (this->q00C & 1) != 0 /*0x4080e8*/
       && *(unsigned int *)(this->u32_14 + 20) != *(unsigned int *)(this->u32_14 + 24);
 }
 } // namespace gamemd
@@ -524,7 +524,7 @@ int AudioSample::SetField() {
 
   result = this->u32_28; /*0x408930*/
   this->u32_2C = 0; /*0x408937*/
-  this->AudioSample_field_0x0C = result; /*0x40893a*/
+  this->q00C = result; /*0x40893a*/
   if ( result ) /*0x40893d*/
   {
     result = *(unsigned int *)(result + 8 * this->u32_14 + 32); /*0x408943*/
@@ -769,23 +769,23 @@ LABEL_6:
     if ( v8 == 2 ) /*0x42c37b*/
       v95 = 0; /*0x42c387*/
     else
-      v95 = *(&v6[2].Pathfinding_field_0x0C + v8); /*0x42c381*/
+      v95 = *(&v6[2].q00C + v8); /*0x42c381*/
     v12 = (unsigned int *)*(&v6[2].Pathfinding_field_0x08 + v8); /*0x42c393*/
-    v85 = (unsigned int *)*(&v6[2].Pathfinding_field_0x14 + v8); /*0x42c39b*/
+    v85 = (unsigned int *)*(&v6[2].q014 + v8); /*0x42c39b*/
     v86 = *(unsigned int **)&v6[3].__pad_0[4 * v8 + 4]; /*0x42c3a2*/
-    v12[v11] = v6[1].Pathfinding_field_0x0C; /*0x42c3aa*/
+    v12[v11] = v6[1].q00C; /*0x42c3aa*/
     v105 = v12; /*0x42c3b2*/
-    v12[v93] = v6[1].Pathfinding_field_0x0C; /*0x42c3b6*/
+    v12[v93] = v6[1].q00C; /*0x42c3b6*/
     if ( v11 == v93 ) /*0x42c3b9*/
     {
       if ( !v8 ) /*0x42c3bd*/
       {
-        Pathfinding_field_0x10 = v6[3].Pathfinding_field_0x10; /*0x42c3bf*/
+        Pathfinding_field_0x10 = v6[3].q010; /*0x42c3bf*/
         *(unsigned int *)(Pathfinding_field_0x10 + 12) = 0; /*0x42c3c2*/
         *(unsigned int *)(Pathfinding_field_0x10 + 4) = v11; /*0x42c3c5*/
       }
-      *((unsigned short *)&v6[6].Pathfinding_field_0x14 + 500 * v8) = v11; /*0x42c3d1*/
-      *(&v6[113].Pathfinding_field_0x18 + v8) = 1; /*0x42c3d9*/
+      *((unsigned short *)&v6[6].q014 + 500 * v8) = v11; /*0x42c3d1*/
+      *(&v6[113].q018 + v8) = 1; /*0x42c3d9*/
       goto LABEL_85; /*0x42c3e4*/
     }
     v97 = v6->q00C.Pathfinding_field_0x10; /*0x42c3ee*/
@@ -822,7 +822,7 @@ LABEL_6:
         v83->Count = v97; /*0x42c474*/
     }
     v87 = 1; /*0x42c482*/
-    v85[v11] = v6[1].Pathfinding_field_0x0C; /*0x42c48a*/
+    v85[v11] = v6[1].q00C; /*0x42c48a*/
     v86[v11] = 0; /*0x42c48d*/
     v17 = v6->q00C.Pathfinding_field_0x14; /*0x42c494*/
     if ( *(unsigned int *)v17->__pad_0 ) /*0x42c497*/
@@ -841,7 +841,7 @@ LABEL_6:
     v78 = v18; /*0x42c4ca*/
     v21 = 24 * v8; /*0x42c4ce*/
     v84 = 24 * v8; /*0x42c4d1*/
-    v77 = *(&v6[4].Pathfinding_field_0x14 + 6 * v8) == 0; /*0x42c4de*/
+    v77 = *(&v6[4].q014 + 6 * v8) == 0; /*0x42c4de*/
     if ( !v18 ) /*0x42c4e5*/
       return 0; /*0x42c8ea*/
     while ( 1 ) /*0x42c4eb*/
@@ -887,7 +887,7 @@ LABEL_6:
           else
             __asm { fld ds:dbl_7E2800 } /*0x42c5ae*/
           _EAX = v78; /*0x42c5b4*/
-          Pathfinding_field_0x0C = v6[1].Pathfinding_field_0x0C; /*0x42c5b8*/
+          Pathfinding_field_0x0C = v6[1].q00C; /*0x42c5b8*/
           __asm /*0x42c5bb*/
           {
             fld ds:flt_7E3794[edx*4]
@@ -925,7 +925,7 @@ LABEL_41:
                 v35 = v96; /*0x42c62f*/
               }
               v37 = v35 | (v36 << 16); /*0x42c643*/
-              v38 = *(int *)((char *)&v6[4].Pathfinding_field_0x14 + v84) - 1; /*0x42c64c*/
+              v38 = *(int *)((char *)&v6[4].q014 + v84) - 1; /*0x42c64c*/
               if ( v38 < 0 ) /*0x42c64d*/
               {
 LABEL_49:
@@ -1096,27 +1096,27 @@ LABEL_75:
     {
       do /*0x42c881*/
       {
-        v105[v18[1]] = v6[1].Pathfinding_field_0x0C; /*0x42c871*/
-        v18 = (unsigned int *)(v6[3].Pathfinding_field_0x10 + 16 * *v18); /*0x42c87c*/
+        v105[v18[1]] = v6[1].q00C; /*0x42c871*/
+        v18 = (unsigned int *)(v6[3].q010 + 16 * *v18); /*0x42c87c*/
       }
       while ( *v18 != -1 ); /*0x42c881*/
       v69 = (int)v104; /*0x42c883*/
     }
     v70 = *(unsigned int *)(v69 + 12) + 1; /*0x42c88a*/
-    *(&v6[113].Pathfinding_field_0x18 + v8) = v70; /*0x42c88b*/
+    *(&v6[113].q018 + v8) = v70; /*0x42c88b*/
     v71 = v70 - 1; /*0x42c892*/
     if ( v71 > 0 ) /*0x42c895*/
     {
-      v72 = (unsigned short *)&v6[6].Pathfinding_field_0x14 + 500 * v8 + v71; /*0x42c8a3*/
+      v72 = (unsigned short *)&v6[6].q014 + 500 * v8 + v71; /*0x42c8a3*/
       do /*0x42c8bf*/
       {
         *v72-- = *(unsigned short *)(v69 + 4); /*0x42c8ae*/
-        v69 = v6[3].Pathfinding_field_0x10 + 16 * *(unsigned int *)v69; /*0x42c8bc*/
+        v69 = v6[3].q010 + 16 * *(unsigned int *)v69; /*0x42c8bc*/
         --v71; /*0x42c8be*/
       }
       while ( v71 ); /*0x42c8bf*/
     }
-    *((unsigned short *)&v6[6].Pathfinding_field_0x14 + 500 * v8) = *(unsigned short *)(v69 + 4); /*0x42c8ce*/
+    *((unsigned short *)&v6[6].q014 + 500 * v8) = *(unsigned short *)(v69 + 4); /*0x42c8ce*/
 LABEL_85:
     v92 = --v8; /*0x42c8d7*/
     if ( v8 >= 0 ) /*0x42c8db*/

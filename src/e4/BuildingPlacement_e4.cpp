@@ -182,7 +182,7 @@ char BuildingPlacement::ProcessBuildingPlacementAction()
             0,
             1);
     v17 = Input::OffsetToDirection(&this->q040); /*0x54c684*/
-    if ( BuildingPlacement::IsPlacementFlagSet(v5, v17, BYTE1(v5[8].BuildingPlacement_field_0x20) & 1) /*0x54c699*/
+    if ( BuildingPlacement::IsPlacementFlagSet(v5, v17, BYTE1(v5[8].u32_20) & 1) /*0x54c699*/
       || (v46 = 0, this->u32_90) )
     {
       v46 = 1; /*0x54c6a8*/
@@ -662,10 +662,10 @@ unsigned int * BuildingPlacement::SelectBuildingPlacementCells(int a2)
         LABEL_74:
         v20 = (int)v8[1].ptr_0; /*0x5953da*/
         if ( v20 >= v40 ) /*0x5953e3*/
-          return &v8->q010; /*0x5953e3*/
+          return &v8->Capacity; /*0x5953e3*/
       }
     }
-    return &v8->q010; /*0x5951a4*/
+    return &v8->Capacity; /*0x5951a4*/
   }
   v21 = v8->Capacity; /*0x5951e1*/
   v22 = v5->__pad_4; /*0x5951e7*/
@@ -678,9 +678,9 @@ unsigned int * BuildingPlacement::SelectBuildingPlacementCells(int a2)
     v25 = v8->Items; /*0x59521f*/
     v8[1].ptr_0 = &v24->AbstractClass_1; /*0x595225*/
     v25[(unsigned int)v24] = *v22; /*0x59522a*/
-    return &v8->q010; /*0x595235*/
+    return &v8->Capacity; /*0x595235*/
   }
-  return &v8->q010; /*0x594fbd*/
+  return &v8->Capacity; /*0x594fbd*/
 
 }
 } // namespace gamemd

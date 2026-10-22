@@ -9,14 +9,14 @@ namespace gamemd {
 struct BlitTransLucent25Alpha_ushort {
     char __pad_0[4];  // 0x0
     int __pad_004;  // 0x4
-    AbstractClass* m_8;  // 0x8
+    AbstractClass* ptr_8;  // 0x8
     unsigned int __pad_00C;  // 0xC
-    int BlitTransLucent25Alpha_ushort_field_0x10;  // 0x10
-    int BlitTransLucent25Alpha_ushort_field_0x14;  // 0x14
-    int BlitTransLucent25Alpha_ushort_field_0x18;  // 0x18
-    int BlitTransLucent25Alpha_ushort_field_0x1C;  // 0x1C
-    int BlitTransLucent25Alpha_ushort_field_0x20;  // 0x20
-    int BlitTransLucent25Alpha_ushort_field_0x24;  // 0x24
+    int q010;  // 0x10
+    int q014;  // 0x14
+    int q018;  // 0x18
+    int q01C;  // 0x1C
+    int q020;  // 0x20
+    int q024;  // 0x24
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     BlitTransLucent25Alpha_ushort * Blit(char a2);

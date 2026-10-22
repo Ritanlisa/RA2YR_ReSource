@@ -7,13 +7,13 @@ namespace gamemd {
 
 struct ListBox {
     int __pad_000;  // 0x0
-    int ListBox_field_0x04;  // 0x4
-    int ListBox_field_0x08;  // 0x8
-    int ListBox_field_0x0C;  // 0xC
-    int ListBox_field_0x10;  // 0x10
-    int ListBox_field_0x14;  // 0x14
-    int ListBox_field_0x18;  // 0x18
-    int ListBox_field_0x1C;  // 0x1C
+    int q004;  // 0x4
+    int q008;  // 0x8
+    int q00C;  // 0xC
+    int q010;  // 0x10
+    int q014;  // 0x14
+    int q018;  // 0x18
+    int q01C;  // 0x1C
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     static int SetCustomEntry(void *aP1, int a2, int a3, void *a4);

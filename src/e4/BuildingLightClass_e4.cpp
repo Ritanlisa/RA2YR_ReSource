@@ -224,7 +224,7 @@ signed int BuildingLightClass::UpdateOscillation()
     if ( Cell::GetGroundHeight(&v29) > GroundHeight ) /*0x513dca*/
       v28 = v26 - *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1484); /*0x513ddc*/
   }
-  v13 = (double)v26 + *&this->q0A0; /*0x513de4*/
+  v13 = (double)v26 + *&this->visibilityFlags; /*0x513de4*/
   (v14) = ((v14) & ~0xFFFF) | ((Math::RoundToInt(v13)) & 0xFFFF); /*0x513de7*/
   v27 = v14; /*0x513dec*/
   v15 = (*(int (**)(char *))(*((unsigned int *)this->ptr_C + 1) + 16))((char *)this->ptr_C + 4); /*0x513df9*/
@@ -253,30 +253,30 @@ signed int BuildingLightClass::UpdateOscillation()
   if ( v28 < *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1484) ) /*0x513e9b*/
   {
     if ( (unsigned __int8)StreamClass::GetDirty(&this->ptr_4) ) /*0x513ea1*/
-      *&this->q0A0 = ((double)*(int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] /*0x513ec8*/
+      *&this->visibilityFlags = ((double)*(int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] /*0x513ec8*/
                                                                     + 1484)
                                                    + (double)*(int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]
                                                                     + 1484)
                                                    - (double)v28)
                                                   / (double)*(int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1484)
                                                   * (double)*(int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5816)
-                                                  + *&this->q0A0;
+                                                  + *&this->visibilityFlags;
     v24 = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x513ecd*/
     result = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1484) / 4; /*0x513edf*/
     if ( v28 < result ) /*0x513ee4*/
     {
       result = (unsigned int)((unsigned __int64)(1431655766LL /*0x513ef5*/
                                                * *(int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5816)) >> 32) >> 31;
-      *&this->q0A0 = (double)(*(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] /*0x513f05*/
+      *&this->visibilityFlags = (double)(*(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] /*0x513f05*/
                                                                        + 5816)
                                                            / 3)
-                                                  + *&this->q0A0;
+                                                  + *&this->visibilityFlags;
       v24 = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x513f08*/
     }
   }
-  v25 = *&this->q0A0 - (double)v24->RepairRate; /*0x513f15*/
-  *&this->q0A0 = v25; /*0x513f18*/
-  *&this->q0A0 = v25 * *(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1520); /*0x513f27*/
+  v25 = *&this->visibilityFlags - (double)v24->RepairRate; /*0x513f15*/
+  *&this->visibilityFlags = v25; /*0x513f18*/
+  *&this->visibilityFlags = v25 * *(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1520); /*0x513f27*/
   return result; /*0x513f2a*/
 
 }

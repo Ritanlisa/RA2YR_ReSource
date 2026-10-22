@@ -635,9 +635,9 @@ void * Options::RebuildDropdownList(ObjectClass * aP1)
   this->field_C = 0; /*0x625617*/
   this->field_10 = 0; /*0x62561a*/
   unknown_libname_74(&v19); /*0x62561d*/
-  unknown_libname_74(&v19.DeleteAndZero_field_0x04); /*0x625626*/
+  unknown_libname_74(&v19.q004); /*0x625626*/
   v18 = 0; /*0x62562e*/
-  v19.DeleteAndZero_field_0x08 = -1; /*0x625632*/
+  v19.u32_8 = -1; /*0x625632*/
   v21 = -1; /*0x625636*/
   v6 = (int)*v5; /*0x62563a*/
   v20 = 0; /*0x62563c*/
@@ -670,8 +670,8 @@ void * Options::RebuildDropdownList(ObjectClass * aP1)
         v12 = v11 + v2[4]; /*0x625699*/
         v18 = *(unsigned int *)v12; /*0x6256a5*/
         WideString::Reassign_Alt((void **)&v19, (const wchar_t **)(v12 + 4)); /*0x6256a9*/
-        WideString::Reassign_Alt((void **)&v19.DeleteAndZero_field_0x04, (const wchar_t **)(v12 + 8)); /*0x6256b6*/
-        v19.DeleteAndZero_field_0x08 = *(unsigned int *)(v12 + 12); /*0x6256be*/
+        WideString::Reassign_Alt((void **)&v19.q004, (const wchar_t **)(v12 + 8)); /*0x6256b6*/
+        v19.u32_8 = *(unsigned int *)(v12 + 12); /*0x6256be*/
         v20 = *(unsigned int *)(v12 + 16); /*0x6256c5*/
         v21 = *(unsigned int *)(v12 + 20); /*0x6256cc*/
       }
@@ -696,7 +696,7 @@ void * Options::RebuildDropdownList(ObjectClass * aP1)
     }
     v3 = (int *)this; /*0x625752*/
   }
-  DeleteAndZero::Alt((DeleteAndZero *)&v19.DeleteAndZero_field_0x04); /*0x62575a*/
+  DeleteAndZero::Alt((DeleteAndZero *)&v19.q004); /*0x62575a*/
   DeleteAndZero::Alt(&v19); /*0x625763*/
   return v3; /*0x62576a*/
 
@@ -1267,8 +1267,8 @@ namespace gamemd {
 void Options::ClearComboBoxes()
 {
 
-  (&this->q008)->Alt(); /*0x624466*/
-  (&this->q004)->Alt(); /*0x62446e*/
+  (&this->field_8)->Alt(); /*0x624466*/
+  (&this->field_4)->Alt(); /*0x62446e*/
 
 }
 } // namespace gamemd

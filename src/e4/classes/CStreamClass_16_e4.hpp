@@ -9,8 +9,8 @@ struct VectorClass_flat;  // fix_fwd_type_supply
 struct CStreamClass_16 {
     unsigned int __pad_0;  // 0x0
     int q004;  // 0x4
-    unsigned int m_8;  // 0x8
-    unsigned int m_C;  // 0xC
+    unsigned int q008;  // 0x8
+    unsigned int q00C;  // 0xC
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int  Seek(int a2, void *a2_2 = 0, void *a3_1 = 0);  // 0x4A4B20

@@ -1509,7 +1509,7 @@ int Map_WorldDominationTour_20::Release(int a2, unsigned int * a3)
     (*(void (**)(_VectorClass_V_rc_ptr_VTerritory_WorldDominationTour *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x769f3d*/
     return 1; /*0x769f43*/
   }
-  LOBYTE(this->m_C) = 0; /*0x769e47*/
+  LOBYTE(this->q00C) = 0; /*0x769e47*/
   if ( a3 ) /*0x769e4d*/
   {
     *a3 = a2; /*0x769e93*/
@@ -1555,16 +1555,16 @@ int Map_WorldDominationTour_20::Release(int a2, unsigned int * a3)
   }
   v8 = v6; /*0x769ebd*/
 LABEL_14:
-  LOBYTE(this->m_C) = 1; /*0x769ebf*/
+  LOBYTE(this->q00C) = 1; /*0x769ebf*/
   if ( !v8 ) /*0x769ec5*/
     return 0; /*0x769eca*/
   if ( *&this->q004 ) /*0x769ed1*/
   {
-    if ( a2 >= this->m_8 ) /*0x769edd*/
-      m_8 = this->m_8; /*0x769edf*/
+    if ( a2 >= this->q008 ) /*0x769edd*/
+      m_8 = this->q008; /*0x769edf*/
     for ( i = 0; i < m_8; ++i ) /*0x769ee5*/
       ComPtr::Set((ComPtr *)((char *)v8 + 8 * i), *(unsigned int *)(*&this->q004 + 8 * i + 4)); /*0x769ef2*/
-    if ( BYTE1(this->m_C) ) /*0x769efc*/
+    if ( BYTE1(this->q00C) ) /*0x769efc*/
     {
       v12 = *(void (****)(unsigned int, int))&this->q004; /*0x769f03*/
       if ( v12 ) /*0x769f08*/
@@ -1574,8 +1574,8 @@ LABEL_14:
     m_8 = a2; /*0x769f17*/
   }
   *&this->q004 = v8; /*0x769f26*/
-  this->m_8 = m_8; /*0x769f29*/
-  BYTE1(this->m_C) = a3 == 0; /*0x769f2c*/
+  this->q008 = m_8; /*0x769f29*/
+  BYTE1(this->q00C) = a3 == 0; /*0x769f2c*/
   return 1; /*0x769ec7*/
 
 }
@@ -1641,7 +1641,7 @@ AbstractClass * * Map_WorldDominationTour_43::Release(int a2, char * a3)
   if ( a2 ) /*0x76a3fe*/
   {
     v5 = a3; /*0x76a404*/
-    LOBYTE(this->m_C) = 0; /*0x76a408*/
+    LOBYTE(this->q00C) = 0; /*0x76a408*/
     if ( a3 ) /*0x76a40d*/
     {
       if ( a2 - 1 >= 0 ) /*0x76a449*/
@@ -1685,12 +1685,12 @@ AbstractClass * * Map_WorldDominationTour_43::Release(int a2, char * a3)
         v5 = 0; /*0x76a440*/
       }
     }
-    LOBYTE(this->m_C) = 1; /*0x76a45f*/
+    LOBYTE(this->q00C) = 1; /*0x76a45f*/
     if ( v5 ) /*0x76a463*/
     {
       if ( *&this->q004 ) /*0x76a46e*/
       {
-        m_8 = this->m_8; /*0x76a473*/
+        m_8 = this->q008; /*0x76a473*/
         if ( a2 < m_8 ) /*0x76a478*/
           m_8 = a2; /*0x76a47a*/
         if ( m_8 > 0 ) /*0x76a47e*/
@@ -1709,15 +1709,15 @@ AbstractClass * * Map_WorldDominationTour_43::Release(int a2, char * a3)
           while ( m_8 ); /*0x76a4a0*/
           v3 = a2; /*0x76a4a2*/
         }
-        if ( BYTE1(this->m_C) ) /*0x76a4a8*/
+        if ( BYTE1(this->q00C) ) /*0x76a4a8*/
         {
           __3_YAXPAX_Z(*&this->q004); /*0x76a4b1*/
           *&this->q004 = 0; /*0x76a4b9*/
         }
       }
       *&this->q004 = v5; /*0x76a4c4*/
-      this->m_8 = v3; /*0x76a4ca*/
-      BYTE1(this->m_C) = a3 == 0; /*0x76a4cd*/
+      this->q008 = v3; /*0x76a4ca*/
+      BYTE1(this->q00C) = a3 == 0; /*0x76a4cd*/
       return 1; /*0x76a4d3*/
     }
     else

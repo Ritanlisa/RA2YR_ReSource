@@ -50,7 +50,7 @@ int Campaign_WorldDominationTour_16::Release(int a2, unsigned int * a3)
     (*(void (**)(_VectorClass_V_rc_ptr_VConflict_WorldDominationTour *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x76594d*/
     return 1; /*0x765953*/
   }
-  (this->m_C) = ((this->m_C) & ~0xFF) | ((0) & 0xFF); /*0x765857*/
+  (this->q00C) = ((this->q00C) & ~0xFF) | ((0) & 0xFF); /*0x765857*/
   if ( a3 ) /*0x76585d*/
   {
     *a3 = a2; /*0x7658a3*/
@@ -96,7 +96,7 @@ int Campaign_WorldDominationTour_16::Release(int a2, unsigned int * a3)
   }
   v8 = v6; /*0x7658cd*/
 LABEL_14:
-  LOBYTE(this->m_C) = 1; /*0x7658cf*/
+  LOBYTE(this->q00C) = 1; /*0x7658cf*/
   if ( !v8 ) /*0x7658d5*/
     return 0; /*0x7658da*/
   if ( *&this->q004 ) /*0x7658e1*/
@@ -105,7 +105,7 @@ LABEL_14:
       m_8 = this->q008; /*0x7658ef*/
     for ( i = 0; i < m_8; ++i ) /*0x7658f5*/
       ComPtr::Set((ComPtr *)((char *)v8 + 8 * i), *(unsigned int *)(*&this->q004 + 8 * i + 4)); /*0x765902*/
-    if ( BYTE1(this->m_C) ) /*0x76590c*/
+    if ( BYTE1(this->q00C) ) /*0x76590c*/
     {
       v12 = *(void (****)(unsigned int, int))&this->q004; /*0x765913*/
       if ( v12 ) /*0x765918*/
@@ -116,7 +116,7 @@ LABEL_14:
   }
   *&this->q004 = v8; /*0x765936*/
   this->q008 = m_8; /*0x765939*/
-  BYTE1(this->m_C) = a3 == 0; /*0x76593c*/
+  BYTE1(this->q00C) = a3 == 0; /*0x76593c*/
   return 1; /*0x7658d7*/
 
 }
@@ -277,7 +277,7 @@ int Campaign_WorldDominationTour_16::ddtor(void *a1)
   int result; // eax
 
   v2 = *(int (****)(unsigned int, int))&this->q004; /*0x765966*/
-  if ( v2 && (((unsigned char *)&(*&this->m_C))[1]) ) /*0x76596d*/
+  if ( v2 && (((unsigned char *)&(*&this->q00C))[1]) ) /*0x76596d*/
   {
     result = (**v2)(v2, 3); /*0x76597a*/
     *&this->q004 = 0; /*0x76597c*/
@@ -312,7 +312,7 @@ int Campaign_WorldDominationTour_16::Read(int a2, void *a2_2, void *a3)
 namespace gamemd {
 unsigned int Campaign_WorldDominationTour_16::Write(int a2)
 {
-  if ( (this->m_C) ) /*0x7659d0*/
+  if ( (this->q00C) ) /*0x7659d0*/
     return (unsigned int)(a2 - *&this->q004) >> 3; /*0x7659e5*/
   else
     return 0; /*0x7659d7*/

@@ -127,7 +127,7 @@ void * Coord::Subtract(int aP1, int aP2, int aP3, void *a4)
 
   *(unsigned int *)&this->__pad_0 = aP1; /*0x41c23a*/
   *&this->u32_4 = aP2; /*0x41c240*/
-  this->Coord_field_0x8 = (unsigned int)((void *)aP3); /*0x41c243*/
+  this->u32_8 = (unsigned int)((void *)aP3); /*0x41c243*/
   return (void *)(&this->__pad_0); /*0x41c246*/
 
 }
@@ -139,7 +139,7 @@ int Coord::Length(void *a1)
 
 
   double Coord_field_0x8; // st7
-  Coord_field_0x8 = (double)(int)this->Coord_field_0x8; /*0x41c380*/
+  Coord_field_0x8 = (double)(int)this->u32_8; /*0x41c380*/
   Math::Sqrt( /*0x41c3a4*/
     (double)*(int *)&this->__pad_0 * (double)*(int *)&this->__pad_0
   + (double)*&this->u32_4 * (double)*&this->u32_4
@@ -174,7 +174,7 @@ unsigned int * Coord::GetCoords(int * outCoords, void *a2_1)
   LOWORD(v8) = Math::RoundToInt(v3->needsSave); /*0x4399bc*/
   *this = (int)v5; /*0x4399c7*/
   this->q004 = (int)v7; /*0x4399cb*/
-  this->q008 = (int)v8; /*0x4399cf*/
+  this->u32_8 = (int)v8; /*0x4399cf*/
   return (int)this; /*0x4399c9*/
 
 }
@@ -300,7 +300,7 @@ void * Coord::Divide(int * a2, int a3)
   {
     int v4 = *&this->u32_4 / a3; // ebx /*0x71072f*/
     int v5; // eax
-    v5 = (int)this->Coord_field_0x8 / a3; /*0x710735*/
+    v5 = (int)this->u32_8 / a3; /*0x710735*/
     *a2 = *(unsigned int *)&this->__pad_0 / a3; /*0x71073d*/
     a2[1] = v4; /*0x71073f*/
     a2[2] = v5; /*0x710745*/

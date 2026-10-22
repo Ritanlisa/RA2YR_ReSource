@@ -771,13 +771,13 @@ bool GenerateMapClassCliffTransitions(void * a1, void * a2, void * a3, void * a4
   (*((unsigned char *)&(a3))) = 1; /*0x57b192*/
   if ( a4 == 1 ) /*0x57b19a*/
   {
-    GenerateTerrainMap(0, 0, v26->u32_11B, a5, &a3, a6); /*0x57b1b7*/
+    GenerateTerrainMap(0, 0, v26->Cell_field_0x11B, a5, &a3, a6); /*0x57b1b7*/
   }
   else
   {
     if ( a4 != 2 ) /*0x57b1bc*/
       return 1; /*0x57b1bc*/
-    GenerateTerrainMap(dword_ABAD28, dword_ABAD28 + 41, v26->u32_11B, a5, &a3, a6); /*0x57b1e3*/
+    GenerateTerrainMap(dword_ABAD28, dword_ABAD28 + 41, v26->Cell_field_0x11B, a5, &a3, a6); /*0x57b1e3*/
   }
   return (unsigned char)a3 != 0; /*0x57b1ee*/
 }
@@ -885,7 +885,7 @@ LABEL_18:
     goto LABEL_20; /*0x57b5e8*/
   if ( aP3 != -1 ) /*0x57b5ed*/
   {
-    v23 = v14->Cell_field_0x38 - dword_ABAD28; /*0x57b603*/
+    v23 = v14->q038 - dword_ABAD28; /*0x57b603*/
     v24 = v29->u32_294 - dword_ABAD28; /*0x57b605*/
     if ( !(unsigned __int8)Cell::IsEmpty(v14) ) /*0x57b60e*/
     {
@@ -904,7 +904,7 @@ LABEL_19:
   if ( TileDataField14 == v18 ) /*0x57b586*/
   {
 LABEL_20:
-    v19 = v14->Cell_field_0x38 - dword_ABAD28; /*0x57b58c*/
+    v19 = v14->q038 - dword_ABAD28; /*0x57b58c*/
     v20 = v29->u32_294 - dword_ABAD28; /*0x57b5a1*/
     if ( v19 >= 0 && v20 >= 0 && v19 <= 41 && v20 <= 41 ) /*0x57b5b7*/
     {
@@ -927,11 +927,11 @@ LABEL_20:
   MapClass::SetObstruction((__int16 *)&v31, v18); /*0x57b6cc*/
 LABEL_32:
   if ( (unsigned __int8)Cell::IsEmpty(v14) /*0x57b64a*/
-    || (Cell_field_0x38 = v14->Cell_field_0x38, Cell_field_0x38 >= aP0) && Cell_field_0x38 <= aP1 )
+    || (Cell_field_0x38 = v14->q038, Cell_field_0x38 >= aP0) && Cell_field_0x38 <= aP1 )
   {
-    v14->Cell_field_0x38 = v29->u32_294; /*0x57b65e*/
+    v14->q038 = v29->u32_294; /*0x57b65e*/
     v14->u32_11A = v15; /*0x57b661*/
-    v14->u32_11B = aP2 + v16[40]; /*0x57b66c*/
+    v14->Cell_field_0x11B = aP2 + v16[40]; /*0x57b66c*/
 LABEL_36:
     v7 = dword_87F8DC; /*0x57b672*/
     goto LABEL_37; /*0x57b672*/

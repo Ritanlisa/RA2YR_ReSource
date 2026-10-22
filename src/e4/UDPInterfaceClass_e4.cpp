@@ -733,7 +733,7 @@ AbstractClass * * UDPInterfaceClass_Destru::Bind(int a2)
           continue; /*0x7b35ac*/
         v11 = this->q3F564; /*0x7b35ae*/
         if ( v11 <= 0 /*0x7b35be*/
-          || !(*(unsigned __int8 (**)(UDPInterfaceClass *, int, unsigned int))(this->u32_3F550 + 8))(
+          || !(*(unsigned __int8 (**)(UDPInterfaceClass *, int, unsigned int))(this->q3F550 + 8))(
                 &this->u32_1FAA8,
                 v10 + v11,
                 0) )

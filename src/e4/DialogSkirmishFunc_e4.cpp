@@ -123,7 +123,7 @@ void DialogSkirmishFunc_UpdateMultiEngineer(Session *hWnd, int nIDDlgItem, int a
   char lParam[40]; // [esp+38h] [ebp-228h] BYREF
   int Destination[128]; // [esp+60h] [ebp-200h] BYREF
 
-  v83.DeleteAndZero_field_0x04 = nIDDlgItem; /*0x6acef1*/
+  v83.q004 = nIDDlgItem; /*0x6acef1*/
   WindowLongA = (int *)GetWindowLongA((HWND)hWnd, 8); /*0x6acf01*/
   if ( nIDDlgItem > 1320 )
   {
@@ -303,7 +303,7 @@ LABEL_151:
             while ( v6 < 7 );
             *(unsigned int *)&stru_A8B250.__pad_0[36] = nIDDlgItema; /*0x6ad052*/
             v10 = nIDDlgItema + 1; /*0x6ad058*/
-            if ( v83.DeleteAndZero_field_0x04 == 1559 )
+            if ( v83.q004 == 1559 )
             {
               if ( (int)Format < v10 ) /*0x6ad071*/
               {
@@ -383,7 +383,7 @@ LABEL_151:
             unknown_libname_74(&v83); /*0x6ad2c4*/
             if ( !(*(unsigned __int8 (**)(ObjectClass *, DeleteAndZero *))(v25->ptr_0 + 20))(v25, &v83) ) /*0x6ad2d2*/
             {
-              if ( v83.DeleteAndZero_field_0x04 == 1559 ) /*0x6ad2e1*/
+              if ( v83.q004 == 1559 ) /*0x6ad2e1*/
               {
                 v87 = asc_82083C; /*0x6ad2fa*/
                 v75 = GetStringCSF(g_Str_TXT_OK, 0, g_Str_File_Skirmish_cpp, 1129); /*0x6ad30b*/
@@ -443,7 +443,7 @@ LABEL_151:
               ResourceID2CSF = GetResourceID2CSF(v31); /*0x6ad427*/
               Formata = (wchar_t *)GetResourceIDCSF(v31); /*0x6ad430*/
               nIDDlgItemb = GetResourceID3CSF(v31); /*0x6ad43b*/
-              v83.DeleteAndZero_field_0x08 = GetResourceID4CSF(v31); /*0x6ad444*/
+              v83.u32_8 = GetResourceID4CSF(v31); /*0x6ad444*/
               v34 = SendDlgItemMessageA((HWND)hWnd, v32, 0x147u, 0, 0); /*0x6ad453*/
               if ( (unsigned int)SendDlgItemMessageA((HWND)hWnd, v32, 0x150u, v34, 0) <= 2 ) /*0x6ad46b*/
               {
@@ -468,7 +468,7 @@ LABEL_151:
                                                                            -1);
                 *(unsigned int *)&stru_A8B250.__pad_0[4 * (unsigned int)v31 + 172] = GetComboBoxSelectedRaw2( /*0x6ad4e6*/
                                                                            (HWND)hWnd,
-                                                                           v83.DeleteAndZero_field_0x08,
+                                                                           v83.u32_8,
                                                                            -1);
               }
               v30 = v31; /*0x6ad4ed*/
@@ -511,11 +511,11 @@ LABEL_151:
               }
               v36 = &v36->AbstractClass_1; /*0x6ad55e*/
               v38 = GetResourceID2CSF(v36); /*0x6ad568*/
-              v83.DeleteAndZero_field_0x08 = GetResourceIDCSF(v36); /*0x6ad56f*/
+              v83.u32_8 = GetResourceIDCSF(v36); /*0x6ad56f*/
               v39 = SendDlgItemMessageA((HWND)hWnd, v37, 0x147u, 0, 0); /*0x6ad57e*/
               v40 = SendDlgItemMessageA((HWND)hWnd, v37, 0x150u, v39, 0); /*0x6ad59a*/
               v41 = GetComboBoxSelected((HWND)hWnd, v38, -1); /*0x6ad5a3*/
-              ComboBoxSelectedRaw = GetComboBoxSelectedRaw((HWND)hWnd, v83.DeleteAndZero_field_0x08, -1); /*0x6ad5ab*/
+              ComboBoxSelectedRaw = GetComboBoxSelectedRaw((HWND)hWnd, v83.u32_8, -1); /*0x6ad5ab*/
               if ( v40 == -1 )
               {
                 v43 = 1; /*0x6ad5b5*/
@@ -614,7 +614,7 @@ LABEL_151:
               __3_YAXPAX_Z(v59); /*0x6ad8b5*/
               g_UIControlState = 0; /*0x6ad8bd*/
             }
-            *WindowLongA = v83.DeleteAndZero_field_0x04; /*0x6ad8d3*/
+            *WindowLongA = v83.q004; /*0x6ad8d3*/
             DeleteAndZero::Alt(&v83); /*0x6ad8d5*/
           }
           break;

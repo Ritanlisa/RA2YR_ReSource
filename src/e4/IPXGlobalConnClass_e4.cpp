@@ -50,7 +50,7 @@ void IPXGlobalConnClass::ReceivePacket(int a2)
   v2 = this; /*0x540113*/
   Debug::Log(); /*0x540132*/
   IPXGlobalConnClass_field_0x04 = (Terrain *)v2->PlayerIndex; /*0x540137*/
-  for ( i = 0; i < (int)IPXGlobalConnClass_field_0x04->Terrain_field_0x38; ++i ) /*0x540144*/
+  for ( i = 0; i < (int)IPXGlobalConnClass_field_0x04->q038; ++i ) /*0x540144*/
   {
     TileType = (IPXGlobalConnClass_field_0x04)->GetTileType(i); /*0x540158*/
     Debug::Log(); /*0x54015a*/
@@ -125,7 +125,7 @@ HashTable_flat * * IPXGlobalConnClass::SetAddress(int a2, int arg4, int * a3, IP
   v16 = this; /*0x5403fc*/
   Waypoint::InitInvalid((Waypoint *)&v18); /*0x540400*/
   *(unsigned int *)v18.__pad_0 = *a3; /*0x540413*/
-  v18.NetworkID_field_0x04 = a3[1]; /*0x54041a*/
+  v18.q004 = a3[1]; /*0x54041a*/
   v19 = a3[2]; /*0x540421*/
   if ( aP4 ) /*0x540425*/
   {
@@ -136,7 +136,7 @@ HashTable_flat * * IPXGlobalConnClass::SetAddress(int a2, int arg4, int * a3, IP
   if ( *(unsigned int *)&dword_A8B238 == 4 /*0x540477*/
     && !(unsigned char)a6
     && stru_A8D804.__pad_3D[863]
-    && LOBYTE(v7[3].IPXGlobalConnClass_field_0x20) )
+    && LOBYTE(v7[3].q020) )
   {
     v8 = a2; /*0x540485*/
     if ( !*(unsigned char *)(a2 + 3) ) /*0x540489*/
@@ -192,7 +192,7 @@ LABEL_13:
   }
   if ( dword_887628 ) /*0x5405cf*/
   {
-    LOBYTE(v13) = LOBYTE(v7[3].IPXGlobalConnClass_field_0x20) == 0; /*0x5405da*/
+    LOBYTE(v13) = LOBYTE(v7[3].q020) == 0; /*0x5405da*/
     (*(void (**)(WinsockInterface *, int, int, NetworkID *, int, int, unsigned __int8 *, int))(*(unsigned int *)dword_887628->__pad_0 + 12))( /*0x5405f2*/
       dword_887628,
       v8,
@@ -216,7 +216,7 @@ int IPXGlobalConnClass::CheckStatus()
   int v2 = 0; // esi /*0x5400d4*/
   Terrain *IPXGlobalConnClass_field_0x04; // ecx
   IPXGlobalConnClass_field_0x04 = (Terrain *)this->PlayerIndex; /*0x5400d6*/
-  if ( (int)IPXGlobalConnClass_field_0x04->Terrain_field_0x38 > 0 ) /*0x5400de*/
+  if ( (int)IPXGlobalConnClass_field_0x04->q038 > 0 ) /*0x5400de*/
   {
     do /*0x540104*/
     {
@@ -225,7 +225,7 @@ int IPXGlobalConnClass::CheckStatus()
       IPXGlobalConnClass_field_0x04 = (Terrain *)this->PlayerIndex; /*0x5400fd*/
       ++v2; /*0x540100*/
     }
-    while ( v2 < (int)IPXGlobalConnClass_field_0x04->Terrain_field_0x38 ); /*0x540104*/
+    while ( v2 < (int)IPXGlobalConnClass_field_0x04->q038 ); /*0x540104*/
   }
   return 1; /*0x540106*/
 

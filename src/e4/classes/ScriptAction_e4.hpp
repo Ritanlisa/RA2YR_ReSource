@@ -16,14 +16,14 @@ struct ScriptAction {
     int q014;  // 0x14
     int u32_18;  // 0x18
     unsigned char u32_1C[8];  // 0x1C
-    int ScriptAction_field_0x24;  // 0x24
+    int q024;  // 0x24
     char __pad_28[4];  // 0x28
     unsigned char q02C;  // 0x2C
     char __pad_2D[3];  // 0x2D
     int q030;  // 0x30
     unsigned char q034[60];  // 0x34
-    int ScriptAction_field_0x70;  // 0x70
-    int ScriptAction_field_0x74;  // 0x74
+    int q070;  // 0x70
+    int q074;  // 0x74
     char __pad_78[9];  // 0x78
     unsigned char u8_81;  // 0x81
     char __pad_82[1];  // 0x82

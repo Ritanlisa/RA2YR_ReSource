@@ -13380,9 +13380,9 @@ int _getbuf(MouseClass * aP0)
     aP0->nextArrayIndex = 2; /*0x7d7743*/
   }
   int result; // eax
-  result = (int)aP0->ptr_8; /*0x7d774a*/
+  result = (int)aP0->u32_8; /*0x7d774a*/
   aP0->ptr_1 = 0; /*0x7d774d*/
-  aP0->ptr_0 = (void *)result; /*0x7d7751*/
+  aP0->HandleClick_ph = (void *)result; /*0x7d7751*/
   return result; /*0x7d7753*/
 }
 } // namespace gamemd

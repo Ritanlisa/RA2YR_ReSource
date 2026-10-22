@@ -10,17 +10,17 @@ struct VectorClass_flat;  // fix_fwd_type_supply
 struct RadarHashVector {
     char __pad_0[4];  // 0x0
     int q004;  // 0x4
-    unsigned int m_8;  // 0x8
-    unsigned int m_C;  // 0xC
-    unsigned int m_10;  // 0x10
-    int RadarHashVector_field_0x14;  // 0x14
-    int RadarHashVector_field_0x18;  // 0x18
-    int RadarHashVector_field_0x1C;  // 0x1C
-    int RadarHashVector_field_0x20;  // 0x20
-    int RadarHashVector_field_0x24;  // 0x24
-    int RadarHashVector_field_0x28;  // 0x28
-    int RadarHashVector_field_0x2C;  // 0x2C
-    int RadarHashVector_field_0x30;  // 0x30
+    unsigned int q008;  // 0x8
+    unsigned int q00C;  // 0xC
+    unsigned int q010;  // 0x10
+    int q014;  // 0x14
+    int q018;  // 0x18
+    int q01C;  // 0x1C
+    int q020;  // 0x20
+    int q024;  // 0x24
+    int q028;  // 0x28
+    int q02C;  // 0x2C
+    int q030;  // 0x30
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     char ComputeHashIndex(int a2, char * a3);

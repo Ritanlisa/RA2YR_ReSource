@@ -810,7 +810,7 @@ AbstractClass * * TeamTypeClass_28::Release(int a2, int * a3)
   if ( a2 ) /*0x6f22fc*/
   {
     v4 = a3; /*0x6f2302*/
-    LOBYTE(this->m_C) = 0; /*0x6f2306*/
+    LOBYTE(this->q00C) = 0; /*0x6f2306*/
     if ( a3 ) /*0x6f230c*/
     {
       *a3 = a2; /*0x6f2347*/
@@ -853,12 +853,12 @@ AbstractClass * * TeamTypeClass_28::Release(int a2, int * a3)
         v6 = 0; /*0x6f2340*/
       }
     }
-    LOBYTE(this->m_C) = 1; /*0x6f2362*/
+    LOBYTE(this->q00C) = 1; /*0x6f2362*/
     if ( v6 ) /*0x6f2366*/
     {
       if ( *&this->q004 ) /*0x6f2371*/
       {
-        m_8 = this->m_8; /*0x6f2378*/
+        m_8 = this->q008; /*0x6f2378*/
         if ( a2 < m_8 ) /*0x6f237d*/
           m_8 = a2; /*0x6f237f*/
         v13 = 0; /*0x6f2381*/
@@ -874,7 +874,7 @@ AbstractClass * * TeamTypeClass_28::Release(int a2, int * a3)
           while ( v13 < m_8 ); /*0x6f239d*/
           v4 = a3; /*0x6f239f*/
         }
-        if ( BYTE1(this->m_C) ) /*0x6f23a3*/
+        if ( BYTE1(this->q00C) ) /*0x6f23a3*/
         {
           v15 = *&this->q004; /*0x6f23aa*/
           if ( v15 ) /*0x6f23af*/
@@ -883,8 +883,8 @@ AbstractClass * * TeamTypeClass_28::Release(int a2, int * a3)
         }
       }
       *&this->q004 = v6; /*0x6f23ca*/
-      this->m_8 = a2; /*0x6f23d2*/
-      BYTE1(this->m_C) = v4 == 0; /*0x6f23d5*/
+      this->q008 = a2; /*0x6f23d2*/
+      BYTE1(this->q00C) = v4 == 0; /*0x6f23d5*/
       return 1; /*0x6f23db*/
     }
     else
@@ -922,7 +922,7 @@ AbstractClass * * TeamTypeClass_28::SetCapacity(int a2, int * a3)
   if ( a2 ) /*0x6f24bc*/
   {
     v4 = a3; /*0x6f24c2*/
-    LOBYTE(this->m_C) = 0; /*0x6f24c6*/
+    LOBYTE(this->q00C) = 0; /*0x6f24c6*/
     if ( a3 ) /*0x6f24cc*/
     {
       *a3 = a2; /*0x6f2507*/
@@ -965,12 +965,12 @@ AbstractClass * * TeamTypeClass_28::SetCapacity(int a2, int * a3)
         v6 = 0; /*0x6f2500*/
       }
     }
-    LOBYTE(this->m_C) = 1; /*0x6f2523*/
+    LOBYTE(this->q00C) = 1; /*0x6f2523*/
     if ( !v6 ) /*0x6f2527*/
       return 0; /*0x6f25c7*/
     if ( *&this->q004 ) /*0x6f252d*/
     {
-      m_8 = this->m_8; /*0x6f2534*/
+      m_8 = this->q008; /*0x6f2534*/
       if ( a2 < m_8 ) /*0x6f2539*/
         m_8 = a2; /*0x6f253b*/
       v12 = 0; /*0x6f253d*/
@@ -986,7 +986,7 @@ AbstractClass * * TeamTypeClass_28::SetCapacity(int a2, int * a3)
         while ( v12 < m_8 ); /*0x6f2559*/
         v4 = a3; /*0x6f255b*/
       }
-      if ( BYTE1(this->m_C) ) /*0x6f255f*/
+      if ( BYTE1(this->q00C) ) /*0x6f255f*/
       {
         v14 = *&this->q004; /*0x6f2566*/
         if ( v14 ) /*0x6f256b*/
@@ -1000,16 +1000,16 @@ AbstractClass * * TeamTypeClass_28::SetCapacity(int a2, int * a3)
       }
     }
     *&this->q004 = v6; /*0x6f2597*/
-    this->m_8 = a2; /*0x6f259f*/
-    BYTE1(this->m_C) = v4 == 0; /*0x6f25a2*/
+    this->q008 = a2; /*0x6f259f*/
+    BYTE1(this->q00C) = v4 == 0; /*0x6f25a2*/
   }
   else
   {
     (*(void (**)(_DynamicVectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x6f25ab*/
   }
-  v16 = this->m_8; /*0x6f25ae*/
-  if ( v16 < this->m_10 ) /*0x6f25b6*/
-    this->m_10 = v16; /*0x6f25b8*/
+  v16 = this->q008; /*0x6f25ae*/
+  if ( v16 < this->q010 ) /*0x6f25b6*/
+    this->q010 = v16; /*0x6f25b8*/
   return 1; /*0x6f25bb*/
 
 }

@@ -191,14 +191,14 @@ Coord * * RunWOLMainLoop_Read(void * a1, void * a2)
   OwnerDrawControl v13; // [esp+48h] [ebp-Ch] BYREF
 
   *(unsigned int *)v12.__pad_0 = 0; /*0x798de9*/
-  LOBYTE(v12.Flag_field_0x04) = 0; /*0x798df1*/
+  LOBYTE(v12.q004) = 0; /*0x798df1*/
   ReadRegistryOptionsWOL((ObjectClass *)&v12); /*0x798df6*/
   Screen::Capture(1, 0, v2, a2); /*0x798dff*/
-  if ( g_UIPointerTable && strlen(byte_B761A8) && String::Length((String *)&stru_B73E10.CChatEventSink_field_0x30) ) /*0x798e27*/
+  if ( g_UIPointerTable && strlen(byte_B761A8) && String::Length((String *)&stru_B73E10.q030) ) /*0x798e27*/
   {
     v3 = *(unsigned int *)g_UIPointerTable; /*0x798e3f*/
     v9 = g_NetworkRematchState & 0xFFFF00; /*0x798e49*/
-    v4 = String::GetOrEmpty((String *)&stru_B73E10.CChatEventSink_field_0x30); /*0x798e4f*/
+    v4 = String::GetOrEmpty((String *)&stru_B73E10.q030); /*0x798e4f*/
     (*(void (**)(LPVOID, char *, int, char *, int, int, unsigned int, unsigned int))(v3 + 20))( /*0x798e67*/
       g_UIPointerTable,
       byte_B761A8,
@@ -210,7 +210,7 @@ Coord * * RunWOLMainLoop_Read(void * a1, void * a2)
       0);
     v5 = *(unsigned int *)g_UIPointerTable; /*0x798e7c*/
     v10 = g_NetworkRematchState & 0xFFFF00; /*0x798e7e*/
-    v6 = String::GetOrEmpty((String *)&stru_B73E10.CChatEventSink_field_0x30); /*0x798e84*/
+    v6 = String::GetOrEmpty((String *)&stru_B73E10.q030); /*0x798e84*/
     (*(void (**)(LPVOID, char *, int, char *, int))(v5 + 56))( /*0x798e9c*/
       g_UIPointerTable,
       byte_B761A8,
@@ -221,16 +221,16 @@ Coord * * RunWOLMainLoop_Read(void * a1, void * a2)
   RunWOLMainLoop_Read_Read(); /*0x798e9f*/
   if ( (unsigned __int8)Flag::IsNot2(&v12) ) /*0x798ea8*/
   {
-    SimpleDialogControl::Constructor((SimpleDialogControl *)&v12.Flag_field_0x08); /*0x798eb5*/
-    v12.Flag_field_0x08 = (int)&off_7F7624; /*0x798ece*/
+    SimpleDialogControl::Constructor((SimpleDialogControl *)&v12.q008); /*0x798eb5*/
+    v12.q008 = (int)&off_7F7624; /*0x798ece*/
     RunDialog( /*0x798ed2*/
       0x10Eu,
       (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))GameModeDlgProcMultiplayer,
-      (LPARAM)&v12.Flag_field_0x08);
+      (LPARAM)&v12.q008);
     RunWOLMainLoop_Read_Read_72C830(v11); /*0x798ed7*/
     v7 = dword_A8B244 != 0; /*0x798eed*/
-    v12.Flag_field_0x08 = (int)&off_7F7624; /*0x798eef*/
-    OwnerDrawControl::InitVtable((OwnerDrawControl *)&v12.Flag_field_0x08); /*0x798ef3*/
+    v12.q008 = (int)&off_7F7624; /*0x798eef*/
+    OwnerDrawControl::InitVtable((OwnerDrawControl *)&v12.q008); /*0x798ef3*/
   }
   else
   {
@@ -353,11 +353,11 @@ int sub_799D30()
     }
     else
     {
-      if ( g_UIPointerTable && strlen(byte_B761A8) && String::Length((String *)&stru_B73E10.CChatEventSink_field_0x30) ) /*0x799dd2*/
+      if ( g_UIPointerTable && strlen(byte_B761A8) && String::Length((String *)&stru_B73E10.q030) ) /*0x799dd2*/
       {
         v6 = *(unsigned int *)g_UIPointerTable; /*0x799dea*/
         v11 = g_NetworkRematchState & 0xFFFF00; /*0x799df4*/
-        v7 = String::GetOrEmpty((String *)&stru_B73E10.CChatEventSink_field_0x30); /*0x799dfa*/
+        v7 = String::GetOrEmpty((String *)&stru_B73E10.q030); /*0x799dfa*/
         (*(void (**)(LPVOID, char *, int, char *, int, int, unsigned int, unsigned int))(v6 + 20))( /*0x799e12*/
           g_UIPointerTable,
           byte_B761A8,
@@ -369,7 +369,7 @@ int sub_799D30()
           0);
         v8 = *(unsigned int *)g_UIPointerTable; /*0x799e27*/
         v12 = g_NetworkRematchState & 0xFFFF00; /*0x799e29*/
-        v9 = String::GetOrEmpty((String *)&stru_B73E10.CChatEventSink_field_0x30); /*0x799e2f*/
+        v9 = String::GetOrEmpty((String *)&stru_B73E10.q030); /*0x799e2f*/
         (*(void (**)(LPVOID, char *, int, char *, int))(v8 + 56))( /*0x799e47*/
           g_UIPointerTable,
           byte_B761A8,
@@ -378,16 +378,16 @@ int sub_799D30()
           v12);
       }
       System_Init_72C9C0(); /*0x799e4a*/
-      SimpleDialogControl::Constructor((SimpleDialogControl *)&v13.DeleteAndZero_field_0x04); /*0x799e53*/
-      v13.DeleteAndZero_field_0x04 = (int)&off_7F7624; /*0x799e6c*/
+      SimpleDialogControl::Constructor((SimpleDialogControl *)&v13.q004); /*0x799e53*/
+      v13.q004 = (int)&off_7F7624; /*0x799e6c*/
       RunDialog( /*0x799e70*/
         0x114u,
         (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))MainLobbyDlgProcWOL,
-        (LPARAM)&v13.DeleteAndZero_field_0x04);
+        (LPARAM)&v13.q004);
       System_Init_72CA10(v1); /*0x799e75*/
       v10 = dword_A8B244 != 0; /*0x799e8b*/
-      v13.DeleteAndZero_field_0x04 = (int)&off_7F7624; /*0x799e8d*/
-      OwnerDrawControl::InitVtable((OwnerDrawControl *)&v13.DeleteAndZero_field_0x04); /*0x799e91*/
+      v13.q004 = (int)&off_7F7624; /*0x799e8d*/
+      OwnerDrawControl::InitVtable((OwnerDrawControl *)&v13.q004); /*0x799e91*/
       return v10; /*0x799e96*/
     }
   }

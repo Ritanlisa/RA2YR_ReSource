@@ -90,7 +90,7 @@ int Radar::FindNearestRadarTarget(int a2, int a3, int a4)
         }
         p_Radar_field_0xC = (Radar *)((char *)p_Radar_field_0xC + 4); /*0x431121*/
       }
-      p_Radar_field_0xC = &v14->Radar_field_0xC; /*0x431132*/
+      p_Radar_field_0xC = &v14->q00C; /*0x431132*/
       bool v10; // of
       v10 = (((((v13 + 1) ^ (8)) & ((v13 + 1) ^ ((v13 + 1) - (8))))) < 0); /*0x431135*/
       bool v9 = v13 - 7 < 0; // sf /*0x431135*/
@@ -1027,12 +1027,12 @@ LABEL_39:
         break; /*0x584838*/
 LABEL_73:
       *(unsigned int *)&v2->__pad_64[4 * i + 16] = v86; /*0x584ab8*/
-      v43 = v2->Radar_field_0x60 - 1; /*0x584ac7*/
+      v43 = v2->q060 - 1; /*0x584ac7*/
       if ( v43 >= 0 ) /*0x584ac8*/
       {
         v44 = 16 * v43; /*0x584ad0*/
         v100 = 16 * v43; /*0x584ad4*/
-        Radar_field_0x60 = v2->Radar_field_0x60; /*0x584ad8*/
+        Radar_field_0x60 = v2->q060; /*0x584ad8*/
         do /*0x584b53*/
         {
           v45 = (int *)(*&v2->q054 + v44); /*0x584adc*/
@@ -1262,9 +1262,9 @@ LABEL_72:
             *(unsigned int *)&v2->__pad_64[24 * i + 56] = v38 + 1; /*0x5849ae*/
             v39 = (Radar *)(*(unsigned int *)&v2->__pad_64[24 * i + 44] + 36 * v38); /*0x5849b8*/
             (v39)->CopyDataArray(&v122.ptr_0); /*0x5849be*/
-            (v39->Radar_field_0x18) = ((v39->Radar_field_0x18) & ~0xFFFF) | ((v125) & 0xFFFF); /*0x5849cb*/
-            v39->Radar_field_0x1C = v126; /*0x5849d6*/
-            v39->Radar_field_0x20 = v127; /*0x5849e0*/
+            (v39->u32_18) = ((v39->u32_18) & ~0xFFFF) | ((v125) & 0xFFFF); /*0x5849cb*/
+            v39->q01C = v126; /*0x5849d6*/
+            v39->q020 = v127; /*0x5849e0*/
             v35 = (int)&v2->__pad_64[24 * i + 40]; /*0x5849e3*/
           }
           /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E177C) */  /*0x5849eb*/
@@ -1392,7 +1392,7 @@ namespace gamemd {
 int Radar::PixelIndex()
 {
 
-  return *&this->q002[2] + 251 * *&this->q006[2]; /*0x6558c4*/
+  return *&this->Radar_field_0x2[2] + 251 * *&this->Radar_field_0x6[2]; /*0x6558c4*/
 
 }
 }

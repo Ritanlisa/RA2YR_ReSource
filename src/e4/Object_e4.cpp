@@ -294,7 +294,7 @@ unsigned int * Object::FindNearestObjectAtCell(unsigned int * a2)
     if ( v11 > v9 && v8 - v10 < v9 && v10 - v8 < v9 && v11 <= v9 + 2 * *&this->u32_F8 ) /*0x56c39c*/
     {
       v12 = v8 + (v10 << 9); /*0x56c3a7*/
-      if ( v12 >= 0x40000 || (v13 = (int *)*((unsigned int *)this->Object_field_0x13C + v12)) == 0 ) /*0x56c3c1*/
+      if ( v12 >= 0x40000 || (v13 = (int *)*((unsigned int *)this->q13C + v12)) == 0 ) /*0x56c3c1*/
       {
         g_MissionQueueFrame.briefing[139] = v23; /*0x56c3c7*/
         v13 = &g_MissionQueueFrame.briefing[130]; /*0x56c3cc*/
@@ -760,7 +760,7 @@ LABEL_39:
     if ( !*(unsigned char *)((*(int (**)(unsigned int))(**&this->q024 + 132))(*&this->q024) /*0x62ad5a*/
                    + 3278) )
     {
-      ObjectPlacement_field_0x04 = NeighbourContent[29].ObjectPlacement_field_0x04; /*0x62ad64*/
+      ObjectPlacement_field_0x04 = NeighbourContent[29].q004; /*0x62ad64*/
       if ( ObjectPlacement_field_0x04 == 2 || ObjectPlacement_field_0x04 == 6 || ObjectPlacement_field_0x04 == 3 ) /*0x62ad77*/
       {
         v16 = (*(unsigned int *)((*(int (**)(unsigned int))(**&this->ptr_28 + 444))(*&this->ptr_28) /*0x62ad90*/

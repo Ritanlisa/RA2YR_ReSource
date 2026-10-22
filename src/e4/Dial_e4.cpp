@@ -31,7 +31,7 @@ void Dial8Class_48::ClearBuffer(void *a1_1)
 namespace gamemd {
 unsigned int Dial8Class_48::PointerToIndex(int a2)
 {
-  if ( (*((unsigned char *)&(*&this->m_C))) ) /*0x4a7d50*/
+  if ( (*((unsigned char *)&(*&this->q00C))) ) /*0x4a7d50*/
     return (unsigned int)(a2 - *&this->q004) >> 2; /*0x4a7d65*/
   else
     return 0; /*0x4a7d57*/
@@ -52,7 +52,7 @@ char Dial8Class_48::AddRef(int a2)
 {
 
   int m_8; // esi
-  m_8 = this->m_8; /*0x4a7d82*/
+  m_8 = this->q008; /*0x4a7d82*/
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x4a7d8d*/
   {
     int v3 = 0; // edx /*0x4a7d8f*/
@@ -85,30 +85,30 @@ char Dial8Class_48::Release(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x4a7dcc*/
   {
-    (this->m_C) = ((this->m_C) & ~0xFF) | ((0) & 0xFF); /*0x4a7dd6*/
+    (this->q00C) = ((this->q00C) & ~0xFF) | ((0) & 0xFF); /*0x4a7dd6*/
     if ( a3 ) /*0x4a7ddc*/
       v4 = a3; /*0x4a7df2*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x4a7dee*/
-    (this->m_C) = ((this->m_C) & ~0xFF) | ((1) & 0xFF); /*0x4a7df6*/
+    (this->q00C) = ((this->q00C) & ~0xFF) | ((1) & 0xFF); /*0x4a7df6*/
     if ( v4 ) /*0x4a7dfa*/
     {
       if ( *&this->q004 ) /*0x4a7e05*/
       {
-        m_8 = this->m_8; /*0x4a7e0c*/
+        m_8 = this->q008; /*0x4a7e0c*/
         if ( a2 < m_8 ) /*0x4a7e11*/
           m_8 = a2; /*0x4a7e13*/
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x4a7e19*/
           ++i; /*0x4a7e1e*/
-        if ( (((this->m_C) >> 8) & 0xFF) ) /*0x4a7e2b*/
+        if ( (((this->q00C) >> 8) & 0xFF) ) /*0x4a7e2b*/
         {
           __3_YAXPAX_Z(*&this->q004); /*0x4a7e36*/
           *&this->q004 = 0; /*0x4a7e3e*/
         }
       }
       *&this->q004 = v4; /*0x4a7e47*/
-      this->m_8 = a2; /*0x4a7e4f*/
-      (this->m_C) = ((this->m_C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x4a7e52*/
+      this->q008 = a2; /*0x4a7e4f*/
+      (this->q00C) = ((this->q00C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x4a7e52*/
       return 1; /*0x4a7e58*/
     }
     else
@@ -134,8 +134,8 @@ void Dial8Class_48::ddtor(void *a1)
     operator delete((void *)(*&this->q004)); /*0x4a7e83*/
     *&this->q004 = 0; /*0x4a7e8b*/
   }
-  (((unsigned char *)&(*&this->m_C))[1]) = 0; /*0x4a7e8e*/
-  this->m_8 = 0; /*0x4a7e91*/
+  (((unsigned char *)&(*&this->q00C))[1]) = 0; /*0x4a7e8e*/
+  this->q008 = 0; /*0x4a7e91*/
 }
 } // namespace gamemd
 
@@ -148,9 +148,9 @@ int Dial8Class_48::Read(unsigned int * a2, void *a2_2, void *a3)
   int m_8; // edx
   unsigned int *i; // ecx
 
-  if ( !((this->m_C) & 0xFF) ) /*0x4a7ea0*/
+  if ( !((this->q00C) & 0xFF) ) /*0x4a7ea0*/
     return 0; /*0x4a7ea8*/
-  m_8 = this->m_8; /*0x4a7eae*/
+  m_8 = this->q008; /*0x4a7eae*/
   result = 0; /*0x4a7eb1*/
   if ( m_8 <= 0 ) /*0x4a7eb5*/
     return -1; /*0x4a7ecc*/
@@ -168,7 +168,7 @@ int Dial8Class_48::Read(unsigned int * a2, void *a2_2, void *a3)
 namespace gamemd {
 unsigned int Dial8Class_48::Write(int a2)
 {
-  if ( (*((unsigned char *)&(*&this->m_C))) ) /*0x4a7ee0*/
+  if ( (*((unsigned char *)&(*&this->q00C))) ) /*0x4a7ee0*/
     return (unsigned int)(a2 - *&this->q004) >> 2; /*0x4a7ef5*/
   else
     return 0; /*0x4a7ee7*/
@@ -187,38 +187,38 @@ char Dial8Class_48::SetCapacity(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x4a7f0c*/
   {
-    (this->m_C) = ((this->m_C) & ~0xFF) | ((0) & 0xFF); /*0x4a7f12*/
+    (this->q00C) = ((this->q00C) & ~0xFF) | ((0) & 0xFF); /*0x4a7f12*/
     if ( a3 ) /*0x4a7f18*/
       v4 = a3; /*0x4a7f2e*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x4a7f2a*/
-    (this->m_C) = ((this->m_C) & ~0xFF) | ((1) & 0xFF); /*0x4a7f32*/
+    (this->q00C) = ((this->q00C) & ~0xFF) | ((1) & 0xFF); /*0x4a7f32*/
     if ( !v4 ) /*0x4a7f36*/
       return 0; /*0x4a7faa*/
     if ( *&this->q004 ) /*0x4a7f38*/
     {
-      m_8 = this->m_8; /*0x4a7f3f*/
+      m_8 = this->q008; /*0x4a7f3f*/
       if ( a2 < m_8 ) /*0x4a7f44*/
         m_8 = a2; /*0x4a7f46*/
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x4a7f4c*/
         ++i; /*0x4a7f51*/
-      if ( (((this->m_C) >> 8) & 0xFF) ) /*0x4a7f5e*/
+      if ( (((this->q00C) >> 8) & 0xFF) ) /*0x4a7f5e*/
       {
         __3_YAXPAX_Z(*&this->q004); /*0x4a7f69*/
         *&this->q004 = 0; /*0x4a7f71*/
       }
     }
     *&this->q004 = v4; /*0x4a7f7a*/
-    this->m_8 = a2; /*0x4a7f82*/
-    (this->m_C) = ((this->m_C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x4a7f85*/
+    this->q008 = a2; /*0x4a7f82*/
+    (this->q00C) = ((this->q00C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x4a7f85*/
   }
   else
   {
     (*(void (**)(_DynamicVectorClass_PAVDiskLaserClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4a7f8e*/
   }
-  v7 = this->m_8; /*0x4a7f91*/
-  if ( v7 < this->m_10 ) /*0x4a7f99*/
-    this->m_10 = v7; /*0x4a7f9b*/
+  v7 = this->q008; /*0x4a7f91*/
+  if ( v7 < this->q010 ) /*0x4a7f99*/
+    this->q010 = v7; /*0x4a7f9b*/
   return 1; /*0x4a7f9e*/
 
 }
@@ -230,7 +230,7 @@ int Dial8Class_48::FindItem(unsigned int * a2)
 {
 
   int m_10; // edx
-  m_10 = this->m_10; /*0x4a7fb0*/
+  m_10 = this->q010; /*0x4a7fb0*/
   int result = 0; // eax /*0x4a7fb3*/
   if ( m_10 <= 0 ) /*0x4a7fb8*/
     return -1; /*0x4a7fcf*/

@@ -140,9 +140,9 @@ unsigned int * ConvertClass::Construct(int a2, int a3, int a4, int a5, char a6, 
   *&this->q164 = 0; /*0x48e911*/
   *&this->q168 = 0; /*0x48e917*/
   *&this->q16C = v7; /*0x48e91d*/
-  this->ConvertClass_field_0x170 = 0; /*0x48e923*/
+  this->q170 = 0; /*0x48e923*/
   *(unsigned int *)this->__pad_174 = 0; /*0x48e929*/
-  this->ConvertClass_field_0x178 = 0; /*0x48e92f*/
+  this->q178 = 0; /*0x48e92f*/
   this->u32_17C = 0; /*0x48e935*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E5358) */  /*0x48e93b*/
   if ( v9 ) /*0x48e941*/
@@ -150,7 +150,7 @@ unsigned int * ConvertClass::Construct(int a2, int a3, int a4, int a5, char a6, 
   if ( *&this->__pad_004 == 1 ) /*0x48e94f*/
   {
     v10 = (unsigned char *)__2_YAPAXI_Z(0x100u); /*0x48e95a*/
-    this->ConvertClass_field_0x178 = (int)v10; /*0x48e95f*/
+    this->q178 = (int)v10; /*0x48e95f*/
     *v10 = 0; /*0x48e968*/
     do /*0x48e9df*/
     {
@@ -163,11 +163,11 @@ unsigned int * ConvertClass::Construct(int a2, int a3, int a4, int a5, char a6, 
       LOWORD(a4) = *v13; /*0x48e9b6*/
       BYTE2(a4) = v13->field_2; /*0x48e9c5*/
       ++v8; /*0x48e9d4*/
-      *(unsigned char *)(this->ConvertClass_field_0x178 + v8 - 1) = Palette::FindClosestColor((char *)a2, (Palette *)&a4); /*0x48e9db*/
+      *(unsigned char *)(this->q178 + v8 - 1) = Palette::FindClosestColor((char *)a2, (Palette *)&a4); /*0x48e9db*/
     }
     while ( v8 < 256 ); /*0x48e9df*/
     v14 = __2_YAPAXI_Z(*&this->q16C << 8); /*0x48e9eb*/
-    this->ConvertClass_field_0x170 = v14; /*0x48e9f0*/
+    this->q170 = v14; /*0x48e9f0*/
     v15 = (unsigned char *)v14; /*0x48e9f6*/
     v16 = *&this->q16C; /*0x48e9f8*/
     *(unsigned int *)this->__pad_174 = &v15[256 * ((v16 - 1) >> 1)]; /*0x48ea10*/
@@ -210,7 +210,7 @@ unsigned int * ConvertClass::Construct(int a2, int a3, int a4, int a5, char a6, 
   {
     v24 = __2_YAPAXI_Z(*&this->q16C << 9); /*0x48eb1c*/
     v25 = *&this->q16C; /*0x48eb21*/
-    this->ConvertClass_field_0x170 = v24; /*0x48eb2a*/
+    this->q170 = v24; /*0x48eb2a*/
     *(unsigned int *)this->__pad_174 = v24 + ((v25 - 1) >> 1 << 9); /*0x48eb3a*/
     if ( !a6 ) /*0x48eb46*/
       DSurface::BlitStretch(v24, v25, a2); /*0x48eb51*/

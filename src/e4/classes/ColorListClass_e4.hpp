@@ -8,14 +8,14 @@ namespace gamemd {
 struct ColorListClass {
     void * ptr_0;  // 0x0
     unsigned int __pad_004;  // 0x4
-    int ColorListClass_field_0x08;  // 0x8
-    int ColorListClass_field_0x0C;  // 0xC
-    int ColorListClass_field_0x10;  // 0x10
-    int ColorListClass_field_0x14;  // 0x14
-    int ColorListClass_field_0x18;  // 0x18
-    int ColorListClass_field_0x1C;  // 0x1C
-    int ColorListClass_field_0x20;  // 0x20
-    int ColorListClass_field_0x24;  // 0x24
+    int q008;  // 0x8
+    int q00C;  // 0xC
+    int q010;  // 0x10
+    int q014;  // 0x14
+    int q018;  // 0x18
+    int q01C;  // 0x1C
+    int q020;  // 0x20
+    int q024;  // 0x24
     char __pad_28[4];  // 0x28
     unsigned int u32_2C;  // 0x2C
     unsigned int u32_30;  // 0x30

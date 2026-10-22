@@ -7,7 +7,7 @@ namespace gamemd {
 
 struct ShroudClass {
     int __pad_000;  // 0x0
-    int ShroudClass_field_0x04;  // 0x4
+    int u32_4;  // 0x4
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int UpdateVisibility(int *aP1);

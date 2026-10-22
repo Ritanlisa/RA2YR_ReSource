@@ -99,8 +99,8 @@ char WDTState_4::Release(int a2, unsigned int * a3)
     (*(void (**)(_DynamicVectorClass_V_rc_ptr_VWDTTerritory *))(this->__pad_0 + 12))(this); /*0x76bb69*/
   }
   v12 = this->Capacity; /*0x76bb6c*/
-  if ( v12 < this->m_10 ) /*0x76bb74*/
-    this->m_10 = v12; /*0x76bb76*/
+  if ( v12 < this->q010 ) /*0x76bb74*/
+    this->q010 = v12; /*0x76bb76*/
   return 1; /*0x76bb79*/
 
 }
@@ -113,7 +113,7 @@ int WDTState_4::ddtor(void *a1)
   int result; // eax
 
   v2 = *(int (****)(unsigned int, int))&this->q004; /*0x76b716*/
-  this->m_10 = 0; /*0x76b719*/
+  this->q010 = 0; /*0x76b719*/
   if ( v2 && (((unsigned char *)&(*&this->IsAllocated))[1]) ) /*0x76b720*/
   {
     result = (**v2)(v2, 3); /*0x76b72d*/

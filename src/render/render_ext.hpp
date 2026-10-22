@@ -422,8 +422,8 @@ public:
 
     uint8_t BlitPlainXlatAlpha_ushort_field_0x04[4];
     uint8_t BlitPlainXlatAlpha_ushort_field_0x08[4];
-    uint8_t BlitPlainXlatAlpha_ushort_field_0x0C[4];
-    uint8_t BlitPlainXlatAlpha_ushort_field_0x10[4];
+    uint8_t q00C[4];
+    uint8_t q010[4];
     unsigned int* __pad_0;  // G42.35 til-name member sync (cache-verbatim bodies 0x49A2xx/0x49AAxx)
 
     unsigned int u32_8;  // X10 supply (member_lookup)
@@ -443,8 +443,8 @@ public:
 
     uint8_t BlitTransLucent25AlphaZReadWarp_ushort_field_0x04[4];
     uint8_t BlitTransLucent25AlphaZReadWarp_ushort_field_0x08[4];
-    uint8_t BlitTransLucent25AlphaZReadWarp_ushort_field_0x0C[4];
-    uint8_t BlitTransLucent25AlphaZReadWarp_ushort_field_0x10[4];
+    uint8_t q00C[4];
+    uint8_t q010[4];
     unsigned int* __pad_0;  // G42.35 til-name member sync (cache-verbatim bodies 0x49A2xx/0x49AAxx)
     unsigned int m_8;  // G42.35 til-name member sync
 
@@ -465,18 +465,18 @@ public:
     // +9 more virtual methods
 
     uint8_t BlitTransLucent25AlphaZReadWrite_ushort_field_0x04[4];
-    uint8_t BlitTransLucent25AlphaZReadWrite_ushort_field_0x08[4];
+    uint8_t ptr_8[4];
     uint8_t BlitTransLucent25AlphaZReadWrite_ushort_field_0x0C[4];
-    uint8_t BlitTransLucent25AlphaZReadWrite_ushort_field_0x10[4];
-    uint8_t BlitTransLucent25AlphaZReadWrite_ushort_field_0x14[4];
-    uint8_t BlitTransLucent25AlphaZReadWrite_ushort_field_0x18[4];
-    uint8_t BlitTransLucent25AlphaZReadWrite_ushort_field_0x1C[4];
-    uint8_t BlitTransLucent25AlphaZReadWrite_ushort_field_0x20[4];
-    uint8_t BlitTransLucent25AlphaZReadWrite_ushort_field_0x24[4];
-    uint8_t BlitTransLucent25AlphaZReadWrite_ushort_field_0x28[4];
-    uint8_t BlitTransLucent25AlphaZReadWrite_ushort_field_0x2C[4];
-    uint8_t BlitTransLucent25AlphaZReadWrite_ushort_field_0x30[4];
-    uint8_t BlitTransLucent25AlphaZReadWrite_ushort_field_0x34[4];
+    uint8_t q010[4];
+    uint8_t q014[4];
+    uint8_t q018[4];
+    uint8_t q01C[4];
+    uint8_t q020[4];
+    uint8_t q024[4];
+    uint8_t q028[4];
+    uint8_t q02C[4];
+    uint8_t q030[4];
+    uint8_t q034[4];
     public:  // symbol-anchor
     // === SYMBOL-ANCHOR (BEGIN) ===
     int CallBlit0(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11);  // 0x496130 -- BlitTransLucent25AlphaZReadWrite_ushort::CallBlit0
@@ -501,8 +501,8 @@ public:
 
     uint8_t BlitTransLucent25AlphaZRead_ushort_field_0x04[4];
     uint8_t BlitTransLucent25AlphaZRead_ushort_field_0x08[4];
-    uint8_t BlitTransLucent25AlphaZRead_ushort_field_0x0C[4];
-    uint8_t BlitTransLucent25AlphaZRead_ushort_field_0x10[4];
+    uint8_t q00C[4];
+    uint8_t q010[4];
     unsigned int* __pad_0;  // G42.35 til-name member sync (cache-verbatim bodies 0x49A2xx/0x49AAxx)
     unsigned int m_8;  // G42.35 til-name member sync
 
@@ -523,14 +523,14 @@ public:
     // +5 more virtual methods
 
     uint8_t BlitTransLucent25Alpha_ushort_field_0x04[4];
-    uint8_t BlitTransLucent25Alpha_ushort_field_0x08[4];
+    uint8_t ptr_8[4];
     uint8_t BlitTransLucent25Alpha_ushort_field_0x0C[4];
-    uint8_t BlitTransLucent25Alpha_ushort_field_0x10[4];
-    uint8_t BlitTransLucent25Alpha_ushort_field_0x14[4];
-    uint8_t BlitTransLucent25Alpha_ushort_field_0x18[4];
-    uint8_t BlitTransLucent25Alpha_ushort_field_0x1C[4];
-    uint8_t BlitTransLucent25Alpha_ushort_field_0x20[4];
-    uint8_t BlitTransLucent25Alpha_ushort_field_0x24[4];
+    uint8_t q010[4];
+    uint8_t q014[4];
+    uint8_t q018[4];
+    uint8_t q01C[4];
+    uint8_t q020[4];
+    uint8_t q024[4];
     public:  // symbol-anchor
     // === SYMBOL-ANCHOR (BEGIN) ===
     int CallBlit0(int a1, int a2, int a3, int a4, int a5, int a6, int a7);  // 0x494500 -- BlitTransLucent25Alpha_ushort::CallBlit0
@@ -553,8 +553,8 @@ public:
 
     uint8_t BlitTransLucent50AlphaZReadWarp_ushort_field_0x04[4];
     uint8_t BlitTransLucent50AlphaZReadWarp_ushort_field_0x08[4];
-    uint8_t BlitTransLucent50AlphaZReadWarp_ushort_field_0x0C[4];
-    uint8_t BlitTransLucent50AlphaZReadWarp_ushort_field_0x10[4];
+    uint8_t q00C[4];
+    uint8_t q010[4];
     unsigned int* __pad_0;  // G42.35 til-name member sync (cache-verbatim bodies 0x49A2xx/0x49AAxx)
     unsigned int m_8;  // G42.35 til-name member sync
 
@@ -575,8 +575,8 @@ public:
 
     uint8_t BlitTransLucent50AlphaZReadWrite_ushort_field_0x04[4];
     uint8_t BlitTransLucent50AlphaZReadWrite_ushort_field_0x08[4];
-    uint8_t BlitTransLucent50AlphaZReadWrite_ushort_field_0x0C[4];
-    uint8_t BlitTransLucent50AlphaZReadWrite_ushort_field_0x10[4];
+    uint8_t q00C[4];
+    uint8_t q010[4];
     unsigned int* __pad_0;  // G42.35 til-name member sync (cache-verbatim bodies 0x49A2xx/0x49AAxx)
     unsigned int m_8;  // G42.35 til-name member sync
 
@@ -597,8 +597,8 @@ public:
 
     uint8_t BlitTransLucent50AlphaZRead_ushort_field_0x04[4];
     uint8_t BlitTransLucent50AlphaZRead_ushort_field_0x08[4];
-    uint8_t BlitTransLucent50AlphaZRead_ushort_field_0x0C[4];
-    uint8_t BlitTransLucent50AlphaZRead_ushort_field_0x10[4];
+    uint8_t q00C[4];
+    uint8_t q010[4];
     unsigned int* __pad_0;  // G42.35 til-name member sync (cache-verbatim bodies 0x49A2xx/0x49AAxx)
 
     unsigned int u32_8;  // X10 supply (member_lookup)
@@ -618,8 +618,8 @@ public:
 
     uint8_t BlitTransLucent50Alpha_ushort_field_0x04[4];
     uint8_t BlitTransLucent50Alpha_ushort_field_0x08[4];
-    uint8_t BlitTransLucent50Alpha_ushort_field_0x0C[4];
-    uint8_t BlitTransLucent50Alpha_ushort_field_0x10[4];
+    uint8_t q00C[4];
+    uint8_t q010[4];
     unsigned int* __pad_0;  // G42.35 til-name member sync (cache-verbatim bodies 0x49A2xx/0x49AAxx)
     unsigned int m_8;  // G42.35 til-name member sync
 
@@ -640,8 +640,8 @@ public:
 
     uint8_t BlitTransLucent75AlphaZReadWarp_ushort_field_0x04[4];
     uint8_t BlitTransLucent75AlphaZReadWarp_ushort_field_0x08[4];
-    uint8_t BlitTransLucent75AlphaZReadWarp_ushort_field_0x0C[4];
-    uint8_t BlitTransLucent75AlphaZReadWarp_ushort_field_0x10[4];
+    uint8_t q00C[4];
+    uint8_t q010[4];
     unsigned int* __pad_0;  // G42.35 til-name member sync (cache-verbatim bodies 0x49A2xx/0x49AAxx)
     unsigned int m_8;  // G42.35 til-name member sync
 
@@ -662,8 +662,8 @@ public:
 
     uint8_t BlitTransLucent75AlphaZReadWrite_ushort_field_0x04[4];
     uint8_t BlitTransLucent75AlphaZReadWrite_ushort_field_0x08[4];
-    uint8_t BlitTransLucent75AlphaZReadWrite_ushort_field_0x0C[4];
-    uint8_t BlitTransLucent75AlphaZReadWrite_ushort_field_0x10[4];
+    uint8_t q00C[4];
+    uint8_t q010[4];
     unsigned int* __pad_0;  // G42.35 til-name member sync (cache-verbatim bodies 0x49A2xx/0x49AAxx)
     unsigned int m_8;  // G42.35 til-name member sync
 
@@ -684,8 +684,8 @@ public:
 
     uint8_t BlitTransLucent75AlphaZRead_ushort_field_0x04[4];
     uint8_t BlitTransLucent75AlphaZRead_ushort_field_0x08[4];
-    uint8_t BlitTransLucent75AlphaZRead_ushort_field_0x0C[4];
-    uint8_t BlitTransLucent75AlphaZRead_ushort_field_0x10[4];
+    uint8_t q00C[4];
+    uint8_t q010[4];
     unsigned int* __pad_0;  // G42.35 til-name member sync (cache-verbatim bodies 0x49A2xx/0x49AAxx)
     unsigned int m_8;  // G42.35 til-name member sync
 
@@ -706,8 +706,8 @@ public:
 
     uint8_t BlitTransLucent75Alpha_ushort_field_0x04[4];
     uint8_t BlitTransLucent75Alpha_ushort_field_0x08[4];
-    uint8_t BlitTransLucent75Alpha_ushort_field_0x0C[4];
-    uint8_t BlitTransLucent75Alpha_ushort_field_0x10[4];
+    uint8_t q00C[4];
+    uint8_t q010[4];
     unsigned int* __pad_0;  // G42.35 til-name member sync (cache-verbatim bodies 0x49A2xx/0x49AAxx)
     unsigned int m_8;  // G42.35 til-name member sync
 
@@ -728,8 +728,8 @@ public:
 
     uint8_t BlitTransXlatAlphaZReadWrite_ushort_field_0x04[4];
     uint8_t BlitTransXlatAlphaZReadWrite_ushort_field_0x08[4];
-    uint8_t BlitTransXlatAlphaZReadWrite_ushort_field_0x0C[4];
-    uint8_t BlitTransXlatAlphaZReadWrite_ushort_field_0x10[4];
+    uint8_t q00C[4];
+    uint8_t q010[4];
     unsigned int* __pad_0;  // G42.35 til-name member sync (cache-verbatim bodies 0x49A2xx/0x49AAxx)
 
     unsigned int u32_8;  // X10 supply (member_lookup)
@@ -749,25 +749,25 @@ public:
     // +20 more virtual methods
 
     uint8_t BlitTransXlatAlphaZRead_ushort_field_0x04[4];
-    uint8_t BlitTransXlatAlphaZRead_ushort_field_0x08[4];
+    uint8_t ptr_8[4];
     uint8_t BlitTransXlatAlphaZRead_ushort_field_0x0C[4];
-    uint8_t BlitTransXlatAlphaZRead_ushort_field_0x10[4];
-    uint8_t BlitTransXlatAlphaZRead_ushort_field_0x14[4];
-    uint8_t BlitTransXlatAlphaZRead_ushort_field_0x18[4];
-    uint8_t BlitTransXlatAlphaZRead_ushort_field_0x1C[4];
-    uint8_t BlitTransXlatAlphaZRead_ushort_field_0x20[4];
-    uint8_t BlitTransXlatAlphaZRead_ushort_field_0x24[4];
-    uint8_t BlitTransXlatAlphaZRead_ushort_field_0x28[4];
-    uint8_t BlitTransXlatAlphaZRead_ushort_field_0x2C[4];
-    uint8_t BlitTransXlatAlphaZRead_ushort_field_0x30[4];
-    uint8_t BlitTransXlatAlphaZRead_ushort_field_0x34[4];
-    uint8_t BlitTransXlatAlphaZRead_ushort_field_0x38[4];
-    uint8_t BlitTransXlatAlphaZRead_ushort_field_0x3C[4];
-    uint8_t BlitTransXlatAlphaZRead_ushort_field_0x40[4];
-    uint8_t BlitTransXlatAlphaZRead_ushort_field_0x44[4];
-    uint8_t BlitTransXlatAlphaZRead_ushort_field_0x48[4];
-    uint8_t BlitTransXlatAlphaZRead_ushort_field_0x4C[4];
-    uint8_t BlitTransXlatAlphaZRead_ushort_field_0x50[4];
+    uint8_t q010[4];
+    uint8_t q014[4];
+    uint8_t q018[4];
+    uint8_t q01C[4];
+    uint8_t q020[4];
+    uint8_t q024[4];
+    uint8_t q028[4];
+    uint8_t q02C[4];
+    uint8_t q030[4];
+    uint8_t q034[4];
+    uint8_t q038[4];
+    uint8_t q03C[4];
+    uint8_t q040[4];
+    uint8_t q044[4];
+    uint8_t q048[4];
+    uint8_t q04C[4];
+    uint8_t q050[4];
     public:  // symbol-anchor
     // === SYMBOL-ANCHOR (BEGIN) ===
     int CallBlit0_2(int a1, int a2, int a3, int a4, int a5, int a6, int a7);  // 0x494890 -- BlitTransXlatAlphaZRead_ushort::CallBlit0_2
@@ -800,9 +800,9 @@ public:
     virtual void Blit(); // 0x49A660
 
     uint8_t BlitTransZRemapXlatAlphaZReadWrite_ushort_field_0x04[4];
-    uint8_t BlitTransZRemapXlatAlphaZReadWrite_ushort_field_0x08[4];
-    uint8_t BlitTransZRemapXlatAlphaZReadWrite_ushort_field_0x0C[4];
-    uint8_t BlitTransZRemapXlatAlphaZReadWrite_ushort_field_0x10[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
+    uint8_t q010[4];
 };
 // 5 methods in IDA
 class BlitTransZRemapXlatAlphaZRead_ushort
@@ -817,9 +817,9 @@ public:
     virtual unsigned int* Blit(char a2); // 0x49A460
 
     uint8_t BlitTransZRemapXlatAlphaZRead_ushort_field_0x04[4];
-    uint8_t BlitTransZRemapXlatAlphaZRead_ushort_field_0x08[4];
+    uint8_t q008[4];
     uint8_t BlitTransZRemapXlatAlphaZRead_ushort_field_0x0C[4];
-    uint8_t BlitTransZRemapXlatAlphaZRead_ushort_field_0x10[4];
+    uint8_t q010[4];
     unsigned int* __pad_0;  // G42.35 til-name member sync (cache-verbatim bodies 0x49A2xx/0x49AAxx)
     unsigned int m_C;  // G42.35 til-name member sync
 
@@ -839,9 +839,9 @@ public:
     virtual unsigned int* Blit(char a2); // 0x49A280
 
     uint8_t BlitTransZRemapXlatAlpha_ushort_field_0x04[4];
-    uint8_t BlitTransZRemapXlatAlpha_ushort_field_0x08[4];
+    uint8_t q008[4];
     uint8_t BlitTransZRemapXlatAlpha_ushort_field_0x0C[4];
-    uint8_t BlitTransZRemapXlatAlpha_ushort_field_0x10[4];
+    uint8_t q010[4];
     unsigned int* __pad_0;  // G42.35 til-name member sync (cache-verbatim bodies 0x49A2xx/0x49AAxx)
     unsigned int m_C;  // G42.35 til-name member sync
 
@@ -911,14 +911,14 @@ virtual char RenderBuildingPlacementPreview(unsigned int *,int *,char);  // 0x47
     static int HandleClick(void* aP0, int a2); // 0x4E2690  // G42.35 R5 static-form sync (call 0x4E2B5E explicit-this form)
     // +4 more virtual methods
 
-    uint8_t BuildingPlacement_field_0x04[4];
-    uint8_t BuildingPlacement_field_0x08[4];
-    uint8_t BuildingPlacement_field_0x0C[4];
-    uint8_t BuildingPlacement_field_0x10[4];
-    uint8_t BuildingPlacement_field_0x14[4];
-    uint8_t BuildingPlacement_field_0x18[4];
-    uint8_t BuildingPlacement_field_0x1C[4];
-    uint8_t BuildingPlacement_field_0x20[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
+    uint8_t u32_10[4];
+    uint8_t q014[4];
+    uint8_t u32_18[4];
+    uint8_t u32_1C[4];
+    uint8_t u32_20[4];
     public:  // symbol-anchor
     // === SYMBOL-ANCHOR (BEGIN) ===
     int Activate(int a1, int a2);  // 0x4fb840 -- BuildingPlacement::Activate
@@ -984,7 +984,7 @@ public:
     virtual int AllocSlot(int a2);
     virtual int FindFreeSlot(int a2);
 
-    uint8_t BuildingQueue_field_0x04[4];
+    uint8_t q004[4];
     uint8_t BuildingQueue_field_0x08[4];
 
     unsigned char TechnoClass_749[4];  /* TechnoClass */  // X10 supply (member_lookup)
@@ -1006,14 +1006,14 @@ virtual unsigned int * DrawColorRect(int,int,int,int,int);  // 0x488980
     // +5 more virtual methods
 
     uint8_t ColorListClass_field_0x04[4];
-    uint8_t ColorListClass_field_0x08[4];
-    uint8_t ColorListClass_field_0x0C[4];
-    uint8_t ColorListClass_field_0x10[4];
-    uint8_t ColorListClass_field_0x14[4];
-    uint8_t ColorListClass_field_0x18[4];
-    uint8_t ColorListClass_field_0x1C[4];
-    uint8_t ColorListClass_field_0x20[4];
-    uint8_t ColorListClass_field_0x24[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
+    uint8_t q010[4];
+    uint8_t q014[4];
+    uint8_t q018[4];
+    uint8_t q01C[4];
+    uint8_t q020[4];
+    uint8_t q024[4];
     public:  // symbol-anchor
     // === SYMBOL-ANCHOR (BEGIN) ===
     int GetColor(int a1);  // 0x488ee0 -- ColorListClass::GetColor
@@ -1024,7 +1024,7 @@ virtual unsigned int * DrawColorRect(int,int,int,int,int);  // 0x488980
     void RemoveColor(int a1);  // 0x558010 -- ColorListClass::RemoveColor
     // === SYMBOL-ANCHOR (END) ===
 
-    unsigned int u32_174;  // X10 supply (member_lookup)
+    unsigned int q174;  // X10 supply (member_lookup)
     unsigned int u32_178;  // X10 supply (member_lookup)
     unsigned int u32_17C;  // X10 supply (member_lookup)
     unsigned int u32_181;  // X10 supply (member_lookup)
@@ -1065,9 +1065,9 @@ public:
 
     uint8_t FoggedObject_DrawVector_field_0x04[4];
     uint8_t FoggedObject_DrawVector_field_0x08[4];
-    uint8_t FoggedObject_DrawVector_field_0x0C[4];
-    uint8_t FoggedObject_DrawVector_field_0x10[4];
-    uint8_t FoggedObject_DrawVector_field_0x14[4];
+    uint8_t q00C[4];
+    uint8_t q010[4];
+    uint8_t q014[4];
     unsigned int* __pad_0;  // G42.35 til-name member sync (body 0x4D2A10-0x4D2B07)
     public:  // symbol-anchor
     // === SYMBOL-ANCHOR (BEGIN) ===
@@ -1133,7 +1133,7 @@ public:
     virtual void QueryInterface(); // 0x49AD00
 
     uint8_t RLEBlitTransLucent25AlphaZReadWarp_ushort_field_0x04[4];
-    uint8_t RLEBlitTransLucent25AlphaZReadWarp_ushort_field_0x08[4];
+    uint8_t q008[4];
 };
 // 3 methods in IDA
 class RLEBlitTransLucent25AlphaZReadWrite_ushort
@@ -1147,7 +1147,7 @@ public:
     virtual void QueryInterface(); // 0x49AE40
 
     uint8_t RLEBlitTransLucent25AlphaZReadWrite_ushort_field_0x04[4];
-    uint8_t RLEBlitTransLucent25AlphaZReadWrite_ushort_field_0x08[4];
+    uint8_t q008[4];
 };
 // 3 methods in IDA
 class RLEBlitTransLucent25AlphaZRead_ushort
@@ -1161,7 +1161,7 @@ public:
     virtual void QueryInterface(); // 0x49AC40
 
     uint8_t RLEBlitTransLucent25AlphaZRead_ushort_field_0x04[4];
-    uint8_t RLEBlitTransLucent25AlphaZRead_ushort_field_0x08[4];
+    uint8_t q008[4];
 };
 // 3 methods in IDA
 class RLEBlitTransLucent25Alpha_ushort
@@ -1193,7 +1193,7 @@ public:
     virtual void QueryInterface(); // 0x49ACC0
 
     uint8_t RLEBlitTransLucent50AlphaZReadWarp_ushort_field_0x04[4];
-    uint8_t RLEBlitTransLucent50AlphaZReadWarp_ushort_field_0x08[4];
+    uint8_t q008[4];
 };
 // 3 methods in IDA
 class RLEBlitTransLucent50AlphaZReadWrite_ushort
@@ -1207,7 +1207,7 @@ public:
     virtual void QueryInterface(); // 0x49AE00
 
     uint8_t RLEBlitTransLucent50AlphaZReadWrite_ushort_field_0x04[4];
-    uint8_t RLEBlitTransLucent50AlphaZReadWrite_ushort_field_0x08[4];
+    uint8_t q008[4];
 };
 // 3 methods in IDA
 class RLEBlitTransLucent50AlphaZRead_ushort
@@ -1221,7 +1221,7 @@ public:
     virtual void QueryInterface(); // 0x49AC00
 
     uint8_t RLEBlitTransLucent50AlphaZRead_ushort_field_0x04[4];
-    uint8_t RLEBlitTransLucent50AlphaZRead_ushort_field_0x08[4];
+    uint8_t q008[4];
 };
 // 3 methods in IDA
 class RLEBlitTransLucent50Alpha_ushort
@@ -1254,7 +1254,7 @@ public:
     virtual void QueryInterface(); // 0x49AC80
 
     uint8_t RLEBlitTransLucent75AlphaZReadWarp_ushort_field_0x04[4];
-    uint8_t RLEBlitTransLucent75AlphaZReadWarp_ushort_field_0x08[4];
+    uint8_t q008[4];
 };
 // 3 methods in IDA
 class RLEBlitTransLucent75AlphaZReadWrite_ushort
@@ -1268,7 +1268,7 @@ public:
     virtual void QueryInterface(); // 0x49ADC0
 
     uint8_t RLEBlitTransLucent75AlphaZReadWrite_ushort_field_0x04[4];
-    uint8_t RLEBlitTransLucent75AlphaZReadWrite_ushort_field_0x08[4];
+    uint8_t q008[4];
 };
 // 3 methods in IDA
 class RLEBlitTransLucent75AlphaZRead_ushort
@@ -1282,7 +1282,7 @@ public:
     virtual void QueryInterface(); // 0x49ABC0
 
     uint8_t RLEBlitTransLucent75AlphaZRead_ushort_field_0x04[4];
-    uint8_t RLEBlitTransLucent75AlphaZRead_ushort_field_0x08[4];
+    uint8_t q008[4];
 };
 // 3 methods in IDA
 class RLEBlitTransLucent75Alpha_ushort
@@ -1314,7 +1314,7 @@ public:
     virtual void QueryInterface(); // 0x49AD40
 
     uint8_t RLEBlitTransXlatAlphaZReadWrite_ushort_field_0x04[4];
-    uint8_t RLEBlitTransXlatAlphaZReadWrite_ushort_field_0x08[4];
+    uint8_t q008[4];
 };
 // 3 methods in IDA
 class RLEBlitTransXlatAlphaZRead_ushort
@@ -1364,7 +1364,7 @@ public:
     virtual void QueryInterface(); // 0x49AD80
 
     uint8_t RLEBlitTransZRemapXlatAlphaZReadWrite_ushort_field_0x04[4];
-    uint8_t RLEBlitTransZRemapXlatAlphaZReadWrite_ushort_field_0x08[4];
+    uint8_t q008[4];
 };
 // 3 methods in IDA
 class RLEBlitTransZRemapXlatAlphaZRead_ushort
@@ -1378,7 +1378,7 @@ public:
     virtual void QueryInterface(); // 0x49AB80
 
     uint8_t RLEBlitTransZRemapXlatAlphaZRead_ushort_field_0x04[4];
-    uint8_t RLEBlitTransZRemapXlatAlphaZRead_ushort_field_0x08[4];
+    uint8_t q008[4];
 };
 // 12 methods in IDA
 class RLEBlitTransZRemapXlatAlpha_ushort
@@ -1395,16 +1395,16 @@ public:
     // +7 more virtual methods
 
     uint8_t RLEBlitTransZRemapXlatAlpha_ushort_field_0x04[4];
-    uint8_t RLEBlitTransZRemapXlatAlpha_ushort_field_0x08[4];
-    uint8_t RLEBlitTransZRemapXlatAlpha_ushort_field_0x0C[4];
-    uint8_t RLEBlitTransZRemapXlatAlpha_ushort_field_0x10[4];
-    uint8_t RLEBlitTransZRemapXlatAlpha_ushort_field_0x14[4];
-    uint8_t RLEBlitTransZRemapXlatAlpha_ushort_field_0x18[4];
-    uint8_t RLEBlitTransZRemapXlatAlpha_ushort_field_0x1C[4];
-    uint8_t RLEBlitTransZRemapXlatAlpha_ushort_field_0x20[4];
-    uint8_t RLEBlitTransZRemapXlatAlpha_ushort_field_0x24[4];
-    uint8_t RLEBlitTransZRemapXlatAlpha_ushort_field_0x28[4];
-    uint8_t RLEBlitTransZRemapXlatAlpha_ushort_field_0x2C[4];
+    uint8_t q008[4];
+    uint8_t u32_C[4];
+    uint8_t q010[4];
+    uint8_t q014[4];
+    uint8_t q018[4];
+    uint8_t q01C[4];
+    uint8_t q020[4];
+    uint8_t q024[4];
+    uint8_t q028[4];
+    uint8_t q02C[4];
     public:  // symbol-anchor
     // === SYMBOL-ANCHOR (BEGIN) ===
     int CallBlit0_1(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11);  // 0x497880 -- RLEBlitTransZRemapXlatAlpha_ushort::CallBlit0_1
@@ -1427,18 +1427,18 @@ public:
     virtual void Stub1(); // 0x753AD0
     // +8 more virtual methods
 
-    uint8_t ScreenEffect_field_0x04[4];
-    uint8_t ScreenEffect_field_0x08[4];
-    uint8_t ScreenEffect_field_0x0C[4];
-    uint8_t ScreenEffect_field_0x10[4];
-    uint8_t ScreenEffect_field_0x14[4];
-    uint8_t ScreenEffect_field_0x18[4];
-    uint8_t ScreenEffect_field_0x1C[4];
-    uint8_t ScreenEffect_field_0x20[4];
-    uint8_t ScreenEffect_field_0x24[4];
-    uint8_t ScreenEffect_field_0x28[4];
-    uint8_t ScreenEffect_field_0x2C[4];
-    uint8_t ScreenEffect_field_0x30[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
+    uint8_t q010[4];
+    uint8_t q014[4];
+    uint8_t q018[4];
+    uint8_t q01C[4];
+    uint8_t q020[4];
+    uint8_t q024[4];
+    uint8_t q028[4];
+    uint8_t q02C[4];
+    uint8_t q030[4];
 };
 // 1 methods in IDA
 class Scrollbar
@@ -1475,7 +1475,7 @@ public:
     virtual unsigned int SetCameraPosition(int* a2); // 0x6D6000  // G42.35 def-truth sync
     virtual int ProcessCell(int16_t* a2, int a3); // 0x6D7F20  // G42.35 def-truth sync
 
-    uint8_t TacticalMapClass_field_0x04[4];
+    uint8_t q004[4];
     unsigned int TacticalClass_field_D64;  // G42.35 til-name member sync (SetCameraPosition 0x6D6040)
     unsigned int TacticalClass_field_D68;  // G42.35
     unsigned int TacticalClass_field_D74;  // G42.35
@@ -1533,8 +1533,8 @@ public:
     virtual void LoadVXLHeader(); // 0x756DD0
     virtual void ParseSectionData(); // 0x756F80
 
-    uint8_t VoxelModel_field_0x04[4];
-    uint8_t VoxelModel_field_0x08[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
 };
 // 2 methods in IDA
 // CSP: VoxelPalette matched via T1
@@ -1547,7 +1547,7 @@ public:
     virtual unsigned int* Init(int a2, int a3); // 0x758950  // G42.35 def-truth sync
     int Reset(); // 0x7589C0
 
-    uint8_t VoxelPalette_field_0x04[4];
+    uint8_t q004[4];
 
     unsigned char __pad_000;  // X10 supply (csp_canon_members)
     unsigned int u32_10;  // X10 supply (member_lookup)
@@ -1570,12 +1570,12 @@ public:
     virtual void ClearDepth(); // 0x758880
     // +2 more virtual methods
 
-    uint8_t VoxelRenderer_field_0x04[4];
-    uint8_t VoxelRenderer_field_0x08[4];
-    uint8_t VoxelRenderer_field_0x0C[4];
-    uint8_t VoxelRenderer_field_0x10[4];
-    uint8_t VoxelRenderer_field_0x14[4];
-    uint8_t VoxelRenderer_field_0x18[4];
+    uint8_t u32_4[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
+    uint8_t u32_10[4];
+    uint8_t q014[4];
+    uint8_t q018[4];
     public:  // symbol-anchor
     // === SYMBOL-ANCHOR (BEGIN) ===
     int InitializeBuffers();  // 0x759fb0 -- VoxelRenderer::InitializeBuffers
@@ -1634,7 +1634,7 @@ public:
     virtual void Draw(); // 0x75D3A0
     void* Constructor(); // 0x75E6B0
 
-    uint8_t Voxel_Section_field_0x04[4];
+    uint8_t q004[4];
 };
 
 } // namespace gamemd

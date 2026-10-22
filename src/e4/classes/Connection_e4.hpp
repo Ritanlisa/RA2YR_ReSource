@@ -7,9 +7,9 @@ namespace gamemd {
 struct Connection {
     unsigned char __pad_000;  // 0x0
     char __pad_1[3];  // 0x1
-    int Connection_field_0x4;  // 0x4
+    int q004;  // 0x4
     char __pad_8[48];  // 0x8
-    int Connection_field_0x38;  // 0x38
+    int q038;  // 0x38
     char __pad_3C[12];  // 0x3C
     unsigned int u32_48;  // 0x48
 // --- flat members (BEGIN) ---

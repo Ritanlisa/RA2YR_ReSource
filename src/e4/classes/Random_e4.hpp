@@ -10,7 +10,7 @@ namespace gamemd {
 struct Random {
     unsigned char __pad_000;  // 0x0
     char __pad_1[3];  // 0x1
-    int Random_field_0x04;  // 0x4
+    int q004;  // 0x4
     int q008;  // 0x8
     int q00C;  // 0xC
 // --- flat members (BEGIN) ---

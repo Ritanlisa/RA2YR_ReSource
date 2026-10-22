@@ -10,9 +10,9 @@ struct DynamicVector;  // fix_fwd_type_supply
 struct MapSeedClass_18 {
     unsigned int __pad_0;  // 0x0
     int q004;  // 0x4
-    unsigned int m_8;  // 0x8
-    unsigned int m_C;  // 0xC
-    int m_10;  // 0x10
+    unsigned int q008;  // 0x8
+    unsigned int q00C;  // 0xC
+    int q010;  // 0x10
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     void ClearBuffer(void *a1_1);  // 0x5AC4C0

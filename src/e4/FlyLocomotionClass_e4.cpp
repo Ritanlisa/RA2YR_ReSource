@@ -77,12 +77,12 @@ void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
     return; /*0x4cfe94*/
   (&v11)->Construct(0, 0); /*0x4cfea2*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E4F64) */  /*0x4cfeb7*/
-  v11.ObjectVector_field_0x14 = 10; /*0x4cfebb*/
-  v11.ObjectVector_field_0x10 = 0; /*0x4cfebf*/
+  v11.q014 = 10; /*0x4cfebb*/
+  v11.q010 = 0; /*0x4cfebf*/
   (&v10)->Construct(0, 0); /*0x4cfec3*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E4F64) */  /*0x4cfecd*/
-  v10.ObjectVector_field_0x14 = 10; /*0x4cfed3*/
-  v10.ObjectVector_field_0x10 = 0; /*0x4cfed7*/
+  v10.q014 = 10; /*0x4cfed3*/
+  v10.q010 = 0; /*0x4cfed7*/
   if ( !*(unsigned int *)&dword_A8B238 /*0x4cfeef*/
     || (v2 = *(unsigned int *)(this->Owner + 540), *(unsigned int *)(v2 + 22016) == -1)
     || (thisa = 1, (unsigned __int8)House::IsCurrentPlayer((House *)v2)) )
@@ -118,66 +118,66 @@ void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
          || (*(int (**)(int))(*(unsigned int *)v4 + 44))(v4) == 15
          || (*(int (**)(int))(*(unsigned int *)v4 + 44))(v4) == 2) )
       {
-        if ( v10.ObjectVector_field_0x10 >= v10.ObjectVector_field_0x08 /*0x4d0069*/
-          && (!BYTE1(v10.ObjectVector_field_0x0C) && v10.ObjectVector_field_0x08
-           || v10.ObjectVector_field_0x14 <= 0
+        if ( v10.q010 >= v10.q008 /*0x4d0069*/
+          && (!BYTE1(v10.q00C) && v10.q008
+           || v10.q014 <= 0
            || !(*(unsigned __int8 (**)(ObjectVector *, int, unsigned int))(*(unsigned int *)v10.__pad_0 + 8))(
                  &v10,
-                 v10.ObjectVector_field_0x14 + v10.ObjectVector_field_0x08,
+                 v10.q014 + v10.q008,
                  0)) )
         {
           continue; /*0x4d006e*/
         }
-        v5 = v10.ObjectVector_field_0x10++; /*0x4d0074*/
-        ObjectVector_field_0x04 = v10.ObjectVector_field_0x04; /*0x4d007b*/
+        v5 = v10.q010++; /*0x4d0074*/
+        ObjectVector_field_0x04 = v10.q004; /*0x4d007b*/
       }
       else
       {
-        if ( v11.ObjectVector_field_0x10 >= v11.ObjectVector_field_0x08 /*0x4d00ab*/
-          && (!BYTE1(v11.ObjectVector_field_0x0C) && v11.ObjectVector_field_0x08
-           || v11.ObjectVector_field_0x14 <= 0
+        if ( v11.q010 >= v11.q008 /*0x4d00ab*/
+          && (!BYTE1(v11.q00C) && v11.q008
+           || v11.q014 <= 0
            || !(*(unsigned __int8 (**)(ObjectVector *, int, unsigned int))(*(unsigned int *)v11.__pad_0 + 8))(
                  &v11,
-                 v11.ObjectVector_field_0x14 + v11.ObjectVector_field_0x08,
+                 v11.q014 + v11.q008,
                  0)) )
         {
           continue; /*0x4d00b0*/
         }
-        v5 = v11.ObjectVector_field_0x10++; /*0x4d00b6*/
-        ObjectVector_field_0x04 = v11.ObjectVector_field_0x04; /*0x4d00bd*/
+        v5 = v11.q010++; /*0x4d00b6*/
+        ObjectVector_field_0x04 = v11.q004; /*0x4d00bd*/
       }
       *(unsigned int *)(ObjectVector_field_0x04 + 4 * v5) = v4; /*0x4d00c1*/
     }
   }
-  if ( v10.ObjectVector_field_0x10 <= 0 ) /*0x4d00d1*/
+  if ( v10.q010 <= 0 ) /*0x4d00d1*/
   {
-    if ( v11.ObjectVector_field_0x10 <= 0 ) /*0x4d00f8*/
+    if ( v11.q010 <= 0 ) /*0x4d00f8*/
       goto LABEL_45; /*0x4d00f8*/
-    v7 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, v11.ObjectVector_field_0x10 - 1); /*0x4d0109*/
-    v8 = (unsigned int *)v11.ObjectVector_field_0x04; /*0x4d0111*/
+    v7 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, v11.q010 - 1); /*0x4d0109*/
+    v8 = (unsigned int *)v11.q004; /*0x4d0111*/
     v9 = *(unsigned int *)this->Owner; /*0x4d0115*/
   }
   else
   {
-    v7 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, v10.ObjectVector_field_0x10 - 1); /*0x4d00e2*/
-    v8 = (unsigned int *)v10.ObjectVector_field_0x04; /*0x4d00ea*/
+    v7 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, v10.q010 - 1); /*0x4d00e2*/
+    v8 = (unsigned int *)v10.q004; /*0x4d00ea*/
     v9 = *(unsigned int *)this->Owner; /*0x4d00ee*/
   }
   (*(void (**)(unsigned int))(v9 + 968))(v8[v7]); /*0x4d011b*/
 LABEL_45:
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E192C) */  /*0x4d0121*/
-  if ( v10.ObjectVector_field_0x04 && BYTE1(v10.ObjectVector_field_0x0C) ) /*0x4d0136*/
+  if ( v10.q004 && BYTE1(v10.q00C) ) /*0x4d0136*/
   {
-    __3_YAXPAX_Z((void *)v10.ObjectVector_field_0x04); /*0x4d0139*/
-    v10.ObjectVector_field_0x04 = 0; /*0x4d0141*/
+    __3_YAXPAX_Z((void *)v10.q004); /*0x4d0139*/
+    v10.q004 = 0; /*0x4d0141*/
   }
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E192C) */  /*0x4d0149*/
-  BYTE1(v10.ObjectVector_field_0x0C) = 0; /*0x4d0150*/
-  v10.ObjectVector_field_0x08 = 0; /*0x4d0154*/
-  if ( v11.ObjectVector_field_0x04 ) /*0x4d0159*/
+  BYTE1(v10.q00C) = 0; /*0x4d0150*/
+  v10.q008 = 0; /*0x4d0154*/
+  if ( v11.q004 ) /*0x4d0159*/
   {
-    if ( BYTE1(v11.ObjectVector_field_0x0C) ) /*0x4d015f*/
-      __3_YAXPAX_Z((void *)v11.ObjectVector_field_0x04); /*0x4d0162*/
+    if ( BYTE1(v11.q00C) ) /*0x4d015f*/
+      __3_YAXPAX_Z((void *)v11.q004); /*0x4d0162*/
   }
 
 }

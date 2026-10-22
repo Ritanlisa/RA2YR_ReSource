@@ -7,21 +7,21 @@ namespace gamemd {
 
 struct LoadingScreen {
     int __pad_0;  // 0x0
-    int LoadingScreen_field_0x04;  // 0x4
-    int LoadingScreen_field_0x08;  // 0x8
-    int LoadingScreen_field_0x0C;  // 0xC
-    int LoadingScreen_field_0x10;  // 0x10
-    int LoadingScreen_field_0x14;  // 0x14
-    int LoadingScreen_field_0x18;  // 0x18
-    int LoadingScreen_field_0x1C;  // 0x1C
-    int LoadingScreen_field_0x20;  // 0x20
-    int LoadingScreen_field_0x24;  // 0x24
-    int LoadingScreen_field_0x28;  // 0x28
-    int LoadingScreen_field_0x2C;  // 0x2C
-    int LoadingScreen_field_0x30;  // 0x30
-    int LoadingScreen_field_0x34;  // 0x34
-    int LoadingScreen_field_0x38;  // 0x38
-    int LoadingScreen_field_0x3C;  // 0x3C
+    int q004;  // 0x4
+    int q008;  // 0x8
+    int q00C;  // 0xC
+    int q010;  // 0x10
+    int q014;  // 0x14
+    int q018;  // 0x18
+    int q01C;  // 0x1C
+    int q020;  // 0x20
+    int q024;  // 0x24
+    int q028;  // 0x28
+    int q02C;  // 0x2C
+    int q030;  // 0x30
+    int q034;  // 0x34
+    int q038;  // 0x38
+    int q03C;  // 0x3C
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     char * GetBackgroundImage(ScenarioClass * aP1);

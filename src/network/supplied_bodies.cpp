@@ -307,7 +307,7 @@ unsigned int * IPXGlobalConnClass::Disconnect(int, int, int a2)  // g57b5 W4: ra
 
   IPXGlobalConnClass_field_0x04 = (Terrain *)this->PlayerIndex; /*0x540030*/
   result = (unsigned int *)a2; /*0x540033*/
-  if ( a2 < (int)IPXGlobalConnClass_field_0x04->Terrain_field_0x38 ) /*0x54003a*/
+  if ( a2 < (int)IPXGlobalConnClass_field_0x04->q038 ) /*0x54003a*/
   {
     result = (unsigned int *)Terrain::GetTileType(IPXGlobalConnClass_field_0x04, a2); /*0x54003d*/
     *result |= 2u; /*0x540042*/

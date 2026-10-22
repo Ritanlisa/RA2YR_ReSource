@@ -837,7 +837,7 @@ unsigned int * BrainClass::sub_43AA90(char a2)
   this->u32_C = 0; /*0x43aafe*/
   if ( (a2 & 1) != 0 ) /*0x43ab05*/
     operator delete((this)); /*0x43ab08*/
-  return &this->vtable1; /*0x43ab12*/
+  return &this->vfptr; /*0x43ab12*/
 }
 }
 // 0x430010
@@ -2135,7 +2135,7 @@ int E4Recv_43A6B0::sub_43A6B0(int a2, int a3)
     }
     while ( v4 < abstractFlags ); /*0x43a6dd*/
   }
-  (*((void (**)(void **))this->ptr_C + 3))(&this->ptr_C); /*0x43a6e5*/
+  (*((void (**)(void **))this->M20 + 3))(&this->M20); /*0x43a6e5*/
   this->M28 = a2; /*0x43a6f0*/
   this->NeedsSaveOrLink = (void *)a3; /*0x43a6f3*/
   return a2; /*0x43a6f6*/

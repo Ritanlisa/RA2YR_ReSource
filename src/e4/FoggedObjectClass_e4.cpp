@@ -701,7 +701,7 @@ int FoggedObjectClass::LoadTypeData(int * a1, int a2)
     FoggedObject::DrawVector_Constructor((FoggedObject *)&v3[1].Cell, 0, 0); /*0x4d2547*/
     /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E8BA0) */  /*0x4d254c*/
     v3[2].uniqueId = 10; /*0x4d2552*/
-    v3[2].ptr_C = 0; /*0x4d2559*/
+    v3[2].vfptr3 = 0; /*0x4d2559*/
     /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_b5181c) */  /*0x4d255c*/
     /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_b5181c) */  /*0x4d2562*/
     /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_b5181c) */  /*0x4d2569*/
@@ -718,8 +718,8 @@ int FoggedObjectClass::LoadTypeData(int * a1, int a2)
   if ( (int)this <= 0 ) /*0x4d25ad*/
   {
 LABEL_14:
-    v17 = *(unsigned int *)(*(int (**)(FoggedObjectClass *, int *))(v3->ptr_0 + 96))(v3, &v17); /*0x4d2665*/
-    v12 = 74 * ((short)(((v17) >> 16) & 0xFFFF) - (((__int16)v17 + (short)(((v17) >> 16) & 0xFFFF)) << 9) - (__int16)v17) - v3[1].ptr_0 + 0x7FFFFFFF; /*0x4d26a1*/
+    v17 = *(unsigned int *)(*(int (**)(FoggedObjectClass *, int *))(v3->vfptr + 96))(v3, &v17); /*0x4d2665*/
+    v12 = 74 * ((short)(((v17) >> 16) & 0xFFFF) - (((__int16)v17 + (short)(((v17) >> 16) & 0xFFFF)) << 9) - (__int16)v17) - v3[1].vfptr + 0x7FFFFFFF; /*0x4d26a1*/
     if ( (int)(g_MissionState + 1) <= dword_8B3CC8 ) /*0x4d26aa*/
     {
 LABEL_22:
@@ -768,22 +768,22 @@ LABEL_22:
     a2 = result; /*0x4d25d4*/
     if ( result < 0 ) /*0x4d25d8*/
       return result; /*0x4d2779*/
-    ptr_4 = v3[2].ptr_4; /*0x4d25de*/
-    if ( v3[2].ptr_C < ptr_4 /*0x4d2605*/
-      || (BYTE1(v3[2].ptr_8) || !ptr_4)
+    ptr_4 = v3[2].vfptr1; /*0x4d25de*/
+    if ( v3[2].vfptr3 < ptr_4 /*0x4d2605*/
+      || (BYTE1(v3[2].vfptr2) || !ptr_4)
       && (uniqueId = v3[2].uniqueId, uniqueId > 0)
       && (*(unsigned __int8 (**)(int *, int, unsigned int))(v3[1].Cell + 8))(&v3[1].Cell, ptr_4 + uniqueId, 0) )
     {
-      ptr_C = v3[2].ptr_C; /*0x4d260c*/
+      ptr_C = v3[2].vfptr3; /*0x4d260c*/
       v10 = v18; /*0x4d260f*/
-      v3[2].ptr_C = ptr_C + 1; /*0x4d2616*/
-      v11 = (unsigned int *)(v3[2].ptr_0 + 16 * ptr_C); /*0x4d261f*/
+      v3[2].vfptr3 = ptr_C + 1; /*0x4d2616*/
+      v11 = (unsigned int *)(v3[2].vfptr + 16 * ptr_C); /*0x4d261f*/
       *v11 = v10; /*0x4d2621*/
       v11->__pad_4 = v19; /*0x4d2627*/
       v11->q008 = v20; /*0x4d262e*/
       v11->q00C = v21; /*0x4d2635*/
     }
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(16 * v3[2].ptr_C + v3[2].ptr_0 - 16)); /*0x4d264b*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(16 * v3[2].vfptr3 + v3[2].vfptr - 16)); /*0x4d264b*/
     if ( ++v17 >= (int)this ) /*0x4d265f*/
       goto LABEL_14; /*0x4d265f*/
   }
@@ -949,7 +949,7 @@ int FoggedObjectClass::Read(unsigned int * a2, void *a2_2, void *a3)
   if ( v2 <= 0 ) /*0x4d2cdb*/
     return -1; /*0x4d2cfc*/
   unsigned int *i; // ecx
-  for ( i = *(unsigned int **)&a2_2->vtable2; *i != *a2_2 || i->vtable2 != a2_2[1]; i += 4 ) /*0x4d2ce1*/
+  for ( i = *(unsigned int **)&a2_2->vtable2; *i != *a2_2 || i[1] != a2_2[1]; i += 4 ) /*0x4d2ce1*/
   {
     if ( ++result >= v2 ) /*0x4d2cfa*/
       return -1; /*0x4d2cfa*/

@@ -12,16 +12,16 @@ struct WeaponStruct;  // fix_fwd_type_supply
 struct VectorClass_flat;  // fix_fwd_type_supply
 struct RandomMap {
     unsigned short __pad_000;  // 0x0
-    char RandomMap_field_0x2[4];  // 0x2
+    char u32_2[4];  // 0x2
     char __pad_6[2];  // 0x6
     int RandomMap_field_0x8;  // 0x8
-    unsigned int RandomMap_field_0xC;  // 0xC
-    int RandomMap_field_0x10;  // 0x10
-    unsigned int RandomMap_field_0x14;  // 0x14
+    unsigned int q00C;  // 0xC
+    int q010;  // 0x10
+    unsigned int q014;  // 0x14
     int q018;  // 0x18
     int q01C;  // 0x1C
     int q020;  // 0x20
-    int RandomMap_field_0x24;  // 0x24
+    int u32_24;  // 0x24
     int u32_28;  // 0x28
     int u32_2C;  // 0x2C
     IUnknown* ptr_30;  // 0x30
@@ -32,7 +32,7 @@ struct RandomMap {
     unsigned char u32_44[4];  // 0x44
     IUnknown* ptr_48;  // 0x48
     char __pad_04C[448];  // 0x4C
-    int RandomMap_field_0x20C;  // 0x20C
+    int q20C;  // 0x20C
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int Check(void *a1_1, void *a2_1, void *a3_1);  // 0x486790

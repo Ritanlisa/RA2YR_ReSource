@@ -34,7 +34,7 @@ size_t *CheckListClass_OnClick(void * a1, wchar_t * a2, void * a3, void * a4, vo
       v22[1] = 32; /*0x48857e*/
       swprintf(&v22[2], v17, a2); /*0x488585*/
       int ListClass_field_0x0C; // edi
-      ListClass_field_0x0C = v8[1].ListClass_field_0x0C; /*0x48858a*/
+      ListClass_field_0x0C = v8[1].q00C; /*0x48858a*/
       int Type; // ebx
       Type = BuildingAnim::GetType(); /*0x48859c*/
       if ( a6 ) /*0x4885a7*/
@@ -48,7 +48,7 @@ size_t *CheckListClass_OnClick(void * a1, wchar_t * a2, void * a3, void * a4, vo
         else
           v13 = *(uint16_t *)(*(unsigned int *)(*(unsigned int *)&g_FileSystem_THEATER_PAL + 372) + 2 * v12); /*0x4885e2*/
         v19[0] = (unsigned int)(a3); /*0x4885f4*/
-        v19[3] = v8[2].ListClass_field_0x0C; /*0x4885fb*/
+        v19[3] = v8[2].q00C; /*0x4885fb*/
         v19[1] = (unsigned int)(a4); /*0x488606*/
         v19[2] = (unsigned int)(a5); /*0x48860a*/
         (*(void (**)(AudioStream *, unsigned int *, int))(*(unsigned int *)g_DSurface_Hidden_2 + 20))( /*0x488615*/
@@ -61,7 +61,7 @@ size_t *CheckListClass_OnClick(void * a1, wchar_t * a2, void * a3, void * a4, vo
         ListClass_field_0x0C |= 0x1000u; /*0x488622*/
       }
       int ListClass_field_0x10; // eax
-      ListClass_field_0x10 = (unsigned int)(v8[1].ListClass_field_0x10);
+      ListClass_field_0x10 = (unsigned int)(v8[1].u32_10);
       unsigned int v20[2]; // [esp+14h] [ebp-E0h] BYREF
       v20[0] = (unsigned int)(a3); /*0x488639*/
       int v18; // [esp-10h] [ebp-104h]

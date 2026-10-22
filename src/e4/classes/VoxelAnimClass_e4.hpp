@@ -28,7 +28,7 @@ struct VoxelAnimClass {
     unsigned int abstractFlags;  // 0x14
     unsigned char __pad_018;  // 0x18
     char __pad_19[3];  // 0x19
-    int VoxelAnimClass_field_0x1C;  // 0x1C
+    int u32_1C;  // 0x1C
     unsigned char needsSave;  // 0x20
     char __pad_21[3];  // 0x21
     unsigned char __pad_024;  // 0x24
@@ -62,7 +62,7 @@ struct VoxelAnimClass {
     bool isAliveFlag;  // 0x90
     unsigned char alignmentPadding91;  // 0x91
     char __pad_92[2];  // 0x92
-    int VoxelAnimClass_field_0x94;  // 0x94
+    int q094;  // 0x94
     bool isInLogic;  // 0x98
     bool isVisible;  // 0x99
     unsigned char alignmentPadding99;  // 0x9A
@@ -77,16 +77,16 @@ struct VoxelAnimClass {
     unsigned int q0D0;  // 0xD0
     char __pad_D4[44];  // 0xD4
     unsigned int u32_100;  // 0x100
-    unsigned int VoxelAnimClass_field_0x104;  // 0x104
+    unsigned int q104;  // 0x104
     int q108;  // 0x108
-    int VoxelAnimClass_field_0x10C;  // 0x10C
+    int q10C;  // 0x10C
     char __pad_110[4];  // 0x110
     Mixer* q114;  // 0x114
     char __pad_118[16];  // 0x118
-    int VoxelAnimClass_field_0x128;  // 0x128
+    int q128;  // 0x128
     char __pad_12C[16];  // 0x12C
     unsigned int q13C;  // 0x13C
-    unsigned int VoxelAnimClass_field_0x140;  // 0x140
+    unsigned int q140;  // 0x140
     char __pad_144[144];  // 0x144
     unsigned int Audio4;  // 0x1D4
     unsigned char __pad_1D8;  // 0x1D8
@@ -95,14 +95,14 @@ struct VoxelAnimClass {
     char __pad_277[3];  // 0x277
     unsigned char __pad_27A;  // 0x27A
     char __pad_27B[25];  // 0x27B
-    int VoxelAnimClass_field_0x294;  // 0x294
-    int VoxelAnimClass_field_0x298;  // 0x298
+    int q294;  // 0x294
+    int q298;  // 0x298
     char __pad_29C[52];  // 0x29C
-    int VoxelAnimClass_field_0x2D0;  // 0x2D0
+    int q2D0;  // 0x2D0
     char __pad_2D4[16];  // 0x2D4
-    int VoxelAnimClass_field_0x2E4;  // 0x2E4
+    int q2E4;  // 0x2E4
     char __pad_2E8[36];  // 0x2E8
-    int VoxelAnimClass_field_0x30C;  // 0x30C
+    int q30C;  // 0x30C
     char __pad_310[16];  // 0x310
     unsigned int Duration;  // 0x320
     unsigned char __pad_324;  // 0x324
@@ -113,9 +113,9 @@ struct VoxelAnimClass {
     unsigned int Invisible;  // 0x660
     unsigned char __pad_664;  // 0x664
     char __pad_665[1375];  // 0x665
-    int VoxelAnimClass_field_0xBC4;  // 0xBC4
+    int qBC4;  // 0xBC4
     char __pad_BC8[8];  // 0xBC8
-    int VoxelAnimClass_field_0xBD0;  // 0xBD0
+    int qBD0;  // 0xBD0
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     AbstractClass * * GetFrameCount(int * a2);

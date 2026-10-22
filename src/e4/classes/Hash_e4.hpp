@@ -8,8 +8,8 @@ namespace gamemd {
 struct Hash {
     unsigned char __pad_000;  // 0x0
     char __pad_1[3];  // 0x1
-    int Hash_field_0x04;  // 0x4
-    int Hash_field_0x08;  // 0x8
+    int q004;  // 0x4
+    int q008;  // 0x8
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int __thiscall ComputeHashSHA1(void *a1 = 0);

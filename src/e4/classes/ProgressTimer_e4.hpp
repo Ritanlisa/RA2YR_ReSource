@@ -10,10 +10,10 @@ namespace gamemd {
 struct ProgressTimer {
     unsigned int __pad_0;  // 0x0
     unsigned int u32_4;  // 0x4
-    int ProgressTimer_field_0x8;  // 0x8
+    int q008;  // 0x8
     char __pad_C[4];  // 0xC
-    int ProgressTimer_field_0x10;  // 0x10
-    unsigned int ProgressTimer_field_0x14;  // 0x14
+    int q010;  // 0x10
+    unsigned int q014;  // 0x14
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     void* GetValue(void *aP1);

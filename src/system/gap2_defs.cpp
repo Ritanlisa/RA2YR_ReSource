@@ -12633,7 +12633,7 @@ int LayerClass::Save(void* v5) {
   v5 = v5; /*0x551b22*/
   if ( !v5 ) /*0x551b2b*/
     return -2147467261; /*0x551b2f*/
-  v5 = (unsigned int *)this->q010; /*0x551b38*/
+  v5 = (unsigned int *)this->CapacityIncrement; /*0x551b38*/
   v6 = *v5; /*0x551b3b*/
   v5 = v5; /*0x551b46*/
   v5 = v5; /*0x551b47*/
@@ -12705,14 +12705,14 @@ int LayerClass::Load(unsigned int * a2) {
         if ( result < 0 ) /*0x551be4*/
           break; /*0x551be4*/
         capacity = this->capacity; /*0x551be6*/
-        if ( this->q010 < capacity /*0x551c0b*/
+        if ( this->CapacityIncrement < capacity /*0x551c0b*/
           || (this->IsAllocated || !capacity)
           && (v9 = this->CapacityIncrement, v9 > 0)
           && this->checkCondition(capacity + v9, 0) )
         {
-          v10 = this->q010; /*0x551c12*/
+          v10 = this->CapacityIncrement; /*0x551c12*/
           count = this->count; /*0x551c15*/
-          this->q010 = v10 + 1; /*0x551c1b*/
+          this->CapacityIncrement = v10 + 1; /*0x551c1b*/
           *(unsigned int *)(count + 4 * v10) = v13; /*0x551c22*/
         }
         v6 = a2; /*0x551c25*/

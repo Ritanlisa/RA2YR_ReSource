@@ -128,7 +128,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
   while ( (*(unsigned __int8 (**)(VectorCursor *))(*(unsigned int *)v25.__pad_0 + 4))(&v25) ) /*0x76d4fd*/
   {
     v8 = (WDTObject *)FileClass::SetState((RawFileClass *)(*(unsigned int *)(v25.VectorCursor_field_0x04 + 4) /*0x76d512*/
-                                                         + 8 * v25.VectorCursor_field_0x08));
+                                                         + 8 * v25.u32_8));
     v9 = (int (***)(unsigned int, int))WDTObject::GetAndClearFlag(v8); /*0x76d519*/
     if ( v9 ) /*0x76d520*/
       Session::RemoveTeam((Session *)this, v9); /*0x76d525*/
@@ -144,10 +144,10 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7EEC04) */  /*0x76d57c*/
   v28.occupant = 10; /*0x76d585*/
   v28.NeedsSaveOrLink = 0; /*0x76d589*/
-  ((VectorCursor *)&v25.VectorCursor_field_0x0C)->Construct(v10 + 44, 0); /*0x76d58d*/
-  while ( (*(unsigned __int8 (**)(int *))(v25.VectorCursor_field_0x0C + 4))(&v25.VectorCursor_field_0x0C) )
+  ((VectorCursor *)&v25.q00C)->Construct(v10 + 44, 0); /*0x76d58d*/
+  while ( (*(unsigned __int8 (**)(int *))(v25.q00C + 4))(&v25.q00C) )
   {
-    v11 = *(void **)(*(unsigned int *)(*(unsigned int *)(v25.VectorCursor_field_0x10 + 4) + 8 * v25.VectorCursor_field_0x14 + 4) + 8); /*0x76d5bc*/
+    v11 = *(void **)(*(unsigned int *)(*(unsigned int *)(v25.q010 + 4) + 8 * v25.q014 + 4) + 8); /*0x76d5bc*/
     CellType = WDTClass::GetCellType(this->q48C, (unsigned int)v11); /*0x76d5cd*/
     v13 = WDTClass::GetCellType(a3->FilePointer, (unsigned int)v11); /*0x76d5d7*/
     if ( v13 != CellType ) /*0x76d5db*/
@@ -160,7 +160,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
       }
       v14 = !this->u32_444 || a5; /*0x76d635*/
       Map_Process_76FD40( /*0x76d64f*/
-        *(unsigned int *)(*(unsigned int *)(v25.VectorCursor_field_0x10 + 4) + 8 * v25.VectorCursor_field_0x14 + 4),
+        *(unsigned int *)(*(unsigned int *)(v25.q010 + 4) + 8 * v25.q014 + 4),
         CellType,
         v13,
         v13,
@@ -169,7 +169,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
     }
     if ( a4 && v13 == 1 )
     {
-      v15 = *(unsigned int **)(*(unsigned int *)(v25.VectorCursor_field_0x10 + 4) + 8 * v25.VectorCursor_field_0x14 + 4); /*0x76d67a*/
+      v15 = *(unsigned int **)(*(unsigned int *)(v25.q010 + 4) + 8 * v25.q014 + 4); /*0x76d67a*/
       v16 = v15[4] + *(unsigned int *)(this->u32_45C + 68); /*0x76d695*/
       v17 = *(unsigned int *)(this->u32_45C + 72) + v15[5]; /*0x76d69a*/
       if ( this->u32_470 ) /*0x76d68f*/
@@ -226,7 +226,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
         (v21)->GetField(0); /*0x76d7d0*/
         ((ObjectClass *)(ObjectClass *)v21)->TerritoryUpdateDisplayWOL(0); /*0x76d7d8*/
         Trigger::executeActions( /*0x76d7f0*/
-          *(Trigger **)(*(unsigned int *)(v25.VectorCursor_field_0x10 + 4) + 8 * v25.VectorCursor_field_0x14 + 4),
+          *(Trigger **)(*(unsigned int *)(v25.q010 + 4) + 8 * v25.q014 + 4),
           (int)v21);
         if ( v28.NeedsSaveOrLink < v28.nextArrayIndex /*0x76d821*/
           || (BYTE1(v28.referenceCount) || !v28.nextArrayIndex)
@@ -245,7 +245,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
       ((Vector *)v30)->Clear(); /*0x76d853*/
       BufferIOFileClass::Destruct((BufferIOFileClass *)&v29); /*0x76d85f*/
     }
-    (*(void (**)(int *))(v25.VectorCursor_field_0x0C + 8))(&v25.VectorCursor_field_0x0C); /*0x76d86c*/
+    (*(void (**)(int *))(v25.q00C + 8))(&v25.q00C); /*0x76d86c*/
   }
   p_owningHouseIndex = &v28.owningHouseIndex; /*0x76d88b*/
   v27 = 0; /*0x76d897*/
@@ -263,7 +263,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
         if ( ((EventQueue *)dword_87F770)->Read() == 27 ) /*0x76d8e4*/
           this->u32_444 = 1; /*0x76d8e6*/
       }
-      if ( (*(unsigned __int8 (**)(int *))(v25.VectorCursor_field_0x18 + 4))(&v25.VectorCursor_field_0x18) ) /*0x76d905*/
+      if ( (*(unsigned __int8 (**)(int *))(v25.q018 + 4))(&v25.q018) ) /*0x76d905*/
       {
         if ( this->u32_444 ) /*0x76d910*/
         {
@@ -282,7 +282,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
               if ( !(unsigned __int8)String::Compare( /*0x76d98a*/
                                        (String *)&v28,
                                        *(const char ***)(*(unsigned int *)(v25.VectorCursor_field_0x04 + 4)
-                                                       + 4 * v25.VectorCursor_field_0x08)) )
+                                                       + 4 * v25.u32_8)) )
                 break; /*0x76d991*/
               (*(void (**)(VectorCursor *))(*(unsigned int *)v25.__pad_0 + 8))(&v25); /*0x76d99b*/
             }
@@ -294,7 +294,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
           ((PriorityQueue *)this)->Add(*(unsigned int *)(p_owningHouseIndex[1] + 4 * v27)); /*0x76d9ed*/
           MSEngine::ProcessEvents((MSEngine *)this, *(unsigned int *)(p_owningHouseIndex[1] + 4 * v27), 300000); /*0x76da08*/
         }
-        (*(void (**)(int *))(v25.VectorCursor_field_0x18 + 8))(&v25.VectorCursor_field_0x18); /*0x76da15*/
+        (*(void (**)(int *))(v25.q018 + 8))(&v25.q018); /*0x76da15*/
       }
       ((PriorityQueue *)this)->Add(*(unsigned int *)(*(unsigned int *)(v28.ptr_8 + 4) + 4 * v28.ptr_C)); /*0x76da29*/
       (*(void (**)(int *))(v28.ptr_4 + 8))(&v28.ptr_4); /*0x76da36*/

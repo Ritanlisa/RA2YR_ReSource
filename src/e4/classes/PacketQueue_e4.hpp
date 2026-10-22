@@ -7,7 +7,7 @@ namespace gamemd {
 
 struct PacketQueue {
     int __pad_000;  // 0x0
-    int PacketQueue_field_0x04;  // 0x4
+    int q004;  // 0x4
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int ExtractEntry(void * a2, unsigned int * a3, int a4, void * a5, unsigned int * a6, unsigned short * a7, void *a1 = 0);

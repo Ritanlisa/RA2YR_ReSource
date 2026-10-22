@@ -721,8 +721,8 @@ DropListClass * E4Recv_4B4E10::sub_4B4E10(DropListClass * aP1, wchar_t * String,
   int v13 = this->M176; // edx /*0x4b4eba*/
   this->M24 = *(unsigned int *)(Instance + 28) + 1; /*0x4b4ebf*/
   (*(void (**)(char *, DropListClass *))(v13 + 132))(&this->M176, this); /*0x4b4ec4*/
-  (*(void (**)(int *, DropListClass *))(this->DropListClass_field_0x50 + 132))( /*0x4b4ecf*/
-    &this->DropListClass_field_0x50,
+  (*(void (**)(int *, DropListClass *))(this->q050 + 132))( /*0x4b4ecf*/
+    &this->q050,
     this);
   return (int)this->__pad_0; /*0x4b4ed7*/
 

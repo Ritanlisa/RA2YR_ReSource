@@ -674,8 +674,8 @@ unsigned int * VectorClass_ptr_BuildChoiceClass_int_ouseClass::Constructor(EnumC
 
 
   char *p_IsInitialized = &aP1->IsInitialized; // esi /*0x4a0c2c*/
-  aP1->EnumConnectionPointsClass_field_0x10 = 0; /*0x4a0c2f*/
-  aP1->EnumConnectionPointsClass_field_0x14 = 0; /*0x4a0c32*/
+  aP1->q010 = 0; /*0x4a0c2f*/
+  aP1->q014 = 0; /*0x4a0c32*/
   aP1->q01C = 0; /*0x4a0c37*/
   aP1->CapacityIncrement[0] = 0; /*0x4a0c3a*/
   aP1->q018 = 1; /*0x4a0c3d*/
@@ -1073,7 +1073,7 @@ AbstractClass * * VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_6(
   }
   else
   {
-    (*(void (**)(VectorClass_ptr_BuildChoiceClass_int_ouseClass *))(*(unsigned int *)this->ptr_0 + 12))(this); /*0x50f6ee*/
+    (*(void (**)(VectorClass_ptr_BuildChoiceClass_int_ouseClass *))(*(unsigned int *)this->vfptr + 12))(this); /*0x50f6ee*/
   }
   void *v7 = this->Capacity; // eax /*0x50f6f1*/
   if ( (int)v7 < (int)this->Count ) /*0x50f6f9*/
@@ -1375,7 +1375,7 @@ AbstractClass * * VectorClass_UUndoInfoStruct::Release(int a2, unsigned int * a3
   v3 = a2; /*0x6b44a2*/
   if ( !a2 ) /*0x6b44ae*/
   {
-    (*(void (**)(_VectorClass_UUndoInfoStruct *))(*(unsigned int *)this->ptr_0 + 12))(this); /*0x6b4591*/
+    (*(void (**)(_VectorClass_UUndoInfoStruct *))(*(unsigned int *)this->vfptr + 12))(this); /*0x6b4591*/
     return 1; /*0x6b4597*/
   }
   v5 = a3; /*0x6b44b4*/
@@ -1479,7 +1479,7 @@ AbstractClass * * VectorClass_UUndoInfoStruct::SetCapacity(int a2, unsigned int 
   v3 = a2; /*0x6b4652*/
   if ( !a2 ) /*0x6b465e*/
   {
-    (*(void (**)(_DynamicVectorClass_UUndoInfoStruct *))(*(unsigned int *)this->ptr_0 + 12))(this); /*0x6b4731*/
+    (*(void (**)(_DynamicVectorClass_UUndoInfoStruct *))(*(unsigned int *)this->vfptr + 12))(this); /*0x6b4731*/
     goto LABEL_26; /*0x6b4731*/
   }
   v5 = a3; /*0x6b4664*/
@@ -3229,7 +3229,7 @@ char VectorClass_ptr_Reestablish::Remove(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVReestablish *))(*(unsigned int *)this->ptr_0 + 12))(this); /*0x45a842*/
+    (*(void (**)(_VectorClass_PAVReestablish *))(*(unsigned int *)this->vfptr + 12))(this); /*0x45a842*/
     return 1; /*0x45a848*/
   }
 

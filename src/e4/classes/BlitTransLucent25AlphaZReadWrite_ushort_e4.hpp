@@ -10,18 +10,18 @@ struct RLEBlitTransXlat;  // fix_fwd_type_supply
 struct BlitTransLucent25AlphaZReadWrite_ushort {
     void* ptr_0;  // 0x0
     unsigned int m_4;  // 0x4
-    AbstractClass* m_8;  // 0x8
+    AbstractClass* ptr_8;  // 0x8
     unsigned int __pad_00C;  // 0xC
-    int BlitTransLucent25AlphaZReadWrite_ushort_field_0x10;  // 0x10
-    int BlitTransLucent25AlphaZReadWrite_ushort_field_0x14;  // 0x14
-    int BlitTransLucent25AlphaZReadWrite_ushort_field_0x18;  // 0x18
-    int BlitTransLucent25AlphaZReadWrite_ushort_field_0x1C;  // 0x1C
-    int BlitTransLucent25AlphaZReadWrite_ushort_field_0x20;  // 0x20
-    int BlitTransLucent25AlphaZReadWrite_ushort_field_0x24;  // 0x24
-    int BlitTransLucent25AlphaZReadWrite_ushort_field_0x28;  // 0x28
-    int BlitTransLucent25AlphaZReadWrite_ushort_field_0x2C;  // 0x2C
-    int BlitTransLucent25AlphaZReadWrite_ushort_field_0x30;  // 0x30
-    int BlitTransLucent25AlphaZReadWrite_ushort_field_0x34;  // 0x34
+    int q010;  // 0x10
+    int q014;  // 0x14
+    int q018;  // 0x18
+    int q01C;  // 0x1C
+    int q020;  // 0x20
+    int q024;  // 0x24
+    int q028;  // 0x28
+    int q02C;  // 0x2C
+    int q030;  // 0x30
+    int q034;  // 0x34
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     BlitTransLucent25AlphaZReadWrite_ushort * Blit(unsigned int * Block, char a2);

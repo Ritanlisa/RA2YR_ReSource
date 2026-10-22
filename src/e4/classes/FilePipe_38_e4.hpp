@@ -11,7 +11,7 @@ struct FilePipe_38 {
     unsigned int ptr_0;  // 0x0
     char *Items;  // 0x4
     unsigned int m_8;  // 0x8
-    unsigned int m_C;  // 0xC
+    unsigned int q00C;  // 0xC
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     AbstractClass * *  Release(int a2, char * a3);  // 0x478340

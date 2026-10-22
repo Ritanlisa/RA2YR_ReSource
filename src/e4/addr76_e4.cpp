@@ -1012,7 +1012,7 @@ unsigned int * E4Recv_76B7B0::sub_76B7B0(unsigned int * a2)
   if ( !v4 ) /*0x76b7cf*/
   {
     this->ptr_1 = 0; /*0x76b855*/
-    BYTE1(this->ptr_C) = 0; /*0x76b85c*/
+    BYTE1(this->M13) = 0; /*0x76b85c*/
     return &this->ptr_0; /*0x76b860*/
   }
   v5 = (int *)__2_YAPAXI_Z(8 * v4 + 4); /*0x76b7dd*/
@@ -1042,17 +1042,17 @@ unsigned int * E4Recv_76B7B0::sub_76B7B0(unsigned int * a2)
   this->ptr_1 = v8; /*0x76b819*/
   if ( !v8 ) /*0x76b81c*/
     return &this->ptr_0; /*0x76b81c*/
-  ptr_4 = this->ptr_8; /*0x76b81e*/
+  ptr_4 = this->M8; /*0x76b81e*/
   v10 = 0; /*0x76b821*/
-  BYTE1(this->ptr_C) = 1; /*0x76b825*/
+  BYTE1(this->M13) = 1; /*0x76b825*/
   if ( (int)ptr_4 <= 0 ) /*0x76b829*/
     return &this->ptr_0; /*0x76b829*/
   do /*0x76b84a*/
   {
-    ComPtr::Set((ComPtr *)((char *)this->ptr_4 + 8 * v10), *(unsigned int *)(v2[1] + 8 * v10 + 4)); /*0x76b83f*/
+    ComPtr::Set((ComPtr *)((char *)this->M4 + 8 * v10), *(unsigned int *)(v2[1] + 8 * v10 + 4)); /*0x76b83f*/
     ++v10; /*0x76b847*/
   }
-  while ( v10 < (int)this->ptr_8 ); /*0x76b84a*/
+  while ( v10 < (int)this->M8 ); /*0x76b84a*/
   return &this->ptr_0; /*0x76b84e*/
 
 }
@@ -2281,7 +2281,7 @@ unsigned int * E4Recv_767E90::sub_767E90()
   this->M4 = 0; /*0x767e99*/
   this->M8 = 0; /*0x767e9c*/
   LOBYTE(this->M12) = 0; /*0x767e9f*/
-  this->INIClass_10 = (void *)Timer::GetTicks(); /*0x767ea7*/
+  this->M16 = (void *)Timer::GetTicks(); /*0x767ea7*/
   this->q018 = 0; /*0x767eaa*/
   /* X11: ptr_0 install elided (implicit via MSFrameAnim virtuals 0x767ead) */
   return this->__pad_0; /*0x767eb5*/
@@ -2297,7 +2297,7 @@ unsigned int * E4Recv_769490::sub_769490(unsigned int * a2)
 
   unsigned int *result = &this->AbstractClass; // eax /*0x769490*/
   char *pVal; // edx
-  pVal = (char *)this->ptr_4; /*0x76949d*/
+  pVal = (char *)this->M4; /*0x76949d*/
   this->AbstractClass = (char *)this->AbstractClass + *a2; /*0x7694a0*/
   char *v4; // ecx
   v4 = (char *)this->M8 + 1; /*0x7694aa*/
@@ -3333,7 +3333,7 @@ int32_t Count::ddtor()  // G57w17h4 ret-align with Count_e4.hpp carrier decl (ra
 {
 
   --this->u32_8; /*0x76f172*/
-  return this->ptr_0; /*0x76f175*/
+  return this->m_RefCount; /*0x76f175*/
 
 }
 }  // G42.18c ns repair
@@ -3343,7 +3343,7 @@ unsigned int* Conflict_WorldDominationTour_26::ddtor(void *a1)
 {
 
   --this->RefCount; /*0x766fb2*/
-  return this->ptr_0; /*0x766fb5*/
+  return this->q000; /*0x766fb5*/
 
 }
 }  // G42.18c ns repair

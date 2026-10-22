@@ -9,7 +9,7 @@ struct Coord {
     unsigned short __pad_0;  // 0x0
     char Coord_field_0x2[4];  // 0x2
     char __pad_6[2];  // 0x6
-    int Coord_field_0x8;  // 0x8
+    int u32_8;  // 0x8
     char __pad_C[12];  // 0xC
     unsigned int q018;  // 0x18
     char __pad_1C[16];  // 0x1C

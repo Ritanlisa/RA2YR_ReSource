@@ -1528,7 +1528,7 @@ LABEL_27:
                 v41 = (*(int (**)(DeleteAndZero *))&stru_AC1B48.__pad_10[8])(&v184); /*0x60dc8e*/
                 v39 = *(HWND *)v184.owningHouseIndex; /*0x60dca1*/
                 v42 = *(unsigned int **)(*(unsigned int *)stru_AC1B48.__pad_0 /*0x60dcad*/
-                                 + 4 * (v41 & ((1 << SLOBYTE(stru_AC1B48.Dialog_field_0xC)) - 1)));
+                                 + 4 * (v41 & ((1 << SLOBYTE(stru_AC1B48.q00C)) - 1)));
                 if ( v42 ) /*0x60dcb2*/
                 {
                   while ( *v42 != *(unsigned int *)v184.owningHouseIndex ) /*0x60dcb6*/
@@ -1802,10 +1802,10 @@ LABEL_183:
         {
           *(unsigned long long *)Y = (unsigned int)(*(unsigned int *)&stru_AC1B48.__pad_0[4] - 1); /*0x60e91b*/
           v96 = (double)*(__int64 *)Y; /*0x60e924*/
-          Y[0] = stru_AC1B48.Dialog_field_0x8; /*0x60e928*/
-          *(float *)&dy.DeleteAndZero_field_0x04 = v96 / (double)stru_AC1B48.Dialog_field_0x8; /*0x60e938*/
+          Y[0] = stru_AC1B48.u32_8; /*0x60e928*/
+          *(float *)&dy.DeleteAndZero_field_0x04 = v96 / (double)stru_AC1B48.u32_8; /*0x60e938*/
           v97 = (*(int (**)(DeleteAndZero *))&stru_AC1B48.__pad_10[8])(&dy) /*0x60e956*/
-              & ((1 << SLOBYTE(stru_AC1B48.Dialog_field_0xC)) - 1);
+              & ((1 << SLOBYTE(stru_AC1B48.q00C)) - 1);
           v98 = *(unsigned int **)(*(unsigned int *)stru_AC1B48.__pad_0 + 4 * v97); /*0x60e958*/
           if ( v98 ) /*0x60e95d*/
           {
@@ -1818,16 +1818,16 @@ LABEL_183:
               --*(unsigned int *)&stru_AC1B48.__pad_0[4]; /*0x60e996*/
               if ( v100 <= *(double *)&stru_AC1B48.__pad_10[16] ) /*0x60e9a0*/
               {
-                Dialog_field_0x8 = stru_AC1B48.Dialog_field_0x8; /*0x60e9a6*/
-                if ( stru_AC1B48.Dialog_field_0x8 > *(unsigned int *)&stru_AC1B48.__pad_2C[4] && stru_AC1B48.__pad_10[4] != 1 ) /*0x60e9c0*/
+                Dialog_field_0x8 = stru_AC1B48.u32_8; /*0x60e9a6*/
+                if ( stru_AC1B48.u32_8 > *(unsigned int *)&stru_AC1B48.__pad_2C[4] && stru_AC1B48.__pad_10[4] != 1 ) /*0x60e9c0*/
                 {
                   v102 = *(int **)stru_AC1B48.__pad_0; /*0x60e9cc*/
-                  v103 = stru_AC1B48.Dialog_field_0x8; /*0x60e9d2*/
+                  v103 = stru_AC1B48.u32_8; /*0x60e9d2*/
                   Y[0] = *(unsigned int *)stru_AC1B48.__pad_0; /*0x60e9d4*/
-                  stru_AC1B48.Dialog_field_0x8 = (unsigned int)stru_AC1B48.Dialog_field_0x8 >> 1; /*0x60e9da*/
-                  --stru_AC1B48.Dialog_field_0xC; /*0x60e9e4*/
+                  stru_AC1B48.u32_8 = (unsigned int)stru_AC1B48.u32_8 >> 1; /*0x60e9da*/
+                  --stru_AC1B48.q00C; /*0x60e9e4*/
                   *(unsigned int *)stru_AC1B48.__pad_0 = __2_YAPAXI_Z(4 * (Dialog_field_0x8 >> 1)); /*0x60e9fc*/
-                  memset(*(void **)stru_AC1B48.__pad_0, 0, 4 * stru_AC1B48.Dialog_field_0x8); /*0x60ea04*/
+                  memset(*(void **)stru_AC1B48.__pad_0, 0, 4 * stru_AC1B48.u32_8); /*0x60ea04*/
                   if ( v103 > 0 ) /*0x60ea06*/
                   {
                     v104 = v102; /*0x60ea08*/
@@ -1840,7 +1840,7 @@ LABEL_183:
                         do /*0x60ea3f*/
                         {
                           v107 = (*(int (**)(int))&stru_AC1B48.__pad_10[8])(v106) /*0x60ea28*/
-                               & ((1 << SLOBYTE(stru_AC1B48.Dialog_field_0xC)) - 1);
+                               & ((1 << SLOBYTE(stru_AC1B48.q00C)) - 1);
                           v108 = *(unsigned int *)(*(unsigned int *)stru_AC1B48.__pad_0 + 4 * v107); /*0x60ea2f*/
                           *(unsigned int *)(*(unsigned int *)stru_AC1B48.__pad_0 + 4 * v107) = v106; /*0x60ea32*/
                           v109 = v106->ptr_8; /*0x60ea35*/
@@ -1877,15 +1877,15 @@ LABEL_183:
               }
 LABEL_206:
               if ( *(float *)&dy.DeleteAndZero_field_0x04 <= *(double *)&stru_AC1B48.__pad_10[16] /*0x60eab2*/
-                && stru_AC1B48.Dialog_field_0x8 > *(unsigned int *)&stru_AC1B48.__pad_2C[4]
+                && stru_AC1B48.u32_8 > *(unsigned int *)&stru_AC1B48.__pad_2C[4]
                 && stru_AC1B48.__pad_10[4] != 1 )
               {
-                v111 = stru_AC1B48.Dialog_field_0x8; /*0x60eac4*/
+                v111 = stru_AC1B48.u32_8; /*0x60eac4*/
                 dy.DeleteAndZero_field_0x04 = *(unsigned int *)stru_AC1B48.__pad_0; /*0x60eac6*/
-                stru_AC1B48.Dialog_field_0x8 = (unsigned int)stru_AC1B48.Dialog_field_0x8 >> 1; /*0x60eacd*/
-                --stru_AC1B48.Dialog_field_0xC; /*0x60ead9*/
-                *(unsigned int *)stru_AC1B48.__pad_0 = __2_YAPAXI_Z(4 * stru_AC1B48.Dialog_field_0x8); /*0x60eaf2*/
-                memset(*(void **)stru_AC1B48.__pad_0, 0, 4 * stru_AC1B48.Dialog_field_0x8); /*0x60eafa*/
+                stru_AC1B48.u32_8 = (unsigned int)stru_AC1B48.u32_8 >> 1; /*0x60eacd*/
+                --stru_AC1B48.q00C; /*0x60ead9*/
+                *(unsigned int *)stru_AC1B48.__pad_0 = __2_YAPAXI_Z(4 * stru_AC1B48.u32_8); /*0x60eaf2*/
+                memset(*(void **)stru_AC1B48.__pad_0, 0, 4 * stru_AC1B48.u32_8); /*0x60eafa*/
                 if ( v111 > 0 ) /*0x60eafc*/
                 {
                   v112 = (int *)dy.DeleteAndZero_field_0x04; /*0x60eafe*/
@@ -1898,7 +1898,7 @@ LABEL_206:
                       do /*0x60eb37*/
                       {
                         v115 = (*(int (**)(int))&stru_AC1B48.__pad_10[8])(v114) /*0x60eb20*/
-                             & ((1 << SLOBYTE(stru_AC1B48.Dialog_field_0xC)) - 1);
+                             & ((1 << SLOBYTE(stru_AC1B48.q00C)) - 1);
                         v116 = *(unsigned int *)(*(unsigned int *)stru_AC1B48.__pad_0 + 4 * v115); /*0x60eb27*/
                         *(unsigned int *)(*(unsigned int *)stru_AC1B48.__pad_0 + 4 * v115) = v114; /*0x60eb2a*/
                         v117 = v114->ptr_8; /*0x60eb2d*/

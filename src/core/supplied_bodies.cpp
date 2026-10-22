@@ -330,7 +330,7 @@ int Buffer::UpdateVolumeSettings() {
 // 0x40B670
 namespace gamemd {
 unsigned int MoveFeedback::PointerToIndex(int a2) {
-  if ( (this->m_C) ) /*0x40b670*/
+  if ( (this->q00C) ) /*0x40b670*/
     return (unsigned int)(a2 - *&this->m_Capacity) >> 2; /*0x40b685*/
   else
     return 0; /*0x40b677*/
@@ -351,7 +351,7 @@ int MoveFeedback::FindItem(unsigned int * a2) {
   int result; // eax
   unsigned int *i; // ecx
 
-  m_10 = this->m_10; /*0x40b930*/
+  m_10 = this->q010; /*0x40b930*/
   result = 0; /*0x40b933*/
   if ( m_10 <= 0 ) /*0x40b938*/
     return -1; /*0x40b94f*/
@@ -704,7 +704,7 @@ namespace gamemd {
 int Vector3::Magnitude() {
     return Math::Sqrt( /*0x41c3e9*/
              *(double *)this * *(double *)this
-           + this->Buffer_field_08 * this->Buffer_field_08  /*g57w10 r4: raw fn_41:9575 原文 (第二 double 分量)*/
+           + this->u32_8 * this->u32_8  /*g57w10 r4: raw fn_41:9575 原文 (第二 double 分量)*/
            + this->q040 * this->q040);
 }
 } // namespace gamemd
@@ -1715,7 +1715,7 @@ char StringVector::Release(int a2, unsigned int *a3) {
 // 0x49EF80
 namespace gamemd {
 unsigned int StringVector::Remove(int a2) {
-  if ( (this->m_C) ) /*0x49ef80*/
+  if ( (this->q00C) ) /*0x49ef80*/
     return (unsigned int)(a2 - *&this->Items) >> 2; /*0x49ef95*/
   else
     return 0; /*0x49ef87*/

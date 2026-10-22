@@ -61,7 +61,7 @@ int CommandClass::BuildBar()
       v7 = *(unsigned int *)v4[2].__pad_0; /*0x6d126e*/
       v38 = v5; /*0x6d1271*/
       int ShapeButtonClass_field_0x08; // edx
-      ShapeButtonClass_field_0x08 = v4[1].ShapeButtonClass_field_0x08; /*0x6d1275*/
+      ShapeButtonClass_field_0x08 = v4[1].u32_8; /*0x6d1275*/
       v41 = v7; /*0x6d1278*/
       v37.Struct_field_00 = v6; /*0x6d1283*/
       v42 = (char *)(aTipAttackmove); /*0x6d1287*/
@@ -85,7 +85,7 @@ int CommandClass::BuildBar()
       v12 = *(unsigned int *)v10[3].__pad_0; /*0x6d12dc*/
       v38 = *(unsigned int *)v10[1].__pad_0; /*0x6d12df*/
       int v13; // ecx
-      v13 = v10[1].ShapeButtonClass_field_0x08; /*0x6d12e3*/
+      v13 = v10[1].u32_8; /*0x6d12e3*/
       ShapeButtonClass_field_0x04 = v11; /*0x6d12e6*/
       int v14; // edx
       v14 = *(unsigned int *)v10[2].__pad_0; /*0x6d12ea*/
@@ -115,7 +115,7 @@ int CommandClass::BuildBar()
       v19 = *(unsigned int *)v16[2].__pad_0; /*0x6d1359*/
       v38 = v17; /*0x6d135c*/
       int v20; // edx
-      v20 = v16[1].ShapeButtonClass_field_0x08; /*0x6d1360*/
+      v20 = v16[1].u32_8; /*0x6d1360*/
       v41 = v19; /*0x6d1363*/
       v37.Struct_field_00 = v18; /*0x6d136e*/
       v42 = (char *)(aTipCheer); /*0x6d1372*/
@@ -139,7 +139,7 @@ int CommandClass::BuildBar()
       v24 = *(unsigned int *)v22[3].__pad_0; /*0x6d13c7*/
       v38 = *(unsigned int *)v22[1].__pad_0; /*0x6d13ca*/
       int v25; // ecx
-      v25 = v22[1].ShapeButtonClass_field_0x08; /*0x6d13ce*/
+      v25 = v22[1].u32_8; /*0x6d13ce*/
       ShapeButtonClass_field_0x04 = v23; /*0x6d13d1*/
       int v26; // edx
       v26 = *(unsigned int *)v22[2].__pad_0; /*0x6d13d5*/

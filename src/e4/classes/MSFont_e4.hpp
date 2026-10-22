@@ -8,10 +8,10 @@ namespace gamemd {
 struct MSFont {
     void* Constructor_MSFont_slot;  // 0x0
     unsigned int __pad_004;  // 0x4
-    int MSFont_field_0x08;  // 0x8
-    int MSFont_field_0x0C;  // 0xC
-    int MSFont_field_0x10;  // 0x10
-    int MSFont_field_0x14;  // 0x14
+    int q008;  // 0x8
+    int u32_C;  // 0xC
+    int q010;  // 0x10
+    int q014;  // 0x14
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     static void Constructor_MSFont(MSFont *pThis);

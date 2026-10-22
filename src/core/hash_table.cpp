@@ -94,13 +94,13 @@ int SHA1::Compute(uint8_t *a2, int a1)
   int v13[16]; // [esp+28h] [ebp-40h] BYREF
 
   if ( this->state[0] ) /*0x69d9e9*/
-    memcpy(a2, &this->SHA1_field_0x04, 0x14u); /*0x69d9fb*/
+    memcpy(a2, &this->u32_4, 0x14u); /*0x69d9fb*/
   v3 = *((unsigned int *)this + 12); /*0x69d9fd*/
   v4 = *((unsigned int *)this + 11); /*0x69da00*/
   memcpy(v13, (char *)this + 52, sizeof(v13)); /*0x69da14*/
   v5 = v3 + v4; /*0x69da18*/
   *((unsigned char *)v13 + v3) = 0x80; /*0x69da29*/
-  memcpy(v12, &this->SHA1_field_0x04, sizeof(v12)); /*0x69da2e*/
+  memcpy(v12, &this->u32_4, sizeof(v12)); /*0x69da2e*/
   if ( 64 - v3 >= 9 ) /*0x69da30*/
   {
     v6 = v3 + 1; /*0x69da6a*/
@@ -117,8 +117,8 @@ int SHA1::Compute(uint8_t *a2, int a1)
   (*(((unsigned char *)&(v7)) + (sizeof(v7) - 1))) = v5 >> 13; /*0x69da9e*/
   v13[15] = (v5 << 27) | (v5 << 11) & 0xFF0000 | v7; /*0x69dab8*/
   this->Transform(v13, v12); /*0x69dac3*/
-  memcpy(&this->SHA1_field_0x04, v12, 0x14u); /*0x69dad6*/
-  p_SHA1_field_0x04 = &this->SHA1_field_0x04; /*0x69dad8*/
+  memcpy(&this->u32_4, v12, 0x14u); /*0x69dad6*/
+  p_SHA1_field_0x04 = &this->u32_4; /*0x69dad8*/
   v9 = 5; /*0x69dada*/
   do /*0x69db0b*/
   {
@@ -128,7 +128,7 @@ int SHA1::Compute(uint8_t *a2, int a1)
   }
   while ( v9 ); /*0x69db0b*/
   this->state[0] = 1; /*0x69db18*/
-  memcpy(a2, &this->SHA1_field_0x04, 0x14u); /*0x69db1c*/
+  memcpy(a2, &this->u32_4, 0x14u); /*0x69db1c*/
   return 20; /*0x69db1e*/
 }
 // 0x69db30

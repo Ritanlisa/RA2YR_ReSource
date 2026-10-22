@@ -15,7 +15,7 @@
 namespace gamemd {  // G42.18 ns repair
 int ParticleSystemClass::Draw(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8)
 {
-  return this->u32_F8 && !this->Owner; /*0x62fe79*/
+  return this->Particles && !this->Owner; /*0x62fe79*/
 }
 }  // G42.18 ns repair
 // 0x630230
@@ -60,7 +60,7 @@ void ParticleSystemClass_32::ClearBuffer(void *a1_1)
 namespace gamemd {
 unsigned int ParticleSystemClass_32::PointerToIndex(int a2)
 {
-  if ( (*((unsigned char *)&(*&this->m_C))) ) /*0x4e8320*/
+  if ( (*((unsigned char *)&(*&this->q00C))) ) /*0x4e8320*/
     return (unsigned int)(a2 - *&this->q004) >> 2; /*0x4e8335*/
   else
     return 0; /*0x4e8327*/
@@ -88,7 +88,7 @@ void ParticleSystemClass::GetClassIdentifier()
 namespace gamemd {
 unsigned int ParticleSystemClass::LoadTypeData(int a2)
 {
-  if ( (this->ptr_C) ) /*0x4e84a0*/
+  if ( (this->m_C) ) /*0x4e84a0*/
     return (unsigned int)(a2 - *&this->ptr_4) >> 2; /*0x4e84b5*/
   else
     return 0; /*0x4e84a7*/
@@ -126,14 +126,14 @@ void ParticleSystemClass_32::Destroy(void *a1)
 {
 
   void *v2 = *&this->q004; // eax /*0x4e87e6*/
-  this->m_10 = 0; /*0x4e87e9*/
-  if ( v2 && (((unsigned char *)&(*&this->m_C))[1]) ) /*0x4e87f0*/
+  this->q010 = 0; /*0x4e87e9*/
+  if ( v2 && (((unsigned char *)&(*&this->q00C))[1]) ) /*0x4e87f0*/
   {
     operator delete((v2)); /*0x4e87f6*/
     *&this->q004 = 0; /*0x4e87fe*/
   }
-  (((unsigned char *)&(*&this->m_C))[1]) = 0; /*0x4e8801*/
-  this->m_8 = 0; /*0x4e8804*/
+  (((unsigned char *)&(*&this->q00C))[1]) = 0; /*0x4e8801*/
+  this->q008 = 0; /*0x4e8804*/
 }
 } // namespace gamemd
 
@@ -141,7 +141,7 @@ void ParticleSystemClass_32::Destroy(void *a1)
 namespace gamemd {
 unsigned int ParticleSystemClass_32::GetIndex2(int a2)
 {
-  if ( (*((unsigned char *)&(*&this->m_C))) ) /*0x4e8810*/
+  if ( (*((unsigned char *)&(*&this->q00C))) ) /*0x4e8810*/
     return (unsigned int)(a2 - *&this->q004) >> 2; /*0x4e8825*/
   else
     return 0; /*0x4e8817*/
@@ -163,14 +163,14 @@ void ParticleSystemClass_32::ReleaseBuffer(void *a1_1, void *a2_1)
 
   void *v2; // eax
   v2 = (void *)(*&this->q004); /*0x4e8846*/
-  this->m_10 = 0; /*0x4e8849*/
-  if ( v2 && (((unsigned char *)&(*&this->m_C))[1]) ) /*0x4e8850*/
+  this->q010 = 0; /*0x4e8849*/
+  if ( v2 && (((unsigned char *)&(*&this->q00C))[1]) ) /*0x4e8850*/
   {
     operator delete((v2)); /*0x4e8856*/
     *&this->q004 = 0; /*0x4e885e*/
   }
-  (((unsigned char *)&(*&this->m_C))[1]) = 0; /*0x4e8861*/
-  this->m_8 = 0; /*0x4e8864*/
+  (((unsigned char *)&(*&this->q00C))[1]) = 0; /*0x4e8861*/
+  this->q008 = 0; /*0x4e8864*/
 }
 } // namespace gamemd
 
@@ -197,38 +197,38 @@ char ParticleSystemClass_32::SetCapacity(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x4e95ec*/
   {
-    (this->m_C) = ((this->m_C) & ~0xFF) | ((0) & 0xFF); /*0x4e95f2*/
+    (this->q00C) = ((this->q00C) & ~0xFF) | ((0) & 0xFF); /*0x4e95f2*/
     if ( a3 ) /*0x4e95f8*/
       v4 = a3; /*0x4e960e*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x4e960a*/
-    (this->m_C) = ((this->m_C) & ~0xFF) | ((1) & 0xFF); /*0x4e9612*/
+    (this->q00C) = ((this->q00C) & ~0xFF) | ((1) & 0xFF); /*0x4e9612*/
     if ( !v4 ) /*0x4e9616*/
       return 0; /*0x4e968a*/
     if ( *&this->q004 ) /*0x4e9618*/
     {
-      m_8 = this->m_8; /*0x4e961f*/
+      m_8 = this->q008; /*0x4e961f*/
       if ( a2 < m_8 ) /*0x4e9624*/
         m_8 = a2; /*0x4e9626*/
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x4e962c*/
         ++i; /*0x4e9631*/
-      if ( (((this->m_C) >> 8) & 0xFF) ) /*0x4e963e*/
+      if ( (((this->q00C) >> 8) & 0xFF) ) /*0x4e963e*/
       {
         __3_YAXPAX_Z(*&this->q004); /*0x4e9649*/
         *&this->q004 = 0; /*0x4e9651*/
       }
     }
     *&this->q004 = v4; /*0x4e965a*/
-    this->m_8 = a2; /*0x4e9662*/
-    (this->m_C) = ((this->m_C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x4e9665*/
+    this->q008 = a2; /*0x4e9662*/
+    (this->q00C) = ((this->q00C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x4e9665*/
   }
   else
   {
     (*(void (**)(_DynamicVectorClass_PAVBuildingClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4e966e*/
   }
-  v7 = this->m_8; /*0x4e9671*/
-  if ( v7 < this->m_10 ) /*0x4e9679*/
-    this->m_10 = v7; /*0x4e967b*/
+  v7 = this->q008; /*0x4e9671*/
+  if ( v7 < this->q010 ) /*0x4e9679*/
+    this->q010 = v7; /*0x4e967b*/
   return 1; /*0x4e967e*/
 
 }
@@ -240,7 +240,7 @@ int ParticleSystemClass_32::FindItem(unsigned int * a2)
 {
 
   int m_10; // edx
-  m_10 = this->m_10; /*0x4e9690*/
+  m_10 = this->q010; /*0x4e9690*/
   int result = 0; // eax /*0x4e9693*/
   if ( m_10 <= 0 ) /*0x4e9698*/
     return -1; /*0x4e96af*/
@@ -259,7 +259,7 @@ char ParticleSystemClass_16::AddRef(int a2)
 {
 
   int m_8; // esi
-  m_8 = this->m_8; /*0x4eb262*/
+  m_8 = this->q008; /*0x4eb262*/
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x4eb26d*/
   {
     int v3 = 0; // edx /*0x4eb26f*/
@@ -292,30 +292,30 @@ char ParticleSystemClass_16::Release(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x4eb2ac*/
   {
-    (this->m_C) = ((this->m_C) & ~0xFF) | ((0) & 0xFF); /*0x4eb2b6*/
+    (this->q00C) = ((this->q00C) & ~0xFF) | ((0) & 0xFF); /*0x4eb2b6*/
     if ( a3 ) /*0x4eb2bc*/
       v4 = a3; /*0x4eb2d2*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x4eb2ce*/
-    (this->m_C) = ((this->m_C) & ~0xFF) | ((1) & 0xFF); /*0x4eb2d6*/
+    (this->q00C) = ((this->q00C) & ~0xFF) | ((1) & 0xFF); /*0x4eb2d6*/
     if ( v4 ) /*0x4eb2da*/
     {
       if ( *&this->q004 ) /*0x4eb2e5*/
       {
-        m_8 = this->m_8; /*0x4eb2ec*/
+        m_8 = this->q008; /*0x4eb2ec*/
         if ( a2 < m_8 ) /*0x4eb2f1*/
           m_8 = a2; /*0x4eb2f3*/
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x4eb2f9*/
           ++i; /*0x4eb2fe*/
-        if ( (((this->m_C) >> 8) & 0xFF) ) /*0x4eb30b*/
+        if ( (((this->q00C) >> 8) & 0xFF) ) /*0x4eb30b*/
         {
           __3_YAXPAX_Z(*&this->q004); /*0x4eb316*/
           *&this->q004 = 0; /*0x4eb31e*/
         }
       }
       *&this->q004 = v4; /*0x4eb327*/
-      this->m_8 = a2; /*0x4eb32f*/
-      (this->m_C) = ((this->m_C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x4eb332*/
+      this->q008 = a2; /*0x4eb32f*/
+      (this->q00C) = ((this->q00C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x4eb332*/
       return 1; /*0x4eb338*/
     }
     else
@@ -341,8 +341,8 @@ void ParticleSystemClass_16::ddtor(void *a1)
     operator delete((void *)(*&this->q004)); /*0x4eb363*/
     *&this->q004 = 0; /*0x4eb36b*/
   }
-  (((unsigned char *)&(*&this->m_C))[1]) = 0; /*0x4eb36e*/
-  this->m_8 = 0; /*0x4eb371*/
+  (((unsigned char *)&(*&this->q00C))[1]) = 0; /*0x4eb36e*/
+  this->q008 = 0; /*0x4eb371*/
 }
 } // namespace gamemd
 
@@ -351,10 +351,10 @@ namespace gamemd {
 int ParticleSystemClass_16::Init(unsigned int * a2, void *a2_2, void *a3_1, void *a4_1, void *a5_1, void *a6_1, void *a7_1, void *a8_1)
 {
 
-  if ( !(*((unsigned char *)&(*&this->m_C))) ) /*0x4eb380*/
+  if ( !(*((unsigned char *)&(*&this->q00C))) ) /*0x4eb380*/
     return 0; /*0x4eb388*/
   int m_8; // edx
-  m_8 = this->m_8; /*0x4eb38e*/
+  m_8 = this->q008; /*0x4eb38e*/
   int result = 0; // eax /*0x4eb391*/
   if ( m_8 <= 0 ) /*0x4eb395*/
     return -1; /*0x4eb3ac*/
@@ -385,7 +385,7 @@ char ParticleSystemClass_32::AddRef(int a2)
 {
 
   int m_8; // esi
-  m_8 = this->m_8; /*0x4eb4c2*/
+  m_8 = this->q008; /*0x4eb4c2*/
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x4eb4cd*/
   {
     int v3 = 0; // edx /*0x4eb4cf*/
@@ -418,30 +418,30 @@ char ParticleSystemClass_32::Release(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x4eb50c*/
   {
-    (this->m_C) = ((this->m_C) & ~0xFF) | ((0) & 0xFF); /*0x4eb516*/
+    (this->q00C) = ((this->q00C) & ~0xFF) | ((0) & 0xFF); /*0x4eb516*/
     if ( a3 ) /*0x4eb51c*/
       v4 = a3; /*0x4eb532*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x4eb52e*/
-    (this->m_C) = ((this->m_C) & ~0xFF) | ((1) & 0xFF); /*0x4eb536*/
+    (this->q00C) = ((this->q00C) & ~0xFF) | ((1) & 0xFF); /*0x4eb536*/
     if ( v4 ) /*0x4eb53a*/
     {
       if ( *&this->q004 ) /*0x4eb545*/
       {
-        m_8 = this->m_8; /*0x4eb54c*/
+        m_8 = this->q008; /*0x4eb54c*/
         if ( a2 < m_8 ) /*0x4eb551*/
           m_8 = a2; /*0x4eb553*/
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x4eb559*/
           ++i; /*0x4eb55e*/
-        if ( (((this->m_C) >> 8) & 0xFF) ) /*0x4eb56b*/
+        if ( (((this->q00C) >> 8) & 0xFF) ) /*0x4eb56b*/
         {
           __3_YAXPAX_Z(*&this->q004); /*0x4eb576*/
           *&this->q004 = 0; /*0x4eb57e*/
         }
       }
       *&this->q004 = v4; /*0x4eb587*/
-      this->m_8 = a2; /*0x4eb58f*/
-      (this->m_C) = ((this->m_C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x4eb592*/
+      this->q008 = a2; /*0x4eb58f*/
+      (this->q00C) = ((this->q00C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x4eb592*/
       return 1; /*0x4eb598*/
     }
     else
@@ -467,8 +467,8 @@ void ParticleSystemClass_32::ddtor(void *a1)
     operator delete((void *)(*&this->q004)); /*0x4eb5c3*/
     *&this->q004 = 0; /*0x4eb5cb*/
   }
-  (((unsigned char *)&(*&this->m_C))[1]) = 0; /*0x4eb5ce*/
-  this->m_8 = 0; /*0x4eb5d1*/
+  (((unsigned char *)&(*&this->q00C))[1]) = 0; /*0x4eb5ce*/
+  this->q008 = 0; /*0x4eb5d1*/
 }
 } // namespace gamemd
 
@@ -477,10 +477,10 @@ namespace gamemd {
 int ParticleSystemClass_32::Init(unsigned int * a2, void *a2_2, void *a3_1, void *a4_1, void *a5_1, void *a6_1, void *a7_1, void *a8_1)
 {
 
-  if ( !(*((unsigned char *)&(*&this->m_C))) ) /*0x4eb5e0*/
+  if ( !(*((unsigned char *)&(*&this->q00C))) ) /*0x4eb5e0*/
     return 0; /*0x4eb5e8*/
   int m_8; // edx
-  m_8 = this->m_8; /*0x4eb5ee*/
+  m_8 = this->q008; /*0x4eb5ee*/
   int result = 0; // eax /*0x4eb5f1*/
   if ( m_8 <= 0 ) /*0x4eb5f5*/
     return -1; /*0x4eb60c*/
@@ -517,38 +517,38 @@ char ParticleSystemClass_32::CopyParticles2(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x4eb64c*/
   {
-    (this->m_C) = ((this->m_C) & ~0xFF) | ((0) & 0xFF); /*0x4eb652*/
+    (this->q00C) = ((this->q00C) & ~0xFF) | ((0) & 0xFF); /*0x4eb652*/
     if ( a3 ) /*0x4eb658*/
       v4 = a3; /*0x4eb66e*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x4eb66a*/
-    (this->m_C) = ((this->m_C) & ~0xFF) | ((1) & 0xFF); /*0x4eb672*/
+    (this->q00C) = ((this->q00C) & ~0xFF) | ((1) & 0xFF); /*0x4eb672*/
     if ( !v4 ) /*0x4eb676*/
       return 0; /*0x4eb6ea*/
     if ( *&this->q004 ) /*0x4eb678*/
     {
-      m_8 = this->m_8; /*0x4eb67f*/
+      m_8 = this->q008; /*0x4eb67f*/
       if ( a2 < m_8 ) /*0x4eb684*/
         m_8 = a2; /*0x4eb686*/
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x4eb68c*/
         ++i; /*0x4eb691*/
-      if ( (((this->m_C) >> 8) & 0xFF) ) /*0x4eb69e*/
+      if ( (((this->q00C) >> 8) & 0xFF) ) /*0x4eb69e*/
       {
         __3_YAXPAX_Z(*&this->q004); /*0x4eb6a9*/
         *&this->q004 = 0; /*0x4eb6b1*/
       }
     }
     *&this->q004 = v4; /*0x4eb6ba*/
-    this->m_8 = a2; /*0x4eb6c2*/
-    (this->m_C) = ((this->m_C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x4eb6c5*/
+    this->q008 = a2; /*0x4eb6c2*/
+    (this->q00C) = ((this->q00C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x4eb6c5*/
   }
   else
   {
     (*(void (**)(_DynamicVectorClass_PAVTerrainClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4eb6ce*/
   }
-  v7 = this->m_8; /*0x4eb6d1*/
-  if ( v7 < this->m_10 ) /*0x4eb6d9*/
-    this->m_10 = v7; /*0x4eb6db*/
+  v7 = this->q008; /*0x4eb6d1*/
+  if ( v7 < this->q010 ) /*0x4eb6d9*/
+    this->q010 = v7; /*0x4eb6db*/
   return 1; /*0x4eb6de*/
 
 }
@@ -560,7 +560,7 @@ int ParticleSystemClass_32::FindParticle2(unsigned int * a2)
 {
 
   int m_10; // edx
-  m_10 = this->m_10; /*0x4eb6f0*/
+  m_10 = this->q010; /*0x4eb6f0*/
   int result = 0; // eax /*0x4eb6f3*/
   if ( m_10 <= 0 ) /*0x4eb6f8*/
     return -1; /*0x4eb70f*/
@@ -615,8 +615,8 @@ char ParticleSystemClass_32_::ResizeDataArray(int a2, unsigned int * a3)
     (*(void (**)(_DynamicVectorClass_PAVAircraftClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4eb92e*/
   }
   v7 = this->Capacity; /*0x4eb931*/
-  if ( v7 < this->m_10 ) /*0x4eb939*/
-    this->m_10 = v7; /*0x4eb93b*/
+  if ( v7 < this->q010 ) /*0x4eb939*/
+    this->q010 = v7; /*0x4eb93b*/
   return 1; /*0x4eb93e*/
 
 }

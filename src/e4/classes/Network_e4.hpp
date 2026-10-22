@@ -13,10 +13,10 @@ struct HashTable_flat;  // fix_fwd_type_supply
 struct Network {
 #pragma pack(push, 1)  // X60: binary-packed layout
     unsigned int Network_field_0x0;  // 0x0
-    int Network_field_0x4;  // 0x4
-    int q008;  // 0x8
-    unsigned int q00C;  // 0xC
-    int Network_field_0x10;  // 0x10
+    int u32_4;  // 0x4
+    int u32_8;  // 0x8
+    unsigned int u32_C;  // 0xC
+    int q010;  // 0x10
     char __pad_14[14];  // 0x14
     char Network_field_0x22[4];  // 0x22
     char __pad_26[2];  // 0x26
@@ -32,7 +32,7 @@ struct Network {
     unsigned int u32_54;  // 0x54
     unsigned int q058;  // 0x58
     unsigned int q05C;  // 0x5C
-    int Network_field_0x60;  // 0x60
+    int u32_60;  // 0x60
     char __pad_64[8];  // 0x64
     char u32_6C[3];  // 0x6C
     char Network_field_0x6F[4];  // 0x6F

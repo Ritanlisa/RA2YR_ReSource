@@ -27,7 +27,7 @@ struct DisplayClass {
     unsigned int outBuffer;  // 0x24
     unsigned char __pad_028;  // 0x28
     char __pad_29[7];  // 0x29
-    int DisplayClass_field_0x30;  // 0x30
+    int q030;  // 0x30
     unsigned int MovementZones;  // 0x34
     unsigned char __pad_038;  // 0x38
     char __pad_39[47];  // 0x39
@@ -66,7 +66,7 @@ struct DisplayClass {
     unsigned int Crates;  // 0x148
     unsigned char __pad_14C;  // 0x14C
     char __pad_14D[191];  // 0x14D
-    int DisplayClass_field_0x20C;  // 0x20C
+    int q20C;  // 0x20C
     char __pad_210[130];  // 0x210
     unsigned char MapCoordBounds;  // 0x292
     char __pad_293[3];  // 0x293
@@ -83,7 +83,7 @@ struct DisplayClass {
     char __pad_D7C[1024];  // 0xD7C
     unsigned int q117C;  // 0x117C
     char __pad_1180[20];  // 0x1180
-    int DisplayClass_field_0x1194;  // 0x1194
+    int q1194;  // 0x1194
     char __pad_1198[4];  // 0x1198
     unsigned int u32_119C;  // 0x119C
     unsigned int u32_11A0;  // 0x11A0

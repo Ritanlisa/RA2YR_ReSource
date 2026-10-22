@@ -727,12 +727,12 @@ AbstractClass * * Voxel::SortDepth(ObjectClass * aP1, int a3, void *a3_2)
   aP1->ptr_10 = 0; /*0x755dd1*/
   if ( v5 ) /*0x755dd6*/
     operator delete((v5)); /*0x755dd9*/
-  v6 = aP1->ptr_18; /*0x755de1*/
+  v6 = aP1->uniqueId; /*0x755de1*/
   aP1->abstractFlags = 0; /*0x755de4*/
   if ( v6 ) /*0x755de9*/
     operator delete((v6)); /*0x755dec*/
   v7 = (int)(a3_2); /*0x755df4*/
-  aP1->ptr_18 = 0; /*0x755dfb*/
+  aP1->uniqueId = 0; /*0x755dfb*/
   if ( !(*(int (**)(int, int))(a3_2->__pad_01C)(a3_2, 1) ) /*0x755e09*/
     return 0; /*0x755e09*/
   (*(void (**)(int, char *, int))(a3_2->ptr_24)(a3_2, v113, 32); /*0x755e1d*/
@@ -772,7 +772,7 @@ AbstractClass * * Voxel::SortDepth(ObjectClass * aP1, int a3, void *a3_2)
   aP1->__pad_014 = v13; /*0x755e9b*/
   v17 = operator new(aP1->__pad_00C); /*0x755ea2*/
   v18 = aP1->ptr_10; /*0x755ea7*/
-  aP1->ptr_18 = v17; /*0x755eaf*/
+  aP1->uniqueId = v17; /*0x755eaf*/
   if ( !v18 ) /*0x755eb2*/
   {
   LABEL_67:
@@ -780,7 +780,7 @@ AbstractClass * * Voxel::SortDepth(ObjectClass * aP1, int a3, void *a3_2)
     aP1->ptr_10 = 0; /*0x756456*/
     if ( v71 ) /*0x75645b*/
       operator delete((v71)); /*0x75645e*/
-    v70 = aP1->ptr_18; /*0x756466*/
+    v70 = aP1->uniqueId; /*0x756466*/
     aP1->__pad_014 = 0; /*0x756469*/
     if ( !v70 ) /*0x75646e*/
       goto LABEL_71; /*0x75646e*/
@@ -803,7 +803,7 @@ AbstractClass * * Voxel::SortDepth(ObjectClass * aP1, int a3, void *a3_2)
       aP1->ptr_10 = 0; /*0x755f19*/
       if ( v19 ) /*0x755f1e*/
         operator delete((void *)(v19)); /*0x755f21*/
-      v20 = aP1->ptr_18; /*0x755f29*/
+      v20 = aP1->uniqueId; /*0x755f29*/
       aP1->__pad_014 = 0; /*0x755f2c*/
       if ( !v20 ) /*0x755f31*/
         goto LABEL_32; /*0x755f31*/
@@ -818,14 +818,14 @@ AbstractClass * * Voxel::SortDepth(ObjectClass * aP1, int a3, void *a3_2)
       aP1->ptr_10 = 0; /*0x755f62*/
       if ( v21 ) /*0x755f67*/
         operator delete((void *)(v21)); /*0x755f6a*/
-      v20 = aP1->ptr_18; /*0x755f72*/
+      v20 = aP1->uniqueId; /*0x755f72*/
       aP1->__pad_014 = 0; /*0x755f75*/
       if ( !v20 ) /*0x755f7a*/
         goto LABEL_32; /*0x755f7a*/
       LABEL_31:
       operator delete((void *)(v20)); /*0x755f7c*/
       LABEL_32:
-      aP1->ptr_18 = 0; /*0x755f85*/
+      aP1->uniqueId = 0; /*0x755f85*/
         VoxelPalette::Reset(v118); /*0x755f8f*/
         return 0; /*0x755fa0*/
     }
@@ -854,7 +854,7 @@ AbstractClass * * Voxel::SortDepth(ObjectClass * aP1, int a3, void *a3_2)
   LABEL_43:
     if ( (*(int (**)(int, unsigned int, unsigned int))(a3_2->ptr_24)( /*0x7560b5*/
            a3_2,
-           aP1->ptr_18,
+           aP1->uniqueId,
            aP1->__pad_00C) == aP1->__pad_00C )
   {
       v28 = aP1->ptr_8; /*0x75612d*/
@@ -965,10 +965,10 @@ AbstractClass * * Voxel::SortDepth(ObjectClass * aP1, int a3, void *a3_2)
         v7 = a3_2; /*0x756398*/
         v29 += 164; /*0x75639f*/
         *(float *)(v66 + 8) = v67; /*0x7563a5*/
-        *(unsigned int *)(aP1->__pad_014 + v29 - 164) = aP1->ptr_18 + v101[0]; /*0x7563b7*/
-        *(unsigned int *)(aP1->__pad_014 + v29 - 160) = aP1->ptr_18 + v101[1]; /*0x7563cd*/
+        *(unsigned int *)(aP1->__pad_014 + v29 - 164) = aP1->uniqueId + v101[0]; /*0x7563b7*/
+        *(unsigned int *)(aP1->__pad_014 + v29 - 160) = aP1->uniqueId + v101[1]; /*0x7563cd*/
         v72 = v72; /*0x7563e1*/
-        *(unsigned int *)(aP1->__pad_014 + v29 - 156) = aP1->ptr_18 + v101[2]; /*0x7563e7*/
+        *(unsigned int *)(aP1->__pad_014 + v29 - 156) = aP1->uniqueId + v101[2]; /*0x7563e7*/
         v69 = aP1->ptr_8; /*0x7563ee*/
         (*((unsigned int *)&(v72))) = (*((unsigned int *)&(v72))) + 1; /*0x7563f4*/
         if ( (*((unsigned int *)&(v72))) + 1 >= v69 ) /*0x7563f8*/
@@ -991,12 +991,12 @@ AbstractClass * * Voxel::SortDepth(ObjectClass * aP1, int a3, void *a3_2)
       LABEL_63:
         operator delete((void *)(v25)); /*0x756431*/
   }
-      v70 = aP1->ptr_18; /*0x75643a*/
+      v70 = aP1->uniqueId; /*0x75643a*/
     aP1->__pad_014 = 0; /*0x75643d*/
     if ( !v70 ) /*0x756442*/
   {
   LABEL_71:
-      aP1->ptr_18 = 0; /*0x756479*/
+      aP1->uniqueId = 0; /*0x756479*/
     (*(void (**)(int))(*&v7->u32_D0))(v7); /*0x756480*/
     return 0; /*0x756486*/
   }
@@ -1021,11 +1021,11 @@ AbstractClass * * Voxel::SortDepth(ObjectClass * aP1, int a3, void *a3_2)
   aP1->ptr_10 = 0; /*0x7560f1*/
   if ( v26 ) /*0x7560f6*/
     operator delete((v26)); /*0x7560f9*/
-  v27 = aP1->ptr_18; /*0x756101*/
+  v27 = aP1->uniqueId; /*0x756101*/
   aP1->__pad_014 = 0; /*0x756104*/
   if ( v27 ) /*0x756109*/
     operator delete((v27)); /*0x75610c*/
-  aP1->ptr_18 = 0; /*0x756114*/
+  aP1->uniqueId = 0; /*0x756114*/
   (*(void (**)(int))(*&a3_2->u32_D0))(a3_2); /*0x75611b*/
   return 0; /*0x755f94*/
 }
@@ -1161,12 +1161,12 @@ void* Voxel::DrawHelper(IUnknown * aP1)
   unsigned int v38[3]; // [esp+1Ch] [ebp-Ch] BYREF
   char v39; // [esp+2Ch] [ebp+4h]
 
-  Voxel_field_0x28 = this->Voxel_field_0x28; /*0x75c251*/
+  Voxel_field_0x28 = this->u32_28; /*0x75c251*/
   if ( this->u32_28 == g_AsyncMovieState /*0x75c26e*/
     && this->u32_2C == g_MovieFrameState1
     && *(unsigned int *)this->__pad_30 == g_MovieFrameState2 )
   {
-    Voxel_field_0xC = (int *)this->Voxel_field_0xC; /*0x75c278*/
+    Voxel_field_0xC = (int *)this->u32_C; /*0x75c278*/
     v35 = Voxel_field_0xC[39]; /*0x75c287*/
     v36 = Voxel_field_0xC[40]; /*0x75c28e*/
     v37 = Voxel_field_0xC[41]; /*0x75c295*/
@@ -1174,7 +1174,7 @@ void* Voxel::DrawHelper(IUnknown * aP1)
   }
   else
   {
-    (*(void (**)(int *))(*(unsigned int *)this->Voxel_field_0xC + 244))(this->Voxel_field_0x28); /*0x75c276*/
+    (*(void (**)(int *))(*(unsigned int *)this->u32_C + 244))(this->u32_28); /*0x75c276*/
   }
   v39 = 0; /*0x75c2aa*/
   v38[0] = *aP1; /*0x75c2b3*/
@@ -1189,13 +1189,13 @@ void* Voxel::DrawHelper(IUnknown * aP1)
   }
   else
   {
-    if ( (*(int (**)(int))(*(unsigned int *)this->Voxel_field_0xC + 388))(this->Voxel_field_0xC) == 8 /*0x75c33c*/
-      || (*(int (**)(int))(*(unsigned int *)this->Voxel_field_0xC + 388))(this->Voxel_field_0xC) == 9
-      || (*(int (**)(int))(*(unsigned int *)this->Voxel_field_0xC + 388))(this->Voxel_field_0xC) == 7
-      || (*(int (**)(int))(*(unsigned int *)this->Voxel_field_0xC + 388))(this->Voxel_field_0xC) == 11
-      || (*(int (**)(int))(*(unsigned int *)this->Voxel_field_0xC + 388))(this->Voxel_field_0xC) == 25 )
+    if ( (*(int (**)(int))(*(unsigned int *)this->u32_C + 388))(this->u32_C) == 8 /*0x75c33c*/
+      || (*(int (**)(int))(*(unsigned int *)this->u32_C + 388))(this->u32_C) == 9
+      || (*(int (**)(int))(*(unsigned int *)this->u32_C + 388))(this->u32_C) == 7
+      || (*(int (**)(int))(*(unsigned int *)this->u32_C + 388))(this->u32_C) == 11
+      || (*(int (**)(int))(*(unsigned int *)this->u32_C + 388))(this->u32_C) == 25 )
     {
-      v7 = this->Voxel_field_0xC; /*0x75c342*/
+      v7 = this->u32_C; /*0x75c342*/
       v8 = *(unsigned int *)(v7 + 1444); /*0x75c345*/
       if ( v8 ) /*0x75c34d*/
       {
@@ -1208,7 +1208,7 @@ void* Voxel::DrawHelper(IUnknown * aP1)
             v39 = 1; /*0x75c39e*/
         }
       }
-      v11 = *(unsigned int *)(this->Voxel_field_0xC + 1444); /*0x75c3a6*/
+      v11 = *(unsigned int *)(this->u32_C + 1444); /*0x75c3a6*/
       *(unsigned int *)v32 = v11; /*0x75c3ae*/
       if ( v11 ) /*0x75c3b2*/
       {
@@ -1221,7 +1221,7 @@ void* Voxel::DrawHelper(IUnknown * aP1)
             v39 = 1; /*0x75c3fb*/
         }
       }
-      v15 = this->Voxel_field_0xC; /*0x75c400*/
+      v15 = this->u32_C; /*0x75c400*/
       v16 = *(unsigned int **)(v15 + 1444); /*0x75c403*/
       if ( v16 ) /*0x75c40b*/
       {
@@ -1233,12 +1233,12 @@ void* Voxel::DrawHelper(IUnknown * aP1)
         }
       }
     }
-    v18 = *(unsigned int *)(this->Voxel_field_0xC + 732); /*0x75c439*/
+    v18 = *(unsigned int *)(this->u32_C + 732); /*0x75c439*/
     if ( v18 )
     {
       if ( *(unsigned int *)(v18 + 728) )
       {
-        v19 = (unsigned int *)this->Voxel_field_0xC; /*0x75c44b*/
+        v19 = (unsigned int *)this->u32_C; /*0x75c44b*/
         v35 = 0; /*0x75c44f*/
         v36 = 0; /*0x75c453*/
         v20 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, aP1); /*0x75c463*/
@@ -1246,13 +1246,13 @@ void* Voxel::DrawHelper(IUnknown * aP1)
         {
           v21 = v19 ? ((*(int (**)(unsigned int *))(*v19 + 44))(v19) == 15 ? (unsigned int)v19 : 0) : 0;
           v22 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, aP1); /*0x75c49a*/
-          if ( BuildingClass::CheckBridge(*(BuildingClass **)(*(unsigned int *)(this->Voxel_field_0xC + 732) + 728), v21, v22) ) /*0x75c4b0*/
+          if ( BuildingClass::CheckBridge(*(BuildingClass **)(*(unsigned int *)(this->u32_C + 732) + 728), v21, v22) ) /*0x75c4b0*/
             v39 = 1; /*0x75c4b9*/
         }
       }
     }
     if ( (Coord::To_Cell((Coord *)&DataGlobal_87F7E8, v38)->flags[0] & 0x100) == 0 /*0x75c513*/
-      || (v23 = (int *)(this->Voxel_field_0xC + 156),
+      || (v23 = (int *)(this->u32_C + 156),
           v35 = *v23,
           v36 = v23[1],
           v24 = v23[2],
@@ -1263,15 +1263,15 @@ void* Voxel::DrawHelper(IUnknown * aP1)
     }
     v25 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, v38); /*0x75c53a*/
     v26 = ObjectPlacement::CalcPosition((ObjectPlacement *)v25, &v35, v38, v39, v33, 0); /*0x75c541*/
-    Voxel_field_0x28 = this->Voxel_field_0x28; /*0x75c548*/
+    Voxel_field_0x28 = this->u32_28; /*0x75c548*/
     this->u32_28 = *v26; /*0x75c54d*/
     this->u32_2C = v26->ptr_4; /*0x75c552*/
-    v31 = this->Voxel_field_0xC; /*0x75c55b*/
+    v31 = this->u32_C; /*0x75c55b*/
     *(unsigned int *)this->__pad_30 = v26->ptr_8; /*0x75c562*/
-    v27 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, this->Voxel_field_0x28); /*0x75c565*/
+    v27 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, this->u32_28); /*0x75c565*/
     if ( !(unsigned __int8)CrateClass::ProcessPickup((CrateClass *)v27, v31) ) /*0x75c56c*/
     {
-      v28 = this->Voxel_field_0xC; /*0x75c575*/
+      v28 = this->u32_C; /*0x75c575*/
       if ( !*(unsigned char *)(v28 + 129) ) /*0x75c578*/
       {
         *Voxel_field_0x28 = g_AsyncMovieState; /*0x75c58a*/
@@ -1286,7 +1286,7 @@ void* Voxel::DrawHelper(IUnknown * aP1)
     && Voxel_field_0x28->ptr_2 == g_MovieFrameState1
     && Voxel_field_0x28->ptr_3 == g_MovieFrameState2 )
   {
-    v30 = (int *)this->Voxel_field_0xC; /*0x75c602*/
+    v30 = (int *)this->u32_C; /*0x75c602*/
     v35 = v30[39]; /*0x75c611*/
     v36 = v30[40]; /*0x75c618*/
     v37 = v30[41]; /*0x75c61f*/
@@ -1295,8 +1295,8 @@ void* Voxel::DrawHelper(IUnknown * aP1)
   }
   else
   {
-    (*(void (**)(int, int *))(*(unsigned int *)this->Voxel_field_0xC + 240))( /*0x75c5f1*/
-      this->Voxel_field_0xC,
+    (*(void (**)(int, int *))(*(unsigned int *)this->u32_C + 240))( /*0x75c5f1*/
+      this->u32_C,
       Voxel_field_0x28);
     return 1; /*0x75c5f9*/
   }
@@ -1885,7 +1885,7 @@ AbstractClass * * Voxel::FaceDraw(unsigned int * a1, WaveClass * aP2)
       v50 = *aP2; /*0x760a4c*/
       v49 = *aP2 + aP2[2]; /*0x760a56*/
       v4 = dword_886FA4 + a1[1] - *(unsigned int *)v3->__pad_D0; /*0x760a69*/
-      v41 = *a1 - v3->Voxel_field_0xCC; /*0x760a77*/
+      v41 = *a1 - v3->q0CC; /*0x760a77*/
       ProcessVoxelVertexData(&v3->u32_148, &v3->u32_1A0); /*0x760a7b*/
       if ( *&v3->u32_1A8 ) /*0x760a80*/
       {
@@ -2483,14 +2483,14 @@ int Voxel::SectionProject(int * a2, int a3)
   *&this->u32_C4 = v18; /*0x761b66*/
   *&this->u32_14C = &this->q150; /*0x761b6f*/
   *&this->u32_C8 = v19; /*0x761b75*/
-  Coord::To_Screen((Coord *)g_TacticalClass_Instance, &v61, &this->Voxel_field_0xCC); /*0x761b83*/
+  Coord::To_Screen((Coord *)g_TacticalClass_Instance, &v61, &this->q0CC); /*0x761b83*/
   Coord::To_Screen((Coord *)g_TacticalClass_Instance, &v64, &this->u32_D4); /*0x761b9a*/
   v20 = *&this->u32_14C; /*0x761b9f*/
   __asm { fild dword ptr [esp+0C8h+var_B4+4] } /*0x761ba7*/
   v20[2] = *&this->u32_D4; /*0x761bab*/
   v20[3] = *&this->u32_D8; /*0x761bb1*/
   v21 = *&this->u32_14C; /*0x761bb4*/
-  v21[8] = this->Voxel_field_0xCC; /*0x761bbc*/
+  v21[8] = this->q0CC; /*0x761bbc*/
   __asm { fld st } /*0x761bc2*/
   v21[9] = *(unsigned int *)this->__pad_D0; /*0x761bc4*/
   __asm { fld st } /*0x761bcd*/
@@ -3066,7 +3066,7 @@ AbstractClass * * Voxel::LightRender(AbstractClass ** a2, int a3)
   *&this->u32_C4 = v18; /*0x7625f3*/
   *&this->u32_14C = &this->q180; /*0x7625fc*/
   *&this->u32_C8 = v19; /*0x762602*/
-  Coord::To_Screen((Coord *)g_TacticalClass_Instance, &v61, &this->Voxel_field_0xCC); /*0x762617*/
+  Coord::To_Screen((Coord *)g_TacticalClass_Instance, &v61, &this->q0CC); /*0x762617*/
   Coord::To_Screen((Coord *)g_TacticalClass_Instance, &v64, &this->u32_D4); /*0x76262e*/
   __asm { fld [esp+0C8h+var_88] } /*0x762633*/
   (v20) = ((v20) & ~0xFFFF) | ((Math::RoundToInt(v3)) & 0xFFFF); /*0x762637*/
@@ -3660,12 +3660,12 @@ int Voxel::freeSectionMemory(unsigned int * a2)
   int Voxel_field_0x10; // eax
   unsigned int *v7; // edx
 
-  Voxel_field_0x8 = this->Voxel_field_0x8; /*0x763333*/
-  if ( this->Voxel_field_0x10 >= Voxel_field_0x8 ) /*0x76333b*/
+  Voxel_field_0x8 = this->u32_8; /*0x763333*/
+  if ( this->u32_10 >= Voxel_field_0x8 ) /*0x76333b*/
   {
-    if ( !BYTE1(this->Voxel_field_0xC) && Voxel_field_0x8 ) /*0x763346*/
+    if ( !BYTE1(this->u32_C) && Voxel_field_0x8 ) /*0x763346*/
       return 0; /*0x763346*/
-    Voxel_field_0x14 = this->Voxel_field_0x14; /*0x763348*/
+    Voxel_field_0x14 = this->u32_14; /*0x763348*/
     if ( Voxel_field_0x14 <= 0 /*0x763358*/
       || !(*(unsigned __int8 (**)(Voxel *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 8))(
             this,
@@ -3675,9 +3675,9 @@ int Voxel::freeSectionMemory(unsigned int * a2)
       return 0; /*0x76335f*/
     }
   }
-  Voxel_field_0x10 = this->Voxel_field_0x10; /*0x763365*/
-  v7 = (unsigned int *)this->Voxel_field_0x4; /*0x763368*/
-  this->Voxel_field_0x10 = Voxel_field_0x10 + 1; /*0x76336e*/
+  Voxel_field_0x10 = this->u32_10; /*0x763365*/
+  v7 = (unsigned int *)this->u32_4; /*0x763368*/
+  this->u32_10 = Voxel_field_0x10 + 1; /*0x76336e*/
   v7[Voxel_field_0x10] = *a2; /*0x763378*/
   return 1; /*0x763361*/
 

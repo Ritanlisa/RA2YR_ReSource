@@ -8,7 +8,7 @@ namespace gamemd {
 struct Float4 {
     unsigned char __pad_000;  // 0x0
     char __pad_1[3];  // 0x1
-    int Float4_field_0x04;  // 0x4
+    int q004;  // 0x4
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     static unsigned int * Copy(void * aP1, void * a2, float * a3);

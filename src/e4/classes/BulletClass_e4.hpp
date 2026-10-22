@@ -26,7 +26,7 @@ struct BulletClass {
     bool IsAllocated;  // 0x13
     char __pad_14[3];  // 0x14
     bool __pad_017;  // 0x17
-    int BulletClass_field_0x18;  // 0x18
+    int q018;  // 0x18
     char __pad_1C[20];  // 0x1C
     ObjectClass* nextObject;  // 0x30
     char __pad_34[3];  // 0x34
@@ -65,7 +65,7 @@ struct BulletClass {
     unsigned char __pad_09E;  // 0x9E
     char __pad_9F[13];  // 0x9F
     void* u32_AC;  // 0xAC
-    int BulletClass_field_0xB0;  // 0xB0
+    int q0B0;  // 0xB0
     char __pad_B4[4];  // 0xB4
     unsigned int Data;  // 0xB8
     char __pad_BC[36];  // 0xBC
@@ -74,7 +74,7 @@ struct BulletClass {
     unsigned int q100;  // 0x100
     unsigned int q104;  // 0x104
     unsigned int q108;  // 0x108
-    int BulletClass_field_0x10C;  // 0x10C
+    int u32_10C;  // 0x10C
     char __pad_110[4];  // 0x110
     unsigned int InheritedColor;  // 0x114
     ParticleSystemClass* __pad_118;  // 0x118
@@ -100,7 +100,7 @@ struct BulletClass {
     char __pad_177[3];  // 0x177
     unsigned char __pad_17A;  // 0x17A
     char __pad_17B[161];  // 0x17B
-    int BulletClass_field_0x21C;  // 0x21C
+    int u32_21C;  // 0x21C
     char __pad_220[68];  // 0x220
     unsigned int CourseLockCounter;  // 0x264
     unsigned int Target;  // 0x268
@@ -113,21 +113,21 @@ struct BulletClass {
     char __pad_29E[3];  // 0x29E
     char BulletClass_field_0x2A1[4];  // 0x2A1
     char __pad_2A5[7];  // 0x2A5
-    int BulletClass_field_0x2AC;  // 0x2AC
+    int q2AC;  // 0x2AC
     char __pad_2B0[12];  // 0x2B0
-    int BulletClass_field_0x2BC;  // 0x2BC
+    int q2BC;  // 0x2BC
     char __pad_2C0[16];  // 0x2C0
-    int BulletClass_field_0x2D0;  // 0x2D0
+    int q2D0;  // 0x2D0
     char __pad_2D4[4];  // 0x2D4
-    int BulletClass_field_0x2D8;  // 0x2D8
-    int BulletClass_field_0x2DC;  // 0x2DC
-    int BulletClass_field_0x2E0;  // 0x2E0
-    int BulletClass_field_0x2E4;  // 0x2E4
-    int BulletClass_field_0x2E8;  // 0x2E8
+    int q2D8;  // 0x2D8
+    int q2DC;  // 0x2DC
+    int q2E0;  // 0x2E0
+    int q2E4;  // 0x2E4
+    int q2E8;  // 0x2E8
     char __pad_2EC[8];  // 0x2EC
-    int BulletClass_field_0x2F4;  // 0x2F4
+    int q2F4;  // 0x2F4
     char __pad_2F8[20];  // 0x2F8
-    int BulletClass_field_0x30C;  // 0x30C
+    int q30C;  // 0x30C
     char __pad_310[48];  // 0x310
     unsigned int Range;  // 0x340
     unsigned char __pad_344;  // 0x344
@@ -135,7 +135,7 @@ struct BulletClass {
     DynamicVectorClass * ptr_458;  // 0x458
     unsigned char __pad_45C;  // 0x45C
     char __pad_45D[195];  // 0x45D
-    int BulletClass_field_0x520;  // 0x520
+    int q520;  // 0x520
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     static unsigned int * ResetDetonationTimer(BulletClass *pThis);

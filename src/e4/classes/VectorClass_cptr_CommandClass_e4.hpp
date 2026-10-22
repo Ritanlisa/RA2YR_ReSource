@@ -7,7 +7,7 @@ namespace gamemd {
 struct VectorClass_cptr_CommandClass {
     unsigned int __pad_0;  // 0x0
     void* Items;  // 0x4
-    unsigned int m_8;  // 0x8
+    unsigned int Capacity;  // 0x8
     char IsInitialized[1];  // 0xC
     unsigned char IsAllocated;  // 0xD
     unsigned short __pad_00E;  // 0xE

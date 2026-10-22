@@ -56,14 +56,14 @@ void _DynamicVectorClass_PAUControlNode::CaptureManagerClass__vt_03_()
 {
 
   void *v2 = *&this->u32_4; // eax /*0x472a86*/
-  this->m_10 = 0; /*0x472a89*/
+  this->Capacity = 0; /*0x472a89*/
   if ( v2 && (this->u8_D) ) /*0x472a90*/
   {
     operator delete((v2)); /*0x472a96*/
     *&this->u32_4 = 0; /*0x472a9e*/
   }
   (this->u8_D) = 0; /*0x472aa1*/
-  this->m_8 = 0; /*0x472aa4*/
+  this->Items = 0; /*0x472aa4*/
 }
 }  // G42.18 ns repair
 // 0x472AD0
@@ -176,9 +176,9 @@ VectorClass_flat * * LoadBuildingTypeClassPrerequisites(unsigned int * a1, unsig
       {
         if ( !v13 ) /*0x47738b*/
         {
-          v21.DynamicVector_field_0x1C = BuildingTypeClass::FindIndexByName(i); /*0x477397*/
-          if ( v21.DynamicVector_field_0x1C != -1 ) /*0x47739b*/
-            (&v21)->Add_Alt(&v21.DynamicVector_field_0x1C); /*0x4773a6*/
+          v21.q01C = BuildingTypeClass::FindIndexByName(i); /*0x477397*/
+          if ( v21.q01C != -1 ) /*0x47739b*/
+            (&v21)->Add_Alt(&v21.q01C); /*0x4773a6*/
         }
       }
       else if ( v21.Count < v21.DynamicVector_field_0x8 /*0x47736a*/
@@ -2009,7 +2009,7 @@ CCINIClass * E4Recv_474540::sub_474540(CCINIClass * aP1, char a3)
   if ( !a3 ) /*0x474552*/
     return INIClass::WriteToString((INIClass *)this, aP1); /*0x47455c*/
   INIClass::ClearSection(&this->ptr_0, (int)g_INI_Key_Digest, 0); /*0x474575*/
-  memset(&v6.SHA1_field_0x04, 0, 9); /*0x47457e*/
+  memset(&v6.u32_4, 0, 9); /*0x47457e*/
   v12 = 0; /*0x47458d*/
   v13 = 0; /*0x474591*/
   v7 = 1732584193; /*0x474595*/
@@ -2049,7 +2049,7 @@ int E4Recv_476E20::sub_476E20()
 
   SHA1 v3; // [esp+4h] [ebp-80h] BYREF
 
-  memset(&v3.SHA1_field_0x04, 0, 9); /*0x476e29*/
+  memset(&v3.u32_4, 0, 9); /*0x476e29*/
   int v9; // [esp+3Ch] [ebp-48h]
   v9 = 0; /*0x476e35*/
   int v10; // [esp+40h] [ebp-44h]

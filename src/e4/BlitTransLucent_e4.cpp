@@ -165,7 +165,7 @@ int BlitTransLucent25AlphaZReadWrite_ushort::Blit_RLE_Remap(int arg0, unsigned c
     {
       result += 2; /*0x4961e4*/
       --v18; /*0x4961e7*/
-      *(unsigned short *)(result - 2) = *(unsigned short *)(this->m_8 + 2 * *(uint8_t *)(v19 + v15)); /*0x4961f2*/
+      *(unsigned short *)(result - 2) = *(unsigned short *)(this->ptr_8 + 2 * *(uint8_t *)(v19 + v15)); /*0x4961f2*/
     }
     else
     {
@@ -224,10 +224,10 @@ BlitTransLucent25Alpha_ushort * BlitTransLucent25Alpha_ushort::Blit(char a2)
 {
 
 
-  void *m_8 = this->m_8; // eax /*0x49a348*/
+  void *m_8 = this->ptr_8; // eax /*0x49a348*/
   /* X11: ptr_0 install elided (implicit via BlitTransLucent25Alpha virtuals 0x49a34b) */
   FractalNoise::Dtor(m_8); /*0x49a352*/
-  this->m_8 = 0; /*0x49a35b*/
+  this->ptr_8 = 0; /*0x49a35b*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E5B88) */  /*0x49a364*/
   if ( (a2 & 1) != 0 ) /*0x49a36a*/
     __3_YAXPAX_Z(this); /*0x49a36d*/

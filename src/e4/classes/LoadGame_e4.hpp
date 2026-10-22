@@ -7,17 +7,17 @@ namespace gamemd {
 
 struct LoadGame {
     int __pad_0;  // 0x0
-    int LoadGame_field_0x04;  // 0x4
-    int LoadGame_field_0x08;  // 0x8
+    int q004;  // 0x4
+    int q008;  // 0x8
     void* q00C;  // 0xC
     int q010;  // 0x10
     int q014;  // 0x14
     void* q018;  // 0x18
     int q01C;  // 0x1C
     int q020;  // 0x20
-    int LoadGame_field_0x24;  // 0x24
-    int LoadGame_field_0x28;  // 0x28
-    int LoadGame_field_0x2C;  // 0x2C
+    int q024;  // 0x24
+    int q028;  // 0x28
+    int q02C;  // 0x2C
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     static wchar_t * CleanupArray(void *aP1);

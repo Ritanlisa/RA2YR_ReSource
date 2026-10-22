@@ -10,9 +10,9 @@ struct DynamicVector;  // fix_fwd_type_supply
 struct MSFont_18 {
     unsigned int __pad_0;  // 0x0
     int q004;  // 0x4
-    unsigned int m_8;  // 0x8
-    unsigned int m_C;  // 0xC
-    int m_10;  // 0x10
+    unsigned int q008;  // 0x8
+    unsigned int q00C;  // 0xC
+    int q010;  // 0x10
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     AbstractClass * *  SetCapacity8(int a2, unsigned int * a3);  // 0x5D55A0

@@ -76,8 +76,8 @@ int FileSystem::ProcessNextFileExtension()
       {
         StringVector::Construct(v3, 0, 0); /*0x626de1*/
         /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E5BC4) */  /*0x626de6*/
-        v4->StringVector_field_0x14 = 10; /*0x626dec*/
-        v4->StringVector_field_0x10 = 0; /*0x626df3*/
+        v4->q014 = 10; /*0x626dec*/
+        v4->q010 = 0; /*0x626df3*/
       }
       else
       {

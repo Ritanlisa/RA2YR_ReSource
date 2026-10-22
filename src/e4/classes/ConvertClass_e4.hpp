@@ -101,9 +101,9 @@ struct ConvertClass {
     unsigned int q164;  // 0x164
     unsigned int q168;  // 0x168
     unsigned int q16C;  // 0x16C
-    CampaignClass* ConvertClass_field_0x170;  // 0x170
+    CampaignClass* q170;  // 0x170
     unsigned int __pad_174;  // 0x174
-    CampaignClass* ConvertClass_field_0x178;  // 0x178
+    CampaignClass* q178;  // 0x178
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int ddtor(int a2, int a3, int a4, int a5, int a6, int a7, int a8);

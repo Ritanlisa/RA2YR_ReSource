@@ -513,7 +513,7 @@ int HouseClass::Construct(int a2, void *a2_1, void *a3, void *a4, void *a5, void
   ScoutVector::Construct(&this->unkTimer3, 0, 0); /*0x4f5b82*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_774af6) */  /*0x4f5b87*/
   this->u32_5630 = 10; /*0x4f5b91*/
-  this->u32_562C = 0; /*0x4f5b97*/
+  this->ownedInfantryTypes2 = 0; /*0x4f5b97*/
   this->producingBuildingTypeIndex = *(unsigned int *)&stru_A8E960.random[528]; /*0x4f5ba2*/
   this->producingInfantryTypeIndex = 0; /*0x4f5ba8*/
   v5 = *(unsigned int *)&stru_A8E960.random[528]; /*0x4f5bae*/
@@ -538,11 +538,11 @@ int HouseClass::Construct(int a2, void *a2_1, void *a3, void *a4, void *a5, void
   }
   while ( v61 ); /*0x4f5c20*/
   this->u32_56F4 = 0; /*0x4f5c22*/
-  this->u32_56F8 = 0; /*0x4f5c28*/
+  this->scoutNodesCount = 0; /*0x4f5c28*/
   this->u32_56F9 = 0; /*0x4f5c30*/
   this->u32_56FA = 0; /*0x4f5c36*/
   this->u32_56FB = 0; /*0x4f5c3c*/
-  this->u32_56FC = -1; /*0x4f5c48*/
+  this->scoutNodesCapacity = -1; /*0x4f5c48*/
   this->u32_56FD = -1; /*0x4f5c4e*/
   this->u32_56FE = -1; /*0x4f5c54*/
   BaseClass::Constructor(&this->BaseClass_15C0); /*0x4f5c5a*/
@@ -581,20 +581,20 @@ int HouseClass::Construct(int a2, void *a2_1, void *a3, void *a4, void *a5, void
   *(&this->u8_5818) = 0; /*0x4f5d5d*/
   ConnectionPointVector::Construct(&this->waypointPathCount, 0, 0); /*0x4f5d63*/
   /* X11: ptr_0 install elided (X68 star-amp-named, RHS g_ptr_7E5D48) */  /*0x4f5d68*/
-  *(&this->u8_581E) = 10; /*0x4f5d6e*/
-  *(&this->u8_581D) = 0; /*0x4f5d71*/
-  *(&this->u32_581F) = 0; /*0x4f5d74*/
-  *(&this->u8_5820) = 0; /*0x4f5d7a*/
+  *(&this->spySatActive) = 10; /*0x4f5d6e*/
+  *(&this->recheckRadar) = 0; /*0x4f5d71*/
+  *(&this->isBeingDrained) = 0; /*0x4f5d74*/
+  *(&this->edge) = 0; /*0x4f5d7a*/
   *(&this->q5822) = 0; /*0x4f5d85*/
   *(&this->q5823) = 1072693248; /*0x4f5d8b*/
-  *(&this->u8_5824) = 0; /*0x4f5d91*/
+  *(&this->empTarget) = 0; /*0x4f5d91*/
   *(&this->u8_5825) = 1072693248; /*0x4f5d97*/
   *(&this->u8_5827) = 1051260355; /*0x4f5da2*/
-  *(&this->u8_5828) = 1051260355; /*0x4f5da8*/
+  *(&this->nukeTarget) = 1051260355; /*0x4f5da8*/
   *(&this->u8_5829) = 1051260355; /*0x4f5dae*/
   *(&this->u32_582A) = 0; /*0x4f5db4*/
   *(&this->u32_582B) = 0; /*0x4f5dba*/
-  *(&this->u32_582C) = 0; /*0x4f5dc0*/
+  *(&this->allies) = 0; /*0x4f5dc0*/
   *(&this->u32_582D) = 0; /*0x4f5dc6*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_var_09bb33) */  /*0x4f5dcc*/
   /* X11: ptr_0 install elided (X68 star-amp-named, RHS g_var_09bb33) */  /*0x4f5dd3*/
@@ -619,7 +619,7 @@ int HouseClass::Construct(int a2, void *a2_1, void *a3, void *a4, void *a5, void
   v11 = (unsigned int *)*(&this->IsAllocated); /*0x4f5e53*/
   if ( v11 ) /*0x4f5e58*/
     *(&this->u8_5815) = v11[48]; /*0x4f5e60*/
-  if ( stru_B0F670.DynamicVector_field_0x10 < stru_B0F670.DynamicVector_field_0x8 /*0x4f5e99*/
+  if ( stru_B0F670.q010 < stru_B0F670.DynamicVector_field_0x8 /*0x4f5e99*/
     || (stru_B0F670.__pad_C[1] || !stru_B0F670.DynamicVector_field_0x8)
     && *(int *)stru_B0F670.__pad_14 > 0
     && (*(unsigned __int8 (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)stru_B0F670.__pad_0 + 8))(
@@ -627,14 +627,14 @@ int HouseClass::Construct(int a2, void *a2_1, void *a3, void *a4, void *a5, void
          *(unsigned int *)stru_B0F670.__pad_14 + stru_B0F670.DynamicVector_field_0x8,
          0) )
   {
-    v12 = stru_B0F670.DynamicVector_field_0x10++; /*0x4f5ea6*/
+    v12 = stru_B0F670.q010++; /*0x4f5ea6*/
     *(unsigned int *)(*(unsigned int *)&stru_B0F670.DynamicVector_field_0x1[3] + 4 * v12) = this; /*0x4f5eb5*/
   }
   if ( dword_B0F650 < dword_B0F648 /*0x4f5eec*/
     || (byte_B0F64D || !dword_B0F648)
     && dword_B0F654 > 0
-    && (*(unsigned __int8 (**)(int *, int, unsigned int))(stru_B0F618.DynamicVector_field_0x28 + 8))(
-         &stru_B0F618.DynamicVector_field_0x28,
+    && (*(unsigned __int8 (**)(int *, int, unsigned int))(stru_B0F618.u32_28 + 8))(
+         &stru_B0F618.u32_28,
          dword_B0F654 + dword_B0F648,
          0) )
   {
@@ -652,7 +652,7 @@ int HouseClass::Construct(int a2, void *a2_1, void *a3, void *a4, void *a5, void
     v14 = stru_B0F5D8.DynamicVector_field_0x28++; /*0x4f5f4c*/
     *(unsigned int *)(stru_B0F5D8.DynamicVector_field_0x1C + 4 * v14) = this; /*0x4f5f5b*/
   }
-  if ( stru_B0F618.DynamicVector_field_0x10 < stru_B0F618.DynamicVector_field_0x8 /*0x4f5f92*/
+  if ( stru_B0F618.q010 < stru_B0F618.DynamicVector_field_0x8 /*0x4f5f92*/
     || (stru_B0F618.__pad_C[1] || !stru_B0F618.DynamicVector_field_0x8)
     && *(int *)stru_B0F618.__pad_14 > 0
     && (*(unsigned __int8 (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)stru_B0F618.__pad_0 + 8))(
@@ -660,7 +660,7 @@ int HouseClass::Construct(int a2, void *a2_1, void *a3, void *a4, void *a5, void
          *(unsigned int *)stru_B0F618.__pad_14 + stru_B0F618.DynamicVector_field_0x8,
          0) )
   {
-    v15 = stru_B0F618.DynamicVector_field_0x10++; /*0x4f5f9f*/
+    v15 = stru_B0F618.q010++; /*0x4f5f9f*/
     *(unsigned int *)(*(unsigned int *)&stru_B0F618.DynamicVector_field_0x1[3] + 4 * v15) = this; /*0x4f5fae*/
   }
   if ( stru_B0F720.DynamicVector_field_0x10 < stru_B0F720.DynamicVector_field_0x8 /*0x4f5fe5*/
@@ -855,17 +855,17 @@ int HouseClass::Construct(int a2, void *a2_1, void *a3, void *a4, void *a5, void
     v55 = ConnectionPointClass::Construct(v54, dword_7E9550, v64); /*0x4f64be*/
   else
     v55 = 0; /*0x4f64c5*/
-  *(&this->u32_581F) = (int)v55; /*0x4f64cb*/
+  *(&this->isBeingDrained) = (int)v55; /*0x4f64cb*/
   (*(void (**)(unsigned int *, void *, unsigned int *))*v55)(v55, &unk_7F7CC0, &v65); /*0x4f64da*/
   v56 = *(&this->u8_581B); /*0x4f64dc*/
-  if ( *(&this->u8_581D) < v56 /*0x4f650a*/
+  if ( *(&this->recheckRadar) < v56 /*0x4f650a*/
     || (this->u32_16071 || !v56)
-    && (v57 = *(&this->u8_581E), v57 > 0)
+    && (v57 = *(&this->spySatActive), v57 > 0)
     && (*(unsigned __int8 (**)(int *, int, unsigned int))(*(&this->u8_5819) + 8))(&this->u8_5819, v57 + v56, 0) )
   {
-    v58 = *(&this->u8_581D); /*0x4f6511*/
+    v58 = *(&this->recheckRadar); /*0x4f6511*/
     v59 = (unsigned int *)*(&this->u8_581A); /*0x4f6514*/
-    *(&this->u8_581D) = v58 + 1; /*0x4f651a*/
+    *(&this->recheckRadar) = v58 + 1; /*0x4f651a*/
     v59[v58] = v65; /*0x4f6521*/
   }
   (*(void (**)(int))(*(unsigned int *)v64 + 8))(v64); /*0x4f652b*/

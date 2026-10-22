@@ -34,7 +34,7 @@ char RadarHashVector::ComputeHashIndex(int a2, char * a3)
   if ( a2 ) /*0x658b1e*/
   {
     v5 = a3; /*0x658b24*/
-    (this->m_C) = ((this->m_C) & ~0xFF) | ((0) & 0xFF); /*0x658b28*/
+    (this->q00C) = ((this->q00C) & ~0xFF) | ((0) & 0xFF); /*0x658b28*/
     if ( a3 ) /*0x658b2d*/
     {
       if ( a2 - 1 >= 0 ) /*0x658b67*/
@@ -78,12 +78,12 @@ char RadarHashVector::ComputeHashIndex(int a2, char * a3)
         v5 = 0; /*0x658b5e*/
       }
     }
-    (this->m_C) = ((this->m_C) & ~0xFF) | ((1) & 0xFF); /*0x658b7d*/
+    (this->q00C) = ((this->q00C) & ~0xFF) | ((1) & 0xFF); /*0x658b7d*/
     if ( !v5 ) /*0x658b81*/
       return 0; /*0x658c11*/
     if ( *&this->q004 ) /*0x658b87*/
     {
-      m_8 = this->m_8; /*0x658b8c*/
+      m_8 = this->q008; /*0x658b8c*/
       if ( a2 < m_8 ) /*0x658b91*/
         m_8 = a2; /*0x658b93*/
       if ( m_8 > 0 ) /*0x658b97*/
@@ -103,23 +103,23 @@ char RadarHashVector::ComputeHashIndex(int a2, char * a3)
         while ( m_8 ); /*0x658bbf*/
         v3 = a2; /*0x658bc1*/
       }
-      if ( (((this->m_C) >> 8) & 0xFF) ) /*0x658bc7*/
+      if ( (((this->q00C) >> 8) & 0xFF) ) /*0x658bc7*/
       {
         __3_YAXPAX_Z(*&this->q004); /*0x658bd0*/
         *&this->q004 = 0; /*0x658bd8*/
       }
     }
     *&this->q004 = v5; /*0x658be3*/
-    this->m_8 = v3; /*0x658be9*/
-    (this->m_C) = ((this->m_C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x658bec*/
+    this->q008 = v3; /*0x658be9*/
+    (this->q00C) = ((this->q00C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x658bec*/
   }
   else
   {
     (*(void (**)(_DynamicVectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x658bf5*/
   }
-  v15 = this->m_8; /*0x658bf8*/
-  if ( v15 < this->m_10 ) /*0x658c00*/
-    this->m_10 = v15; /*0x658c02*/
+  v15 = this->q008; /*0x658bf8*/
+  if ( v15 < this->q010 ) /*0x658c00*/
+    this->q010 = v15; /*0x658c02*/
   return 1; /*0x658c05*/
 
 }
@@ -132,8 +132,8 @@ unsigned int * RadarHashVector::Construct(MapClass * aP1, MapClass * aP2, void *
 
   aP1->RadarHashVector_field_0x04 = 0; /*0x658ded*/
   aP1->q008 = (int)(aP2); /*0x658df0*/
-  LOBYTE(aP1->RadarHashVector_field_0x0C) = 1; /*0x658df3*/
-  BYTE1(aP1->RadarHashVector_field_0x0C) = 0; /*0x658df7*/
+  LOBYTE(aP1->u32_C) = 1; /*0x658df3*/
+  BYTE1(aP1->u32_C) = 0; /*0x658df7*/
   /* X11: ptr_0 install elided (implicit via VectorClass virtuals 0x658dfa) */
   if ( aP2 ) /*0x658e00*/
   {
@@ -184,7 +184,7 @@ unsigned int * RadarHashVector::Construct(MapClass * aP1, MapClass * aP2, void *
         v6 = 0; /*0x658e55*/
       }
       aP1->RadarHashVector_field_0x04 = v6; /*0x658e57*/
-      BYTE1(aP1->RadarHashVector_field_0x0C) = 1; /*0x658e5a*/
+      BYTE1(aP1->u32_C) = 1; /*0x658e5a*/
     }
   }
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_154625) */  /*0x658e5e*/
@@ -203,8 +203,8 @@ void RadarHashVector::ddtor(void *a1)
     operator delete((void *)(*&this->q004)); /*0x658a83*/
     *&this->q004 = 0; /*0x658a8b*/
   }
-  (((unsigned char *)&(*&this->m_C))[1]) = 0; /*0x658a8e*/
-  *&this->m_8 = 0; /*0x658a91*/
+  (((unsigned char *)&(*&this->q00C))[1]) = 0; /*0x658a8e*/
+  *&this->q008 = 0; /*0x658a91*/
 }
 } // namespace gamemd
 // 0x658AA0
@@ -232,7 +232,7 @@ int RadarHashVector::Read(unsigned int * a2, void *a2_2, void *a3)
 namespace gamemd {
 unsigned int RadarHashVector::Write(int a2)
 {
-  if ( (*((unsigned char *)&(*&this->m_C))) ) /*0x658af0*/
+  if ( (*((unsigned char *)&(*&this->q00C))) ) /*0x658af0*/
     return (unsigned int)(a2 - *&this->q004) >> 4; /*0x658b05*/
   else
     return 0; /*0x658af7*/
@@ -244,7 +244,7 @@ int RadarHashVector::FindItemIndex(unsigned int * a2)
 {
 
   int m_10; // edx
-  m_10 = *&this->m_10; /*0x658c20*/
+  m_10 = *&this->q010; /*0x658c20*/
   int result = 0; // eax /*0x658c25*/
   if ( m_10 <= 0 ) /*0x658c2b*/
     return -1; /*0x658c56*/
@@ -305,13 +305,13 @@ char * RadarHashVector::Destructor(char a2)
   {
     v11 = *&this->q004; /*0x658cc5*/
     /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7F044C) */  /*0x658ccc*/
-    if ( v11 && (((this->m_C) >> 8) & 0xFF) ) /*0x658cd4*/
+    if ( v11 && (((this->q00C) >> 8) & 0xFF) ) /*0x658cd4*/
     {
       __3_YAXPAX_Z(v11); /*0x658cda*/
       *&this->q004 = 0; /*0x658ce2*/
     }
-    (this->m_C) = ((this->m_C) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x658ce9*/
-    this->m_8 = 0; /*0x658cee*/
+    (this->q00C) = ((this->q00C) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x658ce9*/
+    this->q008 = 0; /*0x658cee*/
     if ( (a2 & 1) != 0 ) /*0x658cf1*/
       __3_YAXPAX_Z(this); /*0x658cf4*/
     return this->__pad_0; /*0x658cfc*/

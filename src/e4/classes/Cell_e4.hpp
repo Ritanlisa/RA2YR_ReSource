@@ -22,8 +22,8 @@ struct Cell {
 #pragma pack(push, 1)  // X60: binary-packed layout
     int Cell_field_0x0;  // 0x0
     int q004;  // 0x4
-    int Cell_field_0x8;  // 0x8
-    int Cell_field_0xC;  // 0xC
+    int u32_8;  // 0x8
+    int u32_C;  // 0xC
     char __pad_10[8];  // 0x10
     int u32_18;  // 0x18
     unsigned int q01C;  // 0x1C
@@ -58,12 +58,12 @@ struct Cell {
     unsigned char u32_11A;  // 0x11A
     char Cell_field_0x11B[4];  // 0x11B
     char __pad_11F[13];  // 0x11F
-    int Cell_field_0x12C;  // 0x12C
+    int q12C;  // 0x12C
     char __pad_130[12];  // 0x130
     int q13C;  // 0x13C
     unsigned int u32_140;  // 0x140
     char __pad_144[264];  // 0x144
-    int Cell_field_0x24C;  // 0x24C
+    int q24C;  // 0x24C
     char __pad_250[72];  // 0x250
     int q298;  // 0x298
     int q29C;  // 0x29C

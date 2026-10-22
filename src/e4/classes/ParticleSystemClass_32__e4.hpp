@@ -9,7 +9,7 @@ struct ParticleSystemClass_32_ {
     int q004;  // 0x4
     int Capacity;  // 0x8
     unsigned int m_C;  // 0xC
-    unsigned int m_10;  // 0x10
+    unsigned int q010;  // 0x10
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     char  ResizeDataArray(int a2, unsigned int * a3);  // 0x4EB8A0

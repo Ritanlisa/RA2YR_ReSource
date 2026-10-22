@@ -1066,19 +1066,19 @@ ObjectClass * * HashTable_flat::Remove(int a2, void *a2_1)
     v5 = CommandClass::BinarySearchAction((CommandClass *)v3, (unsigned int *)&a2); /*0x724763*/
     if ( !v5 ) /*0x72476a*/
       return; /*0x72476a*/
-    v3->HashTable_field_0x10 = v5; /*0x724770*/
+    v3->u32_10 = v5; /*0x724770*/
   }
-  if ( v3->HashTable_field_0x04 ) /*0x724773*/
+  if ( v3->u32_4 ) /*0x724773*/
   {
-    HashTable_field_0x10 = (unsigned int *)v3->HashTable_field_0x10; /*0x72477a*/
+    HashTable_field_0x10 = (unsigned int *)v3->u32_10; /*0x72477a*/
     if ( HashTable_field_0x10 && *HashTable_field_0x10 == a2 ) /*0x724789*/
       goto LABEL_11; /*0x724789*/
     v7 = CommandClass::BinarySearchAction((CommandClass *)v3, (unsigned int *)&a2); /*0x724792*/
     if ( v7 ) /*0x724799*/
     {
-      v3->HashTable_field_0x10 = v7; /*0x72479b*/
+      v3->u32_10 = v7; /*0x72479b*/
 LABEL_11:
-      v8 = (void **)(v3->HashTable_field_0x10 + 4); /*0x72479e*/
+      v8 = (void **)(v3->u32_10 + 4); /*0x72479e*/
       goto LABEL_13; /*0x7247a4*/
     }
   }
@@ -1093,34 +1093,34 @@ LABEL_13:
     v9 = Block; /*0x7247c8*/
   }
   v11 = (unsigned int *)v9; /*0x7247cd*/
-  v12 = v3->HashTable_field_0x04; /*0x7247cf*/
+  v12 = v3->u32_4; /*0x7247cf*/
   if ( v12 ) /*0x7247d4*/
   {
-    if ( !((v3->HashTable_field_0x0C) & 0xFF) ) /*0x7247da*/
+    if ( !((v3->u32_C) & 0xFF) ) /*0x7247da*/
     {
       qsort(*(void **)v3->__pad_0, v12, 8u, (_CoreCrtNonSecureSearchSortCompareFunction)CompareFunc2Int); /*0x7247ec*/
-      v3->HashTable_field_0x10 = 0; /*0x7247f4*/
-      (v3->HashTable_field_0x0C) = ((v3->HashTable_field_0x0C) & ~0xFF) | ((1) & 0xFF); /*0x7247fb*/
+      v3->u32_10 = 0; /*0x7247f4*/
+      (v3->u32_C) = ((v3->u32_C) & ~0xFF) | ((1) & 0xFF); /*0x7247fb*/
     }
     v13 = *(unsigned int *)v3->__pad_0; /*0x724801*/
     v24 = *v11; /*0x724807*/
-    v14 = UI_Remove(v13, v3->HashTable_field_0x04, &v24); /*0x72480f*/
+    v14 = UI_Remove(v13, v3->u32_4, &v24); /*0x72480f*/
     if ( v14 ) /*0x724816*/
     {
       v15 = (v14 - *(unsigned int *)v3->__pad_0) >> 3; /*0x72481a*/
       if ( v15 != -1 ) /*0x724820*/
       {
-        for ( i = v15 + 1; i < v3->HashTable_field_0x04; *(v17 - 1) = v17[1] ) /*0x72482a*/
+        for ( i = v15 + 1; i < v3->u32_4; *(v17 - 1) = v17[1] ) /*0x72482a*/
         {
           v17 = (unsigned int *)(*(unsigned int *)v3->__pad_0 + 8 * i++); /*0x72482e*/
           *(v17 - 2) = *v17; /*0x724834*/
         }
         v18 = *(CommandClass *)v3->__pad_0; /*0x724847*/
-        v19 = v3->HashTable_field_0x04 - 1; /*0x724849*/
-        v3->HashTable_field_0x04 = v19; /*0x72484c*/
+        v19 = v3->u32_4 - 1; /*0x724849*/
+        v3->u32_4 = v19; /*0x72484c*/
         *(unsigned int *)(*(unsigned int *)&v18 + 8 * v19) = 0; /*0x724851*/
         *(unsigned int *)(*(unsigned int *)&v18 + 8 * v19 + 4) = 0; /*0x724854*/
-        v3->HashTable_field_0x10 = 0; /*0x724858*/
+        v3->u32_10 = 0; /*0x724858*/
       }
     }
   }

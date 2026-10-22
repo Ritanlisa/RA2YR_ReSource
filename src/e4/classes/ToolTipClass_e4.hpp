@@ -8,8 +8,8 @@ namespace gamemd {
 struct ToolTipClass {
     int __pad_000;  // 0x0
     unsigned int Position;  // 0x4
-    int ToolTipClass_field_0x08;  // 0x8
-    int ToolTipClass_field_0x0C;  // 0xC
+    int q008;  // 0x8
+    int q00C;  // 0xC
     int Duration;  // 0x10
     int DisplayTimer;  // 0x14
     void* q018;  // 0x18
@@ -17,9 +17,9 @@ struct ToolTipClass {
     int TextBuffer;  // 0x20
     void* q024;  // 0x24
     unsigned int q028;  // 0x28
-    int ToolTipClass_field_0x2C;  // 0x2C
-    int ToolTipClass_field_0x30;  // 0x30
-    int ToolTipClass_field_0x34;  // 0x34
+    int q02C;  // 0x2C
+    int q030;  // 0x30
+    int q034;  // 0x34
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int initString();

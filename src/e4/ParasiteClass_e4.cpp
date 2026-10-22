@@ -999,14 +999,14 @@ Coord * * ParasiteClass::Update(void *a1, void *a2, void *a3, void *a4)
   v17 = (Cell *)Coord::To_Cell((Coord *)&dword_87F7E8, &v69); /*0x62bf46*/
   v58 = 0; /*0x62bf4d*/
   v57 = 0; /*0x62bf52*/
-  if ( (v17->Cell_field_0x140 & 0x100) != 0 || (Coord::To_Cell((Coord *)&dword_87F7E8, &v68)->flags & 0x100) != 0 ) /*0x62bf74*/
+  if ( (v17->u32_140 & 0x100) != 0 || (Coord::To_Cell((Coord *)&dword_87F7E8, &v68)->flags & 0x100) != 0 ) /*0x62bf74*/
   {
-    if ( v69.Coord3D_field_0x08 < v67 ) /*0x62bf84*/
+    if ( v69.q008 < v67 ) /*0x62bf84*/
     {
-      if ( v68.Coord3D_field_0x08 >= v67 ) /*0x62bf93*/
+      if ( v68.q008 >= v67 ) /*0x62bf93*/
         v58 = 1; /*0x62bf95*/
     }
-    else if ( v68.Coord3D_field_0x08 < v67 ) /*0x62bf88*/
+    else if ( v68.q008 < v67 ) /*0x62bf88*/
     {
       v57 = 1; /*0x62bf8a*/
     }

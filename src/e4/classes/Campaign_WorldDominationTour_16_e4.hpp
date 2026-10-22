@@ -14,7 +14,7 @@ struct Campaign_WorldDominationTour_16 {
     char __pad_1[3];  // 0x1
     int q004;  // 0x4
     int q008;  // 0x8
-    unsigned int m_C;  // 0xC
+    unsigned int q00C;  // 0xC
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int  Release(int a2, unsigned int * a3);  // 0x765840

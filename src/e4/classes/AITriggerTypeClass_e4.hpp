@@ -18,17 +18,17 @@ struct AITriggerTypeClass {
     unsigned char AITriggerTypeClass_field_0x0C;  // 0xC
     char __pad_D[3];  // 0xD
     int AITriggerTypeClass_field_0x10;  // 0x10
-    int AITriggerTypeClass_field_0x14;  // 0x14
-    int AITriggerTypeClass_field_0x18;  // 0x18
-    int AITriggerTypeClass_field_0x1C;  // 0x1C
-    int AITriggerTypeClass_field_0x20;  // 0x20
-    int AITriggerTypeClass_field_0x24;  // 0x24
-    unsigned int AITriggerTypeClass_field_0x28;  // 0x28
-    int AITriggerTypeClass_field_0x2C;  // 0x2C
-    int AITriggerTypeClass_field_0x30;  // 0x30
-    int AITriggerTypeClass_field_0x34;  // 0x34
-    int AITriggerTypeClass_field_0x38;  // 0x38
-    int AITriggerTypeClass_field_0x3C;  // 0x3C
+    int q014;  // 0x14
+    int q018;  // 0x18
+    int q01C;  // 0x1C
+    int q020;  // 0x20
+    int q024;  // 0x24
+    unsigned int u32_28;  // 0x28
+    int q02C;  // 0x2C
+    int q030;  // 0x30
+    int q034;  // 0x34
+    int q038;  // 0x38
+    int q03C;  // 0x3C
     char __pad_40[84];  // 0x40
     unsigned char u32_94;  // 0x94
     char __pad_95[3];  // 0x95

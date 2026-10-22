@@ -10,13 +10,13 @@ namespace gamemd {
 struct SortedArray {
     unsigned char __pad_000;  // 0x0
     char __pad_1[3];  // 0x1
-    int SortedArray_field_0x04;  // 0x4
-    int SortedArray_field_0x08;  // 0x8
+    int u32_4;  // 0x4
+    int q008;  // 0x8
     unsigned int u32_C;  // 0xC
-    int SortedArray_field_0x10;  // 0x10
-    int SortedArray_field_0x14;  // 0x14
-    int SortedArray_field_0x18;  // 0x18
-    int SortedArray_field_0x1C;  // 0x1C
+    int u32_10;  // 0x10
+    int q014;  // 0x14
+    int q018;  // 0x18
+    int q01C;  // 0x1C
     int u32_20;  // 0x20
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---

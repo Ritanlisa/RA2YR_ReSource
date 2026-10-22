@@ -373,7 +373,7 @@ struct HouseClass {
     void** waypointPath;  // 0x16060
     int waypointPathCount;  // 0x16064
     int waypointPathCapacity;  // 0x16068
-    unsigned int HouseClass_field_1607C;  // 0x1606C
+    unsigned int u32_1607C;  // 0x1606C
     unsigned int unknown16080;  // 0x16070
     unsigned int unknown16084;  // 0x16074
     double unused16088;  // 0x16078

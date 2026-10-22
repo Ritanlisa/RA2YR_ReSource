@@ -8,10 +8,10 @@ namespace gamemd {
 struct MSBitPrintAnim {
     void* ptr_0;  // 0x0
     int __pad_004;  // 0x4
-    int MSBitPrintAnim_field_0x08;  // 0x8
-    int MSBitPrintAnim_field_0x0C;  // 0xC
-    int MSBitPrintAnim_field_0x10;  // 0x10
-    int MSBitPrintAnim_field_0x14;  // 0x14
+    int q008;  // 0x8
+    int q00C;  // 0xC
+    int q010;  // 0x10
+    int q014;  // 0x14
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     MSBitPrintAnim * QueryInterface(void ** Block, char a2);

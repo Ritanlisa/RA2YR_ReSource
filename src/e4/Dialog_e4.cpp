@@ -79,7 +79,7 @@ void Dialog::MapDialogResource(void *a1)
   if ( *&this->q004 == 48879 ) /*0x49f74a*/
   {
     Debug::Log(); /*0x49f751*/
-    g_DDrawSurfaceManager.description[6] = (int)MapViewOfFileEx(this->Dialog_field_0xC, 0xF001Fu, 0, 0, 0, 0); /*0x49f772*/
+    g_DDrawSurfaceManager.description[6] = (int)MapViewOfFileEx(this->q00C, 0xF001Fu, 0, 0, 0, 0); /*0x49f772*/
     Debug::Log(); /*0x49f77e*/
   }
 
@@ -1499,7 +1499,7 @@ LABEL_39:
   v11 = *(HWND **)(*(unsigned int *)stru_AC1B48.__pad_0 /*0x610001*/
                  + 4
                  * ((*(int (**)(HWND *))&stru_AC1B48.__pad_10[8])(&hWnd)
-                  & ((1 << SLOBYTE(stru_AC1B48.Dialog_field_0xC)) - 1)));
+                  & ((1 << SLOBYTE(stru_AC1B48.q00C)) - 1)));
   if ( v11 ) /*0x610006*/
   {
     while ( *v11 != hWnd ) /*0x610011*/
@@ -1517,15 +1517,15 @@ LABEL_46:
     v14[1] = v8; /*0x61003a*/
     v14[2] = 0; /*0x61003d*/
     v15 = (*(int (**)(HWND *))&stru_AC1B48.__pad_10[8])(&hWnd) /*0x61005a*/
-        & ((1 << SLOBYTE(stru_AC1B48.Dialog_field_0xC)) - 1);
+        & ((1 << SLOBYTE(stru_AC1B48.q00C)) - 1);
     v16 = *(unsigned int *)(*(unsigned int *)stru_AC1B48.__pad_0 + 4 * v15); /*0x61005c*/
     *(unsigned int *)(*(unsigned int *)stru_AC1B48.__pad_0 + 4 * v15) = v14; /*0x61005f*/
     if ( v16 ) /*0x610064*/
       v14[2] = v16; /*0x610066*/
     ++*(unsigned int *)&stru_AC1B48.__pad_0[4]; /*0x61007d*/
     v34 = *(unsigned int *)&stru_AC1B48.__pad_0[4]; /*0x610079*/
-    LODWORD(v34) = stru_AC1B48.Dialog_field_0x8; /*0x610086*/
-    if ( (double)*(unsigned int *)&stru_AC1B48.__pad_0[4] / (double)stru_AC1B48.Dialog_field_0x8 >= *(double *)&stru_AC1B48.Dialog_field_0x28 ) /*0x61009d*/
+    LODWORD(v34) = stru_AC1B48.u32_8; /*0x610086*/
+    if ( (double)*(unsigned int *)&stru_AC1B48.__pad_0[4] / (double)stru_AC1B48.u32_8 >= *(double *)&stru_AC1B48.q028 ) /*0x61009d*/
       Dialog::GrowBuffer(&stru_AC1B48); /*0x6100a4*/
   }
   v17 = 0; /*0x6100ae*/
@@ -2618,14 +2618,14 @@ AbstractClass * * Dialog::GrowBuffer()
 
   if ( this->u32_14 != 1 ) /*0x624be8*/
   {
-    Dialog_field_0x8 = this->Dialog_field_0x8; /*0x624bf0*/
+    Dialog_field_0x8 = this->u32_8; /*0x624bf0*/
     v3 = *(unsigned int ***)this->__pad_0; /*0x624bf3*/
-    v4 = this->Dialog_field_0xC + 1; /*0x624bfc*/
-    this->Dialog_field_0x8 = 2 * Dialog_field_0x8; /*0x624bfd*/
+    v4 = this->q00C + 1; /*0x624bfc*/
+    this->u32_8 = 2 * Dialog_field_0x8; /*0x624bfd*/
     v13 = v3; /*0x624c00*/
-    this->Dialog_field_0xC = v4; /*0x624c08*/
+    this->q00C = v4; /*0x624c08*/
     v5 = (void *)__2_YAPAXI_Z(8 * Dialog_field_0x8); /*0x624c13*/
-    v6 = 4 * this->Dialog_field_0x8; /*0x624c18*/
+    v6 = 4 * this->u32_8; /*0x624c18*/
     *(unsigned int *)this->__pad_0 = v5; /*0x624c1f*/
     memset(v5, 0, v6); /*0x624c24*/
     if ( Dialog_field_0x8 > 0 ) /*0x624c2f*/
@@ -2639,7 +2639,7 @@ AbstractClass * * Dialog::GrowBuffer()
         {
           do /*0x624c61*/
           {
-            v10 = (*(int (**)(unsigned int *))&this->u32_18)(v9) & ((1 << this->Dialog_field_0xC) - 1); /*0x624c4b*/
+            v10 = (*(int (**)(unsigned int *))&this->u32_18)(v9) & ((1 << this->q00C) - 1); /*0x624c4b*/
             v11 = *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v10); /*0x624c4f*/
             *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v10) = v9; /*0x624c55*/
             v12 = (unsigned int *)v9[2]; /*0x624c57*/
@@ -2708,8 +2708,8 @@ AbstractClass * * Dialog::BindGadgetData(int *a2, char *Block, void *a3)
   v4 = *&this->q004; /*0x624cab*/
   if ( !v4 ) /*0x624cb0*/
     return 0; /*0x624cb5*/
-  v39 = (double)(unsigned int)(v4 - 1) / (double)this->Dialog_field_0x8; /*0x624ce0*/
-  v6 = (*(int (**)(int *))&this->u32_18)(a2) & ((1 << this->Dialog_field_0xC) - 1); /*0x624cf5*/
+  v39 = (double)(unsigned int)(v4 - 1) / (double)this->u32_8; /*0x624ce0*/
+  v6 = (*(int (**)(int *))&this->u32_18)(a2) & ((1 << this->q00C) - 1); /*0x624cf5*/
   v38 = v6; /*0x624cf7*/
   v7 = *(int **)(*(unsigned int *)this->__pad_0 + 4 * v6); /*0x624cfb*/
   v36 = v7; /*0x624d00*/
@@ -2767,16 +2767,16 @@ AbstractClass * * Dialog::BindGadgetData(int *a2, char *Block, void *a3)
     --*&this->q004; /*0x624e17*/
     if ( v19 || v20 ) /*0x624e1c*/
     {
-      Dialog_field_0x8 = this->Dialog_field_0x8; /*0x624e25*/
+      Dialog_field_0x8 = this->u32_8; /*0x624e25*/
       if ( Dialog_field_0x8 > *&this->u32_30 && this->u32_14 != 1 ) /*0x624e37*/
       {
         v22 = *(char **)this->__pad_0; /*0x624e40*/
         Blockb = *(char **)this->__pad_0; /*0x624e45*/
-        v23 = this->Dialog_field_0xC - 1; /*0x624e4b*/
-        this->Dialog_field_0x8 = Dialog_field_0x8 >> 1; /*0x624e4c*/
-        this->Dialog_field_0xC = v23; /*0x624e56*/
+        v23 = this->q00C - 1; /*0x624e4b*/
+        this->u32_8 = Dialog_field_0x8 >> 1; /*0x624e4c*/
+        this->q00C = v23; /*0x624e56*/
         v24 = (void *)__2_YAPAXI_Z(4 * (Dialog_field_0x8 >> 1)); /*0x624e62*/
-        v25 = 4 * this->Dialog_field_0x8; /*0x624e67*/
+        v25 = 4 * this->u32_8; /*0x624e67*/
         *(unsigned int *)this->__pad_0 = v24; /*0x624e6e*/
         memset(v24, 0, v25); /*0x624e74*/
         if ( (int)Dialog_field_0x8 > 0 ) /*0x624e7f*/
@@ -2790,7 +2790,7 @@ AbstractClass * * Dialog::BindGadgetData(int *a2, char *Block, void *a3)
             {
               do /*0x624eb8*/
               {
-                v29 = (*(int (**)(int))&this->u32_18)(v28) & ((1 << this->Dialog_field_0xC) - 1); /*0x624e9b*/
+                v29 = (*(int (**)(int))&this->u32_18)(v28) & ((1 << this->q00C) - 1); /*0x624e9b*/
                 v30 = *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v29); /*0x624ea0*/
                 *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v29) = v28; /*0x624ea6*/
                 v31 = v28->q204; /*0x624ea8*/

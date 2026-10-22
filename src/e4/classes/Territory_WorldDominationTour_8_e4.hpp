@@ -7,8 +7,8 @@ namespace gamemd {
 struct Territory_WorldDominationTour_8 {
     unsigned char __pad_000;  // 0x0
     char __pad_1[3];  // 0x1
-    int Territory_WorldDominationTour_8_field_0x4;  // 0x4
-    int Territory_WorldDominationTour_8_field_0x8;  // 0x8
+    int q004;  // 0x4
+    int q008;  // 0x8
     int q00C;  // 0xC
     int Ticks;  // 0x10
     unsigned char __pad_014;  // 0x14

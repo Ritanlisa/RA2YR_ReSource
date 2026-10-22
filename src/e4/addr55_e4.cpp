@@ -116,7 +116,7 @@ void ObjectClass::sub_550080(ObjectClass ** Block)
   LABEL_7:
   (Block->__pad_004) = 0; /*0x5500cc*/
   LABEL_8:
-  if ( (Block->u32_50) ) /*0x5500d0*/
+  if ( (Block->nextObject) ) /*0x5500d0*/
     (Block->u8_52) = (Block->u8_52) == 0; /*0x5500df*/
   if ( (int)Block->ptr_0 >= Block->ambientSoundController[4] && Block ) /*0x5500ed*/
   {
@@ -1471,7 +1471,7 @@ LABEL_16:
   result = this->uniqueId; /*0x55b818*/
   for ( i = 0; i < result; ++i ) /*0x55b81f*/
   {
-    v14 = *((unsigned int *)this->ptr_4 + i); /*0x55b824*/
+    v14 = *((unsigned int *)this->M4 + i); /*0x55b824*/
     if ( v14 && (*(unsigned char *)(v14 + 20) & 4) != 0 && *(unsigned int *)(v14 + 1652) && !*(unsigned char *)(v14 + 973) ) /*0x55b844*/
     {
       if ( !*(unsigned int *)(v14 + 1652) ) /*0x55b84e*/

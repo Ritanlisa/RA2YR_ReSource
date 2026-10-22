@@ -157,7 +157,7 @@ unsigned int VectorClass::sub_4E0A00(int a2, unsigned int * a3)
   }
   /* X11: ptr_0 install elided (legacy slot spelling slot, RHS g_ptr_7E928C) */  /*0x4e0a8a*/
   this->u32_14 = 10; /*0x4e0a90*/
-  this->q010 = 0; /*0x4e0a97*/
+  this->Capacity = 0; /*0x4e0a97*/
   return &this->ptr_0; /*0x4e0aa0*/
 
 }

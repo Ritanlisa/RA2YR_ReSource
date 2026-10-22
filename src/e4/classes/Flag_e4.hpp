@@ -7,8 +7,8 @@ namespace gamemd {
 
 struct Flag {
     int __pad_0;  // 0x0
-    int Flag_field_0x04;  // 0x4
-    int Flag_field_0x08;  // 0x8
+    int q004;  // 0x4
+    int q008;  // 0x8
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int IsNot2();

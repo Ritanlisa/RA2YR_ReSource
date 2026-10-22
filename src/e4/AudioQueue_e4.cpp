@@ -37,13 +37,13 @@ unsigned int * AudioQueue::CreateNode()
   memset(v2, 0, 0x60u); /*0x402b07*/
   (v2)->InitEmpty(); /*0x402b0e*/
   *v2->q008.__pad_0 = 0; /*0x402b13*/
-  v2[1].DListNode_field_0x04 = (int)this; /*0x402b1c*/
+  v2[1].q004 = (int)this; /*0x402b1c*/
   if ( ((int (*)(DListNode *))this->u32_14)(v2) ) /*0x402b1f*/
   {
     if ( v2 ) /*0x402b28*/
     {
-      (*(void (**)(DListNode *))(v2[1].DListNode_field_0x04 + 24))(v2); /*0x402b2f*/
-      *(unsigned int *)(v2[1].DListNode_field_0x04 + 12) &= ~1u; /*0x402b36*/
+      (*(void (**)(DListNode *))(v2[1].q004 + 24))(v2); /*0x402b2f*/
+      *(unsigned int *)(v2[1].q004 + 12) &= ~1u; /*0x402b36*/
       __3_YAXPAX_Z(v2); /*0x402b3a*/
       return 0; /*0x402b47*/
     }
@@ -688,7 +688,7 @@ int AudioQueue::HaltVoices(Voice *a1)
       {
         if ( !*(unsigned int *)&v2[5].__pad_0[16] ) /*0x4081c8*/
         {
-          if ( v2->AudioQueue_field_0x14 ) /*0x4081d2*/
+          if ( v2->u32_14 ) /*0x4081d2*/
           {
             EnterCriticalSection(&CriticalSection); /*0x4081de*/
             Voice::Stop(v3); /*0x4081e3*/

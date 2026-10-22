@@ -148,7 +148,7 @@ char MoveFeedback::AddRef(int a2)
 {
 
   int m_8; // esi
-  m_8 = *&this->m_8; /*0x40b962*/
+  m_8 = *&this->q008; /*0x40b962*/
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x40b96d*/
   {
     int v3 = 0; // edx /*0x40b96f*/
@@ -174,7 +174,7 @@ int MoveFeedback::Draw(unsigned int * a2, void *a2_1, void *a3, void *a4, void *
 {
 
   int m_10; // edx
-  m_10 = *&this->m_10; /*0x40bb90*/
+  m_10 = *&this->q010; /*0x40bb90*/
   int result = 0; // eax /*0x40bb93*/
   if ( m_10 <= 0 ) /*0x40bb98*/
     return -1; /*0x40bbaf*/
@@ -215,21 +215,21 @@ void MoveFeedback::Destroy(void *a1)
 {
 
   void *v2 = *&this->m_Capacity; // eax /*0x40be56*/
-  *&this->m_10 = 0; /*0x40be59*/
+  *&this->q010 = 0; /*0x40be59*/
   if ( v2 && (((unsigned char *)&(*&this->IsAllocated))[1]) ) /*0x40be60*/
   {
     operator delete((v2)); /*0x40be66*/
     *&this->m_Capacity = 0; /*0x40be6e*/
   }
-  (((unsigned char *)&(*&this->m_C))[1]) = 0; /*0x40be71*/
-  *&this->m_8 = 0; /*0x40be74*/
+  (((unsigned char *)&(*&this->q00C))[1]) = 0; /*0x40be71*/
+  *&this->q008 = 0; /*0x40be74*/
 }
 } // namespace gamemd
 // 0x40BE80
 namespace gamemd {
 unsigned int MoveFeedback::GetIndex2(int a2)
 {
-  if ( (*((unsigned char *)&(*&this->m_C))) ) /*0x40be80*/
+  if ( (*((unsigned char *)&(*&this->q00C))) ) /*0x40be80*/
     return (unsigned int)(a2 - *&this->m_Capacity) >> 2; /*0x40be95*/
   else
     return 0; /*0x40be87*/
@@ -243,41 +243,41 @@ char MoveFeedback::SetCapacity(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x40c03c*/
   {
-    (this->m_C) = ((this->m_C) & ~0xFF) | ((0) & 0xFF); /*0x40c042*/
+    (this->q00C) = ((this->q00C) & ~0xFF) | ((0) & 0xFF); /*0x40c042*/
     unsigned int *v4; // edi
     if ( a3 ) /*0x40c048*/
       v4 = a3; /*0x40c05e*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x40c05a*/
-    (this->m_C) = ((this->m_C) & ~0xFF) | ((1) & 0xFF); /*0x40c062*/
+    (this->q00C) = ((this->q00C) & ~0xFF) | ((1) & 0xFF); /*0x40c062*/
     if ( !v4 ) /*0x40c066*/
       return 0; /*0x40c0da*/
     if ( *&this->m_Capacity ) /*0x40c068*/
     {
       int m_8; // ecx
-      m_8 = this->m_8; /*0x40c06f*/
+      m_8 = this->q008; /*0x40c06f*/
       if ( a2 < m_8 ) /*0x40c074*/
         m_8 = a2; /*0x40c076*/
       int i; // eax
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->m_Capacity + 4 * i - 4) ) /*0x40c07c*/
         ++i; /*0x40c081*/
-      if ( (((this->m_C) >> 8) & 0xFF) ) /*0x40c08e*/
+      if ( (((this->q00C) >> 8) & 0xFF) ) /*0x40c08e*/
       {
         __3_YAXPAX_Z(*&this->m_Capacity); /*0x40c099*/
         *&this->m_Capacity = 0; /*0x40c0a1*/
       }
     }
     *&this->m_Capacity = v4; /*0x40c0aa*/
-    this->m_8 = a2; /*0x40c0b2*/
-    (this->m_C) = ((this->m_C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x40c0b5*/
+    this->q008 = a2; /*0x40c0b2*/
+    (this->q00C) = ((this->q00C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x40c0b5*/
   }
   else
   {
     (*(void (**)(_DynamicVectorClass_PBVCommandClass *))(*(unsigned int *)this->m_Items + 12))(this); /*0x40c0be*/
   }
-  int v7 = this->m_8; // eax /*0x40c0c1*/
-  if ( v7 < this->m_10 ) /*0x40c0c9*/
-    this->m_10 = v7; /*0x40c0cb*/
+  int v7 = this->q008; // eax /*0x40c0c1*/
+  if ( v7 < this->q010 ) /*0x40c0c9*/
+    this->q010 = v7; /*0x40c0cb*/
   return 1; /*0x40c0ce*/
 
 }
@@ -288,7 +288,7 @@ int MoveFeedback::FindMoveItem(unsigned int * a2)
 {
 
   int m_10; // edx
-  m_10 = *&this->m_10; /*0x40c0e0*/
+  m_10 = *&this->q010; /*0x40c0e0*/
   int result = 0; // eax /*0x40c0e3*/
   if ( m_10 <= 0 ) /*0x40c0e8*/
     return -1; /*0x40c0ff*/

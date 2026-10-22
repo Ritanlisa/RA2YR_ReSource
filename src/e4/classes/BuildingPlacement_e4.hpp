@@ -10,12 +10,12 @@ struct VectorClass_flat;  // fix_fwd_type_supply
 struct BuildingPlacement {
     unsigned int q000;  // 0x0
     int q004;  // 0x4
-    int BuildingPlacement_field_0x08;  // 0x8
+    int q008;  // 0x8
     int q00C;  // 0xC
-    int BuildingPlacement_field_0x10;  // 0x10
-    int BuildingPlacement_field_0x14;  // 0x14
-    int BuildingPlacement_field_0x18;  // 0x18
-    int BuildingPlacement_field_0x1C;  // 0x1C
+    int u32_10;  // 0x10
+    int q014;  // 0x14
+    int u32_18;  // 0x18
+    int u32_1C;  // 0x1C
     int u32_20;  // 0x20
     unsigned short q024;  // 0x24
     unsigned short u32_26;  // 0x26

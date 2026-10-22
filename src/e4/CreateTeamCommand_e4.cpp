@@ -702,7 +702,7 @@ unsigned char * CreateTeamCommand::performAction_30(void *a1, void *a2)
   if ( result ) /*0x536666*/
   {
     (v7)->UnselectAll_ClearLimboLaunchers(); /*0x536668*/
-    (*(void (**)(AnimClass *))(v6->ptr_0 + 332))(v6); /*0x536671*/
+    (*(void (**)(AnimClass *))(v6->AnimClass_field_0x0 + 332))(v6); /*0x536671*/
     TacticalClass *v8; // [esp-4h] [ebp-4h]
     (v8)->InterpolateView(); /*0x53667c*/
     return (unsigned char *)((AnimClass *)MapClass::MarkForRedraw((GScreenClass *)&dword_87F7E8, 1)); /*0x536688*/
@@ -1071,7 +1071,7 @@ unsigned char * CreateTeamCommand::performAction_69(void *a1, void *a2)
   if ( result ) /*0x536ad6*/
   {
     (v7)->UnselectAll_ClearLimboLaunchers(); /*0x536ad8*/
-    (*(void (**)(AnimClass *))(v6->ptr_0 + 332))(v6); /*0x536ae1*/
+    (*(void (**)(AnimClass *))(v6->AnimClass_field_0x0 + 332))(v6); /*0x536ae1*/
     TacticalClass *v8; // [esp-4h] [ebp-4h]
     (v8)->InterpolateView(); /*0x536aec*/
     return (unsigned char *)((AnimClass *)MapClass::MarkForRedraw((GScreenClass *)&dword_87F7E8, 1)); /*0x536af8*/

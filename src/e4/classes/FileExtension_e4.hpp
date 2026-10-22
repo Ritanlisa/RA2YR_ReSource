@@ -7,9 +7,9 @@ namespace gamemd {
 
 struct FileExtension {
     int __pad_000;  // 0x0
-    int FileExtension_field_0x04;  // 0x4
-    int FileExtension_field_0x08;  // 0x8
-    int FileExtension_field_0x0C;  // 0xC
+    int q004;  // 0x4
+    int q008;  // 0x8
+    int q00C;  // 0xC
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     unsigned int * Constructor(int a2, int a3, void *a1 = 0);

@@ -7,8 +7,8 @@ namespace gamemd {
 
 struct SkirmishDialog {
     int __pad_000;  // 0x0
-    int SkirmishDialog_field_0x04;  // 0x4
-    int SkirmishDialog_field_0x08;  // 0x8
+    int q004;  // 0x4
+    int q008;  // 0x8
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int ResizeDialogAndEnum(void *a1, void *lParam);

@@ -8,7 +8,7 @@ namespace gamemd {
 struct Property {
     unsigned char __pad_000;  // 0x0
     char __pad_1[3];  // 0x1
-    int Property_field_0x04;  // 0x4
+    int q004;  // 0x4
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int GetField11(void *a1 = 0);

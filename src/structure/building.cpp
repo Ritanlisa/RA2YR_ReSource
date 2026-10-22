@@ -1174,7 +1174,7 @@ void BuildingClass::ValidatePlacement(char a2) {
     v51[0] = DSurface_ViewBounds.field_0; /*0x48075c*/
     v12 = v9[1]; /*0x480760*/
     *(unsigned int *)v50.__pad_0 = v10; /*0x480763*/
-    v50.Coord2D_field_0x04 = v12; /*0x480767*/
+    v50.q004 = v12; /*0x480767*/
     v35 = v9[3]; /*0x480775*/
     v33 = v9[2]; /*0x480776*/
     v13 = Coord2D::Sub(&v50, (int *)v53, v51); /*0x480781*/

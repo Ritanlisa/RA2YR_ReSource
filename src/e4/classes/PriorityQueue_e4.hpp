@@ -7,7 +7,7 @@ namespace gamemd {
 
 struct PriorityQueue {
     int __pad_000;  // 0x0
-    int PriorityQueue_field_0x04;  // 0x4
+    int q004;  // 0x4
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int Add(int aP1, void *a1 = 0, void *a2 = 0);

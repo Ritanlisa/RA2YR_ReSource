@@ -85,9 +85,9 @@ LABEL_103:
       {
         Debug::Log(); /*0x7aa91d*/
         memset(&v33[32], 0, 0x10Cu); /*0x7aa930*/
-        DynamicArray_field_0x10 = stru_B76AD0.DynamicArray_field_0x10; /*0x7aa932*/
+        DynamicArray_field_0x10 = stru_B76AD0.q010; /*0x7aa932*/
         v4 = 0; /*0x7aa937*/
-        if ( stru_B76AD0.DynamicArray_field_0x10 > 0 ) /*0x7aa93b*/
+        if ( stru_B76AD0.q010 > 0 ) /*0x7aa93b*/
         {
           v5 = 0; /*0x7aa93d*/
           do /*0x7aa985*/
@@ -97,14 +97,14 @@ LABEL_103:
             if ( *(unsigned int *)&v33[72] != -1 ) /*0x7aa962*/
             {
               Array::InsertElement((Array *)&v33[12], &v33[32], *(int *)&v33[12]); /*0x7aa972*/
-              DynamicArray_field_0x10 = stru_B76AD0.DynamicArray_field_0x10; /*0x7aa977*/
+              DynamicArray_field_0x10 = stru_B76AD0.q010; /*0x7aa977*/
             }
             ++v4; /*0x7aa97c*/
             v5 += 268; /*0x7aa97d*/
           }
           while ( v4 < DynamicArray_field_0x10 ); /*0x7aa985*/
         }
-        stru_B76AD0.DynamicArray_field_0x10 = 0; /*0x7aa987*/
+        stru_B76AD0.q010 = 0; /*0x7aa987*/
       }
       else
       {
@@ -122,10 +122,10 @@ LABEL_103:
           {
             if ( *((unsigned int *)v6 + 10) != -1 ) /*0x7aa9cd*/
             {
-              v7 = stru_B76AD0.DynamicArray_field_0x10; /*0x7aa9d3*/
+              v7 = stru_B76AD0.q010; /*0x7aa9d3*/
               v8 = 0; /*0x7aa9d8*/
               v9 = 0; /*0x7aa9da*/
-              if ( stru_B76AD0.DynamicArray_field_0x10 > 0 ) /*0x7aa9de*/
+              if ( stru_B76AD0.q010 > 0 ) /*0x7aa9de*/
               {
                 v10 = (char *)dword_B76AE8; /*0x7aa9e4*/
                 while ( 1 ) /*0x7aa9ea*/
@@ -139,10 +139,10 @@ LABEL_103:
                     if ( !v11 ) /*0x7aaa30*/
                       break; /*0x7aaa30*/
                   }
-                  v7 = stru_B76AD0.DynamicArray_field_0x10; /*0x7aaa32*/
+                  v7 = stru_B76AD0.q010; /*0x7aaa32*/
                   ++v9; /*0x7aaa37*/
                   v10 += 268; /*0x7aaa38*/
-                  if ( v9 >= stru_B76AD0.DynamicArray_field_0x10 ) /*0x7aaa40*/
+                  if ( v9 >= stru_B76AD0.q010 ) /*0x7aaa40*/
                     goto LABEL_88; /*0x7aaa40*/
                 }
                 Debug::Log(); /*0x7aaa54*/
@@ -152,7 +152,7 @@ LABEL_103:
           }
           else
           {
-            Array::InsertElement((Array *)&stru_B76AD0.DynamicArray_field_0x10, v6, stru_B76AD0.DynamicArray_field_0x10); /*0x7aaa74*/
+            Array::InsertElement((Array *)&stru_B76AD0.q010, v6, stru_B76AD0.q010); /*0x7aaa74*/
             v12 = 0; /*0x7aaa79*/
             v13 = *(unsigned int *)&v33[12]; /*0x7aaa7b*/
             if ( *(int *)&v33[12] > 0 ) /*0x7aaa81*/
@@ -191,12 +191,12 @@ LABEL_51:
                 v18 = 0; /*0x7aab96*/
                 if ( v16 < 0 ) /*0x7aab9a*/
                   v18 = v16; /*0x7aab9c*/
-                if ( v18 >= stru_B777A0.DynamicArray_field_0x04 ) /*0x7aaba4*/
+                if ( v18 >= stru_B777A0.u32_4 ) /*0x7aaba4*/
                 {
                   DynamicVector::EnsureCapacity((DynamicVector *)&stru_B777A0); /*0x7aabab*/
                   v16 = *(unsigned int *)stru_B777A0.__pad_0; /*0x7aabb0*/
                 }
-                if ( v16 >= stru_B777A0.DynamicArray_field_0x04 ) /*0x7aabbb*/
+                if ( v16 >= stru_B777A0.u32_4 ) /*0x7aabbb*/
                 {
                   DynamicVector::EnsureCapacity((DynamicVector *)&stru_B777A0); /*0x7aabc2*/
                   v16 = *(unsigned int *)stru_B777A0.__pad_0; /*0x7aabc7*/
@@ -204,12 +204,12 @@ LABEL_51:
                 if ( v18 < v16 ) /*0x7aabce*/
                 {
                   memcpy( /*0x7aabeb*/
-                    (void *)(stru_B777A0.DynamicArray_field_0x08 + 4 * v18 + 4),
-                    (const void *)(stru_B777A0.DynamicArray_field_0x08 + 4 * v18),
+                    (void *)(stru_B777A0.u32_8 + 4 * v18 + 4),
+                    (const void *)(stru_B777A0.u32_8 + 4 * v18),
                     4 * (v16 + 0x3FFFFFFF * v18));
                   v16 = *(unsigned int *)stru_B777A0.__pad_0; /*0x7aabf0*/
                 }
-                v19 = (String *)(stru_B777A0.DynamicArray_field_0x08 + 4 * v18); /*0x7aabfe*/
+                v19 = (String *)(stru_B777A0.u32_8 + 4 * v18); /*0x7aabfe*/
                 if ( v19 ) /*0x7aac03*/
                 {
                   (v19)->AssignFromPtr((const char **)v33); /*0x7aac0a*/
@@ -222,7 +222,7 @@ LABEL_51:
                 while ( 1 ) /*0x7aab5b*/
                 {
                   if ( v17 >= 0 && v17 < v16 ) /*0x7aab61*/
-                    ((String *)&v33[24])->Reassign((const char **)(stru_B777A0.DynamicArray_field_0x08 + 4 * v17)); /*0x7aab71*/
+                    ((String *)&v33[24])->Reassign((const char **)(stru_B777A0.u32_8 + 4 * v17)); /*0x7aab71*/
                   if ( (unsigned __int8)((String *)&v33[24])->Compare((const char **)v33) ) /*0x7aab7f*/
                     break; /*0x7aab7f*/
                   v16 = *(unsigned int *)stru_B777A0.__pad_0; /*0x7aab8c*/
@@ -300,7 +300,7 @@ LABEL_72:
             v26 = *(unsigned int *)(*(unsigned int *)v25->__pad_0 /*0x7aad5c*/
                             + 4
                             * (((int (*)(unsigned char *))g_WOL_HashTable->HashTable_field_0x18)(v33)
-                             & ((1 << v25->HashTable_field_0x0C) - 1)));
+                             & ((1 << v25->u32_C) - 1)));
             if ( v26 ) /*0x7aad61*/
             {
               while ( !(unsigned __int8)((String *)v26)->Compare((const char **)v33) ) /*0x7aad71*/

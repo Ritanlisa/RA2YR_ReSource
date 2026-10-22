@@ -178,10 +178,10 @@ public:
 
     uint8_t Pathfinding_field_0x04[4];
     uint8_t Pathfinding_field_0x08[4];
-    uint8_t Pathfinding_field_0x0C[4];
-    uint8_t Pathfinding_field_0x10[4];
-    uint8_t Pathfinding_field_0x14[4];
-    uint8_t Pathfinding_field_0x18[4];
+    uint8_t q00C[4];
+    uint8_t q010[4];
+    uint8_t q014[4];
+    uint8_t q018[4];
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* CheckCliff(unsigned int *a2, int16_t *a3, int a4, int a5); // 0x583820
     // --- gap2 auto-generated stub declarations (END) ---

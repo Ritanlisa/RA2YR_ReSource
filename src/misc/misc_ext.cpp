@@ -17982,10 +17982,10 @@ LABEL_21:
       String::Reassign(v14, (const char **)&unk_B73ACC); /*0x7a9b87*/
       memcpy(&v14->ptr_4, v6, 0x10Cu); /*0x7a9b94*/
       *v14->ptr_88.__pad_0 = 0; /*0x7a9b9b*/
-      v15 = ((int (*)(ObjectClass *))stru_B765F8.DynamicVector_field_0x28)(&unk_B73ACC) /*0x7a9bbf*/
-          & ((1 << SLOBYTE(stru_B765F8.DynamicVector_field_0x1C)) - 1);
-      v16 = *(unsigned int *)(stru_B765F8.DynamicVector_field_0x10 + 4 * v15); /*0x7a9bc1*/
-      *(unsigned int *)(stru_B765F8.DynamicVector_field_0x10 + 4 * v15) = v14; /*0x7a9bc4*/
+      v15 = ((int (*)(ObjectClass *))stru_B765F8.u32_28)(&unk_B73ACC) /*0x7a9bbf*/
+          & ((1 << SLOBYTE(stru_B765F8.q01C)) - 1);
+      v16 = *(unsigned int *)(stru_B765F8.q010 + 4 * v15); /*0x7a9bc1*/
+      *(unsigned int *)(stru_B765F8.q010 + 4 * v15) = v14; /*0x7a9bc4*/
       if ( v16 ) /*0x7a9bc9*/
         *v14->ptr_88.__pad_0 = v16; /*0x7a9bcb*/
       v17 = *(unsigned int *)&stru_B765F8.__pad_14[4]; /*0x7a9bd6*/
@@ -17995,11 +17995,11 @@ LABEL_21:
       if ( (double)*(unsigned int *)stru_B765F8.__pad_14 / (double)*(int *)&stru_B765F8.__pad_14[4] >= dbl_B76630 /*0x7a9c14*/
         && stru_B765F8.__pad_20[4] != 1 )
       {
-        DynamicVector_field_0x10 = (unsigned int **)stru_B765F8.DynamicVector_field_0x10; /*0x7a9c20*/
+        DynamicVector_field_0x10 = (unsigned int **)stru_B765F8.q010; /*0x7a9c20*/
         *(unsigned int *)&stru_B765F8.__pad_14[4] *= 2; /*0x7a9c2a*/
-        ++stru_B765F8.DynamicVector_field_0x1C; /*0x7a9c2f*/
-        stru_B765F8.DynamicVector_field_0x10 = __2_YAPAXI_Z(8 * v17); /*0x7a9c4f*/
-        memset((void *)stru_B765F8.DynamicVector_field_0x10, 0, 4 * *(unsigned int *)&stru_B765F8.__pad_14[4]); /*0x7a9c57*/
+        ++stru_B765F8.q01C; /*0x7a9c2f*/
+        stru_B765F8.q010 = __2_YAPAXI_Z(8 * v17); /*0x7a9c4f*/
+        memset((void *)stru_B765F8.q010, 0, 4 * *(unsigned int *)&stru_B765F8.__pad_14[4]); /*0x7a9c57*/
         if ( v17 > 0 ) /*0x7a9c59*/
         {
           v19 = DynamicVector_field_0x10; /*0x7a9c5b*/
@@ -18011,10 +18011,10 @@ LABEL_21:
             {
               do /*0x7a9c98*/
               {
-                v22 = ((int (*)(unsigned int *))stru_B765F8.DynamicVector_field_0x28)(v21) /*0x7a9c7b*/
-                    & ((1 << SLOBYTE(stru_B765F8.DynamicVector_field_0x1C)) - 1);
-                v23 = *(unsigned int *)(stru_B765F8.DynamicVector_field_0x10 + 4 * v22); /*0x7a9c82*/
-                *(unsigned int *)(stru_B765F8.DynamicVector_field_0x10 + 4 * v22) = v21; /*0x7a9c85*/
+                v22 = ((int (*)(unsigned int *))stru_B765F8.u32_28)(v21) /*0x7a9c7b*/
+                    & ((1 << SLOBYTE(stru_B765F8.q01C)) - 1);
+                v23 = *(unsigned int *)(stru_B765F8.q010 + 4 * v22); /*0x7a9c82*/
+                *(unsigned int *)(stru_B765F8.q010 + 4 * v22) = v21; /*0x7a9c85*/
                 v24 = (unsigned int *)v21[68]; /*0x7a9c88*/
                 v21[68] = v23; /*0x7a9c8e*/
                 v21 = v24; /*0x7a9c96*/
@@ -18051,33 +18051,33 @@ LABEL_21:
         *(unsigned long long *)&v87.DeleteAndZero_field_0x04 = (unsigned int)(*(unsigned int *)stru_B765F8.__pad_14 - 1); /*0x7a9d88*/
         *(float *)&v87.DeleteAndZero_field_0x04 = (double)*(__int64 *)&v87.DeleteAndZero_field_0x04 /*0x7a9da5*/
                                                 / (double)*(int *)&stru_B765F8.__pad_14[4];
-        v28 = ((int (*)(ObjectClass *))stru_B765F8.DynamicVector_field_0x28)(&unk_B73ACC) /*0x7a9dc3*/
-            & ((1 << SLOBYTE(stru_B765F8.DynamicVector_field_0x1C)) - 1);
-        v29 = *(unsigned int *)(stru_B765F8.DynamicVector_field_0x10 + 4 * v28); /*0x7a9dc5*/
+        v28 = ((int (*)(ObjectClass *))stru_B765F8.u32_28)(&unk_B73ACC) /*0x7a9dc3*/
+            & ((1 << SLOBYTE(stru_B765F8.q01C)) - 1);
+        v29 = *(unsigned int *)(stru_B765F8.q010 + 4 * v28); /*0x7a9dc5*/
         if ( v29 ) /*0x7a9dca*/
         {
           if ( (unsigned __int8)String::Compare((String *)v29, (const char **)&unk_B73ACC) ) /*0x7a9dd7*/
           {
-            v30 = *(unsigned int **)(stru_B765F8.DynamicVector_field_0x10 + 4 * v28); /*0x7a9de9*/
+            v30 = *(unsigned int **)(stru_B765F8.q010 + 4 * v28); /*0x7a9de9*/
             v31 = v30->ParticleSystemClass_110; /*0x7a9dee*/
             if ( v30 ) /*0x7a9df4*/
             {
-              DeleteAndZero(*(ObjectClass **)(stru_B765F8.DynamicVector_field_0x10 + 4 * v28)); /*0x7a9df8*/
+              DeleteAndZero(*(ObjectClass **)(stru_B765F8.q010 + 4 * v28)); /*0x7a9df8*/
               __3_YAXPAX_Z(v30); /*0x7a9dfe*/
             }
             v32 = *(float *)&v87.DeleteAndZero_field_0x04; /*0x7a9e0c*/
-            *(unsigned int *)(stru_B765F8.DynamicVector_field_0x10 + 4 * v28) = v31; /*0x7a9e10*/
+            *(unsigned int *)(stru_B765F8.q010 + 4 * v28) = v31; /*0x7a9e10*/
             --*(unsigned int *)stru_B765F8.__pad_14; /*0x7a9e1f*/
             if ( v32 <= dbl_B76628 /*0x7a9e49*/
               && *(unsigned int *)&stru_B765F8.__pad_14[4] > (unsigned int)dword_B76638
               && stru_B765F8.__pad_20[4] != 1 )
             {
-              v33 = (int *)stru_B765F8.DynamicVector_field_0x10; /*0x7a9e55*/
+              v33 = (int *)stru_B765F8.q010; /*0x7a9e55*/
               v34 = *(unsigned int *)&stru_B765F8.__pad_14[4]; /*0x7a9e5b*/
               *(unsigned int *)&stru_B765F8.__pad_14[4] >>= 1; /*0x7a9e60*/
-              --stru_B765F8.DynamicVector_field_0x1C; /*0x7a9e6c*/
-              stru_B765F8.DynamicVector_field_0x10 = __2_YAPAXI_Z(4 * *(unsigned int *)&stru_B765F8.__pad_14[4]); /*0x7a9e85*/
-              memset((void *)stru_B765F8.DynamicVector_field_0x10, 0, 4 * *(unsigned int *)&stru_B765F8.__pad_14[4]); /*0x7a9e8d*/
+              --stru_B765F8.q01C; /*0x7a9e6c*/
+              stru_B765F8.q010 = __2_YAPAXI_Z(4 * *(unsigned int *)&stru_B765F8.__pad_14[4]); /*0x7a9e85*/
+              memset((void *)stru_B765F8.q010, 0, 4 * *(unsigned int *)&stru_B765F8.__pad_14[4]); /*0x7a9e8d*/
               if ( v34 > 0 ) /*0x7a9e8f*/
               {
                 v35 = v33; /*0x7a9e91*/
@@ -18089,9 +18089,9 @@ LABEL_21:
                   {
                     do /*0x7a9ec2*/
                     {
-                      v38 = CChatEventSink::ComputeBucketMask((int)&stru_B765F8.DynamicVector_field_0x10, v37); /*0x7a9ea1*/
-                      v39 = *(unsigned int *)(stru_B765F8.DynamicVector_field_0x10 + 4 * v38); /*0x7a9eac*/
-                      *(unsigned int *)(stru_B765F8.DynamicVector_field_0x10 + 4 * v38) = v37; /*0x7a9eaf*/
+                      v38 = CChatEventSink::ComputeBucketMask((int)&stru_B765F8.q010, v37); /*0x7a9ea1*/
+                      v39 = *(unsigned int *)(stru_B765F8.q010 + 4 * v38); /*0x7a9eac*/
+                      *(unsigned int *)(stru_B765F8.q010 + 4 * v38) = v37; /*0x7a9eaf*/
                       v40 = v37->u32_110; /*0x7a9eb2*/
                       v37->u32_110 = v39; /*0x7a9eb8*/
                       v37 = v40; /*0x7a9ec0*/
@@ -18124,7 +18124,7 @@ LABEL_21:
             }
 LABEL_66:
             if ( *(float *)&v87.DeleteAndZero_field_0x04 <= dbl_B76628 ) /*0x7a9f32*/
-              HashTable::Shrink((HashTable *)&stru_B765F8.DynamicVector_field_0x10); /*0x7a9f39*/
+              HashTable::Shrink((HashTable *)&stru_B765F8.q010); /*0x7a9f39*/
           }
         }
       }
@@ -22031,7 +22031,7 @@ void DiskLaserClass::Update()
   {
     this->q030 = -1; /*0x4a7441*/
     v67 = this; /*0x4a744e*/
-    (v3) = ((v3) & ~0xFF) | ((VectorClass::AppendCopy((DynamicVectorClass *)&stru_B0F670.DynamicVector_field_0x28, &v67)) & 0xFF); /*0x4a7452*/
+    (v3) = ((v3) & ~0xFF) | ((VectorClass::AppendCopy((DynamicVectorClass *)&stru_B0F670.u32_28, &v67)) & 0xFF); /*0x4a7452*/
     return v3; /*0x4a745e*/
   }
   DiskLaserClass_field_0x24 = (unsigned char *)this->DiskLaserClass_field_0x24; /*0x4a745f*/
@@ -22041,7 +22041,7 @@ LABEL_2:
     v61 = (int)&v67; /*0x4a7359*/
     this->q030 = -1; /*0x4a735a*/
     v67 = this; /*0x4a7361*/
-    (v3) = ((v3) & ~0xFF) | ((VectorClass::AppendCopy((DynamicVectorClass *)&stru_B0F670.DynamicVector_field_0x28, (unsigned int *)v61)) & 0xFF); /*0x4a7365*/
+    (v3) = ((v3) & ~0xFF) | ((VectorClass::AppendCopy((DynamicVectorClass *)&stru_B0F670.u32_28, (unsigned int *)v61)) & 0xFF); /*0x4a7365*/
   }
   else
   {

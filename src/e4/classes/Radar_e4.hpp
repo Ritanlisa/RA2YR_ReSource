@@ -14,11 +14,11 @@ struct Radar {
     char __pad_D[3];  // 0xD
     unsigned int q010;  // 0x10
     int q014;  // 0x14
-    int Radar_field_0x18;  // 0x18
-    unsigned int Radar_field_0x1C;  // 0x1C
-    int Radar_field_0x20;  // 0x20
+    int u32_18;  // 0x18
+    unsigned int q01C;  // 0x1C
+    int q020;  // 0x20
     char __pad_24[12];  // 0x24
-    int Radar_field_0x30;  // 0x30
+    int q030;  // 0x30
     char __pad_34[32];  // 0x34
     unsigned int q054;  // 0x54
     char __pad_58[8];  // 0x58

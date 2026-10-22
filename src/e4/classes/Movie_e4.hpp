@@ -8,29 +8,29 @@ namespace gamemd {
 struct CampaignClass;  // fix_fwd_type_supply
 struct Movie {
     unsigned int __pad_000;  // 0x0
-    int Movie_field_0x4;  // 0x4
-    int Movie_field_0x8;  // 0x8
-    int Movie_field_0xC;  // 0xC
+    int q004;  // 0x4
+    int q008;  // 0x8
+    int q00C;  // 0xC
     char __pad_10[20];  // 0x10
     unsigned int u32_24;  // 0x24
-    unsigned int q028;  // 0x28
+    unsigned int u32_28;  // 0x28
     char __pad_2C[12];  // 0x2C
     unsigned int u32_38;  // 0x38
     unsigned int u32_3C;  // 0x3C
     unsigned int u32_40;  // 0x40
-    unsigned int q0044;  // 0x44
+    unsigned int u32_44;  // 0x44
     unsigned int u32_48;  // 0x48
     unsigned int u32_4C;  // 0x4C
     unsigned int u32_50;  // 0x50
     unsigned int u32_54;  // 0x54
     AbstractClass* ptr_58;  // 0x58
     unsigned int __pad_05C;  // 0x5C
-    unsigned int q060;  // 0x60
+    unsigned int u32_60;  // 0x60
     unsigned int u32_64;  // 0x64
     unsigned int u32_68;  // 0x68
     unsigned int u32_6C;  // 0x6C
     char __pad_70[272];  // 0x70
-    unsigned int q0180;  // 0x180
+    unsigned int u32_180;  // 0x180
     char __pad_184[261];  // 0x184
     char Movie_field_0x289[4];  // 0x289
     char tail_28D[3];  // 0x28D

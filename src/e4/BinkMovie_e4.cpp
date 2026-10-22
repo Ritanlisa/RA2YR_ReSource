@@ -1013,10 +1013,10 @@ int BinkMovie::CheckKeyframeTransition(unsigned int aP1)
             v11 = &this->u32_4; /*0x6c9ce4*/
             v6 = 1; /*0x6c9ce7*/
             *(unsigned int *)v11->__pad_0 = *p_BinkMovie_field_0x14; /*0x6c9ceb*/
-            v11->BinkMovie_field_0x4 = p_BinkMovie_field_0x14[1]; /*0x6c9cf0*/
-            v11->BinkMovie_field_0x8 = p_BinkMovie_field_0x14[2]; /*0x6c9cf6*/
+            v11->u32_4 = p_BinkMovie_field_0x14[1]; /*0x6c9cf0*/
+            v11->u32_8 = p_BinkMovie_field_0x14[2]; /*0x6c9cf6*/
             result = p_BinkMovie_field_0x14[3]; /*0x6c9cf9*/
-            v11->BinkMovie_field_0xC = result; /*0x6c9cfc*/
+            v11->u32_C = result; /*0x6c9cfc*/
             *p_BinkMovie_field_0x14 = 0; /*0x6c9cff*/
             p_BinkMovie_field_0x14[1] = 0; /*0x6c9d01*/
             p_BinkMovie_field_0x14[2] = 0; /*0x6c9d04*/

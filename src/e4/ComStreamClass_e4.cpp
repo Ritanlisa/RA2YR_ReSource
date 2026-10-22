@@ -242,16 +242,16 @@ AbstractClass * * ComStreamClass::readData()
   unsigned int *v12; // eax
   unsigned int **v13; // [esp+4h] [ebp-4h]
 
-  if ( ((this->ComStreamClass_field_0x14) & 0xFF) != 1 ) /*0x7ae0e8*/
+  if ( ((this->q014) & 0xFF) != 1 ) /*0x7ae0e8*/
   {
-    ComStreamClass_field_0x08 = this->ComStreamClass_field_0x08; /*0x7ae0f0*/
+    ComStreamClass_field_0x08 = this->q008; /*0x7ae0f0*/
     v3 = *(unsigned int ***)this->__pad_0; /*0x7ae0f3*/
-    v4 = this->ComStreamClass_field_0x0C + 1; /*0x7ae0fc*/
-    this->ComStreamClass_field_0x08 = 2 * ComStreamClass_field_0x08; /*0x7ae0fd*/
+    v4 = this->q00C + 1; /*0x7ae0fc*/
+    this->q008 = 2 * ComStreamClass_field_0x08; /*0x7ae0fd*/
     v13 = v3; /*0x7ae100*/
-    this->ComStreamClass_field_0x0C = v4; /*0x7ae108*/
+    this->q00C = v4; /*0x7ae108*/
     v5 = (void *)__2_YAPAXI_Z(8 * ComStreamClass_field_0x08); /*0x7ae113*/
-    v6 = 4 * this->ComStreamClass_field_0x08; /*0x7ae118*/
+    v6 = 4 * this->q008; /*0x7ae118*/
     *(unsigned int *)this->__pad_0 = v5; /*0x7ae11f*/
     memset(v5, 0, v6); /*0x7ae124*/
     if ( ComStreamClass_field_0x08 > 0 ) /*0x7ae12f*/
@@ -265,8 +265,8 @@ AbstractClass * * ComStreamClass::readData()
         {
           do /*0x7ae161*/
           {
-            v10 = ((int (*)(unsigned int *))this->ComStreamClass_field_0x18)(v9) /*0x7ae14b*/
-                & ((1 << this->ComStreamClass_field_0x0C) - 1);
+            v10 = ((int (*)(unsigned int *))this->q018)(v9) /*0x7ae14b*/
+                & ((1 << this->q00C) - 1);
             v11 = *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v10); /*0x7ae14f*/
             *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v10) = v9; /*0x7ae155*/
             v12 = (unsigned int *)v9[18]; /*0x7ae157*/
@@ -304,16 +304,16 @@ void ComStreamClass::flushStream()
   unsigned int *v12; // eax
   unsigned int **v13; // [esp+8h] [ebp-4h]
 
-  ComStreamClass_field_0x08 = this->ComStreamClass_field_0x08; /*0x7aef55*/
-  if ( ComStreamClass_field_0x08 > this->ComStreamClass_field_0x30 && ((this->ComStreamClass_field_0x14) & 0xFF) != 1 ) /*0x7aef67*/
+  ComStreamClass_field_0x08 = this->q008; /*0x7aef55*/
+  if ( ComStreamClass_field_0x08 > this->q030 && ((this->q014) & 0xFF) != 1 ) /*0x7aef67*/
   {
     v3 = *(unsigned int ***)this->__pad_0; /*0x7aef70*/
-    ComStreamClass_field_0x0C = this->ComStreamClass_field_0x0C; /*0x7aef73*/
+    ComStreamClass_field_0x0C = this->q00C; /*0x7aef73*/
     v13 = *(unsigned int ***)this->__pad_0; /*0x7aef76*/
-    this->ComStreamClass_field_0x08 = ComStreamClass_field_0x08 >> 1; /*0x7aef7c*/
-    this->ComStreamClass_field_0x0C = ComStreamClass_field_0x0C - 1; /*0x7aef84*/
+    this->q008 = ComStreamClass_field_0x08 >> 1; /*0x7aef7c*/
+    this->q00C = ComStreamClass_field_0x0C - 1; /*0x7aef84*/
     v5 = (void *)__2_YAPAXI_Z(4 * (ComStreamClass_field_0x08 >> 1)); /*0x7aef8f*/
-    v6 = 4 * this->ComStreamClass_field_0x08; /*0x7aef94*/
+    v6 = 4 * this->q008; /*0x7aef94*/
     *(unsigned int *)this->__pad_0 = v5; /*0x7aef9b*/
     memset(v5, 0, v6); /*0x7aefa0*/
     if ( (int)ComStreamClass_field_0x08 > 0 ) /*0x7aefab*/
@@ -327,8 +327,8 @@ void ComStreamClass::flushStream()
         {
           do /*0x7aefdd*/
           {
-            v10 = ((int (*)(unsigned int *))this->ComStreamClass_field_0x18)(v9) /*0x7aefc7*/
-                & ((1 << this->ComStreamClass_field_0x0C) - 1);
+            v10 = ((int (*)(unsigned int *))this->q018)(v9) /*0x7aefc7*/
+                & ((1 << this->q00C) - 1);
             v11 = *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v10); /*0x7aefcb*/
             *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v10) = v9; /*0x7aefd1*/
             v12 = (unsigned int *)v9[18]; /*0x7aefd3*/

@@ -18,14 +18,14 @@ void BlowPipe_31::ddtor(void *a1)
 {
 
   void *v2 = *&this->q004; // eax /*0x63dc26*/
-  this->m_10 = 0; /*0x63dc29*/
-  if ( v2 && (((unsigned char *)&(*&this->m_C))[1]) ) /*0x63dc30*/
+  this->q010 = 0; /*0x63dc29*/
+  if ( v2 && (((unsigned char *)&(*&this->q00C))[1]) ) /*0x63dc30*/
   {
     operator delete((v2)); /*0x63dc36*/
     *&this->q004 = 0; /*0x63dc3e*/
   }
-  (((unsigned char *)&(*&this->m_C))[1]) = 0; /*0x63dc41*/
-  this->m_8 = 0; /*0x63dc44*/
+  (((unsigned char *)&(*&this->q00C))[1]) = 0; /*0x63dc41*/
+  this->q008 = 0; /*0x63dc44*/
 }  // G42.18 ns repair
 } // namespace gamemd
 
@@ -33,7 +33,7 @@ void BlowPipe_31::ddtor(void *a1)
 namespace gamemd {
 unsigned int BlowPipe_31::Write(int a2)
 {
-  if ( (*((unsigned char *)&(*&this->m_C))) ) /*0x63dc50*/
+  if ( (*((unsigned char *)&(*&this->q00C))) ) /*0x63dc50*/
     return (unsigned int)(a2 - *&this->q004) >> 2; /*0x63dc65*/
   else
     return 0; /*0x63dc57*/
@@ -70,7 +70,7 @@ void BlowPipe_23::Clear(void *a1_1)
 namespace gamemd {
 unsigned int BlowPipe_23::GetCount(int a2)
 {
-  if ( (*((unsigned char *)&(*&this->m_C))) ) /*0x63dcb0*/
+  if ( (*((unsigned char *)&(*&this->q00C))) ) /*0x63dcb0*/
     return (unsigned int)(a2 - *&this->q004) >> 2; /*0x63dcc5*/
   else
     return 0; /*0x63dcb7*/
@@ -92,14 +92,14 @@ void BlowPipe_23::Clear_0()
 
   void *v2; // eax
   v2 = (void *)(*&this->q004); /*0x63dce6*/
-  this->m_10 = 0; /*0x63dce9*/
-  if ( v2 && (((unsigned char *)&(*&this->m_C))[1]) ) /*0x63dcf0*/
+  this->q010 = 0; /*0x63dce9*/
+  if ( v2 && (((unsigned char *)&(*&this->q00C))[1]) ) /*0x63dcf0*/
   {
     operator delete((v2)); /*0x63dcf6*/
     *&this->q004 = 0; /*0x63dcfe*/
   }
-  (((unsigned char *)&(*&this->m_C))[1]) = 0; /*0x63dd01*/
-  this->m_8 = 0; /*0x63dd04*/
+  (((unsigned char *)&(*&this->q00C))[1]) = 0; /*0x63dd01*/
+  this->q008 = 0; /*0x63dd04*/
 }
 } // namespace gamemd
 
@@ -107,7 +107,7 @@ void BlowPipe_23::Clear_0()
 namespace gamemd {
 unsigned int BlowPipe_23::GetCount_0(int a2)
 {
-  if ( (*((unsigned char *)&(*&this->m_C))) ) /*0x63dd10*/
+  if ( (*((unsigned char *)&(*&this->q00C))) ) /*0x63dd10*/
     return (unsigned int)(a2 - *&this->q004) >> 2; /*0x63dd25*/
   else
     return 0; /*0x63dd17*/
@@ -120,7 +120,7 @@ char BlowPipe_31::AddRef(int a2)
 {
 
   int m_8; // esi
-  m_8 = this->m_8; /*0x63e312*/
+  m_8 = this->q008; /*0x63e312*/
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x63e31d*/
   {
     int v3 = 0; // edx /*0x63e31f*/
@@ -153,30 +153,30 @@ char BlowPipe_23::SetCapacity(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x63e35c*/
   {
-    (this->m_C) = ((this->m_C) & ~0xFF) | ((0) & 0xFF); /*0x63e366*/
+    (this->q00C) = ((this->q00C) & ~0xFF) | ((0) & 0xFF); /*0x63e366*/
     if ( a3 ) /*0x63e36c*/
       v4 = a3; /*0x63e382*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x63e37e*/
-    (this->m_C) = ((this->m_C) & ~0xFF) | ((1) & 0xFF); /*0x63e386*/
+    (this->q00C) = ((this->q00C) & ~0xFF) | ((1) & 0xFF); /*0x63e386*/
     if ( v4 ) /*0x63e38a*/
     {
       if ( *&this->q004 ) /*0x63e395*/
       {
-        m_8 = this->m_8; /*0x63e39c*/
+        m_8 = this->q008; /*0x63e39c*/
         if ( a2 < m_8 ) /*0x63e3a1*/
           m_8 = a2; /*0x63e3a3*/
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x63e3a9*/
           ++i; /*0x63e3ae*/
-        if ( (((this->m_C) >> 8) & 0xFF) ) /*0x63e3bb*/
+        if ( (((this->q00C) >> 8) & 0xFF) ) /*0x63e3bb*/
         {
           __3_YAXPAX_Z(*&this->q004); /*0x63e3c6*/
           *&this->q004 = 0; /*0x63e3ce*/
         }
       }
       *&this->q004 = v4; /*0x63e3d7*/
-      this->m_8 = a2; /*0x63e3df*/
-      (this->m_C) = ((this->m_C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x63e3e2*/
+      this->q008 = a2; /*0x63e3df*/
+      (this->q00C) = ((this->q00C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x63e3e2*/
       return 1; /*0x63e3e8*/
     }
     else
@@ -202,8 +202,8 @@ void BlowPipe_23::Clear_1()
     operator delete((void *)(*&this->q004)); /*0x63e413*/
     *&this->q004 = 0; /*0x63e41b*/
   }
-  (((unsigned char *)&(*&this->m_C))[1]) = 0; /*0x63e41e*/
-  this->m_8 = 0; /*0x63e421*/
+  (((unsigned char *)&(*&this->q00C))[1]) = 0; /*0x63e41e*/
+  this->q008 = 0; /*0x63e421*/
 }
 } // namespace gamemd
 
@@ -212,10 +212,10 @@ namespace gamemd {
 int BlowPipe_23::FindItemIndex(unsigned int * a2)
 {
 
-  if ( !(*((unsigned char *)&(*&this->m_C))) ) /*0x63e430*/
+  if ( !(*((unsigned char *)&(*&this->q00C))) ) /*0x63e430*/
     return 0; /*0x63e438*/
   int m_8; // edx
-  m_8 = this->m_8; /*0x63e43e*/
+  m_8 = this->q008; /*0x63e43e*/
   int result = 0; // eax /*0x63e441*/
   if ( m_8 <= 0 ) /*0x63e445*/
     return -1; /*0x63e45c*/
@@ -233,7 +233,7 @@ int BlowPipe_23::FindItemIndex(unsigned int * a2)
 namespace gamemd {
 unsigned int BlowPipe_23::GetCount_1(int a2)
 {
-  if ( (*((unsigned char *)&(*&this->m_C))) ) /*0x63e470*/
+  if ( (*((unsigned char *)&(*&this->q00C))) ) /*0x63e470*/
     return (unsigned int)(a2 - *&this->q004) >> 2; /*0x63e485*/
   else
     return 0; /*0x63e477*/
@@ -252,38 +252,38 @@ char BlowPipe_31::Release(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x63e49c*/
   {
-    (this->m_C) = ((this->m_C) & ~0xFF) | ((0) & 0xFF); /*0x63e4a2*/
+    (this->q00C) = ((this->q00C) & ~0xFF) | ((0) & 0xFF); /*0x63e4a2*/
     if ( a3 ) /*0x63e4a8*/
       v4 = a3; /*0x63e4be*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x63e4ba*/
-    (this->m_C) = ((this->m_C) & ~0xFF) | ((1) & 0xFF); /*0x63e4c2*/
+    (this->q00C) = ((this->q00C) & ~0xFF) | ((1) & 0xFF); /*0x63e4c2*/
     if ( !v4 ) /*0x63e4c6*/
       return 0; /*0x63e53a*/
     if ( *&this->q004 ) /*0x63e4c8*/
     {
-      m_8 = this->m_8; /*0x63e4cf*/
+      m_8 = this->q008; /*0x63e4cf*/
       if ( a2 < m_8 ) /*0x63e4d4*/
         m_8 = a2; /*0x63e4d6*/
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x63e4dc*/
         ++i; /*0x63e4e1*/
-      if ( (((this->m_C) >> 8) & 0xFF) ) /*0x63e4ee*/
+      if ( (((this->q00C) >> 8) & 0xFF) ) /*0x63e4ee*/
       {
         __3_YAXPAX_Z(*&this->q004); /*0x63e4f9*/
         *&this->q004 = 0; /*0x63e501*/
       }
     }
     *&this->q004 = v4; /*0x63e50a*/
-    this->m_8 = a2; /*0x63e512*/
-    (this->m_C) = ((this->m_C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x63e515*/
+    this->q008 = a2; /*0x63e512*/
+    (this->q00C) = ((this->q00C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x63e515*/
   }
   else
   {
     (*(void (**)(_DynamicVectorClass_PAVPlanningNodeClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x63e51e*/
   }
-  v7 = this->m_8; /*0x63e521*/
-  if ( v7 < this->m_10 ) /*0x63e529*/
-    this->m_10 = v7; /*0x63e52b*/
+  v7 = this->q008; /*0x63e521*/
+  if ( v7 < this->q010 ) /*0x63e529*/
+    this->q010 = v7; /*0x63e52b*/
   return 1; /*0x63e52e*/
 
 }
@@ -298,7 +298,7 @@ int BlowPipe_31::Read(unsigned int * a2, void *a2_2, void *a3)
   int result; // eax
   unsigned int *i; // ecx
 
-  m_10 = this->m_10; /*0x63e620*/
+  m_10 = this->q010; /*0x63e620*/
   result = 0; /*0x63e623*/
   if ( m_10 <= 0 ) /*0x63e628*/
     return -1; /*0x63e63f*/
@@ -317,7 +317,7 @@ char BlowPipe_23::AddRef(int a2)
 {
 
   int m_8; // esi
-  m_8 = this->m_8; /*0x63e652*/
+  m_8 = this->q008; /*0x63e652*/
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x63e65d*/
   {
     int v3 = 0; // edx /*0x63e65f*/
@@ -350,30 +350,30 @@ char BlowPipe_23::Release(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x63e69c*/
   {
-    (this->m_C) = ((this->m_C) & ~0xFF) | ((0) & 0xFF); /*0x63e6a6*/
+    (this->q00C) = ((this->q00C) & ~0xFF) | ((0) & 0xFF); /*0x63e6a6*/
     if ( a3 ) /*0x63e6ac*/
       v4 = a3; /*0x63e6c2*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x63e6be*/
-    (this->m_C) = ((this->m_C) & ~0xFF) | ((1) & 0xFF); /*0x63e6c6*/
+    (this->q00C) = ((this->q00C) & ~0xFF) | ((1) & 0xFF); /*0x63e6c6*/
     if ( v4 ) /*0x63e6ca*/
     {
       if ( *&this->q004 ) /*0x63e6d5*/
       {
-        m_8 = this->m_8; /*0x63e6dc*/
+        m_8 = this->q008; /*0x63e6dc*/
         if ( a2 < m_8 ) /*0x63e6e1*/
           m_8 = a2; /*0x63e6e3*/
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x63e6e9*/
           ++i; /*0x63e6ee*/
-        if ( (((this->m_C) >> 8) & 0xFF) ) /*0x63e6fb*/
+        if ( (((this->q00C) >> 8) & 0xFF) ) /*0x63e6fb*/
         {
           __3_YAXPAX_Z(*&this->q004); /*0x63e706*/
           *&this->q004 = 0; /*0x63e70e*/
         }
       }
       *&this->q004 = v4; /*0x63e717*/
-      this->m_8 = a2; /*0x63e71f*/
-      (this->m_C) = ((this->m_C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x63e722*/
+      this->q008 = a2; /*0x63e71f*/
+      (this->q00C) = ((this->q00C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x63e722*/
       return 1; /*0x63e728*/
     }
     else
@@ -399,8 +399,8 @@ void BlowPipe_23::ddtor(void *a1)
     operator delete((void *)(*&this->q004)); /*0x63e753*/
     *&this->q004 = 0; /*0x63e75b*/
   }
-  (((unsigned char *)&(*&this->m_C))[1]) = 0; /*0x63e75e*/
-  this->m_8 = 0; /*0x63e761*/
+  (((unsigned char *)&(*&this->q00C))[1]) = 0; /*0x63e75e*/
+  this->q008 = 0; /*0x63e761*/
 }
 } // namespace gamemd
 
@@ -413,9 +413,9 @@ int BlowPipe_23::Read(unsigned int * a2, void *a2_2, void *a3)
   int m_8; // edx
   unsigned int *i; // ecx
 
-  if ( !((this->m_C) & 0xFF) ) /*0x63e770*/
+  if ( !((this->q00C) & 0xFF) ) /*0x63e770*/
     return 0; /*0x63e778*/
-  m_8 = this->m_8; /*0x63e77e*/
+  m_8 = this->q008; /*0x63e77e*/
   result = 0; /*0x63e781*/
   if ( m_8 <= 0 ) /*0x63e785*/
     return -1; /*0x63e79c*/
@@ -433,7 +433,7 @@ int BlowPipe_23::Read(unsigned int * a2, void *a2_2, void *a3)
 namespace gamemd {
 unsigned int BlowPipe_23::Write(int a2)
 {
-  if ( (*((unsigned char *)&(*&this->m_C))) ) /*0x63e7b0*/
+  if ( (*((unsigned char *)&(*&this->q00C))) ) /*0x63e7b0*/
     return (unsigned int)(a2 - *&this->q004) >> 2; /*0x63e7c5*/
   else
     return 0; /*0x63e7b7*/
@@ -452,38 +452,38 @@ char BlowPipe_23::SetCapacity_0(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x63e7dc*/
   {
-    (this->m_C) = ((this->m_C) & ~0xFF) | ((0) & 0xFF); /*0x63e7e2*/
+    (this->q00C) = ((this->q00C) & ~0xFF) | ((0) & 0xFF); /*0x63e7e2*/
     if ( a3 ) /*0x63e7e8*/
       v4 = a3; /*0x63e7fe*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x63e7fa*/
-    (this->m_C) = ((this->m_C) & ~0xFF) | ((1) & 0xFF); /*0x63e802*/
+    (this->q00C) = ((this->q00C) & ~0xFF) | ((1) & 0xFF); /*0x63e802*/
     if ( !v4 ) /*0x63e806*/
       return 0; /*0x63e87a*/
     if ( *&this->q004 ) /*0x63e808*/
     {
-      m_8 = this->m_8; /*0x63e80f*/
+      m_8 = this->q008; /*0x63e80f*/
       if ( a2 < m_8 ) /*0x63e814*/
         m_8 = a2; /*0x63e816*/
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x63e81c*/
         ++i; /*0x63e821*/
-      if ( (((this->m_C) >> 8) & 0xFF) ) /*0x63e82e*/
+      if ( (((this->q00C) >> 8) & 0xFF) ) /*0x63e82e*/
       {
         __3_YAXPAX_Z(*&this->q004); /*0x63e839*/
         *&this->q004 = 0; /*0x63e841*/
       }
     }
     *&this->q004 = v4; /*0x63e84a*/
-    this->m_8 = a2; /*0x63e852*/
-    (this->m_C) = ((this->m_C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x63e855*/
+    this->q008 = a2; /*0x63e852*/
+    (this->q00C) = ((this->q00C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x63e855*/
   }
   else
   {
     (*(void (**)(_DynamicVectorClass_PAVEventClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x63e85e*/
   }
-  v7 = this->m_8; /*0x63e861*/
-  if ( v7 < this->m_10 ) /*0x63e869*/
-    this->m_10 = v7; /*0x63e86b*/
+  v7 = this->q008; /*0x63e861*/
+  if ( v7 < this->q010 ) /*0x63e869*/
+    this->q010 = v7; /*0x63e86b*/
   return 1; /*0x63e86e*/
 
 }
@@ -495,7 +495,7 @@ int BlowPipe_23::FindItemIndex_0(unsigned int * a2)
 {
 
   int m_10; // edx
-  m_10 = this->m_10; /*0x63e8d0*/
+  m_10 = this->q010; /*0x63e8d0*/
   int result = 0; // eax /*0x63e8d3*/
   if ( m_10 <= 0 ) /*0x63e8d8*/
     return -1; /*0x63e8ef*/
@@ -520,38 +520,38 @@ char BlowPipe_23::SetCapacity_1(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x63eadc*/
   {
-    (this->m_C) = ((this->m_C) & ~0xFF) | ((0) & 0xFF); /*0x63eae2*/
+    (this->q00C) = ((this->q00C) & ~0xFF) | ((0) & 0xFF); /*0x63eae2*/
     if ( a3 ) /*0x63eae8*/
       v4 = a3; /*0x63eafe*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x63eafa*/
-    (this->m_C) = ((this->m_C) & ~0xFF) | ((1) & 0xFF); /*0x63eb02*/
+    (this->q00C) = ((this->q00C) & ~0xFF) | ((1) & 0xFF); /*0x63eb02*/
     if ( !v4 ) /*0x63eb06*/
       return 0; /*0x63eb7a*/
     if ( *&this->q004 ) /*0x63eb08*/
     {
-      m_8 = this->m_8; /*0x63eb0f*/
+      m_8 = this->q008; /*0x63eb0f*/
       if ( a2 < m_8 ) /*0x63eb14*/
         m_8 = a2; /*0x63eb16*/
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x63eb1c*/
         ++i; /*0x63eb21*/
-      if ( (((this->m_C) >> 8) & 0xFF) ) /*0x63eb2e*/
+      if ( (((this->q00C) >> 8) & 0xFF) ) /*0x63eb2e*/
       {
         __3_YAXPAX_Z(*&this->q004); /*0x63eb39*/
         *&this->q004 = 0; /*0x63eb41*/
       }
     }
     *&this->q004 = v4; /*0x63eb4a*/
-    this->m_8 = a2; /*0x63eb52*/
-    (this->m_C) = ((this->m_C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x63eb55*/
+    this->q008 = a2; /*0x63eb52*/
+    (this->q00C) = ((this->q00C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x63eb55*/
   }
   else
   {
     (*(void (**)(_DynamicVectorClass_PAVPlanningTokenClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x63eb5e*/
   }
-  v7 = this->m_8; /*0x63eb61*/
-  if ( v7 < this->m_10 ) /*0x63eb69*/
-    this->m_10 = v7; /*0x63eb6b*/
+  v7 = this->q008; /*0x63eb61*/
+  if ( v7 < this->q010 ) /*0x63eb69*/
+    this->q010 = v7; /*0x63eb6b*/
   return 1; /*0x63eb6e*/
 
 }
@@ -563,7 +563,7 @@ int BlowPipe_23::FindItemIndex_1(unsigned int * a2)
 {
 
   int m_10; // edx
-  m_10 = this->m_10; /*0x63ec20*/
+  m_10 = this->q010; /*0x63ec20*/
   int result = 0; // eax /*0x63ec23*/
   if ( m_10 <= 0 ) /*0x63ec28*/
     return -1; /*0x63ec3f*/

@@ -249,10 +249,10 @@ v1 = (HWND)Dialog::FindByHandle((Dialog *)0x11F); /*0x7a06a9*/
   if ( *(int *)&stru_B778FC.m_3[1] < 2 ) /*0x7a06cf*/
     goto LABEL_17; /*0x7a06cf*/
   for ( i = 0; i < *(int *)stru_B76AD0.__pad_0; ++i ) /*0x7a06de*/
-    j_DeleteAndZero((ObjectClass *)(stru_B76AD0.DynamicArray_field_0x08 + 4 * i)); /*0x7a06e8*/
+    j_DeleteAndZero((ObjectClass *)(stru_B76AD0.u32_8 + 4 * i)); /*0x7a06e8*/
   v3 = 0; /*0x7a06fc*/
   for ( *(unsigned int *)stru_B76AD0.__pad_0 = 0; v3 < *(int *)stru_B76970.__pad_0; ++v3 ) /*0x7a0706*/
-    j_DeleteAndZero((ObjectClass *)(stru_B76970.StringVector_field_0x08 + 4 * v3)); /*0x7a0711*/
+    j_DeleteAndZero((ObjectClass *)(stru_B76970.q008 + 4 * v3)); /*0x7a0711*/
   *(unsigned int *)stru_B76970.__pad_0 = 0; /*0x7a0720*/
   dword_B736F4 = 0; /*0x7a0726*/
   CollectWOLConnectionTokens(v28); /*0x7a072c*/
@@ -293,7 +293,7 @@ LABEL_17:
   *(unsigned int *)&v31[24] = &g_ptr_7F3F44; /*0x7a082c*/
   if ( (unsigned __int8)Flag::IsNot2((Flag *)&v31[36]) ) /*0x7a0830*/
   {
-    PlayerProfile = LoadPlayerProfile((ObjectClass *)&v31[16], (const char **)&stru_B73E10.CChatEventSink_field_0x30); /*0x7a0842*/
+    PlayerProfile = LoadPlayerProfile((ObjectClass *)&v31[16], (const char **)&stru_B73E10.q030); /*0x7a0842*/
     ComPtr::Set((ComPtr *)&v31[24], PlayerProfile->ptr_4); /*0x7a084f*/
     *(unsigned int *)&v31[16] = &g_ptr_7F3F44; /*0x7a0858*/
     ComPtr::Release((ComPtr *)&v31[16]); /*0x7a085c*/
@@ -368,7 +368,7 @@ LABEL_35:
     ((String *)v31)->Append((const char *)a1); /*0x7a0a77*/
   else
     String::Append((String *)v31, a0); /*0x7a0a82*/
-  ((String *)&v31[12])->AssignFromPtr((const char **)&stru_B73E10.CChatEventSink_field_0x30); /*0x7a0a90*/
+  ((String *)&v31[12])->AssignFromPtr((const char **)&stru_B73E10.q030); /*0x7a0a90*/
   String::ToLower((String *)&v31[12]); /*0x7a0a99*/
   v15 = *(String **)(*(unsigned int *)g_WOL_ConnectionPool.__pad_0 + 4 * (dword_B76548(&v31[12]) & ((1 << dword_B7653C) - 1))); /*0x7a0abd*/
   if ( v15 ) /*0x7a0ac2*/
@@ -1676,13 +1676,13 @@ int StartWDTCampaign(char a1, char a2, int a3)
   v22 = 0; /*0x7afc5d*/
   v21 = 0; /*0x7afc61*/
   *(unsigned int *)v19.owningHouseIndex = 0; /*0x7afc65*/
-  v7 = CCFileClass::Construct((CCFileClass *)&v23.ComPtr_field_0x08, g_Str_File_WDT_MIX); /*0x7afc69*/
+  v7 = CCFileClass::Construct((CCFileClass *)&v23.q008, g_Str_File_WDT_MIX); /*0x7afc69*/
   v8 = v7->vt_slot_20(0); /*0x7afc82*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E16B0) */  /*0x7afc84*/
   v25 = 0; /*0x7afc88*/
   Vector::Clear((int)v24); /*0x7afc8f*/
-  v23.ComPtr_field_0x08 = (int)&off_7E1668; /*0x7afc98*/
-  ((BufferIOFileClass *)((BufferIOFileClass *)&v23.ComPtr_field_0x08))->Dtor(); /*0x7afca0*/
+  v23.q008 = (int)&off_7E1668; /*0x7afc98*/
+  ((BufferIOFileClass *)((BufferIOFileClass *)&v23.q008))->Dtor(); /*0x7afca0*/
   if ( v8 ) /*0x7afca7*/
   {
     v9 = (MixFileClass *)operator new(0x28u); /*0x7afcab*/
@@ -1691,13 +1691,13 @@ int StartWDTCampaign(char a1, char a2, int a3)
     else
       v22 = 0; /*0x7afcce*/
   }
-  v10 = CCFileClass::Construct((CCFileClass *)&v23.ComPtr_field_0x08, aWdtvoxMix); /*0x7afcdb*/
+  v10 = CCFileClass::Construct((CCFileClass *)&v23.q008, aWdtvoxMix); /*0x7afcdb*/
   v11 = v10->vt_slot_20(0); /*0x7afcef*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E16B0) */  /*0x7afcf1*/
   v25 = 0; /*0x7afcf5*/
   Vector::Clear((int)v24); /*0x7afcfc*/
-  v23.ComPtr_field_0x08 = (int)&off_7E1668; /*0x7afd05*/
-  ((BufferIOFileClass *)((BufferIOFileClass *)&v23.ComPtr_field_0x08))->Dtor(); /*0x7afd0d*/
+  v23.q008 = (int)&off_7E1668; /*0x7afd05*/
+  ((BufferIOFileClass *)((BufferIOFileClass *)&v23.q008))->Dtor(); /*0x7afd0d*/
   if ( v11 ) /*0x7afd14*/
   {
     v12 = (MixFileClass *)operator new(0x28u); /*0x7afd18*/
@@ -1706,13 +1706,13 @@ int StartWDTCampaign(char a1, char a2, int a3)
     else
       v21 = 0; /*0x7afd3b*/
   }
-  v13 = CCFileClass::Construct((CCFileClass *)&v23.ComPtr_field_0x08, aLocalMix_1); /*0x7afd48*/
+  v13 = CCFileClass::Construct((CCFileClass *)&v23.q008, aLocalMix_1); /*0x7afd48*/
   v14 = v13->vt_slot_20(0); /*0x7afd5c*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E16B0) */  /*0x7afd5e*/
   v25 = 0; /*0x7afd62*/
   Vector::Clear((int)v24); /*0x7afd69*/
-  v23.ComPtr_field_0x08 = (int)&off_7E1668; /*0x7afd72*/
-  ((BufferIOFileClass *)((BufferIOFileClass *)&v23.ComPtr_field_0x08))->Dtor(); /*0x7afd7a*/
+  v23.q008 = (int)&off_7E1668; /*0x7afd72*/
+  ((BufferIOFileClass *)((BufferIOFileClass *)&v23.q008))->Dtor(); /*0x7afd7a*/
   if ( v14 ) /*0x7afd81*/
   {
     v15 = (MixFileClass *)operator new(0x28u); /*0x7afd85*/

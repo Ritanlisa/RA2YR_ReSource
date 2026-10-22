@@ -40,19 +40,19 @@ struct WarheadTypeClass {
     char pad_9D[7];  // 0x9D
     char Damage;  // 0xA4
     char pad_A5[83];  // 0xA5
-    unsigned int WarheadTypeClass_field_0xF8;  // 0xF8
+    unsigned int q0F8;  // 0xF8
     unsigned int __pad_FC;  // 0xFC
-    int WarheadTypeClass_field_0x100;  // 0x100
+    int q100;  // 0x100
     unsigned int u32_104;  // 0x104
-    int WarheadTypeClass_field_0x108;  // 0x108
+    int u32_108;  // 0x108
     char __pad_10C[4];  // 0x10C
     unsigned char OccupantAnim;  // 0x110
     char __pad_111[3];  // 0x111
-    int WarheadTypeClass_field_0x114;  // 0x114
+    int u32_114;  // 0x114
     unsigned int OpenToppedAnim;  // 0x118
     unsigned char __pad_11C;  // 0x11C
     char __pad_11D[3];  // 0x11D
-    int WarheadTypeClass_field_0x120;  // 0x120
+    int q120;  // 0x120
     char pad_124[6];  // 0x124
     bool UseSparkParticles;  // 0x12A
     char pad_12B[2];  // 0x12B
@@ -94,10 +94,10 @@ struct WarheadTypeClass {
     int Paralyzes;  // 0x170
     int Culling;  // 0x174
     int PsychicDamage;  // 0x178
-    unsigned int WarheadTypeClass_field_0x17C;  // 0x17C
-    int WarheadTypeClass_field_0x180;  // 0x180
-    int WarheadTypeClass_field_0x184;  // 0x184
-    int WarheadTypeClass_field_0x188;  // 0x188
+    unsigned int u32_17C;  // 0x17C
+    int q180;  // 0x180
+    int u32_184;  // 0x184
+    int u32_188;  // 0x188
     void* DebrisTypes;  // 0x18C
     unsigned int __pad_190;  // 0x190
     int MaxDebris;  // 0x194
@@ -105,12 +105,12 @@ struct WarheadTypeClass {
     unsigned int unused_1CC;  // 0x19C
     unsigned char __pad_1A0;  // 0x1A0
     char __pad_1A1[11];  // 0x1A1
-    int WarheadTypeClass_field_0x1AC;  // 0x1AC
+    int u32_1AC;  // 0x1AC
     char __pad_1B0[12];  // 0x1B0
-    int WarheadTypeClass_field_0x1BC;  // 0x1BC
+    int u32_1BC;  // 0x1BC
     char __pad_1C0[4];  // 0x1C0
-    int WarheadTypeClass_field_0x1C4;  // 0x1C4
-    int WarheadTypeClass_field_0x1C8;  // 0x1C8
+    int u32_1C4;  // 0x1C4
+    int u32_1C8;  // 0x1C8
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     AbstractClass * * Release(int a2, unsigned int * a3);

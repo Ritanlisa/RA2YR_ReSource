@@ -10,9 +10,9 @@ struct DialogControl {
     char __pad_1[1];  // 0x1
     unsigned char u8_2;  // 0x2
     char __pad_3[1];  // 0x3
-    int DialogControl_field_0x04;  // 0x4
-    int DialogControl_field_0x08;  // 0x8
-    int DialogControl_field_0x0C;  // 0xC
+    int q004;  // 0x4
+    int q008;  // 0x8
+    int u32_C;  // 0xC
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int Hide();

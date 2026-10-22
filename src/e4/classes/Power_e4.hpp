@@ -6,7 +6,7 @@
 namespace gamemd {
 struct Power {
     void* a2;  // 0x0
-    int Power_field_0x4;  // 0x4
+    int q004;  // 0x4
     int q008;  // 0x8
     int q00C;  // 0xC
 // --- flat members (BEGIN) ---

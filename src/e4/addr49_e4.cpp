@@ -4604,7 +4604,7 @@ unsigned short * E4Recv_4932A0::sub_4932A0(unsigned short * a1, unsigned char * 
       v13 = *result++; /*0x4932cc*/
       if ( argC < v13 && *a2 ) /*0x4932da*/
       {
-        *a1 = (this->m_8 & (a1[a9] >> 1)) + (this->m_8 & (*(unsigned short *)(this->M4 + 2 * (unsigned __int8)*a2) >> 1)); /*0x49330a*/
+        *a1 = (this->M4 & (a1[a9] >> 1)) + (this->M4 & (*(unsigned short *)(this->M4 + 2 * (unsigned __int8)*a2) >> 1)); /*0x49330a*/
         v12 = g_ZBufferDescriptor; /*0x49330d*/
       }
       ++a2; /*0x493316*/
@@ -4695,7 +4695,7 @@ int E4Recv_4933D0::sub_4933D0(unsigned short * a1, unsigned char * a2, int a4, i
       v14 = *a5++; /*0x4933fc*/
       if ( argC < v14 && *a2 ) /*0x49340a*/
       {
-        *a1 = (this->m_8 & (a1[a9] >> 2)) + 3 * (this->m_8 & (*(unsigned short *)(this->M4 + 2 * (unsigned __int8)*a2) >> 2)); /*0x49343e*/
+        *a1 = (this->M4 & (a1[a9] >> 2)) + 3 * (this->M4 & (*(unsigned short *)(this->M4 + 2 * (unsigned __int8)*a2) >> 2)); /*0x49343e*/
         v12 = g_ZBufferDescriptor; /*0x493441*/
       }
       ++a2; /*0x49344a*/
@@ -5190,7 +5190,7 @@ unsigned short * E4Recv_4963F0::sub_4963F0(unsigned short * a1, unsigned char * 
     if ( v17 ) /*0x496439*/
     {
       --v16; /*0x496478*/
-      *result = (this->m_8 & (*result >> 1)) + (this->m_8 & (*(unsigned short *)(this->M4 + 2 * v17) >> 1)); /*0x496479*/
+      *result = (this->M4 & (*result >> 1)) + (this->M4 & (*(unsigned short *)(this->M4 + 2 * v17) >> 1)); /*0x496479*/
       ++result; /*0x49647c*/
     }
     else

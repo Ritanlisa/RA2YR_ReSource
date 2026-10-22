@@ -82,9 +82,9 @@ struct WaveClass {
     int WaveClass_field_118;  // 0x118
     int WaveClass_field_11C;  // 0x11C
     int WaveClass_field_120;  // 0x120
-    int WaveClass_field_124;  // 0x124
+    int LaserIntensity;  // 0x124
     void * q128;  // 0x128
-    char WaveClass_field_12C[1];  // 0x12C
+    char Facing[1];  // 0x12C
     unsigned char WaveClass_field_12D_d;  // 0x12D
     unsigned char WaveClass_field_12E_d;  // 0x12E
     unsigned char WaveClass_field_12F_d;  // 0x12F

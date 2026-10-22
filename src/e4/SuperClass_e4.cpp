@@ -222,13 +222,13 @@ SuperClass * * SuperClass::CleanupMembers(void *a1)
     if ( v3 != -1 ) /*0x6cb16e*/
       ((DynamicVector *)&stru_B0F5B8)->RemoveItem(v3); /*0x6cb176*/
   }
-  if ( this->u32_6C ) /*0x6cb17b*/
+  if ( this->SpecialSoundLocation ) /*0x6cb17b*/
   {
     v9 = this; /*0x6cb192*/
     v4 = (*(int (**)(DynamicVectorClass *, int *))(stru_B0F5B8.ptr_0 + 16))(&stru_B0F5B8, &v9); /*0x6cb196*/
     if ( v4 != -1 ) /*0x6cb19c*/
       ((DynamicVector *)&stru_B0F5B8)->RemoveItem(v4); /*0x6cb1a4*/
-    this->u32_6C = 0; /*0x6cb1a9*/
+    this->SpecialSoundLocation = 0; /*0x6cb1a9*/
   }
   v9 = this; /*0x6cb1bd*/
   v5 = (*(int (**)(char *, int *))(*(unsigned int *)&stru_A83CD9.alignmentPadding75[2] + 16))( /*0x6cb1c1*/
@@ -258,11 +258,11 @@ SuperClass * * SuperClass::CleanupMembers(void *a1)
   }
   v9 = this; /*0x6cb24f*/
   v7 = (*(int (**)(DynamicVector *, int *))(*(unsigned int *)stru_B0F670.__pad_0 + 16))(&stru_B0F670, &v9); /*0x6cb253*/
-  if ( v7 != -1 && v7 < stru_B0F670.DynamicVector_field_0x10 ) /*0x6cb263*/
+  if ( v7 != -1 && v7 < stru_B0F670.q010 ) /*0x6cb263*/
   {
-    --stru_B0F670.DynamicVector_field_0x10; /*0x6cb268*/
+    --stru_B0F670.q010; /*0x6cb268*/
     for ( ; /*0x6cb26e*/
-          v7 < stru_B0F670.DynamicVector_field_0x10;
+          v7 < stru_B0F670.q010;
           *(unsigned int *)(*(unsigned int *)&stru_B0F670.DynamicVector_field_0x1[3] + 4 * v7 - 4) = *(unsigned int *)(*(unsigned int *)&stru_B0F670.DynamicVector_field_0x1[3] + 4 * v7) )
     {
       ++v7; /*0x6cb276*/
@@ -270,11 +270,11 @@ SuperClass * * SuperClass::CleanupMembers(void *a1)
   }
   v9 = this; /*0x6cb298*/
   v8 = (*(int (**)(DynamicVector *, int *))(*(unsigned int *)stru_B0F6C8.__pad_0 + 16))(&stru_B0F6C8, &v9); /*0x6cb29c*/
-  if ( v8 != -1 && v8 < stru_B0F6C8.DynamicVector_field_0x10 ) /*0x6cb2ac*/
+  if ( v8 != -1 && v8 < stru_B0F6C8.q010 ) /*0x6cb2ac*/
   {
-    --stru_B0F6C8.DynamicVector_field_0x10; /*0x6cb2b1*/
+    --stru_B0F6C8.q010; /*0x6cb2b1*/
     for ( ; /*0x6cb2b7*/
-          v8 < stru_B0F6C8.DynamicVector_field_0x10;
+          v8 < stru_B0F6C8.q010;
           *(unsigned int *)(*(unsigned int *)&stru_B0F6C8.DynamicVector_field_0x1[3] + 4 * v8 - 4) = *(unsigned int *)(*(unsigned int *)&stru_B0F6C8.DynamicVector_field_0x1[3] + 4 * v8) )
     {
       ++v8; /*0x6cb2bf*/
@@ -385,11 +385,11 @@ AbstractClass * * SuperClass::StartTimer(int aP1, char aP2, char aP3)
         aP1 = this; /*0x6cb6ce*/
         VectorClass::RemoveAt(&stru_B0F5B8, (int)&aP1); /*0x6cb6d2*/
       }
-      if ( this->u32_6C ) /*0x6cb6d7*/
+      if ( this->SpecialSoundLocation ) /*0x6cb6d7*/
       {
         aP1 = this; /*0x6cb6e6*/
         VectorClass::RemoveAt(&stru_B0F5B8, (int)&aP1); /*0x6cb6ea*/
-        this->u32_6C = 0; /*0x6cb6ef*/
+        this->SpecialSoundLocation = 0; /*0x6cb6ef*/
       }
       if ( !this->Granted /*0x6cb704*/
         || this->IsCharged
@@ -445,10 +445,10 @@ int SuperClass::Lose()
 
   SuperClass *v3; // [esp+0h] [ebp-4h] BYREF
   v3 = this; /*0x6cb7b0*/
-  if ( !(((this->u32_6C) >> 8) & 0xFF) ) /*0x6cb7b1*/
+  if ( !(((this->SpecialSoundLocation) >> 8) & 0xFF) ) /*0x6cb7b1*/
     return 0; /*0x6cb80d*/
-  HIBYTE(this->u32_6C) = 0; /*0x6cb7ba*/
-  (this->u32_6C) = ((this->u32_6C) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x6cb7bd*/
+  HIBYTE(this->SpecialSoundLocation) = 0; /*0x6cb7ba*/
+  (this->SpecialSoundLocation) = ((this->SpecialSoundLocation) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x6cb7bd*/
   v3 = this; /*0x6cb7ca*/
   int v1; // eax
   v1 = (*((int (**)(SuperClass *, SuperClass **))SuperClass_ShowTimers + 4))(&stru_A83D50, &v3); /*0x6cb7d4*/
@@ -487,13 +487,13 @@ char SuperClass::StopPreclickAnim(int aP1)
     if ( v4 != -1 ) /*0x6cb863*/
       ((DynamicVector *)&stru_B0F5B8)->RemoveItem(v4); /*0x6cb86b*/
   }
-  if ( this->u32_6C ) /*0x6cb870*/
+  if ( this->SpecialSoundLocation ) /*0x6cb870*/
   {
     v8[0] = this; /*0x6cb885*/
     v5 = (*(int (**)(DynamicVectorClass *, unsigned int *))(stru_B0F5B8.ptr_0 + 16))(&stru_B0F5B8, v8); /*0x6cb889*/
     if ( v5 != -1 ) /*0x6cb88f*/
       ((DynamicVector *)&stru_B0F5B8)->RemoveItem(v5); /*0x6cb897*/
-    this->u32_6C = 0; /*0x6cb89c*/
+    this->SpecialSoundLocation = 0; /*0x6cb89c*/
   }
   if ( !this->Granted /*0x6cb8b1*/
     || this->IsCharged
@@ -680,11 +680,11 @@ LABEL_11:
         a2 = this; /*0x6cbc10*/
         VectorClass::RemoveAt(&stru_B0F5B8, (int)&a2); /*0x6cbc14*/
       }
-      if ( this->u32_6C ) /*0x6cbc19*/
+      if ( this->SpecialSoundLocation ) /*0x6cbc19*/
       {
         a2 = this; /*0x6cbc28*/
         VectorClass::RemoveAt(&stru_B0F5B8, (int)&a2); /*0x6cbc2c*/
-        this->u32_6C = 0; /*0x6cbc31*/
+        this->SpecialSoundLocation = 0; /*0x6cbc31*/
       }
       if ( this->Granted /*0x6cbc46*/
         && !this->IsCharged
@@ -737,9 +737,9 @@ int SuperClass::AnnounceReady(DynamicVector * aP1, void *a2, void * aEvaForceshi
     v5 = v4 - Math::RoundToInt((double)v4); /*0x6cc0b4*/
     if ( !v5 ) /*0x6cc0b6*/
       this->IsCharged = 1; /*0x6cc0b8*/
-    if ( this->ptr_C == -1 ) /*0x6cc0c0*/
-      this->ptr_C = dword_A8ED84; /*0x6cc0c8*/
-    this->ptr_C = dword_A8ED84; /*0x6cc0d4*/
+    if ( this->q00C == -1 ) /*0x6cc0c0*/
+      this->q00C = dword_A8ED84; /*0x6cc0c8*/
+    this->q00C = dword_A8ED84; /*0x6cc0d4*/
     int v7; // [esp+Ch] [ebp-8h]
     this->u32_34 = v7; /*0x6cc0db*/
     this->u32_38 = v5; /*0x6cc0de*/
@@ -1090,7 +1090,7 @@ void ** SuperClass::CreateChronoAnim(AbstractClass * aP1, SuperClass * aP2, int 
     if ( v6 != -1 ) /*0x6cb3d5*/
       ((DynamicVector *)stru_B0F5B8)->RemoveItem(v6); /*0x6cb3dd*/
   }
-  if ( ((this->u32_6C) & 0xFF) ) /*0x6cb3e2*/
+  if ( ((this->SpecialSoundLocation) & 0xFF) ) /*0x6cb3e2*/
   {
     v9 = this; /*0x6cb3f9*/
     int v7; // eax
@@ -1099,7 +1099,7 @@ void ** SuperClass::CreateChronoAnim(AbstractClass * aP1, SuperClass * aP2, int 
            &v9);
     if ( v7 != -1 ) /*0x6cb403*/
       ((DynamicVector *)stru_B0F5B8)->RemoveItem(v7); /*0x6cb40b*/
-    (this->u32_6C) = ((this->u32_6C) & ~0xFF) | ((0) & 0xFF); /*0x6cb410*/
+    (this->SpecialSoundLocation) = ((this->SpecialSoundLocation) & ~0xFF) | ((0) & 0xFF); /*0x6cb410*/
   }
   void **result; // eax
   result = (void **)__2_YAPAXI_Z(0x1C8u); /*0x6cb419*/
@@ -1155,7 +1155,7 @@ char SuperClass::SetOnHold(char aP1)
   {
     if ( aP1 || (result = this->u32_28, result->u8_F5) ) /*0x6cb4f9*/
     {
-      int v3 = this->ptr_C; // esi /*0x6cb51c*/
+      int v3 = this->q00C; // esi /*0x6cb51c*/
       if ( v3 != -1 ) /*0x6cb522*/
       {
         int v4 = this->u32_38; // eax /*0x6cb524*/
@@ -1164,12 +1164,12 @@ char SuperClass::SetOnHold(char aP1)
         else
           result = v4 - ((unsigned int)dword_A8ED84 - v3); /*0x6cb538*/
         this->u32_38 = result; /*0x6cb53e*/
-        this->ptr_C = -1; /*0x6cb541*/
+        this->q00C = -1; /*0x6cb541*/
       }
     }
-    else if ( this->ptr_C == -1 ) /*0x6cb507*/
+    else if ( this->q00C == -1 ) /*0x6cb507*/
     {
-      this->ptr_C = dword_A8ED84; /*0x6cb510*/
+      this->q00C = dword_A8ED84; /*0x6cb510*/
       this->referenceCount = 0; /*0x6cb513*/
       (*((unsigned char *)&(result))) = 1; /*0x6cb516*/
       return result; /*0x6cb519*/
@@ -1186,7 +1186,7 @@ namespace gamemd {
 char SuperClass::SetReadiness(char a2)
 {
 
-  HIBYTE(this->u32_6C) = a2; /*0x6cb824*/
+  HIBYTE(this->SpecialSoundLocation) = a2; /*0x6cb824*/
   return a2; /*0x6cb827*/
 
 }
@@ -1269,7 +1269,7 @@ char SuperClass::CanFire()
     return 0; /*0x6cc381*/
   if ( *((unsigned char *)this->u32_28 + 229) ) /*0x6cc36a*/
     return this->u32_7C != 0; /*0x6cc379*/
-  return HIBYTE(this->u32_6C); /*0x6cc37c*/
+  return HIBYTE(this->SpecialSoundLocation); /*0x6cc37c*/
 
 }
 } // namespace gamemd
@@ -1279,7 +1279,7 @@ namespace gamemd {
 bool SuperClass::ShouldDrawProgress()
 {
 
-  return *((unsigned char *)this->u32_28 + 229) || HIBYTE(this->u32_6C) == 0; /*0x6cde9d*/
+  return *((unsigned char *)this->u32_28 + 229) || HIBYTE(this->SpecialSoundLocation) == 0; /*0x6cde9d*/
 
 }
 } // namespace gamemd
@@ -1366,7 +1366,7 @@ long long SuperClass::ExecuteAction(unsigned int a2, int a3)
   if ( (void *)a2 == this->u32_68 ) /*0x6ce00f*/
   {
     this->u32_68 = 0; /*0x6ce011*/
-    (this->u32_6C) = ((this->u32_6C) & ~0xFF) | ((1) & 0xFF); /*0x6ce014*/
+    (this->SpecialSoundLocation) = ((this->SpecialSoundLocation) & ~0xFF) | ((1) & 0xFF); /*0x6ce014*/
   }
   return result; /*0x6ce00e*/
 
@@ -1381,13 +1381,13 @@ int SuperClass::PowerDrainUpdate(int * a2)
 
   int v3; // eax
   v3 = AbstractClass::ProcessPower((AbstractClass *)this); /*0x6ce029*/
-  LOBYTE(v3) = BYTE1(this->u32_6C); /*0x6ce02e*/
+  LOBYTE(v3) = BYTE1(this->SpecialSoundLocation); /*0x6ce02e*/
   Power::FlagProcess((Power *)a2, v3); /*0x6ce034*/
   int v4; // ecx
-  LOBYTE(v4) = BYTE2(this->u32_6C); /*0x6ce039*/
+  LOBYTE(v4) = BYTE2(this->SpecialSoundLocation); /*0x6ce039*/
   Power::FlagProcess((Power *)a2, v4); /*0x6ce03f*/
   int v5; // edx
-  LOBYTE(v5) = HIBYTE(this->u32_6C); /*0x6ce044*/
+  LOBYTE(v5) = HIBYTE(this->SpecialSoundLocation); /*0x6ce044*/
   Power::FlagProcess((Power *)a2, v5); /*0x6ce04a*/
   Power::TimerProcess(this->u32_78); /*0x6ce055*/
   Power::TimerProcess((int)this->u32_7C); /*0x6ce060*/
@@ -1395,7 +1395,7 @@ int SuperClass::PowerDrainUpdate(int * a2)
   LOBYTE(v6) = this->q060; /*0x6ce065*/
   int v7; // eax
   v7 = Power::FlagProcess((Power *)a2, v6); /*0x6ce06b*/
-  LOBYTE(v7) = this->u32_6C; /*0x6ce070*/
+  LOBYTE(v7) = this->SpecialSoundLocation; /*0x6ce070*/
   Power::FlagProcess((Power *)a2, v7); /*0x6ce076*/
   int result; // eax
   result = (int)this->u32_68; /*0x6ce07b*/
@@ -1425,7 +1425,7 @@ bool SuperClass::ShouldFlashTab()
     if ( !this->u32_7C ) /*0x6ce1b9*/
       return 0; /*0x6ce1b9*/
   }
-  else if ( !HIBYTE(this->u32_6C) ) /*0x6ce1c2*/
+  else if ( !HIBYTE(this->SpecialSoundLocation) ) /*0x6ce1c2*/
   {
     return 0; /*0x6ce1c2*/
   }

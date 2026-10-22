@@ -1231,7 +1231,7 @@ AbstractClass * * E4Recv_663DB0::LaunchMultiplayerHost(unsigned char * a2, void 
     ((Network *)(v5))->CopyAddress(&v20, (int)&v12); /*0x663e7e*/
     sprintf(CommandLine, "mphmd.exe %d.%d.%d.%d", v12, v13, v14, v15); /*0x663ebb*/
     qword_A8DBB0 = *&v5->__pad_000; /*0x663ec5*/
-    dword_A8DBB8 = v5->q008; /*0x663ed6*/
+    dword_A8DBB8 = v5->u32_8; /*0x663ed6*/
     dword_A8DBBC = 0; /*0x663edc*/
     LABEL_10:
     Network::FormatAddress((Network *)&qword_A8DBB0, 0); /*0x663fad*/
@@ -1931,7 +1931,7 @@ unsigned int * E4Recv_6638E0::sub_6638E0()
   /* X11: ptr_0 install elided (base-interface slot, RHS g_ptr_7E3238) */  /*0x6638f1*/
   this->M20 = 10; /*0x6638f7*/
   this->M16 = 0; /*0x6638fe*/
-  LOBYTE(this->q018) = 0; /*0x663901*/
+  LOBYTE(this->M20) = 0; /*0x663901*/
   this->M28 = 0; /*0x663904*/
   return &this->AbstractClass; /*0x663907*/
 

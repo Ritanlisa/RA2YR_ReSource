@@ -2061,10 +2061,10 @@ char * E4Recv_5408F0::sub_5408F0(int a2, int a3, int a4, int a5, short a6, short
   dword_887628 = 0; /*0x540960*/
   this->M8 = a2; /*0x540966*/
   this->M12 = a4; /*0x540969*/
-  this->q018 = a2; /*0x540970*/
+  this->M20 = a2; /*0x540970*/
   this->M20 = a5; /*0x54097c*/
   this->M28 = a5; /*0x54097f*/
-  this->q020 = a7; /*0x540982*/
+  this->M24 = a7; /*0x540982*/
   LOBYTE(v10) = HIBYTE(a6); /*0x54098d*/
   HIBYTE(v10) = a6; /*0x540992*/
   this->u32_22 = v10; /*0x540996*/
@@ -2073,7 +2073,7 @@ char * E4Recv_5408F0::sub_5408F0(int a2, int a3, int a4, int a5, short a6, short
   this->M24 = 0; /*0x5409a5*/
   this->M68 = 0; /*0x5409a8*/
   this->u32_54 = 0; /*0x5409ab*/
-  memset(&this->q028, 0, 0x1Cu); /*0x5409ae*/
+  memset(&this->M34, 0, 0x1Cu); /*0x5409ae*/
   this->M72 = 0; /*0x5409b3*/
   this->M168 = -1; /*0x5409b6*/
   this->M92 = -1; /*0x5409bc*/
@@ -2972,7 +2972,7 @@ unsigned int * E4Recv_54E360::sub_54E360()
   LOBYTE(this->q018) = 1; /*0x54e37e*/
   BYTE1(this->M25) = 0; /*0x54e382*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E3238) */  /*0x54e385*/
-  this->q020 = (void *)10; /*0x54e38c*/
+  this->M24 = (void *)10; /*0x54e38c*/
   this->M28 = 0; /*0x54e393*/
   this->AbstractClass = *(void **)&DataGlobal_A8EB00[644]; /*0x54e39e*/
   void *v2; // [esp+8h] [ebp-8h]

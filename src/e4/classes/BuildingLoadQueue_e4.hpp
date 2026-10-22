@@ -7,9 +7,9 @@ namespace gamemd {
 
 struct BuildingLoadQueue {
     int __pad_000;  // 0x0
-    int BuildingLoadQueue_field_0x04;  // 0x4
-    int BuildingLoadQueue_field_0x08;  // 0x8
-    int BuildingLoadQueue_field_0x0C;  // 0xC
+    int q004;  // 0x4
+    int q008;  // 0x8
+    int q00C;  // 0xC
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     void * Find(void *a1 = 0, void *a2 = 0);

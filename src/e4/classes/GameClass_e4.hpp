@@ -13,7 +13,7 @@ struct PKPipe;  // fix_fwd_type_supply
 struct PKStrawClass {
     void* ptr_0;  // 0x0
     int __pad_004;  // 0x4
-    int PKStrawClass_field_0x08;  // 0x8
+    int q008;  // 0x8
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int  initGameMode(int a2, int a3, void *a1 = 0);  // 0x437FD0
@@ -46,11 +46,11 @@ struct PKStrawClass {
 struct GameClass {
 #pragma pack(push, 1)  // X60: binary-packed layout
     unsigned int __pad_0;  // 0x0
-    unsigned int * GameClass_field_0x4;  // 0x4
+    unsigned int * u32_4;  // 0x4
     unsigned int u32_8;  // 0x8
     unsigned int u32_C;  // 0xC
-    unsigned int q10;  // 0x10
-    Pipe* m_14;  // 0x14
+    unsigned int u32_10;  // 0x10
+    Pipe* ptr_14;  // 0x14
     unsigned int __pad_018;  // 0x18
     char __pad_1C[4];  // 0x1C
     CampaignClass * ptr_20;  // 0x20
@@ -62,7 +62,7 @@ struct GameClass {
     unsigned char GameClass_30[4];  // 0x30
     unsigned int u32_34;  // 0x34
     char u32_38[1];  // 0x38
-    char GameClass_field_0x39[4];  // 0x39
+    char q039[4];  // 0x39
     unsigned char q03D;  // 0x3D
     char __pad_3E[2];  // 0x3E
     unsigned int q040;  // 0x40
@@ -101,7 +101,7 @@ struct GameClass {
     unsigned int q130;  // 0x130
     unsigned int q134;  // 0x134
     char __pad_138[4];  // 0x138
-    unsigned int m_13C;  // 0x13C
+    unsigned int u32_13C;  // 0x13C
     unsigned int u32_140;  // 0x140
     char __pad_144[12];  // 0x144
     unsigned int q150;  // 0x150

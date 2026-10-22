@@ -94,7 +94,7 @@ int WWMouseClass::hideCursor()
             v4 = *&this->q04C; /*0x7b99cd*/
             v5 = *&this->q050; /*0x7b99d3*/
             v6 = *&this->q054; /*0x7b99d7*/
-            v10[0] = (char *)this->WWMouseClass_field_0x2C + *(unsigned int *)this->__pad_48; /*0x7b99da*/
+            v10[0] = (char *)this->q02C + *(unsigned int *)this->__pad_48; /*0x7b99da*/
             v7 = (char *)this->q_30 + v4; /*0x7b99e1*/
             v9[0] = 0; /*0x7b99e7*/
             v9[1] = 0; /*0x7b99eb*/
@@ -248,7 +248,7 @@ void WWMouseClass::releaseMouse()
             v5 = *&this->q04C; /*0x7b9ce9*/
             v6 = *&this->q050; /*0x7b9cef*/
             v7 = *&this->q054; /*0x7b9cf3*/
-            v10[0] = (char *)this->WWMouseClass_field_0x2C + *(unsigned int *)this->__pad_48; /*0x7b9cf6*/
+            v10[0] = (char *)this->q02C + *(unsigned int *)this->__pad_48; /*0x7b9cf6*/
             v8 = (char *)this->q_30 + v5; /*0x7b9cfd*/
             v9[0] = 0; /*0x7b9d03*/
             v9[1] = 0; /*0x7b9d07*/

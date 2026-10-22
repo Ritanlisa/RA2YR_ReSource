@@ -1953,10 +1953,10 @@ LABEL_102:
     {
       if ( !*((unsigned char *)v10 + 140) && v72 >= dword_B1D0AC ) /*0x73c3d3*/
       {
-        Cell_field_0x140 = v73->Cell_field_0x140; /*0x73c3d5*/
+        Cell_field_0x140 = v73->u32_140; /*0x73c3d5*/
         if ( (Cell_field_0x140 & 0x100) != 0 /*0x73c414*/
           && ((Cell_field_0x140 & 0x800) != 0 && (*((unsigned int *)Cell::GetNeighbourContent(v73, 0) + 80) & 0x100) != 0
-           || (v73->Cell_field_0x140 & 0x800) == 0
+           || (v73->u32_140 & 0x800) == 0
            && (*((unsigned int *)Cell::GetNeighbourContent(v73, 6u) + 80) & 0x100) != 0) )
         {
           v120[1] -= 60; /*0x73c416*/

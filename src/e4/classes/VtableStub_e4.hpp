@@ -8,14 +8,14 @@ namespace gamemd {
 struct VtableStub {
     unsigned char __pad_000;  // 0x0
     char __pad_1[3];  // 0x1
-    int VtableStub_field_0x04;  // 0x4
-    int VtableStub_field_0x08;  // 0x8
-    int VtableStub_field_0x0C;  // 0xC
-    int VtableStub_field_0x10;  // 0x10
-    int VtableStub_field_0x14;  // 0x14
-    int VtableStub_field_0x18;  // 0x18
-    int VtableStub_field_0x1C;  // 0x1C
-    int VtableStub_field_0x20;  // 0x20
+    int q004;  // 0x4
+    int q008;  // 0x8
+    int u32_C;  // 0xC
+    int u32_10;  // 0x10
+    int q014;  // 0x14
+    int q018;  // 0x18
+    int q01C;  // 0x1C
+    int q020;  // 0x20
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     char RetZero_eax_35(int a1);

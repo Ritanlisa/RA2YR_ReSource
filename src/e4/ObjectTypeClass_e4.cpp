@@ -1531,20 +1531,20 @@ unsigned int * ObjectTypeClass::g_var_773e90(unsigned int * a1)
 {
 
   int v1 = 2 * dword_889F58; // esi /*0x41cbfc*/
-  *(unsigned int *)a1->vtable1 = 256; /*0x41cc07*/
+  *(unsigned int *)a1[0] = 256; /*0x41cc07*/
   *(unsigned int *)&a1->uniqueId = 256; /*0x41cc09*/
   *(unsigned int *)&a1->NeedsSaveOrLink = v1; /*0x41cc0c*/
-  return a1->vtable1; /*0x41cc0f*/
+  return a1[0]; /*0x41cc0f*/
 }
 } // namespace gamemd
 // 0x41CF80
 namespace gamemd {
 unsigned int * ObjectTypeClass::Copy(unsigned int * a0, ObjectTypeClass * aP1)
 {
-  a0->vtable1 = (void *)*aP1; /*0x41cf8d*/
-  a0->vtable2 = aP1->vfptr1; /*0x41cf92*/
-  a0->vtable3 = aP1->vfptr2; /*0x41cf99*/
-  return &a0->vtable1; /*0x41cf95*/
+  a0[0] = (void *)*aP1; /*0x41cf8d*/
+  a0[1] = aP1->vfptr1; /*0x41cf92*/
+  a0[2] = aP1->vfptr2; /*0x41cf99*/
+  return &a0[0]; /*0x41cf95*/
 }
 } // namespace gamemd
 // 0x474690
@@ -1807,10 +1807,10 @@ void ObjectTypeClass::ReleaseWaveAndString(void *a1)
 namespace gamemd {
 unsigned int * ObjectTypeClass::InitTripleTen(unsigned int * a1)
 {
-  a1->vtable1 = (void *)10; /*0x5f75cd*/
-  a1->vtable2 = (void *)10; /*0x5f75d3*/
-  a1->vtable3 = (void *)10; /*0x5f75d6*/
-  return &a1->vtable1; /*0x5f75d9*/
+  a1[0] = (void *)10; /*0x5f75cd*/
+  a1[1] = (void *)10; /*0x5f75d3*/
+  a1[2] = (void *)10; /*0x5f75d6*/
+  return &a1[0]; /*0x5f75d9*/
 }
 } // namespace gamemd
 // 0x5F8080

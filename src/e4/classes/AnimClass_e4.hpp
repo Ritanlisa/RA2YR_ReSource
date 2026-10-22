@@ -28,29 +28,29 @@ struct AnimClass {
     void* ptr_8;  // 0x8
     unsigned int q00C;  // 0xC
     unsigned int __pad_010;  // 0x10
-    int AnimClass_field_0x14;  // 0x14
+    int q014;  // 0x14
     char __pad_18[3];  // 0x18
     unsigned char u32_1B;  // 0x1B
     char __pad_1C[8];  // 0x1C
-    int AnimClass_field_0x24;  // 0x24
+    int q024;  // 0x24
     char __pad_28[8];  // 0x28
-    int AnimClass_field_0x30;  // 0x30
+    int u32_30;  // 0x30
     char __pad_34[3];  // 0x34
     unsigned char __pad_037;  // 0x37
-    int AnimClass_field_0x38;  // 0x38
+    int q038;  // 0x38
     char __pad_3C[4];  // 0x3C
-    int AnimClass_field_0x40;  // 0x40
+    int u32_40;  // 0x40
     char __pad_44[20];  // 0x44
-    int AnimClass_field_0x58;  // 0x58
+    int u32_58;  // 0x58
     char __pad_5C[8];  // 0x5C
-    int AnimClass_field_0x64;  // 0x64
+    int q064;  // 0x64
     char __pad_68[4];  // 0x68
-    int AnimClass_field_0x6C;  // 0x6C
+    int q06C;  // 0x6C
     int estimatedHealth;  // 0x70
     bool isOnMap;  // 0x74
     unsigned char alignmentPadding75;  // 0x75
     char __pad_76[2];  // 0x76
-    int AnimClass_field_0x78;  // 0x78
+    int q078;  // 0x78
     unsigned int visibilityFlags;  // 0x7C
     unsigned char __pad_080;  // 0x80
     char __pad_81[1];  // 0x81
@@ -72,55 +72,55 @@ struct AnimClass {
     bool isVisible;  // 0x99
     unsigned char alignmentPadding99;  // 0x9A
     char __pad_9B[1];  // 0x9B
-    int AnimClass_field_0x9C;  // 0x9C
+    int q09C;  // 0x9C
     char __pad_A0[4];  // 0xA0
-    CampaignClass* AnimClass_field_0xA4;  // 0xA4
+    CampaignClass* q0A4;  // 0xA4
     unsigned char __pad_A8[4];  // 0xA8
-    IUnknown* AnimClass_field_0xAC;  // 0xAC
+    IUnknown* q0AC;  // 0xAC
     char __pad_B0[4];  // 0xB0
-    IUnknown* AnimClass_field_0xB4;  // 0xB4
-    int AnimClass_field_0xB8;  // 0xB8
-    IUnknown* AnimClass_field_0xBC;  // 0xBC
-    CellStruct* AnimClass_field_0xC0;  // 0xC0
+    IUnknown* q0B4;  // 0xB4
+    int q0B8;  // 0xB8
+    IUnknown* q0BC;  // 0xBC
+    CellStruct* q0C0;  // 0xC0
     char __pad_C4[4];  // 0xC4
-    Coord * AnimClass_field_0xC8;  // 0xC8
-    int AnimClass_field_0xCC;  // 0xCC
-    int AnimClass_field_0xD0;  // 0xD0
-    IUnknown* AnimClass_field_0xD4;  // 0xD4
+    Coord * u32_C8;  // 0xC8
+    int q0CC;  // 0xCC
+    int q0D0;  // 0xD0
+    IUnknown* q0D4;  // 0xD4
     char __pad_D8[4];  // 0xD8
     unsigned int PaletteName;  // 0xDC
     unsigned char __pad_0E0;  // 0xE0
     char __pad_E1[23];  // 0xE1
     unsigned int TintColor;  // 0xF8
     unsigned int AnimClass_field_0xFC;  // 0xFC
-    float AnimClass_field_0x100;  // 0x100
-    int AnimClass_field_0x104;  // 0x104
-    int AnimClass_field_0x108;  // 0x108
+    float q100;  // 0x100
+    int q104;  // 0x104
+    int q108;  // 0x108
     char __pad_10C[4];  // 0x10C
     unsigned int IsBuildingAnim;  // 0x110
-    int AnimClass_field_0x114;  // 0x114
+    int q114;  // 0x114
     int __pad_118;  // 0x118
-    int AnimClass_field_0x11C;  // 0x11C
+    int q11C;  // 0x11C
     char __pad_120[16];  // 0x120
     int q130;  // 0x130
     char __pad_134[62];  // 0x134
     unsigned char Animation;  // 0x172
     char __pad_173[1];  // 0x173
-    int AnimClass_field_0x174;  // 0x174
+    int q174;  // 0x174
     int __pad_178;  // 0x178
-    int AnimClass_field_0x17C;  // 0x17C
-    int AnimClass_field_0x180;  // 0x180
-    int AnimClass_field_0x184;  // 0x184
-    int AnimClass_field_0x188;  // 0x188
+    int q17C;  // 0x17C
+    int q180;  // 0x180
+    int q184;  // 0x184
+    int q188;  // 0x188
     char __pad_18C[4];  // 0x18C
-    int AnimClass_field_0x190;  // 0x190
+    int q190;  // 0x190
     unsigned int __pad_194;  // 0x194
     char __pad_198[1];  // 0x198
     unsigned char q199;  // 0x199
     char __pad_19A[6];  // 0x19A
-    void * AnimClass_field_0x1A0;  // 0x1A0
+    void * u32_1A0;  // 0x1A0
     char __pad_1A4[16];  // 0x1A4
-    void * AnimClass_field_0x1B4;  // 0x1B4
+    void * q1B4;  // 0x1B4
     unsigned char __pad_1B8[60];  // 0x1B8
     unsigned int u32_1F4;  // 0x1F4
     char __pad_1F8[8];  // 0x1F8
@@ -131,7 +131,7 @@ struct AnimClass {
     char __pad_213[3];  // 0x213
     unsigned char __pad_216;  // 0x216
     char __pad_217[5];  // 0x217
-    int AnimClass_field_0x21C;  // 0x21C
+    int q21C;  // 0x21C
     char __pad_220[50];  // 0x220
     unsigned char ZAdjust;  // 0x252
     char __pad_253[3];  // 0x253
@@ -146,30 +146,30 @@ struct AnimClass {
     char __pad_277[3];  // 0x277
     unsigned char __pad_27A;  // 0x27A
     char __pad_27B[25];  // 0x27B
-    int AnimClass_field_0x294;  // 0x294
+    int q294;  // 0x294
     char __pad_298[24];  // 0x298
-    int AnimClass_field_0x2B0;  // 0x2B0
+    int q2B0;  // 0x2B0
     char __pad_2B4[12];  // 0x2B4
-    int AnimClass_field_0x2C0;  // 0x2C0
+    int u32_2C0;  // 0x2C0
     char __pad_2C4[32];  // 0x2C4
-    int AnimClass_field_0x2E4;  // 0x2E4
-    int AnimClass_field_0x2E8;  // 0x2E8
+    int q2E4;  // 0x2E4
+    int q2E8;  // 0x2E8
     char __pad_2EC[16];  // 0x2EC
-    int AnimClass_field_0x2FC;  // 0x2FC
-    int AnimClass_field_0x300;  // 0x300
+    int q2FC;  // 0x2FC
+    int q300;  // 0x300
     char __pad_304[4];  // 0x304
-    int AnimClass_field_0x308;  // 0x308
-    int AnimClass_field_0x30C;  // 0x30C
+    int q308;  // 0x308
+    int q30C;  // 0x30C
     char __pad_310[52];  // 0x310
-    int AnimClass_field_0x344;  // 0x344
+    int q344;  // 0x344
     char __pad_348[21];  // 0x348
     char AnimClass_field_0x35D[4];  // 0x35D
     char __pad_361[167];  // 0x361
-    int AnimClass_field_0x408;  // 0x408
+    int q408;  // 0x408
     char __pad_40C[4];  // 0x40C
     unsigned int u32_410;  // 0x410
     char __pad_414[4];  // 0x414
-    int AnimClass_field_0x418;  // 0x418
+    int q418;  // 0x418
     char __pad_41C[60];  // 0x41C
     DynamicVectorClass_flat * ptr_458;  // 0x458
     unsigned char __pad_45C;  // 0x45C
@@ -177,33 +177,33 @@ struct AnimClass {
     LightSourceClass * ptr_614;  // 0x614
     unsigned char __pad_618;  // 0x618
     char __pad_619[139];  // 0x619
-    int AnimClass_field_0x6A4;  // 0x6A4
+    int q6A4;  // 0x6A4
     char __pad_6A8[1308];  // 0x6A8
-    int AnimClass_field_0xBC4;  // 0xBC4
+    int qBC4;  // 0xBC4
     char __pad_BC8[262];  // 0xBC8
     char AnimClass_field_0xCCE[4];  // 0xCCE
     char __pad_CD2[194];  // 0xCD2
     uint8_t u8_D94;  // 0xD94
     char __pad_D95[215];  // 0xD95
-    int AnimClass_field_0xE6C;  // 0xE6C
+    int qE6C;  // 0xE6C
     char __pad_E70[1612];  // 0xE70
-    int AnimClass_field_0x14BC;  // 0x14BC
+    int q14BC;  // 0x14BC
     char __pad_14C0[148];  // 0x14C0
-    int AnimClass_field_0x1554;  // 0x1554
-    int AnimClass_field_0x1558;  // 0x1558
+    int q1554;  // 0x1554
+    int q1558;  // 0x1558
     char __pad_155C[8];  // 0x155C
-    int AnimClass_field_0x1564;  // 0x1564
+    int q1564;  // 0x1564
     char __pad_1568[341];  // 0x1568
     char AnimClass_field_0x16BD[4];  // 0x16BD
     char __pad_16C1[6];  // 0x16C1
     char AnimClass_field_0x16C7[4];  // 0x16C7
     char AnimClass_field_0x16CB[4];  // 0x16CB
     char __pad_16CF[177];  // 0x16CF
-    int AnimClass_field_0x1780;  // 0x1780
+    int q1780;  // 0x1780
     char __pad_1784[288];  // 0x1784
-    int AnimClass_field_0x18A4;  // 0x18A4
+    int q18A4;  // 0x18A4
     char __pad_18A8[8];  // 0x18A8
-    int AnimClass_field_0x18B0;  // 0x18B0
+    int q18B0;  // 0x18B0
 // --- flat members (BEGIN) ---
 #if !defined(GAMEMD_TREE_UNIVERSE) && !defined(GAMEMD_E4_VECTOR_TREE_TRUTH)
 #else

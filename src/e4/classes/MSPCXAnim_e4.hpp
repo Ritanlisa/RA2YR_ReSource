@@ -8,11 +8,11 @@ namespace gamemd {
 struct MSPCXAnim {
     void* ptr_0;  // 0x0
     unsigned int __pad_004;  // 0x4
-    int MSPCXAnim_field_0x08;  // 0x8
-    int MSPCXAnim_field_0x0C;  // 0xC
-    int MSPCXAnim_field_0x10;  // 0x10
-    int MSPCXAnim_field_0x14;  // 0x14
-    int MSPCXAnim_field_0x18;  // 0x18
+    int q008;  // 0x8
+    int q00C;  // 0xC
+    int q010;  // 0x10
+    int q014;  // 0x14
+    int u32_18;  // 0x18
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     MSPCXAnim * QueryInterface(char a2, int a3);

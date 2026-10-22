@@ -440,13 +440,13 @@ int E4Recv_5A1C70::sub_5A1C70()
   for ( j = 0; j < dword_ABDFA0; ++j ) /*0x5a1d5a*/
   {
     v9 = *(RandomMap **)(stru_ABDF90.Vector4_field_0x04 + 4 * j); /*0x5a1d67*/
-    if ( ((v9->RandomMap_field_0x14) & 0xFF) ) /*0x5a1d6a*/
+    if ( ((v9->q014) & 0xFF) ) /*0x5a1d6a*/
     {
       v10 = v17->ambientSoundController[0]; /*0x5a1d75*/
       v11 = v10 == 3 || v10 == 4; /*0x5a1d86*/
       RandomMap::CollectTerrainCells( /*0x5a1da3*/
         *(RandomMap **)(stru_ABDF90.Vector4_field_0x04 + 4 * j),
-        (v9->RandomMap_field_0xC > 8000) + !v11 + 4);
+        (v9->q00C > 8000) + !v11 + 4);
       RandomMap::PlaceRandomMapTerrain(v9); /*0x5a1daa*/
     }
   }
@@ -729,7 +729,7 @@ int ScatterTerrainTrees(IUnknown * aP0, int a2, double a3)
       v22 = (Cell *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v19); /*0x5a47ba*/
       if ( (unsigned __int8)Cell::IsEmpty(v22) ) /*0x5a47be*/
       {
-        if ( !v22->Cell_field_0xE4 && *&v22->u32_44 == -1 && *&v22->u32_EC != 3 ) /*0x5a47ec*/
+        if ( !v22->q0E4 && *&v22->u32_44 == -1 && *&v22->u32_EC != 3 ) /*0x5a47ec*/
         {
           v57 = (unsigned int)Random::State((Random *)&stru_ABE890); /*0x5a47fc*/
           __asm /*0x5a4804*/
@@ -5397,8 +5397,8 @@ namespace gamemd {
 void E4Recv_5AF000::sub_5AF000(ObjectClass * aP1, ObjectClass * aP2)
 {
 
-  double v3 = this->ptr_4; // st7 /*0x5af000*/
-  double v4 = this->ptr_8; // st6 /*0x5af003*/
+  double v3 = this->M4; // st7 /*0x5af000*/
+  double v4 = this->M8; // st6 /*0x5af003*/
   this->ptr_2 = v4 * aP1 + v3 * aP2; /*0x5af014*/
   this->ptr_3 = v4 * aP2 - v3 * aP1; /*0x5af023*/
   double v5 = this->abstractFlags; // st7 /*0x5af026*/
@@ -5419,7 +5419,7 @@ void E4Recv_5AF120::sub_5AF120(float a2, float a3)
 {
 
   double v3 = *this; // st7 /*0x5af120*/
-  double v4 = this->ptr_8; // st6 /*0x5af122*/
+  double v4 = this->M16; // st6 /*0x5af122*/
   *this = v3 * a3 - v4 * a2; /*0x5af133*/
   this->ptr_3 = v3 * a2 + v4 * a3; /*0x5af143*/
   double v5 = this->uniqueId; // st7 /*0x5af146*/

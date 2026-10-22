@@ -84,23 +84,23 @@ struct ParticleSystemTypeClass {
     int q2AC;  // 0x2AC
     int DamageDelay;  // 0x2B0
     unsigned int __pad_2B4;  // 0x2B4
-    int ParticleSystemTypeClass_field_0x2B8;  // 0x2B8
+    int q2B8;  // 0x2B8
     void* ParticleSystemTypeClass_field_2C0;  // 0x2BC
     int StartScale;  // 0x2C0
     int ParticleSystemTypeClass_field_2C8;  // 0x2C4
     int Beam;  // 0x2C8
-    int ParticleSystemTypeClass_field_0x2CC;  // 0x2CC
-    IUnknown* ParticleSystemTypeClass_field_0x2D0;  // 0x2D0
+    int q2CC;  // 0x2CC
+    IUnknown* q2D0;  // 0x2D0
     int ParticleSystemTypeClass_field_bool_2D4;  // 0x2D4
     char __pad_2D8[1];  // 0x2D8
     unsigned char __pad_2D9;  // 0x2D9
     char __pad_2DA[10];  // 0x2DA
-    int ParticleSystemTypeClass_field_0x2E4;  // 0x2E4
-    IUnknown* ParticleSystemTypeClass_field_0x2E8;  // 0x2E8
+    int q2E4;  // 0x2E4
+    IUnknown* q2E8;  // 0x2E8
     char __pad_2EC[20];  // 0x2EC
-    int ParticleSystemTypeClass_field_0x300;  // 0x300
+    int q300;  // 0x300
     char __pad_304[4];  // 0x304
-    AnimTypeClass* ParticleSystemTypeClass_field_0x308;  // 0x308
+    AnimTypeClass* q308;  // 0x308
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     void ** ddtor(char a2);

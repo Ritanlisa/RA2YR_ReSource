@@ -390,7 +390,7 @@ public:
     // +4 more virtual methods
 
     uint8_t CampaignScore_field_0x04[4];
-    uint8_t CampaignScore_field_0x08[4];
+    uint8_t q008[4];
     uint8_t CampaignScore_field_0x0C[4];
     uint8_t CampaignScore_field_0x10[4];
     uint8_t CampaignScore_field_0x14[4];
@@ -420,7 +420,7 @@ public:
     virtual int LookupByName(); // 0x46CC90
     virtual void DlgProc(); // 0x52EC00
 
-    uint8_t CampaignSelect_field_0x04[4];
+    uint8_t q004[4];
 
     unsigned char __pad_000;  // X10 supply (csp_canon_members)
 };
@@ -459,24 +459,24 @@ public:
     // +34 more virtual methods
 
     uint8_t CheckListClass_field_0x04[4];
-    uint8_t CheckListClass_field_0x08[4];
-    uint8_t CheckListClass_field_0x0C[4];
-    uint8_t CheckListClass_field_0x10[4];
-    uint8_t CheckListClass_field_0x14[4];
-    uint8_t CheckListClass_field_0x18[4];
-    uint8_t CheckListClass_field_0x1C[4];
-    uint8_t CheckListClass_field_0x20[4];
-    uint8_t CheckListClass_field_0x24[4];
-    uint8_t CheckListClass_field_0x28[4];
-    uint8_t CheckListClass_field_0x2C[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
+    uint8_t q010[4];
+    uint8_t q014[4];
+    uint8_t q018[4];
+    uint8_t q01C[4];
+    uint8_t u32_20[4];
+    uint8_t q024[4];
+    uint8_t q028[4];
+    uint8_t q02C[4];
     uint8_t CheckListClass_field_0x30[4];
-    uint8_t CheckListClass_field_0x34[4];
-    uint8_t CheckListClass_field_0x38[4];
-    uint8_t CheckListClass_field_0x3C[4];
-    uint8_t CheckListClass_field_0x40[4];
+    uint8_t q034[4];
+    uint8_t q038[4];
+    uint8_t q03C[4];
+    uint8_t q040[4];
     uint8_t CheckListClass_field_0x44[4];
-    uint8_t CheckListClass_field_0x48[4];
-    uint8_t CheckListClass_field_0x4C[4];
+    uint8_t u32_48[4];
+    uint8_t q04C[4];
     uint8_t CheckListClass_field_0x50[4];
     unsigned char *__pad_0;  // 0x0
     unsigned int u32_16C;  // 0x16C
@@ -602,7 +602,7 @@ public:
     uint8_t ComboBoxOwnerDraw_field_0x04[4];
     uint8_t ComboBoxOwnerDraw_field_0x08[4];
     uint8_t ComboBoxOwnerDraw_field_0x0C[4];
-    uint8_t ComboBoxOwnerDraw_field_0x10[4];
+    uint8_t q010[4];
     uint8_t ComboBoxOwnerDraw_field_0x14[4];
     uint8_t ComboBoxOwnerDraw_field_0x18[4];
     unsigned int *__pad_0;  // G42.35: supplied-bodies ptr_0 view
@@ -636,8 +636,8 @@ public:
 
     unsigned int *__pad_0;  // G42.34: supplied-bodies view (0x48E520 family)
     uint8_t ControlClass_field_0x04[4];
-    uint8_t ControlClass_field_0x08[4];
-    uint8_t ControlClass_field_0x0C[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
 
     void * q028;  // G42.39 data supply
 
@@ -672,7 +672,7 @@ public:
     virtual void DrawCreditsTextLine(); // 0x4C3D00
     virtual void Display(); // 0x4C3E30
 
-    uint8_t CreditsPower_field_0x04[4];
+    uint8_t q004[4];
 };
 // 4 methods in IDA
 class DialogControl
@@ -686,9 +686,9 @@ public:
     virtual bool IsHidden();  // 0x4E1470
     void* Constructor();  // 0x623340
 
-    uint8_t DialogControl_field_0x04[4];
-    uint8_t DialogControl_field_0x08[4];
-    uint8_t DialogControl_field_0x0C[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
+    uint8_t u32_C[4];
 };
 // 2 methods in IDA
 // CSP: DialogQueue matched via T1
@@ -701,7 +701,7 @@ public:
     virtual void PushEntry(int entryType, int param);  // 0x5D4E70
     virtual int RemoveEntry();  // 0x5D4ED0
 
-    uint8_t DialogQueue_field_0x04[4];
+    uint8_t q004[4];
 };
 // 25 methods in IDA
 // CSP: DropListClass matched via T1
@@ -719,15 +719,15 @@ public:
     // +20 more virtual methods
 
     uint8_t DropListClass_field_0x04[4];
-    uint8_t DropListClass_field_0x08[4];
-    uint8_t DropListClass_field_0x0C[4];
-    uint8_t DropListClass_field_0x10[4];
-    uint8_t DropListClass_field_0x14[4];
-    uint8_t DropListClass_field_0x18[4];
-    uint8_t DropListClass_field_0x1C[4];
-    uint8_t DropListClass_field_0x20[4];
-    uint8_t DropListClass_field_0x24[4];
-    uint8_t DropListClass_field_0x28[4];
+    uint8_t u32_8[4];
+    uint8_t u32_C[4];
+    uint8_t q010[4];
+    uint8_t u32_14[4];
+    uint8_t u32_18[4];
+    uint8_t q01C[4];
+    uint8_t q020[4];
+    uint8_t q024[4];
+    uint8_t q028[4];
     uint8_t DropListClass_field_0x2C[4];
     uint8_t DropListClass_field_0x30[4];
     uint8_t DropListClass_field_0x34[4];
@@ -808,7 +808,7 @@ public:
     virtual char GrowBuffer(wchar_t a2, size_t a3); // 0x7B72F0 (G42.35 def truth)
     unsigned int *__pad_0;  // G42.35: supplied-bodies ptr_0 view
 
-    uint8_t EditControl_field_0x04[4];
+    uint8_t q004[4];
 
     unsigned char __pad_000;  // X10 supply (csp_canon_members)
 };
@@ -828,10 +828,10 @@ virtual int GetPixelData(unsigned short,int);  // 0x4349B0
     virtual void CreateGlyphColor(); // 0x68C3B0
     // +1 more virtual methods
 
-    uint8_t FontClass_field_0x04[4];
+    uint8_t q004[4];
     uint8_t FontClass_field_0x08[4];
     uint8_t FontClass_field_0x0C[4];
-    uint8_t FontClass_field_0x10[4];
+    uint8_t ptr_10[4];
     uint8_t FontClass_field_0x14[4];
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* InitMetrics(void* a1, int a2, int a3, int a4, int a5, int a6);  // 0x68C710
@@ -858,7 +858,7 @@ public:
 virtual int InitContext(int *,int);  // 0x4348F0
     virtual void DrawText(); // 0x434B90
 
-    uint8_t FontRenderer_field_0x04[4];
+    uint8_t q004[4];
 
     unsigned int u32_10;  // X10 supply (member_lookup)
     unsigned int u32_30;  // X10 supply (member_lookup)
@@ -878,7 +878,7 @@ public:
     virtual void InsertItem(int index, void* item);  // 0x4134A0
     virtual int RemoveItem(int a2);  // 0x4135D0
 
-    uint8_t GadgetGrid_field_0x04[4];
+    uint8_t q004[4];
 };
 // 5 methods in IDA
 // CSP: InputManager matched via T1
@@ -897,8 +897,8 @@ public:
     static char PushInputEvent(void *aP0, int16_t aP1);  // 0x54F670 G42.35 static-form sync (ui/supplied sites 0x54F996)
     virtual int WndProc(HWND a1, UINT, WPARAM, unsigned int a4); // 0x54F790 (G42.35 def truth)
 
-    uint8_t InputManager_field_0x04[4];
-    uint8_t InputManager_field_0x08[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
     uint8_t InputManager_field_0x0C[4];
     uint8_t InputManager_field_0x10[4];
     unsigned int *__pad_0;  // G42.35: supplied-bodies ptr_0 view (sites 0x4E1620/0x4E1626)
@@ -961,7 +961,7 @@ public:
     uint8_t ListBox_field_0x10[4];
     uint8_t ListBox_field_0x14[4];
     uint8_t ListBox_field_0x18[4];
-    uint8_t ListBox_field_0x1C[4];
+    uint8_t q01C[4];
     int MultiplayerGameMode_field_0x04;  // G42.35: supplied-bodies vocab (IDA til MultiplayerGameMode fields on ListBox)
     int MultiplayerGameMode_field_0x08;
     int MultiplayerGameMode_field_0x0C;
@@ -1006,12 +1006,12 @@ public:
     // +3 more virtual methods
 
     uint8_t ListClass_field_0x04[4];
-    uint8_t ListClass_field_0x08[4];
-    uint8_t ListClass_field_0x0C[4];
-    uint8_t ListClass_field_0x10[4];
-    uint8_t ListClass_field_0x14[4];
-    uint8_t ListClass_field_0x18[4];
-    uint8_t ListClass_field_0x1C[4];
+    uint8_t u32_8[4];
+    uint8_t q00C[4];
+    uint8_t u32_10[4];
+    uint8_t q014[4];
+    uint8_t u32_18[4];
+    uint8_t u32_1C[4];
     unsigned int *__pad_0;  // G42.35: supplied-bodies ptr_0 view (sites 0x557609/0x55764F)
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int Destru_vt43(int a1);  // 0x557800
@@ -1118,15 +1118,15 @@ public:
     // +8 more virtual methods
 
     uint8_t SliderClass_field_0x04[4];
-    uint8_t SliderClass_field_0x08[4];
-    uint8_t SliderClass_field_0x0C[4];
+    uint8_t q008[4];
+    uint8_t q00C[4];
     uint8_t SliderClass_field_0x10[4];
-    uint8_t SliderClass_field_0x14[4];
-    uint8_t SliderClass_field_0x18[4];
-    uint8_t SliderClass_field_0x1C[4];
-    uint8_t SliderClass_field_0x20[4];
-    uint8_t SliderClass_field_0x24[4];
-    uint8_t SliderClass_field_0x28[4];
+    uint8_t q014[4];
+    uint8_t q018[4];
+    uint8_t q01C[4];
+    uint8_t q020[4];
+    uint8_t q024[4];
+    uint8_t q028[4];
     uint8_t SliderClass_field_0x2C[4];
     uint8_t SliderClass_field_0x30[4];
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
@@ -1183,7 +1183,7 @@ public:
     virtual void WndProc(); // 0x612B70
     virtual void DlgProc(); // 0x61D950
 
-    uint8_t TabControl_field_0x04[4];
+    uint8_t q004[4];
 };
 // 14 methods in IDA
 // CSP: ToolTipClass matched via T1
@@ -1200,19 +1200,19 @@ public:
     virtual void write(); // 0x724C60
     // +9 more virtual methods
 
-    uint8_t ToolTipClass_field_0x04[4];
+    uint8_t q004[4];
     uint8_t ToolTipClass_field_0x08[4];
     uint8_t ToolTipClass_field_0x0C[4];
-    uint8_t ToolTipClass_field_0x10[4];
-    uint8_t ToolTipClass_field_0x14[4];
-    uint8_t ToolTipClass_field_0x18[4];
-    uint8_t ToolTipClass_field_0x1C[4];
-    uint8_t ToolTipClass_field_0x20[4];
-    uint8_t ToolTipClass_field_0x24[4];
-    uint8_t ToolTipClass_field_0x28[4];
-    uint8_t ToolTipClass_field_0x2C[4];
-    uint8_t ToolTipClass_field_0x30[4];
-    uint8_t ToolTipClass_field_0x34[4];
+    uint8_t q010[4];
+    uint8_t q014[4];
+    uint8_t q018[4];
+    uint8_t q01C[4];
+    uint8_t q020[4];
+    uint8_t q024[4];
+    uint8_t q028[4];
+    uint8_t q02C[4];
+    uint8_t q030[4];
+    uint8_t q034[4];
     unsigned char m_1[4];  // 0x1
     int m_8;  // 0x8
     unsigned int m_C;  // 0xC

@@ -229,8 +229,8 @@ int * Weapon::DestroyTerrain(int *a1, int *aP2, int *aP3, int aP4)
   }
   (&v43)->Construct(0, 0); /*0x70c777*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E4F64) */  /*0x70c77c*/
-  v43.ObjectVector_field_0x14 = 10; /*0x70c784*/
-  v43.ObjectVector_field_0x10 = 0; /*0x70c78c*/
+  v43.q014 = 10; /*0x70c784*/
+  v43.q010 = 0; /*0x70c78c*/
   v42 = 0; /*0x70c790*/
   while ( 1 ) /*0x70c794*/
   {
@@ -367,18 +367,18 @@ int * Weapon::DestroyTerrain(int *a1, int *aP2, int *aP3, int aP4)
         }
         if ( (_AX & 0x100) == 0 && (int *)v14 != aP3 ) /*0x70c9f0*/
           goto LABEL_31; /*0x70c9f0*/
-        ObjectVector_field_0x10 = v43.ObjectVector_field_0x10; /*0x70c9f2*/
-        if ( v43.ObjectVector_field_0x10 ) /*0x70c9f8*/
+        ObjectVector_field_0x10 = v43.q010; /*0x70c9f2*/
+        if ( v43.q010 ) /*0x70c9f8*/
         {
           v20 = 0; /*0x70c9fa*/
-          if ( v43.ObjectVector_field_0x10 > 0 ) /*0x70c9fe*/
+          if ( v43.q010 > 0 ) /*0x70c9fe*/
           {
-            ObjectVector_field_0x04 = (unsigned int *)v43.ObjectVector_field_0x04; /*0x70ca00*/
+            ObjectVector_field_0x04 = (unsigned int *)v43.q004; /*0x70ca00*/
             while ( *ObjectVector_field_0x04 != v14 ) /*0x70ca06*/
             {
               ++v20; /*0x70ca08*/
               ++ObjectVector_field_0x04; /*0x70ca09*/
-              if ( v20 >= v43.ObjectVector_field_0x10 ) /*0x70ca0e*/
+              if ( v20 >= v43.q010 ) /*0x70ca0e*/
                 goto LABEL_24; /*0x70ca0e*/
             }
             if ( v20 != -1 ) /*0x70ca15*/
@@ -386,21 +386,21 @@ int * Weapon::DestroyTerrain(int *a1, int *aP2, int *aP3, int aP4)
           }
         }
 LABEL_24:
-        if ( v43.ObjectVector_field_0x10 >= v43.ObjectVector_field_0x08 ) /*0x70ca1d*/
+        if ( v43.q010 >= v43.q008 ) /*0x70ca1d*/
         {
-          if ( !BYTE1(v43.ObjectVector_field_0x0C) && v43.ObjectVector_field_0x08 /*0x70ca40*/
-            || v43.ObjectVector_field_0x14 <= 0
+          if ( !BYTE1(v43.q00C) && v43.q008 /*0x70ca40*/
+            || v43.q014 <= 0
             || !(*(unsigned __int8 (**)(ObjectVector *, int, unsigned int))(*(unsigned int *)v43.__pad_0 + 8))(
                   &v43,
-                  v43.ObjectVector_field_0x14 + v43.ObjectVector_field_0x08,
+                  v43.q014 + v43.q008,
                   0) )
           {
             goto LABEL_31; /*0x70ca45*/
           }
-          ObjectVector_field_0x10 = v43.ObjectVector_field_0x10; /*0x70ca47*/
+          ObjectVector_field_0x10 = v43.q010; /*0x70ca47*/
         }
-        v43.ObjectVector_field_0x10 = ObjectVector_field_0x10 + 1; /*0x70ca4e*/
-        *(unsigned int *)(v43.ObjectVector_field_0x04 + 4 * ObjectVector_field_0x10) = v14; /*0x70ca56*/
+        v43.q010 = ObjectVector_field_0x10 + 1; /*0x70ca4e*/
+        *(unsigned int *)(v43.q004 + 4 * ObjectVector_field_0x10) = v14; /*0x70ca56*/
 LABEL_31:
         v14 = *(unsigned int *)(v14 + 48); /*0x70ca59*/
       }
@@ -412,39 +412,39 @@ LABEL_31:
     {
       if ( v40 || !aP3 || (aP3[5] & 2) == 0 ) /*0x70caa3*/
         goto LABEL_55; /*0x70caa3*/
-      v23 = v43.ObjectVector_field_0x10; /*0x70caa9*/
-      if ( !v43.ObjectVector_field_0x10 ) /*0x70caaf*/
+      v23 = v43.q010; /*0x70caa9*/
+      if ( !v43.q010 ) /*0x70caaf*/
         goto LABEL_48; /*0x70caaf*/
       v24 = 0; /*0x70cab5*/
-      if ( v43.ObjectVector_field_0x10 <= 0 ) /*0x70cab9*/
+      if ( v43.q010 <= 0 ) /*0x70cab9*/
         goto LABEL_48; /*0x70cab9*/
-      v25 = (int **)v43.ObjectVector_field_0x04; /*0x70cabf*/
+      v25 = (int **)v43.q004; /*0x70cabf*/
       while ( *v25 != aP3 ) /*0x70cac5*/
       {
         ++v24; /*0x70cacb*/
         ++v25; /*0x70cacc*/
-        if ( v24 >= v43.ObjectVector_field_0x10 ) /*0x70cad1*/
+        if ( v24 >= v43.q010 ) /*0x70cad1*/
           goto LABEL_48; /*0x70cad1*/
       }
       if ( v24 == -1 ) /*0x70cb68*/
       {
 LABEL_48:
-        if ( v43.ObjectVector_field_0x10 < v43.ObjectVector_field_0x08 ) /*0x70cb70*/
+        if ( v43.q010 < v43.q008 ) /*0x70cb70*/
           goto LABEL_54; /*0x70cb70*/
-        if ( (BYTE1(v43.ObjectVector_field_0x0C) || !v43.ObjectVector_field_0x08) && v43.ObjectVector_field_0x14 > 0 ) /*0x70cb84*/
+        if ( (BYTE1(v43.q00C) || !v43.q008) && v43.q014 > 0 ) /*0x70cb84*/
         {
           if ( (*(unsigned __int8 (**)(ObjectVector *, int, unsigned int))(*(unsigned int *)v43.__pad_0 + 8))( /*0x70cb93*/
                  &v43,
-                 v43.ObjectVector_field_0x14 + v43.ObjectVector_field_0x08,
+                 v43.q014 + v43.q008,
                  0) )
           {
-            v23 = v43.ObjectVector_field_0x10; /*0x70cb9a*/
+            v23 = v43.q010; /*0x70cb9a*/
 LABEL_54:
-            v43.ObjectVector_field_0x10 = v23 + 1; /*0x70cb9e*/
-            *(unsigned int *)(v43.ObjectVector_field_0x04 + 4 * v23) = aP3; /*0x70cba9*/
+            v43.q010 = v23 + 1; /*0x70cb9e*/
+            *(unsigned int *)(v43.q004 + 4 * v23) = aP3; /*0x70cba9*/
           }
 LABEL_55:
-          v23 = v43.ObjectVector_field_0x10; /*0x70cbac*/
+          v23 = v43.q010; /*0x70cbac*/
         }
       }
       v33 = 0; /*0x70cbb0*/
@@ -453,9 +453,9 @@ LABEL_55:
         do /*0x70cbf5*/
         {
           v52 = aP4->u32_98; /*0x70cbc3*/
-          (*(void (**)(unsigned int, int *, unsigned int, unsigned int, Weapon *, unsigned int, unsigned int, unsigned int))(**(unsigned int **)(v43.ObjectVector_field_0x04 + 4 * v33) /*0x70cbe8*/
+          (*(void (**)(unsigned int, int *, unsigned int, unsigned int, Weapon *, unsigned int, unsigned int, unsigned int))(**(unsigned int **)(v43.q004 + 4 * v33) /*0x70cbe8*/
                                                                                                   + 364))(
-            *(unsigned int *)(v43.ObjectVector_field_0x04 + 4 * v33),
+            *(unsigned int *)(v43.q004 + 4 * v33),
             &v52,
             0,
             aP4->u32_AC,
@@ -465,7 +465,7 @@ LABEL_55:
             0);
           ++v33; /*0x70cbf2*/
         }
-        while ( v33 < v43.ObjectVector_field_0x10 ); /*0x70cbf5*/
+        while ( v33 < v43.q010 ); /*0x70cbf5*/
       }
       if ( aP3->getAltitude() == 11 ) /*0x70cc01*/
       {
@@ -482,10 +482,10 @@ LABEL_55:
       v37 = v57; /*0x70cc55*/
       a1[1] = v36; /*0x70cc59*/
       a1[2] = v37; /*0x70cc5c*/
-      if ( v43.ObjectVector_field_0x04 ) /*0x70cc65*/
+      if ( v43.q004 ) /*0x70cc65*/
       {
-        if ( BYTE1(v43.ObjectVector_field_0x0C) ) /*0x70cc6d*/
-          __3_YAXPAX_Z((void *)v43.ObjectVector_field_0x04); /*0x70cc70*/
+        if ( BYTE1(v43.q00C) ) /*0x70cc6d*/
+          __3_YAXPAX_Z((void *)v43.q004); /*0x70cc70*/
       }
       return a1; /*0x70cc78*/
     }

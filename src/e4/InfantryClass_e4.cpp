@@ -61,7 +61,7 @@ int InfantryClass::ScanTarget(int * a1)
     v4 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, PlacementCellsAlt); /*0x4d4dff*/
     (*(void (**)(FootClass *, void *, int))(ptr_0 + 1152))(this, v4, 1); /*0x4d4e07*/
   }
-  if ( this->FootClass_field_bool_68E[0] ) /*0x4d4e0d*/
+  if ( this->q68E[0] ) /*0x4d4e0d*/
   {
     v17 = (unsigned __int16 *)this->location[0]; /*0x4d4e21*/
     v5 = this->ptr_0; /*0x4d4e25*/
@@ -71,7 +71,7 @@ int InfantryClass::ScanTarget(int * a1)
     if ( v6 ) /*0x4d4e46*/
     {
       this->vt_slot_968(this, v6); /*0x4d4e4d*/
-      this->FootClass_field_bool_68E[0] = 0; /*0x4d4e53*/
+      this->q68E[0] = 0; /*0x4d4e53*/
     }
   }
   if ( this->target ) /*0x4d4e5a*/

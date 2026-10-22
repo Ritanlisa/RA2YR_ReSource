@@ -10,14 +10,14 @@ namespace gamemd {
 // === AircraftTrackerClass  size=4  extracted from csp_canon/classes.hpp (W14-E4) ===
 class AircraftTrackerClass {
 public:
-    char q000[4];  /* unsigned char */  // 0x0
+    char tail_0[4];  /* unsigned char */  // 0x0
     static int FillCurrentVector(int aP1, int a2, int a3);  // raw 0x412b40
 };
 
 // === AnimSequence  size=4  extracted from csp_canon/classes.hpp (W14-E4) ===
 class AnimSequence {
 public:
-    char q000[4];  /* unsigned char */  // 0x0
+    char tail_0[4];  /* unsigned char */  // 0x0
     static uint8_t ** Parse(void *aP1);  // raw 0x523d00
 };
 
@@ -35,7 +35,7 @@ public:
 // === AudioOptionsClass  size=4  extracted from csp_canon/classes.hpp (W14-E4) ===
 class AudioOptionsClass {
 public:
-    char q000[4];  /* unsigned char */  // 0x0
+    char tail_0[4];  /* unsigned char */  // 0x0
     AbstractClass * ApplySettings();  // 0x5FB160 sig=csp
 };
 #endif  // GAMEMD_G2_AudioOptionsClass_DEF
@@ -70,7 +70,7 @@ public:
 // === ButtonOwnerDraw  size=4  extracted from csp_canon/classes.hpp (W14-E4) ===
 class ButtonOwnerDraw {
 public:
-    char q000[4];  /* unsigned char */  // 0x0
+    char tail_0[4];  /* unsigned char */  // 0x0
 };
 
 // === CDTimerClass  size=12  extracted from csp_canon/classes.hpp (W14-E4) ===
@@ -89,7 +89,7 @@ public:
 // === CampaignCoop  size=4  extracted from csp_canon/classes.hpp (W14-E4) ===
 class CampaignCoop {
 public:
-    char q000[4];  /* unsigned char */  // 0x0
+    char tail_0[4];  /* unsigned char */  // 0x0
     static int Setup(void *aP1, HWND hDlg, char a3);  // raw 0x5c21d0
 };
 
@@ -104,26 +104,26 @@ public:
 // === ChatDialog  size=4  extracted from csp_canon/classes.hpp (W14-E4) ===
 class ChatDialog {
 public:
-    char q000[4];  /* unsigned char */  // 0x0
+    char tail_0[4];  /* unsigned char */  // 0x0
 };
 
 // === Checkbox  size=4  extracted from csp_canon/classes.hpp (W14-E4) ===
 class Checkbox {
 public:
-    char q000[4];  /* unsigned char */  // 0x0
+    char tail_0[4];  /* unsigned char */  // 0x0
 };
 
 // === ChronoScreen  size=4  extracted from csp_canon/classes.hpp (W14-E4) ===
 class ChronoScreen {
 public:
-    char q000[4];  /* unsigned char */  // 0x0
+    char tail_0[4];  /* unsigned char */  // 0x0
     static int IsActive();  // raw 0x53bad0
 };
 
 // === ComboBoxDropDown  size=4  extracted from csp_canon/classes.hpp (W14-E4) ===
 class ComboBoxDropDown {
 public:
-    char q000[4];  /* unsigned char */  // 0x0
+    char tail_0[4];  /* unsigned char */  // 0x0
 };
 
 // === ComboBoxOwnerDraw  size=28  extracted from csp_canon/classes.hpp (W14-E4) ===
@@ -149,14 +149,14 @@ public:
 // IDA live 2026-10-07; e4 使用点 static 3-实参形态). static 不改 sizeof.
 class Compression {
 public:
-    char q000[4];  /* unsigned char */  // 0x0
+    char tail_0[4];  /* unsigned char */  // 0x0
     static int Read(void *aP1, int Src, int Size);  // raw 0x55C350
 };
 
 // === CoordinateTables  size=4  extracted from csp_canon/classes.hpp (W14-E4) ===
 class CoordinateTables {
 public:
-    char q000[4];  /* unsigned char */  // 0x0
+    char tail_0[4];  /* unsigned char */  // 0x0
     static int * Init_f(void *aP1);
 };
 
@@ -172,14 +172,14 @@ public:
 // === DamageAnimClass  size=4  extracted from csp_canon/classes.hpp (W14-E4) ===
 class DamageAnimClass {
 public:
-    char q000[4];  /* unsigned char */  // 0x0
+    char tail_0[4];  /* unsigned char */  // 0x0
     static void * Constructor(void *aP1, int a2, int *a3, int a4);  // raw 0x7493b0
 };
 
 // === DynamicStringArray  size=4  extracted from csp_canon/classes.hpp (W14-E4) ===
 class DynamicStringArray {
 public:
-    char q000[4];  /* unsigned char */  // 0x0
+    char tail_0[4];  /* unsigned char */  // 0x0
     static int Get(void *aP1, char **a2, int a3);  // raw 0x7ace30
 };
 
@@ -217,14 +217,14 @@ public:
 // === GameInit  size=4  extracted from csp_canon/classes.hpp (W14-E4) ===
 class GameInit {
 public:
-    char q000[4];  /* unsigned char */  // 0x0
+    char tail_0[4];  /* unsigned char */  // 0x0
     static unsigned int * InitMultiplayerModes(void *aP1, int a2, int a3);  // raw 0x5d86d0
 };
 
 // === GameLobby  size=4  extracted from csp_canon/classes.hpp (W14-E4) ===
 class GameLobby {
 public:
-    char q000[4];  /* unsigned char */  // 0x0
+    char tail_0[4];  /* unsigned char */  // 0x0
     ReferenceCounted * DlgProc(int a1, int a2, int a3);  // 0x5E1CA0 sig=csp
 };
 
@@ -241,32 +241,32 @@ public:
 // === GameScreen  size=4  extracted from csp_canon/classes.hpp (W14-E4) ===
 class GameScreen {
 public:
-    CampaignClass* q000;  // 0x0
+    CampaignClass* tail_0;  // 0x0
 };
 
 // === GetCurrentProcessId  size=4  extracted from csp_canon/classes.hpp (W14-E4) ===
 class GetCurrentProcessId {
 public:
-    char q000[4];  /* unsigned char */  // 0x0
+    char tail_0[4];  /* unsigned char */  // 0x0
     unsigned long N0();  // 0x7DCF22 sig=ida-proto
 };
 
 // === GetCurrentThread  size=4  extracted from csp_canon/classes.hpp (W14-E4) ===
 class GetCurrentThread {
 public:
-    char q000[4];  /* unsigned char */  // 0x0
+    char tail_0[4];  /* unsigned char */  // 0x0
 };
 
 // === GetCurrentThreadId  size=4  extracted from csp_canon/classes.hpp (W14-E4) ===
 class GetCurrentThreadId {
 public:
-    char q000[4];  /* unsigned char */  // 0x0
+    char tail_0[4];  /* unsigned char */  // 0x0
 };
 
 // === GroupLabel  size=4  extracted from csp_canon/classes.hpp (W14-E4) ===
 class GroupLabel {
 public:
-    char q000[4];  /* unsigned char */  // 0x0
+    char tail_0[4];  /* unsigned char */  // 0x0
     AbstractClass *  WndProc(HWND hWnd, UINT Msg, int wParam, int lParam);  // 0x61E700
 };
 
@@ -304,7 +304,7 @@ public:
 // === KeyValuePair  size=4  extracted from csp_canon/classes.hpp (W14-E4) ===
 class KeyValuePair {
 public:
-    char q000[4];  /* unsigned char */  // 0x0
+    char tail_0[4];  /* unsigned char */  // 0x0
     static unsigned int * Init_f(void *aP1, int a2);  // raw 0x52aec0
     static unsigned int * Init(void *aP1, int a2);  // raw 0x52aec0
 };
@@ -313,7 +313,7 @@ public:
 // === MapData  size=4  extracted from csp_canon/classes.hpp (W14-E4) ===
 class MapData {
 public:
-    char q000[4];  /* unsigned char */  // 0x0
+    char tail_0[4];  /* unsigned char */  // 0x0
     static int InitHeights(void *aP1);
 };
 
@@ -328,7 +328,7 @@ public:
 // === MultiplayerLobby  size=4  extracted from csp_canon/classes.hpp (W14-E4) ===
 class MultiplayerLobby {
 public:
-    char q000[4];  /* unsigned char */  // 0x0
+    char tail_0[4];  /* unsigned char */  // 0x0
     static char FillSlots(void *aP1);  // raw 0x5ec030
 };
 #endif  // GAMEMD_G2_MultiplayerLobby_DEF
@@ -354,7 +354,7 @@ public:
 // === NetworkScore  size=4  extracted from csp_canon/classes.hpp (W14-E4) ===
 class NetworkScore {
 public:
-    char q000[4];  /* unsigned char */  // 0x0
+    char tail_0[4];  /* unsigned char */  // 0x0
 };
 #endif  // GAMEMD_G2_NetworkScore_DEF
 
@@ -375,7 +375,7 @@ public:
 // === NetworkShare  size=4  extracted from csp_canon/classes.hpp (W14-E4) ===
 class NetworkShare {
 public:
-    char q000[4];  /* unsigned char */  // 0x0
+    char tail_0[4];  /* unsigned char */  // 0x0
     static int GetField(void *aP1, int a1);  // raw 0x5e8da0
 };
 #endif  // GAMEMD_G2_NetworkShare_DEF
@@ -392,7 +392,7 @@ public:
 // === OleUninitialize  size=4  extracted from csp_canon/classes.hpp (W14-E4) ===
 class OleUninitialize {
 public:
-    char q000[4];  /* unsigned char */  // 0x0
+    char tail_0[4];  /* unsigned char */  // 0x0
 };
 
 // === Performance  size=8  extracted from csp_canon/classes.hpp (W14-E4) ===
@@ -407,7 +407,7 @@ public:
 // === PhoneEditor  size=4  extracted from csp_canon/classes.hpp (W14-E4) ===
 class PhoneEditor {
 public:
-    char q000[4];  /* unsigned char */  // 0x0
+    char tail_0[4];  /* unsigned char */  // 0x0
     ObjectClass * PopulateList();  // 0x631060 sig=csp
 };
 
@@ -423,14 +423,14 @@ public:
 // === ProductionClass  size=4  extracted from csp_canon/classes.hpp (W14-E4) ===
 class ProductionClass {
 public:
-    char q000[4];  /* unsigned char */  // 0x0
+    char tail_0[4];  /* unsigned char */  // 0x0
     static int StartTimer(int aP1, char a2);  // raw 0x4c9ea0
 };
 
 // === SHPClass  size=4  extracted from csp_canon/classes.hpp (W14-E4) ===
 class SHPClass {
 public:
-    char q000[4];  /* unsigned char */  // 0x0
+    char tail_0[4];  /* unsigned char */  // 0x0
     int  Load(char * Source, char * a3, int a4);  // 0x642C20
 };
 
@@ -443,7 +443,7 @@ public:
 // === ScalarDtor  size=4  extracted from csp_canon/classes.hpp (W14-E4) ===
 class ScalarDtor {
 public:
-    char q000[4];  /* unsigned char */  // 0x0
+    char tail_0[4];  /* unsigned char */  // 0x0
     static void ** DeleteAndZero_f(void *aP1, char a2);  // raw 0x7ad310
     static void ** DeleteAndZero(void *aP1, char a2);  // raw 0x7ad310
 };
@@ -462,7 +462,7 @@ public:
 // === ScriptActionQueue  size=4  extracted from csp_canon/classes.hpp (W14-E4) ===
 class ScriptActionQueue {
 public:
-    char q000[4];  /* unsigned char */  // 0x0
+    char tail_0[4];  /* unsigned char */  // 0x0
     static int PushNext(void *aP1);  // raw 0x660b80
     char __tail_0[4];  // 0x0 (G57W14E1 til supply)
 };
@@ -470,14 +470,14 @@ public:
 // === ScriptActionVector  size=4  extracted from csp_canon/classes.hpp (W14-E4) ===
 class ScriptActionVector {
 public:
-    char q000[4];  /* unsigned char */  // 0x0
+    char tail_0[4];  /* unsigned char */  // 0x0
     int  PushBack(unsigned int * a2);  // 0x63EB80
 };
 
 // === Scrollbar  size=4  extracted from csp_canon/classes.hpp (W14-E4) ===
 class Scrollbar {
 public:
-    char q000[4];  /* unsigned char */  // 0x0
+    char tail_0[4];  /* unsigned char */  // 0x0
 };
 
 // === SequenceStruct  size=1512  extracted from csp_canon/classes.hpp (W14-E4) ===
@@ -489,14 +489,14 @@ public:
 // === Sides  size=4  extracted from csp_canon/classes.hpp (W14-E4) ===
 class Sides {
 public:
-    char q000[4];  /* unsigned char */  // 0x0
+    char tail_0[4];  /* unsigned char */  // 0x0
     static int MixFileYuriFiles3();  // raw 0x72fbc0
 };
 
 // === SimpleDialogControl  size=4  extracted from csp_canon/classes.hpp (W14-E4) ===
 class SimpleDialogControl {
 public:
-    char q000[4];  /* unsigned char */  // 0x0
+    char tail_0[4];  /* unsigned char */  // 0x0
     int Constructor(void* a1);  // 0x624110 sig=csp
 };
 
@@ -512,7 +512,7 @@ public:
 class SquadClass {
 public:
     char q000[4];  /* unsigned char */  // 0x0
-    char q004[4];  /* unsigned char */  // 0x4 (was SquadClass_field_0x04)
+    char u32_4[4];  /* unsigned char */  // 0x4 (was SquadClass_field_0x04)
     static int SelectAllMembers(void *aP1);  // raw 0x7314c0
     static const void * ProcessMove(void *aP1);  // raw 0x731840
 };
@@ -520,14 +520,14 @@ public:
 // === StartingTechnoVector  size=4  extracted from csp_canon/classes.hpp (W14-E4) ===
 class StartingTechnoVector {
 public:
-    char q000[4];  /* unsigned char */  // 0x0
+    char tail_0[4];  /* unsigned char */  // 0x0
     static unsigned int * Construct(void *aP1, int a2, int a3);  // raw 0x510690
 };
 
 // === StringList  size=4  extracted from csp_canon/classes.hpp (W14-E4) ===
 class StringList {
 public:
-    char q000[4];  /* unsigned char */  // 0x0
+    char tail_0[4];  /* unsigned char */  // 0x0
     static int Find(void *aP1, const char *a2);  // raw 0x721210
 };
 
@@ -545,7 +545,7 @@ public:
 // === TabCameoListClass  size=4  extracted from csp_canon/classes.hpp (W14-E4) ===
 class TabCameoListClass {
 public:
-    char q000[4];  /* unsigned char */  // 0x0
+    char tail_0[4];  /* unsigned char */  // 0x0
     void AddCameo_ReplaceItAll(int a2, int a3);  // 0x6A8710
 };
 
@@ -568,41 +568,41 @@ public:
 // === TagClassVector  size=4  extracted from csp_canon/classes.hpp (W14-E4) ===
 class TagClassVector {
 public:
-    char q000[4];  /* unsigned char */  // 0x0
+    char tail_0[4];  /* unsigned char */  // 0x0
     static unsigned int * Construct(void *aP1, int a2, int a3);  // raw 0x510640
 };
 
 // === TaskManager  size=4  extracted from csp_canon/classes.hpp (W14-E4) ===
 class TaskManager {
 public:
-    char q000[4];  /* unsigned char */  // 0x0
+    char tail_0[4];  /* unsigned char */  // 0x0
     int Update();  // 0x6B7100 sig=csp
 };
 
 // === TeknoClass  size=4  extracted from csp_canon/classes.hpp (W14-E4) ===
 class TeknoClass {
 public:
-    char q000[4];  /* unsigned char */  // 0x0
+    char tail_0[4];  /* unsigned char */  // 0x0
 };
 
 // === TheatreClass  size=4  extracted from csp_canon/classes.hpp (W14-E4) ===
 class TheatreClass {
 public:
-    char q000[4];  /* unsigned char */  // 0x0
+    char tail_0[4];  /* unsigned char */  // 0x0
     static void InitView(void *aP1);
 };
 
 // === World  size=4  extracted from csp_canon/classes.hpp (W14-E4) ===
 class World {
 public:
-    char q000[4];  /* unsigned char */  // 0x0
+    char tail_0[4];  /* unsigned char */  // 0x0
     static int ToScreen(void *aP1, void* a1, void* a2, void* a3, void* a4);
 };
 
 // === ZBuffer  size=4  extracted from csp_canon/classes.hpp (W14-E4) ===
 class ZBuffer {
 public:
-    char q000[4];  /* unsigned char */  // 0x0
+    char tail_0[4];  /* unsigned char */  // 0x0
     void RenderSprite();  // 0x53D580 sig=csp
 };
 

@@ -68,8 +68,8 @@ void sub_600750()
   unsigned int v11; // ecx
   unsigned int *v12; // eax
 
-  Dialog_field_0x8 = stru_AC1B48.Dialog_field_0x8; /*0x600750*/
-  for ( i = 0; i < stru_AC1B48.Dialog_field_0x8; Dialog_field_0x8 = stru_AC1B48.Dialog_field_0x8 ) /*0x60075d*/
+  Dialog_field_0x8 = stru_AC1B48.u32_8; /*0x600750*/
+  for ( i = 0; i < stru_AC1B48.u32_8; Dialog_field_0x8 = stru_AC1B48.u32_8 ) /*0x60075d*/
   {
     v2 = *(unsigned int **)(*(unsigned int *)stru_AC1B48.__pad_0 + 4 * i); /*0x600764*/
     while ( v2 ) /*0x600769*/
@@ -91,10 +91,10 @@ void sub_600750()
         break; /*0x6007bd*/
       v5 = *(unsigned int ***)stru_AC1B48.__pad_0; /*0x6007c9*/
       v6 = Dialog_field_0x8; /*0x6007cf*/
-      stru_AC1B48.Dialog_field_0x8 = Dialog_field_0x8 >> 1; /*0x6007d4*/
-      --stru_AC1B48.Dialog_field_0xC; /*0x6007e0*/
+      stru_AC1B48.u32_8 = Dialog_field_0x8 >> 1; /*0x6007d4*/
+      --stru_AC1B48.q00C; /*0x6007e0*/
       *(unsigned int *)stru_AC1B48.__pad_0 = __2_YAPAXI_Z(4 * (Dialog_field_0x8 >> 1)); /*0x6007f9*/
-      memset(*(void **)stru_AC1B48.__pad_0, 0, 4 * stru_AC1B48.Dialog_field_0x8); /*0x600801*/
+      memset(*(void **)stru_AC1B48.__pad_0, 0, 4 * stru_AC1B48.u32_8); /*0x600801*/
       if ( v6 > 0 ) /*0x600803*/
       {
         v7 = v5; /*0x600805*/
@@ -107,7 +107,7 @@ void sub_600750()
             do /*0x60083c*/
             {
               v10 = (*(int (**)(unsigned int *))&stru_AC1B48.__pad_10[8])(v9) /*0x600825*/
-                  & ((1 << SLOBYTE(stru_AC1B48.Dialog_field_0xC)) - 1);
+                  & ((1 << SLOBYTE(stru_AC1B48.q00C)) - 1);
               v11 = *(unsigned int *)(*(unsigned int *)stru_AC1B48.__pad_0 + 4 * v10); /*0x60082c*/
               *(unsigned int *)(*(unsigned int *)stru_AC1B48.__pad_0 + 4 * v10) = v9; /*0x60082f*/
               v12 = (unsigned int *)v9[2]; /*0x600832*/
@@ -123,9 +123,9 @@ void sub_600750()
       }
       __3_YAXPAX_Z(v5); /*0x600845*/
       v4 = *(unsigned int *)&stru_AC1B48.__pad_2C[4]; /*0x60084a*/
-      Dialog_field_0x8 = stru_AC1B48.Dialog_field_0x8; /*0x600850*/
+      Dialog_field_0x8 = stru_AC1B48.u32_8; /*0x600850*/
     }
-    while ( stru_AC1B48.Dialog_field_0x8 > *(unsigned int *)&stru_AC1B48.__pad_2C[4] ); /*0x60085a*/
+    while ( stru_AC1B48.u32_8 > *(unsigned int *)&stru_AC1B48.__pad_2C[4] ); /*0x60085a*/
   }
   __3_YAXPAX_Z(*(void **)stru_AC1B48.__pad_0); /*0x600866*/
 

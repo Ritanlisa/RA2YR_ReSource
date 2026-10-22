@@ -33,7 +33,7 @@ struct Audio {
     char __pad_154[310];  // 0x154
     char Audio_field_0x28A[4];  // 0x28A
     char __pad_28E[1154];  // 0x28E
-    int Audio_field_0x710;  // 0x710
+    int q710;  // 0x710
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     static int IsMediumVolume(void *aP1);

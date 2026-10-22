@@ -1100,13 +1100,13 @@ char ExecutePlanningQueue()
   {
     v4 = *(TeamClass **)(*(unsigned int *)&stru_AC4B48.__pad_B8[124] + 4 * v2); /*0x6372b4*/
     v5 = v4->abstractFlags - 1; /*0x6372bd*/
-    ptr_0 = (BuildingClass *)v4->ptr_0; /*0x6372be*/
+    ptr_0 = (BuildingClass *)v4->vfptr; /*0x6372be*/
     if ( v5 < 0 ) /*0x6372c2*/
       goto LABEL_36; /*0x6372c2*/
     do /*0x6373d0*/
     {
-      v6 = *(Array **)(v4->ptr_8 + 4 * v5); /*0x6372cb*/
-      Value = (v6)->FindValue(v4->ptr_0); /*0x6372d4*/
+      v6 = *(Array **)(v4->vfptr2 + 4 * v5); /*0x6372cb*/
+      Value = (v6)->FindValue(v4->vfptr); /*0x6372d4*/
       if ( Value == -1 ) /*0x6372dc*/
         v8 = 0; /*0x6372de*/
       else
@@ -1149,7 +1149,7 @@ LABEL_22:
         v14 = 0; /*0x637362*/
         goto LABEL_23; /*0x637362*/
       }
-      v14 = *(unsigned int *)(v4->ptr_8 + 4 * v12); /*0x63735d*/
+      v14 = *(unsigned int *)(v4->vfptr2 + 4 * v12); /*0x63735d*/
 LABEL_23:
       Type = BuildingClass::GetType(ptr_0); /*0x637364*/
       v33 = v14; /*0x637374*/
@@ -1245,7 +1245,7 @@ LABEL_37:
     }
     *(unsigned int *)&stru_AC4B48.__pad_B8[144] = -1; /*0x637524*/
   }
-  LOBYTE(stru_AC4B48.SidebarClass_field_0x188) = 0; /*0x637531*/
+  LOBYTE(stru_AC4B48.q188) = 0; /*0x637531*/
   stru_AC4B48.__pad_B8[200] = 0; /*0x637538*/
   stru_AC4B48.__pad_B8[8] = 0; /*0x63753f*/
   return result; /*0x637547*/
@@ -1413,7 +1413,7 @@ LABEL_13:
     {
       v10 = (Function *)*((unsigned int *)dword_AC4B34 + v9); /*0x6381a9*/
       if ( ScriptAction::GetActionCoordinates((ScriptAction *)v10, v39, v40, v41) /*0x6381d5*/
-        && (*(unsigned int *)v36 == -1 || *(unsigned int *)v36 == v10->Function_field_0x18) )
+        && (*(unsigned int *)v36 == -1 || *(unsigned int *)v36 == v10->q018) )
       {
         v11 = (TeamClass *)Function::Method_6342D0(v10, 0); /*0x6381db*/
         LeaderIndex = TeamClass::GetLeaderIndex(v11); /*0x6381e2*/
@@ -1556,7 +1556,7 @@ LABEL_47:
     }
     v27 = v2[2]; /*0x638463*/
     if ( v27 < 0x18 ) /*0x638469*/
-      ++*(&stru_AC4B48.SidebarClass_field_0x3C + v27); /*0x638470*/
+      ++*(&stru_AC4B48.q03C + v27); /*0x638470*/
   }
   if ( !v35 ) /*0x63847d*/
   {
@@ -1864,7 +1864,7 @@ int sub_639130(void * aMsgPlannermaxi)
   v1 = *(unsigned int *)(*(int *)((char *)&stru_A83CD9.estimatedHealth + 3) + 48); /*0x639143*/
   v2 = 0; /*0x639157*/
   if ( v1 < 0x18 ) /*0x63915d*/
-    v2 = *(&stru_AC4B48.SidebarClass_field_0x3C + v1); /*0x63915f*/
+    v2 = *(&stru_AC4B48.q03C + v1); /*0x63915f*/
   v3 = *(unsigned int *)&stru_A8E960.random[340]; /*0x639166*/
   v4 = 0; /*0x63916c*/
   for ( i = 0; i < v3; ++i ) /*0x639172*/
@@ -2111,8 +2111,8 @@ TechnoClass * * CompleteBuildingProduction(IUnknown * a1, int edx0)
         {
           do /*0x639952*/
           {
-            ptr_0 = v8->ptr_0; /*0x639902*/
-            v32 = *(ScriptAction **)(v8->ptr_8 + 4 * (unsigned int)v33); /*0x639903*/
+            ptr_0 = v8->vfptr; /*0x639902*/
+            v32 = *(ScriptAction **)(v8->vfptr2 + 4 * (unsigned int)v33); /*0x639903*/
             v18 = (unsigned char *)ScriptAction::FindItemByValue(v32, ptr_0)[1]; /*0x63990c*/
             memcpy(v39, v18, sizeof(v39)); /*0x639918*/
             v18 += 108; /*0x639918*/
@@ -2145,7 +2145,7 @@ TechnoClass * * CompleteBuildingProduction(IUnknown * a1, int edx0)
       if ( v10 >= abstractFlags ) /*0x63989d*/
         v13 = v10 + 0 % v34; /*0x6398a8*/
       if ( v13 >= 0 && v13 < abstractFlags ) /*0x6398b0*/
-        v14 = *(ScriptAction **)(v8->ptr_8 + 4 * v13); /*0x6398b5*/
+        v14 = *(ScriptAction **)(v8->vfptr2 + 4 * v13); /*0x6398b5*/
       else
 LABEL_10:
         v14 = 0; /*0x6398ba*/
@@ -2164,13 +2164,13 @@ LABEL_10:
   v11->q098 = 1; /*0x63999b*/
   if ( v2 ) /*0x6399a1*/
     ScriptAction::FindSquadMember(v2); /*0x6399a5*/
-  LOBYTE(v23) = stru_AC4B48.SidebarClass_field_0x188; /*0x6399aa*/
-  if ( !LOBYTE(stru_AC4B48.SidebarClass_field_0x188) ) /*0x6399b1*/
+  LOBYTE(v23) = stru_AC4B48.q188; /*0x6399aa*/
+  if ( !LOBYTE(stru_AC4B48.q188) ) /*0x6399b1*/
   {
     (v23) = ((v23) & ~0xFF) | ((House::IsHumanPlayer((House *)v37->owner)) & 0xFF); /*0x6399c1*/
     if ( (unsigned char)v23 ) /*0x6399c8*/
     {
-      LOBYTE(stru_AC4B48.SidebarClass_field_0x188) = 1; /*0x6399ce*/
+      LOBYTE(stru_AC4B48.q188) = 1; /*0x6399ce*/
       v23 = v35[5] - 1; /*0x6399d7*/
       if ( v23 >= 0 ) /*0x6399d8*/
         v24 = *(unsigned int **)(v35[2] + 4 * v23); /*0x6399e1*/
@@ -4093,7 +4093,7 @@ namespace gamemd {
 int E4Recv_6343B0::sub_6343B0()
 {
 
-  return *(unsigned int *)(**(unsigned int **)this->ptr_4 + 540); /*0x6343bd*/
+  return *(unsigned int *)(**(unsigned int **)this->M4 + 540); /*0x6343bd*/
 
 }
 } // namespace gamemd
@@ -4106,7 +4106,7 @@ BOOL E4Recv_634470::sub_634470(int a2, int a3)
 
   unsigned int *ScenarioClassActionCoords; // eax
   unsigned int v13[3]; // [esp+1Ch] [ebp-1Ch] BYREF
-  ScenarioClassActionCoords = GetScenarioClassActionCoords(v13, *(unsigned char **)(*(unsigned int *)this->ptr_4 + 4)); /*0x634481*/
+  ScenarioClassActionCoords = GetScenarioClassActionCoords(v13, *(unsigned char **)(*(unsigned int *)this->M4 + 4)); /*0x634481*/
   unsigned int v12[3]; // [esp+10h] [ebp-28h] BYREF
   v12[0] = *ScenarioClassActionCoords; /*0x634488*/
   v12[1] = ScenarioClassActionCoords->ptr_4; /*0x63448f*/
@@ -4425,7 +4425,7 @@ unsigned int * E4Recv_635DF0::sub_635DF0(unsigned int * a2)
 
   unsigned int *ScenarioClassActionCoords; // eax
   unsigned int v7[4]; // [esp+20h] [ebp-10h] BYREF
-  ScenarioClassActionCoords = GetScenarioClassActionCoords(v7, *(unsigned char **)(*(unsigned int *)this->ptr_4 + 4)); /*0x635e02*/
+  ScenarioClassActionCoords = GetScenarioClassActionCoords(v7, *(unsigned char **)(*(unsigned int *)this->M4 + 4)); /*0x635e02*/
   unsigned int v6[3]; // [esp+14h] [ebp-1Ch] BYREF
   v6[0] = *ScenarioClassActionCoords; /*0x635e09*/
   v6[1] = ScenarioClassActionCoords->ptr_4; /*0x635e10*/
@@ -4452,7 +4452,7 @@ int * E4Recv_635E90::sub_635E90(int * a2)
 
   unsigned int *ScenarioClassActionCoords; // eax
   unsigned int v12[3]; // [esp+20h] [ebp-1Ch] BYREF
-  ScenarioClassActionCoords = GetScenarioClassActionCoords(v12, *(unsigned char **)(*(unsigned int *)this->ptr_4 + 4)); /*0x635ea2*/
+  ScenarioClassActionCoords = GetScenarioClassActionCoords(v12, *(unsigned char **)(*(unsigned int *)this->M4 + 4)); /*0x635ea2*/
   unsigned int v11[3]; // [esp+14h] [ebp-28h] BYREF
   v11[0] = *ScenarioClassActionCoords; /*0x635ea9*/
   v11[1] = ScenarioClassActionCoords->ptr_4; /*0x635eb0*/
@@ -4853,7 +4853,7 @@ int E4Recv_63D2D0::sub_63D2D0()
   unsigned __int8 ***i; // edx
   unsigned __int8 *v5; // [esp+10h] [ebp-Ch]
 
-  v5 = **(unsigned __int8 ***)this->ptr_4; /*0x63d31a*/
+  v5 = **(unsigned __int8 ***)this->M4; /*0x63d31a*/
   result = (BYTE2(stru_A83CD9.ptr_0) >> g_BitMask_Red << g_BitShift_Blue) /*0x63d354*/
          | (BYTE1(stru_A83CD9.ptr_0) >> g_BitMask_Blue << g_BitMask_Green)
          | (LOBYTE(stru_A83CD9.ptr_0) >> g_BitShift_Green_0 << g_BitShift_Red);

@@ -80,7 +80,7 @@ public:
     int ComputeThunk(int a1);  // 0x69e9e0 -- SHA1::ComputeThunk
     // === SYMBOL-ANCHOR (END) ===
 public:  // g57c5 W4b supply slot
-    unsigned int SHA1_field_0x04;  // 0x4 g57c5 W4b (self-desc vocab, ml slot witness)
+    unsigned int u32_4;  // 0x4 g57c5 W4b (self-desc vocab, ml slot witness)
 
     void* q034;  // X10 supply (member_lookup)
     unsigned int u32_18;  // X10 supply (member_lookup)

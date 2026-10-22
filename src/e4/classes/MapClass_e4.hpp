@@ -22,17 +22,17 @@ struct MapClass {
     unsigned int MapClass_field_0x0;  // 0x0
     int RadarHashVector_field_0x04;  // 0x4
     int q008;  // 0x8
-    int RadarHashVector_field_0x0C;  // 0xC
+    int u32_C;  // 0xC
     int q010;  // 0x10
-    unsigned int MapClass_field_0x14;  // 0x14
+    unsigned int q014;  // 0x14
     char __pad_18[12];  // 0x18
     unsigned int outBuffer;  // 0x24
     int MapClass_field_0x28;  // 0x28
-    unsigned int MapClass_field_0x2C;  // 0x2C
+    unsigned int q02C;  // 0x2C
     char __pad_30[12];  // 0x30
     unsigned int q03C;  // 0x3C
     char __pad_40[8];  // 0x40
-    int MapClass_field_0x48;  // 0x48
+    int q048;  // 0x48
     unsigned int q04C;  // 0x4C
     DynamicVector * ptr_50;  // 0x50
     unsigned int __pad_054;  // 0x54
@@ -45,15 +45,15 @@ struct MapClass {
     char __pad_90[24];  // 0x90
     unsigned int q0A8;  // 0xA8
     char __pad_AC[12];  // 0xAC
-    int MapClass_field_0xB8;  // 0xB8
+    int q0B8;  // 0xB8
     unsigned char q0BC[24];  // 0xBC
     unsigned int u32_D4;  // 0xD4
     unsigned int u32_D8;  // 0xD8
     unsigned int u32_DC;  // 0xDC
     char __pad_E0[12];  // 0xE0
-    int MapClass_field_0xEC;  // 0xEC
+    int q0EC;  // 0xEC
     char __pad_F0[4];  // 0xF0
-    unsigned int MapClass_field_0xF4;  // 0xF4
+    unsigned int u32_F4;  // 0xF4
     unsigned int __pad_F8;  // 0xF8
     int q0FC;  // 0xFC
     int q100;  // 0x100
@@ -80,7 +80,7 @@ struct MapClass {
     char __pad_234[13];  // 0x234
     char MapClass_field_0x241[4];  // 0x241
     char __pad_245[79];  // 0x245
-    int MapClass_field_0x294;  // 0x294
+    int u32_294;  // 0x294
     char __pad_298[28];  // 0x298
     unsigned int q2B4;  // 0x2B4
     char __pad_2B8[12];  // 0x2B8
@@ -100,7 +100,7 @@ struct MapClass {
     unsigned int u32_2F4;  // 0x2F4
     char __pad_2F8[12];  // 0x2F8
     int q304;  // 0x304
-    IUnknown* q0308;  // 0x308
+    IUnknown* q308;  // 0x308
     char __pad_30C[1020];  // 0x30C
     void* u32_708;  // 0x708
     unsigned char __pad_70C;  // 0x70C
@@ -108,7 +108,7 @@ struct MapClass {
     unsigned char q0805;  // 0x805
     unsigned char __pad_806;  // 0x806
     char __pad_807[1397];  // 0x807
-    int MapClass_field_0xD7C;  // 0xD7C
+    int qD7C;  // 0xD7C
     char __pad_D80[960];  // 0xD80
     char __pad_1140[24];  // 0x1140
     unsigned int q1158;  // 0x1158
@@ -128,10 +128,10 @@ struct MapClass {
     unsigned int q11B0;  // 0x11B0
     unsigned int q11B4;  // 0x11B4
     char __pad_11B8[160];  // 0x11B8
-    int MapClass_field_0x1258;  // 0x1258
+    int q1258;  // 0x1258
     char __pad_125C[960];  // 0x125C
     char __pad_161C[164];  // 0x161C
-    int MapClass_field_0x16C0;  // 0x16C0
+    int q16C0;  // 0x16C0
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int GetTileDataField14();

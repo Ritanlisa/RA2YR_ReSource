@@ -11,17 +11,17 @@ struct VectorClass_flat;  // fix_fwd_type_supply
 struct EventClass {
 #pragma pack(push, 1)  // X60: binary-packed layout
     int EventClass_field_0x0;  // 0x0
-    int EventClass_field_0x4;  // 0x4
-    int EventClass_field_0x8;  // 0x8
+    int q004;  // 0x4
+    int u32_8;  // 0x8
     int q00C;  // 0xC
     int Count;  // 0x10
     char __pad_10[1];  // 0x14
     unsigned int u32_15;  // 0x15
     char __pad_19[11];  // 0x19
-    int EventClass_field_0x24;  // 0x24
+    int q024;  // 0x24
     int q028;  // 0x28
     unsigned int u32_2C;  // 0x2C
-    int EventClass_field_0x30;  // 0x30
+    int q030;  // 0x30
     char __pad_34[4];  // 0x34
     int q038;  // 0x38
     unsigned long long __pad_3C;  // 0x3C
@@ -32,12 +32,12 @@ struct EventClass {
     int q054;  // 0x54
     char __pad_58[960];  // 0x58
     char __pad_418[264];  // 0x418
-    int EventClass_field_0x520;  // 0x520
-    int EventClass_field_0x524;  // 0x524
-    int EventClass_field_0x528;  // 0x528
+    int q520;  // 0x520
+    int q524;  // 0x524
+    int q528;  // 0x528
     char __pad_52C[960];  // 0x52C
     char __pad_8EC[712];  // 0x8EC
-    int EventClass_field_0xBB4;  // 0xBB4
+    int qBB4;  // 0xBB4
     char __pad_BB8[598];  // 0xBB8
     char EventClass_field_0xE0E[4];  // 0xE0E
     char __pad_E12[960];  // 0xE12

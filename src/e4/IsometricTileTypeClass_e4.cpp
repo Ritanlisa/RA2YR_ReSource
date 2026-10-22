@@ -268,16 +268,16 @@ DynamicVector * IsometricTileTypeClass::Constructor(unsigned int * Block, char a
 
   void *v3 = *&Block->__pad_4; // eax /*0x54a763*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x54a766*/
-  if ( v3 && BYTE1(Block->vtable4) ) /*0x54a770*/
+  if ( v3 && BYTE1(Block[3]) ) /*0x54a770*/
   {
     __3_YAXPAX_Z(v3); /*0x54a778*/
-    *(unsigned int *)&Block->vtable2 = 0; /*0x54a780*/
+    *(unsigned int *)&Block[1] = 0; /*0x54a780*/
   }
-  BYTE1(Block->vtable4) = 0; /*0x54a78b*/
-  Block->vtable3 = 0; /*0x54a791*/
+  BYTE1(Block[3]) = 0; /*0x54a78b*/
+  Block[2] = 0; /*0x54a791*/
   if ( (a2 & 1) != 0 ) /*0x54a798*/
     __3_YAXPAX_Z(Block); /*0x54a79b*/
-  return Block->vtable1; /*0x54a7a5*/
+  return Block[0]; /*0x54a7a5*/
 
 }
 } // namespace gamemd

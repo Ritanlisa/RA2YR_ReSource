@@ -7,8 +7,8 @@ namespace gamemd {
 struct AnimClass;  // fix_fwd_type_supply
 struct Building {
     int __pad_0;  // 0x0
-    int Building_field_0x4;  // 0x4
-    int Building_field_0x8;  // 0x8
+    int q004;  // 0x4
+    int q008;  // 0x8
     char __pad_C[56];  // 0xC
     unsigned int u32_44;  // 0x44
     char __pad_48[84];  // 0x48
@@ -17,7 +17,7 @@ struct Building {
     char __pad_A4[122];  // 0xA4
     unsigned char u32_11E;  // 0x11E
     char __pad_11F[389];  // 0x11F
-    int Building_field_0x2A4;  // 0x2A4
+    int q2A4;  // 0x2A4
     unsigned int tail_2A8;  // 0x2A8
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---

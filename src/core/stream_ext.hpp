@@ -232,16 +232,16 @@ public:
     virtual void Cleanup(); // 0x42F7C0
     // +6 more virtual methods
 
-    uint8_t Buffer_field_0x04[4];
-    uint8_t Buffer_field_0x08[4];
-    uint8_t Buffer_field_0x0C[4];
-    uint8_t Buffer_field_0x10[4];
-    uint8_t Buffer_field_0x14[4];
-    uint8_t Buffer_field_0x18[4];
-    uint8_t Buffer_field_0x1C[4];
-    uint8_t Buffer_field_0x20[4];
-    uint8_t Buffer_field_0x24[4];
-    uint8_t Buffer_field_0x28[4];
+    uint8_t Buffer_field_04[4];
+    uint8_t Buffer_field_08[4];
+    uint8_t Buffer_field_0C[4];
+    uint8_t Buffer_field_10[4];
+    uint8_t Buffer_field_14[4];
+    uint8_t Buffer_field_18[4];
+    uint8_t Buffer_field_1C[4];
+    uint8_t Buffer_field_20[4];
+    uint8_t Buffer_field_24[4];
+    uint8_t u32_28[4];
 
     unsigned int u32_158;  // G42.39 data supply
     unsigned int u32_DC;  // G42.39 data supply
@@ -293,8 +293,8 @@ public:
     virtual void Cleanup(); // 0x434990
     int Cleanup(int a2);  // 0x434990 G42.33 b3 supplied-body sync (1 参形)
 
-    uint8_t BufferIO_field_0x04[4];
-    uint8_t BufferIO_field_0x08[4];
+    uint8_t q004[4];
+    uint8_t q008[4];
 
     unsigned int u32_60;  // G42.39 data supply
 
@@ -327,22 +327,22 @@ public:
     unsigned int CStreamClass_field_0x08;  // G42.33 b3 标量形
     LONG CStreamClass_field_0x0C;  // G42.33 b3 标量形 (InterlockedIncrement)
     uint8_t CStreamClass_field_0x10[4];
-    uint8_t CStreamClass_field_0x14[4];
-    uint8_t CStreamClass_field_0x18[4];
-    uint8_t CStreamClass_field_0x1C[4];
-    uint8_t CStreamClass_field_0x20[4];
-    uint8_t CStreamClass_field_0x24[4];
-    uint8_t CStreamClass_field_0x28[4];
-    uint8_t CStreamClass_field_0x2C[4];
-    uint8_t CStreamClass_field_0x30[4];
-    uint8_t CStreamClass_field_0x34[4];
-    uint8_t CStreamClass_field_0x38[4];
-    uint8_t CStreamClass_field_0x3C[4];
-    uint8_t CStreamClass_field_0x40[4];
-    uint8_t CStreamClass_field_0x44[4];
-    uint8_t CStreamClass_field_0x48[4];
-    uint8_t CStreamClass_field_0x4C[4];
-    uint8_t CStreamClass_field_0x50[4];
+    uint8_t q014[4];
+    uint8_t q018[4];
+    uint8_t q01C[4];
+    uint8_t q020[4];
+    uint8_t q024[4];
+    uint8_t q028[4];
+    uint8_t q02C[4];
+    uint8_t q030[4];
+    uint8_t q034[4];
+    uint8_t q038[4];
+    uint8_t q03C[4];
+    uint8_t q040[4];
+    uint8_t q044[4];
+    uint8_t q048[4];
+    uint8_t q04C[4];
+    uint8_t q050[4];
     unsigned char m_1[4];  // 0x1
     unsigned int m_C;  // 0xC
     int m_8;  // 0x8
@@ -401,7 +401,7 @@ public:
     virtual char StubReturnFalse(); // 0x6241E0 G42.35 C7 体签名
     // +1 more virtual methods
 
-    uint8_t StreamWrapper_field_0x04[4];
+    uint8_t q004[4];
     uint8_t StreamWrapper_field_0x08[4];
     uint8_t StreamWrapper_field_0x0C[4];
     uint8_t StreamWrapper_field_0x10[4];

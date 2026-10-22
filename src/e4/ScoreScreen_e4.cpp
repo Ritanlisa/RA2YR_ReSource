@@ -178,7 +178,7 @@ int ScoreScreen::RemoveItem(int a2, int a3, char aP3, char a5, int a6)
     if ( !(unsigned __int8)Audio::IsPlaying() ) /*0x77136a*/
     {
       this->u32_3AC = Timer::GetTicks(); /*0x771386*/
-      this->u32_3B0 = v25.DeleteAndZero_field_0x08; /*0x771390*/
+      this->u32_3B0 = v25.u32_8; /*0x771390*/
       this->u32_3B4 = a6; /*0x771393*/
     }
     v14 = this->u32_3C8; /*0x771396*/

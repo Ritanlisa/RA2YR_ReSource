@@ -11,7 +11,7 @@ struct Terrain {
     char __pad_1[1];  // 0x1
     char Terrain_field_0x2[4];  // 0x2
     char __pad_6[14];  // 0x6
-    void* Terrain_field_0x14;  // 0x14
+    void* q014;  // 0x14
     int __pad_18;  // 0x18
     char __pad_1C[8];  // 0x1C
     int q024;  // 0x24
@@ -19,7 +19,7 @@ struct Terrain {
     char __pad_2C[4];  // 0x2C
     int q030;  // 0x30
     int q034;  // 0x34
-    int Terrain_field_0x38;  // 0x38
+    int q038;  // 0x38
     char __pad_3C[4];  // 0x3C
     int q040;  // 0x40
     char __pad_44[8];  // 0x44
@@ -27,8 +27,8 @@ struct Terrain {
     char __pad_50[4];  // 0x50
     int q054;  // 0x54
     char __pad_58[8];  // 0x58
-    unsigned int Terrain_field_0x60;  // 0x60
-    int Terrain_field_0x64;  // 0x64
+    unsigned int u32_60;  // 0x60
+    int q064;  // 0x64
     void* __pad_68;  // 0x68
     unsigned int u32_6C;  // 0x6C
     char __pad_70[16];  // 0x70
@@ -41,11 +41,11 @@ struct Terrain {
     unsigned char __pad_122;  // 0x122
     char __pad_123[1];  // 0x123
     unsigned int u32_124;  // 0x124
-    int Terrain_field_0x128;  // 0x128
-    int Terrain_field_0x12C;  // 0x12C
+    int q128;  // 0x128
+    int q12C;  // 0x12C
     char __pad_130[12];  // 0x130
-    int Terrain_field_0x13C;  // 0x13C
-    int Terrain_field_0x140;  // 0x140
+    int q13C;  // 0x13C
+    int q140;  // 0x140
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int GetTileIndex(int a2);  // 0x48B720

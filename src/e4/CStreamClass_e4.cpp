@@ -109,12 +109,12 @@ CStreamClass * CStreamClass::ddtor(int a2, char a3)
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_ed96c7) */  /*0x4a3121*/
   if ( CStreamClass_field_0x08 ) /*0x4a3128*/
   {
-    if ( (((v3->CStreamClass_field_0x10) >> 8) & 0xFF) /*0x4a314b*/
-      && v3->CStreamClass_field_0x14 > 0
+    if ( (((v3->q010) >> 8) & 0xFF) /*0x4a314b*/
+      && v3->q014 > 0
       && !CStreamClass::IsEmpty((CStreamClass *)&v3->CStreamClass_field_0x08, 0)
-      && v4->CStreamClass_field_0x14 > 0 )
+      && v4->q014 > 0 )
     {
-      IStream::Read((IStream *)v4->CStreamClass_field_0x18, (void *)v4->CStreamClass_field_0x14, a2); /*0x4a3154*/
+      IStream::Read((IStream *)v4->q018, (void *)v4->q014, a2); /*0x4a3154*/
     }
     if ( v4->CStreamClass_field_0x08 /*0x4a317b*/
       && (*(int (**)(int, unsigned int))(*(unsigned int *)v4->CStreamClass_field_0x08 + 32))(
@@ -127,14 +127,14 @@ CStreamClass * CStreamClass::ddtor(int a2, char a3)
       v4->CStreamClass_field_0x08 = 0; /*0x4a3195*/
     }
   }
-  __3_YAXPAX_Z((void *)v4->CStreamClass_field_0x20); /*0x4a319c*/
-  CStreamClass_field_0x18 = (void *)v4->CStreamClass_field_0x18; /*0x4a31a1*/
-  v4->CStreamClass_field_0x20 = 0; /*0x4a31a4*/
+  __3_YAXPAX_Z((void *)v4->q020); /*0x4a319c*/
+  CStreamClass_field_0x18 = (void *)v4->q018; /*0x4a31a1*/
+  v4->q020 = 0; /*0x4a31a4*/
   __3_YAXPAX_Z(CStreamClass_field_0x18); /*0x4a31a8*/
-  CStreamClass_field_0x1C = (void *)v4->CStreamClass_field_0x1C; /*0x4a31ad*/
-  v4->CStreamClass_field_0x18 = 0; /*0x4a31b0*/
+  CStreamClass_field_0x1C = (void *)v4->q01C; /*0x4a31ad*/
+  v4->q018 = 0; /*0x4a31b0*/
   __3_YAXPAX_Z(CStreamClass_field_0x1C); /*0x4a31b4*/
-  v4->CStreamClass_field_0x1C = 0; /*0x4a31b9*/
+  v4->q01C = 0; /*0x4a31b9*/
   v8 = v4->CStreamClass_field_0x08; /*0x4a31bc*/
   if ( v8 ) /*0x4a31c4*/
     (*(void (**)(int))(*(unsigned int *)v8 + 8))(v4->CStreamClass_field_0x08); /*0x4a31c9*/
@@ -298,7 +298,7 @@ char CStreamClass_16::AddRef(int a2)
 {
 
   int m_8; // esi
-  m_8 = this->m_8; /*0x4a4b32*/
+  m_8 = this->q008; /*0x4a4b32*/
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x4a4b3d*/
   {
     int v3 = 0; // edx /*0x4a4b3f*/
@@ -331,30 +331,30 @@ char CStreamClass_16::Release(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x4a4b7c*/
   {
-    (this->m_C) = ((this->m_C) & ~0xFF) | ((0) & 0xFF); /*0x4a4b86*/
+    (this->q00C) = ((this->q00C) & ~0xFF) | ((0) & 0xFF); /*0x4a4b86*/
     if ( a3 ) /*0x4a4b8c*/
       v4 = a3; /*0x4a4ba2*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x4a4b9e*/
-    (this->m_C) = ((this->m_C) & ~0xFF) | ((1) & 0xFF); /*0x4a4ba6*/
+    (this->q00C) = ((this->q00C) & ~0xFF) | ((1) & 0xFF); /*0x4a4ba6*/
     if ( v4 ) /*0x4a4baa*/
     {
       if ( *&this->q004 ) /*0x4a4bb5*/
       {
-        m_8 = this->m_8; /*0x4a4bbc*/
+        m_8 = this->q008; /*0x4a4bbc*/
         if ( a2 < m_8 ) /*0x4a4bc1*/
           m_8 = a2; /*0x4a4bc3*/
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x4a4bc9*/
           ++i; /*0x4a4bce*/
-        if ( (((this->m_C) >> 8) & 0xFF) ) /*0x4a4bdb*/
+        if ( (((this->q00C) >> 8) & 0xFF) ) /*0x4a4bdb*/
         {
           __3_YAXPAX_Z(*&this->q004); /*0x4a4be6*/
           *&this->q004 = 0; /*0x4a4bee*/
         }
       }
       *&this->q004 = v4; /*0x4a4bf7*/
-      this->m_8 = a2; /*0x4a4bff*/
-      (this->m_C) = ((this->m_C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x4a4c02*/
+      this->q008 = a2; /*0x4a4bff*/
+      (this->q00C) = ((this->q00C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x4a4c02*/
       return 1; /*0x4a4c08*/
     }
     else
@@ -380,8 +380,8 @@ int CStreamClass_16::ddtor(void *a1)
     operator delete((void *)(*&this->q004)); /*0x4a4c33*/
     *&this->q004 = 0; /*0x4a4c3b*/
   }
-  (((unsigned char *)&(*&this->m_C))[1]) = 0; /*0x4a4c3e*/
-  this->m_8 = 0; /*0x4a4c41*/
+  (((unsigned char *)&(*&this->q00C))[1]) = 0; /*0x4a4c3e*/
+  this->q008 = 0; /*0x4a4c41*/
 }
 } // namespace gamemd
 
@@ -394,9 +394,9 @@ int CStreamClass_16::Read(unsigned int * a2, void *a2_2, void *a3)
   int m_8; // edx
   unsigned int *i; // ecx
 
-  if ( !((this->m_C) & 0xFF) ) /*0x4a4c50*/
+  if ( !((this->q00C) & 0xFF) ) /*0x4a4c50*/
     return 0; /*0x4a4c58*/
-  m_8 = this->m_8; /*0x4a4c5e*/
+  m_8 = this->q008; /*0x4a4c5e*/
   result = 0; /*0x4a4c61*/
   if ( m_8 <= 0 ) /*0x4a4c65*/
     return -1; /*0x4a4c7c*/
@@ -414,7 +414,7 @@ int CStreamClass_16::Read(unsigned int * a2, void *a2_2, void *a3)
 namespace gamemd {
 unsigned int CStreamClass_16::Write(int a2)
 {
-  if ( (*((unsigned char *)&(*&this->m_C))) ) /*0x4a4c90*/
+  if ( (*((unsigned char *)&(*&this->q00C))) ) /*0x4a4c90*/
     return (unsigned int)(a2 - *&this->q004) >> 2; /*0x4a4ca5*/
   else
     return 0; /*0x4a4c97*/

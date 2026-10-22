@@ -7,9 +7,9 @@ namespace gamemd {
 
 struct GameOptions {
     WinModemClass* __pad_000;  // 0x0
-    int GameOptions_field_0x04;  // 0x4
-    int GameOptions_field_0x08;  // 0x8
-    int GameOptions_field_0x0C;  // 0xC
+    int u32_4;  // 0x4
+    int q008;  // 0x8
+    int q00C;  // 0xC
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     static int GetEntry();

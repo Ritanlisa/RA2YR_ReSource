@@ -452,7 +452,7 @@ LABEL_28:
             OleLoadFromStream(v4, &IID_ILocomotion, &aP0->locomotor); /*0x4db568*/
             aP0->FootClass_field_5A0 = 0; /*0x4db574*/
             ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(aP0 + 1492)); /*0x4db580*/
-            ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->FootClass_field_5D8); /*0x4db591*/
+            ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->disguisedAsHouse); /*0x4db591*/
             ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->FootClass_field_5A4); /*0x4db5a2*/
             ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->FootClass_field_5A8); /*0x4db5b3*/
             ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->FootClass_field_5C8); /*0x4db5c4*/
@@ -1130,7 +1130,7 @@ int ObjectClass::DropAsBomb_Track()
         unsigned int v5[3]; // [esp+Ch] [ebp-Ch] BYREF
         v5[0] = this->field_9C; /*0x5f41ed*/
         int v4 = this->field_0; // eax /*0x5f41f1*/
-        v5[1] = *(unsigned int *)this->q0A0; /*0x5f41f6*/
+        v5[1] = *(unsigned int *)this->isOnMap; /*0x5f41f6*/
         v5[2] = this->field_A4; /*0x5f4204*/
         return (*(int (**)(IUnknown *, unsigned int *))(v4 + 244))(this, v5); /*0x5f4208*/
       }
@@ -1881,7 +1881,7 @@ unsigned char ObjectClass::ToggleSidebarDisplay(unsigned int * a0, TabClass * aP
   do /*0x6a7e47*/
   {
     Hash::Reset((LinkClass *)v11); /*0x6a7e2d*/
-    LOBYTE(v11[3].ShapeButtonClass_field_0x08) = 0; /*0x6a7e32*/
+    LOBYTE(v11[3].u32_8) = 0; /*0x6a7e32*/
     (*(void (**)(unsigned __int8 *, ShapeButtonClass *))(*(unsigned int *)v7 + 48))(v7, v11); /*0x6a7e3b*/
     v11 += 8; /*0x6a7e3e*/
   }
@@ -2372,7 +2372,7 @@ int ObjectClass::GetZAboveGround()
 
   unsigned int v4[3]; // [esp+4h] [ebp-Ch] BYREF
   v4[0] = this->field_9C; /*0x5f5f52*/
-  v4[1] = *(unsigned int *)this->q0A0; /*0x5f5f63*/
+  v4[1] = *(unsigned int *)this->isOnMap; /*0x5f5f63*/
   v4[2] = this->field_A4; /*0x5f5f6a*/
   int v2; // ecx
   v2 = this->field_A4 - Cell::GetGroundHeight(v4); /*0x5f5f79*/

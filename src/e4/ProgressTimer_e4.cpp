@@ -24,11 +24,11 @@ void* ProgressTimer::GetValue(void *aP1, void *a2)
   __int16 v10; // cx
   void *v12; // [esp+Ch] [ebp-4h]
 
-  ProgressTimer_field_0x14 = this->ProgressTimer_field_0x14; /*0x4c93d2*/
+  ProgressTimer_field_0x14 = this->q014; /*0x4c93d2*/
   if ( ProgressTimer_field_0x14 <= 0 ) /*0x4c93db*/
     goto LABEL_14; /*0x4c93db*/
-  ProgressTimer_field_0x8 = this->ProgressTimer_field_0x8; /*0x4c93dd*/
-  ProgressTimer_field_0x10 = this->ProgressTimer_field_0x10; /*0x4c93e0*/
+  ProgressTimer_field_0x8 = this->q008; /*0x4c93dd*/
+  ProgressTimer_field_0x10 = this->q010; /*0x4c93e0*/
   if ( ProgressTimer_field_0x8 != -1 ) /*0x4c93ec*/
   {
     if ( *(unsigned int *)&stru_A8E960.random[528] - ProgressTimer_field_0x8 >= ProgressTimer_field_0x10 ) /*0x4c93f4*/
@@ -47,8 +47,8 @@ LABEL_12:
       *a2 = v12; /*0x4c9445*/
       return a2; /*0x4c9453*/
     }
-    v8 = this->ProgressTimer_field_0x10; /*0x4c941e*/
-    v9 = this->ProgressTimer_field_0x8; /*0x4c9421*/
+    v8 = this->q010; /*0x4c941e*/
+    v9 = this->q008; /*0x4c9421*/
     if ( v9 != -1 ) /*0x4c9427*/
     {
       if ( *(unsigned int *)&stru_A8E960.random[528] - v9 >= v8 ) /*0x4c942f*/

@@ -52,7 +52,7 @@ int FactoryClass::UpdateProduction()
   LOBYTE(Speed) = this->isSuspended[0]; /*0x4c9b28*/
   if ( !(unsigned char)Speed ) /*0x4c9b2d*/
   {
-    Speed = *&this->q058; /*0x4c9b33*/
+    Speed = *&this->u32_58; /*0x4c9b33*/
     if ( Speed ) /*0x4c9b38*/
     {
       if ( this->production[0] == 54 ) /*0x4c9b4d*/
@@ -77,7 +77,7 @@ int FactoryClass::UpdateProduction()
         *v3 = *(unsigned int *)&stru_A8E960.random[528]; /*0x4c9b92*/
         this->queuedObjects = (int)v11; /*0x4c9b94*/
         this->queuedCount = Speed; /*0x4c9b97*/
-        v4 = *&this->q058; /*0x4c9b9a*/
+        v4 = *&this->u32_58; /*0x4c9b9a*/
         this->u8_5D = 1; /*0x4c9b9f*/
         if ( v4 ) /*0x4c9ba2*/
         {
@@ -97,14 +97,14 @@ int FactoryClass::UpdateProduction()
         {
           HouseClass::ProcessPowerDrain((int *)this->owner, balance); /*0x4c9bf5*/
           v8 = this->balance; /*0x4c9bfa*/
-          this->q05C = 0; /*0x4c9bfd*/
+          this->queuedCapacity = 0; /*0x4c9bfd*/
           Speed = v8 - balance; /*0x4c9c01*/
           this->balance = Speed; /*0x4c9c03*/
         }
         else
         {
           v7 = this->production[0]; /*0x4c9be5*/
-          this->q05C = 1; /*0x4c9be8*/
+          this->queuedCapacity = 1; /*0x4c9be8*/
           Speed = v7 - 1; /*0x4c9beb*/
           this->production[0] = Speed; /*0x4c9bec*/
         }
@@ -159,7 +159,7 @@ int FactoryClass::DemandProduction(int a2, void *a3, char a4)
   if ( (*(int (**)(int))(*(unsigned int *)a2 + 44))(a2) == 7 /*0x4c9ccf*/
     || (!this->queuedCapacity || this->isSuspended)
     && this->u32_50 <= 0
-    && (!this->q058 || !this->isSuspended)
+    && (!this->u32_58 || !this->isSuspended)
     || a4 )
   {
     this->u8_5D = 1; /*0x4c9d6e*/
@@ -169,27 +169,27 @@ int FactoryClass::DemandProduction(int a2, void *a3, char a4)
     this->queuedObjects = v17; /*0x4c9d8e*/
     this->queuedCount = 0; /*0x4c9d92*/
     this->production = 0; /*0x4c9d95*/
-    this->q058 = (*(int (**)(int, House *))(*(unsigned int *)a2 + 140))(a2, a3); /*0x4c9da4*/
+    this->u32_58 = (*(int (**)(int, House *))(*(unsigned int *)a2 + 140))(a2, a3); /*0x4c9da4*/
     if ( !(unsigned __int8)House::IsCurrentPlayer(a3) ) /*0x4c9da7*/
     {
-      v12 = this->q058; /*0x4c9db1*/
+      v12 = this->u32_58; /*0x4c9db1*/
       if ( v12 ) /*0x4c9db6*/
       {
         if ( (*(int (**)(int))(*(unsigned int *)v12 + 44))(v12) == 6 ) /*0x4c9dc0*/
-          *(unsigned char *)(this->q058 + 1738) = 1; /*0x4c9dc5*/
+          *(unsigned char *)(this->u32_58 + 1738) = 1; /*0x4c9dc5*/
       }
     }
-    v13 = *&this->q058; /*0x4c9dcc*/
+    v13 = *&this->u32_58; /*0x4c9dcc*/
     if ( v13 ) /*0x4c9dd1*/
     {
       v14 = (HouseClass *)v13[135]; /*0x4c9dd3*/
       this->owner = v14; /*0x4c9ddb*/
       v15 = (*(int (**)(int, HouseClass *))(*(unsigned int *)a2 + 132))(a2, v14); /*0x4c9de1*/
-      v16 = *&this->q058; /*0x4c9de7*/
+      v16 = *&this->u32_58; /*0x4c9de7*/
       this->balance = v15; /*0x4c9dea*/
       v16[192] = v15; /*0x4c9ded*/
     }
-    return this->q058 != 0; /*0x4c9dfc*/
+    return this->u32_58 != 0; /*0x4c9dfc*/
   }
   else if ( this->u32_50 >= dword_8871E0->BaseUnderAttackSound /*0x4c9cea*/
          || HouseClass::ShouldDisableCameo(*&this->owner, a2) )
@@ -227,7 +227,7 @@ int FactoryClass::SetObject(int a2)
   int v5; // [esp+8h] [ebp-8h]
 
   BuildingClass::AbandonProduction((int)this); /*0x4c9e16*/
-  *&this->q058 = a2; /*0x4c9e21*/
+  *&this->u32_58 = a2; /*0x4c9e21*/
   v3 = *(HouseClass **)(a2 + 540); /*0x4c9e27*/
   this->balance = 0; /*0x4c9e2d*/
   this->owner = v3; /*0x4c9e30*/
@@ -280,7 +280,7 @@ int FactoryClass::GetBuildTimeFrames()
   int v3; // edx
   int result; // eax
 
-  v1 = *&this->q058; /*0x4c9fb0*/
+  v1 = *&this->u32_58; /*0x4c9fb0*/
   v2 = 0; /*0x4c9fb3*/
   if ( v1 ) /*0x4c9fb7*/
     v2 = HouseClass::CalcProductionSpeed(v1); /*0x4c9fbe*/
@@ -345,11 +345,11 @@ LABEL_14:
           do /*0x4ca390*/
             ObjectPtr::RegisterForTracking( /*0x4ca386*/
               (int)&SwizzleManagerClass_Instance,
-              (int *)(*&v3->u32_44 + 4 * v12++));
+              (int *)(*&v3->q044 + 4 * v12++));
           while ( v12 < (int)this ); /*0x4ca390*/
         }
         ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v3->owner); /*0x4ca39b*/
-        ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v3->q058); /*0x4ca3a9*/
+        ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v3->u32_58); /*0x4ca3a9*/
         return 0; /*0x4ca3ae*/
       }
       else
@@ -371,7 +371,7 @@ LABEL_14:
                  0) )
           {
             v10 = *&v3->u32_50; /*0x4ca350*/
-            v11 = *&v3->u32_44; /*0x4ca353*/
+            v11 = *&v3->q044; /*0x4ca353*/
             *&v3->u32_50 = v10 + 1; /*0x4ca359*/
             v11[v10] = (unsigned int)a2; /*0x4ca360*/
           }
@@ -399,9 +399,9 @@ int FactoryClass::Stat(int * a2)
 
   Debug::Log(); /*0x4ca43f*/
   Debug::Log(); /*0x4ca44d*/
-  (*(void (**)(unsigned int))(**&this->q058 + 44))(*&this->q058); /*0x4ca45a*/
+  (*(void (**)(unsigned int))(**&this->u32_58 + 44))(*&this->u32_58); /*0x4ca45a*/
   Debug::Log(); /*0x4ca463*/
-  (*(void (**)(unsigned int))(**&this->q058 + 64))(*&this->q058); /*0x4ca470*/
+  (*(void (**)(unsigned int))(**&this->u32_58 + 64))(*&this->u32_58); /*0x4ca470*/
   Debug::Log(); /*0x4ca479*/
   Debug::Log(); /*0x4ca489*/
   Debug::Log(); /*0x4ca499*/
@@ -419,7 +419,7 @@ int FactoryClass::Stat(int * a2)
   ((Power *)a2)->FlagProcess(v4); /*0x4ca51a*/
   Power::TimerProcess(this->balance); /*0x4ca525*/
   Power::TimerProcess(this->originalBalance); /*0x4ca530*/
-  v5 = *&this->q058; /*0x4ca535*/
+  v5 = *&this->u32_58; /*0x4ca535*/
   if ( v5 ) /*0x4ca53a*/
   {
     v6 = (*(int (**)(int))(*(unsigned int *)(v5 + 4) + 16))(v5 + 4); /*0x4ca543*/
@@ -436,8 +436,8 @@ namespace gamemd {
 int FactoryClass::Revert(int a2, int a3)
 {
   int result = a2; // eax /*0x4ca580*/
-  if ( a2 == *&this->q058 ) /*0x4ca589*/
-    *&this->q058 = 0; /*0x4ca58b*/
+  if ( a2 == *&this->u32_58 ) /*0x4ca589*/
+    *&this->u32_58 = 0; /*0x4ca58b*/
   return result; /*0x4ca592*/
 }
 }
@@ -458,7 +458,7 @@ int FactoryClass::StartProduction_2()
   v2 = *&this->u32_50; /*0x4ca5a4*/
   if ( v2 ) /*0x4ca5a9*/
   {
-    v2 = *&this->q058; /*0x4ca5ab*/
+    v2 = *&this->u32_58; /*0x4ca5ab*/
     if ( !v2 ) /*0x4ca5b0*/
     {
       if ( !this->queuedCapacity || ((v2) = ((v2) & ~0xFF) | ((this->isSuspended) & 0xFF), (unsigned char)v2) ) /*0x4ca5be*/
@@ -502,7 +502,7 @@ int FactoryClass::CountType(int aP1)
   unsigned int *v6; // esi
 
   v3 = 0; /*0x4ca679*/
-  v4 = *&this->q058; /*0x4ca67b*/
+  v4 = *&this->u32_58; /*0x4ca67b*/
   if ( v4 ) /*0x4ca680*/
     v3 = (*(int (**)(int))(*(unsigned int *)v4 + 132))(v4) == aP1; /*0x4ca68e*/
   v5 = *&this->u32_50; /*0x4ca693*/

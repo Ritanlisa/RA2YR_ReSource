@@ -3298,7 +3298,7 @@ LABEL_90:
       HIWORD(v134.m_Data) = v38[1] / 256; /*0x742161*/
       v134.StreamClass_field_0C = v134.m_Data; /*0x74216e*/
       v39 = (Cell *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)&v134.StreamClass_field_0C); /*0x742173*/
-      v40 = (((v39->Cell_field_0x140) >> 8) & 0xFF) & 1; /*0x742183*/
+      v40 = (((v39->u32_140) >> 8) & 0xFF) & 1; /*0x742183*/
       v133 = Cell::IsBuildableAdvanced(v39); /*0x742190*/
       *(unsigned int *)v134.m_Position = (*(int (**)(Class_7F5C70 *))(*&this->q720))(this); /*0x74219a*/
       if ( v130 ) /*0x7421a4*/

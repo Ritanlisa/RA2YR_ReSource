@@ -168,8 +168,8 @@ int sub_6269A0()
       {
         StringVector::Construct(v4, 0, 0); /*0x6269df*/
         /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E5BC4) */  /*0x6269e4*/
-        v5->StringVector_field_0x14 = 10; /*0x6269ea*/
-        v5->StringVector_field_0x10 = 0; /*0x6269f1*/
+        v5->q014 = 10; /*0x6269ea*/
+        v5->q010 = 0; /*0x6269f1*/
       }
       else
       {
@@ -259,8 +259,8 @@ char sub_626AB0(const char * a1, int a2)
       {
         StringVector::Construct(v4, 0, 0); /*0x626b01*/
         /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E5BC4) */  /*0x626b06*/
-        v5->StringVector_field_0x14 = 10; /*0x626b0c*/
-        v5->StringVector_field_0x10 = 0; /*0x626b0f*/
+        v5->q014 = 10; /*0x626b0c*/
+        v5->q010 = 0; /*0x626b0f*/
       }
       else
       {

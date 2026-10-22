@@ -8,10 +8,10 @@ namespace gamemd {
 struct MovieClass {
     unsigned char __pad_000;  // 0x0
     char __pad_1[3];  // 0x1
-    int MovieClass_field_0x04;  // 0x4
-    int MovieClass_field_0x08;  // 0x8
-    int MovieClass_field_0x0C;  // 0xC
-    int MovieClass_field_0x10;  // 0x10
+    int q004;  // 0x4
+    int q008;  // 0x8
+    int q00C;  // 0xC
+    int q010;  // 0x10
     int q014;  // 0x14
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---

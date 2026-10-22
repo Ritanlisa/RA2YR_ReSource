@@ -2623,7 +2623,7 @@ Coord * * AssignWOLPlayerSide(const char ** a1, int a2)
   }
 LABEL_16:
   v22 = dword_B77E4C == 1; /*0x77e9b4*/
-  String::ToLowerCopy((String *)&v23.ptr_4, (char **)&v24.DeleteAndZero_field_0x04); /*0x77e9cb*/
+  String::ToLowerCopy((String *)&v23.ptr_4, (char **)&v24.q004); /*0x77e9cb*/
   v12 = 0; /*0x77e9d5*/
   if ( *(int *)&stru_A8D804.__pad_3D[579] > 0 ) /*0x77e9d9*/
   {
@@ -2632,9 +2632,9 @@ LABEL_16:
       WideString::Assign((WideString *)&v24, *(wchar_t **)(*(unsigned int *)&stru_A8D804.__pad_3D[567] + 4 * v12)); /*0x77e9e9*/
       ToWideStringCharAlt((char **)&v23, (const wchar_t **)&v24); /*0x77e9f6*/
       DeleteAndZero::Alt(&v24); /*0x77e9ff*/
-      v13 = String::ToLowerCopy(&v23, (char **)&v24.DeleteAndZero_field_0x08); /*0x77ea12*/
-      v14 = String::Compare((String *)v13, (const char **)&v24.DeleteAndZero_field_0x04); /*0x77ea22*/
-      DeleteAndZero((ObjectClass *)&v24.DeleteAndZero_field_0x08); /*0x77ea24*/
+      v13 = String::ToLowerCopy(&v23, (char **)&v24.u32_8); /*0x77ea12*/
+      v14 = String::Compare((String *)v13, (const char **)&v24.q004); /*0x77ea22*/
+      DeleteAndZero((ObjectClass *)&v24.u32_8); /*0x77ea24*/
       if ( v14 ) /*0x77ea2f*/
         break; /*0x77ea2f*/
       DeleteAndZero((ObjectClass *)&v23); /*0x77ea31*/
@@ -2692,7 +2692,7 @@ LABEL_21:
     }
     DisplayRankingsWOL(0); /*0x77eb78*/
   }
-  DeleteAndZero((ObjectClass *)&v24.DeleteAndZero_field_0x04); /*0x77eb81*/
+  DeleteAndZero((ObjectClass *)&v24.q004); /*0x77eb81*/
   DeleteAndZero((ObjectClass *)&v23.ptr_4); /*0x77eb8a*/
 
 }
@@ -2725,7 +2725,7 @@ int SetupLobbyPlayerSlot(CCINIClass * aP0, CCINIClass * aP1, CCINIClass * aP2, i
   String v26; // [esp+10h] [ebp-14h] BYREF
   DeleteAndZero v27; // [esp+18h] [ebp-Ch] BYREF
 
-  v27.DeleteAndZero_field_0x04 = aP1; /*0x77ed0b*/
+  v27.q004 = aP1; /*0x77ed0b*/
   v5 = -1; /*0x77ed10*/
   String::ToLowerCopy(aP0, (char **)&v26.ptr_4); /*0x77ed13*/
   v6 = 0; /*0x77ed18*/
@@ -2735,9 +2735,9 @@ int SetupLobbyPlayerSlot(CCINIClass * aP0, CCINIClass * aP1, CCINIClass * aP2, i
     WideString::Assign((WideString *)&v27, *v7); /*0x77ed26*/
     ToWideStringCharAlt((char **)&v26, (const wchar_t **)&v27); /*0x77ed33*/
     DeleteAndZero::Alt(&v27); /*0x77ed3c*/
-    v8 = String::ToLowerCopy(&v26, (char **)&v27.DeleteAndZero_field_0x08); /*0x77ed4a*/
+    v8 = String::ToLowerCopy(&v26, (char **)&v27.u32_8); /*0x77ed4a*/
     v9 = String::Compare((String *)&v26.ptr_4, (const char **)v8); /*0x77ed5d*/
-    DeleteAndZero((ObjectClass *)&v27.DeleteAndZero_field_0x08); /*0x77ed5f*/
+    DeleteAndZero((ObjectClass *)&v27.u32_8); /*0x77ed5f*/
     if ( v9 ) /*0x77ed66*/
       break; /*0x77ed66*/
     DeleteAndZero((ObjectClass *)&v26); /*0x77ed6c*/
@@ -2772,13 +2772,13 @@ LABEL_6:
       SessionClass::SetOption2(&v12->GameMode, aP1a); /*0x77ee0a*/
     }
     PlayerSide = SessionClass::GetPlayerSide(*(int **)&stru_A8D804.__pad_3D[4 * v5 + 591]); /*0x77ee16*/
-    if ( PlayerSide != v27.DeleteAndZero_field_0x04 ) /*0x77ee21*/
+    if ( PlayerSide != v27.q004 ) /*0x77ee21*/
     {
       *(unsigned int *)v26.__pad_0 = 1; /*0x77ee2a*/
-      SessionClass::SetPlayerOption(&v12->GameMode, v27.DeleteAndZero_field_0x04); /*0x77ee2e*/
+      SessionClass::SetPlayerOption(&v12->GameMode, v27.q004); /*0x77ee2e*/
       ResourceID2CSF = GetResourceID2CSF((ObjectClass *)v5); /*0x77ee3a*/
       ComboBoxSelected = GetComboBoxSelected(v11, ResourceID2CSF, -1); /*0x77ee42*/
-      if ( v27.DeleteAndZero_field_0x04 == -3 ) /*0x77ee4c*/
+      if ( v27.q004 == -3 ) /*0x77ee4c*/
       {
         if ( ComboBoxSelected != -3 ) /*0x77ee51*/
         {
@@ -4739,7 +4739,7 @@ void * E4Recv_776EB0::sub_776EB0()
   {
     this->isFallingDown = 1; /*0x776f11*/
   }
-  strncpy((char *)&this->ptr_C, VersionInformation.szCSDVersion, 0x7Fu); /*0x776f22*/
+  strncpy((char *)&this->M139, VersionInformation.szCSDVersion, 0x7Fu); /*0x776f22*/
   HIBYTE(this->parachute) = 0; /*0x776f2a*/
   return this; /*0x776f32*/
 

@@ -8,11 +8,11 @@ struct Particle {
     unsigned char __pad_000;  // 0x0
     char __pad_1[66];  // 0x1
     unsigned char q0043;  // 0x43
-    unsigned int q0044;  // 0x44
+    unsigned int u32_44;  // 0x44
     char __pad_48[36];  // 0x48
     unsigned int u32_6C;  // 0x6C
     char __pad_70[20];  // 0x70
-    unsigned int q0084;  // 0x84
+    unsigned int u32_84;  // 0x84
     char __pad_88[36];  // 0x88
     unsigned int u32_AC;  // 0xAC
     unsigned int u32_B0;  // 0xB0

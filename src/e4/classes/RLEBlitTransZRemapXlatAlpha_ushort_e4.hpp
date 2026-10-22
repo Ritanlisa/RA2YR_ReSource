@@ -8,16 +8,16 @@ namespace gamemd {
 struct RLEBlitTransZRemapXlatAlpha_ushort {
     void* ptr_0;  // 0x0
     unsigned int m_4;  // 0x4
-    unsigned int m_8;  // 0x8
-    unsigned int m_C;  // 0xC
-    int RLEBlitTransZRemapXlatAlpha_ushort_field_0x10;  // 0x10
-    int RLEBlitTransZRemapXlatAlpha_ushort_field_0x14;  // 0x14
-    int RLEBlitTransZRemapXlatAlpha_ushort_field_0x18;  // 0x18
-    int RLEBlitTransZRemapXlatAlpha_ushort_field_0x1C;  // 0x1C
-    int RLEBlitTransZRemapXlatAlpha_ushort_field_0x20;  // 0x20
-    int RLEBlitTransZRemapXlatAlpha_ushort_field_0x24;  // 0x24
-    int RLEBlitTransZRemapXlatAlpha_ushort_field_0x28;  // 0x28
-    int RLEBlitTransZRemapXlatAlpha_ushort_field_0x2C;  // 0x2C
+    unsigned int q008;  // 0x8
+    unsigned int u32_C;  // 0xC
+    int q010;  // 0x10
+    int q014;  // 0x14
+    int q018;  // 0x18
+    int q01C;  // 0x1C
+    int q020;  // 0x20
+    int q024;  // 0x24
+    int q028;  // 0x28
+    int q02C;  // 0x2C
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     RLEBlitTransZRemapXlatAlpha_ushort * QueryInterface(unsigned int * Block, char a2);
