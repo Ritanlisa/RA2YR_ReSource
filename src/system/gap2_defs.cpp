@@ -1075,7 +1075,7 @@ BOOL CellClass::HasContent() {
 namespace gamemd { 
 void CellClass::AddObject(void* aP1) {
   unsigned int *v2; // esi
-  int v4; // eax
+  IUnknown *v4; // eax
   int v5; // ecx
   int v6; // eax
 
@@ -1352,7 +1352,7 @@ int CCFileClass::Destru_vt15(int wFatTime) {
   char v3; // bl
   const char *v4; // eax
   char *v5; // esi
-  int v7; // [esp+10h] [ebp-70h] BYREF
+  INIClass *v7; // [esp+10h] [ebp-70h] BYREF
   BufferIOFile v8; // [esp+14h] [ebp-6Ch] BYREF
   int v9[3]; // [esp+6Ch] [ebp-14h] BYREF
   int v10; // [esp+78h] [ebp-8h]
@@ -2589,7 +2589,7 @@ namespace gamemd {
 void CellClass::DTOR() {
   void (__thiscall ***v2)(unsigned int, int); // ecx
   void (__thiscall ***CellClass_field_FC)(unsigned int, int); // ecx
-  int v4; // eax
+  ObjectClass *v4; // eax
 
   v2 = *(void (__thiscall ****)(unsigned int, int))this->__pad_028; /*0x47bb66*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_e56b28) */  /*0x47bb69*/
@@ -3718,7 +3718,7 @@ namespace gamemd {
 int CellClass::SaveLoad_Prefix() {
 
   unsigned int *v1; // ebp
-  unsigned int v2; // esi
+  AbstractClass *v2; // esi
   int result; // eax
   CellClass *v4; // eax
   CellClass *v5; // edi
@@ -7172,7 +7172,7 @@ void* RadarClass::RenderSpySatellite() {
 namespace gamemd { 
 void* CellClass::FindOpenNeighbor(void* a1, int a2, int a3, int a4, int a5, int a6, int a7) {
   int v9; // ecx
-  int v10; // esi
+  CellClass *v10; // esi
   int v11; // ebp
   bool v12; // zf
   int v13; // ebx
@@ -9163,7 +9163,7 @@ int INIClass::LoadFile(int a1, int a2) {
   int v72; // ecx
   int v73; // eax
   int v74; // eax
-  int v75; // edi
+  INILinkNode *v75; // edi
   int v76; // ecx
   int v77; // edx
   int v78; // eax
@@ -10104,7 +10104,7 @@ int INIClass::GetBase64Data() {
   int i; // ebp
   int *v11; // edi
   int v12; // esi
-  int v13; // eax
+  ObjectClass *v13; // eax
   unsigned int *v14; // eax
   unsigned __int8 *v15; // eax
   const char *v16; // esi
@@ -11908,7 +11908,7 @@ void* INIClass::ReadPoint2D_Overwrite(void* a1, void* a2, int a3, void* a4) {
 
   unsigned __int8 *v6; // ebx
   const char *v7; // edx
-  int v8; // esi
+  INILinkNode *v8; // esi
   unsigned int v9; // kr04_4
   Checksummer *v10; // eax
   int *v11; // esi
@@ -12114,7 +12114,7 @@ void* INIClass::ReadPoint3D_Overwrite(void* a1, void* a2, int a3, void* a4) {
 
   unsigned __int8 *v6; // ebx
   const char *v7; // edx
-  int v8; // esi
+  INILinkNode *v8; // esi
   unsigned int v9; // kr04_4
   Checksummer *v10; // eax
   int *v11; // esi
@@ -17515,7 +17515,7 @@ int CellClass::ApplyTileModification(void* a1) {
   int v27; // edx
   int v28; // eax
   int v29; // eax
-  int v30; // edi
+  CellClass *v30; // edi
   int v31; // eax
   int v32; // ecx
   struct tagRECT *v33; // esi
@@ -17543,7 +17543,7 @@ int CellClass::ApplyTileModification(void* a1) {
   int v56; // [esp+14h] [ebp-ACh] BYREF
   char v57; // [esp+1Bh] [ebp-A5h]
   int v58; // [esp+1Ch] [ebp-A4h]
-  int v59; // [esp+20h] [ebp-A0h]
+  CellClass *v59; // [esp+20h] [ebp-A0h]
   Terrain *v60; // [esp+24h] [ebp-9Ch]
   struct tagRECT rcDst; // [esp+28h] [ebp-98h] BYREF
   int v62; // [esp+38h] [ebp-88h]
@@ -17836,7 +17836,7 @@ int CellClass::ApplyTileModification2(void* a1) {
   int v27; // edx
   int v28; // eax
   int v29; // eax
-  int v30; // edi
+  CellClass *v30; // edi
   int v31; // eax
   int v32; // ecx
   struct tagRECT *v33; // esi
@@ -17861,7 +17861,7 @@ int CellClass::ApplyTileModification2(void* a1) {
   int v53; // [esp+14h] [ebp-ACh] BYREF
   char v54; // [esp+1Bh] [ebp-A5h]
   int v55; // [esp+1Ch] [ebp-A4h]
-  int v56; // [esp+20h] [ebp-A0h]
+  CellClass *v56; // [esp+20h] [ebp-A0h]
   Terrain *v57; // [esp+24h] [ebp-9Ch]
   struct tagRECT rcDst; // [esp+28h] [ebp-98h] BYREF
   int v59; // [esp+38h] [ebp-88h]
@@ -18143,7 +18143,7 @@ int CellClass::ApplyTileModification3(void* a1) {
   int v27; // edx
   int v28; // eax
   int v29; // eax
-  int v30; // edi
+  CellClass *v30; // edi
   int v31; // eax
   int v32; // ecx
   struct tagRECT *v33; // esi
@@ -18171,7 +18171,7 @@ int CellClass::ApplyTileModification3(void* a1) {
   int v56; // [esp+14h] [ebp-ACh] BYREF
   char v57; // [esp+1Bh] [ebp-A5h]
   int v58; // [esp+1Ch] [ebp-A4h]
-  int v59; // [esp+20h] [ebp-A0h]
+  CellClass *v59; // [esp+20h] [ebp-A0h]
   Terrain *v60; // [esp+24h] [ebp-9Ch]
   struct tagRECT rcDst; // [esp+28h] [ebp-98h] BYREF
   int v62; // [esp+38h] [ebp-88h]
@@ -18464,7 +18464,7 @@ int CellClass::ApplyTileModification4(void* a1) {
   int v27; // edx
   int v28; // eax
   int v29; // eax
-  int v30; // edi
+  CellClass *v30; // edi
   int v31; // eax
   int v32; // ecx
   struct tagRECT *v33; // esi
@@ -18489,7 +18489,7 @@ int CellClass::ApplyTileModification4(void* a1) {
   char v53; // [esp+1Bh] [ebp-A1h]
   int v54; // [esp+1Ch] [ebp-A0h]
   Terrain *v55; // [esp+20h] [ebp-9Ch]
-  int v56; // [esp+24h] [ebp-98h]
+  CellClass *v56; // [esp+24h] [ebp-98h]
   struct tagRECT rcDst; // [esp+28h] [ebp-94h] BYREF
   int v58; // [esp+38h] [ebp-84h]
   int v59; // [esp+3Ch] [ebp-80h] BYREF
@@ -18954,7 +18954,7 @@ void CellClass::ApplyTileModification6(void* a1) {
   int v27; // edi
   int v28; // ebx
   unsigned int *v29; // ebp
-  int v30; // edi
+  IUnknown *v30; // edi
   struct tagRECT *v31; // eax
   unsigned int *v32; // eax
   Coord2D *v33; // eax
@@ -19265,8 +19265,8 @@ void CellClass::ApplyTileModification7(void* a1) {
   int v31; // edi
   int v32; // ebx
   int v33; // edi
-  int v34; // edi
-  int v35; // ebx
+  IUnknown *v34; // edi
+  IUnknown *v35; // ebx
   struct tagRECT *v36; // eax
   unsigned int *v37; // eax
   Coord2D *v38; // eax
@@ -19570,7 +19570,7 @@ void CellClass::ApplyTileModification5(void* a1) {
   int v27; // edi
   int v28; // ebx
   unsigned int *v29; // ebp
-  int v30; // edi
+  IUnknown *v30; // edi
   struct tagRECT *v31; // eax
   unsigned int *v32; // eax
   Coord2D *v33; // eax
@@ -19881,8 +19881,8 @@ void CellClass::ApplyTileModification8(void* a1) {
   int v31; // edi
   int v32; // ebx
   int v33; // edi
-  int v34; // edi
-  int v35; // ebx
+  IUnknown *v34; // edi
+  IUnknown *v35; // ebx
   struct tagRECT *v36; // eax
   unsigned int *v37; // eax
   Coord2D *v38; // eax
@@ -35642,7 +35642,7 @@ void* MixFileClass::LoadSubFile() {
   unsigned char *v7; // ebp
   MixFileClass *v8; // ecx
   unsigned int *v9; // edi
-  int v10; // eax
+  ObjectClass *v10; // eax
   unsigned int *v11; // eax
   char **v12; // esi
   CCFileClass v14; // [esp+Ch] [ebp-6Ch] BYREF
@@ -35804,7 +35804,7 @@ namespace gamemd {
 void* MixFileClass::CacheNode_Dtor(int a2) {
 
   MixFileClass *CountFiles; // ecx
-  int Headers; // eax
+  ObjectClass *Headers; // eax
   unsigned int *v5; // eax
 
   if ( *(unsigned short *)this->__pad_0 == 0xFFFF ) /*0x69e937*/

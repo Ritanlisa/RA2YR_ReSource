@@ -5420,13 +5420,13 @@ AbstractClass * * WOL_PlayerOptions_DlgProc(HWND hWnd, unsigned int a2, UINT_PTR
   Dialog *DialogIndirect; // esi
   HWND v17; // eax
   HWND v18; // eax
-  int v19; // esi
+  ObjectClass *v19; // esi
   unsigned int *v20; // esi
   HWND v21; // eax
   LRESULT v22; // eax
   HWND v23; // eax
   HWND v24; // eax
-  int v25; // esi
+  ObjectClass *v25; // esi
   unsigned int *v26; // esi
   HWND v27; // eax
   int v28; // esi

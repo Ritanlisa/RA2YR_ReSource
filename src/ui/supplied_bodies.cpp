@@ -2502,7 +2502,7 @@ char FontClass::LoadFontResources(int16_t a2) {
   char v11; // dl
   unsigned int *v12; // eax
   unsigned int *v13; // eax
-  int v15; // eax
+  AbstractClass *v15; // eax
   unsigned int v16[22]; // [esp+Ch] [ebp-6Ch] BYREF
   unsigned char v17[12]; // [esp+64h] [ebp-14h] BYREF
   int v18; // [esp+70h] [ebp-8h]

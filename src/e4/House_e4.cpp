@@ -541,7 +541,7 @@ int House::UpdateHouseAI()
   int v9; // ecx
   int v10; // edx
   int v11; // edi
-  int v12; // esi
+  HouseClass *v12; // esi
   int v13; // eax
   int v14; // eax
   int v15; // ecx
@@ -551,7 +551,7 @@ int House::UpdateHouseAI()
   int v19; // eax
   int v20; // kr00_4
   int v21; // eax
-  int v22; // esi
+  HouseClass *v22; // esi
   int v23; // edx
   int v24; // eax
   unsigned int *v25; // ecx

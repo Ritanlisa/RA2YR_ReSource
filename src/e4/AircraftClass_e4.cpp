@@ -46,7 +46,7 @@ AircraftTypeClass * AircraftClass::Update(void * a1, void * a2, void *a3, void *
   int *v3; // esi
   unsigned int *result; // eax
   int v5; // edi
-  int v6; // eax
+  HouseClass *v6; // eax
   int v7; // ecx
   int v8; // eax
   int v9; // edx
@@ -406,7 +406,7 @@ void* AircraftClass_AssignDestination_SyncLog(void * a1, void * a2, void * a3, v
   Array *v10; // eax
   Array *v11; // ebx
   unsigned __int8 *v12; // eax
-  int v13; // eax
+  IUnknown *v13; // eax
   unsigned int *v14; // ebx
   unsigned __int8 *v15; // eax
 

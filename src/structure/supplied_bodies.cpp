@@ -1181,7 +1181,7 @@ int UnitClass::Mission_Harvest()
   void *v23; // eax
   int team; // ecx
   int v25; // edi
-  int v26; // edi
+  IUnknown *v26; // edi
   unsigned short *v27; // eax
   unsigned short *v28; // eax
   char *v29; // [esp+0h] [ebp-30h]
@@ -3936,11 +3936,11 @@ void BuildingClass::Unlimbo_UnitDeliveryFix()
 {
     double v1; // st7
     TechnoClass *v2; // ebp
-    int ptr_0; // edi
+    BuildingTypeClass *ptr_0; // edi
     CellClass *v5; // eax
     int v6; // eax
     int v7; // ebx
-    int Type; // ecx
+    BuildingTypeClass *Type; // ecx
     CellClass *v9; // eax
     int wallOwnerIndex; // ecx
     BuildingClass *v11; // edx
@@ -3959,21 +3959,21 @@ void BuildingClass::Unlimbo_UnitDeliveryFix()
     unsigned int *v24; // eax
     int v25; // ebp
     unsigned char *v26; // eax
-    int v27; // edi
+    BuildingTypeClass *v27; // edi
     CellClass *v28; // eax
     int result; // eax
     int v30; // edi
     int v31; // eax
     BuildingClass *v32; // edi
-    int v33; // ebx
-    int v34; // eax
+    BuildingTypeClass *v33; // ebx
+    BuildingTypeClass *v34; // eax
     int v35; // ebx
     char *v36; // ebp
     int v37; // edx
     short v38; // cx
     Cell *v39; // eax
     unsigned int *v40; // eax
-    int j; // edi
+    IUnknown *j; // edi
     int v43; // eax
     int FoundationWidth; // ebx
     int v45; // ecx
@@ -3988,7 +3988,7 @@ void BuildingClass::Unlimbo_UnitDeliveryFix()
     unsigned int *v54; // eax
     int *v55; // eax
     unsigned int *v56; // eax
-    int v57; // eax
+    BuildingTypeClass *v57; // eax
     int *v58; // eax
     int v59; // ebx
     int *v60; // ebp

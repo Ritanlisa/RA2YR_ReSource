@@ -166,7 +166,7 @@ void ParasiteClass::DeploySquad()
   void **v15; // eax
   int v16; // eax
   int v17; // eax
-  int v18; // ecx
+  IUnknown *v18; // ecx
   int v20; // ebx
   unsigned __int16 *v21; // eax
   unsigned __int16 *v22; // edi

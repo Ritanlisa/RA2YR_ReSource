@@ -490,7 +490,7 @@ void* Object::HandleAction(int * a2, int * a3)
   int v9; // ebx
   int v10; // edx
   int v11; // eax
-  int Type; // eax
+  OverlayTypeClass *Type; // eax
   int v13; // edx
   unsigned int *v14; // esi
   int v15; // eax
@@ -716,7 +716,7 @@ void* * Object::CalculateObjectPlacementPosition(int *a2)
   int v7; // ecx
   CellClass *v8; // eax
   int *v9; // eax
-  int v10; // edx
+  ProgressTimer *v10; // edx
   signed int v11; // eax
   unsigned int v12; // esi
   Cell *v13; // ebp

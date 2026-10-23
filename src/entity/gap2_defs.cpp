@@ -1061,7 +1061,7 @@ int BulletClass::ProcessObstacle(void* a1, void* a2) {
   int v15; // esi
   int v16; // eax
   int v17; // eax
-  int v18; // eax
+  ParticleSystemClass *v18; // eax
   void *v19; // esi
   int *FirstFirestorm; // eax
   int v21; // ecx
@@ -6214,7 +6214,7 @@ int ParticleSystemClass::Constructor(int a2, int *a3, int a4, void *a5, unsigned
   int *v12; // eax
   unsigned int *v13; // eax
   unsigned int *v14; // eax
-  int v15; // ecx
+  AbstractClass *v15; // ecx
   int v16; // edi
   int v17; // ebp
   int v18; // ebx

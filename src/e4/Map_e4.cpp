@@ -1627,7 +1627,7 @@ AbstractClass * * Map_WorldDominationTour_43::Release(int a2, char * a3)
 
   int v3; // ebp
   char *v5; // edi
-  int v6; // eax
+  AbstractClass *v6; // eax
   unsigned int *v7; // ecx
   int v8; // edx
   char *v9; // eax

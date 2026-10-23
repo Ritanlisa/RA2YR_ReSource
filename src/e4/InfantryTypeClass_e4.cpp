@@ -272,7 +272,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
 {
 
   int v3; // ecx
-  int v4; // esi
+  InfantryTypeClass *v4; // esi
   int PipIdx; // eax
   unsigned int *v6; // ebx
   unsigned int *v7; // eax

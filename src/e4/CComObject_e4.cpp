@@ -1728,7 +1728,7 @@ AbstractClass * * CComObject_CChatEventSink___ATL::DispatchStub_35(int a1, int a
   ScalarDtor *v6; // ecx
   ScalarDtor v7; // edi
   double v8; // st7
-  int v9; // esi
+  ObjectClass *v9; // esi
   String *v10; // eax
   String *v11; // esi
   int v12; // edx
@@ -1830,7 +1830,7 @@ AbstractClass * * CComObject_CChatEventSink___ATL::DispatchStub_34(int a1, int a
   ScalarDtor *v8; // ecx
   ScalarDtor v9; // edi
   double v10; // st7
-  int v11; // esi
+  ObjectClass *v11; // esi
   int v12; // edi
   String *v13; // eax
   String *v14; // esi
@@ -1942,7 +1942,7 @@ AbstractClass * * CComObject_CChatEventSink___ATL::DispatchStub_36(int a1, int a
   String *v6; // edi
   ScalarDtor *v7; // ecx
   ScalarDtor v8; // edi
-  int v9; // esi
+  ObjectClass *v9; // esi
   String *v10; // eax
   String *v11; // esi
   int v12; // edx

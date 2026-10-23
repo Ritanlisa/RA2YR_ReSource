@@ -1670,7 +1670,7 @@ int InfantryClass::GetIdleTimer()
 {
 
   int SequenceAnim; // eax
-  int v3; // eax
+  InfantryTypeClass *v3; // eax
   __int16 *v5; // eax
   Concurrency::details::SchedulerBase *v6; // eax
   CellClass *NumberOfActiveVirtualProcessors_SchedulerBase_details_Concurrency__uint_BEIXZ; // edi

@@ -165,7 +165,7 @@ int AbstractClass::COMStub_Release() {
 // 0x4103E0
 namespace ra2 { namespace game { 
 int ObjectClass::GetSizeMax() {
-  int v2; // [esp+8h] [ebp+4h]
+  AbstractClass *v2; // [esp+8h] [ebp+4h]
   unsigned int *v3; // [esp+Ch] [ebp+8h]
 
   if ( !v3 ) /*0x4103e7*/
@@ -191,7 +191,7 @@ int AbstractClass::ProcessPower() {
 // 0x410450
 namespace ra2 { namespace game { 
 int AbstractClass::IsClean() {
-  int v2; // [esp+4h] [ebp+4h]
+  AbstractClass *v2; // [esp+4h] [ebp+4h]
 
   return v2->needsSave == 0; /*0x41045e*/
 }
@@ -1547,7 +1547,7 @@ int FootClass::DrawPlacementPreview() {
 namespace ra2 { namespace game { 
 int ObjectClass::HandleRallyPointCommand() {
   int result; // eax
-  int ptr_0; // edi
+  TechnoClass *ptr_0; // edi
   void *v4; // eax
   char v5; // bl
   unsigned char *WaypointCoords; // eax
@@ -2218,7 +2218,7 @@ void* ObjectClass::SetMember09(void* a1) {
 // 0x485250
 namespace ra2 { namespace game { 
 int ObjectClass::SetTriggerTarget(int a2) {
-  int v3; // eax
+  AudioController *v3; // eax
   int result; // eax
 
   v3 = this->ambientSoundController[0]; /*0x485253*/
@@ -2972,7 +2972,7 @@ namespace ra2 { namespace game {
 void TechnoClass::Find(int a1) {
   char v4; // bl
   int v5; // ebp
-  int v6; // esi
+  TechnoClass *v6; // esi
 
   v3 = this->slaveManager + 1; /*0x50e01c*/
   this->slaveManager = v3; /*0x50e01e*/
@@ -3023,7 +3023,7 @@ namespace ra2 { namespace game {
 void TechnoClass::Process(int a1) {
   char v3; // bl
   int v4; // edi
-  int v5; // esi
+  TechnoClass *v5; // esi
 
   if ( a1 ) /*0x50e1cb*/
   {
@@ -3209,7 +3209,7 @@ namespace ra2 { namespace game {
 int AbstractClass::selectBestTarget(int a2) {
   int v2; // esi
   int result; // eax
-  int i; // ecx
+  AbstractClass *i; // ecx
 
   v2 = this->Items; /*0x50f4a3*/
   result = 0; /*0x50f4a6*/
@@ -4442,18 +4442,18 @@ int ObjectClass::StepCleanup(void* a2) {
 namespace ra2 { namespace game { 
 int ObjectClass::DetectCloaked() {
   int result; // eax
-  int ptr_0; // edx
+  AbstractClass *ptr_0; // edx
   int v4; // eax
   int customSound; // ecx
   int v6; // ebp
   int v7; // edi
-  int v8; // edx
-  int v9; // eax
-  int parachute; // eax
+  AbstractClass *v8; // edx
+  AbstractClass *v9; // eax
+  AnimClass *parachute; // eax
   int v11; // edi
   int v12; // eax
   int v13; // ecx
-  int v14; // edx
+  AbstractClass *v14; // edx
   wchar_t *v15; // eax
   int *p_queuedMission; // edx
   int *location; // esi
@@ -6389,7 +6389,7 @@ int MissionClass::Construct(int a1, int a2, int a3) {
   int v10; // eax
   int v11; // eax
   int v12; // eax
-  int v13; // ecx
+  AbstractClass *v13; // ecx
   int v14; // eax
   int16_t *WaypointCoords; // eax
   int v16; // eax
@@ -8695,7 +8695,7 @@ int ObjectClass::GetTypeVt41() {
 // 0x70f820
 namespace ra2 { namespace game { 
 int ObjectClass::GetPriorityTarget() {
-  int mindControlledBy; // eax
+  FootClass *mindControlledBy; // eax
 
   mindControlledBy = this->mindControlledBy; /*0x70f820*/
   if ( mindControlledBy ) /*0x70f828*/

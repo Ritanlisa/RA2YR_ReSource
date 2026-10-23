@@ -820,7 +820,7 @@ int BuildingLightClass::SD_vt23() {
   double v56; // st7
   unsigned __int16 *v57; // eax
   char *v58; // edx
-  int v59; // eax
+  ObjectClass *v59; // eax
   Object *v60; // ecx
   __int16 v61; // ax
   int v62; // ebx

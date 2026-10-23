@@ -322,7 +322,7 @@ int BuildingClass::Construct(int a2, int a3)
   int v4; // edx
   int v5; // edx
   __int16 v6; // cx
-  int v7; // eax
+  BuildingTypeClass *v7; // eax
   int v8; // eax
   int v9; // eax
   int v10; // eax
@@ -330,7 +330,7 @@ int BuildingClass::Construct(int a2, int a3)
   int v12; // edi
   signed int v13; // eax
   unsigned int *v14; // ecx
-  int v15; // eax
+  BuildingTypeClass *v15; // eax
   int v16; // eax
   int Vtable3; // [esp+18h] [ebp+4h]
 
@@ -567,7 +567,7 @@ int BuildingClass::Dtor()
   int v7; // eax
   int *DamageFireAnims; // edi
   int v9; // ebx
-  int Type; // eax
+  BuildingTypeClass *Type; // eax
   char v11; // cl
   int v12; // eax
   int v13; // eax
@@ -857,7 +857,7 @@ int BuildingClass::AfterDestruction()
   int *v19; // eax
   void *v20; // eax
   unsigned int *v21; // eax
-  int v22; // edx
+  BuildingTypeClass *v22; // edx
   __int16 v23[2]; // [esp+10h] [ebp-40h] BYREF
   int v24; // [esp+14h] [ebp-3Ch]
   __int16 v25[2]; // [esp+18h] [ebp-38h] BYREF
@@ -1308,7 +1308,7 @@ bool BuildingClass::ValidateFoundation()  // raw body 0x44efb0 follows
 {
 
   int *v2; // eax
-  int Type; // edx
+  BuildingTypeClass *Type; // edx
   int v4; // ebp
   int *v5; // esi
   int v6; // edi
@@ -1317,7 +1317,7 @@ bool BuildingClass::ValidateFoundation()  // raw body 0x44efb0 follows
   void *v10; // eax
   int v11; // edi
   void *v12; // eax
-  int v13; // eax
+  BuildingTypeClass *v13; // eax
   unsigned int *v14; // eax
   int v15; // edi
   void *v16; // eax
@@ -1327,7 +1327,7 @@ bool BuildingClass::ValidateFoundation()  // raw body 0x44efb0 follows
   void *v20; // eax
   int v21; // edi
   void *v22; // eax
-  int v23; // ecx
+  BuildingTypeClass *v23; // ecx
   unsigned short *v24; // edi
   unsigned short *v25; // eax
   int v26; // ebp
@@ -1745,7 +1745,7 @@ void BuildingClass::SetRallyPoint(CoordStruct* target)
 }
 // 0x4a9650
 int BuildingClass::MarkExitPath(unsigned short *a2, int a3) {
-  int result; // eax
+  CellClass *result; // eax
   unsigned short *v4; // ebp
   int16_t *v6; // esi
   char v7; // bl
@@ -2000,7 +2000,7 @@ int BuildingClass::UpdateConstruction()
   int v3; // eax
   ObjectClass *v4; // ebp
   unsigned __int8 *v5; // eax
-  int v6; // edx
+  DynamicVector *v6; // edx
   __int16 v7; // di
   int v8; // edx
   unsigned int *v9; // eax
@@ -2021,9 +2021,9 @@ int BuildingClass::UpdateConstruction()
   int v24; // esi
   unsigned char *Type; // eax
   int result; // eax
-  int v27; // eax
+  BuildingTypeClass *v27; // eax
   int v28; // eax
-  int v29; // eax
+  BuildingTypeClass *v29; // eax
   unsigned int *v30; // eax
   int focus; // ecx
   unsigned int *v32; // eax
@@ -2085,7 +2085,7 @@ int BuildingClass::UpdateConstruction()
   int ptr_0; // edx
   int v89; // eax
   int *v90; // ecx
-  int owner; // eax
+  DynamicVector *owner; // eax
   int v92; // ebx
   int v93; // edx
   unsigned int *v94; // ebp
@@ -3169,8 +3169,8 @@ int BuildingClass::Sell()
   int v4; // ecx
   int *DamageFireAnims; // edi
   int v6; // ebp
-  int owner; // eax
-  int Type; // ecx
+  DynamicVector *owner; // eax
+  BuildingTypeClass *Type; // ecx
   int v9; // eax
   int v10; // ecx
   int v11; // eax
@@ -3701,7 +3701,7 @@ int BuildingClass::ProcessRepair()
 
   char *v130; // eax
 
-  int v131; // eax
+  IUnknown *v131; // eax
 
   unsigned int *v132; // ebx
 

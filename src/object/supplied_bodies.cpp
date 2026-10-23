@@ -1025,7 +1025,7 @@ int TechnoClass::ApplyIronCurtain()
   int v9; // ecx
   TechnoClass *owner; // ecx
   int *v11; // eax
-  int v12; // edi
+  TechnoClass *v12; // edi
   void *v13; // eax
   int v15; // [esp+28h] [ebp-20h]
   int16_t v16[2]; // [esp+34h] [ebp-14h] BYREF
@@ -1107,7 +1107,7 @@ int TechnoClass::ReturnToBase()
   int v5; // eax
   int v6; // eax
   int *v7; // eax
-  int v8; // edi
+  TechnoClass *v8; // edi
   void *v9; // eax
   int v11; // [esp+24h] [ebp-1Ch]
   int16_t v12[2]; // [esp+2Ch] [ebp-14h] BYREF
@@ -13448,7 +13448,7 @@ int TechnoClass::ShouldNotBeCloaked() const
 
   unsigned __int8 *v2; // edi
   unsigned int *v3; // eax
-  int v4; // eax
+  HouseClass *v4; // eax
   Cell *v5; // eax
   int v7; // [esp-4h] [ebp-24h]
   int v8; // [esp+Ch] [ebp-14h]

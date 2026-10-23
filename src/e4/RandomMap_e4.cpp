@@ -7053,7 +7053,7 @@ VectorClass_flat * * RandomMap::PlaceResources()
 
   double v1; // st7
   int i; // eax
-  int v4; // edi
+  Cell *v4; // edi
   unsigned __int16 *v5; // eax
   unsigned __int16 *v6; // eax
   unsigned __int16 *v7; // eax
@@ -7599,7 +7599,7 @@ int RandomMap::GenerateRandomMapTerrain()
 
   double v1; // st7
   int i; // eax
-  int v4; // esi
+  Cell *v4; // esi
   unsigned __int16 *v9; // eax
   CellClass *j; // eax
   int result; // eax

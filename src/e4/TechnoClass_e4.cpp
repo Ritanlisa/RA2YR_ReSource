@@ -428,7 +428,7 @@ unsigned int * TechnoClass::Update(int a2, void *a2_1, void *a3, void *a4)
   int ptr_0; // edx
   AirstrikeClass *v21; // eax
   AirstrikeClass *v22; // eax
-  int v23; // eax
+  HouseClass *v23; // eax
   int v24; // eax
   unsigned int *v25; // eax
   int v26; // ecx

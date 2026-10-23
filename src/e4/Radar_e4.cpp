@@ -767,7 +767,7 @@ AbstractClass * * Radar::Update(int16_t *aP1, void *a2, void *a3, void *a4)
   int v32; // edx
   int v33; // eax
   int v34; // ecx
-  int v35; // edi
+  Radar *v35; // edi
   int v36; // eax
   int v37; // ecx
   int v38; // ecx
