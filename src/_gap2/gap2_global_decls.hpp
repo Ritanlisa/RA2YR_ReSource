@@ -342,6 +342,7 @@ public:  // g57c5 W4 supply slot
     unsigned int M1360;  // 0x550 [X30:canon]
     unsigned int M1364;  // 0x554 [X30:canon]
     unsigned int M1368;  // 0x558 [X30:canon]
+    BuildingTypeClass* Type;  // 0x520 [X127:member_lookup]
 };
     struct Gap2Recv_455F10 {
     int location[8];  // G42.39a supply (indexed usage)
@@ -747,6 +748,8 @@ public:  // g57c5 W4 supply slot
     unsigned int u32_143;  // X10 supply (member_lookup)
     unsigned int M52;  // 0x34 [X30:canon]
     unsigned int M540;  // 0x21C [X30:canon]
+    int32_t Archive;  // 0x5A4 [X127:member_lookup]
+    ILocomotion* Locomotor;  // 0x674 [X127:member_lookup]
 };
     struct Gap2Recv_5206B0 {
     int airstrike;  // G42.39a supply
@@ -773,6 +776,10 @@ public:  // g57c5 W4 supply slot
     unsigned int M6608;  // 0x19D0 [X30:canon]
     unsigned int M6912;  // 0x1B00 [X30:canon]
     unsigned int M6928;  // 0x1B10 [X30:canon]
+    int32_t Archive;  // 0x5A4 [X127:member_lookup]
+    ILocomotion* Locomotor;  // 0x674 [X127:member_lookup]
+    bool unknownBool68D;  // 0x68D [X127:member_lookup]
+    bool Crawling;  // 0x6DB [X127:member_lookup]
 };
     struct Gap2Recv_5272B0 {
     int owningHouseIndex;  // G42.39a supply
@@ -921,6 +928,7 @@ public:  // g57c5 W4 supply slot
     unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M12;  // 0xC [X30:canon]
     unsigned int M48;  // 0x30 [X30:canon]
+    ObjectClass* nextObject;  // 0x30 [X127:member_lookup]
 };
     struct Gap2Recv_55AF50 {
     };
@@ -1323,6 +1331,9 @@ public:  // g57c5 W4 supply slot
     unsigned int M72;  // 0x72 [X30:canon]
     unsigned int M80;  // 0x80 [X30:canon]
     unsigned int M84;  // 0x84 [X30:canon]
+    bool IsInitialized;  // 0xC [X127:member_lookup]
+    bool IsAllocated;  // 0xD [X127:member_lookup]
+    int CapacityIncrement;  // 0x14 [X127:member_lookup]
 };
     struct Gap2Recv_5CF830 {
     int ptr_0;  // G42.39a supply
@@ -1339,6 +1350,7 @@ public:  // g57c5 W4 supply slot
     unsigned int q086;  // X10 supply (member_lookup)
     unsigned int M25;  // 0x19 [X30:canon]
     unsigned int M26;  // 0x1A [X30:canon]
+    unsigned char alignmentPadding85;  // 0x85 [X127:member_lookup]
 };
     struct Gap2Recv_5D6D80 {
     };
@@ -1589,6 +1601,7 @@ public:  // g57c5 W4 supply slot
     unsigned char u8_30;  // X10 supply (member_lookup)
     unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M8;  // 0x8 [X30:canon]
+    ObjectClass* nextObject;  // 0x30 [X127:member_lookup]
 };
     struct Gap2Recv_631500 {
     int AbstractClass_v;  // G42.39a supply
@@ -1810,6 +1823,7 @@ public:  // g57c5 W4 supply slot
     unsigned int u32_48;  // X10 supply (member_lookup)
     unsigned int M480;  // 0x1E0 [X30:canon]
     unsigned int M288;  // 0x288 [X30:canon]
+    unsigned int spawnStatus;  // 0x78 [X127:member_lookup]
 };
     struct Gap2Recv_645BB0 {
     };
@@ -1951,6 +1965,8 @@ public:  // g57c5 W4 supply slot
     unsigned int M384;  // 0x180 [X30:canon]
     unsigned int M400;  // 0x190 [X30:canon]
     unsigned int M560;  // 0x230 [X30:canon]
+    bool bombVisible;  // 0x68 [X127:member_lookup]
+    bool onBridge;  // 0x8C [X127:member_lookup]
     };
     struct Gap2Recv_659EE0 {
     int ambientSoundController[8];  // G42.39a supply (indexed usage)
@@ -2207,6 +2223,7 @@ public:  // g57c5 W4 supply slot
     unsigned int M252;  // 0xFC [X30:canon]
     unsigned int M256;  // 0x256 [X30:canon]
     unsigned int M5232;  // 0x1470 [X30:canon]
+    double TimerWarning;  // 0x167C [X127:member_lookup]
 };
     struct Gap2Recv_672230 {
     int u32_14D0;  // G42.39a supply
@@ -2527,6 +2544,8 @@ public:  // g57c5 W4 supply slot
     unsigned int M2304;  // 0x2304 [X30:canon]
     unsigned int M2308;  // 0x2308 [X30:canon]
     unsigned int M4132;  // 0x4132 [X30:canon]
+    unsigned int uniqueId;  // 0x10 [X127:member_lookup]
+    unsigned int nextArrayIndex;  // 0x18 [X127:member_lookup]
     };
     struct Gap2Recv_67BFA0 {
     int u32_0;  // G42.39a supply
@@ -2663,6 +2682,9 @@ public:  // g57c5 W4 supply slot
     unsigned int M224;  // 0xE0 [X30:canon]
     unsigned int M272;  // 0x110 [X30:canon]
     unsigned int M128;  // 0x128 [X30:canon]
+    unsigned int objectTypeFlags;  // 0x24 [X127:member_lookup]
+    ObjectClass* nextObject;  // 0x30 [X127:member_lookup]
+    BombClass* attachedBomb;  // 0x38 [X127:member_lookup]
 };
     struct Gap2Recv_68FFE0 {
     unsigned int M8;  // 0x8 [X30:canon]
@@ -2889,6 +2911,8 @@ public:  // g57c5 W4 supply slot
     unsigned int M5416;  // X10 supply (csp_canon_members)
     unsigned int M21632;  // 0x5480 [X30:canon]
     unsigned int M21664;  // 0x54A0 [X30:canon]
+    int Count;  // 0x10 [X127:member_lookup]
+    int CapacityIncrement;  // 0x14 [X127:member_lookup]
 };
     struct Gap2Recv_6A94F0 {
     int alignmentPadding69[8];  // G42.39a supply (indexed usage)
@@ -4050,6 +4074,7 @@ public:  // g57c5 W4 supply slot
     unsigned int M512;  // 0x200 [X30:canon]
     unsigned int M1312;  // 0x520 [X30:canon]
     unsigned int M1316;  // 0x524 [X30:canon]
+    unsigned int BuildingTypeClass_520;  // 0x520 [X127:member_lookup]
     };
     struct Gap2Recv_759F20 {
     int a2;  // G42.39a supply
@@ -4308,6 +4333,9 @@ public:  // g57c5 W4 supply slot
     unsigned int M240;  // 0xF0 [X30:canon]
     unsigned int M128;  // 0x128 [X30:canon]
     unsigned int M256;  // 0x256 [X30:canon]
+    int32_t fallRate;  // 0x2C [X127:member_lookup]
+    ObjectClass* nextObject;  // 0x30 [X127:member_lookup]
+    TagClass* attachedTag;  // 0x34 [X127:member_lookup]
 };
     struct Gap2Recv_76B790 {
         void* ParseWDTTerritories_Parse_76B790(int a2);  // G42.39 def-derived
@@ -4585,6 +4613,7 @@ public:  // g57c5 W4 supply slot
     unsigned int M3856;  // 0xF10 [X30:canon]
     unsigned int M3872;  // 0xF20 [X30:canon]
     unsigned int M3904;  // 0xF40 [X30:canon]
+    int32_t currentBurstIndex;  // 0x3B8 [X127:member_lookup]
     };
     struct Gap2Recv_7714B0 {
     int barrelFacing[8];  // G42.39a supply (indexed usage)
