@@ -22,11 +22,12 @@ This tool reconstructs the join without guessing:
     `v0xADDR` suffix.  IDA's `lvar.defea` points one byte inside the defining
     instruction; the item start is the same address the CSP extractor used
     (verified on 0x402F60: lvar v7 defea=0x4030a9 -> key ecx_v0x4030A8).
-  * params -> `param<N>` by signature position (reported, not retyped here:
-    a definition edit must be mirrored in the class declaration).
-  * An optional IDA lvar dump (`--ida-lvars PATH`, see
-    `x117_dump_lvars_ida.py`) overrides the source-derived def address with
-    the authoritative `lvar.defea` (normalized to the item start).
+  * X119: `anchors/ida_lvars.json` (exported by
+    `tools/csp_export/x119_export_lvars.py`) is now the DEFAULT and
+    authoritative bridge for both slots: register lvars resolve via
+    `{reg}_v0x{head}` probing `{reg}_v0x{defea}` as fallback, stack lvars via
+    the authoritative `stkoff`; the emitted hints and def comments remain as
+    textual fallbacks.  Pass `--ida-lvars ""` to disable.
 
 Only size-preserving retypes are applied:
   pointer -> pointer-to-class (4 bytes on Win32) and int -> int (4 bytes).
@@ -56,7 +57,9 @@ ROOT = Path(__file__).resolve().parents[2]
 SRC = ROOT / "src"
 TYPE_MAP = ROOT / "type_map.json"
 OUT = ROOT / "anchors" / "x117_locals_join.json"
-IDA_LVARS = ROOT / ".omo" / "x117_ida_lvars.json"
+# X119 durable artifact (Hex-Rays lvar dump: name -> defea/head/stkoff/reg).
+# Passing an empty --ida-lvars disables it (pure textual fallback join).
+IDA_LVARS = ROOT / "anchors" / "ida_lvars.json"
 
 # ---------------------------------------------------------------- regexes
 ANCHOR_RE = re.compile(r"^\s*//\s*(?:IDA\s+)?0[xX]([0-9A-Fa-f]{5,8})\s*$")
@@ -358,14 +361,21 @@ def load_ida_lvars(path):
     if not path or not Path(path).exists():
         return {}
     data = json.load(open(path, encoding="utf-8"))
+    # X119 artifact: {"_meta": .., "manifest": .., "functions": {fa: {...}}}.
+    # Legacy flat dumps: {fa: {name: info}} directly at the top level.
+    funcs = data.get("functions", data) if isinstance(data, dict) else data
     out = {}
-    for fa, lvs in data.items():
+    for fa, rec in funcs.items():
+        if not fa.lower().startswith("0x"):
+            continue  # _meta / manifest / functions wrapper keys
         fk = fa.lower()
         if not fk.startswith("0x"):
             fk = "0x%08x" % int(fa, 16)
-        out[fk] = {}
-        for name, info in lvs.items():
-            out[fk][name] = info
+        # X119 nests the lvars under "lvars" (with a "this_type" sibling);
+        # legacy flat dumps are name -> info directly.
+        lvs = rec.get("lvars") if isinstance(rec, dict) and "lvars" in rec \
+            else rec
+        out[fk] = lvs
     return out
 
 
@@ -529,6 +539,7 @@ def build_report(ida_lvars_path=None, allow_int_ptr=True):
     funcs_seen = set()
     key_hits = 0
     key_tries = 0
+    join_sources = Counter()
 
     for addr, path, text, mask, starts, fn_name, bstart, bend in scan_functions():
         fa = "0x%08X" % addr
@@ -551,10 +562,26 @@ def build_report(ida_lvars_path=None, allow_int_ptr=True):
             shape = d["base"] + ("*" * d["stars"])
             shape_decls[shape] += 1
             name = d["name"]
-            key = None
-            source = None
-            # ---- stack slot
+
+            def stack_key(off):
+                return ("stack_+0x%x" % off) if off >= 0 \
+                    else ("stack_-0x%x" % -off)
+
+            def defea_of(rec):
+                v = rec.get("defea")
+                if v is None:
+                    return None
+                return int(v, 16) if isinstance(v, str) else int(v)
+
+            # ---- candidate SSA keys in deterministic priority order.
+            # X119: the Hex-Rays lvar is authoritative for both the slot kind
+            # (stack offset / register) and the def address (probe the
+            # containing instruction head first, raw defea as fallback --
+            # exactly the two-probe order of the historical t14 bridge).
+            cands = []
             sm = STACK_RE.search(d["hint"])
+            rm = None if sm else REG_RE.search(d["hint"])
+            hint_reg = rm.group(1) if rm else None
             if sm:
                 if sm.group(1):
                     off = int(sm.group(1), 16)
@@ -562,45 +589,56 @@ def build_report(ida_lvars_path=None, allow_int_ptr=True):
                     off = int(sm.group(2), 16)
                 else:
                     off = int(sm.group(3), 10)
-                key = "stack_+0x%x" % off
-                source = "stack-hint"
-            else:
-                rm = REG_RE.search(d["hint"])
-                if not rm:
-                    reasons["no-hint"] += 1
-                    continue
-                reg = rm.group(1)
-                # ---- parameter-like locals are not emitted as decls; this is
-                # a register local.  IDA lvar defea is authoritative when the
-                # dump is present; otherwise the emitted def comment.
-                if name in fn_ida and fn_ida[name].get("defea") is not None:
-                    defea = int(fn_ida[name]["defea"], 16) if isinstance(
-                        fn_ida[name]["defea"], str) else int(fn_ida[name]["defea"])
-                    key = "%s_v0x%X" % (reg, defea)
-                    source = "ida-lvar-defea"
+                cands.append(("stack_+0x%x" % off, "stack-hint"))
+            lv = fn_ida.get(name)
+            if lv is not None:
+                if lv.get("stkoff") is not None:
+                    cands.append((stack_key(lv["stkoff"]), "ida-stkoff"))
+                reg = lv.get("reg") or ""
+                if reg:
+                    for base, src in ((lv.get("head"), "ida-lvar-head"),
+                                      (defea_of(lv), "ida-lvar-defea")):
+                        if base is not None:
+                            cands.append(("%s_v0x%X" % (reg, base), src))
+                elif hint_reg:
+                    for base, src in ((lv.get("head"), "ida-hint-head"),
+                                      (defea_of(lv), "ida-hint-defea")):
+                        if base is not None:
+                            cands.append(
+                                ("%s_v0x%X" % (hint_reg, base), src))
+            if not cands and hint_reg:
+                dm = DEFADDR_RE.search(d["hint"])
+                if dm:
+                    cands.append(("%s_v0x%X" % (hint_reg, int(dm.group(1), 16)),
+                                  "decl-defaddr"))
                 else:
-                    dm = DEFADDR_RE.search(d["hint"])
-                    if dm:
-                        defea = int(dm.group(1), 16)
-                    else:
-                        if defmap is None:
-                            defmap = first_assign_addrs(
-                                text, mask, starts, bstart, bend, names)
-                        defea = defmap.get(name)
-                    if defea is None:
-                        reasons["no-defaddr"] += 1
-                        continue
-                    key = "%s_v0x%X" % (reg, defea)
-                    source = "decl-defaddr"
+                    if defmap is None:
+                        defmap = first_assign_addrs(
+                            text, mask, starts, bstart, bend, names)
+                    defea = defmap.get(name)
+                    if defea is not None:
+                        cands.append(("%s_v0x%X" % (hint_reg, defea),
+                                      "decl-defmap"))
+            if not cands:
+                reasons["no-hint" if not sm and not hint_reg
+                        else "no-defaddr"] += 1
+                continue
             key_tries += 1
-            ent = keys.get(key.lower())
+            ent = None
+            for key, source in cands:
+                ent = keys.get(key.lower())
+                if ent is not None:
+                    break
+                key = source = None
             if ent is None:
                 reasons["key-miss"] += 1
                 if len(reasons_samples["key-miss"]) < 12:
                     reasons_samples["key-miss"].append(
-                        [fl, name, key, d["base"] + " *" * d["stars"]])
+                        [fl, name, cands[0][0],
+                         d["base"] + " *" * d["stars"]])
                 continue
             key_hits += 1
+            join_sources[source] += 1
             shape_hits[shape] += 1
             action, new_type, why = classify(d, ent, source, allow_int_ptr)
             shape_actions[shape + " -> " + str(ent.get("type")) + " [" + why + "]"] += 1
@@ -652,6 +690,7 @@ def build_report(ida_lvars_path=None, allow_int_ptr=True):
         "join_attempts": key_tries,
         "join_hits": key_hits,
         "join_hit_rate": round(key_hits / key_tries, 4) if key_tries else 0.0,
+        "join_sources": dict(join_sources.most_common()),
         "retype_candidates": stats["retype"],
         "noop": stats["noop"],
         "unjoinable": dict(reasons),
@@ -672,7 +711,8 @@ def build_report(ida_lvars_path=None, allow_int_ptr=True):
             "source_note": (
                 "reg keys derived from emitted /*0xADDR*/ def comments"
                 if not ida_lvars_path else
-                "reg keys derived from IDA lvar.defea (item-start normalized)"
+                "SSA keys resolved via IDA lvar defea/head + stkoff "
+                "(X119 anchors/ida_lvars.json), textual fallbacks after"
             ),
             "allow_int_ptr": allow_int_ptr,
         },
@@ -893,13 +933,16 @@ def main():
                     help="apply only FUNC:VAR (repeatable)")
     ap.add_argument("--jobs", type=int, default=8,
                     help="libclang worker processes for --apply (default 8)")
-    ap.add_argument("--ida-lvars", default=None)
+    ap.add_argument("--ida-lvars", default=str(IDA_LVARS),
+                    help="X119 lvar dump path (default anchors/ida_lvars.json; "
+                         "empty string disables)")
     ap.add_argument("--no-int-ptr", action="store_true",
                     help="strict policy: never retype an int slot to a class pointer")
     args = ap.parse_args()
     if not (args.report or args.apply):
         args.report = True
-    art, samples = build_report(args.ida_lvars, allow_int_ptr=not args.no_int_ptr)
+    ida_path = args.ida_lvars or None
+    art, samples = build_report(ida_path, allow_int_ptr=not args.no_int_ptr)
     if args.report:
         print_report(art, samples)
     if args.apply:
