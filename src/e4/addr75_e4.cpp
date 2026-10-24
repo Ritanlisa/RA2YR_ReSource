@@ -2496,7 +2496,7 @@ int VocClass_Update()
 {
 
   int result; // eax
-  int v1; // esi
+  AudioQueue *v1; // esi
   int v2; // ebx
   int v3; // eax
 
@@ -2552,7 +2552,7 @@ namespace gamemd {
 int sub_751040()
 {
   int result; // eax
-  int i; // esi
+  AudioQueue *i; // esi
   int *v2; // eax
 
   result = ((AudioQueue *)(unk_B1D320))->GetNext(); /*0x751046*/
@@ -2573,7 +2573,7 @@ namespace gamemd {
 int sub_751080()
 {
   int result; // eax
-  int i; // esi
+  AudioQueue *i; // esi
   int v2; // eax
   int *v3; // eax
 

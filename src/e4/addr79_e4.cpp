@@ -4338,10 +4338,10 @@ namespace gamemd {
 bool WOL_FindBuddy()
 {
   bool result; // al
-  int v1; // esi
+  ObjectClass *v1; // esi
   int *v2; // esi
   int v3; // esi
-  int v4; // esi
+  ObjectClass *v4; // esi
   const void *v5; // esi
   signed int v6; // ebx
   signed int v7; // eax
@@ -4429,7 +4429,7 @@ int E4Recv_79BF50::sub_79BF50(HWND hDlg)
 {
   HWND DlgItem; // eax
   HWND v3; // eax
-  int v4; // esi
+  ObjectClass *v4; // esi
   HWND v5; // eax
   BOOL v7; // [esp-4h] [ebp-18h]
   BOOL BuddyWOL; // [esp-4h] [ebp-18h]
@@ -4485,11 +4485,11 @@ AbstractClass * * RemoveWOLPlayerLogin(const char ** a1)
   void *v4; // eax
   void *v5; // esi
   int v7; // esi
-  int v8; // edi
+  ObjectClass *v8; // edi
   unsigned int *v9; // edi
   int v10; // ebx
   double v11; // st7
-  int v12; // esi
+  ObjectClass *v12; // esi
   char *v13; // eax
   ObjectClass v14; // [esp+8h] [ebp-188h] BYREF
 

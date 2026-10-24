@@ -1255,7 +1255,7 @@ void HandleNetworkPlayerDisconnect(wchar_t * a1, int a2)
 {
 
   int v2; // ebp
-  int v4; // ebx
+  Network *v4; // ebx
   int v5; // eax
   char *v6; // eax
   int v7; // eax

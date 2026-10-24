@@ -713,10 +713,10 @@ char __stdcall HoverLocomotionClass::DeployAnimation()
   unsigned int *v22; // eax
   bool v23; // al
   int v24; // eax
-  int v25; // ecx
+  IUnknown *v25; // ecx
   int v26; // ebx
   unsigned int *v27; // ecx
-  int v28; // ecx
+  IUnknown *v28; // ecx
   unsigned int v29; // ebx
   unsigned int v30; // edi
   unsigned __int16 *v31; // eax
@@ -1487,7 +1487,7 @@ int InfantryClass::ProcessIdleAction()
   int v6; // edi
   char v7; // bl
   __int16 v8; // ax
-  int Type; // eax
+  InfantryTypeClass *Type; // eax
   __int16 v10; // cx
   __int16 v11; // dx
   unsigned int v12; // [esp+8h] [ebp-24h]
@@ -1683,7 +1683,7 @@ int InfantryClass::GetIdleTimer()
   char *v14; // eax
   unsigned __int16 *v15; // eax
   House *v16; // eax
-  int Type; // eax
+  InfantryTypeClass *Type; // eax
   unsigned int *v18; // eax
   int v19; // edi
   int v20; // ebx
@@ -2074,7 +2074,7 @@ int InfantryClass::CalcMoveTarget()
   unsigned int *v6; // ebp
   int *v7; // eax
   int *Height; // eax
-  int Type; // edx
+  InfantryTypeClass *Type; // edx
   int v10; // edx
   int v11; // ecx
   int v12; // eax
@@ -2110,7 +2110,7 @@ int InfantryClass::CalcMoveTarget()
   signed int v42; // ebp
   double v43; // st7
   unsigned __int16 *v44; // eax
-  int ptr_0; // edx
+  TechnoClass *ptr_0; // edx
   int *location; // edi
   ObjectPlacement *v47; // ebp
   int ObjectPlacement_field_0x04; // ebx
@@ -3887,7 +3887,7 @@ int InfantryClass::EvaluateTarget()
   int result; // eax
   int v12; // eax
   InfantryClass *NeighbourContent; // eax
-  int v14; // ecx
+  InfantryClass *v14; // ecx
   int v15; // eax
   int v16; // ecx
   bool v17; // al
@@ -3901,7 +3901,7 @@ int InfantryClass::EvaluateTarget()
   int v25; // ecx
   unsigned short *v26; // edi
   unsigned short *v27; // eax
-  int slaveOwner; // eax
+  TechnoClass *slaveOwner; // eax
   BuildingClass *v29; // ecx
   InfantryClass *v30; // eax
   InfantryClass *v31; // edi

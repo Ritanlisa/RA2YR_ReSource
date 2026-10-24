@@ -53,7 +53,7 @@ AbstractClass * * ParticleTypeClass::Release(int a2, char * a3)
 
   void *v3; // ebp
   char *v5; // edi
-  int v6; // eax
+  AbstractClass *v6; // eax
   unsigned char *v7; // ecx
   int v8; // edx
   char *v9; // eax

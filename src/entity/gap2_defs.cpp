@@ -7275,7 +7275,7 @@ int ParticleSystemClass::UpdateSystem(int a1, int a1_2) {
 // 0x62FF20
 namespace gamemd { 
 int ParticleSystemClass::Write(int a1, void* a1_2) {
-  int v4; // edi
+  ObjectClass *v4; // edi
   int result; // eax
   int v6; // ecx
   int v8; // edx

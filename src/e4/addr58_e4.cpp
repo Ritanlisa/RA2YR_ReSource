@@ -988,7 +988,7 @@ AbstractClass * * BuildRandomMapTiles(ObjectClass *self)
   unsigned __int16 *v24; // ebx
   int result; // eax
   int j; // edi
-  int v27; // esi
+  TileSystem *v27; // esi
   int v28; // eax
   void *v29; // eax
   int v30; // [esp+10h] [ebp-Ch]

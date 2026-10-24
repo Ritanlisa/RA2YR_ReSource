@@ -795,7 +795,7 @@ AbstractClass * * SessionClass::BuildLobbyPlayerList()
   int v3; // ecx
   int v4; // eax
   int result; // eax
-  int v6; // ebx
+  House *v6; // ebx
   int v7; // edi
   char *v8; // eax
   int v9; // ebp

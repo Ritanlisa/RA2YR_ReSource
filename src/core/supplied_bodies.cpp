@@ -3101,7 +3101,7 @@ int HashTableSection::FindSection(uint8_t *a2, uint8_t *a3) {
   int v5; // esi
   unsigned __int8 *v6; // eax
   size_t v7; // ecx
-  int v8; // esi
+  HashTable *v8; // esi
   unsigned __int8 **v9; // edx
   int v10; // edx
   void *v11; // ecx

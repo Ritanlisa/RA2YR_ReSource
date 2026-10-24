@@ -686,7 +686,7 @@ int ObjectClass::ConstructionPositionTracker(TechnoClass *self)
   int v17; // edx
   int v18; // eax
   int v19; // eax
-  int ptr_0; // edx
+  TechnoClass *ptr_0; // edx
   signed int v21; // ebx
   int *v22; // eax
   int v23; // eax

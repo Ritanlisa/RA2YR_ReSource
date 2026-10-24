@@ -243,7 +243,7 @@ int PlaySoundEffectAt(TechnoClass * aP0, int aP1, unsigned int *a2, int aP3, cha
   int v68; // eax
   int v69; // ecx
   int v70; // eax
-  int v71; // edi
+  IUnknown *v71; // edi
   int v72; // eax
   int v73; // esi
   int v74; // eax

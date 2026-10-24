@@ -256,7 +256,7 @@ int E4Recv_528220::sub_528220(unsigned char * a2, unsigned char * a3, int a4)
 
   unsigned __int8 *v4; // ebp
   unsigned __int8 *v6; // edx
-  int pN; // esi
+  String *pN; // esi
   unsigned __int8 *v8; // eax
   int v9; // ecx
   HashTable *v10; // esi
@@ -471,7 +471,7 @@ void * E4Recv_52A110::sub_52A110(float * a2, unsigned char * a3, float a4, float
 
   unsigned __int8 *v6; // ebx
   float v7; // edx
-  int pN; // esi
+  String *pN; // esi
   unsigned int v9; // kr04_4
   Checksummer *v10; // eax
   int *v11; // esi

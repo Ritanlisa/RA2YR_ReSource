@@ -48,7 +48,7 @@ AbstractClass * * Sidebar::StartSidebarProduction(HouseClass *a1, int aP2, char 
 {
   HouseClass *v6; // ebx
   int v7; // esi
-  int v8; // eax
+  AbstractClass *v8; // eax
   int v9; // ebp
   int v10; // esi
   TeamTypeClass *v11; // eax

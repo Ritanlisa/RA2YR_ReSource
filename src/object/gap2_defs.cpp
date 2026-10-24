@@ -9201,7 +9201,7 @@ int ObjectClass::DrawTypewriterText(int a1) {
 // 0x733160
 namespace ra2 { namespace game { 
 void AbstractClass::processRadarEvent() {
-  int v2; // ecx
+  ObjectClass *v2; // ecx
   int v3; // eax
   AbstractClass **i; // edx
   int v5; // edx

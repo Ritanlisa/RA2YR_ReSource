@@ -2396,7 +2396,7 @@ AbstractClass * * E4Recv_49D680::SerializeCampaignOptions()
   int v4 = 0; // ebx /*0x49d6b4*/
   if ( v3 < 0 || v3 >= dword_89F574 ) /*0x49d6c0*/
     return 0; /*0x49d694*/
-  int v24; // [esp+14h] [ebp-1A4h]
+  AbstractClass *v24; // [esp+14h] [ebp-1A4h]
   v24 = dword_89F570 + 76 * v3; /*0x49d6d8*/
   char Buffer[400]; // [esp+28h] [ebp-190h] BYREF
   sprintf( /*0x49d70c*/

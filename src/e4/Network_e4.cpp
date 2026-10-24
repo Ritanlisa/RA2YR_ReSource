@@ -2876,7 +2876,7 @@ int Network::CountDisconnectedHouses()
   int v3; // ebp
   char v4; // bl
   int v5; // edi
-  int v6; // esi
+  HouseClass *v6; // esi
   int v8; // [esp+0h] [ebp-Ch]
   int v9; // [esp+4h] [ebp-8h]
 
@@ -3721,7 +3721,7 @@ AbstractClass * * Network::ProcessEventList(int a1, int * a2, int a3)
   char *v23; // edi
   HouseClass *v24; // eax
   int v25; // ecx
-  int ptr_0; // esi
+  Network *ptr_0; // esi
   int v27; // eax
   int v28; // esi
   int v29; // ebx

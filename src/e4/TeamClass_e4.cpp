@@ -442,7 +442,7 @@ int TeamClass::FindByMemberType(int a2)
   int v9; // eax
   int v10; // eax
   int v11; // esi
-  int owner; // ecx
+  House *owner; // ecx
   int v13; // esi
   int v14; // ecx
   int v15; // eax
@@ -537,7 +537,7 @@ int TeamClass::GetMember(void *a1, void *a2)
   BuildingClass *v4; // esi
   int v5; // edi
   BuildingClass **v6; // eax
-  int owner; // ecx
+  House *owner; // ecx
   int v8; // edi
   int v9; // edx
   int v10; // eax
@@ -1251,8 +1251,8 @@ void TeamClass::Destructor(void * a2)
 
   int v2; // edi
   AITriggerTypeClass *v3; // ecx
-  int owner; // ecx
-  int buildingType; // eax
+  HouseClass *owner; // ecx
+  TeamTypeClass *buildingType; // eax
   int i; // eax
   TagClass *tag; // ecx
   int v8; // eax

@@ -517,7 +517,7 @@ AbstractClass * * BuildingTypeClass::LoadRepairAnimations()
   int v1; // ecx
   int v2; // edi
   int v3; // ebp
-  int v4; // esi
+  ObjectTypeClass *v4; // esi
   __int16 *v5; // ecx
   int v6; // ecx
   int v7; // eax
@@ -1998,7 +1998,7 @@ unsigned int * BuildingTypeClass::GetUpgradeOffset(unsigned int * a2, double a3,
 
 
   int v4; // ecx
-  int v5 = v4; // esi /*0x7178c4*/
+  BuildingTypeClass *v5 = v4; // esi /*0x7178c4*/
   if ( *(unsigned char *)(v4 + 1980) ) /*0x7178c6*/
   {
     int v6; // eax
@@ -2413,7 +2413,7 @@ unsigned int * BuildingTypeClass::loadBuildingProperty_b_5478850(int a2, int a3)
     return &this->TechnoTypeClass; /*0x4788d0*/
   if ( !a3 ) /*0x478878*/
   {
-    int v8; // eax
+    ObjectClass *v8; // eax
     v8 = __2_YAPAXI_Z(3 * a2); /*0x4788a2*/
     if ( v8 ) /*0x4788ac*/
     {

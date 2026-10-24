@@ -1878,12 +1878,12 @@ namespace gamemd {
 AbstractClass * * MPCooperative::GetMapData()
 {
   int v1; // ebp
-  int v2; // edi
+  IUnknown *v2; // edi
   int nextArrayIndex; // eax
-  int v4; // esi
+  IUnknown *v4; // esi
   int v5; // ebp
-  int v6; // edi
-  int v7; // esi
+  IUnknown *v6; // edi
+  IUnknown *v7; // esi
   int v9; // [esp+10h] [ebp-Ch]
   int v10; // [esp+10h] [ebp-Ch]
   int v11; // [esp+14h] [ebp-8h]
