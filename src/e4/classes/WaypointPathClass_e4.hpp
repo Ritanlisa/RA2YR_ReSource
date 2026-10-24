@@ -9,7 +9,9 @@ struct WaypointPathClass {
     unsigned int ptr_0;  // 0x0
     unsigned int ptr_4;  // 0x4
     unsigned int ptr_8;  // 0x8
-    void * ptr_C;  // 0xC
+    char ptr_C[1];  // 0xC
+    unsigned char u8_D;  // 0xD
+    char __pad_E[2];  // 0xE
     unsigned int uniqueId;  // 0x10
     unsigned int abstractFlags;  // 0x14
     unsigned int nextArrayIndex;  // 0x18

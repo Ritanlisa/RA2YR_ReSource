@@ -31,7 +31,11 @@ struct UDPInterfaceClass_Destru {
     unsigned int u32_3C;  // 0x3C
     char __pad_40[8];  // 0x40
     unsigned int u32_48;  // 0x48
-    char __pad_4C[258068];  // 0x4C
+    char __pad_4C[129332];  // 0x4C
+    unsigned int u32_1F980;  // 0x1F980
+    char __pad_1F984[292];  // 0x1F984
+    unsigned int u32_1FAA8;  // 0x1FAA8
+    char __pad_1FAAC[128436];  // 0x1FAAC
     unsigned int u32_3F060;  // 0x3F060
     unsigned int u32_3F064;  // 0x3F064
     unsigned char q3F068;  // 0x3F068
@@ -67,7 +71,9 @@ struct UDPInterfaceClass_Destru {
     unsigned int q3F564;  // 0x3F564
     unsigned int u32_3F568;  // 0x3F568
     unsigned int u32_3F56C;  // 0x3F56C
-    char __pad_3F570[60];  // 0x3F570
+    char __pad_3F570[16];  // 0x3F570
+    unsigned int u32_3F580;  // 0x3F580
+    char __pad_3F584[40];  // 0x3F584
     unsigned int u32_3F5AC;  // 0x3F5AC
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---

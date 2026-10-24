@@ -6,7 +6,7 @@
 namespace gamemd {
 
 struct MSVQAnim {
-    void* __pad_0;  // 0x0
+    void * ptr_0;  // 0x0
     int __pad_004;  // 0x4
     int q008;  // 0x8
     int q00C;  // 0xC

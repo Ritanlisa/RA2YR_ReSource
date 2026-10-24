@@ -124,7 +124,9 @@ struct AircraftClass {
     int disguiseBlinkTimer[3];  // 0x1EC
     bool isTargetedByChrono;  // 0x1F8
     char q1F9[3];  // 0x1F9
-    char __pad_1FC[12];  // 0x1FC
+    char __pad_1FC[1];  // 0x1FC
+    char alignmentPadding1F9[3];  // 0x1FD
+    unsigned long long reloadTimer;  // 0x200
     unsigned int currentBurstCount;  // 0x208
     unsigned int __pad_20C;  // 0x20C
     int displayProductionTo;  // 0x210
@@ -151,7 +153,8 @@ struct AircraftClass {
     TemporalClass * temporalUsing;  // 0x274
     TemporalClass * temporalTargetingMe;  // 0x278
     bool isImmobilized;  // 0x27C
-    char q27D[3];  // 0x27D
+    char q27D[1];  // 0x27D
+    unsigned short alignmentPadding27E;  // 0x27E
     int owningHouseIndex0;  // 0x280
     int isBeingWarpedOut_d;  // 0x284
     char temporalUsing_d[12];  // 0x288
@@ -165,7 +168,7 @@ struct AircraftClass {
     FootClass * airstrike_d;  // 0x2A8
     int locomotorTarget;  // 0x2AC
     int locomotorSource;  // 0x2B0
-    AbstractClass* __pad_2B4;  // 0x2B4
+    AbstractClass * AbstractClass_2B4;  // 0x2B4
     int lastTarget;  // 0x2B8
     int captureManager;  // 0x2BC
     int mindControlledBy;  // 0x2C0
@@ -188,10 +191,15 @@ struct AircraftClass {
     ParticleSystemClass * sparkParticles;  // 0x308
     int ambientParticles;  // 0x30C
     int ammo_d;  // 0x310
-    unsigned int __pad_314;  // 0x314
+    char __pad_314[1];  // 0x314
+    unsigned char isBarrelLocked;  // 0x315
+    unsigned char isHumanControlled;  // 0x316
+    unsigned char isDiscoveredByPlayer;  // 0x317
     int unk1Particles;  // 0x318
     char __pad_31C[1];  // 0x31C
-    char __pad_31D[3];  // 0x31D
+    char __pad_31D[1];  // 0x31D
+    unsigned char isRecruitableByEnemy;  // 0x31E
+    unsigned char isRadarTracked;  // 0x31F
     int ambientParticles_d;  // 0x320
     int damageParticles_2;  // 0x324
     int railgunParticles_2;  // 0x328
@@ -294,7 +302,8 @@ struct AircraftClass {
     short unknownShort526;  // 0x526
     short unknownShort528;  // 0x528
     char FootClass_field_short_52A[2];  // 0x52A
-    char FootClass_field_52C[4];  // 0x52C
+    int16_t FootClass_field_52C;  // 0x52C
+    int16_t FootClass_field_52E;  // 0x52E
     int unknown530;  // 0x530
     int unknown534;  // 0x534
     int unknown538;  // 0x538

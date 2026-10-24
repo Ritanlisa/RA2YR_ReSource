@@ -10,11 +10,14 @@ struct VectorCursor;  // fix_fwd_type_supply
 struct VectorClass_flat;  // fix_fwd_type_supply
 struct rc_ptr;  // G42.32 fwd supply
 struct Campaign_WorldDominationTour_16 {
+#pragma pack(push, 1)  // X60: binary-packed layout
     unsigned char __pad_000;  // 0x0
     char __pad_1[3];  // 0x1
     int q004;  // 0x4
     int q008;  // 0x8
-    unsigned int q00C;  // 0xC
+    unsigned char q00C;  // 0xC
+    unsigned int IsAllocated;  // 0xD
+    char __pad_11[3];  // 0x11
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int  Release(int a2, unsigned int * a3);  // 0x765840
@@ -28,5 +31,6 @@ struct Campaign_WorldDominationTour_16 {
     VectorClass_flat *  QueryInterface(char a2);  // 0x765B60
     unsigned int  Write(int a2);  // 0x7659D0
     rc_ptr * Constructor(char a2);
+#pragma pack(pop)
 };
 } // namespace gamemd

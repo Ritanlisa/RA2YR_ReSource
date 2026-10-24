@@ -25,7 +25,8 @@ struct Tactical;  // fix_fwd_type_supply
 struct AircraftClass;  // fix_fwd_type_supply
 
 struct AircraftTypeClass {
-    unsigned int ptr_0;  // 0x0
+    unsigned short ptr_0;  // 0x0
+    unsigned short u16_2;  // 0x2
     void * ptr_4;  // 0x4
     void * ptr_8;  // 0x8
     void * ptr_C;  // 0xC
@@ -34,7 +35,9 @@ struct AircraftTypeClass {
     unsigned int nextArrayIndex;  // 0x18
     char referenceCount[4];  // 0x1C
     unsigned int NeedsSaveOrLink;  // 0x20
-    char __pad_24[8];  // 0x24
+    unsigned char BarrelVoxel;  // 0x24
+    char __pad_25[3];  // 0x25
+    int TargetEffectivenessCoefficient;  // 0x28
     int ChargerBarrels_0x12;  // 0x2C
     char __pad_30[1];  // 0x30
     char __pad_31[2];  // 0x31
@@ -106,7 +109,10 @@ struct AircraftTypeClass {
     double buildLimit;  // 0x2E8
     int ThreatAvoidanceCoefficient[2];  // 0x2F0
     int SlowdownDistance;  // 0x2F8
-    unsigned int __pad_2FC;  // 0x2FC
+    char __pad_2FC[1];  // 0x2FC
+    bool AirportBound;  // 0x2FD
+    bool Fighter;  // 0x2FE
+    unsigned char __tail_2FF;  // 0x2FF
     int unknown_double_300[2];  // 0x300
     double AccelerationFactor;  // 0x308
     int CloakingSpeed;  // 0x310
@@ -348,7 +354,16 @@ struct AircraftTypeClass {
     int SlavesNumber;  // 0xD18
     int SlaveRegenRate;  // 0xD1C
     unsigned char __pad_D20;  // 0xD20
-    char __pad_D21[29];  // 0xD21
+    char __pad_D21[13];  // 0xD21
+    unsigned char u32_D2E;  // 0xD2E
+    char __pad_D2F[6];  // 0xD2F
+    unsigned char u32_D35;  // 0xD35
+    unsigned char u32_D36;  // 0xD36
+    char __pad_D37[1];  // 0xD37
+    unsigned char u32_D38;  // 0xD38
+    char __pad_D39[2];  // 0xD39
+    unsigned char u32_D3B;  // 0xD3B
+    char __pad_D3C[2];  // 0xD3C
     bool BalloonHover;  // 0xD3E
     char __pad_D3F[1];  // 0xD3F
     int SuppressionThreshold;  // 0xD40
@@ -374,7 +389,9 @@ struct AircraftTypeClass {
     char __pad_D90[4];  // 0xD90
     bool JumpJet;  // 0xD94
     bool Crashable;  // 0xD95
-    char __pad_D96[3];  // 0xD96
+    char __pad_D96[1];  // 0xD96
+    unsigned char u32_D97;  // 0xD97
+    char __pad_D98[1];  // 0xD98
     unsigned char __pad_D99;  // 0xD99
     char __pad_D9A[6];  // 0xD9A
     int ZFudgeBridge;  // 0xDA0

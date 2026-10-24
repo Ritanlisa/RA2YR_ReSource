@@ -27,14 +27,18 @@ struct BulletClass {
     char __pad_14[3];  // 0x14
     bool __pad_017;  // 0x17
     int q018;  // 0x18
-    char __pad_1C[20];  // 0x1C
+    char __pad_1C[4];  // 0x1C
+    unsigned int u32_20;  // 0x20
+    unsigned int u32_24;  // 0x24
+    char __pad_28[8];  // 0x28
     ObjectClass * nextObject;  // 0x30
     char __pad_34[3];  // 0x34
     unsigned char __pad_037;  // 0x37
     char __pad_38[44];  // 0x38
     int customSound;  // 0x64
     unsigned char __pad_068;  // 0x68
-    char __pad_69[7];  // 0x69
+    char __pad_69[3];  // 0x69
+    unsigned int u32_6C;  // 0x6C
     int estimatedHealth;  // 0x70
     bool isOnMap;  // 0x74
     unsigned char alignmentPadding75;  // 0x75
@@ -50,7 +54,8 @@ struct BulletClass {
     unsigned char alignmentPadding85;  // 0x85
     char __pad_86[3];  // 0x86
     unsigned char __pad_089;  // 0x89
-    char __pad_8A[3];  // 0x8A
+    char __pad_8A[2];  // 0x8A
+    unsigned char q08C;  // 0x8C
     bool isFallingDown;  // 0x8D
     bool wasFallingDown;  // 0x8E
     bool isBomb;  // 0x8F
@@ -61,24 +66,36 @@ struct BulletClass {
     bool isInLogic;  // 0x98
     bool isVisible;  // 0x99
     unsigned char alignmentPadding99;  // 0x9A
-    char __pad_9B[3];  // 0x9B
+    char __pad_9B[1];  // 0x9B
+    unsigned short Coord_9C;  // 0x9C
     unsigned char __pad_09E;  // 0x9E
-    char __pad_9F[13];  // 0x9F
+    char __pad_9F[1];  // 0x9F
+    unsigned int u32_A0;  // 0xA0
+    unsigned int u32_A4;  // 0xA4
+    char __pad_A8[4];  // 0xA8
     void * u32_AC;  // 0xAC
-    int q0B0;  // 0xB0
+    int q_B0;  // 0xB0
     char __pad_B4[4];  // 0xB4
     unsigned int Data;  // 0xB8
     char __pad_BC[36];  // 0xBC
     unsigned int Bright;  // 0xE0
-    char __pad_E4[28];  // 0xE4
+    char __pad_E4[4];  // 0xE4
+    unsigned int q0E8;  // 0xE8
+    unsigned int q0EC;  // 0xEC
+    char __pad_F0[8];  // 0xF0
+    unsigned int u32_F8;  // 0xF8
+    unsigned int u32_FC;  // 0xFC
     unsigned int q100;  // 0x100
-    unsigned int q104;  // 0x104
+    unsigned char q104;  // 0x104
+    unsigned char CourseLock;  // 0x105
+    char __pad_106[2];  // 0x106
     unsigned int q108;  // 0x108
     int u32_10C;  // 0x10C
-    char __pad_110[4];  // 0x110
+    char ParticleSystemClass_110[4];  // 0x110
     unsigned int InheritedColor;  // 0x114
     ParticleSystemClass* __pad_118;  // 0x118
-    char __pad_11C[8];  // 0x11C
+    char __pad_11C[4];  // 0x11C
+    unsigned int q_120;  // 0x120
     unsigned int AnimFrame;  // 0x124
     unsigned int WeaponType;  // 0x128
     unsigned int SourceCoords;  // 0x12C

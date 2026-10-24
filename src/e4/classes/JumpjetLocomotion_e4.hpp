@@ -24,19 +24,23 @@ struct JumpjetLocomotion {
     unsigned int u32_3C;  // 0x3C
     int q040;  // 0x40
     int q044;  // 0x44
-    char __pad_48[8];  // 0x48
+    char __pad_48[4];  // 0x48
+    unsigned int u32_4C;  // 0x4C
     unsigned char q050;  // 0x50
     char __pad_51[3];  // 0x51
     unsigned char q054[4];  // 0x54
     unsigned int u32_58;  // 0x58
     char __pad_5C[4];  // 0x5C
-    ObjectClass * ptr_60;  // 0x60
+    char ptr_60[1];  // 0x60
+    unsigned char u8_61;  // 0x61
+    unsigned char u8_62;  // 0x62
+    unsigned char u8_63;  // 0x63
     char __pad_64[12];  // 0x64
     unsigned int u32_70;  // 0x70
     int q074;  // 0x74
     char __pad_78[4];  // 0x78
     unsigned int u32_7C;  // 0x7C
-    char __pad_80[1];  // 0x80
+    char u32_80[1];  // 0x80
     char JumpjetLocomotion_field_0x81[4];  // 0x81
     char __pad_85[3];  // 0x85
     ObjectClass * q088;  // 0x88

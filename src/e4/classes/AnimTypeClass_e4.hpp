@@ -16,7 +16,8 @@ struct WarheadTypeClass;  // fix_fwd_type_supply
 struct ScenarioClass;  // fix_fwd_type_supply
 
 struct AnimTypeClass {
-    void * ptr_0;  // 0x0
+    char ptr_0[2];  // 0x0
+    unsigned short u16_2;  // 0x2
     void * ptr_4;  // 0x4
     void * ptr_8;  // 0x8
     void * ptr_C;  // 0xC

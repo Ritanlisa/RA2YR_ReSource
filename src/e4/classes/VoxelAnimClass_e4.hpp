@@ -71,26 +71,53 @@ struct VoxelAnimClass {
     unsigned char __pad_0A0;  // 0xA0
     char __pad_A1[3];  // 0xA1
     unsigned int q0A4;  // 0xA4
-    char __pad_A8[32];  // 0xA8
+    char __pad_A8[4];  // 0xA8
+    void * q0AC;  // 0xAC
+    unsigned int q_B0;  // 0xB0
+    char __pad_B4[20];  // 0xB4
     unsigned int u32_C8;  // 0xC8
     unsigned int q0CC;  // 0xCC
     unsigned int q0D0;  // 0xD0
-    char __pad_D4[44];  // 0xD4
+    char __pad_D4[8];  // 0xD4
+    unsigned int q0DC;  // 0xDC
+    char __pad_E0[32];  // 0xE0
     unsigned int u32_100;  // 0x100
     unsigned int q104;  // 0x104
     int q108;  // 0x108
     int q10C;  // 0x10C
-    char __pad_110[4];  // 0x110
+    char ParticleSystemClass_110[4];  // 0x110
     Mixer * q114;  // 0x114
     char __pad_118[16];  // 0x118
     int q128;  // 0x128
-    char __pad_12C[16];  // 0x12C
+    char __pad_12C[1];  // 0x12C
+    unsigned char q12D;  // 0x12D
+    char __pad_12E[2];  // 0x12E
+    unsigned int u32_130;  // 0x130
+    char __pad_134[4];  // 0x134
+    unsigned int u32_138;  // 0x138
     unsigned int q13C;  // 0x13C
     unsigned int q140;  // 0x140
-    char __pad_144[144];  // 0x144
+    char __pad_144[4];  // 0x144
+    unsigned int u32_148;  // 0x148
+    unsigned int u32_14C;  // 0x14C
+    char __pad_150[80];  // 0x150
+    unsigned int u32_1A0;  // 0x1A0
+    unsigned int u32_1A4;  // 0x1A4
+    unsigned int u32_1A8;  // 0x1A8
+    char __pad_1AC[36];  // 0x1AC
+    unsigned int u32_1D0;  // 0x1D0
     unsigned int Audio4;  // 0x1D4
     unsigned char __pad_1D8;  // 0x1D8
-    char __pad_1D9[157];  // 0x1D9
+    char __pad_1D9[23];  // 0x1D9
+    unsigned int u32_1F0;  // 0x1F0
+    unsigned int u32_1F4;  // 0x1F4
+    unsigned int u32_1F8;  // 0x1F8
+    unsigned char u8_1FC;  // 0x1FC
+    unsigned char u8_1FD;  // 0x1FD
+    char __pad_1FE[2];  // 0x1FE
+    unsigned int u32_200;  // 0x200
+    unsigned int u32_204;  // 0x204
+    char __pad_208[110];  // 0x208
     unsigned char Audio3;  // 0x276
     char __pad_277[3];  // 0x277
     unsigned char __pad_27A;  // 0x27A

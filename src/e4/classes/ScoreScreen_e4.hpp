@@ -22,13 +22,21 @@ struct ScoreScreen {
     unsigned int q034;  // 0x34
     unsigned int u32_38;  // 0x38
     unsigned int u32_3C;  // 0x3C
-    char __pad_40[4];  // 0x40
+    char __pad_40[1];  // 0x40
+    unsigned char u8_41;  // 0x41
+    char __pad_42[2];  // 0x42
     unsigned int u32_44;  // 0x44
     char __pad_48[88];  // 0x48
     unsigned char q0A0;  // 0xA0
-    char __pad_A1[479];  // 0xA1
+    char __pad_A1[47];  // 0xA1
+    unsigned int u32_D0;  // 0xD0
+    char __pad_D4[264];  // 0xD4
+    unsigned int u32_1DC;  // 0x1DC
+    char __pad_1E0[160];  // 0x1E0
     unsigned int q280;  // 0x280
-    char __pad_284[296];  // 0x284
+    char __pad_284[92];  // 0x284
+    unsigned int u32_2E0;  // 0x2E0
+    char __pad_2E4[200];  // 0x2E4
     unsigned int u32_3AC;  // 0x3AC
     unsigned int u32_3B0;  // 0x3B0
     unsigned int u32_3B4;  // 0x3B4
@@ -38,7 +46,8 @@ struct ScoreScreen {
     unsigned int q3C0;  // 0x3C0
     unsigned int u32_3C4;  // 0x3C4
     unsigned int u32_3C8;  // 0x3C8
-    char __pad_3CC[4];  // 0x3CC
+    char __pad_3CC[1];  // 0x3CC
+    char u32_3CD[3];  // 0x3CD
     unsigned int u32_3D0;  // 0x3D0
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---

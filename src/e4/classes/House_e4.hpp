@@ -37,8 +37,10 @@ struct House {
     char __pad_27[1];  // 0x27
     char __pad_28[1];  // 0x28
     char House_field_0x29[4];  // 0x29
-    unsigned int q02D;  // 0x2D
-    char __pad_31[7];  // 0x31
+    char q02D[3];  // 0x2D
+    unsigned char u32_30;  // 0x30
+    char __pad_31[3];  // 0x31
+    unsigned int u32_34;  // 0x34
     unsigned int u32_38;  // 0x38
     char __pad_3C[4];  // 0x3C
     void * ptr_40;  // 0x40
@@ -70,7 +72,10 @@ struct House {
     unsigned char q1EC;  // 0x1EC
     char __pad_1ED[3];  // 0x1ED
     unsigned int q1F0;  // 0x1F0
-    char __pad_1F4[92];  // 0x1F4
+    char __pad_1F4[1];  // 0x1F4
+    unsigned char u32_1F5;  // 0x1F5
+    unsigned int u32_1F6;  // 0x1F6
+    char __pad_1FA[86];  // 0x1FA
     unsigned char u32_250;  // 0x250
     char __pad_251[3];  // 0x251
     char __pad_254[68];  // 0x254
@@ -91,9 +96,29 @@ struct House {
     char House_field_0x3D3[4];  // 0x3D3
     char __pad_3D7[329];  // 0x3D7
     int q520;  // 0x520
-    char __pad_524[20404];  // 0x524
+    char __pad_524[20160];  // 0x524
+    unsigned int u32_53E4;  // 0x53E4
+    char __pad_53E8[76];  // 0x53E8
+    unsigned int u32_5434;  // 0x5434
+    unsigned int u32_5438;  // 0x5438
+    char __pad_543C[76];  // 0x543C
+    unsigned int u32_5488;  // 0x5488
+    char __pad_548C[4];  // 0x548C
+    unsigned int u32_5490;  // 0x5490
+    unsigned int u32_5494;  // 0x5494
+    char __pad_5498[64];  // 0x5498
     unsigned int u32_54D8;  // 0x54D8
-    char __pad_54DC[292];  // 0x54DC
+    char __pad_54DC[12];  // 0x54DC
+    unsigned int u32_54E8;  // 0x54E8
+    char __pad_54EC[100];  // 0x54EC
+    unsigned int VectorClass_5550;  // 0x5550
+    char __pad_5554[16];  // 0x5554
+    unsigned int VectorClass_5564;  // 0x5564
+    char __pad_5568[16];  // 0x5568
+    unsigned int VectorClass_5578;  // 0x5578
+    char __pad_557C[16];  // 0x557C
+    unsigned int VectorClass_558C;  // 0x558C
+    char __pad_5590[112];  // 0x5590
     unsigned int u32_5600;  // 0x5600
     char __pad_5604[4];  // 0x5604
     unsigned int u32_5608;  // 0x5608

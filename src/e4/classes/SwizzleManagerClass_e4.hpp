@@ -10,7 +10,9 @@ struct SwizzleManagerClass {
     int __pad_004;  // 0x4
     int q008;  // 0x8
     int q00C;  // 0xC
-    int q010;  // 0x10
+    unsigned char q010;  // 0x10
+    unsigned char u32_11;  // 0x11
+    char __pad_12[2];  // 0x12
     int u32_14;  // 0x14
     int q018;  // 0x18
     int u32_1C;  // 0x1C

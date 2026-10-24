@@ -5,7 +5,7 @@
 
 namespace gamemd {
 struct SuperWeaponClass {
-    unsigned char __pad_000;  // 0x0
+    unsigned char ptr_0;  // 0x0
     char __pad_1[3];  // 0x1
     int q004;  // 0x4
     int q008;  // 0x8

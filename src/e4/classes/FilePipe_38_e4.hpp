@@ -8,10 +8,13 @@ namespace gamemd {
 struct VectorClass_flat;  // fix_fwd_type_supply
 struct FilePipe_38 {
 #pragma pack(push, 1)  // X60: binary-packed layout
-    unsigned int ptr_0;  // 0x0
-    char *Items;  // 0x4
+    char ptr_0[1];  // 0x0
+    char FilePipe_38_field_0x1[3];  // 0x1
+    char * Items;  // 0x4
     unsigned int m_8;  // 0x8
-    unsigned int q00C;  // 0xC
+    unsigned char q00C;  // 0xC
+    unsigned int IsAllocated;  // 0xD
+    char __pad_11[3];  // 0x11
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     AbstractClass * *  Release(int a2, char * a3);  // 0x478340

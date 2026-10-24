@@ -17,20 +17,31 @@ struct Audio {
     unsigned char q018[4];  // 0x18
     unsigned int u32_1C;  // 0x1C
     unsigned int u32_20;  // 0x20
-    char __pad_20[16];  // 0x24
+    char __pad_20[4];  // 0x24
+    unsigned int q028;  // 0x28
+    char __pad_2C[8];  // 0x2C
     int q034;  // 0x34
     int q038;  // 0x38
-    char __pad_3C[76];  // 0x3C
+    char __pad_3C[20];  // 0x3C
+    unsigned int AudioMixer_50;  // 0x50
+    char __pad_54[52];  // 0x54
     unsigned int u32_88;  // 0x88
-    char __pad_8C[28];  // 0x8C
+    char __pad_8C[24];  // 0x8C
+    unsigned int u32_A4;  // 0xA4
     unsigned int u32_A8;  // 0xA8
     char __pad_AC[4];  // 0xAC
     unsigned int u32_B0;  // 0xB0
-    char __pad_B4[148];  // 0xB4
+    char __pad_B4[32];  // 0xB4
+    unsigned int u32_D4;  // 0xD4
+    char __pad_D8[96];  // 0xD8
+    unsigned int u32_138;  // 0x138
+    char __pad_13C[12];  // 0x13C
     unsigned int u32_148;  // 0x148
     unsigned int u32_14C;  // 0x14C
     unsigned int q150;  // 0x150
-    char __pad_154[310];  // 0x154
+    char __pad_154[20];  // 0x154
+    unsigned int u32_168;  // 0x168
+    char __pad_16C[286];  // 0x16C
     char Audio_field_0x28A[4];  // 0x28A
     char __pad_28E[1154];  // 0x28E
     int q710;  // 0x710

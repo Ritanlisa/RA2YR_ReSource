@@ -32,8 +32,8 @@ struct TriggerClass {
     unsigned int u32_54;  // 0x54
     char __pad_58[64];  // 0x58
     unsigned int u32_98;  // 0x98
-    unsigned int u32_9C;  // 0x9C
-    unsigned int u32_A0;  // 0xA0
+    unsigned int Coord_9C;  // 0x9C
+    unsigned int q0A0;  // 0xA0
     unsigned char u8_A4;  // 0xA4
     char __pad_A5[3];  // 0xA5
     unsigned char u8_A8;  // 0xA8
@@ -43,7 +43,7 @@ struct TriggerClass {
     unsigned int u32_B0;  // 0xB0
     unsigned int u32_B4;  // 0xB4
     char __pad_B8[24];  // 0xB8
-    unsigned char u8_D0;  // 0xD0
+    unsigned char q0D0;  // 0xD0
     char __pad_D1[1];  // 0xD1
     unsigned char u8_D2;  // 0xD2
     unsigned char u8_D3;  // 0xD3

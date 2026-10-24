@@ -10,7 +10,9 @@ struct RadBeam {
     unsigned int pad_0;  // 0x0
     unsigned char __pad_004;  // 0x4
     char __pad_5[3];  // 0x5
-    unsigned int u32_8;  // 0x8
+    unsigned char u32_8;  // 0x8
+    unsigned char u8_9;  // 0x9
+    char __pad_A[2];  // 0xA
     int memberAtOffset12;  // 0xC
     unsigned int uniqueId;  // 0x10
     unsigned int abstractFlags;  // 0x14

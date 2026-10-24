@@ -12,7 +12,9 @@ struct SpawnManagerClass {
     void * ptr_0;  // 0x0
     void * ptr_4;  // 0x4
     void * ptr_8;  // 0x8
-    void * ptr_C;  // 0xC
+    char ptr_C[1];  // 0xC
+    unsigned char u8_D;  // 0xD
+    char __pad_E[2];  // 0xE
     int uniqueId;  // 0x10
     int abstractFlags;  // 0x14
     int nextArrayIndex;  // 0x18
@@ -28,7 +30,8 @@ struct SpawnManagerClass {
     int spawnVectorCapacity;  // 0x40
     int creationFrame;  // 0x44
     int __pad_48;  // 0x48
-    char __pad_4C[8];  // 0x4C
+    char __pad_4C[4];  // 0x4C
+    unsigned int u32_50;  // 0x50
     int SpawnManagerClass_field_54;  // 0x54
     int SpawnManagerClass_field_58;  // 0x58
     IUnknown * SpawnManagerClass_field_5C;  // 0x5C

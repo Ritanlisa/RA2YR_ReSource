@@ -15,7 +15,9 @@ struct CaptureManagerClass {
     void * ptr_0;  // 0x0
     void * ptr_4;  // 0x4
     void * ptr_8;  // 0x8
-    void * ptr_C;  // 0xC
+    char ptr_C[1];  // 0xC
+    bool IsAllocated;  // 0xD
+    char __pad_E[2];  // 0xE
     void * uniqueId;  // 0x10
     int abstractFlags;  // 0x14
     int nextArrayIndex;  // 0x18

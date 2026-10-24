@@ -13,6 +13,7 @@ struct AnimClass;  // fix_fwd_type_supply
 struct ScenarioClass;  // fix_fwd_type_supply
 
 struct TActionClass {
+#pragma pack(push, 1)  // X60: binary-packed layout
     int vfptr;  // 0x0
     int vfptr1;  // 0x4
     int vfptr2;  // 0x8
@@ -35,11 +36,17 @@ struct TActionClass {
     TagTypeClass * TActionClass_field_4C;  // 0x4C
     TriggerTypeClass * TActionClass_field_50;  // 0x50
     unsigned char TActionClass_field_54;  // 0x54
-    char pad_55[24];  // 0x55
+    char pad_55[23];  // 0x55
+    unsigned char u8_6C;  // 0x6C
     char TActionClass_field_6D[1];  // 0x6D
-    char pad_6E[73];  // 0x6E
+    unsigned int pad_6E;  // 0x6E
+    char __pad_72[6];  // 0x72
+    unsigned int u32_78;  // 0x78
+    char __pad_7C[20];  // 0x7C
+    int Value;  // 0x90
+    char __pad_94[35];  // 0x94
     unsigned char __pad_0B7;  // 0xB7
-    void * Value;  // 0xB8
+    void * TActionClass_field_90;  // 0xB8
     char __pad_BC[56];  // 0xBC
     unsigned int u32_F4;  // 0xF4
     char __pad_F8[4];  // 0xF8
@@ -130,6 +137,7 @@ char executeWeatherStormAction(unsigned int * a1, int a3, int a4, IUnknown * aP4
     int executeSellAction();
     unsigned int * executeHarvestAction(int a2, MouseClass * aP2);
     void executeDetonateAction();
+#pragma pack(pop)
 };
 
 } // namespace gamemd

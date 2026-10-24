@@ -9,7 +9,9 @@ struct LoadScreen {
     void * Render_ph;  // 0x0
     int q004;  // 0x4
     int q008;  // 0x8
-    int q00C;  // 0xC
+    unsigned char q00C;  // 0xC
+    unsigned char u8_D;  // 0xD
+    char __pad_E[2];  // 0xE
     int q010;  // 0x10
     int q014;  // 0x14
     char __pad_18[48];  // 0x18

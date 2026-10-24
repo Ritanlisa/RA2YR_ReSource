@@ -7,12 +7,15 @@
 namespace gamemd {
 struct DynamicVector;  // fix_fwd_type_supply
 struct SlaveManagerClass_25 {
+#pragma pack(push, 1)  // X60: binary-packed layout
     unsigned char __pad_000;  // 0x0
     char __pad_1[3];  // 0x1
     int q004;  // 0x4
     unsigned int u32_8;  // 0x8
     int q00C;  // 0xC
-    int q010;  // 0x10
+    unsigned short q010;  // 0x10
+    unsigned int IsInitialized;  // 0x12
+    char __pad_16[2];  // 0x16
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     wchar_t * ddtor(void *a1_1, void *a2_1);  // 0x6B13B0
@@ -22,5 +25,6 @@ struct SlaveManagerClass_25 {
     int Read(unsigned int * a2, void *a2_2, void *a3 = 0);  // 0x6B16A0
     DynamicVector *  QueryInterface(char a2);  // 0x6B1980
     unsigned int  Write(int a2);  // 0x6B13E0
+#pragma pack(pop)
 };
 } // namespace gamemd

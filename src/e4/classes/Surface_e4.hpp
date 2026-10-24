@@ -11,7 +11,11 @@ struct Surface {
     unsigned int q000;  // 0x0
     int Width;  // 0x4
     int Height;  // 0x8
-    char __pad_C[36];  // 0xC
+    char __pad_C[4];  // 0xC
+    unsigned int u32_10;  // 0x10
+    char __pad_14[16];  // 0x14
+    unsigned int u32_24;  // 0x24
+    char __pad_28[8];  // 0x28
     unsigned int u32_30;  // 0x30
     char __pad_34[8];  // 0x34
     unsigned short u16_3C;  // 0x3C
@@ -40,7 +44,8 @@ struct Surface {
     char __pad_D9[15];  // 0xD9
     unsigned short u16_E8;  // 0xE8
     unsigned short u8_EA;  // 0xEA
-    unsigned int q0EC;  // 0xEC
+    unsigned short q0EC;  // 0xEC
+    unsigned short u16_EE;  // 0xEE
     char __pad_F0[2];  // 0xF0
     unsigned char q0F2;  // 0xF2
     unsigned char u32_F3;  // 0xF3
@@ -131,7 +136,8 @@ struct Surface {
     unsigned int u32_123C;  // 0x123C
     unsigned int u32_1240;  // 0x1240
     unsigned int u32_1244;  // 0x1244
-    char __pad_1248[312];  // 0x1248
+    unsigned int u32_1248;  // 0x1248
+    char __pad_124C[308];  // 0x124C
     unsigned char q1380;  // 0x1380
     char __pad_1381[47];  // 0x1381
     unsigned char q13B0;  // 0x13B0

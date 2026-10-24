@@ -6,7 +6,7 @@
 namespace gamemd {
 
 struct ToolTipClass {
-    int __pad_000;  // 0x0
+    int ptr_0;  // 0x0
     unsigned int Position;  // 0x4
     int q008;  // 0x8
     int q00C;  // 0xC

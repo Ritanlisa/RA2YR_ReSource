@@ -9,7 +9,9 @@ struct AbstractClassVector {
     unsigned int __pad_0;  // 0x0
     int q004;  // 0x4
     unsigned int q008;  // 0x8
-    int q00C;  // 0xC
+    unsigned char q00C;  // 0xC
+    bool IsAllocated;  // 0xD
+    char __pad_E[2];  // 0xE
     int q010;  // 0x10
     int q014;  // 0x14
     int q018;  // 0x18

@@ -10,8 +10,14 @@ struct IPXManagerClass {
     char Initialized[1];  // 0x4
     char Active[1];  // 0x5
     unsigned short tail_6;  // 0x6
-    char __pad_8[24];  // 0x8
-    unsigned int u32_20;  // 0x20
+    char u32_8[4];  // 0x8
+    unsigned int u32_C;  // 0xC
+    unsigned int u32_10;  // 0x10
+    unsigned int u32_14;  // 0x14
+    unsigned int u32_18;  // 0x18
+    unsigned int u32_1C;  // 0x1C
+    unsigned short u32_20;  // 0x20
+    unsigned short u16_22;  // 0x22
     char __pad_24[4];  // 0x24
     unsigned int q028;  // 0x28
     char __pad_2C[24];  // 0x2C
@@ -20,11 +26,15 @@ struct IPXManagerClass {
     unsigned int u32_4C;  // 0x4C
     unsigned int u32_50;  // 0x50
     unsigned int u32_54;  // 0x54
-    char __pad_58[12];  // 0x58
+    char __pad_58[4];  // 0x58
+    unsigned int u32_5C;  // 0x5C
+    unsigned int u32_60;  // 0x60
     unsigned int u32_64;  // 0x64
     unsigned int u32_68;  // 0x68
     unsigned int u32_6C;  // 0x6C
-    char __pad_70[48];  // 0x70
+    char __pad_70[28];  // 0x70
+    unsigned int u32_8C;  // 0x8C
+    char __pad_90[16];  // 0x90
     unsigned int u32_A0;  // 0xA0
     unsigned int u32_A4;  // 0xA4
     unsigned int u32_A8;  // 0xA8

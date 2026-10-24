@@ -60,7 +60,8 @@ struct GameClass {
 #pragma pack(push, 1)  // X60: binary-packed layout
     unsigned int __pad_0;  // 0x0
     unsigned int * u32_4;  // 0x4
-    unsigned int u32_8;  // 0x8
+    char u32_8[2];  // 0x8
+    unsigned short u16_A;  // 0xA
     unsigned int u32_C;  // 0xC
     unsigned int u32_10;  // 0x10
     Pipe * ptr_14;  // 0x14
@@ -75,7 +76,8 @@ struct GameClass {
     unsigned char GameClass_30[4];  // 0x30
     unsigned int u32_34;  // 0x34
     char u32_38[1];  // 0x38
-    char q039[4];  // 0x39
+    char q039[3];  // 0x39
+    unsigned char u32_3C;  // 0x3C
     unsigned char q03D;  // 0x3D
     char __pad_3E[2];  // 0x3E
     unsigned int q040;  // 0x40

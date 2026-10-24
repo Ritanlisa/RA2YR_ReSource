@@ -38,15 +38,19 @@ struct VectorCursor;  // fix_fwd_type_supply
 #define GAMEMD_G2_HouseClass_DEF 1
 struct HouseClass {
     unsigned int ptr_0;  // 0x0
-    void * ptr_4;  // 0x4
+    char ptr_4[1];  // 0x4
+    char ptr_5[3];  // 0x5
     void * ptr_8;  // 0x8
-    void * ptr_C;  // 0xC
+    char ptr_C[1];  // 0xC
+    unsigned char u8_D;  // 0xD
+    char __pad_E[2];  // 0xE
     void * uniqueId;  // 0x10
     int abstractFlags;  // 0x14
     int nextArrayIndex;  // 0x18
     void * referenceCount;  // 0x1C
     void * NeedsSaveOrLink;  // 0x20
-    void * ptr_24;  // 0x24
+    char ptr_24[2];  // 0x24
+    unsigned short u32_26;  // 0x26
     void * ptr_28;  // 0x28
     void * ptr_2C;  // 0x2C
     int relatedTagsCount;  // 0x30
@@ -108,14 +112,28 @@ struct HouseClass {
     int startingCredits;  // 0x134
     int startingEdge;  // 0x138
     void* __pad_13C;  // 0x13C
-    char __pad_140[24];  // 0x140
+    char __pad_140[4];  // 0x140
+    unsigned int u32_144;  // 0x144
+    unsigned int u32_148;  // 0x148
+    char __pad_14C[1];  // 0x14C
+    unsigned char u32_14D;  // 0x14D
+    char __pad_14E[2];  // 0x14E
+    unsigned int q150;  // 0x150
+    char __pad_154[4];  // 0x154
     int u32_158;  // 0x158
     unsigned int u32_15C;  // 0x15C
     unsigned int q160;  // 0x160
     int techInfiltrationFlags;  // 0x164
     int productionInfiltrationFlags;  // 0x168
     unsigned char __pad_16C;  // 0x16C
-    char __pad_16D[23];  // 0x16D
+    char __pad_16D[3];  // 0x16D
+    unsigned int u32_170;  // 0x170
+    unsigned int u32_174;  // 0x174
+    char __pad_178[1];  // 0x178
+    unsigned char u32_179;  // 0x179
+    char __pad_17A[2];  // 0x17A
+    unsigned int u32_17C;  // 0x17C
+    char __pad_180[4];  // 0x180
     int u32_184;  // 0x184
     int u32_188;  // 0x188
     unsigned int u32_18C;  // 0x18C
@@ -147,7 +165,8 @@ struct HouseClass {
     char playerControl;  // 0x1ED
     bool production;  // 0x1EE
     bool autocreateAllowed;  // 0x1EF
-    char HouseClass_field_1F0[2];  // 0x1F0
+    unsigned char HouseClass_field_1F0;  // 0x1F0
+    unsigned char u32_1F1;  // 0x1F1
     bool aiTriggersActive;  // 0x1F2
     bool autoBaseBuilding;  // 0x1F3
     bool isDiscoveredByPlayer;  // 0x1F4
@@ -159,7 +178,9 @@ struct HouseClass {
     bool firestormActive;  // 0x1FA
     bool hasThreatNode;  // 0x1FB
     bool recheckTechTree;  // 0x1FC
-    char HouseClass_field_1FD[11];  // 0x1FD
+    char HouseClass_field_1FD[3];  // 0x1FD
+    unsigned int q200;  // 0x200
+    unsigned int q204;  // 0x204
     unsigned int u32_208;  // 0x208
     char selectedPathIndex[4];  // 0x20C
     int planningPaths[12];  // 0x210
@@ -257,7 +278,16 @@ struct HouseClass {
     FactoryClass * primaryUnused2;  // 0x53C4
     FactoryClass * primaryUnused3;  // 0x53C8
     FactoryClass * primaryForDefenses;  // 0x53CC
-    int HouseClass_field_53D0[3];  // 0x53D0
+    unsigned char HouseClass_field_53D0;  // 0x53D0
+    unsigned char u32_53D1;  // 0x53D1
+    unsigned char u32_53D2;  // 0x53D2
+    unsigned char u32_53D3;  // 0x53D3
+    unsigned char u32_53D4;  // 0x53D4
+    unsigned char u32_53D5;  // 0x53D5
+    unsigned char u32_53D6;  // 0x53D6
+    unsigned char u32_53D7;  // 0x53D7
+    unsigned char u32_53D8;  // 0x53D8
+    char __pad_53D9[3];  // 0x53D9
     void * ourFlagCoords;  // 0x53DC
     char killedUnitsOfHouses[80];  // 0x53E0
     int totalKilledUnits;  // 0x5430
@@ -336,7 +366,8 @@ struct HouseClass {
     int RatioTeamAircraft;  // 0x5660
     int RatioTeamInfantry;  // 0x5664
     int RatioTeamUnits;  // 0x5668
-    char pad_566C[112];  // 0x566C
+    unsigned int u32_566C;  // 0x566C
+    char __pad_5670[108];  // 0x5670
     char currentDropshipIndex[4];  // 0x56DC
     unsigned char hasCloakingRanges;  // 0x56E0
     char color[3];  // 0x56E1
@@ -355,11 +386,28 @@ struct HouseClass {
     int teamDelayTimer[3];  // 0x5758
     char ptr_5764[12];  // 0x5764
     char HouseClass_field_timer_B[12];  // 0x5770
-    char __pad_577C[12];  // 0x577C
+    char __pad_577C[4];  // 0x577C
+    unsigned short u32_5780;  // 0x5780
+    unsigned short u32_5782;  // 0x5782
+    unsigned short u32_5784;  // 0x5784
+    unsigned short u32_5786;  // 0x5786
     char HouseClass_field_timer_D[12];  // 0x5788
     char HouseClass_field_timer_E[12];  // 0x5794
     int __pad_57A0;  // 0x57A0
-    char __pad_57A4[56];  // 0x57A4
+    char __pad_57A4[4];  // 0x57A4
+    unsigned int q57A8;  // 0x57A8
+    unsigned int u32_57AC;  // 0x57AC
+    unsigned int u32_57B0;  // 0x57B0
+    char __pad_57B4[4];  // 0x57B4
+    unsigned int u32_57B8;  // 0x57B8
+    unsigned int u32_57BC;  // 0x57BC
+    char __pad_57C0[4];  // 0x57C0
+    unsigned int u32_57C4;  // 0x57C4
+    unsigned int u32_57C8;  // 0x57C8
+    char __pad_57CC[4];  // 0x57CC
+    unsigned int u32_57D0;  // 0x57D0
+    unsigned int u32_57D4;  // 0x57D4
+    char __pad_57D8[4];  // 0x57D8
     unsigned int HouseClass_field_57DC;  // 0x57DC
     char threatPosed_estimates_padding[67600];  // 0x57E0
     char plainName[21];  // 0x15FF0
@@ -374,7 +422,9 @@ struct HouseClass {
     int waypointPathCount;  // 0x16064
     int waypointPathCapacity;  // 0x16068
     unsigned int u32_1607C;  // 0x1606C
-    unsigned int unknown16080;  // 0x16070
+    unsigned char unknown16080;  // 0x16070
+    unsigned char u32_16071;  // 0x16071
+    char __pad_16072[2];  // 0x16072
     unsigned int unknown16084;  // 0x16074
     double unused16088;  // 0x16078
     double unused16090;  // 0x16080

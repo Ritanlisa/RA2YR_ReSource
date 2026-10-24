@@ -61,7 +61,11 @@ struct TerrainClass {
     char __pad_BB[1];  // 0xBB
     int height;  // 0xBC
     AbstractClass* __pad_0C0;  // 0xC0
-    char __pad_C4[12];  // 0xC4
+    char __pad_C4[4];  // 0xC4
+    unsigned int u32_C8;  // 0xC8
+    unsigned char q0CC;  // 0xCC
+    unsigned char u32_CD;  // 0xCD
+    char __pad_CE[2];  // 0xCE
     char TerrainClass_field_rect_D0[16];  // 0xD0
     char __pad_E0[24];  // 0xE0
     unsigned int u32_F8;  // 0xF8
@@ -69,7 +73,7 @@ struct TerrainClass {
     unsigned int u32_2A4;  // 0x2A4
     unsigned int u32_2A8;  // 0x2A8
     char __pad_2AC[8];  // 0x2AC
-    unsigned int u32_2B4;  // 0x2B4
+    unsigned int AbstractClass_2B4;  // 0x2B4
     char __pad_2B8[4];  // 0x2B8
     unsigned int u32_2BC;  // 0x2BC
     char __pad_2C0[48];  // 0x2C0

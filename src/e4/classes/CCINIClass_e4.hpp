@@ -14,11 +14,14 @@ struct MultiplayerGameMode;  // fix_fwd_type_supply
 #ifndef GAMEMD_E4_CCINIClass  // G42.57w14 twin-guard (decoupled from INIClass macro; first-include wins)
 #define GAMEMD_E4_CCINIClass 1
 struct CCINIClass {
-    unsigned int __pad_0;  // 0x0
+    unsigned char ptr_0;  // 0x0
+    char u32_1[3];  // 0x1
     int headNode[3];  // 0x4
     int sectionHead[3];  // 0x10
     int sectionCount;  // 0x1C
-    char __pad_20[12];  // 0x20
+    char __pad_20[4];  // 0x20
+    unsigned int q024;  // 0x24
+    unsigned int u32_28;  // 0x28
     int q02C;  // 0x2C
     int unknown30;  // 0x30
     char needsSave_flag[1];  // 0x34

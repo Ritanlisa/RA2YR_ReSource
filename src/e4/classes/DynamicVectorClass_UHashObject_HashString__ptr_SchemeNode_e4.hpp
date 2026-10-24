@@ -7,14 +7,15 @@
 namespace gamemd {
 struct DynamicVector;  // fix_fwd_type_supply
 struct DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode {
-    unsigned int __pad_0;  // 0x0
-    void* Items;  // 0x4
+    unsigned char ptr_0;  // 0x0
+    char m_1[3];  // 0x1
+    void * Items;  // 0x4
     unsigned int Capacity;  // 0x8
     char IsInitialized[1];  // 0xC
     unsigned char IsAllocated;  // 0xD
     unsigned char __pad_00E;  // 0xE
     char __pad_F[1];  // 0xF
-    void* Count;  // 0x10
+    void * Count;  // 0x10
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int  HashEntryCompare(unsigned char * a2);  // 0x517590

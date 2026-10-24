@@ -17,7 +17,7 @@ struct ConnectionPointClass {
     int q020;  // 0x20
     unsigned int u32_24;  // 0x24
     unsigned char u8_28;  // 0x28
-    unsigned char u8_29;  // 0x29
+    unsigned char u32_29;  // 0x29
     char __pad_2A[2];  // 0x2A
     unsigned int u32_2C;  // 0x2C
     unsigned int u32_30;  // 0x30

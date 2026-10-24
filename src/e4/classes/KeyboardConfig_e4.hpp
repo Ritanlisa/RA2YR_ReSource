@@ -13,7 +13,7 @@ struct KeyboardConfig {
     unsigned int u32_0;  // 0x0
     unsigned int u32_4;  // 0x4
     unsigned int u32_8;  // 0x8
-    void * ptr_8;  // 0xC
+    void * ptr_C;  // 0xC
     unsigned int u32_10;  // 0x10
     char __pad_14[12];  // 0x14
     unsigned int u32_20;  // 0x20

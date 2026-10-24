@@ -8,20 +8,40 @@
 namespace gamemd {
 struct CampaignClass;  // fix_fwd_type_supply
 struct ScriptAction {
-    void * __pad_0;  // 0x0
+    char __pad_0[2];  // 0x0
+    unsigned char u8_2;  // 0x2
+    char __pad_3[1];  // 0x3
     int u32_4;  // 0x4
     int u32_8;  // 0x8
-    unsigned char u32_C[4];  // 0xC
-    int u32_10;  // 0x10
+    char u32_C[1];  // 0xC
+    unsigned char u8_D;  // 0xD
+    char __pad_E[2];  // 0xE
+    unsigned char u32_10;  // 0x10
+    unsigned char u8_11;  // 0x11
+    char __pad_12[2];  // 0x12
     int q014;  // 0x14
     int u32_18;  // 0x18
-    unsigned char u32_1C[8];  // 0x1C
+    char u32_1C[1];  // 0x1C
+    unsigned char u8_1D;  // 0x1D
+    char __pad_1E[1];  // 0x1E
+    unsigned char u8_1F;  // 0x1F
+    char __pad_20[4];  // 0x20
     int q024;  // 0x24
     char __pad_28[4];  // 0x28
     unsigned char q02C;  // 0x2C
     char __pad_2D[3];  // 0x2D
     int q030;  // 0x30
-    unsigned char q034[60];  // 0x34
+    char q034[4];  // 0x34
+    unsigned int u32_38;  // 0x38
+    unsigned int u32_3C;  // 0x3C
+    unsigned int u32_40;  // 0x40
+    ObjectClass * u32_44;  // 0x44
+    ObjectClass * u32_48;  // 0x48
+    AbstractClass * q04C;  // 0x4C
+    unsigned int u32_50;  // 0x50
+    char __pad_54[25];  // 0x54
+    unsigned char q06D;  // 0x6D
+    char __pad_6E[2];  // 0x6E
     int q070;  // 0x70
     int q074;  // 0x74
     char __pad_78[9];  // 0x78
@@ -32,7 +52,9 @@ struct ScriptAction {
     int q08C;  // 0x8C
     unsigned char q090[4];  // 0x90
     int q094;  // 0x94
-    int q098;  // 0x98
+    unsigned char q098;  // 0x98
+    unsigned char u8_99;  // 0x99
+    char __pad_9A[2];  // 0x9A
     char __pad_9C[12];  // 0x9C
     int q0A8;  // 0xA8
     char __pad_AC[4];  // 0xAC

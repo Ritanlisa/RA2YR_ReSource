@@ -8,7 +8,9 @@ namespace gamemd {
 struct DynamicVector;  // fix_fwd_type_supply
 
 struct IsometricTileTypeClass {
-    void * ptr_0;  // 0x0
+    char ptr_0[1];  // 0x0
+    unsigned char q001;  // 0x1
+    char __pad_2[2];  // 0x2
     unsigned char IsometricTileTypeClass_field_0x04;  // 0x4
     char __pad_5[3];  // 0x5
     int IsometricTileTypeClass_field_0x08;  // 0x8

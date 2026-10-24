@@ -24,10 +24,14 @@ struct Coord;  // fix_fwd_type_supply
 
 #ifndef GAMEMD_TREE_UNIVERSE
 struct TechnoClass {
-    unsigned int ptr_0;  // 0x0
+    unsigned char ptr_0;  // 0x0
+    unsigned char u8_1;  // 0x1
+    char __pad_2[2];  // 0x2
     void * ptr_4;  // 0x4
     void * ptr_8;  // 0x8
-    void * ptr_C;  // 0xC
+    char ptr_C[1];  // 0xC
+    unsigned char u8_D;  // 0xD
+    char __pad_E[2];  // 0xE
     void * uniqueId;  // 0x10
     void * abstractFlags;  // 0x14
     void * nextArrayIndex;  // 0x18
@@ -256,7 +260,15 @@ struct TechnoClass {
     unsigned int grindingAnimHandle;  // 0x43C
     int currentTargetThreatValues[6];  // 0x440
     int currentTargets[6];  // 0x458
-    char __pad_470[24];  // 0x470
+    char __pad_470[2];  // 0x470
+    unsigned short vt_slot_472;  // 0x472
+    unsigned int audioLoopIndex3;  // 0x474
+    unsigned int audioVolume3;  // 0x478
+    unsigned char audioController4;  // 0x47C
+    unsigned char q47D;  // 0x47D
+    char __pad_47E[2];  // 0x47E
+    unsigned int u32_480;  // 0x480
+    unsigned int u32_484;  // 0x484
     char turretRotateSoundController[20];  // 0x488
     unsigned int isTurretRotateSoundPlaying;  // 0x49C
     ComPtr * turretIsRotating;  // 0x4A0
@@ -313,13 +325,13 @@ struct TechnoClass {
     unsigned int u32_5A0;  // 0x5A0
     unsigned int u32_5A4;  // 0x5A4
     char __pad_5A8[28];  // 0x5A8
-    unsigned int u32_5C4;  // 0x5C4
-    unsigned int u32_5C8;  // 0x5C8
-    unsigned int u32_5CC;  // 0x5CC
+    unsigned int FootClass_field_5C4;  // 0x5C4
+    unsigned int FootClass_field_5C8;  // 0x5C8
+    unsigned int FootClass_field_5CC;  // 0x5CC
     char __pad_5D0[1];  // 0x5D0
-    unsigned char u8_5D1;  // 0x5D1
+    unsigned char FootClass_field_bool_5D1;  // 0x5D1
     char __pad_5D2[2];  // 0x5D2
-    unsigned int u32_5D4;  // 0x5D4
+    unsigned int FootClass_field_5D4;  // 0x5D4
     char __pad_5D8[116];  // 0x5D8
     unsigned int u32_64C;  // 0x64C
     unsigned int u32_650;  // 0x650
@@ -336,12 +348,12 @@ struct TechnoClass {
     unsigned char u8_684;  // 0x684
     char __pad_685[3];  // 0x685
     unsigned int u32_688;  // 0x688
-    unsigned char u8_68C;  // 0x68C
+    unsigned char FootClass_field_bool_68C;  // 0x68C
     unsigned char u8_68D;  // 0x68D
     char __pad_68E[1];  // 0x68E
     unsigned char u8_68F;  // 0x68F
-    unsigned char u8_690;  // 0x690
-    unsigned char u8_691;  // 0x691
+    unsigned char q690;  // 0x690
+    unsigned char q691;  // 0x691
     char __pad_692[2];  // 0x692
     unsigned int u32_694;  // 0x694
     char __pad_698[4];  // 0x698
@@ -356,7 +368,7 @@ struct TechnoClass {
     unsigned char u8_6B4;  // 0x6B4
     unsigned char u8_6B5;  // 0x6B5
     char __pad_6B6[2];  // 0x6B6
-    unsigned int u32_6B8;  // 0x6B8
+    unsigned int FootClass_field_bool_6B8;  // 0x6B8
     unsigned int u32_6BC;  // 0x6BC
     unsigned int u32_6C0;  // 0x6C0
     unsigned int u32_6C4;  // 0x6C4

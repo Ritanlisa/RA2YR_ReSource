@@ -21,7 +21,11 @@ struct Game {
     char __pad_D[19];  // 0xD
     unsigned int q020;  // 0x20
     int u32_24;  // 0x24
-    unsigned char q028[16];  // 0x28
+    char q028[1];  // 0x28
+    unsigned char u32_29;  // 0x29
+    char __pad_2A[11];  // 0x2A
+    unsigned char u32_35;  // 0x35
+    char __pad_36[2];  // 0x36
     int q038;  // 0x38
     int q03C;  // 0x3C
     int q040;  // 0x40

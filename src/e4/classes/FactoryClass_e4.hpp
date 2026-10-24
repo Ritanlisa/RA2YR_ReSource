@@ -9,8 +9,11 @@ namespace gamemd {
 struct FactoryClass {
     void * ptr_0;  // 0x0
     void * ptr_4;  // 0x4
-    void * ptr_8;  // 0x8
-    void * ptr_C;  // 0xC
+    char ptr_8[3];  // 0x8
+    unsigned char u32_B;  // 0xB
+    char ptr_C[1];  // 0xC
+    unsigned char u8_D;  // 0xD
+    unsigned short u32_E;  // 0xE
     void * uniqueId;  // 0x10
     void * abstractFlags;  // 0x14
     int nextArrayIndex;  // 0x18
@@ -26,11 +29,14 @@ struct FactoryClass {
     char __pad_42[2];  // 0x42
     unsigned int q044;  // 0x44
     unsigned int u32_48;  // 0x48
-    char __pad_4C[4];  // 0x4C
+    char __pad_4C[1];  // 0x4C
+    unsigned char u32_4D;  // 0x4D
+    char __pad_4E[2];  // 0x4E
     int u32_50;  // 0x50
-    char __pad_54[4];  // 0x54
+    char u32_54[4];  // 0x54
     unsigned int u32_58;  // 0x58
-    char __pad_5C[2];  // 0x5C
+    char __pad_5C[1];  // 0x5C
+    unsigned char u8_5D;  // 0x5D
     char m_align_5E[2];  // 0x5E
     int balance;  // 0x60
     int originalBalance;  // 0x64
@@ -43,7 +49,7 @@ struct FactoryClass {
     unsigned int u32_8C;  // 0x8C
     unsigned int u32_90;  // 0x90
     unsigned int u32_94;  // 0x94
-    unsigned char u8_98;  // 0x98
+    unsigned char q098;  // 0x98
     unsigned char u8_99;  // 0x99
     char __pad_9A[14];  // 0x9A
     unsigned int u32_A8;  // 0xA8

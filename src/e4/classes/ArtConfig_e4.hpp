@@ -6,11 +6,11 @@
 namespace gamemd {
 
 struct ArtConfig {
-    int __pad_000;  // 0x0
+    int ptr_0;  // 0x0
     int q004;  // 0x4
     int u32_8;  // 0x8
     int u32_C;  // 0xC
-    INIClass * ptr_10;  // 0x10
+    INIClass * INIClass_10;  // 0x10
     void* __pad_014;  // 0x14
     unsigned int u32_18;  // 0x18
     unsigned int u32_1C;  // 0x1C
@@ -23,11 +23,11 @@ struct ArtConfig {
     unsigned char u8_38;  // 0x38
     char __pad_39[3];  // 0x39
     unsigned int u32_3C;  // 0x3C
-    char __pad_40[4];  // 0x40
+    char q040[4];  // 0x40
     unsigned int u32_44;  // 0x44
     unsigned int u32_48;  // 0x48
     unsigned int u32_4C;  // 0x4C
-    unsigned int u32_50;  // 0x50
+    unsigned int q050;  // 0x50
     char __pad_54[16];  // 0x54
     unsigned int u32_64;  // 0x64
     char __pad_68[4];  // 0x68

@@ -40,7 +40,8 @@ struct Trigger {
     unsigned char u32_444;  // 0x444
     char __pad_445[23];  // 0x445
     unsigned int u32_45C;  // 0x45C
-    char __pad_460[16];  // 0x460
+    char __pad_460[12];  // 0x460
+    unsigned int u32_46C;  // 0x46C
     unsigned int u32_470;  // 0x470
     unsigned int u8_474;  // 0x474
     unsigned int u32_478;  // 0x478

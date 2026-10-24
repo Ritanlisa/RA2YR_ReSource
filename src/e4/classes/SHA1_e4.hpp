@@ -12,7 +12,8 @@ struct SHA1 {
     unsigned char q00C[4];  // 0xC
     int q010;  // 0x10
     int q014;  // 0x14
-    char __pad_18[20];  // 0x18
+    unsigned int u32_18;  // 0x18
+    char __pad_1C[16];  // 0x1C
     unsigned int u32_2C;  // 0x2C
     unsigned int u32_30;  // 0x30
     unsigned char u8_34;  // 0x34

@@ -53,7 +53,8 @@ int Remove(unsigned int * a2);
 // member-form layout; this twin carries the static call forms. No e4 TU
 // includes system/mix_file.hpp (verified), so no gap2 twin conflict.
 struct LinkedList {
-    char __pad_0[4];  // 0x0
+    char __pad_0[2];  // 0x0
+    unsigned short ptr_2;  // 0x2
     int Tail[2];  // 0x4
     char __pad_C[28];  // 0xC
     unsigned int u32_28;  // 0x28

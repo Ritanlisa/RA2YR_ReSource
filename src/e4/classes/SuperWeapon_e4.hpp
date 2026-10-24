@@ -197,7 +197,8 @@ struct SuperWeapon {
     void * q5480;  // 0x5480
     char __pad_5484[12];  // 0x5484
     unsigned int q5490;  // 0x5490
-    unsigned int u32_5494;  // 0x5494
+    unsigned short u32_5494;  // 0x5494
+    unsigned short u16_5496;  // 0x5496
     char __pad_5498[84];  // 0x5498
     unsigned int u32_54EC;  // 0x54EC
     unsigned short u32_54F0;  // 0x54F0

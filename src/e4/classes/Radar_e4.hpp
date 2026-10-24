@@ -24,7 +24,14 @@ struct Radar {
     char __pad_58[8];  // 0x58
     int q060;  // 0x60
     unsigned int q064;  // 0x64
-    char __pad_68[140];  // 0x68
+    char q068[4];  // 0x68
+    unsigned int q06C;  // 0x6C
+    unsigned int q070;  // 0x70
+    char __pad_74[28];  // 0x74
+    unsigned int q090;  // 0x90
+    char __pad_94[40];  // 0x94
+    unsigned int u32_BC;  // 0xBC
+    char __pad_C0[52];  // 0xC0
     unsigned char u32_F4;  // 0xF4
     char __pad_F5[3];  // 0xF5
     unsigned char u32_F8;  // 0xF8
@@ -42,7 +49,9 @@ struct Radar {
     unsigned int u32_1214;  // 0x1214
     char __pad_1218[4];  // 0x1218
     unsigned int u32_121C;  // 0x121C
-    char __pad_1220[44];  // 0x1220
+    char __pad_1220[20];  // 0x1220
+    unsigned int u32_1234;  // 0x1234
+    char __pad_1238[20];  // 0x1238
     unsigned int u32_124C;  // 0x124C
     unsigned int u32_1250;  // 0x1250
     unsigned int u32_1254;  // 0x1254

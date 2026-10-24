@@ -16,12 +16,18 @@ struct ScenarioClass;  // fix_fwd_type_supply
 struct IPXInterfaceClass;  // fix_fwd_type_supply
 struct MPCooperative {
     unsigned int MPCooperative_field_0x0;  // 0x0
-    unsigned int __pad_004;  // 0x4
+    unsigned int MPCooperative_field_0x4;  // 0x4
     unsigned int u32_8;  // 0x8
-    unsigned int u32_C;  // 0xC
-    int q010;  // 0x10
-    int q014;  // 0x14
-    unsigned int u32_18;  // 0x18
+    unsigned char u32_C;  // 0xC
+    bool IsAllocated;  // 0xD
+    char __pad_E[2];  // 0xE
+    unsigned char q010;  // 0x10
+    unsigned char u8_11;  // 0x11
+    unsigned short IsInitialized;  // 0x12
+    unsigned short q014;  // 0x14
+    unsigned short Count;  // 0x16
+    unsigned short u32_18;  // 0x18
+    unsigned short u16_1A;  // 0x1A
     unsigned int u32_1C;  // 0x1C
     char __pad_20[12];  // 0x20
     int q02C;  // 0x2C
@@ -31,14 +37,18 @@ struct MPCooperative {
     unsigned int u32_3C;  // 0x3C
     int u32_40;  // 0x40
     int q044;  // 0x44
-    int q048;  // 0x48
+    unsigned char q048;  // 0x48
+    unsigned char u8_49;  // 0x49
+    char __pad_4A[2];  // 0x4A
     unsigned int u32_4C;  // 0x4C
     MultiplayerGameMode * ptr_50;  // 0x50
     unsigned int __pad_054;  // 0x54
     unsigned char q058[4];  // 0x58
     unsigned int u32_5C;  // 0x5C
     unsigned int u32_60;  // 0x60
-    unsigned int u32_64;  // 0x64
+    unsigned char u32_64;  // 0x64
+    unsigned char u8_65;  // 0x65
+    char __pad_66[2];  // 0x66
     int q068;  // 0x68
     unsigned int u32_6C;  // 0x6C
     char __pad_70[24];  // 0x70
@@ -47,12 +57,26 @@ struct MPCooperative {
     int q09C;  // 0x9C
     int q0A0;  // 0xA0
     int q0A4;  // 0xA4
-    char __pad_A8[16];  // 0xA8
+    char __pad_A8[4];  // 0xA8
+    unsigned char u8_AC;  // 0xAC
+    unsigned char u8_AD;  // 0xAD
+    unsigned char u8_AE;  // 0xAE
+    unsigned char u8_AF;  // 0xAF
+    unsigned char u8_B0;  // 0xB0
+    unsigned char u32_B1;  // 0xB1
+    unsigned char u32_B2;  // 0xB2
+    unsigned char u8_B3;  // 0xB3
+    char __pad_B4[4];  // 0xB4
     int q0B8;  // 0xB8
-    int q0BC;  // 0xBC
+    unsigned char q0BC;  // 0xBC
+    unsigned char u8_BD;  // 0xBD
+    unsigned char u8_BE;  // 0xBE
+    unsigned char u8_BF;  // 0xBF
     int q0C0;  // 0xC0
     int q0C4;  // 0xC4
-    char __pad_C8[220];  // 0xC8
+    char __pad_C8[200];  // 0xC8
+    unsigned int u32_190;  // 0x190
+    char __pad_194[16];  // 0x194
     int u32_1A4;  // 0x1A4
     char __pad_1A8[4];  // 0x1A8
     unsigned int u32_1AC;  // 0x1AC
@@ -60,11 +84,12 @@ struct MPCooperative {
     int q264;  // 0x264
     char __pad_268[188];  // 0x268
     unsigned int q324;  // 0x324
-    unsigned int __pad_328;  // 0x328
+    unsigned int q328;  // 0x328
     unsigned char q32C;  // 0x32C
     char __pad_32D[7];  // 0x32D
     unsigned char q334;  // 0x334
-    char __pad_335[7];  // 0x335
+    char __pad_335[3];  // 0x335
+    unsigned int u32_338;  // 0x338
     unsigned int q33C;  // 0x33C
     int q340;  // 0x340
     char __pad_344[720];  // 0x344

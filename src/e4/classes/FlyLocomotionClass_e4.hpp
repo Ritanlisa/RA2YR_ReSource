@@ -34,7 +34,9 @@ struct FlyLocomotionClass {
     bool IsLanding;  // 0x4D
     bool WasLanding;  // 0x4E
     unsigned char __pad_04F;  // 0x4F
-    char __pad_50[3];  // 0x50
+    char __pad_50[1];  // 0x50
+    unsigned char u8_51;  // 0x51
+    unsigned char u8_52;  // 0x52
     bool FlyLocomotionClass_field_bool_53;  // 0x53
     unsigned int FlyLocomotionClass_field_54;  // 0x54
     unsigned int FlyLocomotionClass_field_58;  // 0x58

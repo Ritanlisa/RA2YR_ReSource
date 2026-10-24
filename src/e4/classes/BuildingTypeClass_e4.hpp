@@ -25,18 +25,22 @@ struct ParticleSystemTypeClass;  // fix_fwd_type_supply
 struct ParticleTypeClass;  // fix_fwd_type_supply
 
 struct BuildingTypeClass {
-    void * ptr_0;  // 0x0
+    char ptr_0[2];  // 0x0
+    unsigned short u32_2;  // 0x2
     void * ptr_4;  // 0x4
     void * ptr_8;  // 0x8
-    void * ptr_C;  // 0xC
+    char ptr_C[1];  // 0xC
+    unsigned char u32_D;  // 0xD
+    char __pad_E[2];  // 0xE
     unsigned int uniqueId;  // 0x10
     void * abstractFlags;  // 0x14
     unsigned int nextArrayIndex;  // 0x18
     char referenceCount[4];  // 0x1C
     unsigned int NeedsSaveOrLink;  // 0x20
-    char __pad_24[8];  // 0x24
+    unsigned int BarrelVoxel;  // 0x24
+    int TargetEffectivenessCoefficient;  // 0x28
     int ChargerBarrels_0x12;  // 0x2C
-    char __pad_30[1];  // 0x30
+    char TargetSpecialThreatCoefficient[1];  // 0x30
     char __pad_31[2];  // 0x31
     unsigned char alignmentPadding;  // 0x33
     char __pad_34[3];  // 0x34
@@ -284,23 +288,32 @@ struct BuildingTypeClass {
     int NaturalParticleSystemLocation[3];  // 0x768
     int RefinerySmokeParticleSystem;  // 0x774
     int DamageParticleSystems[7];  // 0x778
-    char __pad_794[28];  // 0x794
+    char __pad_794[8];  // 0x794
+    unsigned int ShadowIndex;  // 0x79C
+    unsigned int Storage;  // 0x7A0
+    unsigned char TurretNotExportedOnGround;  // 0x7A4
+    unsigned char Gunner;  // 0x7A5
+    unsigned short HasTurretTooltips;  // 0x7A6
+    unsigned int TurretCount;  // 0x7A8
+    unsigned int WeaponCount;  // 0x7AC
     int DamageSmokeOffset[3];  // 0x7B0
     char DamSmkOffScrnRel[1];  // 0x7BC
-    char __pad_7BD[3];  // 0x7BD
+    char __pad_7BD[1];  // 0x7BD
+    unsigned char ImmuneToVeins;  // 0x7BE
+    unsigned char TiberiumHeal;  // 0x7BF
     int DestroySmokeOffset[3];  // 0x7C0
     int RefinerySmokeOffsetOne[3];  // 0x7CC
     int RefinerySmokeOffsetTwo[3];  // 0x7D8
     int RefinerySmokeOffsetThree[3];  // 0x7E4
     int RefinerySmokeOffsetFour[3];  // 0x7F0
-    int ShadowIndex;  // 0x7FC
-    int Storage;  // 0x800
-    char TurretNotExportedOnGround[1];  // 0x804
-    char Gunner[1];  // 0x805
-    char HasTurretTooltips[1];  // 0x806
+    int q7FC;  // 0x7FC
+    int q800;  // 0x800
+    char q804[1];  // 0x804
+    char q805[1];  // 0x805
+    char q806[1];  // 0x806
     char __pad_807[1];  // 0x807
-    int TurretCount;  // 0x808
-    int WeaponCount;  // 0x80C
+    int q808;  // 0x808
+    int q80C;  // 0x80C
     char IsChargeTurret[1];  // 0x810
     char __pad_811[3];  // 0x811
     int TurretWeapon[33];  // 0x814
@@ -312,8 +325,8 @@ struct BuildingTypeClass {
     char Trainable[1];  // 0xC8E
     char DamageSparks[1];  // 0xC8F
     char TargetLaser[1];  // 0xC90
-    char ImmuneToVeins[1];  // 0xC91
-    char TiberiumHeal[1];  // 0xC92
+    char qC91[1];  // 0xC91
+    char qC92[1];  // 0xC92
     char CloakStop[1];  // 0xC93
     char IsTrain[1];  // 0xC94
     char IsDropship[1];  // 0xC95
@@ -336,9 +349,11 @@ struct BuildingTypeClass {
     char __pad_CB5[3];  // 0xCB5
     int BarrelAnimData[4];  // 0xCB8
     bool TechnoTypeClass_field_bool_CC8;  // 0xCC8
-    char __pad_CC9[2];  // 0xCC9
+    char __pad_CC9[1];  // 0xCC9
+    unsigned char align_CCA;  // 0xCCA
     char align_CCB[4];  // 0xCCB
-    char __pad_CCF[2];  // 0xCCF
+    char Remapable[1];  // 0xCCF
+    unsigned char Cloakable;  // 0xCD0
     bool GapGenerator;  // 0xCD1
     bool GapRadiusInCells;  // 0xCD2
     bool SuperGapRadiusInCells;  // 0xCD3
@@ -361,7 +376,10 @@ struct BuildingTypeClass {
     unsigned int ReselectIfLimboed;  // 0xD14
     int Enslaves;  // 0xD18
     int SlaveRegenRate;  // 0xD1C
-    char __pad_D20[4];  // 0xD20
+    char __pad_D20[1];  // 0xD20
+    unsigned char qD21;  // 0xD21
+    unsigned char qD22;  // 0xD22
+    unsigned char qD23;  // 0xD23
     unsigned int SlaveReloadRate;  // 0xD24
     unsigned int OpenTransportWeapon;  // 0xD28
     unsigned int Spawned;  // 0xD2C
@@ -381,7 +399,14 @@ struct BuildingTypeClass {
     int JumpjetWobbles;  // 0xD5C
     char __pad_D60[4];  // 0xD60
     int JumpjetNoWobbles;  // 0xD64
-    char __pad_D68[8];  // 0xD68
+    char __pad_D68[1];  // 0xD68
+    unsigned char qD69;  // 0xD69
+    unsigned char qD6A;  // 0xD6A
+    char __pad_D6B[1];  // 0xD6B
+    unsigned char JumpJet;  // 0xD6C
+    unsigned char Crashable;  // 0xD6D
+    unsigned char ConsideredAircraft;  // 0xD6E
+    unsigned char Organic;  // 0xD6F
     unsigned int NoShadow;  // 0xD70
     unsigned int RequiresStolenSovietTech;  // 0xD74
     int ForbiddenHouses;  // 0xD78
@@ -398,7 +423,9 @@ struct BuildingTypeClass {
     int ZFudgeTunnel;  // 0xDA0
     int PaletteFile[8];  // 0xDA4
     int Palette;  // 0xDC4
-    char __pad_DC8[44];  // 0xDC8
+    char __pad_DC8[4];  // 0xDC8
+    unsigned int u32_DCC;  // 0xDCC
+    char __pad_DD0[36];  // 0xDD0
     int align_DF4;  // 0xDF4
     void * ArrayIndex;  // 0xDF8
     SHPStruct* __pad_DFC;  // 0xDFC
@@ -435,7 +462,8 @@ struct BuildingTypeClass {
     char __pad_E8D[19];  // 0xE8D
     UnitTypeClass * FreeUnit_d;  // 0xEA0
     InfantryTypeClass * SecretInfantry_d;  // 0xEA4
-    char __pad_EA8[8];  // 0xEA8
+    char __pad_EA8[4];  // 0xEA8
+    BuildingTypeClass * u32_EAC;  // 0xEAC
     int BuildingTypeClass_field_EB0;  // 0xEB0
     int Adjacent;  // 0xEB4
     int BuildingTypeClass_field_ED8;  // 0xEB8
@@ -458,7 +486,10 @@ struct BuildingTypeClass {
     unsigned char __pad_F70;  // 0xF70
     char __pad_F71[575];  // 0xF71
     char q11B0[4];  // 0x11B0
-    char __pad_11B4[812];  // 0x11B4
+    char __pad_11B4[44];  // 0x11B4
+    uint32_t u32_11E0;  // 0x11E0
+    unsigned int u32_11E4;  // 0x11E4
+    char __pad_11E8[760];  // 0x11E8
     int Upgrades_d;  // 0x14E0
     SHPStruct * DeployingAnim_2;  // 0x14E4
     bool DeployingAnimLoaded_d;  // 0x14E8

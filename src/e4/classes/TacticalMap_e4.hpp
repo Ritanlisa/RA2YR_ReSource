@@ -16,7 +16,8 @@ struct TacticalMap {
     char __pad_12[2];  // 0x12
     int TacticalMap_field_14;  // 0x14
     float m_TintFactor;  // 0x18
-    char __pad_1C[8];  // 0x1C
+    char __pad_1C[4];  // 0x1C
+    int32_t TacticalMap_field_20;  // 0x20
     unsigned char q024;  // 0x24
     char __pad_25[15];  // 0x25
     unsigned int q034;  // 0x34
@@ -69,7 +70,9 @@ struct TacticalMap {
     unsigned int q144;  // 0x144
     char __pad_148[32];  // 0x148
     unsigned int q168;  // 0x168
-    char __pad_16C[332];  // 0x16C
+    char __pad_16C[324];  // 0x16C
+    unsigned int u32_2B0;  // 0x2B0
+    unsigned int u32_2B4;  // 0x2B4
     unsigned int q2B8;  // 0x2B8
     char __pad_2BC[2728];  // 0x2BC
     unsigned char qD64;  // 0xD64

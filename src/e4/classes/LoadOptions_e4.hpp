@@ -23,7 +23,9 @@ struct LoadOptions {
     unsigned char is_active;  // 0x20
     unsigned char owns_memory;  // 0x21
     unsigned char __pad_022;  // 0x22
-    char __pad_23[11];  // 0x23
+    char __pad_23[1];  // 0x23
+    unsigned int u32_24;  // 0x24
+    char __pad_28[6];  // 0x28
     unsigned short pad_2E;  // 0x2E
     unsigned int capacity;  // 0x30
     unsigned int grow_step;  // 0x34

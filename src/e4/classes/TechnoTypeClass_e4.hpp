@@ -25,17 +25,22 @@ struct DynamicVectorClass_flat;  // fix_fwd_type_supply
 struct VectorClass_flat;  // fix_fwd_type_supply
 
 struct TechnoTypeClass {
-#pragma pack(push, 1)  // X60: binary-packed layout
-    unsigned int ptr_0;  // 0x0
+    unsigned char ptr_0;  // 0x0
+    unsigned char u32_1;  // 0x1
+    unsigned char u32_2;  // 0x2
+    unsigned char u32_3;  // 0x3
     void * ptr_4;  // 0x4
     void * ptr_8;  // 0x8
-    void * ptr_C;  // 0xC
+    char ptr_C[1];  // 0xC
+    unsigned char u8_D;  // 0xD
+    char __pad_E[2];  // 0xE
     void * uniqueId;  // 0x10
     unsigned int abstractFlags;  // 0x14
     unsigned int nextArrayIndex;  // 0x18
     char referenceCount[4];  // 0x1C
     unsigned int NeedsSaveOrLink;  // 0x20
-    char __pad_24[8];  // 0x24
+    char __pad_24[4];  // 0x24
+    int TargetEffectivenessCoefficient;  // 0x28
     int ChargerBarrels_0x12;  // 0x2C
     char __pad_30[4];  // 0x30
     char __pad_34[3];  // 0x34
@@ -101,7 +106,8 @@ struct TechnoTypeClass {
     unsigned long long threatAvoidValue;  // 0x2D8
     unsigned long long cloakRadius;  // 0x2E0
     unsigned long long buildLimit;  // 0x2E8
-    unsigned long long __pad_2F0;  // 0x2F0
+    char __pad_2F0[4];  // 0x2F0
+    unsigned int u32_2F4;  // 0x2F4
     unsigned int u32_2F8;  // 0x2F8
     int align_2FC;  // 0x2FC
     int unknown_double_300[2];  // 0x300
@@ -365,23 +371,41 @@ struct TechnoTypeClass {
     char __pad_CF8[20];  // 0xCF8
     unsigned int u32_D0C;  // 0xD0C
     unsigned int u32_D10;  // 0xD10
-    unsigned int u32_D14;  // 0xD14
+    unsigned char u32_D14;  // 0xD14
+    unsigned char u32_D15;  // 0xD15
+    char __pad_D16[2];  // 0xD16
     int SlavesNumber;  // 0xD18
     int SlaveRegenRate;  // 0xD1C
     unsigned char __pad_D20;  // 0xD20
     unsigned char u32_D21;  // 0xD21
     unsigned char u32_D22;  // 0xD22
     unsigned char u32_D23;  // 0xD23
-    unsigned int u32_D24;  // 0xD24
-    unsigned int u32_D28;  // 0xD28
-    unsigned int u32_D2C;  // 0xD2C
-    int u8_D30;  // 0xD30
-    unsigned int u32_D34;  // 0xD34
+    unsigned char u32_D24;  // 0xD24
+    unsigned char u32_D25;  // 0xD25
+    unsigned char u32_D26;  // 0xD26
+    unsigned char u32_D27;  // 0xD27
+    unsigned char u32_D28;  // 0xD28
+    unsigned char u32_D29;  // 0xD29
+    unsigned char u32_D2A;  // 0xD2A
+    unsigned char u32_D2B;  // 0xD2B
+    unsigned char u32_D2C;  // 0xD2C
+    unsigned char u32_D2D;  // 0xD2D
+    unsigned char u8_D2E;  // 0xD2E
+    unsigned char u32_D2F;  // 0xD2F
+    unsigned char u8_D30;  // 0xD30
+    unsigned char u32_D31;  // 0xD31
+    unsigned char u32_D32;  // 0xD32
+    unsigned char u32_D33;  // 0xD33
+    unsigned char u32_D34;  // 0xD34
+    unsigned char u8_D35;  // 0xD35
+    unsigned char u8_D36;  // 0xD36
+    unsigned char u32_D37;  // 0xD37
     char __pad_D38[1];  // 0xD38
     unsigned char u32_D39;  // 0xD39
     unsigned char u32_D3A;  // 0xD3A
     char __pad_D3B[1];  // 0xD3B
-    char u32_D3C[2];  // 0xD3C
+    char u32_D3C[1];  // 0xD3C
+    unsigned char u32_D3D;  // 0xD3D
     bool BalloonHover;  // 0xD3E
     unsigned char __pad_D3F;  // 0xD3F
     IUnknown * SuppressionThreshold;  // 0xD40
@@ -413,10 +437,15 @@ struct TechnoTypeClass {
     char __pad_D91[3];  // 0xD91
     bool JumpJet;  // 0xD94
     bool Crashable;  // 0xD95
-    UnitTypeClass* __pad_D96;  // 0xD96
+    char __pad_D96[1];  // 0xD96
+    unsigned char u8_D97;  // 0xD97
+    unsigned char u32_D98;  // 0xD98
+    unsigned char u32_D99;  // 0xD99
     unsigned char u32_D9A;  // 0xD9A
     unsigned char u32_D9B;  // 0xD9B
-    unsigned int u32_D9C;  // 0xD9C
+    unsigned char u32_D9C;  // 0xD9C
+    unsigned char u32_D9D;  // 0xD9D
+    char __pad_D9E[2];  // 0xD9E
     int ZFudgeBridge;  // 0xDA0
     int PaletteFile[8];  // 0xDA4
     void * Palette;  // 0xDC4
@@ -475,7 +504,6 @@ struct TechnoTypeClass {
 #if !defined(GAMEMD_TREE_UNIVERSE) && !defined(GAMEMD_E4_VECTOR_TREE_TRUTH)
 #else
 #endif  // X27: template-carrier universe fallback
-#pragma pack(pop)
 };
 
 } // namespace gamemd

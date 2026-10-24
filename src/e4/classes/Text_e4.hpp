@@ -8,7 +8,8 @@ namespace gamemd {
 struct Text {
     int Text_field_00;  // 0x0
     unsigned int u32_4;  // 0x4
-    char __pad_8[20];  // 0x8
+    unsigned int u32_8;  // 0x8
+    char __pad_C[16];  // 0xC
     unsigned int u32_1C;  // 0x1C
     char __pad_20[9972];  // 0x20
     unsigned int u32_2714;  // 0x2714

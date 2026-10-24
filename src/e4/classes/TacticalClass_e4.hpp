@@ -137,7 +137,13 @@ struct TacticalClass {
     unsigned char q11CC;  // 0x11CC
     unsigned char q11CD;  // 0x11CD
     unsigned char q11CE;  // 0x11CE
-    char __pad_11CF[77];  // 0x11CF
+    char __pad_11CF[1];  // 0x11CF
+    unsigned int DisplayClass_field_0x11D0;  // 0x11D0
+    unsigned int DisplayClass_field_0x11D4;  // 0x11D4
+    unsigned int DisplayClass_field_0x11D8;  // 0x11D8
+    unsigned int DisplayClass_field_0x11DC;  // 0x11DC
+    unsigned int DisplayClass_field_0x11E0;  // 0x11E0
+    char __pad_11E4[56];  // 0x11E4
     unsigned int q121C;  // 0x121C
     unsigned int q1220;  // 0x1220
     char __pad_1224[24];  // 0x1224

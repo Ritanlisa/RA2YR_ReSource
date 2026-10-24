@@ -20,15 +20,20 @@ struct UDPInterfaceClass {
     unsigned int q010;  // 0x10
     char __pad_14[4];  // 0x14
     unsigned int q018;  // 0x18
-    char __pad_1C[8];  // 0x1C
+    char __pad_1C[4];  // 0x1C
+    unsigned int q020;  // 0x20
     unsigned int u32_24;  // 0x24
-    char __pad_28[8];  // 0x28
+    unsigned int q028;  // 0x28
+    char __pad_2C[4];  // 0x2C
     unsigned int u32_30;  // 0x30
-    char __pad_34[8];  // 0x34
+    char q034[4];  // 0x34
+    unsigned int q038;  // 0x38
     unsigned int u32_3C;  // 0x3C
-    char __pad_40[8];  // 0x40
+    unsigned int q040;  // 0x40
+    char __pad_44[4];  // 0x44
     unsigned int u32_48;  // 0x48
-    char __pad_4C[258068];  // 0x4C
+    unsigned int q04C;  // 0x4C
+    char __pad_50[258064];  // 0x50
     unsigned int u32_3F060;  // 0x3F060
     unsigned int u32_3F064;  // 0x3F064
     unsigned char q3F068;  // 0x3F068
@@ -47,12 +52,12 @@ struct UDPInterfaceClass {
     unsigned int u32_3F330;  // 0x3F330
     unsigned int u32_3F334;  // 0x3F334
     unsigned int q3F338;  // 0x3F338
-    unsigned int q3F33C;  // 0x3F33C
+    unsigned int u32_3F33C;  // 0x3F33C
     unsigned int q3F340;  // 0x3F340
     char __pad_3F344[1];  // 0x3F344
     unsigned char q3F345;  // 0x3F345
     char __pad_3F346[2];  // 0x3F346
-    unsigned int q3F348;  // 0x3F348
+    unsigned int u32_3F348;  // 0x3F348
     char __pad_3F34C[516];  // 0x3F34C
     unsigned int q3F550;  // 0x3F550
     unsigned int u32_3F554;  // 0x3F554

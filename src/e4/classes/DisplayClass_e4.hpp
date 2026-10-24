@@ -19,7 +19,9 @@ struct DisplayClass {
     void * ptr_0;  // 0x0
     AbstractClass * ptr_4;  // 0x4
     unsigned int q008;  // 0x8
-    unsigned int u32_C;  // 0xC
+    unsigned char u32_C;  // 0xC
+    bool IsAllocated;  // 0xD
+    char __pad_E[2];  // 0xE
     int Count;  // 0x10
     int CapacityIncrement;  // 0x14
     unsigned char __pad_018;  // 0x18
@@ -45,7 +47,9 @@ struct DisplayClass {
     char __pad_D9[19];  // 0xD9
     unsigned int MapRect;  // 0xEC
     unsigned char __pad_0F0;  // 0xF0
-    char __pad_F1[11];  // 0xF1
+    char __pad_F1[3];  // 0xF1
+    unsigned int q0F4;  // 0xF4
+    unsigned int q0F8;  // 0xF8
     unsigned int VisibleRect;  // 0xFC
     unsigned char __pad_100;  // 0x100
     char __pad_101[15];  // 0x101
@@ -80,9 +84,19 @@ struct DisplayClass {
     char __pad_D6C[8];  // 0xD6C
     int u32_D74;  // 0xD74
     int u32_D78;  // 0xD78
-    char __pad_D7C[1024];  // 0xD7C
+    char __pad_D7C[1000];  // 0xD7C
+    unsigned int q1164;  // 0x1164
+    char __pad_1168[4];  // 0x1168
+    unsigned int q116C;  // 0x116C
+    char __pad_1170[8];  // 0x1170
+    unsigned short q1178;  // 0x1178
+    unsigned short u16_117A;  // 0x117A
     unsigned int q117C;  // 0x117C
-    char __pad_1180[20];  // 0x1180
+    char __pad_1180[1];  // 0x1180
+    unsigned char q1181;  // 0x1181
+    char __pad_1182[10];  // 0x1182
+    unsigned int u32_118C;  // 0x118C
+    unsigned int u32_1190;  // 0x1190
     int q1194;  // 0x1194
     char __pad_1198[4];  // 0x1198
     unsigned int u32_119C;  // 0x119C
@@ -91,8 +105,18 @@ struct DisplayClass {
     char __pad_11A5[3];  // 0x11A5
     int q11A8;  // 0x11A8
     unsigned char q11AC[4];  // 0x11AC
-    int q11B0;  // 0x11B0
-    char __pad_11B4[28];  // 0x11B4
+    unsigned char q11B0;  // 0x11B0
+    unsigned char u8_11B1;  // 0x11B1
+    unsigned char u32_11B2;  // 0x11B2
+    unsigned char q11B3;  // 0x11B3
+    char __pad_11B4[4];  // 0x11B4
+    unsigned int q11B8;  // 0x11B8
+    unsigned int u32_11BC;  // 0x11BC
+    char __pad_11C0[12];  // 0x11C0
+    unsigned char q11CC;  // 0x11CC
+    unsigned char q11CD;  // 0x11CD
+    unsigned char q11CE;  // 0x11CE
+    unsigned char q11CF;  // 0x11CF
     int q11D0;  // 0x11D0
     int q11D4;  // 0x11D4
     int q11D8;  // 0x11D8

@@ -19,6 +19,7 @@ struct HouseClass;  // fix_fwd_type_supply
 struct MSShapeAnim;  // fix_fwd_type_supply
 
 struct ParticleClass {
+#pragma pack(push, 1)  // X60: binary-packed layout
     char ptr_0[2];  // 0x0
     char ParticleClass_field_0x2[4];  // 0x2
     char __pad_6[2];  // 0x6
@@ -64,18 +65,22 @@ struct ParticleClass {
     bool isInLogic;  // 0x98
     bool isVisible;  // 0x99
     unsigned char alignmentPadding99;  // 0x9A
-    char __pad_9B[3];  // 0x9B
+    char __pad_9B[1];  // 0x9B
+    unsigned short Coord_9C;  // 0x9C
     unsigned char __pad_09E;  // 0x9E
     char __pad_9F[1];  // 0x9F
     unsigned int u32_A0;  // 0xA0
     unsigned int u32_A4;  // 0xA4
     char __pad_A8[4];  // 0xA8
     unsigned int u32_AC;  // 0xAC
-    char __pad_B0[4];  // 0xB0
+    char q_B0[1];  // 0xB0
+    unsigned char q0B1;  // 0xB1
+    unsigned char q0B2;  // 0xB2
+    char __pad_B3[1];  // 0xB3
     unsigned int u32_B4;  // 0xB4
     int q0B8;  // 0xB8
     int u32_BC;  // 0xBC
-    IUnknown * q0C0;  // 0xC0
+    IUnknown * ptr_C0;  // 0xC0
     int u32_C4;  // 0xC4
     int u32_C8;  // 0xC8
     int q0CC;  // 0xCC
@@ -84,7 +89,9 @@ struct ParticleClass {
     int u32_D8;  // 0xD8
     int u32_DC;  // 0xDC
     int q0E0;  // 0xE0
-    char __pad_E4[28];  // 0xE4
+    char Tactical_E4[21];  // 0xE4
+    unsigned int ParticleSystemClass_field_bool_F9;  // 0xF9
+    char __pad_FD[3];  // 0xFD
     unsigned int u32_100;  // 0x100
     unsigned int u32_104;  // 0x104
     unsigned int u32_108;  // 0x108
@@ -93,9 +100,11 @@ struct ParticleClass {
     unsigned int RemainingEC;  // 0x114
     unsigned int StateAIAdvance;  // 0x118
     int __pad_11C;  // 0x11C
-    char __pad_120[4];  // 0x120
+    char q_120[4];  // 0x120
     int u32_124;  // 0x124
-    char __pad_128[5];  // 0x128
+    char __pad_128[2];  // 0x128
+    unsigned short u32_12A;  // 0x12A
+    unsigned char u32_12C;  // 0x12C
     unsigned char u32_12D;  // 0x12D
     unsigned char StartStateAI;  // 0x12E
     unsigned char Translucency;  // 0x12F
@@ -142,6 +151,7 @@ struct ParticleClass {
     int AdjustHeight();
     void DrawParticle(int * a2, int * a3);
     void Update(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0);  // G42.39 supply
+#pragma pack(pop)
 };
 
 } // namespace gamemd

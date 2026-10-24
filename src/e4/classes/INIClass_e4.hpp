@@ -12,11 +12,16 @@ struct VoxelStruct;  // fix_fwd_type_supply
 #ifndef GAMEMD_E4_INIClass  // G42.57w14 twin-guard (shared w/ system/ini_class.hpp; first-include wins)
 #define GAMEMD_E4_INIClass 1
 struct INIClass {
-    INILinkNode* __pad_0;  // 0x0
+    char ptr_0[1];  // 0x0
+    unsigned char u32_1;  // 0x1
+    unsigned char u32_2;  // 0x2
+    unsigned char ptr_3;  // 0x3
     char headNode[12];  // 0x4
     char sectionHead[12];  // 0x10
     int sectionCount;  // 0x1C
-    char q020[12];  // 0x20
+    char q020[4];  // 0x20
+    unsigned int u32_24;  // 0x24
+    unsigned int ptr_28;  // 0x28
     int INIClass_field_2C;  // 0x2C
     int unknown30;  // 0x30
     bool needsSave_flag;  // 0x34

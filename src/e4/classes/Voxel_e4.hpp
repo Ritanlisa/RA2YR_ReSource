@@ -13,12 +13,13 @@ struct CellStruct;  // fix_fwd_type_supply
 #endif // GAMEMD_TREE_UNIVERSE
 struct DynamicVectorClass_flat;  // fix_fwd_type_supply
 struct Voxel {
-#pragma pack(push, 1)  // X60: binary-packed layout
     unsigned char __pad_000;  // 0x0
     char __pad_1[3];  // 0x1
     unsigned int u32_4;  // 0x4
     unsigned int u32_8;  // 0x8
-    unsigned int u32_C;  // 0xC
+    unsigned char u32_C;  // 0xC
+    unsigned char u8_D;  // 0xD
+    char __pad_E[2];  // 0xE
     unsigned int u32_10;  // 0x10
     unsigned int u32_14;  // 0x14
     int u32_18;  // 0x18
@@ -29,7 +30,8 @@ struct Voxel {
     int u32_2C;  // 0x2C
     unsigned char u32_30[108];  // 0x30
     int q09C;  // 0x9C
-    char __pad_A0[16];  // 0xA0
+    char __pad_A0[12];  // 0xA0
+    unsigned int u32_AC;  // 0xAC
     unsigned int u32_B0;  // 0xB0
     unsigned int u32_B4;  // 0xB4
     unsigned int u32_B8;  // 0xB8
@@ -38,10 +40,36 @@ struct Voxel {
     unsigned int u32_C4;  // 0xC4
     unsigned int u32_C8;  // 0xC8
     int q0CC;  // 0xCC
-    unsigned char q0D0[96];  // 0xD0
+    char q0D0[4];  // 0xD0
+    unsigned int u32_D4;  // 0xD4
+    unsigned int u32_D8;  // 0xD8
+    unsigned int u32_DC;  // 0xDC
+    unsigned int u32_E0;  // 0xE0
+    unsigned int u32_E4;  // 0xE4
+    unsigned int u32_E8;  // 0xE8
+    unsigned int u32_EC;  // 0xEC
+    unsigned int u32_F0;  // 0xF0
+    unsigned int u32_F4;  // 0xF4
+    unsigned int u32_F8;  // 0xF8
+    unsigned int u32_FC;  // 0xFC
+    unsigned int q100;  // 0x100
+    unsigned int q104;  // 0x104
+    unsigned int q108;  // 0x108
+    unsigned int u32_10C;  // 0x10C
+    unsigned int u32_110;  // 0x110
+    unsigned int q114;  // 0x114
+    unsigned int q118;  // 0x118
+    unsigned int u32_11C;  // 0x11C
+    unsigned int q120;  // 0x120
+    unsigned int q124;  // 0x124
+    unsigned int q128;  // 0x128
+    unsigned char u32_12C;  // 0x12C
+    unsigned char u64_12D;  // 0x12D
+    char __pad_12E[2];  // 0x12E
     int q130;  // 0x130
-    char __pad_134[4];  // 0x134
-    double q138;  // 0x138
+    char q134[4];  // 0x134
+    unsigned int q138;  // 0x138
+    unsigned int u32_13C;  // 0x13C
     unsigned int u32_140;  // 0x140
     unsigned int q144;  // 0x144
     unsigned int u32_148;  // 0x148
@@ -49,7 +77,9 @@ struct Voxel {
     unsigned int q150;  // 0x150
     char __pad_154[44];  // 0x154
     unsigned int q180;  // 0x180
-    char __pad_184[36];  // 0x184
+    char __pad_184[28];  // 0x184
+    unsigned int u32_1A0;  // 0x1A0
+    unsigned int u32_1A4;  // 0x1A4
     unsigned int u32_1A8;  // 0x1A8
     unsigned int u32_1AC;  // 0x1AC
     unsigned int u32_1B0;  // 0x1B0
@@ -61,7 +91,7 @@ struct Voxel {
     unsigned int u32_1C4;  // 0x1C4
     unsigned int u32_1C8;  // 0x1C8
     unsigned int u32_1CC;  // 0x1CC
-    char __pad_1D0[4];  // 0x1D0
+    char q1D0[4];  // 0x1D0
     unsigned int u32_1D4;  // 0x1D4
     unsigned int u32_1D8;  // 0x1D8
     char __pad_1DC[20];  // 0x1DC
@@ -106,6 +136,5 @@ struct Voxel {
     int  FacePixelBuffer3(int * a1);  // 0x7DFC00
     static int  SetProjectionAngle(float a1);  // 0x754C00
     int InitDistanceTable();  // 0x75F020
-#pragma pack(pop)
 };
 } // namespace gamemd

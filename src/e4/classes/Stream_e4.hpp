@@ -17,7 +17,10 @@ struct Stream {
     int Stream_field_0C;  // 0xC
     int Stream_field_10;  // 0x10
     unsigned int u32_14;  // 0x14
-    char __pad_18[24];  // 0x18
+    unsigned int u32_18;  // 0x18
+    char __pad_1C[4];  // 0x1C
+    unsigned int u32_20;  // 0x20
+    char __pad_24[12];  // 0x24
     unsigned int u32_30;  // 0x30
     char __pad_34[4];  // 0x34
     unsigned int u32_38;  // 0x38
@@ -26,7 +29,8 @@ struct Stream {
     unsigned int q050;  // 0x50
     char __pad_54[4];  // 0x54
     unsigned int u32_58;  // 0x58
-    char __pad_5C[16];  // 0x5C
+    char __pad_5C[12];  // 0x5C
+    unsigned int u32_68;  // 0x68
     unsigned int u32_6C;  // 0x6C
     unsigned char u32_70;  // 0x70
     unsigned int u8_71;  // 0x71

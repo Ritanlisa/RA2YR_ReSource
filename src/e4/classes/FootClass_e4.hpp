@@ -124,7 +124,9 @@ struct FootClass {
     int disguiseBlinkTimer[3];  // 0x1EC
     bool isTargetedByChrono;  // 0x1F8
     char q1F9[3];  // 0x1F9
-    char __pad_1FC[12];  // 0x1FC
+    char __pad_1FC[1];  // 0x1FC
+    char alignmentPadding1F9[3];  // 0x1FD
+    unsigned long long reloadTimer;  // 0x200
     unsigned int currentBurstCount;  // 0x208
     unsigned int __pad_20C;  // 0x20C
     int displayProductionTo;  // 0x210
@@ -151,7 +153,8 @@ struct FootClass {
     TemporalClass * temporalUsing;  // 0x274
     TemporalClass * temporalTargetingMe;  // 0x278
     bool isImmobilized;  // 0x27C
-    char q27D[3];  // 0x27D
+    char q27D[1];  // 0x27D
+    unsigned short alignmentPadding27E;  // 0x27E
     int owningHouseIndex0;  // 0x280
     int isBeingWarpedOut_d;  // 0x284
     char temporalUsing_d[12];  // 0x288
@@ -188,10 +191,15 @@ struct FootClass {
     ParticleSystemClass * sparkParticles;  // 0x308
     int ambientParticles;  // 0x30C
     int ammo_d;  // 0x310
-    unsigned int __pad_314;  // 0x314
+    char __pad_314[1];  // 0x314
+    unsigned char isBarrelLocked;  // 0x315
+    unsigned char isHumanControlled;  // 0x316
+    unsigned char isDiscoveredByPlayer;  // 0x317
     int unk1Particles;  // 0x318
     char __pad_31C[1];  // 0x31C
-    char __pad_31D[3];  // 0x31D
+    char __pad_31D[1];  // 0x31D
+    unsigned char isRecruitableByEnemy;  // 0x31E
+    unsigned char isRadarTracked;  // 0x31F
     int ambientParticles_d;  // 0x320
     int damageParticles_2;  // 0x324
     unsigned int railgunParticles_2;  // 0x328
@@ -256,7 +264,9 @@ struct FootClass {
     unsigned char alignmentPadding43B;  // 0x43B
     unsigned int grindingAnimHandle;  // 0x43C
     int currentTargetThreatValues[6];  // 0x440
-    char __pad_458[24];  // 0x458
+    char __pad_458[16];  // 0x458
+    unsigned int vt_slot_468;  // 0x468
+    char __pad_46C[4];  // 0x46C
     int attackedTargets[6];  // 0x470
     char turretRotateSoundController[20];  // 0x488
     unsigned int isTurretRotateSoundPlaying;  // 0x49C
@@ -294,7 +304,8 @@ struct FootClass {
     short FootClass_field_526;  // 0x526
     unsigned short FootClass_field_528;  // 0x528
     char FootClass_field_52A[2];  // 0x52A
-    char FootClass_field_52C[4];  // 0x52C
+    int16_t FootClass_field_52C;  // 0x52C
+    int16_t FootClass_field_52E;  // 0x52E
     ILocomotion * FootClass_field_530;  // 0x530
     ILocomotion * FootClass_field_534;  // 0x534
     int FootClass_field_538;  // 0x538
@@ -302,27 +313,38 @@ struct FootClass {
     char m_padding_53D[3];  // 0x53D
     IUnknown * FootClass_field_540;  // 0x540
     char audioController7[20];  // 0x544
-    int FootClass_field_558;  // 0x558
-    int FootClass_field_55C;  // 0x55C
-    int FootClass_field_560;  // 0x560
+    int16_t FootClass_field_558;  // 0x558
+    int16_t FootClass_field_55A;  // 0x55A
+    int16_t FootClass_field_55C;  // 0x55C
+    int16_t FootClass_field_55E;  // 0x55E
+    int16_t FootClass_field_560;  // 0x560
+    int16_t FootClass_field_562;  // 0x562
     void * currentJumpjetMapCoords;  // 0x564
-    char FootClass_field_568[12];  // 0x568
+    int32_t FootClass_field_568;  // 0x568
+    int32_t FootClass_field_56C;  // 0x56C
+    int32_t FootClass_field_570;  // 0x570
     unsigned int unused574;  // 0x574
-    unsigned long long FootClass_field_578;  // 0x578
-    char FootClass_field_580[8];  // 0x580
+    int32_t FootClass_field_578;  // 0x578
+    int32_t FootClass_field_57C;  // 0x57C
+    int32_t FootClass_field_580;  // 0x580
+    float FootClass_field_584;  // 0x584
     int unknownAbstractArray588;  // 0x588
     char __pad_58C[4];  // 0x58C
     AbstractClass * q590;  // 0x590
-    char __pad_594[4];  // 0x594
+    char __pad_594[1];  // 0x594
+    unsigned char u32_595;  // 0x595
+    char __pad_596[2];  // 0x596
     unsigned int q598;  // 0x598
     unsigned int q59C;  // 0x59C
     int FootClass_field_5A0;  // 0x5A0
     int FootClass_field_5A4;  // 0x5A4
     int FootClass_field_5A8;  // 0x5A8
     void * FootClass_DVC_5AC;  // 0x5AC
-    char __pad_5B0[4];  // 0x5B0
+    char q_5B0[4];  // 0x5B0
     AbstractClass * q5B4;  // 0x5B4
-    char __pad_5B8[4];  // 0x5B8
+    char __pad_5B8[1];  // 0x5B8
+    unsigned char u32_5B9;  // 0x5B9
+    char __pad_5BA[2];  // 0x5BA
     AbstractClass * q5BC;  // 0x5BC
     unsigned int q5C0;  // 0x5C0
     int FootClass_field_5C4;  // 0x5C4
@@ -335,11 +357,20 @@ struct FootClass {
     void * nextTeamMember;  // 0x5D8
     void * FootClass_field_5DC;  // 0x5DC
     char pathDirections[96];  // 0x5E0
-    char FootClass_field_640[12];  // 0x640
+    int32_t FootClass_field_640;  // 0x640
+    int32_t FootClass_field_644;  // 0x644
+    int32_t vt_slot_648;  // 0x648
     int FootClass_field_64C;  // 0x64C
-    char FootClass_field_650[12];  // 0x650
-    char FootClass_field_65C[12];  // 0x65C
-    char FootClass_field_668[12];  // 0x668
+    int32_t FootClass_field_650;  // 0x650
+    int32_t FootClass_field_654;  // 0x654
+    int32_t FootClass_field_658;  // 0x658
+    int32_t FootClass_field_65C;  // 0x65C
+    int32_t FootClass_field_660;  // 0x660
+    int32_t FootClass_field_664;  // 0x664
+    int32_t FootClass_field_668;  // 0x668
+    int32_t FootClass_field_66C;  // 0x66C
+    unsigned short FootClass_field_670;  // 0x670
+    unsigned short vt_slot_672;  // 0x672
     ILocomotion * locomotor;  // 0x674
     char Locomotor_ptr[12];  // 0x678
     unsigned char FootClass_field_684;  // 0x684
@@ -361,7 +392,9 @@ struct FootClass {
     int FootClass_field_694;  // 0x694
     int FootClass_field_698;  // 0x698
     int parasiteImUsing;  // 0x69C
-    char FootClass_field_6A0[12];  // 0x6A0
+    int32_t FootClass_field_6A0;  // 0x6A0
+    int32_t FootClass_field_6A4;  // 0x6A4
+    void * FootClass_bools_6A8;  // 0x6A8
     bool FootClass_field_bool_6AC;  // 0x6AC
     bool isAttackedByLocomotor;  // 0x6AD
     bool isLetGoByLocomotor;  // 0x6AE
@@ -375,8 +408,13 @@ struct FootClass {
     bool FootClass_field_6B6;  // 0x6B6
     bool FootClass_field_6B7;  // 0x6B7
     bool FootClass_field_6B8;  // 0x6B8
-    char FootClass_field_6B9[3];  // 0x6B9
-    unsigned int FootClass_field_6BC;  // 0x6BC
+    bool FootClass_field_6B9;  // 0x6B9
+    bool FootClass_field_6BA;  // 0x6BA
+    bool FootClass_field_6BB;  // 0x6BB
+    bool FootClass_field_6BC;  // 0x6BC
+    bool FootClass_field_6BD;  // 0x6BD
+    bool FootClass_field_6BE;  // 0x6BE
+    bool FootClass_field_6BF;  // 0x6BF
     unsigned int u32_6C0;  // 0x6C0
     unsigned int u32_6C4;  // 0x6C4
 // --- flat members (BEGIN) ---

@@ -86,6 +86,10 @@ C2039_NAMES = ROOT / "anchors/x116_c2039_names.json"
 
 C2039_RE = re.compile(
     r'error C2039:\s*"([^"]+)":\s*(?:不是|is not a member of)\s*"([^"]+)"')
+# X120: clang-cl surface (x105/x117b) spells the same diagnostic as
+#   error: no member named 'Member' in 'gamemd::Class'
+CLANG_NOMEMBER_RE = re.compile(
+    r"error: no member named '([^']+)' in '([^']+)'")
 
 MEMBER_RE = re.compile(
     r'\{"type":\s*"MEMBER_ACCESS",\s*"base":\s*"([^"]+)",\s*'
@@ -93,6 +97,12 @@ MEMBER_RE = re.compile(
 THIS_BASE_RE = re.compile(r"^(0x[0-9A-Fa-f]+):this$")
 HEX_NAME_RE = re.compile(r"^[A-Za-z_]\w*$")
 PAD_RE = re.compile(r"^(?:__?pad|_pad|pad_|vfptr|vtable|vtbl|vt_)", re.I)
+# X120: placeholder member spellings a body-C2039 pin may override
+# (mirror of gen_x60_carrier_layout.DECODABLE)
+PLACEHOLDER_RE = re.compile(
+    r"^(?:q[0-9A-Fa-f]{2,6}|u(?:8|16|32|64)_[0-9A-Fa-f]+|ptr_[0-9A-Fa-f]+"
+    r"|__pad_[0-9A-Fa-f]+|field_[0-9A-Fa-f]{1,6}|\w*_field_[0-9A-Fa-f]{2,6}"
+    r"|M\d+|vfptr\d*|vtable\d*|vt_\w+|unknown_?\d*)$")
 WIDTH_TYPE = {1: "unsigned char", 2: "unsigned short", 4: "unsigned int",
               8: "unsigned long long"}
 
@@ -367,8 +377,11 @@ def extract_c2039_names(log_path, ns):
     the only way to resolve C2039 without renaming the body.
     """
     votes = collections.defaultdict(lambda: collections.defaultdict(collections.Counter))
+    canon = json.loads(CANON_MEMBERS.read_text(encoding="utf-8"))
     for line in open(log_path, "r", encoding="utf-8", errors="replace"):
         m = C2039_RE.search(line)
+        if not m:
+            m = CLANG_NOMEMBER_RE.search(line)
         if not m:
             continue
         member, cls = m.group(1), m.group(2).split("::")[-1]
@@ -376,6 +389,15 @@ def extract_c2039_names(log_path, ns):
         if not layout:
             continue
         off = name_to_offset(member)
+        if off is None:
+            # X120: semantic body names (e.g. BarrelVoxel) carry no offset;
+            # resolve through the canon member table, single-name match only
+            # (ambiguous names are not evidence)
+            mems = ((canon.get(layout) or {}).get("members") or {})
+            hits = [int(str(k), 0) for k, v in mems.items()
+                    if isinstance(v, dict) and v.get("name") == member]
+            if len(hits) == 1:
+                off = hits[0]
         if off is None:
             continue
         votes[layout][off][member] += 1
@@ -394,6 +416,45 @@ def load_c2039_names():
         return {}
     d = json.loads(C2039_NAMES.read_text(encoding="utf-8"))
     return d.get("names") or {}
+
+
+# X120: (class, offset) renames measured net-harmful — the old spelling is
+# still used by bodies the pin cannot satisfy (alias conflict), so the
+# carrier keeps its pre-X120 name.  Pinned artifact generated from the
+# full-tree clang victim measurement (.omo/x120_rename_victims.json).
+C2039_EXCLUDES = ROOT / "anchors" / "x116_c2039_excludes.json"
+
+
+def load_c2039_excludes():
+    if not C2039_EXCLUDES.exists():
+        return {}
+    d = json.loads(C2039_EXCLUDES.read_text(encoding="utf-8"))
+    return d.get("excludes") or {}
+
+
+# X120: body-usage-driven member width hints.  Evidence: every pinned site
+# passes `&recv->Member` as a `uint8_t*` INI-section argument, which only
+# compiles for a 1-byte scalar member (VoxelAnimTypeClass_e4.cpp
+# 0x74b08d..0x74b4c1, AircraftTypeClass_e4.cpp 0x5f9412-style callers).
+# The carrier pads (`__pad_24`) predate those bodies and CSP has no row at
+# the offset (address-taken, never read/written by width).
+C2039_WIDTH_HINTS = {
+    ("VoxelAnimTypeClass", "BarrelVoxel"): 1,
+    ("AircraftTypeClass", "BarrelVoxel"): 1,
+}
+
+
+def name_encoded_width(nm):
+    """Width the body's offset-encoded spelling declares (0 = unknown)."""
+    if not nm:
+        return 0
+    if nm.startswith("u8_"):
+        return 1
+    if nm.startswith("u16_"):
+        return 2
+    if nm.startswith("u32_") or nm.startswith("ptr_") or nm.startswith("q"):
+        return 4
+    return 0
 
 
 BUILTIN_TYPES = {
@@ -439,7 +500,7 @@ def safe_type(ty, w, known_classes):
 
 
 def build_class_entry(cls, existing, csp_offs, x112, ml, canon, ns,
-                      til_size=0, carrier=None, preferred=None):
+                      til_size=0, carrier=None, preferred=None, excludes=None):
     """Merge existing layout + til lower bound + X112 + CSP evidence.
 
     `carrier` maps off -> {name, type, width} from the *current* carrier
@@ -453,6 +514,7 @@ def build_class_entry(cls, existing, csp_offs, x112, ml, canon, ns,
     cne = canon_entries(canon, cls)
     carrier = carrier or {}
     preferred = preferred or {}
+    excludes = excludes or {}
 
     # ---- existing members (never renamed / never removed) ----------------
     members = {}
@@ -561,6 +623,11 @@ def build_class_entry(cls, existing, csp_offs, x112, ml, canon, ns,
         final = (final + 3) & ~3
 
     # ---- overlap trim (X112 rule): carrier truth wins, then clip ---------
+    # X120: carrier *placeholder* spellings (pads / offset-encoded gap
+    # fillers) are not evidence — an evidence-backed offset (CSP row or
+    # seeded body pin) inside them splits the filler and the generator
+    # re-emits the remainder as pad, keeping the geometry exact.  Semantic
+    # carrier members stay impenetrable.
     ordered = sorted(members)
     trimmed = {}
     for off in ordered:
@@ -572,7 +639,9 @@ def build_class_entry(cls, existing, csp_offs, x112, ml, canon, ns,
                 break
         if covered is not None:
             po, pm = covered
-            if carrier.get(po) and not carrier.get(off):
+            pn = pm.get("name") or ""
+            splittable = bool(PAD_RE.match(pn) or PLACEHOLDER_RE.match(pn))
+            if carrier.get(po) and not carrier.get(off) and not splittable:
                 continue          # interloper inside a carrier member
             pm["width"] = max(1, off - po)
         trimmed[off] = m
@@ -608,11 +677,33 @@ def build_class_entry(cls, existing, csp_offs, x112, ml, canon, ns,
         ty = safe_type(ty, w, ns.cl)
         nm = m.get("name") or ""
         pref = preferred.get(str(off))
+        exclude = excludes.get(str(off)) if excludes else None
         cands = []
-        if pref:
+        if pref and not exclude:
             cands.append(("body-c2039", pref))
         cands.append(("member_lookup", mle.get(off, {}).get("name")))
         cands.append(("canon", cne.get(off, {}).get("name")))
+        # X120: the pinned body C2039 name is the spelling the bodies already
+        # use; it overrides *placeholder* spellings on existing members
+        # (pads and offset-encoded names).  Semantic carrier names stay
+        # (compiled truth — renaming them would break their other users).
+        # Structural members (vfptr/vtable slots) are never renamed: they
+        # are binary self-evidence, and offset 0 renames measurably destroy
+        # every other body's `->vfptr` (X120 victim: TacticalClass -32).
+        if pref and not exclude and pref != nm \
+                and nm and HEX_NAME_RE.match(nm) \
+                and not re.match(r"^(?:vfptr|vtable|vtbl|vt_)", nm, re.I) \
+                and (PAD_RE.match(nm) or PLACEHOLDER_RE.match(nm)) \
+                and pref not in used:
+            nm = pref
+            m["source"] = m["source"] + "+body-c2039"
+            # width: the body's spelling may declare a smaller arity than
+            # the placeholder view it replaces (shrink-only — a grow would
+            # overlap the next member, which the trim already fixed)
+            hw = C2039_WIDTH_HINTS.get((cls, pref)) or name_encoded_width(pref)
+            if hw and hw < w:
+                w = hw
+                ty = safe_type(WIDTH_TYPE.get(hw, ""), hw, ns.cl)
         if not nm or not HEX_NAME_RE.match(nm):
             nm, src = pick_name(cls, off, cands, used, w)
             if m["source"] == "existing":
@@ -622,6 +713,14 @@ def build_class_entry(cls, existing, csp_offs, x112, ml, canon, ns,
             if nm in used:
                 nm, src = pick_name(cls, off, cands, used, w)
                 m["source"] = m["source"] + "+" + src
+        # X120: a measured net-harmful rename is pinned back to the pre-X120
+        # spelling (the old name has live users the pin cannot satisfy)
+        if exclude and nm != exclude:
+            if exclude not in used:
+                nm = exclude
+                m["source"] = m["source"] + "+x120-exclude"
+            elif exclude in used:
+                pass          # collision: keep the resolved name
         used.add(nm)
         out_members.append({"off": off, "width": w, "type": ty, "name": nm,
                             "source": m["source"],
@@ -810,6 +909,10 @@ def main():
     ap.add_argument("--extract-c2039-names", default="",
                     help="parse a build log into anchors/x116_c2039_names.json "
                          "(body-name evidence; pinned, deterministic input)")
+    ap.add_argument("--merge-c2039", action="store_true",
+                    help="with --extract-c2039-names: union with the existing "
+                         "pin map (existing (class,off) names are kept; only "
+                         "new offsets are added)")
     args = ap.parse_args()
     t0 = time.time()
 
@@ -817,9 +920,21 @@ def main():
     ns = Namespace(cl, align, mal, rtti)
     if args.extract_c2039_names:
         names = extract_c2039_names(args.extract_c2039_names, ns)
+        if args.merge_c2039:
+            old = load_c2039_names()
+            added = 0
+            for cls, offs in names.items():
+                tgt = old.setdefault(cls, {})
+                for off, nm in offs.items():
+                    if off not in tgt:
+                        tgt[off] = nm
+                        added += 1
+            names = old
+            print("merge: +%d new (class,off) pins, %d classes total"
+                  % (added, len(names)))
         C2039_NAMES.write_text(json.dumps(
             {"meta": {"generated_by": "x116_layouts_from_csp.py "
-                                     "--extract-c2039-names",
+                                      "--extract-c2039-names",
                       "source_log": str(args.extract_c2039_names),
                       "rule": "body member name encodes the byte offset; "
                               "most frequent wins, ties lexicographic"},
@@ -828,6 +943,7 @@ def main():
         print("wrote %s (%d classes)" % (C2039_NAMES, len(names)))
         return 0
     csp_map, sig_map, vt_map, sig_name = load_resolution()
+    EXCLUDES = load_c2039_excludes()
     x112_all = json.loads(X112_SIDECAR.read_text(encoding="utf-8"))
     x112 = x112_all.get("classes") or {}
     # Current carrier authority (the generator the sidecar overrides).
@@ -912,6 +1028,41 @@ def main():
                 if len(cur[2]) < 4:
                     cur[2].append(addr)
 
+    # X120 W2: body C2039 names encode (offset, width) in the spelling and
+    # are binary-derived evidence (the bodies were generated from
+    # raw_decomp).  Offsets the CSP aggregate lacks are seeded from the
+    # pinned name map at the lowest evidence rank.  Bounds (evidence-only):
+    #   S1  offset < the class's stable size (class_layouts / til / X112) —
+    #       a seed may fill a hole inside the known object, never extend it
+    #       (growth is the CSP channel's job; raw-decomp name spellings of
+    #       non-member garbage like `q479250` must not become members), and
+    #   S2  offset < 0x40000 (G5 carrier bound, address-as-offset artifacts).
+    # The G3 inheritance bound below applies to the survivors unchanged, and
+    # build_class_entry's overlap trim still drops seeds that land inside an
+    # existing carrier member.
+    seeded = 0
+    PREFERRED = load_c2039_names()
+    for cls, offs in PREFERRED.items():
+        if cls not in cl and cls not in x112:
+            continue
+        stable = max(int((cl.get(cls) or {}).get("size") or 0),
+                     int((TIL.get(cls) or {}).get("size") or 0),
+                     int((x112.get(cls) or {}).get("computed_size") or 0))
+        if stable <= 0:
+            continue
+        for off_s, nm in offs.items():
+            off = int(off_s)
+            if off >= stable or off >= 0x40000:
+                continue
+            if agg[cls].get(off) is not None:
+                continue
+            w = name_encoded_width(nm) or \
+                C2039_WIDTH_HINTS.get((cls, nm)) or 4
+            agg[cls][off] = [w, 0, []]
+            seeded += 1
+    if seeded:
+        print("C2039-name evidence: seeded %d new offsets" % seeded)
+
     # G3 inheritance bound.  The effective size uses the *stable* layout
     # tables only (class_layouts + til + X112): feeding the carrier size back
     # in makes the bound depend on the sidecar's own output and oscillate.
@@ -947,7 +1098,16 @@ def main():
                 del agg[cls]
 
     # exclude classes with no layout record (already done by to_layout) and
-    # classes whose evidence adds nothing to the existing/X112 layout
+    # classes whose evidence adds nothing to the existing/X112 layout.
+    # X120: classes already under sidecar authority stay in (monotone):
+    # comparing against the *live carrier* oscillates — after the carrier
+    # regen absorbs the sidecar, the seeds stop looking "added" and the
+    # class drops out, so the next regen reverts it to til (L533-4 trap).
+    try:
+        PREV_SIDECAR = json.loads(
+            OUT_SIDECAR.read_text(encoding="utf-8")).get("classes") or {}
+    except (OSError, ValueError):
+        PREV_SIDECAR = {}
     classes_out = {}
     extended = []
     stale = []
@@ -959,7 +1119,15 @@ def main():
         til_size = int((TIL.get(cls) or {}).get("size") or 0)
         entry = build_class_entry(cls, old_entry, agg[cls],
                                   x112.get(cls), ml, canon, ns, til_size,
-                                  CARRIER.get(cls), PREFERRED.get(cls))
+                                  CARRIER.get(cls), PREFERRED.get(cls),
+                                  EXCLUDES.get(cls))
+        if cls in PREV_SIDECAR:
+            classes_out[cls] = entry
+            if entry["computed_size"] > int(
+                    (PREV_SIDECAR[cls] or {}).get("computed_size") or 0) or \
+                    int((cl.get(cls) or {}).get("size") or 0) < entry["computed_size"]:
+                extended.append(entry)
+            continue
         # Include a class when the CSP evidence extends it, adds offsets, or
         # when the carrier authority (til) is stale versus the layout table
         # (class_layouts).  Classes whose class_layouts layout equals the til

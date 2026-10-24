@@ -10,8 +10,11 @@ struct CStreamClass {
     unsigned int CStreamClass_field_0x04;  // 0x4
     int CStreamClass_field_0x08;  // 0x8
     int q00C;  // 0xC
-    unsigned int q010;  // 0x10
-    int q014;  // 0x14
+    unsigned char q010;  // 0x10
+    unsigned char u8_11;  // 0x11
+    char __pad_12[2];  // 0x12
+    unsigned char q014;  // 0x14
+    char ddtor_15[3];  // 0x15
     unsigned int q018;  // 0x18
     unsigned int q01C;  // 0x1C
     unsigned int q020;  // 0x20

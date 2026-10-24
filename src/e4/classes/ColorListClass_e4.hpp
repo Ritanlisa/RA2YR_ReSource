@@ -32,7 +32,9 @@ struct ColorListClass {
     unsigned int q174;  // 0x174
     unsigned int u32_178;  // 0x178
     unsigned int u32_17C;  // 0x17C
-    char __pad_180[4];  // 0x180
+    char __pad_180[1];  // 0x180
+    unsigned char u8_181;  // 0x181
+    char __pad_182[2];  // 0x182
     unsigned int u32_184;  // 0x184
     char __pad_188[4];  // 0x188
     unsigned int u32_18C;  // 0x18C

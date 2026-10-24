@@ -15,7 +15,8 @@ class Constructor_VectorClass_TEventClass___;  // G42.36 fwd supply
 class Constructor_VectorClass_TagTypeClass___;  // G42.36 fwd supply
 struct BufferIOFileClass;  // fix_fwd_type_supply
 struct DynamicVector {
-    unsigned char __pad_0[4];  // 0x0
+    char ptr_0[1];  // 0x0
+    char DynamicVector_field_0x1[3];  // 0x1
     unsigned int * Items;  // 0x4
     unsigned int DynamicVector_field_0x8;  // 0x8
     bool IsInitialized;  // 0xC
@@ -24,7 +25,7 @@ struct DynamicVector {
     char __pad_F[1];  // 0xF
     unsigned int q010;  // 0x10
     int CapacityIncrement;  // 0x14
-    unsigned char __pad_018;  // 0x18
+    unsigned char VectorClass_18;  // 0x18
     char __pad_19[3];  // 0x19
     int q01C;  // 0x1C
     int q020;  // 0x20

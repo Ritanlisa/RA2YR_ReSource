@@ -172,7 +172,7 @@ AbstractClass * FootClass::FootClass_ImbueLocomotor(void * a1, void * a2, void *
   int v18; // eax
   int InstanceCOM; // eax
   int v20; // eax
-  int m_Size; // ebx
+  TechnoClass *m_Size; // ebx
   int v22; // ebp
   int *v23; // ecx
   int Member; // eax

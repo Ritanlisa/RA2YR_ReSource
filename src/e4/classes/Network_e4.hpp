@@ -12,11 +12,18 @@ struct HashTable_flat;  // fix_fwd_type_supply
 #define GAMEMD_G2_NETWORK_FLAT_DEF 1
 struct Network {
     unsigned int Network_field_0x0;  // 0x0
-    int u32_4;  // 0x4
+    unsigned char u32_4;  // 0x4
+    unsigned char u32_5;  // 0x5
+    char __pad_6[2];  // 0x6
     int u32_8;  // 0x8
     unsigned int u32_C;  // 0xC
     int q010;  // 0x10
-    char __pad_14[14];  // 0x14
+    char __pad_14[2];  // 0x14
+    unsigned short q016;  // 0x16
+    unsigned char q018;  // 0x18
+    char __pad_19[3];  // 0x19
+    unsigned int u32_1C;  // 0x1C
+    unsigned short q020;  // 0x20
     char Network_field_0x22[4];  // 0x22
     char __pad_26[2];  // 0x26
     unsigned int u32_28;  // 0x28
@@ -31,7 +38,9 @@ struct Network {
     unsigned int u32_54;  // 0x54
     unsigned int q058;  // 0x58
     unsigned int q05C;  // 0x5C
-    int u32_60;  // 0x60
+    unsigned char u32_60;  // 0x60
+    unsigned char u32_61;  // 0x61
+    char __pad_62[2];  // 0x62
     char __pad_64[8];  // 0x64
     char u32_6C[3];  // 0x6C
     char Network_field_0x6F[4];  // 0x6F
@@ -45,16 +54,18 @@ struct Network {
     unsigned int u32_A0;  // 0xA0
     unsigned int u32_A4;  // 0xA4
     unsigned char q0A8;  // 0xA8
-    char __pad_A9[4];  // 0xA9
+    char __pad_A9[3];  // 0xA9
+    unsigned char q0AC;  // 0xAC
     unsigned char u8_AD;  // 0xAD
     unsigned char u8_AE;  // 0xAE
     unsigned char u8_AF;  // 0xAF
     unsigned char q0B0;  // 0xB0
-    char __pad_B1[2];  // 0xB1
+    char u32_B1[1];  // 0xB1
+    unsigned char u32_B2;  // 0xB2
     unsigned char u8_B3;  // 0xB3
     char __pad_B4[4];  // 0xB4
     unsigned int u32_B8;  // 0xB8
-    char __pad_BC[4];  // 0xBC
+    char q0BC[4];  // 0xBC
     unsigned char q0C0;  // 0xC0
     char __pad_C1[3];  // 0xC1
     unsigned char q0C4;  // 0xC4
@@ -73,7 +84,9 @@ struct Network {
     unsigned int u32_1A0;  // 0x1A0
     char __pad_1A4[2];  // 0x1A4
     char Network_field_0x1A6[4];  // 0x1A6
-    char __pad_1AA[75];  // 0x1AA
+    char __pad_1AA[66];  // 0x1AA
+    unsigned int u32_1EC;  // 0x1EC
+    char __pad_1F0[5];  // 0x1F0
     char Network_field_0x1F5[4];  // 0x1F5
     char __pad_1F9[1];  // 0x1F9
     char __pad_1FA[9506];  // 0x1FA

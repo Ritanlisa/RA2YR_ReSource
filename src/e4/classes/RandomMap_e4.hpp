@@ -12,26 +12,83 @@ struct WeaponStruct;  // fix_fwd_type_supply
 struct VectorClass_flat;  // fix_fwd_type_supply
 struct RandomMap {
     unsigned short __pad_000;  // 0x0
-    char u32_2[4];  // 0x2
+    char u32_2[2];  // 0x2
+    unsigned short Items;  // 0x4
     char __pad_6[2];  // 0x6
     int RandomMap_field_0x8;  // 0x8
-    unsigned int q00C;  // 0xC
+    unsigned char q00C;  // 0xC
+    bool IsAllocated;  // 0xD
+    char __pad_E[2];  // 0xE
     int q010;  // 0x10
     unsigned int q014;  // 0x14
-    int q018;  // 0x18
+    unsigned short q018;  // 0x18
+    unsigned char u8_1A;  // 0x1A
+    unsigned char u8_1B;  // 0x1B
     int q01C;  // 0x1C
     int q020;  // 0x20
     int u32_24;  // 0x24
     int u32_28;  // 0x28
     int u32_2C;  // 0x2C
     IUnknown * ptr_30;  // 0x30
-    unsigned int __pad_034;  // 0x34
+    char __pad_034[1];  // 0x34
+    unsigned char u32_35;  // 0x35
+    char __pad_36[2];  // 0x36
     int u32_38;  // 0x38
     int u32_3C;  // 0x3C
     int u32_40;  // 0x40
     unsigned char u32_44[4];  // 0x44
     IUnknown * ptr_48;  // 0x48
-    char __pad_04C[448];  // 0x4C
+    char __pad_04C[4];  // 0x4C
+    unsigned int u32_50;  // 0x50
+    char __pad_54[32];  // 0x54
+    AbstractClass * ptr_74;  // 0x74
+    char __pad_78[52];  // 0x78
+    unsigned int u32_AC;  // 0xAC
+    unsigned int u32_B0;  // 0xB0
+    unsigned int u32_B4;  // 0xB4
+    char __pad_B8[12];  // 0xB8
+    unsigned int u32_C4;  // 0xC4
+    char __pad_C8[56];  // 0xC8
+    unsigned char u8_100;  // 0x100
+    char __pad_101[3];  // 0x101
+    unsigned int u32_104;  // 0x104
+    char __pad_108[19];  // 0x108
+    char u32_11B;  // 0x11B
+    char __pad_11C[92];  // 0x11C
+    CampaignClass * ptr_178;  // 0x178
+    CampaignClass * u32_17C;  // 0x17C
+    unsigned int u32_180;  // 0x180
+    unsigned int u32_184;  // 0x184
+    unsigned int q188;  // 0x188
+    CampaignClass * q18C;  // 0x18C
+    unsigned int q190;  // 0x190
+    char __pad_194[1];  // 0x194
+    unsigned char u8_195;  // 0x195
+    char __pad_196[14];  // 0x196
+    unsigned int q1A4;  // 0x1A4
+    CampaignClass * q1A8;  // 0x1A8
+    unsigned int q1AC;  // 0x1AC
+    char __pad_1B0[1];  // 0x1B0
+    unsigned char u8_1B1;  // 0x1B1
+    char __pad_1B2[14];  // 0x1B2
+    unsigned int q1C0;  // 0x1C0
+    CampaignClass * q1C4;  // 0x1C4
+    unsigned int q1C8;  // 0x1C8
+    char __pad_1CC[1];  // 0x1CC
+    unsigned char u8_1CD;  // 0x1CD
+    char __pad_1CE[14];  // 0x1CE
+    unsigned int q1DC;  // 0x1DC
+    CampaignClass * q1E0;  // 0x1E0
+    unsigned int q1E4;  // 0x1E4
+    char __pad_1E8[1];  // 0x1E8
+    unsigned char u8_1E9;  // 0x1E9
+    char __pad_1EA[14];  // 0x1EA
+    unsigned int q1F8;  // 0x1F8
+    CampaignClass * q1FC;  // 0x1FC
+    unsigned int u32_200;  // 0x200
+    char __pad_204[1];  // 0x204
+    unsigned char u8_205;  // 0x205
+    char __pad_206[6];  // 0x206
     int q20C;  // 0x20C
     char __pad_210[4];  // 0x210
     unsigned int u32_214;  // 0x214

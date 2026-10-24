@@ -10,7 +10,9 @@ struct MovementAI {
     void * m_State;  // 0xC
     unsigned int MovementAI_field_10;  // 0x10
     int MovementAI_field_14;  // 0x14
-    int MovementAI_field_18;  // 0x18
+    unsigned char MovementAI_field_18;  // 0x18
+    unsigned char u8_19;  // 0x19
+    char __pad_1A[2];  // 0x1A
     unsigned int u32_1C;  // 0x1C
     unsigned int u32_20;  // 0x20
     unsigned int u32_24;  // 0x24

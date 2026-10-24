@@ -570,7 +570,7 @@ void* BuildingClass_ProcessSell(int * p_ComPtr_field_0x14, double a3, int a4, in
   int v8; // eax
   Cell *v9; // eax
   Cell *v10; // eax
-  int v11; // ebx
+  Cell *v11; // ebx
   TeamClass *v12; // ecx
   int v13; // edx
   int v14; // esi
@@ -588,7 +588,7 @@ void* BuildingClass_ProcessSell(int * p_ComPtr_field_0x14, double a3, int a4, in
   unsigned int *v26; // edx
   TeamClass *v27; // ecx
   unsigned int *v28; // eax
-  int v31; // eax
+  FootClass *v31; // eax
   unsigned int *v32; // eax
   int v33; // esi
   int v34; // edi
@@ -639,10 +639,10 @@ void* BuildingClass_ProcessSell(int * p_ComPtr_field_0x14, double a3, int a4, in
   unsigned __int8 *v79; // eax
   int *v80; // edi
   int v81; // ecx
-  int v82; // eax
-  int v83; // esi
-  int v84; // eax
-  int v85; // esi
+  IUnknown *v82; // eax
+  IUnknown *v83; // esi
+  IUnknown *v84; // eax
+  IUnknown *v85; // esi
   int v86; // eax
   CellClass *v87; // esi
   int landType; // ebx
@@ -1371,7 +1371,7 @@ namespace gamemd {
 int BuildingClass::SaveLoad_Register()
 {
   int result; // eax
-  int v2; // [esp+8h] [ebp+4h]
+  ObjectClass *v2; // [esp+8h] [ebp+4h]
   int v3; // [esp+Ch] [ebp+8h]
 
   result = AbstractClass::SaveLoad_Prefix_0((unsigned int *)v2, v3); /*0x5f5e8b*/

@@ -12,7 +12,9 @@ struct LayerClass {
     unsigned char count;  // 0x4
     char __pad_5[3];  // 0x5
     int capacity;  // 0x8
-    char __pad_C[4];  // 0xC
+    char __pad_C[1];  // 0xC
+    unsigned char u8_D;  // 0xD
+    char __pad_E[2];  // 0xE
     unsigned int q010;  // 0x10
     char __pad_14[88];  // 0x14
     unsigned int u32_6C;  // 0x6C
@@ -20,9 +22,10 @@ struct LayerClass {
     char __pad_74[128];  // 0x74
     unsigned int u32_F4;  // 0xF4
     unsigned int u32_F8;  // 0xF8
-    char __pad_FC[4];  // 0xFC
+    char u32_FC[4];  // 0xFC
     unsigned int u32_100;  // 0x100
-    char __pad_104[8];  // 0x104
+    char u32_104[4];  // 0x104
+    unsigned int u32_108;  // 0x108
     unsigned int u32_10C;  // 0x10C
     unsigned int u32_110;  // 0x110
     unsigned int u32_114;  // 0x114

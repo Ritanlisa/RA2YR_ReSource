@@ -7,7 +7,8 @@ namespace gamemd {
 
 struct Vector2 {
     unsigned char __pad_000;  // 0x0
-    char __pad_1[3];  // 0x1
+    char __pad_1[1];  // 0x1
+    unsigned short ptr_2;  // 0x2
     int q004;  // 0x4
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---

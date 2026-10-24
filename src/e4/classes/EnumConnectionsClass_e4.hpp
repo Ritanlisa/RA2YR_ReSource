@@ -14,7 +14,7 @@ struct EnumConnectionsClass {
     int q014;  // 0x14
     char __pad_18[4];  // 0x18
     unsigned int u32_1C;  // 0x1C
-    unsigned int u32_20;  // 0x20
+    unsigned int q020;  // 0x20
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int Skip(int a1);

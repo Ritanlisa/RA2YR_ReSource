@@ -7,7 +7,9 @@ namespace gamemd {
 
 struct Matrix3x3 {
     unsigned char __pad_000;  // 0x0
-    char __pad_1[3];  // 0x1
+    char __pad_1[1];  // 0x1
+    unsigned char ptr_2;  // 0x2
+    unsigned char ptr_3;  // 0x3
     int u32_4;  // 0x4
     int u32_8;  // 0x8
     int u32_C;  // 0xC

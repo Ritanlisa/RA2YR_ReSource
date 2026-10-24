@@ -21,7 +21,7 @@ struct VeinholeMonsterClass {
     unsigned int u32_6C;  // 0x6C
     char __pad_70[60];  // 0x70
     unsigned int u32_AC;  // 0xAC
-    unsigned int u32_B0;  // 0xB0
+    unsigned int q_B0;  // 0xB0
     unsigned int u32_B4;  // 0xB4
     unsigned int u32_B8;  // 0xB8
     unsigned int u32_BC;  // 0xBC

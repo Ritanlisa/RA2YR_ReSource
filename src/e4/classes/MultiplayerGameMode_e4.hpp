@@ -7,11 +7,15 @@ namespace gamemd {
 
 struct MultiplayerGameMode {
     void * GetFirst_ph;  // 0x0
-    unsigned int __pad_004;  // 0x4
+    unsigned int MultiplayerGameMode_field_0x04;  // 0x4
     int u32_8;  // 0x8
-    int u32_C;  // 0xC
+    unsigned char u32_C;  // 0xC
+    unsigned char u32_D;  // 0xD
+    char __pad_E[2];  // 0xE
     int q010;  // 0x10
-    int q014;  // 0x14
+    unsigned char q014;  // 0x14
+    unsigned char u32_15;  // 0x15
+    char __pad_16[2];  // 0x16
     int q018;  // 0x18
     unsigned int u32_1C;  // 0x1C
     char __pad_20[8];  // 0x20

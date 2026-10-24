@@ -16,7 +16,8 @@ struct AirstrikeClass {
     unsigned int nextArrayIndex;  // 0x18
     int referenceCount;  // 0x1C
     unsigned int NeedsSaveOrLink;  // 0x20
-    int AirstrikeClass_field_24;  // 0x24
+    unsigned short AirstrikeClass_field_24;  // 0x24
+    unsigned short ptr_26;  // 0x26
     int AirstrikeClass_field_28;  // 0x28
     unsigned char __pad_02C;  // 0x2C
     char __pad_2D[3];  // 0x2D

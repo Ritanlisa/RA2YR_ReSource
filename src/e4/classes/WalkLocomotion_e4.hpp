@@ -16,13 +16,20 @@ struct WalkLocomotion {
     char __pad_10[36];  // 0x10
     AbstractClass * ptr_34;  // 0x34
     unsigned char __pad_038;  // 0x38
-    char __pad_39[7];  // 0x39
+    char __pad_39[3];  // 0x39
+    unsigned int u32_3C;  // 0x3C
     int q040;  // 0x40
     int q044;  // 0x44
-    char __pad_48[16];  // 0x48
+    char __pad_48[4];  // 0x48
+    unsigned int u32_4C;  // 0x4C
+    unsigned int u32_50;  // 0x50
+    unsigned int u32_54;  // 0x54
     unsigned int u32_58;  // 0x58
     unsigned int u32_5C;  // 0x5C
-    ObjectClass * ptr_60;  // 0x60
+    char ptr_60[1];  // 0x60
+    unsigned char u8_61;  // 0x61
+    unsigned char u8_62;  // 0x62
+    unsigned char u8_63;  // 0x63
     unsigned char __pad_064;  // 0x64
     char __pad_65[15];  // 0x65
     int q074;  // 0x74

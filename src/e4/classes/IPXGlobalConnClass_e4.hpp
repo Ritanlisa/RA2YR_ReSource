@@ -10,7 +10,7 @@ struct HashTable_flat;  // fix_fwd_type_supply
 #ifndef GAMEMD_G2_IPXGlobalConnClass_DEF  // G42.57w14 twin-guard (shared; first-include wins)
 #define GAMEMD_G2_IPXGlobalConnClass_DEF 1
 struct IPXGlobalConnClass {
-    int __pad_0;  // 0x0
+    int ptr_0;  // 0x0
     void* __pad_004;  // 0x4
     int q008;  // 0x8
     int q00C;  // 0xC

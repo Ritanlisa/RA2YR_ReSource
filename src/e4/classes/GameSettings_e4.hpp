@@ -35,7 +35,8 @@ struct GameSettings {
     unsigned char Audio_2;  // 0x46
     char __pad_47[1];  // 0x47
     unsigned short u16_48;  // 0x48
-    unsigned int u32_4A;  // 0x4A
+    unsigned short u32_4A;  // 0x4A
+    unsigned short u16_4C;  // 0x4C
     char __pad_4E[2];  // 0x4E
     unsigned int u32_50;  // 0x50
     char ptr_54[2];  // 0x54

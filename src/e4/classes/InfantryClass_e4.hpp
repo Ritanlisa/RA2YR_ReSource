@@ -110,7 +110,8 @@ struct InfantryClass {
     int ironTintStage;  // 0x1A8
     int airstrikeTimer[3];  // 0x1AC
     int airstrikeTintTimer[3];  // 0x1B8
-    char __pad_1C4[8];  // 0x1C4
+    char __pad_1C4[4];  // 0x1C4
+    unsigned int q1C8;  // 0x1C8
     int drainTarget;  // 0x1CC
     int drainingMe;  // 0x1D0
     int drainAnim;  // 0x1D4
@@ -187,7 +188,10 @@ struct InfantryClass {
     int damageParticles;  // 0x310
     ParticleSystemClass * isTurretLocked;  // 0x314
     int unk1Particles;  // 0x318
-    char __pad_31C[4];  // 0x31C
+    char __pad_31C[1];  // 0x31C
+    unsigned char isRecruitableByAlly;  // 0x31D
+    unsigned char isRecruitableByEnemy;  // 0x31E
+    unsigned char isRadarTracked;  // 0x31F
     int ambientParticles_2;  // 0x320
     int damageParticles_2;  // 0x324
     int railgunParticles_2;  // 0x328
@@ -290,7 +294,8 @@ struct InfantryClass {
     unsigned short FootClass_field_526;  // 0x526
     unsigned short FootClass_field_528;  // 0x528
     unsigned short FootClass_field_52A;  // 0x52A
-    char FootClass_field_52C[4];  // 0x52C
+    int16_t FootClass_field_52C;  // 0x52C
+    int16_t FootClass_field_52E;  // 0x52E
     int FootClass_field_530;  // 0x530
     int FootClass_field_534;  // 0x534
     int FootClass_field_538;  // 0x538
@@ -298,14 +303,22 @@ struct InfantryClass {
     char m_padding_53D[3];  // 0x53D
     int FootClass_field_540;  // 0x540
     int audioController7[5];  // 0x544
-    char FootClass_field_558[4];  // 0x558
-    char FootClass_field_55C[4];  // 0x55C
-    int FootClass_field_560;  // 0x560
-    int FootClass_field_564;  // 0x564
-    char FootClass_field_568[12];  // 0x568
+    int16_t FootClass_field_558;  // 0x558
+    int16_t FootClass_field_55A;  // 0x55A
+    int16_t FootClass_field_55C;  // 0x55C
+    int16_t FootClass_field_55E;  // 0x55E
+    unsigned short FootClass_field_560;  // 0x560
+    int16_t FootClass_field_562;  // 0x562
+    unsigned short FootClass_field_564;  // 0x564
+    int16_t FootClass_field_566;  // 0x566
+    unsigned int FootClass_field_568;  // 0x568
+    int32_t FootClass_field_56C;  // 0x56C
+    int32_t FootClass_field_570;  // 0x570
     int unused574;  // 0x574
-    unsigned long long FootClass_field_578;  // 0x578
-    unsigned long long FootClass_field_580;  // 0x580
+    unsigned int FootClass_field_578;  // 0x578
+    int32_t FootClass_field_57C;  // 0x57C
+    unsigned int FootClass_field_580;  // 0x580
+    float FootClass_field_584;  // 0x584
     int FootClass_DVC_588;  // 0x588
     unsigned char __pad_58C;  // 0x58C
     char __pad_58D[19];  // 0x58D
@@ -313,8 +326,10 @@ struct InfantryClass {
     int Archive;  // 0x5A4
     char FootClass_field_5A8[4];  // 0x5A8
     void * FootClass_DVC_5AC;  // 0x5AC
-    int __pad_5B0;  // 0x5B0
-    char __pad_5B4[16];  // 0x5B4
+    int q_5B0;  // 0x5B0
+    char __pad_5B4[8];  // 0x5B4
+    unsigned int q5BC;  // 0x5BC
+    char __pad_5C0[4];  // 0x5C0
     char FootClass_field_5C4[4];  // 0x5C4
     char FootClass_field_5C8[4];  // 0x5C8
     char FootClass_field_5CC[4];  // 0x5CC
@@ -325,14 +340,22 @@ struct InfantryClass {
     char FootClass_field_5D8[4];  // 0x5D8
     char FootClass_field_5DC[4];  // 0x5DC
     int pathDirections[24];  // 0x5E0
-    char FootClass_field_640[12];  // 0x640
+    unsigned int FootClass_field_640;  // 0x640
+    int32_t FootClass_field_644;  // 0x644
+    int32_t FootClass_field_648;  // 0x648
     char FootClass_field_64C[4];  // 0x64C
-    char FootClass_field_650[12];  // 0x650
-    char FootClass_field_65C[12];  // 0x65C
-    char FootClass_field_668[12];  // 0x668
+    int32_t FootClass_field_650;  // 0x650
+    int32_t FootClass_field_654;  // 0x654
+    int32_t FootClass_field_658;  // 0x658
+    int32_t FootClass_field_65C;  // 0x65C
+    int32_t FootClass_field_660;  // 0x660
+    int32_t FootClass_field_664;  // 0x664
+    unsigned int FootClass_field_668;  // 0x668
+    int32_t FootClass_field_66C;  // 0x66C
+    int32_t FootClass_field_670;  // 0x670
     ILocomotion * locomotor;  // 0x674
     char Locomotor_ptr[12];  // 0x678
-    unsigned char FootClass_field_684;  // 0x684
+    unsigned char vt_slot_684;  // 0x684
     char unknownBool685;  // 0x685
     char waypointIndex;  // 0x686
     char unknownBool687;  // 0x687
@@ -350,7 +373,9 @@ struct InfantryClass {
     int FootClass_field_694;  // 0x694
     int FootClass_field_698;  // 0x698
     void * FootClass_field_69C;  // 0x69C
-    char FootClass_field_6A0[12];  // 0x6A0
+    int32_t FootClass_field_6A0;  // 0x6A0
+    int32_t FootClass_field_6A4;  // 0x6A4
+    void * FootClass_bools_6A8;  // 0x6A8
     char FootClass_field_bool_6AC[1];  // 0x6AC
     char isAttackedByLocomotor;  // 0x6AD
     char isLetGoByLocomotor;  // 0x6AE
@@ -364,8 +389,13 @@ struct InfantryClass {
     bool FootClass_field_6B6;  // 0x6B6
     unsigned char FootClass_field_6B7;  // 0x6B7
     bool FootClass_field_6B8;  // 0x6B8
-    char FootClass_field_6B9[3];  // 0x6B9
-    unsigned int FootClass_field_6BC;  // 0x6BC
+    bool FootClass_field_6B9;  // 0x6B9
+    bool FootClass_field_6BA;  // 0x6BA
+    bool FootClass_field_6BB;  // 0x6BB
+    bool FootClass_field_6BC;  // 0x6BC
+    bool FootClass_field_6BD;  // 0x6BD
+    bool FootClass_field_6BE;  // 0x6BE
+    bool FootClass_field_6BF;  // 0x6BF
     InfantryTypeClass * Type;  // 0x6C0
     void * SequenceAnim;  // 0x6C4
     char InfantryClass_field_timer_6C8[12];  // 0x6C8

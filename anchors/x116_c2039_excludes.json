@@ -1,0 +1,117 @@
+{
+ "excludes": {
+  "AbstractClassVector": {
+   "8": "q008"
+  },
+  "AnimClass": {
+   "156": "q09C",
+   "416": "u32_1A0",
+   "436": "q1B4"
+  },
+  "AudioMixer": {
+   "8": "ptr_8"
+  },
+  "BulletClass": {
+   "268": "u32_10C"
+  },
+  "CCINIClass": {
+   "0": "__pad_0"
+  },
+  "CellClass": {
+   "44": "q02C"
+  },
+  "Coord": {
+   "12": "__pad_C"
+  },
+  "DynamicVector": {
+   "0": "__pad_0",
+   "40": "u32_28"
+  },
+  "FactoryClass": {
+   "68": "q044"
+  },
+  "FootClass": {
+   "1424": "q590"
+  },
+  "Function": {
+   "4": "q004"
+  },
+  "GadgetClass": {
+   "0": "__pad_0"
+  },
+  "HashTable": {
+   "12": "u32_C"
+  },
+  "INIClass": {
+   "0": "__pad_0"
+  },
+  "InfantryTypeVector": {
+   "0": "__pad_0"
+  },
+  "MPCooperative": {
+   "804": "q324",
+   "808": "__pad_328",
+   "828": "q33C"
+  },
+  "MapClass": {
+   "12": "u32_C",
+   "76": "q04C",
+   "8": "q008"
+  },
+  "MultiplayerGameMode": {
+   "4": "__pad_004"
+  },
+  "ObjectClass": {
+   "4": "ptr_4"
+  },
+  "RadarClass": {
+   "4": "__pad_004",
+   "8": "q008"
+  },
+  "ScriptAction": {
+   "4": "u32_4"
+  },
+  "SessionClass": {
+   "12": "SessionClass_field_0C",
+   "16": "SessionClass_field_10",
+   "20": "unknown_14",
+   "352": "unknown_160",
+   "784": "SessionClass_field_310",
+   "8": "SessionClass_field_08"
+  },
+  "SidebarClass": {
+   "12": "__pad_C"
+  },
+  "StringVector": {
+   "0": "__pad_0"
+  },
+  "TActionClass": {
+   "110": "pad_6E"
+  },
+  "TabClass": {
+   "0": "ptr_0",
+   "4": "__pad_004"
+  },
+  "TacticalClass": {
+   "0": "vfptr"
+  },
+  "TeamTypeClass": {
+   "246": "u8_F6",
+   "247": "u8_F7"
+  },
+  "TechnoClass": {
+   "1312": "u32_520"
+  },
+  "TechnoTypeClass": {
+   "4": "ptr_4"
+  },
+  "Voxel": {
+   "308": "__pad_134"
+  }
+ },
+ "meta": {
+  "pairs": 46,
+  "rule": "loss>0 and gain<=loss in the full-tree clang victim measurement; keep_name = pre-X120 (X116) sidecar spelling",
+  "task": "X120 - measured net-harmful rename exclusions"
+ }
+}

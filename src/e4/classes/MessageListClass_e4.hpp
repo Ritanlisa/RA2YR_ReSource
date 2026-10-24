@@ -16,10 +16,10 @@ struct MessageListClass {
     bool IsScrolling;  // 0x30
     char padding_after_scroll[3];  // 0x31
     unsigned int u32_34;  // 0x34
-    unsigned int u32_38;  // 0x38
+    unsigned int q038;  // 0x38
     unsigned int u32_3C;  // 0x3C
     unsigned char u8_40;  // 0x40
-    unsigned char u8_41;  // 0x41
+    unsigned char u32_41;  // 0x41
     char __pad_42[2];  // 0x42
     unsigned int u32_44;  // 0x44
     unsigned int u32_48;  // 0x48

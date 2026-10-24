@@ -17,7 +17,9 @@ struct SomeVoxelCache;  // fix_fwd_type_supply
 struct BulletTypeClass;  // fix_fwd_type_supply
 
 struct ObjectTypeClass {
-    int vfptr;  // 0x0
+    unsigned char vfptr;  // 0x0
+    unsigned char u8_1;  // 0x1
+    char __pad_2[2];  // 0x2
     int vfptr1;  // 0x4
     int vfptr2;  // 0x8
     unsigned char vfptr3;  // 0xC
@@ -31,9 +33,10 @@ struct ObjectTypeClass {
     char ChargerBarrels_0x12[4];  // 0x2C
     char __pad_30[1];  // 0x30
     unsigned char u32_31;  // 0x31
-    char __pad_32[4];  // 0x32
+    char TurretVoxel[4];  // 0x32
     unsigned char __pad_036;  // 0x36
-    char __pad_37[5];  // 0x37
+    char __pad_37[1];  // 0x37
+    int u32_38;  // 0x38
     void * zero_3C;  // 0x3C
     char __pad_40[29];  // 0x40
     unsigned char __pad_05D;  // 0x5D
@@ -67,7 +70,11 @@ struct ObjectTypeClass {
     int CrushSound;  // 0x1F0
     int AmbientSound;  // 0x1F4
     unsigned int ImageFile_0x19;  // 0x1F8
-    char __pad_1FC[20];  // 0x1FC
+    char __pad_1FC[4];  // 0x1FC
+    unsigned int Selectable;  // 0x200
+    char __pad_204[4];  // 0x204
+    unsigned int HasRadialIndicator;  // 0x208
+    unsigned int LineTrailColor;  // 0x20C
     unsigned char u32_210;  // 0x210
     char AlternateArcticArt_d[1];  // 0x211
     unsigned char ArcticArtInUse_d;  // 0x212
@@ -106,7 +113,9 @@ struct ObjectTypeClass {
     unsigned int qA50;  // 0xA50
     char __pad_A54[570];  // 0xA54
     unsigned char u8_C8E;  // 0xC8E
-    char __pad_C8F[313];  // 0xC8F
+    char __pad_C8F[63];  // 0xC8F
+    unsigned char u8_CCE;  // 0xCCE
+    char __pad_CCF[249];  // 0xCCF
     unsigned char qDC8;  // 0xDC8
     char __pad_DC9[7];  // 0xDC9
     unsigned char qDD0;  // 0xDD0

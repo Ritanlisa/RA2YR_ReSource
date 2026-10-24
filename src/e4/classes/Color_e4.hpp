@@ -6,7 +6,9 @@
 namespace gamemd {
 
 struct Color {
-    int Color_field_00;  // 0x0
+    unsigned char Color_field_00;  // 0x0
+    unsigned char u32_1;  // 0x1
+    unsigned short u32_2;  // 0x2
     unsigned int u32_4;  // 0x4
     unsigned int u32_8;  // 0x8
 // --- flat members (BEGIN) ---

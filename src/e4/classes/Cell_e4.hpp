@@ -31,11 +31,13 @@ struct Cell {
     unsigned char u32_24;  // 0x24
     char __pad_25[1];  // 0x25
     unsigned int u32_26;  // 0x26
-    char __pad_2A[14];  // 0x2A
+    char __pad_2A[10];  // 0x2A
+    unsigned int q034;  // 0x34
     int q038;  // 0x38
     char __pad_3C[8];  // 0x3C
     unsigned int u32_44;  // 0x44
-    char __pad_48[32];  // 0x48
+    unsigned int q048;  // 0x48
+    char __pad_4C[28];  // 0x4C
     int q068;  // 0x68
     int q06C;  // 0x6C
     unsigned int u32_70;  // 0x70
@@ -54,22 +56,34 @@ struct Cell {
     char __pad_F0[4];  // 0xF0
     int q0F4;  // 0xF4
     int q0F8;  // 0xF8
-    char __pad_FC[30];  // 0xFC
+    char __pad_FC[24];  // 0xFC
+    unsigned int q114;  // 0x114
+    char __pad_118[2];  // 0x118
     unsigned char u32_11A;  // 0x11A
     char Cell_field_0x11B[4];  // 0x11B
-    char __pad_11F[13];  // 0x11F
+    char __pad_11F[5];  // 0x11F
+    unsigned char u32_124;  // 0x124
+    char __pad_125[3];  // 0x125
+    unsigned char u8_128;  // 0x128
+    char __pad_129[3];  // 0x129
     int q12C;  // 0x12C
     char __pad_130[12];  // 0x130
     int q13C;  // 0x13C
     unsigned int u32_140;  // 0x140
-    char __pad_144[264];  // 0x144
+    char __pad_144[216];  // 0x144
+    unsigned int u32_21C;  // 0x21C
+    char __pad_220[44];  // 0x220
     int q24C;  // 0x24C
     char __pad_250[72];  // 0x250
     int q298;  // 0x298
     int q29C;  // 0x29C
     char __pad_2A0[378];  // 0x2A0
     unsigned char u32_41A;  // 0x41A
-    char __pad_41B[393];  // 0x41B
+    char __pad_41B[261];  // 0x41B
+    unsigned int u32_520;  // 0x520
+    char __pad_524[68];  // 0x524
+    unsigned int u32_568;  // 0x568
+    char __pad_56C[56];  // 0x56C
     unsigned int u32_5A4;  // 0x5A4
     char __pad_5A8[284];  // 0x5A8
     unsigned int u32_6C4;  // 0x6C4

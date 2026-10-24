@@ -29,7 +29,8 @@ struct TechnoTypeClass;  // fix_fwd_type_supply
 
 struct BuildingClass {
 #pragma pack(push, 1)  // X60: binary-packed layout
-    unsigned int ptr_0;  // 0x0
+    char ptr_0[3];  // 0x0
+    unsigned char u8_3;  // 0x3
     void * ptr_4;  // 0x4
     void * ptr_8;  // 0x8
     void * ptr_C;  // 0xC
@@ -92,7 +93,9 @@ struct BuildingClass {
     int turretChargeTimer_d;  // 0x120
     int currentTurretNumber_d;  // 0x124
     int secondaryTurretIndex_d;  // 0x128
-    unsigned int __pad_12C;  // 0x12C
+    char __pad_12C[1];  // 0x12C
+    unsigned char q12D;  // 0x12D
+    char __pad_12E[2];  // 0x12E
     int deployAnim_d;  // 0x130
     unsigned char inAirFlag_d;  // 0x134
     char alignmentPadding139[3];  // 0x135
@@ -116,7 +119,8 @@ struct BuildingClass {
     char airstrikeTimer[12];  // 0x1AC
     int airstrikeTintTimer[3];  // 0x1B8
     unsigned char airstrikeTintStage_d;  // 0x1C4
-    char __pad_1C5[7];  // 0x1C5
+    char __pad_1C5[3];  // 0x1C5
+    unsigned int forceShielded;  // 0x1C8
     TechnoClass * isDeactivated;  // 0x1CC
     int drainingMe;  // 0x1D0
     int drainAnim;  // 0x1D4
@@ -154,7 +158,8 @@ struct BuildingClass {
     TemporalClass * temporalUsing;  // 0x274
     TemporalClass * temporalTargetingMe;  // 0x278
     bool isImmobilized;  // 0x27C
-    char q27D[3];  // 0x27D
+    char q27D[1];  // 0x27D
+    unsigned short alignmentPadding27E;  // 0x27E
     int gapRadius_d;  // 0x280
     int isBeingWarpedOut_d;  // 0x284
     char temporalUsing_d[12];  // 0x288
@@ -169,7 +174,8 @@ struct BuildingClass {
     FootClass * isBerserk_d;  // 0x2AC
     int locomotorSource;  // 0x2B0
     void * target;  // 0x2B4
-    unsigned int __pad_2B8;  // 0x2B8
+    char __pad_2B8[1];  // 0x2B8
+    char alignmentPadding2A9[3];  // 0x2B9
     CaptureManagerClass * rockerLinkedUnit_d;  // 0x2BC
     FootClass * mindControlledBy;  // 0x2C0
     char mindControlledBy_a_unit[1];  // 0x2C4
@@ -314,7 +320,11 @@ struct BuildingClass {
     unsigned int LaserFenceFrame;  // 0x618
     unsigned int FirestormWallFrame;  // 0x61C
     char RepairProgress[8];  // 0x620
-    char __pad_628[20];  // 0x628
+    char __pad_628[8];  // 0x628
+    unsigned short u32_630;  // 0x630
+    unsigned short vt_slot_632;  // 0x632
+    unsigned int u32_634;  // 0x634
+    unsigned int u32_638;  // 0x638
     int BuildingClass_field_rect_63C[4];  // 0x63C
     char BuildingClass_field_coord_64C[12];  // 0x64C
     int BuildingClass_field_int_658;  // 0x658
@@ -340,7 +350,19 @@ struct BuildingClass {
     char __pad_6A5[3];  // 0x6A5
     char CashProductionTimer[12];  // 0x6A8
     unsigned int Audio8_2;  // 0x6B4
-    char __pad_6B8[36];  // 0x6B8
+    char __pad_6B8[8];  // 0x6B8
+    UnitTypeClass * q6C0;  // 0x6C0
+    UnitTypeClass * q6C4;  // 0x6C4
+    bool WasOnline;  // 0x6C8
+    unsigned char Tactical_6C9;  // 0x6C9
+    unsigned char Tactical_6CA;  // 0x6CA
+    unsigned char Tactical_6CB;  // 0x6CB
+    bool u8_6CC;  // 0x6CC
+    char __pad_6CD[3];  // 0x6CD
+    unsigned char u32_6D0;  // 0x6D0
+    unsigned char u8_6D1;  // 0x6D1
+    char __pad_6D2[6];  // 0x6D2
+    unsigned int u32_6D8;  // 0x6D8
     bool BuildingClass_field_bool_6DC;  // 0x6DC
     bool BuildingClass_field_bool_6DD;  // 0x6DD
     bool NeedsRepairs;  // 0x6DE

@@ -11,10 +11,15 @@ struct AircraftTypeClass;  // fix_fwd_type_supply
 struct AbstractTypeClass;  // fix_fwd_type_supply
 
 struct HouseTypeClass {
-    void * ptr_0;  // 0x0
+    char ptr_0[2];  // 0x0
+    unsigned short u16_2;  // 0x2
     void * ptr_4;  // 0x4
-    void * ptr_8;  // 0x8
-    void * ptr_C;  // 0xC
+    char ptr_8[1];  // 0x8
+    char u8_9;  // 0x9
+    unsigned short u16_A;  // 0xA
+    char ptr_C[1];  // 0xC
+    unsigned char u8_D;  // 0xD
+    char __pad_E[2];  // 0xE
     int uniqueId;  // 0x10
     int abstractFlags;  // 0x14
     int nextArrayIndex;  // 0x18
@@ -73,7 +78,20 @@ struct HouseTypeClass {
     bool multiplayPassive_d;  // 0x16A
     bool wallOwner_d;  // 0x16B
     bool smartAi_d;  // 0x16C
-    char pad_16D[58];  // 0x16D
+    char pad_16D[3];  // 0x16D
+    unsigned int u32_170;  // 0x170
+    char __pad_174[1];  // 0x174
+    unsigned char u8_175;  // 0x175
+    char __pad_176[14];  // 0x176
+    unsigned int u32_184;  // 0x184
+    unsigned int u32_188;  // 0x188
+    unsigned int u32_18C;  // 0x18C
+    char __pad_190[1];  // 0x190
+    unsigned char u8_191;  // 0x191
+    char __pad_192[18];  // 0x192
+    unsigned char Prefix;  // 0x1A4
+    unsigned char Multiplay;  // 0x1A5
+    unsigned char MultiplayPassive;  // 0x1A6
     bool WallOwner;  // 0x1A7
     unsigned char SmartAI;  // 0x1A8
     char m_padding_1A9[7];  // 0x1A9

@@ -6,9 +6,10 @@
 namespace gamemd {
 
 struct DeleteAndZero {
-    unsigned int __pad_0;  // 0x0
-    unsigned int q004;  // 0x4
-    unsigned int u32_8;  // 0x8
+    char __pad_0[2];  // 0x0
+    unsigned short ptr_2;  // 0x2
+    unsigned int ptr_4;  // 0x4
+    unsigned int ptr_8;  // 0x8
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int Alt(void *a1 = 0);

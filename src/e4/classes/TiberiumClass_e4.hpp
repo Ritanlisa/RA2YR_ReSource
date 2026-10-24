@@ -12,7 +12,8 @@ struct LineTrail;  // fix_fwd_type_supply
 
 struct TiberiumClass {
 #pragma pack(push, 1)  // X60: binary-packed layout
-    void * ptr_0;  // 0x0
+    char ptr_0[2];  // 0x0
+    unsigned short u16_2;  // 0x2
     void * ptr_4;  // 0x4
     void * ptr_8;  // 0x8
     void * ptr_C;  // 0xC
@@ -69,8 +70,8 @@ struct TiberiumClass {
     OverlayTypeClass * Image;  // 0xD8
     char NumFrames[4];  // 0xDC
     int Image_d;  // 0xE0
-    char __pad_E4[4];  // 0xE4
-    unsigned int q0E8;  // 0xE8
+    char Tactical_E4[4];  // 0xE4
+    unsigned int u32_E8;  // 0xE8
     int TiberiumClass_field_EC_d;  // 0xEC
     int TiberiumClass_field_F0;  // 0xF0
     int TiberiumClass_field_F4_d;  // 0xF4

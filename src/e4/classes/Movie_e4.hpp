@@ -11,7 +11,12 @@ struct Movie {
     int q004;  // 0x4
     int q008;  // 0x8
     int q00C;  // 0xC
-    char __pad_10[20];  // 0x10
+    char __pad_10[1];  // 0x10
+    unsigned char u8_11;  // 0x11
+    unsigned char u32_12;  // 0x12
+    char __pad_13[5];  // 0x13
+    unsigned int u32_18;  // 0x18
+    char __pad_1C[8];  // 0x1C
     unsigned int u32_24;  // 0x24
     unsigned int u32_28;  // 0x28
     char __pad_2C[12];  // 0x2C

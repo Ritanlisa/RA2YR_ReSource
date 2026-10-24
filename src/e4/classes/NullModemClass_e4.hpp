@@ -16,7 +16,8 @@ struct NullModemClass {
     unsigned int q018;  // 0x18
     unsigned int u32_1C;  // 0x1C
     unsigned int u32_20;  // 0x20
-    char __pad_24[8];  // 0x24
+    char __pad_24[4];  // 0x24
+    unsigned int u32_28;  // 0x28
     unsigned int u32_2C;  // 0x2C
     unsigned char q030;  // 0x30
     char __pad_31[3];  // 0x31
@@ -29,13 +30,17 @@ struct NullModemClass {
     unsigned int u32_4C;  // 0x4C
     unsigned char q050;  // 0x50
     unsigned char u32_51;  // 0x51
-    char __pad_52[3];  // 0x52
-    char __pad_55[7];  // 0x55
+    char __pad_52[2];  // 0x52
+    unsigned char u8_54;  // 0x54
+    char __pad_55[3];  // 0x55
+    unsigned int u32_58;  // 0x58
     unsigned int u32_5C;  // 0x5C
     unsigned int u32_60;  // 0x60
     unsigned int q064;  // 0x64
     unsigned int u32_68;  // 0x68
-    char __pad_6C[12];  // 0x6C
+    char __pad_6C[4];  // 0x6C
+    unsigned int u32_70;  // 0x70
+    char __pad_74[4];  // 0x74
     unsigned int q078;  // 0x78
     char __pad_7C[188];  // 0x7C
     unsigned int q138;  // 0x138

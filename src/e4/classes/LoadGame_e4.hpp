@@ -9,7 +9,9 @@ struct LoadGame {
     int __pad_0;  // 0x0
     int q004;  // 0x4
     int q008;  // 0x8
-    void * q00C;  // 0xC
+    char q00C[1];  // 0xC
+    unsigned char u8_D;  // 0xD
+    char __pad_E[2];  // 0xE
     int q010;  // 0x10
     int q014;  // 0x14
     void * q018;  // 0x18

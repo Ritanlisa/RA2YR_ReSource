@@ -15,12 +15,15 @@ struct ParticleSystemClass;  // fix_fwd_type_supply
 struct Color;  // fix_fwd_type_supply
 
 struct ParticleSystemTypeClass {
-    void * ptr_0;  // 0x0
+    char ptr_0[1];  // 0x0
+    uint8_t zero_3C;  // 0x1
+    unsigned short u16_2;  // 0x2
     void * ptr_4;  // 0x4
     void * ptr_8;  // 0x8
     void * ptr_C;  // 0xC
     int SlowdownDistance;  // 0x10
-    int ParticleSystemTypeClass_field_29C;  // 0x14
+    unsigned char ParticleSystemTypeClass_field_29C;  // 0x14
+    char q015[3];  // 0x15
     int ParticleSystemTypeClass_field_2A0;  // 0x18
     float Velocity;  // 0x1C
     char TurretVoxel[4];  // 0x20
@@ -94,13 +97,21 @@ struct ParticleSystemTypeClass {
     int ParticleSystemTypeClass_field_bool_2D4;  // 0x2D4
     char __pad_2D8[1];  // 0x2D8
     unsigned char __pad_2D9;  // 0x2D9
-    char __pad_2DA[10];  // 0x2DA
+    char __pad_2DA[2];  // 0x2DA
+    unsigned int u32_2DC;  // 0x2DC
+    unsigned int u32_2E0;  // 0x2E0
     int q2E4;  // 0x2E4
     IUnknown * q2E8;  // 0x2E8
-    char __pad_2EC[20];  // 0x2EC
+    char __pad_2EC[4];  // 0x2EC
+    unsigned int q2F0;  // 0x2F0
+    unsigned int u32_2F4;  // 0x2F4
+    unsigned int u32_2F8;  // 0x2F8
+    unsigned int u32_2FC;  // 0x2FC
     int q300;  // 0x300
     char __pad_304[4];  // 0x304
-    AnimTypeClass * q308;  // 0x308
+    char q308[2];  // 0x308
+    unsigned char q30A;  // 0x30A
+    unsigned char u8_30B;  // 0x30B
     unsigned char u8_30C;  // 0x30C
     char __pad_30D[3];  // 0x30D
 // --- flat members (BEGIN) ---

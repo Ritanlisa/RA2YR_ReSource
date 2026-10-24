@@ -8,10 +8,12 @@
 namespace gamemd {
 
 struct AbstractTypeClass {
-    void* AbstractClass;  // 0x0
-    void* ptr_4;  // 0x4
-    void* ptr_8;  // 0x8
-    void* ptr_C;  // 0xC
+    void * AbstractClass;  // 0x0
+    void * ptr_4;  // 0x4
+    char ptr_8[1];  // 0x8
+    unsigned char u8_9;  // 0x9
+    char __pad_A[2];  // 0xA
+    void * ptr_C;  // 0xC
     unsigned int uniqueId;  // 0x10
     unsigned int abstractFlags;  // 0x14
     unsigned int nextArrayIndex;  // 0x18

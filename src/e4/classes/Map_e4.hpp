@@ -10,9 +10,9 @@ struct Map {
     char __pad_1[3];  // 0x1
     int Width;  // 0x4
     int Height;  // 0x8
-    char* Name;  // 0xC
-    char* Description;  // 0x10
-    unsigned int* CellData;  // 0x14
+    char * Name;  // 0xC
+    char * Description;  // 0x10
+    unsigned int * CellData;  // 0x14
     int MaxPlayers;  // 0x18
     bool AllowNaval;  // 0x1C
     char __pad_01D[3];  // 0x1D

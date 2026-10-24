@@ -6,10 +6,12 @@
 namespace gamemd {
 
 struct StringVector {
-    int __pad_0;  // 0x0
+    int ptr_0;  // 0x0
     unsigned int q004;  // 0x4
     unsigned int q008;  // 0x8
-    unsigned int q00C;  // 0xC
+    unsigned char q00C;  // 0xC
+    bool IsAllocated;  // 0xD
+    char __pad_E[2];  // 0xE
     int q010;  // 0x10
     int q014;  // 0x14
     unsigned int q018;  // 0x18

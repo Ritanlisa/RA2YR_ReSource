@@ -11,7 +11,8 @@ struct Coord;  // fix_fwd_type_supply
 struct TeleportLocomotionClass;  // fix_fwd_type_supply
 
 struct JumpjetLocomotionClass {
-    void * ptr_0;  // 0x0
+    char ptr_0[3];  // 0x0
+    unsigned char u32_3;  // 0x3
     void * ptr_4;  // 0x4
     void * Owner;  // 0x8
     void * LinkedTo;  // 0xC
@@ -49,14 +50,18 @@ struct JumpjetLocomotionClass {
     unsigned char unknown_6F;  // 0x6F
     int CurrentHeight;  // 0x70
     int __pad_074;  // 0x74
-    char __pad_78[12];  // 0x78
+    char __pad_78[4];  // 0x78
+    unsigned int u32_7C;  // 0x7C
+    unsigned int u32_80;  // 0x80
     unsigned char unknown_84;  // 0x84
     unsigned char unknown_85;  // 0x85
     unsigned char unknown_86;  // 0x86
     unsigned char unknown_87;  // 0x87
     char DestinationReached[1];  // 0x88
     unsigned char __pad_089;  // 0x89
-    char __pad_8A[7];  // 0x8A
+    char __pad_8A[2];  // 0x8A
+    VectorClass * q08C;  // 0x8C
+    unsigned char u32_90;  // 0x90
     unsigned char unknown_91;  // 0x91
     unsigned char unknown_92;  // 0x92
     unsigned char unknown_93;  // 0x93

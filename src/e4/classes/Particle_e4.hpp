@@ -29,7 +29,9 @@ struct Particle {
     unsigned char __pad_11C;  // 0x11C
     char __pad_11D[11];  // 0x11D
     unsigned int u32_128;  // 0x128
-    unsigned int u32_12C;  // 0x12C
+    unsigned char u32_12C;  // 0x12C
+    unsigned char u32_12D;  // 0x12D
+    char __pad_12E[2];  // 0x12E
     char __pad_130[3];  // 0x130
     unsigned char __pad_133;  // 0x133
     char __pad_134[28];  // 0x134

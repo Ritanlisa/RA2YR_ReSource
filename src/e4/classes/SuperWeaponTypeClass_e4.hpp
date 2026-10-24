@@ -101,7 +101,9 @@ struct SuperWeaponTypeClass {
     unsigned char q1A0;  // 0x1A0
     char __pad_1A1[3];  // 0x1A1
     unsigned char q1A4;  // 0x1A4
-    char __pad_1A5[3];  // 0x1A5
+    char __pad_1A5[1];  // 0x1A5
+    unsigned char u8_1A6;  // 0x1A6
+    unsigned char u8_1A7;  // 0x1A7
     unsigned char q1A8;  // 0x1A8
     char __pad_1A9[599];  // 0x1A9
     unsigned char q400;  // 0x400

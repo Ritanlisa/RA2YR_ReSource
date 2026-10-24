@@ -25,7 +25,8 @@ struct BombClass {
     int audioController[5];  // 0x30
     int soundIndex;  // 0x44
     unsigned char __pad_048;  // 0x48
-    char __pad_49[11];  // 0x49
+    char __pad_49[7];  // 0x49
+    unsigned int u32_50;  // 0x50
     int BombClass_field_54;  // 0x54
     bool BombClass_field_58;  // 0x58
     char pad_59[3];  // 0x59

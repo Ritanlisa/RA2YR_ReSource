@@ -36,7 +36,9 @@ struct Buffer {
     unsigned int u32_88;  // 0x88
     char __pad_8C[32];  // 0x8C
     unsigned int u32_AC;  // 0xAC
-    char __pad_B0[124];  // 0xB0
+    char __pad_B0[44];  // 0xB0
+    unsigned int u32_DC;  // 0xDC
+    char __pad_E0[76];  // 0xE0
     unsigned int u32_12C;  // 0x12C
     char __pad_130[40];  // 0x130
     unsigned int u32_158;  // 0x158

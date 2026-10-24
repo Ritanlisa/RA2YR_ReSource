@@ -61,7 +61,14 @@ struct Tactical {
     char __pad_B5[3];  // 0xB5
     char __pad_B8[4];  // 0xB8
     unsigned int q0BC;  // 0xBC
-    char __pad_C0[32];  // 0xC0
+    char __pad_C0[4];  // 0xC0
+    unsigned int u32_C4;  // 0xC4
+    unsigned int u32_C8;  // 0xC8
+    unsigned int u32_CC;  // 0xCC
+    unsigned int u32_D0;  // 0xD0
+    unsigned int u32_D4;  // 0xD4
+    unsigned int u32_D8;  // 0xD8
+    unsigned int u32_DC;  // 0xDC
     unsigned int u32_E0;  // 0xE0
     char __pad_E4[16];  // 0xE4
     int q0F4;  // 0xF4
@@ -75,13 +82,23 @@ struct Tactical {
     unsigned char u32_D64;  // 0xD64
     char __pad_D65[3];  // 0xD65
     unsigned char u32_D68;  // 0xD68
-    char __pad_D69[11];  // 0xD69
+    char __pad_D69[3];  // 0xD69
+    unsigned int u32_D6C;  // 0xD6C
+    unsigned int u32_D70;  // 0xD70
     unsigned char qD74;  // 0xD74
     char __pad_D75[3];  // 0xD75
     unsigned char qD78;  // 0xD78
-    char __pad_D79[4];  // 0xD79
+    char __pad_D79[3];  // 0xD79
+    unsigned char u8_D7C;  // 0xD7C
     unsigned char u32_D7D;  // 0xD7D
-    char __pad_D7E[38];  // 0xD7E
+    char __pad_D7E[2];  // 0xD7E
+    unsigned int u32_D80;  // 0xD80
+    char __pad_D84[12];  // 0xD84
+    unsigned int u32_D90;  // 0xD90
+    unsigned int u32_D94;  // 0xD94
+    unsigned int u32_D98;  // 0xD98
+    unsigned int u32_D9C;  // 0xD9C
+    unsigned int u32_DA0;  // 0xDA0
     int qDA4;  // 0xDA4
     unsigned int qDA8;  // 0xDA8
     unsigned char qDAC;  // 0xDAC
@@ -92,7 +109,18 @@ struct Tactical {
     unsigned char qDB8;  // 0xDB8
     char __pad_DB9[43];  // 0xDB9
     unsigned int u32_DE4;  // 0xDE4
-    char __pad_DE8[908];  // 0xDE8
+    char __pad_DE8[4];  // 0xDE8
+    unsigned int u32_DEC;  // 0xDEC
+    unsigned int u32_DF0;  // 0xDF0
+    unsigned int u32_DF4;  // 0xDF4
+    unsigned int u32_DF8;  // 0xDF8
+    unsigned int u32_DFC;  // 0xDFC
+    unsigned int u32_E00;  // 0xE00
+    unsigned int u32_E04;  // 0xE04
+    unsigned int u32_E08;  // 0xE08
+    unsigned int u32_E0C;  // 0xE0C
+    unsigned int u32_E10;  // 0xE10
+    char __pad_E14[864];  // 0xE14
     unsigned short u32_1174;  // 0x1174
     unsigned short u32_1176;  // 0x1176
     unsigned short u32_1178;  // 0x1178
@@ -100,7 +128,10 @@ struct Tactical {
     unsigned int u32_117C;  // 0x117C
     unsigned char u32_1180;  // 0x1180
     unsigned char u32_1181;  // 0x1181
-    char __pad_1182[2542];  // 0x1182
+    char __pad_1182[38];  // 0x1182
+    unsigned int u32_11A8;  // 0x11A8
+    unsigned int u32_11AC;  // 0x11AC
+    char __pad_11B0[2496];  // 0x11B0
     unsigned char q1B70;  // 0x1B70
     char __pad_1B71[3511];  // 0x1B71
     unsigned char q2928;  // 0x2928

@@ -21,7 +21,9 @@ struct DSurface {
     int u32_C;  // 0xC
     int q010;  // 0x10
     unsigned int u32_14;  // 0x14
-    unsigned int u32_18;  // 0x18
+    unsigned char u32_18;  // 0x18
+    unsigned char u32_19;  // 0x19
+    char __pad_1A[2];  // 0x1A
     void * u32_1C;  // 0x1C
     unsigned int u32_20;  // 0x20
     int q024;  // 0x24
@@ -53,7 +55,9 @@ struct DSurface {
     int q10C;  // 0x10C
     char __pad_110[11];  // 0x110
     unsigned int u32_11B;  // 0x11B
-    char __pad_11F[49];  // 0x11F
+    char __pad_11F[1];  // 0x11F
+    unsigned int q120;  // 0x120
+    char __pad_124[44];  // 0x124
     unsigned char q150;  // 0x150
     char __pad_151[3];  // 0x151
     uint8_t u8_154;  // 0x154
@@ -73,7 +77,11 @@ struct DSurface {
     unsigned int q_200;  // 0x200
     char __pad_204[20];  // 0x204
     unsigned char q218;  // 0x218
-    char __pad_219[551];  // 0x219
+    char __pad_219[369];  // 0x219
+    unsigned int q38A;  // 0x38A
+    char __pad_38E[30];  // 0x38E
+    unsigned int q3AC;  // 0x3AC
+    char __pad_3B0[144];  // 0x3B0
     unsigned char q440;  // 0x440
     char __pad_441[211];  // 0x441
     int q514;  // 0x514

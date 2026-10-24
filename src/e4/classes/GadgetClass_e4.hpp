@@ -7,7 +7,7 @@
 namespace gamemd {
 
 struct GadgetClass {
-    int __pad_0;  // 0x0
+    int ptr_0;  // 0x0
     int X;  // 0x4
     int Y;  // 0x8
     int Width;  // 0xC

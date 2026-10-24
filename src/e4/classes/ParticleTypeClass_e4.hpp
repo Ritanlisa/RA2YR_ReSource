@@ -16,11 +16,13 @@ struct Color;  // fix_fwd_type_supply
 struct TypeList_flat;  // fix_fwd_type_supply
 
 struct ParticleTypeClass {
+#pragma pack(push, 1)  // X60: binary-packed layout
     void * ArrayIndex;  // 0x0
     void * q28C;  // 0x4
     void * BehavesLike;  // 0x8
     unsigned int ParticleTypeClass_field_0xC;  // 0xC
-    char __pad_010[3];  // 0x10
+    char __pad_010[1];  // 0x10
+    unsigned short alignmentPadding_3;  // 0x11
     unsigned char IsAllocated;  // 0x13
     int Damage;  // 0x14
     int StartScale;  // 0x18
@@ -97,7 +99,9 @@ struct ParticleTypeClass {
     unsigned int ParticleTypeClass_field_0x2B4;  // 0x2B4
     void * q2B8;  // 0x2B8
     CampaignClass * ParticleTypeClass_field_0x2BC;  // 0x2BC
-    char __pad_2C0[8];  // 0x2C0
+    char __pad_2C0[5];  // 0x2C0
+    unsigned char u8_2C5;  // 0x2C5
+    char __pad_2C6[2];  // 0x2C6
     int ColorList;  // 0x2C8
     VectorClass * ParticleTypeClass_field_0x2CC;  // 0x2CC
     unsigned char __pad_2D0;  // 0x2D0
@@ -115,7 +119,10 @@ struct ParticleTypeClass {
     unsigned int Translucency_d;  // 0x2F4
     unsigned int WindEffect_d;  // 0x2F8
     unsigned char u32_2FC[4];  // 0x2FC
-    int q300;  // 0x300
+    unsigned char q300;  // 0x300
+    bool ParticleTypeClass_field_bool_301;  // 0x301
+    bool Translucent;  // 0x302
+    bool ShowShadow;  // 0x303
     int Deacc;  // 0x304
     unsigned char DeleteOnStateLimit_d;  // 0x308
     unsigned char EndStateAI_d;  // 0x309
@@ -147,6 +154,7 @@ struct ParticleTypeClass {
     void GetClassIdentifier();
     int GetFoundationHeight(char a2);
     void ParticleTypeClass_LoadFromINI(uint8_t *** aP1);  // plateau: def-aligned C2039/C2660
+#pragma pack(pop)
 };
 
 } // namespace gamemd

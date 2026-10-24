@@ -13,7 +13,8 @@ struct Conflict_WorldDominationTour_12 {
     char __pad_1[3];  // 0x1
     unsigned int u32_4;  // 0x4
     unsigned int u32_8;  // 0x8
-    unsigned int q00C;  // 0xC
+    unsigned char q00C;  // 0xC
+    char IsAllocated[3];  // 0xD
     int q010;  // 0x10
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---

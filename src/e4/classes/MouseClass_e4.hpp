@@ -24,32 +24,52 @@ struct MouseClass {
     void * HandleClick_ph;  // 0x0
     int u32_4;  // 0x4
     int u32_8;  // 0x8
-    int q00C;  // 0xC
+    unsigned char q00C;  // 0xC
+    bool IsAllocated;  // 0xD
+    char __pad_E[2];  // 0xE
     unsigned int q_10;  // 0x10
     int q014;  // 0x14
-    char __pad_18[8];  // 0x18
+    char __pad_18[4];  // 0x18
+    unsigned int q01C;  // 0x1C
     unsigned int CapacityIncrement;  // 0x20
     unsigned int ptr_24;  // 0x24
-    int q028;  // 0x28
+    int MouseClass_field_0x28;  // 0x28
     char __pad_2C[1];  // 0x2C
     char MouseClass_field_0x2D[4];  // 0x2D
-    char __pad_31[7];  // 0x31
-    int u32_38;  // 0x38
+    char __pad_31[3];  // 0x31
+    unsigned int u32_34;  // 0x34
+    int MouseClass_field_0x38;  // 0x38
     char __pad_3C[4];  // 0x3C
     unsigned int q_40;  // 0x40
-    char __pad_44[28];  // 0x44
+    char __pad_44[4];  // 0x44
+    CampaignClass * u32_48;  // 0x48
+    unsigned int somecount_4C;  // 0x4C
+    unsigned int u32_50;  // 0x50
+    unsigned int u32_54;  // 0x54
+    unsigned int u32_58;  // 0x58
+    unsigned int q05C;  // 0x5C
     unsigned int q_60;  // 0x60
     char __pad_64[4];  // 0x64
     int q068;  // 0x68
     char __pad_6C[4];  // 0x6C
-    CampaignClass * q070;  // 0x70
+    CampaignClass * LevelAndPassabilityStruct2pointer_70;  // 0x70
     char __pad_74[12];  // 0x74
     unsigned int q_80;  // 0x80
-    char __pad_84[28];  // 0x84
+    char __pad_84[12];  // 0x84
+    unsigned int q090;  // 0x90
+    unsigned int q094;  // 0x94
+    char __pad_98[8];  // 0x98
     unsigned int q_A0;  // 0xA0
     char __pad_A4[44];  // 0xA4
     unsigned int q_D0;  // 0xD0
-    char __pad_D4[40];  // 0xD4
+    char __pad_D4[4];  // 0xD4
+    unsigned int q0D8;  // 0xD8
+    unsigned int q0DC;  // 0xDC
+    char __pad_E0[4];  // 0xE0
+    unsigned int q0E4;  // 0xE4
+    char __pad_E8[12];  // 0xE8
+    unsigned int q0F4;  // 0xF4
+    unsigned int q0F8;  // 0xF8
     int q0FC;  // 0xFC
     unsigned int q_100;  // 0x100
     char __pad_104[8];  // 0x104
@@ -75,14 +95,25 @@ struct MouseClass {
     void * q5B8;  // 0x5B8
     char __pad_5BC[192];  // 0x5BC
     unsigned int u32_67C;  // 0x67C
-    char __pad_680[2808];  // 0x680
-    int u32_1178;  // 0x1178
+    char __pad_680[2780];  // 0x680
+    unsigned int u32_115C;  // 0x115C
+    unsigned int q1160;  // 0x1160
+    unsigned int q1164;  // 0x1164
+    char __pad_1168[4];  // 0x1168
+    unsigned int q116C;  // 0x116C
+    char __pad_1170[4];  // 0x1170
+    unsigned short u32_1174;  // 0x1174
+    unsigned short u16_1176;  // 0x1176
+    unsigned short u32_1178;  // 0x1178
+    unsigned short u32_117A;  // 0x117A
     int u32_117C;  // 0x117C
     char __pad_1180[32];  // 0x1180
-    int q11A0;  // 0x11A0
-    int q11A4;  // 0x11A4
-    int q11A8;  // 0x11A8
-    char __pad_11AC[172];  // 0x11AC
+    int MouseClass_field_0x11A0;  // 0x11A0
+    int MouseClass_field_0x11A4;  // 0x11A4
+    int MouseClass_field_0x11A8;  // 0x11A8
+    char __pad_11AC[16];  // 0x11AC
+    unsigned int q11BC;  // 0x11BC
+    char __pad_11C0[152];  // 0x11C0
     int q1258;  // 0x1258
     char __pad_125C[17084];  // 0x125C
     unsigned int u32_5518;  // 0x5518

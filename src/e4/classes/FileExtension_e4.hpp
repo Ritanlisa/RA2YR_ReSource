@@ -9,7 +9,9 @@ struct FileExtension {
     int __pad_000;  // 0x0
     int q004;  // 0x4
     int q008;  // 0x8
-    int q00C;  // 0xC
+    unsigned char q00C;  // 0xC
+    unsigned char u8_D;  // 0xD
+    char __pad_E[2];  // 0xE
     unsigned int u32_10;  // 0x10
     unsigned int u32_14;  // 0x14
     char __pad_18[232];  // 0x18

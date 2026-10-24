@@ -18,7 +18,7 @@ struct AlphaShapeClass {
     int q024;  // 0x24
     unsigned int u32_28;  // 0x28
     unsigned int u32_2C;  // 0x2C
-    unsigned int u32_30;  // 0x30
+    unsigned int q030;  // 0x30
     unsigned int u32_34;  // 0x34
     unsigned int u32_38;  // 0x38
     unsigned char u32_3C;  // 0x3C

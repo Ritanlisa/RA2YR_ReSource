@@ -11,7 +11,9 @@ struct VectorCursor;  // fix_fwd_type_supply
 struct GraphicMenuAnimItem {
     void * ptr_0;  // 0x0
     unsigned int __pad_004;  // 0x4
-    int q008;  // 0x8
+    unsigned char q008;  // 0x8
+    unsigned char u8_9;  // 0x9
+    char __pad_A[2];  // 0xA
     int q00C;  // 0xC
     int q010;  // 0x10
     int q014;  // 0x14

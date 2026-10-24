@@ -13,7 +13,9 @@ struct Turret {
     unsigned int qBC;  // 0xBC
     unsigned int qC0;  // 0xC0
     unsigned int qC4;  // 0xC4
-    char __pad_C8[3033];  // 0xC8
+    char __pad_C8[304];  // 0xC8
+    unsigned int AbstractClass_1F8;  // 0x1F8
+    char __pad_1FC[2725];  // 0x1FC
     unsigned char u32_CA1;  // 0xCA1
     char __pad_CA2[2];  // 0xCA2
 // --- flat members (BEGIN) ---

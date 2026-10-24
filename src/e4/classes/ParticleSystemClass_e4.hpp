@@ -65,7 +65,12 @@ struct ParticleSystemClass {
     int SparkSpawnFrames;  // 0xDC
     void * SpotlightRadius;  // 0xE0
     bool TimeToDie;  // 0xE4
-    char __pad_E5[20];  // 0xE5
+    char __pad_E5[3];  // 0xE5
+    unsigned int u32_E8;  // 0xE8
+    unsigned int q0EC;  // 0xEC
+    unsigned int q0F0;  // 0xF0
+    unsigned int q0F4;  // 0xF4
+    unsigned char u32_F8;  // 0xF8
     bool ParticleSystemClass_field_bool_F9;  // 0xF9
     unsigned char __pad_0FA;  // 0xFA
     char __pad_FB[1];  // 0xFB

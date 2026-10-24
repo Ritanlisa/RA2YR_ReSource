@@ -42,7 +42,9 @@ struct FoggedObjectClass {
     unsigned int q5C;  // 0x5C
     unsigned int q060;  // 0x60
     unsigned int u32_64;  // 0x64
-    char __pad_68[4];  // 0x68
+    char __pad_68[1];  // 0x68
+    unsigned char u32_69;  // 0x69
+    char __pad_6A[2];  // 0x6A
     unsigned int q06C;  // 0x6C
     unsigned int q070;  // 0x70
     unsigned char u32_74;  // 0x74

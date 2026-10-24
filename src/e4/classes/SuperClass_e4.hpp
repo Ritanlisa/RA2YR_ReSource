@@ -52,12 +52,17 @@ struct SuperClass {
     unsigned char __pad_066;  // 0x66
     char __pad_67[1];  // 0x67
     unsigned int u32_68;  // 0x68
-    unsigned int u32_6C;  // 0x6C
+    unsigned char u32_6C;  // 0x6C
+    bool Granted;  // 0x6D
+    bool OneTime;  // 0x6E
+    bool IsCharged;  // 0x6F
     int q070;  // 0x70
     unsigned int u32_74;  // 0x74
     unsigned int u32_78;  // 0x78
     unsigned int u32_7C;  // 0x7C
-    char __pad_80[22];  // 0x80
+    char __pad_80[16];  // 0x80
+    void * q090;  // 0x90
+    char __pad_94[2];  // 0x94
     bool CanHold;  // 0x96
     char __pad_97[3];  // 0x97
     unsigned char __pad_09A;  // 0x9A

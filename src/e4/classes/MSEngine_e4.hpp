@@ -9,11 +9,15 @@ struct CampaignClass;  // fix_fwd_type_supply
 struct VectorClass_flat;  // fix_fwd_type_supply
 struct DynamicVector;  // fix_fwd_type_supply
 struct MSEngine {
-    void * ptr_0;  // 0x0
+    char ptr_0[1];  // 0x0
+    unsigned char q001;  // 0x1
+    char __pad_2[2];  // 0x2
     unsigned char MSEngine_field_0x4;  // 0x4
     char __pad_5[3];  // 0x5
     int q008;  // 0x8
-    int u32_C;  // 0xC
+    unsigned char u32_C;  // 0xC
+    bool IsAllocated;  // 0xD
+    char __pad_E[2];  // 0xE
     int q010;  // 0x10
     char __pad_14[4];  // 0x14
     unsigned int u32_18;  // 0x18

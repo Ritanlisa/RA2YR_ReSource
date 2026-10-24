@@ -529,10 +529,21 @@ struct MSShapeAnim {
 
 #ifndef GAMEMD_TREE_UNIVERSE
 struct ObjectClass {
-    void * ptr_0;  // 0x0
-    unsigned int ptr_4;  // 0x4
-    unsigned int ptr_8;  // 0x8
-    unsigned int ptr_C;  // 0xC
+    char ptr_0[1];  // 0x0
+    unsigned char ptr_1;  // 0x1
+    unsigned char ptr_2;  // 0x2
+    unsigned char ptr_3;  // 0x3
+    unsigned char ptr_4;  // 0x4
+    unsigned char u8_5;  // 0x5
+    unsigned short u16_6;  // 0x6
+    unsigned char ptr_8;  // 0x8
+    unsigned char u32_9;  // 0x9
+    unsigned char u8_A;  // 0xA
+    unsigned char u8_B;  // 0xB
+    char ptr_C[1];  // 0xC
+    unsigned char u32_D;  // 0xD
+    unsigned char u8_E;  // 0xE
+    unsigned char u8_F;  // 0xF
     ObjectClass * uniqueId;  // 0x10
     void * abstractFlags;  // 0x14
     ObjectClass * nextArrayIndex;  // 0x18
@@ -1205,7 +1216,7 @@ struct VectorClass {
     char IsInitialized[1];  // 0xC
     char IsAllocated[1];  // 0xD
     unsigned short tail_E;  // 0xE
-    unsigned int u32_10;  // 0x10
+    unsigned int q010;  // 0x10
     unsigned int u32_14;  // 0x14
     static void Cleanup3(int a1);  // [w14e3] raw 0x5EED00 void __thiscall VectorClass_Cleanup3
     static void * CopyConstructor(void *aP1, void *a2);

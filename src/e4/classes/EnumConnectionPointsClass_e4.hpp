@@ -10,9 +10,11 @@ struct EnumConnectionPointsClass {
     int __pad_004;  // 0x4
     int q008;  // 0x8
     int q00C;  // 0xC
-    int q010;  // 0x10
+    unsigned short q010;  // 0x10
+    unsigned short IsInitialized;  // 0x12
     int q014;  // 0x14
-    int q018;  // 0x18
+    unsigned char q018;  // 0x18
+    char u32_19[3];  // 0x19
     int q01C;  // 0x1C
     int q020;  // 0x20
     int q024;  // 0x24

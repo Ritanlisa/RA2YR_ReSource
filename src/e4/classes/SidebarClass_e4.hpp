@@ -15,31 +15,47 @@ struct Coord;  // fix_fwd_type_supply
 struct GadgetClass;  // fix_fwd_type_supply
 
 struct SidebarClass {
+#pragma pack(push, 1)  // X60: binary-packed layout
     void * GetProductionState_ph;  // 0x0
-    int __pad_004;  // 0x4
-    int u32_8;  // 0x8
-    char __pad_C[8];  // 0xC
+    int SidebarClass_field_0x4;  // 0x4
+    int SidebarClass_field_0x8;  // 0x8
+    char q00C[1];  // 0xC
+    unsigned char q00D;  // 0xD
+    char __pad_E[2];  // 0xE
+    unsigned int q010;  // 0x10
     int u32_14;  // 0x14
     char __pad_18[4];  // 0x18
-    int q01C;  // 0x1C
+    unsigned short q01C;  // 0x1C
+    unsigned char q01E;  // 0x1E
+    char __pad_1F[1];  // 0x1F
     char __pad_20[4];  // 0x20
     int u32_24;  // 0x24
     int u32_28;  // 0x28
     int u32_2C;  // 0x2C
-    TechnoClass * ptr_30;  // 0x30
+    TechnoClass * field_30;  // 0x30
     int __pad_034;  // 0x34
-    int u32_38;  // 0x38
-    int q03C;  // 0x3C
-    char __pad_40[20];  // 0x40
+    int SidebarClass_field_0x38;  // 0x38
+    unsigned char q03C;  // 0x3C
+    unsigned char q03D;  // 0x3D
+    unsigned char u8_3E;  // 0x3E
+    unsigned char u8_3F;  // 0x3F
+    char q040[4];  // 0x40
+    unsigned int q044;  // 0x44
+    unsigned int q048;  // 0x48
+    unsigned int somecount_4C;  // 0x4C
+    char __pad_50[4];  // 0x50
     int u32_54;  // 0x54
     int q058;  // 0x58
     int q05C;  // 0x5C
     int q060;  // 0x60
     int q064;  // 0x64
     int q068;  // 0x68
-    int q06C;  // 0x6C
-    int u32_70;  // 0x70
-    char __pad_74[12];  // 0x74
+    unsigned char q06C;  // 0x6C
+    unsigned char u8_6D;  // 0x6D
+    char __pad_6E[2];  // 0x6E
+    int LevelAndPassabilityStruct2pointer_70;  // 0x70
+    char __pad_74[8];  // 0x74
+    unsigned int u32_7C;  // 0x7C
     int q080;  // 0x80
     unsigned int LevelAndPassability;  // 0x84
     unsigned int __pad_088;  // 0x88
@@ -90,16 +106,32 @@ struct SidebarClass {
     unsigned char __pad_296;  // 0x296
     char __pad_297[89];  // 0x297
     int q2F0;  // 0x2F0
-    char __pad_2F4[556];  // 0x2F4
+    char __pad_2F4[192];  // 0x2F4
+    unsigned int u32_3B4;  // 0x3B4
+    char __pad_3B8[360];  // 0x3B8
     int q520;  // 0x520
     char __pad_524[4];  // 0x524
     char __pad_528[472];  // 0x528
     int q700;  // 0x700
     char __pad_704[1482];  // 0x704
     char SidebarClass_field_0xCCE[4];  // 0xCCE
-    char __pad_CD2[960];  // 0xCD2
+    char __pad_CD2[706];  // 0xCD2
+    unsigned int u32_F94;  // 0xF94
+    char __pad_F98[52];  // 0xF98
+    unsigned int u32_FCC;  // 0xFCC
+    char __pad_FD0[194];  // 0xFD0
     char __pad_1092[4];  // 0x1092
-    char __pad_1096[482];  // 0x1096
+    char __pad_1096[282];  // 0x1096
+    unsigned char q11B0;  // 0x11B0
+    unsigned char q11B1;  // 0x11B1
+    char __pad_11B2[118];  // 0x11B2
+    unsigned int RadarClass_field_0x1228;  // 0x1228
+    char __pad_122C[52];  // 0x122C
+    unsigned int RadarClass_field_0x1260;  // 0x1260
+    unsigned int u32_1264;  // 0x1264
+    char __pad_1268[1];  // 0x1268
+    unsigned int u32_1269;  // 0x1269
+    char __pad_126D[11];  // 0x126D
     unsigned int FoundationTypePixels;  // 0x1278
     unsigned char __pad_127C;  // 0x127C
     char __pad_127D[469];  // 0x127D
@@ -107,11 +139,13 @@ struct SidebarClass {
     char __pad_1456[50];  // 0x1456
     unsigned int RadarSizeFactor;  // 0x1488
     unsigned char __pad_148C;  // 0x148C
-    char __pad_148D[75];  // 0x148D
+    char __pad_148D[51];  // 0x148D
+    unsigned int Mixer_14C0;  // 0x14C0
+    char __pad_14C4[20];  // 0x14C4
     unsigned int IsAvailableNow;  // 0x14D8
     unsigned char __pad_14DC;  // 0x14DC
     char __pad_14DD[103];  // 0x14DD
-    int q1544;  // 0x1544
+    int SidebarClass_field_0x1544;  // 0x1544
     char __pad_1548[12020];  // 0x1548
     unsigned char u8_443C;  // 0x443C
     char __pad_443D[3927];  // 0x443D
@@ -167,6 +201,7 @@ struct SidebarClass {
     static int updateStripVisibility(SidebarClass *p_this);  // x4:ida@0x724530
     static int initializeStrip(int p0);  // x4:signals@0x724520
     static int updateStripPosition(SidebarClass *p_this);  // x4:ida@0x724540
+#pragma pack(pop)
 };
 
 } // namespace gamemd

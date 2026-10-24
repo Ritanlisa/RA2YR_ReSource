@@ -12,7 +12,8 @@ struct MoveFeedback {
     char __pad_1[3];  // 0x1
     int q004;  // 0x4
     unsigned int q008;  // 0x8
-    unsigned int q00C;  // 0xC
+    unsigned char q00C;  // 0xC
+    char IsAllocated[3];  // 0xD
     unsigned int q010;  // 0x10
     int q014;  // 0x14
     int q018;  // 0x18

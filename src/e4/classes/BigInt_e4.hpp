@@ -12,7 +12,7 @@ struct BigInt {
     int q008;  // 0x8
     int q00C;  // 0xC
     char __pad_10[496];  // 0x10
-    unsigned int u32_200;  // 0x200
+    unsigned int q_200;  // 0x200
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int __thiscall DecryptBlock(char *Src, int a3, char *a4, void *a1 = 0);

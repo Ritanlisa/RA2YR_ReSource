@@ -26,7 +26,7 @@ struct AnimClass {
     void * AnimClass_field_0x0;  // 0x0
     int AnimClass_field_0x4;  // 0x4
     void * ptr_8;  // 0x8
-    unsigned int q00C;  // 0xC
+    unsigned int ptr_C;  // 0xC
     unsigned int __pad_010;  // 0x10
     int q014;  // 0x14
     char __pad_18[3];  // 0x18
@@ -83,7 +83,8 @@ struct AnimClass {
     IUnknown * q0BC;  // 0xBC
     CellStruct * q0C0;  // 0xC0
     char __pad_C4[4];  // 0xC4
-    Coord * u32_C8;  // 0xC8
+    char u32_C8[2];  // 0xC8
+    unsigned short u32_CA;  // 0xCA
     int q0CC;  // 0xCC
     int q0D0;  // 0xD0
     IUnknown * q0D4;  // 0xD4
@@ -99,25 +100,43 @@ struct AnimClass {
     char __pad_10C[4];  // 0x10C
     unsigned int IsBuildingAnim;  // 0x110
     int q114;  // 0x114
-    int __pad_118;  // 0x118
+    char __pad_118[1];  // 0x118
+    unsigned char q119;  // 0x119
+    unsigned char q11A;  // 0x11A
+    unsigned char q11B;  // 0x11B
     int q11C;  // 0x11C
-    char __pad_120[16];  // 0x120
+    char __pad_120[8];  // 0x120
+    unsigned int u32_128;  // 0x128
+    unsigned int q12C;  // 0x12C
     int q130;  // 0x130
-    char __pad_134[62];  // 0x134
+    char __pad_134[4];  // 0x134
+    unsigned int u32_138;  // 0x138
+    unsigned int q13C;  // 0x13C
+    char __pad_140[50];  // 0x140
     unsigned char Animation;  // 0x172
     char __pad_173[1];  // 0x173
     int q174;  // 0x174
-    int __pad_178;  // 0x178
+    char __pad_178[1];  // 0x178
+    unsigned char q179;  // 0x179
+    char __pad_17A[2];  // 0x17A
     int q17C;  // 0x17C
     int q180;  // 0x180
     int q184;  // 0x184
     int q188;  // 0x188
     char __pad_18C[4];  // 0x18C
     int q190;  // 0x190
-    unsigned int __pad_194;  // 0x194
+    char __pad_194[1];  // 0x194
+    unsigned char u8_195;  // 0x195
+    unsigned char q196;  // 0x196
+    unsigned char u8_197;  // 0x197
     char __pad_198[1];  // 0x198
     unsigned char q199;  // 0x199
-    char __pad_19A[6];  // 0x19A
+    char __pad_19A[1];  // 0x19A
+    unsigned char q19B;  // 0x19B
+    unsigned char q19C;  // 0x19C
+    unsigned char SuperClass_19D;  // 0x19D
+    unsigned char q19E;  // 0x19E
+    char __pad_19F[1];  // 0x19F
     void * u32_1A0;  // 0x1A0
     char __pad_1A4[16];  // 0x1A4
     void * q1B4;  // 0x1B4
@@ -164,7 +183,9 @@ struct AnimClass {
     int q344;  // 0x344
     char __pad_348[21];  // 0x348
     char AnimClass_field_0x35D[4];  // 0x35D
-    char __pad_361[167];  // 0x361
+    char __pad_361[114];  // 0x361
+    unsigned char u32_3D3;  // 0x3D3
+    char __pad_3D4[52];  // 0x3D4
     int q408;  // 0x408
     char __pad_40C[4];  // 0x40C
     unsigned int u32_410;  // 0x410
@@ -173,7 +194,9 @@ struct AnimClass {
     char __pad_41C[60];  // 0x41C
     void * ptr_458;  // 0x458
     unsigned char __pad_45C;  // 0x45C
-    char __pad_45D[439];  // 0x45D
+    char __pad_45D[195];  // 0x45D
+    unsigned int u32_520;  // 0x520
+    char __pad_524[240];  // 0x524
     LightSourceClass * ptr_614;  // 0x614
     unsigned char __pad_618;  // 0x618
     char __pad_619[139];  // 0x619

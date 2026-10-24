@@ -6,10 +6,13 @@
 
 namespace gamemd {
 struct TileSystem {
-    int __pad_000;  // 0x0
+    char __pad_000[2];  // 0x0
+    unsigned short u16_2;  // 0x2
     int u32_4;  // 0x4
     int u32_8;  // 0x8
-    int u32_C;  // 0xC
+    unsigned char u32_C;  // 0xC
+    unsigned char u32_D;  // 0xD
+    char __pad_E[2];  // 0xE
     char __pad_10[10];  // 0x10
     unsigned char u8_1A;  // 0x1A
     char __pad_1B[29];  // 0x1B

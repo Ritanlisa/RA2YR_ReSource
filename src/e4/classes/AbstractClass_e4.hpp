@@ -105,10 +105,14 @@ struct GScreenClass {
 #define GAMEMD_USING_AbstractClass 1
 #endif
 struct AbstractClass {
-    unsigned int ptr_0;  // 0x0
-    unsigned int ptr_4;  // 0x4
+    unsigned short ptr_0;  // 0x0
+    unsigned short ptr_2;  // 0x2
+    unsigned short ptr_4;  // 0x4
+    unsigned short u32_6;  // 0x6
     unsigned int ptr_8;  // 0x8
-    unsigned int ptr_C;  // 0xC
+    unsigned char ptr_C;  // 0xC
+    unsigned char u32_D;  // 0xD
+    char __pad_E[2];  // 0xE
     ObjectClass * uniqueId;  // 0x10
     unsigned int abstractFlags;  // 0x14
     unsigned int nextArrayIndex;  // 0x18

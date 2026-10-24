@@ -1018,7 +1018,7 @@ int TechnoClass::ApplyIronCurtain()
   double v1; // st7
   int v3; // ebx
   int target; // eax
-  int ptr_0; // edi
+  TechnoClass *ptr_0; // edi
   int v6; // eax
   int v7; // eax
   int v8; // edx
@@ -1103,7 +1103,7 @@ int TechnoClass::ReturnToBase()
 {
   double v1; // st7
   int v3; // edi
-  int ptr_0; // edi
+  TechnoClass *ptr_0; // edi
   int v5; // eax
   int v6; // eax
   int *v7; // eax
@@ -1402,7 +1402,7 @@ void * TechnoClass::FindClosestPlacementCell()
   int v8; // ebp
   int TileIndex; // eax
   int v10; // eax
-  int ptr_0; // eax
+  TechnoClass *ptr_0; // eax
   int16_t *v12; // eax
   int64_t v13; // rax
   int v15; // eax
@@ -1902,7 +1902,7 @@ int TechnoClass::ComputeTargetAngle()
   double v3; // st7
   int *TargetCoords; // eax
   int v6; // edi
-  int ptr_0; // edx
+  TechnoClass *ptr_0; // edx
   int v8; // ebx
   unsigned int *v9; // eax
   int v10; // edx
@@ -3258,7 +3258,7 @@ int TechnoClass::GetTurretScreenPos()
   int *v3; // eax
   int v4; // edi
   int v5; // ebx
-  int ptr_0; // edx
+  TechnoClass *ptr_0; // edx
   int *v7; // eax
   int v8; // ecx
   int v9; // edx
@@ -6391,7 +6391,7 @@ void FootClass::ProcessMissionState()
   int missionStatus; // eax
   CellClass *v4; // eax
   int focus; // ecx
-  int ptr_0; // edi
+  TechnoClass *ptr_0; // edi
   int v7; // eax
   int v8; // ebx
   unsigned int *v9; // edi
@@ -6682,7 +6682,7 @@ int FootClass::CheckCellPassable() const
 {
 
   int v3; // edi
-  int owner; // ecx
+  HouseClass *owner; // ecx
   int v5; // eax
   unsigned int *v6; // eax
   int v7; // ebp
@@ -6781,7 +6781,7 @@ void FootClass::UpdateTeamAI()
   TeamClass *attachedTag; // ecx
   TeamClass *v4; // ecx
   TeamClass *v5; // ecx
-  int ptr_0; // edx
+  TechnoClass *ptr_0; // edx
   unsigned __int8 *v8; // edx
 
   if ( this->vt_slot_456(this) <= 0 ) /*0x4debbe*/
@@ -7312,7 +7312,7 @@ int TechnoClass::FindClosestBuilding()
   double v1; // st7
   char result; // al
   int v4; // ebp
-  int v5; // esi
+  TechnoClass *v5; // esi
   unsigned int *v6; // ebx
   unsigned int *v7; // eax
   int v8; // eax
@@ -7991,7 +7991,7 @@ void TechnoClass::CreateDestructionEffect()
   unsigned __int16 **v27; // [esp+28h] [ebp+4h]
   int v28; // [esp+2Ch] [ebp+8h]
   int v29; // [esp+30h] [ebp+Ch]
-  int v30; // [esp+34h] [ebp+10h]
+  ParticleSystemClass *v30; // [esp+34h] [ebp+10h]
   char v31; // [esp+38h] [ebp+14h]
   int v32; // [esp+38h] [ebp+14h]
   int v33; // [esp+40h] [ebp+1Ch]
@@ -10127,7 +10127,7 @@ int TechnoClass::ComputeTransform()
   unsigned int *v11; // eax
   int v12; // ebp
   const void *v13; // eax
-  int ptr_0; // eax
+  TechnoClass *ptr_0; // eax
   unsigned int *v15; // esi
   int v16; // eax
   float *v17; // eax
@@ -12466,7 +12466,7 @@ int TechnoClass::SelectAutoTarget_Start_AU()
   int v85; // ebx
   int v86; // ebp
   Object *v87; // ecx
-  int v88; // edi
+  IUnknown *v88; // edi
   unsigned int *v89; // [esp+4Ch] [ebp-6Ch]
   bool v90; // [esp+5Fh] [ebp-59h]
   int v91; // [esp+60h] [ebp-58h]
@@ -13226,7 +13226,7 @@ void FootClass::UpdateLocomotion()
   int v23; // eax
   int v24; // eax
   int v25; // eax
-  int ptr_0; // edx
+  TechnoClass *ptr_0; // edx
   int v27; // ebp
   TechnoClass **v28; // edi
   unsigned int *v29; // eax
@@ -14288,7 +14288,7 @@ int TechnoClass::HandleCursor()
   char v33; // [esp+11h] [ebp-1Bh]
   char v34; // [esp+12h] [ebp-1Ah]
   char v35; // [esp+13h] [ebp-19h]
-  int v36; // [esp+14h] [ebp-18h]
+  ObjectClass *v36; // [esp+14h] [ebp-18h]
   int occupant; // [esp+18h] [ebp-14h]
   unsigned int *v38; // [esp+1Ch] [ebp-10h]
   int v39; // [esp+20h] [ebp-Ch] BYREF
@@ -18111,7 +18111,7 @@ int TechnoClass::ComputeCombatDamage()
 {
 
   unsigned int *v3; // eax
-  int ptr_0; // edx
+  TechnoClass *ptr_0; // edx
   int v5; // edi
   int v6; // eax
   unsigned int *v7; // eax
@@ -19727,7 +19727,7 @@ int TechnoClass::GetInfantryCursorAction() const
   int v10; // eax
   int v11; // edx
   int *v12; // ecx
-  int v13; // eax
+  TechnoClass *v13; // eax
   int v14; // eax
   int v15; // eax
   unsigned __int8 *v16; // eax
@@ -19735,7 +19735,7 @@ int TechnoClass::GetInfantryCursorAction() const
   unsigned __int8 *v18; // eax
   int v19; // eax
   int v20; // ecx
-  int ptr_0; // edx
+  TechnoClass *ptr_0; // edx
   unsigned int v22[2]; // [esp+14h] [ebp-18h] BYREF
   int GroundHeight; // [esp+1Ch] [ebp-10h]
   unsigned int v24[3]; // [esp+20h] [ebp-Ch] BYREF
@@ -20434,7 +20434,7 @@ int TechnoClass::ProcessSpecialUnitDeployCrush()
   unsigned int *v8; // eax
   TechnoClass *v9; // esi
   unsigned int *v10; // eax
-  int ptr_0; // eax
+  TechnoClass *ptr_0; // eax
   TechnoClass *nextObject; // ebp
   TechnoClass *v13; // ebp
   int v14; // edx
@@ -21075,7 +21075,7 @@ int FootClass::GetField() const
 namespace ra2::game {
 int TechnoClass::GetWeaponRange(int weapon_index) const
 {
-  int v2; // eax
+  TechnoClass *v2; // eax
   double FiringDistance; // st7
 
   v2 = this->location[1]; /*0x773070*/

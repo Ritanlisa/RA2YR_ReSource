@@ -13,8 +13,13 @@ struct LineTrail;  // fix_fwd_type_supply
 
 struct MissionClass {
     void * ptr_0;  // 0x0
-    void * ptr_4;  // 0x4
-    void * ptr_8;  // 0x8
+    char ptr_4[1];  // 0x4
+    unsigned char q005;  // 0x5
+    unsigned char q006;  // 0x6
+    unsigned char q007;  // 0x7
+    char ptr_8[1];  // 0x8
+    unsigned char q009;  // 0x9
+    char __pad_A[2];  // 0xA
     void * ptr_C;  // 0xC
     unsigned int uniqueId;  // 0x10
     unsigned int abstractFlags;  // 0x14

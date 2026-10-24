@@ -37,9 +37,13 @@ struct WarheadTypeClass {
     char AmbientDamage;  // 0x98
     char pad_99[3];  // 0x99
     char Burst;  // 0x9C
-    char pad_9D[7];  // 0x9D
+    char pad_9D[3];  // 0x9D
+    unsigned int q0A0;  // 0xA0
     char Damage;  // 0xA4
-    char pad_A5[83];  // 0xA5
+    unsigned int pad_A5;  // 0xA5
+    unsigned char u32_A9;  // 0xA9
+    char __pad_AA[3];  // 0xAA
+    char __pad_AD[75];  // 0xAD
     unsigned int q0F8;  // 0xF8
     unsigned int __pad_FC;  // 0xFC
     int q100;  // 0x100
@@ -53,9 +57,11 @@ struct WarheadTypeClass {
     unsigned char __pad_11C;  // 0x11C
     char __pad_11D[3];  // 0x11D
     int q120;  // 0x120
-    char pad_124[6];  // 0x124
+    unsigned int pad_124;  // 0x124
+    unsigned short q128;  // 0x128
     bool UseSparkParticles;  // 0x12A
-    char pad_12B[2];  // 0x12B
+    char pad_12B[1];  // 0x12B
+    unsigned char u32_12C;  // 0x12C
     bool IsRailgun;  // 0x12D
     char pad_12E[2];  // 0x12E
     bool IsSonic;  // 0x130
@@ -104,9 +110,13 @@ struct WarheadTypeClass {
     int MinDebris;  // 0x198
     unsigned int unused_1CC;  // 0x19C
     unsigned char __pad_1A0;  // 0x1A0
-    char __pad_1A1[11];  // 0x1A1
+    char __pad_1A1[7];  // 0x1A1
+    unsigned int u32_1A8;  // 0x1A8
     int u32_1AC;  // 0x1AC
-    char __pad_1B0[12];  // 0x1B0
+    char __pad_1B0[5];  // 0x1B0
+    unsigned char u32_1B5;  // 0x1B5
+    char __pad_1B6[2];  // 0x1B6
+    unsigned int u32_1B8;  // 0x1B8
     int u32_1BC;  // 0x1BC
     char __pad_1C0[4];  // 0x1C0
     int u32_1C4;  // 0x1C4

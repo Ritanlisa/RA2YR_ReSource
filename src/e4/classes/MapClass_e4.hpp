@@ -22,10 +22,14 @@ struct MapClass {
     unsigned int MapClass_field_0x0;  // 0x0
     int RadarHashVector_field_0x04;  // 0x4
     int q008;  // 0x8
-    int u32_C;  // 0xC
+    unsigned char u32_C;  // 0xC
+    bool IsAllocated;  // 0xD
+    char __pad_E[2];  // 0xE
     int q010;  // 0x10
     unsigned int q014;  // 0x14
-    char __pad_18[12];  // 0x18
+    char __pad_18[4];  // 0x18
+    unsigned int q01C;  // 0x1C
+    unsigned int CapacityIncrement;  // 0x20
     unsigned int outBuffer;  // 0x24
     int MapClass_field_0x28;  // 0x28
     unsigned int q02C;  // 0x2C
@@ -37,20 +41,29 @@ struct MapClass {
     DynamicVector * ptr_50;  // 0x50
     unsigned int __pad_054;  // 0x54
     int q058;  // 0x58
-    char __pad_5C[20];  // 0x5C
+    char __pad_5C[1];  // 0x5C
+    unsigned char u32_5D;  // 0x5D
+    char __pad_5E[10];  // 0x5E
+    IUnknown * u32_68;  // 0x68
+    unsigned int ZoneConnections;  // 0x6C
     char __pad_070[16];  // 0x70
     unsigned int q080;  // 0x80
     char __pad_84[8];  // 0x84
     unsigned int LevelAndPassabilityStruct2pointer_70;  // 0x8C
-    char __pad_90[24];  // 0x90
+    char __pad_90[20];  // 0x90
+    unsigned int u32_A4;  // 0xA4
     unsigned int q0A8;  // 0xA8
-    char __pad_AC[12];  // 0xAC
+    char __pad_AC[4];  // 0xAC
+    unsigned int q0B0;  // 0xB0
+    unsigned int q0B4;  // 0xB4
     int q0B8;  // 0xB8
     unsigned char q0BC[24];  // 0xBC
     unsigned int u32_D4;  // 0xD4
     unsigned int u32_D8;  // 0xD8
     unsigned int u32_DC;  // 0xDC
-    char __pad_E0[12];  // 0xE0
+    char __pad_E0[1];  // 0xE0
+    unsigned char u32_E1;  // 0xE1
+    char __pad_E2[10];  // 0xE2
     int q0EC;  // 0xEC
     char __pad_F0[4];  // 0xF0
     unsigned int u32_F4;  // 0xF4
@@ -59,7 +72,13 @@ struct MapClass {
     int q100;  // 0x100
     char __pad_104[4];  // 0x104
     int q108;  // 0x108
-    char u32_10C[28];  // 0x10C
+    unsigned int u32_10C;  // 0x10C
+    unsigned int CellIterator_NextY;  // 0x110
+    unsigned int CellIterator_CurrentY;  // 0x114
+    unsigned int CellIterator_NextCell;  // 0x118
+    unsigned int ZoneIterator_X;  // 0x11C
+    unsigned int ZoneIterator_Y;  // 0x120
+    unsigned int u32_124;  // 0x124
     int q128;  // 0x128
     unsigned char u32_12C[4];  // 0x12C
     int q130;  // 0x130
@@ -67,7 +86,9 @@ struct MapClass {
     unsigned int MaxLevel;  // 0x138
     int MapClass_field_0x13C;  // 0x13C
     int q140;  // 0x140
-    char __pad_144[4];  // 0x144
+    char __pad_144[1];  // 0x144
+    unsigned char u32_145;  // 0x145
+    char __pad_146[2];  // 0x146
     unsigned int Crates;  // 0x148
     unsigned char __pad_14C[4];  // 0x14C
     unsigned int q150;  // 0x150
@@ -97,7 +118,8 @@ struct MapClass {
     unsigned int q2E4;  // 0x2E4
     unsigned int q2E8;  // 0x2E8
     char __pad_2EC[8];  // 0x2EC
-    unsigned int u32_2F4;  // 0x2F4
+    unsigned char u32_2F4;  // 0x2F4
+    char q2F5[3];  // 0x2F5
     char __pad_2F8[12];  // 0x2F8
     int q304;  // 0x304
     IUnknown * q308;  // 0x308
@@ -115,7 +137,9 @@ struct MapClass {
     unsigned int u32_115C;  // 0x115C
     unsigned int u32_1160;  // 0x1160
     unsigned int u32_1164;  // 0x1164
-    unsigned int __pad_1168;  // 0x1168
+    char __pad_1168[1];  // 0x1168
+    unsigned char u32_1169;  // 0x1169
+    char __pad_116A[2];  // 0x116A
     unsigned int u32_116C;  // 0x116C
     char __pad_1170[12];  // 0x1170
     unsigned int q117C;  // 0x117C
@@ -125,7 +149,10 @@ struct MapClass {
     char __pad_11A4[4];  // 0x11A4
     unsigned int q11A8;  // 0x11A8
     char __pad_11AC[4];  // 0x11AC
-    unsigned int q11B0;  // 0x11B0
+    unsigned char q11B0;  // 0x11B0
+    unsigned char q11B1;  // 0x11B1
+    unsigned char q11B2;  // 0x11B2
+    unsigned char q11B3;  // 0x11B3
     unsigned int q11B4;  // 0x11B4
     char __pad_11B8[160];  // 0x11B8
     int q1258;  // 0x1258

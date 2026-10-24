@@ -287,7 +287,7 @@ char ** LoadFromINIGraphicMenu(void * a1, void * a2, void * a3)
   unsigned __int8 *v5; // eax
   int v7; // eax
   int v8; // ebp
-  int v9; // edi
+  VectorClass *v9; // edi
   bool v10; // bl
   unsigned int *Config; // esi
   unsigned int *v12; // eax

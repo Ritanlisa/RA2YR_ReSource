@@ -12,7 +12,9 @@ namespace gamemd {
 struct NetworkGameSetup {
     HWND __pad_0;  // 0x0
     int q004;  // 0x4
-    int q008;  // 0x8
+    unsigned char q008;  // 0x8
+    unsigned char u32_9;  // 0x9
+    char __pad_A[2];  // 0xA
     int q00C;  // 0xC
     int q010;  // 0x10
     int q014;  // 0x14

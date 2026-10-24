@@ -141,7 +141,11 @@ struct ScenarioClass {
     int initTime;  // 0x3560
     short stage;  // 0x3564
     unsigned char __pad_3566;  // 0x3566
-    char __pad_3567[17];  // 0x3567
+    char __pad_3567[1];  // 0x3567
+    unsigned int q3568;  // 0x3568
+    unsigned int q356C;  // 0x356C
+    unsigned int q3570;  // 0x3570
+    unsigned int q3574;  // 0x3574
     unsigned int q3578;  // 0x3578
     unsigned int u32_357C;  // 0x357C
     unsigned int u32_3580;  // 0x3580

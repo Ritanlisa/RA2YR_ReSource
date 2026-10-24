@@ -17,9 +17,14 @@ struct HouseClass;  // fix_fwd_type_supply
 struct CellClass {
 #pragma pack(push, 1)  // X60: binary-packed layout
     void * mapCoords;  // 0x0
-    void * ptr_4;  // 0x4
-    void * ptr_8;  // 0x8
-    void * ptr_C;  // 0xC
+    char ptr_4[2];  // 0x4
+    unsigned short u32_6;  // 0x6
+    char ptr_8[1];  // 0x8
+    unsigned char u32_9;  // 0x9
+    char __pad_A[2];  // 0xA
+    char ptr_C[1];  // 0xC
+    unsigned char u8_D;  // 0xD
+    char __pad_E[2];  // 0xE
     LightConvertClass * lightConvert;  // 0x10
     void * isoTileTypeIndex;  // 0x14
     TagClass * attachedTag;  // 0x18
@@ -32,7 +37,11 @@ struct CellClass {
     unsigned char alignmentPadding;  // 0x33
     ObjectClass * attached3;  // 0x34
     unsigned char __pad_038;  // 0x38
-    char __pad_39[19];  // 0x39
+    char __pad_39[3];  // 0x39
+    unsigned int q03C;  // 0x3C
+    unsigned int ptr_40;  // 0x40
+    unsigned int u32_44;  // 0x44
+    unsigned int u32_48;  // 0x48
     unsigned int CellClass_field_4C;  // 0x4C
     int wallOwnerIndex;  // 0x50
     int infantryOwnerIndex;  // 0x54
@@ -90,16 +99,16 @@ struct CellClass {
     char __pad_148[428];  // 0x148
     unsigned char u32_2F4;  // 0x2F4
     char __pad_2F5[555];  // 0x2F5
-    unsigned int u32_520;  // 0x520
+    unsigned int BuildingTypeClass_520;  // 0x520
     char __pad_524[3320];  // 0x524
     unsigned int u32_121C;  // 0x121C
     char __pad_1220[32];  // 0x1220
-    unsigned int u32_1240;  // 0x1240
-    unsigned int u32_1244;  // 0x1244
+    unsigned int RadarClass_field_1240;  // 0x1240
+    unsigned int RadarClass_field_1244;  // 0x1244
     char __pad_1248[584];  // 0x1248
-    unsigned int u32_1490;  // 0x1490
+    unsigned int RadarClass_field_1490;  // 0x1490
     char __pad_1494[4];  // 0x1494
-    unsigned int u32_1498;  // 0x1498
+    unsigned int RadarClass_field_1498;  // 0x1498
     char __pad_149C[17004];  // 0x149C
     unsigned int u32_5708;  // 0x5708
     char __pad_570C[8];  // 0x570C

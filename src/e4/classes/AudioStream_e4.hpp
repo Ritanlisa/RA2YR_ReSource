@@ -34,7 +34,9 @@ struct AudioStream {
     unsigned char u32_70;  // 0x70
     char __pad_71[3];  // 0x71
     unsigned char u32_74;  // 0x74
-    char __pad_75[15];  // 0x75
+    char __pad_75[3];  // 0x75
+    unsigned int u32_78;  // 0x78
+    char __pad_7C[8];  // 0x7C
     unsigned char u32_84;  // 0x84
     char __pad_85[3];  // 0x85
     char __pad_88[8];  // 0x88
@@ -60,11 +62,20 @@ struct AudioStream {
     unsigned char u32_110;  // 0x110
     char __pad_111[7];  // 0x111
     unsigned char q118;  // 0x118
-    char __pad_119[55];  // 0x119
+    char __pad_119[7];  // 0x119
+    unsigned int vt_slot_120;  // 0x120
+    char __pad_124[4];  // 0x124
+    unsigned int u32_128;  // 0x128
+    char __pad_12C[20];  // 0x12C
+    unsigned int u32_140;  // 0x140
+    char __pad_144[4];  // 0x144
+    unsigned int q148;  // 0x148
+    char __pad_14C[4];  // 0x14C
     unsigned char u32_150;  // 0x150
     char __pad_151[15];  // 0x151
     unsigned char q160;  // 0x160
-    char __pad_161[7];  // 0x161
+    char __pad_161[3];  // 0x161
+    unsigned int q164;  // 0x164
     unsigned char q168;  // 0x168
     char __pad_169[7];  // 0x169
     unsigned char u32_170;  // 0x170
@@ -90,7 +101,9 @@ struct AudioStream {
     unsigned int u32_6D0;  // 0x6D0
     char __pad_6D4[4];  // 0x6D4
     unsigned int u32_6D8;  // 0x6D8
-    char __pad_6DC[176];  // 0x6DC
+    char __pad_6DC[148];  // 0x6DC
+    unsigned int u32_770;  // 0x770
+    char __pad_774[24];  // 0x774
     unsigned int u32_78C;  // 0x78C
     unsigned int u32_790;  // 0x790
     unsigned int u32_794;  // 0x794

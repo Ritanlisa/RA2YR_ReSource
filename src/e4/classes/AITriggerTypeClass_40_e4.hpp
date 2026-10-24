@@ -11,7 +11,8 @@ struct AITriggerTypeClass_40 {
     unsigned int __pad_0;  // 0x0
     int q004;  // 0x4
     int q008;  // 0x8
-    int q00C;  // 0xC
+    unsigned char q00C;  // 0xC
+    char IsAllocated[3];  // 0xD
     int q010;  // 0x10
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---

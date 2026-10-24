@@ -22,16 +22,20 @@ struct WeaponTypeClass;  // fix_fwd_type_supply
 struct InfantryClass;  // fix_fwd_type_supply
 
 struct InfantryTypeClass {
-    void * ptr_0;  // 0x0
+    char ptr_0[2];  // 0x0
+    unsigned short u16_2;  // 0x2
     void * ptr_4;  // 0x4
     void * ptr_8;  // 0x8
-    void * ptr_C;  // 0xC
+    char ptr_C[1];  // 0xC
+    uint8_t u8_D;  // 0xD
+    char __pad_E[2];  // 0xE
     unsigned int uniqueId;  // 0x10
     unsigned int abstractFlags;  // 0x14
     unsigned int nextArrayIndex;  // 0x18
     char referenceCount[4];  // 0x1C
     unsigned int NeedsSaveOrLink;  // 0x20
-    char __pad_24[8];  // 0x24
+    char __pad_24[4];  // 0x24
+    int TargetEffectivenessCoefficient;  // 0x28
     int ChargerBarrels_0x12;  // 0x2C
     char __pad_30[1];  // 0x30
     char __pad_31[2];  // 0x31
@@ -109,7 +113,9 @@ struct InfantryTypeClass {
     int DebrisTypes[7];  // 0x314
     int DebrisMaximums[7];  // 0x330
     char EnterWaterSound_d[16];  // 0x34C
-    unsigned int __pad_35C;  // 0x35C
+    char __pad_35C[1];  // 0x35C
+    bool Assaulter;  // 0x35D
+    char __pad_35E[2];  // 0x35E
     double TechnoTypeClass_field_double_360;  // 0x360
     double TechnoTypeClass_field_double_368;  // 0x368
     double Weight;  // 0x370
@@ -280,23 +286,32 @@ struct InfantryTypeClass {
     int NaturalParticleSystemLocation[3];  // 0x768
     int RefinerySmokeParticleSystem;  // 0x774
     int DamageParticleSystems[7];  // 0x778
-    char __pad_794[28];  // 0x794
+    char __pad_794[8];  // 0x794
+    unsigned int ShadowIndex;  // 0x79C
+    unsigned int Storage;  // 0x7A0
+    unsigned char TurretNotExportedOnGround;  // 0x7A4
+    unsigned char Gunner;  // 0x7A5
+    unsigned short HasTurretTooltips;  // 0x7A6
+    unsigned int TurretCount;  // 0x7A8
+    unsigned int WeaponCount;  // 0x7AC
     int DamageSmokeOffset[3];  // 0x7B0
     char DamSmkOffScrnRel[1];  // 0x7BC
-    char __pad_7BD[3];  // 0x7BD
+    char __pad_7BD[1];  // 0x7BD
+    unsigned char ImmuneToVeins;  // 0x7BE
+    unsigned char TiberiumHeal;  // 0x7BF
     int DestroySmokeOffset[3];  // 0x7C0
     int RefinerySmokeOffsetOne[3];  // 0x7CC
     int RefinerySmokeOffsetTwo[3];  // 0x7D8
     int RefinerySmokeOffsetThree[3];  // 0x7E4
     int RefinerySmokeOffsetFour[3];  // 0x7F0
-    int ShadowIndex;  // 0x7FC
-    int Storage;  // 0x800
-    char TurretNotExportedOnGround[1];  // 0x804
-    char Gunner[1];  // 0x805
-    char HasTurretTooltips[1];  // 0x806
+    int q7FC;  // 0x7FC
+    int q800;  // 0x800
+    char q804[1];  // 0x804
+    char q805[1];  // 0x805
+    char q806[1];  // 0x806
     char __pad_807[1];  // 0x807
-    int TurretCount;  // 0x808
-    int WeaponCount;  // 0x80C
+    int q808;  // 0x808
+    int q80C;  // 0x80C
     char IsChargeTurret[1];  // 0x810
     char __pad_811[3];  // 0x811
     int TurretWeapon[33];  // 0x814
@@ -308,8 +323,8 @@ struct InfantryTypeClass {
     char Trainable[1];  // 0xC8E
     char DamageSparks[1];  // 0xC8F
     char TargetLaser[1];  // 0xC90
-    char ImmuneToVeins[1];  // 0xC91
-    char TiberiumHeal[1];  // 0xC92
+    char qC91[1];  // 0xC91
+    char qC92[1];  // 0xC92
     char CloakStop[1];  // 0xC93
     char IsTrain[1];  // 0xC94
     char IsDropship[1];  // 0xC95
@@ -332,9 +347,11 @@ struct InfantryTypeClass {
     char __pad_CB5[3];  // 0xCB5
     int BarrelAnimData[4];  // 0xCB8
     bool TechnoTypeClass_field_bool_CC8;  // 0xCC8
-    char __pad_CC9[2];  // 0xCC9
+    char __pad_CC9[1];  // 0xCC9
+    unsigned char align_CCA;  // 0xCCA
     char align_CCB[4];  // 0xCCB
-    char __pad_CCF[2];  // 0xCCF
+    char __pad_CCF[1];  // 0xCCF
+    unsigned char Cloakable;  // 0xCD0
     bool GapGenerator;  // 0xCD1
     bool GapRadiusInCells;  // 0xCD2
     bool SuperGapRadiusInCells;  // 0xCD3
@@ -377,7 +394,11 @@ struct InfantryTypeClass {
     int JumpjetWobbles;  // 0xD5C
     char __pad_D60[4];  // 0xD60
     int JumpjetNoWobbles;  // 0xD64
-    char __pad_D68[8];  // 0xD68
+    char __pad_D68[4];  // 0xD68
+    unsigned char JumpJet;  // 0xD6C
+    unsigned char Crashable;  // 0xD6D
+    unsigned char ConsideredAircraft;  // 0xD6E
+    unsigned char Organic;  // 0xD6F
     unsigned int NoShadow;  // 0xD70
     unsigned int RequiresStolenSovietTech;  // 0xD74
     int ForbiddenHouses;  // 0xD78
@@ -406,15 +427,30 @@ struct InfantryTypeClass {
     unsigned int u32_E44;  // 0xE44
     unsigned int u32_E48;  // 0xE48
     unsigned int u32_E4C;  // 0xE4C
-    unsigned char qE50[16];  // 0xE50
+    char qE50[4];  // 0xE50
+    CampaignClass * DeadBodies_Items;  // 0xE54
+    unsigned int DeadBodies_Capacity;  // 0xE58
+    char __pad_E5C[1];  // 0xE5C
+    unsigned char DeadBodies_FlagByte;  // 0xE5D
+    char __pad_E5E[2];  // 0xE5E
     unsigned int qE60;  // 0xE60
     unsigned int u32_E64;  // 0xE64
     char __pad_E68[4];  // 0xE68
-    char u32_E6C[16];  // 0xE6C
+    unsigned int u32_E6C;  // 0xE6C
+    CampaignClass * DeathAnims_Items;  // 0xE70
+    unsigned int DeathAnims_Capacity;  // 0xE74
+    char __pad_E78[1];  // 0xE78
+    unsigned char DeathAnims_FlagByte;  // 0xE79
+    char __pad_E7A[2];  // 0xE7A
     unsigned int u32_E7C;  // 0xE7C
     unsigned int u32_E80;  // 0xE80
     char __pad_E84[4];  // 0xE84
-    char u32_E88[16];  // 0xE88
+    unsigned int u32_E88;  // 0xE88
+    CampaignClass * VoiceComment_Items;  // 0xE8C
+    unsigned int VoiceComment_Capacity;  // 0xE90
+    char __pad_E94[1];  // 0xE94
+    unsigned char VoiceComment_FlagByte;  // 0xE95
+    char __pad_E96[2];  // 0xE96
     unsigned int u32_E98;  // 0xE98
     unsigned int u32_E9C;  // 0xE9C
     char __pad_EA0[4];  // 0xEA0

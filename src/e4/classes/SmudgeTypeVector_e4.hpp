@@ -12,7 +12,9 @@ struct SmudgeTypeVector {
     char __pad_1[3];  // 0x1
     int u32_4;  // 0x4
     int q008;  // 0x8
-    int q00C;  // 0xC
+    unsigned char q00C;  // 0xC
+    bool IsAllocated;  // 0xD
+    char __pad_E[2];  // 0xE
     int q010;  // 0x10
     int q014;  // 0x14
 // --- flat members (BEGIN) ---

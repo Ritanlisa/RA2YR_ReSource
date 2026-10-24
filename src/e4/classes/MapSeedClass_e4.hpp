@@ -31,7 +31,7 @@ struct MapSeedClass {
     unsigned int u32_5C;  // 0x5C
     unsigned int u32_60;  // 0x60
     unsigned int u32_64;  // 0x64
-    unsigned int u32_68;  // 0x68
+    unsigned int q068;  // 0x68
     unsigned int u32_6C;  // 0x6C
     unsigned int u32_70;  // 0x70
     unsigned int u32_74;  // 0x74

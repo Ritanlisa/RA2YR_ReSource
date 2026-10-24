@@ -58,8 +58,12 @@ struct BuildingLightClass {
     void * lineTrailer;  // 0xA8
     double Speed;  // 0xAC
     char __pad_B4[4];  // 0xB4
-    char BuildingLightClass_field_B8[12];  // 0xB8
-    char BuildingLightClass_field_C4[12];  // 0xC4
+    unsigned int BuildingLightClass_field_B8;  // 0xB8
+    unsigned int q0BC;  // 0xBC
+    unsigned int q0C0;  // 0xC0
+    unsigned int BuildingLightClass_field_C4;  // 0xC4
+    unsigned int q0C8;  // 0xC8
+    unsigned int q0CC;  // 0xCC
     unsigned int BuildingLightClass_field_D0;  // 0xD0
     unsigned char __pad_0D4;  // 0xD4
     char __pad_D5[3];  // 0xD5

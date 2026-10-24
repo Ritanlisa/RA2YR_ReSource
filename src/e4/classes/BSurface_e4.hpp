@@ -17,7 +17,11 @@ struct BSurface {
     void * ptr_24;  // 0x24
     unsigned int u32_28;  // 0x28
     unsigned int u32_2C;  // 0x2C
-    char __pad_30[20];  // 0x30
+    char __pad_30[12];  // 0x30
+    unsigned short u16_3C;  // 0x3C
+    unsigned char u8_3E;  // 0x3E
+    unsigned char u8_3F;  // 0x3F
+    char __pad_40[4];  // 0x40
     unsigned int q044;  // 0x44
     char __pad_48[16];  // 0x48
     unsigned int q058;  // 0x58
@@ -25,7 +29,10 @@ struct BSurface {
     unsigned int q060;  // 0x60
     char __pad_64[8];  // 0x64
     unsigned int q06C;  // 0x6C
-    char __pad_70[32];  // 0x70
+    char __pad_70[20];  // 0x70
+    unsigned int u32_84;  // 0x84
+    unsigned int u32_88;  // 0x88
+    unsigned int u32_8C;  // 0x8C
     char __pad_90[4];  // 0x90
     unsigned int u32_94;  // 0x94
     unsigned int u32_98;  // 0x98

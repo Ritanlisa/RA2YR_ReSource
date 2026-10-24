@@ -40,7 +40,11 @@ struct BuildingPlacement {
     unsigned char u32_90;  // 0x90
     char __pad_91[83];  // 0x91
     unsigned int u32_E4;  // 0xE4
-    char __pad_E8[51];  // 0xE8
+    char __pad_E8[4];  // 0xE8
+    unsigned int u32_EC;  // 0xEC
+    char __pad_F0[32];  // 0xF0
+    unsigned int u32_110;  // 0x110
+    char __pad_114[7];  // 0x114
     unsigned char u32_11B;  // 0x11B
     unsigned char u32_11C;  // 0x11C
     char __pad_11D[7];  // 0x11D

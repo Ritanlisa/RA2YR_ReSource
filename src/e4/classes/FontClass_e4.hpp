@@ -10,7 +10,10 @@ struct FontClass {
     char __pad_1[3];  // 0x1
     unsigned int q004;  // 0x4
     unsigned int u32_8;  // 0x8
-    unsigned int u32_C;  // 0xC
+    unsigned char u32_C;  // 0xC
+    unsigned char u32_D;  // 0xD
+    unsigned char u32_E;  // 0xE
+    char __pad_F[1];  // 0xF
     ConvertClass * ptr_10;  // 0x10
     unsigned int __pad_014;  // 0x14
     unsigned int u32_18;  // 0x18

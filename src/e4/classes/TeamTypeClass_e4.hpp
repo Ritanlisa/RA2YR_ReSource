@@ -27,7 +27,11 @@ struct TeamTypeClass {
     unsigned int taskForce;  // 0x40
     int taskForceCount;  // 0x44
     int taskForceCapacity;  // 0x48
-    char __pad_4C[12];  // 0x4C
+    char __pad_4C[1];  // 0x4C
+    unsigned char u8_4D;  // 0x4D
+    char __pad_4E[2];  // 0x4E
+    unsigned int u32_50;  // 0x50
+    void * q054;  // 0x54
     int TeamTypeClass_field_58;  // 0x58
     unsigned char TeamTypeClass_field_5C;  // 0x5C
     unsigned char TeamTypeClass_field_5D;  // 0x5D

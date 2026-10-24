@@ -36,7 +36,8 @@ struct Scenario {
     int q080;  // 0x80
     char __pad_84[20];  // 0x84
     int u32_98;  // 0x98
-    char __pad_9C[212];  // 0x9C
+    char __pad_9C[208];  // 0x9C
+    unsigned int u32_16C;  // 0x16C
     unsigned int u32_170;  // 0x170
     unsigned int u32_174;  // 0x174
     char __pad_178[4];  // 0x178

@@ -7,7 +7,8 @@
 namespace gamemd {
 
 struct SlaveManagerClass {
-    unsigned int ptr_0;  // 0x0
+    unsigned short ptr_0;  // 0x0
+    unsigned short u16_2;  // 0x2
     void * ptr_4;  // 0x4
     void * ptr_8;  // 0x8
     void * ptr_C;  // 0xC
@@ -26,7 +27,8 @@ struct SlaveManagerClass {
     int slaveVectorCapacity;  // 0x40
     int creationFrame;  // 0x44
     unsigned int __pad_48;  // 0x48
-    char __pad_4C[8];  // 0x4C
+    char __pad_4C[4];  // 0x4C
+    unsigned int u32_50;  // 0x50
     int SlaveManagerClass_field_54;  // 0x54
     int SlaveManagerClass_field_58;  // 0x58
     int SlaveManagerClass_field_5C;  // 0x5C

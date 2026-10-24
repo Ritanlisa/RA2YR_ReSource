@@ -12,7 +12,10 @@ struct GameSetup {
     AbstractClass * ptr_8;  // 0x8
     unsigned int __pad_00C;  // 0xC
     unsigned int u32_10;  // 0x10
-    unsigned int u32_14;  // 0x14
+    unsigned char u32_14;  // 0x14
+    unsigned char u32_15;  // 0x15
+    unsigned char u32_16;  // 0x16
+    unsigned char u32_17;  // 0x17
     unsigned int u32_18;  // 0x18
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---

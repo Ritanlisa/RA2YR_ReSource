@@ -10,7 +10,8 @@ struct CheckListClass {
     unsigned int __pad_004;  // 0x4
     int q008;  // 0x8
     int q00C;  // 0xC
-    int q010;  // 0x10
+    unsigned char q010;  // 0x10
+    char off_11[3];  // 0x11
     int q014;  // 0x14
     int q018;  // 0x18
     int q01C;  // 0x1C

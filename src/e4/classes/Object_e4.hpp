@@ -9,6 +9,7 @@
 namespace gamemd {
 struct SessionClass;  // fix_fwd_type_supply
 struct Object {
+#pragma pack(push, 1)  // X60: binary-packed layout
     char __pad_000[2];  // 0x0
     char Object_field_0x2[4];  // 0x2
     char __pad_6[2];  // 0x6
@@ -23,7 +24,7 @@ struct Object {
     int q088;  // 0x88
     int q08C;  // 0x8C
     char __pad_90[28];  // 0x90
-    int q0AC;  // 0xAC
+    int Object_field_0xAC;  // 0xAC
     char __pad_B0[52];  // 0xB0
     int q0E4;  // 0xE4
     int q0E8;  // 0xE8
@@ -32,7 +33,18 @@ struct Object {
     unsigned int u32_F8;  // 0xF8
     char __pad_FC[64];  // 0xFC
     unsigned int q13C;  // 0x13C
-    char __pad_140[348];  // 0x140
+    char __pad_140[68];  // 0x140
+    unsigned int u32_184;  // 0x184
+    char __pad_188[92];  // 0x188
+    unsigned int HouseClass_field_1E4;  // 0x1E4
+    char __pad_1E8[99];  // 0x1E8
+    unsigned int HouseClass_field_bool_24B;  // 0x24B
+    char __pad_24F[45];  // 0x24F
+    unsigned int u32_27C;  // 0x27C
+    unsigned int u32_280;  // 0x280
+    char __pad_284[4];  // 0x284
+    unsigned int u32_288;  // 0x288
+    char __pad_28C[16];  // 0x28C
     int q29C;  // 0x29C
     char __pad_2A0[21736];  // 0x2A0
     unsigned int u32_5788;  // 0x5788
@@ -58,5 +70,6 @@ struct Object {
     int  ddtor(unsigned int * a2);  // 0x5FDF10
     int StubReturn176();  // 0x5FDF00
     int StubReturn20();  // 0x5FDF50
+#pragma pack(pop)
 };
 } // namespace gamemd
