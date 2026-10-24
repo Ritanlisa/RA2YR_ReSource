@@ -25,6 +25,11 @@ sys.path.insert(0, _HERE)
 
 SNAP = os.path.join(PROJ, "decompile-results", "full_export", "src")
 OUT_POOL = os.path.join(PROJ, ".omo", "t14_extra_pool.json")
+OUT_REBUTTAL_SKIPS = os.path.join(PROJ, ".omo", "t14_rebuttal_skips.json")
+CONSTRAINTS = os.path.join(PROJ, "tools", "type_infer", "constraints",
+                           "raw_constraints.json")
+STRUCTURAL_TRUTH = os.path.join(PROJ, "anchors", "structural_truth.json")
+CLASS_LAYOUTS = os.path.join(PROJ, "tools", "class_layouts.json")
 
 # 仅匹配主表安装: [reg] 无位移
 _RE_VT_PRIMARY = re.compile(
@@ -72,6 +77,75 @@ def main():
     def ancestors_of(c):
         rec = db.get(c) or {}
         return set(rec.get("full_ancestors") or [c]) | {c}
+
+    # ── 尺寸反驳门（X125 W3, X124 W4d 建议）──
+    # 二进制布局证据: this 相对 MEMBER_ACCESS 偏移 >= 类尺寸 → 该类
+    # 不可能是 this 的包含类（成员不能活在对象尺寸之外）。
+    # 两个拒绝来源:
+    #   R1 manifest 记录: structural_truth.json size_rebuttals
+    #      (addr, refuted_class) 对 —— 历史裁决, 直接拒绝;
+    #   R2 现场尺寸检查: 候选类尺寸 vs 该地址 this 相对访问偏移集 ——
+    #      防止未来重导出后同型错误再次入池。
+    # 两者均为确定性二进制证据, 无统计投票。
+    rebutted = {}   # addr_norm -> {refuted_class, reason}
+    if os.path.exists(STRUCTURAL_TRUTH):
+        for a, rec in (json.load(open(STRUCTURAL_TRUTH,
+                                      encoding="utf-8"))
+                       .get("size_rebuttals") or {}).items():
+            try:
+                rebutted["0x%08X" % int(a, 16)] = rec
+            except (TypeError, ValueError):
+                continue
+
+    layouts_sz = {}
+    if os.path.exists(CLASS_LAYOUTS):
+        for c, v in json.load(open(CLASS_LAYOUTS, encoding="utf-8")).items():
+            if isinstance(v, dict) and isinstance(v.get("size"), int):
+                layouts_sz[c] = v["size"]
+
+    def class_size(c):
+        if c in layouts_sz:
+            return layouts_sz[c]
+        rec = db.get(c) or {}
+        s = rec.get("size")
+        return s if isinstance(s, int) and s else None
+
+    this_offsets = defaultdict(set)   # addr_norm -> {this-relative offsets}
+    if os.path.exists(CONSTRAINTS):
+        _re_row = re.compile(
+            r'\{"type": "MEMBER_ACCESS", "base": "0x([0-9A-Fa-f]{8}):this", '
+            r'"offset": (\d+)')
+        buf = ""
+        with open(CONSTRAINTS, encoding="utf-8") as f:
+            while True:
+                chunk = f.read(1 << 22)
+                if not chunk:
+                    break
+                for m in _re_row.finditer(buf + chunk):
+                    this_offsets["0x%s" % m.group(1).upper()].add(
+                        int(m.group(2)))
+                buf = chunk[-4096:]
+
+    n_r1 = n_r2 = 0
+
+    def claim_refuted(addr_norm, cls):
+        """True = 该 (addr, cls) this 声明被二进制尺寸证据反驳, 禁止入池。"""
+        nonlocal n_r1, n_r2
+        rec = rebutted.get(addr_norm)
+        if rec and rec.get("refuted_class") == cls:
+            n_r1 += 1
+            return "R1-manifest: %s" % rec.get("reason", "")
+        size = class_size(cls)
+        if size:
+            beyond = sorted(o for o in this_offsets.get(addr_norm, ())
+                            if o >= size)
+            if beyond:
+                n_r2 += 1
+                return ("R2-size: 0x%X >= %s size 0x%X"
+                        % (beyond[0], cls, size))
+        return None
+
+    refuted_skips = []
 
     # ── 通道 1: 主表安装扫描 + 保守寄存器追踪 ──
     # 仅当安装目标寄存器可证明别名入口 this(ecx) 时才算自证:
@@ -269,15 +343,19 @@ def main():
         if addr in existing or addr in pool or not facts:
             continue
         if len(facts) == 1:
-            pool[addr] = {"class": next(iter(facts)),
-                          "source": "this_pass", "evidence": sorted(facts)}
-            n_pass += 1
+            cand = next(iter(facts))
         else:
-            lca = unique_lca(facts, ancestors_of)
-            if lca:
-                pool[addr] = {"class": lca, "source": "this_pass",
-                              "evidence": sorted(facts)}
-                n_pass += 1
+            cand = unique_lca(facts, ancestors_of)
+        if not cand:
+            continue
+        why = claim_refuted(addr, cand)
+        if why:
+            refuted_skips.append({"addr": addr, "class": cand,
+                                  "source": "this_pass", "why": why})
+            continue
+        pool[addr] = {"class": cand, "source": "this_pass",
+                      "evidence": sorted(facts)}
+        n_pass += 1
     print(f"通道3 this-传递: {n_pass} (事实集目标 {len(pass_facts)})")
     n_vt = n_fold = n_slot = n_amb = 0
     # 通道 1 入池: 主表类集合的 LCA
@@ -285,29 +363,43 @@ def main():
         if addr in existing:
             continue
         if len(classes) == 1:
-            pool[addr] = {"class": next(iter(classes)),
-                          "source": "vtable_install",
-                          "evidence": sorted(classes)}
-            n_vt += 1
+            cand = next(iter(classes))
         else:
-            lca = unique_lca(classes, ancestors_of)
-            if lca:
-                pool[addr] = {"class": lca, "source": "vtable_install",
-                              "evidence": sorted(classes)}
-                n_vt += 1
-            else:
-                n_fold += 1  # COMDAT 折叠/无公共祖先 → 不可判
+            cand = unique_lca(classes, ancestors_of)
+        if not cand:
+            n_fold += 1  # COMDAT 折叠/无公共祖先 → 不可判
+            continue
+        why = claim_refuted(addr, cand)
+        if why:
+            refuted_skips.append({"addr": addr, "class": cand,
+                                  "source": "vtable_install", "why": why})
+            continue
+        pool[addr] = {"class": cand, "source": "vtable_install",
+                      "evidence": sorted(classes)}
+        n_vt += 1
     # 通道 2 入池: 包含类的唯一最小公共祖先
     for addr, classes in slot_classes.items():
         if addr in existing or addr in pool:
             continue
         lca = unique_lca(classes, ancestors_of)
-        if lca:
-            pool[addr] = {"class": lca, "source": "vtable_slot",
-                          "evidence": sorted(classes)[:6]}
-            n_slot += 1
-        else:
+        if not lca:
             n_amb += 1
+            continue
+        why = claim_refuted(addr, lca)
+        if why:
+            refuted_skips.append({"addr": addr, "class": lca,
+                                  "source": "vtable_slot", "why": why})
+            continue
+        pool[addr] = {"class": lca, "source": "vtable_slot",
+                      "evidence": sorted(classes)[:6]}
+        n_slot += 1
+
+    if refuted_skips:
+        json.dump(refuted_skips, open(OUT_REBUTTAL_SKIPS, "w",
+                                      encoding="utf-8"),
+                  ensure_ascii=False, indent=1)
+    print(f"尺寸反驳门: R1-manifest={n_r1}, R2-size={n_r2} "
+          f"(拒绝入池 {len(refuted_skips)} 条, 清单 {OUT_REBUTTAL_SKIPS})")
 
     json.dump(pool, open(OUT_POOL, "w", encoding="utf-8"),
               ensure_ascii=False, indent=0)

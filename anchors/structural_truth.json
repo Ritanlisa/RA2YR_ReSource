@@ -1667,5 +1667,46 @@
    "reason": "X124 W4: this_pass claim refuted by layout size evidence (this-relative MEMBER_ACCESS offset beyond class size); .omo/x124/w4_adjudication_size.json",
    "evidence": "access 0x68,0x6C >= CaptureManagerClass size 0x54; surviving claim SpawnManagerClass (csp_this)"
   }
- ]
+ ],
+ "size_rebuttals": {
+  "0x00465D40": {
+   "refuted_source": "csp_functions.json this vote (inferred_real_class + params[0].real_type)",
+   "refuted_class": "BuildingClass",
+   "refuted_size": 1856,
+   "reason": "this-relative MEMBER_ACCESS 0xEF0 (3824) >= BuildingClass size 0x740 (1856); a member cannot live beyond the object size",
+   "surviving_claim": "BuildingTypeClass",
+   "survivor_sources": [
+    "structural_slot",
+    "this_pass"
+   ],
+   "adjudication": ".omo/x124/w4_adjudication_size.json (X124 W4d size-based refutation; offsets from raw_constraints.json MEMBER_ACCESS)",
+   "recorded": "X125 W3"
+  },
+  "0x0050DAC0": {
+   "refuted_source": "csp_functions.json this vote (inferred_real_class + params[0].real_type)",
+   "refuted_class": "TechnoClass",
+   "refuted_size": 1312,
+   "reason": "this-relative MEMBER_ACCESS 0x577C (22396) >= TechnoClass size 0x520 (1312)",
+   "surviving_claim": "HouseClass",
+   "survivor_sources": [
+    "structural_slot",
+    "this_pass"
+   ],
+   "adjudication": ".omo/x124/w4_adjudication_size.json (X124 W4d size-based refutation; offsets from raw_constraints.json MEMBER_ACCESS)",
+   "recorded": "X125 W3"
+  },
+  "0x00653FA0": {
+   "refuted_source": "csp_functions.json this vote (inferred_real_class + params[0].real_type)",
+   "refuted_class": "TechnoClass",
+   "refuted_size": 1312,
+   "reason": "this-relative MEMBER_ACCESS 0x11E4/0x11EC/0x11F0/0x11F4/0x11F8 (4580-4600) >= TechnoClass size 0x520 (1312)",
+   "surviving_claim": "RadarClass",
+   "survivor_sources": [
+    "structural_slot",
+    "this_pass"
+   ],
+   "adjudication": ".omo/x124/w4_adjudication_size.json (X124 W4d size-based refutation; offsets from raw_constraints.json MEMBER_ACCESS)",
+   "recorded": "X125 W3"
+  }
+ }
 }

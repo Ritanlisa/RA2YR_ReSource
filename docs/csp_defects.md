@@ -100,3 +100,32 @@ commit `2ca2a251`（X119）测得 blockers：member-supply 206 / visibility 185 
 - til 修复（X123 W2）：`.omo/x123/s2_w2_repair.py`（progress/checkpoint：`w2_progress.json`，per-class 报告 `w2_repair_report.json`；12 批 idb_save）。
 - 复检（X123 W3）：`.omo/x123/s3_w3_redecompile.py` → `anchors/ida_cache_qmarkfix/`（107 文件 + `manifest.json`）。
 - IDB 改前备份：`decompile-results/gamemd_x123_pre.i64`（0.51 GB）。
+
+---
+
+## 11. X125 增补（2026-10-24，HEAD x125-pre-1 之后）
+
+- **W1 可复现性**：X124 A 带修复管线已移植为 tracked 生成器
+  	ools/csp_export/x124_snapshot_returns.py（幂等，--check 门）+ 引擎重跑
+  驱动 	ools/csp_export/x125_engine_regen.py（type_map sha 基线
+  EE16D111…，run1==run2 幂等实证 + run3 差异=W4 删除解释）。再生顺序、
+  sha 基线与差异说明 = **docs/csp_regen.md**。
+- **W2 D4 前提修正（实测）**：167 条 owner_layout_mismatch 的阻塞**不是
+  pad 粒度**。734 个缺失名实例分解：**577** 非偏移名（合成体成员是语义名，
+  与 owner 头名字面不匹配）；**115** 偏移超出 owner 权威尺寸（归属过粗——
+  ObjectClass 153 行的真缺口，需 lattice 深属主重归因，csp_defects §2 通道）；
+  **42** 权威已具名（hasParachute@0x84 等——canon_member_lowering 声明链
+  可解）。对 _gap2 体的 dry census：**706 处转换计划**（F-PAD 676 为主）+
+  6 成员供给。**本未轮写 src/（任务禁令）**，解锁序：
+  ①canon_member_lowering.py --file _gap2/gap2_global_defs.cpp --apply
+  （需先给 PADN 补 M(\d+) 十进制编码）②.omo/x93_inventory.py 重投影
+  ③gen_gap2_defs.py --x93-plan/--x93-apply。B 带本轮维持 203。
+- **W3 尺寸反驳**：3 条被证伪 csp this 投票（0x00465D40 BuildingClass /
+  0x0050DAC0 TechnoClass / 0x00653FA0 TechnoClass）以 manifest 层反驳记录
+  固化于 nchors/structural_truth.json size_rebuttals 节（引擎加载器
+  只读三具名节，新节安全忽略）；	14_pool_extender.py 入池前 R1(manifest
+  对)/R2(现场 offset≥size) 双门——首跑即拦 4 条新污染
+  （0x006E6220 TagTypeClass 等，.omo/t14_rebuttal_skips.json）。
+- **W4 幂等账**：x116 --check UNCHANGED；x124_snapshot_returns --check 0 变更
+  （csp sha 52693C72… 保持）；pool_extender 双跑字节一致；type_map 对基线
+  match。verify_csp 7/7 PASS（基线实测）。
