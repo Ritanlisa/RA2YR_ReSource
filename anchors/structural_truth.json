@@ -1619,7 +1619,6 @@
   "0x00502A80": "HouseClass",
   "0x006F6F60": "TechnoClass",
   "0x006F7220": "TechnoClass",
-  "0x006B7B90": "CaptureManagerClass",
   "0x0070FD70": "TechnoClass",
   "0x006B7D80": "CaptureManagerClass",
   "0x00746D00": "TechnoClass",
@@ -1647,7 +1646,6 @@
   "0x0056EB80": "ObjectClass",
   "0x00594F40": "DynamicVector",
   "0x005C8E40": "ObjectClass",
-  "0x0050DA80": "TechnoClass",
   "0x006B0300": "SlaveManagerClass",
   "0x006B04C0": "SlaveManagerClass",
   "0x006B0490": "SlaveManagerClass",
@@ -1655,5 +1653,19 @@
   "0x00776490": "ObjectClass",
   "0x00788800": "ObjectClass",
   "0x007BE940": "ObjectClass"
- }
+ },
+ "x124_removals": [
+  {
+   "addr": "0x0050DA80",
+   "cls": "TechnoClass",
+   "reason": "X124 W4: this_pass claim refuted by layout size evidence (this-relative MEMBER_ACCESS offset beyond class size); .omo/x124/w4_adjudication_size.json",
+   "evidence": "access 0x577C >= TechnoClass size 0x520; surviving claim HouseClass (csp_this)"
+  },
+  {
+   "addr": "0x006B7B90",
+   "cls": "CaptureManagerClass",
+   "reason": "X124 W4: this_pass claim refuted by layout size evidence (this-relative MEMBER_ACCESS offset beyond class size); .omo/x124/w4_adjudication_size.json",
+   "evidence": "access 0x68,0x6C >= CaptureManagerClass size 0x54; surviving claim SpawnManagerClass (csp_this)"
+  }
+ ]
 }

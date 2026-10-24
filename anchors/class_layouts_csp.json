@@ -913,7 +913,7 @@
      ],
      "name": "q008",
      "off": 8,
-     "source": "existing+csp+x120-exclude",
+     "source": "existing+csp",
      "type": "unsigned int",
      "width": 4
     },
@@ -9640,7 +9640,7 @@
      ],
      "name": "q09C",
      "off": 156,
-     "source": "existing+csp+x120-exclude",
+     "source": "existing+csp",
      "type": "int",
      "width": 4
     },
@@ -10428,7 +10428,7 @@
      "evidence": [],
      "name": "u32_1A0",
      "off": 416,
-     "source": "existing+csp+x120-exclude",
+     "source": "existing+csp",
      "type": "void *",
      "width": 4
     },
@@ -10446,7 +10446,7 @@
      "evidence": [],
      "name": "q1B4",
      "off": 436,
-     "source": "existing+csp+x120-exclude",
+     "source": "existing+csp",
      "type": "void *",
      "width": 4
     },
@@ -17605,7 +17605,7 @@
      ],
      "name": "ptr_8",
      "off": 8,
-     "source": "existing+csp+x120-exclude",
+     "source": "existing+csp",
      "type": "AudioMixer *",
      "width": 4
     },
@@ -39660,7 +39660,7 @@
      ],
      "name": "u32_10C",
      "off": 268,
-     "source": "existing+csp+x120-exclude",
+     "source": "existing+csp",
      "type": "int",
      "width": 4
     },
@@ -46267,7 +46267,7 @@
      ],
      "name": "q02C",
      "off": 44,
-     "source": "carrier+csp+x120-exclude",
+     "source": "carrier+csp",
      "type": "unsigned int",
      "width": 4
     },
@@ -59325,7 +59325,7 @@
      "evidence": [],
      "name": "u32_28",
      "off": 40,
-     "source": "existing+csp+x120-exclude",
+     "source": "existing+csp",
      "type": "int",
      "width": 4
     },
@@ -61592,7 +61592,7 @@
      ],
      "name": "q044",
      "off": 68,
-     "source": "carrier+csp+x120-exclude",
+     "source": "carrier+csp",
      "type": "unsigned int",
      "width": 4
     },
@@ -68577,7 +68577,7 @@
      ],
      "name": "q590",
      "off": 1424,
-     "source": "carrier+csp+x120-exclude",
+     "source": "carrier+csp",
      "type": "AbstractClass *",
      "width": 4
     },
@@ -69847,7 +69847,7 @@
      ],
      "name": "q004",
      "off": 4,
-     "source": "existing+csp+x120-exclude",
+     "source": "existing+csp",
      "type": "int",
      "width": 4
     },
@@ -73848,7 +73848,7 @@
      ],
      "name": "u32_C",
      "off": 12,
-     "source": "existing+csp+x120-exclude",
+     "source": "existing+csp",
      "type": "unsigned int",
      "width": 4
     },
@@ -99105,7 +99105,7 @@
       "0x40CC30",
       "0x40CC4B"
      ],
-     "name": "u8_D",
+     "name": "IsAlloc",
      "off": 13,
      "source": "csp",
      "type": "unsigned char",
@@ -99978,7 +99978,7 @@
      ],
      "name": "q324",
      "off": 804,
-     "source": "existing+csp+x120-exclude",
+     "source": "existing+csp",
      "type": "unsigned int",
      "width": 4
     },
@@ -100058,7 +100058,7 @@
      ],
      "name": "q33C",
      "off": 828,
-     "source": "existing+csp+x120-exclude",
+     "source": "existing+csp",
      "type": "unsigned int",
      "width": 4
     },
@@ -102405,7 +102405,7 @@
      ],
      "name": "q008",
      "off": 8,
-     "source": "existing+csp+x120-exclude",
+     "source": "existing+csp",
      "type": "int",
      "width": 4
     },
@@ -102416,7 +102416,7 @@
      ],
      "name": "u32_C",
      "off": 12,
-     "source": "existing+csp+x120-exclude",
+     "source": "existing+csp",
      "type": "unsigned char",
      "width": 1
     },
@@ -102585,7 +102585,7 @@
      "evidence": [],
      "name": "q04C",
      "off": 76,
-     "source": "carrier+csp+x120-exclude",
+     "source": "carrier+csp",
      "type": "unsigned int",
      "width": 4
     },
@@ -114569,7 +114569,7 @@
      ],
      "name": "ptr_4",
      "off": 4,
-     "source": "existing+csp+x120-exclude",
+     "source": "existing+csp",
      "type": "unsigned char",
      "width": 1
     },
@@ -128374,7 +128374,7 @@
      ],
      "name": "q008",
      "off": 8,
-     "source": "existing+csp+x120-exclude",
+     "source": "existing+csp",
      "type": "int",
      "width": 4
     },
@@ -152834,7 +152834,7 @@
      ],
      "name": "u32_4",
      "off": 4,
-     "source": "existing+csp+x120-exclude",
+     "source": "existing+csp",
      "type": "int",
      "width": 4
     },
@@ -154210,7 +154210,7 @@
      ],
      "name": "SessionClass_field_08",
      "off": 8,
-     "source": "existing+csp+x120-exclude",
+     "source": "existing+csp",
      "type": "unsigned int",
      "width": 4
     },
@@ -154222,7 +154222,7 @@
      ],
      "name": "SessionClass_field_0C",
      "off": 12,
-     "source": "existing+csp+x120-exclude",
+     "source": "existing+csp",
      "type": "unsigned char",
      "width": 1
     },
@@ -154257,7 +154257,7 @@
      ],
      "name": "SessionClass_field_10",
      "off": 16,
-     "source": "existing+csp+x120-exclude",
+     "source": "existing+csp",
      "type": "unsigned int",
      "width": 4
     },
@@ -154271,7 +154271,7 @@
      ],
      "name": "unknown_14",
      "off": 20,
-     "source": "existing+csp+x120-exclude",
+     "source": "existing+csp",
      "type": "unsigned int",
      "width": 4
     },
@@ -154765,7 +154765,7 @@
      ],
      "name": "unknown_160",
      "off": 352,
-     "source": "existing+csp+x120-exclude",
+     "source": "existing+csp",
      "type": "int",
      "width": 4
     },
@@ -154991,7 +154991,7 @@
      ],
      "name": "SessionClass_field_310",
      "off": 784,
-     "source": "existing+csp+x120-exclude",
+     "source": "existing+csp",
      "type": "char[4]",
      "width": 4
     },
@@ -171183,7 +171183,7 @@
      "evidence": [],
      "name": "pad_6E",
      "off": 110,
-     "source": "existing+x112+csp+x120-exclude",
+     "source": "existing+x112+csp",
      "type": "unsigned int",
      "width": 4
     },
@@ -171623,7 +171623,7 @@
      ],
      "name": "ptr_0",
      "off": 0,
-     "source": "existing+csp+x120-exclude",
+     "source": "existing+csp",
      "type": "void *",
      "width": 4
     },
@@ -173489,7 +173489,7 @@
      ],
      "name": "vfptr",
      "off": 0,
-     "source": "existing+x112+csp+x120-exclude",
+     "source": "existing+x112+csp",
      "type": "unsigned char",
      "width": 1
     },
@@ -178963,7 +178963,7 @@
      ],
      "name": "u8_F6",
      "off": 246,
-     "source": "carrier+csp+x120-exclude",
+     "source": "carrier+csp",
      "type": "unsigned char",
      "width": 1
     },
@@ -178977,7 +178977,7 @@
      ],
      "name": "u8_F7",
      "off": 247,
-     "source": "carrier+csp+x120-exclude",
+     "source": "carrier+csp",
      "type": "unsigned char",
      "width": 1
     }
@@ -182627,7 +182627,7 @@
      ],
      "name": "u32_520",
      "off": 1312,
-     "source": "carrier+csp+x120-exclude",
+     "source": "carrier+csp",
      "type": "unsigned int",
      "width": 4
     },
@@ -183627,7 +183627,7 @@
      ],
      "name": "ptr_4",
      "off": 4,
-     "source": "existing+csp+x120-exclude",
+     "source": "existing+csp",
      "type": "void *",
      "width": 4
     },
@@ -226782,7 +226782,7 @@
    "offsets_added": 2506,
    "rows_mapped": 51014,
    "rows_this": 64702,
-   "rows_total": 86969,
+   "rows_total": 86985,
    "unresolved_rows": 641
   },
   "generated_by": "tools/csp_export/x116_layouts_from_csp.py",
