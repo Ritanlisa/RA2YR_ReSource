@@ -28,8 +28,8 @@
  "summary": {
   "total": 291,
   "status": {
-   "owner-unusable": 178,
-   "resolved": 113
+   "owner-unusable": 167,
+   "resolved": 124
   },
   "by_band": {
    "no_e4_carrier|owner-unusable": 11,
@@ -1397,87 +1397,20 @@
   },
   "0x00518D80": {
    "address": "0x00518D80",
-   "status": "owner-unusable",
-   "owner": null,
+   "status": "resolved",
+   "owner": "TechnoClass",
    "csp_owner": "ObjectClass",
    "csp_name": "ObjectClass::CalculateLocomotionFrameIndex",
-   "refined": false,
-   "rule": "raw-this",
-   "confidence": "low",
-   "reason": "layout-fail",
-   "failing_offset": 1732,
-   "failing_name": "M1732",
-   "layout_vacuous": false,
-   "layout": {
-    "class": "TechnoClass",
-    "status": "fail",
-    "size": 1312,
-    "maxoff": 1732,
-    "rawmax": 1732,
-    "fails": [
-     {
-      "name": "M1732",
-      "offset": 1732,
-      "reason": "offset-absent"
-     },
-     {
-      "name": "M1728",
-      "offset": 1728,
-      "reason": "offset-absent"
-     },
-     {
-      "name": "M1652",
-      "offset": 1652,
-      "reason": "offset-absent"
-     },
-     {
-      "name": "size",
-      "offset": 1732,
-      "reason": "beyond-size",
-      "size": 1312
-     }
-    ],
-    "nfail": 4,
-    "warns": [],
-    "nwarn": 0
-   },
+   "refined": true,
+   "rule": "csp-param",
+   "confidence": "high",
+   "reason": "x126 deepen: TechnoClass covers max site 0x6C4",
    "evidence": {
-    "raw_decomp_this": "TechnoClass",
-    "raw_decomp_this_header": "ObjectClass",
-    "raw_decomp_sig_tag": "csp",
-    "vtable_slots": [],
-    "ctor_install": [],
-    "call_sites": [
-     {
-      "caller": "0x00518F90",
-      "caller_class": "InfantryClass",
-      "call_addr": "0x005195D5",
-      "receiver_arg": "(TechnoClass *)v17",
-      "receiver_class": null,
-      "evidence": "unresolved",
-      "confidence": "low",
-      "kind": "pseudo-only"
-     }
-    ],
-    "body_max_offset": 1732,
-    "raw_this_max_offset": 1732,
-    "used_names": [
-     "M1732",
-     "u32_0",
-     "onBridge",
-     "M1728",
-     "animation",
-     "M1652",
-     "target",
-     "primaryFacing",
-     "ptr_0",
-     "health"
-    ],
-    "this_casts": [
-     "ProgressTimer"
-    ]
-   },
-   "candidate_owner": "TechnoClass"
+    "rule": "csp-param",
+    "max_off": "0x6C4",
+    "resolved_size": 1736,
+    "note": "ObjectClass::CalculateLocomotionFrameIndex"
+   }
   },
   "0x0051FB00": {
    "address": "0x0051FB00",
@@ -2079,97 +2012,20 @@
   },
   "0x00544E00": {
    "address": "0x00544E00",
-   "status": "owner-unusable",
-   "owner": null,
+   "status": "resolved",
+   "owner": "TechnoClass",
    "csp_owner": "ObjectClass",
    "csp_name": "ObjectClass::Map_Get",
-   "refined": false,
-   "rule": "call-site",
-   "confidence": "low",
-   "reason": "layout-fail",
-   "failing_offset": 752,
-   "failing_name": "diskLaserTimer",
-   "layout_vacuous": false,
-   "layout": {
-    "class": "ObjectClass",
-    "status": "fail",
-    "size": 172,
-    "maxoff": 752,
-    "rawmax": 0,
-    "fails": [
-     {
-      "name": "diskLaserTimer",
-      "offset": 752,
-      "reason": "offset-absent"
-     },
-     {
-      "name": "size",
-      "offset": 752,
-      "reason": "beyond-size",
-      "size": 172
-     }
-    ],
-    "nfail": 2,
-    "warns": [],
-    "nwarn": 0
-   },
+   "refined": true,
+   "rule": "csp-param",
+   "confidence": "high",
+   "reason": "x126 deepen: TechnoClass covers max site 0x0",
    "evidence": {
-    "raw_decomp_this": "TechnoClass",
-    "raw_decomp_this_header": "ObjectClass",
-    "raw_decomp_sig_tag": "csp",
-    "vtable_slots": [],
-    "ctor_install": [],
-    "call_sites": [
-     {
-      "caller": "0x0047BDB0",
-      "caller_class": "ObjectClass",
-      "call_addr": "0x0047C019",
-      "receiver_arg": "v15",
-      "receiver_class": "ObjectClass",
-      "evidence": "decl:v15",
-      "confidence": "high",
-      "kind": "pseudo"
-     },
-     {
-      "caller": "0x0047BDB0",
-      "caller_class": "ObjectClass",
-      "call_addr": "0x0047C016",
-      "receiver_arg": "v15",
-      "receiver_class": "ObjectClass",
-      "evidence": "decl:v15",
-      "confidence": "high",
-      "kind": "pseudo-only"
-     },
-     {
-      "caller": "0x0047C060",
-      "caller_class": null,
-      "call_addr": "0x0047C2A5",
-      "receiver_arg": "v8",
-      "receiver_class": null,
-      "evidence": "unresolved",
-      "confidence": "low",
-      "kind": "pseudo"
-     },
-     {
-      "caller": "0x0047C060",
-      "caller_class": null,
-      "call_addr": "0x0047C2AA",
-      "receiver_arg": "v8",
-      "receiver_class": null,
-      "evidence": "unresolved",
-      "confidence": "low",
-      "kind": "pseudo-only"
-     }
-    ],
-    "body_max_offset": 752,
-    "raw_this_max_offset": 0,
-    "used_names": [
-     "diskLaserTimer",
-     "ptr_0"
-    ],
-    "this_casts": []
-   },
-   "candidate_owner": "ObjectClass"
+    "rule": "csp-param",
+    "max_off": "0x0",
+    "resolved_size": 1736,
+    "note": "ObjectClass::Map_Get"
+   }
   },
   "0x00549E50": {
    "address": "0x00549E50",
@@ -5596,194 +5452,37 @@
   },
   "0x0062E840": {
    "address": "0x0062E840",
-   "status": "owner-unusable",
-   "owner": null,
+   "status": "resolved",
+   "owner": "TechnoClass",
    "csp_owner": "ObjectClass",
    "csp_name": "ObjectClass::UpdateProductionParticleSystem",
-   "refined": false,
-   "rule": "call-site",
-   "confidence": "low",
-   "reason": "layout-fail",
-   "failing_offset": 713,
-   "failing_name": "u8_2C9",
-   "layout_vacuous": false,
-   "layout": {
-    "class": "ParticleSystemClass",
-    "status": "fail",
-    "size": 256,
-    "maxoff": 713,
-    "rawmax": 0,
-    "fails": [
-     {
-      "name": "u8_2C9",
-      "offset": 713,
-      "reason": "offset-absent"
-     },
-     {
-      "name": "missionStartTime",
-      "offset": null,
-      "reason": "name-absent"
-     },
-     {
-      "name": "missionStatus",
-      "offset": null,
-      "reason": "name-absent"
-     },
-     {
-      "name": "animation",
-      "offset": null,
-      "reason": "name-absent"
-     },
-     {
-      "name": "size",
-      "offset": 713,
-      "reason": "beyond-size",
-      "size": 256
-     }
-    ],
-    "nfail": 5,
-    "warns": [],
-    "nwarn": 0
-   },
+   "refined": true,
+   "rule": "csp-param",
+   "confidence": "high",
+   "reason": "x126 deepen: TechnoClass covers max site 0x2C9",
    "evidence": {
-    "raw_decomp_this": "TechnoClass",
-    "raw_decomp_this_header": "ObjectClass",
-    "raw_decomp_sig_tag": "csp",
-    "vtable_slots": [],
-    "ctor_install": [],
-    "call_sites": [
-     {
-      "caller": "0x0062FD60",
-      "caller_class": "ParticleSystemClass",
-      "call_addr": "0x0062FD98",
-      "receiver_arg": "(TechnoClass *)this",
-      "receiver_class": "ParticleSystemClass",
-      "evidence": "this",
-      "confidence": "high",
-      "kind": "pseudo"
-     }
-    ],
-    "body_max_offset": 713,
-    "raw_this_max_offset": 0,
-    "used_names": [
-     "flashing",
-     "currentMission",
-     "location",
-     "VectorClass_2C8",
-     "u8_2C9",
-     "missionTimer",
-     "missionStartTime",
-     "missionStatus",
-     "animation"
-    ],
-    "this_casts": []
-   },
-   "candidate_owner": "ParticleSystemClass"
+    "rule": "csp-param",
+    "max_off": "0x2C9",
+    "resolved_size": 1736,
+    "note": "ObjectClass::UpdateProductionParticleSystem"
+   }
   },
   "0x0062ED40": {
    "address": "0x0062ED40",
-   "status": "owner-unusable",
-   "owner": null,
+   "status": "resolved",
+   "owner": "TechnoClass",
    "csp_owner": "ObjectClass",
    "csp_name": "ObjectClass::UpdateBuildingParticleSystem",
-   "refined": false,
-   "rule": "call-site",
-   "confidence": "low",
-   "reason": "name-absent",
-   "failing_offset": null,
-   "failing_name": "passengers",
-   "layout_vacuous": false,
-   "layout": {
-    "class": "ParticleSystemClass",
-    "status": "fail",
-    "size": 256,
-    "maxoff": 248,
-    "rawmax": 0,
-    "fails": [
-     {
-      "name": "passengers",
-      "offset": null,
-      "reason": "name-absent"
-     },
-     {
-      "name": "flashing",
-      "offset": null,
-      "reason": "name-absent"
-     },
-     {
-      "name": "suspendedMission",
-      "offset": null,
-      "reason": "name-absent"
-     },
-     {
-      "name": "missionTimer",
-      "offset": null,
-      "reason": "name-absent"
-     },
-     {
-      "name": "missionStartTime",
-      "offset": null,
-      "reason": "name-absent"
-     },
-     {
-      "name": "__pad_1D9",
-      "offset": null,
-      "reason": "name-absent"
-     }
-    ],
-    "nfail": 13,
-    "warns": [],
-    "nwarn": 0
-   },
+   "refined": true,
+   "rule": "csp-param",
+   "confidence": "high",
+   "reason": "x126 deepen: TechnoClass covers max site 0x358",
    "evidence": {
-    "raw_decomp_this": "TechnoClass",
-    "raw_decomp_this_header": "ObjectClass",
-    "raw_decomp_sig_tag": "csp",
-    "vtable_slots": [],
-    "ctor_install": [],
-    "call_sites": [
-     {
-      "caller": "0x0062FD60",
-      "caller_class": "ParticleSystemClass",
-      "call_addr": "0x0062FD7D",
-      "receiver_arg": "(TechnoClass *)this",
-      "receiver_class": "ParticleSystemClass",
-      "evidence": "this",
-      "confidence": "high",
-      "kind": "pseudo"
-     }
-    ],
-    "body_max_offset": 248,
-    "raw_this_max_offset": 0,
-    "used_names": [
-     "radioLinks",
-     "passengers",
-     "flashing",
-     "missionQueued",
-     "ptr_0",
-     "suspendedMission",
-     "queuedMission",
-     "missionTimer",
-     "missionStartTime",
-     "VectorClass_2C8",
-     "isAliveFlag",
-     "__pad_1D9",
-     "currentMission",
-     "u32_354",
-     "location",
-     "tiltForwardsAngle",
-     "lastCommands",
-     "missionData",
-     "missionStatus",
-     "hijackerInfantryType",
-     "u32_358",
-     "animation"
-    ],
-    "this_casts": [
-     "TechnoClass"
-    ]
-   },
-   "candidate_owner": "ParticleSystemClass"
+    "rule": "csp-param",
+    "max_off": "0x358",
+    "resolved_size": 1736,
+    "note": "ObjectClass::UpdateBuildingParticleSystem"
+   }
   },
   "0x0062F9A0": {
    "address": "0x0062F9A0",
@@ -6116,66 +5815,20 @@
   },
   "0x00632000": {
    "address": "0x00632000",
-   "status": "owner-unusable",
-   "owner": null,
+   "status": "resolved",
+   "owner": "TechnoClass",
    "csp_owner": "ObjectClass",
    "csp_name": "ObjectClass::System_Init",
-   "refined": false,
-   "rule": "call-site",
-   "confidence": "low",
-   "reason": "layout-fail",
-   "failing_offset": 512,
-   "failing_name": "reloadTimer",
-   "layout_vacuous": false,
-   "layout": {
-    "class": "ObjectClass",
-    "status": "fail",
-    "size": 172,
-    "maxoff": 512,
-    "rawmax": 0,
-    "fails": [
-     {
-      "name": "reloadTimer",
-      "offset": 512,
-      "reason": "offset-absent"
-     },
-     {
-      "name": "size",
-      "offset": 512,
-      "reason": "beyond-size",
-      "size": 172
-     }
-    ],
-    "nfail": 2,
-    "warns": [],
-    "nwarn": 0
-   },
+   "refined": true,
+   "rule": "csp-param",
+   "confidence": "high",
+   "reason": "x126 deepen: TechnoClass covers max site 0x0",
    "evidence": {
-    "raw_decomp_this": "TechnoClass",
-    "raw_decomp_this_header": "ObjectClass",
-    "raw_decomp_sig_tag": "csp",
-    "vtable_slots": [],
-    "ctor_install": [],
-    "call_sites": [
-     {
-      "caller": "0x0052A670",
-      "caller_class": "ObjectClass",
-      "call_addr": "0x0052A72E",
-      "receiver_arg": "v5",
-      "receiver_class": "ObjectClass",
-      "evidence": "decl:v5",
-      "confidence": "medium",
-      "kind": "pseudo"
-     }
-    ],
-    "body_max_offset": 512,
-    "raw_this_max_offset": 0,
-    "used_names": [
-     "reloadTimer"
-    ],
-    "this_casts": []
-   },
-   "candidate_owner": "ObjectClass"
+    "rule": "csp-param",
+    "max_off": "0x0",
+    "resolved_size": 1736,
+    "note": "ObjectClass::System_Init"
+   }
   },
   "0x00633AC0": {
    "address": "0x00633AC0",
@@ -8478,161 +8131,20 @@
   },
   "0x00678850": {
    "address": "0x00678850",
-   "status": "owner-unusable",
-   "owner": null,
+   "status": "resolved",
+   "owner": "UnitClass",
    "csp_owner": "ObjectClass",
    "csp_name": "ObjectClass::InitInterfaceStubsCOM",
-   "refined": false,
-   "rule": "raw-this",
-   "confidence": "low",
-   "reason": "layout-fail",
-   "failing_offset": 6256,
-   "failing_name": "M6256",
-   "layout_vacuous": false,
-   "layout": {
-    "class": "TechnoClass",
-    "status": "fail",
-    "size": 1312,
-    "maxoff": 6256,
-    "rawmax": 0,
-    "fails": [
-     {
-      "name": "LargeVisceroid",
-      "offset": null,
-      "reason": "name-absent"
-     },
-     {
-      "name": "SmallVisceroid",
-      "offset": null,
-      "reason": "name-absent"
-     },
-     {
-      "name": "CreateInfantrySound",
-      "offset": null,
-      "reason": "name-absent"
-     },
-     {
-      "name": "InfantryBrute",
-      "offset": null,
-      "reason": "name-absent"
-     },
-     {
-      "name": "M6256",
-      "offset": 6256,
-      "reason": "offset-absent"
-     },
-     {
-      "name": "InfantryMutate",
-      "offset": null,
-      "reason": "name-absent"
-     }
-    ],
-    "nfail": 74,
-    "warns": [],
-    "nwarn": 0
-   },
+   "refined": true,
+   "rule": "csp-param",
+   "confidence": "high",
+   "reason": "x126 deepen: UnitClass covers max site 0x1870",
    "evidence": {
-    "raw_decomp_this": "TechnoClass",
-    "raw_decomp_this_header": "ObjectClass",
-    "raw_decomp_sig_tag": "csp",
-    "vtable_slots": [],
-    "ctor_install": [],
-    "call_sites": [
-     {
-      "caller": "0x007258D0",
-      "caller_class": "AbstractClass",
-      "call_addr": "0x00725A92",
-      "receiver_arg": "*(ObjectClass **)&DSurface_ViewBounds.__pad_FC[324]",
-      "receiver_class": null,
-      "evidence": "unresolved",
-      "confidence": "low",
-      "kind": "pseudo"
-     }
-    ],
-    "body_max_offset": 6256,
-    "raw_this_max_offset": 0,
-    "used_names": [
-     "LargeVisceroid",
-     "SmallVisceroid",
-     "CreateInfantrySound",
-     "InfantryBrute",
-     "M6256",
-     "M160",
-     "InfantryMutate",
-     "ptr_0",
-     "M16",
-     "MissileSafetyAltitude",
-     "u32_4",
-     "u32_8",
-     "u32_C",
-     "M20",
-     "u32_18",
-     "M6132",
-     "M5244",
-     "u32_48",
-     "ThirdCrew",
-     "NukeProjectile",
-     "CMislWarhead",
-     "IvanWarhead",
-     "VeteranRatio",
-     "Behind",
-     "MaxWaypointPathLength",
-     "BarrelParticle",
-     "FlashFrameTime",
-     "M6068",
-     "M6196",
-     "RadarEventColorSpeed",
-     "DropPodPuff",
-     "GDIWallDefenseCoefficient",
-     "GDIBaseDefenseCoefficient",
-     "BaseUnit",
-     "TreeFire",
-     "BombParachute",
-     "LargeFire",
-     "ChronoReinfDelay",
-     "ChronoRangeMinimum",
-     "SpyPowerBlackout",
-     "SovietSurvivorDivisor",
-     "AutocreateTime",
-     "HarvesterLoadRate",
-     "HarvesterDumpRate",
-     "AISafeDistance",
-     "Engineer",
-     "C4Warhead",
-     "CanDetonateTimeBomb",
-     "CHRONOSK_SHP",
-     "MyEffectivenessCoefficientDefault",
-     "TargetSpecialThreatCoefficientDefault",
-     "HelipadRatio",
-     "AALimit",
-     "WarRatio",
-     "InfantryBaseMult",
-     "PatrolScan",
-     "BaseBias",
-     "SuperWeapons",
-     "RepairSell",
-     "Production",
-     "Aircraft",
-     "SilverCrate",
-     "CrateMaximum",
-     "MinUnitCount",
-     "AIPlayers",
-     "MaxUnitCount",
-     "BridgeDestruction",
-     "DropZoneRadius",
-     "GUICheckboxSound",
-     "BuildingGarrisonedSound",
-     "GUITabSound",
-     "GUIMoveInSound",
-     "PlaceBeaconSound",
-     "CrateRevealSound",
-     "CrateUnitSound",
-     "CrateFireSound",
-     "M3132"
-    ],
-    "this_casts": []
-   },
-   "candidate_owner": "TechnoClass"
+    "rule": "csp-param",
+    "max_off": "0x1870",
+    "resolved_size": 10040,
+    "note": "ObjectClass::InitInterfaceStubsCOM"
+   }
   },
   "0x0067BFA0": {
    "address": "0x0067BFA0",
@@ -10721,79 +10233,20 @@
   },
   "0x006B2520": {
    "address": "0x006B2520",
-   "status": "owner-unusable",
-   "owner": null,
+   "status": "resolved",
+   "owner": "TechnoClass",
    "csp_owner": "ObjectClass",
    "csp_name": "ObjectClass::System_Init_6B2520",
-   "refined": false,
-   "rule": "call-site",
-   "confidence": "low",
-   "reason": "layout-fail",
-   "failing_offset": 228,
-   "failing_name": "radioLinks",
-   "layout_vacuous": false,
-   "layout": {
-    "class": "ObjectClass",
-    "status": "fail",
-    "size": 172,
-    "maxoff": 228,
-    "rawmax": 0,
-    "fails": [
-     {
-      "name": "radioLinks",
-      "offset": 228,
-      "reason": "offset-absent"
-     },
-     {
-      "name": "size",
-      "offset": 228,
-      "reason": "beyond-size",
-      "size": 172
-     }
-    ],
-    "nfail": 2,
-    "warns": [],
-    "nwarn": 0
-   },
+   "refined": true,
+   "rule": "csp-param",
+   "confidence": "high",
+   "reason": "x126 deepen: TechnoClass covers max site 0x0",
    "evidence": {
-    "raw_decomp_this": "TechnoClass",
-    "raw_decomp_this_header": "ObjectClass",
-    "raw_decomp_sig_tag": "csp",
-    "vtable_slots": [],
-    "ctor_install": [],
-    "call_sites": [
-     {
-      "caller": "0x006B2A70",
-      "caller_class": "ObjectClass",
-      "call_addr": "0x006B2E9C",
-      "receiver_arg": "v28",
-      "receiver_class": "ObjectClass",
-      "evidence": "decl:v28",
-      "confidence": "high",
-      "kind": "pseudo"
-     },
-     {
-      "caller": "0x006B2A70",
-      "caller_class": "ObjectClass",
-      "call_addr": "0x006B2ECD",
-      "receiver_arg": "v29",
-      "receiver_class": "ObjectClass",
-      "evidence": "decl:v29",
-      "confidence": "high",
-      "kind": "pseudo"
-     }
-    ],
-    "body_max_offset": 228,
-    "raw_this_max_offset": 0,
-    "used_names": [
-     "occupant",
-     "ambientSoundController",
-     "radioLinks",
-     "attachedBomb"
-    ],
-    "this_casts": []
-   },
-   "candidate_owner": "ObjectClass"
+    "rule": "csp-param",
+    "max_off": "0x0",
+    "resolved_size": 1736,
+    "note": "ObjectClass::System_Init_6B2520"
+   }
   },
   "0x006B4100": {
    "address": "0x006B4100",
@@ -14455,61 +13908,20 @@
   },
   "0x006D5730": {
    "address": "0x006D5730",
-   "status": "owner-unusable",
-   "owner": null,
+   "status": "resolved",
+   "owner": "TechnoClass",
    "csp_owner": "ObjectClass",
    "csp_name": "ObjectClass::RenderBridgeRadarBlips",
-   "refined": false,
-   "rule": "call-site",
-   "confidence": "low",
-   "reason": "name-absent",
-   "failing_offset": null,
-   "failing_name": "suspendedMission",
-   "layout_vacuous": false,
-   "layout": {
-    "class": "RadarClass",
-    "status": "fail",
-    "size": 5820,
-    "maxoff": 180,
-    "rawmax": 0,
-    "fails": [
-     {
-      "name": "suspendedMission",
-      "offset": null,
-      "reason": "name-absent"
-     }
-    ],
-    "nfail": 1,
-    "warns": [],
-    "nwarn": 0
-   },
+   "refined": true,
+   "rule": "csp-param",
+   "confidence": "high",
+   "reason": "x126 deepen: TechnoClass covers max site 0x0",
    "evidence": {
-    "raw_decomp_this": "TechnoClass",
-    "raw_decomp_this_header": "ObjectClass",
-    "raw_decomp_sig_tag": "csp",
-    "vtable_slots": [],
-    "ctor_install": [],
-    "call_sites": [
-     {
-      "caller": "0x006D5030",
-      "caller_class": "RadarClass",
-      "call_addr": "0x006D544B",
-      "receiver_arg": "(TechnoClass *)this",
-      "receiver_class": "RadarClass",
-      "evidence": "this",
-      "confidence": "high",
-      "kind": "pseudo"
-     }
-    ],
-    "body_max_offset": 180,
-    "raw_this_max_offset": 0,
-    "used_names": [
-     "queuedMission",
-     "suspendedMission"
-    ],
-    "this_casts": []
-   },
-   "candidate_owner": "RadarClass"
+    "rule": "csp-param",
+    "max_off": "0x0",
+    "resolved_size": 1736,
+    "note": "ObjectClass::RenderBridgeRadarBlips"
+   }
   },
   "0x006D6170": {
    "address": "0x006D6170",
@@ -15552,63 +14964,20 @@
   },
   "0x00710750": {
    "address": "0x00710750",
-   "status": "owner-unusable",
-   "owner": null,
+   "status": "resolved",
+   "owner": "TechnoClass",
    "csp_owner": "ObjectClass",
    "csp_name": "ObjectClass::Object_Helper",
-   "refined": false,
-   "rule": "raw-this",
-   "confidence": "low",
-   "reason": "name-absent",
-   "failing_offset": null,
-   "failing_name": "u32_4",
-   "layout_vacuous": false,
-   "layout": {
-    "class": "TechnoClass",
-    "status": "fail",
-    "size": 1312,
-    "maxoff": 32,
-    "rawmax": 32,
-    "fails": [
-     {
-      "name": "u32_4",
-      "offset": null,
-      "reason": "name-absent"
-     }
-    ],
-    "nfail": 1,
-    "warns": [],
-    "nwarn": 0
-   },
+   "refined": true,
+   "rule": "lattice-this",
+   "confidence": "high",
+   "reason": "x126 deepen: TechnoClass covers max site 0x10",
    "evidence": {
-    "raw_decomp_this": "int",
-    "raw_decomp_this_header": "TechnoClass",
-    "raw_decomp_sig_tag": "csp",
-    "vtable_slots": [],
-    "ctor_install": [],
-    "call_sites": [
-     {
-      "caller": "0x00706BD0",
-      "caller_class": "TechnoClass",
-      "call_addr": "0x00706E73",
-      "receiver_arg": "a5",
-      "receiver_class": null,
-      "evidence": "unresolved",
-      "confidence": "low",
-      "kind": "pseudo"
-     }
-    ],
-    "body_max_offset": 16,
-    "raw_this_max_offset": 32,
-    "used_names": [
-     "ptr_8",
-     "u32_4",
-     "NeedsSaveOrLink",
-     "uniqueId"
-    ],
-    "this_casts": []
-   },
-   "candidate_owner": "TechnoClass"
+    "rule": "lattice-this",
+    "max_off": "0x10",
+    "resolved_size": 1736,
+    "note": "DIRECT_PROP"
+   }
   },
   "0x00722440": {
    "address": "0x00722440",
@@ -16135,104 +15504,20 @@
   },
   "0x00736DF0": {
    "address": "0x00736DF0",
-   "status": "owner-unusable",
-   "owner": null,
+   "status": "resolved",
+   "owner": "TechnoClass",
    "csp_owner": "ObjectClass",
    "csp_name": "ObjectClass::UpdateTechnoFiring",
-   "refined": false,
-   "rule": "raw-this",
-   "confidence": "low",
-   "reason": "layout-fail",
-   "failing_offset": 1732,
-   "failing_name": "M1732",
-   "layout_vacuous": false,
-   "layout": {
-    "class": "TechnoClass",
-    "status": "fail",
-    "size": 1312,
-    "maxoff": 1732,
-    "rawmax": 1732,
-    "fails": [
-     {
-      "name": "M1732",
-      "offset": 1732,
-      "reason": "offset-absent"
-     },
-     {
-      "name": "M1677",
-      "offset": 1677,
-      "reason": "offset-absent"
-     },
-     {
-      "name": "M1444",
-      "offset": 1444,
-      "reason": "offset-absent"
-     },
-     {
-      "name": "M1652",
-      "offset": 1652,
-      "reason": "offset-absent"
-     },
-     {
-      "name": "size",
-      "offset": 1732,
-      "reason": "beyond-size",
-      "size": 1312
-     }
-    ],
-    "nfail": 5,
-    "warns": [
-     {
-      "name": "animation",
-      "offset": 268,
-      "actual": 248,
-      "reason": "offset-mismatch"
-     }
-    ],
-    "nwarn": 1
-   },
+   "refined": true,
+   "rule": "csp-param",
+   "confidence": "high",
+   "reason": "x126 deepen: TechnoClass covers max site 0x6C4",
    "evidence": {
-    "raw_decomp_this": "TechnoClass",
-    "raw_decomp_this_header": "ObjectClass",
-    "raw_decomp_sig_tag": "csp",
-    "vtable_slots": [],
-    "ctor_install": [],
-    "call_sites": [
-     {
-      "caller": "0x00736579",
-      "caller_class": "InfantryClass",
-      "call_addr": "0x007365E1",
-      "receiver_arg": "(TechnoClass *)a4",
-      "receiver_class": null,
-      "evidence": "unresolved",
-      "confidence": "low",
-      "kind": "pseudo"
-     }
-    ],
-    "body_max_offset": 1732,
-    "raw_this_max_offset": 1732,
-    "used_names": [
-     "target",
-     "ptr_0",
-     "M1732",
-     "M1677",
-     "animation",
-     "M1444",
-     "M1652",
-     "uniqueId",
-     "primaryFacing",
-     "secondaryFacing",
-     "spawnManager",
-     "ammoReloadTimer"
-    ],
-    "this_casts": [
-     "BuildingClass",
-     "TechnoClass",
-     "UnitClass",
-     "char"
-    ]
-   },
-   "candidate_owner": "TechnoClass"
+    "rule": "csp-param",
+    "max_off": "0x6C4",
+    "resolved_size": 1736,
+    "note": "ObjectClass::UpdateTechnoFiring"
+   }
   },
   "0x00737180": {
    "address": "0x00737180",
@@ -17058,89 +16343,20 @@
   },
   "0x00759EB0": {
    "address": "0x00759EB0",
-   "status": "owner-unusable",
-   "owner": null,
+   "status": "resolved",
+   "owner": "TechnoClass",
    "csp_owner": "ObjectClass",
    "csp_name": "ObjectClass::Render_Load_759EB0",
-   "refined": false,
-   "rule": "raw-this",
-   "confidence": "low",
-   "reason": "layout-fail",
-   "failing_offset": 1316,
-   "failing_name": "a4",
-   "layout_vacuous": false,
-   "layout": {
-    "class": "TechnoClass",
-    "status": "fail",
-    "size": 1312,
-    "maxoff": 1316,
-    "rawmax": 1316,
-    "fails": [
-     {
-      "name": "BuildingTypeClass_520",
-      "offset": 1312,
-      "reason": "offset-absent"
-     },
-     {
-      "name": "gattlingValue",
-      "offset": 1312,
-      "reason": "offset-absent"
-     },
-     {
-      "name": "a4",
-      "offset": 1316,
-      "reason": "offset-absent"
-     },
-     {
-      "name": "size",
-      "offset": 1316,
-      "reason": "beyond-size",
-      "size": 1312
-     }
-    ],
-    "nfail": 4,
-    "warns": [],
-    "nwarn": 0
-   },
+   "refined": true,
+   "rule": "csp-param",
+   "confidence": "high",
+   "reason": "x126 deepen: TechnoClass covers max site 0x520",
    "evidence": {
-    "raw_decomp_this": "TechnoClass",
-    "raw_decomp_this_header": "ObjectClass",
-    "raw_decomp_sig_tag": "csp",
-    "vtable_slots": [],
-    "ctor_install": [],
-    "call_sites": [
-     {
-      "caller": "0x005BF850",
-      "caller_class": null,
-      "call_addr": "0x005BF8A1",
-      "receiver_arg": "v2",
-      "receiver_class": null,
-      "evidence": "unresolved",
-      "confidence": "low",
-      "kind": "pseudo"
-     },
-     {
-      "caller": "0x005BFAA0",
-      "caller_class": null,
-      "call_addr": "0x005BFEC7",
-      "receiver_arg": "*(ObjectClass **)v15",
-      "receiver_class": null,
-      "evidence": "unresolved",
-      "confidence": "low",
-      "kind": "pseudo"
-     }
-    ],
-    "body_max_offset": 1316,
-    "raw_this_max_offset": 1316,
-    "used_names": [
-     "BuildingTypeClass_520",
-     "gattlingValue",
-     "a4",
-     "reloadTimer"
-    ],
-    "this_casts": []
-   },
-   "candidate_owner": "TechnoClass"
+    "rule": "csp-param",
+    "max_off": "0x520",
+    "resolved_size": 1736,
+    "note": "ObjectClass::Render_Load_759EB0"
+   }
   },
   "0x00759F20": {
    "address": "0x00759F20",
@@ -20124,5 +19340,9 @@
    },
    "candidate_owner": "ObjectClass"
   }
+ },
+ "x126_deepen": {
+  "added_or_updated": 11,
+  "note": "X126 W2: lattice/name-fit owner deepening (deterministic channels; X94 resolved never downgraded)"
  }
 }

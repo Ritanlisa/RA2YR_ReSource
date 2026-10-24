@@ -129,3 +129,31 @@ commit `2ca2a251`（X119）测得 blockers：member-supply 206 / visibility 185 
 - **W4 幂等账**：x116 --check UNCHANGED；x124_snapshot_returns --check 0 变更
   （csp sha 52693C72… 保持）；pool_extender 双跑字节一致；type_map 对基线
   match。verify_csp 7/7 PASS（基线实测）。
+
+## 12. X126 增补（2026-10-25，B 带闭环执行轮，HEAD 4165473f）
+
+解锁序已按 §11 执行完毕，B 带 203→**45 live**（−158）：
+
+- **Fix①** PADN `M(\d+)` 十进制编码已修（canon_member_lowering.py）：
+  PADN/PH_NAME 加 M 名 + `(?:__)?tail_`（顺手修了 `__?` 语义缺陷）、
+  `_pad_offset` M-十进制分支、MSYN 声明注释权威覆盖（165 个 X30 十六进制
+  M 名防误解码）、合成接收者 chain() 追 sidecar>CSP owner 链（1,750 类）。
+  _gap2 dry census F-PAD 676→838、ledger 562→264。
+- **W2**：`.omo/x126/w2_deepen.py`（幂等）——C1 csp-param/C2 lattice-this
+  通道 11 条 sidecar resolved（CSP real_type 升格=X116 G2 先例）；C3
+  vtable/ctor 实测 0 命中；C4 name-fit 12 条 tie 全 banked。
+- **W1**：lowering F-PAD apply 于 _gap2=412 转换/199 行（owner 语义名采
+  纳）；采纳证据经 member_lookup（X126 owner-adopt 标记）交 gen_x30 落
+  decl。gen_x30 三修：til 尺寸门 / TClassFactory_* 豁免（修 64 C2338
+  sizeof probe）/ log 正则接受 `(line):` 单 TU 形 + 合成接收者豁免
+  cross-class veto。
+- **W3**：x30 358 文件/2,381 supplies + x93 重定位 9 体 + 全量 MSVC
+  **22,599**（基线 22,296，net +303 = 647 修复 vs 950 canon-retype 新站
+  点，后者挂账 X120 式逐类 pin-back）；verify_csp 7/7 ALL PASS；无 LNK。
+- **B 带终值口径（sidecar 感知投影）**：45 live（OLM 30 / this_cast 12 /
+  raw 2 / otc 1）+ 167 owner_banked（sidecar 显式拒绝冻结带，带 reason）
+  + 16 relocatable（下一批）+ 9 已重定位。x93_inventory.py 升格
+  sidecar 感知 + owner_banked verdict。
+- **W1 表实测口径**（最终 owner 下 734 实例）：over-size 241 / spelling
+  237 / named-elsewhere 204 / in-size-unnamed 52（§11 的 577/115/42 为
+  X125 行内临时 cut；总数 734 一致）。表=.omo/x126/w1_table.md。

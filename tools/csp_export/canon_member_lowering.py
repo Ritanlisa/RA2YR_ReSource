@@ -81,8 +81,15 @@ ID = r'[A-Za-z_]\w*'
 GLOB = r'(?:g_|dword_|stru_|byte_|word_|flt_|dbl_|DataGlobal_|g_abs_)[A-Za-z0-9_]*'
 # offset-encoded member names: __pad_XX, m_XX, q0XX/qXX, u32_XX, ptr_XX,
 # tail_XX, <Cls>_field_0xNN (all suffix-hex = byte offset; index adds bytes)
+# X126: `M<DEC>` -- decimal-offset synthetic receiver members (G6b
+# gen_e4_materialize mints `M%d % off` from IDA pseudocode offsets, which are
+# decimal; x92_evidence/gen_gap2_defs decode them the same way).  The
+# decl-comment offset (gap2_global_decls.hpp `// 0xNN`) is authoritative when
+# it disagrees with the decimal decode (165 X30-era names are hex-minted) --
+# see MSYN below.
 PADN = (r'(?:__pad_[0-9A-Fa-f]+|m_[0-9A-Fa-f]+|q[0-9A-Fa-f]{2,4}|'
         r'u(?:8|16|32|64)_[0-9A-Fa-f]+|ptr_[0-9A-Fa-f]+|__?tail_[0-9A-Fa-f]+|'
+        r'M[0-9]+|'
         r'[A-Za-z_]\w*_field_0x[0-9A-Fa-f]+)')
 # cast type atom (primitive or class, optionally qualified)
 CTY = (r'(?:unsigned\s+(?:int|short|char|long)|signed\s+(?:int|short|char)|'
@@ -209,6 +216,60 @@ for _c, _e in MTAB.items():
         _d[_oi] = (_m.get('name') or '', _m.get('type') or '',
                    _m.get('size') or 4)
     MTABI[_cl] = _d
+
+# X126: MSYN -- decl-comment-authoritative (cls, name) -> offset overrides for
+# offset-encoded names.  gap2_global_decls.hpp carries explicit `// 0xNN`
+# offsets per member; 165 X30-era `M<dec>` names are hex-minted (comment
+# 0x36 for `M36`), so the body-side decimal decode would target the wrong
+# offset.  The synthetic decl is the receiver's own authority -- same
+# precedence the x93 projection reads -- so it wins over name decoding.
+MSYN = {}
+for _c, _d in DECL.items():
+    for _o, _nv in _d.items():
+        _nm = _nv[0]
+        if _nm and re.fullmatch(r'M[0-9]+|q[0-9A-Fa-f]{2,4}|'
+                                r'u(?:8|16|32|64)_[0-9A-Fa-f]+|'
+                                r'ptr_[0-9A-Fa-f]+', _nm):
+            MSYN.setdefault((_c, _nm), _o)
+
+# X126: synthetic receiver -> CSP/sidecar owner (same precedence the x93
+# relocation emitter uses: sidecar resolved > CSP inferred_real_class).
+# chain() appends the owner's ancestor chain so `this->M144` inside a
+# Gap2Recv_XXX body resolves to the OWNER's semantic name at the same offset
+# (the relocation gate requires names present in the owner header).
+SYN_OWNER = {}
+
+
+def _load_syn_owner():
+    global SYN_OWNER
+    try:
+        side = _J(ROOT / 'anchors' / 'csp_this_refined.json').get(
+            'entries') or {}
+    except Exception:
+        side = {}
+    try:
+        csp = _J(ROOT / 'tools' / 'csp' / 'full_report' /
+                 'csp_functions.json').get('functions') or {}
+    except Exception:
+        csp = {}
+    for _cls in list(DECL) + [k.lower() for k in MTAB]:
+        m = re.match(r'(?:Gap2Recv|E4Recv)_([0-9A-Fa-f]{4,8})$', _cls,
+                     re.IGNORECASE)
+        if not m:
+            continue
+        try:
+            _a = '0x%08X' % int(m.group(1), 16)
+        except ValueError:
+            continue
+        _se = side.get(_a)
+        if isinstance(_se, dict) and _se.get('status') == 'resolved' \
+                and _se.get('owner'):
+            SYN_OWNER[_cls.lower()] = _se['owner']
+            continue
+        _ce = csp.get(_a) or csp.get(_a.lower()) or {}
+        _o = _ce.get('inferred_real_class')
+        if _o and _o != 'unknown' and _known_class(_o):
+            SYN_OWNER[_cls.lower()] = _o
 
 # global symbol tables: addr <-> name (multi-name; home file tracked so the
 # emitted symbol is one the TU can actually see)
@@ -599,12 +660,22 @@ def chain(cls):
     for a in ANC.get(cls.lower(), []):
         if a not in seen:
             seen.append(a)
+    # X126: synthetic receivers resolve through their CSP/sidecar owner chain
+    # (sidecar resolved > CSP), so body M-names adopt the owner's semantic
+    # names -- the x93 relocation gate requires names present in the owner.
+    ow = SYN_OWNER.get(cls.lower())
+    if ow:
+        seen.append(ow)
+        for a in ANC.get(ow.lower(), []):
+            if a not in seen:
+                seen.append(a)
     return seen
 
 
 PH_NAME = re.compile(
     r'^(?:__pad_|q[0-9A-Fa-f]{2,4}$|m_[0-9A-Fa-f]+$|u(?:8|16|32|64)_[0-9A-Fa-f]+$|'
-    r'ptr_[0-9A-Fa-f]+$|.*_field_0x[0-9A-Fa-f]+$|tail_[0-9A-Fa-f]+$|'
+    r'ptr_[0-9A-Fa-f]+$|.*_field_0x[0-9A-Fa-f]+$|(?:__)?tail_[0-9A-Fa-f]+$|'
+    r'M[0-9]+$|'
     r'vfptr\d*$|vtable\d+$|sub_[0-9A-Fa-f]+$|g_[0-9A-Fa-f]{6,8}$)')
 
 
@@ -749,6 +820,16 @@ def resolve_member(cls, off, cast_type=None, site=None, dry=False):
         return None, 'no-class'
     nm, _ty = decl_name(cls, off)
     if nm:
+        # X126: synthetic receivers adopt owner-chain names (W1 spelling
+        # closure).  Record the adoption in member_lookup so the decl-supply
+        # generator (gen_x30 --log) can land the same name in the synthetic
+        # decl with its type -- otherwise the rewritten body has no C2039
+        # evidence trail that resolves (measured: Gap2Recv_415C60 `location`
+        # adopted from ObjectClass::location@0x9C had no type source).
+        if not dry and re.match(r'^(?:Gap2Recv|E4Recv)_[0-9A-Fa-f]{4,8}$',
+                                cls, re.IGNORECASE):
+            supply_member(cls, off, str(_ty or 'unsigned int'), 4,
+                          'X126 owner-adopt (cls %s)' % cls, name=nm)
         return nm, 'decl'
     name, ctype, size, how = _plan_name(cls, off, cast_type)
     if name is None:
@@ -807,6 +888,9 @@ def _known_class(c):
     if lc in _X5B_NONCLASS or c in ('VOID_PTR', 'TOP'):
         return False
     return c in CDB or lc in MTABI or lc in DECL
+
+
+_load_syn_owner()   # X126: after _known_class + DECL/MTAB are available
 
 
 def is_global(name):
@@ -1666,7 +1750,19 @@ def _pad_offset(base, idx):
     if not m:
         m = re.search(r'_field_0x([0-9A-Fa-f]+)$', base)
     if not m:
-        return None
+        # X126: decimal-encoded synthetic receiver member (`M144` = 0x90).
+        # Same decode x92_evidence/gen_gap2_defs use; a disagreeing decl
+        # comment is resolved by the MSYN override in _pad_convert (which
+        # runs before this fallback for known receivers).
+        md = re.fullmatch(r'M([0-9]+)', base)
+        if not md:
+            return None
+        off = int(md.group(1))
+        if idx is not None:
+            if not re.fullmatch(r'\d+', idx):
+                return None
+            off += int(idx)
+        return off
     off = int(m.group(1), 16)
     if idx is not None:
         if not re.fullmatch(r'\d+', idx):
@@ -1679,13 +1775,23 @@ def _pad_convert(seg, ctx, m, n, out, last, kind='idx'):
     recv, op, base, idx = m.group('recv'), m.group('op'), \
         m.group('name'), m.groupdict().get('idx')
     pos = m.start()
-    off = _pad_offset(base, idx)
+    cls = ctx.recv_class(recv, pos)
+    # X126: decl-comment override first -- the synthetic decl is the
+    # receiver's own offset authority and 165 X30-era M-names are hex-minted
+    # (a plain decimal decode would target the wrong offset).
+    mo = MSYN.get((cls.lower(), base)) if cls is not None else None
+    if mo is not None:
+        off = mo
+        if idx is not None and re.fullmatch(r'\d+', idx):
+            off += int(idx)
+        elif idx is not None:
+            off = None
+    else:
+        off = _pad_offset(base, idx)
     if off is None:
         ledger_add('F-PAD', ctx, pos, m.group(0),
-                   ctx.recv_class(recv, pos),
-                   None, 'var-index-or-bad-name')
+                   cls, None, 'var-index-or-bad-name')
         return None
-    cls = ctx.recv_class(recv, pos)
     site = ctx.site_of(pos)
     d = inst_disp(site) if site else None
     cands = [off]

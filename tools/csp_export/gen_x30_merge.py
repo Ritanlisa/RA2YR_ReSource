@@ -205,6 +205,14 @@ for k, v in TM.items():
 print('loading canon + member_lookup ...', flush=True)
 canon = json.loads((ROOT / 'anchors' / 'csp_canon_members.json')
                    .read_text(encoding='utf-8'))
+# X126: til binary-truth authority (same source gen_x60_carrier_layout uses)
+# -- bounds canon supplies to the binary-evidence max size.
+X60_TIL = {}
+try:
+    X60_TIL = json.loads((ROOT / '.omo' / 'evidence' / 'optimization' / 'x60'
+                          / 'x60_til.json').read_text(encoding='utf-8'))
+except Exception:
+    X60_TIL = {}
 try:
     ml = json.loads((ROOT / 'tools' / 'member_lookup.json')
                     .read_text(encoding='utf-8'))
@@ -458,12 +466,19 @@ def supply_list(cls, have_names, fn_key, site_shape_map):
     """Members to supply for cls given existing names.  Returns ordered list
     of (name, off, ty, src); `have_names` is updated in place."""
     out = []
+    # X126: til-authority size bound -- a canon offset at/after the binary
+    # truth's size is an LCA-coarseness artifact, not a real member of this
+    # class (x60 R5 rule: members beyond the authoritative size are dropped).
+    til_au = X60_TIL.get(cls) or {}
+    til_size = til_au.get("size") or 0
     ce = canon.get(cls)
     if ce:
         for off_s, mm in (ce.get('members') or {}).items():
             try:
                 off = int(str(off_s), 0)
             except ValueError:
+                continue
+            if til_size and off >= til_size:
                 continue
             nm = (mm.get('name') or '').strip()
             if not nm or not CLS_RE.match(nm):
@@ -499,7 +514,13 @@ def supply_list(cls, have_names, fn_key, site_shape_map):
             continue
         if nm in VISIBLE or nm in TREE_SPECIAL:
             continue  # a member must not shadow a type name (C2327)
-        if x60_cross_class_veto(cls, nm):
+        # X126: synthetic receivers are per-body placeholders whose purpose is
+        # adopting the owner's semantic names (X126 W1 lowering) -- the
+        # cross-class veto protects REAL carriers from contamination and must
+        # not block that adoption (measured: Gap2Recv_415C60 `location`
+        # adopted from ObjectClass::location@0x9C was vetoed -> C2039).
+        if not re.match(r'^(?:Gap2Recv|E4Recv)_[0-9A-Fa-f]{4,8}$', cls) \
+                and x60_cross_class_veto(cls, nm):
             continue  # X60: proven other-class member -> never supply
         if site_shape_map.get((cls, nm)) == 'method':
             continue  # calling the name; a data member cannot help
@@ -699,7 +720,9 @@ log_c2027_names = set()
 log_text = ''
 if LOG:
     log_text = Path(LOG).read_bytes().decode('utf-8', errors='replace')
-    _lp = re.compile(r'([A-Za-z0-9_\-\.\\/:]+\.cpp)\((\d+),\d*\): error '
+    # X126: accept both MSVC shapes -- `(line,col):` (msbuild full logs) and
+    # `(line):` (single-TU cl.exe logs, the x105 clcheck format).
+    _lp = re.compile(r'([A-Za-z0-9_\-\.\\/:]+\.cpp)\((\d+)(?:,\d*)?\): error '
                      r'C2039: ["\u201c](\w+)["\u201d]: .{0,60}?gamemd::(\w+)')
     for m in _lp.finditer(log_text):
         key = (m.group(4), m.group(3))
@@ -791,6 +814,11 @@ for path in FILES:
     file_stat = collections.Counter()
     for (cls, open_i, close_i, members) in structs:
         if close_i >= len(lines):
+            continue
+        # X126: TClassFactory_* wrappers are gen_x95_tclass_carriers-owned
+        # (its sizeof probe asserts their layout); canon supplies there grow
+        # the wrapper size and break the probe (measured: 64 C2338).
+        if cls.startswith('TClassFactory_'):
             continue
         ids = struct_identifiers(lines, open_i, close_i)
         rt, sup = plan_struct(cls, members, ids,

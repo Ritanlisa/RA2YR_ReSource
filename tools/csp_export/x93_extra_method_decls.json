@@ -9,7 +9,13 @@
   "bool Render_Render_759880(int a2, int a3, int a4);  // 0x00759880",
   "int Render_Load_759EA0();  // 0x00759EA0",
   "int Team_Start_76E430(int a2, void* aP2);  // 0x0076E430",
-  "bool Team_Start_76E8B0(int a2, int a3);  // 0x0076E8B0"
+  "bool Team_Start_76E8B0(int a2, int a3);  // 0x0076E8B0",
+  "void* Map_Get(int a2);  // 0x00544E00",
+  "int System_Init_632000(char* a2);  // 0x00632000",
+  "char System_Init_6B2520();  // 0x006B2520",
+  "int RenderBridgeRadarBlips(AbstractClass * aP1, AbstractClass * aP2);  // 0x006D5730",
+  "void ConstructWDTSelection_Create_76CBF0(void* aP1, char* aP2);  // 0x0076CBF0",
+  "void TerritorySelectWDT_Delete(int a2, char a3, int a4);  // 0x007714B0"
  ],
  "TClassFactory_SideClass": [
   "void* WinMain_Helper_6BFD40();  // 0x006BFD40"
@@ -331,7 +337,9 @@
   "int System_Read();  // 0x00776880",
   "int System_Read_7768A0(HWND hWndMain);  // 0x007768A0",
   "void* LoadAccountInfoWOL();  // 0x00778710",
-  "int ReadSettingsWOL();  // 0x00779C90"
+  "int ReadSettingsWOL();  // 0x00779C90",
+  "void* Team_Start();  // 0x00597430",
+  "int Map_Save(int a2);  // 0x00681060"
  ],
  "VectorClass": [
   "void* Map_Cleanup(int a2, int a3);  // 0x005AD9F0",
@@ -340,5 +348,8 @@
   "void* Render_Parse_6CABA0(int a2, int a3);  // 0x006CABA0",
   "void* Team_Helper_6F27F0(int a2, void* a3);  // 0x006F27F0",
   "void* ConstructWDTSelection_Create_76F210(int a2, int a3);  // 0x0076F210"
+ ],
+ "BuildingClass": [
+  "void ProcessAutoProduction();  // 0x004500F0"
  ]
 }
