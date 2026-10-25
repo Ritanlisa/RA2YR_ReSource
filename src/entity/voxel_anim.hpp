@@ -58,7 +58,7 @@ public:
     // unmatched: no callgraph reference and no git history record
     virtual AbstractType __stdcall whatAmI() const override;
     // wrapper: delegates to VoxelAnimClass::ddtor at 0x74AAD0
-    virtual int objectSize() const override;
+    virtual int objectSize() const ;
 
     uint32_t               unused_AC;
     BounceClass            Bounce;

@@ -39,7 +39,7 @@ public:
 
     // unmatched: no callgraph reference and no git history record
     virtual AbstractType __stdcall whatAmI() const override;
-    virtual int objectSize() const override;  // 0x512720
+    virtual int objectSize() const ;  // 0x512720
 
     // wrapper: delegates to HouseTypeClass::GetObjectSize at 0x512720
     HouseTypeClass* FindParentCountry() const;

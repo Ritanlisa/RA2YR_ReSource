@@ -29,7 +29,7 @@ public:
     virtual ~OverlayTypeClass() = default;  // 0x5FEF30 (as ddtor)
 
     virtual AbstractType __stdcall whatAmI() const override; // 0x5FEF00 (as GetTypeIdentifier)
-    virtual int objectSize() const override; // 0x5FEF10 (as GetObjectSize)
+    virtual int objectSize() const ; // 0x5FEF10 (as GetObjectSize)
 
     // unmatched: no callgraph reference and no git history record
     virtual CoordStruct* onCellChanged(CoordStruct* pDest, CoordStruct* pSrc) const override;

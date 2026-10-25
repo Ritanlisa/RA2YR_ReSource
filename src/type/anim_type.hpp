@@ -41,7 +41,7 @@ public:
 
     // unmatched: no callgraph reference and no git history record
     virtual AbstractType __stdcall whatAmI() const override;
-    virtual int objectSize() const override; // 0x428E70 (as GetObjectSize)
+    virtual int objectSize() const ; // 0x428E70 (as GetObjectSize)
 
     virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) override; // 0x428E90 (as StubReturnFalse)
     virtual ObjectClass* CreateObject(HouseClass* pOwner) override;  // 0x4737F0

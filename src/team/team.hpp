@@ -53,7 +53,7 @@ public:
     // wrapper: delegates to TeamClass::ddtor at 0x6EC560
     virtual AbstractType __stdcall whatAmI() const override;
     // wrapper: delegates to TeamClass::ddtor at 0x6EC560
-    virtual int objectSize() const override;
+    virtual int objectSize() const ;
 
     // core methods
     void GetTaskForceMissingMemberTypes(TechnoTypeClass** dest, int& dest_count) const;  // 0x6F1FA0 (TeamTypeClass::ProcessTaskForce)

@@ -52,7 +52,7 @@ public:
     virtual ~InfantryTypeClass() = default;  // 0x524D70 (as ddtor)
 
     virtual AbstractType __stdcall whatAmI() const override; // 0x524D40 (as GetTypeIdentifier)
-    virtual int objectSize() const override; // 0x524D50 (as GetObjectSize)
+    virtual int objectSize() const ; // 0x524D50 (as GetObjectSize)
 
     virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) override; // 0x5247A0 (as StubReturnFalse)
     virtual ObjectClass* CreateObject(HouseClass* pOwner) override; // 0x523B40 (as CreateInfantry)

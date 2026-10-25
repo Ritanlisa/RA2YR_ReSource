@@ -67,7 +67,7 @@ public:
     // unmatched: no callgraph reference and no git history record
     virtual AbstractType __stdcall whatAmI() const override;
     // wrapper: delegates to TiberiumClass::ddtor at 0x721E40
-    virtual int objectSize() const override;
+    virtual int objectSize() const ;
 
     int32_t                  ArrayIndex;
     int32_t                  Spread;

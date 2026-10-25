@@ -47,7 +47,7 @@ public:
     // unmatched: no callgraph reference and no git history record
     virtual AbstractType __stdcall whatAmI() const override;
     // wrapper: delegates to RadSiteClass::ddtor at 0x65B470
-    virtual int objectSize() const override;
+    virtual int objectSize() const ;
 
     void SetBaseCell(CellStruct* cell);  // 0x65B4C0
     int GetSpread() const;  // 0x65B4B0

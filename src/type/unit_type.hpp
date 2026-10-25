@@ -27,7 +27,7 @@ public:
     virtual ~UnitTypeClass() = default;  // 0x748190 (as ddtor)
 
     virtual AbstractType __stdcall whatAmI() const override; // 0x748170 (as GetTypeIdentifier)
-    virtual int objectSize() const override; // 0x748160 (as GetObjectSize)
+    virtual int objectSize() const ; // 0x748160 (as GetObjectSize)
 
     // wrapper: delegates to UnitTypeClass::GetObjectSize at 0x748160
     virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) override;

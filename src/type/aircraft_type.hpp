@@ -25,7 +25,7 @@ public:
     virtual ~AircraftTypeClass() = default;  // 0x41CFE0 (as ddtor)
 
     virtual AbstractType __stdcall whatAmI() const override; // 0x41CFB0 (as GetTypeIdentifier)
-    virtual int objectSize() const override; // 0x41CFC0 (as GetObjectSize)
+    virtual int objectSize() const ; // 0x41CFC0 (as GetObjectSize)
 
     virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) override; // 0x41CB60 (as StubReturnFalse)
     virtual ObjectClass* CreateObject(HouseClass* pOwner) override; // 0x41CB70 (as CreateAircraft)

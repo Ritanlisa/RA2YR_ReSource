@@ -34,7 +34,7 @@ public:
 
     // unmatched: no callgraph reference and no git history record
     virtual AbstractType __stdcall whatAmI() const override;
-    virtual int objectSize() const override;  // 0x62D970
+    virtual int objectSize() const ;  // 0x62D970
 
     // wrapper: delegates to ParticleClass::GetObjectSize at 0x62D970
     virtual int onParticleExpired();

@@ -43,7 +43,7 @@ public:
     virtual ~WarheadTypeClass() = default;  // 0x75E510 (as Destructor)
 
     virtual AbstractType __stdcall whatAmI() const override;  // 0x75E500 (as GetTypeIdentifier)
-    virtual int objectSize() const override;  // 0x75E4F0 (as GetObjectSize)
+    virtual int objectSize() const ;  // 0x75E4F0 (as GetObjectSize)
 
     WarheadTypeClass(const char* pID) noexcept;  // 0x75CEC0 (as Construct)
 

@@ -29,7 +29,7 @@ public:
     virtual ~ParticleSystemTypeClass() = default;  // 0x644960 (as ddtor)
 
     virtual AbstractType __stdcall whatAmI() const override; // 0x644930 (as GetTypeIdentifier)
-    virtual int objectSize() const override; // 0x644920 (as GetObjectSize)
+    virtual int objectSize() const ; // 0x644920 (as GetObjectSize)
 
     virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) override; // 0x644950 (as StubReturnFalse)
     virtual ObjectClass* CreateObject(HouseClass* pOwner) override;  // 0x4737F0

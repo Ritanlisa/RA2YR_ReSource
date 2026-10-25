@@ -39,7 +39,7 @@ public:
     virtual ~FactoryClass();                                                   // 0x4CA230 (ddtor)
 
     virtual AbstractType __stdcall whatAmI() const override; // 0x4CA750 (StubReturn12)
-    virtual int objectSize() const override; // 0x4CA760 (StubReturn116)
+    virtual int objectSize() const ; // 0x4CA760 (StubReturn116)
     // unmatched: no callgraph reference and no git history record
     virtual void calculateChecksum(void* checksum) const;
 

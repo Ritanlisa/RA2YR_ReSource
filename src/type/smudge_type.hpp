@@ -26,7 +26,7 @@ public:
     virtual ~SmudgeTypeClass() = default;  // 0x6B6160 (as ddtor)
 
     virtual AbstractType __stdcall whatAmI() const override; // 0x6B6130 (as GetTypeIdentifier)
-    virtual int objectSize() const override; // 0x6B6140 (as GetObjectSize)
+    virtual int objectSize() const ; // 0x6B6140 (as GetObjectSize)
 
     // wrapper: delegates to SmudgeTypeClass::GetObjectSize at 0x6B6140
     virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) override;

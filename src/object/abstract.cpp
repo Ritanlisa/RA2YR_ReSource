@@ -6,6 +6,7 @@
 #include "object/object.hpp"
 #include "system/scenario.hpp"
 #include "core/reverse_marker.hpp"
+#include "core/ida_globals.h"  // X132: dword_887680/84/88 (GetInvalidCoord slot 18)
 
 namespace ra2 {
 namespace game {
@@ -151,6 +152,34 @@ CoordStruct AbstractClass::fetchCoordinatesHere() { CoordStruct crd; fetchCoordi
 CoordStruct AbstractClass::fetchDestination(TechnoClass* docker) const { CoordStruct crd; fetchDestination(&crd, docker); return crd; }
 CoordStruct AbstractClass::fetchAlternateCoordinates() const { CoordStruct crd; fetchAlternateCoordinates(&crd); return crd; }
 bool AbstractClass::operator<(const AbstractClass& rhs) const { return uniqueId < rhs.uniqueId; }
+
+// --- X132: own virtual slots 8-23 (binary table 0x7E1F50); defs for slots declared in abstract.hpp ---
+// slot 9: 0x410470 `retn` -- int return (eax undefined; modeled 0); per-frame update stub
+int AbstractClass::PerFrameUpdate() { return 0; }
+// slot 10: 0x410480 `retn 8` -- 2 stack args; eax undefined
+int AbstractClass::COMStub_Return0_10(int a1, int a2) { return 0; }
+// slots 11/12: shared Return0 stub @ 0x4C9150 (ICF-folded across ~35 game tables)
+int AbstractClass::COMStub_Return0_11() { return 0; }
+int AbstractClass::COMStub_Return0_12() { return 0; }
+// slot 14: 0x410490 `or eax, -1`
+int AbstractClass::computeDistanceSquared() { return -1; }
+// slots 15/16: 0x4104A0 / 0x4104B0 `xor eax,eax`
+int AbstractClass::COMStub_Return0_15() { return 0; }
+int AbstractClass::COMStub_Return0_16() { return 0; }
+// slot 17: 0x410440 `mov al, 1`
+int AbstractClass::computeDistance() { return 1; }
+// slot 18: 0x4104C0 -- copies globals 0x887680/0x887684/0x887688 into out buffer
+unsigned int* AbstractClass::GetInvalidCoord(unsigned int* out) {
+    out[0] = gamemd::dword_887680; /*0x4104cc*/
+    out[1] = gamemd::dword_887684; /*0x4104d4*/
+    out[2] = gamemd::dword_887688; /*0x4104dd*/
+    return out; /*0x4104e0*/
+}
+// slots 20/21: 0x410520 / 0x410530 `xor al,al`
+int AbstractClass::COMStub_Return0_20() { return 0; }
+int AbstractClass::COMStub_Return0_21() { return 0; }
+// slot 23: 0x410570 `retn` -- eax undefined
+int AbstractClass::COMStub_Return0_23() { return 0; }
 
 } // namespace game
 } // namespace ra2

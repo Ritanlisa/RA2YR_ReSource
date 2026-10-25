@@ -32,7 +32,7 @@ public:
     // unmatched: no callgraph reference and no git history record
     virtual AbstractType __stdcall whatAmI() const override;
     // wrapper: delegates to AnimClass::Destruct at 0x4228E0
-    virtual int objectSize() const override;
+    virtual int objectSize() const ;
 
     // wrapper: delegates to AnimClass::Destruct at 0x4228E0
     virtual int AnimExtras();

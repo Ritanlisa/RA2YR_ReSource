@@ -66,7 +66,7 @@ public: static constexpr AbstractType kObjectDeriveId = (const gamemd::AbstractT
     // design: inline accessor, inlined at all call sites
     virtual AbstractType __stdcall whatAmI() const override;
     // design: inline accessor, inlined at all call sites
-    virtual int objectSize() const override;
+    virtual int objectSize() const ;
 
     // design: no binary equivalent found in IDA
     bool CoordsToClient(const CoordStruct& coords, Point2D* out_client) const;

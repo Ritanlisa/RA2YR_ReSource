@@ -40,7 +40,7 @@ public:
     // unmatched: no callgraph reference and no git history record
     virtual AbstractType __stdcall whatAmI() const override;
     // wrapper: delegates to SideClass::ddtor at 0x6A4740
-    virtual int objectSize() const override;
+    virtual int objectSize() const ;
 
     char                    id[24];
     uint8_t                 m_zero_3C;

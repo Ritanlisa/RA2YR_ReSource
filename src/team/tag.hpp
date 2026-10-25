@@ -49,11 +49,11 @@ public:
     virtual ~TagClass();  // 0x6E56A0
 
     // unmatched: no callgraph reference and no git history record
-    virtual void pointerExpired(AbstractClass* ptr, bool removed) override;
+    virtual void pointerExpired(AbstractClass* ptr, bool removed) ;
     // unmatched: no callgraph reference and no git history record
     virtual AbstractType __stdcall whatAmI() const override;
     // wrapper: delegates to TagClass::ddtor at 0x6E56A0
-    virtual int objectSize() const override;
+    virtual int objectSize() const ;
     // unmatched: no callgraph reference and no git history record
     virtual void calculateChecksum(void* checksum) const;
 
@@ -126,10 +126,10 @@ public:
     virtual ~TagTypeClass();  // 0x6E64C0
 
     // unmatched: no callgraph reference and no git history record
-    virtual void pointerExpired(AbstractClass* ptr, bool removed) override;
+    virtual void pointerExpired(AbstractClass* ptr, bool removed) ;
     // unmatched: no callgraph reference and no git history record
     virtual AbstractType __stdcall whatAmI() const override;
-    virtual int objectSize() const override;  // 0x6E64A0
+    virtual int objectSize() const ;  // 0x6E64A0
     // unmatched: no callgraph reference and no git history record
     virtual void calculateChecksum(void* checksum) const;
     // arrayIndex() override inherited, conflicts with member

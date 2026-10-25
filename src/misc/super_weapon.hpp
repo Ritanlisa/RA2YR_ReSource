@@ -42,7 +42,7 @@ public:
     virtual ~SuperWeaponTypeClass();                                       // 0x6CEFE0 (SDDTOR)
 
     virtual AbstractType __stdcall whatAmI() const override; // 0x6CE8F0 (SD_vt11)
-    virtual int32_t objectSize() const override; // 0x6CE900 (SD_vt12)
+    virtual int32_t objectSize() const ; // 0x6CE900 (SD_vt12)
     virtual Action MouseOverObject(const CellStruct& cell, ObjectClass* pObjBelowMouse) const;
 
     static SuperWeaponTypeClass* FindFirstOfAction(Action action);                    // 0x6CEEB0
@@ -111,7 +111,7 @@ public:
 
     virtual AbstractType __stdcall whatAmI() const override; // 0x6CE020 (PowerDrainUpdate area)
     // wrapper: delegates to SuperClass::PowerDrainUpdate at 0x6CE020
-    virtual int32_t objectSize() const override;
+    virtual int32_t objectSize() const ;
 
     int Reset();                                                                    // 0x6CE0B0
     bool SetOnHold(bool onHold);                                                     // 0x6CB4D0

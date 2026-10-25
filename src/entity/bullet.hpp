@@ -79,7 +79,7 @@ public:
     // unmatched: no callgraph reference and no git history record
     virtual AbstractType __stdcall whatAmI() const override;
     // wrapper: delegates to BulletClass::Dtor at 0x466560
-    virtual int objectSize() const override;
+    virtual int objectSize() const ;
 
     virtual uint8_t GetAnimFrame() const;  // 0x468000
     // wrapper: delegates to BulletClass::GetAnimFrame at 0x468000

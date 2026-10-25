@@ -31,7 +31,7 @@ public:
     // wrapper: delegates to InfantryClass::Destruct at 0x517D90
     virtual AbstractType __stdcall whatAmI() const override;
     // wrapper: delegates to InfantryClass::Destruct at 0x517D90
-    virtual int objectSize() const override;
+    virtual int objectSize() const ;
 
     virtual int IsDeployed() const;
     virtual bool PlayAnim(Sequence index, bool force = false, bool randomStartFrame = false);

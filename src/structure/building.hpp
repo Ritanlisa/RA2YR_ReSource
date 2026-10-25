@@ -52,7 +52,7 @@ public:
     // wrapper: delegates to BuildingClass::Dtor at 0x43BCF0
     virtual AbstractType __stdcall whatAmI() const override;
     // wrapper: delegates to BuildingClass::Dtor at 0x43BCF0
-    virtual int objectSize() const override;
+    virtual int objectSize() const ;
 
     // Construction / destruction lifecycle
 int Construct(int,int);  // 0x43B740

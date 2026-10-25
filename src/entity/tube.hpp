@@ -41,7 +41,7 @@ public:
     // unmatched: no callgraph reference and no git history record
     virtual AbstractType __stdcall whatAmI() const override;
     // wrapper: delegates to TubeClass::ddtor at 0x7286D0
-    virtual int objectSize() const override;
+    virtual int objectSize() const ;
 
     int32_t TubeClass_field_AC;
     int32_t TubeClass_field_B0;

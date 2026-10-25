@@ -34,7 +34,7 @@ public:
     // unmatched: no callgraph reference and no git history record
     virtual AbstractType __stdcall whatAmI() const override;
     // design: virtual function, no binary implementation matched in IDA
-    virtual int objectSize() const override;
+    virtual int objectSize() const ;
 
     OverlayTypeClass* Type;
 

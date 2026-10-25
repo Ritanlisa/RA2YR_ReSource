@@ -119,70 +119,66 @@ public:
     // --- IPersistStream (ptr_0[0]) ---
     virtual HRESULT __stdcall QueryInterface(const IID& iid, void** ppv) override;  // 0x410260
     virtual ULONG   __stdcall AddRef() override;  // 0x410300
-    virtual ULONG   __stdcall Release() override;  // 0x4E0360
+    virtual ULONG   __stdcall Release() override;  // X132: slot 2 impl = 0x410310 (COMStub_Release; 0x4E0360 = AbstractClassVector::Release)
     // wrapper: delegates to AbstractClassVector::Release at 0x4E0360
-    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override;
-    virtual HRESULT __stdcall IsDirty() override;  // 0x7099D0
+    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override;  // X132: slot 3 impl = 0x4C9150 (shared Return0)
+    virtual HRESULT __stdcall IsDirty() override;  // X132: slot 4 impl = 0x410450 (IsClean); 0x7099D0 = generic IsDirty used by other tables
     // wrapper: delegates to IPersistStream::IsDirty at 0x7099D0
-    virtual HRESULT __stdcall Load(IStream* stream) override;
+    virtual HRESULT __stdcall Load(IStream* stream) override;  // X132: slot 5 impl = 0x4C9150 (shared Return0)
     // wrapper: delegates to IPersistStream::IsDirty at 0x7099D0
-    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;
+    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;  // X132: slot 6 impl = 0x4C9150 (shared Return0)
     // unmatched: no callgraph reference and no git history record
-    virtual HRESULT __stdcall GetSizeMax(ULARGE_INTEGER* size) override;
+    virtual HRESULT __stdcall GetSizeMax(ULARGE_INTEGER* size) override;  // X132: slot 7 impl = 0x4103E0
 
     // --- IRTTITypeInfo (ptr_0[1]) ---
     // unmatched: no callgraph reference and no git history record
-    virtual AbstractType __stdcall whatAmI() const override;
+    virtual AbstractType __stdcall whatAmI() const override;  // X132: sec slot 3 = 0x410210
     // unmatched: no callgraph reference and no git history record
-    virtual int __stdcall fetchId() const override;
-    virtual void __stdcall createId() override;   // 0x486920
+    virtual int __stdcall fetchId() const override;  // X132: sec slot 4 = 0x410220
+    virtual void __stdcall createId() override;   // X132: sec slot 5 = 0x410230 (0x486920 was phantom)
 
     // --- INoticeSink (ptr_0[2]) ---
     // unmatched: no callgraph reference and no git history record
-    virtual bool __stdcall onNotice(unsigned long event) override;
+    virtual bool __stdcall onNotice(unsigned long event) override;  // X132: sink slot 0 = 0x410580
 
     // --- INoticeSource (ptr_0[3]) ---
     // unmatched: no callgraph reference and no git history record
-    virtual void __stdcall notifySinks() override;
+    virtual void __stdcall notifySinks() override;  // X132: source slot 0 = 0x410590
 
-    // --- AbstractClass custom virtuals (ptr_0[0] entries 8+) ---
-    // IDA: ptr_0[0][8]  = COMStub_8    (0x4105A0)
-    // IDA: ptr_0[0][9]  = StubReturnFalse (0x410470)
-    // IDA: ptr_0[0][10] = COMStub_Return0_10 (0x410480)
-    // IDA: ptr_0[0][13] = ProcessPower (0x410410)
-    // IDA: ptr_0[0][17] = sub_410440
-    // IDA: ptr_0[0][18] = GetInvalidCoord (0x4104C0)
-    // IDA: ptr_0[0][19] = GetCoordsEx (0x4104F0)
-    // IDA: ptr_0[0][22] = GetCoords (0x410540)
-    virtual ~AbstractClass() = default;  // 0x4101F0
+    // --- X132: AbstractClass own virtuals (binary table 0x7E1F50, slots 8-23; raw-verified) ---
+    virtual ~AbstractClass() = default;  // X132: slot 8 = 0x4105A0 (scalar deleting dtor: installs 4 vtables, test al,1 -> delete)
 
-    virtual void initialize();  // 0x438E70
-    // unmatched: no callgraph reference and no git history record
-    virtual void pointerExpired(AbstractClass* ptr, bool removed);
-    // wrapper: delegates to AbstractClass::Initialize at 0x438E70
-    virtual int objectSize() const;
-    // unmatched: no callgraph reference and no git history record
-    virtual void calculateChecksum(Checksummer& checksum) const;
-    // wrapper: delegates to AbstractClass::Initialize at 0x438E70
-    virtual int owningHouseIndex() const;
-    // wrapper: delegates to AbstractClass::Initialize at 0x438E70
-    virtual HouseClass* owningHouse() const;
-    // design: virtual function, no binary implementation matched in IDA
-    virtual int arrayIndex() const;
-    virtual bool isDead() const;
-    // unmatched: no callgraph reference and no git history record
-    virtual CoordStruct* fetchCoordinatesHere(CoordStruct* out);
-    // unmatched: no callgraph reference and no git history record
-    virtual CoordStruct* fetchDestination(CoordStruct* out, TechnoClass* docker = nullptr) const;
-    virtual CoordStruct* GetCoords(CoordStruct* out);  // 0x410540
-    // wrapper: delegates to AbstractClass::GetCoords at 0x410540
-    virtual bool isOnGround() const;
-    // unmatched: no callgraph reference and no git history record
-    virtual bool isAirborne() const;
-    // unmatched: no callgraph reference and no git history record
-    virtual CoordStruct* fetchAlternateCoordinates(CoordStruct* out) const;
-    // wrapper: delegates to AbstractClass::GetCoords at 0x410540
-    virtual void updateLogic();
+    virtual int PerFrameUpdate();  // X132: slot 9 = 0x410470 (`retn`; slot-9 family name per Unit 0x746810 / Infantry 0x517CC0 binary slots; those two decls override correctly)
+    virtual int COMStub_Return0_10(int a1, int a2);  // X132: slot 10 = 0x410480 (`retn 8`, 2 stack args)
+    virtual int COMStub_Return0_11();  // X132: slot 11 impl = 0x4C9150 (shared Return0, ICF-folded)
+    virtual int COMStub_Return0_12();  // X132: slot 12 impl = 0x4C9150 (shared Return0, ICF-folded)
+    virtual int ProcessPower();  // X132: slot 13 = 0x410410 (1 arg)
+    virtual int computeDistanceSquared();  // X132: slot 14 = 0x410490 (`or eax,-1`)
+    virtual int COMStub_Return0_15();  // X132: slot 15 = 0x4104A0 (`xor eax,eax`)
+    virtual int COMStub_Return0_16();  // X132: slot 16 = 0x4104B0 (`xor eax,eax`)
+    virtual int computeDistance();  // X132: slot 17 = 0x410440 (`mov al,1`)
+    virtual unsigned int *GetInvalidCoord(unsigned int* out);  // X132: slot 18 = 0x4104C0 (copies 0x887680/84/88)
+    virtual int* GetCoordsEx(int* outBuffer, AbstractClass* source);  // X132: slot 19 = 0x4104F0 (calls vt slot 18)
+    virtual int COMStub_Return0_20();  // X132: slot 20 = 0x410520 (`xor al,al`)
+    virtual int COMStub_Return0_21();  // X132: slot 21 = 0x410530 (`xor al,al`)
+    virtual CoordStruct* GetCoords(CoordStruct* out);  // X132: slot 22 = 0x410540 (calls vt slot 19)
+    virtual int COMStub_Return0_23();  // X132: slot 23 = 0x410570 (`retn`; eax undefined)
+
+    // --- X132: demoted phantoms (14; no binary slot anywhere in the chain; non-virtual) ---
+    void initialize();  // 0x438E70
+    void pointerExpired(AbstractClass* ptr, bool removed);
+    int objectSize() const;
+    void calculateChecksum(Checksummer& checksum) const;
+    int owningHouseIndex() const;
+    HouseClass* owningHouse() const;
+    int arrayIndex() const;
+    bool isDead() const;
+    CoordStruct* fetchCoordinatesHere(CoordStruct* out);
+    CoordStruct* fetchDestination(CoordStruct* out, TechnoClass* docker = nullptr) const;
+    bool isOnGround() const;
+    bool isAirborne() const;
+    CoordStruct* fetchAlternateCoordinates(CoordStruct* out) const;
+    void updateLogic();
 
     // unmatched: no callgraph reference and no git history record
     CoordStruct fetchCoordinatesHere();
@@ -211,10 +207,10 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* InitVtables(int a1);  // 0x4101C0
     int COMStub_AddRef();  // 0x410300
     int COMStub_Release(int a1);  // 0x410310 (IDA: int __stdcall(int), 76 xref)
-    unsigned int *GetInvalidCoord(void *a2);  // 0x44bf30 消费 (G57W20M26 供给)
-    int ProcessPower();  // 0x410410
+    // X132: GetInvalidCoord moved to own virtual slot 18 (0x4104C0)
+    // X132: ProcessPower moved to own virtual slot 13 (0x410410)
     int IsClean();  // 0x410450
-    int* GetCoordsEx(int* outBuffer, AbstractClass* source);  // 0x4104F0
+    // X132: GetCoordsEx moved to own virtual slot 19 (0x4104F0)
     int COMStub_8();  // 0x4105A0
     void* processCleanup(int a1);  // 0x41C490
     void* Create();  // 0x41D300

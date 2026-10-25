@@ -32,7 +32,7 @@ public:
     virtual ~BulletTypeClass() = default;  // 0x46C890 (as ddtor)
 
     virtual AbstractType __stdcall whatAmI() const override; // 0x46C850 (as GetTypeIdentifier)
-    virtual int objectSize() const override; // 0x46C860 (as GetObjectSize)
+    virtual int objectSize() const ; // 0x46C860 (as GetObjectSize)
 
     virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) override; // 0x46C880 (as StubReturnFalse)
     virtual ObjectClass* CreateObject(HouseClass* pOwner) override;  // 0x4737F0

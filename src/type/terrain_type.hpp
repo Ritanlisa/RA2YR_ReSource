@@ -26,7 +26,7 @@ public:
     virtual ~TerrainTypeClass() = default;  // 0x71E360 (as ddtor)
 
     virtual AbstractType __stdcall whatAmI() const override; // 0x71E330 (as GetTypeIdentifier)
-    virtual int objectSize() const override; // 0x71E340 (as GetObjectSize)
+    virtual int objectSize() const ; // 0x71E340 (as GetObjectSize)
 
     // wrapper: delegates to TerrainTypeClass::GetObjectSize at 0x71E340
     virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) override;

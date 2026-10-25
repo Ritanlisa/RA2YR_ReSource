@@ -42,7 +42,7 @@ public:
     // unmatched: no callgraph reference and no git history record
     virtual AbstractType __stdcall whatAmI() const override;
     // wrapper: delegates to LightSourceClass::ddtor at 0x555080
-    virtual int objectSize() const override;
+    virtual int objectSize() const ;
 
     // wrapper: delegates to LightSourceClass::ddtor at 0x555080
     void Activate(uint32_t zero = 0);

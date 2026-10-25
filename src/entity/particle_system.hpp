@@ -40,7 +40,7 @@ public:
 
     // unmatched: no callgraph reference and no git history record
     virtual AbstractType __stdcall whatAmI() const override;
-    virtual int objectSize() const override;  // 0x630200
+    virtual int objectSize() const ;  // 0x630200
 
     void Draw(void* surface, int draw_x, int draw_y);  // 0x62FE60
 

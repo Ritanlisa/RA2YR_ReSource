@@ -44,7 +44,7 @@ public:
 
     // unmatched: no callgraph reference and no git history record
     virtual AbstractType __stdcall whatAmI() const override;
-    virtual int objectSize() const override;  // 0x75F880
+    virtual int objectSize() const ;  // 0x75F880
 
     ra2::game::TechnoClass*          Target;
     WaveType                         Type;

@@ -57,7 +57,7 @@ public:
     // unmatched: no callgraph reference and no git history record
     virtual AbstractType __stdcall whatAmI() const override;
     // design: virtual function, no binary implementation matched in IDA
-    virtual int objectSize() const override;
+    virtual int objectSize() const ;
 
     // unmatched: no callgraph reference and no git history record
     virtual void DrawAsVXL(Point2D* coords, RectangleStruct* bounding_rect, uint32_t dwUnk7, uint32_t dwUnk8);

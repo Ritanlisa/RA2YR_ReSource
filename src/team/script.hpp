@@ -45,7 +45,7 @@ public:
     // unmatched: no callgraph reference and no git history record
     virtual AbstractType __stdcall whatAmI() const override;
     // wrapper: delegates to ScriptClass::ddtor at 0x6915F0
-    virtual int objectSize() const override;
+    virtual int objectSize() const ;
 
     // unmatched: no callgraph reference and no git history record
     ScriptActionNode* GetCurrentAction(ScriptActionNode* buffer) const;
@@ -109,7 +109,7 @@ public:
 
     // unmatched: no callgraph reference and no git history record
     virtual AbstractType __stdcall whatAmI() const override;
-    virtual int objectSize() const override;  // 0x691F80
+    virtual int objectSize() const ;  // 0x691F80
 
     static bool LoadFromINIList(CCINIClass* ini, bool is_global);
 

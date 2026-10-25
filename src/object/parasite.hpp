@@ -23,11 +23,11 @@ public:
     virtual ~ParasiteClass();  // 0x6296D0
 
     // unmatched: no callgraph reference and no git history record
-    virtual void pointerExpired(AbstractClass* ptr, bool removed) override;
+    virtual void pointerExpired(AbstractClass* ptr, bool removed) ;
     // unmatched: no callgraph reference and no git history record
     virtual AbstractType __stdcall whatAmI() const override;
     // wrapper: delegates to ParasiteClass::ddtor at 0x6296D0
-    virtual int objectSize() const override;
+    virtual int objectSize() const ;
     // unmatched: no callgraph reference and no git history record
     virtual void calculateChecksum(void* checksum) const;
 

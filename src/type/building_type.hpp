@@ -53,7 +53,7 @@ public:
     virtual ~BuildingTypeClass() = default;  // 0x465DC0 (as ddtor)
 
     virtual AbstractType __stdcall whatAmI() const override; // 0x465D90 (as GetTypeIdentifier)
-    virtual int objectSize() const override; // 0x465DA0 (as GetObjectSize)
+    virtual int objectSize() const ; // 0x465DA0 (as GetObjectSize)
 
     // wrapper: delegates to BuildingTypeClass::GetObjectSize at 0x465DA0
     virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) override;

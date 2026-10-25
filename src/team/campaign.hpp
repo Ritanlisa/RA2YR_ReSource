@@ -38,7 +38,7 @@ public:
     // unmatched: no callgraph reference and no git history record
     virtual AbstractType __stdcall whatAmI() const override;
     // wrapper: delegates to CampaignClass::DTOR at 0x46D090
-    virtual int objectSize() const override;
+    virtual int objectSize() const ;
 
     // unmatched: no callgraph reference and no git history record
     static void CreateFromINIList(CCINIClass* ini);

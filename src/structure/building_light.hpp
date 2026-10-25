@@ -47,7 +47,7 @@ public:
     // unmatched: no callgraph reference and no git history record
     virtual AbstractType __stdcall whatAmI() const override;
     // wrapper: delegates to BuildingLightClass::SDDTOR at 0x4370C0
-    virtual int objectSize() const override;
+    virtual int objectSize() const ;
 
     // 0x436BE0 FindTarget / SetBehaviour
     // wrapper: delegates to BuildingLightClass::FindTarget at 0x436BE0

@@ -38,7 +38,7 @@ public:
     virtual ~WeaponTypeClass() = default;  // 0x7730F0 (as ddtor)
 
     virtual AbstractType __stdcall whatAmI() const override; // 0x7730E0 (as GetTypeIdentifier)
-    virtual int objectSize() const override; // 0x7730D0 (as GetObjectSize)
+    virtual int objectSize() const ; // 0x7730D0 (as GetObjectSize)
 
     void CalculateSpeed();  // 0x7729F0
 
