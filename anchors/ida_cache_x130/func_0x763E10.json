@@ -1,0 +1,1 @@
+{"addr": "0x00763E10", "name": "WaypointPathClass::StubReturn51", "decompiled": "int WaypointPathClass::StubReturn51(WaypointPathClass *this)\n{\n  return 51;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

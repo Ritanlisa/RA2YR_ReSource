@@ -1,0 +1,1 @@
+{"addr": "0x006FC090", "name": "TechnoClass::Vt240Thunk", "decompiled": "int __thiscall TechnoClass::Vt240Thunk(TechnoClass *this)\n{\n  int v2; // [esp+4h] [ebp+4h]\n  int v3; // [esp+8h] [ebp+8h]\n\n  return (*(int (__thiscall **)(TechnoClass *, int, int, _DWORD))(this->vfptr + 960))(this, v2, v3, 0);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

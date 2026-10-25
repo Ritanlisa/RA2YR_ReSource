@@ -1,0 +1,1 @@
+{"addr": "0x00725590", "name": "sub_725590", "decompiled": "void __cdecl sub_725590()\n{\n  stru_B0F618.DynamicVector_field_0x28 = (int)&VectorClass<AbstractClass *>::`vftable';\n  if ( dword_B0F644 && byte_B0F64D )\n  {\n    __3_YAXPAX_Z(dword_B0F644);\n    dword_B0F644 = 0;\n  }\n  byte_B0F64D = 0;\n  dword_B0F648 = 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

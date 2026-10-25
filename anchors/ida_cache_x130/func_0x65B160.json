@@ -1,0 +1,1 @@
+{"addr": "0x0065B160", "name": "sub_65B160", "decompiled": "int sub_65B160()\n{\n  dword_B04BD4 = 0;\n  dword_B04BD8 = 0;\n  byte_B04BDC = 1;\n  byte_B04BDD = 0;\n  RadSiteClass_Array = (int)&DynamicVectorClass<RadSiteClass *>::`vftable';\n  dword_B04BE4 = 10;\n  dword_B04BE0 = 0;\n  return atexit(sub_65B1A0);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

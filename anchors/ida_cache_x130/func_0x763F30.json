@@ -1,0 +1,1 @@
+{"addr": "0x00763F30", "name": "AbstractClass::updateSuperWeaponTimer", "decompiled": "unsigned int __thiscall AbstractClass::updateSuperWeaponTimer(int this, int a2)\n{\n  if ( *(_BYTE *)(this + 12) )\n    return (a2 - *(_DWORD *)(this + 4)) / 0xCu;\n  else\n    return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

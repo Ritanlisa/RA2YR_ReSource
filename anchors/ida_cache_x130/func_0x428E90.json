@@ -1,0 +1,1 @@
+{"addr": "0x00428E90", "name": "AnimTypeClass::StubReturnFalse", "decompiled": "int __stdcall AnimTypeClass::StubReturnFalse(AnimTypeClass *this)\n{\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

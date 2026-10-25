@@ -1,0 +1,1 @@
+{"addr": "0x0065B450", "name": "RadSiteClass::SaveLoad_Prefix_0", "decompiled": "int __stdcall RadSiteClass::SaveLoad_Prefix_0(RadSiteClass *this, int *a2, int a3)\n{\n  return AbstractClass::SaveLoad_Prefix(&this->vfptr, a2, a3);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x00428E80", "name": "AnimTypeClass::Stub", "decompiled": "char __stdcall AnimTypeClass::Stub(AnimTypeClass *this, int a2)\n{\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

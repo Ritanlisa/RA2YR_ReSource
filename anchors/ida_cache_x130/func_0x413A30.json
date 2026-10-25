@@ -1,0 +1,1 @@
+{"addr": "0x00413A30", "name": "Coord::ToCell", "decompiled": "_DWORD *__thiscall Coord::ToCell(Coord *this, _DWORD *a2)\n{\n  int v3; // [esp+0h] [ebp-4h]\n\n  LOWORD(v3) = *(_DWORD *)this->__pad_0 / 256;\n  HIWORD(v3) = *(_DWORD *)&this->Coord_field_0x2[2] / 256;\n  *a2 = v3;\n  return a2;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

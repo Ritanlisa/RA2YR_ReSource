@@ -1,0 +1,1 @@
+{"addr": "0x0067A6D0", "name": "TypeList::Clear", "decompiled": "int __thiscall TypeList::Clear(_VectorClass_PBVSmudgeTypeClass *this, int a2)\n{\n  return *(_DWORD *)(*(_DWORD *)&this->m_1[3] + 4 * a2);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

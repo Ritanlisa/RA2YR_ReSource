@@ -1,0 +1,1 @@
+{"addr": "0x00536FB0", "name": "CreateTeamCommand::performAction_114", "decompiled": "char *CreateTeamCommand::performAction_114(ToggleSellCommandClass *this)\n{\n  return aTogglesell;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

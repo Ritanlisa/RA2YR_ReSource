@@ -1,0 +1,1 @@
+{"addr": "0x00421E60", "name": "sub_421E60", "decompiled": "int sub_421E60()\n{\n  Map_InvalidCoord_X = 0;\n  Map_InvalidCoord_Y = 0;\n  Map_InvalidCoord_Z = 0;\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

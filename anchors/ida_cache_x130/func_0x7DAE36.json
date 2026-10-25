@@ -1,0 +1,1 @@
+{"addr": "0x007DAE36", "name": "__ismbbtrail", "decompiled": "int __cdecl _ismbbtrail(unsigned int Ch)\n{\n  return CRTisctype(Ch, 0, 8u);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

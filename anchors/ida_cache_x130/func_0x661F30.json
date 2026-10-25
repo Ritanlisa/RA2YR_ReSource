@@ -1,0 +1,1 @@
+{"addr": "0x00661F30", "name": "sub_661F30", "decompiled": "void __thiscall sub_661F30(RocketLocomotionClass *this)\n{\n  this->field_0 = (ILocomotion)&RocketLocomotionClass::`vftable';\n  *(_DWORD *)this->__pad_4 = &RocketLocomotionClass::`vftable';\n  LocomotionClass::Construct((LocomotionClass *)this);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

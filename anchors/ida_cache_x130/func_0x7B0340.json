@@ -1,0 +1,1 @@
+{"addr": "0x007B0340", "name": "sub_7B0340", "decompiled": "int sub_7B0340()\n{\n  return stru_B77F58.ComPtr_field_0x08;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

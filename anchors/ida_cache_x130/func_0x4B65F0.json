@@ -1,0 +1,1 @@
+{"addr": "0x004B65F0", "name": "JumpjetLocomotionClass::ShortFunc_4B65F0", "decompiled": "BOOL __stdcall JumpjetLocomotionClass::ShortFunc_4B65F0(DropPodLocomotionClass *this)\n{\n  return this->__pad_18[0] != 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

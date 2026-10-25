@@ -1,0 +1,1 @@
+{"addr": "0x007DCF3A", "name": "GetEnvironmentStrings", "decompiled": "// attributes: thunk\nLPCH __stdcall GetEnvironmentStrings()\n{\n  return __imp_GetEnvironmentStrings();\n}\n", "changed": true, "error": null, "timestamp": "x130"}

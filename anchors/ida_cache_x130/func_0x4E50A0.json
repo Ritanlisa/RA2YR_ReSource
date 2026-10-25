@@ -1,0 +1,1 @@
+{"addr": "0x004E50A0", "name": "sub_4E50A0", "decompiled": "bool __fastcall sub_4E50A0(int a1)\n{\n  return dword_8B3F38[3 * a1] != -1;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

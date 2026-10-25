@@ -1,0 +1,1 @@
+{"addr": "0x006CB820", "name": "SuperClass::SetReadiness", "decompiled": "char __thiscall SuperClass::SetReadiness(SuperClass *this, char a2)\n{\n  HIBYTE(this->SuperClass_field_0x6C) = a2;\n  return a2;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

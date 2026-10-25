@@ -1,0 +1,1 @@
+{"addr": "0x004AEC60", "name": "Surface::Construct", "decompiled": "_DWORD *__thiscall Surface::Construct(Surface *this, int a2, int a3)\n{\n  this->Width = a2;\n  this->Height = a3;\n  *(_DWORD *)this->__pad_0 = &Surface_Vtable;\n  return this->__pad_0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x0042E6D0", "name": "CellClass::setTileIndex", "decompiled": "__int16 __thiscall CellClass::setTileIndex(CellClass *this, int a2)\n{\n  LOWORD(this->foggedObjects) += a2;\n  HIWORD(this->foggedObjects) += HIWORD(a2);\n  return a2;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

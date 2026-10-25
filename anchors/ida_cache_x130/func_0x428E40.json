@@ -1,0 +1,1 @@
+{"addr": "0x00428E40", "name": "AnimTypeClass::Thunk_AnimTypeClass_sub_428E40", "decompiled": "int AnimTypeClass::Thunk_AnimTypeClass_sub_428E40(ObjectTypeClass *this)\n{\n  return -1;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

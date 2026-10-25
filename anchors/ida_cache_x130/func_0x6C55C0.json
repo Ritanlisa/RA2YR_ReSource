@@ -1,0 +1,1 @@
+{"addr": "0x006C55C0", "name": "WinMain_Helper_6C55C0", "decompiled": "_DWORD *__thiscall WinMain_Helper_6C55C0(ObjectClass *this)\n{\n  this->vfptr1 = 0;\n  this->vfptr = (int)&TClassFactory<ParticleClass>::`vftable';\n  return &this->vfptr;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

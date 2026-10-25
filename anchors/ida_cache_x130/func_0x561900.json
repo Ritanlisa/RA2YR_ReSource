@@ -1,0 +1,1 @@
+{"addr": "0x00561900", "name": "j_CoordinateTables_Init", "decompiled": "// attributes: thunk\nint *j_CoordinateTables_Init()\n{\n  return CoordinateTables::Init();\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x005C0EE0", "name": "ScenarioClass::initTriggers", "decompiled": "char __thiscall ScenarioClass::initTriggers(MultiplayerGameMode *this)\n{\n  return 1;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x006A4350", "name": "JumpjetLocomotionClass::loc_6A4350", "decompiled": "LONG __stdcall JumpjetLocomotionClass::loc_6A4350(int a1)\n{\n  return ShipLocomotionClass::Release((ShipLocomotionClass *)(a1 - 24));\n}\n", "changed": true, "error": null, "timestamp": "x130"}

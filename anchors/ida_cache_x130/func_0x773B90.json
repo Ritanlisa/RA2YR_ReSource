@@ -1,0 +1,1 @@
+{"addr": "0x00773B90", "name": "WebBrowser::LockRegion", "decompiled": "int __thiscall WebBrowser::LockRegion(WebBrowser *this)\n{\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x00632AA0", "name": "Crypto::DecodeByte", "decompiled": "void *__thiscall Crypto::DecodeByte(Crypto *this, int a2)\n{\n  stru_A8E960.waypoints[2410] = Crypto_Helper((unsigned int *)this, (unsigned int *)this, (_DWORD *)a2, 0, 64);\n  return this;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x004E6520", "name": "sub_4E6520", "decompiled": "void __cdecl sub_4E6520()\n{\n  dword_A8B200 = &VectorClass<AITriggerTypeClass *>::`vftable';\n  if ( dword_A8B204 && byte_A8B20D )\n  {\n    __3_YAXPAX_Z(dword_A8B204);\n    dword_A8B204 = 0;\n  }\n  byte_A8B20D = 0;\n  dword_A8B208 = 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

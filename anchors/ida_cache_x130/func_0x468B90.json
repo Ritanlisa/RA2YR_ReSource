@@ -1,0 +1,1 @@
+{"addr": "0x00468B90", "name": "BulletClass::UpdateFlightPath", "decompiled": "int __thiscall BulletClass::UpdateFlightPath(BulletClass *this)\n{\n  int v1; // eax\n\n  v1 = -(*(_BYTE *)(this->BulletClass_field_0xAC + 759) != 0);\n  LOBYTE(v1) = v1 & 0xFE;\n  return v1 + 3;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

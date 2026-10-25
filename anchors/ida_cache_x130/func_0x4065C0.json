@@ -1,0 +1,1 @@
+{"addr": "0x004065C0", "name": "sub_4065C0", "decompiled": "void __fastcall sub_4065C0(int a1, int a2)\n{\n  *(_DWORD *)(a1 + 20) = a2;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

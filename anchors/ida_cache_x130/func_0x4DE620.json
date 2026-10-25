@@ -1,0 +1,1 @@
+{"addr": "0x004DE620", "name": "ObjectClass::IsHeightAboveThreshold_0", "decompiled": "// attributes: thunk\nint __thiscall ObjectClass::IsHeightAboveThreshold_0(ObjectClass *this)\n{\n  return ObjectClass::IsHeightAboveThreshold((IUnknown *)this);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

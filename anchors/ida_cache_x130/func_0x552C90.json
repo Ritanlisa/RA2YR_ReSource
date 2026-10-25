@@ -1,0 +1,1 @@
+{"addr": "0x00552C90", "name": "Map_Load", "decompiled": "int Map_Load()\n{\n  int result; // eax\n\n  result = -1;\n  if ( *(_DWORD *)&dword_A8B238.field_0 )\n    return g_DisplayWidth != (LoadingScreen *)640 ? 406 : 326;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

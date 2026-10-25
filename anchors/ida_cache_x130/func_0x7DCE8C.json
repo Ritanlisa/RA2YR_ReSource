@@ -1,0 +1,1 @@
+{"addr": "0x007DCE8C", "name": "FatalAppExitA", "decompiled": "// attributes: thunk\nvoid __stdcall __noreturn FatalAppExitA(UINT uAction, LPCSTR lpMessageText)\n{\n  __imp_FatalAppExitA(uAction, lpMessageText);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

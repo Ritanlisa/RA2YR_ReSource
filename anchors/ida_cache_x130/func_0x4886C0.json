@@ -1,0 +1,1 @@
+{"addr": "0x004886C0", "name": "CheckListClass::SelectItem", "decompiled": "char __thiscall CheckListClass::SelectItem(CheckListClass *this, signed int a2)\n{\n  return ListClass::RemoveItem((ListClass *)this, a2);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

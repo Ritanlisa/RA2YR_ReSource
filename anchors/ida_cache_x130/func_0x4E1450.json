@@ -1,0 +1,1 @@
+{"addr": "0x004E1450", "name": "DialogControl::Hide", "decompiled": "int __thiscall DialogControl::Hide(GadgetClass *this)\n{\n  int v1; // eax\n\n  v1 = *(_DWORD *)this->__pad_0;\n  this->field_1E = 0;\n  this->field_1C = 1;\n  return (*(int (**)(void))(v1 + 84))();\n}\n", "changed": true, "error": null, "timestamp": "x130"}

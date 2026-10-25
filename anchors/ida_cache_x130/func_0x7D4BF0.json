@@ -1,0 +1,1 @@
+{"addr": "0x007D4BF0", "name": "_strcpy", "decompiled": "char *__cdecl strcpy(char *Destination, const char *Source)\n{\n  JUMPOUT(0x7D4C61);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

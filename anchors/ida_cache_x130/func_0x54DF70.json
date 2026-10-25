@@ -1,0 +1,1 @@
+{"addr": "0x0054DF70", "name": "JumpjetLocomotionClass::ShortFunc_54DF70", "decompiled": "BOOL __stdcall JumpjetLocomotionClass::ShortFunc_54DF70(int a1)\n{\n  return *(_DWORD *)(a1 + 124) != 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

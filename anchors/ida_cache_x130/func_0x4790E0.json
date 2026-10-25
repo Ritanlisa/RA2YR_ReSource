@@ -1,0 +1,1 @@
+{"addr": "0x004790E0", "name": "CD::AlwaysAvailable", "decompiled": "char __thiscall CD::AlwaysAvailable(CD *this, int a2)\n{\n  if ( a2 == -2 )\n    return 1;\n  if ( byte_89E3A0 == 1 )\n    return 1;\n  this->field_4 = -1;\n  return CD::CheckDiscPresence(this, a2);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

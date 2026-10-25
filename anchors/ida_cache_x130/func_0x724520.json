@@ -1,0 +1,1 @@
+{"addr": "0x00724520", "name": "SidebarClass::initializeStrip", "decompiled": "int __thiscall SidebarClass::initializeStrip(SidebarClass *this, int a2)\n{\n  this->SidebarClass_field_0x228 = a2;\n  return a2;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

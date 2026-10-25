@@ -1,0 +1,1 @@
+{"addr": "0x004D0530", "name": "JumpjetLocomotionClass::Stub2", "decompiled": "LONG __stdcall JumpjetLocomotionClass::Stub2(int a1)\n{\n  return COM::ReleaseRef((LocomotionClass *)(a1 - 4));\n}\n", "changed": true, "error": null, "timestamp": "x130"}

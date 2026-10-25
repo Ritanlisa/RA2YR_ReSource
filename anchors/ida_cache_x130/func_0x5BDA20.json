@@ -1,0 +1,1 @@
+{"addr": "0x005BDA20", "name": "sub_5BDA20", "decompiled": "void __cdecl sub_5BDA20()\n{\n  if ( (byte_ABF250 & 1) == 0 )\n    byte_ABF250 |= 1u;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

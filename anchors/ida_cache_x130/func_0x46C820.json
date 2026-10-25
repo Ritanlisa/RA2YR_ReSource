@@ -1,0 +1,1 @@
+{"addr": "0x0046C820", "name": "BulletTypeClass::GetWarhead", "decompiled": "int __thiscall BulletTypeClass::GetWarhead(BulletTypeClass *this, int a2, int a3)\n{\n  int result; // eax\n\n  result = a2;\n  if ( a2 == this->trailer )\n    this->trailer = 0;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

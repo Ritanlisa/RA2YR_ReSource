@@ -1,0 +1,1 @@
+{"addr": "0x007C8A8E", "name": "??1type_info_UAE_XZ", "decompiled": "void __thiscall __1type_info_UAE_XZ(type_info *this)\n{\n  void *v2; // esi\n\n  this->vfptr = &off_7F9594;\n  _lock(27);\n  v2 = (void *)*((_DWORD *)this + 1);\n  if ( v2 )\n    free(v2);\n  _unlock(27);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

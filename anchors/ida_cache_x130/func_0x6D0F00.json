@@ -1,0 +1,1 @@
+{"addr": "0x006D0F00", "name": "ObjectClass::PreDraw", "decompiled": "int __thiscall ObjectClass::PreDraw(ObjectClass *this)\n{\n  int vfptr; // eax\n\n  vfptr = this->vfptr;\n  *((_BYTE *)this + 21829) = 1;\n  return (*(int (__stdcall **)(_DWORD))(vfptr + 56))(0);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

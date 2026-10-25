@@ -1,0 +1,1 @@
+{"addr": "0x006D6AD0", "name": "CellClass::GetByte284", "decompiled": "int __stdcall CellClass::GetByte284(_DWORD *a1)\n{\n  return (unsigned __int8)Coord::To_Cell((Coord *)&dword_87F7E8, a1)->slopeIndex[0];\n}\n", "changed": true, "error": null, "timestamp": "x130"}

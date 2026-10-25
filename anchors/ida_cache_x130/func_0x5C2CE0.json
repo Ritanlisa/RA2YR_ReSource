@@ -1,0 +1,1 @@
+{"addr": "0x005C2CE0", "name": "MPCooperative::SaveSettings", "decompiled": "int __thiscall MPCooperative::SaveSettings(MPCooperative *this, HWND hWnd, int a3)\n{\n  return ListBox::FillPlayers((MultiplayerGameMode *)this, hWnd, a3);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

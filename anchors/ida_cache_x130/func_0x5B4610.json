@@ -1,0 +1,1 @@
+{"addr": "0x005B4610", "name": "MixFileClass::UnlinkFromPool", "decompiled": "int *__thiscall MixFileClass::UnlinkFromPool(MixFileClass *this, char a2)\n{\n  COMObject::Release((COMObject *)this);\n  if ( (a2 & 1) != 0 )\n    __3_YAXPAX_Z(this);\n  return (int *)this;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

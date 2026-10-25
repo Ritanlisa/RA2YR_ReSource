@@ -1,0 +1,1 @@
+{"addr": "0x004A1D90", "name": "Checksummer::Add_double", "decompiled": "int __thiscall Checksummer::Add_double(Checksummer *this, int a2, int a3)\n{\n  return Checksummer::Add_Buffer(this, (unsigned __int8 *)&a2, 8);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x0075CBC0", "name": "JumpjetLocomotionClass::SetByteField_3", "decompiled": "int __stdcall JumpjetLocomotionClass::SetByteField_3(WalkLocomotionClass *this)\n{\n  BYTE2(this->HeadToCoord[2]) = 0;\n  return (int)this;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

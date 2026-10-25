@@ -1,0 +1,1 @@
+{"addr": "0x004B4FF0", "name": "DropListClass::KillFocus", "decompiled": "int __thiscall DropListClass::KillFocus(DropListClass *this)\n{\n  return (*(int (__thiscall **)(char *))(*((_DWORD *)this + 44) + 156))((char *)this + 176);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

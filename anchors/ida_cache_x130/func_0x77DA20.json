@@ -1,0 +1,1 @@
+{"addr": "0x0077DA20", "name": "sub_77DA20", "decompiled": "int sub_77DA20()\n{\n  unknown_libname_73(&g_WebBrowserConfig);\n  return atexit(unknown_libname_60);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

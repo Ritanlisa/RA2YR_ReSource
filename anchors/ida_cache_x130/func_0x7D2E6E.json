@@ -1,0 +1,1 @@
+{"addr": "0x007D2E6E", "name": "sub_7D2E6E", "decompiled": "_DWORD *__thiscall sub_7D2E6E(ObjectClass *this)\n{\n  this->vfptr1 = 0;\n  this->vfptr2 = 0;\n  this->vfptr = (int)&exception::`vftable';\n  return &this->vfptr;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

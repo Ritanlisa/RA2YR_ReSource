@@ -1,0 +1,1 @@
+{"addr": "0x004104C0", "name": "Map::GetInvalidCoord", "decompiled": "int __thiscall Map::GetInvalidCoord(AbstractClass *this)\n{\n  _DWORD *v2; // [esp+4h] [ebp+4h]\n\n  *v2 = dword_887680;\n  v2[1] = dword_887684;\n  v2[2] = dword_887688;\n  return (int)v2;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

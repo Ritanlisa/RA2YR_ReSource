@@ -1,0 +1,1 @@
+{"addr": "0x004F4C20", "name": "Byte::Zero", "decompiled": "_BYTE *__thiscall Byte::Zero(Byte *this)\n{\n  LOBYTE(this->Byte_field_00) = 0;\n  return this;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

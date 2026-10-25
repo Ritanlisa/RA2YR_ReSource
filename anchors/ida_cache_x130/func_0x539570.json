@@ -1,0 +1,1 @@
+{"addr": "0x00539570", "name": "sub_539570", "decompiled": "int sub_539570()\n{\n  *(_DWORD *)&PsyDom_Coords = dword_A9F9F8;\n  return dword_A9F9F8;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

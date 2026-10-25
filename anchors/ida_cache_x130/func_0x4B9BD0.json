@@ -1,0 +1,1 @@
+{"addr": "0x004B9BD0", "name": "Struct::Zero3", "decompiled": "_BYTE *__thiscall Struct::Zero3(Struct *this)\n{\n  LOBYTE(this->Struct_field_00) = 0;\n  BYTE1(this->Struct_field_00) = 0;\n  BYTE2(this->Struct_field_00) = 0;\n  return this;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

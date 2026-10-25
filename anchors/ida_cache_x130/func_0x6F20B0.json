@@ -1,0 +1,1 @@
+{"addr": "0x006F20B0", "name": "TeamTypeClass::GetObjectSize", "decompiled": "int TeamTypeClass::GetObjectSize(TeamTypeClass *this)\n{\n  return 248;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

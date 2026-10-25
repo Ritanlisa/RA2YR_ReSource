@@ -1,0 +1,1 @@
+{"addr": "0x00535FC0", "name": "SelectTeamCommand::Construct", "decompiled": "_DWORD *__thiscall SelectTeamCommand::Construct(SelectTeamCommand *this, int a2)\n{\n  this->SelectTeamCommand_field_00 = a2;\n  this->CommandClass = (CommandClass)&SelectTeamCommandClass::`vftable';\n  return &this->CommandClass;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

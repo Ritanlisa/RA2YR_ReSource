@@ -1,0 +1,1 @@
+{"addr": "0x004E1A40", "name": "ObjectClass::SetPositionXY", "decompiled": "int __thiscall ObjectClass::SetPositionXY(GadgetClass *this, int a2, int a3)\n{\n  *(_DWORD *)this->Visible = a2;\n  this->ID = a3;\n  return a2;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

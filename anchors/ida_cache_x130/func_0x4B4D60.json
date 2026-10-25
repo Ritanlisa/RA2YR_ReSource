@@ -1,0 +1,1 @@
+{"addr": "0x004B4D60", "name": "Function::Method_4B4D60", "decompiled": "int __thiscall Function::Method_4B4D60(Function *this)\n{\n  int result; // eax\n\n  result = *(_DWORD *)this->__pad_0;\n  if ( *(_DWORD *)this->__pad_0 )\n    return (*(int (__stdcall **)(int))(*(_DWORD *)result + 8))(result);\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

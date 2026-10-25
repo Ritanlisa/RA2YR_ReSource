@@ -1,0 +1,1 @@
+{"addr": "0x00479050", "name": "CCToolTip::Show", "decompiled": "int __stdcall CCToolTip::Show(CCToolTip *this)\n{\n  if ( (*(int (__thiscall **)(MouseClass *))(dword_887640->MouseClass_field_0x0 + 40))(dword_887640) >= 0 )\n    return CursorAnim::Load((TabClass *)this);\n  else\n    return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

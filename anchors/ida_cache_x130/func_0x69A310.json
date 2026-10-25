@@ -1,0 +1,1 @@
+{"addr": "0x0069A310", "name": "SessionClass::GetPlayerColorScheme", "decompiled": "int __stdcall SessionClass::GetPlayerColorScheme(unsigned int a1)\n{\n  int result; // eax\n\n  result = a1;\n  if ( a1 == -2 )\n    return unk_83ED1C;\n  if ( a1 < 9 )\n    return byte_83ED14[a1];\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

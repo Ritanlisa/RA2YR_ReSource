@@ -1,0 +1,1 @@
+{"addr": "0x00474660", "name": "sub_474660", "decompiled": "char __thiscall sub_474660(ObjectClass *this, unsigned __int8 *Block, char *a3, int a4)\n{\n  return INIClass::SetDouble((char *)this, Block, a3, (double)a4 * 0.00390625);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

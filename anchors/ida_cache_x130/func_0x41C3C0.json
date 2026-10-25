@@ -1,0 +1,1 @@
+{"addr": "0x0041C3C0", "name": "Vector3::Magnitude", "decompiled": "int __thiscall Vector3::Magnitude(int *this)\n{\n  return Math::Sqrt(\n           *(double *)this * *(double *)this\n         + *((double *)this + 1) * *((double *)this + 1)\n         + *((double *)this + 2) * *((double *)this + 2));\n}\n", "changed": true, "error": null, "timestamp": "x130"}

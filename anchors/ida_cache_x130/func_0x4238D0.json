@@ -1,0 +1,1 @@
+{"addr": "0x004238D0", "name": "AnimClass::CheckMirrorFlags", "decompiled": "int *__stdcall AnimClass::CheckMirrorFlags(AnimClass *this)\n{\n  if ( (byte_89A190 & 1) == 0 )\n  {\n    byte_89A190 |= 1u;\n    dword_89A160 = 2147450879;\n    atexit(nullsub_89);\n  }\n  return &dword_89A160;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

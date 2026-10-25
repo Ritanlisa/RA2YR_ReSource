@@ -1,0 +1,1 @@
+{"addr": "0x0074FFC0", "name": "Crate::initializeCrate", "decompiled": "BOOL __thiscall Crate::initializeCrate(float *this)\n{\n  return *this >= 0.0 && *this < 1.0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

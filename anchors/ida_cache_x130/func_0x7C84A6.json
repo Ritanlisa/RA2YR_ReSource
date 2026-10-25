@@ -1,0 +1,1 @@
+{"addr": "0x007C84A6", "name": "GlobalMemoryStatus", "decompiled": "// attributes: thunk\nvoid __stdcall GlobalMemoryStatus(LPMEMORYSTATUS lpBuffer)\n{\n  __imp_GlobalMemoryStatus(lpBuffer);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

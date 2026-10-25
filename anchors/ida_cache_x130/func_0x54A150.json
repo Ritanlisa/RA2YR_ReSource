@@ -1,0 +1,1 @@
+{"addr": "0x0054A150", "name": "IsometricTileTypeClass::GetObjectSize", "decompiled": "int IsometricTileTypeClass::GetObjectSize(IsometricTileTypeClass *this)\n{\n  return 780;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

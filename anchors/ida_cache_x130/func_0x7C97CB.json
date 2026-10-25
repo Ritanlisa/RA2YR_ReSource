@@ -1,0 +1,1 @@
+{"addr": "0x007C97CB", "name": "__toupper", "decompiled": "int __cdecl _toupper(int C)\n{\n  return C - 32;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

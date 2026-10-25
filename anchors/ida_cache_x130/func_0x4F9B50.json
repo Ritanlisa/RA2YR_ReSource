@@ -1,0 +1,1 @@
+{"addr": "0x004F9B50", "name": "HouseClass::MakeAlly", "decompiled": "int __thiscall HouseClass::MakeAlly(HouseClass *this, int a2, char a3)\n{\n  return HouseClass::HandleAlliance(&this->vfptr, *(&dword_A8022C->vfptr + a2), a3);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

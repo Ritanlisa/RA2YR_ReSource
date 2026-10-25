@@ -1,0 +1,1 @@
+{"addr": "0x00407B50", "name": "AudioQueue::IsNotEmpty", "decompiled": "int __fastcall AudioQueue::IsNotEmpty(int a1, int a2)\n{\n  int result; // eax\n\n  result = *(_DWORD *)(a1 + 20);\n  *(_DWORD *)(result + 156) = a2;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

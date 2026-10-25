@@ -1,0 +1,1 @@
+{"addr": "0x006E5AE0", "name": "sub_6E5AE0", "decompiled": "int sub_6E5AE0()\n{\n  dword_B0E784 = 0;\n  dword_B0E788 = 0;\n  byte_B0E78C = 1;\n  byte_B0E78D = 0;\n  dword_B0E780 = (int)&DynamicVectorClass<TagTypeClass *>::`vftable';\n  dword_B0E794 = 10;\n  g_MultiplayerCleanup = 0;\n  return atexit(sub_6E5B20);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

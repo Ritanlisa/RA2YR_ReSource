@@ -1,0 +1,1 @@
+{"addr": "0x007D2995", "name": "_get_int_arg_0", "decompiled": "int __cdecl get_int_arg_0(_DWORD *a1)\n{\n  *a1 += 4;\n  return *(_DWORD *)(*a1 - 4);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x007D9D43", "name": "___STRINGTOLD", "decompiled": "int __cdecl __STRINGTOLD(int a1, char **a2, char *a3, int a4)\n{\n  int v4; // esi\n  unsigned __int16 v6[6]; // [esp+4h] [ebp-Ch] BYREF\n\n  v4 = __strgtold12((int)v6, a2, a3, a4, 0, 0, 0);\n  if ( _ld12told(v6, a1) == 1 )\n    return v4 | 2;\n  return v4;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

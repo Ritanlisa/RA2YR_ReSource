@@ -1,0 +1,1 @@
+{"addr": "0x0050E470", "name": "CellStruct::Equals", "decompiled": "int __thiscall CellStruct::Equals(CellStruct *this, _WORD *a2)\n{\n  return this->X == *a2 && this->Y == a2[1];\n}\n", "changed": true, "error": null, "timestamp": "x130"}

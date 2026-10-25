@@ -1,0 +1,1 @@
+{"addr": "0x007271D0", "name": "sub_7271D0", "decompiled": "char *__fastcall sub_7271D0(int a1)\n{\n  return off_8449F8[a1];\n}\n", "changed": true, "error": null, "timestamp": "x130"}

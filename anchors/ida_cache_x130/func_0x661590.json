@@ -1,0 +1,1 @@
+{"addr": "0x00661590", "name": "Map_Append", "decompiled": "int __stdcall Map_Append(_BYTE *a1, int a2, int a3)\n{\n  int result; // eax\n\n  if ( !a2 )\n    return Map_Append_661530(a1, 0, a3) + 2;\n  result = Map_Append_661530(a1, (_BYTE *)(a2 + 2), a3) + 2;\n  *(_WORD *)a2 = result;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x00774950", "name": "SerialPort::Close", "decompiled": "int __thiscall SerialPort::Close(SerialPort *this)\n{\n  int result; // eax\n\n  if ( *((_DWORD *)this + 23) != -1 )\n  {\n    Debug::Log();\n    result = CloseHandle(*((HANDLE *)this + 23));\n    *((_DWORD *)this + 23) = -1;\n  }\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

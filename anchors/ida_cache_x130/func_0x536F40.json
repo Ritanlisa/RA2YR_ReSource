@@ -1,0 +1,1 @@
+{"addr": "0x00536F40", "name": "CreateTeamCommand::performAction_111", "decompiled": "wchar_t *CreateTeamCommand::performAction_111(ToggleRepairCommandClass *this)\n{\n  return GetStringCSF(aTxtRepairMode, 0, g_Str_File_Init_CPP, 7103);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x00717BF0", "name": "ObjectTypeClass::CheckFlag", "decompiled": "_DWORD *__thiscall ObjectTypeClass::CheckFlag(ObjectTypeClass *this, int a2)\n{\n  this->vfptr = (int)&DynamicVectorClass<AnimTypeClass const *>::`vftable';\n  return &this->vfptr;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

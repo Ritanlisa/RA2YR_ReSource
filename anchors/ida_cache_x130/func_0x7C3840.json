@@ -1,0 +1,1 @@
+{"addr": "0x007C3840", "name": "sub_7C3840", "decompiled": "int __fastcall sub_7C3840(int a1, _DWORD *a2, _DWORD *a3)\n{\n  *a2 = *(unsigned __int16 *)(a1 + 250);\n  *a3 = *(unsigned __int16 *)(a1 + 252);\n  return -1;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

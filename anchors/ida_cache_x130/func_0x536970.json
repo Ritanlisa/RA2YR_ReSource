@@ -1,0 +1,1 @@
+{"addr": "0x00536970", "name": "CreateTeamCommand::performAction_59", "decompiled": "char *__thiscall CreateTeamCommand::performAction_59(VeterancyNavCommandClass *this)\n{\n  return aVeterancynav;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

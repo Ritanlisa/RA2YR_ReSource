@@ -1,0 +1,1 @@
+{"addr": "0x0043B0F0", "name": "sub_43B0F0", "decompiled": "int sub_43B0F0()\n{\n  g_BuildingClassPool = 0;\n  dword_89C84C = 0;\n  dword_89C850 = 0;\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

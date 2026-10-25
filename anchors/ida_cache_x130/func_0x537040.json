@@ -1,0 +1,1 @@
+{"addr": "0x00537040", "name": "CreateTeamCommand::performAction_120", "decompiled": "wchar_t *__thiscall CreateTeamCommand::performAction_120(BeaconPlacementCommandClass *this)\n{\n  return GetStringCSF(aTxtPlaceBeacon, 0, g_Str_File_Init_CPP, 7172);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

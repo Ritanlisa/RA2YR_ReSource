@@ -1,0 +1,1 @@
+{"addr": "0x00659090", "name": "sub_659090", "decompiled": "int sub_659090()\n{\n  dword_B04A64 = 0;\n  dword_B04A68 = 0;\n  byte_B04A6C = 1;\n  byte_B04A6D = 0;\n  RadBeam_Array = (int)&DynamicVectorClass<RadBeam *>::`vftable';\n  dword_B04A74 = 10;\n  dword_B04A70 = 0;\n  return atexit(sub_6590D0);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

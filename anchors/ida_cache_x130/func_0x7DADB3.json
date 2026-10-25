@@ -1,0 +1,1 @@
+{"addr": "0x007DADB3", "name": "__ismbbkpunct", "decompiled": "int __cdecl _ismbbkpunct(unsigned int C)\n{\n  return CRTisctype(C, 0, 2u);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

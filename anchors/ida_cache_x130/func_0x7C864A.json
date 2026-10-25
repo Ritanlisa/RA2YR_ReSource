@@ -1,0 +1,1 @@
+{"addr": "0x007C864A", "name": "MessageBoxA", "decompiled": "// attributes: thunk\nint __stdcall MessageBoxA(HWND hWnd, LPCSTR lpText, LPCSTR lpCaption, UINT uType)\n{\n  return __imp_MessageBoxA(hWnd, lpText, lpCaption, uType);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

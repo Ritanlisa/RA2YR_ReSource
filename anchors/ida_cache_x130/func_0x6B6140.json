@@ -1,0 +1,1 @@
+{"addr": "0x006B6140", "name": "SmudgeTypeClass::GetObjectSize", "decompiled": "int SmudgeTypeClass::GetObjectSize(SmudgeTypeClass *this)\n{\n  return 676;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

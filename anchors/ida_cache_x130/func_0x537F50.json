@@ -1,0 +1,1 @@
+{"addr": "0x00537F50", "name": "DeleteCommandClass::ddtor", "decompiled": "wchar_t *DeleteCommandClass::ddtor(DeleteCommandClass *this)\n{\n  return GetStringCSF(g_Str_TXT_INTERFACE, 0, g_Str_File_Init_CPP, 6561);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

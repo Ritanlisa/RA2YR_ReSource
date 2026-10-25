@@ -1,0 +1,1 @@
+{"addr": "0x007B1980", "name": "sub_7B1980", "decompiled": "int sub_7B1980()\n{\n  dword_B78058 = 0;\n  dword_B7805C = 0;\n  dword_B78060 = 0;\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

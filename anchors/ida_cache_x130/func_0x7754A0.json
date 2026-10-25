@@ -1,0 +1,1 @@
+{"addr": "0x007754A0", "name": "WinModemClass::ddtor", "decompiled": "int __thiscall WinModemClass::ddtor(WinModemClass *this, int a2)\n{\n  this->u32_64 = a2;\n  return a2;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

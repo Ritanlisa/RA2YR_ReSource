@@ -1,0 +1,1 @@
+{"addr": "0x007C8536", "name": "TerminateProcess", "decompiled": "// attributes: thunk\nBOOL __stdcall TerminateProcess(HANDLE hProcess, UINT uExitCode)\n{\n  return __imp_TerminateProcess(hProcess, uExitCode);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

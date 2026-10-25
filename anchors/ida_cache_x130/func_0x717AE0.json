@@ -1,0 +1,1 @@
+{"addr": "0x00717AE0", "name": "ObjectTypeClass::loadTypeMember_5717AE0", "decompiled": "BOOL __thiscall ObjectTypeClass::loadTypeMember_5717AE0(ObjectTypeClass *this)\n{\n  return LOBYTE(this->vfptr) == 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

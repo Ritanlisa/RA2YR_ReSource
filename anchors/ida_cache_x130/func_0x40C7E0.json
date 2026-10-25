@@ -1,0 +1,1 @@
+{"addr": "0x0040C7E0", "name": "sub_40C7E0", "decompiled": "void __cdecl sub_40C7E0()\n{\n  dword_87F750 = (int)&VectorClass<IsometricTileClass *>::`vftable';\n  if ( dword_87F754 && byte_87F75D )\n  {\n    __3_YAXPAX_Z(dword_87F754);\n    dword_87F754 = 0;\n  }\n  byte_87F75D = 0;\n  dword_87F758 = 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

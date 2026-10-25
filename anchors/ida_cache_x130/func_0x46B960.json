@@ -1,0 +1,1 @@
+{"addr": "0x0046B960", "name": "BulletClass::AddVector3", "decompiled": "double *__thiscall BulletClass::AddVector3(double *this, double *a2)\n{\n  *this = *a2 + *this;\n  *(this + 1) = a2[1] + *(this + 1);\n  *(this + 2) = a2[2] + *(this + 2);\n  return this;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

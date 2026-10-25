@@ -1,0 +1,1 @@
+{"addr": "0x007DCFB2", "name": "CreateErrorInfo", "decompiled": "// attributes: thunk\nHRESULT __stdcall CreateErrorInfo(ICreateErrorInfo **pperrinfo)\n{\n  return __imp_CreateErrorInfo(pperrinfo);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

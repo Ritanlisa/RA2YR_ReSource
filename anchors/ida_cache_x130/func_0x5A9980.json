@@ -1,0 +1,1 @@
+{"addr": "0x005A9980", "name": "sub_5A9980", "decompiled": "_DWORD *__thiscall sub_5A9980(_DWORD *this, int a2, _DWORD *a3, int a4, _DWORD *a5, int a6)\n{\n  *this = a2;\n  *(this + 1) = *a3;\n  *(this + 2) = a4;\n  *(this + 3) = *a5;\n  *(this + 4) = a6;\n  return this;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

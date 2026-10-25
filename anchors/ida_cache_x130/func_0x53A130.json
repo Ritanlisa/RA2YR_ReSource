@@ -1,0 +1,1 @@
+{"addr": "0x0053A130", "name": "HouseClass::IonSensitivesShouldBeOffline", "decompiled": "char HouseClass::IonSensitivesShouldBeOffline()\n{\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

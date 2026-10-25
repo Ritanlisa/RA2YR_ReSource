@@ -1,0 +1,1 @@
+{"addr": "0x006C9D30", "name": "AbstractClass::getTotalValue", "decompiled": "int __thiscall AbstractClass::getTotalValue(AbstractClass *this, int a2)\n{\n  this->vfptr3 = a2;\n  return a2;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x005B3A10", "name": "MissionClass::HasValidTarget", "decompiled": "int __thiscall MissionClass::HasValidTarget(MissionClass *this)\n{\n  return this->suspendedMission != -1;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

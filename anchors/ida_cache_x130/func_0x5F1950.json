@@ -1,0 +1,1 @@
+{"addr": "0x005F1950", "name": "NullModemClass::COMStub", "decompiled": "int __thiscall NullModemClass::COMStub(NullModemClass *this)\n{\n  return *(_DWORD *)this->field_44;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

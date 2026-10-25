@@ -1,0 +1,1 @@
+{"addr": "0x0053A120", "name": "NukeFlash::ProcessEffect", "decompiled": "BOOL NukeFlash::ProcessEffect()\n{\n  return NukeFlash_Status == 2;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

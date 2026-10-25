@@ -1,0 +1,1 @@
+{"addr": "0x0062D6F0", "name": "ParticleClass::CheckMirrorState", "decompiled": "bool __thiscall ParticleClass::CheckMirrorState(ParticleClass *this, int a2)\n{\n  return (unsigned __int8)ObjectClass::UpdateProductionDisplay((TechnoClass *)this) != 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

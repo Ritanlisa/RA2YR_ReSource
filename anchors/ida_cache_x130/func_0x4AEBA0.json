@@ -1,0 +1,1 @@
+{"addr": "0x004AEBA0", "name": "CheckListClass::COMStub_Return0", "decompiled": "int CheckListClass::COMStub_Return0(GadgetClass *this)\n{\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

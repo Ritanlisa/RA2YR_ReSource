@@ -1,0 +1,1 @@
+{"addr": "0x00408540", "name": "Audio::CalcRate", "decompiled": "int __thiscall Audio::CalcRate(Audio *this, int a2, int a3)\n{\n  return a2 * this->Audio_field_0x14 / 1000;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

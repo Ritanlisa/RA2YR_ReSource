@@ -1,0 +1,1 @@
+{"addr": "0x00659470", "name": "TechnoClass::drawSelectionBox", "decompiled": "char __thiscall TechnoClass::drawSelectionBox(char *this, int a2)\n{\n  char *v2; // ecx\n  char result; // al\n\n  v2 = this + 32;\n  *(_WORD *)v2 = *(_WORD *)a2;\n  result = *(_BYTE *)(a2 + 2);\n  v2[2] = result;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

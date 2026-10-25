@@ -1,0 +1,1 @@
+{"addr": "0x0053A100", "name": "LightningStorm::IsActive", "decompiled": "int LightningStorm::IsActive()\n{\n  int result; // eax\n\n  LOBYTE(result) = LightningStorm_Active;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

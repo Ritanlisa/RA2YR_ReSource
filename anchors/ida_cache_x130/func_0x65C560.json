@@ -1,0 +1,1 @@
+{"addr": "0x0065C560", "name": "nullsub_0_6", "decompiled": "int __thiscall nullsub_0_6(RAMFileClass *this, int a2)\n{\n  return (*(int (__thiscall **)(RAMFileClass *))(*(_DWORD *)this->__pad_0 + 4))(this);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

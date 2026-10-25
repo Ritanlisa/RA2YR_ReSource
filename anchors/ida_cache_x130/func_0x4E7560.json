@@ -1,0 +1,1 @@
+{"addr": "0x004E7560", "name": "sub_4E7560", "decompiled": "int sub_4E7560()\n{\n  dword_A8E34C = 0;\n  dword_A8E350 = 0;\n  byte_A8E354 = 1;\n  byte_A8E355 = 0;\n  dword_A8E348 = &DynamicVectorClass<InfantryTypeClass *>::`vftable';\n  dword_A8E35C = 10;\n  dword_A8E358 = 0;\n  return atexit(sub_4E75A0);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

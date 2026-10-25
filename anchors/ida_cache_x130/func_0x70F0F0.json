@@ -1,0 +1,1 @@
+{"addr": "0x0070F0F0", "name": "TechnoClass::StubReturnFalse8", "decompiled": "int __thiscall TechnoClass::StubReturnFalse8(TechnoClass *this)\n{\n  int result; // eax\n\n  LOBYTE(result) = 0;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

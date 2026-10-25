@@ -1,0 +1,1 @@
+{"addr": "0x007719C0", "name": "Territory_WorldDominationTour_8::Open", "decompiled": "BOOL Territory_WorldDominationTour_8::Open(Anim_Voices_WorldDominationTour *this)\n{\n  return (unsigned __int8)Audio::IsPlaying() == 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

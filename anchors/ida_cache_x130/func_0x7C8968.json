@@ -1,0 +1,1 @@
+{"addr": "0x007C8968", "name": "htons", "decompiled": "// attributes: thunk\nint __stdcall htons(u_short hostshort)\n{\n  int result; // eax\n\n  LOWORD(result) = __imp_htons(hostshort);\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

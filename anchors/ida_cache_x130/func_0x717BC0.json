@@ -1,0 +1,1 @@
+{"addr": "0x00717BC0", "name": "TechnoTypeClass::Constructor_0", "decompiled": "_DWORD *__thiscall TechnoTypeClass::Constructor_0(TechnoTypeClass *this, int a2)\n{\n  this->vfptr = (int)&DynamicVectorClass<VoxelAnimTypeClass const *>::`vftable';\n  return &this->vfptr;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

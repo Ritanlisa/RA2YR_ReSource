@@ -1,0 +1,1 @@
+{"addr": "0x007C86B0", "name": "GetDlgCtrlID", "decompiled": "// attributes: thunk\nint __stdcall GetDlgCtrlID(HWND hWnd)\n{\n  return __imp_GetDlgCtrlID(hWnd);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

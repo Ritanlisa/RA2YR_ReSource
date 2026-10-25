@@ -1,0 +1,1 @@
+{"addr": "0x0070D180", "name": "SetGlobalFlag", "decompiled": "void __fastcall SetGlobalFlag(char a1)\n{\n  LOBYTE(stru_842DD4.DebrisMaximums[1]) = a1;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

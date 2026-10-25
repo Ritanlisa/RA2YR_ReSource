@@ -1,0 +1,1 @@
+{"addr": "0x004093C0", "name": "sub_4093C0", "decompiled": "LONGLONG sub_4093C0()\n{\n  LARGE_INTEGER PerformanceCount; // [esp+0h] [ebp-8h] BYREF\n\n  QueryPerformanceCounter(&PerformanceCount);\n  return PerformanceCount.QuadPart / qword_87E828;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

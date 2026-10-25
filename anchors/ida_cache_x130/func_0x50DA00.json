@@ -1,0 +1,1 @@
+{"addr": "0x0050DA00", "name": "TActionClass::executeGuardAction", "decompiled": "int __thiscall TActionClass::executeGuardAction(TActionClass *this, int a2)\n{\n  *((_DWORD *)this + 5436) = a2;\n  return a2;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

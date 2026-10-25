@@ -1,0 +1,1 @@
+{"addr": "0x007CEF29", "name": "__shift", "decompiled": "void __cdecl _shift(const char *Src, int a2)\n{\n  int v2; // eax\n\n  if ( a2 )\n  {\n    v2 = strlen(Src);\n    memcpy((void *)&Src[a2], Src, v2 + 1);\n  }\n}\n", "changed": true, "error": null, "timestamp": "x130"}

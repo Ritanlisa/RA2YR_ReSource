@@ -1,0 +1,1 @@
+{"addr": "0x005657E0", "name": "Cell::Exists", "decompiled": "int __thiscall Cell::Exists(Cell *this, __int16 *a2)\n{\n  int result; // eax\n\n  result = *a2;\n  LOBYTE(result) = *(_DWORD *)(this->Cell_field_0x13C + 4 * (result + (a2[1] << 9))) != 0;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

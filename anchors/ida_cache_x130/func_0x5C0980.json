@@ -1,0 +1,1 @@
+{"addr": "0x005C0980", "name": "MainWindowProc_Helper", "decompiled": "BOOL MainWindowProc_Helper()\n{\n  return dword_ABF3F4 || dword_ABF3F8;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x007C863E", "name": "MessageBoxIndirectA", "decompiled": "// attributes: thunk\nint __stdcall MessageBoxIndirectA(const MSGBOXPARAMSA *lpmbp)\n{\n  return __imp_MessageBoxIndirectA(lpmbp);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

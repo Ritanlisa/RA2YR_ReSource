@@ -1,0 +1,1 @@
+{"addr": "0x007C8602", "name": "EnableWindow", "decompiled": "// attributes: thunk\nBOOL __stdcall EnableWindow(HWND hWnd, BOOL bEnable)\n{\n  return __imp_EnableWindow(hWnd, bEnable);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

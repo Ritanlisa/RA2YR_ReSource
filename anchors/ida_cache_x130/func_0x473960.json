@@ -1,0 +1,1 @@
+{"addr": "0x00473960", "name": "sub_473960", "decompiled": "char *__fastcall sub_473960(unsigned int a1)\n{\n  if ( a1 >= 0xB )\n    return g_Str__none_;\n  else\n    return (&off_81B7CC)[2 * a1];\n}\n", "changed": true, "error": null, "timestamp": "x130"}

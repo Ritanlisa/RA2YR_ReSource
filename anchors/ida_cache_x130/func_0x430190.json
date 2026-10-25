@@ -1,0 +1,1 @@
+{"addr": "0x00430190", "name": "sub_430190", "decompiled": "int sub_430190()\n{\n  memset(&g_VisibilitySystem, 0, 0x60u);\n  dword_89C410 = 0;\n  dword_89C42C = 0;\n  return atexit(sub_4301C0);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

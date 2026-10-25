@@ -1,0 +1,1 @@
+{"addr": "0x004D94A0", "name": "ObjectClass::SetMember360", "decompiled": "int __thiscall ObjectClass::SetMember360(TechnoClass *this, int a2)\n{\n  this->field_688 = a2;\n  return a2;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

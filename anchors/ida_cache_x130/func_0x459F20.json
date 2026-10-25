@@ -1,0 +1,1 @@
+{"addr": "0x00459F20", "name": "BuildingClass::ScalarDtor", "decompiled": "int __thiscall BuildingClass::ScalarDtor(BuildingClass *this)\n{\n  char v3; // [esp+8h] [ebp+4h]\n\n  BuildingClass::Dtor(this);\n  if ( (v3 & 1) != 0 )\n    __3_YAXPAX_Z(this);\n  return (int)this;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

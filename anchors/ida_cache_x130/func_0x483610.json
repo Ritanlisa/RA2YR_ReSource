@@ -1,0 +1,1 @@
+{"addr": "0x00483610", "name": "ObjectClass::processPointerInvalid", "decompiled": "int __thiscall ObjectClass::processPointerInvalid(ObjectClass *this)\n{\n  return (*((_DWORD *)this + 80) >> 8) & 1;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

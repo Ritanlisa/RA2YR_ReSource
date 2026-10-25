@@ -1,0 +1,1 @@
+{"addr": "0x004A2030", "name": "sub_4A2030", "decompiled": "int __thiscall sub_4A2030(ObjectClass *this, unsigned __int8 *a2, int a3)\n{\n  Checksummer::Add_Buffer((Checksummer *)&this->vfptr3, a2, a3);\n  return Delegate::Dispatch((Pipe *)this, (int)a2, a3);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

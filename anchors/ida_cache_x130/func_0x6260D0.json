@@ -1,0 +1,1 @@
+{"addr": "0x006260D0", "name": "Block::Copy", "decompiled": "void *__thiscall Block::Copy(Block *this, const void *a2)\n{\n  void *result; // eax\n\n  result = this;\n  if ( this != a2 )\n    qmemcpy(this, a2, 0x300u);\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

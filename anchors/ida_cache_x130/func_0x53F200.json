@@ -1,0 +1,1 @@
+{"addr": "0x0053F200", "name": "Network::SetPort", "decompiled": "__int16 __thiscall Network::SetPort(Network *this, __int16 a2)\n{\n  __int16 result; // ax\n\n  if ( dword_828140 == 2 )\n  {\n    LOWORD(this->Network_field_0x0) = a2;\n    return a2;\n  }\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

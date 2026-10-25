@@ -1,0 +1,1 @@
+{"addr": "0x00537020", "name": "CreateTeamCommand::performAction_118", "decompiled": "char __stdcall CreateTeamCommand::performAction_118(ToggleSellCommandClass *this)\n{\n  return BuildingClass::TogglePower((BuildingClass *)&dword_87F7E8, -1);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

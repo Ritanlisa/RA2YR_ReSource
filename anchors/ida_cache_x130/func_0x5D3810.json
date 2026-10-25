@@ -1,0 +1,1 @@
+{"addr": "0x005D3810", "name": "MPBattleClass::validateHouse", "decompiled": "void MPBattleClass::validateHouse()\n{\n  dbl_ABFC80 = dbl_ABFC30 / 60.0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

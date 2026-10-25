@@ -1,0 +1,1 @@
+{"addr": "0x006E6A50", "name": "sub_6E6A50", "decompiled": "int sub_6E6A50()\n{\n  g_BuildingLoadQueue_Array.vfptr = 0;\n  NumOfElements = 0;\n  dword_B0E848 = 0;\n  byte_B0E84C = 0;\n  dword_B0E850 = 0;\n  return atexit(sub_6E6A80);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

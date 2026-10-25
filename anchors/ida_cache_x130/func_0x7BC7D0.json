@@ -1,0 +1,1 @@
+{"addr": "0x007BC7D0", "name": "sub_7BC7D0", "decompiled": "void *__thiscall sub_7BC7D0(_BlitPlain_E *this, void *Src, size_t Size, int Sizea, int a5, int a6, int a7, int a8)\n{\n  return memcpy(Src, (const void *)Size, Sizea);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

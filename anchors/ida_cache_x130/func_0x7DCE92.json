@@ -1,0 +1,1 @@
+{"addr": "0x007DCE92", "name": "HeapCreate", "decompiled": "// attributes: thunk\nHANDLE __stdcall HeapCreate(DWORD flOptions, SIZE_T dwInitialSize, SIZE_T dwMaximumSize)\n{\n  return __imp_HeapCreate(flOptions, dwInitialSize, dwMaximumSize);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

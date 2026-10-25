@@ -1,0 +1,1 @@
+{"addr": "0x00408500", "name": "sub_408500", "decompiled": "int __fastcall sub_408500(int a1, _DWORD *a2)\n{\n  int result; // eax\n\n  InsertAfterDListNode(a1 + 8, a2);\n  result = a2[4];\n  *(_DWORD *)(a1 + 4) += result;\n  a2[5] = a1;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

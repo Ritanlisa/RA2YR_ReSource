@@ -1,0 +1,1 @@
+{"addr": "0x00681080", "name": "Map_Save_681080", "decompiled": "int __thiscall Map_Save_681080(ObjectClass *this, int a2)\n{\n  this->vfptr = a2;\n  return a2;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

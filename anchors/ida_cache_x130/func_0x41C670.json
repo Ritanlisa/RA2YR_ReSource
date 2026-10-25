@@ -1,0 +1,1 @@
+{"addr": "0x0041C670", "name": "TechnoClass::processMoveState", "decompiled": "int __thiscall TechnoClass::processMoveState(TechnoClass *this, int a2, void *a3, void **a4)\n{\n  return AircraftClass::QueryInterface((AircraftClass *)this, (AbstractClass *)(a2 - 1728), a3, a4);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

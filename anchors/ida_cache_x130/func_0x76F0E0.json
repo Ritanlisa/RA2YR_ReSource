@@ -1,0 +1,1 @@
+{"addr": "0x0076F0E0", "name": "VectorCursor::HasNext", "decompiled": "BOOL __thiscall VectorCursor::HasNext(\n        _VectorCursor_V_rc_ptr_VTerritory_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour *this)\n{\n  return *((_DWORD *)this + 2) < *(_DWORD *)(*(_DWORD *)&this->m_1[3] + 16);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

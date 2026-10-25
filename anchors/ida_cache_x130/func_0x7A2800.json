@@ -1,0 +1,1 @@
+{"addr": "0x007A2800", "name": "Map_Handle_7A2800", "decompiled": "char __fastcall Map_Handle_7A2800(int a1, char a2, char a3)\n{\n  HWND v5; // eax\n\n  v5 = (HWND)Dialog::FindByHandle((Dialog *)0xC2);\n  return Map_Handle_5EC880(v5, a1, a2, a3);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

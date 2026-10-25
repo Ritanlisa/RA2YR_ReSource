@@ -1,0 +1,1 @@
+{"addr": "0x005AC3F0", "name": "VectorClass_ptr_MapRegionClass::Get", "decompiled": "int __thiscall VectorClass_ptr_MapRegionClass::Get(_VectorClass_PAVMapRegionClass *this, int a2)\n{\n  return *(_DWORD *)(*(_DWORD *)&this->m_1[3] + 4 * a2);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

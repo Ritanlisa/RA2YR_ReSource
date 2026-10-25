@@ -1,0 +1,1 @@
+{"addr": "0x00537DD0", "name": "PageUserCommandClass::PageUserCommandClass", "decompiled": "_DWORD *__thiscall PageUserCommandClass::PageUserCommandClass(PageUserCommandClass *this)\n{\n  *(_DWORD *)this->__tail_0 = &PageUserCommandClass::`vftable';\n  return this->__tail_0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

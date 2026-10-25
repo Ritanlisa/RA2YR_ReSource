@@ -1,0 +1,1 @@
+{"addr": "0x007B46F0", "name": "DeleteAndZero", "decompiled": "int __thiscall DeleteAndZero(ObjectClass *this)\n{\n  int result; // eax\n\n  result = this->vfptr;\n  if ( this->vfptr )\n    __3_YAXPAX_Z((void *)this->vfptr);\n  this->vfptr = 0;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x00691F90", "name": "ScriptTypeClass::GetAuxField", "decompiled": "int __thiscall ScriptTypeClass::GetAuxField(ScriptTypeClass *this)\n{\n  return *(_DWORD *)&this->scriptActions[104];\n}\n", "changed": true, "error": null, "timestamp": "x130"}

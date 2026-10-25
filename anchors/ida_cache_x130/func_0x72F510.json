@@ -1,0 +1,1 @@
+{"addr": "0x0072F510", "name": "VtableStub::72F510", "decompiled": "int VtableStub::72F510()\n{\n  return dword_B0FBF8;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

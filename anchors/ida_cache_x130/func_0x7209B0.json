@@ -1,0 +1,1 @@
+{"addr": "0x007209B0", "name": "AudioSettings::Check", "decompiled": "int __thiscall AudioSettings::Check(AudioSettings *this, unsigned int a2)\n{\n  if ( a2 >= *((_DWORD *)this + 9) )\n    return 0;\n  else\n    return *(_DWORD *)(*((_DWORD *)this + 6) + 4 * a2) + 512;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

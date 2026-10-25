@@ -1,0 +1,1 @@
+{"addr": "0x004AF4E0", "name": "sub_4AF4E0", "decompiled": "int sub_4AF4E0()\n{\n  g_DDraw_ClipRect = 0;\n  qword_8A0794 = 0;\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

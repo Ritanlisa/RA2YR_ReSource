@@ -1,0 +1,1 @@
+{"addr": "0x0077DA10", "name": "unknown_libname_59", "decompiled": "// Microsoft VisualC 2-14/net runtime\nvoid __cdecl unknown_libname_59()\n{\n  DeleteAndZero((ObjectClass *)&stru_B73E10.CChatEventSink_field_0x30);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

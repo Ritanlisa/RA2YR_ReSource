@@ -1,0 +1,1 @@
+{"addr": "0x004BAFE0", "name": "sub_4BAFE0", "decompiled": "BOOL __thiscall sub_4BAFE0(ObjectClass *this)\n{\n  int referenceCount; // eax\n\n  referenceCount = this->referenceCount;\n  return referenceCount && (*(int (__stdcall **)(int))(*(_DWORD *)referenceCount + 96))(referenceCount) == -2005532222;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

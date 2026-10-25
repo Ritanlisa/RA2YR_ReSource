@@ -1,0 +1,1 @@
+{"addr": "0x00433ED0", "name": "Text::MeasureWidth", "decompiled": "int __thiscall Text::MeasureWidth(Text *this, unsigned __int16 *a2, int a3)\n{\n  Text::Layout(this, a2, &a3, 0, a3);\n  return a3;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

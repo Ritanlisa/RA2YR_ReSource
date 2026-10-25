@@ -1,0 +1,1 @@
+{"addr": "0x007C86C2", "name": "GetCursorPos", "decompiled": "// attributes: thunk\nBOOL __stdcall GetCursorPos(LPPOINT lpPoint)\n{\n  return __imp_GetCursorPos(lpPoint);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

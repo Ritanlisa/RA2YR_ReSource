@@ -1,0 +1,1 @@
+{"addr": "0x006EDF90", "name": "sub_6EDF90", "decompiled": "char __thiscall sub_6EDF90(ObjectClass *this, int a2, int a3)\n{\n  *(_BYTE *)(this->fallRate + 494) = 1;\n  this->needsRedraw[0] = 1;\n  return 1;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

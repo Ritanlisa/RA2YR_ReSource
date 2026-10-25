@@ -1,0 +1,1 @@
+{"addr": "0x00407F80", "name": "sub_407F80", "decompiled": "int __thiscall sub_407F80(ObjectClass *this)\n{\n  int result; // eax\n\n  result = this->parachute + 1;\n  this->parachute = result;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

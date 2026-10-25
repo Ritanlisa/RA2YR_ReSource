@@ -1,0 +1,1 @@
+{"addr": "0x00746D60", "name": "TechnoClass::releaseSpawns", "decompiled": "int __thiscall TechnoClass::releaseSpawns(TechnoClass *this)\n{\n  double v1; // st7\n\n  TechnoClass::CreateDeathAnim(&this->vfptr, v1);\n  return ObjectClass::FreeCaptureManager(this);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

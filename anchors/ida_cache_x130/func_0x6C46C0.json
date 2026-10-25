@@ -1,0 +1,1 @@
+{"addr": "0x006C46C0", "name": "WinMain_Helper_6C46C0", "decompiled": "_DWORD *__thiscall WinMain_Helper_6C46C0(ObjectClass *this)\n{\n  this->vfptr1 = 0;\n  this->vfptr = (int)&TClassFactory<WalkLocomotionClass>::`vftable';\n  return &this->vfptr;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

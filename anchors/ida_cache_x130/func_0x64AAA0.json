@@ -1,0 +1,1 @@
+{"addr": "0x0064AAA0", "name": "sub_64AAA0", "decompiled": "int __thiscall sub_64AAA0(ObjectClass *this)\n{\n  LRESULT v2; // esi\n\n  v2 = SendMessageA((HWND)this, 0x18Bu, 0, 0);\n  if ( v2 > 50 )\n  {\n    SendMessageA((HWND)this, 0x182u, 0, 0);\n    --v2;\n  }\n  return SendMessageA((HWND)this, 0x197u, v2 - 1, 0);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x005AEAD0", "name": "BuildingClass::processBaseExpansion", "decompiled": "void __thiscall BuildingClass::processBaseExpansion(float *this, float a2)\n{\n  *this = a2 * *this;\n  *(this + 4) = a2 * *(this + 4);\n  *(this + 8) = a2 * *(this + 8);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

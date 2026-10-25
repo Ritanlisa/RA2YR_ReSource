@@ -1,0 +1,1 @@
+{"addr": "0x00411580", "name": "Surface::IsLocked", "decompiled": "BOOL __thiscall Surface::IsLocked(XSurface *this)\n{\n  return *(_DWORD *)this->field_0.field_C != 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

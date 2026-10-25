@@ -1,0 +1,1 @@
+{"addr": "0x006E4820", "name": "Tactical_42::PointerToIndex", "decompiled": "unsigned int __thiscall Tactical_42::PointerToIndex(Tactical *this, int a2)\n{\n  if ( LOBYTE(this->Tactical_field_0xC) )\n    return (unsigned int)(a2 - *(_DWORD *)&this->Tactical_field_0x2[2]) >> 2;\n  else\n    return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

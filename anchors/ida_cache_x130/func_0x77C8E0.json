@@ -1,0 +1,1 @@
+{"addr": "0x0077C8E0", "name": "sub_77C8E0", "decompiled": "int sub_77C8E0()\n{\n  *(_DWORD *)g_WindowManager.__pad_0 = 0;\n  dword_B73AAC = 0;\n  dword_B73AB0 = 0;\n  return atexit(sub_77C900);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

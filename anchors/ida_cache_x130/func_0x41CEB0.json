@@ -1,0 +1,1 @@
+{"addr": "0x0041CEB0", "name": "AircraftTypeClass::GetClassIdentifier", "decompiled": "int __stdcall AircraftTypeClass::GetClassIdentifier(AircraftTypeClass *this, _DWORD *a2)\n{\n  if ( !a2 )\n    return -2147467261;\n  *a2 = -1366608935;\n  a2[1] = 298976796;\n  a2[2] = 1610654892;\n  a2[3] = -1252326136;\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

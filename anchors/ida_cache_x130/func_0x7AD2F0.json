@@ -1,0 +1,1 @@
+{"addr": "0x007AD2F0", "name": "ResetSystemWOL_Reset", "decompiled": "void **__thiscall ResetSystemWOL_Reset(ObjectClass *this, char a2)\n{\n  DeleteAndZero(this);\n  if ( (a2 & 1) != 0 )\n    __3_YAXPAX_Z(this);\n  return (void **)this;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

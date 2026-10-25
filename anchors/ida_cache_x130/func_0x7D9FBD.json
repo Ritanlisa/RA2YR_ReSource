@@ -1,0 +1,1 @@
+{"addr": "0x007D9FBD", "name": "sub_7D9FBD", "decompiled": "LPTOP_LEVEL_EXCEPTION_FILTER sub_7D9FBD()\n{\n  return SetUnhandledExceptionFilter(lpTopLevelExceptionFilter);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

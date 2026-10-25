@@ -1,0 +1,1 @@
+{"addr": "0x00767ED0", "name": "MSFrameAnim::Load", "decompiled": "char __stdcall MSFrameAnim::Load(MSFrameAnim *this, int *a2)\n{\n  if ( byte_8487BC )\n    RenderScoreScreen((int *)this, a2, 1);\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

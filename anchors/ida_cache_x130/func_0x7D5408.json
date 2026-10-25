@@ -1,0 +1,1 @@
+{"addr": "0x007D5408", "name": "__strdup", "decompiled": "char *__cdecl _strdup(const char *Source)\n{\n  int v1; // eax\n  char *v2; // eax\n\n  if ( Source && (v1 = strlen(Source), (v2 = (char *)malloc(v1 + 1)) != 0) )\n    return strcpy(v2, Source);\n  else\n    return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

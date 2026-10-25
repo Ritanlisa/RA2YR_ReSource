@@ -1,0 +1,1 @@
+{"addr": "0x0041CB60", "name": "AircraftTypeClass::StubReturnFalse", "decompiled": "char AircraftTypeClass::StubReturnFalse(AircraftTypeClass *this)\n{\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

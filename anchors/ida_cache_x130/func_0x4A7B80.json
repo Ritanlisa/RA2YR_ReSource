@@ -1,0 +1,1 @@
+{"addr": "0x004A7B80", "name": "DiskLaserClass::Stat", "decompiled": "int __thiscall DiskLaserClass::Stat(DiskLaserClass *this, int a2)\n{\n  return AbstractClass::ProcessPower((AbstractClass *)this);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

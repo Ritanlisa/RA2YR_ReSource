@@ -1,0 +1,1 @@
+{"addr": "0x0048C590", "name": "ConnectionClass::StubReturnFalse", "decompiled": "int ConnectionClass::StubReturnFalse(ConnectionClass *this)\n{\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

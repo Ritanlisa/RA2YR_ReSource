@@ -1,0 +1,1 @@
+{"addr": "0x004F4CA0", "name": "Flag::IsZero", "decompiled": "int __thiscall Flag::IsZero(Flag *this)\n{\n  return this->__pad_0[0] == 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

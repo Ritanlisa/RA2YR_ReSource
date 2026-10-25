@@ -1,0 +1,1 @@
+{"addr": "0x007DADEC", "name": "__ismbbgraph", "decompiled": "int __cdecl _ismbbgraph(unsigned int C)\n{\n  return CRTisctype(C, 279, 3u);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

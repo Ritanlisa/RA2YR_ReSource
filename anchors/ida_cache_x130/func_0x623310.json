@@ -1,0 +1,1 @@
+{"addr": "0x00623310", "name": "Network_Start", "decompiled": "BOOL __fastcall Network_Start(HWND hWnd, LPARAM lParam)\n{\n  HWND DlgItem; // eax\n\n  DlgItem = GetDlgItem(hWnd, 1456);\n  SendMessageA(DlgItem, 0x4B2u, 0, lParam);\n  return UpdateWindow(hWnd);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

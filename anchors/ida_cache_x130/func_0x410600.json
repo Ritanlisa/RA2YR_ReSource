@@ -1,0 +1,1 @@
+{"addr": "0x00410600", "name": "XSurface::vt_entry_40", "decompiled": "int __stdcall XSurface::vt_entry_40(AbstractClass *this)\n{\n  AbstractClass *v1; // ecx\n\n  return AbstractClass::COMStub_Release(v1);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

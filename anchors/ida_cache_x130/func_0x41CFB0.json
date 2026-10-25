@@ -1,0 +1,1 @@
+{"addr": "0x0041CFB0", "name": "AircraftTypeClass::GetTypeIdentifier", "decompiled": "int AircraftTypeClass::GetTypeIdentifier(AircraftTypeClass *this)\n{\n  return 3;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x00457620", "name": "BuildingClass::IsFactorySelectable", "decompiled": "int __thiscall BuildingClass::IsFactorySelectable(BuildingClass *this)\n{\n  int result; // eax\n\n  LOBYTE(result) = BuildingClass::Is1x1AndUndeployable_BuildingMassSelectable((BuildingClass *)this->Type);\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x007C8AB7", "name": "??_Gtype_info_UAEPAXI_Z", "decompiled": "type_info *__thiscall ___Gtype_info_UAEPAXI_Z(type_info *this, char a2)\n{\n  __1type_info_UAE_XZ(this);\n  if ( (a2 & 1) != 0 )\n    __3_YAXPAX_Z(this);\n  return this;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

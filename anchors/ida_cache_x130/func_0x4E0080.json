@@ -1,0 +1,1 @@
+{"addr": "0x004E0080", "name": "TeamClass::HasAnyMemberFlagged", "decompiled": "BOOL __thiscall TeamClass::HasAnyMemberFlagged(TeamClass *this)\n{\n  return *((_BYTE *)this + 1679) || *((_BYTE *)this + 1680) || *((_BYTE *)this + 1681);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

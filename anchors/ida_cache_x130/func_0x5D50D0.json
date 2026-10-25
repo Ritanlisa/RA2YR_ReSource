@@ -1,0 +1,1 @@
+{"addr": "0x005D50D0", "name": "MSFont_18::GetSize", "decompiled": "int __thiscall MSFont_18::GetSize(_VectorClass_PAUHWND *this, int a2)\n{\n  return *(_DWORD *)(*(_DWORD *)&this->m_1[3] + 4 * a2);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

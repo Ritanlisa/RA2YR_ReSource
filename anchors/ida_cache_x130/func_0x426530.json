@@ -1,0 +1,1 @@
+{"addr": "0x00426530", "name": "AnimClass::MissionStubReturnZero", "decompiled": "int AnimClass::MissionStubReturnZero(AnimClass *this)\n{\n  return 456;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

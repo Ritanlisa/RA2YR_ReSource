@@ -1,0 +1,1 @@
+{"addr": "0x006A4C80", "name": "sub_6A4C80", "decompiled": "void __cdecl sub_6A4C80()\n{\n  if ( (byte_B07BB1 & 1) == 0 )\n  {\n    byte_B07BB1 |= 1u;\n    ShapeButtonClass::Destructor((int)&stru_B07DF8);\n  }\n}\n", "changed": true, "error": null, "timestamp": "x130"}

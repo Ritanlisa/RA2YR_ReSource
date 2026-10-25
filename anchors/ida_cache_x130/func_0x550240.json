@@ -1,0 +1,1 @@
+{"addr": "0x00550240", "name": "Helper_550240", "decompiled": "char Helper_550240(ObjectClass *this)\n{\n  char result; // al\n  int i; // esi\n\n  result = dword_ABC888;\n  for ( i = dword_ABC888 - 1; i >= 0; --i )\n    result = TacticalClass::RenderCells(*((TacticalClass **)dword_ABC87C + i));\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x004E73E0", "name": "sub_4E73E0", "decompiled": "int sub_4E73E0()\n{\n  dword_A8B21C = 0;\n  dword_A8B220 = 0;\n  byte_A8B224 = 1;\n  byte_A8B225 = 0;\n  dword_A8B218 = &DynamicVectorClass<AircraftTypeClass *>::`vftable';\n  dword_A8B22C = 10;\n  dword_A8B228 = 0;\n  return atexit(sub_4E7420);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

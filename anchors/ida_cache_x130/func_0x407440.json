@@ -1,0 +1,1 @@
+{"addr": "0x00407440", "name": "InsertBeforeLinkedList", "decompiled": "int __fastcall InsertBeforeLinkedList(int *a1, int *a2)\n{\n  int result; // eax\n\n  a2[1] = (int)a1;\n  result = *a1;\n  *a2 = *a1;\n  *a1 = (int)a2;\n  *(_DWORD *)(*a2 + 4) = a2;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

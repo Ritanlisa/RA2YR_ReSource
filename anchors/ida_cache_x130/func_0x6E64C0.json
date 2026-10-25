@@ -1,0 +1,1 @@
+{"addr": "0x006E64C0", "name": "TagTypeClass::ddtor", "decompiled": "void *__thiscall TagTypeClass::ddtor(TagTypeClass *this, char a2)\n{\n  TagTypeClass::CleanupMembers((AbstractTypeClass *)this);\n  if ( (a2 & 1) != 0 )\n    __3_YAXPAX_Z(this);\n  return this;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

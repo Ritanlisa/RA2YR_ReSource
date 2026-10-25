@@ -1,0 +1,1 @@
+{"addr": "0x0065B3A0", "name": "RadSiteClass::StubReturn116", "decompiled": "int RadSiteClass::StubReturn116(RadSiteClass *this)\n{\n  return 116;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x005F75B0", "name": "AbstractTypeClass::GetData", "decompiled": "int AbstractTypeClass::GetData(ObjectTypeClass *this)\n{\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

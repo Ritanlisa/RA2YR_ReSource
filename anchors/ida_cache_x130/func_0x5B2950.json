@@ -1,0 +1,1 @@
+{"addr": "0x005B2950", "name": "Math::Sub16", "decompiled": "_DWORD *__thiscall Math::Sub16(Math *this, _DWORD *a2, _WORD *a3)\n{\n  LOWORD(a3) = *(_WORD *)this->__pad_0 - *a3;\n  *a2 = a3;\n  return a2;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

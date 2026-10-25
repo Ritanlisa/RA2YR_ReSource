@@ -1,0 +1,1 @@
+{"addr": "0x0040BDA0", "name": "sub_40BDA0", "decompiled": "void __cdecl sub_40BDA0()\n{\n  __3_YAXPAX_Z(*(void **)stru_87F680.__tail_0);\n  *(_DWORD *)stru_87F680.__tail_0 = 0;\n  dword_87F684 = 0;\n  dword_87F688 = 0;\n  byte_87F68C = 0;\n  dword_87F690 = 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

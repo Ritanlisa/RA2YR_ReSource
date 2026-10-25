@@ -1,0 +1,1 @@
+{"addr": "0x0074AB20", "name": "VoxelAnimClass::StubReturn41", "decompiled": "int VoxelAnimClass::StubReturn41(VoxelAnimClass *this)\n{\n  return 41;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

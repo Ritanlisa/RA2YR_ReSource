@@ -1,0 +1,1 @@
+{"addr": "0x0050DFF0", "name": "GlobalHelper_0E4540_Helper", "decompiled": "int __thiscall GlobalHelper_0E4540_Helper(ObjectClass *this)\n{\n  int result; // eax\n\n  result = *(_DWORD *)&stru_A8E960.waypoints[6];\n  *((_DWORD *)this + 5413) = *(_DWORD *)&stru_A8E960.waypoints[6];\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

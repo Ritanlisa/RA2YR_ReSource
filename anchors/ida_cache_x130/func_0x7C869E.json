@@ -1,0 +1,1 @@
+{"addr": "0x007C869E", "name": "ReleaseCapture", "decompiled": "// attributes: thunk\nBOOL __stdcall ReleaseCapture()\n{\n  return __imp_ReleaseCapture();\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x0046DC90", "name": "Compare::Field96", "decompiled": "int __cdecl Compare::Field96(const void *a1, const void *a2)\n{\n  int v2; // eax\n  int v3; // ecx\n\n  v2 = *(_DWORD *)(*(_DWORD *)a1 + 96);\n  v3 = *(_DWORD *)(*(_DWORD *)a2 + 96);\n  if ( v2 == v3 )\n    return 0;\n  else\n    return v2 <= v3 ? 1 : -1;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

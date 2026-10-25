@@ -1,0 +1,1 @@
+{"addr": "0x007781A0", "name": "DisableIME", "decompiled": "int DisableIME()\n{\n  return ImmAssociateContext(g_hWnd, 0);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

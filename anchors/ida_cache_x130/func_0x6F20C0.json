@@ -1,0 +1,1 @@
+{"addr": "0x006F20C0", "name": "TeamTypeClass::GetAuxField", "decompiled": "int __thiscall TeamTypeClass::GetAuxField(TeamTypeClass *this)\n{\n  return this->field_BC;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

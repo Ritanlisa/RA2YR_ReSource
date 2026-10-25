@@ -1,0 +1,1 @@
+{"addr": "0x0065B4B0", "name": "RadSiteClass::GetSpread", "decompiled": "int __thiscall RadSiteClass::GetSpread(RadSiteClass *this)\n{\n  return this->Spread;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x007518C0", "name": "SetVocClassEnabled", "decompiled": "void __fastcall SetVocClassEnabled(char a1)\n{\n  VocClass_VoicesEnabled = a1;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

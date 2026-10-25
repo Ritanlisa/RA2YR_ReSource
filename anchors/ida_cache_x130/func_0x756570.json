@@ -1,0 +1,1 @@
+{"addr": "0x00756570", "name": "sub_756570", "decompiled": "int __thiscall sub_756570(ObjectClass *this)\n{\n  return 12 * this->vfptr1 + 164 * this->vfptr2 + this->vfptr3 + 28;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

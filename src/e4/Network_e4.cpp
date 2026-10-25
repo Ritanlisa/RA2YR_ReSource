@@ -1329,9 +1329,9 @@ namespace gamemd {
 void * Network::ReceiveLoop(void *a1)
 {
 
-  void *Network_field_0xC; // ebx
-  void *v3; // edx
-  int v4; // ecx
+  unsigned int Network_field_0xC; // ebx
+  int v3; // edx
+  unsigned int field_60; // ecx
   int v5; // edi
   bool v6; // zf
   unsigned __int16 *v7; // ebp
@@ -1345,30 +1345,30 @@ void * Network::ReceiveLoop(void *a1)
   int *v15; // ecx
   int *v16; // eax
   int PlayerName; // eax
-  int v18; // ebp
-  IPXManagerClass *v19; // ebx
+  signed int v18; // ebp
+  unsigned int *p_q028; // ebx
   char *v20; // eax
   int *v21; // ecx
   int v22; // ecx
   int *v23; // edx
-  unsigned short *v24; // ecx
+  unsigned short *u32_64; // ecx
   char v25; // cl
-  int v26; // ebp
-  IPXManagerClass *v27; // edi
+  signed int v26; // ebp
+  unsigned int *v27; // edi
   char LinkedIndex; // al
   int v29; // eax
   int v30; // edi
-  unsigned int *v31; // ecx
+  int v31; // ecx
   int i; // edi
   int *v33; // ecx
   int *v34; // eax
   int *v35; // eax
   int *v36; // ecx
-  int v37; // ecx
-  int v38; // ebp
-  int v39; // ecx
-  int v40; // ecx
-  IPXManagerClass *v41; // edi
+  unsigned int v37; // ecx
+  signed int v38; // ebp
+  unsigned int v39; // ecx
+  unsigned int u32_68; // ecx
+  unsigned int *v41; // edi
   int result; // eax
   __int16 v43; // [esp+20h] [ebp-4CCh]
   int v44; // [esp+20h] [ebp-4CCh]
@@ -1376,173 +1376,176 @@ void * Network::ReceiveLoop(void *a1)
   __int16 v46[2]; // [esp+34h] [ebp-4B8h] BYREF
   Network v47[2]; // [esp+38h] [ebp-4B4h] BYREF
 
-  v47[0].q010 = (void *)1; /*0x541830*/
-  ((Waypoint *)v47)->InitInvalid(); /*0x541838*/
-  if ( *(unsigned int *)&stru_887598.isAliveFlag ) /*0x541844*/
-  {
-    while ( 1 ) /*0x541864*/
-    {
-      *v47->__pad_000.__pad_14 = 1024; /*0x541864*/
-      *(unsigned int *)&v47[0].__pad_14[4] = 128; /*0x54186c*/
-      *(unsigned int *)v46 = 0; /*0x541874*/
-      Network_field_0xC = (void *)(*(int (**)(unsigned int, char *, char *, char *, char *, __int16 *))(**(unsigned int **)&stru_887598.isAliveFlag + 8))( /*0x541889*/
-                                    *(unsigned int *)&stru_887598.isAliveFlag,
-                                    &v47[0].__pad_87[45],
-                                    v47[0].__pad_14,
-                                    v47[0].__pad_34,
-                                    &v47[0].__pad_14[4],
-                                    v46);
-      v47[0].u32_C = Network_field_0xC; /*0x54188d*/
-      if ( !Network_field_0xC ) /*0x541891*/
-        goto LABEL_92; /*0x541891*/
-      v3 = *(void **)&v47[0].__pad_34[4]; /*0x54189b*/
-      v47[0].Network_field_0x0 = *v47->__pad_000.__pad_34; /*0x5418a6*/
-      v4 = this->u32_48; /*0x5418aa*/
-      this->u32_8C = &v47[0].__pad_87[45]; /*0x5418ad*/
-      v47[0].u32_4 = v3; /*0x5418b7*/
-      v47[0].u32_8 = *(void **)&v47[0].__pad_34[8]; /*0x5418bb*/
-      if ( *(unsigned short *)&v47[0].__pad_87[45] == *(unsigned short *)(v4 + 36) ) /*0x5418cb*/
-      {
-        if ( Network_Recv( /*0x5418ee*/
+  v47[0].Network_field_0x10 = 1;  /*0x541830*/
+  ((Waypoint *)v47)->InitInvalid();  /*0x541838*/
+  if ( dword_887628 )
+  {  /*0x541844*/
+    while ( 1 )
+    {  /*0x541864*/
+      *(unsigned int *)v47[0].__pad_14 = 1024;  /*0x541864*/
+      *(unsigned int *)&v47[0].__pad_14[4] = 128;  /*0x54186c*/
+      *(unsigned int *)v46 = 0;  /*0x541874*/
+      Network_field_0xC = (*(int (**)(WinsockInterface *, char *, char *, char *, char *, __int16 *))(*(unsigned int *)dword_887628->__pad_0 + 8))(
+                            dword_887628,
+                            &v47[0].__pad_87[45],
+                            v47[0].__pad_14,
+                            v47[0].__pad_34,
+                            &v47[0].__pad_14[4],
+                            v46);  /*0x541889*/
+      v47[0].Network_field_0xC = Network_field_0xC;  /*0x54188d*/
+      if ( !Network_field_0xC )
+        goto LABEL_92;  /*0x541891*/  /*0x541891*/
+      v3 = *(unsigned int *)&v47[0].__pad_34[4];  /*0x54189b*/
+      v47[0].Network_field_0x0 = *(unsigned int *)v47[0].__pad_34;  /*0x5418a6*/
+      field_60 = this->field_60;  /*0x5418aa*/
+      *((unsigned int *)this + 35) = &v47[0].__pad_87[45];  /*0x5418ad*/
+      v47[0].Network_field_0x4 = v3;  /*0x5418b7*/
+      v47[0].Network_field_0x8 = *(unsigned int *)&v47[0].__pad_34[8];  /*0x5418bb*/
+      if ( *(unsigned short *)&v47[0].__pad_87[45] == *(unsigned short *)(field_60 + 36) )
+      {  /*0x5418cb*/
+        if ( Network_Recv(
                (int)&v47[0].__pad_87[45],
                (int)&v47[0].__pad_87[45],
-               (int)Network_field_0xC,
-               (int)v47[0].__pad_34,
+               Network_field_0xC,
+               (Network *)v47[0].__pad_34,
                v46[0]) )
-        {
-          goto LABEL_87; /*0x5418f5*/
+        {  /*0x5418ee*/
+          goto LABEL_87;  /*0x5418f5*/
         }
-        if ( (*(int (**)(unsigned int, char *, void *, Network *, unsigned int))(*this->u32_30) + 48))( /*0x541913*/
-               this->u32_48,
+        if ( (*(int (**)(unsigned int, char *, unsigned int, Network *, unsigned int))(*(unsigned int *)this->field_60
+                                                                                          + 48))(
+               this->field_60,
                &v47[0].__pad_87[45],
                Network_field_0xC,
                v47,
                *(unsigned int *)v46) )
-        {
-          if ( *(unsigned int *)&dword_A8B238 == 4 && byte_A8E2C8 ) /*0x541932*/
-          {
-            v5 = 0; /*0x54193d*/
-            v6 = dword_A8DA84 == 0; /*0x54193f*/
-            if ( dword_A8DA84 <= 0 ) /*0x541941*/
-            {
-              LABEL_14:
-              if ( !v6 ) /*0x541980*/
-              {
-                Debug::Log(); /*0x54198b*/
-                if ( (unsigned int)Network_field_0xC >= 0x10 /*0x5419ad*/
-                  && v47[0].__pad_87[47] != 2
-                  && (unsigned int)Network_field_0xC >= 0x3F )
-                {
-                  v8 = *(unsigned int *)(this->u32_8C + 16); /*0x5419bc*/
-                  if ( v8 == 39 || v8 == 41 || v8 == 13 ) /*0x5419cb*/
-                  {
-                    v9 = (const char *)(this->u32_8C + 20); /*0x5419d3*/
-                    *(unsigned int *)&v47[0].__pad_14[8] = 0; /*0x5419d6*/
-                    *(unsigned int *)&v47[0].__pad_14[12] = 0; /*0x5419dc*/
-                    *(unsigned int *)&v47[0].Network_field_0x22[2] = 0; /*0x5419e4*/
-                    v47[0].u32_28[0] = 0; /*0x5419e9*/
-                    *v47->__pad_000.__pad_2C = 0; /*0x5419ee*/
-                    LOWORD(v47[0].u32_30[0]) = 0; /*0x5419f2*/
-                    strncpy(&v47[0].__pad_14[8], v9, 0x14u); /*0x5419f7*/
-                    v10 = 0; /*0x541a04*/
-                    if ( dword_A8DA84 > 0 ) /*0x541a08*/
-                    {
-                      while ( 1 ) /*0x541a1b*/
-                      {
-                        v11 = ToWideStringChar((char *)dword_A8DA78[v10]); /*0x541a1b*/
-                        if ( !_strcmpi(v11, &v47[0].__pad_14[8]) ) /*0x541a21*/
-                          break; /*0x541a21*/
-                        if ( ++v10 >= dword_A8DA84 ) /*0x541a35*/
-                          goto LABEL_87; /*0x541a35*/
+        {  /*0x541913*/
+          if ( *(unsigned int *)&dword_A8B238.field_0 == 4 && byte_A8E2C8 )
+          {  /*0x541932*/
+            v5 = 0;  /*0x54193d*/
+            v6 = *(unsigned int *)&stru_A8D804.__pad_3D[579] == 0;  /*0x54193f*/
+            if ( *(int *)&stru_A8D804.__pad_3D[579] <= 0 )
+            {  /*0x541941*/
+LABEL_14:
+              if ( !v6 )
+              {  /*0x541980*/
+                Debug::Log();  /*0x54198b*/
+                if ( Network_field_0xC >= 0x10 && v47[0].__pad_87[47] != 2 && Network_field_0xC >= 0x3F )
+                {  /*0x5419ad*/
+                  v8 = *(unsigned int *)(*((unsigned int *)this + 35) + 16);  /*0x5419bc*/
+                  if ( v8 == 39 || v8 == 41 || v8 == 13 )
+                  {  /*0x5419cb*/
+                    v9 = (const char *)(*((unsigned int *)this + 35) + 20);  /*0x5419d3*/
+                    *(unsigned int *)&v47[0].__pad_14[8] = 0;  /*0x5419d6*/
+                    *(unsigned int *)&v47[0].__pad_14[12] = 0;  /*0x5419dc*/
+                    *(unsigned int *)&v47[0].Network_field_0x22[2] = 0;  /*0x5419e4*/
+                    v47[0].Network_field_0x28 = 0;  /*0x5419e9*/
+                    *(unsigned int *)v47[0].__pad_2C = 0;  /*0x5419ee*/
+                    LOWORD(v47[0].Network_field_0x30) = 0;  /*0x5419f2*/
+                    strncpy(&v47[0].__pad_14[8], v9, 0x14u);  /*0x5419f7*/
+                    v10 = 0;  /*0x541a04*/
+                    if ( *(int *)&stru_A8D804.__pad_3D[579] > 0 )
+                    {  /*0x541a08*/
+                      while ( 1 )
+                      {  /*0x541a1b*/
+                        v11 = ToWideStringChar(*(char **)(*(unsigned int *)&stru_A8D804.__pad_3D[567] + 4 * v10));  /*0x541a1b*/
+                        if ( !_strcmpi(v11, &v47[0].__pad_14[8]) )
+                          break;  /*0x541a21*/  /*0x541a21*/
+                        if ( ++v10 >= *(int *)&stru_A8D804.__pad_3D[579] )
+                          goto LABEL_87;  /*0x541a35*/  /*0x541a35*/
                       }
-                      if ( !(unsigned __int8)((bool *)(dword_A8DA78[v10] + 40))->Compare((int)v47) /*0x541a67*/
-                        || *(unsigned short *)(dword_A8DA78[v10] + 40) != v46[0] )
-                      {
-                        Debug::Log(); /*0x541a7d*/
-                        v12 = v46[0]; /*0x541a82*/
-                        v13 = *(&dword_A8E2B2 + v10); /*0x541a86*/
-                        *(&dword_A8E2B2 + v10) = v46[0]; /*0x541a91*/
-                        Network::reconnect( /*0x541aab*/
-                          (Network *)&g_NetworkEventQueue,
-                          *(unsigned int *)(dword_A8DA78[v10] + 111),
-                          v12);
-                        (*(void (**)(unsigned int, Network *, __int16))(*this->q408) + 64))( /*0x541abb*/
-                          this->u32_48,
+                      if ( !(unsigned __int8)NetworkID::Compare(
+                                               (bool *)(*(unsigned int *)(*(unsigned int *)&stru_A8D804.__pad_3D[567] + 4 * v10) + 40),
+                                               (int)v47)
+                        || *(unsigned short *)(*(unsigned int *)(*(unsigned int *)&stru_A8D804.__pad_3D[567] + 4 * v10) + 40) != v46[0] )
+                      {  /*0x541a67*/
+                        Debug::Log();  /*0x541a7d*/
+                        v12 = v46[0];  /*0x541a82*/
+                        v13 = *(&dword_A8E2B2 + v10);  /*0x541a86*/
+                        *(&dword_A8E2B2 + v10) = v46[0];  /*0x541a91*/
+                        Network::reconnect(
+                          (Network *)&dword_B052D0,
+                          *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&stru_A8D804.__pad_3D[567] + 4 * v10) + 111),
+                          v12);  /*0x541aab*/
+                        (*(void (**)(unsigned int, Network *, __int16))(*(unsigned int *)this->field_60 + 64))(
+                          this->field_60,
                           v47,
-                          v13);
-                        v14 = dword_A8DA78[v10]; /*0x541ac7*/
-                        LOWORD(v14) = *(unsigned short *)(v14 + 40); /*0x541acc*/
-                        (*(void (**)(unsigned int, Network *, int))(*this->q040) + 64))( /*0x541ad6*/
-                          this->u32_48,
+                          v13);  /*0x541abb*/
+                        v14 = *(unsigned int *)(*(unsigned int *)&stru_A8D804.__pad_3D[567] + 4 * v10);  /*0x541ac7*/
+                        LOWORD(v14) = *(unsigned short *)(v14 + 40);  /*0x541acc*/
+                        (*(void (**)(unsigned int, Network *, int))(*(unsigned int *)this->field_60 + 64))(
+                          this->field_60,
                           v47,
-                          v14);
-                        v15 = (int *)(dword_A8DA78[v10] + 40); /*0x541ae5*/
-                        *v15 = v47[0].Network_field_0x0; /*0x541ae8*/
-                        v15[1] = (int)v47[0].u32_4; /*0x541aee*/
-                        v15[2] = (int)v47[0].u32_8; /*0x541af5*/
-                        ((Network *)(dword_A8DA78[v10] + 40))->SetPort(v46[0]); /*0x541b09*/
-                        NetworkManager::SetPlayerAddress( /*0x541b24*/
-                          (NetworkManager *)&g_NetworkEventQueue,
-                          *(unsigned int *)(dword_A8DA78[v10] + 111),
-                          (unsigned int *)(dword_A8DA78[v10] + 40));
-                        v16 = (int *)(dword_A8DA90[(v10)->FindPlayerName()] + 40); /*0x541b3f*/
-                        *v16 = v47[0].Network_field_0x0; /*0x541b42*/
-                        v16[1] = (int)v47[0].u32_4; /*0x541b48*/
-                        v16[2] = (int)v47[0].u32_8; /*0x541b4f*/
-                        v43 = v46[0]; /*0x541b56*/
-                        PlayerName = (v10)->FindPlayerName(); /*0x541b5d*/
-                        ((Network *)(dword_A8DA90[PlayerName] + 40))->SetPort(v43); /*0x541b6c*/
-                        v18 = 0; /*0x541b74*/
-                        if ( this->u32_44 > 0 ) /*0x541b78*/
-                        {
-                          v19 = &this->__pad_14; /*0x541b7a*/
-                          while ( 1 ) /*0x541b87*/
-                          {
-                            v20 = ToWideStringChar((char *)(v19->Socket + 104)); /*0x541b87*/
-                            if ( !_strcmpi(v20, &v47[0].__pad_14[8]) ) /*0x541b8d*/
-                              break; /*0x541b8d*/
-                            ++v18; /*0x541b9c*/
-                            v19 = (IPXManagerClass *)((char *)v19 + 4); /*0x541b9d*/
-                            if ( v18 >= this->u32_44 ) /*0x541ba2*/
-                              goto LABEL_33; /*0x541ba2*/
+                          v14);  /*0x541ad6*/
+                        v15 = (int *)(*(unsigned int *)(*(unsigned int *)&stru_A8D804.__pad_3D[567] + 4 * v10) + 40);  /*0x541ae5*/
+                        *v15 = v47[0].Network_field_0x0;  /*0x541ae8*/
+                        v15[1] = v47[0].Network_field_0x4;  /*0x541aee*/
+                        v15[2] = v47[0].Network_field_0x8;  /*0x541af5*/
+                        Network::SetPort(
+                          (Network *)(*(unsigned int *)(*(unsigned int *)&stru_A8D804.__pad_3D[567] + 4 * v10) + 40),
+                          v46[0]);  /*0x541b09*/
+                        NetworkManager::SetPlayerAddress(
+                          (NetworkManager *)&dword_B052D0,
+                          *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&stru_A8D804.__pad_3D[567] + 4 * v10) + 111),
+                          (unsigned int *)(*(unsigned int *)(*(unsigned int *)&stru_A8D804.__pad_3D[567] + 4 * v10) + 40));  /*0x541b24*/
+                        v16 = (int *)(*(unsigned int *)&stru_A8D804.__pad_3D[4 * (v10)->FindPlayerName() + 591] + 40);  /*0x541b3f*/
+                        *v16 = v47[0].Network_field_0x0;  /*0x541b42*/
+                        v16[1] = v47[0].Network_field_0x4;  /*0x541b48*/
+                        v16[2] = v47[0].Network_field_0x8;  /*0x541b4f*/
+                        v43 = v46[0];  /*0x541b56*/
+                        PlayerName = (v10)->FindPlayerName();  /*0x541b5d*/
+                        ((Network *)(*(unsigned int *)&stru_A8D804.__pad_3D[4 * PlayerName + 591] + 40))->SetPort(v43);  /*0x541b6c*/
+                        v18 = 0;  /*0x541b74*/
+                        if ( (int)this->field_5C > 0 )
+                        {  /*0x541b78*/
+                          p_q028 = &this->q028;  /*0x541b7a*/
+                          while ( 1 )
+                          {  /*0x541b87*/
+                            v20 = ToWideStringChar((char *)(*p_q028 + 104));  /*0x541b87*/
+                            if ( !_strcmpi(v20, &v47[0].__pad_14[8]) )
+                              break;  /*0x541b8d*/  /*0x541b8d*/
+                            ++v18;  /*0x541b9c*/
+                            ++p_q028;  /*0x541b9d*/
+                            if ( v18 >= (signed int)this->field_5C )
+                              goto LABEL_33;  /*0x541ba2*/  /*0x541ba2*/
                           }
-                          v21 = (int *)(*((unsigned int *)this + v18 + 10) + 76); /*0x541bae*/
-                          *v21 = v47[0].Network_field_0x0; /*0x541bb1*/
-                          v21[1] = (int)v47[0].u32_4; /*0x541bb7*/
-                          v21[2] = (int)v47[0].u32_8; /*0x541bbe*/
-                          ((Network *)(*((unsigned int *)this + v18 + 10) + 76))->SetPort(v46[0]); /*0x541bcd*/
-                          ((Network *)(*((unsigned int *)this + v18 + 10) + 76))->FormatAddress(0); /*0x541bdb*/
-                          Debug::Log(); /*0x541be7*/
-                          LABEL_33:
-                          Network_field_0xC = v47[0].u32_C; /*0x541bef*/
+                          v21 = (int *)(*(unsigned int *)&this->field_24[4 * v18 + 4] + 76);  /*0x541bae*/
+                          *v21 = v47[0].Network_field_0x0;  /*0x541bb1*/
+                          v21[1] = v47[0].Network_field_0x4;  /*0x541bb7*/
+                          v21[2] = v47[0].Network_field_0x8;  /*0x541bbe*/
+                          ((Network *)(*(unsigned int *)&this->field_24[4 * v18 + 4] + 76))->SetPort(v46[0]);  /*0x541bcd*/
+                          ((Network *)(*(unsigned int *)&this->field_24[4 * v18 + 4] + 76))->FormatAddress(0);  /*0x541bdb*/
+                          Debug::Log();  /*0x541be7*/
+LABEL_33:
+                          Network_field_0xC = v47[0].Network_field_0xC;  /*0x541bef*/
                         }
-                        if ( !BYTE2(DataGlobal_A8D60C) ) /*0x541bfa*/
-                        {
-                          if ( this->u32_44 ) /*0x541c00*/
-                          {
-                            v22 = dword_A8DA78[v10]; /*0x541c16*/
-                            if ( dword_A80238> *(unsigned int *)(v22 + 111) ) /*0x541c1c*/
-                            {
-                              if ( SessionClass::IsValidHouse( /*0x541c36*/
+                        if ( !byte_A8D60E )
+                        {  /*0x541bfa*/
+                          if ( this->field_5C )
+                          {  /*0x541c00*/
+                            v22 = *(unsigned int *)(*(unsigned int *)&stru_A8D804.__pad_3D[567] + 4 * v10);  /*0x541c16*/
+                            if ( dword_A80238 > *(unsigned int *)(v22 + 111) )
+                            {  /*0x541c1c*/
+                              if ( SessionClass::IsValidHouse(
                                      (int)&dword_A8B238,
-                                     *((#375 **)stru_A80220.? + *(unsigned int *)(v22 + 111))) )
-                              {
-                                (v47)->FormatAddress(0); /*0x541c49*/
-                                ((Network *)(this->q050 + 76))->FormatAddress(0); /*0x541c57*/
-                                Debug::Log(); /*0x541c69*/
-                                v23 = (int *)(this->q050 + 76); /*0x541c75*/
-                                *v23 = v47[0].Network_field_0x0; /*0x541c7b*/
-                                v23[1] = (int)v47[0].u32_4; /*0x541c81*/
-                                v23[2] = (int)v47[0].u32_8; /*0x541c88*/
-                                ((Network *)(this->q050 + 76))->SetPort(v46[0]); /*0x541c96*/
-                                g_NetworkRematchObject = v47[0].Network_field_0x0; /*0x541ca7*/
-                                DataGlobal_A8BB24 = v47[0].u32_8; /*0x541cb1*/
-                                DataGlobal_A8BB20 = v47[0].u32_4; /*0x541cbd*/
-                                (&stru_A8BB1C)->SetPort(v46[0]); /*0x541cc2*/
-                                qword_A8DBA4 = *(NetworkID *)&v47[0].Network_field_0x0; /*0x541cd3*/
-                                dword_A8DBAC = v47[0].u32_8; /*0x541ce8*/
-                                ((Network *)&qword_A8DBA4)->SetPort(v46[0]); /*0x541cee*/
-                                dword_A8DBBC = v46[0]; /*0x541cf8*/
+                                     *((#375 **)&dword_A8022C + *(unsigned int *)(v22 + 111))) )
+                              {  /*0x541c36*/
+                                (v47)->FormatAddress(0);  /*0x541c49*/
+                                ((Network *)(this->u32_68 + 76))->FormatAddress(0);  /*0x541c57*/
+                                Debug::Log();  /*0x541c69*/
+                                v23 = (int *)(this->u32_68 + 76);  /*0x541c75*/
+                                *v23 = v47[0].Network_field_0x0;  /*0x541c7b*/
+                                v23[1] = v47[0].Network_field_0x4;  /*0x541c81*/
+                                v23[2] = v47[0].Network_field_0x8;  /*0x541c88*/
+                                ((Network *)(this->u32_68 + 76))->SetPort(v46[0]);  /*0x541c96*/
+                                stru_A8BB1C.Network_field_0x0 = v47[0].Network_field_0x0;  /*0x541ca7*/
+                                dword_A8BB24 = v47[0].Network_field_0x8;  /*0x541cb1*/
+                                dword_A8BB20 = v47[0].Network_field_0x4;  /*0x541cbd*/
+                                (&stru_A8BB1C)->SetPort(v46[0]);  /*0x541cc2*/
+                                *(NetworkID *)&stru_A8D804.__pad_3D[867] = *(NetworkID *)&v47[0].Network_field_0x0;  /*0x541cd3*/
+                                *(unsigned int *)&stru_A8D804.__pad_3D[875] = v47[0].Network_field_0x8;  /*0x541ce8*/
+                                ((Network *)&stru_A8D804.__pad_3D[867])->SetPort(v46[0]);  /*0x541cee*/
+                                *(unsigned short *)&stru_A8D804.__pad_3D[891] = v46[0];  /*0x541cf8*/
                               }
                             }
                           }
@@ -1555,251 +1558,259 @@ void * Network::ReceiveLoop(void *a1)
             }
             else
             {
-              v7 = &dword_A8E2B2; /*0x541943*/
-              while ( !(unsigned __int8)((bool *)(dword_A8DA78[v5] + 40))->Compare((int)v47) || *v7 != v46[0] ) /*0x54196b*/
-              {
-                ++v5; /*0x541976*/
-                ++v7; /*0x541977*/
-                if ( v5 >= dword_A8DA84 ) /*0x54197c*/
-                {
-                  v6 = dword_A8DA84 == 0; /*0x54197e*/
-                  goto LABEL_14; /*0x54197e*/
+              v7 = &dword_A8E2B2;  /*0x541943*/
+              while ( !(unsigned __int8)NetworkID::Compare(
+                                          (bool *)(*(unsigned int *)(*(unsigned int *)&stru_A8D804.__pad_3D[567] + 4 * v5) + 40),
+                                          (int)v47)
+                   || *v7 != v46[0] )
+              {  /*0x54196b*/
+                ++v5;  /*0x541976*/
+                ++v7;  /*0x541977*/
+                if ( v5 >= *(int *)&stru_A8D804.__pad_3D[579] )
+                {  /*0x54197c*/
+                  v6 = *(unsigned int *)&stru_A8D804.__pad_3D[579] == 0;  /*0x54197e*/
+                  goto LABEL_14;  /*0x54197e*/
                 }
               }
             }
           }
-          goto LABEL_87; /*0x54196b*/
+          goto LABEL_87;  /*0x54196b*/
         }
-        ++this->u32_A4; /*0x54216c*/
-        goto LABEL_91; /*0x542178*/
+        ++*((unsigned int *)this + 41);  /*0x54216c*/
+        goto LABEL_91;  /*0x542178*/
       }
-      v24 = (unsigned short *)this->u32_4C; /*0x541d04*/
-      if ( *(unsigned short *)&v47[0].__pad_87[45] == v24[18] ) /*0x541d0b*/
-      {
-        if ( !byte_A8DBA0 /*0x541d2c*/
-          || (*(int (**)(unsigned short *, char *, void *, Network *, unsigned int))(*(unsigned int *)v24 + 48))(
-               v24,
+      u32_64 = (unsigned short *)this->u32_64;  /*0x541d04*/
+      if ( *(unsigned short *)&v47[0].__pad_87[45] == u32_64[18] )
+      {  /*0x541d0b*/
+        if ( !stru_A8D804.__pad_3D[863]
+          || (*(int (**)(unsigned short *, char *, unsigned int, Network *, unsigned int))(*(unsigned int *)u32_64 + 48))(
+               u32_64,
                &v47[0].__pad_87[45],
                Network_field_0xC,
                v47,
                0) )
-        {
-          goto LABEL_87; /*0x541d31*/
+        {  /*0x541d2c*/
+          goto LABEL_87;  /*0x541d31*/
         }
-        ++this->u32_A4; /*0x542183*/
-        LABEL_91:
-        Debug::Log(); /*0x54218f*/
-        goto LABEL_92; /*0x54218f*/
+        ++*((unsigned int *)this + 41);  /*0x542183*/
+LABEL_91:
+        Debug::Log();  /*0x54218f*/
+        goto LABEL_92;  /*0x54218f*/
       }
-      if ( *(unsigned short *)&v47[0].__pad_87[45] != this->q020 /*0x541d63*/
+      if ( *(unsigned short *)&v47[0].__pad_87[45] != this->u32_20
         || Network_Recv(
              (int)&v47[0].__pad_87[45],
              (int)&v47[0].__pad_87[45],
-             (int)Network_field_0xC,
-             (int)v47[0].__pad_34,
+             Network_field_0xC,
+             (Network *)v47[0].__pad_34,
              v46[0]) )
-      {
-        goto LABEL_87; /*0x541d6a*/
+      {  /*0x541d63*/
+        goto LABEL_87;  /*0x541d6a*/
       }
-      v25 = v47[0].__pad_87[47]; /*0x541d75*/
-      if ( byte_A8DBA0 && v47[0].__pad_87[48] == -1 ) /*0x541d87*/
-      {
-        if ( v47[0].__pad_87[47] == 2 ) /*0x541d90*/
-        {
-          (*(void (**)(unsigned int, char *, void *))(*this->Active) + 12))( /*0x541da0*/
-            this->q050,
+      v25 = v47[0].__pad_87[47];  /*0x541d75*/
+      if ( stru_A8D804.__pad_3D[863] && v47[0].__pad_87[48] == -1 )
+      {  /*0x541d87*/
+        if ( v47[0].__pad_87[47] == 2 )
+        {  /*0x541d90*/
+          (*(void (**)(unsigned int, char *, unsigned int))(*(unsigned int *)this->u32_68 + 12))(
+            this->u32_68,
             &v47[0].__pad_87[45],
-            Network_field_0xC);
+            Network_field_0xC);  /*0x541da0*/
         }
-        else if ( this->u32_44 > 0 ) /*0x541dad*/
-        {
-          (v47)->FormatAddress(0); /*0x541e46*/
-          Debug::Log(); /*0x541e59*/
-          if ( !(*(int (**)(unsigned int, char *, void *))(*this->q010) + 12))( /*0x541e6f*/
-                  this->u32_28,
+        else if ( (int)this->field_5C > 0 )
+        {  /*0x541dad*/
+          (v47)->FormatAddress(0);  /*0x541e46*/
+          Debug::Log();  /*0x541e59*/
+          if ( !(*(int (**)(unsigned int, char *, unsigned int))(*(unsigned int *)this->q028 + 12))(
+                  this->q028,
                   &v47[0].__pad_87[45],
                   Network_field_0xC) )
-          {
-            Network_field_0xC = 0; /*0x541e80*/
-            ++this->u32_A4; /*0x541e85*/
-            goto LABEL_74; /*0x541e91*/
+          {  /*0x541e6f*/
+            Network_field_0xC = 0;  /*0x541e80*/
+            ++*((unsigned int *)this + 41);  /*0x541e85*/
+            goto LABEL_74;  /*0x541e91*/
           }
         }
-        goto LABEL_75; /*0x541da3*/
+        goto LABEL_75;  /*0x541da3*/
       }
-      v26 = 0; /*0x541e99*/
-      if ( this->u32_44 <= 0 ) /*0x541e9d*/
-      {
-        LABEL_60:
-        if ( *(unsigned int *)&dword_A8B238 == 4 /*0x541f4a*/
+      v26 = 0;  /*0x541e99*/
+      if ( (int)this->field_5C <= 0 )
+      {  /*0x541e9d*/
+LABEL_60:
+        if ( *(unsigned int *)&dword_A8B238.field_0 == 4
           && !dword_A8E7AC
-          && *(int *)&TeamTypeClass_Array > 8
-          && !byte_A8DBA0
-          && (unsigned int)Network_field_0xC > 0xF
+          && *(int *)&stru_A8E960.random[528] > 8
+          && !stru_A8D804.__pad_3D[863]
+          && Network_field_0xC > 0xF
           && v25 == 1
           && v47[0].__pad_87[59] == 25 )
-        {
-          v29 = 1; /*0x541f56*/
-          v30 = v47[0].__pad_87[61]; /*0x541f5b*/
-          if ( dword_A8DA84 > 1 ) /*0x541f65*/
-          {
-            v31 = dword_A8DA78 + 1; /*0x541f71*/
-            while ( *(unsigned int *)(*v31 + 111) != v47[0].__pad_87[61] ) /*0x541f79*/
-            {
-              ++v29; /*0x541f7f*/
-              ++v31; /*0x541f80*/
-              if ( v29 >= dword_A8DA84 ) /*0x541f85*/
-                goto LABEL_86; /*0x541f85*/
+        {  /*0x541f4a*/
+          v29 = 1;  /*0x541f56*/
+          v30 = v47[0].__pad_87[61];  /*0x541f5b*/
+          if ( *(int *)&stru_A8D804.__pad_3D[579] > 1 )
+          {  /*0x541f65*/
+            v31 = *(unsigned int *)&stru_A8D804.__pad_3D[567] + 4;  /*0x541f71*/
+            while ( *(unsigned int *)(*(unsigned int *)v31 + 111) != v47[0].__pad_87[61] )
+            {  /*0x541f79*/
+              ++v29;  /*0x541f7f*/
+              v31 += 4;  /*0x541f80*/
+              if ( v29 >= *(int *)&stru_A8D804.__pad_3D[579] )
+                goto LABEL_86;  /*0x541f85*/  /*0x541f85*/
             }
-            v35 = (int *)(dword_A8DA78[v29] + 40); /*0x542113*/
-            v44 = v47[0].__pad_87[61]; /*0x542116*/
-            *v35 = v47[0].Network_field_0x0; /*0x542117*/
-            v35[1] = (int)v47[0].u32_4; /*0x54211d*/
-            v35[2] = (int)v47[0].u32_8; /*0x542124*/
-            if ( (*(int (**)(IPXManagerClass *, int))(this->Socket + 24))(this, v44) != -1 ) /*0x542131*/
-            {
-              v36 = (int *)(*((unsigned int *)this /*0x542143*/
-              + (*(int (**)(IPXManagerClass *, int))(this->Socket + 24))(this, v30)
-              + 10)
-              + 76);
-              *v36 = v47[0].Network_field_0x0; /*0x542146*/
-              v36[1] = (int)v47[0].u32_4; /*0x54214c*/
-              v36[2] = (int)v47[0].u32_8; /*0x542153*/
+            v35 = (int *)(*(unsigned int *)(*(unsigned int *)&stru_A8D804.__pad_3D[567] + 4 * v29) + 40);  /*0x542113*/
+            v44 = v47[0].__pad_87[61];  /*0x542116*/
+            *v35 = v47[0].Network_field_0x0;  /*0x542117*/
+            v35[1] = v47[0].Network_field_0x4;  /*0x54211d*/
+            v35[2] = v47[0].Network_field_0x8;  /*0x542124*/
+            if ( (*(int (**)(IPXManagerClass *, int))(this->Socket + 24))(this, v44) != -1 )
+            {  /*0x542131*/
+              v36 = (int *)(*(unsigned int *)&this->field_24[4
+                                                     * (*(int (**)(IPXManagerClass *, int))(this->Socket + 24))(
+                                                         this,
+                                                         v30)
+                                                     + 4]
+                          + 76);  /*0x542143*/
+              *v36 = v47[0].Network_field_0x0;  /*0x542146*/
+              v36[1] = v47[0].Network_field_0x4;  /*0x54214c*/
+              v36[2] = v47[0].Network_field_0x8;  /*0x542153*/
             }
-            LABEL_86:
-            Network_field_0xC = v47[0].u32_C; /*0x542156*/
+LABEL_86:
+            Network_field_0xC = v47[0].Network_field_0xC;  /*0x542156*/
           }
         }
-        goto LABEL_87; /*0x542156*/
+        goto LABEL_87;  /*0x542156*/
       }
-      v27 = &this->__pad_14; /*0x541e9f*/
-      while ( byte_A8DBA0 ) /*0x541ea9*/
-      {
-        LinkedIndex = ((Factory *)&g_NetworkEventQueue)->GetLinkedIndex(*(unsigned int *)(v27->Socket + 100)); /*0x541eb6*/
-        v25 = v47[0].__pad_87[47]; /*0x541ebb*/
-        if ( LinkedIndex == v47[0].__pad_87[48] ) /*0x541ec4*/
-          goto LABEL_72; /*0x541ec4*/
-        if ( !byte_A8DBA0 ) /*0x541ed1*/
-          break; /*0x541ed1*/
-        LABEL_59:
-        ++v26; /*0x541ef1*/
-        v27 = (IPXManagerClass *)((char *)v27 + 4); /*0x541ef5*/
-        if ( v26 >= this->u32_44 ) /*0x541efa*/
-          goto LABEL_60; /*0x541efa*/
+      v27 = &this->q028;  /*0x541e9f*/
+      while ( stru_A8D804.__pad_3D[863] )
+      {  /*0x541ea9*/
+        LinkedIndex = (&dword_B052D0)->GetLinkedIndex(*(unsigned int *)(*v27 + 100));  /*0x541eb6*/
+        v25 = v47[0].__pad_87[47];  /*0x541ebb*/
+        if ( LinkedIndex == v47[0].__pad_87[48] )
+          goto LABEL_72;  /*0x541ec4*/  /*0x541ec4*/
+        if ( !stru_A8D804.__pad_3D[863] )
+          break;  /*0x541ed1*/  /*0x541ed1*/
+LABEL_59:
+        ++v26;  /*0x541ef1*/
+        ++v27;  /*0x541ef5*/
+        if ( v26 >= (signed int)this->field_5C )
+          goto LABEL_60;  /*0x541efa*/  /*0x541efa*/
       }
-      if ( !(unsigned __int8)GUID::Compare((char *)(v27->Socket + 76), (int)v47) ) /*0x541edd*/
-        break; /*0x541edd*/
-      LABEL_72:
-      if ( !(*(int (**)(unsigned int, char *, void *))(**((unsigned int **)this + v26 + 10) + 12))( /*0x541f9b*/
-              *((unsigned int *)this + v26 + 10),
+      if ( !(unsigned __int8)GUID::Compare((char *)(*v27 + 76), (int)v47) )
+        break;  /*0x541edd*/  /*0x541edd*/
+LABEL_72:
+      if ( !(*(int (**)(unsigned int, char *, unsigned int))(**(unsigned int **)&this->field_24[4 * v26 + 4] + 12))(
+              *(unsigned int *)&this->field_24[4 * v26 + 4],
               &v47[0].__pad_87[45],
               Network_field_0xC) )
-      {
-        Network_field_0xC = 0; /*0x541fa8*/
-        ++this->u32_A4; /*0x541fad*/
-        LABEL_74:
-        Debug::Log(); /*0x541fb9*/
+      {  /*0x541f9b*/
+        Network_field_0xC = 0;  /*0x541fa8*/
+        ++*((unsigned int *)this + 41);  /*0x541fad*/
+LABEL_74:
+        Debug::Log();  /*0x541fb9*/
       }
-      LABEL_75:
-      if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x541fc8*/
-      {
-        if ( byte_A8DBA0 ) /*0x541fd5*/
-        {
-          if ( ((char *)v47)->processPacket(this->q050 + 76) ) /*0x541fe6*/
-          {
-            for ( i = 1; i < dword_A8DA84; ++i ) /*0x541fff*/
-            {
-              if ( (unsigned __int8)((bool *)(dword_A8DA78[i] + 40))->Compare(this->q050 + 76) /*0x54203e*/
+LABEL_75:
+      if ( *(unsigned int *)&dword_A8B238.field_0 == 4 )
+      {  /*0x541fc8*/
+        if ( stru_A8D804.__pad_3D[863] )
+        {  /*0x541fd5*/
+          if ( ((char *)v47)->processPacket(this->u32_68 + 76) )
+          {  /*0x541fe6*/
+            for ( i = 1; i < *(int *)&stru_A8D804.__pad_3D[579]; ++i )
+            {  /*0x541fff*/
+              if ( (unsigned __int8)NetworkID::Compare(
+                                      (bool *)(*(unsigned int *)(*(unsigned int *)&stru_A8D804.__pad_3D[567] + 4 * i) + 40),
+                                      this->u32_68 + 76)
                 && SessionClass::IsValidHouse(
                      (int)&dword_A8B238,
-                     *((#375 **)stru_A80220.? + *(unsigned int *)(dword_A8DA78[i] + 111))) )
-              {
-                (v47)->FormatAddress(0); /*0x542051*/
-                ((Network *)(this->q050 + 76))->FormatAddress(0); /*0x54205f*/
-                Debug::Log(); /*0x542071*/
-                v33 = (int *)(dword_A8DA78[i] + 40); /*0x542085*/
-                *v33 = v47[0].Network_field_0x0; /*0x542088*/
-                v33[1] = (int)v47[0].u32_4; /*0x54208e*/
-                v33[2] = (int)v47[0].u32_8; /*0x542095*/
-                v34 = (int *)(this->q050 + 76); /*0x54209f*/
-                *v34 = v47[0].Network_field_0x0; /*0x5420a2*/
-                v34[1] = (int)v47[0].u32_4; /*0x5420a8*/
-                v34[2] = (int)v47[0].u32_8; /*0x5420af*/
-                g_NetworkRematchObject = v47[0].Network_field_0x0; /*0x5420be*/
-                qword_A8DBA4 = *(NetworkID *)&v47[0].Network_field_0x0; /*0x5420c3*/
-                DataGlobal_A8BB20 = v47[0].u32_4; /*0x5420cd*/
-                DataGlobal_A8BB24 = v47[0].u32_8; /*0x5420d3*/
-                dword_A8DBAC = v47[0].u32_8; /*0x5420df*/
-                NetworkManager::SetPlayerAddress( /*0x5420f6*/
-                  (NetworkManager *)&g_NetworkEventQueue,
-                  *(unsigned int *)(dword_A8DA78[i] + 111),
-                  v47);
+                     *((#375 **)&dword_A8022C
+                     + *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&stru_A8D804.__pad_3D[567] + 4 * i) + 111))) )
+              {  /*0x54203e*/
+                (v47)->FormatAddress(0);  /*0x542051*/
+                ((Network *)(this->u32_68 + 76))->FormatAddress(0);  /*0x54205f*/
+                Debug::Log();  /*0x542071*/
+                v33 = (int *)(*(unsigned int *)(*(unsigned int *)&stru_A8D804.__pad_3D[567] + 4 * i) + 40);  /*0x542085*/
+                *v33 = v47[0].Network_field_0x0;  /*0x542088*/
+                v33[1] = v47[0].Network_field_0x4;  /*0x54208e*/
+                v33[2] = v47[0].Network_field_0x8;  /*0x542095*/
+                v34 = (int *)(this->u32_68 + 76);  /*0x54209f*/
+                *v34 = v47[0].Network_field_0x0;  /*0x5420a2*/
+                v34[1] = v47[0].Network_field_0x4;  /*0x5420a8*/
+                v34[2] = v47[0].Network_field_0x8;  /*0x5420af*/
+                stru_A8BB1C.Network_field_0x0 = v47[0].Network_field_0x0;  /*0x5420be*/
+                *(NetworkID *)&stru_A8D804.__pad_3D[867] = *(NetworkID *)&v47[0].Network_field_0x0;  /*0x5420c3*/
+                dword_A8BB20 = v47[0].Network_field_0x4;  /*0x5420cd*/
+                dword_A8BB24 = v47[0].Network_field_0x8;  /*0x5420d3*/
+                *(unsigned int *)&stru_A8D804.__pad_3D[875] = v47[0].Network_field_0x8;  /*0x5420df*/
+                NetworkManager::SetPlayerAddress(
+                  (NetworkManager *)&dword_B052D0,
+                  *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&stru_A8D804.__pad_3D[567] + 4 * i) + 111),
+                  v47);  /*0x5420f6*/
               }
             }
           }
         }
       }
-      LABEL_87:
-      if ( !Network_field_0xC ) /*0x54215c*/
-        goto LABEL_92; /*0x54215c*/
+LABEL_87:
+      if ( !Network_field_0xC )
+        goto LABEL_92;  /*0x54215c*/  /*0x54215c*/
     }
-    v25 = v47[0].__pad_87[47]; /*0x541eea*/
-    goto LABEL_59; /*0x541eea*/
+    v25 = v47[0].__pad_87[47];  /*0x541eea*/
+    goto LABEL_59;  /*0x541eea*/
   }
-  LABEL_92:
-  v37 = this->u32_48; /*0x542197*/
-  v38 = 0; /*0x54219a*/
-  if ( v37 && *(unsigned int *)&stru_887598.isAliveFlag && !(*(int (**)(int))(*(unsigned int *)v37 + 20))(v37) ) /*0x5421aa*/
-  {
-    (*(void (**)(unsigned int))(*this->q018) + 24))(this->u32_48); /*0x5421b6*/
-    v47[0].q010 = 0; /*0x5421b9*/
+LABEL_92:
+  v37 = this->field_60;  /*0x542197*/
+  v38 = 0;  /*0x54219a*/
+  if ( v37 && dword_887628 && !(*(int (**)(unsigned int))(*(unsigned int *)v37 + 20))(v37) )
+  {  /*0x5421aa*/
+    (*(void (**)(unsigned int))(*(unsigned int *)this->field_60 + 24))(this->field_60);  /*0x5421b6*/
+    v47[0].Network_field_0x10 = 0;  /*0x5421b9*/
   }
-  if ( byte_A8DBA0 ) /*0x5421c4*/
-  {
-    v39 = this->u32_4C; /*0x5421c6*/
-    if ( v39 ) /*0x5421cb*/
-    {
-      if ( !(*(int (**)(int))(*(unsigned int *)v39 + 20))(v39) ) /*0x5421cf*/
-      {
-        (*(void (**)(unsigned int))(*this->Active) + 24))(this->u32_4C); /*0x5421db*/
-        v47[0].q010 = 0; /*0x5421de*/
+  if ( stru_A8D804.__pad_3D[863] )
+  {  /*0x5421c4*/
+    v39 = this->u32_64;  /*0x5421c6*/
+    if ( v39 )
+    {  /*0x5421cb*/
+      if ( !(*(int (**)(unsigned int))(*(unsigned int *)v39 + 20))(v39) )
+      {  /*0x5421cf*/
+        (*(void (**)(unsigned int))(*(unsigned int *)this->u32_64 + 24))(this->u32_64);  /*0x5421db*/
+        v47[0].Network_field_0x10 = 0;  /*0x5421de*/
       }
-      if ( !byte_A8E2D0 ) /*0x5421e9*/
-        (v45)->ProcessAddressChange(); /*0x5421f0*/
+      if ( !byte_A8E2D0 )
+        (v45)->ProcessAddressChange();  /*0x5421f0*/  /*0x5421e9*/
     }
-    if ( byte_A8DBA0 ) /*0x5421fc*/
-    {
-      v40 = this->q050; /*0x5421fe*/
-      if ( v40 ) /*0x542203*/
-      {
-        if ( !(*(int (**)(int))(*(unsigned int *)v40 + 20))(v40) ) /*0x542207*/
-        {
-          Debug::Log(); /*0x542213*/
-          v47[0].q010 = 0; /*0x54221b*/
+    if ( stru_A8D804.__pad_3D[863] )
+    {  /*0x5421fc*/
+      u32_68 = this->u32_68;  /*0x5421fe*/
+      if ( u32_68 )
+      {  /*0x542203*/
+        if ( !(*(int (**)(unsigned int))(*(unsigned int *)u32_68 + 20))(u32_68) )
+        {  /*0x542207*/
+          Debug::Log();  /*0x542213*/
+          v47[0].Network_field_0x10 = 0;  /*0x54221b*/
         }
       }
     }
   }
-  if ( *(unsigned int *)&stru_887598.isAliveFlag && this->u32_44 > 0 ) /*0x54222a*/
-  {
-    v41 = &this->__pad_14; /*0x54222c*/
-    do /*0x542260*/
-    {
-      if ( !(*(int (**)(int))(*(unsigned int *)v41->Socket + 20))(v41->Socket) ) /*0x542233*/
-      {
-        v47[0].q010 = 0; /*0x54223a*/
-        this->q0A8 = *(unsigned int *)(v41->Socket + 100); /*0x542249*/
-        Debug::Log(); /*0x54224f*/
+  if ( dword_887628 && (int)this->field_5C > 0 )
+  {  /*0x54222a*/
+    v41 = &this->q028;  /*0x54222c*/
+    do
+    {  /*0x542260*/
+      if ( !(*(int (**)(unsigned int))(*(unsigned int *)*v41 + 20))(*v41) )
+      {  /*0x542233*/
+        v47[0].Network_field_0x10 = 0;  /*0x54223a*/
+        *((unsigned int *)this + 42) = *(unsigned int *)(*v41 + 100);  /*0x542249*/
+        Debug::Log();  /*0x54224f*/
       }
-      ++v38; /*0x54225a*/
-      v41 = (IPXManagerClass *)((char *)v41 + 4); /*0x54225b*/
+      ++v38;  /*0x54225a*/
+      ++v41;  /*0x54225b*/
     }
-    while ( v38 < this->u32_44 ); /*0x542260*/
+    while ( v38 < (signed int)this->field_5C );  /*0x542260*/
   }
-  result = (int)v47[0].q010; /*0x542262*/
-  if ( v47[0].q010 ) /*0x542268*/
-    this->q0A8 = -1; /*0x54226a*/
-  return result; /*0x542274*/
+  result = v47[0].Network_field_0x10;  /*0x542262*/
+  if ( v47[0].Network_field_0x10 )
+    *((unsigned int *)this + 42) = -1;  /*0x54226a*/  /*0x542268*/
+  return result;  /*0x542274*/
 
 }
 }

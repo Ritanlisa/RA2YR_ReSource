@@ -1,0 +1,1 @@
+{"addr": "0x007CB8F7", "name": "_iswcntrl", "decompiled": "int __cdecl iswcntrl(wint_t C)\n{\n  return iswctype(C, 0x20u);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x007DCF28", "name": "UnhandledExceptionFilter", "decompiled": "// attributes: thunk\nLONG __stdcall UnhandledExceptionFilter(struct _EXCEPTION_POINTERS *ExceptionInfo)\n{\n  return __imp_UnhandledExceptionFilter(ExceptionInfo);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

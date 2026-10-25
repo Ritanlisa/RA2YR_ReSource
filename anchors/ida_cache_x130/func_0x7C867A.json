@@ -1,0 +1,1 @@
+{"addr": "0x007C867A", "name": "SetDlgItemTextA", "decompiled": "// attributes: thunk\nBOOL __stdcall SetDlgItemTextA(HWND hDlg, int nIDDlgItem, LPCSTR lpString)\n{\n  return __imp_SetDlgItemTextA(hDlg, nIDDlgItem, lpString);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

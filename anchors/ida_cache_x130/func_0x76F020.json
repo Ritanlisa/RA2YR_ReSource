@@ -1,0 +1,1 @@
+{"addr": "0x0076F020", "name": "FileClass::GetState", "decompiled": "int __thiscall FileClass::GetState(RawFileClass *this)\n{\n  return this->FilePointer;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

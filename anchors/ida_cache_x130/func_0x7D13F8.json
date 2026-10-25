@@ -1,0 +1,1 @@
+{"addr": "0x007D13F8", "name": "__initptd", "decompiled": "int __cdecl _initptd(int a1)\n{\n  *(_DWORD *)(a1 + 80) = &unk_87CB20;\n  *(_DWORD *)(a1 + 20) = 1;\n  return a1;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

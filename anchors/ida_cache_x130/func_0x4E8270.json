@@ -1,0 +1,1 @@
+{"addr": "0x004E8270", "name": "HouseClass::initAngerStruct", "decompiled": "std::locale::facet *__thiscall HouseClass::initAngerStruct(HouseClass *this, char a2)\n{\n  this->vfptr = (int)&VersionClass::`vftable';\n  if ( (a2 & 1) != 0 )\n    __3_YAXPAX_Z(this);\n  return (std::locale::facet *)this;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

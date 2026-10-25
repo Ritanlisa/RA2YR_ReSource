@@ -1,0 +1,1 @@
+{"addr": "0x007C8800", "name": "CheckDlgButton", "decompiled": "// attributes: thunk\nBOOL __stdcall CheckDlgButton(HWND hDlg, int nIDButton, UINT uCheck)\n{\n  return __imp_CheckDlgButton(hDlg, nIDButton, uCheck);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

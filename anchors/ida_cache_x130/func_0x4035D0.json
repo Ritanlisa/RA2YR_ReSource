@@ -1,0 +1,1 @@
+{"addr": "0x004035D0", "name": "AudioQueue::IteratorNext", "decompiled": "int *__thiscall AudioQueue::IteratorNext(AudioQueue *this)\n{\n  AudioQueue *v2; // ecx\n\n  v2 = *(AudioQueue **)this->__pad_0;\n  if ( v2 )\n    *(_DWORD *)this->__pad_0 = AudioQueue::GetNextAlt(v2);\n  return *(int **)this->__pad_0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

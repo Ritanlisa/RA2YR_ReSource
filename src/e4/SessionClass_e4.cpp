@@ -1365,88 +1365,98 @@ int SessionClass::CreateConnections()
   char v16; // [esp+1Dh] [ebp-Bh]
   int v17[2]; // [esp+20h] [ebp-8h] BYREF
 
-  Debug::Log(); /*0x697b7e*/
-  if ( *(unsigned int *)&dword_A8B238 != 3 && *(unsigned int *)&dword_A8B238 != 4 ) /*0x697b93*/
-    return 0; /*0x697b9e*/
-  v3 = 0; /*0x697ba7*/
-  if ( this->StartSpots[4] > 0 ) /*0x697bab*/
-  {
-    do /*0x697bc5*/
-    {
-      Debug::Log(); /*0x697bc5*/
-      if ( _wcsicmp( /*0x697be7*/
+  Debug::Log();  /*0x697b7e*/
+  if ( *(unsigned int *)&dword_A8B238.field_0 != 3 && *(unsigned int *)&dword_A8B238.field_0 != 4 )
+    return 0;  /*0x697b9e*/  /*0x697b93*/
+  v3 = 0;  /*0x697ba7*/
+  if ( this->StartSpots[4] > 0 )
+  {  /*0x697bab*/
+    do
+    {  /*0x697bc5*/
+      Debug::Log();  /*0x697bc5*/
+      if ( _wcsicmp(
              *(const wchar_t **)(this->StartSpots[1] + 4 * v3),
-             (const wchar_t *)(*((unsigned int *)stru_A80220.? + *(unsigned int *)(*(unsigned int *)(this->StartSpots[1] + 4 * v3) + 111))
-        + 90154)) )
-      {
-        return 0; /*0x697bf1*/
+             (const wchar_t *)(*(&dword_A8022C + *(unsigned int *)(*(unsigned int *)(this->StartSpots[1] + 4 * v3) + 111))
+                             + 90154)) )
+      {  /*0x697be7*/
+        return 0;  /*0x697bf1*/
       }
-      if ( !_wcsicmp(*(const wchar_t **)(this->StartSpots[1] + 4 * v3), (const wchar_t *)&this->unknown_2854[499]) ) /*0x697c04*/
-      {
-        this->unknown_2854[520] = *(unsigned int *)(*(unsigned int *)(this->StartSpots[1] + 4 * v3) + 111); /*0x697c25*/
-        ((Network *)(dword_A8DA78[v3] + 40))->CopyAddress(&v13, (int)v17); /*0x697c38*/
-        (&qword_A8DBA4)->Assign(&v13, (int)v17, 0); /*0x697c4d*/
-        ((Network *)&unk_A8E9C0)->SetPlayerCoords(&qword_A8DBA4); /*0x697c5c*/
+      if ( !_wcsicmp(*(const wchar_t **)(this->StartSpots[1] + 4 * v3), (const wchar_t *)&this->unknown_2854[1996]) )
+      {  /*0x697c04*/
+        *(unsigned int *)&this->unknown_2854[2080] = *(unsigned int *)(*(unsigned int *)(this->StartSpots[1] + 4 * v3) + 111);  /*0x697c25*/
+        Network::CopyAddress(
+          (Network *)(*(unsigned int *)(*(unsigned int *)&stru_A8D804.__pad_3D[567] + 4 * v3) + 40),
+          &v13,
+          (int)v17);  /*0x697c38*/
+        ((NetworkID *)&stru_A8D804.__pad_3D[867])->Assign(&v13, (int)v17, 0);  /*0x697c4d*/
+        ((Network *)&stru_A8E960.nextScenario[96])->SetPlayerCoords(&stru_A8D804.__pad_3D[867]);  /*0x697c5c*/
       }
-      v4 = *(unsigned int *)(this->StartSpots[1] + 4 * v3); /*0x697c67*/
-      *(unsigned int *)(*((unsigned int *)&dword_A8022C+ *(unsigned int *)(v4 + 111)) + 516) = *(unsigned int *)(v4 + 123); /*0x697c7e*/
-      ((Network *)(dword_A8DA78[v3] + 40))->CopyAddress(&v13, (int)v17); /*0x697c94*/
-      v5 = 0; /*0x697c99*/
-      for ( i = 0; i < 4; ++i ) /*0x697c9b*/
-        v5 = *((unsigned __int8 *)v17 + i) | (v5 << 8); /*0x697ca8*/
-      Debug::Log(); /*0x697cc7*/
-      *(unsigned int *)(*((unsigned int *)&dword_A8022C+ *(unsigned int *)(*(unsigned int *)(this->StartSpots[1] + 4 * v3) + 111)) + 512) = v5; /*0x697ce5*/
-      *(unsigned char *)(*((unsigned int *)&dword_A8022C+ *(unsigned int *)(*(unsigned int *)(this->StartSpots[1] + 4 * v3) + 111)) + 520) = 0; /*0x697d00*/
-      if ( v3 > 0 ) /*0x697d06*/
-      {
-        v7 = *(unsigned int *)(this->StartSpots[1] + 4 * v3); /*0x697d0e*/
-        ((int)&unk_A8E9C0)->initLAN(*(unsigned int *)(v7 + 111), (wchar_t *)v7, (unsigned int *)(v7 + 40)); /*0x697d1f*/
-        *(unsigned int *)(*(unsigned int *)(this->StartSpots[1] + 4 * v3) + 115) = -1; /*0x697d2d*/
+      v4 = *(unsigned int *)(this->StartSpots[1] + 4 * v3);  /*0x697c67*/
+      *(unsigned int *)(*(&dword_A8022C + *(unsigned int *)(v4 + 111)) + 516) = *(unsigned int *)(v4 + 123);  /*0x697c7e*/
+      Network::CopyAddress(
+        (Network *)(*(unsigned int *)(*(unsigned int *)&stru_A8D804.__pad_3D[567] + 4 * v3) + 40),
+        &v13,
+        (int)v17);  /*0x697c94*/
+      v5 = 0;  /*0x697c99*/
+      for ( i = 0; i < 4; ++i )
+        v5 = *((unsigned __int8 *)v17 + i) | (v5 << 8);  /*0x697ca8*/  /*0x697c9b*/
+      Debug::Log();  /*0x697cc7*/
+      *(unsigned int *)(*(&dword_A8022C + *(unsigned int *)(*(unsigned int *)(this->StartSpots[1] + 4 * v3) + 111)) + 512) = v5;  /*0x697ce5*/
+      *(unsigned char *)(*(&dword_A8022C + *(unsigned int *)(*(unsigned int *)(this->StartSpots[1] + 4 * v3) + 111)) + 520) = 0;  /*0x697d00*/
+      if ( v3 > 0 )
+      {  /*0x697d06*/
+        v7 = *(unsigned int *)(this->StartSpots[1] + 4 * v3);  /*0x697d0e*/
+        SessionClass::initLAN(
+          (int)&stru_A8E960.nextScenario[96],
+          *(unsigned int *)(v7 + 111),
+          (wchar_t *)v7,
+          (unsigned int *)(v7 + 40));  /*0x697d1f*/
+        *(unsigned int *)(*(unsigned int *)(this->StartSpots[1] + 4 * v3) + 115) = -1;  /*0x697d2d*/
       }
     }
-    while ( ++v3 < this->StartSpots[4] ); /*0x697bc5*/
+    while ( ++v3 < this->StartSpots[4] );  /*0x697bc5*/
   }
-  v8 = *(unsigned int *)&g_LastPerformanceTick; /*0x697d43*/
-  v9 = dword_A8E284; /*0x697d48*/
-  do /*0x697d79*/
-  {
-    v10 = *(unsigned int *)&g_PerformanceTickOffset; /*0x697d4d*/
-    if ( v8 != -1 ) /*0x697d56*/
-    {
-      Ticks = Timer::GetTicks(); /*0x697d62*/
-      v8 = *(unsigned int *)&g_LastPerformanceTick; /*0x697d64*/
-      v10 += Ticks - *(unsigned int *)&g_LastPerformanceTick; /*0x697d6b*/
+  v8 = *(unsigned int *)stru_887338.__pad_0;  /*0x697d43*/
+  v9 = dword_A8E284;  /*0x697d48*/
+  do
+  {  /*0x697d79*/
+    v10 = *(unsigned int *)&stru_887338.__pad_6[2];  /*0x697d4d*/
+    if ( v8 != -1 )
+    {  /*0x697d56*/
+      Ticks = Timer::GetTicks();  /*0x697d62*/
+      v8 = *(unsigned int *)stru_887338.__pad_0;  /*0x697d64*/
+      v10 += Ticks - *(unsigned int *)stru_887338.__pad_0;  /*0x697d6b*/
     }
-    *v9++ = v10; /*0x697d6d*/
+    *v9++ = v10;  /*0x697d6d*/
   }
-  while ( (int)v9 < (int)&byte_A8E2A4 ); /*0x697d79*/
-  if ( this->GameMode[0] != 4 ) /*0x697d7e*/
-    goto LABEL_22; /*0x697d7e*/
-  if ( !LOBYTE(this->unknown_2854[527]) ) /*0x697d84*/
-    goto LABEL_22; /*0x697d84*/
-  v12 = 0; /*0x697da0*/
-  v14 = 0; /*0x697db0*/
-  v15 = 0; /*0x697dc0*/
-  v16 = 0; /*0x697dc4*/
-  (&qword_A8DBB0)->Assign(&v12, (int)&v14, 0); /*0x697dc8*/
-  LOBYTE(this->unknown_2854[69]) = 1; /*0x697dd2*/
-  this->unknown_2854[526] = 0; /*0x697dd9*/
-  this->unknown_2854[530] = 20; /*0x697ddf*/
-  this->unknown_2854[528] = -1; /*0x697de9*/
-  ((SessionClass *)&unk_A8E9C0)->initInternet(); /*0x697df3*/
-  ((SessionClass *)&g_NetworkEventQueue)->BuildLobbyPlayerList(); /*0x697dfd*/
-  if ( ((int)&dword_A8B238)->IsValidHouse(0) ) /*0x697e08*/
-  {
-    if ( !LaunchMultiplayerHost((int)&g_NetworkEventQueue, 0) /*0x697e25*/
-      || !((Network *)&g_NetworkEventQueue)->SendMasterPlayerList() )
-    {
-      LABEL_22:
-      byte_A8DBA0 = 0; /*0x697e2e*/
+  while ( (int)v9 < (int)&byte_A8E2A4 );  /*0x697d79*/
+  if ( this->GameMode != 4 )
+    goto LABEL_22;  /*0x697d7e*/  /*0x697d7e*/
+  if ( !this->unknown_2854[2108] )
+    goto LABEL_22;  /*0x697d84*/  /*0x697d84*/
+  v12 = 0;  /*0x697da0*/
+  v14 = 0;  /*0x697db0*/
+  v15 = 0;  /*0x697dc0*/
+  v16 = 0;  /*0x697dc4*/
+  ((NetworkID *)&stru_A8D804.__pad_3D[879])->Assign(&v12, (int)&v14, 0);  /*0x697dc8*/
+  this->unknown_2854[276] = 1;  /*0x697dd2*/
+  *(unsigned int *)&this->unknown_2854[2104] = 0;  /*0x697dd9*/
+  *(unsigned int *)&this->unknown_2854[2120] = 20;  /*0x697ddf*/
+  *(unsigned int *)&this->unknown_2854[2112] = -1;  /*0x697de9*/
+  ((SessionClass *)&stru_A8E960.nextScenario[96])->initInternet();  /*0x697df3*/
+  ((SessionClass *)&dword_B052D0)->BuildLobbyPlayerList();  /*0x697dfd*/
+  if ( ((int)&dword_A8B238)->IsValidHouse(0) )
+  {  /*0x697e08*/
+    if ( !LaunchMultiplayerHost((bool *)dword_B052D0.__pad_0, 0)
+      || !((Network *)&dword_B052D0)->SendMasterPlayerList() )
+    {  /*0x697e25*/
+LABEL_22:
+      stru_A8D804.__pad_3D[863] = 0;  /*0x697e2e*/
     }
   }
-  Debug::Log(); /*0x697e4f*/
-  Debug::Log(); /*0x697e59*/
-  return 1; /*0x697b95*/
+  Debug::Log();  /*0x697e4f*/
+  Debug::Log();  /*0x697e59*/
+  return 1;  /*0x697b95*/
 
 }
 }  // G42.18c ns repair

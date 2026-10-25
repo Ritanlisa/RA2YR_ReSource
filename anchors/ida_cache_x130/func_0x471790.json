@@ -1,0 +1,1 @@
+{"addr": "0x00471790", "name": "sub_471790", "decompiled": "void __cdecl sub_471790()\n{\n  dword_89E0F0 = (int)&VectorClass<CaptureManagerClass *>::`vftable';\n  if ( dword_89E0F4 && byte_89E0FD )\n  {\n    __3_YAXPAX_Z(dword_89E0F4);\n    dword_89E0F4 = 0;\n  }\n  byte_89E0FD = 0;\n  dword_89E0F8 = 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

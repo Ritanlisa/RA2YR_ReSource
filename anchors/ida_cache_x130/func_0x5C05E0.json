@@ -1,0 +1,1 @@
+{"addr": "0x005C05E0", "name": "BinkMovieHandle::BlitToTarget", "decompiled": "unsigned int __thiscall BinkMovieHandle::BlitToTarget(BinkMovieHandle *this)\n{\n  return 0x3E8\n       / (unsigned int)(*(_DWORD *)(*(_DWORD *)(this->height + 4) + 20) / *(_DWORD *)(*(_DWORD *)(this->height + 4) + 24));\n}\n", "changed": true, "error": null, "timestamp": "x130"}

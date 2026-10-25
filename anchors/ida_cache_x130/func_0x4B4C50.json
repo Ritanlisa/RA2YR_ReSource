@@ -1,0 +1,1 @@
+{"addr": "0x004B4C50", "name": "StreamClass::Vt32Thunk", "decompiled": "int __stdcall StreamClass::Vt32Thunk(IUnknown *this)\n{\n  return (*(int (__stdcall **)(IUnknown *))(this->field_0 + 128))(this);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

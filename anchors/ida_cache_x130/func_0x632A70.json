@@ -1,0 +1,1 @@
+{"addr": "0x00632A70", "name": "sub_632A70", "decompiled": "int __thiscall sub_632A70(ObjectClass *this, int a2, int a3, int a4)\n{\n  int result; // eax\n\n  sub_5C8E40(this, a2, a3, a4, 64);\n  result = this->vfptr;\n  LOBYTE(result) = this->vfptr | 1;\n  this->vfptr = result;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

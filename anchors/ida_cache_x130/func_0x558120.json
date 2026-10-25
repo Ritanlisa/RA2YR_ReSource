@@ -1,0 +1,1 @@
+{"addr": "0x00558120", "name": "SliderClass::vt_method_558120", "decompiled": "int __thiscall SliderClass::vt_method_558120(SliderClass *this)\n{\n  return this->field_50;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

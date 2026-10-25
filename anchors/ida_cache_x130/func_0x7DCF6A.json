@@ -1,0 +1,1 @@
+{"addr": "0x007DCF6A", "name": "GetStringTypeA", "decompiled": "// attributes: thunk\nBOOL __stdcall GetStringTypeA(LCID Locale, DWORD dwInfoType, LPCSTR lpSrcStr, int cchSrc, LPWORD lpCharType)\n{\n  return __imp_GetStringTypeA(Locale, dwInfoType, lpSrcStr, cchSrc, lpCharType);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

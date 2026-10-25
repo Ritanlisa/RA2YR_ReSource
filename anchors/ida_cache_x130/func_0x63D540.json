@@ -1,0 +1,1 @@
+{"addr": "0x0063D540", "name": "BuildingClass::updateAnimationState", "decompiled": "int __thiscall BuildingClass::updateAnimationState(char *this)\n{\n  int v1; // eax\n\n  v1 = *(this + 12);\n  if ( v1 == 11 )\n    return Memory::Alloc76();\n  if ( v1 == 29 )\n    return Factory::IdleHandler();\n  return -1;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

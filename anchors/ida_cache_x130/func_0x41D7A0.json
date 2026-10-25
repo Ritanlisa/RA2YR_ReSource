@@ -1,0 +1,1 @@
+{"addr": "0x0041D7A0", "name": "AirstrikeClass::ddtor", "decompiled": "int __stdcall AirstrikeClass::ddtor(AirstrikeClass *this, _DWORD *a2)\n{\n  if ( !a2 )\n    return -2147467261;\n  *a2 = 1893611809;\n  a2[1] = 299179558;\n  a2[2] = -1610574449;\n  a2[3] = -1672772828;\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

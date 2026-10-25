@@ -1,0 +1,1 @@
+{"addr": "0x005C1CB0", "name": "MPCooperative::COMStub", "decompiled": "void __thiscall MPCooperative::COMStub(MPCooperative *this)\n{\n  LOBYTE(this->MPCooperative_field_0x340) = 1;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

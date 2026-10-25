@@ -1,0 +1,1 @@
+{"addr": "0x004E66E0", "name": "sub_4E66E0", "decompiled": "int sub_4E66E0()\n{\n  dword_A8020C = 0;\n  dword_A80210 = 0;\n  byte_A80214 = 1;\n  byte_A80215 = 0;\n  dword_A80208 = (int)&DynamicVectorClass<ParticleSystemClass *>::`vftable';\n  dword_A8021C = 10;\n  g_GameCleanupState = 0;\n  return atexit(sub_4E6720);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

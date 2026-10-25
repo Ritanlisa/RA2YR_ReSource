@@ -1,0 +1,1 @@
+{"addr": "0x00510A20", "name": "AbstractClass::saveToStream", "decompiled": "int __stdcall AbstractClass::saveToStream(int a1, const void *a2, _DWORD *a3)\n{\n  return HouseClass::QueryInterface((HouseClass *)(a1 - 4), a2, a3);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x0040D3C0", "name": "sub_40D3C0", "decompiled": "int sub_40D3C0()\n{\n  dword_884DC4 = 0;\n  dword_884DC8 = 0;\n  byte_884DCC = 1;\n  byte_884DCD = 0;\n  MixFileClass_Array_Alt = (int)&DynamicVectorClass<MixFileClass *>::`vftable';\n  dword_884DD4 = 10;\n  dword_884DD0 = 0;\n  return atexit(sub_40D400);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

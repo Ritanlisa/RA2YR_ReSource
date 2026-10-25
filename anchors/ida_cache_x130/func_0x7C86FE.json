@@ -1,0 +1,1 @@
+{"addr": "0x007C86FE", "name": "GetSysColor", "decompiled": "// attributes: thunk\nDWORD __stdcall GetSysColor(int nIndex)\n{\n  return __imp_GetSysColor(nIndex);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x005D5890", "name": "timeGetTime", "decompiled": "// attributes: thunk\nDWORD __stdcall timeGetTime()\n{\n  return __imp_timeGetTime();\n}\n", "changed": true, "error": null, "timestamp": "x130"}

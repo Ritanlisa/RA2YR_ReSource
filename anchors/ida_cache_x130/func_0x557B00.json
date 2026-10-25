@@ -1,0 +1,1 @@
+{"addr": "0x00557B00", "name": "CheckListClass::GetItemCount", "decompiled": "int __thiscall CheckListClass::GetItemCount(ListClass *this)\n{\n  return *((_DWORD *)this + 91);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

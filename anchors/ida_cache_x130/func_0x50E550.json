@@ -1,0 +1,1 @@
+{"addr": "0x0050E550", "name": "VectorClass_UAngerStruct___16::Clear", "decompiled": "int __thiscall VectorClass_UAngerStruct___16::Clear(_VectorClass_PAUStartingTechnoStruct_HouseClass *this, int a2)\n{\n  return *(_DWORD *)(*(_DWORD *)&this->m_1[3] + 4 * a2);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

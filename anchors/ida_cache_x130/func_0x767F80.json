@@ -1,0 +1,1 @@
+{"addr": "0x00767F80", "name": "MSFrameAnim::UpdateFrame", "decompiled": "_DWORD *__stdcall MSFrameAnim::UpdateFrame(MSFrameAnim *this)\n{\n  this->vfptr = 0;\n  this->MSFrameAnim_field_0x4 = 0;\n  this->MSFrameAnim_field_0x8 = (void *)640;\n  this->MSFrameAnim_field_0xC = (void *)480;\n  return &this->vfptr;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x00726930", "name": "TriggerClass::StubReturn72", "decompiled": "int TriggerClass::StubReturn72(TriggerClass *this)\n{\n  return 72;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

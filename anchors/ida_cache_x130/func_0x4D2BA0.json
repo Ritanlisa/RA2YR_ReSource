@@ -1,0 +1,1 @@
+{"addr": "0x004D2BA0", "name": "FoggedObject_DrawVector::Write", "decompiled": "unsigned int __thiscall FoggedObject_DrawVector::Write(_VectorClass_UDrawRecord_FoggedObjectClass *this, int a2)\n{\n  if ( LOBYTE(this->m_C) )\n    return (unsigned int)(a2 - *(_DWORD *)&this->m_1[3]) >> 4;\n  else\n    return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x0041CBE0", "name": "AircraftTypeClass::GetDimensions", "decompiled": "char __stdcall AircraftTypeClass::GetDimensions(AircraftTypeClass *this, int a2)\n{\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

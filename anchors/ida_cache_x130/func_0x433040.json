@@ -1,0 +1,1 @@
+{"addr": "0x00433040", "name": "BinkMovie::RenderFrameToSurface", "decompiled": "bool __thiscall BinkMovie::RenderFrameToSurface(BinkMovieHandle *this)\n{\n  return BinkMovie::RenderLoop((bool *)&this->MovieHandle, this->width, this->height, this->currentFrame);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x006E4440", "name": "globalHelper_0E4440", "decompiled": "char __stdcall globalHelper_0E4440(ObjectClass *a1, int a2, int a3, int a4)\n{\n  if ( !a1 )\n    return 0;\n  GlobalHelper_0E4440_Helper(a1);\n  return 1;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

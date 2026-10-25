@@ -1,0 +1,1 @@
+{"addr": "0x0040E310", "name": "unknown_libname_9", "decompiled": "// Microsoft VisualC 2-14/net runtime\nvoid __cdecl unknown_libname_9()\n{\n  HashTable::DestroyHashTableINIClass(&dword_8870C0);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

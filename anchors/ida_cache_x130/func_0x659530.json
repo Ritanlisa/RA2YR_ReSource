@@ -1,0 +1,1 @@
+{"addr": "0x00659530", "name": "SpreadRadiationAreaEffect_Helper_659530", "decompiled": "int __thiscall SpreadRadiationAreaEffect_Helper_659530(ObjectClass *this, int a2)\n{\n  this->customSound_controller[0] = a2;\n  return a2;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

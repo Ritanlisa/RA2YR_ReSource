@@ -1,0 +1,1 @@
+{"addr": "0x005CB430", "name": "UnholyAlliance::Seek", "decompiled": "char UnholyAlliance::Seek(UnholyAlliance *this)\n{\n  stru_A8B250.__pad_0[8] = 1;\n  return 1;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

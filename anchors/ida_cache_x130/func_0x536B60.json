@@ -1,0 +1,1 @@
+{"addr": "0x00536B60", "name": "CreateTeamCommand::performAction_73", "decompiled": "wchar_t *CreateTeamCommand::performAction_73(StopCommandClass *this)\n{\n  return GetStringCSF(aTxtStopObjectD, 0, g_Str_File_Init_CPP, 6862);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

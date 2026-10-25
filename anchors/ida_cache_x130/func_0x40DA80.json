@@ -1,0 +1,1 @@
+{"addr": "0x0040DA80", "name": "sub_40DA80", "decompiled": "int sub_40DA80()\n{\n  DSurface_SidebarBounds = 0;\n  g_DSurface_SidebarBounds = 0;\n  dword_886F98 = 0;\n  g_DSurface_ViewBounds = 0;\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

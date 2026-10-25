@@ -1,0 +1,1 @@
+{"addr": "0x0047AA30", "name": "BufferIOFile::Init", "decompiled": "_BYTE *__thiscall BufferIOFile::Init(BufferIOFile *this)\n{\n  BufferIOFileClass::Constructor((CCFileClass *)this);\n  LOBYTE(this->m_54) = 0;\n  *(_DWORD *)this->__pad_0 = &off_7E1668;\n  return this->__pad_0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

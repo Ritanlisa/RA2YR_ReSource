@@ -1,0 +1,1 @@
+{"addr": "0x007C851E", "name": "GetFileInformationByHandle", "decompiled": "// attributes: thunk\nBOOL __stdcall GetFileInformationByHandle(HANDLE hFile, LPBY_HANDLE_FILE_INFORMATION lpFileInformation)\n{\n  return __imp_GetFileInformationByHandle(hFile, lpFileInformation);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

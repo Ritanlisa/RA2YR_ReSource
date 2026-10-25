@@ -1,0 +1,1 @@
+{"addr": "0x00630220", "name": "ParticleSystemClass::Stub", "decompiled": "int __thiscall ParticleSystemClass::Stub(ParticleSystemClass *this)\n{\n  return this->Type;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

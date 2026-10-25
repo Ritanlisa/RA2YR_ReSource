@@ -1,0 +1,1 @@
+{"addr": "0x005C05D0", "name": "BinkMovieHandle::AdjustSurfaceFormat", "decompiled": "int __thiscall BinkMovieHandle::AdjustSurfaceFormat(BinkMovieHandle *this, int a2)\n{\n  return BinkMovieHandle::Check((BinkMovieHandle *)this->height, a2);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

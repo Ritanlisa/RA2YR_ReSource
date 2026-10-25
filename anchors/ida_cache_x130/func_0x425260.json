@@ -1,0 +1,1 @@
+{"addr": "0x00425260", "name": "BuildingClass::SetField8", "decompiled": "int __thiscall BuildingClass::SetField8(BuildingClass *this)\n{\n  int result; // eax\n\n  BYTE2(this->ironTintTimer[0]) = 1;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

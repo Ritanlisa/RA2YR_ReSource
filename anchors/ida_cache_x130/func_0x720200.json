@@ -1,0 +1,1 @@
+{"addr": "0x00720200", "name": "AbstractClass::reloadWeapon", "decompiled": "int __thiscall AbstractClass::reloadWeapon(TextButtonClass *this, int a2)\n{\n  *((_DWORD *)this + 15) = a2;\n  return a2;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

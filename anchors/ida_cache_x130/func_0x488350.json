@@ -1,0 +1,1 @@
+{"addr": "0x00488350", "name": "CheckListClass::Clear", "decompiled": "int __thiscall CheckListClass::Clear(CheckListClass *this)\n{\n  int *v1; // eax\n\n  v1 = (int *)ColorListClass::SetColor((ListClass *)this);\n  if ( v1 )\n    return *v1;\n  else\n    return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

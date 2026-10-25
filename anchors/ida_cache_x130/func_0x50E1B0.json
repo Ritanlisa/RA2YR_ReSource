@@ -1,0 +1,1 @@
+{"addr": "0x0050E1B0", "name": "HouseClass::GainedPoweredCenter", "decompiled": "BOOL __thiscall HouseClass::GainedPoweredCenter(HouseClass *this, int a2)\n{\n  return this->poweredUnitCenters > 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

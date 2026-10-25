@@ -1,0 +1,1 @@
+{"addr": "0x005FA470", "name": "AudioSettings::SetFlag68", "decompiled": "void __thiscall AudioSettings::SetFlag68(AudioSettings *this, char a2)\n{\n  *((_BYTE *)this + 68) = a2;\n  HIBYTE(stru_A83CD9.ambientSoundController[2]) = a2;\n  Debug::Log();\n}\n", "changed": true, "error": null, "timestamp": "x130"}

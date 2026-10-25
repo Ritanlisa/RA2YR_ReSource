@@ -1,0 +1,1 @@
+{"addr": "0x007DE110", "name": "___initconout", "decompiled": "HANDLE __initconout()\n{\n  HANDLE result; // eax\n\n  result = CreateFileA(\"CONOUT$\", 0x40000000u, 3u, 0, 3u, 0, 0);\n  hConsoleOutput = result;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

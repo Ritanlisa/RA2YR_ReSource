@@ -1,0 +1,1 @@
+{"addr": "0x00473CD0", "name": "CCFileClass::Destru_vt06", "decompiled": "bool __thiscall CCFileClass::Destru_vt06(CCFileClass *this)\n{\n  return this->field_58 || BufferIOFileClass::Read((BufferIOFileClass *)this);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

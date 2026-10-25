@@ -1,0 +1,1 @@
+{"addr": "0x0041BEF0", "name": "TechnoClass::selectTarget", "decompiled": "int __thiscall TechnoClass::selectTarget(TechnoClass *this)\n{\n  int result; // eax\n\n  LOBYTE(result) = 1;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

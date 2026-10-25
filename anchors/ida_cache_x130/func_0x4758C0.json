@@ -1,0 +1,1 @@
+{"addr": "0x004758C0", "name": "MapClass::loadTheaterINI", "decompiled": "char __thiscall MapClass::loadTheaterINI(char *this, unsigned __int8 *Block, char *a3, int a4)\n{\n  return INIClass::SetString(this, Block, a3, &Theater_Array[112 * a4]);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

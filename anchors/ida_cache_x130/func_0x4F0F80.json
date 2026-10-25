@@ -1,0 +1,1 @@
+{"addr": "0x004F0F80", "name": "sub_4F0F80", "decompiled": "void sub_4F0F80()\n{\n  *(double *)&stru_A8E960.random[660] = 0.0174532925199433 * 60.0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

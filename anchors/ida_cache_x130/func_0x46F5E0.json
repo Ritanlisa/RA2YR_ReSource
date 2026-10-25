@@ -1,0 +1,1 @@
+{"addr": "0x0046F5E0", "name": "ErrorCode::Map", "decompiled": "int __thiscall ErrorCode::Map(ErrorCode *this)\n{\n  if ( this )\n    return this != (ErrorCode *)1 ? -1 : 1042;\n  else\n    return 1041;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

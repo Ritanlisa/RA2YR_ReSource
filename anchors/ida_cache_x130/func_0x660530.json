@@ -1,0 +1,1 @@
+{"addr": "0x00660530", "name": "Render_Render_660530", "decompiled": "bool Render_Render_660530()\n{\n  return dword_B04DB8 == 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

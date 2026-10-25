@@ -1,0 +1,1 @@
+{"addr": "0x005D3830", "name": "MPBattleClass::validateOwner", "decompiled": "void MPBattleClass::validateOwner()\n{\n  dbl_ABFC68 = 1.0 / dbl_ABFC80;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

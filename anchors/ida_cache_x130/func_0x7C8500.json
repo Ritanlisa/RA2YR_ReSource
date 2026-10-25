@@ -1,0 +1,1 @@
+{"addr": "0x007C8500", "name": "ClearCommBreak", "decompiled": "// attributes: thunk\nBOOL __stdcall ClearCommBreak(HANDLE hFile)\n{\n  return __imp_ClearCommBreak(hFile);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

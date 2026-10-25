@@ -1,0 +1,1 @@
+{"addr": "0x005373D0", "name": "CreateTeamCommand::performAction_149", "decompiled": "char *__thiscall CreateTeamCommand::performAction_149(View2CommandClass *this)\n{\n  return aView2;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x0047B130", "name": "FileFind::CloseHandle", "decompiled": "HANDLE FileFind::CloseHandle()\n{\n  HANDLE result; // eax\n\n  result = hFindFile;\n  if ( hFindFile != (HANDLE)-1 )\n  {\n    result = (HANDLE)FindClose(hFindFile);\n    hFindFile = (HANDLE)-1;\n  }\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

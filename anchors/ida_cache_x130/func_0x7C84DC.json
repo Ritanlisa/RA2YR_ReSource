@@ -1,0 +1,1 @@
+{"addr": "0x007C84DC", "name": "SystemTimeToFileTime", "decompiled": "// attributes: thunk\nBOOL __stdcall SystemTimeToFileTime(const SYSTEMTIME *lpSystemTime, LPFILETIME lpFileTime)\n{\n  return __imp_SystemTimeToFileTime(lpSystemTime, lpFileTime);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

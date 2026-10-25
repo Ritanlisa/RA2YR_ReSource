@@ -1,0 +1,1 @@
+{"addr": "0x00628DD0", "name": "FileExtension::Check", "decompiled": "int __thiscall FileExtension::Check(int this, const char *a2, _DWORD *a3)\n{\n  String::Copy((char *)this, a2);\n  *(_DWORD *)(this + 256) = *a3;\n  return this;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

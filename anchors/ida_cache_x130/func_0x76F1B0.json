@@ -1,0 +1,1 @@
+{"addr": "0x0076F1B0", "name": "CampaignProperties_WorldDominationTour_22::ddtor", "decompiled": "_DWORD *__thiscall CampaignProperties_WorldDominationTour_22::ddtor(\n        _VectorCursor_PAVMSAnim_V_DynamicVectorClass_PAVMSAnim *this)\n{\n  --*((_DWORD *)this + 2);\n  return this->__pad_0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

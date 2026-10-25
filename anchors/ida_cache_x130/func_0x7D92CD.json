@@ -1,0 +1,1 @@
+{"addr": "0x007D92CD", "name": "__finite", "decompiled": "int __cdecl _finite(double X)\n{\n  return (HIWORD(X) & 0x7FF0) != 32752;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

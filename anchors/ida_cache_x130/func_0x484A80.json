@@ -1,0 +1,1 @@
+{"addr": "0x00484A80", "name": "sub_484A80", "decompiled": "int __stdcall sub_484A80(int a1)\n{\n  ++*(_DWORD *)(a1 + 404);\n  return a1;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

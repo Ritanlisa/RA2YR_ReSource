@@ -1,0 +1,1 @@
+{"addr": "0x0040D400", "name": "sub_40D400", "decompiled": "void __cdecl sub_40D400()\n{\n  MixFileClass_Array_Alt = (int)&VectorClass<MixFileClass *>::`vftable';\n  if ( dword_884DC4 && byte_884DCD )\n  {\n    __3_YAXPAX_Z(dword_884DC4);\n    dword_884DC4 = 0;\n  }\n  byte_884DCD = 0;\n  dword_884DC8 = 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

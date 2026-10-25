@@ -1,0 +1,1 @@
+{"addr": "0x004CCAC0", "name": "JumpjetLocomotionClass::ComputeFloatExpression_0", "decompiled": "bool __stdcall JumpjetLocomotionClass::ComputeFloatExpression_0(FlyLocomotionClass *this)\n{\n  return *(double *)this->CurrentSpeed != 0.0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

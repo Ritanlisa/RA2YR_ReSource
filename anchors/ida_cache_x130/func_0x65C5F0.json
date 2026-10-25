@@ -1,0 +1,1 @@
+{"addr": "0x0065C5F0", "name": "FileClass::StubReturnFalse", "decompiled": "int FileClass::StubReturnFalse(FileClass *this)\n{\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

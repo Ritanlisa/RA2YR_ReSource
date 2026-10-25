@@ -1,0 +1,1 @@
+{"addr": "0x007DD1D7", "name": "sub_7DD1D7", "decompiled": "int sub_7DD1D7()\n{\n  int v0; // esi\n\n  _lock(8);\n  v0 = _getch();\n  _unlock(8);\n  return v0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x007C8A58", "name": "_BinkOpen_8", "decompiled": "// attributes: thunk\nint __stdcall BinkOpen_8(int a1, int a2)\n{\n  return BinkOpen(a1, a2);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

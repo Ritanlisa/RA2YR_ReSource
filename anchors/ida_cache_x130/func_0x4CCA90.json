@@ -1,0 +1,1 @@
+{"addr": "0x004CCA90", "name": "JumpjetLocomotionClass::ComputeFloatExpression", "decompiled": "BOOL __stdcall JumpjetLocomotionClass::ComputeFloatExpression(JumpjetLocomotionClass *this)\n{\n  return LOBYTE(this->Wobbles) || *(float *)(this->Owner + 744) > 0.0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x0074E880", "name": "Map_Destroy", "decompiled": "void Map_Destroy()\n{\n  if ( dword_B1D2F0 )\n  {\n    __3_YAXPAX_Z(dword_B1D2F0);\n    dword_B1D2F0 = 0;\n  }\n}\n", "changed": true, "error": null, "timestamp": "x130"}

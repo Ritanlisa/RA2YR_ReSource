@@ -1,0 +1,1 @@
+{"addr": "0x005424A0", "name": "IPXManagerClass::CheckStatus", "decompiled": "int __thiscall IPXManagerClass::CheckStatus(IPXManagerClass *this, int a2)\n{\n  return CellClass::GetBridgeIndex(*(CellClass **)(*(_DWORD *)&this->field_24[4 * a2 + 4] + 4));\n}\n", "changed": true, "error": null, "timestamp": "x130"}

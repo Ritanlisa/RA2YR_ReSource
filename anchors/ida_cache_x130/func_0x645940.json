@@ -1,0 +1,1 @@
+{"addr": "0x00645940", "name": "ParticleTypeClass::StubReturnFalse", "decompiled": "int __stdcall ParticleTypeClass::StubReturnFalse(ParticleTypeClass *this)\n{\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

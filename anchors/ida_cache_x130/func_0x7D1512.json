@@ -1,0 +1,1 @@
+{"addr": "0x007D1512", "name": "GetCurrentThreadId::0", "decompiled": "// attributes: thunk\nDWORD __stdcall GetCurrentThreadId::0()\n{\n  return GetCurrentThreadId();\n}\n", "changed": true, "error": null, "timestamp": "x130"}

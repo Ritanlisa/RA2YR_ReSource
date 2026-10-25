@@ -1,0 +1,1 @@
+{"addr": "0x005CA7D0", "name": "MPBattleClass::vt_entry_18", "decompiled": "// attributes: thunk\nbool __thiscall MPBattleClass::vt_entry_18(MultiplayerSiege *this)\n{\n  return ScenarioClass::createStartingForces((MultiplayerGameMode *)this);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

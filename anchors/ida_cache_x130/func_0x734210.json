@@ -1,0 +1,1 @@
+{"addr": "0x00734210", "name": "Map_Reset_734210", "decompiled": "DWORD Map_Reset_734210()\n{\n  DWORD Time; // eax\n  DWORD result; // eax\n\n  Time = timeGetTime();\n  dword_845554 = -1;\n  dword_845550 = Time - 1601;\n  result = timeGetTime() - 1601;\n  dword_84555C = -100;\n  dword_845558 = result;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

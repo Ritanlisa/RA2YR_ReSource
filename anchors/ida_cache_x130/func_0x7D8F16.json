@@ -1,0 +1,1 @@
+{"addr": "0x007D8F16", "name": "__chgsign", "decompiled": "double __cdecl _chgsign(double X)\n{\n  double v2; // [esp+0h] [ebp-8h]\n\n  LODWORD(v2) = LODWORD(X);\n  HIDWORD(v2) = ~HIDWORD(X) ^ (HIDWORD(X) ^ ~HIDWORD(X)) & 0x7FFFFFFF;\n  return v2;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

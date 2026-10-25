@@ -1,0 +1,1 @@
+{"addr": "0x007B5340", "name": "DeleteAndZero::Alt2", "decompiled": "int __thiscall DeleteAndZero::Alt2(DeleteAndZero *this)\n{\n  int result; // eax\n\n  result = *(_DWORD *)this->__pad_0;\n  if ( *(_DWORD *)this->__pad_0 )\n    __3_YAXPAX_Z(*(void **)this->__pad_0);\n  *(_DWORD *)this->__pad_0 = 0;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

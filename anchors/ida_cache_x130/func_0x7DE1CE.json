@@ -1,0 +1,1 @@
+{"addr": "0x007DE1CE", "name": "GetConsoleMode", "decompiled": "// attributes: thunk\nBOOL __stdcall GetConsoleMode(HANDLE hConsoleHandle, LPDWORD lpMode)\n{\n  return __imp_GetConsoleMode(hConsoleHandle, lpMode);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

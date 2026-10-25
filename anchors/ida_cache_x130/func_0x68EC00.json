@@ -1,0 +1,1 @@
+{"addr": "0x0068EC00", "name": "ScoreScreen::Check", "decompiled": "bool __thiscall ScoreScreen::Check(ScoreScreen *this, char a2)\n{\n  return (*(int (__thiscall **)(int *, char *))(this->ScoreScreen_field_0x1C + 16))(&this->ScoreScreen_field_0x1C, &a2) == -1;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

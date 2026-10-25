@@ -1,0 +1,1 @@
+{"addr": "0x00540610", "name": "IPXGlobalConnClass::Release", "decompiled": "int __thiscall IPXGlobalConnClass::Release(IPXGlobalConnClass *this, const void *a2, signed int a3, int a4, char a5)\n{\n  return ConnectionClass::sendAck((int)this, a2, a3, a4, a5);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

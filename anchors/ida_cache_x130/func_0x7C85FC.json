@@ -1,0 +1,1 @@
+{"addr": "0x007C85FC", "name": "SendMessageA", "decompiled": "// attributes: thunk\nLRESULT __stdcall SendMessageA(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)\n{\n  return __imp_SendMessageA(hWnd, Msg, wParam, lParam);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

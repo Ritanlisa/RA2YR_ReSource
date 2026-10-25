@@ -1,0 +1,1 @@
+{"addr": "0x007D4FAB", "name": "__isindst", "decompiled": "BOOL __cdecl _isindst(_DWORD *a1)\n{\n  BOOL v1; // esi\n\n  _lock(11);\n  v1 = _isindst_0(a1);\n  _unlock(11);\n  return v1;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

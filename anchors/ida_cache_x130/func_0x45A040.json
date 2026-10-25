@@ -1,0 +1,1 @@
+{"addr": "0x0045A040", "name": "FootClass::Get", "decompiled": "int __thiscall FootClass::Get(_VectorClass_PAVInfantryClass *this, int a2)\n{\n  return *(_DWORD *)(*(_DWORD *)&this->m_1[3] + 4 * a2);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x00774070", "name": "Render_Draw_774070", "decompiled": "BOOL Render_Draw_774070()\n{\n  return dword_B72D0C && *(_DWORD *)(dword_B72D0C + 8) && *(_BYTE *)(dword_B72D0C + 1036);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

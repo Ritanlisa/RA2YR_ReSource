@@ -1,0 +1,1 @@
+{"addr": "0x00777060", "name": "Dialog::RestoreParent", "decompiled": "int __thiscall Dialog::RestoreParent(Dialog *this)\n{\n  int result; // eax\n\n  result = GetWindowLongA((HWND)this, -8);\n  if ( result )\n    return SetDialogParent((HWND)this, (HWND)result);\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x00717AB0", "name": "ObjectTypeClass::loadTypeMember_5717AB0", "decompiled": "int __thiscall ObjectTypeClass::loadTypeMember_5717AB0(ObjectTypeClass *this, int a2)\n{\n  int result; // eax\n\n  result = a2;\n  if ( a2 <= 0 )\n    result = 1;\n  this->vfptr3 = result;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x004E02C0", "name": "ObjectClass::updateStateFlags", "decompiled": "int __thiscall ObjectClass::updateStateFlags(ObjectClass *this)\n{\n  int result; // eax\n\n  result = this->vfptr;\n  if ( this->vfptr )\n    return (*(int (__stdcall **)(int))(*(_DWORD *)result + 8))(result);\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x005224E0", "name": "TechnoClass::GetTypeFlag", "decompiled": "char __thiscall TechnoClass::GetTypeFlag(TechnoClass *this)\n{\n  return *(_BYTE *)(*((_DWORD *)this + 432) + 3784);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

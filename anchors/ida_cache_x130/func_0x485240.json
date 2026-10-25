@@ -1,0 +1,1 @@
+{"addr": "0x00485240", "name": "ObjectClass::SetMember09", "decompiled": "_DWORD *__thiscall ObjectClass::SetMember09(ObjectClass *this, _DWORD *a2)\n{\n  this->occupant = *a2;\n  return a2;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

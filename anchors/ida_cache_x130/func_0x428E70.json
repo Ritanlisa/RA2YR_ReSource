@@ -1,0 +1,1 @@
+{"addr": "0x00428E70", "name": "AnimTypeClass::GetObjectSize", "decompiled": "int AnimTypeClass::GetObjectSize(AnimTypeClass *this)\n{\n  return 888;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

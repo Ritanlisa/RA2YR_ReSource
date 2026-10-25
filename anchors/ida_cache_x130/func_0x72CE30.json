@@ -1,0 +1,1 @@
+{"addr": "0x0072CE30", "name": "sub_72CE30", "decompiled": "char sub_72CE30()\n{\n  return byte_B0FCE5;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x004866D0", "name": "sub_4866D0", "decompiled": "bool __thiscall sub_4866D0(ObjectClass *this)\n{\n  int attachedBomb; // eax\n\n  attachedBomb = this->attachedBomb;\n  return attachedBomb >= g_CellTileTypeCache && attachedBomb < g_CellTileTypeCache + 15;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

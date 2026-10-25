@@ -1,0 +1,1 @@
+{"addr": "0x005382C0", "name": "CreateTeamCommand::performAction_223", "decompiled": "_DWORD *__thiscall CreateTeamCommand::performAction_223(DeployCommandClass *this, char a2)\n{\n  *this = (DeployCommandClass)&CommandClass::`vftable';\n  if ( (a2 & 1) != 0 )\n    __3_YAXPAX_Z(this);\n  return this;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

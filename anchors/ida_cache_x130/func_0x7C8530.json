@@ -1,0 +1,1 @@
+{"addr": "0x007C8530", "name": "GetStartupInfoA", "decompiled": "// attributes: thunk\nvoid __stdcall GetStartupInfoA(LPSTARTUPINFOA lpStartupInfo)\n{\n  __imp_GetStartupInfoA(lpStartupInfo);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

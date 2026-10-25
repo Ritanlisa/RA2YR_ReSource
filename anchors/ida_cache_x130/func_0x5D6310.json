@@ -1,0 +1,1 @@
+{"addr": "0x005D6310", "name": "ScenarioClass::MissionStubReturnZero2", "decompiled": "int __stdcall ScenarioClass::MissionStubReturnZero2(int *this)\n{\n  int result; // eax\n\n  LOBYTE(result) = 1;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

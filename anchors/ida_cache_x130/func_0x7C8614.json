@@ -1,0 +1,1 @@
+{"addr": "0x007C8614", "name": "SetTimer", "decompiled": "// attributes: thunk\nUINT_PTR __stdcall SetTimer(HWND hWnd, UINT_PTR nIDEvent, UINT uElapse, TIMERPROC lpTimerFunc)\n{\n  return __imp_SetTimer(hWnd, nIDEvent, uElapse, lpTimerFunc);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

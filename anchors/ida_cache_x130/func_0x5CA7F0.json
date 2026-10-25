@@ -1,0 +1,1 @@
+{"addr": "0x005CA7F0", "name": "ScenarioClass::ClearFlag_0", "decompiled": "// attributes: thunk\nchar __cdecl ScenarioClass::ClearFlag_0(MultiplayerGameMode *this)\n{\n  return ScenarioClass::ClearFlag(this);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

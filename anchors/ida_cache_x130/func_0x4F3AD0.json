@@ -1,0 +1,1 @@
+{"addr": "0x004F3AD0", "name": "GraphicMenuAnimItem::StubReturnFalse", "decompiled": "void __stdcall GraphicMenuAnimItem::StubReturnFalse(GraphicMenuItem *this)\n{\n  ;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

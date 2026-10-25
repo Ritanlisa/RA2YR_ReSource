@@ -1,0 +1,1 @@
+{"addr": "0x007C89FE", "name": "ImageList::Destroy", "decompiled": "// attributes: thunk\nBOOL __stdcall ImageList::Destroy(HIMAGELIST himl)\n{\n  return ImageList_Destroy(himl);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

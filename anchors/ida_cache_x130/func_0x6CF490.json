@@ -1,0 +1,1 @@
+{"addr": "0x006CF490", "name": "SwizzleManagerClass::Add", "decompiled": "int __stdcall SwizzleManagerClass::Add(SwizzleManagerClass *this, int a2, _DWORD *a3)\n{\n  if ( !a2 || !a3 )\n    return -2147467261;\n  *a3 = a2;\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

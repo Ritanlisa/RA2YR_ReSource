@@ -1,0 +1,1 @@
+{"addr": "0x0058BC30", "name": "sub_58BC30", "decompiled": "int sub_58BC30()\n{\n  stru_ABDF90.Vector4_field_0x04 = 0;\n  dword_ABDF98 = 0;\n  byte_ABDF9C = 1;\n  byte_ABDF9D = 0;\n  *(_DWORD *)stru_ABDF90.__pad_0 = &off_7ED858;\n  dword_ABDFA4 = 10;\n  dword_ABDFA0 = 0;\n  return atexit(sub_58BC70);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

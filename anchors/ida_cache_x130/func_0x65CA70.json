@@ -1,0 +1,1 @@
+{"addr": "0x0065CA70", "name": "BufferIOFileClass::StubReturnFalse", "decompiled": "void __stdcall BufferIOFileClass::StubReturnFalse(RawFileClass *this, int a2, int a3)\n{\n  ;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

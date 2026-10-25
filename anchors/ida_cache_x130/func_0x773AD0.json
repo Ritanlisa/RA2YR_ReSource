@@ -1,0 +1,1 @@
+{"addr": "0x00773AD0", "name": "WebBrowser::?", "decompiled": "int __thiscall WebBrowser::_(WebBrowser *this)\n{\n  HWND v1; // eax\n  HWND *v3; // [esp+4h] [ebp+4h]\n\n  v1 = v3[260];\n  if ( v1 )\n    *(_DWORD *)GetWindowLongA(v1, 8) = 1;\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

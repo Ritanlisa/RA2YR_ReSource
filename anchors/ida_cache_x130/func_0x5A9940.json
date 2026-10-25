@@ -1,0 +1,1 @@
+{"addr": "0x005A9940", "name": "Cell::Clear", "decompiled": "_WORD *__thiscall Cell::Clear(Cell *this)\n{\n  this->Cell_field_0x0 = 0;\n  this->Cell_field_0x4 = -1;\n  return this;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x007C8806", "name": "IsDlgButtonChecked", "decompiled": "// attributes: thunk\nUINT __stdcall IsDlgButtonChecked(HWND hDlg, int nIDButton)\n{\n  return __imp_IsDlgButtonChecked(hDlg, nIDButton);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

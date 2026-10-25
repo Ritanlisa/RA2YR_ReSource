@@ -1,0 +1,1 @@
+{"addr": "0x006AC5D0", "name": "SidebarClass::saveLoadPrefix", "decompiled": "int __thiscall SidebarClass::saveLoadPrefix(SidebarClass *this, int a2)\n{\n  return SidebarClass::Load((RadarClass *)this, a2);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

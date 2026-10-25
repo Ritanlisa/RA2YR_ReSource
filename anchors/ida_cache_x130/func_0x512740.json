@@ -1,0 +1,1 @@
+{"addr": "0x00512740", "name": "HouseTypeClass::AddRef", "decompiled": "int __stdcall HouseTypeClass::AddRef(HouseTypeClass *this)\n{\n  return 1;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

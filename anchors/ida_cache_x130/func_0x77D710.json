@@ -1,0 +1,1 @@
+{"addr": "0x0077D710", "name": "GameLoop::Thunk", "decompiled": "// attributes: thunk\nchar __thiscall GameLoop::Thunk(CreateGameDialogControl *this)\n{\n  return Game::ProcessIdle(this);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

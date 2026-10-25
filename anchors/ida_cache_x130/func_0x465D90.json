@@ -1,0 +1,1 @@
+{"addr": "0x00465D90", "name": "BuildingTypeClass::GetTypeIdentifier", "decompiled": "int __thiscall BuildingTypeClass::GetTypeIdentifier(BuildingTypeClass *this)\n{\n  return 7;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

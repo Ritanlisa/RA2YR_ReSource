@@ -1,0 +1,1 @@
+{"addr": "0x00777B30", "name": "String::FormatDword", "decompiled": "char *__thiscall String::FormatDword(char *Buffer)\n{\n  sprintf(Buffer, \"%d\", dword_822D1C);\n  return Buffer;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

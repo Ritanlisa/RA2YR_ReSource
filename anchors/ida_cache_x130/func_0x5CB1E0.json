@@ -1,0 +1,1 @@
+{"addr": "0x005CB1E0", "name": "MPBattleClass::getMaximumPlayers", "decompiled": "void MPBattleClass::getMaximumPlayers()\n{\n  dbl_ABFB60 = 1.0 / dbl_ABFB78;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

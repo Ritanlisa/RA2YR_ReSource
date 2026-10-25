@@ -1,0 +1,1 @@
+{"addr": "0x00653F50", "name": "CellClass::DrawWrapper", "decompiled": "void __thiscall CellClass::DrawWrapper(RadarClass *this, _DWORD *a2, int jj, char a4, char a5)\n{\n  CellClass::UpdateTerrainAndWaypoints((MapClass *)this, a2, jj, a4, a5);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

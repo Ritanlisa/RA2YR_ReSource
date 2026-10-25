@@ -1,0 +1,1 @@
+{"addr": "0x004866F0", "name": "sub_4866F0", "decompiled": "bool __thiscall sub_4866F0(ObjectClass *this)\n{\n  int attachedBomb; // eax\n\n  attachedBomb = this->attachedBomb;\n  return attachedBomb >= dword_ABBEC4 && attachedBomb < dword_ABBEC4 + 4;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

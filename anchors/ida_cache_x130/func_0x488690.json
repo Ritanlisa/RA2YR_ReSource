@@ -1,0 +1,1 @@
+{"addr": "0x00488690", "name": "COMObject::DetachPrimary", "decompiled": "void COMObject::DetachPrimary(GadgetClass *this)\n{\n  dword_8B3E8C = 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

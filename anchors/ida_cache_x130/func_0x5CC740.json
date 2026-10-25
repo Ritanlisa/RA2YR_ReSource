@@ -1,0 +1,1 @@
+{"addr": "0x005CC740", "name": "ScenarioClass::updateTiberiumGrowth", "decompiled": "BOOL __thiscall ScenarioClass::updateTiberiumGrowth(MSOverlayAnim *this)\n{\n  return !LOBYTE(this->MSOverlayAnim_field_0x0C) || this->field_40 >= 4;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

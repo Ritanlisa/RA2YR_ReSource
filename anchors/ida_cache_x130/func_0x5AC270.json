@@ -1,0 +1,1 @@
+{"addr": "0x005AC270", "name": "MapSeedClass::QueryInterface", "decompiled": "_DWORD *__thiscall MapSeedClass::QueryInterface(MapSeedClass *this, char a2)\n{\n  LoadOptions::Cleanup((LoadOptions *)this);\n  if ( (a2 & 1) != 0 )\n    __3_YAXPAX_Z(this);\n  return this->__pad_0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x007C5EE0", "name": "sub_7C5EE0", "decompiled": "void *sub_7C5EE0()\n{\n  _UNKNOWN *retaddr; // [esp+0h] [ebp+0h]\n\n  return retaddr;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

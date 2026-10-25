@@ -1,0 +1,1 @@
+{"addr": "0x0041B5C0", "name": "AircraftClass::CheckPassengerCount", "decompiled": "int __stdcall AircraftClass::CheckPassengerCount(\n        AircraftClass *this,\n        LPPERSISTSTREAM pPStm,\n        struct IPersistStreamVtbl *a3)\n{\n  return ObjectClass::SaveToStream_Common((ObjectClass *)this, pPStm, a3);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

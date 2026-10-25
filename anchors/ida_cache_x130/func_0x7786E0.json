@@ -1,0 +1,1 @@
+{"addr": "0x007786E0", "name": "sub_7786E0", "decompiled": "int sub_7786E0()\n{\n  String::Assign((String *)&stru_B73590, aDefault_0);\n  return atexit(unknown_libname_38);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

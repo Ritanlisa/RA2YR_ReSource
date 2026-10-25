@@ -1,0 +1,1 @@
+{"addr": "0x00410480", "name": "AbstractClass::COMStub_Return0_10", "decompiled": "int __thiscall AbstractClass::COMStub_Return0_10(AbstractClass *this)\n{\n  int result; // eax\n\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

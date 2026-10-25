@@ -1,0 +1,1 @@
+{"addr": "0x007C8380", "name": "SetThreadPriority", "decompiled": "// attributes: thunk\nBOOL __stdcall SetThreadPriority(HANDLE hThread, int nPriority)\n{\n  return __imp_SetThreadPriority(hThread, nPriority);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

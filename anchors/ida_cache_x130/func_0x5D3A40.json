@@ -1,0 +1,1 @@
+{"addr": "0x005D3A40", "name": "ObjectManager::InitMessageList", "decompiled": "int __thiscall ObjectManager::InitMessageList(ObjectManager *this)\n{\n  return MessageListClass::Init((MessageListClass *)this, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 640);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

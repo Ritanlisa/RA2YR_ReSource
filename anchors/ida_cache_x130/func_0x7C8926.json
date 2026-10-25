@@ -1,0 +1,1 @@
+{"addr": "0x007C8926", "name": "SysAllocString", "decompiled": "// attributes: thunk\nBSTR __stdcall SysAllocString(const OLECHAR *psz)\n{\n  return __imp_SysAllocString(psz);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

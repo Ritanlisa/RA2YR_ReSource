@@ -1,0 +1,1 @@
+{"addr": "0x0076F080", "name": "Count::Get", "decompiled": "int __thiscall Count::Get(Count *this)\n{\n  return this->field_4;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

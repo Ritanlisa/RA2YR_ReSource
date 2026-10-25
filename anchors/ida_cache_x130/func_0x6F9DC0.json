@@ -1,0 +1,1 @@
+{"addr": "0x006F9DC0", "name": "TechnoClass::GetTarget", "decompiled": "int __thiscall TechnoClass::GetTarget(TechnoClass *this)\n{\n  return this->owner;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

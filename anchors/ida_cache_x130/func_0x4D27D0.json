@@ -1,0 +1,1 @@
+{"addr": "0x004D27D0", "name": "FoggedObjectClass::GetClassIdentifier", "decompiled": "int __stdcall FoggedObjectClass::GetClassIdentifier(FoggedObjectClass *this, _DWORD *a2)\n{\n  if ( !a2 )\n    return -2147467261;\n  *a2 = 474417934;\n  a2[1] = 299002327;\n  a2[2] = 1610674872;\n  a2[3] = -318126072;\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

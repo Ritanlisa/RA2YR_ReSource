@@ -1,0 +1,1 @@
+{"addr": "0x006458B0", "name": "ParticleTypeClass::GetType", "decompiled": "int __thiscall ParticleTypeClass::GetType(ParticleTypeClass *this, int a2, int a3)\n{\n  int result; // eax\n\n  result = this->ParticleTypeClass_field_0x2E4;\n  if ( result == a2 )\n    this->ParticleTypeClass_field_0x2E4 = 0;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

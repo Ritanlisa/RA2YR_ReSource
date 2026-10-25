@@ -1,0 +1,1 @@
+{"addr": "0x007C899E", "name": "socket", "decompiled": "// attributes: thunk\nint __stdcall socket(int af, int type, int protocol)\n{\n  return __imp_socket(af, type, protocol);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x0070DC60", "name": "TechnoClass::OwnerHasPower", "decompiled": "int __thiscall TechnoClass::OwnerHasPower(TechnoClass *this)\n{\n  HouseClass *v1; // eax\n\n  v1 = (HouseClass *)(*(int (__thiscall **)(TechnoClass *))(this->vfptr + 132))(this);\n  return HouseClass::HasPower(v1);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

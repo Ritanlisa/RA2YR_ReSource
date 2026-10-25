@@ -1,0 +1,1 @@
+{"addr": "0x007CA845", "name": "_fopen", "decompiled": "FILE *__cdecl fopen(const char *FileName, const char *Mode)\n{\n  return _fsopen(FileName, Mode, 64);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

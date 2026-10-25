@@ -1,0 +1,1 @@
+{"addr": "0x007BA320", "name": "IsRefCountNegative", "decompiled": "BOOL __thiscall IsRefCountNegative(WWMouseClass *this)\n{\n  return this->WWMouseClass_field_0xC < 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

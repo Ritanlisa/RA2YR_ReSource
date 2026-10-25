@@ -1,0 +1,1 @@
+{"addr": "0x004E14A0", "name": "ObjectClass::InputThunkA", "decompiled": "// attributes: thunk\nint __thiscall ObjectClass::InputThunkA(GadgetClass *this)\n{\n  return ObjectClass::GetWidth((LinkClass *)this);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

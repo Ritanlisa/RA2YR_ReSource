@@ -1,0 +1,1 @@
+{"addr": "0x0074AB50", "name": "VoxelAnimClass::DrawVoxel", "decompiled": "void *__thiscall VoxelAnimClass::DrawVoxel(VoxelAnimClass *this, char a2)\n{\n  VoxelAnimClass::CleanupMembers(this);\n  if ( (a2 & 1) != 0 )\n    __3_YAXPAX_Z(this);\n  return this;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

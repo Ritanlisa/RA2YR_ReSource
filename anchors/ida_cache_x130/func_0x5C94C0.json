@@ -1,0 +1,1 @@
+{"addr": "0x005C94C0", "name": "MultiplayerObserverTeam::AddRef", "decompiled": "bool __stdcall MultiplayerObserverTeam::AddRef(MultiplayerObserverTeam *this)\n{\n  return PlayerClass::IsValidIndex((bool *)this->__pad_0);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

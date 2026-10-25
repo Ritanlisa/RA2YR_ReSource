@@ -1,0 +1,1 @@
+{"addr": "0x00401950", "name": "FileClass::loc_401950", "decompiled": "BufferIOFileClass *__thiscall FileClass::loc_401950(BufferIOFileClass *Block, char a2)\n{\n  *(_DWORD *)Block->__tail_0 = &off_7E1668;\n  BufferIOFileClass::Dtor(Block);\n  if ( (a2 & 1) != 0 )\n    __3_YAXPAX_Z(Block);\n  return Block;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

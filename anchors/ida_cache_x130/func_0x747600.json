@@ -1,0 +1,1 @@
+{"addr": "0x00747600", "name": "sub_747600", "decompiled": "_DWORD *__stdcall sub_747600(_DWORD *a1, int a2, _DWORD *a3)\n{\n  *a1 = *a3;\n  a1[1] = a3[1];\n  return a1;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

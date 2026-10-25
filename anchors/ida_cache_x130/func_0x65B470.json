@@ -1,0 +1,1 @@
+{"addr": "0x0065B470", "name": "RadSiteClass::ddtor", "decompiled": "int __stdcall RadSiteClass::ddtor(RadSiteClass *this, _DWORD *a2)\n{\n  if ( !a2 )\n    return -2147467261;\n  *a2 = 1090836288;\n  a2[1] = 299095303;\n  a2[2] = -1610598260;\n  a2[3] = 1153315785;\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

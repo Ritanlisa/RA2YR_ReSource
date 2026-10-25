@@ -1,0 +1,1 @@
+{"addr": "0x00536030", "name": "SelectTeamCommand::ddtor", "decompiled": "wchar_t *SelectTeamCommand::ddtor(SelectTeamCommandClass *this)\n{\n  return GetStringCSF(g_Str_TXT_TEAM, 0, g_Str_File_Init_CPP, 6294);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

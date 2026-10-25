@@ -1,0 +1,1 @@
+{"addr": "0x0046D490", "name": "sub_46D490", "decompiled": "char __thiscall sub_46D490(ObjectClass *this)\n{\n  return *((_BYTE *)&g_GameModeOptionState + (_DWORD)this);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

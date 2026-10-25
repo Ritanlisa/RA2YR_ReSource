@@ -1,0 +1,1 @@
+{"addr": "0x00535DF0", "name": "CreateTeamCommand::performAction_8", "decompiled": "wchar_t *__thiscall CreateTeamCommand::performAction_8(SetDefenseTabCommandClass *this)\n{\n  return GetStringCSF(aTxtDefenseTab, 0, g_Str_File_Init_CPP, 6212);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

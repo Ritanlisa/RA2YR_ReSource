@@ -1,0 +1,1 @@
+{"addr": "0x0049B430", "name": "EncodeDigitHex", "decompiled": "char __fastcall EncodeDigitHex(unsigned int a1)\n{\n  if ( a1 >= 0x10 )\n    return 0;\n  if ( (int)a1 >= 10 )\n    return a1 + 55;\n  return a1 + 48;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

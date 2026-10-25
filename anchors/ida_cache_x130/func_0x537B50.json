@@ -1,0 +1,1 @@
+{"addr": "0x00537B50", "name": "ScreenCaptureCommandClass::AddRef", "decompiled": "char *ScreenCaptureCommandClass::AddRef(ScreenCaptureCommandClass *this)\n{\n  return aScreencapture;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x007D2183", "name": "__un_inc", "decompiled": "int __cdecl _un_inc(int Character, FILE *Stream)\n{\n  int result; // eax\n\n  if ( Character != -1 )\n    return ungetc_0(Character, Stream);\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

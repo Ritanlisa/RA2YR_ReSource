@@ -1,0 +1,1 @@
+{"addr": "0x007C8794", "name": "ScreenToClient", "decompiled": "// attributes: thunk\nBOOL __stdcall ScreenToClient(HWND hWnd, LPPOINT lpPoint)\n{\n  return __imp_ScreenToClient(hWnd, lpPoint);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

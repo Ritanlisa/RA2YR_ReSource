@@ -1,0 +1,1 @@
+{"addr": "0x006E5560", "name": "ScenarioClass::checkMissionObjectives", "decompiled": "int __thiscall ScenarioClass::checkMissionObjectives(ScenarioClass *this, int a2)\n{\n  *(_DWORD *)&this->nextScenario[48] = a2;\n  return a2;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

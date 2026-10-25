@@ -1,0 +1,1 @@
+{"addr": "0x00763590", "name": "sub_763590", "decompiled": "int sub_763590()\n{\n  dword_B7260C = 0;\n  dword_B72610 = 0;\n  byte_B72614 = 1;\n  byte_B72615 = 0;\n  dword_B72608 = (int)&DynamicVectorClass<WaypointPathClass *>::`vftable';\n  dword_B7261C = 10;\n  dword_B72618 = 0;\n  return atexit(sub_7635D0);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

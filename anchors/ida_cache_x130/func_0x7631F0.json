@@ -1,0 +1,1 @@
+{"addr": "0x007631F0", "name": "WaveClass::GetTypeIdentifier", "decompiled": "int WaveClass::GetTypeIdentifier(WaveClass *this)\n{\n  return 43;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

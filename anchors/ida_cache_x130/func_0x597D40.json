@@ -1,0 +1,1 @@
+{"addr": "0x00597D40", "name": "j_Options::GetValue", "decompiled": "// attributes: thunk\nbool __thiscall j_Options::GetValue(j_Options *this)\n{\n  return Options::PrepareSaveLoadDlg((Options *)this);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

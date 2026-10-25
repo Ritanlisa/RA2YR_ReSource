@@ -1,0 +1,1 @@
+{"addr": "0x0052AEE0", "name": "Delegate::DestroyPipe", "decompiled": "int *__thiscall Delegate::DestroyPipe(Base64Pipe *this, char a2)\n{\n  Pipe::Dtor((Pipe *)this);\n  if ( (a2 & 1) != 0 )\n    __3_YAXPAX_Z(this);\n  return (int *)this->__pad_0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

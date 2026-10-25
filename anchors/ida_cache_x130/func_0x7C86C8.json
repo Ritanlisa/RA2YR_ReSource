@@ -1,0 +1,1 @@
+{"addr": "0x007C86C8", "name": "GetKeyState", "decompiled": "// attributes: thunk\nSHORT __stdcall GetKeyState(int nVirtKey)\n{\n  return __imp_GetKeyState(nVirtKey);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

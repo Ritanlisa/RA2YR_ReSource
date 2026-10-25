@@ -1,0 +1,1 @@
+{"addr": "0x00537A70", "name": "Commands::Release", "decompiled": "char **__thiscall Commands::Release(MultiplayerDebugCommandClass *this)\n{\n  return &off_8278C0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

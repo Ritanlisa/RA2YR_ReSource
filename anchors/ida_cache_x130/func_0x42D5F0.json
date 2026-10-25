@@ -1,0 +1,1 @@
+{"addr": "0x0042D5F0", "name": "VectorClass_ushort::Clear", "decompiled": "__int16 __thiscall VectorClass_ushort::Clear(_VectorClass_G *this, int a2)\n{\n  return *(_WORD *)(*(_DWORD *)&this->m_1[3] + 2 * a2);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

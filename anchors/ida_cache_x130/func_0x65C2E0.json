@@ -1,0 +1,1 @@
+{"addr": "0x0065C2E0", "name": "AbstractClass::checkTeamMembership", "decompiled": "int __thiscall AbstractClass::checkTeamMembership(RAMFileClass *this)\n{\n  if ( (*(unsigned __int8 (__thiscall **)(RAMFileClass *))(*(_DWORD *)this->__pad_0 + 24))(this) )\n    return 0;\n  this->RAMFileClass_field_0x10 = 0;\n  return 1;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

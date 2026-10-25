@@ -1,0 +1,1 @@
+{"addr": "0x00485200", "name": "CellClass::ddtor", "decompiled": "int __thiscall CellClass::ddtor(CellClass *this)\n{\n  _DWORD *v2; // [esp+8h] [ebp+8h]\n\n  if ( !v2 )\n    return -2147467261;\n  *v2 = -1044407858;\n  v2[1] = 298982028;\n  v2[2] = 1610642817;\n  v2[3] = -1252326136;\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

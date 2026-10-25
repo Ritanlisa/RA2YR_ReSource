@@ -1,0 +1,1 @@
+{"addr": "0x0048E650", "name": "CheckListClass::StubReturnFalse", "decompiled": "void __stdcall CheckListClass::StubReturnFalse(GadgetClass *this, int a2, int a3)\n{\n  ;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x00408560", "name": "sub_408560", "decompiled": "unsigned __int64 __fastcall sub_408560(int a1, int a2)\n{\n  int v2; // esi\n\n  v2 = *(_DWORD *)(a1 + 20);\n  if ( v2 )\n    return 1000LL * a2 / (unsigned __int64)v2;\n  else\n    return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

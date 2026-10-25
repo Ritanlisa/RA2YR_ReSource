@@ -1,0 +1,1 @@
+{"addr": "0x004A0160", "name": "EnumConnectionsClass::Next", "decompiled": "int __stdcall EnumConnectionsClass::Next(EnumConnectionsClass *this, int a2)\n{\n  this->q020 += a2;\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

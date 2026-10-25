@@ -1,0 +1,1 @@
+{"addr": "0x005C4EF0", "name": "MPCooperative::setUpAlliances", "decompiled": "char __thiscall MPCooperative::setUpAlliances(MPCooperative *this)\n{\n  return 1;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

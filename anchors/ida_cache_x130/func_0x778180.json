@@ -1,0 +1,1 @@
+{"addr": "0x00778180", "name": "Network_Append", "decompiled": "HIMC Network_Append()\n{\n  HIMC result; // eax\n\n  result = dword_B7355C;\n  if ( dword_B7355C )\n    return (HIMC)ImmAssociateContext(g_hWnd, dword_B7355C);\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

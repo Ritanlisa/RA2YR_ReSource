@@ -1,0 +1,1 @@
+{"addr": "0x0052B930", "name": "sub_52B930", "decompiled": "int sub_52B930()\n{\n  int result; // eax\n\n  LOWORD(result) = Math::RoundToInt((double)(4 * *(_DWORD *)&stru_A8E960.waypoints[2030]) + 0.5);\n  *(_DWORD *)&stru_A8E960.waypoints[2018] = result;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x004072C0", "name": "DListNode::Init", "decompiled": "int __thiscall DListNode::Init(DListNode *this)\n{\n  int result; // eax\n\n  *(_DWORD *)this->__pad_0 = this;\n  this->DListNode_field_0x04 = (int)this;\n  this->q008 = (unsigned int)this;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

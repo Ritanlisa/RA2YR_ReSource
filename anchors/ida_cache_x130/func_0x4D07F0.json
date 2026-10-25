@@ -1,0 +1,1 @@
+{"addr": "0x004D07F0", "name": "sub_4D07F0", "decompiled": "int sub_4D07F0()\n{\n  g_MissionPool = 0;\n  g_MissionState = 0;\n  dword_8B3CC8 = 0;\n  byte_8B3CCC = 0;\n  dword_8B3CD0 = 0;\n  return atexit(sub_4D0820);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

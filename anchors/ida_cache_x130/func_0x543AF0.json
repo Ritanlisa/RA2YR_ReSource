@@ -1,0 +1,1 @@
+{"addr": "0x00543AF0", "name": "nullsub_0_0", "decompiled": "int __thiscall nullsub_0_0(IsometricTileClass *this)\n{\n  return *((_DWORD *)this + 43);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

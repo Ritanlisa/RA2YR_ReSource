@@ -1,0 +1,1 @@
+{"addr": "0x00726900", "name": "TActionClass::executeDetonateAction", "decompiled": "void __thiscall TActionClass::executeDetonateAction(TActionClass *this)\n{\n  LOBYTE(this->TActionClass_field_44) = 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

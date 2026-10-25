@@ -1,0 +1,1 @@
+{"addr": "0x004399E0", "name": "VoxelAnimClass::QuaternionToMatrix", "decompiled": "float *__thiscall VoxelAnimClass::QuaternionToMatrix(float *this, float *a2)\n{\n  float *v2; // esi\n  float v4[12]; // [esp+8h] [ebp-30h] BYREF\n\n  v2 = ToQuaternionMatrix(v4, this + 12);\n  qmemcpy(a2, v2, 0x30u);\n  return a2;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x00632000", "name": "System_Init_632000", "decompiled": "int __thiscall System_Init_632000(TechnoClass *this, _BYTE *a2)\n{\n  int result; // eax\n\n  DecodeLengthLCW((int)this, a2, 64);\n  result = FindBitArrayHighestBit((int)this, 64) - 1;\n  this->reloadTimer[1] = result;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x004F42D0", "name": "VectorCursor_uint_DynamicVectorClass_uint____13::Remove", "decompiled": "void __thiscall VectorCursor_uint_DynamicVectorClass_uint____13::Remove(GScreenClass *this)\n{\n  *((_DWORD *)this + 3) = 2;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

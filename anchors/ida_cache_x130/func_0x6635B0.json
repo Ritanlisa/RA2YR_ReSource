@@ -1,0 +1,1 @@
+{"addr": "0x006635B0", "name": "RocketLocomotionClass::StubReturn96", "decompiled": "int RocketLocomotionClass::StubReturn96(RocketLocomotionClass *this)\n{\n  return 96;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

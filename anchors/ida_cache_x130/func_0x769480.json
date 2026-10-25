@@ -1,0 +1,1 @@
+{"addr": "0x00769480", "name": "unknown_libname_37", "decompiled": "// Microsoft VisualC 2-14/net runtime\n_DWORD *__thiscall unknown_libname_37(ObjectClass *this)\n{\n  this->vfptr = 0;\n  this->vfptr1 = 0;\n  this->vfptr2 = 0;\n  return &this->vfptr;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

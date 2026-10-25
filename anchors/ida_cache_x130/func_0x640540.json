@@ -1,0 +1,1 @@
+{"addr": "0x00640540", "name": "sub_640540", "decompiled": "void sub_640540()\n{\n  *(double *)&stru_AC4B48.__pad_2F4[172] = 1.0 / *(double *)&stru_AC4B48.__pad_2F4[196];\n}\n", "changed": true, "error": null, "timestamp": "x130"}

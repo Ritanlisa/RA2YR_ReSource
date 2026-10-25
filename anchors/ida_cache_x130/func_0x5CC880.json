@@ -1,0 +1,1 @@
+{"addr": "0x005CC880", "name": "MSBinkAnim::Stop", "decompiled": "BOOL __thiscall MSBinkAnim::Stop(MSBinkAnim *this)\n{\n  BinkMovieHandle *v1; // ecx\n\n  v1 = *(BinkMovieHandle **)&this->field_38;\n  return !v1 || (unsigned __int8)BinkMovie::IsAtEnd(v1);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

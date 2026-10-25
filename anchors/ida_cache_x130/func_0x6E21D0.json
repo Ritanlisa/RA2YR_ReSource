@@ -1,0 +1,1 @@
+{"addr": "0x006E21D0", "name": "sub_6E21D0", "decompiled": "char __stdcall sub_6E21D0(int a1, int a2, int a3, int a4)\n{\n  return 1;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

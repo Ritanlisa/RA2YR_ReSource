@@ -1,0 +1,1 @@
+{"addr": "0x007C886C", "name": "DPtoLP", "decompiled": "// attributes: thunk\nBOOL __stdcall DPtoLP(HDC hdc, LPPOINT lppt, int c)\n{\n  return __imp_DPtoLP(hdc, lppt, c);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

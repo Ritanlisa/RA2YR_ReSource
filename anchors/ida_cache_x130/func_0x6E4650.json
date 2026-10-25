@@ -1,0 +1,1 @@
+{"addr": "0x006E4650", "name": "TActionClass::Stub", "decompiled": "int __thiscall TActionClass::Stub(TActionClass *this)\n{\n  return this->idxArray;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

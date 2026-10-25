@@ -1,0 +1,1 @@
+{"addr": "0x007C85F6", "name": "GetDlgItem", "decompiled": "// attributes: thunk\nHWND __stdcall GetDlgItem(HWND hDlg, int nIDDlgItem)\n{\n  return __imp_GetDlgItem(hDlg, nIDDlgItem);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

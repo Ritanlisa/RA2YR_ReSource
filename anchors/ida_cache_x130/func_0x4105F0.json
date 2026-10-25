@@ -1,0 +1,1 @@
+{"addr": "0x004105F0", "name": "INoticeSource::Dispatch", "decompiled": "int __stdcall INoticeSource::Dispatch(AbstractClass *this)\n{\n  AbstractClass *v1; // ecx\n\n  return AbstractClass::COMStub_AddRef(v1);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

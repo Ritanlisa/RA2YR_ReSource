@@ -1,0 +1,1 @@
+{"addr": "0x0063AC60", "name": "UI_Delete_Delete_63AC60", "decompiled": "int UI_Delete_Delete_63AC60()\n{\n  return *(_DWORD *)&stru_AC4B48.__pad_9C[12];\n}\n", "changed": true, "error": null, "timestamp": "x130"}

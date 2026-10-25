@@ -1,0 +1,1 @@
+{"addr": "0x007C8E17", "name": "??2_YAPAXI_Z", "decompiled": "_DWORD *__cdecl __2_YAPAXI_Z(ObjectClass *Size)\n{\n  return _nh_malloc(Size, 1);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

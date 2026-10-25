@@ -1,0 +1,1 @@
+{"addr": "0x007CB302", "name": "sub_7CB302", "decompiled": "int __cdecl sub_7CB302(FILE *Stream, char *a2, int a3)\n{\n  int v3; // edi\n  int v4; // ebx\n\n  _lock_file(Stream);\n  v3 = _stbuf((int)Stream);\n  v4 = _output(Stream, a2, a3);\n  _ftbuf(v3, (int)Stream);\n  _unlock_file(Stream);\n  return v4;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

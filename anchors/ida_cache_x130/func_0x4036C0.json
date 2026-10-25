@@ -1,0 +1,1 @@
+{"addr": "0x004036C0", "name": "sub_4036C0", "decompiled": "int __fastcall sub_4036C0(int a1, int a2)\n{\n  int BestChannel; // esi\n  ObjectClass *v4; // [esp+0h] [ebp-8h]\n\n  BestChannel = AudioQueue::FindBestChannel(a1, 1);\n  if ( BestChannel )\n    sub_402440(v4);\n  return BestChannel;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

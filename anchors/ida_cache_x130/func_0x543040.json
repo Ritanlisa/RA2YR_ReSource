@@ -1,0 +1,1 @@
+{"addr": "0x00543040", "name": "IPXManagerClass::StubReturnFalse", "decompiled": "void __stdcall IPXManagerClass::StubReturnFalse(IPXManagerClass *this, int a2)\n{\n  ;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

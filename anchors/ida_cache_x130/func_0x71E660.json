@@ -1,0 +1,1 @@
+{"addr": "0x0071E660", "name": "sub_71E660", "decompiled": "void __cdecl sub_71E660()\n{\n  dword_B0F1A0 = (int)&VectorClass<TEventClass *>::`vftable';\n  if ( dword_B0F1A4 && byte_B0F1AD )\n  {\n    __3_YAXPAX_Z(dword_B0F1A4);\n    dword_B0F1A4 = 0;\n  }\n  byte_B0F1AD = 0;\n  dword_B0F1A8 = 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

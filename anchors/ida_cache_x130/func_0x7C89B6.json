@@ -1,0 +1,1 @@
+{"addr": "0x007C89B6", "name": "WSACleanup", "decompiled": "// attributes: thunk\nint __stdcall WSACleanup()\n{\n  return __imp_WSACleanup();\n}\n", "changed": true, "error": null, "timestamp": "x130"}

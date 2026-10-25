@@ -1,0 +1,1 @@
+{"addr": "0x0072B340", "name": "Render_Render_72B340", "decompiled": "int Render_Render_72B340()\n{\n  return dword_B0FB80;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

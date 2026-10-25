@@ -1,0 +1,1 @@
+{"addr": "0x0046C850", "name": "BulletTypeClass::GetTypeIdentifier", "decompiled": "int BulletTypeClass::GetTypeIdentifier(BulletTypeClass *this)\n{\n  return 9;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

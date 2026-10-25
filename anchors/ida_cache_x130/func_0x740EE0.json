@@ -1,0 +1,1 @@
+{"addr": "0x00740EE0", "name": "TechnoClass::GetCrew_0", "decompiled": "// attributes: thunk\nint __thiscall TechnoClass::GetCrew_0(TechnoClass *this)\n{\n  return TechnoClass::GetCrew(this);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

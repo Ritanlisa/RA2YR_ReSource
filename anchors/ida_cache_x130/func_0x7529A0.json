@@ -1,0 +1,1 @@
+{"addr": "0x007529A0", "name": "StopThemeClass", "decompiled": "void __fastcall StopThemeClass(char a1)\n{\n  if ( dword_B1D4C4 )\n  {\n    *(_DWORD *)(dword_B1D4C4 + 80) = 2;\n    dword_B1D4C4 = 0;\n  }\n  if ( g_InfantryDrawState )\n    Audio::Release(g_InfantryDrawState);\n  if ( a1 )\n    ThemeClass::ClearQueues();\n}\n", "changed": true, "error": null, "timestamp": "x130"}

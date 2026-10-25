@@ -1,0 +1,1 @@
+{"addr": "0x00432BD0", "name": "BinkMovieHandle::Check", "decompiled": "int __thiscall BinkMovieHandle::Check(BinkMovieHandle *this, int a2)\n{\n  int result; // eax\n\n  result = BinkGoto(this->tempPath, a2, 1);\n  this->memoryBuffer = 0;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

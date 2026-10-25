@@ -1,0 +1,1 @@
+{"addr": "0x0040D9C0", "name": "sub_40D9C0", "decompiled": "int sub_40D9C0()\n{\n  int result; // eax\n\n  InitArrayWithValue(dword_886980, 0, 64);\n  result = InitArrayWithValue(dword_886A80, 0, 64);\n  dword_886B80 = 0;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x004A3C00", "name": "CreditsScreen::Init", "decompiled": "void __thiscall CreditsScreen::Init(CreditsScreen *this)\n{\n  LOBYTE(this->field_0) = 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x006B8AF0", "name": "ApplyGameOptions_Helper", "decompiled": "bool __thiscall ApplyGameOptions_Helper(ObjectClass *this, _DWORD *a2)\n{\n  int v2; // eax\n\n  v2 = this->vfptr ^ *a2;\n  return !(_BYTE)v2 && (v2 & 0x7FF00) == 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

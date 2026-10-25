@@ -1,0 +1,1 @@
+{"addr": "0x007564B0", "name": "VoxelSection::GetInfo", "decompiled": "int __thiscall VoxelSection::GetInfo(VoxelSection *this, int a2, int a3)\n{\n  return *((_DWORD *)this + 5) + 164 * (a3 + *(_DWORD *)(*((_DWORD *)this + 4) + 12 * a2));\n}\n", "changed": true, "error": null, "timestamp": "x130"}

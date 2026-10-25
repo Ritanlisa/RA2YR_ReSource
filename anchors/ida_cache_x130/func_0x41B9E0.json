@@ -1,0 +1,1 @@
+{"addr": "0x0041B9E0", "name": "TechnoClass::updateROFTimer", "decompiled": "char __thiscall TechnoClass::updateROFTimer(TechnoClass *this)\n{\n  return *((_BYTE *)this + 1749);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

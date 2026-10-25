@@ -1,0 +1,1 @@
+{"addr": "0x0069BBE0", "name": "SessionClass::GetGameSpeed", "decompiled": "int __thiscall SessionClass::GetGameSpeed(SessionClass *this)\n{\n  int result; // eax\n\n  LOBYTE(result) = this->CurrentlyInGame[0];\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

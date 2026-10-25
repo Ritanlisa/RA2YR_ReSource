@@ -1,0 +1,1 @@
+{"addr": "0x00600670", "name": "ComboBoxOwnerDraw::GetWidthHeight", "decompiled": "int __thiscall ComboBoxOwnerDraw::GetWidthHeight(ComboBoxOwnerDraw *this)\n{\n  return *(_DWORD *)this->__pad_0 * this->ComboBoxOwnerDraw_field_0x04;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

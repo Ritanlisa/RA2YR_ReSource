@@ -1,0 +1,1 @@
+{"addr": "0x004C9150", "name": "XSurface::vt_entry_68", "decompiled": "int __thiscall XSurface::vt_entry_68(Class_7E8C94 *this)\n{\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

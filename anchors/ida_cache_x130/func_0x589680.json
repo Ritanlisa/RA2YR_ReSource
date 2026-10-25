@@ -1,0 +1,1 @@
+{"addr": "0x00589680", "name": "unknown::Init", "decompiled": "_WORD *__thiscall unknown::Init(_WORD *this)\n{\n  *this = 0;\n  *(this + 1) = 0;\n  *(this + 2) = 0;\n  *(this + 3) = 0;\n  *((_BYTE *)this + 8) = 0;\n  *((_DWORD *)this + 3) = -1;\n  return this;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

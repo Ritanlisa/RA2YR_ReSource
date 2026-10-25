@@ -1,0 +1,1 @@
+{"addr": "0x006F0450", "name": "TeamClass::ProcessEvent", "decompiled": "void **__thiscall TeamClass::ProcessEvent(TeamClass *this, char a2)\n{\n  TeamClass::Destructor(this);\n  if ( (a2 & 1) != 0 )\n    __3_YAXPAX_Z(this);\n  return (void **)this;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

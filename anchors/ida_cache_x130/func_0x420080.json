@@ -1,0 +1,1 @@
+{"addr": "0x00420080", "name": "sub_420080", "decompiled": "int sub_420080()\n{\n  dword_88A084 = 0;\n  dword_88A088 = 0;\n  byte_88A08C = 1;\n  byte_88A08D = 0;\n  dword_88A080 = (int)&DynamicVectorClass<AlphaLightingRemapClass *>::`vftable';\n  dword_88A094 = 10;\n  dword_88A090 = 0;\n  return atexit(sub_4200C0);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

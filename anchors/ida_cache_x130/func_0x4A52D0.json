@@ -1,0 +1,1 @@
+{"addr": "0x004A52D0", "name": "sub_4A52D0", "decompiled": "void __thiscall sub_4A52D0(ObjectClass *this)\n{\n  LOBYTE(this->nextArrayIndex) = 0;\n  BYTE1(this->nextArrayIndex) = 1;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

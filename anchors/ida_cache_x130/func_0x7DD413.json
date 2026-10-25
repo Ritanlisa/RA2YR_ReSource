@@ -1,0 +1,1 @@
+{"addr": "0x007DD413", "name": "__ungetch", "decompiled": "int __cdecl _ungetch(int Ch)\n{\n  if ( Ch == -1 || dword_87DD70 != -1 )\n    return -1;\n  dword_87DD70 = (unsigned __int8)Ch;\n  return (unsigned __int8)Ch;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

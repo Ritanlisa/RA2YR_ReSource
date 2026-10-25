@@ -1,0 +1,1 @@
+{"addr": "0x0076BFA0", "name": "WDTObject::GetSize", "decompiled": "int __thiscall WDTObject::GetSize(WDTObject *this)\n{\n  unsigned int field_2C; // eax\n\n  field_2C = this->field_2C;\n  if ( field_2C )\n    return *(_DWORD *)(field_2C + 24);\n  else\n    return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

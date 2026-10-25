@@ -1,0 +1,1 @@
+{"addr": "0x0040FF10", "name": "sub_40FF10", "decompiled": "int sub_40FF10()\n{\n  sub_776EB0(&stru_887598);\n  return atexit(nullsub_64);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

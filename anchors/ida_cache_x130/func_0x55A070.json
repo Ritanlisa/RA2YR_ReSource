@@ -1,0 +1,1 @@
+{"addr": "0x0055A070", "name": "LoadOptions::Seek", "decompiled": "wchar_t *__thiscall LoadOptions::Seek(LoadOptionsClass *this)\n{\n  return GetStringCSF(aGuiSavemission, 0, g_Str_File_LoadDlg_CPP, 1222);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

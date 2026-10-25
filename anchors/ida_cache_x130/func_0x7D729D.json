@@ -1,0 +1,1 @@
+{"addr": "0x007D729D", "name": "_GetLcidFromCountry", "decompiled": "BOOL GetLcidFromCountry()\n{\n  BOOL result; // eax\n\n  dword_B78548 = strlen(dword_B78558) == 3;\n  result = EnumSystemLocalesA((LOCALE_ENUMPROCA)CountryEnumProc_4, 1u);\n  if ( (dword_B7855C & 4) == 0 )\n    dword_B7855C = 0;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x0041CB50", "name": "TechnoTypeClass::vt_entry_A0", "decompiled": "char TechnoTypeClass::vt_entry_A0(AircraftTypeClass *this)\n{\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x007CB847", "name": "_isleadbyte", "decompiled": "int __cdecl isleadbyte(int C)\n{\n  return *((_WORD *)off_87C590 + (unsigned __int8)C) & 0x8000;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

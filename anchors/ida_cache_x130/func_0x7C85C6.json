@@ -1,0 +1,1 @@
+{"addr": "0x007C85C6", "name": "ReleaseMutex", "decompiled": "// attributes: thunk\nBOOL __stdcall ReleaseMutex(HANDLE hMutex)\n{\n  return __imp_ReleaseMutex(hMutex);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

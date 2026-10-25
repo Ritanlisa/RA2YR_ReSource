@@ -1,0 +1,1 @@
+{"addr": "0x005FE570", "name": "OverlayTypeClass::GetDamage", "decompiled": "void *__thiscall OverlayTypeClass::GetDamage(OverlayTypeClass *this, int a2)\n{\n  Object *v3; // eax\n\n  v3 = (Object *)__2_YAPAXI_Z(0xB0u);\n  if ( v3 )\n    return Object::SpawnAtCell(v3, (int)this, &word_AC1608, -1);\n  else\n    return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x007C849A", "name": "GetTickCount", "decompiled": "// attributes: thunk\nDWORD __stdcall GetTickCount()\n{\n  return __imp_GetTickCount();\n}\n", "changed": true, "error": null, "timestamp": "x130"}

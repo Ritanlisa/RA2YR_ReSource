@@ -1,0 +1,1 @@
+{"addr": "0x007DE0F1", "name": "___initconin", "decompiled": "HANDLE __initconin()\n{\n  HANDLE result; // eax\n\n  result = CreateFileA(\"CONIN$\", 0xC0000000, 3u, 0, 3u, 0, 0);\n  hConsoleInput = result;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

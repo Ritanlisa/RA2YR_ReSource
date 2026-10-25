@@ -1,0 +1,1 @@
+{"addr": "0x007DDE13", "name": "__wcsdup", "decompiled": "wchar_t *__cdecl _wcsdup(const wchar_t *String)\n{\n  int v1; // eax\n  wchar_t *v2; // eax\n\n  if ( String && (v1 = wcslen(String), (v2 = (wchar_t *)malloc(2 * v1 + 2)) != 0) )\n    return wcscpy(v2, String);\n  else\n    return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

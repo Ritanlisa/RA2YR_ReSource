@@ -1,0 +1,1 @@
+{"addr": "0x0048BB40", "name": "sub_48BB40", "decompiled": "bool __fastcall sub_48BB40(int a1, int a2)\n{\n  int v2; // eax\n\n  BYTE1(a2) &= ~8u;\n  v2 = a2;\n  BYTE1(v2) = BYTE1(a2) & 0xE8;\n  return a2 == v2 || (*(unsigned __int8 (__thiscall **)(int, int))(*(_DWORD *)a1 + 20))(a1, a2) == 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

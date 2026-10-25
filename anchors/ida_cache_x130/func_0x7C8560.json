@@ -1,0 +1,1 @@
+{"addr": "0x007C8560", "name": "GetLogicalDriveStringsA", "decompiled": "// attributes: thunk\nDWORD __stdcall GetLogicalDriveStringsA(DWORD nBufferLength, LPSTR lpBuffer)\n{\n  return __imp_GetLogicalDriveStringsA(nBufferLength, lpBuffer);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

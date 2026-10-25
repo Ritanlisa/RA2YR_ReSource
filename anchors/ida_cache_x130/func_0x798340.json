@@ -1,0 +1,1 @@
+{"addr": "0x00798340", "name": "GameOptionsScreenWOL_Helper", "decompiled": "BOOL GameOptionsScreenWOL_Helper()\n{\n  HANDLE *v0; // esi\n  BOOL result; // eax\n\n  v0 = &Handles;\n  do\n    result = ResetEvent(*v0++);\n  while ( (int)v0 < (int)g_WOL_RequestObject );\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

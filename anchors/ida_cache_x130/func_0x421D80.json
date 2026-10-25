@@ -1,0 +1,1 @@
+{"addr": "0x00421D80", "name": "sub_421D80", "decompiled": "int __usercall sub_421D80@<eax>(double a1@<st0>)\n{\n  int result; // eax\n\n  Math::Sin(dbl_89A138 - dbl_89A168);\n  LOWORD(result) = Math::RoundToInt(a1 * dbl_89A158 * 0.5);\n  Map_CellHeight = result;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

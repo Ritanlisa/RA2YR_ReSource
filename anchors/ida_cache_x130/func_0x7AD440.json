@@ -1,0 +1,1 @@
+{"addr": "0x007AD440", "name": "WonlineStringDialogControl_28::ddtor", "decompiled": "int __thiscall WonlineStringDialogControl_28::ddtor(_CComObject_VCDownloadEventSink_ATL *this)\n{\n  HWND Current; // eax\n\n  Current = (HWND)Dialog::GetCurrent();\n  SendMessageA(Current, 0x5F4u, 0, 0);\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

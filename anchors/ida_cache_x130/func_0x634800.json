@@ -1,0 +1,1 @@
+{"addr": "0x00634800", "name": "sub_634800", "decompiled": "char *__thiscall sub_634800(ObjectClass *this)\n{\n  return (char *)&this->attachedBomb;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

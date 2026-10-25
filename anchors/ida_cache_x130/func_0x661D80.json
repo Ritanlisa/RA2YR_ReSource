@@ -1,0 +1,1 @@
+{"addr": "0x00661D80", "name": "Animation::UpdateBobOffset", "decompiled": "int __usercall Animation::UpdateBobOffset@<eax>(double a1@<st0>)\n{\n  int result; // eax\n\n  Math::Sin(dbl_B04E00 - dbl_B04E28);\n  LOWORD(result) = Math::RoundToInt(a1 * dbl_B04E20 * 0.5);\n  dword_B04E78 = result;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

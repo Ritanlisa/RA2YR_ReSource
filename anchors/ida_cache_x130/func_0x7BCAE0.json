@@ -1,0 +1,1 @@
+{"addr": "0x007BCAE0", "name": "Stream::GetField", "decompiled": "int __thiscall Stream::GetField(Stream *this)\n{\n  int (__thiscall ***u32_14)(_DWORD, int); // ecx\n  int result; // eax\n\n  u32_14 = (int (__thiscall ***)(_DWORD, int))this->u32_14;\n  if ( u32_14 )\n    return (**u32_14)(u32_14, 1);\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

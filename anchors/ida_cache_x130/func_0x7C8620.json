@@ -1,0 +1,1 @@
+{"addr": "0x007C8620", "name": "KillTimer", "decompiled": "// attributes: thunk\nBOOL __stdcall KillTimer(HWND hWnd, UINT_PTR uIDEvent)\n{\n  return __imp_KillTimer(hWnd, uIDEvent);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

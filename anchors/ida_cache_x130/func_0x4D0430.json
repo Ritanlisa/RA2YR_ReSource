@@ -1,0 +1,1 @@
+{"addr": "0x004D0430", "name": "Release3COM", "decompiled": "int __thiscall Release3COM(ObjectClass *this)\n{\n  int result; // eax\n\n  result = this->vfptr;\n  if ( this->vfptr )\n    return (*(int (__stdcall **)(int))(*(_DWORD *)result + 8))(result);\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

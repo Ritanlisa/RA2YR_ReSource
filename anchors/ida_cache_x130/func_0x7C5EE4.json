@@ -1,0 +1,1 @@
+{"addr": "0x007C5EE4", "name": "CRT_FPU_InitControlWord", "decompiled": "int CRT_FPU_InitControlWord()\n{\n  unsigned __int16 v1; // [esp+Ah] [ebp-2h]\n\n  dword_822D80 = v1;\n  return v1;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

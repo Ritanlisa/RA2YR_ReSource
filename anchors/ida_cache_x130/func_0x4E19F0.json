@@ -1,0 +1,1 @@
+{"addr": "0x004E19F0", "name": "COMObject::IsPrimaryInstance", "decompiled": "BOOL __thiscall COMObject::IsPrimaryInstance(GadgetClass *this)\n{\n  return this == (GadgetClass *)dword_8B3E90;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x00516370", "name": "JumpjetLocomotionClass::UpdateFacingDirection_0", "decompiled": "char __stdcall JumpjetLocomotionClass::UpdateFacingDirection_0(HoverLocomotionClass *this, int a2)\n{\n  return FacingClass::Update((char *)(this->Owner + 904), &a2);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x007C847C", "name": "GetCurrentProcess", "decompiled": "// attributes: thunk\nHANDLE __stdcall GetCurrentProcess()\n{\n  return __imp_GetCurrentProcess();\n}\n", "changed": true, "error": null, "timestamp": "x130"}

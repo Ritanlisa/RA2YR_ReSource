@@ -1,0 +1,1 @@
+{"addr": "0x005176B0", "name": "Flag::IsNot2", "decompiled": "int __thiscall Flag::IsNot2(Flag *this)\n{\n  int result; // eax\n\n  result = *(_DWORD *)this->__pad_0;\n  LOBYTE(result) = (~(unsigned __int8)*(_DWORD *)this->__pad_0 & 2) != 0;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

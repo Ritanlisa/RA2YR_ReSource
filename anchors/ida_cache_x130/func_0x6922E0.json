@@ -1,0 +1,1 @@
+{"addr": "0x006922E0", "name": "ScrollClass::Scroll", "decompiled": "int __thiscall ScrollClass::Scroll(ScrollClass *this, int *a2, _DWORD *a3)\n{\n  TacticalClass::ProcessView((TacticalClass *)this);\n  return BlowStraw_29::Seek((TabClass *)this, a2, a3);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

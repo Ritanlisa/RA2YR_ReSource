@@ -1,0 +1,1 @@
+{"addr": "0x004784C0", "name": "FilePipe_38::Write", "decompiled": "unsigned int __thiscall FilePipe_38::Write(_VectorClass_VRGBClass *this, int a2)\n{\n  if ( LOBYTE(this->m_C) )\n    return (a2 - *(_DWORD *)&this->m_1[3]) / 3u;\n  else\n    return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

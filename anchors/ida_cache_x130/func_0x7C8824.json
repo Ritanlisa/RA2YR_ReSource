@@ -1,0 +1,1 @@
+{"addr": "0x007C8824", "name": "CreateFontIndirectA", "decompiled": "// attributes: thunk\nHFONT __stdcall CreateFontIndirectA(const LOGFONTA *lplf)\n{\n  return __imp_CreateFontIndirectA(lplf);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

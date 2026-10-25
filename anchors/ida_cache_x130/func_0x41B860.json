@@ -1,0 +1,1 @@
+{"addr": "0x0041B860", "name": "TechnoClass::checkAmmo", "decompiled": "int __stdcall TechnoClass::checkAmmo(int a1)\n{\n  return *(unsigned __int8 *)(a1 + 18);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

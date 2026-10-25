@@ -1,0 +1,1 @@
+{"addr": "0x007C877C", "name": "WindowFromPoint", "decompiled": "// attributes: thunk\nHWND __stdcall WindowFromPoint(POINT Point)\n{\n  return __imp_WindowFromPoint(Point);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

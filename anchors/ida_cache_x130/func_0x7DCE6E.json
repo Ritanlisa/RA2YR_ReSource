@@ -1,0 +1,1 @@
+{"addr": "0x007DCE6E", "name": "GetTimeZoneInformation", "decompiled": "// attributes: thunk\nDWORD __stdcall GetTimeZoneInformation(LPTIME_ZONE_INFORMATION lpTimeZoneInformation)\n{\n  return __imp_GetTimeZoneInformation(lpTimeZoneInformation);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x007C87B8", "name": "SetCursor", "decompiled": "// attributes: thunk\nHCURSOR __stdcall SetCursor(HCURSOR hCursor)\n{\n  return __imp_SetCursor(hCursor);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

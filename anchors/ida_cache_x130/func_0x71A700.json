@@ -1,0 +1,1 @@
+{"addr": "0x0071A700", "name": "TemporalClass::SaveTemporal", "decompiled": "int __stdcall TemporalClass::SaveTemporal(TemporalClass *this, int *a2, int a3)\n{\n  return AbstractClass::SaveLoad_Prefix(&this->vfptr, a2, a3);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

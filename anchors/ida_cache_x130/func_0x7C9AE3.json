@@ -1,0 +1,1 @@
+{"addr": "0x007C9AE3", "name": "___isascii", "decompiled": "int __cdecl __isascii(int C)\n{\n  return (unsigned int)C < 0x80;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

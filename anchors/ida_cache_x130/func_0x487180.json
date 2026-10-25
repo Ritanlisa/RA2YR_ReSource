@@ -1,0 +1,1 @@
+{"addr": "0x00487180", "name": "BuildingClass::evaulateDefense", "decompiled": "int __thiscall BuildingClass::evaulateDefense(BuildingClass *this, int a2)\n{\n  --*((_WORD *)&this->currentMission + a2);\n  return a2;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

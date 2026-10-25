@@ -1,0 +1,1 @@
+{"addr": "0x0050E360", "name": "AbstractClass::computeMovementCost", "decompiled": "int AbstractClass::computeMovementCost(AbstractClass *this)\n{\n  return 13;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

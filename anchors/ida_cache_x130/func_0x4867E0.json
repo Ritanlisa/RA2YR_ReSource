@@ -1,0 +1,1 @@
+{"addr": "0x004867E0", "name": "CellClass::GetCellType", "decompiled": "int __thiscall CellClass::GetCellType(CellClass *this)\n{\n  int result; // eax\n\n  result = *(_DWORD *)&this->__pad_28[16];\n  LOBYTE(result) = result < g_CellPassabilityLUT || result >= g_CellPassabilityLUT + 14;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

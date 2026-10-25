@@ -1,0 +1,1 @@
+{"addr": "0x004A3240", "name": "CStreamClass::IStreamRelease", "decompiled": "LONG __stdcall CStreamClass::IStreamRelease(CStreamClass *this)\n{\n  return CStreamClass::Release((CStreamClass *)((char *)this - 4));\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x007DCEC8", "name": "TlsAlloc", "decompiled": "// attributes: thunk\nDWORD __stdcall TlsAlloc()\n{\n  return __imp_TlsAlloc();\n}\n", "changed": true, "error": null, "timestamp": "x130"}

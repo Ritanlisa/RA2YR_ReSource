@@ -1,0 +1,1 @@
+{"addr": "0x007C87AC", "name": "FindWindowA", "decompiled": "// attributes: thunk\nHWND __stdcall FindWindowA(LPCSTR lpClassName, LPCSTR lpWindowName)\n{\n  return __imp_FindWindowA(lpClassName, lpWindowName);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

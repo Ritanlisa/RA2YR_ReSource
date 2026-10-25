@@ -1,0 +1,1 @@
+{"addr": "0x007BE660", "name": "Audio_Process_7BE660", "decompiled": "int __thiscall Audio_Process_7BE660(TechnoClass *this)\n{\n  *((_DWORD *)this + 436) = -1;\n  return -1;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

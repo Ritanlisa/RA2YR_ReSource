@@ -1,0 +1,1 @@
+{"addr": "0x007C8812", "name": "DeleteObject", "decompiled": "// attributes: thunk\nBOOL __stdcall DeleteObject(HGDIOBJ ho)\n{\n  return __imp_DeleteObject(ho);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

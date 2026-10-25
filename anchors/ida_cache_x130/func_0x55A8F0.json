@@ -1,0 +1,1 @@
+{"addr": "0x0055A8F0", "name": "StreamClass::SetDirty", "decompiled": "int __stdcall StreamClass::SetDirty(IUnknown *this)\n{\n  LOBYTE(this->field_C) = 1;\n  return (*(int (__stdcall **)(IUnknown *))(this->field_0 + 96))(this);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

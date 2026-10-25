@@ -1,0 +1,1 @@
+{"addr": "0x0053F5B0", "name": "Network_Helper", "decompiled": "int Network_Helper(ObjectClass *this)\n{\n  if ( dword_887628 )\n    (*(void (__thiscall **)(WinsockInterface *))(*(_DWORD *)dword_887628->__pad_0 + 32))(dword_887628);\n  dword_AA05AC = 0;\n  return 1;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

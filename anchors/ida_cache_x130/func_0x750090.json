@@ -1,0 +1,1 @@
+{"addr": "0x00750090", "name": "Power::ChangedHouse", "decompiled": "int __thiscall Power::ChangedHouse(Power *this, char a2)\n{\n  int result; // eax\n\n  LOBYTE(result) = a2;\n  if ( a2 )\n    this->Power_field_0x0 = 1065353216;\n  else\n    this->Power_field_0x0 = 0;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

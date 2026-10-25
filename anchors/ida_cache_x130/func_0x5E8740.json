@@ -1,0 +1,1 @@
+{"addr": "0x005E8740", "name": "Render_Setup", "decompiled": "BOOL __fastcall Render_Setup(int a1)\n{\n  return wcscmp(*(const wchar_t **)(*(_DWORD *)&stru_A8D804.__pad_3D[567] + 4 * a1), (const wchar_t *)&stru_A8D610) == 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

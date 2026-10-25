@@ -1,0 +1,1 @@
+{"addr": "0x0068BF50", "name": "ScenarioClass::Set_Waypoint", "decompiled": "int __thiscall ScenarioClass::Set_Waypoint(char *this, int a2, int a3)\n{\n  *(_DWORD *)(this + 4 * a2 + 1586) = a3;\n  return a3;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

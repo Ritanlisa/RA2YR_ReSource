@@ -1,0 +1,1 @@
+{"addr": "0x006E6B70", "name": "sub_6E6B70", "decompiled": "_BYTE *__thiscall sub_6E6B70(ObjectClass *this, _DWORD *a2)\n{\n  LOBYTE(this->vfptr1) = 11;\n  this->vfptr = *a2 / 256 + 1000 * (a2[1] / 256);\n  return this;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

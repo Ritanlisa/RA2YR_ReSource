@@ -1,0 +1,1 @@
+{"addr": "0x00763980", "name": "Array::GetElement", "decompiled": "int __thiscall Array::GetElement(Array *this, int a2)\n{\n  if ( a2 < 0 || a2 >= this->Array_field_0x38 )\n    return 0;\n  else\n    return this->Array_field_0x2C + 12 * a2;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

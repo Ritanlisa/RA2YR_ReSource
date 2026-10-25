@@ -1,0 +1,1 @@
+{"addr": "0x007CB80B", "name": "_fgetc", "decompiled": "int __cdecl fgetc(FILE *Stream)\n{\n  int v2; // edi\n\n  _lock_file(Stream);\n  if ( --Stream->_cnt < 0 )\n    v2 = _filbuf(Stream);\n  else\n    v2 = *(unsigned __int8 *)Stream->_ptr++;\n  _unlock_file(Stream);\n  return v2;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

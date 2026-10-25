@@ -1,0 +1,1 @@
+{"addr": "0x0049B420", "name": "unknown_libname_12", "decompiled": "// Microsoft VisualC 2-14/net runtime\nvoid __cdecl unknown_libname_12()\n{\n  INIClass::ClearContents((INIClass *)&g_DDrawSurfaceManager);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

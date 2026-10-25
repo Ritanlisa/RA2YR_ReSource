@@ -1,0 +1,1 @@
+{"addr": "0x004B6670", "name": "JumpjetLocomotionClass::CheckState3", "decompiled": "int __stdcall JumpjetLocomotionClass::CheckState3(LocomotionClass *this)\n{\n  return -1;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

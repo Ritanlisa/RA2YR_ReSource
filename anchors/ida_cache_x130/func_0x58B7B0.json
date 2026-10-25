@@ -1,0 +1,1 @@
+{"addr": "0x0058B7B0", "name": "Camera::StubReturnFalse", "decompiled": "void Camera::StubReturnFalse()\n{\n  ;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

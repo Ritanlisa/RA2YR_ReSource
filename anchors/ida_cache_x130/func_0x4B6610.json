@@ -1,0 +1,1 @@
+{"addr": "0x004B6610", "name": "JumpjetLocomotionClass::Thunk_VtableDispatch4", "decompiled": "int __stdcall JumpjetLocomotionClass::Thunk_VtableDispatch4(LocomotionClass *this)\n{\n  return (*(int (__stdcall **)(LocomotionClass *))(*(_DWORD *)&this->field_0 + 16))(this);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

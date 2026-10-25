@@ -1,0 +1,1 @@
+{"addr": "0x0070F010", "name": "TechnoClass::COMStub_Return0_298", "decompiled": "int __thiscall TechnoClass::COMStub_Return0_298(TechnoClass *this)\n{\n  int result; // eax\n\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

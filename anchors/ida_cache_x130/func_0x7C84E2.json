@@ -1,0 +1,1 @@
+{"addr": "0x007C84E2", "name": "CompareFileTime", "decompiled": "// attributes: thunk\nLONG __stdcall CompareFileTime(const FILETIME *lpFileTime1, const FILETIME *lpFileTime2)\n{\n  return __imp_CompareFileTime(lpFileTime1, lpFileTime2);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

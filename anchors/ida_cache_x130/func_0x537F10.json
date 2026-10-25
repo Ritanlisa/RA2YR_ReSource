@@ -1,0 +1,1 @@
+{"addr": "0x00537F10", "name": "DeleteCommandClass::Constructor", "decompiled": "_DWORD *__thiscall DeleteCommandClass::Constructor(DeleteCommandClass *this)\n{\n  *(_DWORD *)this->__tail_0 = &DeleteCommandClass::`vftable';\n  return this->__tail_0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

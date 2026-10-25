@@ -1,0 +1,1 @@
+{"addr": "0x007C8758", "name": "RegisterClassA", "decompiled": "// attributes: thunk\nATOM __stdcall RegisterClassA(const WNDCLASSA *lpWndClass)\n{\n  return __imp_RegisterClassA(lpWndClass);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

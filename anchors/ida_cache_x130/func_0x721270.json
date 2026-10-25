@@ -1,0 +1,1 @@
+{"addr": "0x00721270", "name": "ScriptAction::GetArgumentString", "decompiled": "char *__thiscall ScriptAction::GetArgumentString(ScriptAction *this, int a2)\n{\n  if ( a2 < 0 || a2 >= this->ScriptAction_field_0x24 )\n    return g_Str_none;\n  else\n    return *(char **)(this->ScriptAction_field_0x18 + 4 * a2);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

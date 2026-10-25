@@ -1,0 +1,1 @@
+{"addr": "0x007DCF16", "name": "SetConsoleCtrlHandler", "decompiled": "// attributes: thunk\nBOOL __stdcall SetConsoleCtrlHandler(PHANDLER_ROUTINE HandlerRoutine, BOOL Add)\n{\n  return __imp_SetConsoleCtrlHandler(HandlerRoutine, Add);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x004B66B0", "name": "DropPodLocomotionClass::Release", "decompiled": "LONG __stdcall DropPodLocomotionClass::Release(DropPodLocomotionClass *this)\n{\n  return COM::ReleaseRef((LocomotionClass *)this);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

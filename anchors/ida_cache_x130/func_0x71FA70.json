@@ -1,0 +1,1 @@
+{"addr": "0x0071FA70", "name": "TEventClass::Stub", "decompiled": "int __thiscall TEventClass::Stub(TEventClass *this)\n{\n  return this->eventType;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

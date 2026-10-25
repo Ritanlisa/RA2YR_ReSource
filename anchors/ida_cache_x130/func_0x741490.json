@@ -1,0 +1,1 @@
+{"addr": "0x00741490", "name": "TechnoClass::checkTargetValidity", "decompiled": "int __thiscall TechnoClass::checkTargetValidity(TechnoClass *this)\n{\n  return *((_DWORD *)this + 433);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

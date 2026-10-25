@@ -1,0 +1,1 @@
+{"addr": "0x005CF810", "name": "CampaignClass::Check", "decompiled": "int __thiscall CampaignClass::Check(CampaignClass *this, unsigned __int16 a2)\n{\n  if ( this->uniqueId > a2 )\n    return *(_DWORD *)(this->vfptr1 + 4 * a2);\n  else\n    return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

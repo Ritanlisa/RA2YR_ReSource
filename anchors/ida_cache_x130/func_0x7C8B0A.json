@@ -1,0 +1,1 @@
+{"addr": "0x007C8B0A", "name": "?before_type_info__QBEHABV1__Z", "decompiled": "BOOL __thiscall _before_type_info__QBEHABV1__Z(type_info *this, const struct type_info *a2)\n{\n  return strcmp((const char *)&a2[2].vfptr + 1, (const char *)this + 9) > 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

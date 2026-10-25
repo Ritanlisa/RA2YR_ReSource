@@ -1,0 +1,1 @@
+{"addr": "0x00407420", "name": "InsertAfterDListNode", "decompiled": "int __fastcall InsertAfterDListNode(int a1, _DWORD *a2)\n{\n  int result; // eax\n\n  result = *(_DWORD *)(a1 + 4);\n  *a2 = a1;\n  a2[1] = result;\n  *(_DWORD *)(a1 + 4) = a2;\n  *(_DWORD *)a2[1] = a2;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

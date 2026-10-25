@@ -1,0 +1,1 @@
+{"addr": "0x004142F0", "name": "AircraftClass::AddRef", "decompiled": "int __thiscall AircraftClass::AddRef(AircraftClass *this, int a2)\n{\n  return AbstractClass::COMStub_AddRef((AbstractClass *)this);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

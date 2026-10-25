@@ -1,0 +1,1 @@
+{"addr": "0x0077CF40", "name": "UI_Setup_77CF40", "decompiled": "BOOL UI_Setup_77CF40()\n{\n  return dword_A8B244 == 3 || dword_A8B244 == 1 || dword_A8B244 == 2;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

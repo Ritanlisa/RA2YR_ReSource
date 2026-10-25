@@ -1,0 +1,1 @@
+{"addr": "0x005CB260", "name": "MPBattleClass::canAllyWith", "decompiled": "int __usercall MPBattleClass::canAllyWith@<eax>(double a1@<st0>)\n{\n  int result; // eax\n\n  Math::Sin(dbl_ABFB08 - dbl_ABFB30);\n  LOWORD(result) = Math::RoundToInt(a1 * dbl_ABFB28 * 0.5);\n  dword_ABFB80 = result;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

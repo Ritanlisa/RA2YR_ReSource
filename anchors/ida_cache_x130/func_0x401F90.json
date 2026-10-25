@@ -1,0 +1,1 @@
+{"addr": "0x00401F90", "name": "RefCount::Decrement", "decompiled": "int __thiscall RefCount::Decrement(RefCount *this)\n{\n  int result; // eax\n\n  result = this->u32_C - 1;\n  this->u32_C = result;\n  if ( result < 0 )\n    this->u32_C = 0;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

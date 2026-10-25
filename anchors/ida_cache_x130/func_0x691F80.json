@@ -1,0 +1,1 @@
+{"addr": "0x00691F80", "name": "ScriptTypeClass::GetObjectSize", "decompiled": "int ScriptTypeClass::GetObjectSize(ScriptTypeClass *this)\n{\n  return 564;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

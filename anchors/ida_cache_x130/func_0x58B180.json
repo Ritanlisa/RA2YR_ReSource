@@ -1,0 +1,1 @@
+{"addr": "0x0058B180", "name": "sub_58B180", "decompiled": "void sub_58B180()\n{\n  dbl_ABDEE8 = 1.0 / dbl_ABDF00;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

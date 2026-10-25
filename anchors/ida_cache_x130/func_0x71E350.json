@@ -1,0 +1,1 @@
+{"addr": "0x0071E350", "name": "TerrainTypeClass::GetAuxField", "decompiled": "int __thiscall TerrainTypeClass::GetAuxField(TerrainTypeClass *this)\n{\n  return this->ArrayIndex;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x0072CC80", "name": "UI_Helper_72CC80", "decompiled": "int UI_Helper_72CC80()\n{\n  return dword_B0FC78;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

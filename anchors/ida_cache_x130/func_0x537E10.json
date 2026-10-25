@@ -1,0 +1,1 @@
+{"addr": "0x00537E10", "name": "PageUserCommandClass::ddtor", "decompiled": "wchar_t *PageUserCommandClass::ddtor(PageUserCommandClass *this)\n{\n  return GetStringCSF(g_Str_TXT_INTERFACE, 0, g_Str_File_Init_CPP, 7565);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x00411560", "name": "XSurface::Lock", "decompiled": "int __thiscall XSurface::Lock(XSurface *this, int a2, int a3)\n{\n  ++*(_DWORD *)this->field_0.field_C;\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

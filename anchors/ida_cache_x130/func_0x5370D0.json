@@ -1,0 +1,1 @@
+{"addr": "0x005370D0", "name": "CreateTeamCommand::performAction_125", "decompiled": "wchar_t *__thiscall CreateTeamCommand::performAction_125(CenterREventCommandClass *this)\n{\n  return GetStringCSF(aTxtRadarEvent, 0, g_Str_File_Init_CPP, 7195);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

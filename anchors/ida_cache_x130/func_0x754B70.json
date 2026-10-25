@@ -1,0 +1,1 @@
+{"addr": "0x00754B70", "name": "sub_754B70", "decompiled": "_DWORD *sub_754B70()\n{\n  Int4 *v0; // esi\n  int v1; // edi\n  _DWORD *result; // eax\n\n  v0 = &stru_B43188;\n  v1 = 21;\n  do\n  {\n    result = Int4::Set(v0++, 0, 0, 0, 1065353216);\n    --v1;\n  }\n  while ( v1 );\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

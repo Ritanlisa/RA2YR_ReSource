@@ -1,0 +1,1 @@
+{"addr": "0x00470C30", "name": "sub_470C30", "decompiled": "void __thiscall sub_470C30(CampaignEndScoreClass *this)\n{\n  this->m_0 = (int)&CampaignEndScoreClass::`vftable';\n}\n", "changed": true, "error": null, "timestamp": "x130"}

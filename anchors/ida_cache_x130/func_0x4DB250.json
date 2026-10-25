@@ -1,0 +1,1 @@
+{"addr": "0x004DB250", "name": "AbstractClass::COMStub_Return0_69", "decompiled": "void __stdcall AbstractClass::COMStub_Return0_69(FootClass *this, int a2)\n{\n  ;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

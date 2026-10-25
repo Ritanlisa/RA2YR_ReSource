@@ -1,0 +1,1 @@
+{"addr": "0x00535BE0", "name": "Map::IsCellFlag", "decompiled": "unsigned int __stdcall Map::IsCellFlag(CommandClass *this)\n{\n  return (~(unsigned int)this >> 11) & 1;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

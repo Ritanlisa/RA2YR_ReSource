@@ -1,0 +1,1 @@
+{"addr": "0x007AD330", "name": "Object::DtorWithDelete", "decompiled": "void **__thiscall Object::DtorWithDelete(Object *this, char a2)\n{\n  DeleteAndZero((ObjectClass *)this);\n  if ( (a2 & 1) != 0 )\n    __3_YAXPAX_Z(this);\n  return (void **)this;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x0048BB00", "name": "sub_48BB00", "decompiled": "void *__thiscall sub_48BB00(ObjectClass *this, char a2)\n{\n  sub_48B1F0((CommBufferClass *)this);\n  if ( (a2 & 1) != 0 )\n    __3_YAXPAX_Z(this);\n  return this;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

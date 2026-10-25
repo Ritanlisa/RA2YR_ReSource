@@ -1,0 +1,1 @@
+{"addr": "0x00711E90", "name": "TechnoTypeClass::CanAttackMove_IgnoreWeapon", "decompiled": "bool __thiscall TechnoTypeClass::CanAttackMove_IgnoreWeapon(TechnoTypeClass *this)\n{\n  return *(_DWORD *)this->Weapon && !this->PreventAttackMove[0];\n}\n", "changed": true, "error": null, "timestamp": "x130"}

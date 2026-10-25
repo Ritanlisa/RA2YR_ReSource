@@ -1,0 +1,1 @@
+{"addr": "0x007D735A", "name": "_GetLcidFromDefault", "decompiled": "LCID GetLcidFromDefault()\n{\n  LCID result; // eax\n\n  LOWORD(dword_B7855C) = dword_B7855C | 0x104;\n  result = GetUserDefaultLCID();\n  dword_B78560 = result;\n  Locale = result;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

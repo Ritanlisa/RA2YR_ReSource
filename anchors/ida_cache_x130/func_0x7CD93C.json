@@ -1,0 +1,1 @@
+{"addr": "0x007CD93C", "name": "_fast_error_exit", "decompiled": "void __cdecl __noreturn fast_error_exit(DWORD NumberOfBytesWritten)\n{\n  if ( dword_B78230 == 1 )\n    _FF_MSGBANNER();\n  _NMSG_WRITE(NumberOfBytesWritten);\n  ExitProcess(0xFFu);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

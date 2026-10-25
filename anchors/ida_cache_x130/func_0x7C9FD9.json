@@ -1,0 +1,1 @@
+{"addr": "0x007C9FD9", "name": "_strtoul", "decompiled": "unsigned int __cdecl strtoul(const char *String, char **EndPtr, int Radix)\n{\n  return strtoxl((ObjectClass *)String, (unsigned __int8 **)EndPtr, Radix, 1);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

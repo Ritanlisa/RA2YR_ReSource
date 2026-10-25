@@ -1,0 +1,1 @@
+{"addr": "0x00747560", "name": "UnitTypeClass::ConstructUnit", "decompiled": "int __thiscall UnitTypeClass::ConstructUnit(UnitTypeClass *this, LPVOID ppv)\n{\n  int *v3; // eax\n\n  v3 = __2_YAPAXI_Z(0x8E8u);\n  if ( v3 )\n    return UnitClass::Construct(v3, (int)this, ppv);\n  else\n    return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x005F43B0", "name": "AircraftClass::StubReturnFalse3", "decompiled": "int __thiscall AircraftClass::StubReturnFalse3(IUnknown *this)\n{\n  int result; // eax\n\n  LOBYTE(result) = 0;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

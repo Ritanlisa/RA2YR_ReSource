@@ -1,0 +1,1 @@
+{"addr": "0x00578AC0", "name": "MapClass::IncrementRedrawCounter", "decompiled": "void __thiscall MapClass::IncrementRedrawCounter(MapClass *this)\n{\n  ++this->__pad_1140[24];\n}\n", "changed": true, "error": null, "timestamp": "x130"}

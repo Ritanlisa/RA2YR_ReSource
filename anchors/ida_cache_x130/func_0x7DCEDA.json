@@ -1,0 +1,1 @@
+{"addr": "0x007DCEDA", "name": "TlsGetValue", "decompiled": "// attributes: thunk\nLPVOID __stdcall TlsGetValue(DWORD dwTlsIndex)\n{\n  return __imp_TlsGetValue(dwTlsIndex);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

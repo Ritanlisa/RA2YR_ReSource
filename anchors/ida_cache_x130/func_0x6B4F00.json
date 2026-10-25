@@ -1,0 +1,1 @@
+{"addr": "0x006B4F00", "name": "UnitClass::SaveState", "decompiled": "int __stdcall UnitClass::SaveState(SmudgeClass *this, int *a2, int a3)\n{\n  return AbstractClass::SaveLoad_Prefix(&this->vfptr, a2, a3);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

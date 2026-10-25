@@ -1,0 +1,1 @@
+{"addr": "0x0077D940", "name": "Network::IsMultiplayerActive", "decompiled": "bool Network::IsMultiplayerActive()\n{\n  if ( *(_DWORD *)&dword_A8B238.field_0 != 4 )\n    return 0;\n  return dword_B76B24 || (dword_B76B30 & 0x100) != 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

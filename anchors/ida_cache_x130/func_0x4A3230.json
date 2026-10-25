@@ -1,0 +1,1 @@
+{"addr": "0x004A3230", "name": "CStreamClass::IStreamAddRef", "decompiled": "LONG __stdcall CStreamClass::IStreamAddRef(CStreamClass *this)\n{\n  return CStreamClass::AddRef((CStreamClass *)((char *)this - 4));\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x00401080", "name": "Audio::InitChannels", "decompiled": "int __thiscall Audio::InitChannels(AudioMixer *this)\n{\n  AudioMixer::PlaySample(this);\n  AudioMixer::PlaySample(this + 1);\n  return AudioMixer::PlaySample(this + 2);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

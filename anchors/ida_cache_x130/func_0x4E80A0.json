@@ -1,0 +1,1 @@
+{"addr": "0x004E80A0", "name": "sub_4E80A0", "decompiled": "int sub_4E80A0()\n{\n  sub_5408F0(&stru_A8E960.nextScenario[96], 455, 558, 160, 32, 34835, 43524);\n  return atexit(unknown_libname_19);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

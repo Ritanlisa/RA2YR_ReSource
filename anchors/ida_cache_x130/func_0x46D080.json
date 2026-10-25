@@ -1,0 +1,1 @@
+{"addr": "0x0046D080", "name": "CampaignClass::StubReturn10", "decompiled": "int CampaignClass::StubReturn10(CampaignClass *this)\n{\n  return 10;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

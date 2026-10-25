@@ -1,0 +1,1 @@
+{"addr": "0x00775BA0", "name": "Dialog::GetField", "decompiled": "int __thiscall Dialog::GetField(Dialog *this)\n{\n  EnumChildWindows((HWND)this, DialogClass::Reposition, 1);\n  return DialogClass::Reposition((HWND)this, 0);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

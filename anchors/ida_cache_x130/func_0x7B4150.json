@@ -1,0 +1,1 @@
+{"addr": "0x007B4150", "name": "UDPInterfaceClass::Connect", "decompiled": "int __thiscall UDPInterfaceClass::Connect(UDPInterfaceClass *this, int a2)\n{\n  return *(_DWORD *)(*((_DWORD *)this + 64853) + 4 * a2);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

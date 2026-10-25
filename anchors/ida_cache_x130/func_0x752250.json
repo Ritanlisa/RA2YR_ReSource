@@ -1,0 +1,1 @@
+{"addr": "0x00752250", "name": "sub_752250", "decompiled": "void __cdecl sub_752250()\n{\n  dword_B1D4A0 = (int)&VectorClass<VoxClass *>::`vftable';\n  if ( g_InfantryRenderPool && byte_B1D4AD )\n  {\n    __3_YAXPAX_Z(g_InfantryRenderPool);\n    g_InfantryRenderPool = 0;\n  }\n  byte_B1D4AD = 0;\n  dword_B1D4A8 = 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

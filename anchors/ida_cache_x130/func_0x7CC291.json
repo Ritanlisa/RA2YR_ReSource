@@ -1,0 +1,1 @@
+{"addr": "0x007CC291", "name": "__seh_longjmp_unwind_4", "decompiled": "int __stdcall _seh_longjmp_unwind_4(ObjectClass *this)\n{\n  return _local_unwind2(this->vfptr, this->nextArrayIndex, this->referenceCount);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

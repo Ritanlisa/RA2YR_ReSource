@@ -1,0 +1,1 @@
+{"addr": "0x006D1BF0", "name": "sub_6D1BF0", "decompiled": "void sub_6D1BF0()\n{\n  Math::SinCos(dbl_B0CD88);\n  __asm { fmul    ds:dbl_7E1728 }\n  __asm\n  {\n    fdivr   dbl_B0CD78\n    fstp    LightningStorm_CloudHeightFactor\n  }\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x00659550", "name": "TechnoClass::drawPassengerPips", "decompiled": "char __thiscall TechnoClass::drawPassengerPips(TechnoClass *this, char a2)\n{\n  LOBYTE(this->customSound_controller[2]) = a2;\n  return a2;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

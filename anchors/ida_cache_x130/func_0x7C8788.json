@@ -1,0 +1,1 @@
+{"addr": "0x007C8788", "name": "GetFocus", "decompiled": "// attributes: thunk\nHWND __stdcall GetFocus()\n{\n  return __imp_GetFocus();\n}\n", "changed": true, "error": null, "timestamp": "x130"}

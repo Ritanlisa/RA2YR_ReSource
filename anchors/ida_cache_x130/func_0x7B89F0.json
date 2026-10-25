@@ -1,0 +1,1 @@
+{"addr": "0x007B89F0", "name": "WWMouseClass::COMStub", "decompiled": "int __thiscall WWMouseClass::COMStub(WWMouseClass *this)\n{\n  return this->WWMouseClass_field_0xC;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

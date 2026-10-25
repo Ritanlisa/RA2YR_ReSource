@@ -1,0 +1,1 @@
+{"addr": "0x00537F20", "name": "DeleteCommandClass::AddRef", "decompiled": "char *DeleteCommandClass::AddRef(DeleteCommandClass *this)\n{\n  return aDelete;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x007C8398", "name": "LeaveCriticalSection", "decompiled": "// attributes: thunk\nvoid __stdcall LeaveCriticalSection(LPCRITICAL_SECTION lpCriticalSection)\n{\n  __imp_LeaveCriticalSection(lpCriticalSection);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

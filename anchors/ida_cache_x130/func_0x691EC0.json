@@ -1,0 +1,1 @@
+{"addr": "0x00691EC0", "name": "ScriptClass::StubReturn26", "decompiled": "int ScriptClass::StubReturn26(ScriptClass *this)\n{\n  return 26;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

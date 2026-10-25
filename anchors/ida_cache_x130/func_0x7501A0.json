@@ -1,0 +1,1 @@
+{"addr": "0x007501A0", "name": "sub_7501A0", "decompiled": "void sub_7501A0()\n{\n  *(double *)&stru_B1D320.__pad_0[16] = 0.0174532925199433 * 60.0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

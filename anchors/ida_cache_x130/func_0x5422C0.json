@@ -1,0 +1,1 @@
+{"addr": "0x005422C0", "name": "?GetNumBorrowedCores_SchedulerProxy_details_Concurrency__QBEIXZ", "decompiled": "unsigned int __thiscall _GetNumBorrowedCores_SchedulerProxy_details_Concurrency__QBEIXZ(\n        Concurrency::details::SchedulerProxy *this)\n{\n  return *((_DWORD *)this + 42);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

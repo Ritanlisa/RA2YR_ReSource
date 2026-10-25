@@ -1,0 +1,1 @@
+{"addr": "0x007DCF70", "name": "GetStringTypeW", "decompiled": "// attributes: thunk\nBOOL __stdcall GetStringTypeW(DWORD dwInfoType, LPCWCH lpSrcStr, int cchSrc, LPWORD lpCharType)\n{\n  return __imp_GetStringTypeW(dwInfoType, lpSrcStr, cchSrc, lpCharType);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

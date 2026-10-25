@@ -1,0 +1,1 @@
+{"addr": "0x0041C200", "name": "AircraftClass::CheckMissionFail", "decompiled": "int __thiscall AircraftClass::CheckMissionFail(AircraftClass *this)\n{\n  return this->Type;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

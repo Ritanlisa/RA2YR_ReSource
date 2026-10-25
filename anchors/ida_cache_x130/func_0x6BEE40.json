@@ -1,0 +1,1 @@
+{"addr": "0x006BEE40", "name": "ClassFactory_CStream::Construct", "decompiled": "_DWORD *__thiscall ClassFactory_CStream::Construct(ClassFactory_CStream *this)\n{\n  this->HashTable_field_0x04 = 0;\n  *(_DWORD *)this->__tail_0 = &TClassFactory<CStreamClass>::`vftable';\n  return this->__tail_0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

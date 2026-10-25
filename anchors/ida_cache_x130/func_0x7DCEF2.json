@@ -1,0 +1,1 @@
+{"addr": "0x007DCEF2", "name": "SetHandleCount", "decompiled": "// attributes: thunk\nUINT __stdcall SetHandleCount(UINT uNumber)\n{\n  return __imp_SetHandleCount(uNumber);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

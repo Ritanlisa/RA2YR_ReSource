@@ -1,0 +1,1 @@
+{"addr": "0x0072B2F0", "name": "LoadingScreen::GetBackgroundImage", "decompiled": "char *__thiscall LoadingScreen::GetBackgroundImage(LoadingScreen *this, int a2)\n{\n  char *result; // eax\n\n  result = off_844C34[0];\n  if ( this != (LoadingScreen *)640 )\n    return off_844C38[0];\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

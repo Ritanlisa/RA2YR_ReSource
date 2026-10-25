@@ -1,0 +1,1 @@
+{"addr": "0x006A4710", "name": "SideClass::GetCountry", "decompiled": "int __thiscall SideClass::GetCountry(SideClass *this, int *a2)\n{\n  AbstractTypeClass::ProcessPower((AbstractTypeClass *)this, a2);\n  return Power::TimerProcess((Checksummer *)a2, this->field_A8);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

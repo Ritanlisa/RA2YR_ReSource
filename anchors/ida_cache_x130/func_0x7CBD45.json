@@ -1,0 +1,1 @@
+{"addr": "0x007CBD45", "name": "__i64tow", "decompiled": "wchar_t *__cdecl _i64tow(__int64 Value, wchar_t *Buffer, int Radix)\n{\n  CHAR MultiByteStr[80]; // [esp+0h] [ebp-50h] BYREF\n\n  _i64toa(Value, MultiByteStr, Radix);\n  MultiByteToWideChar(0, 1u, MultiByteStr, -1, Buffer, 80);\n  return Buffer;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

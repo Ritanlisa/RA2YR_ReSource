@@ -1,0 +1,1 @@
+{"addr": "0x00750340", "name": "sub_750340", "decompiled": "void __cdecl sub_750340()\n{\n  dword_B1D378 = (int)&VectorClass<VocClass *>::`vftable';\n  if ( g_VocAudioConfig && byte_B1D385 )\n  {\n    __3_YAXPAX_Z(g_VocAudioConfig);\n    g_VocAudioConfig = 0;\n  }\n  byte_B1D385 = 0;\n  dword_B1D380 = 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

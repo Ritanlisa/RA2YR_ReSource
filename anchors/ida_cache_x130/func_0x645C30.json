@@ -1,0 +1,1 @@
+{"addr": "0x00645C30", "name": "Int4::Set", "decompiled": "_DWORD *__thiscall Int4::Set(Int4 *this, int a2, int a3, int a4, int a5)\n{\n  *(_DWORD *)this->__pad_0 = a2;\n  this->Int4_field_0x04 = a3;\n  this->field_8 = a4;\n  this->field_C = a5;\n  return this->__pad_0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

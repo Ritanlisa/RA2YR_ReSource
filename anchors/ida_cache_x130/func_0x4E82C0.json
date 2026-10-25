@@ -1,0 +1,1 @@
+{"addr": "0x004E82C0", "name": "HouseClass::COMStub_5", "decompiled": "unsigned int __thiscall HouseClass::COMStub_5(int this, int a2)\n{\n  if ( *(_BYTE *)(this + 12) )\n    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2;\n  else\n    return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

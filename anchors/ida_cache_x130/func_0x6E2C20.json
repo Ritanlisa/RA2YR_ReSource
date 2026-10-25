@@ -1,0 +1,1 @@
+{"addr": "0x006E2C20", "name": "globalHelper_0E2C20", "decompiled": "char __stdcall globalHelper_0E2C20(int a1, int a2, int a3, int a4)\n{\n  LayerClass::ClearFactoryCellAssignments((LayerClass *)&dword_87F7E8);\n  MapClass::MarkForRedraw((GScreenClass *)&dword_87F7E8, 1);\n  return 1;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

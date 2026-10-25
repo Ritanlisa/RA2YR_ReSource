@@ -1,0 +1,1 @@
+{"addr": "0x004071A0", "name": "SetRateMixerSample", "decompiled": "int __fastcall SetRateMixerSample(_DWORD *a1, int a2, unsigned int a3, int a4)\n{\n  a1[4] = a3;\n  a1[3] = (a2 << 16) / a3;\n  a1[5] = a4;\n  return a4;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

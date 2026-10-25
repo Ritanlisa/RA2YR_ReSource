@@ -1,0 +1,1 @@
+{"addr": "0x006CC2A0", "name": "SuperWeapon::GetField10", "decompiled": "char __thiscall SuperWeapon::GetField10(SuperWeapon *this)\n{\n  return *(_BYTE *)(this->q070 + 230);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x007D2132", "name": "__hextodec", "decompiled": "int __cdecl _hextodec(int C)\n{\n  int v1; // esi\n  int v2; // eax\n\n  v1 = C;\n  if ( (int)cbMultiByte <= 1 )\n    v2 = *((_BYTE *)off_87C590 + 2 * C) & 4;\n  else\n    v2 = _isctype(C, 4);\n  if ( !v2 )\n    return (C & 0xFFFFFFDF) - 7;\n  return v1;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x007B6630", "name": "ValidateStringContains", "decompiled": "int __fastcall ValidateStringContains(const char **a1, const char *a2, char *Control)\n{\n  int result; // eax\n\n  if ( Control && *a1 )\n    return strcspn(*a1, Control) < strlen(a2);\n  LOBYTE(result) = 0;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

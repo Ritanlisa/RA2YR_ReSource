@@ -1,0 +1,1 @@
+{"addr": "0x007C8A7C", "name": "_BinkCopyToBuffer_28", "decompiled": "// attributes: thunk\nint __stdcall BinkCopyToBuffer_28(int a1, int a2, int a3, int a4, int a5, int a6, int a7)\n{\n  return BinkCopyToBuffer(a1, a2, a3, a4, a5, a6, a7);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x0072A320", "name": "sub_72A320", "decompiled": "int __usercall sub_72A320@<eax>(double a1@<st0>)\n{\n  int result; // eax\n\n  Math::Sin(dbl_B0F958 - dbl_B0F980);\n  LOWORD(result) = Math::RoundToInt(a1 * dbl_B0F978 * 0.5);\n  dword_B0F9D0 = result;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

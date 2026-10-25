@@ -1,0 +1,1 @@
+{"addr": "0x00535BF0", "name": "CreateTeamCommand::Do", "decompiled": "char __stdcall CreateTeamCommand::Do(CommandClass *this)\n{\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

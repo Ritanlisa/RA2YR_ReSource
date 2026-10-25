@@ -1,0 +1,1 @@
+{"addr": "0x0076F000", "name": "ComPtr::DestroyWrapper", "decompiled": "rc_ptr *__thiscall ComPtr::DestroyWrapper(void *this, rc_ptr *a2, int a3)\n{\n  FindTerritoryWOL(a2, (int)this + 44, a3);\n  return a2;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

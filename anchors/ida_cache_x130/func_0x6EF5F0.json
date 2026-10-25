@@ -1,0 +1,1 @@
+{"addr": "0x006EF5F0", "name": "TeamTypeClass::Check", "decompiled": "int __thiscall TeamTypeClass::Check(TeamTypeClass *this, int a2)\n{\n  int result; // eax\n\n  for ( result = *(_DWORD *)&this->__pad_4C[8]; result; result = *(_DWORD *)(result + 1496) )\n    *(_DWORD *)(result + 240) = a2;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x00555140", "name": "LightSourceClass::StubReturn54", "decompiled": "int LightSourceClass::StubReturn54(LightSourceClass *this)\n{\n  return 54;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

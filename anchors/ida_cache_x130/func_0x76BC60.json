@@ -1,0 +1,1 @@
+{"addr": "0x0076BC60", "name": "WDTState_4::Constructor", "decompiled": "_DWORD *__thiscall WDTState_4::Constructor(WDTState *this)\n{\n  ComPtr::Constructor((ComPtr *)this);\n  *(_DWORD *)this->__pad_0 = &rc_ptr<WDTTerritory>::`vftable';\n  return this->__pad_0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

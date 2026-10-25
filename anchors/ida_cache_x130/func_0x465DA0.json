@@ -1,0 +1,1 @@
+{"addr": "0x00465DA0", "name": "BuildingTypeClass::GetObjectSize", "decompiled": "int __thiscall BuildingTypeClass::GetObjectSize(BuildingTypeClass *this)\n{\n  return 6040;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

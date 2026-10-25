@@ -1,0 +1,1 @@
+{"addr": "0x006BF940", "name": "TClassFactory_CellClass::AddRef", "decompiled": "LONG __thiscall TClassFactory_CellClass::AddRef(_TClassFactory_VCellClass *this)\n{\n  LONG *v2; // [esp+4h] [ebp+4h]\n\n  return InterlockedIncrement(v2 + 1);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

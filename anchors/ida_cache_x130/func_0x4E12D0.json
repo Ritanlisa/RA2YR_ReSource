@@ -1,0 +1,1 @@
+{"addr": "0x004E12D0", "name": "BuildingAnim::GetType", "decompiled": "unsigned int BuildingAnim::GetType()\n{\n  unsigned int *v0; // eax\n\n  v0 = (unsigned int *)FindBuildingAnimByName((char *)off_822724, 1);\n  if ( v0 )\n    return *v0;\n  else\n    return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x00753580", "name": "ChronoScreenEffect::DecrementCounter", "decompiled": "int ChronoScreenEffect::DecrementCounter()\n{\n  int result; // eax\n\n  result = dword_B1D3D8;\n  if ( dword_B1D3D8 )\n  {\n    result = --dword_B1D3D8;\n    if ( dword_B1D3D8 < 0 )\n      dword_B1D3D8 = 0;\n  }\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

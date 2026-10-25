@@ -1,0 +1,1 @@
+{"addr": "0x007B1780", "name": "IPXInterfaceClass::COMStub_Ret1139", "decompiled": "int __stdcall IPXInterfaceClass::COMStub_Ret1139(IPXInterfaceClass *this)\n{\n  return 1139;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

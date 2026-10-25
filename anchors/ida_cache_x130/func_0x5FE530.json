@@ -1,0 +1,1 @@
+{"addr": "0x005FE530", "name": "OverlayTypeClass::GetType", "decompiled": "bool __thiscall OverlayTypeClass::GetType(OverlayTypeClass *this, __int16 *a2, int a3)\n{\n  Object *v4; // eax\n\n  v4 = (Object *)__2_YAPAXI_Z(0xB0u);\n  return v4 && Object::SpawnAtCell(v4, (int)this, a2, -1);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

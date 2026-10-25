@@ -1,0 +1,1 @@
+{"addr": "0x005FC340", "name": "sub_5FC340", "decompiled": "int sub_5FC340()\n{\n  dword_AC15D0 = 0;\n  dword_AC15C8 = 128;\n  dword_AC15CC = 128;\n  return 128;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

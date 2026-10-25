@@ -1,0 +1,1 @@
+{"addr": "0x0040B2E0", "name": "VectorClass::GetCapacity", "decompiled": "unsigned int __thiscall VectorClass::GetCapacity(int this, int a2)\n{\n  if ( *(_BYTE *)(this + 12) )\n    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 3;\n  else\n    return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x00656E50", "name": "RadarClass::IsActiveMode", "decompiled": "int __thiscall RadarClass::IsActiveMode(RadarClass *this)\n{\n  int result; // eax\n\n  if ( this->RadarClass_field_0x14B0 != 2 )\n    return 0;\n  result = 1;\n  if ( this->RadarClass_field_0x14AC != 1 )\n    return 0;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

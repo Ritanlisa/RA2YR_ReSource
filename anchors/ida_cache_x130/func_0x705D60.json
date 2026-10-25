@@ -1,0 +1,1 @@
+{"addr": "0x00705D60", "name": "BuildingClass::GetType_Thunk", "decompiled": "// attributes: thunk\nchar __thiscall BuildingClass::GetType_Thunk(BuildingClass *this)\n{\n  return BuildingClass::GetObjectData(this);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x00696F10", "name": "SessionClass::GetPlayerSide", "decompiled": "int __thiscall SessionClass::GetPlayerSide(int *this)\n{\n  int result; // eax\n\n  result = -2;\n  if ( *(int *)((char *)this + 79) != -2 )\n    return *(int *)((char *)this + 75);\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

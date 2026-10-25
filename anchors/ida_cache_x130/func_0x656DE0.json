@@ -1,0 +1,1 @@
+{"addr": "0x00656DE0", "name": "HouseClass::updateAlliedStatus", "decompiled": "char __thiscall HouseClass::updateAlliedStatus(HouseClass *this)\n{\n  return this->builtAircraftTypes[416];\n}\n", "changed": true, "error": null, "timestamp": "x130"}

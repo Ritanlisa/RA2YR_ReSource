@@ -1,0 +1,1 @@
+{"addr": "0x00755C50", "name": "j_TechnoClass_ClearArrays", "decompiled": "// attributes: thunk\nint j_TechnoClass_ClearArrays()\n{\n  return TechnoClass::ClearArrays();\n}\n", "changed": true, "error": null, "timestamp": "x130"}

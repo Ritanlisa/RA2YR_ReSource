@@ -1,0 +1,1 @@
+{"addr": "0x007DC1C2", "name": "?terminate_YAXXZ", "decompiled": "void __cdecl __noreturn _terminate_YAXXZ()\n{\n  _DWORD *v0; // eax\n\n  if ( _getptd()[24] )\n  {\n    v0 = _getptd();\n    ((void (*)(void))v0[24])();\n  }\n  _NMSG_WRITE(0xAu);\n  raise(22);\n  _exit(3);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

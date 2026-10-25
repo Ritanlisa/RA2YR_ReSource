@@ -1,0 +1,1 @@
+{"addr": "0x006D0260", "name": "BlowStraw_29::Stub", "decompiled": "// attributes: thunk\nint __thiscall BlowStraw_29::Stub(TabClass *this)\n{\n  return ObjectClass::processDamage((SidebarClass *)this);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

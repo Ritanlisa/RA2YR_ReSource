@@ -1,0 +1,1 @@
+{"addr": "0x0041CBF0", "name": "ObjectTypeClass::vt_entry_7C", "decompiled": "_DWORD *__stdcall ObjectTypeClass::vt_entry_7C(AircraftTypeClass *this)\n{\n  int v1; // esi\n\n  v1 = 2 * dword_889F58;\n  this->vfptr = 256;\n  this->vfptr1 = 256;\n  this->vfptr2 = v1;\n  return &this->vfptr;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

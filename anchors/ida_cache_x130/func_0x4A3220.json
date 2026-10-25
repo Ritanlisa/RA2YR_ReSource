@@ -1,0 +1,1 @@
+{"addr": "0x004A3220", "name": "CStreamClass::IStreamQueryInterface", "decompiled": "int __stdcall CStreamClass::IStreamQueryInterface(CStreamClass *this, const void *a2, _DWORD *a3)\n{\n  return CStreamClass::QueryInterface((CStreamClass *)((char *)this - 4), a2, a3);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

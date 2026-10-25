@@ -1,0 +1,1 @@
+{"addr": "0x0064DE80", "name": "ComputeHash", "decompiled": "int __fastcall ComputeHash(_DWORD *a1, int a2)\n{\n  int result; // eax\n\n  result = a2 + (*a1 >> 31) + 2 * *a1;\n  *a1 = result;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

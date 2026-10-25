@@ -1,0 +1,1 @@
+{"addr": "0x007C9DBD", "name": "globalHelper_0C9DBD", "decompiled": "int __cdecl globalHelper_0C9DBD(ObjectClass *a1, unsigned __int8 **a2, int a3)\n{\n  return strtoxl(a1, a2, a3, 0);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

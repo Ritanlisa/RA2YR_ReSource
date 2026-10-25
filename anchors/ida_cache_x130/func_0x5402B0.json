@@ -1,0 +1,1 @@
+{"addr": "0x005402B0", "name": "Network_Init_5402B0", "decompiled": "int __thiscall Network_Init_5402B0(ObjectClass *this, int a2)\n{\n  int result; // eax\n\n  result = dword_AA05A4;\n  if ( dword_AA05A4 )\n    *((_DWORD *)this + 49) = 0;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

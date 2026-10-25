@@ -1,0 +1,1 @@
+{"addr": "0x007D219A", "name": "__whiteout", "decompiled": "int __cdecl _whiteout(_DWORD *a1, FILE *Stream)\n{\n  int v2; // edi\n\n  do\n  {\n    ++*a1;\n    v2 = fgetc_0(Stream);\n  }\n  while ( isspace(v2) );\n  return v2;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

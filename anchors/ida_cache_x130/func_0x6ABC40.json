@@ -1,0 +1,1 @@
+{"addr": "0x006ABC40", "name": "Network_Process_6ABC40", "decompiled": "int Network_Process_6ABC40()\n{\n  int result; // eax\n\n  result = *(_DWORD *)&dword_A8B238.field_0;\n  if ( *(_DWORD *)&dword_A8B238.field_0 )\n    *(_DWORD *)&stru_A8E960.random[556] = 8;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

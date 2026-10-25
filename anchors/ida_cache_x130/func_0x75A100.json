@@ -1,0 +1,1 @@
+{"addr": "0x0075A100", "name": "sub_75A100", "decompiled": "BOOL __cdecl sub_75A100(int a1, int a2, _DWORD *a3, int a4)\n{\n  return VoxelRenderer::InitializeBuffers(*(_DWORD *)(a1 + 172), a2, a3, a4);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

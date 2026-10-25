@@ -1,0 +1,1 @@
+{"addr": "0x007C884E", "name": "GetTextColor", "decompiled": "// attributes: thunk\nCOLORREF __stdcall GetTextColor(HDC hdc)\n{\n  return __imp_GetTextColor(hdc);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

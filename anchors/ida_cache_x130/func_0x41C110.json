@@ -1,0 +1,1 @@
+{"addr": "0x0041C110", "name": "FootClass::StubReturnVoid", "decompiled": "void FootClass::StubReturnVoid(FootClass *this)\n{\n  ;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

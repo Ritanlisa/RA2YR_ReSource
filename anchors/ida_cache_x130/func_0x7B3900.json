@@ -1,0 +1,1 @@
+{"addr": "0x007B3900", "name": "UDPInterfaceClass_Destru::CheckStatus", "decompiled": "int __thiscall UDPInterfaceClass_Destru::CheckStatus(UDPInterfaceClass *this)\n{\n  NetworkClass::UnregisterAsync((SOCKET *)this);\n  return (*(int (__thiscall **)(UDPInterfaceClass *))(this->Socket + 112))(this);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x0055A090", "name": "LoadOptions::Open", "decompiled": "wchar_t *__thiscall LoadOptions::Open(LoadOptionsClass *this)\n{\n  return GetStringCSF(aGuiDeletemissi, 0, g_Str_File_LoadDlg_CPP, 1228);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x007C885A", "name": "GetBkMode", "decompiled": "// attributes: thunk\nint __stdcall GetBkMode(HDC hdc)\n{\n  return __imp_GetBkMode(hdc);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

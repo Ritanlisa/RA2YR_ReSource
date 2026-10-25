@@ -1,0 +1,1 @@
+{"addr": "0x006E47C0", "name": "ScriptAction::CopyStructField", "decompiled": "void *__thiscall ScriptAction::CopyStructField(ScriptAction *this, void *a2, const void *a3)\n{\n  if ( a3 != this )\n    qmemcpy(this, a3, 0x20u);\n  qmemcpy(a2, this, 0x20u);\n  return a2;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

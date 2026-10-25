@@ -1,0 +1,1 @@
+{"addr": "0x007C85E4", "name": "SetRect", "decompiled": "// attributes: thunk\nBOOL __stdcall SetRect(LPRECT lprc, int xLeft, int yTop, int xRight, int yBottom)\n{\n  return __imp_SetRect(lprc, xLeft, yTop, xRight, yBottom);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x004CFCF0", "name": "JumpjetLocomotionClass::DispatchVirtualCall_0", "decompiled": "int __stdcall JumpjetLocomotionClass::DispatchVirtualCall_0(FlyLocomotionClass *this)\n{\n  return (*(int (__thiscall **)(int))(*(_DWORD *)this->Owner + 456))(this->Owner) > 0 ? 4 : 2;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

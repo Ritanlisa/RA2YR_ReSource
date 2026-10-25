@@ -1,0 +1,1 @@
+{"addr": "0x007D7A07", "name": "__IsZeroMan", "decompiled": "int __cdecl _IsZeroMan(_DWORD *a1)\n{\n  int v2; // ecx\n\n  v2 = 0;\n  while ( !*a1 )\n  {\n    ++v2;\n    ++a1;\n    if ( v2 >= 3 )\n      return 1;\n  }\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x00556520", "name": "sub_556520", "decompiled": "_DWORD *__thiscall sub_556520(LightConvertClass *this, char a2)\n{\n  *(_DWORD *)this->__pad_0 = &LightConvertClass::`vftable';\n  sub_490400((int)this);\n  if ( (a2 & 1) != 0 )\n    __3_YAXPAX_Z(this);\n  return this->__pad_0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

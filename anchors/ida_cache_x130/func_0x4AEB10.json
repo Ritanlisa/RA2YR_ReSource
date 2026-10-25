@@ -1,0 +1,1 @@
+{"addr": "0x004AEB10", "name": "MapClass::GetScrollMode", "decompiled": "int __thiscall MapClass::GetScrollMode(MapClass *this)\n{\n  int result; // eax\n\n  if ( !LOBYTE(this->MapClass_field_0x119C) )\n    return 0;\n  result = this->MapClass_field_0x11A0;\n  if ( !result )\n    return 0;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

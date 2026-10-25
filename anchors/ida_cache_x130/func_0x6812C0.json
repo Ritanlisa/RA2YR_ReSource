@@ -1,0 +1,1 @@
+{"addr": "0x006812C0", "name": "Map_Save_6812C0", "decompiled": "int __thiscall Map_Save_6812C0(TechnoClass *this, int a2)\n{\n  this->turretRecoil[6] = a2;\n  return a2;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

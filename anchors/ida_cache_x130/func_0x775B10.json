@@ -1,0 +1,1 @@
+{"addr": "0x00775B10", "name": "Dialog::GetCurrent", "decompiled": "int Dialog::GetCurrent()\n{\n  return (int)hWnd;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

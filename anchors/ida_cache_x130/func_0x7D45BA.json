@@ -1,0 +1,1 @@
+{"addr": "0x007D45BA", "name": "__whiteout_0", "decompiled": "wint_t __cdecl _whiteout_0(_DWORD *a1, FILE *File)\n{\n  wint_t v2; // di\n\n  do\n  {\n    ++*a1;\n    v2 = fgetwc(File);\n  }\n  while ( iswspace(v2) );\n  return v2;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

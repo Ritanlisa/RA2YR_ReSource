@@ -1,0 +1,1 @@
+{"addr": "0x00430610", "name": "sub_430610", "decompiled": "void __thiscall sub_430610(ObjectClass *this)\n{\n  LOBYTE(this->vfptr3) &= ~1u;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

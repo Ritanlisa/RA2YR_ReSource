@@ -1,0 +1,1 @@
+{"addr": "0x004A3840", "name": "StructTable::Append", "decompiled": "int __thiscall StructTable::Append(StructTable *this, const void *a2)\n{\n  int v3; // ecx\n\n  v3 = *((_DWORD *)this + 24576);\n  if ( v3 == 1024 )\n    return 1;\n  qmemcpy(this + 12 * v3, a2, 0x60u);\n  ++*((_DWORD *)this + 24576);\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

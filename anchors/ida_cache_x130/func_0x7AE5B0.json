@@ -1,0 +1,1 @@
+{"addr": "0x007AE5B0", "name": "CComObject_CChatEventSink___ATL::Check", "decompiled": "int __thiscall CComObject_CChatEventSink___ATL::Check(int this, int a2)\n{\n  return (*(int (__thiscall **)(int))(this + 24))(a2) & ((1 << *(_DWORD *)(this + 12)) - 1);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

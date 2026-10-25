@@ -1,0 +1,1 @@
+{"addr": "0x00773D20", "name": "WebBrowser::Navigate", "decompiled": "int __thiscall WebBrowser::Navigate(WebBrowser *this)\n{\n  Debug::Log();\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

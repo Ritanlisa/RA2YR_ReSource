@@ -1,0 +1,1 @@
+{"addr": "0x004BBC30", "name": "GetBitShift_Red", "decompiled": "int GetBitShift_Red()\n{\n  return g_BitShift_Red;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x004AEBB0", "name": "DisplayClass::updateRenderState", "decompiled": "_DWORD *__thiscall DisplayClass::updateRenderState(TacticalClass_DisplayClass *this, char a2)\n{\n  GadgetClass::Dtor((ShpButtonClass *)this);\n  if ( (a2 & 1) != 0 )\n    __3_YAXPAX_Z(this);\n  return this;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

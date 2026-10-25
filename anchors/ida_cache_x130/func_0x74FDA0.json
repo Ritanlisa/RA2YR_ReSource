@@ -1,0 +1,1 @@
+{"addr": "0x0074FDA0", "name": "NetworkBuffer::GetField2", "decompiled": "int NetworkBuffer::GetField2()\n{\n  return 0x20000;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

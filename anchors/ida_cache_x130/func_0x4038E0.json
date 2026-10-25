@@ -1,0 +1,1 @@
+{"addr": "0x004038E0", "name": "sub_4038E0", "decompiled": "BOOL __thiscall sub_4038E0(ObjectClass *this, __int64 a2)\n{\n  return (unsigned __int64)(a2 - *(_QWORD *)&this->owningHouseIndex) >= *(_QWORD *)&this->vfptr;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

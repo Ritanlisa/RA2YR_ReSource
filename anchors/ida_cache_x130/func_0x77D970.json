@@ -1,0 +1,1 @@
+{"addr": "0x0077D970", "name": "Network::IsLobbyFeature", "decompiled": "char Network::IsLobbyFeature()\n{\n  if ( *(_DWORD *)&dword_A8B238.field_0 == 4 )\n    return BYTE1(dword_B76B30) & 1;\n  else\n    return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

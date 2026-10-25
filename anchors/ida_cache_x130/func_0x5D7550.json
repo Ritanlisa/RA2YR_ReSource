@@ -1,0 +1,1 @@
+{"addr": "0x005D7550", "name": "sub_5D7550", "decompiled": "int __stdcall sub_5D7550(int a1)\n{\n  return *(_DWORD *)(*(&dword_A8022C->vfptr + a1) + 90204);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

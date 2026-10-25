@@ -1,0 +1,1 @@
+{"addr": "0x006B6C10", "name": "sub_6B6C10", "decompiled": "int sub_6B6C10()\n{\n  dword_B0B884 = 0;\n  dword_B0B888 = 0;\n  byte_B0B88C = 1;\n  byte_B0B88D = 0;\n  SpawnManagerClass_Array = (int)&DynamicVectorClass<SpawnManagerClass *>::`vftable';\n  dword_B0B894 = 10;\n  dword_B0B890 = 0;\n  return atexit(sub_6B6C50);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x005F3320", "name": "AppState::CallMethod", "decompiled": "int __stdcall AppState::CallMethod(int a1)\n{\n  return (*(int (__thiscall **)(HWND, int))(*(_DWORD *)g_ClipboardBuffer + 32))(g_ClipboardBuffer, a1);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

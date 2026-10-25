@@ -1,0 +1,1 @@
+{"addr": "0x007C8956", "name": "timeSetEvent", "decompiled": "// attributes: thunk\nMMRESULT __stdcall timeSetEvent(UINT uDelay, UINT uResolution, LPTIMECALLBACK fptc, DWORD_PTR dwUser, UINT fuEvent)\n{\n  return __imp_timeSetEvent(uDelay, uResolution, fptc, dwUser, fuEvent);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

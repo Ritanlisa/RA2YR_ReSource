@@ -1,0 +1,1 @@
+{"addr": "0x006B1390", "name": "SlaveManagerClass::ProcessOrders", "decompiled": "void *__thiscall SlaveManagerClass::ProcessOrders(SlaveManagerClass *this, char a2)\n{\n  SlaveManagerClass::Constructor_SlaveManagerClass((int)this);\n  if ( (a2 & 1) != 0 )\n    __3_YAXPAX_Z(this);\n  return this;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

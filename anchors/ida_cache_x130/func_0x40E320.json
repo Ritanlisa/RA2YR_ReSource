@@ -1,0 +1,1 @@
+{"addr": "0x0040E320", "name": "GenericNode::Constructor", "decompiled": "_DWORD *__thiscall GenericNode::Constructor(MixFileClass *this)\n{\n  this->field_0.field_0.Previous = 0;\n  this->field_0.field_0.Next = 0;\n  this->field_0.field_0.vtable1 = &GenericNode::`vftable';\n  return &this->field_0.field_0.vtable1;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

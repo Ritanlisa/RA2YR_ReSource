@@ -1,0 +1,1 @@
+{"addr": "0x00407470", "name": "Queue::GetNext", "decompiled": "int __thiscall Queue::GetNext(Queue *this)\n{\n  int result; // eax\n\n  result = this->field_0;\n  if ( this->field_0 )\n  {\n    if ( result == *(_DWORD *)(result + 8) )\n      return 0;\n  }\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

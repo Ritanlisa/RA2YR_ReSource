@@ -1,0 +1,1 @@
+{"addr": "0x00701120", "name": "TechnoClass::HasActiveParam", "decompiled": "BOOL __thiscall TechnoClass::HasActiveParam(TechnoClass *this)\n{\n  _DWORD *v1; // eax\n\n  v1 = (_DWORD *)(*(int (__thiscall **)(TechnoClass *))(this->vfptr + 1012))(this);\n  return v1 && *v1;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

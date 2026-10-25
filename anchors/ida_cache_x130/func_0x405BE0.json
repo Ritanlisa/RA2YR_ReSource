@@ -1,0 +1,1 @@
+{"addr": "0x00405BE0", "name": "AudioController::Init", "decompiled": "int __thiscall AudioController::Init(AudioController *this)\n{\n  this->AudioController_field_0C = (int)&dword_87E294;\n  this->AudioController_field_00 = 0;\n  this->AudioController_field_04 = 0;\n  this->AudioController_field_08 = 0;\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x00484AB0", "name": "InfantryClass::IsInBounds", "decompiled": "int __thiscall InfantryClass::IsInBounds(InfantryClass *this)\n{\n  __int16 v1; // ax\n\n  v1 = HIWORD(this->passengers[0]);\n  return v1 >= 0 && v1 < dword_8B4148 && this->radioLinks[3] == 10;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x007C87A6", "name": "SetCursorPos", "decompiled": "// attributes: thunk\nBOOL __stdcall SetCursorPos(int X, int Y)\n{\n  return __imp_SetCursorPos(X, Y);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

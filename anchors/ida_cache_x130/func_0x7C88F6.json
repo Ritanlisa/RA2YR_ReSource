@@ -1,0 +1,1 @@
+{"addr": "0x007C88F6", "name": "StgCreateDocfile", "decompiled": "// attributes: thunk\nHRESULT __stdcall StgCreateDocfile(const WCHAR *pwcsName, DWORD grfMode, DWORD reserved, IStorage **ppstgOpen)\n{\n  return __imp_StgCreateDocfile(pwcsName, grfMode, reserved, ppstgOpen);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

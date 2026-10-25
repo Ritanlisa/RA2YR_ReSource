@@ -1,0 +1,1 @@
+{"addr": "0x00712120", "name": "AircraftTypeClass::GetGameplayValue", "decompiled": "int AircraftTypeClass::GetGameplayValue(TechnoTypeClass *this)\n{\n  return dword_8871E0->IRepairRate[1];\n}\n", "changed": true, "error": null, "timestamp": "x130"}

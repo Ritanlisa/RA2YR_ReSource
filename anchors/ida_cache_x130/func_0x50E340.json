@@ -1,0 +1,1 @@
+{"addr": "0x0050E340", "name": "HouseClass::COMStub_Ret1_1", "decompiled": "int __stdcall HouseClass::COMStub_Ret1_1(HouseClass *this)\n{\n  return 1;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

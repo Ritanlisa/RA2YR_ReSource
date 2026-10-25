@@ -1,0 +1,1 @@
+{"addr": "0x007C3990", "name": "MovieClass::ComputeTime", "decompiled": "unsigned int __thiscall MovieClass::ComputeTime(MovieClass *this)\n{\n  unsigned int v1; // edi\n\n  v1 = *((_DWORD *)this + 30);\n  return 60 * (*(int (__cdecl **)(MovieClass *))&this->field_550)(this) / v1 + *((_DWORD *)this + 82);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

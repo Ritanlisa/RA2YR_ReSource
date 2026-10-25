@@ -1,0 +1,1 @@
+{"addr": "0x004B4F40", "name": "DropListClass::Draw", "decompiled": "int __thiscall DropListClass::Draw(DropListClass *this, int a2)\n{\n  (*(void (__thiscall **)(int *, int))(this->DropListClass_field_0x50 + 16))(&this->DropListClass_field_0x50, a2);\n  return LinkedList::Append((LinkClass *)this, a2);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

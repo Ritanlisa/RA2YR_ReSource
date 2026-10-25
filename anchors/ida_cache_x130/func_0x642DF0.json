@@ -1,0 +1,1 @@
+{"addr": "0x00642DF0", "name": "Scenario::SetDword30", "decompiled": "int __thiscall Scenario::SetDword30(Scenario *this, int a2)\n{\n  this->Scenario_field_0x78 = a2;\n  return a2;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

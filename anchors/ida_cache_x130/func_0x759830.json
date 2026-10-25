@@ -1,0 +1,1 @@
+{"addr": "0x00759830", "name": "Render_Load_759830", "decompiled": "int __thiscall Render_Load_759830(ObjectClass *this, int a2)\n{\n  int result; // eax\n\n  result = *((_DWORD *)this + 119);\n  if ( a2 != -1 )\n    *((_DWORD *)this + 119) = a2;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

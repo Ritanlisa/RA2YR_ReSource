@@ -1,0 +1,1 @@
+{"addr": "0x00588C40", "name": "CellClass::initCellData", "decompiled": "_WORD *__thiscall CellClass::initCellData(CellClass *this, _WORD *a2)\n{\n  LOWORD(this->mapCoords) += *a2;\n  HIWORD(this->mapCoords) += a2[1];\n  return this;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

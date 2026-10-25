@@ -1,0 +1,1 @@
+{"addr": "0x005CB3E0", "name": "sub_5CB3E0", "decompiled": "void __thiscall sub_5CB3E0(UnholyAlliance *this)\n{\n  *(_DWORD *)this->m_Enabled = &UnholyAlliance::`vftable';\n  MultiplayerGameMode::Dtor((MultiplayerGameMode *)this);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

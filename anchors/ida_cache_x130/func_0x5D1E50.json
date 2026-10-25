@@ -1,0 +1,1 @@
+{"addr": "0x005D1E50", "name": "DSurface::Flip2", "decompiled": "int __thiscall DSurface::Flip2(DSurface *this)\n{\n  g_LoadScreenFlag = 1;\n  return DSurface::RenderToSurface(this, &g_DSurface_Hidden->vfptr);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x005C10D0", "name": "MultiplayerBattleTeam::QueryInterface", "decompiled": "void **__thiscall MultiplayerBattleTeam::QueryInterface(MultiplayerBattleTeam *this, char a2)\n{\n  MultiplayerTeam::Destructor((MultiplayerTeam *)this);\n  if ( (a2 & 1) != 0 )\n    __3_YAXPAX_Z(this);\n  return (void **)this;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x00705D50", "name": "TechnoClass::IsNotBusy", "decompiled": "int __thiscall TechnoClass::IsNotBusy(TechnoClass *this)\n{\n  int result; // eax\n\n  result = (*(int (__thiscall **)(TechnoClass *))(this->vfptr + 472))(this);\n  LOBYTE(result) = (_BYTE)result == 0;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

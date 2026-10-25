@@ -1,0 +1,1 @@
+{"addr": "0x004E8120", "name": "sub_4E8120", "decompiled": "char sub_4E8120()\n{\n  LOWORD(stru_A83CD9.vfptr) = 0;\n  BYTE2(stru_A83CD9.vfptr) = 0;\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

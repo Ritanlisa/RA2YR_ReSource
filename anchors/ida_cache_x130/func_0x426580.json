@@ -1,0 +1,1 @@
+{"addr": "0x00426580", "name": "AbstractClass::getAltitude", "decompiled": "int __cdecl AbstractClass::getAltitude(AbstractClass *this)\n{\n  return 4;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

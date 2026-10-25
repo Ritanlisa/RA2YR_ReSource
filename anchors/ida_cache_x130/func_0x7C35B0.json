@@ -1,0 +1,1 @@
+{"addr": "0x007C35B0", "name": "sub_7C35B0", "decompiled": "int __thiscall sub_7C35B0(TechnoClass *this)\n{\n  return *((unsigned __int16 *)this + 906);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

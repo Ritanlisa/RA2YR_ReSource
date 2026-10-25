@@ -1,0 +1,1 @@
+{"addr": "0x007C8566", "name": "ClearCommError", "decompiled": "// attributes: thunk\nBOOL __stdcall ClearCommError(HANDLE hFile, LPDWORD lpErrors, LPCOMSTAT lpStat)\n{\n  return __imp_ClearCommError(hFile, lpErrors, lpStat);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

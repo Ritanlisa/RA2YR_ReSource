@@ -1,0 +1,1 @@
+{"addr": "0x004C1AB0", "name": "DSurface::IsDSurface", "decompiled": "char __thiscall DSurface::IsDSurface(DSurface *this)\n{\n  return 1;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

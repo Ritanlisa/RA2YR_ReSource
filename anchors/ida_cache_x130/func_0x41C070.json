@@ -1,0 +1,1 @@
+{"addr": "0x0041C070", "name": "AircraftClass::CheckDockState", "decompiled": "char __thiscall AircraftClass::CheckDockState(FootClass *this)\n{\n  return this->frozenStill[0];\n}\n", "changed": true, "error": null, "timestamp": "x130"}

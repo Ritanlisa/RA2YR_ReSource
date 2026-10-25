@@ -1,0 +1,1 @@
+{"addr": "0x005228B0", "name": "ObjectClass::GetTypeVt40_0", "decompiled": "// attributes: thunk\nint __thiscall ObjectClass::GetTypeVt40_0(ObjectClass *this)\n{\n  return TechnoClass::GetTypeVt40((TechnoClass *)this);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

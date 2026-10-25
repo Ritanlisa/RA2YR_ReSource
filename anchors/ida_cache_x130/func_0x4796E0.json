@@ -1,0 +1,1 @@
+{"addr": "0x004796E0", "name": "sub_4796E0", "decompiled": "int sub_4796E0()\n{\n  memset(&unk_89E3A8, 0, 0x68u);\n  return atexit(nullsub_109);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

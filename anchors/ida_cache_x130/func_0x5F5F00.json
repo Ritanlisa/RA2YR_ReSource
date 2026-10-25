@@ -1,0 +1,1 @@
+{"addr": "0x005F5F00", "name": "ObjectClass::GetLandHeight", "decompiled": "int __thiscall ObjectClass::GetLandHeight(ObjectClass *this)\n{\n  return *(char *)((*(int (__thiscall **)(ObjectClass *))(this->vfptr + 444))(this) + 283)\n       + (this->onBridge[0] != 0 ? 4 : 0);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

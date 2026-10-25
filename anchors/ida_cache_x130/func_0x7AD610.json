@@ -1,0 +1,1 @@
+{"addr": "0x007AD610", "name": "WonlineStringDialogControl_28::StubReturnFalse", "decompiled": "int __thiscall WonlineStringDialogControl_28::StubReturnFalse(_CComObject_VCDownloadEventSink_ATL *this)\n{\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

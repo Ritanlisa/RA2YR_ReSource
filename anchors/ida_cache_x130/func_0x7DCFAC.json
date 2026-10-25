@@ -1,0 +1,1 @@
+{"addr": "0x007DCFAC", "name": "VariantChangeType", "decompiled": "// attributes: thunk\nHRESULT __stdcall VariantChangeType(VARIANTARG *pvargDest, const VARIANTARG *pvarSrc, USHORT wFlags, VARTYPE vt)\n{\n  return __imp_VariantChangeType(pvargDest, pvarSrc, wFlags, vt);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

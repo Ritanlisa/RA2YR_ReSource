@@ -1,0 +1,1 @@
+{"addr": "0x006ABA40", "name": "ObjectClass::checkHealth", "decompiled": "int __stdcall ObjectClass::checkHealth(int a1, int a2, int a3)\n{\n  Mouse::SetCursor((int)&dword_87F7E8, 0, 0);\n  return 1;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

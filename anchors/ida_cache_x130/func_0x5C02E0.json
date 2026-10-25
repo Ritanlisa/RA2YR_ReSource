@@ -1,0 +1,1 @@
+{"addr": "0x005C02E0", "name": "AbstractClass::validatePathNode", "decompiled": "char __thiscall AbstractClass::validatePathNode(VQMovieHandle *this)\n{\n  return this->playing[0];\n}\n", "changed": true, "error": null, "timestamp": "x130"}

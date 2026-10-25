@@ -1,0 +1,1 @@
+{"addr": "0x0071A720", "name": "TemporalClass::ddtor", "decompiled": "int __stdcall TemporalClass::ddtor(TemporalClass *this, _DWORD *a2)\n{\n  if ( !a2 )\n    return -2147467261;\n  *a2 = -1810815964;\n  a2[1] = 299099139;\n  a2[2] = 1342205582;\n  a2[3] = -72177148;\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

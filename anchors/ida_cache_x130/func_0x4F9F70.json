@@ -1,0 +1,1 @@
+{"addr": "0x004F9F70", "name": "COMStub_4F9F70", "decompiled": "char __thiscall COMStub_4F9F70(ObjectClass *this, int a2, char a3)\n{\n  return HouseClass::SetAlliance((unsigned int)this, *((HouseClass **)&dword_A8022C->vfptr + a2), a3);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

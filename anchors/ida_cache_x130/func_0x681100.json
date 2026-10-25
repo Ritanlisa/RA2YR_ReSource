@@ -1,0 +1,1 @@
+{"addr": "0x00681100", "name": "LoadOptions::GetData", "decompiled": "char *__thiscall LoadOptions::GetData(char *this)\n{\n  return this + 264;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

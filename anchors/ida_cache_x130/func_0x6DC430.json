@@ -1,0 +1,1 @@
+{"addr": "0x006DC430", "name": "GetCoordDataMap", "decompiled": "int __stdcall GetCoordDataMap(int a1)\n{\n  return dword_B0CEC8[3 * a1];\n}\n", "changed": true, "error": null, "timestamp": "x130"}

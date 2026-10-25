@@ -1,0 +1,1 @@
+{"addr": "0x0048BA90", "name": "IPXManagerClass::init", "decompiled": "int __thiscall IPXManagerClass::init(IPXManagerClass *this)\n{\n  return *(_DWORD *)&this->u32_20;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

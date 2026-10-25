@@ -1,0 +1,1 @@
+{"addr": "0x0077E780", "name": "sub_77E780", "decompiled": "int sub_77E780()\n{\n  return CCINIClass_RulesHash ^ CCINIClass_AIHash ^ CCINIClass_ArtHash;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

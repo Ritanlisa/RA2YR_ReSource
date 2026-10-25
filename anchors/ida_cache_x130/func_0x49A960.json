@@ -1,0 +1,1 @@
+{"addr": "0x0049A960", "name": "??_Gfacet_locale_std__UAEPAXI_Z_68", "decompiled": "std::locale::facet *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_68(std::locale::facet *this, char a2)\n{\n  *(_DWORD *)this = &RLEBlitter::`vftable';\n  if ( (a2 & 1) != 0 )\n    __3_YAXPAX_Z(this);\n  return this;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

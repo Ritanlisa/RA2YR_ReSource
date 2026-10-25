@@ -1,0 +1,1 @@
+{"addr": "0x0054F6B0", "name": "EventQueue::CheckPosition", "decompiled": "int __thiscall EventQueue::CheckPosition(EventQueue *this)\n{\n  int result; // eax\n\n  result = (*((_DWORD *)this + 198) + 1) % 256;\n  LOBYTE(result) = result == *((_DWORD *)this + 197);\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

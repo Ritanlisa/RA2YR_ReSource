@@ -1,0 +1,1 @@
+{"addr": "0x00459870", "name": "BuildingClass::MissionStubReturnZero", "decompiled": "int __thiscall BuildingClass::MissionStubReturnZero(BuildingClass *this)\n{\n  return *(_DWORD *)(this->Type + 5412);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

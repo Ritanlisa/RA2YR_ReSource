@@ -1,0 +1,1 @@
+{"addr": "0x00538C10", "name": "sub_538C10", "decompiled": "int sub_538C10()\n{\n  return InitArrayWithValue(&stru_A8E960.waypoints[2150], 0, 64);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

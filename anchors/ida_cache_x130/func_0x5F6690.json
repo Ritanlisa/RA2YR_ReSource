@@ -1,0 +1,1 @@
+{"addr": "0x005F6690", "name": "ObjectClass::IsActive", "decompiled": "int __thiscall ObjectClass::IsActive(IUnknown *this)\n{\n  return this->__pad_8C[4] == 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

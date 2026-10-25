@@ -1,0 +1,1 @@
+{"addr": "0x007CB905", "name": "_iswascii", "decompiled": "int __cdecl iswascii(wint_t C)\n{\n  return C < 0x80u;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

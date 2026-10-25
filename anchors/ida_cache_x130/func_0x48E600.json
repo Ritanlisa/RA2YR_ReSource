@@ -1,0 +1,1 @@
+{"addr": "0x0048E600", "name": "COMObject::SetMember10", "decompiled": "int __thiscall COMObject::SetMember10(_DWORD *this, int a2)\n{\n  *(this + 10) = a2;\n  return a2;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

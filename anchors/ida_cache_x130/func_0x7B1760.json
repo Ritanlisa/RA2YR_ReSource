@@ -1,0 +1,1 @@
+{"addr": "0x007B1760", "name": "IPXInterfaceClass::GetLocalAddress", "decompiled": "int __thiscall IPXInterfaceClass::GetLocalAddress(WinsockInterfaceClass *this, int a2)\n{\n  *((_DWORD *)this + 64702) = a2;\n  return a2;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

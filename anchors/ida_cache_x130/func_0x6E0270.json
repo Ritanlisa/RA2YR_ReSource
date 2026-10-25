@@ -1,0 +1,1 @@
+{"addr": "0x006E0270", "name": "sub_6E0270", "decompiled": "char __thiscall sub_6E0270(ObjectClass *this, int a2, int a3, int a4, int a5)\n{\n  BYTE2(dword_A8B230[336].field_24) = this->isAliveFlag[0];\n  return 1;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

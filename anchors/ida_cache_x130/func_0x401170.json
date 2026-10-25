@@ -1,0 +1,1 @@
+{"addr": "0x00401170", "name": "ObjectClass::ClearFlags2", "decompiled": "int __thiscall ObjectClass::ClearFlags2(ObjectClass *this)\n{\n  this->vfptr &= ~2u;\n  this->customSound_controller[0] &= ~2u;\n  this->owningHouseIndex &= ~2u;\n  return -3;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

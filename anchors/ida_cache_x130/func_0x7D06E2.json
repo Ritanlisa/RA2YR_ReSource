@@ -1,0 +1,1 @@
+{"addr": "0x007D06E2", "name": "sub_7D06E2", "decompiled": "int (__cdecl *sub_7D06E2())(_DWORD)\n{\n  return dword_B782C8;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

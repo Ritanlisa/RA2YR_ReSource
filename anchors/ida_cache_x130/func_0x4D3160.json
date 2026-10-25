@@ -1,0 +1,1 @@
+{"addr": "0x004D3160", "name": "sub_4D3160", "decompiled": "int sub_4D3160()\n{\n  dword_8B3DC4 = 0;\n  dword_8B3DC8 = 0;\n  byte_8B3DCC = 1;\n  byte_8B3DCD = 0;\n  FootClass_Array.vfptr = (int)&off_7E8C28;\n  dword_8B3DD4 = 10;\n  dword_8B3DD0 = 0;\n  return atexit(sub_4D31A0);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

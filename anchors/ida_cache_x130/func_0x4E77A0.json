@@ -1,0 +1,1 @@
+{"addr": "0x004E77A0", "name": "sub_4E77A0", "decompiled": "void __cdecl sub_4E77A0()\n{\n  dword_A83D98 = (int)&VectorClass<ParticleTypeClass *>::`vftable';\n  if ( dword_A83D9C && byte_A83DA5 )\n  {\n    __3_YAXPAX_Z(dword_A83D9C);\n    dword_A83D9C = 0;\n  }\n  byte_A83DA5 = 0;\n  dword_A83DA0 = 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

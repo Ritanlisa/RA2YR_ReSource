@@ -1,0 +1,1 @@
+{"addr": "0x006C2F40", "name": "TClassFactory_IsometricTileTypeClass::AddRef", "decompiled": "LONG __thiscall TClassFactory_IsometricTileTypeClass::AddRef(_TClassFactory_VIsometricTileTypeClass *this)\n{\n  int v2; // [esp+4h] [ebp+4h]\n\n  return InterlockedIncrement((volatile LONG *)(v2 + 4));\n}\n", "changed": true, "error": null, "timestamp": "x130"}

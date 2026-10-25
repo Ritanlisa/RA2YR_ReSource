@@ -1,0 +1,1 @@
+{"addr": "0x00537BA0", "name": "ScreenCaptureCommandClass::Execute", "decompiled": "wchar_t *ScreenCaptureCommandClass::Execute(ScreenCaptureCommandClass *this)\n{\n  return GetStringCSF(aTxtScrncapDesc, 0, g_Str_File_Init_CPP, 8073);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

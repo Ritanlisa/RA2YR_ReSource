@@ -1,0 +1,1 @@
+{"addr": "0x007D75B0", "name": "_GetPrimaryLen", "decompiled": "int __cdecl GetPrimaryLen(char *a1)\n{\n  int result; // eax\n  char v3; // cl\n\n  for ( result = 0; ; ++result )\n  {\n    v3 = *a1++;\n    if ( (v3 < 65 || v3 > 90) && (v3 < 97 || v3 > 122) )\n      break;\n  }\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

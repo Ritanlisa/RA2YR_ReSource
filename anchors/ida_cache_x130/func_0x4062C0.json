@@ -1,0 +1,1 @@
+{"addr": "0x004062C0", "name": "sub_4062C0", "decompiled": "int __thiscall sub_4062C0(ObjectClass *this, unsigned int a2, int a3)\n{\n  SetRateMixerSample((_DWORD *)this + 46, 0x4000, a2, a3);\n  SetRateMixerSample((_DWORD *)this + 56, 0x4000, a2, a3);\n  return SetRateMixerSample((_DWORD *)this + 66, 0x4000, a2, a3);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

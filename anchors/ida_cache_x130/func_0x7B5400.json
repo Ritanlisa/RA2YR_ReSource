@@ -1,0 +1,1 @@
+{"addr": "0x007B5400", "name": "String::GetOrEmpty", "decompiled": "char *__thiscall String::GetOrEmpty(String *this)\n{\n  char *result; // eax\n\n  result = *(char **)this->__pad_0;\n  if ( !*(_DWORD *)this->__pad_0 )\n    return &g_INI_DefaultBuffer;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

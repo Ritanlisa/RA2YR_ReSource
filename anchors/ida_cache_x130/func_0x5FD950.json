@@ -1,0 +1,1 @@
+{"addr": "0x005FD950", "name": "Object::SaveObject", "decompiled": "int __stdcall Object::SaveObject(OverlayClass *this, int *a2, int a3)\n{\n  return AbstractClass::SaveLoad_Prefix(&this->vfptr, a2, a3);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

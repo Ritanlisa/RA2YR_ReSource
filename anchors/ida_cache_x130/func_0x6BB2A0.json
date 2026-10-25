@@ -1,0 +1,1 @@
+{"addr": "0x006BB2A0", "name": "sub_6BB2A0", "decompiled": "void __cdecl sub_6BB2A0()\n{\n  *(_DWORD *)g_AnimationManager.__pad_0 = &VectorClass<unsigned long>::`vftable';\n  if ( dword_B0BC8C && byte_B0BC95 )\n  {\n    __3_YAXPAX_Z(dword_B0BC8C);\n    dword_B0BC8C = 0;\n  }\n  byte_B0BC95 = 0;\n  dword_B0BC90 = 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

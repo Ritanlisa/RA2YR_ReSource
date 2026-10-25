@@ -1,0 +1,1 @@
+{"addr": "0x007DCF94", "name": "lstrlenW", "decompiled": "// attributes: thunk\nint __stdcall lstrlenW(LPCWSTR lpString)\n{\n  return __imp_lstrlenW(lpString);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

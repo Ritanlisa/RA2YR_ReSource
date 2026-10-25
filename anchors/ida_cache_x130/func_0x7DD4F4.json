@@ -1,0 +1,1 @@
+{"addr": "0x007DD4F4", "name": "__cwprintf", "decompiled": "int _cwprintf(const wchar_t *const Format, ...)\n{\n  va_list va; // [esp+8h] [ebp+8h] BYREF\n\n  va_start(va, Format);\n  return output((ObjectClass *)Format, (int)va);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

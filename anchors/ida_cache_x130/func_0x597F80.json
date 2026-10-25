@@ -1,0 +1,1 @@
+{"addr": "0x00597F80", "name": "MapSeedClass::Generate", "decompiled": "wchar_t *MapSeedClass::Generate(MapSeedClass *this)\n{\n  return GetStringCSF(aGuiLoadmapmenu, 0, aDRa2mdpostMapg, 5572);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x00449A40", "name": "CheckState2", "decompiled": "int __thiscall CheckState2(BuildingClass *this)\n{\n  return (*(int (__thiscall **)(BuildingClass *))(this->vfptr + 540))(this);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

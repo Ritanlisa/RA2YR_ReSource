@@ -1,0 +1,1 @@
+{"addr": "0x007C8818", "name": "GetTextMetricsA", "decompiled": "// attributes: thunk\nBOOL __stdcall GetTextMetricsA(HDC hdc, LPTEXTMETRICA lptm)\n{\n  return __imp_GetTextMetricsA(hdc, lptm);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

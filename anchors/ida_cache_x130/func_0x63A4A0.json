@@ -1,0 +1,1 @@
+{"addr": "0x0063A4A0", "name": "sub_63A4A0", "decompiled": "void __thiscall sub_63A4A0(ObjectClass *this)\n{\n  *(_DWORD *)&stru_AC4B48.__pad_B8[144] = this;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

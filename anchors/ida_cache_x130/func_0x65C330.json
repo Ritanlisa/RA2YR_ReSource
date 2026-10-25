@@ -1,0 +1,1 @@
+{"addr": "0x0065C330", "name": "AbstractClass::processTeamOrder", "decompiled": "char __thiscall AbstractClass::processTeamOrder(RAMFileClass *this)\n{\n  return *((_BYTE *)this + 28);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

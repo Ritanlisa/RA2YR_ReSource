@@ -1,0 +1,1 @@
+{"addr": "0x004A0520", "name": "ConnectionPointClass::AddRef", "decompiled": "LONG __stdcall ConnectionPointClass::AddRef(ConnectionPointClass *this)\n{\n  ++dword_ABCD3C;\n  return InterlockedIncrement(&this->ConnectionPointClass_field_0x14);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

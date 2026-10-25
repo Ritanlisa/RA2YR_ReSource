@@ -1,0 +1,1 @@
+{"addr": "0x00535BD0", "name": "CreateTeamCommand::Stub", "decompiled": "char __stdcall CreateTeamCommand::Stub(CommandClass *this)\n{\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

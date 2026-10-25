@@ -1,0 +1,1 @@
+{"addr": "0x00759E50", "name": "AbstractClass::checkBuildProgress", "decompiled": "void __thiscall AbstractClass::checkBuildProgress(AbstractClass *this)\n{\n  *((_BYTE *)this + 1360) = 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

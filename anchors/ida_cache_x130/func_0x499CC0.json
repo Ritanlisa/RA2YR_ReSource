@@ -1,0 +1,1 @@
+{"addr": "0x00499CC0", "name": "AbstractClass::getTileIndex", "decompiled": "std::locale::facet *__thiscall AbstractClass::getTileIndex(Blitter *this, char a2)\n{\n  this->field_0 = (BlitterCore)&Blitter::`vftable';\n  if ( (a2 & 1) != 0 )\n    __3_YAXPAX_Z(this);\n  return (std::locale::facet *)this;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

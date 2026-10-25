@@ -1,0 +1,1 @@
+{"addr": "0x0044B760", "name": "AbstractClass::COMStub_133", "decompiled": "// attributes: thunk\nint __thiscall AbstractClass::COMStub_133(AbstractClass *this)\n{\n  MissionClass *v2; // [esp+4h] [ebp+4h]\n\n  return IPersistStream::StubReturn450(v2);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

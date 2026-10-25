@@ -1,0 +1,1 @@
+{"addr": "0x00407010", "name": "Audio::GetEnabled", "decompiled": "AudioStream *Audio::GetEnabled()\n{\n  return g_Audio_Enabled;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

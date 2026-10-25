@@ -1,0 +1,1 @@
+{"addr": "0x00537AD0", "name": "CreateTeamCommand::performAction_190", "decompiled": "wchar_t *__thiscall CreateTeamCommand::performAction_190(MultiplayerSyncCommandClass *this)\n{\n  return aGameSyncLoggin;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

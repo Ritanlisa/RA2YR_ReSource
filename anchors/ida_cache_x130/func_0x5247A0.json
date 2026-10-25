@@ -1,0 +1,1 @@
+{"addr": "0x005247A0", "name": "InfantryTypeClass::StubReturnFalse", "decompiled": "int InfantryTypeClass::StubReturnFalse(InfantryTypeClass *this)\n{\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x0076AB90", "name": "sub_76AB90", "decompiled": "void __thiscall sub_76AB90(WDTTerritory *this)\n{\n  this->m_0 = (int)&off_7F7220;\n  ReferenceCounted::Constructor((ReferenceCounted *)this);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

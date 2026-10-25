@@ -1,0 +1,1 @@
+{"addr": "0x005B2E40", "name": "TechnoClass::StubReturn450", "decompiled": "int TechnoClass::StubReturn450(MissionClass *this)\n{\n  return 450;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

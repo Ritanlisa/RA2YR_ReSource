@@ -1,0 +1,1 @@
+{"addr": "0x006633D0", "name": "RocketLocomotionClass::ddtor", "decompiled": "int __stdcall RocketLocomotionClass::ddtor(RocketLocomotionClass *this, _DWORD *a2)\n{\n  if ( !a2 )\n    return -2147467261;\n  *(IID *)a2 = g_CLSID_ShipLocomotion;\n  a2[3] = -399534261;\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x007C86E6", "name": "MoveWindow", "decompiled": "// attributes: thunk\nBOOL __stdcall MoveWindow(HWND hWnd, int X, int Y, int nWidth, int nHeight, BOOL bRepaint)\n{\n  return __imp_MoveWindow(hWnd, X, Y, nWidth, nHeight, bRepaint);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

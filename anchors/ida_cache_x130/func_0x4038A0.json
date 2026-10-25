@@ -1,0 +1,1 @@
+{"addr": "0x004038A0", "name": "AudioStream::ResetChannel", "decompiled": "int __thiscall AudioStream::ResetChannel(AudioStream *this, int a2, int a3)\n{\n  this->AudioStream_field_0x8 = a2;\n  this->AudioStream_field_0xC = a3;\n  return a2;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

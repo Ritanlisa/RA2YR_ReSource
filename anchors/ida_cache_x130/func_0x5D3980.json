@@ -1,0 +1,1 @@
+{"addr": "0x005D3980", "name": "MPBattleClass::isDefaultAI", "decompiled": "int MPBattleClass::isDefaultAI()\n{\n  word_ABFC28 = 0;\n  word_ABFC2A = 0;\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

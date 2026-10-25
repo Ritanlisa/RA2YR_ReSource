@@ -1,0 +1,1 @@
+{"addr": "0x00407480", "name": "AudioList::GetNextEntry", "decompiled": "int __thiscall AudioList::GetNextEntry(AudioList *this)\n{\n  return *(_DWORD *)(this->field_4 + 8) != this->field_4 ? this->field_4 : 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

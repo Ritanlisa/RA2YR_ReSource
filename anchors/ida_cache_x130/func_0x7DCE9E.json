@@ -1,0 +1,1 @@
+{"addr": "0x007DCE9E", "name": "VirtualAlloc", "decompiled": "// attributes: thunk\nLPVOID __stdcall VirtualAlloc(LPVOID lpAddress, SIZE_T dwSize, DWORD flAllocationType, DWORD flProtect)\n{\n  return __imp_VirtualAlloc(lpAddress, dwSize, flAllocationType, flProtect);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

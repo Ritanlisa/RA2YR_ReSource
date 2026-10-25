@@ -1,0 +1,1 @@
+{"addr": "0x0071D310", "name": "TerrainClass::MissionStubReturnZero3", "decompiled": "int __stdcall TerrainClass::MissionStubReturnZero3(TerrainClass *this, _DWORD *a2)\n{\n  if ( !a2 )\n    return -2147467261;\n  *a2 = 237448654;\n  a2[1] = 298949647;\n  a2[2] = -1610610249;\n  a2[3] = -777003740;\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

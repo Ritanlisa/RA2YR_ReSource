@@ -1,0 +1,1 @@
+{"addr": "0x005BC400", "name": "Mouse::HideWindow", "decompiled": "HWND Mouse::HideWindow()\n{\n  HWND result; // eax\n\n  result = dword_ABF240;\n  byte_ABF239 = 0;\n  if ( dword_ABF240 )\n  {\n    byte_ABF23A = 0;\n    return (HWND)ShowWindow(dword_ABF240, 0);\n  }\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

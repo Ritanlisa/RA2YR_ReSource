@@ -1,0 +1,1 @@
+{"addr": "0x004C3C10", "name": "sub_4C3C10", "decompiled": "int sub_4C3C10()\n{\n  dword_8A3774 = 0;\n  dword_8A3778 = 0;\n  byte_8A377C = 1;\n  byte_8A377D = 0;\n  dword_8A3770 = (int)&DynamicVectorClass<EgoClass *>::`vftable';\n  dword_8A3784 = 10;\n  dword_8A3780 = 0;\n  return atexit(sub_4C3C50);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

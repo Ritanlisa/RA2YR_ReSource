@@ -1,0 +1,1 @@
+{"addr": "0x005D5850", "name": "MSEngine::DestroyData", "decompiled": "void __thiscall MSEngine::DestroyData(MSEngine *this)\n{\n  if ( this->vfptr )\n    free(this->vfptr);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

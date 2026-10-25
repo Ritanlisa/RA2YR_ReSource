@@ -1,0 +1,1 @@
+{"addr": "0x00769C00", "name": "Map_WorldDominationTour::QueryInterface", "decompiled": "void *__thiscall Map_WorldDominationTour::QueryInterface(Map_WorldDominationTour *this, char a2)\n{\n  WorldDomination::SetupTerritoryNodes((int)this);\n  if ( (a2 & 1) != 0 )\n    __3_YAXPAX_Z(this);\n  return this;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

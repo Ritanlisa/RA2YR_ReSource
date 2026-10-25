@@ -1,0 +1,1 @@
+{"addr": "0x00512720", "name": "HouseTypeClass::GetObjectSize", "decompiled": "int HouseTypeClass::GetObjectSize(HouseTypeClass *this)\n{\n  return 432;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

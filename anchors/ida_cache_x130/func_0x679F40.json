@@ -1,0 +1,1 @@
+{"addr": "0x00679F40", "name": "INIEntry::Exists", "decompiled": "BOOL __thiscall INIEntry::Exists(INIEntry *this, unsigned __int8 *a2, unsigned __int8 *a3)\n{\n  if ( a3 )\n    return HashTableSection::FindSection(&this->Key, a2, a3) != 0;\n  else\n    return INIClass::BinarySearchSection((int)this, a2) != 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

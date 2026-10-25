@@ -1,0 +1,1 @@
+{"addr": "0x00659540", "name": "TechnoClass::drawMindControlPips", "decompiled": "int __thiscall TechnoClass::drawMindControlPips(TechnoClass *this, int a2)\n{\n  this->customSound_controller[1] = a2;\n  return a2;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

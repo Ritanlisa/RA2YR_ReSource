@@ -1,0 +1,1 @@
+{"addr": "0x007C83B0", "name": "WaitForSingleObject", "decompiled": "// attributes: thunk\nDWORD __stdcall WaitForSingleObject(HANDLE hHandle, DWORD dwMilliseconds)\n{\n  return __imp_WaitForSingleObject(hHandle, dwMilliseconds);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

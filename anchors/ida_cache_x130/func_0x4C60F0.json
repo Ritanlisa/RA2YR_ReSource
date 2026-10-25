@@ -1,0 +1,1 @@
+{"addr": "0x004C60F0", "name": "sub_4C60F0", "decompiled": "int sub_4C60F0()\n{\n  dword_8A3914 = 0;\n  dword_8A3918 = 0;\n  dword_8A391C = 1;\n  word_8A3920 = 0;\n  memset(&stru_8A38E0, 0, 0x30u);\n  unk_8A3910 = 0;\n  return atexit(nullsub_129);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

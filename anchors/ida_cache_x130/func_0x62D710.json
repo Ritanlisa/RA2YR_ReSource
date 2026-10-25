@@ -1,0 +1,1 @@
+{"addr": "0x0062D710", "name": "ParticleClass::CheckDrawFlags", "decompiled": "int *__stdcall ParticleClass::CheckDrawFlags(ParticleClass *this)\n{\n  if ( (byte_AC4998 & 1) == 0 )\n  {\n    byte_AC4998 |= 1u;\n    dword_AC49D0 = 2147450879;\n    atexit(nullsub_214);\n  }\n  return &dword_AC49D0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

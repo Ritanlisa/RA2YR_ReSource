@@ -1,0 +1,1 @@
+{"addr": "0x0077C880", "name": "sub_77C880", "decompiled": "int sub_77C880()\n{\n  *(_DWORD *)stru_B76188.__pad_0 = 0;\n  dword_B7618C = 0;\n  dword_B76190 = 0;\n  return atexit(sub_77C8A0);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x004F4C30", "name": "String::CopyUpper", "decompiled": "char *__thiscall String::CopyUpper(char *String, const char *a2)\n{\n  strcpy(String, a2);\n  _strupr(String);\n  return String;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

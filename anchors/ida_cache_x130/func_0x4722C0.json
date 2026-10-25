@@ -1,0 +1,1 @@
+{"addr": "0x004722C0", "name": "CellClass::HasContent", "decompiled": "int __thiscall CellClass::HasContent(CellClass *this)\n{\n  return *(_DWORD *)&this->__pad_28[12] > 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

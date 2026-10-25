@@ -1,0 +1,1 @@
+{"addr": "0x00536E30", "name": "CreateTeamCommand::performAction_100", "decompiled": "char *__thiscall CreateTeamCommand::performAction_100(CenterBaseCommandClass *this)\n{\n  return aCenterbase;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x0071D350", "name": "TerrainClass::MissionStubReturnZero4", "decompiled": "void *__thiscall TerrainClass::MissionStubReturnZero4(TerrainClass *this, char a2)\n{\n  TerrainClass::CleanupMembers((int)this);\n  if ( (a2 & 1) != 0 )\n    __3_YAXPAX_Z(this);\n  return this;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

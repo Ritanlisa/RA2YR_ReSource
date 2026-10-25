@@ -1,0 +1,1 @@
+{"addr": "0x00558840", "name": "Options::PrepareSaveLoadDlg", "decompiled": "bool __thiscall Options::PrepareSaveLoadDlg(Options *this)\n{\n  this->field_4 = (void *)3;\n  this->field_C = 0;\n  return SaveLoadDialog::DlgProc((SaveLoadDialog *)this);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

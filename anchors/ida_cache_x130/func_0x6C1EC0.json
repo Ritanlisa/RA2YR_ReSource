@@ -1,0 +1,1 @@
+{"addr": "0x006C1EC0", "name": "TClassFactory_ScriptTypeClass::AddRef", "decompiled": "LONG __thiscall TClassFactory_ScriptTypeClass::AddRef(_TClassFactory_VScriptTypeClass *this)\n{\n  int v2; // [esp+4h] [ebp+4h]\n\n  return InterlockedIncrement((volatile LONG *)(v2 + 4));\n}\n", "changed": true, "error": null, "timestamp": "x130"}

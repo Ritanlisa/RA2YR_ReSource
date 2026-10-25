@@ -1,0 +1,1 @@
+{"addr": "0x005CEDB0", "name": "MPBattleClass::firstValidMapIndex", "decompiled": "int MPBattleClass::firstValidMapIndex()\n{\n  dword_ABFBB0 = 0;\n  dword_ABFBB4 = 0;\n  dword_ABFBB8 = 0;\n  dword_ABFBBC = 0;\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

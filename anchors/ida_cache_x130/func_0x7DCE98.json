@@ -1,0 +1,1 @@
+{"addr": "0x007DCE98", "name": "VirtualFree", "decompiled": "// attributes: thunk\nBOOL __stdcall VirtualFree(LPVOID lpAddress, SIZE_T dwSize, DWORD dwFreeType)\n{\n  return __imp_VirtualFree(lpAddress, dwSize, dwFreeType);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

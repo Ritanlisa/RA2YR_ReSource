@@ -1,0 +1,1 @@
+{"addr": "0x004CA170", "name": "SidebarClass::draw2", "decompiled": "int __thiscall SidebarClass::draw2(SidebarClass *this)\n{\n  return this->SidebarClass_field_0x68;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

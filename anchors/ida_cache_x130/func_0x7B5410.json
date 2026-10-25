@@ -1,0 +1,1 @@
+{"addr": "0x007B5410", "name": "sub_7B5410", "decompiled": "char __thiscall sub_7B5410(ObjectClass *this, unsigned int a2)\n{\n  int vfptr; // edx\n\n  vfptr = this->vfptr;\n  if ( a2 >= strlen((const char *)this->vfptr) )\n    return 0;\n  else\n    return *(_BYTE *)(vfptr + a2);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

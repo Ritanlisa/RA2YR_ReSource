@@ -1,0 +1,1 @@
+{"addr": "0x00486790", "name": "RandomMap::Check", "decompiled": "bool __thiscall RandomMap::Check(RandomMap *this)\n{\n  int RandomMap_field_0x38; // eax\n\n  RandomMap_field_0x38 = this->RandomMap_field_0x38;\n  return RandomMap_field_0x38 >= dword_AA0E24 && RandomMap_field_0x38 < dword_AA0E24 + 16;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x00524D40", "name": "InfantryTypeClass::GetTypeIdentifier", "decompiled": "int InfantryTypeClass::GetTypeIdentifier(InfantryTypeClass *this)\n{\n  return 16;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

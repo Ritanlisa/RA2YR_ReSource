@@ -1,0 +1,1 @@
+{"addr": "0x0071A650", "name": "TemporalClass::SetTarget", "decompiled": "int __thiscall TemporalClass::SetTarget(TemporalClass *this, int a2)\n{\n  return AbstractClass::ProcessPower((AbstractClass *)this);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

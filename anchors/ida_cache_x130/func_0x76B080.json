@@ -1,0 +1,1 @@
+{"addr": "0x0076B080", "name": "ComStreamClass::initStream", "decompiled": "bool __thiscall ComStreamClass::initStream(ComStreamClass *this)\n{\n  return *(_DWORD *)&this->field_48 != 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

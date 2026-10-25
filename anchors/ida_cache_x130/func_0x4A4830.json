@@ -1,0 +1,1 @@
+{"addr": "0x004A4830", "name": "DDraw::WaitForIdle", "decompiled": "int DDraw::WaitForIdle(DDraw *this)\n{\n  int result; // eax\n\n  do\n    result = (*(int (__stdcall **)(int, int))(*(_DWORD *)g_DDraw_PrimarySurface + 52))(g_DDraw_PrimarySurface, 2);\n  while ( result && result != -2005532222 );\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

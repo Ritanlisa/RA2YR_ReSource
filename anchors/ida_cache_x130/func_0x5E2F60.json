@@ -1,0 +1,1 @@
+{"addr": "0x005E2F60", "name": "Dialog::ShowPlayerName", "decompiled": "int __thiscall Dialog::ShowPlayerName(Dialog *this)\n{\n  HWND DlgItem; // eax\n\n  DlgItem = GetDlgItem((HWND)this, 1448);\n  return SendMessageA(DlgItem, 0x4B2u, 0, 11055906);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

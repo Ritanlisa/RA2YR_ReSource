@@ -1,0 +1,1 @@
+{"addr": "0x005B36E0", "name": "IPersistStream::SetField", "decompiled": "char __fastcall IPersistStream::SetField(int a1)\n{\n  if ( a1 == -1 )\n    return 1;\n  else\n    return byte_A8E3AE[32 * a1];\n}\n", "changed": true, "error": null, "timestamp": "x130"}

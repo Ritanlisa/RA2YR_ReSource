@@ -1,0 +1,1 @@
+{"addr": "0x00798120", "name": "sub_798120", "decompiled": "void __cdecl sub_798120()\n{\n  ObjectClass *v0; // esi\n  int v1; // edi\n\n  v0 = (ObjectClass *)&byte_B76954;\n  v1 = 16;\n  do\n  {\n    v0 = (ObjectClass *)((char *)v0 - 4);\n    DeleteAndZero(v0);\n    --v1;\n  }\n  while ( v1 );\n}\n", "changed": true, "error": null, "timestamp": "x130"}

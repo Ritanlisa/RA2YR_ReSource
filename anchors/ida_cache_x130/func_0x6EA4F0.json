@@ -1,0 +1,1 @@
+{"addr": "0x006EA4F0", "name": "CaptureManagerClass::AddMember", "decompiled": "char __thiscall CaptureManagerClass::AddMember(CaptureManagerClass *this, int a2)\n{\n  return TeamClass::AddMember(&this->vfptr, a2, 1);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

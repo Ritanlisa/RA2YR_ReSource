@@ -1,0 +1,1 @@
+{"addr": "0x004DFA50", "name": "FootClass::IsNotAttackAndPlayer", "decompiled": "char __thiscall FootClass::IsNotAttackAndPlayer(FootClass *this)\n{\n  if ( this->isAttackedByLocomotor[0] )\n    return 0;\n  else\n    return ObjectClass::IsPlayerOwnedAndCheck((IUnknown *)this);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

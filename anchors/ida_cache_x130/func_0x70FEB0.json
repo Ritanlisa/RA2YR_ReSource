@@ -1,0 +1,1 @@
+{"addr": "0x0070FEB0", "name": "FootClass::checkPassability", "decompiled": "BOOL __thiscall FootClass::checkPassability(FootClass *this)\n{\n  return this->drainTarget != 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

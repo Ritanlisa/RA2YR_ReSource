@@ -1,0 +1,1 @@
+{"addr": "0x0069ADE0", "name": "sub_69ADE0", "decompiled": "char __thiscall sub_69ADE0(_BYTE *this, char a2)\n{\n  *(this + 380) = a2;\n  return a2;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

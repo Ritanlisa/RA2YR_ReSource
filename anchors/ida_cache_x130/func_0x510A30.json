@@ -1,0 +1,1 @@
+{"addr": "0x00510A30", "name": "AbstractClass::loadFromStream", "decompiled": "int __stdcall AbstractClass::loadFromStream(int a1)\n{\n  return HouseClass::COMStub_Ret1_1((HouseClass *)(a1 - 4));\n}\n", "changed": true, "error": null, "timestamp": "x130"}

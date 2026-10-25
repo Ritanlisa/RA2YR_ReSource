@@ -1,0 +1,1 @@
+{"addr": "0x004E1460", "name": "DialogControl::Show", "decompiled": "int __thiscall DialogControl::Show(ShpButtonClass *this)\n{\n  BYTE2(this->Image) = 1;\n  LOBYTE(this->Image) = 1;\n  return (*(int (__thiscall **)(ShpButtonClass *))(*(_DWORD *)this->__pad_0 + 84))(this);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

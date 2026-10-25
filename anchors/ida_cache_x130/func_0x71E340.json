@@ -1,0 +1,1 @@
+{"addr": "0x0071E340", "name": "TerrainTypeClass::GetObjectSize", "decompiled": "int TerrainTypeClass::GetObjectSize(TerrainTypeClass *this)\n{\n  return 700;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x005D7580", "name": "sub_5D7580", "decompiled": "_DWORD *__thiscall sub_5D7580(ObjectClass *this)\n{\n  this->vfptr = (int)&MultiplayerGameMode::InitializerBase::`vftable';\n  return &this->vfptr;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

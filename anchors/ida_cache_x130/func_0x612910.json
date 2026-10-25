@@ -1,0 +1,1 @@
+{"addr": "0x00612910", "name": "sub_612910", "decompiled": "void __cdecl sub_612910()\n{\n  *(_DWORD *)&stru_AC1B48.__pad_208[144] = 0;\n  __3_YAXPAX_Z(*(void **)&stru_AC1B48.__pad_208[152]);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

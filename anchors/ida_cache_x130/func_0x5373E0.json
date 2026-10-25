@@ -1,0 +1,1 @@
+{"addr": "0x005373E0", "name": "CreateTeamCommand::performAction_150", "decompiled": "wchar_t *__thiscall CreateTeamCommand::performAction_150(View2CommandClass *this)\n{\n  return GetStringCSF(aTxtViewBookmar_1, 0, g_Str_File_Init_CPP, 7743);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

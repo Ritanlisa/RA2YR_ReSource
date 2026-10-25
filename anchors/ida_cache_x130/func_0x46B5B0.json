@@ -1,0 +1,1 @@
+{"addr": "0x0046B5B0", "name": "BulletClass::CheckMissionAbort", "decompiled": "int __thiscall BulletClass::CheckMissionAbort(BulletClass *this)\n{\n  return this->BulletClass_field_0xAC;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

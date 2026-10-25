@@ -1,0 +1,1 @@
+{"addr": "0x007CF768", "name": "__set_sbh_threshold", "decompiled": "int __cdecl _set_sbh_threshold(size_t NewValue)\n{\n  if ( NewValue > 0x3F8 )\n    return 0;\n  dword_87C584 = NewValue;\n  return 1;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

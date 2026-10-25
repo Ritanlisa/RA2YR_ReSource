@@ -1,0 +1,1 @@
+{"addr": "0x0041C030", "name": "TacticalClass::CheckAction", "decompiled": "int __thiscall TacticalClass::CheckAction(TechnoClass *this)\n{\n  int result; // eax\n\n  this->isDisguisedFlag[0] = 0;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

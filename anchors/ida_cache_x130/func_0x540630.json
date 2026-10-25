@@ -1,0 +1,1 @@
+{"addr": "0x00540630", "name": "IPXGlobalConnClass::ddtor", "decompiled": "int __thiscall IPXGlobalConnClass::ddtor(IPXGlobalConnClass *this, int a2, int a3)\n{\n  return ConnectionClass::receivePacket((ModemConnectionClass *)this, a2, a3);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

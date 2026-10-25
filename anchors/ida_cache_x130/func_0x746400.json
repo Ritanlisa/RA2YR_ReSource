@@ -1,0 +1,1 @@
+{"addr": "0x00746400", "name": "TechnoClass::processParasiteAttachment", "decompiled": "bool __thiscall TechnoClass::processParasiteAttachment(TechnoClass *this)\n{\n  return *(_BYTE *)(*((_DWORD *)this + 433) + 3611) == 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

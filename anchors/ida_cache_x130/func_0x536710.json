@@ -1,0 +1,1 @@
+{"addr": "0x00536710", "name": "CreateTeamCommand::performAction_35", "decompiled": "BOOL __thiscall CreateTeamCommand::performAction_35(PlanningModeCommandClass *this)\n{\n  char v2; // [esp+5h] [ebp+5h]\n\n  return (v2 & 7) != 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

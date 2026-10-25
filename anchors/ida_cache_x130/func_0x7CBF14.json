@@ -1,0 +1,1 @@
+{"addr": "0x007CBF14", "name": "__control87", "decompiled": "unsigned int __cdecl _control87(unsigned int NewValue, unsigned int Mask)\n{\n  int v2; // eax\n  unsigned int v3; // esi\n  __int16 v5; // [esp+4h] [ebp-4h]\n\n  LOBYTE(v2) = _abstract_cw(v5);\n  v3 = Mask & NewValue | ~Mask & v2;\n  _hw_cw(v3);\n  return v3;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

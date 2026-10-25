@@ -1,0 +1,1 @@
+{"addr": "0x007D4BD8", "name": "___pxcptinfoptrs", "decompiled": "void **__cdecl __pxcptinfoptrs()\n{\n  return (void **)(_getptd() + 21);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x00626660", "name": "HashStringMod31", "decompiled": "int __fastcall HashStringMod31(char *a1)\n{\n  char v1; // dl\n  int result; // eax\n\n  v1 = *a1;\n  for ( result = 0; *a1; v1 = *a1 )\n  {\n    ++a1;\n    result = (v1 + 26 * result) % 31;\n  }\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

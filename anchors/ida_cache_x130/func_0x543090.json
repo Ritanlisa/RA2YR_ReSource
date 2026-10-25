@@ -1,0 +1,1 @@
+{"addr": "0x00543090", "name": "Connection::Close", "decompiled": "int __thiscall Connection::Close(Connection *this)\n{\n  int result; // eax\n\n  result = this->Connection_field_0x48;\n  if ( result )\n    *(_BYTE *)(result + 200) = 1;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

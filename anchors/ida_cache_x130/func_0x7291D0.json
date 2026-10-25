@@ -1,0 +1,1 @@
+{"addr": "0x007291D0", "name": "JumpjetLocomotionClass::StubReturnZero_21", "decompiled": "int __stdcall JumpjetLocomotionClass::StubReturnZero_21(TunnelLocomotionClass *this, char a2)\n{\n  if ( this->RefCount == 4 )\n    return (a2 != 0) + 4;\n  else\n    return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

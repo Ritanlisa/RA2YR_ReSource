@@ -1,0 +1,1 @@
+{"addr": "0x007DCFA6", "name": "SetErrorInfo", "decompiled": "// attributes: thunk\nHRESULT __stdcall SetErrorInfo(ULONG dwReserved, IErrorInfo *perrinfo)\n{\n  return __imp_SetErrorInfo(dwReserved, perrinfo);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

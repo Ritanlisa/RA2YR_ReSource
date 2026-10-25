@@ -1,0 +1,1 @@
+{"addr": "0x00628410", "name": "VectorClass_ptr_ColorScheme::ScalarDeletingDestructor", "decompiled": "int __thiscall VectorClass_ptr_ColorScheme::ScalarDeletingDestructor(_VectorClass_VHSVClass *this, int a2)\n{\n  if ( !LOBYTE(this->m_C) )\n    return 0;\n  if ( this->m_8 > 0 )\n    VtableStub::5175D0();\n  return -1;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

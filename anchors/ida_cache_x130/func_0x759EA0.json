@@ -1,0 +1,1 @@
+{"addr": "0x00759EA0", "name": "Render_Load_759EA0", "decompiled": "int __thiscall Render_Load_759EA0(TechnoClass *this)\n{\n  return this->shouldLoseTarget;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

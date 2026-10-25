@@ -1,0 +1,1 @@
+{"addr": "0x004AA290", "name": "BuildingClass::updateSellBack", "decompiled": "int __thiscall BuildingClass::updateSellBack(BuildingClass *this, __int16 *a2, _DWORD *a3)\n{\n  Object *v3; // eax\n\n  v3 = (Object *)CellCoord::To_CellObj((CellCoord *)this, a2);\n  return Object::FindObjectCell(v3, a3, 0);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

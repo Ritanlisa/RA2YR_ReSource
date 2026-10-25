@@ -1,0 +1,1 @@
+{"addr": "0x007DCEB0", "name": "HeapSize", "decompiled": "// attributes: thunk\nSIZE_T __stdcall HeapSize(HANDLE hHeap, DWORD dwFlags, LPCVOID lpMem)\n{\n  return __imp_HeapSize(hHeap, dwFlags, lpMem);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

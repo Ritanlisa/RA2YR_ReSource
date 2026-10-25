@@ -1,0 +1,1 @@
+{"addr": "0x00458DB0", "name": "BuildingClass::HasActiveParam", "decompiled": "bool __thiscall BuildingClass::HasActiveParam(BuildingClass *this)\n{\n  return (*(unsigned __int8 (__thiscall **)(BuildingClass *))(this->vfptr + 1024))(this)\n      || TechnoClass::HasActiveParam((TechnoClass *)this);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

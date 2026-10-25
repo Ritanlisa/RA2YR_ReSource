@@ -1,0 +1,1 @@
+{"addr": "0x007B4140", "name": "UDPInterfaceClass_Destru::COMStub", "decompiled": "int __thiscall UDPInterfaceClass_Destru::COMStub(UDPInterfaceClass *this)\n{\n  return *((_DWORD *)this + 64856);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

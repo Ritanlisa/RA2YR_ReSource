@@ -1,0 +1,1 @@
+{"addr": "0x0070D150", "name": "FrameTimer::Init25", "decompiled": "int FrameTimer::Init25()\n{\n  int v1; // [esp+4h] [ebp-8h]\n\n  *(_DWORD *)&stru_B0EA70.__pad_6[10] = *(_DWORD *)&stru_A8E960.random[528];\n  *(_DWORD *)&stru_B0EA70.__pad_6[14] = v1;\n  stru_B0EA70.m_18 = 25;\n  return v1;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

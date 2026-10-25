@@ -1,0 +1,1 @@
+{"addr": "0x00524D50", "name": "InfantryTypeClass::GetObjectSize", "decompiled": "int InfantryTypeClass::GetObjectSize(InfantryTypeClass *this)\n{\n  return 3792;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

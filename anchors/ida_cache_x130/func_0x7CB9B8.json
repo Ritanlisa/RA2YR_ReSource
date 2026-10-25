@@ -1,0 +1,1 @@
+{"addr": "0x007CB9B8", "name": "_wcstol", "decompiled": "int __cdecl wcstol(const wchar_t *String, wchar_t **EndPtr, int Radix)\n{\n  return wcstoxl((wint_t *)String, EndPtr, Radix, 0);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

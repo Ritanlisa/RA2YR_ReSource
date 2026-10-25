@@ -1,0 +1,1 @@
+{"addr": "0x00727CC0", "name": "TriggerTypeClass::GetAuxField", "decompiled": "int __thiscall TriggerTypeClass::GetAuxField(TriggerTypeClass *this)\n{\n  return this->ArrayIndex;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x0065B4C0", "name": "RadSiteClass::SetBaseCell", "decompiled": "_DWORD *__thiscall RadSiteClass::SetBaseCell(RadSiteClass *this, _DWORD *a2)\n{\n  this->BaseCell = *a2;\n  return a2;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

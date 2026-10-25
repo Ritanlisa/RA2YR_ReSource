@@ -1,0 +1,1 @@
+{"addr": "0x00690FC0", "name": "ScoreAnimClass::Release", "decompiled": "void __thiscall ScoreAnimClass::Release(ScoreAnimClass *this)\n{\n  if ( this->ScoreAnimClass_field_0x0C == -1 )\n    this->ScoreAnimClass_field_0x0C = Timer::GetTicks();\n}\n", "changed": true, "error": null, "timestamp": "x130"}

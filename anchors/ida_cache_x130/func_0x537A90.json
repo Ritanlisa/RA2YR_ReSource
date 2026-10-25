@@ -1,0 +1,1 @@
+{"addr": "0x00537A90", "name": "Commands::Execute", "decompiled": "char __thiscall Commands::Execute(MultiplayerDebugCommandClass *this)\n{\n  char result; // al\n\n  result = byte_A8B8B4;\n  if ( byte_A8B8B4 )\n  {\n    result = byte_A8B8B5 == 0;\n    byte_A8B8B5 = byte_A8B8B5 == 0;\n  }\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

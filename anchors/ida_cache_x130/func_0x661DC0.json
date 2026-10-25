@@ -1,0 +1,1 @@
+{"addr": "0x00661DC0", "name": "sub_661DC0", "decompiled": "void sub_661DC0()\n{\n  double v0; // [esp+0h] [ebp-8h]\n\n  __asm { fild    dword_B04E78 }\n  __asm\n  {\n    fmul    ds:dbl_7E1740\n    fstp    [esp+8+var_8]; double\n  }\n  Math::ArcTan(v0);\n  __asm { fstp    dbl_B04E30 }\n}\n", "changed": true, "error": null, "timestamp": "x130"}

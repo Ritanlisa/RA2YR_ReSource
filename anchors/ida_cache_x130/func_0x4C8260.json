@@ -1,0 +1,1 @@
+{"addr": "0x004C8260", "name": "sub_4C8260", "decompiled": "void sub_4C8260()\n{\n  *(double *)&Buffer[65608] = 0.0174532925199433 * 45.0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x004C1A90", "name": "DSurface::BlitWhole", "decompiled": "int __stdcall DSurface::BlitWhole(DSurface *this, int a2, int a3)\n{\n  XSurface *v3; // ecx\n\n  return XSurface::BlitWhole(v3, &this->DSurface_field_0x0, a2, a3);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

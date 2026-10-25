@@ -1,0 +1,1 @@
+{"addr": "0x004E7E90", "name": "unknown_libname_16", "decompiled": "// Microsoft VisualC 2-14/net runtime\n_DWORD *unknown_libname_16()\n{\n  return TabClass::initStripClass((TabClass *)&unk_A83E18);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

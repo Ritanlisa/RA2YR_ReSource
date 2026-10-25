@@ -1,0 +1,1 @@
+{"addr": "0x00724BD0", "name": "ToolTipManager::stubReturnFalse", "decompiled": "int __stdcall ToolTipManager::stubReturnFalse(ToolTipManager *this)\n{\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

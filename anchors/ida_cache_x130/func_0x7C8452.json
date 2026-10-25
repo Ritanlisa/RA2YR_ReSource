@@ -1,0 +1,1 @@
+{"addr": "0x007C8452", "name": "AllocConsole", "decompiled": "// attributes: thunk\nBOOL __stdcall AllocConsole()\n{\n  return __imp_AllocConsole();\n}\n", "changed": true, "error": null, "timestamp": "x130"}

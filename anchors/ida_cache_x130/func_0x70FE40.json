@@ -1,0 +1,1 @@
+{"addr": "0x0070FE40", "name": "sub_70FE40", "decompiled": "int __thiscall sub_70FE40(_DWORD *this, int a2)\n{\n  *(this + 116) = a2;\n  return a2;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

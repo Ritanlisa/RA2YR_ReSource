@@ -1,0 +1,1 @@
+{"addr": "0x004AEC30", "name": "DisplayClass::processDisplayMode", "decompiled": "int *__thiscall DisplayClass::processDisplayMode(BufferStraw *this, char a2)\n{\n  Vector::Clear((int)(this + 1));\n  Straw::Dtor((Straw *)this);\n  if ( (a2 & 1) != 0 )\n    __3_YAXPAX_Z(this);\n  return (int *)this->__pad_0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

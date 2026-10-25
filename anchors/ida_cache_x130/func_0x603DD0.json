@@ -1,0 +1,1 @@
+{"addr": "0x00603DD0", "name": "globalHelper_003DD0", "decompiled": "LRESULT __fastcall globalHelper_003DD0(HWND hWnd, unsigned __int8 a2)\n{\n  return SendMessageA(hWnd, 0x4E6u, 0, a2);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

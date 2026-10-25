@@ -1,0 +1,1 @@
+{"addr": "0x007C8998", "name": "bind", "decompiled": "// attributes: thunk\nint __stdcall bind(SOCKET s, const struct sockaddr *name, int namelen)\n{\n  return __imp_bind(s, name, namelen);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

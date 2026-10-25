@@ -1,0 +1,1 @@
+{"addr": "0x006AC7A0", "name": "ObjectClass::updateAnimation", "decompiled": "ShpButtonClass *__thiscall ObjectClass::updateAnimation(ShpButtonClass *Block, char a2)\n{\n  GadgetClass::Dtor(Block);\n  if ( (a2 & 1) != 0 )\n    __3_YAXPAX_Z(Block);\n  return Block;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

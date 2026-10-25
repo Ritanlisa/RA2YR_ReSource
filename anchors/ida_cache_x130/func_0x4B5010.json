@@ -1,0 +1,1 @@
+{"addr": "0x004B5010", "name": "DropListClass::GetItemData", "decompiled": "int __thiscall DropListClass::GetItemData(DropListClass *this)\n{\n  return (*(int (__thiscall **)(char *))(*((_DWORD *)this + 44) + 152))((char *)this + 176);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x00542FC0", "name": "Network_Init_542FC0", "decompiled": "int __thiscall Network_Init_542FC0(ObjectClass *this, int a2)\n{\n  ObjectClass *v2; // ecx\n  int result; // eax\n\n  v2 = (ObjectClass *)this->ambientSoundController[3];\n  if ( v2 )\n    return Network_Init_5402B0(v2, a2);\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

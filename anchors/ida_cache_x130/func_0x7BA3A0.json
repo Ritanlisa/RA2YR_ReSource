@@ -1,0 +1,1 @@
+{"addr": "0x007BA3A0", "name": "WWMouseClass::QueryInterface", "decompiled": "_DWORD *__thiscall WWMouseClass::QueryInterface(WWMouseClass *this, char a2)\n{\n  WWMouseClass::loadCursorImages(this);\n  if ( (a2 & 1) != 0 )\n    __3_YAXPAX_Z(this);\n  return this->__pad_0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

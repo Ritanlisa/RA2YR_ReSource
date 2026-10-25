@@ -1,0 +1,1 @@
+{"addr": "0x006B8AE0", "name": "ScenarioClass::ResetIntroFlags", "decompiled": "unsigned int __thiscall ScenarioClass::ResetIntroFlags(ScenarioClass *this)\n{\n  unsigned int result; // eax\n\n  result = *(_DWORD *)this->nextScenario & 0xFFF80000 | 0x8088;\n  *(_DWORD *)this->nextScenario = result;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x00750060", "name": "Team_Create_750060", "decompiled": "char __thiscall Team_Create_750060(ObjectClass *this, char a2)\n{\n  char result; // al\n\n  result = a2;\n  if ( a2 )\n    this->vfptr = -1098907648;\n  else\n    this->vfptr = 0;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x0075F880", "name": "WaveClass::GetObjectSize", "decompiled": "int WaveClass::GetObjectSize(WaveClass *this)\n{\n  return 576;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

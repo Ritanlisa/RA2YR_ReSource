@@ -1,0 +1,1 @@
+{"addr": "0x00746C90", "name": "TechnoClass::checkSpawnState", "decompiled": "BOOL __thiscall TechnoClass::checkSpawnState(TechnoClass *this)\n{\n  return *((_DWORD *)this + 438) != -1 || (unsigned __int8)TechnoClass::HasPassengers(this);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

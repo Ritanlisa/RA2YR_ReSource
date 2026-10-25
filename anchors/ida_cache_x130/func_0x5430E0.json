@@ -1,0 +1,1 @@
+{"addr": "0x005430E0", "name": "IPXManagerClass::QueryInterface", "decompiled": "char *__thiscall IPXManagerClass::QueryInterface(IPXManagerClass *this, char a2)\n{\n  IPXManagerClass::processPacket((char *)this);\n  if ( (a2 & 1) != 0 )\n    __3_YAXPAX_Z(this);\n  return (char *)this;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

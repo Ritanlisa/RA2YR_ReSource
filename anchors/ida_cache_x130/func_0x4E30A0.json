@@ -1,0 +1,1 @@
+{"addr": "0x004E30A0", "name": "GaugeClass::Stub", "decompiled": "int __thiscall GaugeClass::Stub(GaugeClass *this)\n{\n  return *((_DWORD *)this + 13);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

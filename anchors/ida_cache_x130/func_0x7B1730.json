@@ -1,0 +1,1 @@
+{"addr": "0x007B1730", "name": "IPXInterfaceClass::GetQueueSize", "decompiled": "void IPXInterfaceClass::GetQueueSize(WinsockInterfaceClass *this)\n{\n  ;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

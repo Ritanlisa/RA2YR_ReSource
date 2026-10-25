@@ -1,0 +1,1 @@
+{"addr": "0x006CC280", "name": "SuperClass::SetRechargeTime", "decompiled": "int __thiscall SuperClass::SetRechargeTime(SuperClass *this, int a2)\n{\n  this->SuperClass_field_0x24 = a2;\n  return a2;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

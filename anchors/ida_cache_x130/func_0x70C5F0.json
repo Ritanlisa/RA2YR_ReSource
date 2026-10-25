@@ -1,0 +1,1 @@
+{"addr": "0x0070C5F0", "name": "ObjectClass::IsNotShrouded", "decompiled": "int __thiscall ObjectClass::IsNotShrouded(TechnoClass *this)\n{\n  int result; // eax\n\n  LOBYTE(result) = !this->isBeingWarpedOut[0] && !this->isWarpingOut[0];\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

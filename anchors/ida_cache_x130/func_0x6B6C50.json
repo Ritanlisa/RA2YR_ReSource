@@ -1,0 +1,1 @@
+{"addr": "0x006B6C50", "name": "sub_6B6C50", "decompiled": "void __cdecl sub_6B6C50()\n{\n  SpawnManagerClass_Array = (int)&VectorClass<SpawnManagerClass *>::`vftable';\n  if ( dword_B0B884 && byte_B0B88D )\n  {\n    __3_YAXPAX_Z(dword_B0B884);\n    dword_B0B884 = 0;\n  }\n  byte_B0B88D = 0;\n  dword_B0B888 = 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

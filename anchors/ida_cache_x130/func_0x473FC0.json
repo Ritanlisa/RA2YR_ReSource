@@ -1,0 +1,1 @@
+{"addr": "0x00473FC0", "name": "FileClass::SetFileName", "decompiled": "int __thiscall FileClass::SetFileName(CCFileClass *this, char *Source)\n{\n  this->field_6C = 0;\n  return FileClass::OpenWithCDSearch((CDFileClass *)this, Source);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

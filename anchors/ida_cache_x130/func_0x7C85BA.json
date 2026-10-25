@@ -1,0 +1,1 @@
+{"addr": "0x007C85BA", "name": "HeapDestroy", "decompiled": "// attributes: thunk\nBOOL __stdcall HeapDestroy(HANDLE hHeap)\n{\n  return __imp_HeapDestroy(hHeap);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

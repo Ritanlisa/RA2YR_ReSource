@@ -1,0 +1,1 @@
+{"addr": "0x0065AD30", "name": "Team::GetMember", "decompiled": "int __thiscall Team::GetMember(Team *this, int a2)\n{\n  return *((_DWORD *)this->field_E4 + a2);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

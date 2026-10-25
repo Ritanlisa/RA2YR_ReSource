@@ -1,0 +1,1 @@
+{"addr": "0x005BBED0", "name": "FileFind::Close", "decompiled": "// attributes: thunk\nvoid __thiscall FileFind::Close(FileFind *this)\n{\n  FileFind::ReleaseAllHandles(this);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

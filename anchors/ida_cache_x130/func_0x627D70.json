@@ -1,0 +1,1 @@
+{"addr": "0x00627D70", "name": "VectorClass_ptr_ColorScheme::Get", "decompiled": "int __thiscall VectorClass_ptr_ColorScheme::Get(_VectorClass_PAVColorScheme *this, int a2)\n{\n  return *(_DWORD *)(*(_DWORD *)&this->m_1[3] + 4 * a2);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x007C8860", "name": "GetStockObject", "decompiled": "// attributes: thunk\nHGDIOBJ __stdcall GetStockObject(int i)\n{\n  return __imp_GetStockObject(i);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

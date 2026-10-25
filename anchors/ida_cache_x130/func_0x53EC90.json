@@ -1,0 +1,1 @@
+{"addr": "0x0053EC90", "name": "Mouse::GetKeyState", "decompiled": "SHORT __thiscall Mouse::GetKeyState(Mouse *this)\n{\n  if ( dword_AA0444 )\n    return word_AA0168[(unsigned __int8)this];\n  else\n    return GetAsyncKeyState((unsigned __int8)this);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

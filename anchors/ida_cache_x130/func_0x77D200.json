@@ -1,0 +1,1 @@
+{"addr": "0x0077D200", "name": "j_Game_ProcessIdle", "decompiled": "// attributes: thunk\nchar __thiscall j_Game_ProcessIdle(CreateGameDialogControl *this)\n{\n  return Game::ProcessIdle(this);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

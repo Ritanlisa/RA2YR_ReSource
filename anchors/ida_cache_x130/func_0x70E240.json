@@ -1,0 +1,1 @@
+{"addr": "0x0070E240", "name": "IsNonNullPtr", "decompiled": "int __stdcall IsNonNullPtr(_DWORD *a1)\n{\n  return a1 && *a1;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

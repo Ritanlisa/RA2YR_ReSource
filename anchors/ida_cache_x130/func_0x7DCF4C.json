@@ -1,0 +1,1 @@
+{"addr": "0x007DCF4C", "name": "IsValidCodePage", "decompiled": "// attributes: thunk\nBOOL __stdcall IsValidCodePage(UINT CodePage)\n{\n  return __imp_IsValidCodePage(CodePage);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

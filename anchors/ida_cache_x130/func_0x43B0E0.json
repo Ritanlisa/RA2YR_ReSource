@@ -1,0 +1,1 @@
+{"addr": "0x0043B0E0", "name": "sub_43B0E0", "decompiled": "int sub_43B0E0()\n{\n  g_TerrainTypeTable = 0;\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

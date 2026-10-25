@@ -1,0 +1,1 @@
+{"addr": "0x007C979C", "name": "___onexitinit", "decompiled": "void *__onexitinit()\n{\n  _DWORD *v0; // eax\n\n  v0 = malloc(0x80u);\n  dword_B78BC0 = v0;\n  if ( !v0 )\n    _amsg_exit(0x18u);\n  *v0 = 0;\n  dword_B78BBC = (int)dword_B78BC0;\n  return dword_B78BC0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

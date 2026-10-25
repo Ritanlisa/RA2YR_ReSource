@@ -1,0 +1,1 @@
+{"addr": "0x00488360", "name": "CheckListClass::ScrollUp", "decompiled": "int __thiscall CheckListClass::ScrollUp(CheckListClass *this, int a2)\n{\n  int *Clamped; // eax\n\n  Clamped = (int *)Array::GetClamped((ListClass *)this, a2);\n  if ( Clamped )\n    return *Clamped;\n  else\n    return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

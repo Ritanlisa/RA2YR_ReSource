@@ -1,0 +1,1 @@
+{"addr": "0x00764FA0", "name": "Team_Start_764FA0", "decompiled": "bool __thiscall Team_Start_764FA0(ObjectClass *this)\n{\n  return this->nextObject != WDTObject::GetSize((WDTObject *)this->vfptr3);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

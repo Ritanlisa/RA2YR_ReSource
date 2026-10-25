@@ -1,0 +1,1 @@
+{"addr": "0x004D9C00", "name": "FootClass::vt_entry_524", "decompiled": "int FootClass::vt_entry_524(FootClass *this)\n{\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

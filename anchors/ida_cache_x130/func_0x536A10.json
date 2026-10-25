@@ -1,0 +1,1 @@
+{"addr": "0x00536A10", "name": "CreateTeamCommand::performAction_65", "decompiled": "char *__thiscall CreateTeamCommand::performAction_65(PrevObjectCommandClass *this)\n{\n  return aPreviousobject;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

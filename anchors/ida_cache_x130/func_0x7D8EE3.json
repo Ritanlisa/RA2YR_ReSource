@@ -1,0 +1,1 @@
+{"addr": "0x007D8EE3", "name": "__frnd", "decompiled": "double __cdecl _frnd(double a1)\n{\n  double result; // st7\n\n  _ST7 = a1;\n  __asm { frndint }\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

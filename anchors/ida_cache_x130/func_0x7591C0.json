@@ -1,0 +1,1 @@
+{"addr": "0x007591C0", "name": "sub_7591C0", "decompiled": "void __cdecl sub_7591C0()\n{\n  dword_B45B58 = (int)&VectorClass<MovieHandle *>::`vftable';\n  if ( AsyncIO_Instance && byte_B45B65 )\n  {\n    __3_YAXPAX_Z(AsyncIO_Instance);\n    AsyncIO_Instance = 0;\n  }\n  byte_B45B65 = 0;\n  dword_B45B60 = 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

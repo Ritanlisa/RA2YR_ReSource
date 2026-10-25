@@ -1,0 +1,1 @@
+{"addr": "0x007B54B0", "name": "String::Length", "decompiled": "int __thiscall String::Length(String *this)\n{\n  if ( *(_DWORD *)this->__pad_0 )\n    return strlen(*(const char **)this->__pad_0);\n  else\n    return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

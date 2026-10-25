@@ -1,0 +1,1 @@
+{"addr": "0x00600680", "name": "ComboBoxOwnerDraw::MatchDimensions", "decompiled": "bool __thiscall ComboBoxOwnerDraw::MatchDimensions(ComboBoxOwnerDraw *this, _DWORD *a2)\n{\n  return a2[1] == this->ComboBoxOwnerDraw_field_0x04 && *a2 == *(_DWORD *)this->__pad_0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

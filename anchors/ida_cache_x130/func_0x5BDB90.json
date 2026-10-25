@@ -1,0 +1,1 @@
+{"addr": "0x005BDB90", "name": "System_Handle", "decompiled": "int __stdcall System_Handle(int a1, char a2)\n{\n  int result; // eax\n\n  if ( !a2 )\n    return stru_82D00C.Volume[7 * a1 + 1];\n  result = stru_82D00C.Volume[7 * a1 + 4];\n  if ( result == -1 )\n    return stru_82D00C.Volume[7 * a1 + 1];\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

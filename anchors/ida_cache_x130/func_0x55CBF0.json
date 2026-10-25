@@ -1,0 +1,1 @@
+{"addr": "0x0055CBF0", "name": "VtableStub::55CBF0", "decompiled": "char VtableStub::55CBF0()\n{\n  return byte_ABCD58;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

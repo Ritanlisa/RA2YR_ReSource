@@ -1,0 +1,1 @@
+{"addr": "0x0050B6F0", "name": "House::IsHumanPlayer", "decompiled": "int __thiscall House::IsHumanPlayer(House *this)\n{\n  if ( *(_DWORD *)&dword_A8B238.field_0 )\n    return this == *(House **)((char *)&stru_A83CD9.estimatedHealth + 3);\n  return LOBYTE(this->House_field_0x1EC) || BYTE1(this->House_field_0x1EC);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

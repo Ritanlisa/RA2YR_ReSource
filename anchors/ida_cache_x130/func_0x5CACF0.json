@@ -1,0 +1,1 @@
+{"addr": "0x005CACF0", "name": "MPBattleClass::isValidMap", "decompiled": "int __usercall MPBattleClass::isValidMap@<eax>(double a1@<st0>)\n{\n  int result; // eax\n\n  Math::Sin(dbl_ABFA80 - dbl_ABFAA8);\n  LOWORD(result) = Math::RoundToInt(a1 * dbl_ABFAA0 * 0.5);\n  dword_ABFAF8 = result;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

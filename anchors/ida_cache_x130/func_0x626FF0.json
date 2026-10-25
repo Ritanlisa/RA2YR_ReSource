@@ -1,0 +1,1 @@
+{"addr": "0x00626FF0", "name": "WinMainSetup_Setup_626FF0", "decompiled": "void WinMainSetup_Setup_626FF0()\n{\n  FileSystem *v0; // esi\n\n  v0 = g_FileExtensionState;\n  if ( g_FileExtensionState )\n  {\n    FileSystem::FlushTempFiles(g_FileExtensionState);\n    __3_YAXPAX_Z(v0);\n    g_FileExtensionState = 0;\n  }\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x00511290", "name": "sub_511290", "decompiled": "void sub_511290()\n{\n  *(double *)&stru_A8E960.waypoints[350] = 0.0174532925199433 * 60.0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

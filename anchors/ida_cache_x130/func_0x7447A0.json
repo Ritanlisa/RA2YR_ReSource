@@ -1,0 +1,1 @@
+{"addr": "0x007447A0", "name": "InfantryClass::ScanTarget_0", "decompiled": "// attributes: thunk\nint __fastcall InfantryClass::ScanTarget_0(FootClass *this)\n{\n  return InfantryClass::ScanTarget(this);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

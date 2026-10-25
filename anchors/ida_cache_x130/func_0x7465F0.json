@@ -1,0 +1,1 @@
+{"addr": "0x007465F0", "name": "TechnoClass::detachParasites", "decompiled": "int __thiscall TechnoClass::detachParasites(TechnoClass *this, char a2)\n{\n  if ( !(unsigned __int8)HouseClass::IsAlliedWith((HouseClass *)this->owner) || a2 )\n    return this->disguisedAsHouse;\n  else\n    return this->owner;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

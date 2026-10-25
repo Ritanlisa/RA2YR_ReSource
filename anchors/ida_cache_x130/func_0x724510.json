@@ -1,0 +1,1 @@
+{"addr": "0x00724510", "name": "sub_724510", "decompiled": "int __thiscall sub_724510(TechnoClass *this)\n{\n  return this->cloakProgress[1];\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x004F3AF0", "name": "GraphicMenuItem_Destru::Release", "decompiled": "char __stdcall GraphicMenuItem_Destru::Release(GraphicMenuItem *this)\n{\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x00681140", "name": "LoadOptions::GetFlag99", "decompiled": "int __thiscall LoadOptions::GetFlag99(LoadOptions *this)\n{\n  return *((_DWORD *)this + 99);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

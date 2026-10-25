@@ -1,0 +1,1 @@
+{"addr": "0x004BAF20", "name": "DSurface::CheckBltStatus", "decompiled": "BOOL __thiscall DSurface::CheckBltStatus(DSurface *this)\n{\n  return (*(int (__stdcall **)(int, int))(*(_DWORD *)this->DSurface_field_0x1C + 52))(this->DSurface_field_0x1C, 1) == 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x00522FC0", "name": "SlaveManagerClass::IsMasterHarvester", "decompiled": "bool __thiscall SlaveManagerClass::IsMasterHarvester(SlaveManagerClass *this)\n{\n  return (*(int (__thiscall **)(SlaveManagerClass *))(this->vfptr + 388))(this) == 10;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

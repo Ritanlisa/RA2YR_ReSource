@@ -1,0 +1,1 @@
+{"addr": "0x007C8434", "name": "FindResourceA", "decompiled": "// attributes: thunk\nHRSRC __stdcall FindResourceA(HMODULE hModule, LPCSTR lpName, LPCSTR lpType)\n{\n  return __imp_FindResourceA(hModule, lpName, lpType);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

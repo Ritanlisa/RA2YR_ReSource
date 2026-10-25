@@ -1,0 +1,1 @@
+{"addr": "0x005CADD0", "name": "MPBattleClass::areTeamChangesAllowed", "decompiled": "int MPBattleClass::areTeamChangesAllowed()\n{\n  dword_ABFAB8 = 0;\n  dword_ABFABC = 0;\n  dword_ABFAC0 = 0;\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

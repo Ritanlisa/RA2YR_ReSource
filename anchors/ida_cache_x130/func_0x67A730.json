@@ -1,0 +1,1 @@
+{"addr": "0x0067A730", "name": "RulesClass::readSmudgeTypes", "decompiled": "int __thiscall RulesClass::readSmudgeTypes(RulesClass *this)\n{\n  return this->LargeVisceroid;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x007D1697", "name": "___doserrno", "decompiled": "unsigned int *__cdecl __doserrno()\n{\n  return _getptd() + 3;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

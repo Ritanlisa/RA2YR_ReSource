@@ -1,0 +1,1 @@
+{"addr": "0x007C888A", "name": "SaveDC", "decompiled": "// attributes: thunk\nint __stdcall SaveDC(HDC hdc)\n{\n  return __imp_SaveDC(hdc);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

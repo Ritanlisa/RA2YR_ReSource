@@ -1,0 +1,1 @@
+{"addr": "0x004DC760", "name": "LocomotionClass::GetSpeedMultiplier", "decompiled": "int __thiscall LocomotionClass::GetSpeedMultiplier(LocomotionClass *this)\n{\n  int result; // eax\n\n  result = *((_DWORD *)this + 373);\n  if ( result )\n    return *(_DWORD *)(result + 36);\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

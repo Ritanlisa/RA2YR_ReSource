@@ -1,0 +1,1 @@
+{"addr": "0x0077D1F0", "name": "ConnectAndLoginWOL_Connect", "decompiled": "void __thiscall ConnectAndLoginWOL_Connect(SimpleWonlineDialogControl *this)\n{\n  *(_DWORD *)this->__pad_0 = &off_7F7624;\n  OwnerDrawControl::InitVtable((OwnerDrawControl *)this);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

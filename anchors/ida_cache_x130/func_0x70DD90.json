@@ -1,0 +1,1 @@
+{"addr": "0x0070DD90", "name": "TechnoClass::vt_entry_3E8", "decompiled": "int __thiscall TechnoClass::vt_entry_3E8(TechnoClass *this)\n{\n  return 1;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

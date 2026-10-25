@@ -1,0 +1,1 @@
+{"addr": "0x007C94BC", "name": "Audio_Write", "decompiled": "size_t __cdecl Audio_Write(void *Buffer, size_t ElementSize, size_t ElementCount, FILE *Stream)\n{\n  size_t v4; // esi\n\n  _lock_file(Stream);\n  v4 = fread(Buffer, ElementSize, ElementCount, Stream);\n  _unlock_file(Stream);\n  return v4;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

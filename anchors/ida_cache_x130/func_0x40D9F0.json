@@ -1,0 +1,1 @@
+{"addr": "0x0040D9F0", "name": "unknown_libname_4", "decompiled": "// Microsoft VisualC 2-14/net runtime\n_DWORD *unknown_libname_4()\n{\n  return SeedInitRNG((ObjectClass *)&Randomizer_Global, 0);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

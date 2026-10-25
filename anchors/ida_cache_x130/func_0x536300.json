@@ -1,0 +1,1 @@
+{"addr": "0x00536300", "name": "TauntCommandClass::ddtor", "decompiled": "wchar_t *TauntCommandClass::ddtor(TauntCommandClass *this)\n{\n  return GetStringCSF(aTxtTaunt, 0, g_Str_File_Init_CPP, 6405);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

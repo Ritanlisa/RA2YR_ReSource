@@ -1,0 +1,1 @@
+{"addr": "0x0055A710", "name": "StreamClass::ResetPosition", "decompiled": "int __stdcall StreamClass::ResetPosition(LocomotionClass *this, int a2)\n{\n  this->Owner = a2;\n  *(_DWORD *)this->__pad_4 = a2;\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

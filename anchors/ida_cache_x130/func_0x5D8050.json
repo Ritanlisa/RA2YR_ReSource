@@ -1,0 +1,1 @@
+{"addr": "0x005D8050", "name": "AbstractClass::processFogReveal", "decompiled": "_DWORD *__thiscall AbstractClass::processFogReveal(AbstractClass *this, char a2)\n{\n  this->vfptr = (int)&MultiplayerGameMode::InitializerBase::`vftable';\n  if ( (a2 & 1) != 0 )\n    __3_YAXPAX_Z(this);\n  return &this->vfptr;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

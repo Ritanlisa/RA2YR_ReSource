@@ -1,0 +1,1 @@
+{"addr": "0x00731A30", "name": "UI_Create_731A30", "decompiled": "int UI_Create_731A30()\n{\n  int result; // eax\n\n  result = dword_A8B538[0];\n  if ( !dword_A8B538[0] )\n    return MapClass::ToggleZoom((MapClass *)&dword_87F7E8, -1);\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

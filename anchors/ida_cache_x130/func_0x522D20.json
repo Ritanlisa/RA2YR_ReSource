@@ -1,0 +1,1 @@
+{"addr": "0x00522D20", "name": "SlaveManagerClass::VtableDispatch", "decompiled": "int __thiscall SlaveManagerClass::VtableDispatch(SlaveManagerClass *this)\n{\n  return (*(int (__thiscall **)(SlaveManagerClass *, int, _DWORD))(this->vfptr + 488))(this, 5, 0);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

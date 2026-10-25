@@ -1,0 +1,1 @@
+{"addr": "0x007177E0", "name": "TechnoClass::processSpyAction", "decompiled": "int __thiscall TechnoClass::processSpyAction(TechnoClass *this, int a2)\n{\n  return (int)this + 28 * a2 + 2708;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

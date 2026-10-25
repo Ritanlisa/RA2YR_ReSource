@@ -1,0 +1,1 @@
+{"addr": "0x005361C0", "name": "CenterTeamCommand::AddRef", "decompiled": "char *__thiscall CenterTeamCommand::AddRef(CenterTeamCommandClass *this)\n{\n  sprintf(&stru_A8E960.waypoints[1570], \"TeamCenter_%d\", *(_DWORD *)&this->m_1[3]);\n  return &stru_A8E960.waypoints[1570];\n}\n", "changed": true, "error": null, "timestamp": "x130"}

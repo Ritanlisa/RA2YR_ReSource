@@ -1,0 +1,1 @@
+{"addr": "0x006E58B0", "name": "TagClass::ProcessTrigger", "decompiled": "void **__thiscall TagClass::ProcessTrigger(TagClass *this, char a2)\n{\n  TagClass::Destructor(this);\n  if ( (a2 & 1) != 0 )\n    __3_YAXPAX_Z(this);\n  return (void **)this;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

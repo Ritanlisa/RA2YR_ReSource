@@ -1,0 +1,1 @@
+{"addr": "0x00473920", "name": "CarryoverClass::QueryInterface", "decompiled": "_DWORD *__thiscall CarryoverClass::QueryInterface(CarryoverClass *this, char a2)\n{\n  LinkClass::Destruct((LinkClass *)this);\n  if ( (a2 & 1) != 0 )\n    __3_YAXPAX_Z(this);\n  return this->__tail_0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

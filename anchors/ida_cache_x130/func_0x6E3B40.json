@@ -1,0 +1,1 @@
+{"addr": "0x006E3B40", "name": "TActionClass::executeLightningAction", "decompiled": "char __thiscall TActionClass::executeLightningAction(TActionClass *this, int a2, int a3, int a4, int a5)\n{\n  if ( !a2 )\n    return 0;\n  HouseClass::CreateRadarOutage(a2, *(_DWORD *)&this->pad_6E[34]);\n  return 1;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

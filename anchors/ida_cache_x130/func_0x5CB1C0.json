@@ -1,0 +1,1 @@
+{"addr": "0x005CB1C0", "name": "MPBattleClass::onPlayerDisconnect", "decompiled": "void MPBattleClass::onPlayerDisconnect()\n{\n  dbl_ABFB78 = dbl_ABFB28 / 60.0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

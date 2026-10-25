@@ -1,0 +1,1 @@
+{"addr": "0x007535B0", "name": "AudioFrame::CounterInc", "decompiled": "int AudioFrame::CounterInc()\n{\n  if ( g_InfantryDrawState )\n    AudioFrame::ProcessAudioFrame((AudioFrame *)g_InfantryDrawState);\n  return ++dword_B1D428;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

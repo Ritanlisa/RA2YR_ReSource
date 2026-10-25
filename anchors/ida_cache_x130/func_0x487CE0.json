@@ -1,0 +1,1 @@
+{"addr": "0x00487CE0", "name": "CellClass::RadLevel_Increase", "decompiled": "void __thiscall CellClass::RadLevel_Increase(double *this, double a2)\n{\n  *(this + 30) = a2 + *(this + 30);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

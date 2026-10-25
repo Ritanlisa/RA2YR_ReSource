@@ -1,0 +1,1 @@
+{"addr": "0x007C8992", "name": "closesocket", "decompiled": "// attributes: thunk\nint __stdcall closesocket(SOCKET s)\n{\n  return __imp_closesocket(s);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

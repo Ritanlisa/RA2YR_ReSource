@@ -1,0 +1,1 @@
+{"addr": "0x00633AC0", "name": "ExecuteActionPlanManager_Helper", "decompiled": "_DWORD *__thiscall ExecuteActionPlanManager_Helper(ObjectClass *this)\n{\n  LOBYTE(this->vfptr) = 0;\n  this->estimatedHealth = 0;\n  *(_DWORD *)this->isOnMap = -1;\n  return &this->vfptr;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

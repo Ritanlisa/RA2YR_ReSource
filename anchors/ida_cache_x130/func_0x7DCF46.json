@@ -1,0 +1,1 @@
+{"addr": "0x007DCF46", "name": "IsValidLocale", "decompiled": "// attributes: thunk\nBOOL __stdcall IsValidLocale(LCID Locale, DWORD dwFlags)\n{\n  return __imp_IsValidLocale(Locale, dwFlags);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

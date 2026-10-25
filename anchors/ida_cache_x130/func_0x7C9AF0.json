@@ -1,0 +1,1 @@
+{"addr": "0x007C9AF0", "name": "___toascii", "decompiled": "int __cdecl __toascii(int C)\n{\n  return C & 0x7F;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

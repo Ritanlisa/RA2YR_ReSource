@@ -1,0 +1,1 @@
+{"addr": "0x0041D260", "name": "sub_41D260", "decompiled": "int sub_41D260()\n{\n  *(_QWORD *)(&g_INI_DefaultBuffer + 12) = 0;\n  *(_QWORD *)(&g_INI_DefaultBuffer + 20) = 0;\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

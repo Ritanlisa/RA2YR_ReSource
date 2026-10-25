@@ -1,0 +1,1 @@
+{"addr": "0x0065BED0", "name": "RadSiteClass::ProcessEvent", "decompiled": "void **__thiscall RadSiteClass::ProcessEvent(RadSiteClass *this, char a2)\n{\n  RadSiteClass::Constructor(this);\n  if ( (a2 & 1) != 0 )\n    __3_YAXPAX_Z(this);\n  return (void **)this;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

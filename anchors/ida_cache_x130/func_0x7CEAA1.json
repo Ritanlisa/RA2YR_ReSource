@@ -1,0 +1,1 @@
+{"addr": "0x007CEAA1", "name": "_get_short_arg", "decompiled": "__int16 __cdecl get_short_arg(_DWORD *a1)\n{\n  *a1 += 4;\n  return *(_WORD *)(*a1 - 4);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

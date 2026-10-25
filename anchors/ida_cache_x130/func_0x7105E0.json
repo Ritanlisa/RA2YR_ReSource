@@ -1,0 +1,1 @@
+{"addr": "0x007105E0", "name": "BuildingClass::IsBeingRepairedOrCaptured", "decompiled": "int __thiscall BuildingClass::IsBeingRepairedOrCaptured(BuildingClass *this)\n{\n  return this->mindControlledBy || this->mindControlledBy_a_unit[0];\n}\n", "changed": true, "error": null, "timestamp": "x130"}

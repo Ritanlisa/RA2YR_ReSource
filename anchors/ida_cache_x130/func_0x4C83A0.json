@@ -1,0 +1,1 @@
+{"addr": "0x004C83A0", "name": "sub_4C83A0", "decompiled": "int sub_4C83A0()\n{\n  *(_DWORD *)&Buffer[65584] = 0;\n  *(_DWORD *)&Buffer[65588] = 0;\n  *(_DWORD *)&Buffer[65592] = 0;\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

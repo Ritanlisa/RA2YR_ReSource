@@ -1,0 +1,1 @@
+{"addr": "0x00486730", "name": "Value::InRange", "decompiled": "bool __thiscall Value::InRange(Value *this)\n{\n  int v1; // eax\n\n  v1 = *((_DWORD *)this + 14);\n  return v1 >= dword_AA0E20 && v1 < dword_AA0E20 + 14;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

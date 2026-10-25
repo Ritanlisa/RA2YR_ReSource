@@ -1,0 +1,1 @@
+{"addr": "0x00767EC0", "name": "sub_767EC0", "decompiled": "void __thiscall sub_767EC0(MSFrameAnim *this)\n{\n  this->vfptr = &MSFrameAnim::`vftable';\n  VtableStub::5CB6C0(this);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

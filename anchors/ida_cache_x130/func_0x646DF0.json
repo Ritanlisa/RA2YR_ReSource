@@ -1,0 +1,1 @@
+{"addr": "0x00646DF0", "name": "Network_Helper_646DF0", "decompiled": "DWORD __fastcall Network_Helper_646DF0(int a1)\n{\n  DWORD result; // eax\n\n  result = timeGetTime();\n  dword_AFA36C[6 * a1] = result;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

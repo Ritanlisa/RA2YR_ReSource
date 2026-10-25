@@ -1,0 +1,1 @@
+{"addr": "0x00543100", "name": "IPXManagerClass::getPlayerName", "decompiled": "_DWORD *__thiscall IPXManagerClass::getPlayerName(ConnManClass *this, char a2)\n{\n  this->vfptr = &ConnManClass::`vftable';\n  if ( (a2 & 1) != 0 )\n    __3_YAXPAX_Z(this);\n  return &this->vfptr;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

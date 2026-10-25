@@ -1,0 +1,1 @@
+{"addr": "0x0046B5A0", "name": "BulletClass::CheckEndOfSequence", "decompiled": "int __thiscall BulletClass::CheckEndOfSequence(BulletClass *this, int a2)\n{\n  this->BulletClass_field_0x10C = a2;\n  return a2;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

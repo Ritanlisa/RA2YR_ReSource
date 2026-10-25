@@ -1,0 +1,1 @@
+{"addr": "0x005D0580", "name": "j_DeleteAndZero", "decompiled": "// attributes: thunk\nvoid __thiscall j_DeleteAndZero(ObjectClass *this)\n{\n  DeleteAndZero(this);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

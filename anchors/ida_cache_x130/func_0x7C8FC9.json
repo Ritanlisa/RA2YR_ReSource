@@ -1,0 +1,1 @@
+{"addr": "0x007C8FC9", "name": "_pow", "decompiled": "double __cdecl pow(double X, double Y)\n{\n  int v2; // ecx\n\n  _fload_withFB(v2, &Y);\n  return CIpow_Helper((ObjectClass *)LODWORD(X), HIDWORD(X), LODWORD(Y), HIDWORD(Y));\n}\n", "changed": true, "error": null, "timestamp": "x130"}

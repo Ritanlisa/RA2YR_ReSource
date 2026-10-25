@@ -1,0 +1,1 @@
+{"addr": "0x0072A200", "name": "TunnelLocomotionClass::StubReturn60", "decompiled": "int TunnelLocomotionClass::StubReturn60(TunnelLocomotionClass *this)\n{\n  return 60;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

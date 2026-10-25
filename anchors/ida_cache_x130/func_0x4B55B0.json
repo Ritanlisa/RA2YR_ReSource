@@ -1,0 +1,1 @@
+{"addr": "0x004B55B0", "name": "DropListClass::ScrollUp", "decompiled": "int __thiscall DropListClass::ScrollUp(DropListClass *this)\n{\n  return (*(int (__thiscall **)(char *))(*((_DWORD *)this + 44) + 148))((char *)this + 176);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x007C88CC", "name": "OleRun", "decompiled": "// attributes: thunk\nHRESULT __stdcall OleRun(LPUNKNOWN pUnknown)\n{\n  return __imp_OleRun(pUnknown);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x00521B20", "name": "InfantryClass::ResetMissionIfDone", "decompiled": "int __thiscall InfantryClass::ResetMissionIfDone(InfantryClass *this)\n{\n  int result; // eax\n\n  result = this->SequenceAnim;\n  if ( result == 6 || result == 3 || result == 17 )\n    this->SequenceAnim = -1;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

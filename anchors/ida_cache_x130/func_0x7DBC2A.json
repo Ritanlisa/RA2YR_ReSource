@@ -1,0 +1,1 @@
+{"addr": "0x007DBC2A", "name": "__errcode", "decompiled": "int __cdecl _errcode(char a1)\n{\n  if ( (a1 & 0x20) != 0 )\n    return 5;\n  if ( (a1 & 8) != 0 )\n    return 1;\n  if ( (a1 & 4) != 0 )\n    return 2;\n  if ( (a1 & 1) != 0 )\n    return 3;\n  return 2 * (a1 & 2);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x006C89B0", "name": "sub_6C89B0", "decompiled": "_DWORD *__thiscall sub_6C89B0(ObjectClass *this, size_t Size)\n{\n  _DWORD *v3; // eax\n\n  this->vfptr = Size;\n  v3 = __2_YAPAXI_Z(Size);\n  this->vfptr1 = (int)v3;\n  this->vfptr2 = (int)v3;\n  return &this->vfptr;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x00465DB0", "name": "BuildingTypeClass::GetAuxField", "decompiled": "int __thiscall BuildingTypeClass::GetAuxField(BuildingTypeClass *this)\n{\n  return this->ArrayIndex;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

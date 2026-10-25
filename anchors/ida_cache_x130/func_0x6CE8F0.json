@@ -1,0 +1,1 @@
+{"addr": "0x006CE8F0", "name": "SuperWeaponTypeClass::SD_vt11", "decompiled": "int SuperWeaponTypeClass::SD_vt11(SuperWeaponTypeClass *this)\n{\n  return 32;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

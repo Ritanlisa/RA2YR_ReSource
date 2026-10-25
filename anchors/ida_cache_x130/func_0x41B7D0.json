@@ -1,0 +1,1 @@
+{"addr": "0x0041B7D0", "name": "TechnoClass::processDamageAnimation", "decompiled": "BOOL __stdcall TechnoClass::processDamageAnimation(TechnoClass *this)\n{\n  return *((_DWORD *)this - 362) != 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

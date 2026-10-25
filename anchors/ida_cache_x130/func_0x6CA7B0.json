@@ -1,0 +1,1 @@
+{"addr": "0x006CA7B0", "name": "sub_6CA7B0", "decompiled": "void __fastcall sub_6CA7B0(wchar_t *String, ObjectClass *a2)\n{\n  sub_6C9960(a2, String);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x007DCF88", "name": "SetEndOfFile", "decompiled": "// attributes: thunk\nBOOL __stdcall SetEndOfFile(HANDLE hFile)\n{\n  return __imp_SetEndOfFile(hFile);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x007C88DE", "name": "OleSaveToStream", "decompiled": "// attributes: thunk\nHRESULT __stdcall OleSaveToStream(LPPERSISTSTREAM pPStm, LPSTREAM pStm)\n{\n  return __imp_OleSaveToStream(pPStm, pStm);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

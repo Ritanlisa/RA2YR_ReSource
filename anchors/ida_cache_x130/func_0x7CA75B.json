@@ -1,0 +1,1 @@
+{"addr": "0x007CA75B", "name": "_fclose", "decompiled": "int __cdecl fclose(FILE *Stream)\n{\n  int v1; // edi\n\n  v1 = -1;\n  if ( (Stream->_flag & 0x40) != 0 )\n  {\n    Stream->_flag = 0;\n  }\n  else\n  {\n    _lock_file(Stream);\n    v1 = _fclose_lk((int)Stream);\n    _unlock_file(Stream);\n  }\n  return v1;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

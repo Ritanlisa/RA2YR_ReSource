@@ -1,0 +1,1 @@
+{"addr": "0x0053A090", "name": "LightningStorm::End", "decompiled": "char LightningStorm::End()\n{\n  char result; // al\n\n  result = LightningStorm_Active;\n  if ( LightningStorm_Active )\n    LightningStorm_TimeToEnd = 1;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x00769BD0", "name": "MSFrameAnim::QueryInterface", "decompiled": "_DWORD *__thiscall MSFrameAnim::QueryInterface(MSFrameAnim *this, char a2)\n{\n  this->vfptr = &MSFrameAnim::`vftable';\n  VtableStub::5CB6C0(this);\n  if ( (a2 & 1) != 0 )\n    __3_YAXPAX_Z(this);\n  return &this->vfptr;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

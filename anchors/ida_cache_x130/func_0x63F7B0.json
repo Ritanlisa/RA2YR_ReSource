@@ -1,0 +1,1 @@
+{"addr": "0x0063F7B0", "name": "PowerClass::Stub", "decompiled": "// attributes: thunk\nvoid __thiscall PowerClass::Stub(PowerClass *this, int a2)\n{\n  RadarClass::Destru_vt05((RadarClass *)this);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x007C86B6", "name": "ChildWindowFromPointEx", "decompiled": "// attributes: thunk\nHWND __stdcall ChildWindowFromPointEx(HWND hwnd, POINT pt, UINT flags)\n{\n  return __imp_ChildWindowFromPointEx(hwnd, pt, flags);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

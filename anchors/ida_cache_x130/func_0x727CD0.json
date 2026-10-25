@@ -1,0 +1,1 @@
+{"addr": "0x00727CD0", "name": "TextRenderer::Destructor", "decompiled": "void *__thiscall TextRenderer::Destructor(TriggerTypeClass *this, char a2)\n{\n  TriggerClass::ProcessEvents((AbstractClass *)this);\n  if ( (a2 & 1) != 0 )\n    __3_YAXPAX_Z(this);\n  return this;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

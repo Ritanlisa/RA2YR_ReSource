@@ -1,0 +1,1 @@
+{"addr": "0x005C03C0", "name": "AbstractClass::resetPathState", "decompiled": "int AbstractClass::resetPathState(VQMovieHandle *this)\n{\n  return 33;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

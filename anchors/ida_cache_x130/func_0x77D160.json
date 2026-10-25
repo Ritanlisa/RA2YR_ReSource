@@ -1,0 +1,1 @@
+{"addr": "0x0077D160", "name": "sub_77D160", "decompiled": "int sub_77D160()\n{\n  dword_B76478 = Timer::GetTicks();\n  dword_B76480 = 0;\n  return atexit(nullsub_263);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

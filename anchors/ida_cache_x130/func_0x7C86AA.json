@@ -1,0 +1,1 @@
+{"addr": "0x007C86AA", "name": "SetCapture", "decompiled": "// attributes: thunk\nHWND __stdcall SetCapture(HWND hWnd)\n{\n  return __imp_SetCapture(hWnd);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

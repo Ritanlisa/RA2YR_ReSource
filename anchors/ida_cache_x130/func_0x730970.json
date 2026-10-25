@@ -1,0 +1,1 @@
+{"addr": "0x00730970", "name": "WinMainSetup_Setup_730970", "decompiled": "int WinMainSetup_Setup_730970(ObjectClass *this)\n{\n  int result; // eax\n\n  if ( dword_B0FE6C )\n  {\n    result = (**(int (__thiscall ***)(int, int))dword_B0FE6C)(dword_B0FE6C, 1);\n    dword_B0FE6C = 0;\n  }\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

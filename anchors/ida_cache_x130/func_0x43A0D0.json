@@ -1,0 +1,1 @@
+{"addr": "0x0043A0D0", "name": "Coord::Scale", "decompiled": "int Coord::Scale(int *this, float a2)\n{\n  float *v2; // ecx\n\n  *v2 = *(float *)&this * *v2;\n  v2[1] = *(float *)&this * v2[1];\n  v2[2] = *(float *)&this * v2[2];\n  return (int)v2;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

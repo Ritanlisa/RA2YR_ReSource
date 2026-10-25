@@ -1,0 +1,1 @@
+{"addr": "0x00731A90", "name": "j_FactoryClass_GetFlag", "decompiled": "// attributes: thunk\nint j_FactoryClass_GetFlag(void)\n{\n  return FactoryClass::GetFlag();\n}\n", "changed": true, "error": null, "timestamp": "x130"}

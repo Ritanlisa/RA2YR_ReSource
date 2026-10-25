@@ -1,0 +1,1 @@
+{"addr": "0x00624460", "name": "Options::ClearComboBoxes", "decompiled": "void __thiscall Options::ClearComboBoxes(Options *this)\n{\n  DeleteAndZero::Alt((DeleteAndZero *)&this->field_8);\n  DeleteAndZero::Alt((DeleteAndZero *)&this->field_4);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

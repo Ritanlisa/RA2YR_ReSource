@@ -1,0 +1,1 @@
+{"addr": "0x004A51B0", "name": "BuildingClass::CheckPowerFlags", "decompiled": "int __thiscall BuildingClass::CheckPowerFlags(BuildingClass *this)\n{\n  int result; // eax\n\n  if ( LOBYTE(this->nextArrayIndex) || (LOBYTE(result) = 1, BYTE1(this->nextArrayIndex) != 1) )\n    LOBYTE(result) = 0;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

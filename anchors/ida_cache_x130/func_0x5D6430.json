@@ -1,0 +1,1 @@
+{"addr": "0x005D6430", "name": "ScenarioClass::dispatchEvents", "decompiled": "// Microsoft VisualC 2-14/net runtime\nint ScenarioClass::dispatchEvents(MultiplayerGameMode *this)\n{\n  return Random::Range((Random *)&dword_A8B230[13].uniqueId, 0, 9);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

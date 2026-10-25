@@ -1,0 +1,1 @@
+{"addr": "0x005361A0", "name": "CenterTeamCommand::Construct", "decompiled": "_DWORD *__thiscall CenterTeamCommand::Construct(CenterTeamCommand *this, int a2)\n{\n  this->CenterTeamCommand_field_00 = a2;\n  this->CommandClass = (CommandClass)&CenterTeamCommandClass::`vftable';\n  return &this->CommandClass;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

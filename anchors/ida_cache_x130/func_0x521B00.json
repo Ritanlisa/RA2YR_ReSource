@@ -1,0 +1,1 @@
+{"addr": "0x00521B00", "name": "InfantryClass::SaveLoad_Prefix", "decompiled": "int __stdcall InfantryClass::SaveLoad_Prefix(InfantryClass *this, LPPERSISTSTREAM pPStm, struct IPersistStreamVtbl *a3)\n{\n  return ObjectClass::SaveToStream_Common((ObjectClass *)this, pPStm, a3);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

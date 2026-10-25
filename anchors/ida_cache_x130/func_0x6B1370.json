@@ -1,0 +1,1 @@
+{"addr": "0x006B1370", "name": "SlaveManagerClass::StubReturn100", "decompiled": "int SlaveManagerClass::StubReturn100(SlaveManagerClass *this)\n{\n  return 100;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

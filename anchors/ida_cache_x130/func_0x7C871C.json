@@ -1,0 +1,1 @@
+{"addr": "0x007C871C", "name": "TranslateAcceleratorA", "decompiled": "// attributes: thunk\nint __stdcall TranslateAcceleratorA(HWND hWnd, HACCEL hAccTable, LPMSG lpMsg)\n{\n  return __imp_TranslateAcceleratorA(hWnd, hAccTable, lpMsg);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

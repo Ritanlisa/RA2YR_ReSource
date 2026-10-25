@@ -1,0 +1,1 @@
+{"addr": "0x006B58D0", "name": "SmudgeTypeClass::GetClassIdentifier", "decompiled": "int __stdcall SmudgeTypeClass::GetClassIdentifier(SmudgeTypeClass *this, _DWORD *a2)\n{\n  if ( !a2 )\n    return -2147467261;\n  *a2 = 1525862008;\n  a2[1] = 298976820;\n  a2[2] = 1610654892;\n  a2[3] = -1252326136;\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

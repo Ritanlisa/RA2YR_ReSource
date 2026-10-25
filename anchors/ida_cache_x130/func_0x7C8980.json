@@ -1,0 +1,1 @@
+{"addr": "0x007C8980", "name": "gethostbyname", "decompiled": "// attributes: thunk\nstruct hostent *__stdcall gethostbyname(const char *name)\n{\n  return __imp_gethostbyname(name);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

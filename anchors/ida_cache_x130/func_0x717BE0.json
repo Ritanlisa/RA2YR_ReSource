@@ -1,0 +1,1 @@
+{"addr": "0x00717BE0", "name": "TechnoTypeClass::Constructor_1", "decompiled": "_DWORD *__thiscall TechnoTypeClass::Constructor_1(TechnoTypeClass *this, int a2)\n{\n  this->vfptr = (int)&DynamicVectorClass<BuildingTypeClass const *>::`vftable';\n  return &this->vfptr;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

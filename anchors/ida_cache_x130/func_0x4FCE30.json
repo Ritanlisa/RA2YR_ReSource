@@ -1,0 +1,1 @@
+{"addr": "0x004FCE30", "name": "HouseClass::GetPowerRatio", "decompiled": "int __thiscall HouseClass::GetPowerRatio(HouseClass *this)\n{\n  return this->powerOutput;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

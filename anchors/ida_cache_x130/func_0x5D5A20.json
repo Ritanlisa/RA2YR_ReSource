@@ -1,0 +1,1 @@
+{"addr": "0x005D5A20", "name": "Display::CalculateDefaultSize", "decompiled": "int Display::CalculateDefaultSize()\n{\n  int result; // eax\n\n  LOWORD(result) = Math::RoundToInt((double)(4 * dword_ABFDD0) + 0.5);\n  dword_ABFDC4 = result;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

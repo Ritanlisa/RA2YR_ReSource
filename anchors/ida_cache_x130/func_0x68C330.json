@@ -1,0 +1,1 @@
+{"addr": "0x0068C330", "name": "sub_68C330", "decompiled": "int sub_68C330()\n{\n  dword_B054D4 = 0;\n  dword_B054D8 = 0;\n  byte_B054DC = 1;\n  byte_B054DD = 0;\n  *(_DWORD *)stru_B054D0.__pad_0 = &DynamicVectorClass<ColorScheme *>::`vftable';\n  dword_B054E4 = 10;\n  dword_B054E0 = 0;\n  return atexit(sub_68C370);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

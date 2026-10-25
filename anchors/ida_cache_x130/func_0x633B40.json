@@ -1,0 +1,1 @@
+{"addr": "0x00633B40", "name": "sub_633B40", "decompiled": "int __thiscall sub_633B40(ObjectClass *this)\n{\n  int result; // eax\n\n  result = this->estimatedHealth - 1;\n  this->estimatedHealth = result;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x004C2C10", "name": "UnitClass::updateHarvesting", "decompiled": "int __thiscall UnitClass::updateHarvesting(UnitClass *this)\n{\n  int result; // eax\n\n  result = this->NeedsSaveOrLink;\n  if ( result )\n  {\n    *(_DWORD *)(result + 1756) = 0;\n    this->NeedsSaveOrLink = 0;\n  }\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

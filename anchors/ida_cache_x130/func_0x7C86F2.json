@@ -1,0 +1,1 @@
+{"addr": "0x007C86F2", "name": "GetMenu", "decompiled": "// attributes: thunk\nHMENU __stdcall GetMenu(HWND hWnd)\n{\n  return __imp_GetMenu(hWnd);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

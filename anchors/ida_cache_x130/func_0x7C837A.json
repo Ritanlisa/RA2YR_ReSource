@@ -1,0 +1,1 @@
+{"addr": "0x007C837A", "name": "GetLastError", "decompiled": "// attributes: thunk\nDWORD __stdcall GetLastError()\n{\n  return __imp_GetLastError();\n}\n", "changed": true, "error": null, "timestamp": "x130"}

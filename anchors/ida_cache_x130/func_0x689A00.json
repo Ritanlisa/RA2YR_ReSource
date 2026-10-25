@@ -1,0 +1,1 @@
+{"addr": "0x00689A00", "name": "ScenarioClass::GetLocalStateByID", "decompiled": "char __thiscall ScenarioClass::GetLocalStateByID(ScenarioClass *this, unsigned int a2, _BYTE *a3)\n{\n  if ( a2 >= 0x64 )\n    return 0;\n  *a3 = this->localVariables[40 * a2 + 38 + a2];\n  return 1;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

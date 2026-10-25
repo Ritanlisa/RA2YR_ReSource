@@ -1,0 +1,1 @@
+{"addr": "0x005C0540", "name": "BinkMovieHandle::?", "decompiled": "int __thiscall BinkMovieHandle::_(_DWORD **this, unsigned __int8 a2)\n{\n  return BinkMovie::Pause((BinkMovie *)*(this + 4), a2);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x00624C80", "name": "HashMap::ComputeIndex", "decompiled": "int __thiscall HashMap::ComputeIndex(int *this, int a2)\n{\n  return ((int (__thiscall *)(int))*(this + 6))(a2) & ((1 << *(this + 3)) - 1);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

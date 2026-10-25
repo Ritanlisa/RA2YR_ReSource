@@ -1,0 +1,1 @@
+{"addr": "0x007C88A2", "name": "RegDeleteValueA", "decompiled": "// attributes: thunk\nLSTATUS __stdcall RegDeleteValueA(HKEY hKey, LPCSTR lpValueName)\n{\n  return __imp_RegDeleteValueA(hKey, lpValueName);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

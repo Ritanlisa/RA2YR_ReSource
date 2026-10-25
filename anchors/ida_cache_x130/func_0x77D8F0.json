@@ -1,0 +1,1 @@
+{"addr": "0x0077D8F0", "name": "unknown_libname_57", "decompiled": "// Microsoft VisualC 2-14/net runtime\nHWND unknown_libname_57()\n{\n  return WebBrowser::ShowDialog(aNews);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

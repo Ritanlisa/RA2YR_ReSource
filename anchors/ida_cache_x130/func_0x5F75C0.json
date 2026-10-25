@@ -1,0 +1,1 @@
+{"addr": "0x005F75C0", "name": "ObjectTypeClass::InitTripleTen", "decompiled": "_DWORD *__stdcall ObjectTypeClass::InitTripleTen(ObjectTypeClass *this)\n{\n  this->vfptr = 10;\n  this->vfptr1 = 10;\n  this->vfptr2 = 10;\n  return &this->vfptr;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x007C8740", "name": "GetClassNameA", "decompiled": "// attributes: thunk\nint __stdcall GetClassNameA(HWND hWnd, LPSTR lpClassName, int nMaxCount)\n{\n  return __imp_GetClassNameA(hWnd, lpClassName, nMaxCount);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x00632BC0", "name": "BigInt::Compare", "decompiled": "bool __thiscall BigInt::Compare(BigInt *this, int a2)\n{\n  return CompareBigIntLE((int)this, a2, 64) > 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

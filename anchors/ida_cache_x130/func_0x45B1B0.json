@@ -1,0 +1,1 @@
+{"addr": "0x0045B1B0", "name": "j_MapData_InitHeights", "decompiled": "// attributes: thunk\nint j_MapData_InitHeights()\n{\n  return MapData::InitHeights();\n}\n", "changed": true, "error": null, "timestamp": "x130"}

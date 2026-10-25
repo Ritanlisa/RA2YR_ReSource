@@ -1,0 +1,1 @@
+{"addr": "0x007B7660", "name": "String_Helper_7B7660", "decompiled": "char __thiscall String_Helper_7B7660(ObjectClass *this, wchar_t a2, size_t a3)\n{\n  if ( a3 >= wcslen((const wchar_t *)this->vfptr) )\n    return 0;\n  *(_WORD *)(this->vfptr + 2 * a3) = a2;\n  return 1;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x00407510", "name": "VtableStub::Push_407510", "decompiled": "int __thiscall VtableStub::Push_407510(VtableStub *this)\n{\n  int result; // eax\n\n  __3_YAXPAX_Z(this);\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

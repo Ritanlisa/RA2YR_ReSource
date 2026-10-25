@@ -1,0 +1,1 @@
+{"addr": "0x005D6340", "name": "ScenarioClass::createStartingForces", "decompiled": "char __thiscall ScenarioClass::createStartingForces(MultiplayerGameMode *this)\n{\n  return 1;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

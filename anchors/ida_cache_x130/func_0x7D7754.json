@@ -1,0 +1,1 @@
+{"addr": "0x007D7754", "name": "__isatty", "decompiled": "int __cdecl _isatty(int FileHandle)\n{\n  if ( FileHandle < uNumber )\n    return *(_BYTE *)(dword_B78A80[FileHandle >> 5] + 36 * (FileHandle & 0x1F) + 4) & 0x40;\n  else\n    return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

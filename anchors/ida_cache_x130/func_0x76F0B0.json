@@ -1,0 +1,1 @@
+{"addr": "0x0076F0B0", "name": "Vector::HasCapacity", "decompiled": "BOOL __thiscall Vector::HasCapacity(_VectorCursor_PAVMSSfxEntry_V_DynamicVectorClass_PAVMSSfxEntry *this)\n{\n  return *((_DWORD *)this + 2) < *(_DWORD *)(*(_DWORD *)&this->m_1[3] + 16);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

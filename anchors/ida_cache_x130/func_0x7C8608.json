@@ -1,0 +1,1 @@
+{"addr": "0x007C8608", "name": "InvalidateRect", "decompiled": "// attributes: thunk\nBOOL __stdcall InvalidateRect(HWND hWnd, const RECT *lpRect, BOOL bErase)\n{\n  return __imp_InvalidateRect(hWnd, lpRect, bErase);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

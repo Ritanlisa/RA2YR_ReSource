@@ -1,0 +1,1 @@
+{"addr": "0x007D8EF5", "name": "__copysign", "decompiled": "double __cdecl _copysign(double Number, double Sign)\n{\n  double v3; // [esp+0h] [ebp-8h]\n\n  LODWORD(v3) = LODWORD(Number);\n  HIDWORD(v3) = HIDWORD(Sign) ^ (HIDWORD(Number) ^ HIDWORD(Sign)) & 0x7FFFFFFF;\n  return v3;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

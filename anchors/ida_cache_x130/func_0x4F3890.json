@@ -1,0 +1,1 @@
+{"addr": "0x004F3890", "name": "sub_4F3890", "decompiled": "int sub_4F3890()\n{\n  *(_DWORD *)&stru_A8E960.random[836] = 0;\n  *(_DWORD *)&stru_A8E960.random[840] = 0;\n  *(_DWORD *)&stru_A8E960.random[844] = 0;\n  *(_DWORD *)&stru_A8E960.random[848] = 0;\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

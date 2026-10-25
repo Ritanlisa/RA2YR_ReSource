@@ -1,0 +1,1 @@
+{"addr": "0x007DCF5E", "name": "GetUserDefaultLCID", "decompiled": "// attributes: thunk\nLCID __stdcall GetUserDefaultLCID()\n{\n  return __imp_GetUserDefaultLCID();\n}\n", "changed": true, "error": null, "timestamp": "x130"}

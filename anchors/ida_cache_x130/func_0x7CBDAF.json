@@ -1,0 +1,1 @@
+{"addr": "0x007CBDAF", "name": "__cinit", "decompiled": "void _cinit()\n{\n  if ( off_87BEB8 )\n    off_87BEB8();\n  _initterm(&First, &Last);\n  _initterm(&dword_812000, &dword_815DA4);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

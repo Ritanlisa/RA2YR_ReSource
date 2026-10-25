@@ -1,0 +1,1 @@
+{"addr": "0x0050D9F0", "name": "HouseClass::GetUnitSelfHealStep", "decompiled": "int __thiscall HouseClass::GetUnitSelfHealStep(HouseClass *this)\n{\n  return *(_DWORD *)&this->__pad_13C[44] * dword_8871E0->SelfHealUnitAmount;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

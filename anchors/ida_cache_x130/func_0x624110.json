@@ -1,0 +1,1 @@
+{"addr": "0x00624110", "name": "SimpleDialogControl::Constructor", "decompiled": "_DWORD *__thiscall SimpleDialogControl::Constructor(SimpleDialogControl *this)\n{\n  this->field_4 = 0;\n  this->field_8 = 0;\n  *(_DWORD *)this->__tail_0 = &OwnerDraw::SimpleDialogControl::`vftable';\n  return this->__tail_0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

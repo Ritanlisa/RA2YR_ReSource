@@ -1,0 +1,1 @@
+{"addr": "0x007C9B35", "name": "___iscsym", "decompiled": "int __cdecl __iscsym(int C)\n{\n  int result; // eax\n\n  if ( (int)cbMultiByte <= 1 )\n    result = *((_WORD *)off_87C590 + C) & 0x107;\n  else\n    result = _isctype(C, 263);\n  if ( result || C == 95 )\n    return 1;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

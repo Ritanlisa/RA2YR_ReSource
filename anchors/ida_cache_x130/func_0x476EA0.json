@@ -1,0 +1,1 @@
+{"addr": "0x00476EA0", "name": "sub_476EA0", "decompiled": "void __thiscall sub_476EA0(ObjectClass *this)\n{\n  LOBYTE(this->ambientSoundController[1]) = 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

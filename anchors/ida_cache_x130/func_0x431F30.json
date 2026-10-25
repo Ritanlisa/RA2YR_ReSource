@@ -1,0 +1,1 @@
+{"addr": "0x00431F30", "name": "BufferIOFileClass::Read", "decompiled": "bool __thiscall BufferIOFileClass::Read(BufferIOFileClass *this)\n{\n  BOOL v1; // eax\n\n  if ( BYTE1(this->BufferOffset) && BYTE1(this->BufferSize) )\n    LOBYTE(v1) = 1;\n  else\n    return *(_DWORD *)this->FileTimeDateLo != -1;\n  return v1;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

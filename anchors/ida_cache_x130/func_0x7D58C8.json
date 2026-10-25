@@ -1,0 +1,1 @@
+{"addr": "0x007D58C8", "name": "_store_dt", "decompiled": "_BYTE *__cdecl store_dt(_BYTE *a1, int a2)\n{\n  *a1 = a2 / 10 + 48;\n  a1[1] = a2 % 10 + 48;\n  return a1 + 2;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x00537E90", "name": "CreateTeamCommand::performAction_194", "decompiled": "wchar_t *CreateTeamCommand::performAction_194(CursorPositionCommandClass *this)\n{\n  return GetStringCSF(aGuiCursorcheat, 0, g_Str_File_Init_CPP, 8231);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

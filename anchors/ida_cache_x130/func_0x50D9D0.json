@@ -1,0 +1,1 @@
+{"addr": "0x0050D9D0", "name": "IsProductionInfiltrated", "decompiled": "BOOL __thiscall IsProductionInfiltrated(TechnoClass *this)\n{\n  return this->idleActionTimer[0] > 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

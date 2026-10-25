@@ -1,0 +1,1 @@
+{"addr": "0x0040BEA0", "name": "VectorClass_cptr_CommandClass::Capacity", "decompiled": "int __thiscall VectorClass_cptr_CommandClass::Capacity(_VectorClass_PBVCommandClass *this, int a2)\n{\n  return *(_DWORD *)(*(_DWORD *)&this->m_1[3] + 4 * a2);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

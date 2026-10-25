@@ -1,0 +1,1 @@
+{"addr": "0x0040D900", "name": "sub_40D900", "decompiled": "char *__fastcall sub_40D900(int a1)\n{\n  _BYTE v2[4]; // [esp+0h] [ebp-4h] BYREF\n\n  v2[3] = HIBYTE(a1);\n  v2[0] = 0;\n  v2[1] = 0;\n  v2[2] = 0;\n  return sub_626020((char *)&word_884E80, (int)v2);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

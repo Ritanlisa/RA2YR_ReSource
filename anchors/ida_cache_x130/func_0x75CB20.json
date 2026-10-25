@@ -1,0 +1,1 @@
+{"addr": "0x0075CB20", "name": "JumpjetLocomotionClass::SmallStub_75CB20", "decompiled": "char __stdcall JumpjetLocomotionClass::SmallStub_75CB20(WalkLocomotionClass *this)\n{\n  return BYTE2(this->HeadToCoord[2]);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

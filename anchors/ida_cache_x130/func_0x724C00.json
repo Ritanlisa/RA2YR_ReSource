@@ -1,0 +1,1 @@
+{"addr": "0x00724C00", "name": "Frame::Init", "decompiled": "BOOL __thiscall Frame::Init(Frame *this)\n{\n  return *((_DWORD *)this + 1) != 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

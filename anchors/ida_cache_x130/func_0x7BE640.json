@@ -1,0 +1,1 @@
+{"addr": "0x007BE640", "name": "Stream::CopyFromTemplate", "decompiled": "void __thiscall Stream::CopyFromTemplate(Stream *this)\n{\n  qmemcpy(this, &unk_84E738, 0x88u);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

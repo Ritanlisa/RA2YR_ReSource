@@ -1,0 +1,1 @@
+{"addr": "0x0065B4D0", "name": "RadSiteClass::SetSpread", "decompiled": "int __thiscall RadSiteClass::SetSpread(RadSiteClass *this, int a2)\n{\n  int result; // eax\n\n  this->Spread = a2;\n  result = (a2 << 8) + 128;\n  this->SpreadInLeptons = result;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

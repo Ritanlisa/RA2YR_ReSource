@@ -1,0 +1,1 @@
+{"addr": "0x00528170", "name": "INIClass::ReadDouble3", "decompiled": "char __thiscall INIClass::ReadDouble3(INIClass *this, unsigned __int8 *Block, char *a3, int a4)\n{\n  char Buffer[512]; // [esp+4h] [ebp-200h] BYREF\n\n  sprintf(Buffer, \"%X\", a4);\n  return INIClass::SetString(this->__pad_0, Block, a3, Buffer);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

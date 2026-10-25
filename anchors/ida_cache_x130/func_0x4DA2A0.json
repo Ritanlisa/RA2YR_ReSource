@@ -1,0 +1,1 @@
+{"addr": "0x004DA2A0", "name": "FootClass::ClearSomeVector2", "decompiled": "int __thiscall FootClass::ClearSomeVector2(FootClass *this)\n{\n  int result; // eax\n\n  result = (*(int (__thiscall **)(FootClass *))(this->vfptr + 388))(this);\n  LOBYTE(result) = result == 7;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x007BA330", "name": "WWMouseClass::checkCapture", "decompiled": "char __thiscall WWMouseClass::checkCapture(WWMouseClass *this)\n{\n  return this->WWMouseClass_field_0x10;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

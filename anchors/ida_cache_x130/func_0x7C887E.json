@@ -1,0 +1,1 @@
+{"addr": "0x007C887E", "name": "ModifyWorldTransform", "decompiled": "// attributes: thunk\nBOOL __stdcall ModifyWorldTransform(HDC hdc, const XFORM *lpxf, DWORD mode)\n{\n  return __imp_ModifyWorldTransform(hdc, lpxf, mode);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

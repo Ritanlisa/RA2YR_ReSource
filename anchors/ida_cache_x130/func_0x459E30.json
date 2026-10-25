@@ -1,0 +1,1 @@
+{"addr": "0x00459E30", "name": "BuildingClass::StubReturnFalse12", "decompiled": "int __thiscall BuildingClass::StubReturnFalse12(TechnoClass *this)\n{\n  int result; // eax\n\n  LOBYTE(result) = 0;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

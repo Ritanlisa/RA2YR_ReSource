@@ -1,0 +1,1 @@
+{"addr": "0x007AC800", "name": "ComStreamClass::AddRef", "decompiled": "LONG __thiscall ComStreamClass::AddRef(_CComObject_VCNetUtilEventSink_ATL *this)\n{\n  LONG *v2; // [esp+4h] [ebp+4h]\n\n  return InterlockedIncrement(v2 + 1);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

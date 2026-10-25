@@ -1,0 +1,1 @@
+{"addr": "0x0046C840", "name": "BulletTypeClass::SetScaledSpawnDelay", "decompiled": "int __thiscall BulletTypeClass::SetScaledSpawnDelay(BulletTypeClass *this, int a2)\n{\n  this->scaledSpawnDelay = a2;\n  return a2;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

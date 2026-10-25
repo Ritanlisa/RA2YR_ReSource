@@ -1,0 +1,1 @@
+{"addr": "0x006811C0", "name": "Map_Save_6811C0", "decompiled": "char *__thiscall Map_Save_6811C0(char *this, char *Source)\n{\n  *(this + 983) = 0;\n  return strncpy(this + 724, Source, 0x103u);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

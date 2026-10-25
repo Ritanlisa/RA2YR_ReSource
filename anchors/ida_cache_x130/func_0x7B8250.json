@@ -1,0 +1,1 @@
+{"addr": "0x007B8250", "name": "sub_7B8250", "decompiled": "bool __thiscall sub_7B8250(ObjectClass *this, wchar_t *Control)\n{\n  size_t v3; // edi\n\n  if ( !Control || !this->vfptr )\n    return 0;\n  v3 = wcslen((const wchar_t *)this->vfptr);\n  return wcscspn((const wchar_t *)this->vfptr, Control) < v3;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

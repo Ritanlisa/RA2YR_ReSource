@@ -1,0 +1,1 @@
+{"addr": "0x0041D120", "name": "sub_41D120", "decompiled": "void sub_41D120()\n{\n  *(double *)(&g_INI_DefaultBuffer + 4) = 0.0174532925199433 * 90.0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

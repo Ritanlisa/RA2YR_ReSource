@@ -1,0 +1,1 @@
+{"addr": "0x006BA120", "name": "UI_Init_6BA120", "decompiled": "char __fastcall UI_Init_6BA120(int a1, int a2, char *Source)\n{\n  return LoadPaletteFromFile(a1, a2, Source, 1, 1);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

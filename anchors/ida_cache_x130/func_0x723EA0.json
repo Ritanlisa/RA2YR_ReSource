@@ -1,0 +1,1 @@
+{"addr": "0x00723EA0", "name": "GadgetClass::Show", "decompiled": "int __thiscall GadgetClass::Show(GadgetClass *this)\n{\n  int v1; // eax\n\n  v1 = *(_DWORD *)this->__pad_0;\n  *((_BYTE *)this + 45) = 1;\n  return (*(int (**)(void))(v1 + 72))();\n}\n", "changed": true, "error": null, "timestamp": "x130"}

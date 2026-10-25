@@ -1,0 +1,1 @@
+{"addr": "0x007C836E", "name": "FindFirstFileA", "decompiled": "// attributes: thunk\nHANDLE __stdcall FindFirstFileA(LPCSTR lpFileName, LPWIN32_FIND_DATAA lpFindFileData)\n{\n  return __imp_FindFirstFileA(lpFileName, lpFindFileData);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

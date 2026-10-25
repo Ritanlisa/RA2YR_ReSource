@@ -1,0 +1,1 @@
+{"addr": "0x0048ACF0", "name": "RulesClass::GetFiringDistance", "decompiled": "double RulesClass::GetFiringDistance()\n{\n  return (double)dword_8871E0->RepairRate[0] * 0.5;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

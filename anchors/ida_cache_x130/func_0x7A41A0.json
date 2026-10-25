@@ -1,0 +1,1 @@
+{"addr": "0x007A41A0", "name": "System_Init_7A41A0", "decompiled": "char *__thiscall System_Init_7A41A0(char *this)\n{\n  *((_DWORD *)this + 1) = 0;\n  InitializeCriticalSection((LPCRITICAL_SECTION)(this + 8));\n  *(_DWORD *)this = &CChatEventSink::`vftable';\n  return this;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

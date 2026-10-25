@@ -1,0 +1,1 @@
+{"addr": "0x007D06E8", "name": "__callnewh", "decompiled": "int __cdecl _callnewh(size_t Size)\n{\n  return dword_B782C8 && dword_B782C8(Size);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

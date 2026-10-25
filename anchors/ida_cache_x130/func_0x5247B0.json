@@ -1,0 +1,1 @@
+{"addr": "0x005247B0", "name": "InfantryTypeClass::j_?do_always_noconv_codecvt_base_std__MBE_NXZ_19", "decompiled": "// attributes: thunk\nchar __thiscall InfantryTypeClass::j__do_always_noconv_codecvt_base_std__MBE_NXZ_19(TechnoTypeClass *this)\n{\n  return AbstractClass::processWeaponFire(this);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x004B55A0", "name": "DropListClass::COMStub", "decompiled": "int __thiscall DropListClass::COMStub(EditClass *this)\n{\n  return this->field_4C;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

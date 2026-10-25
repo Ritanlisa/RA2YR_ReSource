@@ -1,0 +1,1 @@
+{"addr": "0x00721640", "name": "sub_721640", "decompiled": "int sub_721640()\n{\n  dword_B0F4EC = 0;\n  dword_B0F4F0 = 0;\n  byte_B0F4F4 = 1;\n  byte_B0F4F5 = 0;\n  dword_B0F4E8 = (int)&DynamicVectorClass<TiberiumClass *>::`vftable';\n  dword_B0F4FC = 10;\n  dword_B0F4F8 = 0;\n  return atexit(sub_721680);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

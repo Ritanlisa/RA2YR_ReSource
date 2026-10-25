@@ -1,0 +1,1 @@
+{"addr": "0x004B57F0", "name": "ShapeButtonClass_Destru::QueryInterface", "decompiled": "void *__thiscall ShapeButtonClass_Destru::QueryInterface(ShapeButtonClass *this, char a2)\n{\n  ShapeButtonClass::Destructor((int)this);\n  if ( (a2 & 1) != 0 )\n    __3_YAXPAX_Z(this);\n  return this;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

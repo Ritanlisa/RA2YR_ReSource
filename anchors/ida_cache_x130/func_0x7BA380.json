@@ -1,0 +1,1 @@
+{"addr": "0x007BA380", "name": "WWMouseClass::checkHotspot", "decompiled": "int __thiscall WWMouseClass::checkHotspot(WWMouseClass *this, int a2, int a3)\n{\n  this->WWMouseClass_field_0x1C = a2;\n  this->WWMouseClass_field_0x20 = a3;\n  return a2;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

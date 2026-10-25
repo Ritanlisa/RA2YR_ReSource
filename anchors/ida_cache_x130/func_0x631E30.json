@@ -1,0 +1,1 @@
+{"addr": "0x00631E30", "name": "TacticalClass::saveConfig", "decompiled": "_DWORD *__thiscall TacticalClass::saveConfig(TacticalClass *this, int a2)\n{\n  this->vfptr = (int)&PixelFXClass::`vftable';\n  BuildingDebris::Init((BuildingDebris *)this, a2);\n  return &this->vfptr;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

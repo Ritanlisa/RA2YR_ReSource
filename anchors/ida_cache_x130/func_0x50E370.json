@@ -1,0 +1,1 @@
+{"addr": "0x0050E370", "name": "AbstractClass::checkPassability", "decompiled": "int __thiscall AbstractClass::checkPassability(AbstractClass *this)\n{\n  return *((_DWORD *)this + 12);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

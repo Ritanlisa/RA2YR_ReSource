@@ -1,0 +1,1 @@
+{"addr": "0x007C8458", "name": "ExitProcess", "decompiled": "// attributes: thunk\nvoid __stdcall __noreturn ExitProcess(UINT uExitCode)\n{\n  __imp_ExitProcess(uExitCode);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

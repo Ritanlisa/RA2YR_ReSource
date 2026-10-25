@@ -1,0 +1,1 @@
+{"addr": "0x005F3520", "name": "NullModemClass::COMStub_Return0", "decompiled": "int __stdcall NullModemClass::COMStub_Return0(NullModemClass *this)\n{\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x0050E000", "name": "HouseClass::SetMapSeed", "decompiled": "int __thiscall HouseClass::SetMapSeed(HouseClass *this, int a2)\n{\n  this->baseSpawnCell = a2;\n  return a2;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x007DCF1C", "name": "GetFileAttributesA", "decompiled": "// attributes: thunk\nDWORD __stdcall GetFileAttributesA(LPCSTR lpFileName)\n{\n  return __imp_GetFileAttributesA(lpFileName);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

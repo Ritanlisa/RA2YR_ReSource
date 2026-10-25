@@ -1,0 +1,1 @@
+{"addr": "0x00660C50", "name": "Map_Reset_660C50", "decompiled": "int Map_Reset_660C50()\n{\n  dword_B04D88 = -1;\n  dword_B04DD8 = -1;\n  memset32(dword_B04D48, dword_B04D68, 8u);\n  return dword_B04D68;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

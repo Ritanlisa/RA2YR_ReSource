@@ -1,0 +1,1 @@
+{"addr": "0x00710860", "name": "sub_710860", "decompiled": "int __cdecl sub_710860(_DWORD *a1, _DWORD *a2)\n{\n  if ( *a1 == *a2 )\n    return 0;\n  else\n    return *a1 >= *a2 ? 1 : -1;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

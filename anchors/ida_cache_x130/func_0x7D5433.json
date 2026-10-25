@@ -1,0 +1,1 @@
+{"addr": "0x007D5433", "name": "__open", "decompiled": "int _open(const char *FileName, int OpenFlag, ...)\n{\n  int v3; // [esp+Ch] [ebp+Ch]\n  va_list va; // [esp+10h] [ebp+10h] BYREF\n\n  va_start(va, OpenFlag);\n  v3 = va_arg(va, _DWORD);\n  return _sopen(FileName, OpenFlag, 64, v3);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x0062DAF0", "name": "sub_62DAF0", "decompiled": "void sub_62DAF0()\n{\n  dbl_AC4A20 = 0.0174532925199433 * 90.0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x00681200", "name": "Map_Save_681200", "decompiled": "int __thiscall Map_Save_681200(TechnoClass *this, _DWORD *a2)\n{\n  int result; // eax\n\n  this->turretRecoil[0] = *a2;\n  result = a2[1];\n  this->turretRecoil[1] = result;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

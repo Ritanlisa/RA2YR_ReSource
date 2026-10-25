@@ -1,0 +1,1 @@
+{"addr": "0x007C8A6A", "name": "_BinkGoto_12", "decompiled": "// attributes: thunk\nint __stdcall BinkGoto_12(int a1, int a2, int a3)\n{\n  return BinkGoto(a1, a2, a3);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

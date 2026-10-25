@@ -1,0 +1,1 @@
+{"addr": "0x007CA971", "name": "??0__non_rtti_object_QAE_PBD_Z", "decompiled": "__non_rtti_object *__thiscall __0__non_rtti_object_QAE_PBD_Z(__non_rtti_object *this, char *a2)\n{\n  __0exception_QAE_ABQBD_Z((exception *)this, (const char **)&a2);\n  this->vfptr = &__non_rtti_object::`vftable';\n  return this;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

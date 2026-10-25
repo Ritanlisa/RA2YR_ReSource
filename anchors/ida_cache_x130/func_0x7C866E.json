@@ -1,0 +1,1 @@
+{"addr": "0x007C866E", "name": "EndDialog", "decompiled": "// attributes: thunk\nBOOL __stdcall EndDialog(HWND hDlg, INT_PTR nResult)\n{\n  return __imp_EndDialog(hDlg, nResult);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x007C8494", "name": "VirtualQuery", "decompiled": "// attributes: thunk\nSIZE_T __stdcall VirtualQuery(LPCVOID lpAddress, PMEMORY_BASIC_INFORMATION lpBuffer, SIZE_T dwLength)\n{\n  return __imp_VirtualQuery(lpAddress, lpBuffer, dwLength);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

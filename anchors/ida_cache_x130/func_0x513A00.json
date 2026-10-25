@@ -1,0 +1,1 @@
+{"addr": "0x00513A00", "name": "HouseTypeClass::readLoadoutData", "decompiled": "int __stdcall HouseTypeClass::readLoadoutData(int a1)\n{\n  return HouseTypeClass::Release((HouseTypeClass *)(a1 - 4));\n}\n", "changed": true, "error": null, "timestamp": "x130"}

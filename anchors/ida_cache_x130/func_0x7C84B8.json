@@ -1,0 +1,1 @@
+{"addr": "0x007C84B8", "name": "GetTempFileNameA", "decompiled": "// attributes: thunk\nUINT __stdcall GetTempFileNameA(LPCSTR lpPathName, LPCSTR lpPrefixString, UINT uUnique, LPSTR lpTempFileName)\n{\n  return __imp_GetTempFileNameA(lpPathName, lpPrefixString, uUnique, lpTempFileName);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x00552AA0", "name": "LoadProgressMgr::Destroy", "decompiled": "void LoadProgressMgr::Destroy()\n{\n  if ( dword_ABC9BC )\n  {\n    LoadProgressMgr::ReleaseBuffer(dword_ABC9BC);\n    __3_YAXPAX_Z(dword_ABC9BC);\n  }\n  dword_ABC9BC = 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

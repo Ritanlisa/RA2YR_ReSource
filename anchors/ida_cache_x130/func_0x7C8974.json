@@ -1,0 +1,1 @@
+{"addr": "0x007C8974", "name": "ntohs", "decompiled": "// attributes: thunk\nint __stdcall ntohs(u_short netshort)\n{\n  int result; // eax\n\n  LOWORD(result) = __imp_ntohs(netshort);\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

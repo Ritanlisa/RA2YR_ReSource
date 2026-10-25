@@ -1,0 +1,1 @@
+{"addr": "0x007C865C", "name": "CloseWindow", "decompiled": "// attributes: thunk\nBOOL __stdcall CloseWindow(HWND hWnd)\n{\n  return __imp_CloseWindow(hWnd);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x007C853C", "name": "WaitForMultipleObjects", "decompiled": "// attributes: thunk\nDWORD __stdcall WaitForMultipleObjects(DWORD nCount, const HANDLE *lpHandles, BOOL bWaitAll, DWORD dwMilliseconds)\n{\n  return __imp_WaitForMultipleObjects(nCount, lpHandles, bWaitAll, dwMilliseconds);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

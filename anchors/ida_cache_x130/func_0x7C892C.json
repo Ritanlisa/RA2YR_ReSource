@@ -1,0 +1,1 @@
+{"addr": "0x007C892C", "name": "SysFreeString", "decompiled": "// attributes: thunk\nvoid __stdcall SysFreeString(BSTR bstrString)\n{\n  __imp_SysFreeString(bstrString);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

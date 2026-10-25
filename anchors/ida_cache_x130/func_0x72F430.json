@@ -1,0 +1,1 @@
+{"addr": "0x0072F430", "name": "UI_Init_72F430", "decompiled": "char UI_Init_72F430()\n{\n  return byte_B0FC0C;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

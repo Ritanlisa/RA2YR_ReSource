@@ -1,0 +1,1 @@
+{"addr": "0x004E4580", "name": "IsAvailableColorhWnd", "decompiled": "bool __fastcall IsAvailableColorhWnd(int a1)\n{\n  return dword_8B4040[3 * a1] != -1;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

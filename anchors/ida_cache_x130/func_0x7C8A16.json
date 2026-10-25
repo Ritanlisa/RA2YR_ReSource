@@ -1,0 +1,1 @@
+{"addr": "0x007C8A16", "name": "InitCommonControls", "decompiled": "// attributes: thunk\nvoid __stdcall InitCommonControls()\n{\n  __imp_InitCommonControls();\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x00487130", "name": "BuildingClass::updateOccupiedState", "decompiled": "_DWORD *__thiscall BuildingClass::updateOccupiedState(BuildingClass *this, char a2)\n{\n  this->spawnStatus &= ~(1 << a2);\n  return &this->vfptr;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

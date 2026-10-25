@@ -1,0 +1,1 @@
+{"addr": "0x007C883C", "name": "SetBkColor", "decompiled": "// attributes: thunk\nCOLORREF __stdcall SetBkColor(HDC hdc, COLORREF color)\n{\n  return __imp_SetBkColor(hdc, color);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x006528D0", "name": "sub_6528D0", "decompiled": "int sub_6528D0()\n{\n  ShapeButtonClass::Init((ShapeButtonClass *)&stru_B04978);\n  return atexit(sub_6528F0);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

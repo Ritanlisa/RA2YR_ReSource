@@ -1,0 +1,1 @@
+{"addr": "0x0072A670", "name": "ObjectClass::clearTarget", "decompiled": "_DWORD *__thiscall ObjectClass::clearTarget(TextLabelClass *this, char a2)\n{\n  GadgetClass::Dtor((ShpButtonClass *)this);\n  if ( (a2 & 1) != 0 )\n    __3_YAXPAX_Z(this);\n  return &this->vfptr;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

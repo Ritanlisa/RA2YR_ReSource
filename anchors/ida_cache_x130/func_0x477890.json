@@ -1,0 +1,1 @@
+{"addr": "0x00477890", "name": "VectorClass::GetAt_Copy", "decompiled": "int __thiscall VectorClass::GetAt_Copy(_VectorClass_H *this, int a2)\n{\n  return *(_DWORD *)(*(_DWORD *)&this->m_1[3] + 4 * a2);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

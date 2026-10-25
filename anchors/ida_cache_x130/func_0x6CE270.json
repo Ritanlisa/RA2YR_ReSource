@@ -1,0 +1,1 @@
+{"addr": "0x006CE270", "name": "SuperClass::SetFieldX", "decompiled": "int __thiscall SuperClass::SetFieldX(SuperClass *this)\n{\n  int result; // eax\n\n  result = this->SuperClass_field_0x0;\n  if ( this->SuperClass_field_0x0 )\n    return (*(int (__stdcall **)(int))(*(_DWORD *)result + 4))(result);\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

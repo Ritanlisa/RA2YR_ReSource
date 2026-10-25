@@ -1,0 +1,1 @@
+{"addr": "0x0070DC50", "name": "TechnoClass::processEMPulse", "decompiled": "char __thiscall TechnoClass::processEMPulse(TechnoClass *this)\n{\n  return *(_BYTE *)((*(int (__thiscall **)(TechnoClass *))(this->vfptr + 132))(this) + 2054);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

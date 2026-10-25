@@ -1,0 +1,1 @@
+{"addr": "0x007D475A", "name": "__i64toa", "decompiled": "char *__cdecl _i64toa(__int64 Value, char *Buffer, int Radix)\n{\n  BOOL v3; // eax\n\n  v3 = 0;\n  if ( Radix == 10 && SHIDWORD(Value) <= 0 )\n    v3 = Value < 0;\n  x64toa_20(Value, Buffer, Radix, v3);\n  return Buffer;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x0075E500", "name": "WarheadTypeClass::GetTypeIdentifier", "decompiled": "int WarheadTypeClass::GetTypeIdentifier(WarheadTypeClass *this)\n{\n  return 50;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

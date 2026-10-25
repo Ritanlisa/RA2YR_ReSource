@@ -1,0 +1,1 @@
+{"addr": "0x0060D520", "name": "sub_60D520", "decompiled": "LRESULT __stdcall sub_60D520(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)\n{\n  return DefWindowProcA(hWnd, Msg, wParam, lParam);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

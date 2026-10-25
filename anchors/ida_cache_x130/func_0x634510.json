@@ -1,0 +1,1 @@
+{"addr": "0x00634510", "name": "ComputeBounds", "decompiled": "_DWORD *__fastcall ComputeBounds(_DWORD *a1, int a2, int a3, int a4)\n{\n  *a1 = a2 / -2 + a3;\n  a1[1] = a2 / -2 + a4;\n  a1[2] = a2;\n  a1[3] = a2;\n  return a1;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

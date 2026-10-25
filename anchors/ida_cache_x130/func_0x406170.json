@@ -1,0 +1,1 @@
+{"addr": "0x00406170", "name": "VocClass::Check", "decompiled": "int __thiscall VocClass::Check(VocClass *this)\n{\n  if ( g_AudioConfigState && (int *)this->SamplesOK == &dword_87E294 )\n    return this->Header[2];\n  else\n    return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

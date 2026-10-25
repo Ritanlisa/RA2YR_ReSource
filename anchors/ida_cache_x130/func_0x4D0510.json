@@ -1,0 +1,1 @@
+{"addr": "0x004D0510", "name": "JumpjetLocomotionClass::GetInterface", "decompiled": "int __stdcall JumpjetLocomotionClass::GetInterface(int a1, const void *a2, _DWORD *a3)\n{\n  return LocomotionClass::QueryInterface((LocomotionClass *)(a1 - 4), a2, a3);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

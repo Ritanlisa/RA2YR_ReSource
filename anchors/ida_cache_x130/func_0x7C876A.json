@@ -1,0 +1,1 @@
+{"addr": "0x007C876A", "name": "BringWindowToTop", "decompiled": "// attributes: thunk\nBOOL __stdcall BringWindowToTop(HWND hWnd)\n{\n  return __imp_BringWindowToTop(hWnd);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

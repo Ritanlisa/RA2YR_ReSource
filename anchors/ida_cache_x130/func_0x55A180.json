@@ -1,0 +1,1 @@
+{"addr": "0x0055A180", "name": "LoadOptions::vt05", "decompiled": "unsigned int __thiscall LoadOptions::vt05(_DynamicVectorClass_PAVFileEntryClass *this, int a2)\n{\n  if ( LOBYTE(this->m_C) )\n    return (unsigned int)(a2 - *(_DWORD *)&this->m_1[3]) >> 2;\n  else\n    return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

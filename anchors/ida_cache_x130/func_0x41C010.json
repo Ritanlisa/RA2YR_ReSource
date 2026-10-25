@@ -1,0 +1,1 @@
+{"addr": "0x0041C010", "name": "AircraftClass::CheckReloadState", "decompiled": "int __thiscall AircraftClass::CheckReloadState(TechnoClass *this)\n{\n  int result; // eax\n\n  LOBYTE(result) = this->isDisguisedFlag[0];\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

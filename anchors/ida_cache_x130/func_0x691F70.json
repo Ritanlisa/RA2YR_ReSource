@@ -1,0 +1,1 @@
+{"addr": "0x00691F70", "name": "ScriptTypeClass::GetTypeIdentifier", "decompiled": "int ScriptTypeClass::GetTypeIdentifier(ScriptTypeClass *this)\n{\n  return 27;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

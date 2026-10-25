@@ -1,0 +1,1 @@
+{"addr": "0x0054A170", "name": "IsometricTileTypeClass::ddtor", "decompiled": "void *__thiscall IsometricTileTypeClass::ddtor(IsometricTileTypeClass *this, char a2)\n{\n  IsometricTileTypeClass::CleanupMembers((int)this);\n  if ( (a2 & 1) != 0 )\n    __3_YAXPAX_Z(this);\n  return this;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

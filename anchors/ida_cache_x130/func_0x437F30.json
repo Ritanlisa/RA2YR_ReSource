@@ -1,0 +1,1 @@
+{"addr": "0x00437F30", "name": "CellStruct::Copy", "decompiled": "_DWORD *__thiscall CellStruct::Copy(CellStruct *this, _DWORD *a2)\n{\n  void *v3; // edx\n  void *v4; // ecx\n\n  v3 = *(void **)&this->X;\n  v4 = this->field_4;\n  *a2 = v3;\n  a2[1] = v4;\n  return a2;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

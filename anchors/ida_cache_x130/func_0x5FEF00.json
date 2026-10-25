@@ -1,0 +1,1 @@
+{"addr": "0x005FEF00", "name": "OverlayTypeClass::GetTypeIdentifier", "decompiled": "int OverlayTypeClass::GetTypeIdentifier(OverlayTypeClass *this)\n{\n  return 21;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

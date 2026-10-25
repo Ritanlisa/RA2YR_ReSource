@@ -1,0 +1,1 @@
+{"addr": "0x006F20A0", "name": "TeamTypeClass::GetTypeIdentifier", "decompiled": "int TeamTypeClass::GetTypeIdentifier(TeamTypeClass *this)\n{\n  return 35;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

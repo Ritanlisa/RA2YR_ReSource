@@ -1,0 +1,1 @@
+{"addr": "0x007C8932", "name": "LoadTypeLib", "decompiled": "// attributes: thunk\nHRESULT __stdcall LoadTypeLib(LPCOLESTR szFile, ITypeLib **pptlib)\n{\n  return __imp_LoadTypeLib(szFile, pptlib);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

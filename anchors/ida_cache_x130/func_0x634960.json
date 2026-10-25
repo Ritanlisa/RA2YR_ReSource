@@ -1,0 +1,1 @@
+{"addr": "0x00634960", "name": "sub_634960", "decompiled": "char __thiscall sub_634960(ObjectClass *this)\n{\n  return this->referenceCount;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

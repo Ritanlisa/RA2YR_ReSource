@@ -1,0 +1,1 @@
+{"addr": "0x00771950", "name": "Territory_WorldDominationTour_8::ddtor", "decompiled": "void __thiscall Territory_WorldDominationTour_8::ddtor(Anim_Voices_WorldDominationTour *this)\n{\n  if ( *(_DWORD *)&this->__pad_C[4] == -1 )\n    *(_DWORD *)&this->__pad_C[4] = Timer::GetTicks();\n}\n", "changed": true, "error": null, "timestamp": "x130"}

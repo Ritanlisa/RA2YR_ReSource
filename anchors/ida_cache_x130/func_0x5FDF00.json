@@ -1,0 +1,1 @@
+{"addr": "0x005FDF00", "name": "Object::StubReturn176", "decompiled": "int Object::StubReturn176(OverlayClass *this)\n{\n  return 176;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

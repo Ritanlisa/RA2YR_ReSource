@@ -1,0 +1,1 @@
+{"addr": "0x004D0390", "name": "FlyLocomotionClass::StubReturn96", "decompiled": "int FlyLocomotionClass::StubReturn96(FlyLocomotionClass *this)\n{\n  return 96;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x006BEC50", "name": "ExitProgram", "decompiled": "void __thiscall __noreturn ExitProgram(ObjectClass *this)\n{\n  exit((int)this);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x00746D00", "name": "TechnoClass::updateSpawnManager", "decompiled": "char __thiscall TechnoClass::updateSpawnManager(TechnoClass *this)\n{\n  return *(_BYTE *)(*((_DWORD *)this + 433) + 1708);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x00536B10", "name": "CreateTeamCommand::performAction_70", "decompiled": "char *CreateTeamCommand::performAction_70(StopCommandClass *this)\n{\n  return aStopobject;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

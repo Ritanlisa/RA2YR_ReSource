@@ -1,0 +1,1 @@
+{"addr": "0x007CEED8", "name": "__cfltcvt", "decompiled": "char *__cdecl _cfltcvt(double *a1, char *Src, int a3, char *Size, int a5)\n{\n  if ( a3 == 101 || a3 == 69 )\n    return _cftoe(a1, Src, (int)Size, a5);\n  if ( a3 == 102 )\n    return _cftof(a1, Src, (size_t)Size);\n  return _cftog(a1, Src, Size, a5);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

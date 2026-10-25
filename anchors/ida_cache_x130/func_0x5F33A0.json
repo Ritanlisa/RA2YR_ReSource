@@ -1,0 +1,1 @@
+{"addr": "0x005F33A0", "name": "StringBuffer::Reset", "decompiled": "_BYTE *__thiscall StringBuffer::Reset(StringBuffer *this)\n{\n  _BYTE *result; // eax\n\n  result = (_BYTE *)*((_DWORD *)this + 3);\n  *result = 0;\n  *((_DWORD *)this + 5) = 0;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

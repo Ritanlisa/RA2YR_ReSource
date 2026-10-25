@@ -1,0 +1,1 @@
+{"addr": "0x006CAE00", "name": "sub_6CAE00", "decompiled": "int sub_6CAE00()\n{\n  dword_B0C038 = 0;\n  dword_B0C03C = 1;\n  dword_B0C040 = -65535;\n  dword_B0C044 = -65536;\n  dword_B0C048 = -1;\n  dword_B0C050 = 0x1FFFF;\n  dword_B0C04C = 0xFFFF;\n  dword_B0C054 = 0x10000;\n  dword_B0C058 = 65537;\n  return 65537;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

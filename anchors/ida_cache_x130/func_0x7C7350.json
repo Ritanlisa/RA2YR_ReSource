@@ -1,0 +1,1 @@
+{"addr": "0x007C7350", "name": "Audio_Render_7C7350", "decompiled": "int __cdecl Audio_Render_7C7350(int a1)\n{\n  *(_WORD *)(a1 + 4) = 0;\n  *(_DWORD *)a1 = 0;\n  *(_WORD *)(a1 + 10) = 0;\n  *(_DWORD *)(a1 + 6) = 0;\n  return a1;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x00487E60", "name": "CellClass::StubReturn11", "decompiled": "int __thiscall CellClass::StubReturn11(CellClass *this)\n{\n  return 11;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

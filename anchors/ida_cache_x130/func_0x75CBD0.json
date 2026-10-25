@@ -1,0 +1,1 @@
+{"addr": "0x0075CBD0", "name": "WalkLocomotionClass::StubReturn60", "decompiled": "int WalkLocomotionClass::StubReturn60(WalkLocomotionClass *this)\n{\n  return 60;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

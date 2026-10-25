@@ -1,0 +1,1 @@
+{"addr": "0x0074F310", "name": "VeinholeMonsterClass::StubReturn63", "decompiled": "int VeinholeMonsterClass::StubReturn63(VeinholeMonsterClass *this)\n{\n  return 63;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

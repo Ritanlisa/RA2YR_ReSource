@@ -1,0 +1,1 @@
+{"addr": "0x0076B740", "name": "WDTState_4::Write", "decompiled": "unsigned int __thiscall WDTState_4::Write(_DynamicVectorClass_V_rc_ptr_VWDTTerritory *this, int a2)\n{\n  if ( LOBYTE(this->m_C) )\n    return (unsigned int)(a2 - *(_DWORD *)&this->m_1[3]) >> 3;\n  else\n    return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

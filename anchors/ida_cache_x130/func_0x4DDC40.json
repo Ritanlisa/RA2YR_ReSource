@@ -1,0 +1,1 @@
+{"addr": "0x004DDC40", "name": "FootClass::CheckHeightDiff", "decompiled": "char __thiscall FootClass::CheckHeightDiff(FootClass *this, int a2)\n{\n  if ( this->tubeIndex[0] < 0 )\n    return ObjectClass::CheckGroundHeightDiff((IUnknown *)this);\n  else\n    return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

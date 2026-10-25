@@ -1,0 +1,1 @@
+{"addr": "0x005B2F30", "name": "AircraftClass::CheckMissionStatus2", "decompiled": "int AircraftClass::CheckMissionStatus2(MissionClass *this)\n{\n  return 450;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

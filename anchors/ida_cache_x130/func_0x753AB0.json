@@ -1,0 +1,1 @@
+{"addr": "0x00753AB0", "name": "sub_753AB0", "decompiled": "void __cdecl sub_753AB0()\n{\n  Vector::Clear((int)&stru_B2D804);\n  dword_B2D7F0 = (int)&Surface_Vtable;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

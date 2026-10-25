@@ -1456,74 +1456,68 @@ int TeamClass::UpdateReadinessState()
 
   int v2; // eax
   int totalObjects; // ecx
-  TeamTypeClass *buildingType; // edi
-  char spawnStatus; // al
-  char *i; // edi
-  char TeamClass_field_7A; // [esp+Fh] [ebp-1h]
+  int buildingType; // edi
+  char v6; // al
+  int i; // edi
+  char v8; // [esp+Fh] [ebp-1h]
 
-  TeamClass_field_7A = this->TeamClass_field_7A; /*0x6ea3ec*/
-  v2 = TeamClass::SumMemberCounts(*&this->currentScript.firstUnit); /*0x6ea3f6*/
-  totalObjects = this->totalObjects; /*0x6ea3fb*/
-  if ( totalObjects > 0 ) /*0x6ea404*/
-  {
-    this->unknown79 = totalObjects == v2; /*0x6ea40d*/
-    if ( totalObjects == v2 ) /*0x6ea410*/
-      this->spawnStatus = 1; /*0x6ea412*/
-    buildingType = this->buildingType; /*0x6ea416*/
-    if ( HIBYTE(buildingType[1].TeamTypeClass_field_34) ) /*0x6ea419*/
-    {
-      if ( v2 <= 2 ) /*0x6ea424*/
-        this->TeamClass_field_7A = totalObjects < v2; /*0x6ea443*/
+  v8 = this->TeamClass_field_7A[0];  /*0x6ea3ec*/
+  v2 = TeamClass::SumMemberCounts(*(TeamClass **)(this->buildingType + 228));  /*0x6ea3f6*/
+  totalObjects = this->totalObjects;  /*0x6ea3fb*/
+  if ( totalObjects > 0 )
+  {  /*0x6ea404*/
+    this->unknown79[0] = totalObjects == v2;  /*0x6ea40d*/
+    if ( totalObjects == v2 )
+      this->spawnStatus[0] = 1;  /*0x6ea412*/  /*0x6ea410*/
+    buildingType = this->buildingType;  /*0x6ea416*/
+    if ( *(unsigned char *)(buildingType + 171) )
+    {  /*0x6ea419*/
+      if ( v2 <= 2 )
+        this->TeamClass_field_7A[0] = totalObjects < v2;  /*0x6ea443*/  /*0x6ea424*/
       else
-        this->TeamClass_field_7A = totalObjects <= v2 / 3; /*0x6ea439*/
+        this->TeamClass_field_7A[0] = totalObjects <= v2 / 3;  /*0x6ea439*/
     }
     else
     {
-      this->TeamClass_field_7A = this->spawnStatus == 0; /*0x6ea44e*/
+      this->TeamClass_field_7A[0] = this->spawnStatus[0] == 0;  /*0x6ea44e*/
     }
-    if ( HIBYTE(buildingType[1].TeamTypeClass_field_30) ) /*0x6ea451*/
-    {
-      if ( this->TeamClass_field_7A ) /*0x6ea459*/
-        this->unknown76 = 0; /*0x6ea45e*/
+    if ( *(unsigned char *)(buildingType + 167) )
+    {  /*0x6ea451*/
+      if ( this->TeamClass_field_7A[0] )
+        this->unknown76[0] = 0;  /*0x6ea45e*/  /*0x6ea459*/
       else
-        this->unknown76 = 1; /*0x6ea463*/
+        this->unknown76[0] = 1;  /*0x6ea463*/
     }
-    this->TeamClass_field_7E = 0; /*0x6ea467*/
-    this->needsToDisappear = 0; /*0x6ea46a*/
-    goto LABEL_14; /*0x6ea46a*/
+    this->TeamClass_field_7E[0] = 0;  /*0x6ea467*/
+    this->needsToDisappear[0] = 0;  /*0x6ea46a*/
+    goto LABEL_14;  /*0x6ea46a*/
   }
-  spawnStatus = this->spawnStatus; /*0x6ea483*/
-  this->unknown76 = 0; /*0x6ea486*/
-  this->TeamClass_field_7A = 1; /*0x6ea48b*/
-  this->unknown79 = 0; /*0x6ea48f*/
-  this->spawnCell = 0; /*0x6ea492*/
-  if ( !spawnStatus ) /*0x6ea495*/
-  {
-    LABEL_14:
-    if ( TeamClass_field_7A != this->TeamClass_field_7A ) /*0x6ea476*/
-      this->TeamClass_field_7B = 1; /*0x6ea478*/
-    return 1; /*0x6ea482*/
+  v6 = this->spawnStatus[0];  /*0x6ea483*/
+  this->unknown76[0] = 0;  /*0x6ea486*/
+  this->TeamClass_field_7A[0] = 1;  /*0x6ea48b*/
+  this->unknown79[0] = 0;  /*0x6ea48f*/
+  this->spawnCell = 0;  /*0x6ea492*/
+  if ( !v6 )
+  {  /*0x6ea495*/
+LABEL_14:
+    if ( v8 != this->TeamClass_field_7A[0] )
+      this->TeamClass_field_7B[0] = 1;  /*0x6ea478*/  /*0x6ea476*/
+    return 1;  /*0x6ea482*/
   }
-  if ( this->unknown82 ) /*0x6ea497*/
-  {
-    for ( i = (char *)&DataGlobal_8B3DC0[792][-1].OwnerHouse + 3; (int)i >= 0; --i ) /*0x6ea4aa*/
-    {
-      if ( (unsigned __int8)TeamClass::Update_0( /*0x6ea4cf*/
-                              *((TeamClass **)&dword_8B40CC->ObjectClass + (unsigned int)i),
-                              23,
-                              0,
-                              g_BuildingLoadQueue_Array.?[1],
-                              0,
-                              0)
-        && !FootClass_Array.? )
-      {
-        break; /*0x6ea4cf*/
+  if ( this->unknown82[0] )
+  {  /*0x6ea497*/
+    for ( i = dword_8B40D8 - 1; i >= 0; --i )
+    {  /*0x6ea4aa*/
+      if ( (unsigned __int8)TeamClass::Update_0(*((TeamClass **)dword_8B40CC + i), 23, 0, dword_B0E948, 0, 0)
+        && !dword_8B40D8 )
+      {  /*0x6ea4cf*/
+        break;  /*0x6ea4cf*/
       }
     }
   }
-  if ( this ) /*0x6ea4d6*/
-    (*((void (**)(TeamClass *, int))this->vfptr + 8))(this, 1); /*0x6ea4de*/
-  return 0; /*0x6ea47c*/
+  if ( this )
+    ((void (**)(TeamClass *, int))(this->vfptr + 32)))(this, 1);  /*0x6ea4de*/  /*0x6ea4d6*/
+  return 0;  /*0x6ea47c*/
 
 }
 }

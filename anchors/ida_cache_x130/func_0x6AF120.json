@@ -1,0 +1,1 @@
+{"addr": "0x006AF120", "name": "sub_6AF120", "decompiled": "int sub_6AF120()\n{\n  dword_B0B5F4 = 0;\n  dword_B0B5F8 = 0;\n  byte_B0B5FC = 1;\n  byte_B0B5FD = 0;\n  SlaveManagerClass_Array = (int)&DynamicVectorClass<SlaveManagerClass *>::`vftable';\n  dword_B0B604 = 10;\n  dword_B0B600 = 0;\n  return atexit(sub_6AF160);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x00426A80", "name": "AbstractClass::getMapCoords", "decompiled": "int __thiscall AbstractClass::getMapCoords(AbstractClass *this)\n{\n  return *((unsigned __int16 *)this + 81);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

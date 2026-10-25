@@ -1,0 +1,1 @@
+{"addr": "0x0040D960", "name": "sub_40D960", "decompiled": "_BYTE *sub_40D960()\n{\n  _BYTE *result; // eax\n  int v1; // ecx\n\n  result = &unk_885482;\n  v1 = 256;\n  do\n  {\n    *(result - 2) = 0;\n    *(result - 1) = 0;\n    *result = 0;\n    result += 3;\n    --v1;\n  }\n  while ( v1 );\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

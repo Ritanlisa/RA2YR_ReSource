@@ -1,0 +1,1 @@
+{"addr": "0x007534E0", "name": "VoxClass::SetEVAIndex", "decompiled": "int __thiscall VoxClass::SetEVAIndex(VoxClass *this)\n{\n  int result; // eax\n\n  if ( this == (VoxClass *)-1 )\n  {\n    dword_B1D4C8 = 0;\n    return 0;\n  }\n  else\n  {\n    dword_B1D4C8 = (int)this;\n  }\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

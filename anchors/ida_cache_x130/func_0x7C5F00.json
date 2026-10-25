@@ -1,0 +1,1 @@
+{"addr": "0x007C5F00", "name": "Math::RoundToInt", "decompiled": "int __usercall Math::RoundToInt@<dx:ax>(double a1@<st0>)\n{\n  __int64 v1; // rax\n  int result; // dx:ax\n\n  v1 = (__int64)a1;\n  LOWORD(result) = v1;\n  HIWORD(result) = WORD2(v1);\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

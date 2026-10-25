@@ -1,0 +1,1 @@
+{"addr": "0x00470C00", "name": "MPCooperative::startGame", "decompiled": "_DWORD *__thiscall MPCooperative::startGame(MPCooperative *this)\n{\n  this->MPCooperative_field_0x0 = (int)&CampaignEndScoreClass::`vftable';\n  dword_89E008 = -1;\n  dword_89E020 = 0;\n  dword_89DFD4 = 0;\n  return &this->MPCooperative_field_0x0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

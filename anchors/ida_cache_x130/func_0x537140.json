@@ -1,0 +1,1 @@
+{"addr": "0x00537140", "name": "CreateTeamCommand::performAction_129", "decompiled": "char *__thiscall CreateTeamCommand::performAction_129(SidebarUpCommandClass *this)\n{\n  return aSidebarup;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

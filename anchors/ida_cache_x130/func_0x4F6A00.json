@@ -1,0 +1,1 @@
+{"addr": "0x004F6A00", "name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem", "decompiled": "int __stdcall VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem(HouseClass *this)\n{\n  return this->numWarFactories;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

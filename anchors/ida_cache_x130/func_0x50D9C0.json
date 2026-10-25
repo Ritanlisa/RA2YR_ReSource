@@ -1,0 +1,1 @@
+{"addr": "0x0050D9C0", "name": "IsTechInfiltrated", "decompiled": "BOOL __thiscall IsTechInfiltrated(TechnoClass *this)\n{\n  return this->firepowerMultiplier[1] > 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

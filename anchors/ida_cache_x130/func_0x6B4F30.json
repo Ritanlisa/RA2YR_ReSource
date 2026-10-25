@@ -1,0 +1,1 @@
+{"addr": "0x006B4F30", "name": "UnitClass::StubReturn176", "decompiled": "int UnitClass::StubReturn176(SmudgeClass *this)\n{\n  return 176;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

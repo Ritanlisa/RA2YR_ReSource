@@ -1,0 +1,1 @@
+{"addr": "0x004085E0", "name": "sub_4085E0", "decompiled": "void __fastcall sub_4085E0(DListNode *a1, int a2, int a3)\n{\n  a1[1].DListNode_field_0x04 = a3;\n  *(_DWORD *)a1[1].__pad_0 = a2;\n  DListNode::InitEmpty(a1);\n  a1[1].q008 = 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

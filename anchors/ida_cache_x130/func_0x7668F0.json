@@ -1,0 +1,1 @@
+{"addr": "0x007668F0", "name": "System_Init_7668F0", "decompiled": "_DWORD *__thiscall System_Init_7668F0(rc_ptr *this)\n{\n  this->field_0 = (unsigned int)&rc_ptr<WorldDominationTour::GameOption>::`vftable';\n  return ComPtr::Release((ComPtr *)this);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

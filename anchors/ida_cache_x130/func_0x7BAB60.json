@@ -1,0 +1,1 @@
+{"addr": "0x007BAB60", "name": "XSurface::entry_38_", "decompiled": "char __stdcall XSurface::entry_38_(XSurface *this, int a2, int a3, int a4, int a5, int a6, int a7)\n{\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

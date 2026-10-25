@@ -1,0 +1,1 @@
+{"addr": "0x0076FF20", "name": "Trigger::executeActions", "decompiled": "int __thiscall Trigger::executeActions(Trigger *this, int a2)\n{\n  this->Trigger_field_0x2C = a2;\n  return a2;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

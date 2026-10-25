@@ -1,0 +1,1 @@
+{"addr": "0x0046C870", "name": "BulletTypeClass::Stub", "decompiled": "char __stdcall BulletTypeClass::Stub(BulletTypeClass *this, int a2)\n{\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

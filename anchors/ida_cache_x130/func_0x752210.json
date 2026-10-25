@@ -1,0 +1,1 @@
+{"addr": "0x00752210", "name": "sub_752210", "decompiled": "int sub_752210()\n{\n  g_InfantryRenderPool = 0;\n  dword_B1D4A8 = 0;\n  byte_B1D4AC = 1;\n  byte_B1D4AD = 0;\n  dword_B1D4A0 = (int)&DynamicVectorClass<VoxClass *>::`vftable';\n  dword_B1D4B4 = 10;\n  g_InfantrySelectState = 0;\n  return atexit(sub_752250);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

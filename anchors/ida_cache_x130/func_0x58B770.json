@@ -1,0 +1,1 @@
+{"addr": "0x0058B770", "name": "unknown_libname_24", "decompiled": "// Microsoft VisualC 2-14/net runtime\n_DWORD *unknown_libname_24()\n{\n  return SeedInitRNG(&stru_ABE890, 0);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x004135A0", "name": "ObjectClass::HasLinkedObject", "decompiled": "int __stdcall ObjectClass::HasLinkedObject(int a1)\n{\n  int result; // eax\n\n  result = *(_DWORD *)((*(int (__thiscall **)(int))(*(_DWORD *)a1 + 444))(a1) + 224);\n  LOBYTE(result) = result && result != a1;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

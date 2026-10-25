@@ -1,0 +1,1 @@
+{"addr": "0x0076BFC0", "name": "ConstructWDTSelection_Create_76BFC0", "decompiled": "int __thiscall ConstructWDTSelection_Create_76BFC0(ObjectClass *this)\n{\n  int vfptr3; // eax\n\n  vfptr3 = this->vfptr3;\n  if ( vfptr3 )\n    return *(unsigned __int8 *)(vfptr3 + 20);\n  else\n    return 1;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

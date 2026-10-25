@@ -1,0 +1,1 @@
+{"addr": "0x005D3450", "name": "MSFont::QueryInterface", "decompiled": "void *__thiscall MSFont::QueryInterface(MSFont *this, char a2)\n{\n  MSFont::Constructor_MSFont(this);\n  if ( (a2 & 1) != 0 )\n    __3_YAXPAX_Z(this);\n  return this;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

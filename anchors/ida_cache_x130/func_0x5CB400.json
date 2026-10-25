@@ -1,0 +1,1 @@
+{"addr": "0x005CB400", "name": "UnholyAlliance::Write", "decompiled": "BOOL __stdcall UnholyAlliance::Write(UnholyAlliance *this)\n{\n  return stru_A8B250.__pad_0[8] && (unsigned __int8)ScenarioClass::MissionStubReturnZero2((int *)this->m_Enabled);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

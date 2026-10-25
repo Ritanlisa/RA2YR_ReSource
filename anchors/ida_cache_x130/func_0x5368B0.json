@@ -1,0 +1,1 @@
+{"addr": "0x005368B0", "name": "CreateTeamCommand::performAction_52", "decompiled": "char __thiscall CreateTeamCommand::performAction_52(TypeSelectCommandClass *this)\n{\n  char v2; // [esp+5h] [ebp+5h]\n\n  if ( (v2 & 8) != 0 )\n    return UI_Create_732CC0();\n  else\n    return UI_Create_732CA0();\n}\n", "changed": true, "error": null, "timestamp": "x130"}

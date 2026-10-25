@@ -1,0 +1,1 @@
+{"addr": "0x0055AB40", "name": "COMObject::GetStringValue", "decompiled": "int __stdcall COMObject::GetStringValue(IUnknown *this, _DWORD *a2)\n{\n  if ( !a2 )\n    return -2147467261;\n  *a2 = (*(int (__thiscall **)(IUnknown *))(this->field_0 + 36))(this) + 4;\n  a2[1] = 0;\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

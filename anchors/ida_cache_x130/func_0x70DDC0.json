@@ -1,0 +1,1 @@
+{"addr": "0x0070DDC0", "name": "BuildingClass::checkPlacement", "decompiled": "int __thiscall BuildingClass::checkPlacement(BuildingClass *this)\n{\n  return this->gattlingStage;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x00661F90", "name": "JumpjetLocomotionClass::CheckCompositeState_0", "decompiled": "bool __stdcall JumpjetLocomotionClass::CheckCompositeState_0(RocketLocomotionClass *this)\n{\n  int v1; // eax\n\n  v1 = this->TrailerTimer[2];\n  return v1 >= 3 && v1 <= 5;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

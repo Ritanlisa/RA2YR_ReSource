@@ -1,0 +1,1 @@
+{"addr": "0x00437090", "name": "Coord3D::Set", "decompiled": "_DWORD *__thiscall Coord3D::Set(Coord3D *this, int a2, int a3, int a4)\n{\n  *(_DWORD *)this->__pad_0 = a2;\n  this->Coord3D_field_0x04 = a3;\n  this->Coord3D_field_0x08 = a4;\n  return this->__pad_0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

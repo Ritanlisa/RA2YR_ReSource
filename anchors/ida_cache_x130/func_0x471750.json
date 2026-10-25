@@ -1,0 +1,1 @@
+{"addr": "0x00471750", "name": "sub_471750", "decompiled": "int sub_471750()\n{\n  dword_89E0F4 = 0;\n  dword_89E0F8 = 0;\n  byte_89E0FC = 1;\n  byte_89E0FD = 0;\n  dword_89E0F0 = (int)&DynamicVectorClass<CaptureManagerClass *>::`vftable';\n  dword_89E104 = 10;\n  dword_89E100 = 0;\n  return atexit(sub_471790);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

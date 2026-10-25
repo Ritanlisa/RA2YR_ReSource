@@ -1,0 +1,1 @@
+{"addr": "0x0065FB60", "name": "sub_65FB60", "decompiled": "void __thiscall sub_65FB60(ObjectClass *this)\n{\n  FogOfWar::RevealCell((int)&dword_87F7E8, (unsigned int *)this);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

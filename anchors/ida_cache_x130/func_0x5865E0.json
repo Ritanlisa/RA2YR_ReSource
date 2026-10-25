@@ -1,0 +1,1 @@
+{"addr": "0x005865E0", "name": "Game::Stub3", "decompiled": "int __stdcall Game::Stub3(int a1)\n{\n  int result; // eax\n\n  LOBYTE(result) = 0;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

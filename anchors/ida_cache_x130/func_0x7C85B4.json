@@ -1,0 +1,1 @@
+{"addr": "0x007C85B4", "name": "GetCurrentDirectoryA", "decompiled": "// attributes: thunk\nDWORD __stdcall GetCurrentDirectoryA(DWORD nBufferLength, LPSTR lpBuffer)\n{\n  return __imp_GetCurrentDirectoryA(nBufferLength, lpBuffer);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

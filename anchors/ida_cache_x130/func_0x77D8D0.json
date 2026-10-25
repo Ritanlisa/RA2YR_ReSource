@@ -1,0 +1,1 @@
+{"addr": "0x0077D8D0", "name": "unknown_libname_55", "decompiled": "// Microsoft VisualC 2-14/net runtime\nHWND unknown_libname_55()\n{\n  return WebBrowser::ShowDialog(g_INI_Key_Battleclans);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x00411640", "name": "BSurface::GetPitch", "decompiled": "int __thiscall BSurface::GetPitch(BSurface *this)\n{\n  return this->field_0.field_0.field_10\n       * (*(int (__thiscall **)(BSurface *))(*(_DWORD *)this->field_0.field_0.__pad_0 + 124))(this);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

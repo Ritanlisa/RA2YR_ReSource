@@ -1,0 +1,1 @@
+{"addr": "0x0042D510", "name": "CellStruct::Add", "decompiled": "_DWORD *__thiscall CellStruct::Add(CellStruct *this, _DWORD *a2, _WORD *a3)\n{\n  __int16 v3; // dx\n  _WORD *v5; // [esp+8h] [ebp+8h]\n\n  v3 = this->X + *a3;\n  HIWORD(v5) = this->Y + a3[1];\n  LOWORD(v5) = v3;\n  *a2 = v5;\n  return a2;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

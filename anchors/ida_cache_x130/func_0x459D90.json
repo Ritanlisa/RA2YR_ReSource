@@ -1,0 +1,1 @@
+{"addr": "0x00459D90", "name": "TechnoClass::MissionStubReturnZero4", "decompiled": "int __thiscall TechnoClass::MissionStubReturnZero4(TechnoClass *this)\n{\n  int result; // eax\n\n  LOBYTE(result) = 1;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

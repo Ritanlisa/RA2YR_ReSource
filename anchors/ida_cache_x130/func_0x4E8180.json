@@ -1,0 +1,1 @@
+{"addr": "0x004E8180", "name": "sub_4E8180", "decompiled": "char sub_4E8180()\n{\n  stru_A8E960.altNextScenario[128] = -1;\n  stru_A8E960.altNextScenario[129] = 0;\n  stru_A8E960.altNextScenario[130] = 0;\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x00770130", "name": "sub_770130", "decompiled": "void sub_770130()\n{\n  dbl_B72B90 = 0.0174532925199433 * 90.0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

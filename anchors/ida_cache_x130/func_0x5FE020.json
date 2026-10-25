@@ -1,0 +1,1 @@
+{"addr": "0x005FE020", "name": "OverlayClass::updateOverlayState", "decompiled": "_DWORD *__thiscall OverlayClass::updateOverlayState(OverlayClass *this, int a2, int a3)\n{\n  this->vfptr1 = a2;\n  this->vfptr2 = a3;\n  this->vfptr3 = 0;\n  this->vfptr = (int)&XSurface_Vtable;\n  return &this->vfptr;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

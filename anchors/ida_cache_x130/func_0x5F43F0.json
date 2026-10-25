@@ -1,0 +1,1 @@
+{"addr": "0x005F43F0", "name": "AircraftClass::StubReturnFalse4", "decompiled": "int __thiscall AircraftClass::StubReturnFalse4(IUnknown *this)\n{\n  int result; // eax\n\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

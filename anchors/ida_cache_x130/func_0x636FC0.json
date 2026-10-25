@@ -1,0 +1,1 @@
+{"addr": "0x00636FC0", "name": "?GetMaskId_irtualProcessor_details_Concurrency__QBEIXZ", "decompiled": "unsigned int __thiscall _GetMaskId_irtualProcessor_details_Concurrency__QBEIXZ(\n        Concurrency::details::VirtualProcessor *this)\n{\n  return *((_DWORD *)this + 36);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

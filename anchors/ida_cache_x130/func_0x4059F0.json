@@ -1,0 +1,1 @@
+{"addr": "0x004059F0", "name": "sub_4059F0", "decompiled": "int __thiscall sub_4059F0(ObjectClass *this)\n{\n  *(_DWORD *)(*((_DWORD *)this + 48) + 28) = 4;\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

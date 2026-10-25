@@ -1,0 +1,1 @@
+{"addr": "0x004A1DB0", "name": "Checksum::AddString", "decompiled": "int __thiscall Checksum::AddString(Checksum *this, unsigned __int8 *a2)\n{\n  int result; // eax\n\n  if ( a2 )\n    return Checksummer::Add_Buffer((Checksummer *)this, a2, strlen((const char *)a2));\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

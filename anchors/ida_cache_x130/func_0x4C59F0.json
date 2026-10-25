@@ -1,0 +1,1 @@
+{"addr": "0x004C59F0", "name": "EMPulseClass::ddtor", "decompiled": "int __stdcall EMPulseClass::ddtor(EMPulseClass *this, _DWORD *a2)\n{\n  if ( !a2 )\n    return -2147467261;\n  *a2 = -1205482718;\n  a2[1] = 298983438;\n  a2[2] = 1610656159;\n  a2[3] = 1490328072;\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

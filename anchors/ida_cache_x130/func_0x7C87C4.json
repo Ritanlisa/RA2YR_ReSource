@@ -1,0 +1,1 @@
+{"addr": "0x007C87C4", "name": "ChildWindowFromPoint", "decompiled": "// attributes: thunk\nHWND __stdcall ChildWindowFromPoint(HWND hWndParent, POINT Point)\n{\n  return __imp_ChildWindowFromPoint(hWndParent, Point);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x0074AB30", "name": "VoxelAnimClass::LoadFrame", "decompiled": "int __thiscall VoxelAnimClass::LoadFrame(VoxelAnimClass *this)\n{\n  return this->VoxelAnimClass_field_0x104;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

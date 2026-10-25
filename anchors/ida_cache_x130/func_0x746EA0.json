@@ -1,0 +1,1 @@
+{"addr": "0x00746EA0", "name": "TechnoClass::processIronCurtainExpiry", "decompiled": "bool __thiscall TechnoClass::processIronCurtainExpiry(TechnoClass *this, _DWORD *a2)\n{\n  _DWORD *uniqueId; // eax\n\n  uniqueId = (_DWORD *)this->uniqueId;\n  return uniqueId && *uniqueId == *a2;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

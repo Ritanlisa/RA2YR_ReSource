@@ -1,0 +1,1 @@
+{"addr": "0x0045EC90", "name": "BuildingTypeClass::GetFoundationWidth", "decompiled": "int __thiscall BuildingTypeClass::GetFoundationWidth(BuildingTypeClass *this)\n{\n  return dword_8192B8[this->Foundation];\n}\n", "changed": true, "error": null, "timestamp": "x130"}

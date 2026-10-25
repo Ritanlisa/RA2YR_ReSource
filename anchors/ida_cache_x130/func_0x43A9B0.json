@@ -1,0 +1,1 @@
+{"addr": "0x0043A9B0", "name": "NeuronClass::StubReturn56", "decompiled": "int NeuronClass::StubReturn56(NeuronClass *this)\n{\n  return 56;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

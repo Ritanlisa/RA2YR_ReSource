@@ -1,0 +1,1 @@
+{"addr": "0x004B4C00", "name": "JumpjetLocomotionClass::GetField_0x54", "decompiled": "int __stdcall JumpjetLocomotionClass::GetField_0x54(DriveLocomotionClass *this)\n{\n  return this->MovementSpeed[1];\n}\n", "changed": true, "error": null, "timestamp": "x130"}

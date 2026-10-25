@@ -1,0 +1,1 @@
+{"addr": "0x006810A0", "name": "Map_Save_6810A0", "decompiled": "wchar_t *__thiscall Map_Save_6810A0(ObjectClass *this, wchar_t *Source)\n{\n  *((_WORD *)this + 131) = 0;\n  return wcsncpy((wchar_t *)&this->vfptr2, Source, 0x7Fu);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

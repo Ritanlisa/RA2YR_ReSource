@@ -1,0 +1,1 @@
+{"addr": "0x007CA9B4", "name": "sub_7CA9B4", "decompiled": "exception *__thiscall sub_7CA9B4(__non_rtti_object *this, struct exception *a2)\n{\n  __0exception_QAE_ABV0__Z((exception *)this, a2);\n  this->vfptr = &__non_rtti_object::`vftable';\n  return (exception *)this;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

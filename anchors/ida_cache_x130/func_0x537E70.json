@@ -1,0 +1,1 @@
+{"addr": "0x00537E70", "name": "CursorPositionCommandClass::Constructor", "decompiled": "_DWORD *__thiscall CursorPositionCommandClass::Constructor(CursorPositionCommandClass *this)\n{\n  *(_DWORD *)this->__tail_0 = &CursorPositionCommandClass::`vftable';\n  return this->__tail_0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

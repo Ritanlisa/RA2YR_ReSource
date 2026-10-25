@@ -1,0 +1,1 @@
+{"addr": "0x00633AB0", "name": "sub_633AB0", "decompiled": "// ?do_decimal_point@?$_Mpunct@D@std@@MBEDXZ\n// doubtful name\nchar __thiscall sub_633AB0(ObjectClass *this)\n{\n  return this->vfptr3;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

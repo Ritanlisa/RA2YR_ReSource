@@ -1,0 +1,1 @@
+{"addr": "0x00597D50", "name": "MapSeedClass::ddtor", "decompiled": "bool __stdcall MapSeedClass::ddtor(MapSeedClass *this)\n{\n  return LoadOptions::ddtor(this->__pad_0);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

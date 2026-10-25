@@ -1,0 +1,1 @@
+{"addr": "0x006B23B0", "name": "sub_6B23B0", "decompiled": "int sub_6B23B0()\n{\n  dword_B0B654 = 0;\n  dword_B0B658 = 0;\n  byte_B0B65C = 1;\n  byte_B0B65D = 0;\n  dword_B0B650 = (int)&DynamicVectorClass<UndoInfoStruct>::`vftable';\n  dword_B0B664 = 10;\n  g_SlaveMgrPool = 0;\n  return atexit(sub_6B23F0);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

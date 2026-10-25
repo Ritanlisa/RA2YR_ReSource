@@ -1,0 +1,1 @@
+{"addr": "0x004369C0", "name": "BuildingLightClass::SD_vt06", "decompiled": "int __stdcall BuildingLightClass::SD_vt06(BuildingLightClass *this, int *a2, int a3)\n{\n  return AbstractClass::SaveLoad_Prefix(&this->vfptr, a2, a3);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

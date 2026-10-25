@@ -1,0 +1,1 @@
+{"addr": "0x0041CFC0", "name": "AircraftTypeClass::GetObjectSize", "decompiled": "int AircraftTypeClass::GetObjectSize(AircraftTypeClass *this)\n{\n  return 3600;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

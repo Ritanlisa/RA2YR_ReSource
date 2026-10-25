@@ -1,0 +1,1 @@
+{"addr": "0x0050E430", "name": "HouseClass::processRadar", "decompiled": "char __thiscall HouseClass::processRadar(HouseClass *this, char a2, char a3, char a4)\n{\n  LOBYTE(this->vfptr) = a2;\n  BYTE1(this->vfptr) = a3;\n  BYTE2(this->vfptr) = a4;\n  return a4;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x00407530", "name": "PushFrontLinkedListAlt", "decompiled": "int __fastcall PushFrontLinkedListAlt(_DWORD *a1, int a2)\n{\n  *(_DWORD *)(a2 - 8) = *a1;\n  *a1 = a2 - 8;\n  return a2 - 8;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

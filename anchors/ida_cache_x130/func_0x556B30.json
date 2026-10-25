@@ -1,0 +1,1 @@
+{"addr": "0x00556B30", "name": "TacticalClass::GetField", "decompiled": "int __thiscall TacticalClass::GetField(TacticalClass *this)\n{\n  int result; // eax\n\n  result = this->vfptr1;\n  if ( result )\n  {\n    *(_DWORD *)(result + 168) = 0;\n    this->vfptr1 = 0;\n  }\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

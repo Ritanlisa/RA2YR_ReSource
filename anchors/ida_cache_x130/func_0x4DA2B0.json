@@ -1,0 +1,1 @@
+{"addr": "0x004DA2B0", "name": "AbstractClass::COMStub_143", "decompiled": "// attributes: thunk\nint __cdecl AbstractClass::COMStub_143(MissionClass *this)\n{\n  return IPersistStream::GetMaxSize(this);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

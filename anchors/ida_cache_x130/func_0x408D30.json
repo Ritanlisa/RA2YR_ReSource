@@ -1,0 +1,1 @@
+{"addr": "0x00408D30", "name": "sub_408D30", "decompiled": "int __thiscall sub_408D30(ObjectClass *this)\n{\n  return *(_DWORD *)this->onBridge - *(_DWORD *)this->isAliveFlag;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

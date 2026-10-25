@@ -1,0 +1,1 @@
+{"addr": "0x00771890", "name": "sub_771890", "decompiled": "void __thiscall sub_771890(_DWORD *this)\n{\n  *this = &WorldDominationTour::Voices::Anim::`vftable';\n  VtableStub::5CB6C0(this);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

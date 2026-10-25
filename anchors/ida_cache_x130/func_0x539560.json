@@ -1,0 +1,1 @@
+{"addr": "0x00539560", "name": "sub_539560", "decompiled": "int sub_539560()\n{\n  LightningStorm_Coords = dword_A9F9F8;\n  return dword_A9F9F8;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

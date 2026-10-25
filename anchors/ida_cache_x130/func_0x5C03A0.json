@@ -1,0 +1,1 @@
+{"addr": "0x005C03A0", "name": "AbstractClass::finalizePath", "decompiled": "void __thiscall AbstractClass::finalizePath(VQMovieHandle *this, signed int a2)\n{\n  AbstractClass::finalizeConstruction(*(AbstractClass **)this->currentFrame);\n  AbstractClass::updateBuildingState(*(AbstractClass **)this->currentFrame, a2);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

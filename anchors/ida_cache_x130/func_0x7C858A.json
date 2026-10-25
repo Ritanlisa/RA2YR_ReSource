@@ -1,0 +1,1 @@
+{"addr": "0x007C858A", "name": "SetupComm", "decompiled": "// attributes: thunk\nBOOL __stdcall SetupComm(HANDLE hFile, DWORD dwInQueue, DWORD dwOutQueue)\n{\n  return __imp_SetupComm(hFile, dwInQueue, dwOutQueue);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

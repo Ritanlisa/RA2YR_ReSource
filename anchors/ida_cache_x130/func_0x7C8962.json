@@ -1,0 +1,1 @@
+{"addr": "0x007C8962", "name": "htonl", "decompiled": "// attributes: thunk\nint __stdcall htonl(u_long hostlong)\n{\n  return __imp_htonl(hostlong);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x004E2580", "name": "GaugeClass::SetValue", "decompiled": "int __thiscall GaugeClass::SetValue(GaugeClass *this, int a2)\n{\n  if ( a2 == *((_DWORD *)this + 12) )\n    return 0;\n  *((_DWORD *)this + 12) = a2;\n  (*(void (__thiscall **)(GaugeClass *))(*(_DWORD *)this->__pad_0 + 72))(this);\n  return 1;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x007B7140", "name": "WideString::GetOrEmpty_Alt", "decompiled": "wchar_t *__thiscall WideString::GetOrEmpty_Alt(WideString *this)\n{\n  wchar_t *result; // eax\n\n  result = *(wchar_t **)this;\n  if ( !*(_DWORD *)this )\n    return &g_TypeClass_DefaultString;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

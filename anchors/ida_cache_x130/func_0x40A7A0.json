@@ -1,0 +1,1 @@
+{"addr": "0x0040A7A0", "name": "Audio::GetDirectSound", "decompiled": "int Audio::GetDirectSound()\n{\n  return (int)ppDS;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x007B01B0", "name": "sub_7B01B0", "decompiled": "void __cdecl sub_7B01B0()\n{\n  stru_B77F58.ComPtr_field_0x10 = (int)&rc_ptr<WorldDominationTour::Campaign>::`vftable';\n  ComPtr::Release((ComPtr *)&stru_B77F58.ComPtr_field_0x10);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

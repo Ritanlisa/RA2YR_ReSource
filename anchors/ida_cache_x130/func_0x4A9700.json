@@ -1,0 +1,1 @@
+{"addr": "0x004A9700", "name": "DisplayClass::Update", "decompiled": "void __thiscall DisplayClass::Update(DisplayClass *this, int a2, int a3)\n{\n  VectorCursor_uint_DynamicVectorClass_uint____13::Count((GScreenClass *)this, a2, a3);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

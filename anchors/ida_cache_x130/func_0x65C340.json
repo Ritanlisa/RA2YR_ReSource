@@ -1,0 +1,1 @@
+{"addr": "0x0065C340", "name": "AbstractClass::dispatchTeamEvent", "decompiled": "int __thiscall AbstractClass::dispatchTeamEvent(RAMFileClass *this, int a2, int a3)\n{\n  return (*(int (__thiscall **)(RAMFileClass *, int))(*(_DWORD *)this->__pad_0 + 28))(this, a3);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

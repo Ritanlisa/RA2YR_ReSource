@@ -1,0 +1,1 @@
+{"addr": "0x0065C4A0", "name": "AbstractClass::checkTeamObjective", "decompiled": "int __thiscall AbstractClass::checkTeamObjective(RAMFileClass *this)\n{\n  return this->RAMFileClass_field_0x10;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

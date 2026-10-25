@@ -1,0 +1,1 @@
+{"addr": "0x00696D20", "name": "sub_696D20", "decompiled": "void __usercall sub_696D20(double st7_0@<st0>)\n{\n  long double v1; // st6\n\n  v1 = pow(256.0, 2.0);\n  Math::Sqrt(v1 + v1);\n  dbl_B057E8 = st7_0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

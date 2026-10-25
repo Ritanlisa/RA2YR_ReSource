@@ -1,0 +1,1 @@
+{"addr": "0x0041D280", "name": "sub_41D280", "decompiled": "int sub_41D280()\n{\n  dword_889FBC = 0;\n  dword_889FC0 = 0;\n  byte_889FC4 = 1;\n  byte_889FC5 = 0;\n  dword_889FB8 = (int)&DynamicVectorClass<AirstrikeClass *>::`vftable';\n  dword_889FCC = 10;\n  dword_889FC8 = 0;\n  return atexit(sub_41D2C0);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

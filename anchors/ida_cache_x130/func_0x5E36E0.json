@@ -1,0 +1,1 @@
+{"addr": "0x005E36E0", "name": "Network_Handle", "decompiled": "void Network_Handle()\n{\n  stru_A8D804.__pad_3D[623] = 1;\n  if ( ppv )\n    UI_Setup_7A2750();\n  else\n    UI_Setup_5E2340();\n}\n", "changed": true, "error": null, "timestamp": "x130"}

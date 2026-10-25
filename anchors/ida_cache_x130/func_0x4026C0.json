@@ -1,0 +1,1 @@
+{"addr": "0x004026C0", "name": "sub_4026C0", "decompiled": "int __thiscall sub_4026C0(ObjectClass *this)\n{\n  (*(void (**)(void))(*((_DWORD *)this + 53) + 40))();\n  this->location[2] |= 0x10u;\n  return (*(int (__thiscall **)(ObjectClass *))(*((_DWORD *)this + 53) + 44))(this);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

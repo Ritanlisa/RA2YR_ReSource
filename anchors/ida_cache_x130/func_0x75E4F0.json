@@ -1,0 +1,1 @@
+{"addr": "0x0075E4F0", "name": "WarheadTypeClass::GetObjectSize", "decompiled": "int WarheadTypeClass::GetObjectSize(WarheadTypeClass *this)\n{\n  return 464;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

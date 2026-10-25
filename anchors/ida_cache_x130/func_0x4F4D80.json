@@ -1,0 +1,1 @@
+{"addr": "0x004F4D80", "name": "Stub::InfiniteLoop", "decompiled": "// attributes: thunk\nvoid __noreturn Stub::InfiniteLoop()\n{\n  while ( 1 )\n    ;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x007CA8EF", "name": "___RTCastToVoid", "decompiled": "char *__cdecl __RTCastToVoid(void **a1)\n{\n  if ( a1 )\n    return _FindCompleteObject_YAPAXPAPAX_Z(a1);\n  else\n    return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

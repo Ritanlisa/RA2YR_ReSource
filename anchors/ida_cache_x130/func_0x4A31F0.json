@@ -1,0 +1,1 @@
+{"addr": "0x004A31F0", "name": "CStreamClass::IsEmpty", "decompiled": "BOOL __thiscall CStreamClass::IsEmpty(CStreamClass *this, int a2)\n{\n  if ( a2 )\n    sub_7DC720(-2147467261);\n  return *(_DWORD *)this->__pad_0 == 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

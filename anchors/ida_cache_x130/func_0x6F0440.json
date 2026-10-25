@@ -1,0 +1,1 @@
+{"addr": "0x006F0440", "name": "TeamClass::StubReturn34", "decompiled": "int TeamClass::StubReturn34(TeamClass *this)\n{\n  return 34;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

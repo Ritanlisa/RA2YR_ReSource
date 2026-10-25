@@ -1,0 +1,1 @@
+{"addr": "0x006A4220", "name": "JumpjetLocomotionClass::SetByteField_2", "decompiled": "int __stdcall JumpjetLocomotionClass::SetByteField_2(ShipLocomotionClass *this)\n{\n  this->IsTurretLockedDown[0] = 1;\n  return (int)this;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

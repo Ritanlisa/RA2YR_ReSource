@@ -1,0 +1,1 @@
+{"addr": "0x005220F0", "name": "InfantryClass::SetFlag1752", "decompiled": "void __thiscall InfantryClass::SetFlag1752(InfantryClass *this)\n{\n  this->PermanentBerzerk[0] = 1;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

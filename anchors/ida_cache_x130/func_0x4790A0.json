@@ -1,0 +1,1 @@
+{"addr": "0x004790A0", "name": "Game::CheckForGameCD", "decompiled": "int __thiscall Game::CheckForGameCD(Game *this)\n{\n  return AlwaysFindYRCD();\n}\n", "changed": true, "error": null, "timestamp": "x130"}

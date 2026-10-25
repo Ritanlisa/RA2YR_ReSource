@@ -1,0 +1,1 @@
+{"addr": "0x00410210", "name": "INoticeSink::Dispatch", "decompiled": "int __stdcall INoticeSink::Dispatch(AbstractClass *this)\n{\n  return (*(int (__thiscall **)(char *))(*((_DWORD *)this - 1) + 44))((char *)this - 4);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

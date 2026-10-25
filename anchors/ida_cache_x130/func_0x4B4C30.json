@@ -1,0 +1,1 @@
+{"addr": "0x004B4C30", "name": "StreamClass::IsInactive", "decompiled": "BOOL __stdcall StreamClass::IsInactive(IUnknown *this)\n{\n  return BYTE1(this->field_10) == 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x00693060", "name": "MouseClass::GetHotspot", "decompiled": "bool __thiscall MouseClass::GetHotspot(ScrollClass *this)\n{\n  return *((_BYTE *)this + 21850)\n      || stru_A8E960.random[552]\n      || g_TacticalClass_Instance && *(float *)&g_TacticalClass_Instance[54] != 0.0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

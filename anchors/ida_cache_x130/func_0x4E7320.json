@@ -1,0 +1,1 @@
+{"addr": "0x004E7320", "name": "sub_4E7320", "decompiled": "void __cdecl sub_4E7320()\n{\n  dword_A8E318 = &VectorClass<TerrainTypeClass *>::`vftable';\n  if ( dword_A8E31C && byte_A8E325 )\n  {\n    __3_YAXPAX_Z(dword_A8E31C);\n    dword_A8E31C = 0;\n  }\n  byte_A8E325 = 0;\n  dword_A8E320 = 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

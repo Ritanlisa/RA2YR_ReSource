@@ -1,0 +1,1 @@
+{"addr": "0x0040DA20", "name": "sub_40DA20", "decompiled": "int sub_40DA20()\n{\n  dword_886FA8 = 640;\n  *(_DWORD *)&DSurface_ViewBounds.X = 0;\n  DSurface_ViewBounds.field_4 = 0;\n  dword_886FAC = 400;\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

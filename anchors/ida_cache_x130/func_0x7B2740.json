@@ -1,0 +1,1 @@
+{"addr": "0x007B2740", "name": "WinsockInterfaceClass::Destru_vt13", "decompiled": "int WinsockInterfaceClass::Destru_vt13(WinsockInterfaceClass *this)\n{\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

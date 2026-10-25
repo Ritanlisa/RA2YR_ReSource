@@ -1,0 +1,1 @@
+{"addr": "0x005D8C80", "name": "MultiplayerTeam::Destructor", "decompiled": "void __thiscall MultiplayerTeam::Destructor(MultiplayerTeam *this)\n{\n  *(_DWORD *)this->__pad_0 = &MultiplayerTeam::`vftable';\n  DeleteAndZero::Alt((DeleteAndZero *)&this->MultiplayerTeam_field_0x04);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

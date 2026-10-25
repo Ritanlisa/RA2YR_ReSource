@@ -1,0 +1,1 @@
+{"addr": "0x006F3950", "name": "TechnoClass::GetCrewCount", "decompiled": "BOOL __thiscall TechnoClass::GetCrewCount(TechnoClass *this)\n{\n  return *(_BYTE *)((*(int (__thiscall **)(TechnoClass *))(this->vfptr + 132))(this) + 3277) != 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

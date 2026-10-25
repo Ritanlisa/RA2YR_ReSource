@@ -1,0 +1,1 @@
+{"addr": "0x0077A870", "name": "Event_Process_77A870", "decompiled": "int __thiscall Event_Process_77A870(ObjectClass *this, int a2)\n{\n  int result; // eax\n\n  result = this->fallRate;\n  if ( result != -1 )\n  {\n    LOBYTE(this->vfptr2) = 1;\n    result += a2;\n    this->fallRate = result;\n  }\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

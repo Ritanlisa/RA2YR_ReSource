@@ -1,0 +1,1 @@
+{"addr": "0x007C84B2", "name": "DeleteFileA", "decompiled": "// attributes: thunk\nBOOL __stdcall DeleteFileA(LPCSTR lpFileName)\n{\n  return __imp_DeleteFileA(lpFileName);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

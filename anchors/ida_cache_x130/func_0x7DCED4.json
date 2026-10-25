@@ -1,0 +1,1 @@
+{"addr": "0x007DCED4", "name": "SetLastError", "decompiled": "// attributes: thunk\nvoid __stdcall SetLastError(DWORD dwErrCode)\n{\n  __imp_SetLastError(dwErrCode);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

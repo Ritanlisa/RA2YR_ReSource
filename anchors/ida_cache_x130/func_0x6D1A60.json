@@ -1,0 +1,1 @@
+{"addr": "0x006D1A60", "name": "sub_6D1A60", "decompiled": "int sub_6D1A60()\n{\n  g_CraterPool = 0;\n  dword_B0CE80 = 0;\n  byte_B0CE84 = 1;\n  byte_B0CE85 = 0;\n  dword_B0CE78 = (int)&off_7F429C;\n  dword_B0CE8C = 10;\n  g_CraterCreationState = 0;\n  return atexit(sub_6D1AA0);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

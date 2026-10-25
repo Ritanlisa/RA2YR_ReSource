@@ -1,0 +1,1 @@
+{"addr": "0x00767310", "name": "Network_Connect_767310", "decompiled": "char __stdcall Network_Connect_767310(int a1)\n{\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

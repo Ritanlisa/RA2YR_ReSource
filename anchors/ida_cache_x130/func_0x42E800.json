@@ -1,0 +1,1 @@
+{"addr": "0x0042E800", "name": "sub_42E800", "decompiled": "char __thiscall sub_42E800(ObjectClass *this, int a2)\n{\n  return *(_BYTE *)(16 * a2 + this->vfptr2 + 8);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

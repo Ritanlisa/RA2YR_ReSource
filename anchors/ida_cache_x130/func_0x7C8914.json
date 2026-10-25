@@ -1,0 +1,1 @@
+{"addr": "0x007C8914", "name": "OleInitialize", "decompiled": "// attributes: thunk\nHRESULT __stdcall OleInitialize(LPVOID pvReserved)\n{\n  return __imp_OleInitialize(pvReserved);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

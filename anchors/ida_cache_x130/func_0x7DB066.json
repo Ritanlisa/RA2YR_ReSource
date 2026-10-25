@@ -1,0 +1,1 @@
+{"addr": "0x007DB066", "name": "___addl", "decompiled": "int __cdecl __addl(unsigned int a1, unsigned int a2, unsigned int *a3)\n{\n  int result; // eax\n  unsigned int v4; // ecx\n\n  result = 0;\n  v4 = a1 + a2;\n  if ( a1 + a2 < a1 || v4 < a2 )\n    result = 1;\n  *a3 = v4;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

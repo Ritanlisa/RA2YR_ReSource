@@ -1,0 +1,1 @@
+{"addr": "0x005CD3C0", "name": "ScoreClass::SetState", "decompiled": "int __thiscall ScoreClass::SetState(ScoreClass *this, char a2)\n{\n  int result; // eax\n\n  LOBYTE(result) = a2;\n  *((_BYTE *)this + 48) = a2;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x0056D430", "name": "Cell::CoordToIndex", "decompiled": "int __thiscall Cell::CoordToIndex(Cell *this, __int16 *a2)\n{\n  return *a2 + a2[1] * (this->Cell_field_0xF8 + this->Cell_field_0xF4 + 1);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

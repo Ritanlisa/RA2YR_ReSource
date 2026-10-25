@@ -1,0 +1,1 @@
+{"addr": "0x0046AFD0", "name": "BulletClass::CheckTargetValidity", "decompiled": "LONG __stdcall BulletClass::CheckTargetValidity(BulletClass *this)\n{\n  ++dword_ABCD3C;\n  return InterlockedIncrement((volatile LONG *)this->__pad_1C);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

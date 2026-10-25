@@ -1,0 +1,1 @@
+{"addr": "0x00437F10", "name": "Coord2D::Add", "decompiled": "_DWORD *__thiscall Coord2D::Add(Coord2D *this, _DWORD *a2, _DWORD *a3)\n{\n  int v3; // esi\n\n  v3 = this->Coord2D_field_0x04 + a3[1];\n  *a2 = *(_DWORD *)this->__pad_0 + *a3;\n  a2[1] = v3;\n  return a2;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

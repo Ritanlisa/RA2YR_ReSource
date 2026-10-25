@@ -1,0 +1,1 @@
+{"addr": "0x007CD42B", "name": "_remove", "decompiled": "int __cdecl remove(const char *FileName)\n{\n  DWORD LastError; // eax\n\n  if ( DeleteFileA(FileName) )\n    LastError = 0;\n  else\n    LastError = GetLastError();\n  if ( !LastError )\n    return 0;\n  _dosmaperr(LastError);\n  return -1;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

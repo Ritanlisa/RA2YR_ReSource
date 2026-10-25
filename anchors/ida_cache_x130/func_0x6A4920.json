@@ -1,0 +1,1 @@
+{"addr": "0x006A4920", "name": "SideClass::StubReturn28", "decompiled": "int SideClass::StubReturn28(SideClass *this)\n{\n  return 28;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

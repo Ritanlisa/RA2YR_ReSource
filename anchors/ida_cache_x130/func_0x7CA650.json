@@ -1,0 +1,1 @@
+{"addr": "0x007CA650", "name": "__alloca_probe", "decompiled": "void __usercall _alloca_probe(unsigned int a1@<eax>, char a2)\n{\n  char *i; // ecx\n\n  for ( i = &a2; a1 >= 0x1000; a1 -= 4096 )\n    i -= 4096;\n  __asm { retn }\n}\n", "changed": true, "error": null, "timestamp": "x130"}

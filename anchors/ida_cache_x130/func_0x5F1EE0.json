@@ -1,0 +1,1 @@
+{"addr": "0x005F1EE0", "name": "CellClass::GetBridgeIndexThunk", "decompiled": "int __thiscall CellClass::GetBridgeIndexThunk(NullModemClass *this)\n{\n  unsigned int q040; // eax\n\n  q040 = this->q040;\n  if ( q040 )\n    return CellClass::GetBridgeIndex(*(CellClass **)(q040 + 4));\n  else\n    return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

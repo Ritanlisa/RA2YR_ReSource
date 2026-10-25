@@ -1,0 +1,1 @@
+{"addr": "0x0058C2C0", "name": "GetTileDataEntry", "decompiled": "char *__fastcall GetTileDataEntry(int a1)\n{\n  return (char *)&dword_ABED10[40 * a1];\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x004C9C60", "name": "FactoryClass::HasProgressChanged", "decompiled": "char __thiscall FactoryClass::HasProgressChanged(FactoryClass *this)\n{\n  char result; // al\n\n  result = this->__pad_42[27];\n  this->__pad_42[27] = 0;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x005F6CB0", "name": "ObjectClass::CheckFlagD0", "decompiled": "int __thiscall ObjectClass::CheckFlagD0(ObjectClass *this, int a2)\n{\n  int result; // eax\n\n  result = a2;\n  this->customSound = a2;\n  if ( a2 == -1 )\n    return AudioFile::Stop((AudioFile *)this->customSound_controller);\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

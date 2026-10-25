@@ -1,0 +1,1 @@
+{"addr": "0x0069ACC0", "name": "GameOption::GetField", "decompiled": "int __thiscall GameOption::GetField(GameOption *this)\n{\n  return *(_DWORD *)this->field_18C;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

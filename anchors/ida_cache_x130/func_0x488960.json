@@ -1,0 +1,1 @@
+{"addr": "0x00488960", "name": "ColorListClass::SetIndex", "decompiled": "int __thiscall ColorListClass::SetIndex(ColorListClass *this, int a2, int a3)\n{\n  *((_DWORD *)this + 99) = a2;\n  *((_DWORD *)this + 100) = a3;\n  return a2;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

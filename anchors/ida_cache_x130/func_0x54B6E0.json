@@ -1,0 +1,1 @@
+{"addr": "0x0054B6E0", "name": "JumpjetLocomotionClass::SynchronizeFacingDirection_0", "decompiled": "char __stdcall JumpjetLocomotionClass::SynchronizeFacingDirection_0(JumpjetLocomotionClass *this, int a2)\n{\n  return FacingClass::Set_SyncLog((char *)(this->Owner + 904), &a2);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x007DCF10", "name": "GetOEMCP", "decompiled": "// attributes: thunk\nUINT __stdcall GetOEMCP()\n{\n  return __imp_GetOEMCP();\n}\n", "changed": true, "error": null, "timestamp": "x130"}

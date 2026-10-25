@@ -1,0 +1,1 @@
+{"addr": "0x0067A7C0", "name": "RulesClass::readOverlayTypes", "decompiled": "int __thiscall RulesClass::readOverlayTypes(RulesClass *this)\n{\n  return this->LargeVisceroid;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

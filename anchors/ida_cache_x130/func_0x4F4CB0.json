@@ -1,0 +1,1 @@
+{"addr": "0x004F4CB0", "name": "String::CopyChecked", "decompiled": "char *__thiscall String::CopyChecked(char *this, const char *a2)\n{\n  strcpy(this, a2);\n  return this;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

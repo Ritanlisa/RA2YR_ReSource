@@ -1,0 +1,1 @@
+{"addr": "0x007A2E70", "name": "ObjectClass::loc_7A2E70", "decompiled": "OwnerDrawControl *__thiscall ObjectClass::loc_7A2E70(OwnerDrawControl *Block, char a2)\n{\n  *Block = (OwnerDrawControl)&off_7F7624;\n  OwnerDrawControl::InitVtable(Block);\n  if ( (a2 & 1) != 0 )\n    __3_YAXPAX_Z(Block);\n  return Block;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

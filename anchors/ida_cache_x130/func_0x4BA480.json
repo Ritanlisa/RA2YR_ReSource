@@ -1,0 +1,1 @@
+{"addr": "0x004BA480", "name": "DSurface::ConstructFromHandle", "decompiled": "int __usercall DSurface::ConstructFromHandle@<eax>(double a1@<st0>)\n{\n  int result; // eax\n\n  Math::Sin(dbl_8A0928 - dbl_8A0970);\n  LOWORD(result) = Math::RoundToInt(a1 * dbl_8A0968 * 0.5);\n  dword_8A0DC8 = result;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x007C8656", "name": "GetDC", "decompiled": "// attributes: thunk\nHDC __stdcall GetDC(HWND hWnd)\n{\n  return __imp_GetDC(hWnd);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

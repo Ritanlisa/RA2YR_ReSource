@@ -1,0 +1,1 @@
+{"addr": "0x007C8692", "name": "SetWindowPos", "decompiled": "// attributes: thunk\nBOOL __stdcall SetWindowPos(HWND hWnd, HWND hWndInsertAfter, int X, int Y, int cx, int cy, UINT uFlags)\n{\n  return __imp_SetWindowPos(hWnd, hWndInsertAfter, X, Y, cx, cy, uFlags);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

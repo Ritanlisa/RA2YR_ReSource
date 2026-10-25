@@ -1,0 +1,1 @@
+{"addr": "0x0048E660", "name": "ControlClass::QueryInterface", "decompiled": "_DWORD *__thiscall ControlClass::QueryInterface(ControlClass *this, char a2)\n{\n  GadgetClass::Dtor((ShpButtonClass *)this);\n  if ( (a2 & 1) != 0 )\n    __3_YAXPAX_Z(this);\n  return this->__pad_0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

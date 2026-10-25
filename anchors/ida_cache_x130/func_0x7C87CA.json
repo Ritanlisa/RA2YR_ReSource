@@ -1,0 +1,1 @@
+{"addr": "0x007C87CA", "name": "WinHelpA", "decompiled": "// attributes: thunk\nBOOL __stdcall WinHelpA(HWND hWndMain, LPCSTR lpszHelp, UINT uCommand, ULONG_PTR dwData)\n{\n  return __imp_WinHelpA(hWndMain, lpszHelp, uCommand, dwData);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x004C5AA0", "name": "EMPulseClass::StubReturn52", "decompiled": "int EMPulseClass::StubReturn52(EMPulseClass *this)\n{\n  return 52;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

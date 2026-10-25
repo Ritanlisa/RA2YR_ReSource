@@ -1,0 +1,1 @@
+{"addr": "0x00555070", "name": "LightSourceClass::Stat", "decompiled": "int __thiscall LightSourceClass::Stat(LightSourceClass *this, int a2)\n{\n  return AbstractClass::ProcessPower((AbstractClass *)this);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

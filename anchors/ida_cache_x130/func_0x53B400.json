@@ -1,0 +1,1 @@
+{"addr": "0x0053B400", "name": "PsyDom::IsActive", "decompiled": "int PsyDom::IsActive()\n{\n  int result; // eax\n\n  result = PsyDom_Status;\n  LOBYTE(result) = PsyDom_Status != 0;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

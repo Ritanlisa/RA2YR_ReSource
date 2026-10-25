@@ -1,0 +1,1 @@
+{"addr": "0x00537F90", "name": "DeleteCommandClass::Undo", "decompiled": "// attributes: thunk\nchar __stdcall DeleteCommandClass::Undo(DeleteCommandClass *this)\n{\n  return UI_Delete();\n}\n", "changed": true, "error": null, "timestamp": "x130"}

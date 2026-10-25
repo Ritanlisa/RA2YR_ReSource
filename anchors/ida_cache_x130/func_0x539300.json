@@ -1,0 +1,1 @@
+{"addr": "0x00539300", "name": "sub_539300", "decompiled": "int sub_539300()\n{\n  dword_A9F930 = 0;\n  dword_A9F934 = 0;\n  dword_A9F938 = 0;\n  dword_A9F93C = 0;\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

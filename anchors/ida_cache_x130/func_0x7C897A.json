@@ -1,0 +1,1 @@
+{"addr": "0x007C897A", "name": "WSAGetLastError", "decompiled": "// attributes: thunk\nint __stdcall WSAGetLastError()\n{\n  return __imp_WSAGetLastError();\n}\n", "changed": true, "error": null, "timestamp": "x130"}

@@ -1,0 +1,1 @@
+{"addr": "0x004722A0", "name": "CaptureManagerClass::CannotControlAnyMore", "decompiled": "bool __thiscall CaptureManagerClass::CannotControlAnyMore(CaptureManagerClass *this)\n{\n  return !this->CaptureManagerClass_field_40[0] && this->originalOwner >= *(_DWORD *)this->__pad_3C;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

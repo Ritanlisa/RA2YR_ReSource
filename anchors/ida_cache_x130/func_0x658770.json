@@ -1,0 +1,1 @@
+{"addr": "0x00658770", "name": "RadarClass::Destru_vt33", "decompiled": "wchar_t *__thiscall RadarClass::Destru_vt33(RadarClass *this, int a2)\n{\n  return DisplayClass::Draw((DisplayClass *)this, a2);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

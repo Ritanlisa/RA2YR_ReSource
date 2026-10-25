@@ -1,0 +1,1 @@
+{"addr": "0x0068C370", "name": "sub_68C370", "decompiled": "void __cdecl sub_68C370()\n{\n  *(_DWORD *)stru_B054D0.__pad_0 = &VectorClass<ColorScheme *>::`vftable';\n  if ( dword_B054D4 && byte_B054DD )\n  {\n    __3_YAXPAX_Z(dword_B054D4);\n    dword_B054D4 = 0;\n  }\n  byte_B054DD = 0;\n  dword_B054D8 = 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

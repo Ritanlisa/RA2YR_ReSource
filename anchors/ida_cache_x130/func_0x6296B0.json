@@ -1,0 +1,1 @@
+{"addr": "0x006296B0", "name": "ParasiteClass::SaveParasite", "decompiled": "int __stdcall ParasiteClass::SaveParasite(ParasiteClass *this, int *a2, int a3)\n{\n  return AbstractClass::SaveLoad_Prefix(&this->vfptr, a2, a3);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

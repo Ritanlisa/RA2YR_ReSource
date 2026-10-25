@@ -1,0 +1,1 @@
+{"addr": "0x007B0110", "name": "sub_7B0110", "decompiled": "int sub_7B0110()\n{\n  ComPtr::Constructor(&stru_B77F58);\n  *(_DWORD *)stru_B77F58.__pad_0 = &rc_ptr<WDTState>::`vftable';\n  return atexit(sub_7B0130);\n}\n", "changed": true, "error": null, "timestamp": "x130"}

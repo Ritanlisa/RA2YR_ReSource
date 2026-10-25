@@ -1,0 +1,1 @@
+{"addr": "0x006F2A50", "name": "sub_6F2A50", "decompiled": "int sub_6F2A50()\n{\n  *(_DWORD *)&stru_B0EA70.__pad_1C[4] = 0;\n  *(_DWORD *)&stru_B0EA70.__pad_1C[8] = 0;\n  *(_DWORD *)&stru_B0EA70.__pad_1C[12] = 0;\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x130"}

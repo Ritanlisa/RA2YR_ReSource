@@ -1,0 +1,1 @@
+{"addr": "0x007C8752", "name": "SetForegroundWindow", "decompiled": "// attributes: thunk\nBOOL __stdcall SetForegroundWindow(HWND hWnd)\n{\n  return __imp_SetForegroundWindow(hWnd);\n}\n", "changed": true, "error": null, "timestamp": "x130"}
