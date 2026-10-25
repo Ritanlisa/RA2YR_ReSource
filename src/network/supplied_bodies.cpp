@@ -6095,7 +6095,7 @@ int UDPInterfaceClass_Destru::Send()
   {
     WSAGetLastError(); /*0x7b316a*/
     Debug::Log(); /*0x7b3175*/
-    this->vt_slot_4(); /*0x7b3181*/
+    this->ZeroInitAndSetup_0(); /*0x7b3181*/  // X131: slot 1 (0x53F4E0) real named virtual
     return 0; /*0x7b3184*/
   }
   else

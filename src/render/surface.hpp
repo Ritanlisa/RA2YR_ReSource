@@ -92,7 +92,8 @@ public:
     virtual void* Lock(int x, int y) = 0;
     virtual bool Unlock() = 0;
     virtual bool CanLock(uint32_t unk1, uint32_t unk2) = 0;
-    virtual bool IsLocked() const = 0;  // 0x411580
+    virtual char entry_68_(int p0, int p1);  // X131: slot 26 (0x411500) — binary Surface table
+    virtual bool IsLocked() const = 0;  // X131: slot 27 (Surface table impl = 0x4C9150 stub; 0x411580 = XSurface override)
     // XSurface ptr_0 slots [28]/[29] hold the shared `xor eax,eax` stub —
     // base default returns 0; BSurface/DSurface override.
     virtual int GetBytesPerPixel() const;  // default impl in surface.cpp
@@ -101,19 +102,9 @@ public:
     virtual int GetWidth() const;   // 0x411540: mov eax,[ecx+4]
     virtual int GetHeight() const;  // 0x411550: mov eax,[ecx+8]
     // XSurface ptr_0 [33] = StubReturnFalse (0x411590) — base default false.
-    virtual bool IsDSurface() const;  // default impl in surface.cpp
-    virtual bool PutPixel(
-        const Point2D& point,
-        uint16_t color,
-        const RectangleStruct& clip_rect) = 0;
-    virtual uint16_t GetPixelAtCoords(
-        const Point2D& point,
-        const RectangleStruct& clip_rect) = 0;
-    virtual bool DrawGradientLine(
-        const Point2D& start, const Point2D& end,
-        int palette_idx, int fade_val,
-        float* gradient_start, float* gradient_step);  // G42.41b: de-pured (never overridden; 7-param truth 0x4BF750 at XSurface/DSurface new slots; body in surface.cpp)
-    virtual bool CheckBltStatus() = 0;
+    virtual bool IsDSurface() const;  // default impl in surface.cpp; X131: slot 33 (0x4115C0) StubReturnFalse
+    // X131: PutPixel/GetPixelAtCoords moved to XSurface own slots 34/35
+    // X131: DrawGradientLine/CheckBltStatus moved to DSurface own slots 36/37
 
     // SHP sprite blit + text draw (overloads; definitions in surface.cpp)
     void DrawSHP(
@@ -204,7 +195,7 @@ public:
         const RectangleStruct& fill_rect, uint32_t color) override;
     virtual bool FillRect(const RectangleStruct& fill_rect, uint32_t color) override; // 0x7BB020
     virtual bool Fill(uint32_t color) override;  // 0x7BBAB0
-    virtual bool FillRectWithFlags(  // 0x4bb830
+    virtual bool FillRectWithFlags(  // X131: slot 7 impl = 0x7BB340 (entry_1C_)
         const RectangleStruct& clip_rect,
         const ColorStruct& color,
         int opacity_percent) override;
@@ -220,21 +211,21 @@ public:
         const Point2D& end, uint32_t color) override;
     virtual bool DrawLine( // 0x7BA5E0
         const Point2D& start, const Point2D& end, uint32_t color) override;
-    virtual bool DrawLineZBuf(  // 0x4bfd30
+    virtual bool DrawLineZBuf(  // X131: slot 13 impl = 0x7BAB50 (entry_34_)
         const Point2D& start, const Point2D& end,
         uint16_t color, int fade_start, int fade_end,
         bool update_z_buffer) override;
-    virtual bool DrawLineModulated(  // 0x4bbca0
+    virtual bool DrawLineModulated(  // X131: slot 14 impl = 0x7BAB60 (entry_38_)
         const Point2D& start, const Point2D& end,
         int mod_strength, int fade_start, int fade_end,
         bool update_z_buffer) override;
-    virtual bool DrawLineFaded(  // 0x4bc750
+    virtual bool DrawLineFaded(  // X131: slot 15 impl = 0x7BAB70 (entry_3C_)
         const Point2D& start, const Point2D& end,
         const uint8_t* stipple_pattern,
         int fade_start, int fade_end,
         bool z_buffer, float gradient_start,
         float gradient_step, bool flip_dir) override;
-    virtual bool DrawLineZBufColored(  // 0x4bdf00
+    virtual bool DrawLineZBufColored(  // X131: slot 16 impl = 0x7BAB80 (entry_40_)
         const Point2D& start, const Point2D& end,
         const uint8_t src_rgb[3], float brightness,
         int fade_start, int fade_end) override;
@@ -245,11 +236,11 @@ public:
         const Point2D& start, const Point2D& end,
         uint16_t color, const uint8_t stipple[16],
         int dash_offset) override;
-    virtual bool DrawDashedLineStipple(  // 0x4c0750
+    virtual bool DrawDashedLineStipple(  // X131: slot 19 impl = 0x7BAB30 (entry_4C_)
         const Point2D& start, const Point2D& end,
         uint16_t color, const uint8_t stipple[16],
         int dash_offset, bool update_z) override;
-    virtual bool DrawStippledRect(  // 0x4c0e30
+    virtual bool DrawStippledRect(  // X131: slot 20 impl = 0x7BAB40 (entry_50_)
         const Point2D& top_left, const Point2D& bottom_right,
         uint16_t color, bool fill_interior) override;
     virtual bool DrawRectEx( // 0x7BADC0
@@ -262,26 +253,22 @@ public:
     virtual bool CanLock(uint32_t unk1, uint32_t unk2) override;  // 0x4BAEC0
     virtual bool IsLocked() const override final;  // 0x411580
 
+    // X131: XSurface own slot 34 (binary table 0x7E2104)
     virtual bool PutPixel( // 0x7BAF90
         const Point2D& point,
         uint16_t color,
-        const RectangleStruct& clip_rect) override;
+        const RectangleStruct& clip_rect);
 
+    // X131: XSurface own slot 35 (binary table 0x7E2104)
     virtual uint16_t GetPixelAtCoords( // 0x7BAF10
         const Point2D& point,
-        const RectangleStruct& clip_rect) override;
+        const RectangleStruct& clip_rect);
 
     // XSurface ptr_0 ends at [35] GetPixelAtCoords — these two introduce
     // new virtuals here (DSurface ptr_0 [36]/[37]); not overrides.
-    virtual bool DrawGradientLine( // 0x4bf750
-        const RectangleStruct& clip_rect,
-        const Point2D& start, const Point2D& end,
-        const uint8_t* color_from, const uint8_t* color_to,
-        float* gradient_start, float* gradient_step);
+    // X131: DrawGradientLine/CheckBltStatus moved to DSurface own slots 36/37
 
-    virtual bool CheckBltStatus();  // impl at DSurface 0x4BAF20 (declared here, annotated there)
-
-    virtual bool IsDSurface() const override;  // 0x4C1AB0
+    virtual bool IsDSurface() const override;  // X131: slot 33 impl = 0x411590 (StubReturnFalse)
 
     int LockCount;
 
@@ -305,7 +292,7 @@ public:
     virtual void* Lock(int x, int y) override; // 0x4115F0
     virtual int GetBytesPerPixel() const override; // 0x411630
     virtual int GetPitch() const override; // 0x411640
-    virtual bool IsDSurface() const override final;  // 0x4C1AB0
+    virtual bool IsDSurface() const override final;  // X131: slot 33 impl = 0x411590 (StubReturnFalse)
 
     int BytesPerPixel;
     byte* Buffer;  // data: 0x8a3a08
@@ -382,13 +369,15 @@ public:
     virtual bool CanLock(uint32_t unk1, uint32_t unk2) override;  // 0x4BAEC0
     virtual int GetBytesPerPixel() const override;  // 0x4BAD60
     virtual int GetPitch() const override; // 0x4BAD70
+    // X131: DSurface own slot 36 (binary table 0x7E85D4)
     virtual bool DrawGradientLine( // 0x4BF750
         const RectangleStruct& clip_rect,
         const Point2D& start, const Point2D& end,
         const uint8_t* color_from, const uint8_t* color_to,
-        float* gradient_start, float* gradient_step) override;
-    virtual bool CheckBltStatus() override;  // 0x4BAF20
-    virtual bool IsDSurface() const override final;  // 0x4C1AB0
+        float* gradient_start, float* gradient_step);
+    // X131: DSurface own slot 37 (binary table 0x7E85D4)
+    virtual bool CheckBltStatus();  // 0x4BAF20
+    virtual bool IsDSurface() const override final;  // X131: slot 33 (0x4C1AB0)
 
     // IDA: DSurface::CreatePrimary pixel format detection (0x4BA770 bit-shift logic)
     // unmatched: no callgraph reference and no git history record
