@@ -1,0 +1,1 @@
+{"addr": "0x0040A940", "name": "sub_40A940", "decompiled": "int sub_40A940(ObjectClass *this)\n{\n  int result; // eax\n\n  result = dword_87E8A0;\n  if ( dword_87E8A0 )\n    return (*(int (__stdcall **)(int))(*(_DWORD *)dword_87E8A0 + 72))(dword_87E8A0);\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

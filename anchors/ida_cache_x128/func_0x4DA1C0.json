@@ -1,0 +1,1 @@
+{"addr": "0x004DA1C0", "name": "FootClass::ClearSomeVector", "decompiled": "int __thiscall FootClass::ClearSomeVector(FootClass *this)\n{\n  return (*(int (__thiscall **)(int *))(this->FootClass_field_abstract_array_5AC + 12))(&this->FootClass_field_abstract_array_5AC);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x004F2B40", "name": "HouseClass::vt_placeholder_09", "decompiled": "_DWORD *__thiscall HouseClass::vt_placeholder_09(_DWORD *this)\n{\n  ++*(this + 2);\n  return this;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

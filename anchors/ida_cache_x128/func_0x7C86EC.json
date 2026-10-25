@@ -1,0 +1,1 @@
+{"addr": "0x007C86EC", "name": "AdjustWindowRectEx", "decompiled": "// attributes: thunk\nBOOL __stdcall AdjustWindowRectEx(LPRECT lpRect, DWORD dwStyle, BOOL bMenu, DWORD dwExStyle)\n{\n  return __imp_AdjustWindowRectEx(lpRect, dwStyle, bMenu, dwExStyle);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

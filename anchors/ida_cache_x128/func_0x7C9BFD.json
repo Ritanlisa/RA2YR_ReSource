@@ -1,0 +1,1 @@
+{"addr": "0x007C9BFD", "name": "_atoi", "decompiled": "int __cdecl atoi(const char *String)\n{\n  return atol(String);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

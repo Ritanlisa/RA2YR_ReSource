@@ -1,0 +1,1 @@
+{"addr": "0x007C8776", "name": "IntersectRect", "decompiled": "// attributes: thunk\nBOOL __stdcall IntersectRect(LPRECT lprcDst, const RECT *lprcSrc1, const RECT *lprcSrc2)\n{\n  return __imp_IntersectRect(lprcDst, lprcSrc1, lprcSrc2);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

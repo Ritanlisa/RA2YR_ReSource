@@ -1,0 +1,1 @@
+{"addr": "0x004A7D70", "name": "Dial8Class_48::Seek", "decompiled": "int __thiscall Dial8Class_48::Seek(_VectorClass_PAVDiskLaserClass *this, int a2)\n{\n  return *(_DWORD *)(*(_DWORD *)&this->m_1[3] + 4 * a2);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

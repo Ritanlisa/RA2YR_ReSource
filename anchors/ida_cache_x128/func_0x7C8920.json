@@ -1,0 +1,1 @@
+{"addr": "0x007C8920", "name": "CoRevokeClassObject", "decompiled": "// attributes: thunk\nHRESULT __stdcall CoRevokeClassObject(DWORD dwRegister)\n{\n  return __imp_CoRevokeClassObject(dwRegister);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

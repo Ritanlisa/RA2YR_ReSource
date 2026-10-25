@@ -1,0 +1,1 @@
+{"addr": "0x0070EFE0", "name": "TechnoClass::GetMaxSpeed", "decompiled": "int __thiscall TechnoClass::GetMaxSpeed(TechnoClass *this)\n{\n  unsigned int *v1; // eax\n\n  v1 = (unsigned int *)(*(int (__thiscall **)(TechnoClass *))(this->vfptr + 132))(this);\n  if ( v1 )\n    return v1[414];\n  else\n    return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

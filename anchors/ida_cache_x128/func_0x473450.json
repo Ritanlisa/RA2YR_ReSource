@@ -1,0 +1,1 @@
+{"addr": "0x00473450", "name": "CCINIClass::GetDB", "decompiled": "int __thiscall CCINIClass::GetDB(CCINIClass *this)\n{\n  return this->headNode[0];\n}\n", "changed": true, "error": null, "timestamp": "x128"}

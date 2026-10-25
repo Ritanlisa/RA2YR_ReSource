@@ -1,0 +1,1 @@
+{"addr": "0x007C8A2E", "name": "ImmGetCandidateListA", "decompiled": "// attributes: thunk\nDWORD __stdcall ImmGetCandidateListA(HIMC a1, DWORD deIndex, LPCANDIDATELIST lpCandList, DWORD dwBufLen)\n{\n  return __imp_ImmGetCandidateListA(a1, deIndex, lpCandList, dwBufLen);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

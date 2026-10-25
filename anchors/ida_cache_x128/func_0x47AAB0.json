@@ -1,0 +1,1 @@
+{"addr": "0x0047AAB0", "name": "FileClass::OpenFileBufferIO", "decompiled": "BOOL __thiscall FileClass::OpenFileBufferIO(CDFileClass *this, const CHAR *a2)\n{\n  return BufferIOFileClass::Open((CCFileClass *)this, a2);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

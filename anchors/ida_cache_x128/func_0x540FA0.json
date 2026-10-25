@@ -1,0 +1,1 @@
+{"addr": "0x00540FA0", "name": "Network::GetConnectionSpeed", "decompiled": "int __thiscall Network::GetConnectionSpeed(IPXManagerClass *this, int a2)\n{\n  if ( a2 < 0 || a2 >= (signed int)this->field_5C )\n    return -1;\n  else\n    return *(_DWORD *)(*(_DWORD *)&this->field_24[4 * a2 + 4] + 100);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

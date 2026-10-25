@@ -1,0 +1,1 @@
+{"addr": "0x0077C9C0", "name": "sub_77C9C0", "decompiled": "void __cdecl sub_77C9C0()\n{\n  int i; // esi\n\n  for ( i = 0; i < *(int *)g_WOL_BuddyList.__pad_0; ++i )\n    DeleteAndZero((ObjectClass *)&dword_B779B8[i]);\n  *(_DWORD *)g_WOL_BuddyList.__pad_0 = 0;\n  __3_YAXPAX_Z(dword_B779B8);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

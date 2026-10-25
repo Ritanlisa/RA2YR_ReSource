@@ -1,0 +1,1 @@
+{"addr": "0x006CC260", "name": "Super::GetDefaultTimer", "decompiled": "int __thiscall Super::GetDefaultTimer(Super *this)\n{\n  int result; // eax\n\n  result = (int)this->field_24;\n  if ( result == -1 )\n    return *((_DWORD *)this->field_28 + 44);\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

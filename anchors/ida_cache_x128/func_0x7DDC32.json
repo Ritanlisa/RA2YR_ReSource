@@ -1,0 +1,1 @@
+{"addr": "0x007DDC32", "name": "_write_char_1", "decompiled": "_DWORD *__cdecl write_char_1(int a1, _DWORD *a2)\n{\n  bool v2; // zf\n  _DWORD *result; // eax\n\n  v2 = _putch(a1) == -1;\n  result = a2;\n  if ( v2 )\n    *a2 = -1;\n  else\n    ++*a2;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

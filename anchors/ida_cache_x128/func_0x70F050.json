@@ -1,0 +1,1 @@
+{"addr": "0x0070F050", "name": "TechnoClass::ProcessCellClearance", "decompiled": "int __thiscall TechnoClass::ProcessCellClearance(TechnoClass *this)\n{\n  _DWORD *v2; // [esp+Ch] [ebp+4h]\n\n  *v2 = -1;\n  v2[1] = -1;\n  v2[2] = -1;\n  return (int)v2;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

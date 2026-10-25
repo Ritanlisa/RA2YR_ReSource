@@ -1,0 +1,1 @@
+{"addr": "0x006DA160", "name": "TacticalClass::ResetScrollBounds", "decompiled": "int __thiscall TacticalClass::ResetScrollBounds(TacticalClass *this)\n{\n  this->TacticalClass_field_D90 = 0;\n  this->TacticalClass_field_D98 = 0;\n  this->TacticalClass_field_D94 = 0;\n  this->TacticalClass_field_D9C = 0;\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

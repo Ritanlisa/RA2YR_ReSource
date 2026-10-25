@@ -1,0 +1,1 @@
+{"addr": "0x006C5040", "name": "TClassFactory_BulletClass::AddRef", "decompiled": "LONG __thiscall TClassFactory_BulletClass::AddRef(_TClassFactory_VBulletClass *this)\n{\n  LONG *v2; // [esp+4h] [ebp+4h]\n\n  return InterlockedIncrement(v2 + 1);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

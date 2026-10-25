@@ -1,0 +1,1 @@
+{"addr": "0x00513D00", "name": "sub_513D00", "decompiled": "void __thiscall sub_513D00(HoverLocomotionClass *this)\n{\n  this->field_0 = (ILocomotion)&HoverLocomotionClass::`vftable';\n  *(_DWORD *)this->__pad_4 = &HoverLocomotionClass::`vftable';\n  LocomotionClass::Construct((LocomotionClass *)this);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

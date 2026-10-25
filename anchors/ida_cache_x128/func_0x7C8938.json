@@ -1,0 +1,1 @@
+{"addr": "0x007C8938", "name": "RevokeActiveObject", "decompiled": "// attributes: thunk\nHRESULT __stdcall RevokeActiveObject(DWORD dwRegister, void *pvReserved)\n{\n  return __imp_RevokeActiveObject(dwRegister, pvReserved);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

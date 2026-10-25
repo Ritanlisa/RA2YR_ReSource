@@ -1,0 +1,1 @@
+{"addr": "0x005F3E50", "name": "ObjectClass::StepCleanup", "decompiled": "int __thiscall ObjectClass::StepCleanup(ObjectClass *this, void *a2)\n{\n  char *v2; // eax\n\n  v2 = (char *)(*(int (__thiscall **)(ObjectClass *))(this->vfptr + 136))(this);\n  return AbstractTypeClass::NameEquals(v2, (char *)a2);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

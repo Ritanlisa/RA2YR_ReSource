@@ -1,0 +1,1 @@
+{"addr": "0x007C8782", "name": "GetUpdateRect", "decompiled": "// attributes: thunk\nBOOL __stdcall GetUpdateRect(HWND hWnd, LPRECT lpRect, BOOL bErase)\n{\n  return __imp_GetUpdateRect(hWnd, lpRect, bErase);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x0053A110", "name": "NukeFlash::IsActive", "decompiled": "BOOL NukeFlash::IsActive()\n{\n  return NukeFlash_Status == 1;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

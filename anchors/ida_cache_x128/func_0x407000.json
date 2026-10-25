@@ -1,0 +1,1 @@
+{"addr": "0x00407000", "name": "Audio::IsSoundEnabled", "decompiled": "int Audio::IsSoundEnabled()\n{\n  return g_Audio_Enabled != 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

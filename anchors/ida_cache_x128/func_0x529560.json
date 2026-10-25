@@ -1,0 +1,1 @@
+{"addr": "0x00529560", "name": "INIClass::SetBool", "decompiled": "char __thiscall INIClass::SetBool(char *this, unsigned __int8 *Block, char *a3, char a4)\n{\n  if ( a4 )\n    return INIClass::SetString(this, Block, a3, off_825BF8);\n  else\n    return INIClass::SetString(this, Block, a3, g_Str_no);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

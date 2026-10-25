@@ -1,0 +1,1 @@
+{"addr": "0x004E6360", "name": "sub_4E6360", "decompiled": "void sub_4E6360()\n{\n  dbl_A83DB0 = 0.0174532925199433 * 60.0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

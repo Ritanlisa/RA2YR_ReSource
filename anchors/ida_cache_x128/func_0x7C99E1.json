@@ -1,0 +1,1 @@
+{"addr": "0x007C99E1", "name": "_isspace", "decompiled": "int __cdecl isspace(int C)\n{\n  if ( (int)cbMultiByte <= 1 )\n    return *((_BYTE *)off_87C590 + 2 * C) & 8;\n  else\n    return _isctype(C, 8);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

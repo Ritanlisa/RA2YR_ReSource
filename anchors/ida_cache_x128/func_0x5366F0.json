@@ -1,0 +1,1 @@
+{"addr": "0x005366F0", "name": "CreateTeamCommand::performAction_34", "decompiled": "wchar_t *__thiscall CreateTeamCommand::performAction_34(PlanningModeCommandClass *this)\n{\n  return GetStringCSF(aCmndPlanningmo_0, 0, g_Str_File_Init_CPP, 6584);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

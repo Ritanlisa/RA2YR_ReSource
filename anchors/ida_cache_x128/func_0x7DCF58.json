@@ -1,0 +1,1 @@
+{"addr": "0x007DCF58", "name": "EnumSystemLocalesA", "decompiled": "// attributes: thunk\nBOOL __stdcall EnumSystemLocalesA(LOCALE_ENUMPROCA lpLocaleEnumProc, DWORD dwFlags)\n{\n  return __imp_EnumSystemLocalesA(lpLocaleEnumProc, dwFlags);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

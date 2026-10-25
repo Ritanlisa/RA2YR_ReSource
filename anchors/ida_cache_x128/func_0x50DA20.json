@@ -1,0 +1,1 @@
+{"addr": "0x0050DA20", "name": "TActionClass::executeHuntAction", "decompiled": "int __thiscall TActionClass::executeHuntAction(TActionClass *this, int a2)\n{\n  *((_DWORD *)this + 5437) = a2;\n  *((_DWORD *)this + 5439) = *(_DWORD *)&stru_A8E960.random[528];\n  return a2;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

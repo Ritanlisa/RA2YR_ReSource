@@ -1,0 +1,1 @@
+{"addr": "0x00777B50", "name": "GameOptions::GetEntry", "decompiled": "int GameOptions::GetEntry()\n{\n  return dword_822D1C;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

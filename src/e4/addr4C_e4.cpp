@@ -440,28 +440,29 @@ namespace gamemd {
 int E4Recv_4C2790::sub_4C2790()
 {
 
+  int result; // eax
+  int v3[2]; // [esp+8h] [ebp-10h] BYREF
+  int v4[2]; // [esp+10h] [ebp-8h] BYREF
 
   if ( this->owningHouseIndex )
   {
-    int v4[2]; // [esp+10h] [ebp-8h] BYREF
-    ((Coord *)g_TacticalClass_Instance)->To_Screen(this, v4); /*0x4c27aa*/
-    int v3[2]; // [esp+8h] [ebp-10h] BYREF
-    Coord::To_Screen((Coord *)g_TacticalClass_Instance, &this->M12, v3); /*0x4c27be*/
-    if ( (unsigned __int8)ClipLine(v4, v3, &DSurface_ViewBounds.field_0) )
+    Coord::To_Screen((Coord *)g_TacticalClass_Instance, this, v4);
+    Coord::To_Screen((Coord *)g_TacticalClass_Instance, &this->vfptr3, v3);
+    if ( (unsigned __int8)ClipLine(v4, v3, (int *)&DSurface_ViewBounds.X) )
       Lightning::Draw(
         (Lightning *)this,
-        (int)this->AbstractClass,
-        (int)this->?,
-        (int)this->?,
-        (int)this->?,
-        this->?,
-        this->?,
+        this->vfptr,
+        this->vfptr1,
+        this->vfptr2,
+        this->vfptr3,
+        this->uniqueId,
+        this->abstractFlags,
         LOBYTE(this->fallRate) != 0 ? 5 : 10);
-    ++this->M28; /*0x4c281a*/
+    ++this->referenceCount;
   }
-  int result = this->owningHouseIndex >> 1; // eax /*0x4c2821*/
-  this->owningHouseIndex = result; /*0x4c2823*/
-  return result; /*0x4c2820*/
+  result = this->owningHouseIndex >> 1;
+  this->owningHouseIndex = result;
+  return result;
 
 }
 }

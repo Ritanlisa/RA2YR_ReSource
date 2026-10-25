@@ -1,0 +1,1 @@
+{"addr": "0x0077D900", "name": "unknown_libname_58", "decompiled": "// Microsoft VisualC 2-14/net runtime\nHWND unknown_libname_58()\n{\n  return WebBrowser::ShowDialog(g_INI_Key_Manage);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

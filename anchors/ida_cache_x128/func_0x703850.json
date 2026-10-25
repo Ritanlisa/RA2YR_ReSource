@@ -1,0 +1,1 @@
+{"addr": "0x00703850", "name": "TechnoClass::Vt279Thunk0", "decompiled": "int __thiscall TechnoClass::Vt279Thunk0(TechnoClass *this)\n{\n  return (*(int (__thiscall **)(TechnoClass *, _DWORD))(this->vfptr + 1116))(this, 0);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

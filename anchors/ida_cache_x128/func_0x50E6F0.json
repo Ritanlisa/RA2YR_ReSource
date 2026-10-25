@@ -1,0 +1,1 @@
+{"addr": "0x0050E6F0", "name": "VectorClass_BuildingType::GetElement", "decompiled": "int __thiscall VectorClass_BuildingType::GetElement(_VectorClass_PBVTeamTypeClass *this, int a2)\n{\n  return *(_DWORD *)(*(_DWORD *)&this->m_1[3] + 4 * a2);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x005F3E30", "name": "ObjectClass::HasC4", "decompiled": "int __thiscall ObjectClass::HasC4(ObjectClass *this)\n{\n  int v1; // eax\n\n  v1 = (*(int (__thiscall **)(ObjectClass *))(this->vfptr + 136))(this);\n  return (*(int (__thiscall **)(int))(*(_DWORD *)v1 + 156))(v1);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

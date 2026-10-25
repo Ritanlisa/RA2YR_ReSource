@@ -1,0 +1,1 @@
+{"addr": "0x004A1D70", "name": "Checksummer::Add_float", "decompiled": "int __thiscall Checksummer::Add_float(Checksummer *this, int a2)\n{\n  return Checksummer::Add_Buffer(this, (unsigned __int8 *)&a2, 4);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

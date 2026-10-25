@@ -1,0 +1,1 @@
+{"addr": "0x00409310", "name": "AudioStream::ReadStreamAndReturn", "decompiled": "int __thiscall AudioStream::ReadStreamAndReturn(AudioStream *this)\n{\n  ReadAudioStream((unsigned int **)this, 0);\n  return this->AudioStream_field_0x8;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

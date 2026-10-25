@@ -1,0 +1,1 @@
+{"addr": "0x00646464", "name": "sub_646464", "decompiled": "// positive sp value has been detected, the output may be wrong!\nint __userpurge sub_646464@<eax>(ObjectClass *this, int a2@<ecx>, int a3@<esi>, int a4, int a5, int a6, int a7, int a8)\n{\n  int v8; // eax\n\n  *(_DWORD *)(a2 + 12) = v8;\n  return a3;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

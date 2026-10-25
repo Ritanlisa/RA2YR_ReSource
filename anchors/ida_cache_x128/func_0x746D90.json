@@ -1,0 +1,1 @@
+{"addr": "0x00746D90", "name": "Event_Process_746D90", "decompiled": "BOOL __thiscall Event_Process_746D90(TechnoClass *this)\n{\n  return *((_BYTE *)this + 1760) || *((_BYTE *)this + 1761);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

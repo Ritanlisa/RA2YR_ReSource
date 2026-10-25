@@ -1,0 +1,1 @@
+{"addr": "0x0046D480", "name": "sub_46D480", "decompiled": "__int64 __usercall sub_46D480@<edx:eax>(ObjectClass *this, int a2@<ecx>)\n{\n  __int64 result; // rax\n\n  *((_BYTE *)&g_GameModeOptionState + a2) = BYTE4(result);\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

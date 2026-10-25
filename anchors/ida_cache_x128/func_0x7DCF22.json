@@ -1,0 +1,1 @@
+{"addr": "0x007DCF22", "name": "GetCurrentProcessId::0", "decompiled": "// attributes: thunk\nDWORD __stdcall GetCurrentProcessId::0()\n{\n  return GetCurrentProcessId();\n}\n", "changed": true, "error": null, "timestamp": "x128"}

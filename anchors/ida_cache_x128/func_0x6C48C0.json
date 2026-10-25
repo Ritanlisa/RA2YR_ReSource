@@ -1,0 +1,1 @@
+{"addr": "0x006C48C0", "name": "TClassFactory_DropPodLocomotionClass::AddRef", "decompiled": "LONG __thiscall TClassFactory_DropPodLocomotionClass::AddRef(_TClassFactory_VDropPodLocomotionClass *this)\n{\n  int v2; // [esp+4h] [ebp+4h]\n\n  return InterlockedIncrement((volatile LONG *)(v2 + 4));\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x007AF260", "name": "sub_7AF260", "decompiled": "int sub_7AF260()\n{\n  dword_B77F10 = 0;\n  dword_B77F14 = 0;\n  dword_B77F18 = 0;\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x00785360", "name": "DisplayRankingsThunkWOL", "decompiled": "void DisplayRankingsThunkWOL()\n{\n  DisplayRankingsWOL(0);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

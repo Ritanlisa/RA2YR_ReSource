@@ -1,0 +1,1 @@
+{"addr": "0x00436910", "name": "BuildingLightClass::SD_vt03", "decompiled": "int __stdcall BuildingLightClass::SD_vt03(BuildingLightClass *this, _DWORD *a2)\n{\n  if ( !a2 )\n    return -2147467261;\n  *a2 = 1417814616;\n  a2[1] = 298965160;\n  a2[2] = 1610638004;\n  a2[3] = 2041169559;\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

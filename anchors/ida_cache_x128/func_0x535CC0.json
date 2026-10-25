@@ -1,0 +1,1 @@
+{"addr": "0x00535CC0", "name": "CreateTeamCommand::Undo", "decompiled": "void __thiscall CreateTeamCommand::Undo(CreateTeamCommandClass *this, int a2)\n{\n  CreateTeamCommand::performAction_246(*(char **)&this->m_1[3]);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x00746D80", "name": "FootClass::updateScanRange", "decompiled": "char __thiscall FootClass::updateScanRange(FootClass *this)\n{\n  return *((_BYTE *)this + 1760);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

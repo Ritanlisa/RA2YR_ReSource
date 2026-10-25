@@ -1,0 +1,1 @@
+{"addr": "0x005BF360", "name": "sub_5BF360", "decompiled": "int __thiscall sub_5BF360(ObjectClass *this)\n{\n  int result; // eax\n\n  if ( this )\n    return MessageListClass::AddMessage(&unk_A8BC60, 0, 0, (wchar_t *)this->abstractFlags, 0, 16454, this->vfptr1, 0);\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

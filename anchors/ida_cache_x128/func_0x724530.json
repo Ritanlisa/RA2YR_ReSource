@@ -1,0 +1,1 @@
+{"addr": "0x00724530", "name": "SidebarClass::updateStripVisibility", "decompiled": "int __thiscall SidebarClass::updateStripVisibility(SidebarClass *this)\n{\n  int result; // eax\n\n  result = this->SidebarClass_field_0x228;\n  this->SidebarClass_field_0x22C = result;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

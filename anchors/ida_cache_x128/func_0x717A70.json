@@ -1,0 +1,1 @@
+{"addr": "0x00717A70", "name": "ObjectTypeClass::loadTypeMember_5717A70", "decompiled": "int __thiscall ObjectTypeClass::loadTypeMember_5717A70(ObjectTypeClass *this)\n{\n  return this->vfptr1;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

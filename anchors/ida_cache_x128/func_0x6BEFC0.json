@@ -1,0 +1,1 @@
+{"addr": "0x006BEFC0", "name": "ClassFactory_Wave::Construct", "decompiled": "_DWORD *__thiscall ClassFactory_Wave::Construct(ClassFactory_Wave *this)\n{\n  this->u32_4 = 0;\n  *(_DWORD *)this->__tail_0 = &TClassFactory<WaveClass>::`vftable';\n  return this->__tail_0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

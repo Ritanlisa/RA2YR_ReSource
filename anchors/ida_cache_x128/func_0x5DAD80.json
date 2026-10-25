@@ -1,0 +1,1 @@
+{"addr": "0x005DAD80", "name": "sub_5DAD80", "decompiled": "void sub_5DAD80()\n{\n  dbl_AC01C8 = 0.0174532925199433 * 60.0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

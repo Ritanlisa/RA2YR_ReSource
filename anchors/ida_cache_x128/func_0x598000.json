@@ -1,0 +1,1 @@
+{"addr": "0x00598000", "name": "sub_598000", "decompiled": "double sub_598000()\n{\n  return (double)(unsigned int)Random::State((Random *)&stru_ABE890) * 2.328306437080797e-10;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

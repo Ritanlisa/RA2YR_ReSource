@@ -1,0 +1,1 @@
+{"addr": "0x005176A0", "name": "InfantryClass::SetField6", "decompiled": "bool __thiscall InfantryClass::SetField6(InfantryClass *this)\n{\n  return (this->vfptr & 1) == 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

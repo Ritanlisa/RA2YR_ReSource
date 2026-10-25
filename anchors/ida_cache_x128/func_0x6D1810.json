@@ -1,0 +1,1 @@
+{"addr": "0x006D1810", "name": "Struct::Zero25", "decompiled": "_DWORD *__thiscall Struct::Zero25(Struct *this)\n{\n  this->Struct_field_00 = 0;\n  this->u32_4 = 0;\n  this->u32_8 = 0;\n  this->u32_C = 0;\n  this->u32_10 = 0;\n  this->u32_14 = 0;\n  LOBYTE(this->u32_18) = 0;\n  return &this->Struct_field_00;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

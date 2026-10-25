@@ -1,0 +1,1 @@
+{"addr": "0x007C893E", "name": "RegisterActiveObject", "decompiled": "// attributes: thunk\nHRESULT __stdcall RegisterActiveObject(IUnknown *punk, const IID *const rclsid, DWORD dwFlags, DWORD *pdwRegister)\n{\n  return __imp_RegisterActiveObject(punk, rclsid, dwFlags, pdwRegister);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

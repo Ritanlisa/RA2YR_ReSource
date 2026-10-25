@@ -1,0 +1,1 @@
+{"addr": "0x006D6170", "name": "RequestMapSnapshot", "decompiled": "_DWORD *__thiscall RequestMapSnapshot(ObjectClass *this, _DWORD *a2)\n{\n  *a2 = *((_DWORD *)this + 857);\n  a2[1] = *((_DWORD *)this + 858);\n  return a2;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

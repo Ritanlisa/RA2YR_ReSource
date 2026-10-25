@@ -1,0 +1,1 @@
+{"addr": "0x005E8760", "name": "Settings::CheckString", "decompiled": "int Settings::CheckString()\n{\n  char *v0; // eax\n\n  v0 = CharToWideString(unk_A8B380);\n  return wcscmp((const wchar_t *)v0, (const wchar_t *)&stru_A8D610) == 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

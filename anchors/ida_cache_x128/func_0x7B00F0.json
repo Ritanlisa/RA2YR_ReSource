@@ -1,0 +1,1 @@
+{"addr": "0x007B00F0", "name": "sub_7B00F0", "decompiled": "void __cdecl sub_7B00F0()\n{\n  if ( stru_B77F58.ComPtr_field_0x08 )\n  {\n    __3_YAXPAX_Z((void *)stru_B77F58.ComPtr_field_0x08);\n    stru_B77F58.ComPtr_field_0x08 = 0;\n  }\n}\n", "changed": true, "error": null, "timestamp": "x128"}

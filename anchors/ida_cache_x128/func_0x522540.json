@@ -1,0 +1,1 @@
+{"addr": "0x00522540", "name": "sub_522540", "decompiled": "char __thiscall sub_522540(TechnoClass *this)\n{\n  return *(_BYTE *)(*((_DWORD *)this + 432) + 1708);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

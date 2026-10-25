@@ -1,0 +1,1 @@
+{"addr": "0x00428C10", "name": "AnimTypeClass::GetAnimData", "decompiled": "int __thiscall AnimTypeClass::GetAnimData(AnimTypeClass *this, int a2, int a3)\n{\n  int result; // eax\n\n  result = this->Next;\n  if ( result == a2 )\n    this->Next = 0;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

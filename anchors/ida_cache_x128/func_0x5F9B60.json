@@ -1,0 +1,1 @@
+{"addr": "0x005F9B60", "name": "ObjectTypeClass::FreeLoaderBuffer", "decompiled": "int __thiscall ObjectTypeClass::FreeLoaderBuffer(ObjectTypeClass *this)\n{\n  __3_YAXPAX_Z((void *)this->vfptr);\n  this->vfptr = 0;\n  this->vfptr1 = 0;\n  this->vfptr2 = 0;\n  LOBYTE(this->vfptr3) = 0;\n  this->uniqueId = 0;\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

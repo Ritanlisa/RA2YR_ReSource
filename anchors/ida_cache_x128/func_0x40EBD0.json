@@ -1,0 +1,1 @@
+{"addr": "0x0040EBD0", "name": "sub_40EBD0", "decompiled": "int sub_40EBD0()\n{\n  *(_DWORD *)stru_887338.__pad_0 = Timer::GetTicks();\n  *(_DWORD *)&stru_887338.__pad_6[2] = 0;\n  return atexit(nullsub_60);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

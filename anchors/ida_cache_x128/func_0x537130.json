@@ -1,0 +1,1 @@
+{"addr": "0x00537130", "name": "CreateTeamCommand::performAction_128", "decompiled": "// attributes: thunk\nunsigned int __thiscall CreateTeamCommand::performAction_128(CenterREventCommandClass *this)\n{\n  unsigned int result; // eax\n\n  LOWORD(result) = UI_Create_734120();\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

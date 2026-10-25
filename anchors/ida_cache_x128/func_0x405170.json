@@ -1,0 +1,1 @@
+{"addr": "0x00405170", "name": "VocClass::GetSampleName", "decompiled": "char *__thiscall VocClass::GetSampleName(char *this)\n{\n  char *result; // eax\n\n  result = aNoEvents;\n  if ( g_AudioConfigState )\n    return this + 108;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

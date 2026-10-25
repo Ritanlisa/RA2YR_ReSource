@@ -1,0 +1,1 @@
+{"addr": "0x007C89B0", "name": "sendto", "decompiled": "// attributes: thunk\nint __stdcall sendto(SOCKET s, const char *buf, int len, int flags, const struct sockaddr *to, int tolen)\n{\n  return __imp_sendto(s, buf, len, flags, to, tolen);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

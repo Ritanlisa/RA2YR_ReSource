@@ -1,0 +1,1 @@
+{"addr": "0x005F3630", "name": "NullModemClass::SetAddress", "decompiled": "int __thiscall NullModemClass::SetAddress(NullModemClass *this, int a2)\n{\n  unsigned int q040; // eax\n\n  q040 = this->q040;\n  if ( q040 )\n    return *(_DWORD *)(*(_DWORD *)(q040 + 4) + 56);\n  else\n    return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

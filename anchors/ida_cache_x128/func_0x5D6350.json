@@ -1,0 +1,1 @@
+{"addr": "0x005D6350", "name": "DialogClass::GetFlag", "decompiled": "char __thiscall DialogClass::GetFlag(MultiplayerGameMode *this)\n{\n  return *((_BYTE *)this + 52);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

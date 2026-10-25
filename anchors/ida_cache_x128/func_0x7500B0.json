@@ -1,0 +1,1 @@
+{"addr": "0x007500B0", "name": "Timer::SetFlag", "decompiled": "int __thiscall Timer::SetFlag(Timer *this, char a2)\n{\n  int result; // eax\n\n  LOBYTE(result) = a2;\n  if ( a2 )\n    *(_DWORD *)this->__pad_0 = 0x40000000;\n  else\n    *(_DWORD *)this->__pad_0 = 0;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

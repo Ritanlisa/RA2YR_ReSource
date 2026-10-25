@@ -1,0 +1,1 @@
+{"addr": "0x00486380", "name": "Cell::IsEmpty", "decompiled": "int __thiscall Cell::IsEmpty(Cell *this)\n{\n  int result; // eax\n\n  result = this->Cell_field_0x38;\n  LOBYTE(result) = result == 0xFFFF || !result;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x007C89C8", "name": "WSAStartup", "decompiled": "// attributes: thunk\nint __stdcall WSAStartup(WORD wVersionRequested, LPWSADATA lpWSAData)\n{\n  return __imp_WSAStartup(wVersionRequested, lpWSAData);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

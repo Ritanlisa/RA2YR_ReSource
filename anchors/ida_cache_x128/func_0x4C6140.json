@@ -1,0 +1,1 @@
+{"addr": "0x004C6140", "name": "Menu::Reset", "decompiled": "int __thiscall Menu::Reset(Menu *this)\n{\n  *((_DWORD *)this + 13) = 0;\n  *((_DWORD *)this + 14) = 0;\n  *((_DWORD *)this + 15) = 1;\n  *((_WORD *)this + 32) = 0;\n  memset(this, 0, 0x30u);\n  *((_WORD *)this + 24) = 0;\n  return (int)this;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

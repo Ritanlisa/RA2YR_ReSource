@@ -1,0 +1,1 @@
+{"addr": "0x0040D220", "name": "sub_40D220", "decompiled": "void __cdecl sub_40D220()\n{\n  if ( dword_87F7B8 )\n    (*(void (__stdcall **)(int))(*(_DWORD *)dword_87F7B8 + 8))(dword_87F7B8);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

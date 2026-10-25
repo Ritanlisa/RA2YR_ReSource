@@ -1,0 +1,1 @@
+{"addr": "0x005176C0", "name": "WinMain_Helper", "decompiled": "bool __thiscall WinMain_Helper(ObjectClass *this)\n{\n  return (~(unsigned __int8)this->vfptr & 4) != 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

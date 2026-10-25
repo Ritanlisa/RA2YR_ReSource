@@ -1,0 +1,1 @@
+{"addr": "0x005216C0", "name": "TechnoClass::GetThreatValue_0", "decompiled": "// attributes: thunk\nint __thiscall TechnoClass::GetThreatValue_0(TechnoClass *this)\n{\n  return TechnoClass::GetThreatValue(this);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

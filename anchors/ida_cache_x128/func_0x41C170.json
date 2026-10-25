@@ -1,0 +1,1 @@
+{"addr": "0x0041C170", "name": "AircraftClass::MissionStubReturnZero2", "decompiled": "int AircraftClass::MissionStubReturnZero2(AircraftClass *this)\n{\n  return 1752;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

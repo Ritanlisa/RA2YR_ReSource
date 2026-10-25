@@ -1,0 +1,1 @@
+{"addr": "0x005D2700", "name": "MSEngine_Destru::QueryInterface", "decompiled": "_DWORD *__thiscall MSEngine_Destru::QueryInterface(MSEngine *this, char a2)\n{\n  MSEngine::Destruct(this);\n  if ( (a2 & 1) != 0 )\n    __3_YAXPAX_Z(this);\n  return &this->vfptr;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

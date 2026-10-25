@@ -1,0 +1,1 @@
+{"addr": "0x005F6DA0", "name": "ObjectClass::ResetPointerIfMatch", "decompiled": "int __thiscall ObjectClass::ResetPointerIfMatch(ObjectClass *this)\n{\n  int result; // eax\n  int v2; // [esp+4h] [ebp+4h]\n\n  result = v2;\n  if ( v2 == this->parachute )\n    this->parachute = 0;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

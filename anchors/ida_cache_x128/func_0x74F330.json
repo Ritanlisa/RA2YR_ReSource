@@ -1,0 +1,1 @@
+{"addr": "0x0074F330", "name": "AbstractClass::checkBuildingPlacement", "decompiled": "int AbstractClass::checkBuildingPlacement(AbstractClass *this)\n{\n  return -1;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

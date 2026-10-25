@@ -1,0 +1,1 @@
+{"addr": "0x0060AAA0", "name": "Dialog::EnumAndCleanup", "decompiled": "BOOL __thiscall Dialog::EnumAndCleanup(Dialog *this)\n{\n  return EnumChildWindows((HWND)this, sub_60AA60, 0);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

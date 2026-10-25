@@ -1,0 +1,1 @@
+{"addr": "0x007DCFBE", "name": "VariantInit", "decompiled": "// attributes: thunk\nvoid __stdcall VariantInit(VARIANTARG *pvarg)\n{\n  __imp_VariantInit(pvarg);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

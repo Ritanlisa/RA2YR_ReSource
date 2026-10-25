@@ -1,0 +1,1 @@
+{"addr": "0x004E62B0", "name": "PlayerType::GetName", "decompiled": "char *PlayerType::GetName()\n{\n  unsigned int v0; // eax\n\n  v0 = DetectProcessorType();\n  if ( v0 > 8 )\n    return aUnknown;\n  else\n    return off_822C54[v0];\n}\n", "changed": true, "error": null, "timestamp": "x128"}

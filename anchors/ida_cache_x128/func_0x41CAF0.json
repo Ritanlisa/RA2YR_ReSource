@@ -1,0 +1,1 @@
+{"addr": "0x0041CAF0", "name": "InitRotorArt", "decompiled": "void *InitRotorArt()\n{\n  void *result; // eax\n\n  dword_889F5C = (int)SearchMIXFile(aLrotorShp, 0);\n  result = SearchMIXFile(aRrotorShp, 0);\n  dword_889F60 = (int)result;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

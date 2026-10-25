@@ -1,0 +1,1 @@
+{"addr": "0x00718080", "name": "JumpjetLocomotionClass::ShortFunc_718080", "decompiled": "bool __stdcall JumpjetLocomotionClass::ShortFunc_718080(JumpjetLocomotionClass *this)\n{\n  return LOBYTE(this->Wobbles) == 1;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

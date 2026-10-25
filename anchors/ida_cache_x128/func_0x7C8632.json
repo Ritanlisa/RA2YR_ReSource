@@ -1,0 +1,1 @@
+{"addr": "0x007C8632", "name": "SetWindowLongA", "decompiled": "// attributes: thunk\nLONG __stdcall SetWindowLongA(HWND hWnd, int nIndex, LONG dwNewLong)\n{\n  return __imp_SetWindowLongA(hWnd, nIndex, dwNewLong);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

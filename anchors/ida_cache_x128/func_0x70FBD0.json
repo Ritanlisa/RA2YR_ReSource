@@ -1,0 +1,1 @@
+{"addr": "0x0070FBD0", "name": "UnitClass::IsDeactivated", "decompiled": "bool __thiscall UnitClass::IsDeactivated(UnitClass *this)\n{\n  return this->__pad_1C4[4];\n}\n", "changed": true, "error": null, "timestamp": "x128"}

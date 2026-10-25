@@ -1,0 +1,1 @@
+{"addr": "0x007B7180", "name": "WideString::GetChar", "decompiled": "int __thiscall WideString::GetChar(WideString *this, size_t a2)\n{\n  int result; // eax\n\n  result = wcslen(*(const wchar_t **)this);\n  if ( a2 >= result )\n    return 0;\n  LOWORD(result) = *(_WORD *)(*(_DWORD *)this + 2 * a2);\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

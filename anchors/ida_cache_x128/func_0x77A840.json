@@ -1,0 +1,1 @@
+{"addr": "0x0077A840", "name": "WOLGameList::Check", "decompiled": "bool __thiscall WOLGameList::Check(WOLGameList *this, int a2)\n{\n  return *(_DWORD *)(a2 + 28) != this->field_2C || *(_DWORD *)(a2 + 16) != this->field_30;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

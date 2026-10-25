@@ -1,0 +1,1 @@
+{"addr": "0x004729A0", "name": "CaptureManagerClass::GetObjectSize", "decompiled": "int CaptureManagerClass::GetObjectSize(CaptureManagerClass *this)\n{\n  return 80;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x00410100", "name": "AbstractClass::initVtableBase", "decompiled": "int AbstractClass::initVtableBase()\n{\n  word_887660 = 0;\n  word_887662 = 0;\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x006C8C40", "name": "Timer::GetTicks", "decompiled": "int Timer::GetTicks()\n{\n  return timeGetTime() >> 4;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

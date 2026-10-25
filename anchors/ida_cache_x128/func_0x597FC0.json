@@ -1,0 +1,1 @@
+{"addr": "0x00597FC0", "name": "MapSeedClass::SetCell", "decompiled": "wchar_t *MapSeedClass::SetCell(MapSeedClass *this)\n{\n  return GetStringCSF(aGuiDeletemapme, 0, aDRa2mdpostMapg, 5584);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

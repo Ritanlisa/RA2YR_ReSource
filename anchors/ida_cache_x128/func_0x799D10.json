@@ -1,0 +1,1 @@
+{"addr": "0x00799D10", "name": "Dialog::CloseAll", "decompiled": "HWND Dialog::CloseAll()\n{\n  HWND result; // eax\n\n  for ( result = (HWND)Dialog::GetCurrent(); result; result = (HWND)Dialog::GetCurrent() )\n    CloseDialog(result, 0);\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

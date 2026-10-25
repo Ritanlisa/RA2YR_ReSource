@@ -1,0 +1,1 @@
+{"addr": "0x006D20E0", "name": "ZCoordToScreenY", "decompiled": "int __fastcall ZCoordToScreenY(int a1)\n{\n  int result; // eax\n\n  LOWORD(result) = Math::RoundToInt((double)a1 * dbl_B0CD48 + (double)(a1 >= 728) + 0.5);\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x005F9970", "name": "COMObject::GetSizeMaxWrapper", "decompiled": "int __stdcall COMObject::GetSizeMaxWrapper(ObjectTypeClass *this, _DWORD *a2)\n{\n  int result; // eax\n\n  result = ObjectClass::GetSizeMax((AbstractClass *)this);\n  if ( result >= 0 )\n    return 0;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

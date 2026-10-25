@@ -1,0 +1,1 @@
+{"addr": "0x00597FA0", "name": "MapSeedClass::GetCell", "decompiled": "wchar_t *MapSeedClass::GetCell(MapSeedClass *this)\n{\n  return GetStringCSF(aGuiSavemapmenu, 0, aDRa2mdpostMapg, 5578);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

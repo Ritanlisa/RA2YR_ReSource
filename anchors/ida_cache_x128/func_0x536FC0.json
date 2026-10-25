@@ -1,0 +1,1 @@
+{"addr": "0x00536FC0", "name": "CreateTeamCommand::performAction_115", "decompiled": "wchar_t *CreateTeamCommand::performAction_115(ToggleSellCommandClass *this)\n{\n  return GetStringCSF(aTxtSellMode, 0, g_Str_File_Init_CPP, 7129);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x005D6320", "name": "ScenarioClass::saveGame", "decompiled": "char __thiscall ScenarioClass::saveGame(MultiplayerGameMode *this)\n{\n  return 1;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

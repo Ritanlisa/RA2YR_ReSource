@@ -1,0 +1,1 @@
+{"addr": "0x004E0170", "name": "FootClass::Destru_vt08", "decompiled": "void *__thiscall FootClass::Destru_vt08(FootClass *this, char a2)\n{\n  FootClass::Destruct(this);\n  if ( (a2 & 1) != 0 )\n    __3_YAXPAX_Z(this);\n  return this;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

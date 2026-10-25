@@ -1,0 +1,1 @@
+{"addr": "0x00420E70", "name": "AlphaShapeClass::SD_vt10", "decompiled": "int __thiscall AlphaShapeClass::SD_vt10(AlphaShapeClass *this, int a2, int a3)\n{\n  int result; // eax\n\n  result = a2;\n  if ( a2 == this->AlphaShapeClass_field_0x24 )\n    this->u32_3C = 1;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

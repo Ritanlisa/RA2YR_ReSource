@@ -1,0 +1,1 @@
+{"addr": "0x007559B0", "name": "CopyAudioData", "decompiled": "char *__fastcall CopyAudioData(char *a1, int a2)\n{\n  qmemcpy(a1, &stru_B45188 + a2, 0x30u);\n  return a1;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x005C0F30", "name": "ScenarioClass::initTeams", "decompiled": "int ScenarioClass::initTeams(MultiplayerGameMode *this)\n{\n  return -1;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

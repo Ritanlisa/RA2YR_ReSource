@@ -1,0 +1,1 @@
+{"addr": "0x0070CCF0", "name": "TechnoClass::RevealOwnCell", "decompiled": "void __thiscall TechnoClass::RevealOwnCell(TechnoClass *this)\n{\n  FogOfWar::RevealCell((int)&dword_87F7E8, (unsigned int *)&this->currentBurstCount);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

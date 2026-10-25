@@ -1,0 +1,1 @@
+{"addr": "0x0069AE70", "name": "IsRandMap::Sed2", "decompiled": "int __thiscall IsRandMap::Sed2(IsRandMap *this)\n{\n  return _strcmpi((char *)this + 1704, aRandmapSed) == 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

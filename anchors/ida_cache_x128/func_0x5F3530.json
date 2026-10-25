@@ -1,0 +1,1 @@
+{"addr": "0x005F3530", "name": "NullModemClass::Send", "decompiled": "int __stdcall NullModemClass::Send(NullModemClass *this)\n{\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

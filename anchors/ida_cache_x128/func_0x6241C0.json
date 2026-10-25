@@ -1,0 +1,1 @@
+{"addr": "0x006241C0", "name": "ObjectClass::Release", "decompiled": "int __thiscall ObjectClass::Release(_BYTE *this)\n{\n  int result; // eax\n\n  LOBYTE(result) = *(this + 8);\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

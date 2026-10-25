@@ -1,0 +1,1 @@
+{"addr": "0x007754C0", "name": "NullModemClass::GetMember23", "decompiled": "int __thiscall NullModemClass::GetMember23(NullModemClass *this)\n{\n  return this->u32_68;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x00433C80", "name": "sub_433C80", "decompiled": "__int16 __thiscall sub_433C80(ObjectClass *this, __int16 a2)\n{\n  HIWORD(this->occupant) = a2;\n  return this->occupant;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

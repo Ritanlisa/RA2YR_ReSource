@@ -1,0 +1,1 @@
+{"addr": "0x004E1960", "name": "VectorClass_ptr_ConvertClass::MarkDirty", "decompiled": "int __thiscall VectorClass_ptr_ConvertClass::MarkDirty(GadgetClass *this)\n{\n  int result; // eax\n\n  this->field_1C = 1;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

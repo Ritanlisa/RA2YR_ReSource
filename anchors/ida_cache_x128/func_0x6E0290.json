@@ -1,0 +1,1 @@
+{"addr": "0x006E0290", "name": "sub_6E0290", "decompiled": "char __thiscall sub_6E0290(ObjectClass *this, int a2, int a3, int a4, int a5)\n{\n  LOBYTE(dword_A8B230[337].vfptr) = this->isAliveFlag[0];\n  return 1;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

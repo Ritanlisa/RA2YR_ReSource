@@ -1,0 +1,1 @@
+{"addr": "0x005D2DE0", "name": "MPBattleClass::drawTeamDropdown", "decompiled": "int MPBattleClass::drawTeamDropdown()\n{\n  dword_ABFBD0 = 0;\n  dword_ABFBD4 = 0;\n  dword_ABFBD8 = 0;\n  dword_ABFBDC = 0;\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

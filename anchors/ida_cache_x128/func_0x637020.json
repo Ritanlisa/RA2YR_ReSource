@@ -1,0 +1,1 @@
+{"addr": "0x00637020", "name": "?WasExplicitlyAttached_ExternalContextBase_details_Concurrency__QBE_NXZ", "decompiled": "bool __thiscall _WasExplicitlyAttached_ExternalContextBase_details_Concurrency__QBE_NXZ(\n        Concurrency::details::ExternalContextBase *this)\n{\n  return *((_BYTE *)this + 152);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

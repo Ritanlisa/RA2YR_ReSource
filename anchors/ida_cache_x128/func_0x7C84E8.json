@@ -1,0 +1,1 @@
+{"addr": "0x007C84E8", "name": "CopyFileA", "decompiled": "// attributes: thunk\nBOOL __stdcall CopyFileA(LPCSTR lpExistingFileName, LPCSTR lpNewFileName, BOOL bFailIfExists)\n{\n  return __imp_CopyFileA(lpExistingFileName, lpNewFileName, bFailIfExists);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

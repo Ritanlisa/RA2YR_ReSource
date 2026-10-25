@@ -1,0 +1,1 @@
+{"addr": "0x007CB8A8", "name": "_iswspace", "decompiled": "int __cdecl iswspace(wint_t C)\n{\n  return iswctype(C, 8u);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

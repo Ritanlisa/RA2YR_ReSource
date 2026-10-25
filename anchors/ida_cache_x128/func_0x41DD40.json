@@ -1,0 +1,1 @@
+{"addr": "0x0041DD40", "name": "AirstrikeClass::StubReturn71", "decompiled": "int AirstrikeClass::StubReturn71(AirstrikeClass *this)\n{\n  return 71;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

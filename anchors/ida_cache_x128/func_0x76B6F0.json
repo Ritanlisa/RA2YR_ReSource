@@ -1,0 +1,1 @@
+{"addr": "0x0076B6F0", "name": "WDTState::QueryInterface", "decompiled": "void *__thiscall WDTState::QueryInterface(WDTState *this, char a2)\n{\n  WDTState::Constructor_WDTState((ReferenceCounted *)this);\n  if ( (a2 & 1) != 0 )\n    __3_YAXPAX_Z(this);\n  return this;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

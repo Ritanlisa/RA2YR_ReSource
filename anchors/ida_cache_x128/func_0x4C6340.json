@@ -1,0 +1,1 @@
+{"addr": "0x004C6340", "name": "SaveGame::SaveBlock68", "decompiled": "int __thiscall SaveGame::SaveBlock68(SaveGame *this, int a2)\n{\n  return (*(int (__stdcall **)(int, SaveGame *, int, _DWORD))(*(_DWORD *)a2 + 16))(a2, this, 68, 0);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

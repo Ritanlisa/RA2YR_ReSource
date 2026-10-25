@@ -1,0 +1,1 @@
+{"addr": "0x004B66E0", "name": "DropPodLocomotionClass::StubReturn48", "decompiled": "int DropPodLocomotionClass::StubReturn48(DropPodLocomotionClass *this)\n{\n  return 48;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

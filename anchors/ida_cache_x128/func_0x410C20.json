@@ -1,0 +1,1 @@
+{"addr": "0x00410C20", "name": "AbstractTypeClass::StubReturnFalse", "decompiled": "int __thiscall AbstractTypeClass::StubReturnFalse(AbstractTypeClass *this)\n{\n  int result; // eax\n\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

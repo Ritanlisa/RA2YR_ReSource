@@ -1,0 +1,1 @@
+{"addr": "0x00427290", "name": "AnimFile::Stub", "decompiled": "char *__thiscall AnimFile::Stub(AnimFile *this)\n{\n  return (char *)this + 1292;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

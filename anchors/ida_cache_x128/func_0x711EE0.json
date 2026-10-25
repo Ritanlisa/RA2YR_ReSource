@@ -1,0 +1,1 @@
+{"addr": "0x00711EE0", "name": "TechnoTypeClass::ComputeBuildTime", "decompiled": "double __thiscall TechnoTypeClass::ComputeBuildTime(TechnoTypeClass *this)\n{\n  double result; // st7\n\n  result = (double)this->Cost * *(double *)&dword_8871E0->LightningDamage * 0.9;\n  Math::RoundToInt(result);\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

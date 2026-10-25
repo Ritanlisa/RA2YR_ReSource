@@ -1,0 +1,1 @@
+{"addr": "0x007C8584", "name": "PurgeComm", "decompiled": "// attributes: thunk\nBOOL __stdcall PurgeComm(HANDLE hFile, DWORD dwFlags)\n{\n  return __imp_PurgeComm(hFile, dwFlags);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

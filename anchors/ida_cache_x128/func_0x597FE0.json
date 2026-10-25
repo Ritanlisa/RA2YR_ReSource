@@ -1,0 +1,1 @@
+{"addr": "0x00597FE0", "name": "MapSeedClass::Validate", "decompiled": "wchar_t *MapSeedClass::Validate(MapSeedClass *this)\n{\n  return GetStringCSF(aGuiMapsaved, 0, aDRa2mdpostMapg, 5590);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

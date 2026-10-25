@@ -1,0 +1,1 @@
+{"addr": "0x007CA993", "name": "sub_7CA993", "decompiled": "void *__thiscall sub_7CA993(ObjectClass *this, char a2)\n{\n  j_Exception_Destructor(this);\n  if ( (a2 & 1) != 0 )\n    __3_YAXPAX_Z(this);\n  return this;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

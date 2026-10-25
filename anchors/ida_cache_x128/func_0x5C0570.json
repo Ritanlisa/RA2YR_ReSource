@@ -1,0 +1,1 @@
+{"addr": "0x005C0570", "name": "BinkMovieHandle::COMStub", "decompiled": "BOOL __thiscall BinkMovieHandle::COMStub(BinkMovieHandle *this)\n{\n  return BinkMovie::IsAtEnd((BinkMovieHandle *)this->height);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x005C6940", "name": "InitArrayWithValue", "decompiled": "int __fastcall InitArrayWithValue(_DWORD *a1, int a2, int a3)\n{\n  memset(a1, 0, 4 * a3);\n  *a1 = a2;\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

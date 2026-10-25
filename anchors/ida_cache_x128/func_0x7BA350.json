@@ -1,0 +1,1 @@
+{"addr": "0x007BA350", "name": "WWMouseClass::checkBounds", "decompiled": "int __thiscall WWMouseClass::checkBounds(WWMouseClass *this)\n{\n  return this->WWMouseClass_field_0x20;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

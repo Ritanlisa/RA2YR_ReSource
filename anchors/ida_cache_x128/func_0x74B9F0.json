@@ -1,0 +1,1 @@
+{"addr": "0x0074B9F0", "name": "VoxelAnimTypeClass::GetTypeIdentifier", "decompiled": "int VoxelAnimTypeClass::GetTypeIdentifier(VoxelAnimTypeClass *this)\n{\n  return 42;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

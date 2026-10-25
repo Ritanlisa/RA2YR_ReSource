@@ -1,0 +1,1 @@
+{"addr": "0x004C6320", "name": "LoadGame::LoadBlock68", "decompiled": "int __thiscall LoadGame::LoadBlock68(LoadGame *this, int a2)\n{\n  return (*(int (__stdcall **)(int, LoadGame *, int, _DWORD))(*(_DWORD *)a2 + 12))(a2, this, 68, 0);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

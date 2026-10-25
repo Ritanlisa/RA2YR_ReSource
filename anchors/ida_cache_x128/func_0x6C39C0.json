@@ -1,0 +1,1 @@
+{"addr": "0x006C39C0", "name": "TClassFactory_AnimClass::AddRef", "decompiled": "LONG __thiscall TClassFactory_AnimClass::AddRef(_TClassFactory_VAnimClass *this)\n{\n  LONG *v2; // [esp+4h] [ebp+4h]\n\n  return InterlockedIncrement(v2 + 1);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

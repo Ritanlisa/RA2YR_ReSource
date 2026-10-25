@@ -1,0 +1,1 @@
+{"addr": "0x006614F0", "name": "RulesClass::readGeneralSection", "decompiled": "int __thiscall RulesClass::readGeneralSection(RulesClass *this, int a2)\n{\n  return (*(int (__stdcall **)(int, RulesClass *, int, _DWORD))(*(_DWORD *)a2 + 16))(a2, this, 3, 0);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

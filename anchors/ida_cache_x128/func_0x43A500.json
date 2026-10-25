@@ -1,0 +1,1 @@
+{"addr": "0x0043A500", "name": "COM::GetClassID", "decompiled": "int __stdcall COM::GetClassID(NeuronClass *this, _DWORD *a2)\n{\n  if ( !a2 )\n    return -2147467261;\n  *a2 = 605729558;\n  a2[1] = 298994933;\n  a2[2] = 268445372;\n  a2[3] = 1303416651;\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

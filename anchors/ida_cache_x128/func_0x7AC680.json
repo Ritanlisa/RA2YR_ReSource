@@ -1,0 +1,1 @@
+{"addr": "0x007AC680", "name": "System_Init_7AC680", "decompiled": "int __thiscall System_Init_7AC680(ObjectClass *this)\n{\n  int result; // eax\n\n  result = this->vfptr;\n  if ( this->vfptr )\n    return (*(int (__stdcall **)(int))(*(_DWORD *)result + 8))(result);\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

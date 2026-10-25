@@ -1,0 +1,1 @@
+{"addr": "0x00759E60", "name": "DSurface::FlipIfNeeded", "decompiled": "char __thiscall DSurface::FlipIfNeeded(DSurface *this)\n{\n  char result; // al\n\n  result = this->DSurface_field_0x514;\n  if ( result )\n    return DSurface::Flip((DSurface *)this->DSurface_field_0x200);\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x007C9430", "name": "_malloc", "decompiled": "void *__cdecl malloc(size_t Size)\n{\n  return _nh_malloc(Size, dword_B782C4);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

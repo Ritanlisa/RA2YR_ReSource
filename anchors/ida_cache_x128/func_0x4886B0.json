@@ -1,0 +1,1 @@
+{"addr": "0x004886B0", "name": "CheckListClass::COMStub", "decompiled": "int __thiscall CheckListClass::COMStub(ListClass *this)\n{\n  return this->field_50;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

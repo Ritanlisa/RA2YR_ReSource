@@ -1,0 +1,1 @@
+{"addr": "0x004DF0D0", "name": "FootClass::ClearPathIndex", "decompiled": "int __thiscall FootClass::ClearPathIndex(FootClass *this)\n{\n  this->FootClass_field_5A0 = 0;\n  this->movementDestination = 0;\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

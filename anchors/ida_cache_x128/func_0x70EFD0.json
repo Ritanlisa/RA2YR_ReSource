@@ -1,0 +1,1 @@
+{"addr": "0x0070EFD0", "name": "TechnoClass::HasPassengers", "decompiled": "int __thiscall TechnoClass::HasPassengers(TechnoClass *this)\n{\n  return this->empLockRemaining > 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

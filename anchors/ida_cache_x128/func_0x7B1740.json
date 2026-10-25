@@ -1,0 +1,1 @@
+{"addr": "0x007B1740", "name": "IPXInterfaceClass::COMStub_Return0", "decompiled": "int IPXInterfaceClass::COMStub_Return0(WinsockInterfaceClass *this)\n{\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

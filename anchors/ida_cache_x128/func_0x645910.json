@@ -1,0 +1,1 @@
+{"addr": "0x00645910", "name": "ParticleTypeClass::GetObjectSize", "decompiled": "int ParticleTypeClass::GetObjectSize(ParticleTypeClass *this)\n{\n  return 792;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

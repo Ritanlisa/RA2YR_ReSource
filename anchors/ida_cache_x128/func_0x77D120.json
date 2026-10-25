@@ -1,0 +1,1 @@
+{"addr": "0x0077D120", "name": "sub_77D120", "decompiled": "int sub_77D120()\n{\n  ComPtr::Constructor(&stru_B75E48);\n  *(_DWORD *)stru_B75E48.__pad_0 = &rc_ptr<PlayerProfile>::`vftable';\n  return atexit(sub_77D140);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

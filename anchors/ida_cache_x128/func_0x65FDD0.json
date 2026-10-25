@@ -1,0 +1,1 @@
+{"addr": "0x0065FDD0", "name": "Map_Helper_65FDD0", "decompiled": "int Map_Helper_65FDD0()\n{\n  int result; // eax\n  int i; // esi\n\n  result = dword_B04DB8;\n  for ( i = 0; i < dword_B04DB8; ++i )\n  {\n    Map_Helper_65FE00(*((ObjectClass **)dword_B04DAC + i));\n    result = dword_B04DB8;\n  }\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

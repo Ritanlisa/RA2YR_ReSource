@@ -1,0 +1,1 @@
+{"addr": "0x0050E4F0", "name": "VectorClass_BuildingType::Count", "decompiled": "int __thiscall VectorClass_BuildingType::Count(_VectorClass_PBVBuildingTypeClass *this, int a2)\n{\n  return *(_DWORD *)(*(_DWORD *)&this->m_1[3] + 4 * a2);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

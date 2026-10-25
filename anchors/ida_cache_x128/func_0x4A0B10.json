@@ -1,0 +1,1 @@
+{"addr": "0x004A0B10", "name": "EnumConnectionPointsClass::Skip", "decompiled": "int __stdcall EnumConnectionPointsClass::Skip(EnumConnectionPointsClass *this)\n{\n  this->EnumConnectionPointsClass_field_0x04 = 0;\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x00740E50", "name": "TechnoClass::GetAmmoCount_0", "decompiled": "// attributes: thunk\nint __thiscall TechnoClass::GetAmmoCount_0(TechnoClass *this)\n{\n  return TechnoClass::GetAmmoCount(this);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x00731A70", "name": "UI_Create_731A70", "decompiled": "int __fastcall UI_Create_731A70(char a1)\n{\n  int result; // eax\n\n  House_Play();\n  result = dword_A8B538[0];\n  if ( !dword_A8B538[0] )\n    return UI_Create_731A50_Create_63A120(a1, 0);\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

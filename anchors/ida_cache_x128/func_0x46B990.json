@@ -1,0 +1,1 @@
+{"addr": "0x0046B990", "name": "VectorClass_ptr_BulletClass::GetItem", "decompiled": "LONG __stdcall VectorClass_ptr_BulletClass::GetItem(int a1)\n{\n  return BulletClass::CheckTargetValidity((BulletClass *)(a1 - 4));\n}\n", "changed": true, "error": null, "timestamp": "x128"}

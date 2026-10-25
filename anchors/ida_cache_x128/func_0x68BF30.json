@@ -1,0 +1,1 @@
+{"addr": "0x0068BF30", "name": "ScenarioClass::Set_Default_Waypoint", "decompiled": "int __thiscall ScenarioClass::Set_Default_Waypoint(ScenarioClass *this, int a2)\n{\n  *(_DWORD *)&this->waypoints[4 * a2] = dword_B05458;\n  return a2;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

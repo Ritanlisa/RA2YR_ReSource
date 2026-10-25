@@ -1,0 +1,1 @@
+{"addr": "0x005B2EF0", "name": "IPersistStream::GetMaxSize", "decompiled": "int IPersistStream::GetMaxSize(MissionClass *this)\n{\n  return 450;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

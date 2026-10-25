@@ -1,0 +1,1 @@
+{"addr": "0x004B57D0", "name": "EditClass::QueryInterface", "decompiled": "_DWORD *__thiscall EditClass::QueryInterface(EditClass *this, char a2)\n{\n  DropListClass::Constructor((DropListClass *)this);\n  if ( (a2 & 1) != 0 )\n    __3_YAXPAX_Z(this);\n  return this->__tail_0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

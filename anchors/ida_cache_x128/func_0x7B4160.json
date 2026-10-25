@@ -1,0 +1,1 @@
+{"addr": "0x007B4160", "name": "UDPInterfaceClass::Receive", "decompiled": "__int16 __thiscall UDPInterfaceClass::Receive(UDPInterfaceClass *this)\n{\n  return *((_WORD *)this + 129406);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

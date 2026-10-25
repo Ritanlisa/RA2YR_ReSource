@@ -1,0 +1,1 @@
+{"addr": "0x006DC510", "name": "VectorClass_UDirtyAreaStruct::GetItemIndex", "decompiled": "unsigned int __thiscall VectorClass_UDirtyAreaStruct::GetItemIndex(VectorClass_UDirtyAreaStruct *this, int a2)\n{\n  if ( this->IsInitialized[0] )\n    return (a2 - this->Items) / 0x14u;\n  else\n    return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x004026A0", "name": "AudioFile::GetCallback", "decompiled": "int __thiscall AudioFile::GetCallback(AudioFile *this)\n{\n  return (*(int (**)(void))(*((_DWORD *)this + 53) + 40))();\n}\n", "changed": true, "error": null, "timestamp": "x128"}

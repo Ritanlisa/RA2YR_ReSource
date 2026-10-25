@@ -1,0 +1,1 @@
+{"addr": "0x0048DEB0", "name": "COMStub_48DEB0", "decompiled": "int __thiscall COMStub_48DEB0(ObjectClass *this)\n{\n  int v1; // eax\n\n  v1 = SuperWeaponTypeClass::FindByName((SuperWeaponTypeClass *)this);\n  if ( v1 == -1 )\n    return 0;\n  else\n    return 1 << v1;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

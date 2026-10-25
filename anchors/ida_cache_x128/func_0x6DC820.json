@@ -1,0 +1,1 @@
+{"addr": "0x006DC820", "name": "VectorClass_UDirtyAreaStruct::GetCapacity", "decompiled": "unsigned int __thiscall VectorClass_UDirtyAreaStruct::GetCapacity(_VectorClass_UDirtyAreaStruct *this, int a2)\n{\n  if ( LOBYTE(this->m_C) )\n    return (a2 - *(_DWORD *)&this->m_1[3]) / 0x14u;\n  else\n    return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

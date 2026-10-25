@@ -1,0 +1,1 @@
+{"addr": "0x007CBD13", "name": "__ultow", "decompiled": "wchar_t *__cdecl _ultow(unsigned int Value, wchar_t *Buffer, int Radix)\n{\n  CHAR MultiByteStr[40]; // [esp+0h] [ebp-28h] BYREF\n\n  _ultoa(Value, MultiByteStr, Radix);\n  MultiByteToWideChar(0, 1u, MultiByteStr, -1, Buffer, 40);\n  return Buffer;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

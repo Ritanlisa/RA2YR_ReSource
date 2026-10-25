@@ -1,0 +1,1 @@
+{"addr": "0x00764FF0", "name": "sub_764FF0", "decompiled": "int __thiscall sub_764FF0(ObjectClass *this, int a2)\n{\n  return *(&this->attachedTag + a2);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

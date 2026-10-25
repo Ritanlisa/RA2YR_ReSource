@@ -1,0 +1,1 @@
+{"addr": "0x007C85AE", "name": "GetExitCodeProcess", "decompiled": "// attributes: thunk\nBOOL __stdcall GetExitCodeProcess(HANDLE hProcess, LPDWORD lpExitCode)\n{\n  return __imp_GetExitCodeProcess(hProcess, lpExitCode);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x007C842E", "name": "LoadResource", "decompiled": "// attributes: thunk\nHGLOBAL __stdcall LoadResource(HMODULE hModule, HRSRC hResInfo)\n{\n  return __imp_LoadResource(hModule, hResInfo);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

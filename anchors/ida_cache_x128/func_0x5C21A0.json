@@ -1,0 +1,1 @@
+{"addr": "0x005C21A0", "name": "MPCooperative::CheckReady", "decompiled": "int __stdcall MPCooperative::CheckReady(MPCooperative *this)\n{\n  int result; // eax\n\n  result = (int)GetDlgItem((HWND)this, 1842);\n  if ( result )\n    return PostMessageA((HWND)result, 0x405u, 1u, stru_A8E960.homeCell);\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

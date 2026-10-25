@@ -1,0 +1,1 @@
+{"addr": "0x00425510", "name": "AnimClass::CheckEndOfSequence", "decompiled": "int __thiscall AnimClass::CheckEndOfSequence(AnimClass *this)\n{\n  return *(_DWORD *)(this->AnimClass_field_0xC8 + 704);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

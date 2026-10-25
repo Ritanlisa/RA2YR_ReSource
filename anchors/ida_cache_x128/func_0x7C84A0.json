@@ -1,0 +1,1 @@
+{"addr": "0x007C84A0", "name": "GetSystemTime", "decompiled": "// attributes: thunk\nvoid __stdcall GetSystemTime(LPSYSTEMTIME lpSystemTime)\n{\n  __imp_GetSystemTime(lpSystemTime);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

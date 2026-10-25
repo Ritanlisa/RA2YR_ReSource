@@ -1,0 +1,1 @@
+{"addr": "0x007C854E", "name": "SetCurrentDirectoryA", "decompiled": "// attributes: thunk\nBOOL __stdcall SetCurrentDirectoryA(LPCSTR lpPathName)\n{\n  return __imp_SetCurrentDirectoryA(lpPathName);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

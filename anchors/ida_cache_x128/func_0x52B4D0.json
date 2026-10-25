@@ -1,0 +1,1 @@
+{"addr": "0x0052B4D0", "name": "INIClass::deleteKey", "decompiled": "bool __thiscall INIClass::deleteKey(INIClass *this, _DWORD *a2)\n{\n  _DWORD *v2; // eax\n\n  v2 = (_DWORD *)this->sectionHead[0];\n  return v2 && *v2 == *a2;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

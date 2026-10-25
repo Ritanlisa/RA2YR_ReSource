@@ -1,0 +1,1 @@
+{"addr": "0x007C1130", "name": "Audio_Render_7C1130", "decompiled": "int __fastcall Audio_Render_7C1130(int a1, int a2)\n{\n  int v2; // eax\n\n  v2 = -((*(int (__cdecl **)(int, int, int, unsigned int))(a1 + 64))(a1, 5, a1 + 274, (a2 + 1) & 0xFFFFFFFE) != 0);\n  LOBYTE(v2) = v2 & 0xFD;\n  return v2 - 1;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

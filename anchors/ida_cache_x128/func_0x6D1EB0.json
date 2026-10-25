@@ -1,0 +1,1 @@
+{"addr": "0x006D1EB0", "name": "IsoCoord::ToPixel", "decompiled": "_DWORD *__thiscall IsoCoord::ToPixel(IsoCoord *this, int a2, int a3)\n{\n  *(_DWORD *)this->__pad_0 = -60 * a3 / 2 + 60 * a2 / 2;\n  this->IsoCoord_field_0x04 = 30 * a3 / 2 + 30 * a2 / 2;\n  return this->__pad_0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

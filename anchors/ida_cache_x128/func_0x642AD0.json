@@ -1,0 +1,1 @@
+{"addr": "0x00642AD0", "name": "Scenario::SetByte96", "decompiled": "void __thiscall Scenario::SetByte96(Scenario *this)\n{\n  LOBYTE(this->Scenario_field_0x60) = 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

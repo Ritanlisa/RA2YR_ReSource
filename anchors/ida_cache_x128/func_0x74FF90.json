@@ -1,0 +1,1 @@
+{"addr": "0x0074FF90", "name": "Audio::IsMediumVolume", "decompiled": "int __thiscall Audio::IsMediumVolume(int *this)\n{\n  return *(float *)this >= 1.0 && *(float *)this < 2.0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

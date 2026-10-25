@@ -1,0 +1,1 @@
+{"addr": "0x007CAFEC", "name": "__tolower", "decompiled": "int __cdecl _tolower(int C)\n{\n  return C + 32;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

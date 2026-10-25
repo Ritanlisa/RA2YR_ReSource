@@ -1,0 +1,1 @@
+{"addr": "0x005C4F00", "name": "MPCooperative::initTurnOrder", "decompiled": "char MPCooperative::initTurnOrder(MPCooperative *this)\n{\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

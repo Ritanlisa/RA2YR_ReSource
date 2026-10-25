@@ -1,0 +1,1 @@
+{"addr": "0x00544C80", "name": "CellClass::EnsureFileLoaded", "decompiled": "BOOL __thiscall CellClass::EnsureFileLoaded(CellClass *this)\n{\n  if ( !this->sensorsOfHouses[10] && *((_BYTE *)this + 756) )\n    MapClass::LoadFileData((MapClass *)this);\n  return this->sensorsOfHouses[10] != 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

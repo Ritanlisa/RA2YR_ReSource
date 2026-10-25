@@ -1,0 +1,1 @@
+{"addr": "0x00437050", "name": "BuildingLightClass::SD_vt54", "decompiled": "char __thiscall BuildingLightClass::SD_vt54(BuildingLightClass *this, int a2, int a3)\n{\n  if ( !(unsigned __int8)ObjectClass::Deploy((ObjectClass *)this) )\n    return 0;\n  ObjectClass::SetDeployState((LogicClass *)this, 0);\n  return 1;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x004AECA0", "name": "GameClass::initDisplay", "decompiled": "int *__thiscall GameClass::initDisplay(BufferPipe *this, char a2)\n{\n  Vector::Clear((int)(this + 1));\n  Pipe::Dtor((Pipe *)this);\n  if ( (a2 & 1) != 0 )\n    __3_YAXPAX_Z(this);\n  return (int *)this->__pad_0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

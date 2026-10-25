@@ -1,0 +1,1 @@
+{"addr": "0x006594F0", "name": "TechnoClass::drawTiberiumPips", "decompiled": "int __thiscall TechnoClass::drawTiberiumPips(TechnoClass *this, int a2, int a3)\n{\n  this->ambientSoundController[1] = a2;\n  this->ambientSoundController[2] = a3;\n  return a2;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

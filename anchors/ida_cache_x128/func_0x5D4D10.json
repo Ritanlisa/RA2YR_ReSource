@@ -1,0 +1,1 @@
+{"addr": "0x005D4D10", "name": "sub_5D4D10", "decompiled": "void __cdecl sub_5D4D10()\n{\n  dword_ABFCB8 = (int)&VectorClass<AcceleratorTracker>::`vftable';\n  if ( dword_ABFCBC && byte_ABFCC5 )\n  {\n    __3_YAXPAX_Z(dword_ABFCBC);\n    dword_ABFCBC = 0;\n  }\n  byte_ABFCC5 = 0;\n  dword_ABFCC0 = 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

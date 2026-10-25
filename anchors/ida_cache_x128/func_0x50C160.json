@@ -1,0 +1,1 @@
+{"addr": "0x0050C160", "name": "sub_50C160", "decompiled": "double __thiscall sub_50C160(ObjectClass *this)\n{\n  return *(float *)(this->attachedTag + 328);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x007CB8E6", "name": "_iswgraph", "decompiled": "int __cdecl iswgraph(wint_t C)\n{\n  return iswctype(C, 0x117u);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

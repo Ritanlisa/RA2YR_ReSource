@@ -1,0 +1,1 @@
+{"addr": "0x007DCF04", "name": "GetCPInfo", "decompiled": "// attributes: thunk\nBOOL __stdcall GetCPInfo(UINT CodePage, LPCPINFO lpCPInfo)\n{\n  return __imp_GetCPInfo(CodePage, lpCPInfo);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

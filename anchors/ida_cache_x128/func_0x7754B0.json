@@ -1,0 +1,1 @@
+{"addr": "0x007754B0", "name": "WinModemClass::HangUp", "decompiled": "int __thiscall WinModemClass::HangUp(WinModemClass *this, int a2)\n{\n  this->u32_68 = a2;\n  return a2;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x00769C20", "name": "Map_Load_769C20", "decompiled": "_DWORD *__thiscall Map_Load_769C20(ObjectClass *this, int a2)\n{\n  this->vfptr1 = *(_DWORD *)(a2 + 4);\n  this->vfptr2 = *(_DWORD *)(a2 + 8);\n  return &this->vfptr;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

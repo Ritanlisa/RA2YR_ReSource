@@ -1,0 +1,1 @@
+{"addr": "0x0070C250", "name": "IPersistStream::GetSizeMax", "decompiled": "int __stdcall IPersistStream::GetSizeMax(TechnoClass *this, int a2, int a3)\n{\n  RadioClass::SaveState((RadioClass *)this, (int *)a2, a3);\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

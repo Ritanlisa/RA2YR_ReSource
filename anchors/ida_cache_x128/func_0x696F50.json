@@ -1,0 +1,1 @@
+{"addr": "0x00696F50", "name": "SessionClass::GetOption", "decompiled": "int __thiscall SessionClass::GetOption(int *this)\n{\n  int result; // eax\n\n  result = -2;\n  if ( *(int *)((char *)this + 95) != -2 || *(int *)((char *)this + 91) != -1 )\n    return *(int *)((char *)this + 91);\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

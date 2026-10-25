@@ -1,0 +1,1 @@
+{"addr": "0x004D28C0", "name": "TechnoClass::recalcThreat", "decompiled": "int __thiscall TechnoClass::recalcThreat(TechnoClass *this)\n{\n  if ( this->health <= 0 )\n    return 0;\n  else\n    return *(_DWORD *)this->customSound_controller[4];\n}\n", "changed": true, "error": null, "timestamp": "x128"}

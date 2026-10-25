@@ -1,0 +1,1 @@
+{"addr": "0x006811B0", "name": "sub_6811B0", "decompiled": "char *__thiscall sub_6811B0(TechnoClass *this)\n{\n  return (char *)&this->airstrike;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

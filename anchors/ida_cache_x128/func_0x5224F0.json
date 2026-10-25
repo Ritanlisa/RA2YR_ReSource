@@ -1,0 +1,1 @@
+{"addr": "0x005224F0", "name": "TechnoClass::updateTurretRotation", "decompiled": "bool __thiscall TechnoClass::updateTurretRotation(TechnoClass *this)\n{\n  return *(_DWORD *)(*((_DWORD *)this + 432) + 1732) > -1;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

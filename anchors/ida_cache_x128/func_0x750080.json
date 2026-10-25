@@ -1,0 +1,1 @@
+{"addr": "0x00750080", "name": "Crate::processCratePickup", "decompiled": "void __thiscall Crate::processCratePickup(Crate *this, int a2)\n{\n  this->crate_timer[0] = 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

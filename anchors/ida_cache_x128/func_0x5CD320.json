@@ -1,0 +1,1 @@
+{"addr": "0x005CD320", "name": "MSVQAnim::Stub", "decompiled": "char __thiscall MSVQAnim::Stub(MSVQAnim *this)\n{\n  return this->u32_2D;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x00477740", "name": "VtableStub::Method_477740", "decompiled": "int __thiscall VtableStub::Method_477740(Pipe *this)\n{\n  return (*(int (__thiscall **)(Pipe *))(*(_DWORD *)this->__pad_0 + 4))(this);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

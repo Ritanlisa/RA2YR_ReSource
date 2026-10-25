@@ -1,0 +1,1 @@
+{"addr": "0x0058C2A0", "name": "Tactical::GetCellData", "decompiled": "char *__thiscall Tactical::GetCellData(Tactical *this)\n{\n  return (char *)&dword_ABED10[40 * *(__int16 *)this->__pad_0\n                             + 40 * g_MapCellWidth * *(__int16 *)this->Tactical_field_0x2];\n}\n", "changed": true, "error": null, "timestamp": "x128"}

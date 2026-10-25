@@ -1,0 +1,1 @@
+{"addr": "0x005CB3F0", "name": "UnholyAlliance::Read", "decompiled": "char UnholyAlliance::Read(UnholyAlliance *this)\n{\n  stru_A8B250.__pad_0[8] = 1;\n  return 1;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

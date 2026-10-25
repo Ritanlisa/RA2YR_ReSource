@@ -1,0 +1,1 @@
+{"addr": "0x006C0840", "name": "TClassFactory_AirstrikeClass::AddRef", "decompiled": "LONG __thiscall TClassFactory_AirstrikeClass::AddRef(_TClassFactory_VAirstrikeClass *this)\n{\n  int v2; // [esp+4h] [ebp+4h]\n\n  return InterlockedIncrement((volatile LONG *)(v2 + 4));\n}\n", "changed": true, "error": null, "timestamp": "x128"}

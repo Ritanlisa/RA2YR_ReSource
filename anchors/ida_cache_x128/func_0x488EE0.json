@@ -1,0 +1,1 @@
+{"addr": "0x00488EE0", "name": "ColorListClass::GetColor", "decompiled": "int __thiscall ColorListClass::GetColor(ColorListClass *this, int a2)\n{\n  return (*(int (__thiscall **)(ColorListClass *, int, _DWORD))(*(_DWORD *)this->__pad_0 + 204))(this, a2, 0);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

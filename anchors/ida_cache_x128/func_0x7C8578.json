@@ -1,0 +1,1 @@
+{"addr": "0x007C8578", "name": "GetCommState", "decompiled": "// attributes: thunk\nBOOL __stdcall GetCommState(HANDLE hFile, LPDCB lpDCB)\n{\n  return __imp_GetCommState(hFile, lpDCB);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

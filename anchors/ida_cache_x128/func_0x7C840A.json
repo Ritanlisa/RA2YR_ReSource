@@ -1,0 +1,1 @@
+{"addr": "0x007C840A", "name": "CreateMutexA", "decompiled": "// attributes: thunk\nHANDLE __stdcall CreateMutexA(LPSECURITY_ATTRIBUTES lpMutexAttributes, BOOL bInitialOwner, LPCSTR lpName)\n{\n  return __imp_CreateMutexA(lpMutexAttributes, bInitialOwner, lpName);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x005D5DC0", "name": "Dialog::GetModeNeg2", "decompiled": "int __thiscall Dialog::GetModeNeg2(MultiplayerGameMode *this)\n{\n  return *((_BYTE *)this + 63) != 0 ? 0 : -2;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

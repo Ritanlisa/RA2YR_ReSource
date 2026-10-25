@@ -1,0 +1,1 @@
+{"addr": "0x007C86BC", "name": "GetWindowRect", "decompiled": "// attributes: thunk\nBOOL __stdcall GetWindowRect(HWND hWnd, LPRECT lpRect)\n{\n  return __imp_GetWindowRect(hWnd, lpRect);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

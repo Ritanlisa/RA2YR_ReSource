@@ -1,0 +1,1 @@
+{"addr": "0x00554640", "name": "sub_554640", "decompiled": "int sub_554640()\n{\n  dword_ABCA14 = 0;\n  dword_ABCA18 = 0;\n  byte_ABCA1C = 1;\n  byte_ABCA1D = 0;\n  dword_ABCA10 = (int)&DynamicVectorClass<LightSourceClass *>::`vftable';\n  dword_ABCA24 = 10;\n  dword_ABCA20 = 0;\n  return atexit(sub_554680);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

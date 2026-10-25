@@ -1,0 +1,1 @@
+{"addr": "0x007CBB76", "name": "WideChar::ToLong", "decompiled": "int __cdecl WideChar::ToLong(wint_t *a1, wint_t **a2, int a3)\n{\n  return wcstoxl(a1, a2, a3, 1);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x004B6440", "name": "JumpjetLocomotionClass::CheckBaseClassState", "decompiled": "bool __stdcall JumpjetLocomotionClass::CheckBaseClassState(JumpjetLocomotionClass *this)\n{\n  return !(*(unsigned __int8 (__stdcall **)(char *))(*((_DWORD *)this - 5) + 16))((char *)this - 20) && this->RefCount;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

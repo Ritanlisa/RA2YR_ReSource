@@ -1,0 +1,1 @@
+{"addr": "0x005EF170", "name": "NullModemClass::closeConnection", "decompiled": "int __thiscall NullModemClass::closeConnection(NullModemClass *this, int a2)\n{\n  Struct::ZeroInitAndSetup((ModemConnectionClass *)this);\n  this->field_58 = a2;\n  return a2;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

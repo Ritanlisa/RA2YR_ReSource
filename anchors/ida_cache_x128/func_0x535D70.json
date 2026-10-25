@@ -1,0 +1,1 @@
+{"addr": "0x00535D70", "name": "CreateTeamCommand::performAction_5", "decompiled": "wchar_t *__thiscall CreateTeamCommand::performAction_5(SetStructureTabCommandClass *this)\n{\n  return GetStringCSF(aTxtStructureTa_0, 0, g_Str_File_Init_CPP, 6190);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

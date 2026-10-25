@@ -1,0 +1,1 @@
+{"addr": "0x0070DCE0", "name": "TechnoClass::checkEMPState", "decompiled": "BOOL __thiscall TechnoClass::checkEMPState(TechnoClass *this)\n{\n  return this->currentTurretNumber != -1;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

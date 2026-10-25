@@ -1,0 +1,1 @@
+{"addr": "0x00429450", "name": "sub_429450", "decompiled": "int __thiscall sub_429450(ApplicationClass *this, BSTR *a2)\n{\n  BSTR *v3; // [esp+Ch] [ebp+8h]\n\n  if ( !v3 )\n    return -2147467261;\n  *v3 = SysAllocString(aSun);\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

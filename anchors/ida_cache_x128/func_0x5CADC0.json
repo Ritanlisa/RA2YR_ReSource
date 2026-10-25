@@ -1,0 +1,1 @@
+{"addr": "0x005CADC0", "name": "MPBattleClass::stopGame", "decompiled": "int MPBattleClass::stopGame()\n{\n  word_ABFA98 = 0;\n  word_ABFA9A = 0;\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

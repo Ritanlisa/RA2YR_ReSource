@@ -1,0 +1,1 @@
+{"addr": "0x00422C70", "name": "AnimClass::CheckLayerFlags", "decompiled": "char __thiscall AnimClass::CheckLayerFlags(AnimClass *this, int a2, int a3, int a4)\n{\n  if ( this->AnimClass_field_0x184 )\n    return 0;\n  else\n    return ObjectClass::CalcDrawRect((ObjectClass *)this);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

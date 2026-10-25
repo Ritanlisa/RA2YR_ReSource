@@ -1,0 +1,1 @@
+{"addr": "0x007DCEBC", "name": "LCMapStringW", "decompiled": "// attributes: thunk\nint __stdcall LCMapStringW(LCID Locale, DWORD dwMapFlags, LPCWSTR lpSrcStr, int cchSrc, LPWSTR lpDestStr, int cchDest)\n{\n  return __imp_LCMapStringW(Locale, dwMapFlags, lpSrcStr, cchSrc, lpDestStr, cchDest);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

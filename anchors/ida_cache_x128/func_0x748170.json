@@ -1,0 +1,1 @@
+{"addr": "0x00748170", "name": "UnitTypeClass::GetTypeIdentifier", "decompiled": "int UnitTypeClass::GetTypeIdentifier(UnitTypeClass *this)\n{\n  return 40;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

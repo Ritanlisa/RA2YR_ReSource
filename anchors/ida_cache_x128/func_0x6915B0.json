@@ -1,0 +1,1 @@
+{"addr": "0x006915B0", "name": "TeamClass::Check", "decompiled": "BOOL __thiscall TeamClass::Check(TeamClass *this)\n{\n  unsigned int v1; // eax\n\n  v1 = this->owner + 1;\n  this->owner = v1;\n  return v1 < *(_DWORD *)(this->buildingType + 160);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

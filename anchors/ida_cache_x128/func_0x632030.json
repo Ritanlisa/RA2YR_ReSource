@@ -1,0 +1,1 @@
+{"addr": "0x00632030", "name": "System_Init_632030", "decompiled": "char __thiscall System_Init_632030(ObjectClass *this, _BYTE *a2)\n{\n  return DecodeLengthLCW((int)this + 256, a2, 64);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

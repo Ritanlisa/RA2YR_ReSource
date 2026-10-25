@@ -1,0 +1,1 @@
+{"addr": "0x007DCF82", "name": "SetEnvironmentVariableA", "decompiled": "// attributes: thunk\nBOOL __stdcall SetEnvironmentVariableA(LPCSTR lpName, LPCSTR lpValue)\n{\n  return __imp_SetEnvironmentVariableA(lpName, lpValue);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

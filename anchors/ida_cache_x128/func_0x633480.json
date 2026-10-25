@@ -1,0 +1,1 @@
+{"addr": "0x00633480", "name": "sub_633480", "decompiled": "void sub_633480()\n{\n  *(double *)stru_AC4B48.__pad_20 = 0.0174532925199433 * 90.0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

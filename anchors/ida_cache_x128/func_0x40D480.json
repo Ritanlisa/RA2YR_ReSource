@@ -1,0 +1,1 @@
+{"addr": "0x0040D480", "name": "sub_40D480", "decompiled": "void __cdecl sub_40D480()\n{\n  g_MixFileArray_Maps = (int)&VectorClass<MixFileClass *>::`vftable';\n  if ( dword_884DAC && byte_884DB5 )\n  {\n    __3_YAXPAX_Z(dword_884DAC);\n    dword_884DAC = 0;\n  }\n  byte_884DB5 = 0;\n  dword_884DB0 = 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

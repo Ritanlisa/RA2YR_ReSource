@@ -1,0 +1,1 @@
+{"addr": "0x0041C000", "name": "TacticalClass::StubReturnTrue2", "decompiled": "void TacticalClass::StubReturnTrue2(TechnoClass *this)\n{\n  ;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x007D2F9E", "name": "sub_7D2F9E", "decompiled": "wchar_t __cdecl sub_7D2F9E(wchar_t WCh, FILE *Stream)\n{\n  wchar_t v2; // si\n\n  _lock_file(Stream);\n  v2 = _putwc_lk(WCh, Stream);\n  _unlock_file(Stream);\n  return v2;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

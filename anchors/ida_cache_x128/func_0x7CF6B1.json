@@ -1,0 +1,1 @@
+{"addr": "0x007CF6B1", "name": "__heap_init", "decompiled": "int __cdecl _heap_init(int a1)\n{\n  hHeap = HeapCreate(a1 == 0, 0x1000u, 0);\n  if ( !hHeap )\n    return 0;\n  if ( !__sbh_heap_init() )\n  {\n    HeapDestroy(hHeap);\n    return 0;\n  }\n  return 1;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x0062D810", "name": "ParticleClass::CheckCollisionFlags", "decompiled": "int __stdcall ParticleClass::CheckCollisionFlags(ParticleClass *this, int *a2, int a3)\n{\n  int result; // eax\n\n  result = AbstractClass::SaveLoad_Prefix((int *)this->__pad_0, a2, a3);\n  this->__pad_128[8] = 1;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

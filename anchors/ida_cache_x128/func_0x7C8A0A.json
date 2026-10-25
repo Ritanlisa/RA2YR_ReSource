@@ -1,0 +1,1 @@
+{"addr": "0x007C8A0A", "name": "ImageList::DragMove", "decompiled": "// attributes: thunk\nBOOL __stdcall ImageList::DragMove(int x, int y)\n{\n  return ImageList_DragMove(x, y);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

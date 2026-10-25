@@ -1,0 +1,1 @@
+{"addr": "0x004867B0", "name": "Cell::IsShore", "decompiled": "int __thiscall Cell::IsShore(Cell *this)\n{\n  int result; // eax\n\n  result = this->Cell_field_0x38;\n  LOBYTE(result) = result == dword_AA0E18 || result >= dword_AA0748 && result < dword_AA0748 + 16;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

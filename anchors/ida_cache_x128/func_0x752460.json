@@ -1,0 +1,1 @@
+{"addr": "0x00752460", "name": "Team_Helper_752460", "decompiled": "char *__fastcall Team_Helper_752460(int a1)\n{\n  if ( a1 < 0 || a1 >= g_InfantrySelectState )\n    return g_Str_none;\n  else\n    return (char *)*((_DWORD *)g_InfantryRenderPool + a1);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

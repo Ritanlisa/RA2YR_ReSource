@@ -1,0 +1,1 @@
+{"addr": "0x00773B60", "name": "WebBrowser::CopyTo", "decompiled": "int __thiscall WebBrowser::CopyTo(WebBrowser *this)\n{\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

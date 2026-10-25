@@ -1,0 +1,1 @@
+{"addr": "0x007A2730", "name": "Network_Create_7A2730", "decompiled": "int Network_Create_7A2730(ObjectClass *this)\n{\n  int result; // eax\n\n  result = (int)ppv;\n  if ( ppv )\n    return (*(int (__stdcall **)(LPVOID, char *))(*(_DWORD *)ppv + 60))(ppv, aG);\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

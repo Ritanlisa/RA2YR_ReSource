@@ -1,0 +1,1 @@
+{"addr": "0x005C5D30", "name": "PlayerClass::AssignPlayerIndex_0", "decompiled": "// attributes: thunk\nchar __cdecl PlayerClass::AssignPlayerIndex_0(MultiplayerGameMode *this)\n{\n  return PlayerClass::AssignPlayerIndex(this);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

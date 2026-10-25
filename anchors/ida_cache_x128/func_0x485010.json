@@ -1,0 +1,1 @@
+{"addr": "0x00485010", "name": "BuildingClass::FindByCellHash", "decompiled": "int __thiscall BuildingClass::FindByCellHash(BuildingClass *this)\n{\n  return FindBuildingByTiberiumType(this->ambientSoundController[2]);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

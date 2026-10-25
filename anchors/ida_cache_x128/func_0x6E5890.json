@@ -1,0 +1,1 @@
+{"addr": "0x006E5890", "name": "TagClass::StubReturn56", "decompiled": "int TagClass::StubReturn56(TagClass *this)\n{\n  return 56;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x00556B50", "name": "ObjectClass::updateMissionState", "decompiled": "int __thiscall ObjectClass::updateMissionState(ObjectClass *this, int a2)\n{\n  int result; // eax\n\n  result = a2;\n  if ( !*(_DWORD *)&stru_A8E960.random[4] )\n    result = 2 * a2;\n  this->vfptr2 = result;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x00628470", "name": "VectorClass_ptr_ColorScheme::GetItemIndex", "decompiled": "unsigned int __thiscall VectorClass_ptr_ColorScheme::GetItemIndex(_VectorClass_VHSVClass *this, int a2)\n{\n  if ( LOBYTE(this->m_C) )\n    return (a2 - *(_DWORD *)&this->m_1[3]) / 3u;\n  else\n    return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

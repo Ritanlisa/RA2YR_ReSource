@@ -1,0 +1,1 @@
+{"addr": "0x00752340", "name": "Audio_Cleanup", "decompiled": "void Audio_Cleanup()\n{\n  ThemeClass::ClearQueues();\n  if ( g_InfantryDrawState )\n  {\n    Audio::Release(g_InfantryDrawState);\n    AudioSample::Destructor((AudioSample *)g_InfantryDrawState);\n    g_InfantryDrawState = 0;\n  }\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x004886A0", "name": "ObjectClass::GetStateFlag", "decompiled": "char __thiscall ObjectClass::GetStateFlag(ShpButtonClass *this)\n{\n  return this->Image;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x004CAD80", "name": "BuildingLight::CalcIntensity", "decompiled": "int __cdecl BuildingLight::CalcIntensity(double a1)\n{\n  int v1; // eax\n\n  LOWORD(v1) = Math::RoundToInt((a1 + 1.0) * -2048.0);\n  return 4 * v1;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x0040F270", "name": "sub_40F270", "decompiled": "int sub_40F270()\n{\n  sub_6C89B0((ObjectClass *)&stru_887460, 0x3D0900u);\n  return atexit(unknown_libname_11);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

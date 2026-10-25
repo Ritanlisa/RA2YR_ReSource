@@ -1,0 +1,1 @@
+{"addr": "0x007B84D0", "name": "Audio_Update", "decompiled": "int Audio_Update()\n{\n  int result; // eax\n\n  result = dword_B7816C;\n  if ( !dword_B7816C )\n  {\n    if ( dword_B78164 )\n      return WWMouseClass::UpdateCursorMovement(dword_B78164);\n  }\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

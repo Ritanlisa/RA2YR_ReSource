@@ -1,0 +1,1 @@
+{"addr": "0x0052AE70", "name": "Delegate::ClearVectorAndStraw", "decompiled": "int *__thiscall Delegate::ClearVectorAndStraw(CacheStraw *this, char a2)\n{\n  Vector::Clear((int)&this->__pad_0[12]);\n  Straw::Dtor((Straw *)this);\n  if ( (a2 & 1) != 0 )\n    __3_YAXPAX_Z(this);\n  return (int *)this->__pad_0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

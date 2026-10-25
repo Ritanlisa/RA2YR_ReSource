@@ -1,0 +1,1 @@
+{"addr": "0x0078ABF0", "name": "ChatMessageWOL", "decompiled": "__int16 __fastcall ChatMessageWOL(char a1, wchar_t *a2)\n{\n  byte_B77E40 = a1;\n  return WideString::Reassign(&stru_B76230, a2);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x007CBF49", "name": "__controlfp", "decompiled": "unsigned int __cdecl _controlfp(unsigned int NewValue, unsigned int Mask)\n{\n  return _control87(NewValue, Mask & 0xFFF7FFFF);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

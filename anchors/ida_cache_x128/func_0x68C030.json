@@ -1,0 +1,1 @@
+{"addr": "0x0068C030", "name": "BuildingType::Init", "decompiled": "int __thiscall BuildingType::Init(BuildingType *this, unsigned int a2)\n{\n  if ( a2 >= 0x10 )\n    return -1;\n  else\n    return *((_DWORD *)this + a2 + 1120);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

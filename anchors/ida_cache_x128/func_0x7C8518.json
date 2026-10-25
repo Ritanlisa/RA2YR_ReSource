@@ -1,0 +1,1 @@
+{"addr": "0x007C8518", "name": "FileTimeToDosDateTime", "decompiled": "// attributes: thunk\nBOOL __stdcall FileTimeToDosDateTime(const FILETIME *lpFileTime, LPWORD lpFatDate, LPWORD lpFatTime)\n{\n  return __imp_FileTimeToDosDateTime(lpFileTime, lpFatDate, lpFatTime);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

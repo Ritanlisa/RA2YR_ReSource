@@ -1,0 +1,1 @@
+{"addr": "0x0065AA80", "name": "RadioClass::ProcessCmd", "decompiled": "int __thiscall RadioClass::ProcessCmd(RadioClass *this)\n{\n  if ( !this->inLimbo[0] )\n    (*(void (__thiscall **)(RadioClass *, int))(this->vfptr + 640))(this, 3);\n  return ObjectClass::Undeploy((ObjectClass *)this);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

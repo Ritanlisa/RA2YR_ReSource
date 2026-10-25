@@ -1,0 +1,1 @@
+{"addr": "0x007AD310", "name": "ScalarDtor::DeleteAndZero", "decompiled": "void **__thiscall ScalarDtor::DeleteAndZero(ScalarDtor *this, char a2)\n{\n  DeleteAndZero((ObjectClass *)this);\n  if ( (a2 & 1) != 0 )\n    __3_YAXPAX_Z(this);\n  return (void **)this;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

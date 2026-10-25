@@ -1193,83 +1193,83 @@ namespace gamemd {
 AbstractClass * * E4Recv_74FAE0::sub_74FAE0()
 {
 
-  unsigned __int16 pN_high; // bp
+  int v2; // eax
+  int v3; // eax
+  unsigned __int16 vfptr2_high; // bp
+  int v5; // eax
   unsigned __int16 v6; // ax
+  int *p_vfptr3; // esi
   RawFileClass v9; // [esp+10h] [ebp-24h] BYREF
 
-  if ( (this->ambientSoundController[2] & 8) == 0 ) /*0x74faef*/
+  if ( (this->ambientSoundController[2] & 8) == 0 )
   {
-    (&v9)->Construct((int)g_Str_File_VERSION_TXT); /*0x74fafa*/
-    if ( (unsigned __int8)(&v9)->Open(0) ) /*0x74fb04*/
+    RawFileClass::Construct((BufferIOFileClass *)&v9, (int)g_Str_File_VERSION_TXT);
+    if ( (unsigned __int8)FileClass::Open(&v9, 0) )
     {
-      FileClass::Read(&v9, (char *)&this->owningHouseIndex + 2, 16); /*0x74fb17*/
-      for ( BYTE1(this->attachedBomb) = 0; /*0x74fb30*/
-      *((unsigned char *)&this->owningHouseIndex + strlen((const char *)&this->owningHouseIndex + 2) + 1) == 13;
-      *((unsigned char *)&this->owningHouseIndex + strlen((const char *)&this->owningHouseIndex + 2) + 1) = 0 )
+      FileClass::Read(&v9, (char *)&this->owningHouseIndex + 2, 16);
+      for ( BYTE1(this->attachedBomb) = 0;
+            *((unsigned char *)&this->owningHouseIndex + strlen((const char *)&this->owningHouseIndex + 2) + 1) == 13;
+            *((unsigned char *)&this->owningHouseIndex + strlen((const char *)&this->owningHouseIndex + 2) + 1) = 0 )
       {
-        ; /*0x74fb40*/
+        ;
       }
     }
     else
     {
-      BYTE2(this->owningHouseIndex) = 0; /*0x74fb55*/
+      BYTE2(this->owningHouseIndex) = 0;
     }
-    (&v9)->Dtor(); /*0x74fb5c*/
-    int v2; // eax
-    v2 = this->ambientSoundController[2]; /*0x74fb61*/
-    (v2) = ((v2) & ~0xFF) | ((v2 | 8) & 0xFF); /*0x74fb64*/
-    this->ambientSoundController[2] = v2; /*0x74fb66*/
+    RawFileClass::Dtor((BufferIOFileClass *)&v9);
+    v2 = this->ambientSoundController[2];
+    LOBYTE(v2) = v2 | 8;
+    this->ambientSoundController[2] = v2;
   }
-  int v3; // eax
-  v3 = this->ambientSoundController[2]; /*0x74fb69*/
-  if ( (v3 & 4) != 0 ) /*0x74fb6e*/
+  v3 = this->ambientSoundController[2];
+  if ( (v3 & 4) != 0 )
   {
-    pN_high = HIWORD(this->M10); /*0x74fb70*/
+    vfptr2_high = HIWORD(this->vfptr2);
   }
   else
   {
-    pN_high = 1; /*0x74fb76*/
-    (v3) = ((v3) & ~0xFF) | ((v3 | 4) & 0xFF); /*0x74fb7b*/
-    HIWORD(this->M10) = 1; /*0x74fb7d*/
-    this->ambientSoundController[2] = v3; /*0x74fb81*/
+    vfptr2_high = 1;
+    LOBYTE(v3) = v3 | 4;
+    HIWORD(this->vfptr2) = 1;
+    this->ambientSoundController[2] = v3;
   }
-  if ( (DataGlobal_A8EC40 & 8) == 0 ) /*0x74fb8b*/
+  if ( (stru_A8E960.random[432] & 8) == 0 )
   {
-    RawFileClass::Construct(&v9, (int)g_Str_File_VERSION_TXT); /*0x74fb9a*/
-    if ( (unsigned __int8)(&v9)->Open(0) ) /*0x74fba4*/
+    RawFileClass::Construct((BufferIOFileClass *)&v9, (int)g_Str_File_VERSION_TXT);
+    if ( (unsigned __int8)FileClass::Open(&v9, 0) )
     {
-      FileClass::Read(&v9, &byte_A8ED0A, 16); /*0x74fbb8*/
-      for ( DataGlobal_A8EB00[537] = 0; /*0x74fbd9*/
-      stru_A8EB00.?[strlen(&stru_A8EB00.?[294]) + 293] == 13;
-      stru_A8EB00.?[strlen(&stru_A8EB00.?[294]) + 293] = 0 )
+      FileClass::Read(&v9, &stru_A8E960.random[406], 16);
+      for ( stru_A8E960.random[421] = 0;
+            stru_A8E960.random[strlen(&stru_A8E960.random[406]) + 405] == 13;
+            stru_A8E960.random[strlen(&stru_A8E960.random[406]) + 405] = 0 )
       {
-        ; /*0x74fbee*/
+        ;
       }
     }
     else
     {
-      DataGlobal_A8EB00[522] = 0; /*0x74fc07*/
+      stru_A8E960.random[406] = 0;
     }
-    (&v9)->Dtor(); /*0x74fc11*/
-    int v5; // eax
-    v5 = *(unsigned int *)&DataGlobal_A8EC40; /*0x74fc16*/
-    LOBYTE(v5) = DataGlobal_A8EC40 | 8; /*0x74fc1b*/
-    *(unsigned int *)&DataGlobal_A8EC40 = v5; /*0x74fc1d*/
+    RawFileClass::Dtor((BufferIOFileClass *)&v9);
+    v5 = *(unsigned int *)&stru_A8E960.random[432];
+    LOBYTE(v5) = stru_A8E960.random[432] | 8;
+    *(unsigned int *)&stru_A8E960.random[432] = v5;
   }
-  if ( (DataGlobal_A8EC40 & 2) != 0 ) /*0x74fc2f*/
+  if ( (stru_A8E960.random[432] & 2) != 0 )
   {
-    v6 = *(unsigned short *)&DataGlobal_A8EC04; /*0x74fc31*/
+    v6 = *(unsigned short *)&stru_A8E960.random[372];
   }
   else
   {
-    *(unsigned short *)&DataGlobal_A8EC04 = 1; /*0x74fc3e*/
-    v6 = 1; /*0x74fc49*/
-    *(unsigned int *)&DataGlobal_A8EC40 |= 2u; /*0x74fc4e*/
+    *(unsigned short *)&stru_A8E960.random[372] = 1;
+    v6 = 1;
+    *(unsigned int *)&stru_A8E960.random[432] |= 2u;
   }
-  char *pVal; // esi
-  pVal = (char *)&this->M57; /*0x74fc60*/
-  sprintf(pVal, "%d.%3.3d", v6, pN_high); /*0x74fc6a*/
-  return pVal; /*0x74fc74*/
+  p_vfptr3 = &this->vfptr3;
+  sprintf((char *const)p_vfptr3, "%d.%3.3d", v6, vfptr2_high);
+  return (char *)p_vfptr3;
 
 }
 }

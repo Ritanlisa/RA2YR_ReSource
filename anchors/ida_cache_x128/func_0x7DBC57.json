@@ -1,0 +1,1 @@
+{"addr": "0x007DBC57", "name": "ReturnNull5", "decompiled": "int ReturnNull5()\n{\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

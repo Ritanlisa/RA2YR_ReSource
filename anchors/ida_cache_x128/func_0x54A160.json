@@ -1,0 +1,1 @@
+{"addr": "0x0054A160", "name": "IsometricTileTypeClass::GetAuxField", "decompiled": "int __thiscall IsometricTileTypeClass::GetAuxField(IsometricTileTypeClass *this)\n{\n  return *((_DWORD *)this + 165);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

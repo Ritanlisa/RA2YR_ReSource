@@ -1,0 +1,1 @@
+{"addr": "0x0065B3B0", "name": "RadSiteClass::PowerDrainUpdate", "decompiled": "int __thiscall RadSiteClass::PowerDrainUpdate(RadSiteClass *this, int a2)\n{\n  return AbstractClass::ProcessPower((AbstractClass *)this);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

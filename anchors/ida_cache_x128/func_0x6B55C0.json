@@ -1,0 +1,1 @@
+{"addr": "0x006B55C0", "name": "SmudgeTypeClass::GetFlag", "decompiled": "void **__thiscall SmudgeTypeClass::GetFlag(SmudgeTypeClass *this, int a2)\n{\n  UnitClass *v3; // eax\n\n  v3 = (UnitClass *)__2_YAPAXI_Z(0xB0u);\n  if ( v3 )\n    return UnitClass::Create(v3, this, &dword_B0B7A8, -1);\n  else\n    return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x0056BC50", "name": "Cell::PosToLinearIndex", "decompiled": "int __stdcall Cell::PosToLinearIndex(__int16 *a1)\n{\n  return *a1 / 4 + 130 * (a1[1] / 4) + 131;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

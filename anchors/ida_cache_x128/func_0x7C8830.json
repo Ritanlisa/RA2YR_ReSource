@@ -1,0 +1,1 @@
+{"addr": "0x007C8830", "name": "TextOutA", "decompiled": "// attributes: thunk\nBOOL __stdcall TextOutA(HDC hdc, int x, int y, LPCSTR lpString, int c)\n{\n  return __imp_TextOutA(hdc, x, y, lpString, c);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

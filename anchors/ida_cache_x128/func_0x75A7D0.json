@@ -1,0 +1,1 @@
+{"addr": "0x0075A7D0", "name": "ResetAnimSystem", "decompiled": "int __fastcall ResetAnimSystem(int a1)\n{\n  byte_B45BA8[a1 >> 3] |= 1 << (a1 & 7);\n  return a1 >> 3;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

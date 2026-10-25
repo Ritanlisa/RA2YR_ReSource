@@ -1,0 +1,1 @@
+{"addr": "0x004065F0", "name": "sub_4065F0", "decompiled": "int __thiscall sub_4065F0(ObjectClass *this, int a2)\n{\n  this->customSound_controller[1] = a2;\n  return a2;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

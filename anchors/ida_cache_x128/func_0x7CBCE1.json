@@ -1,0 +1,1 @@
+{"addr": "0x007CBCE1", "name": "__ltow", "decompiled": "wchar_t *__cdecl _ltow(int Value, wchar_t *Buffer, int Radix)\n{\n  CHAR MultiByteStr[40]; // [esp+0h] [ebp-28h] BYREF\n\n  _ltoa(Value, MultiByteStr, Radix);\n  MultiByteToWideChar(0, 1u, MultiByteStr, -1, Buffer, 40);\n  return Buffer;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x007C89D4", "name": "DirectDrawCreate", "decompiled": "// attributes: thunk\nint __stdcall DirectDrawCreate(GUID *lpGUID, LPDIRECTDRAW *lplpDD, IUnknown *pUnkOuter)\n{\n  return __imp_DirectDrawCreate(lpGUID, lplpDD, pUnkOuter);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x005A00C0", "name": "MapClass::GetTileDataField14", "decompiled": "int __stdcall MapClass::GetTileDataField14(__int16 *a1)\n{\n  if ( dword_ABED10 )\n    return *(_DWORD *)&dword_ABED10[40 * *a1 + 28 + 40 * g_MapCellWidth * a1[1]];\n  else\n    return -1;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

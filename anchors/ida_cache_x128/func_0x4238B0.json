@@ -1,0 +1,1 @@
+{"addr": "0x004238B0", "name": "AnimClass::UpdateMirrorState", "decompiled": "bool __thiscall AnimClass::UpdateMirrorState(AnimClass *this, int a2)\n{\n  return (unsigned __int8)ObjectClass::UpdateProductionDisplay((TechnoClass *)this) != 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

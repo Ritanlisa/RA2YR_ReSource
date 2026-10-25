@@ -1,0 +1,1 @@
+{"addr": "0x0063F550", "name": "sub_63F550", "decompiled": "void sub_63F550()\n{\n  *(double *)&stru_AC4B48.__pad_194[68] = 0.0174532925199433 * 60.0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

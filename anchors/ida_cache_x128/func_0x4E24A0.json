@@ -1,0 +1,1 @@
+{"addr": "0x004E24A0", "name": "Time::GetElapsedMS", "decompiled": "int Time::GetElapsedMS()\n{\n  DWORD Time; // eax\n  unsigned int v1; // ecx\n\n  Time = timeGetTime();\n  if ( Time > dword_8B3F14 )\n    v1 = 3 * (Time - dword_8B3F14);\n  else\n    v1 = 3 * (Time - dword_8B3F14 - 1);\n  return v1 / 0x32;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

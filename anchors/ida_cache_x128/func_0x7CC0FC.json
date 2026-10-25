@@ -1,0 +1,1 @@
+{"addr": "0x007CC0FC", "name": "__unwind_handler", "decompiled": "int __cdecl _unwind_handler(int a1, int a2, int a3, _DWORD *a4)\n{\n  int result; // eax\n\n  result = 1;\n  if ( (*(_DWORD *)(a1 + 4) & 6) != 0 )\n  {\n    *a4 = a2;\n    return 3;\n  }\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

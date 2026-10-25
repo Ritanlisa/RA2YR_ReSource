@@ -1,0 +1,1 @@
+{"addr": "0x00724AB0", "name": "ToolTipManager::release", "decompiled": "int __thiscall ToolTipManager::release(ToolTipManager *this, int a2)\n{\n  this->DisplayTimer[1] = 0;\n  this->DisplayTimer[2] = 0;\n  *(_DWORD *)this->TextBuffer = 0;\n  *(_DWORD *)&this->TextBuffer[4] = 0;\n  this->Position[0] = 0;\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

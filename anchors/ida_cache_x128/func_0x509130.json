@@ -1,0 +1,1 @@
+{"addr": "0x00509130", "name": "HouseClass::AcquiredThreatNode", "decompiled": "void __thiscall HouseClass::AcquiredThreatNode(HouseClass *this)\n{\n  this->hasThreatNode[0] = 1;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

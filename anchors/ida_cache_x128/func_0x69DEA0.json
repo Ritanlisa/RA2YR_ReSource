@@ -1,0 +1,1 @@
+{"addr": "0x0069DEA0", "name": "ButtonClass::SetState", "decompiled": "char __thiscall ButtonClass::SetState(ButtonClass *this, char a2)\n{\n  *((_BYTE *)this + 92) = a2;\n  return a2;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

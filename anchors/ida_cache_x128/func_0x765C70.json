@@ -1,0 +1,1 @@
+{"addr": "0x00765C70", "name": "COMClass::releaseInterface", "decompiled": "_DWORD *__thiscall COMClass::releaseInterface(COMClass *this)\n{\n  ComPtr::Constructor((ComPtr *)this);\n  *(_DWORD *)this->__pad_0 = &rc_ptr<WorldDominationTour::Conflict>::`vftable';\n  return this->__pad_0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

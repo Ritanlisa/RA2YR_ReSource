@@ -1,0 +1,1 @@
+{"addr": "0x0047ADA0", "name": "CD::SetCurrentInstance", "decompiled": "int __thiscall CD::SetCurrentInstance(CD *this)\n{\n  int result; // eax\n\n  result = dword_89E414;\n  dword_89E414 = (int)this;\n  dword_89E418 = result;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

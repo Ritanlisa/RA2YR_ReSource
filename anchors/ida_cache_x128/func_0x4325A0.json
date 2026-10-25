@@ -1,0 +1,1 @@
+{"addr": "0x004325A0", "name": "BufferIOFileClass::SetSize", "decompiled": "int __thiscall BufferIOFileClass::SetSize(BufferIOFileClass *this)\n{\n  if ( BYTE1(this->BufferOffset) && BYTE1(this->BufferSize) )\n    return this->TotalBytesWritten;\n  else\n    return CCFileClass::GetFileSize((RawFileClass *)this);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

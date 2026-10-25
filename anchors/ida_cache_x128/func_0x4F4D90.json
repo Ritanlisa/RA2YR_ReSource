@@ -1,0 +1,1 @@
+{"addr": "0x004F4D90", "name": "j_Stub_InfiniteLoop", "decompiled": "// attributes: thunk\nvoid __noreturn j_Stub_InfiniteLoop()\n{\n  Stub::InfiniteLoop();\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x007C85D8", "name": "TranslateMessage", "decompiled": "// attributes: thunk\nBOOL __stdcall TranslateMessage(const MSG *lpMsg)\n{\n  return __imp_TranslateMessage(lpMsg);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

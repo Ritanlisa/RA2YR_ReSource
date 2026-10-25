@@ -1,0 +1,1 @@
+{"addr": "0x00644830", "name": "ParticleSystemTypeClass::SaveLoad_Prefix_0", "decompiled": "int __stdcall ParticleSystemTypeClass::SaveLoad_Prefix_0(ParticleSystemTypeClass *this, int a2, int a3)\n{\n  AbstractClass::SaveLoad_PrefixWrapper((AbstractClass *)this, a2, a3);\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

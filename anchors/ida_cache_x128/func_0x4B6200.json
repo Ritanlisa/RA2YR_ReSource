@@ -1,0 +1,1 @@
+{"addr": "0x004B6200", "name": "DropPodLocomotionClass::ddtor", "decompiled": "int __stdcall DropPodLocomotionClass::ddtor(DropPodLocomotionClass *this, _DWORD *a2)\n{\n  if ( !a2 )\n    return -2147467261;\n  *(IID *)a2 = g_CLSID_DriveLocomotion;\n  a2[3] = -777003740;\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

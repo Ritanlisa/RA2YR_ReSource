@@ -1,0 +1,1 @@
+{"addr": "0x007748A0", "name": "WinModemClass::Release", "decompiled": "int __thiscall WinModemClass::Release(WinModemClass *this, int a2)\n{\n  this->u32_60 = a2;\n  return a2;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

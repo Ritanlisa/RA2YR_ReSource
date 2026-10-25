@@ -1,0 +1,1 @@
+{"addr": "0x006B23F0", "name": "sub_6B23F0", "decompiled": "void __cdecl sub_6B23F0()\n{\n  dword_B0B650 = (int)&VectorClass<UndoInfoStruct>::`vftable';\n  if ( dword_B0B654 && byte_B0B65D )\n  {\n    __3_YAXPAX_Z(dword_B0B654);\n    dword_B0B654 = 0;\n  }\n  byte_B0B65D = 0;\n  dword_B0B658 = 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

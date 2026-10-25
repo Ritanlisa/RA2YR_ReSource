@@ -1,0 +1,1 @@
+{"addr": "0x00474B20", "name": "HouseClass::WriteBuildingTypeNameToINI", "decompiled": "char __thiscall HouseClass::WriteBuildingTypeNameToINI(char *this, unsigned __int8 *Block, char *a3, int a4)\n{\n  return INIClass::SetString(this, Block, a3, *(char **)(*((_DWORD *)dword_B054D4 + a4) + 772));\n}\n", "changed": true, "error": null, "timestamp": "x128"}

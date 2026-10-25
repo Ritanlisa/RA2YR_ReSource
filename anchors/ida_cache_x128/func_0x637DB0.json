@@ -1,0 +1,1 @@
+{"addr": "0x00637DB0", "name": "ScriptAction::SetField10", "decompiled": "bool __thiscall ScriptAction::SetField10(ScriptAction *this)\n{\n  return !stru_AC4B48.__pad_194[24] || this != (ScriptAction *)4;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

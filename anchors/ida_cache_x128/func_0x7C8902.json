@@ -1,0 +1,1 @@
+{"addr": "0x007C8902", "name": "StringFromGUID2", "decompiled": "// attributes: thunk\nint __stdcall StringFromGUID2(const GUID *const rguid, LPOLESTR lpsz, int cchMax)\n{\n  return __imp_StringFromGUID2(rguid, lpsz, cchMax);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

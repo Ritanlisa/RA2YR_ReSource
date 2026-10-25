@@ -1,0 +1,1 @@
+{"addr": "0x00767BB0", "name": "ActivateScreenWDT", "decompiled": "ComPtr *__thiscall ActivateScreenWDT(void *this, ComPtr *a2, unsigned int a3)\n{\n  ActivateScreenWDT_Create(a2, (int)this + 8, a3);\n  return a2;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

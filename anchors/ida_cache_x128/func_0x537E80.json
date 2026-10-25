@@ -1,0 +1,1 @@
+{"addr": "0x00537E80", "name": "CreateTeamCommand::performAction_193", "decompiled": "char *CreateTeamCommand::performAction_193(CursorPositionCommandClass *this)\n{\n  return aCursorcheat;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

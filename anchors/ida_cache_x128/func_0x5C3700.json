@@ -1,0 +1,1 @@
+{"addr": "0x005C3700", "name": "MPCooperative::StubReturnFalse", "decompiled": "char MPCooperative::StubReturnFalse(MPCooperative *this)\n{\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

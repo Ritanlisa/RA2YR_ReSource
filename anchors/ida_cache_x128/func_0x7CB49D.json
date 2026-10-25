@@ -1,0 +1,1 @@
+{"addr": "0x007CB49D", "name": "_srand", "decompiled": "void __cdecl srand(unsigned int Seed)\n{\n  _getptd()[5] = Seed;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

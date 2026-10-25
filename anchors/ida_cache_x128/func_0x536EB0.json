@@ -1,0 +1,1 @@
+{"addr": "0x00536EB0", "name": "CreateTeamCommand::performAction_105", "decompiled": "char *__thiscall CreateTeamCommand::performAction_105(AllianceCommandClass *this)\n{\n  return aTogglealliance;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x0074AA10", "name": "VoxelAnimClass::SaveLoad_Prefix_0", "decompiled": "int __stdcall VoxelAnimClass::SaveLoad_Prefix_0(VoxelAnimClass *this, int *a2, int a3)\n{\n  return AbstractClass::SaveLoad_Prefix(&this->VoxelAnimClass_field_0x0, a2, a3);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

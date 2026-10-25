@@ -1,0 +1,1 @@
+{"addr": "0x007C872E", "name": "IsWindowEnabled", "decompiled": "// attributes: thunk\nBOOL __stdcall IsWindowEnabled(HWND hWnd)\n{\n  return __imp_IsWindowEnabled(hWnd);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

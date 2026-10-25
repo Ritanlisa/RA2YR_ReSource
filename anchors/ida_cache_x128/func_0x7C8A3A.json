@@ -1,0 +1,1 @@
+{"addr": "0x007C8A3A", "name": "ImmSetOpenStatus", "decompiled": "// attributes: thunk\nBOOL __stdcall ImmSetOpenStatus(HIMC a1, BOOL a2)\n{\n  return __imp_ImmSetOpenStatus(a1, a2);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x007B9D70", "name": "WWMouseClass::checkStatus", "decompiled": "int __thiscall WWMouseClass::checkStatus(WWMouseClass *this, int a2, int a3, int a4, int a5)\n{\n  return (*(int (__thiscall **)(WWMouseClass *))(*(_DWORD *)this->__pad_0 + 12))(this);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

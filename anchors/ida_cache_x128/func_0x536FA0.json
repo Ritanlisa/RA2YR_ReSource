@@ -1,0 +1,1 @@
+{"addr": "0x00536FA0", "name": "ToggleRepairModeCommandClass::Execute", "decompiled": "char __stdcall ToggleRepairModeCommandClass::Execute(ToggleRepairCommandClass *this)\n{\n  return BuildingClass::TogglePower2((BuildingClass *)&dword_87F7E8, -1);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

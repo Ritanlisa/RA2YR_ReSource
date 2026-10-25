@@ -1,0 +1,1 @@
+{"addr": "0x00477770", "name": "FileStraw_Destru::QueryInterface", "decompiled": "void *__thiscall FileStraw_Destru::QueryInterface(FileStraw *this, char a2)\n{\n  FileStraw::Destructor((Straw *)this);\n  if ( (a2 & 1) != 0 )\n    __3_YAXPAX_Z(this);\n  return this;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

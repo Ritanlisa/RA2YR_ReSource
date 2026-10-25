@@ -1,0 +1,1 @@
+{"addr": "0x00588DE0", "name": "MapClass::initCellVectors", "decompiled": "unsigned int __thiscall MapClass::initCellVectors(int this, int a2)\n{\n  if ( *(_BYTE *)(this + 12) )\n    return (a2 - *(_DWORD *)(this + 4)) / 0x24u;\n  else\n    return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x00512710", "name": "HouseTypeClass::GetTypeIdentifier", "decompiled": "int HouseTypeClass::GetTypeIdentifier(HouseTypeClass *this)\n{\n  return 14;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

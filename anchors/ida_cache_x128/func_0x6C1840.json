@@ -1,0 +1,1 @@
+{"addr": "0x006C1840", "name": "WinMain_Helper_6C1840", "decompiled": "_DWORD *__thiscall WinMain_Helper_6C1840(ObjectClass *this)\n{\n  this->vfptr1 = 0;\n  this->vfptr = (int)&TClassFactory<TActionClass>::`vftable';\n  return &this->vfptr;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

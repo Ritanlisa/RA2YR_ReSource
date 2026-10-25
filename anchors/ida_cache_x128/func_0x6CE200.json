@@ -1,0 +1,1 @@
+{"addr": "0x006CE200", "name": "SuperClass::StubReturn57", "decompiled": "int SuperClass::StubReturn57(SuperClass *this)\n{\n  return 57;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

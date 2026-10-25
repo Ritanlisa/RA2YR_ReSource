@@ -1,0 +1,1 @@
+{"addr": "0x007DCEAA", "name": "IsBadWritePtr", "decompiled": "// attributes: thunk\nBOOL __stdcall IsBadWritePtr(LPVOID lp, UINT_PTR ucb)\n{\n  return __imp_IsBadWritePtr(lp, ucb);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

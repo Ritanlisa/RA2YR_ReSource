@@ -1,0 +1,1 @@
+{"addr": "0x0041B910", "name": "AircraftClass::MissionStubReturnZero", "decompiled": "int __thiscall AircraftClass::MissionStubReturnZero(AircraftClass *this)\n{\n  return (*(int (__thiscall **)(AircraftClass *))(this->vfptr + 80))(this);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x006B81B0", "name": "SpawnManagerClass_25::SaveState", "decompiled": "int __thiscall SpawnManagerClass_25::SaveState(_VectorClass_PAUSpawnControl_SpawnManagerClass *this, int a2)\n{\n  return *(_DWORD *)(*(_DWORD *)&this->m_1[3] + 4 * a2);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

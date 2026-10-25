@@ -1,0 +1,1 @@
+{"addr": "0x004F1B00", "name": "Timer::Init", "decompiled": "DWORD *__thiscall Timer::Init(Timer *this, DWORD a2)\n{\n  *(_DWORD *)this->__pad_0 = Timer::GetTicks();\n  *(_DWORD *)&this->__pad_6[2] = a2;\n  return (DWORD *)this;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

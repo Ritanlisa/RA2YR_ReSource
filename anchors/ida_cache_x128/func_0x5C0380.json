@@ -1,0 +1,1 @@
+{"addr": "0x005C0380", "name": "AbstractClass::checkPathEnd", "decompiled": "int __thiscall AbstractClass::checkPathEnd(VQMovieHandle *this, int a2)\n{\n  return AbstractClass::getTotalValue(*(AbstractClass **)(this->currentFrame + 72), a2);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

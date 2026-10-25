@@ -1,0 +1,1 @@
+{"addr": "0x004E8E90", "name": "VectorClass_ptr_UnitTypeClass::Get", "decompiled": "int __thiscall VectorClass_ptr_UnitTypeClass::Get(_VectorClass_PAVUnitTypeClass *this, int a2)\n{\n  return *(_DWORD *)(*(_DWORD *)&this->m_1[3] + 4 * a2);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

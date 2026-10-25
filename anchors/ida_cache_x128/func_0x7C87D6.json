@@ -1,0 +1,1 @@
+{"addr": "0x007C87D6", "name": "RedrawWindow", "decompiled": "// attributes: thunk\nBOOL __stdcall RedrawWindow(HWND hWnd, const RECT *lprcUpdate, HRGN hrgnUpdate, UINT flags)\n{\n  return __imp_RedrawWindow(hWnd, lprcUpdate, hrgnUpdate, flags);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x0048E610", "name": "COMObject::GetMember09", "decompiled": "int __thiscall COMObject::GetMember09(ControlClass *this)\n{\n  return *((_DWORD *)this + 9);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

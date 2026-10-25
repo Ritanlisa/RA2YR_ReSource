@@ -1,0 +1,1 @@
+{"addr": "0x007177C0", "name": "TechnoClass::GetAudioEntry", "decompiled": "int __thiscall TechnoClass::GetAudioEntry(TechnoClass *this, int a2)\n{\n  return (int)this + 28 * a2 + 2200;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

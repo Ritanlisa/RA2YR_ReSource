@@ -1,0 +1,1 @@
+{"addr": "0x00430F60", "name": "sub_430F60", "decompiled": "_DWORD *__stdcall sub_430F60(_DWORD *a1)\n{\n  *a1 = 0;\n  a1[1] = 0;\n  return a1;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

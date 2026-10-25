@@ -1,0 +1,1 @@
+{"addr": "0x006C95E0", "name": "Delegate::GetField", "decompiled": "_DWORD *__thiscall Delegate::GetField(Delegate *this)\n{\n  this->m_items = 0;\n  this->m_count = 0;\n  this->Delegate_field_08 = 0;\n  *(_DWORD *)this->m_allocated = 0;\n  return &this->m_items;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

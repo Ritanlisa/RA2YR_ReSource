@@ -1,0 +1,1 @@
+{"addr": "0x0054E030", "name": "JumpjetLocomotionClass::SmallStub_54E030", "decompiled": "LONG __stdcall JumpjetLocomotionClass::SmallStub_54E030(int a1)\n{\n  return JumpjetLocomotionClass::AddRef((JumpjetLocomotionClass *)(a1 - 24));\n}\n", "changed": true, "error": null, "timestamp": "x128"}

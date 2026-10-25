@@ -1,0 +1,1 @@
+{"addr": "0x00595710", "name": "CSFClass::CopyString", "decompiled": "wchar_t *__thiscall CSFClass::CopyString(CSFClass *this)\n{\n  wchar_t *StringCSF; // eax\n\n  StringCSF = GetStringCSF(aTxtRandomMapDe, 0, aDRa2mdpostMapg, 3934);\n  return wcscpy((wchar_t *)this + 60, StringCSF);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

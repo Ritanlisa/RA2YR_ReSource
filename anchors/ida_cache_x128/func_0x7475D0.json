@@ -1,0 +1,1 @@
+{"addr": "0x007475D0", "name": "UnitTypeClass::GetDefaultDimensions", "decompiled": "unsigned int *UnitTypeClass::GetDefaultDimensions(UnitTypeClass *this)\n{\n  int v1; // esi\n\n  v1 = 2 * dword_B1D138;\n  this->vfptr = 256;\n  this->vfptr1 = 256;\n  this->vfptr2 = v1;\n  return (unsigned int *)this;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x005CC690", "name": "Map_Process_5CC690", "decompiled": "void __thiscall Map_Process_5CC690(ObjectClass *this)\n{\n  this->ambientSoundController[1] = 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x0076A7C0", "name": "MSFrameAnim::drawFrame", "decompiled": "_DWORD *__thiscall MSFrameAnim::drawFrame(MSFrameAnim *this)\n{\n  ComPtr::Constructor((ComPtr *)this);\n  this->vfptr = &rc_ptr<WorldDominationTour::Territory>::`vftable';\n  return &this->vfptr;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

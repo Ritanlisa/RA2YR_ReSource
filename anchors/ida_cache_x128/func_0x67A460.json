@@ -1,0 +1,1 @@
+{"addr": "0x0067A460", "name": "TypeList_VoxelAnim::Clear", "decompiled": "int __thiscall TypeList_VoxelAnim::Clear(_VectorClass_PBVVoxelAnimTypeClass *this, int a2)\n{\n  return *(_DWORD *)(*(_DWORD *)&this->m_1[3] + 4 * a2);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

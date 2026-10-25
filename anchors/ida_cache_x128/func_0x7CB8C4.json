@@ -1,0 +1,1 @@
+{"addr": "0x007CB8C4", "name": "_iswalnum", "decompiled": "int __cdecl iswalnum(wint_t C)\n{\n  return iswctype(C, 0x107u);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

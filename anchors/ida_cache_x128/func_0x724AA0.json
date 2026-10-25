@@ -1,0 +1,1 @@
+{"addr": "0x00724AA0", "name": "ToolTipManager::addRef", "decompiled": "char __stdcall ToolTipManager::addRef(ToolTipManager *this)\n{\n  return 1;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

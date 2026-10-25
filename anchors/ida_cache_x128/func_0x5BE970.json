@@ -1,0 +1,1 @@
+{"addr": "0x005BE970", "name": "Render_Render_5BE970", "decompiled": "int __stdcall Render_Render_5BE970(int a1)\n{\n  return stru_82D00C.Volume[7 * a1 + 1];\n}\n", "changed": true, "error": null, "timestamp": "x128"}

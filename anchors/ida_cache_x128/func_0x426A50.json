@@ -1,0 +1,1 @@
+{"addr": "0x00426A50", "name": "AnimFile::Load", "decompiled": "int __thiscall AnimFile::Load(AnimFile *this)\n{\n  int result; // eax\n\n  result = *((_DWORD *)this + 51);\n  if ( *((_BYTE *)this + 166) )\n    --result;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

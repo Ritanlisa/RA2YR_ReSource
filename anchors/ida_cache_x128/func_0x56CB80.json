@@ -1,0 +1,1 @@
+{"addr": "0x0056CB80", "name": "Cell::DecodeFlags", "decompiled": "int __thiscall Cell::DecodeFlags(Cell *this)\n{\n  return this->Cell_field_0x0 & 0xF | ((unsigned __int16)this->Cell_field_0x0 >> 12);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

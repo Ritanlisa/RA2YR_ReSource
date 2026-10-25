@@ -1,0 +1,1 @@
+{"addr": "0x005D05D0", "name": "MSPCXAnim_42::GetCount_8B", "decompiled": "unsigned int __thiscall MSPCXAnim_42::GetCount_8B(_DynamicVectorClass_VPoint2D *this, int a2)\n{\n  if ( LOBYTE(this->m_C) )\n    return (unsigned int)(a2 - *(_DWORD *)&this->m_1[3]) >> 3;\n  else\n    return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

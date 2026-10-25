@@ -1,0 +1,1 @@
+{"addr": "0x00642B30", "name": "LoadingScreen::FindLoadScreenAnim", "decompiled": "int __thiscall LoadingScreen::FindLoadScreenAnim(LoadingScreen *this)\n{\n  if ( *((_DWORD *)this + 32) )\n    return FindBuildingAnimByName(g_INI_Key_SovietLoad, 1);\n  else\n    return FindBuildingAnimByName(g_INI_Key_AlliedLoad, 1);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x0050E450", "name": "BuildLocation::InitCandidate", "decompiled": "_DWORD *__thiscall BuildLocation::InitCandidate(BuildLocation *this, int a2, _DWORD *a3)\n{\n  *(_DWORD *)this->__tail_0 = a2;\n  this->field_4 = *a3;\n  this->field_8 = 0;\n  this->field_C = 0;\n  return this->__tail_0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

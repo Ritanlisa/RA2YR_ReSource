@@ -1,0 +1,1 @@
+{"addr": "0x0074F3B0", "name": "?::Seek", "decompiled": "int __thiscall _::Seek(_DWORD *this, int a2)\n{\n  return *(_DWORD *)(*(this + 1) + 4 * a2);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x00636110", "name": "ReadPointerFromECX2", "decompiled": "int __thiscall ReadPointerFromECX2(ObjectClass *this)\n{\n  return this->vfptr;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

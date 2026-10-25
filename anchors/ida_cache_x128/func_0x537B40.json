@@ -1,0 +1,1 @@
+{"addr": "0x00537B40", "name": "ScreenCaptureCommandClass::Constructor", "decompiled": "_DWORD *__thiscall ScreenCaptureCommandClass::Constructor(ScreenCaptureCommandClass *this)\n{\n  *(_DWORD *)this->__tail_0 = &ScreenCaptureCommandClass::`vftable';\n  return this->__tail_0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

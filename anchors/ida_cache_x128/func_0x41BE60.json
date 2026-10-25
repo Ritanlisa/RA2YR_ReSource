@@ -1,0 +1,1 @@
+{"addr": "0x0041BE60", "name": "AircraftClass::LandingCheckStub", "decompiled": "int __thiscall AircraftClass::LandingCheckStub(IUnknown *this)\n{\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

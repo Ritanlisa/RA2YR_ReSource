@@ -1,0 +1,1 @@
+{"addr": "0x007BAB70", "name": "XSurface::entry_3C_", "decompiled": "char __stdcall XSurface::entry_3C_(\n        XSurface *this,\n        int a2,\n        int a3,\n        int a4,\n        int a5,\n        int a6,\n        int a7,\n        int a8,\n        int a9,\n        int a10,\n        int a11)\n{\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

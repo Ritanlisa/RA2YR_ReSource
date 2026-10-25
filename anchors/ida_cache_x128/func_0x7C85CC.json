@@ -1,0 +1,1 @@
+{"addr": "0x007C85CC", "name": "GetClientRect", "decompiled": "// attributes: thunk\nBOOL __stdcall GetClientRect(HWND hWnd, LPRECT lpRect)\n{\n  return __imp_GetClientRect(hWnd, lpRect);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

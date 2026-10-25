@@ -1,0 +1,1 @@
+{"addr": "0x004F4000", "name": "VectorCursor_uint_DynamicVectorClass_uint::ddtor", "decompiled": "_DWORD *__thiscall VectorCursor_uint_DynamicVectorClass_uint::ddtor(_VectorCursor_IV_DynamicVectorClass_I *this)\n{\n  --*((_DWORD *)this + 2);\n  return this->__pad_0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

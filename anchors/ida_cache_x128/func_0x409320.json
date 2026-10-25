@@ -1,0 +1,1 @@
+{"addr": "0x00409320", "name": "Audio::GetSampleSize", "decompiled": "int __thiscall Audio::GetSampleSize(Audio *this)\n{\n  return this->Audio_field_0x34 - this->Audio_field_0x38;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

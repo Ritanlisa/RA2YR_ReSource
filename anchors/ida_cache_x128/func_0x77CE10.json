@@ -1,0 +1,1 @@
+{"addr": "0x0077CE10", "name": "sub_77CE10", "decompiled": "int sub_77CE10()\n{\n  int result; // eax\n\n  result = dword_84A1C8 - dword_84A1C4 - 4;\n  dword_B765F0 = result;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

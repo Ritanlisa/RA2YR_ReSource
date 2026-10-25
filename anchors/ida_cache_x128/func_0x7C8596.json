@@ -1,0 +1,1 @@
+{"addr": "0x007C8596", "name": "ResetEvent", "decompiled": "// attributes: thunk\nBOOL __stdcall ResetEvent(HANDLE hEvent)\n{\n  return __imp_ResetEvent(hEvent);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x0041E500", "name": "AITriggerTypeClass::GetClassIdentifier", "decompiled": "int __stdcall AITriggerTypeClass::GetClassIdentifier(AITriggerTypeClass *this, _DWORD *a2)\n{\n  if ( !a2 )\n    return -2147467261;\n  *a2 = -1173801692;\n  a2[1] = 298994932;\n  a2[2] = 268445372;\n  a2[3] = 1303416651;\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

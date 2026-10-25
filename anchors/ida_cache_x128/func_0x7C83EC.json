@@ -1,0 +1,1 @@
+{"addr": "0x007C83EC", "name": "GetDriveTypeA", "decompiled": "// attributes: thunk\nUINT __stdcall GetDriveTypeA(LPCSTR lpRootPathName)\n{\n  return __imp_GetDriveTypeA(lpRootPathName);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

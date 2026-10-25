@@ -1,0 +1,1 @@
+{"addr": "0x007C8638", "name": "UpdateWindow", "decompiled": "// attributes: thunk\nBOOL __stdcall UpdateWindow(HWND hWnd)\n{\n  return __imp_UpdateWindow(hWnd);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

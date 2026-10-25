@@ -1,0 +1,1 @@
+{"addr": "0x007C88D8", "name": "OleLoadFromStream", "decompiled": "// attributes: thunk\nHRESULT __stdcall OleLoadFromStream(LPSTREAM pStm, const IID *const iidInterface, LPVOID *ppvObj)\n{\n  return __imp_OleLoadFromStream(pStm, iidInterface, ppvObj);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x007C8440", "name": "FreeLibrary", "decompiled": "// attributes: thunk\nBOOL __stdcall FreeLibrary(HMODULE hLibModule)\n{\n  return __imp_FreeLibrary(hLibModule);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

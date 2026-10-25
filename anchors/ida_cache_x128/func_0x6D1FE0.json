@@ -1,0 +1,1 @@
+{"addr": "0x006D1FE0", "name": "TacticalClass::AdjustForZShapeMove", "decompiled": "int *__stdcall TacticalClass::AdjustForZShapeMove(int *a1, _DWORD *a2)\n{\n  int v2; // kr08_4\n\n  v2 = 30 * a2[1] / 2 + 30 * *a2 / 2;\n  *a1 = (-60 * a2[1] / 2 + 60 * *a2 / 2) / 256;\n  a1[1] = v2 / 256;\n  return a1;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

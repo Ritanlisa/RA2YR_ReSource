@@ -1,0 +1,1 @@
+{"addr": "0x007D45A1", "name": "__un_inc_0", "decompiled": "wchar_t __cdecl _un_inc_0(wchar_t MbCh, ObjectClass *a2)\n{\n  wchar_t result; // ax\n\n  if ( MbCh != 0xFFFF )\n    return _ungetwc_lk(MbCh, a2);\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

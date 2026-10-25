@@ -1,0 +1,1 @@
+{"addr": "0x007C848E", "name": "VirtualProtect", "decompiled": "// attributes: thunk\nBOOL __stdcall VirtualProtect(LPVOID lpAddress, SIZE_T dwSize, DWORD flNewProtect, PDWORD lpflOldProtect)\n{\n  return __imp_VirtualProtect(lpAddress, dwSize, flNewProtect, lpflOldProtect);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

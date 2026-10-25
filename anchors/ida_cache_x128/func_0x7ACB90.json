@@ -1,0 +1,1 @@
+{"addr": "0x007ACB90", "name": "StartGameWOL_Start_7ACB90", "decompiled": "char __thiscall StartGameWOL_Start_7ACB90(ObjectClass *this, void *a2, int a3)\n{\n  if ( a3 < 0 || a3 >= this->vfptr )\n    return 0;\n  qmemcpy(a2, (const void *)(this->vfptr2 + 108 * a3), 0x6Cu);\n  return 1;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

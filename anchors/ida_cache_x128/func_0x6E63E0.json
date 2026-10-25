@@ -1,0 +1,1 @@
+{"addr": "0x006E63E0", "name": "TagTypeClass::PowerDrainUpdate", "decompiled": "int __thiscall TagTypeClass::PowerDrainUpdate(TagTypeClass *this, int *a2)\n{\n  AbstractTypeClass::ProcessPower((AbstractTypeClass *)this, a2);\n  return Power::TimerProcess((Checksummer *)a2, *((_DWORD *)this + 39));\n}\n", "changed": true, "error": null, "timestamp": "x128"}

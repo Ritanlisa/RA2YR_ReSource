@@ -1,0 +1,1 @@
+{"addr": "0x007C998C", "name": "_isdigit", "decompiled": "int __cdecl isdigit(int C)\n{\n  if ( (int)cbMultiByte <= 1 )\n    return *((_BYTE *)off_87C590 + 2 * C) & 4;\n  else\n    return _isctype(C, 4);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

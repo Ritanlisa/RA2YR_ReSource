@@ -1098,311 +1098,320 @@ namespace gamemd {
 DynamicVectorClass_flat * * TechnoTypeClass::SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1)
 {
 
-  int v37; // [esp+284h] [ebp-20Ch] BYREF
-
-  TypeList *v3 = &aP0->q3E8; // ebp /*0x716307*/
-  (*(void (**)(unsigned char *))(*&aP0->u32_98 + 12))(&aP0->u32_98); /*0x71630f*/
-  (*(void (**)(unsigned char *))(*&aP0->u32_98 + 12))(&aP0->u32_98); /*0x716320*/
-  (*(void (**)(unsigned char *))(*&aP0->u32_98 + 12))(&aP0->u32_98); /*0x71632f*/
-  (*(void (**)(unsigned char *))(*&aP0->u32_98 + 12))(&aP0->u32_98); /*0x71633e*/
-  (*(void (**)(unsigned char *))(*&aP0->u32_98 + 12))(&aP0->u32_98); /*0x71634d*/
-  (*(void (**)(unsigned char *))(*&aP0->u32_98 + 12))(&aP0->u32_98); /*0x71635c*/
-  (*(void (**)(unsigned char *))(*&aP0->u32_98 + 12))(&aP0->u32_98); /*0x71636b*/
-  (*(void (**)(unsigned char *))(*&aP0->u32_98 + 12))(&aP0->u32_98); /*0x71637a*/
-  (*(void (**)(unsigned char *))(*&aP0->u32_98 + 12))(&aP0->u32_98); /*0x716389*/
-  (*(void (**)(unsigned char *))(*&aP0->u32_98 + 12))(&aP0->u32_98); /*0x716398*/
-  (*(void (**)(unsigned char *))(*&aP0->u32_98 + 12))(&aP0->u32_98); /*0x7163a7*/
-  (*(void (**)(unsigned char *))(*&aP0->u32_98 + 12))(&aP0->u32_98); /*0x7163b6*/
-  (*(void (**)(unsigned char *))(*&aP0->u32_98 + 12))(&aP0->u32_98); /*0x7163c5*/
-  (*(void (**)(unsigned char *))(*&aP0->u32_98 + 12))(&aP0->u32_98); /*0x7163d4*/
-  (*(void (**)(unsigned char *))(*&aP0->u32_98 + 12))(&aP0->u32_98); /*0x7163e3*/
-  (*(void (**)(unsigned char *))(*&aP0->u32_98 + 12))(&aP0->u32_98); /*0x7163f2*/
-  (*(void (**)(unsigned char *))(*&aP0->u32_98 + 12))(&aP0->u32_98); /*0x716401*/
-  (*(void (**)(unsigned char *))(*&aP0->u32_98 + 12))(&aP0->u32_98); /*0x716410*/
+  TypeList *Dock; // ebp
   int result; // eax
-  result = ObjectTypeClass::LoadCleanup((ObjectTypeClass *)aP0, aP1); /*0x71641c*/
-  if ( result >= 0 ) /*0x716423*/
+  int j; // ebp
+  int k; // ebx
+  int m; // ebx
+  int n; // ebx
+  int ii; // ebx
+  int jj; // ebx
+  int kk; // ebx
+  int mm; // ebx
+  int nn; // ebx
+  int i1; // ebx
+  int i2; // ebx
+  int i3; // ebx
+  int i4; // ebx
+  int i5; // ebx
+  int i6; // ebx
+  int i7; // ebx
+  int i8; // ebx
+  int i9; // ebx
+  int i10; // ebx
+  int i11; // esi
+  int i12; // esi
+  int i13; // esi
+  int i14; // esi
+  int i15; // esi
+  int *Weapon; // esi
+  int v30; // ebx
+  int *EliteWeapon; // esi
+  int v32; // ebx
+  int i16; // esi
+  int i17; // esi
+  void *v35; // eax
+  int v36; // [esp+280h] [ebp-210h] BYREF
+  int v37; // [esp+284h] [ebp-20Ch] BYREF
+  int i; // [esp+288h] [ebp-208h]
+  char Filename[256]; // [esp+28Ch] [ebp-204h] BYREF
+  char Buffer[260]; // [esp+38Ch] [ebp-104h] BYREF
+
+  Dock = (TypeList *)this->Dock;
+  (*(void (**)(int *))(this->Dock[0] + 12))(this->Dock);
+  (*(void (**)(int *))(this->DebrisTypes[0] + 12))(this->DebrisTypes);
+  (*(void (**)(int *))(this->DebrisAnims[0] + 12))(this->DebrisAnims);
+  (*(void (**)(int *))(this->VoiceSelect[0] + 12))(this->VoiceSelect);
+  (*(void (**)(int *))(this->VoiceSelectEnslaved[0] + 12))(this->VoiceSelectEnslaved);
+  (*(void (**)(int *))(this->VoiceSelectDeactivated[0] + 12))(this->VoiceSelectDeactivated);
+  (*(void (**)(int *))(this->VoiceMove[0] + 12))(this->VoiceMove);
+  (*(void (**)(int *))(this->VoiceAttack[0] + 12))(this->VoiceAttack);
+  (*(void (**)(int *))(this->VoiceSpecialAttack[0] + 12))(this->VoiceSpecialAttack);
+  (*(void (**)(int *))(this->VoiceDie[0] + 12))(this->VoiceDie);
+  (*(void (**)(int *))(this->VoiceFeedback[0] + 12))(this->VoiceFeedback);
+  (*(void (**)(int *))(this->MoveSound[0] + 12))(this->MoveSound);
+  (*(void (**)(int *))(this->DieSound[0] + 12))(this->DieSound);
+  (*(void (**)(int *))(this->Explosion[0] + 12))(this->Explosion);
+  (*(void (**)(int *))(this->DestroyAnim[0] + 12))(this->DestroyAnim);
+  (*(void (**)(int *))(this->Prerequisite[0] + 12))(this->Prerequisite);
+  (*(void (**)(int *))(this->PrerequisiteOverride[0] + 12))(this->PrerequisiteOverride);
+  (*(void (**)(int *))(this->DebrisMaximums[0] + 12))(this->DebrisMaximums);
+  result = ObjectTypeClass::LoadCleanup((ObjectTypeClass *)this, a2);
+  if ( result >= 0 )
   {
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->u32_98); /*0x716435*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->u32_98); /*0x716446*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->u32_98); /*0x716457*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->u32_98); /*0x716468*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->u32_98); /*0x716479*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, aP0->JumpjetAccel); /*0x71648a*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, aP0->SuppressionThreshold); /*0x71649b*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->u32_98); /*0x7164ac*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->u32_98); /*0x7164bd*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->u32_98); /*0x7164ce*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->u32_98); /*0x7164df*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->u32_98); /*0x7164f0*/
-    if ( aP0 != (TechnoTypeClass *)-1000 ) /*0x7164f7*/
-      TypeList::BuildingTypeConstructor(v3); /*0x7164fb*/
-    int v36; // [esp+280h] [ebp-210h] BYREF
-    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))(aP1, &v36, 4, 0); /*0x71650c*/
-    int i; // [esp+288h] [ebp-208h]
-    for ( i = 0; i < v36; ++i ) /*0x71651d*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->DeploysInto);
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->UndeploysInto);
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->PowersUnit);
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->NaturalParticleSystem);
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->RefinerySmokeParticleSystem);
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->JumpjetAccel);
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->SuppressionThreshold);
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->SlavesNumber);
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->AirstrikeTeamType);
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->EliteAirstrikeTeamType);
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->UnloadingClass);
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->DeployingAnim);
+    if ( this != (TechnoTypeClass *)-1000 )
+      TypeList::BuildingTypeConstructor(Dock);
+    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v36, 4, 0);
+    for ( i = 0; i < v36; ++i )
     {
-      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))(aP1, &v37, 4, 0); /*0x71652b*/
-      DynamicVector::Add_Alt3((DynamicVector *)v3, &v37); /*0x716535*/
+      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v37, 4, 0);
+      DynamicVector::Add_Alt3((DynamicVector *)Dock, &v37);
     }
-    if ( aP0 != (TechnoTypeClass *)-788 ) /*0x71654d*/
-      TypeList::VoxelAnimConstructor(&aP0->u32_98); /*0x716551*/
-    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))(aP1, &v36, 4, 0); /*0x716562*/
-    int j; // ebp
-    for ( j = 0; j < v36; ++j ) /*0x71656d*/
+    if ( this != (TechnoTypeClass *)-788 )
+      TypeList::VoxelAnimConstructor((TypeList *)this->DebrisTypes);
+    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v36, 4, 0);
+    for ( j = 0; j < v36; ++j )
     {
-      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))(aP1, &v37, 4, 0); /*0x71657b*/
-      DynamicVector::Add2(&aP0->u32_98, &v37); /*0x716585*/
+      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v37, 4, 0);
+      DynamicVector::Add2((DynamicVector *)this->DebrisTypes, &v37);
     }
-    if ( aP0 != (TechnoTypeClass *)-1476 ) /*0x716599*/
-      AnimTypeList::Constructor(&aP0->u32_98); /*0x71659d*/
-    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))(aP1, &v36, 4, 0); /*0x7165ae*/
-    int k; // ebx
-    for ( k = 0; k < v36; ++k ) /*0x7165b9*/
+    if ( this != (TechnoTypeClass *)-1476 )
+      AnimTypeList::Constructor((AnimTypeList *)this->DebrisAnims);
+    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v36, 4, 0);
+    for ( k = 0; k < v36; ++k )
     {
-      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))(aP1, &v37, 4, 0); /*0x7165c7*/
-      DynamicVector::Add_Alt4(&aP0->u32_98, &v37); /*0x7165d1*/
+      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v37, 4, 0);
+      DynamicVector::Add_Alt4((DynamicVector *)this->DebrisAnims, &v37);
     }
-    if ( aP0 != (TechnoTypeClass *)-1044 ) /*0x7165e5*/
-      TypeList::Construct(&aP0->u32_98); /*0x7165e9*/
-    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))(aP1, &v36, 4, 0); /*0x7165fa*/
-    int m; // ebx
-    for ( m = 0; m < v36; ++m ) /*0x716605*/
+    if ( this != (TechnoTypeClass *)-1044 )
+      TypeList::Construct((TypeList *)this->VoiceSelect);
+    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v36, 4, 0);
+    for ( m = 0; m < v36; ++m )
     {
-      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))(aP1, &v37, 4, 0); /*0x716613*/
-      DynamicVector::Add_Alt(&aP0->u32_98, &v37); /*0x71661d*/
+      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v37, 4, 0);
+      DynamicVector::Add_Alt((DynamicVector *)this->VoiceSelect, &v37);
     }
-    if ( aP0 != (TechnoTypeClass *)-1072 ) /*0x716631*/
-      TypeList::Construct(&aP0->u32_98); /*0x716635*/
-    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))(aP1, &v36, 4, 0); /*0x716646*/
-    int n; // ebx
-    for ( n = 0; n < v36; ++n ) /*0x716651*/
+    if ( this != (TechnoTypeClass *)-1072 )
+      TypeList::Construct((TypeList *)this->VoiceSelectEnslaved);
+    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v36, 4, 0);
+    for ( n = 0; n < v36; ++n )
     {
-      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))(aP1, &v37, 4, 0); /*0x71665f*/
-      DynamicVector::Add_Alt(&aP0->u32_98, &v37); /*0x716669*/
+      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v37, 4, 0);
+      DynamicVector::Add_Alt((DynamicVector *)this->VoiceSelectEnslaved, &v37);
     }
-    if ( aP0 != (TechnoTypeClass *)-1100 ) /*0x71667d*/
-      TypeList::Construct(&aP0->u32_98); /*0x716681*/
-    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))(aP1, &v36, 4, 0); /*0x716692*/
-    int ii; // ebx
-    for ( ii = 0; ii < v36; ++ii ) /*0x71669d*/
+    if ( this != (TechnoTypeClass *)-1100 )
+      TypeList::Construct((TypeList *)this->VoiceSelectDeactivated);
+    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v36, 4, 0);
+    for ( ii = 0; ii < v36; ++ii )
     {
-      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))(aP1, &v37, 4, 0); /*0x7166ab*/
-      DynamicVector::Add_Alt(&aP0->u32_98, &v37); /*0x7166b5*/
+      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v37, 4, 0);
+      DynamicVector::Add_Alt((DynamicVector *)this->VoiceSelectDeactivated, &v37);
     }
-    if ( aP0 != (TechnoTypeClass *)-1128 ) /*0x7166c9*/
-      TypeList::Construct(&aP0->u32_98); /*0x7166cd*/
-    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))(aP1, &v36, 4, 0); /*0x7166de*/
-    int jj; // ebx
-    for ( jj = 0; jj < v36; ++jj ) /*0x7166e9*/
+    if ( this != (TechnoTypeClass *)-1128 )
+      TypeList::Construct((TypeList *)this->VoiceMove);
+    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v36, 4, 0);
+    for ( jj = 0; jj < v36; ++jj )
     {
-      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))(aP1, &v37, 4, 0); /*0x7166f7*/
-      DynamicVector::Add_Alt(&aP0->u32_98, &v37); /*0x716701*/
+      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v37, 4, 0);
+      DynamicVector::Add_Alt((DynamicVector *)this->VoiceMove, &v37);
     }
-    if ( aP0 != (TechnoTypeClass *)-1156 ) /*0x716715*/
-      TypeList::Construct(&aP0->u32_98); /*0x716719*/
-    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))(aP1, &v36, 4, 0); /*0x71672a*/
-    int kk; // ebx
-    for ( kk = 0; kk < v36; ++kk ) /*0x716735*/
+    if ( this != (TechnoTypeClass *)-1156 )
+      TypeList::Construct((TypeList *)this->VoiceAttack);
+    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v36, 4, 0);
+    for ( kk = 0; kk < v36; ++kk )
     {
-      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))(aP1, &v37, 4, 0); /*0x716743*/
-      DynamicVector::Add_Alt(&aP0->u32_98, &v37); /*0x71674d*/
+      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v37, 4, 0);
+      DynamicVector::Add_Alt((DynamicVector *)this->VoiceAttack, &v37);
     }
-    if ( aP0 != (TechnoTypeClass *)-1184 ) /*0x716761*/
-      TypeList::Construct(&aP0->u32_98); /*0x716765*/
-    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))(aP1, &v36, 4, 0); /*0x716776*/
-    int mm; // ebx
-    for ( mm = 0; mm < v36; ++mm ) /*0x716781*/
+    if ( this != (TechnoTypeClass *)-1184 )
+      TypeList::Construct((TypeList *)this->VoiceSpecialAttack);
+    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v36, 4, 0);
+    for ( mm = 0; mm < v36; ++mm )
     {
-      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))(aP1, &v37, 4, 0); /*0x71678f*/
-      DynamicVector::Add_Alt(&aP0->u32_98, &v37); /*0x716799*/
+      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v37, 4, 0);
+      DynamicVector::Add_Alt((DynamicVector *)this->VoiceSpecialAttack, &v37);
     }
-    if ( aP0 != (TechnoTypeClass *)-1212 ) /*0x7167ad*/
-      TypeList::Construct(&aP0->u32_98); /*0x7167b1*/
-    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))(aP1, &v36, 4, 0); /*0x7167c2*/
-    int nn; // ebx
-    for ( nn = 0; nn < v36; ++nn ) /*0x7167cd*/
+    if ( this != (TechnoTypeClass *)-1212 )
+      TypeList::Construct((TypeList *)this->VoiceDie);
+    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v36, 4, 0);
+    for ( nn = 0; nn < v36; ++nn )
     {
-      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))(aP1, &v37, 4, 0); /*0x7167db*/
-      DynamicVector::Add_Alt(&aP0->u32_98, &v37); /*0x7167e5*/
+      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v37, 4, 0);
+      DynamicVector::Add_Alt((DynamicVector *)this->VoiceDie, &v37);
     }
-    if ( aP0 != (TechnoTypeClass *)-1240 ) /*0x7167f9*/
-      TypeList::Construct(&aP0->u32_98); /*0x7167fd*/
-    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))(aP1, &v36, 4, 0); /*0x71680e*/
-    int i1; // ebx
-    for ( i1 = 0; i1 < v36; ++i1 ) /*0x716819*/
+    if ( this != (TechnoTypeClass *)-1240 )
+      TypeList::Construct((TypeList *)this->VoiceFeedback);
+    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v36, 4, 0);
+    for ( i1 = 0; i1 < v36; ++i1 )
     {
-      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))(aP1, &v37, 4, 0); /*0x716827*/
-      DynamicVector::Add_Alt(&aP0->u32_98, &v37); /*0x716831*/
+      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v37, 4, 0);
+      DynamicVector::Add_Alt((DynamicVector *)this->VoiceFeedback, &v37);
     }
-    if ( aP0 != (TechnoTypeClass *)-1268 ) /*0x716845*/
-      TypeList::Construct(&aP0->u32_98); /*0x716849*/
-    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))(aP1, &v36, 4, 0); /*0x71685a*/
-    int i2; // ebx
-    for ( i2 = 0; i2 < v36; ++i2 ) /*0x716865*/
+    if ( this != (TechnoTypeClass *)-1268 )
+      TypeList::Construct((TypeList *)this->MoveSound);
+    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v36, 4, 0);
+    for ( i2 = 0; i2 < v36; ++i2 )
     {
-      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))(aP1, &v37, 4, 0); /*0x716873*/
-      DynamicVector::Add_Alt(&aP0->u32_98, &v37); /*0x71687d*/
+      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v37, 4, 0);
+      DynamicVector::Add_Alt((DynamicVector *)this->MoveSound, &v37);
     }
-    if ( aP0 != (TechnoTypeClass *)-1296 ) /*0x716891*/
-      TypeList::Construct(&aP0->u32_98); /*0x716895*/
-    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))(aP1, &v36, 4, 0); /*0x7168a6*/
-    int i3; // ebx
-    for ( i3 = 0; i3 < v36; ++i3 ) /*0x7168b1*/
+    if ( this != (TechnoTypeClass *)-1296 )
+      TypeList::Construct((TypeList *)this->DieSound);
+    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v36, 4, 0);
+    for ( i3 = 0; i3 < v36; ++i3 )
     {
-      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))(aP1, &v37, 4, 0); /*0x7168bf*/
-      DynamicVector::Add_Alt(&aP0->u32_98, &v37); /*0x7168c9*/
+      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v37, 4, 0);
+      DynamicVector::Add_Alt((DynamicVector *)this->DieSound, &v37);
     }
-    if ( aP0 != (TechnoTypeClass *)-1836 ) /*0x7168dd*/
-      AnimTypeList::Constructor(&aP0->u32_98); /*0x7168e1*/
-    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))(aP1, &v36, 4, 0); /*0x7168f2*/
-    int i4; // ebx
-    for ( i4 = 0; i4 < v36; ++i4 ) /*0x7168fd*/
+    if ( this != (TechnoTypeClass *)-1836 )
+      AnimTypeList::Constructor((AnimTypeList *)this->Explosion);
+    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v36, 4, 0);
+    for ( i4 = 0; i4 < v36; ++i4 )
     {
-      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))(aP1, &v37, 4, 0); /*0x71690b*/
-      DynamicVector::Add_Alt4(&aP0->u32_98, &v37); /*0x716915*/
+      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v37, 4, 0);
+      DynamicVector::Add_Alt4((DynamicVector *)this->Explosion, &v37);
     }
-    if ( aP0 != (TechnoTypeClass *)-1864 ) /*0x716929*/
-      AnimTypeList::Constructor(&aP0->u32_98); /*0x71692d*/
-    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))(aP1, &v36, 4, 0); /*0x71693e*/
-    int i5; // ebx
-    for ( i5 = 0; i5 < v36; ++i5 ) /*0x716949*/
+    if ( this != (TechnoTypeClass *)-1864 )
+      AnimTypeList::Constructor((AnimTypeList *)this->DestroyAnim);
+    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v36, 4, 0);
+    for ( i5 = 0; i5 < v36; ++i5 )
     {
-      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))(aP1, &v37, 4, 0); /*0x716957*/
-      DynamicVector::Add_Alt4(&aP0->u32_98, &v37); /*0x716961*/
+      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v37, 4, 0);
+      DynamicVector::Add_Alt4((DynamicVector *)this->DestroyAnim, &v37);
     }
-    if ( aP0 != (TechnoTypeClass *)-816 ) /*0x716975*/
-      TypeList::Construct(&aP0->u32_98); /*0x716979*/
-    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))(aP1, &v36, 4, 0); /*0x71698a*/
-    int i6; // ebx
-    for ( i6 = 0; i6 < v36; ++i6 ) /*0x716995*/
+    if ( this != (TechnoTypeClass *)-816 )
+      TypeList::Construct((TypeList *)this->DebrisMaximums);
+    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v36, 4, 0);
+    for ( i6 = 0; i6 < v36; ++i6 )
     {
-      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))(aP1, &v37, 4, 0); /*0x7169a3*/
-      DynamicVector::Add_Alt(&aP0->u32_98, &v37); /*0x7169ad*/
+      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v37, 4, 0);
+      DynamicVector::Add_Alt((DynamicVector *)this->DebrisMaximums, &v37);
     }
-    if ( aP0 != (TechnoTypeClass *)-1592 ) /*0x7169c1*/
-      TypeList::Construct(&aP0->u32_98); /*0x7169c5*/
-    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))(aP1, &v36, 4, 0); /*0x7169d6*/
-    int i7; // ebx
-    for ( i7 = 0; i7 < v36; ++i7 ) /*0x7169e1*/
+    if ( this != (TechnoTypeClass *)-1592 )
+      TypeList::Construct((TypeList *)this->Prerequisite);
+    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v36, 4, 0);
+    for ( i7 = 0; i7 < v36; ++i7 )
     {
-      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))(aP1, &v37, 4, 0); /*0x7169ef*/
-      DynamicVector::Add_Alt(&aP0->u32_98, &v37); /*0x7169f9*/
+      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v37, 4, 0);
+      DynamicVector::Add_Alt((DynamicVector *)this->Prerequisite, &v37);
     }
-    if ( aP0 != (TechnoTypeClass *)-1620 ) /*0x716a0d*/
-      TypeList::Construct(&aP0->u32_98); /*0x716a11*/
-    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))(aP1, &v36, 4, 0); /*0x716a22*/
-    int i8; // ebx
-    for ( i8 = 0; i8 < v36; ++i8 ) /*0x716a2d*/
+    if ( this != (TechnoTypeClass *)-1620 )
+      TypeList::Construct((TypeList *)this->PrerequisiteOverride);
+    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v36, 4, 0);
+    for ( i8 = 0; i8 < v36; ++i8 )
     {
-      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))(aP1, &v37, 4, 0); /*0x716a3b*/
-      DynamicVector::Add_Alt(&aP0->u32_98, &v37); /*0x716a45*/
+      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v37, 4, 0);
+      DynamicVector::Add_Alt((DynamicVector *)this->PrerequisiteOverride, &v37);
     }
-    if ( aP0 != (TechnoTypeClass *)-1912 ) /*0x716a59*/
-      TechnoTypeClass::Constructor(&aP0->u32_98); /*0x716a5d*/
-    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))(aP1, &v36, 4, 0); /*0x716a6e*/
-    int i9; // ebx
-    for ( i9 = 0; i9 < v36; ++i9 ) /*0x716a79*/
+    if ( this != (TechnoTypeClass *)-1912 )
+      TechnoTypeClass::Constructor((TechnoTypeClass *)this->DamageParticleSystems);
+    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v36, 4, 0);
+    for ( i9 = 0; i9 < v36; ++i9 )
     {
-      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))(aP1, &v37, 4, 0); /*0x716a87*/
-      TypeList::PushBack(&aP0->u32_98, &v37); /*0x716a91*/
+      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v37, 4, 0);
+      TypeList::PushBack((TypeList *)this->DamageParticleSystems, &v37);
     }
-    if ( aP0 != (TechnoTypeClass *)-1940 ) /*0x716aa5*/
-      TechnoTypeClass::Constructor(&aP0->u32_98); /*0x716aa9*/
-    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))(aP1, &v36, 4, 0); /*0x716aba*/
-    int i10; // ebx
-    for ( i10 = 0; i10 < v36; ++i10 ) /*0x716ac5*/
+    if ( this != (TechnoTypeClass *)-1940 )
+      TechnoTypeClass::Constructor((TechnoTypeClass *)this->DestroyParticleSystems);
+    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v36, 4, 0);
+    for ( i10 = 0; i10 < v36; ++i10 )
     {
-      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))(aP1, &v37, 4, 0); /*0x716ad3*/
-      TypeList::PushBack(&aP0->u32_98, &v37); /*0x716add*/
+      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v37, 4, 0);
+      TypeList::PushBack((TypeList *)this->DestroyParticleSystems, &v37);
     }
-    int i11; // esi
-    for ( i11 = 0; i11 < *&aP0->u32_98; ++i11 ) /*0x716af3*/
-      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(*&aP0->u32_98 + 4 * i11)); /*0x716b04*/
-    int i12; // esi
-    for ( i12 = 0; i12 < *&aP0->u32_98; ++i12 ) /*0x716b1e*/
-      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(*&aP0->u32_98 + 4 * i12)); /*0x716b2f*/
-    int i13; // esi
-    for ( i13 = 0; i13 < *&aP0->u32_98; ++i13 ) /*0x716b49*/
-      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(*&aP0->u32_98 + 4 * i13)); /*0x716b5a*/
-    int i14; // esi
-    for ( i14 = 0; i14 < *&aP0->u32_98; ++i14 ) /*0x716b74*/
-      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(*&aP0->u32_98 + 4 * i14)); /*0x716b85*/
-    int i15; // esi
-    for ( i15 = 0; i15 < *&aP0->u32_98; ++i15 ) /*0x716b9f*/
-      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(*&aP0->u32_98 + 4 * i15)); /*0x716bb0*/
-    int *v29 = &aP0->u32_98; // esi /*0x716bc0*/
-    int v30 = 18; // ebx /*0x716bc6*/
-    do /*0x716bda*/
+    for ( i11 = 0; i11 < this->Dock[4]; ++i11 )
+      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(this->Dock[1] + 4 * i11));
+    for ( i12 = 0; i12 < this->Explosion[4]; ++i12 )
+      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(this->Explosion[1] + 4 * i12));
+    for ( i13 = 0; i13 < this->DestroyAnim[4]; ++i13 )
+      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(this->DestroyAnim[1] + 4 * i13));
+    for ( i14 = 0; i14 < this->DebrisTypes[4]; ++i14 )
+      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(this->DebrisTypes[1] + 4 * i14));
+    for ( i15 = 0; i15 < this->DebrisAnims[4]; ++i15 )
+      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(this->DebrisAnims[1] + 4 * i15));
+    Weapon = (int *)this->Weapon;
+    v30 = 18;
+    do
     {
-      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v29); /*0x716bd1*/
-      v29 += 7; /*0x716bd6*/
-      --v30; /*0x716bd9*/
+      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, Weapon);
+      Weapon += 7;
+      --v30;
     }
-    while ( v30 ); /*0x716bda*/
-    int *v31 = &aP0->u32_98; // esi /*0x716bdc*/
-    int v32 = 18; // ebx /*0x716be2*/
-    do /*0x716bf6*/
+    while ( v30 );
+    EliteWeapon = (int *)this->EliteWeapon;
+    v32 = 18;
+    do
     {
-      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v31); /*0x716bed*/
-      v31 += 7; /*0x716bf2*/
-      --v32; /*0x716bf5*/
+      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, EliteWeapon);
+      EliteWeapon += 7;
+      --v32;
     }
-    while ( v32 ); /*0x716bf6*/
-    int i16; // esi
-    for ( i16 = 0; i16 < *&aP0->u32_98; ++i16 ) /*0x716c04*/
-      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(*&aP0->u32_98 + 4 * i16)); /*0x716c15*/
-    int i17; // esi
-    for ( i17 = 0; i17 < *&aP0->u32_98; ++i17 ) /*0x716c2f*/
-      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(*&aP0->u32_98 + 4 * i17)); /*0x716c40*/
-    char Buffer[260]; // [esp+38Ch] [ebp-104h] BYREF
-    _makepath(Buffer, 0, 0, &aP0->u32_98, Ext); /*0x716c66*/
-    aP0->ObjectTypeClass[41] = (int)SearchMIXFile(Buffer, 0); /*0x716c96*/
-    char Filename[256]; // [esp+28Ch] [ebp-204h] BYREF
-    INIClass::GetString( /*0x716c9c*/
-      (INIClass *)&DataGlobal_887180,
-      &aP0->?[276],
-      (unsigned __int8 *)&g_INI_Key_TRUCKA.?,
-      &g_INI_Key_TRUCKA.__pad_1714[80],
+    while ( v32 );
+    for ( i16 = 0; i16 < this->DamageParticleSystems[4]; ++i16 )
+      ObjectPtr::RegisterForTracking(
+        (int)&SwizzleManagerClass_Instance,
+        (int *)(this->DamageParticleSystems[1] + 4 * i16));
+    for ( i17 = 0; i17 < this->DestroyParticleSystems[4]; ++i17 )
+      ObjectPtr::RegisterForTracking(
+        (int)&SwizzleManagerClass_Instance,
+        (int *)(this->DestroyParticleSystems[1] + 4 * i17));
+    _makepath(Buffer, 0, 0, this->ImageFile, Ext);
+    this->Image = (int)SearchMIXFile(Buffer, 0);
+    INIClass::GetString(
+      &dword_887180,
+      (unsigned __int8 *)this->ImageFile,
+      (unsigned __int8 *)&stru_842DD4.VoiceHarvest,
+      &stru_842DD4.__pad_1714[72],
       Filename,
       256);
-    if ( !_strcmpi(Filename, &g_INI_Key_TRUCKA.__pad_1714[80]) ) /*0x716cab*/
-      INIClass::GetString( /*0x716cd4*/
-        (INIClass *)&DataGlobal_887180,
-        (unsigned __int8 *)&aP0->ObjectTypeClass[9],
-        (unsigned __int8 *)&g_INI_Key_TRUCKA.?,
-        &g_INI_Key_TRUCKA.__pad_1714[80],
+    if ( !_strcmpi(Filename, &stru_842DD4.__pad_1714[72]) )
+      INIClass::GetString(
+        &dword_887180,
+        (unsigned __int8 *)this->__pad_24,
+        (unsigned __int8 *)&stru_842DD4.VoiceHarvest,
+        &stru_842DD4.__pad_1714[72],
         Filename,
         256);
-    _makepath(Buffer, 0, 0, Filename, Ext); /*0x716ced*/
-    *&aP0->u32_98 = 0; /*0x716cfe*/
-    void *v35; // eax
-    v35 = SearchMIXFile(Buffer, 0); /*0x716d04*/
-    *&aP0->u32_98 = v35; /*0x716d0b*/
-    if ( !v35 ) /*0x716d11*/
-      *&aP0->u32_98 = SearchMIXFile(&stru_820320.?[143], 0); /*0x716d1f*/
-    INIClass::GetString( /*0x716d3f*/
-      (INIClass *)&DataGlobal_887180,
-      &aP0->?[276],
-      (unsigned __int8 *)&g_INI_Key_TRUCKA.?,
+    _makepath(Buffer, 0, 0, Filename, Ext);
+    this->Cameo = 0;
+    v35 = SearchMIXFile(Buffer, 0);
+    this->Cameo = (int)v35;
+    if ( !v35 )
+      this->Cameo = (int)SearchMIXFile(aXxiconShp, 0);
+    INIClass::GetString(
+      &dword_887180,
+      (unsigned __int8 *)this->ImageFile,
+      (unsigned __int8 *)&stru_842DD4.UndeploySound,
       &g_INI_DefaultBuffer,
       Filename,
       256);
-    _makepath(Buffer, 0, 0, Filename, Ext); /*0x716d58*/
-    *&aP0->u32_98 = 0; /*0x716d69*/
-    *&aP0->u32_98 = SearchMIXFile(Buffer, 0); /*0x716d8d*/
-    INIClass::GetString( /*0x716d93*/
-      (INIClass *)&DataGlobal_887180,
-      &aP0->?[276],
+    _makepath(Buffer, 0, 0, Filename, Ext);
+    this->AltCameo = 0;
+    this->AltCameo = (int)SearchMIXFile(Buffer, 0);
+    INIClass::GetString(
+      &dword_887180,
+      (unsigned __int8 *)this->ImageFile,
       (unsigned __int8 *)g_INI_Key_Palette,
       &g_INI_DefaultBuffer,
-      (char *)&aP0->? + 1,
+      &this->__pad_DC8[8],
       32);
-    if ( BYTE1(aP0->u32_98) ) /*0x716d98*/
-      *(int *)aP0->u32_98 + 1) = FileExtension::MapHandler((const char *)&aP0->u32_98 + 1); /*0x716da4*/
-    return 0; /*0x716daa*/
+    if ( this->__pad_DC8[8] )
+      *(unsigned int *)&this->__pad_DC8[40] = FileExtension::MapHandler(&this->__pad_DC8[8]);
+    return 0;
   }
-  return result; /*0x716dac*/
+  return result;
 
 }
 } // namespace gamemd
@@ -1411,80 +1420,89 @@ namespace gamemd {
 int TechnoTypeClass::SaveLoad_Prefix_0(unsigned int *a2, int *a3, int a4, int a5, void *a5_1)
 {
 
-
+  int v5; // ebx
   int result; // eax
-  result = AbstractClass::SaveLoad_PrefixWrapper((AbstractClass *)a5, (int)a5, (int)a5); /*0x716dd1*/
-  if ( result >= 0 ) /*0x716dd8*/
+  int v7; // edx
+  int i; // ebx
+  int v9; // edx
+  int j; // ebx
+  int v11; // edx
+  int k; // ebx
+  int v13; // edx
+  int m; // ebx
+  int v15; // edx
+  int n; // ebx
+  int v17; // edx
+  int ii; // ebx
+  int v19; // edx
+  int jj; // ebx
+  int v21; // edx
+  int kk; // ebx
+  int v23; // edx
+  int mm; // ebx
+
+  result = AbstractClass::SaveLoad_PrefixWrapper((AbstractClass *)this, (int)a2, (int)a3);
+  if ( result >= 0 )
   {
-    int v7 = *a5; // edx /*0x716de4*/
-    a5 = *(int **)&a5->Dock[788]; /*0x716df1*/
-    int v5; // ebx
-    (*(void (**)(unsigned int *, int **, int, unsigned int, int))(v7 + 16))(a5, &a5, 4, 0, v5); /*0x716df5*/
-    int i; // ebx
-    for ( i = 0; i < a5; ++i ) /*0x716e00*/
-      (*(void (**)(unsigned int *, int, int, unsigned int))(*a5 + 16))(a5, *(unsigned int *)&a5->?[776] + 4 * i, 4, 0); /*0x716e13*/
-    int v9 = *a5; // edx /*0x716e23*/
-    a5 = *(unsigned int *)&a5->?[576]; /*0x716e2f*/
-    (*(void (**)(unsigned int *, int *, int, unsigned int))(v9 + 16))(a5, &a5, 4, 0); /*0x716e33*/
-    int j; // ebx
-    for ( j = 0; j < a5; ++j ) /*0x716e3e*/
-      (*(void (**)(unsigned int *, int, int, unsigned int))(*a5 + 16))(a5, *(unsigned int *)&a5->?[564] + 4 * j, 4, 0); /*0x716e51*/
-    int v11 = *a5; // edx /*0x716e61*/
-    a5 = *(unsigned int *)&a5->DebrisAnims[1264]; /*0x716e6d*/
-    (*(void (**)(unsigned int *, int *, int, unsigned int))(v11 + 16))(a5, &a5, 4, 0); /*0x716e71*/
-    int k; // ebx
-    for ( k = 0; k < a5; ++k ) /*0x716e7c*/
-      (*(void (**)(unsigned int *, int, int, unsigned int))(*a5 + 16))(a5, *(unsigned int *)&a5->?[1252] + 4 * k, 4, 0); /*0x716e8f*/
-    int v13 = *a5; // edx /*0x716e9f*/
-    a5 = *(unsigned int *)&a5->VoiceSelect[832]; /*0x716eab*/
-    (*(void (**)(unsigned int *, int *, int, unsigned int))(v13 + 16))(a5, &a5, 4, 0); /*0x716eaf*/
-    int m; // ebx
-    for ( m = 0; m < a5; ++m ) /*0x716eba*/
-      (*(void (**)(unsigned int *, int, int, unsigned int))(*a5 + 16))(a5, *(unsigned int *)&a5->?[820] + 4 * m, 4, 0); /*0x716ecd*/
-    int v15 = *a5; // edx /*0x716edd*/
-    a5 = *(unsigned int *)&a5->VoiceSelectEnslaved[860]; /*0x716ee9*/
-    (*(void (**)(unsigned int *, int *, int, unsigned int))(v15 + 16))(a5, &a5, 4, 0); /*0x716eed*/
-    int n; // ebx
-    for ( n = 0; n < a5; ++n ) /*0x716ef8*/
-      (*(void (**)(unsigned int *, int, int, unsigned int))(*a5 + 16))(a5, *(unsigned int *)&a5->?[848] + 4 * n, 4, 0); /*0x716f0b*/
-    int v17 = *a5; // edx /*0x716f1b*/
-    a5 = *(unsigned int *)&a5->VoiceSelectDeactivated[888]; /*0x716f27*/
-    (*(void (**)(unsigned int *, int *, int, unsigned int))(v17 + 16))(a5, &a5, 4, 0); /*0x716f2b*/
-    int ii; // ebx
-    for ( ii = 0; ii < a5; ++ii ) /*0x716f36*/
-      (*(void (**)(unsigned int *, int, int, unsigned int))(*a5 + 16))(a5, *(unsigned int *)&a5->?[876] + 4 * ii, 4, 0); /*0x716f49*/
-    int v19 = *a5; // edx /*0x716f59*/
-    a5 = *(unsigned int *)&a5->VoiceMove[916]; /*0x716f65*/
-    (*(void (**)(unsigned int *, int *, int, unsigned int))(v19 + 16))(a5, &a5, 4, 0); /*0x716f69*/
-    int jj; // ebx
-    for ( jj = 0; jj < a5; ++jj ) /*0x716f74*/
-      (*(void (**)(unsigned int *, int, int, unsigned int))(*a5 + 16))(a5, *(unsigned int *)&a5->?[904] + 4 * jj, 4, 0); /*0x716f87*/
-    int v21 = *a5; // edx /*0x716f97*/
-    a5 = *(unsigned int *)&a5->VoiceAttack[944]; /*0x716fa3*/
-    (*(void (**)(unsigned int *, int *, int, unsigned int))(v21 + 16))(a5, &a5, 4, 0); /*0x716fa7*/
-    int kk; // ebx
-    for ( kk = 0; kk < a5; ++kk ) /*0x716fb2*/
-      (*(void (**)(unsigned int *, int, int, unsigned int))(*a5 + 16))(a5, *(unsigned int *)&a5->?[932] + 4 * kk, 4, 0); /*0x716fc5*/
-    int v23 = *a5; // edx /*0x716fd5*/
-    a5 = *(unsigned int *)&a5->VoiceSpecialAttack[972]; /*0x716fe1*/
-    (*(void (**)(unsigned int *, int *, int))(v23 + 16))(a5, &a5, 4); /*0x716fe5*/
-    int mm; // ebx
-    for ( mm = 0; mm < (int)a5; ++mm ) /*0x716ff0*/
-      (*(void (**)(unsigned int *, int, int, unsigned int))(*a5 + 16))(a5, *(unsigned int *)&a5->?[960] + 4 * mm, 4, 0); /*0x717003*/
-    DynamicVector::Read((DynamicVector *)&a5->VoiceDie[984], a5); /*0x717014*/
-    DynamicVector::Read((DynamicVector *)&a5->VoiceFeedback[1012], a5); /*0x717020*/
-    DynamicVector::Read((DynamicVector *)&a5->MoveSound[1040], a5); /*0x71702c*/
-    DynamicVector::Read((DynamicVector *)&a5->DieSound[1068], a5); /*0x717038*/
-    Stream::WriteIntArray((Stream *)&a5->Explosion[1608], a5); /*0x717044*/
-    Stream::WriteIntArray((Stream *)&a5->DestroyAnim[1636], a5); /*0x717050*/
-    DynamicVector::Read((DynamicVector *)&a5->DebrisMaximums[588], a5); /*0x71705c*/
-    DynamicVector::Read((DynamicVector *)&a5->Prerequisite[1364], a5); /*0x717068*/
-    DynamicVector::Read((DynamicVector *)&a5->PrerequisiteOverride[1392], a5); /*0x717074*/
-    TechnoTypeClass::SaveLoadDataArray((TechnoTypeClass *)&a5->DamageParticleSystems[1684], a5); /*0x717080*/
-    TechnoTypeClass::SaveLoadDataArray((TechnoTypeClass *)&a5->DestroyParticleSystems[1712], a5); /*0x71708c*/
-    return 0; /*0x717091*/
+    v7 = *a2;
+    a3 = (int *)this->Dock[4];
+    (*(void (**)(unsigned int *, int **, int, unsigned int, int))(v7 + 16))(a2, &a3, 4, 0, v5);
+    for ( i = 0; i < a4; ++i )
+      (*(void (**)(unsigned int *, int, int, unsigned int))(*a2 + 16))(a2, this->Dock[1] + 4 * i, 4, 0);
+    v9 = *a2;
+    a4 = this->DebrisTypes[4];
+    (*(void (**)(unsigned int *, int *, int, unsigned int))(v9 + 16))(a2, &a4, 4, 0);
+    for ( j = 0; j < a4; ++j )
+      (*(void (**)(unsigned int *, int, int, unsigned int))(*a2 + 16))(a2, this->DebrisTypes[1] + 4 * j, 4, 0);
+    v11 = *a2;
+    a4 = this->DebrisAnims[4];
+    (*(void (**)(unsigned int *, int *, int, unsigned int))(v11 + 16))(a2, &a4, 4, 0);
+    for ( k = 0; k < a4; ++k )
+      (*(void (**)(unsigned int *, int, int, unsigned int))(*a2 + 16))(a2, this->DebrisAnims[1] + 4 * k, 4, 0);
+    v13 = *a2;
+    a4 = this->VoiceSelect[4];
+    (*(void (**)(unsigned int *, int *, int, unsigned int))(v13 + 16))(a2, &a4, 4, 0);
+    for ( m = 0; m < a4; ++m )
+      (*(void (**)(unsigned int *, int, int, unsigned int))(*a2 + 16))(a2, this->VoiceSelect[1] + 4 * m, 4, 0);
+    v15 = *a2;
+    a4 = this->VoiceSelectEnslaved[4];
+    (*(void (**)(unsigned int *, int *, int, unsigned int))(v15 + 16))(a2, &a4, 4, 0);
+    for ( n = 0; n < a4; ++n )
+      (*(void (**)(unsigned int *, int, int, unsigned int))(*a2 + 16))(a2, this->VoiceSelectEnslaved[1] + 4 * n, 4, 0);
+    v17 = *a2;
+    a4 = this->VoiceSelectDeactivated[4];
+    (*(void (**)(unsigned int *, int *, int, unsigned int))(v17 + 16))(a2, &a4, 4, 0);
+    for ( ii = 0; ii < a4; ++ii )
+      (*(void (**)(unsigned int *, int, int, unsigned int))(*a2 + 16))(a2, this->VoiceSelectDeactivated[1] + 4 * ii, 4, 0);
+    v19 = *a2;
+    a4 = this->VoiceMove[4];
+    (*(void (**)(unsigned int *, int *, int, unsigned int))(v19 + 16))(a2, &a4, 4, 0);
+    for ( jj = 0; jj < a4; ++jj )
+      (*(void (**)(unsigned int *, int, int, unsigned int))(*a2 + 16))(a2, this->VoiceMove[1] + 4 * jj, 4, 0);
+    v21 = *a2;
+    a4 = this->VoiceAttack[4];
+    (*(void (**)(unsigned int *, int *, int, unsigned int))(v21 + 16))(a2, &a4, 4, 0);
+    for ( kk = 0; kk < a4; ++kk )
+      (*(void (**)(unsigned int *, int, int, unsigned int))(*a2 + 16))(a2, this->VoiceAttack[1] + 4 * kk, 4, 0);
+    v23 = *a2;
+    a4 = this->VoiceSpecialAttack[4];
+    (*(void (**)(unsigned int *, int *, int))(v23 + 16))(a2, &a4, 4);
+    for ( mm = 0; mm < (int)a3; ++mm )
+      (*(void (**)(unsigned int *, int, int, unsigned int))(*a2 + 16))(a2, this->VoiceSpecialAttack[1] + 4 * mm, 4, 0);
+    DynamicVector::Read((DynamicVector *)this->VoiceDie, a2);
+    DynamicVector::Read((DynamicVector *)this->VoiceFeedback, a2);
+    DynamicVector::Read((DynamicVector *)this->MoveSound, a2);
+    DynamicVector::Read((DynamicVector *)this->DieSound, a2);
+    Stream::WriteIntArray((Stream *)this->Explosion, a2);
+    Stream::WriteIntArray((Stream *)this->DestroyAnim, a2);
+    DynamicVector::Read((DynamicVector *)this->DebrisMaximums, a2);
+    DynamicVector::Read((DynamicVector *)this->Prerequisite, a2);
+    DynamicVector::Read((DynamicVector *)this->PrerequisiteOverride, a2);
+    TechnoTypeClass::SaveLoadDataArray((TechnoTypeClass *)this->DamageParticleSystems, a2);
+    TechnoTypeClass::SaveLoadDataArray((TechnoTypeClass *)this->DestroyParticleSystems, a2);
+    return 0;
   }
-  return result; /*0x717094*/
+  return result;
 
 }
 } // namespace gamemd

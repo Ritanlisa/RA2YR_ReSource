@@ -1,0 +1,1 @@
+{"addr": "0x007C8770", "name": "GetWindow", "decompiled": "// attributes: thunk\nHWND __stdcall GetWindow(HWND hWnd, UINT uCmd)\n{\n  return __imp_GetWindow(hWnd, uCmd);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x007AEE90", "name": "CChatEventSink::Check", "decompiled": "char __thiscall CChatEventSink::Check(CChatEventSink *this, _DWORD *a2, int a3)\n{\n  if ( a3 < 0 || a3 >= *(_DWORD *)this->__pad_0 )\n    return 0;\n  *a2 = *(_DWORD *)(this->CChatEventSink_field_0x08 + 4 * a3);\n  return 1;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

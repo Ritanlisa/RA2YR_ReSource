@@ -1,0 +1,1 @@
+{"addr": "0x00778660", "name": "sub_778660", "decompiled": "int sub_778660()\n{\n  int result; // eax\n\n  LOWORD(result) = Math::RoundToInt((double)(4 * dword_B735F0) + 0.5);\n  dword_B735E4 = result;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

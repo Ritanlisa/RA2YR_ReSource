@@ -1,0 +1,1 @@
+{"addr": "0x00636FD0", "name": "sub_636FD0", "decompiled": "int __thiscall sub_636FD0(ObjectClass *this)\n{\n  return this->lastLayer;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

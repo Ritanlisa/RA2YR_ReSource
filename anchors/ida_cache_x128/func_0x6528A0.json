@@ -1,0 +1,1 @@
+{"addr": "0x006528A0", "name": "sub_6528A0", "decompiled": "void __cdecl sub_6528A0()\n{\n  if ( (byte_B048A8 & 1) == 0 )\n  {\n    byte_B048A8 |= 1u;\n    GadgetClass::Dtor((ShpButtonClass *)&stru_B04A10);\n  }\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x005AEAF0", "name": "BuildingClass::updateFoundation", "decompiled": "void __thiscall BuildingClass::updateFoundation(float *this, float a2)\n{\n  *(this + 1) = a2 * *(this + 1);\n  *(this + 5) = a2 * *(this + 5);\n  *(this + 9) = a2 * *(this + 9);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

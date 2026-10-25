@@ -1,0 +1,1 @@
+{"addr": "0x0040EC60", "name": "sub_40EC60", "decompiled": "void sub_40EC60()\n{\n  *(double *)&stru_887338.__pad_1C[164] = *(double *)&stru_887338.__pad_1C[84] / 60.0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

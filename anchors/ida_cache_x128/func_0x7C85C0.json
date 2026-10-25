@@ -1,0 +1,1 @@
+{"addr": "0x007C85C0", "name": "GetComputerNameA", "decompiled": "// attributes: thunk\nBOOL __stdcall GetComputerNameA(LPSTR lpBuffer, LPDWORD nSize)\n{\n  return __imp_GetComputerNameA(lpBuffer, nSize);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

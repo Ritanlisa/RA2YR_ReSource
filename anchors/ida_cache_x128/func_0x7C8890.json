@@ -1,0 +1,1 @@
+{"addr": "0x007C8890", "name": "RegCloseKey", "decompiled": "// attributes: thunk\nLSTATUS __stdcall RegCloseKey(HKEY hKey)\n{\n  return __imp_RegCloseKey(hKey);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

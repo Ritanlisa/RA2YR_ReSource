@@ -1,0 +1,1 @@
+{"addr": "0x007C8626", "name": "ValidateRect", "decompiled": "// attributes: thunk\nBOOL __stdcall ValidateRect(HWND hWnd, const RECT *lpRect)\n{\n  return __imp_ValidateRect(hWnd, lpRect);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

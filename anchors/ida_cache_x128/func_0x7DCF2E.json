@@ -1,0 +1,1 @@
+{"addr": "0x007DCF2E", "name": "FreeEnvironmentStringsA", "decompiled": "// attributes: thunk\nBOOL __stdcall FreeEnvironmentStringsA(LPCH penv)\n{\n  return __imp_FreeEnvironmentStringsA(penv);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x00459F40", "name": "IsObjectTypeBuildingType", "decompiled": "int __fastcall IsObjectTypeBuildingType(int a1)\n{\n  if ( a1 )\n    return (*(int (__thiscall **)(int))(*(_DWORD *)a1 + 44))(a1) == 6 ? a1 : 0;\n  else\n    return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

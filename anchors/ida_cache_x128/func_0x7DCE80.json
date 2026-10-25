@@ -1,0 +1,1 @@
+{"addr": "0x007DCE80", "name": "GetCommandLineA", "decompiled": "// attributes: thunk\nLPSTR __stdcall GetCommandLineA()\n{\n  return __imp_GetCommandLineA();\n}\n", "changed": true, "error": null, "timestamp": "x128"}

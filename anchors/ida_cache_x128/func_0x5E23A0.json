@@ -1,0 +1,1 @@
+{"addr": "0x005E23A0", "name": "SendMultiplayerStartSignal_Start_5E23A0", "decompiled": "LRESULT SendMultiplayerStartSignal_Start_5E23A0()\n{\n  HWND Current; // eax\n  HWND DlgItem; // eax\n\n  Current = (HWND)Dialog::GetCurrent();\n  DlgItem = GetDlgItem(Current, 1439);\n  return SendMessageA(DlgItem, 0x4DCu, 0, 0);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

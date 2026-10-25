@@ -1,0 +1,1 @@
+{"addr": "0x007C8734", "name": "GetNextDlgTabItem", "decompiled": "// attributes: thunk\nHWND __stdcall GetNextDlgTabItem(HWND hDlg, HWND hCtl, BOOL bPrevious)\n{\n  return __imp_GetNextDlgTabItem(hDlg, hCtl, bPrevious);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

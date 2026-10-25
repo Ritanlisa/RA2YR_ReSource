@@ -1,0 +1,1 @@
+{"addr": "0x00705D10", "name": "BuildingClass::SetType", "decompiled": "int __thiscall BuildingClass::SetType(BuildingClass *this, int a2)\n{\n  this->planningToken = a2;\n  return a2;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

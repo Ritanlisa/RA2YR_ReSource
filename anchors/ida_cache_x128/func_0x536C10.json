@@ -1,0 +1,1 @@
+{"addr": "0x00536C10", "name": "CreateTeamCommand::performAction_80", "decompiled": "char *CreateTeamCommand::performAction_80(DeployCommandClass *this)\n{\n  return aDeployobject;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

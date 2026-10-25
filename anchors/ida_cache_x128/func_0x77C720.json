@@ -1,0 +1,1 @@
+{"addr": "0x0077C720", "name": "sub_77C720", "decompiled": "void __cdecl sub_77C720()\n{\n  int i; // esi\n\n  for ( i = 0; i < *(int *)stru_B76510.__pad_0; ++i )\n    DeleteAndZero((ObjectClass *)((char *)dword_B76518 + 4 * i));\n  *(_DWORD *)stru_B76510.__pad_0 = 0;\n  __3_YAXPAX_Z(dword_B76518);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

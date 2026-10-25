@@ -1,0 +1,1 @@
+{"addr": "0x007C8650", "name": "ReleaseDC", "decompiled": "// attributes: thunk\nint __stdcall ReleaseDC(HWND hWnd, HDC hDC)\n{\n  return __imp_ReleaseDC(hWnd, hDC);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

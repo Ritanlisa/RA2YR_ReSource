@@ -1,0 +1,1 @@
+{"addr": "0x00430F30", "name": "MapClass::isCellAccessible", "decompiled": "char __thiscall MapClass::isCellAccessible(char *this, int a2)\n{\n  int v2; // eax\n  char *i; // ecx\n\n  v2 = 0;\n  for ( i = this + 12 * a2; *(_DWORD *)i; i += 4 )\n  {\n    if ( ++v2 >= 3 )\n      return 0;\n  }\n  return 1;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

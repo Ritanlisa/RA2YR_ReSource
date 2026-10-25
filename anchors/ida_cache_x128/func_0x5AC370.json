@@ -1,0 +1,1 @@
+{"addr": "0x005AC370", "name": "Coord::Compare2D", "decompiled": "int __thiscall Coord::Compare2D(Coord *this, _WORD *a2)\n{\n  return *(_WORD *)this->__pad_0 != *a2 || *(_WORD *)this->Coord_field_0x2 != a2[1];\n}\n", "changed": true, "error": null, "timestamp": "x128"}

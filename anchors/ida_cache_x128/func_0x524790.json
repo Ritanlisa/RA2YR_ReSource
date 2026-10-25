@@ -1,0 +1,1 @@
+{"addr": "0x00524790", "name": "InfantryTypeClass::GetGameplayValue", "decompiled": "int InfantryTypeClass::GetGameplayValue(InfantryTypeClass *this)\n{\n  return dword_8871E0->ConditionRed[0];\n}\n", "changed": true, "error": null, "timestamp": "x128"}

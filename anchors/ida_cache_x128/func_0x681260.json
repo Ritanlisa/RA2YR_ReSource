@@ -1,0 +1,1 @@
+{"addr": "0x00681260", "name": "sub_681260", "decompiled": "_DWORD *__thiscall sub_681260(TechnoClass *this, _DWORD *a2)\n{\n  *a2 = this->turretRecoil[2];\n  a2[1] = this->turretRecoil[3];\n  return a2;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x005B2970", "name": "Movement::DivideAndStoreScaled", "decompiled": "int *__thiscall Movement::DivideAndStoreScaled(Movement *this, int *a2, int a3)\n{\n  LOWORD(a3) = SLOWORD(this->Movement_field_00) / a3;\n  *a2 = a3;\n  return a2;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

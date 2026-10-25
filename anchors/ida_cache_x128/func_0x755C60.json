@@ -1,0 +1,1 @@
+{"addr": "0x00755C60", "name": "Locomotor_Update", "decompiled": "char *__fastcall Locomotor_Update(char *a1, int a2)\n{\n  char *result; // eax\n\n  result = a1;\n  if ( a2 >= 4 )\n    a2 -= 4;\n  qmemcpy(a1, &stru_B450B8 + a2, 0x30u);\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

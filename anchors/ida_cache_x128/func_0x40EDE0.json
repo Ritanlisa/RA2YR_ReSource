@@ -1,0 +1,1 @@
+{"addr": "0x0040EDE0", "name": "sub_40EDE0", "decompiled": "int sub_40EDE0()\n{\n  *(_DWORD *)&stru_887338.__pad_1C[108] = 0;\n  *(_DWORD *)&stru_887338.__pad_1C[112] = 0;\n  *(_DWORD *)&stru_887338.__pad_1C[116] = 0;\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

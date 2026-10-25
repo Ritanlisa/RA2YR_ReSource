@@ -1,0 +1,1 @@
+{"addr": "0x007C8674", "name": "SetFocus", "decompiled": "// attributes: thunk\nHWND __stdcall SetFocus(HWND hWnd)\n{\n  return __imp_SetFocus(hWnd);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

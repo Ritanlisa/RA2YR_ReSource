@@ -1,0 +1,1 @@
+{"addr": "0x00536750", "name": "CreateTeamCommand::performAction_38", "decompiled": "int __thiscall CreateTeamCommand::performAction_38(PlanningModeCommandClass *this)\n{\n  char v2; // [esp+5h] [ebp+5h]\n\n  if ( (v2 & 8) != 0 )\n    return UI_Create_731A70(0);\n  else\n    return UI_Create_731A50(0);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

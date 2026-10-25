@@ -1,0 +1,1 @@
+{"addr": "0x00725810", "name": "sub_725810", "decompiled": "void __cdecl sub_725810()\n{\n  stru_B0F6C8.DynamicVector_field_0x28 = (int)&VectorClass<AbstractClass *>::`vftable';\n  if ( dword_B0F6F4 && byte_B0F6FD )\n  {\n    __3_YAXPAX_Z(dword_B0F6F4);\n    dword_B0F6F4 = 0;\n  }\n  byte_B0F6FD = 0;\n  dword_B0F6F8 = 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x006AF160", "name": "sub_6AF160", "decompiled": "void __cdecl sub_6AF160()\n{\n  SlaveManagerClass_Array = (int)&VectorClass<SlaveManagerClass *>::`vftable';\n  if ( dword_B0B5F4 && byte_B0B5FD )\n  {\n    __3_YAXPAX_Z(dword_B0B5F4);\n    dword_B0B5F4 = 0;\n  }\n  byte_B0B5FD = 0;\n  dword_B0B5F8 = 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

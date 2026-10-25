@@ -1,0 +1,1 @@
+{"addr": "0x005C09A0", "name": "MainWindowProc_Helper_5C09A0", "decompiled": "int MainWindowProc_Helper_5C09A0(ObjectClass *this)\n{\n  int result; // eax\n\n  if ( dword_ABF3F8 )\n    return (*(int (__thiscall **)(int))(*(_DWORD *)dword_ABF3F8 + 40))(dword_ABF3F8);\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

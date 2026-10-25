@@ -1,0 +1,1 @@
+{"addr": "0x00414300", "name": "AircraftClass::Release", "decompiled": "int __thiscall AircraftClass::Release(AircraftClass *this, int a2)\n{\n  return AbstractClass::COMStub_Release((AbstractClass *)this);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

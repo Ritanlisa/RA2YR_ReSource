@@ -1,0 +1,1 @@
+{"addr": "0x00540C50", "name": "sub_540C50", "decompiled": "int __thiscall sub_540C50(ObjectClass *this)\n{\n  return LOBYTE(this->vfptr1);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

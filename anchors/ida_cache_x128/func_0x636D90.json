@@ -1,0 +1,1 @@
+{"addr": "0x00636D90", "name": "?GetExecutionResourceId_irtualProcessor_details_Concurrency__QBEIXZ", "decompiled": "unsigned int __thiscall _GetExecutionResourceId_irtualProcessor_details_Concurrency__QBEIXZ(\n        Concurrency::details::VirtualProcessor *this)\n{\n  return *((_DWORD *)this + 35);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

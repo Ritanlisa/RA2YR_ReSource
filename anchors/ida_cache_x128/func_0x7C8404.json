@@ -1,0 +1,1 @@
+{"addr": "0x007C8404", "name": "GetModuleHandleA", "decompiled": "// attributes: thunk\nHMODULE __stdcall GetModuleHandleA(LPCSTR lpModuleName)\n{\n  return __imp_GetModuleHandleA(lpModuleName);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

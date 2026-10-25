@@ -1,0 +1,1 @@
+{"addr": "0x00633B80", "name": "sub_633B80", "decompiled": "int __thiscall sub_633B80(ObjectClass *this)\n{\n  return *(_DWORD *)this->isOnMap;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

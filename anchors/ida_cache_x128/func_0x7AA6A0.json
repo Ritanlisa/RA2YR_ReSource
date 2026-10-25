@@ -1,0 +1,1 @@
+{"addr": "0x007AA6A0", "name": "CComObject_CChatEventSink___ATL::DispatchStub_18", "decompiled": "int __stdcall CComObject_CChatEventSink___ATL::DispatchStub_18(CChatEventSink *this, int a2, int a3)\n{\n  if ( !byte_B77DC1 && a2 >= 0 )\n    Dialog::ShowMessage(-1, (size_t)aHs_2, a3);\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x0076F180", "name": "VectorCursor::Release", "decompiled": "_DWORD *__thiscall VectorCursor::Release(\n        _VectorCursor_V_rc_ptr_VTerritory_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour *this)\n{\n  ++*((_DWORD *)this + 2);\n  return this->__pad_0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

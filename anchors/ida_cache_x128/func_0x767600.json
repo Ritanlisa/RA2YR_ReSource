@@ -1,0 +1,1 @@
+{"addr": "0x00767600", "name": "sub_767600", "decompiled": "int __stdcall sub_767600(int a1)\n{\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

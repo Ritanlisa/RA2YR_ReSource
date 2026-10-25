@@ -1,0 +1,1 @@
+{"addr": "0x00557FB0", "name": "CheckListClass::ScrollDown", "decompiled": "int __thiscall CheckListClass::ScrollDown(ListClass *this, int a2)\n{\n  int v2; // esi\n\n  v2 = *((_DWORD *)this + 91);\n  (*(void (__thiscall **)(ListClass *, int))(*(_DWORD *)this->__pad_0 + 184))(this, v2 + a2);\n  return v2;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

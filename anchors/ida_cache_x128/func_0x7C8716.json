@@ -1,0 +1,1 @@
+{"addr": "0x007C8716", "name": "CharToOemBuffA", "decompiled": "// attributes: thunk\nBOOL __stdcall CharToOemBuffA(LPCSTR lpszSrc, LPSTR lpszDst, DWORD cchDstLength)\n{\n  return __imp_CharToOemBuffA(lpszSrc, lpszDst, cchDstLength);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

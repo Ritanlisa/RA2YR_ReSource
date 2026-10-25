@@ -1,0 +1,1 @@
+{"addr": "0x004370B0", "name": "BuildingLightClass::SD_vt11", "decompiled": "int BuildingLightClass::SD_vt11(BuildingLightClass *this)\n{\n  return 19;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

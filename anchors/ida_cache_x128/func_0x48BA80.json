@@ -1,0 +1,1 @@
+{"addr": "0x0048BA80", "name": "CellClass::GetBridgeIndex", "decompiled": "int __thiscall CellClass::GetBridgeIndex(CellClass *this)\n{\n  return this->rubble;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

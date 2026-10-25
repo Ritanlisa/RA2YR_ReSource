@@ -1,0 +1,1 @@
+{"addr": "0x007C8A40", "name": "_BinkClose_4", "decompiled": "// attributes: thunk\nint __stdcall BinkClose_4(int a1)\n{\n  return BinkClose(a1);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x00559EB0", "name": "LoadOptions::ddtor", "decompiled": "bool __stdcall LoadOptions::ddtor(LPCSTR lpFileName)\n{\n  return DeleteFileA(lpFileName);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

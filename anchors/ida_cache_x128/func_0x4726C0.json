@@ -1,0 +1,1 @@
+{"addr": "0x004726C0", "name": "CaptureManagerClass::IsOverloading", "decompiled": "char __thiscall CaptureManagerClass::IsOverloading(int this, bool *a2)\n{\n  if ( !*(_BYTE *)(this + 64) || *(_DWORD *)(this + 52) <= *(_DWORD *)(this + 60) )\n    return 0;\n  *a2 = *(_DWORD *)(this + 68) > 0;\n  return 1;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

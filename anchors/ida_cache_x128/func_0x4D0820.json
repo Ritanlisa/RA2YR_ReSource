@@ -1,0 +1,1 @@
+{"addr": "0x004D0820", "name": "sub_4D0820", "decompiled": "void __cdecl sub_4D0820()\n{\n  if ( (byte_8B3CD4 & 1) == 0 )\n  {\n    byte_8B3CD4 |= 1u;\n    __3_YAXPAX_Z(g_MissionPool);\n    g_MissionPool = 0;\n    g_MissionState = 0;\n    dword_8B3CC8 = 0;\n    byte_8B3CCC = 0;\n    dword_8B3CD0 = 0;\n  }\n}\n", "changed": true, "error": null, "timestamp": "x128"}

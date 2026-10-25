@@ -1,0 +1,1 @@
+{"addr": "0x005FF210", "name": "sub_5FF210", "decompiled": "void __cdecl sub_5FF210()\n{\n  dword_AC1678 = (int)&VectorClass<SpotLightClass *>::`vftable';\n  if ( dword_AC167C && byte_AC1685 )\n  {\n    __3_YAXPAX_Z(dword_AC167C);\n    dword_AC167C = 0;\n  }\n  byte_AC1685 = 0;\n  dword_AC1680 = 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

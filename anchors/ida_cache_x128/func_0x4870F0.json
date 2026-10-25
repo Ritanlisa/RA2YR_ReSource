@@ -1,0 +1,1 @@
+{"addr": "0x004870F0", "name": "HouseClass::HasType", "decompiled": "int __thiscall HouseClass::HasType(HouseClass *this, int a2)\n{\n  return *((_WORD *)&this->psychicDetectionCapacity + a2) > 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

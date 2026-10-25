@@ -1,0 +1,1 @@
+{"addr": "0x007C895C", "name": "timeBeginPeriod", "decompiled": "// attributes: thunk\nMMRESULT __stdcall timeBeginPeriod(UINT uPeriod)\n{\n  return __imp_timeBeginPeriod(uPeriod);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

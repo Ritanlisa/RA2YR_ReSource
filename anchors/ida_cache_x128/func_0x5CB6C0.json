@@ -1,0 +1,1 @@
+{"addr": "0x005CB6C0", "name": "VtableStub::5CB6C0", "decompiled": "void __thiscall VtableStub::5CB6C0(_DWORD *this)\n{\n  *this = &MSAnim::`vftable';\n}\n", "changed": true, "error": null, "timestamp": "x128"}

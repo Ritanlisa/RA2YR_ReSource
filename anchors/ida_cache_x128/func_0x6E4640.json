@@ -1,0 +1,1 @@
+{"addr": "0x006E4640", "name": "TActionClass::StubReturn47", "decompiled": "int TActionClass::StubReturn47(TActionClass *this)\n{\n  return 47;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

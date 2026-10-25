@@ -1,0 +1,1 @@
+{"addr": "0x005CB200", "name": "MPBattleClass::getMinimumPlayers", "decompiled": "void MPBattleClass::getMinimumPlayers()\n{\n  dbl_ABFB58 = 0.0174532925199433 * 45.0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

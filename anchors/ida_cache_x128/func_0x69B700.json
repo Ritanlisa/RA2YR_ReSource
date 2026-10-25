@@ -1,0 +1,1 @@
+{"addr": "0x0069B700", "name": "Session::GetPlayerOption", "decompiled": "int __thiscall Session::GetPlayerOption(Session *this)\n{\n  int result; // eax\n\n  result = -2;\n  if ( this->field_178 != (void *)-2 )\n    return (int)this->field_174;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

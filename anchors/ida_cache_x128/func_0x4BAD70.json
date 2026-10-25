@@ -1,0 +1,1 @@
+{"addr": "0x004BAD70", "name": "DSurface::GetPitch", "decompiled": "int __thiscall DSurface::GetPitch(DSurface *this)\n{\n  return *(_DWORD *)(this->DSurface_field_0x20 + 16);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

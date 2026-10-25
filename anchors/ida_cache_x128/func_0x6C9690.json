@@ -1,0 +1,1 @@
+{"addr": "0x006C9690", "name": "Float::Accumulate", "decompiled": "int __thiscall Float::Accumulate(int *this, float a2, int a3)\n{\n  *((float *)this + a3) = a2 + *((float *)this + a3);\n  return a3;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

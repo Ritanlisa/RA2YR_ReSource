@@ -1,0 +1,1 @@
+{"addr": "0x005D0780", "name": "MSPCXAnim_42::GetFrame", "decompiled": "int __thiscall MSPCXAnim_42::GetFrame(_VectorClass_PAVMSAnimEntry *this, int a2)\n{\n  return *(_DWORD *)(*(_DWORD *)&this->m_1[3] + 4 * a2);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

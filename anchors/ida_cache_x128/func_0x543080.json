@@ -1,0 +1,1 @@
+{"addr": "0x00543080", "name": "Network::Disconnect", "decompiled": "int __thiscall Network::Disconnect(Network *this)\n{\n  int result; // eax\n\n  result = this->Network_field_0x48;\n  if ( result )\n    *(_BYTE *)(result + 200) = 0;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

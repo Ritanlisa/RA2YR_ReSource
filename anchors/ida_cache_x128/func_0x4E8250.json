@@ -1,0 +1,1 @@
+{"addr": "0x004E8250", "name": "HouseClass::vt_placeholder_01", "decompiled": "int __thiscall HouseClass::vt_placeholder_01(TiberianSunClassFactory *this)\n{\n  return 1;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

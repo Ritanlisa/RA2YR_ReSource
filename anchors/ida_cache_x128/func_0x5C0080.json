@@ -1,0 +1,1 @@
+{"addr": "0x005C0080", "name": "Entity_Load", "decompiled": "char __fastcall Entity_Load(char **a1, _BYTE *a2)\n{\n  char result; // al\n\n  if ( dword_ABF3F4 )\n    return 0;\n  dword_ABF3F4 = (int)a1;\n  result = VQAClass::AdvanceFrame(*a1, a2);\n  dword_ABF3F4 = 0;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

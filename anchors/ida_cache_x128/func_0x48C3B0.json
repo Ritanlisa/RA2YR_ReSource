@@ -1,0 +1,1 @@
+{"addr": "0x0048C3B0", "name": "COMObject::IsValid", "decompiled": "BOOL __thiscall COMObject::IsValid(ConnectionClass *this)\n{\n  return (*(int (__thiscall **)(ConnectionClass *))(*(_DWORD *)this->__pad_0 + 28))(this)\n      && (*(int (__thiscall **)(ConnectionClass *))(*(_DWORD *)this->__pad_0 + 32))(this);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

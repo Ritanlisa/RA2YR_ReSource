@@ -1,0 +1,1 @@
+{"addr": "0x00408080", "name": "SetAudioFileName", "decompiled": "char *__fastcall SetAudioFileName(int a1, const char *a2)\n{\n  char *result; // eax\n\n  result = strncpy((char *)(a1 + 164), a2, 0x50u);\n  *(_BYTE *)(a1 + 243) = 0;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

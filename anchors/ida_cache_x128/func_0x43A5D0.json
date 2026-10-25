@@ -1,0 +1,1 @@
+{"addr": "0x0043A5D0", "name": "Power::Update", "decompiled": "int __thiscall Power::Update(NeuronClass *this, int *a2)\n{\n  AbstractClass::ProcessPower((AbstractClass *)this);\n  return Power::TimerProcess((Checksummer *)a2, *(_DWORD *)&stru_A8E960.random[528] - *((_DWORD *)this + 12));\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x007C896E", "name": "ntohl", "decompiled": "// attributes: thunk\nint __stdcall ntohl(u_long netlong)\n{\n  return __imp_ntohl(netlong);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

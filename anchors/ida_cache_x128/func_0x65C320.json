@@ -1,0 +1,1 @@
+{"addr": "0x0065C320", "name": "AbstractClass::updateTeamState", "decompiled": "char __stdcall AbstractClass::updateTeamState(RAMFileClass *this)\n{\n  return 1;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

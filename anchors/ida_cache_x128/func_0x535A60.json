@@ -1,0 +1,1 @@
+{"addr": "0x00535A60", "name": "BufferIOFileClass::Destruct", "decompiled": "int __thiscall BufferIOFileClass::Destruct(BufferIOFileClass *this)\n{\n  *(_DWORD *)this->__tail_0 = &off_7E1668;\n  return BufferIOFileClass::Dtor(this);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

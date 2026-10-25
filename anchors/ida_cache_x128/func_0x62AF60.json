@@ -1,0 +1,1 @@
+{"addr": "0x0062AF60", "name": "ParasiteClass::StubReturn67", "decompiled": "int ParasiteClass::StubReturn67(ParasiteClass *this)\n{\n  return 67;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

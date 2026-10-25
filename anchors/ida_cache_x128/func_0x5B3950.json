@@ -1,0 +1,1 @@
+{"addr": "0x005B3950", "name": "FromNameIndex", "decompiled": "char *__fastcall FromNameIndex(int a1)\n{\n  if ( a1 == -1 )\n    return g_Str__none_;\n  else\n    return off_816CAC[a1];\n}\n", "changed": true, "error": null, "timestamp": "x128"}

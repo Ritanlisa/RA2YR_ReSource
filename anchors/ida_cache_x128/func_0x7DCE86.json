@@ -1,0 +1,1 @@
+{"addr": "0x007DCE86", "name": "GetVersion", "decompiled": "// attributes: thunk\nDWORD __stdcall GetVersion()\n{\n  return __imp_GetVersion();\n}\n", "changed": true, "error": null, "timestamp": "x128"}

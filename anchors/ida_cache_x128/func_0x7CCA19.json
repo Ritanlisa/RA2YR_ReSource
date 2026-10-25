@@ -1,0 +1,1 @@
+{"addr": "0x007CCA19", "name": "String::Wrapper5to4", "decompiled": "unsigned int __cdecl String::Wrapper5to4(unsigned __int8 *a1, unsigned int a2, unsigned __int8 *a3, _DWORD *a4)\n{\n  return String_Helper_7CCA34(a1, a2, a3, a4, 0);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

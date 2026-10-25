@@ -1,0 +1,1 @@
+{"addr": "0x007DAE47", "name": "__ismbbkana", "decompiled": "int __cdecl _ismbbkana(unsigned int C)\n{\n  return dword_B78840 == 932 && CRTisctype(C, 0, 3u);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

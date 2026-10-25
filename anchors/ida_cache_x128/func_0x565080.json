@@ -1,0 +1,1 @@
+{"addr": "0x00565080", "name": "unknown_libname_22", "decompiled": "// Microsoft VisualC 2-14/net runtime\nvoid __cdecl unknown_libname_22()\n{\n  CellClass::DTOR(&unk_ABDC50);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

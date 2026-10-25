@@ -1,0 +1,1 @@
+{"addr": "0x00653F70", "name": "TacticalClass::SetPositionThunk", "decompiled": "int __stdcall TacticalClass::SetPositionThunk(RadarClass *this)\n{\n  return Tactical::SetTacticalPosition((TacticalClass *)g_TacticalClass_Instance, &this->RadarClass_field_0x0);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

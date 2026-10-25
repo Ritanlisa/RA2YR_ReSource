@@ -1,0 +1,1 @@
+{"addr": "0x004A48C0", "name": "sub_4A48C0", "decompiled": "int __cdecl sub_4A48C0(_DWORD *a1, _DWORD *a2)\n{\n  int v2; // esi\n  int v3; // edx\n\n  v2 = a1[1];\n  v3 = a2[1];\n  if ( *a2 > *a1 )\n    return -1;\n  if ( *a2 < *a1 )\n    return 1;\n  if ( v2 >= v3 )\n    return v3 < v2;\n  return -1;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

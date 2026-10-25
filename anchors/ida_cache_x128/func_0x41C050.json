@@ -1,0 +1,1 @@
+{"addr": "0x0041C050", "name": "TacticalClass::ProcessTick", "decompiled": "BOOL __thiscall TacticalClass::ProcessTick(FootClass *this)\n{\n  return this->team != 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x005422F0", "name": "Connection::GetSpeed", "decompiled": "int __thiscall Connection::GetSpeed(IPXManagerClass *this)\n{\n  if ( this->Initialized[0] && this->Active[0] )\n    return *(_DWORD *)(*(_DWORD *)(this->field_60 + 4) + 56);\n  else\n    return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

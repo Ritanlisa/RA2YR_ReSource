@@ -1,0 +1,1 @@
+{"addr": "0x005D5870", "name": "Timer::EnableHighPrecision", "decompiled": "void *__thiscall Timer::EnableHighPrecision(Timer *this)\n{\n  timeBeginPeriod(1u);\n  return this;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

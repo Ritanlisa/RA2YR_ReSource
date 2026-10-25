@@ -1,0 +1,1 @@
+{"addr": "0x005362B0", "name": "TauntCommandClass::AddRef", "decompiled": "char *__thiscall TauntCommandClass::AddRef(TauntCommandClass *this)\n{\n  sprintf(&stru_A8E960.waypoints[1570], \"Taunt_%d\", this->TauntCommandClass_field_00);\n  return &stru_A8E960.waypoints[1570];\n}\n", "changed": true, "error": null, "timestamp": "x128"}

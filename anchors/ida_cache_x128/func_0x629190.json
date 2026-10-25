@@ -1,0 +1,1 @@
+{"addr": "0x00629190", "name": "sub_629190", "decompiled": "int sub_629190()\n{\n  dword_AC4914 = 0;\n  dword_AC4918 = 0;\n  byte_AC491C = 1;\n  byte_AC491D = 0;\n  dword_AC4910 = (int)&DynamicVectorClass<ParasiteClass *>::`vftable';\n  dword_AC4924 = 10;\n  dword_AC4920 = 0;\n  return atexit(sub_6291D0);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

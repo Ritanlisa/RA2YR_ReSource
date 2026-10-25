@@ -1,0 +1,1 @@
+{"addr": "0x0065D430", "name": "ComPtr::Constructor", "decompiled": "_DWORD *__thiscall ComPtr::Constructor(ComPtr *this)\n{\n  this->ComPtr_field_0x04 = 0;\n  *(_DWORD *)this->__pad_0 = &rc_ptr_base::`vftable';\n  return this->__pad_0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

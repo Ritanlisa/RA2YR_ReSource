@@ -1,0 +1,1 @@
+{"addr": "0x0053CA10", "name": "sub_53CA10", "decompiled": "int sub_53CA10()\n{\n  dword_A9FF70 = 0;\n  dword_A9FF74 = 0;\n  dword_A9FF78 = 0;\n  dword_A9FF7C = 0;\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

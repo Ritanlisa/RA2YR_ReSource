@@ -1,0 +1,1 @@
+{"addr": "0x00759180", "name": "sub_759180", "decompiled": "int sub_759180()\n{\n  AsyncIO_Instance = 0;\n  dword_B45B60 = 0;\n  byte_B45B64 = 1;\n  byte_B45B65 = 0;\n  dword_B45B58 = (int)&DynamicVectorClass<MovieHandle *>::`vftable';\n  dword_B45B6C = 10;\n  g_AsyncIOState = 0;\n  return atexit(sub_7591C0);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

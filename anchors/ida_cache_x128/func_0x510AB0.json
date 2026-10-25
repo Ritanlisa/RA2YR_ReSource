@@ -1,0 +1,1 @@
+{"addr": "0x00510AB0", "name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_8", "decompiled": "int __stdcall VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_8(int a1)\n{\n  Class_7EA834 *this; // ecx\n\n  return VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_1(this);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

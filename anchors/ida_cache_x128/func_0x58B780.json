@@ -1,0 +1,1 @@
+{"addr": "0x0058B780", "name": "sub_58B780", "decompiled": "void sub_58B780()\n{\n  LOBYTE(byte_ABDFB8) = 0;\n  dword_ABDFC0 = 0;\n  dword_ABDFC4 = 0;\n  dword_ABDFC8 = (int)sub_598000;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

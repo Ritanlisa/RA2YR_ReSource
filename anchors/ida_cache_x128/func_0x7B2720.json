@@ -1,0 +1,1 @@
+{"addr": "0x007B2720", "name": "SessionClass::SetInstance", "decompiled": "void __thiscall SessionClass::SetInstance(SessionClass *this)\n{\n  dword_B780A0 = (int)this;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

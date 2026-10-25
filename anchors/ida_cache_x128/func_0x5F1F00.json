@@ -1,0 +1,1 @@
+{"addr": "0x005F1F00", "name": "NullModemClass::Flush", "decompiled": "int __thiscall NullModemClass::Flush(NullModemClass *this, int a2)\n{\n  int result; // eax\n\n  result = this->q040;\n  if ( result )\n    return Rect::SetRedraw(*(Rect **)(result + 4), 1);\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x005D6440", "name": "ScenarioClass::MissionStubReturnZero3", "decompiled": "int __thiscall ScenarioClass::MissionStubReturnZero3(MultiplayerGameMode *this)\n{\n  return (*(int (__thiscall **)(MultiplayerGameMode *))(*(_DWORD *)this->__pad_0 + 108))(this);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

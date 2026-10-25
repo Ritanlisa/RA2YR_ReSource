@@ -1,0 +1,1 @@
+{"addr": "0x006D1B10", "name": "sub_6D1B10", "decompiled": "int sub_6D1B10()\n{\n  dword_B0CDEC = 0;\n  dword_B0CDF0 = 0;\n  byte_B0CDF4 = 1;\n  byte_B0CDF5 = 0;\n  dword_B0CDE8 = (int)&DynamicVectorClass<ShadowControlClass *>::`vftable';\n  dword_B0CDFC = 10;\n  dword_B0CDF8 = 0;\n  return atexit(sub_6D1B50);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x006C8820", "name": "Timer::UpdateDelta", "decompiled": "int Timer::UpdateDelta()\n{\n  int Ticks; // eax\n  int result; // eax\n\n  Ticks = Timer::GetTicks();\n  byte_B0BDB4 = 0;\n  result = Ticks - dword_B0BD28;\n  dword_B0BD48 = result;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

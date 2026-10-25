@@ -1,0 +1,1 @@
+{"addr": "0x0041C150", "name": "TacticalClass::ProcessTick2", "decompiled": "_DWORD *__thiscall TacticalClass::ProcessTick2(FootClass *this, _DWORD *a2)\n{\n  *a2 = this->lastJumpjetMapCoords;\n  return a2;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

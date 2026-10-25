@@ -1,0 +1,1 @@
+{"addr": "0x007C8908", "name": "CoDisconnectObject", "decompiled": "// attributes: thunk\nHRESULT __stdcall CoDisconnectObject(LPUNKNOWN pUnk, DWORD dwReserved)\n{\n  return __imp_CoDisconnectObject(pUnk, dwReserved);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

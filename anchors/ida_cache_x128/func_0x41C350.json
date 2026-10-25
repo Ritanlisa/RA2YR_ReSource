@@ -1,0 +1,1 @@
+{"addr": "0x0041C350", "name": "Math::Hypotenuse2D", "decompiled": "int __thiscall Math::Hypotenuse2D(int *this)\n{\n  return Math::Sqrt(*(double *)this * *(double *)this + *((double *)this + 1) * *((double *)this + 1));\n}\n", "changed": true, "error": null, "timestamp": "x128"}

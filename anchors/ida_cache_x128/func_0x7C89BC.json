@@ -1,0 +1,1 @@
+{"addr": "0x007C89BC", "name": "WSAAsyncSelect", "decompiled": "// attributes: thunk\nAnimClass *WSAAsyncSelect(AnimClass *__return_ptr retstr, SOCKET s, HWND hWnd, u_int wMsg, int lEvent)\n{\n  return (AnimClass *)__imp_WSAAsyncSelect((SOCKET)retstr, (HWND)s, (u_int)hWnd, wMsg);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

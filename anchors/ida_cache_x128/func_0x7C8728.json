@@ -1,0 +1,1 @@
+{"addr": "0x007C8728", "name": "GetWindowTextA", "decompiled": "// attributes: thunk\nint __stdcall GetWindowTextA(HWND hWnd, LPSTR lpString, int nMaxCount)\n{\n  return __imp_GetWindowTextA(hWnd, lpString, nMaxCount);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

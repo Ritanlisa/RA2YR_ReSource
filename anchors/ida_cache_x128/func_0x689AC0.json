@@ -1,0 +1,1 @@
+{"addr": "0x00689AC0", "name": "sub_689AC0", "decompiled": "int __thiscall sub_689AC0(ObjectClass *this, const char *a2)\n{\n  int v2; // ebp\n  const char *i; // edi\n\n  v2 = 0;\n  for ( i = (char *)this + 9354; strcmp(a2, i); i += 41 )\n  {\n    if ( ++v2 >= 100 )\n      return -1;\n  }\n  return v2;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

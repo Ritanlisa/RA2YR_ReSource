@@ -1,0 +1,1 @@
+{"addr": "0x00731CF0", "name": "TechnoClass::GetField", "decompiled": "void TechnoClass::GetField()\n{\n  byte_B0FE58 = 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

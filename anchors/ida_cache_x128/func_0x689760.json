@@ -1,0 +1,1 @@
+{"addr": "0x00689760", "name": "ScenarioClass::GetGlobalStateByID", "decompiled": "char __thiscall ScenarioClass::GetGlobalStateByID(ScenarioClass *this, unsigned int a2, _BYTE *a3)\n{\n  if ( a2 > 0x31 )\n    return 0;\n  *a3 = this->globalVariables[40 * a2 + 40 + a2];\n  return 1;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

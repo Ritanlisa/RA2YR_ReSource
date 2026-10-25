@@ -1,0 +1,1 @@
+{"addr": "0x00535EA0", "name": "CreateTeamCommand::performAction_12", "decompiled": "char *__thiscall CreateTeamCommand::performAction_12(SetInfantryTabCommandClass *this)\n{\n  return aInfantrytab;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

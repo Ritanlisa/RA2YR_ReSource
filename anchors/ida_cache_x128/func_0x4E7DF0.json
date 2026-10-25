@@ -1,0 +1,1 @@
+{"addr": "0x004E7DF0", "name": "sub_4E7DF0", "decompiled": "int sub_4E7DF0()\n{\n  *(_DWORD *)&stru_A8E960.random[356] = 0;\n  *(_DWORD *)&stru_A8E960.random[360] = 0;\n  return atexit(unknown_libname_14);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

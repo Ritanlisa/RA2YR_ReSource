@@ -1,0 +1,1 @@
+{"addr": "0x004B4D50", "name": "ComPtr::Release_Alt", "decompiled": "int __thiscall ComPtr::Release_Alt(ComPtr *this)\n{\n  int result; // eax\n\n  result = *(_DWORD *)this->__pad_0;\n  if ( *(_DWORD *)this->__pad_0 )\n    return (*(int (__stdcall **)(int))(*(_DWORD *)result + 8))(result);\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

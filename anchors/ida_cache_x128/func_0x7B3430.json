@@ -1,0 +1,1 @@
+{"addr": "0x007B3430", "name": "UDPInterfaceClass_Destru::GetAddress", "decompiled": "char __thiscall UDPInterfaceClass_Destru::GetAddress(UDPInterfaceClass *this)\n{\n  if ( !(unsigned __int8)WinsockInterface::Init((WinsockInterface *)this) )\n    return 0;\n  *((_DWORD *)this + 64716) = 0;\n  return 1;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x0065F9B0", "name": "sub_65F9B0", "decompiled": "int sub_65F9B0()\n{\n  dword_B04DAC = 0;\n  dword_B04DB0 = 0;\n  byte_B04DB4 = 1;\n  byte_B04DB5 = 0;\n  *(_DWORD *)stru_B04DA8.__pad_0 = &off_7F0AAC;\n  dword_B04DBC = 10;\n  dword_B04DB8 = 0;\n  return atexit(sub_65F9F0);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

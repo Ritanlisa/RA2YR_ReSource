@@ -1,0 +1,1 @@
+{"addr": "0x0046C880", "name": "BulletTypeClass::StubReturnFalse", "decompiled": "int __stdcall BulletTypeClass::StubReturnFalse(BulletTypeClass *this)\n{\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

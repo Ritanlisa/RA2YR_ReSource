@@ -1,0 +1,1 @@
+{"addr": "0x0041C1D0", "name": "AircraftClass::CheckMissionAbort", "decompiled": "int __thiscall AircraftClass::CheckMissionAbort(AircraftClass *this)\n{\n  return *(_DWORD *)(this->Type + 96);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

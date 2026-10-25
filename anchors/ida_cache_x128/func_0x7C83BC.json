@@ -1,0 +1,1 @@
+{"addr": "0x007C83BC", "name": "QueryPerformanceCounter", "decompiled": "// attributes: thunk\nBOOL __stdcall QueryPerformanceCounter(LARGE_INTEGER *lpPerformanceCount)\n{\n  return __imp_QueryPerformanceCounter(lpPerformanceCount);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

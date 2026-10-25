@@ -1,0 +1,1 @@
+{"addr": "0x004E7DE0", "name": "sub_4E7DE0", "decompiled": "void __cdecl sub_4E7DE0()\n{\n  *(_DWORD *)&stru_A8E960.random[364] = &VersionClass::`vftable';\n}\n", "changed": true, "error": null, "timestamp": "x128"}

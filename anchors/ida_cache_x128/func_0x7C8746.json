@@ -1,0 +1,1 @@
+{"addr": "0x007C8746", "name": "EnumChildWindows", "decompiled": "// attributes: thunk\nBOOL __stdcall EnumChildWindows(HWND hWndParent, WNDENUMPROC lpEnumFunc, LPARAM lParam)\n{\n  return __imp_EnumChildWindows(hWndParent, lpEnumFunc, lParam);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

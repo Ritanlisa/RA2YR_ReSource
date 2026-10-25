@@ -1,0 +1,1 @@
+{"addr": "0x005C10B0", "name": "MultiplayerBattleTeam::Release", "decompiled": "bool __thiscall MultiplayerBattleTeam::Release(MultiplayerBattleTeam *this, int a2)\n{\n  return PlayerClass::SetHouse((MultiplayerTeam *)this, a2) != 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x004C4F90", "name": "TaskForceClass::Check", "decompiled": "char *__thiscall TaskForceClass::Check(TaskForceClass *this)\n{\n  sprintf(byte_8A37A0, \"%d,%s\", this->vfptr, (const char *)(this->TaskForceClass_field_0x4 + 36));\n  return byte_8A37A0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

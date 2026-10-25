@@ -1,0 +1,1 @@
+{"addr": "0x00720940", "name": "ScenarioClass::processEndgame", "decompiled": "char *__thiscall ScenarioClass::processEndgame(ScenarioClass *this, unsigned int a2)\n{\n  if ( a2 >= *(_DWORD *)&this->nextScenario[36] )\n    return aNoTheme;\n  else\n    return *(char **)(*(_DWORD *)&this->nextScenario[24] + 4 * a2);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

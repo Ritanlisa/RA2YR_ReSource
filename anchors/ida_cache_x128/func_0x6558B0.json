@@ -1,0 +1,1 @@
+{"addr": "0x006558B0", "name": "Radar::PixelIndex", "decompiled": "int __thiscall Radar::PixelIndex(Radar *this)\n{\n  return *(_DWORD *)&this->Radar_field_0x2[2] + 251 * *(_DWORD *)&this->Radar_field_0x6[2];\n}\n", "changed": true, "error": null, "timestamp": "x128"}

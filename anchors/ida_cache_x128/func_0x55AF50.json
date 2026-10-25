@@ -1,0 +1,1 @@
+{"addr": "0x0055AF50", "name": "Map_Init", "decompiled": "void __thiscall Map_Init(ObjectClass *this)\n{\n  dword_829FF8 = (int)this;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

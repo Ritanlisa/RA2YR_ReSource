@@ -1,0 +1,1 @@
+{"addr": "0x007DCEF8", "name": "GetStdHandle", "decompiled": "// attributes: thunk\nHANDLE __stdcall GetStdHandle(DWORD nStdHandle)\n{\n  return __imp_GetStdHandle(nStdHandle);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

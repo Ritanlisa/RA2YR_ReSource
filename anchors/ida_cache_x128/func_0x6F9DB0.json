@@ -1,0 +1,1 @@
+{"addr": "0x006F9DB0", "name": "TechnoClass::GetID", "decompiled": "int __thiscall TechnoClass::GetID(TechnoClass *this)\n{\n  return *(_DWORD *)(this->owner + 48);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

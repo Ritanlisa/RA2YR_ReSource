@@ -1,0 +1,1 @@
+{"addr": "0x007C852A", "name": "DosDateTimeToFileTime", "decompiled": "// attributes: thunk\nBOOL __stdcall DosDateTimeToFileTime(WORD wFatDate, WORD wFatTime, LPFILETIME lpFileTime)\n{\n  return __imp_DosDateTimeToFileTime(wFatDate, wFatTime, lpFileTime);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

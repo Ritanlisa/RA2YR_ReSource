@@ -1,0 +1,1 @@
+{"addr": "0x007D290B", "name": "_write_char_0", "decompiled": "_DWORD *__cdecl write_char_0(wchar_t WCh, FILE *File, _DWORD *a3)\n{\n  bool v3; // zf\n  _DWORD *result; // eax\n\n  v3 = _putwc_lk(WCh, File) == 0xFFFF;\n  result = a3;\n  if ( v3 )\n    *a3 = -1;\n  else\n    ++*a3;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

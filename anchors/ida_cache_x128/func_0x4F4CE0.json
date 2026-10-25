@@ -1,0 +1,1 @@
+{"addr": "0x004F4CE0", "name": "String::Equals", "decompiled": "int __thiscall String::Equals(const char *this, const char *a2)\n{\n  int result; // eax\n\n  result = strcmp(this, a2);\n  if ( !result )\n    return 1;\n  LOBYTE(result) = 0;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

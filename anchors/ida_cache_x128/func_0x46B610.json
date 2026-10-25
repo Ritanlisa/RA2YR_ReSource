@@ -1,0 +1,1 @@
+{"addr": "0x0046B610", "name": "VectorClass_ptr_BulletClass::GetItemIndex", "decompiled": "unsigned int __thiscall VectorClass_ptr_BulletClass::GetItemIndex(VectorClass_ptr_BulletClass *this, int a2)\n{\n  if ( this->IsInitialized[0] )\n    return (unsigned int)(a2 - this->Items) >> 2;\n  else\n    return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

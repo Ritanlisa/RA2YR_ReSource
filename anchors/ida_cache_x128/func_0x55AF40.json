@@ -1,0 +1,1 @@
+{"addr": "0x0055AF40", "name": "RadarClass::SetGlobal", "decompiled": "int __thiscall RadarClass::SetGlobal(RadarClass *this)\n{\n  int result; // eax\n\n  dword_829FF4 = (int)this;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

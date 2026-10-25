@@ -1,0 +1,1 @@
+{"addr": "0x0045A170", "name": "CellClass::SetField2C", "decompiled": "int __thiscall CellClass::SetField2C(CellClass *this)\n{\n  int result; // eax\n\n  result = this->mapCoords;\n  if ( this->mapCoords )\n    return (*(int (__stdcall **)(int))(*(_DWORD *)result + 4))(result);\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

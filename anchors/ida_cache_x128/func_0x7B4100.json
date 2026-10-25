@@ -1,0 +1,1 @@
+{"addr": "0x007B4100", "name": "UDPInterfaceClass_Destru::GetStatistics", "decompiled": "int __thiscall UDPInterfaceClass_Destru::GetStatistics(UDPInterfaceClass *this, int a2)\n{\n  if ( a2 == *((_DWORD *)this + 64539) || a2 == -1 )\n    return 1140;\n  else\n    return a2 != *((_DWORD *)this + 64540) ? 0 : 0x475;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

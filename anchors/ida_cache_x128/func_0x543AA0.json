@@ -1,0 +1,1 @@
+{"addr": "0x00543AA0", "name": "AbstractClass::COMStub_Ret17_11", "decompiled": "int AbstractClass::COMStub_Ret17_11(AbstractClass *this)\n{\n  return 17;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

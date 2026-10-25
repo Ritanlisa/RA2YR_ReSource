@@ -1,0 +1,1 @@
+{"addr": "0x007CB3F9", "name": "__lock_file", "decompiled": "void __cdecl _lock_file(FILE *Stream)\n{\n  if ( Stream < (FILE *)&off_87BF50 || Stream > &stru_87C1B0 )\n    EnterCriticalSection((LPCRITICAL_SECTION)&Stream[1]);\n  else\n    _lock((((char *)Stream - (char *)&off_87BF50) >> 5) + 28);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x007C8866", "name": "RestoreDC", "decompiled": "// attributes: thunk\nBOOL __stdcall RestoreDC(HDC hdc, int nSavedDC)\n{\n  return __imp_RestoreDC(hdc, nSavedDC);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

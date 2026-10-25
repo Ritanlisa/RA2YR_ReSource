@@ -1,0 +1,1 @@
+{"addr": "0x00524C70", "name": "InfantryTypeClass::GetClassIdentifier", "decompiled": "int __stdcall InfantryTypeClass::GetClassIdentifier(InfantryTypeClass *this, _DWORD *a2)\n{\n  if ( !a2 )\n    return -2147467261;\n  *a2 = -1366608936;\n  a2[1] = 298976796;\n  a2[2] = 1610654892;\n  a2[3] = -1252326136;\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

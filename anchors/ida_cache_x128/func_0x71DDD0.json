@@ -1,0 +1,1 @@
+{"addr": "0x0071DDD0", "name": "TerrainTypeClass::GetHeight", "decompiled": "bool __thiscall TerrainTypeClass::GetHeight(TerrainTypeClass *this, __int16 *a2, int a3)\n{\n  TerrainClass *v4; // eax\n\n  v4 = (TerrainClass *)__2_YAPAXI_Z(0xE0u);\n  return v4 && TerrainClass::Construct(v4, this, a2);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x00536E80", "name": "CreateTeamCommand::performAction_103", "decompiled": "wchar_t *__thiscall CreateTeamCommand::performAction_103(CenterBaseCommandClass *this)\n{\n  return GetStringCSF(aTxtCenterBaseD, 0, g_Str_File_Init_CPP, 7022);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

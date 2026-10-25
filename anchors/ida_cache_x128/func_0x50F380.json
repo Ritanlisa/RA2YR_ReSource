@@ -1,0 +1,1 @@
+{"addr": "0x0050F380", "name": "VectorClass_UScoutStruct::GetCapacity", "decompiled": "unsigned int __thiscall VectorClass_UScoutStruct::GetCapacity(_VectorClass_UScoutStruct *this, int a2)\n{\n  if ( LOBYTE(this->m_C) )\n    return (unsigned int)(a2 - *(_DWORD *)&this->m_1[3]) >> 3;\n  else\n    return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

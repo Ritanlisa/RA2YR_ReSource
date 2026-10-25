@@ -1,0 +1,1 @@
+{"addr": "0x0050BD10", "name": "HouseClass::ReshroudMap", "decompiled": "char __thiscall HouseClass::ReshroudMap(HouseClass *this)\n{\n  char result; // al\n\n  result = BYTE2(this->HouseClass_field_timer_B[2]);\n  if ( !result )\n    return ShroudClass::Reset((ShroudClass *)&dword_87F7E8, (int)this);\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

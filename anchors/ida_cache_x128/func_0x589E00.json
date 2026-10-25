@@ -1,0 +1,1 @@
+{"addr": "0x00589E00", "name": "MapClass::InitCellVe_vt05", "decompiled": "unsigned int __thiscall MapClass::InitCellVe_vt05(int this, int a2)\n{\n  if ( *(_BYTE *)(this + 12) )\n    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2;\n  else\n    return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

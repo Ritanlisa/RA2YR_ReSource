@@ -1,0 +1,1 @@
+{"addr": "0x0074FD50", "name": "NetworkBuffer::GetField", "decompiled": "int __thiscall NetworkBuffer::GetField(NetworkBuffer *this)\n{\n  *((_DWORD *)this + 15) = 0x20000;\n  *((_DWORD *)this + 16) = 0x20000;\n  return 0x20000;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

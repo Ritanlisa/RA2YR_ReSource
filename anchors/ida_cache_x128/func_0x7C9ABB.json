@@ -1,0 +1,1 @@
+{"addr": "0x007C9ABB", "name": "_iscntrl", "decompiled": "int __cdecl iscntrl(int C)\n{\n  if ( (int)cbMultiByte <= 1 )\n    return *((_BYTE *)off_87C590 + 2 * C) & 0x20;\n  else\n    return _isctype(C, 32);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x005139E0", "name": "HouseTypeClass::readBaseDefenses", "decompiled": "int __stdcall HouseTypeClass::readBaseDefenses(int a1, const void *a2, _DWORD *a3)\n{\n  return HouseTypeClass::QueryInterface((HouseTypeClass *)(a1 - 4), a2, a3);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

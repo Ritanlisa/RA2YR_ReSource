@@ -1,0 +1,1 @@
+{"addr": "0x00473AB0", "name": "CCFileClass::Destru_vt16", "decompiled": "char __thiscall CCFileClass::Destru_vt16(CCFileClass *this, int a2, int a3, int a4)\n{\n  char result; // al\n\n  result = this->FilePointer;\n  if ( !result )\n    return CD::`vftable'(dword_81C1D0);\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

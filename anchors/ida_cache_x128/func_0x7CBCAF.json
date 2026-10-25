@@ -1,0 +1,1 @@
+{"addr": "0x007CBCAF", "name": "__itow", "decompiled": "wchar_t *__cdecl _itow(int Value, wchar_t *Buffer, int Radix)\n{\n  CHAR MultiByteStr[20]; // [esp+0h] [ebp-14h] BYREF\n\n  _itoa(Value, MultiByteStr, Radix);\n  MultiByteToWideChar(0, 1u, MultiByteStr, -1, Buffer, 20);\n  return Buffer;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

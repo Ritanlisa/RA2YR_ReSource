@@ -1,0 +1,1 @@
+{"addr": "0x00522D30", "name": "SlaveManagerClass::CheckIsOne", "decompiled": "bool __thiscall SlaveManagerClass::CheckIsOne(SlaveManagerClass *this)\n{\n  return ((double (__thiscall *)(SlaveManagerClass *))*(_DWORD *)(this->vfptr + 692))(this) == 1.0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

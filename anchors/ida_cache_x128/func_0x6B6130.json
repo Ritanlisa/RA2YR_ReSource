@@ -1,0 +1,1 @@
+{"addr": "0x006B6130", "name": "SmudgeTypeClass::GetTypeIdentifier", "decompiled": "int SmudgeTypeClass::GetTypeIdentifier(SmudgeTypeClass *this)\n{\n  return 30;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

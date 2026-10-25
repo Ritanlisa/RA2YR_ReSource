@@ -1,0 +1,1 @@
+{"addr": "0x0076FF30", "name": "WDTObject::GetAndClearFlag", "decompiled": "int __thiscall WDTObject::GetAndClearFlag(WDTObject *this)\n{\n  int result; // eax\n\n  result = *((_DWORD *)this + 11);\n  *((_DWORD *)this + 11) = 0;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

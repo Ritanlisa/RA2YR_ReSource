@@ -1,0 +1,1 @@
+{"addr": "0x004759D0", "name": "HouseClass::updateBuildingProduction", "decompiled": "char __thiscall HouseClass::updateBuildingProduction(char *this, unsigned __int8 *Block, char *a3, int a4)\n{\n  return INIClass::SetString(this, Block, a3, (&off_7E1B60)[a4]);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

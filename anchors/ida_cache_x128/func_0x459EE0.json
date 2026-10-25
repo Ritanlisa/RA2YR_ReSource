@@ -1,0 +1,1 @@
+{"addr": "0x00459EE0", "name": "BuildingClass::GetTypePtr", "decompiled": "int __thiscall BuildingClass::GetTypePtr(BuildingClass *this)\n{\n  return this->Type;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

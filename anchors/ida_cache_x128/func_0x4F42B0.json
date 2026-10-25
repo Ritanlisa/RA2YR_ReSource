@@ -1,0 +1,1 @@
+{"addr": "0x004F42B0", "name": "COMObject::DtorSequence", "decompiled": "int __thiscall COMObject::DtorSequence(GScreenClass *this, int a2)\n{\n  (*((void (__thiscall **)(GScreenClass *))this->vfptr + 7))(this);\n  return (*((int (__thiscall **)(GScreenClass *))this->vfptr + 8))(this);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

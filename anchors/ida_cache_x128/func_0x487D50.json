@@ -1,0 +1,1 @@
+{"addr": "0x00487D50", "name": "Cell::GetSlopeIndex", "decompiled": "int __thiscall Cell::GetSlopeIndex(int this)\n{\n  return *(char *)(this + 283) + 4 * ((*(_DWORD *)(this + 320) >> 7) & 1);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x007C889C", "name": "RegOpenKeyExA", "decompiled": "// attributes: thunk\nLSTATUS __stdcall RegOpenKeyExA(HKEY hKey, LPCSTR lpSubKey, DWORD ulOptions, REGSAM samDesired, PHKEY phkResult)\n{\n  return __imp_RegOpenKeyExA(hKey, lpSubKey, ulOptions, samDesired, phkResult);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

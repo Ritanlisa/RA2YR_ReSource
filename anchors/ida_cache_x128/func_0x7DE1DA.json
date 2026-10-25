@@ -1,0 +1,1 @@
+{"addr": "0x007DE1DA", "name": "GetNumberOfConsoleInputEvents", "decompiled": "// attributes: thunk\nBOOL __stdcall GetNumberOfConsoleInputEvents(HANDLE hConsoleInput, LPDWORD lpNumberOfEvents)\n{\n  return __imp_GetNumberOfConsoleInputEvents(hConsoleInput, lpNumberOfEvents);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

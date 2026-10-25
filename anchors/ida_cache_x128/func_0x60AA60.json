@@ -1,0 +1,1 @@
+{"addr": "0x0060AA60", "name": "sub_60AA60", "decompiled": "BOOL __stdcall sub_60AA60(HWND hWnd, LPARAM a2)\n{\n  HWND Parent; // eax\n\n  Parent = GetParent(hWnd);\n  if ( IsValidActionDialog((int)Parent, hWnd) )\n    SendMessageA(hWnd, 0x4EEu, 0, 0);\n  return 1;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

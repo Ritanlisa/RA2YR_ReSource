@@ -1,0 +1,1 @@
+{"addr": "0x007C868C", "name": "ShowCursor", "decompiled": "// attributes: thunk\nint __stdcall ShowCursor(BOOL bShow)\n{\n  return __imp_ShowCursor(bShow);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

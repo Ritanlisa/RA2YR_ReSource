@@ -1,0 +1,1 @@
+{"addr": "0x007C91A5", "name": "CIpow_Helper_Helper", "decompiled": "void __usercall CIpow_Helper_Helper(double a1@<st0>)\n{\n  _ST6 = a1;\n  __asm { frndint }\n  if ( _ST6 == a1 )\n  {\n    _ST6 = a1 * dbl_87BED0;\n    __asm { frndint }\n  }\n}\n", "changed": true, "error": null, "timestamp": "x128"}

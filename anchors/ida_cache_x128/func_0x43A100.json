@@ -1,0 +1,1 @@
+{"addr": "0x0043A100", "name": "Vector3::AddAssign", "decompiled": "int Vector3::AddAssign(int *this, float *a2)\n{\n  float *v2; // ecx\n\n  *v2 = *(float *)this + *v2;\n  v2[1] = *((float *)this + 1) + v2[1];\n  v2[2] = *((float *)this + 2) + v2[2];\n  return (int)v2;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

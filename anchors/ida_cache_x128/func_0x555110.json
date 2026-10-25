@@ -1,0 +1,1 @@
+{"addr": "0x00555110", "name": "LightSourceClass::Seek", "decompiled": "int __stdcall LightSourceClass::Seek(LightSourceClass *this, int *a2, int a3)\n{\n  int result; // eax\n\n  result = AbstractClass::SaveLoad_Prefix(&this->vfptr, a2, a3);\n  if ( result >= 0 )\n    return 0;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

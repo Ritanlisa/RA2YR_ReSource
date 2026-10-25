@@ -1,0 +1,1 @@
+{"addr": "0x00438B00", "name": "BombClass::ddtor", "decompiled": "int __stdcall BombClass::ddtor(BombClass *this, _DWORD *a2)\n{\n  if ( !a2 )\n    return -2147467261;\n  *a2 = 108652931;\n  a2[1] = 299085213;\n  a2[2] = 268441278;\n  a2[3] = 1822515787;\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

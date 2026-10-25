@@ -1,0 +1,1 @@
+{"addr": "0x007C84EE", "name": "CreateDirectoryA", "decompiled": "// attributes: thunk\nBOOL __stdcall CreateDirectoryA(LPCSTR lpPathName, LPSECURITY_ATTRIBUTES lpSecurityAttributes)\n{\n  return __imp_CreateDirectoryA(lpPathName, lpSecurityAttributes);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

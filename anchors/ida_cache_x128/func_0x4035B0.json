@@ -1,0 +1,1 @@
+{"addr": "0x004035B0", "name": "sub_4035B0", "decompiled": "int __fastcall sub_4035B0(int a1, int *a2)\n{\n  int result; // eax\n\n  result = AudioQueue::GetNext((AudioQueue *)(a1 + 248));\n  *a2 = result;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

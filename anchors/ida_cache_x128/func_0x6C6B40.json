@@ -1,0 +1,1 @@
+{"addr": "0x006C6B40", "name": "sub_6C6B40", "decompiled": "int sub_6C6B40()\n{\n  g_SidebarButtonState.vfptr = 0;\n  dword_B0BD54 = 0;\n  dword_B0BD58 = 0;\n  return atexit(sub_6C6B60);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

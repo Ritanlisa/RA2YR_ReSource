@@ -1,0 +1,1 @@
+{"addr": "0x00557AE0", "name": "ColorListClass::SetColor", "decompiled": "int __thiscall ColorListClass::SetColor(ListClass *this)\n{\n  signed int v1; // eax\n\n  v1 = *((_DWORD *)this + 91);\n  if ( (signed int)this->field_50 > v1 )\n    return *(_DWORD *)(this->field_44 + 4 * v1);\n  else\n    return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

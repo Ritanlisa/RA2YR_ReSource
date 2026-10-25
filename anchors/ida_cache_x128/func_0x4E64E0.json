@@ -1,0 +1,1 @@
+{"addr": "0x004E64E0", "name": "sub_4E64E0", "decompiled": "int sub_4E64E0()\n{\n  dword_A8B204 = 0;\n  dword_A8B208 = 0;\n  byte_A8B20C = 1;\n  byte_A8B20D = 0;\n  dword_A8B200 = &DynamicVectorClass<AITriggerTypeClass *>::`vftable';\n  dword_A8B214 = 10;\n  dword_A8B210 = 0;\n  return atexit(sub_4E6520);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

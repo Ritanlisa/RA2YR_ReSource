@@ -1,0 +1,1 @@
+{"addr": "0x006A3E50", "name": "JumpjetLocomotionClass::SmallStub_6A3E50", "decompiled": "int __stdcall JumpjetLocomotionClass::SmallStub_6A3E50(ShipLocomotionClass *this)\n{\n  return 2;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x0049F9B0", "name": "CounterClass::Construct", "decompiled": "_DWORD *__thiscall CounterClass::Construct(CounterClass *this)\n{\n  this->count = 0;\n  this->field_8 = 0;\n  this->field_C = 1;\n  this->field_D = 0;\n  this->items = (int)&CounterClass::`vftable';\n  this->field_10 = 0;\n  return &this->items;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x007DA4EF", "name": "_fgetwc", "decompiled": "wint_t __cdecl fgetwc(FILE *Stream)\n{\n  wint_t v1; // di\n\n  _lock_file(Stream);\n  v1 = _getwc_lk(Stream);\n  _unlock_file(Stream);\n  return v1;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

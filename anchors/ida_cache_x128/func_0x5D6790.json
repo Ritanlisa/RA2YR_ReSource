@@ -1,0 +1,1 @@
+{"addr": "0x005D6790", "name": "ScenarioClass::ClearFlag", "decompiled": "char ScenarioClass::ClearFlag(MultiplayerGameMode *this)\n{\n  int vfptr; // ecx\n\n  vfptr = dword_A8B230->vfptr;\n  BYTE1(vfptr) = BYTE1(dword_A8B230->vfptr) & 0xFB;\n  dword_A8B230->vfptr = vfptr;\n  return 1;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

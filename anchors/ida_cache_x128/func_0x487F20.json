@@ -1,0 +1,1 @@
+{"addr": "0x00487F20", "name": "Coord2D::Sub", "decompiled": "int *__thiscall Coord2D::Sub(Coord2D *this, int *a2, _DWORD *a3)\n{\n  int v3; // edx\n  int v5; // ecx\n\n  v3 = *(_DWORD *)this->__pad_0;\n  v5 = this->Coord2D_field_0x04 - a3[1];\n  *a2 = v3 - *a3;\n  a2[1] = v5;\n  return a2;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

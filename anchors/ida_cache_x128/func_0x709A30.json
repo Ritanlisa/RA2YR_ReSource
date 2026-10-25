@@ -1,0 +1,1 @@
+{"addr": "0x00709A30", "name": "IPersistStream::Stub", "decompiled": "void __stdcall IPersistStream::Stub(TechnoClass *this, int a2)\n{\n  ;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

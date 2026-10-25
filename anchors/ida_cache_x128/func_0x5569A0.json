@@ -1,0 +1,1 @@
+{"addr": "0x005569A0", "name": "sub_5569A0", "decompiled": "int sub_5569A0()\n{\n  dword_ABCB7C = 0;\n  dword_ABCB80 = 0;\n  byte_ABCB84 = 1;\n  byte_ABCB85 = 0;\n  dword_ABCB78 = (int)&DynamicVectorClass<LineTrail *>::`vftable';\n  dword_ABCB8C = 10;\n  dword_ABCB88 = 0;\n  return atexit(sub_5569E0);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

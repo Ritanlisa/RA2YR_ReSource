@@ -1,0 +1,1 @@
+{"addr": "0x007730D0", "name": "WeaponTypeClass::GetObjectSize", "decompiled": "int WeaponTypeClass::GetObjectSize(WeaponTypeClass *this)\n{\n  return 352;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

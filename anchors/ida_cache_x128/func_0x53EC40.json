@@ -1,0 +1,1 @@
+{"addr": "0x0053EC40", "name": "Memory_Helper", "decompiled": "int __fastcall Memory_Helper(unsigned __int8 a1, char a2)\n{\n  int result; // eax\n\n  result = dword_AA0444;\n  if ( dword_AA0444 )\n    word_AA0168[a1] = a2 != 0 ? 0 : 0x8000;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

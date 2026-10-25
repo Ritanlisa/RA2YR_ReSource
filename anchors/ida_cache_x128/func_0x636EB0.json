@@ -1,0 +1,1 @@
+{"addr": "0x00636EB0", "name": "ExecuteActionPlanManager_Helper_636EB0", "decompiled": "int __thiscall ExecuteActionPlanManager_Helper_636EB0(ObjectClass *this)\n{\n  int v1; // eax\n\n  v1 = this->abstractFlags - 1;\n  if ( v1 >= 0 )\n    return *(_DWORD *)(this->vfptr2 + 4 * v1);\n  else\n    return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

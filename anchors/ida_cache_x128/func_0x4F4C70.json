@@ -1,0 +1,1 @@
+{"addr": "0x004F4C70", "name": "String::Copy", "decompiled": "char *__thiscall String::Copy(char *this, const char *a2)\n{\n  strcpy(this, a2);\n  return this;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

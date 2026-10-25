@@ -1,0 +1,1 @@
+{"addr": "0x007C8422", "name": "UnmapViewOfFile", "decompiled": "// attributes: thunk\nBOOL __stdcall UnmapViewOfFile(LPCVOID lpBaseAddress)\n{\n  return __imp_UnmapViewOfFile(lpBaseAddress);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

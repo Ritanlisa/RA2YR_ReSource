@@ -1,0 +1,1 @@
+{"addr": "0x0070C5A0", "name": "BuildingClass::CheckCellPassability", "decompiled": "int __thiscall BuildingClass::CheckCellPassability(TechnoClass *this)\n{\n  int result; // eax\n\n  LOBYTE(result) = this->isCloakableFlag[0] != 0;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

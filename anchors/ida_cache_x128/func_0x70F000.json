@@ -1,0 +1,1 @@
+{"addr": "0x0070F000", "name": "TechnoClass::ClearUnknownFlag", "decompiled": "int __thiscall TechnoClass::ClearUnknownFlag(TechnoClass *this)\n{\n  int v2; // [esp+4h] [ebp+4h]\n\n  return *(char *)(v2 + 12);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x005E9440", "name": "Player::IsObserver", "decompiled": "int __thiscall Player::IsObserver(Player *this)\n{\n  return this\n      && (this == (Player *)g_Lobby_PlayerTeam\n       || this == (Player *)g_Lobby_PlayerSide\n       || this == (Player *)g_Lobby_PlayerColor);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

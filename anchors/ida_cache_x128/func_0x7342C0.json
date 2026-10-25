@@ -1,0 +1,1 @@
+{"addr": "0x007342C0", "name": "SelectAllOfType_Helper", "decompiled": "char __thiscall SelectAllOfType_Helper(ObjectClass *this)\n{\n  if ( this )\n    return this->abstractFlags & 1;\n  else\n    return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

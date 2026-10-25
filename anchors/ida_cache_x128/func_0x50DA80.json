@@ -1,0 +1,1 @@
+{"addr": "0x0050DA80", "name": "HouseClass::GetTransitionCount", "decompiled": "int __thiscall HouseClass::GetTransitionCount(HouseClass *this)\n{\n  int result; // eax\n\n  result = this->HouseClass_field_timer_C[0];\n  if ( (unsigned int)result >= 4 )\n    return 0;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

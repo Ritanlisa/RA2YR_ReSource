@@ -1,0 +1,1 @@
+{"addr": "0x004CA580", "name": "FactoryClass::Revert", "decompiled": "int __thiscall FactoryClass::Revert(FactoryClass *this, int a2, int a3)\n{\n  int result; // eax\n\n  result = a2;\n  if ( a2 == *(_DWORD *)&this->__pad_42[22] )\n    *(_DWORD *)&this->__pad_42[22] = 0;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x0076A570", "name": "Map_WorldDominationTour_43::Write", "decompiled": "unsigned int __thiscall Map_WorldDominationTour_43::Write(_VectorClass_VCentroid_WorldDominationTour *this, int a2)\n{\n  if ( LOBYTE(this->m_C) )\n    return (a2 - *(_DWORD *)&this->m_1[3]) / 0xCu;\n  else\n    return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

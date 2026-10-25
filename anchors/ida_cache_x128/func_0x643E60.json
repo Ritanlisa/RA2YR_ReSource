@@ -1,0 +1,1 @@
+{"addr": "0x00643E60", "name": "LoadScreen::IsActive", "decompiled": "int __thiscall LoadScreen::IsActive(LoadScreen *this)\n{\n  return *((_DWORD *)this + 25) != 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

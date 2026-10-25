@@ -1,0 +1,1 @@
+{"addr": "0x006A4CE0", "name": "sub_6A4CE0", "decompiled": "int sub_6A4CE0()\n{\n  ShapeButtonClass *v0; // esi\n  int v1; // edi\n\n  v0 = &stru_B07C48;\n  v1 = 4;\n  do\n  {\n    ShapeButtonClass::Init(v0);\n    v0 = (ShapeButtonClass *)((char *)v0 + 96);\n    --v1;\n  }\n  while ( v1 );\n  return atexit(sub_6A4D10);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

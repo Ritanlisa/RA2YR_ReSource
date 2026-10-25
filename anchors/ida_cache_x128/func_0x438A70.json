@@ -1,0 +1,1 @@
+{"addr": "0x00438A70", "name": "BombClass::TimeToExplode", "decompiled": "bool __thiscall BombClass::TimeToExplode(BombClass *this)\n{\n  return !this->audioController[0]\n      && *(int *)&stru_A8E960.random[528] > this->audioController[2]\n      && !this->BombClass_field_58[0];\n}\n", "changed": true, "error": null, "timestamp": "x128"}

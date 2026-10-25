@@ -1,0 +1,1 @@
+{"addr": "0x00459E80", "name": "BuildingClass::Destroyed", "decompiled": "int __thiscall BuildingClass::Destroyed(BuildingClass *this)\n{\n  _DWORD *v2; // [esp+8h] [ebp+8h]\n\n  if ( !v2 )\n    return -2147467261;\n  *v2 = 237448646;\n  v2[1] = 298949647;\n  v2[2] = -1610610249;\n  v2[3] = -777003740;\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

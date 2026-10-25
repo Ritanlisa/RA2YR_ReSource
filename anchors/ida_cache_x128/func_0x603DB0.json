@@ -1,0 +1,1 @@
+{"addr": "0x00603DB0", "name": "Diplomacy_Helper", "decompiled": "LRESULT __fastcall Diplomacy_Helper(HWND hWnd, unsigned __int8 a2)\n{\n  return SendMessageA(hWnd, 0x4E5u, 0, a2);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

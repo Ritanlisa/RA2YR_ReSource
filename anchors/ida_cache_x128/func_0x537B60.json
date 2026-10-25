@@ -1,0 +1,1 @@
+{"addr": "0x00537B60", "name": "ScreenCaptureCommandClass::ddtor", "decompiled": "wchar_t *ScreenCaptureCommandClass::ddtor(ScreenCaptureCommandClass *this)\n{\n  return GetStringCSF(g_Str_TXT_INTERFACE, 0, g_Str_File_Init_CPP, 8071);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

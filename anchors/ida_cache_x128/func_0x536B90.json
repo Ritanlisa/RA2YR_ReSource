@@ -1,0 +1,1 @@
+{"addr": "0x00536B90", "name": "CreateTeamCommand::performAction_75", "decompiled": "char *__thiscall CreateTeamCommand::performAction_75(AllToCheerCommandClass *this)\n{\n  return aAlltocheer;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

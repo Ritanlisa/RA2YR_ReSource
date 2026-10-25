@@ -1,0 +1,1 @@
+{"addr": "0x007500D0", "name": "FootClass::GetField", "decompiled": "int __thiscall FootClass::GetField(int *this)\n{\n  int result; // eax\n\n  LOWORD(result) = Math::RoundToInt(*(float *)this * 100.0);\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

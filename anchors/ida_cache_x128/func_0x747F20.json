@@ -1,0 +1,1 @@
+{"addr": "0x00747F20", "name": "UnitTypeClass::GetGameplayValue", "decompiled": "int UnitTypeClass::GetGameplayValue(UnitTypeClass *this)\n{\n  return dword_8871E0->IRepairRate[1];\n}\n", "changed": true, "error": null, "timestamp": "x128"}

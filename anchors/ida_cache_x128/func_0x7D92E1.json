@@ -1,0 +1,1 @@
+{"addr": "0x007D92E1", "name": "__isnan", "decompiled": "int __cdecl _isnan(double X)\n{\n  return (HIWORD(X) & 0x7FF8) == 0x7FF0 && ((HIDWORD(X) & 0x7FFFF) != 0 || LODWORD(X)) || (HIWORD(X) & 0x7FF8) == 0x7FF8;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

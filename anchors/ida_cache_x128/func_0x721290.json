@@ -1,0 +1,1 @@
+{"addr": "0x00721290", "name": "TechnoTypeClass::CheckFlag", "decompiled": "int __thiscall TechnoTypeClass::CheckFlag(TechnoTypeClass *this, int a2)\n{\n  int result; // eax\n\n  result = a2;\n  if ( a2 >= 255 )\n    result = 255;\n  this->vfptr3 = result;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

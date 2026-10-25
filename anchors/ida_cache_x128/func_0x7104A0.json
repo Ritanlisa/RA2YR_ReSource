@@ -1,0 +1,1 @@
+{"addr": "0x007104A0", "name": "TechnoClass::ExitedOpenTopped", "decompiled": "int __stdcall TechnoClass::ExitedOpenTopped(int a1)\n{\n  int result; // eax\n\n  result = a1;\n  if ( a1 )\n    *(_BYTE *)(a1 + 130) = 0;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

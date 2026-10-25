@@ -1,0 +1,1 @@
+{"addr": "0x007C87FA", "name": "WaitForInputIdle", "decompiled": "// attributes: thunk\nDWORD __stdcall WaitForInputIdle(HANDLE hProcess, DWORD dwMilliseconds)\n{\n  return __imp_WaitForInputIdle(hProcess, dwMilliseconds);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

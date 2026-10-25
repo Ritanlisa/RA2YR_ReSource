@@ -1,0 +1,1 @@
+{"addr": "0x005B4400", "name": "sub_5B4400", "decompiled": "void __thiscall sub_5B4400(ObjectClass *this)\n{\n  if ( this->occupant && BYTE2(this->uniqueId) )\n    __3_YAXPAX_Z((void *)this->occupant);\n  this->occupant = 0;\n  BYTE2(this->uniqueId) = 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

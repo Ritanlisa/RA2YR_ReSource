@@ -1,0 +1,1 @@
+{"addr": "0x007C86D4", "name": "ToAscii", "decompiled": "// attributes: thunk\nint __stdcall ToAscii(UINT uVirtKey, UINT uScanCode, const BYTE *lpKeyState, LPWORD lpChar, UINT uFlags)\n{\n  return __imp_ToAscii(uVirtKey, uScanCode, lpKeyState, lpChar, uFlags);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x0070C610", "name": "TechnoClass::SetFocus", "decompiled": "int __thiscall TechnoClass::SetFocus(TechnoClass *this, int a2)\n{\n  this->focus = a2;\n  return a2;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

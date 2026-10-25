@@ -1,0 +1,1 @@
+{"addr": "0x006E8A50", "name": "sub_6E8A50", "decompiled": "int sub_6E8A50()\n{\n  dword_B0E998 = 0;\n  dword_B0E990 = 128;\n  dword_B0E994 = 128;\n  return 128;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

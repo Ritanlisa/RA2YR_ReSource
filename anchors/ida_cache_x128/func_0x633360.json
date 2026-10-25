@@ -1,0 +1,1 @@
+{"addr": "0x00633360", "name": "GameClass::parseGameOptions", "decompiled": "int __thiscall GameClass::parseGameOptions(PKStraw *this, int a2)\n{\n  return (*(int (__thiscall **)(PKStraw *, int))(*(_DWORD *)this->__pad_0 + 4))(this, a2);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

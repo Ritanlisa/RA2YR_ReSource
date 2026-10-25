@@ -1,0 +1,1 @@
+{"addr": "0x0075A810", "name": "TestBitArray", "decompiled": "int __fastcall TestBitArray(int a1)\n{\n  int result; // eax\n\n  result = a1 >> 3;\n  LOBYTE(result) = ((unsigned __int8)(1 << (a1 & 7)) & (unsigned __int8)byte_B45BA8[a1 >> 3]) != 0;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

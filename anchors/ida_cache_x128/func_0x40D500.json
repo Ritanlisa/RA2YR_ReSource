@@ -1,0 +1,1 @@
+{"addr": "0x0040D500", "name": "sub_40D500", "decompiled": "void __cdecl sub_40D500()\n{\n  g_MixFileArray_Movies = (int)&VectorClass<MixFileClass *>::`vftable';\n  if ( dword_884DE4 && byte_884DED )\n  {\n    __3_YAXPAX_Z(dword_884DE4);\n    dword_884DE4 = 0;\n  }\n  byte_884DED = 0;\n  dword_884DE8 = 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

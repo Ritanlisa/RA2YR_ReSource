@@ -1,0 +1,1 @@
+{"addr": "0x007D4596", "name": "fgetwc", "decompiled": "__int16 __cdecl fgetwc(FILE *File)\n{\n  return _getwc_lk(File);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

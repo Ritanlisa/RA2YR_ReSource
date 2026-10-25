@@ -1,0 +1,1 @@
+{"addr": "0x007C88BA", "name": "RegDeleteKeyA", "decompiled": "// attributes: thunk\nLSTATUS __stdcall RegDeleteKeyA(HKEY hKey, LPCSTR lpSubKey)\n{\n  return __imp_RegDeleteKeyA(hKey, lpSubKey);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

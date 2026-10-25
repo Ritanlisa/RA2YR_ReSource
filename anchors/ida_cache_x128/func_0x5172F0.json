@@ -1,0 +1,1 @@
+{"addr": "0x005172F0", "name": "LocomotionClass::ProcessMove", "decompiled": "_DWORD *__thiscall LocomotionClass::ProcessMove(LocomotionClass *this, char a2)\n{\n  LocomotionClass::Construct(this);\n  if ( (a2 & 1) != 0 )\n    __3_YAXPAX_Z(this);\n  return &this->field_0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x0055ABD0", "name": "COMObject::ReturnZeroPos", "decompiled": "_DWORD *__stdcall COMObject::ReturnZeroPos(IUnknown *this, _DWORD *a2)\n{\n  *a2 = 0;\n  a2[1] = 0;\n  return a2;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

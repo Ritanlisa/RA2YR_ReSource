@@ -1,0 +1,1 @@
+{"addr": "0x007DB087", "name": "___add_12", "decompiled": "int __cdecl __add_12(unsigned int *a1, unsigned int *a2)\n{\n  if ( __addl(*a1, *a2, a1) && __addl(a1[1], 1u, a1 + 1) )\n    ++a1[2];\n  if ( __addl(a1[1], a2[1], a1 + 1) )\n    ++a1[2];\n  return __addl(a1[2], a2[2], a1 + 2);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x0042B1F0", "name": "Object::ComputeAllocationSize", "decompiled": "int Object::ComputeAllocationSize()\n{\n  return 2 * dword_87F8DC * (dword_87F8E0 + 4);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

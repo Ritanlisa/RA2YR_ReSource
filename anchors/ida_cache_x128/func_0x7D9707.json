@@ -1,0 +1,1 @@
+{"addr": "0x007D9707", "name": "__unlock_fhandle", "decompiled": "void __cdecl _unlock_fhandle(int a1)\n{\n  LeaveCriticalSection((LPCRITICAL_SECTION)(dword_B78A80[a1 >> 5] + 36 * (a1 & 0x1F) + 12));\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x00536C60", "name": "CreateTeamCommand::performAction_83", "decompiled": "wchar_t *CreateTeamCommand::performAction_83(DeployCommandClass *this)\n{\n  return GetStringCSF(aTxtDeployObjec_0, 0, g_Str_File_Init_CPP, 6907);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

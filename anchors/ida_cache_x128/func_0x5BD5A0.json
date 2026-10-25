@@ -1,0 +1,1 @@
+{"addr": "0x005BD5A0", "name": "String::Release", "decompiled": "int __thiscall String::Release(String *this)\n{\n  int result; // eax\n\n  result = *((_DWORD *)this + 3);\n  if ( result )\n    __3_YAXPAX_Z(*((void **)this + 3));\n  *((_DWORD *)this + 3) = 0;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

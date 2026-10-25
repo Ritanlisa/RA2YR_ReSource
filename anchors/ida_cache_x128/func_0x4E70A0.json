@@ -1,0 +1,1 @@
+{"addr": "0x004E70A0", "name": "sub_4E70A0", "decompiled": "void __cdecl sub_4E70A0()\n{\n  dword_A8E8D0 = &VectorClass<TaskForceClass *>::`vftable';\n  if ( dword_A8E8D4 && byte_A8E8DD )\n  {\n    __3_YAXPAX_Z(dword_A8E8D4);\n    dword_A8E8D4 = 0;\n  }\n  byte_A8E8DD = 0;\n  dword_A8E8D8 = 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

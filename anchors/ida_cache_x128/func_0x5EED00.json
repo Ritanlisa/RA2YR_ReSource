@@ -1,0 +1,1 @@
+{"addr": "0x005EED00", "name": "VectorClass::Cleanup3", "decompiled": "void __thiscall VectorClass::Cleanup3(int this)\n{\n  if ( *(_DWORD *)(this + 4) && *(_BYTE *)(this + 13) )\n  {\n    __3_YAXPAX_Z(*(void **)(this + 4));\n    *(_DWORD *)(this + 4) = 0;\n  }\n  *(_BYTE *)(this + 13) = 0;\n  *(_DWORD *)(this + 8) = 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

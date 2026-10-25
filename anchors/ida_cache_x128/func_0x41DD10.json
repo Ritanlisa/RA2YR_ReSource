@@ -1,0 +1,1 @@
+{"addr": "0x0041DD10", "name": "sub_41DD10", "decompiled": "char __thiscall sub_41DD10(ObjectClass *this)\n{\n  this->ambientSoundController[1] = *(_DWORD *)&stru_A8E960.random[528];\n  LOBYTE(this->ambientSoundController[0]) = 0;\n  BYTE1(this->ambientSoundController[0]) = 0;\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

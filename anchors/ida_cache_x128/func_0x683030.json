@@ -1,0 +1,1 @@
+{"addr": "0x00683030", "name": "COMObject::ValidatePtr", "decompiled": "int __thiscall COMObject::ValidatePtr(COMObject *this)\n{\n  if ( !*(_DWORD *)this->__pad_0 )\n    sub_7DC720(-2147467261);\n  return *(_DWORD *)this->__pad_0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

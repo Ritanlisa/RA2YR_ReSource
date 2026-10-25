@@ -1,0 +1,1 @@
+{"addr": "0x00775B40", "name": "sub_775B40", "decompiled": "INT_PTR __stdcall sub_775B40(HWND a1, UINT a2, WPARAM a3, LPARAM a4)\n{\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

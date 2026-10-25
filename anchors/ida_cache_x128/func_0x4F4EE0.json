@@ -1,0 +1,1 @@
+{"addr": "0x004F4EE0", "name": "sub_4F4EE0", "decompiled": "int sub_4F4EE0()\n{\n  stru_A8E960.difficulty1 = 0;\n  stru_A8E960.difficulty2 = 0;\n  stru_A8E960.elapsedTimer[0] = 0;\n  stru_A8E960.elapsedTimer[1] = 0;\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

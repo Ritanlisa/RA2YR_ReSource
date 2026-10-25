@@ -1,0 +1,1 @@
+{"addr": "0x0053BAD0", "name": "ChronoScreen::IsActive", "decompiled": "int ChronoScreen::IsActive()\n{\n  return ChronoScreenEffect_Status != 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x007C978A", "name": "_atexit", "decompiled": "int __cdecl atexit(void (__cdecl *Func)())\n{\n  return (_onexit((_onexit_t)Func) != 0) - 1;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

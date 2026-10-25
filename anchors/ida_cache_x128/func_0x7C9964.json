@@ -1,0 +1,1 @@
+{"addr": "0x007C9964", "name": "_islower", "decompiled": "int __cdecl islower(int C)\n{\n  if ( (int)cbMultiByte <= 1 )\n    return *((_BYTE *)off_87C590 + 2 * C) & 2;\n  else\n    return _isctype(C, 2);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x00708C10", "name": "TechnoClass::GetGlobalValue", "decompiled": "int __thiscall TechnoClass::GetGlobalValue(TechnoClass *this)\n{\n  _DWORD *v2; // [esp+8h] [ebp+8h]\n\n  *v2 = dword_B0EA50;\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

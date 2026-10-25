@@ -1,0 +1,1 @@
+{"addr": "0x007C89F8", "name": "ImageList::BeginDrag", "decompiled": "// attributes: thunk\nBOOL __stdcall ImageList::BeginDrag(HIMAGELIST himlTrack, int iTrack, int dxHotspot, int dyHotspot)\n{\n  return ImageList_BeginDrag(himlTrack, iTrack, dxHotspot, dyHotspot);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x0040C1B0", "name": "sub_40C1B0", "decompiled": "int sub_40C1B0()\n{\n  dword_87F69C = 0;\n  dword_87F6A0 = 0;\n  byte_87F6A4 = 1;\n  byte_87F6A5 = 0;\n  dword_87F698 = (int)&DynamicVectorClass<LightConvertClass *>::`vftable';\n  dword_87F6AC = 10;\n  dword_87F6A8 = 0;\n  return atexit(sub_40C1F0);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

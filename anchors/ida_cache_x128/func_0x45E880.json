@@ -1,0 +1,1 @@
+{"addr": "0x0045E880", "name": "AbstractClass::addRefCount", "decompiled": "int __thiscall AbstractClass::addRefCount(AbstractClass *this, int a2)\n{\n  int v3; // eax\n\n  v3 = __2_YAPAXI_Z(0x720u);\n  if ( v3 )\n    return BuildingClass::Construct(v3, (int)this, a2);\n  else\n    return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

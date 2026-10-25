@@ -1,0 +1,1 @@
+{"addr": "0x00407150", "name": "EndBufferMixer", "decompiled": "int __fastcall EndBufferMixer(int *a1, int a2)\n{\n  int result; // eax\n\n  result = *a1;\n  LOBYTE(result) = *a1 | 1;\n  *a1 = result;\n  a1[2] = a2 << 16;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

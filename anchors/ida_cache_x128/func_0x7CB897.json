@@ -1,0 +1,1 @@
+{"addr": "0x007CB897", "name": "_iswxdigit", "decompiled": "int __cdecl iswxdigit(wint_t C)\n{\n  return iswctype(C, 0x80u);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

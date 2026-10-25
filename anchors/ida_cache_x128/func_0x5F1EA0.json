@@ -1,0 +1,1 @@
+{"addr": "0x005F1EA0", "name": "Count::GetCountQueue", "decompiled": "int __thiscall Count::GetCountQueue(Count *this)\n{\n  int v1; // eax\n\n  v1 = *((_DWORD *)this + 14);\n  if ( v1 )\n    return *(_DWORD *)(*(_DWORD *)(v1 + 4) + 40);\n  else\n    return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

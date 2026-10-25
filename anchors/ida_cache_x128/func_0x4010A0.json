@@ -1,0 +1,1 @@
+{"addr": "0x004010A0", "name": "AudioChannel::IsActive", "decompiled": "int __thiscall AudioChannel::IsActive(AudioChannel *this)\n{\n  return (this->__pad_0[0] & 2) != 0 || (*((_BYTE *)this + 40) & 2) != 0 || (*((_BYTE *)this + 80) & 2) != 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

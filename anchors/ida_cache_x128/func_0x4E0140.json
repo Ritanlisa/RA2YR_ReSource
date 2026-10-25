@@ -1,0 +1,1 @@
+{"addr": "0x004E0140", "name": "AbstractClass::getCurrentMission", "decompiled": "char __thiscall AbstractClass::getCurrentMission(MissionClass *this)\n{\n  return 1;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

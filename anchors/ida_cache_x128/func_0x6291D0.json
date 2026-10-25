@@ -1,0 +1,1 @@
+{"addr": "0x006291D0", "name": "sub_6291D0", "decompiled": "void __cdecl sub_6291D0()\n{\n  dword_AC4910 = (int)&VectorClass<ParasiteClass *>::`vftable';\n  if ( dword_AC4914 && byte_AC491D )\n  {\n    __3_YAXPAX_Z(dword_AC4914);\n    dword_AC4914 = 0;\n  }\n  byte_AC491D = 0;\n  dword_AC4918 = 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x00653830", "name": "Conditions::CheckResult3", "decompiled": "bool __stdcall Conditions::CheckResult3(RadarClass *this, int a2, char a3)\n{\n  DisplayClass *v3; // ecx\n\n  return DisplayClass::vt_entry_94(v3, (__int16 *)this, a2, a3) != 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

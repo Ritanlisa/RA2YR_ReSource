@@ -1,0 +1,1 @@
+{"addr": "0x007C89AA", "name": "recvfrom", "decompiled": "// attributes: thunk\nint __stdcall recvfrom(SOCKET s, char *buf, int len, int flags, struct sockaddr *from, int *fromlen)\n{\n  return __imp_recvfrom(s, buf, len, flags, from, fromlen);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

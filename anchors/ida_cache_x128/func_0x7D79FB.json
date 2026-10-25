@@ -1,0 +1,1 @@
+{"addr": "0x007D79FB", "name": "__FillZeroMan", "decompiled": "int __cdecl _FillZeroMan(_DWORD *a1)\n{\n  *a1 = 0;\n  a1[1] = 0;\n  a1[2] = 0;\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

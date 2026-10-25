@@ -1,0 +1,1 @@
+{"addr": "0x004E72E0", "name": "sub_4E72E0", "decompiled": "int sub_4E72E0()\n{\n  dword_A8E31C = 0;\n  dword_A8E320 = 0;\n  byte_A8E324 = 1;\n  byte_A8E325 = 0;\n  dword_A8E318 = &DynamicVectorClass<TerrainTypeClass *>::`vftable';\n  dword_A8E32C = 10;\n  dword_A8E328 = 0;\n  return atexit(sub_4E7320);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

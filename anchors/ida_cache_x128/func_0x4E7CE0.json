@@ -1,0 +1,1 @@
+{"addr": "0x004E7CE0", "name": "sub_4E7CE0", "decompiled": "void sub_4E7CE0()\n{\n  stru_A8E8C8.m_0 = (int)&TiberianSunClassFactory::`vftable';\n}\n", "changed": true, "error": null, "timestamp": "x128"}

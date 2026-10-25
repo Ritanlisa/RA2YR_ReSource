@@ -1,0 +1,1 @@
+{"addr": "0x004F3FC0", "name": "VectorCursor_uint_DynamicVectorClass_uint::AddRef", "decompiled": "BOOL __thiscall VectorCursor_uint_DynamicVectorClass_uint::AddRef(_VectorCursor_IV_DynamicVectorClass_I *this)\n{\n  return *((_DWORD *)this + 2) < *(_DWORD *)(*(_DWORD *)&this->m_1[3] + 16);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

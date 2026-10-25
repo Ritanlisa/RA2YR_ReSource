@@ -1,0 +1,1 @@
+{"addr": "0x0043A0B0", "name": "Triple::Set", "decompiled": "_DWORD *__thiscall Triple::Set(Triple *this, int a2, int a3, int a4)\n{\n  *(_DWORD *)this->__tail_0 = a2;\n  this->field_4 = a3;\n  this->field_8 = a4;\n  return this->__tail_0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

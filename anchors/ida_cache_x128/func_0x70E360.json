@@ -1,0 +1,1 @@
+{"addr": "0x0070E360", "name": "Techno::StartInvulnerability", "decompiled": "int __thiscall Techno::StartInvulnerability(TechnoClass *this, int a2)\n{\n  int v3; // eax\n\n  v3 = TechnoClass::InvulnerabilityIntensity_SetContext(this, a2);\n  return TechnoClass::CalcFlashAlpha(this, v3);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

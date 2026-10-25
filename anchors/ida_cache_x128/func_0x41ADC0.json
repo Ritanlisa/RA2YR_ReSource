@@ -1,0 +1,1 @@
+{"addr": "0x0041ADC0", "name": "AircraftClass::ProcessDockCheck", "decompiled": "int __thiscall AircraftClass::ProcessDockCheck(AircraftClass *this)\n{\n  if ( !this->locomotor )\n    sub_7DC720(-2147467261);\n  return (*(int (__stdcall **)(int))(*(_DWORD *)this->locomotor + 116))(this->locomotor);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x007490C0", "name": "??0Iostream_init_QAE_XZ_7", "decompiled": "Iostream_init *__thiscall __0Iostream_init_QAE_XZ_7(Iostream_init *this)\n{\n  return this;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

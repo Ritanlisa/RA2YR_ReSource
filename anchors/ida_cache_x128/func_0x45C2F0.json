@@ -1,0 +1,1 @@
+{"addr": "0x0045C2F0", "name": "j_Map_InitCellOffsets", "decompiled": "// attributes: thunk\nint j_Map_InitCellOffsets()\n{\n  return InitCellOffsetsMap();\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x005CEAB0", "name": "MSPCXAnim::Stub", "decompiled": "char __thiscall MSPCXAnim::Stub(MSPCXAnim *this)\n{\n  return this->u32_29;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

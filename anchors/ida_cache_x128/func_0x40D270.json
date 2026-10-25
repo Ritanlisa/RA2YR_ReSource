@@ -1,0 +1,1 @@
+{"addr": "0x0040D270", "name": "SidebarClass::initButtons2", "decompiled": "// attributes: thunk\nchar __thiscall SidebarClass::initButtons2(SidebarClass *this)\n{\n  return SidebarClass::InitButtons((TabClass *)this);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

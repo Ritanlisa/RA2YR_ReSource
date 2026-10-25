@@ -1,0 +1,1 @@
+{"addr": "0x005CAE60", "name": "sub_5CAE60", "decompiled": "void __thiscall sub_5CAE60(MultiplayerSiegeDefenderTeam *this)\n{\n  *(_DWORD *)this->__pad_0 = &MultiplayerSiegeDefenderTeam::`vftable';\n  MultiplayerTeam::Destructor((MultiplayerTeam *)this);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

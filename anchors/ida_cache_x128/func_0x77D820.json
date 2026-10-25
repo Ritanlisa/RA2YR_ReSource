@@ -1,0 +1,1 @@
+{"addr": "0x0077D820", "name": "Dialog::UpdateGameUI", "decompiled": "char Dialog::UpdateGameUI()\n{\n  HWND GameUI; // eax\n\n  Dialog::PumpMessages();\n  GameUI = (HWND)Dialog::FindGameUI();\n  if ( GameUI )\n    InvalidateRect(GameUI, 0, 1);\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

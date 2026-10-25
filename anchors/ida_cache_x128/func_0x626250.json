@@ -1,0 +1,1 @@
+{"addr": "0x00626250", "name": "sub_626250", "decompiled": "int __thiscall sub_626250(ObjectClass *this, const char *a2, int a3)\n{\n  strcpy((char *)this, a2);\n  *((_DWORD *)this + 64) = a3;\n  return (int)this;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

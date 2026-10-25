@@ -1,0 +1,1 @@
+{"addr": "0x00485060", "name": "Cell::IsValidHeight", "decompiled": "int __thiscall Cell::IsValidHeight(Cell *this)\n{\n  int Cell_field_0x38; // eax\n\n  Cell_field_0x38 = this->Cell_field_0x38;\n  return Cell_field_0x38 >= g_CellPassabilityLUT && Cell_field_0x38 < g_CellPassabilityLUT + 14;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

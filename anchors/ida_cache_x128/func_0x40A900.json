@@ -1,0 +1,1 @@
+{"addr": "0x0040A900", "name": "sub_40A900", "decompiled": "int __fastcall sub_40A900(int a1)\n{\n  int v1; // eax\n\n  v1 = 100 * a1 / 256;\n  if ( v1 > 100 )\n    return dword_816510[0];\n  if ( v1 < 0 )\n    v1 = 0;\n  return dword_816380[v1];\n}\n", "changed": true, "error": null, "timestamp": "x128"}

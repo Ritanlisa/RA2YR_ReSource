@@ -1,0 +1,1 @@
+{"addr": "0x007C83FE", "name": "GetProcAddress", "decompiled": "// attributes: thunk\nFARPROC __stdcall GetProcAddress(HMODULE hModule, LPCSTR lpProcName)\n{\n  return __imp_GetProcAddress(hModule, lpProcName);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x0040AD60", "name": "sub_40AD60", "decompiled": "int sub_40AD60()\n{\n  __0Iostream_init_QAE_XZ_0((Iostream_init *)&unk_87E8A8);\n  return atexit((void (__cdecl *)())unknown_libname_1);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

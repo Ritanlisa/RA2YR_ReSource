@@ -1,0 +1,1 @@
+{"addr": "0x0071A120", "name": "JumpjetLocomotionClass::SmallStub_71A120", "decompiled": "int JumpjetLocomotionClass::SmallStub_71A120(TeleportLocomotionClass *this)\n{\n  return 76;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x007D36AC", "name": "_setSBCS", "decompiled": "int setSBCS()\n{\n  memset(&unk_B78960, 0, 0x100u);\n  unk_B78A60 = 0;\n  dword_B78840 = 0;\n  dword_B7885C = 0;\n  dword_B78A64 = 0;\n  unk_B78850 = 0;\n  unk_B78854 = 0;\n  unk_B78858 = 0;\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

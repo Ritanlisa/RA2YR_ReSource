@@ -1,0 +1,1 @@
+{"addr": "0x00405160", "name": "sub_405160", "decompiled": "int __thiscall sub_405160(ObjectClass *this)\n{\n  if ( g_AudioConfigState )\n    return this->abstractFlags;\n  else\n    return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

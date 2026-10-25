@@ -1,0 +1,1 @@
+{"addr": "0x00536860", "name": "CreateTeamCommand::performAction_48", "decompiled": "wchar_t *__thiscall CreateTeamCommand::performAction_48(TypeSelectCommandClass *this)\n{\n  return GetStringCSF(aCmndTypeselect_0, 0, g_Str_File_Init_CPP, 6694);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x007C84D6", "name": "FileTimeToLocalFileTime", "decompiled": "// attributes: thunk\nBOOL __stdcall FileTimeToLocalFileTime(const FILETIME *lpFileTime, LPFILETIME lpLocalFileTime)\n{\n  return __imp_FileTimeToLocalFileTime(lpFileTime, lpLocalFileTime);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

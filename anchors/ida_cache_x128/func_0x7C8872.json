@@ -1,0 +1,1 @@
+{"addr": "0x007C8872", "name": "SetWindowOrgEx", "decompiled": "// attributes: thunk\nBOOL __stdcall SetWindowOrgEx(HDC hdc, int x, int y, LPPOINT lppt)\n{\n  return __imp_SetWindowOrgEx(hdc, x, y, lppt);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x005D8C90", "name": "PlayerClass::IsValidIndex", "decompiled": "bool __stdcall PlayerClass::IsValidIndex(bool *this)\n{\n  return (int)this >= 0 && (int)this < *(int *)&stru_A8D804.__pad_3D[579];\n}\n", "changed": true, "error": null, "timestamp": "x128"}

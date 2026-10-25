@@ -1,0 +1,1 @@
+{"addr": "0x007C844C", "name": "FreeConsole", "decompiled": "// attributes: thunk\nBOOL __stdcall FreeConsole()\n{\n  return __imp_FreeConsole();\n}\n", "changed": true, "error": null, "timestamp": "x128"}

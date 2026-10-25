@@ -1,0 +1,1 @@
+{"addr": "0x007DCF9A", "name": "LocalFree", "decompiled": "// attributes: thunk\nHLOCAL __stdcall LocalFree(HLOCAL hMem)\n{\n  return __imp_LocalFree(hMem);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x0055A950", "name": "COM::AddRef", "decompiled": "LONG __stdcall COM::AddRef(LocomotionClass *this)\n{\n  ++dword_ABCD3C;\n  return InterlockedIncrement(&this->RefCount);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

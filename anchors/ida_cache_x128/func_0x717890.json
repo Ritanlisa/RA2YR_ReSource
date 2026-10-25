@@ -1,0 +1,1 @@
+{"addr": "0x00717890", "name": "BuildingClass::SetSlot", "decompiled": "int __thiscall BuildingClass::SetSlot(BuildingClass *this, int a2, int a3)\n{\n  *((_DWORD *)this + a3 + 517) = a2;\n  return a3;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

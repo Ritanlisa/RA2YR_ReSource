@@ -1,0 +1,1 @@
+{"addr": "0x007C8A52", "name": "_BinkGetError_0", "decompiled": "// attributes: thunk\nint __stdcall BinkGetError_0()\n{\n  return BinkGetError();\n}\n", "changed": true, "error": null, "timestamp": "x128"}

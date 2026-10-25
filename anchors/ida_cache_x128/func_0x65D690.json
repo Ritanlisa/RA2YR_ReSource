@@ -1,0 +1,1 @@
+{"addr": "0x0065D690", "name": "VtableStub::RetZero_eax_35", "decompiled": "char __stdcall VtableStub::RetZero_eax_35(ReferenceCounted *this)\n{\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

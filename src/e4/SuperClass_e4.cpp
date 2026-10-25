@@ -1075,68 +1075,65 @@ namespace gamemd {
 void ** SuperClass::CreateChronoAnim(AbstractClass * aP1, SuperClass * aP2, int a4)
 {
 
-  SuperClass *v9; // [esp+4h] [ebp-10h] BYREF
-
-  unsigned char *SuperClass_field_0x68 = this->u32_68; // eax /*0x6cb3a6*/
-  if ( SuperClass_field_0x68 ) /*0x6cb3ab*/
-  {
-    SuperClass_field_0x68[405] = 0; /*0x6cb3ad*/
-    this->u32_68 = 0; /*0x6cb3b4*/
-    v9 = this; /*0x6cb3cb*/
-    int v6; // eax
-    v6 = (*(int (**)(int *, SuperClass **))(g_BuildingInstanceCount + 16))( /*0x6cb3cf*/
-           g_BuildingLoadQueue_Array.?,
-           &v9);
-    if ( v6 != -1 ) /*0x6cb3d5*/
-      ((DynamicVector *)stru_B0F5B8)->RemoveItem(v6); /*0x6cb3dd*/
-  }
-  if ( ((this->SpecialSoundLocation) & 0xFF) ) /*0x6cb3e2*/
-  {
-    v9 = this; /*0x6cb3f9*/
-    int v7; // eax
-    v7 = (*(int (**)(int *, SuperClass **))(g_BuildingInstanceCount + 16))( /*0x6cb3fd*/
-           g_BuildingLoadQueue_Array.?,
-           &v9);
-    if ( v7 != -1 ) /*0x6cb403*/
-      ((DynamicVector *)stru_B0F5B8)->RemoveItem(v7); /*0x6cb40b*/
-    (this->SpecialSoundLocation) = ((this->SpecialSoundLocation) & ~0xFF) | ((0) & 0xFF); /*0x6cb410*/
-  }
+  int SuperClass_field_0x68; // eax
+  int v6; // eax
+  int v7; // eax
   void **result; // eax
-  result = (void **)__2_YAPAXI_Z(0x1C8u); /*0x6cb419*/
-  if ( result ) /*0x6cb423*/
+  SuperClass *v9; // [esp+4h] [ebp-10h] BYREF
+  int v10[3]; // [esp+8h] [ebp-Ch] BYREF
+
+  SuperClass_field_0x68 = this->SuperClass_field_0x68;
+  if ( SuperClass_field_0x68 )
   {
-    int v10[3]; // [esp+8h] [ebp-Ch] BYREF
-    v10[0] = aP1; /*0x6cb444*/
-    v10[1] = aP2; /*0x6cb455*/
-    v10[2] = a4 + 5; /*0x6cb459*/
-    result = AnimClass::ctor( /*0x6cb467*/
+    *(unsigned char *)(SuperClass_field_0x68 + 405) = 0;
+    this->SuperClass_field_0x68 = 0;
+    v9 = this;
+    v6 = (*(int (**)(DynamicVectorClass *, SuperClass **))(stru_B0F5B8.vfptr + 16))(&stru_B0F5B8, &v9);
+    if ( v6 != -1 )
+      DynamicVector::RemoveItem((DynamicVector *)&stru_B0F5B8, v6);
+  }
+  if ( LOBYTE(this->SuperClass_field_0x6C) )
+  {
+    v9 = this;
+    v7 = (*(int (**)(DynamicVectorClass *, SuperClass **))(stru_B0F5B8.vfptr + 16))(&stru_B0F5B8, &v9);
+    if ( v7 != -1 )
+      DynamicVector::RemoveItem((DynamicVector *)&stru_B0F5B8, v7);
+    LOBYTE(this->SuperClass_field_0x6C) = 0;
+  }
+  result = (void **)__2_YAPAXI_Z(0x1C8u);
+  if ( result )
+  {
+    v10[0] = aP1;
+    v10[1] = aP2;
+    v10[2] = a4 + 5;
+    result = AnimClass::ctor(
                (AnimClass *)result,
-               *(void **)(*(unsigned int *)&g_RulesClass_Instance + 816),
+               *(void **)&dword_8871E0->__pad_240[240],
                v10,
                0,
                1,
                (void *)0x600,
                0,
                0);
-    if ( result ) /*0x6cb470*/
+    if ( result )
     {
-      this->u32_68 = result; /*0x6cb472*/
-      result = (void **)DataGlobal_B0E840[3456]; /*0x6cb475*/
-      if ( Count < g_BuildingLoadQueue_Array.Capacity /*0x6cb4ae*/
-        || (BYTE1(g_BuildingLoadQueue_Array) || !g_BuildingLoadQueue_Array.?)
-        && DataGlobal_B0E840[3468] > 0
-        && (result = (void **)(*(int (**)(int *, int, unsigned int))(g_BuildingLoadQueue_Array + 8))(
-                                g_BuildingLoadQueue_Array.?,
-                                g_BuildingLoadQueue_Array.? + g_BuildingLoadQueue_Array.?[2],
+      this->SuperClass_field_0x68 = (int)result;
+      result = (void **)stru_B0F5B8.Capacity;
+      if ( stru_B0F5B8.Count < stru_B0F5B8.Capacity
+        || (stru_B0F5B8.IsAllocated[0] || !stru_B0F5B8.Capacity)
+        && stru_B0F5B8.CapacityIncrement > 0
+        && (result = (void **)(*(int (**)(DynamicVectorClass *, int, unsigned int))(stru_B0F5B8.vfptr + 8))(
+                                &stru_B0F5B8,
+                                stru_B0F5B8.Capacity + stru_B0F5B8.CapacityIncrement,
                                 0),
             (unsigned char)result) )
       {
-        result = (void **)Count++; /*0x6cb4b6*/
-        *(unsigned int *)(g_BuildingLoadQueue_Array.?[0] + 4 * (unsigned int)result) = this; /*0x6cb4c5*/
+        result = (void **)stru_B0F5B8.Count++;
+        *(unsigned int *)(stru_B0F5B8.Items + 4 * (unsigned int)result) = this;
       }
     }
   }
-  return result; /*0x6cb4c8*/
+  return result;
 
 }
 } // namespace gamemd

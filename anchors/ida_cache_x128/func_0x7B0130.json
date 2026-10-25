@@ -1,0 +1,1 @@
+{"addr": "0x007B0130", "name": "sub_7B0130", "decompiled": "void __cdecl sub_7B0130()\n{\n  *(_DWORD *)stru_B77F58.__pad_0 = &rc_ptr<WDTState>::`vftable';\n  ComPtr::Release(&stru_B77F58);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

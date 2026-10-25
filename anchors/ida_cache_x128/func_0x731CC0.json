@@ -1,0 +1,1 @@
+{"addr": "0x00731CC0", "name": "Map_Handle_731CC0", "decompiled": "int Map_Handle_731CC0()\n{\n  return 22;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

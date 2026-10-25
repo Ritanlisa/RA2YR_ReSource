@@ -1,0 +1,1 @@
+{"addr": "0x00555C20", "name": "sub_555C20", "decompiled": "void sub_555C20()\n{\n  dbl_ABCAE8 = 0.0174532925199433 * 45.0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

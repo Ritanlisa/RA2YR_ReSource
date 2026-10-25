@@ -1,0 +1,1 @@
+{"addr": "0x0077D030", "name": "sub_77D030", "decompiled": "int sub_77D030()\n{\n  unknown_libname_73(&unk_B77794);\n  return atexit(unknown_libname_47);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

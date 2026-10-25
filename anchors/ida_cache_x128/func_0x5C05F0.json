@@ -1,0 +1,1 @@
+{"addr": "0x005C05F0", "name": "BinkMovieHandle::Close", "decompiled": "_DWORD *__thiscall BinkMovieHandle::Close(BinkMovieHandle *this)\n{\n  return BinkMovieHandle::CopyFrameToSurface((BinkMovieHandle *)this->height);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

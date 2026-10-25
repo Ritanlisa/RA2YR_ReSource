@@ -1,0 +1,1 @@
+{"addr": "0x00632B70", "name": "Buffer::RotateBufferCrypto", "decompiled": "int *__thiscall Buffer::RotateBufferCrypto(Buffer *this, int *a2, int a3)\n{\n  int v4[64]; // [esp+8h] [ebp-100h] BYREF\n\n  qmemcpy(v4, this, sizeof(v4));\n  RotateBitBufferLeft(v4, a3, 64);\n  qmemcpy(a2, v4, 0x100u);\n  return a2;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

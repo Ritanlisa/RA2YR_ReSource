@@ -1,0 +1,1 @@
+{"addr": "0x007C9A8D", "name": "_isgraph", "decompiled": "int __cdecl isgraph(int C)\n{\n  if ( (int)cbMultiByte <= 1 )\n    return *((_WORD *)off_87C590 + C) & 0x117;\n  else\n    return _isctype(C, 279);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

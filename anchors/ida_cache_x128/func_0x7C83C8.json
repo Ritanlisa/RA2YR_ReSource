@@ -1,0 +1,1 @@
+{"addr": "0x007C83C8", "name": "InterlockedDecrement", "decompiled": "// attributes: thunk\nLONG __stdcall InterlockedDecrement(volatile LONG *lpAddend)\n{\n  return __imp_InterlockedDecrement(lpAddend);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x007179A0", "name": "TechnoTypeClass::ddtor", "decompiled": "void *__thiscall TechnoTypeClass::ddtor(TechnoTypeClass *this, char a2)\n{\n  TechnoTypeClass::DTOR((char *)this);\n  if ( (a2 & 1) != 0 )\n    __3_YAXPAX_Z(this);\n  return this;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

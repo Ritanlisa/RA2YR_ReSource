@@ -1,0 +1,1 @@
+{"addr": "0x007598D0", "name": "AbstractClass::updateBuildingState", "decompiled": "void __thiscall AbstractClass::updateBuildingState(AbstractClass *this, signed int a2)\n{\n  if ( a2 != *((_DWORD *)this + 321) && ProcessAudioStreamBuffer(*((_DWORD *)this + 128), a2, 0) != -6 )\n    *((_DWORD *)this + 321) = a2;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

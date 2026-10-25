@@ -1,0 +1,1 @@
+{"addr": "0x0040C1F0", "name": "sub_40C1F0", "decompiled": "void __cdecl sub_40C1F0()\n{\n  dword_87F698 = (int)&VectorClass<LightConvertClass *>::`vftable';\n  if ( dword_87F69C && byte_87F6A5 )\n  {\n    __3_YAXPAX_Z(dword_87F69C);\n    dword_87F69C = 0;\n  }\n  byte_87F6A5 = 0;\n  dword_87F6A0 = 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

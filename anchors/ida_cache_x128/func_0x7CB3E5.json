@@ -1,0 +1,1 @@
+{"addr": "0x007CB3E5", "name": "___endstdio", "decompiled": "int __endstdio()\n{\n  int result; // eax\n\n  result = Endstdio_Helper();\n  if ( byte_B781FC )\n    return _fcloseall();\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

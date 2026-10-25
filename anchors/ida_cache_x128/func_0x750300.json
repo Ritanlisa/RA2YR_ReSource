@@ -1,0 +1,1 @@
+{"addr": "0x00750300", "name": "sub_750300", "decompiled": "int sub_750300()\n{\n  g_VocAudioConfig = 0;\n  dword_B1D380 = 0;\n  byte_B1D384 = 1;\n  byte_B1D385 = 0;\n  dword_B1D378 = (int)&DynamicVectorClass<VocClass *>::`vftable';\n  dword_B1D38C = 10;\n  g_VocPlayState = 0;\n  return atexit(sub_750340);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

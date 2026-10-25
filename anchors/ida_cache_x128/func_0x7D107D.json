@@ -1,0 +1,1 @@
+{"addr": "0x007D107D", "name": "__msize", "decompiled": "size_t __cdecl _msize(void *Block)\n{\n  size_t v1; // esi\n\n  _lock(9);\n  if ( __sbh_find_block((int)Block) )\n  {\n    v1 = *((_DWORD *)Block - 1) - 9;\n    _unlock(9);\n  }\n  else\n  {\n    _unlock(9);\n    return HeapSize(hHeap, 0, Block);\n  }\n  return v1;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

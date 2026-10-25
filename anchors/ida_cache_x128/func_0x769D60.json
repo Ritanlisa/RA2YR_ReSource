@@ -1,0 +1,1 @@
+{"addr": "0x00769D60", "name": "Map_WorldDominationTour_38::AddRef", "decompiled": "BOOL __thiscall Map_WorldDominationTour_38::AddRef(_VectorCursor_V_TRect_H_V_VectorClass_V_TRect_H *this)\n{\n  return *((_DWORD *)this + 2) < *(_DWORD *)(*(_DWORD *)&this->m_1[3] + 8);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

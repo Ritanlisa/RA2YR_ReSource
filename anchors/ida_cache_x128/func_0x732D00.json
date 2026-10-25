@@ -1,0 +1,1 @@
+{"addr": "0x00732D00", "name": "Selection::GetFlag", "decompiled": "char Selection::GetFlag()\n{\n  return byte_B0FE65;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x004080C0", "name": "ThemeClass::RequestBuffer", "decompiled": "int __thiscall ThemeClass::RequestBuffer(ThemeClass *this)\n{\n  return RequestBufferMixer((unsigned int *)(this->m_Name[3] + 16), 0);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

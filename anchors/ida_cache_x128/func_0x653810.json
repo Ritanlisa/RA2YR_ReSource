@@ -1,0 +1,1 @@
+{"addr": "0x00653810", "name": "Conditions::CheckResult", "decompiled": "bool __stdcall Conditions::CheckResult(RadarClass *this, int a2)\n{\n  DisplayClass *v2; // ecx\n\n  return DisplayClass::UpdateCellPassability(v2, (__int16 *)this, a2) != 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

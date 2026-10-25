@@ -1,0 +1,1 @@
+{"addr": "0x0076F0F0", "name": "CampaignProperties_WorldDominationTour_22::AddRef", "decompiled": "BOOL __thiscall CampaignProperties_WorldDominationTour_22::AddRef(\n        _VectorCursor_PAVMSAnim_V_DynamicVectorClass_PAVMSAnim *this)\n{\n  return *((_DWORD *)this + 2) < *(_DWORD *)(*(_DWORD *)&this->m_1[3] + 16);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

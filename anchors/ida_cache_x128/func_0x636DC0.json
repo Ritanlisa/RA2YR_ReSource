@@ -1,0 +1,1 @@
+{"addr": "0x00636DC0", "name": "FactoryClass::GetState", "decompiled": "int __thiscall FactoryClass::GetState(FactoryClass *this)\n{\n  return this->abstractFlags;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

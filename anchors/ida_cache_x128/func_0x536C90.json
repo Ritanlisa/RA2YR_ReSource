@@ -1,0 +1,1 @@
+{"addr": "0x00536C90", "name": "CreateTeamCommand::performAction_85", "decompiled": "char *CreateTeamCommand::performAction_85(GuardCommandClass *this)\n{\n  return aGuardobject;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

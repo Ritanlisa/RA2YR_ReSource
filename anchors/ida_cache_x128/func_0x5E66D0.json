@@ -1,0 +1,1 @@
+{"addr": "0x005E66D0", "name": "MPCooperative_Helper", "decompiled": "LRESULT MPCooperative_Helper()\n{\n  return SendDlgItemMessageA(hDlg, 1363, 0x188u, 0, 0);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

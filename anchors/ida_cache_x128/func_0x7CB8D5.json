@@ -1,0 +1,1 @@
+{"addr": "0x007CB8D5", "name": "_iswprint", "decompiled": "int __cdecl iswprint(wint_t C)\n{\n  return iswctype(C, 0x157u);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

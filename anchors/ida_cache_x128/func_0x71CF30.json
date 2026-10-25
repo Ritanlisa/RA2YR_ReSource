@@ -1,0 +1,1 @@
+{"addr": "0x0071CF30", "name": "TerrainClass::CheckFrameUpdate", "decompiled": "int __stdcall TerrainClass::CheckFrameUpdate(TerrainClass *this, int *a2, int a3)\n{\n  return AbstractClass::SaveLoad_Prefix(&this->vfptr, a2, a3);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x0067A8A0", "name": "RulesClass::readWarheads", "decompiled": "int __thiscall RulesClass::readWarheads(RulesClass *this)\n{\n  return this->LargeVisceroid;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x007DAE00", "name": "__ismbbprint", "decompiled": "int __cdecl _ismbbprint(unsigned int C)\n{\n  return CRTisctype(C, 343, 3u);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

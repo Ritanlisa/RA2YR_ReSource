@@ -1,0 +1,1 @@
+{"addr": "0x00600530", "name": "sub_600530", "decompiled": "int sub_600530()\n{\n  sub_6B9450((ObjectClass *)&g_DialogHashTable);\n  return atexit(unknown_libname_26);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

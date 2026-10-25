@@ -1,0 +1,1 @@
+{"addr": "0x006E5340", "name": "TagClass::HasZoneEntryByEvent", "decompiled": "bool __thiscall TagClass::HasZoneEntryByEvent(TagClass *this)\n{\n  TagTypeClass *buildingType; // ecx\n\n  buildingType = (TagTypeClass *)this->buildingType;\n  return buildingType && TagTypeClass::HasZoneEntryByEvent(buildingType);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

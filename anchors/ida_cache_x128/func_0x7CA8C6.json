@@ -1,0 +1,1 @@
+{"addr": "0x007CA8C6", "name": "_wcschr", "decompiled": "wchar_t *__cdecl wcschr(const wchar_t *Str, wchar_t Ch)\n{\n  while ( *Str && *Str != Ch )\n    ++Str;\n  return Ch == *Str ? (wchar_t *)Str : 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

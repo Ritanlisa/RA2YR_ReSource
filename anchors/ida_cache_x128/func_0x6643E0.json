@@ -1,0 +1,1 @@
+{"addr": "0x006643E0", "name": "Network::checkTimeout", "decompiled": "int __thiscall Network::checkTimeout(Network *this, int a2)\n{\n  if ( a2 >= this->Network_field_0x10 )\n    return 0;\n  else\n    return *(_DWORD *)(this->Network_field_0x4 + 4 * a2) + 1;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

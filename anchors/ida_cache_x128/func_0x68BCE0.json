@@ -1,0 +1,1 @@
+{"addr": "0x0068BCE0", "name": "ScenarioClass::GetCellFromArray", "decompiled": "void *__thiscall ScenarioClass::GetCellFromArray(ScenarioClass *this, int a2)\n{\n  return CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)&this->waypoints[4 * a2]);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

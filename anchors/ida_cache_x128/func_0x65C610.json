@@ -1,0 +1,1 @@
+{"addr": "0x0065C610", "name": "AbstractClass::processAITrigger", "decompiled": "_DWORD *__thiscall AbstractClass::processAITrigger(FileClass *this, char a2)\n{\n  *(_DWORD *)this->__tail_0 = &FileClass::`vftable';\n  if ( (a2 & 1) != 0 )\n    __3_YAXPAX_Z(this);\n  return this->__tail_0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

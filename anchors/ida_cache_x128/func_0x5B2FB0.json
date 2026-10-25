@@ -1,0 +1,1 @@
+{"addr": "0x005B2FB0", "name": "MissionClass::Return450M", "decompiled": "int __thiscall MissionClass::Return450M(MissionClass *this)\n{\n  return 450;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

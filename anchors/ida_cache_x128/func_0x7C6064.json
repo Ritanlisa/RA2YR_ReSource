@@ -1,0 +1,1 @@
+{"addr": "0x007C6064", "name": "Timer::ReadTSC", "decompiled": "unsigned __int64 __cdecl Timer::ReadTSC(_DWORD *a1)\n{\n  unsigned __int64 result; // rax\n\n  result = __rdtsc();\n  *a1 = HIDWORD(result);\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

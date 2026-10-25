@@ -1,0 +1,1 @@
+{"addr": "0x007B1840", "name": "sub_7B1840", "decompiled": "void sub_7B1840()\n{\n  dbl_B78070 = 0.0174532925199433 * 45.0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x007C8710", "name": "BeginPaint", "decompiled": "// attributes: thunk\nHDC __stdcall BeginPaint(HWND hWnd, LPPAINTSTRUCT lpPaint)\n{\n  return __imp_BeginPaint(hWnd, lpPaint);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x00424C90", "name": "BuildingClass::SetField95", "decompiled": "int __thiscall BuildingClass::SetField95(BuildingClass *this, int a2)\n{\n  this->radarFlashTimer[2] = a2;\n  return a2;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x0045A020", "name": "BuildingClass::updateFactoryProduction", "decompiled": "unsigned int __thiscall BuildingClass::updateFactoryProduction(int this, int a2)\n{\n  if ( *(_BYTE *)(this + 12) )\n    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2;\n  else\n    return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

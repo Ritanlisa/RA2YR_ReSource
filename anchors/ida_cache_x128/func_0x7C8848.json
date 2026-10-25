@@ -1,0 +1,1 @@
+{"addr": "0x007C8848", "name": "CreateSolidBrush", "decompiled": "// attributes: thunk\nHBRUSH __stdcall CreateSolidBrush(COLORREF color)\n{\n  return __imp_CreateSolidBrush(color);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

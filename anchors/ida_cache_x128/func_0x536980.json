@@ -1,0 +1,1 @@
+{"addr": "0x00536980", "name": "CreateTeamCommand::performAction_60", "decompiled": "wchar_t *__thiscall CreateTeamCommand::performAction_60(VeterancyNavCommandClass *this)\n{\n  return GetStringCSF(aCmndVetnavigat, 0, g_Str_File_Init_CPP, 6754);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

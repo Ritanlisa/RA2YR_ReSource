@@ -1,0 +1,1 @@
+{"addr": "0x007B5440", "name": "String::GetOrEmpty_Alt", "decompiled": "char *__thiscall String::GetOrEmpty_Alt(String *this)\n{\n  char *result; // eax\n\n  result = *(char **)this->__pad_0;\n  if ( !*(_DWORD *)this->__pad_0 )\n    return &g_INI_DefaultBuffer;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

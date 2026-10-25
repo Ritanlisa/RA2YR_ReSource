@@ -1,0 +1,1 @@
+{"addr": "0x0069E9B0", "name": "VectorClass::Check", "decompiled": "int __thiscall VectorClass::Check(SHAPipe *this, int a2, int a3)\n{\n  SHA1::Process((SHA1 *)((char *)this + 12), a2, a3);\n  return Delegate::Dispatch((Pipe *)this, a2, a3);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

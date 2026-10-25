@@ -1,0 +1,1 @@
+{"addr": "0x004E6CE0", "name": "sub_4E6CE0", "decompiled": "int sub_4E6CE0()\n{\n  dword_A8022C = 0;\n  dword_A80230 = 0;\n  byte_A80234 = 1;\n  byte_A80235 = 0;\n  dword_A80228.vfptr = (int)&DynamicVectorClass<HouseClass *>::`vftable';\n  dword_A8023C = 10;\n  dword_A80238 = 0;\n  return atexit(sub_4E6D20);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

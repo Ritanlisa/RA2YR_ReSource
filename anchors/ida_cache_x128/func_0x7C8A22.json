@@ -1,0 +1,1 @@
+{"addr": "0x007C8A22", "name": "ImmGetContext", "decompiled": "// attributes: thunk\nHIMC __stdcall ImmGetContext(HWND a1)\n{\n  return __imp_ImmGetContext(a1);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

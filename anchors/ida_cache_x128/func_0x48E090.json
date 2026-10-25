@@ -1,0 +1,1 @@
+{"addr": "0x0048E090", "name": "globalHelper_08E090", "decompiled": "char *__fastcall globalHelper_08E090(unsigned int a1)\n{\n  if ( a1 >= 5 )\n    return g_Str__none_;\n  else\n    return off_81DA78[a1];\n}\n", "changed": true, "error": null, "timestamp": "x128"}

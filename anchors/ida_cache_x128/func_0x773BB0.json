@@ -1,0 +1,1 @@
+{"addr": "0x00773BB0", "name": "WebBrowser::Stat", "decompiled": "int __thiscall WebBrowser::Stat(WebBrowser *this)\n{\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

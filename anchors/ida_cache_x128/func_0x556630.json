@@ -1,0 +1,1 @@
+{"addr": "0x00556630", "name": "ObjectClass::GetHeight", "decompiled": "int __thiscall ObjectClass::GetHeight(LinkClass *this)\n{\n  return this->m_Prev;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

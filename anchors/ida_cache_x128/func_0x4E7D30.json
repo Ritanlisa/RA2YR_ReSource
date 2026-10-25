@@ -1,0 +1,1 @@
+{"addr": "0x004E7D30", "name": "unknown_libname_13", "decompiled": "// Microsoft VisualC 2-14/net runtime\nvoid __cdecl unknown_libname_13()\n{\n  *(_DWORD *)stru_A8E7B0.__pad_0 = &RandomStraw::`vftable';\n  unk_A8E7BC = 0;\n  unk_A8E7C0 = 0;\n  memset(&unk_A8E7C4, 0, 0x100u);\n  Straw::Dtor(&stru_A8E7B0);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

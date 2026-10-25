@@ -1,0 +1,1 @@
+{"addr": "0x0070D670", "name": "TechnoClass::DecCounter", "decompiled": "int __thiscall TechnoClass::DecCounter(TechnoClass *this)\n{\n  int result; // eax\n\n  result = this->ammo;\n  if ( result > 0 )\n    this->ammo = --result;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

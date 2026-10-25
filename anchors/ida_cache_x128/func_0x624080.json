@@ -1,0 +1,1 @@
+{"addr": "0x00624080", "name": "sub_624080", "decompiled": "_DWORD *__thiscall sub_624080(ObjectClass *this)\n{\n  this->vfptr = (int)&OwnerDraw::DialogControl::`vftable';\n  return &this->vfptr;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

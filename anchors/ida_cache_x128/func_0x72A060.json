@@ -1,0 +1,1 @@
+{"addr": "0x0072A060", "name": "JumpjetLocomotionClass::IsStateInRange", "decompiled": "bool __stdcall JumpjetLocomotionClass::IsStateInRange(JumpjetLocomotionClass *this)\n{\n  unsigned int RefCount; // eax\n\n  RefCount = this->RefCount;\n  return RefCount < 2 || RefCount == 7 || RefCount == 2 || RefCount == 6;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

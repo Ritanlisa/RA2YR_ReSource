@@ -1,0 +1,1 @@
+{"addr": "0x00487E50", "name": "AbstractClass::compareType", "decompiled": "int __stdcall AbstractClass::compareType(AbstractClass *this)\n{\n  return 11;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

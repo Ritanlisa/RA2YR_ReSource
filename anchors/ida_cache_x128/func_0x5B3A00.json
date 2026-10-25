@@ -1,0 +1,1 @@
+{"addr": "0x005B3A00", "name": "MissionClass::GetMissionControl", "decompiled": "char *__thiscall MissionClass::GetMissionControl(MissionClass *this)\n{\n  return (char *)&stru_A8E3A8 + 32 * this->currentMission;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

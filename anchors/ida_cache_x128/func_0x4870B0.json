@@ -1,0 +1,1 @@
+{"addr": "0x004870B0", "name": "Cell::HasOccupierBit", "decompiled": "int __thiscall Cell::HasOccupierBit(Cell *this, char a2)\n{\n  return ((1 << a2) & *(_DWORD *)&this->__pad_70[8]) != 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

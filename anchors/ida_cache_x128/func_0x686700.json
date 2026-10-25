@@ -1,0 +1,1 @@
+{"addr": "0x00686700", "name": "ScenarioClass::SetFileName", "decompiled": "char *__thiscall ScenarioClass::SetFileName(char *this, char *Source)\n{\n  char *result; // eax\n\n  result = Source;\n  if ( Source )\n  {\n    result = strncpy(this + 4700, Source, 0x104u);\n    *(this + 4959) = 0;\n  }\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

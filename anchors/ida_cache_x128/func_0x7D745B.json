@@ -1,0 +1,1 @@
+{"addr": "0x007D745B", "name": "_IsThisWindowsNT", "decompiled": "BOOL IsThisWindowsNT()\n{\n  struct _OSVERSIONINFOA VersionInformation; // [esp+0h] [ebp-94h] BYREF\n\n  VersionInformation.dwOSVersionInfoSize = 148;\n  return GetVersionExA(&VersionInformation) && VersionInformation.dwPlatformId == 2;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

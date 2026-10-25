@@ -1,0 +1,1 @@
+{"addr": "0x004F43F0", "name": "COMObject::IsSameType", "decompiled": "bool __stdcall COMObject::IsSameType(GScreenClass *this)\n{\n  return *(_DWORD *)&stru_A8E960.random[992] == (*((int (__thiscall **)(GScreenClass *))this->vfptr + 6))(this);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

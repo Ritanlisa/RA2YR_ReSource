@@ -1,0 +1,1 @@
+{"addr": "0x0051F640", "name": "InfantryClass::FindIdleAITarget", "decompiled": "int __thiscall InfantryClass::FindIdleAITarget(InfantryClass *this)\n{\n  int result; // eax\n\n  result = InfantryClass::GetIdleTimer(this);\n  if ( result == -1 )\n    return FootClass::FindAITarget((FootClass *)this);\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

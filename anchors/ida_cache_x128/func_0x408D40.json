@@ -1,0 +1,1 @@
+{"addr": "0x00408D40", "name": "sub_408D40", "decompiled": "int __thiscall sub_408D40(ObjectClass *this)\n{\n  return this->ambientSoundController[4] - this->customSound_controller[0];\n}\n", "changed": true, "error": null, "timestamp": "x128"}

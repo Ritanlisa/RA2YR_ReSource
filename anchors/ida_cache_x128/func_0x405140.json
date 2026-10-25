@@ -1,0 +1,1 @@
+{"addr": "0x00405140", "name": "sub_405140", "decompiled": "double __thiscall sub_405140(float *this)\n{\n  if ( g_AudioConfigState )\n    return *(this + 21);\n  else\n    return 0.0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

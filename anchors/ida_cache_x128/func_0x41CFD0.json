@@ -1,0 +1,1 @@
+{"addr": "0x0041CFD0", "name": "AircraftTypeClass::GetAuxField", "decompiled": "int __thiscall AircraftTypeClass::GetAuxField(AircraftTypeClass *this)\n{\n  return this->ArrayIndex;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x007A5220", "name": "CComObject_CChatEventSink___ATL::DispatchStub_20", "decompiled": "int __stdcall CComObject_CChatEventSink___ATL::DispatchStub_20(CChatEventSink *this, int a2, const char *a3)\n{\n  if ( a2 >= 0 )\n    LeaveChannelWOL(a3);\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

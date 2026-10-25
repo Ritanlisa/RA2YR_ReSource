@@ -1,0 +1,1 @@
+{"addr": "0x007CF64C", "name": "__d_inttype", "decompiled": "int __cdecl _d_inttype(double X)\n{\n  if ( (_fpclass(X) & 0x90) != 0 || _frnd(X) != X )\n    return 0;\n  if ( _frnd(X / 2.0) == X / 2.0 )\n    return 2;\n  else\n    return 1;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

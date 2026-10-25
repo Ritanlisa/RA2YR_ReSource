@@ -1,0 +1,1 @@
+{"addr": "0x005D8090", "name": "AbstractClass::updateShroudMap", "decompiled": "_DWORD *__thiscall AbstractClass::updateShroudMap(AbstractClass *this, char a2)\n{\n  this->vfptr = (int)&MultiplayerGameMode::InitializerBase::`vftable';\n  if ( (a2 & 1) != 0 )\n    __3_YAXPAX_Z(this);\n  return &this->vfptr;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

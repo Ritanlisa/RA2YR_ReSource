@@ -1,0 +1,1 @@
+{"addr": "0x0055CC00", "name": "sub_55CC00", "decompiled": "void sub_55CC00()\n{\n  byte_ABCD58 = 1;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

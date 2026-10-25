@@ -1,0 +1,1 @@
+{"addr": "0x006B1130", "name": "SlaveManagerClass::ddtor", "decompiled": "int __stdcall SlaveManagerClass::ddtor(SlaveManagerClass *this, _DWORD *a2)\n{\n  if ( !a2 )\n    return -2147467261;\n  *a2 = 861581284;\n  a2[1] = 299183526;\n  a2[2] = 268444350;\n  a2[3] = 1822515787;\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

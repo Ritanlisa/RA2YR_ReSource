@@ -1,0 +1,1 @@
+{"addr": "0x00411540", "name": "Surface::GetWidth", "decompiled": "int __thiscall Surface::GetWidth(Surface *this)\n{\n  return this->Width;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x00420D80", "name": "AlphaShapeClass::SD_vt11", "decompiled": "int AlphaShapeClass::SD_vt11(AlphaShapeClass *this)\n{\n  return 62;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

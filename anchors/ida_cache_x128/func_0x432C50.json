@@ -1,0 +1,1 @@
+{"addr": "0x00432C50", "name": "BinkMovie::IsAtEnd", "decompiled": "int __thiscall BinkMovie::IsAtEnd(BinkMovieHandle *this)\n{\n  int tempPath; // eax\n  unsigned int v2; // edx\n\n  tempPath = this->tempPath;\n  v2 = *(_DWORD *)(tempPath + 12);\n  return v2 >= *(_DWORD *)(tempPath + 8) || v2 < this->memoryBuffer;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

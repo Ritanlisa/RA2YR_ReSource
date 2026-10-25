@@ -1,0 +1,1 @@
+{"addr": "0x00549B30", "name": "sub_549B30", "decompiled": "int sub_549B30()\n{\n  lpBuffer = 0;\n  dword_AA1060 = 0;\n  dword_AA1064 = 0;\n  dword_AA1068 = 0;\n  dword_AA106C = 0;\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

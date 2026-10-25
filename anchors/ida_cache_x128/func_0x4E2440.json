@@ -1,0 +1,1 @@
+{"addr": "0x004E2440", "name": "sub_4E2440", "decompiled": "DWORD sub_4E2440()\n{\n  DWORD result; // eax\n\n  result = timeGetTime();\n  dword_8B3F14 = result;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x007DCDF2", "name": "sub_7DCDF2", "decompiled": "_DWORD *__thiscall sub_7DCDF2(ObjectClass *this, char a2)\n{\n  sub_7DCE3B((_com_error *)this);\n  if ( (a2 & 1) != 0 )\n    __3_YAXPAX_Z(this);\n  return &this->vfptr;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

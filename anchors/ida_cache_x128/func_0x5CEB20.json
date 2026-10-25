@@ -1,0 +1,1 @@
+{"addr": "0x005CEB20", "name": "TimerClass::StartIfIdle", "decompiled": "void __thiscall TimerClass::StartIfIdle(MSAnim *this)\n{\n  if ( this->field_10 == -1 )\n    this->field_10 = Timer::GetTicks();\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x00536D10", "name": "CreateTeamCommand::performAction_90", "decompiled": "char *CreateTeamCommand::performAction_90(ScatterCommandClass *this)\n{\n  return aScatterobject;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

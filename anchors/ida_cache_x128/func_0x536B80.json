@@ -1,0 +1,1 @@
+{"addr": "0x00536B80", "name": "CreateTeamCommand::performAction_74", "decompiled": "// attributes: thunk\nwchar_t *__stdcall CreateTeamCommand::performAction_74(StopCommandClass *this)\n{\n  return (wchar_t *)UI_Create_730EA0();\n}\n", "changed": true, "error": null, "timestamp": "x128"}

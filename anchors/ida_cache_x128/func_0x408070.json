@@ -1,0 +1,1 @@
+{"addr": "0x00408070", "name": "Audio::IsSoundPlaying", "decompiled": "int __thiscall Audio::IsSoundPlaying(Audio *this)\n{\n  return this->Audio_field_0xC & 1;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

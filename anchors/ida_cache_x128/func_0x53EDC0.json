@@ -1,0 +1,1 @@
+{"addr": "0x0053EDC0", "name": "Network::CopyAddress_Small", "decompiled": "int __thiscall Network::CopyAddress_Small(char *this, int a2)\n{\n  char *v3; // ecx\n\n  v3 = this + 4;\n  *(_DWORD *)a2 = *(_DWORD *)v3;\n  *(_WORD *)(a2 + 4) = *((_WORD *)v3 + 2);\n  return a2;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

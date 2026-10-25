@@ -1,0 +1,1 @@
+{"addr": "0x007CBE0D", "name": "__c_exit", "decompiled": "void __cdecl _c_exit()\n{\n  doexit(0, 1, 1);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x00510AC0", "name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_9", "decompiled": "BSTR __stdcall VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_9(int a1)\n{\n  return VectorClass_ptr_BuildChoiceClass_int_ouseClass::FindItemIndex(a1 - 4);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

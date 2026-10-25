@@ -1,0 +1,1 @@
+{"addr": "0x0070C5D0", "name": "ObjectClass::HasSubObject", "decompiled": "int __thiscall ObjectClass::HasSubObject(TechnoClass *this)\n{\n  int result; // eax\n\n  result = this->temporalUsing;\n  LOBYTE(result) = result && *(_DWORD *)(result + 40);\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x00637AA0", "name": "FactoryClass::GetFlag", "decompiled": "int FactoryClass::GetFlag()\n{\n  int result; // eax\n\n  LOBYTE(result) = stru_AC4B48.__pad_194[24];\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x0077B900", "name": "sub_77B900", "decompiled": "int sub_77B900()\n{\n  g_WOL_UserList.vfptr = 0;\n  dword_B778DC = 0;\n  dword_B778E0 = 0;\n  return atexit(sub_77B920);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x005422D0", "name": "Network::GetQueueCount", "decompiled": "int __thiscall Network::GetQueueCount(IPXManagerClass *this)\n{\n  if ( this->Initialized[0] && this->Active[0] )\n    return *(_DWORD *)(*(_DWORD *)(this->field_60 + 4) + 40);\n  else\n    return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

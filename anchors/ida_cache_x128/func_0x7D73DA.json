@@ -1,0 +1,1 @@
+{"addr": "0x007D73DA", "name": "_TestDefaultCountry", "decompiled": "int __cdecl TestDefaultCountry(__int16 a1)\n{\n  _WORD *v1; // eax\n\n  v1 = &unk_87D0E4;\n  while ( a1 != *v1 )\n  {\n    if ( (int)++v1 >= (int)&off_87D0F8 )\n      return 1;\n  }\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

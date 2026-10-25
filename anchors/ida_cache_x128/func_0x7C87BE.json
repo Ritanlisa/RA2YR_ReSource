@@ -1,0 +1,1 @@
+{"addr": "0x007C87BE", "name": "LoadCursorA", "decompiled": "// attributes: thunk\nHCURSOR __stdcall LoadCursorA(HINSTANCE hInstance, LPCSTR lpCursorName)\n{\n  return __imp_LoadCursorA(hInstance, lpCursorName);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

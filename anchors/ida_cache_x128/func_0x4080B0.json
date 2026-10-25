@@ -1,0 +1,1 @@
+{"addr": "0x004080B0", "name": "sub_4080B0", "decompiled": "int __thiscall sub_4080B0(UnitTypeClass *this)\n{\n  return RequestBufferMixer((unsigned int *)(this->abstractFlags + 16), 0x4000);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

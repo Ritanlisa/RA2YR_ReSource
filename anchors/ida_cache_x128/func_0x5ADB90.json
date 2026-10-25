@@ -1,0 +1,1 @@
+{"addr": "0x005ADB90", "name": "sub_5ADB90", "decompiled": "void sub_5ADB90()\n{\n  dbl_ABEDA8 = 0.0174532925199433 * 45.0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x007C89DA", "name": "DirectSoundCreate", "decompiled": "// attributes: thunk\nHRESULT __stdcall DirectSoundCreate(LPCGUID pcGuidDevice, LPDIRECTSOUND *ppDS, LPUNKNOWN pUnkOuter)\n{\n  return __imp_DirectSoundCreate(pcGuidDevice, ppDS, pUnkOuter);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x006C9900", "name": "Render_Parse", "decompiled": "_DWORD *__thiscall Render_Parse(ObjectClass *this)\n{\n  this->vfptr = 0;\n  this->vfptr1 = 1200;\n  this->vfptr2 = 0xFFFFFF;\n  this->vfptr3 = 15;\n  this->uniqueId = 2;\n  this->abstractFlags = 0;\n  return &this->vfptr;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

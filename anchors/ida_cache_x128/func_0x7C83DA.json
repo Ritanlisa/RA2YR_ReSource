@@ -1,0 +1,1 @@
+{"addr": "0x007C83DA", "name": "SetFilePointer", "decompiled": "// attributes: thunk\nDWORD __stdcall SetFilePointer(HANDLE hFile, LONG lDistanceToMove, PLONG lpDistanceToMoveHigh, DWORD dwMoveMethod)\n{\n  return __imp_SetFilePointer(hFile, lDistanceToMove, lpDistanceToMoveHigh, dwMoveMethod);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

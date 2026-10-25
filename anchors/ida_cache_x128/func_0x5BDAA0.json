@@ -1,0 +1,1 @@
+{"addr": "0x005BDAA0", "name": "MouseClass::GetPosition", "decompiled": "int __thiscall MouseClass::GetPosition(MouseClass *this)\n{\n  return (*(int (__thiscall **)(MouseClass *, _DWORD, _DWORD))(this->MouseClass_field_0x0 + 76))(\n           this,\n           *((_DWORD *)this + 5465),\n           0);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

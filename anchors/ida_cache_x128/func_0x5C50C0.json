@@ -1,0 +1,1 @@
+{"addr": "0x005C50C0", "name": "DynamicVectorClass_ptr_NodeNameType::Clear", "decompiled": "int __thiscall DynamicVectorClass_ptr_NodeNameType::Clear(_VectorClass_PAUNodeNameType *this, int a2)\n{\n  return *(_DWORD *)(*(_DWORD *)&this->m_1[3] + 4 * a2);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

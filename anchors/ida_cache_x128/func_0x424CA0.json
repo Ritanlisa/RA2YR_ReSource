@@ -1,0 +1,1 @@
+{"addr": "0x00424CA0", "name": "Function::Method_424CA0", "decompiled": "int __thiscall Function::Method_424CA0(Function *this, int a2)\n{\n  *((_DWORD *)this + 96) = a2;\n  return a2;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

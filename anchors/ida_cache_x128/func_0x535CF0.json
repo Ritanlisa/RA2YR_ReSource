@@ -1,0 +1,1 @@
+{"addr": "0x00535CF0", "name": "CreateTeamCommand::vt02", "decompiled": "int __thiscall CreateTeamCommand::vt02(CommandClass *this)\n{\n  return (*(int (__thiscall **)(CommandClass *))(*(_DWORD *)this + 16))(this);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

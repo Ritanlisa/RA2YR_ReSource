@@ -1,0 +1,1 @@
+{"addr": "0x005B3040", "name": "MissionClass::GetPrimaryOrFallback", "decompiled": "int __thiscall MissionClass::GetPrimaryOrFallback(MissionClass *this)\n{\n  int result; // eax\n\n  result = this->currentMission;\n  if ( result == -1 )\n    return this->queuedMission;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

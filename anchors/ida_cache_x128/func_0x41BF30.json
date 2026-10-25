@@ -1,0 +1,1 @@
+{"addr": "0x0041BF30", "name": "MissionClass::vt_entry_1FC", "decompiled": "int __thiscall MissionClass::vt_entry_1FC(TechnoClass *this)\n{\n  int result; // eax\n\n  LOBYTE(result) = 0;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

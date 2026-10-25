@@ -1,0 +1,1 @@
+{"addr": "0x00661510", "name": "RulesClass::readCombatDamage", "decompiled": "int __thiscall RulesClass::readCombatDamage(RulesClass *this, int a2)\n{\n  return (*(int (__stdcall **)(int, RulesClass *, int, _DWORD))(*(_DWORD *)a2 + 12))(a2, this, 3, 0);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

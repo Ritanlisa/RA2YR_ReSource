@@ -1,0 +1,1 @@
+{"addr": "0x0075F890", "name": "WaveClass::CheckStateFlag", "decompiled": "int WaveClass::CheckStateFlag(WaveClass *this)\n{\n  return 3;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

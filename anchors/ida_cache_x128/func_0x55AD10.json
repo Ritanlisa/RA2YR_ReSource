@@ -1,0 +1,1 @@
+{"addr": "0x0055AD10", "name": "COMObject::GetSpecialValue", "decompiled": "int __stdcall COMObject::GetSpecialValue(IUnknown *this)\n{\n  return (*(int (__thiscall **)(int))(*(_DWORD *)this->field_8 + 1336))(this->field_8);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

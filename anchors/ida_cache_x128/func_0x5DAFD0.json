@@ -1,0 +1,1 @@
+{"addr": "0x005DAFD0", "name": "RetVtableStubZero_eax_27", "decompiled": "void __cdecl RetVtableStubZero_eax_27(GameSetup *this)\n{\n  GameSetup::DisplayPlayers(this);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

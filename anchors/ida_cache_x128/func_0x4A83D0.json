@@ -1,0 +1,1 @@
+{"addr": "0x004A83D0", "name": "sub_4A83D0", "decompiled": "bool __stdcall sub_4A83D0(int a1)\n{\n  char Buffer[256]; // [esp+0h] [ebp-100h] BYREF\n\n  sprintf(Buffer, \"Please insert disk %d\", a1);\n  return MessageBoxA(0, Buffer, aHey, 1u) == 1;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

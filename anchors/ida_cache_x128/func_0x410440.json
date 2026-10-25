@@ -1,0 +1,1 @@
+{"addr": "0x00410440", "name": "AbstractClass::computeDistance", "decompiled": "int __thiscall AbstractClass::computeDistance(AbstractClass *this)\n{\n  int result; // eax\n\n  LOBYTE(result) = 1;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

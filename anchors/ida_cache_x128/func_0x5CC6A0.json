@@ -1,0 +1,1 @@
+{"addr": "0x005CC6A0", "name": "MSAnim::Reset", "decompiled": "int __thiscall MSAnim::Reset(MSAnim *this, int a2)\n{\n  *((_DWORD *)this + 16) = 0;\n  *((_DWORD *)this + 10) = a2;\n  return a2;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

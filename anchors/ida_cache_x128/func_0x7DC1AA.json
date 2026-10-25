@@ -1,0 +1,1 @@
+{"addr": "0x007DC1AA", "name": "?_ValidateExecute_YAHP6GHXZ_Z", "decompiled": "BOOL __cdecl __ValidateExecute_YAHP6GHXZ_Z(FARPROC lpfn)\n{\n  return !IsBadCodePtr(lpfn);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

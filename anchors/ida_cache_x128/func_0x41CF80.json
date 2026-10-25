@@ -1,0 +1,1 @@
+{"addr": "0x0041CF80", "name": "ObjectTypeClass::Copy", "decompiled": "_DWORD *__stdcall ObjectTypeClass::Copy(ObjectTypeClass *this, _DWORD *a2)\n{\n  this->vfptr = *a2;\n  this->vfptr1 = a2[1];\n  this->vfptr2 = a2[2];\n  return &this->vfptr;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

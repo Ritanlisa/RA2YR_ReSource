@@ -1,0 +1,1 @@
+{"addr": "0x004355B0", "name": "Palette::SixBitTo16Bit", "decompiled": "_BYTE *__thiscall Palette::SixBitTo16Bit(Palette *this, char a2, char a3, char a4)\n{\n  this->m_Colors[0] = a2;\n  this->m_Colors[1] = a3;\n  this->m_Colors[2] = a4;\n  return this->m_Colors;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

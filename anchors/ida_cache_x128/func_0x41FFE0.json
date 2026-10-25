@@ -1,0 +1,1 @@
+{"addr": "0x0041FFE0", "name": "AITriggerTypeClass::GetObjectSize", "decompiled": "int AITriggerTypeClass::GetObjectSize(AITriggerTypeClass *this)\n{\n  return 272;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

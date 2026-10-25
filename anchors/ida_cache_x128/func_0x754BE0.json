@@ -1,0 +1,1 @@
+{"addr": "0x00754BE0", "name": "AudioConfig::InitDefault", "decompiled": "void *__thiscall AudioConfig::InitDefault(AudioConfig *this)\n{\n  qmemcpy(this, &stru_B44318, 0x30u);\n  return this;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

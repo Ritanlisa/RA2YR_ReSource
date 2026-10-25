@@ -1,0 +1,1 @@
+{"addr": "0x006E55C0", "name": "TagClass::AddTrigger", "decompiled": "int __thiscall TagClass::AddTrigger(_DWORD *this, int a2)\n{\n  *(_DWORD *)(a2 + 40) = *(this + 10);\n  *(this + 10) = a2;\n  return a2;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

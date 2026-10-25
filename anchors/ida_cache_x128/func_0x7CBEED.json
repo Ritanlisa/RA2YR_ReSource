@@ -1,0 +1,1 @@
+{"addr": "0x007CBEED", "name": "__statusfp", "decompiled": "unsigned int __cdecl _statusfp()\n{\n  char v0; // fps\n  unsigned int result; // eax\n\n  LOBYTE(result) = _abstract_sw(v0);\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

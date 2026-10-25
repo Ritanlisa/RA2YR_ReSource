@@ -1,0 +1,1 @@
+{"addr": "0x00426DD0", "name": "AnimFile::Check", "decompiled": "int __thiscall AnimFile::Check(AnimFile *this, int a2)\n{\n  return *((unsigned __int16 *)this + 3 * a2 + 1032) + 2 * *((unsigned __int16 *)this + 3 * a2 + 1031) + 8;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

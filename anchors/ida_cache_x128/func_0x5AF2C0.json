@@ -1,0 +1,1 @@
+{"addr": "0x005AF2C0", "name": "sub_5AF2C0", "decompiled": "double __thiscall sub_5AF2C0(ObjectClass *this)\n{\n  float v2[3]; // [esp+0h] [ebp-24h] BYREF\n  float v3[3]; // [esp+18h] [ebp-Ch] BYREF\n\n  memset(v2, 0, sizeof(v2));\n  return *TransformMatrix3x4Point(v3, (float *)&this->vfptr, v2);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

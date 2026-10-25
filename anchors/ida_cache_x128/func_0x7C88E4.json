@@ -1,0 +1,1 @@
+{"addr": "0x007C88E4", "name": "CLSIDFromString", "decompiled": "// attributes: thunk\nHRESULT __stdcall CLSIDFromString(LPCOLESTR lpsz, LPCLSID pclsid)\n{\n  return __imp_CLSIDFromString(lpsz, pclsid);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

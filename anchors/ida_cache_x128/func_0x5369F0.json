@@ -1,0 +1,1 @@
+{"addr": "0x005369F0", "name": "CreateTeamCommand::performAction_64", "decompiled": "int __thiscall CreateTeamCommand::performAction_64(VeterancyNavCommandClass *this)\n{\n  char v2; // [esp+5h] [ebp+5h]\n\n  return DrawUnitExperiencePopup((v2 & 1) == 0);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

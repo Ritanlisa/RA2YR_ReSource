@@ -1,0 +1,1 @@
+{"addr": "0x005B1B40", "name": "MechLocomotionClass::StubReturn52", "decompiled": "int MechLocomotionClass::StubReturn52(MechLocomotionClass *this)\n{\n  return 52;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x007C85A8", "name": "GetVersionExA", "decompiled": "// attributes: thunk\nBOOL __stdcall GetVersionExA(LPOSVERSIONINFOA lpVersionInformation)\n{\n  return __imp_GetVersionExA(lpVersionInformation);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

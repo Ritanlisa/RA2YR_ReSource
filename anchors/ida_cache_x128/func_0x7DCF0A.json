@@ -1,0 +1,1 @@
+{"addr": "0x007DCF0A", "name": "GetACP", "decompiled": "// attributes: thunk\nUINT __stdcall GetACP()\n{\n  return __imp_GetACP();\n}\n", "changed": true, "error": null, "timestamp": "x128"}

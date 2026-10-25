@@ -1,0 +1,1 @@
+{"addr": "0x006810C0", "name": "?raw_name_type_info__QBEPBDXZ", "decompiled": "type_info *__thiscall _raw_name_type_info__QBEPBDXZ(type_info *this)\n{\n  return this + 2;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

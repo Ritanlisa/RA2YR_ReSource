@@ -1,0 +1,1 @@
+{"addr": "0x006C9930", "name": "BinkMovie::Destroy", "decompiled": "void __thiscall BinkMovie::Destroy(BinkMovie *this)\n{\n  if ( this->BinkMovie_field_0x14 )\n    __3_YAXPAX_Z((void *)this->BinkMovie_field_0x14);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

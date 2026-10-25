@@ -1,0 +1,1 @@
+{"addr": "0x005F65D0", "name": "ObjectClass::DelegateVt69", "decompiled": "int __thiscall ObjectClass::DelegateVt69(IUnknown *this)\n{\n  int v2; // [esp+4h] [ebp+4h]\n  int v3; // [esp+8h] [ebp+8h]\n\n  return (*(int (__thiscall **)(IUnknown *, int, int))(this->field_0 + 276))(this, v2, v3);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

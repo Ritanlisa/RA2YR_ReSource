@@ -1,0 +1,1 @@
+{"addr": "0x004FD120", "name": "sub_4FD120", "decompiled": "_DWORD *__stdcall sub_4FD120(_DWORD *a1, int a2)\n{\n  *a1 = *(_DWORD *)&stru_A8E960.waypoints[102];\n  a1[1] = *(_DWORD *)&stru_A8E960.waypoints[106];\n  a1[2] = *(_DWORD *)&stru_A8E960.waypoints[110];\n  return a1;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

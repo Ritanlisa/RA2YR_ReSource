@@ -1,0 +1,1 @@
+{"addr": "0x004DB0A0", "name": "FootClass::GetAttackSpeed", "decompiled": "int __thiscall FootClass::GetAttackSpeed(FootClass *this)\n{\n  if ( this->locomotor )\n    return (*(int (__stdcall **)(int))(*(_DWORD *)this->locomotor + 60))(this->locomotor);\n  else\n    return 2;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

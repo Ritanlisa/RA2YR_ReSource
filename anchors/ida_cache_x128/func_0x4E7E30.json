@@ -1,0 +1,1 @@
+{"addr": "0x004E7E30", "name": "sub_4E7E30", "decompiled": "int sub_4E7E30()\n{\n  sub_720960((ObjectClass *)((char *)&stru_A83CD9.attachedTag + 3));\n  return atexit(sub_4E7E50);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x00466660", "name": "BulletClass::CalculateSpreadAngle", "decompiled": "int *__stdcall BulletClass::CalculateSpreadAngle(BulletClass *this)\n{\n  if ( (byte_89DE10 & 1) == 0 )\n  {\n    byte_89DE10 |= 1u;\n    dword_89DDF4 = 2147450879;\n    atexit(nullsub_108);\n  }\n  return &dword_89DDF4;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x006590D0", "name": "sub_6590D0", "decompiled": "void __cdecl sub_6590D0()\n{\n  RadBeam_Array = (int)&VectorClass<RadBeam *>::`vftable';\n  if ( dword_B04A64 && byte_B04A6D )\n  {\n    __3_YAXPAX_Z(dword_B04A64);\n    dword_B04A64 = 0;\n  }\n  byte_B04A6D = 0;\n  dword_B04A68 = 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

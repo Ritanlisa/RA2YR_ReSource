@@ -1,0 +1,1 @@
+{"addr": "0x00477790", "name": "FilePipe::QueryInterface", "decompiled": "void *__thiscall FilePipe::QueryInterface(FilePipe *this, char a2)\n{\n  FilePipe::Destructor((Pipe *)this);\n  if ( (a2 & 1) != 0 )\n    __3_YAXPAX_Z(this);\n  return this;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

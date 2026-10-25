@@ -1,0 +1,1 @@
+{"addr": "0x007CEA91", "name": "_get_int64_arg", "decompiled": "__int64 __cdecl get_int64_arg(_DWORD *a1)\n{\n  *a1 += 8;\n  return *(_QWORD *)(*a1 - 8);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

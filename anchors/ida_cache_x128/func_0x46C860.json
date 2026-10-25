@@ -1,0 +1,1 @@
+{"addr": "0x0046C860", "name": "BulletTypeClass::GetObjectSize", "decompiled": "int BulletTypeClass::GetObjectSize(BulletTypeClass *this)\n{\n  return 760;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x004A0180", "name": "EnumConnectionsClass::Skip", "decompiled": "int __stdcall EnumConnectionsClass::Skip(EnumConnectionsClass *this)\n{\n  this->q020 = 0;\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

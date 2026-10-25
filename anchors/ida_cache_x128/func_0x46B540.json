@@ -1,0 +1,1 @@
+{"addr": "0x0046B540", "name": "BulletClass::MissionStubReturnZero", "decompiled": "int BulletClass::MissionStubReturnZero(BulletClass *this)\n{\n  return 352;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

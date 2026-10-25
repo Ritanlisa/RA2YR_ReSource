@@ -1,0 +1,1 @@
+{"addr": "0x0045ECA0", "name": "BuildingTypeClass::GetFoundationHeight", "decompiled": "int __thiscall BuildingTypeClass::GetFoundationHeight(int *this, char a2)\n{\n  if ( a2 && *((_BYTE *)this + 5488) )\n    return dword_819310[*(this + 956)] + 1;\n  else\n    return dword_819310[*(this + 956)];\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x004A86E0", "name": "sub_4A86E0", "decompiled": "int sub_4A86E0()\n{\n  GadgetClass::Construct((ShpButtonClass *)&stru_8A06F8, 0, 0, 0, 0, 127, 1);\n  *(_DWORD *)stru_8A06F8.__pad_0 = &DisplayClass::TacticalClass::`vftable';\n  return atexit(sub_4A8710);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

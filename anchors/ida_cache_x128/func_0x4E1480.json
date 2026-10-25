@@ -1,0 +1,1 @@
+{"addr": "0x004E1480", "name": "LinkClass::Destroy", "decompiled": "int __thiscall LinkClass::Destroy(GadgetClass *this)\n{\n  (*(void (__thiscall **)(GadgetClass *))(*(_DWORD *)this->__pad_0 + 84))(this);\n  return LinkedList::RemoveNode((LinkClass *)this);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

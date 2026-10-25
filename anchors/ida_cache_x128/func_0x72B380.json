@@ -1,0 +1,1 @@
+{"addr": "0x0072B380", "name": "Map_Load_72B380", "decompiled": "int Map_Load_72B380()\n{\n  return dword_B0FB90;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

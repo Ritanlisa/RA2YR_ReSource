@@ -1,0 +1,1 @@
+{"addr": "0x00536950", "name": "CreateTeamCommand::performAction_58", "decompiled": "int __thiscall CreateTeamCommand::performAction_58(HealthNavCommandClass *this)\n{\n  char v2; // [esp+5h] [ebp+5h]\n\n  return UpdateUnitHealthTooltip((v2 & 1) == 0);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

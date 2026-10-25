@@ -1,0 +1,1 @@
+{"addr": "0x0067FDD0", "name": "ComPtr::ReleaseSimple", "decompiled": "int __thiscall ComPtr::ReleaseSimple(ComPtr *this)\n{\n  int result; // eax\n\n  result = *(_DWORD *)this->__pad_0;\n  if ( *(_DWORD *)this->__pad_0 )\n    return (*(int (__stdcall **)(int))(*(_DWORD *)result + 8))(result);\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

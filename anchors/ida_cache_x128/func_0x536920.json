@@ -1,0 +1,1 @@
+{"addr": "0x00536920", "name": "CreateTeamCommand::performAction_56", "decompiled": "wchar_t *__thiscall CreateTeamCommand::performAction_56(HealthNavCommandClass *this)\n{\n  return GetStringCSF(aCmndHealthnavi_0, 0, g_Str_File_Init_CPP, 6732);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

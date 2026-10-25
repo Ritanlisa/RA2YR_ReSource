@@ -1,0 +1,1 @@
+{"addr": "0x004DE760", "name": "BuildingClass::vt_entry_4D8", "decompiled": "void __stdcall BuildingClass::vt_entry_4D8(FootClass *this)\n{\n  ;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

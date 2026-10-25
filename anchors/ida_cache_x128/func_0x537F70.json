@@ -1,0 +1,1 @@
+{"addr": "0x00537F70", "name": "DeleteCommandClass::Read", "decompiled": "wchar_t *DeleteCommandClass::Read(DeleteCommandClass *this)\n{\n  return GetStringCSF(aCmndDeletedesc, 0, g_Str_File_Init_CPP, 6563);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

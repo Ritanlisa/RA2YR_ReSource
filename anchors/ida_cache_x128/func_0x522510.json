@@ -1,0 +1,1 @@
+{"addr": "0x00522510", "name": "TechnoClass::IsMission27to30", "decompiled": "int __thiscall TechnoClass::IsMission27to30(TechnoClass *this)\n{\n  int v1; // eax\n\n  v1 = *((_DWORD *)this + 433);\n  return v1 == 27 || v1 == 28 || v1 == 29 || v1 == 30;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

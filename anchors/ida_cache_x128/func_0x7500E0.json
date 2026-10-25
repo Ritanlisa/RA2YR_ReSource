@@ -1,0 +1,1 @@
+{"addr": "0x007500E0", "name": "FootClass::SetField", "decompiled": "int __thiscall FootClass::SetField(int *this, int a2)\n{\n  int result; // eax\n\n  *(float *)this = (double)a2 * 0.01;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

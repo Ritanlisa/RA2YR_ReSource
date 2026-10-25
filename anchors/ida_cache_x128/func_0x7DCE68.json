@@ -1,0 +1,1 @@
+{"addr": "0x007DCE68", "name": "HeapAlloc", "decompiled": "// attributes: thunk\nLPVOID __stdcall HeapAlloc(HANDLE hHeap, DWORD dwFlags, SIZE_T dwBytes)\n{\n  return __imp_HeapAlloc(hHeap, dwFlags, dwBytes);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

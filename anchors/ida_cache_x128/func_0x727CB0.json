@@ -1,0 +1,1 @@
+{"addr": "0x00727CB0", "name": "TriggerTypeClass::GetObjectSize", "decompiled": "int TriggerTypeClass::GetObjectSize(TriggerTypeClass *this)\n{\n  return 180;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

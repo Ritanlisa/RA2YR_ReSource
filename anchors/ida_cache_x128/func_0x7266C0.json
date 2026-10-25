@@ -1,0 +1,1 @@
+{"addr": "0x007266C0", "name": "sub_7266C0", "decompiled": "_DWORD *__thiscall sub_7266C0(ObjectClass *this, char a2)\n{\n  this->ambientSoundController[1] |= 1 << a2;\n  return &this->vfptr;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

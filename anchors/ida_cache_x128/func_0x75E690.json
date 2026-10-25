@@ -1,0 +1,1 @@
+{"addr": "0x0075E690", "name": "WarheadTypeClass::checkImmunity", "decompiled": "_DWORD *__thiscall WarheadTypeClass::checkImmunity(WarheadTypeClass *this, int a2)\n{\n  this->Deform = (int)&TypeList<VoxelAnimTypeClass const *>::`vftable';\n  return &this->Deform;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

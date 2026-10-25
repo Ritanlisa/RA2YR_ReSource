@@ -1,0 +1,1 @@
+{"addr": "0x007C86DA", "name": "MapVirtualKeyA", "decompiled": "// attributes: thunk\nUINT __stdcall MapVirtualKeyA(UINT uCode, UINT uMapType)\n{\n  return __imp_MapVirtualKeyA(uCode, uMapType);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

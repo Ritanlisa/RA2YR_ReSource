@@ -1,0 +1,1 @@
+{"addr": "0x0041B870", "name": "AircraftClass::ProcessPassengerEjection", "decompiled": "int __thiscall AircraftClass::ProcessPassengerEjection(AircraftClass *this)\n{\n  if ( this->currentMission != 30 )\n    this->AircraftClass_field_bool_6D2[0] = 0;\n  return MissionClass::AdvanceState((MissionClass *)this);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

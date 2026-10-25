@@ -1,0 +1,1 @@
+{"addr": "0x0045A050", "name": "Stream::GetChecked", "decompiled": "int __thiscall Stream::GetChecked(Stream *this)\n{\n  if ( !this->m_Stream )\n    sub_7DC720(-2147467261);\n  return this->m_Stream;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

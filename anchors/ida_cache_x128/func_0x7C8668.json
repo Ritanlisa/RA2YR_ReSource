@@ -1,0 +1,1 @@
+{"addr": "0x007C8668", "name": "GetActiveWindow", "decompiled": "// attributes: thunk\nHWND __stdcall GetActiveWindow()\n{\n  return __imp_GetActiveWindow();\n}\n", "changed": true, "error": null, "timestamp": "x128"}

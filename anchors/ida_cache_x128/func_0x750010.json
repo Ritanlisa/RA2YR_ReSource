@@ -1,0 +1,1 @@
+{"addr": "0x00750010", "name": "Audio::IsLoud", "decompiled": "int __thiscall Audio::IsLoud(int *this)\n{\n  return *(float *)this >= 2.0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

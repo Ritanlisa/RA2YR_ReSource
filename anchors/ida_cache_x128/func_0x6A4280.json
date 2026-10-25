@@ -1,0 +1,1 @@
+{"addr": "0x006A4280", "name": "JumpjetLocomotionClass::GetLinkedLocomotorPointer_0", "decompiled": "BOOL __stdcall JumpjetLocomotionClass::GetLinkedLocomotorPointer_0(int a1)\n{\n  return *(_DWORD *)(a1 + 80) != 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

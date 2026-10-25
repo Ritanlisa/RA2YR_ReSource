@@ -1,0 +1,1 @@
+{"addr": "0x006E64B0", "name": "TagTypeClass::GetAuxField", "decompiled": "int __thiscall TagTypeClass::GetAuxField(TagTypeClass *this)\n{\n  return *((_DWORD *)this + 38);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

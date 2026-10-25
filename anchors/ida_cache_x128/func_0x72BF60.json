@@ -1,0 +1,1 @@
+{"addr": "0x0072BF60", "name": "sub_72BF60", "decompiled": "void *sub_72BF60()\n{\n  return dword_B0FD3C;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

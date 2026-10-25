@@ -1,0 +1,1 @@
+{"addr": "0x0040F450", "name": "sub_40F450", "decompiled": "int sub_40F450()\n{\n  dword_8874A8 = 0;\n  dword_8874AC = 0;\n  dword_8874B0 = 0;\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

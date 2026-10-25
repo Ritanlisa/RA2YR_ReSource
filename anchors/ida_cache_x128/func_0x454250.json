@@ -1,0 +1,1 @@
+{"addr": "0x00454250", "name": "MissionClass::IsProducing", "decompiled": "int __thiscall MissionClass::IsProducing(BuildingClass *this)\n{\n  int result; // eax\n\n  LOBYTE(result) = this->BuildingClass_field_bool_6DD[0] != 0;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

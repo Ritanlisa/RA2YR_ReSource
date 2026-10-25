@@ -1,0 +1,1 @@
+{"addr": "0x004073B0", "name": "SaveGame::CountLinkedList", "decompiled": "int __thiscall SaveGame::CountLinkedList(SaveGame *this)\n{\n  SaveGame *v1; // edx\n  int result; // eax\n\n  v1 = *(SaveGame **)this->__pad_0;\n  for ( result = 0; v1 != this; ++result )\n    v1 = *(SaveGame **)v1->__pad_0;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

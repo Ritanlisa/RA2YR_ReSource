@@ -1,0 +1,1 @@
+{"addr": "0x007B1720", "name": "IPXInterfaceClass::StubReturnFalse", "decompiled": "void __stdcall IPXInterfaceClass::StubReturnFalse(WinsockInterfaceClass *this, int a2)\n{\n  ;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

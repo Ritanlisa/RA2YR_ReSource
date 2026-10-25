@@ -1,0 +1,1 @@
+{"addr": "0x004085A0", "name": "Struct::ZeroInit32", "decompiled": "int __thiscall Struct::ZeroInit32(Struct *this)\n{\n  memset(this, 0, 0x20u);\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

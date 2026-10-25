@@ -1,0 +1,1 @@
+{"addr": "0x004D27B0", "name": "FoggedObjectClass::GetTypeIdentifier", "decompiled": "int FoggedObjectClass::GetTypeIdentifier(FoggedObjectClass *this)\n{\n  return 61;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

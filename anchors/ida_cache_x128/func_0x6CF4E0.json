@@ -1,0 +1,1 @@
+{"addr": "0x006CF4E0", "name": "SwizzleManagerClass::Lookup", "decompiled": "int __stdcall SwizzleManagerClass::Lookup(SwizzleManagerClass *this, int a2, int a3, int a4)\n{\n  return -2147467263;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

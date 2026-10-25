@@ -1,0 +1,1 @@
+{"addr": "0x00521C40", "name": "InfantryClass::ResetReloadIfNeeded", "decompiled": "int __thiscall InfantryClass::ResetReloadIfNeeded(InfantryClass *this)\n{\n  int result; // eax\n\n  result = this->Type;\n  if ( !*(_BYTE *)(result + 3772) )\n    this->PanicDurationLeft = 0;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

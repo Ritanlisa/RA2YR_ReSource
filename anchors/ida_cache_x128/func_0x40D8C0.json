@@ -1,0 +1,1 @@
+{"addr": "0x0040D8C0", "name": "sub_40D8C0", "decompiled": "char *sub_40D8C0()\n{\n  char *result; // eax\n  int v1; // ecx\n\n  result = byte_885782;\n  v1 = 256;\n  do\n  {\n    *(result - 2) = 0;\n    *(result - 1) = 0;\n    *result = 0;\n    result += 3;\n    --v1;\n  }\n  while ( v1 );\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

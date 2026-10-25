@@ -1,0 +1,1 @@
+{"addr": "0x00428E60", "name": "AnimTypeClass::GetAuxField", "decompiled": "int __thiscall AnimTypeClass::GetAuxField(AnimTypeClass *this)\n{\n  return this->MiddleFrameIndex;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

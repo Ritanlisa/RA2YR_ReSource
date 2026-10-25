@@ -1,0 +1,1 @@
+{"addr": "0x004389F0", "name": "BombClass::IsDeathBomb", "decompiled": "int __thiscall BombClass::IsDeathBomb(BombClass *this)\n{\n  return this->audioController[0];\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x004B4DE0", "name": "JumpjetLocomotionClass::loc_4B4DE0", "decompiled": "LONG __stdcall JumpjetLocomotionClass::loc_4B4DE0(int a1)\n{\n  return DriveLocomotionClass::Release((DriveLocomotionClass *)(a1 - 24));\n}\n", "changed": true, "error": null, "timestamp": "x128"}

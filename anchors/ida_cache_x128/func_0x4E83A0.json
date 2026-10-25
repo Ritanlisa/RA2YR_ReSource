@@ -1,0 +1,1 @@
+{"addr": "0x004E83A0", "name": "VectorClass_ptr_SuperClass::Get", "decompiled": "int __thiscall VectorClass_ptr_SuperClass::Get(_VectorClass_PAVSuperClass *this, int a2)\n{\n  return *(_DWORD *)(*(_DWORD *)&this->m_1[3] + 4 * a2);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

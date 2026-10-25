@@ -1,0 +1,1 @@
+{"addr": "0x0075CC50", "name": "JumpjetLocomotionClass::SmallStub_75CC50", "decompiled": "LONG __stdcall JumpjetLocomotionClass::SmallStub_75CC50(int a1)\n{\n  return WalkLocomotionClass::Release((WalkLocomotionClass *)(a1 - 4));\n}\n", "changed": true, "error": null, "timestamp": "x128"}

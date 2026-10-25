@@ -1,0 +1,1 @@
+{"addr": "0x007D06BE", "name": "?_set_new_handler_YAP6AHI_ZP6AHI_Z_Z", "decompiled": "int (__cdecl *__cdecl __set_new_handler_YAP6AHI_ZP6AHI_Z_Z(int (__cdecl *a1)(unsigned int)))(unsigned int)\n{\n  int (__cdecl *v1)(_DWORD); // esi\n\n  _lock(9);\n  v1 = dword_B782C8;\n  dword_B782C8 = a1;\n  _unlock(9);\n  return v1;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

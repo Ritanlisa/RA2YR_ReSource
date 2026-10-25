@@ -1,0 +1,1 @@
+{"addr": "0x005CA670", "name": "sub_5CA670", "decompiled": "void __thiscall sub_5CA670(MultiplayerSiege *this)\n{\n  this->MultiplayerSiege_field_00 = (int)&MultiplayerSiege::`vftable';\n  MultiplayerGameMode::Dtor((MultiplayerGameMode *)this);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

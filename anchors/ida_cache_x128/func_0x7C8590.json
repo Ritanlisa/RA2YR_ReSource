@@ -1,0 +1,1 @@
+{"addr": "0x007C8590", "name": "GetCommMask", "decompiled": "// attributes: thunk\nBOOL __stdcall GetCommMask(HANDLE hFile, LPDWORD lpEvtMask)\n{\n  return __imp_GetCommMask(hFile, lpEvtMask);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

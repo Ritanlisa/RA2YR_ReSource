@@ -1,0 +1,1 @@
+{"addr": "0x007C841C", "name": "OpenEventA", "decompiled": "// attributes: thunk\nHANDLE __stdcall OpenEventA(DWORD dwDesiredAccess, BOOL bInheritHandle, LPCSTR lpName)\n{\n  return __imp_OpenEventA(dwDesiredAccess, bInheritHandle, lpName);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x007236E0", "name": "TiberiumClass::StubReturn296", "decompiled": "int TiberiumClass::StubReturn296(TiberiumClass *this)\n{\n  return 296;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

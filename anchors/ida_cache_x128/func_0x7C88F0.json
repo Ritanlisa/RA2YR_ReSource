@@ -1,0 +1,1 @@
+{"addr": "0x007C88F0", "name": "CoFileTimeNow", "decompiled": "// attributes: thunk\nHRESULT __stdcall CoFileTimeNow(FILETIME *lpFileTime)\n{\n  return __imp_CoFileTimeNow(lpFileTime);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

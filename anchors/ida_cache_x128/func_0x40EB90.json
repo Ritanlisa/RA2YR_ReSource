@@ -1,0 +1,1 @@
+{"addr": "0x0040EB90", "name": "sub_40EB90", "decompiled": "int sub_40EB90()\n{\n  g_TacticalState = timeGetTime();\n  Timer::EnableHighPrecision(&stru_88732C);\n  dword_887330 = 0;\n  return atexit(unknown_libname_10);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

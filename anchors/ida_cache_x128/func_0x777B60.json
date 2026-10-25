@@ -1,0 +1,1 @@
+{"addr": "0x00777B60", "name": "String::CopyConstant", "decompiled": "char *__thiscall String::CopyConstant(char *Destination)\n{\n  strncpy(Destination, g_Str_gsmallwoo, 0x20u);\n  return Destination;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

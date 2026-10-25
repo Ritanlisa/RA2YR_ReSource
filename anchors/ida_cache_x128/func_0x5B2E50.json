@@ -1,0 +1,1 @@
+{"addr": "0x005B2E50", "name": "IPersistStream::StubReturn450", "decompiled": "int IPersistStream::StubReturn450(MissionClass *this)\n{\n  return 450;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

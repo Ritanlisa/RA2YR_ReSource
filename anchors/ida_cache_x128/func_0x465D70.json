@@ -1,0 +1,1 @@
+{"addr": "0x00465D70", "name": "BuildingClass::processPowerState", "decompiled": "int __thiscall BuildingClass::processPowerState(BuildingClass *this)\n{\n  return *((_DWORD *)this + 951);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

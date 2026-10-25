@@ -1,0 +1,1 @@
+{"addr": "0x005CEB40", "name": "AbstractClass::COMStub_Return0_7", "decompiled": "char AbstractClass::COMStub_Return0_7(MSAnim *this)\n{\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

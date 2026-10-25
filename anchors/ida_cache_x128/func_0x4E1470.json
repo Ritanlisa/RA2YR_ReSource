@@ -1,0 +1,1 @@
+{"addr": "0x004E1470", "name": "DialogControl::IsHidden", "decompiled": "int __thiscall DialogControl::IsHidden(DialogControl *this)\n{\n  return BYTE2(this->u32_5C) == 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

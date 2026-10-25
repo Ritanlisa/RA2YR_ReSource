@@ -1,0 +1,1 @@
+{"addr": "0x0040C590", "name": "EventClass::getEventCount", "decompiled": "void __usercall EventClass::getEventCount(double a1@<st1>)\n{\n  long double v2; // st5\n\n  v2 = pow(256.0, 2.0);\n  Math::Sqrt(v2 + v2);\n  dbl_87F6F8 = a1;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

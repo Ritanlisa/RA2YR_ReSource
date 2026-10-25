@@ -1,0 +1,1 @@
+{"addr": "0x007730E0", "name": "WeaponTypeClass::GetTypeIdentifier", "decompiled": "int WeaponTypeClass::GetTypeIdentifier(WeaponTypeClass *this)\n{\n  return 49;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x005BC440", "name": "sub_5BC440", "decompiled": "Text *sub_5BC440()\n{\n  return dword_ABF23C;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

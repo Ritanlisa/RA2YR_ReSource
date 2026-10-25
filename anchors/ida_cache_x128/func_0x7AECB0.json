@@ -1,0 +1,1 @@
+{"addr": "0x007AECB0", "name": "CChatEventSink::ComputeBucketMask", "decompiled": "int __thiscall CChatEventSink::ComputeBucketMask(int this, int a2)\n{\n  return (*(int (__thiscall **)(int))(this + 24))(a2) & ((1 << *(_DWORD *)(this + 12)) - 1);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

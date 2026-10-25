@@ -1,0 +1,1 @@
+{"addr": "0x004AEBF0", "name": "DisplayClass::Read", "decompiled": "char *__thiscall DisplayClass::Read(DisplayClass *this, char a2)\n{\n  MapClass::Destruct((void **)this);\n  if ( (a2 & 1) != 0 )\n    __3_YAXPAX_Z(this);\n  return (char *)this;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

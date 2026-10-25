@@ -1,0 +1,1 @@
+{"addr": "0x0068BCB0", "name": "AbstractClass::updateAITimer", "decompiled": "int __thiscall AbstractClass::updateAITimer(AbstractClass *this)\n{\n  int result; // eax\n\n  result = *((_DWORD *)this + 133) + 1;\n  *((_DWORD *)this + 133) = result;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

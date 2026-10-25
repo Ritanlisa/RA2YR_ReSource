@@ -1,0 +1,1 @@
+{"addr": "0x00433C90", "name": "Char::Swap", "decompiled": "int __thiscall Char::Swap(Char *this, char a2)\n{\n  int result; // eax\n\n  LOBYTE(result) = *((_BYTE *)this + 65);\n  *((_BYTE *)this + 65) = a2;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

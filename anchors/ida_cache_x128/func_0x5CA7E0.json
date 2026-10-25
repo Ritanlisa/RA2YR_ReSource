@@ -1,0 +1,1 @@
+{"addr": "0x005CA7E0", "name": "MultiplayerSiege::StubReturnFalse", "decompiled": "char MultiplayerSiege::StubReturnFalse(MultiplayerSiege *this)\n{\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

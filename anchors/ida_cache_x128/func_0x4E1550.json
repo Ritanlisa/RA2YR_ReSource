@@ -1,0 +1,1 @@
+{"addr": "0x004E1550", "name": "GadgetClass::ClearState", "decompiled": "int __thiscall GadgetClass::ClearState(ShpButtonClass *this, int a2)\n{\n  if ( !a2 && !LOBYTE(this->Image) )\n    return 0;\n  LOBYTE(this->Image) = 0;\n  return 1;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

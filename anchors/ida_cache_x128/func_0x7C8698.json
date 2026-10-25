@@ -1,0 +1,1 @@
+{"addr": "0x007C8698", "name": "DestroyWindow", "decompiled": "// attributes: thunk\nBOOL __stdcall DestroyWindow(HWND hWnd)\n{\n  return __imp_DestroyWindow(hWnd);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x0053D310", "name": "ProcessIonCannonEffect", "decompiled": "void ProcessIonCannonEffect(ObjectClass *this)\n{\n  int i; // esi\n\n  for ( i = dword_AA0128 - 1; i >= 0; --i )\n    ExplosionClass::ProcessFrame(*((ExplosionClass **)dword_AA011C + i));\n}\n", "changed": true, "error": null, "timestamp": "x128"}

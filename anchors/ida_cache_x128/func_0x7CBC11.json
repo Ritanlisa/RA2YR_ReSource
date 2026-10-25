@@ -1,0 +1,1 @@
+{"addr": "0x007CBC11", "name": "Object_Init_7CBC11", "decompiled": "char *__cdecl Object_Init_7CBC11(char *VarName)\n{\n  char *v1; // esi\n\n  _lock(12);\n  v1 = getenv(VarName);\n  _unlock(12);\n  return v1;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

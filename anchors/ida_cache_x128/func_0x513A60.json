@@ -1,0 +1,1 @@
+{"addr": "0x00513A60", "name": "sub_513A60", "decompiled": "void sub_513A60()\n{\n  *(double *)&stru_A8E960.waypoints[526] = 1.0 / *(double *)&stru_A8E960.waypoints[550];\n}\n", "changed": true, "error": null, "timestamp": "x128"}

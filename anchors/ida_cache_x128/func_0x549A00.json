@@ -1,0 +1,1 @@
+{"addr": "0x00549A00", "name": "sub_549A00", "decompiled": "int __fastcall sub_549A00(int a1, int a2, int *a3, int *a4)\n{\n  int result; // eax\n\n  *a3 = 60 * a1 / 2;\n  *a4 = 30 * a1 / 2;\n  *a3 += -60 * a2 / 2;\n  result = 30 * a2 / 2;\n  *a4 += result;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

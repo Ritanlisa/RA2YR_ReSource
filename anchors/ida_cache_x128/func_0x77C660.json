@@ -1,0 +1,1 @@
+{"addr": "0x0077C660", "name": "sub_77C660", "decompiled": "void __cdecl sub_77C660()\n{\n  int i; // esi\n\n  for ( i = 0; i < *(int *)stru_B736F8.__tail_0; ++i )\n    DeleteAndZero((ObjectClass *)((char *)dword_B73700 + 4 * i));\n  *(_DWORD *)stru_B736F8.__tail_0 = 0;\n  __3_YAXPAX_Z(dword_B73700);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

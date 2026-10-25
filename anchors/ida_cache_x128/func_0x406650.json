@@ -1,0 +1,1 @@
+{"addr": "0x00406650", "name": "AudioMixer::SetVolume", "decompiled": "int __thiscall AudioMixer::SetVolume(AudioMixer *this)\n{\n  int result; // eax\n\n  result = 1;\n  if ( (this->AudioMixer_field_10 & 1) == 0 || *((_DWORD *)this + 19) )\n    return 0;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

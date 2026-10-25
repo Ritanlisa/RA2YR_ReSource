@@ -1,0 +1,1 @@
+{"addr": "0x00420E40", "name": "AlphaShapeClass::SD_vt06", "decompiled": "int __stdcall AlphaShapeClass::SD_vt06(AlphaShapeClass *this, int *a2, int a3)\n{\n  int Prefix; // eax\n\n  Prefix = AbstractClass::SaveLoad_Prefix((int *)this->__pad_0, a2, a3);\n  return Prefix >= 0 ? 0 : Prefix;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

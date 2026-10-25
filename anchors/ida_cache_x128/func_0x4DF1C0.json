@@ -1,0 +1,1 @@
+{"addr": "0x004DF1C0", "name": "TechnoClass::vt_entry_4AC", "decompiled": "BOOL __thiscall TechnoClass::vt_entry_4AC(TechnoClass *this)\n{\n  return *((_DWORD *)this + 369) != -1;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x00536D20", "name": "CreateTeamCommand::performAction_91", "decompiled": "wchar_t *CreateTeamCommand::performAction_91(ScatterCommandClass *this)\n{\n  return GetStringCSF(aTxtScatter, 0, g_Str_File_Init_CPP, 6960);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

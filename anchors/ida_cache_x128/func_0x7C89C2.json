@@ -1,0 +1,1 @@
+{"addr": "0x007C89C2", "name": "EnumProtocolsA", "decompiled": "// attributes: thunk\nINT __stdcall EnumProtocolsA(LPINT lpiProtocols, LPVOID lpProtocolBuffer, LPDWORD lpdwBufferLength)\n{\n  return __imp_EnumProtocolsA(lpiProtocols, lpProtocolBuffer, lpdwBufferLength);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

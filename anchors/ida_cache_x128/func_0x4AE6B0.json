@@ -1,0 +1,1 @@
+{"addr": "0x004AE6B0", "name": "DisplayClass::Render", "decompiled": "int DisplayClass::Render(DisplayClass *this)\n{\n  int result; // eax\n\n  result = (int)dword_B73554;\n  if ( dword_B73554 )\n  {\n    result = CloseWindow(dword_B73554);\n    dword_B73554 = 0;\n  }\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x004E8B90", "name": "VectorClass_ptr_TaskForceClass::Get", "decompiled": "int __thiscall VectorClass_ptr_TaskForceClass::Get(_VectorClass_PAVTaskForceClass *this, int a2)\n{\n  return *(_DWORD *)(*(_DWORD *)&this->m_1[3] + 4 * a2);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

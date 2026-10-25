@@ -1,0 +1,1 @@
+{"addr": "0x00731CD0", "name": "Factory::IdleHandler", "decompiled": "int Factory::IdleHandler()\n{\n  return System_Handle(77, 0);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

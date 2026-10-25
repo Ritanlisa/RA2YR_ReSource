@@ -1,0 +1,1 @@
+{"addr": "0x006B8140", "name": "SpawnManagerClass::ProcessEvent", "decompiled": "void *__thiscall SpawnManagerClass::ProcessEvent(SpawnManagerClass *this, char a2)\n{\n  SpawnManagerClass::Constructor_SpawnManagerClass((TaskManager *)this);\n  if ( (a2 & 1) != 0 )\n    __3_YAXPAX_Z(this);\n  return this;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

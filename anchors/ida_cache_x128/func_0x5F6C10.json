@@ -1,0 +1,1 @@
+{"addr": "0x005F6C10", "name": "ObjectClass::IsAboveScreenMargin", "decompiled": "int __thiscall ObjectClass::IsAboveScreenMargin(IUnknown *this)\n{\n  int result; // eax\n\n  result = (*(int (__thiscall **)(IUnknown *))(this->field_0 + 456))(this);\n  LOBYTE(result) = result > -20;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

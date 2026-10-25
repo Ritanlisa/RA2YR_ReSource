@@ -1,0 +1,1 @@
+{"addr": "0x005C9420", "name": "sub_5C9420", "decompiled": "void __thiscall sub_5C9420(Megawealth *this)\n{\n  *(_DWORD *)this->__pad_0 = &Megawealth::`vftable';\n  MultiplayerGameMode::Dtor((MultiplayerGameMode *)this);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x007813B0", "name": "sub_7813B0", "decompiled": "int __cdecl sub_7813B0(_DWORD *a1, _DWORD *a2)\n{\n  int v2; // eax\n  int v3; // ecx\n\n  v2 = a1[1];\n  v3 = a2[1];\n  if ( v2 >= v3 )\n    return (v2 <= v3) - 1;\n  else\n    return 1;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

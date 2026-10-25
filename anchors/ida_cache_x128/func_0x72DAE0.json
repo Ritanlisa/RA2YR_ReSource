@@ -1,0 +1,1 @@
+{"addr": "0x0072DAE0", "name": "CreatureClass::GetManager", "decompiled": "int CreatureClass::GetManager()\n{\n  return dword_B0FCC4;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

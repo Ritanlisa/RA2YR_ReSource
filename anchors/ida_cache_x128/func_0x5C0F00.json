@@ -1,0 +1,1 @@
+{"addr": "0x005C0F00", "name": "ScenarioClass::StubReturnFalse7", "decompiled": "void __stdcall ScenarioClass::StubReturnFalse7(MultiplayerGameMode *this)\n{\n  ;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

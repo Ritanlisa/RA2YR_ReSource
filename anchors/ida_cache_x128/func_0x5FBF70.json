@@ -1,0 +1,1 @@
+{"addr": "0x005FBF70", "name": "Map_Helper_5FBF70", "decompiled": "int __thiscall Map_Helper_5FBF70(ObjectClass *this)\n{\n  return this->vfptr3;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

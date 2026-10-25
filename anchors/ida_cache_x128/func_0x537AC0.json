@@ -1,0 +1,1 @@
+{"addr": "0x00537AC0", "name": "CreateTeamCommand::performAction_189", "decompiled": "const wchar_t *__thiscall CreateTeamCommand::performAction_189(MultiplayerSyncCommandClass *this)\n{\n  return g_INI_Key_De;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x00540F90", "name": "Network::GetSendCount", "decompiled": "int __thiscall Network::GetSendCount(IPXManagerClass *this)\n{\n  return this->field_5C;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

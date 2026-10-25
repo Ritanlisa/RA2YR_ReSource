@@ -1,0 +1,1 @@
+{"addr": "0x005B2E80", "name": "TechnoClass::CheckState2", "decompiled": "int TechnoClass::CheckState2(MissionClass *this)\n{\n  return 450;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

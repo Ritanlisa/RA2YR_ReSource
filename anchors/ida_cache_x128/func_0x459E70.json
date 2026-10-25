@@ -1,0 +1,1 @@
+{"addr": "0x00459E70", "name": "BuildingClass::Mission_Guard", "decompiled": "int __thiscall BuildingClass::Mission_Guard(BuildingClass *this)\n{\n  return 1824;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

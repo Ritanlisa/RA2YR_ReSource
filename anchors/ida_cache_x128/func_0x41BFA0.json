@@ -1,0 +1,1 @@
+{"addr": "0x0041BFA0", "name": "TacticalClass::ProcessFrame", "decompiled": "char __thiscall TacticalClass::ProcessFrame(TechnoClass *this)\n{\n  return *(_BYTE *)((*(int (__thiscall **)(TechnoClass *))(this->vfptr + 132))(this) + 3233);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

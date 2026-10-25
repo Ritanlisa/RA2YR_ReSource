@@ -1,0 +1,1 @@
+{"addr": "0x005E2F80", "name": "Skirmish_Setup", "decompiled": "int Skirmish_Setup()\n{\n  int result; // eax\n\n  result = MultiplayerGameMode::Find(*(MultiplayerGameMode **)stru_A8B250.__pad_0);\n  if ( !result )\n    return MultiplayerGameMode::GetFirst();\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

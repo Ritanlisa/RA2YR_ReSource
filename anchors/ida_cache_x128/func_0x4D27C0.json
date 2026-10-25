@@ -1,0 +1,1 @@
+{"addr": "0x004D27C0", "name": "FoggedObjectClass::GetObjectSize", "decompiled": "int FoggedObjectClass::GetObjectSize(FoggedObjectClass *this)\n{\n  return 120;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x005BC450", "name": "GetTextBufferEntry", "decompiled": "Text *__fastcall GetTextBufferEntry(int a1)\n{\n  return *(&dword_ABF168 + a1);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

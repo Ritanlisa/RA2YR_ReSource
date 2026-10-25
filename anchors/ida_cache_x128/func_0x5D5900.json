@@ -1,0 +1,1 @@
+{"addr": "0x005D5900", "name": "MPBattleClass::isMegawealthAllowed", "decompiled": "void MPBattleClass::isMegawealthAllowed()\n{\n  dbl_ABFD98 = 1.0 / dbl_ABFDC8;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

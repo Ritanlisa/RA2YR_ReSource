@@ -1,0 +1,1 @@
+{"addr": "0x00588BF0", "name": "MapClass::Destru_vt04", "decompiled": "char *__thiscall MapClass::Destru_vt04(MapClass *this, char a2)\n{\n  MapClass::Destruct((void **)this);\n  if ( (a2 & 1) != 0 )\n    __3_YAXPAX_Z(this);\n  return (char *)this;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x0077BA20", "name": "sub_77BA20", "decompiled": "void __cdecl sub_77BA20()\n{\n  dword_B76520 = 0;\n  __3_YAXPAX_Z(dword_B76528);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

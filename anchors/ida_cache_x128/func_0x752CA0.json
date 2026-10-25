@@ -1,0 +1,1 @@
+{"addr": "0x00752CA0", "name": "??__F?m_badAllocExceptionPtr___ExceptionPtr__0V?$shared_ptr___ExceptionPtr___tr1_std__A__YAXXZ", "decompiled": "void ____F_m_badAllocExceptionPtr___ExceptionPtr__0V__shared_ptr___ExceptionPtr___tr1_std__A__YAXXZ()\n{\n  if ( dword_B1D4D8 )\n    Audio::Release(dword_B1D4D8);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

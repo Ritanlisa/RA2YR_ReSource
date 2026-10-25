@@ -1,0 +1,1 @@
+{"addr": "0x0070C5B0", "name": "ObjectClass::GetShroudByte", "decompiled": "int __thiscall ObjectClass::GetShroudByte(TechnoClass *this)\n{\n  int result; // eax\n\n  LOBYTE(result) = this->isBeingWarpedOut[0];\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

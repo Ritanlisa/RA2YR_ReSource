@@ -1,0 +1,1 @@
+{"addr": "0x00748160", "name": "UnitTypeClass::GetObjectSize", "decompiled": "int UnitTypeClass::GetObjectSize(UnitTypeClass *this)\n{\n  return 3704;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

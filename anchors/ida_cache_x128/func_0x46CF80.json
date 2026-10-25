@@ -1,0 +1,1 @@
+{"addr": "0x0046CF80", "name": "CampaignClass::ddtor", "decompiled": "int __stdcall CampaignClass::ddtor(CampaignClass *this, _DWORD *a2)\n{\n  if ( !a2 )\n    return -2147467261;\n  *a2 = -2439096;\n  a2[1] = 298980631;\n  a2[2] = 1610642817;\n  a2[3] = -1252326136;\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

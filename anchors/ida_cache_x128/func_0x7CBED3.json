@@ -1,0 +1,1 @@
+{"addr": "0x007CBED3", "name": "__initterm", "decompiled": "void __cdecl _initterm(_PVFV *First, _PVFV *Last)\n{\n  while ( First < Last )\n  {\n    if ( *First )\n      (*First)();\n    ++First;\n  }\n}\n", "changed": true, "error": null, "timestamp": "x128"}

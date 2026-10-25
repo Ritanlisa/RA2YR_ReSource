@@ -1,0 +1,1 @@
+{"addr": "0x0065D660", "name": "ReferenceCounted::Constructor", "decompiled": "void __thiscall ReferenceCounted::Constructor(ReferenceCounted *this)\n{\n  *this = (ReferenceCounted)&ReferenceCounted::`vftable';\n}\n", "changed": true, "error": null, "timestamp": "x128"}

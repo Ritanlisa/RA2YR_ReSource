@@ -1,0 +1,1 @@
+{"addr": "0x00730750", "name": "sub_730750", "decompiled": "int sub_730750()\n{\n  return *(_DWORD *)&stru_A8E960.random[20];\n}\n", "changed": true, "error": null, "timestamp": "x128"}

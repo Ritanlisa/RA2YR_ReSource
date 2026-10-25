@@ -1,0 +1,1 @@
+{"addr": "0x00517100", "name": "JumpjetLocomotionClass::SmallStub_517100", "decompiled": "int __stdcall JumpjetLocomotionClass::SmallStub_517100(HoverLocomotionClass *this)\n{\n  return 2;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

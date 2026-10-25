@@ -1,0 +1,1 @@
+{"addr": "0x007C856C", "name": "SetCommTimeouts", "decompiled": "// attributes: thunk\nBOOL __stdcall SetCommTimeouts(HANDLE hFile, LPCOMMTIMEOUTS lpCommTimeouts)\n{\n  return __imp_SetCommTimeouts(hFile, lpCommTimeouts);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

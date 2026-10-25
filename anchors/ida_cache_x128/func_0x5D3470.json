@@ -1,0 +1,1 @@
+{"addr": "0x005D3470", "name": "MPBattleClass::populateTeamDropdownForPlayer", "decompiled": "int MPBattleClass::populateTeamDropdownForPlayer()\n{\n  dword_ABFC00 = 0;\n  dword_ABFC04 = 0;\n  dword_ABFC08 = 0;\n  dword_ABFC0C = 0;\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

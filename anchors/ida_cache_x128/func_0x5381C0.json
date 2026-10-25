@@ -1,0 +1,1 @@
+{"addr": "0x005381C0", "name": "CreateTeamCommand::performAction_215", "decompiled": "_DWORD *__thiscall CreateTeamCommand::performAction_215(ToggleRepairCommandClass *this, char a2)\n{\n  *this = (ToggleRepairCommandClass)&CommandClass::`vftable';\n  if ( (a2 & 1) != 0 )\n    __3_YAXPAX_Z(this);\n  return this;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

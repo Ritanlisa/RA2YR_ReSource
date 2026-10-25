@@ -1,0 +1,1 @@
+{"addr": "0x004F3B00", "name": "GraphicMenuAnimItem::AddRef", "decompiled": "char __stdcall GraphicMenuAnimItem::AddRef(GraphicMenuItem *this)\n{\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

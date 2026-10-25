@@ -1,0 +1,1 @@
+{"addr": "0x00622800", "name": "Dialog::Show", "decompiled": "int __thiscall Dialog::Show(Dialog *this)\n{\n  ShowWindow((HWND)this, 1);\n  SetForegroundWindow((HWND)this);\n  return Timer::PumpMessages((Timer *)dword_87F770);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

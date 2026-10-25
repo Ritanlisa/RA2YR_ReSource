@@ -1,0 +1,1 @@
+{"addr": "0x00701190", "name": "TacticalClass::StubReturnFalse11", "decompiled": "char TacticalClass::StubReturnFalse11(TechnoClass *this)\n{\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

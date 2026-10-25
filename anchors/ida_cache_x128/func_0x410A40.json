@@ -1,0 +1,1 @@
+{"addr": "0x00410A40", "name": "AbstractTypeClass::NameEquals", "decompiled": "BOOL __thiscall AbstractTypeClass::NameEquals(char *this, char *a2)\n{\n  return _strcmpi(a2, this + 36) == 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

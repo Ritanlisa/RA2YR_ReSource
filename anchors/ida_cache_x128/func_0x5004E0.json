@@ -1,0 +1,1 @@
+{"addr": "0x005004E0", "name": "GetHouseTechLevel", "decompiled": "int __fastcall GetHouseTechLevel(int a1, int a2)\n{\n  int v4; // eax\n\n  if ( a2 < 0 )\n    return 0;\n  v4 = TechnoTypeClass::GetByTypeAndIndex(a1, a2);\n  if ( a1 == 6 || a1 == 7 )\n    return *(_DWORD *)(v4 + 3592);\n  else\n    return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

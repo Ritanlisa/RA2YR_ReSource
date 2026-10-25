@@ -1,0 +1,1 @@
+{"addr": "0x006915D0", "name": "SessionClass::SetField", "decompiled": "int __thiscall SessionClass::SetField(SessionClass *this)\n{\n  return this->Config[5] < *(_DWORD *)(this->Config[3] + 160);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

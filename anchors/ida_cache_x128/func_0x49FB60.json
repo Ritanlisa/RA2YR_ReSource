@@ -1,0 +1,1 @@
+{"addr": "0x0049FB60", "name": "VectorClass::GetCount", "decompiled": "int __thiscall VectorClass::GetCount(DynamicVectorClass *this)\n{\n  return this->Count;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

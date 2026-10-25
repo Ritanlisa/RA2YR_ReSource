@@ -1,0 +1,1 @@
+{"addr": "0x0077C350", "name": "sub_77C350", "decompiled": "int sub_77C350()\n{\n  *(_DWORD *)stru_B777A0.__pad_0 = 0;\n  stru_B777A0.DynamicArray_field_0x04 = 0;\n  stru_B777A0.DynamicArray_field_0x08 = 0;\n  return atexit(sub_77C370);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

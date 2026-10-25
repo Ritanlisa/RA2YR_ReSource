@@ -1,0 +1,1 @@
+{"addr": "0x00696F20", "name": "SessionClass::GetPlayerColor", "decompiled": "int __thiscall SessionClass::GetPlayerColor(SessionClass *this)\n{\n  int result; // eax\n\n  result = -2;\n  if ( *(_DWORD *)&this->__pad_50[7] != -2 )\n    return *(_DWORD *)&this->__pad_50[3];\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x005BD9F0", "name": "sub_5BD9F0", "decompiled": "int sub_5BD9F0()\n{\n  dword_ABF2A0 = Timer::GetTicks();\n  dword_ABF2A8 = 0;\n  return atexit(sub_5BDA20);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

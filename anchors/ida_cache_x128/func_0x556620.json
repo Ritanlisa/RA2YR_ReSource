@@ -1,0 +1,1 @@
+{"addr": "0x00556620", "name": "ObjectClass::GetWidth", "decompiled": "int __thiscall ObjectClass::GetWidth(LinkClass *this)\n{\n  return this->m_Next;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

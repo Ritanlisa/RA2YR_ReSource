@@ -1,0 +1,1 @@
+{"addr": "0x007D468C", "name": "__itoa", "decompiled": "char *__cdecl _itoa(int Value, char *Buffer, int Radix)\n{\n  if ( Radix == 10 && Value < 0 )\n    xtoa(Value, Buffer, 0xAu, 1);\n  else\n    xtoa(Value, Buffer, Radix, 0);\n  return Buffer;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

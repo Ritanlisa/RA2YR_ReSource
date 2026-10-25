@@ -1,0 +1,1 @@
+{"addr": "0x004A7C10", "name": "DiskLaserClass::Seek", "decompiled": "int __stdcall DiskLaserClass::Seek(DiskLaserClass *this, int *a2, int a3)\n{\n  return AbstractClass::SaveLoad_Prefix((int *)this->__pad_0, a2, a3);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

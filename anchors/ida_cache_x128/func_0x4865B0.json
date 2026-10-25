@@ -1,0 +1,1 @@
+{"addr": "0x004865B0", "name": "CellClass::IsTerrainType", "decompiled": "int __thiscall CellClass::IsTerrainType(CellClass *this)\n{\n  int result; // eax\n\n  result = *(_DWORD *)&this->__pad_28[16];\n  LOBYTE(result) = result >= dword_ABAD28 && result < dword_ABAD28 + 42;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x006EDFB0", "name": "sub_6EDFB0", "decompiled": "int __thiscall sub_6EDFB0(ObjectClass *this, int a2, int a3)\n{\n  int result; // eax\n\n  result = this->fallRate;\n  *(_DWORD *)(result + 592) = 4;\n  this->needsRedraw[0] = 1;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

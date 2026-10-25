@@ -1,0 +1,1 @@
+{"addr": "0x007772A0", "name": "ScreenEffect::UpdateBob", "decompiled": "int __usercall ScreenEffect::UpdateBob@<eax>(double a1@<st0>)\n{\n  int result; // eax\n\n  Math::Sin(dbl_B730B0 - dbl_B730D8);\n  LOWORD(result) = Math::RoundToInt(a1 * dbl_B730D0 * 0.5);\n  dword_B73540 = result;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

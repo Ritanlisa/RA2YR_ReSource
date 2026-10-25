@@ -1,0 +1,1 @@
+{"addr": "0x0069C650", "name": "VectorClass_ptr_GlobalPacketType::Get", "decompiled": "int __thiscall VectorClass_ptr_GlobalPacketType::Get(_VectorClass_PAUGlobalPacketType *this, int a2)\n{\n  return *(_DWORD *)(*(_DWORD *)&this->m_1[3] + 4 * a2);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

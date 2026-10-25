@@ -1,0 +1,1 @@
+{"addr": "0x006DC420", "name": "GetHeightMap", "decompiled": "int __thiscall GetHeightMap(ObjectClass *this)\n{\n  return *((_DWORD *)this + 876);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

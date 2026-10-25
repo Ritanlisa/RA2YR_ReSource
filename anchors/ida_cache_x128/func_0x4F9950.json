@@ -1,0 +1,1 @@
+{"addr": "0x004F9950", "name": "HouseClass::AddPower", "decompiled": "int __thiscall HouseClass::AddPower(HouseClass *this, int a2)\n{\n  this->balance += a2;\n  return a2;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

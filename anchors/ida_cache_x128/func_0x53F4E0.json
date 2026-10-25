@@ -1,0 +1,1 @@
+{"addr": "0x0053F4E0", "name": "Struct::ZeroInitAndSetup_0", "decompiled": "// attributes: thunk\nint __thiscall Struct::ZeroInitAndSetup_0(IPXConnClass *this)\n{\n  return Struct::ZeroInitAndSetup((ModemConnectionClass *)this);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

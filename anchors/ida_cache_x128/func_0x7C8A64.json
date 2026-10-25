@@ -1,0 +1,1 @@
+{"addr": "0x007C8A64", "name": "_BinkOpenDirectSound_4", "decompiled": "// attributes: thunk\nint __stdcall BinkOpenDirectSound_4(int a1)\n{\n  return BinkOpenDirectSound(a1);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

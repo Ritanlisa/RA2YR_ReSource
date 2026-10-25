@@ -1,0 +1,1 @@
+{"addr": "0x00413C60", "name": "sub_413C60", "decompiled": "int sub_413C60()\n{\n  g_AircraftStatusFlag = 0;\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

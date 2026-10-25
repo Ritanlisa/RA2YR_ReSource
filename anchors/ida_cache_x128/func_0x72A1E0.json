@@ -1,0 +1,1 @@
+{"addr": "0x0072A1E0", "name": "JumpjetLocomotionClass::ShortFunc_72A1E0", "decompiled": "BOOL __stdcall JumpjetLocomotionClass::ShortFunc_72A1E0(TunnelLocomotionClass *this)\n{\n  int RefCount; // eax\n\n  RefCount = this->RefCount;\n  return RefCount == 5 || RefCount == 6;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

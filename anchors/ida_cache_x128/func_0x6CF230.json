@@ -1,0 +1,1 @@
+{"addr": "0x006CF230", "name": "SwizzleManager::ConvertWrapper", "decompiled": "int __stdcall SwizzleManager::ConvertWrapper(SwizzleManagerClass *this)\n{\n  SwizzleManagerClass::ConvertNodes((int)this);\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

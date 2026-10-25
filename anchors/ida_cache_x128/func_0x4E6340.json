@@ -1,0 +1,1 @@
+{"addr": "0x004E6340", "name": "sub_4E6340", "decompiled": "void sub_4E6340()\n{\n  *(double *)&stru_A8E960.altNextScenario[188] = 0.0174532925199433 * 45.0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

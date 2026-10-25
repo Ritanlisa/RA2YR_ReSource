@@ -1,0 +1,1 @@
+{"addr": "0x004CBF80", "name": "sub_4CBF80", "decompiled": "void sub_4CBF80()\n{\n  dbl_8B3C00 = 0.0174532925199433 * 45.0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

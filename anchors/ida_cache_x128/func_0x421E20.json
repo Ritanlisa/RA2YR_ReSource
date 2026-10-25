@@ -1,0 +1,1 @@
+{"addr": "0x00421E20", "name": "sub_421E20", "decompiled": "int sub_421E20()\n{\n  int result; // eax\n\n  LOWORD(result) = Math::RoundToInt((double)(4 * Map_CellHeight) + 0.5);\n  Map_MaxHeight = result;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

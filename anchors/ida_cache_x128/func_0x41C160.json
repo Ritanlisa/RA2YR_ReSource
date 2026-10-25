@@ -1,0 +1,1 @@
+{"addr": "0x0041C160", "name": "TacticalClass::ProcessTick3", "decompiled": "int __thiscall TacticalClass::ProcessTick3(FootClass *this, int a2)\n{\n  this->lastJumpjetMapCoords = a2;\n  return a2;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

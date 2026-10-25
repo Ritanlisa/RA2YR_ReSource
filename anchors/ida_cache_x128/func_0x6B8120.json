@@ -1,0 +1,1 @@
+{"addr": "0x006B8120", "name": "SpawnManagerClass::StubReturn116", "decompiled": "int SpawnManagerClass::StubReturn116(SpawnManagerClass *this)\n{\n  return 116;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

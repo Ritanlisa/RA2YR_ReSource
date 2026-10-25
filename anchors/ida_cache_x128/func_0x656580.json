@@ -1,0 +1,1 @@
+{"addr": "0x00656580", "name": "Diplomacy::GetField", "decompiled": "char *__thiscall Diplomacy::GetField(char *this, int a2)\n{\n  return this + 24 * *(_DWORD *)(a2 + 3824) + 4728;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

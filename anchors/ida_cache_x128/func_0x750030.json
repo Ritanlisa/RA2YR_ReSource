@@ -1,0 +1,1 @@
+{"addr": "0x00750030", "name": "FootClass::CheckAccelLimit", "decompiled": "int __thiscall FootClass::CheckAccelLimit(int *this)\n{\n  if ( *(float *)this >= 2.0 )\n    JUMPOUT(0x750041);\n  JUMPOUT(0x75004C);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

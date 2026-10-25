@@ -1,0 +1,1 @@
+{"addr": "0x00759850", "name": "Render_Render_759850", "decompiled": "bool __thiscall Render_Render_759850(TechnoClass *this, int a2, int a3)\n{\n  int v3; // eax\n\n  v3 = a3;\n  if ( a3 < 0 )\n    v3 = -1;\n  return Audio_Render_7C3430(this->reloadTimer[1], a2, v3, 1u) == -1;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

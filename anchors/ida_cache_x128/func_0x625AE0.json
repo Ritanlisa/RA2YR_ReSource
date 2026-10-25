@@ -1,0 +1,1 @@
+{"addr": "0x00625AE0", "name": "LinkedList::PushFront", "decompiled": "int __thiscall LinkedList::PushFront(LinkedList *this, int a2)\n{\n  *(_DWORD *)(a2 + 12) = this->Tail[0];\n  this->Tail[0] = a2;\n  return a2;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

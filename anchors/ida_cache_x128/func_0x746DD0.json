@@ -1,0 +1,1 @@
+{"addr": "0x00746DD0", "name": "C07F5C70::StubReturn2280", "decompiled": "int C07F5C70::StubReturn2280(UnitClass *this)\n{\n  return 2280;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

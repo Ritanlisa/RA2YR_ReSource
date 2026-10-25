@@ -1,0 +1,1 @@
+{"addr": "0x004F28B0", "name": "Map::CanScroll", "decompiled": "BOOL __thiscall Map::CanScroll(_VectorCursor_PAVGraphicMenuItem_V_DynamicVectorClass_PAVGraphicMenuItem *this)\n{\n  return *((_DWORD *)this + 2) < *(_DWORD *)(*(_DWORD *)&this->m_1[3] + 16);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

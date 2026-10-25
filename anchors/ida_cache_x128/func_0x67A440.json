@@ -1,0 +1,1 @@
+{"addr": "0x0067A440", "name": "TypeList_VoxelAnim::GetIndex", "decompiled": "unsigned int __thiscall TypeList_VoxelAnim::GetIndex(_DynamicVectorClass_PBVVoxelAnimTypeClass *this, int a2)\n{\n  if ( LOBYTE(this->m_C) )\n    return (unsigned int)(a2 - *(_DWORD *)&this->m_1[3]) >> 2;\n  else\n    return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

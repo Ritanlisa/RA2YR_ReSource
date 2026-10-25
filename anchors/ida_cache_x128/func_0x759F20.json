@@ -1,0 +1,1 @@
+{"addr": "0x00759F20", "name": "Render_Load_759F20", "decompiled": "int __thiscall Render_Load_759F20(TechnoClass *this, int a2)\n{\n  this->firingRadBeam = a2;\n  return a2;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x006A4C10", "name": "sub_6A4C10", "decompiled": "int sub_6A4C10()\n{\n  GadgetClass::Construct((ShpButtonClass *)&stru_B07E58, 0, 0, 1, 1, 8, 0);\n  *(_DWORD *)stru_B07E58.__pad_0 = &SidebarClass::SBGadgetClass::`vftable';\n  return atexit(sub_6A4C40);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

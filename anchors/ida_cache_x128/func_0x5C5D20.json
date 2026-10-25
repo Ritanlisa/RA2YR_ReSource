@@ -1,0 +1,1 @@
+{"addr": "0x005C5D20", "name": "sub_5C5D20", "decompiled": "void __thiscall sub_5C5D20(FreeForAll *this)\n{\n  this->vfptr = &FreeForAll::`vftable';\n  MultiplayerGameMode::Dtor((MultiplayerGameMode *)this);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

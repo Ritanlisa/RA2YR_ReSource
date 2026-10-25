@@ -1,0 +1,1 @@
+{"addr": "0x007CD960", "name": "__mtinitlocks", "decompiled": "void _mtinitlocks()\n{\n  InitializeCriticalSection(lpCriticalSection);\n  InitializeCriticalSection(off_87C2DC);\n  InitializeCriticalSection(off_87C2CC);\n  InitializeCriticalSection(off_87C2AC);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

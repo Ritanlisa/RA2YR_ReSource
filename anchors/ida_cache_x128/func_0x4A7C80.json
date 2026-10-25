@@ -1,0 +1,1 @@
+{"addr": "0x004A7C80", "name": "DiskLaserClass::StubReturn73", "decompiled": "int DiskLaserClass::StubReturn73(DiskLaserClass *this)\n{\n  return 73;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x0040AFA0", "name": "sub_40AFA0", "decompiled": "int sub_40AFA0()\n{\n  Tactical::ConstructTacticalSurface((VectorClassUInt *)&stru_87E8B8);\n  return atexit(unknown_libname_2);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

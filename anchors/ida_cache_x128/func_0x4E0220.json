@@ -1,0 +1,1 @@
+{"addr": "0x004E0220", "name": "FoggedObjectClass_42::PointerToIndex", "decompiled": "unsigned int __thiscall FoggedObjectClass_42::PointerToIndex(FoggedObjectClass *this, int a2)\n{\n  if ( LOBYTE(this->vfptr3) )\n    return (unsigned int)(a2 - this->vfptr1) >> 2;\n  else\n    return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

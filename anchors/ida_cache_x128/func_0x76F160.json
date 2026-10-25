@@ -1,0 +1,1 @@
+{"addr": "0x0076F160", "name": "Count::Release", "decompiled": "_DWORD *__thiscall Count::Release(_VectorCursor_PAVMSSfxEntry_V_DynamicVectorClass_PAVMSSfxEntry *this)\n{\n  ++*((_DWORD *)this + 2);\n  return this->__pad_0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x006C5AC0", "name": "TClassFactory_ParticleSystemTypeClass::AddRef", "decompiled": "LONG __thiscall TClassFactory_ParticleSystemTypeClass::AddRef(_TClassFactory_VParticleSystemTypeClass *this)\n{\n  int v2; // [esp+4h] [ebp+4h]\n\n  return InterlockedIncrement((volatile LONG *)(v2 + 4));\n}\n", "changed": true, "error": null, "timestamp": "x128"}

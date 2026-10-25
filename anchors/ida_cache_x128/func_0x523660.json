@@ -1,0 +1,1 @@
+{"addr": "0x00523660", "name": "sub_523660", "decompiled": "int sub_523660()\n{\n  *(_DWORD *)&stru_A8E960.waypoints[806] = 0;\n  *(_DWORD *)&stru_A8E960.waypoints[798] = 128;\n  *(_DWORD *)&stru_A8E960.waypoints[802] = 128;\n  return 128;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x007C990E", "name": "_isalpha", "decompiled": "int __cdecl isalpha(int C)\n{\n  if ( (int)cbMultiByte <= 1 )\n    return *((_WORD *)off_87C590 + C) & 0x103;\n  else\n    return _isctype(C, 259);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

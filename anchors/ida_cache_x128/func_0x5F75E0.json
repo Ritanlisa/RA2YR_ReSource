@@ -1,0 +1,1 @@
+{"addr": "0x005F75E0", "name": "Struct::InitTriple256", "decompiled": "_DWORD *__stdcall Struct::InitTriple256(ObjectTypeClass *this)\n{\n  int v1; // esi\n\n  v1 = 2 * dword_AC1474;\n  this->vfptr = 256;\n  this->vfptr1 = 256;\n  this->vfptr2 = v1;\n  return &this->vfptr;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

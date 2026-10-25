@@ -1,0 +1,1 @@
+{"addr": "0x004B4F60", "name": "DropListClass::HitTest", "decompiled": "_DWORD *__thiscall DropListClass::HitTest(DropListClass *this, int a2)\n{\n  (*(void (__thiscall **)(int *, int))(this->DropListClass_field_0x50 + 20))(&this->DropListClass_field_0x50, a2);\n  return LinkedList::Attach((LinkClass *)this, a2);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x00763690", "name": "String::To_Waypoint", "decompiled": "int __thiscall String::To_Waypoint(char *this)\n{\n  int v2; // esi\n\n  v2 = -1;\n  if ( isalpha(*this) && (v2 = toupper(*this) - 65, isalpha(*(this + 1))) )\n    return toupper(*(this + 1)) + 26 * v2 - 39;\n  else\n    return v2;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

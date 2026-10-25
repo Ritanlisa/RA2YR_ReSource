@@ -1,0 +1,1 @@
+{"addr": "0x005139F0", "name": "HouseTypeClass::readAiBuildLists", "decompiled": "int __stdcall HouseTypeClass::readAiBuildLists(int a1)\n{\n  return HouseTypeClass::AddRef((HouseTypeClass *)(a1 - 4));\n}\n", "changed": true, "error": null, "timestamp": "x128"}

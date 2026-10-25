@@ -1,0 +1,1 @@
+{"addr": "0x00408520", "name": "AudioController::GetOffset", "decompiled": "int __thiscall AudioController::GetOffset(AudioController *this)\n{\n  return Queue::GetNext((Queue *)&this->AudioController_field_08);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

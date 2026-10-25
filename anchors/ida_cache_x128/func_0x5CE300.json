@@ -1,0 +1,1 @@
+{"addr": "0x005CE300", "name": "MSPrintAnim::Clear", "decompiled": "BOOL __thiscall MSPrintAnim::Clear(MSPrintAnim *this)\n{\n  return *((_BYTE *)this + 72)\n      && this->field_28 > (unsigned int)WideString::Length((WideString *)&this->field_20)\n      && this->field_2C > 2;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

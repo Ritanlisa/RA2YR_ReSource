@@ -1,0 +1,1 @@
+{"addr": "0x005BCC40", "name": "Network::validateConnection", "decompiled": "int __thiscall Network::validateConnection(Network *this, int a2, int a3)\n{\n  *((_DWORD *)this + 2503) = a2;\n  *((_DWORD *)this + 2504) = a3;\n  return a2;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

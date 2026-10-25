@@ -1,0 +1,1 @@
+{"addr": "0x007A70E0", "name": "CComObject_CChatEventSink___ATL::Disconnect", "decompiled": "int __stdcall CComObject_CChatEventSink___ATL::Disconnect(CChatEventSink *this, int a2, int a3, const char *a4)\n{\n  if ( a2 >= 0 )\n    LeaveChannelWOL(a4);\n  else\n    Debug::Log();\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

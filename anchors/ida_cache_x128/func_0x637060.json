@@ -1,0 +1,1 @@
+{"addr": "0x00637060", "name": "TabClass::processTabInput", "decompiled": "void __thiscall TabClass::processTabInput(TabClass *this)\n{\n  stru_AC4B48.SidebarClass_field_0x38 = (int)this;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

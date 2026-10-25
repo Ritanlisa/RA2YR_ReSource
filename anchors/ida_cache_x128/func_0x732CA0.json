@@ -1,0 +1,1 @@
+{"addr": "0x00732CA0", "name": "UI_Create_732CA0", "decompiled": "char UI_Create_732CA0()\n{\n  DWORD Time; // eax\n\n  LOBYTE(Time) = byte_B0FE65;\n  if ( !byte_B0FE65 )\n  {\n    byte_B0FE65 = 1;\n    Time = timeGetTime();\n    dword_B0FE68 = Time;\n  }\n  return Time;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

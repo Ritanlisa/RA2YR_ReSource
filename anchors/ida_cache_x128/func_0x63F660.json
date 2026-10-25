@@ -1,0 +1,1 @@
+{"addr": "0x0063F660", "name": "sub_63F660", "decompiled": "int sub_63F660()\n{\n  *(_WORD *)&stru_AC4B48.__pad_194[52] = 0;\n  *(_WORD *)&stru_AC4B48.__pad_194[54] = 0;\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

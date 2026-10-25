@@ -1,0 +1,1 @@
+{"addr": "0x0055A930", "name": "StreamClass::GetDirty", "decompiled": "int __stdcall StreamClass::GetDirty(IUnknown *this)\n{\n  int result; // eax\n\n  result = (int)this;\n  LOBYTE(result) = this->field_C;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

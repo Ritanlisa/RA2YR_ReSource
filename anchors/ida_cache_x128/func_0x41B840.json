@@ -1,0 +1,1 @@
+{"addr": "0x0041B840", "name": "TechnoClass::updateWeaponCooldown", "decompiled": "BOOL __stdcall TechnoClass::updateWeaponCooldown(TechnoClass *this)\n{\n  return *(_BYTE *)(this->vfptr1 + 3598) != 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

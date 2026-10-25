@@ -1,0 +1,1 @@
+{"addr": "0x00746DB0", "name": "TechnoClass::HasDeployFlags", "decompiled": "int __thiscall TechnoClass::HasDeployFlags(TechnoClass *this)\n{\n  return *((_BYTE *)this + 1761) || *((_BYTE *)this + 1762);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

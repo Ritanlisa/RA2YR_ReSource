@@ -1,0 +1,1 @@
+{"addr": "0x00661F50", "name": "JumpjetLocomotionClass::HasFieldStateChanged", "decompiled": "BOOL __stdcall JumpjetLocomotionClass::HasFieldStateChanged(JumpjetLocomotionClass *this)\n{\n  return this->RefCount != dword_B04E38 || this->TurnRate != dword_B04E3C || this->Speed != dword_B04E40;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

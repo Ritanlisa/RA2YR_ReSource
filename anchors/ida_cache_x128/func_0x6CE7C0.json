@@ -1,0 +1,1 @@
+{"addr": "0x006CE7C0", "name": "SuperWeaponTypeClass::SD_vt03", "decompiled": "int __stdcall SuperWeaponTypeClass::SD_vt03(SuperWeaponTypeClass *this, _DWORD *a2)\n{\n  if ( !a2 )\n    return -2147467261;\n  *a2 = 217234663;\n  a2[1] = 298989284;\n  a2[2] = 1610668216;\n  a2[3] = -318126072;\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

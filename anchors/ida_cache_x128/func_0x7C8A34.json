@@ -1,0 +1,1 @@
+{"addr": "0x007C8A34", "name": "ImmGetCompositionStringA", "decompiled": "// attributes: thunk\nint __stdcall ImmGetCompositionStringA(HIMC a1, DWORD a2, LPVOID lpBuf, DWORD dwBufLen)\n{\n  return __imp_ImmGetCompositionStringA(a1, a2, lpBuf, dwBufLen);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

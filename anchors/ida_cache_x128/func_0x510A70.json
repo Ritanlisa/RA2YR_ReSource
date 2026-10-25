@@ -1,0 +1,1 @@
+{"addr": "0x00510A70", "name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_4", "decompiled": "int __stdcall VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_4(int a1)\n{\n  return HouseClass::COMStub_Ret1_2((HouseClass *)(a1 - 36));\n}\n", "changed": true, "error": null, "timestamp": "x128"}

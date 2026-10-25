@@ -1,0 +1,1 @@
+{"addr": "0x0074FFF0", "name": "VeinholeClass::GetState", "decompiled": "BOOL __thiscall VeinholeClass::GetState(float *this)\n{\n  return *this < 0.0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

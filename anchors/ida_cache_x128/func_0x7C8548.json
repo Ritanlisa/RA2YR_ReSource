@@ -1,0 +1,1 @@
+{"addr": "0x007C8548", "name": "SetUnhandledExceptionFilter", "decompiled": "// attributes: thunk\nLPTOP_LEVEL_EXCEPTION_FILTER __stdcall SetUnhandledExceptionFilter(LPTOP_LEVEL_EXCEPTION_FILTER lpTopLevelExceptionFilter)\n{\n  return __imp_SetUnhandledExceptionFilter(lpTopLevelExceptionFilter);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

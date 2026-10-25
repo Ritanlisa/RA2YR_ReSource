@@ -1,0 +1,1 @@
+{"addr": "0x00772AC0", "name": "InfantryClass::startPanic", "decompiled": "bool __thiscall InfantryClass::startPanic(InfantryClass *this)\n{\n  int currentMission; // eax\n\n  currentMission = this->currentMission;\n  return currentMission && *(_BYTE *)(currentMission + 324);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

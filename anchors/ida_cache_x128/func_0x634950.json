@@ -1,0 +1,1 @@
+{"addr": "0x00634950", "name": "sub_634950", "decompiled": "void __thiscall sub_634950(ObjectClass *this)\n{\n  LOBYTE(this->referenceCount) = 1;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

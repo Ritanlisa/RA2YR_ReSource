@@ -1,0 +1,1 @@
+{"addr": "0x004D03D0", "name": "UnitClass::CompareCoordinateMagnitude", "decompiled": "int __thiscall UnitClass::CompareCoordinateMagnitude(UnitClass *this, __int16 *a2)\n{\n  int result; // eax\n\n  result = abs16(this->vfptr);\n  LOBYTE(result) = result >= abs16(*a2);\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

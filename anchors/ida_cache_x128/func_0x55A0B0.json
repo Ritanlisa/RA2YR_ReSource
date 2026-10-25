@@ -1,0 +1,1 @@
+{"addr": "0x0055A0B0", "name": "LoadOptions::Close", "decompiled": "wchar_t *__thiscall LoadOptions::Close(LoadOptionsClass *this)\n{\n  return GetStringCSF(aTxtGameWasSave, 0, g_Str_File_LoadDlg_CPP, 1234);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

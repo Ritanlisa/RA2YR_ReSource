@@ -1,0 +1,1 @@
+{"addr": "0x0040EC80", "name": "sub_40EC80", "decompiled": "void sub_40EC80()\n{\n  *(double *)&stru_887338.__pad_1C[140] = 1.0 / *(double *)&stru_887338.__pad_1C[164];\n}\n", "changed": true, "error": null, "timestamp": "x128"}

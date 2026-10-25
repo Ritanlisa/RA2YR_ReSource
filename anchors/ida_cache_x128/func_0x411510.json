@@ -1,0 +1,1 @@
+{"addr": "0x00411510", "name": "Surface::GetRect", "decompiled": "_DWORD *__thiscall Surface::GetRect(Surface *this, _DWORD *a2)\n{\n  int Width; // edi\n  int Height; // ecx\n\n  Width = this->Width;\n  Height = this->Height;\n  *a2 = 0;\n  a2[1] = 0;\n  a2[2] = Width;\n  a2[3] = Height;\n  return a2;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

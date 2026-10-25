@@ -1,0 +1,1 @@
+{"addr": "0x007D385A", "name": "__getmbcp", "decompiled": "int __cdecl _getmbcp()\n{\n  return dword_B7885C != 0 ? dword_B78840 : 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

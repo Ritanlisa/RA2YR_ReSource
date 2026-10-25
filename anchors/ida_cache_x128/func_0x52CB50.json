@@ -1,0 +1,1 @@
+{"addr": "0x0052CB50", "name": "PlayIntroSequence", "decompiled": "int __usercall PlayIntroSequence@<eax>(int a1@<ebx>, int a2@<ebp>, int a3@<edi>)\n{\n  if ( (stru_A8E960.nextScenario[0] & 4) != 0 )\n    Movie::Play(-1, a2, a3, aA00F00e, 1, 1, 1, 0);\n  Screen::Capture(1, 0, a1, a2);\n  return Event::Dispatch();\n}\n", "changed": true, "error": null, "timestamp": "x128"}

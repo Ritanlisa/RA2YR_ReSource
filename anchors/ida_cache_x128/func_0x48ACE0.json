@@ -1,0 +1,1 @@
+{"addr": "0x0048ACE0", "name": "Return::HRESULT_Fail", "decompiled": "int __stdcall Return::HRESULT_Fail(int a1, int a2, int a3)\n{\n  return -15;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

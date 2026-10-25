@@ -1,0 +1,1 @@
+{"addr": "0x006E3D70", "name": "TActionClass::ddtor", "decompiled": "int __stdcall TActionClass::ddtor(TActionClass *this, _DWORD *a2)\n{\n  if ( !a2 )\n    return -2147467261;\n  *a2 = 1326367634;\n  a2[1] = 298977877;\n  a2[2] = 1610655660;\n  a2[3] = -1252326136;\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

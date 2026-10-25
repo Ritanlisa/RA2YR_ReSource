@@ -1,0 +1,1 @@
+{"addr": "0x00776210", "name": "sub_776210", "decompiled": "int sub_776210()\n{\n  dword_B73088 = 0;\n  dword_B7308C = 0;\n  dword_B73090 = 0;\n  dword_B73094 = 0;\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x0074BA00", "name": "VoxelAnimTypeClass::GetObjectSize", "decompiled": "int VoxelAnimTypeClass::GetObjectSize(VoxelAnimTypeClass *this)\n{\n  return 776;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

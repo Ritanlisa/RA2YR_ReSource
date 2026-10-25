@@ -1,0 +1,1 @@
+{"addr": "0x0067A980", "name": "TypeList_cptr_TerrainTypeClass::SaveToINI", "decompiled": "int __thiscall TypeList_cptr_TerrainTypeClass::SaveToINI(_VectorClass_PBVTerrainTypeClass *this, int a2)\n{\n  return *(_DWORD *)(*(_DWORD *)&this->m_1[3] + 4 * a2);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x0043ADF0", "name": "sub_43ADF0", "decompiled": "_BYTE *__thiscall sub_43ADF0(ObjectClass *this, _DWORD *a2)\n{\n  LOBYTE(this->vfptr2) = 0;\n  this->vfptr = *a2;\n  this->vfptr1 = a2[1];\n  return this;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

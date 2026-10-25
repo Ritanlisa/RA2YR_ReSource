@@ -1,0 +1,1 @@
+{"addr": "0x004393E0", "name": "BombClass::StubReturn68", "decompiled": "int BombClass::StubReturn68(BombClass *this)\n{\n  return 68;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

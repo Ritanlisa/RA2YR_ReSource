@@ -1,0 +1,1 @@
+{"addr": "0x0075A2B0", "name": "sub_75A2B0", "decompiled": "BOOL __cdecl sub_75A2B0(int a1, int a2, int *a3, int a4)\n{\n  return sub_75A120(*(_DWORD *)(a1 + 172), a2, a3, a4);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

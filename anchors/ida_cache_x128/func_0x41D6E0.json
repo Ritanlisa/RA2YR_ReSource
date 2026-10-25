@@ -1,0 +1,1 @@
+{"addr": "0x0041D6E0", "name": "AirstrikeClass::Stat", "decompiled": "int __thiscall AirstrikeClass::Stat(AirstrikeClass *this, int a2)\n{\n  return AbstractClass::ProcessPower((AbstractClass *)this);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

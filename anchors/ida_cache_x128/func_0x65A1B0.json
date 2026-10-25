@@ -1,0 +1,1 @@
+{"addr": "0x0065A1B0", "name": "Render_Render_65A1B0", "decompiled": "int *__thiscall Render_Render_65A1B0(ObjectClass *this, int a2)\n{\n  if ( a2 )\n  {\n    this->vfptr /= a2;\n    this->vfptr1 /= a2;\n    this->vfptr2 /= a2;\n  }\n  return &this->vfptr;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

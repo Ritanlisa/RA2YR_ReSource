@@ -1,0 +1,1 @@
+{"addr": "0x0077DA40", "name": "unknown_libname_60", "decompiled": "// Microsoft VisualC 2-14/net runtime\nvoid __cdecl unknown_libname_60()\n{\n  DeleteAndZero(&g_WebBrowserConfig);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

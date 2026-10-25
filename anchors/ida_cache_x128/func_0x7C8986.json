@@ -1,0 +1,1 @@
+{"addr": "0x007C8986", "name": "ntoainet", "decompiled": "// attributes: thunk\nchar *__stdcall ntoainet(struct in_addr in)\n{\n  return inet_ntoa(in);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

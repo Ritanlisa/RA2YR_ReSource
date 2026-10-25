@@ -1,0 +1,1 @@
+{"addr": "0x00723CE0", "name": "ScriptTypeClass::FormatToString", "decompiled": "unsigned int __thiscall ScriptTypeClass::FormatToString(ScriptTypeClass *this, char *Buffer)\n{\n  if ( !Buffer )\n    return 0;\n  sprintf(Buffer, \"%d,%d\", this->vfptr, this->vfptr1);\n  return strlen(Buffer);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

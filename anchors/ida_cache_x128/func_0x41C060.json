@@ -1,0 +1,1 @@
+{"addr": "0x0041C060", "name": "BuildingClass::vt_entry_4E4", "decompiled": "char BuildingClass::vt_entry_4E4(FootClass *this)\n{\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

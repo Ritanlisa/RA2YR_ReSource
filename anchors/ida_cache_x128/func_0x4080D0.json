@@ -1,0 +1,1 @@
+{"addr": "0x004080D0", "name": "AudioSample::IsBuffering", "decompiled": "int __thiscall AudioSample::IsBuffering(AudioSample *this)\n{\n  return (this->AudioSample_field_0x0C & 1) != 0 && *(_DWORD *)(this->field_14 + 20) != *(_DWORD *)(this->field_14 + 24);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

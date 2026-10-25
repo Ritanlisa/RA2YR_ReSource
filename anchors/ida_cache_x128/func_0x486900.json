@@ -1,0 +1,1 @@
+{"addr": "0x00486900", "name": "CellClass::IsActiveOrNext", "decompiled": "int __thiscall CellClass::IsActiveOrNext(CellClass *this)\n{\n  int result; // eax\n\n  result = *(_DWORD *)&this->__pad_28[16];\n  LOBYTE(result) = result == dword_ABC2C8 || result == dword_ABC2C8 + 1;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

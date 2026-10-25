@@ -1,0 +1,1 @@
+{"addr": "0x005F3440", "name": "EventClass::GetState", "decompiled": "int __stdcall EventClass::GetState(int a1)\n{\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

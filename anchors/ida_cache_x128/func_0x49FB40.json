@@ -1,0 +1,1 @@
+{"addr": "0x0049FB40", "name": "CounterClass::ddtor", "decompiled": "int __thiscall CounterClass::ddtor(CounterClass *this)\n{\n  int result; // eax\n\n  for ( result = 0; result < (signed int)this->field_8; *(_DWORD *)(this->count + 4 * result - 4) = 0 )\n    ++result;\n  this->field_10 = 0;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

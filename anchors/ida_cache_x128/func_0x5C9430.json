@@ -1,0 +1,1 @@
+{"addr": "0x005C9430", "name": "Megawealth::ProcessTick", "decompiled": "char Megawealth::ProcessTick(Megawealth *this)\n{\n  MapClass::ClearShroud((MapClass *)&dword_87F7E8, 0);\n  return 1;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

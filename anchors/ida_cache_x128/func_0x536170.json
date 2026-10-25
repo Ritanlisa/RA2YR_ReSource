@@ -1,0 +1,1 @@
+{"addr": "0x00536170", "name": "AddTeamCommand::Do", "decompiled": "int __thiscall AddTeamCommand::Do(AddTeamCommandClass *this, int a2)\n{\n  return SquadClass::SelectAllMembers(*(char **)&this->m_1[3]);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

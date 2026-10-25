@@ -1,0 +1,1 @@
+{"addr": "0x0050DAA0", "name": "FootClass::checkTurning", "decompiled": "unsigned int __thiscall FootClass::checkTurning(FootClass *this)\n{\n  unsigned int result; // eax\n\n  result = this->infantryBlinkTimer[0];\n  if ( result >= 4 )\n    return 0;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

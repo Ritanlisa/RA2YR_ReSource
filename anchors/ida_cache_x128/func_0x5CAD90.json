@@ -1,0 +1,1 @@
+{"addr": "0x005CAD90", "name": "MPBattleClass::startGame", "decompiled": "int MPBattleClass::startGame()\n{\n  int result; // eax\n\n  LOWORD(result) = Math::RoundToInt((double)(4 * dword_ABFAF8) + 0.5);\n  dword_ABFAEC = result;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x007D7ED2", "name": "__fptrap", "decompiled": "void __noreturn _fptrap()\n{\n  _amsg_exit(2u);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

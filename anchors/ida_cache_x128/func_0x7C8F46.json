@@ -1,0 +1,1 @@
+{"addr": "0x007C8F46", "name": "System_Helper", "decompiled": "unsigned int System_Helper()\n{\n  unsigned int result; // eax\n\n  _cfltcvt_init_13();\n  dword_B781A0 = _ms_p5_mp_test_fdiv();\n  result = _setdefaultprecision();\n  __asm { fnclex }\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

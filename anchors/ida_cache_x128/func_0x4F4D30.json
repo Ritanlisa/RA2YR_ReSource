@@ -1,0 +1,1 @@
+{"addr": "0x004F4D30", "name": "sub_4F4D30", "decompiled": "bool __thiscall sub_4F4D30(ObjectClass *this, const char *a2)\n{\n  return strcmp((const char *)this, a2) != 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

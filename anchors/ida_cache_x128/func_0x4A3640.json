@@ -1,0 +1,1 @@
+{"addr": "0x004A3640", "name": "DDraw::Init", "decompiled": "void __thiscall DDraw::Init(DDraw *this)\n{\n  *((_DWORD *)this + 24576) = 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

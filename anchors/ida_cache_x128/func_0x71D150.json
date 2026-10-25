@@ -1,0 +1,1 @@
+{"addr": "0x0071D150", "name": "IRTTITypeInfo::GetOffset", "decompiled": "unsigned int __thiscall IRTTITypeInfo::GetOffset(TerrainClass *this)\n{\n  return *(_DWORD *)&this->__pad_C0[8];\n}\n", "changed": true, "error": null, "timestamp": "x128"}

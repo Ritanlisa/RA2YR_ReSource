@@ -1,0 +1,1 @@
+{"addr": "0x0054A120", "name": "Rect::Set4", "decompiled": "_DWORD *__thiscall Rect::Set4(_DWORD *this, int a2, int a3, int a4, int a5)\n{\n  *this = a2;\n  *(this + 1) = a3;\n  *(this + 2) = a4;\n  *(this + 3) = a5;\n  return this;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

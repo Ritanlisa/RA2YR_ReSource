@@ -1,0 +1,1 @@
+{"addr": "0x006B6150", "name": "SmudgeTypeClass::GetAuxField", "decompiled": "int __thiscall SmudgeTypeClass::GetAuxField(SmudgeTypeClass *this)\n{\n  return this->ArrayIndex;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

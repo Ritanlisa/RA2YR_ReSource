@@ -1,0 +1,1 @@
+{"addr": "0x004B4C10", "name": "JumpjetLocomotionClass::GetField_0x58", "decompiled": "int __stdcall JumpjetLocomotionClass::GetField_0x58(DriveLocomotionClass *this)\n{\n  return this->TrackNumber;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

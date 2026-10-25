@@ -1,0 +1,1 @@
+{"addr": "0x00731A10", "name": "UI_Delete", "decompiled": "char UI_Delete()\n{\n  ObjectClass *v0; // eax\n\n  v0 = (ObjectClass *)UI_Delete_Delete_63AC60();\n  if ( v0 )\n    return UI_Delete_Delete(v0);\n  else\n    return Network::SendBeaconDelete((Network *)&g_VisibilitySystem, -1, -1);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x004E81C0", "name": "sub_4E81C0", "decompiled": "char sub_4E81C0()\n{\n  byte_A8E8C6 = -1;\n  byte_A8E8C4 = 0;\n  byte_A8E8C5 = 0;\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

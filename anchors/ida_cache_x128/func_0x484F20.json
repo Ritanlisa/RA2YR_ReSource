@@ -1,0 +1,1 @@
+{"addr": "0x00484F20", "name": "InfantryClass::GetType", "decompiled": "int __thiscall InfantryClass::GetType(InfantryClass *this)\n{\n  __int16 v1; // ax\n\n  v1 = HIWORD(this->passengers[0]);\n  if ( v1 < 0 || v1 >= dword_8B4148 )\n    return 0;\n  else\n    return *((_DWORD *)dword_8B413C + v1);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

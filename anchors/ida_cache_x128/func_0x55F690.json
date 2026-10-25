@@ -1,0 +1,1 @@
+{"addr": "0x0055F690", "name": "CheckNetworkSync", "decompiled": "int __thiscall CheckNetworkSync(ObjectClass *this, int a2, int a3)\n{\n  this->vfptr = a3 & 0xFFFFFF;\n  LOBYTE(this->vfptr1) = HIBYTE(a3);\n  *(_DWORD *)a2 = this->vfptr;\n  *(_BYTE *)(a2 + 4) = this->vfptr1;\n  return a2;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

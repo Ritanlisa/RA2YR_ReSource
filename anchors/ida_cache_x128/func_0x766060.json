@@ -1,0 +1,1 @@
+{"addr": "0x00766060", "name": "FindWDTTerritoryClass_Find_Find", "decompiled": "int __thiscall FindWDTTerritoryClass_Find_Find(ObjectClass *this)\n{\n  int vfptr3; // eax\n\n  vfptr3 = this->vfptr3;\n  if ( vfptr3 )\n    return *(_DWORD *)(vfptr3 + 8);\n  else\n    return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

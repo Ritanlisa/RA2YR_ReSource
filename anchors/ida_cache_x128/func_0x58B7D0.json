@@ -1,0 +1,1 @@
+{"addr": "0x0058B7D0", "name": "MapSeed::IsInitialized", "decompiled": "int MapSeed::IsInitialized()\n{\n  return dword_ABED0C;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

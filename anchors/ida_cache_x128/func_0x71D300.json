@@ -1,0 +1,1 @@
+{"addr": "0x0071D300", "name": "TerrainClass::MissionStubReturnZero2", "decompiled": "int TerrainClass::MissionStubReturnZero2(TerrainClass *this)\n{\n  return 36;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

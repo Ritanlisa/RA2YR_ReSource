@@ -1,0 +1,1 @@
+{"addr": "0x0071B1A0", "name": "TemporalClass::StubReturn70", "decompiled": "int TemporalClass::StubReturn70(TemporalClass *this)\n{\n  return 70;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

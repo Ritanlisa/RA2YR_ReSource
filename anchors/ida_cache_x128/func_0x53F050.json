@@ -1,0 +1,1 @@
+{"addr": "0x0053F050", "name": "sub_53F050", "decompiled": "bool __thiscall sub_53F050(ObjectClass *this, const char *a2)\n{\n  return memcmp((const char *)this, a2, 10) < 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

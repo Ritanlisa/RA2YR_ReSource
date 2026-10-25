@@ -1,0 +1,1 @@
+{"addr": "0x0077CF30", "name": "unknown_libname_42", "decompiled": "// Microsoft VisualC 2-14/net runtime\nvoid __cdecl unknown_libname_42()\n{\n  DeleteAndZero(&dword_B76AC4);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

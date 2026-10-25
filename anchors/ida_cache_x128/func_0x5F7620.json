@@ -1,0 +1,1 @@
+{"addr": "0x005F7620", "name": "AbstractTypeClass::SetType", "decompiled": "int AbstractTypeClass::SetType(ObjectTypeClass *this)\n{\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

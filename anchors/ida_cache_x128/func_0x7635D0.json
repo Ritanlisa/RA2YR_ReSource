@@ -1,0 +1,1 @@
+{"addr": "0x007635D0", "name": "sub_7635D0", "decompiled": "void __cdecl sub_7635D0()\n{\n  dword_B72608 = (int)&VectorClass<WaypointPathClass *>::`vftable';\n  if ( dword_B7260C && byte_B72615 )\n  {\n    __3_YAXPAX_Z(dword_B7260C);\n    dword_B7260C = 0;\n  }\n  byte_B72615 = 0;\n  dword_B72610 = 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

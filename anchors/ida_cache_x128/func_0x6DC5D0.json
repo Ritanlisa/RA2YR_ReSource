@@ -1,0 +1,1 @@
+{"addr": "0x006DC5D0", "name": "VectorClass_UDirtyAreaStruct___16::Clear", "decompiled": "int __thiscall VectorClass_UDirtyAreaStruct___16::Clear(_VectorClass_PAVShadowControlClass *this, int a2)\n{\n  return *(_DWORD *)(*(_DWORD *)&this->m_1[3] + 4 * a2);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

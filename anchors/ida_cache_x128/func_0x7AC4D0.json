@@ -1,0 +1,1 @@
+{"addr": "0x007AC4D0", "name": "CComObject_CChatEventSink___ATL::DispatchStub_46", "decompiled": "int __stdcall CComObject_CChatEventSink___ATL::DispatchStub_46(CChatEventSink *this, int a2, int a3)\n{\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

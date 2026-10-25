@@ -1,0 +1,1 @@
+{"addr": "0x00420D40", "name": "AlphaShapeClass::SD_vt03", "decompiled": "int __stdcall AlphaShapeClass::SD_vt03(AlphaShapeClass *this, _DWORD *a2)\n{\n  if ( !a2 )\n    return -2147467261;\n  *a2 = 1648129412;\n  a2[1] = 299005159;\n  a2[2] = 1610675640;\n  a2[3] = -318126072;\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

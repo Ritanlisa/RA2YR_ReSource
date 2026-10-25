@@ -1,0 +1,1 @@
+{"addr": "0x007C84F4", "name": "MulDiv", "decompiled": "// attributes: thunk\nint __stdcall MulDiv(int nNumber, int nNumerator, int nDenominator)\n{\n  return __imp_MulDiv(nNumber, nNumerator, nDenominator);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

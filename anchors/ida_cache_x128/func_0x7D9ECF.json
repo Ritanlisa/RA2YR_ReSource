@@ -1,0 +1,1 @@
+{"addr": "0x007D9ECF", "name": "_ungetc", "decompiled": "int __cdecl ungetc(int Character, FILE *Stream)\n{\n  int v2; // esi\n\n  _lock_file(Stream);\n  v2 = ungetc_0(Character, Stream);\n  _unlock_file(Stream);\n  return v2;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

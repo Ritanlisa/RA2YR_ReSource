@@ -1,0 +1,1 @@
+{"addr": "0x0045A130", "name": "Rect::Construct", "decompiled": "_DWORD *__thiscall Rect::Construct(Rect *this, _DWORD *a2, int a3, int a4)\n{\n  this->X = *a2;\n  this->Y = a2[1];\n  this->Width = a3;\n  this->Height = a4;\n  return &this->X;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x007CAC34", "name": "sub_7CAC34", "decompiled": "exception *__thiscall sub_7CAC34(bad_cast *this, struct exception *a2)\n{\n  __0exception_QAE_ABV0__Z((exception *)this, a2);\n  this->vfptr = &bad_cast::`vftable';\n  return (exception *)this;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

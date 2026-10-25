@@ -1,0 +1,337 @@
+{
+ "_meta": {
+  "generator": ".omo/x128/w1_export_payload.py (driver .omo/x128/w1_driver.py)",
+  "schema": "{addr, name, decompiled, changed, error, timestamp} (= ida_cache_x40 schema; timestamp fixed 'x128' for idempotence)",
+  "universe": "idautils.Functions() = all functions with bodies",
+  "idb": "gamemd.exe.i64 (til repaired by X123; W2 extend-in-place 587/587)",
+  "decompile": "mark_cfunc_dirty(ea, True) + decompile per invocation"
+ },
+ "function_count": 19087,
+ "ok": 19023,
+ "failures": [
+  {
+   "addr": "0x00406E80",
+   "name": "AudioMixer::Shutdown",
+   "error": "decompile-null"
+  },
+  {
+   "addr": "0x00406EE0",
+   "name": "sub_406EE0",
+   "error": "decompile-null"
+  },
+  {
+   "addr": "0x00407020",
+   "name": "sub_407020",
+   "error": "decompile-null"
+  },
+  {
+   "addr": "0x0041CE90",
+   "name": "AircraftTypeClass::SaveToINI",
+   "error": "decompile-null"
+  },
+  {
+   "addr": "0x0042B210",
+   "name": "ParsePathDirections",
+   "error": "decompile-null"
+  },
+  {
+   "addr": "0x00445880",
+   "name": "BuildingClass::Sell",
+   "error": "decompile-null"
+  },
+  {
+   "addr": "0x00472140",
+   "name": "CaptureManager::FreeAll",
+   "error": "decompile-null"
+  },
+  {
+   "addr": "0x00480CB0",
+   "name": "BuildingClass::SellEffects",
+   "error": "decompile-null"
+  },
+  {
+   "addr": "0x00489280",
+   "name": "PlaySoundEffectAt",
+   "error": "decompile-null"
+  },
+  {
+   "addr": "0x004D7170",
+   "name": "FootClass::DispatchInput",
+   "error": "decompile-null"
+  },
+  {
+   "addr": "0x004DE580",
+   "name": "FootClass::ValidateFoundation",
+   "error": "decompile-null"
+  },
+  {
+   "addr": "0x004F3140",
+   "name": "ParseINIGadgetDefinition",
+   "error": "decompile-null"
+  },
+  {
+   "addr": "0x004F38B0",
+   "name": "sub_4F38B0",
+   "error": "decompile-null"
+  },
+  {
+   "addr": "0x004F3B10",
+   "name": "NullGuard::Call",
+   "error": "decompile-null"
+  },
+  {
+   "addr": "0x004FAE50",
+   "name": "SuperWeapon::FireSuperWeaponHouseClass",
+   "error": "decompile-null"
+  },
+  {
+   "addr": "0x0052FF90",
+   "name": "Render_Load",
+   "error": "decompile-null"
+  },
+  {
+   "addr": "0x0052FFD0",
+   "name": "sub_52FFD0",
+   "error": "decompile-null"
+  },
+  {
+   "addr": "0x00532100",
+   "name": "ScreenSaver::Process",
+   "error": "decompile-null"
+  },
+  {
+   "addr": "0x00536C00",
+   "name": "CreateTeamCommand::performAction_79",
+   "error": "decompile-null"
+  },
+  {
+   "addr": "0x00536C80",
+   "name": "CreateTeamCommand::performAction_84",
+   "error": "decompile-null"
+  },
+  {
+   "addr": "0x00536D00",
+   "name": "CreateTeamCommand::performAction_89",
+   "error": "decompile-null"
+  },
+  {
+   "addr": "0x00536D80",
+   "name": "CreateTeamCommand::performAction_94",
+   "error": "decompile-null"
+  },
+  {
+   "addr": "0x00536E00",
+   "name": "CreateTeamCommand::performAction_99",
+   "error": "decompile-null"
+  },
+  {
+   "addr": "0x00536EA0",
+   "name": "CreateTeamCommand::performAction_104",
+   "error": "decompile-null"
+  },
+  {
+   "addr": "0x00536F20",
+   "name": "CreateTeamCommand::performAction_109",
+   "error": "decompile-null"
+  },
+  {
+   "addr": "0x005372D0",
+   "name": "CreateTeamCommand::performAction_143",
+   "error": "decompile-null"
+  },
+  {
+   "addr": "0x00537E50",
+   "name": "PageUserCommandClass::Do",
+   "error": "decompile-null"
+  },
+  {
+   "addr": "0x0053B560",
+   "name": "UpdateChronosphereEffect",
+   "error": "decompile-null"
+  },
+  {
+   "addr": "0x00552CC0",
+   "name": "SessionClass::Load",
+   "error": "decompile-null"
+  },
+  {
+   "addr": "0x00570AE0",
+   "name": "CellClass::RecursiveTileUpdate",
+   "error": "decompile-null"
+  },
+  {
+   "addr": "0x00576200",
+   "name": "CellClass::RecursiveCraterUpdate",
+   "error": "decompile-null"
+  },
+  {
+   "addr": "0x0057C870",
+   "name": "globalHelper_07C870",
+   "error": "decompile-null"
+  },
+  {
+   "addr": "0x0057C990",
+   "name": "globalHelper_07C990",
+   "error": "decompile-null"
+  },
+  {
+   "addr": "0x0057DAF0",
+   "name": "globalHelper_07DAF0",
+   "error": "decompile-null"
+  },
+  {
+   "addr": "0x0057DC20",
+   "name": "globalHelper_07DC20",
+   "error": "decompile-null"
+  },
+  {
+   "addr": "0x005A9C20",
+   "name": "sub_5A9C20",
+   "error": "decompile-null"
+  },
+  {
+   "addr": "0x005AE100",
+   "name": "ScenarioClass::Load",
+   "error": "decompile-null"
+  },
+  {
+   "addr": "0x005CA680",
+   "name": "MultiplayerSiege::Read",
+   "error": "decompile-null"
+  },
+  {
+   "addr": "0x005E66F0",
+   "name": "sub_5E66F0",
+   "error": "decompile-null"
+  },
+  {
+   "addr": "0x005EC290",
+   "name": "sub_5EC290",
+   "error": "decompile-null"
+  },
+  {
+   "addr": "0x005F0120",
+   "name": "Network_Process_5F0120",
+   "error": "decompile-null"
+  },
+  {
+   "addr": "0x00623120",
+   "name": "Dialog::PumpMessages",
+   "error": "decompile-null"
+  },
+  {
+   "addr": "0x00638CE0",
+   "name": "ScriptAction::ClassifyAction",
+   "error": "decompile-null"
+  },
+  {
+   "addr": "0x0063F7E0",
+   "name": "PowerClass::checkLowPower",
+   "error": "decompile-null"
+  },
+  {
+   "addr": "0x0069BAB0",
+   "name": "WTFMode::Init",
+   "error": "decompile-null"
+  },
+  {
+   "addr": "0x0069BB40",
+   "name": "WTFMode::Shutdown",
+   "error": "decompile-null"
+  },
+  {
+   "addr": "0x006D3D10",
+   "name": "TacticalMap::Render",
+   "error": "decompile-null"
+  },
+  {
+   "addr": "0x0072AA40",
+   "name": "LoadMouseClassResources",
+   "error": "decompile-null"
+  },
+  {
+   "addr": "0x0072DDB0",
+   "name": "MouseClass::LoadCursors",
+   "error": "decompile-null"
+  },
+  {
+   "addr": "0x0072F350",
+   "name": "House_Load",
+   "error": "decompile-null"
+  },
+  {
+   "addr": "0x00732CC0",
+   "name": "UI_Create_732CC0",
+   "error": "decompile-null"
+  },
+  {
+   "addr": "0x00739EC0",
+   "name": "BuildingClass::ProcessSell",
+   "error": "decompile-null"
+  },
+  {
+   "addr": "0x007480B0",
+   "name": "UnitTypeClass::SaveToINI",
+   "error": "decompile-null"
+  },
+  {
+   "addr": "0x0075F330",
+   "name": "WaveClass::DamageArea",
+   "error": "decompile-null"
+  },
+  {
+   "addr": "0x00766880",
+   "name": "System_Init_766880",
+   "error": "decompile-null"
+  },
+  {
+   "addr": "0x00767460",
+   "name": "ConstructorWDTFlagOption",
+   "error": "decompile-null"
+  },
+  {
+   "addr": "0x0076F910",
+   "name": "ArtConfig_Read",
+   "error": "decompile-null"
+  },
+  {
+   "addr": "0x007712C0",
+   "name": "ScoreScreen::RemoveItem",
+   "error": "decompile-null"
+  },
+  {
+   "addr": "0x007A30D0",
+   "name": "ComStreamClass::Read",
+   "error": "decompile-null"
+  },
+  {
+   "addr": "0x007A40F0",
+   "name": "ComStreamClass::ddtor",
+   "error": "decompile-null"
+  },
+  {
+   "addr": "0x007B1C50",
+   "name": "NetworkClass::UnregisterAsync",
+   "error": "decompile-null"
+  },
+  {
+   "addr": "0x007C85EA",
+   "name": "wsprintfA",
+   "error": "decompile-null"
+  },
+  {
+   "addr": "0x007CF479",
+   "name": "__check_range_exit",
+   "error": "decompile-null"
+  },
+  {
+   "addr": "0x007DC720",
+   "name": "sub_7DC720",
+   "error": "decompile-null"
+  }
+ ],
+ "fail_count": 64,
+ "checkpoint_ok": 19023,
+ "checkpoint_fail": 64,
+ "cache_sha256": "80495a2a4f9d13896356f3b7e70f2adf815a5dd14d80e90b3ed8e6f7dcd62706"
+}

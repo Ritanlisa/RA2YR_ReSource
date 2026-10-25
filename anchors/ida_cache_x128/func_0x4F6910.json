@@ -1,0 +1,1 @@
+{"addr": "0x004F6910", "name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItemIndex", "decompiled": "bool __thiscall VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItemIndex(Class_7EA80C *this)\n{\n  int v2; // [esp+8h] [ebp+4h]\n\n  return *(_DWORD *)(v2 + 21372) >= *(_DWORD *)(v2 + 21376);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x007C89A4", "name": "setsockopt", "decompiled": "// attributes: thunk\nint __stdcall setsockopt(SOCKET s, int level, int optname, const char *optval, int optlen)\n{\n  return __imp_setsockopt(s, level, optname, optval, optlen);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x00425520", "name": "AbstractClass::updateLayer", "decompiled": "unsigned int __thiscall AbstractClass::updateLayer(AbstractClass *this)\n{\n  return *((_DWORD *)this + 50);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

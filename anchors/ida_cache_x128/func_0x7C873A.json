@@ -1,0 +1,1 @@
+{"addr": "0x007C873A", "name": "GetParent", "decompiled": "// attributes: thunk\nHWND __stdcall GetParent(HWND hWnd)\n{\n  return __imp_GetParent(hWnd);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

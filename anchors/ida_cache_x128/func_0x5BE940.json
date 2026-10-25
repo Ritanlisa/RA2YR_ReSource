@@ -1,0 +1,1 @@
+{"addr": "0x005BE940", "name": "WinMainSetup_Setup_5BE940", "decompiled": "void WinMainSetup_Setup_5BE940()\n{\n  FileTreeNode *v0; // esi\n\n  v0 = dword_ABF294;\n  if ( dword_ABF294 )\n  {\n    FileTreeNode::Destroy(dword_ABF294);\n    __3_YAXPAX_Z(v0);\n    byte_ABF2DC = 0;\n  }\n  dword_ABF294 = 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

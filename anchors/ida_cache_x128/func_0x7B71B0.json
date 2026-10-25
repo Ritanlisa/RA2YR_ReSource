@@ -1,0 +1,1 @@
+{"addr": "0x007B71B0", "name": "WideString::Length", "decompiled": "const wchar_t *__thiscall WideString::Length(WideString *this)\n{\n  const wchar_t *result; // eax\n\n  result = *(const wchar_t **)this;\n  if ( *(_DWORD *)this )\n    return (const wchar_t *)wcslen(*(const wchar_t **)this);\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

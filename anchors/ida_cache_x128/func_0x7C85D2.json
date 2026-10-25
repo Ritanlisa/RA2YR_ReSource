@@ -1,0 +1,1 @@
+{"addr": "0x007C85D2", "name": "DispatchMessageA", "decompiled": "// attributes: thunk\nLRESULT __stdcall DispatchMessageA(const MSG *lpMsg)\n{\n  return __imp_DispatchMessageA(lpMsg);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

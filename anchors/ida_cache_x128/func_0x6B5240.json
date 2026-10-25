@@ -1,0 +1,1 @@
+{"addr": "0x006B5240", "name": "MapCoords::Init", "decompiled": "int MapCoords::Init()\n{\n  dword_B0B7D8 = 0;\n  dword_B0B7D0 = 128;\n  dword_B0B7D4 = 128;\n  return 128;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

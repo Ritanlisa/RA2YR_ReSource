@@ -1,0 +1,1 @@
+{"addr": "0x0075E6A0", "name": "WarheadTypeClass::calculateDamage", "decompiled": "_DWORD *__thiscall WarheadTypeClass::calculateDamage(WarheadTypeClass *this, int a2)\n{\n  this->Deform = (int)&TypeList<int>::`vftable';\n  return &this->Deform;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

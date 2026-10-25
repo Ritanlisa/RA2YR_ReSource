@@ -1,0 +1,1 @@
+{"addr": "0x00748360", "name": "System_Cleanup", "decompiled": "void System_Cleanup()\n{\n  if ( dword_B1D14C )\n  {\n    __3_YAXPAX_Z(dword_B1D14C);\n    dword_B1D14C = 0;\n  }\n}\n", "changed": true, "error": null, "timestamp": "x128"}

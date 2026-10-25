@@ -1,0 +1,1 @@
+{"addr": "0x006915A0", "name": "TeamClass::SetField11", "decompiled": "char __thiscall TeamClass::SetField11(TeamClass *this, int a2)\n{\n  this->owner = a2;\n  return 1;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

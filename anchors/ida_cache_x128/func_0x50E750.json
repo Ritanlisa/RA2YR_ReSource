@@ -1,0 +1,1 @@
+{"addr": "0x0050E750", "name": "VectorClass__N::Clear", "decompiled": "char __thiscall VectorClass__N::Clear(_VectorClass__N *this, int a2)\n{\n  return *(_BYTE *)(*(_DWORD *)&this->m_1[3] + a2);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

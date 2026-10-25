@@ -1,0 +1,1 @@
+{"addr": "0x00536880", "name": "CreateTeamCommand::performAction_49", "decompiled": "int __thiscall CreateTeamCommand::performAction_49(TypeSelectCommandClass *this)\n{\n  unsigned int v2; // [esp+4h] [ebp+4h]\n\n  return (v2 >> 8) & 1;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

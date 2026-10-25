@@ -1,0 +1,1 @@
+{"addr": "0x0042D5D0", "name": "VectorClass_ushort::GetItemIndex", "decompiled": "unsigned int __thiscall VectorClass_ushort::GetItemIndex(_DynamicVectorClass_G *this, int a2)\n{\n  if ( LOBYTE(this->m_C) )\n    return (unsigned int)(a2 - *(_DWORD *)&this->m_1[3]) >> 1;\n  else\n    return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

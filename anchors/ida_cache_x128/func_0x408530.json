@@ -1,0 +1,1 @@
+{"addr": "0x00408530", "name": "nullsub_2", "decompiled": "int nullsub_2(ObjectClass *this)\n{\n  int result; // eax\n\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

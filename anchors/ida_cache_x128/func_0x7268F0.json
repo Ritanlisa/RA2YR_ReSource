@@ -1,0 +1,1 @@
+{"addr": "0x007268F0", "name": "TActionClass::executeAirstrikeAction", "decompiled": "int __thiscall TActionClass::executeAirstrikeAction(TActionClass *this)\n{\n  LOBYTE(this->TActionClass_field_44) = 1;\n  return BuildingClass::ProcessUpgradeEffects((BuildingClass *)this);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

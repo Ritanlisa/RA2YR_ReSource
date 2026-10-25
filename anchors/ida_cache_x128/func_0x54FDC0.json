@@ -1,0 +1,1 @@
+{"addr": "0x0054FDC0", "name": "sub_54FDC0", "decompiled": "int sub_54FDC0()\n{\n  dword_ABC87C = 0;\n  dword_ABC880 = 0;\n  byte_ABC884 = 1;\n  byte_ABC885 = 0;\n  dword_ABC878 = (int)&DynamicVectorClass<LaserDrawClass *>::`vftable';\n  dword_ABC88C = 10;\n  dword_ABC888 = 0;\n  return atexit(sub_54FE00);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

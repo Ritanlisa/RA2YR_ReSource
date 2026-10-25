@@ -1,0 +1,1 @@
+{"addr": "0x0054A140", "name": "IsometricTileTypeClass::GetTypeIdentifier", "decompiled": "int IsometricTileTypeClass::GetTypeIdentifier(IsometricTileTypeClass *this)\n{\n  return 18;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

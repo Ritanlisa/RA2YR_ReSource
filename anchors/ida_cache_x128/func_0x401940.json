@@ -1,0 +1,1 @@
+{"addr": "0x00401940", "name": "ObjectClass::GetMember06", "decompiled": "int __thiscall ObjectClass::GetMember06(RawFileClass *this)\n{\n  return *(_DWORD *)this->FileNameAllocated;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

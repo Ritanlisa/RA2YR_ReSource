@@ -1,0 +1,1 @@
+{"addr": "0x00535C00", "name": "CreateTeamCommand::Construct", "decompiled": "_DWORD *__thiscall CreateTeamCommand::Construct(CreateTeamCommand *this, int a2)\n{\n  this->CreateTeamCommand_field_0x4 = (void *)a2;\n  this->vfptr = &CreateTeamCommandClass::`vftable';\n  return &this->vfptr;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x0041C3F0", "name": "BulletClass::NormalizeZeroVector", "decompiled": "void __thiscall BulletClass::NormalizeZeroVector(double *this)\n{\n  if ( *this == 0.0 && *(this + 1) == 0.0 && *(this + 2) == 0.0 )\n  {\n    *(_DWORD *)this = 0;\n    *((_DWORD *)this + 1) = 1079574528;\n  }\n}\n", "changed": true, "error": null, "timestamp": "x128"}

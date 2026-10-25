@@ -1,0 +1,1 @@
+{"addr": "0x0053CA30", "name": "sub_53CA30", "decompiled": "void sub_53CA30()\n{\n  dbl_A9FF80 = (512.0 - 0.0 + 57.0) * 0.0125;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x007D386A", "name": "___initmbctable", "decompiled": "int __initmbctable()\n{\n  int result; // eax\n\n  if ( !dword_B78BB8 )\n  {\n    result = _setmbcp(-3);\n    dword_B78BB8 = 1;\n  }\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

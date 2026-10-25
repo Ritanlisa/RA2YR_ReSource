@@ -1,0 +1,1 @@
+{"addr": "0x005224D0", "name": "InfantryClass::IsBridgeRepairEnabled", "decompiled": "bool __thiscall InfantryClass::IsBridgeRepairEnabled(InfantryClass *this)\n{\n  return *(_BYTE *)(this->Type + 3779);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x005C0550", "name": "BinkMovieHandle::InitFromFile", "decompiled": "int __thiscall BinkMovieHandle::InitFromFile(BinkMovieHandle *this)\n{\n  int result; // eax\n\n  dword_ABF3F8 = (int)this;\n  result = BinkMovie::Play((BinkMovie *)this->height);\n  dword_ABF3F8 = 0;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

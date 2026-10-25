@@ -1,0 +1,1 @@
+{"addr": "0x00410220", "name": "AbstractClass::GetVtable3", "decompiled": "int __stdcall AbstractClass::GetVtable3(AbstractClass *this)\n{\n  return this->vfptr3;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

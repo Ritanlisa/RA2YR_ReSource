@@ -1,0 +1,1 @@
+{"addr": "0x005D5880", "name": "Timer::DisableHighPrecision", "decompiled": "MMRESULT Timer::DisableHighPrecision()\n{\n  return timeEndPeriod(1u);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x005C65B0", "name": "BigInt_Helper", "decompiled": "int __fastcall BigInt_Helper(int *a1, int a2)\n{\n  int result; // eax\n\n  result = *a1 + 1;\n  for ( *a1 = result; !result; *a1 = result )\n  {\n    ++a1;\n    if ( !--a2 )\n      break;\n    result = *a1 + 1;\n  }\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x004E6A20", "name": "sub_4E6A20", "decompiled": "void __cdecl sub_4E6A20()\n{\n  dword_A8B1E0 = &VectorClass<SmudgeClass *>::`vftable';\n  if ( dword_A8B1E4 && byte_A8B1ED )\n  {\n    __3_YAXPAX_Z(dword_A8B1E4);\n    dword_A8B1E4 = 0;\n  }\n  byte_A8B1ED = 0;\n  dword_A8B1E8 = 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

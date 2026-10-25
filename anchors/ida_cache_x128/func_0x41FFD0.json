@@ -1,0 +1,1 @@
+{"addr": "0x0041FFD0", "name": "AITriggerTypeClass::GetTypeIdentifier", "decompiled": "int AITriggerTypeClass::GetTypeIdentifier(AITriggerTypeClass *this)\n{\n  return 59;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

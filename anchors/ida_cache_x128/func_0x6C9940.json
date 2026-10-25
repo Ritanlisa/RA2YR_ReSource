@@ -1,0 +1,1 @@
+{"addr": "0x006C9940", "name": "sub_6C9940", "decompiled": "int __thiscall sub_6C9940(ObjectClass *this, char a2, char a3, unsigned __int8 a4)\n{\n  unsigned __int16 v4; // ax\n  int result; // eax\n\n  HIBYTE(v4) = a2;\n  LOBYTE(v4) = a3;\n  result = a4 | (v4 << 8);\n  this->vfptr2 = result;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

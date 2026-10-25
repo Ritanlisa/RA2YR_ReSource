@@ -1,0 +1,1 @@
+{"addr": "0x00512570", "name": "HouseTypeClass::LoadHouse", "decompiled": "int __stdcall HouseTypeClass::LoadHouse(HouseTypeClass *this, _DWORD *a2)\n{\n  if ( !a2 )\n    return -2147467261;\n  a2[1] = 0;\n  *a2 = 436;\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

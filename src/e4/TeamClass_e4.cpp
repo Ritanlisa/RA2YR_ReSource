@@ -2065,168 +2065,167 @@ void* TeamClass::AttackCoordinator()
 {
 
   TeamClass *v1; // edi
-  FootClass *firstUnit; // esi
+  unsigned int *firstUnit; // esi
   int v3; // ebp
-  FootClass *v4; // ebx
+  unsigned int *v4; // ebx
   int v5; // edi
-  AbstractClass *focus; // ecx
-  AbstractClass *v7; // edi
+  int focus; // ecx
+  int v7; // edi
   Object *v8; // esi
-  int (**ptr_0)(FootClass *, AbstractClass *, int); // esi
+  int v9; // esi
   int v10; // eax
-  unsigned int *pVal; // eax
-  FootClass *v12; // esi
+  unsigned int *Entry; // eax
+  int v12; // esi
   char v13; // bl
   int v14; // eax
   int v15; // edi
-  AbstractClass *target; // eax
+  int v16; // eax
   int v19; // [esp+14h] [ebp-10h] BYREF
   int v20; // [esp+18h] [ebp-Ch]
   unsigned int v21[2]; // [esp+1Ch] [ebp-8h] BYREF
 
-  v1 = this; /*0x6eb497*/
-  if ( !this->focus ) /*0x6eb49d*/
-    this->focus = this->queuedFocus; /*0x6eb4a7*/
-  firstUnit = this->firstUnit; /*0x6eb4aa*/
-  v3 = -1; /*0x6eb4ad*/
-  v4 = firstUnit; /*0x6eb4b2*/
-  if ( firstUnit ) /*0x6eb4b4*/
+  v1 = this;
+  if ( !this->focus )
+    this->focus = this->queuedFocus;
+  firstUnit = (unsigned int *)this->firstUnit;
+  v3 = -1;
+  v4 = firstUnit;
+  if ( firstUnit )
   {
-    do /*0x6eb514*/
+    do
     {
-      v5 = *(unsigned int *)((*((int (**)(FootClass *))firstUnit->TechnoClass + 33))(firstUnit) + 1532); /*0x6eb4c0*/
-      if ( firstUnit->location /*0x6eb506*/
-        && firstUnit->?
-        && (dword_A8E7AC || !firstUnit->?)
-        && (firstUnit->isTeamLeader || (*((int (**)(FootClass *))firstUnit->TechnoClass + 11))(firstUnit) == 2)
+      v5 = *(unsigned int *)((*(int (**)(unsigned int *))(*firstUnit + 132))(firstUnit) + 1532);
+      if ( *((unsigned char *)firstUnit + 144)
+        && firstUnit[27]
+        && (dword_A8E7AC || !*((unsigned char *)firstUnit + 129))
+        && (*((unsigned char *)firstUnit + 1673) || (*(int (**)(unsigned int *))(*firstUnit + 44))(firstUnit) == 2)
         && v5 > v3 )
       {
-        v4 = firstUnit; /*0x6eb508*/
-        v3 = v5; /*0x6eb50a*/
+        v4 = firstUnit;
+        v3 = v5;
       }
-      firstUnit = firstUnit->nextTeamMember; /*0x6eb50c*/
+      firstUnit = (unsigned int *)firstUnit[374];
     }
-    while ( firstUnit ); /*0x6eb514*/
-    v1 = this; /*0x6eb516*/
+    while ( firstUnit );
+    v1 = this;
   }
-  focus = v1->focus; /*0x6eb51a*/
+  focus = v1->focus;
   if ( focus
-    && (*((int (**)(AbstractClass *))focus->ptr_0 + 11))(focus) == 11
+    && (*(int (**)(int))(*(unsigned int *)focus + 44))(focus) == 11
     && v1->firstUnit
-    && (*((int (**)(FootClass *))v4->TechnoClass + 11))(v4) != 2 )
+    && (*(int (**)(unsigned int *))(*v4 + 44))(v4) != 2 )
   {
-    v7 = v1->focus; /*0x6eb53e*/
+    v7 = v1->focus;
     if ( v7 )
-      v8 = (*((int (**)(AbstractClass *))v7->ptr_0 + 11))(v7) == 11 ? (Object *)v7 : 0;
+      v8 = (*(int (**)(int))(*(unsigned int *)v7 + 44))(v7) == 11 ? (Object *)v7 : 0;
     else
-      v8 = 0; /*0x6eb547*/
-    v19 = 0; /*0x6eb567*/
-    v20 = 0; /*0x6eb56b*/
-    if ( Object::FindObjectCell(v8, &v19, 0) ) /*0x6eb56f*/
+      v8 = 0;
+    v19 = 0;
+    v20 = 0;
+    if ( Object::FindObjectCell(v8, &v19, 0) )
     {
-      v19 = 0; /*0x6eb582*/
-      v20 = 0; /*0x6eb586*/
-      this->focus = (AbstractClass *)Object::FindObjectCell(v8, &v19, 0); /*0x6eb593*/
+      v19 = 0;
+      v20 = 0;
+      this->focus = Object::FindObjectCell(v8, &v19, 0);
     }
-    v1 = this; /*0x6eb596*/
+    v1 = this;
   }
-  if ( *(unsigned int *)&DataGlobal_A8EB00[644] % 8 == 4 ) /*0x6eb5ae*/
+  if ( *(unsigned int *)&stru_A8E960.random[528] % 8 == 4 )
   {
-    ptr_0 = (int (**)(FootClass *, AbstractClass *, int))v4->TechnoClass; /*0x6eb5b3*/
-    v10 = (*((int (**)(FootClass *, AbstractClass *, int))v4->TechnoClass + 185))(v4, v1->focus, 1); /*0x6eb5ba*/
-    if ( ptr_0[240](v4, v1->focus, v10) == 5 ) /*0x6eb5d0*/
-      v1->unknown81 = 1; /*0x6eb5d2*/
+    v9 = *v4;
+    v10 = (*(int (**)(unsigned int *, int, int))(*v4 + 740))(v4, v1->focus, 1);
+    if ( (*(int (**)(unsigned int *, int, int))(v9 + 960))(v4, v1->focus, v10) == 5 )
+      v1->unknown81[0] = 1;
   }
-  pVal = &v1->focus->ptr_0; /*0x6eb5d9*/
-  if ( !pVal /*0x6eb605*/
-    || (pVal = SessionClass::GetEntry((SessionClass *)v1->currentScript, v21),
+  Entry = (unsigned int *)v1->focus;
+  if ( !Entry
+    || (Entry = SessionClass::GetEntry((SessionClass *)v1->currentScript, v21),
         v12 = v1->firstUnit,
         v13 = 0,
-        v19 = *pVal,
-        v20 = pVal->ptr_2,
+        v19 = *Entry,
+        v20 = Entry[1],
         !v12) )
   {
-    LABEL_72:
-    v1->stepCompleted = 1; /*0x6eb85b*/
-    return (char)pVal; /*0x6eb85b*/
+LABEL_72:
+    v1->stepCompleted[0] = 1;
+    return (char)Entry;
   }
-  do /*0x6eb851*/
+  do
   {
-    if ( !*(_BYTE *)(v12 + 144)) /*0x6eb60b*/
-      goto LABEL_67; /*0x6eb60b*/
-    if ( *(_DWORD *)(v12 + 108) && (dword_A8E7AC || !*(_BYTE *)(v12 + 129)) && !*(_BYTE *)(v12 + 1673)&& (dword_A8E7AC || !*(_DWORD *)(v12 + 108) && (dword_A8E7AC || !*(_BYTE *)(v12 + 129)) && !*(_BYTE *)(v12 + 1673)) && !v12->isTeamLeader ) /*0x6eb63b*/
+    if ( !*(unsigned char *)(v12 + 144) )
+      goto LABEL_67;
+    if ( *(unsigned int *)(v12 + 108) && (dword_A8E7AC || !*(unsigned char *)(v12 + 129)) && !*(unsigned char *)(v12 + 1673) )
     {
-      v14 = *SessionClass::GetEntry((SessionClass *)v1->currentScript, v21); /*0x6eb656*/
-      if ( v14 == 54 || v14 == 53 ) /*0x6eb660*/
-        v15 = *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 5920); /*0x6eb676*/
+      v14 = *SessionClass::GetEntry((SessionClass *)v1->currentScript, v21);
+      if ( v14 == 54 || v14 == 53 )
+        v15 = dword_8871E0->C4Delay[1];
       else
-        v15 = *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 5916); /*0x6eb668*/
-      if ( ObjectClass::DistanceTo((ObjectClass *)v12, (int)this->spawnCell->mapCoords) <= v15 ) /*0x6eb68d*/
+        v15 = dword_8871E0->C4Delay[0];
+      if ( ObjectClass::DistanceTo((ObjectClass *)v12, this->spawnCell) <= v15 )
       {
-        v12->isTeamLeader = 1; /*0x6eb6c5*/
+        *(unsigned char *)(v12 + 1673) = 1;
       }
-      else if ( !v12->movementDestination ) /*0x6eb68f*/
+      else if ( !*(unsigned int *)(v12 + 1444) )
       {
-        (*((void (**)(FootClass *, int, unsigned int))v12->TechnoClass + 122))(v12, 2, 0); /*0x6eb6a1*/
-        (*((void (**)(FootClass *, unsigned int))v12->TechnoClass + 242))(v12, 0); /*0x6eb6ad*/
-        (*((void (**)(FootClass *, CellClass *, int))v12->TechnoClass + 288))(v12, this->spawnCell, 1); /*0x6eb6bd*/
+        (*(void (**)(int, int, unsigned int))(*(unsigned int *)v12 + 488))(v12, 2, 0);
+        (*(void (**)(int, unsigned int))(*(unsigned int *)v12 + 968))(v12, 0);
+        (*(void (**)(int, int, int))(*(unsigned int *)v12 + 1152))(v12, this->spawnCell, 1);
       }
-      v1 = this; /*0x6eb6cc*/
+      v1 = this;
     }
-    if ( v12->? /*0x6eb714*/
-      && v12->?
-      && (dword_A8E7AC || !v12->?)
-      && (v12->isTeamLeader || (*((int (**)(FootClass *))v12->TechnoClass + 11))(v12) == 2) )
+    if ( *(unsigned char *)(v12 + 144)
+      && *(unsigned int *)(v12 + 108)
+      && (dword_A8E7AC || !*(unsigned char *)(v12 + 129))
+      && (*(unsigned char *)(v12 + 1673) || (*(int (**)(int))(*(unsigned int *)v12 + 44))(v12) == 2) )
     {
-      if ( v19 == 15 /*0x6eb733*/
-        && (*((int (**)(FootClass *))v12->TechnoClass + 11))(v12) == 15
-        && *((unsigned char *)v12[1].TechnoClass + 3774) )
+      if ( v19 == 15
+        && (*(int (**)(int))(*(unsigned int *)v12 + 44))(v12) == 15
+        && *(unsigned char *)(*(unsigned int *)(v12 + 1728) + 3774) )
       {
-        (*((void (**)(FootClass *, int, unsigned int))v12->TechnoClass + 122))(v12, 8, 0); /*0x6eb745*/
-        (*((void (**)(FootClass *, AbstractClass *))v12->TechnoClass + 242))(v12, v1->focus); /*0x6eb753*/
+        (*(void (**)(int, int, unsigned int))(*(unsigned int *)v12 + 488))(v12, 8, 0);
+        (*(void (**)(int, int))(*(unsigned int *)v12 + 968))(v12, v1->focus);
       }
-      else if ( (*((int (**)(FootClass *))v12->TechnoClass + 97))(v12) != 1 /*0x6eb7ad*/
-             && (*((int (**)(FootClass *))v12->TechnoClass + 97))(v12) != 7
-             && (*((int (**)(FootClass *))v12->TechnoClass + 97))(v12) != 8
-             && (*((int (**)(FootClass *))v12->TechnoClass + 97))(v12) != 17
-             && ((*((int (**)(FootClass *))v12->TechnoClass + 97))(v12) != 16
-              || !(*((unsigned __int8 (**)(FootClass *))v12->TechnoClass + 313))(v12)) )
+      else if ( (*(int (**)(int))(*(unsigned int *)v12 + 388))(v12) != 1
+             && (*(int (**)(int))(*(unsigned int *)v12 + 388))(v12) != 7
+             && (*(int (**)(int))(*(unsigned int *)v12 + 388))(v12) != 8
+             && (*(int (**)(int))(*(unsigned int *)v12 + 388))(v12) != 17
+             && ((*(int (**)(int))(*(unsigned int *)v12 + 388))(v12) != 16
+              || !(*(unsigned __int8 (**)(int))(*(unsigned int *)v12 + 1252))(v12)) )
       {
-        (*((void (**)(FootClass *, int))v12->TechnoClass + 157))(v12, 3); /*0x6eb7bd*/
-        (*((void (**)(FootClass *, int, unsigned int))v12->TechnoClass + 122))(v12, 1, 0); /*0x6eb7cb*/
-        (*((void (**)(FootClass *, unsigned int))v12->TechnoClass + 242))(v12, 0); /*0x6eb7d7*/
-        (*((void (**)(FootClass *, unsigned int, int))v12->TechnoClass + 288))(v12, 0, 1); /*0x6eb7e5*/
+        (*(void (**)(int, int))(*(unsigned int *)v12 + 628))(v12, 3);
+        (*(void (**)(int, int, unsigned int))(*(unsigned int *)v12 + 488))(v12, 1, 0);
+        (*(void (**)(int, unsigned int))(*(unsigned int *)v12 + 968))(v12, 0);
+        (*(void (**)(int, unsigned int, int))(*(unsigned int *)v12 + 1152))(v12, 0, 1);
       }
-      target = *(_DWORD *)(v12 + 692); /*0x6eb7eb*/
-      if ( target != v1->focus && !target ) /*0x6eb7fa*/
-        (*((void (**)(FootClass *, AbstractClass *))v12->TechnoClass + 242))(v12, v1->focus); /*0x6eb801*/
-      pVal = (unsigned int *)(*((int (**)(FootClass *))v12->TechnoClass + 11))(v12); /*0x6eb80b*/
-      if ( pVal != 2 /*0x6eb82c*/
-        || (pVal = (unsigned int *)(*((int (**)(FootClass *, unsigned int))v12->TechnoClass + 254))(v12, 0),
-            !*pVal)
-        || (pVal = (unsigned int *)v12->?, (int)pVal > 0) )
+      v16 = *(unsigned int *)(v12 + 692);
+      if ( v16 != v1->focus && !v16 )
+        (*(void (**)(int, int))(*(unsigned int *)v12 + 968))(v12, v1->focus);
+      Entry = (unsigned int *)(*(int (**)(int))(*(unsigned int *)v12 + 44))(v12);
+      if ( Entry != (unsigned int *)2
+        || (Entry = (unsigned int *)(*(int (**)(int, unsigned int))(*(unsigned int *)v12 + 1016))(v12, 0), !*Entry)
+        || (Entry = *(unsigned int **)(v12 + 764), (int)Entry > 0) )
       {
-        LABEL_69:
-        v13 = 1; /*0x6eb847*/
+LABEL_69:
+        v13 = 1;
       }
     }
     else
     {
-      LABEL_67:
-      pVal = &v1->buildingType->AbstractClass; /*0x6eb830*/
-      if ( pVal->u32_B0 ) /*0x6eb833*/
+LABEL_67:
+      Entry = (unsigned int *)v1->buildingType;
+      if ( *((unsigned char *)Entry + 176) )
       {
-        LOBYTE(pVal) = *(_BYTE *)(v12 + 129); /*0x6eb83d*/
-        if ( (unsigned char)pVal ) /*0x6eb845*/
-          goto LABEL_69; /*0x6eb845*/
+        LOBYTE(Entry) = *(unsigned char *)(v12 + 129);
+        if ( (unsigned char)Entry )
+          goto LABEL_69;
       }
     }
-    v12 = v12->nextTeamMember; /*0x6eb849*/
+    v12 = *(unsigned int *)(v12 + 1496);
   }
-  while ( v12 ); /*0x6eb851*/
-  if ( !v13 ) /*0x6eb859*/
-    goto LABEL_72; /*0x6eb859*/
-  return (char)pVal; /*0x6eb862*/
+  while ( v12 );
+  if ( !v13 )
+    goto LABEL_72;
+  return (char)Entry;
 
 }
 }

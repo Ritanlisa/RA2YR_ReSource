@@ -1,0 +1,1 @@
+{"addr": "0x005F7630", "name": "AbstractTypeClass::Validate", "decompiled": "int AbstractTypeClass::Validate(ObjectTypeClass *this)\n{\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

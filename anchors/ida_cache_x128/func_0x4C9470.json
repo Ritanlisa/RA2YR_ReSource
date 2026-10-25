@@ -1,0 +1,1 @@
+{"addr": "0x004C9470", "name": "TechnoClass::GetWeaponType", "decompiled": "_DWORD *__thiscall TechnoClass::GetWeaponType(TechnoClass *this, _DWORD *a2)\n{\n  *a2 = this->vfptr;\n  return a2;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

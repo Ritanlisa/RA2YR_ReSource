@@ -1,0 +1,1 @@
+{"addr": "0x007B4480", "name": "VectorClass_PAE::GetCapacity", "decompiled": "unsigned int __thiscall VectorClass_PAE::GetCapacity(_VectorClass_PAE *this, int a2)\n{\n  if ( LOBYTE(this->m_C) )\n    return (unsigned int)(a2 - *(_DWORD *)&this->m_1[3]) >> 2;\n  else\n    return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

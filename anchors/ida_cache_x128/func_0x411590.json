@@ -1,0 +1,1 @@
+{"addr": "0x00411590", "name": "XSurface::StubReturnFalse", "decompiled": "char XSurface::StubReturnFalse(XSurface *this)\n{\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

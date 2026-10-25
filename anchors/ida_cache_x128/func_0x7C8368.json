@@ -1,0 +1,1 @@
+{"addr": "0x007C8368", "name": "FindNextFileA", "decompiled": "// attributes: thunk\nBOOL __stdcall FindNextFileA(HANDLE hFindFile, LPWIN32_FIND_DATAA lpFindFileData)\n{\n  return __imp_FindNextFileA(hFindFile, lpFindFileData);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x004A2F10", "name": "CStreamClass::Commit", "decompiled": "int __stdcall CStreamClass::Commit(CStreamClass *this)\n{\n  if ( !this->CStreamClass_field_0x08 )\n    sub_7DC720(-2147467261);\n  return (*(int (__stdcall **)(int))(*(_DWORD *)this->CStreamClass_field_0x08 + 36))(this->CStreamClass_field_0x08);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

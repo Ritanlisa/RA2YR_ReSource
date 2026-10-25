@@ -1,0 +1,1 @@
+{"addr": "0x0046B270", "name": "TechnoClass::updateHealthBar", "decompiled": "int __thiscall TechnoClass::updateHealthBar(TechnoClass *this)\n{\n  return this->deployAnim;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

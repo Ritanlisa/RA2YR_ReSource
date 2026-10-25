@@ -1,0 +1,1 @@
+{"addr": "0x004722D0", "name": "TechnoClass::processPowerDrain", "decompiled": "int __thiscall TechnoClass::processPowerDrain(TechnoClass *this)\n{\n  return this->attachedTag;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x0054F650", "name": "EventQueue::Check", "decompiled": "__int16 __thiscall EventQueue::Check(EventQueue *this)\n{\n  int v1; // eax\n\n  v1 = *((_DWORD *)this + 197);\n  if ( v1 == *((_DWORD *)this + 198) )\n    return 0;\n  else\n    return *((_WORD *)this + v1 + 138);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

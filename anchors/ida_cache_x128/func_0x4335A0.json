@@ -1,0 +1,1 @@
+{"addr": "0x004335A0", "name": "sub_4335A0", "decompiled": "char __fastcall sub_4335A0(int a1, _BYTE *a2, char a3)\n{\n  *(_DWORD *)a1 = a2;\n  *(_BYTE *)(a1 + 4) = 0;\n  *a2 = a3;\n  return a3;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

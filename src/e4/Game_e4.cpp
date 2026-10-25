@@ -1415,7 +1415,7 @@ CellStruct * * Game::SerializeGameSaveState()
   int v4; // eax
   int i; // edi
   int v6; // edi
-  ParticleSystemClass *v7; // eax
+  int v7; // eax
   int j; // edi
   int v9; // edi
   int v10; // eax
@@ -1424,115 +1424,113 @@ CellStruct * * Game::SerializeGameSaveState()
   int v13; // [esp+B8h] [ebp-8h] BYREF
   int v14; // [esp+BCh] [ebp-4h] BYREF
 
-  result = (*(int (**)(Game *, unsigned char *, int, unsigned int))(*(unsigned int *)this->__pad_000 + 12))( /*0x67f9d3*/
+  result = (*(int (**)(Game *, char *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 12))(
              this,
-             &DataGlobal_A8EC94,
+             &stru_A8E960.random[516],
              4,
              0);
   if ( result >= 0 )
   {
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&DataGlobal_A8EC94); /*0x67f9e8*/
-    result = (*(int (**)(Game *, Object **, int, unsigned int))(*(unsigned int *)this->__pad_000 + 12))( /*0x67f9f9*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&stru_A8E960.random[516]);
+    result = (*(int (**)(Game *, char *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 12))(
                this,
-               &dword_A83D4C,
+               (char *)&stru_A83CD9.estimatedHealth + 3,
                4,
                0);
     if ( result >= 0 )
     {
-      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&dword_A83D4C); /*0x67fa0e*/
-      result = (*(int (**)(Game *, unsigned char *, int, unsigned int))(*(unsigned int *)this->__pad_000 + 12))( /*0x67fa1f*/
+      ObjectPtr::RegisterForTracking(
+        (int)&SwizzleManagerClass_Instance,
+        (int *)((char *)&stru_A83CD9.estimatedHealth + 3));
+      result = (*(int (**)(Game *, char *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 12))(
                  this,
-                 &TeamTypeClass_Array,
+                 &stru_A8E960.random[528],
                  4,
                  0);
       if ( result >= 0 )
       {
-        result = (*(int (**)(Game *, int *, int, unsigned int))(*(unsigned int *)this->__pad_000 + 12))(this, &v13, 4, 0); /*0x67fa36*/
+        result = (*(int (**)(Game *, int *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 12))(this, &v13, 4, 0);
         if ( result >= 0 )
         {
-          v3 = 0; /*0x67fa45*/
+          v3 = 0;
           if ( v13 <= 0 )
           {
-            LABEL_14:
-            for ( i = 0; i < *(int *)&Instance; ++i ) /*0x67face*/
-              ObjectPtr::RegisterForTracking( /*0x67fade*/
+LABEL_14:
+            for ( i = 0; i < *(int *)&stru_A8E960.random[340]; ++i )
+              ObjectPtr::RegisterForTracking(
                 (int)&SwizzleManagerClass_Instance,
-                (int *)(*(unsigned int *)&DataGlobal_A8EB00[444] + 4 * i));
-            result = (*(int (**)(Game *, float *, int, unsigned int))(*(unsigned int *)this->__pad_000 + 12))( /*0x67fafc*/
+                (int *)(*(unsigned int *)&stru_A8E960.random[328] + 4 * i));
+            result = (*(int (**)(Game *, float *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 12))(
                        this,
                        flt_89EA40,
                        432,
                        0);
             if ( result >= 0 )
             {
-              SuperWeapon::SerializeSuperWeaponState((SuperWeapon *)this); /*0x67fb09*/
-              result = (*(int (**)(Game *, int *, int, unsigned int))(*(unsigned int *)this->__pad_000 + 12))( /*0x67fb1a*/
+              SuperWeapon::SerializeSuperWeaponState((SuperWeapon *)this);
+              result = (*(int (**)(Game *, int *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 12))(
                          this,
                          &v13,
                          4,
                          0);
               if ( result >= 0 )
               {
-                v6 = 0; /*0x67fb29*/
+                v6 = 0;
                 if ( v13 <= 0 )
                 {
-                  LABEL_27:
-                  for ( j = 0; j < (int)dword_8B40D8; ++j ) /*0x67fbb2*/
-                    ObjectPtr::RegisterForTracking( /*0x67fbc2*/
-                      (int)&SwizzleManagerClass_Instance,
-                      (int *)&DataGlobal_8B3DC0[780]->ObjectClass + j);
-                  result = (*(int (**)(Game *, int *, int, unsigned int))(*(unsigned int *)this->__pad_000 + 12))( /*0x67fbdd*/
+LABEL_27:
+                  for ( j = 0; j < dword_8B40D8; ++j )
+                    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)dword_8B40CC + j);
+                  result = (*(int (**)(Game *, int *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 12))(
                              this,
                              &v13,
                              4,
                              0);
                   if ( result >= 0 )
                   {
-                    v9 = 0; /*0x67fbec*/
+                    v9 = 0;
                     if ( v13 <= 0 )
                     {
-                      LABEL_39:
-                      for ( k = 0; k < FootClass_Array; ++k ) /*0x67fc74*/
-                        ObjectPtr::RegisterForTracking( /*0x67fc84*/
-                          (int)&SwizzleManagerClass_Instance,
-                          (int *)(FootClass_Array.?[5] + 4 * k));
-                      result = (*(int (**)(Game *, int *, int, unsigned int))(*(unsigned int *)this->__pad_000 + 12))( /*0x67fc9f*/
+LABEL_39:
+                      for ( k = 0; k < dword_8B41B8; ++k )
+                        ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)dword_8B41AC + k);
+                      result = (*(int (**)(Game *, int *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 12))(
                                  this,
                                  dword_81DA8C,
                                  76,
                                  0);
                       if ( result >= 0 )
                       {
-                        result = (*(int (**)(Game *, int *, int, unsigned int))(*(unsigned int *)this->__pad_000 + 12))( /*0x67fcb2*/
+                        result = (*(int (**)(Game *, int *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 12))(
                                    this,
                                    dword_81DAD8,
                                    76,
                                    0);
                         if ( result >= 0 )
                         {
-                          result = (*(int (**)(Game *, double *, int, unsigned int))(*(unsigned int *)this->__pad_000 + 12))( /*0x67fcc8*/
+                          result = (*(int (**)(Game *, double *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 12))(
                                      this,
                                      dbl_89EC28,
                                      152,
                                      0);
                           if ( result >= 0 )
                           {
-                            result = (*(int (**)(Game *, char *, int, unsigned int))(*(unsigned int *)this->__pad_000 + 12))( /*0x67fcdb*/
+                            result = (*(int (**)(Game *, char *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 12))(
                                        this,
                                        byte_89ECC0,
                                        19,
                                        0);
                             if ( result >= 0 )
                             {
-                              result = (*(int (**)(Game *, MissionClass *, int, unsigned int))(*(unsigned int *)this->__pad_000 /*0x67fcf1*/
-                                         + 12))(
+                              result = (*(int (**)(Game *, MissionClass *, int, unsigned int))(*(unsigned int *)this->__pad_0
+                                                                                                 + 12))(
                                          this,
                                          &stru_A8E3A8,
                                          1024,
                                          0);
                               if ( result >= 0 )
                               {
-                                v12 = (*(int (**)(Game *, int *, int, unsigned int))(*(unsigned int *)this->__pad_000 + 12))( /*0x67fd04*/
+                                v12 = (*(int (**)(Game *, int *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 12))(
                                         this,
                                         &dword_B07784,
                                         4,
@@ -1546,56 +1544,56 @@ CellStruct * * Game::SerializeGameSaveState()
                     }
                     else
                     {
-                      while ( 1 ) /*0x67fbfe*/
+                      while ( 1 )
                       {
-                        result = (*(int (**)(Game *, int *, int, unsigned int))(*(unsigned int *)this->__pad_000 + 12))( /*0x67fbfe*/
+                        result = (*(int (**)(Game *, int *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 12))(
                                    this,
                                    &v14,
                                    4,
                                    0);
-                        if ( result < 0 ) /*0x67fc03*/
-                          break; /*0x67fc03*/
-                        if ( FootClass_Array < dword_8B41B0 /*0x67fc3f*/
-                          || (BYTE1(dword_8B41B0) || !FootClass_Array.?[6])
-                          && DataGlobal_8B3DC0[1020] > 0
-                          && (*(unsigned __int8 (**)(int *, int, unsigned int))(DataGlobal_8B3DC4 + 8))(
-                               &DataGlobal_8B3DC4,
-                               dword_8B41BC + FootClass_Array.?[1],
+                        if ( result < 0 )
+                          break;
+                        if ( dword_8B41B8 < dword_8B41B0
+                          || (byte_8B41B5 || !dword_8B41B0)
+                          && dword_8B41BC > 0
+                          && (*(unsigned __int8 (**)(int *, int, unsigned int))(dword_8B41A8 + 8))(
+                               &dword_8B41A8,
+                               dword_8B41B0 + dword_8B41BC,
                                0) )
                         {
-                          v10 = FootClass_Array++; /*0x67fc52*/
-                          *(unsigned int *)(dword_8B41B8 + 4 * v10) = v14; /*0x67fc5f*/
+                          v10 = dword_8B41B8++;
+                          *((unsigned int *)dword_8B41AC + v10) = v14;
                         }
-                        if ( ++v9 >= v13 ) /*0x67fc69*/
-                          goto LABEL_39; /*0x67fc69*/
+                        if ( ++v9 >= v13 )
+                          goto LABEL_39;
                       }
                     }
                   }
                 }
                 else
                 {
-                  while ( 1 ) /*0x67fb3b*/
+                  while ( 1 )
                   {
-                    result = (*(int (**)(Game *, int *, int, unsigned int))(*(unsigned int *)this->__pad_000 + 12))( /*0x67fb3b*/
+                    result = (*(int (**)(Game *, int *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 12))(
                                this,
                                &v14,
                                4,
                                0);
-                    if ( result < 0 ) /*0x67fb40*/
-                      break; /*0x67fb40*/
-                    if ( (int)dword_8B40D8< (int)dword_8B40D0/*0x67fb7d*/
-                      || (BYTE1(dword_8B40D0) || !FootClass_Array.?)
-                      && FootClass_Array > 0
-                      && ((unsigned __int8 (*)(ParticleSystemClass **, char *, unsigned int))FootClass_Array.?->?)(
-                           &FootClass_Array.?,
-                           (char *)FootClass_Array.? + FootClass_Array,
+                    if ( result < 0 )
+                      break;
+                    if ( dword_8B40D8 < dword_8B40D0
+                      || (byte_8B40D5 || !dword_8B40D0)
+                      && dword_8B40DC > 0
+                      && (*(unsigned __int8 (**)(int *, int, unsigned int))(dword_8B40C8 + 8))(
+                           &dword_8B40C8,
+                           dword_8B40D0 + dword_8B40DC,
                            0) )
                     {
-                      v7 = dword_8B40CC++; /*0x67fb90*/
-                      *((unsigned int *)&dword_8B40D8->ObjectClass + (unsigned int)v7) = v14; /*0x67fb9d*/
+                      v7 = dword_8B40D8++;
+                      *((unsigned int *)dword_8B40CC + v7) = v14;
                     }
-                    if ( ++v6 >= v13 ) /*0x67fba7*/
-                      goto LABEL_27; /*0x67fba7*/
+                    if ( ++v6 >= v13 )
+                      goto LABEL_27;
                   }
                 }
               }
@@ -1603,35 +1601,35 @@ CellStruct * * Game::SerializeGameSaveState()
           }
           else
           {
-            while ( 1 ) /*0x67fa57*/
+            while ( 1 )
             {
-              result = (*(int (**)(Game *, int *, int, unsigned int))(*(unsigned int *)this->__pad_000 + 12))( /*0x67fa57*/
+              result = (*(int (**)(Game *, int *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 12))(
                          this,
                          &v14,
                          4,
                          0);
-              if ( result < 0 ) /*0x67fa5c*/
-                break; /*0x67fa5c*/
-              if ( *(int *)&Instance < *(int *)&DataGlobal_A8EB00[448] /*0x67fa99*/
-                || (DataGlobal_A8EB00[453] || !*(unsigned int *)&DataGlobal_A8EB00[448])
-                && *(int *)&DataGlobal_A8EB00[460] > 0
-                && (*(unsigned __int8 (**)(unsigned char *, int, unsigned int))(*(unsigned int *)&DataGlobal_A8EB00[440] + 8))(
-                     &DataGlobal_A8EB00[440],
-                     *(unsigned int *)&DataGlobal_A8EB00[448] + *(unsigned int *)&DataGlobal_A8EB00[460],
+              if ( result < 0 )
+                break;
+              if ( *(int *)&stru_A8E960.random[340] < *(int *)&stru_A8E960.random[332]
+                || (stru_A8E960.random[337] || !*(unsigned int *)&stru_A8E960.random[332])
+                && *(int *)&stru_A8E960.random[344] > 0
+                && (*(unsigned __int8 (**)(char *, int, unsigned int))(*(unsigned int *)&stru_A8E960.random[324] + 8))(
+                     &stru_A8E960.random[324],
+                     *(unsigned int *)&stru_A8E960.random[332] + *(unsigned int *)&stru_A8E960.random[344],
                      0) )
               {
-                v4 = (*(unsigned int *)&Instance)++; /*0x67faac*/
-                *(unsigned int *)(*(unsigned int *)&dword_A8ECC8 + 4 * v4) = v14; /*0x67fab9*/
+                v4 = (*(unsigned int *)&stru_A8E960.random[340])++;
+                *(unsigned int *)(*(unsigned int *)&stru_A8E960.random[328] + 4 * v4) = v14;
               }
-              if ( ++v3 >= v13 ) /*0x67fac3*/
-                goto LABEL_14; /*0x67fac3*/
+              if ( ++v3 >= v13 )
+                goto LABEL_14;
             }
           }
         }
       }
     }
   }
-  return result; /*0x67fd11*/
+  return result;
 
 }
 }

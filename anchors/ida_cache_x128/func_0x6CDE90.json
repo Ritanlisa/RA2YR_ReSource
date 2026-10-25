@@ -1,0 +1,1 @@
+{"addr": "0x006CDE90", "name": "SuperClass::ShouldDrawProgress", "decompiled": "bool __thiscall SuperClass::ShouldDrawProgress(SuperClass *this)\n{\n  return *(_BYTE *)(this->SuperClass_field_0x28 + 229) || HIBYTE(this->SuperClass_field_0x6C) == 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

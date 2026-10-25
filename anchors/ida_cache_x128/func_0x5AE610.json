@@ -1,0 +1,1 @@
+{"addr": "0x005AE610", "name": "Transform::Copy", "decompiled": "void *__thiscall Transform::Copy(Transform *this, const void *a2)\n{\n  qmemcpy(this, a2, 0x30u);\n  return this;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

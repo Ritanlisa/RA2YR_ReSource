@@ -1,0 +1,1 @@
+{"addr": "0x005B43F0", "name": "ReturnTrue", "decompiled": "int __stdcall ReturnTrue(int a1)\n{\n  int result; // eax\n\n  LOBYTE(result) = 1;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

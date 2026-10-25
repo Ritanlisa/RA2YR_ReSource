@@ -1,0 +1,1 @@
+{"addr": "0x007CB4AA", "name": "_rand", "decompiled": "int __cdecl rand()\n{\n  _DWORD *v0; // eax\n  unsigned int v1; // ecx\n\n  v0 = _getptd();\n  v1 = 214013 * v0[5] + 2531011;\n  v0[5] = v1;\n  return HIWORD(v1) & 0x7FFF;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

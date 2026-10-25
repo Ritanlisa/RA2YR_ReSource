@@ -1,0 +1,1 @@
+{"addr": "0x00717800", "name": "TechnoClass::GetSightRange", "decompiled": "int __thiscall TechnoClass::GetSightRange(TechnoTypeClass *this)\n{\n  int result; // eax\n\n  result = this->FlightLevel;\n  if ( result == -1 )\n    return dword_8871E0->GDIWallDefense[1];\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

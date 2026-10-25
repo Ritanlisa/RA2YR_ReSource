@@ -1,0 +1,1 @@
+{"addr": "0x00773AA0", "name": "WebBrowser::AddRef", "decompiled": "int __thiscall WebBrowser::AddRef(WebBrowser *this)\n{\n  int v1; // ecx\n  unsigned int *v3; // [esp+4h] [ebp+4h]\n\n  v1 = v3[1] + 1;\n  v3[1] = v1;\n  return v1;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

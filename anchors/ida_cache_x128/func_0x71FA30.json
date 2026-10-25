@@ -1,0 +1,1 @@
+{"addr": "0x0071FA30", "name": "TriggerClass::GetValue", "decompiled": "int __thiscall TriggerClass::GetValue(TriggerClass *this)\n{\n  return this->q0A0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

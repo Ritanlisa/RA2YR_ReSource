@@ -1,0 +1,1 @@
+{"addr": "0x004BBC60", "name": "GetBitMask_Blue", "decompiled": "int GetBitMask_Blue()\n{\n  return g_BitMask_Blue;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

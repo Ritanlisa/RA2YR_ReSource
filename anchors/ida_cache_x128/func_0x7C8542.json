@@ -1,0 +1,1 @@
+{"addr": "0x007C8542", "name": "lstrcpyA", "decompiled": "// attributes: thunk\nLPSTR __stdcall lstrcpyA(LPSTR lpString1, LPCSTR lpString2)\n{\n  return __imp_lstrcpyA(lpString1, lpString2);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

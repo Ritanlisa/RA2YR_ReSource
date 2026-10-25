@@ -1,0 +1,1 @@
+{"addr": "0x007C8428", "name": "LockResource", "decompiled": "// attributes: thunk\nLPVOID __stdcall LockResource(HGLOBAL hResData)\n{\n  return __imp_LockResource(hResData);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

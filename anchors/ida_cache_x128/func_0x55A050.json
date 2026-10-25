@@ -1,0 +1,1 @@
+{"addr": "0x0055A050", "name": "LoadOptions::Write", "decompiled": "wchar_t *__thiscall LoadOptions::Write(LoadOptionsClass *this)\n{\n  return GetStringCSF(aGuiLoadmission, 0, g_Str_File_LoadDlg_CPP, 1216);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

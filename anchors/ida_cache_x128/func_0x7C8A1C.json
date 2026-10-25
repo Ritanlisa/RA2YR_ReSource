@@ -1,0 +1,1 @@
+{"addr": "0x007C8A1C", "name": "ImmAssociateContext", "decompiled": "// attributes: thunk\nint __stdcall ImmAssociateContext(HWND a1, HIMC a2)\n{\n  return (int)__imp_ImmAssociateContext(a1, a2);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

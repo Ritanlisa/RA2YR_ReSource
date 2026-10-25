@@ -1,0 +1,1 @@
+{"addr": "0x006BFBC0", "name": "COMClassFactory_10::Construct", "decompiled": "_DWORD *__thiscall COMClassFactory_10::Construct(COMClassFactory *this)\n{\n  this->COMClassFactory_field_0x04 = 0;\n  *(_DWORD *)this->__pad_0 = &TClassFactory<LightSourceClass>::`vftable';\n  return this->__pad_0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

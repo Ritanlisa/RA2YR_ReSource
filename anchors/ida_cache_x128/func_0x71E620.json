@@ -1,0 +1,1 @@
+{"addr": "0x0071E620", "name": "sub_71E620", "decompiled": "int sub_71E620()\n{\n  dword_B0F1A4 = 0;\n  dword_B0F1A8 = 0;\n  byte_B0F1AC = 1;\n  byte_B0F1AD = 0;\n  dword_B0F1A0 = (int)&DynamicVectorClass<TEventClass *>::`vftable';\n  dword_B0F1B4 = 10;\n  dword_B0F1B0 = 0;\n  return atexit(sub_71E660);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

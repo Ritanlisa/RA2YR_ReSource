@@ -1,0 +1,1 @@
+{"addr": "0x007C879A", "name": "GetKeyNameTextA", "decompiled": "// attributes: thunk\nint __stdcall GetKeyNameTextA(LONG lParam, LPSTR lpString, int cchSize)\n{\n  return __imp_GetKeyNameTextA(lParam, lpString, cchSize);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x007D2F57", "name": "?what_exception__UBEPBDXZ", "decompiled": "const char *__thiscall _what_exception__UBEPBDXZ(exception *this)\n{\n  const char *result; // eax\n\n  result = (const char *)*((_DWORD *)this + 1);\n  if ( !result )\n    return \"Unknown exception\";\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

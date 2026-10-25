@@ -1,0 +1,1 @@
+{"addr": "0x00524D60", "name": "InfantryTypeClass::GetAuxField", "decompiled": "int __thiscall InfantryTypeClass::GetAuxField(InfantryTypeClass *this)\n{\n  return this->ArrayIndex;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x007D2F41", "name": "Exception::Destructor", "decompiled": "void __thiscall Exception::Destructor(Exception *this)\n{\n  bool v1; // zf\n\n  v1 = this->field_8 == 0;\n  *(_DWORD *)this->__tail_0 = &exception::`vftable';\n  if ( !v1 )\n    __3_YAXPAX_Z((void *)this->u32_4);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

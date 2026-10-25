@@ -1,0 +1,1 @@
+{"addr": "0x0051FAF0", "name": "InfantryClass::GetTypePtr", "decompiled": "InfantryTypeClass *__thiscall InfantryClass::GetTypePtr(InfantryClass *this)\n{\n  return (InfantryTypeClass *)this->Type;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x007DCEC2", "name": "TlsSetValue", "decompiled": "// attributes: thunk\nBOOL __stdcall TlsSetValue(DWORD dwTlsIndex, LPVOID lpTlsValue)\n{\n  return __imp_TlsSetValue(dwTlsIndex, lpTlsValue);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

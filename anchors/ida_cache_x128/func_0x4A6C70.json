@@ -1,0 +1,1 @@
+{"addr": "0x004A6C70", "name": "sub_4A6C70", "decompiled": "int sub_4A6C70()\n{\n  dword_8A020C = 0;\n  dword_8A0210 = 0;\n  byte_8A0214 = 1;\n  byte_8A0215 = 0;\n  dword_8A0208 = (int)&DynamicVectorClass<DiskLaserClass *>::`vftable';\n  dword_8A021C = 10;\n  dword_8A0218 = 0;\n  return atexit(sub_4A6CB0);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

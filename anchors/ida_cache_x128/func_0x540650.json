@@ -1,0 +1,1 @@
+{"addr": "0x00540650", "name": "IPXGlobalConnClass::Connect", "decompiled": "int __thiscall IPXGlobalConnClass::Connect(IPXGlobalConnClass *this, void *a2, signed int *a3)\n{\n  return ConnectionClass::processTileUpdate((ModemConnectionClass *)this, a2, a3);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

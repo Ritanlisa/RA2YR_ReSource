@@ -1,0 +1,1 @@
+{"addr": "0x007C89EC", "name": "GetFileVersionInfoSizeA", "decompiled": "// attributes: thunk\nDWORD __stdcall GetFileVersionInfoSizeA(LPCSTR lptstrFilename, LPDWORD lpdwHandle)\n{\n  return __imp_GetFileVersionInfoSizeA(lptstrFilename, lpdwHandle);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

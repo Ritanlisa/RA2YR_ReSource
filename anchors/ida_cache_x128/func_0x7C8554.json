@@ -1,0 +1,1 @@
+{"addr": "0x007C8554", "name": "OpenMutexA", "decompiled": "// attributes: thunk\nHANDLE __stdcall OpenMutexA(DWORD dwDesiredAccess, BOOL bInheritHandle, LPCSTR lpName)\n{\n  return __imp_OpenMutexA(dwDesiredAccess, bInheritHandle, lpName);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

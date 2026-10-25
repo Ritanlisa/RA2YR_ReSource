@@ -1,0 +1,1 @@
+{"addr": "0x007C878E", "name": "LockWindowUpdate", "decompiled": "// attributes: thunk\nBOOL __stdcall LockWindowUpdate(HWND hWndLock)\n{\n  return __imp_LockWindowUpdate(hWndLock);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

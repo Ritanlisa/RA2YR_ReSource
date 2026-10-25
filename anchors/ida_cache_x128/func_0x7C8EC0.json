@@ -1,0 +1,1 @@
+{"addr": "0x007C8EC0", "name": "__allmul", "decompiled": "__int64 __stdcall _allmul(__int64 a1, __int64 a2)\n{\n  if ( HIDWORD(a1) | HIDWORD(a2) )\n    return a1 * a2;\n  else\n    return (unsigned int)a2 * (unsigned __int64)(unsigned int)a1;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

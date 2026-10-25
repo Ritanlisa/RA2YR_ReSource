@@ -1,0 +1,1 @@
+{"addr": "0x005F1390", "name": "Timer::GetElapsed", "decompiled": "int __thiscall Timer::GetElapsed(Timer *this)\n{\n  int v1; // edi\n\n  v1 = *(_DWORD *)&this->__pad_6[2];\n  if ( *(_DWORD *)this->__pad_0 != -1 )\n    v1 += Timer::GetTicks() - *(_DWORD *)this->__pad_0;\n  return v1;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

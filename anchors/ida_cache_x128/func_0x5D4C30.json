@@ -1,0 +1,1 @@
+{"addr": "0x005D4C30", "name": "MPBattleClass::onDialogCreated", "decompiled": "int MPBattleClass::onDialogCreated()\n{\n  dword_ABFCA8 = 0;\n  dword_ABFCAC = 0;\n  dword_ABFCB0 = 0;\n  dword_ABFCB4 = 0;\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x00549E50", "name": "Map_Get_549E50", "decompiled": "int __thiscall Map_Get_549E50(int this, int a2, int a3)\n{\n  if ( !*(_DWORD *)(this + 164) && *(_BYTE *)(this + 756) )\n    MapClass::LoadFileData((MapClass *)this);\n  return *(_DWORD *)(*(_DWORD *)(this + 680) + 4 * a2) + 4 * a3;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

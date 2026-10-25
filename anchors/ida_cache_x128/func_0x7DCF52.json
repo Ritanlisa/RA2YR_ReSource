@@ -1,0 +1,1 @@
+{"addr": "0x007DCF52", "name": "GetLocaleInfoA", "decompiled": "// attributes: thunk\nint __stdcall GetLocaleInfoA(LCID Locale, LCTYPE LCType, LPSTR lpLCData, int cchData)\n{\n  return __imp_GetLocaleInfoA(Locale, LCType, lpLCData, cchData);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x006C3540", "name": "TClassFactory_BuildingClass::AddRef", "decompiled": "LONG __thiscall TClassFactory_BuildingClass::AddRef(_TClassFactory_VBuildingClass *this)\n{\n  int v2; // [esp+4h] [ebp+4h]\n\n  return InterlockedIncrement((volatile LONG *)(v2 + 4));\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x005D8160", "name": "ScenarioClass::loadTheater", "decompiled": "int __thiscall ScenarioClass::loadTheater(_VectorClass_PAVMultiplayerGameMode *this, int a2)\n{\n  return *(_DWORD *)(*(_DWORD *)&this->m_1[3] + 4 * a2);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

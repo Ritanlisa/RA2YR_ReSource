@@ -1,0 +1,1 @@
+{"addr": "0x00459F60", "name": "Coord3D::Equals", "decompiled": "int __thiscall Coord3D::Equals(Coord3D *this, _DWORD *a2)\n{\n  return *(_DWORD *)this->__pad_0 == *a2 && this->Coord3D_field_0x04 == a2[1] && this->Coord3D_field_0x08 == a2[2];\n}\n", "changed": true, "error": null, "timestamp": "x128"}

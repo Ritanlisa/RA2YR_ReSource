@@ -1,0 +1,1 @@
+{"addr": "0x0053F830", "name": "Network_Get", "decompiled": "int __fastcall Network_Get(int a1, int a2)\n{\n  (*(void (__thiscall **)(WinsockInterface *, int, int, _DWORD))(*(_DWORD *)dword_887628->__pad_0 + 16))(\n    dword_887628,\n    a1,\n    a2,\n    0);\n  return 1;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

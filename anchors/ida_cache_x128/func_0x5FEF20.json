@@ -1,0 +1,1 @@
+{"addr": "0x005FEF20", "name": "OverlayTypeClass::GetAuxField", "decompiled": "int __thiscall OverlayTypeClass::GetAuxField(OverlayTypeClass *this)\n{\n  return this->LandType;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

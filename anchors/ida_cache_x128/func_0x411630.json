@@ -1,0 +1,1 @@
+{"addr": "0x00411630", "name": "BSurface::GetBytesPerPixel", "decompiled": "int __thiscall BSurface::GetBytesPerPixel(BSurface *this)\n{\n  return this->field_0.field_0.field_10;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

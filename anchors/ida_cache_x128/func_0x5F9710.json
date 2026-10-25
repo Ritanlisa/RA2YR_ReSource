@@ -1,0 +1,1 @@
+{"addr": "0x005F9710", "name": "ObjectTypeClass::SetRTTI71", "decompiled": "int __thiscall ObjectTypeClass::SetRTTI71(ObjectTypeClass *this)\n{\n  int result; // eax\n\n  BYTE1(this->vfptr) = 71;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

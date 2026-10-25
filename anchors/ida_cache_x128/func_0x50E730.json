@@ -1,0 +1,1 @@
+{"addr": "0x0050E730", "name": "VectorClass__N::GetItemIndex", "decompiled": "int __thiscall VectorClass__N::GetItemIndex(_DynamicVectorClass__N *this, int a2)\n{\n  if ( LOBYTE(this->m_C) )\n    return a2 - *(_DWORD *)&this->m_1[3];\n  else\n    return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

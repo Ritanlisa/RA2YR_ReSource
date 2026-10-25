@@ -1,0 +1,1 @@
+{"addr": "0x006E6490", "name": "TagTypeClass::GetTypeIdentifier", "decompiled": "int TagTypeClass::GetTypeIdentifier(TagTypeClass *this)\n{\n  return 45;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

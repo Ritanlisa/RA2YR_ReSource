@@ -1,0 +1,1 @@
+{"addr": "0x00426590", "name": "AnimClass::MissionStubReturnZero3", "decompiled": "void *__thiscall AnimClass::MissionStubReturnZero3(AnimClass *this, char a2)\n{\n  AnimClass::Destruct(this);\n  if ( (a2 & 1) != 0 )\n    __3_YAXPAX_Z(this);\n  return this;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

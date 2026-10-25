@@ -1,0 +1,1 @@
+{"addr": "0x0077D140", "name": "sub_77D140", "decompiled": "void __cdecl sub_77D140()\n{\n  *(_DWORD *)stru_B75E48.__pad_0 = &rc_ptr<PlayerProfile>::`vftable';\n  ComPtr::Release(&stru_B75E48);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x007C88C6", "name": "FindExecutableA", "decompiled": "// attributes: thunk\nHINSTANCE __stdcall FindExecutableA(LPCSTR lpFile, LPCSTR lpDirectory, LPSTR lpResult)\n{\n  return __imp_FindExecutableA(lpFile, lpDirectory, lpResult);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

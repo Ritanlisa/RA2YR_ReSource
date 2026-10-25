@@ -1,0 +1,1 @@
+{"addr": "0x0041C660", "name": "TechnoClass::processAttackState", "decompiled": "int __thiscall TechnoClass::processAttackState(TechnoClass *this, int a2)\n{\n  return AircraftClass::Release((AircraftClass *)this, a2 - 4);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

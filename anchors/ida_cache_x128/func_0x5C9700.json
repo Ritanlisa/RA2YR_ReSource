@@ -1,0 +1,1 @@
+{"addr": "0x005C9700", "name": "Scenario::ResetDisplayArrays", "decompiled": "void *__thiscall Scenario::ResetDisplayArrays(Scenario *this)\n{\n  dword_ABF9F4 = 0;\n  memset(dword_ABF958, 0, sizeof(dword_ABF958));\n  dword_ABF9F8 = 0;\n  return this;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

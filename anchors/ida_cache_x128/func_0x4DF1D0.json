@@ -1,0 +1,1 @@
+{"addr": "0x004DF1D0", "name": "TechnoClass::vt_entry_4B0", "decompiled": "char __thiscall TechnoClass::vt_entry_4B0(TechnoClass *this)\n{\n  return *((_BYTE *)this + 1489);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

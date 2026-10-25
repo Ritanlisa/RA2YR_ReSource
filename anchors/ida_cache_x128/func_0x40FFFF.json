@@ -1,0 +1,1 @@
+{"addr": "0x0040FFFF", "name": "Math::InitDegToRad", "decompiled": "void __usercall Math::InitDegToRad(char a1@<cf>, char a2@<zf>)\n{\n  if ( a1 | a2 )\n    sub_40FF90();\n  else\n    dbl_887648 = 0.0174532925199433 * 90.0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

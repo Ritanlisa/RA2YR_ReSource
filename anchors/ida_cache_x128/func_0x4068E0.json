@@ -1,0 +1,1 @@
+{"addr": "0x004068E0", "name": "Debug::Log", "decompiled": "int Debug::Log()\n{\n  int result; // eax\n\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

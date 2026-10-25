@@ -1,0 +1,1 @@
+{"addr": "0x0049F740", "name": "Dialog::MapDialogResource", "decompiled": "void __thiscall Dialog::MapDialogResource(Dialog *this)\n{\n  if ( *(_DWORD *)&this->__pad_0[4] == 48879 )\n  {\n    Debug::Log();\n    lpBaseAddress = MapViewOfFileEx((HANDLE)this->Dialog_field_0xC, 0xF001Fu, 0, 0, 0, 0);\n    Debug::Log();\n  }\n}\n", "changed": true, "error": null, "timestamp": "x128"}

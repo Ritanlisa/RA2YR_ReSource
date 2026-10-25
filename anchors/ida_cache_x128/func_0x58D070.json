@@ -1,0 +1,1 @@
+{"addr": "0x0058D070", "name": "SetLayerDataMap", "decompiled": "int __fastcall SetLayerDataMap(__int16 *a1, int a2)\n{\n  int result; // eax\n\n  if ( dword_ABED10 )\n  {\n    result = 40 * (*a1 + g_MapCellWidth * a1[1]);\n    *(_DWORD *)&dword_ABED10[result + 28] = a2;\n  }\n  return result * 2;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

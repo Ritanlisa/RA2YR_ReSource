@@ -1,0 +1,1 @@
+{"addr": "0x00749020", "name": "HouseClass::IncrementStat", "decompiled": "int __thiscall HouseClass::IncrementStat(HouseClass *this, int a2)\n{\n  int result; // eax\n\n  result = a2;\n  if ( a2 < *(_DWORD *)&this->builtInfantryTypes[1240] )\n    ++*(&this->vfptr + a2);\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

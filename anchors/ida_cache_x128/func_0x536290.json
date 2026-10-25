@@ -1,0 +1,1 @@
+{"addr": "0x00536290", "name": "TauntCommandClass::Construct", "decompiled": "_DWORD *__thiscall TauntCommandClass::Construct(TauntCommandClass *this, int a2)\n{\n  this->TauntCommandClass_field_00 = a2;\n  *(_DWORD *)this->__tail_0 = &TauntCommandClass::`vftable';\n  return this->__tail_0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

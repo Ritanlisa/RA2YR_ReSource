@@ -1,0 +1,1 @@
+{"addr": "0x00679ED0", "name": "unknown_libname_30", "decompiled": "// Microsoft VisualC 2-14/net runtime\nint unknown_libname_30()\n{\n  return Hash::ComputeHashSHA1((INIClass *)&dword_887128);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

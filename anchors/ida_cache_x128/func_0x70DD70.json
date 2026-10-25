@@ -1,0 +1,1 @@
+{"addr": "0x0070DD70", "name": "ObjectClass::CheckTypeFlag1681", "decompiled": "int __thiscall ObjectClass::CheckTypeFlag1681(ObjectClass *this)\n{\n  return *(_BYTE *)((*(int (__thiscall **)(ObjectClass *))(this->vfptr + 132))(this) + 1681) == 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

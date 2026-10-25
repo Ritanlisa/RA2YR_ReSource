@@ -1,0 +1,1 @@
+{"addr": "0x007CA405", "name": "_wcslen", "decompiled": "int __cdecl wcslen(const wchar_t *String)\n{\n  const wchar_t *v1; // eax\n\n  v1 = String + 1;\n  if ( *String )\n  {\n    while ( *v1++ )\n      ;\n  }\n  return v1 - String - 1;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

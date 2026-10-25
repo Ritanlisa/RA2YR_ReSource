@@ -1,0 +1,1 @@
+{"addr": "0x0062D930", "name": "ParticleClass::GetClassIdentifier", "decompiled": "int __stdcall ParticleClass::GetClassIdentifier(ParticleClass *this, _DWORD *a2)\n{\n  if ( !a2 )\n    return -2147467261;\n  *a2 = 237448652;\n  a2[1] = 298949647;\n  a2[2] = -1610610249;\n  a2[3] = -777003740;\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

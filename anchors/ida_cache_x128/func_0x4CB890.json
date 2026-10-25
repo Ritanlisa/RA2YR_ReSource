@@ -1,0 +1,1 @@
+{"addr": "0x004CB890", "name": "ResultNode::Init", "decompiled": "int __thiscall ResultNode::Init(ResultNode *this)\n{\n  int result; // eax\n\n  __3_YAXPAX_Z((void *)this->field_8);\n  this->field_8 = 0;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

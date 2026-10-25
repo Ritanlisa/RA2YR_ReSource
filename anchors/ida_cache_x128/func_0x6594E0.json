@@ -1,0 +1,1 @@
+{"addr": "0x006594E0", "name": "TechnoClass::drawAmmoPips", "decompiled": "int __thiscall TechnoClass::drawAmmoPips(TechnoClass *this, int a2)\n{\n  this->ambientSoundController[0] = a2;\n  return a2;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

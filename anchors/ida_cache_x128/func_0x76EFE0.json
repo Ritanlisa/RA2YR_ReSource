@@ -1,0 +1,1 @@
+{"addr": "0x0076EFE0", "name": "WOL::QueryInterface", "decompiled": "void *__thiscall WOL::QueryInterface(Selection_WorldDominationTour *this, char a2)\n{\n  SelectionInitializeWOL((int)this);\n  if ( (a2 & 1) != 0 )\n    __3_YAXPAX_Z(this);\n  return this;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

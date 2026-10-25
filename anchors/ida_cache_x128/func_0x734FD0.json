@@ -1,0 +1,1 @@
+{"addr": "0x00734FD0", "name": "Map_Create_734FD0", "decompiled": "int Map_Create_734FD0()\n{\n  return dword_B1CF80;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

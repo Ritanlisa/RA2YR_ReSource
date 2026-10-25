@@ -1,0 +1,1 @@
+{"addr": "0x0053EDE0", "name": "Struct::Copy6Bytes", "decompiled": "__int16 __thiscall Struct::Copy6Bytes(char *this, int a2)\n{\n  char *v2; // ecx\n  __int16 result; // ax\n\n  v2 = this + 4;\n  *(_DWORD *)v2 = *(_DWORD *)a2;\n  result = *(_WORD *)(a2 + 4);\n  *((_WORD *)v2 + 2) = result;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

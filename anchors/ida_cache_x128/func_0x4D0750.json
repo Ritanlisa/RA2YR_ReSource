@@ -1,0 +1,1 @@
+{"addr": "0x004D0750", "name": "sub_4D0750", "decompiled": "int sub_4D0750()\n{\n  dword_8B3D14 = 0;\n  dword_8B3D18 = 0;\n  byte_8B3D1C = 1;\n  byte_8B3D1D = 0;\n  dword_8B3D10 = (int)&DynamicVectorClass<FoggedObjectClass *>::`vftable';\n  dword_8B3D24 = 10;\n  g_FootClassConfig = 0;\n  return atexit(sub_4D0790);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

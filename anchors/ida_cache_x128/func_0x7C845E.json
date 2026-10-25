@@ -1,0 +1,1 @@
+{"addr": "0x007C845E", "name": "IsBadReadPtr", "decompiled": "// attributes: thunk\nBOOL __stdcall IsBadReadPtr(const void *lp, UINT_PTR ucb)\n{\n  return __imp_IsBadReadPtr(lp, ucb);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

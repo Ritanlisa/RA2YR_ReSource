@@ -1,0 +1,1 @@
+{"addr": "0x004B4CF0", "name": "DriveLocomotionClass::StubReturn112", "decompiled": "int DriveLocomotionClass::StubReturn112(DriveLocomotionClass *this)\n{\n  return 112;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x00459ED0", "name": "BuildingClass::GetTypeField60", "decompiled": "int __thiscall BuildingClass::GetTypeField60(BuildingClass *this)\n{\n  return *(_DWORD *)(this->Type + 96);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

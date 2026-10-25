@@ -1,0 +1,1 @@
+{"addr": "0x00773B40", "name": "WebBrowser::StubReturnFalse", "decompiled": "int __thiscall WebBrowser::StubReturnFalse(WebBrowser *this)\n{\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

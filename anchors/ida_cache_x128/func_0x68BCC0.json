@@ -1,0 +1,1 @@
+{"addr": "0x0068BCC0", "name": "ScenarioClass::Get_Waypoint_Location", "decompiled": "_DWORD *__thiscall ScenarioClass::Get_Waypoint_Location(char *this, _DWORD *a2, int a3)\n{\n  *a2 = *(_DWORD *)(this + 4 * a3 + 1586);\n  return a2;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

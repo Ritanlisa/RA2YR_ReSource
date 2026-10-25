@@ -1,0 +1,1 @@
+{"addr": "0x00422BC0", "name": "AnimClass::SetAnimSpeed", "decompiled": "int __thiscall AnimClass::SetAnimSpeed(AnimClass *this)\n{\n  return this->AnimClass_field_0x104 + ObjectClass::GetBoundingSize((ObjectClass *)this);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x006AC840", "name": "System_Init_6AC840", "decompiled": "char *__thiscall System_Init_6AC840(char *this, int a2)\n{\n  RadarClass::Render(this, a2);\n  *(this + 4556) = 0;\n  *(this + 4557) = 0;\n  *(this + 4558) = 0;\n  *(_DWORD *)this = &DisplayClass::`vftable';\n  return this;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

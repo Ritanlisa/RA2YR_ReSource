@@ -1,0 +1,1 @@
+{"addr": "0x00512730", "name": "HouseTypeClass::loadBuildLimits", "decompiled": "unsigned int __thiscall HouseTypeClass::loadBuildLimits(HouseTypeClass *this)\n{\n  return this->arrayIndex;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

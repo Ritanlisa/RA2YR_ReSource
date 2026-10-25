@@ -1,0 +1,1 @@
+{"addr": "0x004790B0", "name": "SetSoundWarning", "decompiled": "int __fastcall SetSoundWarning(int a1)\n{\n  int result; // eax\n\n  if ( byte_89E3A0 == 1 )\n  {\n    dword_81C1D0 = -2;\n  }\n  else\n  {\n    if ( a1 >= 0 )\n      a1 = 2;\n    dword_81C1D0 = a1;\n  }\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

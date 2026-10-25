@@ -1,0 +1,1 @@
+{"addr": "0x007CB428", "name": "__lock_file2", "decompiled": "void __cdecl _lock_file2(int a1, int a2)\n{\n  if ( a1 >= 20 )\n    EnterCriticalSection((LPCRITICAL_SECTION)(a2 + 32));\n  else\n    _lock(a1 + 28);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x007DCFB8", "name": "VariantClear", "decompiled": "// attributes: thunk\nHRESULT __stdcall VariantClear(VARIANTARG *pvarg)\n{\n  return __imp_VariantClear(pvarg);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

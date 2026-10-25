@@ -1,0 +1,1 @@
+{"addr": "0x00632FE0", "name": "GameClass::loadGameState", "decompiled": "int __thiscall GameClass::loadGameState(PKPipe *this, int a2)\n{\n  return (*(int (__thiscall **)(PKPipe *, int))(*(_DWORD *)this->__pad_0 + 12))(this, a2);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

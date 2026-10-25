@@ -1,0 +1,1 @@
+{"addr": "0x006D1800", "name": "CursorAnim::Load", "decompiled": "int __stdcall CursorAnim::Load(TabClass *this)\n{\n  SidebarClass *v1; // ecx\n\n  return (int)ObjectClass::GetTooltipText(v1, (int)this);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

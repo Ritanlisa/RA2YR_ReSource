@@ -1,0 +1,1 @@
+{"addr": "0x00464AC0", "name": "BuildingTypeClass::CanPlacePath", "decompiled": "bool __thiscall BuildingTypeClass::CanPlacePath(AbstractClass *this, _WORD *a2, int a3)\n{\n  if ( *((_BYTE *)this + 5891) )\n    return 1;\n  else\n    return BuildingClass::ValidatePath((TechnoTypeClass *)this, a2, a3);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x0043A130", "name": "JumpjetLocomotionClass::ComputeVectorLengthMetric_0", "decompiled": "void __thiscall JumpjetLocomotionClass::ComputeVectorLengthMetric_0(float *this)\n{\n  Math::Sqrt(*this * *this + *(this + 1) * *(this + 1) + *(this + 2) * *(this + 2));\n}\n", "changed": true, "error": null, "timestamp": "x128"}

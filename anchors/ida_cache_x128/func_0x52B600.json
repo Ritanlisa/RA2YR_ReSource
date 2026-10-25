@@ -1,0 +1,1 @@
+{"addr": "0x0052B600", "name": "SortedArray::CheckCache", "decompiled": "int __thiscall SortedArray::CheckCache(SortedArray *this, _DWORD *a2)\n{\n  int result; // eax\n\n  result = this->SortedArray_field_0x10;\n  LOBYTE(result) = result && (result = *(_DWORD *)result, result == *a2);\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

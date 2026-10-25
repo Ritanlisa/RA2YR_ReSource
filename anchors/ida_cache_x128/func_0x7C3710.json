@@ -1,0 +1,1 @@
+{"addr": "0x007C3710", "name": "Render_Render_7C3710", "decompiled": "int __fastcall Render_Render_7C3710(unsigned __int8 *a1, _DWORD *a2, _DWORD *a3, _DWORD *a4)\n{\n  *a2 = a1[242];\n  *a3 = a1[243];\n  *a4 = a1[264];\n  return -1;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

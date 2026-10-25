@@ -1,0 +1,1 @@
+{"addr": "0x00759F70", "name": "MovieClass::GetWidth", "decompiled": "int __thiscall MovieClass::GetWidth(MovieClass *this)\n{\n  return *((_DWORD *)this + 326);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

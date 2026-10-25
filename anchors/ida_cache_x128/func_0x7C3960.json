@@ -1,0 +1,1 @@
+{"addr": "0x007C3960", "name": "AudioStream::GetPosition", "decompiled": "int __thiscall AudioStream::GetPosition(AudioStream *this)\n{\n  return (unsigned int)(60 * ((int (__cdecl *)(AudioStream *))this->AudioStream_field_0x50)(this))\n       / *(_DWORD *)&this->__pad_5C[28]\n       + *(_DWORD *)&this->__pad_D8[112];\n}\n", "changed": true, "error": null, "timestamp": "x128"}

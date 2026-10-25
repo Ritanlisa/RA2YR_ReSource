@@ -1,0 +1,1 @@
+{"addr": "0x005C1090", "name": "MultiplayerBattleTeam::AddRef", "decompiled": "bool __stdcall MultiplayerBattleTeam::AddRef(MultiplayerBattleTeam *this)\n{\n  return PlayerClass::IsValidIndex((bool *)this->__pad_0);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

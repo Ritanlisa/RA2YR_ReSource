@@ -1,0 +1,1 @@
+{"addr": "0x007AC690", "name": "CComObject_CChatEventSink___ATL::AddRef", "decompiled": "LONG __thiscall CComObject_CChatEventSink___ATL::AddRef(_CComObject_VCChatEventSink_ATL *this)\n{\n  LONG *v2; // [esp+4h] [ebp+4h]\n\n  return InterlockedIncrement(v2 + 1);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

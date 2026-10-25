@@ -1,0 +1,1 @@
+{"addr": "0x005430C0", "name": "StartGameWOL_Start", "decompiled": "int __thiscall StartGameWOL_Start(ObjectClass *this, int a2)\n{\n  int v2; // ecx\n  int result; // eax\n\n  v2 = this->ambientSoundController[3];\n  if ( v2 )\n    return (*(int (__thiscall **)(int, int))(*(_DWORD *)v2 + 68))(v2, a2);\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

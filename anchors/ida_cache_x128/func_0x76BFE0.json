@@ -1,0 +1,1 @@
+{"addr": "0x0076BFE0", "name": "Conflict::GetOwnerHouse", "decompiled": "int __thiscall Conflict::GetOwnerHouse(Conflict *this)\n{\n  int Outcome; // eax\n\n  Outcome = this->Outcome;\n  if ( Outcome )\n    return *(_DWORD *)(Outcome + 36) - 1;\n  else\n    return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

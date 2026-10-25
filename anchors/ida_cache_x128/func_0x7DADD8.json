@@ -1,0 +1,1 @@
+{"addr": "0x007DADD8", "name": "__ismbbalpha", "decompiled": "int __cdecl _ismbbalpha(unsigned int C)\n{\n  return CRTisctype(C, 259, 1u);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

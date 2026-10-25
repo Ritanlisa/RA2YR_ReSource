@@ -1,0 +1,1 @@
+{"addr": "0x0075F8A0", "name": "WaveClass::StubReturnFalse", "decompiled": "int WaveClass::StubReturnFalse(WaveClass *this)\n{\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

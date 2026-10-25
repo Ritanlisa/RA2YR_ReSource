@@ -1,0 +1,1 @@
+{"addr": "0x004D0400", "name": "JumpjetLocomotionClass::CheckWindowsErrorWrapper_0", "decompiled": "BOOL __thiscall JumpjetLocomotionClass::CheckWindowsErrorWrapper_0(JumpjetLocomotionClass *this, int a2)\n{\n  if ( a2 )\n    sub_7DC720(-2147467261);\n  return *(_DWORD *)&this->field_0 == 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

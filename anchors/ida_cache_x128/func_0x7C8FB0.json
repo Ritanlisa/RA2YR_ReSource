@@ -1,0 +1,1 @@
+{"addr": "0x007C8FB0", "name": "__CIpow", "decompiled": "double __usercall _CIpow@<st0>(unsigned __int64 x@<st0>, double y@<st1>)\n{\n  CIpow_Helper((ObjectClass *)x, HIDWORD(x), LODWORD(y), HIDWORD(y));\n  return y;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

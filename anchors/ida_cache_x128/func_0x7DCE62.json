@@ -1,0 +1,1 @@
+{"addr": "0x007DCE62", "name": "HeapFree", "decompiled": "// attributes: thunk\nBOOL __stdcall HeapFree(HANDLE hHeap, DWORD dwFlags, LPVOID lpMem)\n{\n  return __imp_HeapFree(hHeap, dwFlags, lpMem);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

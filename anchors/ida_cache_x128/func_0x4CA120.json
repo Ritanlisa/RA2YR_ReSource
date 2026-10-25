@@ -1,0 +1,1 @@
+{"addr": "0x004CA120", "name": "ObjectClass::GetMember09", "decompiled": "int __thiscall ObjectClass::GetMember09(ObjectClass *this)\n{\n  return this->occupant;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

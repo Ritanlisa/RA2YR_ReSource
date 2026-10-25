@@ -1,0 +1,1 @@
+{"addr": "0x007CB1CB", "name": "__fflush_lk", "decompiled": "int __cdecl _fflush_lk(int a1)\n{\n  if ( _flush((_DWORD *)a1) )\n    return -1;\n  if ( (*(_BYTE *)(a1 + 13) & 0x40) != 0 )\n    return -(_commit(*(_DWORD *)(a1 + 16)) != 0);\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x00624130", "name": "OwnerDrawControl::InitVtable", "decompiled": "int __thiscall OwnerDrawControl::InitVtable(OwnerDrawControl *this)\n{\n  int result; // eax\n\n  *this = (OwnerDrawControl)&OwnerDraw::DialogControl::`vftable';\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

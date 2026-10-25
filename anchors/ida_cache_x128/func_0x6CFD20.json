@@ -1,0 +1,1 @@
+{"addr": "0x006CFD20", "name": "globalHelper_0CFD20", "decompiled": "void __fastcall globalHelper_0CFD20(int a1, int a2)\n{\n  g_ObjectTrackingPool[a1] = a2;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

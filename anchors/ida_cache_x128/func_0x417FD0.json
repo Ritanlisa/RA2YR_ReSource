@@ -1,0 +1,1 @@
+{"addr": "0x00417FD0", "name": "AbstractClass::GetField9", "decompiled": "int AbstractClass::GetField9()\n{\n  return dword_8871E0->PoseDir;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x00642980", "name": "sub_642980", "decompiled": "int sub_642980()\n{\n  sub_6429E0((ObjectClass *)&stru_AC4B48.__pad_2F4[284]);\n  return atexit(sub_6429A0);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

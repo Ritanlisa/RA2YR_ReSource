@@ -1,0 +1,1 @@
+{"addr": "0x007C8476", "name": "GetModuleFileNameA", "decompiled": "// attributes: thunk\nDWORD __stdcall GetModuleFileNameA(HMODULE hModule, LPSTR lpFilename, DWORD nSize)\n{\n  return __imp_GetModuleFileNameA(hModule, lpFilename, nSize);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x004C5D20", "name": "VectorClass_ptr_EMPulseClass::GetCapacity", "decompiled": "unsigned int __thiscall VectorClass_ptr_EMPulseClass::GetCapacity(_VectorClass_PAVEMPulseClass *this, int a2)\n{\n  if ( LOBYTE(this->m_C) )\n    return (unsigned int)(a2 - *(_DWORD *)&this->m_1[3]) >> 2;\n  else\n    return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x004CF940", "name": "JumpjetLocomotionClass::ShortFunc_4CF940", "decompiled": "_DWORD *__stdcall JumpjetLocomotionClass::ShortFunc_4CF940(FlyLocomotionClass *this, _DWORD *a2)\n{\n  *a2 = 0;\n  a2[1] = 0;\n  return a2;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

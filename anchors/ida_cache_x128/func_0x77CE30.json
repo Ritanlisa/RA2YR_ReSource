@@ -1,0 +1,1 @@
+{"addr": "0x0077CE30", "name": "sub_77CE30", "decompiled": "int sub_77CE30()\n{\n  int result; // eax\n\n  result = dword_84A1D8 - dword_84A1D4 - 4;\n  stru_B73E10.CChatEventSink_field_0x2C = result;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x00526B00", "name": "INIClass::ResetSection", "decompiled": "int __thiscall INIClass::ResetSection(INIClass *this)\n{\n  this->headNode[0] = 0;\n  this->headNode[1] = 0;\n  return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x005CEAC0", "name": "MSOverlayAnim::AddRef", "decompiled": "char __thiscall MSOverlayAnim::AddRef(MSAnim *this, char a2)\n{\n  this->field_C = a2;\n  return a2;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x007C87DC", "name": "SetActiveWindow", "decompiled": "// attributes: thunk\nHWND __stdcall SetActiveWindow(HWND hWnd)\n{\n  return __imp_SetActiveWindow(hWnd);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

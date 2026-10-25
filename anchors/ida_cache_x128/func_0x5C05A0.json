@@ -1,0 +1,1 @@
+{"addr": "0x005C05A0", "name": "BinkMovieHandle::Pause", "decompiled": "int __thiscall BinkMovieHandle::Pause(BinkMovieHandle *this, int a2, int a3)\n{\n  return BinkMovieHandle::RenderFrameClipped(this->height, a2, a3);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

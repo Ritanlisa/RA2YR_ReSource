@@ -1,0 +1,1 @@
+{"addr": "0x007C87D0", "name": "GetWindowContextHelpId", "decompiled": "// attributes: thunk\nDWORD __stdcall GetWindowContextHelpId(HWND a1)\n{\n  return __imp_GetWindowContextHelpId(a1);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

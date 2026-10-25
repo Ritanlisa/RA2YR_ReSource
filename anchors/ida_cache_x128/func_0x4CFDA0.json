@@ -1,0 +1,1 @@
+{"addr": "0x004CFDA0", "name": "JumpjetLocomotionClass::DispatchVirtualCall_1", "decompiled": "bool __stdcall JumpjetLocomotionClass::DispatchVirtualCall_1(FlyLocomotionClass *this)\n{\n  return *(_BYTE *)((*(int (__thiscall **)(int))(*(_DWORD *)this->Owner + 132))(this->Owner) + 3367) == 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

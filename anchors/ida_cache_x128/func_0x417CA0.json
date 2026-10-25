@@ -1,0 +1,1 @@
+{"addr": "0x00417CA0", "name": "TechnoClass::ExecuteMissionCommand", "decompiled": "int __thiscall TechnoClass::ExecuteMissionCommand(TechnoClass *this, int a2, int a3, int a4, int a5)\n{\n  return ScriptAction::ExecuteMissionCmd(this);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x007C83AA", "name": "CloseHandle", "decompiled": "// attributes: thunk\nBOOL __stdcall CloseHandle(HANDLE hObject)\n{\n  return __imp_CloseHandle(hObject);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

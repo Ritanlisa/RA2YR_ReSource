@@ -1,0 +1,1 @@
+{"addr": "0x004CA760", "name": "FactoryClass::StubReturn116", "decompiled": "int FactoryClass::StubReturn116(FactoryClass *this)\n{\n  return 116;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x004729B0", "name": "CaptureManagerClass::GetTypeIdentifier", "decompiled": "int CaptureManagerClass::GetTypeIdentifier(CaptureManagerClass *this)\n{\n  return 66;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x005B01A0", "name": "JumpjetLocomotionClass::InitMultiFieldArray", "decompiled": "int __stdcall JumpjetLocomotionClass::InitMultiFieldArray(MechLocomotionClass *this, int a2, int a3, int a4)\n{\n  this->MovingDestination[2] = a2;\n  this->HeadToCoord[0] = a3;\n  this->HeadToCoord[1] = a4;\n  return a2;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

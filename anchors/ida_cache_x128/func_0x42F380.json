@@ -1,0 +1,1 @@
+{"addr": "0x0042F380", "name": "HouseClass::FailedToPlaceNode", "decompiled": "int __stdcall HouseClass::FailedToPlaceNode(int a1)\n{\n  int result; // eax\n  int v2; // ecx\n\n  result = a1;\n  if ( a1 )\n  {\n    v2 = *(_DWORD *)(a1 + 12) + 1;\n    *(_DWORD *)(a1 + 12) = v2;\n    return v2;\n  }\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x00723700", "name": "TiberiumClass::Stub", "decompiled": "int __thiscall TiberiumClass::Stub(TiberiumClass *this)\n{\n  return *(_DWORD *)this->isInLogic;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

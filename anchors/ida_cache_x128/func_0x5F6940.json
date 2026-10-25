@@ -1,0 +1,1 @@
+{"addr": "0x005F6940", "name": "ObjectClass::SetPosition", "decompiled": "int __thiscall ObjectClass::SetPosition(IUnknown *this)\n{\n  int *v1; // ecx\n  int result; // eax\n  int *v3; // [esp+4h] [ebp+4h]\n\n  v1 = &this->field_9C;\n  *v1 = *v3;\n  v1[1] = v3[1];\n  result = v3[2];\n  v1[2] = result;\n  return result;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

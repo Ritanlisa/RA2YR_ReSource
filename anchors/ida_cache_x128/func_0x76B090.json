@@ -1,0 +1,1 @@
+{"addr": "0x0076B090", "name": "ComStreamClass::closeStream", "decompiled": "char __thiscall ComStreamClass::closeStream(ComStreamClass *this)\n{\n  return *((_BYTE *)this + 72);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

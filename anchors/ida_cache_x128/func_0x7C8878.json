@@ -1,0 +1,1 @@
+{"addr": "0x007C8878", "name": "SetViewportOrgEx", "decompiled": "// attributes: thunk\nBOOL __stdcall SetViewportOrgEx(HDC hdc, int x, int y, LPPOINT lppt)\n{\n  return __imp_SetViewportOrgEx(hdc, x, y, lppt);\n}\n", "changed": true, "error": null, "timestamp": "x128"}

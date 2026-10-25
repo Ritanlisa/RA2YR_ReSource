@@ -1,0 +1,1 @@
+{"addr": "0x00746E80", "name": "C07F5C70::Seek", "decompiled": "void **__thiscall C07F5C70::Seek(UnitClass *this, char a2)\n{\n  UnitClass::Destructor(this);\n  if ( (a2 & 1) != 0 )\n    __3_YAXPAX_Z(this);\n  return (void **)this;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

@@ -1,0 +1,1 @@
+{"addr": "0x00631FC0", "name": "sub_631FC0", "decompiled": "int __thiscall sub_631FC0(ObjectClass *this, _BYTE *a2)\n{\n  if ( a2 )\n    return EncodeVarInt((char *)this, a2, 64);\n  else\n    return 0;\n}\n", "changed": true, "error": null, "timestamp": "x128"}

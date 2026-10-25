@@ -1,0 +1,1 @@
+{"addr": "0x0054D0D0", "name": "JumpjetLocomotionClass::CheckCompositeState", "decompiled": "bool __stdcall JumpjetLocomotionClass::CheckCompositeState(JumpjetLocomotionClass *this)\n{\n  int v1; // eax\n\n  v1 = *(_DWORD *)this->IsMoving;\n  return v1 && v1 != 2;\n}\n", "changed": true, "error": null, "timestamp": "x128"}
