@@ -57,10 +57,10 @@ public:
     // Construction / destruction lifecycle
 int Construct(int,int);  // 0x43B740
     int Dtor();  // 0x43BCF0
-    int ScalarDtor() override;  // 0x459F20
-    int Activate() override;  // 0x452480
-    int Deactivate() override;   // 0x452480
-    virtual void Destroyed(ObjectClass* killer) override;  // 0x459E80
+    int ScalarDtor() ;  // 0x459F20
+    int Activate() ;  // 0x452480
+    int Deactivate() ;   // 0x452480
+    virtual void Destroyed(ObjectClass* killer);  // 0x459E80
     int AfterDestruction();  // 0x441F60
     void Cleanup(int a2);  // 0x43EEB0
 
@@ -70,7 +70,7 @@ int Construct(int,int);  // 0x43B740
     // wrapper: delegates to BuildingClass::Size at 0x454190
     void Place(bool bUnk);
     // wrapper: delegates to BuildingClass::Size at 0x454190
-    virtual void onBuildingPlacement(uint32_t dwUnk, uint32_t dwUnk2) override;
+    virtual void onBuildingPlacement(uint32_t dwUnk, uint32_t dwUnk2);
 
     // Foundation / cell
     // wrapper: delegates to BuildingClass::Size at 0x454190
@@ -97,7 +97,6 @@ int Construct(int,int);  // 0x43B740
     void ClearFactoryBib();  // 0x44D880
     int RepairPlacement(char a2);  // 0x4533A0
     bool CheckBuildability();  // 0x63AC70
-    bool CheckCellPassability();  // 0x70C5A0
     void OnCellPlacementComplete(ObjectClass *a2);  // 0x710670 (IDA: thiscall(this, arg0))
 
     // Exit coordinates
@@ -120,12 +119,11 @@ int Construct(int,int);  // 0x43B740
     // Construction update (ptr_0[8])
     // wrapper: delegates to BuildingClass::IsFactorySelectable at 0x457620
     virtual void UpdateConstructionOptions();
-    int Mission_Construction() override;
+    int Mission_Construction() ;
     int UpdateConstruction();  // 0x443C60
 
     // Production
     int StartProduction(int type_index);  // 0x447780
-    void CheckState1();  // 0x4496B0
     void CompleteProduction();  // 0x639740
     int ProductionDisplayUpdate(int a1);  // 0x43F180 (IDA: thiscall(unsigned char*,int))
     void DisplayProductionFrame();  // 0x43D030
@@ -140,7 +138,7 @@ int CanAcceptType(int,int);  // 0x452670
 
     // Selling
     // wrapper: delegates to BuildingClass::GetProductionFrame at 0x43EF90
-    virtual int Mission_Selling() override;
+    virtual int Mission_Selling();
     int Sell();  // 0x445880
     // wrapper: delegates to BuildingClass::Sell at 0x445880
     void CompleteSell();
@@ -151,10 +149,9 @@ int CanAcceptType(int,int);  // 0x452670
     int GetSellPriority();  // 0x5F5DD0
     void SellEffects();  // 0x480CB0
     void SellUnit(int a2);  // 0x4D9F70 retn 4 (W20M26 true sig)
-    void HandleSellOrRepair();  // 0x701410
 
     // Repair
-    virtual int Mission_Repair() override;
+    virtual int Mission_Repair();
     int ProcessRepair();  // 0x44B780 g57w11 r4: raw int __thiscall (void 声明 C2562)
     bool CanRepair(TechnoClass* repairer);  // 0x457CE0
     int ToggleRepairMode(int aP1);  // 0x446FF0
@@ -163,7 +160,7 @@ int CanAcceptType(int,int);  // 0x452670
 
     // Missile / Super weapons
     // wrapper: delegates to BuildingClass::IsBeingRepairedOrCaptured at 0x7105E0
-    virtual int Mission_Missile() override;
+    virtual int Mission_Missile();
     virtual void processSuperWeapon(uint32_t dwUnk, uint32_t dwUnk2, uint32_t dwUnk3, uint32_t dwUnk4);
     void ProcessSuperWeaponEffects();   // 0x44C980
     int SWAvailable();  // 0x457630
@@ -194,7 +191,7 @@ int CanAcceptType(int,int);  // 0x452670
     int GetPowerOutput();  // 0x44E7B0
     int GetPowerDrain();  // 0x44E880
     void PowerUpdate();  // 0x4FF700
-    int UpdatePowerDrain() override;  // 0x4544A0
+    int UpdatePowerDrain() ;  // 0x4544A0
     int IsPoweredOn();  // 0x4525F0
     bool IsPoweredActive();  // 0x4555D0
     bool CheckPowerFlags();  // 0x4A51B0
@@ -258,7 +255,6 @@ int CanAcceptType(int,int);  // 0x452670
     void DemolishBridge();  // 0x452DC0
     void DemolishBridgeAnim();  // 0x453060
     void TraverseBridgeSegments();  // 0x453240
-    void FindBridgeCell();  // 0x70F8F0
     bool CheckBridge();  // 0x6B0880
     void DestroyOnBridgeCollapse();  // 0x4576F0
     CoordStruct* GetBridgeAwareCoords(CoordStruct* out) const;  // 0x705CA0
@@ -274,7 +270,7 @@ int CanAcceptType(int,int);  // 0x452670
     virtual int ProcessPrimarySelect();  // 0x448160 vt+1264
 
     // Deploy / Undeploy
-    int Deploy() override;  // 0x62A4A0
+    int Deploy();  // 0x62A4A0
     // Is1x1AndUndeployable_BuildingMassSelectable(0x465D40) moved to
     // BuildingTypeClass (type/building_type.hpp): callers pass the Type pointer.
     void UpdateMovingPosition();  // 0x5B17B0
@@ -302,8 +298,7 @@ int CanAcceptType(int,int);  // 0x452670
 
     // Cloak / Visibility / Fog
     void UpdateCloak();  // 0x457770
-    int IronCurtain() override;  // 0x457C90
-    bool IsInvisible();  // 0x6F9E10
+    int IronCurtain() ;  // 0x457C90
     void AnnounceReady();  // 0x452260
     void UpdateRevealField();  // 0x456580
     void UpdateGapGeneratorField();  // 0x4565E0
@@ -311,7 +306,6 @@ int CanAcceptType(int,int);  // 0x452670
     bool IsCellVisibleToPlayer(int cell_x, int cell_y);  // 0x457020
     void CreateFoggedObjects();  // 0x457AA0
     void RevealShroud(int radius);  // 0x6FB170
-    void RemoveShroud();  // 0x6FB470
     void ProcessFogCellOccupancy();  // 0x655560
     void RemoveGapCellCoverage();  // 0x655740
     // wrapper: delegates to BuildingClass::RemoveGapCellCoverage at 0x655740
@@ -365,7 +359,6 @@ int CanAcceptType(int,int);  // 0x452670
     void SetPlanningToken(ra2::game::PlanningTokenClass* token);  // 0x705D10
     BuildingTypeClass* GetTypePtr();  // 0x459EE0
     BuildingTypeClass* GetType_Thunk();  // 0x705D60
-    HouseClass* CheckState2();  // 0x449A40
     int GetTypeEntry();  // 0x6347B0
     const wchar_t* GetTypeField60();  // 0x459ED0 (returns Type->UIName@+0x60)
     int GetObjectData();  // 0x6385C0
@@ -407,7 +400,6 @@ int CanAcceptType(int,int);  // 0x452670
     void EmptyBunker();  // 0x4595C0
     void MakeTraversable();  // 0x452540
     void RemoveLimpet();  // 0x4593A0
-    void ClearLimpetCheck();  // 0x459DB0
     bool CheckC4Active();  // 0x487C10
     // SetField95(0x424C90)/SetField8(0x425260) moved to AnimClass
     // (entity/anim.hpp): all 4 call sites pass AnimClass receivers
@@ -431,11 +423,6 @@ int CanAcceptType(int,int);  // 0x452670
     bool StubReturnFalse();  // 0x459D80
     bool StubReturnFalse3();  // 0x459DF0
     bool StubReturnFalse4();  // 0x459E00
-    bool StubReturnFalse10();  // 0x459E10
-    bool StubReturnFalse11();  // 0x459E20
-    bool StubReturnFalse12();  // 0x459E30
-    bool StubReturnFalse13();  // 0x459E40
-    bool StubReturnFalse14();  // 0x459E50
     int MissionStubReturnZero();  // 0x459870
     int MissionStubReturnZero2();  // 0x459880
     int MissionStubReturnZero3();  // 0x459890
@@ -503,7 +490,6 @@ int CanAcceptType(int,int);  // 0x452670
     uint32_t                              LaserFenceFrame;
     uint32_t                              FirestormWallFrame;
     virtual void g_var_9bbfff(void *, int);  // W20M26 vt+0x100 (canon ('buildingclass', 'HouseClass::UpdateConstruction'))
-    virtual void MissionDispatch(int, int);  // W20M26 vt+0x1E8 (canon ('buildingclass', 'ParticleClass::MissionDispatch'))
     virtual int ThunkTo159x4(int);  // W20M26 vt+0x274 (canon ('buildingclass', 'ObjectClass::ThunkTo159x4'))
     virtual int ThunkTo636(int, int);
     virtual int Vt46Thunk();  // vt+0x2BC (canon)

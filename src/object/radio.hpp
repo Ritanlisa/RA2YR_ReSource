@@ -10,32 +10,42 @@ enum class RadioCommand : int;
 
 class RadioClass : public MissionClass {
 public:
-    int RemoveElement(int a1, void* a2);  // 0x65A970 vt+636 (canon RadioClass 2 参; raw ret int; g57w10 r4 item5)
-    virtual HRESULT __stdcall Load(IStream* stream) override;  // 0x65AB80
-    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;  // 0x65AC40
 
-    virtual ~RadioClass() = default; // 0x65A750
+    // === X134: inherited-range overrides (Radio binary 0x7F0508 slots 0-156 where RVA != MissionClass) ===
+    virtual HRESULT __stdcall Load(IStream* stream) override;  // X134 slot 5 = 0x65AB80 (def merged from LoadState)
+    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;  // X134 slot 6 = 0x65AC40 (def merged from SaveState)
+    virtual int Unlink(int a1, int a2) override;  // X134 slot 10 = 0x65AAC0 (signals: ExecuteAction)
+    virtual int ProcessPower() override;  // X134 slot 13 = 0x65AB10 (signals: PowerDrainUpdate; base arity 0 per I525)
+    virtual AbstractClass** Undeploy() override;  // X134 slot 53 = 0x65AA80 (signals: ProcessCmd)
+    virtual int ProcessInputKey(int a1, int a2, int a3) override;  // X134 slot 101 = 0x65A820 (signals: ProcessGroupInput)
+
+    // ========================================================================
+    // X134: RadioClass own virtuals -- binary table 0x7F0508 slots [157]-[160] (4)
+    // declaration order = slot order; arity = Capstone/decompiled head.
+    // ========================================================================
+    virtual int ThunkTo159x4();  // X134 slot 157 = 0x65ACB0 (thunk family to RemoveElement)
+    virtual int ThunkTo636();  // X134 slot 158 = 0x65AAA0 (thunk to byte-0x27C family)
+    virtual int RemoveElement(int a1, void* a2, int a3);  // X134 slot 159 = 0x65A970 (promoted; 3 stack args per vtable callsites)
+    virtual int UpdateObjects();  // X134 slot 160 = 0x65ACE0
+
+    virtual ~RadioClass() = default; // X134: slot 8 = 0x65AEB0 (deleting dtor; 0x65A750 = complete dtor)
 
     // unmatched: no callgraph reference and no git history record
-    virtual RadioCommand sendToFirstLink(RadioCommand command);
+    RadioCommand sendToFirstLink(RadioCommand command);
     // unmatched: no callgraph reference and no git history record
-    virtual RadioCommand sendCommand(RadioCommand command, TechnoClass* recipient);
+    RadioCommand sendCommand(RadioCommand command, TechnoClass* recipient);
     // unmatched: no callgraph reference and no git history record
-    virtual RadioCommand sendCommandWithData(RadioCommand command, AbstractClass*& inout, TechnoClass* recipient);
+    RadioCommand sendCommandWithData(RadioCommand command, AbstractClass*& inout, TechnoClass* recipient);
     // wrapper: delegates to RadioClass::RadioClass at 0x65A750
-    virtual void sendToEachLink(RadioCommand command);
+    void sendToEachLink(RadioCommand command);
 
-    virtual void ExecuteAction(TechnoClass* obj, bool clear);
+    void ExecuteAction(TechnoClass* obj, bool clear);
     // 0x65AD90 -- Linear search for linked object index
-    virtual int FindLinkIndex(TechnoClass* obj);  // 0x65AD90
-    virtual int PowerDrainUpdate(int a2);
-    virtual void ProcessCmd();
-    // 0x65AB80 -- Load radio link state from stream
-    virtual HRESULT __stdcall LoadState(IStream* stream);  // 0x65AB80
-    // 0x65AC40 -- Save radio link state to stream
-    virtual HRESULT __stdcall SaveState(IStream* stream, int clear_dirty);  // 0x65AC40
+    int FindLinkIndex(TechnoClass* obj);  // 0x65AD90
+    int PowerDrainUpdate(int a2);
+    void ProcessCmd();
     // 0x65AE60 -- Resize radio link array
-    virtual void SetLinkCount(int count);  // 0x65AE60
+    void SetLinkCount(int count);  // 0x65AE60
 
     // unmatched: no callgraph reference and no git history record
     TechnoClass* const& getNthLink(int idx = 0) const;

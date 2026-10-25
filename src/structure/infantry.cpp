@@ -424,10 +424,10 @@ bool InfantryClass::CanDeployAtCell(int16_t *a2, int16_t *a3)
   unsigned __int8 *v11; // ecx
   int v12; // eax
 
-  this->vt_slot_456(this); /*0x5221d8*/
+  this->GetZAboveGround(); /*0x5221d8*/
   if ( HouseClass::IonSensitivesShouldBeOffline() ) /*0x5221e4*/
     return 0; /*0x5221f3*/
-  if ( this->vt_slot_456(this) > 0 ) /*0x522202*/
+  if ( this->GetZAboveGround() > 0 ) /*0x522202*/
     return 1; /*0x522202*/
   if ( (unsigned __int8)House::IsCurrentPlayer((House *)this->owner) ) /*0x52220e*/
   {
@@ -1699,7 +1699,7 @@ int InfantryClass::GetIdleTimer()
   SequenceAnim = this->SequenceAnim; /*0x521328*/
   if ( SequenceAnim != 27 && SequenceAnim != 28 && SequenceAnim != 29 && SequenceAnim != 30 ) /*0x521340*/
   {
-    v16 = (House *)this->vt_slot_60(this); /*0x5214fb*/
+    v16 = (House *)this->COMStub_Return0_15(); /*0x5214fb*/
     if ( !(unsigned __int8)House::IsCurrentPlayer(v16) ) /*0x521500*/
     {
       Type = this->Type; /*0x52150d*/
@@ -1759,7 +1759,7 @@ int InfantryClass::GetIdleTimer()
     return -1; /*0x521386*/
   if ( v3->qD37 ) /*0x52138c*/
   {
-    v5 = (__int16 *)this->vt_slot_440(this, v26); /*0x5213a3*/
+    v5 = (__int16 *)this->GetCellCoords_Alt( v26); /*0x5213a3*/
     v6 = (Concurrency::details::SchedulerBase *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v5); /*0x5213af*/
     NumberOfActiveVirtualProcessors_SchedulerBase_details_Concurrency__uint_BEIXZ = (CellClass *)_GetNumberOfActiveVirtualProcessors_SchedulerBase_details_Concurrency__uint_BEIXZ(v6); /*0x5213c1*/
     v8 = *(unsigned int *)(*(unsigned int *)this->vt_slot_1016(this, 1) + 344); /*0x5213cb*/
@@ -1767,7 +1767,7 @@ int InfantryClass::GetIdleTimer()
       || CellClass::GetOccupiedRatio(NumberOfActiveVirtualProcessors_SchedulerBase_details_Concurrency__uint_BEIXZ) < v8 / 3 )
     {
       ptr_0 = this->ptr_0; /*0x5213f4*/
-      v10 = (__int16 *)this->vt_slot_440(this, v26); /*0x5213fd*/
+      v10 = (__int16 *)this->GetCellCoords_Alt( v26); /*0x5213fd*/
       v11 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v10); /*0x521409*/
       (*(void (**)(InfantryClass *, void *))(ptr_0 + 968))(this, v11); /*0x521411*/
       if ( !this->vt_slot_960(this, this->target, 1, 1) ) /*0x521426*/
@@ -4028,14 +4028,14 @@ int InfantryClass::EvaluateTarget()
           else
           {
             if ( !(*(unsigned __int8 (**)(InfantryClass *))(v23->ptr_0 + 468))(v23) /*0x51c36f*/
-              && (this->vt_slot_388(this) == 7
-               || this->vt_slot_388(this) == 8
-               || this->vt_slot_388(this) == 9
-               || this->vt_slot_388(this) == 17
+              && (this->processStateUpdate() == 7
+               || this->processStateUpdate() == 8
+               || this->processStateUpdate() == 9
+               || this->processStateUpdate() == 17
                && *(unsigned char *)&this->Type->C4_2
-               || (this->vt_slot_388(this) == 11
-                || this->vt_slot_388(this) == 25
-                || this->vt_slot_388(this) == 5)
+               || (this->processStateUpdate() == 11
+                || this->processStateUpdate() == 25
+                || this->processStateUpdate() == 5)
                && *(unsigned char *)&this->Type->Engineer_2) )
             {
               if ( v23 == (InfantryClass *)this->movementDestination /*0x51c3c8*/

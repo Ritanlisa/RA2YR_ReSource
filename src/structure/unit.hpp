@@ -66,7 +66,7 @@ public:
 
     // === Phase 3: Harvest/Unload ===
     // 0x4151e0 — merged harvest+unload state machine (case 3 = unload logic)
-    int Mission_Harvest() override;
+    int Mission_Harvest() ;
     int ProcessResourceHarvesting();  // 0x73D450
     UnitClass* updateHarvesting();  // 0x4C2C10
     int UnloadPassengers(int placementType);  // 0x6B4BE0
@@ -111,7 +111,7 @@ public:
     virtual int SaveState(void* aP0, void* a1, void* aP2);  // 0x6B4F00
 
     // === Phase 3: Per-Frame & AI ===
-    int PowerDrainUpdate(int a2) override;  // 0x744640
+    int PowerDrainUpdate(int a2) ;  // 0x744640
     virtual int PerFrameUpdate();  // 0x746810
     virtual int HandleTargetDestroyed(void* a1, void* aP2);  // 0x7446E0
     int CheckStatus();  // 0x6B4F20

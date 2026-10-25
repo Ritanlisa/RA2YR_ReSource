@@ -203,7 +203,7 @@ void RadioClass::ProcessCmd()
 // IStream::Read count → resize → read each link ptr →
 // ObjectPtr::RegisterForTracking for each link.
 // ============================================================
-HRESULT RadioClass::LoadState(IStream* stream)
+HRESULT __stdcall RadioClass::Load(IStream* stream)
 {
     if (!stream)
         return E_FAIL;
@@ -260,7 +260,7 @@ HRESULT RadioClass::LoadState(IStream* stream)
 // IDA: AbstractClass::SaveLoad_Prefix(this, stream, clear_dirty) →
 // IStream::Write count → write each link pointer.
 // ============================================================
-HRESULT RadioClass::SaveState(IStream* stream, int clear_dirty)
+HRESULT __stdcall RadioClass::Save(IStream* stream, int clear_dirty)
 {
     if (!stream)
         return E_FAIL;
@@ -311,10 +311,20 @@ namespace ra2 { namespace game {
 
 // --- RadioClass ---
 
-HRESULT __stdcall RadioClass::Load(IStream* stream) { return S_OK; }
-HRESULT __stdcall RadioClass::Save(IStream* stream, int clear_dirty) { return S_OK; }
 TechnoClass* const& RadioClass::getNthLink(int idx) const { return radioLinks[idx]; }
 bool RadioClass::hasAnyLink() const { return radioLinks.Capacity > 0; }
+
+// ============================================================================
+// X134: slot placeholder definitions (bodies pending IDA-faithful translation)
+// ============================================================================
+int RadioClass::Unlink(int a1, int a2) { (void)a1; (void)a2; return 0; }  // slot 10 = 0x65AAC0
+int RadioClass::ProcessPower() { return 0; }  // slot 13 = 0x65AB10 (arity divergence: impl reads 1 arg; I525)
+AbstractClass** RadioClass::Undeploy() { return 0; }  // slot 53 = 0x65AA80
+int RadioClass::ProcessInputKey(int a1, int a2, int a3) { (void)a1; (void)a2; (void)a3; return 0; }  // slot 101 = 0x65A820
+int RadioClass::ThunkTo159x4() { return 0; }  // slot 157 = 0x65ACB0
+int RadioClass::ThunkTo636() { return 0; }  // slot 158 = 0x65AAA0
+int RadioClass::RemoveElement(int a1, void* a2, int a3) { (void)a1; (void)a2; (void)a3; return 0; }  // slot 159 = 0x65A970
+int RadioClass::UpdateObjects() { return 0; }  // slot 160 = 0x65ACE0
 
 } // namespace game
 } // namespace ra2

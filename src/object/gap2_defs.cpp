@@ -3679,7 +3679,7 @@ int MissionClass::ForceMission()
 }
 // 0x5B3040
 namespace ra2 { namespace game { 
-int ra2::game::MissionClass::GetPrimaryOrFallback() {
+int ra2::game::MissionClass::processStateUpdate() {
   int result; // eax
 
   result = this->currentMission; /*0x5b3040*/

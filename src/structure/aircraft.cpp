@@ -428,7 +428,7 @@ int AircraftClass::Mission_Attack()
             AircraftClass_field_bool_6D5 = true;
             return 1;
         }
-        this->hasValidTarget();  /* G57w9: raw 0x5B3A10 is 1-arg thiscall (this only); decl MissionClass::hasValidTarget q000 508 */
+        this->HasValidTarget();  /* G57w9: raw 0x5B3A10 is 1-arg thiscall (this only); decl MissionClass::hasValidTarget q000 508 */
         AircraftClass_field_bool_6D5 = true;
         return 1;
     }

@@ -1078,8 +1078,8 @@ void TechnoClass::UpdateCloak(bool unknown)
     if (!isCloakableFlag)
         return;
 
-    bool should_cloak = shouldBeCloaked();
-    bool should_uncloak = shouldNotBeCloaked();
+    bool should_cloak = ShouldBeCloaked();
+    bool should_uncloak = ShouldNotBeCloaked();
 
     if (should_cloak && cloakState != (uint32_t)(gamemd::CloakState::Cloaked))
         Cloak(true);

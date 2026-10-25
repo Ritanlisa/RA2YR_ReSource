@@ -1376,7 +1376,7 @@ int UnitClass::SimpleDeployerUndeploy()
         }
         this->deployAnim = (int)v9; /*0x739de3*/
         BuildingClass::AimTurret((BuildingClass *)v9, this); /*0x739de9*/
-        *(unsigned int *)&this->deployAnim->AnimClass_field_0xD4 = this->vt_slot_484(this); /*0x739dfe*/
+        *(unsigned int *)&this->deployAnim->AnimClass_field_0xD4 = this->COMStub_Return0_121(); /*0x739dfe*/
       }
       deployAnim = this->deployAnim; /*0x739e04*/
       this->animation[0] = *(unsigned int *)(deployAnim->AnimClass_field_0xC8 + 692); /*0x739e16*/
@@ -1394,7 +1394,7 @@ int UnitClass::SimpleDeployerUndeploy()
     }
     if ( this->IsDisguised() ) /*0x739e5a*/
       this->vt_slot_1136(this); /*0x739e68*/
-    v2 = this->vt_slot_132(this); /*0x739e72*/
+    v2 = this->COMStub_Return0_33(); /*0x739e72*/
     if ( *(unsigned int *)(v2 + 1392) != -1 ) /*0x739e7f*/
     {
       v17 = this->location[0]; /*0x739e8f*/
@@ -2630,7 +2630,7 @@ int UnitClass::CalcMoveTarget()
 
   if ( *(unsigned int *)(*((unsigned int *)dword_8B413C + this->tubeIndex[0]) + 4 * this->unknownBool685[0] + 48) != -1 ) /*0x735a20*/
   {
-    v2 = (Vector3 *)this->vt_slot_72(this); /*0x735a2f*/
+    v2 = (Vector3 *)this->GetInvalidCoord(this); /*0x735a2f*/
     unknownCoords568 = this->unknownCoords568; /*0x735a32*/
     v4 = Vector3::Subtract(v2, &ObjectVector_field_0x08, this->unknownCoords568); /*0x735a40*/
     Coord::Length((Coord *)v4); /*0x735a47*/
@@ -2819,7 +2819,7 @@ LABEL_24:
   v81 = v57; /*0x735fbe*/
   v80 = (SWORD1(v73[0]) << 8) + 128; /*0x735fdb*/
   v79 = (SLOWORD(v73[0]) << 8) + 128; /*0x735fe3*/
-  this->vt_slot_436(this, &v79); /*0x735fec*/
+  this->SetPosition( &v79); /*0x735fec*/
   v58 = this->ptr_0; /*0x735ff2*/
   this->tubeIndex[0] = -1; /*0x735ff8*/
   (*(void (**)(UnitClass *, int))(v58 + 292))(this, 1); /*0x735fff*/

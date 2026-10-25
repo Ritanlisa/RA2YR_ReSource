@@ -53,8 +53,8 @@ int InfantryClass::ScanTarget(int * a1)
   unsigned char v20[12]; // [esp+54h] [ebp-18h] BYREF
   unsigned char v21[12]; // [esp+60h] [ebp-Ch] BYREF
 
-  if ( *(unsigned char *)(this->vt_slot_132(this) + 912) /*0x4d4dde*/
-    && !this->vt_slot_456(this) )
+  if ( *(unsigned char *)(this->COMStub_Return0_33() + 912) /*0x4d4dde*/
+    && !this->GetZAboveGround() )
   {
     ptr_0 = this->ptr_0; /*0x4d4de8*/
     PlacementCellsAlt = (__int16 *)MapClass::FindPlacementCellsAlt((char *)this, &v17, (int)this); /*0x4d4df4*/

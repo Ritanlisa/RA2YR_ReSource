@@ -36,11 +36,11 @@ public:
     virtual int IsDeployed() const;
     virtual bool PlayAnim(Sequence index, bool force = false, bool randomStartFrame = false);
 
-    int Mission_Enter() override;
+    int Mission_Enter() ;
     // wrapper: delegates to AircraftClass::Mission_Enter at 0x4166C0
-    int Mission_ParaDropApproach() override;
+    int Mission_ParaDropApproach() ;
     // wrapper: delegates to AircraftClass::Mission_Enter at 0x4166C0
-    int Mission_ParaDropOverfly() override;
+    int Mission_ParaDropOverfly() ;
 
     // === Phase 3: Deploy/Undeploy ===
     void ProcessDeploy() override;  // 0x4D5350
@@ -89,7 +89,7 @@ public:
     int CheckAndApplyBomb();  // 0x521DD0
 
     // === Phase 3: Per-Frame & AI ===
-    int PowerDrainUpdate(int a2) override;  // 0x521C90
+    int PowerDrainUpdate(int a2) ;  // 0x521C90
     virtual int PerFrameUpdate();  // 0x517CC0
     virtual int HandleTargetDestroyed();  // 0x51AA10
     int ProcessUpdate();  // 0x51F250

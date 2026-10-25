@@ -1195,7 +1195,7 @@ int UnitClass::Mission_Harvest()
   switch ( this->missionStatus )
   {
     case 0:
-      if ( !this->vt_slot_456(this)
+      if ( !this->GetZAboveGround()
         && *&this->pitchAngle == 0.0
         && ((movementDestination = this->movementDestination) == 0
          || (v3 = this->location[0],
@@ -1212,7 +1212,7 @@ int UnitClass::Mission_Harvest()
       }
       else if ( this->movementDestination
              || !*(unsigned char *)&this->Type->IsDropship
-             || this->vt_slot_456(this) <= 0 )
+             || this->GetZAboveGround() <= 0 )
       {
         if ( this->movementDestination )
         {
@@ -1299,21 +1299,21 @@ int UnitClass::Mission_Harvest()
         {
           if ( *(unsigned char *)&this->Type->__pad_DFC ) /*0x4154dd*/
           {
-            this->vt_slot_292(this, 0); /*0x4154ed*/
+            this->UpdateProductionDisplay( 0); /*0x4154ed*/
             FootClass::MissionMoveCarryallLand((FootClass *)this); /*0x4154f5*/
-            this->vt_slot_292(this, 1); /*0x415500*/
+            this->UpdateProductionDisplay( 1); /*0x415500*/
           }
           else
           {
             v26 = LinkedList::Pop((LinkedList *)this->passengers); /*0x41551a*/
-            v27 = (unsigned short *)this->vt_slot_440( /*0x415522*/
+            v27 = (unsigned short *)this->GetCellCoords_Alt( /*0x415522*/
                              this,
                              v33,
                              this);
             MapClass::ApplyOverlayReveal((MapClass *)&dword_87F7E8, v27, v29); /*0x41552e*/
-            if ( this->vt_slot_256(this, v26) ) /*0x41553e*/
+            if ( this->COMStub_64(this, v26) ) /*0x41553e*/
               v26->u8_424 = 0; /*0x415548*/
-            v28 = (unsigned short *)this->vt_slot_440(this, v34); /*0x415559*/
+            v28 = (unsigned short *)this->GetCellCoords_Alt( v34); /*0x415559*/
             MapClass::FillRevealBuffer((MapClass *)&dword_87F7E8, v28, this); /*0x415565*/
             if ( !*(unsigned char *)(v26 + 1060) && v26->u32_5D4 ) /*0x415574*/
               TeamClass::AddMember((int *)this->team, v26, 0); /*0x415587*/
@@ -1398,7 +1398,7 @@ namespace gamemd {
       (*(void (__thiscall **)(unsigned char *))(*(unsigned int *)v3 + 380))(v3); /*0x424bb0*/
       v3[132] = 0; /*0x424bb6*/
     }
-    v7 = (int *)this->vt_slot_72(v21); /*0x424bc6*/
+    v7 = (int *)this->GetInvalidCoord(v21); /*0x424bc6*/
     v18 = *v7; /*0x424bcb*/
     v19 = v7[1]; /*0x424bd2*/
     v8 = v7[2]; /*0x424bda*/
@@ -1411,7 +1411,7 @@ namespace gamemd {
   }
   if ( bug ) /*0x424c0b*/
   {
-    v11 = (int *)this->vt_slot_72(v21); /*0x424c16*/
+    v11 = (int *)this->GetInvalidCoord(v21); /*0x424c16*/
     v12 = *v11; /*0x424c19*/
     v13 = v11[1]; /*0x424c1c*/
     v22 = v11[2]; /*0x424c22*/
@@ -3058,7 +3058,7 @@ namespace gamemd {
       bug->MissionDispatch(20, 0); /*0x43cc41*/
       goto LABEL_144; /*0x43cc47*/
     case 0xCu:
-      if ( bug->GetPrimaryOrFallback() != 19 ) /*0x43cc59*/
+      if ( bug->processStateUpdate() != 19 ) /*0x43cc59*/
       {
         bug->MissionDispatch(5, 0); /*0x43cc67*/
         if ( *(unsigned char *)(bug->Type + 5817) ) /*0x43cc73*/
@@ -3238,9 +3238,9 @@ namespace gamemd {
       TechnoClass::Mission_RepairDispatch(v62, (int)v64, (int)v64, v66, v53); /*0x43c305*/
       if ( !(uint8_t)Object::IsAlliedWithObjectHouse((Object *)bug->owner, (int)v62) ) /*0x43c311*/
         return 0; /*0x43c318*/
-      if ( bug->GetPrimaryOrFallback() == 18 ) /*0x43c333*/
+      if ( bug->processStateUpdate() == 18 ) /*0x43c333*/
         return 10; /*0x43c333*/
-      if ( bug->GetPrimaryOrFallback() == 19 ) /*0x43c346*/
+      if ( bug->processStateUpdate() == 19 ) /*0x43c346*/
         return 10; /*0x43c346*/
       if ( !bug->BuildingClass_field_int_534 ) /*0x43c34c*/
         return 10; /*0x43c34c*/
@@ -3357,7 +3357,7 @@ namespace gamemd {
         return 10; /*0x43cc24*/
       return 1; /*0x43cc36*/
     case 0x15u:
-      if ( bug->GetPrimaryOrFallback() == 19 ) /*0x43c6ff*/
+      if ( bug->processStateUpdate() == 19 ) /*0x43c6ff*/
         return 10; /*0x43c70d*/
       v13 = (unsigned char *)bug->Type; /*0x43c710*/
       if ( v13->UnitAbsorb || v13->InfantryAbsorb ) /*0x43c724*/
@@ -3578,10 +3578,10 @@ namespace gamemd {
     (*((unsigned char *)&(result))) = *(unsigned char *)(bug->Type + 5889); /*0x43d067*/
     if ( !(unsigned char)result ) /*0x43d06f*/
     {
-      if ( bug->GetPrimaryOrFallback() != 24 /*0x43d091*/
+      if ( bug->processStateUpdate() != 24 /*0x43d091*/
         || (result = Flag::CheckNone((Flag *)bug->storedTiberium), (unsigned char)result) )
       {
-        if ( bug->GetPrimaryOrFallback() == 16 && *(unsigned int *)(bug->Type + 5348) ) /*0x43d0ac*/
+        if ( bug->processStateUpdate() == 16 && *(unsigned int *)(bug->Type + 5348) ) /*0x43d0ac*/
         {
           Type = AbstractClass::GetType((AbstractClass *)bug->Factory); /*0x43d0bc*/
           if ( Type && *(unsigned char *)(Type->GetSpecialValue() + 3476) ) /*0x43d0cf*/
@@ -3685,7 +3685,7 @@ namespace gamemd {
   int v8; // eax
   unsigned int v9[2]; // [esp+Ch] [ebp-8h] BYREF
 
-  this->vt_slot_440(v9); /*0x43e7c1*/
+  this->GetCellCoords_Alt(v9); /*0x43e7c1*/
   if ( this->isSelected[0] /*0x43e80c*/
     && ((uint8_t)HouseClass::IsAlliedWith((HouseClass *)this->owner)
      || ((1 << *(unsigned int *)(dword_A83D4C->relatedTagsCapacity + 184)) & this->displayProductionTo) != 0) )
@@ -3779,7 +3779,7 @@ namespace gamemd {
   {
     if ( Type->Gate ) /*0x43efd0*/
       v3 = *(unsigned int *)(Type + 3844) + Type->u32_F08 - v3 - 1; /*0x43efeb*/
-    if ( bug->GetPrimaryOrFallback() == 19 ) /*0x43effa*/
+    if ( bug->processStateUpdate() == 19 ) /*0x43effa*/
       return *(unsigned int *)(bug->Type + 12 * bug->BuildingClass_field_int_534 + 3844) /*0x43f02b*/
            + *(unsigned int *)(bug->Type + 12 * bug->BuildingClass_field_int_534 + 3848)
            - v3
@@ -5707,13 +5707,13 @@ namespace gamemd {
   {
     if ( v4 == -1 ) /*0x447128*/
     {
-      if ( bug->GetPrimaryOrFallback() == 19 ) /*0x44717b*/
+      if ( bug->processStateUpdate() == 19 ) /*0x44717b*/
         goto LABEL_12; /*0x44717b*/
       goto LABEL_11; /*0x44717b*/
     }
     if ( !v4 ) /*0x44712c*/
     {
-      result = bug->GetPrimaryOrFallback(); /*0x447158*/
+      result = bug->processStateUpdate(); /*0x447158*/
       if ( result != 19 ) /*0x447161*/
         return result; /*0x447161*/
       goto LABEL_12; /*0x447161*/
@@ -5726,7 +5726,7 @@ namespace gamemd {
         return PlayVocClass(*&dword_8871E0->q70C, 0x2000, 1.0, 0); /*0x4471bc*/
       return result; /*0x4471c2*/
     }
-    result = bug->GetPrimaryOrFallback(); /*0x447135*/
+    result = bug->processStateUpdate(); /*0x447135*/
     if ( result != 19 ) /*0x44713e*/
     {
       (*((unsigned char *)&(result))) = bug->C4Applied[0]; /*0x447144*/
@@ -10217,8 +10217,8 @@ namespace gamemd {
                 && BridgeSegment
                 && BridgeSegment->IsPoweredActive()
                 && BridgeSegment->u8_6EA
-                && BridgeSegment->GetPrimaryOrFallback() != 19
-                && BridgeSegment->GetPrimaryOrFallback() != 18 )
+                && BridgeSegment->processStateUpdate() != 19
+                && BridgeSegment->processStateUpdate() != 18 )
               {
                 v28 = 1; /*0x4535fa*/
                 switch ( v32 ) /*0x453604*/

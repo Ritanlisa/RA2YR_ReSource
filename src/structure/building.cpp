@@ -1368,7 +1368,7 @@ bool BuildingClass::ValidateFoundation()  // raw body 0x44efb0 follows
   unsigned __int16 *v61; // [esp+78h] [ebp+8h]
   int v62; // [esp+7Ch] [ebp+Ch] BYREF
 
-  v2 = (int *)this->vt_slot_440(this, &v50); /*0x44efc2*/
+  v2 = (int *)this->GetCellCoords_Alt( &v50); /*0x44efc2*/
   Type = this->Type; /*0x44efc8*/
   v4 = *v2; /*0x44efce*/
   v5 = v54; /*0x44efd0*/
@@ -2572,7 +2572,7 @@ int BuildingClass::UpdateConstruction()
       if ( !v29->Naval ) /*0x44416f*/
       {
         TechnoClass::SetFocus((TechnoClass *)v244, this->focus); /*0x44449b*/
-        if ( this->vt_slot_388(this) == 16 ) /*0x4444ad*/
+        if ( this->processStateUpdate() == 16 ) /*0x4444ad*/
         {
           v55 = 0; /*0x4444b9*/
           v209 = *(unsigned int *)&this->owner->bunkersCount; /*0x4444c0*/
@@ -2618,13 +2618,13 @@ int BuildingClass::UpdateConstruction()
           (*(void (**)(char *, int))(*(unsigned int *)v244 + 292))(v244, 1); /*0x4445c9*/
           this->vt_slot_632(this, 2, v244); /*0x4445d6*/
           this->vt_slot_632(this, 24, v244); /*0x4445e3*/
-          this->vt_slot_488(this, 16, 0); /*0x4445f0*/
+          this->MissionDispatch( 16, 0); /*0x4445f0*/
           goto LABEL_99; /*0x4445f6*/
         }
         goto LABEL_146; /*0x444594*/
       }
       if ( !(unsigned __int8)Team::AllMembersValid((Team *)this) ) /*0x444177*/
-        this->vt_slot_488(this, 16, 0); /*0x444187*/
+        this->MissionDispatch( 16, 0); /*0x444187*/
       v30 = (unsigned int *)this->vt_slot_72(this, &v213); /*0x444196*/
       v203[0] = *v30 / 256; /*0x4441a9*/
       focus = this->focus; /*0x4441b2*/
@@ -2635,7 +2635,7 @@ int BuildingClass::UpdateConstruction()
         v32 = (unsigned int *)(*(int (**)(int, int *))(*(unsigned int *)focus + 72))(focus, &v212); /*0x4441df*/
         v33 = *v32 / 256; /*0x44420b*/
         v34 = v32[1] / 256; /*0x44420e*/
-        v35 = (__int16 *)this->vt_slot_440(this, v230); /*0x444211*/
+        v35 = (__int16 *)this->GetCellCoords_Alt( v230); /*0x444211*/
         v36 = *v35; /*0x444220*/
         v204 = (__int16)v33; /*0x444223*/
         v37 = v35[1]; /*0x44422e*/
@@ -5237,13 +5237,13 @@ LABEL_215:
 
     }
 
-    if ( v140->GetPrimaryOrFallback() != 7 /*0x44c8b5*/
+    if ( v140->processStateUpdate() != 7 /*0x44c8b5*/
  && this->ThunkTo636(19, v140) == 1 )
     {
 
       v150 = 1; /*0x44c8bb*/
 
-      if ( v140->GetPrimaryOrFallback() ) /*0x44c8bf*/
+      if ( v140->processStateUpdate() ) /*0x44c8bf*/
 
       {
 

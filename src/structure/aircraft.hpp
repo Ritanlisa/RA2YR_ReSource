@@ -75,14 +75,14 @@ public:
     virtual ~AircraftClass() override = default;  // 0x414080
 
     // === Phase 3: Missions ===
-    int Mission_Attack() override;
+    int Mission_Attack() ;
     // wrapper: delegates to AircraftClass::Mission_Attack at 0x417FE0
-    int Mission_Return() override;
+    int Mission_Return() ;
     // wrapper: delegates to UnitClass::Mission_Harvest at 0x4151E0
-    int Mission_Hunt() override;
+    int Mission_Hunt() ;
     // wrapper: delegates to UnitClass::Mission_Harvest at 0x4151E0
-    int Mission_Retreat() override;
-    int Mission_Enter() override;
+    int Mission_Retreat() ;
+    int Mission_Enter() ;
     int Mission_Transport();  // 0x419C80
     int MissionDispatch(void * a2, int a3, void ** a4);  // 0x4190B0 (G42.42l truth arity)
 
@@ -142,7 +142,7 @@ public:
     int CheckStateFlag2();  // 0x41BE90
 
     // === Phase 3: Stubs ===
-    bool StubReturnFalse2() override;  // 0x41BE70
+    bool StubReturnFalse2();  // 0x41BE70
     bool StubReturnFalse3();  // 0x5F43B0
     bool StubReturnFalse4();  // 0x5F43F0
     int StubReturnTrue();  // X133: slot 95 override (base int); impl 0x5F43C0

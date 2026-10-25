@@ -95,792 +95,911 @@ public:
 public:
     static constexpr AbstractType kObjectDeriveId = static_cast<AbstractType>(0x1);
 
-    virtual HRESULT __stdcall Load(IStream* stream) override;
-    // wrapper: delegates to TechnoClass::ReturnToBaseAndReload at 0x4158E0
-    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;
 
-    virtual ~TechnoClass() = default;  // 0x6F4500
+    virtual ~TechnoClass() = default;  // X134: slot 8 = 0x7106E0 (deleting dtor; 0x6F4500 = complete dtor)
+    // === X134: TechnoClass inherited-range overrides (binary 0x7F4960 slots 0-160 where RVA != RadioClass) ===
+
+    virtual HRESULT __stdcall Load(IStream* stream) override;  // X134 slot 5 = 0x70BF50 (def pending)
+    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;  // X134 slot 6 = 0x70C250 (def pending)
+    virtual int PerFrameUpdate() override;  // X134 slot 9 = 0x6F3F40 (signals: Update)
+    virtual int Unlink(int a1, int a2) override;  // X134 slot 10 = 0x7077C0 (signals: NotifyExpired)
+    virtual int ProcessPower() override;  // X134 slot 13 = 0x70C270 (signals: PowerBeginUpdate; base arity 0 per I525)
+    virtual int computeDistanceSquared() override;  // X134 slot 14 = 0x6F9DB0 (signals: GetID)
+    virtual int COMStub_Return0_15() override;  // X134 slot 15 = 0x6F9DC0 (signals: GetTarget)
+    virtual int DetectCloaked() override;  // X134 slot 23 = 0x6F9E50 (signals: MovementAI::Begin)
+    virtual int ResetPointerIfMatch(int a1) override;  // X134 slot 24 = 0x710410 (signals: ClearPointerRefs)
+    virtual bool COMStub_Return0_25() override;  // X134 slot 25 = 0x6F32D0 (signals: CanInitiateSell)
+    virtual int COMStub_26(int a1, int a2) override;  // X134 slot 26 = 0x703860 (signals: UpdatePowerDrain)
+    virtual int COMStub_28(int a1, int a2, int a3) override;  // X134 slot 28 = 0x700600 (signals: HandleCursor)
+    virtual int COMStub_29(int a1, int a2) override;  // X134 slot 29 = 0x6FFEC0 (signals: HandleCursorClick)
+    virtual int COMStub_Return0_33() override;  // X134 slot 33 = 0x6F3270 (signals: Vt34Thunk)
+    virtual int COMStub_Ret2147483647_35() override;  // X134 slot 35 = 0x708B30 (signals: GetTypeVt28)
+    virtual bool COMStub_Return0_37() override;  // X134 slot 37 = 0x701140 (signals: InfantryClass::CheckHealthDiff)
+    virtual bool COMStub_Return0_39() override;  // X134 slot 39 = 0x7010D0 (signals: HasValidWeapon)
+    virtual bool COMStub_Return0_40() override;  // X134 slot 40 = 0x700C40 (signals: CanReceivePassengers)
+    virtual int GetDrawPosition(int a1, int a2, int a3, int a4, int a5) override;  // X134 slot 44 = 0x6F3AD0 (signals: ComputeTransform; 5 stack args)
+    virtual bool COMStub_Return0_49() override;  // X134 slot 49 = 0x41C010 (signals: AircraftClass::CheckReloadState; semantic: IsDisguised (demoted twin))
+    virtual int COMStub_50(int a1) override;  // X134 slot 50 = 0x41C020 (signals: AircraftClass::CheckReloadTimer)
+    virtual AbstractClass** Undeploy() override;  // X134 slot 53 = 0x6F6AC0 (signals: CleanupDeploy; base ret AbstractClass**)
+    virtual AbstractClass** Deploy(int a1, int a2) override;  // X134 slot 54 = 0x6F6CA0 (signals: FinishDeploy; base ret AbstractClass**, 2 args)
+    virtual int COMStub_Return0_56(int a1) override;  // X134 slot 56 = 0x702D40 (signals: RegisterKill)
+    virtual int COMStub_Return0_57(int a1) override;  // X134 slot 57 = 0x703230 (signals: InfantryClass::RegisterKill)
+    virtual int COMStub_Return0_63() override;  // X134 slot 63 = 0x703850 (signals: Vt279Thunk0)
+    virtual int COMStub_64(int a1, int a2) override;  // X134 slot 64 = 0x7099D0 (signals: IPersistStream::IsDirty)
+    virtual int COMStub_Return0_67(int a1, int a2) override;  // X134 slot 67 = 0x6F60D0 (signals: BuildingClass::DrawSelectionBox)
+    virtual int COMStub_Return0_68(int a1, int a2) override;  // X134 slot 68 = 0x6F5190 (signals: DrawHealthBar (demoted twin keeps semantic body))
+    virtual int COMStub_Return0_71() override;  // X134 slot 71 = 0x6F4A40 (signals: CheckPlayerOwned)
+    virtual int COMStub_Return0_72(int a1, int a2) override;  // X134 slot 72 = 0x70ADC0 (signals: RevealAreaSmall)
+    virtual int UpdateProductionDisplay(int a1) override;  // X134 slot 73 = 0x6F4A70 (signals: UpdateProdWithSound)
+    virtual int COMStub_79(int a1, int a2) override;  // X134 slot 79 = 0x6FC030 (signals: CanMoveToCell)
+    virtual int COMStub_Return0_82(int a1) override;  // X134 slot 82 = 0x6F9DD0 (signals: SetTargetIfAllowed)
+    virtual int HandleSelection() override;  // X134 slot 83 = 0x6FBFA0 (signals: ExecuteMoveCommand)
+    virtual int COMStub_Return0_85(int a1, int a2, int a3) override;  // X134 slot 85 = 0x70E2B0 (signals: IronCurtain)
+    virtual int COMStub_Return0_86() override;  // X134 slot 86 = 0x70E340 (signals: ResetTimer2)
+    virtual int COMStub_Return0_87(int a1) override;  // X134 slot 87 = 0x70E300 (signals: ResetTimer)
+    virtual bool COMStub_Return0_88() override;  // X134 slot 88 = 0x41BF40 (signals: FrameTimer::HasRemaining)
+    virtual int COMStub_89(int a1, int a2) override;  // X134 slot 89 = 0x6F7970 (signals: CheckCellPassable3)
+    virtual int COMStub_90(int a1) override;  // X134 slot 90 = 0x7012C0 (signals: FindLowestDamage)
+    virtual int CreateDestructionEffect(int a1, int a2, int a3, int a4, int a5, int a6, int a7) override;  // X134 slot 91 = 0x701900 (signals: ReceiveDamage_Shield; 7 stack args)
+    virtual int COMStub_Return0_92() override;  // X134 slot 92 = 0x710460 (signals: FreeCaptureManager)
+    virtual int COMStub_Return0_96() override;  // X134 slot 96 = 0x707DD0 (signals: ComputeTotalPowerDrain)
+    virtual int COMStub_Return0_99(int a1) override;  // X134 slot 99 = 0x6F5090 (signals: FootClass::CompleteProduction)
+    virtual int ProcessInputKey(int a1, int a2, int a3) override;  // X134 slot 101 = 0x6F4AB0 (signals: Mission_RepairDispatch; 3 stack args)
+    virtual int IsNotNull(int a1) override;  // X134 slot 102 = 0x6F4960 (signals: SetHouseFlag)
+    virtual bool COMStub_Return0_117() override;  // X134 slot 117 = 0x70C5B0 (signals: GetShroudByte)
+    virtual bool COMStub_Return0_118() override;  // X134 slot 118 = 0x70C5C0 (signals: GetFogByte)
+    virtual bool COMStub_Return0_119() override;  // X134 slot 119 = 0x70C5D0 (signals: HasSubObject)
+    virtual int getCoordCenter2() override;  // X134 slot 120 = 0x70C5F0 (signals: IsNotShrouded)
+    virtual int COMStub_Return0_121() override;  // X134 slot 121 = 0x705D70 (signals: GetBuildAnim)
+    virtual int COMStub_125(int a1, int a2, int a3) override;  // X134 slot 125 = 0x7013A0 (signals: OverrideMission_SyncLog; 3 stack args)
+    virtual int COMStub_126() override;  // X134 slot 126 = 0x7013E0 (signals: BuildingClass::CheckOccupantState)
+
+    // ========================================================================
+    // X134: TechnoClass own virtuals -- binary table 0x7F4960 slots [161]-[308] (148)
+    // declaration order = slot order; arity = Capstone first-retn/4.
+    // ========================================================================
+    virtual int StubReturnFalse_161();  // X134 slot 161 = 0x41BEE0
+    virtual int CheckCellPassability();  // X134 slot 162 = 0x70C5A0
+    virtual int IsNotAircraftOrBuilding() const;  // X134 slot 163 = 0x6F3280
+    virtual int StubReturnFalse_164();  // X134 slot 164 = 0x459D80
+    virtual bool ShouldSelfHealOneStep() const;  // X134 slot 165 = 0x70BE80 (renamed from shouldSelfHealOneStep)
+    virtual int IsInvisible();  // X134 slot 166 = 0x6F9E10
+    virtual int selectTarget();  // X134 slot 167 = 0x41BEF0
+    virtual bool ShouldBeCloaked() const;  // X134 slot 168 = 0x6FBDC0 (renamed from shouldBeCloaked)
+    virtual bool ShouldNotBeCloaked() const;  // X134 slot 169 = 0x6FBC90 (renamed from shouldNotBeCloaked)
+    virtual int GetAnimationValue() const;  // X134 slot 170 = 0x4E0150
+    virtual int HasActiveParam() const;  // X134 slot 171 = 0x701120
+    virtual int CheckCliffTransition() const;  // X134 slot 172 = 0x70C620
+    virtual int ComputeAverageValue() const;  // X134 slot 173 = 0x708BC0
+    virtual int GetAmmoCount() const;  // X134 slot 174 = 0x708C30
+    virtual int Vt46Thunk();  // X134 slot 175 = 0x70ADA0
+    virtual int GetCostMultiplier(int a2, int a3, int a4, int a5, int a6) const;  // X134 slot 176 = 0x708B40
+    virtual int MissionStubReturnZero4();  // X134 slot 177 = 0x459D90
+    virtual int GetFiringAngle() const;  // X134 slot 178 = 0x6FDA00
+    virtual int CheckPlacementTileMatch() const;  // X134 slot 179 = 0x707F60
+    virtual int GetCrewCount() const;  // X134 slot 180 = 0x6F3950 (renamed from getCrewCount)
+    virtual int StubReturnFalse2_181();  // X134 slot 181 = 0x41BF00
+    virtual int StubReturnFalse3_182();  // X134 slot 182 = 0x41BF10
+    virtual int StubReturnFalse4_183();  // X134 slot 183 = 0x41BF20
+    virtual int StubReturnTrue3();  // X134 slot 184 = 0x70D980
+    virtual int SelectWeapon();  // X134 slot 185 = 0x6F3330
+    virtual int CanTargetHouse() const;  // X134 slot 186 = 0x6F3820
+    virtual int GetDrawHeight();  // X134 slot 187 = 0x704350
+    virtual int MissionStubReturnZero5();  // X134 slot 188 = 0x459DA0
+    virtual int ClearLimpetCheck();  // X134 slot 189 = 0x459DB0
+    virtual int COMStub_Return0_190();  // X134 slot 190 = 0x459DC0
+    virtual int GetCellCoordsV2() const;  // X134 slot 191 = 0x70AD50
+    virtual void* GetTurretOffset(void* a1, int a2);  // X134 slot 192 = 0x6F3D60
+    virtual int GetGlobalValue(int* outValue) const;  // X134 slot 193 = 0x708C10
+    virtual int Vt170();  // X134 slot 194 = 0x708D70
+    virtual InfantryTypeClass* GetCrew() const;  // X134 slot 195 = 0x707D20
+    virtual int IsDeadOrInactive() const;  // X134 slot 196 = 0x700D10
+    virtual int CanAttack() const;  // X134 slot 197 = 0x700D50
+    virtual int CalculateROF();  // X134 slot 198 = 0x6FCFA0
+    virtual int ComputeScanDistance() const;  // X134 slot 199 = 0x707E60
+    virtual int StubReturnFalse2_200();  // X134 slot 200 = 0x459DD0
+    virtual int ShouldScanArea() const;  // X134 slot 201 = 0x70D1D0
+    virtual int IsPlayerCellPassable() const;  // X134 slot 202 = 0x70D420
+    virtual int IsCellPassableFor() const;  // X134 slot 203 = 0x70D460
+    virtual int vt_entry_1FC();  // X134 slot 204 = 0x41BF30
+    virtual int COMStub_Return0_205();  // X134 slot 205 = 0x459DE0
+    virtual int FindBridgeCell();  // X134 slot 206 = 0x70F8F0
+    virtual int StubReturnFalse3_207();  // X134 slot 207 = 0x459DF0
+    virtual int StubReturnFalse4_208();  // X134 slot 208 = 0x459E00
+    virtual int StubReturnFalse10();  // X134 slot 209 = 0x459E10
+    virtual int StubReturnFalse11();  // X134 slot 210 = 0x459E20
+    virtual int StubReturnFalse12();  // X134 slot 211 = 0x459E30
+    virtual int StubReturnFalse11_212();  // X134 slot 212 = 0x701190
+    virtual int SetMoveDestination(int a1);  // X134 slot 213 = 0x708D90
+    virtual int GetSecondaryTargetOrFallback() const;  // X134 slot 214 = 0x709020
+    virtual int GetTertiaryTargetOrFallback() const;  // X134 slot 215 = 0x709060
+    virtual int SelectRandomTarget();  // X134 slot 216 = 0x708EB0
+    virtual int GetPrimaryTargetOrFallback() const;  // X134 slot 217 = 0x708DC0
+    virtual int ResponseMove_Pickup();  // X134 slot 218 = 0x708FC0
+    virtual int PickAlternateTarget();  // X134 slot 219 = 0x708E00
+    virtual int VoiceAttack(ObjectClass* target);  // X134 slot 220 = 0x7090A0
+    virtual int RecordEvent();  // X134 slot 221 = 0x6FFE00
+    virtual int ExecuteMissionCmd();  // X134 slot 222 = 0x6FFBE0
+    virtual int HasPassengers() const;  // X134 slot 223 = 0x70EFD0
+    virtual int StubReturnFalse13();  // X134 slot 224 = 0x459E40
+    virtual int StubReturnFalse5();  // X134 slot 225 = 0x41BF80
+    virtual int StubReturnFalse6();  // X134 slot 226 = 0x41BF90
+    virtual int GetMaxSpeed() const;  // X134 slot 227 = 0x70EFE0
+    virtual int DecCounter();  // X134 slot 228 = 0x70D670
+    virtual int OnCellPlacementComplete();  // X134 slot 229 = 0x710670
+    virtual int CanDamageTarget() const;  // X134 slot 230 = 0x70EF00
+    virtual int BeginFiringSequence();  // X134 slot 231 = 0x709820
+    virtual int ProcessDeploymentState();  // X134 slot 232 = 0x6FCD40
+    virtual int IsInRange() const;  // X134 slot 233 = 0x6F7660
+    virtual int ValidateTarget(TechnoClass* target, int weapon_index) const;  // X134 slot 234 = 0x6F77B0
+    virtual int CheckCellPassable2(int a2) const;  // X134 slot 235 = 0x6F7780
+    virtual int CheckCellPassable() const;  // X134 slot 236 = 0x6F7930
+    virtual int CheckAndFireAtTarget();  // X134 slot 237 = 0x6F78D0
+    virtual int vt_entry_68();  // X134 slot 238 = 0x4C9150
+    virtual int Vt240Thunk();  // X134 slot 239 = 0x6FC090
+    virtual int ReadINI(int a1, int a2, int a3);  // X134 slot 240 = 0x6FC0B0
+    virtual int SelectAutoTarget_Start_AU();  // X134 slot 241 = 0x6F8DF0
+    virtual int AssignTarget_SyncLog(int syncFlag);  // X134 slot 242 = 0x6FCDB0
+    virtual int FireWeapon();  // X134 slot 243 = 0x6FDD50
+    virtual int SetIdleState();  // X134 slot 244 = 0x70F850
+    virtual int ProcessCapture();  // X134 slot 245 = 0x7014A0
+    virtual int ComputeAimVector();  // X134 slot 246 = 0x70B280
+    virtual int StubReturnFalse14();  // X134 slot 247 = 0x459E50
+    virtual int GetVt252Byte() const;  // X134 slot 248 = 0x70DD50
+    virtual int CheckTypeFlag1681();  // X134 slot 249 = 0x70DD70
+    virtual int vt_entry_3E8();  // X134 slot 250 = 0x70DD90
+    virtual int CheckTypeFlag1681_2();  // X134 slot 251 = 0x70DDA0
+    virtual int Vt249to254();  // X134 slot 252 = 0x70E120
+    virtual int UpdatePowered();  // X134 slot 253 = 0x70E1A0
+    virtual int SelectVocOrSfx(int a1);  // X134 slot 254 = 0x70E140
+    virtual bool ProcessFrame();  // X134 slot 255 = 0x41BFA0
+    virtual int StubReturnFalse7();  // X134 slot 256 = 0x41BFB0
+    virtual int StubReturnFalse8();  // X134 slot 257 = 0x41BFC0
+    virtual int StubReturnFalse9();  // X134 slot 258 = 0x41BFD0
+    virtual int HandleSellOrRepair();  // X134 slot 259 = 0x701410
+    virtual int UpdateLocomotion(int a1, int a2);  // X134 slot 260 = 0x6FB740
+    virtual int RevealShroud();  // X134 slot 261 = 0x6FB170
+    virtual int RemoveShroud();  // X134 slot 262 = 0x6FB470
+    virtual int UpdateBodyTilt();  // X134 slot 263 = 0x70B570
+    virtual int PushNearbyUnits();  // X134 slot 264 = 0x6F4EB0
+    virtual int StepAnimFrame();  // X134 slot 265 = 0x6FB010
+    virtual int vt_entry_428();  // X134 slot 266 = 0x41BFE0
+    virtual int GetBridgeAwareCoords();  // X134 slot 267 = 0x705CA0
+    virtual int IsNotBusy() const;  // X134 slot 268 = 0x705D50
+    virtual int vt_entry_434();  // X134 slot 269 = 0x41BFF0
+    virtual int COMStub_Return0_270();  // X134 slot 270 = 0x459E60
+    virtual int GetAnimationFlags() const;  // X134 slot 271 = 0x70ED80
+    virtual int CheckFireCooldown() const;  // X134 slot 272 = 0x70EE30
+    virtual int UpdateState();  // X134 slot 273 = 0x706640
+    virtual int vt_entry_448();  // X134 slot 274 = 0x6F60C0
+    virtual int DrawHealthBar();  // X134 slot 275 = 0x6F64A0
+    virtual int DrawPips();  // X134 slot 276 = 0x709A90
+    virtual int DrawVeterancy();  // X134 slot 277 = 0x70A990
+    virtual int DrawPowerIndicator();  // X134 slot 278 = 0x70AA60
+    virtual int TransitionEffectState(int a2);  // X134 slot 279 = 0x7036C0
+    virtual int StartEffectAudio();  // X134 slot 280 = 0x703770
+    virtual int GetRangeModifier() const;  // X134 slot 281 = 0x70D190
+    virtual int StubReturnTrue2();  // X134 slot 282 = 0x41C000
+    virtual int ActivateEffect();  // X134 slot 283 = 0x70E280
+    virtual int CheckAction();  // X134 slot 284 = 0x41C030
+    virtual int IsTimerExpired() const;  // X134 slot 285 = 0x7099E0
+    virtual int StubReturnFalse10_286();  // X134 slot 286 = 0x41C040
+    virtual int COMStub_Return0_287();  // X134 slot 287 = 0x709A20
+    virtual int Stub(void *a2, int a3);  // X134 slot 288 = 0x709A30
+    virtual int CompleteFactoryProduction(int a2, int a3);  // X134 slot 289 = 0x709A40
+    virtual int ScanForEnemies();  // X134 slot 290 = 0x70AF50
+    virtual int RevealAreaConditional();  // X134 slot 291 = 0x70B1D0
+    virtual int vt_entry_68_292();  // X134 slot 292 = 0x4C9150
+    virtual int RadarUpdateOn();  // X134 slot 293 = 0x70CC90
+    virtual int RadarUpdateOff();  // X134 slot 294 = 0x70CCC0
+    virtual int RevealOwnCell();  // X134 slot 295 = 0x70CCF0
+    virtual int OnEnterCell();  // X134 slot 296 = 0x70D990
+    virtual int ClearUnknownFlag();  // X134 slot 297 = 0x70F000
+    virtual int COMStub_Return0_298();  // X134 slot 298 = 0x70F010
+    virtual int StubReturnFalse5_299();  // X134 slot 299 = 0x70F020
+    virtual int StubReturnFalse6_300();  // X134 slot 300 = 0x70F030
+    virtual int checkMovementRestrictions();  // X134 slot 301 = 0x70F040
+    virtual int ProcessCellClearance();  // X134 slot 302 = 0x70F050
+    virtual int GetTypeVt40() const;  // X134 slot 303 = 0x70F070
+    virtual int GetTypeVt41();  // X134 slot 304 = 0x70F090
+    virtual int StubReturnFalse7_305();  // X134 slot 305 = 0x70F0E0
+    virtual int StubReturnFalse8_306();  // X134 slot 306 = 0x70F0F0
+    virtual int COMStub_Return0_307();  // X134 slot 307 = 0x70F100
+    virtual int StubReturnFalse9_308();  // X134 slot 308 = 0x70F110
 
     // wrapper: delegates to TechnoClass::DTOR at 0x6F4500
-    virtual bool isUnitfactory() const;
+    bool isUnitfactory() const;
     // wrapper: delegates to TechnoClass::DTOR at 0x6F4500
-    virtual bool isCloakable() const;
+    bool isCloakable() const;
     // wrapper: delegates to TechnoClass::DTOR at 0x6F4500
-    virtual bool canScatter() const;
+    bool canScatter() const;
     // wrapper: delegates to TechnoClass::DTOR at 0x6F4500
-    virtual bool belongsToATeam() const;
-    virtual bool shouldSelfHealOneStep() const;  // 0x70BE80
+    bool belongsToATeam() const;
     // wrapper: delegates to TechnoClass::ShouldSelfHealOneStep at 0x70BE80
-    virtual bool isVoxel() const;
-    virtual bool canSelfRepair();  // 0x70FB50
-    virtual bool shouldBeCloaked() const;  // 0x6FBDC0
-    virtual bool shouldNotBeCloaked() const;  // 0x6FBC90
-    virtual bool IsDisguised() const;  // 0x41C010 (ptr_0 slot 196, all Techno-family tables share this impl)
+    bool isVoxel() const;
+    bool canSelfRepair();  // 0x70FB50
+    bool IsDisguised() const;  // 0x41C010 (ptr_0 slot 196, all Techno-family tables share this impl)
     // wrapper: delegates to TechnoClass::ShouldNotBeCloaked at 0x6FBC90
-    virtual DirStruct* getFacing(DirStruct* buffer) const;
+    DirStruct* getFacing(DirStruct* buffer) const;
     // wrapper: delegates to TechnoClass::ShouldNotBeCloaked at 0x6FBC90
-    virtual bool isArmed() const;
+    bool isArmed() const;
     // wrapper: delegates to TechnoClass::ShouldNotBeCloaked at 0x6FBC90
-    virtual void onSpawnComplete() const;
+    void onSpawnComplete() const;
     // wrapper: delegates to TechnoClass::ShouldNotBeCloaked at 0x6FBC90
-    virtual double getStoragePercentage() const;
+    double getStoragePercentage() const;
     // wrapper: delegates to TechnoClass::ShouldNotBeCloaked at 0x6FBC90
-    virtual int getPipFillLevel() const;
+    int getPipFillLevel() const;
     // design: virtual function, no binary implementation matched in IDA
-    virtual int getRefund() const;
-    virtual int getThreatValue() const;  // 0x4DED70
+    int getRefund() const;
+    int getThreatValue() const;  // 0x4DED70
     // wrapper: delegates to TechnoClass::GetThreatValue at 0x4DED70
-    virtual bool canBeAttacked(uint32_t a);
-    virtual uint32_t getSpecialValue(uint32_t a, uint32_t b);
-    virtual bool canCrush(uint32_t a);
-    virtual int getCrewCount() const;  // 0x6F3950
+    bool canBeAttacked(uint32_t a);
+    uint32_t getSpecialValue(uint32_t a, uint32_t b);
+    bool canCrush(uint32_t a);
     // wrapper: delegates to TechnoClass::GetCrewCount at 0x6F3950
-    virtual int getAntiAirValue() const;
+    int getAntiAirValue() const;
     // wrapper: delegates to TechnoClass::GetCrewCount at 0x6F3950
-    virtual int getAntiArmorValue() const;
+    int getAntiArmorValue() const;
     // wrapper: delegates to TechnoClass::GetCrewCount at 0x6F3950
-    virtual int getAntiInfantryValue() const;
+    int getAntiInfantryValue() const;
     // wrapper: delegates to TechnoClass::GetCrewCount at 0x6F3950
-    virtual void gotHijacked();
+    void gotHijacked();
     // wrapper: delegates to TechnoClass::GetCrewCount at 0x6F3950
-    virtual int selectNavalTargeting(AbstractClass* target) const;
+    int selectNavalTargeting(AbstractClass* target) const;
     // design: virtual function, no binary implementation matched in IDA
-    virtual int getZAdjustment() const;
+    int getZAdjustment() const;
     // design: virtual function, no binary implementation matched in IDA
-    virtual ZGradient GetZGradient() const;
+    ZGradient GetZGradient() const;
     // design: virtual function, no binary implementation matched in IDA
-    virtual CellStruct* GetSomeCellStruct() const;
+    CellStruct* GetSomeCellStruct() const;
     // design: virtual function, no binary implementation matched in IDA
-    virtual void SetSomeCellStruct(CellStruct* buffer);
+    void SetSomeCellStruct(CellStruct* buffer);
     // design: virtual function, no binary implementation matched in IDA
-    virtual CellStruct* getOccupiedCell(CellStruct* buffer, uint32_t a, uint32_t b) const;
+    CellStruct* getOccupiedCell(CellStruct* buffer, uint32_t a, uint32_t b) const;
     // design: virtual function, no binary implementation matched in IDA
-    virtual CoordStruct* getTurretCoords(CoordStruct* buffer, uint32_t a) const;
+    CoordStruct* getTurretCoords(CoordStruct* buffer, uint32_t a) const;
     // design: virtual function, no binary implementation matched in IDA
-    virtual uint32_t getWeaponRangeValue(uint32_t a, uint32_t b) const;
+    uint32_t getWeaponRangeValue(uint32_t a, uint32_t b) const;
     // design: virtual function, no binary implementation matched in IDA
-    virtual DirStruct* GetRealFacing(DirStruct* buffer) const;
-    virtual InfantryTypeClass* GetCrew() const;  // 0x707D20
+    DirStruct* GetRealFacing(DirStruct* buffer) const;
     // wrapper: delegates to TechnoClass::GetCrew at 0x707D20
-    virtual bool isInAirAlt() const;
+    bool isInAirAlt() const;
     // wrapper: delegates to TechnoClass::GetCrew at 0x707D20
-    virtual bool CanDeploySlashUnload() const;
+    bool CanDeploySlashUnload() const;
     // design: virtual function, no binary implementation matched in IDA
-    virtual int GetROF(int weapon) const;
-    virtual int GetGuardRange(int unknown) const;
+    int GetROF(int weapon) const;
+    int GetGuardRange(int unknown) const;
     // wrapper: delegates to TechnoClass::GetWeaponRange at 0x773070
-    virtual bool canEnterTransport() const;
+    bool canEnterTransport() const;
     // wrapper: delegates to TechnoClass::GetWeaponRange at 0x773070
-    virtual bool IsRadarVisible(int* out_detection) const;
+    bool IsRadarVisible(int* out_detection) const;
     // wrapper: delegates to TechnoClass::GetWeaponRange at 0x773070
-    virtual bool IsSensorVisibleToPlayer() const;
+    bool IsSensorVisibleToPlayer() const;
     // wrapper: delegates to TechnoClass::GetWeaponRange at 0x773070
-    virtual bool IsSensorVisibleToHouse(HouseClass* house) const;
+    bool IsSensorVisibleToHouse(HouseClass* house) const;
     // wrapper: delegates to TechnoClass::GetWeaponRange at 0x773070
-    virtual bool IsEngineer() const;
+    bool IsEngineer() const;
     // design: virtual function, no binary implementation matched in IDA
-    virtual void ProceedToNextPlanningWaypoint();
+    void ProceedToNextPlanningWaypoint();
     // design: virtual function, no binary implementation matched in IDA
-    virtual uint32_t ScanForTiberium(uint32_t a, uint32_t b, uint32_t c) const;
+    uint32_t ScanForTiberium(uint32_t a, uint32_t b, uint32_t c) const;
     // design: virtual function, no binary implementation matched in IDA
-    virtual bool EnterGrinder();
+    bool EnterGrinder();
     // design: virtual function, no binary implementation matched in IDA
-    virtual bool EnterBioReactor();
+    bool EnterBioReactor();
     // design: virtual function, no binary implementation matched in IDA
-    virtual bool EnterTankBunker();
+    bool EnterTankBunker();
     // design: virtual function, no binary implementation matched in IDA
-    virtual bool EnterBattleBunker();
+    bool EnterBattleBunker();
     // design: virtual function, no binary implementation matched in IDA
-    virtual bool GarrisonStructure();
+    bool GarrisonStructure();
     // design: virtual function, no binary implementation matched in IDA
-    virtual bool isPowerOnline() const;
+    bool isPowerOnline() const;
     // design: virtual function, no binary implementation matched in IDA
-    virtual void QueueVoice(int idx_voc);
+    void QueueVoice(int idx_voc);
     // design: virtual function, no binary implementation matched in IDA
-    virtual int VoiceEnter();
+    int VoiceEnter();
     // design: virtual function, no binary implementation matched in IDA
-    virtual int VoiceHarvest();
+    int VoiceHarvest();
     // design: virtual function, no binary implementation matched in IDA
-    virtual int VoiceSelect();
+    int VoiceSelect();
     // design: virtual function, no binary implementation matched in IDA
-    virtual int VoiceCapture();
+    int VoiceCapture();
     // design: virtual function, no binary implementation matched in IDA
-    virtual int VoiceMove();
+    int VoiceMove();
     // design: virtual function, no binary implementation matched in IDA
-    virtual int VoiceDeploy();
-    virtual int VoiceAttack(ObjectClass* target);  // 0x7090A0
+    int VoiceDeploy();
     // wrapper: delegates to TechnoClass::VoiceAttack at 0x7090A0
-    virtual bool ClickedEvent(NetworkEvents event);
+    bool ClickedEvent(NetworkEvents event);
     // wrapper: delegates to TechnoClass::VoiceAttack at 0x7090A0
-    virtual bool ClickedMission(Mission mission, ObjectClass* target, CellClass* target_cell, CellClass* nearest_target_cell);
+    bool ClickedMission(Mission mission, ObjectClass* target, CellClass* target_cell, CellClass* nearest_target_cell);
     // wrapper: delegates to TechnoClass::VoiceAttack at 0x7090A0
-    virtual bool isUnderEmp() const;
+    bool isUnderEmp() const;
     // wrapper: delegates to TechnoClass::VoiceAttack at 0x7090A0
-    virtual bool isParalyzed() const;
+    bool isParalyzed() const;
     // wrapper: delegates to TechnoClass::VoiceAttack at 0x7090A0
-    virtual bool canCheer() const;
+    bool canCheer() const;
     // design: virtual function, no binary implementation matched in IDA
-    virtual void Cheer(bool force);
+    void Cheer(bool force);
     // design: virtual function, no binary implementation matched in IDA
-    virtual int GetDefaultSpeed() const;
+    int GetDefaultSpeed() const;
     // design: virtual function, no binary implementation matched in IDA
-    virtual void DecreaseAmmo();
+    void DecreaseAmmo();
     // design: virtual function, no binary implementation matched in IDA
-    virtual void AddPassenger(FootClass* passenger);
+    void AddPassenger(FootClass* passenger);
     // design: virtual function, no binary implementation matched in IDA
-    virtual bool CanDisguiseAs(AbstractClass* target) const;
+    bool CanDisguiseAs(AbstractClass* target) const;
     // design: virtual function, no binary implementation matched in IDA
-    virtual bool TargetAndEstimateDamage(uint32_t a, uint32_t b);
+    bool TargetAndEstimateDamage(uint32_t a, uint32_t b);
     // design: virtual function, no binary implementation matched in IDA
-    virtual uint32_t getDamageReduction();
+    uint32_t getDamageReduction();
     // design: virtual function, no binary implementation matched in IDA
-    virtual bool TriggersCellInset(AbstractClass* target);
-    virtual bool IsCloseEnough(AbstractClass* target, int weapon_idx) const;
+    bool TriggersCellInset(AbstractClass* target);
+    bool IsCloseEnough(AbstractClass* target, int weapon_idx) const;
     // wrapper: delegates to TechnoClass::IsCloseEnoughToBuilding at 0x70D590
-    virtual bool IsCloseEnoughToAttack(AbstractClass* target) const;
+    bool IsCloseEnoughToAttack(AbstractClass* target) const;
     // wrapper: delegates to TechnoClass::IsCloseEnoughToBuilding at 0x70D590
-    virtual bool IsCloseEnoughToAttackCoords(const CoordStruct& coords) const;
-    virtual uint32_t getSightRange(uint32_t a) const;  // 0x717800
+    bool IsCloseEnoughToAttackCoords(const CoordStruct& coords) const;
+    uint32_t getSightRange(uint32_t a) const;  // 0x717800
     // design: pure virtual function, no binary implementation
-    virtual void Destroyed(ObjectClass* killer) = 0;
+    void Destroyed(ObjectClass* killer);
     // wrapper: delegates to TechnoClass::GetSightRange at 0x717800
-    virtual FireError GetFireErrorWithoutRange(AbstractClass* target, int weapon_index) const;
+    FireError GetFireErrorWithoutRange(AbstractClass* target, int weapon_index) const;
     // wrapper: delegates to TechnoClass::GetSightRange at 0x717800
-    virtual FireError GetFireError(AbstractClass* target, int weapon_index, bool ignore_range) const;
-    virtual CellClass* SelectAutoTarget(TargetFlags flags, int current_threat, bool only_target_house_enemy);
-    virtual void SetTarget(AbstractClass* target);
-    virtual BulletClass* Fire(AbstractClass* target, int weapon_index);  // 0x70ECE0
+    FireError GetFireError(AbstractClass* target, int weapon_index, bool ignore_range) const;
+    CellClass* SelectAutoTarget(TargetFlags flags, int current_threat, bool only_target_house_enemy);
+    void SetTarget(AbstractClass* target);
+    BulletClass* Fire(AbstractClass* target, int weapon_index);  // 0x70ECE0
     // wrapper: delegates to TechnoClass::Fire at 0x70ECE0
-    virtual void Guard();
+    void Guard();
     // wrapper: delegates to TechnoClass::Fire at 0x70ECE0
-    virtual bool SetOwningHouse(HouseClass* house, bool announce = true);
+    bool SetOwningHouse(HouseClass* house, bool announce = true);
     // wrapper: delegates to TechnoClass::Fire at 0x70ECE0
-    virtual void onHouseChange(uint32_t a, uint32_t b, uint32_t c);
+    void onHouseChange(uint32_t a, uint32_t b, uint32_t c);
     // wrapper: delegates to TechnoClass::Fire at 0x70ECE0
-    virtual bool Crash(ObjectClass* killer);
+    bool Crash(ObjectClass* killer);
     // wrapper: delegates to TechnoClass::Fire at 0x70ECE0
-    virtual bool isAreaFire() const;
+    bool isAreaFire() const;
     // design: virtual function, no binary implementation matched in IDA
-    virtual int isNotSprayAttack() const;
+    int isNotSprayAttack() const;
     // design: virtual function, no binary implementation matched in IDA
-    virtual int canAct();
+    int canAct();
     // design: virtual function, no binary implementation matched in IDA
-    virtual int isNotSprayAttack2() const;
-    virtual WeaponStruct* GetDeployWeapon() const;
+    int isNotSprayAttack2() const;
+    WeaponStruct* GetDeployWeapon() const;
     // wrapper: delegates to InfantryClass::GetDeployWeaponIndex at 0x5218E0
-    virtual WeaponStruct* GetTurretWeapon() const;
+    WeaponStruct* GetTurretWeapon() const;
     // wrapper: delegates to InfantryClass::GetDeployWeaponIndex at 0x5218E0
-    virtual WeaponStruct* GetWeapon(int weapon_index) const;
+    WeaponStruct* GetWeapon(int weapon_index) const;
     // wrapper: delegates to InfantryClass::GetDeployWeaponIndex at 0x5218E0
-    virtual bool hasTurret() const;
+    bool hasTurret() const;
     // wrapper: delegates to InfantryClass::GetDeployWeaponIndex at 0x5218E0
-    virtual bool canOccupyFire() const;
+    bool canOccupyFire() const;
     // wrapper: delegates to InfantryClass::GetDeployWeaponIndex at 0x5218E0
-    virtual int getOccupyRangeBonus() const;
+    int getOccupyRangeBonus() const;
     // design: virtual function, no binary implementation matched in IDA
-    virtual int getOccupantCount() const;
+    int getOccupantCount() const;
     // design: virtual function, no binary implementation matched in IDA
-    virtual void OnFinishRepair();
+    void OnFinishRepair();
 
-    virtual void UpdateCloak(bool unknown = true);
+    void UpdateCloak(bool unknown = true);
     // wrapper: delegates to BuildingClass::UpdateCloak at 0x457770
-    virtual void CreateGap();
+    void CreateGap();
     // wrapper: delegates to BuildingClass::UpdateCloak at 0x457770
-    virtual void DestroyGap();
+    void DestroyGap();
     // wrapper: delegates to BuildingClass::UpdateCloak at 0x457770
-    virtual void onBridgeRepair();
+    void onBridgeRepair();
     // wrapper: delegates to BuildingClass::UpdateCloak at 0x457770
-    virtual void Sensed();
-    virtual void Reload();
+    void Sensed();
+    void Reload();
     // wrapper: delegates to TechnoClass::ReturnToBaseAndReload at 0x4158E0
-    virtual void onReloadComplete();
-    virtual CoordStruct* GetTargetCoords(CoordStruct* pCrd) const;  // 0x70BCB0
+    void onReloadComplete();
+    CoordStruct* GetTargetCoords(CoordStruct* pCrd) const;  // 0x70BCB0
     // wrapper: delegates to TechnoClass::GetTargetCoords at 0x70BCB0
-    virtual bool IsNotWarpingIn() const;
+    bool IsNotWarpingIn() const;
     // wrapper: delegates to TechnoClass::GetTargetCoords at 0x70BCB0
-    virtual bool canChronoShift(uint32_t dwUnk) const;
-    virtual void DrawActionLines(bool force, uint32_t dwUnk2);
+    bool canChronoShift(uint32_t dwUnk) const;
+    void DrawActionLines(bool force, uint32_t dwUnk2);
     // wrapper: delegates to BuildingClass::DrawActionLines at 0x63BE60
-    virtual uint32_t GetDisguiseFlags(uint32_t existingFlags) const;
+    uint32_t GetDisguiseFlags(uint32_t existingFlags) const;
     // wrapper: delegates to BuildingClass::DrawActionLines at 0x63BE60
-    virtual bool isClearlyVisibleTo(HouseClass* house) const;
-    virtual void onSelect(uint32_t a, uint32_t b);
-    virtual void DrawHealthBar(Point2D* pLocation, RectangleStruct* pBounds, bool bUnk3) const;  // 0x6f5190
+    bool isClearlyVisibleTo(HouseClass* house) const;
+    void onSelect(uint32_t a, uint32_t b);
+    void DrawHealthBar(Point2D* pLocation, RectangleStruct* pBounds, bool bUnk3) const;  // 0x6f5190
     // wrapper: delegates to TechnoClass::DrawHealthBar at 0x6F5190
-    virtual void DrawPipScalePips(Point2D* pLocation, Point2D* pOriginalLocation, RectangleStruct* pBounds) const;
+    void DrawPipScalePips(Point2D* pLocation, Point2D* pOriginalLocation, RectangleStruct* pBounds) const;
     // wrapper: delegates to TechnoClass::DrawHealthBar at 0x6F5190
-    virtual void DrawVeterancyPips(Point2D* pLocation, RectangleStruct* pBounds) const;
+    void DrawVeterancyPips(Point2D* pLocation, RectangleStruct* pBounds) const;
     // wrapper: delegates to TechnoClass::DrawHealthBar at 0x6F5190
-    virtual void DrawExtraInfo(Point2D const& location, Point2D const& originalLocation, RectangleStruct const& bounds) const;
+    void DrawExtraInfo(Point2D const& location, Point2D const& originalLocation, RectangleStruct const& bounds) const;
     // wrapper: delegates to TechnoClass::DrawHealthBar at 0x6F5190
-    virtual void Uncloak(bool play_sound);
+    void Uncloak(bool play_sound);
     // wrapper: delegates to TechnoClass::DrawHealthBar at 0x6F5190
-    virtual void Cloak(bool play_sound);
-    virtual uint32_t getSight(uint32_t dwUnk) const;
+    void Cloak(bool play_sound);
+    uint32_t getSight(uint32_t dwUnk) const;
     // wrapper: delegates to TechnoClass::GetSightRange at 0x717800
-    virtual void UpdateRefinerySmokeSystems();
+    void UpdateRefinerySmokeSystems();
     // wrapper: delegates to TechnoClass::GetSightRange at 0x717800
-    virtual uint32_t DisguiseAs(AbstractClass* pTarget);
+    uint32_t DisguiseAs(AbstractClass* pTarget);
     // wrapper: delegates to TechnoClass::GetSightRange at 0x717800
-    virtual void ClearDisguise();
+    void ClearDisguise();
     // wrapper: delegates to TechnoClass::GetSightRange at 0x717800
-    virtual bool IsItTimeForIdleActionYet() const;
+    bool IsItTimeForIdleActionYet() const;
     // wrapper: delegates to TechnoClass::GetSightRange at 0x717800
-    virtual bool UpdateIdleAction();
-    virtual void onDamage(uint32_t dwUnk);
+    bool UpdateIdleAction();
+    void onDamage(uint32_t dwUnk);
     // wrapper: delegates to BuildingClass::ApplyFoundationDamage at 0x45EE70
-    virtual void SetDestination(AbstractClass* dest, bool unknown);
+    void SetDestination(AbstractClass* dest, bool unknown);
     // wrapper: delegates to BuildingClass::ApplyFoundationDamage at 0x45EE70
-    virtual bool canRecruit(uint32_t dwUnk, uint32_t dwUnk2);
-    virtual void UpdateSight(uint32_t a, uint32_t b, uint32_t c, uint32_t d, uint32_t e);
+    bool canRecruit(uint32_t dwUnk, uint32_t dwUnk2);
+    void UpdateSight(uint32_t a, uint32_t b, uint32_t c, uint32_t d, uint32_t e);
     // wrapper: delegates to TechnoClass::updateSightRange at 0x4C2BD0
-    virtual void onPlacement(uint32_t a, uint32_t b, uint32_t c, uint32_t d);
+    void onPlacement(uint32_t a, uint32_t b, uint32_t c, uint32_t d);
     // design: pure virtual function, no binary implementation
-    virtual void onBuildingPlacement(uint32_t a, uint32_t b) = 0;
+    void onBuildingPlacement(uint32_t a, uint32_t b);
     // wrapper: delegates to TechnoClass::updateSightRange at 0x4C2BD0
-    virtual void RadarTrackingStart();
+    void RadarTrackingStart();
     // wrapper: delegates to TechnoClass::updateSightRange at 0x4C2BD0
-    virtual void RadarTrackingStop();
+    void RadarTrackingStop();
     // wrapper: delegates to TechnoClass::updateSightRange at 0x4C2BD0
-    virtual void RadarTrackingFlash();
+    void RadarTrackingFlash();
     // design: virtual function, no binary implementation matched in IDA
-    virtual void RadarTrackingUpdate(bool unknown);
+    void RadarTrackingUpdate(bool unknown);
     // design: virtual function, no binary implementation matched in IDA
-    virtual void onRadarEvent(uint32_t a);
+    void onRadarEvent(uint32_t a);
     // design: virtual function, no binary implementation matched in IDA
-    virtual void onSpawn();
+    void onSpawn();
     // design: virtual function, no binary implementation matched in IDA
-    virtual bool canSpawn() const;
+    bool canSpawn() const;
     // design: virtual function, no binary implementation matched in IDA
-    virtual bool isSpawning() const;
+    bool isSpawning() const;
     // design: virtual function, no binary implementation matched in IDA
-    virtual int getSpawnCount() const;
+    int getSpawnCount() const;
     // design: virtual function, no binary implementation matched in IDA
-    virtual CoordStruct* getSpawnCoords(CoordStruct* out);
-    virtual uint32_t processSpawn();
+    CoordStruct* getSpawnCoords(CoordStruct* out);
+    uint32_t processSpawn();
     // wrapper: delegates to TerrainClass::ProcessSpawnAnim at 0x71D000
-    virtual bool canAttackOnTheMove() const;
+    bool canAttackOnTheMove() const;
     // wrapper: delegates to TerrainClass::ProcessSpawnAnim at 0x71D000
-    virtual bool canTarget() const;
-    virtual int selectTarget();  // 0x41BEF0
+    bool canTarget() const;
     // wrapper: delegates to TechnoClass::selectTarget at 0x41BEF0
-    virtual void onTargetChange();
-    virtual bool canFire();
+    void onTargetChange();
+    bool canFire();
 
     // === Phase 3 generated declarations (IDA functions.json) ===
-    virtual int ApplyIronCurtain();  // 0x4155F0
-    virtual int ReturnToBase();  // 0x4157C0
-    virtual int ReturnToBaseAndReload();   // 0x4158E0
-    virtual int ScatterFromThreat();  // 0x415960
-    virtual int ExecuteMissionCommand();  // 0x417CA0
-    virtual int FindNearbyBuildCell(int a2, int16_t *a3);  // 0x4195A0 (G42.33 b4 W7: 体签名同步)
-    virtual void * FindClosestPlacementCell();  // 0x41A160 (G42.33 b4 W7: 体签名同步)
-    virtual unsigned int * GetTurretFacing(unsigned int *a2);  // 0x41A570 (G42.33 b4 W7: 体签名同步)
-    virtual int ComputeTeamAttackPriority();  // 0x41B6A0 (G42.33 b4 W7: 体签名同步)
-    virtual int GetAutoFireDirection();  // 0x41B760 (G42.33 b4 W7: 体签名同步 const 撤除)
-    virtual int sub_41B7D0();
-    virtual unsigned int * HasOnlyOneGarrisonSlot();  // 0x41B7F0 (G42.33 b4 W7: 体签名同步)
-    virtual int sub_41B840();
-    virtual int sub_41B860();
-    virtual int sub_41B9E0();
-    virtual bool CreateWarheadDamageEffect();  // 0x41BC30
+    int ApplyIronCurtain();  // 0x4155F0
+    int ReturnToBase();  // 0x4157C0
+    int ReturnToBaseAndReload();   // 0x4158E0
+    int ScatterFromThreat();  // 0x415960
+    int ExecuteMissionCommand();  // 0x417CA0
+    int FindNearbyBuildCell(int a2, int16_t *a3);  // 0x4195A0 (G42.33 b4 W7: 体签名同步)
+    void * FindClosestPlacementCell();  // 0x41A160 (G42.33 b4 W7: 体签名同步)
+    unsigned int * GetTurretFacing(unsigned int *a2);  // 0x41A570 (G42.33 b4 W7: 体签名同步)
+    int ComputeTeamAttackPriority();  // 0x41B6A0 (G42.33 b4 W7: 体签名同步)
+    int GetAutoFireDirection();  // 0x41B760 (G42.33 b4 W7: 体签名同步 const 撤除)
+    int sub_41B7D0();
+    unsigned int * HasOnlyOneGarrisonSlot();  // 0x41B7F0 (G42.33 b4 W7: 体签名同步)
+    int sub_41B840();
+    int sub_41B860();
+    int sub_41B9E0();
+    bool CreateWarheadDamageEffect();  // 0x41BC30
     // wrapper: delegates to TechnoClass::CreateWarheadDamageEffect at 0x41BC30
-    virtual void sub_41BEF0();
-    virtual int sub_41BFE0();  // 0x41BFE0 (G42.33 b4 W7: 体签名同步)
-    virtual int sub_41BFF0();  // 0x41BFF0
-    virtual unsigned int * GetBodyFacing(unsigned int *a2);  // 0x41C1E0 (G42.33 b4 W7c: 体签名同步)
-    virtual int sub_41C640();
-    virtual int sub_41C650();
-    virtual int sub_41C660();
-    virtual int sub_41C670();
-    virtual int sub_41C680();
-    virtual int sub_41C690();
-    virtual int ApplyDamageEffects(); // 0x438720
+    void sub_41BEF0();
+    int sub_41BFE0();  // 0x41BFE0 (G42.33 b4 W7: 体签名同步)
+    int sub_41BFF0();  // 0x41BFF0
+    unsigned int * GetBodyFacing(unsigned int *a2);  // 0x41C1E0 (G42.33 b4 W7c: 体签名同步)
+    int sub_41C640();
+    int sub_41C650();
+    int sub_41C660();
+    int sub_41C670();
+    int sub_41C680();
+    int sub_41C690();
+    int ApplyDamageEffects(); // 0x438720
     // wrapper: delegates to TechnoClass::ApplyDamageEffects at 0x438720
-    virtual int sub_5439080();
-    virtual int RemoveFromDynamicVector(char a2);  // 0x4390D0 (G42.33 b4 W7c: 体签名同步)
-    virtual int ComputeTargetAngle();  // 0x43E940 (G42.33 b4 W7c: 体签名同步)
-    virtual int StartOrResumeProduction();  // 0x44D6A0
-    virtual int GetTurretScreenPos();  // 0x453A70 (G42.34: raw 零参非 const, 除 const 对齐 def)
-    virtual void ProcessMissionDeploy();  // 0x456F80
-    virtual int EvacuateFootprintCells();  // 0x458A80
-    virtual int MissionStubReturnZero4(); // 0x459D90
-    virtual bool StubReturnFalse2(); // 0x459DD0
+    int sub_5439080();
+    int RemoveFromDynamicVector(char a2);  // 0x4390D0 (G42.33 b4 W7c: 体签名同步)
+    int ComputeTargetAngle();  // 0x43E940 (G42.33 b4 W7c: 体签名同步)
+    int StartOrResumeProduction();  // 0x44D6A0
+    int GetTurretScreenPos();  // 0x453A70 (G42.34: raw 零参非 const, 除 const 对齐 def)
+    void ProcessMissionDeploy();  // 0x456F80
+    int EvacuateFootprintCells();  // 0x458A80
+    bool StubReturnFalse2(); // 0x459DD0
     // wrapper: delegates to TechnoClass::StubReturnFalse2 at 0x459DD0
-    virtual int sub_546B270();
+    int sub_546B270();
     // wrapper: delegates to TechnoClass::StubReturnFalse2 at 0x459DD0
-    virtual int sub_54722D0();
-    virtual int IndexOf(); // 0x473500
-    virtual int CalcFacingFromMatrix() const;  // 0x5AF410
-    virtual void CreateTrailParticle();  // 0x4C2A60
+    int sub_54722D0();
+    int IndexOf(); // 0x473500
+    int CalcFacingFromMatrix() const;  // 0x5AF410
+    void CreateTrailParticle();  // 0x4C2A60
     // wrapper: delegates to TechnoClass::CreateTrailParticle at 0x4C2A60
-    virtual int sub_4C2BD0();
-    virtual int UpdateThunk();  // 0x4CC770
-    virtual int GetData() const; // 0x4CF950
+    int sub_4C2BD0();
+    int UpdateThunk();  // 0x4CC770
+    int GetData() const; // 0x4CF950
     // wrapper: delegates to TechnoClass::GetData at 0x4CF950
-    virtual int sub_54A50F0();
-    virtual int CreatePlanningNode();  // 0x638A80
-    virtual int GetBuildCost() const;  // 0x711EC0
-    virtual int CheckState1() const;  // 0x5B2E70
-    virtual int CheckState2() const; // 0x5B2E80
-    virtual int StubReturn450(); // 0x5B2E40
-    virtual void sub_6F60C0();  // 0x6F60C0
+    int sub_54A50F0();
+    int CreatePlanningNode();  // 0x638A80
+    int GetBuildCost() const;  // 0x711EC0
+    int StubReturn450(); // 0x5B2E40
+    void sub_6F60C0();  // 0x6F60C0
     // wrapper: delegates to TechnoClass::g_var_370bdd at 0x6F60C0
-    virtual int sub_54D28C0();
-    virtual int GetTypeFlag() const;  // 0x5224E0
+    int sub_54D28C0();
+    int GetTypeFlag() const;  // 0x5224E0
     // wrapper: delegates to TechnoClass::GetTypeFlag at 0x5224E0
-    virtual int sub_5505180();
-    virtual int FindClosestBuilding();  // 0x4DFF40
-    virtual int FindBestMatch();  // 0x4DF040
-    virtual int FindClosestInfantry();  // 0x4DFA70
-    virtual int FindClosestUnit();  // 0x4DFB70
-    virtual int FindBestMovementDirection();  // 0x740B60
-    virtual int sub_4DF1A0();  // 0x4DF1A0
-    virtual int sub_4DF1C0();  // 0x4DF1C0
-    virtual int sub_4DF1D0();  // 0x4DF1D0
-    virtual int sub_4DF1E0();  // 0x4DF1E0
-    virtual int sub_4DF1F0();  // 0x4DF1F0
-    virtual int sub_4DF310();  // 0x4DF310
-    virtual int sub_4DF320();  // 0x4DF320
-    virtual int sub_4DF4B0();  // 0x4DF4B0
-    virtual int GetAnimationValue() const;  // 0x4E0150
-    virtual int FindDeployDestination();  // 0x50C920
+    int sub_5505180();
+    int FindClosestBuilding();  // 0x4DFF40
+    int FindBestMatch();  // 0x4DF040
+    int FindClosestInfantry();  // 0x4DFA70
+    int FindClosestUnit();  // 0x4DFB70
+    int FindBestMovementDirection();  // 0x740B60
+    int sub_4DF1A0();  // 0x4DF1A0
+    int sub_4DF1C0();  // 0x4DF1C0
+    int sub_4DF1D0();  // 0x4DF1D0
+    int sub_4DF1E0();  // 0x4DF1E0
+    int sub_4DF1F0();  // 0x4DF1F0
+    int sub_4DF310();  // 0x4DF310
+    int sub_4DF320();  // 0x4DF320
+    int sub_4DF4B0();  // 0x4DF4B0
+    int FindDeployDestination();  // 0x50C920
     // wrapper: delegates to TechnoClass::FindDeployDestination at 0x50C920
-    virtual int sub_550D9C0();
+    int sub_550D9C0();
     // wrapper: delegates to TechnoClass::FindDeployDestination at 0x50C920
-    virtual int sub_550D9D0();
-    virtual int MapHouseRelationIndex();  // 0x50DAC0
-    virtual int GetDamageMultiplier() const;  // 0x50BD30
-    virtual bool ProcessTarget(int a2);  // 0x50CAD0  // G42.35 def-truth sync (def=object/supplied_bodies.cpp:6851 `bool ProcessTarget(int)`; cache: bool __thiscall TechnoClass::ProcessTarget(TechnoClass*,int))
+    int sub_550D9D0();
+    int MapHouseRelationIndex();  // 0x50DAC0
+    int GetDamageMultiplier() const;  // 0x50BD30
+    bool ProcessTarget(int a2);  // 0x50CAD0  // G42.35 def-truth sync (def=object/supplied_bodies.cpp:6851 `bool ProcessTarget(int)`; cache: bool __thiscall TechnoClass::ProcessTarget(TechnoClass*,int))
     // wrapper: delegates to TechnoClass::ProcessTarget at 0x50CAD0
-    virtual int sub_55224F0();
-    virtual int* GetDeployCoords(int* out = nullptr, int a3 = 0);  // 0x4DBDF0 truth (out, a3)
-    virtual int CanBePermaMC() const;  // 0x53C450
-    virtual int GarrisonBuilding();  // 0x522910
-    virtual int IsMission27to30() const;  // 0x522510
-    virtual int HandleSpecialAction();  // 0x522A60
-    virtual int IsEnteringOrCapturingStructure() const;  // 0x522CB0
-    virtual void CreateDestructionEffect();  // 0x5F5390
-    virtual int FindMatchingUnit();  // 0x5F7900
-    virtual int ClearArrays();  // 0x5F99E0
-    virtual int ComputeScanRange() const;  // 0x48AB90
+    int sub_55224F0();
+    int* GetDeployCoords(int* out = nullptr, int a3 = 0);  // 0x4DBDF0 truth (out, a3)
+    int CanBePermaMC() const;  // 0x53C450
+    int GarrisonBuilding();  // 0x522910
+    int IsMission27to30() const;  // 0x522510
+    int HandleSpecialAction();  // 0x522A60
+    int IsEnteringOrCapturingStructure() const;  // 0x522CB0
+    void CreateDestructionEffect();  // 0x5F5390
+    int FindMatchingUnit();  // 0x5F7900
+    int ClearArrays();  // 0x5F99E0
+    int ComputeScanRange() const;  // 0x48AB90
     // G21 L6: draw* 族 (0x6594xx-0x6595xx) 归属裁决迁出——真 owner = RadBeam
     // （双调用方接收者均 RadBeam::Create 对象，InitState 无 ptr_0 安装）
-    virtual int ClearScriptPlanningData();  // 0x633D30
-    virtual int GetTileAnimationData() const;  // 0x547150
-    virtual int MutateAll();  // 0x6B0AE0
-    virtual int RefreshDeployOccupierState();  // 0x6B0D10
-    virtual int CountPassengers() const;  // 0x6B7D80
-    virtual int GetValue() const; // 0x6F3970
-    virtual int CanMoveToCell() const;  // 0x6FC030
-    virtual int CanInitiateSell() const;  // 0x6F32D0
-    virtual int IsNotAircraftOrBuilding() const;  // 0x6F3280
-    virtual int SelectWeapon(); // 0x6F3330
-    virtual int CanTargetHouse() const;  // 0x6F3820
-    virtual int CanSelfRepair();  // 0x70FB50
-    virtual int Mission_RepairDispatch();  // 0x6F4AB0
-    virtual int PushNearbyUnits();  // 0x6F4EB0
-    virtual int SetFocus(int a2);  // G42.35 def-truth sync (调用形 static (this,0) @0x73E74B)
-    virtual int SetHouseFlag();  // 0x6F4960
-    virtual int ProcessAIDecision();  // 0x740810
-    virtual int CheckPlayerOwned() const;  // 0x6F4A40
-    virtual int UpdateProdWithSound();  // 0x6F4A70
-    virtual int HasActiveParam() const; // 0x701120
+    int ClearScriptPlanningData();  // 0x633D30
+    int GetTileAnimationData() const;  // 0x547150
+    int MutateAll();  // 0x6B0AE0
+    int RefreshDeployOccupierState();  // 0x6B0D10
+    int CountPassengers() const;  // 0x6B7D80
+    int GetValue() const; // 0x6F3970
+    int CanMoveToCell() const;  // 0x6FC030
+    int CanInitiateSell() const;  // 0x6F32D0
+    int CanSelfRepair();  // 0x70FB50
+    int Mission_RepairDispatch();  // 0x6F4AB0
+    int SetFocus(int a2);  // G42.35 def-truth sync (调用形 static (this,0) @0x73E74B)
+    int SetHouseFlag();  // 0x6F4960
+    int ProcessAIDecision();  // 0x740810
+    int CheckPlayerOwned() const;  // 0x6F4A40
+    int UpdateProdWithSound();  // 0x6F4A70
     // wrapper: delegates to TechnoClass::HasActiveParam at 0x701120
-    virtual int HasOnlyOneGarrisonSlot2() const;
-    virtual int FindLowestDamage();  // 0x7012C0
-    virtual int ProcessCapture();  // 0x7014a0
-    virtual int GetRangeModifier() const;  // 0x70D190
-    virtual int ShouldScanArea() const;  // 0x70D1D0
-    virtual int IsCloseEnoughToBuilding() const;   // 0x70D590
-    virtual int IsCellPassableFor() const;  // 0x70D460
-    virtual int IsPlayerCellPassable() const;  // 0x70D420
-    virtual int SetMoveDestination(int a1);  // 0x708D90 (raw [ebp+4] 栈参; W20M20 签名同步)
-    virtual int GetPrimaryTargetOrFallback() const;  // 0x708DC0
-    virtual int PickAlternateTarget();  // 0x708E00
-    virtual int SelectRandomTarget();  // 0x708EB0
-    virtual int GetSecondaryTargetOrFallback() const;  // 0x709020
-    virtual int SetPositionAnimated(unsigned int* a2 = nullptr);  // 0x4DB810 (g57w10 raw: int(this,unsigned int*))
-    virtual int GetTargetCellCenter(AbstractClass* target);  // 0x4DBA50
-    virtual int ComputeSpeedFactor();  // 0x4DAFC0
-    virtual int ComputeSpeedFactorEx();  // 0x4DB1A0
-    virtual int CleanupDirection();  // 0x4DB260
-    virtual int GetDeployProgressValue() const;  // 0x740F80
-    virtual int ComputeAverageValue() const;  // 0x708BC0
-    virtual int GetGlobalValue(int* outValue) const;  // 0x708C10
-    virtual int SetIdleState();  // 0x70F850
-    virtual int ComputeAimVector();  // 0x70B280
-    virtual int RevealAreaConditional();  // 0x70B1D0
-    virtual int GetCellCoordsV2() const;  // 0x70AD50
-    virtual int Vt46Thunk();  // 0x70ADA0
-    virtual int RevealAreaSmall();  // 0x70ADC0
-    virtual int ScanForEnemies();  // 0x70AF50
-    virtual int GetTargetCoords();  // 0x70BCB0
-    virtual int CalcOffsetFacing() const;  // 0x70BE50
-    virtual int ShouldSelfHealOneStep() const;  // 0x70BE80
-    virtual int ComputeThreatLevel();  // 0x4D97A0
-    virtual int CanBeTargeted() const;  // 0x744270
-    virtual int GetCommandTooltip() const;  // 0x746B20
-    virtual int ShouldBeCloaked() const;  // 0x6FBDC0
-    virtual int ShouldNotBeCloaked() const;  // 0x6FBC90
-    virtual int SetTargetIfAllowed();   // 0x6F9DD0
-    virtual int CanReceivePassengers() const;  // 0x700C40
-    virtual int GetTarget() const;  // 0x6F9DC0
-    virtual int GetID() const;  // 0x6F9DB0
-    virtual int GetSightRange() const;  // 0x717800
-    virtual int CheckAndFireAtTarget();  // 0x6F78D0
-    virtual int GattlingRateUp_GattlingRateDownReset();  // 0x70DE70
-    virtual int GattlingValueRateDown_GattlingRateDownDelay();  // 0x70DE40
-    virtual int SetMember81();  // 0x70DE00
-    virtual int Deactivate(); // 0x70FC90
-    virtual int Activate(); // 0x70FBE0
-    virtual int ActivateEffect();  // 0x70E280
-    virtual int IronCurtain(); // 0x70E2B0
-    virtual int InvulnerabilityIntensity_SetContext();  // 0x70E380
-    virtual int ResetTimer();  // 0x70E300
-    virtual int CalcAnimDelay() const;  // 0x6FB080
-    virtual int StepAnimFrame();  // 0x6FB010
-    virtual int BeginFiringSequence();  // 0x709820
-    virtual int CompleteFactoryProduction(int a2, int a3);  // 0x709A40 (IDA: thiscall(this,int,int))
+    int HasOnlyOneGarrisonSlot2() const;
+    int FindLowestDamage();  // 0x7012C0
+    int IsCloseEnoughToBuilding() const;   // 0x70D590
+    int SetPositionAnimated(unsigned int* a2 = nullptr);  // 0x4DB810 (g57w10 raw: int(this,unsigned int*))
+    int GetTargetCellCenter(AbstractClass* target);  // 0x4DBA50
+    int ComputeSpeedFactor();  // 0x4DAFC0
+    int ComputeSpeedFactorEx();  // 0x4DB1A0
+    int CleanupDirection();  // 0x4DB260
+    int GetDeployProgressValue() const;  // 0x740F80
+    int RevealAreaSmall();  // 0x70ADC0
+    int GetTargetCoords();  // 0x70BCB0
+    int CalcOffsetFacing() const;  // 0x70BE50
+    int ComputeThreatLevel();  // 0x4D97A0
+    int CanBeTargeted() const;  // 0x744270
+    int GetCommandTooltip() const;  // 0x746B20
+    int SetTargetIfAllowed();   // 0x6F9DD0
+    int CanReceivePassengers() const;  // 0x700C40
+    int GetTarget() const;  // 0x6F9DC0
+    int GetID() const;  // 0x6F9DB0
+    int GetSightRange() const;  // 0x717800
+    int GattlingRateUp_GattlingRateDownReset();  // 0x70DE70
+    int GattlingValueRateDown_GattlingRateDownDelay();  // 0x70DE40
+    int SetMember81();  // 0x70DE00
+    int Deactivate(); // 0x70FC90
+    int Activate(); // 0x70FBE0
+    int IronCurtain(); // 0x70E2B0
+    int InvulnerabilityIntensity_SetContext();  // 0x70E380
+    int ResetTimer();  // 0x70E300
+    int CalcAnimDelay() const;  // 0x6FB080
     // G57W20M26: canon 槽供给 (0x184/0x1E8/0x1F0/0x334, ProcessRepair 成员扫描段)
-    virtual int GetPrimaryOrFallback();  // vt+0x184
-    virtual void MissionDispatch(int a2, int a3);  // vt+0x1E8
-    virtual int Stub(void *a2, int a3);  // vt+0x480 (canon)
-    virtual int SetState(int a2);  // vt+0x1F0
-    virtual int COMStub_Return0_205();  // vt+0x334
+    int GetPrimaryOrFallback();  // vt+0x184
     TechnoClass *GetVecTechnoMember(int a2);  // 0x65ad30 (原 Team::GetMember 误标; 体读 this+0xE4 vecTechno 数组)
 
-    virtual int IsTimerExpired() const;  // 0x7099E0
     WeaponStruct* GetWeaponSlot(int index) const;  // 0x7177C0 (&Weapon[index] on the type; real owner TechnoTypeClass - ownership debt)
-    virtual int GetTertiaryTargetOrFallback() const;  // 0x709060
-    virtual int VoiceAttack();  // 0x7090A0
-    virtual int ResponseMove_Pickup();  // 0x708FC0
-    virtual int Vt170();  // 0x708D70
-    virtual int CanAttack() const;  // 0x700D50
-    virtual int IsDeadOrInactive() const;  // 0x700D10
-    virtual int CalculateROF();  // 0x6FCFA0
-    virtual int GetAmmoCount() const;  // 0x708C30
-    virtual int GetAmmoCount_0() const;  // 0x740E50
-    virtual int SelectAttackWeapon();  // 0x746CD0
-    virtual int GetAverageDamageScore() const;  // 0x7414A0
-    virtual int ProcessSpecialUnitDeployCrush();  // 0x7416A0
-    virtual int FireWeaponBurst();  // 0x741340
-    virtual int GetWeaponRange(int weapon_index) const; // 0x773070
-    virtual int FireWeapon(); // 0x6FDD50
-    virtual int CreateFireEffect();  // 0x6FD210
-    virtual int CreateFireBeamEffect();  // 0x6FD620
-    virtual int CreateFiringRadarBlip();  // 0x6FD570
-    virtual int CreateRadarBlip();  // 0x6FD460
-    virtual int GetFiringAngle() const;  // 0x6FDA00
-    virtual int AssignTarget_SyncLog(int syncFlag); // 0x6FCDB0
-    virtual int ProcessDeploymentState();  // 0x6FCD40
-    virtual int ComputeAudioFalloffDamage();  // 0x6FDB80
-    virtual int ComputeCombatDamage();  // 0x70D690
-    virtual int CheckFireCooldown() const;  // 0x70EE30
-    virtual int CanDamageTarget() const;  // 0x70EF00
-    virtual int COMStub_Return0_298();  // 0x70F010
-    virtual int HasPassengers() const;  // 0x70EFD0
-    virtual int COMStub_Return0_307();  // 0x70F100
-    virtual int sub_70F040();
-    virtual int ProcessCellClearance();  // 0x70F050
-    virtual int GetTypeVt40() const;  // 0x70F070
-    virtual int GetMaxSpeed() const;  // 0x70EFE0
-    virtual int DrainAmmo();  // 0x70E000
-    virtual int EjectPassengers();  // 0x70FEE0
-    virtual int RadarUpdateOn();  // 0x70CC90
-    virtual int RadarUpdateOff();  // 0x70CCC0
-    virtual int RevealOwnCell();  // 0x70CCF0
-    virtual int ComputeDamage();  // 0x70CD10
-    virtual int GetCostMultiplier(int a2, int a3, int a4, int a5, int a6) const;  // 0x708B40
-    virtual int IsInRange() const; // 0x6F7660
-    virtual int GetCrew();  // 0x707D20
-    virtual int GetCrew_0();  // 0x740EE0
-    virtual int GetCrewCount();  // 0x6F3950
-    virtual int CheckCellPassable() const; // 0x6F7930
-    virtual int CheckCellPassable2(int a2) const;  // 0x6F7780
-    virtual int CheckCellPassable3() const;  // 0x6F7970
-    virtual int ValidateTarget(TechnoClass* target, int weapon_index) const; // 0x6F77B0 (vt+936; binary: (this, target, weapon))
-    virtual int GetBridgeDamageMult() const;  // 0x6F79A0
+    int VoiceAttack();  // 0x7090A0
+    int GetAmmoCount_0() const;  // 0x740E50
+    int SelectAttackWeapon();  // 0x746CD0
+    int GetAverageDamageScore() const;  // 0x7414A0
+    int ProcessSpecialUnitDeployCrush();  // 0x7416A0
+    int FireWeaponBurst();  // 0x741340
+    int GetWeaponRange(int weapon_index) const; // 0x773070
+    int CreateFireEffect();  // 0x6FD210
+    int CreateFireBeamEffect();  // 0x6FD620
+    int CreateFiringRadarBlip();  // 0x6FD570
+    int CreateRadarBlip();  // 0x6FD460
+    int ComputeAudioFalloffDamage();  // 0x6FDB80
+    int ComputeCombatDamage();  // 0x70D690
+    int sub_70F040();
+    int DrainAmmo();  // 0x70E000
+    int EjectPassengers();  // 0x70FEE0
+    int ComputeDamage();  // 0x70CD10
+    int GetCrew();  // 0x707D20
+    int GetCrew_0();  // 0x740EE0
+    int GetCrewCount();  // 0x6F3950
+    int CheckCellPassable3() const;  // 0x6F7970
+    int GetBridgeDamageMult() const;  // 0x6F79A0
     // wrapper: delegates to TechnoClass::GetBridgeDamageMult at 0x6F79A0
-    virtual int CheckAndFireAtTarget2();
-    virtual int EvaluateTarget();  // 0x6f7ca0
-    virtual int SelectAutoTarget_Start_AU();  // 0x6F8DF0
-    virtual int CheckTargetLOS() const;  // 0x6F7220
-    virtual int CheckTargetCell() const; // 0x703B10
-    virtual int CheckPlacementTileMatch() const;  // 0x707F60
-    virtual int ComputeScanDistance() const;  // 0x707E60
-    virtual int ComputeTotalPowerDrain();  // 0x707DD0
-    virtual int EvaluateBuildingTarget();  // 0x6F8C10
-    virtual int GetBuildAnim() const;  // 0x705D70
-    virtual int IsNotBusy() const;  // 0x705D50
-    virtual int EvaluateMission();  // 0x708080
-    virtual int GetThreatValue() const;  // 0x4DED70
-    virtual int GetThreatValue_0() const;  // 0x5216C0
-    virtual int ProcessBorderTower();  // 0x6ED4D0
-    virtual int HandleCursor();  // 0x700600
-    virtual int GetActionOnObject();  // 0x6FFEC0
-    virtual int ScanAdjacentCells2();
-    virtual int ScanNeighborCells();  // 0x703E70
-    virtual int IsValidBuildingPlacement();  // 0x704000
-    virtual int StartEffectAudio();  // 0x703770
-    virtual int TransitionEffectState(int a2);  // 0x7036C0
-    virtual int Vt279Thunk0();  // 0x703850
-    virtual int UpdatePowerDrain(); // 0x703860
-    virtual gamemd::WeaponTypeClass** GetPoweredWeaponSlot();  // 0x70E1A0 (ptr_0 slot 253: house-power-gated weapon-slot pick via slot 254 SelectWeaponSlot; returns pointer to the WeaponTypeClass* holder)
-    virtual int UpdateState(); // 0x706640
-    virtual int UpdateUnitAnimation();  // 0x736CA0
-    virtual int GetInfantryCursorAction() const;  // 0x7404B0
+    int CheckAndFireAtTarget2();
+    int EvaluateTarget();  // 0x6f7ca0
+    int CheckTargetLOS() const;  // 0x6F7220
+    int CheckTargetCell() const; // 0x703B10
+    int ComputeTotalPowerDrain();  // 0x707DD0
+    int EvaluateBuildingTarget();  // 0x6F8C10
+    int GetBuildAnim() const;  // 0x705D70
+    int EvaluateMission();  // 0x708080
+    int GetThreatValue() const;  // 0x4DED70
+    int GetThreatValue_0() const;  // 0x5216C0
+    int ProcessBorderTower();  // 0x6ED4D0
+    int HandleCursor();  // 0x700600
+    int GetActionOnObject();  // 0x6FFEC0
+    int ScanAdjacentCells2();
+    int ScanNeighborCells();  // 0x703E70
+    int IsValidBuildingPlacement();  // 0x704000
+    int Vt279Thunk0();  // 0x703850
+    int UpdatePowerDrain(); // 0x703860
+    gamemd::WeaponTypeClass** GetPoweredWeaponSlot();  // 0x70E1A0 (ptr_0 slot 253: house-power-gated weapon-slot pick via slot 254 SelectWeaponSlot; returns pointer to the WeaponTypeClass* holder)
+    int UpdateUnitAnimation();  // 0x736CA0
+    int GetInfantryCursorAction() const;  // 0x7404B0
     // wrapper: delegates to TechnoClass::GetInfantryCursorAction at 0x7404B0
-    virtual int GetThreatValueEx() const;
-    virtual int ComputeSlopeDifference();  // 0x6F6F60
-    virtual int ComputeSlopePenalty();  // 0x6F70E0
-    virtual int IsOwnedByHuman() const;  // 0x732580
-    virtual int IsCapturableByPlayer() const;  // 0x7335F0
-    virtual int IsC4AnimationActive() const;  // 0x736D50
-    virtual int CreateDeathAnim();  // 0x738680
-    virtual int DispatchPlayerInput();  // 0x737BA0
-    virtual int Deploy(); // 0x7393C0
-    virtual int DeployIntoBuilding();  // 0x73EFC0
-    virtual int SpawnInfantryFromBuilding();  // 0x738910
-    virtual int CleanupDeploy();  // 0x6F6AC0
-    virtual int ClearAllTargets();  // 0x746720
-    virtual int SelectAITarget();  // 0x744100
-    virtual int ReturnCapturedFlag();  // 0x7440B0
-    virtual int AreBuildingFlagsClear() const;  // 0x744180
-    virtual int MarkCellImpassable();  // 0x7441B0
-    virtual int ClearCellImpassable();  // 0x744210
-    virtual int CaptureTurret();  // 0x746420
-    virtual int TransferSlavedUnit();  // 0x7463A0
-    virtual int TransferTurret();  // 0x7464E0
-    virtual int ApplyObjectEffect();  // 0x746670
-    virtual int IsGuardingTarget() const;  // 0x746750
-    virtual int ProcessUnitSelfDestruct();  // 0x746100
-    virtual int NotifyTeamOnDestruction();  // 0x744720
-    virtual int RespondToDestruction();
-    virtual int GetWaypointCoords() const; // 0x6F18A0
-    virtual int Create(); // 0x6F1920
-    virtual int CopyStateFrom();  // 0x4B5210
-    virtual int ScalarDtor();
-    virtual int EnteredOpenTopped();  // 0x710470
-    virtual int MarkPassengersAsExited();  // 0x7104C0
-    virtual int ExitedOpenTopped();  // 0x7104A0
-    virtual int GetMember388() const;  // 0x711EB0
+    int GetThreatValueEx() const;
+    int ComputeSlopeDifference();  // 0x6F6F60
+    int ComputeSlopePenalty();  // 0x6F70E0
+    int IsOwnedByHuman() const;  // 0x732580
+    int IsCapturableByPlayer() const;  // 0x7335F0
+    int IsC4AnimationActive() const;  // 0x736D50
+    int CreateDeathAnim();  // 0x738680
+    int DispatchPlayerInput();  // 0x737BA0
+    int Deploy(); // 0x7393C0
+    int DeployIntoBuilding();  // 0x73EFC0
+    int SpawnInfantryFromBuilding();  // 0x738910
+    int CleanupDeploy();  // 0x6F6AC0
+    int ClearAllTargets();  // 0x746720
+    int SelectAITarget();  // 0x744100
+    int ReturnCapturedFlag();  // 0x7440B0
+    int AreBuildingFlagsClear() const;  // 0x744180
+    int MarkCellImpassable();  // 0x7441B0
+    int ClearCellImpassable();  // 0x744210
+    int CaptureTurret();  // 0x746420
+    int TransferSlavedUnit();  // 0x7463A0
+    int TransferTurret();  // 0x7464E0
+    int ApplyObjectEffect();  // 0x746670
+    int IsGuardingTarget() const;  // 0x746750
+    int ProcessUnitSelfDestruct();  // 0x746100
+    int NotifyTeamOnDestruction();  // 0x744720
+    int RespondToDestruction();
+    int GetWaypointCoords() const; // 0x6F18A0
+    int Create(); // 0x6F1920
+    int CopyStateFrom();  // 0x4B5210
+    int ScalarDtor();
+    int EnteredOpenTopped();  // 0x710470
+    int MarkPassengersAsExited();  // 0x7104C0
+    int ExitedOpenTopped();  // 0x7104A0
+    int GetMember388() const;  // 0x711EB0
     // wrapper: delegates to TechnoClass::GetMember388 at 0x711EB0
-    virtual int GetBuildCost2() const;
+    int GetBuildCost2() const;
     // wrapper: delegates to TechnoClass::GetMember388 at 0x711EB0
-    virtual int FindBestMatch2();
-    virtual int IsWaypointHidden() const;  // 0x6EC300
-    virtual int LinkToBridge();  // 0x70FD70
-    virtual int ResetDamageAccumulator();  // 0x4C1E10
-    virtual int UpdateBodyTilt();  // 0x70B570
-    virtual int CheckCliffTransition() const;  // 0x70C620
-    virtual int OnEnterCell();  // 0x70D990
+    int FindBestMatch2();
+    int IsWaypointHidden() const;  // 0x6EC300
+    int LinkToBridge();  // 0x70FD70
+    int ResetDamageAccumulator();  // 0x4C1E10
     // wrapper: delegates to TechnoClass::OnEnterCell at 0x70D990
-    virtual int sub_570DC50();
-    virtual int OwnerHasPower() const;  // 0x70DC60
+    int sub_570DC50();
+    int OwnerHasPower() const;  // 0x70DC60
     // wrapper: delegates to TechnoClass::OwnerHasPower at 0x70DC60
-    virtual int sub_570DCE0();
+    int sub_570DCE0();
     // wrapper: delegates to TechnoClass::OwnerHasPower at 0x70DC60
-    virtual int sub_570DCF0();
-    virtual int GetPoweredWeaponIndex() const;  // 0x70DD20
-    virtual int GetVt252Byte() const;  // 0x70DD50
-    virtual int sub_70DD90();  // 0x70DD90
-    virtual int SetSpread(); // 0x70DDD0
-    virtual int DecCounter();  // 0x70D670
-    virtual int PlaceAtCell();  // 0x70D8F0
-    virtual WeaponStruct* SelectWeaponSlot(int weaponIndex); // 0x70E140 (ptr_0 slot 254: elite-vs-regular slot by veterancy >= 2.0 at +0x150)
-    virtual int Update2(); // 0x70ED10
-    virtual int GetAnimationFlags() const;  // 0x70ED80
-    virtual int GetTargetSpeedMultiplier() const;  // 0x50C050
-    virtual int ProcessEnterTransport();
+    int sub_570DCF0();
+    int GetPoweredWeaponIndex() const;  // 0x70DD20
+    int sub_70DD90();  // 0x70DD90
+    int SetSpread(); // 0x70DDD0
+    int PlaceAtCell();  // 0x70D8F0
+    WeaponStruct* SelectWeaponSlot(int weaponIndex); // 0x70E140 (ptr_0 slot 254: elite-vs-regular slot by veterancy >= 2.0 at +0x150)
+    int Update2(); // 0x70ED10
+    int GetTargetSpeedMultiplier() const;  // 0x50C050
+    int ProcessEnterTransport();
     // wrapper: delegates to FootClass::ProcessEnterTransport at 0x70D7E0
-    virtual int IsCloseEnoughToBuilding2() const;
-    virtual int IsDeployed() const;  // 0x6EF9E0
-    virtual int CheckAdjacencyFlags() const;  // 0x704240
-    virtual int IsProductionChainActive() const;  // 0x637840
-    virtual int HasDeployFlags() const;  // 0x746DB0
-    virtual int RemoveBuildingFromScripts();  // 0x638840
-    virtual int FinishDeploy();  // 0x6F6CA0
-    virtual int ValidateMoveType();  // 0x738890
+    int IsCloseEnoughToBuilding2() const;
+    int IsDeployed() const;  // 0x6EF9E0
+    int CheckAdjacencyFlags() const;  // 0x704240
+    int IsProductionChainActive() const;  // 0x637840
+    int HasDeployFlags() const;  // 0x746DB0
+    int RemoveBuildingFromScripts();  // 0x638840
+    int FinishDeploy();  // 0x6F6CA0
+    int ValidateMoveType();  // 0x738890
     // wrapper: delegates to TechnoClass::ValidateMoveType at 0x738890
-    virtual int ComputeSlopePenalty2();
-    virtual int sub_740B10();
-    virtual int CheckRepairNeeded() const;  // 0x740A90
-    virtual int EnterRepairBuilding();  // 0x740EF0
-    virtual int CheckUnitFireConstraints() const;  // 0x740FD0
-    virtual int checkTargetValidity();  // 0x741490
+    int ComputeSlopePenalty2();
+    int sub_740B10();
+    int CheckRepairNeeded() const;  // 0x740A90
+    int EnterRepairBuilding();  // 0x740EF0
+    int CheckUnitFireConstraints() const;  // 0x740FD0
+    int checkTargetValidity();  // 0x741490
     // wrapper: delegates to TechnoClass::checkTargetValidity at 0x741490
-    virtual int sub_7441B0();
+    int sub_7441B0();
     // wrapper: delegates to TechnoClass::checkTargetValidity at 0x741490
-    virtual int sub_744180();
+    int sub_744180();
     // wrapper: delegates to TechnoClass::checkTargetValidity at 0x741490
-    virtual int sub_744210();
+    int sub_744210();
     // wrapper: delegates to TechnoClass::checkTargetValidity at 0x741490
-    virtual int sub_744270();
+    int sub_744270();
     // wrapper: delegates to TechnoClass::checkTargetValidity at 0x741490
-    virtual int sub_744720();
+    int sub_744720();
     // design: virtual function, no binary implementation matched in IDA
-    virtual int sub_7440B0();
+    int sub_7440B0();
     // design: virtual function, no binary implementation matched in IDA
-    virtual int sub_744100();
-    virtual int SelectAutoTargetWithGarrison();  // 0x743190
-    virtual int processParasiteAttachment();  // 0x746400
+    int sub_744100();
+    int SelectAutoTargetWithGarrison();  // 0x743190
+    int processParasiteAttachment();  // 0x746400
     // wrapper: delegates to TechnoClass::processParasiteAttachment at 0x746400
-    virtual int sub_746420();
+    int sub_746420();
     // wrapper: delegates to TechnoClass::processParasiteAttachment at 0x746400
-    virtual int sub_7464E0();
-    virtual int sub_7465B0();
-    virtual int sub_7465F0();
+    int sub_7464E0();
+    int sub_7465B0();
+    int sub_7465F0();
     // wrapper: delegates to TechnoClass::processParasiteAttachment at 0x746400
-    virtual int sub_7463A0();
+    int sub_7463A0();
     // design: virtual function, no binary implementation matched in IDA
-    virtual int sub_746670();
+    int sub_746670();
     // design: virtual function, no binary implementation matched in IDA
-    virtual int sub_746720();
+    int sub_746720();
     // design: virtual function, no binary implementation matched in IDA
-    virtual int sub_746750();
+    int sub_746750();
     // design: virtual function, no binary implementation matched in IDA
-    virtual int sub_746B20();
-    virtual int sub_746C90();
+    int sub_746B20();
+    int sub_746C90();
     // design: virtual function, no binary implementation matched in IDA
-    virtual int sub_746CD0();
-    virtual int sub_746D00();
-    virtual int sub_746D60();
+    int sub_746CD0();
+    int sub_746D00();
+    int sub_746D60();
     // design: virtual function, no binary implementation matched in IDA
-    virtual int sub_746DB0();
-    virtual int sub_746E30();
-    virtual int sub_746EA0();
+    int sub_746DB0();
+    int sub_746E30();
+    int sub_746EA0();
     // design: virtual function, no binary implementation matched in IDA
-    virtual int sub_746100();
+    int sub_746100();
     // design: virtual function, no binary implementation matched in IDA
-    virtual int sub_746F80();
+    int sub_746F80();
     // design: virtual function, no binary implementation matched in IDA
-    virtual int sub_70F850();
+    int sub_70F850();
     // design: virtual function, no binary implementation matched in IDA
-    virtual int sub_70FB50();
-    virtual int sub_70FC90();
+    int sub_70FB50();
+    int sub_70FC90();
     // design: virtual function, no binary implementation matched in IDA
-    virtual int sub_70FD70();
+    int sub_70FD70();
     // design: virtual function, no binary implementation matched in IDA
-    virtual int sub_70FEE0();
+    int sub_70FEE0();
     // design: virtual function, no binary implementation matched in IDA
-    virtual int sub_710000();
+    int sub_710000();
     // design: virtual function, no binary implementation matched in IDA
-    virtual int sub_710470();
+    int sub_710470();
     // design: virtual function, no binary implementation matched in IDA
-    virtual int sub_7104A0();
+    int sub_7104A0();
     // design: virtual function, no binary implementation matched in IDA
-    virtual int sub_7104C0();
-    virtual int sub_7106E0();
+    int sub_7104C0();
+    int sub_7106E0();
     // design: virtual function, no binary implementation matched in IDA
-    virtual int sub_710F70();
+    int sub_710F70();
     // design: virtual function, no binary implementation matched in IDA
-    virtual int sub_711E00();
+    int sub_711E00();
     // design: virtual function, no binary implementation matched in IDA
-    virtual int sub_711EB0();
+    int sub_711EB0();
     // design: virtual function, no binary implementation matched in IDA
-    virtual int sub_73EFC0();
-    virtual int sub_7393C0();
+    int sub_73EFC0();
+    int sub_7393C0();
     // design: virtual function, no binary implementation matched in IDA
-    virtual int sub_737BA0();
+    int sub_737BA0();
     // design: virtual function, no binary implementation matched in IDA
-    virtual int sub_738910();
-    virtual int GatherAllBuildings();  // 0x732050
+    int sub_738910();
+    int GatherAllBuildings();  // 0x732050
     // wrapper: delegates to TechnoClass::GatherAllBuildings at 0x732050
-    virtual int sub_732580();
-    virtual int sub_731CF0();
+    int sub_732580();
+    int sub_731CF0();
     // wrapper: delegates to TechnoClass::GatherAllBuildings at 0x732050
-    virtual int sub_729AA0();
+    int sub_729AA0();
     // wrapper: delegates to TechnoClass::GatherAllBuildings at 0x732050
-    virtual int sub_729480();
+    int sub_729480();
     // wrapper: delegates to TechnoClass::GatherAllBuildings at 0x732050
-    virtual int sub_71F010();
+    int sub_71F010();
     // design: virtual function, no binary implementation matched in IDA
-    virtual int sub_71A130();
-    virtual int CalculateDamage(); // 0x663030
+    int sub_71A130();
+    int CalculateDamage(); // 0x663030
     // wrapper: delegates to TechnoClass::CalculateDamage at 0x663030
-    virtual int UpdateBodyTilt2();
+    int UpdateBodyTilt2();
     // wrapper: delegates to TechnoClass::CalculateDamage at 0x663030
-    virtual int GattlingRateUp_GattlingRateDownReset2();
-    virtual int ApplySplashDamageToNeighbors();  // 0x487720
-    virtual int ReceiveDamage_Shield();  // 0x701900
+    int GattlingRateUp_GattlingRateDownReset2();
+    int ApplySplashDamageToNeighbors();  // 0x487720
+    int ReceiveDamage_Shield();  // 0x701900
     // wrapper: delegates to TechnoClass::ReceiveDamage_Shield at 0x701900
-    virtual int sub_70B1D0();
+    int sub_70B1D0();
     // wrapper: delegates to TechnoClass::ReceiveDamage_Shield at 0x701900
-    virtual int sub_70B280();
+    int sub_70B280();
     // wrapper: delegates to TechnoClass::ReceiveDamage_Shield at 0x701900
-    virtual int sub_70B570();
+    int sub_70B570();
     // wrapper: delegates to TechnoClass::ReceiveDamage_Shield at 0x701900
-    virtual int sub_70BCB0();
+    int sub_70BCB0();
     // wrapper: delegates to TechnoClass::ReceiveDamage_Shield at 0x701900
-    virtual int sub_70BE80();
+    int sub_70BE80();
     // design: virtual function, no binary implementation matched in IDA
-    virtual int sub_70D1D0();
+    int sub_70D1D0();
     // design: virtual function, no binary implementation matched in IDA
-    virtual int sub_70D990();
+    int sub_70D990();
     // design: virtual function, no binary implementation matched in IDA
-    virtual int sub_70DE70();
+    int sub_70DE70();
     // design: virtual function, no binary implementation matched in IDA
-    virtual int sub_70DE00();
+    int sub_70DE00();
     // design: virtual function, no binary implementation matched in IDA
-    virtual int sub_70DD20();
+    int sub_70DD20();
     // design: virtual function, no binary implementation matched in IDA
-    virtual int sub_70DD50();
-    virtual int sub_70DDD0();
+    int sub_70DD50();
+    int sub_70DDD0();
     // design: virtual function, no binary implementation matched in IDA
-    virtual int sub_70DE40();
-    virtual int sub_70E120();
-    virtual int sub_70E140();
+    int sub_70DE40();
+    int sub_70E120();
+    int sub_70E140();
     // design: virtual function, no binary implementation matched in IDA
-    virtual int sub_70E1A0();
+    int sub_70E1A0();
     // design: virtual function, no binary implementation matched in IDA
-    virtual int sub_70E280();
-    virtual int sub_70E2B0();
+    int sub_70E280();
+    int sub_70E2B0();
     // design: virtual function, no binary implementation matched in IDA
-    virtual int sub_70E300();
+    int sub_70E300();
     // design: virtual function, no binary implementation matched in IDA
-    virtual int sub_70E380();
-    virtual int sub_70E4B0();
+    int sub_70E380();
+    int sub_70E4B0();
     // design: virtual function, no binary implementation matched in IDA
-    virtual int sub_70EC0A();
-    virtual int sub_70ED10();
+    int sub_70EC0A();
+    int sub_70ED10();
     // design: virtual function, no binary implementation matched in IDA
-    virtual int sub_70ED80();
+    int sub_70ED80();
     // design: virtual function, no binary implementation matched in IDA
-    virtual int sub_70EE30();
+    int sub_70EE30();
     // design: virtual function, no binary implementation matched in IDA
-    virtual int sub_70EFD0();
+    int sub_70EFD0();
     // design: virtual function, no binary implementation matched in IDA
-    virtual int sub_70EF00();
+    int sub_70EF00();
     // design: virtual function, no binary implementation matched in IDA
-    virtual int sub_70F010();
-    virtual int sub_70F000();
+    int sub_70F010();
+    int sub_70F000();
     // design: virtual function, no binary implementation matched in IDA
-    virtual int sub_70ECE0();
+    int sub_70ECE0();
     // design: virtual function, no binary implementation matched in IDA
-    virtual int sub_70CCC0();
+    int sub_70CCC0();
     // design: virtual function, no binary implementation matched in IDA
-    virtual int sub_70CC90();
+    int sub_70CC90();
     // design: virtual function, no binary implementation matched in IDA
-    virtual int sub_70CD10();
+    int sub_70CD10();
     // design: virtual function, no binary implementation matched in IDA
-    virtual int sub_70D190();
+    int sub_70D190();
     // design: virtual function, no binary implementation matched in IDA
-    virtual int sub_70D460();
-    virtual int sub_70D590();
+    int sub_70D460();
+    int sub_70D590();
     // design: virtual function, no binary implementation matched in IDA
-    virtual int sub_70D670();
+    int sub_70D670();
     // design: virtual function, no binary implementation matched in IDA
-    virtual int sub_70D690();
+    int sub_70D690();
     // design: virtual function, no binary implementation matched in IDA
-    virtual int sub_70D8F0();
+    int sub_70D8F0();
     // design: virtual function, no binary implementation matched in IDA
-    virtual int sub_70BE50();
+    int sub_70BE50();
     // design: virtual function, no binary implementation matched in IDA
-    virtual int sub_70C620();
-    virtual int sub_70C610();
+    int sub_70C620();
+    int sub_70C610();
 
-    virtual int SelectWeapon(AbstractClass* target) const; // 0x6F3330
+    int SelectWeapon(AbstractClass* target) const; // 0x6F3330
     // wrapper: delegates to TechnoClass::SelectWeapon at 0x6F3330
     void SmokeupdateLogic();
     bool CreateUnit(); // 0x423AC0
@@ -1120,24 +1239,16 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void Process(int a1);  // 0x50E1C0
     bool updateTurretRotation();  // 0x5224F0
     bool HasAnyMission();  // 0x6E57C0
-    void* GetTurretOffset(void* a1, int a2);  // 0x6F3D60
     void* Constructor(int a1);  // 0x6F4300
     int ExecuteMoveCommand();  // 0x6FBFA0
-    int Vt240Thunk();  // 0x6FC090
     int DrawTargetLine();  // 0x6FF960
     int HasValidWeapon();  // 0x7010D0
-    int GetDrawHeight();  // 0x704350
     int CleanupAll(int a1);  // 0x707CB0
-    int DrawPips();  // 0x709A90
-    int DrawVeterancy();  // 0x70A990
-    int DrawPowerIndicator();  // 0x70AA60
     int processEMPulse();  // 0x70DC50
     bool checkEMPState();  // 0x70DCE0
     int applyEMPulseDamage();  // 0x70DCF0
     int GetMember81();  // 0x70DDF0
-    int Vt249to254();  // 0x70E120
     int CalcFlashAlpha(int a1);  // 0x70E4B0
-    int ClearUnknownFlag();  // 0x70F000
     WeaponStruct* GetEliteWeaponSlot(int index);  // 0x7177E0 (&EliteWeapon[index] on the type; real owner TechnoTypeClass - ownership debt)
     bool HasVoiceResponse(int weaponIndex);  // 0x70D0D0 -- reads this->veterancy and type-side Voice*WeaponAttack flags
     int ShouldSkipOccupierDraw(int a1, int a2, int a3);  // 0x73B0B0

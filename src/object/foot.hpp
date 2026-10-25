@@ -26,10 +26,10 @@ public:
 
     virtual ~FootClass();  // 0x4D3590
 
-    virtual void Destroyed(ObjectClass* killer) override;  // 0x4D98C0
+    virtual void Destroyed(ObjectClass* killer);  // 0x4D98C0
     virtual int GetActionOnObject();  // 0x4DDED0
     // wrapper: delegates to FootClass::Destroyed at 0x4D98C0
-    virtual void onBuildingPlacement(uint32_t a, uint32_t b) override;
+    virtual void onBuildingPlacement(uint32_t a, uint32_t b);
 
     // wrapper: delegates to FootClass::Destroyed at 0x4D98C0
     virtual void ReceiveGunner(FootClass* gunner);
@@ -99,11 +99,11 @@ public:
     bool MovementAI();  // 0x4DA530
 
     // wrapper: delegates to FootClass::MovementAI at 0x4DA530
-    int Mission_Move() override;
-    int Mission_Attack() override;
-    int Mission_Guard() override;
+    int Mission_Move() ;
+    int Mission_Attack() ;
+    int Mission_Guard() ;
     // wrapper: delegates to BuildingClass::Mission_Guard at 0x459E70
-    int Mission_Hunt() override;
+    int Mission_Hunt() ;
 
     // === Phase 3 generated declarations (IDA functions.json) ===
     virtual int MissionMoveCarryallLand();  // 0x416AF0

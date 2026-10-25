@@ -1338,7 +1338,7 @@ int BuildingClass::HandleFactoryCommand() {
         WaypointCoords = ScriptAction::GetWaypointCoords((ScriptAction *)v19, this); /*0x443472*/
         v15 = *(unsigned int *)WaypointCoords; /*0x443483*/
         v17 = WaypointCoords[4]; /*0x443487*/
-        v4 = this->vt_slot_56(this); /*0x44348c*/
+        v4 = this->computeDistanceSquared(); /*0x44348c*/
         v5 = EventClass::Add(v22, v4, 0x11u, v15, v17); /*0x443494*/
         if ( *(int *)&dword_A802C8 < 128 ) /*0x4434a3*/
         {
@@ -1402,7 +1402,7 @@ int BuildingClass::HandleFactoryCommand() {
       v10 = ScriptAction::GetWaypointCoords((ScriptAction *)&v20, this); /*0x443661*/
       v13 = *(unsigned int *)v10; /*0x443672*/
       v14 = v10->ptr_4; /*0x443676*/
-      v11 = this->vt_slot_56(this); /*0x44367b*/
+      v11 = this->computeDistanceSquared(); /*0x44367b*/
       result = (int)ScenarioClass::SetEvent(v22, v11, 30, v13, v14, v16, v18); /*0x443683*/
       break;
     default:
@@ -2049,8 +2049,8 @@ LABEL_130:
   this->ActuallyPlacedOnMap[0] = 1; /*0x446a6e*/
   *(unsigned char *)(v93 + 22392) = 1; /*0x446a77*/
   *(unsigned char *)&this->owner->u32_5779 = 1; /*0x446a84*/
-  if ( *(unsigned char *)(this->vt_slot_132(this) + 3281) ) /*0x446a94*/
-    this->vt_slot_1044(this); /*0x446aa3*/
+  if ( *(unsigned char *)(this->COMStub_Return0_33() + 3281) ) /*0x446a94*/
+    this->RevealShroud(); /*0x446aa3*/
   result = *(unsigned int *)&this->Type->FreeUnit_d; /*0x446aaf*/
   if ( result ) /*0x446ab7*/
   {
@@ -3857,7 +3857,7 @@ int InfantryClass::Update() {
     }
     if ( this->CanInitiateDeploy() ) /*0x51bc1c*/
     {
-      if ( this->GetPrimaryOrFallback() == -1 && this->queuedMission == -1 ) /*0x51bc3d*/
+      if ( this->processStateUpdate() == -1 && this->queuedMission == -1 ) /*0x51bc3d*/
         this->ValidatePlacement_1(0, 1); /*0x51bc47*/
       this->AdvanceState(); /*0x51bc51*/
     }
@@ -3883,8 +3883,8 @@ int InfantryClass::Update() {
     if ( (unsigned char)movementDestination ) /*0x51bcac*/
     {
       if ( this->inLimbo[0] /*0x51bcdc*/
-        || this->GetPrimaryOrFallback() != 5
-        && this->GetPrimaryOrFallback() != 11 )
+        || this->processStateUpdate() != 5
+        && this->processStateUpdate() != 11 )
       {
         goto LABEL_61; /*0x51bcdc*/
       }
@@ -3942,7 +3942,7 @@ int InfantryClass::Update() {
       team = this->team; /*0x51be3e*/
       if ( team && this->isInPlayfield[0] ) /*0x51be48*/
         *(unsigned char *)(team + 130) = 1; /*0x51be52*/
-      if ( !this->team && this->GetPrimaryOrFallback() == 5 ) /*0x51be70*/
+      if ( !this->team && this->processStateUpdate() == 5 ) /*0x51be70*/
       {
         v20 = this->location[0]; /*0x51be7e*/
         v21 = this->location[1]; /*0x51be8a*/
@@ -3959,7 +3959,7 @@ int InfantryClass::Update() {
         return movementDestination; /*0x51bec7*/
       if ( this->CanInitiateDeploy() ) /*0x51bed1*/
       {
-        if ( this->GetPrimaryOrFallback() == -1 && this->queuedMission == -1 ) /*0x51beef*/
+        if ( this->processStateUpdate() == -1 && this->queuedMission == -1 ) /*0x51beef*/
           this->ValidatePlacement_1(0, 1); /*0x51bef9*/
         this->AdvanceState(); /*0x51bf03*/
       }
