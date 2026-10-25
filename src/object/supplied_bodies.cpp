@@ -6678,7 +6678,7 @@ bool FootClass::IsTargetInRange() const
 
 // 0x4DE940
 namespace ra2::game {
-int FootClass::CheckCellPassable() const
+int FootClass::CheckCellPassable_315() const
 {
 
   int v3; // edi

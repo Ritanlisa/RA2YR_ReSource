@@ -61,7 +61,7 @@ public:
     virtual int FireWeaponWithCleanup(int a2, int a3);  // 0x51DF60
     virtual int GetFireError(int* target, int weapon_idx, int a4, int a5);  // 0x51C8B0
     virtual bool CanAttackTarget(HouseClass* target_house);  // 0x5227F0 (disguised-spy attack permission vs house)
-    virtual void PlayIdleAnim(int idle_anim_number) override;
+    virtual void PlayIdleAnim(int idle_anim_number);
     virtual int ProcessIdleAction();  // 0x51CDB0
     int GetIdleTimer();  // 0x521320
 

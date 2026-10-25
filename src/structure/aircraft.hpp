@@ -21,16 +21,16 @@ class StageClass : public IFlyControl
 {
 public:
     // unmatched: no callgraph reference and no git history record
-    virtual int __stdcall Landing_Altitude() override;
+    virtual int __stdcall Landing_Altitude();
     // unmatched: no callgraph reference and no git history record
-    virtual int __stdcall Landing_Direction() override;
+    virtual int __stdcall Landing_Direction();
     // unmatched: no callgraph reference and no git history record
-    virtual long __stdcall Is_Loaded() override;
+    virtual long __stdcall Is_Loaded();
     // unmatched: no callgraph reference and no git history record
-    virtual long __stdcall Is_Strafe() override;
+    virtual long __stdcall Is_Strafe();
     // unmatched: no callgraph reference and no git history record
-    virtual long __stdcall Is_Fighter() override;
-    virtual long __stdcall Is_Locked() override;
+    virtual long __stdcall Is_Fighter();
+    virtual long __stdcall Is_Locked();
 };
 
 class FlasherClass : public StageClass
@@ -44,17 +44,17 @@ public:
     static constexpr AbstractType kObjectTypeId = AbstractType::Aircraft;
 
     // unmatched: no callgraph reference and no git history record
-    virtual int __stdcall Landing_Altitude() override;
+    virtual int __stdcall Landing_Altitude();
     // unmatched: no callgraph reference and no git history record
-    virtual int __stdcall Landing_Direction() override;
+    virtual int __stdcall Landing_Direction();
     // unmatched: no callgraph reference and no git history record
-    virtual long __stdcall Is_Loaded() override;
+    virtual long __stdcall Is_Loaded();
     // unmatched: no callgraph reference and no git history record
-    virtual long __stdcall Is_Strafe() override;
+    virtual long __stdcall Is_Strafe();
     // unmatched: no callgraph reference and no git history record
-    virtual long __stdcall Is_Fighter() override;
+    virtual long __stdcall Is_Fighter();
     // design: virtual function, no binary implementation matched in IDA
-    virtual long __stdcall Is_Locked() override;
+    virtual long __stdcall Is_Locked();
 
     virtual HRESULT __stdcall QueryInterface(AbstractClass *a2, void *iid, void **ppv); // 0x414290
     virtual ULONG __stdcall AddRef() override;  // 0x4142F0
