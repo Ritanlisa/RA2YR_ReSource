@@ -229,118 +229,106 @@ int SaveGame::LoadMainGameState()
   int v7; // edx
   int v8; // edi
   int v9; // eax
-  ParticleSystemClass *unk1Particles; // [esp+A0h] [ebp-4h] BYREF
+  int v10; // [esp+A0h] [ebp-4h] BYREF
 
-  result = (*(int (**)(SaveGame *, unsigned char *, int, unsigned int))(*(unsigned int *)&this->__pad_0 + 16))( /*0x67f7f1*/
+  result = (*(int (**)(SaveGame *, char *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 16))(
              this,
-             &DataGlobal_A8EC94,
+             &stru_A8E960.random[516],
              4,
-             0);
+             0);  /*0x67f7f1*/
   if ( result >= 0 )
   {
-    result = (*(int (**)(SaveGame *, Object **, int, unsigned int))(*(unsigned int *)&this->__pad_0 + 16))( /*0x67f808*/
+    result = (*(int (**)(SaveGame *, char *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 16))(
                this,
-               &dword_A83D4C,
+               (char *)&stru_A83CD9.estimatedHealth + 3,
                4,
-               0);
+               0);  /*0x67f808*/
     if ( result >= 0 )
     {
-      result = (*(int (**)(SaveGame *, unsigned char *, int, unsigned int))(*(unsigned int *)&this->__pad_0 + 16))( /*0x67f81f*/
+      result = (*(int (**)(SaveGame *, char *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 16))(
                  this,
-                 &TeamTypeClass_Array,
+                 &stru_A8E960.random[528],
                  4,
-                 0);
+                 0);  /*0x67f81f*/
       if ( result >= 0 )
       {
-        v3 = *(unsigned int *)&this->__pad_0; /*0x67f82f*/
-        unk1Particles = *(ParticleSystemClass **)&Instance; /*0x67f83b*/
-        result = (*(int (**)(SaveGame *, ParticleSystemClass **, int, unsigned int))(v3 + 16))( /*0x67f83f*/
-                   this,
-                   &unk1Particles,
-                   4,
-                   0);
+        v3 = *(unsigned int *)this->__pad_0;  /*0x67f82f*/
+        v10 = *(unsigned int *)&stru_A8E960.random[340];  /*0x67f83b*/
+        result = (*(int (**)(SaveGame *, int *, int, unsigned int))(v3 + 16))(this, &v10, 4, 0);  /*0x67f83f*/
         if ( result >= 0 )
         {
-          v4 = 0; /*0x67f84e*/
-          if ( (int)unk1Particles <= 0 )
+          v4 = 0;  /*0x67f84e*/
+          if ( v10 <= 0 )
           {
-            LABEL_8:
-            result = (*(int (**)(SaveGame *, float *, int, unsigned int))(*(unsigned int *)&this->__pad_0 + 16))( /*0x67f879*/
+LABEL_8:
+            result = (*(int (**)(SaveGame *, float *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 16))(
                        this,
                        flt_89EA40,
                        432,
-                       0);
+                       0);  /*0x67f879*/
             if ( result >= 0 )
             {
-              SuperWeaponClass::LoadFromSaveStream((SuperWeaponClass *)this); /*0x67f895*/
-              v5 = *(unsigned int *)&this->__pad_0; /*0x67f8a0*/
-              unk1Particles = (gamemd::ParticleSystemClass *)(dword_8B40D8); /*0x67f8ac*/
-              result = (*(int (**)(SaveGame *, ParticleSystemClass **, int, unsigned int))(v5 + 16))( /*0x67f8b0*/
-                         this,
-                         &unk1Particles,
-                         4,
-                         0);
+              SuperWeaponClass::LoadFromSaveStream((SuperWeaponClass *)this);  /*0x67f895*/
+              v5 = *(unsigned int *)this->__pad_0;  /*0x67f8a0*/
+              v10 = dword_8B40D8;  /*0x67f8ac*/
+              result = (*(int (**)(SaveGame *, int *, int, unsigned int))(v5 + 16))(this, &v10, 4, 0);  /*0x67f8b0*/
               if ( result >= 0 )
               {
-                v6 = 0; /*0x67f8bf*/
-                if ( (int)unk1Particles <= 0 )
+                v6 = 0;  /*0x67f8bf*/
+                if ( v10 <= 0 )
                 {
-                  LABEL_13:
-                  v7 = *(unsigned int *)&this->__pad_0; /*0x67f8ea*/
-                  unk1Particles = (ParticleSystemClass *)FootClass_Array; /*0x67f8fc*/
-                  result = (*(int (**)(SaveGame *, ParticleSystemClass **, int, unsigned int))(v7 + 16))( /*0x67f900*/
-                             this,
-                             &unk1Particles,
-                             4,
-                             0);
+LABEL_13:
+                  v7 = *(unsigned int *)this->__pad_0;  /*0x67f8ea*/
+                  v10 = dword_8B41B8;  /*0x67f8fc*/
+                  result = (*(int (**)(SaveGame *, int *, int, unsigned int))(v7 + 16))(this, &v10, 4, 0);  /*0x67f900*/
                   if ( result >= 0 )
                   {
-                    v8 = 0; /*0x67f90f*/
-                    if ( (int)unk1Particles <= 0 )
+                    v8 = 0;  /*0x67f90f*/
+                    if ( v10 <= 0 )
                     {
-                      LABEL_17:
-                      result = (*(int (**)(SaveGame *, int *, int, unsigned int))(*(unsigned int *)&this->__pad_0 + 16))( /*0x67f93a*/
+LABEL_17:
+                      result = (*(int (**)(SaveGame *, int *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 16))(
                                  this,
                                  dword_81DA8C,
                                  76,
-                                 0);
+                                 0);  /*0x67f93a*/
                       if ( result >= 0 )
                       {
-                        result = (*(int (**)(SaveGame *, int *, int, unsigned int))(*(unsigned int *)&this->__pad_0 + 16))( /*0x67f959*/
+                        result = (*(int (**)(SaveGame *, int *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 16))(
                                    this,
                                    dword_81DAD8,
                                    76,
-                                   0);
+                                   0);  /*0x67f959*/
                         if ( result >= 0 )
                         {
-                          result = (*(int (**)(SaveGame *, double *, int, unsigned int))(*(unsigned int *)&this->__pad_0 /*0x67f96f*/
-                                     + 16))(
+                          result = (*(int (**)(SaveGame *, double *, int, unsigned int))(*(unsigned int *)this->__pad_0
+                                                                                           + 16))(
                                      this,
                                      dbl_89EC28,
                                      152,
-                                     0);
+                                     0);  /*0x67f96f*/
                           if ( result >= 0 )
                           {
-                            result = (*(int (**)(SaveGame *, char *, int, unsigned int))(*(unsigned int *)&this->__pad_0 /*0x67f982*/
-                                       + 16))(
+                            result = (*(int (**)(SaveGame *, char *, int, unsigned int))(*(unsigned int *)this->__pad_0
+                                                                                           + 16))(
                                        this,
                                        byte_89ECC0,
                                        19,
-                                       0);
+                                       0);  /*0x67f982*/
                             if ( result >= 0 )
                             {
-                              result = (*(int (**)(SaveGame *, MissionClass *, int, unsigned int))(*(unsigned int *)&this->__pad_0 + 16))( /*0x67f998*/
+                              result = (*(int (**)(SaveGame *, MissionClass *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 16))(
                                          this,
                                          &stru_A8E3A8,
                                          1024,
-                                         0);
+                                         0);  /*0x67f998*/
                               if ( result >= 0 )
                               {
-                                v9 = (*(int (**)(SaveGame *, int *, int, unsigned int))(*(unsigned int *)&this->__pad_0 + 16))( /*0x67f9ab*/
+                                v9 = (*(int (**)(SaveGame *, int *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 16))(
                                        this,
                                        &dword_B07784,
                                        4,
-                                       0);
+                                       0);  /*0x67f9ab*/
                                 return v9 >= 0 ? 0 : v9;
                               }
                             }
@@ -350,34 +338,34 @@ int SaveGame::LoadMainGameState()
                     }
                     else
                     {
-                      while ( 1 ) /*0x67f926*/
-                      {
-                        result = (*(int (**)(SaveGame *, int, int, unsigned int))(*(unsigned int *)&this->__pad_0 + 16))( /*0x67f926*/
+                      while ( 1 )
+                      {  /*0x67f926*/
+                        result = (*(int (**)(SaveGame *, char *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 16))(
                                    this,
-                                   FootClass_Array.?[5] + 4 * v8,
+                                   (char *)dword_8B41AC + 4 * v8,
                                    4,
-                                   0);
-                        if ( result < 0 ) /*0x67f92b*/
-                          break; /*0x67f92b*/
-                        if ( ++v8 >= (int)unk1Particles ) /*0x67f938*/
-                          goto LABEL_17; /*0x67f938*/
+                                   0);  /*0x67f926*/
+                        if ( result < 0 )
+                          break;  /*0x67f92b*/  /*0x67f92b*/
+                        if ( ++v8 >= v10 )
+                          goto LABEL_17;  /*0x67f938*/  /*0x67f938*/
                       }
                     }
                   }
                 }
                 else
                 {
-                  while ( 1 ) /*0x67f8d6*/
-                  {
-                    result = (*(int (**)(SaveGame *, char *, int, unsigned int))(*(unsigned int *)&this->__pad_0 + 16))( /*0x67f8d6*/
+                  while ( 1 )
+                  {  /*0x67f8d6*/
+                    result = (*(int (**)(SaveGame *, char *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 16))(
                                this,
-                               (char *)&DataGlobal_8B3DC0[780]->ObjectClass + 4 * v6,
+                               (char *)dword_8B40CC + 4 * v6,
                                4,
-                               0);
-                    if ( result < 0 ) /*0x67f8db*/
-                      break; /*0x67f8db*/
-                    if ( ++v6 >= (int)unk1Particles ) /*0x67f8e8*/
-                      goto LABEL_13; /*0x67f8e8*/
+                               0);  /*0x67f8d6*/
+                    if ( result < 0 )
+                      break;  /*0x67f8db*/  /*0x67f8db*/
+                    if ( ++v6 >= v10 )
+                      goto LABEL_13;  /*0x67f8e8*/  /*0x67f8e8*/
                   }
                 }
               }
@@ -385,24 +373,24 @@ int SaveGame::LoadMainGameState()
           }
           else
           {
-            while ( 1 ) /*0x67f865*/
-            {
-              result = (*(int (**)(SaveGame *, int, int, unsigned int))(*(unsigned int *)&this->__pad_0 + 16))( /*0x67f865*/
+            while ( 1 )
+            {  /*0x67f865*/
+              result = (*(int (**)(SaveGame *, int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 16))(
                          this,
-                         *(unsigned int *)&DataGlobal_A8EB00[444] + 4 * v4,
+                         *(unsigned int *)&stru_A8E960.random[328] + 4 * v4,
                          4,
-                         0);
-              if ( result < 0 ) /*0x67f86a*/
-                break; /*0x67f86a*/
-              if ( ++v4 >= (int)unk1Particles ) /*0x67f877*/
-                goto LABEL_8; /*0x67f877*/
+                         0);  /*0x67f865*/
+              if ( result < 0 )
+                break;  /*0x67f86a*/  /*0x67f86a*/
+              if ( ++v4 >= v10 )
+                goto LABEL_8;  /*0x67f877*/  /*0x67f877*/
             }
           }
         }
       }
     }
   }
-  return result; /*0x67f9b8*/
+  return result;  /*0x67f9b8*/
 
 }
 }
@@ -509,7 +497,7 @@ int SaveGame::SaveAudioQueueItems()
   int v11; // [esp+10h] [ebp-14h] BYREF
   unsigned int v12[4]; // [esp+14h] [ebp-10h] BYREF
 
-  v11 = SaveGame::CountLinkedList((SaveGame *)&stru_B1D290.isAliveFlag); /*0x751637*/
+  v11 = ((SaveGame *)&stru_B1D290.isAliveFlag)->CountLinkedList(); /*0x751637*/
   v2 = (*(int (**)(SaveGame *, int *, int, unsigned int))(*(unsigned int *)&this->__pad_0 + 16))(this, &v11, 4, 0); /*0x751647*/
   if ( v2 >= 0 )
   {
@@ -629,7 +617,7 @@ int SaveGame::WriteObject(int a1, int a2)
   v2 = StreamClass::ResetPosition((LocomotionClass *)a1, a2); /*0x513cc8*/
   int v3; // eax
   v3 = (*((int (**)(FootClass *))a1->Owner->ptr_0 + 33))(a1->Owner); /*0x513ccc*/
-  FrameSnapshot::InitMax(v5, 2 * *(unsigned int *)(v3 + 1820)); /*0x513cdf*/
+  (v5)->InitMax(2 * *(unsigned int *)(v3 + 1820)); /*0x513cdf*/
   memcpy(&a1->HeadToCoord[2], v5, 0x18u); /*0x513cf2*/
   return v2; /*0x513cf4*/
 }

@@ -12,115 +12,99 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/AudioController_e4.hpp"
 #include "e4/classes/ScriptClass_e4.hpp"
+// X129: fresh-render label declarations (auto, idempotent)
+extern unsigned char aNothreat[9];  // data: 0x82C2B8
+extern unsigned char aParalyzed[10];  // data: 0x82C298
+extern unsigned char aRecruitable[12];  // data: 0x82C2A4
+extern unsigned char aRetaliate[10];  // data: 0x82C28C
+extern unsigned char aScatter[8];  // data: 0x82C284
+extern unsigned char aZombie[7];  // data: 0x82C2B0
 
 // 0x5B3760
 namespace gamemd {  // G42.18 ns repair
 AbstractClass * * MissionClass::LoadFromINI(unsigned int *a2, void *a2_1)
 {
 
-
-  INIClass::ResetSection((INIClass *)a2); /*0x5b376a*/
   char *v3; // eax
-  if ( this->ptr_0 == (void *)-1 ) /*0x5b3774*/
-    v3 = g_Str__none_; /*0x5b3776*/
-  else
-    v3 = off_816CAC[(int)this->ptr_0]; /*0x5b377d*/
-  if ( !INIClass::BinarySearchSection((int)a2, (unsigned __int8 *)v3) ) /*0x5b3787*/
-    return 0; /*0x5b3906*/
   char *v4; // eax
-  if ( this->ptr_0 == (void *)-1 ) /*0x5b379e*/
-    v4 = g_Str__none_; /*0x5b37a0*/
-  else
-    v4 = off_816CAC[(int)this->ptr_0]; /*0x5b37a7*/
-  LOBYTE(this->ptr_4) = INIClass::ReadBool_Overwrite( /*0x5b37bf*/
-                      a2,
-                      (unsigned __int8 *)v4,
-                      (unsigned __int8 *)&g_INI_Key_Neutral,
-                      (char)this->?);
   char *v5; // eax
-  if ( this->ptr_0 == (void *)-1 ) /*0x5b37c7*/
-    v5 = g_Str__none_; /*0x5b37c9*/
-  else
-    v5 = off_816CAC[(int)this->ptr_0]; /*0x5b37d0*/
-  BYTE1(this->q005) = INIClass::ReadBool_Overwrite( /*0x5b37e8*/
-                     a2,
-                     (unsigned __int8 *)v5,
-                     (unsigned __int8 *)&DataGlobal_82BA00[2206],
-                     BYTE1(this->?));
   char *v6; // eax
-  if ( this->ptr_0 == (void *)-1 ) /*0x5b37f0*/
-    v6 = g_Str__none_; /*0x5b37f2*/
-  else
-    v6 = off_816CAC[(int)this->ptr_0]; /*0x5b37f9*/
-  BYTE2(this->q006) = INIClass::ReadBool_Overwrite( /*0x5b3811*/
-                     a2,
-                     (unsigned __int8 *)v6,
-                     (unsigned __int8 *)&DataGlobal_82BA00[2203],
-                     BYTE2(this->?));
   char *v7; // eax
-  if ( this->ptr_0 == (void *)-1 ) /*0x5b3819*/
-    v7 = g_Str__none_; /*0x5b381b*/
-  else
-    v7 = off_816CAC[(int)this->ptr_0]; /*0x5b3822*/
-  HIBYTE(this->q007) = INIClass::ReadBool_Overwrite( /*0x5b383a*/
-                      a2,
-                      (unsigned __int8 *)v7,
-                      (unsigned __int8 *)DataGlobal_82BA00[2200],
-                      HIBYTE(this->?));
   char *v8; // eax
-  if ( this->ptr_0 == (void *)-1 ) /*0x5b3842*/
-    v8 = g_Str__none_; /*0x5b3844*/
-  else
-    v8 = off_816CAC[(int)this->ptr_0]; /*0x5b384b*/
-  LOBYTE(this->ptr_8) = INIClass::ReadBool_Overwrite( /*0x5b3863*/
-                      a2,
-                      (unsigned __int8 *)v8,
-                      (unsigned __int8 *)&DataGlobal_82BA00[2188],
-                      (char)this->?);
   char *v9; // eax
-  if ( this->ptr_0 == (void *)-1 ) /*0x5b386b*/
-    v9 = g_Str__none_; /*0x5b386d*/
-  else
-    v9 = off_816CAC[(int)this->ptr_0]; /*0x5b3874*/
-  BYTE1(this->q009) = INIClass::ReadBool_Overwrite( /*0x5b388c*/
-                     a2,
-                     (unsigned __int8 *)v9,
-                     (unsigned __int8 *)&DataGlobal_82BA00[2180],
-                     BYTE1(this->?));
   char *v10; // eax
-  if ( this->ptr_0 == (void *)-1 ) /*0x5b3894*/
-    v10 = g_Str__none_; /*0x5b3896*/
+  int vfptr; // eax
+  char *v13; // eax
+  int abstractFlags; // ecx
+
+  INIClass::ResetSection((INIClass *)a2);  /*0x5b376a*/
+  if ( this->ptr_0 == (void *)-1 )
+    v3 = g_Str__none_;  /*0x5b3776*/  /*0x5b3774*/
   else
-    v10 = off_816CAC[(int)this->ptr_0]; /*0x5b389d*/
-  INIClass::ReadDouble_Overwrite( /*0x5b38b4*/
+    v3 = off_816CAC[(int)this->ptr_0];  /*0x5b377d*/
+  if ( !INIClass::BinarySearchSection((int)a2, (unsigned __int8 *)v3) )
+    return 0;  /*0x5b3906*/  /*0x5b3787*/
+  if ( this->ptr_0 == (void *)-1 )
+    v4 = g_Str__none_;  /*0x5b37a0*/  /*0x5b379e*/
+  else
+    v4 = off_816CAC[(int)this->ptr_0];  /*0x5b37a7*/
+  LOBYTE(this->ptr_4) = INIClass::ReadBool_Overwrite(a2, (unsigned __int8 *)v4, aNothreat, this->ptr_4[0]);  /*0x5b37bf*/
+  if ( this->ptr_0 == (void *)-1 )
+    v5 = g_Str__none_;  /*0x5b37c9*/  /*0x5b37c7*/
+  else
+    v5 = off_816CAC[(int)this->ptr_0];  /*0x5b37d0*/
+  BYTE1(this->q005) = INIClass::ReadBool_Overwrite(a2, (unsigned __int8 *)v5, aZombie, BYTE1(this->q005));  /*0x5b37e8*/
+  if ( this->ptr_0 == (void *)-1 )
+    v6 = g_Str__none_;  /*0x5b37f2*/  /*0x5b37f0*/
+  else
+    v6 = off_816CAC[(int)this->ptr_0];  /*0x5b37f9*/
+  BYTE2(this->q006) = INIClass::ReadBool_Overwrite(a2, (unsigned __int8 *)v6, aRecruitable, BYTE2(this->q006));  /*0x5b3811*/
+  if ( this->ptr_0 == (void *)-1 )
+    v7 = g_Str__none_;  /*0x5b381b*/  /*0x5b3819*/
+  else
+    v7 = off_816CAC[(int)this->ptr_0];  /*0x5b3822*/
+  HIBYTE(this->q007) = INIClass::ReadBool_Overwrite(a2, (unsigned __int8 *)v7, aParalyzed, HIBYTE(this->q007));  /*0x5b383a*/
+  if ( this->ptr_0 == (void *)-1 )
+    v8 = g_Str__none_;  /*0x5b3844*/  /*0x5b3842*/
+  else
+    v8 = off_816CAC[(int)this->ptr_0];  /*0x5b384b*/
+  LOBYTE(this->ptr_8) = INIClass::ReadBool_Overwrite(a2, (unsigned __int8 *)v8, aRetaliate, this->ptr_8[0]);  /*0x5b3863*/
+  if ( this->ptr_0 == (void *)-1 )
+    v9 = g_Str__none_;  /*0x5b386d*/  /*0x5b386b*/
+  else
+    v9 = off_816CAC[(int)this->ptr_0];  /*0x5b3874*/
+  BYTE1(this->q009) = INIClass::ReadBool_Overwrite(a2, (unsigned __int8 *)v9, aScatter, BYTE1(this->q009));  /*0x5b388c*/
+  if ( this->ptr_0 == (void *)-1 )
+    v10 = g_Str__none_;  /*0x5b3896*/  /*0x5b3894*/
+  else
+    v10 = off_816CAC[(int)this->ptr_0];  /*0x5b389d*/
+  INIClass::ReadDouble_Overwrite(
     (double *)a2,
     (unsigned __int8 *)v10,
     (unsigned __int8 *)g_INI_Key_Rate,
-    *(double *)&this->?);
-  void *ptr_0 = this->ptr_0; // eax /*0x5b38b9*/
-  __asm { fstp qword ptr [esi+10h] } /*0x5b38bb*/
-  *&this->uniqueId = _RT1; /*0x5b38bb*/
-  char *v13; // eax
-  if ( ptr_0 == (void *)-1 ) /*0x5b38c1*/
-    v13 = g_Str__none_; /*0x5b38c3*/
+    *(double *)&this->uniqueId);  /*0x5b38b4*/
+  vfptr = (int)this->ptr_0;  /*0x5b38b9*/
+  __asm { fstp    qword ptr [esi+10h] }  /*0x5b38bb*/
+  *(double *)&this->uniqueId = _RT1;  /*0x5b38bb*/
+  if ( vfptr == -1 )
+    v13 = g_Str__none_;  /*0x5b38c3*/  /*0x5b38c1*/
   else
-    v13 = off_816CAC[(unsigned int)ptr_0]; /*0x5b38ca*/
-  INIClass::ReadDouble_Overwrite((double *)a2, (unsigned __int8 *)v13, (unsigned __int8 *)&aAarate, 0.0); /*0x5b38dd*/
-  __asm { fst qword ptr [esi+18h] } /*0x5b38e2*/
-  *&this->AARate = _RT1; /*0x5b38e2*/
-  __asm /*0x5b38e5*/
-  {
-    fcomp ds:dbl_7E2800
-    fnstsw ax
+    v13 = off_816CAC[vfptr];  /*0x5b38ca*/
+  INIClass::ReadDouble_Overwrite((double *)a2, (unsigned __int8 *)v13, aAarate, 0.0);  /*0x5b38dd*/
+  __asm { fst     qword ptr [esi+18h] }  /*0x5b38e2*/
+  *(double *)&this->nextArrayIndex = _RT1;  /*0x5b38e2*/
+  __asm
+  {  /*0x5b38e5*/
+    fcomp   ds:dbl_7E2800
+    fnstsw  ax
   }
-  if ( (_AX & 0x4000) != 0 ) /*0x5b38f0*/
-  {
-    int abstractFlags; // ecx
-    abstractFlags = this->abstractFlags; /*0x5b38f5*/
-    this->AARate = this->AARate; /*0x5b38f8*/
-    this->referenceCount = abstractFlags; /*0x5b38fb*/
+  if ( (_AX & 0x4000) != 0 )
+  {  /*0x5b38f0*/
+    abstractFlags = this->abstractFlags;  /*0x5b38f5*/
+    this->nextArrayIndex = this->uniqueId;  /*0x5b38f8*/
+    this->referenceCount = abstractFlags;  /*0x5b38fb*/
   }
-  return (gamemd::AbstractClass **)(1); /*0x5b38fe*/
+  return 1;  /*0x5b38fe*/
 
 }
 } // namespace ra2

@@ -546,56 +546,58 @@ namespace gamemd {
 void * E4Recv_4A3270::sub_4A3270(int a2, int a3, int a4)
 {
 
+  int *p_estimatedHealth; // ebx
+  int v6; // ebx
+  unsigned int v8[25]; // [esp+10h] [ebp-64h] BYREF
 
-  int *p_estimatedHealth = &this->estimatedHealth; // ebx /*0x4a3287*/
-  this->AbstractClass = (void *)a4; /*0x4a328f*/
-  this->estimatedHealth = 0; /*0x4a3291*/
-  *&this->M116 = 0; /*0x4a3297*/
-  memset(&this->M116, 0, 0x6Cu); /*0x4a329e*/
-  this->M116 = (unsigned int)((void *)108); /*0x4a32a4*/
-  this->M8 = (unsigned int)((void *)7); /*0x4a32aa*/
-  this->health = dword_81FC60[a4]; /*0x4a32b8*/
-  this->M16 = a2; /*0x4a32bf*/
-  this->M12 = (unsigned int)((void *)a3); /*0x4a32c2*/
-  if ( a4 == 1 ) /*0x4a32c5*/
-  {
-    this->M8 = (unsigned int)((void *)71); /*0x4a32c7*/
-    this->M28 = 16; /*0x4a32ce*/
+  p_estimatedHealth = &this->estimatedHealth;  /*0x4a3287*/
+  this->ptr_0[0] = a4;  /*0x4a328f*/
+  this->estimatedHealth = 0;  /*0x4a3291*/
+  *(unsigned int *)this->isOnMap = 0;  /*0x4a3297*/
+  memset(&this->ptr_4, 0, 0x6Cu);  /*0x4a329e*/
+  this->ptr_4 = 108;  /*0x4a32a4*/
+  this->ptr_8 = 7;  /*0x4a32aa*/
+  this->health = dword_81FC60[a4];  /*0x4a32b8*/
+  this->uniqueId = a2;  /*0x4a32bf*/
+  this->ptr_C[0] = a3;  /*0x4a32c2*/
+  if ( a4 == 1 )
+  {  /*0x4a32c5*/
+    this->ptr_8 = 71;  /*0x4a32c7*/
+    this->referenceCount = 16;  /*0x4a32ce*/
   }
-  if ( !dword_8A0E00 /*0x4a32e5*/
-    || !(*(int (**)(int, void **, int *, unsigned int))(*(unsigned int *)dword_8A0E00 + 24))(
+  if ( !dword_8A0E00
+    || !(*(int (**)(int, int *, int *, unsigned int))(*(unsigned int *)dword_8A0E00 + 24))(
           dword_8A0E00,
-          &this->?,
+          &this->ptr_4,
           &this->estimatedHealth,
           0) )
-  {
-    int v6 = *p_estimatedHealth; // ebx /*0x4a32ec*/
-    if ( v6 ) /*0x4a32f0*/
-    {
-      if ( a4 ) /*0x4a32f5*/
-      {
-        if ( a4 == 1 ) /*0x4a32f8*/
-        {
-          unsigned int v8[25]; // [esp+10h] [ebp-64h] BYREF
-          memset(v8, 0, sizeof(v8)); /*0x4a3314*/
-          v8[0] = 100; /*0x4a331a*/
-          v8[20] = -1; /*0x4a332a*/
-          (*(void (**)(int, unsigned int, unsigned int, unsigned int, int, unsigned int *))(*(unsigned int *)v6 + 20))( /*0x4a3339*/
+  {  /*0x4a32e5*/
+    v6 = *p_estimatedHealth;  /*0x4a32ec*/
+    if ( v6 )
+    {  /*0x4a32f0*/
+      if ( a4 )
+      {  /*0x4a32f5*/
+        if ( a4 == 1 )
+        {  /*0x4a32f8*/
+          memset(v8, 0, sizeof(v8));  /*0x4a3314*/
+          v8[0] = 100;  /*0x4a331a*/
+          v8[20] = -1;  /*0x4a332a*/
+          (*(void (**)(int, unsigned int, unsigned int, unsigned int, int, unsigned int *))(*(unsigned int *)v6 + 20))(
             v6,
             0,
             0,
             0,
             0x2000000,
-            v8);
-          return (int *)this; /*0x4a3347*/
+            v8);  /*0x4a3339*/
+          return &this->ptr_0;  /*0x4a3347*/
         }
-        if ( a4 != 2 ) /*0x4a32fb*/
-          return (int *)this; /*0x4a3306*/
+        if ( a4 != 2 )
+          return &this->ptr_0;  /*0x4a3306*/  /*0x4a32fb*/
       }
-      (**(void (***)(int, void *, char *))v6)(v6, &unk_7F8130, &this->isOnMap); /*0x4a3356*/
+      (**(void (***)(int, void *, char *))v6)(v6, &unk_7F8130, this->isOnMap);  /*0x4a3356*/
     }
   }
-  return (int *)this; /*0x4a32ff*/
+  return &this->ptr_0;  /*0x4a32ff*/
 
 }
 }
@@ -630,7 +632,7 @@ LABEL_6:
         v9[3] = 0; /*0x4a3940*/
         ((Vector *)v9)->Clear(); /*0x4a3948*/
         *(unsigned int *)v8.__tail_0 = &off_7E1668; /*0x4a3951*/
-        BufferIOFileClass::Dtor((BufferIOFileClass *)&v8); /*0x4a3959*/
+        ((BufferIOFileClass *)&v8)->Dtor(); /*0x4a3959*/
         return (void *)v5; /*0x4a395e*/
       }
       (*(void (**)(CCFileClass *, int, size_t))(*(unsigned int *)v8.__tail_0 + 36))(&v8, v5, v6); /*0x4a392a*/
@@ -738,11 +740,11 @@ int Palette_Fade(const void * a1, signed int a2, void (*a3)(void))
         v8 = Ticks; /*0x4a3cbd*/
         v11 = v10 - Ticks; /*0x4a3cc1*/
         if ( v11 >= v22 ) /*0x4a3cc5*/
-          return Surface::CreateSurfacePalette(v26); /*0x4a3cc5*/
+          return (v26)->CreateSurfacePalette(); /*0x4a3cc5*/
         v9 = v22 - v11; /*0x4a3ccb*/
       }
       if ( !v9 ) /*0x4a3ccf*/
-        return Surface::CreateSurfacePalette(v26); /*0x4a3daf*/
+        return (v26)->CreateSurfacePalette(); /*0x4a3daf*/
       memcpy(Src, v24, sizeof(Src)); /*0x4a3ce8*/
       v12 = v22; /*0x4a3cea*/
       if ( v8 != -1 ) /*0x4a3cee*/
@@ -765,7 +767,7 @@ int Palette_Fade(const void * a1, signed int a2, void (*a3)(void))
         break; /*0x4a3d50*/
       v17 = 0; /*0x4a3d8c*/
       LABEL_19:
-      Surface::CreateSurfacePalette(Src); /*0x4a3d56*/
+      (Src)->CreateSurfacePalette(); /*0x4a3d56*/
       if ( a3 ) /*0x4a3d64*/
         LABEL_20:
       a3(); /*0x4a3d66*/
@@ -1354,7 +1356,7 @@ int * globalHelper_0A6010(void * a1, void * a2, void * a3, void * a4, void * a5,
   int *v12; // eax
   int v14; // [esp+8h] [ebp-8h] BYREF
 
-  v11 = (unsigned __int16 *)Color::ConvertToRGB(a6 + 194, (int)&a6); /*0x4a6028*/
+  v11 = (unsigned __int16 *)(a6 + 194)->ConvertToRGB((int)&a6); /*0x4a6028*/
   (v14) = ((v14) & ~0xFFFF) | ((*v11) & 0xFFFF); /*0x4a6036*/
   BYTE2(v14) = v11->field_2; /*0x4a603e*/
   v12 = RenderTextLabel( /*0x4a60b2*/
@@ -1434,7 +1436,7 @@ ControlClass * * RenderTextLabelWordWrap(int * a1, const wchar_t * a2, int a3, u
         while ( *v18 && v17 + v13 < a9 ); /*0x4a6409*/
         if ( v17 + v13 >= a9 ) /*0x4a6417*/
         {
-          v17 -= FontClass::GetPixelData(v24, *(v18 - 1)); /*0x4a642a*/
+          v17 -= (v24)->GetPixelData(*(v18 - 1)); /*0x4a642a*/
           *(v18 - 1) = 0; /*0x4a642c*/
           v25 = 0; /*0x4a6431*/
         }
@@ -1528,7 +1530,7 @@ int * globalHelper_0A66D0(int * a1, void * a2, void * a3, void * a4, void * a5, 
   else
   {
     int v14; // eax
-    v14 = Color::ConvertToRGB((uint8_t *)(*((unsigned int *)dword_B054D4 + a9) + 776), (int)&a9); /*0x4a6738*/
+    v14 = ((uint8_t *)(*((unsigned int *)dword_B054D4 + a9) + 776))->ConvertToRGB((int)&a9); /*0x4a6738*/
     (*((unsigned short *)&(v15[0]))) = *(unsigned short *)v14; /*0x4a6740*/
     (((unsigned char *)&(v15[0]))[2]) = *(unsigned char *)(v14 + 2); /*0x4a674e*/
     v12 = RenderTextLabel( /*0x4a67c2*/
@@ -1653,7 +1655,7 @@ AbstractClass * * E4Recv_4A6840::sub_4A6840(HWND hWnd, int a3, int a4, int a5)
     *((unsigned int *)v15 + 3) = 0; /*0x4a69bc*/
     /* X11: ptr_0 install elided (X67 star-deref, RHS XSurface_Vtable) */  /*0x4a69bf*/
     *((unsigned int *)v15 + 4) = 1; /*0x4a69c5*/
-    Buffer::Init((Buffer *)(v15 + 20), (int)ptr_8, v14 * abstractFlags); /*0x4a69cc*/
+    ((Buffer *)(v15 + 20))->Init((int)ptr_8, v14 * abstractFlags); /*0x4a69cc*/
     /* X11: ptr_0 install elided (X67 star-deref, RHS BSurface_Vtable) */  /*0x4a69d1*/
   }
   else
@@ -1908,8 +1910,8 @@ char GetBuildingPlacement(IUnknown * aP0, int a2, DisplayClass * aP2, IUnknown *
   {
     return 1; /*0x4a905d*/
   }
-  FoundationHeight = BuildingTypeClass::GetFoundationHeight((int)aP0, 0); /*0x4a8f2c*/
-  FoundationWidth = BuildingTypeClass::GetFoundationWidth(aP0); /*0x4a8f30*/
+  FoundationHeight = ((int)aP0)->GetFoundationHeight(0); /*0x4a8f2c*/
+  FoundationWidth = (aP0)->GetFoundationWidth(); /*0x4a8f30*/
   v6 = *aP3; /*0x4a8f35*/
   v7 = aP3[1]; /*0x4a8f38*/
   v8 = FoundationWidth; /*0x4a8f3c*/
@@ -1939,8 +1941,8 @@ char GetBuildingPlacement(IUnknown * aP0, int a2, DisplayClass * aP2, IUnknown *
             || (__int16)v13 < v23
             || (__int16)v13 >= v23 + FoundationHeight )
           {
-            v14 = CellCoord::To_CellObj(&dword_87F7E8, v19); /*0x4a8fc5*/
-            v15 = Cell::IsBridge(v14); /*0x4a8fcc*/
+            v14 = (&dword_87F7E8)->To_CellObj(v19); /*0x4a8fc5*/
+            v15 = (v14)->IsBridge(); /*0x4a8fcc*/
             v16 = v15; /*0x4a8fd1*/
             if ( v15 ) /*0x4a8fd5*/
             {
@@ -1948,7 +1950,7 @@ char GetBuildingPlacement(IUnknown * aP0, int a2, DisplayClass * aP2, IUnknown *
               if ( *(unsigned int *)(v17 + 48) == a2 && *(unsigned char *)(v15[328] + 5455) ) /*0x4a8fec*/
                 v25 = 1; /*0x4a8ff5*/
               if ( (unsigned char)MEMORY[0xA8B264] /*0x4a900e*/
-                && (unsigned __int8)HouseClass::IsAlliedWith((#375 *)v17, *(#375 **)&dword_A8022C->ptr_0[4 * a2]) )
+                && (unsigned __int8)((#375 *)v17)->IsAlliedWith(*(#375 **)&dword_A8022C->ptr_0[4 * a2]) )
               {
                 if ( *(unsigned char *)(v16[328] + 5456) ) /*0x4a901d*/
                   v25 = 1; /*0x4a9027*/
@@ -1998,7 +2000,7 @@ bool ProcessDataBuildingTypeClass(unsigned int * a0, DisplayClass * aP1, Display
     return 1; /*0x4a90cc*/
   if ( (*(int (**)(unsigned int *))(*a0 + 44))(a0) != 7 ) /*0x4a90dc*/
     return 1; /*0x4a90dc*/
-  FoundationHeight = BuildingTypeClass::GetFoundationHeight((int)a0, 0); /*0x4a90ed*/
+  FoundationHeight = ((int)a0)->GetFoundationHeight(0); /*0x4a90ed*/
   FoundationWidth = ((BuildingTypeClass *)(a0))->GetFoundationWidth(); /*0x4a90ef*/
   v6 = *a3; /*0x4a90f4*/
   v7 = a3[1]; /*0x4a90f7*/
@@ -2024,7 +2026,7 @@ bool ProcessDataBuildingTypeClass(unsigned int * a0, DisplayClass * aP1, Display
     v12[0] = ((int16_t)v9 << 8) + 128; /*0x4a9146*/
     GroundHeight = 0; /*0x4a914a*/
     GroundHeight = Cell::GetGroundHeight(v12); /*0x4a9157*/
-    if ( Cell::IsPassable(v12) ) /*0x4a9161*/
+    if ( (v12)->IsPassable() ) /*0x4a9161*/
       return a0[918] != 0; /*0x4a9193*/
     if ( ++v10 >= v15 ) /*0x4a9171*/
     {
@@ -2260,7 +2262,7 @@ ScenarioClass * * sub_4AC4F0()
   result = dword_A8B230; /*0x4ac62d*/
   dword_A8B230[14].nextArrayIndex = dword_A8B230[14].abstractFlags; /*0x4ac638*/
   if ( g_TacticalClass_Instance ) /*0x4ac646*/
-    return (void *)Tactical::SetTacticalPosition((TacticalClass *)g_TacticalClass_Instance, &v11); /*0x4ac64d*/
+    return (void *)((TacticalClass *)g_TacticalClass_Instance)->SetTacticalPosition(&v11); /*0x4ac64d*/
   return result; /*0x4ac5c5*/
 
 }
@@ -2300,7 +2302,7 @@ AbstractClass * * DispatchSelectionWaypointMove(int a1, int a2, int a3, int a4)
   if ( byte_A8ED6B ) /*0x4ae769*/
     return (char)v4; /*0x4ae769*/
   a2 = *(unsigned int *)HouseClass::ClampToUsableCell(&v28, &a2); /*0x4ae78f*/
-  v5 = Waypoint::FindByCell((char *)dword_A83D4C, &a2); /*0x4ae794*/
+  v5 = ((char *)dword_A83D4C)->FindByCell(&a2); /*0x4ae794*/
   if ( v5 ) /*0x4ae79b*/
     WaypointClass::FindOrCreate((char *)dword_A83D4C, (int)v5, &v27, &v26); /*0x4ae7ae*/
   v6 = dword_A8ECC8; /*0x4ae7b3*/
@@ -2531,7 +2533,7 @@ namespace gamemd {
     {
       (*((unsigned char *)&(result))) = *(unsigned char *)(a3 + 16); /*0x4aed9a*/
       if ( !(unsigned char)result ) /*0x4aed9f*/
-        House::Constructor((char **)a3); /*0x4aeda3*/
+        ((char **)a3)->Constructor(); /*0x4aeda3*/
       v17 = *(unsigned int *)(a3 + 12); /*0x4aeda8*/
     }
     if ( v17 ) /*0x4aedad*/
@@ -2567,11 +2569,11 @@ namespace gamemd {
         v26 = SubFile; /*0x4aeeb1*/
         v57 = v17->House_field_0x2; /*0x4aeeb7*/
         v58 = v25; /*0x4aeec1*/
-        Surface::Construct(v64, v44, v45); /*0x4aeec7*/
+        (v64)->Construct(v44, v45); /*0x4aeec7*/
         v64[3] = 0; /*0x4aeed8*/
         v64[0] = (int)&XSurface_Vtable; /*0x4aeee3*/
         v64[4] = 1; /*0x4aeeeb*/
-        Buffer::Init(v65, v26, v45 * v44); /*0x4aeef6*/
+        (v65)->Init(v26, v45 * v44); /*0x4aeef6*/
         v64[0] = (int)&BSurface_Vtable; /*0x4aeefb*/
         v27 = a16; /*0x4aef11*/
         v54 = a15; /*0x4aef18*/
@@ -2587,12 +2589,12 @@ namespace gamemd {
           if ( v29 ) /*0x4aef65*/
           {
             v38 = MixFileClass::GetSubFile((char **)a13, a14); /*0x4aef7c*/
-            Surface::Construct(v29, v48, v49); /*0x4aef86*/
+            (v29)->Construct(v48, v49); /*0x4aef86*/
             v29->u32_C = 0; /*0x4aef8b*/
             /* X11: ptr_0 install elided (X67 star-deref, RHS XSurface_Vtable) */  /*0x4aef92*/
             v35 = v49 * v48; /*0x4aefa5*/
             v29->u32_10 = 1; /*0x4aefaa*/
-            Buffer::Init(v29 + 5, v38, v35); /*0x4aefb1*/
+            (v29 + 5)->Init(v38, v35); /*0x4aefb1*/
             /* X11: ptr_0 install elided (X67 star-deref, RHS BSurface_Vtable) */  /*0x4aefb6*/
             v39 = (void (***)(unsigned int, int))v29; /*0x4aefbc*/
             v27 = v55; /*0x4aefc0*/
@@ -2694,7 +2696,7 @@ namespace gamemd {
         }
         if ( v39 ) /*0x4af275*/
           (**v39)(v39, 1); /*0x4af27b*/
-        return Vector::Clear((int)v65); /*0x4af284*/
+        return ((int)v65)->Clear(); /*0x4af284*/
       }
     }
   }
@@ -2744,7 +2746,7 @@ void * E4Recv_4AF9B0::sub_4AF9B0(void * a2)
   Matrix3x4 v13; // [esp+1Ch] [ebp-60h] BYREF
   char v14[48]; // [esp+4Ch] [ebp-30h] BYREF
 
-  Matrix3x4::Identity(&v13); /*0x4af9bc*/
+  (&v13)->Identity(); /*0x4af9bc*/
   nextObject = this->nextObject; /*0x4af9c1*/
   if ( nextObject ) /*0x4af9ca*/
   {
@@ -3085,8 +3087,8 @@ namespace gamemd {
 int E4Recv_4A2030::sub_4A2030(Pipe * aP1, int aP2)
 {
 
-  Checksummer::Add_Buffer(&this->u32_C, aP1, aP2); /*0x4a2042*/
-  return Delegate::Dispatch((Pipe *)this, (int)aP1, aP2); /*0x4a2050*/
+  (&this->u32_C)->Add_Buffer(aP1, aP2); /*0x4a2042*/
+  return ((Pipe *)this)->Dispatch((int)aP1, aP2); /*0x4a2050*/
 
 }
 } // namespace gamemd
@@ -3100,8 +3102,8 @@ int E4Recv_4A20B0::sub_4A20B0(Straw * aP1, int aP2)
   if ( !aP1 || aP2 < 1 ) /*0x4a20c3*/
     return 0; /*0x4a20e2*/
   int v4; // esi
-  v4 = Delegate::Invoke((Straw *)this, (int)aP1, aP2); /*0x4a20cd*/
-  Checksummer::Add_Buffer(&this->u32_C, aP1, v4); /*0x4a20d4*/
+  v4 = ((Straw *)this)->Invoke((int)aP1, aP2); /*0x4a20cd*/
+  (&this->u32_C)->Add_Buffer(aP1, v4); /*0x4a20d4*/
   return v4; /*0x4a20dc*/
 
 }
@@ -3257,7 +3259,7 @@ void E4Recv_4A2880::sub_4A2880()
   {
     ULONG v6; // [esp+0h] [ebp-8h]
     if ( BYTE1(this->M8) && this->M20 > 0 && this->M8 ) /*0x4a28aa*/
-      IStream::Read((IStream *)this->M24, (void *)this->M20, v6); /*0x4a28b4*/
+      ((IStream *)this->M24)->Read((void *)this->M20, v6); /*0x4a28b4*/
     if ( this->M8 /*0x4a28da*/
       && (*(int (**)(int, unsigned int))(*(unsigned int *)this->M8 + 32))(
            this->M8,
@@ -3922,7 +3924,7 @@ unsigned int * FillRectangle(IUnknown * aP0, IUnknown * aP1, int a3, int a4, int
   int v14; // edx
   int v16; // [esp+8h] [ebp-8h] BYREF
 
-  v12 = (unsigned __int16 *)Color::ConvertToRGB(a6 + 194, (int)&a6); /*0x4a6518*/
+  v12 = (unsigned __int16 *)(a6 + 194)->ConvertToRGB((int)&a6); /*0x4a6518*/
   (v16) = ((v16) & ~0xFFFF) | ((*v12) & 0xFFFF); /*0x4a6526*/
   BYTE2(v16) = v12->field_2; /*0x4a652e*/
   v13 = RenderTextLabelWordWrap( /*0x4a65a7*/
@@ -4355,7 +4357,7 @@ void sub_4A8680()
 namespace gamemd {
 int sub_4A86E0()
 {
-  GadgetClass::Construct(stru_8A06F8, 0, 0, 0, 0, 127, 1); /*0x4a86f1*/
+  (stru_8A06F8)->Construct(0, 0, 0, 0, 127, 1); /*0x4a86f1*/
   stru_8A06F8[0] = (int)&g_var_874cc6; /*0x4a86fb*/
   return atexit(sub_4A8710); /*0x4a870b*/
 }
@@ -4368,7 +4370,7 @@ void sub_4A8710()
   if ( (byte_8A03E0 & 1) == 0 ) /*0x4a871a*/
   {
     byte_8A03E0 |= 1u; /*0x4a871e*/
-    GadgetClass::Dtor(stru_8A06F8); /*0x4a8729*/
+    (stru_8A06F8)->Dtor(); /*0x4a8729*/
   }
 }
 } // namespace gamemd

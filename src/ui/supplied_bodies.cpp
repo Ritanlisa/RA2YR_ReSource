@@ -224,7 +224,7 @@ int ListBox::Clear() {
 // 0x6AC780
 namespace gamemd {
 unsigned int * SidebarClass::queryInterface(char a2) {
-  GadgetClass::Dtor((GadgetClass *)this); /*0x6ac783*/
+  ((GadgetClass *)this)->Dtor(); /*0x6ac783*/
   if ( (a2 & 1) != 0 ) /*0x6ac78d*/
     operator delete((this)); /*0x6ac790*/
   return &this->field_0; /*0x6ac79a*/
@@ -250,7 +250,7 @@ void ToolTipClass::ddtor() {
 
 // 0x724C90
 namespace gamemd {
-char ToolTipClass::addRef(int a2) {
+char (int a2)->addRef() {
   int m_8; // esi
   int v3; // edx
   unsigned int *v4; // eax
@@ -383,7 +383,7 @@ size_t BitmapClass::ProcessFrame(char * v12, signed int Size) {
       }
       if ( !v8 ) /*0x42e03c*/
         break; /*0x42e03c*/
-      v14 = Delegate::Invoke((Straw *)this, (int)v5, v18); /*0x42e04b*/
+      v14 = ((Straw *)this)->Invoke((int)v5, v18); /*0x42e04b*/
       v15 = this->u32_C
           ? DecodeBitmapRGB((unsigned __int8 *)v5, v14, v6, v7)
           : EncodeBitmapRGB(v5->__pad_0, v14, v6, v7);
@@ -401,7 +401,7 @@ size_t BitmapClass::ProcessFrame(char * v12, signed int Size) {
 
 // 0x434500
 namespace gamemd {
-int FontClass::RenderText(uint16_t *a2, int v14, int yTop, int a5, int a6) {
+int (uint16_t *a2)->RenderText(int v14, int yTop, int a5, int a6) {
 
   unsigned __int16 v6; // si
   unsigned __int16 *v8; // edx
@@ -438,7 +438,7 @@ LABEL_14:
 LABEL_8:
     if ( v6 != 13 && v6 != 10 ) /*0x434637*/
     {
-      v14 = FontClass::RenderGlyph((int)this, v6, v14, yTop, -1); /*0x434648*/
+      v14 = ((int)this)->RenderGlyph(v6, v14, yTop, -1); /*0x434648*/
       v11 = a6; /*0x43464d*/
       v14 = v14; /*0x434651*/
     }
@@ -460,7 +460,7 @@ LABEL_8:
       (v16) = ((v16) & ~(0xFF << 8)) | ((((unsigned __int8)(v10 >> g_BitMask_Green) << g_BitMask_Blue) & 0xFF) << 8); /*0x43459b*/
       LOWORD(v17.Color_field_00) = v16; /*0x4345b1*/
       BYTE2(v17.Color_field_00) = (unsigned __int8)(v10 >> g_BitShift_Blue) << g_BitMask_Red; /*0x4345ba*/
-      Color::Lerp(&v17, v12, (unsigned __int8 *)&stru_A80220); /*0x4345be*/
+      (&v17)->Lerp(v12, (unsigned __int8 *)&stru_A80220); /*0x4345be*/
       (v13) = ((v13) & ~0xFFFF) | (((unsigned __int8)(BYTE2(v17.Color_field_00) >> g_BitMask_Red)) & 0xFFFF); /*0x4345ee*/
       v11 = a6; /*0x43460e*/
       this->u16_24 = ((unsigned __int8)(LOBYTE(v17.Color_field_00) >> g_BitShift_Green_0) << g_BitShift_Red) /*0x434614*/
@@ -481,7 +481,7 @@ LABEL_8:
 
 namespace gamemd {
 // 0x4348F0
-int FontRenderer::InitContext(int * a2) {
+int (int * a2)->InitContext() {
     int v3; // edx
     int v4; // eax
     int v5; // edx
@@ -523,7 +523,7 @@ int FontRenderer::InitContext(int * a2) {
 
 // 0x4349B0
 namespace gamemd {
-int FontClass::GetPixelData(uint16_t a2) {
+int (uint16_t a2)->GetPixelData() {
   unsigned int *FontClass_field_0x04; // ecx
   int v3; // eax
   uint8_t *v4; // eax
@@ -733,7 +733,7 @@ int CampaignScore::DialogProc(HWND hWnd, unsigned int a2, UINT_PTR uIDEvent, HWN
         }
         while ( (int)v109 < (int)&dword_A8DAB0 ); /*0x46f374*/
         hDlg = hWnd; /*0x46f378*/
-        if ( hWnd || (hDlg = (HWND)Dialog::FindByHandle((Dialog *)0xBC6)) != 0 ) /*0x46f38e*/
+        if ( hWnd || (hDlg = (HWND)((Dialog *)0xBC6)->FindByHandle()) != 0 ) /*0x46f38e*/
         {
           v125 = 0; /*0x46f394*/
           WindowLongA = (unsigned int *)dword_A8DA90; /*0x46f39c*/
@@ -783,7 +783,7 @@ int CampaignScore::DialogProc(HWND hWnd, unsigned int a2, UINT_PTR uIDEvent, HWN
         if ( a2 == 1261 ) /*0x46eb78*/
         {
           Screen::Capture(1, 0, (int)GetDlgItem, (int)hWnd); /*0x46eb82*/
-          Dialog::InitWindow((int)hWnd, 1); /*0x46eb8a*/
+          ((int)hWnd)->InitWindow(1); /*0x46eb8a*/
           ShowWindow(hWnd, 0); /*0x46eb92*/
           return 0; /*0x46eba4*/
         }
@@ -807,7 +807,7 @@ int CampaignScore::DialogProc(HWND hWnd, unsigned int a2, UINT_PTR uIDEvent, HWN
         {
           *(v68 - 2541) = (int *)-2; /*0x46ebe8*/
           if ( (uint8_t)IsKnownPointer((ObjectClass *)*v68) ) /*0x46ebf0*/
-            SessionClass::SetOption(*v68, -2); /*0x46ebfc*/
+            (*v68)->SetOption(-2); /*0x46ebfc*/
           ++v68; /*0x46ec01*/
         }
         while ( (int)v68 < (int)&dword_A8DAB0 ); /*0x46ec0a*/
@@ -846,9 +846,9 @@ int CampaignScore::DialogProc(HWND hWnd, unsigned int a2, UINT_PTR uIDEvent, HWN
         {
           v131[0] = 51; /*0x46ecd8*/
           strcpy((char *)&v131[1], (const char *)&unk_A8B380); /*0x46ece9*/
-          *(unsigned int *)((char *)&v131[11] + 3) = SessionClass::GetOption((int *)*(unsigned int *)dword_A8DA78); /*0x46ed05*/
-          *(unsigned int *)((char *)&v131[12] + 3) = SessionClass::GetPlayerSide((int *)*(unsigned int *)dword_A8DA78); /*0x46ed10*/
-          *(unsigned int *)((char *)&v131[13] + 3) = SessionClass::GetPlayerColor((SessionClass *)*(unsigned int *)dword_A8DA78); /*0x46ed20*/
+          *(unsigned int *)((char *)&v131[11] + 3) = ((int *)*(unsigned int *)dword_A8DA78)->GetOption(); /*0x46ed05*/
+          *(unsigned int *)((char *)&v131[12] + 3) = ((int *)*(unsigned int *)dword_A8DA78)->GetPlayerSide(); /*0x46ed10*/
+          *(unsigned int *)((char *)&v131[13] + 3) = ((SessionClass *)*(unsigned int *)dword_A8DA78)->GetPlayerColor(); /*0x46ed20*/
           if ( ((unsigned int *)dword_A8DA90)[0] ) /*0x46ed2b*/
           {
             SendToPlayer((int)&unk_A8E9C0, (int)v131, 455, 1, (wchar_t *)((unsigned int *)dword_A8DA90)[0]); /*0x46ed3f*/
@@ -856,7 +856,7 @@ int CampaignScore::DialogProc(HWND hWnd, unsigned int a2, UINT_PTR uIDEvent, HWN
           }
         }
         v74 = hWnd; /*0x46ed50*/
-        if ( hWnd || (v74 = (HWND)Dialog::FindByHandle((Dialog *)0xBC6)) != 0 ) /*0x46ed62*/
+        if ( hWnd || (v74 = (HWND)((Dialog *)0xBC6)->FindByHandle()) != 0 ) /*0x46ed62*/
         {
           ((Skirmish *)v74)->FillPlayerNames(); /*0x46ed66*/
           ((Count *)v74)->SetupAllCountriesLobby(); /*0x46ed6d*/
@@ -887,7 +887,7 @@ int CampaignScore::DialogProc(HWND hWnd, unsigned int a2, UINT_PTR uIDEvent, HWN
         {
           *(v78 - 2541) = (int *)-2; /*0x46edd5*/
           if ( (uint8_t)IsKnownPointer((ObjectClass *)*v78) ) /*0x46eddd*/
-            SessionClass::SetOption(*v78, -2); /*0x46ede9*/
+            (*v78)->SetOption(-2); /*0x46ede9*/
           ++v78; /*0x46edee*/
         }
         while ( (int)v78 < (int)&dword_A8DAB0 ); /*0x46edf7*/
@@ -940,7 +940,7 @@ int CampaignScore::DialogProc(HWND hWnd, unsigned int a2, UINT_PTR uIDEvent, HWN
         hDlg = hWnd; /*0x46e96a*/
         if ( !hWnd ) /*0x46e96e*/
         {
-          hDlg = (HWND)Dialog::FindByHandle((Dialog *)0xBC6); /*0x46e97c*/
+          hDlg = (HWND)((Dialog *)0xBC6)->FindByHandle(); /*0x46e97c*/
           if ( !hDlg ) /*0x46e980*/
             return 0; /*0x46e980*/
         }
@@ -1013,9 +1013,9 @@ int CampaignScore::DialogProc(HWND hWnd, unsigned int a2, UINT_PTR uIDEvent, HWN
             {
               v131[0] = 51; /*0x46e4f3*/
               strcpy((char *)&v131[1], (const char *)&unk_A8B380); /*0x46e504*/
-              *(unsigned int *)((char *)&v131[11] + 3) = SessionClass::GetOption((int *)*(unsigned int *)dword_A8DA78); /*0x46e520*/
-              *(unsigned int *)((char *)&v131[12] + 3) = SessionClass::GetPlayerSide((int *)*(unsigned int *)dword_A8DA78); /*0x46e52b*/
-              *(unsigned int *)((char *)&v131[13] + 3) = SessionClass::GetPlayerColor((SessionClass *)*(unsigned int *)dword_A8DA78); /*0x46e53b*/
+              *(unsigned int *)((char *)&v131[11] + 3) = ((int *)*(unsigned int *)dword_A8DA78)->GetOption(); /*0x46e520*/
+              *(unsigned int *)((char *)&v131[12] + 3) = ((int *)*(unsigned int *)dword_A8DA78)->GetPlayerSide(); /*0x46e52b*/
+              *(unsigned int *)((char *)&v131[13] + 3) = ((SessionClass *)*(unsigned int *)dword_A8DA78)->GetPlayerColor(); /*0x46e53b*/
               if ( ((unsigned int *)dword_A8DA90)[0] ) /*0x46e546*/
               {
                 SendToPlayer((int)&unk_A8E9C0, (int)v131, 455, 1, (wchar_t *)((unsigned int *)dword_A8DA90)[0]); /*0x46e55a*/
@@ -1034,7 +1034,7 @@ int CampaignScore::DialogProc(HWND hWnd, unsigned int a2, UINT_PTR uIDEvent, HWN
             while ( (int)v25 < (int)&dword_A8DAB0 ); /*0x46e58c*/
             if ( !hWnd ) /*0x46e590*/
             {
-              v4 = (HWND)Dialog::FindByHandle((Dialog *)0xBC6); /*0x46e59c*/
+              v4 = (HWND)((Dialog *)0xBC6)->FindByHandle(); /*0x46e59c*/
               if ( !v4 ) /*0x46e5a0*/
                 return 0; /*0x46e5a0*/
             }
@@ -1068,9 +1068,9 @@ int CampaignScore::DialogProc(HWND hWnd, unsigned int a2, UINT_PTR uIDEvent, HWN
             {
               v131[0] = 51; /*0x46e632*/
               strcpy((char *)&v131[1], (const char *)&unk_A8B380); /*0x46e643*/
-              *(unsigned int *)((char *)&v131[11] + 3) = SessionClass::GetOption((int *)*(unsigned int *)dword_A8DA78); /*0x46e65f*/
-              *(unsigned int *)((char *)&v131[12] + 3) = SessionClass::GetPlayerSide((int *)*(unsigned int *)dword_A8DA78); /*0x46e66a*/
-              *(unsigned int *)((char *)&v131[13] + 3) = SessionClass::GetPlayerColor((SessionClass *)*(unsigned int *)dword_A8DA78); /*0x46e67a*/
+              *(unsigned int *)((char *)&v131[11] + 3) = ((int *)*(unsigned int *)dword_A8DA78)->GetOption(); /*0x46e65f*/
+              *(unsigned int *)((char *)&v131[12] + 3) = ((int *)*(unsigned int *)dword_A8DA78)->GetPlayerSide(); /*0x46e66a*/
+              *(unsigned int *)((char *)&v131[13] + 3) = ((SessionClass *)*(unsigned int *)dword_A8DA78)->GetPlayerColor(); /*0x46e67a*/
               if ( ((unsigned int *)dword_A8DA90)[0] ) /*0x46e685*/
               {
                 SendToPlayer((int)&unk_A8E9C0, (int)v131, 455, 1, (wchar_t *)((unsigned int *)dword_A8DA90)[0]); /*0x46e699*/
@@ -1089,7 +1089,7 @@ int CampaignScore::DialogProc(HWND hWnd, unsigned int a2, UINT_PTR uIDEvent, HWN
             while ( (int)v33 < (int)&dword_A8DAB0 ); /*0x46e6cb*/
             if ( !hWnd ) /*0x46e6cf*/
             {
-              v4 = (HWND)Dialog::FindByHandle((Dialog *)0xBC6); /*0x46e6db*/
+              v4 = (HWND)((Dialog *)0xBC6)->FindByHandle(); /*0x46e6db*/
               if ( !v4 ) /*0x46e6df*/
                 return 0; /*0x46e6df*/
             }
@@ -1193,9 +1193,9 @@ int CampaignScore::DialogProc(HWND hWnd, unsigned int a2, UINT_PTR uIDEvent, HWN
         {
           v131[0] = 51; /*0x46e377*/
           strcpy((char *)&v131[1], (const char *)&unk_A8B380); /*0x46e388*/
-          *(unsigned int *)((char *)&v131[11] + 3) = SessionClass::GetOption((int *)*(unsigned int *)dword_A8DA78); /*0x46e3a4*/
-          *(unsigned int *)((char *)&v131[12] + 3) = SessionClass::GetPlayerSide((int *)*(unsigned int *)dword_A8DA78); /*0x46e3af*/
-          *(unsigned int *)((char *)&v131[13] + 3) = SessionClass::GetPlayerColor((SessionClass *)*(unsigned int *)dword_A8DA78); /*0x46e3bf*/
+          *(unsigned int *)((char *)&v131[11] + 3) = ((int *)*(unsigned int *)dword_A8DA78)->GetOption(); /*0x46e3a4*/
+          *(unsigned int *)((char *)&v131[12] + 3) = ((int *)*(unsigned int *)dword_A8DA78)->GetPlayerSide(); /*0x46e3af*/
+          *(unsigned int *)((char *)&v131[13] + 3) = ((SessionClass *)*(unsigned int *)dword_A8DA78)->GetPlayerColor(); /*0x46e3bf*/
           if ( ((unsigned int *)dword_A8DA90)[0] ) /*0x46e3ca*/
           {
             SendToPlayer((int)&unk_A8E9C0, (int)v131, 455, 1, (wchar_t *)((unsigned int *)dword_A8DA90)[0]); /*0x46e3de*/
@@ -1214,7 +1214,7 @@ int CampaignScore::DialogProc(HWND hWnd, unsigned int a2, UINT_PTR uIDEvent, HWN
         while ( (int)v17 < (int)&dword_A8DAB0 ); /*0x46e410*/
         if ( !hWnd ) /*0x46e414*/
         {
-          v4 = (HWND)Dialog::FindByHandle((Dialog *)0xBC6); /*0x46e420*/
+          v4 = (HWND)((Dialog *)0xBC6)->FindByHandle(); /*0x46e420*/
           if ( !v4 ) /*0x46e424*/
             return 0; /*0x46e424*/
         }
@@ -1252,7 +1252,7 @@ int CampaignScore::DialogProc(HWND hWnd, unsigned int a2, UINT_PTR uIDEvent, HWN
             goto LABEL_48;
           case 1344: /*0x46e0f7*/
             ReadChatMessage(&v129, a4); /*0x46e109*/
-            DeleteAndZero::Alt((DeleteAndZero *)&v129); /*0x46e112*/
+            ((DeleteAndZero *)&v129)->Alt(); /*0x46e112*/
             if ( (unsigned short)((uIDEvent) >> 16) != 1281 ) /*0x46e120*/
               return 0; /*0x46e120*/
             v125 = 61680; /*0x46e13d*/
@@ -1267,7 +1267,7 @@ int CampaignScore::DialogProc(HWND hWnd, unsigned int a2, UINT_PTR uIDEvent, HWN
             if ( v9 <= 2 ) /*0x46e1a0*/
               return 0; /*0x46e1a0*/
             v11 = CharToWideString(unk_A8B380); /*0x46e1b3*/
-            Dialog::ShowMessage(nIDDlgItem, (size_t)g_Str_Trace___s_, v11, lParam); /*0x46e1c3*/
+            (nIDDlgItem)->ShowMessage((size_t)g_Str_Trace___s_, v11, lParam); /*0x46e1c3*/
             memset(v131, 0, sizeof(v131)); /*0x46e1d7*/
             v132 = 0; /*0x46e1d9*/
             v133 = 0; /*0x46e1db*/
@@ -1275,7 +1275,7 @@ int CampaignScore::DialogProc(HWND hWnd, unsigned int a2, UINT_PTR uIDEvent, HWN
             strcpy((char *)&v131[1], (const char *)&unk_A8B380); /*0x46e201*/
             wcscpy((wchar_t *)&v131[12], lParam); /*0x46e213*/
             v131[68] = v125; /*0x46e224*/
-            v12 = WideString::Hash((void *)&g_CurrentPlayerName); /*0x46e22b G42.35: static (void*) 形*/
+            v12 = ((void *)&g_CurrentPlayerName)->Hash(); /*0x46e22b G42.35: static (void*) 形*/
             v13 = dword_A8DA84; /*0x46e230*/
             v14 = 1; /*0x46e236*/
             v131[69] = v12; /*0x46e23d*/
@@ -1444,8 +1444,8 @@ int CampaignScore::DialogProc(HWND hWnd, unsigned int a2, UINT_PTR uIDEvent, HWN
       if ( byte_89E05D ) /*0x46f2b8*/
       {
         CampaignScore::LookupDialogHash((CampaignScore *)hWnd); /*0x46f2ba*/
-        Dialog::ShowPlayerName((Dialog *)hWnd); /*0x46f2c1*/
-        Session::StartGame((Session *)hWnd); /*0x46f2c8*/
+        ((Dialog *)hWnd)->ShowPlayerName(); /*0x46f2c1*/
+        ((Session *)hWnd)->StartGame(); /*0x46f2c8*/
       }
       else
       {
@@ -1460,8 +1460,8 @@ int CampaignScore::DialogProc(HWND hWnd, unsigned int a2, UINT_PTR uIDEvent, HWN
       if ( a2 == 15 ) /*0x46e047*/
       {
         if ( g_UIControlState ) /*0x46e055*/
-          Skirmish::RenderPreview(g_UIControlState, hWnd); /*0x46e058*/
-        Dialog::StopBink((Dialog *)hWnd); /*0x46e05f*/
+          (g_UIControlState)->RenderPreview(hWnd); /*0x46e058*/
+        ((Dialog *)hWnd)->StopBink(); /*0x46e05f*/
         ValidateRect(hWnd, 0); /*0x46e067*/
         return 0; /*0x46e079*/
       }
@@ -1470,7 +1470,7 @@ int CampaignScore::DialogProc(HWND hWnd, unsigned int a2, UINT_PTR uIDEvent, HWN
     v7 = (Skirmish *)g_UIControlState; /*0x46e07c*/
     if ( g_UIControlState ) /*0x46e084*/
     {
-      ComPtr::Dtor((ComPtr *)g_UIControlState); /*0x46e088*/
+      ((ComPtr *)g_UIControlState)->Dtor(); /*0x46e088*/
       delete[] (v7); /*0x46e08e*/
       g_UIControlState = 0; /*0x46e096*/
     }
@@ -1501,7 +1501,7 @@ std::locale::facet * CampaignScore::Constructor_CampaignEndScoreClass(char a2) {
 
 // 0x488310
 namespace gamemd {
-int CheckListClass::g_var_1d7b82(int a2) {
+int (int a2)->g_var_1d7b82() {
   int v3; // eax
 
   v3 = operator new(8u); /*0x488315*/
@@ -1518,7 +1518,7 @@ namespace gamemd {
 int CheckListClass::Clear() {
   int *v1; // eax
 
-  v1 = (int *)ColorListClass::SetColor((ListClass *)this); /*0x488350*/
+  v1 = (int *)((ListClass *)this)->SetColor(); /*0x488350*/
   if ( v1 ) /*0x488357*/
     return *v1; /*0x488359*/
   else
@@ -1528,10 +1528,10 @@ int CheckListClass::Clear() {
 
 // 0x488360
 namespace gamemd {
-int CheckListClass::ScrollUp(int a2) {
+int (int a2)->ScrollUp() {
   int *Clamped; // eax
 
-  Clamped = (int *)Array::GetClamped((ListClass *)this, a2); /*0x488365*/
+  Clamped = (int *)((ListClass *)this)->GetClamped(a2); /*0x488365*/
   if ( Clamped ) /*0x48836c*/
     return *Clamped; /*0x48836e*/
   else
@@ -1541,7 +1541,7 @@ int CheckListClass::ScrollUp(int a2) {
 
 // 0x488380
 namespace gamemd {
-void CheckListClass::GetSelected(wchar_t *String2) {
+void (wchar_t *String2)->GetSelected() {
   int v3; // ebx
   const wchar_t **Clamped; // eax
   const wchar_t **v5; // edi
@@ -1551,7 +1551,7 @@ void CheckListClass::GetSelected(wchar_t *String2) {
   {
     while ( 1 ) /*0x48839b*/
     {
-      Clamped = (const wchar_t **)Array::GetClamped((ListClass *)this, v3); /*0x48839b*/
+      Clamped = (const wchar_t **)((ListClass *)this)->GetClamped(v3); /*0x48839b*/
       v5 = Clamped; /*0x4883a0*/
       if ( Clamped ) /*0x4883a4*/
       {
@@ -1569,7 +1569,7 @@ void CheckListClass::GetSelected(wchar_t *String2) {
 
 // 0x4883F0
 namespace gamemd {
-int CheckListClass::SetItemData(wchar_t *String2) {
+int (wchar_t *String2)->SetItemData() {
   int v3; // edi
   int result; // eax
   const wchar_t **Clamped; // eax
@@ -1580,7 +1580,7 @@ int CheckListClass::SetItemData(wchar_t *String2) {
   {
     while ( 1 ) /*0x48840a*/
     {
-      Clamped = (const wchar_t **)Array::GetClamped((ListClass *)this, v3); /*0x48840a*/
+      Clamped = (const wchar_t **)((ListClass *)this)->GetClamped(v3); /*0x48840a*/
       if ( Clamped ) /*0x488411*/
       {
         if ( !_wcsicmp(*Clamped, String2) ) /*0x488417*/
@@ -1600,7 +1600,7 @@ int CheckListClass::SetItemData(wchar_t *String2) {
 // 0x48E520
 namespace gamemd {
 unsigned int * ControlClass::Construct(int a2, int a3, int a4, int a5, int a6, int a7, char a8) {
-  GadgetClass::Construct((ShpButtonClass *)this, a3, a4, a5, a6, a7, a8); /*0x48e543*/
+  ((ShpButtonClass *)this)->Construct(a3, a4, a5, a6, a7, a8); /*0x48e543*/
   this->u32_28 = 0; /*0x48e54c*/
   this->u32_24 = a2; /*0x48e553*/
   /* X11: ptr_0 install elided (implicit via class virtuals 0x48e556) — binary-proven install, was 0 */
@@ -1622,7 +1622,7 @@ unsigned int * ControlClass::CtorFromData(ControlClass * a2) {
 // 0x48E660
 namespace gamemd {
 unsigned int * ControlClass::QueryInterface(char a2) {
-  GadgetClass::Dtor((GadgetClass *)this); /*0x48e663*/
+  ((GadgetClass *)this)->Dtor(); /*0x48e663*/
   if ( (a2 & 1) != 0 ) /*0x48e66d*/
     operator delete((this)); /*0x48e670*/
   return this->ptr_0; /*0x48e67a*/
@@ -1631,11 +1631,11 @@ unsigned int * ControlClass::QueryInterface(char a2) {
 
 // 0x4A1DB0
 namespace gamemd {
-int Checksum::AddString(uint8_t *a2) {
+int (uint8_t *a2)->AddString() {
   int result; // eax
 
   if ( a2 ) /*0x4a1db9*/
-    return Checksummer::Add_Buffer((Checksummer *)this, a2, strlen((const char *)a2)); /*0x4a1dcc*/
+    return ((Checksummer *)this)->Add_Buffer(a2, strlen((const char *)a2)); /*0x4a1dcc*/
   return result; /*0x4a1dd2*/
 }
 } // namespace gamemd
@@ -1650,15 +1650,17 @@ int DropListClass::OnClick() {
   }
   this->u32_B0->OnClick_1(&this->u32_B0); /*0x4b4f09*/
   this->q050.OnClick_1(); /*0x4b4f12*/
-  return Hash::Reset((LinkClass *)this); /*0x4b4f1c*/
+  return ((LinkClass *)this)->Reset(); /*0x4b4f1c*/
 }
 } // namespace gamemd
 
 // 0x4B4F20
 namespace gamemd {
 int DropListClass::g_var_926b49(int a2) {
-  this->q050.?(a2); /*0x4b4f2f*/
-  return LinkedList::InsertAfter((LinkClass *)this, a2); /*0x4b4f3a*/
+
+  (*(void (**)(int *, int))(this->DropListClass_field_0x50 + 12))(&this->DropListClass_field_0x50, a2);  /*0x4b4f2f*/
+  return LinkedList::InsertAfter((LinkClass *)this, a2);  /*0x4b4f3a*/
+
 }
 } // namespace gamemd
 
@@ -1687,7 +1689,7 @@ int DropListClass::OnDblClick() {
     (this->q048) = 0; /*0x4b4f99*/
   }
   this->q050.OnDblClick(); /*0x4b4fa3*/
-  return LinkClass::Destroy((GadgetClass *)this); /*0x4b4fad*/
+  return ((GadgetClass *)this)->Destroy(); /*0x4b4fad*/
 }
 } // namespace gamemd
 
@@ -1722,7 +1724,7 @@ unsigned int * ControlClass::Constructor(int a2) {
 
 // 0x4E15A0
 namespace gamemd {
-unsigned int * InputManager::FindBestHitElement(int a2, int a3) {
+unsigned int * (int a2)->FindBestHitElement(int a3) {
   unsigned int *result; // eax
   int InputManager_field_0x0C; // eax
   int InputManager_field_0x10; // edi
@@ -1792,11 +1794,11 @@ int InputManager::ProcessEvents() {
     dword_8B3E88 = 0; /*0x4e1667*/
     dword_8B3E90 = 0; /*0x4e166c*/
   }
-  v2 = (unsigned __int16)EventQueue::Process((EventQueue *)dword_87F770); /*0x4e167c*/
+  v2 = (unsigned __int16)((EventQueue *)dword_87F770)->Process(); /*0x4e167c*/
   v11 = v2; /*0x4e1681*/
   if ( v2 ) /*0x4e1685*/
   {
-    v2 = (unsigned __int16)EventQueue::Read((EventQueue *)dword_87F770); /*0x4e1692*/
+    v2 = (unsigned __int16)((EventQueue *)dword_87F770)->Read(); /*0x4e1692*/
     v11 = v2; /*0x4e1697*/
   }
   if ( (unsigned __int8)v2 == 1 || (unsigned __int8)v2 == 2 ) /*0x4e16a8*/
@@ -1809,7 +1811,7 @@ int InputManager::ProcessEvents() {
     v3 = (*(int (**)(MouseClass *))(dword_887640->HandleClick_ph + 44))(dword_887640); /*0x4e16bb*/
     v4 = (HWND)(*(int (**)(MouseClass *))(dword_887640->HandleClick_ph + 48))(dword_887640); /*0x4e16c2*/
   }
-  BestHitElement = InputManager::FindBestHitElement((InputManager *)v1, v3, (int)v4); /*0x4e16df*/
+  BestHitElement = ((InputManager *)v1)->FindBestHitElement(v3, (int)v4); /*0x4e16df*/
   if ( BestHitElement != (unsigned int *)dword_8B3E94 ) /*0x4e16e3*/
   {
     if ( dword_8B3E94 ) /*0x4e16e7*/
@@ -1955,7 +1957,7 @@ unsigned int * GadgetClass::QueryInterface(char a2) {
     dword_8B3E8C = 0; /*0x4e1a9a*/
   if ( this == v3 ) /*0x4e1aa2*/
     dword_8B3E90 = 0; /*0x4e1aa4*/
-  LinkClass::Destruct((LinkClass *)this); /*0x4e1aac*/
+  ((LinkClass *)this)->Destruct(); /*0x4e1aac*/
   if ( (a2 & 1) != 0 ) /*0x4e1ab6*/
     __3_YAXPAX_Z(this); /*0x4e1ab9*/
   return this->__pad_0; /*0x4e1ac3*/
@@ -1975,7 +1977,7 @@ int ListClass::Constructor(int a2, int a3, int a4, int a5, int a6) {
   if ( v7 != 255 ) /*0x4e2539*/
   {
     this->u32_30 = 255; /*0x4e253d*/
-    VectorClass_ptr_ConvertClass::MarkDirty((GadgetClass *)this); /*0x4e2540*/
+    ((GadgetClass *)this)->MarkDirty(); /*0x4e2540*/
   }
   v8 = 0; /*0x4e2549*/
   if ( this->u32_30 < 0 ) /*0x4e254d*/
@@ -1995,7 +1997,7 @@ int ListClass::Constructor(int a2, int a3, int a4, int a5, int a6) {
 
 // 0x4F4320
 namespace gamemd {
-int InputManager_ProcessEvents::Vtable(unsigned int *a2, unsigned int *a3, unsigned int *a4) {
+int (unsigned int *a2)->Vtable(unsigned int *a3, unsigned int *a4) {
   AudioStream *v5; // ebx
   unsigned int *v6; // esi
   int v7; // eax
@@ -2017,10 +2019,10 @@ int InputManager_ProcessEvents::Vtable(unsigned int *a2, unsigned int *a3, unsig
   else
   {
     v6 = a2; /*0x4f439f*/
-    v7 = (uint16_t)EventQueue::Process(*(EventQueue **)&g_BinkMoviePlayer); /*0x4f43a3*/
+    v7 = (uint16_t)(*(EventQueue **)&g_BinkMoviePlayer)->Process(); /*0x4f43a3*/
     *a2 = v7; /*0x4f43a8*/
     if ( v7 ) /*0x4f43aa*/
-      *a2 = (uint16_t)EventQueue::Read(*(EventQueue **)&g_BinkMoviePlayer); /*0x4f43bc*/
+      *a2 = (uint16_t)(*(EventQueue **)&g_BinkMoviePlayer)->Read(); /*0x4f43bc*/
   }
   v10[0] = *a3; /*0x4f43c5*/
   v8 = this->ptr_0[0]; /*0x4f43c9*/
@@ -2082,7 +2084,7 @@ int Keyboard::MapKey(uint16_t a2) {
 
 // 0x54F670
 namespace gamemd {
-char InputManager::PushInputEvent(int16_t a2) {
+char (int16_t a2)->PushInputEvent() {
   int v2; // edx
   int v3; // eax
 
@@ -2140,7 +2142,7 @@ int InputManager::WndProc(HWND hWnd, UINT Msg, WPARAM wParam, unsigned int lPara
         v10 = this->u32_318 - this->u32_314; /*0x54f938*/
         if ( (int)(256 - (((((v10) >> 32) & 0xFFFFFFFFu) ^ v10) - (((v10) >> 32) & 0xFFFFFFFFu))) < 3 ) /*0x54f947*/
           goto LABEL_45; /*0x54f947*/
-        EventClass::Enqueue((EventClass *)this, 1u, 1); /*0x54f94f*/
+        ((EventClass *)this)->Enqueue(1u, 1); /*0x54f94f*/
         goto LABEL_17; /*0x54f94f*/
       case 0x203u: /*0x54f916*/
         if ( stru_A8E960.random[552] ) /*0x54f958*/
@@ -2148,9 +2150,9 @@ int InputManager::WndProc(HWND hWnd, UINT Msg, WPARAM wParam, unsigned int lPara
         v11 = this->u32_318 - this->u32_314; /*0x54f971*/
         if ( (int)(256 - (((((v11) >> 32) & 0xFFFFFFFFu) ^ v11) - (((v11) >> 32) & 0xFFFFFFFFu))) >= 3 ) /*0x54f97b*/
         {
-          EventClass::Enqueue((EventClass *)this, 1u, 0); /*0x54f983*/
+          ((EventClass *)this)->Enqueue(1u, 0); /*0x54f983*/
           if ( !(unsigned __int8)EventQueue::CheckPosition((EventQueue *)this) ) /*0x54f98a*/
-            InputManager::PushInputEvent(this, x); /*0x54f996*/
+            (this)->PushInputEvent(x); /*0x54f996*/
           EventBuffer::Enqueue((EventBuffer *)this, y); /*0x54f99e*/
           x = v18[0]; /*0x54f9a3*/
           y = v17[0]; /*0x54f9a7*/
@@ -2160,19 +2162,19 @@ int InputManager::WndProc(HWND hWnd, UINT Msg, WPARAM wParam, unsigned int lPara
         v12 = this->u32_318 - this->u32_314; /*0x54f9c6*/
         if ( (int)(256 - (((((v12) >> 32) & 0xFFFFFFFFu) ^ v12) - (((v12) >> 32) & 0xFFFFFFFFu))) < 3 ) /*0x54f9d5*/
           goto LABEL_45; /*0x54f9d5*/
-        EventClass::Enqueue((EventClass *)this, 1u, 1); /*0x54f9e1*/
+        ((EventClass *)this)->Enqueue(1u, 1); /*0x54f9e1*/
         if ( !(unsigned __int8)EventQueue::CheckPosition((EventQueue *)this) ) /*0x54f9e8*/
           goto LABEL_31; /*0x54f9ef*/
         goto LABEL_32; /*0x54f9ef*/
       case 0x204u: /*0x54f916*/
-        InputManager::EnqueueInputEvent(this, 2u, x, y, 0); /*0x54faee*/
+        (this)->EnqueueInputEvent(2u, x, y, 0); /*0x54faee*/
         goto LABEL_45; /*0x54faee*/
       case 0x205u: /*0x54f916*/
-        InputManager::EnqueueInputEvent(this, 2u, x, y, 1); /*0x54faf4*/
+        (this)->EnqueueInputEvent(2u, x, y, 1); /*0x54faf4*/
         goto LABEL_45; /*0x54faf4*/
       case 0x206u: /*0x54f916*/
-        InputManager::EnqueueInputEvent(this, 2u, x, y, 0); /*0x54fafe*/
-        InputManager::EnqueueInputEvent(this, 2u, v18[0], v17[0], 1); /*0x54fb13*/
+        (this)->EnqueueInputEvent(2u, x, y, 0); /*0x54fafe*/
+        (this)->EnqueueInputEvent(2u, v18[0], v17[0], 1); /*0x54fb13*/
         goto LABEL_45; /*0x54fb13*/
       case 0x207u: /*0x54f916*/
         if ( !stru_A8E960.random[552] ) /*0x54fa0d*/
@@ -2180,7 +2182,7 @@ int InputManager::WndProc(HWND hWnd, UINT Msg, WPARAM wParam, unsigned int lPara
           v13 = this->u32_318 - this->u32_314; /*0x54fa26*/
           if ( (int)(256 - (((((v13) >> 32) & 0xFFFFFFFFu) ^ v13) - (((v13) >> 32) & 0xFFFFFFFFu))) >= 3 ) /*0x54fa30*/
           {
-            EventClass::Enqueue((EventClass *)this, 4u, 0); /*0x54fa3c*/
+            ((EventClass *)this)->Enqueue(4u, 0); /*0x54fa3c*/
             EventBuffer::Enqueue((EventBuffer *)this, x); /*0x54fa44*/
             EventBuffer::Enqueue((EventBuffer *)this, y); /*0x54fa4c*/
           }
@@ -2194,7 +2196,7 @@ int InputManager::WndProc(HWND hWnd, UINT Msg, WPARAM wParam, unsigned int lPara
         v14 = this->u32_318 - this->u32_314; /*0x54fa76*/
         if ( (int)(256 - (((((v14) >> 32) & 0xFFFFFFFFu) ^ v14) - (((v14) >> 32) & 0xFFFFFFFFu))) >= 3 ) /*0x54fa80*/
         {
-          EventClass::Enqueue((EventClass *)this, 4u, 0); /*0x54fa88*/
+          ((EventClass *)this)->Enqueue(4u, 0); /*0x54fa88*/
           EventBuffer::Enqueue((EventBuffer *)this, x); /*0x54fa90*/
           EventBuffer::Enqueue((EventBuffer *)this, y); /*0x54fa98*/
           x = v18[0]; /*0x54fa9d*/
@@ -2206,7 +2208,7 @@ LABEL_39:
           v15 = this->u32_318 - this->u32_314; /*0x54fabc*/
           if ( (int)(256 - (((((v15) >> 32) & 0xFFFFFFFFu) ^ v15) - (((v15) >> 32) & 0xFFFFFFFFu))) >= 3 ) /*0x54facb*/
           {
-            EventClass::Enqueue((EventClass *)this, 4u, 1); /*0x54fad3*/
+            ((EventClass *)this)->Enqueue(4u, 1); /*0x54fad3*/
             EventBuffer::Enqueue((EventBuffer *)this, x); /*0x54fadb*/
             EventBuffer::Enqueue((EventBuffer *)this, y); /*0x54fae3*/
           }
@@ -2223,11 +2225,11 @@ LABEL_39:
       case 0x100u: /*0x54f81d*/
       case 0x104u: /*0x54f81d*/
         if ( wParam != 145 && (lParam & 0x40000000) == 0 ) /*0x54f838*/
-          EventClass::Enqueue((EventClass *)this, wParam, 0); /*0x54f843*/
+          ((EventClass *)this)->Enqueue(wParam, 0); /*0x54f843*/
         goto LABEL_45; /*0x54f848*/
       case 0x101u: /*0x54f81d*/
       case 0x105u: /*0x54f81d*/
-        EventClass::Enqueue((EventClass *)this, wParam, 1); /*0x54f852*/
+        ((EventClass *)this)->Enqueue(wParam, 1); /*0x54f852*/
         goto LABEL_45; /*0x54f857*/
       case 0x102u: /*0x54f81d*/
         if ( byte_A8BC79 ) /*0x54f863*/
@@ -2237,7 +2239,7 @@ LABEL_39:
             v8 = this->u32_318 - this->u32_314; /*0x54f889*/
             if ( (int)(256 - (((((v8) >> 32) & 0xFFFFFFFFu) ^ v8) - (((v8) >> 32) & 0xFFFFFFFFu))) >= 2 ) /*0x54f893*/
             {
-              EventClass::Enqueue((EventClass *)this, 0xAu, 0); /*0x54f89f*/
+              ((EventClass *)this)->Enqueue(0xAu, 0); /*0x54f89f*/
               EventBuffer::Enqueue((EventBuffer *)this, (unsigned __int8)wParam); /*0x54f8af*/
             }
           }
@@ -2252,11 +2254,11 @@ LABEL_39:
     v9 = this->u32_318 - this->u32_314; /*0x54f8d9*/
     if ( (int)(256 - (((((v9) >> 32) & 0xFFFFFFFFu) ^ v9) - (((v9) >> 32) & 0xFFFFFFFFu))) >= 3 ) /*0x54f8e3*/
     {
-      EventClass::Enqueue((EventClass *)this, 1u, 0); /*0x54f8ef*/
+      ((EventClass *)this)->Enqueue(1u, 0); /*0x54f8ef*/
 LABEL_17:
       if ( !(unsigned __int8)EventQueue::CheckPosition((EventQueue *)this) ) /*0x54f8f6*/
 LABEL_31:
-        InputManager::PushInputEvent(this, x); /*0x54f9f1*/
+        (this)->PushInputEvent(x); /*0x54f9f1*/
 LABEL_32:
       EventBuffer::Enqueue((EventBuffer *)this, y); /*0x54f9f9*/
     }
@@ -2270,7 +2272,7 @@ LABEL_45:
 
 // 0x557230
 namespace gamemd {
-int ListClass::Construct(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9) {
+int (int a2)->Construct(int a3, int a4, int a5, int a6, int a7, int a8, int a9) {
   int v10; // ecx
   int v11; // eax
   int v12; // edi
@@ -2355,7 +2357,7 @@ int ListClass::Destruct() {
   }
   this->u32_41 = 0; /*0x557691*/
   this->u32_3C = 0; /*0x557694*/
-  return GadgetClass::Dtor((ShpButtonClass *)this); /*0x55769c*/
+  return ((ShpButtonClass *)this)->Dtor(); /*0x55769c*/
 }
 } // namespace gamemd
 
@@ -2481,7 +2483,7 @@ wchar_t ** ListBox::Constructor() {
     v3 = 0; /*0x5c106f*/
   }
   if ( (v1 & 1) != 0 ) /*0x5c1074*/
-    DeleteAndZero::Alt((DeleteAndZero *)&v6); /*0x5c107a*/
+    ((DeleteAndZero *)&v6)->Alt(); /*0x5c107a*/
   return (wchar_t **)v3; /*0x5c1081*/
 
 }
@@ -2489,7 +2491,7 @@ wchar_t ** ListBox::Constructor() {
 
 // 0x5D2E90
 namespace gamemd {
-char FontClass::LoadFontResources(int16_t a2) {
+char (int16_t a2)->LoadFontResources() {
 
   int v3; // eax
   char *EntireFile; // eax
@@ -2516,18 +2518,18 @@ char FontClass::LoadFontResources(int16_t a2) {
     this->__pad_014 = v3; /*0x5d2ec1*/
     if ( !v3 ) /*0x5d2ec4*/
     {
-      FileClass::SetFileName(v16, g_Str_File_FULLFNT3_SHP); /*0x5d2ecf*/
-      this->__pad_014 = CCFileClass::ReadEntireFile(v16); /*0x5d2ee2*/
+      (v16)->SetFileName(g_Str_File_FULLFNT3_SHP); /*0x5d2ecf*/
+      this->__pad_014 = (v16)->ReadEntireFile(); /*0x5d2ee2*/
       this->u8_1C = 1; /*0x5d2ee5*/
       Debug::Log(); /*0x5d2ee9*/
     }
     if ( !this->__pad_014 ) /*0x5d2ef1*/
       goto LABEL_15; /*0x5d2ef1*/
     if ( (unsigned char)a2 == 1 ) /*0x5d2eff*/
-      FileClass::SetFileName(v16, aSidefnt3Pal); /*0x5d2f06*/
+      (v16)->SetFileName(aSidefnt3Pal); /*0x5d2f06*/
     else
-      FileClass::SetFileName(v16, aFullfnt3Pal); /*0x5d2f11*/
-    EntireFile = (char *)CCFileClass::ReadEntireFile(v16); /*0x5d2f1a*/
+      (v16)->SetFileName(aFullfnt3Pal); /*0x5d2f11*/
+    EntireFile = (char *)(v16)->ReadEntireFile(); /*0x5d2f1a*/
     v5 = EntireFile; /*0x5d2f1f*/
     if ( !EntireFile ) /*0x5d2f23*/
       goto LABEL_15; /*0x5d2f23*/
@@ -2555,16 +2557,16 @@ char FontClass::LoadFontResources(int16_t a2) {
                            | ((4 * (unsigned __int8)v5[204]) >> g_BitShift_Green_0 << g_BitShift_Red);
     __3_YAXPAX_Z(v5); /*0x5d3002*/
     v12 = __2_YAPAXI_Z(0x188u); /*0x5d300c*/
-    v13 = v12 ? ConvertClass::Construct(v12, (int)&stru_886080, (int)&stru_886080, g_DSurface_Primary, 1, 0) : 0;
+    v13 = v12 ? (v12)->Construct((int)&stru_886080, (int)&stru_886080, g_DSurface_Primary, 1, 0) : 0;
     this->u32_18 = v13; /*0x5d303c*/
     if ( !v13 ) /*0x5d303f*/
     {
 LABEL_15:
       v16[0] = &g_ptr_7E16B0; /*0x5d3045*/
       v18 = 0; /*0x5d304d*/
-      Vector::Clear((int)v17); /*0x5d3051*/
+      ((int)v17)->Clear(); /*0x5d3051*/
       v16[0] = &off_7E1668; /*0x5d305a*/
-      BufferIOFileClass::Dtor(v16); /*0x5d3062*/
+      (v16)->Dtor(); /*0x5d3062*/
       return 0; /*0x5d306f*/
     }
     v15 = this->__pad_014; /*0x5d3072*/
@@ -2574,9 +2576,9 @@ LABEL_15:
   Audio::IsSoundEnabled(); /*0x5d3083*/
   v16[0] = &g_ptr_7E16B0; /*0x5d308c*/
   v18 = 0; /*0x5d3094*/
-  Vector::Clear((int)v17); /*0x5d3098*/
+  ((int)v17)->Clear(); /*0x5d3098*/
   v16[0] = &off_7E1668; /*0x5d30a1*/
-  BufferIOFileClass::Dtor(v16); /*0x5d30a9*/
+  (v16)->Dtor(); /*0x5d30a9*/
   return 1; /*0x5d3067*/
 
 }
@@ -2590,7 +2592,7 @@ int ListBox::FillEntries(int a2, int a3) {
   LPARAM v5; // esi
   LRESULT v6; // ebp
 
-  ListBox::Clear((ListBox *)this); /*0x5d6458*/
+  ((ListBox *)this)->Clear(); /*0x5d6458*/
   result = a2; /*0x5d645d*/
   for ( i = 0; i < *(unsigned int *)(a2 + 16); ++i ) /*0x5d6468*/
   {
@@ -2646,7 +2648,7 @@ int ListBox::FillPlayers(HWND hWnd, int a3) {
   LRESULT v10; // ebp
   int v11; // [esp+14h] [ebp+8h]
 
-  ListBox::Clear((ListBox *)hWnd); /*0x5d6549*/
+  ((ListBox *)hWnd)->Clear(); /*0x5d6549*/
   for ( i = 0; i < this->MultiplayerGameMode_field_0x18; ++i ) /*0x5d6555*/
   {
     v5 = *(void (****)(unsigned int, int))(this->MultiplayerGameMode_field_0x0C + 4 * i); /*0x5d655a*/
@@ -2668,7 +2670,7 @@ int ListBox::FillPlayers(HWND hWnd, int a3) {
       do /*0x5d6608*/
       {
         v8 = *(unsigned int *)(this->MultiplayerGameMode_field_0x0C + 4 * v7); /*0x5d65b2*/
-        v9 = WideString::GetOrEmpty_Alt((wchar_t **)(v8 + 4)); /*0x5d65b8*/
+        v9 = ((wchar_t **)(v8 + 4))->GetOrEmpty_Alt(); /*0x5d65b8*/
         v10 = SendMessageA(hWnd, 0x143u, 0, (LPARAM)v9); /*0x5d65d3*/
         if ( *(unsigned int *)(v8 + 8) == v11 ) /*0x5d65db*/
           SendMessageA(hWnd, 0x14Eu, v10, 0); /*0x5d65ea*/
@@ -2704,7 +2706,7 @@ int ListBox::AddEntries() {
 
   v1 = (MPCombatTeam *)__2_YAPAXI_Z(0xCu); /*0x5d6695*/
   if ( v1 ) /*0x5d669f*/
-    v2 = MPCombatTeam::Constructor(v1); /*0x5d66a8*/
+    v2 = (v1)->Constructor(); /*0x5d66a8*/
   else
     v2 = 0; /*0x5d66ac*/
   MultiplayerGameMode_field_0x08 = this->MultiplayerGameMode_field_0x08; /*0x5d66b2*/
@@ -2755,7 +2757,7 @@ int ComboBoxOwnerDraw::GetWidthHeight() {
 
 // 0x600680
 namespace gamemd {
-bool ComboBoxOwnerDraw::MatchDimensions(unsigned int *a2) {
+bool (unsigned int *a2)->MatchDimensions() {
   return a2->q004 == this->q004 && *a2 == *(unsigned int *)this->__pad_000; /*0x60068d*/
 }
 } // namespace gamemd
@@ -3014,7 +3016,7 @@ int CheckSum::AccumulateModulo(int16_t a2) {
 
 // 0x69DEA0
 namespace gamemd {
-char ButtonClass::SetState(char a2) {
+char (char a2)->SetState() {
   this->u32_5C = a2; /*0x69dea4*/
   return a2; /*0x69dea7*/
 }
@@ -3022,7 +3024,7 @@ char ButtonClass::SetState(char a2) {
 
 // 0x6A8710
 namespace gamemd {
-int TabCameoListClass::AddCameo_ReplaceItAll(int a2, int a3) {
+int (int a2)->AddCameo_ReplaceItAll(int a3) {
   int v4; // ebp
   int result; // eax
   int *i; // esi
@@ -3043,7 +3045,7 @@ int TabCameoListClass::AddCameo_ReplaceItAll(int a2, int a3) {
     for ( i = &this->u32_16; ; i += 13 ) /*0x6a872c*/
     {
       v7 = a2; /*0x6a8734*/
-      if ( RadarClass::GetBlip(a2, a3, i[1], *i) ) /*0x6a8742*/
+      if ( (a2)->GetBlip(a3, i[1], *i) ) /*0x6a8742*/
         break; /*0x6a8742*/
       result = this->u32_54; /*0x6a874b*/
       if ( ++v4 >= result ) /*0x6a8754*/
@@ -3230,7 +3232,7 @@ int SliderClass::Destructor() {
     (**v3)(v3, 1); /*0x6b1d28*/
     this->u32_40 = 0; /*0x6b1d2a*/
   }
-  return GadgetClass::Dtor((ShpButtonClass *)this); /*0x6b1d38*/
+  return ((ShpButtonClass *)this)->Dtor(); /*0x6b1d38*/
 }
 } // namespace gamemd
 
@@ -3311,7 +3313,7 @@ void ToolTipClass::updateString() {
 
 // 0x7241A0
 namespace gamemd {
-int Tooltip::Enable(char a2) {
+int (char a2)->Enable() {
   int result; // eax
 
   (*((unsigned char *)&(result))) = a2; /*0x7241a0*/
@@ -3492,8 +3494,8 @@ int ToolTipClass::initString() {
 
 // 0x724C10
 namespace gamemd {
-void * ToolTipClass::Destructor(char a2) {
-  ToolTipClass::updateString((ToolTipClass *)this); /*0x724c13*/
+void * (char a2)->Destructor() {
+  ((ToolTipClass *)this)->updateString(); /*0x724c13*/
   if ( (a2 & 1) != 0 ) /*0x724c1d*/
     operator delete((this)); /*0x724c20*/
   return this; /*0x724c2a*/
@@ -3502,7 +3504,7 @@ void * ToolTipClass::Destructor(char a2) {
 
 // 0x724C60
 namespace gamemd {
-unsigned int ToolTipClass::write(int a2) {
+unsigned int (int a2)->write() {
   if ( (this->IsInitialized) ) /*0x724c60*/
     return (unsigned int)(a2 - *&this->Items) >> 2; /*0x724c75*/
   else
@@ -3512,7 +3514,7 @@ unsigned int ToolTipClass::write(int a2) {
 
 // 0x724C80
 namespace gamemd {
-int ToolTipClass::seek(int a2) {
+int (int a2)->seek() {
   return *(unsigned int *)(*&this->Position + 4 * a2); /*0x724c8a*/
 }
 } // namespace gamemd
@@ -3544,9 +3546,9 @@ void ** Campaign_WorldDominationTour::QueryInterface(char a2) {
   this->u32_25 = 0; /*0x76563a*/
   this->u32_20 = 0; /*0x76563e*/
   this->u32_10 = 0; /*0x765645*/
-  ComPtr::Release(&this->ComPtr_4); /*0x76564b*/
+  (&this->ComPtr_4)->Release(); /*0x76564b*/
   this->u32_8 = 0; /*0x765653*/
-  ComPtr::Release(&this->ComPtr_2); /*0x765659*/
+  (&this->ComPtr_2)->Release(); /*0x765659*/
   ReferenceCounted::Constructor((ReferenceCounted *)this); /*0x765660*/
   if ( (a2 & 1) != 0 ) /*0x76566a*/
     operator delete((this)); /*0x76566d*/

@@ -60,13 +60,15 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_e4_e4.hpp"
 #include "e4/classes/ScenarioClass_e4.hpp"
+// X129: fresh-render label declarations (auto, idempotent)
+extern unsigned char aUnits[6];  // data: 0x8458F0
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
 int LookupWaypointName(ObjectClass *p_this);  // x4:ida@0x5b3910
 } // namespace gamemd
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
-extern char aViscLrgShp[13];  // data: 0x84599c truth(IDA G42.57w9)
-extern char aViscSmlShp[13];  // data: 0x8459ac truth(IDA G42.57w9)
+extern unsigned char aViscLrgShp[13];  // data: 0x84599c truth(IDA G42.57w9)
+extern unsigned char aViscSmlShp[13];  // data: 0x8459ac truth(IDA G42.57w9)
 
 
 // 0x743270
@@ -145,7 +147,7 @@ Coord * * PlaceScenarioUnits(void * a1, void * a2, void * aUnits)
   v51 = 0; /*0x7432a7*/
   v50 = 0; /*0x7432ab*/
   v48 = 0; /*0x7432af*/
-  KeyCount = INIClass::GetKeyCount(v2->__pad_0, (unsigned __int8 *)aUnits); /*0x7432b3*/
+  KeyCount = (v2->__pad_0)->GetKeyCount((unsigned __int8 *)aUnits); /*0x7432b3*/
   v4 = 0; /*0x7432b8*/
   v61 = KeyCount; /*0x7432bc*/
   v54 = 0; /*0x7432c0*/
@@ -153,21 +155,21 @@ Coord * * PlaceScenarioUnits(void * a1, void * a2, void * aUnits)
   {
     while ( 1 ) /*0x7432dd*/
     {
-      StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(v2->__pad_0, (unsigned __int8 *)aUnits, v4); /*0x7432dd*/
+      StringByIndex = (unsigned __int8 *)(v2->__pad_0)->GetStringByIndex((unsigned __int8 *)aUnits, v4); /*0x7432dd*/
       INIClass::GetString(v2, (unsigned __int8 *)aUnits, StringByIndex, 0, String, 128); /*0x7432f6*/
       v6 = strtok(String, Delimiter); /*0x743305*/
-      v7 = HouseClass::FindByName(v6); /*0x743314*/
+      v7 = (v6)->FindByName(); /*0x743314*/
       if ( v7 != -1 ) /*0x743319*/
       {
         v8 = strtok(0, Delimiter); /*0x743325*/
-        Index = BuildingTypeClass::FindIndex((BuildingTypeClass *)v8); /*0x74333a*/
+        Index = ((BuildingTypeClass *)v8)->FindIndex(); /*0x74333a*/
         v10 = (void *)*(&dword_A8022C->ptr_0 + v7); /*0x74333f*/
         if ( Index != -1 ) /*0x743342*/
         {
           v11 = (int *)__2_YAPAXI_Z(0x8E8u); /*0x74334d*/
           if ( v11 ) /*0x743357*/
           {
-            v12 = UnitClass::Construct(v11, *(unsigned int *)(*(int *)((char *)&stru_A83CD9.ptr_8 + 3) + 4 * Index), v10); /*0x74336f*/
+            v12 = (v11)->Construct(*(unsigned int *)(*(int *)((char *)&stru_A83CD9.ptr_8 + 3) + 4 * Index), v10); /*0x74336f*/
             if ( v12 ) /*0x743373*/
             {
               v13 = strtok(0, Delimiter); /*0x74337f*/
@@ -197,12 +199,12 @@ Coord * * PlaceScenarioUnits(void * a1, void * a2, void * aUnits)
               v21 = strtok(0, Delimiter); /*0x743448*/
               v22 = LookupWaypointName((ObjectClass *)v21); /*0x743457*/
               v23 = strtok(0, Delimiter); /*0x743460*/
-              v24 = (TeamClass *)ObjectTypeClass::FindByName((ObjectTypeClass *)v23); /*0x74346a*/
+              v24 = (TeamClass *)((ObjectTypeClass *)v23)->FindByName(); /*0x74346a*/
               if ( v24 ) /*0x743471*/
               {
-                v25 = TeamClass::FindOrCreate(v24); /*0x743475*/
+                v25 = (v24)->FindOrCreate(); /*0x743475*/
                 if ( v25 ) /*0x74347c*/
-                  ObjectClass::SetReference((ObjectClass *)v12, v25); /*0x743481*/
+                  ((ObjectClass *)v12)->SetReference(v25); /*0x743481*/
               }
               v26 = strtok(0, Delimiter); /*0x74348d*/
               if ( v26 ) /*0x743497*/
@@ -1037,8 +1039,8 @@ LABEL_17:
 LABEL_18:
   if ( !v4 ) /*0x74e004*/
     dword_B1D2F0 = __2_YAPAXI_Z(v2); /*0x74e00f*/
-  LayerClass::CellIteratorReset(&dword_87F7E8); /*0x74e019*/
-  for ( k = LayerClass::CellIteratorNext(&dword_87F7E8); k; k = LayerClass::CellIteratorNext(&dword_87F7E8) ) /*0x74e02f*/
+  (&dword_87F7E8)->CellIteratorReset(); /*0x74e019*/
+  for ( k = (&dword_87F7E8)->CellIteratorNext(); k; k = (&dword_87F7E8)->CellIteratorNext() ) /*0x74e02f*/
     *(unsigned int *)(k + 320) &= ~0x8000u; /*0x74e03e*/
   memset(dword_B1D2F0, 0, v2); /*0x74e05c*/
   for ( m = dword_B1D2A0 - 1; m >= 0; --m ) /*0x74e06f*/
@@ -1049,14 +1051,14 @@ LABEL_18:
     else
       ProcessVeinholeMonster(v16); /*0x74e08b*/
   }
-  LayerClass::CellIteratorReset(&dword_87F7E8); /*0x74e098*/
-  result = LayerClass::CellIteratorNext(&dword_87F7E8); /*0x74e0a2*/
+  (&dword_87F7E8)->CellIteratorReset(); /*0x74e098*/
+  result = (&dword_87F7E8)->CellIteratorNext(); /*0x74e0a2*/
   for ( n = result; result; n = result ) /*0x74e0ab*/
   {
-    if ( *(unsigned int *)(n + 68) == 126 && !*((unsigned char *)dword_B1D2F0 + Cell::PosToIndex((__int16 *)(n + 36))) ) /*0x74e0c5*/
+    if ( *(unsigned int *)(n + 68) == 126 && !*((unsigned char *)dword_B1D2F0 + ((__int16 *)(n + 36))->PosToIndex()) ) /*0x74e0c5*/
       *(unsigned int *)(n + 68) = -1; /*0x74e0cb*/
     *(unsigned int *)(n + 320) &= ~0x8000u; /*0x74e0da*/
-    result = LayerClass::CellIteratorNext(&dword_87F7E8); /*0x74e0e5*/
+    result = (&dword_87F7E8)->CellIteratorNext(); /*0x74e0e5*/
   }
   return result; /*0x74e0f0*/
 
@@ -1202,74 +1204,74 @@ AbstractClass * * E4Recv_74FAE0::sub_74FAE0()
   RawFileClass v9; // [esp+10h] [ebp-24h] BYREF
 
   if ( (this->ambientSoundController[2] & 8) == 0 )
-  {
-    RawFileClass::Construct((BufferIOFileClass *)&v9, (int)g_Str_File_VERSION_TXT);
-    if ( (unsigned __int8)FileClass::Open(&v9, 0) )
-    {
-      FileClass::Read(&v9, (char *)&this->owningHouseIndex + 2, 16);
+  {  /*0x74faef*/
+    ((BufferIOFileClass *)&v9)->Construct((int)g_Str_File_VERSION_TXT);  /*0x74fafa*/
+    if ( (unsigned __int8)(&v9)->Open(0) )
+    {  /*0x74fb04*/
+      (&v9)->Read((char *)&this->owningHouseIndex + 2, 16);  /*0x74fb17*/
       for ( BYTE1(this->attachedBomb) = 0;
             *((unsigned char *)&this->owningHouseIndex + strlen((const char *)&this->owningHouseIndex + 2) + 1) == 13;
             *((unsigned char *)&this->owningHouseIndex + strlen((const char *)&this->owningHouseIndex + 2) + 1) = 0 )
-      {
-        ;
+      {  /*0x74fb30*/
+        ;  /*0x74fb40*/
       }
     }
     else
     {
-      BYTE2(this->owningHouseIndex) = 0;
+      BYTE2(this->owningHouseIndex) = 0;  /*0x74fb55*/
     }
-    RawFileClass::Dtor((BufferIOFileClass *)&v9);
-    v2 = this->ambientSoundController[2];
-    LOBYTE(v2) = v2 | 8;
-    this->ambientSoundController[2] = v2;
+    ((BufferIOFileClass *)&v9)->Dtor();  /*0x74fb5c*/
+    v2 = this->ambientSoundController[2];  /*0x74fb61*/
+    LOBYTE(v2) = v2 | 8;  /*0x74fb64*/
+    this->ambientSoundController[2] = v2;  /*0x74fb66*/
   }
-  v3 = this->ambientSoundController[2];
+  v3 = this->ambientSoundController[2];  /*0x74fb69*/
   if ( (v3 & 4) != 0 )
-  {
-    vfptr2_high = HIWORD(this->vfptr2);
+  {  /*0x74fb6e*/
+    vfptr2_high = HIWORD(this->ptr_8);  /*0x74fb70*/
   }
   else
   {
-    vfptr2_high = 1;
-    LOBYTE(v3) = v3 | 4;
-    HIWORD(this->vfptr2) = 1;
-    this->ambientSoundController[2] = v3;
+    vfptr2_high = 1;  /*0x74fb76*/
+    LOBYTE(v3) = v3 | 4;  /*0x74fb7b*/
+    HIWORD(this->ptr_8) = 1;  /*0x74fb7d*/
+    this->ambientSoundController[2] = v3;  /*0x74fb81*/
   }
   if ( (stru_A8E960.random[432] & 8) == 0 )
-  {
-    RawFileClass::Construct((BufferIOFileClass *)&v9, (int)g_Str_File_VERSION_TXT);
-    if ( (unsigned __int8)FileClass::Open(&v9, 0) )
-    {
-      FileClass::Read(&v9, &stru_A8E960.random[406], 16);
+  {  /*0x74fb8b*/
+    ((BufferIOFileClass *)&v9)->Construct((int)g_Str_File_VERSION_TXT);  /*0x74fb9a*/
+    if ( (unsigned __int8)(&v9)->Open(0) )
+    {  /*0x74fba4*/
+      (&v9)->Read(&stru_A8E960.random[406], 16);  /*0x74fbb8*/
       for ( stru_A8E960.random[421] = 0;
             stru_A8E960.random[strlen(&stru_A8E960.random[406]) + 405] == 13;
             stru_A8E960.random[strlen(&stru_A8E960.random[406]) + 405] = 0 )
-      {
-        ;
+      {  /*0x74fbd9*/
+        ;  /*0x74fbee*/
       }
     }
     else
     {
-      stru_A8E960.random[406] = 0;
+      stru_A8E960.random[406] = 0;  /*0x74fc07*/
     }
-    RawFileClass::Dtor((BufferIOFileClass *)&v9);
-    v5 = *(unsigned int *)&stru_A8E960.random[432];
-    LOBYTE(v5) = stru_A8E960.random[432] | 8;
-    *(unsigned int *)&stru_A8E960.random[432] = v5;
+    ((BufferIOFileClass *)&v9)->Dtor();  /*0x74fc11*/
+    v5 = *(unsigned int *)&stru_A8E960.random[432];  /*0x74fc16*/
+    LOBYTE(v5) = stru_A8E960.random[432] | 8;  /*0x74fc1b*/
+    *(unsigned int *)&stru_A8E960.random[432] = v5;  /*0x74fc1d*/
   }
   if ( (stru_A8E960.random[432] & 2) != 0 )
-  {
-    v6 = *(unsigned short *)&stru_A8E960.random[372];
+  {  /*0x74fc2f*/
+    v6 = *(unsigned short *)&stru_A8E960.random[372];  /*0x74fc31*/
   }
   else
   {
-    *(unsigned short *)&stru_A8E960.random[372] = 1;
-    v6 = 1;
-    *(unsigned int *)&stru_A8E960.random[432] |= 2u;
+    *(unsigned short *)&stru_A8E960.random[372] = 1;  /*0x74fc3e*/
+    v6 = 1;  /*0x74fc49*/
+    *(unsigned int *)&stru_A8E960.random[432] |= 2u;  /*0x74fc4e*/
   }
-  p_vfptr3 = &this->vfptr3;
-  sprintf((char *const)p_vfptr3, "%d.%3.3d", v6, vfptr2_high);
-  return (char *)p_vfptr3;
+  p_vfptr3 = &this->ptr_C;  /*0x74fc60*/
+  sprintf((char *const)p_vfptr3, "%d.%3.3d", v6, vfptr2_high);  /*0x74fc6a*/
+  return (char *)p_vfptr3;  /*0x74fc74*/
 
 }
 }
@@ -1433,7 +1435,7 @@ int sub_7473E0()
       *(unsigned int *)(v1 + 12) = 0; /*0x74740f*/
       /* X11: ptr_0 install elided (X67 star-deref, RHS XSurface_Vtable) */  /*0x747416*/
       *(unsigned int *)(v1 + 16) = 1; /*0x74741c*/
-      Buffer::Init((Buffer *)(v1 + 20), 0, 0x10000); /*0x747423*/
+      ((Buffer *)(v1 + 20))->Init(0, 0x10000); /*0x747423*/
       /* X11: ptr_0 install elided (X67 star-deref, RHS BSurface_Vtable) */  /*0x747428*/
       v2 = v1; /*0x74742e*/
     }

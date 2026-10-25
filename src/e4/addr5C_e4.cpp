@@ -211,14 +211,14 @@ CampaignClass * * MPCooperative::MPCooperative___vt07(int a2)
   v3 = 0; /*0x5c17c3*/
   MPCooperative_field_0x33C = this->q33C; /*0x5c17c5*/
   v11 = 0; /*0x5c17cb*/
-  Movie::GetSection((int)&g_DDrawSurfaceManager, MPCooperative_field_0x33C, &v12); /*0x5c17cf*/
+  ((int)&g_DDrawSurfaceManager)->GetSection(MPCooperative_field_0x33C, &v12); /*0x5c17cf*/
   v4 = v12; /*0x5c17d4*/
   if ( !v12 ) /*0x5c17da*/
     return 1; /*0x5c17e4*/
   MPCooperative_field_0x40 = (int *)this->u32_40; /*0x5c17e7*/
   if ( MPCooperative_field_0x40 ) /*0x5c17ec*/
   {
-    if ( (unsigned __int8)Movie::GetState(MPCooperative_field_0x40, &v11) ) /*0x5c17f3*/
+    if ( (unsigned __int8)(MPCooperative_field_0x40)->GetState(&v11) ) /*0x5c17f3*/
     {
       v7 = v11; /*0x5c180c*/
     }
@@ -249,7 +249,7 @@ CampaignClass * * MPCooperative::MPCooperative___vt07(int a2)
   v9 = *(unsigned int *)(v4[5] + 4 * v7); /*0x5c1859*/
   if ( *(int *)(v9 + 16) > 0 ) /*0x5c185f*/
   {
-    while ( SideClass::FindByName(*(SideClass **)(*(unsigned int *)(v9 + 4) + 4 * v8)) != a2 ) /*0x5c186e*/
+    while ( (*(SideClass **)(*(unsigned int *)(v9 + 4) + 4 * v8))->FindByName() != a2 ) /*0x5c186e*/
     {
       ++v8; /*0x5c1878*/
       v9 = *(unsigned int *)(v12[5] + 4 * v11); /*0x5c187c*/
@@ -272,7 +272,7 @@ BOOL E4Recv_5C60D0::ShowConfirmDialog(unsigned short * lParam)
   wchar_t *v3; // eax
   v3 = GetStringCSF((char *)(g_Str_TXT_OK), 0, aDRa2mdpostMpla, 108); /*0x5c6102*/
   int v6; // [esp+0h] [ebp-8h]
-  return Dialog::ShowMessageBox(lParam, v3, StringCSF, 0, 0, v6) == 0; /*0x5c6116*/
+  return (lParam)->ShowMessageBox(v3, StringCSF, 0, 0, v6) == 0; /*0x5c6116*/
 }
 }
 // 0x5C6370
@@ -2728,7 +2728,7 @@ unsigned int * E4Recv_5CD690::sub_5CD690(int * a2)
   {
     v4 = &this->u32_38; /*0x5cd6b2*/
     v23 = &this->u32_38; /*0x5cd6b6*/
-    v5 = WideString::GetOrEmpty(&this->u32_1C); /*0x5cd6ba*/
+    v5 = (&this->u32_1C)->GetOrEmpty(); /*0x5cd6ba*/
     sub_5D30C0(*&this->M52, v5, v23); /*0x5cd6c3*/
     v6 = *&this->M52; /*0x5cd6dc*/
     this->M4 += (a2[2] - this->M64) / 2; /*0x5cd6df*/
@@ -2737,7 +2737,7 @@ unsigned int * E4Recv_5CD690::sub_5CD690(int * a2)
     *v4 += this->M4; /*0x5cd710*/
     this->M8 = v7; /*0x5cd71a*/
     this->M60 = v7 + v8; /*0x5cd71d*/
-    Rect::Set(&v26, 0, 0, 0, 0); /*0x5cd720*/
+    (&v26)->Set(0, 0, 0, 0); /*0x5cd720*/
     v9 = *v4; /*0x5cd727*/
     Y = this->M60; /*0x5cd729*/
     v11 = this->M64; /*0x5cd72c*/
@@ -2848,7 +2848,7 @@ MultiplayerGameMode * * WrapWideStringText(const wchar_t ** ecx0, int * a2, int 
   if ( a3 <= v6 ) /*0x5cd883*/
     return 0; /*0x5cdb7c*/
   v36 = a3 - v6; /*0x5cd891*/
-  if ( (unsigned __int16)WideString::GetChar((WideString *)ecx0, 0) ) /*0x5cd895*/
+  if ( (unsigned __int16)((WideString *)ecx0)->GetChar(0) ) /*0x5cd895*/
   {
     do /*0x5cdac6*/
     {
@@ -2856,13 +2856,13 @@ MultiplayerGameMode * * WrapWideStringText(const wchar_t ** ecx0, int * a2, int 
       v32 = v3; /*0x5cd8ab*/
       if ( v36 <= 0 ) /*0x5cd8af*/
         goto LABEL_12; /*0x5cd8af*/
-      while ( (unsigned __int16)WideString::GetChar((WideString *)ecx0, v3) /*0x5cd8d8*/
-           && (unsigned __int16)WideString::GetChar((WideString *)ecx0, v3) != 10
-           && (unsigned __int16)WideString::GetChar((WideString *)ecx0, v3) != 64 )
+      while ( (unsigned __int16)((WideString *)ecx0)->GetChar(v3) /*0x5cd8d8*/
+           && (unsigned __int16)((WideString *)ecx0)->GetChar(v3) != 10
+           && (unsigned __int16)((WideString *)ecx0)->GetChar(v3) != 64 )
       {
         v8 = *v4; /*0x5cd8da*/
         v26 = v3++; /*0x5cd8df*/
-        Char = WideString::GetChar((WideString *)ecx0, v26); /*0x5cd8e3*/
+        Char = ((WideString *)ecx0)->GetChar(v26); /*0x5cd8e3*/
         v33 = v8; /*0x5cd8e8*/
         v4 = a2; /*0x5cd8ec*/
         v7 += (*(int (**)(int *, int))(v33 + 4))(a2, Char); /*0x5cd8fa*/
@@ -2872,17 +2872,17 @@ MultiplayerGameMode * * WrapWideStringText(const wchar_t ** ecx0, int * a2, int 
       if ( v7 >= v36 ) /*0x5cd908*/
       {
 LABEL_12:
-        while ( (unsigned __int16)WideString::GetChar((WideString *)ecx0, v3) ) /*0x5cd90d*/
+        while ( (unsigned __int16)((WideString *)ecx0)->GetChar(v3) ) /*0x5cd90d*/
         {
-          if ( (unsigned __int16)WideString::GetChar((WideString *)ecx0, v3) == 32 /*0x5cd931*/
-            || (unsigned __int16)WideString::GetChar((WideString *)ecx0, v3) == 10 )
+          if ( (unsigned __int16)((WideString *)ecx0)->GetChar(v3) == 32 /*0x5cd931*/
+            || (unsigned __int16)((WideString *)ecx0)->GetChar(v3) == 10 )
           {
             break; /*0x5cd931*/
           }
           if ( v3 == v32 ) /*0x5cd937*/
             goto LABEL_18; /*0x5cd937*/
           v10 = *v4; /*0x5cd939*/
-          v11 = WideString::GetChar((WideString *)ecx0, --v3); /*0x5cd940*/
+          v11 = ((WideString *)ecx0)->GetChar(--v3); /*0x5cd940*/
           v12 = v10; /*0x5cd945*/
           v4 = a2; /*0x5cd947*/
           v7 -= (*(int (**)(int *, int))(v12 + 4))(a2, v11); /*0x5cd953*/
@@ -2893,15 +2893,15 @@ LABEL_12:
 LABEL_18:
         if ( v7 >= v36 ) /*0x5cd96e*/
           goto LABEL_25; /*0x5cd96e*/
-        while ( (unsigned __int16)WideString::GetChar((WideString *)ecx0, v3) /*0x5cd9c7*/
-             && (unsigned __int16)WideString::GetChar((WideString *)ecx0, v3) != 32
-             && (unsigned __int16)WideString::GetChar((WideString *)ecx0, v3) != 10
-             && (unsigned __int16)WideString::GetChar((WideString *)ecx0, v3) != 64
-             && (unsigned __int16)WideString::GetChar((WideString *)ecx0, v3) != 45 )
+        while ( (unsigned __int16)((WideString *)ecx0)->GetChar(v3) /*0x5cd9c7*/
+             && (unsigned __int16)((WideString *)ecx0)->GetChar(v3) != 32
+             && (unsigned __int16)((WideString *)ecx0)->GetChar(v3) != 10
+             && (unsigned __int16)((WideString *)ecx0)->GetChar(v3) != 64
+             && (unsigned __int16)((WideString *)ecx0)->GetChar(v3) != 45 )
         {
           v13 = *v4; /*0x5cd9cd*/
           v27 = v3++; /*0x5cd9d2*/
-          v14 = WideString::GetChar((WideString *)ecx0, v27); /*0x5cd9d6*/
+          v14 = ((WideString *)ecx0)->GetChar(v27); /*0x5cd9d6*/
           v33 = v13; /*0x5cd9db*/
           v4 = a2; /*0x5cd9df*/
           v7 += (*(int (**)(int *, int))(v33 + 4))(a2, v14); /*0x5cd9ed*/
@@ -2912,15 +2912,15 @@ LABEL_18:
         {
 LABEL_25:
           v15 = *v4; /*0x5cd9f9*/
-          v16 = WideString::GetChar((WideString *)ecx0, v3); /*0x5cd9ff*/
+          v16 = ((WideString *)ecx0)->GetChar(v3); /*0x5cd9ff*/
           v17 = v15; /*0x5cda04*/
           v4 = a2; /*0x5cda06*/
           v7 -= (*(int (**)(int *, int))(v17 + 4))(a2, v16); /*0x5cda14*/
-          WideString::AssignFromPtr((WideString *)&v31, ecx0); /*0x5cda17*/
-          String::TruncateTo(&v31, v3); /*0x5cda21*/
-          WideString::AssignFromPtr((WideString *)&v30.u32_8, ecx0); /*0x5cda2b*/
-          WideString::Erase((WideString *)&v30.u32_8, 0, v3); /*0x5cda37*/
-          v18 = WideString::Assign((WideString *)&v35.u32_8, asc_830174); /*0x5cda4f*/
+          ((WideString *)&v31)->AssignFromPtr(ecx0); /*0x5cda17*/
+          (&v31)->TruncateTo(v3); /*0x5cda21*/
+          ((WideString *)&v30.u32_8)->AssignFromPtr(ecx0); /*0x5cda2b*/
+          ((WideString *)&v30.u32_8)->Erase(0, v3); /*0x5cda37*/
+          v18 = ((WideString *)&v35.u32_8)->Assign(asc_830174); /*0x5cda4f*/
           v19 = WideString::ConcatAlloc( /*0x5cda5e*/
                   (WideString *)&v31,
                   (wchar_t **)&v35.q004,
@@ -2929,43 +2929,43 @@ LABEL_25:
                   (WideString *)v19,
                   (wchar_t **)&v35,
                   (const wchar_t **)&v30.u32_8);
-          WideString::Reassign_Alt((WideString *)ecx0, (const wchar_t **)v20); /*0x5cda6d*/
-          DeleteAndZero::Alt(&v35); /*0x5cda76*/
-          DeleteAndZero::Alt((DeleteAndZero *)&v35.q004); /*0x5cda7f*/
-          DeleteAndZero::Alt((DeleteAndZero *)&v35.u32_8); /*0x5cda88*/
-          DeleteAndZero::Alt((DeleteAndZero *)&v30.u32_8); /*0x5cda91*/
+          ((WideString *)ecx0)->Reassign_Alt((const wchar_t **)v20); /*0x5cda6d*/
+          (&v35)->Alt(); /*0x5cda76*/
+          ((DeleteAndZero *)&v35.q004)->Alt(); /*0x5cda7f*/
+          ((DeleteAndZero *)&v35.u32_8)->Alt(); /*0x5cda88*/
+          ((DeleteAndZero *)&v30.u32_8)->Alt(); /*0x5cda91*/
           p_DeleteAndZero_field_0x04 = (DeleteAndZero *)&v31; /*0x5cda96*/
         }
         else
         {
-          WideString::AssignFromPtr((WideString *)&v30.q004, ecx0); /*0x5cdaf1*/
-          String::TruncateTo((String *)&v30.q004, ++v3); /*0x5cdafc*/
-          WideString::AssignFromPtr((WideString *)&v30, ecx0); /*0x5cdb06*/
-          WideString::Erase((WideString *)&v30, 0, v3); /*0x5cdb12*/
-          v23 = WideString::Assign((WideString *)&v34.u32_8, asc_830174); /*0x5cdb2a*/
+          ((WideString *)&v30.q004)->AssignFromPtr(ecx0); /*0x5cdaf1*/
+          ((String *)&v30.q004)->TruncateTo(++v3); /*0x5cdafc*/
+          ((WideString *)&v30)->AssignFromPtr(ecx0); /*0x5cdb06*/
+          ((WideString *)&v30)->Erase(0, v3); /*0x5cdb12*/
+          v23 = ((WideString *)&v34.u32_8)->Assign(asc_830174); /*0x5cdb2a*/
           v24 = WideString::ConcatAlloc( /*0x5cdb39*/
                   (WideString *)&v30.q004,
                   (wchar_t **)&v34.q004,
                   (const wchar_t **)v23);
-          v25 = WideString::ConcatAlloc((WideString *)v24, (wchar_t **)&v34, (const wchar_t **)&v30); /*0x5cdb40*/
-          WideString::Reassign_Alt((WideString *)ecx0, (const wchar_t **)v25); /*0x5cdb48*/
-          DeleteAndZero::Alt(&v34); /*0x5cdb51*/
-          DeleteAndZero::Alt((DeleteAndZero *)&v34.q004); /*0x5cdb5a*/
-          DeleteAndZero::Alt((DeleteAndZero *)&v34.u32_8); /*0x5cdb63*/
-          DeleteAndZero::Alt(&v30); /*0x5cdb6c*/
+          v25 = ((WideString *)v24)->ConcatAlloc((wchar_t **)&v34, (const wchar_t **)&v30); /*0x5cdb40*/
+          ((WideString *)ecx0)->Reassign_Alt((const wchar_t **)v25); /*0x5cdb48*/
+          (&v34)->Alt(); /*0x5cdb51*/
+          ((DeleteAndZero *)&v34.q004)->Alt(); /*0x5cdb5a*/
+          ((DeleteAndZero *)&v34.u32_8)->Alt(); /*0x5cdb63*/
+          (&v30)->Alt(); /*0x5cdb6c*/
           p_DeleteAndZero_field_0x04 = (DeleteAndZero *)&v30.q004; /*0x5cdb71*/
         }
-        DeleteAndZero::Alt(p_DeleteAndZero_field_0x04); /*0x5cda9a*/
+        (p_DeleteAndZero_field_0x04)->Alt(); /*0x5cda9a*/
       }
       if ( v7 > *(int *)&v31.ptr_4 ) /*0x5cdaa3*/
         *(unsigned int *)&v31.ptr_4 = v7; /*0x5cdaa5*/
-      if ( (unsigned __int16)WideString::GetChar((WideString *)ecx0, v3) ) /*0x5cdaac*/
+      if ( (unsigned __int16)((WideString *)ecx0)->GetChar(v3) ) /*0x5cdaac*/
       {
         v28 = v3++; /*0x5cdaba*/
         String_Helper_7B7660((ObjectClass *)ecx0, 0xAu, v28); /*0x5cdabe*/
       }
     }
-    while ( (unsigned __int16)WideString::GetChar((WideString *)ecx0, v3) ); /*0x5cdac6*/
+    while ( (unsigned __int16)((WideString *)ecx0)->GetChar(v3) ); /*0x5cdac6*/
   }
   return *(unsigned int *)&v31.ptr_4; /*0x5cdad9*/
 
@@ -2980,117 +2980,117 @@ int ObjectClass::sub_5CE0C0(int a2, unsigned int * a3)
   int v5; // eax
   int fallRate; // edi
   int v7; // eax
-  char *ptr_0; // ebx
-  char *v10; // ebp
+  int vfptr1; // ebx
+  int v10; // ebp
   int i; // edi
   int v12; // edx
-  void *ptr_4; // ecx
+  int v13; // ecx
   int v14; // eax
   unsigned int v15; // ecx
-  char *NeedsSaveOrLink; // [esp+Ch] [ebp-20h]
+  size_t NeedsSaveOrLink; // [esp+Ch] [ebp-20h]
   size_t v17; // [esp+Ch] [ebp-20h]
   int v18; // [esp+24h] [ebp-8h]
   int v19; // [esp+30h] [ebp+4h]
 
-  nextArrayIndex = this->nextArrayIndex; /*0x5ce0cb*/
-  if ( this->nextArrayIndex != -1 ) /*0x5ce0d1*/
-  {
-    v5 = Timer::GetTicks() - this->uniqueId; /*0x5ce0db*/
-    if ( v5 >= nextArrayIndex ) /*0x5ce0e0*/
-      goto LABEL_5; /*0x5ce0e0*/
-    nextArrayIndex -= v5; /*0x5ce0e2*/
+  nextArrayIndex = this->nextArrayIndex;  /*0x5ce0cb*/
+  if ( this->uniqueId != (void *)-1 )
+  {  /*0x5ce0d1*/
+    v5 = Timer::GetTicks() - this->uniqueId;  /*0x5ce0db*/
+    if ( v5 >= nextArrayIndex )
+      goto LABEL_5;  /*0x5ce0e0*/  /*0x5ce0e0*/
+    nextArrayIndex -= v5;  /*0x5ce0e2*/
   }
-  if ( nextArrayIndex ) /*0x5ce0e8*/
-  {
-    LABEL_24:
-    *a3 = 0; /*0x5ce28a*/
-    a3[1] = 0; /*0x5ce290*/
-    a3[2] = 0; /*0x5ce293*/
-    a3[3] = 0; /*0x5ce296*/
-    return 0; /*0x5ce296*/
+  if ( nextArrayIndex )
+  {  /*0x5ce0e8*/
+LABEL_24:
+    *a3 = 0;  /*0x5ce28a*/
+    a3[1] = 0;  /*0x5ce290*/
+    a3[2] = 0;  /*0x5ce293*/
+    a3[3] = 0;  /*0x5ce296*/
+    return 0;  /*0x5ce296*/
   }
-  LABEL_5:
-  if ( LOBYTE(this->ptr_C) != 1 ) /*0x5ce0f6*/
-    goto LABEL_24; /*0x5ce0f6*/
-  fallRate = this->fallRate; /*0x5ce0fc*/
-  this->uniqueId = Timer::GetTicks(); /*0x5ce108*/
-  this->abstractFlags = v18; /*0x5ce10f*/
-  this->nextArrayIndex = fallRate; /*0x5ce112*/
-  if ( this->NeedsSaveOrLink >= WideString::Length((const wchar_t **)&this->NeedsSaveOrLink) ) /*0x5ce122*/
-  {
-    (v7) = ((v7) & ~0xFFFF) | ((Math::RoundToInt(*(float *)&stru_A8EB00.ObjectTypeClass[38] * 64.0)) & 0xFFFF); /*0x5ce130*/
-    sub_406670(aBleep1, v7); /*0x5ce13c*/
-    return 1; /*0x5ce149*/
+LABEL_5:
+  if ( LOBYTE(this->ptr_C) != 1 )
+    goto LABEL_24;  /*0x5ce0f6*/  /*0x5ce0f6*/
+  fallRate = this->fallRate;  /*0x5ce0fc*/
+  this->uniqueId = Timer::GetTicks();  /*0x5ce108*/
+  this->abstractFlags = v18;  /*0x5ce10f*/
+  this->nextArrayIndex = fallRate;  /*0x5ce112*/
+  if ( this->NeedsSaveOrLink >= (unsigned int)((WideString *)&this->referenceCount)->Length() )
+  {  /*0x5ce122*/
+    LOWORD(v7) = Math::RoundToInt(*(float *)&stru_A8E960.random[36] * 64.0);  /*0x5ce130*/
+    sub_406670(aBleep1, v7);  /*0x5ce13c*/
+    return 1;  /*0x5ce149*/
   }
-  if ( LOBYTE(this->nextObject) == 1 && this->customSound_controller[3] > 0 && this->customSound_controller[4] > 0 ) /*0x5ce15f*/
-    (*(void (**)(int, int *, DSurface *, int *, unsigned int, int))(*(unsigned int *)a2 + 8))( /*0x5ce173*/
+  if ( LOBYTE(this->nextObject) == 1 && this->customSound_controller[3] > 0 && this->customSound_controller[4] > 0 )
+    (*(void (**)(int, int *, DSurface *, int *, unsigned int, int))(*(unsigned int *)a2 + 8))(
       a2,
       &this->customSound_controller[1],
       DSurface_Alternate,
       &this->customSound_controller[1],
       0,
-      1);
-  ptr_0 = (char *)this->ptr_4; /*0x5ce179*/
-  if ( BYTE1(this->ambientSoundController[3]) ) /*0x5ce176*/
-    ptr_0 += this->ambientSoundController[4]; /*0x5ce180*/
-  NeedsSaveOrLink = (char *)this->NeedsSaveOrLink; /*0x5ce18b*/
-  v10 = NeedsSaveOrLink + 1; /*0x5ce18c*/
-  for ( i = WideString::GetChar((const wchar_t **)&this->NeedsSaveOrLink, (size_t)NeedsSaveOrLink); /*0x5ce198*/
-    (unsigned short)i != 10;
-    i = WideString::GetChar((const wchar_t **)&this->?, v17) )
-  {
-    if ( !(unsigned short)i ) /*0x5ce19d*/
-      break; /*0x5ce19d*/
-    (*((void (**)(TagClass *, int, int, char *, int, int, unsigned int))this->attachedTag->AbstractClass + 4))( /*0x5ce1b5*/
+      1);  /*0x5ce173*/  /*0x5ce15f*/
+  vfptr1 = this->ptr_4;  /*0x5ce179*/
+  if ( BYTE1(this->ambientSoundController[3]) )
+    vfptr1 += this->ambientSoundController[4];  /*0x5ce180*/  /*0x5ce176*/
+  NeedsSaveOrLink = this->NeedsSaveOrLink;  /*0x5ce18b*/
+  v10 = NeedsSaveOrLink + 1;  /*0x5ce18c*/
+  for ( i = ((WideString *)&this->referenceCount)->GetChar(NeedsSaveOrLink);
+        (unsigned short)i != 10;
+        i = ((WideString *)&this->referenceCount)->GetChar(v17) )
+  {  /*0x5ce198*/
+    if ( !(unsigned short)i )
+      break;  /*0x5ce19d*/  /*0x5ce19d*/
+    (*(void (**)(int, int, int, int, int, int, unsigned int))(*(unsigned int *)this->attachedTag + 16))(
       this->attachedTag,
       a2,
       i,
-      ptr_0,
+      vfptr1,
       this->customSound_controller[0],
       this->occupant,
-      0);
-    ptr_0 += (*((int (**)(TagClass *, int))this->attachedTag->AbstractClass + 1))(this->attachedTag, i); /*0x5ce1c1*/
-    v17 = (size_t)v10++; /*0x5ce1c5*/
+      0);  /*0x5ce1b5*/
+    vfptr1 += (*(int (**)(int, int))(*(unsigned int *)this->attachedTag + 4))(this->attachedTag, i);  /*0x5ce1c1*/
+    v17 = v10++;  /*0x5ce1c5*/
   }
-  v12 = this->ambientSoundController[1]; /*0x5ce1e0*/
-  ptr_4 = *(_DWORD *)(this->attachedTag + 8); /*0x5ce1e3*/
-  v19 = this->customSound_controller[0]; /*0x5ce1e6*/
-  *a3 = this->attachedBomb; /*0x5ce1ee*/
-  a3[1] = v19; /*0x5ce1f4*/
-  a3[2] = v12; /*0x5ce1f7*/
-  a3[3] = ptr_4; /*0x5ce1fa*/
-  if ( this->occupant == 2 ) /*0x5ce203*/
-  {
-    this->customSound_controller[1] = 0; /*0x5ce20b*/
-    this->customSound_controller[2] = 0; /*0x5ce20e*/
-    this->customSound_controller[3] = 0; /*0x5ce211*/
-    this->customSound_controller[4] = 0; /*0x5ce214*/
-    this->NeedsSaveOrLink = v10; /*0x5ce217*/
-    if ( (unsigned short)i == 10 ) /*0x5ce21a*/
-    {
-      (v14) = ((v14) & ~0xFFFF) | ((Math::RoundToInt(*(float *)&stru_A8EB00.ObjectTypeClass[38] * 64.0)) & 0xFFFF); /*0x5ce228*/
-      sub_406670(aBleep1, v14); /*0x5ce234*/
-      this->customSound_controller[0] += (int)*(_DWORD *)(this->attachedTag + 8); /*0x5ce244*/
+  v12 = this->ambientSoundController[1];  /*0x5ce1e0*/
+  v13 = *(unsigned int *)(this->attachedTag + 8);  /*0x5ce1e3*/
+  v19 = this->customSound_controller[0];  /*0x5ce1e6*/
+  *a3 = this->attachedBomb;  /*0x5ce1ee*/
+  a3[1] = v19;  /*0x5ce1f4*/
+  a3[2] = v12;  /*0x5ce1f7*/
+  a3[3] = v13;  /*0x5ce1fa*/
+  if ( this->occupant == 2 )
+  {  /*0x5ce203*/
+    this->customSound_controller[1] = 0;  /*0x5ce20b*/
+    this->customSound_controller[2] = 0;  /*0x5ce20e*/
+    this->customSound_controller[3] = 0;  /*0x5ce211*/
+    this->customSound_controller[4] = 0;  /*0x5ce214*/
+    this->NeedsSaveOrLink = v10;  /*0x5ce217*/
+    if ( (unsigned short)i == 10 )
+    {  /*0x5ce21a*/
+      LOWORD(v14) = Math::RoundToInt(*(float *)&stru_A8E960.random[36] * 64.0);  /*0x5ce228*/
+      sub_406670(aBleep1, v14);  /*0x5ce234*/
+      this->customSound_controller[0] += *(unsigned int *)(this->attachedTag + 8);  /*0x5ce244*/
     }
   }
   else
   {
-    this->customSound_controller[1] = *a3; /*0x5ce24e*/
-    this->customSound_controller[2] = a3[1]; /*0x5ce254*/
-    this->customSound_controller[3] = a3[2]; /*0x5ce25a*/
-    this->customSound_controller[4] = a3[3]; /*0x5ce260*/
+    this->customSound_controller[1] = *a3;  /*0x5ce24e*/
+    this->customSound_controller[2] = a3[1];  /*0x5ce254*/
+    this->customSound_controller[3] = a3[2];  /*0x5ce25a*/
+    this->customSound_controller[4] = a3[3];  /*0x5ce260*/
   }
-  if ( LOBYTE(this->nextObject) == 1 ) /*0x5ce26c*/
-  {
-    v15 = this->occupant + 1; /*0x5ce272*/
-    this->occupant = v15; /*0x5ce274*/
-    if ( v15 > 2 ) /*0x5ce27a*/
-    {
-      this->occupant = 0; /*0x5ce27c*/
-      return 0; /*0x5ce287*/
+  if ( LOBYTE(this->nextObject) == 1 )
+  {  /*0x5ce26c*/
+    v15 = this->occupant + 1;  /*0x5ce272*/
+    this->occupant = v15;  /*0x5ce274*/
+    if ( v15 > 2 )
+    {  /*0x5ce27a*/
+      this->occupant = 0;  /*0x5ce27c*/
+      return 0;  /*0x5ce287*/
     }
   }
-  return 0; /*0x5ce141*/
+  return 0;  /*0x5ce141*/
 
 }
 }
@@ -3106,7 +3106,7 @@ void nullsub_176()
 namespace gamemd {
 int BinkMovieHandle::_vt03(unsigned char a2)
 {
-  return BinkMovie::Pause(this->height, a2); /*0x5c054d*/
+  return (this->height)->Pause(a2); /*0x5c054d*/
 }
 } // namespace gamemd
 
@@ -4638,7 +4638,7 @@ int E4Recv_5CD570::sub_5CD570(const wchar_t ** a2, int a3, int a4, int a5, int *
   this->M16 = Timer::GetTicks(); /*0x5cd59c*/
   this->u32_18 = 0; /*0x5cd59f*/
   /* X11: ptr_0 install elided (implicit via MSAnim virtuals 0x5cd5a5) */
-  WideString::AssignFromPtr(&this->M44, a2); /*0x5cd5ab*/
+  (&this->M44)->AssignFromPtr(a2); /*0x5cd5ab*/
   this->M44 = a8; /*0x5cd5c0*/
   this->M48 = a9; /*0x5cd5c7*/
   this->M48 = 0; /*0x5cd5ce*/
@@ -4660,19 +4660,19 @@ int E4Recv_5CD570::sub_5CD570(const wchar_t ** a2, int a3, int a4, int a5, int *
     v17 = 0; /*0x5cd611*/
     int v16; // [esp+3Ch] [ebp+20h]
     v16 = *(unsigned int *)(this->u32_34 + 4); /*0x5cd618*/
-    if ( (unsigned __int16)WideString::GetChar(&this->M44, 0) ) /*0x5cd61e*/
+    if ( (unsigned __int16)(&this->M44)->GetChar(0) ) /*0x5cd61e*/
     {
       do /*0x5cd658*/
       {
-        if ( (unsigned __int16)WideString::GetChar(&this->M44, v11) == 10 ) /*0x5cd634*/
+        if ( (unsigned __int16)(&this->M44)->GetChar(v11) == 10 ) /*0x5cd634*/
           break; /*0x5cd634*/
         int v12; // ebp
         v12 = *this->u32_343); /*0x5cd63c*/
         int Char; // eax
-        Char = WideString::GetChar(&this->M44, v11++); /*0x5cd63e*/
+        Char = (&this->M44)->GetChar(v11++); /*0x5cd63e*/
         v17 += (*(int (**)(unsigned int, int))(v12 + 4))(this->u32_34, Char); /*0x5cd651*/
       }
-      while ( (unsigned __int16)WideString::GetChar(&this->M44, v11) ); /*0x5cd658*/
+      while ( (unsigned __int16)(&this->M44)->GetChar(v11) ); /*0x5cd658*/
     }
     this->M76 = (this->M40 - v17 - v16) / 2; /*0x5cd676*/
   }
@@ -4725,12 +4725,12 @@ int E4Recv_5CE330::sub_5CE330(const wchar_t ** a2)
 
   int v3 = 0; // ebp /*0x5ce33b*/
   size_t v4 = 0; // esi /*0x5ce340*/
-  for ( i = 0; (unsigned __int16)WideString::GetChar(a2, v4); i = v3 ) /*0x5ce346*/
+  for ( i = 0; (unsigned __int16)(a2)->GetChar(v4); i = v3 ) /*0x5ce346*/
   {
-    if ( (unsigned __int16)WideString::GetChar(a2, v4) == 10 ) /*0x5ce35c*/
+    if ( (unsigned __int16)(a2)->GetChar(v4) == 10 ) /*0x5ce35c*/
       break; /*0x5ce35c*/
     ptr_0 = (int (**)(TagClass *, int))this->attachedTag->AbstractClass; /*0x5ce364*/
-    Char = WideString::GetChar(a2, v4); /*0x5ce366*/
+    Char = (a2)->GetChar(v4); /*0x5ce366*/
     v3 = ptr_0[1](this->attachedTag, Char) + i; /*0x5ce378*/
     ++v4; /*0x5ce37a*/
   }
@@ -4770,7 +4770,7 @@ int E4Recv_5CE3A0::sub_5CE3A0(int a2, int * a3)
     v18 = ptr_4; /*0x5ce3f4*/
     for ( i = result; v9 < i; ++v9 ) /*0x5ce3fc*/
     {
-      if ( (unsigned __int16)WideString::GetChar((const wchar_t **)&this->referenceCount, v9) == 10 ) /*0x5ce40f*/
+      if ( (unsigned __int16)((const wchar_t **)&this->referenceCount)->GetChar(v9) == 10 ) /*0x5ce40f*/
       {
         ptr_0 = (char *)this->M4; /*0x5ce414*/
         ptr_4 = (int *)((char *)ptr_4 + (unsigned int)*(_DWORD *)(this->attachedTag + 8)); /*0x5ce41e*/
@@ -4783,10 +4783,10 @@ int E4Recv_5CE3A0::sub_5CE3A0(int a2, int * a3)
       else
       {
         ptr_0 = (void (**)(TagClass *, int, int, void *, void *, int, int))this->attachedTag->AbstractClass; /*0x5ce44b*/
-        Char = WideString::GetChar((const wchar_t **)&this->M52, v9); /*0x5ce45b*/
+        Char = ((const wchar_t **)&this->M52)->GetChar(v9); /*0x5ce45b*/
         ptr_0[4](this->attachedTag, a2, Char, ptr_0, ptr_4, 2, 1); /*0x5ce461*/
         v10 = (int (**)(TagClass *, int))this->attachedTag->AbstractClass; /*0x5ce46b*/
-        v11 = WideString::GetChar((const wchar_t **)&this->referenceCount, v9); /*0x5ce46d*/
+        v11 = ((const wchar_t **)&this->referenceCount)->GetChar(v9); /*0x5ce46d*/
         v12 = v10[1](this->attachedTag, v11); /*0x5ce476*/
         ptr_4 = v18; /*0x5ce479*/
         ptr_0 += v12; /*0x5ce47d*/
@@ -4818,11 +4818,11 @@ const char ** E4Recv_5CF840::sub_5CF840(MapSelect * aP1)
   while ( 1 ) /*0x5cf864*/
   {
     v5 = *(const char ***)(this->ambientSoundController[3] + 4 * v3); /*0x5cf864*/
-    String::AssignFromPtr((String *)&v7, v5); /*0x5cf868*/
-    String::ToLower((String *)&v7); /*0x5cf871*/
-    String::AssignFromPtr((String *)&aP1, v4); /*0x5cf87b*/
-    String::ToLower((String *)&aP1); /*0x5cf884*/
-    if ( (unsigned __int8)String::Compare((String *)&v7, (const char **)&aP1) ) /*0x5cf892*/
+    ((String *)&v7)->AssignFromPtr(v5); /*0x5cf868*/
+    ((String *)&v7)->ToLower(); /*0x5cf871*/
+    ((String *)&aP1)->AssignFromPtr(v4); /*0x5cf87b*/
+    ((String *)&aP1)->ToLower(); /*0x5cf884*/
+    if ( (unsigned __int8)((String *)&v7)->Compare((const char **)&aP1) ) /*0x5cf892*/
       break; /*0x5cf892*/
     DeleteAndZero((ObjectClass *)&aP1); /*0x5cf89f*/
     DeleteAndZero((ObjectClass *)&v7); /*0x5cf8a8*/

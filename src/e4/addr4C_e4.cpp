@@ -446,23 +446,23 @@ int E4Recv_4C2790::sub_4C2790()
 
   if ( this->owningHouseIndex )
   {
-    Coord::To_Screen((Coord *)g_TacticalClass_Instance, this, v4);
-    Coord::To_Screen((Coord *)g_TacticalClass_Instance, &this->vfptr3, v3);
+    ((Coord *)g_TacticalClass_Instance)->To_Screen(this, v4);  /*0x4c27aa*/
+    ((Coord *)g_TacticalClass_Instance)->To_Screen(&this->ptr_C, v3);  /*0x4c27be*/
     if ( (unsigned __int8)ClipLine(v4, v3, (int *)&DSurface_ViewBounds.X) )
       Lightning::Draw(
         (Lightning *)this,
-        this->vfptr,
-        this->vfptr1,
-        this->vfptr2,
-        this->vfptr3,
+        this->ptr_0[0],
+        this->ptr_4,
+        this->ptr_8,
+        this->ptr_C[0],
         this->uniqueId,
         this->abstractFlags,
         LOBYTE(this->fallRate) != 0 ? 5 : 10);
-    ++this->referenceCount;
+    ++this->referenceCount;  /*0x4c281a*/
   }
-  result = this->owningHouseIndex >> 1;
-  this->owningHouseIndex = result;
-  return result;
+  result = this->owningHouseIndex >> 1;  /*0x4c2821*/
+  this->owningHouseIndex = result;  /*0x4c2823*/
+  return result;  /*0x4c2820*/
 
 }
 }
@@ -523,13 +523,13 @@ void sub_4C2830()
     v10 = v2; /*0x4c28be*/
     if ( v2[10] ) /*0x4c28b6*/
     {
-      Coord::To_Screen((Coord *)g_TacticalClass_Instance, v2, v19); /*0x4c28ce*/
-      Coord::To_Screen((Coord *)g_TacticalClass_Instance, v10 + 3, v18); /*0x4c28e2*/
+      ((Coord *)g_TacticalClass_Instance)->To_Screen(v2, v19); /*0x4c28ce*/
+      ((Coord *)g_TacticalClass_Instance)->To_Screen(v10 + 3, v18); /*0x4c28e2*/
       if ( (unsigned __int8)ClipLine(v19, v18, &DSurface_ViewBounds.field_0) ) /*0x4c28f4*/
       {
         v11 = -(v10->u8_2C != 0); /*0x4c2904*/
         (v11) = ((v11) & ~0xFF) | ((v11 & 0xFB) & 0xFF); /*0x4c2906*/
-        Lightning::Draw((Lightning *)v10, *v10, v10->__pad_004, v10[2], v10[3], v10[4], v10[5], v11 + 10); /*0x4c2938*/
+        ((Lightning *)v10)->Draw(*v10, v10->__pad_004, v10[2], v10[3], v10[4], v10[5], v11 + 10); /*0x4c2938*/
       }
       ++v10[7]; /*0x4c293d*/
     }
@@ -650,8 +650,8 @@ LABEL_6:
         v12 = (int)&a1[2 * (v10 % 256) + v10 % 256]; /*0x4c39ac*/
         (v16) = ((v16) & ~0xFFFF) | ((*(unsigned short *)v12) & 0xFFFF); /*0x4c39ba*/
         (v16) = ((v16) & ~(0xFF << 16)) | (((*(unsigned char *)(v12 + 2)) & 0xFF) << 16); /*0x4c39c7*/
-        Color::Lerp((unsigned __int8 *)&v16, v18, (unsigned __int8 *)&v14); /*0x4c39cb*/
-        v7[v10++] = Palette::FindClosestColor(a1, (int)&v16); /*0x4c39dc*/
+        ((unsigned __int8 *)&v16)->Lerp(v18, (unsigned __int8 *)&v14); /*0x4c39cb*/
+        v7[v10++] = (a1)->FindClosestColor((int)&v16); /*0x4c39dc*/
       }
       while ( v10 < 256 ); /*0x4c39e6*/
       v7 += 256; /*0x4c39f0*/
@@ -1005,11 +1005,11 @@ int FootClass_LandAtPosition(int a1, int a2, char a3, float a4, int a5, int a6)
   v12 = a5; /*0x4cf072*/
   LOWORD(v56.q004) = a4 / 256; /*0x4cf08c*/
   HIWORD(v56.q004) = a5 / 256; /*0x4cf09f*/
-  v13 = (Cell *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)&v56.q004); /*0x4cf0ac*/
+  v13 = (Cell *)((CellCoord *)&dword_87F7E8)->To_CellObj((__int16 *)&v56.q004); /*0x4cf0ac*/
   v14 = (v13)->IsBridge(); /*0x4cf0b8*/
   if ( v14 && !*(unsigned char *)((*(int (**)(int))(*(unsigned int *)*v6 + 132))(*v6) + 3367) ) /*0x4cf0cc*/
   {
-    if ( (unsigned __int8)Array::Contains((Array *)*v6, (int)v14) ) /*0x4cf0d9*/
+    if ( (unsigned __int8)((Array *)*v6)->Contains((int)v14) ) /*0x4cf0d9*/
     {
       v18 = (int *)v14->vt_slot_168(&v56.q020, *v6); /*0x4cf142*/
       v11 = *v18; /*0x4cf148*/
@@ -1022,7 +1022,7 @@ int FootClass_LandAtPosition(int a1, int a2, char a3, float a4, int a5, int a6)
       v56.q004 = *v6; /*0x4cf0e6*/
       if ( v56.q004 && (*(int (**)(int))(*(unsigned int *)v15 + 44))(v15) == 2 ) /*0x4cf0f4*/
       {
-        NearbyCell = InfantryClass::FindNearbyCell((InfantryClass *)v56.q004, (int)v14); /*0x4cf0fb*/
+        NearbyCell = ((InfantryClass *)v56.q004)->FindNearbyCell((int)v14); /*0x4cf0fb*/
         if ( NearbyCell ) /*0x4cf102*/
         {
           v17 = (int *)(*(int (**)(void *, int *))(*(unsigned int *)NearbyCell + 72))( /*0x4cf125*/
@@ -1060,7 +1060,7 @@ int FootClass_LandAtPosition(int a1, int a2, char a3, float a4, int a5, int a6)
     v56.q018 = a5; /*0x4cf1b9*/
     v56.q01C = a6; /*0x4cf1bd*/
     v28 = (int *)(*(int (**)(int, int *))(*(unsigned int *)v27 + 72))(v27, &v56.q020); /*0x4cf1c8*/
-    v29 = *(unsigned int *)Cell::GetHeight((Cell *)&v56.q00C, v28, &v56.q014); /*0x4cf1d5*/
+    v29 = *(unsigned int *)((Cell *)&v56.q00C)->GetHeight(v28, &v56.q014); /*0x4cf1d5*/
     if ( !*(unsigned int *)v56.__pad_0 ) /*0x4cf1dd*/
       goto LABEL_32; /*0x4cf1dd*/
     if ( !(*(int (**)(unsigned int))(**(unsigned int **)v56.__pad_0 + 24))(*(unsigned int *)v56.__pad_0) ) /*0x4cf1e2*/
@@ -1090,10 +1090,10 @@ LABEL_32:
       v56.q020 = v25; /*0x4cf260*/
       v57 = v26; /*0x4cf264*/
       v35 = (int *)(*(int (**)(int, unsigned int *))(*(unsigned int *)v34 + 72))(v34, v59); /*0x4cf26f*/
-      Height = (int *)Cell::GetHeight((Cell *)&v56.q014, v35, &v56.q020); /*0x4cf277*/
+      Height = (int *)((Cell *)&v56.q014)->GetHeight(v35, &v56.q020); /*0x4cf277*/
       v37 = (char *)(*v6 + 904); /*0x4cf285*/
       v56.q00C = *Height; /*0x4cf28b*/
-      FacingClass::Update(v37, &v56.q00C); /*0x4cf28f*/
+      (v37)->Update(&v56.q00C); /*0x4cf28f*/
     }
     ComPtr_field_0x04 = v56.q004; /*0x4cf294*/
   }
@@ -1118,9 +1118,9 @@ LABEL_32:
     if ( !*(unsigned int *)v56.__pad_0 ) /*0x4cf2e2*/
     {
 LABEL_43:
-      p_ComPtr_field_0x08 = ObjectClass::CalcTargetFacing((ObjectClass *)*v6, &a4, *(unsigned int *)(*v6 + 692)); /*0x4cf304*/
+      p_ComPtr_field_0x08 = ((ObjectClass *)*v6)->CalcTargetFacing(&a4, *(unsigned int *)(*v6 + 692)); /*0x4cf304*/
 LABEL_51:
-      FacingClass::Update((char *)(*v6 + 928), p_ComPtr_field_0x08); /*0x4cf3c2*/
+      ((char *)(*v6 + 928))->Update(p_ComPtr_field_0x08); /*0x4cf3c2*/
       goto LABEL_52; /*0x4cf3cb*/
     }
     if ( !(*(int (**)(unsigned int))(**(unsigned int **)v56.__pad_0 + 24))(*(unsigned int *)v56.__pad_0) ) /*0x4cf2e7*/
@@ -1140,7 +1140,7 @@ LABEL_44:
             !*(unsigned int *)v56.__pad_0)
         || !(*(int (**)(unsigned int))(**(unsigned int **)v56.__pad_0 + 32))(*(unsigned int *)v56.__pad_0) )
       {
-        FacingClass::Update((char *)(*v6 + 928), &a4); /*0x4cf356*/
+        ((char *)(*v6 + 928))->Update(&a4); /*0x4cf356*/
       }
     }
   }
@@ -1209,18 +1209,18 @@ LABEL_60:
         *(unsigned int *)(ComPtr_field_0x10 + 68) = 0; /*0x4cf504*/
       }
       if ( !*(unsigned char *)(ComPtr_field_0x10 + 92) && *(double *)(ComPtr_field_0x10 + 72) < 0.05 ) /*0x4cf51c*/
-        LocomotionClass::CheckBridgeBlock((LocomotionClass *)ComPtr_field_0x10); /*0x4cf520*/
+        ((LocomotionClass *)ComPtr_field_0x10)->CheckBridgeBlock(); /*0x4cf520*/
     }
   }
   if ( *(unsigned char *)(*v6 + 131) ) /*0x4cf55f*/
   {
-    if ( !(unsigned __int8)House::IsHumanPlayer(*(House **)(*v6 + 540)) ) /*0x4cf573*/
+    if ( !(unsigned __int8)(*(House **)(*v6 + 540))->IsHumanPlayer() ) /*0x4cf573*/
     {
       v53 = *v6 + 156; /*0x4cf57e*/
       a4 = *(int *)v53; /*0x4cf586*/
       a5 = *(unsigned int *)(v53 + 4); /*0x4cf592*/
       a6 = *(unsigned int *)(v53 + 8); /*0x4cf599*/
-      if ( (unsigned __int8)Cell::IsPassable(&a4) /*0x4cf5dd*/
+      if ( (unsigned __int8)(&a4)->IsPassable() /*0x4cf5dd*/
         || (dword_A8B230->ptr_0 & 0x1000) != 0
         && (v54 = *v6 + 156,
             a4 = *(int *)v54,
@@ -1760,7 +1760,7 @@ int sub_4C3AD0(char * a1, int a2, int a3, unsigned char a4)
     (*((unsigned short *)&(a3))) = *(unsigned short *)v8; /*0x4c3b0f*/
     (((unsigned char *)&(a3))[2]) = *(unsigned char *)(v8 + 2); /*0x4c3b20*/
     ((uint8_t *)&a3)->Lerp(a4, v7); /*0x4c3b24*/
-    *(unsigned char *)(v6 + a2) = Palette::FindClosestColor(a1, (int)&a3); /*0x4c3b35*/
+    *(unsigned char *)(v6 + a2) = (a1)->FindClosestColor((int)&a3); /*0x4c3b35*/
     ++v6; /*0x4c3b38*/
   }
   while ( v6 < 256 ); /*0x4c3b3f*/
@@ -1788,7 +1788,7 @@ unsigned char * sub_4C3B60(char * a1, unsigned char * a2, int a3, int a4)
     (*((unsigned short *)&(a4))) = *(unsigned short *)v9; /*0x4c3bbc*/
     (((unsigned char *)&(a4))[2]) = *(unsigned char *)(v9 + 2); /*0x4c3bc4*/
     ((uint8_t *)&a4)->Lerp(v6, (uint8_t *)&a3); /*0x4c3bc8*/
-    a2[v8++] = Palette::FindClosestColor(a1, (int)&a4); /*0x4c3bd9*/
+    a2[v8++] = (a1)->FindClosestColor((int)&a4); /*0x4c3bd9*/
   }
   while ( v8 < 256 ); /*0x4c3be3*/
   return a2; /*0x4c3be5*/
@@ -2806,14 +2806,14 @@ char sub_4C9160()
 {
 
   unsigned int v2[22]; // [esp+4h] [ebp-6Ch] BYREF
-  CCFileClass::Construct(v2, aExpandDat); /*0x4c916d*/
+  (v2)->Construct(aExpandDat); /*0x4c916d*/
   char v0; // bl
   v0 = ((CCFileClass *)(v2))->Open(0); /*0x4c9181*/
   v2[0] = &g_ptr_7E16B0; /*0x4c9183*/
   int v4; // [esp+68h] [ebp-8h]
   v4 = 0; /*0x4c918b*/
   unsigned char v3[12]; // [esp+5Ch] [ebp-14h] BYREF
-  Vector::Clear((int)v3); /*0x4c9193*/
+  ((int)v3)->Clear(); /*0x4c9193*/
   v2[0] = (unsigned int)&off_7E1668; /*0x4c919c*/
   ((BufferIOFileClass *)(v2))->Dtor(); /*0x4c91a4*/
   return v0; /*0x4c91ab*/
@@ -3359,13 +3359,13 @@ bool sub_4CC680(int a1, int a2, int a3)
 {
 
   int SlopeIndex; // ebx
-  SlopeIndex = Cell::GetSlopeIndex(a2); /*0x4cc690*/
+  SlopeIndex = (a2)->GetSlopeIndex(); /*0x4cc690*/
   BOOL result = 0; // eax /*0x4cc6c3*/
-  if ( Cell::GetSlopeIndex(a3) - SlopeIndex >= 4 ) /*0x4cc69e*/
+  if ( (a3)->GetSlopeIndex() - SlopeIndex >= 4 ) /*0x4cc69e*/
   {
     int v5; // esi
-    v5 = Cell::GetSlopeIndex(a1); /*0x4cc6a9*/
-    if ( Cell::GetSlopeIndex(a3) - v5 > 0 ) /*0x4cc6b4*/
+    v5 = (a1)->GetSlopeIndex(); /*0x4cc6a9*/
+    if ( (a3)->GetSlopeIndex() - v5 > 0 ) /*0x4cc6b4*/
       return 1; /*0x4cc69e*/
   }
   return result; /*0x4cc6b6*/

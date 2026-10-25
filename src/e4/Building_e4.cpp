@@ -96,7 +96,7 @@ AnimClass * * Building::ComputePosition(int *aP1)
         {
           v35[0] = v9; /*0x425da0*/
           v35[1] = v13; /*0x425da5*/
-          if ( (unsigned __int8)LayerClass::IsWithinUsableArea((LayerClass *)&DataGlobal_87F7E8, v35, 1) ) /*0x425daa*/
+          if ( (unsigned __int8)((LayerClass *)&DataGlobal_87F7E8)->IsWithinUsableArea(v35, 1) ) /*0x425daa*/
           {
             v36[0] = v9; /*0x425dbb*/
             v36[1] = v13; /*0x425dc6*/
@@ -241,14 +241,14 @@ namespace gamemd {
 int Building::GetNthOfType()
 {
 
-
   int BuildingByTiberiumType; // eax
-  BuildingByTiberiumType = FindBuildingByTiberiumType(*&this->u32_44); /*0x485026*/
-  if ( BuildingByTiberiumType == -1 ) /*0x48502e*/
-    return 0; /*0x485030*/
+
+  BuildingByTiberiumType = FindBuildingByTiberiumType(*(unsigned int *)&this->__pad_C[56]);  /*0x485026*/
+  if ( BuildingByTiberiumType == -1 )
+    return 0;  /*0x485030*/  /*0x48502e*/
   else
-    return ((unsigned __int8)this->u32_11E + 1) /*0x48504f*/
-  * *(unsigned int *)(*(unsigned int *)(g_BuildingLoadQueue_Array.?[2] + 4 * BuildingByTiberiumType) + 184);
+    return ((unsigned __int8)this->__pad_A4[122] + 1)
+         * *(unsigned int *)(*(&dword_B0F4EC + BuildingByTiberiumType) + 184);  /*0x48504f*/
 
 }
 }

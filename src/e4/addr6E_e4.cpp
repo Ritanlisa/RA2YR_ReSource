@@ -113,7 +113,7 @@ char globalHelper_0E2050(void * a1, void * a2, void * a3, void * a4)
   char v5; // bl
   int v6; // edi
   int *v7; // esi
-  unsigned int *v8; // ecx
+  LinkedList *v8; // ecx
   int v9; // edx
   __int16 *v10; // esi
   int v11; // edi
@@ -123,73 +123,73 @@ char globalHelper_0E2050(void * a1, void * a2, void * a3, void * a4)
   int v16[2]; // [esp+1Eh] [ebp-14h] BYREF
   unsigned int v17[3]; // [esp+26h] [ebp-Ch] BYREF
 
-  v4 = a3; /*0x6e2055*/
-  v15 = 0; /*0x6e205b*/
-  do /*0x6e20ec*/
-  {
-    v5 = 0; /*0x6e2065*/
-    v6 = 0; /*0x6e2067*/
-    if ( MEMORY[0xA8EC88] <= 0 ) /*0x6e206b*/
-      break; /*0x6e206b*/
-    do /*0x6e20e8*/
-    {
-      v7 = (int *)*((unsigned int *)MEMORY[0xA8EC7C] + v6); /*0x6e2076*/
-      if ( v7[27] > 0 ) /*0x6e207e*/
-      {
-        if ( *((unsigned char *)v7 + 144) ) /*0x6e2080*/
-        {
-          if ( *((unsigned char *)v7 + 116) ) /*0x6e208a*/
-          {
-            if ( !*((unsigned char *)v7 + 129) ) /*0x6e2091*/
-            {
-              v8 = (unsigned int *)v7[13]; /*0x6e209b*/
-              if ( v8 ) /*0x6e20a0*/
-              {
-                if ( LinkedList::Contains(v8, v4) ) /*0x6e20a3*/
-                {
-                  v9 = *v7; /*0x6e20b4*/
-                  a3 = v7[27]; /*0x6e20b8*/
-                  (*(void (**)(int *, int *, unsigned int, int, unsigned int, int, unsigned int, unsigned int))(v9 + 364))( /*0x6e20d2*/
+  v4 = a3;  /*0x6e2055*/
+  v15 = 0;  /*0x6e205b*/
+  do
+  {  /*0x6e20ec*/
+    v5 = 0;  /*0x6e2065*/
+    v6 = 0;  /*0x6e2067*/
+    if ( *(int *)&stru_A8E960.random[276] <= 0 )
+      break;  /*0x6e206b*/  /*0x6e206b*/
+    do
+    {  /*0x6e20e8*/
+      v7 = *(int **)(*(unsigned int *)&stru_A8E960.random[264] + 4 * v6);  /*0x6e2076*/
+      if ( v7[27] > 0 )
+      {  /*0x6e207e*/
+        if ( *((unsigned char *)v7 + 144) )
+        {  /*0x6e2080*/
+          if ( *((unsigned char *)v7 + 116) )
+          {  /*0x6e208a*/
+            if ( !*((unsigned char *)v7 + 129) )
+            {  /*0x6e2091*/
+              v8 = (LinkedList *)v7[13];  /*0x6e209b*/
+              if ( v8 )
+              {  /*0x6e20a0*/
+                if ( (unsigned __int8)LinkedList::Contains(v8, v4) )
+                {  /*0x6e20a3*/
+                  v9 = *v7;  /*0x6e20b4*/
+                  a3 = v7[27];  /*0x6e20b8*/
+                  (*(void (**)(int *, int *, unsigned int, unsigned int, unsigned int, int, unsigned int, unsigned int))(v9 + 364))(
                     v7,
                     &a3,
                     0,
-                    dword_8871E0->?[5],
+                    *(unsigned int *)&dword_8871E0->__pad_C3C[876],
                     0,
                     1,
                     0,
-                    0);
-                  v15 = 1; /*0x6e20d8*/
-                  v5 = 1; /*0x6e20dd*/
-                  --v6; /*0x6e20df*/
+                    0);  /*0x6e20d2*/
+                  v15 = 1;  /*0x6e20d8*/
+                  v5 = 1;  /*0x6e20dd*/
+                  --v6;  /*0x6e20df*/
                 }
               }
             }
           }
         }
       }
-      ++v6; /*0x6e20e5*/
+      ++v6;  /*0x6e20e5*/
     }
-    while ( v6 < MEMORY[0xA8EC88] ); /*0x6e20e8*/
+    while ( v6 < *(int *)&stru_A8E960.random[276] );  /*0x6e20e8*/
   }
-  while ( v5 ); /*0x6e20ec*/
-  v10 = a4; /*0x6e20f2*/
-  if ( *(unsigned int *)a4 != dword_B0E680 ) /*0x6e2100*/
-  {
-    v11 = 3; /*0x6e2119*/
-    if ( !CellClass::SetTerrainType(&dword_87F7E8, a4) ) /*0x6e211e*/
-    {
-      do /*0x6e213b*/
-        v12 = v11--; /*0x6e2127*/
-      while ( v12 > 0 && !CellClass::SetTerrainType(&dword_87F7E8, v10) ); /*0x6e213b*/
+  while ( v5 );  /*0x6e20ec*/
+  v10 = a4;  /*0x6e20f2*/
+  if ( *a4 != *(unsigned short *)dword_B0E680 || a4[1] != *(unsigned short *)&dword_B0E680[2] )
+  {  /*0x6e2100*/
+    v11 = 3;  /*0x6e2119*/
+    if ( !(unsigned __int8)CellClass::SetTerrainType((CellClass *)&dword_87F7E8, a4) )
+    {  /*0x6e211e*/
+      do
+        v12 = v11--;  /*0x6e2127*/  /*0x6e213b*/
+      while ( v12 > 0 && !(unsigned __int8)CellClass::SetTerrainType((CellClass *)&dword_87F7E8, v10) );  /*0x6e213b*/
     }
-    v13 = *v10 << 8; /*0x6e2147*/
-    v17[1] = (v10[1] << 8) + 128; /*0x6e2157*/
-    v17[0] = v13 + 128; /*0x6e2165*/
-    v17[2] = dword_B0E6D4; /*0x6e2171*/
-    (g_TacticalClass_Instance)->To_Screen(v17, v16); /*0x6e217d*/
-    Cell::CreateCrater(v16[0] - 128, v16[1] - 128, 256, 256, 0); /*0x6e21af*/
+    v13 = *v10 << 8;  /*0x6e2147*/
+    v17[1] = (v10[1] << 8) + 128;  /*0x6e2157*/
+    v17[0] = v13 + 128;  /*0x6e2165*/
+    v17[2] = dword_B0E6D4;  /*0x6e2171*/
+    ((Coord *)g_TacticalClass_Instance)->To_Screen(v17, v16);  /*0x6e217d*/
+    Cell::CreateCrater(v16[0] - 128, v16[1] - 128, 256, 256, 0);  /*0x6e21af*/
   }
-  return v15; /*0x6e21b8*/
+  return v15;  /*0x6e21b8*/
 
 }
 }
@@ -201,7 +201,7 @@ int E4Recv_6E2790::sub_6E2790(int a2, int a3, int a4, int a5)
 
   __int16 v6[2]; // [esp+0h] [ebp-14h] BYREF
   int v7; // [esp+4h] [ebp-10h] BYREF
-  *(unsigned int *)v6 = *ScenarioClass::Get_Waypoint_Location((char *)dword_A8B230, &v7, this->ambientSoundController[2]); /*0x6e27ab*/
+  *(unsigned int *)v6 = *((char *)dword_A8B230)->Get_Waypoint_Location(&v7, this->ambientSoundController[2]); /*0x6e27ab*/
   int GroundHeight; // [esp+10h] [ebp-4h]
   GroundHeight = 0; /*0x6e27af*/
   int v8[2]; // [esp+8h] [ebp-Ch] BYREF
@@ -244,7 +244,7 @@ char CreateHouseClass(void * a1, void * a2, void * a3, void * a4, void * a5, voi
   if ( !Field11 ) /*0x6e30fe*/
     return 0; /*0x6e30fe*/
   HouseClass *v10; // [esp+0h] [ebp-4h]
-  HouseClass::RespawnStartingForces((gamemd::TechnoClass *)(v10), a2, a3, (int)v7); /*0x6e3108*/
+  ((gamemd::TechnoClass *)(v10))->RespawnStartingForces(a2, a3, (int)v7); /*0x6e3108*/
   return 1; /*0x6e3102*/
 }
 }
@@ -266,7 +266,7 @@ int E4Recv_6E3380::sub_6E3380(int a2, int a3, int a4, int a5)
   unsigned int *v5; // eax
   v5 = (unsigned int *)(__2_YAPAXI_Z(0x14u)); /*0x6e33d9*/
   if ( v5 ) /*0x6e33e3*/
-    ActionQueue::PushEntry(v5, v8, v9, GroundHeight); /*0x6e3400*/
+    (v5)->PushEntry(v8, v9, GroundHeight); /*0x6e3400*/
   return 1; /*0x6e3407*/
 
 }
@@ -496,7 +496,7 @@ unsigned int * DamageMapClassArea(int ecx0, void * a1, FootClass * aP2, int a4, 
         v12 = (int)(v9->owner); /*0x6eecb0*/
         (*(((unsigned short *)&(v33)) + 1)) = v11[1] / 256; /*0x6eecb9*/
         v33 = v33; /*0x6eecc6*/
-        v10 = 0x7FFFFFFF - CellClass::GetTileData((int16_t *)&v33, v12); /*0x6eecdb*/
+        v10 = 0x7FFFFFFF - ((int16_t *)&v33)->GetTileData(v12); /*0x6eecdb*/
         break; /*0x6eecdd*/
       case 1: /*0x6eec7c*/
         v13 = (unsigned int *)(*(int (**)(unsigned int *, char *))(*v7 + 72))(v7, v51); /*0x6eeceb*/
@@ -504,7 +504,7 @@ unsigned int * DamageMapClassArea(int ecx0, void * a1, FootClass * aP2, int a4, 
         v14 = (int)(v9->owner); /*0x6eed0f*/
         (*(((unsigned short *)&(v34)) + 1)) = v13[1] / 256; /*0x6eed18*/
         v34 = v34; /*0x6eed25*/
-        TileData = CellClass::GetTileData((int16_t *)&v34, v14); /*0x6eed30*/
+        TileData = ((int16_t *)&v34)->GetTileData(v14); /*0x6eed30*/
         goto LABEL_13; /*0x6eed35*/
       case 2: /*0x6eec7c*/
         v16 = (int)(v9 + 156); /*0x6eed46*/
@@ -644,7 +644,7 @@ LABEL_16:
       HIWORD(v21) = v14[1] / 256; /*0x6efd9a*/
       v15 = v11->field_28; /*0x6efda3*/
       v20 = v21; /*0x6efda6*/
-      SuperWeapon::FireSuperWeaponHouseClass((SuperWeapon *)owner, v15[45], (int)&v20); /*0x6efdb4*/
+      ((SuperWeapon *)owner)->FireSuperWeaponHouseClass(v15[45], (int)&v20); /*0x6efdb4*/
       v13->needsRedraw = 1; /*0x6efdba*/
       return; /*0x6efdc6*/
     }
@@ -662,7 +662,7 @@ LABEL_23:
   }
   v21 = 0; /*0x6efe32*/
 LABEL_24:
-  DefaultTimer = Super::GetDefaultTimer(v11); /*0x6efde5*/
+  DefaultTimer = (v11)->GetDefaultTimer(); /*0x6efde5*/
   __asm { fild [esp+28h+var_10] } /*0x6efdf3*/
   if ( v11[2].__pad_0[21] ) /*0x6efdf0*/
   {
@@ -712,7 +712,7 @@ char E4Recv_6E0080::sub_6E0080(int a2, int a3, int a4, int a5)
 
   int v5; // ebx
   int v11; // [esp+8h] [ebp-4h] BYREF
-  v5 = *ScenarioClass::Get_Waypoint_Location((char *)dword_A8B230, &v11, this->ambientSoundController[2]); /*0x6e0097*/
+  v5 = *((char *)dword_A8B230)->Get_Waypoint_Location(&v11, this->ambientSoundController[2]); /*0x6e0097*/
   int v6 = 0; // edi /*0x6e009e*/
   v11 = v5; /*0x6e00a0*/
   if ( g_GameCleanupState <= 0 ) /*0x6e00a6*/
@@ -787,7 +787,7 @@ char E4Recv_6E0790::sub_6E0790(int a2, int a3, int a4, int a5)
   v5 = *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 4008); /*0x6e07a3*/
   int *WorldCoords; // eax
   unsigned int v8[3]; // [esp+4h] [ebp-Ch] BYREF
-  WorldCoords = Cell::GetWorldCoords((Cell *)dword_A8B230, v8, *(unsigned int *)&this->Name[44]); /*0x6e07b5*/
+  WorldCoords = ((Cell *)dword_A8B230)->GetWorldCoords(v8, *(unsigned int *)&this->Name[44]); /*0x6e07b5*/
   CreateSmokeEffectAt(50, v5, *WorldCoords, WorldCoords[1], WorldCoords[2], 0, 0); /*0x6e07d6*/
   return 1; /*0x6e07dd*/
 
@@ -804,7 +804,7 @@ char E4Recv_6E07F0::sub_6E07F0(int a2, int a3, int a4, int a5)
   v5 = *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 4008); /*0x6e0803*/
   int *WorldCoords; // eax
   unsigned int v8[3]; // [esp+4h] [ebp-Ch] BYREF
-  WorldCoords = Cell::GetWorldCoords((Cell *)dword_A8B230, v8, *(unsigned int *)&this->Name[44]); /*0x6e0815*/
+  WorldCoords = ((Cell *)dword_A8B230)->GetWorldCoords(v8, *(unsigned int *)&this->Name[44]); /*0x6e0815*/
   CreateSmokeEffectAt(100, v5, *WorldCoords, WorldCoords[1], WorldCoords[2], 0, 0); /*0x6e0836*/
   return 1; /*0x6e083d*/
 
@@ -821,7 +821,7 @@ char E4Recv_6E0850::sub_6E0850(int a2, int a3, int a4, int a5)
   v5 = *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 4008); /*0x6e0863*/
   int *WorldCoords; // eax
   unsigned int v8[3]; // [esp+4h] [ebp-Ch] BYREF
-  WorldCoords = Cell::GetWorldCoords((Cell *)dword_A8B230, v8, *(unsigned int *)&this->Name[44]); /*0x6e0875*/
+  WorldCoords = ((Cell *)dword_A8B230)->GetWorldCoords(v8, *(unsigned int *)&this->Name[44]); /*0x6e0875*/
   CreateSmokeEffectAt(300, v5, *WorldCoords, WorldCoords[1], WorldCoords[2], 0, 0); /*0x6e0896*/
   return 1; /*0x6e089d*/
 
@@ -906,7 +906,7 @@ char E4Recv_6E35F0::sub_6E35F0(void * a2, int a3, int a4, int a5)
 
   __int16 v6[2]; // [esp+0h] [ebp-14h] BYREF
   int v7; // [esp+4h] [ebp-10h] BYREF
-  *(unsigned int *)v6 = *ScenarioClass::Get_Waypoint_Location((char *)dword_A8B230, &v7, this->ambientSoundController[2]); /*0x6e360b*/
+  *(unsigned int *)v6 = *((char *)dword_A8B230)->Get_Waypoint_Location(&v7, this->ambientSoundController[2]); /*0x6e360b*/
   int GroundHeight; // [esp+10h] [ebp-4h]
   GroundHeight = 0; /*0x6e360f*/
   int v9; // [esp+Ch] [ebp-8h]

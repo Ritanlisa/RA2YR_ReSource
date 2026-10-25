@@ -43,29 +43,29 @@ namespace gamemd {  // G42.18 ns repair
 int TemporalClass::Constructor(void *a1, void *a2, void *a3, void *a4)
 {
 
-
-  ((AbstractClass *)this)->Constructor(); /*0x71a453*/
   int v2; // eax
-  v2 = *(unsigned int *)&TeamTypeClass_Array; /*0x71a458*/
-  this->TemporalClass_field_34 = 0; /*0x71a45d*/
-  *&this->q02C = v2; /*0x71a464*/
-  /* X11: ptr_0 install elided (base-interface slot, RHS g_ptr_7F5154) */  /*0x71a467*/
-  /* X11: ptr_0 install elided (implicit via TemporalClass virtuals 0x71a46d) */
-  /* X11: ptr_0 install elided (implicit via TemporalClass virtuals 0x71a474) */
-  /* X11: ptr_0 install elided (implicit via TemporalClass virtuals 0x71a47b) */
-  if ( dword_B0EC70 < dword_B0EC68 /*0x71a4b7*/
-    || (BYTE1(dword_B0EC68) || !g_BuildingLoadQueue_Array.?[5])
-    && DataGlobal_B0E840[1076] > 0
-    && (*(unsigned __int8 (**)(int *, int, unsigned int))(g_BuildingLoadQueue_Array.?[3] + 8))(
-         &DataGlobal_B0E840[1056],
-         dword_B0EC74 + g_BuildingLoadQueue_Array.?[1],
+  int v3; // eax
+
+  ((AbstractClass *)this)->Constructor();  /*0x71a453*/
+  v2 = *(unsigned int *)&stru_A8E960.random[528];  /*0x71a458*/
+  this->TemporalClass_field_34 = 0;  /*0x71a45d*/
+  *(unsigned int *)&this->__pad_28[4] = v2;  /*0x71a464*/
+  /* X11: vtable install elided (implicit via TemporalClass_4 virtuals) */
+  /* X11: vtable install elided (implicit via TemporalClass_4 virtuals) */
+  /* X11: vtable install elided (implicit via TemporalClass_4 virtuals) */
+  /* X11: vtable install elided (implicit via TemporalClass_4 virtuals) */
+  if ( dword_B0EC70 < dword_B0EC68
+    || (byte_B0EC6D || !dword_B0EC68)
+    && dword_B0EC74 > 0
+    && (*(unsigned __int8 (**)(int *, int, unsigned int))(dword_B0EC60 + 8))(
+         &dword_B0EC60,
+         dword_B0EC68 + dword_B0EC74,
          0) )
-  {
-    int v3; // eax
-    v3 = dword_B0EC70++; /*0x71a4c4*/
-    *(unsigned int *)(dword_B0EC64 + 4 * v3) = this; /*0x71a4d3*/
+  {  /*0x71a4b7*/  /*0x71a47b*/  /*0x71a474*/  /*0x71a46d*/  /*0x71a467*/
+    v3 = dword_B0EC70++;  /*0x71a4c4*/
+    *((unsigned int *)dword_B0EC64 + v3) = this;  /*0x71a4d3*/
   }
-  return (int)this; /*0x71a4d8*/
+  return (int)this;  /*0x71a4d8*/
 
 }
 } // namespace ra2
@@ -75,39 +75,39 @@ namespace gamemd {
 TemporalClass::TemporalClass(TechnoClass * aP1)
 {
 
-
-  ((AbstractClass *)this)->Constructor(); /*0x71a4e7*/
-  *&this->q02C = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x71a4fb*/
-  this->TemporalClass_field_34 = 0; /*0x71a4fe*/
-  /* X11: ptr_0 install elided (base-interface slot, RHS g_ptr_7F5154) */  /*0x71a501*/
-  /* X11: ptr_0 install elided (implicit via TemporalClass virtuals 0x71a507) */
-  /* X11: ptr_0 install elided (implicit via TemporalClass virtuals 0x71a50e) */
-  /* X11: ptr_0 install elided (implicit via TemporalClass virtuals 0x71a515) */
-  this->creationFrame = aP1; /*0x71a51c*/
-  *(unsigned int *)this->__pad_28 = 0; /*0x71a51f*/
-  *&this->q02C = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x71a529*/
+  int v3; // eax
   int v5; // [esp+Ch] [ebp-8h]
-  this->TemporalClass_field_30 = v5; /*0x71a52c*/
-  this->TemporalClass_field_34 = 0; /*0x71a52f*/
-  this->q040 = 0; /*0x71a532*/
-  this->u32_44 = 0; /*0x71a535*/
-  if ( dword_B0EC70 < dword_B0EC68 /*0x71a569*/
-    || (BYTE1(dword_B0EC68) || !g_BuildingLoadQueue_Array.?[5])
-    && DataGlobal_B0E840[1076] > 0
-    && (*(unsigned __int8 (**)(int *, int, unsigned int))(g_BuildingLoadQueue_Array.?[3] + 8))(
-         &DataGlobal_B0E840[1056],
-         dword_B0EC74 + g_BuildingLoadQueue_Array.?[1],
+
+  ((AbstractClass *)this)->Constructor();  /*0x71a4e7*/
+  *(unsigned int *)&this->__pad_28[4] = *(unsigned int *)&stru_A8E960.random[528];  /*0x71a4fb*/
+  this->TemporalClass_field_34 = 0;  /*0x71a4fe*/
+  /* X11: vtable install elided (implicit via TemporalClass_4 virtuals) */
+  /* X11: vtable install elided (implicit via TemporalClass_4 virtuals) */
+  /* X11: vtable install elided (implicit via TemporalClass_4 virtuals) */
+  /* X11: vtable install elided (implicit via TemporalClass_4 virtuals) */
+  this->creationFrame = aP1;  /*0x71a51c*/  /*0x71a515*/  /*0x71a50e*/  /*0x71a507*/  /*0x71a501*/
+  *(unsigned int *)this->__pad_28 = 0;  /*0x71a51f*/
+  *(unsigned int *)&this->__pad_28[4] = *(unsigned int *)&stru_A8E960.random[528];  /*0x71a529*/
+  this->TemporalClass_field_30 = v5;  /*0x71a52c*/
+  this->TemporalClass_field_34 = 0;  /*0x71a52f*/
+  this->q040 = 0;  /*0x71a532*/
+  this->u32_44 = 0;  /*0x71a535*/
+  if ( dword_B0EC70 < dword_B0EC68
+    || (byte_B0EC6D || !dword_B0EC68)
+    && dword_B0EC74 > 0
+    && (*(unsigned __int8 (**)(int *, int, unsigned int))(dword_B0EC60 + 8))(
+         &dword_B0EC60,
+         dword_B0EC68 + dword_B0EC74,
          0) )
-  {
-    int v3; // eax
-    v3 = dword_B0EC70++; /*0x71a576*/
-    *(unsigned int *)(dword_B0EC64 + 4 * v3) = this; /*0x71a585*/
+  {  /*0x71a569*/
+    v3 = dword_B0EC70++;  /*0x71a576*/
+    *((unsigned int *)dword_B0EC64 + v3) = this;  /*0x71a585*/
   }
-  this->u32_48 = 0; /*0x71a588*/
-  this->q04C = 0; /*0x71a58b*/
-  this->u32_38 = 0; /*0x71a58e*/
-  this->u32_3C = 0; /*0x71a591*/
-  return &this->vfptr; /*0x71a596*/
+  this->u32_48 = 0;  /*0x71a588*/
+  this->q04C = 0;  /*0x71a58b*/
+  this->u32_38 = 0;  /*0x71a58e*/
+  this->u32_3C = 0;  /*0x71a591*/
+  return &this->vfptr;  /*0x71a596*/
 
 }
 } // namespace ra2
@@ -167,7 +167,7 @@ void ** TemporalClass::ProcessTimeWarp()
   {
     v3->temporalTargetingMe = 0; /*0x71a77f*/
     *(unsigned char *)(*(unsigned int *)this->__pad_28 + 624) = 0; /*0x71a78a*/
-    return (void **)TagClass::Unlink((TagClass *)this); /*0x71a790*/
+    return (void **)((TagClass *)this)->Unlink(); /*0x71a790*/
   }
   else
   {
@@ -192,7 +192,7 @@ void ** TemporalClass::ProcessTimeWarp()
     (v13) = ((v13) & ~0xFFFF) | ((Math::RoundToInt(v1)) & 0xFFFF); /*0x71a827*/
     if ( v13 > *&dword_8871E0->u32_F60 << 8 )
     {
-      return (void **)FactoryClass::CompleteItem((FactoryClass *)this); /*0x71a841*/
+      return (void **)((FactoryClass *)this)->CompleteItem(); /*0x71a841*/
     }
     else
     {
@@ -420,7 +420,7 @@ int TemporalClass::LoadTemporal(AbstractClass * aP0, int aP1)
 {
 
   int Prefix_0; // edi
-  Prefix_0 = AbstractClass::SaveLoad_Prefix_0(aP0, aP1); /*0x71a671*/
+  Prefix_0 = (aP0)->SaveLoad_Prefix_0(aP1); /*0x71a671*/
   if ( Prefix_0 >= 0 ) /*0x71a675*/
   {
     if ( aP0 ) /*0x71a679*/
@@ -446,7 +446,7 @@ int TemporalClass::LoadTemporal(AbstractClass * aP0, int aP1)
 namespace gamemd {
 int TemporalClass::SaveTemporal(TechnoTypeClass * aP0, int * a1, int aP2)
 {
-  return AbstractClass::SaveLoad_Prefix((int *)aP0, a1, aP2); /*0x71a714*/
+  return ((int *)aP0)->SaveLoad_Prefix(a1, aP2); /*0x71a714*/
 }
 } // namespace gamemd
 
@@ -493,7 +493,7 @@ char TemporalClass::CanWarpTarget(unsigned int * a1)
           v5[0] = a1[39]; /*0x71aedc*/
           v5[1] = a1[40]; /*0x71aeed*/
           v5[2] = a1[41]; /*0x71aef4*/
-          v4 = Coord::To_Cell(&dword_87F7E8, v5); /*0x71aef8*/
+          v4 = (&dword_87F7E8)->To_Cell(v5); /*0x71aef8*/
           if ( (v4)->IsBridge() == v3 ) /*0x71af06*/
             return 0; /*0x71af09*/
         }

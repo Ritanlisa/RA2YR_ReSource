@@ -51,9 +51,19 @@ from collections import Counter
 
 APPLY = '--apply' in sys.argv
 ALL_DEFS = '--all-defs' in sys.argv
+# X129: fresh-cache (x128) landing mode -- vfptr vocabulary alignment +
+# statement-level anchor transfer + refuse-unless-clean guards.
+X129 = '--x129' in sys.argv
+X129_FORCE = '--x129-force' in sys.argv
+DONOR_CACHE = '.omo/ida_cache'
+for _a in sys.argv[1:]:
+    if _a.startswith('--donor-cache-dir='):
+        DONOR_CACHE = _a.split('=', 1)[1]
 ANCHOR = re.compile(r'/\*0x([0-9a-fA-F]+)\*/')
 DEF_HEAD = re.compile(r'^[^/]*?\b([A-Za-z_]\w*)::\s*~?\w+\s*\(([^)]*)\)')
 BAK = '.omo' + os.sep + 'rematerialize_defs_backup'
+# X129: tree-side unresolved-member token (never acceptable in a fresh body)
+QMARK_MEMBER = re.compile(r'(?:->|\.)\s*\?(?![\w.])')
 
 # X54 (typed-snapshot lane): optional cache-dir override + explicit target
 # list + dedicated manifest path.  Targets mode REPLACES only the listed
@@ -117,7 +127,177 @@ TOKEN_MAP = [
 # names dump) -> in-tree vt_ symbol for that address.  Rule lives in the
 # shared side-effect-free module (single source of truth) -- also used by
 # the X55 tree fixer.
-from vtable_ref_norm import fix_vftable_refs  # noqa: E402
+from vtable_ref_norm import fix_vftable_refs, VFT_STATS  # noqa: E402
+
+# X129 shared passes (only active with --x129; default behaviour untouched)
+if X129:
+    import x129_vocab_anchors as X9  # noqa: E402
+    from _vtelide import (elide_vtable_install_lines as _x11_elide,  # noqa: E402
+                          is_install_statement as _x11_is_install)
+    from x83_memberize_calls import memberize_text as _x129_memberize  # noqa: E402
+    _CARRIERS = X9.parse_carriers(os.path.join('src', 'e4', 'classes'))
+    _GSCAL = set()
+    for _gsrc in (os.path.join('src', 'e4', 'e4_globals.hpp'),
+                  os.path.join('src', 'core', 'ida_globals.h')):
+        if os.path.exists(_gsrc):
+            for _ln in open(_gsrc, encoding='utf-8', errors='replace'):
+                _gm = re.match(
+                    r'\s*extern\s+(?:unsigned\s+(?:int|short|char|long'
+                    r'(?:\s+long)?)|int|long|float|double)\s+([A-Za-z_]\w*)', _ln)
+                if _gm:
+                    _GSCAL.add(_gm.group(1))
+    _DONOR = {}
+
+    # X129 E1-style declaration sweep sources
+    _STRLIT = {}
+    _slp = os.path.join('anchors', 'string_literals.json')
+    if os.path.exists(_slp):
+        try:
+            _STRLIT = json.load(open(_slp, encoding='utf-8'))
+        except (OSError, ValueError):
+            _STRLIT = {}
+    _DECL_BLOB = []
+    for _droot in ('src',):
+        for _dpath, _dns, _dfs in os.walk(_droot):
+            for _df in _dfs:
+                if _df.endswith(('.hpp', '.h')):
+                    try:
+                        _DECL_BLOB.append(
+                            open(os.path.join(_dpath, _df),
+                                 encoding='utf-8', errors='replace').read())
+                    except OSError:
+                        pass
+    _DECL_BLOB = '\n'.join(_DECL_BLOB)
+    _LABEL_PREFIX_TYPE = (('qword_', 'unsigned long long'),
+                          ('dword_', 'unsigned int'),
+                          ('word_', 'unsigned short'),
+                          ('byte_', 'unsigned char'),
+                          ('flt_', 'float'), ('dbl_', 'double'))
+    _SWEEP_IDENT = re.compile(
+        r'\b([A-Za-z_]\w*)\b')
+
+    # typed-global receiver table: `extern <CarrierType>[ *|&] name[...];`
+    _GTYP = re.compile(
+        r'^\s*extern\s+((?:(?:gamemd|ra2::game)::)?[A-Za-z_]\w*)'
+        r'\s*(?:\*(?:\s*\*)*\s*|&\s*|&\s*\*?\s*)?([A-Za-z_]\w*)\s*(?:\[[^\]]*\])?\s*;',
+        re.M)
+
+    def _build_globals_typed():
+        out = {}
+        for _dpath, _dns, _dfs in os.walk('src'):
+            for _df in _dfs:
+                if not _df.endswith(('.hpp', '.h')):
+                    continue
+                try:
+                    t = open(os.path.join(_dpath, _df),
+                             encoding='utf-8', errors='replace').read()
+                except OSError:
+                    continue
+                for _gm in _GTYP.finditer(t):
+                    ty = _gm.group(1).split('::')[-1]
+                    if ty in _CARRIERS:
+                        out.setdefault(_gm.group(2), ty)
+        return out
+
+    _GLOBALS_TYPED = _build_globals_typed()
+
+    def sweep_missing_globals(text):
+        """Declare fresh-render label references missing from src (E1/G30
+        #154 convention).  Declarations append to the regenerated file itself
+        (after the last #include) so no include analysis is needed; the
+        name-present check keeps re-runs idempotent."""
+        have = set()
+        missing = []
+
+        def _already(ident):
+            # declared in the tree headers, or already declared in this file
+            # by a previous (idempotent) run
+            if re.search(r'\b%s\b' % re.escape(ident), _DECL_BLOB):
+                return True
+            return re.search(r'extern\s+[^\n]*\b%s\b' % re.escape(ident), text)
+
+        for ident in sorted(set(_SWEEP_IDENT.findall(text))):
+            if re.match(r'^(?:dword|qword|word|byte|flt|dbl)_[0-9A-Fa-f]{6,8}$', ident):
+                ty = next((t for p, t in _LABEL_PREFIX_TYPE
+                           if ident.startswith(p)), None)
+                if ty and not _already(ident):
+                    missing.append('extern %s %s;  // data: 0x%s'
+                                   % (ty, ident, ident.rsplit('_', 1)[1]))
+                    have.add(ident)
+                continue
+            if re.match(r'^(?:off)_[0-9A-Fa-f]{6,8}$', ident):
+                if not _already(ident):
+                    missing.append('extern void* %s;  // data: 0x%s'
+                                   % (ident, ident.rsplit('_', 1)[1]))
+                    have.add(ident)
+                continue
+            if re.match(r'^(?:stru|unk)_[0-9A-Fa-f]{6,8}$', ident):
+                if not _already(ident):
+                    missing.append('extern unsigned char %s[1];  // data: 0x%s'
+                                   % (ident, ident.rsplit('_', 1)[1]))
+                    have.add(ident)
+                continue
+            if re.match(r'^a[A-Z][a-z]', ident) and ident in _STRLIT:
+                if not _already(ident):
+                    info = _STRLIT.get(ident) or {}
+                    try:
+                        ln_ = max(int(info.get('len', 1)), 1)
+                    except (TypeError, ValueError):
+                        ln_ = 1
+                    addr = (info.get('addr') or '0x0').lstrip('0x') or '0'
+                    missing.append('extern unsigned char %s[%d];  // data: 0x%s'
+                                   % (ident, ln_, addr))
+                    have.add(ident)
+        if not missing:
+            # still upgrade stale `extern char aXxx[]` decls a previous run
+            # wrote (sweep now emits unsigned char -- uint8_t* call sites)
+            text2 = re.sub(
+                r'extern char (a[A-Z][a-z][A-Za-z0-9_]*)\[',
+                r'extern unsigned char \1[', text)
+            return text2, 0
+        lines = text.split('\n')
+        ins = 0
+        for i, ln in enumerate(lines):
+            if ln.startswith('#include'):
+                ins = i + 1
+        block = ['// X129: fresh-render label declarations (auto, idempotent)']
+        block += missing
+        lines.insert(ins, '\n'.join(block))
+        text2 = '\n'.join(lines)
+        text2 = re.sub(
+            r'extern char (a[A-Z][a-z][A-Za-z0-9_]*)\[',
+            r'extern unsigned char \1[', text2)
+        return text2, len(missing)
+
+    def donor_dec(a):
+        """Old-cache render (with inline anchors) -- the anchor donor."""
+        if a in _DONOR:
+            return _DONOR[a]
+        try:
+            d = json.load(open('%s/func_0x%X.json' % (DONOR_CACHE, a),
+                               encoding='utf-8')).get('decompiled', '')
+        except OSError:
+            d = ''
+        _DONOR[a] = d
+        return d
+
+    def elide_installs_keep_anchors(body):
+        """X11 install elision that re-appends the trailing /*0xADDR*/ the
+        marker text consumed (corpus marker lines keep their anchor)."""
+        out_lines = []
+        n = 0
+        for ln in body.split('\n'):
+            am = re.search(r'/\*0x([0-9a-fA-F]+)\*/\s*$', ln)
+            info = _x11_is_install(ln)
+            if info:
+                new_ln, _, _notes = _x11_elide(ln)
+                if new_ln != ln:
+                    n += 1
+                    if am and '/*0x' not in new_ln:
+                        new_ln = new_ln.rstrip() + '  /*0x%s*/' % am.group(1)
+                    ln = new_ln
+            out_lines.append(ln)
+        return '\n'.join(out_lines), n
 
 s = json.load(open('signals.json', encoding='utf-8'))
 STARTS = sorted(int(a, 16) for a, sym in s['symbols'].items()
@@ -363,6 +543,19 @@ for p in files:
                 i = j + 1
                 continue
             dec = enc_cache(addr)
+            # X129 landed-stability guard: a def that already carries the
+            # fresh-render body with full donor anchor coverage is a fixed
+            # point -- re-running must not rewrite it (donor choice depends
+            # on the mutating corpus, so unguarded re-remat oscillates).
+            if (X129 and TSET is not None and dec
+                    and not QMARK_MEMBER.search('\n'.join(block))
+                    and not X129_FORCE):
+                _ddec = donor_dec(addr)
+                _dna = len(ANCHOR.findall(_ddec)) if _ddec else 0
+                if _dna and len(ANCHOR.findall('\n'.join(block))) >= _dna:
+                    stats['x129-stable-skip'] = stats.get('x129-stable-skip', 0) + 1
+                    i = j + 1
+                    continue
             want = Counter(a.lower() for a in ANCHOR.findall(dec)) if dec else None
             got = Counter(a.lower() for a in ANCHOR.findall('\n'.join(block)))
             # extras = duplicated anchors (statement-interleave damage);
@@ -381,6 +574,87 @@ for p in files:
                     # X55 W1: backtick vftable refs -> address-authoritative
                     # vt_ extern refs (see fix_vftable_refs).
                     body = fix_vftable_refs(body)
+                    x129_refuse = None
+                    if X129:
+                        # --- receiver class: cache signature `Cls::M` ---
+                        nmc = re.search(r'\b([A-Za-z_]\w*)::[A-Za-z_~]\w*\s*\(', sig_head)
+                        this_cls = nmc.group(1) if nmc else ''
+                        if not this_cls:
+                            fp = re.search(r'\(([^)]*)\)', sig_head)
+                            first = (fp.group(1).split(',')[0] if fp else '').strip()
+                            mtp = re.match(r'^([A-Za-z_]\w*)\s*\*', first)
+                            if mtp and first.rstrip().endswith('*this'):
+                                this_cls = mtp.group(1)
+
+                        def _x129_common(text, note_unmapped):
+                            """TOKEN_MAP already applied by caller; vftable
+                            refs + X11 elision + vfptr vocabulary."""
+                            t = fix_vftable_refs(text)
+                            t, _n_el = elide_installs_keep_anchors(t)
+                            # local receiver types: `Cls *name;` decl lines
+                            loc = {}
+                            for _dl in re.finditer(
+                                    r'^\s*([A-Za-z_]\w*(?:\s*[A-Za-z_]\w*)*?)\s*'
+                                    r'\*\s*([A-Za-z_]\w*)\s*(?:\[[^\]]*\])?\s*;',
+                                    t, re.M):
+                                ty = _dl.group(1).strip()
+                                if ty in _CARRIERS:
+                                    loc[_dl.group(2)] = ty
+                            vm = X9.VocabMapper(_CARRIERS, this_cls, _GSCAL, loc,
+                                                _GLOBALS_TYPED)
+                            t, n_un = vm.map_text(t)
+                            if note_unmapped:
+                                for reason, site in vm.unmapped:
+                                    stats['x129-unmap.' + reason.split(':')[0]] = \
+                                        stats.get('x129-unmap.' +
+                                                  reason.split(':')[0], 0) + 1
+                            return X9.fix_pointer_compare(t, _CARRIERS, this_cls), n_un
+
+                        body, n_un = _x129_common(body, True)
+                        # --- anchor transfer (old cache donor, corpus 2nd);
+                        # donor is processed symmetrically so statement norms
+                        # align with the mapped body ---
+                        corpus_block = '\n'.join(block)
+                        corpus_na = len(ANCHOR.findall(corpus_block))
+
+                        def _proc_donor(text):
+                            if not text or not text.strip():
+                                return text
+                            for tm, rep in TOKEN_MAP:
+                                text = tm.sub(rep, text)
+                            bi = text.find('{')
+                            t = text[bi + 1:text.rfind('}')] if bi >= 0 else text
+                            t, _u = _x129_common(t, False)
+                            return t
+
+                        best = None
+                        for donor in (donor_dec(addr), corpus_block):
+                            if not donor or not donor.strip():
+                                continue
+                            dbody = _proc_donor(donor)
+                            if not dbody.strip():
+                                continue
+                            t, st = X9.transfer_anchors(body, dbody)
+                            cov = st['exact'] + st['pos']
+                            if best is None or cov > best[1]:
+                                best = (t, cov, st)
+                        if best is None:
+                            x129_refuse = 'x129-no-donor'
+                        else:
+                            body2 = best[0]
+                            new_na = len(ANCHOR.findall(body2))
+                            if n_un:
+                                x129_refuse = 'x129-vocab-unmapped(%d)' % n_un
+                            elif QMARK_MEMBER.search(body2):
+                                x129_refuse = 'x129-qmark'
+                            elif new_na < corpus_na:
+                                x129_refuse = ('x129-anchor-loss(%d<%d)'
+                                               % (new_na, corpus_na))
+                            else:
+                                body = body2
+                                stats['x129-anchored'] = \
+                                    stats.get('x129-anchored', 0) + 1
+                                stats['x129-anchors-now'] = new_na
                     cparams = cache_params(sig_head)
                     cparams_n = [x for x in cparams if x]
                     corpus_p = corpus_params(hm.group(2))
@@ -421,7 +695,14 @@ for p in files:
                     old_core = _core(old_block_text)
                     new_core = _core(body)
                     balanced = body.count('{') == body.count('}')
-                    if old_core and (not new_core or not balanced):
+                    if x129_refuse:
+                        stats[x129_refuse.split('(')[0]] += 1
+                        manifest[mkey] = {
+                            'file': p.replace('\\', '/'),
+                            'action': 'refused-x129',
+                            'reason': x129_refuse,
+                            'old_body_sha256': _sha(old_block_text)}
+                    elif old_core and (not new_core or not balanced):
                         reason = ('replacement body is hollow (RC3 loss '
                                   'guard: old body had real content)'
                                   if not new_core else
@@ -455,11 +736,31 @@ for p in files:
         i = j + 1
     final = [x for x in out if x is not None]
     text2 = normalize_double_cast('\n'.join(final))
+    if X129:
+        # stale-decl upgrade runs even on content-identical re-renders
+        # (a first-generation sweep may have emitted `extern char aX[]`)
+        _up = re.sub(r'extern char (a[A-Z][a-z][A-Za-z0-9_]*)\[',
+                     r'extern unsigned char \1[', text2)
+        if _up != text2:
+            text2 = _up
     if text2 != raw:
         files_changed += 1
-        if APPLY:
+        if X129:
+            # X83 member-call form for fresh-render qualified calls
+            # (idempotent on preserved bodies, which already carry the form).
+            text2 = _x129_memberize(text2)[0]
+            if not isinstance(text2, str) or not text2.strip():
+                print('FAIL LOUD: %s post-process produced empty text -- '
+                      'write refused' % p)
+                files_changed -= 1
+                text2 = raw
+            else:
+                text2, n_decl = sweep_missing_globals(text2)
+                stats['x129-decls'] = stats.get('x129-decls', 0) + n_decl
+        if APPLY and text2 != raw:
             _backup_before_write(p)
-            open(p, 'w', encoding='utf-8', newline='').write(text2)
+            with open(p, 'w', encoding='utf-8', newline='') as _fh:
+                _fh.write(text2)
 print('files changed:', files_changed)
 print(dict(stats))
 if VFT_STATS:

@@ -44,6 +44,8 @@
 #include "e4/classes/ObjectPtr_e4.hpp"
 #include "e4/classes/ParticleSystemClass_e4.hpp"
 #include "e4/classes/CCINIClass_e4.hpp"
+// X129: fresh-render label declarations (auto, idempotent)
+extern unsigned char aScript[7];  // data: 0x817348
 // [w18j2] C2065 function supply (raw-evidenced)
 namespace gamemd { int nullsub_240(void *p_this); }  // x4:ida@0x6f25d0
 
@@ -82,7 +84,7 @@ int TeamTypeClass::Construct(void *a1, void *a2, void *a3, void *a4, void *a5, v
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E88A4) */  /*0x4c9920*/
   /* X11: ptr_0 install elided (implicit via FactoryClass virtuals 0x4c9926) */
   /* X11: ptr_0 install elided (implicit via FactoryClass virtuals 0x4c992d) */
-  AbstractClass::GenerateUniqueID((AbstractClass *)&this->ptr_4); /*0x4c9934*/
+  ((AbstractClass *)&this->ptr_4)->GenerateUniqueID(); /*0x4c9934*/
   if ( *(int *)&stru_A83D50.__pad_C8[40] < *(int *)&stru_A83D50.__pad_C8[32] /*0x4c996d*/
     || (stru_A83D50.__pad_C8[37] || !*(unsigned int *)&stru_A83D50.__pad_C8[32])
     && *(int *)&stru_A83D50.__pad_C8[44] > 0
@@ -211,7 +213,7 @@ AbstractClass * * TeamTypeClass::FindOrCreateTaskForce(char *Source, int a2, int
     LABEL_6:
     v3 = (TaskForceClass *)__2_YAPAXI_Z(0xD4u); /*0x6e8646*/
     if ( v3 ) /*0x6e8655*/
-      return TaskForceClass::Construct(v3, Source); /*0x6e8661*/
+      return (v3)->Construct(Source); /*0x6e8661*/
     return 0; /*0x6e8655*/
   }
   while ( _strcmpi((char *)(*((unsigned int *)dword_A8E8D4 + v2) + 36), Source) ) /*0x6e863a*/
@@ -286,332 +288,333 @@ namespace gamemd {
 AbstractClass * * TeamTypeClass::LoadFromINI(unsigned char *** aP1, void *a2, void * aTaskforce, void * aWaypoint)
 {
 
-  char *v27; // eax
-  int *ScriptType; // eax
-  unsigned int *TaskForce; // eax
-
-  INIClass::ResetSection((INIClass *)a2); /*0x6f10a3*/
-  if ( !(unsigned __int8)((AbstractTypeClass *)aP1)->LoadFromINI(a2) ) /*0x6f10b2*/
-    return 0; /*0x6f10b2*/
-  int v3; // ecx
-  v3 = *((unsigned int *)aP1 + 49); /*0x6f10b8*/
-  int v4 = -1; // eax /*0x6f10be*/
-  if ( v3 ) /*0x6f10c3*/
-    v4 = *(unsigned int *)(*(unsigned int *)(v3 + 52) + 184); /*0x6f10c8*/
+  unsigned int field_E8; // ecx
+  int v4; // eax
   HouseClass *v5; // ebp
-  v5 = (HouseClass *)SuperWeaponTypeClass::FindOrCreate( /*0x6f10e1*/
-                       (SuperWeaponTypeClass *)a2,
-                       (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-                       (unsigned __int8 *)&g_INI_Key_Special.SidebarImageFile[1],
-                       v4);
-  if ( (unsigned __int8)(v5)->IsSpecialType() ) /*0x6f10e5*/
-  {
-    *((unsigned int *)aP1 + 50) = (unsigned int)(v5); /*0x6f10ee*/
-    *((unsigned int *)aP1 + 49) = 0; /*0x6f10f4*/
-  }
-  else if ( v5 != (HouseClass *)-1 ) /*0x6f1103*/
-  {
-    *((unsigned int *)aP1 + 49) = (v5)->FindOwner(); /*0x6f110c*/
-    *((unsigned int *)aP1 + 50) = -1; /*0x6f1112*/
-  }
-  int Int_Overwrite; // eax
-  Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x6f112b*/
-                    (bool *)a2,
-                    (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-                    (unsigned __int8 *)&DataGlobal_842DCC[800],
-                    *((unsigned int *)aP1 + 40));
-  int v44; // [esp-Ch] [ebp-D4h]
-  v44 = *((unsigned int *)aP1 + 48); /*0x6f1138*/
-  *((unsigned int *)aP1 + 40) = Int_Overwrite; /*0x6f113f*/
-  *((unsigned int *)aP1 + 48) = INIClass::ReadInt_Overwrite( /*0x6f114a*/
-                             (bool *)a2,
-                             (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-                             (unsigned __int8 *)&DataGlobal_842DCC[780],
-                             v44);
+  unsigned int Int_Overwrite; // eax
   char Bool_Overwrite; // al
-  Bool_Overwrite = INIClass::ReadBool_Overwrite( /*0x6f115f*/
-                     (int *)a2,
-                     (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-                     (unsigned __int8 *)g_INI_Key_TRUCKA.?,
-                     *((unsigned char *)aP1 + 164));
   char v8; // cl
-  v8 = *((unsigned char *)aP1 + 165); /*0x6f1164*/
-  *((unsigned char *)aP1 + 164) = Bool_Overwrite; /*0x6f116a*/
   char v9; // al
-  v9 = INIClass::ReadBool_Overwrite( /*0x6f1179*/
-         (int *)a2,
-         (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-         (unsigned __int8 *)&DataGlobal_842DCC[760],
-         v8);
-  char v45; // [esp-Ch] [ebp-D4h]
-  v45 = *((unsigned char *)aP1 + 166); /*0x6f1186*/
-  *((unsigned char *)aP1 + 165) = v9; /*0x6f118d*/
-  *((unsigned char *)aP1 + 166) = INIClass::ReadBool_Overwrite( /*0x6f1198*/
-                             (int *)a2,
-                             (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-                             (unsigned __int8 *)&DataGlobal_842DCC[748],
-                             v45);
   char v10; // al
-  v10 = INIClass::ReadBool_Overwrite( /*0x6f11ad*/
-          (int *)a2,
-          (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-          (unsigned __int8 *)g_INI_Key_TRUCKA.?,
-          *((unsigned char *)aP1 + 167));
   char v11; // cl
-  v11 = *((unsigned char *)aP1 + 169); /*0x6f11b2*/
-  *((unsigned char *)aP1 + 167) = v10; /*0x6f11b8*/
   char v12; // al
-  v12 = INIClass::ReadBool_Overwrite( /*0x6f11c7*/
-          (int *)a2,
-          (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-          (unsigned __int8 *)&DataGlobal_842DCC[724],
-          v11);
-  char v46; // [esp-Ch] [ebp-D4h]
-  v46 = *((unsigned char *)aP1 + 170); /*0x6f11d4*/
-  *((unsigned char *)aP1 + 169) = v12; /*0x6f11db*/
-  *((unsigned char *)aP1 + 170) = INIClass::ReadBool_Overwrite( /*0x6f11e6*/
-                             (int *)a2,
-                             (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-                             (unsigned __int8 *)g_INI_Key_TRUCKA.?,
-                             v46);
   char v13; // al
-  v13 = INIClass::ReadBool_Overwrite( /*0x6f11fb*/
-          (int *)a2,
-          (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-          (unsigned __int8 *)&DataGlobal_842DCC[700],
-          *((unsigned char *)aP1 + 171));
-  char v14; // cl
-  v14 = *((unsigned char *)aP1 + 176); /*0x6f1200*/
-  *((unsigned char *)aP1 + 171) = v13; /*0x6f1206*/
+  char field_D4; // cl
   char v15; // al
-  v15 = INIClass::ReadBool_Overwrite( /*0x6f1215*/
-          (int *)a2,
-          (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-          (unsigned __int8 *)&DataGlobal_842DCC[692],
-          v14);
-  char v47; // [esp-Ch] [ebp-D4h]
-  v47 = *((unsigned char *)aP1 + 177); /*0x6f1222*/
-  *((unsigned char *)aP1 + 176) = v15; /*0x6f1229*/
-  *((unsigned char *)aP1 + 177) = INIClass::ReadBool_Overwrite( /*0x6f1234*/
-                             (int *)a2,
-                             (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-                             (unsigned __int8 *)&DataGlobal_842DCC[672],
-                             v47);
   char v16; // al
-  v16 = INIClass::ReadBool_Overwrite( /*0x6f1249*/
-          (int *)a2,
-          (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-          (unsigned __int8 *)&DataGlobal_842DCC[660],
-          *((unsigned char *)aP1 + 168));
-  char v17; // cl
-  v17 = *((unsigned char *)aP1 + 172); /*0x6f124e*/
-  *((unsigned char *)aP1 + 168) = v16; /*0x6f1254*/
+  char q0D0; // cl
   char v18; // al
-  v18 = INIClass::ReadBool_Overwrite( /*0x6f1263*/
-          (int *)a2,
-          (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-          (unsigned __int8 *)&DataGlobal_842DCC[652],
-          v17);
-  char v48; // [esp-Ch] [ebp-D4h]
-  v48 = *((unsigned char *)aP1 + 175); /*0x6f1270*/
-  *((unsigned char *)aP1 + 172) = v18; /*0x6f1277*/
-  *((unsigned char *)aP1 + 175) = INIClass::ReadBool_Overwrite( /*0x6f1282*/
-                             (int *)a2,
-                             (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-                             (unsigned __int8 *)&DataGlobal_842DCC[644],
-                             v48);
   char v19; // al
-  v19 = INIClass::ReadBool_Overwrite( /*0x6f1297*/
-          (int *)a2,
-          (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-          (unsigned __int8 *)&DataGlobal_842DCC[628],
-          *((unsigned char *)aP1 + 174));
   char v20; // cl
-  v20 = *((unsigned char *)aP1 + 173); /*0x6f129c*/
-  *((unsigned char *)aP1 + 174) = v19; /*0x6f12a2*/
   char v21; // al
-  v21 = INIClass::ReadBool_Overwrite( /*0x6f12b1*/
-          (int *)a2,
-          (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-          (unsigned __int8 *)&DataGlobal_842DCC[616],
-          v20);
-  char v49; // [esp-Ch] [ebp-D4h]
-  v49 = *((unsigned char *)aP1 + 179); /*0x6f12be*/
-  *((unsigned char *)aP1 + 173) = v21; /*0x6f12c5*/
-  *((unsigned char *)aP1 + 179) = INIClass::ReadBool_Overwrite( /*0x6f12d0*/
-                             (int *)a2,
-                             (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-                             (unsigned __int8 *)&DataGlobal_842DCC[604],
-                             v49);
-  int v22; // eax
-  v22 = INIClass::ReadInt_Overwrite( /*0x6f12e5*/
-          (bool *)a2,
-          (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-          (unsigned __int8 *)&DataGlobal_842DCC[592],
-          *((unsigned int *)aP1 + 45));
-  int v23; // ecx
-  v23 = *((unsigned int *)aP1 + 46); /*0x6f12ea*/
-  *((unsigned int *)aP1 + 45) = v22; /*0x6f12f0*/
-  int v24; // eax
-  v24 = INIClass::ReadInt_Overwrite( /*0x6f12ff*/
-          (bool *)a2,
-          (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-          (unsigned __int8 *)&DataGlobal_842DCC[588],
-          v23);
-  int v50; // [esp-Ch] [ebp-D4h]
-  v50 = *((unsigned int *)aP1 + 51); /*0x6f130c*/
-  *((unsigned int *)aP1 + 46) = v24; /*0x6f1313*/
+  unsigned int v22; // eax
+  unsigned int field_DC; // ecx
+  unsigned int v24; // eax
   int v25; // eax
-  v25 = INIClass::ReadInt_Overwrite( /*0x6f1319*/
-          (bool *)a2,
-          (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-          (unsigned __int8 *)g_INI_Key_TechLevel,
-          v50);
   char *v26; // ebp
-  v26 = (char *)*((unsigned int *)aP1 + 52); /*0x6f131e*/
-  *((unsigned int *)aP1 + 51) = v25; /*0x6f1324*/
+  char *v27; // eax
+  unsigned int u32_C0; // ecx
+  unsigned int v29; // eax
+  char v30; // al
+  char v31; // cl
+  char v32; // al
+  char v33; // al
+  char v34; // cl
+  char v35; // al
+  int v36; // ecx
+  char *v37; // eax
+  char *v38; // eax
+  int *v39; // ebp
+  int *ScriptType; // eax
+  unsigned int *v41; // ebp
+  unsigned int *TaskForce; // eax
+  unsigned int Tactical_E4; // [esp-Ch] [ebp-D4h]
+  char v45; // [esp-Ch] [ebp-D4h]
+  char v46; // [esp-Ch] [ebp-D4h]
+  char v47; // [esp-Ch] [ebp-D4h]
+  char q0D0_high; // [esp-Ch] [ebp-D4h]
+  char field_D4_high; // [esp-Ch] [ebp-D4h]
+  int v50; // [esp-Ch] [ebp-D4h]
+  char v51; // [esp-Ch] [ebp-D4h]
+  char v52; // [esp-Ch] [ebp-D4h]
+  char v53[64]; // [esp+8h] [ebp-C0h] BYREF
   char Destination[128]; // [esp+48h] [ebp-80h] BYREF
-  if ( INIClass::GetString( /*0x6f1341*/
+
+  INIClass::ResetSection((INIClass *)a2);  /*0x6f10a3*/
+  if ( !(unsigned __int8)((AbstractTypeClass *)this)->LoadFromINI(a2) )
+    return 0;  /*0x6f10b2*/  /*0x6f10b2*/
+  field_E8 = this->field_E8;  /*0x6f10b8*/
+  v4 = -1;  /*0x6f10be*/
+  if ( field_E8 )
+    v4 = *(unsigned int *)(*(unsigned int *)(field_E8 + 52) + 184);  /*0x6f10c8*/  /*0x6f10c3*/
+  v5 = (HouseClass *)SuperWeaponTypeClass::FindOrCreate(
+                       (SuperWeaponTypeClass *)a2,
+                       (unsigned __int8 *)&this->TeamTypeClass_field_24,
+                       (unsigned __int8 *)aHouse,
+                       v4);  /*0x6f10e1*/
+  if ( (unsigned __int8)((BuildingType *)v5)->IsSpecialType() )
+  {  /*0x6f10e5*/
+    this->field_EC = (unsigned int)v5;  /*0x6f10ee*/
+    this->field_E8 = 0;  /*0x6f10f4*/
+  }
+  else if ( v5 != (HouseClass *)-1 )
+  {  /*0x6f1103*/
+    this->field_E8 = (v5)->FindOwner();  /*0x6f110c*/
+    this->field_EC = -1;  /*0x6f1112*/
+  }
+  Int_Overwrite = INIClass::ReadInt_Overwrite(
+                    (bool *)a2,
+                    (unsigned __int8 *)&this->TeamTypeClass_field_24,
+                    (unsigned __int8 *)&stru_842DD4.DebrisTypes[1],
+                    this->u32_C4);  /*0x6f112b*/
+  Tactical_E4 = this->Tactical_E4;  /*0x6f1138*/
+  this->u32_C4 = Int_Overwrite;  /*0x6f113f*/
+  this->Tactical_E4 = INIClass::ReadInt_Overwrite(
+                        (bool *)a2,
+                        (unsigned __int8 *)&this->TeamTypeClass_field_24,
+                        (unsigned __int8 *)&stru_842DD4.unknown_double_300[1],
+                        Tactical_E4);  /*0x6f114a*/
+  Bool_Overwrite = INIClass::ReadBool_Overwrite(
+                     (int *)a2,
+                     (unsigned __int8 *)&this->TeamTypeClass_field_24,
+                     (unsigned __int8 *)&stru_842DD4.SlowdownDistance,
+                     this->u32_C8);  /*0x6f115f*/
+  v8 = BYTE1(this->u32_C8);  /*0x6f1164*/
+  LOBYTE(this->u32_C8) = Bool_Overwrite;  /*0x6f116a*/
+  v9 = INIClass::ReadBool_Overwrite(
+         (int *)a2,
+         (unsigned __int8 *)&this->TeamTypeClass_field_24,
+         (unsigned __int8 *)stru_842DD4.ThreatAvoidanceCoefficient,
+         v8);  /*0x6f1179*/
+  v45 = BYTE2(this->u32_C8);  /*0x6f1186*/
+  BYTE1(this->u32_C8) = v9;  /*0x6f118d*/
+  BYTE2(this->u32_C8) = INIClass::ReadBool_Overwrite(
+                          (int *)a2,
+                          (unsigned __int8 *)&this->TeamTypeClass_field_24,
+                          (unsigned __int8 *)&stru_842DD4.TargetStrengthCoefficient[1],
+                          v45);  /*0x6f1198*/
+  v10 = INIClass::ReadBool_Overwrite(
+          (int *)a2,
+          (unsigned __int8 *)&this->TeamTypeClass_field_24,
+          (unsigned __int8 *)stru_842DD4.TargetSpecialThreatCoefficient,
+          HIBYTE(this->u32_C8));  /*0x6f11ad*/
+  v11 = BYTE1(this->field_CC);  /*0x6f11b2*/
+  HIBYTE(this->u32_C8) = v10;  /*0x6f11b8*/
+  v12 = INIClass::ReadBool_Overwrite(
+          (int *)a2,
+          (unsigned __int8 *)&this->TeamTypeClass_field_24,
+          (unsigned __int8 *)&stru_842DD4.MyEffectivenessCoefficient[1],
+          v11);  /*0x6f11c7*/
+  v46 = BYTE2(this->field_CC);  /*0x6f11d4*/
+  BYTE1(this->field_CC) = v12;  /*0x6f11db*/
+  BYTE2(this->field_CC) = INIClass::ReadBool_Overwrite(
+                            (int *)a2,
+                            (unsigned __int8 *)&this->TeamTypeClass_field_24,
+                            (unsigned __int8 *)stru_842DD4.SpecialThreatValue,
+                            v46);  /*0x6f11e6*/
+  v13 = INIClass::ReadBool_Overwrite(
+          (int *)a2,
+          (unsigned __int8 *)&this->TeamTypeClass_field_24,
+          (unsigned __int8 *)&stru_842DD4.EliteAbilities[6],
+          HIBYTE(this->field_CC));  /*0x6f11fb*/
+  field_D4 = this->field_D4;  /*0x6f1200*/
+  HIBYTE(this->field_CC) = v13;  /*0x6f1206*/
+  v15 = INIClass::ReadBool_Overwrite(
+          (int *)a2,
+          (unsigned __int8 *)&this->TeamTypeClass_field_24,
+          (unsigned __int8 *)&stru_842DD4.VeteranAbilities[16],
+          field_D4);  /*0x6f1215*/
+  v47 = BYTE1(this->field_D4);  /*0x6f1222*/
+  LOBYTE(this->field_D4) = v15;  /*0x6f1229*/
+  BYTE1(this->field_D4) = INIClass::ReadBool_Overwrite(
+                            (int *)a2,
+                            (unsigned __int8 *)&this->TeamTypeClass_field_24,
+                            (unsigned __int8 *)&stru_842DD4.IdleRate,
+                            v47);  /*0x6f1234*/
+  v16 = INIClass::ReadBool_Overwrite(
+          (int *)a2,
+          (unsigned __int8 *)&this->TeamTypeClass_field_24,
+          (unsigned __int8 *)&stru_842DD4.VoxelCaches[18],
+          this->field_CC);  /*0x6f1249*/
+  q0D0 = this->q0D0;  /*0x6f124e*/
+  LOBYTE(this->field_CC) = v16;  /*0x6f1254*/
+  v18 = INIClass::ReadBool_Overwrite(
+          (int *)a2,
+          (unsigned __int8 *)&this->TeamTypeClass_field_24,
+          (unsigned __int8 *)&stru_842DD4.VoxelCaches[16],
+          q0D0);  /*0x6f1263*/
+  q0D0_high = HIBYTE(this->q0D0);  /*0x6f1270*/
+  LOBYTE(this->q0D0) = v18;  /*0x6f1277*/
+  HIBYTE(this->q0D0) = INIClass::ReadBool_Overwrite(
+                         (int *)a2,
+                         (unsigned __int8 *)&this->TeamTypeClass_field_24,
+                         (unsigned __int8 *)&stru_842DD4.VoxelCaches[14],
+                         q0D0_high);  /*0x6f1282*/
+  v19 = INIClass::ReadBool_Overwrite(
+          (int *)a2,
+          (unsigned __int8 *)&this->TeamTypeClass_field_24,
+          (unsigned __int8 *)&stru_842DD4.VoxelCaches[10],
+          BYTE2(this->q0D0));  /*0x6f1297*/
+  v20 = BYTE1(this->q0D0);  /*0x6f129c*/
+  BYTE2(this->q0D0) = v19;  /*0x6f12a2*/
+  v21 = INIClass::ReadBool_Overwrite(
+          (int *)a2,
+          (unsigned __int8 *)&this->TeamTypeClass_field_24,
+          (unsigned __int8 *)&stru_842DD4.VoxelCaches[7],
+          v20);  /*0x6f12b1*/
+  field_D4_high = HIBYTE(this->field_D4);  /*0x6f12be*/
+  BYTE1(this->q0D0) = v21;  /*0x6f12c5*/
+  HIBYTE(this->field_D4) = INIClass::ReadBool_Overwrite(
+                             (int *)a2,
+                             (unsigned __int8 *)&this->TeamTypeClass_field_24,
+                             (unsigned __int8 *)&stru_842DD4.VoxelCaches[4],
+                             field_D4_high);  /*0x6f12d0*/
+  v22 = INIClass::ReadInt_Overwrite(
+          (bool *)a2,
+          (unsigned __int8 *)&this->TeamTypeClass_field_24,
+          (unsigned __int8 *)&stru_842DD4.VoxelCaches[1],
+          this->field_D8);  /*0x6f12e5*/
+  field_DC = this->field_DC;  /*0x6f12ea*/
+  this->field_D8 = v22;  /*0x6f12f0*/
+  v24 = INIClass::ReadInt_Overwrite(
+          (bool *)a2,
+          (unsigned __int8 *)&this->TeamTypeClass_field_24,
+          (unsigned __int8 *)stru_842DD4.VoxelCaches,
+          field_DC);  /*0x6f12ff*/
+  v50 = *(unsigned int *)&this->field_F0;  /*0x6f130c*/
+  this->field_DC = v24;  /*0x6f1313*/
+  v25 = INIClass::ReadInt_Overwrite(
+          (bool *)a2,
+          (unsigned __int8 *)&this->TeamTypeClass_field_24,
+          (unsigned __int8 *)g_INI_Key_TechLevel,
+          v50);  /*0x6f1319*/
+  v26 = *(char **)&this->field_F4;  /*0x6f131e*/
+  *(unsigned int *)&this->field_F0 = v25;  /*0x6f1324*/
+  if ( INIClass::GetString(
          (INIClass *)a2,
-         (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
+         (unsigned __int8 *)&this->TeamTypeClass_field_24,
          (unsigned __int8 *)off_81728C,
          &g_INI_DefaultBuffer,
          Destination,
          128) )
-  {
-    v27 = (char *)(TagTypeClass::FindOrCreate(Destination)); /*0x6f134e*/
+  {  /*0x6f1341*/
+    v27 = (Destination)->FindOrCreate();  /*0x6f134e*/
   }
   else
   {
-    v27 = v26; /*0x6f1355*/
+    v27 = v26;  /*0x6f1355*/
   }
-  int v28; // ecx
-  v28 = *((unsigned int *)aP1 + 39); /*0x6f1357*/
-  *((unsigned int *)aP1 + 52) = (unsigned int)(v27); /*0x6f135d*/
-  int v29; // eax
-  v29 = INIClass::ReadInt_Overwrite( /*0x6f136c*/
+  u32_C0 = this->u32_C0;  /*0x6f1357*/
+  *(unsigned int *)&this->field_F4 = v27;  /*0x6f135d*/
+  v29 = INIClass::ReadInt_Overwrite(
           (bool *)a2,
-          (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
+          (unsigned __int8 *)&this->TeamTypeClass_field_24,
           (unsigned __int8 *)g_INI_Key_Group,
-          v28);
-  char v51; // [esp-Ch] [ebp-D4h]
-  v51 = *((unsigned char *)aP1 + 242); /*0x6f1379*/
-  *((unsigned int *)aP1 + 39) = v29; /*0x6f1380*/
-  *((unsigned char *)aP1 + 242) = INIClass::ReadBool_Overwrite( /*0x6f138b*/
+          u32_C0);  /*0x6f136c*/
+  v51 = *((unsigned char *)this + 242);  /*0x6f1379*/
+  this->u32_C0 = v29;  /*0x6f1380*/
+  *((unsigned char *)this + 242) = INIClass::ReadBool_Overwrite(
                              (int *)a2,
-                             (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-                             (unsigned __int8 *)&DataGlobal_842DCC[572],
-                             v51);
-  char v30; // al
-  v30 = INIClass::ReadBool_Overwrite( /*0x6f13a0*/
+                             (unsigned __int8 *)&this->TeamTypeClass_field_24,
+                             (unsigned __int8 *)stru_842DD4.IsLogic,
+                             v51);  /*0x6f138b*/
+  v30 = INIClass::ReadBool_Overwrite(
           (int *)a2,
-          (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-          (unsigned __int8 *)&DataGlobal_842DCC[560],
-          *((unsigned char *)aP1 + 243));
-  char v31; // cl
-  v31 = *((unsigned char *)aP1 + 246); /*0x6f13a5*/
-  *((unsigned char *)aP1 + 243) = v30; /*0x6f13ab*/
-  char v32; // al
-  v32 = INIClass::ReadBool_Overwrite( /*0x6f13ba*/
+          (unsigned __int8 *)&this->TeamTypeClass_field_24,
+          (unsigned __int8 *)&stru_842DD4.AlphaImageFile[21],
+          *((unsigned char *)this + 243));  /*0x6f13a0*/
+  v31 = *((unsigned char *)this + 246);  /*0x6f13a5*/
+  *((unsigned char *)this + 243) = v30;  /*0x6f13ab*/
+  v32 = INIClass::ReadBool_Overwrite(
           (int *)a2,
-          (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
+          (unsigned __int8 *)&this->TeamTypeClass_field_24,
           (unsigned __int8 *)g_INI_Key_IsBaseDefense,
-          v31);
-  char v52; // [esp-Ch] [ebp-D4h]
-  v52 = *((unsigned char *)aP1 + 247); /*0x6f13c7*/
-  *((unsigned char *)aP1 + 246) = v32; /*0x6f13ce*/
-  *((unsigned char *)aP1 + 247) = INIClass::ReadBool_Overwrite( /*0x6f13d9*/
+          v31);  /*0x6f13ba*/
+  v52 = *((unsigned char *)this + 247);  /*0x6f13c7*/
+  *((unsigned char *)this + 246) = v32;  /*0x6f13ce*/
+  *((unsigned char *)this + 247) = INIClass::ReadBool_Overwrite(
                              (int *)a2,
-                             (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-                             (unsigned __int8 *)&DataGlobal_842DCC[536],
-                             v52);
-  char v33; // al
-  v33 = INIClass::ReadBool_Overwrite( /*0x6f13ee*/
+                             (unsigned __int8 *)&this->TeamTypeClass_field_24,
+                             (unsigned __int8 *)&stru_842DD4.ImageFile[24],
+                             v52);  /*0x6f13d9*/
+  v33 = INIClass::ReadBool_Overwrite(
           (int *)a2,
-          (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-          (unsigned __int8 *)&DataGlobal_842DCC[508],
-          *((unsigned char *)aP1 + 244));
-  char v34; // cl
-  v34 = *((unsigned char *)aP1 + 245); /*0x6f13f3*/
-  *((unsigned char *)aP1 + 244) = v33; /*0x6f13f9*/
-  char v35; // al
-  v35 = INIClass::ReadBool_Overwrite( /*0x6f1408*/
+          (unsigned __int8 *)&this->TeamTypeClass_field_24,
+          (unsigned __int8 *)&stru_842DD4.AmbientSound,
+          *((unsigned char *)this + 244));  /*0x6f13ee*/
+  v34 = *((unsigned char *)this + 245);  /*0x6f13f3*/
+  *((unsigned char *)this + 244) = v33;  /*0x6f13f9*/
+  v35 = INIClass::ReadBool_Overwrite(
           (int *)a2,
-          (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-          (unsigned __int8 *)&DataGlobal_842DCC[480],
-          v34);
-  int v36; // ecx
-  v36 = *((unsigned int *)aP1 + 53); /*0x6f140d*/
-  *((unsigned char *)aP1 + 245) = v35; /*0x6f141a*/
-  char *v37; // eax
-  v37 = Waypoint::To_String(v36); /*0x6f1420*/
-  char v53[64]; // [esp+8h] [ebp-C0h] BYREF
-  if ( INIClass::GetString( /*0x6f1435*/
+          (unsigned __int8 *)&this->TeamTypeClass_field_24,
+          (unsigned __int8 *)&stru_842DD4.__pad_14D[139],
+          v34);  /*0x6f1408*/
+  v36 = *((unsigned int *)this + 53);  /*0x6f140d*/
+  *((unsigned char *)this + 245) = v35;  /*0x6f141a*/
+  v37 = Waypoint::To_String(v36);  /*0x6f1420*/
+  if ( INIClass::GetString(
          (INIClass *)a2,
-         (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
+         (unsigned __int8 *)&this->TeamTypeClass_field_24,
          (unsigned __int8 *)aWaypoint,
          v37,
          v53,
          64) > 0 )
-  *((unsigned int *)aP1 + 53) = (unsigned int)((v53)->To_Waypoint()); /*0x6f1440*/
-  char *v38; // eax
-  v38 = Waypoint::To_String(*((unsigned int *)aP1 + 54)); /*0x6f1453*/
-  if ( INIClass::GetString( /*0x6f1468*/
+    *((unsigned int *)this + 53) = (v53)->To_Waypoint();  /*0x6f1440*/  /*0x6f1435*/
+  v38 = Waypoint::To_String(*((unsigned int *)this + 54));  /*0x6f1453*/
+  if ( INIClass::GetString(
          (INIClass *)a2,
-         (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-         (unsigned __int8 *)&DataGlobal_842DCC[460],
+         (unsigned __int8 *)&this->TeamTypeClass_field_24,
+         (unsigned __int8 *)&stru_842DD4.__pad_14D[119],
          v38,
          v53,
          64) > 0 )
-  *((unsigned int *)aP1 + 54) = (v53)->To_Waypoint(); /*0x6f1473*/
-  int *v39; // ebp
-  v39 = (int *)*((unsigned int *)aP1 + 56); /*0x6f1479*/
-  if ( INIClass::GetString( /*0x6f1496*/
+    *((unsigned int *)this + 54) = (v53)->To_Waypoint();  /*0x6f1473*/  /*0x6f1468*/
+  v39 = (int *)*((unsigned int *)this + 56);  /*0x6f1479*/
+  if ( INIClass::GetString(
          (INIClass *)a2,
-         (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-         (unsigned __int8 *)&g_INI_Key_Special.?[8],
+         (unsigned __int8 *)&this->TeamTypeClass_field_24,
+         (unsigned __int8 *)aScript,
          &g_INI_DefaultBuffer,
          Destination,
          128) )
-  {
-    ScriptType = (int *)(TeamTypeClass::CreateScriptType(Destination)); /*0x6f14a3*/
+  {  /*0x6f1496*/
+    ScriptType = (Destination)->CreateScriptType();  /*0x6f14a3*/
   }
   else
   {
-    ScriptType = v39; /*0x6f14aa*/
+    ScriptType = v39;  /*0x6f14aa*/
   }
-  unsigned int *v41; // ebp
-  v41 = (unsigned int *)*((unsigned int *)aP1 + 57); /*0x6f14ac*/
-  *((unsigned int *)aP1 + 56) = (unsigned int)(ScriptType); /*0x6f14c9*/
-  if ( INIClass::GetString( /*0x6f14cf*/
+  v41 = (unsigned int *)*((unsigned int *)this + 57);  /*0x6f14ac*/
+  *((unsigned int *)this + 56) = ScriptType;  /*0x6f14c9*/
+  if ( INIClass::GetString(
          (INIClass *)a2,
-         (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
+         (unsigned __int8 *)&this->TeamTypeClass_field_24,
          (unsigned __int8 *)aTaskforce,
          &g_INI_DefaultBuffer,
          Destination,
          128) )
-  {
-    TaskForce = TeamTypeClass::FindOrCreateTaskForce(Destination); /*0x6f14dc*/
+  {  /*0x6f14cf*/
+    TaskForce = (Destination)->FindOrCreateTaskForce();  /*0x6f14dc*/
   }
   else
   {
-    TaskForce = v41; /*0x6f14e3*/
+    TaskForce = v41;  /*0x6f14e3*/
   }
-  *((unsigned int *)aP1 + 57) = (unsigned int)(TaskForce); /*0x6f14e6*/
-  if ( !TaskForce ) /*0x6f14ef*/
-  {
-    if ( dword_A8E8E0 <= 0 ) /*0x6f14f8*/
-      return 0; /*0x6f14f8*/
-    *((unsigned int *)aP1 + 57) = *(unsigned int *)dword_A8E8D4; /*0x6f1501*/
+  *((unsigned int *)this + 57) = TaskForce;  /*0x6f14e6*/
+  if ( !TaskForce )
+  {  /*0x6f14ef*/
+    if ( dword_A8E8E0 <= 0 )
+      return 0;  /*0x6f14f8*/  /*0x6f14f8*/
+    *((unsigned int *)this + 57) = *(unsigned int *)dword_A8E8D4;  /*0x6f1501*/
   }
-  if ( *((unsigned int *)aP1 + 56) ) /*0x6f1507*/
-    return 1; /*0x6f1532*/
-  if ( *(int *)&DataGlobal_8B3DC0[1048] > 0 ) /*0x6f1518*/
-  {
-    *((unsigned int *)aP1 + 56) = *(unsigned int *)dword_8B41CC; /*0x6f1522*/
-    return 1; /*0x6f1522*/
+  if ( *((unsigned int *)this + 56) )
+    return 1;  /*0x6f1532*/  /*0x6f1507*/
+  if ( dword_8B41D8 > 0 )
+  {  /*0x6f1518*/
+    *((unsigned int *)this + 56) = *(unsigned int *)dword_8B41CC;  /*0x6f1522*/
+    return 1;  /*0x6f1522*/
   }
-  return 0; /*0x6f1528*/
+  return 0;  /*0x6f1528*/
 
 }
 }
@@ -620,173 +623,175 @@ namespace gamemd {
 AbstractClass * * TeamTypeClass::GetMaxCount(TeamTypeClass * aP1, void * aTaskforce, void * aWaypoint)
 {
 
-
-  if ( !((AbstractTypeClass *)aP1)->WriteINI(aTaskforce) ) /*0x6f1559*/
-    return 0; /*0x6f185b*/
-  int v3 = aP1->u32_C4; // eax /*0x6f1566*/
-  int v4 = -1; // ebp /*0x6f156d*/
-  if ( v3 ) /*0x6f1573*/
-  {
-    v4 = *(unsigned int *)(*(unsigned int *)(v3 + 52) + 184); /*0x6f1578*/
-  }
-  else if ( (unsigned __int8)BuildingType::IsSpecialType(aP1->u32_C8) ) /*0x6f1586*/
-  {
-    v4 = aP1->u32_C8; /*0x6f158f*/
-  }
-  int *p_TeamTypeClass_field_24 = &aP1->TeamTypeClass_field_24; // edi /*0x6f159d*/
-  INIClass::SetInt( /*0x6f15a9*/
-    aTaskforce,
-    (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-    (char *)&DataGlobal_842DCC[800],
-    aP1->u32_A0,
-    0);
-  INIClass::SetInt( /*0x6f15bf*/
-    aTaskforce,
-    (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-    (char *)&DataGlobal_842DCC[780],
-    aP1->u32_C0,
-    0);
-  INIClass::SetBool( /*0x6f15d3*/
-    aTaskforce,
-    (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-    (char *)g_INI_Key_TRUCKA.?,
-    aP1->u8_A4);
-  INIClass::SetBool( /*0x6f15e7*/
-    aTaskforce,
-    (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-    (char *)&DataGlobal_842DCC[760],
-    aP1->u8_A5);
-  INIClass::SetBool( /*0x6f15fb*/
-    aTaskforce,
-    (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-    (char *)&DataGlobal_842DCC[748],
-    aP1->u8_A6);
-  INIClass::SetBool( /*0x6f160f*/
-    aTaskforce,
-    (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-    (char *)g_INI_Key_TRUCKA.?,
-    aP1->u8_A7);
-  INIClass::SetHouseName( /*0x6f161d*/
-    aTaskforce,
-    (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-    (char *)&g_INI_Key_Special.SidebarImageFile[1],
-    (void *)v4);
-  INIClass::SetBool( /*0x6f1631*/
-    aTaskforce,
-    (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-    (char *)&DataGlobal_842DCC[660],
-    aP1->q0A8);
-  INIClass::SetBool( /*0x6f1645*/
-    aTaskforce,
-    (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-    (char *)&DataGlobal_842DCC[724],
-    aP1->u8_A9);
-  INIClass::SetBool( /*0x6f1659*/
-    aTaskforce,
-    (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-    (char *)g_INI_Key_TRUCKA.?,
-    aP1->u8_AA);
-  INIClass::SetBool( /*0x6f166d*/
-    aTaskforce,
-    (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-    &DataGlobal_842DCC[700],
-    aP1->u8_AB);
-  INIClass::SetBool( /*0x6f1681*/
-    aTaskforce,
-    (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-    &DataGlobal_842DCC[692],
-    aP1->q0B0);
-  INIClass::SetBool( /*0x6f1695*/
-    aTaskforce,
-    (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-    &DataGlobal_842DCC[672],
-    aP1->u8_B1);
-  INIClass::SetBool( /*0x6f16a9*/
-    aTaskforce,
-    (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-    (char *)&DataGlobal_842DCC[652],
-    aP1->q0AC);
-  INIClass::SetBool( /*0x6f16bd*/
-    aTaskforce,
-    (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-    (char *)&DataGlobal_842DCC[628],
-    aP1->u8_AE);
-  INIClass::SetBool( /*0x6f16d1*/
-    aTaskforce,
-    (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-    (char *)&DataGlobal_842DCC[616],
-    aP1->u8_AD);
-  INIClass::SetBool( /*0x6f16e5*/
-    aTaskforce,
-    (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-    (char *)&DataGlobal_842DCC[644],
-    aP1->u8_AF);
-  INIClass::SetInt( /*0x6f16fb*/
-    aTaskforce,
-    (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-    (char *)&DataGlobal_842DCC[592],
-    aP1->__pad_0B4,
-    0);
-  INIClass::SetInt( /*0x6f1711*/
-    aTaskforce,
-    (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-    (char *)&DataGlobal_842DCC[588],
-    aP1->u32_B8,
-    0);
-  INIClass::SetInt(aTaskforce, (unsigned __int8 *)&aP1->TeamTypeClass_field_24, g_INI_Key_TechLevel, *(&aP1->u32_CC), 0); /*0x6f1727*/
-  INIClass::SetInt(aTaskforce, (unsigned __int8 *)&aP1->TeamTypeClass_field_24, g_INI_Key_Group, *(&aP1->u32_9C), 0); /*0x6f173d*/
-  INIClass::SetBool( /*0x6f1751*/
-    aTaskforce,
-    (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-    (char *)&DataGlobal_842DCC[604],
-    aP1->u8_B3);
-  INIClass::SetBool( /*0x6f1765*/
-    aTaskforce,
-    (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-    &DataGlobal_842DCC[572],
-    aP1->u8_F2);
-  INIClass::SetBool(aTaskforce, (unsigned __int8 *)&aP1->TeamTypeClass_field_24, &g_INI_Key_TRUCKA.q018, *(&aP1->u8_F3)); /*0x6f1779*/
-  INIClass::SetBool( /*0x6f178d*/
-    aTaskforce,
-    (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-    &DataGlobal_842DCC[508],
-    aP1->u8_F4);
-  INIClass::SetBool( /*0x6f17a1*/
-    aTaskforce,
-    (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-    &DataGlobal_842DCC[480],
-    aP1->u8_F5);
-  INIClass::SetBool( /*0x6f17b5*/
-    aTaskforce,
-    (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-    g_INI_Key_IsBaseDefense,
-    aP1->u8_F6);
-  INIClass::SetBool( /*0x6f17c9*/
-    aTaskforce,
-    (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-    &DataGlobal_842DCC[536],
-    aP1->u8_F7);
+  unsigned int field_E8; // eax
+  unsigned int field_EC; // ebp
+  int *p_TeamTypeClass_field_24; // edi
   int v6; // eax
-  v6 = *(&aP1->q0D0); /*0x6f17ce*/
-  if ( v6 ) /*0x6f17d6*/
-    INIClass::SetString(aTaskforce, (unsigned __int8 *)&aP1->TeamTypeClass_field_24, off_81728C, (char *)(v6 + 36)); /*0x6f17e4*/
   char *v7; // eax
-  v7 = Waypoint::To_String(*(&aP1->u32_D4)); /*0x6f17ef*/
-  INIClass::SetString(aTaskforce, (unsigned __int8 *)&aP1->TeamTypeClass_field_24, aWaypoint, v7); /*0x6f17fd*/
   char *v8; // eax
-  v8 = Waypoint::To_String(*(&aP1->u32_D8)); /*0x6f1808*/
-  INIClass::SetString(aTaskforce, (unsigned __int8 *)&aP1->TeamTypeClass_field_24, &g_INI_Key_TRUCKA.q018, v8); /*0x6f1816*/
-  int v9 = aP1->FootClass_E0; // eax /*0x6f181b*/
-  if ( v9 ) /*0x6f1823*/
-    INIClass::SetString( /*0x6f1831*/
-      aTaskforce,
-      (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-      &g_INI_Key_Special.?[8],
-      (char *)(v9 + 36));
-  int v10 = aP1->Tactical_E4; // esi /*0x6f1836*/
-  if ( v10 ) /*0x6f183e*/
-    INIClass::SetString(aTaskforce, (unsigned __int8 *)p_TeamTypeClass_field_24, aTaskforce, (char *)(v10 + 36)); /*0x6f184c*/
-  return 1; /*0x6f1853*/
+  int v9; // eax
+  int v10; // esi
+
+  if ( !((AbstractTypeClass *)this)->WriteINI(a2) )
+    return 0;  /*0x6f185b*/  /*0x6f1559*/
+  field_E8 = this->field_E8;  /*0x6f1566*/
+  field_EC = -1;  /*0x6f156d*/
+  if ( field_E8 )
+  {  /*0x6f1573*/
+    field_EC = *(unsigned int *)(*(unsigned int *)(field_E8 + 52) + 184);  /*0x6f1578*/
+  }
+  else if ( (unsigned __int8)((BuildingType *)this->field_EC)->IsSpecialType() )
+  {  /*0x6f1586*/
+    field_EC = this->field_EC;  /*0x6f158f*/
+  }
+  p_TeamTypeClass_field_24 = &this->TeamTypeClass_field_24;  /*0x6f159d*/
+  INIClass::SetInt(
+    a2,
+    (unsigned __int8 *)&this->TeamTypeClass_field_24,
+    (char *)&stru_842DD4.DebrisTypes[1],
+    this->u32_C4,
+    0);  /*0x6f15a9*/
+  INIClass::SetInt(
+    a2,
+    (unsigned __int8 *)&this->TeamTypeClass_field_24,
+    (char *)&stru_842DD4.unknown_double_300[1],
+    this->Tactical_E4,
+    0);  /*0x6f15bf*/
+  INIClass::SetBool(
+    a2,
+    (unsigned __int8 *)&this->TeamTypeClass_field_24,
+    (char *)&stru_842DD4.SlowdownDistance,
+    this->u32_C8);  /*0x6f15d3*/
+  INIClass::SetBool(
+    a2,
+    (unsigned __int8 *)&this->TeamTypeClass_field_24,
+    (char *)stru_842DD4.ThreatAvoidanceCoefficient,
+    BYTE1(this->u32_C8));  /*0x6f15e7*/
+  INIClass::SetBool(
+    a2,
+    (unsigned __int8 *)&this->TeamTypeClass_field_24,
+    (char *)&stru_842DD4.TargetStrengthCoefficient[1],
+    BYTE2(this->u32_C8));  /*0x6f15fb*/
+  INIClass::SetBool(
+    a2,
+    (unsigned __int8 *)&this->TeamTypeClass_field_24,
+    (char *)stru_842DD4.TargetSpecialThreatCoefficient,
+    HIBYTE(this->u32_C8));  /*0x6f160f*/
+  INIClass::SetHouseName(a2, (unsigned __int8 *)&this->TeamTypeClass_field_24, aHouse, (void *)field_EC);  /*0x6f161d*/
+  INIClass::SetBool(
+    a2,
+    (unsigned __int8 *)&this->TeamTypeClass_field_24,
+    (char *)&stru_842DD4.VoxelCaches[18],
+    this->field_CC);  /*0x6f1631*/
+  INIClass::SetBool(
+    a2,
+    (unsigned __int8 *)&this->TeamTypeClass_field_24,
+    (char *)&stru_842DD4.MyEffectivenessCoefficient[1],
+    BYTE1(this->field_CC));  /*0x6f1645*/
+  INIClass::SetBool(
+    a2,
+    (unsigned __int8 *)&this->TeamTypeClass_field_24,
+    (char *)stru_842DD4.SpecialThreatValue,
+    BYTE2(this->field_CC));  /*0x6f1659*/
+  INIClass::SetBool(
+    a2,
+    (unsigned __int8 *)&this->TeamTypeClass_field_24,
+    &stru_842DD4.EliteAbilities[6],
+    HIBYTE(this->field_CC));  /*0x6f166d*/
+  INIClass::SetBool(
+    a2,
+    (unsigned __int8 *)&this->TeamTypeClass_field_24,
+    &stru_842DD4.VeteranAbilities[16],
+    this->field_D4);  /*0x6f1681*/
+  INIClass::SetBool(
+    a2,
+    (unsigned __int8 *)&this->TeamTypeClass_field_24,
+    (char *)&stru_842DD4.IdleRate,
+    BYTE1(this->field_D4));  /*0x6f1695*/
+  INIClass::SetBool(
+    a2,
+    (unsigned __int8 *)&this->TeamTypeClass_field_24,
+    (char *)&stru_842DD4.VoxelCaches[16],
+    this->q0D0);  /*0x6f16a9*/
+  INIClass::SetBool(
+    a2,
+    (unsigned __int8 *)&this->TeamTypeClass_field_24,
+    (char *)&stru_842DD4.VoxelCaches[10],
+    BYTE2(this->q0D0));  /*0x6f16bd*/
+  INIClass::SetBool(
+    a2,
+    (unsigned __int8 *)&this->TeamTypeClass_field_24,
+    (char *)&stru_842DD4.VoxelCaches[7],
+    BYTE1(this->q0D0));  /*0x6f16d1*/
+  INIClass::SetBool(
+    a2,
+    (unsigned __int8 *)&this->TeamTypeClass_field_24,
+    (char *)&stru_842DD4.VoxelCaches[14],
+    HIBYTE(this->q0D0));  /*0x6f16e5*/
+  INIClass::SetInt(
+    a2,
+    (unsigned __int8 *)&this->TeamTypeClass_field_24,
+    (char *)&stru_842DD4.VoxelCaches[1],
+    this->field_D8,
+    0);  /*0x6f16fb*/
+  INIClass::SetInt(
+    a2,
+    (unsigned __int8 *)&this->TeamTypeClass_field_24,
+    (char *)stru_842DD4.VoxelCaches,
+    this->field_DC,
+    0);  /*0x6f1711*/
+  INIClass::SetInt(
+    a2,
+    (unsigned __int8 *)&this->TeamTypeClass_field_24,
+    g_INI_Key_TechLevel,
+    *(unsigned int *)&this->field_F0,
+    0);  /*0x6f1727*/
+  INIClass::SetInt(a2, (unsigned __int8 *)&this->TeamTypeClass_field_24, g_INI_Key_Group, this->u32_C0, 0);  /*0x6f173d*/
+  INIClass::SetBool(
+    a2,
+    (unsigned __int8 *)&this->TeamTypeClass_field_24,
+    (char *)&stru_842DD4.VoxelCaches[4],
+    HIBYTE(this->field_D4));  /*0x6f1751*/
+  INIClass::SetBool(a2, (unsigned __int8 *)&this->TeamTypeClass_field_24, stru_842DD4.IsLogic, *((unsigned char *)this + 242));  /*0x6f1765*/
+  INIClass::SetBool(
+    a2,
+    (unsigned __int8 *)&this->TeamTypeClass_field_24,
+    &stru_842DD4.AlphaImageFile[21],
+    *((unsigned char *)this + 243));  /*0x6f1779*/
+  INIClass::SetBool(
+    a2,
+    (unsigned __int8 *)&this->TeamTypeClass_field_24,
+    (char *)&stru_842DD4.AmbientSound,
+    *((unsigned char *)this + 244));  /*0x6f178d*/
+  INIClass::SetBool(
+    a2,
+    (unsigned __int8 *)&this->TeamTypeClass_field_24,
+    &stru_842DD4.__pad_14D[139],
+    *((unsigned char *)this + 245));  /*0x6f17a1*/
+  INIClass::SetBool(
+    a2,
+    (unsigned __int8 *)&this->TeamTypeClass_field_24,
+    g_INI_Key_IsBaseDefense,
+    *((unsigned char *)this + 246));  /*0x6f17b5*/
+  INIClass::SetBool(
+    a2,
+    (unsigned __int8 *)&this->TeamTypeClass_field_24,
+    &stru_842DD4.ImageFile[24],
+    *((unsigned char *)this + 247));  /*0x6f17c9*/
+  v6 = *(unsigned int *)&this->field_F4;  /*0x6f17ce*/
+  if ( v6 )
+    (a2)->SetString((unsigned __int8 *)&this->TeamTypeClass_field_24, off_81728C, (char *)(v6 + 36));  /*0x6f17e4*/  /*0x6f17d6*/
+  v7 = Waypoint::To_String(*((unsigned int *)this + 53));  /*0x6f17ef*/
+  (a2)->SetString((unsigned __int8 *)&this->TeamTypeClass_field_24, aWaypoint, v7);  /*0x6f17fd*/
+  v8 = Waypoint::To_String(*((unsigned int *)this + 54));  /*0x6f1808*/
+  (a2)->SetString((unsigned __int8 *)&this->TeamTypeClass_field_24, &stru_842DD4.__pad_14D[119], v8);  /*0x6f1816*/
+  v9 = *((unsigned int *)this + 56);  /*0x6f181b*/
+  if ( v9 )
+    (a2)->SetString((unsigned __int8 *)&this->TeamTypeClass_field_24, aScript, (char *)(v9 + 36));  /*0x6f1831*/  /*0x6f1823*/
+  v10 = *((unsigned int *)this + 57);  /*0x6f1836*/
+  if ( v10 )
+    (a2)->SetString((unsigned __int8 *)p_TeamTypeClass_field_24, aTaskforce, (char *)(v10 + 36));  /*0x6f184c*/  /*0x6f183e*/
+  return 1;  /*0x6f1853*/
 
 }
 }
@@ -1041,7 +1046,7 @@ TeamTypeClass * TeamTypeClass::ReadScriptData(char * a1, int a2)
   char Buffer[32]; // [esp+10h] [ebp-20h] BYREF
 
   int KeyCount; // ebx
-  KeyCount = INIClass::GetKeyCount(a1->__pad_0, (uint8_t *)g_INI_Key_TRUCKA.DebrisMaximums); /*0x6f1ac5*/
+  KeyCount = (a1->__pad_0)->GetKeyCount((uint8_t *)g_INI_Key_TRUCKA.DebrisMaximums); /*0x6f1ac5*/
   int i; // edi
   for ( i = 0; i < KeyCount; ++i ) /*0x6f1acb*/
   {
@@ -1092,7 +1097,7 @@ int TeamTypeClass::SaveToINI(TechnoTypeClass * aP0, int * a1, int aP2)
 {
 
   int result; // eax
-  result = AbstractClass::SaveLoad_Prefix((int *)aP0, a1, aP2); /*0x6f1b9f*/
+  result = ((int *)aP0)->SaveLoad_Prefix(a1, aP2); /*0x6f1b9f*/
   if ( result >= 0 ) /*0x6f1ba6*/
     return 0; /*0x6f1ba8*/
   return result; /*0x6f1baa*/
@@ -1105,12 +1110,12 @@ int TeamTypeClass::LoadTypeData(AbstractTypeClass * aP0, int aP1)
 {
 
   int result; // eax
-  result = AbstractClass::SaveLoad_Prefix_0(aP0, aP1); /*0x6f1bbb*/
+  result = (aP0)->SaveLoad_Prefix_0(aP1); /*0x6f1bbb*/
   if ( result >= 0 ) /*0x6f1bc2*/
   {
     if ( aP0 ) /*0x6f1bc6*/
     {
-      AbstractTypeClass::Init((int)aP0, (int)&aP1); /*0x6f1bcf*/
+      ((int)aP0)->Init((int)&aP1); /*0x6f1bcf*/
       /* X11: ptr_0 install elided (implicit via TeamTypeClass virtuals 0x6f1bd4) */
       /* X11: ptr_0 install elided (implicit via TeamTypeClass virtuals 0x6f1bda) */
       /* X11: ptr_0 install elided (implicit via TeamTypeClass virtuals 0x6f1be1) */
@@ -1153,7 +1158,7 @@ int TeamTypeClass::FlashAllInstances(AnimClass * aP1)
     int v5; // ecx
     v5 = *((unsigned int *)&FootClass_Array.auxParticles1->ptr_0 + i); /*0x6f1f49*/
     if ( *(TeamTypeClass **)(v5 + 36) == this ) /*0x6f1f4f*/
-      TeamTypeClass::Check((TeamTypeClass *)v5, aP1); /*0x6f1f52*/
+      ((TeamTypeClass *)v5)->Check(aP1); /*0x6f1f52*/
     result = (int)FootClass_Array.waveEffect; /*0x6f1f57*/
   }
   return result; /*0x6f1f62*/

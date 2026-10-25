@@ -87,7 +87,7 @@ OverlayTypeClass::OverlayTypeClass(ObjectClass * aP1)
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7EF5D4) */  /*0x5fe2f7*/
   /* X11: ptr_0 install elided (implicit via OverlayTypeClass virtuals 0x5fe2fd) */
   /* X11: ptr_0 install elided (implicit via OverlayTypeClass virtuals 0x5fe304) */
-  AbstractClass::GenerateUniqueID((AbstractClass *)&this->vfptr1); /*0x5fe30b*/
+  ((AbstractClass *)&this->vfptr1)->GenerateUniqueID(); /*0x5fe30b*/
   this->q22F = 1; /*0x5fe310*/
   this->q230 = 0; /*0x5fe317*/
   this->Insignificant_d = 1; /*0x5fe31d*/
@@ -269,40 +269,40 @@ namespace gamemd {  // G42.18c ns repair
 ScenarioClass * * OverlayTypeClass::SaveLoad_Prefix(int a1, int a2)
 {
 
-  char v3[513]; // [esp+7h] [ebp-201h] BYREF
-
   int result; // eax
-  result = ObjectTypeClass::LoadCleanup((ObjectTypeClass *)a1, a2); /*0x5feb04*/
-  if ( result >= 0 ) /*0x5feb0b*/
-  {
-    if ( a1 ) /*0x5feb13*/
-    {
-      ((ObjectTypeClass *)a1)->Construct((int)v3); /*0x5feb1c*/
-      /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7EF5D4) */  /*0x5feb21*/
-      /* X11: ptr_0 install elided (qmark slot, RHS g_ptr_7EF5D4) */  /*0x5feb27*/
-      /* X11: ptr_0 install elided (qmark slot, RHS g_ptr_7EF5D4) */  /*0x5feb2e*/
-      /* X11: ptr_0 install elided (qmark slot, RHS g_ptr_7EF5D4) */  /*0x5feb35*/
-    }
-    ((char *)a1)->LoadAnim(); /*0x5feb3e*/
-    ((char *)a1)->Load2DArt(); /*0x5feb45*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &a1->DamageLevels); /*0x5feb56*/
-    if ( !a1->DrawFlat ) /*0x5feb5b*/
-    {
-      if ( a1->Theater[0] ) /*0x5feb69*/
-      {
-        _makepath(&v3[1], 0, 0, a1->ImageFile, (const char *)&off_7E1BC6 + 112 * dword_A8B230[130].uniqueId); /*0x5feba1*/
+  char Buffer[513]; // [esp+7h] [ebp-201h] BYREF
+
+  result = ObjectTypeClass::LoadCleanup((ObjectTypeClass *)this, a2);  /*0x5feb04*/
+  if ( result >= 0 )
+  {  /*0x5feb0b*/
+    if ( this )
+    {  /*0x5feb13*/
+      ((ObjectTypeClass *)this)->Construct((int)Buffer);  /*0x5feb1c*/
+      /* X11: vtable install elided (implicit via OverlayTypeClass_4 virtuals) */
+      /* X11: vtable install elided (implicit via OverlayTypeClass_4 virtuals) */
+      /* X11: vtable install elided (implicit via OverlayTypeClass_4 virtuals) */
+      /* X11: vtable install elided (implicit via OverlayTypeClass_4 virtuals) */
+    }  /*0x5feb35*/  /*0x5feb2e*/  /*0x5feb27*/  /*0x5feb21*/
+    ((char *)this)->LoadAnim();  /*0x5feb3e*/
+    ((char *)this)->Load2DArt();  /*0x5feb45*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->DamageLevels);  /*0x5feb56*/
+    if ( !this->DrawFlat[0] )
+    {  /*0x5feb5b*/
+      if ( this->Theater[0] )
+      {  /*0x5feb69*/
+        _makepath(&Buffer[1], 0, 0, this->ImageFile, (const char *)&off_7E1BC6 + 112 * dword_A8B230[117].uniqueId);  /*0x5feba1*/
       }
       else
       {
-        _makepath(&v3[1], 0, 0, a1->ImageFile, Ext); /*0x5febc0*/
-        TheaterObjectTypeClassSpecificID(&v3[1], dword_A8B230[130].uniqueId); /*0x5febd7*/
+        _makepath(&Buffer[1], 0, 0, this->ImageFile, Ext);  /*0x5febc0*/
+        TheaterObjectTypeClassSpecificID(&Buffer[1], dword_A8B230[117].uniqueId);  /*0x5febd7*/
       }
-      if ( !a1->Image ) /*0x5febdc*/
-        a1->? = (SHPStruct *)SearchMIXFile(&v3[1], 1); /*0x5febf1*/
+      if ( !this->Image )
+        this->Image = (int)SearchMIXFile(&Buffer[1], 1);  /*0x5febf1*/  /*0x5febdc*/
     }
-    return 0; /*0x5febf7*/
+    return 0;  /*0x5febf7*/
   }
-  return result; /*0x5febf9*/
+  return result;  /*0x5febf9*/
 
 }
 }  // G42.18c ns repair
@@ -332,7 +332,7 @@ AnimTypeClass * * OverlayTypeClass::GetCategory()
       TheaterObjectTypeClassSpecificID(Buffer, dword_A8B230[130].uniqueId); /*0x5fee90*/
     }
     (&v4)->Construct(Buffer); /*0x5fee9f*/
-    v3 = (SHPStruct *)CCFileClass::ReadEntireFile(&v4); /*0x5feead*/
+    v3 = (SHPStruct *)(&v4)->ReadEntireFile(); /*0x5feead*/
     this->Image = v3; /*0x5feeb1*/
     if ( v3 ) /*0x5feeb7*/
       this->ImageAllocated = 1; /*0x5feeb9*/
@@ -340,7 +340,7 @@ AnimTypeClass * * OverlayTypeClass::GetCategory()
     v6 = 0; /*0x5feecc*/
     ((Vector *)v5)->Clear(); /*0x5feed4*/
     *(unsigned int *)v4.__tail_0 = &off_7E1668; /*0x5feedd*/
-    BufferIOFileClass::Dtor((BufferIOFileClass *)&v4); /*0x5feee5*/
+    ((BufferIOFileClass *)&v4)->Dtor(); /*0x5feee5*/
     return v3; /*0x5feeea*/
   }
   return result; /*0x5feeed*/
@@ -392,7 +392,7 @@ unsigned int *  OverlayTypeClass::Construct(char *aP1, void *a2, void *a3, void 
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F007C) */  /*0x6441a2*/
   /* X11: ptr_0 install elided (implicit via ParticleSystemTypeClass virtuals 0x6441a8) */
   /* X11: ptr_0 install elided (implicit via ParticleSystemTypeClass virtuals 0x6441af) */
-  AbstractClass::GenerateUniqueID(&this->vfptr1); /*0x6441b6*/
+  (&this->vfptr1)->GenerateUniqueID(); /*0x6441b6*/
   if ( (int)g_InfantryTypeInitState < *(int *)&DataGlobal_A83D70 /*0x6441ef*/
     || (BYTE1(DataGlobal_A83D74) || !*(unsigned int *)&DataGlobal_A83D70)
     && (int)DataGlobal_A83D7C > 0
@@ -532,7 +532,7 @@ int OverlayTypeClass::PowerDrainUpdate(int * a2)
 {
 
 
-  AbstractTypeClass::ProcessPower((AbstractTypeClass *)this, a2); /*0x5fea59*/
+  ((AbstractTypeClass *)this)->ProcessPower(a2); /*0x5fea59*/
   Power::TimerProcess(this->LandType[0]); /*0x5fea67*/
   Power::TimerProcess((int)this->CellAnim); /*0x5fea75*/
   Power::TimerProcess(this->DamageLevels_d); /*0x5fea83*/

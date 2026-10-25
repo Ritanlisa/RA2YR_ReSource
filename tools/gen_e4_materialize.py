@@ -23,6 +23,17 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / 'tools' / 'csp_export'))
 from _vtelide import elide_vtable_install_lines  # noqa: E402  (X11)
+# X129 (2026-10-25): fresh til renders reference vptr members as
+# `vfptr`/`vfptr1..N`; corpus carriers declare those bytes per the X75
+# convention (ptr_0/ptr_4/...).  The shared pass maps every access form
+# (bare/macro/address/slot-call) onto the carrier member; the companion
+# comparison fix keeps `== -1` pointer-typed.
+try:
+    import x129_vocab_anchors as _x129  # noqa: E402
+    _X129_CARRIERS = _x129.parse_carriers(str(ROOT / 'src' / 'e4' / 'classes'))
+except OSError:
+    _x129 = None
+    _X129_CARRIERS = {}
 # X83: e4 bodies call members in qualified form `Class::Method(recv, ...)`,
 # which is not a legal call for a non-static member (C2664 arg1 family).
 # The post-pass rewrites it to `(recv)->Method(...)` using the e4 carriers.
@@ -916,6 +927,14 @@ def main_apply(bodyless, fns, src_classes, refresh=False, preserved=None):
             owner = recv_cls
         pseudo = rewrite_pseudocode(fn.pseudocode, owner if owner in mmap.by_class else "",
                                     mmap, stats)
+        # X129: vfptr vocabulary alignment onto the carrier (X75 ptr_N);
+        # receiver = owner class (def name is the signals authority).
+        if _x129 is not None and owner and owner in _X129_CARRIERS:
+            vm = _x129.VocabMapper(_X129_CARRIERS, owner)
+            pseudo, n_un = vm.map_text(pseudo)
+            if n_un:
+                stats["x129_unmapped"] = stats.get("x129_unmapped", 0) + n_un
+            pseudo = _x129.fix_pointer_compare(pseudo, _X129_CARRIERS, owner)
         pseudo, was_truncated = emit_pseudo(pseudo)
         if was_truncated:
             stats["truncated"] = stats.get("truncated", 0) + 1

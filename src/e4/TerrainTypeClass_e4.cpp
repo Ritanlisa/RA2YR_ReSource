@@ -175,7 +175,7 @@ TerrainTypeClass::TerrainTypeClass(char *Source, TerrainTypeClass *aP1, int aP3,
   /* X11: ptr_0 install elided (qmark slot, RHS g_ptr_7F542C) */  /*0x71dafd*/
   /* X11: ptr_0 install elided (qmark slot, RHS g_ptr_7F542C) */  /*0x71db03*/
   /* X11: ptr_0 install elided (qmark slot, RHS g_ptr_7F542C) */  /*0x71db0a*/
-  AbstractClass::GenerateUniqueID((AbstractClass *)&aP1->vfptr1); /*0x71db11*/
+  ((AbstractClass *)&aP1->vfptr1)->GenerateUniqueID(); /*0x71db11*/
   aP1->Selectable[0] = 0; /*0x71db18*/
   aP1->IsLogic[0] = 1; /*0x71db1e*/
   aP1->RadarInvisible[0] = 1; /*0x71db24*/
@@ -225,98 +225,111 @@ namespace gamemd {  // G42.18c ns repair
 int TerrainTypeClass::LoadFromINI(uint8_t ***a2, int aP1, int aP3, int a3, int a4, int a5, int a6, int a7, int aP2, int a1, int aP0, void * aAnimationproba, void * aAnimationrate, void * aIsanimated, void * aIsflammable, void * aRadarcolor, void * aSnowoccupation, void * aSpawnstiberium, void * aTemperateoccup, void * aWaterbound)
 {
 
+  double v2; // st7
   int result; // eax
+  char Bool_Overwrite; // al
+  char v6; // al
+  char v7; // cl
+  char v8; // al
+  int v9; // eax
+  int v10; // ecx
+  MixFileClass *v11; // eax
+  int PixelData; // eax
+  int Coord; // eax
+  char v14; // cl
+  char v15; // al
+  int Int_Overwrite; // eax
+  double v17; // st6
+  int TemperateOccupationBits; // eax
+  int v19; // eax
+  int SnowOccupationBits; // ecx
+  char v21; // [esp+4h] [ebp-218h]
+  int AnimationRate; // [esp+4h] [ebp-218h]
   int v23; // [esp+18h] [ebp-204h] BYREF
+  char Buffer[512]; // [esp+1Ch] [ebp-200h] BYREF
 
-  INIClass::ResetSection((INIClass *)aP1); /*0x71deb3*/
-  if ( ((ObjectTypeClass *)aP1)->LoadFromINI(aP1) ) /*0x71debb*/
-  {
-    if ( aP1->Strength == -1 ) /*0x71decf*/
-      aP1->? = *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 4420); /*0x71dedc*/
-    char Bool_Overwrite; // al
-    Bool_Overwrite = INIClass::ReadBool_Overwrite((int *)aP1, (unsigned __int8 *)aP1->__pad_24, aIsveinhole, aP1->IsVeinhole); /*0x71def6*/
-    aP1->IsVeinhole = Bool_Overwrite; /*0x71defd*/
-    if ( Bool_Overwrite ) /*0x71df03*/
-    {
-      aP1->IsLogic[0] = 0; /*0x71df05*/
-      aP1->LegalTarget[0] = 1; /*0x71df0c*/
+  INIClass::ResetSection((INIClass *)a2);  /*0x71deb3*/
+  if ( ((ObjectTypeClass *)this)->LoadFromINI(a2) )
+  {  /*0x71debb*/
+    if ( this->Strength == -1 )
+      this->Strength = *(unsigned int *)&dword_8871E0->__pad_FFC[328];  /*0x71dedc*/  /*0x71decf*/
+    Bool_Overwrite = INIClass::ReadBool_Overwrite(
+                       (int *)a2,
+                       (unsigned __int8 *)this->__pad_24,
+                       aIsveinhole,
+                       this->IsVeinhole[0]);  /*0x71def6*/
+    this->IsVeinhole[0] = Bool_Overwrite;  /*0x71defd*/
+    if ( Bool_Overwrite )
+    {  /*0x71df03*/
+      this->IsLogic[0] = 0;  /*0x71df05*/
+      this->LegalTarget[0] = 1;  /*0x71df0c*/
     }
-    char v6; // al
-    v6 = INIClass::ReadBool_Overwrite((int *)aP1, (unsigned __int8 *)aP1->__pad_24, aWaterbound, aP1->WaterBound); /*0x71df22*/
-    char SpawnsTiberium; // cl
-    SpawnsTiberium = aP1->SpawnsTiberium; /*0x71df27*/
-    aP1->WaterBound = v6; /*0x71df2d*/
-    char v8; // al
-    v8 = INIClass::ReadBool_Overwrite((int *)aP1, (unsigned __int8 *)aP1->q024, aSpawnstiberium, SpawnsTiberium); /*0x71df3c*/
-    char IsFlammable; // [esp+4h] [ebp-218h]
-    IsFlammable = aP1->IsFlammable; /*0x71df49*/
-    aP1->SpawnsTiberium = v8; /*0x71df50*/
-    aP1->IsFlammable = INIClass::ReadBool_Overwrite((int *)aP1, (unsigned __int8 *)aP1->__pad_24, aIsflammable, IsFlammable); /*0x71df5b*/
-    int v9; // eax
-    v9 = INIClass::LookupEnum( /*0x71df79*/
-           (INIClass *)&DataGlobal_887180,
-           (unsigned __int8 *)aP1->?,
-           g_INI_Key_Foundation,
-           aP1->Foundation);
-    int v10 = 5 * v9; // ecx /*0x71df7e*/
-    aP1->Foundation = v9; /*0x71df81*/
-    LOBYTE(v9) = aP1->Theater[0]; /*0x71df87*/
-    aP1->FoundationData = (CellStruct *)(8 * v10 + 11595200); /*0x71df96*/
-    if ( !(unsigned char)v9 ) /*0x71df9c*/
-    {
-      char Buffer[512]; // [esp+1Ch] [ebp-200h] BYREF
-      _makepath(Buffer, 0, 0, aP1->ImageFile, Ext); /*0x71dfad*/
-      aP1->Image = (SHPStruct *)SearchMIXFile(Buffer, 0); /*0x71dfc0*/
+    v6 = INIClass::ReadBool_Overwrite((int *)a2, (unsigned __int8 *)this->__pad_24, aWaterbound, this->WaterBound[0]);  /*0x71df22*/
+    v7 = this->SpawnsTiberium[0];  /*0x71df27*/
+    this->WaterBound[0] = v6;  /*0x71df2d*/
+    v8 = INIClass::ReadBool_Overwrite((int *)a2, (unsigned __int8 *)this->__pad_24, aSpawnstiberium, v7);  /*0x71df3c*/
+    v21 = this->IsFlammable[0];  /*0x71df49*/
+    this->SpawnsTiberium[0] = v8;  /*0x71df50*/
+    this->IsFlammable[0] = INIClass::ReadBool_Overwrite((int *)a2, (unsigned __int8 *)this->__pad_24, aIsflammable, v21);  /*0x71df5b*/
+    v9 = INIClass::LookupEnum(&dword_887180, (unsigned __int8 *)this->ImageFile, g_INI_Key_Foundation, this->Foundation);  /*0x71df79*/
+    v10 = 5 * v9;  /*0x71df7e*/
+    this->Foundation = v9;  /*0x71df81*/
+    LOBYTE(v9) = this->Theater[0];  /*0x71df87*/
+    this->FoundationData = 8 * v10 + 11595200;  /*0x71df96*/
+    if ( !(unsigned char)v9 )
+    {  /*0x71df9c*/
+      _makepath(Buffer, 0, 0, this->ImageFile, Ext);  /*0x71dfad*/
+      this->Image = (int)SearchMIXFile(Buffer, 0);  /*0x71dfc0*/
     }
-    MixFileClass *v11; // eax
-    v11 = (MixFileClass *)(*((int (**)(TerrainTypeClass *))aP1->ObjectTypeClass + 39))(aP1); /*0x71dfca*/
-    if ( v11 ) /*0x71dfd2*/
-    {
-      int PixelData; // eax
-      PixelData = MixFileClass::GetPixelData(v11, (int)&v23, 0); /*0x71dfdd*/
-      *(unsigned short *)aP1->RadarColor = *(unsigned short *)PixelData; /*0x71dfeb*/
-      aP1->RadarColor[2] = *(unsigned char *)(PixelData + 2); /*0x71dff5*/
+    v11 = (MixFileClass *)(*(int (**)(TerrainTypeClass *))(this->vfptr + 156))(this);  /*0x71dfca*/
+    if ( v11 )
+    {  /*0x71dfd2*/
+      PixelData = MixFileClass::GetPixelData(v11, (int)&v23, 0);  /*0x71dfdd*/
+      *(unsigned short *)this->RadarColor = *(unsigned short *)PixelData;  /*0x71dfeb*/
+      this->RadarColor[2] = *(unsigned char *)(PixelData + 2);  /*0x71dff5*/
     }
-    int Coord; // eax
-    Coord = INIClass::GetCoord( /*0x71e00c*/
-              (INIClass *)aP1,
+    Coord = INIClass::GetCoord(
+              (INIClass *)a2,
               (int)&v23,
-              (unsigned __int8 *)aP1->?,
+              (unsigned __int8 *)this->__pad_24,
               aRadarcolor,
-              (unsigned __int8 *)aP1->RadarColor);
-    char IsAnimated; // cl
-    IsAnimated = aP1->IsAnimated; /*0x71e014*/
-    *(unsigned short *)aP1->RadarColor = *(unsigned short *)Coord; /*0x71e01a*/
-    aP1->RadarColor[2] = *(unsigned char *)(Coord + 2); /*0x71e02a*/
-    char v15; // al
-    v15 = INIClass::ReadBool_Overwrite((int *)aP1, (unsigned __int8 *)aP1->q024, aIsanimated, IsAnimated); /*0x71e02d*/
-    int AnimationRate; // [esp+4h] [ebp-218h]
-    AnimationRate = aP1->AnimationRate; /*0x71e03a*/
-    aP1->IsAnimated = v15; /*0x71e041*/
-    int Int_Overwrite; // eax
-    Int_Overwrite = INIClass::ReadInt_Overwrite((bool *)aP1, (unsigned __int8 *)aP1->__pad_24, aAnimationrate, AnimationRate); /*0x71e047*/
-    double AnimationProbability; // st6
-    AnimationProbability = aP1->AnimationProbability; /*0x71e04c*/
-    aP1->AnimationRate = Int_Overwrite; /*0x71e057*/
-    INIClass::ReadDouble_Overwrite((double *)aP1, (unsigned __int8 *)aP1->q024, aAnimationproba, AnimationProbability); /*0x71e066*/
-    int TemperateOccupationBits; // eax
-    TemperateOccupationBits = aP1->TemperateOccupationBits; /*0x71e06b*/
-    double v2; // st7
-    aP1->AnimationProbability = v2; /*0x71e073*/
-    int v19; // eax
-    v19 = INIClass::ReadInt_Overwrite((bool *)aP1, (unsigned __int8 *)aP1->__pad_24, aTemperateoccup, TemperateOccupationBits); /*0x71e080*/
-    int SnowOccupationBits; // ecx
-    SnowOccupationBits = aP1->SnowOccupationBits; /*0x71e085*/
-    aP1->TemperateOccupationBits = v19; /*0x71e08b*/
-    result = INIClass::ReadInt_Overwrite((bool *)aP1, (unsigned __int8 *)aP1->__pad_24, aSnowoccupation, SnowOccupationBits); /*0x71e09a*/
-    aP1->SnowOccupationBits = result; /*0x71e0a0*/
-    (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x71e0a8*/
+              (unsigned __int8 *)this->RadarColor);  /*0x71e00c*/
+    v14 = this->IsAnimated[0];  /*0x71e014*/
+    *(unsigned short *)this->RadarColor = *(unsigned short *)Coord;  /*0x71e01a*/
+    this->RadarColor[2] = *(unsigned char *)(Coord + 2);  /*0x71e02a*/
+    v15 = INIClass::ReadBool_Overwrite((int *)a2, (unsigned __int8 *)this->__pad_24, aIsanimated, v14);  /*0x71e02d*/
+    AnimationRate = this->AnimationRate;  /*0x71e03a*/
+    this->IsAnimated[0] = v15;  /*0x71e041*/
+    Int_Overwrite = INIClass::ReadInt_Overwrite(
+                      (bool *)a2,
+                      (unsigned __int8 *)this->__pad_24,
+                      aAnimationrate,
+                      AnimationRate);  /*0x71e047*/
+    v17 = *(float *)&this->AnimationProbability;  /*0x71e04c*/
+    this->AnimationRate = Int_Overwrite;  /*0x71e057*/
+    INIClass::ReadDouble_Overwrite((double *)a2, (unsigned __int8 *)this->__pad_24, aAnimationproba, v17);  /*0x71e066*/
+    TemperateOccupationBits = this->TemperateOccupationBits;  /*0x71e06b*/
+    *(float *)&this->AnimationProbability = v2;  /*0x71e073*/
+    v19 = INIClass::ReadInt_Overwrite(
+            (bool *)a2,
+            (unsigned __int8 *)this->__pad_24,
+            aTemperateoccup,
+            TemperateOccupationBits);  /*0x71e080*/
+    SnowOccupationBits = this->SnowOccupationBits;  /*0x71e085*/
+    this->TemperateOccupationBits = v19;  /*0x71e08b*/
+    result = INIClass::ReadInt_Overwrite(
+               (bool *)a2,
+               (unsigned __int8 *)this->__pad_24,
+               aSnowoccupation,
+               SnowOccupationBits);  /*0x71e09a*/
+    this->SnowOccupationBits = result;  /*0x71e0a0*/
+    LOBYTE(result) = 1;  /*0x71e0a8*/
   }
   else
   {
-    (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x71e0b5*/
+    LOBYTE(result) = 0;  /*0x71e0b5*/
   }
-  return result; /*0x71e0a7*/
+  return result;  /*0x71e0a7*/
 
 }
 }
@@ -373,7 +386,7 @@ TerrainTypeClass * TerrainTypeClass::ddtor(void * a2, char a3)
     }
     while ( v4 < dword_A8E328 ); /*0x71e3ec*/
   }
-  ObjectTypeClass::Destruct((int)a3); /*0x71e3f0*/
+  ((int)a3)->Destruct(); /*0x71e3f0*/
   if ( (a3 & 1) != 0 ) /*0x71e3fa*/
     operator delete((void *)(a3)); /*0x71e3fd*/
   return &a3->ptr_0; /*0x71e407*/
@@ -422,7 +435,7 @@ TerrainClass * TerrainTypeClass::GetTileIndex(int a2, void *a2_2, void *a3, void
   TerrainClass *v3; // eax
   v3 = (TerrainClass *)operator new(0xE0u); /*0x71de18*/
   if ( v3 ) /*0x71de22*/
-    return TerrainClass::Construct(v3, this, (int16_t *)&g_BuildingLoadQueue_Array.ImpactWaterSound); /*0x71de2c*/
+    return (v3)->Construct(this, (int16_t *)&g_BuildingLoadQueue_Array.ImpactWaterSound); /*0x71de2c*/
   else
     return 0; /*0x71de35*/
 }
@@ -452,23 +465,23 @@ int TerrainTypeClass::PowerDrainUpdate(int * a2)
 {
 
 
-  AbstractTypeClass::ProcessPower((AbstractTypeClass *)this, a2); /*0x71e149*/
+  ((AbstractTypeClass *)this)->ProcessPower(a2); /*0x71e149*/
   Power::TimerProcess(this->ArrayIndex); /*0x71e157*/
   int v3; // ecx
   LOBYTE(v3) = this->WaterBound[0]; /*0x71e15c*/
-  Power::FlagProcess((Power *)a2, v3); /*0x71e165*/
+  ((Power *)a2)->FlagProcess(v3); /*0x71e165*/
   int v4; // edx
   LOBYTE(v4) = this->SpawnsTiberium_d[0]; /*0x71e16a*/
   int v5; // eax
-  v5 = Power::FlagProcess((Power *)a2, v4); /*0x71e173*/
+  v5 = ((Power *)a2)->FlagProcess(v4); /*0x71e173*/
   LOBYTE(v5) = this->IsFlammable_d[0]; /*0x71e178*/
-  Power::FlagProcess((Power *)a2, v5); /*0x71e181*/
+  ((Power *)a2)->FlagProcess(v5); /*0x71e181*/
   Power::TimerProcess(this->Foundation); /*0x71e18f*/
   int v6; // edx
   LOBYTE(v6) = this->IsAnimated_d[0]; /*0x71e194*/
-  Power::FlagProcess((Power *)a2, v6); /*0x71e19d*/
+  ((Power *)a2)->FlagProcess(v6); /*0x71e19d*/
   Power::TimerProcess(this->AnimationRate); /*0x71e1ab*/
-  return Checksummer::Add_float((Checksummer *)a2, LODWORD(this->AnimationProbability)); /*0x71e1be*/
+  return ((Checksummer *)a2)->Add_float(LODWORD(this->AnimationProbability)); /*0x71e1be*/
 
 }
 // 0x71E1D0
@@ -481,14 +494,14 @@ int  TerrainTypeClass::SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1)
   {
     if ( aP0 ) /*0x71e1e6*/
     {
-      ObjectTypeClass::Construct((ObjectTypeClass *)aP0, (int)&aP1); /*0x71e1ef*/
+      ((ObjectTypeClass *)aP0)->Construct((int)&aP1); /*0x71e1ef*/
       /* X11: ptr_0 install elided (implicit via TerrainTypeClass virtuals 0x71e1f4) */
       /* X11: ptr_0 install elided (implicit via TerrainTypeClass virtuals 0x71e1fa) */
       /* X11: ptr_0 install elided (implicit via TerrainTypeClass virtuals 0x71e201) */
       /* X11: ptr_0 install elided (implicit via TerrainTypeClass virtuals 0x71e208) */
     }
-    VoxelAnimType::LoadAnim((char *)aP0); /*0x71e211*/
-    ObjectTypeClass::Load2DArt((char *)aP0); /*0x71e218*/
+    ((char *)aP0)->LoadAnim(); /*0x71e211*/
+    ((char *)aP0)->Load2DArt(); /*0x71e218*/
     aP0->FoundationData = (CellStruct *)(40 * aP0->Foundation + 11595200); /*0x71e22d*/
     return 0; /*0x71e233*/
   }

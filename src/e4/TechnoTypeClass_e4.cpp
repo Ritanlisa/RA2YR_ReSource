@@ -147,7 +147,7 @@ unsigned int * TechnoTypeClass::LoadBase(char *aP1, void *a2)
   TeamTypeClass **v6; // edx
   int v7; // eax
 
-  AbstractTypeClass::Constructor((int *)this, aP1); /*0x6f06ea*/
+  ((int *)this)->Constructor(aP1); /*0x6f06ea*/
   this->u32_98 = -1; /*0x6f06f7*/
   this->Armor = -1; /*0x6f06ff*/
   this->Strength = 1; /*0x6f0705*/
@@ -236,7 +236,7 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3, void *a3_1)  // G57w11: d
 {
 
 
-  ObjectTypeClass::ConstructFull((int)this, Source); /*0x710afb*/
+  ((int)this)->ConstructFull(Source); /*0x710afb*/
   this->armed = 1; /*0x710b02*/
   this->weaponCount = 0; /*0x710b0e*/
   this->weapon1 = 0; /*0x710b14*/
@@ -313,7 +313,7 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3, void *a3_1)  // G57w11: d
   this->LeptonMindControlOffset = 70; /*0x710d28*/
   this->PixelSelectionBracketDelta = 0; /*0x710d33*/
   this->PipWrap = 0; /*0x710d40*/
-  VectorClass::BuildingTypeConstructor(&this->Dock, 0, 0); /*0x710d46*/
+  (&this->Dock)->BuildingTypeConstructor(0, 0); /*0x710d46*/
   this->u32_3FC = 10; /*0x710d4b*/
   this->u32_3F8 = 0; /*0x710d51*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_131447) */  /*0x710d57*/
@@ -399,7 +399,7 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3, void *a3_1)  // G57w11: d
   this->GuardRange = 0; /*0x710fb1*/
   this->MinDebris = 0; /*0x710fb7*/
   this->MaxDebris = 0; /*0x710fbd*/
-  AnimTypeVector::Constructor(&this->DebrisAnims, 0, 0); /*0x710fc3*/
+  (&this->DebrisAnims)->Constructor(0, 0); /*0x710fc3*/
   this->u32_5D8 = 10; /*0x710fc8*/
   this->u32_5D4 = 0; /*0x710fce*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_131447) */  /*0x710fd4*/
@@ -499,11 +499,11 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3, void *a3_1)  // G57w11: d
   this->TurretOffset = 0; /*0x711222*/
   this->CanBeHidden = 1; /*0x711229*/
   this->Points2 = 0; /*0x711237*/
-  AnimTypeVector::Constructor(&this->Explosion, 0, 0); /*0x71123d*/
+  (&this->Explosion)->Constructor(0, 0); /*0x71123d*/
   this->u32_740 = 10; /*0x71124a*/
   this->u32_73C = 0; /*0x711250*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_131447) */  /*0x711256*/
-  AnimTypeVector::Constructor(&this->DestroyAnim, 0, 0); /*0x711260*/
+  (&this->DestroyAnim)->Constructor(0, 0); /*0x711260*/
   this->u32_75C = 10; /*0x711265*/
   this->ptr_758 = 0; /*0x71126b*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_131447) */  /*0x711271*/
@@ -769,13 +769,13 @@ void TechnoTypeClass::Construct(int aP1, void *a2, void *a3, void *a4, void *a5,
   int v3; // eax
   int v4; // ecx
 
-  ObjectTypeClass::Construct(aP1); /*0x71184b*/
-  TechnoTypeClass::Constructor_0((TechnoTypeClass *)this->qC24 + 44), aP1); /*0x711859*/
+  (aP1)->Construct(); /*0x71184b*/
+  ((TechnoTypeClass *)this->qC24 + 44)->Constructor_0(), aP1); /*0x711859*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_131447) */  /*0x71185e*/
   IntDynamicVector::Construct(&this->u32_CC0, aP1); /*0x71186d*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_131447) */  /*0x711872*/
   this->unknown_3C0 = 0; /*0x711883*/
-  TechnoTypeClass::Constructor_1(&this->u32_98, aP1); /*0x711889*/
+  (&this->u32_98)->Constructor_1(aP1); /*0x711889*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_131447) */  /*0x71188e*/
   IntDynamicVector::Construct(&this->q1050, aP1); /*0x71189e*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_131447) */  /*0x7118a3*/
@@ -797,7 +797,7 @@ void TechnoTypeClass::Construct(int aP1, void *a2, void *a3, void *a4, void *a5,
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_131447) */  /*0x71194b*/
   IntDynamicVector::Construct(&this->u32_98, aP1); /*0x71195b*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_131447) */  /*0x711960*/
-  ObjectTypeClass::CheckFlag(&this->q1710, aP1); /*0x711970*/
+  (&this->q1710)->CheckFlag(aP1); /*0x711970*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_131447) */  /*0x711975*/
   IntDynamicVector::Construct((IntDynamicVector *)this->q18B0 + 48), aP1); /*0x711985*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_131447) */  /*0x71198a*/
@@ -805,9 +805,9 @@ void TechnoTypeClass::Construct(int aP1, void *a2, void *a3, void *a4, void *a5,
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_131447) */  /*0x71199f*/
   this->CameoFile = 0; /*0x7119ac*/
   this->AltCameoFile = 0; /*0x7119b5*/
-  ObjectTypeClass::CheckFlag((ObjectTypeClass *)this->u8_1C34 + 124), aP1); /*0x7119bb*/
+  ((ObjectTypeClass *)this->u8_1C34 + 124)->CheckFlag(), aP1); /*0x7119bb*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_131447) */  /*0x7119c0*/
-  ObjectTypeClass::CheckFlag(&this->u32_98, aP1); /*0x7119d0*/
+  (&this->u32_98)->CheckFlag(aP1); /*0x7119d0*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_131447) */  /*0x7119df*/
   TypeList::ParticleConstructor((TypeList *)this->u8_1C34 + 428), 0, 0); /*0x7119e6*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_131447) */  /*0x7119eb*/
@@ -887,12 +887,12 @@ int TechnoTypeClass::DTOR(void *a1)
   int v3; // eax
   v3 = (*(int (**)(unsigned int *, void **))(dword_B0F670 + 16))(&dword_B0F670, &v17); /*0x711b66*/
   if ( v3 != -1 ) /*0x711b6c*/
-    DynamicVector::RemoveItem((DynamicVector *)&dword_B0F670, v3); /*0x711b74*/
+    ((DynamicVector *)&dword_B0F670)->RemoveItem(v3); /*0x711b74*/
   v17 = a1; /*0x711b89*/
   int v4; // eax
   v4 = (*(int (**)(TechnoTypeClass *, void **))(stru_A8EB00.ptr_0 + 16))(&stru_A8EB00, &v17); /*0x711b8d*/
   if ( v4 != -1 ) /*0x711b93*/
-    TechnoTypeClass::RemoveItem(&stru_A8EB00, v4); /*0x711b9b*/
+    (&stru_A8EB00)->RemoveItem(v4); /*0x711b9b*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x711ba7*/
   VectorClass::Cleanup((int)(a1 + 1940)); /*0x711bad*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x711bb8*/
@@ -902,15 +902,15 @@ int TechnoTypeClass::DTOR(void *a1)
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x711bda*/
   DynamicVectorClass::Destroy_Alt(&a1->Explosion); /*0x711be0*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x711bf0*/
-  VectorClass::Destroy((int)(a1 + 1620)); /*0x711bf2*/
+  ((int)(a1 + 1620))->Destroy(); /*0x711bf2*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x711bfd*/
-  VectorClass::Destroy((int)(a1 + 1592)); /*0x711bff*/
+  ((int)(a1 + 1592))->Destroy(); /*0x711bff*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x711c0a*/
   DynamicVectorClass::Destroy_Alt(&a1->DebrisAnims); /*0x711c10*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x711c1b*/
-  VectorClass::Destroy((int)(a1 + 1296)); /*0x711c1d*/
+  ((int)(a1 + 1296))->Destroy(); /*0x711c1d*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x711c28*/
-  VectorClass::Destroy((int)(a1 + 1268)); /*0x711c2a*/
+  ((int)(a1 + 1268))->Destroy(); /*0x711c2a*/
   void *v5; // eax
   v5 = (void *)a1->VoiceFeedback_Items; /*0x711c2f*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x711c35*/
@@ -1021,7 +1021,7 @@ int TechnoTypeClass::DTOR(void *a1)
   }
   a1->VoxelAnimList_FlagByte = 0; /*0x711e5f*/
   a1->VoxelAnimList_Capacity = 0; /*0x711e65*/
-  return ObjectTypeClass::Destruct((int)a1); /*0x711e70*/
+  return ((int)a1)->Destruct(); /*0x711e70*/
 }
 } // namespace gamemd
 // 0x711F00
@@ -1033,9 +1033,9 @@ int TechnoTypeClass::ComputeValueSimple(float * a2)
   if ( !a2 ) /*0x711f0d*/
     return (*(int (**)(TechnoTypeClass *))(this->ObjectTypeClass[0] + 172))(this); /*0x711f52*/
   float v5; // [esp+Ch] [ebp-4h]
-  v5 = TechnoTypeClass::Dispatch((TechnoTypeClass *)a2, this); /*0x711f17*/
+  v5 = ((TechnoTypeClass *)a2)->Dispatch(this); /*0x711f17*/
   float ThreatMultiplier; // [esp+8h] [ebp-8h]
-  ThreatMultiplier = TechnoTypeClass::GetThreatMultiplier((float *)a2, this); /*0x711f27*/
+  ThreatMultiplier = ((float *)a2)->GetThreatMultiplier(this); /*0x711f27*/
   TechnoTypeClass *v6; // [esp+14h] [ebp+4h]
   v6 = (TechnoTypeClass *)(*(int (**)(TechnoTypeClass *))(this->ObjectTypeClass[0] + 172))(this); /*0x711f31*/
   int result; // eax
@@ -1058,9 +1058,9 @@ int TechnoTypeClass::ComputeValue(void * a2, float a3)
   if ( a2 ) /*0x711f8c*/
   {
     float v12; // [esp+18h] [ebp+8h]
-    v12 = TechnoTypeClass::Dispatch((TechnoTypeClass *)a2, this); /*0x711f9a*/
+    v12 = ((TechnoTypeClass *)a2)->Dispatch(this); /*0x711f9a*/
     float ThreatMultiplier; // [esp+Ch] [ebp-4h]
-    ThreatMultiplier = TechnoTypeClass::GetThreatMultiplier((float *)a2, this); /*0x711fac*/
+    ThreatMultiplier = ((float *)a2)->GetThreatMultiplier(this); /*0x711fac*/
     if ( *&this->Soylent ) /*0x711fa6*/
     {
       (result) = ((result) & ~0xFFFF) | ((Math::RoundToInt((double)*&this->u32_98 * v12)) & 0xFFFF); /*0x711fc0*/
@@ -1074,7 +1074,7 @@ int TechnoTypeClass::ComputeValue(void * a2, float a3)
       int v7 = v6; // esi /*0x711fec*/
       int v13; // [esp+18h] [ebp+8h]
       v13 = v6; /*0x711ff0*/
-      if ( (unsigned __int8)House::IsCurrentPlayer((House *)a2) ) /*0x711ff4*/
+      if ( (unsigned __int8)((House *)a2)->IsCurrentPlayer() ) /*0x711ff4*/
       {
         int v8; // eax
         (v8) = ((v8) & ~0xFFFF) | ((Math::RoundToInt((double)v13 * v9)) & 0xFFFF); /*0x712005*/
@@ -1137,245 +1137,245 @@ DynamicVectorClass_flat * * TechnoTypeClass::SaveLoad_Prefix(ObjectTypeClass * a
   char Filename[256]; // [esp+28Ch] [ebp-204h] BYREF
   char Buffer[260]; // [esp+38Ch] [ebp-104h] BYREF
 
-  Dock = (TypeList *)this->Dock;
-  (*(void (**)(int *))(this->Dock[0] + 12))(this->Dock);
-  (*(void (**)(int *))(this->DebrisTypes[0] + 12))(this->DebrisTypes);
-  (*(void (**)(int *))(this->DebrisAnims[0] + 12))(this->DebrisAnims);
-  (*(void (**)(int *))(this->VoiceSelect[0] + 12))(this->VoiceSelect);
-  (*(void (**)(int *))(this->VoiceSelectEnslaved[0] + 12))(this->VoiceSelectEnslaved);
-  (*(void (**)(int *))(this->VoiceSelectDeactivated[0] + 12))(this->VoiceSelectDeactivated);
-  (*(void (**)(int *))(this->VoiceMove[0] + 12))(this->VoiceMove);
-  (*(void (**)(int *))(this->VoiceAttack[0] + 12))(this->VoiceAttack);
-  (*(void (**)(int *))(this->VoiceSpecialAttack[0] + 12))(this->VoiceSpecialAttack);
-  (*(void (**)(int *))(this->VoiceDie[0] + 12))(this->VoiceDie);
-  (*(void (**)(int *))(this->VoiceFeedback[0] + 12))(this->VoiceFeedback);
-  (*(void (**)(int *))(this->MoveSound[0] + 12))(this->MoveSound);
-  (*(void (**)(int *))(this->DieSound[0] + 12))(this->DieSound);
-  (*(void (**)(int *))(this->Explosion[0] + 12))(this->Explosion);
-  (*(void (**)(int *))(this->DestroyAnim[0] + 12))(this->DestroyAnim);
-  (*(void (**)(int *))(this->Prerequisite[0] + 12))(this->Prerequisite);
-  (*(void (**)(int *))(this->PrerequisiteOverride[0] + 12))(this->PrerequisiteOverride);
-  (*(void (**)(int *))(this->DebrisMaximums[0] + 12))(this->DebrisMaximums);
-  result = ObjectTypeClass::LoadCleanup((ObjectTypeClass *)this, a2);
+  Dock = (TypeList *)this->Dock;  /*0x716307*/
+  (*(void (**)(int *))(this->Dock[0] + 12))(this->Dock);  /*0x71630f*/
+  (*(void (**)(int *))(this->DebrisTypes[0] + 12))(this->DebrisTypes);  /*0x716320*/
+  (*(void (**)(int *))(this->DebrisAnims[0] + 12))(this->DebrisAnims);  /*0x71632f*/
+  (*(void (**)(int *))(this->VoiceSelect[0] + 12))(this->VoiceSelect);  /*0x71633e*/
+  (*(void (**)(int *))(this->VoiceSelectEnslaved[0] + 12))(this->VoiceSelectEnslaved);  /*0x71634d*/
+  (*(void (**)(int *))(this->VoiceSelectDeactivated[0] + 12))(this->VoiceSelectDeactivated);  /*0x71635c*/
+  (*(void (**)(int *))(this->VoiceMove[0] + 12))(this->VoiceMove);  /*0x71636b*/
+  (*(void (**)(int *))(this->VoiceAttack[0] + 12))(this->VoiceAttack);  /*0x71637a*/
+  (*(void (**)(int *))(this->VoiceSpecialAttack[0] + 12))(this->VoiceSpecialAttack);  /*0x716389*/
+  (*(void (**)(int *))(this->VoiceDie[0] + 12))(this->VoiceDie);  /*0x716398*/
+  (*(void (**)(int *))(this->VoiceFeedback[0] + 12))(this->VoiceFeedback);  /*0x7163a7*/
+  (*(void (**)(int *))(this->MoveSound[0] + 12))(this->MoveSound);  /*0x7163b6*/
+  (*(void (**)(int *))(this->DieSound[0] + 12))(this->DieSound);  /*0x7163c5*/
+  (*(void (**)(int *))(this->Explosion[0] + 12))(this->Explosion);  /*0x7163d4*/
+  (*(void (**)(int *))(this->DestroyAnim[0] + 12))(this->DestroyAnim);  /*0x7163e3*/
+  (*(void (**)(int *))(this->Prerequisite[0] + 12))(this->Prerequisite);  /*0x7163f2*/
+  (*(void (**)(int *))(this->PrerequisiteOverride[0] + 12))(this->PrerequisiteOverride);  /*0x716401*/
+  (*(void (**)(int *))(this->DebrisMaximums[0] + 12))(this->DebrisMaximums);  /*0x716410*/
+  result = ObjectTypeClass::LoadCleanup((ObjectTypeClass *)this, a2);  /*0x71641c*/
   if ( result >= 0 )
-  {
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->DeploysInto);
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->UndeploysInto);
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->PowersUnit);
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->NaturalParticleSystem);
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->RefinerySmokeParticleSystem);
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->JumpjetAccel);
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->SuppressionThreshold);
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->SlavesNumber);
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->AirstrikeTeamType);
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->EliteAirstrikeTeamType);
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->UnloadingClass);
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->DeployingAnim);
+  {  /*0x716423*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->DeploysInto);  /*0x716435*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->UndeploysInto);  /*0x716446*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->PowersUnit);  /*0x716457*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->NaturalParticleSystem);  /*0x716468*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->RefinerySmokeParticleSystem);  /*0x716479*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->JumpjetAccel);  /*0x71648a*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->SuppressionThreshold);  /*0x71649b*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->SlavesNumber);  /*0x7164ac*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->AirstrikeTeamType);  /*0x7164bd*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->EliteAirstrikeTeamType);  /*0x7164ce*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->UnloadingClass);  /*0x7164df*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->DeployingAnim);  /*0x7164f0*/
     if ( this != (TechnoTypeClass *)-1000 )
-      TypeList::BuildingTypeConstructor(Dock);
-    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v36, 4, 0);
+      TypeList::BuildingTypeConstructor(Dock);  /*0x7164fb*/  /*0x7164f7*/
+    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v36, 4, 0);  /*0x71650c*/
     for ( i = 0; i < v36; ++i )
-    {
-      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v37, 4, 0);
-      DynamicVector::Add_Alt3((DynamicVector *)Dock, &v37);
+    {  /*0x71651d*/
+      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v37, 4, 0);  /*0x71652b*/
+      ((DynamicVector *)Dock)->Add_Alt3(&v37);  /*0x716535*/
     }
     if ( this != (TechnoTypeClass *)-788 )
-      TypeList::VoxelAnimConstructor((TypeList *)this->DebrisTypes);
-    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v36, 4, 0);
+      TypeList::VoxelAnimConstructor((TypeList *)this->DebrisTypes);  /*0x716551*/  /*0x71654d*/
+    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v36, 4, 0);  /*0x716562*/
     for ( j = 0; j < v36; ++j )
-    {
-      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v37, 4, 0);
-      DynamicVector::Add2((DynamicVector *)this->DebrisTypes, &v37);
+    {  /*0x71656d*/
+      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v37, 4, 0);  /*0x71657b*/
+      ((DynamicVector *)this->DebrisTypes)->Add2(&v37);  /*0x716585*/
     }
     if ( this != (TechnoTypeClass *)-1476 )
-      AnimTypeList::Constructor((AnimTypeList *)this->DebrisAnims);
-    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v36, 4, 0);
+      AnimTypeList::Constructor((AnimTypeList *)this->DebrisAnims);  /*0x71659d*/  /*0x716599*/
+    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v36, 4, 0);  /*0x7165ae*/
     for ( k = 0; k < v36; ++k )
-    {
-      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v37, 4, 0);
-      DynamicVector::Add_Alt4((DynamicVector *)this->DebrisAnims, &v37);
+    {  /*0x7165b9*/
+      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v37, 4, 0);  /*0x7165c7*/
+      ((DynamicVector *)this->DebrisAnims)->Add_Alt4(&v37);  /*0x7165d1*/
     }
     if ( this != (TechnoTypeClass *)-1044 )
-      TypeList::Construct((TypeList *)this->VoiceSelect);
-    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v36, 4, 0);
+      TypeList::Construct((TypeList *)this->VoiceSelect);  /*0x7165e9*/  /*0x7165e5*/
+    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v36, 4, 0);  /*0x7165fa*/
     for ( m = 0; m < v36; ++m )
-    {
-      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v37, 4, 0);
-      DynamicVector::Add_Alt((DynamicVector *)this->VoiceSelect, &v37);
+    {  /*0x716605*/
+      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v37, 4, 0);  /*0x716613*/
+      ((DynamicVector *)this->VoiceSelect)->Add_Alt(&v37);  /*0x71661d*/
     }
     if ( this != (TechnoTypeClass *)-1072 )
-      TypeList::Construct((TypeList *)this->VoiceSelectEnslaved);
-    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v36, 4, 0);
+      TypeList::Construct((TypeList *)this->VoiceSelectEnslaved);  /*0x716635*/  /*0x716631*/
+    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v36, 4, 0);  /*0x716646*/
     for ( n = 0; n < v36; ++n )
-    {
-      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v37, 4, 0);
-      DynamicVector::Add_Alt((DynamicVector *)this->VoiceSelectEnslaved, &v37);
+    {  /*0x716651*/
+      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v37, 4, 0);  /*0x71665f*/
+      ((DynamicVector *)this->VoiceSelectEnslaved)->Add_Alt(&v37);  /*0x716669*/
     }
     if ( this != (TechnoTypeClass *)-1100 )
-      TypeList::Construct((TypeList *)this->VoiceSelectDeactivated);
-    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v36, 4, 0);
+      TypeList::Construct((TypeList *)this->VoiceSelectDeactivated);  /*0x716681*/  /*0x71667d*/
+    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v36, 4, 0);  /*0x716692*/
     for ( ii = 0; ii < v36; ++ii )
-    {
-      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v37, 4, 0);
-      DynamicVector::Add_Alt((DynamicVector *)this->VoiceSelectDeactivated, &v37);
+    {  /*0x71669d*/
+      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v37, 4, 0);  /*0x7166ab*/
+      ((DynamicVector *)this->VoiceSelectDeactivated)->Add_Alt(&v37);  /*0x7166b5*/
     }
     if ( this != (TechnoTypeClass *)-1128 )
-      TypeList::Construct((TypeList *)this->VoiceMove);
-    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v36, 4, 0);
+      TypeList::Construct((TypeList *)this->VoiceMove);  /*0x7166cd*/  /*0x7166c9*/
+    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v36, 4, 0);  /*0x7166de*/
     for ( jj = 0; jj < v36; ++jj )
-    {
-      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v37, 4, 0);
-      DynamicVector::Add_Alt((DynamicVector *)this->VoiceMove, &v37);
+    {  /*0x7166e9*/
+      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v37, 4, 0);  /*0x7166f7*/
+      ((DynamicVector *)this->VoiceMove)->Add_Alt(&v37);  /*0x716701*/
     }
     if ( this != (TechnoTypeClass *)-1156 )
-      TypeList::Construct((TypeList *)this->VoiceAttack);
-    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v36, 4, 0);
+      TypeList::Construct((TypeList *)this->VoiceAttack);  /*0x716719*/  /*0x716715*/
+    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v36, 4, 0);  /*0x71672a*/
     for ( kk = 0; kk < v36; ++kk )
-    {
-      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v37, 4, 0);
-      DynamicVector::Add_Alt((DynamicVector *)this->VoiceAttack, &v37);
+    {  /*0x716735*/
+      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v37, 4, 0);  /*0x716743*/
+      ((DynamicVector *)this->VoiceAttack)->Add_Alt(&v37);  /*0x71674d*/
     }
     if ( this != (TechnoTypeClass *)-1184 )
-      TypeList::Construct((TypeList *)this->VoiceSpecialAttack);
-    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v36, 4, 0);
+      TypeList::Construct((TypeList *)this->VoiceSpecialAttack);  /*0x716765*/  /*0x716761*/
+    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v36, 4, 0);  /*0x716776*/
     for ( mm = 0; mm < v36; ++mm )
-    {
-      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v37, 4, 0);
-      DynamicVector::Add_Alt((DynamicVector *)this->VoiceSpecialAttack, &v37);
+    {  /*0x716781*/
+      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v37, 4, 0);  /*0x71678f*/
+      ((DynamicVector *)this->VoiceSpecialAttack)->Add_Alt(&v37);  /*0x716799*/
     }
     if ( this != (TechnoTypeClass *)-1212 )
-      TypeList::Construct((TypeList *)this->VoiceDie);
-    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v36, 4, 0);
+      TypeList::Construct((TypeList *)this->VoiceDie);  /*0x7167b1*/  /*0x7167ad*/
+    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v36, 4, 0);  /*0x7167c2*/
     for ( nn = 0; nn < v36; ++nn )
-    {
-      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v37, 4, 0);
-      DynamicVector::Add_Alt((DynamicVector *)this->VoiceDie, &v37);
+    {  /*0x7167cd*/
+      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v37, 4, 0);  /*0x7167db*/
+      ((DynamicVector *)this->VoiceDie)->Add_Alt(&v37);  /*0x7167e5*/
     }
     if ( this != (TechnoTypeClass *)-1240 )
-      TypeList::Construct((TypeList *)this->VoiceFeedback);
-    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v36, 4, 0);
+      TypeList::Construct((TypeList *)this->VoiceFeedback);  /*0x7167fd*/  /*0x7167f9*/
+    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v36, 4, 0);  /*0x71680e*/
     for ( i1 = 0; i1 < v36; ++i1 )
-    {
-      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v37, 4, 0);
-      DynamicVector::Add_Alt((DynamicVector *)this->VoiceFeedback, &v37);
+    {  /*0x716819*/
+      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v37, 4, 0);  /*0x716827*/
+      ((DynamicVector *)this->VoiceFeedback)->Add_Alt(&v37);  /*0x716831*/
     }
     if ( this != (TechnoTypeClass *)-1268 )
-      TypeList::Construct((TypeList *)this->MoveSound);
-    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v36, 4, 0);
+      TypeList::Construct((TypeList *)this->MoveSound);  /*0x716849*/  /*0x716845*/
+    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v36, 4, 0);  /*0x71685a*/
     for ( i2 = 0; i2 < v36; ++i2 )
-    {
-      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v37, 4, 0);
-      DynamicVector::Add_Alt((DynamicVector *)this->MoveSound, &v37);
+    {  /*0x716865*/
+      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v37, 4, 0);  /*0x716873*/
+      ((DynamicVector *)this->MoveSound)->Add_Alt(&v37);  /*0x71687d*/
     }
     if ( this != (TechnoTypeClass *)-1296 )
-      TypeList::Construct((TypeList *)this->DieSound);
-    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v36, 4, 0);
+      TypeList::Construct((TypeList *)this->DieSound);  /*0x716895*/  /*0x716891*/
+    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v36, 4, 0);  /*0x7168a6*/
     for ( i3 = 0; i3 < v36; ++i3 )
-    {
-      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v37, 4, 0);
-      DynamicVector::Add_Alt((DynamicVector *)this->DieSound, &v37);
+    {  /*0x7168b1*/
+      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v37, 4, 0);  /*0x7168bf*/
+      ((DynamicVector *)this->DieSound)->Add_Alt(&v37);  /*0x7168c9*/
     }
     if ( this != (TechnoTypeClass *)-1836 )
-      AnimTypeList::Constructor((AnimTypeList *)this->Explosion);
-    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v36, 4, 0);
+      AnimTypeList::Constructor((AnimTypeList *)this->Explosion);  /*0x7168e1*/  /*0x7168dd*/
+    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v36, 4, 0);  /*0x7168f2*/
     for ( i4 = 0; i4 < v36; ++i4 )
-    {
-      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v37, 4, 0);
-      DynamicVector::Add_Alt4((DynamicVector *)this->Explosion, &v37);
+    {  /*0x7168fd*/
+      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v37, 4, 0);  /*0x71690b*/
+      ((DynamicVector *)this->Explosion)->Add_Alt4(&v37);  /*0x716915*/
     }
     if ( this != (TechnoTypeClass *)-1864 )
-      AnimTypeList::Constructor((AnimTypeList *)this->DestroyAnim);
-    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v36, 4, 0);
+      AnimTypeList::Constructor((AnimTypeList *)this->DestroyAnim);  /*0x71692d*/  /*0x716929*/
+    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v36, 4, 0);  /*0x71693e*/
     for ( i5 = 0; i5 < v36; ++i5 )
-    {
-      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v37, 4, 0);
-      DynamicVector::Add_Alt4((DynamicVector *)this->DestroyAnim, &v37);
+    {  /*0x716949*/
+      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v37, 4, 0);  /*0x716957*/
+      ((DynamicVector *)this->DestroyAnim)->Add_Alt4(&v37);  /*0x716961*/
     }
     if ( this != (TechnoTypeClass *)-816 )
-      TypeList::Construct((TypeList *)this->DebrisMaximums);
-    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v36, 4, 0);
+      TypeList::Construct((TypeList *)this->DebrisMaximums);  /*0x716979*/  /*0x716975*/
+    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v36, 4, 0);  /*0x71698a*/
     for ( i6 = 0; i6 < v36; ++i6 )
-    {
-      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v37, 4, 0);
-      DynamicVector::Add_Alt((DynamicVector *)this->DebrisMaximums, &v37);
+    {  /*0x716995*/
+      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v37, 4, 0);  /*0x7169a3*/
+      ((DynamicVector *)this->DebrisMaximums)->Add_Alt(&v37);  /*0x7169ad*/
     }
     if ( this != (TechnoTypeClass *)-1592 )
-      TypeList::Construct((TypeList *)this->Prerequisite);
-    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v36, 4, 0);
+      TypeList::Construct((TypeList *)this->Prerequisite);  /*0x7169c5*/  /*0x7169c1*/
+    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v36, 4, 0);  /*0x7169d6*/
     for ( i7 = 0; i7 < v36; ++i7 )
-    {
-      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v37, 4, 0);
-      DynamicVector::Add_Alt((DynamicVector *)this->Prerequisite, &v37);
+    {  /*0x7169e1*/
+      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v37, 4, 0);  /*0x7169ef*/
+      ((DynamicVector *)this->Prerequisite)->Add_Alt(&v37);  /*0x7169f9*/
     }
     if ( this != (TechnoTypeClass *)-1620 )
-      TypeList::Construct((TypeList *)this->PrerequisiteOverride);
-    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v36, 4, 0);
+      TypeList::Construct((TypeList *)this->PrerequisiteOverride);  /*0x716a11*/  /*0x716a0d*/
+    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v36, 4, 0);  /*0x716a22*/
     for ( i8 = 0; i8 < v36; ++i8 )
-    {
-      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v37, 4, 0);
-      DynamicVector::Add_Alt((DynamicVector *)this->PrerequisiteOverride, &v37);
+    {  /*0x716a2d*/
+      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v37, 4, 0);  /*0x716a3b*/
+      ((DynamicVector *)this->PrerequisiteOverride)->Add_Alt(&v37);  /*0x716a45*/
     }
     if ( this != (TechnoTypeClass *)-1912 )
-      TechnoTypeClass::Constructor((TechnoTypeClass *)this->DamageParticleSystems);
-    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v36, 4, 0);
+      ((TechnoTypeClass *)this->DamageParticleSystems)->Constructor();  /*0x716a5d*/  /*0x716a59*/
+    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v36, 4, 0);  /*0x716a6e*/
     for ( i9 = 0; i9 < v36; ++i9 )
-    {
-      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v37, 4, 0);
-      TypeList::PushBack((TypeList *)this->DamageParticleSystems, &v37);
+    {  /*0x716a79*/
+      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v37, 4, 0);  /*0x716a87*/
+      TypeList::PushBack((TypeList *)this->DamageParticleSystems, &v37);  /*0x716a91*/
     }
     if ( this != (TechnoTypeClass *)-1940 )
-      TechnoTypeClass::Constructor((TechnoTypeClass *)this->DestroyParticleSystems);
-    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v36, 4, 0);
+      ((TechnoTypeClass *)this->DestroyParticleSystems)->Constructor();  /*0x716aa9*/  /*0x716aa5*/
+    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v36, 4, 0);  /*0x716aba*/
     for ( i10 = 0; i10 < v36; ++i10 )
-    {
-      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v37, 4, 0);
-      TypeList::PushBack((TypeList *)this->DestroyParticleSystems, &v37);
+    {  /*0x716ac5*/
+      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v37, 4, 0);  /*0x716ad3*/
+      TypeList::PushBack((TypeList *)this->DestroyParticleSystems, &v37);  /*0x716add*/
     }
     for ( i11 = 0; i11 < this->Dock[4]; ++i11 )
-      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(this->Dock[1] + 4 * i11));
+      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(this->Dock[1] + 4 * i11));  /*0x716b04*/  /*0x716af3*/
     for ( i12 = 0; i12 < this->Explosion[4]; ++i12 )
-      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(this->Explosion[1] + 4 * i12));
+      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(this->Explosion[1] + 4 * i12));  /*0x716b2f*/  /*0x716b1e*/
     for ( i13 = 0; i13 < this->DestroyAnim[4]; ++i13 )
-      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(this->DestroyAnim[1] + 4 * i13));
+      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(this->DestroyAnim[1] + 4 * i13));  /*0x716b5a*/  /*0x716b49*/
     for ( i14 = 0; i14 < this->DebrisTypes[4]; ++i14 )
-      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(this->DebrisTypes[1] + 4 * i14));
+      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(this->DebrisTypes[1] + 4 * i14));  /*0x716b85*/  /*0x716b74*/
     for ( i15 = 0; i15 < this->DebrisAnims[4]; ++i15 )
-      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(this->DebrisAnims[1] + 4 * i15));
-    Weapon = (int *)this->Weapon;
-    v30 = 18;
+      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(this->DebrisAnims[1] + 4 * i15));  /*0x716bb0*/  /*0x716b9f*/
+    Weapon = (int *)this->Weapon;  /*0x716bc0*/
+    v30 = 18;  /*0x716bc6*/
     do
-    {
-      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, Weapon);
-      Weapon += 7;
-      --v30;
+    {  /*0x716bda*/
+      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, Weapon);  /*0x716bd1*/
+      Weapon += 7;  /*0x716bd6*/
+      --v30;  /*0x716bd9*/
     }
-    while ( v30 );
-    EliteWeapon = (int *)this->EliteWeapon;
-    v32 = 18;
+    while ( v30 );  /*0x716bda*/
+    EliteWeapon = (int *)this->EliteWeapon;  /*0x716bdc*/
+    v32 = 18;  /*0x716be2*/
     do
-    {
-      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, EliteWeapon);
-      EliteWeapon += 7;
-      --v32;
+    {  /*0x716bf6*/
+      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, EliteWeapon);  /*0x716bed*/
+      EliteWeapon += 7;  /*0x716bf2*/
+      --v32;  /*0x716bf5*/
     }
-    while ( v32 );
+    while ( v32 );  /*0x716bf6*/
     for ( i16 = 0; i16 < this->DamageParticleSystems[4]; ++i16 )
       ObjectPtr::RegisterForTracking(
         (int)&SwizzleManagerClass_Instance,
-        (int *)(this->DamageParticleSystems[1] + 4 * i16));
+        (int *)(this->DamageParticleSystems[1] + 4 * i16));  /*0x716c15*/  /*0x716c04*/
     for ( i17 = 0; i17 < this->DestroyParticleSystems[4]; ++i17 )
       ObjectPtr::RegisterForTracking(
         (int)&SwizzleManagerClass_Instance,
-        (int *)(this->DestroyParticleSystems[1] + 4 * i17));
-    _makepath(Buffer, 0, 0, this->ImageFile, Ext);
-    this->Image = (int)SearchMIXFile(Buffer, 0);
+        (int *)(this->DestroyParticleSystems[1] + 4 * i17));  /*0x716c40*/  /*0x716c2f*/
+    _makepath(Buffer, 0, 0, this->ImageFile, Ext);  /*0x716c66*/
+    this->Image = (int)SearchMIXFile(Buffer, 0);  /*0x716c96*/
     INIClass::GetString(
       &dword_887180,
       (unsigned __int8 *)this->ImageFile,
       (unsigned __int8 *)&stru_842DD4.VoiceHarvest,
       &stru_842DD4.__pad_1714[72],
       Filename,
-      256);
+      256);  /*0x716c9c*/
     if ( !_strcmpi(Filename, &stru_842DD4.__pad_1714[72]) )
       INIClass::GetString(
         &dword_887180,
@@ -1383,35 +1383,35 @@ DynamicVectorClass_flat * * TechnoTypeClass::SaveLoad_Prefix(ObjectTypeClass * a
         (unsigned __int8 *)&stru_842DD4.VoiceHarvest,
         &stru_842DD4.__pad_1714[72],
         Filename,
-        256);
-    _makepath(Buffer, 0, 0, Filename, Ext);
-    this->Cameo = 0;
-    v35 = SearchMIXFile(Buffer, 0);
-    this->Cameo = (int)v35;
+        256);  /*0x716cd4*/  /*0x716cab*/
+    _makepath(Buffer, 0, 0, Filename, Ext);  /*0x716ced*/
+    this->Cameo = 0;  /*0x716cfe*/
+    v35 = SearchMIXFile(Buffer, 0);  /*0x716d04*/
+    this->Cameo = (int)v35;  /*0x716d0b*/
     if ( !v35 )
-      this->Cameo = (int)SearchMIXFile(aXxiconShp, 0);
+      this->Cameo = (int)SearchMIXFile(aXxiconShp, 0);  /*0x716d1f*/  /*0x716d11*/
     INIClass::GetString(
       &dword_887180,
       (unsigned __int8 *)this->ImageFile,
       (unsigned __int8 *)&stru_842DD4.UndeploySound,
       &g_INI_DefaultBuffer,
       Filename,
-      256);
-    _makepath(Buffer, 0, 0, Filename, Ext);
-    this->AltCameo = 0;
-    this->AltCameo = (int)SearchMIXFile(Buffer, 0);
+      256);  /*0x716d3f*/
+    _makepath(Buffer, 0, 0, Filename, Ext);  /*0x716d58*/
+    this->AltCameo = 0;  /*0x716d69*/
+    this->AltCameo = (int)SearchMIXFile(Buffer, 0);  /*0x716d8d*/
     INIClass::GetString(
       &dword_887180,
       (unsigned __int8 *)this->ImageFile,
       (unsigned __int8 *)g_INI_Key_Palette,
       &g_INI_DefaultBuffer,
       &this->__pad_DC8[8],
-      32);
+      32);  /*0x716d93*/
     if ( this->__pad_DC8[8] )
-      *(unsigned int *)&this->__pad_DC8[40] = FileExtension::MapHandler(&this->__pad_DC8[8]);
-    return 0;
+      *(unsigned int *)&this->__pad_DC8[40] = (&this->__pad_DC8[8])->MapHandler();  /*0x716da4*/  /*0x716d74*/
+    return 0;  /*0x716daa*/
   }
-  return result;
+  return result;  /*0x716dac*/
 
 }
 } // namespace gamemd
@@ -1441,68 +1441,68 @@ int TechnoTypeClass::SaveLoad_Prefix_0(unsigned int *a2, int *a3, int a4, int a5
   int v23; // edx
   int mm; // ebx
 
-  result = AbstractClass::SaveLoad_PrefixWrapper((AbstractClass *)this, (int)a2, (int)a3);
+  result = AbstractClass::SaveLoad_PrefixWrapper((AbstractClass *)this, (int)a2, (int)a3);  /*0x716dd1*/
   if ( result >= 0 )
-  {
-    v7 = *a2;
-    a3 = (int *)this->Dock[4];
-    (*(void (**)(unsigned int *, int **, int, unsigned int, int))(v7 + 16))(a2, &a3, 4, 0, v5);
+  {  /*0x716dd8*/
+    v7 = *a2;  /*0x716de4*/
+    a3 = (int *)this->Dock[4];  /*0x716df1*/
+    (*(void (**)(unsigned int *, int **, int, unsigned int, int))(v7 + 16))(a2, &a3, 4, 0, v5);  /*0x716df5*/
     for ( i = 0; i < a4; ++i )
-      (*(void (**)(unsigned int *, int, int, unsigned int))(*a2 + 16))(a2, this->Dock[1] + 4 * i, 4, 0);
-    v9 = *a2;
-    a4 = this->DebrisTypes[4];
-    (*(void (**)(unsigned int *, int *, int, unsigned int))(v9 + 16))(a2, &a4, 4, 0);
+      (*(void (**)(unsigned int *, int, int, unsigned int))(*a2 + 16))(a2, this->Dock[1] + 4 * i, 4, 0);  /*0x716e13*/  /*0x716e00*/
+    v9 = *a2;  /*0x716e23*/
+    a4 = this->DebrisTypes[4];  /*0x716e2f*/
+    (*(void (**)(unsigned int *, int *, int, unsigned int))(v9 + 16))(a2, &a4, 4, 0);  /*0x716e33*/
     for ( j = 0; j < a4; ++j )
-      (*(void (**)(unsigned int *, int, int, unsigned int))(*a2 + 16))(a2, this->DebrisTypes[1] + 4 * j, 4, 0);
-    v11 = *a2;
-    a4 = this->DebrisAnims[4];
-    (*(void (**)(unsigned int *, int *, int, unsigned int))(v11 + 16))(a2, &a4, 4, 0);
+      (*(void (**)(unsigned int *, int, int, unsigned int))(*a2 + 16))(a2, this->DebrisTypes[1] + 4 * j, 4, 0);  /*0x716e51*/  /*0x716e3e*/
+    v11 = *a2;  /*0x716e61*/
+    a4 = this->DebrisAnims[4];  /*0x716e6d*/
+    (*(void (**)(unsigned int *, int *, int, unsigned int))(v11 + 16))(a2, &a4, 4, 0);  /*0x716e71*/
     for ( k = 0; k < a4; ++k )
-      (*(void (**)(unsigned int *, int, int, unsigned int))(*a2 + 16))(a2, this->DebrisAnims[1] + 4 * k, 4, 0);
-    v13 = *a2;
-    a4 = this->VoiceSelect[4];
-    (*(void (**)(unsigned int *, int *, int, unsigned int))(v13 + 16))(a2, &a4, 4, 0);
+      (*(void (**)(unsigned int *, int, int, unsigned int))(*a2 + 16))(a2, this->DebrisAnims[1] + 4 * k, 4, 0);  /*0x716e8f*/  /*0x716e7c*/
+    v13 = *a2;  /*0x716e9f*/
+    a4 = this->VoiceSelect[4];  /*0x716eab*/
+    (*(void (**)(unsigned int *, int *, int, unsigned int))(v13 + 16))(a2, &a4, 4, 0);  /*0x716eaf*/
     for ( m = 0; m < a4; ++m )
-      (*(void (**)(unsigned int *, int, int, unsigned int))(*a2 + 16))(a2, this->VoiceSelect[1] + 4 * m, 4, 0);
-    v15 = *a2;
-    a4 = this->VoiceSelectEnslaved[4];
-    (*(void (**)(unsigned int *, int *, int, unsigned int))(v15 + 16))(a2, &a4, 4, 0);
+      (*(void (**)(unsigned int *, int, int, unsigned int))(*a2 + 16))(a2, this->VoiceSelect[1] + 4 * m, 4, 0);  /*0x716ecd*/  /*0x716eba*/
+    v15 = *a2;  /*0x716edd*/
+    a4 = this->VoiceSelectEnslaved[4];  /*0x716ee9*/
+    (*(void (**)(unsigned int *, int *, int, unsigned int))(v15 + 16))(a2, &a4, 4, 0);  /*0x716eed*/
     for ( n = 0; n < a4; ++n )
-      (*(void (**)(unsigned int *, int, int, unsigned int))(*a2 + 16))(a2, this->VoiceSelectEnslaved[1] + 4 * n, 4, 0);
-    v17 = *a2;
-    a4 = this->VoiceSelectDeactivated[4];
-    (*(void (**)(unsigned int *, int *, int, unsigned int))(v17 + 16))(a2, &a4, 4, 0);
+      (*(void (**)(unsigned int *, int, int, unsigned int))(*a2 + 16))(a2, this->VoiceSelectEnslaved[1] + 4 * n, 4, 0);  /*0x716f0b*/  /*0x716ef8*/
+    v17 = *a2;  /*0x716f1b*/
+    a4 = this->VoiceSelectDeactivated[4];  /*0x716f27*/
+    (*(void (**)(unsigned int *, int *, int, unsigned int))(v17 + 16))(a2, &a4, 4, 0);  /*0x716f2b*/
     for ( ii = 0; ii < a4; ++ii )
-      (*(void (**)(unsigned int *, int, int, unsigned int))(*a2 + 16))(a2, this->VoiceSelectDeactivated[1] + 4 * ii, 4, 0);
-    v19 = *a2;
-    a4 = this->VoiceMove[4];
-    (*(void (**)(unsigned int *, int *, int, unsigned int))(v19 + 16))(a2, &a4, 4, 0);
+      (*(void (**)(unsigned int *, int, int, unsigned int))(*a2 + 16))(a2, this->VoiceSelectDeactivated[1] + 4 * ii, 4, 0);  /*0x716f49*/  /*0x716f36*/
+    v19 = *a2;  /*0x716f59*/
+    a4 = this->VoiceMove[4];  /*0x716f65*/
+    (*(void (**)(unsigned int *, int *, int, unsigned int))(v19 + 16))(a2, &a4, 4, 0);  /*0x716f69*/
     for ( jj = 0; jj < a4; ++jj )
-      (*(void (**)(unsigned int *, int, int, unsigned int))(*a2 + 16))(a2, this->VoiceMove[1] + 4 * jj, 4, 0);
-    v21 = *a2;
-    a4 = this->VoiceAttack[4];
-    (*(void (**)(unsigned int *, int *, int, unsigned int))(v21 + 16))(a2, &a4, 4, 0);
+      (*(void (**)(unsigned int *, int, int, unsigned int))(*a2 + 16))(a2, this->VoiceMove[1] + 4 * jj, 4, 0);  /*0x716f87*/  /*0x716f74*/
+    v21 = *a2;  /*0x716f97*/
+    a4 = this->VoiceAttack[4];  /*0x716fa3*/
+    (*(void (**)(unsigned int *, int *, int, unsigned int))(v21 + 16))(a2, &a4, 4, 0);  /*0x716fa7*/
     for ( kk = 0; kk < a4; ++kk )
-      (*(void (**)(unsigned int *, int, int, unsigned int))(*a2 + 16))(a2, this->VoiceAttack[1] + 4 * kk, 4, 0);
-    v23 = *a2;
-    a4 = this->VoiceSpecialAttack[4];
-    (*(void (**)(unsigned int *, int *, int))(v23 + 16))(a2, &a4, 4);
+      (*(void (**)(unsigned int *, int, int, unsigned int))(*a2 + 16))(a2, this->VoiceAttack[1] + 4 * kk, 4, 0);  /*0x716fc5*/  /*0x716fb2*/
+    v23 = *a2;  /*0x716fd5*/
+    a4 = this->VoiceSpecialAttack[4];  /*0x716fe1*/
+    (*(void (**)(unsigned int *, int *, int))(v23 + 16))(a2, &a4, 4);  /*0x716fe5*/
     for ( mm = 0; mm < (int)a3; ++mm )
-      (*(void (**)(unsigned int *, int, int, unsigned int))(*a2 + 16))(a2, this->VoiceSpecialAttack[1] + 4 * mm, 4, 0);
-    DynamicVector::Read((DynamicVector *)this->VoiceDie, a2);
-    DynamicVector::Read((DynamicVector *)this->VoiceFeedback, a2);
-    DynamicVector::Read((DynamicVector *)this->MoveSound, a2);
-    DynamicVector::Read((DynamicVector *)this->DieSound, a2);
-    Stream::WriteIntArray((Stream *)this->Explosion, a2);
-    Stream::WriteIntArray((Stream *)this->DestroyAnim, a2);
-    DynamicVector::Read((DynamicVector *)this->DebrisMaximums, a2);
-    DynamicVector::Read((DynamicVector *)this->Prerequisite, a2);
-    DynamicVector::Read((DynamicVector *)this->PrerequisiteOverride, a2);
-    TechnoTypeClass::SaveLoadDataArray((TechnoTypeClass *)this->DamageParticleSystems, a2);
-    TechnoTypeClass::SaveLoadDataArray((TechnoTypeClass *)this->DestroyParticleSystems, a2);
-    return 0;
+      (*(void (**)(unsigned int *, int, int, unsigned int))(*a2 + 16))(a2, this->VoiceSpecialAttack[1] + 4 * mm, 4, 0);  /*0x717003*/  /*0x716ff0*/
+    ((DynamicVector *)this->VoiceDie)->Read(a2);  /*0x717014*/
+    ((DynamicVector *)this->VoiceFeedback)->Read(a2);  /*0x717020*/
+    ((DynamicVector *)this->MoveSound)->Read(a2);  /*0x71702c*/
+    ((DynamicVector *)this->DieSound)->Read(a2);  /*0x717038*/
+    ((Stream *)this->Explosion)->WriteIntArray(a2);  /*0x717044*/
+    ((Stream *)this->DestroyAnim)->WriteIntArray(a2);  /*0x717050*/
+    ((DynamicVector *)this->DebrisMaximums)->Read(a2);  /*0x71705c*/
+    ((DynamicVector *)this->Prerequisite)->Read(a2);  /*0x717068*/
+    ((DynamicVector *)this->PrerequisiteOverride)->Read(a2);  /*0x717074*/
+    ((TechnoTypeClass *)this->DamageParticleSystems)->SaveLoadDataArray(a2);  /*0x717080*/
+    ((TechnoTypeClass *)this->DestroyParticleSystems)->SaveLoadDataArray(a2);  /*0x71708c*/
+    return 0;  /*0x717091*/
   }
-  return result;
+  return result;  /*0x717094*/
 
 }
 } // namespace gamemd
@@ -1542,7 +1542,7 @@ double TechnoTypeClass::ComputeBuildTime()
 namespace gamemd {  // G42.18c ns repair
 TechnoTypeClass * TechnoTypeClass::ddtor(void * Block, char a2)
 {
-  TechnoTypeClass::DTOR((char *)Block); /*0x7179a3*/
+  ((char *)Block)->DTOR(); /*0x7179a3*/
   if ( (a2 & 1) != 0 ) /*0x7179ad*/
     operator delete((void *)(Block)); /*0x7179b0*/
   return Block; /*0x7179ba*/

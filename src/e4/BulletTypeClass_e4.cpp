@@ -31,6 +31,37 @@
 #include "e4/classes/AnimClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/ObjectPtr_e4.hpp"
 #include "e4/classes/ScenarioClass_e4.hpp"
+// X129: fresh-render label declarations (auto, idempotent)
+extern unsigned char aAcceleration[13];  // data: 0x81B140
+extern unsigned char aAirburst[9];  // data: 0x81B078
+extern unsigned char aAirburstweapon[15];  // data: 0x81B04C
+extern unsigned char aAnimhigh[9];  // data: 0x81AFE8
+extern unsigned char aAnimlow[8];  // data: 0x81AFF4
+extern unsigned char aAnimpalette[12];  // data: 0x81AFD0
+extern unsigned char aAnimrate[9];  // data: 0x81AFDC
+extern unsigned char aArcing[7];  // data: 0x81B130
+extern unsigned char aBouncy[7];  // data: 0x81B084
+extern unsigned char aCluster[8];  // data: 0x81B070
+extern unsigned char aCourselockdura[19];  // data: 0x81B150
+extern unsigned char aDegenerates[12];  // data: 0x81B08C
+extern unsigned char aDetonationalti[19];  // data: 0x81B018
+extern unsigned char aDropping[9];  // data: 0x81B0DC
+extern unsigned char aFirerspalette[14];  // data: 0x81AFFC
+extern unsigned char aFlakscatter[12];  // data: 0x81B0A0
+extern unsigned char aFloater[8];  // data: 0x81B128
+extern unsigned char aInaccurate[11];  // data: 0x81B0AC
+extern unsigned char aInviso_0[7];  // data: 0x81B0CC
+extern unsigned char aProximity[10];  // data: 0x81B0C0
+extern unsigned char aRanged[7];  // data: 0x81B0B8
+extern unsigned char aRotates[8];  // data: 0x81B05C
+extern unsigned char aScalable[9];  // data: 0x81B064
+extern unsigned char aShrapnelcount[14];  // data: 0x81B02C
+extern unsigned char aShrapnelweapon[15];  // data: 0x81B03C
+extern unsigned char aSubjecttocliff[16];  // data: 0x81B118
+extern unsigned char aSubjecttoeleva[19];  // data: 0x81B104
+extern unsigned char aSubjecttowalls[15];  // data: 0x81B0F4
+extern unsigned char aVertical[9];  // data: 0x81B00C
+extern unsigned char aVeryhigh[9];  // data: 0x81B0E8
 
 // [w20m5] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp fn_54.c 0x544CE0
 namespace gamemd {
@@ -76,7 +107,7 @@ BuildingTypeClass * * BulletTypeClass::ReadArmor()
         *(unsigned int *)(v3 + 8) = v1 + 16; /*0x4654b6*/
         /* X11: ptr_0 install elided (X67 star-deref, RHS XSurface_Vtable) */  /*0x4654b9*/
         *(unsigned int *)(v3 + 16) = 1; /*0x4654bf*/
-        Buffer::Init((Buffer *)(v3 + 20), 0, (v1 + 16) * (v1 + 16)); /*0x4654c6*/
+        ((Buffer *)(v3 + 20))->Init(0, (v1 + 16) * (v1 + 16)); /*0x4654c6*/
         /* X11: ptr_0 install elided (X67 star-deref, RHS BSurface_Vtable) */  /*0x4654cb*/
         dword_89DDC0 = (Draw *)v3; /*0x4654d1*/
       }
@@ -225,304 +256,268 @@ namespace gamemd {
 WeaponTypeClass * * BulletTypeClass::LoadFromINI(unsigned char *** a2, void *a2_2)
 {
 
+  int v3; // ecx
+  int v4; // esi
+  char Bool_Overwrite; // al
+  char v7; // cl
+  char v8; // al
+  char v9; // al
+  char v10; // cl
+  char v11; // al
+  char v12; // al
+  char v13; // cl
+  char v14; // al
+  char v15; // al
+  char v16; // cl
+  char v17; // al
+  char v18; // dl
+  char v19; // al
+  char v20; // cl
+  char v21; // al
   unsigned int *v22; // eax
-  int v24; // eax
-  int v25; // eax
+  char v23; // al
+  unsigned int *v24; // eax
+  unsigned int *v25; // eax
+  int Int_Overwrite; // eax
+  char v27; // cl
+  char v28; // al
+  char v29; // al
+  int v30; // edx
+  char v32; // [esp-Ch] [ebp-98h]
+  char v33; // [esp-Ch] [ebp-98h]
+  char v34; // [esp-Ch] [ebp-98h]
+  int v35; // [esp-Ch] [ebp-98h]
+  char v36; // [esp-Ch] [ebp-98h]
+  int v37; // [esp-Ch] [ebp-98h]
+  char v38; // [esp-Ch] [ebp-98h]
+  unsigned int *v39; // [esp+8h] [ebp-84h]
+  unsigned int *v40; // [esp+8h] [ebp-84h]
+  unsigned int *v41; // [esp+8h] [ebp-84h]
   char Destination[128]; // [esp+Ch] [ebp-80h] BYREF
 
-  int v3; // ecx
-  int v4 = v3; // esi /*0x46beef*/
-  INIClass::ResetSection((INIClass *)a2); /*0x46bef3*/
-  if ( !ObjectTypeClass::LoadFromINI((ObjectTypeClass *)v4, (unsigned __int8 ***)a2) ) /*0x46befb*/
-    return 0; /*0x46c42a*/
-  v4->arm = INIClass::ReadInt_Overwrite( /*0x46bf21*/
-                            a2->ObjectTypeClass,
+  v4 = v3;  /*0x46beef*/
+  INIClass::ResetSection((INIClass *)this);  /*0x46bef3*/
+  if ( !((ObjectTypeClass *)v4)->LoadFromINI((unsigned __int8 ***)this) )
+    return 0;  /*0x46c42a*/  /*0x46befb*/
+  *(unsigned int *)(v4 + 752) = INIClass::ReadInt_Overwrite(
+                            (bool *)this,
                             (unsigned __int8 *)(v4 + 36),
-                            (unsigned __int8 *)&DataGlobal_81AF8C[476],
-                            v4->arm);
-  *&v4->rot = INIClass::ReadInt_Overwrite( /*0x46bf3b*/
-                            a2->ObjectTypeClass,
+                            &unk_81B168,
+                            *(unsigned int *)(v4 + 752));  /*0x46bf21*/
+  *(unsigned int *)(v4 + 732) = INIClass::ReadInt_Overwrite(
+                            (bool *)this,
                             (unsigned __int8 *)(v4 + 36),
-                            (unsigned __int8 *)&DataGlobal_81AF8C[472],
-                            v4->rot);
-  *&v4->courseLockDuration = INIClass::ReadInt_Overwrite( /*0x46bf55*/
-                            a2->ObjectTypeClass,
+                            &off_81B164,
+                            *(unsigned int *)(v4 + 732));  /*0x46bf3b*/
+  *(unsigned int *)(v4 + 736) = INIClass::ReadInt_Overwrite(
+                            (bool *)this,
                             (unsigned __int8 *)(v4 + 36),
-                            (unsigned __int8 *)&DataGlobal_81AF8C[452],
-                            v4->courseLockDuration);
-  INIClass::ReadDouble_Overwrite( /*0x46bf71*/
-    (double *)a2->ObjectTypeClass,
+                            aCourselockdura,
+                            *(unsigned int *)(v4 + 736));  /*0x46bf55*/
+  INIClass::ReadDouble_Overwrite(
+    (double *)&this->ObjectTypeClass,
     (unsigned __int8 *)(v4 + 36),
     g_INI_Key_Elasticity,
-    v4->elasticity);
-  __asm { fstp qword ptr [esi+2C8h] } /*0x46bf76*/
-  v4->elasticity = _RT1; /*0x46bf76*/
-  v4->Elasticity_d = INIClass::ReadInt_Overwrite( /*0x46bf90*/
-                            a2->ObjectTypeClass,
+    *(double *)(v4 + 712));  /*0x46bf71*/
+  __asm { fstp    qword ptr [esi+2C8h] }  /*0x46bf76*/
+  *(double *)(v4 + 712) = _RT1;  /*0x46bf76*/
+  *(unsigned int *)(v4 + 720) = INIClass::ReadInt_Overwrite(
+                            (bool *)this,
                             (unsigned __int8 *)(v4 + 36),
-                            (unsigned __int8 *)&DataGlobal_81AF8C[436],
-                            v4->Elasticity_d);
-  *&v4->Color = BuildingTypeClass::FindAnimByName( /*0x46bfaa*/
-                            (BuildingTypeClass *)a2,
+                            aAcceleration,
+                            *(unsigned int *)(v4 + 720));  /*0x46bf90*/
+  *(unsigned int *)(v4 + 724) = BuildingTypeClass::FindAnimByName(
+                            (BuildingTypeClass *)this,
                             (unsigned __int8 *)(v4 + 36),
-                            (unsigned __int8 *)&DataGlobal_81AF8C[428],
-                            v4->Color);
-  *&v4->Arcing = INIClass::ReadBool_Overwrite( /*0x46bfc4*/
-                           (int *)a2,
+                            (unsigned __int8 *)aColor,
+                            *(unsigned int *)(v4 + 724));  /*0x46bfaa*/
+  *(unsigned char *)(v4 + 667) = INIClass::ReadBool_Overwrite(
+                           &this->ObjectTypeClass,
                            (unsigned __int8 *)(v4 + 36),
-                           (unsigned __int8 *)&DataGlobal_81AF8C[420],
-                           v4->Arcing);
-  *&v4->Floater = INIClass::ReadBool_Overwrite( /*0x46bfde*/
-                           (int *)a2,
+                           aArcing,
+                           *(unsigned char *)(v4 + 667));  /*0x46bfc4*/
+  *(unsigned char *)(v4 + 661) = INIClass::ReadBool_Overwrite(
+                           &this->ObjectTypeClass,
                            (unsigned __int8 *)(v4 + 36),
-                           (unsigned __int8 *)&DataGlobal_81AF8C[412],
-                           v4->Floater);
-  *&v4->SubjectToCliffs = INIClass::ReadBool_Overwrite( /*0x46bff8*/
-                           (int *)a2,
+                           aFloater,
+                           *(unsigned char *)(v4 + 661));  /*0x46bfde*/
+  *(unsigned char *)(v4 + 662) = INIClass::ReadBool_Overwrite(
+                           &this->ObjectTypeClass,
                            (unsigned __int8 *)(v4 + 36),
-                           (unsigned __int8 *)&DataGlobal_81AF8C[396],
-                           v4->SubjectToCliffs);
-  *&v4->SubjectToElevation = INIClass::ReadBool_Overwrite( /*0x46c012*/
-                           (int *)a2,
+                           aSubjecttocliff,
+                           *(unsigned char *)(v4 + 662));  /*0x46bff8*/
+  *(unsigned char *)(v4 + 663) = INIClass::ReadBool_Overwrite(
+                           &this->ObjectTypeClass,
                            (unsigned __int8 *)(v4 + 36),
-                           (unsigned __int8 *)&DataGlobal_81AF8C[376],
-                           v4->SubjectToElevation);
-  *&v4->SubjectToWalls = INIClass::ReadBool_Overwrite( /*0x46c02c*/
-                           (int *)a2,
+                           aSubjecttoeleva,
+                           *(unsigned char *)(v4 + 663));  /*0x46c012*/
+  *(unsigned char *)(v4 + 664) = INIClass::ReadBool_Overwrite(
+                           &this->ObjectTypeClass,
                            (unsigned __int8 *)(v4 + 36),
-                           (unsigned __int8 *)&DataGlobal_81AF8C[360],
-                           v4->SubjectToWalls);
-  char Bool_Overwrite; // al
-  Bool_Overwrite = INIClass::ReadBool_Overwrite( /*0x46c041*/
-                     (int *)a2,
+                           aSubjecttowalls,
+                           *(unsigned char *)(v4 + 664));  /*0x46c02c*/
+  Bool_Overwrite = INIClass::ReadBool_Overwrite(
+                     &this->ObjectTypeClass,
                      (unsigned __int8 *)(v4 + 36),
-                     (unsigned __int8 *)&DataGlobal_81AF8C[348],
-                     v4->VeryHigh);
-  char v7 = *&v4->Shadow; // cl /*0x46c046*/
-  *&v4->VeryHigh = Bool_Overwrite; /*0x46c04c*/
-  char v8; // al
-  v8 = INIClass::ReadBool_Overwrite((int *)a2, (unsigned __int8 *)(v4 + 36),(uint8_t *)(aShadow), v7); /*0x46c05b*/
-  char v32; // [esp-Ch] [ebp-98h]
-  v32 = v4->Dropping; /*0x46c068*/
-  v4->Shadow = v8; /*0x46c06f*/
-  v4->Dropping = INIClass::ReadBool_Overwrite( /*0x46c07a*/
-                           (int *)a2,
-                           (unsigned __int8 *)(v4 + 36),
-                           (unsigned __int8 *)&DataGlobal_81AF8C[336],
-                           v32);
-  char v9; // al
-  v9 = INIClass::ReadBool_Overwrite( /*0x46c08f*/
-         (int *)a2,
+                     aVeryhigh,
+                     *(unsigned char *)(v4 + 665));  /*0x46c041*/
+  v7 = *(unsigned char *)(v4 + 666);  /*0x46c046*/
+  *(unsigned char *)(v4 + 665) = Bool_Overwrite;  /*0x46c04c*/
+  v8 = INIClass::ReadBool_Overwrite(&this->ObjectTypeClass, (unsigned __int8 *)(v4 + 36), aShadow, v7);  /*0x46c05b*/
+  v32 = *(unsigned char *)(v4 + 668);  /*0x46c068*/
+  *(unsigned char *)(v4 + 666) = v8;  /*0x46c06f*/
+  *(unsigned char *)(v4 + 668) = INIClass::ReadBool_Overwrite(&this->ObjectTypeClass, (unsigned __int8 *)(v4 + 36), aDropping, v32);  /*0x46c07a*/
+  v9 = INIClass::ReadBool_Overwrite(
+         &this->ObjectTypeClass,
          (unsigned __int8 *)(v4 + 36),
-         (unsigned __int8 *)&DataGlobal_81AF8C[328],
-         v4->Level);
-  char v10 = v4->Inviso; // cl /*0x46c094*/
-  *&v4->Level = v9; /*0x46c09a*/
-  char v11; // al
-  v11 = INIClass::ReadBool_Overwrite( /*0x46c0a9*/
-          (int *)a2,
-          (unsigned __int8 *)(v4 + 36),
-          (unsigned __int8 *)&DataGlobal_81AF8C[320],
-          v10);
-  char v33; // [esp-Ch] [ebp-98h]
-  v33 = v4->Proximity; /*0x46c0b6*/
-  *&v4->Inviso = v11; /*0x46c0bd*/
-  *&v4->Proximity = INIClass::ReadBool_Overwrite( /*0x46c0c8*/
-                           (int *)a2,
+         (unsigned __int8 *)aLevel,
+         *(unsigned char *)(v4 + 669));  /*0x46c08f*/
+  v10 = *(unsigned char *)(v4 + 670);  /*0x46c094*/
+  *(unsigned char *)(v4 + 669) = v9;  /*0x46c09a*/
+  v11 = INIClass::ReadBool_Overwrite(&this->ObjectTypeClass, (unsigned __int8 *)(v4 + 36), aInviso_0, v10);  /*0x46c0a9*/
+  v33 = *(unsigned char *)(v4 + 671);  /*0x46c0b6*/
+  *(unsigned char *)(v4 + 670) = v11;  /*0x46c0bd*/
+  *(unsigned char *)(v4 + 671) = INIClass::ReadBool_Overwrite(&this->ObjectTypeClass, (unsigned __int8 *)(v4 + 36), aProximity, v33);  /*0x46c0c8*/
+  v12 = INIClass::ReadBool_Overwrite(&this->ObjectTypeClass, (unsigned __int8 *)(v4 + 36), aRanged, *(unsigned char *)(v4 + 672));  /*0x46c0dd*/
+  v13 = *(unsigned char *)(v4 + 674);  /*0x46c0e2*/
+  *(unsigned char *)(v4 + 672) = v12;  /*0x46c0e8*/
+  v14 = INIClass::ReadBool_Overwrite(&this->ObjectTypeClass, (unsigned __int8 *)(v4 + 36), aInaccurate, v13);  /*0x46c0f7*/
+  v34 = *(unsigned char *)(v4 + 675);  /*0x46c104*/
+  *(unsigned char *)(v4 + 674) = v14;  /*0x46c10b*/
+  *(unsigned char *)(v4 + 675) = INIClass::ReadBool_Overwrite(&this->ObjectTypeClass, (unsigned __int8 *)(v4 + 36), aFlakscatter, v34);  /*0x46c116*/
+  v15 = INIClass::ReadBool_Overwrite(&this->ObjectTypeClass, (unsigned __int8 *)(v4 + 36), aAa, *(unsigned char *)(v4 + 676));  /*0x46c12b*/
+  v16 = *(unsigned char *)(v4 + 677);  /*0x46c130*/
+  *(unsigned char *)(v4 + 676) = v15;  /*0x46c136*/
+  v17 = INIClass::ReadBool_Overwrite(&this->ObjectTypeClass, (unsigned __int8 *)(v4 + 36), aAg, v16);  /*0x46c145*/
+  v18 = *(unsigned char *)(v4 + 678);  /*0x46c14a*/
+  *(unsigned char *)(v4 + 677) = v17;  /*0x46c150*/
+  *(unsigned char *)(v4 + 678) = INIClass::ReadBool_Overwrite(&this->ObjectTypeClass, (unsigned __int8 *)(v4 + 36), aDegenerates, v18);  /*0x46c164*/
+  v19 = INIClass::ReadBool_Overwrite(&this->ObjectTypeClass, (unsigned __int8 *)(v4 + 36), aBouncy, *(unsigned char *)(v4 + 679));  /*0x46c179*/
+  v20 = *(unsigned char *)(v4 + 660);  /*0x46c17e*/
+  *(unsigned char *)(v4 + 679) = v19;  /*0x46c184*/
+  v21 = INIClass::ReadBool_Overwrite(&this->ObjectTypeClass, (unsigned __int8 *)(v4 + 36), aAirburst, v20);  /*0x46c193*/
+  v35 = *(unsigned int *)(v4 + 684);  /*0x46c1a0*/
+  *(unsigned char *)(v4 + 660) = v21;  /*0x46c1a7*/
+  *(unsigned int *)(v4 + 684) = INIClass::ReadInt_Overwrite((bool *)this, (unsigned __int8 *)(v4 + 36), aCluster, v35);  /*0x46c1b2*/
+  *(unsigned char *)(v4 + 748) = INIClass::ReadBool_Overwrite(
+                           &this->ObjectTypeClass,
                            (unsigned __int8 *)(v4 + 36),
-                           (unsigned __int8 *)&DataGlobal_81AF8C[308],
-                           v33);
-  char v12; // al
-  v12 = INIClass::ReadBool_Overwrite( /*0x46c0dd*/
-          (int *)a2,
-          (unsigned __int8 *)(v4 + 36),
-          (unsigned __int8 *)&DataGlobal_81AF8C[300],
-          v4->Ranged);
-  char v13 = v4->Inaccurate; // cl /*0x46c0e2*/
-  *&v4->Ranged = v12; /*0x46c0e8*/
-  char v14; // al
-  v14 = INIClass::ReadBool_Overwrite( /*0x46c0f7*/
-          (int *)a2,
-          (unsigned __int8 *)(v4 + 36),
-          (unsigned __int8 *)&DataGlobal_81AF8C[288],
-          v13);
-  char v34; // [esp-Ch] [ebp-98h]
-  v34 = v4->FlakScatter; /*0x46c104*/
-  v4->Inaccurate = v14; /*0x46c10b*/
-  *&v4->FlakScatter = INIClass::ReadBool_Overwrite( /*0x46c116*/
-                           (int *)a2,
-                           (unsigned __int8 *)(v4 + 36),
-                           (unsigned __int8 *)&DataGlobal_81AF8C[276],
-                           v34);
-  char v15; // al
-  v15 = INIClass::ReadBool_Overwrite( /*0x46c12b*/
-          (int *)a2,
-          (unsigned __int8 *)(v4 + 36),
-          (unsigned __int8 *)&DataGlobal_81AF8C[272],
-          v4->AA);
-  char v16 = *&v4->Degenerates_d; // cl /*0x46c130*/
-  v4->AA = v15; /*0x46c136*/
-  char v17; // al
-  v17 = INIClass::ReadBool_Overwrite( /*0x46c145*/
-          (int *)a2,
-          (unsigned __int8 *)(v4 + 36),
-          (unsigned __int8 *)&DataGlobal_81AF8C[268],
-          v16);
-  char v18 = v4->Degenerates_2; // dl /*0x46c14a*/
-  v4->Degenerates_d = v17; /*0x46c150*/
-  *&v4->Degenerates_2 = INIClass::ReadBool_Overwrite( /*0x46c164*/
-                           (int *)a2,
-                           (unsigned __int8 *)(v4 + 36),
-                           (unsigned __int8 *)&DataGlobal_81AF8C[256],
-                           v18);
-  char v19; // al
-  v19 = INIClass::ReadBool_Overwrite( /*0x46c179*/
-          (int *)a2,
-          (unsigned __int8 *)(v4 + 36),
-          (unsigned __int8 *)&DataGlobal_81AF8C[248],
-          v4->Bouncy_d);
-  char v20 = *&v4->Airburst; // cl /*0x46c17e*/
-  v4->Bouncy_d = v19; /*0x46c184*/
-  char v21; // al
-  v21 = INIClass::ReadBool_Overwrite( /*0x46c193*/
-          (int *)a2,
-          (unsigned __int8 *)(v4 + 36),
-          (unsigned __int8 *)&DataGlobal_81AF8C[236],
-          v20);
-  int v35; // [esp-Ch] [ebp-98h]
-  v35 = v4->cluster; /*0x46c1a0*/
-  v4->Airburst = v21; /*0x46c1a7*/
-  v4->cluster = INIClass::ReadInt_Overwrite( /*0x46c1b2*/
-                            a2->ObjectTypeClass,
-                            (unsigned __int8 *)(v4 + 36),
-                            (unsigned __int8 *)&DataGlobal_81AF8C[228],
-                            v35);
-  v4->Scalable_d = INIClass::ReadBool_Overwrite( /*0x46c1e2*/
-                           (int *)a2,
-                           (unsigned __int8 *)(v4 + 36),
-                           (unsigned __int8 *)&DataGlobal_81AF8C[216],
-                           v4->Scalable_d);
-  if ( INIClass::GetString( /*0x46c1ef*/
-         (INIClass *)a2,
+                           aScalable,
+                           *(unsigned char *)(v4 + 748));  /*0x46c1e2*/
+  if ( INIClass::GetString(
+         (INIClass *)this,
          (unsigned __int8 *)(v4 + 36),
          (unsigned __int8 *)g_INI_Key_Image,
          &g_INI_DefaultBuffer,
-         &v4->ImageFile,
+         (char *)(v4 + 504),
          25) > 0 )
-  {
-    unsigned int *v39; // [esp+8h] [ebp-84h]
-    v39 = *&v4->Trailer_d; /*0x46c20a*/
-    if ( (/*0x46c219*/ (INIClass *)&DataGlobal_887180)->GetString((unsigned __int8 *)(v4 + 504), aTrailer, &g_INI_DefaultBuffer, Destination, 128) )
-    {
-      v22 = (Destination)->FindOrCreate(); /*0x46c226*/
+  {  /*0x46c1ef*/
+    v39 = *(unsigned int **)(v4 + 728);  /*0x46c20a*/
+    if ( INIClass::GetString(
+           &dword_887180,
+           (unsigned __int8 *)(v4 + 504),
+           aTrailer,
+           &g_INI_DefaultBuffer,
+           Destination,
+           128) )
+    {  /*0x46c219*/
+      v22 = (Destination)->FindOrCreate();  /*0x46c226*/
     }
     else
     {
-      v22 = v39; /*0x46c22d*/
+      v22 = v39;  /*0x46c22d*/
     }
-    *&v4->Trailer_d = v22; /*0x46c231*/
-    *&v4->SpawnDelay_d = INIClass::ReadInt_Overwrite( /*0x46c24e*/
-                              (bool *)&DataGlobal_887180,
+    *(unsigned int *)(v4 + 728) = v22;  /*0x46c231*/
+    *(unsigned int *)(v4 + 740) = INIClass::ReadInt_Overwrite(
+                              (bool *)dword_887180.__pad_0,
                               (unsigned __int8 *)(v4 + 504),
                               aSpawndelay,
-                              v4->SpawnDelay_d);
-    char v23; // al
-    v23 = INIClass::ReadBool_Overwrite( /*0x46c26b*/
-            (int *)&DataGlobal_887180,
+                              *(unsigned int *)(v4 + 740));  /*0x46c24e*/
+    v23 = INIClass::ReadBool_Overwrite(
+            (int *)dword_887180.__pad_0,
             (unsigned __int8 *)(v4 + 504),
-            (unsigned __int8 *)&DataGlobal_81AF8C[208],
-            v4->Rotates == 0);
-    char v36; // [esp-Ch] [ebp-98h]
-    v36 = *&v4->Flat_d; /*0x46c27d*/
-    v4->Rotates = v23 == 0; /*0x46c287*/
-    *&v4->Flat_d = INIClass::ReadBool_Overwrite( /*0x46c292*/                              (int *)&DataGlobal_887180,                              (unsigned __int8 *)(v4 + 504),(uint8_t *)(g_INI_Key_Flat),                              v36);
+            aRotates,
+            *(unsigned char *)(v4 + 673) == 0);  /*0x46c26b*/
+    v36 = *(unsigned char *)(v4 + 759);  /*0x46c27d*/
+    *(unsigned char *)(v4 + 673) = v23 == 0;  /*0x46c287*/
+    *(unsigned char *)(v4 + 759) = INIClass::ReadBool_Overwrite(
+                             (int *)dword_887180.__pad_0,
+                             (unsigned __int8 *)(v4 + 504),
+                             g_INI_Key_Flat,
+                             v36);  /*0x46c292*/
   }
-  int v40; // [esp+8h] [ebp-84h]
-  v40 = v4->airburstWeapon; /*0x46c2ad*/
-  if ( (/*0x46c2b9*/ (INIClass *)a2)->GetString((unsigned __int8 *)(v4 + 36), (unsigned __int8 *)&DataGlobal_81AF8C[192], &g_INI_DefaultBuffer, Destination, 128) )
-  {
-    v24 = (int)(InfantryTypeClass::Find(Destination)); /*0x46c2c6*/
-  }
-  else
-  {
-    v24 = v40; /*0x46c2cd*/
-  }
-  *&v4->airburstWeapon = v24; /*0x46c2db*/
-  int v41; // [esp+8h] [ebp-84h]
-  v41 = *&v4->shrapnelWeapon; /*0x46c2f4*/
-  if ( INIClass::GetString( /*0x46c2f8*/
-         (INIClass *)a2,
+  v40 = *(unsigned int **)(v4 + 688);  /*0x46c2ad*/
+  if ( INIClass::GetString(
+         (INIClass *)this,
          (unsigned __int8 *)(v4 + 36),
-         (unsigned __int8 *)stru_81AF8C.?,
+         aAirburstweapon,
          &g_INI_DefaultBuffer,
          Destination,
          128) )
-  {
-    v25 = (int)(InfantryTypeClass::Find(Destination)); /*0x46c305*/
+  {  /*0x46c2b9*/
+    v24 = InfantryTypeClass::Find(Destination);  /*0x46c2c6*/
   }
   else
   {
-    v25 = v41; /*0x46c30c*/
+    v24 = v40;  /*0x46c2cd*/
   }
-  int v37; // [esp-Ch] [ebp-98h]
-  v37 = *&v4->shrapnelCount; /*0x46c318*/
-  *&v4->shrapnelWeapon = v25; /*0x46c31f*/
-  *&v4->shrapnelCount = INIClass::ReadInt_Overwrite( /*0x46c32a*/
-                            a2->ObjectTypeClass,
-                            (unsigned __int8 *)(v4 + 36),
-                            (unsigned __int8 *)&DataGlobal_81AF8C[160],
-                            v37);
-  int Int_Overwrite; // eax
-  Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x46c33f*/
-                    a2->ObjectTypeClass,
+  *(unsigned int *)(v4 + 688) = v24;  /*0x46c2db*/
+  v41 = *(unsigned int **)(v4 + 692);  /*0x46c2f4*/
+  if ( INIClass::GetString(
+         (INIClass *)this,
+         (unsigned __int8 *)(v4 + 36),
+         aShrapnelweapon,
+         &g_INI_DefaultBuffer,
+         Destination,
+         128) )
+  {  /*0x46c2f8*/
+    v25 = InfantryTypeClass::Find(Destination);  /*0x46c305*/
+  }
+  else
+  {
+    v25 = v41;  /*0x46c30c*/
+  }
+  v37 = *(unsigned int *)(v4 + 696);  /*0x46c318*/
+  *(unsigned int *)(v4 + 692) = v25;  /*0x46c31f*/
+  *(unsigned int *)(v4 + 696) = INIClass::ReadInt_Overwrite((bool *)this, (unsigned __int8 *)(v4 + 36), aShrapnelcount, v37);  /*0x46c32a*/
+  Int_Overwrite = INIClass::ReadInt_Overwrite(
+                    (bool *)this,
                     (unsigned __int8 *)(v4 + 36),
-                    (unsigned __int8 *)&DataGlobal_81AF8C[140],
-                    v4->detonationAltitude);
-  char v27 = *&v4->Vertical; // cl /*0x46c344*/
-  v4->detonationAltitude = Int_Overwrite; /*0x46c34a*/
-  char v28; // al
-  v28 = INIClass::ReadBool_Overwrite( /*0x46c359*/
-          (int *)a2,
-          (unsigned __int8 *)(v4 + 36),
-          (unsigned __int8 *)&DataGlobal_81AF8C[128],
-          v27);
-  char v38; // [esp-Ch] [ebp-98h]
-  v38 = v4->FirersPalette_d; /*0x46c366*/
-  v4->Vertical = v28; /*0x46c36d*/
-  v4->FirersPalette_d = INIClass::ReadBool_Overwrite( /*0x46c378*/
-                           (int *)a2,
-                           (unsigned __int8 *)(v4 + 36),
-                           (unsigned __int8 *)&DataGlobal_81AF8C[112],
-                           v38);
-  v4->animLow = INIClass::ReadInt_Overwrite( /*0x46c399*/
-                           (bool *)&DataGlobal_887180,
+                    aDetonationalti,
+                    *(unsigned int *)(v4 + 700));  /*0x46c33f*/
+  v27 = *(unsigned char *)(v4 + 704);  /*0x46c344*/
+  *(unsigned int *)(v4 + 700) = Int_Overwrite;  /*0x46c34a*/
+  v28 = INIClass::ReadBool_Overwrite(&this->ObjectTypeClass, (unsigned __int8 *)(v4 + 36), aVertical, v27);  /*0x46c359*/
+  v38 = *(unsigned char *)(v4 + 681);  /*0x46c366*/
+  *(unsigned char *)(v4 + 704) = v28;  /*0x46c36d*/
+  *(unsigned char *)(v4 + 681) = INIClass::ReadBool_Overwrite(&this->ObjectTypeClass, (unsigned __int8 *)(v4 + 36), aFirerspalette, v38);  /*0x46c378*/
+  *(unsigned char *)(v4 + 756) = INIClass::ReadInt_Overwrite(
+                           (bool *)dword_887180.__pad_0,
                            (unsigned __int8 *)(v4 + 504),
-                           (unsigned __int8 *)&DataGlobal_81AF8C[104],
-                           *(unsigned __int8 *)(v4 + 756));
-  char v29; // al
-  v29 = INIClass::ReadInt_Overwrite( /*0x46c3b1*/
-          (bool *)&DataGlobal_887180,
+                           aAnimlow,
+                           *(unsigned __int8 *)(v4 + 756));  /*0x46c399*/
+  v29 = INIClass::ReadInt_Overwrite(
+          (bool *)dword_887180.__pad_0,
           (unsigned __int8 *)(v4 + 504),
-          (unsigned __int8 *)&DataGlobal_81AF8C[92],
-          *(unsigned __int8 *)(v4 + 757));
-  int v30; // edx
-  v30 = *(unsigned __int8 *)(v4 + 758); /*0x46c3bd*/
-  *&v4->animHigh = v29; /*0x46c3c3*/
-  v4->animRate = INIClass::ReadInt_Overwrite( /*0x46c3d5*/
-                           (bool *)&DataGlobal_887180,
+          aAnimhigh,
+          *(unsigned __int8 *)(v4 + 757));  /*0x46c3b1*/
+  v30 = *(unsigned __int8 *)(v4 + 758);  /*0x46c3bd*/
+  *(unsigned char *)(v4 + 757) = v29;  /*0x46c3c3*/
+  *(unsigned char *)(v4 + 758) = INIClass::ReadInt_Overwrite(
+                           (bool *)dword_887180.__pad_0,
                            (unsigned __int8 *)(v4 + 504),
-                           (unsigned __int8 *)&DataGlobal_81AF8C[80],
-                           v30);
-  v4->AnimPalette = INIClass::ReadBool_Overwrite( /*0x46c3f2*/
-                           (int *)&DataGlobal_887180,
+                           aAnimrate,
+                           v30);  /*0x46c3d5*/
+  *(unsigned char *)(v4 + 680) = INIClass::ReadBool_Overwrite(
+                           (int *)dword_887180.__pad_0,
                            (unsigned __int8 *)(v4 + 504),
-                           (unsigned __int8 *)&DataGlobal_81AF8C[68],
-                           v4->AnimPalette);
-  if ( !v4->Inviso ) /*0x46c3f8*/
-    ((char *)v4)->Load2DArt(); /*0x46c406*/
-  if ( *&v4->Voxel_d ) /*0x46c40b*/
-    ((char *)v4)->LoadAnim(); /*0x46c417*/
-  return 1; /*0x46c41c*/
+                           aAnimpalette,
+                           *(unsigned char *)(v4 + 680));  /*0x46c3f2*/
+  if ( !*(unsigned char *)(v4 + 670) )
+    ((char *)v4)->Load2DArt();  /*0x46c406*/  /*0x46c3f8*/
+  if ( *(unsigned char *)(v4 + 566) )
+    ((char *)v4)->LoadAnim();  /*0x46c417*/  /*0x46c40b*/
+  return 1;  /*0x46c41c*/
 
 }
 } // namespace gamemd
@@ -550,41 +545,41 @@ int BulletTypeClass::ProcessPower(int * a2, void *a2_2)
 
   v3 = (unsigned __int8 *)((AbstractTypeClass *)this)->ProcessPower(a2); /*0x46c569*/
   LOBYTE(v3) = this->airburst[0]; /*0x46c56e*/
-  Power::FlagProcess((Power *)a2, (int)v3); /*0x46c577*/
+  ((Power *)a2)->FlagProcess((int)v3); /*0x46c577*/
   LOBYTE(v4) = this->shadow[0]; /*0x46c57c*/
-  Power::FlagProcess((Power *)a2, (int)v4); /*0x46c585*/
+  ((Power *)a2)->FlagProcess((int)v4); /*0x46c585*/
   LOBYTE(v5) = this->arcing[0]; /*0x46c58a*/
-  v6 = (unsigned __int8 *)Power::FlagProcess((Power *)a2, (int)v5); /*0x46c593*/
+  v6 = (unsigned __int8 *)((Power *)a2)->FlagProcess((int)v5); /*0x46c593*/
   LOBYTE(v6) = this->dropping[0]; /*0x46c598*/
-  Power::FlagProcess((Power *)a2, (int)v6); /*0x46c5a1*/
+  ((Power *)a2)->FlagProcess((int)v6); /*0x46c5a1*/
   LOBYTE(v7) = this->level[0]; /*0x46c5a6*/
-  Power::FlagProcess((Power *)a2, (int)v7); /*0x46c5af*/
+  ((Power *)a2)->FlagProcess((int)v7); /*0x46c5af*/
   LOBYTE(v8) = this->inviso[0]; /*0x46c5b4*/
-  v9 = (unsigned __int8 *)Power::FlagProcess((Power *)a2, (int)v8); /*0x46c5bd*/
+  v9 = (unsigned __int8 *)((Power *)a2)->FlagProcess((int)v8); /*0x46c5bd*/
   LOBYTE(v9) = this->proximity[0]; /*0x46c5c2*/
-  Power::FlagProcess((Power *)a2, (int)v9); /*0x46c5cb*/
+  ((Power *)a2)->FlagProcess((int)v9); /*0x46c5cb*/
   LOBYTE(v10) = this->ranged[0]; /*0x46c5d0*/
-  Power::FlagProcess((Power *)a2, (int)v10); /*0x46c5d9*/
+  ((Power *)a2)->FlagProcess((int)v10); /*0x46c5d9*/
   LOBYTE(v11) = this->noRotate[0]; /*0x46c5de*/
-  v12 = (unsigned __int8 *)Power::FlagProcess((Power *)a2, (int)v11); /*0x46c5e7*/
+  v12 = (unsigned __int8 *)((Power *)a2)->FlagProcess((int)v11); /*0x46c5e7*/
   LOBYTE(v12) = this->inaccurate[0]; /*0x46c5ec*/
-  Power::FlagProcess((Power *)a2, (int)v12); /*0x46c5f5*/
+  ((Power *)a2)->FlagProcess((int)v12); /*0x46c5f5*/
   LOBYTE(v13) = this->flakScatter[0]; /*0x46c5fa*/
-  Power::FlagProcess((Power *)a2, (int)v13); /*0x46c603*/
+  ((Power *)a2)->FlagProcess((int)v13); /*0x46c603*/
   LOBYTE(v14) = this->AA[0]; /*0x46c608*/
-  v15 = (unsigned __int8 *)Power::FlagProcess((Power *)a2, (int)v14); /*0x46c611*/
+  v15 = (unsigned __int8 *)((Power *)a2)->FlagProcess((int)v14); /*0x46c611*/
   LOBYTE(v15) = this->AG[0]; /*0x46c616*/
-  Power::FlagProcess((Power *)a2, (int)v15); /*0x46c61f*/
+  ((Power *)a2)->FlagProcess((int)v15); /*0x46c61f*/
   LOBYTE(v16) = this->degenerates[0]; /*0x46c624*/
-  Power::FlagProcess((Power *)a2, (int)v16); /*0x46c62d*/
+  ((Power *)a2)->FlagProcess((int)v16); /*0x46c62d*/
   LOBYTE(v17) = this->bouncy[0]; /*0x46c632*/
-  Power::FlagProcess((Power *)a2, (int)v17); /*0x46c63b*/
-  Checksummer::Add_double((Checksummer *)a2, this->elasticity[0], this->elasticity[1]); /*0x46c650*/
+  ((Power *)a2)->FlagProcess((int)v17); /*0x46c63b*/
+  ((Checksummer *)a2)->Add_double(this->elasticity[0], this->elasticity[1]); /*0x46c650*/
   Power::TimerProcess(this->acceleration); /*0x46c65e*/
   Power::TimerProcess(this->rot); /*0x46c66c*/
   Power::TimerProcess(this->arm); /*0x46c67a*/
   LOBYTE(v18) = this->flat_flag[0]; /*0x46c67f*/
-  return Power::FlagProcess((Power *)a2, (int)v18); /*0x46c68d*/
+  return ((Power *)a2)->FlagProcess((int)v18); /*0x46c68d*/
 
 }
 } // namespace gamemd
@@ -706,7 +701,7 @@ int BulletTypeClass::ProcessImpact(int a1)
         || Owner[40] != v2->Dest[0]
         || Owner[41] != v2->Dest[1] )
       {
-        if ( (unsigned __int8)TimerClass::Active((int)(Owner + 226)) ) /*0x69fe28*/
+        if ( (unsigned __int8)((int)(Owner + 226))->Active() ) /*0x69fe28*/
         {
           BYTE2(v2->TrackIndex) = 1; /*0x69fe35*/
           goto LABEL_32; /*0x69fe35*/
@@ -774,7 +769,7 @@ int BulletTypeClass::ProcessImpact(int a1)
           v21 = (FootClass *)*((unsigned int *)v3 + 3); /*0x6a00f2*/
           if ( *&v21->q598 ) /*0x6a00f5*/
           {
-            FootClass::ClearPathIndex(v21); /*0x6a010d*/
+            (v21)->ClearPathIndex(); /*0x6a010d*/
             if ( (*(unsigned __int8 (**)(unsigned int, unsigned int, int))(**((unsigned int **)v3 + 3) + 1156))( /*0x6a011a*/
                    *((unsigned int *)v3 + 3),
                    0,
@@ -790,7 +785,7 @@ int BulletTypeClass::ProcessImpact(int a1)
           goto LABEL_32; /*0x6a0108*/
         }
         LOBYTE(this) = 0; /*0x6a013e*/
-        WalkLocomotion::Update((int)&v2[-1].Piggybackee, v1, &this, 1, 0); /*0x6a0142*/
+        ((int)&v2[-1].Piggybackee)->Update(v1, &this, 1, 0); /*0x6a0142*/
         if ( (unsigned char)this ) /*0x6a014b*/
           return 0; /*0x6a0156*/
         if ( !*(unsigned char *)(v2->Owner + 144) ) /*0x6a015c*/
@@ -806,11 +801,11 @@ LABEL_20:
         return 0; /*0x69fd79*/
       }
     }
-    FootClass::ClearPathIndex(v11); /*0x69fe00*/
+    (v11)->ClearPathIndex(); /*0x69fe00*/
     (*(void (**)(unsigned int, unsigned int, int))(**((unsigned int **)v3 + 3) + 1156))(*((unsigned int *)v3 + 3), 0, 1); /*0x69fe0d*/
     return 0; /*0x69fe1c*/
   }
-  v1 = WalkLocomotion::ProcessCollision((int)&v2[-1].Piggybackee, v1, 0); /*0x69fc86*/
+  v1 = ((int)&v2[-1].Piggybackee)->ProcessCollision(v1, 0); /*0x69fc86*/
   if ( v6 || !*(unsigned char *)(v2->Owner + 144) ) /*0x69fc96*/
     return 0; /*0x69fc9c*/
   if ( v2->MovementSpeed[1] != -1 /*0x69fcd4*/
@@ -821,12 +816,12 @@ LABEL_20:
     goto LABEL_32; /*0x69fcda*/
   }
   LOBYTE(this) = 0; /*0x69fcea*/
-  WalkLocomotion::Update((int)&v2[-1].Piggybackee, v1, &this, 1, 0); /*0x69fcee*/
+  ((int)&v2[-1].Piggybackee)->Update(v1, &this, 1, 0); /*0x69fcee*/
   if ( (unsigned char)this || !*(unsigned char *)(v2->Owner + 144) ) /*0x69fd00*/
     return 0; /*0x69fd06*/
   v24 = 1; /*0x69fd0c*/
 LABEL_81:
-  WalkLocomotion::ProcessCollision((int)&v2[-1].Piggybackee, v1, v24); /*0x6a0171*/
+  ((int)&v2[-1].Piggybackee)->ProcessCollision(v1, v24); /*0x6a0171*/
   if ( !*(unsigned char *)(v2->Owner + 144) ) /*0x6a017b*/
     return 0; /*0x6a018a*/
 LABEL_32:
@@ -847,7 +842,7 @@ LABEL_32:
             v25 = *v16; /*0x69fec5*/
             v26 = v16[1]; /*0x69fecc*/
             v27 = v16[2]; /*0x69fed8*/
-            AnimClass::ctor(v15, (void *)dword_8871E0->InfantryBrute, &v25, 0, 1, (void *)0x600, 0, 0); /*0x69feeb*/
+            (v15)->ctor((void *)dword_8871E0->InfantryBrute, &v25, 0, 1, (void *)0x600, 0, 0); /*0x69feeb*/
           }
         }
       }
@@ -899,14 +894,14 @@ int BulletTypeClass::SaveLoad_Prefix(gamemd::ObjectTypeClass* aP0, int aP1)
   {
     if ( aP0 ) /*0x46c6b6*/
     {
-      ObjectTypeClass::Construct((ObjectTypeClass *)aP0, (int)&aP1); /*0x46c6bf*/
+      ((ObjectTypeClass *)aP0)->Construct((int)&aP1); /*0x46c6bf*/
       /* X11: ptr_0 install elided (implicit via BulletTypeClass virtuals 0x46c6c4) */
       /* X11: ptr_0 install elided (X68 star-amp-named, RHS g_ptr_7E491C) */  /*0x46c6ca*/
       /* X11: ptr_0 install elided (X68 star-amp-named, RHS g_ptr_7E491C) */  /*0x46c6d1*/
       /* X11: ptr_0 install elided (X68 star-amp-named, RHS g_ptr_7E491C) */  /*0x46c6d8*/
     }
-    VoxelAnimType::LoadAnim(aP0->vfptr); /*0x46c6e1*/
-    ObjectTypeClass::Load2DArt(aP0->vfptr); /*0x46c6e8*/
+    (aP0->vfptr)->LoadAnim(); /*0x46c6e1*/
+    (aP0->vfptr)->Load2DArt(); /*0x46c6e8*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)aP0 + 182); /*0x46c6f9*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)aP0 + 172); /*0x46c70a*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)aP0 + 173); /*0x46c71b*/
@@ -1013,7 +1008,7 @@ char BulletTypeClass::ReadTrajectoryFlags(unsigned char * Block, char * a3, int 
   }
   while ( v8 ); /*0x475213*/
   if ( v4 ) /*0x47521e*/
-    return INIClass::SetString((char *)this, Block, a3, Source); /*0x475239*/
+    return ((char *)this)->SetString(Block, a3, Source); /*0x475239*/
   else
     return 1; /*0x475248*/
 

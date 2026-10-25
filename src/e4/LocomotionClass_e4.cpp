@@ -27,7 +27,7 @@ int LocomotionClass::Initialize()
 {
 
 
-  LocomotionClass::Init(this); /*0x4af543*/
+  (this)->Init(); /*0x4af543*/
   this->u32_1C = 0; /*0x4af54d*/
   this->q020 = 0; /*0x4af550*/
   int v2; // ecx
@@ -88,33 +88,33 @@ namespace gamemd {
 int LocomotionClass::CheckBridgeBlock()
 {
 
+  int v2; // eax
+  unsigned int *LinkedTo; // edi
+  Cell *v4; // eax
+  unsigned int *v5; // eax
 
-  int ptr_0; // eax
-  if ( (*((int (**)(FootClass *))this->LinkedTo->TechnoClass + 97))(this->LinkedTo) == 7 /*0x4cfa8e*/
-    || ((ptr_0) = ((ptr_0) & ~0xFF) | ((BuildingClass::GetType_Thunk(&this->LinkedTo->TechnoClass)) & 0xFF), !(unsigned char)ptr_0) )
-  {
-    ptr_0 = (*((int (**)(FootClass *))this->LinkedTo->TechnoClass + 11))(this->LinkedTo); /*0x4cfa95*/
-    FootClass *LinkedTo; // edi
-    Cell *v4; // eax
-    unsigned int *v5; // eax
-    if ( ptr_0 == 2 /*0x4cfacc*/
-      && (LinkedTo = this->LinkedTo, ptr_0 = (int)LinkedTo[1].?, ptr_0->u8_E0D)
-      && (v4 = (Cell *)(*((int (**)(FootClass *))LinkedTo->TechnoClass + 111))(this->LinkedTo),
-          v5 = Cell::IsBridge(v4),
-          LOBYTE(ptr_0) = Array::Contains((Array *)this->LinkedTo, (int)v5),
-          !(unsigned char)ptr_0) )
-    {
-      LOBYTE(ptr_0) = (*((char (**)(FootClass *, unsigned int, int))LinkedTo->TechnoClass + 289))(LinkedTo, 0, 1); /*0x4cfad6*/
+  if ( (*(int (**)(int))(*(unsigned int *)this->LinkedTo + 388))(this->LinkedTo) == 7
+    || (LOBYTE(v2) = BuildingClass::GetType_Thunk((BuildingClass *)this->LinkedTo), !(unsigned char)v2) )
+  {  /*0x4cfa8e*/
+    v2 = (*(int (**)(int))(*(unsigned int *)this->LinkedTo + 44))(this->LinkedTo);  /*0x4cfa95*/
+    if ( v2 == 2
+      && (LinkedTo = (unsigned int *)this->LinkedTo, v2 = LinkedTo[433], *(unsigned char *)(v2 + 3597))
+      && (v4 = (Cell *)(*(int (**)(int))(*LinkedTo + 444))(this->LinkedTo),
+          v5 = (v4)->IsBridge(),
+          LOBYTE(v2) = ((Array *)this->LinkedTo)->Contains((int)v5),
+          !(unsigned char)v2) )
+    {  /*0x4cfacc*/
+      LOBYTE(v2) = (*(char (**)(unsigned int *, unsigned int, int))(*LinkedTo + 1156))(LinkedTo, 0, 1);  /*0x4cfad6*/
     }
     else
     {
-      this->__pad_50 = 0; /*0x4cfadf*/
-      this->u32_51 = 1; /*0x4cfae3*/
-      this->u32_52 = 0; /*0x4cfae7*/
-      this->u32_38 = 0; /*0x4cfaeb*/
+      LOBYTE(this->u32_58) = 0;  /*0x4cfadf*/
+      BYTE1(this->u32_58) = 1;  /*0x4cfae3*/
+      BYTE2(this->u32_58) = 0;  /*0x4cfae7*/
+      this->u32_38 = 0;  /*0x4cfaeb*/
     }
   }
-  return ptr_0; /*0x4cfadc*/
+  return v2;  /*0x4cfadc*/
 
 }
 } // namespace gamemd
@@ -134,14 +134,14 @@ namespace gamemd {
 int LocomotionClass::ProcessData()
 {
 
-  LocomotionClass::Init(this); /*0x513c24*/
+  (this)->Init(); /*0x513c24*/
   this->u32_18 = *(unsigned int *)&DataGlobal_A8EB00[1664]; /*0x513c34*/
   this->u32_1C = *(unsigned int *)&DataGlobal_A8EB00[1668]; /*0x513c3d*/
   this->q020 = *(unsigned int *)&DataGlobal_A8EB00[1672]; /*0x513c49*/
   this->u32_24 = *(unsigned int *)&DataGlobal_A8EB00[1664]; /*0x513c51*/
   this->u32_28 = *(unsigned int *)&DataGlobal_A8EB00[1668]; /*0x513c59*/
   this->u32_2C = *(unsigned int *)&DataGlobal_A8EB00[1672]; /*0x513c64*/
-  FrameSnapshot::InitMax(&this->u32_18, 0); /*0x513c67*/
+  (&this->u32_18)->InitMax(0); /*0x513c67*/
   this->u32_48 = 0; /*0x513c6c*/
   this->__pad_50 = 0; /*0x513c6f*/
   this->u32_58 = 0; /*0x513c72*/
@@ -165,7 +165,7 @@ int LocomotionClass::Update(void *a1, void *a2, void *a3, void *a4)
 {
 
 
-  LocomotionClass::Init((LocomotionClass *)a1); /*0x54ac46*/
+  ((LocomotionClass *)a1)->Init(); /*0x54ac46*/
   a1->DestinationCoords[0] = dword_ABC5A8; /*0x54ac59*/
   a1->DestinationCoords[1] = dword_ABC5AC; /*0x54ac61*/
   int v2 = dword_ABC5B0; // ecx /*0x54ac64*/
@@ -190,9 +190,9 @@ int LocomotionClass::Update(void *a1, void *a2, void *a3, void *a4)
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7ECD44) */  /*0x54acd0*/
   int v4; // [esp+Ch] [ebp-4h] BYREF
   (v4) = ((v4) & ~0xFFFF) | ((0x4000) & 0xFFFF); /*0x54acd7*/
-  FacingClass::Update(&a1->u32_54, &v4); /*0x54acdc*/
+  (&a1->u32_54)->Update(&v4); /*0x54acdc*/
   (v4) = ((v4) & ~0xFFFF) | ((0x4000) & 0xFFFF); /*0x54ace8*/
-  FacingClass::Set_SyncLog(&a1->u32_54, &v4); /*0x54aced*/
+  (&a1->u32_54)->Set_SyncLog(&v4); /*0x54aced*/
   return (int)a1->LocomotionClass; /*0x54acf4*/
 
 }
@@ -229,7 +229,7 @@ namespace gamemd {
 LocomotionClass * LocomotionClass::ProcessMove(char a2)
 {
 
-  LocomotionClass::Construct(this); /*0x5172f3*/
+  (this)->Construct(); /*0x5172f3*/
   if ( (a2 & 1) != 0 ) /*0x5172fd*/
     __3_YAXPAX_Z(this); /*0x517300*/
   return this->ILocomotion; /*0x51730a*/

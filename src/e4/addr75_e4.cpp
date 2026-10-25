@@ -123,7 +123,7 @@ AbstractClass * * VocClass_Play(int a1, int a2, float a3, int a4)
     {
       if ( (AudioPool *)sub_406310(v7) != v5 ) /*0x75096f*/
       {
-        VocClass::Release(v6); /*0x750973*/
+        (v6)->Release(); /*0x750973*/
         v6 = 0; /*0x750978*/
       }
     }
@@ -191,10 +191,10 @@ double ComputeAudioPosition(AudioMixer * aP0, unsigned int * a1, int a3)
   HIWORD(a3) = v9; /*0x750b5d*/
   if ( (unsigned short)v8 == word_B1D310 && (unsigned short)v9 == word_B1D312 ) /*0x750b73*/
     return 0.0; /*0x750b82*/
-  if ( (*((unsigned char *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)&a3) + 300) & 0x18) == 0 ) /*0x750b9b*/
+  if ( (*((unsigned char *)((CellCoord *)&dword_87F7E8)->To_CellObj((__int16 *)&a3) + 300) & 0x18) == 0 ) /*0x750b9b*/
     return 0.0; /*0x750b9d*/
 LABEL_7:
-  Coord::To_Screen((Coord *)g_TacticalClass_Instance, aP0, v26); /*0x750bb9*/
+  ((Coord *)g_TacticalClass_Instance)->To_Screen(aP0, v26); /*0x750bb9*/
   v11 = (double)v26[0] - v23; /*0x750bc2*/
   v19 = v11; /*0x750bc6*/
   LOWORD(v12) = Math::RoundToInt(v11); /*0x750bca*/
@@ -268,14 +268,14 @@ VocClass * StartAudioController(AudioMixer * ecx0, AudioSource *a2)
   {
     if ( v5 ) /*0x750e01*/
     {
-      VocClass::Release(v5); /*0x750e05*/
+      (v5)->Release(); /*0x750e05*/
       v5 = 0; /*0x750e0a*/
     }
     goto LABEL_15; /*0x750e0a*/
   }
   if ( !v5 ) /*0x750d8e*/
   {
-    if ( AudioMixer::SetVolume((AudioMixer *)v7) && VocClass_VoicesEnabled ) /*0x750da2*/
+    if ( ((AudioMixer *)v7)->SetVolume() && VocClass_VoicesEnabled ) /*0x750da2*/
     {
       v9 = (ObjectClass *)AudioPool::ProcessQueue(v7); /*0x750da6*/
       v5 = (VocClass *)v9; /*0x750dab*/
@@ -428,7 +428,7 @@ void ThemeClass_Update()
     return; /*0x75278e*/
   if ( Audio::IsSoundPlaying() ) /*0x752794*/
     return; /*0x752794*/
-  v0 = qword_B1D4D0 + ThemeClass::GetValue(g_InfantryDrawState); /*0x7527b4*/
+  v0 = qword_B1D4D0 + (g_InfantryDrawState)->GetValue(); /*0x7527b4*/
   (v1) = ((v1) & 0xFFFFFFFF00000000ull) | ((Audio::Callback()) & 0xFFFFFFFFull); /*0x7527be*/
   if ( v1 <= v0 || dword_B1D428 ) /*0x7527dc*/
     return; /*0x7527dc*/
@@ -658,13 +658,13 @@ int CCINIClass::InitFromINIEVA()
   (KeyCount) = ((KeyCount) & ~0xFF) | ((INIClass::BinarySearchSection((int)this, g_INI_Key_DialogList) != 0) & 0xFF); /*0x75301c*/
   if ( (unsigned char)KeyCount ) /*0x753023*/
   {
-    KeyCount = INIClass::GetKeyCount(v1->__pad_0, g_INI_Key_DialogList); /*0x753030*/
+    KeyCount = (v1->__pad_0)->GetKeyCount(g_INI_Key_DialogList); /*0x753030*/
     v3 = KeyCount; /*0x753035*/
     v4 = 0; /*0x753037*/
     v14 = KeyCount; /*0x75303b*/
     for ( i = 0; v4 < v3; i = v4 ) /*0x753043*/
     {
-      StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(v1->__pad_0, g_INI_Key_DialogList, v4); /*0x753060*/
+      StringByIndex = (unsigned __int8 *)(v1->__pad_0)->GetStringByIndex(g_INI_Key_DialogList, v4); /*0x753060*/
       KeyCount = INIClass::GetString(v1, g_INI_Key_DialogList, StringByIndex, &g_INI_DefaultBuffer, Destination, 200); /*0x75306d*/
       if ( KeyCount ) /*0x753074*/
       {
@@ -972,7 +972,7 @@ int InitializeAudioOcclusion(IUnknown * aP0, unsigned int *a1, unsigned int *a2)
       v17 = v10 + 1; /*0x7543f5*/
       do /*0x75440b*/
       {
-        Voxel::ProcessColor(**v16, *v16, &v33); /*0x754402*/
+        (**v16)->ProcessColor(*v16, &v33); /*0x754402*/
         --v16; /*0x754407*/
         --v17; /*0x75440a*/
       }
@@ -987,7 +987,7 @@ int InitializeAudioOcclusion(IUnknown * aP0, unsigned int *a1, unsigned int *a2)
       v19 = (unsigned int ***)&unk_B2FE78; /*0x754415*/
       do /*0x754434*/
       {
-        Voxel::ProcessColor(**v19, *v19, &v33); /*0x754424*/
+        (**v19)->ProcessColor(*v19, &v33); /*0x754424*/
         ++v18; /*0x75442e*/
         ++v19; /*0x75442f*/
       }
@@ -1962,32 +1962,32 @@ AbstractClass * * E4Recv_758AD0::sub_758AD0(int * a2)
 {
 
   int v3; // ebx
-  void *ptr_4; // eax
-  void *ptr_0; // edx
-  void *ptr_8; // ecx
+  int vfptr2; // eax
+  int vfptr1; // edx
+  int vfptr3; // ecx
   int v7; // edx
   unsigned int v9[4]; // [esp+Ch] [ebp-10h] BYREF
 
-  v3 = 0; /*0x758ae2*/
-  if ( !(*(int (**)(int *, int))(*a2 + 28))(a2, 2) ) /*0x758ae4*/
-    goto LABEL_5; /*0x758ae4*/
-  ptr_4 = this->M8; /*0x758aed*/
-  ptr_0 = this->M4; /*0x758af0*/
-  v9[0] = this->AbstractClass; /*0x758af3*/
-  ptr_8 = this->M12; /*0x758af7*/
-  v9[2] = ptr_4; /*0x758afa*/
-  v9[1] = ptr_0; /*0x758afe*/
-  v7 = *a2; /*0x758b02*/
-  v9[3] = ptr_8; /*0x758b08*/
-  if ( (*(int (**)(int *, unsigned int *, int))(v7 + 48))(a2, v9, 16) != 16 /*0x758b4a*/
-    || (*(int (**)(int *, int, int))(*a2 + 48))(a2, this->?, 768) != 768
-    || (*(int (**)(int *, int, int))(*a2 + 48))(a2, this->?, (int)this->? << 8) != (int)this->? << 8 )
-  {
-    LABEL_5:
-    v3 = 1; /*0x758b4c*/
+  v3 = 0;  /*0x758ae2*/
+  if ( !(*(int (**)(int *, int))(*a2 + 28))(a2, 2) )
+    goto LABEL_5;  /*0x758ae4*/  /*0x758ae4*/
+  vfptr2 = this->ptr_8;  /*0x758aed*/
+  vfptr1 = this->ptr_4;  /*0x758af0*/
+  v9[0] = this->ptr_0[0];  /*0x758af3*/
+  vfptr3 = this->ptr_C[0];  /*0x758af7*/
+  v9[2] = vfptr2;  /*0x758afa*/
+  v9[1] = vfptr1;  /*0x758afe*/
+  v7 = *a2;  /*0x758b02*/
+  v9[3] = vfptr3;  /*0x758b08*/
+  if ( (*(int (**)(int *, unsigned int *, int))(v7 + 48))(a2, v9, 16) != 16
+    || (*(int (**)(int *, int, int))(*a2 + 48))(a2, this->uniqueId, 768) != 768
+    || (*(int (**)(int *, int, int))(*a2 + 48))(a2, this->abstractFlags, this->ptr_8 << 8) != this->ptr_8 << 8 )
+  {  /*0x758b4a*/
+LABEL_5:
+    v3 = 1;  /*0x758b4c*/
   }
-  (*(void (**)(int *))(*a2 + 52))(a2); /*0x758b55*/
-  return v3; /*0x758b58*/
+  (*(void (**)(int *))(*a2 + 52))(a2);  /*0x758b55*/
+  return v3;  /*0x758b58*/
 
 }
 }
@@ -2023,7 +2023,7 @@ void sub_7591C0()
 namespace gamemd {
 int E4Recv_759790::sub_759790()
 {
-  return Surface::CreateSurfacePalette(Surface *)this->u32_10 + 156);
+  return (Surface *)->CreateSurfacePalette()this->u32_10 + 156);
 }
 }
 // 0x75A120
@@ -2419,7 +2419,7 @@ int * StartAudioControllerAt(int aP0, unsigned int *a2, int **a1)
     {
       if ( (AudioPool *)sub_406310(v8) != v6 ) /*0x750a2d*/
       {
-        VocClass::Release(v5); /*0x750a31*/
+        (v5)->Release(); /*0x750a31*/
         v5 = 0; /*0x750a36*/
       }
     }
@@ -2431,7 +2431,7 @@ int * StartAudioControllerAt(int aP0, unsigned int *a2, int **a1)
     {
       if ( v5 ) /*0x750a9a*/
       {
-        VocClass::Release(v5); /*0x750a9e*/
+        (v5)->Release(); /*0x750a9e*/
         v5 = 0; /*0x750aa3*/
       }
     }
@@ -2471,8 +2471,8 @@ int PlayAudioAt2(IUnknown * aP0, unsigned int * a1, int a3)
   v6 = (unsigned int *)result; /*0x750e3e*/
   if ( result ) /*0x750e42*/
   {
-    AudioController::Init(&result->__pad_00C); /*0x750e50*/
-    DListNode::InitEmpty((DListNode *)v6); /*0x750e57*/
+    (&result->__pad_00C)->Init(); /*0x750e50*/
+    ((DListNode *)v6)->InitEmpty(); /*0x750e57*/
     v6[12] = 0; /*0x750e5c*/
     v6[8] = *a1; /*0x750e6b*/
     v6[9] = a1[1]; /*0x750e70*/
@@ -2500,20 +2500,20 @@ int VocClass_Update()
   int v2; // ebx
   int v3; // eax
 
-  result = AudioQueue::GetNext(&stru_B1D320); /*0x750ec6*/
+  result = (&stru_B1D320)->GetNext(); /*0x750ec6*/
   v1 = result; /*0x750ecb*/
   if ( result ) /*0x750ecf*/
   {
     do /*0x750f30*/
     {
-      v2 = AudioQueue::GetNextAlt(v1); /*0x750eda*/
+      v2 = (v1)->GetNextAlt(); /*0x750eda*/
       if ( !v1->u32_30 ) /*0x750edc*/
         StartAudioController(v1 + 32, v1 + 12); /*0x750ee9*/
       result = AudioSource::Get(v1 + 12); /*0x750ef3*/
       if ( !result ) /*0x750efa*/
       {
-        v3 = VocClass::Check(v1 + 12); /*0x750efe*/
-        if ( !v3 || (result = AudioMixer::SetVolume(v3)) == 0 ) /*0x750f10*/
+        v3 = (v1 + 12)->Check(); /*0x750efe*/
+        if ( !v3 || (result = (v3)->SetVolume()) == 0 ) /*0x750f10*/
         {
           LinkedList::Init(v1); /*0x750f14*/
           result = PushFrontLinkedListAlt(dword_B1D3A4, v1); /*0x750f21*/
@@ -2818,7 +2818,7 @@ void ThemeClass_Stop(char a1)
     dword_B1D4C4 = 0; /*0x7529b3*/
   }
   if ( g_InfantryDrawState ) /*0x7529c5*/
-    Audio::Release(g_InfantryDrawState); /*0x7529c7*/
+    (g_InfantryDrawState)->Release(); /*0x7529c7*/
   if ( a1 ) /*0x7529cf*/
     ThemeClass::ClearQueues(); /*0x7529d1*/
 }
@@ -2829,7 +2829,7 @@ namespace gamemd {
 void ____F_m_badAllocExceptionPtr___ExceptionPtr__0V__shared_ptr___ExceptionPtr___tr1_std__A__YAXXZ()
 {
   if ( dword_B1D4D8 ) /*0x752ca8*/
-    Audio::Release(dword_B1D4D8); /*0x752caa*/
+    (dword_B1D4D8)->Release(); /*0x752caa*/
 }
 } // namespace gamemd
 
@@ -2879,7 +2879,7 @@ int sub_7539D0()
   dword_B2D934 = 0; /*0x7539ee*/
   dword_B2D928 = (int)&XSurface_Vtable; /*0x7539f8*/
   dword_B2D938 = 1; /*0x753a02*/
-  Buffer::Init(stru_B2D93C, (int)g_VoxelRenderBuffer, 0x10000); /*0x753a0c*/
+  (stru_B2D93C)->Init((int)g_VoxelRenderBuffer, 0x10000); /*0x753a0c*/
   dword_B2D928 = (int)&BSurface_Vtable; /*0x753a16*/
   return atexit(sub_753A30); /*0x753a26*/
 }
@@ -2889,7 +2889,7 @@ int sub_7539D0()
 namespace gamemd {
 void sub_753A30()
 {
-  Vector::Clear((int)&stru_B2D93C); /*0x753a35*/
+  ((int)&stru_B2D93C)->Clear(); /*0x753a35*/
   dword_B2D928 = (int)&Surface_Vtable; /*0x753a3a*/
 }
 } // namespace gamemd
@@ -2903,7 +2903,7 @@ int sub_753A50()
   dword_B2D7FC = 0; /*0x753a6e*/
   dword_B2D7F0 = (int)&XSurface_Vtable; /*0x753a78*/
   dword_B2D800 = 1; /*0x753a82*/
-  Buffer::Init(stru_B2D804, (int)byte_B1D5E0, 0x10000); /*0x753a8c*/
+  (stru_B2D804)->Init((int)byte_B1D5E0, 0x10000); /*0x753a8c*/
   dword_B2D7F0 = (int)&BSurface_Vtable; /*0x753a96*/
   return atexit(sub_753AB0); /*0x753aa6*/
 }
@@ -2913,7 +2913,7 @@ int sub_753A50()
 namespace gamemd {
 void sub_753AB0()
 {
-  Vector::Clear((int)&stru_B2D804); /*0x753ab5*/
+  ((int)&stru_B2D804)->Clear(); /*0x753ab5*/
   dword_B2D7F0 = (int)&Surface_Vtable; /*0x753aba*/
 }
 } // namespace gamemd
@@ -3022,11 +3022,11 @@ char globalHelper_053C80(unsigned int * a1, SomeVoxelCache * edx0, SomeVoxelCach
   float v14[12]; // [esp+58h] [ebp-30h] BYREF
 
   memcpy(v13, InvertMatrix3x3Signs(v14, a4), sizeof(v13)); /*0x753cad*/
-  v7 = (float *)Matrix3x3::TransformPoint(v12, a2, v10); /*0x753cb9*/
+  v7 = (float *)(v12)->TransformPoint(a2, v10); /*0x753cb9*/
   v11[0] = *v7; /*0x753cc0*/
   v11[1] = v7[1]; /*0x753cc7*/
   v11[2] = v7[2]; /*0x753cd9*/
-  Info = VoxelSection::GetInfo(a1, edx0, aP2); /*0x753cdd*/
+  Info = (a1)->GetInfo(edx0, aP2); /*0x753cdd*/
   return GlobalHelper_053C80_Helper(v11, *(uint8_t *)(Info + 163)); /*0x753cf3*/
 }
 } // namespace gamemd
@@ -3049,7 +3049,7 @@ char * globalHelper_053F90(unsigned int * a0, ObjectClass * aP1, SomeVoxelCache 
   float v23[3]; // [esp+1Ch] [ebp-18h] BYREF
   float v24[3]; // [esp+28h] [ebp-Ch] BYREF
 
-  Info = VoxelSection::GetInfo(a0, (int)aP1, (int)aP2); /*0x753fa1*/
+  Info = (a0)->GetInfo((int)aP1, (int)aP2); /*0x753fa1*/
   v12 = 4; /*0x753fac*/
   v13 = (VoxelSection **)(72 * dword_B2FB70 + 11796344); /*0x753fb8*/
   v13[15] = a7; /*0x753fbf*/
@@ -3287,7 +3287,7 @@ unsigned int * sub_754B40()
   v1 = 21; /*0x754b47*/
   do /*0x754b62*/
   {
-    result = Int4::Set(v0, 0, 0, 0, 1065353216); /*0x754b59*/
+    result = (v0)->Set(0, 0, 0, 1065353216); /*0x754b59*/
     v0 += 4; /*0x754b5e*/
     --v1; /*0x754b61*/
   }
@@ -3310,7 +3310,7 @@ unsigned int * sub_754B70()
   v1 = 21; /*0x754b77*/
   do /*0x754b92*/
   {
-    result = Int4::Set(v0, 0, 0, 0, 1065353216); /*0x754b89*/
+    result = (v0)->Set(0, 0, 0, 1065353216); /*0x754b89*/
     v0 += 4; /*0x754b8e*/
     --v1; /*0x754b91*/
   }
@@ -3347,7 +3347,7 @@ float * sub_7559D0(float * a1, float * a2, void * a3, double a4)
   else
   {
     v6 = a4; /*0x755a04*/
-    v5 = (float *)Math::QuaternionSlerp(v7, &stru_B44348[4 * (unsigned int)a1], &stru_B44348[4 * (unsigned int)a2], v6); /*0x755a1a*/
+    v5 = (float *)(v7)->QuaternionSlerp(&stru_B44348[4 * (unsigned int)a1], &stru_B44348[4 * (unsigned int)a2], v6); /*0x755a1a*/
     result = ToQuaternionMatrix(v8, v5); /*0x755a25*/
     memcpy(a3, result, 0x30u); /*0x755a35*/
   }
@@ -3372,7 +3372,7 @@ void * VoxelAnim_InterpolatePose(void * a1, int a2, int a3, double a4)
   else
   {
     v8 = a4; /*0x755a5c*/
-    v5 = Math::QuaternionSlerp((int)&stru_B43188 + 16 * a3, v8); /*0x755a6e*/
+    v5 = ((int)&stru_B43188 + 16 * a3)->QuaternionSlerp(v8); /*0x755a6e*/
     v6 = (const void *)ToQuaternionMatrix(v9, v5); /*0x755a83*/
     memcpy(a1, v6, 0x30u); /*0x755a89*/
     return a1; /*0x755a87*/
@@ -3759,7 +3759,7 @@ unsigned int E4Recv_759BC0::sub_759BC0(signed int a2)
 namespace gamemd {
 bool sub_75A100(int a1, int a2, unsigned int * a3, int a4)
 {
-  return VoxelRenderer::InitializeBuffers(*(unsigned int *)(a1 + 172), a2, a3, a4); /*0x75a11e*/
+  return (*(unsigned int *)(a1 + 172))->InitializeBuffers(a2, a3, a4); /*0x75a11e*/
 }
 }
 // 0x75A2B0

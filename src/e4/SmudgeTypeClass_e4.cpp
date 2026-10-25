@@ -131,7 +131,7 @@ void SmudgeTypeClass::g_var_3d23dc(int * a2, int * a3, int a4, int a5, short * a
       v14 += -15 * (a4 / Width + a4 % Width); /*0x6b5659*/
       v13 += 60 * (a4 / Width - a4 % Width) / 2; /*0x6b5661*/
     }
-    v10 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, a6); /*0x6b5674*/
+    v10 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(a6); /*0x6b5674*/
     v12 = *((__int16 *)v10 + 134); /*0x6b568a*/
     v11 = ZCoordToScreenY(a5); /*0x6b568c*/
     DrawToSurfaceSHP((int)g_DSurface_Hidden_2, v10->ptr_34, v7, 0, &v13, a3, 3584, 0, -1 - v11, 0, v12, 0, 0, 0, 0, 0); /*0x6b56b4*/
@@ -145,44 +145,48 @@ int SmudgeTypeClass::GetSize(uint8_t *** aP1)
 {
 
   int result; // eax
+  char Bool_Overwrite; // al
+  char v5; // cl
+  char v6; // al
+  int Width; // [esp-8h] [ebp-210h]
+  char Buffer[512]; // [esp+8h] [ebp-200h] BYREF
 
-  INIClass::ResetSection((INIClass *)aP1); /*0x6b56e3*/
-  if ( ((ObjectTypeClass *)this)->LoadFromINI(aP1) ) /*0x6b56eb*/
-  {
-    char Bool_Overwrite; // al
-    Bool_Overwrite = INIClass::ReadBool_Overwrite((int *)aP1, (unsigned __int8 *)this->ArrayIndex, aCrater, this->Crater); /*0x6b570b*/
-    char Burn; // cl
-    Burn = this->Burn; /*0x6b5710*/
-    this->Crater = Bool_Overwrite; /*0x6b5716*/
-    char v6; // al
-    v6 = INIClass::ReadBool_Overwrite((int *)aP1, (unsigned __int8 *)this->ArrayIndex, aBurn, Burn); /*0x6b5725*/
-    int Width; // [esp-8h] [ebp-210h]
-    Width = this->Width; /*0x6b5732*/
-    this->Burn = v6; /*0x6b5739*/
-    this->Width = INIClass::ReadInt_Overwrite( /*0x6b5744*/
+  INIClass::ResetSection((INIClass *)aP1);  /*0x6b56e3*/
+  if ( ((ObjectTypeClass *)this)->LoadFromINI(aP1) )
+  {  /*0x6b56eb*/
+    Bool_Overwrite = INIClass::ReadBool_Overwrite(
+                       (int *)aP1,
+                       (unsigned __int8 *)this->__pad_24,
+                       aCrater,
+                       this->Crater[0]);  /*0x6b570b*/
+    v5 = this->Burn[0];  /*0x6b5710*/
+    this->Crater[0] = Bool_Overwrite;  /*0x6b5716*/
+    v6 = INIClass::ReadBool_Overwrite((int *)aP1, (unsigned __int8 *)this->__pad_24, aBurn, v5);  /*0x6b5725*/
+    Width = this->Width;  /*0x6b5732*/
+    this->Burn[0] = v6;  /*0x6b5739*/
+    this->Width = INIClass::ReadInt_Overwrite(
                     (bool *)aP1,
-                    (unsigned __int8 *)this->?,
-                    (unsigned __int8 *)&DataGlobal_82BA00[484],
-                    Width);
-    this->Height = INIClass::ReadInt_Overwrite( /*0x6b575e*/
+                    (unsigned __int8 *)this->__pad_24,
+                    (unsigned __int8 *)aWidth,
+                    Width);  /*0x6b5744*/
+    this->Height = INIClass::ReadInt_Overwrite(
                      (bool *)aP1,
-                     (unsigned __int8 *)this->?,
+                     (unsigned __int8 *)this->__pad_24,
                      (unsigned __int8 *)g_INI_Key_Height,
-                     this->Height);
-    char Buffer[512]; // [esp+8h] [ebp-200h] BYREF
-    if ( this->Theater_d ) /*0x6b5764*/
-      _makepath(Buffer, 0, 0, this->ArrayIndex, (const char *)&off_7E1BC6 + 112 * dword_A8B230[130].uniqueId); /*0x6b57b4*/
+                     this->Height);  /*0x6b575e*/
+    if ( this->Theater[0] )
+      _makepath(Buffer, 0, 0, this->ImageFile, (const char *)&off_7E1BC6 + 112 * dword_A8B230[117].uniqueId);  /*0x6b57b4*/  /*0x6b5764*/
     else
-      _makepath(Buffer, 0, 0, this->ArrayIndex, Ext); /*0x6b5784*/
-    result = (int)SearchMIXFile(Buffer, 0); /*0x6b57c2*/
-    this->Image = (SHPStruct *)result; /*0x6b57c7*/
-    (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x6b57ce*/
+      _makepath(Buffer, 0, 0, this->ImageFile, Ext);  /*0x6b5784*/
+    result = (int)SearchMIXFile(Buffer, 0);  /*0x6b57c2*/
+    this->Image = result;  /*0x6b57c7*/
+    LOBYTE(result) = 1;  /*0x6b57ce*/
   }
   else
   {
-    (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x6b57db*/
+    LOBYTE(result) = 0;  /*0x6b57db*/
   }
-  return result; /*0x6b57cd*/
+  return result;  /*0x6b57cd*/
 
 }
 }  // G42.18c ns repair
@@ -219,7 +223,7 @@ SmudgeTypeClass *  SmudgeTypeClass::ddtor(void * a2, char a3)
       ++v4; /*0x6b61dc*/
     }
   }
-  ObjectTypeClass::Destruct((int)a3); /*0x6b61f0*/
+  ((int)a3)->Destruct(); /*0x6b61f0*/
   if ( (a3 & 1) != 0 ) /*0x6b61fa*/
     operator delete((void *)(a3)); /*0x6b61fd*/
   return &a3->ptr_0; /*0x6b6207*/
@@ -241,7 +245,7 @@ bool SmudgeTypeClass::GetType(short * a2, int a3)
     v5 = a2[1]; /*0x6b5578*/
     v7[0] = (*a2 << 8) + 128; /*0x6b5585*/
     v7[1] = (v5 << 8) + 128; /*0x6b559a*/
-    if ( UnitClass::Create(v4, this, v7, -1) ) /*0x6b559e*/
+    if ( (v4)->Create(this, v7, -1) ) /*0x6b559e*/
       return 1; /*0x6b5565*/
   }
   return result; /*0x6b55a9*/
@@ -255,7 +259,7 @@ SmudgeClass * SmudgeTypeClass::GetFlag(int a2)
   UnitClass *v3; // eax
   v3 = (UnitClass *)operator new(0xB0u); /*0x6b55c8*/
   if ( v3 ) /*0x6b55d2*/
-    return UnitClass::Create(v3, this, &dword_B0B7A8, -1); /*0x6b55de*/
+    return (v3)->Create(this, &dword_B0B7A8, -1); /*0x6b55de*/
   else
     return 0; /*0x6b55e7*/
 }
