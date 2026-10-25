@@ -101,7 +101,7 @@ int Construct(int,int);  // 0x43B740
     void OnCellPlacementComplete(ObjectClass *a2);  // 0x710670 (IDA: thiscall(this, arg0))
 
     // Exit coordinates
-    virtual CoordStruct* GetExitCoords(CoordStruct* out, uint32_t unknown) const override;  // 0x447AC0
+    virtual CoordStruct* GetExitCoords(CoordStruct* out, uint32_t unknown) const ;  // 0x447AC0
     CoordStruct* GetAdjustedExitCoords(CoordStruct* out) const;  // 0x4500A0
     int GetFactoryPosition() const;
     CoordStruct* CalcExitCoords(CoordStruct* out, int dir) const;  // 0x4FD150
@@ -351,7 +351,7 @@ int CanAcceptType(int,int);  // 0x452670
     int GetZDrawOffset() const;  // 0x43E900
     int GetBoundingSizeExt() const;  // 0x449410
     // wrapper: delegates to BuildingClass::GetBoundingSizeExt at 0x449410
-    virtual ra2::game::LightConvertClass* GetRemapColour() const override;
+    virtual ra2::game::LightConvertClass* GetRemapColour() const ;
 
     // Health / Stats
     double GetHealthRatio() const;  // 0x5F5C60

@@ -100,318 +100,167 @@ public:
 public:
     static constexpr AbstractType kObjectDeriveId = static_cast<AbstractType>(0x2);
 
-    // === IPersistStream override (re-declared pure virtual) ===
-    // [5] 0x5F5E80 ObjectClass ptr_0 stub for Load
-    // stub: not yet implemented from IDA
-    virtual HRESULT __stdcall Load(IStream* stream) override = 0;
+    // === X133: inherited-range overrides (OC binary table slots 0-23 where RVA != root) ===
+    // slot 5: impl 0x5F5E80 (SaveLoad_Register body; raw retn 8 = 2 stack args --
+    //          arity divergence vs COM stdcall recorded as I525)
+    virtual HRESULT __stdcall Load(IStream* stream) override;  // X133 slot 5 = 0x5F5E80
 
     // === Destructor ===
-    // [8] 0x5F6DC0 ObjectClass::CreateInstance (dtor thunk)
-    virtual ~ObjectClass();  // 0x5F3B80
+    virtual ~ObjectClass();  // X133: slot 8 = 0x5F6DC0 deleting dtor (0x5F3B80 = complete dtor)
+
+    virtual int Unlink(int a1, int a2) override;  // X133 slot 10 = 0x5F5230
+    virtual int ProcessPower() override;    // X133 slot 13 = 0x5F6250 (binary arity=1; 0-arg per X132 model -- I525)
+    virtual bool IsActive() const override;       // X133 slot 17 = 0x5F6690
+    virtual unsigned int* GetInvalidCoord(unsigned int* out) override;  // X133 slot 18 = 0x5F65A0
+    virtual bool IsBelowScreen() override;          // X133 slot 20 = 0x5F6B60
+    virtual bool IsHeightAboveThreshold() override; // X133 slot 21 = 0x5F6B90
+    virtual int DetectCloaked() override;           // X133 slot 23 = 0x5F3E70
 
     // ========================================================================
-    // ObjectClass virtuals (ptr_0[0] entries [24]-[121])
-    // =0 methods have no function body; address = ptr_0 slot target function
+    // X133: ObjectClass own virtuals -- binary table 0x7EF060 slots [24]-[121] (98)
+    // declaration order = slot order; arity = Capstone retn-imm/4 (raw-verified).
     // ========================================================================
+    virtual int ResetPointerIfMatch(int a1);  // X133 slot 24 = 0x5F6DA0
+    virtual bool COMStub_Return0_25();  // X133 slot 25 = 0x426390 (body pending)
+    virtual int COMStub_26(int a1, int a2);  // X133 slot 26 = 0x4263A0 (body pending)
+    virtual int HasC4(int a1);  // X133 slot 27 = 0x5F3E30
+    virtual int COMStub_28(int a1, int a2, int a3);  // X133 slot 28 = 0x5F4250 (body pending)
+    virtual int COMStub_29(int a1, int a2);  // X133 slot 29 = 0x5F4240 (body pending)
+    virtual int GetThreatLevel();  // X133 slot 30 = 0x5F4260
+    virtual int IsAboveScreenMargin();  // X133 slot 31 = 0x5F6C10
+    virtual bool COMStub_Return0_32();  // X133 slot 32 = 0x4263B0 (body pending)
+    virtual int COMStub_Return0_33();  // X133 slot 33 = 0x5F6BC0 (body pending)
+    virtual int COMStub_Return0_34();  // X133 slot 34 = 0x4E0130 (body pending)
+    virtual int COMStub_Ret2147483647_35();  // X133 slot 35 = 0x5F42A0 (body pending)
+    virtual int COMStub_Ret8487648_36();  // X133 slot 36 = 0x4263C0 (body pending)
+    virtual bool COMStub_Return0_37();  // X133 slot 37 = 0x5F42B0 (body pending)
+    virtual bool COMStub_Return0_38();  // X133 slot 38 = 0x5F42C0 (body pending)
+    virtual bool COMStub_Return0_39();  // X133 slot 39 = 0x5F42D0 (body pending)
+    virtual bool COMStub_Return0_40();  // X133 slot 40 = 0x5F42E0 (body pending)
+    virtual int GetCoordsThunk1(int a1);  // X133 slot 41 = 0x41BDD0
+    virtual int GetCoords_Alt(int a1, int a2);  // X133 slot 42 = 0x5F6C80
+    virtual int GetCoordsThunk2(int a1);  // X133 slot 43 = 0x41BE00
+    virtual int GetDrawPosition(int a1, int a2, int a3, int a4, int a5);  // X133 slot 44 = 0x4263D0
+    virtual int GetCoordsThunk3(int a1, int a2);  // X133 slot 45 = 0x41BE30
+    virtual int GetBoundingSize();  // X133 slot 46 = 0x5F6BD0
+    virtual int CheckGroundHeightDiff(int a1);  // X133 slot 47 = 0x5F6A70
+    virtual int getCoordCenter();  // X133 slot 48 = 0x426410 (int: caller compares != -1)
+    virtual bool COMStub_Return0_49();  // X133 slot 49 = 0x426420 (body pending)
+    virtual int COMStub_50(int a1);  // X133 slot 50 = 0x426430 (body pending)
+    virtual int LandingCheckStub(int a1);  // X133 slot 51 = 0x41BE60 (body pending)
+    virtual int StubReturnFalse2(int a1);  // X133 slot 52 = 0x41BE70 (body pending)
+    virtual AbstractClass** Undeploy();  // X133 slot 53 = 0x5F4D30 (def e4/ObjectClass_e4.cpp)
+    virtual AbstractClass** Deploy(int a1, int a2);  // X133 slot 54 = 0x5F4EC0 (def e4/ObjectClass_e4.cpp; arity plumbed)
+    virtual AbstractClass** Destroy2(int a1);  // X133 slot 55 = 0x5F5280 (def e4/ObjectClass_e4.cpp; arity plumbed)
+    virtual int COMStub_Return0_56(int a1);  // X133 slot 56 = 0x5F42F0 (body pending)
+    virtual int COMStub_Return0_57(int a1);  // X133 slot 57 = 0x5F4300 (body pending)
+    virtual int ParachuteDrop(int a1);  // X133 slot 58 = 0x5F5940
+    virtual void DropAsBomb();  // 0x5F4160  // X133 slot 59
+    virtual int SetCellOverlayFlag(int a1);  // X133 slot 60 = 0x5F60A0 (body pending)
+    virtual int ClearCellOverlayFlag(int a1);  // X133 slot 61 = 0x5F6120 (body pending)
+    virtual int Destroy();  // 0x5F65F0  // X133 slot 62
+    virtual int COMStub_Return0_63();  // X133 slot 63 = 0x5F4310 (body pending)
+    virtual int COMStub_64(int a1, int a2);  // X133 slot 64 = 0x5F4320 (body pending)
+    virtual int CalcDrawRect(int a1, int a2, int a3);  // X133 slot 65 = 0x5F4B10 (def object/gap2_defs.cpp; arity plumbed)
+    virtual int GetOrCreateResHandle(int a1);  // X133 slot 66 = 0x5F5B90
+    virtual int COMStub_Return0_67(int a1, int a2);  // X133 slot 67 = 0x426440 (body pending)
+    virtual int COMStub_Return0_68(int a1, int a2);  // X133 slot 68 = 0x426450 (body pending)
+    virtual int StubReturnFalse(int a1, int a2);  // X133 slot 69 = 0x5B3A50 (body pending)
+    virtual int DelegateVt69(int a1, int a2);  // X133 slot 70 = 0x5F65D0
+    virtual int COMStub_Return0_71();  // X133 slot 71 = 0x5F4330 (body pending)
+    virtual int COMStub_Return0_72(int a1, int a2);  // X133 slot 72 = 0x5F4340 (body pending)
+    virtual int UpdateProductionDisplay(int a1);  // X133 slot 73 = 0x5F5850
+    virtual int GetPlacementScreenRect(int a1);  // X133 slot 74 = 0x5F4730
+    virtual RectangleStruct* getBoundsRect(RectangleStruct* out) const;  // 0x5F4870  // X133 slot 75
+    virtual int CheckStateFlag(int a1);  // X133 slot 76 = 0x41BE80 (body pending)
+    virtual int MarkForRedraw();  // X133 slot 77 = 0x5F4D10
+    virtual int IsPlayerOwnedAndCheck();  // X133 slot 78 = 0x5F6C30
+    virtual int COMStub_79(int a1, int a2);  // X133 slot 79 = 0x5F6C70 (body pending)
+    virtual int COMStub_80(int a1, int a2, int a3, int a4);  // X133 slot 80 = 0x5F4360 (body pending)
+    virtual int COMStub_81(int a1, int a2, int a3);  // X133 slot 81 = 0x5F4350 (body pending)
+    virtual int COMStub_Return0_82(int a1);  // X133 slot 82 = 0x5F4370 (body pending)
+    virtual int HandleSelection();  // X133 slot 83 = 0x5F4520
+    virtual bool Remove();  // 0x5F44A0  // X133 slot 84
+    virtual int COMStub_Return0_85(int a1, int a2, int a3);  // X133 slot 85 = 0x426460 (body pending)
+    virtual int COMStub_Return0_86();  // X133 slot 86 = 0x426470 (body pending)
+    virtual int COMStub_Return0_87(int a1);  // X133 slot 87 = 0x426480 (body pending)
+    virtual bool COMStub_Return0_88();  // X133 slot 88 = 0x426490 (body pending)
+    virtual int COMStub_89(int a1, int a2);  // X133 slot 89 = 0x5F4380 (body pending)
+    virtual int COMStub_90(int a1);  // X133 slot 90 = 0x5F4390 (body pending)
+    virtual int CreateDestructionEffect(int a1, int a2, int a3, int a4, int a5, int a6, int a7);  // X133 slot 91 = 0x5F5390 (body pending)
+    virtual int COMStub_Return0_92();  // X133 slot 92 = 0x4264A0 (body pending)
+    virtual int COMStub_Return0_93(int a1, int a2, int a3);  // X133 slot 93 = 0x5F43A0 (body pending)
+    virtual bool StubReturnFalse3();  // X133 slot 94 = 0x5F43B0 (body pending)
+    virtual int StubReturnTrue();  // X133 slot 95 = 0x5F43C0 (body pending)
+    virtual int COMStub_Return0_96();  // X133 slot 96 = 0x5F43D0 (body pending)
+    virtual int processStateUpdate();  // X133 slot 97 = 0x5F43E0 (body pending)
+    virtual int CheckStateFlag2(int a1);  // X133 slot 98 = 0x41BE90 (body pending)
+    virtual int COMStub_Return0_99(int a1);  // X133 slot 99 = 0x4264B0 (body pending)
+    virtual int Fire(int a1, int a2);  // X133 slot 100 = 0x5F5C20
+    virtual int ProcessInputKey(int a1, int a2, int a3);  // X133 slot 101 = 0x5F5320
+    virtual int IsNotNull(int a1);  // X133 slot 102 = 0x5F5930 (body pending)
+    virtual int StubReturnFalse4(int a1);  // X133 slot 103 = 0x5F43F0 (body pending)
+    virtual int COMStub_Return0_104(int a1);  // X133 slot 104 = 0x5F4400 (body pending)
+    virtual int COMStub_Return0_105(int a1, int a2);  // X133 slot 105 = 0x5F6B50 (body pending)
+    virtual int MoveToDirection(int a1);  // X133 slot 106 = 0x5F4410
+    virtual int COMStub_107(int a1, int a2, int a3, int a4, int a5);  // X133 slot 107 = 0x4264C0 (body pending)
+    virtual int COMStub_108(int a1, int a2, int a3, int a4, int a5);  // X133 slot 108 = 0x4264D0
+    virtual int SetPosition(int a1);  // X133 slot 109 = 0x5F6940
+    virtual CoordStruct * GetCellCoords_Alt(void *a2 = 0) const;  // X133 slot 110 = 0x41BEA0 (binary); def body 0x44B958 W20M26 retype
+    virtual int GetCellCoords();  // X133 slot 111 = 0x5F6960
+    virtual int CoordToCell(int a1);  // X133 slot 112 = 0x5F69C0
+    virtual CellClass* GetCell() const;  // 0x5F6A10  // X133 slot 113
+    virtual int GetZAboveGround();  // X133 slot 114 = 0x5F5F40
+    virtual int SetZ(int a1);  // X133 slot 115 = 0x5F5FA0
+    virtual int GetMember41();  // X133 slot 116 = 0x5F5F30
+    virtual bool COMStub_Return0_117();  // X133 slot 117 = 0x4264E0 (body pending)
+    virtual bool COMStub_Return0_118();  // X133 slot 118 = 0x4264F0 (body pending)
+    virtual bool COMStub_Return0_119();  // X133 slot 119 = 0x426500 (body pending)
+    virtual int getCoordCenter2();  // X133 slot 120 = 0x426510 (int: caller 0x5f4fda compares != -1)
+    virtual int COMStub_Return0_121();  // X133 slot 121 = 0x426520 (body pending)
 
-    // [24] 0x5F6DA0 ObjectClass::ResetPointerIfMatch
-    // design: pure virtual function, no binary implementation
-    virtual void AnimpointerExpired(AnimClass* anim) = 0;
-    // [25] 0x426390 AbstractClass::COMStub_Return0_25 (return false stub)
-    // stub: not yet implemented from IDA
-    virtual bool IsSelectable() const = 0;
-    // [26] 0x4263A0 AbstractClass::COMStub_26
-    // stub: not yet implemented from IDA
-    virtual VisualType VisualCharacter(int specific_owner, HouseClass* who_is_asking) const = 0;
-    // [27] 0x5F3E30 ObjectClass::HasC4
-    // stub: not yet implemented from IDA
-    virtual SHPStruct* GetImage() const = 0;
-    // [28] 0x5F4250 AbstractClass::COMStub_28
-    // design: virtual function, no binary implementation matched in IDA
-    virtual Action MouseOverCell(const CellStruct& cell, bool check_fog = false, bool ignore_force = false) const = 0;
-    // [29] 0x5F4240 AbstractClass::COMStub_29
-    // design: virtual function, no binary implementation matched in IDA
-    virtual Action MouseOverObject(const ObjectClass* object, bool ignore_force = false) const = 0;
-    // [30] 0x5F4260 ObjectClass::GetThreatLevel
-    virtual Layer InWhichLayer() const = 0;  // 0x424CB0
-    // [31] 0x5F6C10 ObjectClass::IsAboveScreenMargin (YRpp: IsSurfaced)
-    // wrapper: delegates to AnimClass::InWhichLayer_AttachedObjectLayer at 0x424CB0
-    virtual bool IsSurfaced();
-    // [32] 0x4263B0 AbstractClass::COMStub_Return0_32 (return false stub)
-    // stub: not yet implemented from IDA
-    virtual bool IsStrange() const;
-    // [33] 0x5F6BC0 AbstractClass::COMStub_Return0_33
-    virtual TechnoTypeClass* GetTechnoType() const = 0;
-    // [34] 0x4E0130 AbstractClass::COMStub_Return0_34
-    // stub: not yet implemented from IDA
-    virtual ObjectTypeClass* GetType() const = 0;
-    // [35] 0x5F42A0 AbstractClass::COMStub_Ret2147483647_35
-    // wrapper: delegates to INIEntry::GetTechnoType at 0x476EB0
-    virtual uint32_t GetTypeOwners() const = 0;
-    // [36] 0x4263C0 AbstractClass::COMStub_Ret8487648_36
-    virtual const wchar_t* GetUIName() const = 0;  // 0x484FF0
-    // [37] 0x5F42B0 AbstractClass::COMStub_Return0_37 (return false stub)
-    // stub: not yet implemented from IDA
-    virtual bool CanBeRepaired() const;
-    // [38] 0x5F42C0 AbstractClass::COMStub_Return0_38 (return false stub)
-    virtual bool CanBeSold() const;
-    // [39] 0x5F42D0 AbstractClass::COMStub_Return0_39 (return false stub)
-    virtual bool IsActive() const;  // 0x5F6690
-    // [40] 0x5F42E0 AbstractClass::COMStub_Return0_40 (return false stub)
-    // stub: not yet implemented from IDA
-    virtual bool IsControllable() const;
-
-    // --- Coordinate accessors ---
-    // [41] 0x41BDD0 ObjectClass::GetCoordsThunk1
-    // stub: not yet implemented from IDA
-    virtual CoordStruct* GetPosition_0(CoordStruct* out) const = 0;
-    // [42] 0x5F6C80 ObjectClass::GetCoords_Alt
-    // design: virtual function, no binary implementation matched in IDA
-    virtual CoordStruct* GetDockCoords(CoordStruct* out, TechnoClass* docker) const = 0;
-    // [43] 0x41BE00 ObjectClass::GetCoordsThunk2 (YRpp: GetRenderCoords)
-    // design: virtual function, no binary implementation matched in IDA
-    virtual CoordStruct* GetPosition_2(CoordStruct* out) const = 0;
-    // [44] 0x4263D0 ObjectClass::GetDrawPosition
-    // design: virtual function, no binary implementation matched in IDA
-    virtual CoordStruct* GetFLH(CoordStruct* dest, int weapon_idx, CoordStruct base_coords) const = 0;
-    // [45] 0x41BE30 ObjectClass::GetCoordsThunk3
-    virtual CoordStruct* GetExitCoords(CoordStruct* out, uint32_t unknown) const = 0;  // 0x447AC0
-    // [46] 0x5F6BD0 ObjectClass::GetBoundingSize (YRpp: GetYSort)
-    // wrapper: delegates to BuildingClass::GetExitCoords at 0x447AC0
-    virtual int GetYSort() const = 0;
-    // [47] 0x5F6A70 ObjectClass::CheckGroundHeightDiff
-    // wrapper: delegates to BuildingClass::GetExitCoords at 0x447AC0
-    virtual bool IsOnBridge(TechnoClass* docker = nullptr) const = 0;
-    // [48] 0x426410 AbstractClass::getCoordCenter (return false stub)
-    // stub: not yet implemented from IDA
-    virtual bool IsStandingStill() const = 0;
-    // [49] 0x426420 AbstractClass::COMStub_Return0_49 (return false stub)
-    // stub: not yet implemented from IDA
-    virtual bool IsDisguised() const = 0;
-    // [50] 0x426430 AbstractClass::COMStub_50
-    // stub: not yet implemented from IDA
-    virtual bool IsDisguisedAs(HouseClass* target) const = 0;
-    // [51] 0x41BE60 AircraftClass::LandingCheckStub
-    // stub: not yet implemented from IDA
-    virtual ObjectTypeClass* GetDisguise(bool disguised_against_allies) const = 0;
-    // [52] 0x41BE70 AircraftClass::StubReturnFalse2
-    // design: virtual function, no binary implementation matched in IDA
-    virtual HouseClass* GetDisguiseHouse(bool disguised_against_allies) const = 0;
-
-    // --- Lifecycle ---
-    // [53] 0x5F4D30 ObjectClass::Undeploy (Limbo)
-    virtual bool Remove();  // 0x5F44A0
-    // [54] 0x5F4EC0 ObjectClass::Deploy (Unlimbo)
-    // wrapper: delegates to ObjectClass::Remove at 0x5F44A0
-    virtual bool Put(const CoordStruct& coords, unsigned int face_dir);
-    // [55] 0x5F5280 ObjectClass::Destroy2 (Disappear)
-    virtual void Disappear(bool permanently) = 0;  // 0x44EBF0
-    // [56] 0x5F42F0 AbstractClass::COMStub_Return0_56
-    // design: pure virtual function, no binary implementation
-    virtual void RegisterDestruction(TechnoClass* destroyer) = 0;
-    // [57] 0x5F4300 AbstractClass::COMStub_Return0_57
-    // design: pure virtual function, no binary implementation
-    virtual void RegisterKill(HouseClass* destroyer) = 0;
-    // [58] 0x5F5940 ObjectClass::ParachuteDrop
-    // design: pure virtual function, no binary implementation
-    virtual bool SpawnParachuted(const CoordStruct& coords) = 0;
-    // [59] 0x5F4160 ObjectClass::DropAsBomb_Track
-    virtual void DropAsBomb() = 0;  // 0x5F4160
-    // [60] 0x5F60A0 MapClass::SetCellOverlayFlag
-    // design: pure virtual function, no binary implementation
-    virtual void MarkAllOccupationBits(const CoordStruct& coords) = 0;
-    // [61] 0x5F6120 MapClass::ClearCellOverlayFlag
-    // design: pure virtual function, no binary implementation
-    virtual void UnmarkAllOccupationBits(const CoordStruct& coords) = 0;
-    // [62] 0x5F65F0 ObjectClass::Destroy (YRpp: UnInit)
-    // design: pure virtual function, no binary implementation
-    virtual void UnInit() = 0;
-
-    // --- Visibility / Discovery ---
-    // [63] 0x5F4310 AbstractClass::COMStub_Return0_63 (stub retn)
-    virtual void Reveal();
-    // [64] 0x5F4320 AbstractClass::COMStub_64
-    // design: pure virtual function, no binary implementation
-    virtual KickOutResult KickOutUnit(TechnoClass* techno, CellStruct cell) = 0;
-    // [65] 0x5F4B10 ObjectClass::CalcDrawRect
-    // stub: not yet implemented from IDA
-    virtual bool DrawIfVisible(RectangleStruct* bounds, bool even_if_cloaked, uint32_t unknown) const = 0;
-    // [66] 0x5F5B90 ObjectClass::GetOrCreateResHandle
-    // design: virtual function, no binary implementation matched in IDA
-    virtual const CellStruct* GetFoundationData(bool include_bib = false) const = 0;
-
-    // --- Drawing ---
-    // [67] 0x426440 AbstractClass::COMStub_Return0_67
-    // design: virtual function, no binary implementation matched in IDA
-    virtual void DrawBehind(Point2D* location, RectangleStruct* bounds) const;
-    // [68] 0x426450 AbstractClass::COMStub_Return0_68
-    // design: virtual function, no binary implementation matched in IDA
-    virtual void DrawExtras(Point2D* location, RectangleStruct* bounds) const;
-    // [69] 0x5B3A50 IPersistStream::StubReturnFalse
-    // design: virtual function, no binary implementation matched in IDA
-    virtual void Draw(Point2D* location, RectangleStruct* bounds) const;
-    // [70] 0x5F65D0 ObjectClass::DelegateVt69
-    // design: virtual function, no binary implementation matched in IDA
-    virtual void DrawAgain(Point2D* location, RectangleStruct* bounds) const;
-    // [71] 0x5F4330 AbstractClass::COMStub_Return0_71 (stub retn)
-    // design: pure virtual function, no binary implementation
-    virtual void Undiscover() = 0;
-    // [72] 0x5F4340 AbstractClass::COMStub_Return0_72
-    virtual void See(uint32_t unknown1, uint32_t unknown2) = 0;  // 0x4E0240
-
-    // --- Placement / Bounds ---
-    // [73] 0x5F5850 ObjectClass::UpdateProductionDisplay (UpdatePlacement)
-    // design: pure virtual function, no binary implementation
-    virtual bool UpdatePlacement(int placement_type) = 0;
-    // [74] 0x5F4730 ObjectClass::GetPlacementScreenRect
-    virtual RectangleStruct* getBoundsRect(RectangleStruct* out) const = 0;  // 0x5F4870
-    // [75] 0x5F4870 ObjectClass::GetBoundsRect
-    // design: pure virtual function, no binary implementation
-    virtual RectangleStruct* getBoundsRectMut(RectangleStruct* out) = 0;
-    // [76] 0x41BE80 AircraftClass::CheckStateFlag
-    // design: pure virtual function, no binary implementation
-    virtual void DrawRadialIndicator(uint32_t unknown) = 0;
-    // [77] 0x5F4D10 ObjectClass::MarkForRedraw
-    virtual int MarkForRedraw();
-
-    // --- Selection ---
-    // [78] 0x5F6C30 ObjectClass::IsPlayerOwnedAndCheck
-    // wrapper: delegates to ObjectClass::MarkForRedraw at 0x5F4D10
-    virtual bool CanBeSelected() const;
-    // [79] 0x5F6C70 AbstractClass::COMStub_79
-    // design: virtual function, no binary implementation matched in IDA
-    virtual bool CanBeSelectedNow() const;
-    // [80] 0x5F4360 AbstractClass::COMStub_80
-    virtual bool spawnInfantry(uint32_t a, uint32_t b, uint32_t c, uint32_t d) = 0;  // 0x4D7D50
-    // [81] 0x5F4350 AbstractClass::COMStub_81
-    // design: pure virtual function, no binary implementation
-    virtual bool ClickedAction(Action action, ObjectClass* target, bool unknown) = 0;
-
-    // --- Visual effects ---
-    // [82] 0x5F4370 AbstractClass::COMStub_Return0_82
-    // design: virtual function, no binary implementation matched in IDA
-    virtual void Flash(int duration);
-    // [83] 0x5F4520 ObjectClass::HandleSelection
-    virtual bool Select();
-    // [84] 0x5F44A0 ObjectClass::Remove (Deselect)
-    virtual void Deselect();
-
-    // --- Combat / Armor ---
-    // [85] 0x426460 AbstractClass::COMStub_Return0_85
-    // wrapper: delegates to SidebarClass::deselect at 0x6AB9E0
-    virtual DamageState IronCurtain(int duration, HouseClass* source, bool force_shield);
-    // [86] 0x426470 AbstractClass::COMStub_Return0_86 (stub retn)
-    // design: pure virtual function, no binary implementation
-    virtual void StopAirstrikeTimer() = 0;
-    // [87] 0x426480 AbstractClass::COMStub_Return0_87
-    // design: pure virtual function, no binary implementation
-    virtual void StartAirstrikeTimer(int duration) = 0;
-    // [88] 0x426490 AbstractClass::COMStub_Return0_88 (return false stub)
-    // stub: not yet implemented from IDA
-    virtual bool IsIronCurtained() const;
-    // [89] 0x5F4380 AbstractClass::COMStub_89
-    // stub: not yet implemented from IDA
-    virtual bool IsCloseEnough3D(uint32_t a, uint32_t b) const = 0;
-    // [90] 0x5F4390 AbstractClass::COMStub_90
-    virtual int GetWeaponRange(int weapon_idx) const;
-    // [91] 0x5F5390 TechnoClass::CreateDestructionEffect
-    virtual DamageState ReceiveDamage(int* damage, int distance_from_epicenter, WarheadTypeClass* wh,
+    // --- X133: demoted phantoms (non-virtual; no binary slot in any chain table) ---
+    // X133: kept-as-non-virtual (call sites exist; stub defs pending translation)
+    ObjectTypeClass* GetType() const;
+    void SetLocation(const CoordStruct& coords);
+    void MarkAllOccupationBits(const CoordStruct& coords);
+    RadioCommand ReceiveCommand(TechnoClass* sender, RadioCommand command, AbstractClass*& inout);
+    bool IsSurfaced();
+    bool IsStrange() const;
+    bool CanBeRepaired() const;
+    bool CanBeSold() const;
+    bool IsControllable() const;
+    bool Put(const CoordStruct& coords, unsigned int face_dir);
+    void Reveal();
+    void DrawBehind(Point2D* location, RectangleStruct* bounds) const;
+    void DrawExtras(Point2D* location, RectangleStruct* bounds) const;
+    void Draw(Point2D* location, RectangleStruct* bounds) const;
+    void DrawAgain(Point2D* location, RectangleStruct* bounds) const;
+    bool CanBeSelected() const;
+    bool CanBeSelectedNow() const;
+    void Flash(int duration);
+    bool Select();
+    void Deselect();
+    DamageState IronCurtain(int duration, HouseClass* source, bool force_shield);
+    bool IsIronCurtained() const;
+    int GetWeaponRange(int weapon_idx) const;
+    DamageState ReceiveDamage(int* damage, int distance_from_epicenter, WarheadTypeClass* wh,
         ObjectClass* attacker, bool ignore_defenses, bool prevent_passenger_escape, HouseClass* attacking_house);
-    // [92] 0x4264A0 AbstractClass::COMStub_Return0_92 (stub retn)
-    virtual int Destroy();  // 0x5F65F0
-    // [93] 0x5F43A0 AbstractClass::COMStub_Return0_93
-    virtual void Scatter(const CoordStruct& coords, bool ignore_mission, bool ignore_destination);
-    // [94] 0x5F43B0 AircraftClass::StubReturnFalse3
-    // stub: not yet implemented from IDA
-    virtual bool Ignite();
-    // [95] 0x5F43C0 AircraftClass::StubReturnTrue
-    // wrapper: delegates to UnitClass::Scatter at 0x743A50
-    virtual void Extinguish();
-    // [96] 0x5F43D0 AbstractClass::COMStub_Return0_96
-    // design: virtual function, no binary implementation matched in IDA
-    virtual uint32_t GetPointsValue() const;
-
-    // --- Mission / Command ---
-    // [97] 0x5F43E0 AbstractClass::processStateUpdate
-    virtual Mission GetCurrentMission() const = 0;  // 0x4E0140
-    // [98] 0x41BE90 AircraftClass::CheckStateFlag2
-    // wrapper: delegates to AbstractClass::getCurrentMission at 0x4E0140
-    virtual void RestoreMission(Mission mission);
-    // [99] 0x4264B0 AbstractClass::COMStub_Return0_99
-    virtual void UpdatePosition(int unknown) = 0;  // 0x7BA360
-    // [100] 0x5F5C20 ObjectClass::Fire
-    // wrapper: delegates to WWMouseClass::updatePosition at 0x7BA360
-    virtual BuildingClass* FindFactory(bool allow_occupied, bool require_power) const = 0;
-    // [101] 0x5F5320 ObjectClass::ProcessInputKey
-    // design: pure virtual function, no binary implementation
-    virtual RadioCommand ReceiveCommand(TechnoClass* sender, RadioCommand command, AbstractClass*& inout) = 0;
-    // [102] 0x5F5930 AbstractClass::IsNotNull
-    // design: virtual function, no binary implementation matched in IDA
-    virtual bool DiscoveredBy(HouseClass* house);
-    // [103] 0x5F43F0 AircraftClass::StubReturnFalse4
-    // design: pure virtual function, no binary implementation
-    virtual void SetRepairState(int state) = 0;
-    // [104] 0x5F4400 AbstractClass::COMStub_Return0_104
-    virtual void Sell(uint32_t unknown) = 0;  // 0x445880
-    // [105] 0x5F6B50 AbstractClass::COMStub_Return0_105
-    // design: pure virtual function, no binary implementation
-    virtual void AssignPlanningPath(int path_idx, signed char wp_idx) = 0;
-    // [106] 0x5F4410 ObjectClass::MoveToDirection
-    // design: pure virtual function, no binary implementation
-    virtual void onDeployComplete(uint32_t a) = 0;
-
-    // --- Movement / Occupation ---
-    // [107] 0x4264C0 AbstractClass::COMStub_107
-    virtual Move IsCellOccupied(CellClass* dest_cell, int facing, int level, CellClass* source_cell, bool alt) const;
-    // [108] 0x4264D0 ObjectClass::COMStub_108
-    // design: pure virtual function, no binary implementation
-    virtual uint32_t canDeployHere(uint32_t a, uint32_t b, uint32_t c, uint32_t d, uint32_t e) = 0;
-    // [109] 0x5F6940 ObjectClass::SetPosition
-    // design: pure virtual function, no binary implementation
-    virtual void SetLocation(const CoordStruct& coords) = 0;
-
-    // --- Cell / Coordinate queries ---
-    // [165] 0x41BEA0 ObjectClass::GetCellCoords_Alt
-virtual CoordStruct * GetCellCoords_Alt(void *a2 = 0) const;  // W20M26 retype (PR 0x44b958 mov edx,[eax]; 0x44b952/0x44bda4 pass &buf)
-    // [111] 0x5F6960 ObjectClass::GetCellCoords
-    virtual CellClass* GetCell() const = 0;  // 0x5F6A10
-    // [112] 0x5F69C0 ObjectClass::CoordToCell
-    // wrapper: delegates to ObjectClass::GetCell at 0x5F6A10
-    virtual CellStruct* GetMapCoordsAgain(CellStruct* out) const = 0;
-    // [113] 0x5F6A10 ObjectClass::GetCell
-    // wrapper: delegates to ObjectClass::GetCell at 0x5F6A10
-    virtual CellClass* GetCellAgain() const = 0;
-
-    // --- Height / Z ---
-    // [114] 0x5F5F40 ObjectClass::GetZAboveGround
-    virtual int GetHeight() const;  // 0x556630
-    // [115] 0x5F5FA0 ObjectClass::SetZ
-    // wrapper: delegates to ObjectClass::GetHeight at 0x556630
-    virtual void SetHeight(uint32_t height);
-    // [116] 0x5F5F30 ObjectClass::GetMember41
-    virtual int GetZ() const;
-
-    // --- Warping state ---
-    // [117] 0x4264E0 AbstractClass::COMStub_Return0_117
-    // wrapper: delegates to ObjectClass::GetZAboveGround at 0x5F5F40
-    virtual bool IsBeingWarpedOut() const = 0;
-    // [118] 0x4264F0 AbstractClass::COMStub_Return0_118
-    // design: virtual function, no binary implementation matched in IDA
-    virtual bool IsWarpingIn() const = 0;
-    // [119] 0x426500 AbstractClass::COMStub_Return0_119
-    // design: virtual function, no binary implementation matched in IDA
-    virtual bool IsWarpingSomethingOut() const = 0;
-    // [120] 0x426510 AbstractClass::getCoordCenter2
-    // design: virtual function, no binary implementation matched in IDA
-    virtual bool IsNotWarping() const = 0;
-    // [121] 0x426520 AbstractClass::COMStub_Return0_121
-    // design: virtual function, no binary implementation matched in IDA
-    virtual LightConvertClass* GetRemapColour() const = 0;
+    void Scatter(const CoordStruct& coords, bool ignore_mission, bool ignore_destination);
+    bool Ignite();
+    void Extinguish();
+    uint32_t GetPointsValue() const;
+    void RestoreMission(Mission mission);
+    bool DiscoveredBy(HouseClass* house);
+    Move IsCellOccupied(CellClass* dest_cell, int facing, int level, CellClass* source_cell, bool alt) const;
+    int GetHeight() const;  // 0x556630
+    void SetHeight(uint32_t height);
+    int GetZ() const;
 
     // === Non-virtual methods ===
     int DistanceFrom(AbstractClass* that) const;
 
-    virtual double GetHealthPercentage() const;
+    double GetHealthPercentage() const;  // X133: demoted (no binary slot; computed inline in binary)
 
     HealthState GetHealthStatus() const;
 
@@ -489,11 +338,8 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int Cleanup();  // 0x402220
     int GetSizeMax();  // 0x4103E0
     int sub_417C80(int a1, void* a2, void* a3, void* a4);  // 0x417C80
-    int GetCoordsThunk1();  // 0x41BDD0
-    int GetCoordsThunk3();  // 0x41BE30
     int GetMember41_2();  // 0x41CFA0
     int CleanupAirstrikeTarget(int a1, int a2);  // 0x41D540
-    int GetDrawPosition();  // 0x4263D0
     int Set(void* a1);  // 0x431A30
     int CleanupAudioAndRefs();  // 0x4389B0
     int HandleRallyPointCommand();  // 0x4436F0
@@ -515,39 +361,16 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* ctor();  // 0x5F3900
     void* Init(int a1);  // 0x5F3B50
     void* CalcTargetFacing(void* a1, int a2);  // 0x5F3DB0
-    int HasC4();  // 0x5F3E30
     int StepCleanup(void* a1);  // 0x5F3E50
-    int DetectCloaked();  // 0x5F3E70
-    int GetThreatLevel();  // 0x5F4260
-    int MoveToDirection();  // 0x5F4410
-    int HandleSelection();  // 0x5F4520
-    int GetPlacementScreenRect();  // 0x5F4730
-    int CalcDrawRect();  // 0x5F4B10
-    int ProcessInputKey();  // 0x5F5320
-    int ParachuteDrop();  // 0x5F5940
     int SetReference(int a1);  // 0x5F5B50
-    int GetOrCreateResHandle();  // 0x5F5B90
-    int Fire();  // 0x5F5C20
     bool IsYellowHP();  // 0x5F5D20
     bool IsGreenHP();  // 0x5F5D90
     int GetLandHeight();  // 0x5F5F00
-    int GetMember41();  // 0x5F5F30
-    int SetZ();  // 0x5F5FA0
     int SetAnim(int a1);  // 0x5F6060
     int ComputeDistance(int a1);  // 0x5F6440
     int* GetCoords(void* out = nullptr, int a3 = 0, int a4 = 0, int a5 = 0, int a6 = 0);  // 0x5F65A0
-    int DelegateVt69();  // 0x5F65D0
-    int SetPosition();  // 0x5F6940
-    int GetCellCoords();  // 0x5F6960
-    int CoordToCell();  // 0x5F69C0
-    int CheckGroundHeightDiff();  // 0x5F6A70
-    int IsBelowScreen();  // 0x5F6B60
-    int IsHeightAboveThreshold();  // 0x5F6B90
-    int IsPlayerOwnedAndCheck();  // 0x5F6C30
-    int GetCoords_Alt();  // 0x5F6C80
     int CheckFlagD0(int a1);  // 0x5F6CB0
     bool IsCrushable(void* a1);  // 0x5F6CD0
-    int ResetPointerIfMatch();  // 0x5F6DA0
     int FinalizeCellPlacement(int a1);  // 0x5FC570
     void* RegisterInArray(int a1, int a2, int a3, int a4);  // 0x5FF250
     int ProcessUpdate();  // 0x62BB20
@@ -588,15 +411,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     // --- gap2 auto-generated stub declarations (END) ---
     public:  // symbol-anchor
     // === SYMBOL-ANCHOR (BEGIN) ===
-    int GetCoordsThunk2();  // 0x41be00 -- ObjectClass::GetCoordsThunk2
-    int Undeploy();  // 0x5f4d30 -- ObjectClass::Undeploy
-    int Deploy();  // 0x5f4ec0 -- ObjectClass::Deploy
-    int Destroy2();  // 0x5f5280 -- ObjectClass::Destroy2
-    int UpdateProductionDisplay();  // 0x5f5850 -- ObjectClass::UpdateProductionDisplay
-    int GetZAboveGround();  // 0x5f5f40 -- ObjectClass::GetZAboveGround
     int DistanceTo(int a1);  // 0x5f6360 -- ObjectClass::DistanceTo
-    int GetBoundingSize();  // 0x5f6bd0 -- ObjectClass::GetBoundingSize
-    int IsAboveScreenMargin();  // 0x5f6c10 -- ObjectClass::IsAboveScreenMargin
     int CreateInstance();  // 0x5f6dc0 -- ObjectClass::CreateInstance
     int FindClosestObjectCell(unsigned int *a2, char a3, int a4);
     int FindObjectCell(int a1, int a2);  // 0x47c5a0 -- Object::FindObjectCell

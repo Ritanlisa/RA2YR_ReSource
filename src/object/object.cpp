@@ -310,5 +310,140 @@ void AudioController::Stop()
   result->AudioController_field_08 = 0; /*0x405e71*/
   return result; /*0x405e74*/
 }
+
+// ============================================================================
+// X133: own-slot placeholder definitions (slots [24]-[121] without existing
+// translations; bodies pending IDA-faithful translation)
+// ============================================================================
+// slot 25 = 0x426390 (AbstractClass::COMStub_Return0_25; arity 0) -- pending translation
+bool ObjectClass::COMStub_Return0_25() { return false; }
+// slot 26 = 0x4263A0 (AbstractClass::COMStub_26; arity 2) -- pending translation
+int ObjectClass::COMStub_26(int a1, int a2) { return 0; }
+// slot 28 = 0x5F4250 (AbstractClass::COMStub_28; arity 3) -- pending translation
+int ObjectClass::COMStub_28(int a1, int a2, int a3) { return 0; }
+// slot 29 = 0x5F4240 (AbstractClass::COMStub_29; arity 2) -- pending translation
+int ObjectClass::COMStub_29(int a1, int a2) { return 0; }
+// slot 32 = 0x4263B0 (AbstractClass::COMStub_Return0_32; arity 0) -- pending translation
+bool ObjectClass::COMStub_Return0_32() { return false; }
+// slot 33 = 0x5F6BC0 (AbstractClass::COMStub_Return0_33; arity 0) -- pending translation
+int ObjectClass::COMStub_Return0_33() { return 0; }
+// slot 34 = 0x4E0130 (AbstractClass::COMStub_Return0_34; arity 0) -- pending translation
+int ObjectClass::COMStub_Return0_34() { return 0; }
+// slot 35 = 0x5F42A0 (AbstractClass::COMStub_Ret2147483647_35; arity 0) -- pending translation
+int ObjectClass::COMStub_Ret2147483647_35() { return (int)0x80000001; }
+// slot 36 = 0x4263C0 (AbstractClass::COMStub_Ret8487648_36; arity 0) -- pending translation
+int ObjectClass::COMStub_Ret8487648_36() { return 8487648; }
+// slot 37 = 0x5F42B0 (AbstractClass::COMStub_Return0_37; arity 0) -- pending translation
+bool ObjectClass::COMStub_Return0_37() { return false; }
+// slot 38 = 0x5F42C0 (AbstractClass::COMStub_Return0_38; arity 0) -- pending translation
+bool ObjectClass::COMStub_Return0_38() { return false; }
+// slot 39 = 0x5F42D0 (AbstractClass::COMStub_Return0_39; arity 0) -- pending translation
+bool ObjectClass::COMStub_Return0_39() { return false; }
+// slot 40 = 0x5F42E0 (AbstractClass::COMStub_Return0_40; arity 0) -- pending translation
+bool ObjectClass::COMStub_Return0_40() { return false; }
+// slot 48 = 0x426410 (AbstractClass::getCoordCenter; arity 0) -- pending translation
+int ObjectClass::getCoordCenter() { return 1; }
+// slot 49 = 0x426420 (AbstractClass::COMStub_Return0_49; arity 0) -- pending translation
+bool ObjectClass::COMStub_Return0_49() { return false; }
+// slot 50 = 0x426430 (AbstractClass::COMStub_50; arity 1) -- pending translation
+int ObjectClass::COMStub_50(int a1) { return 0; }
+// slot 51 = 0x41BE60 (AircraftClass::LandingCheckStub; arity 1) -- pending translation
+int ObjectClass::LandingCheckStub(int a1) { return 0; }
+// slot 52 = 0x41BE70 (AircraftClass::StubReturnFalse2; arity 1) -- pending translation
+int ObjectClass::StubReturnFalse2(int a1) { return 0; }
+// slot 56 = 0x5F42F0 (AbstractClass::COMStub_Return0_56; arity 1) -- pending translation
+int ObjectClass::COMStub_Return0_56(int a1) { return 0; }
+// slot 57 = 0x5F4300 (AbstractClass::COMStub_Return0_57; arity 1) -- pending translation
+int ObjectClass::COMStub_Return0_57(int a1) { return 0; }
+// slot 60 = 0x5F60A0 (MapClass::SetCellOverlayFlag; arity 1) -- pending translation
+int ObjectClass::SetCellOverlayFlag(int a1) { return 0; }
+// slot 61 = 0x5F6120 (MapClass::ClearCellOverlayFlag; arity 1) -- pending translation
+int ObjectClass::ClearCellOverlayFlag(int a1) { return 0; }
+// slot 63 = 0x5F4310 (AbstractClass::COMStub_Return0_63; arity 0) -- pending translation
+int ObjectClass::COMStub_Return0_63() { return 0; }
+// slot 64 = 0x5F4320 (AbstractClass::COMStub_64; arity 2) -- pending translation
+int ObjectClass::COMStub_64(int a1, int a2) { return 0; }
+// slot 67 = 0x426440 (AbstractClass::COMStub_Return0_67; arity 2) -- pending translation
+int ObjectClass::COMStub_Return0_67(int a1, int a2) { return 0; }
+// slot 68 = 0x426450 (AbstractClass::COMStub_Return0_68; arity 2) -- pending translation
+int ObjectClass::COMStub_Return0_68(int a1, int a2) { return 0; }
+// slot 69 = 0x5B3A50 (IPersistStream::StubReturnFalse; arity 2) -- pending translation
+int ObjectClass::StubReturnFalse(int a1, int a2) { return 0; }
+// slot 71 = 0x5F4330 (AbstractClass::COMStub_Return0_71; arity 0) -- pending translation
+int ObjectClass::COMStub_Return0_71() { return 0; }
+// slot 72 = 0x5F4340 (AbstractClass::COMStub_Return0_72; arity 2) -- pending translation
+int ObjectClass::COMStub_Return0_72(int a1, int a2) { return 0; }
+// slot 76 = 0x41BE80 (AircraftClass::CheckStateFlag; arity 1) -- pending translation
+int ObjectClass::CheckStateFlag(int a1) { return 0; }
+// slot 79 = 0x5F6C70 (AbstractClass::COMStub_79; arity 2) -- pending translation
+int ObjectClass::COMStub_79(int a1, int a2) { return 0; }
+// slot 80 = 0x5F4360 (AbstractClass::COMStub_80; arity 4) -- pending translation
+int ObjectClass::COMStub_80(int a1, int a2, int a3, int a4) { return 0; }
+// slot 81 = 0x5F4350 (AbstractClass::COMStub_81; arity 3) -- pending translation
+int ObjectClass::COMStub_81(int a1, int a2, int a3) { return 0; }
+// slot 82 = 0x5F4370 (AbstractClass::COMStub_Return0_82; arity 1) -- pending translation
+int ObjectClass::COMStub_Return0_82(int a1) { return 0; }
+// slot 85 = 0x426460 (AbstractClass::COMStub_Return0_85; arity 3) -- pending translation
+int ObjectClass::COMStub_Return0_85(int a1, int a2, int a3) { return 0; }
+// slot 86 = 0x426470 (AbstractClass::COMStub_Return0_86; arity 0) -- pending translation
+int ObjectClass::COMStub_Return0_86() { return 0; }
+// slot 87 = 0x426480 (AbstractClass::COMStub_Return0_87; arity 1) -- pending translation
+int ObjectClass::COMStub_Return0_87(int a1) { return 0; }
+// slot 88 = 0x426490 (AbstractClass::COMStub_Return0_88; arity 0) -- pending translation
+bool ObjectClass::COMStub_Return0_88() { return false; }
+// slot 89 = 0x5F4380 (AbstractClass::COMStub_89; arity 2) -- pending translation
+int ObjectClass::COMStub_89(int a1, int a2) { return 0; }
+// slot 90 = 0x5F4390 (AbstractClass::COMStub_90; arity 1) -- pending translation
+int ObjectClass::COMStub_90(int a1) { return 0; }
+// slot 91 = 0x5F5390 (TechnoClass::CreateDestructionEffect; arity 7) -- pending translation
+int ObjectClass::CreateDestructionEffect(int a1, int a2, int a3, int a4, int a5, int a6, int a7) { return 0; }
+// slot 92 = 0x4264A0 (AbstractClass::COMStub_Return0_92; arity 0) -- pending translation
+int ObjectClass::COMStub_Return0_92() { return 0; }
+// slot 93 = 0x5F43A0 (AbstractClass::COMStub_Return0_93; arity 3) -- pending translation
+int ObjectClass::COMStub_Return0_93(int a1, int a2, int a3) { return 0; }
+// slot 94 = 0x5F43B0 (AircraftClass::StubReturnFalse3; arity 0) -- pending translation
+bool ObjectClass::StubReturnFalse3() { return false; }
+// slot 95 = 0x5F43C0 (AircraftClass::StubReturnTrue; arity 0) -- pending translation
+int ObjectClass::StubReturnTrue() { return 1; }
+// slot 96 = 0x5F43D0 (AbstractClass::COMStub_Return0_96; arity 0) -- pending translation
+int ObjectClass::COMStub_Return0_96() { return 0; }
+// slot 97 = 0x5F43E0 (AbstractClass::processStateUpdate; arity 0) -- pending translation
+int ObjectClass::processStateUpdate() { return 0; }
+// slot 98 = 0x41BE90 (AircraftClass::CheckStateFlag2; arity 1) -- pending translation
+int ObjectClass::CheckStateFlag2(int a1) { return 0; }
+// slot 99 = 0x4264B0 (AbstractClass::COMStub_Return0_99; arity 1) -- pending translation
+int ObjectClass::COMStub_Return0_99(int a1) { return 0; }
+// slot 102 = 0x5F5930 (AbstractClass::IsNotNull; arity 1) -- pending translation
+int ObjectClass::IsNotNull(int a1) { return 0; }
+// slot 103 = 0x5F43F0 (AircraftClass::StubReturnFalse4; arity 1) -- pending translation
+int ObjectClass::StubReturnFalse4(int a1) { return 0; }
+// slot 104 = 0x5F4400 (AbstractClass::COMStub_Return0_104; arity 1) -- pending translation
+int ObjectClass::COMStub_Return0_104(int a1) { return 0; }
+// slot 105 = 0x5F6B50 (AbstractClass::COMStub_Return0_105; arity 2) -- pending translation
+int ObjectClass::COMStub_Return0_105(int a1, int a2) { return 0; }
+// slot 107 = 0x4264C0 (AbstractClass::COMStub_107; arity 5) -- pending translation
+int ObjectClass::COMStub_107(int a1, int a2, int a3, int a4, int a5) { return 0; }
+// slot 117 = 0x4264E0 (AbstractClass::COMStub_Return0_117; arity 0) -- pending translation
+bool ObjectClass::COMStub_Return0_117() { return false; }
+// slot 118 = 0x4264F0 (AbstractClass::COMStub_Return0_118; arity 0) -- pending translation
+bool ObjectClass::COMStub_Return0_118() { return false; }
+// slot 119 = 0x426500 (AbstractClass::COMStub_Return0_119; arity 0) -- pending translation
+bool ObjectClass::COMStub_Return0_119() { return false; }
+// slot 120 = 0x426510 (AbstractClass::getCoordCenter2; arity 0) -- pending translation
+int ObjectClass::getCoordCenter2() { return 1; }
+// slot 121 = 0x426520 (AbstractClass::COMStub_Return0_121; arity 0) -- pending translation
+int ObjectClass::COMStub_Return0_121() { return 0; }
+// slot 5 = 0x5F5E80 (SaveLoad_Register body) -- pending translation
+HRESULT __stdcall ObjectClass::Load(IStream* stream) { (void)stream; return 0; }
+// slot 10 = 0x5F5230 (Unlink) -- pending translation
+int ObjectClass::Unlink(int a1, int a2) { (void)a1; (void)a2; return 0; }
+// slot 17 = 0x5F6690 -- pending translation (binary body reads flag==0; member mapping frozen per I524)
+// X133: demoted phantoms with live call sites -- stub defs pending translation
+ObjectTypeClass* ObjectClass::GetType() const { return nullptr; }
+void ObjectClass::SetLocation(const CoordStruct& coords) { (void)coords; }
+void ObjectClass::MarkAllOccupationBits(const CoordStruct& coords) { (void)coords; }
+RadioCommand ObjectClass::ReceiveCommand(TechnoClass* sender, RadioCommand command, AbstractClass*& inout) { (void)sender; (void)command; (void)inout; return (RadioCommand)0; }
+bool ObjectClass::IsActive() const { return false; }
+
 } // namespace ra2
 } // namespace game

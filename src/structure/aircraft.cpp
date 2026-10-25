@@ -1802,7 +1802,7 @@ int AircraftClass::GetActionOnObject()
   return (*(uint8_t (__stdcall **)(int))(*(unsigned int *)verified->locomotor[0] + 128))(verified->locomotor[0]) != 0; /*0x41b946*/
 }
 // 0x41B980
-int AircraftClass::IsBelowScreen()
+bool AircraftClass::IsBelowScreen()  // X133: ret synced to base slot 20 (bool)
 {
 
   AircraftTypeClass *Type; // eax

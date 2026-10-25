@@ -37,7 +37,7 @@ public:
     virtual int32_t Release();  // 0x536000
     // wrapper: delegates to SelectTeamCommand::Release at 0x536000
     virtual const char* GetName() const override;
-    virtual const wchar_t* GetUIName() const override;  // 0x484FF0
+    virtual const wchar_t* GetUIName() const ;  // 0x484FF0
     // wrapper: delegates to CellClass::GetUIName at 0x484FF0
     virtual void Execute(uint32_t context) const override;
 
@@ -66,7 +66,7 @@ public:
     virtual int32_t Release();  // 0x5360F0
     // wrapper: delegates to AddTeamCommand::Release at 0x5360F0
     virtual const char* GetName() const override;
-    virtual const wchar_t* GetUIName() const override;  // 0x484FF0
+    virtual const wchar_t* GetUIName() const ;  // 0x484FF0
     // wrapper: delegates to CellClass::GetUIName at 0x484FF0
     virtual void Execute(uint32_t context) const override;
 
@@ -93,7 +93,7 @@ public:
     virtual int32_t Release();  // 0x5362D0
     // wrapper: delegates to TauntCommandClass::Release at 0x5362D0
     virtual const char* GetName() const override;
-    virtual const wchar_t* GetUIName() const override;  // 0x484FF0
+    virtual const wchar_t* GetUIName() const ;  // 0x484FF0
     // wrapper: delegates to CellClass::GetUIName at 0x484FF0
     virtual void Execute(uint32_t context) const override;
 
@@ -120,7 +120,7 @@ public:
     virtual int32_t Release();  // 0x537DF0
     // wrapper: delegates to PageUserCommandClass::Release at 0x537DF0
     virtual const char* GetName() const override;
-    virtual const wchar_t* GetUIName() const override;  // 0x484FF0
+    virtual const wchar_t* GetUIName() const ;  // 0x484FF0
     // wrapper: delegates to CellClass::GetUIName at 0x484FF0
     virtual void Execute(uint32_t context) const override;
 
@@ -149,7 +149,7 @@ public:
     virtual int32_t Release();  // 0x537F30
     // wrapper: delegates to DeleteCommandClass::Release at 0x537F30
     virtual const char* GetName() const override;
-    virtual const wchar_t* GetUIName() const override;  // 0x484FF0
+    virtual const wchar_t* GetUIName() const ;  // 0x484FF0
     // wrapper: delegates to CellClass::GetUIName at 0x484FF0
     virtual void Execute(uint32_t context) const override;
 

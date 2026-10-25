@@ -323,7 +323,7 @@ int TechnoClass::SmokeUpdate(double a2) {  // g57b5 W4: raw 真值补参 (a2)
       v7 = v3->AbstractClass_2B4; /*0x414d2c*/
       if ( v7 ) /*0x414d34*/
       {
-        if ( v7->COMStub_Return0_21() /*0x414d8b*/
+        if ( v7->IsHeightAboveThreshold() /*0x414d8b*/
           || (v8 = v3->u8_AD) != 0
           && (v8[20] & 1) != 0
           && !(uint8_t)Object::IsAlliedWithObjectSimpleHouse(v3->focus, v8)
@@ -486,7 +486,7 @@ int TechnoClass::updateROFTimer() {
 }
 // 0x41BDD0
 namespace ra2 { namespace game { 
-int ObjectClass::GetCoordsThunk1() {
+int ObjectClass::GetCoordsThunk1(int a1) {
   unsigned int *v1; // ecx
   unsigned char v3[12]; // [esp+4h] [ebp-Ch] BYREF
   unsigned int *v4; // [esp+14h] [ebp+4h]
@@ -501,7 +501,7 @@ int ObjectClass::GetCoordsThunk1() {
 }
 // 0x41BE30
 namespace ra2 { namespace game { 
-int ObjectClass::GetCoordsThunk3() {
+int ObjectClass::GetCoordsThunk3(int a1, int a2) {
   unsigned int *v1; // ecx
   unsigned char v3[12]; // [esp+4h] [ebp-Ch] BYREF
   unsigned int *v4; // [esp+14h] [ebp+4h]
@@ -706,7 +706,7 @@ int ObjectClass::CleanupAirstrikeTarget(int a1, int a2) {  // g57b5 W4: raw 真�
 }
 // 0x4263D0
 namespace ra2 { namespace game { 
-int ObjectClass::GetDrawPosition() {
+int ObjectClass::GetDrawPosition(int a1, int a2, int a3, int a4, int a5) {
   int *v1; // eax
   int v2; // ecx
   int v3; // edx
@@ -4420,7 +4420,7 @@ void* ObjectClass::CalcTargetFacing(void* aP1, int aP2) {
 }
 // 0x5f3e30
 namespace ra2 { namespace game { 
-int ObjectClass::HasC4() {
+int ObjectClass::HasC4(int a1) {
   int v1; // eax
 
   v1 = (*((int (__thiscall **)(ObjectClass *))this->ptr_0 + 34))(this); /*0x5f3e32*/
@@ -4615,7 +4615,7 @@ int ObjectClass::GetThreatLevel() {
 }
 // 0x5f4410
 namespace ra2 { namespace game { 
-int ObjectClass::MoveToDirection() {
+int ObjectClass::MoveToDirection(int a1) {
   int v2; // edx
   int v3; // edi
   int v4; // eax
@@ -4752,7 +4752,7 @@ int ObjectClass::HandleSelection() {
 }
 // 0x5f4730
 namespace ra2 { namespace game { 
-int ObjectClass::GetPlacementScreenRect() {
+int ObjectClass::GetPlacementScreenRect(int a1) {
   unsigned int *v2; // eax
   int v3; // edi
   int *FoundationSize; // eax
@@ -4819,7 +4819,7 @@ int ObjectClass::GetPlacementScreenRect() {
 }
 // 0x5f4b10
 namespace ra2 { namespace game { 
-int ObjectClass::CalcDrawRect() {
+int ObjectClass::CalcDrawRect(int a1, int a2, int a3) {
   int result; // eax
   int (__thiscall **ptr_0)(ObjectClass *, unsigned int *); // edx
   unsigned int *v4; // eax
@@ -4928,7 +4928,7 @@ int ObjectClass::CalcDrawRect() {
 }
 // 0x5f5320
 namespace ra2 { namespace game { 
-int ObjectClass::ProcessInputKey() {
+int ObjectClass::ProcessInputKey(int a1, int a2, int a3) {
   double health; // [esp+0h] [ebp-8h]
   int v3; // [esp+10h] [ebp+8h]
 
@@ -4959,7 +4959,7 @@ int AbstractClass::IsNotNull() {
 }
 // 0x5f5940
 namespace ra2 { namespace game { 
-int ObjectClass::ParachuteDrop() {
+int ObjectClass::ParachuteDrop(int a1) {
   int *v1; // edi
   int result; // eax
   bool *v4; // ebp
@@ -5098,7 +5098,7 @@ int ObjectClass::SetReference(int a1) {
 }
 // 0x5f5b90
 namespace ra2 { namespace game { 
-int ObjectClass::GetOrCreateResHandle() {
+int ObjectClass::GetOrCreateResHandle(int a1) {
   int v3; // eax
   int v4; // [esp+Ch] [ebp+4h]
 
@@ -5117,7 +5117,7 @@ int ObjectClass::GetOrCreateResHandle() {
 }
 // 0x5f5c20
 namespace ra2 { namespace game { 
-int ObjectClass::Fire() {
+int ObjectClass::Fire(int a1, int a2) {
   int *v2; // edi
   int v3; // ebx
   int v5; // [esp-4h] [ebp-10h]
@@ -5126,7 +5126,7 @@ int ObjectClass::Fire() {
 
   v2 = (int *)this->vt_slot_136(); /*0x5f5c2f*/
   v3 = *v2; /*0x5f5c33*/
-  v5 = this->vt_slot_60(); /*0x5f5c3c*/
+  v5 = this->SetCellOverlayFlag(0); /*0x5f5c3c*/  // X133 W3: slot 60 converted (arity 1; arg unmodeled in decompile)
   return (*(int (__thiscall **)(int *, int, int, unsigned int, int))(v3 + 148))(v2, v6, v7, 0, v5); /*0x5f5c4d*/
 }
 }
@@ -5283,7 +5283,7 @@ int ObjectClass::GetCoords() {
 }
 // 0x5f65d0
 namespace ra2 { namespace game { 
-int ObjectClass::DelegateVt69() {
+int ObjectClass::DelegateVt69(int a1, int a2) {
   int v2; // [esp+4h] [ebp+4h]
   int v3; // [esp+8h] [ebp+8h]
 
@@ -5333,7 +5333,7 @@ int ObjectClass::GetCellCoords() {
 }
 // 0x5f69c0
 namespace ra2 { namespace game { 
-int ObjectClass::CoordToCell() {
+int ObjectClass::CoordToCell(int a1) {
   unsigned int *v1; // eax
   int v3; // [esp+8h] [ebp-10h]
   unsigned char v4[12]; // [esp+Ch] [ebp-Ch] BYREF
@@ -5349,7 +5349,7 @@ int ObjectClass::CoordToCell() {
 }
 // 0x5f6a70
 namespace ra2 { namespace game { 
-int ObjectClass::CheckGroundHeightDiff() {
+int ObjectClass::CheckGroundHeightDiff(int a1) {
   char v2; // bl
   unsigned int *v3; // eax
   int GroundHeight; // edi
@@ -5397,7 +5397,7 @@ int ObjectClass::CheckGroundHeightDiff() {
 }
 // 0x5f6b60
 namespace ra2 { namespace game { 
-int ObjectClass::IsBelowScreen() {
+bool ObjectClass::IsBelowScreen() {
   int result; // eax
 
   (*((unsigned char *)&(result))) = this->isOnMap /*0x5f6b7c*/
@@ -5408,7 +5408,7 @@ int ObjectClass::IsBelowScreen() {
 }
 // 0x5f6b90
 namespace ra2 { namespace game { 
-int ObjectClass::IsHeightAboveThreshold() {
+bool ObjectClass::IsHeightAboveThreshold() {
   int result; // eax
 
   (*((unsigned char *)&(result))) = this->isOnMap /*0x5f6bac*/
@@ -5445,7 +5445,7 @@ int AbstractClass::COMStub_79() {
 }
 // 0x5f6c80
 namespace ra2 { namespace game { 
-int ObjectClass::GetCoords_Alt() {
+int ObjectClass::GetCoords_Alt(int a1, int a2) {
   unsigned int *v1; // ecx
   unsigned char v3[12]; // [esp+4h] [ebp-Ch] BYREF
   unsigned int *v4; // [esp+14h] [ebp+4h]
@@ -5496,7 +5496,7 @@ bool ObjectClass::IsCrushable(void* a1) {
 }
 // 0x5f6da0
 namespace ra2 { namespace game { 
-int ObjectClass::ResetPointerIfMatch() {
+int ObjectClass::ResetPointerIfMatch(int a1) {
   int result; // eax
   AnimClass *v2; // [esp+4h] [ebp+4h]
 

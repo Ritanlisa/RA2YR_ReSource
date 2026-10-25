@@ -798,7 +798,7 @@ int AbstractClass::SaveLoad_Prefix_0(AbstractClass * aP0, AbstractClass * aP1)
 
 // 0x410440
 namespace gamemd {
-int AbstractClass::computeDistance()
+bool AbstractClass::IsActive() const
 {
   int result; // eax
 
@@ -853,7 +853,7 @@ int AbstractClass::COMStub_Return0_16()
 
 // 0x410520
 namespace gamemd {
-int AbstractClass::COMStub_Return0_20()
+bool AbstractClass::IsBelowScreen()
 {
   int result; // eax
 
@@ -864,7 +864,7 @@ int AbstractClass::COMStub_Return0_20()
 
 // 0x410530
 namespace gamemd {
-int AbstractClass::COMStub_Return0_21()
+bool AbstractClass::IsHeightAboveThreshold()
 {
   int result; // eax
 
@@ -875,7 +875,7 @@ int AbstractClass::COMStub_Return0_21()
 
 // 0x410570
 namespace gamemd {
-int AbstractClass::COMStub_Return0_23()
+int AbstractClass::DetectCloaked()
 {
   int result; // eax
 

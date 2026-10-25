@@ -149,20 +149,20 @@ public:
     virtual ~AbstractClass() = default;  // X132: slot 8 = 0x4105A0 (scalar deleting dtor: installs 4 vtables, test al,1 -> delete)
 
     virtual int PerFrameUpdate();  // X132: slot 9 = 0x410470 (`retn`; slot-9 family name per Unit 0x746810 / Infantry 0x517CC0 binary slots; those two decls override correctly)
-    virtual int COMStub_Return0_10(int a1, int a2);  // X132: slot 10 = 0x410480 (`retn 8`, 2 stack args)
+    virtual int Unlink(int a1, int a2);  // X133: slot 10 = 0x410480 base (retn 8); OC override 0x5F5230 = Unlink
     virtual int COMStub_Return0_11();  // X132: slot 11 impl = 0x4C9150 (shared Return0, ICF-folded)
     virtual int COMStub_Return0_12();  // X132: slot 12 impl = 0x4C9150 (shared Return0, ICF-folded)
-    virtual int ProcessPower();  // X132: slot 13 = 0x410410 (1 arg)
+    virtual int ProcessPower();  // X133: slot 13 = 0x410410; binary arity=1 (retn 4) but 0-arg kept per X132 model -- deferred I525
     virtual int computeDistanceSquared();  // X132: slot 14 = 0x410490 (`or eax,-1`)
     virtual int COMStub_Return0_15();  // X132: slot 15 = 0x4104A0 (`xor eax,eax`)
     virtual int COMStub_Return0_16();  // X132: slot 16 = 0x4104B0 (`xor eax,eax`)
-    virtual int computeDistance();  // X132: slot 17 = 0x410440 (`mov al,1`)
+    virtual bool IsActive() const;  // X133: slot 17 = 0x410440 base (mov al,1); OC override 0x5F6690
     virtual unsigned int *GetInvalidCoord(unsigned int* out);  // X132: slot 18 = 0x4104C0 (copies 0x887680/84/88)
     virtual int* GetCoordsEx(int* outBuffer, AbstractClass* source);  // X132: slot 19 = 0x4104F0 (calls vt slot 18)
-    virtual int COMStub_Return0_20();  // X132: slot 20 = 0x410520 (`xor al,al`)
-    virtual int COMStub_Return0_21();  // X132: slot 21 = 0x410530 (`xor al,al`)
+    virtual bool IsBelowScreen();  // X133: slot 20 = 0x410520 base (xor al,al); OC override 0x5F6B60
+    virtual bool IsHeightAboveThreshold();  // X133: slot 21 = 0x410530 base (xor al,al); OC override 0x5F6B90
     virtual CoordStruct* GetCoords(CoordStruct* out);  // X132: slot 22 = 0x410540 (calls vt slot 19)
-    virtual int COMStub_Return0_23();  // X132: slot 23 = 0x410570 (`retn`; eax undefined)
+    virtual int DetectCloaked();  // X133: slot 23 = 0x410570 base (ret); OC override 0x5F3E70
 
     // --- X132: demoted phantoms (14; no binary slot anywhere in the chain; non-virtual) ---
     void initialize();  // 0x438E70

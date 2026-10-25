@@ -910,7 +910,7 @@ AbstractClass * * ObjectClass::BuildTransform(unsigned int * a1, float * a2, uns
     v10 = MultiplyMatrix3x4(v42, v23, (float *)v37.m_Data); /*0x514270*/
     goto LABEL_16; /*0x514270*/
   }
-  if ( this->vt_slot_96(this) ) /*0x513f88*/
+  if ( this->COMStub_Return0_96() ) /*0x513f88*/  // X133 W3: slot 96 converted
   {
     v10 = Turret::GetTransform((LocomotionClass *)this, (float *)&v38[0].Transform_field_00, a3); /*0x51408d*/
 LABEL_16:
@@ -1143,7 +1143,7 @@ int ObjectClass::DropAsBomb_Track()
 
 // 0x5F4870
 namespace gamemd {
-int ObjectClass::GetBoundsRect()
+int ObjectClass::GetBoundsRect(int a1)
 {
 
   unsigned int *v2; // eax
@@ -1372,7 +1372,7 @@ AbstractClass * * ObjectClass::Undeploy()
 
 // 0x5F4EC0
 namespace gamemd {
-AbstractClass * * ObjectClass::Deploy()
+AbstractClass * * ObjectClass::Deploy(int a1, int a2)
 {
 
   int result; // eax
@@ -1459,7 +1459,7 @@ LABEL_41:
   }
   if ( this->isAliveFlag[0] )
   {
-    if ( this->vt_slot_120(this) != -1 ) /*0x5f4fda*/
+    if ( this->getCoordCenter2() != -1 ) /*0x5f4fda*/  // X133 W3: slot 120 converted
       Targeting::Readd(this); /*0x5f4fe2*/
     if ( v6 ) /*0x5f4fe9*/
     {
@@ -1536,7 +1536,7 @@ LABEL_41:
 
 // 0x5F5280
 namespace gamemd {
-AbstractClass * * ObjectClass::Destroy2()
+AbstractClass * * ObjectClass::Destroy2(int a1)
 {
 
   TacticalClass *lineTrailer; // ecx
@@ -1572,7 +1572,7 @@ AbstractClass * * ObjectClass::Destroy2()
 
 // 0x5F5850
 namespace gamemd {
-int ObjectClass::UpdateProductionDisplay()
+int ObjectClass::UpdateProductionDisplay(int a1)
 {
 
   int result; // eax
@@ -2246,7 +2246,7 @@ int ObjectClass::GetCoordsThunk2()
 
 // 0x4264D0
 namespace gamemd {
-int ObjectClass::COMStub_108()
+int ObjectClass::COMStub_108(int a1, int a2, int a3, int a4, int a5)
 {
   return 0; /*0x4264d2*/
 }

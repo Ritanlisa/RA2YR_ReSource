@@ -93,7 +93,7 @@ class MoveCommandClass : public CommandClass       // RTTI @ 0x826F58
 public:
     virtual ~MoveCommandClass();
     virtual const char*    GetName() const override;             // vt[1]
-    virtual const wchar_t* GetUIName() const override;           // vt[2]  // 0x484FF0
+    virtual const wchar_t* GetUIName() const ;           // vt[2]  // 0x484FF0
     virtual const wchar_t* GetUICategory() const override;       // vt[3]
     virtual const wchar_t* GetUIDescription() const override;    // vt[4]
     virtual void           Execute(uint32_t context) const override; // vt[8]
@@ -104,7 +104,7 @@ class AttackCommandClass : public CommandClass      // RTTI @ 0x826F68
 public:
     virtual ~AttackCommandClass();
     virtual const char*    GetName() const override;
-    virtual const wchar_t* GetUIName() const override;  // 0x484FF0
+    virtual const wchar_t* GetUIName() const ;  // 0x484FF0
     virtual const wchar_t* GetUICategory() const override;
     virtual const wchar_t* GetUIDescription() const override;
     virtual void           Execute(uint32_t context) const override;
@@ -115,7 +115,7 @@ class SelectCommandClass : public CommandClass      // RTTI @ 0x826F78
 public:
     virtual ~SelectCommandClass();
     virtual const char*    GetName() const override;
-    virtual const wchar_t* GetUIName() const override;  // 0x484FF0
+    virtual const wchar_t* GetUIName() const ;  // 0x484FF0
     virtual const wchar_t* GetUICategory() const override;
     virtual const wchar_t* GetUIDescription() const override;
     virtual void           Execute(uint32_t context) const override;
@@ -126,7 +126,7 @@ class StopCommandClass : public CommandClass        // RTTI @ 0x826AF8
 public:
     virtual ~StopCommandClass();
     virtual const char*    GetName() const override;             // returns "Stop"
-    virtual const wchar_t* GetUIName() const override;  // 0x484FF0
+    virtual const wchar_t* GetUIName() const ;  // 0x484FF0
     virtual const wchar_t* GetUICategory() const override;
     virtual const wchar_t* GetUIDescription() const override;
     virtual void           Execute(uint32_t context) const override; // 0x71e4e0
@@ -137,7 +137,7 @@ class GuardCommandClass : public CommandClass       // RTTI @ 0x826F20
 public:
     virtual ~GuardCommandClass();
     virtual const char*    GetName() const override;             // returns "Guard"
-    virtual const wchar_t* GetUIName() const override;  // 0x484FF0
+    virtual const wchar_t* GetUIName() const ;  // 0x484FF0
     virtual const wchar_t* GetUICategory() const override;
     virtual const wchar_t* GetUIDescription() const override;
     virtual void           Execute(uint32_t context) const override; // 0x71E520
@@ -148,7 +148,7 @@ class DeployCommandClass : public CommandClass      // RTTI @ 0x8269D0
 public:
     virtual ~DeployCommandClass();
     virtual const char*    GetName() const override;             // returns "Deploy"
-    virtual const wchar_t* GetUIName() const override;  // 0x484FF0
+    virtual const wchar_t* GetUIName() const ;  // 0x484FF0
     virtual const wchar_t* GetUICategory() const override;
     virtual const wchar_t* GetUIDescription() const override;
     virtual void           Execute(uint32_t context) const override; // 0x71E550
@@ -159,7 +159,7 @@ class WaypointCommandClass : public CommandClass    // RTTI @ 0x826FE8
 public:
     virtual ~WaypointCommandClass();
     virtual const char*    GetName() const override;             // returns "Waypoint"
-    virtual const wchar_t* GetUIName() const override;  // 0x484FF0
+    virtual const wchar_t* GetUIName() const ;  // 0x484FF0
     virtual const wchar_t* GetUICategory() const override;
     virtual const wchar_t* GetUIDescription() const override;
     virtual void           Execute(uint32_t context) const override; // 0x71E580
@@ -170,7 +170,7 @@ class SellCommandClass : public CommandClass        // RTTI @ 0x826ED0
 public:
     virtual ~SellCommandClass();
     virtual const char*    GetName() const override;             // returns "Sell"
-    virtual const wchar_t* GetUIName() const override;  // 0x484FF0
+    virtual const wchar_t* GetUIName() const ;  // 0x484FF0
     virtual const wchar_t* GetUICategory() const override;
     virtual const wchar_t* GetUIDescription() const override;
     virtual void           Execute(uint32_t context) const override; // 0x71E5B0
@@ -181,7 +181,7 @@ class RepairCommandClass : public CommandClass      // RTTI @ 0x826980
 public:
     virtual ~RepairCommandClass();
     virtual const char*    GetName() const override;             // returns "Repair"
-    virtual const wchar_t* GetUIName() const override;  // 0x484FF0
+    virtual const wchar_t* GetUIName() const ;  // 0x484FF0
     virtual const wchar_t* GetUICategory() const override;
     virtual const wchar_t* GetUIDescription() const override;
     virtual void           Execute(uint32_t context) const override; // 0x71E5E0
@@ -192,7 +192,7 @@ class EnterCommandClass : public CommandClass       // RTTI @ 0x826F90
 public:
     virtual ~EnterCommandClass();
     virtual const char*    GetName() const override;             // returns "Enter"
-    virtual const wchar_t* GetUIName() const override;  // 0x484FF0
+    virtual const wchar_t* GetUIName() const ;  // 0x484FF0
     virtual const wchar_t* GetUICategory() const override;
     virtual const wchar_t* GetUIDescription() const override;
     virtual void           Execute(uint32_t context) const override; // 0x71e600
@@ -203,7 +203,7 @@ class TogglePowerCommandClass : public CommandClass // RTTI @ 0x826FB0
 public:
     virtual ~TogglePowerCommandClass();
     virtual const char*    GetName() const override;             // returns "TogglePower"
-    virtual const wchar_t* GetUIName() const override;  // 0x484FF0
+    virtual const wchar_t* GetUIName() const ;  // 0x484FF0
     virtual const wchar_t* GetUICategory() const override;
     virtual const wchar_t* GetUIDescription() const override;
     virtual void           Execute(uint32_t context) const override; // 0x71e620
@@ -216,7 +216,7 @@ class AreaGuardCommandClass : public CommandClass   // RTTI @ 0x826F30
 public:
     virtual ~AreaGuardCommandClass();
     virtual const char*    GetName() const override;             // returns "AreaGuard"
-    virtual const wchar_t* GetUIName() const override;  // 0x484FF0
+    virtual const wchar_t* GetUIName() const ;  // 0x484FF0
     virtual const wchar_t* GetUICategory() const override;
     virtual const wchar_t* GetUIDescription() const override;
     virtual void           Execute(uint32_t context) const override; // 0x71e660
@@ -227,7 +227,7 @@ class C4CommandClass : public CommandClass          // RTTI @ 0x826FE0
 public:
     virtual ~C4CommandClass();
     virtual const char*    GetName() const override;             // returns "C4"
-    virtual const wchar_t* GetUIName() const override;  // 0x484FF0
+    virtual const wchar_t* GetUIName() const ;  // 0x484FF0
     virtual const wchar_t* GetUICategory() const override;
     virtual const wchar_t* GetUIDescription() const override;
     virtual void           Execute(uint32_t context) const override;
@@ -238,7 +238,7 @@ class ChronoCommandClass : public CommandClass      // RTTI @ 0x827000
 public:
     virtual ~ChronoCommandClass();
     virtual const char*    GetName() const override;             // returns "Chrono"
-    virtual const wchar_t* GetUIName() const override;  // 0x484FF0
+    virtual const wchar_t* GetUIName() const ;  // 0x484FF0
     virtual const wchar_t* GetUICategory() const override;
     virtual const wchar_t* GetUIDescription() const override;
     virtual void           Execute(uint32_t context) const override;
@@ -249,7 +249,7 @@ class NukeCommandClass : public CommandClass        // RTTI @ 0x827028
 public:
     virtual ~NukeCommandClass();
     virtual const char*    GetName() const override;             // returns "Nuke"
-    virtual const wchar_t* GetUIName() const override;  // 0x484FF0
+    virtual const wchar_t* GetUIName() const ;  // 0x484FF0
     virtual const wchar_t* GetUICategory() const override;
     virtual const wchar_t* GetUIDescription() const override;
     virtual void           Execute(uint32_t context) const override;
@@ -260,7 +260,7 @@ class ToggleSellCommandClass : public CommandClass  // RTTI @ 0x826ED0
 public:
     virtual ~ToggleSellCommandClass();
     virtual const char*    GetName() const override;             // returns "ToggleSell"
-    virtual const wchar_t* GetUIName() const override;  // 0x484FF0
+    virtual const wchar_t* GetUIName() const ;  // 0x484FF0
     virtual const wchar_t* GetUICategory() const override;
     virtual const wchar_t* GetUIDescription() const override;
     virtual void           Execute(uint32_t context) const override; // 0x536f80
@@ -271,7 +271,7 @@ class ToggleRepairCommandClass : public CommandClass // RTTI @ 0x826980
 public:
     virtual ~ToggleRepairCommandClass();
     virtual const char*    GetName() const override;             // returns "ToggleRepair"
-    virtual const wchar_t* GetUIName() const override;  // 0x484FF0
+    virtual const wchar_t* GetUIName() const ;  // 0x484FF0
     virtual const wchar_t* GetUICategory() const override;
     virtual const wchar_t* GetUIDescription() const override;
     virtual void           Execute(uint32_t context) const override; // 0x536FA0
@@ -282,7 +282,7 @@ class ScatterCommandClass : public CommandClass     // RTTI @ 0x826E78
 public:
     virtual ~ScatterCommandClass();
     virtual const char*    GetName() const override;             // returns "Scatter"
-    virtual const wchar_t* GetUIName() const override;  // 0x484FF0
+    virtual const wchar_t* GetUIName() const ;  // 0x484FF0
     virtual const wchar_t* GetUICategory() const override;
     virtual const wchar_t* GetUIDescription() const override;
     virtual void           Execute(uint32_t context) const override; // 0x71E6A0

@@ -26,7 +26,7 @@ IsometricTileClass::IsometricTileClass(int aP1, unsigned short *aP2)
   if ( *aP2 != word_AA06D0 || aP2[1] != word_AA06D2 ) /*0x5437d4*/
   {
     this->inLimbo = 0; /*0x543805*/
-    ObjectClass::SetPosition(); /*0x54380c*/
+    this->SetPosition(0); /*0x54380c*/  // X133: binary arity 1 (retn 4); arg not visible in decompile
     (*(void (**)(IsometricTileClass *, int))(*(unsigned int *)this->q48F + 1)))(this, 1); /*0x543818*/
   }
   if ( *(int *)&DataGlobal_87F760 < *(int *)&DataGlobal_87F758 /*0x543855*/

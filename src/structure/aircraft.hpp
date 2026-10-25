@@ -131,8 +131,8 @@ public:
 
     // === Phase 3: Cursor & State ===
     virtual int GetActionOnObject();  // 0x417CC0
-    int IsHeightAboveThreshold();  // 0x41B920
-    int IsBelowScreen();  // 0x41B980
+    bool IsHeightAboveThreshold();  // X133: slot 21 override (base bool); impl 0x41B920
+    bool IsBelowScreen();  // X133: slot 20 override (base bool); impl 0x41B980
     int CheckMissionAbort();  // 0x41C1D0
     int CheckMissionFail();  // 0x41C200
     int CheckActionStatus();  // 0x41C210
@@ -145,7 +145,7 @@ public:
     bool StubReturnFalse2() override;  // 0x41BE70
     bool StubReturnFalse3();  // 0x5F43B0
     bool StubReturnFalse4();  // 0x5F43F0
-    bool StubReturnTrue();  // 0x5F43C0
+    int StubReturnTrue();  // X133: slot 95 override (base int); impl 0x5F43C0
     int MissionStubReturnZero();  // 0x41B910
     int MissionStubReturnZero2();  // 0x41C170
     int MissionStubReturnZero3();  // 0x41C180

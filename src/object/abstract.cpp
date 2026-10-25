@@ -157,7 +157,7 @@ bool AbstractClass::operator<(const AbstractClass& rhs) const { return uniqueId 
 // slot 9: 0x410470 `retn` -- int return (eax undefined; modeled 0); per-frame update stub
 int AbstractClass::PerFrameUpdate() { return 0; }
 // slot 10: 0x410480 `retn 8` -- 2 stack args; eax undefined
-int AbstractClass::COMStub_Return0_10(int a1, int a2) { return 0; }
+int AbstractClass::Unlink(int a1, int a2) { return 0; }  // X133 rename (slot 10)
 // slots 11/12: shared Return0 stub @ 0x4C9150 (ICF-folded across ~35 game tables)
 int AbstractClass::COMStub_Return0_11() { return 0; }
 int AbstractClass::COMStub_Return0_12() { return 0; }
@@ -167,7 +167,7 @@ int AbstractClass::computeDistanceSquared() { return -1; }
 int AbstractClass::COMStub_Return0_15() { return 0; }
 int AbstractClass::COMStub_Return0_16() { return 0; }
 // slot 17: 0x410440 `mov al, 1`
-int AbstractClass::computeDistance() { return 1; }
+bool AbstractClass::IsActive() const { return true; }  // X133 rename (slot 17, mov al,1)
 // slot 18: 0x4104C0 -- copies globals 0x887680/0x887684/0x887688 into out buffer
 unsigned int* AbstractClass::GetInvalidCoord(unsigned int* out) {
     out[0] = gamemd::dword_887680; /*0x4104cc*/
@@ -176,10 +176,10 @@ unsigned int* AbstractClass::GetInvalidCoord(unsigned int* out) {
     return out; /*0x4104e0*/
 }
 // slots 20/21: 0x410520 / 0x410530 `xor al,al`
-int AbstractClass::COMStub_Return0_20() { return 0; }
-int AbstractClass::COMStub_Return0_21() { return 0; }
+bool AbstractClass::IsBelowScreen() { return false; }  // X133 rename (slot 20)
+bool AbstractClass::IsHeightAboveThreshold() { return false; }  // X133 rename (slot 21)
 // slot 23: 0x410570 `retn` -- eax undefined
-int AbstractClass::COMStub_Return0_23() { return 0; }
+int AbstractClass::DetectCloaked() { return 0; }  // X133 rename (slot 23)
 
 } // namespace game
 } // namespace ra2

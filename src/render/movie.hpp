@@ -51,7 +51,7 @@ public:
     // design: inline accessor, inlined at all call sites
     virtual int  GetWidth()  const override;
     // design: inline accessor, inlined at all call sites
-    virtual int  GetHeight() const override;
+    virtual int  GetHeight() const ;
     // design: inline accessor, inlined at all call sites
     virtual bool IsPlaying() const override;
     // design: virtual function, no binary implementation matched in IDA
@@ -118,7 +118,7 @@ public:
     virtual ~VQMovieHandle() override;
 
     virtual int  GetWidth()  const override;
-    virtual int  GetHeight() const override;
+    virtual int  GetHeight() const ;
     virtual bool IsPlaying() const override;
     virtual bool AdvanceFrame() override;
     // unmatched: no callgraph reference and no git history record

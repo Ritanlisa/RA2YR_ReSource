@@ -135,7 +135,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int SaveLoad_Prefix(int a1, int a2);  // 0x425280
     int ProcessPower(int * a1);  // 0x425410
     int CheckEndOfSequence();  // 0x425510
-    int Undeploy();  // 0x425530
+    AbstractClass** Undeploy();  // X133: slot 53 override (base AbstractClass**); impl 0x425530
     int ProcessCraterFormation();  // 0x4255B0
     int CheckDamageFlags();  // 0x425630
     int UpdateDamageRadius(void* a1);  // 0x426270
