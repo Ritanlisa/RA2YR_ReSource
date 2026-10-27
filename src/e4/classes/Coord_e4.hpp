@@ -38,7 +38,6 @@ struct Coord {
     int Length(void *a1 = 0);  // 0x41C380
     static unsigned int *  GetCoords(unsigned int * a2);  // 0x4399A0
     void * Scale(float aP1, void *a2 = 0);  // 0x43A0D0
-    void * To_Cell(unsigned int *aP1);  // 0x565730
     int Compare2D(unsigned short * a2, void *a2_2);  // 0x5AC370
     void * WorldToScreen(MouseClass * aP1, MouseClass * aP2, char a4);  // 0x6557F0
     AbstractClass * * To_Screen(unsigned int *a2, int *a3);  // 0x6D2140
@@ -71,6 +70,6 @@ struct Coord {
     int CreateAIPlayer();
     int CreateAIPlayer_Potato();
     Coord * * sub_7A2830();
-    void * To_Cell(unsigned int *aP1, void *a2 = 0);  // G42.39a static-call supply
+    void * To_Cell(void *aP1, void *a2 = 0);  // 0x565730 G42.39a static-call supply
 };
 } // namespace gamemd
