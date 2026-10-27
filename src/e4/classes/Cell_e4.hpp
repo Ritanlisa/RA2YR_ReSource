@@ -96,7 +96,7 @@ struct Cell {
     int GetNeighbourContent(unsigned int a2, void *a2_1 = 0);  // 0x481810
     int IsBuildable(int a2, char a3, char a4, int aP4, int aP5, int aP6, char aP7);  // 0x4834A0
     int IsValidHeight();  // 0x485060
-    int IsEmpty(void *a1 = 0);  // 0x486380
+    static int IsEmpty(void *a1 = 0);  // 0x486380
     int IsGroundTypeRange();  // 0x4865D0
     int IsInRange(void *a1 = 0);  // 0x486750
     int IsInRange2(void *a1 = 0);  // 0x486770

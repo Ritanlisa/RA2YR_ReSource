@@ -36,7 +36,7 @@ struct EventQueue {
 // --- flat members (END) ---
     static int CheckPosition(EventQueue *pThis);
     int16_t Check(void *a1 = 0, void *a2 = 0, void *a3 = 0);
-    int16_t Process(void *a1 = 0);
+    static int16_t Process(void *a1 = 0);
     short Read(void *a1 = 0, void *a2 = 0, void *a3 = 0);
 };
 

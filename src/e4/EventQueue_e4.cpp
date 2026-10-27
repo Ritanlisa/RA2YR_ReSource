@@ -12,7 +12,7 @@
 
 // 0x54F000
 namespace gamemd {  // G42.18 ns repair
-int16_t EventQueue::Process()
+int16_t EventQueue::Process(void *a1)
 {
 
   if ( (this->q318 + 1) % 256 != this->q314 ) /*0x54f01e*/
