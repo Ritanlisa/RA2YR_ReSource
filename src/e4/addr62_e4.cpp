@@ -1418,9 +1418,9 @@ LABEL_48:
       else
       {
         ((Dialog *)aP0)->DrawBackground(); /*0x622c4f*/
-        v24.q004 = (int)aP0; /*0x622c63*/
+        v24.ptr_4 = (int)aP0; /*0x622c63*/
         *(unsigned int *)aP2.__pad_0 = 0; /*0x622c67*/
-        HashTable::Get(&dword_AC1B00, &v24.q004, &aP2); /*0x622c6f*/
+        HashTable::Get(&dword_AC1B00, &v24.ptr_4, &aP2); /*0x622c6f*/
         v7 = *(unsigned __int8 **)aP2.__pad_0; /*0x622c74*/
         if ( *(unsigned int *)aP2.__pad_0 && *(unsigned char *)(*(unsigned int *)aP2.__pad_0 + 190) ) /*0x622c7c*/
         {
@@ -1443,27 +1443,27 @@ LABEL_48:
   v10 = *(unsigned __int16 *)&aP2.__pad_0[2]; /*0x622cf5*/
   GetWindowRect(aP0, &Rect); /*0x622cf8*/
   v11 = v9 - Rect.left; /*0x622d0c*/
-  v24.u32_8 = v10 - Rect.top; /*0x622d12*/
+  v24.ptr_8 = v10 - Rect.top; /*0x622d12*/
   unknown_libname_74(&aP2); /*0x622d16*/
-  v12 = ChildWindowFromPointEx(aP0, (POINT)(((v24.u32_8 & 0xFFFFFFFFull)) << 32 | (v11 & 0xFFFFFFFFull)), 1u); /*0x622d24*/
+  v12 = ChildWindowFromPointEx(aP0, (POINT)(((v24.ptr_8 & 0xFFFFFFFFull)) << 32 | (v11 & 0xFFFFFFFFull)), 1u); /*0x622d24*/
   v13 = v12; /*0x622d2a*/
   if ( v12 ) /*0x622d2e*/
   {
     v14 = (unsigned __int16)v9 | ((unsigned __int16)v10 << 16); /*0x622d43*/
     v15 = (void (*)(HWND, UINT, WPARAM, LPARAM))SendMessageA; /*0x622d45*/
     v16 = SendMessageA(v12, 0x4E8u, 0, v14); /*0x622d54*/
-    UI_Assign((wchar_t **)&v24.q004, aP0, (LPARAM)v13, v16); /*0x622d5e*/
+    UI_Assign((wchar_t **)&v24.ptr_4, aP0, (LPARAM)v13, v16); /*0x622d5e*/
     WideString::AssignFromPtr( /*0x622d6c*/
-      (WideString *)&v25.q004,
-      (const wchar_t **)&v24.q004);
-    ((DeleteAndZero *)&v24.q004)->Alt(); /*0x622d75*/
-    ((WideString *)&aP2)->Reassign_Alt((const wchar_t **)&v25.q004); /*0x622d83*/
-    ((DeleteAndZero *)&v25.q004)->Alt(); /*0x622d8c*/
+      (WideString *)&v25.ptr_4,
+      (const wchar_t **)&v24.ptr_4);
+    ((DeleteAndZero *)&v24.ptr_4)->Alt(); /*0x622d75*/
+    ((WideString *)&aP2)->Reassign_Alt((const wchar_t **)&v25.ptr_4); /*0x622d83*/
+    ((DeleteAndZero *)&v25.ptr_4)->Alt(); /*0x622d8c*/
     v17 = ((WideString *)&aP2)->GetOrEmpty(); /*0x622d9a*/
     if ( !wcscmp(v17, &g_TypeClass_DefaultString) ) /*0x622da0*/
     {
       unknown_libname_74(&v25); /*0x622db4*/
-      v24.q004 = (int)v13; /*0x622dbd*/
+      v24.ptr_4 = (int)v13; /*0x622dbd*/
       v24.u32_8 = -1; /*0x622dca*/
       SendMessageA(aP0, 0x4E9u, 0, (LPARAM)&v24.q004); /*0x622dd2*/
       ((WideString *)&v25.u32_8)->AssignFromPtr((const wchar_t **)&v25); /*0x622ddd*/

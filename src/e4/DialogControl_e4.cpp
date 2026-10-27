@@ -13,7 +13,7 @@ int DialogControl::Hide()
   
   
   int v1; // eax
-  v1 = *(unsigned int *)this->Image; /*0x4e1450*/
+  v1 = *(unsigned int *)this->__pad_000; /*0x4e1450*/
   this->u32_1E = 0; /*0x4e1452*/
   this->u32_1C = 1; /*0x4e1456*/
   return (*(int (**)(void))(v1 + 84))();
@@ -25,7 +25,7 @@ namespace gamemd {
 int DialogControl::Show(void *a1, void *a2)
 {
   (this->u8_2) = 1; /*0x4e1462*/
-  (this->Image) = (void *)(1); /*0x4e1465*/
+  (this->__pad_000) = (void *)(1); /*0x4e1465*/
   return ();
 }
 } // namespace gamemd
@@ -49,7 +49,7 @@ unsigned int * DialogControl::Constructor(void *a1, void *a2, void *a3, void *a4
   this->u32_40 = 0; /*0x62337c*/
   this->u32_5C = 0; /*0x62337f*/
   this->u32_90 = -1; /*0x623382*/
-  return this->Image; /*0x62338e*/
+  return this->__pad_000; /*0x62338e*/
   
 }
 } // namespace gamemd

@@ -20,7 +20,7 @@ struct Rect {
 // --- flat members (END) ---
     unsigned int * Construct(unsigned int *aP1, int aP2, int aP3, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0, void *a9 = 0);
     BOOL Inflate(LPRECT lprc, int dx, int dy);
-    unsigned int * Set(int aP1, int aP2, int aP3, int aP4);
+    _DWORD * Set(int a2, int a3, int a4, int a5);
     int Union(LPRECT, const RECT *lprcSrc1, const RECT *lprcSrc2);  // G57w10-S raw 0x00487F40 IUnknown 占位清除
     int SetRedraw(char a1);
 };

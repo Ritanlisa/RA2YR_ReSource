@@ -11,7 +11,7 @@ struct Queue {
     unsigned int u32_8;  // 0x8
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
-    int GetNext(void *a1 = 0);
+    int GetNext();
 };
 
 } // namespace gamemd

@@ -60,7 +60,7 @@ struct DynamicVector {
     char  RemoveAt2(int a2);  // 0x67C3F0
     char Add(DynamicVector * aP1, void *a2_1, void *a3_1);  // 0x6C6400
     unsigned int * Constructor_Techno(int a2, int a3, void *a3_1 = 0);  // 0x7342D0
-    char EnsureCapacity(void *a1 = 0);  // 0x7AF000
+    int EnsureCapacity();  // 0x7AF000
     AbstractClass * * Release(int a2, int * a3);
     AbstractClass * * SetCapacity(int a2, int * a3);
     void * Constructor_ConvertClass(void ** Block, char a2);

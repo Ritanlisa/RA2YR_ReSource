@@ -215,14 +215,14 @@ unsigned char * BulletTypeClass::Construct(char *aP1, void *a2, void *a3, void *
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E491C) */  /*0x46bcec*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E491C) */  /*0x46bcf2*/
   /* X11: ptr_0 install elided (implicit via BulletTypeClass virtuals 0x46bcf9) */
-  ((int)(&this->AbstractClass_E58))->GenerateUniqueID(); /*0x46bd00*/
-  this->IsLogic_d = 1; /*0x46bd05*/
-  this->RadarInvisible_d = 1; /*0x46bd0c*/
-  this->Selectable_d = 0; /*0x46bd13*/
-  this->LegalTarget_d = 0; /*0x46bd19*/
+  ((int)(&this->Elasticity_d))->GenerateUniqueID(); /*0x46bd00*/
+  this->Elasticity_d = 1; /*0x46bd05*/
+  this->Elasticity_d = 1; /*0x46bd0c*/
+  this->Elasticity_d = 0; /*0x46bd13*/
+  this->Elasticity_d = 0; /*0x46bd19*/
   this->Insignificant_d = 1; /*0x46bd1f*/
-  this->Immune_d = 1; /*0x46bd26*/
-  this->AllowCellContent_d = 0; /*0x46bd2d*/
+  this->Elasticity_d = 1; /*0x46bd26*/
+  this->Elasticity_d = 0; /*0x46bd2d*/
   if ( dword_A83C90 < dword_A83C88 /*0x46bd65*/
     || (byte_A83C8D || !dword_A83C88)
     && dword_A83C94 > 0
@@ -575,7 +575,7 @@ int BulletTypeClass::ProcessPower(int * a2, void *a2_2)
   LOBYTE(v17) = this->bouncy[0]; /*0x46c632*/
   ((Power *)a2)->FlagProcess((int)v17); /*0x46c63b*/
   ((Checksummer *)a2)->Add_double(this->elasticity[0], this->elasticity[1]); /*0x46c650*/
-  Power::TimerProcess(this->acceleration); /*0x46c65e*/
+  Power::TimerProcess(this->Elasticity_d); /*0x46c65e*/
   Power::TimerProcess(this->rot); /*0x46c66c*/
   Power::TimerProcess(this->arm); /*0x46c67a*/
   LOBYTE(v18) = this->flat_flag[0]; /*0x46c67f*/

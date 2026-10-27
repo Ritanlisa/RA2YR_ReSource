@@ -59,6 +59,6 @@ struct Terrain {
     VectorClass_flat * * SelectTileType(Random * aP0, IUnknown * aP1);  // G57w10-S raw 0x00579620 IUnknown 占位清除
     void PlaceTiberiumTrees(ScenarioClass * aP0, int a2, int a3, char a4);  // 0x5A28C0
     unsigned int * ClimbCheck(AbstractClass * aP0, AbstractClass * aP1);  // 0x6D6410
-    int LookupByName(void *a1 = 0);  // 0x71DD80
+    int LookupByName();  // 0x71DD80
 };
 } // namespace gamemd

@@ -92,7 +92,7 @@ AbstractClass * * MissionClass::LoadFromINI(unsigned int *a2, void *a2_1)
     v13 = off_816CAC[vfptr];  /*0x5b38ca*/
   INIClass::ReadDouble_Overwrite((double *)a2, (unsigned __int8 *)v13, aAarate, 0.0);  /*0x5b38dd*/
   __asm { fst     qword ptr [esi+18h] }  /*0x5b38e2*/
-  *(double *)&this->nextArrayIndex = _RT1;  /*0x5b38e2*/
+  *(double *)&this->AARate = _RT1;  /*0x5b38e2*/
   __asm
   {  /*0x5b38e5*/
     fcomp   ds:dbl_7E2800
@@ -101,7 +101,7 @@ AbstractClass * * MissionClass::LoadFromINI(unsigned int *a2, void *a2_1)
   if ( (_AX & 0x4000) != 0 )
   {  /*0x5b38f0*/
     abstractFlags = this->abstractFlags;  /*0x5b38f5*/
-    this->nextArrayIndex = this->uniqueId;  /*0x5b38f8*/
+    this->AARate = this->uniqueId;  /*0x5b38f8*/
     this->referenceCount = abstractFlags;  /*0x5b38fb*/
   }
   return 1;  /*0x5b38fe*/

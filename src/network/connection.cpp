@@ -33,7 +33,7 @@ ConnectionClass::ConnectionClass() noexcept
 }
 
 // 0x48b410
-int ConnectionClass::queueSendPacket(const void *a2, int32_t a3, const void *a4, int32_t a5, int16_t a6)
+int ModemConnectionClass::queueSendPacket(const void *a2, int32_t a3, const void *a4, int32_t a5, int16_t a6)
 {
   int PlayerIndex; // eax
   int v8; // esi
@@ -43,7 +43,7 @@ int ConnectionClass::queueSendPacket(const void *a2, int32_t a3, const void *a4,
   int v13; // ecx
 
   PlayerIndex = this->PlayerIndex; /*0x48b418*/
-  v8 = this->PhoneNumber[4]; /*0x48b41c*/
+  v8 = (*(unsigned int *)(this->PhoneNumber + 16)); /*0x48b41c*/
   if ( v8 == PlayerIndex || a3 > this->LastPacketTime ) /*0x48b42b*/
   {
     if ( v8 == PlayerIndex ) /*0x48b52f*/
@@ -57,7 +57,7 @@ int ConnectionClass::queueSendPacket(const void *a2, int32_t a3, const void *a4,
   v9 = 0; /*0x48b433*/
   if ( PlayerIndex <= 0 ) /*0x48b437*/
     return 0; /*0x48b437*/
-  for ( i = (unsigned char *)this->PhoneNumber[3]; (*i & 1) != 0; i += 36 ) /*0x48b440*/
+  for ( i = (unsigned char *)(*(unsigned int *)(this->PhoneNumber + 12)); (*i & 1) != 0; i += 36 ) /*0x48b440*/
   {
     if ( ++v9 >= PlayerIndex ) /*0x48b44d*/
       return 0; /*0x48b455*/
@@ -65,28 +65,28 @@ int ConnectionClass::queueSendPacket(const void *a2, int32_t a3, const void *a4,
   if ( v9 == -1 ) /*0x48b45b*/
     return 0; /*0x48b55d*/
   v12 = 36 * v9; /*0x48b464*/
-  *(unsigned int *)(this->PhoneNumber[3] + v12) = *(unsigned int *)(this->PhoneNumber[3] + 36 * v9) | 1; /*0x48b46d*/
-  *(unsigned int *)(36 * v9 + this->PhoneNumber[3]) &= ~2u; /*0x48b47a*/
-  *(unsigned int *)(36 * v9 + this->PhoneNumber[3]) &= ~4u; /*0x48b486*/
-  *(unsigned int *)(v12 + this->PhoneNumber[3] + 4) = 0; /*0x48b490*/
-  *(unsigned int *)(v12 + this->PhoneNumber[3] + 8) = 0; /*0x48b497*/
-  *(unsigned int *)(v12 + this->PhoneNumber[3] + 12) = 0; /*0x48b49e*/
-  *(unsigned int *)(v12 + this->PhoneNumber[3] + 16) = a3; /*0x48b4a5*/
-  *(unsigned short *)(v12 + this->PhoneNumber[3] + 32) = a6; /*0x48b4ae*/
-  memcpy(*(void **)(36 * v9 + this->PhoneNumber[3] + 20), a2, a3); /*0x48b4c1*/
+  *(unsigned int *)((*(unsigned int *)(this->PhoneNumber + 12)) + v12) = *(unsigned int *)((*(unsigned int *)(this->PhoneNumber + 12)) + 36 * v9) | 1; /*0x48b46d*/
+  *(unsigned int *)(36 * v9 + (*(unsigned int *)(this->PhoneNumber + 12))) &= ~2u; /*0x48b47a*/
+  *(unsigned int *)(36 * v9 + (*(unsigned int *)(this->PhoneNumber + 12))) &= ~4u; /*0x48b486*/
+  *(unsigned int *)(v12 + (*(unsigned int *)(this->PhoneNumber + 12)) + 4) = 0; /*0x48b490*/
+  *(unsigned int *)(v12 + (*(unsigned int *)(this->PhoneNumber + 12)) + 8) = 0; /*0x48b497*/
+  *(unsigned int *)(v12 + (*(unsigned int *)(this->PhoneNumber + 12)) + 12) = 0; /*0x48b49e*/
+  *(unsigned int *)(v12 + (*(unsigned int *)(this->PhoneNumber + 12)) + 16) = a3; /*0x48b4a5*/
+  *(unsigned short *)(v12 + (*(unsigned int *)(this->PhoneNumber + 12)) + 32) = a6; /*0x48b4ae*/
+  memcpy(*(void **)(36 * v9 + (*(unsigned int *)(this->PhoneNumber + 12)) + 20), a2, a3); /*0x48b4c1*/
   if ( a4 && a5 > 0 && a5 <= this->PacketsSent ) /*0x48b4dd*/
   {
-    memcpy(*(void **)(v12 + this->PhoneNumber[3] + 28), a4, a5); /*0x48b4eb*/
-    *(unsigned int *)(v12 + this->PhoneNumber[3] + 24) = a5; /*0x48b4f9*/
+    memcpy(*(void **)(v12 + (*(unsigned int *)(this->PhoneNumber + 12)) + 28), a4, a5); /*0x48b4eb*/
+    *(unsigned int *)(v12 + (*(unsigned int *)(this->PhoneNumber + 12)) + 24) = a5; /*0x48b4f9*/
   }
   else
   {
-    *(unsigned int *)(v12 + this->PhoneNumber[3] + 24) = 0; /*0x48b502*/
+    *(unsigned int *)(v12 + (*(unsigned int *)(this->PhoneNumber + 12)) + 24) = 0; /*0x48b502*/
   }
-  *(unsigned int *)(this->PhoneNumber[6] + 4 * this->PhoneNumber[4]) = v9; /*0x48b512*/
-  v13 = this->PhoneNumber[4] + 1; /*0x48b51b*/
+  *(unsigned int *)(this->PhoneNumber[6] + 4 * (*(unsigned int *)(this->PhoneNumber + 16))) = v9; /*0x48b512*/
+  v13 = (*(unsigned int *)(this->PhoneNumber + 16)) + 1; /*0x48b51b*/
   ++this->PhoneNumber[5]; /*0x48b51e*/
-  this->PhoneNumber[4] = v13; /*0x48b521*/
+  (*(unsigned int *)(this->PhoneNumber + 16)) = v13; /*0x48b521*/
   return 1; /*0x48b44f*/
 }
 // 0x48c5a0

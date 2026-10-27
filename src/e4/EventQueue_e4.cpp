@@ -12,7 +12,7 @@
 
 // 0x54F000
 namespace gamemd {  // G42.18 ns repair
-int16_t EventQueue::Process(void *a1)
+int16_t EventQueue::Process()
 {
 
   if ( (this->q318 + 1) % 256 != this->q314 ) /*0x54f01e*/
@@ -69,7 +69,7 @@ short EventQueue::Read(void *a1, void *a2, void *a3)
       this->q314 = (v8 + 1) % 256; /*0x54f161*/
     }
     this->u32_C = v7; /*0x54f16d*/
-    this->s_Queue = v9; /*0x54f171*/
+    this->u32_4 = v9; /*0x54f171*/
     *&this->u32_10 = v9; /*0x54f174*/
   }
   else if ( (uint8_t)result == 10 ) /*0x54f17e*/

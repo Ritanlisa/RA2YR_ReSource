@@ -429,7 +429,7 @@ struct FootClass {
     void Destroyed(int a2);
     AbstractClass * FootClass_ImbueLocomotor(void * a1, void * a2, void * a3, void *a4, void *a5, void *a6);
     void Stub(int a1);
-     int GetField(void *a1 = 0, void *a2 = 0);
+     int GetField();
     static int SetField(FootClass * aP1, int a2);
     static int ProcessDeploy(FootClass *aP1, int a2, double a3, int *a4, int a5, int a6, void *a7, char a8, int64_t a9);
     static char AssignDestination(FootClass * aP1, int a2, int a3);

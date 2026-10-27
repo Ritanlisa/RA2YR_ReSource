@@ -215,7 +215,7 @@ unsigned int * InfantryTypeClass::Constructor_523980(int aP1)
   /* X11: ptr_0 install elided (implicit via InfantryTypeClass virtuals 0x5239ae) */
   /* X11: ptr_0 install elided (implicit via InfantryTypeClass virtuals 0x5239b5) */
   /* X11: ptr_0 install elided (implicit via InfantryTypeClass virtuals 0x5239bc) */
-  return &this->TechnoTypeClass; /*0x5239c5*/
+  return &this->ptr_0; /*0x5239c5*/
 
 }
 } // namespace gamemd
@@ -374,7 +374,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   INIClassIntList = &v44; /*0x524186*/
   (&v44)->Copy(&v4->u32_E88); /*0x52418a*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E4DD8) */  /*0x524198*/
-  inited = (unsigned __int8 *)__0Iostream_init_QAE_XZ_4(&v4->BarrelVoxel); /*0x5241a0*/
+  inited = (unsigned __int8 *)__0Iostream_init_QAE_XZ_4(&v4->__pad_0B8); /*0x5241a0*/
   INIClassIntList = (DynamicVectorClass *)GetINIClassIntList( /*0x5241b4*/
                                             (int)&v48,
                                             (unsigned __int8 ***)this,

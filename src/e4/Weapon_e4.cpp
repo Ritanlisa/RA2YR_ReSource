@@ -469,7 +469,7 @@ LABEL_55:
       }
       if ( aP3->getAltitude() == 11 ) /*0x70cc01*/
       {
-        if ( (unsigned __int8)CellClass::IsActiveOrNext((CellClass *)aP3) ) /*0x70cc05*/
+        if ( (unsigned __int8)((CellClass *)aP3)->IsActiveOrNext() ) /*0x70cc05*/
         {
           v34 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6092); /*0x70cc1e*/
           if ( Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 99) < v34 ) /*0x70cc31*/

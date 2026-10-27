@@ -615,7 +615,7 @@ unsigned int * SpawnManagerClass::Constructor_6B83A0(int aP1, int aP2)
 
   this->ptr_4 = 0; /*0x6b83a9*/
   this->ptr_8 = (void *)aP1; /*0x6b83b0*/
-  (this->ptr_10) = ((this->ptr_10) & ~0xFF) | ((1) & 0xFF); /*0x6b83b3*/
+  (this->uniqueId) = ((this->uniqueId) & ~0xFF) | ((1) & 0xFF); /*0x6b83b3*/
   (this->IsAllocated) = ((this->IsAllocated) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x6b83b7*/
   /* X11: ptr_0 install elided (base-interface slot, RHS g_ptr_7E8500) */  /*0x6b83bb*/
   if ( aP1 ) /*0x6b83c1*/
@@ -633,7 +633,7 @@ unsigned int * SpawnManagerClass::Constructor_6B83A0(int aP1, int aP2)
   /* X11: ptr_0 install elided (base-interface slot, RHS g_ptr_7E3238) */  /*0x6b83e3*/
   this->abstractFlags = 10; /*0x6b83e9*/
   this->uniqueId = 0; /*0x6b83f0*/
-  return &this->AbstractClass; /*0x6b83f9*/
+  return &this->ptr_0; /*0x6b83f9*/
 
 }
 } // namespace gamemd

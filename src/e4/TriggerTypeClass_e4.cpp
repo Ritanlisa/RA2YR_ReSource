@@ -107,17 +107,17 @@ TechnoClass * * TriggerTypeClass::ReadINI(unsigned int * a0, TechnoClass * aP1, 
   if ( v8 ) /*0x6fc1b8*/
   {
     if ( v8->inLimbo[0] /*0x6fc23f*/
-      || this->isBerserk[0] && *(unsigned char *)((*(int (**)(BuildingClass *))(v8->ptr_0 + 132))(v8) + 1680)
+      || this->ptr_0[0] && *(unsigned char *)((*(int (**)(BuildingClass *))(v8->ptr_0 + 132))(v8) + 1680)
       || *(unsigned char *)((*(int (**)(TechnoClass *))(this->ptr_0 + 132))(this) + 1683)
       && *(unsigned char *)((*(int (**)(BuildingClass *))(v8->ptr_0 + 132))(v8) + 1684)
       || v8->isImmobilized[0]
-      || !*(unsigned char *)(this->owner + 492) && (*(unsigned __int8 (**)(BuildingClass *))(v8->ptr_0 + 352))(v8) )
+      || !*(unsigned char *)(this->ptr_0 + 492) && (*(unsigned __int8 (**)(BuildingClass *))(v8->ptr_0 + 352))(v8) )
     {
       return 5; /*0x6fc247*/
     }
-    if ( (*(int (**)(BuildingClass *, int, int))(v8->ptr_0 + 104))(v8, 1, this->owner) == 5 /*0x6fc296*/
-      && !(unsigned __int8)Cell::IsPassableOffset((Cell *)v10, *(unsigned int *)(this->owner + 48))
-      && (TechnoClass::GetValue(this, -1) > 0 || !(unsigned __int8)HouseClass::IsAlliedWith((HouseClass *)v8->owner)) )
+    if ( (*(int (**)(BuildingClass *, int, int))(v8->ptr_0 + 104))(v8, 1, this->ptr_0) == 5 /*0x6fc296*/
+      && !(unsigned __int8)Cell::IsPassableOffset((Cell *)v10, *(unsigned int *)(this->ptr_0 + 48))
+      && (TechnoClass::GetValue(this, -1) > 0 || !(unsigned __int8)((HouseClass *)v8->owner)->IsAlliedWith()) )
     {
       return 6; /*0x6fc29d*/
     }

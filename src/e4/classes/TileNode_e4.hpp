@@ -16,7 +16,7 @@ struct TileNode {
     char __pad_36[2];  // 0x36
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
-    int Cleanup(void *a1 = 0);
+    int Cleanup();
 };
 
 } // namespace gamemd

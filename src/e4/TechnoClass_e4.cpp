@@ -127,7 +127,7 @@ TechnoClass::TechnoClass(AbstractClass * aP1)
 {
 
 
-  RadioClass::Release((RadioClass *)this); /*0x6f2b46*/
+  ((RadioClass *)this)->Release(); /*0x6f2b46*/
   this->flashing[0] = 0; /*0x6f2b52*/
   LOBYTE(this->flashing[1]) = 0; /*0x6f2b58*/
   this->animation[0] = 0; /*0x6f2b5e*/
@@ -140,15 +140,15 @@ TechnoClass::TechnoClass(AbstractClass * aP1)
   this->animation[6] = 1; /*0x6f2b81*/
   this->passengers[0] = 0; /*0x6f2b87*/
   this->passengers[1] = 0; /*0x6f2b8d*/
-  this->transporter = 0; /*0x6f2b93*/
-  this->turretChargeTimer = -100; /*0x6f2b9c*/
-  this->currentTurretNumber = -1; /*0x6f2ba6*/
+  this->transporter_2 = 0; /*0x6f2b93*/
+  this->turretChargeTimer_d = -100; /*0x6f2b9c*/
+  this->currentTurretNumber_2 = -1; /*0x6f2ba6*/
   this->secondaryTurretIndex_d = -1; /*0x6f2bac*/
   this->behindAnim = 0; /*0x6f2bb2*/
   this->deployAnim = 0; /*0x6f2bb8*/
   this->inAirFlag = 0; /*0x6f2bbe*/
   this->currentWeaponSlot = 0; /*0x6f2bc4*/
-  this->currentRank = -1; /*0x6f2bca*/
+  this->currentWeaponSlot_d = -1; /*0x6f2bca*/
   this->gattlingStage = 0; /*0x6f2bd0*/
   this->gattlingValue = 0; /*0x6f2bd6*/
   this->ammoReloadTimer = 0; /*0x6f2be2*/
@@ -157,8 +157,8 @@ TechnoClass::TechnoClass(AbstractClass * aP1)
   this->armorMultiplier[1] = 1072693248; /*0x6f2bf8*/
   this->firepowerMultiplier[0] = 0; /*0x6f2bfe*/
   this->firepowerMultiplier[1] = 1072693248; /*0x6f2c04*/
-  this->idleActionTimer[0] = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x6f2c10*/
-  this->idleActionTimer[2] = 0; /*0x6f2c16*/
+  this->firepowerMultiplier_d[0] = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x6f2c10*/
+  this->firepowerMultiplier_d[2] = 0; /*0x6f2c16*/
   int v4; // edx
   v4 = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x6f2c1c*/
   this->radarFlashTimer[2] = 0; /*0x6f2c22*/
@@ -173,11 +173,11 @@ TechnoClass::TechnoClass(AbstractClass * aP1)
   this->ironTintTimer[1] = 0; /*0x6f2c61*/
   this->ironTintTimer[2] = 10; /*0x6f2c67*/
   this->ironTintStage = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x6f2c76*/
-  this->airstrikeTimer[1] = 0; /*0x6f2c7c*/
+  this->ironTintStage_d[1] = 0; /*0x6f2c7c*/
   int v6; // ecx
   v6 = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x6f2c82*/
   this->airstrikeTintTimer[1] = 0; /*0x6f2c88*/
-  this->airstrikeTimer[2] = v6; /*0x6f2c8e*/
+  this->ironTintStage_d[2] = v6; /*0x6f2c8e*/
   *(unsigned int *)this->airstrikeTintStage_d = 0; /*0x6f2c94*/
   this->airstrikeTintStage_2 = 0; /*0x6f2c9a*/
   this->drainTarget = 0; /*0x6f2ca0*/
@@ -209,9 +209,9 @@ TechnoClass::TechnoClass(AbstractClass * aP1)
   this->cloakProgress[6] = 1; /*0x6f2d4a*/
   int v8; // ecx
   v8 = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x6f2d50*/
-  this->cloakDelayTimer[2] = 0; /*0x6f2d56*/
-  this->cloakDelayTimer[0] = v8; /*0x6f2d5c*/
-  this->warpFactor = 0.0; /*0x6f2d62*/
+  this->warpFactor_d[2] = 0; /*0x6f2d56*/
+  this->warpFactor_d[0] = v8; /*0x6f2d5c*/
+  this->warpFactor_2 = 0.0; /*0x6f2d62*/
   this->isChronosphereImmune = 0; /*0x6f2d68*/
   this->lastSightCoords[0] = g_BuildingLoadQueue_Array.__pad_1C[3]; /*0x6f2d79*/
   this->lastSightCoords[1] = g_BuildingLoadQueue_Array.__pad_1C[4]; /*0x6f2d85*/
@@ -307,8 +307,8 @@ TechnoClass::TechnoClass(AbstractClass * aP1)
   this->isUnderCursor = 0; /*0x6f2fcd*/
   this->isCommandLineTarget = 0; /*0x6f2fd3*/
   this->sightRangeBonus_d = 0; /*0x6f2fd9*/
-  this->isRecruitableByAlly = 1; /*0x6f2fdf*/
-  this->isRecruitableByEnemy = 1; /*0x6f2fe6*/
+  this->isRecruitableByAlly_d = 1; /*0x6f2fdf*/
+  this->isRecruitableByEnemy_d = 1; /*0x6f2fe6*/
   this->isRadarTracked_d = 0; /*0x6f2fed*/
   this->isOnCarryall_d = 0; /*0x6f2ff3*/
   this->isCrashing_d = 0; /*0x6f2ff9*/
@@ -338,13 +338,13 @@ TechnoClass::TechnoClass(AbstractClass * aP1)
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E3238) */  /*0x6f3099*/
   this->currentTargets[5] = 10; /*0x6f309f*/
   this->currentTargets[4] = 0; /*0x6f30a5*/
-  this->attackedTargets[1] = 0; /*0x6f30ab*/
-  this->attackedTargets[2] = 0; /*0x6f30b1*/
-  LOBYTE(this->attackedTargets[3]) = 1; /*0x6f30b7*/
-  BYTE1(this->attackedTargets[3]) = 0; /*0x6f30be*/
+  this->__pad_470[1] = 0; /*0x6f30ab*/
+  this->__pad_470[2] = 0; /*0x6f30b1*/
+  LOBYTE(this->__pad_470[3]) = 1; /*0x6f30b7*/
+  BYTE1(this->__pad_470[3]) = 0; /*0x6f30be*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E3238) */  /*0x6f30c4*/
-  this->attackedTargets[5] = 10; /*0x6f30ca*/
-  this->attackedTargets[4] = 0; /*0x6f30d0*/
+  this->__pad_470[5] = 10; /*0x6f30ca*/
+  this->__pad_470[4] = 0; /*0x6f30d0*/
   this->isTurretRotateSoundPlaying = 1; /*0x6f30d6*/
   this->turretIsRotating = 0; /*0x6f30dc*/
   this->isGattlingSoundPlaying = 0; /*0x6f30e2*/
@@ -353,7 +353,7 @@ TechnoClass::TechnoClass(AbstractClass * aP1)
   this->unknown_4D8 = 0; /*0x6f30f4*/
   this->unknown_bool_4F8 = 0; /*0x6f30fa*/
   this->unknown_4FC = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x6f3106*/
-  this->queueUpToEnter = 0; /*0x6f310c*/
+  this->voiceVolumeModifier = 0; /*0x6f310c*/
   this->empLockRemaining = 0; /*0x6f3112*/
   this->firingRadBeam = 0; /*0x6f3118*/
   this->planningToken = 0; /*0x6f311e*/
@@ -397,7 +397,7 @@ TechnoClass::TechnoClass(AbstractClass * aP1)
   this->initialOwner = (HouseClass *)aP1; /*0x6f3241*/
   memset(&this->fireParticles, 0, 0x20u); /*0x6f3247*/
   *(unsigned short *)this->unknown_short_3C8 = Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink); /*0x6f3259*/
-  return &this->RadioClass; /*0x6f3262*/
+  return &this->ptr_0; /*0x6f3262*/
 
 }
 } // namespace ra2
@@ -668,12 +668,12 @@ int TechnoClass::DTOR(void *a1)
   }
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x6f469d*/
   AbstractClassVector::ddtor(&this->__pad_470); /*0x6f46a3*/
-  void *v13 = *&this->attackedTargets; // eax /*0x6f46a8*/
+  void *v13 = *&this->__pad_470; // eax /*0x6f46a8*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x6f46ae*/
   if ( v13 && this->vecAbs_IsAllocated ) /*0x6f46bc*/
   {
     __3_YAXPAX_Z(v13); /*0x6f46c5*/
-    this->attackedTargets = 0; /*0x6f46cd*/
+    this->__pad_470 = 0; /*0x6f46cd*/
   }
   this->vecAbs_IsAllocated = 0; /*0x6f46d3*/
   this->audioController3 = 0; /*0x6f46d9*/

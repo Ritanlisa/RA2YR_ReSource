@@ -530,7 +530,7 @@ static int GetSHPFrame(BuildingClass * aP1, int a2);
     void ProcessAnimationStates();  // 0x4545d0
     char  ValidatePath(unsigned short * a2, int a3);  // 0x716150
     int  TogglePower2(int a2, void *a1 = 0);  // 0x4ac8c0
-    int ProcessUpgradeEffects(void *a1 = 0);  // 0x726400
+    int ProcessUpgradeEffects();  // 0x726400
     int  TogglePower(int a2, void *a1 = 0);  // 0x4ac660
     static void VisualizePlacement(void *a1 = 0);  // 0x485af0
     int CheckAdjacentCells(void *a1 = 0);  // 0x485460

@@ -59,7 +59,7 @@ int CCFileClass::Destruct(void *a1)
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x535a76*/
   this->MixFileIndex = 0; /*0x535a7c*/
   Vector::Clear((int)&this->u32_160); /*0x535a83*/
-  *(unsigned int *)this->CDFileClass = &off_7E1668; /*0x535a8a*/
+  *(unsigned int *)this->__tail_0 = &off_7E1668; /*0x535a8a*/
   return ((BufferIOFileClass *)this)->Dtor(); /*0x535a95*/
 
 }

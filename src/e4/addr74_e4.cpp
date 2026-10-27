@@ -147,7 +147,7 @@ Coord * * PlaceScenarioUnits(void * a1, void * a2, void * aUnits)
   v51 = 0; /*0x7432a7*/
   v50 = 0; /*0x7432ab*/
   v48 = 0; /*0x7432af*/
-  KeyCount = (v2->__pad_0)->GetKeyCount((unsigned __int8 *)aUnits); /*0x7432b3*/
+  KeyCount = (v2->ptr_0)->GetKeyCount((unsigned __int8 *)aUnits); /*0x7432b3*/
   v4 = 0; /*0x7432b8*/
   v61 = KeyCount; /*0x7432bc*/
   v54 = 0; /*0x7432c0*/
@@ -155,7 +155,7 @@ Coord * * PlaceScenarioUnits(void * a1, void * a2, void * aUnits)
   {
     while ( 1 ) /*0x7432dd*/
     {
-      StringByIndex = (unsigned __int8 *)(v2->__pad_0)->GetStringByIndex((unsigned __int8 *)aUnits, v4); /*0x7432dd*/
+      StringByIndex = (unsigned __int8 *)(v2->ptr_0)->GetStringByIndex((unsigned __int8 *)aUnits, v4); /*0x7432dd*/
       INIClass::GetString(v2, (unsigned __int8 *)aUnits, StringByIndex, 0, String, 128); /*0x7432f6*/
       v6 = strtok(String, Delimiter); /*0x743305*/
       v7 = (v6)->FindByName(); /*0x743314*/

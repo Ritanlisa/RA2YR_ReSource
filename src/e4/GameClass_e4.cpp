@@ -645,7 +645,7 @@ int * GameClass::initDisplay(char a2)
   ((Pipe *)this)->Dtor(); /*0x4aecad*/
   if ( (a2 & 1) != 0 ) /*0x4aecb7*/
     __3_YAXPAX_Z(this); /*0x4aecba*/
-  return (int *)this->__pad_000; /*0x4aecc4*/
+  return (int *)this->ptr_0; /*0x4aecc4*/
 
 }
 } // namespace gamemd
@@ -708,7 +708,7 @@ unsigned int * GameClass::saveGameState(char a2)
 namespace gamemd {
 int GameClass::loadGameState(int a2)
 {
-  return (*(int (**)(PKPipe *, int))(*(unsigned int *)this->__pad_000 + 12))(this, a2); /*0x632fea*/
+  return (*(int (**)(PKPipe *, int))(*(unsigned int *)this->ptr_0 + 12))(this, a2); /*0x632fea*/
 }
 } // namespace gamemd
 
@@ -739,7 +739,7 @@ PKPipe * GameClass::validateGameFile(unsigned int * Block, char a2)
 namespace gamemd {
 int GameClass::parseGameOptions(int a2)
 {
-  return (*(int (**)(PKStraw *, int))(*(unsigned int *)this->__pad_000 + 4))(this, a2); /*0x63336a*/
+  return (*(int (**)(PKStraw *, int))(*(unsigned int *)this->ptr_0 + 4))(this, a2); /*0x63336a*/
 }
 } // namespace gamemd
 

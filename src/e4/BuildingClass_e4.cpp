@@ -135,7 +135,7 @@ LABEL_13:
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v1->PsiWarnAnim); /*0x453f84*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v1->Spotlight); /*0x453f95*/
     AudioController::Init((AudioController *)v1->WasOnline); /*0x453fa0*/
-    AudioController::Init(&v1->__pad_6B4); /*0x453fab*/
+    AudioController::Init(&v1->Audio8_2); /*0x453fab*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v1->SecretProduction); /*0x453fbc*/
     result = (*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)v9 + 12))(v9, &v34, 4, 0); /*0x453fcd*/
     if ( result >= 0 ) /*0x453fd2*/
@@ -262,7 +262,7 @@ int BuildingClass::AssignDestination_SyncLog()
 
   if ( this->LightSource != 19 ) /*0x455d5a*/
   {
-    if ( (*((unsigned __int8 (**)(BuildingClass *))this->TechnoClass + 161))(this) /*0x455d73*/
+    if ( (*((unsigned __int8 (**)(BuildingClass *))this->ptr_0 + 161))(this) /*0x455d73*/
       || this->Type->ConstructionYard )
     {
       TechnoClass::SetFocus((TechnoClass *)this, (int)v3); /*0x455d80*/
@@ -416,7 +416,7 @@ LABEL_10:
 }
 // 0x629720
 namespace gamemd {
-int BuildingClass::AnimController(void *a1)
+int BuildingClass::AnimController()
 {
 
   unsigned int *Value; // eax

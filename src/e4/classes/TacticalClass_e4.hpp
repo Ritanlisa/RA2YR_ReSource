@@ -227,7 +227,7 @@ struct TacticalClass {
     int SetView(int a2, int a3, int16_t a4, int16_t a5, int16_t a6, int16_t a7);
     static char initTacticalMap(TacticalClass * aP1, int *a2, int *a3);
     int  SetCameraPosition(int a2, int a3, int a4, void *a1 = 0);  // 0x540d10
-    char  UpdateScrollTarget(int a2, int a3, int a4, int a5, char a6, void *a1 = 0);  // 0x554aa0
+    char UpdateScrollTarget(int a2, int a3, int a4, int a5, char a6);  // 0x554aa0
     int Initialize();  // 0x4ae450
     int ResetScrollBounds();  // 0x6da160
     int  ScrollView(char a2);  // 0x554af0

@@ -1008,7 +1008,7 @@ LABEL_55:
   v31 = 0x190000u / v42; /*0x404577*/
 LABEL_59:
   RequestBufferMixer((unsigned int *)&stru_87E1B8, v31); /*0x404580*/
-  result = Audio::InitChannels((char *)&stru_87E1B8); /*0x40458f*/
+  result = ((Audio *)&stru_87E1B8)->InitChannels(); /*0x40458f*/
   v32 = *(DListNode **)g_AudioStreamObject.__pad_0; /*0x404594*/
   if ( *(DListNode **)g_AudioStreamObject.__pad_0 == &g_AudioStreamObject ) /*0x4045a0*/
   {

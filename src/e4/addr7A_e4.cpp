@@ -263,9 +263,9 @@ v1 = (HWND)((Dialog *)0x11F)->FindByHandle(); /*0x7a06a9*/
   for ( i = 0; i < *(int *)stru_B76AD0.__pad_0; ++i ) /*0x7a06de*/
     j_DeleteAndZero((ObjectClass *)(stru_B76AD0.u32_8 + 4 * i)); /*0x7a06e8*/
   v3 = 0; /*0x7a06fc*/
-  for ( *(unsigned int *)stru_B76AD0.__pad_0 = 0; v3 < *(int *)stru_B76970.__pad_0; ++v3 ) /*0x7a0706*/
+  for ( *(unsigned int *)stru_B76AD0.__pad_0 = 0; v3 < *(int *)stru_B76970.ptr_0; ++v3 ) /*0x7a0706*/
     j_DeleteAndZero((ObjectClass *)(stru_B76970.q008 + 4 * v3)); /*0x7a0711*/
-  *(unsigned int *)stru_B76970.__pad_0 = 0; /*0x7a0720*/
+  *(unsigned int *)stru_B76970.ptr_0 = 0; /*0x7a0720*/
   dword_B736F4 = 0; /*0x7a0726*/
   CollectWOLConnectionTokens(v28); /*0x7a072c*/
   memset(&v31[168], 0, 0x6Cu); /*0x7a074b*/

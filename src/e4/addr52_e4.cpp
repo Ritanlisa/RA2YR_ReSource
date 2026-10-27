@@ -916,7 +916,7 @@ LABEL_3:
   Init::StubPlaceholder(); /*0x52bbb7*/
   LoadMouseClassResources(); /*0x52bbbc*/
   InitializeAudioSubsystem(g_Audio_MixerEnabled); /*0x52bbc7*/
-  Timer::PumpMessages((Timer *)dword_87F770); /*0x52bbd2*/
+  ((Timer *)dword_87F770)->PumpMessages(); /*0x52bbd2*/
   v8 = SearchMIXFile(aUnitsnoPal, 0); /*0x52bbe3*/
   memcpy(&stru_886380, v8, 0x300u); /*0x52bbee*/
   for ( i = 0; i < 256; ++i ) /*0x52bbf6*/

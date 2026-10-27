@@ -231,7 +231,7 @@ BlitTransLucent25Alpha_ushort * BlitTransLucent25Alpha_ushort::Blit(char a2)
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E5B88) */  /*0x49a364*/
   if ( (a2 & 1) != 0 ) /*0x49a36a*/
     __3_YAXPAX_Z(this); /*0x49a36d*/
-  return (gamemd::BlitTransLucent25Alpha_ushort *)(this->ptr_0); /*0x49a377*/
+  return (gamemd::BlitTransLucent25Alpha_ushort *)(this->__pad_0); /*0x49a377*/
 
 }
 } // namespace gamemd

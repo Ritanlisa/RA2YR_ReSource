@@ -27,7 +27,7 @@ struct Array {
     unsigned int u32_804;  // 0x804
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
-    int GetClamped(int aP1);  // 0x634290
+    int GetClamped(int a2);  // 0x634290
     int FindValue(int aP1, void *a2 = 0);
     int RemoveAt(int a2, void *a2_2);  // 0x63E590
     int Get(int a2, void *a2_1 = 0);  // 0x65AD40

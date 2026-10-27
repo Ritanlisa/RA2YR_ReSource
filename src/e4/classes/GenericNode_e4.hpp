@@ -11,7 +11,7 @@ struct GenericNode {
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     GenericNode * sub_40E390(char a2);
-    unsigned int * Constructor(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0);  // 0x40e320
+    _DWORD * Constructor();  // 0x40e320
     GenericNode * sub_40E390(GenericNode ** Block, char a2);
 };
 

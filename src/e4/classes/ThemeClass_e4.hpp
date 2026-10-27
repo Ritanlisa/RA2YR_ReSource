@@ -27,7 +27,7 @@ struct ThemeClass {
 // --- flat members (END) ---
     static int ClearQueues();
     char ReadThemeEntry(uint8_t *** a2);
-    int RequestBuffer(void *a1 = 0);
+    int RequestBuffer();
     int GetValue(void *a1 = 0, void *a2 = 0);
     void * InitializeThemes(char * a2);
     bool GetField(int a1, void *a2 = 0);

@@ -363,7 +363,7 @@ wchar_t ** WOLobby_Setup(wchar_t ** a1, HWND a2, LPARAM)
   lParam[1] = -1; /*0x603f87*/
   SendMessageA(a2, 0x4E9u, 0, (LPARAM)lParam); /*0x603f8f*/
   ((WideString *)a1)->AssignFromPtr((const wchar_t **)&v7); /*0x603f9c*/
-  DeleteAndZero::Alt((DeleteAndZero *)&v7); /*0x603fa5*/
+  ((DeleteAndZero *)&v7)->Alt(); /*0x603fa5*/
   return a1; /*0x603fac*/
 
 }

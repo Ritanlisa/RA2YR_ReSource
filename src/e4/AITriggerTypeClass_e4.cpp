@@ -380,7 +380,7 @@ ObjectClass * * AITriggerTypeClass::LoadFromINI(unsigned char *** a2, void *a2_2
   String::Trim((char *)v46); /*0x41f63e*/
   this->u32_DC = 0; /*0x41f643*/
   if ( _strcmpi((char *)v46, (char *)off_818114) ) /*0x41f655*/
-    this->u32_DC = TeamTypeClass::FindByName((TeamTypeClass *)v46); /*0x41f66a*/
+    this->u32_DC = ((TeamTypeClass *)v46)->FindByName(); /*0x41f66a*/
   v6 = strtok(0, Delimiter); /*0x41f676*/
   if ( !v6 ) /*0x41f680*/
     return 0; /*0x41f680*/
@@ -539,7 +539,7 @@ LABEL_26:
     String::Trim((char *)&v46[0].nextArrayIndex); /*0x41f9b8*/
     this->q0E0 = 0; /*0x41f9bd*/
     if ( _strcmpi((char *)&v46[0].nextArrayIndex, (char *)off_818114) ) /*0x41f9cf*/
-      this->q0E0 = TeamTypeClass::FindByName((TeamTypeClass *)&v46[0].nextArrayIndex); /*0x41f9e4*/
+      this->q0E0 = ((TeamTypeClass *)&v46[0].nextArrayIndex)->FindByName(); /*0x41f9e4*/
   }
   v35 = strtok(0, Delimiter); /*0x41f9f0*/
   if ( v35 ) /*0x41f9fa*/
@@ -889,7 +889,7 @@ char AITriggerTypeClass_40::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVAlphaLightingRemapClass *))(*(unsigned int *)this->__pad_000 + 12))(this); /*0x4205de*/
+    (*(void (**)(_DynamicVectorClass_PAVAlphaLightingRemapClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4205de*/
   }
   int v7 = this->q008; // eax /*0x4205e1*/
   if ( v7 < this->q010 ) /*0x4205e9*/

@@ -35,9 +35,9 @@ int RadarClass::Destruct(void *a1)
 
 
   /* X11: ptr_0 install elided (implicit via RadarClass virtuals 0x652c0c) */
-  AudioFileClass::Release(&this->RadarSoundChannel); /*0x652c12*/
+  AudioFileClass::Release(&this->AudioFileClass_14C0); /*0x652c12*/
   TacticalClass::FreeResources((TacticalClass *)this); /*0x652c19*/
-  MapClass **p_RadarClass_field_0x1488 = &this->radarSizeFactor; // esi /*0x652c1e*/
+  MapClass **p_RadarClass_field_0x1488 = &this->u32_1488; // esi /*0x652c1e*/
   int v3 = 22; // ebp /*0x652c24*/
   do /*0x652c53*/
   {
@@ -372,7 +372,7 @@ namespace gamemd {
 unsigned int * RadarClass::initRadarSurface()
 {
 
-  this->__pad_004 = 0; /*0x4f4224*/
+  this->RadarClass_field_0x4 = 0; /*0x4f4224*/
   this->q008 = 0; /*0x4f4227*/
   *(unsigned int *)this->u32_C = 2; /*0x4f422a*/
   /* X11: ptr_0 install elided (implicit via off_7EA6FC virtuals 0x4f4231) */

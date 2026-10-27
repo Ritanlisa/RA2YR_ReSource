@@ -268,7 +268,7 @@ struct SessionClass {
     TypeList_flat * QueryInterface(char a2);
     VectorClass_flat * validateGame(char a2);
     char AddRef(int a2);
-    char GetGameSpeed(void *a1 = 0);
+    int GetGameSpeed();
     char Release(int a2, unsigned int * a3);
     char addPlayer(int a2, unsigned int * a3);
     int AssignColor(int a2, char aP2);

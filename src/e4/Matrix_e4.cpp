@@ -11,7 +11,7 @@
 
 // 0x5AE860
 namespace gamemd {  // G42.18 ns repair
-int Matrix3x4::Identity(void *a1)
+int Matrix3x4::Identity()
 {
   this-((unsigned int *)(>m_Data))[0] = 1065353216; /*0x5ae867*/
   *&this->q004 = 0; /*0x5ae869*/

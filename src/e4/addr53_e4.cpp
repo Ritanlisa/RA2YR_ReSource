@@ -348,7 +348,7 @@ char BulkData_Initialize()
   Event::Dispatch(); /*0x5316fe*/
   MouseClass::LoadTypeData((MouseClass *)&dword_87F7E8); /*0x531708*/
   nullsub_29(v3); /*0x531712*/
-  BulkData::InitMissionHashing((BulkData *)&dword_A8B238); /*0x53171c*/
+  ((BulkData *)&dword_A8B238)->InitMissionHashing(); /*0x53171c*/
   FileSystem::InitPipShapes(); /*0x531721*/
   nullsub_6(); /*0x531726*/
   FileSystem::InitPipShapes(); /*0x53172b*/

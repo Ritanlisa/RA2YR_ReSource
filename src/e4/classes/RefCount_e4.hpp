@@ -15,7 +15,7 @@ struct RefCount {
     unsigned int q010;  // 0x10
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
-    int32_t Decrement(void *a1 = 0);
+    int Decrement();
     int Increment(int a2);
 };
 #endif  // GAMEMD_G2_RefCount_DEF

@@ -354,7 +354,7 @@ int Multiplayer::ShowProgress(int a2)
             }
           }
           Event::Dispatch(); /*0x69b015*/
-          while ( Network::GetQueueCount((IPXManagerClass *)&stru_A8E960.nextScenario[96]) > 5 ) /*0x69b027*/
+          while ( ((Network *)&stru_A8E960.nextScenario[96])->GetQueueCount() > 5 ) /*0x69b027*/
           {
             v8 = 240; /*0x69b037*/
             if ( Ticks != -1 ) /*0x69b03d*/

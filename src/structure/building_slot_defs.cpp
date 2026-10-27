@@ -107,7 +107,7 @@ int BuildingClass::StubReturnTrue3() { return 0; }  // X137B placeholder
 int BuildingClass::GetDrawHeight() { return 0; }  // X137B placeholder
 void* BuildingClass::GetTurretOffset(void* a1, int a2) { return 0; }  // X137B placeholder
 int BuildingClass::Vt170() { return 0; }  // X137B placeholder
-InfantryTypeClass* BuildingClass::GetCrew() const { return 0; }  // X137B placeholder
+int BuildingClass::GetCrew() const { return 0; }  // X137B placeholder (X144c: return int per raw_decomp fn_70.c)
 int BuildingClass::ShouldScanArea() const { return 0; }  // X137B placeholder
 int BuildingClass::StubReturnFalse11_212() { return 0; }  // X137B placeholder
 int BuildingClass::PickAlternateTarget() { return 0; }  // X137B placeholder

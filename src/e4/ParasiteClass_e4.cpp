@@ -129,7 +129,7 @@ int ParasiteClass::Attach(int * a2)
   int v4; // eax
   unsigned __int8 *v5; // edx
 
-  AbstractClass::ProcessPower((AbstractClass *)this); /*0x6294d9*/
+  ((AbstractClass *)this)->ProcessPower(); /*0x6294d9*/
   v3 = this->u32_44; /*0x6294de*/
   if ( v3 ) /*0x6294e3*/
   {
@@ -484,7 +484,7 @@ LABEL_47:
                   BuildingClass::AimTurret(v37, *(unsigned char **)this->__pad_28); /*0x629dc4*/
                   v37->lastCommands[0] = (*(int (**)(int))(*(unsigned int *)this->creationFrame + 484))(this->creationFrame); /*0x629dd6*/
                   if ( v39 ) /*0x629ddc*/
-                    v37->animation[1] = *(__int16 *)(v39 + 266); /*0x629de5*/
+                    v37->animation_d[1] = *(__int16 *)(v39 + 266); /*0x629de5*/
                 }
               }
             }
@@ -746,7 +746,7 @@ AbstractClass * * ParasiteClass::TryInfect(unsigned int * a2)
 
 // 0x62AB40
 namespace gamemd {  // G42.18c ns repair
-int ParasiteClass::CanExistOnVictimCell(void *a1)
+int ParasiteClass::CanExistOnVictimCell()
 {
 
   int v2; // ecx

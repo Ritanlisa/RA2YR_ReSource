@@ -197,7 +197,7 @@ char CampaignClass::SaveProgress()
   (&v33)->Construct(g_Str_File_coopsave_ini); /*0x49c631*/
   v28.headNode[0] = 0; /*0x49c63a*/
   v28.headNode[1] = 0; /*0x49c63e*/
-  INISectionList::Constructor((INISectionList *)&v28.headNode[2]); /*0x49c642*/
+  ((INISectionList *)&v28.headNode[2])->Constructor(); /*0x49c642*/
   Node::Init((MixFileClass *)&v28.needsSave_flag); /*0x49c64b*/
   v28.q03C = 0; /*0x49c65e*/
   v28.ownsFile[0] = 0; /*0x49c662*/

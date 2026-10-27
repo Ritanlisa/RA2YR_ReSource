@@ -210,7 +210,7 @@ int Movie::Play(int a1, int a2, int a3, const char *a4, char a5, char a6, char a
             byte_ABF35C = 0; /*0x5bf10a*/
           }
           MovieContext::Cleanup(v13); /*0x5bf112*/
-          BinkMovie::Cleanup((BinkMovie *)v13); /*0x5bf119*/
+          ((BinkMovie *)v13)->Cleanup(); /*0x5bf119*/
           __3_YAXPAX_Z(v13); /*0x5bf11f*/
           if ( a5 == 1 ) /*0x5bf130*/
           {
@@ -224,7 +224,7 @@ int Movie::Play(int a1, int a2, int a3, const char *a4, char a5, char a6, char a
         else
         {
           MovieContext::Cleanup(v13); /*0x5bef85*/
-          BinkMovie::Cleanup((BinkMovie *)v13); /*0x5bef8c*/
+          ((BinkMovie *)v13)->Cleanup(); /*0x5bef8c*/
           __3_YAXPAX_Z(v13); /*0x5bef92*/
         }
       }
@@ -240,7 +240,7 @@ int Movie::Play(int a1, int a2, int a3, const char *a4, char a5, char a6, char a
       }
       (&v23)->Close(Str); /*0x5bedec*/
       if ( a8 == 1 ) /*0x5bedf9*/
-        v23.MovieHandle = 1; /*0x5bedfb*/
+        v23.q000 = 1; /*0x5bedfb*/
       if ( !byte_ABF35C ) /*0x5bee06*/
       {
         AudioFrame::CounterInc(); /*0x5bee08*/

@@ -13,7 +13,7 @@ struct MovieContext {
     unsigned int u32_48;  // 0x48
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
-    int Cleanup(void *a1 = 0);
+    int Cleanup();
 };
 
 } // namespace gamemd

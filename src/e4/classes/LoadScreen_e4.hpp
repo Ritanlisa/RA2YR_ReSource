@@ -36,7 +36,7 @@ struct LoadScreen {
 // --- flat members (END) ---
     static int RenderLoop(void *aP1);
     static unsigned int Render(int p0, int p1, int p2, double p3);  // x4:signals@0x643ae0
-    int IsActive(void *a1 = 0);
+    int IsActive();
 };
 
 } // namespace gamemd

@@ -37,7 +37,7 @@ int MapSeed::ValidateName(int a2, void *a2_1)
 } // namespace gamemd
 // 0x5AC230
 namespace gamemd {
-int MapSeed::IsCellInBounds(void *a1)
+int MapSeed::IsCellInBounds()
 {
 
 
@@ -216,7 +216,7 @@ LABEL_33:
         j_DeleteAndZero((ObjectClass *)&v11); /*0x79c8b7*/
         return; /*0x79c8bb*/
       }
-      DeleteAndZero::Alt2((DeleteAndZero *)&unk_B73ACC); /*0x79c830*/
+      ((DeleteAndZero *)&unk_B73ACC)->Alt2(); /*0x79c830*/
     }
     if ( stru_B76970.q010 ) /*0x79c83c*/
     {

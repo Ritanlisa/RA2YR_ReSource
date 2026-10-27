@@ -42,7 +42,7 @@ struct CampaignClass {
     int StubReturn928();
     int Write(AbstractTypeClass * aP0, int aP1);
     int ddtor(int a1, unsigned int * a2);
-     int LoadFromINI(void *a1 = 0, void *a2 = 0);
+     int LoadFromINI();
     int  GetValue(unsigned int * a2, void *a1 = 0);  // 0x49e4f0
     int  Check(uint16_t a2, void *a1 = 0, void *a3 = 0);  // 0x5cf810
     AbstractClass * * sub_48B0E0(int a2, int a3, size_t Size, int a5);

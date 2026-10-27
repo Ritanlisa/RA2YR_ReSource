@@ -12,7 +12,7 @@ struct VoxelSection {
     unsigned int u32_14;  // 0x14
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
-    int GetInfo(int a2, int a3, void *a1 = 0);
+    int GetInfo(int a2, int a3);
 };
 
 } // namespace gamemd

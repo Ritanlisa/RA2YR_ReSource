@@ -16,7 +16,7 @@ struct Vector {
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int Cleanup(void *a1 = 0, void *a2 = 0);  // 0x512D30
-    int Destructor(void *a1 = 0);  // 0x513100
+    int Destructor();  // 0x513100
     int  MatrixMulVectorMath(float a2, float a3, float a4);  // 0x5AE890
     int Cleanup2(void *a1 = 0);  // 0x67ABE0
     unsigned short *  ToFacingMath(unsigned short *a2);

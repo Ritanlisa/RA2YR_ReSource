@@ -205,7 +205,7 @@ void * ReadINIClassInfantryTypeList(INIClass * aP0, unsigned char *** edx0, INIC
     ((InfantryTypeVector *)(&v17))->Construct2(0, 0); /*0x67bb51*/
     v17.q014 = 10; /*0x67bb5a*/
     v17.q010 = 0; /*0x67bb68*/
-    *(unsigned int *)&v17.__pad_0 = (unsigned int)(&g_var_131447); /*0x67bb6c*/
+    *(unsigned int *)&v17.ptr_0 = (unsigned int)(&g_var_131447); /*0x67bb6c*/
     char *i; // eax
     for ( i = strtok((char *)&v17.q01C, Str); i; i = strtok(0, Str) ) /*0x67bb7e*/
     {
@@ -217,7 +217,7 @@ void * ReadINIClassInfantryTypeList(INIClass * aP0, unsigned char *** edx0, INIC
         && (v17.q010 < v17.q008
          || ((((unsigned char *)&(v17.q00C))[1]) || !v17.q008)
          && v17.q014 > 0
-         && (*(uint8_t (**)(InfantryTypeVector *, int, unsigned int))(*(unsigned int *)&v17.__pad_0 + 8))(
+         && (*(uint8_t (**)(InfantryTypeVector *, int, unsigned int))(*(unsigned int *)&v17.ptr_0 + 8))(
               &v17,
               v17.q014 + v17.q008,
               0)) )
@@ -234,7 +234,7 @@ void * ReadINIClassInfantryTypeList(INIClass * aP0, unsigned char *** edx0, INIC
     /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x67bbfa*/
     HouseTypeClass::readStartInfantry((HouseTypeClass *)aP0, &v17); /*0x67bc00*/
     /* X11: ptr_0 install elided (X67 star-deref, RHS g_var_131447) */  /*0x67bc05*/
-    *(unsigned int *)&v17.__pad_0 = (unsigned int)(&g_ptr_7E8500); /*0x67bc0b*/
+    *(unsigned int *)&v17.ptr_0 = (unsigned int)(&g_ptr_7E8500); /*0x67bc0b*/
     int InfantryTypeVector_field_0x14 = v17.q014; // ecx /*0x67bc17*/
     aP0->sectionHead = v17.q010; /*0x67bc1b*/
     void *InfantryTypeVector_field_0x04; // eax
@@ -302,9 +302,9 @@ int RulesClass::sub_674500()
   int result; // eax
   RulesClass *v2; // [esp+Ch] [ebp+4h]
 
-  INIClass::ReadDifficultyModifiers((INIClass *)v2); /*0x674515*/
-  INIClass::ReadDifficultyModifiers((INIClass *)v2); /*0x674527*/
-  result = INIClass::ReadDifficultyModifiers((INIClass *)v2); /*0x674539*/
+  ((INIClass *)v2)->ReadDifficultyModifiers(); /*0x674515*/
+  ((INIClass *)v2)->ReadDifficultyModifiers(); /*0x674527*/
+  result = ((INIClass *)v2)->ReadDifficultyModifiers(); /*0x674539*/
   (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x67453f*/
   return result; /*0x67453e*/
 

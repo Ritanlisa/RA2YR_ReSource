@@ -127,7 +127,7 @@ public:
     virtual int GetDrawHeight() override;  // X137B slot 187 = 0x43E900 (bin: GetZDrawOffset)
     virtual void* GetTurretOffset(void* a1, int a2) override;  // X137B slot 192 = 0x453A70 (bin: GetTurretScreenPos)
     virtual int Vt170() override;  // X137B slot 194 = 0x44D7D0 (bin: GetTargetFacing)
-    virtual InfantryTypeClass* GetCrew() const override;  // X137B slot 195 = 0x44EB10
+    virtual int GetCrew() const override;  // X137B slot 195 = 0x44EB10 (X144c: return int per raw_decomp fn_70.c)
     virtual int ShouldScanArea() const override;  // X137B slot 201 = 0x457020 (bin: IsCellVisibleToPlayer)
     virtual int StubReturnFalse11_212() override;  // X137B slot 212 = 0x4555D0 (bin: IsPoweredActive)
     virtual int PickAlternateTarget() override;  // X137B slot 219 = 0x459C20 (bin: ProcessUpgradeTargeting)

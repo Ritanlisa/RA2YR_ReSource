@@ -24,7 +24,7 @@ public:
 
     AbstractClass * * DecrementRefCountsAudio(void *a1 = 0);
     int SetupAllCountriesLobby();
-    int32_t GetCountQueue(void *a1 = 0);
+    int GetCountQueue();
     int32_t Get(void *a1 = 0, void *a2 = 0);
     int32_t Release(void *a1 = 0);
     int32_t ddtor(void *a1 = 0);

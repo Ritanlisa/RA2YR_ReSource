@@ -29,7 +29,7 @@ struct GameState {
     unsigned int u32_3F0;  // 0x3F0
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
-    unsigned int * Reset(void *a1 = 0, void *a2 = 0);
+    _DWORD * Reset();
 };
 
 } // namespace gamemd

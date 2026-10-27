@@ -147,7 +147,7 @@ AbstractClass * * CreateTeamCommand::performAction_241(int a2, unsigned int * a3
     this->qC = 1; /*0x5386d2*/
     if ( !v4 ) /*0x5386d6*/
       return 0; /*0x53874a*/
-    if ( this->__pad_004 ) /*0x5386d8*/
+    if ( this->CreateTeamCommand_field_0x4 ) /*0x5386d8*/
     {
       v5 = this->Capacity; /*0x5386df*/
       if ( a2 < v5 ) /*0x5386e4*/
@@ -156,7 +156,7 @@ AbstractClass * * CreateTeamCommand::performAction_241(int a2, unsigned int * a3
         ++i; /*0x5386f1*/
       if ( this->IsAllocated ) /*0x5386fe*/
       {
-        __3_YAXPAX_Z(this->__pad_004); /*0x538709*/
+        __3_YAXPAX_Z(this->CreateTeamCommand_field_0x4); /*0x538709*/
         this->CreateTeamCommand_field_0x4 = 0; /*0x538711*/
       }
     }
@@ -2062,7 +2062,7 @@ wchar_t * CreateTeamCommand::performAction_186()
 namespace gamemd {
 bool CreateTeamCommand::performAction_187()
 {
-  if ( !dword_A8ECC8 || MapClass::GetScrollMode((MapClass *)&dword_87F7E8) ) /*0x537a1e*/
+  if ( !dword_A8ECC8 || ((MapClass *)&dword_87F7E8)->GetScrollMode() ) /*0x537a1e*/
     return MapClass::SetScrollMode((int)&dword_87F7E8, 0); /*0x537a43*/
   else
     return MapClass::SetScrollMode((int)&dword_87F7E8, *(unsigned int *)dword_A8ECBC); /*0x537a34*/
@@ -2647,12 +2647,12 @@ namespace gamemd {
 void CreateTeamCommand::performAction_239()
 {
 
-  void *v2 = this->__pad_004; // eax /*0x5384c6*/
-  this->__pad_004 = 0; /*0x5384c9*/
+  void *v2 = this->CreateTeamCommand_field_0x4; // eax /*0x5384c6*/
+  this->CreateTeamCommand_field_0x4 = 0; /*0x5384c9*/
   if ( v2 && this->IsAllocated ) /*0x5384d0*/
   {
     operator delete((v2)); /*0x5384d6*/
-    this->__pad_004 = 0; /*0x5384de*/
+    this->CreateTeamCommand_field_0x4 = 0; /*0x5384de*/
   }
   this->IsAllocated = 0; /*0x5384e1*/
   this->Capacity = 0; /*0x5384e4*/
@@ -2664,7 +2664,7 @@ namespace gamemd {
 unsigned int CreateTeamCommand::performAction_240(int a2)
 {
   if ( this->qC ) /*0x5384f0*/
-    return (unsigned int)(a2 - this->__pad_004) >> 2; /*0x538505*/
+    return (unsigned int)(a2 - this->CreateTeamCommand_field_0x4) >> 2; /*0x538505*/
   else
     return 0; /*0x5384f7*/
 }

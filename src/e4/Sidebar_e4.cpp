@@ -431,7 +431,7 @@ TechnoClass * * Sidebar::CancelSidebarProductionQueue(int * Block)
     if ( v12 ) /*0x63648a*/
     {
       v17 = *(unsigned int *)this->__pad_0; /*0x63648e*/
-      LeaderIndex = TeamClass::GetLeaderIndex((TeamClass *)v17); /*0x636492*/
+      LeaderIndex = ((TeamClass *)v17)->GetLeaderIndex(); /*0x636492*/
       DecFactoryClassCounter(LeaderIndex); /*0x636499*/
       VectorClass::EraseAt((DynamicVectorClass *)&stru_AC4B48.__pad_B8[64], (int)&v17); /*0x6364a8*/
     }

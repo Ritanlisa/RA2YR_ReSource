@@ -34,7 +34,7 @@ struct Coord {
 // --- flat members (END) ---
     int ToGridIndex(int aP1, int aP2, int aP3);  // 0x4138C0
     unsigned int * ToCell(unsigned int *aP1);  // G57w10-S raw 0x00413A30 IUnknown 占位清除
-    void * Subtract(int aP1, int aP2, int aP3, void *a4 = 0);  // 0x41C230
+    _DWORD * Subtract(int a2, int a3, int a4);  // 0x41C230
     int Length(void *a1 = 0);  // 0x41C380
     static unsigned int *  GetCoords(unsigned int * a2);  // 0x4399A0
     void * Scale(float aP1, void *a2 = 0);  // 0x43A0D0

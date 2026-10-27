@@ -115,7 +115,7 @@ struct Voxel {
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int BuildIndexTable();  // 0x748220
-    AbstractClass * RenderFrame(void *a1 = 0);  // 0x754510
+    float * RenderFrame();  // 0x754510
     static int Projection_Setup();  // 0x754CB0
     AbstractClass * *  SortDepth(int a2, int a3);  // 0x755DB0
     int ProcessColor(unsigned int *a2, float *a3);  // 0x756590

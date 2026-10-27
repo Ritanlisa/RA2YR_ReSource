@@ -1026,7 +1026,7 @@ void Game::BuildGameSettingsPacket(char * Buffer)
   if ( &dword_A8B320 == (int *)-2 ) /*0x5dbb7c*/
   {
     v2 = 4; /*0x5dbba5*/
-    v3 = ((String *)&v17.u32_8)->Assign(&g_INI_DefaultBuffer); /*0x5dbbaa*/
+    v3 = ((String *)&v17.ptr_8)->Assign(&g_INI_DefaultBuffer); /*0x5dbbaa*/
   }
   else
   {
@@ -1034,11 +1034,11 @@ void Game::BuildGameSettingsPacket(char * Buffer)
     v2 = 3; /*0x5dbb90*/
     v3 = Game_Set((char **)&Option, (const wchar_t **)&v17); /*0x5dbb95*/
   }
-  ((String *)&v17.q004)->AssignFromPtr((const char **)v3); /*0x5dbbb4*/
+  ((String *)&v17.ptr_4)->AssignFromPtr((const char **)v3); /*0x5dbbb4*/
   if ( (v2 & 4) != 0 ) /*0x5dbbbc*/
   {
     v2 &= ~4u; /*0x5dbbc2*/
-    DeleteAndZero((ObjectClass *)&v17.u32_8); /*0x5dbbc5*/
+    DeleteAndZero((ObjectClass *)&v17.ptr_8); /*0x5dbbc5*/
   }
   if ( (v2 & 2) != 0 ) /*0x5dbbcd*/
   {
@@ -1050,7 +1050,7 @@ void Game::BuildGameSettingsPacket(char * Buffer)
   v16 = dword_A8BB04; /*0x5dbc0a*/
   v14 = (unsigned __int8)dword_A8BB08; /*0x5dbc0b*/
   v12 = dword_A8BB0C; /*0x5dbc0c*/
-  v4 = ((String *)&v17.q004)->GetOrEmpty(); /*0x5dbc11*/
+  v4 = ((String *)&v17.ptr_4)->GetOrEmpty(); /*0x5dbc11*/
   sprintf( /*0x5dbc7e*/
     v1,
     "%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%s,%d,%d,%d,%s,%s:",
@@ -1074,7 +1074,7 @@ void Game::BuildGameSettingsPacket(char * Buffer)
     &byte_A8BAE2);
   memset(byte_ABFF94, 0, 0x200u); /*0x5dbc92*/
   v5 = 0; /*0x5dbc99*/
-  v17.u32_8 = *(unsigned int *)&stru_A8D804.__pad_3D[579]; /*0x5dbc9d*/
+  v17.ptr_8 = *(unsigned int *)&stru_A8D804.__pad_3D[579]; /*0x5dbc9d*/
   if ( *(int *)&stru_A8D804.__pad_3D[579] > 0 ) /*0x5dbca1*/
   {
     do /*0x5dbd16*/
@@ -1099,7 +1099,7 @@ void Game::BuildGameSettingsPacket(char * Buffer)
         0);
       ++v5; /*0x5dbd13*/
     }
-    while ( v5 < v17.u32_8 ); /*0x5dbd16*/
+    while ( v5 < v17.ptr_8 ); /*0x5dbd16*/
     v1 = v19; /*0x5dbd18*/
   }
   byte_ABFF92[strlen(byte_ABFF94) + 1] = 58; /*0x5dbd2f*/
@@ -1125,7 +1125,7 @@ void Game::BuildGameSettingsPacket(char * Buffer)
   Debug::Log(); /*0x5dbdbf*/
   Debug::Log(); /*0x5dbdce*/
   strcat(v1, byte_ABFF94); /*0x5dbdf7*/
-  DeleteAndZero((ObjectClass *)&v17.q004); /*0x5dbe04*/
+  DeleteAndZero((ObjectClass *)&v17.ptr_4); /*0x5dbe04*/
 
 }
 }

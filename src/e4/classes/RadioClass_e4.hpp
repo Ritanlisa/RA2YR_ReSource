@@ -77,7 +77,7 @@ struct RadioClass {
     int PowerDrainUpdate(AbstractClass * aP1);
     int ProcessCmd();
     int SaveState(int * a0, RadioClass * aP1, int aP2);
-    unsigned int * Release(void *a1);
+    _DWORD * Release();
     void SetLinkCount(int a2);
      int Constructor(RadioClass * aP1, void *a1 = 0, void *a2 = 0, void *a3 = 0);
 };

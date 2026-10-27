@@ -135,7 +135,7 @@ struct House {
 #else
 #endif  // X27: template-carrier universe fallback
 // --- flat members (END) ---
-    int AnnounceUpgrade(int aP1);
+    int AnnounceUpgrade(int a2);
     unsigned int * GetStartCoords(unsigned int *aP1);  // 0x47FB90
     int UpdateHouseAI();  // 0x4FD500
     int IsHumanPlayer();  // 0x50B6F0

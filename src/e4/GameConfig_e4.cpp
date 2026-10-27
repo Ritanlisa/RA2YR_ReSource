@@ -172,7 +172,7 @@ void GameConfig::Constructor(void *a1, void *a2, void *a3, void *a4)
       v2[2].Previous = 0; /*0x5d67e6*/
       *v2->GenericNode_C.__pad_0 = 0; /*0x5d67e9*/
       /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E1B0C) */  /*0x5d67ec*/
-      GenericNode::Constructor((MixFileClass *)&v2[3].Previous); /*0x5d67f2*/
+      ((GenericNode *)&v2[3].Previous)->Constructor(); /*0x5d67f2*/
       /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E1B04) */  /*0x5d67fa*/
       LinkedList::Prepend((LinkedList *)&v3[2], (int)&v3[3].Previous); /*0x5d6801*/
       v1 = this; /*0x5d6806*/

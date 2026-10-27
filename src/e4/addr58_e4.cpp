@@ -884,7 +884,7 @@ ScenarioClass * * ComputeMapCameraBounds()
       dword_ABE32C[2 * v9] = ((unsigned int)v11 >> 31) + (v11 >> 4); /*0x58b907*/
       dword_ABED0C = v9 + 1; /*0x58b910*/
     }
-    LayerClass::CellIteratorReset((LayerClass *)&dword_87F7E8); /*0x58b924*/
+    ((LayerClass *)&dword_87F7E8)->CellIteratorReset(); /*0x58b924*/
     v12 = 10000; /*0x58b929*/
     v25 = 10000; /*0x58b933*/
     v13 = 0; /*0x58b937*/
@@ -935,7 +935,7 @@ ScenarioClass * * ComputeMapCameraBounds()
             v23 = v21[v20]; /*0x58ba73*/
             v24 = v21[v20 + 1]; /*0x58ba76*/
           }
-          *(int *)v19->numberStartingPoints + v20 * 4) = v23; /*0x58ba80*/
+          *(int *)v19->ptr_0 + v20 * 4) = v23; /*0x58ba80*/
           ++v18; /*0x58ba89*/
           ++v22; /*0x58ba8a*/
           *(int *)((char *)&dword_A8B230->ptr_4 + v20 * 4) = v24; /*0x58ba8d*/

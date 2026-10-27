@@ -71,7 +71,7 @@ AbstractClass * * FilePipe_38::Release(int a2, char * a3)
     {
       if ( *&this->Items ) /*0x4783bb*/
       {
-        int m_8 = this->__pad_008; // ecx /*0x4783c0*/
+        int m_8 = this->m_8; // ecx /*0x4783c0*/
         if ( a2 < m_8 ) /*0x4783c5*/
           m_8 = a2; /*0x4783c7*/
         if ( m_8 > 0 ) /*0x4783cb*/
@@ -98,7 +98,7 @@ AbstractClass * * FilePipe_38::Release(int a2, char * a3)
         }
       }
       *&this->Items = v5; /*0x47840d*/
-      this->__pad_008 = v3; /*0x478413*/
+      this->m_8 = v3; /*0x478413*/
       (this->q00C) = ((this->q00C) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x478416*/
       return (gamemd::AbstractClass **)(1); /*0x47841c*/
     }
@@ -255,7 +255,7 @@ namespace gamemd {
 char FilePipe_38::AddRef(int a2)
 {
 
-  int m_8 = this->__pad_008; // edi /*0x4782eb*/
+  int m_8 = this->m_8; // edi /*0x4782eb*/
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x4782f0*/
   {
     int v3 = 0; // esi /*0x4782f2*/
@@ -292,7 +292,7 @@ void FilePipe_38::ddtor(void *a1)
     *&this->Items = 0; /*0x47845b*/
   }
   (this->IsAllocated) = 0; /*0x47845e*/
-  this->__pad_008 = 0; /*0x478461*/
+  this->m_8 = 0; /*0x478461*/
 }
 } // namespace gamemd
 

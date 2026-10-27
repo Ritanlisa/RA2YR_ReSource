@@ -13,7 +13,7 @@ struct BuildingLoadQueue {
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     void * Find(void *a1 = 0, void *a2 = 0);
-    void * GetNext(void *a1 = 0);
+    void * GetNext();
 };
 
 } // namespace gamemd

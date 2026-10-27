@@ -12,7 +12,7 @@ struct Pipe {
     unsigned int q00C;  // 0xC
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
-    int Dtor(void *a1 = 0);
+    int Dtor();
     int  SetDelegate(int a2, void *a1 = 0);  // 0x631cc0
 };
 

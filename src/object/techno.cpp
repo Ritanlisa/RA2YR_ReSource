@@ -1192,7 +1192,9 @@ void TechnoClass::AddPassenger(FootClass* passenger)
 } // namespace ra2
 namespace ra2 { namespace game {
 // 0x707d20
-InfantryTypeClass* TechnoClass::GetCrew() const
+// X144c: return type corrected to int (raw_decomp fn_70.c 0x707D20 returns a
+// Rules side-index; (InfantryTypeClass*) casts removed, not re-added).
+int TechnoClass::GetCrew() const
 {
   HouseClass *owner; // ecx
   int sideIndex; // eax
@@ -1227,20 +1229,6 @@ InfantryTypeClass* TechnoClass::GetCrew() const
     v6 = *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 3960); /*0x707d4f*/
   }
   if ( *(unsigned int *)(owner->relatedTagsCapacity + 188) == -1 ) /*0x707d8b*/
-    return v5->u32_F6C; /*0x707dc5*/
-  if ( (*((uint8_t (__thiscall **)(TechnoClass *))this->ptr_0 + 171))(this) /*0x707db2*/
-    && Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 99) < 15 )
-  {
-    return (ra2::game::InfantryTypeClass *)(*(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 3948)); /*0x707dc4*/
-  }
-  return (ra2::game::InfantryTypeClass *)(v6); /*0x707d37*/
-}
-  else
-  {
-    v5 = *(unsigned int *)&DSurface_ViewBounds.q0FC[324]; /*0x707d4a*/
-    v6 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.q0FC[324] + 3960); /*0x707d4f*/
-  }
-  if ( *(unsigned int *)(owner->relatedTagsCapacity + 188) == -1 ) /*0x707d8b*/
     return *(unsigned int *)(v5 + 3948); /*0x707dc5*/
   if ( (*((uint8_t (__thiscall **)(TechnoClass *))this->ptr_0 + 171))(this) /*0x707db2*/
     && Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 99) < 15 )
@@ -1249,8 +1237,24 @@ InfantryTypeClass* TechnoClass::GetCrew() const
   }
   return v6; /*0x707d37*/
 }
+// X144c: the following 14 lines are a duplicate splice remnant of the GetCrew
+// tail above (same addresses 0x707d4a..0x707d37); commented out, anchors kept.
+//   else
+//   {
+//     v5 = *(unsigned int *)&DSurface_ViewBounds.q0FC[324]; /*0x707d4a*/
+//     v6 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.q0FC[324] + 3960); /*0x707d4f*/
+//   }
+//   if ( *(unsigned int *)(owner->relatedTagsCapacity + 188) == -1 ) /*0x707d8b*/
+//     return *(unsigned int *)(v5 + 3948); /*0x707dc5*/
+//   if ( (*((uint8_t (__thiscall **)(TechnoClass *))this->ptr_0 + 171))(this) /*0x707db2*/
+//     && Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 99) < 15 )
+//   {
+//     return *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 3948); /*0x707dc4*/
+//   }
+//   return v6; /*0x707d37*/
+// }
 // 0x4df1f0
-int TechnoClass::g_var_e1d6b5()
+unsigned int* TechnoClass::g_var_e1d6b5(unsigned int* a2)
 {
   int v2; // eax
   unsigned int *v3; // edx
@@ -1261,31 +1265,12 @@ int TechnoClass::g_var_e1d6b5()
   v2 = this->u32_5C8; /*0x4df1f0*/
   if ( v2 ) /*0x4df1fc*/
   {
-    v3 = (unsigned int *)(*(int (__thiscall **)(int, unsigned char *))(v2->turretChargeTimer_d)(v2, v7); /*0x4df20a*/
+    v3 = (unsigned int *)(*(int (__thiscall **)(int, unsigned char *))(*(unsigned int *)v2 + 72))(v2, v7); /*0x4df20a*/
     *a2 = *v3; /*0x4df214*/
     a2[1] = v3[1]; /*0x4df219*/
     a2[2] = v3[2]; /*0x4df220*/
     return a2; /*0x4df20c*/
   }
-  else
-  {
-    v5 = this->u32_5CC; /*0x4df229*/
-    if ( v5 ) /*0x4df231*/
-    {
-      v6 = (unsigned int *)(*(int (__thiscall **)(int, unsigned char *))(*(unsigned int *)v5 + 72))(v5, v7); /*0x4df23d*/
-      *a2 = *v6; /*0x4df247*/
-      a2[1] = v6[1]; /*0x4df24c*/
-      a2[2] = v6[2]; /*0x4df253*/
-    }
-    else
-    {
-      *a2 = -1; /*0x4df26c*/
-      a2[1] = -1; /*0x4df26e*/
-      a2[2] = -1; /*0x4df271*/
-    }
-    return a2; /*0x4df23f*/
-  }
-}
   else
   {
     v5 = this->q173; /*0x4df229*/
@@ -1304,6 +1289,27 @@ int TechnoClass::g_var_e1d6b5()
     }
     return a2; /*0x4df23f*/
   }
+}
+// X144c: duplicate splice remnant of g_var_e1d6b5's else-branch above (same
+// addresses 0x4df229..0x4df23f); commented out, anchors kept.
+//   else
+//   {
+//     v5 = this->q173; /*0x4df229*/
+//     if ( v5 ) /*0x4df231*/
+//     {
+//       v6 = (unsigned int *)(*(int (__thiscall **)(int, unsigned char *))(*(unsigned int *)v5 + 72))(v5, v7); /*0x4df23d*/
+//       *a2 = *v6; /*0x4df247*/
+//       a2[1] = v6[1]; /*0x4df24c*/
+//       a2[2] = v6[2]; /*0x4df253*/
+//     }
+//     else
+//     {
+//       *a2 = -1; /*0x4df26c*/
+//       a2[1] = -1; /*0x4df26e*/
+//       a2[2] = -1; /*0x4df271*/
+//     }
+//     return a2; /*0x4df23f*/
+//   }
 // 0x659550
 char RadBeam::drawPassengerPips(char a2) {
   (this->memberAtOffset88) = a2; /*0x659554*/
@@ -1367,4 +1373,5 @@ int TechnoClass::ClearScriptPlanningData() { return 0;
   (this->u32_D) = 0; /*0x633e3e*/
   this->ptr_8 = 0; /*0x633e41*/
 }
+} // namespace game
 } // namespace ra2

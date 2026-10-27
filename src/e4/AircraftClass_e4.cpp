@@ -131,7 +131,7 @@ int AircraftClass::FindLandingCell(int * a2, int a3)
     int v6 = *v5; // esi /*0x415b34*/
     unsigned short *v7; // eax
     char v20[4]; // [esp+30h] [ebp-10h] BYREF
-    v7 = (unsigned short *)(*((int (**)(AircraftClass *, char *))this->FootClass + 110))(this, v20); /*0x415b3e*/
+    v7 = (unsigned short *)(*((int (**)(AircraftClass *, char *))this->ptr_0 + 110))(this, v20); /*0x415b3e*/
     int v8 = v6 & 7; // esi /*0x415b44*/
     int v9 = 4 * v8 + 9041544; // ecx /*0x415b55*/
     __int16 v10; // dx
@@ -152,7 +152,7 @@ int AircraftClass::FindLandingCell(int * a2, int a3)
   int v13; // edx
   v13 = (int)(this->ptr_4); /*0x415bc8*/
   unsigned int v21[3]; // [esp+34h] [ebp-Ch] BYREF
-  v21[0] = (unsigned int)(this->focus); /*0x415bcb*/
+  v21[0] = (unsigned int)(this->Owner); /*0x415bcb*/
   int v14; // eax
   v14 = (int)(this->ptr_8); /*0x415bd3*/
   v21[1] = v13; /*0x415bd6*/
@@ -167,8 +167,8 @@ int AircraftClass::FindLandingCell(int * a2, int a3)
   void *v16; // eax
   v16 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj((__int16 *)&v18); /*0x415c19*/
   (*(void (**)(int *, void *, int))(v15 + 1152))(a2, v16, 1); /*0x415c21*/
-  if ( (*((int (**)(AircraftClass *, int, int *))this->FootClass + 158))(this, 2, a2) == 1 ) /*0x415c37*/
-    (*((void (**)(AircraftClass *, int))this->FootClass + 157))(this, 9); /*0x415c3f*/
+  if ( (*((int (**)(AircraftClass *, int, int *))this->ptr_0 + 158))(this, 2, a2) == 1 ) /*0x415c37*/
+    (*((void (**)(AircraftClass *, int))this->ptr_0 + 157))(this, 9); /*0x415c3f*/
   return 1; /*0x415c45*/
 
 }

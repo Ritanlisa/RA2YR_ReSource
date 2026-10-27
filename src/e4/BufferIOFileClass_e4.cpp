@@ -9,7 +9,7 @@
 
 // 0x535A60
 namespace gamemd {  // G42.18 ns repair
-int BufferIOFileClass::Destruct(void *a1)
+int BufferIOFileClass::Destruct()
 {
   /* X11: ptr_0 install elided (implicit via off_7E1668 virtuals 0x535a60) */
   return BufferIOFileClass::Dtor();

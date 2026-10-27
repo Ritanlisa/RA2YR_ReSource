@@ -166,18 +166,18 @@ TerrainTypeClass::TerrainTypeClass(char *Source, TerrainTypeClass *aP1, int aP3,
   aP1->AnimationRate = 0; /*0x71dac7*/
   aP1->AnimationProbability = 0.0; /*0x71dacd*/
   aP1->WaterBound = 0; /*0x71dad3*/
-  aP1->SpawnsTiberium = 0; /*0x71dad9*/
-  aP1->IsFlammable = 0; /*0x71dadf*/
-  aP1->IsAnimated = 0; /*0x71dae5*/
+  aP1->SpawnsTiberium_d = 0; /*0x71dad9*/
+  aP1->IsFlammable_d = 0; /*0x71dadf*/
+  aP1->IsAnimated_d = 0; /*0x71dae5*/
   aP1->IsVeinhole = 0; /*0x71daeb*/
-  aP1->FoundationData = 0; /*0x71daf1*/
+  aP1->q2B8 = 0; /*0x71daf1*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F542C) */  /*0x71daf7*/
   /* X11: ptr_0 install elided (qmark slot, RHS g_ptr_7F542C) */  /*0x71dafd*/
   /* X11: ptr_0 install elided (qmark slot, RHS g_ptr_7F542C) */  /*0x71db03*/
   /* X11: ptr_0 install elided (qmark slot, RHS g_ptr_7F542C) */  /*0x71db0a*/
   ((AbstractClass *)&aP1->vfptr1)->GenerateUniqueID(); /*0x71db11*/
   aP1->Selectable[0] = 0; /*0x71db18*/
-  aP1->IsLogic[0] = 1; /*0x71db1e*/
+  aP1->q234[0] = 1; /*0x71db1e*/
   aP1->RadarInvisible[0] = 1; /*0x71db24*/
   aP1->LegalTarget[0] = 0; /*0x71db2a*/
   aP1->Insignificant[0] = 1; /*0x71db30*/
@@ -261,21 +261,21 @@ int TerrainTypeClass::LoadFromINI(uint8_t ***a2, int aP1, int aP3, int a3, int a
     this->IsVeinhole[0] = Bool_Overwrite;  /*0x71defd*/
     if ( Bool_Overwrite )
     {  /*0x71df03*/
-      this->IsLogic[0] = 0;  /*0x71df05*/
+      this->q234[0] = 0;  /*0x71df05*/
       this->LegalTarget[0] = 1;  /*0x71df0c*/
     }
     v6 = INIClass::ReadBool_Overwrite((int *)a2, (unsigned __int8 *)this->__pad_24, aWaterbound, this->WaterBound[0]);  /*0x71df22*/
-    v7 = this->SpawnsTiberium[0];  /*0x71df27*/
+    v7 = this->SpawnsTiberium_d[0];  /*0x71df27*/
     this->WaterBound[0] = v6;  /*0x71df2d*/
     v8 = INIClass::ReadBool_Overwrite((int *)a2, (unsigned __int8 *)this->__pad_24, aSpawnstiberium, v7);  /*0x71df3c*/
-    v21 = this->IsFlammable[0];  /*0x71df49*/
-    this->SpawnsTiberium[0] = v8;  /*0x71df50*/
-    this->IsFlammable[0] = INIClass::ReadBool_Overwrite((int *)a2, (unsigned __int8 *)this->__pad_24, aIsflammable, v21);  /*0x71df5b*/
+    v21 = this->IsFlammable_d[0];  /*0x71df49*/
+    this->SpawnsTiberium_d[0] = v8;  /*0x71df50*/
+    this->IsFlammable_d[0] = INIClass::ReadBool_Overwrite((int *)a2, (unsigned __int8 *)this->__pad_24, aIsflammable, v21);  /*0x71df5b*/
     v9 = INIClass::LookupEnum(&dword_887180, (unsigned __int8 *)this->ImageFile, g_INI_Key_Foundation, this->Foundation);  /*0x71df79*/
     v10 = 5 * v9;  /*0x71df7e*/
     this->Foundation = v9;  /*0x71df81*/
     LOBYTE(v9) = this->Theater[0];  /*0x71df87*/
-    this->FoundationData = 8 * v10 + 11595200;  /*0x71df96*/
+    this->q2B8 = 8 * v10 + 11595200;  /*0x71df96*/
     if ( !(unsigned char)v9 )
     {  /*0x71df9c*/
       _makepath(Buffer, 0, 0, this->ImageFile, Ext);  /*0x71dfad*/
@@ -294,12 +294,12 @@ int TerrainTypeClass::LoadFromINI(uint8_t ***a2, int aP1, int aP3, int a3, int a
               (unsigned __int8 *)this->__pad_24,
               aRadarcolor,
               (unsigned __int8 *)this->RadarColor);  /*0x71e00c*/
-    v14 = this->IsAnimated[0];  /*0x71e014*/
+    v14 = this->IsAnimated_d[0];  /*0x71e014*/
     *(unsigned short *)this->RadarColor = *(unsigned short *)Coord;  /*0x71e01a*/
     this->RadarColor[2] = *(unsigned char *)(Coord + 2);  /*0x71e02a*/
     v15 = INIClass::ReadBool_Overwrite((int *)a2, (unsigned __int8 *)this->__pad_24, aIsanimated, v14);  /*0x71e02d*/
     AnimationRate = this->AnimationRate;  /*0x71e03a*/
-    this->IsAnimated[0] = v15;  /*0x71e041*/
+    this->IsAnimated_d[0] = v15;  /*0x71e041*/
     Int_Overwrite = INIClass::ReadInt_Overwrite(
                       (bool *)a2,
                       (unsigned __int8 *)this->__pad_24,
@@ -334,12 +334,12 @@ int TerrainTypeClass::LoadFromINI(uint8_t ***a2, int aP1, int aP3, int a3, int a
 }
 }
 // 0x71E2A0
-TerrainTypeClass * * TerrainTypeClass::FindOrCreate(char *Source)
+TerrainTypeClass * * TerrainTypeClass::FindOrCreate()
 {
   int v2; // esi
   TerrainTypeClass *v3; // eax
 
-  if ( !_strcmpi(g_Str__none_, Source) || !_strcmpi(g_Str_none, Source) ) /*0x71e2bc*/
+  if ( !_strcmpi(g_Str__none_, this) || !_strcmpi(g_Str_none, this) ) /*0x71e2bc*/
     return 0; /*0x71e31f*/
   v2 = 0; /*0x71e2cd*/
   if ( dword_A8E328 <= 0 ) /*0x71e2d1*/
@@ -347,10 +347,10 @@ TerrainTypeClass * * TerrainTypeClass::FindOrCreate(char *Source)
     LABEL_6:
     v3 = (TerrainTypeClass *)operator new(0x2BCu); /*0x71e2f6*/
     if ( v3 ) /*0x71e305*/
-      return TerrainTypeClass::TerrainTypeClass(v3, Source); /*0x71e311*/
+      return TerrainTypeClass::TerrainTypeClass(v3, this); /*0x71e311*/
     return 0; /*0x71e305*/
   }
-  while ( _strcmpi((char *)(*((unsigned int *)dword_A8E31C + v2) + 36), Source) ) /*0x71e2ea*/
+  while ( _strcmpi((char *)(*((unsigned int *)dword_A8E31C + v2) + 36), this) ) /*0x71e2ea*/
   {
     if ( ++v2 >= dword_A8E328 ) /*0x71e2f4*/
       goto LABEL_6; /*0x71e2f4*/

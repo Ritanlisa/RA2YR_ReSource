@@ -291,26 +291,26 @@ BulletTypeClass * ObjectTypeClass::Construct(int aP1, void *a2, void *a3, void *
     --v6; /*0x5f735e*/
   }
   while ( v6 ); /*0x5f735f*/
-  this->VoxelCaches[0] = 0; /*0x5f7361*/
-  this->VoxelCaches[1] = 0; /*0x5f7367*/
-  this->VoxelCaches[2] = 0; /*0x5f736d*/
-  LOBYTE(this->VoxelCaches[3]) = 0; /*0x5f7373*/
-  this->VoxelCaches[4] = 0; /*0x5f7379*/
-  this->VoxelCaches[5] = 0; /*0x5f737f*/
-  this->VoxelCaches[6] = 0; /*0x5f7385*/
-  this->VoxelCaches[7] = 0; /*0x5f738b*/
-  LOBYTE(this->VoxelCaches[8]) = 0; /*0x5f7391*/
-  this->VoxelCaches[9] = 0; /*0x5f7397*/
-  this->VoxelCaches[10] = 0; /*0x5f739d*/
-  this->VoxelCaches[11] = 0; /*0x5f73a3*/
-  this->VoxelCaches[12] = 0; /*0x5f73a9*/
-  LOBYTE(this->VoxelCaches[13]) = 0; /*0x5f73af*/
-  this->VoxelCaches[14] = 0; /*0x5f73b5*/
-  this->VoxelCaches[15] = 0; /*0x5f73bb*/
-  this->VoxelCaches[16] = 0; /*0x5f73c1*/
-  this->VoxelCaches[17] = 0; /*0x5f73c7*/
-  LOBYTE(this->VoxelCaches[18]) = 0; /*0x5f73cd*/
-  this->VoxelCaches[19] = 0; /*0x5f73d3*/
+  this->VoxelCaches_4[0] = 0; /*0x5f7361*/
+  this->VoxelCaches_4[1] = 0; /*0x5f7367*/
+  this->VoxelCaches_4[2] = 0; /*0x5f736d*/
+  LOBYTE(this->VoxelCaches_4[3]) = 0; /*0x5f7373*/
+  this->VoxelCaches_4[4] = 0; /*0x5f7379*/
+  this->VoxelCaches_4[5] = 0; /*0x5f737f*/
+  this->VoxelCaches_4[6] = 0; /*0x5f7385*/
+  this->VoxelCaches_4[7] = 0; /*0x5f738b*/
+  LOBYTE(this->VoxelCaches_4[8]) = 0; /*0x5f7391*/
+  this->VoxelCaches_4[9] = 0; /*0x5f7397*/
+  this->VoxelCaches_4[10] = 0; /*0x5f739d*/
+  this->VoxelCaches_4[11] = 0; /*0x5f73a3*/
+  this->VoxelCaches_4[12] = 0; /*0x5f73a9*/
+  LOBYTE(this->VoxelCaches_4[13]) = 0; /*0x5f73af*/
+  this->VoxelCaches_4[14] = 0; /*0x5f73b5*/
+  this->VoxelCaches_4[15] = 0; /*0x5f73bb*/
+  this->VoxelCaches_4[16] = 0; /*0x5f73c1*/
+  this->VoxelCaches_4[17] = 0; /*0x5f73c7*/
+  LOBYTE(this->VoxelCaches_4[18]) = 0; /*0x5f73cd*/
+  this->VoxelCaches_4[19] = 0; /*0x5f73d3*/
   /* X11: ptr_0 install elided (legacy slot spelling slot, RHS g_var_8780a4) */  /*0x5f73d9*/
   /* X11: ptr_0 install elided (legacy slot spelling slot, RHS g_var_8780a4) */  /*0x5f73df*/
   /* X11: ptr_0 install elided (legacy slot spelling slot, RHS g_var_8780a4) */  /*0x5f73e6*/
@@ -515,7 +515,7 @@ void ObjectTypeClass::UnloadPipsSHP()
 } // namespace gamemd
 // 0x5F9070
 namespace gamemd {
-AbstractClass * * ObjectTypeClass::Load2DArt(void *a1)
+AbstractClass * * ObjectTypeClass::Load2DArt()
 {
   char *v2; // edi
   int v3; // esi
@@ -1891,7 +1891,7 @@ int ObjectTypeClass::FreeLoaderBuffer()
 } // namespace gamemd
 // 0x6E5E70
 namespace gamemd {
-int ObjectTypeClass::FindByName(void *a1)
+int ObjectTypeClass::FindByName()
 {
   int v3; // esi
 

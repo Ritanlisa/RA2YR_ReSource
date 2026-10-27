@@ -80,7 +80,7 @@ public: static constexpr AbstractType kObjectDeriveId = (const gamemd::AbstractT
 
     // design: no binary equivalent found in IDA
     int GetOcclusion(const CellStruct& cell, bool fog) const;
-    Point2D* AdjustForZShapeMove(Point2D* dest, Point2D* client);  // 0x6D1FE0
+    unsigned int *AdjustForZShapeMove(unsigned int *dest, unsigned int *client);  // 0x6D1FE0 x144b: ida int*(int*,_DWORD*)
     static int AdjustForZ(int height);
 
     // Viewport management
@@ -90,7 +90,7 @@ public: static constexpr AbstractType kObjectDeriveId = (const gamemd::AbstractT
     void RegisterDirtyArea(RectangleStruct area, bool unk);
     // wrapper: delegates to TacticalClass::AdjustForZShapeMove at 0x6D1FE0
     void RegisterCellAsVisible(CellClass* cell);
-    void SetView(int view_x, int view_y, int view_width, int view_height);  // 0x483E30
+    void SetView(int a2, int a3, short a4, short a5, short a6, short a7);  // 0x483E30 x144b: ida 真值 6 栈参 (原 4 参触发 C2660)
     void SetViewDimensions(int width, int height);  // 0x4A8960
     void InitView(); // 0x537620
     void SetViewportPosition(int x, int y);  // 0x6D5F60
@@ -103,16 +103,16 @@ public: static constexpr AbstractType kObjectDeriveId = (const gamemd::AbstractT
     void Render(ObjectClass* obj); // 0x74D490
     void RenderFrame();  // 0x4f45b0
     void RenderCells();  // 0x550260
-    void RenderIsometric(const RectangleStruct& viewRect, int flags);  // 0x6D7560
+    int RenderIsometric(int *viewRect, unsigned int *flags);  // 0x6D7560 x144b: ida (int *a2, _DWORD *a3) 指针形, 原 (const RectangleStruct&,int) 触发 C2100/C2676 群
     void RenderIsometricOverlay(const RectangleStruct& viewRect);  // 0x6D2DE0
     void RenderCellFogOfWar(int cx, int cy);  // 0x4801F0
     void renderOverlay();  // 0x658780
 
     // Map drawing
-    void DrawMap(const RectangleStruct& viewRect, RectangleStruct* bounds);  // 0x6D7840
-int DrawTerrain(int *a2, unsigned int *a3, int a4);  // 0x006d7c00 g57w12-r raw-sync (def-form)
-    void DrawTerrainPartial(const RectangleStruct& rect, int a2, int a3, char a4);  // 0x6D3040
-    void DrawCellTerrainOverlay(int cx, int cy, RectangleStruct* bounds);  // 0x4802A0
+    int DrawMap(int *viewRect, int *bounds);  // 0x6D7840 x144b: ida (int *a2, int *a3) 指针形+int 返回
+    int DrawTerrain(int *a2, unsigned int *a3);  // 0x006d7c00 x144b: ida 真值 2 栈参 (原 3 参触发 C2511)
+    int DrawTerrainPartial(TacticalClass *rect, int *a2, int *a3, char a4);  // 0x6D3040 x144b: ida 真值
+    void DrawCellTerrainOverlay(int *a2, int *a3);  // 0x4802A0 x144b: ida (int *a2, int *a3)
     void DrawCellOverlay(int cx, int cy, int flags);  // 0x547230
     void DrawBuildings(const RectangleStruct& viewRect);  // 0x4D1890
     void DrawBuildingsInView(const RectangleStruct& viewRect);  // 0x6D6D10
@@ -125,7 +125,7 @@ int DrawTerrain(int *a2, unsigned int *a3, int a4);  // 0x006d7c00 g57w12-r raw-
     Point2D* CalcBuildingDrawPos(Point2D* out, BuildingClass* building);  // 0x6D71E0
 
     // Cell visibility
-    void CheckCellVisibility(const Point2D& screen_pos, int flags, bool unk);  // 0x480350
+    int CheckCellVisibility(const unsigned int *screen_pos, unsigned int *flags, bool unk);  // 0x480350 x144b: ida (_DWORD *a2, _DWORD *a3, char a4) 指针形+int 返回
     unsigned int * PixelToCellCheck(int * a1);  // 0x653760  G42.34: sig sync to cache truth (unsigned int* __thiscall(this, int*)); tree Point2D form had no callers
     CellStruct ScreenToCellLookup(const Point2D& screen) const;  // 0x656750
     bool IsOccupiedByTechno(const CellStruct& cell) const;  // 0x6DA380
@@ -138,8 +138,8 @@ int DrawTerrain(int *a2, unsigned int *a3, int a4);  // 0x006d7c00 g57w12-r raw-
 
     // Helpers
     unsigned int * TransformPixel(unsigned int * a1, unsigned int * a2);  // 0x6D2280  G42.34: sig sync to cache truth (unsigned int* __thiscall(this, unsigned int*, unsigned int*)); tree Point2D form had no callers
-    uint32_t InterpolateColor(uint32_t elapsed_ms);  // 0x631E50
-    bool DecrementCounter(uint32_t delta); // 0x631EE0
+    int InterpolateColor(int a2);  // 0x631E50 x144b: ida int(int)
+    int DecrementCounter(int a2); // 0x631EE0 x144b: ida int(int)
     void MapSpecialDrawMode();  // 0x70F0B0
     // wrapper: delegates to TacticalClass::MapSpecialDrawMode at 0x70F0B0
     static int DrawTimer(int index, ColorScheme* scheme, int time, const wchar_t* text, const Point2D* xy1, const Point2D* xy2);
@@ -255,7 +255,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int FindInVector(void* a1);  // 0x5C0D00
     unsigned int * DestroyVector(unsigned int * a1, char a2);  // 0x5C0D80  G42.34: sig sync to cache truth (unsigned int* __thiscall(unsigned int *Block, char))
     int processInput(int a1);  // 0x5D4AD0
-    void* saveConfig(int a1);  // 0x631E30
+    void* saveConfig(int a2);  // 0x631E30 x144b: ida _DWORD*(int) 1 栈参
     void FreeResources();  // 0x655A90
     void ProcessChronoEffect();  // 0x6578F0
     int UpdateObjects();  // 0x65ACE0
@@ -338,7 +338,6 @@ public:  // g57c5 W4 supply slot
     int u8_42;  // X10 supply (member_lookup)
     int u8_5559;  // X10 supply (member_lookup)
     void* uniqueId;  // X10 supply (csp_canon_members)
-    int ptr_0;  // X10 supply (csp_canon_members)
     void* ptr_4;  // X10 supply (csp_canon_members)
     void* ptr_8;  // X10 supply (csp_canon_members)
     void* ptr_C;  // X10 supply (csp_canon_members)

@@ -224,7 +224,7 @@ char WaveClass::DamageArea(ObjectClass * aP1)
       if ( v12[680] ) /*0x75f464*/
         BuildingClass::SellEffects((int)v6, v8[38]); /*0x75f477*/
     }
-    (Owner) = ((Owner) & ~0xFF) | ((CellClass::IsActiveOrNext((CellClass *)v6)) & 0xFF); /*0x75f47e*/
+    (Owner) = ((Owner) & ~0xFF) | ((((CellClass *)v6)->IsActiveOrNext()) & 0xFF); /*0x75f47e*/
     if ( (unsigned char)Owner ) /*0x75f486*/
     {
       v13 = dword_8871E0->RadLightFactor[1]; /*0x75f497*/

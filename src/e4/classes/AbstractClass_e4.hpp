@@ -337,7 +337,7 @@ int DTOR(); // 0x4101F0
     int  processDetection(int a2);  // 0x439150
     int COMStub_Release(void *a1 = 0);
     int COMStub_AddRef(void *a1 = 0);
-    int ProcessPower(void *a1 = 0, void *a2 = 0);
+    int ProcessPower();
     int AbstractClass_COMStub_133();
     int AbstractClass_COMStub_137();
     AbstractClass * * AnnounceExpiredPointer(AbstractClass *a1, int a2, int aP0, int aP1, int aP2);

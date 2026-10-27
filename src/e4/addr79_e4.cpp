@@ -761,7 +761,7 @@ LABEL_70:
                 (*(void (**)(LPVOID, char *))(*(unsigned int *)ppv + 60))(ppv, v92); /*0x794565*/
                 if ( v62 >= 0 && v62 < *(int *)&stru_A8D804.__pad_3D[579] ) /*0x794576*/
                 {
-v46 = (HWND)Dialog::FindByHandle((Dialog *)0x130); /*0x79457d*/
+v46 = (HWND)((Dialog *)0x130)->FindByHandle(); /*0x79457d*/
                   v47 = v46; /*0x794582*/
                   if ( v46 ) /*0x794586*/
                   {

@@ -23,7 +23,7 @@ unsigned int * TabClass::initStripClass()
 {
 
   this->ptr_0 = 0; /*0x4a2354*/
-  this->__pad_004 = 0; /*0x4a2356*/
+  this->TabClass_field_0x4 = 0; /*0x4a2356*/
   (this->u32_8) = ((this->u32_8) & ~0xFF) | ((0) & 0xFF); /*0x4a2359*/
   (this->u32_8) = ((this->u32_8) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x4a235c*/
   (this->u32_8) = ((this->u32_8) & ~(0xFF << 16)) | (((0) & 0xFF) << 16); /*0x4a235f*/
@@ -98,7 +98,7 @@ int TabClass::DrawPower(void *a1, void * aGrey)
     hWnd = v9; /*0x658469*/
     Default = (HWND)BuildingType::FindDefault(v10[45]); /*0x658473*/
     if ( other == (HouseClass *)HouseClass_Observer ) /*0x65847e*/
-      Default = (HWND)BuildingType::FindDefault((BuildingType *)0xFFFFFFFD); /*0x658485*/
+      Default = (HWND)((BuildingType *)0xFFFFFFFD)->FindDefault(); /*0x658485*/
     CacheDialogInvalidate(hWnd, Default); /*0x658490*/
     if ( *(&dword_83923C + (unsigned int)v29) != -1 ) /*0x65849f*/
     {

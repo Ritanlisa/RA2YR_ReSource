@@ -336,7 +336,7 @@ LABEL_25:
 LABEL_36:
   (*(void (**)(HWND, unsigned int))(*(unsigned int *)g_ClipboardBuffer + 36))(g_ClipboardBuffer, 0); /*0x5f3129*/
   g_NetworkTestFlag = 0; /*0x5f313a*/
-  Dialog::Destroy((Dialog *)v21); /*0x5f3141*/
+  ((Dialog *)v21)->Destroy(); /*0x5f3141*/
   return v3; /*0x5f3149*/
 
 }
@@ -809,7 +809,7 @@ AbstractClass * * GenerateRangeRingTextures()
         }
         *v10 = v13; /*0x5ff605*/
       }
-      (*(void (**)(Surface *, unsigned int))(*(unsigned int *)(*v10)->__pad_0 + 24))(*v10, 0); /*0x5ff60c*/
+      (*(void (**)(Surface *, unsigned int))(*(unsigned int *)(*v10)->q000 + 24))(*v10, 0); /*0x5ff60c*/
       Surface::Construct(&v31, 256, 256); /*0x5ff61d*/
       v31.LockCount = 0; /*0x5ff626*/
       /* X11: ptr_0 install elided (X67 star-deref, RHS XSurface_Vtable) */  /*0x5ff630*/
@@ -831,7 +831,7 @@ AbstractClass * * GenerateRangeRingTextures()
         v28 = 2 * k; /*0x5ff6df*/
         v23 = 0; /*0x5ff6e3*/
         v24 = k; /*0x5ff6e7*/
-        (*(void (**)(Surface *, int *, XSurface *, int *, unsigned int, int))(*(unsigned int *)v16->__pad_0 + 8))( /*0x5ff6f2*/
+        (*(void (**)(Surface *, int *, XSurface *, int *, unsigned int, int))(*(unsigned int *)v16->q000 + 8))( /*0x5ff6f2*/
           v16,
           &v23,
           &v31,

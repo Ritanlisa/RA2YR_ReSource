@@ -11,7 +11,7 @@ struct DListNode {
     unsigned int q008;  // 0x8
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
-    int Init(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0);
+    int Init();
     int InitEmpty(void *a1 = 0);
 };
 

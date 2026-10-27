@@ -501,7 +501,7 @@ void * sub_4E3690(HWND hDlg, int a2)
     else
       v8 = -2; /*0x4e37a8*/
   }
-  Default = (HWND)BuildingType::FindDefault((BuildingType *)v8); /*0x4e37af*/
+  Default = (HWND)((BuildingType *)v8)->FindDefault(); /*0x4e37af*/
   return CacheDialogInvalidate(DlgItem, Default); /*0x4e37b8*/
 
 }
@@ -667,7 +667,7 @@ LABEL_23:
     else
       v13 = -2; /*0x4e3f47*/
   }
-  Default = (HWND)BuildingType::FindDefault((BuildingType *)v13); /*0x4e3f4e*/
+  Default = (HWND)((BuildingType *)v13)->FindDefault(); /*0x4e3f4e*/
   return CacheDialogInvalidate(v10, Default); /*0x4e3f5c*/
 
 }
@@ -785,7 +785,7 @@ LABEL_6:
     else
       v12 = -2; /*0x4e4142*/
   }
-  Default = (HWND)BuildingType::FindDefault((BuildingType *)v12); /*0x4e4149*/
+  Default = (HWND)((BuildingType *)v12)->FindDefault(); /*0x4e4149*/
   return CacheDialogInvalidate(DlgItem, Default); /*0x4e4157*/
 
 }

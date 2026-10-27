@@ -51,7 +51,7 @@ int UnitClass::GetAmmoCount() const { return 0; }  // X137B placeholder
 int UnitClass::SelectWeapon() { return 0; }  // X137B placeholder
 int UnitClass::GetGlobalValue(int* outValue) const { return 0; }  // X137B placeholder
 int UnitClass::Vt170() { return 0; }  // X137B placeholder
-InfantryTypeClass* UnitClass::GetCrew() const { return 0; }  // X137B placeholder
+int UnitClass::GetCrew() const { return 0; }  // X137B placeholder (X144c: return int per raw_decomp fn_74.c)
 int UnitClass::HasPassengers() const { return 0; }  // X137B placeholder
 int UnitClass::ReadINI(int a1, int a2, int a3) { return 0; }  // X137B placeholder
 int UnitClass::SelectAutoTarget_Start_AU() { return 0; }  // X137B placeholder

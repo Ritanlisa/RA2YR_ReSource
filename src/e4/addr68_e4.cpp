@@ -781,13 +781,13 @@ int PostLoadInitScenario()
       v23 = (HouseClass *)*(&dword_A8022C->ptr_0 + v22); /*0x684f23*/
       if ( v23 ) /*0x684f28*/
       {
-        v24 = (*(int (**)(int *))(v23->arrayIndex + 24))(&v23->arrayIndex); /*0x684f34*/
+        v24 = (*(int (**)(int *))(v23->ptr_24 + 24))(&v23->ptr_24); /*0x684f34*/
         ptr_0 = dword_B0F4EC->ptr_0; /*0x684f3b*/
         if ( v24 > *(unsigned int *)(dword_B0F4EC->ptr_0 + 184) ) /*0x684f43*/
         {
           do /*0x684f69*/
           {
-            if ( (*(int (**)(int *))(v23->arrayIndex + 28))(&v23->arrayIndex) <= 0 ) /*0x684f4d*/
+            if ( (*(int (**)(int *))(v23->ptr_24 + 28))(&v23->ptr_24) <= 0 ) /*0x684f4d*/
               break; /*0x684f4d*/
             (v23)->GiveTiberium_Storage(1.0, 0); /*0x684f58*/
             v26 = *(unsigned int *)(ptr_0 + 184); /*0x684f5d*/
@@ -1200,7 +1200,7 @@ AbstractClass * * SessionClass_AssignHouses()
 
   DeleteAndZero_field_0x08 = *(unsigned int *)&stru_A8D804.__pad_3D[579]; /*0x687f15*/
   v2 = 0; /*0x687f1b*/
-  for ( v29.u32_8 = *(unsigned int *)&stru_A8D804.__pad_3D[579]; v2 < DeleteAndZero_field_0x08; ++v2 ) /*0x687f23*/
+  for ( v29.ptr_8 = *(unsigned int *)&stru_A8D804.__pad_3D[579]; v2 < DeleteAndZero_field_0x08; ++v2 ) /*0x687f23*/
   {
     v3 = *(int **)(*(unsigned int *)&stru_A8D804.__pad_3D[567] + 4 * v2); /*0x687f2a*/
     if ( *(int *)((char *)v3 + 75) == -3 ) /*0x687f31*/
@@ -1239,9 +1239,9 @@ AbstractClass * * SessionClass_AssignHouses()
       if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x687fd5*/
       {
         ((WideString *)&v29)->Assign((wchar_t *)v7); /*0x687fdc*/
-        ToWideStringCharAlt((char **)&v29.q004, (const wchar_t **)&v29); /*0x687fe9*/
+        ToWideStringCharAlt((char **)&v29.ptr_4, (const wchar_t **)&v29); /*0x687fe9*/
         (&v29)->Alt(); /*0x687ff2*/
-        v10 = ((String *)&v29.q004)->GetOrEmpty(); /*0x687ffb*/
+        v10 = ((String *)&v29.ptr_4)->GetOrEmpty(); /*0x687ffb*/
         if ( v10 ) /*0x688002*/
         {
           strncpy(Destination, v10, 0x14u); /*0x688012*/
@@ -1255,9 +1255,9 @@ AbstractClass * * SessionClass_AssignHouses()
         {
           memcpy((void *)(v9 + 90100), Destination, 0x14u); /*0x688038*/
           *(unsigned char *)(v9 + 90120) = v33; /*0x68803a*/
-          DeleteAndZero_field_0x08 = v29.u32_8; /*0x68803b*/
+          DeleteAndZero_field_0x08 = v29.ptr_8; /*0x68803b*/
         }
-        j_DeleteAndZero((ObjectClass *)&v29.q004); /*0x688043*/
+        j_DeleteAndZero((ObjectClass *)&v29.ptr_4); /*0x688043*/
       }
       else
       {
@@ -1274,7 +1274,7 @@ AbstractClass * * SessionClass_AssignHouses()
         {
           memcpy((void *)(v9 + 90100), v34, 0x14u); /*0x68808b*/
           *(unsigned char *)(v9 + 90120) = v35; /*0x68808d*/
-          DeleteAndZero_field_0x08 = v29.u32_8; /*0x68808e*/
+          DeleteAndZero_field_0x08 = v29.ptr_8; /*0x68808e*/
         }
       }
       wcsncpy((wchar_t *)(v9 + 90154), (const wchar_t *)v7, 0x15u); /*0x68809c*/
@@ -1311,7 +1311,7 @@ AbstractClass * * SessionClass_AssignHouses()
       if ( *v12 != -1 && v13 != -3 ) /*0x688175*/
       {
         v14 = v12[8]; /*0x68817b*/
-        v29.u32_8 = v11 + 1; /*0x688184*/
+        v29.ptr_8 = v11 + 1; /*0x688184*/
         v15 = (int *)__2_YAPAXI_Z(0x160B8u); /*0x688188*/
         if ( v15 ) /*0x688192*/
           v16 = (ObjectClass *)(v15)->Construct(*((unsigned int *)dword_A83C9C + v13)); /*0x6881a5*/
@@ -1351,7 +1351,7 @@ AbstractClass * * SessionClass_AssignHouses()
         if ( *(int *)&stru_A8D804.__pad_3D[579] > 1 && HIBYTE(dword_8871E0->ElevationIncrement) && v20 > 0 ) /*0x6882b3*/
           --v20; /*0x6882b5*/
         HouseClass::SetCombatPower(&v16->ptr_0, v20); /*0x6882b9*/
-        v11 = v29.u32_8; /*0x6882be*/
+        v11 = v29.ptr_8; /*0x6882be*/
       }
     }
     ++v12; /*0x6882c2*/

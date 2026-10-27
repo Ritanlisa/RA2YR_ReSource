@@ -30,6 +30,12 @@
 #include "e4/classes/TauntCommandClass_e4.hpp"  // X66 L2-C command-class supply
 #include "e4/e4_abs_decls.hpp"  // X66 L2-F visibility supply
 #include "app/cmdline.hpp"  // X67 L2-R4 visibility supply
+#include "misc/misc_ext.hpp"  // X144c: complete AssetClass (ReleaseAndReload site)
+
+// X144c decl supply: LoadPaletteSimple (signals 0x72ADE0; ida_cache
+// `int __fastcall LoadPaletteSimple(char*, int*, _DWORD*)`); tree-wide
+// callers (init_game + e4 TUs) had no visible prototype.
+namespace gamemd { int LoadPaletteSimple(char *Source, int *a2, int *a3); }
 
 namespace gamemd {
 

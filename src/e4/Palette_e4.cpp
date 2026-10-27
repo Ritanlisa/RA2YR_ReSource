@@ -278,7 +278,7 @@ LABEL_38:
   __3_YAXPAX_Z(v49); /*0x6425b7*/
   *(unsigned int *)a3 = v38; /*0x6425c9*/
   Debug::Log(); /*0x6425cb*/
-  DSurface::Destroy((DSurface *)&v61); /*0x6425d7*/
+  ((DSurface *)&v61)->Destroy(); /*0x6425d7*/
   return (int)v39; /*0x64213f*/
 
 }

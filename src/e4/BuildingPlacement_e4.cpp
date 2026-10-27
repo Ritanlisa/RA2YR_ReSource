@@ -283,7 +283,7 @@ char BuildingPlacement::ProcessBuildingPlacementAction()
     (*(void (**)(int, int))(*(unsigned int *)this->q00C + 292))( /*0x54c8c5*/
       this->q00C,
       1);
-    *(unsigned int *)v2->__pad_0 = dword_ABC5A8; /*0x54c8d2*/
+    *(unsigned int *)v2->q000 = dword_ABC5A8; /*0x54c8d2*/
     this->u32_44 = dword_ABC5AC; /*0x54c8db*/
     v32 = this->q00C; /*0x54c8e4*/
     this->u32_48 = dword_ABC5B0; /*0x54c8e7*/

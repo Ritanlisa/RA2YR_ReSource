@@ -52,7 +52,7 @@ struct VocClass {
     int Release(void *a1 = 0);
      int Check(void *a1 = 0, void *a2 = 0, void *a3 = 0);
     static int FindIndex(VocClass * aP1);
-    char * GetSampleName(void *a1 = 0);
+    char * GetSampleName();
     char LoadFromINI(CCINIClass * aP1, void *a2 = 0);  // G42.39 supply
 };
 #endif  // GAMEMD_G2_VocClass_DEF

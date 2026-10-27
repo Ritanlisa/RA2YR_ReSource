@@ -62,7 +62,7 @@ struct CCFileClass {
 static int GetSize(CCFileClass * aP1);
     void *Construct2(char **a2, void *a1 = 0);  // G57w16 G1: raw unsigned int*  // init file object with name
      unsigned int * Construct(char *Source, void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0);
-    LONG Load(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0);  // 0x595bc0
+    LONG Load();  // 0x595bc0
     int  Reopen(char * Source, void * a3);  // 0x47af10
     AudioController * * Close(void * a1);
     static int Cleanup(void *aP1);

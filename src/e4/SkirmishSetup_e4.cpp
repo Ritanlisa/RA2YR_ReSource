@@ -178,7 +178,7 @@ int SkirmishSetup::DlgProc(SkirmishDialog * aP0, int a2, HWND hWnd, signed int a
         case 0x14u: /*0x5e694c*/
           goto LABEL_5;
         case 0x2Bu: /*0x5e694c*/
-          Dialog::Resize((char *)a5); /*0x5e6957*/
+          ((Dialog *)a5)->Resize(); /*0x5e6957*/
 LABEL_5:
           result = 1; /*0x5e695c*/
           break; /*0x5e6968*/

@@ -389,7 +389,7 @@ AbstractClass * * E4Recv_7651D0::sub_7651D0()
   v7.ambientSoundController[1] = 0; /*0x765229*/
   v7.ambientSoundController[2] = 0; /*0x76522d*/
   /* X11: ptr_0 install elided (legacy slot spelling slot, RHS g_ptr_7EA5F4) */  /*0x765231*/
-  BufferIOFile::Init((BufferIOFile *)&v7.ambientSoundController[3]); /*0x765239*/
+  ((BufferIOFile *)&v7.ambientSoundController[3])->Init(); /*0x765239*/
   CCFileClass::Reopen((CDFileClass *)&v7.ambientSoundController[3], g_Str_File_WDTHist_ini, (CHAR *)1); /*0x765249*/
   if ( !(unsigned __int8)File::IsReady((BufferIOFileClass *)&v7.ambientSoundController[3], 0) ) /*0x765253*/
   {

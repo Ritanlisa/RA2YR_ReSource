@@ -850,7 +850,7 @@ int House::IsHumanPlayer()
 }
 // 0x50B730
 namespace gamemd {
-int House::IsCurrentPlayer(void *a1)
+int House::IsCurrentPlayer()
 {
 
 
@@ -1155,7 +1155,7 @@ void House::Constructor(void *a1, void *a2, void *a3, void *a4)
     v5 = 0; /*0x69e0d0*/
     char v4[12]; // [esp+5Ch] [ebp-14h] BYREF
     Vector::Clear((int)v4); /*0x69e0d8*/
-    *(unsigned int *)v3.CDFileClass = &off_7E1668; /*0x69e0e1*/
+    *(unsigned int *)v3.__tail_0 = &off_7E1668; /*0x69e0e1*/
     ((BufferIOFileClass *)&v3)->Dtor(); /*0x69e0e9*/
   }
 

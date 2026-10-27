@@ -177,9 +177,9 @@ void* RulesClass::readAudioVisual()
                       v10,
                       (unsigned __int8 *)aElevationmodel,
                       aElevationincre,
-                      this->ColorAdd[9]);
-    v4 = this->ColorAdd[11]; /*0x66d188*/
-    this->ColorAdd[9] = Int_Overwrite; /*0x66d18e*/
+                      this->RadLightDelay_d[9]);
+    v4 = this->RadLightDelay_d[11]; /*0x66d188*/
+    this->RadLightDelay_d[9] = Int_Overwrite; /*0x66d18e*/
     HIDWORD(v9) = this->LaserTargetColor; /*0x66d1a0*/
     LODWORD(v9) = v4; /*0x66d1a1*/
     INIClass::ReadDouble_Overwrite((double *)v10, (unsigned __int8 *)aElevationmodel, aElevationincre_0, v9); /*0x66d1aa*/
@@ -381,13 +381,13 @@ INIClass * * RulesClass::ReadMovies(void * aMovies)
   result = (int)(INIClass::BinarySearchSection((int)v7, (uint8_t *)aMovies)); /*0x674560*/
   if ( result ) /*0x67456c*/
   {
-    result = INIClass::GetKeyCount(v7->__pad_0, (uint8_t *)aMovies); /*0x67457d*/
+    result = INIClass::GetKeyCount(v7->ptr_0, (uint8_t *)aMovies); /*0x67457d*/
     int v2 = result; // ebp /*0x674582*/
     int i; // ebx
     for ( i = 0; i < v2; ++i ) /*0x674588*/
     {
       uint8_t *StringByIndex; // eax
-      StringByIndex = (uint8_t *)INIClass::GetStringByIndex(v7->__pad_0, (uint8_t *)aMovies, i); /*0x6745a4*/
+      StringByIndex = (uint8_t *)INIClass::GetStringByIndex(v7->ptr_0, (uint8_t *)aMovies, i); /*0x6745a4*/
       char Source[32]; // [esp+4h] [ebp-20h] BYREF
       result = (v7)->GetString((uint8_t *)aMovies, StringByIndex, g_Str__none_, Source, 32); /*0x6745b3*/
       if ( result ) /*0x6745ba*/
@@ -915,7 +915,7 @@ int RulesClass::ReadColorAdd(void * aColoradd)
   result = INIClass::BinarySearchSection((int)v13, (unsigned __int8 *)aColoradd); /*0x66d494*/
   if ( result ) /*0x66d4a2*/
   {
-    result = INIClass::GetKeyCount(v1->unused, (unsigned __int8 *)aColoradd); /*0x66d4ae*/
+    result = INIClass::GetKeyCount(v1->ptr_0, (unsigned __int8 *)aColoradd); /*0x66d4ae*/
     v4 = 0; /*0x66d4b3*/
     v12 = result; /*0x66d4b7*/
     if ( result > 0 ) /*0x66d4bb*/
@@ -923,7 +923,7 @@ int RulesClass::ReadColorAdd(void * aColoradd)
       v5 = &this->q1874; /*0x66d4bd*/
       do /*0x66d511*/
       {
-        StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(v1->unused, (unsigned __int8 *)aColoradd, v4); /*0x66d4cd*/
+        StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(v1->ptr_0, (unsigned __int8 *)aColoradd, v4); /*0x66d4cd*/
         LOWORD(v13) = 0; /*0x66d4e6*/
         BYTE2(v13) = 0; /*0x66d4ee*/
         Coord = INIClass::GetCoord(v1, (int)v11, (unsigned __int8 *)aColoradd, StringByIndex, (unsigned __int8 *)&v13); /*0x66d4f2*/
@@ -958,10 +958,10 @@ int RulesClass::readCrateRules(void * aInfantrytypes)
   char Destination[32]; // [esp+Ch] [ebp-20h] BYREF
   INIClass *v6; // [esp+30h] [ebp+4h]
 
-  KeyCount = INIClass::GetKeyCount(v6->__pad_0, (uint8_t *)aInfantrytypes); /*0x672297*/
+  KeyCount = INIClass::GetKeyCount(v6->ptr_0, (uint8_t *)aInfantrytypes); /*0x672297*/
   for ( i = 0; i < KeyCount; ++i ) /*0x67229d*/
   {
-    StringByIndex = (uint8_t *)INIClass::GetStringByIndex(v6->__pad_0, (uint8_t *)aInfantrytypes, i); /*0x6722b5*/
+    StringByIndex = (uint8_t *)INIClass::GetStringByIndex(v6->ptr_0, (uint8_t *)aInfantrytypes, i); /*0x6722b5*/
     if ( (/*0x6722c3*/ v6)->GetString((uint8_t *)aInfantrytypes, StringByIndex, &g_INI_DefaultBuffer, Destination, 32) )
     {
       KeywordType::FindOrCreate2(Destination); /*0x6722d0*/
@@ -980,10 +980,10 @@ int RulesClass::readRadiation(void * aAircrafttypes)
   char Destination[32]; // [esp+Ch] [ebp-20h] BYREF
   INIClass *v6; // [esp+30h] [ebp+4h]
 
-  KeyCount = INIClass::GetKeyCount(v6->__pad_0, (uint8_t *)aAircrafttypes); /*0x6723e7*/
+  KeyCount = INIClass::GetKeyCount(v6->ptr_0, (uint8_t *)aAircrafttypes); /*0x6723e7*/
   for ( i = 0; i < KeyCount; ++i ) /*0x6723ed*/
   {
-    StringByIndex = (uint8_t *)INIClass::GetStringByIndex(v6->__pad_0, (uint8_t *)aAircrafttypes, i); /*0x672405*/
+    StringByIndex = (uint8_t *)INIClass::GetStringByIndex(v6->ptr_0, (uint8_t *)aAircrafttypes, i); /*0x672405*/
     if ( (/*0x672413*/ v6)->GetString((uint8_t *)aAircrafttypes, StringByIndex, &g_INI_DefaultBuffer, Destination, 32) )
     {
       KeywordClass::FindOrCreate(Destination); /*0x672420*/
@@ -1002,10 +1002,10 @@ int RulesClass::ReadSidesList(void * aSuperweapontyp)
   char Destination[32]; // [esp+Ch] [ebp-20h] BYREF
   INIClass *v6; // [esp+30h] [ebp+4h]
 
-  KeyCount = INIClass::GetKeyCount(v6->__pad_0, (uint8_t *)aSuperweapontyp); /*0x672607*/
+  KeyCount = INIClass::GetKeyCount(v6->ptr_0, (uint8_t *)aSuperweapontyp); /*0x672607*/
   for ( i = 0; i < KeyCount; ++i ) /*0x67260d*/
   {
-    StringByIndex = (uint8_t *)INIClass::GetStringByIndex(v6->__pad_0, (uint8_t *)aSuperweapontyp, i); /*0x672625*/
+    StringByIndex = (uint8_t *)INIClass::GetStringByIndex(v6->ptr_0, (uint8_t *)aSuperweapontyp, i); /*0x672625*/
     if ( (/*0x672633*/ v6)->GetString((uint8_t *)aSuperweapontyp, StringByIndex, &g_INI_DefaultBuffer, Destination, 32) )
     {
       WeaponTypeClass::Process(Destination); /*0x672640*/

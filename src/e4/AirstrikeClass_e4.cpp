@@ -359,7 +359,7 @@ AirstrikeClass::AirstrikeClass(int a2)
   int v13; // ecx
   int v14; // eax
 
-  AbstractClass::Constructor((AbstractClass *)this); /*0x41d384*/
+  ((AbstractClass *)this)->Constructor(); /*0x41d384*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_bffa65) */  /*0x41d389*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_bffa65) */  /*0x41d38f*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_bffa65) */  /*0x41d396*/

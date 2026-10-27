@@ -289,7 +289,7 @@ LABEL_158:
       if ( !*(unsigned char *)(*(int *)((char *)&stru_A83CD9.estimatedHealth + 3) + 576) ) /*0x6de3ad*/
       {
         *(unsigned char *)(*(int *)((char *)&stru_A83CD9.estimatedHealth + 3) + 576) = 1; /*0x6de3c0*/
-        LayerClass::CellIteratorReset((LayerClass *)&dword_87F7E8); /*0x6de3c7*/
+        ((LayerClass *)&dword_87F7E8)->CellIteratorReset(); /*0x6de3c7*/
         for ( j = LayerClass::CellIteratorNext((LayerClass *)&dword_87F7E8); /*0x6de3d8*/
               j;
               j = LayerClass::CellIteratorNext((LayerClass *)&dword_87F7E8) )

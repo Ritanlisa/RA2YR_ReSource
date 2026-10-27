@@ -177,7 +177,7 @@ int GetSendCount();
     short  WaitForPacket(int a1, int a2);  // 0x5D9220
     bool sendGameEvent(unsigned int *aP0, void *a2 = 0);  // 0x6956D0
     int CopyAddress_Small(IPXManagerClass * aP1);  // 0x53EDC0
-    int  SendOptionsGame(char * Source);  // 0x5E3720
+    int SendOptionsGame(char *Source);  // 0x5E3720
     static int InitPlayerSlots();  // 0x5E8B60
     HWND handleTimeout(HWND hDlg);  // 0x5EFF70
     AbstractClass * * handleDisconnect(IUnknown * aP1);  // G57w10-S raw 0x00664390 IUnknown 占位清除

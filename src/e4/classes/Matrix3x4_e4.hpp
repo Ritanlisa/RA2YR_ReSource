@@ -9,7 +9,7 @@ struct Matrix3x4 {
     int m_Data[12];  // 0x0
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
-    int Identity(void *a1 = 0);
+    int Identity();
     unsigned int * TransformCell(AbstractClass * aP1, AbstractClass * aP2, void *a3);
     int Translate(float aP1, void *a2 = 0);
 };

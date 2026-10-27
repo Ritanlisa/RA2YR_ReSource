@@ -18,7 +18,7 @@
 
 // 0x4A3370
 namespace gamemd {  // G42.18 ns repair
-int DDraw::ReleaseSurfaces(void *a1)
+int DDraw::ReleaseSurfaces()
 {
 
   int v2 = this->u32_74; // eax /*0x4a3373*/

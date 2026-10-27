@@ -537,7 +537,7 @@ int16_t IPXInterfaceClass::Connect(const void * a1, unsigned int a3, char aP3)  
   }
   v15 = (*(int (**)(WinsockInterfaceClass *, int))(this->Socket + 56))(this, v10); /*0x7b25b9*/
   SendMessageA(g_hWnd, v15, 0, 2); /*0x7b25c3*/
-  return EventQueue::Process((EventQueue *)dword_87F770); /*0x7b25d4*/
+  return ((EventQueue *)dword_87F770)->Process(); /*0x7b25d4*/
 
 }
 } // namespace gamemd

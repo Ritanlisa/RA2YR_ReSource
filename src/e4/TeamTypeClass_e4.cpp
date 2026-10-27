@@ -66,7 +66,7 @@ int TeamTypeClass::Construct(void *a1, void *a2, void *a3, void *a4, void *a5, v
   this->TeamTypeClass_field_3C = 1; /*0x4c98d7*/
   this->taskForceCount = 0; /*0x4c98da*/
   this->taskForceCapacity = 0; /*0x4c98dd*/
-  this->__pad_04C = 1; /*0x4c98e0*/
+  this->__pad_4C = 1; /*0x4c98e0*/
   this->__pad_4C[1] = 0; /*0x4c98e3*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E3238) */  /*0x4c98e6*/
   *&this->taskForceCapacity = 10; /*0x4c98ed*/
@@ -343,7 +343,7 @@ AbstractClass * * TeamTypeClass::LoadFromINI(unsigned char *** aP1, void *a2, vo
   INIClass::ResetSection((INIClass *)a2);  /*0x6f10a3*/
   if ( !(unsigned __int8)((AbstractTypeClass *)this)->LoadFromINI(a2) )
     return 0;  /*0x6f10b2*/  /*0x6f10b2*/
-  field_E8 = this->field_E8;  /*0x6f10b8*/
+  field_E8 = this->u32_C4;  /*0x6f10b8*/
   v4 = -1;  /*0x6f10be*/
   if ( field_E8 )
     v4 = *(unsigned int *)(*(unsigned int *)(field_E8 + 52) + 184);  /*0x6f10c8*/  /*0x6f10c3*/
@@ -354,13 +354,13 @@ AbstractClass * * TeamTypeClass::LoadFromINI(unsigned char *** aP1, void *a2, vo
                        v4);  /*0x6f10e1*/
   if ( (unsigned __int8)((BuildingType *)v5)->IsSpecialType() )
   {  /*0x6f10e5*/
-    this->field_EC = (unsigned int)v5;  /*0x6f10ee*/
-    this->field_E8 = 0;  /*0x6f10f4*/
+    this->u32_C8 = (unsigned int)v5;  /*0x6f10ee*/
+    this->u32_C4 = 0;  /*0x6f10f4*/
   }
   else if ( v5 != (HouseClass *)-1 )
   {  /*0x6f1103*/
-    this->field_E8 = (v5)->FindOwner();  /*0x6f110c*/
-    this->field_EC = -1;  /*0x6f1112*/
+    this->u32_C4 = (v5)->FindOwner();  /*0x6f110c*/
+    this->u32_C8 = -1;  /*0x6f1112*/
   }
   Int_Overwrite = INIClass::ReadInt_Overwrite(
                     (bool *)a2,
@@ -473,23 +473,23 @@ AbstractClass * * TeamTypeClass::LoadFromINI(unsigned char *** aP1, void *a2, vo
           (bool *)a2,
           (unsigned __int8 *)&this->TeamTypeClass_field_24,
           (unsigned __int8 *)&stru_842DD4.VoxelCaches[1],
-          this->field_D8);  /*0x6f12e5*/
-  field_DC = this->field_DC;  /*0x6f12ea*/
-  this->field_D8 = v22;  /*0x6f12f0*/
+          this->u32_B4);  /*0x6f12e5*/
+  field_DC = this->u32_B8;  /*0x6f12ea*/
+  this->u32_B4 = v22;  /*0x6f12f0*/
   v24 = INIClass::ReadInt_Overwrite(
           (bool *)a2,
           (unsigned __int8 *)&this->TeamTypeClass_field_24,
           (unsigned __int8 *)stru_842DD4.VoxelCaches,
           field_DC);  /*0x6f12ff*/
-  v50 = *(unsigned int *)&this->field_F0;  /*0x6f130c*/
-  this->field_DC = v24;  /*0x6f1313*/
+  v50 = *(unsigned int *)&this->u32_CC;  /*0x6f130c*/
+  this->u32_B8 = v24;  /*0x6f1313*/
   v25 = INIClass::ReadInt_Overwrite(
           (bool *)a2,
           (unsigned __int8 *)&this->TeamTypeClass_field_24,
           (unsigned __int8 *)g_INI_Key_TechLevel,
           v50);  /*0x6f1319*/
-  v26 = *(char **)&this->field_F4;  /*0x6f131e*/
-  *(unsigned int *)&this->field_F0 = v25;  /*0x6f1324*/
+  v26 = *(char **)&this->q0D0;  /*0x6f131e*/
+  *(unsigned int *)&this->u32_CC = v25;  /*0x6f1324*/
   if ( INIClass::GetString(
          (INIClass *)a2,
          (unsigned __int8 *)&this->TeamTypeClass_field_24,
@@ -505,7 +505,7 @@ AbstractClass * * TeamTypeClass::LoadFromINI(unsigned char *** aP1, void *a2, vo
     v27 = v26;  /*0x6f1355*/
   }
   u32_C0 = this->u32_C0;  /*0x6f1357*/
-  *(unsigned int *)&this->field_F4 = v27;  /*0x6f135d*/
+  *(unsigned int *)&this->q0D0 = v27;  /*0x6f135d*/
   v29 = INIClass::ReadInt_Overwrite(
           (bool *)a2,
           (unsigned __int8 *)&this->TeamTypeClass_field_24,
@@ -1021,7 +1021,7 @@ AbstractClass * * TeamTypeClass_28::SetCapacity(int a2, int * a3)
 }
 // 0x6F0FC0
 namespace gamemd {
-int TeamTypeClass::FindByName(void *a1)
+int TeamTypeClass::FindByName()
 {
 
   if ( !this ) /*0x6f0fc6*/

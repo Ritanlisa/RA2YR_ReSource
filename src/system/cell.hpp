@@ -359,6 +359,7 @@ public:
 
 protected:
     CellClass();
+public:  // x144b: X10 supply 消费方 (Tactical::DrawMap 读 u32_E4); access 不改 MSVC 布局
     unsigned char __pad_28;  // 0x28
     void* estimatedHealth6;  // 0x0 (no offset truth)
     unsigned int u32_E4;  // 0xE4

@@ -295,7 +295,7 @@ void* CreateMapObject(ProgressScreenClass * aP0, int aP1)
   {
     if ( !v2 ) /*0x578f93*/
       break; /*0x578f93*/
-    if ( !*(unsigned char *)(k + 284) && Cell::IsEmpty((unsigned int *)k) ) /*0x578fa1*/
+    if ( !*(unsigned char *)(k + 284) && ((Cell *)k)->IsEmpty() ) /*0x578fa1*/
       v2 = Terrain::SelectTileType(k, aP1); /*0x578fb5*/
   }
   dword_880990 = 0; /*0x578fcd*/

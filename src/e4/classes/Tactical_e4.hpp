@@ -147,7 +147,7 @@ struct Tactical {
 ScenarioClass * * CalculateTacticalLighting(int * a1, IUnknown * aP2, int * a3, int * a4, IUnknown * aP5, int * a6, long long a8, void *a8_2);
     unsigned int * MouseMove(unsigned int *aP1, unsigned int *aP2, void *a3 = 0);  // 0x4A91B0
     int IsCellVisible(IUnknown * aP1);  // G57w10-S raw 0x00568350 IUnknown 占位清除
-    void * GetCellData(void *a1 = 0);  // 0x58C2A0
+    char * GetCellData();  // 0x58C2A0
     int MouseOver(MouseClass * aP0, MouseClass * aP1, MouseClass * aP2, MouseClass * aP3, MouseClass * aP4, MouseClass * aP5);  // 0x692300
     MouseClass * * HandleTacticalMouseInput(int _28, unsigned int * a2, int a4, MouseClass * aP4, void *a5_1);  // 0x6930A0
     int UpdateUIVisibility();  // 0x6A6610

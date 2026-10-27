@@ -596,7 +596,7 @@ AbstractClass * * E4Recv_6EFC70::ProcessAISuperWeaponSelection(ScriptClass * aP1
   {
     v6 = *(unsigned int *)((*(int (**)(TechnoClass *))(v3->ptr_0 + 132))(v3) + 1532); /*0x6efc91*/
     if ( (unsigned __int8)TechnoClass::IsDeployed(v3) /*0x6efcba*/
-      && (BYTE1(v3[1].idleActionTimer[0]) || (*(int (**)(TechnoClass *))(v3->ptr_0 + 44))(v3) == 2)
+      && (BYTE1(v3[1].firepowerMultiplier_d[0]) || (*(int (**)(TechnoClass *))(v3->ptr_0 + 44))(v3) == 2)
       && v6 > v4 )
     {
       i = v3; /*0x6efcbc*/

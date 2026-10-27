@@ -143,7 +143,7 @@ struct DSurface {
     char IsDSurface();
     int BlitPart(int a2, int a3, int a4, int a5, int a6);
     int CommitBuffers();
-    AbstractClass * * Destroy(void *a1 = 0);
+    int Destroy();
     int DrawDashedLineStipple(int * a2, int * a3, int16_t a4, int a5, int a6, char a7);
     int DrawLineZBuf(int a1, int a2, int a3, unsigned int * a4, unsigned int * a5, unsigned short a6, int a7, int a8, char a9);
     int DrawMarker(AbstractClass * aP1, ObjectClass * aP2);

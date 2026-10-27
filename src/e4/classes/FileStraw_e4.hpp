@@ -14,7 +14,7 @@ struct FileStraw {
     char __pad_11[3];  // 0x11
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
-    int Destructor(void *a1 = 0);
+    int Destructor();
     int Open(int a2, char a3, void *a1 = 0);
 };
 

@@ -55,14 +55,14 @@ namespace gamemd {  // G42.18 ns repair
 void _DynamicVectorClass_PAUControlNode::CaptureManagerClass__vt_03_()
 {
 
-  void *v2 = *&this->u32_4; // eax /*0x472a86*/
+  void *v2 = *&this->Items; // eax /*0x472a86*/
   this->Capacity = 0; /*0x472a89*/
-  if ( v2 && (this->u8_D) ) /*0x472a90*/
+  if ( v2 && (this->IsAllocated) ) /*0x472a90*/
   {
     operator delete((v2)); /*0x472a96*/
-    *&this->u32_4 = 0; /*0x472a9e*/
+    *&this->Items = 0; /*0x472a9e*/
   }
-  (this->u8_D) = 0; /*0x472aa1*/
+  (this->IsAllocated) = 0; /*0x472aa1*/
   this->Items = 0; /*0x472aa4*/
 }
 }  // G42.18 ns repair
@@ -70,7 +70,7 @@ void _DynamicVectorClass_PAUControlNode::CaptureManagerClass__vt_03_()
 namespace gamemd {
 int _VectorClass_PAUControlNode::CaptureManagerClass__vt_06_(int a2)
 {
-  return *(unsigned int *)(*&this->u32_4 + 4 * a2); /*0x472ada*/
+  return *(unsigned int *)(*&this->Items + 4 * a2); /*0x472ada*/
 }
 }
 // 0x4770E0
@@ -102,7 +102,7 @@ VectorClass_flat * * LoadBuildingTypeClassPrerequisites(unsigned int * a1, unsig
         if ( v21.Count < v21.DynamicVector_field_0x8 /*0x477194*/
           || (v21.IsAllocated || !v21.DynamicVector_field_0x8)
           && *(int *)v21.CapacityIncrement > 0
-          && (*(unsigned __int8 (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)v21.__pad_0 + 8))(
+          && (*(unsigned __int8 (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)v21.ptr_0 + 8))(
                &v21,
                v21.DynamicVector_field_0x8 + *(unsigned int *)v21.CapacityIncrement,
                0) )
@@ -117,7 +117,7 @@ VectorClass_flat * * LoadBuildingTypeClassPrerequisites(unsigned int * a1, unsig
         if ( v21.Count < v21.DynamicVector_field_0x8 /*0x4771f2*/
           || (v21.IsAllocated || !v21.DynamicVector_field_0x8)
           && *(int *)v21.CapacityIncrement > 0
-          && (*(unsigned __int8 (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)v21.__pad_0 + 8))(
+          && (*(unsigned __int8 (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)v21.ptr_0 + 8))(
                &v21,
                v21.DynamicVector_field_0x8 + *(unsigned int *)v21.CapacityIncrement,
                0) )
@@ -132,7 +132,7 @@ VectorClass_flat * * LoadBuildingTypeClassPrerequisites(unsigned int * a1, unsig
         if ( v21.Count < v21.DynamicVector_field_0x8 /*0x477250*/
           || (v21.IsAllocated || !v21.DynamicVector_field_0x8)
           && *(int *)v21.CapacityIncrement > 0
-          && (*(unsigned __int8 (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)v21.__pad_0 + 8))(
+          && (*(unsigned __int8 (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)v21.ptr_0 + 8))(
                &v21,
                v21.DynamicVector_field_0x8 + *(unsigned int *)v21.CapacityIncrement,
                0) )
@@ -147,7 +147,7 @@ VectorClass_flat * * LoadBuildingTypeClassPrerequisites(unsigned int * a1, unsig
         if ( v21.Count < v21.DynamicVector_field_0x8 /*0x4772ae*/
           || (v21.IsAllocated || !v21.DynamicVector_field_0x8)
           && *(int *)v21.CapacityIncrement > 0
-          && (*(unsigned __int8 (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)v21.__pad_0 + 8))(
+          && (*(unsigned __int8 (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)v21.ptr_0 + 8))(
                &v21,
                v21.DynamicVector_field_0x8 + *(unsigned int *)v21.CapacityIncrement,
                0) )
@@ -162,7 +162,7 @@ VectorClass_flat * * LoadBuildingTypeClassPrerequisites(unsigned int * a1, unsig
         if ( v21.Count < v21.DynamicVector_field_0x8 /*0x47730c*/
           || (v21.IsAllocated || !v21.DynamicVector_field_0x8)
           && *(int *)v21.CapacityIncrement > 0
-          && (*(unsigned __int8 (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)v21.__pad_0 + 8))(
+          && (*(unsigned __int8 (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)v21.ptr_0 + 8))(
                &v21,
                v21.DynamicVector_field_0x8 + *(unsigned int *)v21.CapacityIncrement,
                0) )
@@ -184,7 +184,7 @@ VectorClass_flat * * LoadBuildingTypeClassPrerequisites(unsigned int * a1, unsig
       else if ( v21.Count < v21.DynamicVector_field_0x8 /*0x47736a*/
              || (v21.IsAllocated || !v21.DynamicVector_field_0x8)
              && *(int *)v21.CapacityIncrement > 0
-             && (*(unsigned __int8 (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)v21.__pad_0 + 8))(
+             && (*(unsigned __int8 (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)v21.ptr_0 + 8))(
                   &v21,
                   v21.DynamicVector_field_0x8 + *(unsigned int *)v21.CapacityIncrement,
                   0) )

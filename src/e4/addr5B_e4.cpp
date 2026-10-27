@@ -672,7 +672,7 @@ LZOPipe * * GenerateRandomMapPreview(int a1, void * aPreviewBin)
     v13 = 600; /*0x5bb31c*/
     Ticks = Timer::GetTicks(); /*0x5bb325*/
     v12 = v14; /*0x5bb329*/
-    while ( Count::GetCountQueue((Count *)&stru_A8E960.altNextScenario[12]) > 0 ) /*0x5bb337*/
+    while ( ((Count *)&stru_A8E960.altNextScenario[12])->GetCountQueue() > 0 ) /*0x5bb337*/
     {
       v1 = v13; /*0x5bb33d*/
       if ( Ticks != -1 ) /*0x5bb343*/

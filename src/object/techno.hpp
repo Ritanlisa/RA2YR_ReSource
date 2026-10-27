@@ -192,7 +192,7 @@ public:
     virtual void* GetTurretOffset(void* a1, int a2);  // X134 slot 192 = 0x6F3D60
     virtual int GetGlobalValue(int* outValue) const;  // X134 slot 193 = 0x708C10
     virtual int Vt170();  // X134 slot 194 = 0x708D70
-    virtual InfantryTypeClass* GetCrew() const;  // X134 slot 195 = 0x707D20
+    virtual int GetCrew() const;  // X134 slot 195 = 0x707D20 (X144c: return int per raw_decomp fn_70.c — Rules side-index, not a pointer)
     virtual int IsDeadOrInactive() const;  // X134 slot 196 = 0x700D10
     virtual int CanAttack() const;  // X134 slot 197 = 0x700D50
     virtual int CalculateROF();  // X134 slot 198 = 0x6FCFA0
@@ -731,6 +731,7 @@ public:
     int GetCrew();  // 0x707D20
     int GetCrew_0();  // 0x740EE0
     int GetCrewCount();  // 0x6F3950
+    unsigned int* g_var_e1d6b5(unsigned int* a2);  // 0x4DF1F0 (X144c decl supply: vt+1208 slot 302; def techno.cpp)
     int CheckCellPassable3() const;  // 0x6F7970
     int GetBridgeDamageMult() const;  // 0x6F79A0
     // wrapper: delegates to TechnoClass::GetBridgeDamageMult at 0x6F79A0

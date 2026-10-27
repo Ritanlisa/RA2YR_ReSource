@@ -35,9 +35,9 @@ AbstractClass * * sub_777420(ObjectClass *self)
     if ( DSurface_Alternate ) /*0x77748a*/
       ((DSurface *)DSurface_Alternate)->RestoreIfLost(); /*0x77748c*/
     if ( g_DSurface_Hidden ) /*0x777499*/
-      DSurface::RestoreIfLost((DSurface *)g_DSurface_Hidden); /*0x77749b*/
+      ((DSurface *)g_DSurface_Hidden)->RestoreIfLost(); /*0x77749b*/
     if ( DSurface_Composite /*0x7774c7*/
-      && DSurface::RestoreIfLost((DSurface *)DSurface_Composite)
+      && ((DSurface *)DSurface_Composite)->RestoreIfLost()
       && (!MEMORY[0xA8EB00 + 376] || *(int *)&MEMORY[0xA8EB00 + 416] > 16) )
     {
       (*(void (**)(AudioStream *, unsigned int))(*(unsigned int *)DSurface_Composite->__pad_0 + 24))( /*0x7774d3*/

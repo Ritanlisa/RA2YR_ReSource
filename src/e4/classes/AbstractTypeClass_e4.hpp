@@ -44,7 +44,7 @@ struct AbstractTypeClass {
     int GetType(int a1);
     int Init(int aP1, void *a2 = 0);
     int LoadFromINI(uint8_t ***aP1, void *a2 = 0);
-    int ProcessPower(int *aP1, void *a2 = 0);
+    int ProcessPower(int *a2);
     int SetType();
     int StubReturnFalse();
     int Validate();

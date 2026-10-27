@@ -129,7 +129,7 @@ int WDTState_4::ddtor(void *a1)
 namespace gamemd {
 unsigned int WDTState_4::Write(int a2)
 {
-  if ( (this->__pad_00C) ) /*0x76b740*/
+  if ( (this->m_C) ) /*0x76b740*/
     return (unsigned int)(a2 - *&this->q004) >> 3; /*0x76b755*/
   else
     return 0; /*0x76b747*/

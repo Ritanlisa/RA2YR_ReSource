@@ -921,7 +921,7 @@ LABEL_6:
     v12 = 0; /*0x6c9bee*/
     Vector::Clear((int)v11); /*0x6c9bf5*/
     *(unsigned int *)v10.__tail_0 = &off_7E1668; /*0x6c9bfe*/
-    BufferIOFileClass::Dtor((BufferIOFileClass *)&v10); /*0x6c9c06*/
+    ((BufferIOFileClass *)&v10)->Dtor(); /*0x6c9c06*/
     return 0; /*0x6c9c16*/
   }
   v6.Straw_field_0x04 = 0; /*0x6c9b9c*/
@@ -930,7 +930,7 @@ LABEL_6:
   v9 = 0; /*0x6c9ba8*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E4D90) */  /*0x6c9bac*/
   BinkMovie::VtableDispatch(&v13, (int)&v6); /*0x6c9bb4*/
-  v3 = ParseMovieSubtitles(v13.MovieHandle, Source); /*0x6c9bc1*/
+  v3 = ParseMovieSubtitles(v13.q000, Source); /*0x6c9bc1*/
   *(unsigned int *)this->__pad_0 = v3; /*0x6c9bc8*/
   if ( !v3 ) /*0x6c9bd2*/
   {

@@ -273,7 +273,7 @@ char MoveFeedback::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PBVCommandClass *))(*(unsigned int *)this->m_Items + 12))(this); /*0x40c0be*/
+    (*(void (**)(_DynamicVectorClass_PBVCommandClass *))(*(unsigned int *)this->__pad_000 + 12))(this); /*0x40c0be*/
   }
   int v7 = this->q008; // eax /*0x40c0c1*/
   if ( v7 < this->q010 ) /*0x40c0c9*/

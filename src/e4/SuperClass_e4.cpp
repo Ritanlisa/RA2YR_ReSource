@@ -257,7 +257,7 @@ SuperClass * * SuperClass::CleanupMembers(void *a1)
     while ( v6 < dword_A83CC8 ); /*0x6cb23d*/
   }
   v9 = this; /*0x6cb24f*/
-  v7 = (*(int (**)(DynamicVector *, int *))(*(unsigned int *)stru_B0F670.__pad_0 + 16))(&stru_B0F670, &v9); /*0x6cb253*/
+  v7 = (*(int (**)(DynamicVector *, int *))(*(unsigned int *)stru_B0F670.ptr_0 + 16))(&stru_B0F670, &v9); /*0x6cb253*/
   if ( v7 != -1 && v7 < stru_B0F670.q010 ) /*0x6cb263*/
   {
     --stru_B0F670.q010; /*0x6cb268*/
@@ -269,7 +269,7 @@ SuperClass * * SuperClass::CleanupMembers(void *a1)
     }
   }
   v9 = this; /*0x6cb298*/
-  v8 = (*(int (**)(DynamicVector *, int *))(*(unsigned int *)stru_B0F6C8.__pad_0 + 16))(&stru_B0F6C8, &v9); /*0x6cb29c*/
+  v8 = (*(int (**)(DynamicVector *, int *))(*(unsigned int *)stru_B0F6C8.ptr_0 + 16))(&stru_B0F6C8, &v9); /*0x6cb29c*/
   if ( v8 != -1 && v8 < stru_B0F6C8.q010 ) /*0x6cb2ac*/
   {
     --stru_B0F6C8.q010; /*0x6cb2b1*/
@@ -1015,11 +1015,11 @@ AbstractClass * * SuperClass::Reset(void *a1, void *a2)
   int v11; // edx
   unsigned int v12[4]; // [esp+4h] [ebp-10h] BYREF
 
-  SuperClass_field_0x68 = this->SuperClass_field_0x68;  /*0x6ce0b6*/
+  SuperClass_field_0x68 = this->u32_68;  /*0x6ce0b6*/
   if ( SuperClass_field_0x68 )
   {  /*0x6ce0bb*/
     *(unsigned char *)(SuperClass_field_0x68 + 405) = 0;  /*0x6ce0bd*/
-    this->SuperClass_field_0x68 = 0;  /*0x6ce0c4*/
+    this->u32_68 = 0;  /*0x6ce0c4*/
     v12[0] = this;  /*0x6ce0db*/
     v3 = (*(int (**)(DynamicVectorClass *, unsigned int *))&stru_B0F5B8 + 4)(&stru_B0F5B8, v12);  /*0x6ce0df*/
     if ( v3 != -1 )
@@ -1033,17 +1033,17 @@ AbstractClass * * SuperClass::Reset(void *a1, void *a2)
       ((DynamicVector *)&stru_B0F5B8)->RemoveItem(v4);  /*0x6ce11b*/  /*0x6ce113*/
     LOBYTE(this->SuperClass_field_0x6C) = 0;  /*0x6ce120*/
   }
-  SuperClass_field_0x24 = this->SuperClass_field_0x24;  /*0x6ce124*/
-  result = &this->SuperClass_field_0x30;  /*0x6ce127*/
+  SuperClass_field_0x24 = this->u32_24;  /*0x6ce124*/
+  result = &this->q030;  /*0x6ce127*/
   HIBYTE(this->SuperClass_field_0x6C) = 0;  /*0x6ce12b*/
-  SuperClass_field_0x30 = this->SuperClass_field_0x30;  /*0x6ce12f*/
-  this->SuperClass_field_0x78 = -1;  /*0x6ce131*/
+  SuperClass_field_0x30 = this->q030;  /*0x6ce12f*/
+  this->u32_78 = -1;  /*0x6ce131*/
   v8 = SuperClass_field_0x30 != -1;  /*0x6ce13b*/
   if ( SuperClass_field_0x24 == -1 )
-    SuperClass_field_0x24 = *(unsigned int *)(this->SuperClass_field_0x28 + 176);  /*0x6ce146*/  /*0x6ce141*/
+    SuperClass_field_0x24 = *(unsigned int *)(this->u32_28 + 176);  /*0x6ce146*/  /*0x6ce141*/
   *result = *(unsigned int *)&stru_A8E960.random[528];  /*0x6ce156*/
-  *(unsigned int *)this->__pad_34 = v12[2];  /*0x6ce15d*/
-  this->SuperClass_field_0x38 = SuperClass_field_0x24;  /*0x6ce160*/
+  *(unsigned int *)this->u32_34 = v12[2];  /*0x6ce15d*/
+  this->u32_38 = SuperClass_field_0x24;  /*0x6ce160*/
   if ( !v8 )
   {  /*0x6ce163*/
     v9 = *result;  /*0x6ce165*/
@@ -1079,11 +1079,11 @@ void ** SuperClass::CreateChronoAnim(AbstractClass * aP1, SuperClass * aP2, int 
   SuperClass *v9; // [esp+4h] [ebp-10h] BYREF
   int v10[3]; // [esp+8h] [ebp-Ch] BYREF
 
-  SuperClass_field_0x68 = this->SuperClass_field_0x68;  /*0x6cb3a6*/
+  SuperClass_field_0x68 = this->u32_68;  /*0x6cb3a6*/
   if ( SuperClass_field_0x68 )
   {  /*0x6cb3ab*/
     *(unsigned char *)(SuperClass_field_0x68 + 405) = 0;  /*0x6cb3ad*/
-    this->SuperClass_field_0x68 = 0;  /*0x6cb3b4*/
+    this->u32_68 = 0;  /*0x6cb3b4*/
     v9 = this;  /*0x6cb3cb*/
     v6 = (*(int (**)(DynamicVectorClass *, SuperClass **))&stru_B0F5B8 + 4)(&stru_B0F5B8, &v9);  /*0x6cb3cf*/
     if ( v6 != -1 )
@@ -1114,7 +1114,7 @@ void ** SuperClass::CreateChronoAnim(AbstractClass * aP1, SuperClass * aP2, int 
                0);  /*0x6cb467*/
     if ( result )
     {  /*0x6cb470*/
-      this->SuperClass_field_0x68 = (int)result;  /*0x6cb472*/
+      this->u32_68 = (int)result;  /*0x6cb472*/
       result = (void **)stru_B0F5B8.Capacity;  /*0x6cb475*/
       if ( stru_B0F5B8.Count < stru_B0F5B8.Capacity
         || (stru_B0F5B8.IsAllocated[0] || !stru_B0F5B8.Capacity)

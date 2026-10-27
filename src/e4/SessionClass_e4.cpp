@@ -138,13 +138,13 @@ int SessionClass::initInternet()
   {
     result = 0; /*0x540ec8*/
   }
-  *(unsigned int *)this->__pad_050 = result; /*0x540ecc*/
+  *(unsigned int *)this->__pad_50 = result; /*0x540ecc*/
   if ( result ) /*0x540ed0*/
   {
     (*(void (**)(int))(*(unsigned int *)result + 4))(result); /*0x540ed8*/
-    *(unsigned int *)(*(unsigned int *)this->__pad_050 + 40) = (unsigned int)(*&this->q058); /*0x540ee1*/
-    *(unsigned int *)(*(unsigned int *)this->__pad_050 + 44) = *&this->q05C; /*0x540eea*/
-    *(unsigned int *)(*(unsigned int *)this->__pad_050 + 48) = *&this->q060; /*0x540ef8*/
+    *(unsigned int *)(*(unsigned int *)this->__pad_50 + 40) = (unsigned int)(*&this->q058); /*0x540ee1*/
+    *(unsigned int *)(*(unsigned int *)this->__pad_50 + 44) = *&this->q05C; /*0x540eea*/
+    *(unsigned int *)(*(unsigned int *)this->__pad_50 + 48) = *&this->q060; /*0x540ef8*/
     return 1; /*0x540ef3*/
   }
   return result; /*0x540e7c*/
@@ -362,8 +362,8 @@ AbstractClass * * SessionClass::LoadMapSelection(char **a1)
     v7 = (v6)->LoadFromINI(&v43.nextArrayIndex, (const char **)&v43.ptr_4); /*0x5cf00c*/
     if ( !v7 ) /*0x5cf010*/
       goto LABEL_17; /*0x5cf010*/
-    unknown_08 = uniqueId->unknown_08; /*0x5cf012*/
-    if ( uniqueId->unknown_10 < unknown_08 /*0x5cf038*/
+    unknown_08 = uniqueId->SessionClass_field_08; /*0x5cf012*/
+    if ( uniqueId->SessionClass_field_10 < unknown_08 /*0x5cf038*/
       || ((((uniqueId->unknown_0C) >> 8) & 0xFF) || !unknown_08)
       && (unknown_14 = uniqueId->unknown_14, unknown_14 > 0)
       && (*(unsigned __int8 (**)(SessionClass *, int, unsigned int))(uniqueId->GameMode + 8))(
@@ -371,9 +371,9 @@ AbstractClass * * SessionClass::LoadMapSelection(char **a1)
            unknown_08 + unknown_14,
            0) )
     {
-      unknown_10 = uniqueId->unknown_10; /*0x5cf03f*/
+      unknown_10 = uniqueId->SessionClass_field_10; /*0x5cf03f*/
       MPGameMode = uniqueId->MPGameMode; /*0x5cf042*/
-      uniqueId->unknown_10 = unknown_10 + 1; /*0x5cf048*/
+      uniqueId->SessionClass_field_10 = unknown_10 + 1; /*0x5cf048*/
       *(unsigned int *)(MPGameMode + 4 * unknown_10) = v7; /*0x5cf04b*/
     }
     if ( ++v4 > 100 ) /*0x5cf052*/
@@ -383,7 +383,7 @@ AbstractClass * * SessionClass::LoadMapSelection(char **a1)
     }
     v3 = 0; /*0x5cf054*/
   }
-  if ( uniqueId->unknown_10 ) /*0x5cf073*/
+  if ( uniqueId->SessionClass_field_10 ) /*0x5cf073*/
   {
     ((String *)&v43.ptr_8)->Assign(0); /*0x5cf0e0*/
     ((String *)&v43)->Assign(aAnims); /*0x5cf0ee*/
@@ -911,7 +911,7 @@ int SessionClass::SetField(void *a1, void *a2)
 } // namespace gamemd
 // 0x696F10
 namespace gamemd {
-int SessionClass::GetPlayerSide(void *a1)
+int SessionClass::GetPlayerSide()
 {
 
   int result = -2; // eax /*0x696f13*/
@@ -922,7 +922,7 @@ int SessionClass::GetPlayerSide(void *a1)
 } // namespace gamemd
 // 0x696F20
 namespace gamemd {
-int SessionClass::GetPlayerColor(void *a1)
+int SessionClass::GetPlayerColor()
 {
 
   int result = -2; // eax /*0x696f23*/
@@ -2576,7 +2576,7 @@ int SessionClass::AssignSide(int a2, char aP2)
 }  // G42.18c ns repair
 // 0x69BBE0
 namespace gamemd {  // G42.18c ns repair
-char SessionClass::GetGameSpeed(void *a1)
+char SessionClass::GetGameSpeed()
 {
 
   int result; // eax

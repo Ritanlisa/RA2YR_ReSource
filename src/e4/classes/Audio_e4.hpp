@@ -55,7 +55,7 @@ struct Audio {
     int ApplyFormatFlags(int * a1, char * a2);  // 0x406870
     int WaitForCallback();  // 0x4070B0
     int Release(void *a1 = 0);  // 0x407F40
-    int IsSoundPlaying(void *a1 = 0);  // 0x408070
+    int IsSoundPlaying();  // 0x408070
     int  CalcRate(int a2, int a3);  // 0x408540
     int GetSampleSize(void *a1 = 0);  // 0x409320
     ObjectClass * * ParseVolume(const char ** a1, ObjectClass * aP2);  // 0x5D0470

@@ -172,7 +172,7 @@ void* JumpjetLocomotionClass::Update2(void * a1, void * a2)
   v74 = this; /*0x439b0b*/
   v3 = this->Powered; /*0x439b17*/
   v4 = &this->u32_3; /*0x439b1a*/
-  *v72->tail_0.__tail_0 = v3; /*0x439b22*/
+  *v72->__tail_0.__tail_0 = v3; /*0x439b22*/
   v6 = this->Accel; /*0x439b28*/
   v7 = this->Speed; /*0x439b2b*/
   v77 = this->ptr_8; /*0x439b2e*/
@@ -192,7 +192,7 @@ void* JumpjetLocomotionClass::Update2(void * a1, void * a2)
   if ( v3 > 0.0 ) /*0x439b71*/
   {
     ((float *)v5)->ComputeVectorLengthMetric_0(); /*0x439b75*/
-    if ( v3 > *v72->tail_0.__tail_0 ) /*0x439b83*/
+    if ( v3 > *v72->__tail_0.__tail_0 ) /*0x439b83*/
     {
       *(float *)&v61 = v3 / v3; /*0x439b8c*/
       (v61)->Scale(v65); /*0x439b8f*/
@@ -243,7 +243,7 @@ void* JumpjetLocomotionClass::Update2(void * a1, void * a2)
           v66 = 0; /*0x439cc9*/
           goto LABEL_24; /*0x439ccd*/
         }
-        v20 = v72->tail_0; /*0x439ccf*/
+        v20 = v72->__tail_0; /*0x439ccf*/
       }
       v66 = 1; /*0x439cd5*/
       if ( v20 ) /*0x439cda*/
@@ -598,7 +598,7 @@ void * JumpjetLocomotionClass::ComputeVoxelTransform(unsigned int * a1, float * 
       {
         v31 = *a3 << 6; /*0x4b02c1*/
         *a3 = v31; /*0x4b02c4*/
-        *a3 = v31 + this->TurnRate; /*0x4b02cb*/
+        *a3 = v31 + this->ptr_8; /*0x4b02cb*/
       }
       Transform = ((LocomotionClass *)this)->GetTransform(v60, a3); /*0x4b02d7*/
       Transform::Copy(v59, Transform); /*0x4b02e4*/
@@ -635,12 +635,12 @@ void * JumpjetLocomotionClass::ComputeVoxelTransform(unsigned int * a1, float * 
         {
           v37 = 1.0; /*0x4b0346*/
         }
-        v40 = InterpolateVoxelAnimPose(v63, this->Speed, this->TurnRate, v37); /*0x4b0389*/
+        v40 = InterpolateVoxelAnimPose(v63, this->Speed, this->ptr_8, v37); /*0x4b0389*/
       }
       else
       {
 LABEL_48:
-        TurnRate = this->TurnRate; /*0x4b0390*/
+        TurnRate = this->ptr_8; /*0x4b0390*/
         if ( !TurnRate ) /*0x4b0395*/
         {
 LABEL_51:
@@ -719,7 +719,7 @@ LABEL_51:
       {
         v24 = 1.0; /*0x4b01fe*/
       }
-      v26 = InterpolateVoxelAnimPose(v64, this->Speed, this->TurnRate, v24); /*0x4b0234*/
+      v26 = InterpolateVoxelAnimPose(v64, this->Speed, this->ptr_8, v24); /*0x4b0234*/
       goto LABEL_29; /*0x4b0239*/
     }
   }

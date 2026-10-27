@@ -9,7 +9,7 @@ struct StaticString {
     unsigned int tail_0;  // 0x0
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
-    char ** Factory(void *a1 = 0);
+    char ** Factory();
 };
 
 } // namespace gamemd

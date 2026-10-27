@@ -463,7 +463,7 @@ int UI_Get_60B1D0(HWND hWnd, HWND a2)
 
   v13 = a2; /*0x60b1d9*/
   Parent = GetParent(hWnd); /*0x60b1e9*/
-  GameSpeed = SessionClass::GetGameSpeed((SessionClass *)&dword_A8B238); /*0x60b1f0*/
+  GameSpeed = ((SessionClass *)&dword_A8B238)->GetGameSpeed(); /*0x60b1f0*/
   GetWindowRect(Parent, &Rect); /*0x60b1fe*/
   GetWindowRect(hWnd, &v17); /*0x60b206*/
   right = Rect.right; /*0x60b20a*/

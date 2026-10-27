@@ -85,7 +85,7 @@ void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
   v10.q010 = 0; /*0x4cfed7*/
   if ( !*(unsigned int *)&dword_A8B238 /*0x4cfeef*/
     || (v2 = *(unsigned int *)(this->Owner + 540), *(unsigned int *)(v2 + 22016) == -1)
-    || (thisa = 1, (unsigned __int8)House::IsCurrentPlayer((House *)v2)) )
+    || (thisa = 1, (unsigned __int8)((House *)v2)->IsCurrentPlayer()) )
   {
     thisa = 0; /*0x4cfefd*/
   }

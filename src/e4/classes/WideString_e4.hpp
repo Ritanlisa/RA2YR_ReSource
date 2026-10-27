@@ -26,7 +26,7 @@ struct WideString {
     short Erase(int a2, int a3_2);  // 0x7B6D90
     char RemoveChar(wchar_t a2);  // 0x7B6E20
     int GetOrEmpty();  // 0x7B7100
-    int GetOrEmpty_Alt(void *a1 = 0);  // 0x7B7140
+    wchar_t * GetOrEmpty_Alt();  // 0x7B7140
          int GetChar(size_t aP1);  // 0x7B7180
     int Length(void *a1 = 0);  // 0x7B71B0
     short Reassign(wchar_t * String, void *a2_1);  // 0x7B7600

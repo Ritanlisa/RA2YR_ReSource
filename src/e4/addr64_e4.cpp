@@ -1000,7 +1000,7 @@ LABEL_50:
       }
     }
     if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x6498ee*/
-      Connection::Close((Connection *)&stru_A8E960.nextScenario[96]); /*0x6498f5*/
+      ((Connection *)&stru_A8E960.nextScenario[96])->Close(); /*0x6498f5*/
     if ( byte_B04878 ) /*0x649901*/
     {
       Network::SendUnreachable(v92); /*0x64991a*/

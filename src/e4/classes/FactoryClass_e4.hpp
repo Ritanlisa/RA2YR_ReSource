@@ -82,7 +82,7 @@ struct FactoryClass {
     int ddtor(int a1, unsigned int * a2);
     void * CopyTo(char a2);
     static char AbandonProduction(FactoryClass * aP1);
-    int ClearObjects(void *a1 = 0);  // 0x635120
+    int ClearObjects();  // 0x635120
     wchar_t * ResetProductionTimers();  // 0x6b0c80
     unsigned int * CompleteItem();  // 0x71abc0
     int *  RemoveFromArrays(char a2, void *a1 = 0);  // 0x63d9c0

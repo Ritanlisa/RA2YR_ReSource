@@ -40,7 +40,7 @@ public:
     // unmatched: no callgraph reference and no git history record
     virtual bool  IsHost() const;
 
-    int queueSendPacket(const void* a2, int32_t a3, const void* a4, int32_t a5, int16_t a6); // 0x48B410 (G42.35e: 5-param int-return per ida truth)
+    // x144b: queueSendPacket 移至 ModemConnectionClass (ida 0x48B410 receiver=ModemConnectionClass*)am int-return per ida truth)
     void* allocPacketSlot();                                                                  // 0x48B750
     uint32_t initQueue(uint32_t);                                                             // 0x48BA10
     void sendAck();  // 0x48BF40
@@ -158,6 +158,7 @@ public:
     bool SendPacket(const uint8_t*, int32_t);
     bool DetectModem();
     bool Negotiate();
+    int queueSendPacket(const void* a2, int32_t a3, const void* a4, int32_t a5, int16_t a6); // 0x48B410 x144b 移入 (ida receiver 真值)
 
     char     PhoneNumber[64];
     bool     IsDialing;

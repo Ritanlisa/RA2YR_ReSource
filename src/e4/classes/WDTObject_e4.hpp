@@ -15,7 +15,7 @@ struct WDTObject {
     unsigned int u32_2C;  // 0x2C
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
-    int GetAndClearFlag(void *a1 = 0);
+    int GetAndClearFlag();
     int GetSize();  // 0x76bfa0
 };
 

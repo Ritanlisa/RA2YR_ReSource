@@ -21,9 +21,11 @@ using ra2::game::TechnoClass;
 #include "e4/classes/Tactical_e4.hpp"
 #include "e4/classes/GadgetClass_e4.hpp"
 #include "core/hash_table.hpp"
+#include "ui/ui_ext.hpp"  // x144b: TabCameoListClass + DialogControl 真值载体 (C2027 修复)
 // ---- g57c5 W5 vocab (declaration-only) ----
 namespace gamemd {
-void UI_Add_6AC430();  // g57c5 W5 vocab (csp)
+int UI_Add_6AC430(void *a1);  // g57c5 W5 vocab (csp) -- x144b: ida truth int(ObjectClass*), 原 void() 触发 C2660+C2440
+int GetHouseTechLevel(int a1, int a2);  // x144b 本地原型 0x5004E0 (fastcall→平参, 同 ui/supplied_bodies.cpp:127)
 } // namespace gamemd
 // ---- g57c5 W5 end ----
 
@@ -40,7 +42,7 @@ void SidebarClass::SidebarNeedsRepaint(int mode)
 }
 
 // 0x6a6300
-bool SidebarClass::AddCameo(int AbstractType, int a3)
+bool SidebarClass::AddCameo(int a2, int a3)
 {
   int result; // eax
   int v5; // eax
@@ -100,14 +102,14 @@ bool SidebarClass::AddCameo(int AbstractType, int a3)
       break;
   }
   result = v24; /*0x6a63b7*/
-  v8 = *(&this->u32_F94 * v24 + 1382); /*0x6a63cf*/
+  v8 = *((unsigned int *)this + 997 * v24 + 1382); /*0x6a63cf*/
   if ( v8 > 75 ) /*0x6a63d9*/
     goto LABEL_57; /*0x6a63d9*/
   v9 = 0; /*0x6a63df*/
   if ( v8 > 0 ) /*0x6a63e3*/
   {
-    result = (int)&this->CapacityIncrement * v24 + 5532; /*0x6a63e5*/
-    while ( result->ptr_4 != a2 || *(unsigned int *)result != a3 ) /*0x6a63ef*/
+    result = (int)this + 3988 * v24 + 5532; /*0x6a63e5*/
+    while ( *(unsigned int *)(result + 4) != a2 || *(unsigned int *)result != a3 ) /*0x6a63ef*/
     {
       ++v9; /*0x6a63f5*/
       result += 52; /*0x6a63f6*/
@@ -120,9 +122,9 @@ bool SidebarClass::AddCameo(int AbstractType, int a3)
   }
   LABEL_29:
   if ( !dword_A8E7AC && a2 != 31 ) /*0x6a6409*/
-    VoxClass::FindAndPlay(&stru_83FA64, -1); /*0x6a6415*/
-  TabCameoListClass::AddCameo_ReplaceItAll((TabCameoListClass *)&this->__pad_CD2[3988 * v24 + 2162], a2, a3); /*0x6a641e*/
-  *(&this->u32_F94 * v24 + 5504) = 1; /*0x6a6423*/
+    ((VoxClass *)&stru_83FA64)->FindAndPlay(-1); /*0x6a6415*/
+  ((TabCameoListClass *)((char *)&this->__pad_CD2 + 3988 * v24 + 2162))->AddCameo_ReplaceItAll(a2, a3); /*0x6a641e*/
+  *((unsigned char *)this + 3988 * v24 + 5504) = 1; /*0x6a6423*/
   v10 = 0; /*0x6a6427*/
   g_CameoRenderFlag = 1; /*0x6a6429*/
   v11 = 0; /*0x6a6430*/
@@ -144,10 +146,10 @@ bool SidebarClass::AddCameo(int AbstractType, int a3)
   }
   LABEL_39:
   v13 = v24; /*0x6a6467*/
-  if ( !(uint8_t)DialogControl::IsHidden((DialogControl *)&stru_B07C48 + 6 * v24) ) /*0x6a647a*/
-    DialogControl::Hide((GadgetClass *)(&stru_B07C48 + 8 * v24)); /*0x6a6485*/
+  if ( !((DialogControl *)&stru_B07C48 + 6 * v24)->IsHidden() ) /*0x6a647a*/
+    ((DialogControl *)(&stru_B07C48 + 8 * v24))->Hide(); /*0x6a6485*/
   if ( v24 == this->u32_539C ) /*0x6a6490*/
-    Tactical::UpdateUIVisibility((Tactical *)this); /*0x6a6494*/
+    ((Tactical *)this)->UpdateUIVisibility(); /*0x6a6494*/
   (*((void (__thiscall **)(SidebarClass *, int))this->ptr_0 + 54))(this, 1); /*0x6a649f*/
   if ( v23 == -1 ) /*0x6a64aa*/
   {
@@ -167,30 +169,29 @@ bool SidebarClass::AddCameo(int AbstractType, int a3)
     {
       GadgetClass::Hide((GadgetClass *)(&stru_B07C48 + 8 * v15)); /*0x6a64e3*/
       v16 = 0; /*0x6a64f5*/
-      v17 = &this->__pad_CD2[3988 * this->u32_539C + 2162]; /*0x6a64fd*/
-      *(&this->u32_F94 * this->u32_539C + 5472) = 0; /*0x6a6504*/
+      v17 = (char *)&this->__pad_CD2 + 3988 * this->u32_539C + 2162; /*0x6a64fd*/
+      *(&this->needsRedrawAll + 3988 * this->u32_539C) = 0; /*0x6a6504*/
       do /*0x6a652f*/
       {
-        Tactical::SelectObject( /*0x6a6526*/
-          (GScreenClass *)&DataGlobal_87F7E8,
+        ((Tactical *)&DataGlobal_87F7E8)->SelectObject( /*0x6a6526*/
           56 * (v16 + 60 * *((unsigned int *)v17 + 14)) + 11566720);
         ++v16; /*0x6a652b*/
       }
       while ( v16 < 60 ); /*0x6a652f*/
       this->u32_539C = v10; /*0x6a6534*/
-      GadgetClass::Show((GadgetClass *)(&stru_B07C48 + 8 * v10)); /*0x6a6543*/
-      v18 = &this->__pad_CD2[3988 * this->u32_539C + 2162]; /*0x6a6560*/
-      *(&this->u32_F94 * this->u32_539C + 5472) = 1; /*0x6a6567*/
+      ((GadgetClass *)(&stru_B07C48 + 8 * v10))->Show(); /*0x6a6543*/
+      v18 = (char *)&this->__pad_CD2 + 3988 * this->u32_539C + 2162; /*0x6a6560*/
+      *(&this->needsRedrawAll + 3988 * this->u32_539C) = 1; /*0x6a6567*/
       v19 = UI_Add_6AC430(v22); /*0x6a6570*/
       for ( i = 0; i < v19; ++i ) /*0x6a6576*/
       {
-        Hash::Reset((LinkClass *)(56 * (i + 60 * *((unsigned int *)v18 + 14)) + 11566720)); /*0x6a6590*/
+        ((Hash *)(56 * (i + 60 * *((unsigned int *)v18 + 14)) + 11566720))->Reset(); /*0x6a6590*/
         Hash::InsertOrdered( /*0x6a65b3*/
           (GScreenClass *)&DataGlobal_87F7E8,
           56 * (i + 60 * *((unsigned int *)v18 + 14)) + 11566720);
       }
       g_CameoRenderFlag = 1; /*0x6a65bf*/
-      Tactical::UpdateUIVisibility((Tactical *)this); /*0x6a65c6*/
+      ((Tactical *)this)->UpdateUIVisibility(); /*0x6a65c6*/
       v13 = v24; /*0x6a65cb*/
       this->u32_53A7 = 1; /*0x6a65cf*/
     }

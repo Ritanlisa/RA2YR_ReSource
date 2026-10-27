@@ -427,7 +427,7 @@ struct TechnoClass {
     int FireWeapon();  // 0x6fdd50
     unsigned int *  GetWaypointCoords(unsigned int * a2);  // 0x6f18a0
     int ScanNeighborCells(void *a1 = 0);  // 0x703e70
-    int HasDeployFlags(void *a1 = 0);  // 0x746db0
+    int HasDeployFlags();  // 0x746db0
     static char CheckTargetCell(void *a1 = 0);  // 0x703b10
     int __thiscall DrawPips(void *a1);
     int sub_724550();  // 0x724550

@@ -93,7 +93,7 @@ int BuildingTypeClass::ConstructFull(char * Source, void *a2)
   this->ToOverlay = 0; /*0x45de58*/
   this->ToTile = 0; /*0x45de5e*/
   this->UnitEnterSound = -1; /*0x45de64*/
-  this->UnitExitSound = -1; /*0x45de6a*/
+  this->UnitEnterSound = -1; /*0x45de6a*/
   this->WorkingSound = -1; /*0x45de70*/
   this->NotWorkingSound = -1; /*0x45de76*/
   this->PowersUpBuilding_0x18 = -1; /*0x45de7c*/
@@ -109,14 +109,14 @@ int BuildingTypeClass::ConstructFull(char * Source, void *a2)
   this->DeployFacing = 0; /*0x45debc*/
   this->UnitEnterSound = 0; /*0x45dec2*/
   this->WorkingSound = 0; /*0x45dec8*/
-  this->ExtraPowerBonus = 0; /*0x45dece*/
+  this->BuildingAnim_0x15 = 0; /*0x45dece*/
   this->FreeUnit = 0; /*0x45ded4*/
   this->PowersUpBuilding_0x18 = 0; /*0x45deda*/
-  this->Height = 0; /*0x45dee0*/
+  this->DeployingAnimLoaded = 0; /*0x45dee0*/
   this->OccupyHeight = 0; /*0x45dee6*/
-  this->MidPoint = 128; /*0x45deec*/
-  this->DoorStages = 0; /*0x45def6*/
-  this->BuildingAnimFrame_6 = 0; /*0x45defc*/
+  this->UnderDoorAnimLoaded = 128; /*0x45deec*/
+  this->Rubble = 0; /*0x45def6*/
+  this->PowerDrain = 0; /*0x45defc*/
   this->BuildingAnim_0x15 = 0; /*0x45df02*/
   this->Upgrades_d = 0; /*0x45df08*/
   this->DeployingAnim_d = 0; /*0x45df13*/
@@ -424,7 +424,7 @@ unsigned int * BuildingTypeClass::loadBuildingProperty_b_545E520(int aP1)
   /* X11: ptr_0 install elided (implicit via BuildingTypeClass virtuals 0x45e55e) */
   /* X11: ptr_0 install elided (implicit via BuildingTypeClass virtuals 0x45e565) */
   /* X11: ptr_0 install elided (implicit via BuildingTypeClass virtuals 0x45e56c) */
-  return &this->TechnoTypeClass; /*0x45e575*/
+  return &this->ptr_0; /*0x45e575*/
 
 }
 } // namespace gamemd
@@ -435,7 +435,7 @@ AbstractClass * * BuildingTypeClass::CleanupMembers(BuildingTypeClass * a1, Buil
 
 
   char BuildupLoaded; // al
-  BuildupLoaded = (char)(a1->BuildupLoaded); /*0x45e587*/
+  BuildupLoaded = (char)(a1->u32_E04); /*0x45e587*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E4544) */  /*0x45e58d*/
   /* X11: ptr_0 install elided (implicit via BuildingTypeClass virtuals 0x45e595) */
   /* X11: ptr_0 install elided (implicit via BuildingTypeClass virtuals 0x45e59c) */
@@ -444,7 +444,7 @@ AbstractClass * * BuildingTypeClass::CleanupMembers(BuildingTypeClass * a1, Buil
   {
     __3_YAXPAX_Z((void *)a1->Buildup[0]); /*0x45e5b7*/
     a1->Buildup[0] = 0; /*0x45e5bf*/
-    a1->BuildupLoaded = 0; /*0x45e5c5*/
+    a1->u32_E04 = 0; /*0x45e5c5*/
   }
   if ( a1->BibShapeLoaded && *&a1->BibShape ) /*0x45e5d3*/
   {
@@ -482,7 +482,7 @@ AbstractClass * * BuildingTypeClass::CleanupMembers(BuildingTypeClass * a1, Buil
     *&a1->UnderRoofDoorAnim = 0; /*0x45e6a9*/
     a1->UnderRoofDoorAnimLoaded = 0; /*0x45e6af*/
   }
-  AbstractClass::AnnounceExpiredPointer(&a1->TechnoTypeClass, 1); /*0x45e6b9*/
+  AbstractClass::AnnounceExpiredPointer(&a1->ptr_0, 1); /*0x45e6b9*/
   BuildingTypeClass *v6; // [esp+8h] [ebp-4h] BYREF
   v6 = (gamemd::BuildingTypeClass *)(a1); /*0x45e6ce*/
   int v3; // eax
@@ -680,7 +680,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
         (v6) = ((v6) & ~0xFFFF) | ((Math::RoundToInt(*&dword_8871E0->q1518 * 900.0 / (double)v23)) & 0xFFFF); /*0x45f2f7*/
         v4 = v6; /*0x45f2fc*/
       }
-      this->RubbleLoaded = 0; /*0x45f2fe*/
+      this->BuildingAnimFrame = 0; /*0x45f2fe*/
       this->u32_F08 = v5; /*0x45f304*/
       this->u32_F0C = v4; /*0x45f30a*/
     }
@@ -1443,12 +1443,12 @@ LABEL_32:
 } // namespace gamemd
 // 0x4653C0
 namespace gamemd {
-BuildingTypeClass * * BuildingTypeClass::FindOrCreate(char *Source)
+BuildingTypeClass * * BuildingTypeClass::FindOrCreate()
 {
   int v2; // esi
   int v3; // eax
 
-  if ( !_strcmpi(g_Str__none_, Source) || !_strcmpi(g_Str_none, Source) ) /*0x4653dc*/
+  if ( !_strcmpi(g_Str__none_, this) || !_strcmpi(g_Str_none, this) ) /*0x4653dc*/
     return 0; /*0x46543f*/
   v2 = 0; /*0x4653ed*/
   if ( dword_A83C78 <= 0 ) /*0x4653f1*/
@@ -1456,10 +1456,10 @@ BuildingTypeClass * * BuildingTypeClass::FindOrCreate(char *Source)
     LABEL_6:
     v3 = operator new(0x1798u); /*0x465416*/
     if ( v3 ) /*0x465425*/
-      return (v3)->ConstructFull(Source); /*0x465431*/
+      return (v3)->ConstructFull(this); /*0x465431*/
     return 0; /*0x465425*/
   }
-  while ( _strcmpi((char *)(*((unsigned int *)dword_A83C6C + v2) + 36), Source) ) /*0x46540a*/
+  while ( _strcmpi((char *)(*((unsigned int *)dword_A83C6C + v2) + 36), this) ) /*0x46540a*/
   {
     if ( ++v2 >= dword_A83C78 ) /*0x465414*/
       goto LABEL_6; /*0x465414*/
@@ -2143,7 +2143,7 @@ char BuildingTypeClass::Enqueue(int a2, void *a2_2)
 } // namespace gamemd
 // 0x41C590
 namespace gamemd {
-size_t BuildingTypeClass::Dequeue(int *aP1, void *a2)
+size_t BuildingTypeClass::Dequeue(void *a2)
 {
 
 
@@ -2159,7 +2159,7 @@ size_t BuildingTypeClass::Dequeue(int *aP1, void *a2)
     }
     char *ptr_0; // edi
     ptr_0 = (char *)this->TechnoTypeClass; /*0x41c5c9*/
-    int v5 = *aP1; // ebx /*0x41c5cb*/
+    int v5 = *this; // ebx /*0x41c5cb*/
     int ptr_0; // ecx
     ptr_0 = (int)this->ptr_4; /*0x41c5cd*/
     if ( ptr_0 <= 0 ) /*0x41c5d2*/
@@ -2189,7 +2189,7 @@ size_t BuildingTypeClass::Dequeue(int *aP1, void *a2)
 } // namespace gamemd
 // 0x45E7B0
 namespace gamemd {
-int BuildingTypeClass::FindIndexByName(void *a1)
+int BuildingTypeClass::FindIndexByName()
 {
 
   if ( !this ) /*0x45e7b6*/
@@ -2477,7 +2477,7 @@ int BuildingTypeClass::GetPowerOutput(int aP1)
 } // namespace gamemd
 // 0x747370
 namespace gamemd {
-int BuildingTypeClass::FindIndex(void *a1)
+int BuildingTypeClass::FindIndex()
 {
 
   if ( !this ) /*0x747376*/

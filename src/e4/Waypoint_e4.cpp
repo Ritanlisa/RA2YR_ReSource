@@ -63,7 +63,7 @@ unsigned int * Waypoint::FindByCell(unsigned short *aP1)
 }  // G42.18 ns repair
 // 0x53ECB0
 namespace gamemd {
-unsigned char * Waypoint::InitInvalid(void *a1)
+unsigned char * Waypoint::InitInvalid()
 {
 
   this->__pad_0 = -1; /*0x53ecb4*/

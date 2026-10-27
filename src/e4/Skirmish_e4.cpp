@@ -453,7 +453,7 @@ int Skirmish::RenderPreview(HWND aP1, void *a2)
       {  /*0x640a29*/
         v18 = v32
             + v34
-            * ((signed int)(1000 * (*(&v15[110].uniqueId + 2 * v17) - v15[109].field_24))
+            * ((signed int)(1000 * (*(&v15[110].uniqueId + 2 * v17) - v15[109].u32_24))
              / v15[110].ptr_4)
             / 1000;  /*0x640944*/
         v19 = v33 + v35 * (1000 * (*(&v15[110].abstractFlags + 2 * v17) - v15[110].ptr_0) / v15[110].ptr_8) / 1000;  /*0x64097a*/
@@ -509,14 +509,14 @@ int Skirmish::RenderPreview(HWND aP1, void *a2)
 } // namespace gamemd
 // 0x6ACD60
 namespace gamemd {
-int Skirmish::EnableSpawnButtons(HWND hDlg)
+int Skirmish::EnableSpawnButtons()
 {
 
   int v4; // esi
 
   Skirmish *v1; // ebp
-  v1 = (gamemd::Skirmish *)(hDlg); /*0x6acd62*/
-  if ( !hDlg ) /*0x6acd66*/
+  v1 = (gamemd::Skirmish *)(this); /*0x6acd62*/
+  if ( !this ) /*0x6acd66*/
     v1 = (Skirmish *)((Dialog *)0x102)->FindByHandle(); /*0x6acd72*/
   char v7; // [esp+7h] [ebp-1h]
   v7 = 0; /*0x6acd79*/

@@ -246,7 +246,7 @@ struct AnimClass {
     void FreeRenderBuffer(void *a1);
     void Render(ConvertClass * a2, ConvertClass * aP5, void *a3 = 0, void *a4 = 0);
     static int SetField95(BuildingClass * aP1, int a2);
-    void **  ctor(void * a2, int * a3, void * a4, int a5, void * a6, void * a7, char a8, void *a1 = 0);  // 0x421ea0
+    void ** ctor(void *a2, int *a3, void *a4, int a5, void *a6, void *a7, char a8);  // 0x421ea0
     AnimClass * * ComputePosition(int *aP1);
     int ReleaseBuffers();
 };

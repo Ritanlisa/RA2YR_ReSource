@@ -10,7 +10,7 @@
 
 // 0x552060
 namespace gamemd {  // G42.18 ns repair
-int LCWPipe::Dtor(void *a1)
+int LCWPipe::Dtor()
 {
   
   

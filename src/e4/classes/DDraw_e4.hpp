@@ -38,7 +38,7 @@ struct DDraw {
     int GetStatus(void *a1 = 0);
     int HandleSuspend();
     static void LogError(UINT, int a2);
-    int ReleaseSurfaces(void *a1 = 0);
+    int ReleaseSurfaces();
     static int WaitForIdle();
     void Init(void *a1 = 0, void *a2 = 0);
 };

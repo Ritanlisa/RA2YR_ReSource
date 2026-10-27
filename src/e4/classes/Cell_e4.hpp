@@ -95,7 +95,7 @@ struct Cell {
     int ApplyDamage(int aP1, int a3, int a4, char aP4);
     int GetNeighbourContent(unsigned int a2, void *a2_1 = 0);  // 0x481810
     int IsBuildable(int a2, char a3, char a4, int aP4, int aP5, int aP6, char aP7);  // 0x4834A0
-    int IsValidHeight(void *a1 = 0);  // 0x485060
+    int IsValidHeight();  // 0x485060
     int IsEmpty(void *a1 = 0);  // 0x486380
     int IsGroundTypeRange();  // 0x4865D0
     int IsInRange(void *a1 = 0);  // 0x486750

@@ -57,7 +57,7 @@ int LocomotionClass::Initialize()
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E7EB0) */  /*0x4af5c2*/
   /* X11: ptr_0 install elided (implicit via DriveLocomotionClass virtuals 0x4af5c8) */
   this->u32_18 = (unsigned int)(&off_7E7E8C); /*0x4af5cf*/
-  return (int)this->ILocomotion; /*0x4af5d8*/
+  return (int)this->ptr_0; /*0x4af5d8*/
 
 }
 } // namespace gamemd
@@ -155,7 +155,7 @@ int LocomotionClass::ProcessData()
   this->u32_70 = 0; /*0x513c8e*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EACFC) */  /*0x513c91*/
   /* X11: ptr_0 install elided (implicit via HoverLocomotionClass virtuals 0x513c97) */
-  return (int)this->ILocomotion; /*0x513ca0*/
+  return (int)this->ptr_0; /*0x513ca0*/
 
 }
 } // namespace gamemd
@@ -209,7 +209,7 @@ int LocomotionClass::Init(void *a1, void *a2)
   this->RefCount = 0; /*0x55a6d2*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EADF4) */  /*0x55a6d5*/
   /* X11: ptr_0 install elided (implicit via LocomotionClass virtuals 0x55a6db) */
-  return this->ILocomotion; /*0x55a6e2*/
+  return this->ptr_0; /*0x55a6e2*/
 
 }
 } // namespace gamemd
@@ -232,7 +232,7 @@ LocomotionClass * LocomotionClass::ProcessMove(char a2)
   (this)->Construct(); /*0x5172f3*/
   if ( (a2 & 1) != 0 ) /*0x5172fd*/
     __3_YAXPAX_Z(this); /*0x517300*/
-  return this->ILocomotion; /*0x51730a*/
+  return this->ptr_0; /*0x51730a*/
 
 }
 } // namespace gamemd

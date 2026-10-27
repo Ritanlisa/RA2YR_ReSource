@@ -169,7 +169,7 @@ int Scenario::ReadTeams()
   v1 = this; /*0x44f827*/
   INIClass::ResetSection(this); /*0x44f82d*/
   memset(v73, 255, sizeof(v73)); /*0x44f83b*/
-  result = INIClass::GetKeyCount(v1->__pad_0, (unsigned __int8 *)aStructures); /*0x44f84a*/
+  result = INIClass::GetKeyCount(v1->ptr_0, (unsigned __int8 *)aStructures); /*0x44f84a*/
   v3 = 0; /*0x44f84f*/
   v71 = result; /*0x44f853*/
   v68 = 0; /*0x44f857*/
@@ -177,7 +177,7 @@ int Scenario::ReadTeams()
   {
     while ( 1 ) /*0x44f874*/
     {
-      StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(v1->__pad_0, (unsigned __int8 *)aStructures, v3); /*0x44f874*/
+      StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(v1->ptr_0, (unsigned __int8 *)aStructures, v3); /*0x44f874*/
       INIClass::GetString(v1, (unsigned __int8 *)aStructures, StringByIndex, 0, String, 128); /*0x44f88f*/
       v5 = strtok(String, Delimiter); /*0x44f89e*/
       v6 = HouseClass::FindByName(v5); /*0x44f8a8*/
@@ -260,7 +260,7 @@ int Scenario::ReadTeams()
                 v29 = BuildingClass::Construct(v28, *((unsigned int *)dword_A83C6C + IndexByName), v65); /*0x44fb27*/
                 if ( v29 ) /*0x44fb2b*/
                 {
-                  v30 = (TeamClass *)ObjectTypeClass::FindByName((ObjectTypeClass *)v16); /*0x44fb33*/
+                  v30 = (TeamClass *)((ObjectTypeClass *)v16)->FindByName(); /*0x44fb33*/
                   if ( v30 ) /*0x44fb3a*/
                   {
                     v31 = TeamClass::FindOrCreate(v30); /*0x44fb3e*/

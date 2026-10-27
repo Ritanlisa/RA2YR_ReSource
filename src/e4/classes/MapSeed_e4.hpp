@@ -25,7 +25,7 @@ struct MapSeed {
     static char PlaceCityBuildings(void *aP1, void *a2, void *aP3, void *a4);
     AbstractClass * * InsertName();
     int CheckName(void *a1 = 0);
-    int IsCellInBounds(void *a1 = 0);
+    int IsCellInBounds();
     int ValidateName(int a2, void *a2_1 = 0);
     bool CheckTileMatch(int16_t *aP1, int16_t *aP2, int aP3, char aP4, char aP5, char aP6, void *a1 = 0);  // 0x56d100
 };

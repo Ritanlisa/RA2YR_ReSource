@@ -49,7 +49,7 @@ void IPXGlobalConnClass::ReceivePacket(int a2)
 
   v2 = this; /*0x540113*/
   Debug::Log(); /*0x540132*/
-  IPXGlobalConnClass_field_0x04 = (Terrain *)v2->PlayerIndex; /*0x540137*/
+  IPXGlobalConnClass_field_0x04 = (Terrain *)v2->__pad_004; /*0x540137*/
   for ( i = 0; i < (int)IPXGlobalConnClass_field_0x04->q038; ++i ) /*0x540144*/
   {
     TileType = (IPXGlobalConnClass_field_0x04)->GetTileType(i); /*0x540158*/
@@ -91,11 +91,11 @@ void IPXGlobalConnClass::ReceivePacket(int a2)
           *(unsigned int *)(this->u32_D0 + 4 * v9) = -1; /*0x54021f*/
         }
         LABEL_14:
-        ((PacketQueue *)this->PlayerIndex)->ReleaseEntry(0, 0, i--, 0, 0); /*0x540226*/
+        ((PacketQueue *)this->__pad_004)->ReleaseEntry(0, 0, i--, 0, 0); /*0x540226*/
       }
       v2 = this; /*0x540277*/
     }
-    IPXGlobalConnClass_field_0x04 = (Terrain *)v2->PlayerIndex; /*0x54027b*/
+    IPXGlobalConnClass_field_0x04 = (Terrain *)v2->__pad_004; /*0x54027b*/
   }
   Debug::Log(); /*0x540296*/
 
@@ -123,7 +123,7 @@ HashTable_flat * * IPXGlobalConnClass::SetAddress(int a2, int arg4, int * a3, IP
 
   v7 = this; /*0x5403f4*/
   v16 = this; /*0x5403fc*/
-  Waypoint::InitInvalid((Waypoint *)&v18); /*0x540400*/
+  ((Waypoint *)&v18)->InitInvalid(); /*0x540400*/
   *(unsigned int *)v18.__pad_0 = *a3; /*0x540413*/
   v18.q004 = a3[1]; /*0x54041a*/
   v19 = a3[2]; /*0x540421*/
@@ -215,14 +215,14 @@ int IPXGlobalConnClass::CheckStatus()
 
   int v2 = 0; // esi /*0x5400d4*/
   Terrain *IPXGlobalConnClass_field_0x04; // ecx
-  IPXGlobalConnClass_field_0x04 = (Terrain *)this->PlayerIndex; /*0x5400d6*/
+  IPXGlobalConnClass_field_0x04 = (Terrain *)this->__pad_004; /*0x5400d6*/
   if ( (int)IPXGlobalConnClass_field_0x04->q038 > 0 ) /*0x5400de*/
   {
     do /*0x540104*/
     {
       if ( (*(unsigned char *)(IPXGlobalConnClass_field_0x04)->GetTileType(v2) & 2) != 0 ) /*0x5400e9*/
-        ((PacketQueue *)this->PlayerIndex)->ReleaseEntry(0, 0, v2--, 0, 0); /*0x5400f7*/
-      IPXGlobalConnClass_field_0x04 = (Terrain *)this->PlayerIndex; /*0x5400fd*/
+        ((PacketQueue *)this->__pad_004)->ReleaseEntry(0, 0, v2--, 0, 0); /*0x5400f7*/
+      IPXGlobalConnClass_field_0x04 = (Terrain *)this->__pad_004; /*0x5400fd*/
       ++v2; /*0x540100*/
     }
     while ( v2 < (int)IPXGlobalConnClass_field_0x04->q038 ); /*0x540104*/
@@ -240,7 +240,7 @@ int IPXGlobalConnClass::Send()
 
   int v2 = 0; // ebx /*0x5402db*/
   int v3 = 0; // esi /*0x5402dd*/
-  int IPXGlobalConnClass_field_0x04 = this->PlayerIndex; // ecx /*0x5402df*/
+  int IPXGlobalConnClass_field_0x04 = this->__pad_004; // ecx /*0x5402df*/
   if ( *(int *)(IPXGlobalConnClass_field_0x04 + 40) > 0 ) /*0x5402e7*/
   {
     do /*0x540332*/
@@ -251,14 +251,14 @@ int IPXGlobalConnClass::Send()
       {
         (&v10)->InitInvalid(); /*0x5402fd*/
         PacketQueue *v6; // ecx
-        v6 = (PacketQueue *)this->PlayerIndex; /*0x54030e*/
+        v6 = (PacketQueue *)this->__pad_004; /*0x54030e*/
         int v8; // [esp+Ch] [ebp-414h] BYREF
         v8 = 12; /*0x54031c*/
         int v9; // [esp+10h] [ebp-410h] BYREF
         PacketQueue::ExtractEntry(v6, &v10.u32_C, &v9, v3--, &v10, &v8, 0); /*0x540324*/
         ++v2; /*0x54032a*/
       }
-      IPXGlobalConnClass_field_0x04 = this->PlayerIndex; /*0x54032b*/
+      IPXGlobalConnClass_field_0x04 = this->__pad_004; /*0x54032b*/
       ++v3; /*0x54032e*/
     }
     while ( v3 < *(unsigned int *)(IPXGlobalConnClass_field_0x04 + 40) ); /*0x540332*/
@@ -282,7 +282,7 @@ int IPXGlobalConnClass::SendPacket(int a2, short a3)
   int v12; // [esp+10h] [ebp-410h] BYREF
   Waypoint v13; // [esp+14h] [ebp-40Ch] BYREF
 
-  IPXGlobalConnClass_field_0x04 = this->PlayerIndex; /*0x54034b*/
+  IPXGlobalConnClass_field_0x04 = this->__pad_004; /*0x54034b*/
   v5 = 0; /*0x54034e*/
   v6 = 0; /*0x540350*/
   if ( *(int *)(IPXGlobalConnClass_field_0x04 + 40) <= 0 ) /*0x540357*/
@@ -297,12 +297,12 @@ int IPXGlobalConnClass::SendPacket(int a2, short a3)
       && v8[16] == a3 )
     {
       Waypoint::InitInvalid(&v13); /*0x540398*/
-      v9 = (PacketQueue *)this->PlayerIndex; /*0x5403b3*/
+      v9 = (PacketQueue *)this->__pad_004; /*0x5403b3*/
       v11 = 12; /*0x5403b7*/
       PacketQueue::ExtractEntry(v9, &v13.u32_C, &v12, v6--, &v13, &v11, 0); /*0x5403bf*/
       ++v5; /*0x5403c5*/
     }
-    IPXGlobalConnClass_field_0x04 = this->PlayerIndex; /*0x5403c6*/
+    IPXGlobalConnClass_field_0x04 = this->__pad_004; /*0x5403c6*/
     ++v6; /*0x5403c9*/
   }
   while ( v6 < *(unsigned int *)(IPXGlobalConnClass_field_0x04 + 40) ); /*0x5403cd*/

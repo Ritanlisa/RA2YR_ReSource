@@ -96,7 +96,7 @@ struct TeamTypeClass {
     int Check(int a2, void *a2_2, void *a3);
     int Construct(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0, void *a9 = 0);
     int DestroyAllInstances();
-    int FindByName(void *a1 = 0);
+    int FindByName();
     int FindFirstInstance();
     int FlashAllInstances(AnimClass * aP1);
     int GetAuxField();

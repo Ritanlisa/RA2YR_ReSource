@@ -48,7 +48,7 @@ struct AudioSample {
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int Destructor(void *a1 = 0);
-    int IsBuffering(void *a1 = 0);
+    int IsBuffering();
     void InitLinkedList(void *a1 = 0);  // 0x408840
 };
 

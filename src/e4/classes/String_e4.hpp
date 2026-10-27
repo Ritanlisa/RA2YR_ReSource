@@ -34,7 +34,7 @@ struct String {
     AbstractClass * * Replace(char * SubStr, const char * a3, void *a3_1 = 0);  // G42.33 b7 static-form sync
     AbstractClass * * Tokenize(int a2, ObjectClass * aP2, ObjectClass * aP3);  // 0x7B5F10
     AbstractClass * * Tokenize2(int a2, wchar_t * Str, void ** a4);  // 0x7B7A60
-    ObjectClass *  FormatDword(char * Buffer);  // 0x777B30
+    char * FormatDword(char *Buffer);  // 0x777B30
     ObjectClass *  CopyConstant(char * Destination);  // 0x777B60
     char * CopyUpper(char * String, ObjectClass * aP1);  // 0x4F4C30
     char * Copy(const char *a2_2, void *a2 = 0);  // 0x4F4C70

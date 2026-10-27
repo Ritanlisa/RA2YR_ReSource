@@ -16,7 +16,7 @@ struct FileTreeNode {
     unsigned int u32_1C;  // 0x1C
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
-    int Destroy(void *a1 = 0);
+    int Destroy();
 };
 
 } // namespace gamemd

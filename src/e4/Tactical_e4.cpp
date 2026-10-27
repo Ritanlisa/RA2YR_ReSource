@@ -95,7 +95,7 @@ void * Tactical::ConstructTacticalSurface()
   this->Tactical_field_0x8 = 1; /*0x42a6f2*/
   this->nextArrayIndex = 0; /*0x42a6f5*/
   this->referenceCount = 0; /*0x42a6f8*/
-  this->__pad_20 = 0; /*0x42a6fb*/
+  this->q020 = 0; /*0x42a6fb*/
   this->u32_24 = 0; /*0x42a6fe*/
   this->u32_28 = -1; /*0x42a701*/
   this->u32_2C = -1; /*0x42a704*/
@@ -439,7 +439,7 @@ ScenarioClass * * Tactical::CalculateTacticalLighting(int * a1, IUnknown * aP2, 
       }
       *v10 += v9->Tactical_field_0x11B * dword_A8B230[378].referenceCount - dword_A8B230[378].nextArrayIndex; /*0x48457c*/
       referenceCount = dword_A8B230[378].nextArrayIndex; /*0x48458a*/
-      v24 = dword_A8B230[378].referenceCount * (v9->dominatorRed + 4); /*0x484593*/
+      v24 = dword_A8B230[378].referenceCount * (v9->Tactical_field_0x11B + 4); /*0x484593*/
     }
     v22 = v24 - referenceCount + *a6; /*0x48459e*/
     goto LABEL_21; /*0x48459e*/
@@ -638,7 +638,7 @@ int Tactical::IsCellVisible(IUnknown * aP1)
 }
 // 0x58C2A0
 namespace gamemd {
-void * Tactical::GetCellData(void *a1)
+void * Tactical::GetCellData()
 {
   return (char *)(g_MissionQueueFrame.localVariables[163] /*0x58c2be*/
   + 80 * (*(int16_t *)this->q000 + g_MapCellWidth * *(int16_t *)this->q1B70));
@@ -723,7 +723,7 @@ void* Tactical_Radar_Render(void * a1, void * a2, void * a3, void * a4, void * a
   v54 = v8; /*0x640a4b*/
   if ( *v8 ) /*0x640a46*/
   {
-    LayerClass::CellIteratorReset((LayerClass *)&DataGlobal_87F7E8); /*0x640a5d*/
+    ((LayerClass *)&DataGlobal_87F7E8)->CellIteratorReset(); /*0x640a5d*/
     v10 = 10000; /*0x640a62*/
     v64 = 10000; /*0x640a6c*/
     v58 = 10000; /*0x640a70*/
@@ -1198,7 +1198,7 @@ MouseClass * * Tactical::HandleTacticalMouseInput(int _28, unsigned int * a2, in
 }
 // 0x6A6610
 namespace gamemd {
-int Tactical::UpdateUIVisibility(void *a1_1)
+int Tactical::UpdateUIVisibility()
 {
   int result; // eax
 
@@ -1226,7 +1226,7 @@ int Tactical::UpdateUIVisibility(void *a1_1)
   int v1 = 26; // eax /*0x6a6631*/
   if ( dword_A8B230[374].NeedsSaveOrLink ) /*0x6a6629*/
     v1 = 18; /*0x6a6638*/
-  if ( *((unsigned int *)a1_1 + 997 * *((unsigned int *)a1_1 + 5351) + 1382) <= 2 /*0x6a668a*/
+  if ( *((unsigned int *)this + 997 * *((unsigned int *)this + 5351) + 1382) <= 2 /*0x6a668a*/
   * ((g_DSurface_ViewBounds
   - g_SidebarBounds
   - v1
@@ -1903,10 +1903,10 @@ int Tactical_42::FindItem(unsigned int * a2)
 }
 // 0x4A35F0
 namespace gamemd {
-char * Tactical::SetCellTransform(int a2, int aP2, int a4, int aP4, int a6, int a7, void *a7_1)
+char * Tactical::SetCellTransform(int aP2, int a4, int aP4, int a6, int a7, void *a7_1)
 {
 
-  char *result = &this->__pad_20 * a2; // eax /*0x4a35fb*/
+  char *result = &this->__pad_20 * this; // eax /*0x4a35fb*/
   *(unsigned int *)result = aP2; /*0x4a3601*/
   result->u32_4 = a4; /*0x4a3607*/
   result->u32_8 = aP4; /*0x4a360e*/

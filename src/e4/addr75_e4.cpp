@@ -658,13 +658,13 @@ int CCINIClass::InitFromINIEVA()
   (KeyCount) = ((KeyCount) & ~0xFF) | ((INIClass::BinarySearchSection((int)this, g_INI_Key_DialogList) != 0) & 0xFF); /*0x75301c*/
   if ( (unsigned char)KeyCount ) /*0x753023*/
   {
-    KeyCount = (v1->__pad_0)->GetKeyCount(g_INI_Key_DialogList); /*0x753030*/
+    KeyCount = (v1->ptr_0)->GetKeyCount(g_INI_Key_DialogList); /*0x753030*/
     v3 = KeyCount; /*0x753035*/
     v4 = 0; /*0x753037*/
     v14 = KeyCount; /*0x75303b*/
     for ( i = 0; v4 < v3; i = v4 ) /*0x753043*/
     {
-      StringByIndex = (unsigned __int8 *)(v1->__pad_0)->GetStringByIndex(g_INI_Key_DialogList, v4); /*0x753060*/
+      StringByIndex = (unsigned __int8 *)(v1->ptr_0)->GetStringByIndex(g_INI_Key_DialogList, v4); /*0x753060*/
       KeyCount = INIClass::GetString(v1, g_INI_Key_DialogList, StringByIndex, &g_INI_DefaultBuffer, Destination, 200); /*0x75306d*/
       if ( KeyCount ) /*0x753074*/
       {

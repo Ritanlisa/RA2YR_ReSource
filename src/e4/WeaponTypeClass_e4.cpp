@@ -122,9 +122,9 @@ unsigned int * WeaponTypeClass::Constructor(WeaponTypeClass * aP1, void *a2, voi
   this->AssaultAnim_d = 0;  /*0x771d1e*/
   this->OpenToppedAnim_d = 0;  /*0x771d24*/
   this->AttachedParticleSystem = 0;  /*0x771d2a*/
-  this->LaserInnerColor[0] = 0;  /*0x771d30*/
-  this->LaserInnerColor[1] = 0;  /*0x771d36*/
-  this->LaserInnerColor[2] = 0;  /*0x771d3c*/
+  this->LaserInnerColor_d[0] = 0;  /*0x771d30*/
+  this->LaserInnerColor_d[1] = 0;  /*0x771d36*/
+  this->LaserInnerColor_d[2] = 0;  /*0x771d3c*/
   this->LaserOuterColor[0] = 0;  /*0x771d42*/
   this->LaserOuterColor[1] = 0;  /*0x771d48*/
   this->LaserOuterColor[2] = 0;  /*0x771d4e*/
@@ -396,9 +396,9 @@ int WeaponTypeClass_SaveLoad_Prefix(WeaponTypeClass *aP0, WeaponTypeClass *aP0, 
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&v5->Warhead); /*0x772e1e*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&v5->Projectile); /*0x772e2f*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&v5->AttachedParticleSystem); /*0x772e40*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&v5->AssaultAnim); /*0x772e51*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&v5->AssaultAnim_d); /*0x772e51*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&v5->OccupantAnim); /*0x772e62*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&v5->OpenToppedAnim); /*0x772e73*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&v5->OpenToppedAnim_d); /*0x772e73*/
     int m; // esi
     for ( m = 0; m < v5-((unsigned int *)(>Anim))[4]; ++m ) /*0x772e83*/
       ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v5-((unsigned int *)(>Anim))[1] + 4 * m)); /*0x772e94*/
@@ -479,7 +479,7 @@ WeaponTypeClass * WeaponTypeClass::ddtor(void ** Block, char a2)
   if ( NeedsSaveOrLink && (((v3[7].ptr_4) >> 8) & 0xFF) ) /*0x773182*/
   {
     __3_YAXPAX_Z(NeedsSaveOrLink); /*0x77318b*/
-    v3[6].NeedsSaveOrLink = 0; /*0x773193*/
+    v3[6].needsSave = 0; /*0x773193*/
   }
   BYTE1(v3[7].ptr_4) = 0; /*0x773199*/
   v3[7].ptr_0 = 0; /*0x77319f*/
@@ -595,7 +595,7 @@ unsigned int *  WeaponTypeClass::loadWeaponProperties(int aP1, void *a2)
   /* X11: ptr_0 install elided (implicit via WeaponTypeClass virtuals 0x771f2e) */
   /* X11: ptr_0 install elided (implicit via WeaponTypeClass virtuals 0x771f35) */
   /* X11: ptr_0 install elided (implicit via WeaponTypeClass virtuals 0x771f3c) */
-  return &this->AbstractTypeClass; /*0x771f45*/
+  return &this->ptr_0; /*0x771f45*/
 
 }
 }  // G42.18c ns repair

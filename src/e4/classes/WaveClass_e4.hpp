@@ -155,7 +155,7 @@ struct WaveClass {
     int LoadWaveData(int a2, int a3);
     int ProcessWaveTick(int * a1, int * a2, int a3);
     int StubReturnFalse();
-     void Destroy(void *a1 = 0);
+     void Destroy();
 };
 
 } // namespace gamemd

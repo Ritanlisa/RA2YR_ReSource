@@ -821,7 +821,7 @@ unsigned int * GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)())
         __3_YAXPAX_Z(v8); /*0x596113*/
       }
       dword_ABE154 = 0; /*0x59611f*/
-      RawFileClass::Dtor((BufferIOFileClass *)&v17.q010); /*0x596125*/
+      ((RawFileClass *)&v17.q010)->Dtor(); /*0x596125*/
       goto LABEL_39; /*0x59612a*/
     }
     v9 = dword_ABE154; /*0x59612f*/
@@ -863,7 +863,7 @@ unsigned int * GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)())
         CreateDirectoryA(PathName, 0); /*0x59625a*/
       CopyFileA(ExistingFileName, Destination, 0); /*0x59626e*/
       CleanupRandomMapCache(v16); /*0x596274*/
-      RawFileClass::Dtor((BufferIOFileClass *)&v17.q010); /*0x59627d*/
+      ((RawFileClass *)&v17.q010)->Dtor(); /*0x59627d*/
       v13 = dword_ABE154; /*0x596282*/
     }
     if ( v13 ) /*0x59628a*/

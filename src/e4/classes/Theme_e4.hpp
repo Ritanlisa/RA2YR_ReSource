@@ -20,7 +20,7 @@ struct Theme {
     void * ptr_44;  // 0x44
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
-    bool IsPlaying(void *a1 = 0);
+    bool IsPlaying();
     int QueueSong(int aP1, void *a2 = 0);
     int Stop(char aP1, void *a2 = 0);
 #pragma pack(pop)

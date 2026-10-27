@@ -18,7 +18,7 @@ unsigned int * ScoreAnimClass::Constructor_ScoreAnimClass_0(char a2)
   /* X11: ptr_0 install elided (implicit via ScoreAnimClass virtuals 0x691009) */
   if ( (a2 & 1) != 0 ) /*0x69100f*/
     __3_YAXPAX_Z(this); /*0x691012*/
-  return this->__pad_0; /*0x69101c*/
+  return this->m_0; /*0x69101c*/
 
 }
 } // namespace gamemd
@@ -61,7 +61,7 @@ unsigned int * ScoreAnimClass::Constructor_ScoreFontClass(char a2)
   }
   if ( (a2 & 1) != 0 ) /*0x6910ee*/
     __3_YAXPAX_Z(this); /*0x6910f1*/
-  return this->__pad_0; /*0x6910fb*/
+  return this->m_0; /*0x6910fb*/
 
 }
 } // namespace gamemd

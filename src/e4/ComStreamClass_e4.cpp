@@ -96,7 +96,7 @@ v5 = (HWND)Dialog::FindByHandle((Dialog *)0x10F); /*0x7a3e4a*/
       ((String *)&MEMORY[0xB73E40])->Assign_Alt(lParama); /*0x7a3eeb*/
       String::Assign_Alt((String *)&g_WebBrowserConfig, v23); /*0x7a3efd*/
       v7 = GetDlgItem(v5, 1836); /*0x7a3f0f*/
-      v8 = String::GetOrEmpty_Alt((String *)&g_WebBrowserConfig); /*0x7a3f11*/
+      v8 = ((String *)&g_WebBrowserConfig)->GetOrEmpty_Alt(); /*0x7a3f11*/
       SendMessageA(v7, 0x4B4u, 0, (LPARAM)v8); /*0x7a3f1f*/
       (dword_84A238) = ((dword_84A238) & ~0xFF) | ((1) & 0xFF); /*0x7a3f29*/
       v9 = GetDlgItem(v5, 1337); /*0x7a3f30*/

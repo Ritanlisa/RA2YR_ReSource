@@ -36,7 +36,7 @@ struct BufferIOFileClass {
     unsigned int TotalBytesWritten;  // 0x48
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
-    int Destruct(void *a1 = 0);  // def-aligned
+    int Destruct();  // def-aligned
     void StubReturnFalse(int a1, int a2, int a3);
      uint8_t * Constructor(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0);
 int Dtor(void *a1 = 0);

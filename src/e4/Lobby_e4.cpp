@@ -376,7 +376,7 @@ LABEL_111:
       SendMessageA(DlgItem, 0x151u, v31, (LPARAM)v9); /*0x5eb609*/
       v16 = v36; /*0x5eb60b*/
     }
-    v32 = WideString::GetOrEmpty_Alt((wchar_t **)&v38); /*0x5eb613*/
+    v32 = ((WideString *)&v38)->GetOrEmpty_Alt(); /*0x5eb613*/
     SendMessageA(DlgItem, 0x4C0u, 0xFFFFFFFF, (LPARAM)v32); /*0x5eb621*/
     if ( !v35 ) /*0x5eb629*/
       ShowWindow(DlgItem, 5); /*0x5eb62e*/

@@ -60,7 +60,7 @@ unsigned int * ScoreScreen::LoadScoreFont(int aP1)
     v7 = 0; /*0x690a99*/
     ((Vector *)v6)->Clear(); /*0x690a9d*/
     *(unsigned int *)v5.__tail_0 = &off_7E1668; /*0x690aa6*/
-    BufferIOFileClass::Dtor((BufferIOFileClass *)&v5); /*0x690aae*/
+    ((BufferIOFileClass *)&v5)->Dtor(); /*0x690aae*/
   }
   this->u32_4 = 11; /*0x690ab7*/
   this->q014 = aP1; /*0x690abe*/
@@ -101,7 +101,7 @@ unsigned int * ScoreScreen::LoadCountryFlags(int a2)
     v7 = 0; /*0x690b69*/
     ((Vector *)v6)->Clear(); /*0x690b6d*/
     *(unsigned int *)v5.__tail_0 = &off_7E1668; /*0x690b76*/
-    BufferIOFileClass::Dtor((BufferIOFileClass *)&v5); /*0x690b7e*/
+    ((BufferIOFileClass *)&v5)->Dtor(); /*0x690b7e*/
   }
   this->u32_4 = 20; /*0x690b87*/
   this->q014 = a2; /*0x690b8e*/
@@ -178,7 +178,7 @@ int ScoreScreen::RemoveItem(int a2, int a3, char aP3, char a5, int a6)
     if ( !(unsigned __int8)Audio::IsPlaying() ) /*0x77136a*/
     {
       this->u32_3AC = Timer::GetTicks(); /*0x771386*/
-      this->u32_3B0 = v25.u32_8; /*0x771390*/
+      this->u32_3B0 = v25.ptr_8; /*0x771390*/
       this->u32_3B4 = a6; /*0x771393*/
     }
     v14 = this->u32_3C8; /*0x771396*/

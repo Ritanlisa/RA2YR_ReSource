@@ -560,7 +560,7 @@ BombClass * * E4Recv_56AF40::sub_56AF40(int a2)
   }
   while ( v12 ); /*0x56b0c7*/
   (*(void (**)(Pipe *))(*(unsigned int *)v17.__pad_0 + 4))(&v17); /*0x56b0d1*/
-  LCWPipe::Dtor((LCWPipe *)&v17); /*0x56b0d8*/
+  ((LCWPipe *)&v17)->Dtor(); /*0x56b0d8*/
   return v11; /*0x56b0df*/
 
 }

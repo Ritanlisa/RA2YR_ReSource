@@ -376,12 +376,12 @@ void CaptureManagerClass::CaptureUnit(int a1, int a2, int a3, int aP1, int aP0)
         v28 = AnimClass::ctor(v27, *&dword_8871E0->q320, &v32, 0, 1, (void *)0x600, 0, 0); /*0x471f4c*/
       else
         v28 = 0; /*0x471f53*/
-      v5->mindControlRingAnim = (int)v28; /*0x471f57*/
+      v5->target_d = (int)v28; /*0x471f57*/
       if ( v28 ) /*0x471f5d*/
       {
         BuildingClass::AimTurret((BuildingClass *)v28, v5); /*0x471f62*/
         if ( v21 ) /*0x471f69*/
-          *(unsigned int *)(v5->mindControlRingAnim + 256) = -1024; /*0x471f71*/
+          *(unsigned int *)(v5->target_d + 256) = -1024; /*0x471f71*/
       }
       return 1; /*0x471f7e*/
     }

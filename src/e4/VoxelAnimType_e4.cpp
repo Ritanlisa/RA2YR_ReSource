@@ -105,12 +105,12 @@ AbstractClass * * VoxelAnimType::LoadSection(const char *a2, int a3)
       v22 = 0; /*0x5f7cb4*/
       ((Vector *)v21)->Clear(); /*0x5f7cbb*/
       *(unsigned int *)v20.__tail_0 = &off_7E1668; /*0x5f7ccc*/
-      BufferIOFileClass::Dtor((BufferIOFileClass *)&v20); /*0x5f7cd3*/
+      ((BufferIOFileClass *)&v20)->Dtor(); /*0x5f7cd3*/
       /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x5f7cdc*/
       v19 = 0; /*0x5f7ce0*/
       ((Vector *)v18)->Clear(); /*0x5f7ce4*/
       *(unsigned int *)v17.__tail_0 = &off_7E1668; /*0x5f7ced*/
-      BufferIOFileClass::Dtor((BufferIOFileClass *)&v17); /*0x5f7cf1*/
+      ((BufferIOFileClass *)&v17)->Dtor(); /*0x5f7cf1*/
       return 1; /*0x5f7d02*/
     }
     v14 = (void *)*((unsigned int *)this + 2 * a3 + 50); /*0x5f7d05*/
@@ -131,7 +131,7 @@ AbstractClass * * VoxelAnimType::LoadSection(const char *a2, int a3)
     v22 = 0; /*0x5f7d5c*/
     ((Vector *)v21)->Clear(); /*0x5f7d63*/
     *(unsigned int *)v20.__tail_0 = &off_7E1668; /*0x5f7d74*/
-    BufferIOFileClass::Dtor((BufferIOFileClass *)&v20); /*0x5f7d7b*/
+    ((BufferIOFileClass *)&v20)->Dtor(); /*0x5f7d7b*/
     /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x5f7d84*/
     v19 = 0; /*0x5f7d88*/
     ((Vector *)v18)->Clear(); /*0x5f7d8c*/
@@ -144,7 +144,7 @@ AbstractClass * * VoxelAnimType::LoadSection(const char *a2, int a3)
     ((Vector *)v18)->Clear(); /*0x5f7b34*/
     *(unsigned int *)v17.__tail_0 = &off_7E1668; /*0x5f7b39*/
   }
-  BufferIOFileClass::Dtor((BufferIOFileClass *)&v17); /*0x5f7d99*/
+  ((BufferIOFileClass *)&v17)->Dtor(); /*0x5f7d99*/
   return 0; /*0x5f7cf6*/
 
 }
@@ -212,12 +212,12 @@ AbstractClass * * VoxelAnimType::LoadBarrel(const char *a2, int a3)
       v19 = 0; /*0x5f7f92*/
       ((Vector *)v18)->Clear(); /*0x5f7f99*/
       *(unsigned int *)v17.__tail_0 = &off_7E1668; /*0x5f7faa*/
-      BufferIOFileClass::Dtor((BufferIOFileClass *)&v17); /*0x5f7fb1*/
+      ((BufferIOFileClass *)&v17)->Dtor(); /*0x5f7fb1*/
       /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x5f7fba*/
       v16 = 0; /*0x5f7fbe*/
       ((Vector *)v15)->Clear(); /*0x5f7fc2*/
       *(unsigned int *)v14.__tail_0 = &off_7E1668; /*0x5f7fcb*/
-      BufferIOFileClass::Dtor((BufferIOFileClass *)&v14); /*0x5f7fcf*/
+      ((BufferIOFileClass *)&v14)->Dtor(); /*0x5f7fcf*/
       return 1; /*0x5f7fd7*/
     }
     else
@@ -238,12 +238,12 @@ AbstractClass * * VoxelAnimType::LoadBarrel(const char *a2, int a3)
       v19 = 0; /*0x5f802e*/
       ((Vector *)v18)->Clear(); /*0x5f8035*/
       *(unsigned int *)v17.__tail_0 = &off_7E1668; /*0x5f8046*/
-      BufferIOFileClass::Dtor((BufferIOFileClass *)&v17); /*0x5f804d*/
+      ((BufferIOFileClass *)&v17)->Dtor(); /*0x5f804d*/
       /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x5f8056*/
       v16 = 0; /*0x5f805a*/
       ((Vector *)v15)->Clear(); /*0x5f805e*/
       *(unsigned int *)v14.__tail_0 = &off_7E1668; /*0x5f8067*/
-      BufferIOFileClass::Dtor((BufferIOFileClass *)&v14); /*0x5f806b*/
+      ((BufferIOFileClass *)&v14)->Dtor(); /*0x5f806b*/
       return 0; /*0x5f8073*/
     }
   }
@@ -253,7 +253,7 @@ AbstractClass * * VoxelAnimType::LoadBarrel(const char *a2, int a3)
     v16 = 0; /*0x5f7e50*/
     ((Vector *)v15)->Clear(); /*0x5f7e54*/
     *(unsigned int *)v14.__tail_0 = &off_7E1668; /*0x5f7e5d*/
-    BufferIOFileClass::Dtor((BufferIOFileClass *)&v14); /*0x5f7e65*/
+    ((BufferIOFileClass *)&v14)->Dtor(); /*0x5f7e65*/
     return 1; /*0x5f7e6d*/
   }
 
@@ -371,7 +371,7 @@ int VoxelAnimType::LoadAnim(void *a1)
     v53 = 0; /*0x5f8256*/
     ((Vector *)v52)->Clear(); /*0x5f825a*/
     *(unsigned int *)v51.__tail_0 = &off_7E1668; /*0x5f8263*/
-    BufferIOFileClass::Dtor((BufferIOFileClass *)&v51); /*0x5f826b*/
+    ((BufferIOFileClass *)&v51)->Dtor(); /*0x5f826b*/
   }
   else
   {
@@ -430,7 +430,7 @@ int VoxelAnimType::LoadAnim(void *a1)
         v56 = 0; /*0x5f87fb*/
         ((Vector *)v55)->Clear(); /*0x5f8802*/
         *(unsigned int *)v54.__tail_0 = &off_7E1668; /*0x5f880e*/
-        BufferIOFileClass::Dtor((BufferIOFileClass *)&v54); /*0x5f8819*/
+        ((BufferIOFileClass *)&v54)->Dtor(); /*0x5f8819*/
       }
       goto LABEL_92; /*0x5f8819*/
     }
@@ -497,13 +497,13 @@ int VoxelAnimType::LoadAnim(void *a1)
         v56 = 0; /*0x5f8437*/
         ((Vector *)v55)->Clear(); /*0x5f843e*/
         *(unsigned int *)v54.__tail_0 = &off_7E1668; /*0x5f844a*/
-        BufferIOFileClass::Dtor((BufferIOFileClass *)&v54); /*0x5f8455*/
+        ((BufferIOFileClass *)&v54)->Dtor(); /*0x5f8455*/
       }
       /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x5f845e*/
       v53 = 0; /*0x5f8466*/
       ((Vector *)v52)->Clear(); /*0x5f846a*/
       *(unsigned int *)v51.__tail_0 = &off_7E1668; /*0x5f8473*/
-      BufferIOFileClass::Dtor((BufferIOFileClass *)&v51); /*0x5f847b*/
+      ((BufferIOFileClass *)&v51)->Dtor(); /*0x5f847b*/
     }
     if ( this->u32_1E8 ) /*0x5f8480*/
     {
@@ -554,14 +554,14 @@ int VoxelAnimType::LoadAnim(void *a1)
         v56 = 0; /*0x5f85f7*/
         ((Vector *)v55)->Clear(); /*0x5f85fe*/
         *(unsigned int *)v54.__tail_0 = &off_7E1668; /*0x5f860a*/
-        BufferIOFileClass::Dtor((BufferIOFileClass *)&v54); /*0x5f8615*/
+        ((BufferIOFileClass *)&v54)->Dtor(); /*0x5f8615*/
       }
 LABEL_92:
       /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x5f881e*/
       v53 = 0; /*0x5f882a*/
       Vector::Clear((int)v52); /*0x5f882e*/
       *(unsigned int *)v51.__tail_0 = &off_7E1668; /*0x5f8833*/
-      BufferIOFileClass::Dtor((BufferIOFileClass *)&v51); /*0x5f883f*/
+      ((BufferIOFileClass *)&v51)->Dtor(); /*0x5f883f*/
     }
   }
 LABEL_93:

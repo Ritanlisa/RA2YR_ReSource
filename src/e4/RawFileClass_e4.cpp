@@ -10,7 +10,7 @@
 
 // 0x65CA00
 namespace gamemd {  // G42.18 ns repair
-int RawFileClass::Dtor(void *a1)
+int RawFileClass::Dtor()
 {
 
   FileClass v3; // edi
@@ -23,7 +23,7 @@ int RawFileClass::Dtor(void *a1)
     result = CloseHandle(*(HANDLE *)this->FileTimeDateLo); /*0x65ca17*/
     if ( !result ) /*0x65ca1f*/
     {
-      v3 = this->FileClass; /*0x65ca25*/
+      v3 = this->__tail_0; /*0x65ca25*/
       int v5; // [esp-8h] [ebp-Ch]
       v5 = *(unsigned int *)this->FileNameAllocated; /*0x65ca27*/
       DWORD LastError; // eax

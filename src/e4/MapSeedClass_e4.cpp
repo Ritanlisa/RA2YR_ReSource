@@ -200,11 +200,11 @@ LABEL_18:
           {
             if ( v22 ) /*0x5a5ed1*/
             {
-              v52.is_active = (__int16)v20; /*0x5a607e*/
-              v52.entries = (__int16)v5; /*0x5a6085*/
-              v52.count = 3; /*0x5a609b*/
-              v52.is_active = 1; /*0x5a60a2*/
-              if ( (unsigned __int8)IsAreaClearMap(&v52.is_active, 0, 0) ) /*0x5a60a9*/
+              v52.q020 = (__int16)v20; /*0x5a607e*/
+              v52.q024 = (__int16)v5; /*0x5a6085*/
+              v52.q028 = 3; /*0x5a609b*/
+              v52.q020 = 1; /*0x5a60a2*/
+              if ( (unsigned __int8)IsAreaClearMap(&v52.q020, 0, 0) ) /*0x5a60a9*/
               {
                 PlaceMapSeedClassBuildings(g_CellTileTypeCache + 1, &v20, -1, -1); /*0x5a60c6*/
                 if ( v21 ) /*0x5a60d1*/
@@ -228,9 +228,9 @@ LABEL_18:
               }
               else
               {
-                *(unsigned int *)v52.extension = (__int16)v20; /*0x5a615f*/
+                *(unsigned int *)v52.ptr_0 = (__int16)v20; /*0x5a615f*/
                 v52.MapSeedClass_field_0x04 = (short)(((v20) >> 16) & 0xFFFF); /*0x5a6168*/
-                v52.Capacity = 3; /*0x5a616f*/
+                v52.q028 = 3; /*0x5a616f*/
                 v52.u32_C = 4; /*0x5a6176*/
                 if ( v21 ) /*0x5a6181*/
                 {
@@ -248,11 +248,11 @@ LABEL_18:
                     (v5) = ((v5) & ~0xFFFF) | ((PlaceMapSeedClassBuildings(g_CellTileTypeCache + 7, &v20, -1, -1)) & 0xFFFF); /*0x5a63e7*/
                     goto LABEL_73; /*0x5a63ec*/
                   }
-                  v52.max_entries = (__int16)v20; /*0x5a61e9*/
+                  v52.q020 = (__int16)v20; /*0x5a61e9*/
                   v52.field_14 = (short)(((v20) >> 16) & 0xFFFF) + 3; /*0x5a61fd*/
-                  v52.entries = 3; /*0x5a6204*/
-                  v52.count = 2; /*0x5a620b*/
-                  if ( (unsigned __int8)IsAreaClearMap(&v52.max_entries, 0, 0) && v16 - (short)(((v20) >> 16) & 0xFFFF) > 5 ) /*0x5a6229*/
+                  v52.q024 = 3; /*0x5a6204*/
+                  v52.q028 = 2; /*0x5a620b*/
+                  if ( (unsigned __int8)IsAreaClearMap(&v52.q020, 0, 0) && v16 - (short)(((v20) >> 16) & 0xFFFF) > 5 ) /*0x5a6229*/
                   {
                     v21 = 1; /*0x5a622b*/
                     v26 = 1; /*0x5a6230*/
@@ -422,7 +422,7 @@ char MapSeedClass::ValidateRectBounds(void *a1)
   int v13; // [esp+14h] [ebp-8h]
   int v14; // [esp+18h] [ebp-4h]
 
-  v2 = *(unsigned int *)this->extension; /*0x5a76ee*/
+  v2 = *(unsigned int *)this->ptr_0; /*0x5a76ee*/
   MapSeedClass_field_0x04 = this->MapSeedClass_field_0x04; /*0x5a76f0*/
   *(unsigned int *)v12 = (__int16)MapSeedClass_field_0x04 + (__int16)v2; /*0x5a76fe*/
   if ( *(int *)v12 > g_MissionQueueFrame.localVariables[160] /*0x5a772a*/
@@ -430,7 +430,7 @@ char MapSeedClass::ValidateRectBounds(void *a1)
     && (__int16)MapSeedClass_field_0x04 - (__int16)v2 < g_MissionQueueFrame.localVariables[160]
     && *(int *)v12 <= g_MissionQueueFrame.localVariables[161] )
   {
-    v13 = this->Capacity + v2 - 1; /*0x5a7737*/
+    v13 = this->q028 + v2 - 1; /*0x5a7737*/
     *(unsigned int *)v12 = (__int16)MapSeedClass_field_0x04 + (__int16)v13; /*0x5a7746*/
     if ( *(int *)v12 > g_MissionQueueFrame.localVariables[160] /*0x5a7772*/
       && (__int16)v13 - (__int16)MapSeedClass_field_0x04 < g_MissionQueueFrame.localVariables[160]
@@ -454,8 +454,8 @@ char MapSeedClass::ValidateRectBounds(void *a1)
           if ( (((((MapSeedClass_field_0x04) ^ (MapSeedClass_field_0x04 + 3)) & ((MapSeedClass_field_0x04) ^ ((MapSeedClass_field_0x04) - (MapSeedClass_field_0x04 + 3))))) < 0) ) /*0x5a7805*/
           {
 LABEL_24:
-            v8 = *(unsigned int *)this->extension; /*0x5a785b*/
-            if ( *(unsigned int *)this->extension >= *(unsigned int *)this->extension + 3 ) /*0x5a7862*/
+            v8 = *(unsigned int *)this->ptr_0; /*0x5a785b*/
+            if ( *(unsigned int *)this->ptr_0 >= *(unsigned int *)this->ptr_0 + 3 ) /*0x5a7862*/
               return 1; /*0x5a78b9*/
             while ( 1 ) /*0x5a786b*/
             {
@@ -464,12 +464,12 @@ LABEL_24:
               v12[1] = v9; /*0x5a7879*/
               v10 = (CellClass *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v12); /*0x5a7883*/
               if ( !(unsigned __int8)CellClass::InBounds(v10) /*0x5a789d*/
-                && !(unsigned __int8)Cell::IsEmpty((Cell *)v10)
+                && !(unsigned __int8)((Cell *)v10)->IsEmpty()
                 && !(unsigned __int8)CellClass::InMapDataRange(v10) )
               {
                 break; /*0x5a789d*/
               }
-              if ( ++v8 >= *(unsigned int *)this->extension + 3 ) /*0x5a78ae*/
+              if ( ++v8 >= *(unsigned int *)this->ptr_0 + 3 ) /*0x5a78ae*/
                 return 1; /*0x5a78ae*/
             }
           }
@@ -495,8 +495,8 @@ LABEL_23:
               {
                 break; /*0x5a783d*/
               }
-              v2 = *(unsigned int *)this->extension; /*0x5a7846*/
-              if ( ++v5 >= *(unsigned int *)this->extension + 3 ) /*0x5a784e*/
+              v2 = *(unsigned int *)this->ptr_0; /*0x5a7846*/
+              if ( ++v5 >= *(unsigned int *)this->ptr_0 + 3 ) /*0x5a784e*/
                 goto LABEL_23; /*0x5a784e*/
             }
           }
@@ -676,7 +676,7 @@ int MapSeedClass::GenerateSeed(unsigned int * a2)
 
   if ( !(*((unsigned char *)&(*&this->u32_C))) ) /*0x5acb80*/
     return 0; /*0x5acb88*/
-  int m_8 = *&this->Capacity; // edx /*0x5acb8e*/
+  int m_8 = *&this->q028; // edx /*0x5acb8e*/
   int result = 0; // eax /*0x5acb91*/
   if ( m_8 <= 0 ) /*0x5acb95*/
     return -1; /*0x5acbac*/

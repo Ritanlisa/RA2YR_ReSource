@@ -66,7 +66,7 @@ unsigned int * RandomMap::TerrainTileDataConstructor(int a2, void *a2_1)
 
   *(unsigned int *)this->__pad_000 = 0; /*0x58bf7a*/
   *&this->Items = 0; /*0x58bf7c*/
-  this->__pad_008 = (void *)g_MissionQueueFrame.localVariables[164]; /*0x58bf8a*/
+  this->RandomMap_field_0x8 = (void *)g_MissionQueueFrame.localVariables[164]; /*0x58bf8a*/
   this->q00C = 0; /*0x58bf8d*/
   this->q010 = (void *)*((char *)(/*0x58bfa6*/ (CellCoord *)&DataGlobal_87F7E8)->To_CellObj((int16_t *)&a2)
   + 283);
@@ -280,7 +280,7 @@ int RandomMap::GenerateTerrain(RandomMap *self)
         else
           v34 = -1; /*0x58cd46*/
         v35 = *((char *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v49) + 283); /*0x58cd6d*/
-        LayerClass::CellIteratorReset((LayerClass *)&dword_87F7E8); /*0x58cd79*/
+        ((LayerClass *)&dword_87F7E8)->CellIteratorReset(); /*0x58cd79*/
         v36 = LayerClass::CellIteratorNext((LayerClass *)&dword_87F7E8); /*0x58cd83*/
         if ( v36 ) /*0x58cd8a*/
         {
@@ -340,7 +340,7 @@ int RandomMap::GenerateTerrain(RandomMap *self)
             if ( !(unsigned __int8)Cell::IsGroundTypeRange(v23) ) /*0x58cbc6*/
             {
               v24 = *((char *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v49) + 283); /*0x58cbea*/
-              LayerClass::CellIteratorReset((LayerClass *)&dword_87F7E8); /*0x58cbf6*/
+              ((LayerClass *)&dword_87F7E8)->CellIteratorReset(); /*0x58cbf6*/
               for ( j = LayerClass::CellIteratorNext((LayerClass *)&dword_87F7E8); /*0x58cc09*/
                     j;
                     j = LayerClass::CellIteratorNext((LayerClass *)&dword_87F7E8) )
@@ -611,7 +611,7 @@ unsigned int * RandomMap::TerrainAlloc(void *a1_1)
     v3 = 0; /*0x58d44d*/
   }
   v17 = v3; /*0x58d454*/
-  LayerClass::CellIteratorReset((LayerClass *)&DataGlobal_87F7E8); /*0x58d458*/
+  ((LayerClass *)&DataGlobal_87F7E8)->CellIteratorReset(); /*0x58d458*/
   v4 = LayerClass::CellIteratorNext((LayerClass *)&DataGlobal_87F7E8); /*0x58d467*/
   if ( !v4 ) /*0x58d46b*/
     return &v3->ptr_0; /*0x58d592*/
@@ -888,7 +888,7 @@ AbstractClass * * RandomMap::PlaceRandomMapTerrain(RandomMap *self)
         {
           if ( *(unsigned char *)(v14 + 75) ) /*0x58eb1b*/
           {
-            *(unsigned int *)(v14 + 56) = self->__pad_008; /*0x58eb29*/
+            *(unsigned int *)(v14 + 56) = self->RandomMap_field_0x8; /*0x58eb29*/
             if ( j < v19.Capacity /*0x58eb57*/
               || (v19.IsAllocated || !v19.Capacity)
               && v21 > 0

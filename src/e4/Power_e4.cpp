@@ -279,11 +279,11 @@ unsigned int * Power::UpdateAll()
   Power::TimerProcess(*(int *)&MEMORY[0xA8EB00 + 416]); /*0x67ceb0*/
   Power::TimerProcess(*(int *)&MEMORY[0xA8EB00 + 228]); /*0x67cebf*/
   v50 = v54; /*0x67ceca*/
-  this->Fla_ph = v53; /*0x67cece*/
+  this->a2 = v53; /*0x67cece*/
   v51 = v55; /*0x67ced0*/
   this->q004 = v50; /*0x67ced5*/
   this->q008 = v51; /*0x67cedb*/
-  return &this->Fla_ph; /*0x67ced4*/
+  return &this->a2; /*0x67ced4*/
 
 }
 }
@@ -443,7 +443,7 @@ int Power::FinalizeDrain(int a2, void *a2_1)
     a2 = (int)this->a2; /*0x4a1c50*/
     int *p_Power_field_0x8 = &a2; // esi /*0x4a1c57*/
     unsigned int v6; // eax
-    v6 = (unsigned int)(~this->Fla_ph); /*0x4a1c5b*/
+    v6 = (unsigned int)(~this->a2); /*0x4a1c5b*/
     int v7 = 4; // edi /*0x4a1c5d*/
     do /*0x4a1c7e*/
     {
@@ -453,7 +453,7 @@ int Power::FinalizeDrain(int a2, void *a2_1)
     }
     while ( v7 ); /*0x4a1c7e*/
     result = ~v6; /*0x4a1c80*/
-    this->Fla_ph = (void *)(result); /*0x4a1c83*/
+    this->a2 = (void *)(result); /*0x4a1c83*/
     this->q004 = 0; /*0x4a1c85*/
   }
   return result; /*0x4a1c8e*/
@@ -518,9 +518,9 @@ char Power::ChangedHouse(char a2)
   int result; // eax
   LOBYTE(result) = a2; /*0x750090*/
   if ( a2 ) /*0x750096*/
-    this->Fla_ph = (void *)(1065353216); /*0x750098*/
+    this->a2 = (void *)(1065353216); /*0x750098*/
   else
-    this->Fla_ph = 0; /*0x7500a1*/
+    this->a2 = 0; /*0x7500a1*/
   return result; /*0x75009e*/
 
 }

@@ -240,7 +240,7 @@ struct ScenarioClass {
     static int CheckExists(ScenarioClass * aP1, int a2);
     static wchar_t * InitTimer(ScenarioClass * aP1);
     int CalcMinShroudLevel();  // 0x588990
-    int LoadNetworkConfig(void *a1 = 0);  // 0x6980c0
+    int LoadNetworkConfig();  // 0x6980c0
     char  SetGlobalToByID(unsigned int a2, char a3);  // 0x689670
     int SaveGameOptions(void *a1 = 0);  // 0x5fad10
     int  Is_Waypoint_Valid(unsigned int a2);  // 0x68bd80

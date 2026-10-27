@@ -19,7 +19,7 @@ struct LCWPipe {
     unsigned short u16_26;  // 0x26
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
-    int Dtor(void *a1 = 0);
+    int Dtor();
     unsigned int *  Constructor(int a2, int a3, void *a1 = 0, void *a4 = 0);  // 0x551ff0
 };
 

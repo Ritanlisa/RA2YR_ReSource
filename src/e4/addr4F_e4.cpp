@@ -333,7 +333,7 @@ char ** LoadFromINIGraphicMenu(void * a1, void * a2, void * a3)
   if ( !v7 ) /*0x4f1ced*/
     return 0; /*0x4f1cda*/
   p_nextObject = (int *)a3; /*0x4f1cef*/
-  MSEngine::Construct((MSEngine *)(v7 + 4)); /*0x4f1cf3*/
+  ((MSEngine *)(v7 + 4))->Construct(); /*0x4f1cf3*/
   String::Assign((String *)(v8 + 76), aTitlePcx); /*0x4f1d02*/
   v38.referenceCount = v8 + 80; /*0x4f1d0f*/
   String::Assign((String *)(v8 + 80), g_INI_Key_Intro); /*0x4f1d13*/
@@ -714,7 +714,7 @@ int ParseINIAnimGadgetDefinition(void * a2, void * a4, void * a3, void * aOrigin
 
   (&v20)->Assign(ValueName); /*0x4f2c83*/
   v6 = INIClass::ReadInt((bool *)a2->__pad_0, Source, &v20, -1); /*0x4f2c97*/
-  *(unsigned int *)&v21.headNode = v6; /*0x4f2c9d*/
+  *(unsigned int *)&v21.ptr_4 = v6; /*0x4f2c9d*/
   j_DeleteAndZero((ObjectClass *)&v20); /*0x4f2ca1*/
   if ( v6 == -1 ) /*0x4f2ca9*/
     return 0; /*0x4f2cad*/

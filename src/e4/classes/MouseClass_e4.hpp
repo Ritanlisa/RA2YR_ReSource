@@ -131,7 +131,7 @@ struct MouseClass {
      int DrawCursor(LPSTREAM pStm);
     static void CalcConfiningRect(MouseClass * aP1);
      unsigned int * Construct(int a2, int a3, void *a1 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0, void *a9 = 0);
-    void * LoadTypeData(void *a1 = 0);  // 0x5bdf30
+    void * LoadTypeData();  // 0x5bdf30
     int GetPosition(void *a1 = 0);  // 0x5bdaa0
     int ReleaseSubsystem();
     int ReleaseChannel(void *a1 = 0);

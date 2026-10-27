@@ -33,7 +33,7 @@ int Math_InitDegToRad(void * a1, void * a2)
 }  // G42.18 ns repair
 // 0x41C350
 namespace gamemd {
-int Math::Hypotenuse2D(void *a1)
+int Math::Hypotenuse2D()
 {
   return Math::Sqrt(*(double *)this * *(double *)this + this->u32_8 * this->u32_8); /*0x41c36e*/
 }

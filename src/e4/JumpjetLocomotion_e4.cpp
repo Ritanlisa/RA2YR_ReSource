@@ -30,7 +30,7 @@
 
 // 0x4B0AD0
 namespace gamemd {  // G42.18 ns repair
-char JumpjetLocomotion::MoveTo(int aP1, unsigned int *aP3, int a3_1)
+char JumpjetLocomotion::MoveTo(unsigned int *aP3, int a3_1)
 {
 
   unsigned int *v3; // edx

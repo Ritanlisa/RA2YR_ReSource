@@ -502,7 +502,7 @@ void* WarheadTypeClass::ProcessPower(int * a2, void *a2_2)
   Power::FlagProcess((Power *)a2, (int)v4); /*0x75deec*/
   LOBYTE(v5) = this->Charges; /*0x75def1*/
   v6 = (unsigned __int8 *)Power::FlagProcess((Power *)a2, (int)v5); /*0x75defa*/
-  LOBYTE(v6) = this->pad_149; /*0x75deff*/
+  LOBYTE(v6) = this->WarheadTypeClass_field_bool_149; /*0x75deff*/
   Power::FlagProcess((Power *)a2, (int)v6); /*0x75df08*/
   LOBYTE(v7) = this->DiskLaser; /*0x75df0d*/
   Power::FlagProcess((Power *)a2, (int)v7); /*0x75df16*/

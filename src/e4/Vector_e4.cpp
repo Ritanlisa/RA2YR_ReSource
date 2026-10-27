@@ -42,7 +42,7 @@ int Vector::Cleanup(void *a1, void *a2)
 }
 // 0x513100
 namespace gamemd {
-int Vector::Destructor(void *a1)
+int Vector::Destructor()
 {
 
   int result = *&this->q004; // eax /*0x513106*/
@@ -61,11 +61,11 @@ namespace gamemd {
 int Vector::MatrixMulVectorMath(float a2, float a3, float a4)
 {
 
-  this->IsInitialized = a3 * this->__pad_010 /*0x5ae8ab*/
+  this->IsInitialized = a3 * this->Vector_field_0x10 /*0x5ae8ab*/
   + a4 * this->u32_8
   + a2 * *(float *)this
   + this->IsInitialized;
-  this->u32_1C = a2 * this->__pad_010 /*0x5ae8ca*/
+  this->u32_1C = a2 * this->Vector_field_0x10 /*0x5ae8ca*/
   + a3 * this->u32_14
   + a4 * this->u32_18
   + this->u32_1C;
@@ -136,7 +136,7 @@ int Vector::Clear(void *a1)
   if ( (unsigned char)result ) /*0x43ae58*/
     operator delete((*(void **)this)); /*0x43ae5d*/
   *(unsigned int *)this = 0; /*0x43ae65*/
-  this->__pad_010 = 0; /*0x43ae6b*/
+  this->Vector_field_0x10 = 0; /*0x43ae6b*/
   this->u32_8 = 0; /*0x43ae72*/
   return result; /*0x43ae76*/
 }
@@ -214,7 +214,7 @@ namespace gamemd {
 int Vector::Find(unsigned int * a2, void *a2_1)
 {
 
-  int v2 = this->__pad_010; // edx /*0x4e0550*/
+  int v2 = this->Vector_field_0x10; // edx /*0x4e0550*/
   int result = 0; // eax /*0x4e0553*/
   if ( v2 <= 0 ) /*0x4e0558*/
     return -1; /*0x4e056f*/

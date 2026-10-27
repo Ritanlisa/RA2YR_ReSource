@@ -388,16 +388,16 @@ public:
     int32_t     Width;          // 0x08
     int32_t     Height;         // 0x0C
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
-    int SetRedraw(int a1);  // 0x48BAA0
+    int SetRedraw(char a1);  // 0x48BAA0 (X144c: param char per raw_decomp fn_48.c `char a2`)
     void* Set4(int a1, int a2, int a3, int a4);  // 0x54A120
     // --- gap2 auto-generated stub declarations (END) ---
     public:  // funcs-move
     // === FUNCS-MOVE (BEGIN) ===
     int Inflate();  // 0x72a9e0
     // === FUNCS-MOVE (END) ===
-    unsigned int *u32_14;  // supplied (C2039)
-    unsigned int *u32_18;  // supplied (C2039)
-    unsigned int *u32_1C;  // supplied (C2039)
+    unsigned int u32_14;  // 0x14 (X144c: dword per raw_decomp fn_48.c `*((_DWORD*)this+5)`; was pointer-typed supply)
+    unsigned int u32_18;  // 0x18 (X144c: dword per raw fn_48.c +6)
+    unsigned int u32_1C;  // 0x1C (X144c: dword per raw fn_48.c +7)
 };
 #endif  // GAMEMD_E4_Rect
 

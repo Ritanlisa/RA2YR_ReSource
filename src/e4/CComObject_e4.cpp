@@ -737,7 +737,7 @@ Coord * * CComObject_CChatEventSink___ATL::DispatchStub_22(int a1, int a2, int a
     {
       v22 = 1; /*0x7a8033*/
       dword_B78608 = Timer::GetTicks(); /*0x7a8046*/
-      dword_B7860C = v23.q004; /*0x7a804b*/
+      dword_B7860C = v23.ptr_4; /*0x7a804b*/
       Debug::Log(); /*0x7a8051*/
     }
     if ( Timer::GetTicks() - dword_B78608 > 900 ) /*0x7a806e*/
@@ -749,7 +749,7 @@ Coord * * CComObject_CChatEventSink___ATL::DispatchStub_22(int a1, int a2, int a
           || (LOBYTE(v15) = dword_A8BB08, FindAndValidateMap(byte_A8B8E0, dword_A8BB04, &byte_A8BAE2, (int)v15, 0)) )
         {
           dword_B78608 = Timer::GetTicks(); /*0x7a80d2*/
-          dword_B7860C = v23.q004; /*0x7a80d7*/
+          dword_B7860C = v23.ptr_4; /*0x7a80d7*/
         }
         else
         {
@@ -764,13 +764,13 @@ Coord * * CComObject_CChatEventSink___ATL::DispatchStub_22(int a1, int a2, int a
       if ( !FindAndValidateMap(byte_A8B8E0, dword_A8BB04, &byte_A8BAE2, v16, 0) /*0x7a813d*/
         || (((RawFileClass *)Buffer)->Construct((int)byte_A8B8E0),
             v17 = (unsigned __int8)((FileClass *)Buffer)->Open(0) != 0,
-            RawFileClass::Dtor((BufferIOFileClass *)Buffer),
+            ((RawFileClass *)Buffer)->Dtor(),
             v17) )
       {
         if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x7a814c*/
         {
           if ( dword_B76B24 /*0x7a8165*/
-            || (HIBYTE(v23.u32_8) = (((dword_B76B30) >> 8) & 0xFF) & 1, (dword_B76B30 & 0x100) != 0) )
+            || (HIBYTE(v23.ptr_8) = (((dword_B76B30) >> 8) & 0xFF) & 1, (dword_B76B30 & 0x100) != 0) )
           {
             if ( *(unsigned int *)(**(unsigned int **)&stru_A8D804.__pad_3D[567] + 119) ) /*0x7a816f*/
             {

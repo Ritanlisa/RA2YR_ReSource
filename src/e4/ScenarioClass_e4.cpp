@@ -113,7 +113,7 @@ ScenarioClass * * ScenarioClass::CopyStartPositions(void *a1)
           v7 = *(void **)&v5[v4]; /*0x58bb95*/
           v8 = *(void **)&v5[v4 + 4]; /*0x58bb98*/
         }
-        *(void **)v2->numberStartingPoints + v4) = v7; /*0x58bba2*/
+        *(void **)v2->ptr_0 + v4) = v7; /*0x58bba2*/
         ++v3; /*0x58bbab*/
         v6 += 4; /*0x58bbac*/
         *(void **)dword_A8B230[122].abstractFlags + v4) = v8; /*0x58bbaf*/
@@ -518,7 +518,7 @@ int ScenarioClass::CleanupTemporary()
   AsyncIO::Read(v1); /*0x683f4f*/
   if ( *(unsigned int *)&g_TacticalRender ) /*0x683f5d*/
     Tooltip::Enable(*(Tooltip **)&g_TacticalRender, 0); /*0x683f61*/
-  Mouse::ReleaseCapture((ScrollClass *)&DataGlobal_87F7E8); /*0x683f6b*/
+  ((Mouse *)&DataGlobal_87F7E8)->ReleaseCapture(); /*0x683f6b*/
   Mouse::SetCursor((int)&DataGlobal_87F7E8, 0, 0); /*0x683f79*/
   (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 12))(stru_887598.lineTrailer); /*0x683f86*/
   MapClass::MarkForRedraw((GScreenClass *)&DataGlobal_87F7E8, 2); /*0x683f90*/

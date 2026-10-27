@@ -13,7 +13,7 @@ struct DeleteAndZero {
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int Alt(void *a1 = 0);
-    int Alt2(void *a1 = 0);
+    int Alt2();
     void ** OrFree(char a2, void *a1 = 0);
 };
 

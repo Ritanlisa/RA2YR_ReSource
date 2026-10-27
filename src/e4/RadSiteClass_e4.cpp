@@ -38,7 +38,7 @@ RadSiteClass::RadSiteClass()
   this->LevelSteps = 0; /*0x65b216*/
   this->Intensity = 0; /*0x65b219*/
   this->IntensitySteps = 0; /*0x65b21c*/
-  this->IntensityDecrement = 0; /*0x65b21f*/
+  this->IntensityDecrement_d = 0; /*0x65b21f*/
   this->RadDuration = 0; /*0x65b222*/
   this->RadTimeLeft = 0; /*0x65b225*/
   /* X11: ptr_0 install elided (base-interface slot, RHS g_ptr_7F07E4) */  /*0x65b228*/
@@ -57,7 +57,7 @@ RadSiteClass::RadSiteClass()
     v3 = dword_B04BE0++; /*0x65b284*/
     *((unsigned int *)dword_B04BD4 + v3) = (unsigned int)(this); /*0x65b293*/
   }
-  return &this->AbstractClass; /*0x65b298*/
+  return &this->Radiate_ph; /*0x65b298*/
 
 }
 }  // G42.18 ns repair

@@ -121,7 +121,7 @@ struct TeamClass {
     int DisbandTeam(int a2);
     int ExecuteAction(int a2, char a3);
     int FindByMemberType(int a2);
-    int GetLeaderIndex(void *a1 = 0);
+    int GetLeaderIndex();
     int GetMember(void *a1, void *a2);
     int HasAnyMemberFlagged();
     int LiberateMember_Start(int aP1, unsigned int a3, char aP3);

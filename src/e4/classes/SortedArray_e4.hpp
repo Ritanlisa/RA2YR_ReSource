@@ -26,7 +26,7 @@ struct SortedArray {
     int FindPair(int * a2);
     static int CheckCache(SortedArray * aP1, unsigned int *a2);
      void * FindValue(int *a2, void *a1 = 0);
-    int  Find(int * a2, void *a1 = 0);  // 0x52b170
+    int Find(int *a2);  // 0x52b170
     void * BinarySearch2(int *a2, void *a1 = 0);
 };
 

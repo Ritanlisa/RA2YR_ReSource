@@ -1393,7 +1393,7 @@ struct RulesClass {
     static int SaveLoad_Prefix_0(RulesClass * aP1, int i);
     static int ReadDataList(void *a1 = 0);  // 0x672440
     int LoadCountries(void *a1 = 0);  // 0x6722f0
-    int Reset(void *a1 = 0, void *a2 = 0);  // 0x74e6b0
+    int Reset();  // 0x74e6b0
     int  IsTypeBuildable(unsigned int a2, void *a1 = 0);  // 0x721140
     INIClass * * ReadPowerupsSection(void * aPowerups);
     INIClass * * readDifficulty(void * aClimb, void * aCruiseheight, void * aJumpjetcontrol, void * aTurnrate, void * aWobbledeviatio, void * aWobblesperseco);

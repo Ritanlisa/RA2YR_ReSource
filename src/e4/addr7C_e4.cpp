@@ -632,7 +632,7 @@ LABEL_26:
                 goto LABEL_113; /*0x7c2939*/
               break;
             case 0x4943534Du: /*0x7c28d8*/
-if ( Buffer::AllocateCodecFrameBuffers((Buffer *)v7) != -1 ) /*0x7c2924*/
+if ( ((Buffer *)v7)->AllocateCodecFrameBuffers() != -1 ) /*0x7c2924*/
                 goto LABEL_113; /*0x7c2924*/
               break;
             case 0x50494C43u: /*0x7c28d8*/

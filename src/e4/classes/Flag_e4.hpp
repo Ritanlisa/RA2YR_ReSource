@@ -17,7 +17,7 @@ struct Flag {
 // --- flat members (END) ---
     int IsNot2();
     static int IsNot2(void *aP0);
-    int IsZero(void *a1 = 0);
+    int IsZero();
 };
 
 } // namespace gamemd

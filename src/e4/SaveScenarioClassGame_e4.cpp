@@ -124,7 +124,7 @@ char SaveScenarioClassGame_AdjustMPSaveFileName(LPCCH lpMultiByteStr, wchar_t * 
     if ( v6 < 0 && v6 != -2147467262 ) /*0x67d1a1*/
       sub_7DC720(v6); /*0x67d1a4*/
   }
-  v7 = SaveGame::Start(ppstgOpen->__pad_000.ComPtr_field_0x0C); /*0x67d1b4*/
+  v7 = SaveGame::Start(ppstgOpen->__pad_0.ComPtr_field_0x0C); /*0x67d1b4*/
   if ( !ppstgOpen[0].q004 ) /*0x67d1bc*/
     sub_7DC720(-2147467261); /*0x67d1c3*/
   if ( (*(int (__stdcall **)(int, unsigned int))(*&ppstgOpen->__pad_0.ComPtr_field_0x04 + 16))( /*0x67d1d5*/

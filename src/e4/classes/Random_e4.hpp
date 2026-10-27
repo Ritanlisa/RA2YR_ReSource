@@ -16,7 +16,7 @@ struct Random {
     unsigned int u32_10;  // 0x10
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
-    int __thiscall AdvanceRandomBytes(char a2);
+    int AdvanceRandomBytes(char a2);
     static int Range(Random * aP1, int a2, int a3);
     int State();
     static int State(void *aP0);

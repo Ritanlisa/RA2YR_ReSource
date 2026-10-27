@@ -9,7 +9,7 @@ struct AudioConfig {
     unsigned int tail_0;  // 0x0
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
-    void * InitDefault(void *a1 = 0);
+    void * InitDefault();
 };
 
 } // namespace gamemd

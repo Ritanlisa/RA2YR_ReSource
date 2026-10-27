@@ -261,12 +261,12 @@ LABEL_7:
         i = (DisplayClass *)((LayerClass *)this)->CellIteratorNext() )
   {  /*0x577d1d*/
     DisplayClass::AdvanceFrameCounter(i);  /*0x577d21*/
-    if ( i->DisplayClass_field_0x130 >= 0 )
+    if ( i->q130 >= 0 )
     {  /*0x577d2e*/
-      DisplayClass_field_0x140 = i->DisplayClass_field_0x140;  /*0x577d36*/
+      DisplayClass_field_0x140 = i->__pad_140;  /*0x577d36*/
       LOBYTE(DisplayClass_field_0x140) = DisplayClass_field_0x140 & 0xFC;  /*0x577d3f*/
-      i->DisplayClass_field_0x12C &= 0xFFFFFFE7;  /*0x577d41*/
-      i->DisplayClass_field_0x140 = DisplayClass_field_0x140;  /*0x577d47*/
+      i->q12C &= 0xFFFFFFE7;  /*0x577d41*/
+      i->__pad_140 = DisplayClass_field_0x140;  /*0x577d47*/
     }
   }
   (0)->UpdateReveal(0);  /*0x577d63*/

@@ -142,11 +142,11 @@ int Audio::UpdatePlaybackPosition()
   v2 = *&this->u32_B0; /*0x4054a4*/
   if ( this != *(Audio **)(v2 + 192) ) /*0x4054b0*/
     return 0; /*0x4054b3*/
-  AudioFile::GetCallback((AudioFile *)v2); /*0x4054b7*/
+  ((AudioFile *)v2)->GetCallback(); /*0x4054b7*/
   v4 = *&this->u32_148; /*0x4054bc*/
-  v5 = *(unsigned int *)this->__pad_18; /*0x4054c2*/
+  v5 = *(unsigned int *)this->q018; /*0x4054c2*/
   (v5) = ((v5) & ~0xFF) | ((v5 | 8) & 0xFF); /*0x4054c5*/
-  *(unsigned int *)this->__pad_18 = v5; /*0x4054c7*/
+  *(unsigned int *)this->q018 = v5; /*0x4054c7*/
   BindChannelAudioStream(*&this->u32_B0, v4); /*0x4054d2*/
   EndBufferMixer((int *)(*&this->u32_B0 + 56), *&this->u32_14C); /*0x4054e6*/
   v6 = *&this->q150; /*0x4054eb*/
@@ -155,15 +155,15 @@ int Audio::UpdatePlaybackPosition()
     v7 = 0x4000 - (v6 << 14) / 0x64u; /*0x40550e*/
   EndBufferMixer((int *)(*&this->u32_B0 + 16), v7); /*0x405519*/
   *&this->u32_1C = 3; /*0x40551e*/
-  *(unsigned int *)this->__pad_18 |= 2u; /*0x40552b*/
+  *(unsigned int *)this->q018 |= 2u; /*0x40552b*/
   *&this->u32_148 = 0; /*0x40552e*/
   if ( Audio::GetChannelStatus(*&this->u32_B0) ) /*0x40553e*/
   {
     *&this->u32_1C = 1; /*0x405547*/
     *&this->u32_148 = v4; /*0x40554e*/
-    v8 = *(unsigned int *)this->__pad_18; /*0x405554*/
+    v8 = *(unsigned int *)this->q018; /*0x405554*/
     (v8) = ((v8) & ~0xFF) | ((v8 & 0xFD) & 0xFF); /*0x405557*/
-    *(unsigned int *)this->__pad_18 = v8; /*0x405559*/
+    *(unsigned int *)this->q018 = v8; /*0x405559*/
     AudioStream::Stop(*&this->u32_B0); /*0x405562*/
     return 0; /*0x405567*/
   }
@@ -317,7 +317,7 @@ int Audio::Release(void *a1)
 }
 // 0x408070
 namespace gamemd {
-int Audio::IsSoundPlaying(void *a1)
+int Audio::IsSoundPlaying()
 {
 
   return this->u32_C & 1; /*0x408076*/
@@ -2491,7 +2491,7 @@ LABEL_8:
 }
 // 0x401080
 namespace gamemd {
-int Audio::InitChannels(void *a1)
+int Audio::InitChannels()
 {
   ((void (*)(void))AudioMixer::PlaySample)(); /*0x401083*/
   this->AudioMixer_28.PlaySample(); /*0x40108b*/

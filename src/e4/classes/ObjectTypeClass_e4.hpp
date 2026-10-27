@@ -128,7 +128,7 @@ struct ObjectTypeClass {
     };  // 0x244
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
-    AbstractClass * * Load2DArt(void *a1 = 0);
+    int Load2DArt();
     BOOL loadTypeMember_5717AE0();
     BulletTypeClass * FindOrCreate(ObjectClass * Source);
     ObjectTypeClass * Destru_vt08(char a2);

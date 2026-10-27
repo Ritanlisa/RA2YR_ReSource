@@ -101,7 +101,7 @@ LABEL_14:
     v12 = 0; /*0x533ec8*/
     ((Vector *)v11)->Clear(); /*0x533ecf*/
     *(unsigned int *)v10.__tail_0 = &off_7E1668; /*0x533ed8*/
-    BufferIOFileClass::Dtor((BufferIOFileClass *)&v10); /*0x533ee0*/
+    ((BufferIOFileClass *)&v10)->Dtor(); /*0x533ee0*/
     HashTable::DestroyHashTableINIClass((INIClass *)&v9); /*0x533ee9*/
     return 1; /*0x533eee*/
   }
@@ -112,7 +112,7 @@ LABEL_14:
     v12 = 0; /*0x533f15*/
     ((Vector *)v11)->Clear(); /*0x533f1c*/
     *(unsigned int *)v10.__tail_0 = &off_7E1668; /*0x533f25*/
-    BufferIOFileClass::Dtor((BufferIOFileClass *)&v10); /*0x533f2d*/
+    ((BufferIOFileClass *)&v10)->Dtor(); /*0x533f2d*/
     HashTable::DestroyHashTableINIClass((INIClass *)&v9); /*0x533f36*/
     return 0; /*0x533f3b*/
   }

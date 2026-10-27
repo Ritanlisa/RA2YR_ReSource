@@ -101,7 +101,7 @@ public:
     virtual int SelectWeapon() override;  // X137B slot 185 = 0x746CD0 (bin: SelectAttackWeapon)
     virtual int GetGlobalValue(int* outValue) const override;  // X137B slot 193 = 0x740B60 (bin: FindBestMovementDirection)
     virtual int Vt170() override;  // X137B slot 194 = 0x740F80 (bin: GetDeployProgressValue)
-    virtual InfantryTypeClass* GetCrew() const override;  // X137B slot 195 = 0x740EE0 (bin: GetCrew_0)
+    virtual int GetCrew() const override;  // X137B slot 195 = 0x740EE0 (bin: GetCrew_0; X144c: return int per raw_decomp fn_74.c)
     virtual int HasPassengers() const override;  // X137B slot 223 = 0x746C90 (bin: checkSpawnState)
     virtual int ReadINI(int a1, int a2, int a3) override;  // X137B slot 240 = 0x740FD0 (bin: CheckUnitFireConstraints)
     virtual int SelectAutoTarget_Start_AU() override;  // X137B slot 241 = 0x743190 (bin: SelectAutoTargetWithGarrison)

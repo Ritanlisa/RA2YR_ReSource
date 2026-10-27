@@ -1198,7 +1198,7 @@ LABEL_37:
     do /*0x637438*/
     {
       v21 = *(unsigned int *)(*(unsigned int *)&stru_AC4B48.__pad_B8[156] + 4 * v20); /*0x637400*/
-      FactoryClass::ClearObjects((FactoryClass *)v21); /*0x637405*/
+      ((FactoryClass *)v21)->ClearObjects(); /*0x637405*/
       v22 = *(unsigned int *)(v21 + 16); /*0x63740a*/
       for ( i = 0; i < v22; ++i ) /*0x637411*/
         ScriptAction::PlaceObject(v21, *(unsigned int **)(*(unsigned int *)(v21 + 4) + 4 * i)); /*0x63741c*/

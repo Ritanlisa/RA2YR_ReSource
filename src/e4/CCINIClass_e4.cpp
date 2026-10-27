@@ -169,7 +169,7 @@ MultiplayerGameMode * * CCINIClass::Load(int a2, char a3, char a4, void *a4_1)
   }
   if ( Base64Data <= 0 ) /*0x47426e*/
     goto LABEL_7; /*0x47426e*/
-  INIClass::ClearSection((int *)this->INIClass, (int)g_INI_Key_Digest, 0); /*0x47427d*/
+  INIClass::ClearSection((int *)this->ptr_0, (int)g_INI_Key_Digest, 0); /*0x47427d*/
   memset(&v12.u32_4, 0, 9); /*0x474286*/
   v18 = 0; /*0x474295*/
   v19 = 0; /*0x474299*/
@@ -200,7 +200,7 @@ CCINIClass::CCINIClass()
 {
 
 
-  unsigned int *result = this->INIClass; // eax /*0x535b30*/
+  unsigned int *result = this->ptr_0; // eax /*0x535b30*/
   int *sectionHead; // esi
   sectionHead = this->sectionHead; /*0x535b36*/
   int *p_sectionCount = &this->sectionCount; // ecx /*0x535b39*/

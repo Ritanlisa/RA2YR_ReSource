@@ -13,7 +13,7 @@
 
 // 0x406650
 namespace gamemd {  // G42.18 ns repair
-int AudioMixer::SetVolume(void *a1)
+int AudioMixer::SetVolume()
 {
 
 

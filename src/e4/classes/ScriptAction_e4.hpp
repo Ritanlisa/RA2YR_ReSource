@@ -70,7 +70,7 @@ struct ScriptAction {
     unsigned int * GetScreenPos(unsigned int *a2);  // 0x634400
     BOOL  GetActionCoordinates(int a2, int a3, int a4, void *a1 = 0);  // 0x634550
     unsigned int *  FindItemByValue(int a2);  // 0x6346B0
-    int FindSquadMember(void *a1 = 0);  // 0x6349B0
+    int FindSquadMember();  // 0x6349B0
     int  FindBuildingMatch(unsigned int * a2);  // 0x634CC0
     int  PlaceObject(unsigned int * a2, void *a1 = 0);  // 0x634E10
     int  DecrementRefCount(int a2, void *a1 = 0);  // 0x6351E0

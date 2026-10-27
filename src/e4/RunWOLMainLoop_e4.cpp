@@ -54,7 +54,7 @@ Coord * * sub_77E110()
   Dialog::RefreshDialogsGame(0); /*0x77e141*/
   if ( stru_B76900.ptr_C ) /*0x77e153*/
   {
-    if ( !Theme::IsPlaying((Theme *)&MEMORY[0xA83D10]) ) /*0x77e15a*/
+    if ( !((Theme *)&MEMORY[0xA83D10])->IsPlaying() ) /*0x77e15a*/
       goto LABEL_5; /*0x77e15a*/
     v2 = MEMORY[0xA83D14]; /*0x77e17d*/
     if ( MEMORY[0xA83D14] == -1 ) /*0x77e186*/
@@ -378,16 +378,16 @@ int sub_799D30()
           v12);
       }
       System_Init_72C9C0(); /*0x799e4a*/
-      SimpleDialogControl::Constructor((SimpleDialogControl *)&v13.q004); /*0x799e53*/
-      v13.q004 = (int)&off_7F7624; /*0x799e6c*/
+      SimpleDialogControl::Constructor((SimpleDialogControl *)&v13.ptr_4); /*0x799e53*/
+      v13.ptr_4 = (int)&off_7F7624; /*0x799e6c*/
       RunDialog( /*0x799e70*/
         0x114u,
         (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))MainLobbyDlgProcWOL,
-        (LPARAM)&v13.q004);
+        (LPARAM)&v13.ptr_4);
       System_Init_72CA10(v1); /*0x799e75*/
       v10 = dword_A8B244 != 0; /*0x799e8b*/
-      v13.q004 = (int)&off_7F7624; /*0x799e8d*/
-      OwnerDrawControl::InitVtable((OwnerDrawControl *)&v13.q004); /*0x799e91*/
+      v13.ptr_4 = (int)&off_7F7624; /*0x799e8d*/
+      OwnerDrawControl::InitVtable((OwnerDrawControl *)&v13.ptr_4); /*0x799e91*/
       return v10; /*0x799e96*/
     }
   }

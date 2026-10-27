@@ -51,7 +51,7 @@ int AudioClass::ProcessEvent()
   *v3 = 0; /*0x7228e0*/
   for ( i = Object::ComputeAllocationSize() - 1; i >= 0; *(unsigned char *)(this->u32_F8 + i + 1) = 0 ) /*0x7228ec*/
     --i; /*0x7228f4*/
-  LayerClass::CellIteratorReset((LayerClass *)&dword_87F7E8); /*0x722901*/
+  ((LayerClass *)&dword_87F7E8)->CellIteratorReset(); /*0x722901*/
   result = LayerClass::CellIteratorNext((LayerClass *)&dword_87F7E8); /*0x72290b*/
   for ( j = (BuildingClass *)result; result; j = (BuildingClass *)result ) /*0x722914*/
   {

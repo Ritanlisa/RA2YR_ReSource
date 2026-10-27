@@ -495,7 +495,7 @@ AbstractClass * * SlaveManager_InitGrid()
             if ( !System_Init_6B2520(v28) ) /*0x6b2e9c*/
               v30[4] = 1; /*0x6b2ea9*/
           }
-          if ( (unsigned __int8)MapSeed::IsCellInBounds((MapSeed *)&v40.q010) ) /*0x6b2eb1*/
+          if ( (unsigned __int8)((MapSeed *)&v40.q010)->IsCellInBounds() ) /*0x6b2eb1*/
           {
             v29 = (TechnoClass *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)&v40.q010); /*0x6b2ec4*/
             if ( !System_Init_6B2520(v29) ) /*0x6b2ecd*/

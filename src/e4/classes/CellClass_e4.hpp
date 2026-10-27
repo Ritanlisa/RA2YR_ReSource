@@ -153,7 +153,7 @@ static int * GetCoords(CellClass * aP1, int *a2);
     static int ReduceTiberium(CellClass * aP1, int a2);
     int  DrawWithFlags(int a2, unsigned int * a3, int a4);  // 0x557830
     int DamageAllObjects();  // 0x483480
-    int IsActiveOrNext(void *a1 = 0);  // 0x486900
+    int IsActiveOrNext();  // 0x486900
     unsigned int *  FindInfantry(char a2, void *a1 = 0);  // 0x47c550
     const wchar_t * GetUIName();  // 0x484ff0
     int  AddObject(unsigned int * a2);  // 0x4733a0

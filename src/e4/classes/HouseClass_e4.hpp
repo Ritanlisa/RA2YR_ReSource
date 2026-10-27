@@ -547,7 +547,7 @@ struct HouseClass {
     static int ResetObjectOrders(char a1, int a2);
     void g_var_78dc8d();
     static int CalcProductionSpeed(HouseClass * aP1);
-     int FindByName(void *a1 = 0);
+     int FindByName();
     static char FindType15(HouseClass * aP1);
     static unsigned int * FirstBuildableFromArray(HouseClass * aP1, int a2);
     static unsigned int * GetCurrentOption(HouseClass * aP1, unsigned int *a2);

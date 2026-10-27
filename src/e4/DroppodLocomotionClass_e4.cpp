@@ -332,7 +332,7 @@ void * DropPodLocomotionClass::ProcessMove(char a2)
   Piggybackee = this->Piggybackee; /*0x4b6707*/
   if ( Piggybackee ) /*0x4b670c*/
     (*(void (__stdcall **)(ILocomotion *))(*(unsigned int *)Piggybackee + 8))(Piggybackee); /*0x4b6711*/
-  this->LocomotionClass::Construct(); /*0x4b6716*/
+  this->__pad_0::Construct(); /*0x4b6716*/
   if ( (a2 & 1) != 0 ) /*0x4b6720*/
     operator delete((this)); /*0x4b6723*/
   return this->0; /*0x4b672d*/

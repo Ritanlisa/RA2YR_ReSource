@@ -28,7 +28,7 @@ struct AudioMixer {
     int PlaySample(void *a1 = 0);
     static int Pump();
     static int RequestOrEndBuffer(int a1, unsigned int a2);
-    int SetVolume(void *a1 = 0);
+    int SetVolume();
     int Shutdown(void *a1 = 0);
 };
 #endif  // GAMEMD_G2_AudioMixer_DEF

@@ -17,25 +17,25 @@
 
 // 0x65A750
 namespace gamemd {  // G42.18 ns repair
-unsigned int * RadioClass::Release(void *a1)
+unsigned int * RadioClass::Release()
 {
-  RadioClass::Constructor((gamemd::RadioClass *)((int)a1)); /*0x65a753*/
-  *(unsigned int *)&a1->q0E4 = 0; /*0x65a75a*/
-  (&a1->radioLinks)[2] = 1; /*0x65a764*/
-  (*((unsigned char *)&((&a1->radioLinks)[3]))) = 1; /*0x65a76e*/
-  (((unsigned char *)&((&a1->radioLinks)[3]))[1]) = 0; /*0x65a775*/
-  (&a1->radioLinks)[0] = (int)&g_ptr_7E8500; /*0x65a77c*/
-  *(unsigned int *)&a1->q0E4 = operator new(4u); /*0x65a78b*/
-  (((unsigned char *)&((&a1->radioLinks)[3]))[1]) = 1; /*0x65a791*/
+  RadioClass::Constructor((gamemd::RadioClass *)((int)this)); /*0x65a753*/
+  *(unsigned int *)&this->q0E4 = 0; /*0x65a75a*/
+  (&this->radioLinks)[2] = 1; /*0x65a764*/
+  (*((unsigned char *)&((&this->radioLinks)[3]))) = 1; /*0x65a76e*/
+  (((unsigned char *)&((&this->radioLinks)[3]))[1]) = 0; /*0x65a775*/
+  (&this->radioLinks)[0] = (int)&g_ptr_7E8500; /*0x65a77c*/
+  *(unsigned int *)&this->q0E4 = operator new(4u); /*0x65a78b*/
+  (((unsigned char *)&((&this->radioLinks)[3]))[1]) = 1; /*0x65a791*/
   /* X11: ptr_0 install elided (implicit via RadioClass virtuals 0x65a798) */
   /* X11: ptr_0 install elided (implicit via RadioClass virtuals 0x65a79e) */
   /* X11: ptr_0 install elided (implicit via RadioClass virtuals 0x65a7a5) */
   /* X11: ptr_0 install elided (implicit via RadioClass virtuals 0x65a7ac) */
-  *(unsigned int *)a1->radioLinks[1] = 0; /*0x65a7be*/
-  (&a1->lastCommands)[0] = 0; /*0x65a7c4*/
-  a1->lastCommands[1] = 0; /*0x65a7ca*/
-  a1->lastCommands[2] = 0; /*0x65a7d2*/
-  return &a1->ptr_0; /*0x65a7d8*/
+  *(unsigned int *)this->radioLinks[1] = 0; /*0x65a7be*/
+  (&this->lastCommands)[0] = 0; /*0x65a7c4*/
+  this->lastCommands[1] = 0; /*0x65a7ca*/
+  this->lastCommands[2] = 0; /*0x65a7d2*/
+  return &this->ptr_0; /*0x65a7d8*/
 }  // G42.18 ns repair
 } // namespace ra2
 
@@ -45,7 +45,7 @@ int RadioClass::ProcessCmd()
 {
 
   if ( !this->inLimbo ) /*0x65aa83*/
-    (*((void (**)(RadioClass *, int))this->MissionClass + 160))(this, 3); /*0x65aa91*/
+    (*((void (**)(RadioClass *, int))this->ptr_0 + 160))(this, 3); /*0x65aa91*/
   return ((ObjectClass *)this)->Undeploy(); /*0x65aa9e*/
 
 }
@@ -223,7 +223,7 @@ int RadioClass::ExecuteAction(int aP1, char aP2)
   unsigned int v7; // edx
   unsigned int *v8; // eax
 
-  Object::Unlink((ObjectClass *)this); /*0x65aacf*/
+  ((Object *)this)->Unlink(); /*0x65aacf*/
   result = this->radioLinks[2]; /*0x65aad4*/
   for ( i = 0; i < result; ++i ) /*0x65aade*/
   {

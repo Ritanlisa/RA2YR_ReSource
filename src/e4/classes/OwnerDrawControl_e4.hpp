@@ -9,7 +9,7 @@ struct OwnerDrawControl {
     unsigned int tail_0;  // 0x0
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
-    int InitVtable(void *a1 = 0);
+    int InitVtable();
 };
 
 } // namespace gamemd

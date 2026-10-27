@@ -51,7 +51,7 @@ struct Trigger {
     char __pad_490[8];  // 0x490
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
-    int EnableOnce(char aP1, void *a2 = 0);  // 0x554A60
+    int EnableOnce(char a2);  // 0x554A60
     MSShapeAnim * * initTrigger(char **aP1, int aP2, int a4, int a5, int a6, int a7, int aP7);  // 0x5CBD20
     void ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char a6);    // 0x76D4D0
     unsigned int *  processTrigger(int a2, int a3);  // 0x76F090

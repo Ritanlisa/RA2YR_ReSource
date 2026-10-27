@@ -114,7 +114,7 @@ AbstractClass * * Turret::LoadVoxelTurretAndBarrel()
             v22 = 0; /*0x5f8e78*/
             ((Vector *)v21)->Clear(); /*0x5f8e7c*/
             *(unsigned int *)v20.__tail_0 = &off_7E1668; /*0x5f8e85*/
-            BufferIOFileClass::Dtor((BufferIOFileClass *)&v20); /*0x5f8e8d*/
+            ((BufferIOFileClass *)&v20)->Dtor(); /*0x5f8e8d*/
           }
         }
         sprintf(Buffer, "%sBARL", &this->AbstractClass_1F8); /*0x5f8ea0*/
@@ -158,19 +158,19 @@ AbstractClass * * Turret::LoadVoxelTurretAndBarrel()
             v22 = 0; /*0x5f8fe2*/
             ((Vector *)v21)->Clear(); /*0x5f8fe6*/
             *(unsigned int *)v20.__tail_0 = &off_7E1668; /*0x5f8fef*/
-            BufferIOFileClass::Dtor((BufferIOFileClass *)&v20); /*0x5f8ff7*/
+            ((BufferIOFileClass *)&v20)->Dtor(); /*0x5f8ff7*/
           }
         }
         /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x5f9008*/
         v25 = 0; /*0x5f900c*/
         ((Vector *)v24)->Clear(); /*0x5f9013*/
         *(unsigned int *)v23.__tail_0 = &off_7E1668; /*0x5f9021*/
-        BufferIOFileClass::Dtor((BufferIOFileClass *)&v23); /*0x5f9025*/
+        ((BufferIOFileClass *)&v23)->Dtor(); /*0x5f9025*/
         /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x5f9031*/
         v28 = 0; /*0x5f9038*/
         ((Vector *)v27)->Clear(); /*0x5f903f*/
         *(unsigned int *)v26.__tail_0 = &off_7E1668; /*0x5f904b*/
-        (v2) = ((v2) & ~0xFF) | ((BufferIOFileClass::Dtor((BufferIOFileClass *)&v26)) & 0xFF); /*0x5f9052*/
+        (v2) = ((v2) & ~0xFF) | ((((BufferIOFileClass *)&v26)->Dtor()) & 0xFF); /*0x5f9052*/
       }
     }
   }

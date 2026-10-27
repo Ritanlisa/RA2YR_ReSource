@@ -13,7 +13,7 @@ struct GenericList {
     unsigned int u32_8;  // 0x8
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
-    unsigned int * Constructor(void *a1 = 0, void *a2 = 0, void *a3 = 0);
+    _DWORD * Constructor();
 };
 #endif  // GAMEMD_G2_GenericList_DEF
 

@@ -418,7 +418,7 @@ AbstractClass * * Surface::LoadToSurfaceSHP(char *Source)
     v11 = 0; /*0x641e82*/
     ((Vector *)v10)->Clear(); /*0x641e8a*/
     *(unsigned int *)v9.__tail_0 = &off_7E1668; /*0x641e93*/
-    BufferIOFileClass::Dtor((BufferIOFileClass *)&v9); /*0x641e9b*/
+    ((BufferIOFileClass *)&v9)->Dtor(); /*0x641e9b*/
     return 1; /*0x641ea2*/
   }
   else
@@ -428,7 +428,7 @@ LABEL_11:
     v11 = 0; /*0x641eb7*/
     ((Vector *)v10)->Clear(); /*0x641ebf*/
     *(unsigned int *)v9.__tail_0 = &off_7E1668; /*0x641ec8*/
-    BufferIOFileClass::Dtor((BufferIOFileClass *)&v9); /*0x641ed0*/
+    ((BufferIOFileClass *)&v9)->Dtor(); /*0x641ed0*/
     return 0; /*0x641ed6*/
   }
 

@@ -13,7 +13,7 @@ struct BTree {
     char __pad_11[3];  // 0x11
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
-    void DeleteSubtree(void *a1 = 0);
+    void DeleteSubtree();
 };
 
 } // namespace gamemd

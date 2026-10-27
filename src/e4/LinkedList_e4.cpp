@@ -174,7 +174,7 @@ LABEL_61:
   v28 = 0; /*0x479545*/
   ((Vector *)v26)->Clear(); /*0x47954c*/
   v24.FilePointer = (int)&off_7E1668; /*0x47955a*/
-  BufferIOFileClass::Dtor((BufferIOFileClass *)&v24.FilePointer); /*0x47955e*/
+  ((BufferIOFileClass *)&v24.FilePointer)->Dtor(); /*0x47955e*/
   if ( v16 ) /*0x47956a*/
   {
     Debug::Log(); /*0x47956c*/
@@ -205,7 +205,7 @@ LABEL_58:
   v27 = 0; /*0x47960f*/
   ((Vector *)&v25)->Clear(); /*0x479616*/
   *(unsigned int *)v24.__tail_0 = &off_7E1668; /*0x47961f*/
-  BufferIOFileClass::Dtor((BufferIOFileClass *)&v24); /*0x479623*/
+  ((BufferIOFileClass *)&v24)->Dtor(); /*0x479623*/
   if ( v20 ) /*0x47962b*/
   {
     Debug::Log(); /*0x479637*/
@@ -334,7 +334,7 @@ int LinkedList_flat::RemoveNode()
   this->m_Prev = 0; /*0x556761*/
   this->m_Next = 0; /*0x556764*/
   if ( v2 != this ) /*0x556767*/
-    return (int)v2->ptr_0; /*0x55677e*/
+    return (int)v2->__pad_0; /*0x55677e*/
   if ( v3 == this ) /*0x55676b*/
     return 0; /*0x55676f*/
   return (*(int (**)(LinkClass *))(*(unsigned int *)v3->__pad_0 + 24))(v3); /*0x55676d*/

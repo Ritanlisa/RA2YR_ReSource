@@ -21,7 +21,7 @@ ControlClass GadgetClass::Construct(int a2, int a3, int a4, int a5, int a6, char
 
 
   unsigned int *result; // eax
-  result = (unsigned int *)(this->__pad_0); /*0x4e12f4*/
+  result = (unsigned int *)(this->ptr_0); /*0x4e12f4*/
   this->Height = a3; /*0x4e12fb*/
   this->Width = a2; /*0x4e1302*/
   this->ID = a5; /*0x4e1309*/
@@ -97,7 +97,7 @@ ControlClass GadgetClass::DrawBuildingPlacement(ControlClass * aP1)
     {
       int v7 = i + this->u32_170; // eax /*0x5579ad*/
       if ( this->u32_44 > v7 ) /*0x5579b1*/
-        (*(void (**)(ListClass *, int, int, int, int, bool))(*(unsigned int *)this->__pad_0 + 200))( /*0x5579e0*/
+        (*(void (**)(ListClass *, int, int, int, int, bool))(*(unsigned int *)this->ptr_0 + 200))( /*0x5579e0*/
           this,
           v7,
           this->Width + 1,
@@ -311,7 +311,7 @@ ControlClass GadgetClass::Show()
 
 
   int v1; // eax
-  v1 = *(unsigned int *)this->__pad_0; /*0x723ea0*/
+  v1 = *(unsigned int *)this->ptr_0; /*0x723ea0*/
   this->u32_2D = 1; /*0x723ea2*/
   return (gamemd::ControlClass)((*(int (**)(void))(v1 + 72))());
 

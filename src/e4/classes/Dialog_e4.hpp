@@ -131,7 +131,7 @@ struct Dialog {
     BOOL SubclassEditControl(HWND hWnd, LPARAM);  // 0x60F320
     HWND Show();  // 0x622800
     static char PumpMessages();  // 0x623120
-    int FindByPtr(void *a1 = 0);  // 0x7759B0
+    int FindByPtr();  // 0x7759B0
     HWND RestoreParent();  // 0x777060
     char UpdateGameUI();  // 0x77D820
     static HWND CloseAll();  // 0x799D10

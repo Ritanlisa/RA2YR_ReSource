@@ -206,7 +206,7 @@ struct MapClass {
     int RemoveCellReference(int a2);
     int RevealArea0(int *a2, int a3, void *a4, char a5, char a6, char a7, char a8, char a9, void *a1 = 0);
     int ScrollOnce(AbstractClass * aP1);
-    int SetCellFlagsAlongPath(unsigned short *aP1, unsigned short *a2, void *a3 = 0);
+    int SetCellFlagsAlongPath(_WORD *a2, _WORD *a3);
     int SetCellOverlayFlag();
     int SetScrollMode(int a2, int aP1, int a1, int aP2, int a3);
     int ToggleZoom(int a2);

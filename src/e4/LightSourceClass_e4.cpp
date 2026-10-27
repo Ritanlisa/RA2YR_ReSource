@@ -47,7 +47,7 @@ unsigned int * LightSourceClass::Construct(int a2, int a3, int a4, int a5, int a
     v10 = g_MissionQueueFrame.random[133]++; /*0x55480a*/
     *(unsigned int *)(g_MissionQueueFrame.random[130] + 4 * v10) = this; /*0x554819*/
   }
-  return &this->AbstractClass; /*0x55481e*/
+  return &this->ptr_0; /*0x55481e*/
 
 }
 } // namespace gamemd
@@ -93,7 +93,7 @@ int LightSourceClass::Constructor(void *a1, void *a2, void *a3, void *a4)
 namespace gamemd {
 int LightSourceClass::Stat(AbstractClass * aP1)
 {
-  return this->AbstractClass::ProcessPower(); /*0x55507a*/
+  return this->ptr_0::ProcessPower(); /*0x55507a*/
 }
 } // namespace gamemd
 // 0x555080
@@ -167,7 +167,7 @@ LightSourceClass * LightSourceClass::CopyTo(char a2)
   /* X11: ptr_0 install elided (implicit via LightSourceClass virtuals 0x55515c) */
   /* X11: ptr_0 install elided (implicit via LightSourceClass virtuals 0x555163) */
   /* X11: ptr_0 install elided (implicit via LightSourceClass virtuals 0x55516a) */
-  AbstractClass::AnnounceExpiredPointer(&this->AbstractClass, 1); /*0x555171*/
+  AbstractClass::AnnounceExpiredPointer(&this->ptr_0, 1); /*0x555171*/
   LightSourceClass *v5; // [esp+4h] [ebp-4h] BYREF
   v5 = this; /*0x555186*/
   int v3; // eax
@@ -193,7 +193,7 @@ LightSourceClass * LightSourceClass::CopyTo(char a2)
   ((AbstractClass *)this)->DTOR(); /*0x5551d5*/
   if ( (a2 & 1) != 0 ) /*0x5551df*/
     __3_YAXPAX_Z(this); /*0x5551e2*/
-  return &this->AbstractClass; /*0x5551ec*/
+  return &this->ptr_0; /*0x5551ec*/
 
 }
 } // namespace gamemd

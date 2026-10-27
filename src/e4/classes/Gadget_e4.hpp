@@ -12,7 +12,7 @@ struct Gadget {
     char tail_9[3];  // 0x9
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
-    unsigned int * InitProperties(void *a1 = 0);  // 0x600630
+    _DWORD * InitProperties();  // 0x600630
 #pragma pack(pop)
 };
 } // namespace gamemd

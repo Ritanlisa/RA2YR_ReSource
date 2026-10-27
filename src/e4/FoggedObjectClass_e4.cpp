@@ -55,7 +55,7 @@ int FoggedObjectClass::InitBuildingFog(unsigned int * a2, int a3, int a4)
   unsigned int *v27; // [esp+44h] [ebp+4h]
   int v28; // [esp+48h] [ebp+8h]
 
-  AbstractClass::Constructor((AbstractClass *)this); /*0x4d0989*/
+  ((AbstractClass *)this)->Constructor(); /*0x4d0989*/
   this->LastSight = a3; /*0x4d099e*/
   this->House = 0; /*0x4d09a1*/
   this->Cell[0] = a4; /*0x4d09a4*/
@@ -193,7 +193,7 @@ int FoggedObjectClass::InitTerrainFog(unsigned int *aP1, int a3, int a4)
   int v24; // [esp+20h] [ebp-14h]
   int v25; // [esp+30h] [ebp-4h]
 
-  AbstractClass::Constructor((AbstractClass *)this); /*0x4d0c49*/
+  ((AbstractClass *)this)->Constructor(); /*0x4d0c49*/
   this->LastSight = -1; /*0x4d0c5a*/
   this->House = 0; /*0x4d0c61*/
   this->Cell = 0; /*0x4d0c64*/
@@ -347,7 +347,7 @@ AbstractClass * FoggedObjectClass::Constructor(BuildingClass * aP1, FoggedObject
   int v57; // [esp+68h] [ebp+8h]
   int v58; // [esp+68h] [ebp+8h]
 
-  AbstractClass::Constructor((AbstractClass *)this); /*0x4d0ef9*/
+  ((AbstractClass *)this)->Constructor(); /*0x4d0ef9*/
   this->LastSight = -1; /*0x4d0f02*/
   v4 = (void *)a2->owner; /*0x4d0f0c*/
   this->Cell = 0; /*0x4d0f12*/
@@ -701,7 +701,7 @@ int FoggedObjectClass::LoadTypeData(int * a1, int a2)
     AbstractClass::InitVtables((AbstractClass *)v3, (int)&a2); /*0x4d253b*/
     FoggedObject::DrawVector_Constructor((FoggedObject *)&v3[1].Cell, 0, 0); /*0x4d2547*/
     /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E8BA0) */  /*0x4d254c*/
-    v3[2].uniqueId = 10; /*0x4d2552*/
+    v3[2].Count = 10; /*0x4d2552*/
     v3[2].vfptr3 = 0; /*0x4d2559*/
     /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_b5181c) */  /*0x4d255c*/
     /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_b5181c) */  /*0x4d2562*/
@@ -772,7 +772,7 @@ LABEL_22:
     ptr_4 = v3[2].vfptr1; /*0x4d25de*/
     if ( v3[2].vfptr3 < ptr_4 /*0x4d2605*/
       || (BYTE1(v3[2].vfptr2) || !ptr_4)
-      && (uniqueId = v3[2].uniqueId, uniqueId > 0)
+      && (uniqueId = v3[2].Count, uniqueId > 0)
       && (*(unsigned __int8 (**)(int *, int, unsigned int))(v3[1].Cell + 8))(&v3[1].Cell, ptr_4 + uniqueId, 0) )
     {
       ptr_C = v3[2].vfptr3; /*0x4d260c*/

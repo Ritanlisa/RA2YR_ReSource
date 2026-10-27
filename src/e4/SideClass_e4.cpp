@@ -198,7 +198,7 @@ int SideClass::SaveLoad_Prefix(unsigned int * a0, AbstractTypeClass * aP1)
     if ( v2 ) /*0x6a47a4*/
     {
       ((int)v2)->Init((int)&aP1); /*0x6a47ad*/
-      v2->houseTypesCount = 0; /*0x6a47b2*/
+      v2->houseTypesCount_d = 0; /*0x6a47b2*/
       v2[1].ptr_0 = 0; /*0x6a47b8*/
       LOBYTE(v2[1].ptr_4) = 1; /*0x6a47be*/
       BYTE1(v2[1].ptr_4) = 0; /*0x6a47c5*/
@@ -323,7 +323,7 @@ int SideClass::FindByName(void *a1)
 
 // 0x4E38A0
 namespace gamemd {
-wchar_t * SideClass::GetName(void *a1)
+wchar_t * SideClass::GetName()
 {
   if ( this == (SideClass *)-2 ) /*0x4e38a3*/
     return GetStringCSF((char *)(aSttPlayersider), 0, g_Str_File_GDlgSupp_cpp, 237); /*0x4e38b6*/
@@ -381,7 +381,7 @@ int SideClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2)
     (*(void (__stdcall **)(int *, int *, int, unsigned int))(v4 + 16))(a1, &aP2, 4, 0); /*0x6a48d1*/
     int i; // esi
     for ( i = 0; i < aP2; ++i ) /*0x6a48dc*/
-      (*(void (__stdcall **)(int *, int, int, unsigned int))(*a1 + 16))(a1, (unsigned int)(aP0->houseTypesCount)+ 4 * i, 4, 0); /*0x6a48ef*/
+      (*(void (__stdcall **)(int *, int, int, unsigned int))(*a1 + 16))(a1, (unsigned int)(aP0->Armor)+ 4 * i, 4, 0); /*0x6a48ef*/
     return 0; /*0x6a48f9*/
   }
   return result; /*0x6a48fc*/

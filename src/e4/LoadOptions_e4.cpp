@@ -128,7 +128,7 @@ char LoadOptions::Read(wchar_t * Destination, int a2, void *a3)
   v2 = v9 + 44; /*0x559eff*/
   if ( !_strcmpi(v9 + 44, MultiByteStr) ) /*0x559f03*/
     return 0; /*0x559f03*/
-  GameState::Reset((GameState *)&v8); /*0x559f17*/
+  ((GameState *)&v8)->Reset(); /*0x559f17*/
   Options_Load = LoadOptions_Load(v2, (int)&v8); /*0x559f27*/
   if ( !Options_Load ) /*0x559f2b*/
     return 0; /*0x55a03f*/
@@ -223,7 +223,7 @@ LoadOptions * LoadOptions::QueryInterface(char a2, int a3, int a1)
 namespace gamemd {
 unsigned int LoadOptions::vt05(int a2)
 {
-  if ( (this->__pad_00C) ) /*0x55a180*/
+  if ( (this->m_C) ) /*0x55a180*/
     return (unsigned int)(a2 - *&this->max_entries) >> 2; /*0x55a195*/
   else
     return 0; /*0x55a187*/
@@ -274,13 +274,13 @@ char LoadOptions::vt02(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x55a33c*/
   {
-    LOBYTE(this->__pad_00C) = 0; /*0x55a342*/
+    LOBYTE(this->m_C) = 0; /*0x55a342*/
     unsigned int *v4; // edi
     if ( a3 ) /*0x55a348*/
       v4 = a3; /*0x55a35e*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x55a35a*/
-    LOBYTE(this->__pad_00C) = 1; /*0x55a362*/
+    LOBYTE(this->m_C) = 1; /*0x55a362*/
     if ( !v4 ) /*0x55a366*/
       return 0; /*0x55a3da*/
     if ( *&this->mode ) /*0x55a368*/
@@ -292,7 +292,7 @@ char LoadOptions::vt02(int a2, unsigned int * a3)
       int i; // eax
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->mode + 4 * i - 4) ) /*0x55a37c*/
         ++i; /*0x55a381*/
-      if ( BYTE1(this->__pad_00C) ) /*0x55a38e*/
+      if ( BYTE1(this->m_C) ) /*0x55a38e*/
       {
         __3_YAXPAX_Z(*&this->mode); /*0x55a399*/
         *&this->mode = 0; /*0x55a3a1*/
@@ -300,7 +300,7 @@ char LoadOptions::vt02(int a2, unsigned int * a3)
     }
     *&this->mode = v4; /*0x55a3aa*/
     this->Capacity = (void *)(a2); /*0x55a3b2*/
-    BYTE1(this->__pad_00C) = a3 == 0; /*0x55a3b5*/
+    BYTE1(this->m_C) = a3 == 0; /*0x55a3b5*/
   }
   else
   {

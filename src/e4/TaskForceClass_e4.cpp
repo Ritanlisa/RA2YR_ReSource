@@ -50,7 +50,7 @@ unsigned int * TaskForceClass::ParseUnitCountAndType(char *Buffer)
   ExitCellByName = Factory::FindExitCellByName((Factory *)&v10); /*0x4c4f29*/
   if ( ExitCellByName == -1 ) /*0x4c4f31*/
   {
-    Index = BuildingTypeClass::FindIndex((BuildingTypeClass *)&v10); /*0x4c4f4c*/
+    Index = ((BuildingTypeClass *)&v10)->FindIndex(); /*0x4c4f4c*/
     if ( Index == -1 ) /*0x4c4f54*/
     {
       v8 = TypeClass::FindByName(&v10); /*0x4c4f6f*/
@@ -82,7 +82,7 @@ int TaskForceClass::Construct(char *aP1, void *a2, void *a3, void *a4, void *a5,
 
   ((AbstractTypeClass *)this->__pad_0)->Constructor(aP1); /*0x6e7e8a*/
   this->ptr_98 = (AbstractClass *)-1; /*0x6e7e8f*/
-  this->Coord_9C = 0; /*0x6e7e99*/
+  this->__pad_09C = 0; /*0x6e7e99*/
   *(unsigned int *)this->q0A0 = 0; /*0x6e7ea3*/
   /* X11: ptr_0 install elided (implicit via TaskForceClass virtuals 0x6e7ead) */
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F4654) */  /*0x6e7eb3*/
@@ -110,7 +110,7 @@ int TaskForceClass::Construct(char *aP1, void *a2, void *a3, void *a4, void *a5,
     --v5; /*0x6e7f37*/
   }
   while ( v5 ); /*0x6e7f38*/
-  return (int)(this->ptr_0); /*0x6e7f3c*/
+  return (int)(this->__pad_0); /*0x6e7f3c*/
 
 }
 }
@@ -229,7 +229,7 @@ char TaskForceClass::GetUnitCount(unsigned char *** aP1)
   if ( !(unsigned __int8)((AbstractTypeClass *)this)->LoadFromINI(aP1) ) /*0x6e843b*/
     return 0; /*0x6e84f7*/
   int v3 = 0; // edi /*0x6e844a*/
-  this->Coord_9C = 0; /*0x6e844f*/
+  this->__pad_09C = 0; /*0x6e844f*/
   do /*0x6e84cb*/
   {
     sprintf(v8.ptr_8, "%d", v3); /*0x6e8460*/
@@ -237,12 +237,12 @@ char TaskForceClass::GetUnitCount(unsigned char *** aP1)
     {
       unsigned int *v4; // eax
       v4 = (&v8)->ParseUnitCountAndType(v8.q028); /*0x6e8491*/
-      int v5 = this->Coord_9C; // ecx /*0x6e8496*/
-      *(unsigned int *)&this->__pad_A0[8 * v5 + 4] = *v4; /*0x6e849e*/
+      int v5 = this->__pad_09C; // ecx /*0x6e8496*/
+      *(unsigned int *)&this->q0A0[8 * v5 + 4] = *v4; /*0x6e849e*/
       *(&this->ptr_8 * v5 + 42) = v4->ptr_4; /*0x6e84a8*/
-      int v6 = this->Coord_9C; // eax /*0x6e84af*/
+      int v6 = this->__pad_09C; // eax /*0x6e84af*/
       if ( *(&this->ptr_8 * v6 + 42) ) /*0x6e84b5*/
-        this->Coord_9C = v6 + 1; /*0x6e84c1*/
+        this->__pad_09C = v6 + 1; /*0x6e84c1*/
     }
     ++v3; /*0x6e84c7*/
   }
@@ -271,7 +271,7 @@ char TaskForceClass::GetUnitType(char * a2)
   {
     char Buffer[32]; // [esp+8h] [ebp-20h] BYREF
     sprintf(Buffer, "%d", v3); /*0x6e853a*/
-    if ( v3 >= this->Coord_9C ) /*0x6e854a*/
+    if ( v3 >= this->__pad_09C ) /*0x6e854a*/
     {
       INIClass::ClearSection((int *)a2, (int)&this->q024, (unsigned __int8 *)Buffer); /*0x6e8571*/
     }
@@ -363,7 +363,7 @@ int TaskForceClass::LoadTask(int * a2)
 
   ((AbstractTypeClass *)this)->ProcessPower(a2); /*0x6e8759*/
   Power::TimerProcess((int)this->ptr_98); /*0x6e8767*/
-  return Power::TimerProcess(this->Coord_9C); /*0x6e877a*/
+  return Power::TimerProcess(this->__pad_09C); /*0x6e877a*/
 
 }
 } // namespace gamemd

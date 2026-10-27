@@ -84,7 +84,7 @@ size_t *CheckListClass_OnClick(void * a1, wchar_t * a2, void * a3, void * a4, vo
 namespace gamemd {  // G42.18c ns repair
 int CheckListClass::COMStub()
 {
-  return this->__pad_011; /*0x4886b3*/
+  return this->off_11; /*0x4886b3*/
 }
 }  // G42.18c ns repair
 // 0x557E10

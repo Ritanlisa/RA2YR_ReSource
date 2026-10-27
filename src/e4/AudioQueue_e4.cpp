@@ -274,7 +274,7 @@ LABEL_5:
     else
     {
       v8 = (this->u32_3C4)->GetOrEmpty(); /*0x7716d1*/
-      v9 = VocClass::FindByName((VocClass *)v8); /*0x7716d8*/
+      v9 = ((VocClass *)v8)->FindByName(); /*0x7716d8*/
       UpdateThemeManager(v9, -1, -1); /*0x7716e2*/
       this->u32_3B8 = 0; /*0x7716e7*/
     }

@@ -11,7 +11,7 @@ struct BulkData {
     AbstractClass * ptr_144;  // 0x144
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
-    void InitMissionHashing(void *a1 = 0);
+    void InitMissionHashing();
 };
 
 } // namespace gamemd

@@ -178,7 +178,7 @@ void ParticleSystemClass_32::ReleaseBuffer(void *a1_1, void *a2_1)
 namespace gamemd {
 unsigned int ParticleSystemClass_32_::GetElementIndex(int a2)
 {
-  if ( (this->__pad_00C) ) /*0x4e8870*/
+  if ( (this->m_C) ) /*0x4e8870*/
     return (unsigned int)(a2 - *&this->q004) >> 2; /*0x4e8885*/
   else
     return 0; /*0x4e8877*/

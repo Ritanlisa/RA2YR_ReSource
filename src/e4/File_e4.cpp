@@ -470,7 +470,7 @@ LABEL_42:
       v25 = 0; /*0x734cbc*/
       ((Vector *)v24)->Clear(); /*0x734cc3*/
       *(unsigned int *)v23.__tail_0 = &off_7E1668; /*0x734ccc*/
-      BufferIOFileClass::Dtor((BufferIOFileClass *)&v23); /*0x734cd4*/
+      ((BufferIOFileClass *)&v23)->Dtor(); /*0x734cd4*/
       return 1; /*0x734ce8*/
     }
     v1 = 0; /*0x734a04*/
@@ -600,7 +600,7 @@ LABEL_43:
   v25 = 0; /*0x734cf8*/
   ((Vector *)v24)->Clear(); /*0x734cff*/
   *(unsigned int *)v23.__tail_0 = &off_7E1668; /*0x734d08*/
-  BufferIOFileClass::Dtor((BufferIOFileClass *)&v23); /*0x734d10*/
+  ((BufferIOFileClass *)&v23)->Dtor(); /*0x734d10*/
   return 0; /*0x734cde*/
 
 }

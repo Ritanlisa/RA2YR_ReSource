@@ -16,7 +16,7 @@ struct AudioFile {
     unsigned int u32_D4;  // 0xD4
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
-    int GetCallback(void *a1 = 0);
+    int GetCallback();
     static void Stop(void * aP0);
 };
 #endif  // GAMEMD_G2_AudioFile_DEF

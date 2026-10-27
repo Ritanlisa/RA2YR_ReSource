@@ -954,12 +954,12 @@ v7 = (HWND)Dialog::FindByHandle((Dialog *)0xC9); /*0x5e3d85*/
       v191 = (MultiplayerGameMode *)aSawWaypointInf; /*0x5e3e9f*/
       Debug::Log(); /*0x5e3ea4*/
       v15 = 0; /*0x5e3ea9*/
-      v196.u32_8 = 0; /*0x5e3eb2*/
+      v196.ptr_8 = 0; /*0x5e3eb2*/
       v197.ptr_0 = 0; /*0x5e3eb6*/
       *(unsigned int *)v196.__pad_0 = 0; /*0x5e3eba*/
       v16 = strtok(v5 + 1, Delimiter); /*0x5e3ebe*/
       if ( v16 ) /*0x5e3ec8*/
-        v196.u32_8 = atol(v16); /*0x5e3ed3*/
+        v196.ptr_8 = atol(v16); /*0x5e3ed3*/
       v17 = strtok(0, Delimiter); /*0x5e3ede*/
       if ( v17 ) /*0x5e3ee8*/
         v197.ptr_0 = atol(v17); /*0x5e3ef3*/
@@ -992,7 +992,7 @@ v7 = (HWND)Dialog::FindByHandle((Dialog *)0xC9); /*0x5e3d85*/
       {
         if ( dword_A8B230 ) /*0x5e3ff8*/
         {
-          dword_A8B230[122].ptr_C = v196.u32_8; /*0x5e4002*/
+          dword_A8B230[122].ptr_C = v196.ptr_8; /*0x5e4002*/
           dword_A8B230[122].uniqueId = v197.ptr_0; /*0x5e4012*/
           dword_A8B230[122].ptr_4 = *(unsigned int *)v196.__pad_0; /*0x5e4022*/
           dword_A8B230[122].ptr_8 = v3; /*0x5e402d*/
@@ -1040,7 +1040,7 @@ if ( v32 || (v32 = (Lobby *)Dialog::FindByHandle((Dialog *)0xBD)) != 0 )
           goto LABEL_98; /*0x5e4358*/
         }
         WideString::Assign((WideString *)&v196, Destination); /*0x5e4157*/
-        v37 = NetworkLobby::DeleteAndZero((NetworkLobby *)&v196); /*0x5e4169*/
+        v37 = ((NetworkLobby *)&v196)->DeleteAndZero(); /*0x5e4169*/
         DeleteAndZero::Alt(&v196); /*0x5e416b*/
         if ( v37 || (v37 = Player::FindByName((Player *)Destination)) != 0 )
         {

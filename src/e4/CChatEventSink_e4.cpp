@@ -193,12 +193,12 @@ LABEL_51:
                   v18 = v16; /*0x7aab9c*/
                 if ( v18 >= stru_B777A0.u32_4 ) /*0x7aaba4*/
                 {
-                  DynamicVector::EnsureCapacity((DynamicVector *)&stru_B777A0); /*0x7aabab*/
+                  ((DynamicVector *)&stru_B777A0)->EnsureCapacity(); /*0x7aabab*/
                   v16 = *(unsigned int *)stru_B777A0.__pad_0; /*0x7aabb0*/
                 }
                 if ( v16 >= stru_B777A0.u32_4 ) /*0x7aabbb*/
                 {
-                  DynamicVector::EnsureCapacity((DynamicVector *)&stru_B777A0); /*0x7aabc2*/
+                  ((DynamicVector *)&stru_B777A0)->EnsureCapacity(); /*0x7aabc2*/
                   v16 = *(unsigned int *)stru_B777A0.__pad_0; /*0x7aabc7*/
                 }
                 if ( v18 < v16 ) /*0x7aabce*/
@@ -247,9 +247,9 @@ LABEL_51:
             {
 LABEL_66:
               unknown_libname_73(&v33[28]); /*0x7aac64*/
-              v21 = *(unsigned int *)stru_B765F8.__pad_0; /*0x7aac6d*/
+              v21 = *(unsigned int *)stru_B765F8.ptr_0; /*0x7aac6d*/
               v22 = 0; /*0x7aac72*/
-              if ( *(int *)stru_B765F8.__pad_0 <= 0 ) /*0x7aac76*/
+              if ( *(int *)stru_B765F8.ptr_0 <= 0 ) /*0x7aac76*/
               {
 LABEL_72:
                 v23 = 0; /*0x7aacb3*/
@@ -258,12 +258,12 @@ LABEL_72:
                 if ( v23 >= *(int *)&stru_B765F8.DynamicVector_field_0x1[3] ) /*0x7aacc1*/
                 {
                   DynamicVector::EnsureCapacity(&stru_B765F8); /*0x7aacc8*/
-                  v21 = *(unsigned int *)stru_B765F8.__pad_0; /*0x7aaccd*/
+                  v21 = *(unsigned int *)stru_B765F8.ptr_0; /*0x7aaccd*/
                 }
                 if ( v21 >= *(int *)&stru_B765F8.DynamicVector_field_0x1[3] ) /*0x7aacd8*/
                 {
                   DynamicVector::EnsureCapacity(&stru_B765F8); /*0x7aacdf*/
-                  v21 = *(unsigned int *)stru_B765F8.__pad_0; /*0x7aace4*/
+                  v21 = *(unsigned int *)stru_B765F8.ptr_0; /*0x7aace4*/
                 }
                 if ( v23 < v21 ) /*0x7aaceb*/
                 {
@@ -271,15 +271,15 @@ LABEL_72:
                     (void *)(stru_B765F8.DynamicVector_field_0x8 + 4 * v23 + 4),
                     (const void *)(stru_B765F8.DynamicVector_field_0x8 + 4 * v23),
                     4 * (v21 + 0x3FFFFFFF * v23));
-                  v21 = *(unsigned int *)stru_B765F8.__pad_0; /*0x7aad0d*/
+                  v21 = *(unsigned int *)stru_B765F8.ptr_0; /*0x7aad0d*/
                 }
                 v24 = (String *)(stru_B765F8.DynamicVector_field_0x8 + 4 * v23); /*0x7aad1b*/
                 if ( v24 ) /*0x7aad20*/
                 {
                   (v24)->AssignFromPtr((const char **)v33); /*0x7aad27*/
-                  v21 = *(unsigned int *)stru_B765F8.__pad_0; /*0x7aad2c*/
+                  v21 = *(unsigned int *)stru_B765F8.ptr_0; /*0x7aad2c*/
                 }
-                *(unsigned int *)stru_B765F8.__pad_0 = v21 + 1; /*0x7aad32*/
+                *(unsigned int *)stru_B765F8.ptr_0 = v21 + 1; /*0x7aad32*/
               }
               else
               {
@@ -289,8 +289,8 @@ LABEL_72:
                     ((String *)&v33[28])->Reassign((const char **)(stru_B765F8.DynamicVector_field_0x8 + 4 * v22)); /*0x7aac8e*/
                   if ( (unsigned __int8)((String *)&v33[28])->Compare((const char **)v33) ) /*0x7aac9c*/
                     break; /*0x7aac9c*/
-                  v21 = *(unsigned int *)stru_B765F8.__pad_0; /*0x7aaca9*/
-                  if ( ++v22 >= *(int *)stru_B765F8.__pad_0 ) /*0x7aacb1*/
+                  v21 = *(unsigned int *)stru_B765F8.ptr_0; /*0x7aaca9*/
+                  if ( ++v22 >= *(int *)stru_B765F8.ptr_0 ) /*0x7aacb1*/
                     goto LABEL_72; /*0x7aacb1*/
                 }
               }

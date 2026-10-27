@@ -467,9 +467,9 @@ wchar_t ** FormatWOLPlayerInfo(wchar_t ** a1, const char * a2)
   const wchar_t *v27[27]; // [esp+30h] [ebp-6Ch] BYREF
 
   String::Assign(&v23, a2 + 36); /*0x780aa6*/
-  v4 = CharStringToWide((wchar_t **)&v25.q004, (const char **)&v23); /*0x780abd*/
+  v4 = CharStringToWide((wchar_t **)&v25.ptr_4, (const char **)&v23); /*0x780abd*/
   WideString::AssignConcat((WideString *)v4, (wchar_t **)&v23.m_3[1], (wchar_t *)L" : ");
-  DeleteAndZero::Alt((DeleteAndZero *)&v25.q004); /*0x780acd*/
+  DeleteAndZero::Alt((DeleteAndZero *)&v25.ptr_4); /*0x780acd*/
   (&v23)->ToLower(); /*0x780ad6*/
   v5 = g_WOL_HashTable; /*0x780adb*/
   memset(v27, 0, sizeof(v27)); /*0x780aee*/
@@ -493,12 +493,12 @@ wchar_t ** FormatWOLPlayerInfo(wchar_t ** a1, const char * a2)
     v21 = WideString::Assign((WideString *)&v25, (wchar_t *)asc_82083C); /*0x780c49*/
     StringCSF = GetStringCSF(g_Str_TXT_RANK, 0, g_Str_File_wonline_cpp, 2937); /*0x780c59*/
     v13 = (&v26)->Assign(StringCSF); /*0x780c63*/
-    v14 = WideString::ConcatAlloc((WideString *)v13, (wchar_t **)&v25.u32_8, (const wchar_t **)v21); /*0x780c6a*/
-    v15 = WideString::ConcatAlloc((WideString *)v14, (wchar_t **)&v25.q004, (const wchar_t **)v22); /*0x780c71*/
+    v14 = WideString::ConcatAlloc((WideString *)v13, (wchar_t **)&v25.ptr_8, (const wchar_t **)v21); /*0x780c6a*/
+    v15 = WideString::ConcatAlloc((WideString *)v14, (wchar_t **)&v25.ptr_4, (const wchar_t **)v22); /*0x780c71*/
     WideString::Append((WideString *)&v23.m_3[1], (const wchar_t **)v15); /*0x780c7b*/
-    DeleteAndZero::Alt((DeleteAndZero *)&v25.q004); /*0x780c84*/
-    DeleteAndZero::Alt((DeleteAndZero *)&v25.u32_8); /*0x780c8d*/
-    DeleteAndZero::Alt((DeleteAndZero *)&v26); /*0x780c96*/
+    DeleteAndZero::Alt((DeleteAndZero *)&v25.ptr_4); /*0x780c84*/
+    DeleteAndZero::Alt((DeleteAndZero *)&v25.ptr_8); /*0x780c8d*/
+    ((DeleteAndZero *)&v26)->Alt(); /*0x780c96*/
     DeleteAndZero::Alt(&v25); /*0x780c9f*/
     DeleteAndZero::Alt((DeleteAndZero *)&v24.m_3[1]); /*0x780ca8*/
   }
@@ -611,9 +611,9 @@ LABEL_14:
   v6 = (&v13)->GetOrEmpty(); /*0x780ed5*/
   strncpy(&v18[36], v6, 0xAu); /*0x780ee0*/
   FormatWOLPlayerInfo((wchar_t **)&v12, v18); /*0x780ef0*/
-  v7 = WideString::Assign((WideString *)&v12.q004, (wchar_t *)L", "); /*0x780efe*/
+  v7 = WideString::Assign((WideString *)&v12.ptr_4, (wchar_t *)L", "); /*0x780efe*/
   WideString::Append((WideString *)&v12, (const wchar_t **)v7); /*0x780f08*/
-  DeleteAndZero::Alt((DeleteAndZero *)&v12.q004); /*0x780f11*/
+  DeleteAndZero::Alt((DeleteAndZero *)&v12.ptr_4); /*0x780f11*/
   if ( v19[10] == (wchar_t *)-1 ) /*0x780f20*/
   {
     v11 = GetStringCSF(g_Str_TXT_UNKNOWN_PING, 0, g_Str_File_wonline_cpp, 3024); /*0x780f6a*/
@@ -632,20 +632,20 @@ LABEL_14:
   *(unsigned int *)&v13.m_3[1] = 0; /*0x780f9d*/
   v17 = 0; /*0x780fa1*/
   v16 = 0; /*0x780fa5*/
-  unknown_libname_73(&v12.u32_8); /*0x780fa9*/
-  ParseStringCommaInts(String, &v14, &v15, (int *)&v13.m_3[1], &v17, &v16, (void **)&v12.u32_8); /*0x780fd2*/
+  unknown_libname_73(&v12.ptr_8); /*0x780fa9*/
+  ParseStringCommaInts(String, &v14, &v15, (int *)&v13.m_3[1], &v17, &v16, (void **)&v12.ptr_8); /*0x780fd2*/
   if ( String::Length((String *)&v12.u32_8) ) /*0x780fdb*/
   {
-    Render_Format((wchar_t **)&v12.q004, (String *)&v12.u32_8); /*0x780fec*/
-    if ( WideString::Length((WideString *)&v12.q004) ) /*0x780ff5*/
+    Render_Format((wchar_t **)&v12.ptr_4, (String *)&v12.u32_8); /*0x780fec*/
+    if ( WideString::Length((WideString *)&v12.ptr_4) ) /*0x780ff5*/
     {
       WideString::Append2((WideString *)&v12, (wchar_t *)L", "); /*0x781007*/
-      WideString::Append((WideString *)&v12, (const wchar_t **)&v12.q004); /*0x781015*/
+      WideString::Append((WideString *)&v12, (const wchar_t **)&v12.ptr_4); /*0x781015*/
     }
-    DeleteAndZero::Alt((DeleteAndZero *)&v12.q004); /*0x78101e*/
+    DeleteAndZero::Alt((DeleteAndZero *)&v12.ptr_4); /*0x78101e*/
   }
   WideString::AssignFromPtr((WideString *)a1, (const wchar_t **)&v12); /*0x78102a*/
-  j_DeleteAndZero((ObjectClass *)&v12.u32_8); /*0x781033*/
+  j_DeleteAndZero((ObjectClass *)&v12.ptr_8); /*0x781033*/
   DeleteAndZero::Alt(&v12); /*0x78103c*/
   j_DeleteAndZero((ObjectClass *)&v13); /*0x781045*/
   return a1; /*0x78104c*/
@@ -1077,7 +1077,7 @@ LABEL_67:
               v20 = v19; /*0x78186a*/
               SendMessageA(v46, 0x19Au, v19, v15); /*0x781878*/
               Gadget::InitProperties(&v39); /*0x781882*/
-              *(unsigned int *)v39.__pad_0 = 1; /*0x781893*/
+              *(unsigned int *)v39.q000 = 1; /*0x781893*/
               WideString::Reassign((void **)&v39.m_1[3], Buffer); /*0x78189b*/
               WideString::Reassign((void **)&v39.m_5[3], &g_TypeClass_DefaultString); /*0x7818a9*/
               v40 = -1; /*0x7818bb*/

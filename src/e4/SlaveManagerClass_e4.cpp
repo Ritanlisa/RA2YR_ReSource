@@ -32,7 +32,7 @@ int SlaveManagerClass::Check(void *a1, void *a2, void *a3)
 
 
   if ( this->u32_AC != 10 ) /*0x522d07*/
-    return (*((int (**)(SlaveManagerClass *, int, unsigned int))this->AbstractClass + 122))(this, 10, 0); /*0x522d0f*/
+    return (*((int (**)(SlaveManagerClass *, int, unsigned int))this->ptr_0 + 122))(this, 10, 0); /*0x522d0f*/
   int result; // eax
   return result; /*0x522d15*/
 
@@ -44,7 +44,7 @@ namespace gamemd {
 int SlaveManagerClass::VtableDispatch()
 {
 
-  return (*((int (**)(SlaveManagerClass *, int, unsigned int))this->AbstractClass + 122))(this, 5, 0); /*0x522d2c*/
+  return (*((int (**)(SlaveManagerClass *, int, unsigned int))this->ptr_0 + 122))(this, 5, 0); /*0x522d2c*/
 
 }
 } // namespace ra2
@@ -54,7 +54,7 @@ namespace gamemd {
 int SlaveManagerClass::CheckIsOne()
 {
 
-  return ((double (*)(SlaveManagerClass *))*((unsigned int *)this->AbstractClass + 173))(this) == 1.0; /*0x522d47*/
+  return ((double (*)(SlaveManagerClass *))*((unsigned int *)this->ptr_0 + 173))(this) == 1.0; /*0x522d47*/
 
 }
 } // namespace ra2
@@ -64,7 +64,7 @@ namespace gamemd {
 int SlaveManagerClass::IsMasterHarvester()
 {
 
-  return (*((int (**)(SlaveManagerClass *))this->AbstractClass + 97))(this) == 10; /*0x522fd2*/
+  return (*((int (**)(SlaveManagerClass *))this->ptr_0 + 97))(this) == 10; /*0x522fd2*/
 
 }
 } // namespace ra2
@@ -509,7 +509,7 @@ TechnoClass * * SlaveManagerClass_ProcessSlaves(unsigned int *a1, void * a2, voi
           v21 = (Cell *)(*(int (**)(wchar_t *))(*(unsigned int *)v9 + 444))(v9); /*0x6af8a8*/
           if ( (unsigned __int8)Cell::IsBridge2(v21) ) /*0x6af8b0*/
           {
-            SlaveManagerClass::Check((SlaveManagerClass *)v9); /*0x6af8bb*/
+            ((SlaveManagerClass *)v9)->Check(); /*0x6af8bb*/
             *(unsigned int *)(v8 + 4) = 3; /*0x6af8c0*/
           }
           else if ( !v9->q5A4 ) /*0x6af8cc*/

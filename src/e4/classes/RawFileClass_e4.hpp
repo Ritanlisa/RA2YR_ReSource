@@ -27,7 +27,7 @@ struct RawFileClass {
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int Close(int a2, int a3);
-    int Dtor(void *a1 = 0);
+    int Dtor();
      unsigned int * Construct(int a2, void *a1 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0, void *a9 = 0);
     int Write(void *a1 = 0);
 };

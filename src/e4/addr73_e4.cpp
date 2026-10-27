@@ -656,7 +656,7 @@ LABEL_36:
   if ( v24 ) /*0x732c0c*/
     result = (*(int (**)(unsigned int *, int))*v24)(v24, 1); /*0x732c12*/
   if ( v6 ) /*0x732c16*/
-    return (**(int (***)(DynamicVector *, int))v6->__pad_0)(v6, 1); /*0x732c1e*/
+    return (**(int (***)(DynamicVector *, int))v6->ptr_0)(v6, 1); /*0x732c1e*/
   return result; /*0x732c20*/
 
 }
@@ -985,7 +985,7 @@ int E4Recv_733380::UpdateUnitHealthTooltip(char a1, void * aMsgCritical, void * 
       {
         v8 = *(BuildingClass **)(*(unsigned int *)(v5 + 4) + 4 * v6); /*0x73344a*/
         if ( BuildingClass::GetSellPriority(v8) == v18 ) /*0x733458*/
-          (*((void (**)(BuildingClass *))v8->TechnoClass + 83))(v8); /*0x73345e*/
+          (*((void (**)(BuildingClass *))v8->ptr_0 + 83))(v8); /*0x73345e*/
         ++v6; /*0x733464*/
       }
       while ( v6 < v7 ); /*0x733467*/
@@ -1043,7 +1043,7 @@ int E4Recv_733380::UpdateUnitHealthTooltip(char a1, void * aMsgCritical, void * 
     }
     LABEL_42:
     if ( v11 ) /*0x73355f*/
-      (**(void (***)(DynamicVector *, int))v11->__pad_0)(v11, 1); /*0x733567*/
+      (**(void (***)(DynamicVector *, int))v11->ptr_0)(v11, 1); /*0x733567*/
     FillUnitTooltipUI(Destination, StringCSF); /*0x73356f*/
     v16 = 3; /*0x73357a*/
     if ( dword_A83D4C ) /*0x733584*/
@@ -1336,7 +1336,7 @@ LABEL_31:
       dword_B0FE54 = 5; /*0x733c32*/
     byte_B0FE58 = 0; /*0x733c3e*/
     if ( v10 ) /*0x733c45*/
-      return (**(void *(***)(DynamicVector *, int))v10->ClearAndFree2_ph)(v10, 1); /*0x733c4e*/
+      return (**(void *(***)(DynamicVector *, int))v10->ptr_0)(v10, 1); /*0x733c4e*/
   }
   return result; /*0x733c50*/
 

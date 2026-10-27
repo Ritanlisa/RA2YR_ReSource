@@ -19,7 +19,7 @@ struct GameOptions {
 // --- flat members (END) ---
     static int GetEntry();
     char GameSpeedChanged();
-    int __thiscall SaveLoad(int *a2);
+    int SaveLoad(int *a2);
 };
 
 } // namespace gamemd

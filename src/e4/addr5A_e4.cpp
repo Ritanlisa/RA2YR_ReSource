@@ -758,7 +758,7 @@ int ScatterTerrainTrees(IUnknown * aP0, int a2, double a3)
             if ( v25 ) /*0x5a4885*/
             {
               *(unsigned int *)v55 = *&v22->u32_24; /*0x5a488e*/
-              v26 = Terrain::LookupByName((Terrain *)Buffer); /*0x5a4892*/
+              v26 = ((Terrain *)Buffer)->LookupByName(); /*0x5a4892*/
               TerrainClass::Construct(v25, *((void **)dword_A8E31C + v26), v55); /*0x5a48aa*/
             }
             ++v48; /*0x5a48af*/

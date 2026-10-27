@@ -57,12 +57,12 @@ unsigned int * InfantryTypeVector::Construct2(int a2, int a3)
     if ( a3 ) /*0x513916*/
     {
       this->u32_4 = a3; /*0x513918*/
-      return this->__pad_0; /*0x51391e*/
+      return this->ptr_0; /*0x51391e*/
     }
     this->u32_4 = __2_YAPAXI_Z(4 * a2); /*0x51392d*/
     (this->q00C) = ((this->q00C) & ~(0xFF << 8)) | (((1) & 0xFF) << 8); /*0x513930*/
   }
-  return this->__pad_0; /*0x51391d*/
+  return this->ptr_0; /*0x51391d*/
 
 }
 } // namespace gamemd
@@ -81,12 +81,12 @@ unsigned int * InfantryTypeVector::ConstructFromData(int a2, int a3)
     if ( a3 ) /*0x5d89c6*/
     {
       this->u32_4 = a3; /*0x5d89c8*/
-      return this->__pad_0; /*0x5d89ce*/
+      return this->ptr_0; /*0x5d89ce*/
     }
     this->u32_4 = __2_YAPAXI_Z(4 * a2); /*0x5d89dd*/
     (this->q00C) = ((this->q00C) & ~(0xFF << 8)) | (((1) & 0xFF) << 8); /*0x5d89e0*/
   }
-  return this->__pad_0; /*0x5d89cd*/
+  return this->ptr_0; /*0x5d89cd*/
 
 }
 } // namespace gamemd

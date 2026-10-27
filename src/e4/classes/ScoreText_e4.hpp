@@ -15,7 +15,7 @@ struct ScoreText {
     unsigned int u32_480;  // 0x480
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
-    void Show(void * a2, void *a1 = 0);
+    void Show(const wchar_t **a2);
     void ShowAlt(const wchar_t **aP1, int a3, void *a1 = 0);
 };
 

@@ -155,7 +155,7 @@ int TriggerClass::RegisterEvent(int a2, int a3, char a4, char a5, int a6, int aP
   {
 LABEL_16:
     if ( a5 ) /*0x7265a0*/
-      BuildingClass::ProcessUpgradeEffects((BuildingClass *)this); /*0x7265a4*/
+      ((BuildingClass *)this)->ProcessUpgradeEffects(); /*0x7265a4*/
   }
   return v12; /*0x7265af*/
 

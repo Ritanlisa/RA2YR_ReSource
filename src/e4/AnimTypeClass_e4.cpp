@@ -61,7 +61,7 @@ unsigned int * AnimTypeClass::Construct2(char *Source, void *a2)
   BYTE1(this->ChargerTurrets[5]) = 0; /*0x41e3dd*/
   this->BarrelVoxel = 0; /*0x41e3e3*/
   this->ChargerTurrets = 0; /*0x41e3e9*/
-  this->FootClass_E0 = 0; /*0x41e3ef*/
+  this->ptr_98 = 0; /*0x41e3ef*/
   this->ChargerBarrels = 0; /*0x41e3f5*/
   this->q108 = 0; /*0x41e3fb*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E2A24) */  /*0x41e401*/
@@ -81,7 +81,7 @@ unsigned int * AnimTypeClass::Construct2(char *Source, void *a2)
     v3 = dword_A8B210++; /*0x41e45f*/
     *((unsigned int *)dword_A8B204 + v3) = (unsigned int)(this); /*0x41e46e*/
   }
-  return &this->ObjectTypeClass; /*0x41e473*/
+  return &this->ptr_0; /*0x41e473*/
 
 }
 }  // G42.18 ns repair
@@ -289,7 +289,7 @@ void* AnimTypeClass::GetWarhead(int a2)
     if ( !this->LoopEnd_d ) /*0x427c4c*/
       this->LoopEnd_d = this->End_d; /*0x427c5c*/
     this->MiddleFrameWidth = SHIWORD(Image[1].unused) / 2; /*0x427c6b*/
-    this->MiddleFrameHeight = -1; /*0x427c74*/
+    this->MiddleFrameHeight_d = -1; /*0x427c74*/
     *(unsigned int *)this->__pad_2A0 = -1; /*0x427c7a*/
     LOBYTE(v3) = -1; /*0x427c71*/
   }
@@ -467,7 +467,7 @@ int AnimTypeClass::PowerDrainUpdate(int * a2)
   LOBYTE(v13) = this->TiberiumChainReaction; /*0x428a9b*/
   ((Power *)a2)->FlagProcess(v13); /*0x428aa4*/
   Power::TimerProcess(this->Rate); /*0x428ab2*/
-  Power::TimerProcess(this->Start); /*0x428ac0*/
+  Power::TimerProcess(this->Damage_d); /*0x428ac0*/
   Power::TimerProcess(this->LoopStart_d); /*0x428ace*/
   Power::TimerProcess(this->LoopEnd_d); /*0x428adc*/
   Power::TimerProcess(this->End_d); /*0x428aea*/
@@ -665,7 +665,7 @@ char AnimTypeClass::GetLoopCount(int a2)
     {
       LOBYTE(v2) = this->NewTheater_d; /*0x427b2b*/
       if ( (unsigned char)v2 ) /*0x427b33*/
-        LOBYTE(v2) = (*((char (**)(AnimTypeClass *, int))this->ObjectTypeClass + 40))(this, a2); /*0x427b3a*/
+        LOBYTE(v2) = (*((char (**)(AnimTypeClass *, int))this->ptr_0 + 40))(this, a2); /*0x427b3a*/
     }
     else
     {
@@ -688,7 +688,7 @@ char AnimTypeClass::GetLoopCount(int a2)
 
 // 0x427CB0
 namespace gamemd {
-int AnimTypeClass::FindIndex(void *a1)
+int AnimTypeClass::FindIndex()
 {
 
   if ( !this ) /*0x427cb6*/
@@ -738,9 +738,9 @@ int AnimTypeClass::GetAnimData(int a2, int a3)
 {
 
   int result; // eax
-  result = (int)this->Next; /*0x428c10*/
+  result = (int)this->Next_d; /*0x428c10*/
   if ( result == a2 ) /*0x428c1c*/
-    this->Next = 0; /*0x428c1e*/
+    this->Next_d = 0; /*0x428c1e*/
   return result; /*0x428c28*/
 }
 } // namespace gamemd

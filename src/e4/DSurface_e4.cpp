@@ -66,10 +66,10 @@ AbstractClass * DSurface::Construct(int aP1, int aP2, char aP3, char a5, void *a
 {
 
   unsigned int *v6 = &this->u32_1C; // ebp /*0x4ba5b0*/
-  this->Width = aP1; /*0x4ba5b5*/
-  this->Height = aP2; /*0x4ba5b8*/
-  this->LockCount = 0; /*0x4ba5bb*/
-  this->Width = 0; /*0x4ba5be*/
+  this->__pad_004 = aP1; /*0x4ba5b5*/
+  this->__pad_004 = aP2; /*0x4ba5b8*/
+  this->u32_C = 0; /*0x4ba5bb*/
+  this->__pad_004 = 0; /*0x4ba5be*/
   this->u32_14 = 0; /*0x4ba5c1*/
   this->q_60 = 0; /*0x4ba5c4*/
   this->u32_64 = 0; /*0x4ba5c7*/
@@ -102,7 +102,7 @@ AbstractClass * DSurface::Construct(int aP1, int aP2, char aP3, char a5, void *a
       int v8; // eax
       (*(void (__stdcall **)(unsigned int, unsigned int))(*(unsigned int *)this->u32_74)(*v6, this->u32_20); /*0x4ba67a*/
       v8 = this->u32_20; /*0x4ba67d*/
-      this->Width = (unsigned int)(v8->u32_54 + 7) >> 3; /*0x4ba689*/
+      this->__pad_004 = (unsigned int)(v8->u32_54 + 7) >> 3; /*0x4ba689*/
       this->u32_64 = (v8->SuperClass_field_0x68 & 0x4000) != 0; /*0x4ba695*/
     }
   }
@@ -111,7 +111,7 @@ AbstractClass * DSurface::Construct(int aP1, int aP2, char aP3, char a5, void *a
 } // namespace gamemd
 // 0x4BA6B0
 namespace gamemd {
-AbstractClass * * DSurface::Destroy(void *a1)
+AbstractClass * * DSurface::Destroy()
 {
 
   char DSurface_field_0x18; // al
@@ -146,7 +146,7 @@ AbstractClass * * DSurface::Destroy(void *a1)
 } // namespace gamemd
 // 0x4BA770
 namespace gamemd {
-AbstractClass * * DSurface::CreatePrimary(void *a1)
+AbstractClass * * DSurface::CreatePrimary()
 {
 
   char v1; // bl
@@ -396,9 +396,9 @@ unsigned int * DSurface::CreateBackBuffer(int a2, void *a2_1)
   void *v3; // edi
   void *DSurface_field_0x20; // eax
 
-  this->Width = 0; /*0x4bac6b*/
-  this->Height = 0; /*0x4bac6e*/
-  this->LockCount = 0; /*0x4bac71*/
+  this->__pad_004 = 0; /*0x4bac6b*/
+  this->__pad_004 = 0; /*0x4bac6e*/
+  this->u32_C = 0; /*0x4bac71*/
   this->q010 = 0; /*0x4bac74*/
   this->u32_14 = 0; /*0x4bac77*/
   (this->u32_18) = ((this->u32_18) & ~0xFF) | ((0) & 0xFF); /*0x4bac7a*/
@@ -419,8 +419,8 @@ unsigned int * DSurface::CreateBackBuffer(int a2, void *a2_1)
       DSurface_field_0x20 = this->u32_20; /*0x4bacc2*/
       this->q010 = (int)((void *)((unsigned int)(*((unsigned int *)DSurface_field_0x20 + 21) + 7) >> 3)); /*0x4bacce*/
       BYTE1(this->u32_18) = (*((unsigned int *)DSurface_field_0x20 + 26) & 0x4000) != 0; /*0x4bacda*/
-      this->Width = (void *)*((unsigned int *)DSurface_field_0x20 + 3); /*0x4bace0*/
-      this->Height = (void *)*((unsigned int *)DSurface_field_0x20 + 2); /*0x4bace6*/
+      this->__pad_004 = (void *)*((unsigned int *)DSurface_field_0x20 + 3); /*0x4bace0*/
+      this->__pad_004 = (void *)*((unsigned int *)DSurface_field_0x20 + 2); /*0x4bace6*/
     }
   }
   return &this->DSurface_field_0x0; /*0x4baceb*/
@@ -438,7 +438,7 @@ int DSurface::GetBytesPerPixel()
 } // namespace gamemd
 // 0x4BB000
 namespace gamemd {
-int DSurface::RestoreIfLost(void *a1)
+int DSurface::RestoreIfLost()
 {
 
   int v3; // eax
@@ -455,15 +455,15 @@ int DSurface::RestoreIfLost(void *a1)
     {
       return 0; /*0x4bb01a*/
     }
-    DSurface_field_0xC = this->LockCount; /*0x4bb049*/
+    DSurface_field_0xC = this->u32_C; /*0x4bb049*/
     if ( (int)DSurface_field_0xC > 0 ) /*0x4bb04e*/
     {
       DSurface_field_0x0 = this->DSurface_field_0x0; /*0x4bb050*/
-      this->LockCount = 0; /*0x4bb058*/
+      this->u32_C = 0; /*0x4bb058*/
       (*((void (**)(DSurface *, unsigned int, unsigned int))DSurface_field_0x0 + 23))(this, 0, 0); /*0x4bb05b*/
-      ++this->LockCount; /*0x4bb064*/
+      ++this->u32_C; /*0x4bb064*/
       (*((void (**)(DSurface *))this->DSurface_field_0x0 + 24))(this); /*0x4bb069*/
-      this->LockCount = DSurface_field_0xC; /*0x4bb06c*/
+      this->u32_C = DSurface_field_0xC; /*0x4bb06c*/
     }
   }
   return 1; /*0x4bb016*/
@@ -574,15 +574,15 @@ DSurface * * DSurface::Blit(int * a1, int * a2, unsigned int * a3, int * a4, DSu
     {
       return 0; /*0x4bb245*/
     }
-    DSurface_field_0xC = this->LockCount; /*0x4bb250*/
+    DSurface_field_0xC = this->u32_C; /*0x4bb250*/
     if ( (int)DSurface_field_0xC > 0 ) /*0x4bb254*/
     {
       DSurface_field_0x0 = this->DSurface_field_0x0; /*0x4bb256*/
-      this->LockCount = 0; /*0x4bb25d*/
+      this->u32_C = 0; /*0x4bb25d*/
       (*((void (**)(DSurface *, unsigned int, unsigned int))DSurface_field_0x0 + 23))(this, 0, 0); /*0x4bb264*/
-      ++this->LockCount; /*0x4bb26d*/
+      ++this->u32_C; /*0x4bb26d*/
       (*((void (**)(DSurface *))this->DSurface_field_0x0 + 24))(this); /*0x4bb273*/
-      this->LockCount = DSurface_field_0xC; /*0x4bb27a*/
+      this->u32_C = DSurface_field_0xC; /*0x4bb27a*/
     }
   }
   if ( v42 == 1 ) /*0x4bb282*/
@@ -777,15 +777,15 @@ void* DSurface::FillRectEx(int a2, int a3, int a4)
       if ( !(*(int (**)(int))(*(unsigned int *)this->u32_1C + 108))(this->u32_1C) /*0x4bb6c1*/
         && !(*(int (**)(int))(*(unsigned int *)this->u32_1C + 96))(this->u32_1C) )
       {
-              DSurface_field_0xC = this->LockCount; /*0x4bb6cc*/
+              DSurface_field_0xC = this->u32_C; /*0x4bb6cc*/
               if ( (int)DSurface_field_0xC > 0 ) /*0x4bb6d1*/
               {
           DSurface_field_0x0 = this->DSurface_field_0x0; /*0x4bb6d3*/
-          this->LockCount = 0; /*0x4bb6db*/
+          this->u32_C = 0; /*0x4bb6db*/
           (*((void (**)(DSurface *, unsigned int, unsigned int))DSurface_field_0x0 + 23))(this, 0, 0); /*0x4bb6de*/
-          ++this->LockCount; /*0x4bb6e7*/
+          ++this->u32_C; /*0x4bb6e7*/
           (*((void (**)(DSurface *))this->DSurface_field_0x0 + 24))(this); /*0x4bb6ec*/
-          this->LockCount = DSurface_field_0xC; /*0x4bb6ef*/
+          this->u32_C = DSurface_field_0xC; /*0x4bb6ef*/
             }
               LABEL_15:
         v8 = (int *)(*((int (**)(DSurface *, char *))this->DSurface_field_0x0 + 30))(this, v32); /*0x4bb6f2*/

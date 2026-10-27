@@ -580,7 +580,7 @@ Dialog::StopBink((Dialog *)hDlg); /*0x5de66b*/
       case 0x14u: /*0x5de57f*/
         return 1;
       case 0x2Bu: /*0x5de57f*/
-        Dialog::Resize((char *)lParam); /*0x5de61b*/
+        ((Dialog *)lParam)->Resize(); /*0x5de61b*/
         result = 1; /*0x5de623*/
         break; /*0x5de62f*/
       case 0x84u: /*0x5de57f*/

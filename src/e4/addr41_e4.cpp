@@ -814,7 +814,7 @@ int PlaceAircraftFromINI(void * a1, void * a2, void * aAircraft)
             v21 = strtok(0, Delimiter); /*0x41b2bb*/
             v22 = LookupWaypointName((ObjectClass *)v21); /*0x41b2ca*/
             v23 = strtok(0, Delimiter); /*0x41b2d3*/
-            v24 = (TeamClass *)ObjectTypeClass::FindByName((ObjectTypeClass *)v23); /*0x41b2dd*/
+            v24 = (TeamClass *)((ObjectTypeClass *)v23)->FindByName(); /*0x41b2dd*/
             if ( v24 ) /*0x41b2e4*/
             {
               v25 = TeamClass::FindOrCreate(v24); /*0x41b2e8*/

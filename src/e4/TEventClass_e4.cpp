@@ -315,7 +315,7 @@ LABEL_139:
                   if ( (*(int (**)(int, int))(*(unsigned int *)a4 + 208))(a4, 1) ) /*0x71ed14*/
                   {
                     v30 = (unsigned int *)(*(int (**)(int, int))(*(unsigned int *)a4 + 208))(a4, 1); /*0x71ed31*/
-                    if ( v30[12] == *(unsigned int *)(HouseClass::FindOwner((HouseClass *)this->TEventClass_field_34) + 48) ) /*0x71ed40*/
+                    if ( v30[12] == *(unsigned int *)(((HouseClass *)this->TEventClass_field_34)->FindOwner() + 48) ) /*0x71ed40*/
                     {
                       *(unsigned char *)a6 = 1; /*0x71ed4d*/
                       (v18) = ((v18) & ~0xFF) | ((1) & 0xFF); /*0x71ed50*/
@@ -501,7 +501,7 @@ LABEL_91:
         }
       }
 LABEL_122:
-      Owner = HouseClass::FindOwner((HouseClass *)this->TEventClass_field_34); /*0x71f069*/
+      Owner = ((HouseClass *)this->TEventClass_field_34)->FindOwner(); /*0x71f069*/
       if ( Owner ) /*0x71f075*/
       {
         switch ( this->TEventClass_field_2C ) /*0x71f092*/

@@ -9,7 +9,7 @@
 
 // 0x4810A0
 namespace gamemd {  // G42.18 ns repair
-int Input::OffsetToDirection(void *a1)
+int Input::OffsetToDirection()
 {
 
   double v1; // st7

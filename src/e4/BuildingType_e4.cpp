@@ -25,7 +25,7 @@
 
 // 0x4E3560
 namespace gamemd {  // G42.18 ns repair
-int BuildingType::FindDefault(void *a1)
+int BuildingType::FindDefault()
 {
 
   int result = 0; // eax /*0x4e3560*/

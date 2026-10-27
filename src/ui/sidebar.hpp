@@ -106,7 +106,9 @@ public:
     // wrapper: delegates to SidebarClass::SwitchTab at 0x6A7590
     void SidebarNeedsRepaint(int32_t mode = 0);
     // IDA 0x6A6300
-    bool AddCameo(AbstractType absType, int32_t idxType);  // 0x6A6300
+    // x144b: 签名改 int,int 对齐二进制真值 (ida __thiscall AddCameo(this,a2,a3)) 与
+    // sidebar.cpp 定义一致; 原 (AbstractType,int32_t) 触发 C2511+C2671 级联 (56 错)
+    bool AddCameo(int a2, int a3);  // 0x6A6300
     // IDA 0x6A60A0
     // wrapper: delegates to Sidebar::ActivateTab at 0x6A60A0
     void RepaintSidebar(int32_t tab = 0);

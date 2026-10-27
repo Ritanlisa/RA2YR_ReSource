@@ -48,7 +48,7 @@ unsigned int * HouseTypeClass::loadVeteranWeapons(HouseTypeClass * a2)
   /* X11: ptr_0 install elided (implicit via HouseTypeClass virtuals 0x511681) */
   /* X11: ptr_0 install elided (implicit via HouseTypeClass virtuals 0x511688) */
   /* X11: ptr_0 install elided (implicit via HouseTypeClass virtuals 0x51168f) */
-  return &this->AbstractClass; /*0x511698*/
+  return &this->ptr_0; /*0x511698*/
 
 }
 }  // G42.18 ns repair
@@ -202,7 +202,7 @@ AbstractClass * HouseTypeClass::LoadFromINI(uint8_t *** aP1, void *a2)
   if ( Source ) /*0x5118ed*/
   {
     strncpy(Destination.__pad_0, Source, 0x18u); /*0x511901*/
-    LOBYTE(Destination.nextArrayIndex) = 0; /*0x511909*/
+    LOBYTE(Destination.q018) = 0; /*0x511909*/
   }
   else
   {
@@ -211,7 +211,7 @@ AbstractClass * HouseTypeClass::LoadFromINI(uint8_t *** aP1, void *a2)
   if ( &Destination != &_EBX->buildtimeBuildingsMult ) /*0x51191a*/
   {
     memcpy(&_EBX->buildtimeBuildingsMult, &Destination, 0x18u); /*0x511925*/
-    *(unsigned char *)(_EBX + 176) = Destination.nextArrayIndex; /*0x511927*/
+    *(unsigned char *)(_EBX + 176) = Destination.q018; /*0x511927*/
     v4 = this; /*0x511928*/
   }
   _EBX->wallOwner = BuildingTypeClass::FindAnimByName( /*0x511942*/

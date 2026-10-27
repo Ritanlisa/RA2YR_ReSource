@@ -28,7 +28,7 @@ extern unsigned int aMusicStream;  // data: 0x844750 truth(IDA G42.57w9)
 
 // 0x4080C0
 namespace gamemd {  // G42.18 ns repair
-int ThemeClass::RequestBuffer(void *a1)
+int ThemeClass::RequestBuffer()
 {
   return RequestBufferMixer((gamemd::VolumeStruct *)((unsigned int *)(this->m_Name[3] + 16)), 0);
 }  // G42.18 ns repair
@@ -100,7 +100,7 @@ void * ThemeClass::InitializeThemes(char * a2)
   v18 = KeyCount; /*0x7205af*/
   for ( i = 0; v5 < KeyCount; i = v5 ) /*0x7205b7*/
   {
-    StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(v2->__pad_0, g_INI_Key_Themes, v5); /*0x7205d1*/
+    StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(v2->ptr_0, g_INI_Key_Themes, v5); /*0x7205d1*/
     if ( INIClass::GetString(v2, g_INI_Key_Themes, StringByIndex, &g_INI_DefaultBuffer, Destination, 32) ) /*0x7205de*/
     {
       if ( &v16 == (int *)-24 ) /*0x7205f1*/
