@@ -6,7 +6,7 @@
 namespace gamemd {
 
 struct MultiplayerManBattle {
-    void* ptr_0;  // 0x0
+    int ptr_0;  // 0x0
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     MultiplayerManBattle * QueryInterface(unsigned int * Block, char a2);

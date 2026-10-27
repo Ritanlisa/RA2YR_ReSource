@@ -8,7 +8,7 @@ namespace gamemd {
 struct VectorClass_flat;  // fix_fwd_type_supply
 struct FoggedObjectClass_42 {
     void* ptr_4;  // 0x0
-    void* Items;  // 0x4
+    int Items;  // 0x4
     int Capacity;  // 0x8
     unsigned int IsInitialized;  // 0xC
     int Count;  // 0x10

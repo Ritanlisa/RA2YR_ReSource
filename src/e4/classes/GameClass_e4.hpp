@@ -59,7 +59,7 @@ struct PKStrawClass {
 struct GameClass {
 #pragma pack(push, 1)  // X60: binary-packed layout
     unsigned int __pad_0;  // 0x0
-    unsigned int * u32_4;  // 0x4
+    int u32_4;  // 0x4
     char u32_8[2];  // 0x8
     unsigned short u16_A;  // 0xA
     unsigned int u32_C;  // 0xC

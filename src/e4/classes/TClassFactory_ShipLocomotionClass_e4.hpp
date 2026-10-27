@@ -9,7 +9,7 @@ namespace gamemd {
 
 struct TClassFactory_ShipLocomotionClass {
     void* ptr_0;  // 0x0
-    void* ptr_1;  // 0x4
+    int ptr_1;  // 0x4
     char __pad_8[8];  // 0x8
     void* WinMain_Helper_6C4E40();  // 0x006C4E40
 };

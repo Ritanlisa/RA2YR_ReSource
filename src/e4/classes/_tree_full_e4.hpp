@@ -277,7 +277,7 @@ struct AudioChannel {
 struct CampaignScore {
     unsigned char * __pad_0;  // 0x0
     int __pad_004;  // 0x4
-    void * ptr_4;  // 0x8
+    int ptr_4;  // 0x8
     int CampaignScore_field_0x0C;  // 0xC
     void * ptr_C;  // 0x10
     int CampaignScore_field_0x14;  // 0x14
@@ -294,7 +294,7 @@ struct DialogControl_OwnerDraw {
 #if !defined(GAMEMD_TREE_UNIVERSE) && !defined(GAMEMD_E4_VECTOR_TREE_TRUTH)
 struct DynamicVectorClass {
     void* vfptr;  // 0x0
-    void* Items;  // 0x4
+    int Items;  // 0x4
     int Capacity;  // 0x8
     bool IsInitialized;  // 0xC
     bool IsAllocated;  // 0xD
@@ -1211,8 +1211,8 @@ struct State {
 #if !defined(GAMEMD_TREE_UNIVERSE) && !defined(GAMEMD_E4_VECTOR_TREE_TRUTH)
 struct VectorClass {
     void * ptr_0;  // 0x0
-    void * Items;  // 0x4
-    AbstractClass * Capacity;  // 0x8
+    int Items;  // 0x4
+    int Capacity;  // 0x8
     char IsInitialized[1];  // 0xC
     char IsAllocated[1];  // 0xD
     unsigned short tail_E;  // 0xE
@@ -1303,7 +1303,7 @@ struct _ {
     unsigned int * WstringConstructor(int a2, unsigned int *a3);
     int RemoveAt(int a2);
     int Shrink();
-    void* Items;  // 0x4 [X30:canon]
+    int Items;  // 0x4 [X30:canon]
     int Capacity;  // 0x8 [X30:canon]
     bool IsAllocated;  // 0xD [X30:canon]
 };

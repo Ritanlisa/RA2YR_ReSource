@@ -7,7 +7,7 @@ namespace gamemd {
 
 struct Straw {
     char __pad_0[4];  // 0x0
-    void* Straw_field_0x04;  // 0x4
+    int Straw_field_0x04;  // 0x4
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int Dtor(void *a1 = 0);

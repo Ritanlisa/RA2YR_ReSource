@@ -11,7 +11,7 @@ struct Terrain {
     char __pad_1[1];  // 0x1
     char Terrain_field_0x2[4];  // 0x2
     char __pad_6[14];  // 0x6
-    void* q014;  // 0x14
+    int q014;  // 0x14
     int __pad_18;  // 0x18
     char __pad_1C[8];  // 0x1C
     int q024;  // 0x24

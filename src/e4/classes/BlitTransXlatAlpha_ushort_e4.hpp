@@ -8,7 +8,7 @@ namespace gamemd {
 struct BlitTransXlatAlpha_ushort {
     void* ptr_0;  // 0x0
     unsigned int m_4;  // 0x4
-    AbstractClass* ptr_8;  // 0x8
+    int ptr_8;  // 0x8
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int Blit_Alpha_ZReadWrite_Lucent25(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9);  // 0x493930

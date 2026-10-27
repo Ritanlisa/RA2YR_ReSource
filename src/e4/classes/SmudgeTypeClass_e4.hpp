@@ -15,7 +15,7 @@ struct SomeVoxelCache;  // fix_fwd_type_supply
 struct SmudgeClass;  // fix_fwd_type_supply
 
 struct SmudgeTypeClass {
-    void * ptr_0;  // 0x0
+    int ptr_0;  // 0x0
     void* ptr_4;  // 0x4
     void* ptr_8;  // 0x8
     void* ptr_C;  // 0xC

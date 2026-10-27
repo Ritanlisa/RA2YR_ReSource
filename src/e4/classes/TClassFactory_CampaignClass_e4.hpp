@@ -9,7 +9,7 @@ namespace gamemd {
 
 struct TClassFactory_CampaignClass {
     void* ptr_0;  // 0x0
-    void* ptr_1;  // 0x4
+    int ptr_1;  // 0x4
     char __pad_8[24];  // 0x8
     int GetClassName();
     int GetSize(int a2, int a1, int a3, int a4);
