@@ -100,7 +100,7 @@ struct TechnoClass {
     int gattlingStage;  // 0x140
     int gattlingValue;  // 0x144
     int ammoReloadTimer;  // 0x148
-    int initialOwner;  // 0x14C
+    HouseClass* initialOwner;  // 0x14C
     int veterancy;  // 0x150
     int alignmentPadding154;  // 0x154
     int armorMultiplier[2];  // 0x158
@@ -117,7 +117,7 @@ struct TechnoClass {
     unsigned int airstrikeTintStage_d;  // 0x1C4
     unsigned int airstrikeTintStage_2;  // 0x1C8
     void * drainTarget;  // 0x1CC
-    int drainingMe;  // 0x1D0
+    TechnoClass* drainingMe;  // 0x1D0
     TechnoClass * drainAnim;  // 0x1D4
     char isDisguisedFlag[1];  // 0x1D8
     unsigned char __pad_1D9;  // 0x1D9
@@ -132,7 +132,7 @@ struct TechnoClass {
     unsigned int currentBarrelIndex;  // 0x20C
     unsigned int displayProductionTo;  // 0x210
     unsigned int controlGroup;  // 0x214
-    unsigned int focus;  // 0x218
+    AbstractClass* focus;  // 0x218
     HouseClass * owner;  // 0x21C
     AbstractClass * cloakState;  // 0x220
     int cloakProgress[7];  // 0x224
@@ -158,7 +158,7 @@ struct TechnoClass {
     int owningHouseIndex0;  // 0x280
     int chronoLockRemaining;  // 0x284
     int chronoDestCoords[3];  // 0x288
-    unsigned int airstrike;  // 0x294
+    AirstrikeClass* airstrike;  // 0x294
     char isBerserk[1];  // 0x298
     char __pad_299[3];  // 0x299
     Coord * isBerserk_duration_left;  // 0x29C
@@ -166,10 +166,10 @@ struct TechnoClass {
     char isUncrushable[1];  // 0x2A4
     char __pad_2A5[3];  // 0x2A5
     AirstrikeClass * rockerLinkedUnit;  // 0x2A8
-    int locomotorTarget;  // 0x2AC
-    unsigned int locomotorSource;  // 0x2B0
+    FootClass* locomotorTarget;  // 0x2AC
+    FootClass* locomotorSource;  // 0x2B0
     void * target;  // 0x2B4
-    int lastTarget;  // 0x2B8
+    AbstractClass* lastTarget;  // 0x2B8
     FootClass * captureManager;  // 0x2BC
     FootClass * mindControlledBy;  // 0x2C0
     char mindControlledBy_a_unit[1];  // 0x2C4
@@ -178,7 +178,7 @@ struct TechnoClass {
     AbstractClass * mindControlledBy_house;  // 0x2CC
     CaptureManagerClass * spawnManager;  // 0x2D0
     TechnoClass * spawnOwner;  // 0x2D4
-    int slaveManager;  // 0x2D8
+    SlaveManagerClass* slaveManager;  // 0x2D8
     AnimClass * slaveOwner;  // 0x2DC
     HouseClass * originalOwnerHouse;  // 0x2E0
     SpawnManagerClass * bunkerLinkedUnit;  // 0x2E4
@@ -189,9 +189,9 @@ struct TechnoClass {
     TimerStruct * unitValue;  // 0x300
     ParticleSystemClass * fireParticles;  // 0x304
     void * sparkParticles;  // 0x308
-    unsigned int ambientParticles;  // 0x30C
-    int damageParticles;  // 0x310
-    int railgunParticles;  // 0x314
+    ParticleSystemClass* ambientParticles;  // 0x30C
+    ParticleSystemClass* damageParticles;  // 0x310
+    ParticleSystemClass* railgunParticles;  // 0x314
     ParticleSystemClass * unk1Particles;  // 0x318
     ParticleSystemClass * sparkParticles_d;  // 0x31C
     ParticleSystemClass * ambientParticles_d;  // 0x320
@@ -292,7 +292,7 @@ struct TechnoClass {
     unsigned char __pad_4FA;  // 0x4FA
     char __pad_4FB[1];  // 0x4FB
     IUnknown * unknown_4FC;  // 0x4FC
-    unsigned int voiceVolumeModifier;  // 0x500
+    TechnoClass* voiceVolumeModifier;  // 0x500
     unsigned int empLockRemaining;  // 0x504
     unsigned int threatPosed;  // 0x508
     unsigned int shouldLoseTarget;  // 0x50C

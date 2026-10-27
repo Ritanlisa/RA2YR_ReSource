@@ -40,7 +40,7 @@ struct ScenarioClass {
     char __pad_11E2[2];  // 0x11E2
     void * numCoopHumanStartSpots;  // 0x11E4
     char missionTimer[12];  // 0x11E8
-    unsigned int missionTimer_text_csf;  // 0x11F4
+    wchar_t* missionTimer_text_csf;  // 0x11F4
     int missionTimer_text[8];  // 0x11F8
     char shroudRegrowTimer[12];  // 0x1218
     char fogTimer[12];  // 0x1224
@@ -55,7 +55,7 @@ struct ScenarioClass {
     char uiNameLoaded[90];  // 0x13DA
     void * intro;  // 0x1434
     void * brief;  // 0x1438
-    unsigned int win;  // 0x143C
+    char* win;  // 0x143C
     void * lose;  // 0x1440
     void * action;  // 0x1444
     void * postScore;  // 0x1448

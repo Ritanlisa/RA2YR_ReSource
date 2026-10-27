@@ -23,7 +23,7 @@ struct SideClass {
     char uiNameLabel[32];  // 0x3D
     unsigned char __pad_05D;  // 0x5D
     char __pad_5E[2];  // 0x5E
-    unsigned int uiName;  // 0x60
+    wchar_t* uiName;  // 0x60
     char name[49];  // 0x64
     unsigned char tail_95;  // 0x95
     char __pad_96[2];  // 0x96

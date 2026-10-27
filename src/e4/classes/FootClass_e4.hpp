@@ -85,12 +85,12 @@ struct FootClass {
     int flashing[2];  // 0xF0
     char radioContact[28];  // 0xF8
     int passengers[2];  // 0x114
-    int transporter;  // 0x11C
+    TechnoClass* transporter;  // 0x11C
     int turretChargeTimer_d;  // 0x120
     int currentTurretNumber_d;  // 0x124
     int secondaryTurretIndex_d;  // 0x128
     unsigned int __pad_12C;  // 0x12C
-    int deployAnim_d;  // 0x130
+    AnimClass* deployAnim_d;  // 0x130
     unsigned char inAirFlag_d;  // 0x134
     char alignmentPadding139[3];  // 0x135
     int radioQueueCount;  // 0x138
@@ -98,7 +98,7 @@ struct FootClass {
     int gattlingStage;  // 0x140
     int gattlingValue;  // 0x144
     int ammoReloadTimer;  // 0x148
-    int initialOwner;  // 0x14C
+    HouseClass* initialOwner;  // 0x14C
     int veterancy;  // 0x150
     int alignmentPadding154;  // 0x154
     int armorMultiplier[2];  // 0x158
@@ -337,8 +337,8 @@ struct FootClass {
     unsigned int q598;  // 0x598
     unsigned int q59C;  // 0x59C
     int FootClass_field_5A0;  // 0x5A0
-    int FootClass_field_5A4;  // 0x5A4
-    int FootClass_field_5A8;  // 0x5A8
+    AbstractClass* FootClass_field_5A4;  // 0x5A4
+    AbstractClass* FootClass_field_5A8;  // 0x5A8
     void * FootClass_DVC_5AC;  // 0x5AC
     char q_5B0[4];  // 0x5B0
     AbstractClass * q5B4;  // 0x5B4
@@ -353,7 +353,7 @@ struct FootClass {
     bool FootClass_field_5D0;  // 0x5D0
     bool FootClass_field_bool_5D1;  // 0x5D1
     char m_padding_5D2[2];  // 0x5D2
-    int team;  // 0x5D4
+    TeamClass* team;  // 0x5D4
     void * nextTeamMember;  // 0x5D8
     void * FootClass_field_5DC;  // 0x5DC
     char pathDirections[96];  // 0x5E0
@@ -389,9 +389,9 @@ struct FootClass {
     bool shouldGarrisonStructure;  // 0x691
     unsigned char __pad_692;  // 0x692
     char __pad_693[1];  // 0x693
-    int FootClass_field_694;  // 0x694
+    FootClass* FootClass_field_694;  // 0x694
     int FootClass_field_698;  // 0x698
-    int parasiteImUsing;  // 0x69C
+    ParasiteClass* parasiteImUsing;  // 0x69C
     int32_t FootClass_field_6A0;  // 0x6A0
     int32_t FootClass_field_6A4;  // 0x6A4
     void * FootClass_bools_6A8;  // 0x6A8

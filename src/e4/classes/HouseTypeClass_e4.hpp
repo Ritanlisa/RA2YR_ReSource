@@ -29,7 +29,7 @@ struct HouseTypeClass {
     unsigned char m_zero_3C;  // 0x3C
     char uiNameLabel[32];  // 0x3D
     char __pad_5D[3];  // 0x5D
-    int uiName;  // 0x60
+    wchar_t* uiName;  // 0x60
     char name[49];  // 0x64
     char parentCountry[25];  // 0x95
     char __pad_AE[2];  // 0xAE

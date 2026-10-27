@@ -85,12 +85,12 @@ struct AircraftClass {
     int flashing[2];  // 0xF0
     char radioContact[28];  // 0xF8
     int passengers[2];  // 0x114
-    int transporter;  // 0x11C
+    TechnoClass* transporter;  // 0x11C
     int turretChargeTimer_d;  // 0x120
     int currentTurretNumber_d;  // 0x124
     int secondaryTurretIndex_d;  // 0x128
     unsigned int __pad_12C;  // 0x12C
-    int deployAnim_d;  // 0x130
+    AnimClass* deployAnim_d;  // 0x130
     unsigned char inAirFlag_d;  // 0x134
     char alignmentPadding139[3];  // 0x135
     int radioQueueCount;  // 0x138
@@ -98,7 +98,7 @@ struct AircraftClass {
     int gattlingStage;  // 0x140
     int gattlingValue;  // 0x144
     int ammoReloadTimer;  // 0x148
-    int initialOwner;  // 0x14C
+    HouseClass* initialOwner;  // 0x14C
     int veterancy;  // 0x150
     int alignmentPadding154;  // 0x154
     int armorMultiplier[2];  // 0x158
