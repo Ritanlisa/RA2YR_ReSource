@@ -658,8 +658,9 @@ int LayerClass::CellIteratorReset(void *a1)
 }
 // 0x578460
 namespace gamemd {
-int LayerClass::IsWithinUsableArea(int16_t *aP1, char aP2, void *a3)
+int LayerClass::IsWithinUsableArea(void *aP1_raw, char aP2, void *a3)
 {
+  int16_t *aP1 = (int16_t *)aP1_raw; // binary truth: int16* coords
 
   int v3; // esi
   int v4; // edx
