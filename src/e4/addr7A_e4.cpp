@@ -253,7 +253,7 @@ char WOL_RequestMatch(void * a1)
   unsigned char v31[276]; // [esp+10h] [ebp-114h] BYREF
 
   ((DeleteAndZero *)&dword_B76AC4)->Alt2(); /*0x7a069f*/
-v1 = (HWND)((Dialog *)0x11F)->FindByHandle(); /*0x7a06a9*/
+v1 = (HWND)Dialog::FindByHandle((void *)0x11F); /*0x7a06a9*/
   if ( v1 ) /*0x7a06b2*/
     CloseDialog(v1, 0); /*0x7a06b8*/
   g_NetworkLobbyState = 0; /*0x7a06bd*/
@@ -1346,7 +1346,7 @@ CampaignScore * * CComObject_CChatEventSink___ATL__vt_04_(int a1, int a2, int a3
   }
   while ( v5 ); /*0x7a4c49*/
   v3 = v3; /*0x7a4c4b*/
-  v6 = (HWND)((void *)0xC4)->FindByHandle(); /*0x7a4c54*/
+  v6 = (HWND)Dialog::FindByHandle((void *)0xC4); /*0x7a4c54*/
   if ( v6 ) /*0x7a4c5b*/
   {
     dword_B77DC8 &= ~0x10u; /*0x7a4c66*/

@@ -517,7 +517,7 @@ int Skirmish::EnableSpawnButtons()
   Skirmish *v1; // ebp
   v1 = (gamemd::Skirmish *)(this); /*0x6acd62*/
   if ( !this ) /*0x6acd66*/
-    v1 = (Skirmish *)((Dialog *)0x102)->FindByHandle(); /*0x6acd72*/
+    v1 = (Skirmish *)Dialog::FindByHandle((void *)0x102); /*0x6acd72*/
   char v7; // [esp+7h] [ebp-1h]
   v7 = 0; /*0x6acd79*/
   if ( dword_A8B23C ) /*0x6acd80*/

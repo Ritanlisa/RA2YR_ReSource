@@ -50,7 +50,7 @@ bool sub_46D650()
   v0 = dword_A8EB68 != (char)dword_A8D667; /*0x46d67f*/
   dword_A8EB68 = (char)dword_A8D667; /*0x46d686*/
   HWND v1; // eax
-  v1 = (HWND)((void *)0xBC6)->FindByHandle(); /*0x46d68b*/
+  v1 = (HWND)Dialog::FindByHandle((void *)0xBC6); /*0x46d68b*/
   if ( v1 ) /*0x46d692*/
   {
     HWND DlgItem; // eax

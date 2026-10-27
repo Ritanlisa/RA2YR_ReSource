@@ -1588,7 +1588,7 @@ void SetGameSetupPlayerState(char * a1, int a2)
     v3 = unk_A8B380; /*0x5dbe2d*/
     if ( !a2 ) /*0x5dbe32*/
     {
-      v5 = (HWND)((Dialog *)0xBD)->FindByHandle(); /*0x5dbe39*/
+      v5 = (HWND)Dialog::FindByHandle((void *)0xBD); /*0x5dbe39*/
       EnablePlayerSlotControls(v5, 1u); /*0x5dbe42*/
     }
   }
@@ -1661,9 +1661,9 @@ LABEL_6:
   v26 = 0; /*0x5dbf8c*/
   if ( v5 == -1 ) /*0x5dbf97*/
     return 0; /*0x5dbf9c*/
-  v11 = (HWND)((Dialog *)0xBC)->FindByHandle(); /*0x5dbfaf*/
+  v11 = (HWND)Dialog::FindByHandle((void *)0xBC); /*0x5dbfaf*/
   if ( !v11 ) /*0x5dbfb3*/
-    v11 = (HWND)((Dialog *)0xBD)->FindByHandle(); /*0x5dbfbf*/
+    v11 = (HWND)Dialog::FindByHandle((void *)0xBD); /*0x5dbfbf*/
   v12 = *(int **)&stru_A8D804.__pad_3D[4 * v5 + 591]; /*0x5dbfc1*/
   v28 = v12; /*0x5dbfca*/
   if ( (v12)->GetPlayerSide() != aP1 ) /*0x5dbfd9*/

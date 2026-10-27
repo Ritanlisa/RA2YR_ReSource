@@ -15608,7 +15608,7 @@ LABEL_75:
   dword_B77E20 = v37; /*0x7a4b9d*/
   Debug::Log(); /*0x7a4ba2*/
   v38 = GetStringCSF(aTxtDetectingFi, 0, g_Str_File_wonline_cpp, 5458); /*0x7a4bc5*/
-  v39 = (HWND)((Dialog *)0xC4)->FindByHandle(); /*0x7a4bc7*/
+  v39 = (HWND)Dialog::FindByHandle((void *)0xC4); /*0x7a4bc7*/
   if ( v39 ) /*0x7a4bce*/
     SendDlgItemMessageA(v39, 1458, 0x4B2u, 0, (LPARAM)v38); /*0x7a4bde*/
   CCFileClass::WriteINIString((CCFileClass *)&dword_ABFEC8); /*0x7a4be9*/
@@ -15900,7 +15900,7 @@ LABEL_62:
           memset(&stru_B73BD8.StringVector_field_0x10, 0, 0x10Cu); /*0x7a5d4b*/
           dword_B77E4C = 0; /*0x7a5d52*/
           byte_B76B44[0] = 0; /*0x7a5d5c*/
-          v23 = (HWND)((Dialog *)0xC4)->FindByHandle(); /*0x7a5d63*/
+          v23 = (HWND)Dialog::FindByHandle((void *)0xC4); /*0x7a5d63*/
           if ( v23 ) /*0x7a5d6a*/
           {
             dword_B77DC8 &= ~2u; /*0x7a5d75*/
@@ -15915,7 +15915,7 @@ LABEL_62:
           GameListRenderWOL(v148); /*0x7a5da9*/
           DisplayRankingsWOL(0); /*0x7a5db2*/
           v8(dword_B736AC); /*0x7a5dbe*/
-          v26 = (HWND)((Dialog *)0x113)->FindByHandle(); /*0x7a5dc5*/
+          v26 = (HWND)Dialog::FindByHandle((void *)0x113); /*0x7a5dc5*/
           v27 = v26; /*0x7a5dca*/
           if ( v26 ) /*0x7a5dce*/
           {
@@ -16138,7 +16138,7 @@ LABEL_159:
         while ( v76 < &stru_B777A0 ); /*0x7a6669*/
         if ( !dword_B77E4C ) /*0x7a6672*/
         {
-          v79 = (HWND)((Dialog *)0xC9)->FindByHandle(); /*0x7a6679*/
+          v79 = (HWND)Dialog::FindByHandle((void *)0xC9); /*0x7a6679*/
           EnablePlayerSlotControls(v79, 1u); /*0x7a6682*/
         }
         Game::ResetReadyStates(); /*0x7a6687*/
@@ -16148,7 +16148,7 @@ LABEL_159:
     {
       memcpy(&stru_B76B00.StringVector_field_0x10, a3, 0x10Cu); /*0x7a5e1b*/
       memset(&stru_B73BD8.StringVector_field_0x10, 0, 0x10Cu); /*0x7a5e27*/
-      v29 = (HWND)((Dialog *)0xC4)->FindByHandle(); /*0x7a5e2e*/
+      v29 = (HWND)Dialog::FindByHandle((void *)0xC4); /*0x7a5e2e*/
       if ( v29 ) /*0x7a5e35*/
       {
         dword_B77DC8 &= ~2u; /*0x7a5e40*/
@@ -16169,7 +16169,7 @@ LABEL_159:
       if ( !*(unsigned int *)a3 ) /*0x7a5ecb*/
       {
         dword_B77DD4 = atol((const char *)&a3[strlen(g_Str_Lob_41_) + 52]); /*0x7a5efd*/
-        v33 = (HWND)((Dialog *)0x113)->FindByHandle(); /*0x7a5f02*/
+        v33 = (HWND)Dialog::FindByHandle((void *)0x113); /*0x7a5f02*/
         v4 = (unsigned __int8 *)v33; /*0x7a5f07*/
         if ( v33 ) /*0x7a5f0b*/
         {
@@ -16281,7 +16281,7 @@ LABEL_159:
                                        (DLGPROC)WOLobby::ChatDlgProc,
                                        0);
           SetupDialog(DialogIndirect, 201); /*0x7a6264*/
-          v60 = (HWND)((Dialog *)0x113)->FindByHandle(); /*0x7a626e*/
+          v60 = (HWND)Dialog::FindByHandle((void *)0x113); /*0x7a626e*/
           v61 = v60; /*0x7a6279*/
           if ( v60 ) /*0x7a627d*/
           {
@@ -16638,7 +16638,7 @@ LABEL_299:
             v143 = (*(unsigned int *)&stru_A8D804.__pad_3D[579])++; /*0x7a7089*/
             *(unsigned int *)(*(unsigned int *)&stru_A8D804.__pad_3D[567] + 4 * v143) = v136; /*0x7a7098*/
           }
-          v144 = (HWND)((Dialog *)0xC9)->FindByHandle(); /*0x7a70a0*/
+          v144 = (HWND)Dialog::FindByHandle((void *)0xC9); /*0x7a70a0*/
           EnablePlayerSlotControls(v144, 1u); /*0x7a70a9*/
           Game::ResetReadyStates(); /*0x7a70ae*/
         }
@@ -17120,7 +17120,7 @@ LABEL_85:
             dword_AC1178 = 1; /*0x7a78ec*/
             if ( !dword_B77E4C ) /*0x7a78f8*/
             {
-              v34 = (HWND)((Dialog *)0xC9)->FindByHandle(); /*0x7a78ff*/
+              v34 = (HWND)Dialog::FindByHandle((void *)0xC9); /*0x7a78ff*/
               EnablePlayerSlotControls(v34, 1u); /*0x7a7908*/
             }
             Game::ResetReadyStates(); /*0x7a790d*/
@@ -17504,9 +17504,9 @@ int __stdcall CChatEventSink::HandleLobbyPlayerUpdate(int p0, int p1, int p2, in
       **(unsigned int **)&v99[16] = v29; /*0x7a860a*/
       ((Network *)&v99[68])->FormatAddress(0); /*0x7a8615*/
       Debug::Log(); /*0x7a8631*/
-      v30 = (HWND)((Dialog *)0xC2)->FindByHandle(); /*0x7a8643*/
+      v30 = (HWND)Dialog::FindByHandle((void *)0xC2); /*0x7a8643*/
       if ( !v30 ) /*0x7a8647*/
-        v30 = (HWND)((Dialog *)0xC9)->FindByHandle(); /*0x7a8653*/
+        v30 = (HWND)Dialog::FindByHandle((void *)0xC9); /*0x7a8653*/
       v31 = *(unsigned int *)v99; /*0x7a8655*/
       PlayerSide = (*(int **)((char *)dword_A8DA90 + *(unsigned int *)v99))->GetPlayerSide(); /*0x7a865f*/
       v33 = *(int **)((char *)dword_A8DA90 + v31); /*0x7a8664*/
@@ -17870,7 +17870,7 @@ int __stdcall CChatEventSink::HandleUserSearch(int p0, int p1, const char* p2)
   wchar_t Buffer[134]; // [esp+64h] [ebp-178h] BYREF
   char v92[108]; // [esp+170h] [ebp-6Ch] BYREF
 
-  v3 = (HWND)((Dialog *)0xCF)->FindByHandle(); /*0x7a998b*/
+  v3 = (HWND)Dialog::FindByHandle((void *)0xCF); /*0x7a998b*/
   *(unsigned int *)v87.owningHouseIndex = 0; /*0x7a998d*/
   if ( !((String *)&unk_B73ACC)->Length() ) /*0x7a9998*/
   {
@@ -18317,7 +18317,7 @@ LABEL_66:
       __3_YAXPAX_Z(v47); /*0x7aa0b1*/
     }
     ((DeleteAndZero *)&unk_B73ACC)->Alt2(); /*0x7aa0be*/
-    v54 = (ObjectClass *)((Dialog *)0x116)->FindByHandle(); /*0x7aa0c8*/
+    v54 = (ObjectClass *)Dialog::FindByHandle((void *)0x116); /*0x7aa0c8*/
     if ( v54 ) /*0x7aa0cf*/
       FillBuddyListWOL(v54); /*0x7aa0d3*/
   }

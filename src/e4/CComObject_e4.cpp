@@ -478,7 +478,7 @@ AbstractClass * * CComObject_CChatEventSink___ATL::FireEvent(int a1, int a2, uns
       (*(void (__stdcall **)(LPVOID, char *))(*(unsigned int *)ppv + 168))(ppv, Buffer); /*0x7a5830*/
     }
     HWND v11; // eax
-    v11 = (HWND)((Dialog *)0xC4)->FindByHandle(); /*0x7a583b*/
+    v11 = (HWND)Dialog::FindByHandle((void *)0xC4); /*0x7a583b*/
     if ( v11 ) /*0x7a5845*/
     {
       g_WOL_ChannelList &= ~4u; /*0x7a5850*/
@@ -500,7 +500,7 @@ AbstractClass * * CComObject_CChatEventSink___ATL::FireEvent(int a1, int a2, uns
     dword_B77E4C = 0; /*0x7a56c9*/
     stru_B76AC4.needsRedraw = 0; /*0x7a56d3*/
     HWND v4; // eax
-    v4 = (HWND)((Dialog *)0xC4)->FindByHandle(); /*0x7a56da*/
+    v4 = (HWND)Dialog::FindByHandle((void *)0xC4); /*0x7a56da*/
     if ( v4 ) /*0x7a56e1*/
     {
       g_WOL_ChannelList &= ~4u; /*0x7a56ec*/
@@ -840,11 +840,11 @@ int CComObject_CChatEventSink___ATL::DispatchStub_16(int a1, int a2, int a3, con
         {
           v8 = 1; /*0x7a8e0e*/
         }
-        else if ( ((Dialog *)0xC2)->FindByHandle() ) /*0x7a8e17*/
+        else if ( Dialog::FindByHandle((void *)0xC2) ) /*0x7a8e17*/
         {
           v8 = 1; /*0x7a8e20*/
         }
-        else if ( ((Dialog *)0xC9)->FindByHandle() ) /*0x7a8e29*/
+        else if ( Dialog::FindByHandle((void *)0xC9) ) /*0x7a8e29*/
         {
           v8 = 1; /*0x7a8e32*/
         }
@@ -902,7 +902,7 @@ AbstractClass * * CComObject_CChatEventSink___ATL::DispatchStub_40(int a1, int a
   v6 = a4; /*0x7a8efc*/
   if ( a4 ) /*0x7a8f02*/
   {
-    if ( (*a4 & 1) != 0 || ((Dialog *)0xC2)->FindByHandle() || ((Dialog *)0xC9)->FindByHandle() ) /*0x7a8f1c*/
+    if ( (*a4 & 1) != 0 || Dialog::FindByHandle((void *)0xC2) || Dialog::FindByHandle((void *)0xC9) ) /*0x7a8f1c*/
       goto LABEL_21; /*0x7a8f1c*/
     v7 = (unsigned __int8)((const wchar_t **)&a2)->IsASCII() == 0; /*0x7a8f2e*/
     DynamicVector_field_0x10 = (void *)(DataGlobal_B779C0); /*0x7a8f30*/
@@ -950,11 +950,11 @@ AbstractClass * * CComObject_CChatEventSink___ATL::DispatchStub_17(int a1, int a
       {
         v7 = 1; /*0x7a9047*/
       }
-      else if ( ((Dialog *)0xC2)->FindByHandle() ) /*0x7a9050*/
+      else if ( Dialog::FindByHandle((void *)0xC2) ) /*0x7a9050*/
       {
         v7 = 1; /*0x7a9059*/
       }
-      else if ( ((Dialog *)0xC9)->FindByHandle() ) /*0x7a9062*/
+      else if ( Dialog::FindByHandle((void *)0xC9) ) /*0x7a9062*/
       {
         v7 = 1; /*0x7a906b*/
       }
@@ -1015,7 +1015,7 @@ AbstractClass * * CComObject_CChatEventSink___ATL::DispatchStub_41(int a1, int a
   v5 = a3; /*0x7a913c*/
   if ( a3 ) /*0x7a9142*/
   {
-    if ( (*a3 & 1) != 0 || ((Dialog *)0xC2)->FindByHandle() || ((Dialog *)0xC9)->FindByHandle() ) /*0x7a915c*/
+    if ( (*a3 & 1) != 0 || Dialog::FindByHandle((void *)0xC2) || Dialog::FindByHandle((void *)0xC9) ) /*0x7a915c*/
       goto LABEL_21; /*0x7a915c*/
     v6 = (uint8_t)((const wchar_t **)&a2)->IsASCII() == 0; /*0x7a916e*/
     DynamicVector_field_0x10 = DataGlobal_B779C0; /*0x7a9170*/

@@ -343,7 +343,7 @@ void PopulateWOLLobbyListBox()  // G42.41i: truth 0x7806C0 = void
   char v20[268]; // [esp+1E4h] [ebp-10Ch] BYREF
 
   HWND v1; // eax
-  v1 = (HWND)((Dialog *)0x113)->FindByHandle(); /*0x7806cc*/
+  v1 = (HWND)Dialog::FindByHandle((void *)0x113); /*0x7806cc*/
   if ( v1 ) /*0x7806d3*/
   {
     HWND DlgItem; // ebp

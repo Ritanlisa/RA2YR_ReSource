@@ -404,7 +404,7 @@ int ComStreamClass::Seek(int a2, int a3, int a4, int a1, int a5)
     dword_B77E64 = v8; /*0x7a4097*/
   }
   HWND v4; // eax
-  v4 = (HWND)((Dialog *)0xC4)->FindByHandle(); /*0x7a40a2*/
+  v4 = (HWND)Dialog::FindByHandle((void *)0xC4); /*0x7a40a2*/
   if ( v4 ) /*0x7a40a9*/
   {
     dword_B77DC8 &= ~0x100u; /*0x7a40b7*/

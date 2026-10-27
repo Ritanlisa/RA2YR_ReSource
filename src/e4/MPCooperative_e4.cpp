@@ -739,7 +739,7 @@ CampaignClass * * MPCooperative::CopyTo()
   g_MPCooperativeState = (ObjectClass *)-1; /*0x5c1a13*/
   Debug::Log(); /*0x5c1a28*/
   (aO8)->SendOptionsGame(); /*0x5c1a35*/
-  if ( ((Dialog *)0xC2)->FindByHandle() || ((Dialog *)0xBC)->FindByHandle() ) /*0x5c1a4d*/
+  if ( Dialog::FindByHandle((void *)0xC2) || Dialog::FindByHandle((void *)0xBC) ) /*0x5c1a4d*/
   {
     MPCooperative_field_0x40 = (int *)this->u32_40; /*0x5c1a56*/
     if ( MPCooperative_field_0x40 ) /*0x5c1a5b*/
@@ -3056,7 +3056,7 @@ char MPCooperative::ValidateSettings()
 
   HWND GameUI; // eax
   GameUI = (HWND)Dialog::FindGameUI(); /*0x5c2cb3*/
-  if ( GameUI || (GameUI = (HWND)((Dialog *)0xBC6)->FindByHandle()) != 0 ) /*0x5c2cc8*/
+  if ( GameUI || (GameUI = (HWND)Dialog::FindByHandle((void *)0xBC6)) != 0 ) /*0x5c2cc8*/
     CampaignCoop::Setup(GameUI, 1); /*0x5c2ccf*/
   return 1; /*0x5c2cd6*/
 }

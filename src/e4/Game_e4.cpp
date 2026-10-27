@@ -2359,7 +2359,7 @@ AbstractClass * * Game::SetupWOLTournament()
   dword_ABE028 = 4; /*0x7a2494*/
   strcpy(&byte_A8B8E0, aRandmapSed); /*0x7a24b0*/
   MEMORY[0xA8B254] = -1; /*0x7a24be*/
-  v15 = (HWND)((void *)0x11F)->FindByHandle(); /*0x7a24c8*/
+  v15 = (HWND)Dialog::FindByHandle((void *)0x11F); /*0x7a24c8*/
   GenerateRandomMapAndMinimap(v15, (char (*)())GameLoop::Thunk); /*0x7a24d4*/
   (aRandmapSed)->ValidateName(); /*0x7a24e3*/
   v16 = 0; /*0x7a24ed*/
@@ -2603,15 +2603,15 @@ int Game::ResetReadyStates()
   if ( result != 188 ) /*0x5e985a*/
   {
     HWND v1; // eax
-    v1 = (HWND)((void *)0xC2)->FindByHandle(); /*0x5e9861*/
+    v1 = (HWND)Dialog::FindByHandle((void *)0xC2); /*0x5e9861*/
     if ( !v1 ) /*0x5e9868*/
     {
-      v1 = (HWND)((void *)0xC9)->FindByHandle(); /*0x5e986f*/
+      v1 = (HWND)Dialog::FindByHandle((void *)0xC9); /*0x5e986f*/
       if ( !v1 ) /*0x5e9876*/
       {
-        v1 = (HWND)((void *)0xBC)->FindByHandle(); /*0x5e987d*/
+        v1 = (HWND)Dialog::FindByHandle((void *)0xBC); /*0x5e987d*/
         if ( !v1 ) /*0x5e9884*/
-          v1 = (HWND)((void *)0xBD)->FindByHandle(); /*0x5e988b*/
+          v1 = (HWND)Dialog::FindByHandle((void *)0xBD); /*0x5e988b*/
       }
     }
     HWND DlgItem; // eax

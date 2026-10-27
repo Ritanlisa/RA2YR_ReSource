@@ -105,8 +105,7 @@ struct Dialog {
     AbstractClass * * GrowBuffer();  // 0x624BE0
     AbstractClass * * BindGadgetData(int *a2, char *Block, void *a3 = 0);  // 0x624CA0
     INIClass * * ReadMultiplayerDialogSettings();  // 0x671EA0
-    int FindByHandle();  // 0x775940
-    int FindByHandle(void *a1 = 0);
+    static int FindByHandle(void *a1 = 0);  // 0x775940 (ECX carries a handle constant, not an object)
     static int GetCurrent();  // 0x775B10
     static int GetCurrentType();  // 0x775B20
     BOOL GetField(void *a1 = 0, void *a2 = 0);  // 0x775BA0

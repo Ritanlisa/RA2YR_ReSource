@@ -733,7 +733,7 @@ int CampaignScore::DialogProc(HWND hWnd, unsigned int a2, UINT_PTR uIDEvent, HWN
         }
         while ( (int)v109 < (int)&dword_A8DAB0 ); /*0x46f374*/
         hDlg = hWnd; /*0x46f378*/
-        if ( hWnd || (hDlg = (HWND)((Dialog *)0xBC6)->FindByHandle()) != 0 ) /*0x46f38e*/
+        if ( hWnd || (hDlg = (HWND)Dialog::FindByHandle((void *)0xBC6)) != 0 ) /*0x46f38e*/
         {
           v125 = 0; /*0x46f394*/
           WindowLongA = (unsigned int *)dword_A8DA90; /*0x46f39c*/
@@ -856,7 +856,7 @@ int CampaignScore::DialogProc(HWND hWnd, unsigned int a2, UINT_PTR uIDEvent, HWN
           }
         }
         v74 = hWnd; /*0x46ed50*/
-        if ( hWnd || (v74 = (HWND)((Dialog *)0xBC6)->FindByHandle()) != 0 ) /*0x46ed62*/
+        if ( hWnd || (v74 = (HWND)Dialog::FindByHandle((void *)0xBC6)) != 0 ) /*0x46ed62*/
         {
           ((Skirmish *)v74)->FillPlayerNames(); /*0x46ed66*/
           ((Count *)v74)->SetupAllCountriesLobby(); /*0x46ed6d*/
@@ -940,7 +940,7 @@ int CampaignScore::DialogProc(HWND hWnd, unsigned int a2, UINT_PTR uIDEvent, HWN
         hDlg = hWnd; /*0x46e96a*/
         if ( !hWnd ) /*0x46e96e*/
         {
-          hDlg = (HWND)((Dialog *)0xBC6)->FindByHandle(); /*0x46e97c*/
+          hDlg = (HWND)Dialog::FindByHandle((void *)0xBC6); /*0x46e97c*/
           if ( !hDlg ) /*0x46e980*/
             return 0; /*0x46e980*/
         }
@@ -1034,7 +1034,7 @@ int CampaignScore::DialogProc(HWND hWnd, unsigned int a2, UINT_PTR uIDEvent, HWN
             while ( (int)v25 < (int)&dword_A8DAB0 ); /*0x46e58c*/
             if ( !hWnd ) /*0x46e590*/
             {
-              v4 = (HWND)((Dialog *)0xBC6)->FindByHandle(); /*0x46e59c*/
+              v4 = (HWND)Dialog::FindByHandle((void *)0xBC6); /*0x46e59c*/
               if ( !v4 ) /*0x46e5a0*/
                 return 0; /*0x46e5a0*/
             }
@@ -1089,7 +1089,7 @@ int CampaignScore::DialogProc(HWND hWnd, unsigned int a2, UINT_PTR uIDEvent, HWN
             while ( (int)v33 < (int)&dword_A8DAB0 ); /*0x46e6cb*/
             if ( !hWnd ) /*0x46e6cf*/
             {
-              v4 = (HWND)((Dialog *)0xBC6)->FindByHandle(); /*0x46e6db*/
+              v4 = (HWND)Dialog::FindByHandle((void *)0xBC6); /*0x46e6db*/
               if ( !v4 ) /*0x46e6df*/
                 return 0; /*0x46e6df*/
             }
@@ -1214,7 +1214,7 @@ int CampaignScore::DialogProc(HWND hWnd, unsigned int a2, UINT_PTR uIDEvent, HWN
         while ( (int)v17 < (int)&dword_A8DAB0 ); /*0x46e410*/
         if ( !hWnd ) /*0x46e414*/
         {
-          v4 = (HWND)((Dialog *)0xBC6)->FindByHandle(); /*0x46e420*/
+          v4 = (HWND)Dialog::FindByHandle((void *)0xBC6); /*0x46e420*/
           if ( !v4 ) /*0x46e424*/
             return 0; /*0x46e424*/
         }
