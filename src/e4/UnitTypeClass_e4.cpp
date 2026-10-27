@@ -89,7 +89,7 @@ INIClass * * UnitTypeClass::ReadINIEntry()
     {
       v8[0] = i; /*0x6b4df6*/
       v8[1] = v1; /*0x6b4e01*/
-      v3 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v8); /*0x6b4e0b*/
+      v3 = (((CellCoord *)&dword_87F7E8)->To_CellObj(v8); /*0x6b4e0b*/
       v4 = v3->u32_48; /*0x6b4e0d*/
       if ( v4 != -1 && !v3->u32_11F ) /*0x6b4e15*/
       {
@@ -498,7 +498,7 @@ char UnitTypeClass_LoadFromINI(void *a1, double a2, unsigned char *** a3)
   while ( v35 < 4 ); /*0x747b47*/
   char Source[28]; // [esp+28h] [ebp-120h] BYREF
   strcpy(Source, (const char *)&v4[1].ProductionTimer + 2); /*0x747b6f*/
-  INIClass::GetString(p_occupant, aAltimage, Source, (char *)&v4[1].ProductionTimer + 2, 25); /*0x747b88*/
+  (((INIClass *)this)->GetString(p_occupant, aAltimage, Source, (char *)&v4[1].ProductionTimer + 2, 25)); /*0x747b88*/
   char v86[260]; // [esp+44h] [ebp-104h] BYREF
   _makepath(v86, 0, 0, (const char *)&v83[1].ProductionTimer + 2, Ext); /*0x747ba6*/
   v83[1].BunkerState = (int)SearchMIXFile(v86, 0); /*0x747bc4*/

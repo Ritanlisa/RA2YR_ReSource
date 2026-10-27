@@ -64,13 +64,7 @@ TeamTypeClass * * SmallFunc_6F19B0(char * a1, int a2)
                                          a1->__pad_0,
                                          (uint8_t *)g_INI_Key_TRUCKA.DebrisMaximums,
                                          i);
-    INIClass::GetString( /*0x6f19f4*/
-      a1,
-      (uint8_t *)g_INI_Key_TRUCKA.DebrisMaximums,
-      StringByIndex,
-      &g_INI_DefaultBuffer,
-      Source,
-      32);
+    ((INIClass *)(/*0x6f19f4*/ a1))->GetString((uint8_t *)g_INI_Key_TRUCKA.DebrisMaximums, StringByIndex, &g_INI_DefaultBuffer, Source, 32);
     if ( !_strcmpi(g_Str__none_, Source) || !_strcmpi(g_Str_none, Source) ) /*0x6f1a19*/
       goto LABEL_10; /*0x6f1a19*/
     v7 = 0; /*0x6f1a2a*/
@@ -230,7 +224,7 @@ BuildingTypeClass * SmallFunc_67BCE0(unsigned char *** a0, INIClass * aP1, unsig
 
   char Destination[128]; // [esp+0h] [ebp-80h] BYREF
 
-  if ( INIClass::GetString((INIClass *)a0, aP1, a2, &g_INI_DefaultBuffer, Destination, 128) ) /*0x67bcfe*/
+  if ( (((INIClass *)a0)->GetString(aP1, a2, &g_INI_DefaultBuffer, Destination, 128) ) /*0x67bcfe*/
     return BuildingTypeClass::FindOrCreate(Destination); /*0x67bd0b*/
   else
     return a4; /*0x67bd19*/

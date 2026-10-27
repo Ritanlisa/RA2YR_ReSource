@@ -2926,30 +2926,30 @@ wchar_t ** FormatWideStringPrefix(CampaignScore * aP0, const wchar_t * a1, wchar
   *v6 = 0; /*0x7b80bc*/
   if ( a1 ) /*0x7b80c1*/
     wcscpy(v6, a1); /*0x7b80c5*/
-  wchar_t *String; // [esp+Ch] [ebp-4h] BYREF
-  String = 0; /*0x7b80cf*/
+  wchar_t *String_buf; // [esp+Ch] [ebp-4h] BYREF
+  String_buf = 0; /*0x7b80cf*/
   if ( v7 ) /*0x7b80d7*/
   {
     int v8; // eax
     v8 = wcslen(v7); /*0x7b80da*/
-    String = (wchar_t *)operator new(2 * v8 + 2); /*0x7b80eb*/
-    wcscpy(String, v7); /*0x7b80ef*/
+    String_buf = (wchar_t *)operator new(2 * v8 + 2); /*0x7b80eb*/
+    wcscpy(String_buf, v7); /*0x7b80ef*/
   }
   wchar_t *v9 = *a2; // eax /*0x7b80fb*/
   if ( !*a2 ) /*0x7b80fb*/
     v9 = &g_TypeClass_DefaultString; /*0x7b8101*/
-  WString::Append((WString *)&String, v9); /*0x7b810b*/
+  WString::Append((WString *)&String_buf, v9); /*0x7b810b*/
   *aP0 = 0; /*0x7b8110*/
-  if ( String ) /*0x7b811c*/
+  if ( String_buf ) /*0x7b811c*/
   {
     int v10; // eax
     v10 = wcslen(String); /*0x7b811f*/
     wchar_t *v11; // eax
     v11 = (wchar_t *)operator new(2 * v10 + 2); /*0x7b8129*/
-    const wchar_t *v12 = String; // ecx /*0x7b812e*/
+    const wchar_t *v12 = String_buf; // ecx /*0x7b812e*/
     *aP0 = v11; /*0x7b8132*/
     wcscpy(v11, v12); /*0x7b8136*/
-    if ( String ) /*0x7b8144*/
+    if ( String_buf ) /*0x7b8144*/
       operator delete((String)); /*0x7b8147*/
   }
   if ( v7 ) /*0x7b8151*/

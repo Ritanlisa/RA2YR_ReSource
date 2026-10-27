@@ -139,6 +139,7 @@ public:
     MixFileClass() noexcept;
     // unmatched: no callgraph reference and no git history record
     explicit MixFileClass(const char* pFileName) noexcept;
+    ~MixFileClass();  // x145b: 声明先行 (mix_file_bodies.cpp out-of-line dtor 定义需类内声明, C2600)
 
     // Memory-backed constructor: takes ownership of data buffer
     // unmatched: no callgraph reference and no git history record

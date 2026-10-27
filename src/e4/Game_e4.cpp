@@ -2329,10 +2329,10 @@ AbstractClass * * Game::SetupWOLTournament()
   int v22; // eax
   char result; // al
   char *v24; // [esp+10h] [ebp-104h] BYREF
-  char String[256]; // [esp+14h] [ebp-100h] BYREF
+  char String_buf[256]; // [esp+14h] [ebp-100h] BYREF
 
-  strcpy(String, this); /*0x7a2359*/
-  v1 = strtok(String, asc_84D68C); /*0x7a2373*/
+  strcpy(String_buf, this); /*0x7a2359*/
+  v1 = strtok(String_buf, asc_84D68C); /*0x7a2373*/
   v2 = strtok(0, Delimiter); /*0x7a2375*/
   v3 = atol(v2); /*0x7a2387*/
   v4 = strtok(0, Delimiter); /*0x7a2389*/

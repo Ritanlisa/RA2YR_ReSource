@@ -219,7 +219,7 @@ INIClass * * RulesClass::ReadPowerupsSection(void * aPowerups)
   char *v8; // eax
   char *v9; // esi
   char *v10; // esi
-  char String[128]; // [esp+0h] [ebp-80h] BYREF
+  char String_buf[128]; // [esp+0h] [ebp-80h] BYREF
   unsigned __int8 ***v13; // [esp+84h] [ebp+4h]
 
   result = INIClass::BinarySearchSection((int)v13, (unsigned __int8 *)aPowerups); /*0x673e90*/
@@ -229,16 +229,10 @@ INIClass * * RulesClass::ReadPowerupsSection(void * aPowerups)
     v3 = dbl_89EC28; /*0x673ea7*/
     do /*0x673fd7*/
     {
-      result = INIClass::GetString( /*0x673ed0*/
-                 (INIClass *)v13,
-                 (unsigned __int8 *)aPowerups,
-                 (&off_7E523C)[v2],
-                 a0None,
-                 String,
-                 128);
+      result = ((INIClass *)(/*0x673ed0*/ (INIClass *)v13))->GetString((unsigned __int8 *)aPowerups, (&off_7E523C)[v2], a0None, String_buf, 128);
       if ( result ) /*0x673ed7*/
       {
-        v4 = strtok(String, Delimiter); /*0x673ee7*/
+        v4 = strtok(String_buf, Delimiter); /*0x673ee7*/
         v5 = v4; /*0x673eec*/
         if ( v4 ) /*0x673ef3*/
         {
@@ -689,15 +683,15 @@ void * RulesClass::LoadTypeList(int a1, unsigned char *** edx0, INIClass * aP1, 
   char v20; // [esp+19h] [ebp-8Fh]
   int v21; // [esp+1Ch] [ebp-8Ch]
   int v22; // [esp+20h] [ebp-88h]
-  char String[128]; // [esp+28h] [ebp-80h] BYREF
+  char String_buf[128]; // [esp+28h] [ebp-80h] BYREF
 
-  if ( INIClass::GetString((INIClass *)edx0, aP1, a2, &g_INI_DefaultBuffer, String, 128) ) /*0x67bdfc*/
+  if ( (((INIClass *)edx0)->GetString(aP1, a2, &g_INI_DefaultBuffer, String_buf, 128) ) /*0x67bdfc*/
   {
     RulesClass::readIQ((RulesClass *)&v17, 0, 0); /*0x67be11*/
     v22 = 10; /*0x67be1a*/
     v21 = 0; /*0x67be28*/
     v17 = &g_ptr_7F0CFC; /*0x67be2c*/
-    for ( i = strtok(String, Delimiter); i; i = strtok(0, Delimiter) ) /*0x67be3e*/
+    for ( i = strtok(String_buf, Delimiter); i; i = strtok(0, Delimiter) ) /*0x67be3e*/
     {
       if ( !*i ) /*0x67be40*/
         break; /*0x67be42*/

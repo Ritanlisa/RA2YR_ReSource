@@ -33,7 +33,7 @@ int Hash::InsertOrdered(void* table, const void* entry, int a2)
 {
   int result; // eax
 
-  result = this->vt_slot_44(a2); /*0x4f4418*/
+  result = (*(int (**)(void *, int))(*(unsigned int *)table + 44))(table, a2); /*0x4f4418*/
   if ( (unsigned char)result ) /*0x4f441d*/
   {
     (*((unsigned char *)&(result))) = 0; /*0x4f441f*/

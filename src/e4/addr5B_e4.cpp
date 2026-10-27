@@ -297,14 +297,14 @@ ObjectClass * * FileInfoCache_Lookup(const char * a1, unsigned int * a2, unsigne
   int v10; // edx
   int v11; // eax
   unsigned int v14[3]; // [esp+18h] [ebp-110h] BYREF
-  char String[260]; // [esp+24h] [ebp-104h] BYREF
+  char String_buf[260]; // [esp+24h] [ebp-104h] BYREF
 
   if ( !a1 ) /*0x5b4442*/
     return 0; /*0x5b4442*/
-  strcpy(String, a1); /*0x5b4462*/
+  strcpy(String_buf, a1); /*0x5b4462*/
   _strupr(String); /*0x5b4470*/
   memset(v14, 0, sizeof(v14)); /*0x5b4490*/
-  v5 = Checksummer::Add_Buffer(v14, (unsigned __int8 *)String, strlen(String)); /*0x5b449c*/
+  v5 = Checksummer::Add_Buffer(v14, (unsigned __int8 *)String_buf, strlen(String)); /*0x5b449c*/
   v6 = (unsigned int *)g_MixFileList.First_Previous; /*0x5b44a1*/
 LABEL_3:
   while ( 2 ) /*0x5b44c0*/

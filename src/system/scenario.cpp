@@ -236,7 +236,7 @@ int ScenarioClass::UpdateLighting()
   {
     dword_A8B230[378].ptr_8 = dword_A8B230[379].abstractFlags; /*0x53c3be*/
     return UpdateSurfaceAnimations( /*0x53c43a*/
-             1000 * dword_A8B230->stage / 100,
+             1000 * dword_A8B230[1].ptr_0 / 100,  /* x145b: raw elem[341].field_24 = stride +0x24 = 次元素 ptr_0 (36B stride); stage 非成员 */
              1000 * dword_A8B230[379].referenceCount / 100,
              1000 * dword_A8B230[379].NeedsSaveOrLink / 100,
              1);

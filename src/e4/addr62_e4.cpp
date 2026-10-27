@@ -2079,7 +2079,7 @@ int E4Recv_6278C0::sub_6278C0(const char * a2)
   int v15; // esi
   unsigned int *v17; // [esp+10h] [ebp-208h]
   int v18; // [esp+10h] [ebp-208h]
-  char String[256]; // [esp+14h] [ebp-204h] BYREF
+  char String_buf[256]; // [esp+14h] [ebp-204h] BYREF
   char v20[256]; // [esp+114h] [ebp-104h] BYREF
   int v21; // [esp+214h] [ebp-4h]
 
@@ -2159,7 +2159,7 @@ unsigned int * E4Recv_627A10::sub_627A10(ObjectClass * aP1)
   void *v15; // edi
   void (***v16)(unsigned int, int); // ecx
   MIXFile *v18; // [esp+10h] [ebp-104h]
-  char String[256]; // [esp+14h] [ebp-100h] BYREF
+  char String_buf[256]; // [esp+14h] [ebp-100h] BYREF
 
   (String)->CopyUpper(aP1); /*0x627a2c*/
   ptr_C = this->ptr_C; /*0x627a31*/
@@ -2859,7 +2859,7 @@ int E4Recv_6274F0::sub_6274F0(ObjectClass * aP1)
   signed int v5; // esi
   int i; // ebx
   unsigned int v7; // edi
-  char String[256]; // [esp+10h] [ebp-100h] BYREF
+  char String_buf[256]; // [esp+10h] [ebp-100h] BYREF
 
   (String)->CopyUpper(aP1); /*0x627505*/
   ptr_C = this->ptr_C; /*0x62750a*/

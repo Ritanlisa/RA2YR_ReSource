@@ -2,12 +2,15 @@
 // hpp-impl 门控: 头文件只允许声明（= default 析构亦移出）
 #include "command_ext.hpp"
 #include "core/ida_vtables.h"  // gC_vftable3
+#include "system/file_class.hpp"  // x145b: FileClass 真链先行 (防 e4 twin 抢占 GAMEMD_G2_*_DEF 后 CDFileClass::~override 落空 C3668)
+#include "system/buffer_io_file.hpp"  // x145b: BufferIOFileClass 真链先行 (同上)
 #include "e4/classes/BufferIOFileClass_e4.hpp"  // g57c5 W5d scope supply
 #include "e4/classes/CCFileClass_e4.hpp"  // g57c5 W5d scope supply
 #include "e4/classes/Math_e4.hpp"  // g57c5 W5d scope supply
 #include "e4/classes/Vector_e4.hpp"  // g57c5 W5d scope supply
 #include "e4/classes/XSurface_e4.hpp"  // g57c5 W5d scope supply
 #include "e4/classes/DSurface_e4.hpp"  // w16g4 C3861 DSurface:: supply
+#include "object/object.hpp"  // x145b: ObjectClass::GetTooltipText 完整定义 (0x6d1800 body)
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
     int CompressScreenshot(int* p0, int* p1, void* p2);  // x4:signals@0x7b05c0
@@ -45,8 +48,10 @@ extern DSurface_ViewBounds_flat DSurface_ViewBounds;  // data: 0x886FA0 (e4_glob
 
 namespace gamemd {
 // 0x6d1800
-void CursorAnim::Load() {}
-  SidebarClass *v1; // ecx
+int CursorAnim::Load()
+{
+  ObjectClass *v1; // ecx  (x145b: raw SidebarClass* — 以完整基类 ObjectClass 承接成员调用)
 
-  return (int)ObjectClass::GetTooltipText(v1, (int)this); /*0x6d180a*/
+  return (int)v1->GetTooltipText((int)this); /*0x6d180a*/
+}
 } // namespace gamemd

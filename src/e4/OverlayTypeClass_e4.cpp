@@ -188,13 +188,7 @@ AnimTypeClass * * OverlayTypeClass::LoadFromINI(unsigned char *** aP1, void *a2)
   DamageLevels = aP1->DamageLevels; /*0x5fe867*/
   aP1->RadarColor[0] = v11; /*0x5fe884*/
   char Destination[128]; // [esp+Ch] [ebp-280h] BYREF
-  if ( INIClass::GetString( /*0x5fe88a*/
-         (INIClass *)a2,
-         (uint8_t *)aP1->__pad_24,
-         aCellanim,
-         &g_INI_DefaultBuffer,
-         Destination,
-         128) )
+  if ( (((INIClass *)a2)->GetString( /*0x5fe88a*/ (uint8_t *)aP1->__pad_24, aCellanim, &g_INI_DefaultBuffer, Destination, 128)) )
   {
     v13 = (Destination)->FindOrCreate(); /*0x5fe897*/
   }

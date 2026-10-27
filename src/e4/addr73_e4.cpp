@@ -1981,9 +1981,9 @@ wchar_t * FillUnitTooltipUI(wchar_t * Destination, wchar_t * Source)
         }
         while ( v7 < (int)v3 ); /*0x731e4b*/
       }
-      wchar_t *String; // eax
-      String = GetStringCSF(aMsgUnitsworth, 0, g_Str_File_UICmnds_cpp, 1052); /*0x731e65*/
-      return (wchar_t *)swprintf(v2, (const size_t)String, v3, Destinationa, v6); /*0x731e6c*/
+      wchar_t *String_buf; // eax
+      String_buf = GetStringCSF(aMsgUnitsworth, 0, g_Str_File_UICmnds_cpp, 1052); /*0x731e65*/
+      return (wchar_t *)swprintf(v2, (const size_t)String_buf, v3, Destinationa, v6); /*0x731e6c*/
     }
     else
     {

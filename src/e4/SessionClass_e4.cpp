@@ -1598,7 +1598,7 @@ AbstractClass * * SessionClass::LoadMissionList()
       while ( 1 ) /*0x699a3f*/
       {
         StringByIndex = (unsigned __int8 *)(v60.__pad_0)->GetStringByIndex(g_INI_Key_MultiMaps, v6); /*0x699a3f*/
-        if ( INIClass::GetString(&v60, g_INI_Key_MultiMaps, StringByIndex, &g_INI_DefaultBuffer, v66, 64) ) /*0x699a4e*/
+        if ( ((INIClass *)(&v60))->GetString(g_INI_Key_MultiMaps, StringByIndex, &g_INI_DefaultBuffer, v66, 64) ) /*0x699a4e*/
         {
           v8 = (MapFile *)__2_YAPAXI_Z(0x1BCu); /*0x699a5c*/
           if ( v8 ) /*0x699a66*/
@@ -1642,7 +1642,7 @@ AbstractClass * * SessionClass::LoadMissionList()
           for ( i = 0; i < v15; ++i )
           {
             v17 = (unsigned __int8 *)(v60.__pad_0)->GetStringByIndex(g_INI_Key_MultiMaps, i); /*0x699b90*/
-            if ( INIClass::GetString(&v60, g_INI_Key_MultiMaps, v17, &g_INI_DefaultBuffer, v66, 64) )
+            if ( ((INIClass *)(&v60))->GetString(g_INI_Key_MultiMaps, v17, &g_INI_DefaultBuffer, v66, 64) )
             {
               v18 = (MapFile *)__2_YAPAXI_Z(0x1BCu); /*0x699bad*/
               v19 = v18 ? MapFile::LoadDescription(v18, (unsigned __int8 ***)&v60, v66) : 0;
@@ -1716,7 +1716,7 @@ AbstractClass * * SessionClass::LoadMissionList()
                 for ( j = 0; j < v62; ++j ) /*0x699dfd*/
                 {
                   v33 = (unsigned __int8 *)(v60.__pad_0)->GetStringByIndex(g_INI_Key_MultiMaps, v32); /*0x699e1c*/
-                  if ( INIClass::GetString(&v60, g_INI_Key_MultiMaps, v33, &g_INI_DefaultBuffer, v66, 64) ) /*0x699e2b*/
+                  if ( ((INIClass *)(&v60))->GetString(g_INI_Key_MultiMaps, v33, &g_INI_DefaultBuffer, v66, 64) ) /*0x699e2b*/
                   {
                     v34 = (MapFile *)__2_YAPAXI_Z(0x1BCu); /*0x699e3d*/
                     if ( v34 ) /*0x699e47*/
@@ -1791,14 +1791,8 @@ AbstractClass * * SessionClass::LoadMissionList()
         v45 = FindFileData.cAlternateFileName; /*0x69a041*/
         if ( !strlen(FindFileData.cAlternateFileName) ) /*0x69a048*/
           v45 = FindFileData.cFileName; /*0x69a04f*/
-        INIClass::GetString( /*0x69a073*/
-          &v60,
-          (unsigned __int8 *)&stru_82BA00.LeaveGrinderSound,
-          (unsigned __int8 *)g_INI_Key_Name,
-          g_Str_No_Name,
-          v66,
-          64);
-        INIClass::GetString(&v60, (unsigned __int8 *)g_INI_Key_Digest, a1, g_Str_No_Digest, v67, 32); /*0x69a095*/
+        ((INIClass *)(/*0x69a073*/ &v60))->GetString((unsigned __int8 *)&stru_82BA00.LeaveGrinderSound, (unsigned __int8 *)g_INI_Key_Name, g_Str_No_Name, v66, 64);
+        ((INIClass *)(&v60))->GetString((unsigned __int8 *)g_INI_Key_Digest, a1, g_Str_No_Digest, v67, 32); /*0x69a095*/
         BulkCharToWide(v71, (unsigned __int8 *)v66, -1); /*0x69a0aa*/
         v56[0] = INIClass::ReadBool_Overwrite( /*0x69a0c8*/
                    (int *)v60.__pad_0,

@@ -13,6 +13,6 @@ bool BulletTypeClass::Rotates() const { return !this->noRotate; }
 // 0x46c840
 void BulletTypeClass::SetScaledSpawnDelay(int delay) { this->delay =(void *)delay; 
   this->scaledSpawnDelay = delay; /*0x46c844*/
-  return delay; /*0x46c84a*/
+  return; /*0x46c84a*/
 }
 } // namespace gamemd

@@ -1,5 +1,8 @@
 #include "misc/audio_ext.hpp"
 #include "e4/classes/Matrix2D_e4.hpp"  // g57c5 W5d scope supply
+// X145C: CellCoord::To_CellObj / DataGlobal_87F7E8 supplies deferred — include-order
+// twin conflicts (CellStruct C2371, AudioController C2874) in this TU; body errors
+// at To_Cell block + Audio3D::field_8 (missing member supply) remain.
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
     int CopyAudioData(char* p0, int p1);  // x4:signals@0x7559b0
@@ -26,7 +29,7 @@ namespace gamemd {
 // --- Audio3D ---
 
 // 0x55a7d0
-float * Audio3D::Audio3D::ComputeRotation(float *a2, unsigned int a3)  // g57b5 W4: raw 真值补参 (a2,a3)
+float * Audio3D::ComputeRotation(float *a2, unsigned int *a3)  // g57b5 W4: raw 真值补参 (a2,a3*)
 {
   unsigned int *v3; // eax
   int slopeIndex; // ebp

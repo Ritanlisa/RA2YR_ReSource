@@ -11,7 +11,7 @@ AbstractType __stdcall RadSiteClass::whatAmI() const { return kObjectTypeId; }
 int RadSiteClass::objectSize() const { return sizeof(RadSiteClass); }
 // 0x65b4c0
 void RadSiteClass::SetBaseCell(CellStruct* cell) {
-  this->BaseCell[0] = *cell; /*0x65b4c6*/
-  return cell; /*0x65b4c9*/
+  this->BaseCell = *cell; /*0x65b4c6*/
+  return; /*0x65b4c9*/
 }
 } // namespace gamemd

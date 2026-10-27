@@ -1,6 +1,9 @@
 // G42.32 P: tree-universe marker -- e4 tree-owned decls suppressed
 #define GAMEMD_TREE_UNIVERSE 1
 #include "system/map.hpp"
+#include "render/display.hpp"  // x145b: DisplayClass::ProcessCellReveal supply
+#include "misc/misc_ext.hpp"  // x145b: Conditions::CheckResult3 supply
+#include "misc/rules.hpp"  // x145b: RulesClass ElevationBonusCap/IncrementBonus
 #include "e4/classes/HouseClass_e4.hpp"
 #include "system/cell.hpp"
 
@@ -297,7 +300,7 @@ CoordStruct* MapClass::FindFirstFirestorm(CoordStruct* a1, const int* a2, const 
   Cell *v9; // eax
   Cell *v10; // ecx
   unsigned int *v11; // eax
-  int v12; // eax
+  const HouseClass *v12; // eax
   int v13; // ecx
   int v14; // ecx
   int v15; // esi
@@ -308,7 +311,7 @@ CoordStruct* MapClass::FindFirstFirestorm(CoordStruct* a1, const int* a2, const 
   Cell *v20; // eax
   Cell *v21; // ecx
   unsigned int *v22; // eax
-  int v23; // eax
+  const HouseClass *v23; // eax
   int v25; // eax
   int v26; // eax
   int v27; // ebx
@@ -317,7 +320,7 @@ CoordStruct* MapClass::FindFirstFirestorm(CoordStruct* a1, const int* a2, const 
   int v30; // ecx
   Cell *v31; // ecx
   unsigned int *v32; // eax
-  int v33; // eax
+  const HouseClass *v33; // eax
   __int64 v34; // [esp+Ch] [ebp-3Ch]
   int v35; // [esp+Ch] [ebp-3Ch]
   int v36; // [esp+10h] [ebp-38h]
@@ -362,7 +365,7 @@ CoordStruct* MapClass::FindFirstFirestorm(CoordStruct* a1, const int* a2, const 
         {
           if ( *(unsigned char *)(v11[328] + 5824) ) /*0x5881a5*/
           {
-            v12 = v11->u32_21C; /*0x5881af*/
+            v12 = *(const HouseClass **)((unsigned int *)v11 + 135); /*0x5881af*/
             if ( *(unsigned char *)(v12 + 506) ) /*0x5881b5*/
             {
               if ( v12 != a4 ) /*0x5881c2*/
@@ -405,16 +408,16 @@ CoordStruct* MapClass::FindFirstFirestorm(CoordStruct* a1, const int* a2, const 
           {
             if ( *(unsigned char *)(v22[328] + 5824) ) /*0x588292*/
             {
-              v23 = v22->u32_21C; /*0x58829c*/
+              v23 = *(const HouseClass **)((unsigned int *)v22 + 135); /*0x58829c*/
               if ( *(unsigned char *)(v23 + 506) ) /*0x5882a2*/
               {
                 if ( v23 != a4 ) /*0x5882af*/
                 {
                   v13 = (__int16)i; /*0x5882bf*/
 LABEL_31:
-                  *a1 = (v13 << 8) + 128; /*0x5882c2*/
-                  a1[1] = (v6 << 8) + 128; /*0x5882e0*/
-                  a1[2] = 0; /*0x5882e3*/
+                  a1->X = (v13 << 8) + 128; /*0x5882c2*/
+                  a1->Y = (v6 << 8) + 128; /*0x5882e0*/
+                  a1->Z = 0; /*0x5882e3*/
                   return a1; /*0x5882ec*/
                 }
               }
@@ -461,14 +464,14 @@ LABEL_31:
           {
             if ( *(unsigned char *)(v32[328] + 5824) ) /*0x5884aa*/
             {
-              v33 = v32->u32_21C; /*0x5884b4*/
+              v33 = *(const HouseClass **)((unsigned int *)v32 + 135); /*0x5884b4*/
               if ( *(unsigned char *)(v33 + 506) ) /*0x5884ba*/
               {
                 if ( v33 != a4 ) /*0x5884c7*/
                 {
-                  *a1 = v27; /*0x588528*/
-                  a1[1] = v35; /*0x58852a*/
-                  a1[2] = 0; /*0x58852d*/
+                  a1->X = v27; /*0x588528*/
+                  a1->Y = v35; /*0x58852a*/
+                  a1->Z = 0; /*0x58852d*/
                   return a1; /*0x588536*/
                 }
               }
@@ -488,14 +491,14 @@ LABEL_31:
       }
     }
   }
-  *a1 = dword_ABDC10; /*0x588547*/
-  a1[1] = dword_ABDC14; /*0x58854f*/
-  a1[2] = dword_ABDC18; /*0x588558*/
+  a1->X = dword_ABDC10; /*0x588547*/
+  a1->Y = dword_ABDC14; /*0x58854f*/
+  a1->Z = dword_ABDC18; /*0x588558*/
   return a1; /*0x5882e6*/
 
 }
 // 0x5678e0
-int MapClass::RevealArea1(CoordStruct* coords, int radius, HouseClass* owner, CellStruct arg4, uint8_t reveal_by_height, uint8_t arg6, uint8_t arg7, uint8_t arg8)
+int MapClass::RevealArea1(int *coords, int radius, void *owner, char arg4, int arg5, char arg6, char arg7, char arg8)
 {
 
   double v9; // st7
@@ -569,7 +572,7 @@ int MapClass::RevealArea1(CoordStruct* coords, int radius, HouseClass* owner, Ce
   v55 = v18 - v52[1] - 2; /*0x5679d3*/
   if ( *(unsigned int *)&dword_A8B238 != 3 && *(unsigned int *)&dword_A8B238 != 4 /*0x5679eb*/
     || !dword_A8B23C
-    || (v56 = 1, (*(unsigned __int8 (**)(ObjectClass *))(dword_A8B23C->ptr_0 + 4))(dword_A8B23C)) )
+    || (v56 = 1, (*(unsigned __int8 (__thiscall **)(void *))(*(unsigned int *)&dword_A8B23C + 4))((void *)dword_A8B23C)) )
   {
     v56 = 0; /*0x5679f7*/
   }
@@ -594,12 +597,12 @@ int MapClass::RevealArea1(CoordStruct* coords, int radius, HouseClass* owner, Ce
     result = 10; /*0x567a54*/
     radius = 10; /*0x567a59*/
   }
-  v22 = dword_7ED3D0[result]; /*0x567a63*/
-  v44 = dword_ABD490; /*0x567a6a*/
+  v22 = (&dword_7ED3D0)[result]; /*0x567a63*/
+  v44 = (int *)&dword_ABD490; /*0x567a6a*/
   v23 = (char *)&unk_ABCF60; /*0x567a72*/
-  if ( !BYTE2(dword_8871E0->ElevationBonusCap[0]) && arg4 && result > 2 ) /*0x567a8c*/
+  if ( !*((unsigned char *)&g_RulesClass_Instance->ElevationBonusCap + 2) && arg4 && result > 2 ) /*0x567a8c*/
   {
-    v24 = dword_7ED3C4[result]; /*0x567a8e*/
+    v24 = (&dword_7ED3C4)[result]; /*0x567a8e*/
     v22 -= v24; /*0x567a95*/
     v23 = (char *)(4 * v24 + 11259744); /*0x567a9e*/
     v44 = (int *)(4 * v24 + 11261072); /*0x567aa5*/
@@ -621,7 +624,7 @@ int MapClass::RevealArea1(CoordStruct* coords, int radius, HouseClass* owner, Ce
     }
     if ( v25 != *(HouseClass **)((char *)&stru_A83CD9.estimatedHealth + 3) ) /*0x567ae1*/
     {
-      if ( (unsigned __int8)HouseClass::IsAlliedWith(v25) && HIBYTE(dword_8871E0->ElevationIncrementBonus[0]) ) /*0x567af4*/
+      if ( (unsigned __int8)v25->IsAlliedWith() && *((unsigned char *)&g_RulesClass_Instance->ElevationIncrementBonus + 1) ) /*0x567af4*/
       {
         result = *(int *)((char *)&stru_A83CD9.estimatedHealth + 3); /*0x567afe*/
         v25 = *(HouseClass **)((char *)&stru_A83CD9.estimatedHealth + 3); /*0x567b03*/
@@ -649,7 +652,7 @@ LABEL_27:
       LOWORD(v53) = v30; /*0x567b55*/
       v26 += 4; /*0x567b5a*/
       HIWORD(v53) = v31; /*0x567b5d*/
-      *(unsigned int *)v52 = v53; /*0x567b6c*/
+      *(unsigned int *)v52 = (unsigned int)v53; /*0x567b6c*/
       v33 = v31 + v30; /*0x567b70*/
       if ( v33 > v32 /*0x567bb8*/
         && v30 - v31 < v32
@@ -683,7 +686,7 @@ LABEL_27:
           else
           {
             dword_ABDC74 = *(unsigned int *)v52; /*0x567c3e*/
-            v36 = &unk_ABDC50; /*0x567c43*/
+            v36 = (CellClass *)&unk_ABDC50; /*0x567c43*/
           }
           if ( !arg7 || !BYTE2(dword_8871E0->ElevationBonusCap[0]) ) /*0x567c56*/
             goto LABEL_47; /*0x567c56*/
@@ -693,19 +696,19 @@ LABEL_27:
           if ( v37 >= 0x40000 || (v38 = *(CellClass **)(dword_87F924 + 4 * v37)) == 0 ) /*0x567ca5*/
           {
             dword_ABDC74 = v57; /*0x567cab*/
-            v38 = &unk_ABDC50; /*0x567cb0*/
+            v38 = (CellClass *)&unk_ABDC50; /*0x567cb0*/
           }
           if ( v38->level[0] <= v49 + 3 ) /*0x567cc5*/
           {
 LABEL_47:
             smudgeTypeIndex_low = SLOWORD(v36->smudgeTypeIndex); /*0x567cd5*/
             smudgeTypeIndex_high = SHIWORD(v36->smudgeTypeIndex); /*0x567cd9*/
-            v41 = v36->flags & 0xFFFFFFBF; /*0x567cdd*/
-            v36->flags = v41; /*0x567ce2*/
+            v41 = (unsigned int)v36->flags & 0xFFFFFFBF; /*0x567cdd*/
+            v36->flags = (CellFlags)v41; /*0x567ce2*/
             if ( arg6 ) /*0x567ce8*/
             {
               if ( ((v41 & 1) == 0 || (v41 & 2) == 0) && (v36->copyFlags & 8) != 0 ) /*0x567cff*/
-                DisplayClass::ProcessCellReveal((DisplayClass *)&dword_87F7E8, v52, (int)owner); /*0x567d10*/
+                ((DisplayClass *)&dword_87F7E8)->ProcessCellReveal((int)v52, (int)owner); /*0x567d10*/
             }
             else
             {
@@ -723,7 +726,7 @@ LABEL_47:
               v42 = *(unsigned int *)this->__pad_F8; /*0x567d45*/
               if ( smudgeTypeIndex_low != v42 + 13 || smudgeTypeIndex_high != v42 + this->MapClass_field_0xF4 - 15 ) /*0x567d5e*/
 LABEL_60:
-                Conditions::CheckResult3((RadarClass *)v52, (int)owner, arg8); /*0x567d60*/
+                ((Conditions *)(RadarClass *)v52)->CheckResult3((int)owner, arg8, 0); /*0x567d60*/
             }
           }
         }
@@ -780,7 +783,7 @@ int MapClass::RevealArea2(int *coords, int radius, int owner, int arg4)
   v6 = radius; /*0x567dbf*/
   if ( radius < 0 ) /*0x567dc5*/
   {
-    v7 = dword_7ED3D0[v5]; /*0x567dc7*/
+    v7 = (&dword_7ED3D0)[v5]; /*0x567dc7*/
     radius = 0; /*0x567dce*/
     goto LABEL_10; /*0x567dd6*/
   }
@@ -789,32 +792,32 @@ int MapClass::RevealArea2(int *coords, int radius, int owner, int arg4)
     radius = 8; /*0x567de1*/
     v6 = 8; /*0x567de9*/
 LABEL_9:
-    v7 = dword_7ED3D0[v5] - dword_7ED3CC[v6]; /*0x567ded*/
+    v7 = (&dword_7ED3D0)[v5] - (&dword_7ED3CC)[v6]; /*0x567ded*/
     goto LABEL_10; /*0x567dfb*/
   }
   if ( radius ) /*0x567efd*/
     goto LABEL_9; /*0x567efd*/
-  v7 = dword_7ED3D0[v5]; /*0x567f03*/
+  v7 = (&dword_7ED3D0)[v5]; /*0x567f03*/
 LABEL_10:
   v29 = v7; /*0x567dfd*/
   result = arg4; /*0x567e01*/
   if ( !arg4 ) /*0x567e0b*/
   {
     v9 = *coords; /*0x567e15*/
-    v10 = coords->u32_4; /*0x567e17*/
-    v11 = coords->u32_8; /*0x567e1a*/
+    v10 = coords[1]; /*0x567e17*/
+    v11 = coords[2]; /*0x567e1a*/
     v12 = ZCoordToScreenY(v11); /*0x567e1f*/
     v13 = ((((unsigned int)(((unsigned __int64)(2004318071LL * v12) >> 32) - v12) >> 31) /*0x567e3e*/
           + ((int)(((unsigned __int64)(2004318071LL * v12) >> 32) - v12) >> 4)) << 8)
         + v9;
     v14 = ZCoordToScreenY(v11); /*0x567e40*/
     v15 = (int)(((unsigned __int64)(2004318071LL * v14) >> 32) - v14) >> 4; /*0x567e52*/
-    v16 = dword_ABD490; /*0x567e57*/
+    v16 = (int *)&dword_ABD490; /*0x567e57*/
     v17 = (int)((((v15 >> 31) + v15) << 8) + v10); /*0x567e73*/
     v18 = v13 / 256; /*0x567e82*/
     v19 = ((((v17) >> 32) & 0xFF) + (int)v17) >> 8; /*0x567e85*/
     if ( radius ) /*0x567e8a*/
-      v16 = (int *)(4 * dword_7ED3CC[radius] + 11261072); /*0x567e93*/
+      v16 = (int *)(4 * (&dword_7ED3CC)[radius] + 11261072); /*0x567e93*/
     for ( result = v29 - 1; v29; --v29 ) /*0x567ea3*/
     {
       v20 = v16++; /*0x567eae*/
@@ -827,18 +830,18 @@ LABEL_10:
       if ( v22 || v23 >= 0x40000 || (v24 = *(CellClass **)(this->MapClass_field_0x13C + 4 * v23)) == 0 ) /*0x567ef5*/
       {
         dword_ABDC74 = (int)v28; /*0x567f0f*/
-        v25 = &unk_ABDC50; /*0x567f15*/
+        v25 = (CellClass *)&unk_ABDC50; /*0x567f15*/
       }
       else
       {
         v25 = v24; /*0x567ef7*/
       }
-      AdjacentPassableMask = Cell::GetAdjacentPassableMask((__int16 *)&arg4, 0); /*0x567f27*/
+      AdjacentPassableMask = ((Cell *)(__int16 *)&arg4)->GetAdjacentPassableMask(0); /*0x567f27*/
       if ( AdjacentPassableMask != v25->shroudedness[0] ) /*0x567f32*/
       {
         v25->shroudedness[0] = AdjacentPassableMask; /*0x567f34*/
         v25->visibilityChanged[0] = 1; /*0x567f3a*/
-        Tactical::AddCellToDrawList((int *)g_TacticalClass_Instance, (int)v25); /*0x567f48*/
+        ((Tactical *)g_TacticalClass_Instance)->AddCellToDrawList((int)v25); /*0x567f48*/
       }
       result = v29 - 1; /*0x567f51*/
     }

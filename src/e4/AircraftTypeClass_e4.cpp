@@ -161,13 +161,7 @@ AnimTypeClass * * AircraftTypeClass_LoadTypeData(void * a1, void * a2, void * a3
   int v19; // [esp+8h] [ebp-84h]
   v19 = *&v4->qE00; /*0x41cd15*/
   char Destination[128]; // [esp+Ch] [ebp-80h] BYREF
-  if ( INIClass::GetString( /*0x41cd19*/
-         (INIClass *)&DataGlobal_887180,
-         &v4->ImageFile,
-         aTrailer,
-         &g_INI_DefaultBuffer,
-         Destination,
-         128) )
+  if ( (((INIClass *)&DataGlobal_887180)->GetString( /*0x41cd19*/ &v4->ImageFile, aTrailer, &g_INI_DefaultBuffer, Destination, 128)) )
   {
     v10 = (Destination)->FindOrCreate(); /*0x41cd26*/
   }

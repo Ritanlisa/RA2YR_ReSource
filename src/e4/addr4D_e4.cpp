@@ -177,7 +177,7 @@ int sub_4D2370()
         LOWORD(v9) = (unsigned short)v5 + *v4; /*0x4d2408*/
         HIWORD(v9) = HIWORD(v5) + v4[1]; /*0x4d240d*/
         v11 = v9; /*0x4d241c*/
-        v6 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)&v11); /*0x4d2420*/
+        v6 = (((CellCoord *)&dword_87F7E8)->To_CellObj((__int16 *)&v11); /*0x4d2420*/
         v4 += 2; /*0x4d2436*/
         v6->u32_140 |= 0x400000u; /*0x4d2439*/
       }

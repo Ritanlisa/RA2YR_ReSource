@@ -194,9 +194,9 @@ char CellClass::UpdateVariant3(unsigned short *aP0, int aP1)
       }
       CellClass::UpdateAnimations((int)v29); /*0x56f25f*/
       aP1 = *(unsigned int *)v32 + 0x10000; /*0x56f277*/
-      v30 = CellCoord::To_CellObj(&dword_87F7E8, (__int16 *)&aP1); /*0x56f28a*/
+      v30 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((__int16 *)&aP1); /*0x56f28a*/
       CellClass::UpdateAnimations((int)v30); /*0x56f291*/
-      v23 = (char *)CellCoord::To_CellObj(&dword_87F7E8, v32); /*0x56f2a2*/
+      v23 = (char *)((CellCoord *)(&dword_87F7E8))->To_CellObj(v32); /*0x56f2a2*/
     }
     (v9) = ((v9) & ~0xFF) | ((Cell::SetTileType(v32, g_TerrainSoundTable2 + g_TerrainBridgeIndex + 3, -1, v23[283] - 4, 0)) & 0xFF); /*0x56f1c0*/
   }
@@ -362,9 +362,9 @@ char CellClass::UpdateVariant4(unsigned short *aP0, int aP1)
       }
       CellClass::UpdateAnimations((int)v29); /*0x56f5ff*/
       aP1 = *(unsigned int *)v32 + 0x10000; /*0x56f617*/
-      v30 = CellCoord::To_CellObj(&dword_87F7E8, (__int16 *)&aP1); /*0x56f62a*/
+      v30 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((__int16 *)&aP1); /*0x56f62a*/
       CellClass::UpdateAnimations((int)v30); /*0x56f631*/
-      v23 = (char *)CellCoord::To_CellObj(&dword_87F7E8, v32); /*0x56f642*/
+      v23 = (char *)((CellCoord *)(&dword_87F7E8))->To_CellObj(v32); /*0x56f642*/
     }
     (v9) = ((v9) & ~0xFF) | ((Cell::SetTileType(v32, g_TerrainSoundTable2 + g_TerrainBridgeIndex + 3, -1, v23[283] - 4, 0)) & 0xFF); /*0x56f560*/
   }
@@ -482,9 +482,9 @@ char CellClass::UpdateTerrain(unsigned short *aP0, int aP1)
       CellClass::UpdateAnimations((int)v27); /*0x56fbc0*/
       HIWORD(aP1) = v31[1]; /*0x56fbcf*/
       LOWORD(aP1) = v31[0] + 1; /*0x56fbd4*/
-      v28 = CellCoord::To_CellObj(&dword_87F7E8, (__int16 *)&aP1); /*0x56fbeb*/
+      v28 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((__int16 *)&aP1); /*0x56fbeb*/
       CellClass::UpdateAnimations((int)v28); /*0x56fbf2*/
-      v29 = (char *)CellCoord::To_CellObj(&dword_87F7E8, v31); /*0x56fc03*/
+      v29 = (char *)((CellCoord *)(&dword_87F7E8))->To_CellObj(v31); /*0x56fc03*/
       (v9) = ((v9) & ~0xFF) | ((Cell::SetTileType(v31, g_TerrainSoundConfig + g_TerrainBridgeIndex + 3, -1, v29[283] - 4, 0)) & 0xFF); /*0x56fc2d*/
     }
     else
@@ -651,9 +651,9 @@ char CellClass::UpdateTileVariant2(unsigned short *aP0, int aP1)
       CellClass::UpdateAnimations((int)v27); /*0x56ff90*/
       HIWORD(aP1) = v31[1]; /*0x56ff9f*/
       LOWORD(aP1) = v31[0] + 1; /*0x56ffa4*/
-      v28 = CellCoord::To_CellObj(&dword_87F7E8, (__int16 *)&aP1); /*0x56ffbb*/
+      v28 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((__int16 *)&aP1); /*0x56ffbb*/
       CellClass::UpdateAnimations((int)v28); /*0x56ffc2*/
-      v29 = (char *)CellCoord::To_CellObj(&dword_87F7E8, v31); /*0x56ffd3*/
+      v29 = (char *)((CellCoord *)(&dword_87F7E8))->To_CellObj(v31); /*0x56ffd3*/
       (v9) = ((v9) & ~0xFF) | ((Cell::SetTileType(v31, g_TerrainSoundConfig + g_TerrainBridgeIndex + 3, -1, v29[283] - 4, 0)) & 0xFF); /*0x56fffd*/
     }
     else
@@ -868,9 +868,9 @@ char CellClass::UpdateVariant7(unsigned short *aP0, int aP1)
       }
       CellClass::UpdateAnimations((int)v29); /*0x57274f*/
       aP1 = *(unsigned int *)v32 + 0x10000; /*0x572767*/
-      v30 = CellCoord::To_CellObj(&dword_87F7E8, (__int16 *)&aP1); /*0x57277a*/
+      v30 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((__int16 *)&aP1); /*0x57277a*/
       CellClass::UpdateAnimations((int)v30); /*0x572781*/
-      v23 = (char *)CellCoord::To_CellObj(&dword_87F7E8, v32); /*0x572792*/
+      v23 = (char *)((CellCoord *)(&dword_87F7E8))->To_CellObj(v32); /*0x572792*/
     }
     (v9) = ((v9) & ~0xFF) | ((Cell::SetTileType(v32, g_TerrainSoundTable2 + g_Cell_BuildabilityLUT + 3, -1, v23[283] - 4, 0)) & 0xFF); /*0x5726b0*/
   }
@@ -1036,9 +1036,9 @@ char CellClass::UpdateVariant8(unsigned short *aP0, int aP1)
       }
       CellClass::UpdateAnimations((int)v29); /*0x572aef*/
       aP1 = *(unsigned int *)v32 + 0x10000; /*0x572b07*/
-      v30 = CellCoord::To_CellObj(&dword_87F7E8, (__int16 *)&aP1); /*0x572b1a*/
+      v30 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((__int16 *)&aP1); /*0x572b1a*/
       CellClass::UpdateAnimations((int)v30); /*0x572b21*/
-      v23 = (char *)CellCoord::To_CellObj(&dword_87F7E8, v32); /*0x572b32*/
+      v23 = (char *)((CellCoord *)(&dword_87F7E8))->To_CellObj(v32); /*0x572b32*/
     }
     (v9) = ((v9) & ~0xFF) | ((Cell::SetTileType(v32, g_TerrainSoundTable2 + g_Cell_BuildabilityLUT + 3, -1, v23[283] - 4, 0)) & 0xFF); /*0x572a50*/
   }
@@ -1156,9 +1156,9 @@ char CellClass::UpdateVariant5(unsigned short *aP0, int aP1)
       CellClass::UpdateAnimations((int)v27); /*0x5730b0*/
       HIWORD(aP1) = v31[1]; /*0x5730bf*/
       LOWORD(aP1) = v31[0] + 1; /*0x5730c4*/
-      v28 = CellCoord::To_CellObj(&dword_87F7E8, (__int16 *)&aP1); /*0x5730db*/
+      v28 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((__int16 *)&aP1); /*0x5730db*/
       CellClass::UpdateAnimations((int)v28); /*0x5730e2*/
-      v29 = (char *)CellCoord::To_CellObj(&dword_87F7E8, v31); /*0x5730f3*/
+      v29 = (char *)((CellCoord *)(&dword_87F7E8))->To_CellObj(v31); /*0x5730f3*/
       (v9) = ((v9) & ~0xFF) | ((Cell::SetTileType(v31, g_TerrainSoundConfig + g_Cell_BuildabilityLUT + 3, -1, v29[283] - 4, 0)) & 0xFF); /*0x57311d*/
     }
     else
@@ -1325,9 +1325,9 @@ HouseClass * * CellClass::UpdateVariant6(IUnknown * aP0, IUnknown * aP1)
       CellClass::UpdateAnimations((int)v27); /*0x573480*/
       HIWORD(aP1) = v31[1]; /*0x57348f*/
       LOWORD(aP1) = v31[0] + 1; /*0x573494*/
-      v28 = CellCoord::To_CellObj(&dword_87F7E8, (__int16 *)&aP1); /*0x5734ab*/
+      v28 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((__int16 *)&aP1); /*0x5734ab*/
       CellClass::UpdateAnimations((int)v28); /*0x5734b2*/
-      v29 = (char *)CellCoord::To_CellObj(&dword_87F7E8, v31); /*0x5734c3*/
+      v29 = (char *)((CellCoord *)(&dword_87F7E8))->To_CellObj(v31); /*0x5734c3*/
       (v9) = ((v9) & ~0xFF) | ((Cell::SetTileType(v31, g_TerrainSoundConfig + g_Cell_BuildabilityLUT + 3, -1, v29[283] - 4, 0)) & 0xFF); /*0x5734ed*/
     }
     else

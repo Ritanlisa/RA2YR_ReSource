@@ -456,13 +456,7 @@ void* SuperWeaponTypeClass::SD_vt25(unsigned char *** aP1)
                               (unsigned __int8 *)(_EBP + 36),
                               aLinemultiplier,
                               v21);
-  INIClass::GetString( /*0x6cec2d*/
-    (INIClass *)aP1,
-    (unsigned __int8 *)(_EBP + 36),
-    (unsigned __int8 *)g_INI_Key_Type,
-    &g_INI_DefaultBuffer,
-    v44,
-    40);
+  (((INIClass *)this)->GetString( /*0x6cec2d*/ (unsigned __int8 *)(_EBP + 36), aWeapontype, &g_INI_DefaultBuffer, (char *)&v45, 128));
   if ( strlen(v44) ) /*0x6cec36*/
   {
     v39 = 0; /*0x6cec42*/
@@ -478,7 +472,7 @@ void* SuperWeaponTypeClass::SD_vt25(unsigned char *** aP1)
       *(unsigned int *)(_EBP + 180) = v39; /*0x6cec7e*/
   }
   LABEL_18:
-  INIClass::GetString((INIClass *)aP1, (unsigned __int8 *)(_EBP + 36), aPredependent, &g_INI_DefaultBuffer, v43, 40); /*0x6cec84*/
+  (((INIClass *)this)->GetString((unsigned __int8 *)(_EBP + 36), aWeapontype, &g_INI_DefaultBuffer, (char *)&v45, 128)); /*0x6cec84*/
   if ( strlen(v43) ) /*0x6ceca1*/
   {
     v40 = 0; /*0x6cecad*/
@@ -495,13 +489,7 @@ void* SuperWeaponTypeClass::SD_vt25(unsigned char *** aP1)
   }
   LABEL_25:
   v25 = *(unsigned int *)(_EBP + 200); /*0x6cecef*/
-  if ( INIClass::GetString( /*0x6ced0f*/
-         (INIClass *)aP1,
-         (unsigned __int8 *)(_EBP + 36),
-         aAuxbuilding,
-         &g_INI_DefaultBuffer,
-         (char *)&v45,
-         128) )
+  if ( (((INIClass *)this)->GetString( /*0x6ced0f*/ (unsigned __int8 *)(_EBP + 36), aWeapontype, &g_INI_DefaultBuffer, (char *)&v45, 128)) )
   {
     v26 = BuildingTypeClass::FindOrCreate((char *)&v45); /*0x6ced1f*/
   }
@@ -536,13 +524,7 @@ void* SuperWeaponTypeClass::SD_vt25(unsigned char *** aP1)
     *(unsigned int *)(_EBP + 176) = v30; /*0x6ced8b*/
   }
   v31 = (char *)(_EBP + 204); /*0x6ced9c*/
-  INIClass::GetString( /*0x6cedb1*/
-    (INIClass *)aP1,
-    (unsigned __int8 *)(_EBP + 36),
-    aSidebarimage,
-    (char *)(_EBP + 204),
-    (char *)&v45.Name[5],
-    256);
+  (((INIClass *)this)->GetString( /*0x6cedb1*/ (unsigned __int8 *)(_EBP + 36), aWeapontype, &g_INI_DefaultBuffer, (char *)&v45, 128));
   if ( &v45 == (VocClass *)-128 ) /*0x6cedbf*/
   {
     Destination[0] = (unsigned __int8)&v45.Name[5]; /*0x6cedc1*/
@@ -643,7 +625,7 @@ int SuperWeaponTypeClass::loadSWProperties(uint8_t * a2, uint8_t * a3, int a4, v
 {
 
   char Destination[32]; // [esp+8h] [ebp-20h] BYREF
-  INIClass::GetString(a2, a3, (&off_7E4C50)[a4], Destination, 32); /*0x474f02*/
+  (((INIClass *)this)->GetString(a2, a3, (&off_7E4C50)[a4], Destination, 32)); /*0x474f02*/
   int v4 = 0; // edi /*0x474f07*/
   char **v5; // esi
   v5 = (char **)&off_7E4C50; /*0x474f09*/
@@ -664,7 +646,7 @@ int SuperWeaponTypeClass::FindOrCreate(INIClass * a2, unsigned char * a3, CCINIC
 {
 
   char Destination[128]; // [esp+4h] [ebp-80h] BYREF
-  if ( !INIClass::GetString((INIClass *)this, a2, a3, &g_INI_DefaultBuffer, Destination, 128) ) /*0x475563*/
+  if ( !(((INIClass *)this)->GetString(a2, a3, &g_INI_DefaultBuffer, Destination, 128)) ) /*0x475563*/
     return a4; /*0x4755f8*/
   void *v4; // esi
   v4 = (void *)PlayerSlot::NameToDialogID(Destination); /*0x475579*/

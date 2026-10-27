@@ -2352,7 +2352,7 @@ namespace gamemd {
 int sub_797640(int a1)
 {
   DWORD i; // esi
-  wchar_t *String; // eax
+  wchar_t *String_buf; // eax
   int v3; // esi
   HWND v4; // eax
   HWND Current; // eax
@@ -2410,8 +2410,8 @@ int sub_797640(int a1)
         break; /*0x797726*/
       if ( dword_B77DE8 >= -2147221396 || dword_B77DE8 >= -2147221401 && dword_B77DE8 <= -2147221398 ) /*0x79773b*/
       {
-        String = GetStringCSF(g_Str_TXT_CANT_CONNECT, 0, g_Str_File_wonline_cpp, 24389); /*0x797776*/
-        ShowDialogConfirm(String, 0, (int)GameLoop::Thunk, 0); /*0x79777f*/
+        String_buf = GetStringCSF(g_Str_TXT_CANT_CONNECT, 0, g_Str_File_wonline_cpp, 24389); /*0x797776*/
+        ShowDialogConfirm(String_buf, 0, (int)GameLoop::Thunk, 0); /*0x79777f*/
         LABEL_19:
         v3 = 1; /*0x797784*/
         goto LABEL_22; /*0x797789*/
@@ -4264,7 +4264,7 @@ void ValidateGameJoinWOL(BlowStraw * aP0, ObjectClass * aP1, char a3)
   int v15; // [esp+1Ch] [ebp-90h] BYREF
   int v16; // [esp+20h] [ebp-8Ch] BYREF
   int v17; // [esp+24h] [ebp-88h]
-  char String[132]; // [esp+28h] [ebp-84h] BYREF
+  char String_buf[132]; // [esp+28h] [ebp-84h] BYREF
 
   v5 = 0; /*0x79ba9c*/
   if ( dword_A8B238 == 4 ) /*0x79ba7a*/
@@ -4287,13 +4287,13 @@ void ValidateGameJoinWOL(BlowStraw * aP0, ObjectClass * aP1, char a3)
     return 0; /*0x79bae1*/
   }
   v17 = 0; /*0x79bb32*/
-  strcpy(String, &aP0->u32_E0); /*0x79bb39*/
+  strcpy(String_buf, &aP0->u32_E0); /*0x79bb39*/
   v15 = 0; /*0x79bb3d*/
   v16 = 0; /*0x79bb44*/
   v13 = 0; /*0x79bb4e*/
   v14 = 0; /*0x79bb52*/
   unknown_libname_73(&v12); /*0x79bb56*/
-  ParseStringCommaInts(String, (int)&v15, (int)&v16, (int)&v13, (int)&v14, (int)&v12); /*0x79bb7c*/
+  ParseStringCommaInts(String_buf, (int)&v15, (int)&v16, (int)&v13, (int)&v14, (int)&v12); /*0x79bb7c*/
   if ( GameOptions::GetEntry() != v17 || (CCINIClass_RulesHash ^ CCINIClass_AIHash ^ CCINIClass_ArtHash) != v15 ) /*0x79bbae*/
   {
     if ( aP1 ) /*0x79bc41*/

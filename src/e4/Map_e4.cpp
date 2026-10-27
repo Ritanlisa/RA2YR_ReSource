@@ -923,7 +923,7 @@ LABEL_17:
         }
         else
         {
-          v13 = (Cell *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v17); /*0x5a7dba*/
+          v13 = (Cell *)(((CellCoord *)&dword_87F7E8)->To_CellObj(v17); /*0x5a7dba*/
           v14 = v20[v9 + 4 + v7 * v16[185]]; /*0x5a7dcf*/
           if ( v14 /*0x5a7e27*/
             && (!(unsigned __int8)Cell::IsEmpty(v13) && !sub_4863A0((ObjectClass *)v13)

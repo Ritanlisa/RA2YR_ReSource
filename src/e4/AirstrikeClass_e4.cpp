@@ -72,7 +72,7 @@ int AirstrikeClass::SpawnAircraft(int * a2, void *a2_2)
   (v20) = ((v20) & ~0xFFFF) | ((*v8 / 256) & 0xFFFF); /*0x41d8dc*/
   HIWORD(v20) = v8[1] / 256; /*0x41d8f5*/
   *(unsigned int *)v17 = v20; /*0x41d902*/
-  v9 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v17); /*0x41d907*/
+  v9 = (((CellCoord *)&dword_87F7E8)->To_CellObj(v17); /*0x41d907*/
   v16 = v18; /*0x41d916*/
   v15 = (int)v9; /*0x41d919*/
   v10 = (HouseClass *)(*(int (**)(unsigned int))(*this->owner + 60))(this->owner); /*0x41d91f*/

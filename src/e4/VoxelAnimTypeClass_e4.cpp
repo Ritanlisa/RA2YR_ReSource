@@ -211,13 +211,7 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   v4->MaxXYVel = _RT1; /*0x74b1ea*/
   unsigned int *v46; // [esp+10h] [ebp-288h]
   v46 = v20; /*0x74b1fb*/
-  if ( INIClass::GetString( /*0x74b207*/
-         (INIClass *)a2,
-         &v4->BarrelVoxel,
-         g_INI_Key_Spawns,
-         &g_INI_DefaultBuffer,
-         (char *)&Destination,
-         128) )
+  if ( (((INIClass *)a2)->GetString( /*0x74b207*/ &v4->BarrelVoxel, g_INI_Key_Spawns, &g_INI_DefaultBuffer, (char *)&Destination, 128)) )
   {
     v22 = (unsigned int *)(globalHelper_04BB20((char *)&Destination, (int)&stru_A8EB00.ptr_0[10])); /*0x74b219*/
   }
@@ -243,13 +237,7 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   int v47; // [esp+10h] [ebp-288h]
   v47 = v24; /*0x74b2b4*/
   int Index; // eax
-  if ( !INIClass::GetString( /*0x74b2cd*/
-          (INIClass *)a2,
-          &v4->BarrelVoxel,
-          g_INI_Key_StartSound,
-          &g_INI_DefaultBuffer,
-          (char *)&Destination,
-          128)
+  if ( !(((INIClass *)a2)->GetString( /*0x74b2cd*/ &v4->BarrelVoxel, g_INI_Key_StartSound, &g_INI_DefaultBuffer, (char *)&Destination, 128))
     || (Index = VocClass::FindIndex(&Destination), Index == -1) )
   {
     Index = v47; /*0x74b2cf*/
@@ -258,13 +246,7 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   v48 = v4->StopSound; /*0x74b2e8*/
   v4->StartSound = Index; /*0x74b2f4*/
   int v26; // eax
-  if ( !INIClass::GetString( /*0x74b30f*/
-          (INIClass *)a2,
-          &v4->BarrelVoxel,
-          g_INI_Key_StopSound,
-          &g_INI_DefaultBuffer,
-          (char *)&Destination,
-          128)
+  if ( !(((INIClass *)a2)->GetString( /*0x74b30f*/ &v4->BarrelVoxel, g_INI_Key_StopSound, &g_INI_DefaultBuffer, (char *)&Destination, 128))
     || (v26 = VocClass::FindIndex(&Destination), v26 == -1) )
   {
     v26 = v48; /*0x74b311*/
@@ -272,13 +254,7 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   v4->StopSound = v26; /*0x74b31f*/
   unsigned int *v49; // [esp+10h] [ebp-288h]
   v49 = v4->BounceAnim; /*0x74b338*/
-  if ( INIClass::GetString( /*0x74b33c*/
-         (INIClass *)a2,
-         &v4->BarrelVoxel,
-         aBounceanim,
-         &g_INI_DefaultBuffer,
-         (char *)&Destination,
-         128) )
+  if ( (((INIClass *)a2)->GetString( /*0x74b33c*/ &v4->BarrelVoxel, aBounceanim, &g_INI_DefaultBuffer, (char *)&Destination, 128)) )
   {
     v27 = ((char *)&Destination)->FindOrCreate(); /*0x74b349*/
   }
@@ -290,13 +266,7 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   v4->BounceAnim = v27; /*0x74b35a*/
   unsigned int *v50; // [esp+10h] [ebp-288h]
   v50 = v28; /*0x74b377*/
-  if ( INIClass::GetString( /*0x74b37b*/
-         (INIClass *)a2,
-         &v4->BarrelVoxel,
-         aExpireanim,
-         &g_INI_DefaultBuffer,
-         (char *)&Destination,
-         128) )
+  if ( (((INIClass *)a2)->GetString( /*0x74b37b*/ &v4->BarrelVoxel, aExpireanim, &g_INI_DefaultBuffer, (char *)&Destination, 128)) )
   {
     v29 = ((char *)&Destination)->FindOrCreate(); /*0x74b388*/
   }
@@ -307,13 +277,7 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   unsigned int *v51; // [esp+10h] [ebp-288h]
   v51 = v4->TrailerAnim; /*0x74b3a8*/
   v4->ExpireAnim = v29; /*0x74b3b4*/
-  if ( INIClass::GetString( /*0x74b3ba*/
-         (INIClass *)a2,
-         &v4->BarrelVoxel,
-         aTraileranim,
-         &g_INI_DefaultBuffer,
-         (char *)&Destination,
-         128) )
+  if ( (((INIClass *)a2)->GetString( /*0x74b3ba*/ &v4->BarrelVoxel, aTraileranim, &g_INI_DefaultBuffer, (char *)&Destination, 128)) )
   {
     v30 = ((char *)&Destination)->FindOrCreate(); /*0x74b3c7*/
   }
@@ -332,13 +296,7 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   v4->DamageRadius = v33; /*0x74b40c*/
   int v52; // [esp+10h] [ebp-288h]
   v52 = v34; /*0x74b429*/
-  if ( INIClass::GetString( /*0x74b42d*/
-         (INIClass *)a2,
-         &v4->BarrelVoxel,
-         g_INI_Key_Warhead,
-         &g_INI_DefaultBuffer,
-         (char *)&Destination,
-         128) )
+  if ( (((INIClass *)a2)->GetString( /*0x74b42d*/ &v4->BarrelVoxel, g_INI_Key_Warhead, &g_INI_DefaultBuffer, (char *)&Destination, 128)) )
   {
     v35 = WarheadTypeClass::FindOrCreate((char *)&Destination); /*0x74b43a*/
   }
@@ -349,13 +307,7 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   unsigned int *v53; // [esp+10h] [ebp-288h]
   v53 = v4->AttachedSystem; /*0x74b45a*/
   v4->Warhead = v35; /*0x74b466*/
-  if ( INIClass::GetString( /*0x74b46c*/
-         (INIClass *)a2,
-         &v4->BarrelVoxel,
-         aAttachedsystem,
-         &g_INI_DefaultBuffer,
-         (char *)&Destination,
-         128) )
+  if ( (((INIClass *)a2)->GetString( /*0x74b46c*/ &v4->BarrelVoxel, aAttachedsystem, &g_INI_DefaultBuffer, (char *)&Destination, 128)) )
   {
     v36 = (unsigned int *)(BuildingTypeClass::LoadOrGet((char *)&Destination)); /*0x74b479*/
   }

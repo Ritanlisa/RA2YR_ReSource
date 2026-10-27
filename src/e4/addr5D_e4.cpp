@@ -275,7 +275,7 @@ void* E4Recv_5D2650::sub_5D2650(void * a2, int a3)
       int v4 = 0; // esi /*0x5d266a*/
       if ( this->ambientSoundController[1] > 0 ) /*0x5d266e*/
       {
-        while ( _strcmpi((char *)a2, *this->M52 + v4)) ) /*0x5d2684*/
+        while ( _strcmpi((char *)a2, *this->M52 + v4) ) /*0x5d2684*/
         {
           if ( ++v4 >= this->ambientSoundController[1] ) /*0x5d268c*/
             return; /*0x5d268c*/
@@ -745,7 +745,7 @@ Coord * * LoadMultiplayerModesList(AbstractClass * a1, int edx0, void * aDRa2mdp
   char **v2; // esi
   int v3; // eax
   int v4; // edi
-  int String; // esi
+  int String_ret; // esi
   int v6; // esi
   char *v7; // eax
   wchar_t *StringCSF; // eax
@@ -789,14 +789,14 @@ Coord * * LoadMultiplayerModesList(AbstractClass * a1, int edx0, void * aDRa2mdp
           v4 = v3; /*0x5d767d*/
           unknown_libname_73(&v19); /*0x5d767f*/
           ((String *)&v19.attachedBomb)->Assign(&g_INI_DefaultBuffer); /*0x5d768d*/
-          String = INIClass::ReadString( /*0x5d76b2*/
+          String_ret = INIClass::ReadString( /*0x5d76b2*/
                      (INIClass *)v19.bombVisible,
                      v2,
                      (char **)&v19.uniqueId,
                      (char **)&v19.attachedBomb,
                      (int)&v19);
           j_DeleteAndZero((ObjectClass *)&v19.attachedBomb); /*0x5d76b4*/
-          if ( String <= 0 ) /*0x5d76bb*/
+          if ( String_ret <= 0 ) /*0x5d76bb*/
             goto LABEL_49; /*0x5d76bb*/
           unknown_libname_73(&v19.ptr_4); /*0x5d76c5*/
           v6 = ((String *)&v19)->Tokenize(0, Delimiter, (void **)&v19.ptr_4); /*0x5d76e2*/
@@ -1815,15 +1815,15 @@ int SkirmishDialogProc(SkirmishDialog * aP0, int a2, unsigned short a3, HWND a4)
 namespace gamemd {
 int Network_SendJoinRequest(int a1, unsigned char a2)
 {
-  wchar_t *String; // eax
+  wchar_t *String_buf; // eax
   wchar_t *v5; // eax
 
   int v10; // [esp+14h] [ebp-1D8h]
   v10 = a1; /*0x5df41f*/
   if ( a1 < 1 ) /*0x5df423*/
   {
-    String = GetStringCSF(aTxtMustSelectG, 0, g_Str_File_netdlg2_cpp, 3712); /*0x5df436*/
-    (-1)->ShowMessage((size_t)String); /*0x5df442*/
+    String_buf = GetStringCSF(aTxtMustSelectG, 0, g_Str_File_netdlg2_cpp, 3712); /*0x5df436*/
+    (-1)->ShowMessage((size_t)String_buf); /*0x5df442*/
     PlayVocClass(dword_8871E0->MovieOff, 0x2000, 1.0, 0); /*0x5df462*/
     return 0; /*0x5df473*/
   }
@@ -2928,12 +2928,12 @@ int E4Recv_5DAB80::sub_5DAB80()
 
   int v3; // [esp+8h] [ebp-54h] BYREF
   v3 = 0; /*0x5dab96*/
-  char String[80]; // [esp+Ch] [ebp-50h] BYREF
-  strcpy(String, (const char *)this); /*0x5daba7*/
+  char String_buf[80]; // [esp+Ch] [ebp-50h] BYREF
+  strcpy(String_buf, (const char *)this); /*0x5daba7*/
   _strupr(String); /*0x5dabb5*/
   unsigned int i; // esi
   for ( i = 0; i < strlen(String); ++i ) /*0x5dabc8*/
-    ComputeHash(&v3, String[i]); /*0x5dabd8*/
+    ComputeHash(&v3, String_buf[i]); /*0x5dabd8*/
   return v3; /*0x5dabf4*/
 }
 } // namespace gamemd

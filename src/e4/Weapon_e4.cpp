@@ -249,7 +249,7 @@ int * Weapon::DestroyTerrain(int *a1, int *aP2, int *aP3, int aP4)
       (v44) = ((v44) & ~0xFFFF) | ((v49 / 256) & 0xFFFF); /*0x70c7f9*/
       (v44) = ((v44) & ~(0xFFFF << 16)) | (((v50 / 256) & 0xFFFF) << 16); /*0x70c802*/
       *(unsigned int *)v48 = v44; /*0x70c811*/
-      v13 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v48); /*0x70c815*/
+      v13 = (((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v48); /*0x70c815*/
       if ( (v13->u32_140 & 0x100) != 0 /*0x70c83c*/
         && v51 >= g_BuildingLoadQueue_Array.ThreatAvoidanceCoefficient[1] * (*(&v13->u32_11B) + 4) )
       {

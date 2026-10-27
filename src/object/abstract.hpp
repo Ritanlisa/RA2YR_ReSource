@@ -326,8 +326,8 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     public:  // funcs-move
     // === FUNCS-MOVE (BEGIN) ===
     int initVtableBase();  // 0x410100
-    int GetVtable3(int a1);  // 0x410220
-    int GenerateUniqueID(int a1);  // 0x410230
+    int GetVtable3(void *a1);  // 0x410220 (bin: __stdcall(obj-ptr) -> vfptr3)
+    int GenerateUniqueID(void *a1);  // 0x410230 (bin: __stdcall(obj-ptr) writes [ecx+0Ch])
     int SaveLoad_Prefix(int a1, int a2, int a3);  // 0x410320
     int SaveLoad_Prefix_0(int a1, int a2);  // 0x410380
     int GetField9();  // 0x417fd0
@@ -344,7 +344,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int SaveLoad_PrefixWrapper(int a1, int a2, int a3);  // 0x5f9950
     int updateTargetTracking(int a1);  // 0x6ce1f0
     void ClearTargetToMeClearManagerTarget(int a1);  // 0x70d4a0
-    void AnnounceExpiredPointer(int a1, int a2);  // 0x7258d0
+    void AnnounceExpiredPointer(void *a1, int a2);  // 0x7258d0 (bin: __fastcall(this,int))
     void* RemoveObjectFromHouse(int a1, int a2, int a3, int a4, int a5);  // 0x4fb9b0
     // === FUNCS-MOVE (END) ===
     void* ptr_0;  // 0x0 (ml truth)  gB ptr_0 supply

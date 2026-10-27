@@ -1,7 +1,9 @@
 // CCFileClass -- IDA-based class for file access (MIX pool search + disk fallback)
+// x145b: GAMEMD_E4_UNIVERSE 前置 (math.hpp alias 让位 _fwd_e4 fwd, 消 C2371/C2874) + e4 Buffer twin 先手 (static Init(Buffer*,int,int) raw 真形)
+#define GAMEMD_E4_UNIVERSE 1
 #define GAMEMD_E4_VECTOR_TREE_TRUTH 1  // X33-L1: G57a2 bridge; sole C2989 victim TU
-#include "system/cc_file.hpp"
 #include "e4/classes/Buffer_e4.hpp"
+#include "system/cc_file.hpp"
 #include "system/mix_file.hpp"
 #include "system/file_system.hpp"
 #include "core/logging.hpp"
@@ -51,7 +53,7 @@ int CCFileClass::Open(int a2)
     }
     else
     {
-      v4 = (const char *)this->GetMember06(); /*0x473c84*/
+      v4 = this->GetFileName(); /*0x473c84*/
       if ( LookupFileInfoCache(v4, 0, 0, 0, 0) ) /*0x473c8b*/
       {
         this->u32_68 = 1; /*0x473c94*/
@@ -87,7 +89,7 @@ void* CCFileClass::ReadEntireFile()
     v3 = this->GetSize(); /*0x4a38a8*/
     v2 = operator new(v3); /*0x4a38b0*/
     if ( v2 ) /*0x4a38b7*/
-      this->Read(v2, v3); /*0x4a38bf*/
+      this->Read(); /*0x4a38bf*/
   }
   return v2; /*0x4a38c4*/
 }
@@ -96,14 +98,15 @@ REVERSE(0x473ce0, "CCFileClass::Reset: IDA verified", "None")
 // 0x473ce0
 int CCFileClass::Reset()
 {
-  Buffer *v2; // ecx
+  gamemd::Buffer *v2; // ecx
   int result; // eax
 
-  v2 = (unsigned char)((Buffer *)((char *)&this->CacheReadAhead8));
+  v2 = (gamemd::Buffer *)&this->q058; /*0x473ce8*/
   if ( v2 ) /*0x473ce8*/
-    Buffer::Init(v2, 0, 0); /*0x473cee*/
+    gamemd::Buffer::Init(v2, 0, 0); /*0x473cee*/
   this->tail_19 = 0; /*0x473cf5*/
-  (*((unsigned char *)&(result))) = CCFileClass::Close(this); /*0x473cfc*/
+  this->Close(); /*0x473cfc*/
+  result = 0;
   return result; /*0x473d01*/
 }
 } // namespace gamemd

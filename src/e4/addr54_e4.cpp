@@ -818,20 +818,8 @@ LABEL_26:
       v31 = v73; /*0x54608c*/
     }
     v72 = v31; /*0x5460a5*/
-    INIClass::GetString( /*0x5460c0*/
-      (unsigned __int8 ***)v75,
-      (unsigned __int8 *)v146,
-      (unsigned __int8 *)aSetname,
-      g_Str_No_Name,
-      v152,
-      64);
-    INIClass::GetString( /*0x5460e5*/
-      (unsigned __int8 ***)v75,
-      (unsigned __int8 *)v146,
-      (unsigned __int8 *)aFilename,
-      aTile,
-      v183,
-      64);
+    ((INIClass *)(/*0x5460c0*/ (unsigned __int8 ***)v75))->GetString((unsigned __int8 *)v146, (unsigned __int8 *)aSetname, g_Str_No_Name, v152, 64);
+    ((INIClass *)(/*0x5460e5*/ (unsigned __int8 ***)v75))->GetString((unsigned __int8 *)v146, (unsigned __int8 *)aFilename, aTile, v183, 64);
     v73 = INIClass::ReadInt_Overwrite(v146, aMarblemadness, 0xFFFF); /*0x54611b*/
     v86 = INIClass::ReadInt_Overwrite(v146, aNonmarblemadne, 0xFFFF); /*0x546138*/
     Bool_Overwrite = INIClass::ReadBool_Overwrite(v146, aMorphable, 0); /*0x546148*/
@@ -925,13 +913,7 @@ LABEL_26:
             if ( v67 ) /*0x5464e2*/
             {
               sprintf(v144, "Tile%02dAnim", v35); /*0x5464f6*/
-              if ( INIClass::GetString( /*0x546524*/
-                     (unsigned __int8 ***)v75,
-                     (unsigned __int8 *)v152,
-                     (unsigned __int8 *)v144,
-                     &g_INI_DefaultBuffer,
-                     v184,
-                     128) )
+              if ( ((INIClass *)(/*0x546524*/ (unsigned __int8 ***)v75))->GetString((unsigned __int8 *)v152, (unsigned __int8 *)v144, &g_INI_DefaultBuffer, v184, 128) )
               {
                 v41 = AnimTypeClass::FindOrCreate(v184); /*0x546538*/
                 if ( v41 ) /*0x54653f*/

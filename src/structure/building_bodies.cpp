@@ -64,10 +64,10 @@ int SuperWeapon::UpdateSuperWeaponsOwnedHouseClass(HouseClass* ownerHouse)
         for ( j = 0; v5 < *(int *)&stru_A8E960.altNextScenario[236]; j = ++v5 ) /*0x50afa1*/
         {
           v6 = *(BuildingClass **)(*(unsigned int *)&stru_A8E960.altNextScenario[224] + 4 * v5); /*0x50afad*/
-          if ( !v6->inLimbo[0] && v6->isAliveFlag[0] ) /*0x50afbe*/
+          if ( !*(bool *)&v6->inLimbo && *(bool *)&v6->isAliveFlag ) /*0x50afbe*/
           {
-            v19 = (*(int (**)(int))(*(unsigned int *)(v6->owner + 4) + 16))(v6->owner + 4); /*0x50afe3*/
-            if ( v19 == (*(int (**)(SuperWeapon *))(this->q004 + 16))(&this->q21C) ) /*0x50aff0*/
+            v19 = (*(int (**)(void *))(*(unsigned int *)((char *)v6->owner + 4) + 16))((char *)v6->owner + 4); /*0x50afe3*/
+            if ( v19 == (*(int (**)(void *))(this->q004 + 16))((void *)&this->q21C) ) /*0x50aff0*/
             {
               Upgrades = (unsigned int **)v6->Upgrades; /*0x50aff2*/
               v8 = 3; /*0x50aff8*/
@@ -78,18 +78,18 @@ int SuperWeapon::UpdateSuperWeaponsOwnedHouseClass(HouseClass* ownerHouse)
                 {
                   v15 = 1; /*0x50b019*/
                   if ( !v4 ) /*0x50b01e*/
-                    v4 = v6->HasPower[0]; /*0x50b020*/
+                    v4 = v6->HasPower; /*0x50b020*/
                 }
                 ++Upgrades; /*0x50b026*/
                 --v8; /*0x50b029*/
               }
               while ( v8 ); /*0x50b02a*/
-              if ( BuildingClass::SWAvailable(v6) == i || BuildingClass::SW2Available(v6) == i ) /*0x50b044*/
+              if ( v6->SWAvailable() == i || v6->SW2Available() == i ) /*0x50b044*/
               {
                 v15 = 1; /*0x50b048*/
                 if ( v4 ) /*0x50b04d*/
                   break; /*0x50b04d*/
-                v4 = v6->HasPower[0]; /*0x50b04f*/
+                v4 = v6->HasPower; /*0x50b04f*/
               }
               if ( v4 && v15 ) /*0x50b05f*/
                 break; /*0x50b05f*/
@@ -106,10 +106,10 @@ int SuperWeapon::UpdateSuperWeaponsOwnedHouseClass(HouseClass* ownerHouse)
       if ( v11 < v12 && v12 && (!v11 || (double)this->u32_53A4 / (double)this->u32_53A8 < 1.0) ) /*0x50b0d3*/
         v4 = 0; /*0x50b0d5*/
       (*(void (**)(unsigned char *))(*(unsigned int *)v10 + 64))(v10); /*0x50b0d9*/
-      Status = HouseClass::GetStatus((HouseClass *)0x39, 0); /*0x50b0ea*/
+      Status = ((HouseClass *)0x39)->GetStatus(0); /*0x50b0ea*/
       if ( !v15 || this->u8_1F5 ) /*0x50b0f4*/
       {
-        if ( !SuperClass::Lose(*(SuperClass **)(this->q258 + 4 * i)) /*0x50b179*/
+        if ( !((SuperClass *)*(unsigned int *)(this->q258 + 4 * i))->Lose() /*0x50b179*/
           || !*(int *)((char *)&stru_A83CD9.estimatedHealth + 3) )
         {
           goto LABEL_55; /*0x50b179*/
@@ -120,7 +120,7 @@ int SuperWeapon::UpdateSuperWeaponsOwnedHouseClass(HouseClass* ownerHouse)
 LABEL_52:
           dword_8809A0 = -1; /*0x50b190*/
 LABEL_53:
-        Sidebar::ActivateTab(&dword_87F7E8.field_0, Status); /*0x50b19a*/
+        ((Sidebar *)&dword_87F7E8.field_0)->ActivateTab(Status); /*0x50b19a*/
         goto LABEL_54; /*0x50b1a0*/
       }
       if ( v4 ) /*0x50b100*/
@@ -130,13 +130,13 @@ LABEL_53:
       else
       {
         v14 = i; /*0x50b108*/
-        if ( SuperWeapon::GetField10(*(SuperWeapon **)(this->q258 + 4 * i)) /*0x50b123*/
-          && (unsigned __int8)SuperClass::SetOnHold(*(unsigned int *)(this->q258 + 4 * i), 1) )
+        if ( (*(SuperWeapon **)(this->q258 + 4 * i))->GetField10() /*0x50b123*/
+          && (unsigned __int8)((SuperClass *)*(unsigned int *)(this->q258 + 4 * i))->SetOnHold(1) )
         {
           goto LABEL_45; /*0x50b12a*/
         }
       }
-      if ( !v4 || !(unsigned __int8)SuperClass::SetOnHold(*(unsigned int *)(this->q258 + 4 * v14), 0) ) /*0x50b141*/
+      if ( !v4 || !(unsigned __int8)((SuperClass *)*(unsigned int *)(this->q258 + 4 * v14))->SetOnHold(0) ) /*0x50b141*/
         goto LABEL_55; /*0x50b148*/
 LABEL_45:
       if ( v16 ) /*0x50b150*/

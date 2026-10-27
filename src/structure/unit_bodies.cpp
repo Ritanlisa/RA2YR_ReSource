@@ -6,11 +6,13 @@ namespace gamemd {
 IdleOrderEntry* IdleOrderArray::operator[](int i) const { return base[i]; }
 
 IdleOrderEntry** UnitClass::idleOrderBase() const {
-        return (IdleOrderEntry**)(uintptr_t)this->ambientSoundController.AudioController_field_00;
+        // ambientSoundController is a 4-byte X10 slot; ptr at +0, count at +0xC
+        // (unit.hpp comment: pointer at +0x3C, count at +0x48)
+        return *(IdleOrderEntry ***)(void *)this->ambientSoundController;
     }
 
 int UnitClass::idleOrderCount() const {
-        return (int)this->ambientSoundController.AudioController_field_0C;
+        return (int)*(unsigned int *)(void *)((unsigned char *)this->ambientSoundController + 12);
     }
 }
 

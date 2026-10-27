@@ -773,21 +773,21 @@ static void Options_Screen_Save(HWND hDlg) {
     // DlgItem 1327: Score/Music volume slider (0.0-1.0, step 0.1)
     HWND ctrl1327 = GetDlgItem(hDlg, 1327);
     if (ctrl1327) {
-        g_ScoreVolume = (void *)((float)((double)SendMessageA(ctrl1327, 0x400, 0, 0) * 0.1));
+        g_ScoreVolume = (float)((double)SendMessageA(ctrl1327, 0x400, 0, 0) * 0.1);
         // Options::SetScoreVolume(g_ScoreVolume, 0);
     }
 
     // DlgItem 1330: Sound volume slider
     HWND ctrl1330 = GetDlgItem(hDlg, 1330);
     if (ctrl1330) {
-        g_SoundVolume = (void *)((float)((double)SendMessageA(ctrl1330, 0x400, 0, 0) * 0.1));
+        g_SoundVolume = (float)((double)SendMessageA(ctrl1330, 0x400, 0, 0) * 0.1);
         // Options::SetSoundVolume(g_SoundVolume, 0);
     }
 
     // DlgItem 1334: Voice/Notification volume slider
     HWND ctrl1334 = GetDlgItem(hDlg, 1334);
     if (ctrl1334) {
-        g_VoiceVolume = (void *)((float)((double)SendMessageA(ctrl1334, 0x400, 0, 0) * 0.1));
+        g_VoiceVolume = (float)((double)SendMessageA(ctrl1334, 0x400, 0, 0) * 0.1);
         // Options::SetVoiceVolume(g_VoiceVolume, 0);
     }
 }

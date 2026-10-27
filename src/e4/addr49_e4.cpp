@@ -1981,13 +1981,7 @@ AbstractClass * * E4Recv_49C0D0::CampaignClass_LoadCoopSave(void * aScore_0)
   {
     sprintf(Buffer, "Map%d", j + 1); /*0x49c4b9*/
     *(unsigned int *)(*((unsigned int *)aScore_0 + 15) + 4 * j) = operator new(0x104u); /*0x49c4ce*/
-    INIClass::GetString( /*0x49c4f3*/
-      (uint8_t ***)v24,
-      (uint8_t *)v28,
-      (uint8_t *)Buffer,
-      g_Str_undefined,
-      *(char **)(*((unsigned int *)aScore_0 + 15) + 4 * j),
-      260);
+    ((INIClass *)(/*0x49c4f3*/ (uint8_t ***)v24))->GetString((uint8_t *)v28, (uint8_t *)Buffer, g_Str_undefined, *(char **)(*((unsigned int *)aScore_0 + 15) + 4 * j), 260);
   }
   *(aScore_0 + 108) = 1; /*0x49c505*/
   (v24)->DestroyHashTableINIClass(); /*0x49c509*/
@@ -2362,13 +2356,7 @@ int E4Recv_49D390::LoadCoopCampaignSave(IUnknown * aP1)
   strcat(v25, g_IsWindowed); /*0x49d59f*/
   IntOverwriteINIClass = INIClass::ReadInt_Overwrite(v25, g_INI_Key_CurrentMap, 0); /*0x49d5bd*/
   sprintf(Buffer, "Map%d", IntOverwriteINIClass + 1); /*0x49d5d1*/
-  INIClass::GetString( /*0x49d602*/
-    (unsigned __int8 ***)v20,
-    (unsigned __int8 *)v25,
-    (unsigned __int8 *)Buffer,
-    g_Str_undefined,
-    aP1,
-    260);
+  ((INIClass *)(/*0x49d602*/ (unsigned __int8 ***)v20))->GetString((unsigned __int8 *)v25, (unsigned __int8 *)Buffer, g_Str_undefined, aP1, 260);
   if ( strcmp(aP1, g_Str_undefined) ) /*0x49d614*/
     goto LABEL_5; /*0x49d63a*/
   HashTable::DestroyHashTableINIClass(v20); /*0x49d644*/

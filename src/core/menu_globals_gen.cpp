@@ -13,6 +13,10 @@
 #include "e4/classes/EventQueue_e4.hpp"  // X87 B6 measured supply: EventQueue C2027 x2 + C3861 x1
 #include "e4/classes/TacticalClass_e4.hpp"  // X87 B6 measured supply: TacticalClass C2027 x1 + C3861 x1
 #include "e4/classes/Dialog_e4.hpp"  // X87 B6 measured supply: Dialog C2027 x1 + C3861 x1
+// X145C: free-fn supplies (signals 0x6951F0/0x693B70); global_funcs_decls.hpp include not TU-safe here
+int FindAndValidateMap(unsigned char p0, int p1, void* p2, int p3, int p4);  // 0x6951f0 (param shapes per call sites)
+int RequestNetworkFile(void* p0, int p1, int p2);  // 0x693b70 (param shapes per call sites)
+char* GetStringCSF(const char* p0, int p1, const char* p2, int p3);  // 0x734e60 (signals 4-param; X145C supply)
 
 // [x87] C3861 declaration supply (signals.json authority)
 namespace gamemd { void SynchronizeMultiplayerGameStart_Start(); }  // x87:signals@0x58bc20
@@ -922,17 +926,17 @@ int SynchronizeMultiplayerGameStart(void)
   int v5; // ecx
   int *v7; // eax
   int i; // esi
-  wchar_t *StringCSF; // [esp-18h] [ebp-1F4h]
+  char *StringCSF; // [esp-18h] [ebp-1F4h] (was wchar_t*; GetStringCSF returns char* — X145C)
   char v10[16]; // [esp+4h] [ebp-1D8h] BYREF
   int v11[113]; // [esp+14h] [ebp-1C8h] BYREF
   int16_t v12; // [esp+1D8h] [ebp-4h]
   char v13; // [esp+1DAh] [ebp-2h]
 
-  if ( (unsigned int)(Network::GetLobbyStatus((Network *)&unk_A8E9C0) + 2) <= 0x1E ) /*0x5dd8b6*/
+  if ( (unsigned int)(((Network *)&unk_A8E9C0)->GetLobbyStatus() + 2) <= 0x1E ) /*0x5dd8b6*/
     v2 = 30; /*0x5dd8c7*/
   else
-    v2 = Network::GetLobbyStatus((Network *)&unk_A8E9C0) + 2; /*0x5dd8c2*/
-  v3 = Network::SetConnectionParams(&unk_A8E9C0, v2, -1, 1000, 1); /*0x5dd8dd*/
+    v2 = ((Network *)&unk_A8E9C0)->GetLobbyStatus() + 2; /*0x5dd8c2*/
+  v3 = (int)((Network *)&unk_A8E9C0)->SetConnectionParams(v2, -1, 1000, 1); /*0x5dd8dd*/
   (*((unsigned char *)&(v3))) = dword_A8BB08; /*0x5dd8e2*/
   if ( FindAndValidateMap(byte_A8B8E0, dword_A8BB04, &byte_A8BAE2, v3, 1) == 1 ) /*0x5dd906*/
   {
@@ -941,10 +945,10 @@ int SynchronizeMultiplayerGameStart(void)
     v12 = 0; /*0x5dd92a*/
     v13 = 0; /*0x5dd942*/
     v11[0] = 19; /*0x5dd943*/
-    Network::SendMessage(&unk_A8E9C0.Socket, (int)v11, 455, 1, (int)&stru_A8BB1C, 0, 0); /*0x5dd94b*/
-    while ( Network::GetQueueCount(&unk_A8E9C0) > 0 ) /*0x5dd95c*/
+    ((Network *)&unk_A8E9C0)->SendMessage((int)v11, 455, 1, (int)&stru_A8BB1C, 0, 0); /*0x5dd94b*/
+    while ( ((Network *)&unk_A8E9C0)->GetQueueCount() > 0 ) /*0x5dd95c*/
     {
-      if ( !Network::ReceiveLoop(&unk_A8E9C0) ) /*0x5dd963*/
+      if ( !((Network *)&unk_A8E9C0)->ReceiveLoop() ) /*0x5dd963*/
         break; /*0x5dd96a*/
       Event::Dispatch(); /*0x5dd96c*/
     }
@@ -954,13 +958,13 @@ int SynchronizeMultiplayerGameStart(void)
   if ( !dword_A8BB08 || (uint8_t)((IsRandMap *)((IsRandMap *)&dword_A8B238))->Sed2() ) /*0x5dda28*/
   {
     SynchronizeMultiplayerGameStart_Start(); /*0x5dda31*/
-    if ( RequestNetworkFile(byte_A8B8E0, 3, 1) ) /*0x5dda42*/
+    if ( RequestNetworkFile((char *)&byte_A8B8E0, 3, 1) ) /*0x5dda42*/
     {
       if ( !(uint8_t)((IsRandMap *)((IsRandMap *)&dword_A8B238))->Sed2() || RequestNetworkFile(v10, 3, 1) ) /*0x5dda68*/
       {
   LABEL_8:
-        strcpy((char *)&dword_A8B230[130].abstractFlags, byte_A8B8E0); /*0x5dd97f*/
-        LobbyStatus = Network::GetLobbyStatus((Network *)&unk_A8E9C0); /*0x5dd9b1*/
+        strcpy((char *)&dword_A8B230[130].abstractFlags, (char *)&byte_A8B8E0); /*0x5dd97f*/
+        LobbyStatus = ((Network *)&unk_A8E9C0)->GetLobbyStatus(); /*0x5dd9b1*/
         if ( LobbyStatus < 20 ) /*0x5dd9b9*/
         {
           Debug::Log(); /*0x5dd9c1*/
@@ -969,32 +973,32 @@ int SynchronizeMultiplayerGameStart(void)
         v5 = 8 * LobbyStatus; /*0x5dd9ce*/
         if ( 8 * LobbyStatus < 120 ) /*0x5dd9d8*/
           v5 = 120; /*0x5dd9da*/
-        Network::SetConnectionParams(&unk_A8E9C0, LobbyStatus, -1, v5, 1); /*0x5dd9ea*/
-        TacticalClass::SetCameraPosition(&unk_A8E9C0, 60, -1, 600); /*0x5dd9fd*/
+        ((Network *)&unk_A8E9C0)->SetConnectionParams(LobbyStatus, -1, v5, 1); /*0x5dd9ea*/
+        ((TacticalClass *)&unk_A8E9C0)->SetCameraPosition(60, -1, 600); /*0x5dd9fd*/
         return 1; /*0x5dda0c*/
       }
     }
   }
   *(unsigned int *)&g_GameRulesOptions = -1; /*0x5dda8c*/
   StringCSF = GetStringCSF(g_Str_TXT_OK, 0, g_Str_File_netdlg2_cpp, 710); /*0x5ddaaa*/
-  v7 = (int *)GetStringCSF((char *)&stru_82BA00.TurretAnimData[2], 0, g_Str_File_netdlg2_cpp, 710); /*0x5ddab5*/
-  Dialog::ShowMessageBox(v7, StringCSF, 0, 0, 0, v1); /*0x5ddabf*/
+  v7 = (int *)GetStringCSF((char *)&stru_82BA00, 0, g_Str_File_netdlg2_cpp, 710); /*0x5ddab5*/
+  ((Dialog *)&dword_A8B238)->ShowMessageBox((unsigned short *)v7, (unsigned short *)StringCSF, 0, 0, 0, (void *)v1); /*0x5ddabf*/
   memset(v11, 0, sizeof(v11)); /*0x5ddad3*/
   v12 = 0; /*0x5ddad5*/
   v13 = 0; /*0x5ddad7*/
   v11[0] = 10; /*0x5ddae2*/
-  strcpy((char *)&v11[1], unk_A8B380); /*0x5ddaf9*/
+  strcpy((char *)&v11[1], (char *)&unk_A8B380); /*0x5ddaf9*/
   for ( i = 1; i < dword_A8DA54; ++i ) /*0x5ddb0e*/
   {
-    Network::SendMessage(&unk_A8E9C0.Socket, (int)v11, 455, 1, *(unsigned int *)(dword_A8DA48 + 4 * i) + 40, 0, 0); /*0x5ddb32*/
+    ((Network *)&unk_A8E9C0)->SendMessage((int)v11, 455, 1, *(unsigned int *)(dword_A8DA48 + 4 * i) + 40, 0, 0); /*0x5ddb32*/
     Event::Dispatch(); /*0x5ddb37*/
   }
-  Network::SendMessage(&unk_A8E9C0.Socket, (int)v11, 455, 0, 0, 0, 0); /*0x5ddb5d*/
+  ((Network *)&unk_A8E9C0)->SendMessage((int)v11, 455, 0, 0, 0, 0); /*0x5ddb5d*/
   if ( dword_A8D5FC ) /*0x5ddb69*/
-    Network::SendMessage(&unk_A8E9C0.Socket, (int)v11, 455, 0, (int)&stru_A8D600, 0, 0); /*0x5ddb85*/
-  while ( Network::GetQueueCount(&unk_A8E9C0) > 0 ) /*0x5ddb96*/
+    ((Network *)&unk_A8E9C0)->SendMessage((int)v11, 455, 0, (int)&stru_A8D600, 0, 0); /*0x5ddb85*/
+  while ( ((Network *)&unk_A8E9C0)->GetQueueCount() > 0 ) /*0x5ddb96*/
   {
-    if ( !Network::ReceiveLoop(&unk_A8E9C0) ) /*0x5ddb9d*/
+    if ( !((Network *)&unk_A8E9C0)->ReceiveLoop() ) /*0x5ddb9d*/
       break; /*0x5ddba4*/
     Event::Dispatch(); /*0x5ddba6*/
   }
@@ -1578,16 +1582,16 @@ int WaitForMultiplayerLoadSync(void)
   v18 = 300; /*0x6843b9*/
   v15 = Timer::GetTicks(); /*0x6843cb*/
   v16 = 3600; /*0x6843d3*/
-  Progress::GetAverage((Progress *)&g_UIManager); /*0x6843e0*/
+  ((Progress *)&g_UIManager)->GetAverage(); /*0x6843e0*/
   __asm { fstp [esp+50h+var_40] } /*0x6843e5*/
   while ( 1 )
   {
-    EventQueue::Process(*(EventQueue **)&g_BinkMoviePlayer); /*0x6843ef*/
+    (*(EventQueue **)&g_BinkMoviePlayer)->Process(); /*0x6843ef*/
     Event::Dispatch(); /*0x6843f4*/
     v1 = 1; /*0x6843fe*/
     if ( *(unsigned int *)&dword_A8B238 == 1 /*0x684418*/
       && g_ClipboardBuffer
-      && (*(char (**)(HWND))(*(unsigned int *)g_ClipboardBuffer + 12))(g_ClipboardBuffer) >= 0 )
+      && (*(char (**)(void *))(*(unsigned int *)g_ClipboardBuffer + 12))(g_ClipboardBuffer) >= 0 )
     {
       Debug::Log(); /*0x684524*/
       return 0; /*0x684535*/
@@ -1602,7 +1606,7 @@ int WaitForMultiplayerLoadSync(void)
     }
     if ( v2 <= 0 ) /*0x684446*/
       break; /*0x684446*/
-    Progress::GetAverage((Progress *)&g_UIManager); /*0x684451*/
+    ((Progress *)&g_UIManager)->GetAverage(); /*0x684451*/
     __asm /*0x684456*/
     {
       fcom ds:dbl_7F0E70
@@ -1612,7 +1616,7 @@ int WaitForMultiplayerLoadSync(void)
     if ( (_AX & 0x100) == 0 )
     {
       __asm { fstp st } /*0x6845ed*/
-      Multiplayer::ShowProgress((Multiplayer *)&dword_A8B238, BYTE1(dword_A8B230[375].ptr_0) != 0 ? 200 : 100);
+      ((Multiplayer *)&dword_A8B238)->ShowProgress(BYTE1(dword_A8B230[375].ptr_0) != 0 ? 200 : 100);
       return 1; /*0x684605*/
     }
     __asm /*0x68446b*/
@@ -1639,7 +1643,7 @@ int WaitForMultiplayerLoadSync(void)
 LABEL_18:
       Ticks = Timer::GetTicks(); /*0x6844d3*/
       v18 = 60; /*0x6844f1*/
-      Multiplayer::ShowProgress((Multiplayer *)&dword_A8B238, BYTE1(dword_A8B230[375].ptr_0) != 0 ? 200 : 100);
+      ((Multiplayer *)&dword_A8B238)->ShowProgress(BYTE1(dword_A8B230[375].ptr_0) != 0 ? 200 : 100);
     }
   }
   for ( i = 1; i < MEMORY[0xA8DA84]; ++i ) /*0x68453f*/

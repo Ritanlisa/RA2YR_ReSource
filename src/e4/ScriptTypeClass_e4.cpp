@@ -132,7 +132,7 @@ int ScriptTypeClass::ReadINI(char * a1, int a2, void *a3)
   for ( i = 0; i < KeyCount; ++i ) /*0x6e835d*/
   {
     StringByIndex = (unsigned __int8 *)(a1->__pad_0)->GetStringByIndex(g_INI_Key_TaskForces, i); /*0x6e8367*/
-    INIClass::GetString(a1, g_INI_Key_TaskForces, StringByIndex, &g_INI_DefaultBuffer, Buffer, 32); /*0x6e8380*/
+    ((INIClass *)(a1))->GetString(g_INI_Key_TaskForces, StringByIndex, &g_INI_DefaultBuffer, Buffer, 32); /*0x6e8380*/
     INIClass::ClearSection((int *)a1->__pad_0, (int)Buffer, 0); /*0x6e838e*/
   }
   INIClass::ClearSection((int *)a1->__pad_0, (int)g_INI_Key_TaskForces, 0); /*0x6e83a1*/

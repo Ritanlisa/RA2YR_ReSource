@@ -417,7 +417,7 @@ AbstractClass * * SelectTechnoClassAreaTarget(IUnknown * aP0, IUnknown * aP1, IU
 
   *a8 = 0; /*0x6f8972*/
   *a9 = 0; /*0x6f8979*/
-  v11 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, a6); /*0x6f898d*/
+  v11 = (((CellCoord *)&dword_87F7E8)->To_CellObj(a6); /*0x6f898d*/
   if ( a10 != -1 ) /*0x6f8992*/
   {
     v12 = (*(int (**)(TechnoClass *))(a1->ptr_0 + 132))(a1); /*0x6f899a*/

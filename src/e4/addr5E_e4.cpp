@@ -1664,13 +1664,7 @@ LABEL_171:
             *(unsigned int *)v197.hasParachute = 0; /*0x5e5308*/
             /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7EA5F4) */  /*0x5e530f*/
             FileStraw::Open((FileStraw *)&v197.ambientSoundController[3], (int)&v200, 0); /*0x5e5317*/
-            INIClass::GetString( /*0x5e5339*/
-              (INIClass *)&v197.ambientSoundController[3],
-              (unsigned __int8 *)g_INI_Key_Digest,
-              a1,
-              aNoDigestHereMa,
-              v199,
-              32);
+            ((INIClass *)(/*0x5e5339*/ (INIClass *)&v197.ambientSoundController[3]))->GetString((unsigned __int8 *)g_INI_Key_Digest, a1, aNoDigestHereMa, v199, 32);
             if ( !byte_A8BAE2 || !strcmp(&byte_A8BAE2, v199) ) /*0x5e5359*/
             {
               wcscpy((wchar_t *)&dword_A8B320 + 1, (const wchar_t *)v139); /*0x5e5386*/
@@ -5054,7 +5048,7 @@ AbstractClass * * PlayerSkirmishSlotHandler(HWND a1, int a2, LPARAM, int a4)
   bool v41; // [esp+11h] [ebp-17h]
   char v42; // [esp+12h] [ebp-16h]
   bool v43; // [esp+13h] [ebp-15h]
-  wchar_t *String; // [esp+14h] [ebp-14h]
+  wchar_t *String_buf; // [esp+14h] [ebp-14h]
   LRESULT v46; // [esp+1Ch] [ebp-Ch]
   LRESULT v47; // [esp+1Ch] [ebp-Ch]
   HWND hWnd; // [esp+20h] [ebp-8h]
@@ -5091,7 +5085,7 @@ AbstractClass * * PlayerSkirmishSlotHandler(HWND a1, int a2, LPARAM, int a4)
       v7 = a2 != 1048 ? -1 : 7;
       break;
   }
-  String = (wchar_t *)*(&dword_A8DA90 + v7); /*0x5eca84*/
+  String_buf = (wchar_t *)*(&dword_A8DA90 + v7); /*0x5eca84*/
   if ( a3
     && (a3 == g_Lobby_PlayerTeam || a3 == g_Lobby_PlayerSide || a3 == g_Lobby_PlayerColor)
     && v7 != g_MPCooperativeState )
@@ -5102,10 +5096,10 @@ AbstractClass * * PlayerSkirmishSlotHandler(HWND a1, int a2, LPARAM, int a4)
     {
       v9 = GetStringCSF(aTxtNoAiWithObs, 0, g_Str_File_netshare_cpp, 6150); /*0x5ecaf3*/
       Dialog::ShowMessage(-1, (size_t)v9); /*0x5ecafb*/
-      v10 = String; /*0x5ecb00*/
-      v11 = String == 0; /*0x5ecb07*/
-      v51 = (LPARAM)String; /*0x5ecb09*/
-      String = (wchar_t *)a3; /*0x5ecb0d*/
+      v10 = String_buf; /*0x5ecb00*/
+      v11 = String_buf == 0; /*0x5ecb07*/
+      v51 = (LPARAM)String_buf; /*0x5ecb09*/
+      String_buf = (wchar_t *)a3; /*0x5ecb0d*/
       if ( !v11 /*0x5ecb29*/
         && (v10 == (wchar_t *)g_Lobby_PlayerTeam
          || v10 == (wchar_t *)g_Lobby_PlayerSide
@@ -5207,7 +5201,7 @@ AbstractClass * * PlayerSkirmishSlotHandler(HWND a1, int a2, LPARAM, int a4)
     }
   }
   result = a3; /*0x5ecd27*/
-  if ( (wchar_t *)a3 != String )
+  if ( (wchar_t *)a3 != String_buf )
   {
     *(&dword_A8DA90 + v7) = a3; /*0x5ecd3b*/
     if ( a4 == 1 || a4 == 2 ) /*0x5ecd4a*/
@@ -5222,20 +5216,20 @@ AbstractClass * * PlayerSkirmishSlotHandler(HWND a1, int a2, LPARAM, int a4)
         || a3 == g_Lobby_PlayerSide
         || a3 == g_Lobby_PlayerColor )
         {
-          if ( String ) /*0x5ecd98*/
+          if ( String_buf ) /*0x5ecd98*/
           {
-          if ( String != (wchar_t *)g_HouseClass_ObserverFlags /*0x5ecda4*/
-            && String != (wchar_t *)g_Lobby_PlayerCount
-            && String != g_Lobby_PlayerReady )
+          if ( String_buf != (wchar_t *)g_HouseClass_ObserverFlags /*0x5ecda4*/
+            && String_buf != (wchar_t *)g_Lobby_PlayerCount
+            && String_buf != g_Lobby_PlayerReady )
           {
-            v20 = (LPARAM)String; /*0x5ecdab*/
-            if ( String != (wchar_t *)g_Lobby_MaxPlayers ) /*0x5ecdb1*/
+            v20 = (LPARAM)String_buf; /*0x5ecdab*/
+            if ( String_buf != (wchar_t *)g_Lobby_MaxPlayers ) /*0x5ecdb1*/
             {
               v20 = g_Lobby_PlayerTeam; /*0x5ecdb3*/
-              if ( String != (wchar_t *)g_Lobby_PlayerTeam && String != (wchar_t *)g_Lobby_PlayerSide ) /*0x5ecdc9*/
+              if ( String_buf != (wchar_t *)g_Lobby_PlayerTeam && String_buf != (wchar_t *)g_Lobby_PlayerSide ) /*0x5ecdc9*/
               {
-                v20 = (LPARAM)String; /*0x5ecdd0*/
-                if ( String != (wchar_t *)g_Lobby_PlayerColor ) /*0x5ecdd6*/
+                v20 = (LPARAM)String_buf; /*0x5ecdd0*/
+                if ( String_buf != (wchar_t *)g_Lobby_PlayerColor ) /*0x5ecdd6*/
                 {
                   if ( ppv ) /*0x5ecddf*/
                     PlayerSkirmishSlotHandler_Handle_7A28B0(String); /*0x5ecde1*/
@@ -5254,10 +5248,10 @@ AbstractClass * * PlayerSkirmishSlotHandler(HWND a1, int a2, LPARAM, int a4)
     }
     v21 = a3; /*0x5ece02*/
     v53 = a3 && (a3 == g_Lobby_PlayerTeam || a3 == g_Lobby_PlayerSide || a3 == g_Lobby_PlayerColor); /*0x5ece24*/
-    v41 = String /*0x5ece4c*/
-       && (String == (wchar_t *)g_Lobby_PlayerTeam
-        || String == (wchar_t *)g_Lobby_PlayerSide
-        || String == (wchar_t *)g_Lobby_PlayerColor);
+    v41 = String_buf /*0x5ece4c*/
+       && (String_buf == (wchar_t *)g_Lobby_PlayerTeam
+        || String_buf == (wchar_t *)g_Lobby_PlayerSide
+        || String_buf == (wchar_t *)g_Lobby_PlayerColor);
     if ( a3 != g_Lobby_MaxPlayers )
     {
         if ( !a3 /*0x5ece92*/
@@ -5276,15 +5270,15 @@ AbstractClass * * PlayerSkirmishSlotHandler(HWND a1, int a2, LPARAM, int a4)
            v22 = 0; /*0x5ece9e*/
            LABEL_116:
         v42 = v22; /*0x5eceae*/
-             v23 = String == (wchar_t *)g_Lobby_MaxPlayers /*0x5eceef*/
-           || String
-           && String != (wchar_t *)g_HouseClass_ObserverFlags
-           && String != (wchar_t *)g_Lobby_PlayerCount
-           && String != g_Lobby_PlayerReady
-           && String != (wchar_t *)g_Lobby_PlayerTeam
-           && String != (wchar_t *)g_Lobby_PlayerSide
-           && String != (wchar_t *)g_Lobby_PlayerColor
-           && *(unsigned int *)((char *)String + 107) == -1;
+             v23 = String_buf == (wchar_t *)g_Lobby_MaxPlayers /*0x5eceef*/
+           || String_buf
+           && String_buf != (wchar_t *)g_HouseClass_ObserverFlags
+           && String_buf != (wchar_t *)g_Lobby_PlayerCount
+           && String_buf != g_Lobby_PlayerReady
+           && String_buf != (wchar_t *)g_Lobby_PlayerTeam
+           && String_buf != (wchar_t *)g_Lobby_PlayerSide
+           && String_buf != (wchar_t *)g_Lobby_PlayerColor
+           && *(unsigned int *)((char *)String_buf + 107) == -1;
              v43 = v23; /*0x5ecef7*/
              if ( v22 )
            {

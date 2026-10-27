@@ -366,13 +366,7 @@ int GameSettings::Read(void *a1, void *a2, void *a3)
                            g_INI_Key_Network,
                            (unsigned __int8 *)aNetcard,
                            v40);
-  INIClass::GetString( /*0x5facda*/
-    &dword_8870C0,
-    g_INI_Key_Network,
-    (unsigned __int8 *)g_INI_Key_DestNet,
-    &g_INI_DefaultBuffer,
-    (char *)&_ESI[88],
-    64);
+  ((INIClass *)(/*0x5facda*/ &dword_8870C0))->GetString(g_INI_Key_Network, (unsigned __int8 *)g_INI_Key_DestNet, &g_INI_DefaultBuffer, (char *)&_ESI[88], 64);
   Debug::Log(); /*0x5face4*/
   LOBYTE(v31) = _ESI[29]; /*0x5face9*/
   nullsub_36(v31); /*0x5facf5*/

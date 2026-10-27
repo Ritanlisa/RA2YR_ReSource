@@ -69,7 +69,7 @@ void PsyDom::Fire()
   v1 = (ActionQueue *)__2_YAPAXI_Z(0x14u); /*0x53b08e*/
   if ( v1 ) /*0x53b097*/
   {
-    v2 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, &PsyDom_Coords); /*0x53b0a3*/
+    v2 = (((CellCoord *)&dword_87F7E8)->To_CellObj(&PsyDom_Coords); /*0x53b0a3*/
     v3 = (int *)(*(int (**)(void *, int *))(*(unsigned int *)v2 + 72))(v2, v34); /*0x53b0b1*/
     v4 = (v1)->PushEntry(*v3, v3[1], v3[2]); /*0x53b0cb*/
   }
@@ -79,7 +79,7 @@ void PsyDom::Fire()
   }
   v4->u32_10 = 1; /*0x53b0d4*/
   v5 = *&dword_8871E0->q300; /*0x53b0e6*/
-  v6 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, &PsyDom_Coords); /*0x53b0f1*/
+  v6 = (((CellCoord *)&dword_87F7E8)->To_CellObj(&PsyDom_Coords); /*0x53b0f1*/
   v7 = (int *)(*(int (**)(void *, int *))(*(unsigned int *)v6 + 72))(v6, v34); /*0x53b0ff*/
   v33[0] = *v7; /*0x53b104*/
   v33[1] = v7[1]; /*0x53b110*/
@@ -117,7 +117,7 @@ void PsyDom::Fire()
       *(unsigned int *)v31 = v29; /*0x53b1f7*/
       v32[0] = 0; /*0x53b1fb*/
       v32[1] = 0; /*0x53b1ff*/
-      v13 = (Object *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v31); /*0x53b203*/
+      v13 = (Object *)(((CellCoord *)&dword_87F7E8)->To_CellObj(v31); /*0x53b203*/
       for ( i = (unsigned __int8 *)Object::FindClosestObjectCell(v13, v32, 0, 0); i; i = (v24[20] & 1) != 0 ? v24 : 0 )
       {
         if ( (*(int (**)(unsigned __int8 *))(*(unsigned int *)i + 44))(i) != 6 /*0x53b26b*/

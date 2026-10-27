@@ -291,13 +291,7 @@ char TiberiumClass::LoadFromINI(uint8_t *** aP1, void *a2)
                             (unsigned __int8 *)(v5 + 36),
                             (unsigned __int8 *)aColor,
                             v22);
-  if ( INIClass::GetString( /*0x721b57*/
-         (INIClass *)this,
-         (unsigned __int8 *)(v5 + 36),
-         aDebris,
-         &g_INI_DefaultBuffer,
-         (char *)&v25.q01C,
-         128) )
+  if ( ((INIClass *)(/*0x721b57*/ (INIClass *)this))->GetString((unsigned __int8 *)(v5 + 36), aDebris, &g_INI_DefaultBuffer, (char *)&v25.q01C, 128) )
   {
     ((DynamicVectorClass *)&v25)->AnimTypeConstructor(0, 0); /*0x721b6c*/
     /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EB6D4) */  /*0x721b7b*/

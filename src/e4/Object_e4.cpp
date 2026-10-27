@@ -371,7 +371,7 @@ char sub_5902C0(int a1)
   v2 = *(unsigned short *)a1; /*0x5902ce*/
   HIWORD(a1) = *(unsigned short *)(a1 + 4); /*0x5902d6*/
   LOWORD(a1) = v2; /*0x5902e1*/
-  v3 = (char *)CellCoord::To_CellObj(&dword_87F7E8, (__int16 *)&a1); /*0x5902e6*/
+  v3 = (char *)((CellCoord *)(&dword_87F7E8))->To_CellObj((__int16 *)&a1); /*0x5902e6*/
   v4 = v1->Items; /*0x5902f2*/
   v16 = v3[283]; /*0x5902f5*/
   v5 = *v1; /*0x5902f9*/
@@ -417,7 +417,7 @@ LABEL_24:
           {
             LOWORD(a1) = v10; /*0x59043b*/
             HIWORD(a1) = v9; /*0x590440*/
-            v11 = (int *)CellCoord::To_CellObj(&dword_87F7E8, (__int16 *)&a1); /*0x590445*/
+            v11 = (int *)((CellCoord *)(&dword_87F7E8))->To_CellObj((__int16 *)&a1); /*0x590445*/
             v12 = v11; /*0x59044a*/
             if ( v11->u32_44 != -1 || v11->u32_11B != v16 || !Cell::IsEmpty(v11) && !(v12)->IsGroundTypeRange() ) /*0x59046c*/
               break; /*0x59046c*/
@@ -630,13 +630,13 @@ LABEL_20:
       if ( (unsigned __int8)LayerClass::CoordinatesLegal((LayerClass *)&dword_87F7E8, v26) ) /*0x5fdc2c*/
       {
         v28 = (__int16 *)Tactical::PixelToCell((Tactical *)g_TacticalClass_Instance, &a2, &v30); /*0x5fdc4a*/
-        v25 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v28); /*0x5fdc4b*/
+        v25 = (((CellCoord *)&dword_87F7E8)->To_CellObj(v28); /*0x5fdc4b*/
       }
       else
       {
         LOWORD(a2) = 1; /*0x5fdc58*/
         HIWORD(a2) = dword_87F8DC; /*0x5fdc5f*/
-        v25 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)&a2); /*0x5fdc6a*/
+        v25 = (((CellCoord *)&dword_87F7E8)->To_CellObj((__int16 *)&a2); /*0x5fdc6a*/
       }
     }
     DrawToSurfaceSHP( /*0x5fdcaa*/
@@ -1594,7 +1594,7 @@ int sub_5A7E90(int a1, unsigned short * a2)
             }
             else
             {
-              v8 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v12); /*0x5a7f33*/
+              v8 = (((CellCoord *)&dword_87F7E8)->To_CellObj(v12); /*0x5a7f33*/
               v2 = v10; /*0x5a7f38*/
               if ( v13[i + 4 + (unsigned int)v4 * v10[185]] ) /*0x5a7f4b*/
               {

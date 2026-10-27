@@ -737,6 +737,7 @@ extern uint8_t g_MenuInitComplete; // data: 0x8B4204
 
 extern uint32_t g_GameCleanupState; // data: 0xA80218
 extern uint32_t HouseClass_Array_0; // data: 0xA80228
+class HouseClass;  // X145C fwd supply (pointer global below)
 extern HouseClass* HouseClass_Array; // data: 0xA8022C
 extern uint32_t HouseClass_Count; // data: 0xA80238
 extern uint32_t Networking_LastEventIndex; // data: 0xA802C8

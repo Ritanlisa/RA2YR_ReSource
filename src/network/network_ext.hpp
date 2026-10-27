@@ -31,6 +31,11 @@ struct Network {
     unsigned int Network_field_0x0;  // 0x0 [X55 W3 supply (render vocab)]
     int u32_60;  // 0x60 [X55 W3 supply (render vocab)]
     int Network_field_0x10;  // 0x10 [X55 W3 supply (render vocab)]
+
+    // x145b: method-twin completion (e4 Network_e4.hpp twins; same binary addrs, decl-only, no layout change)
+    void* CopyAddress(unsigned int* a2, int a3);   // 0x53EDA0
+    int GetSendCount();                            // 0x540F90 vt+16
+    int GetConnectionSpeed(int aP1);               // 0x540FA0 vt+20
 };
 #endif  // GAMEMD_G2_NETWORK_FLAT_DEF
 
@@ -188,7 +193,7 @@ public:
     virtual int CheckStatus();  // X75: slot 8 (0x5400D0) = IPXGlobalConnClass::CheckStatus (sibling promoted)
     virtual void GetAddress(); // 0x540050
     virtual int SetAddress(int a1, int a2, int a3, int a4, int a5, int a6);  // X75: slot 10 (0x5403F0) = IPXGlobalConnClass::SetAddress (sibling promoted)
-    virtual void Flush(const void *a2, unsigned int a3, unsigned int a4, int a5, short a6, int a7); // 0x53FBD0
+    virtual int Flush(const void *a2, unsigned int a3, unsigned int *a4, int a5, short a6, int a7); // 0x53FBD0 (x145b: ida til int(a4=_DWORD*))
 virtual int GetQueueSize(unsigned short *,int,int *,int);  // 0x53FCB0
     virtual void ConnectToHost(); // 0x53FF10
     virtual int GetTileData(int p0, void* p1, int* p2, int* p3, uint16_t* p4, int* p5);  // X75: slot 14 (0x53FFA0) = IPXGlobalConnClass::GetTileData
@@ -628,7 +633,7 @@ public:
     virtual ~NetworkOptions() = default;
 
     virtual void DlgProc(HWND hWnd, unsigned int a2, int a3, HWND hCtl); // 0x560480  // g57b5 W4: raw 真值补参
-    virtual void ApplySettings(int a2, char a3, int a4); // 0x7B0F50
+    virtual int ApplySettings(int a2, char *a3, int a4); // 0x7B0F50 (x145b: ida til int(char*,int) 真形)
 
     uint8_t q004[4];
 

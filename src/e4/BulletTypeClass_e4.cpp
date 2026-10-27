@@ -122,7 +122,7 @@ BuildingTypeClass * * BulletTypeClass::ReadArmor()
   {
     v6 = (unsigned int *)*((unsigned int *)dword_A83C6C + i); /*0x4654f7*/
     Destination[0] = 0; /*0x465500*/
-    INIClass::GetString((INIClass *)dword_887048, (unsigned __int8 *)v6 + 36, aTotile, 0, Destination, 60); /*0x46550e*/
+    (((INIClass *)dword_887048)->GetString((unsigned __int8 *)v6 + 36, aTotile, 0, Destination, 60); /*0x46550e*/
     v7 = Entity_Read((ObjectClass *)Destination); /*0x465517*/
     if ( v7 >= 0 && v7 < *(int *)&stru_A8E960.random[452] ) /*0x465526*/
       v6[918] = *(unsigned int *)(*(unsigned int *)&stru_A8E960.random[440] + 4 * v7); /*0x465531*/
@@ -145,13 +145,7 @@ BuildingTypeClass * * BulletTypeClass::ReadTrailerAnim()
     v3 = *((unsigned int *)dword_A83C6C + i); /*0x465cdc*/
     char Destination[60]; // [esp+4h] [ebp-3Ch] BYREF
     Destination[0] = 0; /*0x465cef*/
-    INIClass::GetString( /*0x465cf5*/
-      *(INIClass **)&DataGlobal_887048,
-      &v3->__pad_024,
-      aTotile,
-      0,
-      Destination,
-      60);
+    ((INIClass *)(*(INIClass **)&DataGlobal_887048))->GetString( /*0x465cf5*/ &v3->__pad_024, aTotile, 0, Destination, 60);
     int v4; // eax
     v4 = Entity_Read((ObjectClass *)Destination); /*0x465cfe*/
     if ( v4 >= 0 && v4 < *(int *)&((unsigned int *)&stru_A8EB00)[340] ) /*0x465d0d*/
@@ -404,22 +398,10 @@ WeaponTypeClass * * BulletTypeClass::LoadFromINI(unsigned char *** a2, void *a2_
                            (unsigned __int8 *)(v4 + 36),
                            aScalable,
                            *(unsigned char *)(v4 + 748));  /*0x46c1e2*/
-  if ( INIClass::GetString(
-         (INIClass *)this,
-         (unsigned __int8 *)(v4 + 36),
-         (unsigned __int8 *)g_INI_Key_Image,
-         &g_INI_DefaultBuffer,
-         (char *)(v4 + 504),
-         25) > 0 )
+  if ( (((INIClass *)this)->GetString((unsigned __int8 *)(v4 + 36), (unsigned __int8 *)g_INI_Key_Image, &g_INI_DefaultBuffer, (char *)(v4 + 504), 25)) > 0 )
   {  /*0x46c1ef*/
     v39 = *(unsigned int **)(v4 + 728);  /*0x46c20a*/
-    if ( INIClass::GetString(
-           &dword_887180,
-           (unsigned __int8 *)(v4 + 504),
-           aTrailer,
-           &g_INI_DefaultBuffer,
-           Destination,
-           128) )
+    if ( ((INIClass *)(&dword_887180))->GetString((unsigned __int8 *)(v4 + 504), aTrailer, &g_INI_DefaultBuffer, Destination, 128) )
     {  /*0x46c219*/
       v22 = (Destination)->FindOrCreate();  /*0x46c226*/
     }
@@ -447,13 +429,7 @@ WeaponTypeClass * * BulletTypeClass::LoadFromINI(unsigned char *** a2, void *a2_
                              v36);  /*0x46c292*/
   }
   v40 = *(unsigned int **)(v4 + 688);  /*0x46c2ad*/
-  if ( INIClass::GetString(
-         (INIClass *)this,
-         (unsigned __int8 *)(v4 + 36),
-         aAirburstweapon,
-         &g_INI_DefaultBuffer,
-         Destination,
-         128) )
+  if ( (((INIClass *)this)->GetString((unsigned __int8 *)(v4 + 36), aAirburstweapon, &g_INI_DefaultBuffer, Destination, 128)) )
   {  /*0x46c2b9*/
     v24 = InfantryTypeClass::Find(Destination);  /*0x46c2c6*/
   }
@@ -463,13 +439,7 @@ WeaponTypeClass * * BulletTypeClass::LoadFromINI(unsigned char *** a2, void *a2_
   }
   *(unsigned int *)(v4 + 688) = v24;  /*0x46c2db*/
   v41 = *(unsigned int **)(v4 + 692);  /*0x46c2f4*/
-  if ( INIClass::GetString(
-         (INIClass *)this,
-         (unsigned __int8 *)(v4 + 36),
-         aShrapnelweapon,
-         &g_INI_DefaultBuffer,
-         Destination,
-         128) )
+  if ( (((INIClass *)this)->GetString((unsigned __int8 *)(v4 + 36), aShrapnelweapon, &g_INI_DefaultBuffer, Destination, 128)) )
   {  /*0x46c2f8*/
     v25 = InfantryTypeClass::Find(Destination);  /*0x46c305*/
   }

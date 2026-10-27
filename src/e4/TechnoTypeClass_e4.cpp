@@ -1369,44 +1369,20 @@ DynamicVectorClass_flat * * TechnoTypeClass::SaveLoad_Prefix(ObjectTypeClass * a
         (int *)(this->DestroyParticleSystems[1] + 4 * i17));  /*0x716c40*/  /*0x716c2f*/
     _makepath(Buffer, 0, 0, this->ImageFile, Ext);  /*0x716c66*/
     this->Image = (int)SearchMIXFile(Buffer, 0);  /*0x716c96*/
-    INIClass::GetString(
-      &dword_887180,
-      (unsigned __int8 *)this->ImageFile,
-      (unsigned __int8 *)&stru_842DD4.VoiceHarvest,
-      &stru_842DD4.__pad_1714[72],
-      Filename,
-      256);  /*0x716c9c*/
+    ((INIClass *)(&dword_887180))->GetString((unsigned __int8 *)this->ImageFile, (unsigned __int8 *)&stru_842DD4.VoiceHarvest, &stru_842DD4.__pad_1714[72], Filename, 256);  /*0x716c9c*/
     if ( !_strcmpi(Filename, &stru_842DD4.__pad_1714[72]) )
-      INIClass::GetString(
-        &dword_887180,
-        (unsigned __int8 *)this->__pad_24,
-        (unsigned __int8 *)&stru_842DD4.VoiceHarvest,
-        &stru_842DD4.__pad_1714[72],
-        Filename,
-        256);  /*0x716cd4*/  /*0x716cab*/
+      ((INIClass *)(&dword_887180))->GetString((unsigned __int8 *)this->__pad_24, (unsigned __int8 *)&stru_842DD4.VoiceHarvest, &stru_842DD4.__pad_1714[72], Filename, 256);  /*0x716cd4*/  /*0x716cab*/
     _makepath(Buffer, 0, 0, Filename, Ext);  /*0x716ced*/
     this->Cameo = 0;  /*0x716cfe*/
     v35 = SearchMIXFile(Buffer, 0);  /*0x716d04*/
     this->Cameo = (int)v35;  /*0x716d0b*/
     if ( !v35 )
       this->Cameo = (int)SearchMIXFile(aXxiconShp, 0);  /*0x716d1f*/  /*0x716d11*/
-    INIClass::GetString(
-      &dword_887180,
-      (unsigned __int8 *)this->ImageFile,
-      (unsigned __int8 *)&stru_842DD4.UndeploySound,
-      &g_INI_DefaultBuffer,
-      Filename,
-      256);  /*0x716d3f*/
+    ((INIClass *)(&dword_887180))->GetString((unsigned __int8 *)this->ImageFile, (unsigned __int8 *)&stru_842DD4.UndeploySound, &g_INI_DefaultBuffer, Filename, 256);  /*0x716d3f*/
     _makepath(Buffer, 0, 0, Filename, Ext);  /*0x716d58*/
     this->AltCameo = 0;  /*0x716d69*/
     this->AltCameo = (int)SearchMIXFile(Buffer, 0);  /*0x716d8d*/
-    INIClass::GetString(
-      &dword_887180,
-      (unsigned __int8 *)this->ImageFile,
-      (unsigned __int8 *)g_INI_Key_Palette,
-      &g_INI_DefaultBuffer,
-      &this->__pad_DC8[8],
-      32);  /*0x716d93*/
+    ((INIClass *)(&dword_887180))->GetString((unsigned __int8 *)this->ImageFile, (unsigned __int8 *)g_INI_Key_Palette, &g_INI_DefaultBuffer, &this->__pad_DC8[8], 32);  /*0x716d93*/
     if ( this->__pad_DC8[8] )
       *(unsigned int *)&this->__pad_DC8[40] = (&this->__pad_DC8[8])->MapHandler();  /*0x716da4*/  /*0x716d74*/
     return 0;  /*0x716daa*/

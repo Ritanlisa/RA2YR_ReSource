@@ -177,15 +177,15 @@ void * GetINIClassIntList(int a1, unsigned char *** edx0, INIClass * aP1, unsign
   VectorClass v22; // [esp+Ch] [ebp-9Ch] BYREF
   int v23; // [esp+1Ch] [ebp-8Ch]
   int v24; // [esp+20h] [ebp-88h]
-  char String[128]; // [esp+28h] [ebp-80h] BYREF
+  char String_buf[128]; // [esp+28h] [ebp-80h] BYREF
 
-  if ( INIClass::GetString((INIClass *)edx0, aP1, a2, &g_INI_DefaultBuffer, String, 128) ) /*0x52545c*/
+  if ( (((INIClass *)edx0)->GetString(aP1, a2, &g_INI_DefaultBuffer, String_buf, 128) ) /*0x52545c*/
   {
     VectorClass::Construct(&v22, 0, 0); /*0x525471*/
     v24 = 10; /*0x52547a*/
     v23 = 0; /*0x525488*/
     /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E4DD8) */  /*0x52548c*/
-    for ( i = (ObjectClass *)strtok(String, Delimiter); i; i = (ObjectClass *)strtok(0, Delimiter) ) /*0x52549e*/
+    for ( i = (ObjectClass *)strtok(String_buf, Delimiter); i; i = (ObjectClass *)strtok(0, Delimiter) ) /*0x52549e*/
     {
       if ( !LOBYTE(i->ptr_0) ) /*0x5254a0*/
         break; /*0x5254a2*/
@@ -3555,13 +3555,7 @@ INT_PTR ReadModConfigINI(HWND hDlg, UINT, WPARAM, int * a4)
   v5 = GetDlgItem(hDlg, 1187); /*0x52d4a9*/
   for ( i = 0; i < a4->uniqueId; ++i ) /*0x52d4b9*/
   {
-    INIClass::GetString( /*0x52d4da*/
-      *(INIClass **)(a4->ptr_4 + 4 * i),
-      g_INI_Key_General,
-      (unsigned __int8 *)g_INI_Key_Name,
-      &g_INI_DefaultBuffer,
-      lParam,
-      128);
+    ((INIClass *)(*(INIClass **)(a4->ptr_4 + 4 * i)))->GetString( /*0x52d4da*/ g_INI_Key_General, (unsigned __int8 *)g_INI_Key_Name, &g_INI_DefaultBuffer, lParam, 128);
     SendMessageA(v5, 0x180u, 0, (LPARAM)lParam); /*0x52d4ec*/
   }
   SendMessageA(v5, 0x186u, 0, 0); /*0x52d500*/

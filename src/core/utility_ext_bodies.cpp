@@ -40,7 +40,7 @@ int AllocCallback::Dispatch(int a1, int a2, unsigned int Block, size_t Size)
   return (int)(result);
 }
 // 0x4f3840
-GraphicMenuImageItem* GraphicMenuImageItem::QueryInterface(char a2)
+void * GraphicMenuImageItem::QueryInterface(char a2)
 {
   ObjectClass *v3; // edi
 

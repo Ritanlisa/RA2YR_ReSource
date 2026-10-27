@@ -1700,7 +1700,7 @@ int E4Recv_486D90::sub_486D90(char a2)
       LOWORD(v11) = LOWORD(g_DDrawSurfaceManager.scenario[v9 + 82]) + v10[0]; /*0x486dee*/
       HIWORD(v11) = v10[1] + HIWORD(g_DDrawSurfaceManager.scenario[v9 + 82]); /*0x486df3*/
       *(unsigned int *)v10 = v11; /*0x486e02*/
-      pVal = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v10); /*0x486e06*/
+      pVal = (((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v10); /*0x486e06*/
     }
     else
     {

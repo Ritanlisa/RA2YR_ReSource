@@ -37,9 +37,9 @@ enum class RadioCommand : int;
 class AudioController {
 public:
     uint32_t AudioController_field_00;   // +0x00, init 0 — repurposed as idle-order ptr in UnitClass
-    uint32_t AudioController_field_04;   // +0x04, init 0
-    uint32_t AudioController_field_08;   // +0x08, init 0
-    uint32_t AudioController_field_0C;   // +0x0C, init &dword_87E294 — repurposed as idle-order count in UnitClass
+    void * AudioController_field_04;     // +0x04, init 0 (X145C retype: csp void*, 4B unchanged)
+    void * AudioController_field_08;     // +0x08, init 0 (X145C retype: csp void*, 4B unchanged)
+    void * AudioController_field_0C;     // +0x0C, init &dword_87E294 — repurposed as idle-order count in UnitClass (X145C retype: csp/e4 twins void*, 4B unchanged)
     uint32_t AudioController_field_10;   // +0x10, not initialized by Init
 
     void Stop();

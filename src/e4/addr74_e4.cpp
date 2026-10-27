@@ -135,7 +135,7 @@ Coord * * PlaceScenarioUnits(void * a1, void * a2, void * aUnits)
   int v59; // [esp+48h] [ebp-8Ch]
   int v60; // [esp+4Ch] [ebp-88h]
   int v61; // [esp+50h] [ebp-84h]
-  char String[128]; // [esp+54h] [ebp-80h] BYREF
+  char String_buf[128]; // [esp+54h] [ebp-80h] BYREF
 
   v2 = a1; /*0x743278*/
   v57 = a1; /*0x74327b*/
@@ -156,8 +156,8 @@ Coord * * PlaceScenarioUnits(void * a1, void * a2, void * aUnits)
     while ( 1 ) /*0x7432dd*/
     {
       StringByIndex = (unsigned __int8 *)(v2->ptr_0)->GetStringByIndex((unsigned __int8 *)aUnits, v4); /*0x7432dd*/
-      INIClass::GetString(v2, (unsigned __int8 *)aUnits, StringByIndex, 0, String, 128); /*0x7432f6*/
-      v6 = strtok(String, Delimiter); /*0x743305*/
+      ((INIClass *)(v2))->GetString((unsigned __int8 *)aUnits, StringByIndex, 0, String_buf, 128); /*0x7432f6*/
+      v6 = strtok(String_buf, Delimiter); /*0x743305*/
       v7 = (v6)->FindByName(); /*0x743314*/
       if ( v7 != -1 ) /*0x743319*/
       {

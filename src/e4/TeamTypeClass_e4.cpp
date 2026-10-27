@@ -490,13 +490,7 @@ AbstractClass * * TeamTypeClass::LoadFromINI(unsigned char *** aP1, void *a2, vo
           v50);  /*0x6f1319*/
   v26 = *(char **)&this->q0D0;  /*0x6f131e*/
   *(unsigned int *)&this->u32_CC = v25;  /*0x6f1324*/
-  if ( INIClass::GetString(
-         (INIClass *)a2,
-         (unsigned __int8 *)&this->TeamTypeClass_field_24,
-         (unsigned __int8 *)off_81728C,
-         &g_INI_DefaultBuffer,
-         Destination,
-         128) )
+  if ( (((INIClass *)a2)->GetString((unsigned __int8 *)&this->TeamTypeClass_field_24, (unsigned __int8 *)off_81728C, &g_INI_DefaultBuffer, Destination, 128)) )
   {  /*0x6f1341*/
     v27 = (Destination)->FindOrCreate();  /*0x6f134e*/
   }
@@ -552,31 +546,13 @@ AbstractClass * * TeamTypeClass::LoadFromINI(unsigned char *** aP1, void *a2, vo
   v36 = *((unsigned int *)this + 53);  /*0x6f140d*/
   *((unsigned char *)this + 245) = v35;  /*0x6f141a*/
   v37 = Waypoint::To_String(v36);  /*0x6f1420*/
-  if ( INIClass::GetString(
-         (INIClass *)a2,
-         (unsigned __int8 *)&this->TeamTypeClass_field_24,
-         (unsigned __int8 *)aWaypoint,
-         v37,
-         v53,
-         64) > 0 )
+  if ( (((INIClass *)a2)->GetString((unsigned __int8 *)&this->TeamTypeClass_field_24, (unsigned __int8 *)aWaypoint, v37, v53, 64)) > 0 )
     *((unsigned int *)this + 53) = (v53)->To_Waypoint();  /*0x6f1440*/  /*0x6f1435*/
   v38 = Waypoint::To_String(*((unsigned int *)this + 54));  /*0x6f1453*/
-  if ( INIClass::GetString(
-         (INIClass *)a2,
-         (unsigned __int8 *)&this->TeamTypeClass_field_24,
-         (unsigned __int8 *)&stru_842DD4.__pad_14D[119],
-         v38,
-         v53,
-         64) > 0 )
+  if ( (((INIClass *)a2)->GetString((unsigned __int8 *)&this->TeamTypeClass_field_24, (unsigned __int8 *)&stru_842DD4.__pad_14D[119], v38, v53, 64)) > 0 )
     *((unsigned int *)this + 54) = (v53)->To_Waypoint();  /*0x6f1473*/  /*0x6f1468*/
   v39 = (int *)*((unsigned int *)this + 56);  /*0x6f1479*/
-  if ( INIClass::GetString(
-         (INIClass *)a2,
-         (unsigned __int8 *)&this->TeamTypeClass_field_24,
-         (unsigned __int8 *)aScript,
-         &g_INI_DefaultBuffer,
-         Destination,
-         128) )
+  if ( (((INIClass *)a2)->GetString((unsigned __int8 *)&this->TeamTypeClass_field_24, (unsigned __int8 *)aScript, &g_INI_DefaultBuffer, Destination, 128)) )
   {  /*0x6f1496*/
     ScriptType = (Destination)->CreateScriptType();  /*0x6f14a3*/
   }
@@ -586,13 +562,7 @@ AbstractClass * * TeamTypeClass::LoadFromINI(unsigned char *** aP1, void *a2, vo
   }
   v41 = (unsigned int *)*((unsigned int *)this + 57);  /*0x6f14ac*/
   *((unsigned int *)this + 56) = ScriptType;  /*0x6f14c9*/
-  if ( INIClass::GetString(
-         (INIClass *)a2,
-         (unsigned __int8 *)&this->TeamTypeClass_field_24,
-         (unsigned __int8 *)aTaskforce,
-         &g_INI_DefaultBuffer,
-         Destination,
-         128) )
+  if ( (((INIClass *)a2)->GetString((unsigned __int8 *)&this->TeamTypeClass_field_24, (unsigned __int8 *)aTaskforce, &g_INI_DefaultBuffer, Destination, 128)) )
   {  /*0x6f14cf*/
     TaskForce = (Destination)->FindOrCreateTaskForce();  /*0x6f14dc*/
   }
@@ -1055,13 +1025,7 @@ TeamTypeClass * TeamTypeClass::ReadScriptData(char * a1, int a2)
                                          a1->__pad_0,
                                          (uint8_t *)g_INI_Key_TRUCKA.DebrisMaximums,
                                          i);
-    INIClass::GetString( /*0x6f1aee*/
-      a1,
-      (uint8_t *)g_INI_Key_TRUCKA.DebrisMaximums,
-      StringByIndex,
-      &g_INI_DefaultBuffer,
-      Buffer,
-      32);
+    ((INIClass *)(/*0x6f1aee*/ a1))->GetString((uint8_t *)g_INI_Key_TRUCKA.DebrisMaximums, StringByIndex, &g_INI_DefaultBuffer, Buffer, 32);
     INIClass::ClearSection((int *)a1->__pad_0, (int)Buffer, 0); /*0x6f1afc*/
   }
   INIClass::ClearSection((int *)a1->__pad_0, (int)g_INI_Key_TRUCKA.DebrisMaximums, 0); /*0x6f1b0f*/

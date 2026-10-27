@@ -17,9 +17,6 @@ struct String {
     unsigned int u32_C;  // 0xC
     char __pad_10[12];  // 0x10
     unsigned int u32_1C;  // 0x1C
-    union {
-        struct { char __pad_0; unsigned char u8_1; char __pad_2; };  // 0x0
-    };
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int AssignWideToChar(char *aP1, char *aP2);  // 0x49B760

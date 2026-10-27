@@ -1616,7 +1616,7 @@ public:
     virtual int Load(char a2); // 0x4F3690 G42.34 C5 体签名
     virtual int Draw(char a2); // 0x4F3720 G42.34 C5 体签名
 virtual unsigned int * ddtor(unsigned int *);  // 0x4F37A0
-    virtual void QueryInterface(char a2); // 0x4F3840
+    virtual void *QueryInterface(char a2); // 0x4F3840 (bin ret void* per signals; X145C)
 
     uint8_t GraphicMenuImageItem_field_0x04[4];
     uint8_t GraphicMenuImageItem_field_0x08[4];
@@ -2235,7 +2235,7 @@ public:
 
     virtual void Release(); // 0x49EE60
     virtual void ddtor(); // 0x49EF10
-    virtual void Add(unsigned int a2); // 0x49EF40
+    virtual int Add(unsigned int a2); // 0x49EF40 (bin ret int per signals; X145C)
     virtual void Remove(); // 0x49EF80
     virtual void QueryInterface(); // 0x49EFA0
     // +2 more virtual methods

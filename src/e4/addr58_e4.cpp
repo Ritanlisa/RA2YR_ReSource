@@ -871,7 +871,7 @@ ScenarioClass * * ComputeMapCameraBounds()
       if ( !(unsigned __int8)ScenarioClass::Is_Waypoint_Valid((char *)dword_A8B230, i) ) /*0x58b851*/
         break; /*0x58b858*/
       Waypoint_Location = (__int16 *)ScenarioClass::Get_Waypoint_Location((char *)dword_A8B230, &k, i); /*0x58b86a*/
-      v5 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, Waypoint_Location); /*0x58b87e*/
+      v5 = (((CellCoord *)&dword_87F7E8)->To_CellObj(Waypoint_Location); /*0x58b87e*/
       v6 = (*(int (**)(void *))(*(unsigned int *)v5 + 72))(v5); /*0x58b88f*/
       v7 = (int *)(*(int (**)(void *, char *, unsigned int))(*(unsigned int *)v5 + 72))(v5, v30, *(unsigned int *)(v6 + 4)); /*0x58b89f*/
       IsoCoord::ToScreenOffset(*v7, (int)v29, &v25, &v26); /*0x58b8ab*/
@@ -1213,7 +1213,7 @@ AbstractClass * * sub_58EF10()
         if ( (uint8_t)Coord::Compare2D((Coord *)(v7 + g_MissionQueueFrame.localVariables[163]), v17) ) /*0x58effd*/
         {
           RandomMap *v9; // eax
-          v9 = (RandomMap *)CellCoord::To_CellObj((int16_t *)(/*0x58f014*/                               (CellCoord *)&DataGlobal_87F7E8),                               (int16_t *)(v7 + g_MissionQueueFrame.localVariables[163]));
+          v9 = (RandomMap *)(((int16_t *)(/*0x58f014*/                               (CellCoord *)&DataGlobal_87F7E8))->To_CellObj((int16_t *)(v7 + g_MissionQueueFrame.localVariables[163]));
           unsigned int *Terrain; // eax
           Terrain = RandomMap::GenerateTerrain(v9); /*0x58f01b*/
           if ( Terrain ) /*0x58f022*/
@@ -2052,7 +2052,7 @@ unsigned int * E4Recv_58C4A0::sub_58C4A0(ObjectClass * aP1)
     {
       if ( *((unsigned char *)v2 + 68) ) /*0x58c541*/
       {
-        v5 = (Cell *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v2); /*0x58c552*/
+        v5 = (Cell *)(((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v2); /*0x58c552*/
         if ( (unsigned __int8)Cell::IsEmpty(v5) ) /*0x58c559*/
           break; /*0x58c559*/
       }
@@ -2097,7 +2097,7 @@ unsigned int * sub_58C5A0(unsigned int * a1, int a2, int a3)
       *a1 = 0; /*0x58c69a*/
       return a1; /*0x58c6a0*/
     }
-    v6 = CellCoord::To_CellObj(&dword_87F7E8, v3); /*0x58c637*/
+    v6 = ((CellCoord *)(&dword_87F7E8))->To_CellObj(v3); /*0x58c637*/
     v7 = v6; /*0x58c63f*/
   }
   while ( !*v3 && !v3->u32_2 /*0x58c67e*/

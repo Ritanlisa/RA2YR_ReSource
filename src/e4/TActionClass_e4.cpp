@@ -636,8 +636,8 @@ ScenarioClass * * TActionClass::SpawnMeteorShower(AbstractClass * aP1, int a3, i
   int v6; // esi
   v6 = dword_842AFC[*&this->pad_6E[34]] /*0x6e2d0a*/
   + (int)abs32(((Random *)&dword_A8B230[14].NeedsSaveOrLink)->State()) % 3;
-  int String; // ebp
-  String = GlobalArray::FindString(&stru_842C20); /*0x6e2d1b*/
+  int String_buf; // ebp
+  String_buf = GlobalArray::FindString(&stru_842C20); /*0x6e2d1b*/
   v19 = GlobalArray::FindString(&stru_842C14); /*0x6e2d22*/
   int v8 = 70 * v6; // edi /*0x6e2d32*/
   if ( v6 <= 0 ) /*0x6e2d36*/
@@ -668,7 +668,7 @@ ScenarioClass * * TActionClass::SpawnMeteorShower(AbstractClass * aP1, int a3, i
       v13 = v14 == 0; /*0x6e2dba*/
       if ( v14 < 0 ) /*0x6e2dbf*/
         v13 = (((unsigned char)v14 - 1) | 0xFFFFFFFE) == -1; /*0x6e2dc5*/
-      int v15 = String; // eax /*0x6e2dc6*/
+      int v15 = String_buf; // eax /*0x6e2dc6*/
       if ( v13 ) /*0x6e2dc8*/
         v15 = v19; /*0x6e2dca*/
       (v12)->ctor((int *)(*(void **)(dword_8B4154 + 4 * v15)), v23, 0, 1, (void *)0x600, 0, 0); /*0x6e2dec*/

@@ -60,13 +60,7 @@ void* ParticleSystemTypeClass::GetType(unsigned char *** aP1)
   if ( !((ObjectTypeClass *)((ObjectTypeClass *)_ESI))->LoadFromINI(aP1) ) /*0x6442eb*/
     return 0; /*0x644622*/
   char Destination[64]; // [esp+28h] [ebp-40h] BYREF
-  INIClass::GetString( /*0x64430f*/
-    (INIClass *)aP1,
-    &this->BarrelVoxel,
-    aHoldswhat,
-    &g_INI_DefaultBuffer,
-    Destination,
-    64);
+  (((INIClass *)aP1)->GetString( /*0x64430f*/ &this->BarrelVoxel, aHoldswhat, &g_INI_DefaultBuffer, Destination, 64));
   int v3; // eax
   v3 = (int)(((BuildingTypeClass *)(Destination))->FindOrCreateEx()); /*0x644318*/
   char v4 = this->q298; // cl /*0x64431d*/
@@ -137,13 +131,7 @@ void* ParticleSystemTypeClass::GetType(unsigned char *** aP1)
                                                 &this->BarrelVoxel,
                                                 aLifetime,
                                                 ParticleSystemTypeClass_field_0x2B8);
-  INIClass::GetString( /*0x644416*/
-    (INIClass *)aP1,
-    &this->BarrelVoxel,
-    aBehaveslike,
-    &g_INI_DefaultBuffer,
-    Destination,
-    64);
+  (((INIClass *)aP1)->GetString( /*0x644416*/ &this->BarrelVoxel, aBehaveslike, &g_INI_DefaultBuffer, Destination, 64));
   int v45; // [esp+18h] [ebp-50h]
   v45 = 0; /*0x64441b*/
   int v44; // [esp+14h] [ebp-54h] BYREF
@@ -341,11 +329,11 @@ namespace gamemd {
 float * ParticleSystemTypeClass::ReadXYZFromINI(float * a2, uint8_t * a3, uint8_t * a4, float * a5)
 {
 
-  char String[512]; // [esp+10h] [ebp-200h] BYREF
-  if ( INIClass::GetString((INIClass *)this, a3, a4, &g_INI_DefaultBuffer, String, 512) ) /*0x476383*/
+  char String_buf[512]; // [esp+10h] [ebp-200h] BYREF
+  if ( (((INIClass *)this)->GetString(a3, a4, &g_INI_DefaultBuffer, String_buf, 512) ) /*0x476383*/
   {
     char *v5; // eax
-    v5 = strtok(String, Str); /*0x476396*/
+    v5 = strtok(String_buf, Str); /*0x476396*/
     atof(v5); /*0x47639c*/
     __asm { fstp [esp+21Ch+var_20C] } /*0x4763a1*/
     char *v6; // eax

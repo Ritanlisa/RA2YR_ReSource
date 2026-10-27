@@ -325,7 +325,7 @@ public:
     public:  // symbol-anchor
     // === SYMBOL-ANCHOR (BEGIN) ===
     int Enqueue(int a1);  // 0x41c500 -- BuildingTypeClass::Enqueue
-    int Dequeue();  // 0x41c590 -- BuildingTypeClass::Dequeue
+    int Dequeue(int* a1);  // 0x41c590 -- BuildingTypeClass::Dequeue (bin: retn 4, arg_0 = binary-search key)
     int ConstructFull(int a1);  // 0x45dd90 -- BuildingTypeClass::ConstructFull
     void* loadBuildingProperty_b_545E520(int a1);  // 0x45e520 -- BuildingTypeClass::loadBuildingProperty_b_545E520
     int CleanupMembers();  // 0x45e580 -- BuildingTypeClass::CleanupMembers

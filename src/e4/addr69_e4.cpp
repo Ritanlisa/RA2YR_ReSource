@@ -1161,13 +1161,7 @@ char FindAndValidateMap(ObjectClass * aP0, int edx0, const char *a2, int a4, cha
   v17 = 0; /*0x69533d*/
   v13[0] = &g_ptr_7EA5F4; /*0x695341*/
   (v13)->Open((int)v18, 0); /*0x695349*/
-  INIClass::GetString( /*0x69536b*/
-    (uint8_t ***)v13,
-    (uint8_t *)g_INI_Key_Digest,
-    (uint8_t *)::a1,
-    aNoDigestHereMa,
-    Destination,
-    32);
+  ((INIClass *)(/*0x69536b*/ (uint8_t ***)v13))->GetString((uint8_t *)g_INI_Key_Digest, (uint8_t *)::a1, aNoDigestHereMa, Destination, 32);
   if ( a3 && *a3 && strcmp(a3, Destination) ) /*0x69538f*/
   {
     (v13)->DestroyHashTableINIClass(); /*0x6953be*/
@@ -1495,16 +1489,10 @@ int ParseMapFileHeader(CampaignScore * aP0, unsigned short * a1, char * a2, Camp
               CCINIClass::LoadAndVerifyDigest((int *)v29.__pad_0, (int)&v23, 0, 0); /*0x6997c0*/
               *a5 = INIClass::ReadInt_Overwrite((bool *)v27.__pad_0, aBasic, aMinplayers, *a5); /*0x6997e5*/
               *a6 = INIClass::ReadInt_Overwrite((bool *)v27.__pad_0, aBasic, aMaxplayers, *a6); /*0x69981b*/
-              INIClass::GetString( /*0x699833*/
-                &v27,
-                aBasic,
-                (unsigned __int8 *)g_INI_Key_GameMode,
-                &g_INI_DefaultBuffer,
-                aP3,
-                256);
-              INIClass::GetString(&v27, aBasic, (unsigned __int8 *)g_INI_Key_Name, g_Str_No_Name, v31, 64); /*0x699858*/
+              ((INIClass *)(/*0x699833*/ &v27))->GetString(aBasic, (unsigned __int8 *)g_INI_Key_GameMode, &g_INI_DefaultBuffer, aP3, 256);
+              ((INIClass *)(&v27))->GetString(aBasic, (unsigned __int8 *)g_INI_Key_Name, g_Str_No_Name, v31, 64); /*0x699858*/
               BulkCharToWide(a1, (unsigned __int8 *)v31, -1); /*0x69986a*/
-              INIClass::GetString(&v29, (unsigned __int8 *)g_INI_Key_Digest, a1, g_Str_No_Digest, a2, 32); /*0x69988f*/
+              ((INIClass *)(&v29))->GetString((unsigned __int8 *)g_INI_Key_Digest, a1, g_Str_No_Digest, a2, 32); /*0x69988f*/
               *a4 = INIClass::ReadBool_Overwrite((int *)v27.__pad_0, aBasic, (unsigned __int8 *)g_INI_Key_Official, 0); /*0x6998ba*/
               Debug::Log(); /*0x6998d9*/
               Debug::Log(); /*0x6998eb*/

@@ -136,35 +136,35 @@ int House::AnnounceUpgrade(int aP1)
         v11 = this->u32_26; /*0x47d39c*/
         LOWORD(aP1) = *v4; /*0x47d3a0*/
         HIWORD(aP1) = v11 - 1; /*0x47d3ab*/
-        if ( this->u32_11B + 4 <= *((char *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)&aP1) /*0x47d3d6*/
+        if ( this->u32_11B + 4 <= *((char *)(((CellCoord *)&dword_87F7E8)->To_CellObj((__int16 *)&aP1) /*0x47d3d6*/
                                           + 283) )
           goto LABEL_19; /*0x47d3d6*/
         v12 = *v4 - 1; /*0x47d3e3*/
         HIWORD(aP1) = this->u32_26; /*0x47d3e5*/
         LOWORD(aP1) = v12; /*0x47d3ea*/
-        if ( this->u32_11B + 4 <= *((char *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)&aP1) /*0x47d419*/
+        if ( this->u32_11B + 4 <= *((char *)(((CellCoord *)&dword_87F7E8)->To_CellObj((__int16 *)&aP1) /*0x47d419*/
                                           + 283) )
           goto LABEL_19; /*0x47d419*/
         v13 = this->u32_26 + 2; /*0x47d42a*/
         LOWORD(aP1) = *v4 + 2; /*0x47d42e*/
         HIWORD(aP1) = v13; /*0x47d437*/
-        if ( this->u32_11B + 4 <= *((char *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)&aP1) /*0x47d462*/
+        if ( this->u32_11B + 4 <= *((char *)(((CellCoord *)&dword_87F7E8)->To_CellObj((__int16 *)&aP1) /*0x47d462*/
                                           + 283) )
           goto LABEL_19; /*0x47d462*/
         v14 = this->u32_26 + 1; /*0x47d471*/
         LOWORD(aP1) = *v4 + 1; /*0x47d473*/
         HIWORD(aP1) = v14; /*0x47d47c*/
-        if ( this->u32_11B + 4 <= *((char *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)&aP1) /*0x47d52d*/
+        if ( this->u32_11B + 4 <= *((char *)(((CellCoord *)&dword_87F7E8)->To_CellObj((__int16 *)&aP1) /*0x47d52d*/
                                           + 283)
           || (v15 = this->u32_26 + 1,
               LOWORD(aP1) = *v4 - 1,
               HIWORD(aP1) = v15,
-              this->q5AECC + 4 <= *((char *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)&aP1)
+              this->q5AECC + 4 <= *((char *)(((CellCoord *)&dword_87F7E8)->To_CellObj((__int16 *)&aP1)
                                            + 283))
           || (v16 = this->u32_26 - 1,
               LOWORD(aP1) = *v4 + 1,
               HIWORD(aP1) = v16,
-              this->q5AECC + 4 <= *((char *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)&aP1)
+              this->q5AECC + 4 <= *((char *)(((CellCoord *)&dword_87F7E8)->To_CellObj((__int16 *)&aP1)
                                            + 283)) )
         {
 LABEL_19:
@@ -290,7 +290,7 @@ LABEL_48:
               LOWORD(aP1) = *v4 + *inited; /*0x47dae6*/
               HIWORD(aP1) = inited[1] + this->u32_26; /*0x47daf3*/
               *(unsigned int *)v55 = aP1; /*0x47dafc*/
-              v44 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v55); /*0x47db05*/
+              v44 = (((CellCoord *)&dword_87F7E8)->To_CellObj(v55); /*0x47db05*/
               inited += 2; /*0x47db1b*/
               v44[80] |= 0x10000u; /*0x47db1e*/
             }
@@ -311,35 +311,35 @@ LABEL_48:
         v21 = this->u32_26 - 1; /*0x47d61a*/
         LOWORD(aP1) = *v4; /*0x47d61c*/
         HIWORD(aP1) = v21; /*0x47d621*/
-        if ( this->u32_11B + 4 <= *((char *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)&aP1) /*0x47d650*/
+        if ( this->u32_11B + 4 <= *((char *)(((CellCoord *)&dword_87F7E8)->To_CellObj((__int16 *)&aP1) /*0x47d650*/
                                           + 283) )
           goto LABEL_98; /*0x47d650*/
         v22 = *v4 - 1; /*0x47d65d*/
         HIWORD(aP1) = this->u32_26; /*0x47d65f*/
         LOWORD(aP1) = v22; /*0x47d664*/
-        if ( this->u32_11B + 4 <= *((char *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)&aP1) /*0x47d693*/
+        if ( this->u32_11B + 4 <= *((char *)(((CellCoord *)&dword_87F7E8)->To_CellObj((__int16 *)&aP1) /*0x47d693*/
                                           + 283) )
           goto LABEL_98; /*0x47d693*/
         v23 = this->u32_26; /*0x47d69c*/
         LOWORD(aP1) = *v4 + 2; /*0x47d6a8*/
         HIWORD(aP1) = v23 + 2; /*0x47d6ad*/
-        if ( this->u32_11B + 4 <= *((char *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)&aP1) /*0x47d6dc*/
+        if ( this->u32_11B + 4 <= *((char *)(((CellCoord *)&dword_87F7E8)->To_CellObj((__int16 *)&aP1) /*0x47d6dc*/
                                           + 283) )
           goto LABEL_98; /*0x47d6dc*/
         v24 = this->u32_26 + 1; /*0x47d6eb*/
         LOWORD(aP1) = *v4 + 1; /*0x47d6ed*/
         HIWORD(aP1) = v24; /*0x47d6f2*/
-        if ( this->u32_11B + 4 <= *((char *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)&aP1) /*0x47d7a7*/
+        if ( this->u32_11B + 4 <= *((char *)(((CellCoord *)&dword_87F7E8)->To_CellObj((__int16 *)&aP1) /*0x47d7a7*/
                                           + 283)
           || (v25 = this->u32_26 + 1,
               LOWORD(aP1) = *v4 - 1,
               HIWORD(aP1) = v25,
-              this->q5AECC + 4 <= *((char *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)&aP1)
+              this->q5AECC + 4 <= *((char *)(((CellCoord *)&dword_87F7E8)->To_CellObj((__int16 *)&aP1)
                                            + 283))
           || (v26 = this->u32_26 - 1,
               LOWORD(aP1) = *v4 + 1,
               HIWORD(aP1) = v26,
-              this->q5AECC + 4 <= *((char *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)&aP1)
+              this->q5AECC + 4 <= *((char *)(((CellCoord *)&dword_87F7E8)->To_CellObj((__int16 *)&aP1)
                                            + 283)) )
         {
 LABEL_98:
@@ -372,30 +372,30 @@ LABEL_82:
     v46 = this->u32_26; /*0x47db6f*/
     LOWORD(aP1) = *v4; /*0x47db73*/
     HIWORD(aP1) = v46 - 1; /*0x47db7e*/
-    if ( this->u32_11B + 4 <= *((char *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)&aP1) + 283) ) /*0x47dba9*/
+    if ( this->u32_11B + 4 <= *((char *)(((CellCoord *)&dword_87F7E8)->To_CellObj((__int16 *)&aP1) + 283) ) /*0x47dba9*/
       goto LABEL_89; /*0x47dba9*/
     v47 = *v4 - 1; /*0x47dbb6*/
     HIWORD(aP1) = this->u32_26; /*0x47dbb8*/
     LOWORD(aP1) = v47; /*0x47dbbd*/
-    if ( this->u32_11B + 4 <= *((char *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)&aP1) + 283) ) /*0x47dbec*/
+    if ( this->u32_11B + 4 <= *((char *)(((CellCoord *)&dword_87F7E8)->To_CellObj((__int16 *)&aP1) + 283) ) /*0x47dbec*/
       goto LABEL_89; /*0x47dbec*/
     v48 = this->u32_26 + 2; /*0x47dbfd*/
     LOWORD(aP1) = *v4 + 2; /*0x47dc01*/
     HIWORD(aP1) = v48; /*0x47dc0a*/
-    if ( this->u32_11B + 4 <= *((char *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)&aP1) + 283) ) /*0x47dc35*/
+    if ( this->u32_11B + 4 <= *((char *)(((CellCoord *)&dword_87F7E8)->To_CellObj((__int16 *)&aP1) + 283) ) /*0x47dc35*/
       goto LABEL_89; /*0x47dc35*/
     v49 = this->u32_26 + 1; /*0x47dc44*/
     LOWORD(aP1) = *v4 + 1; /*0x47dc46*/
     HIWORD(aP1) = v49; /*0x47dc4f*/
-    if ( this->u32_11B + 4 <= *((char *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)&aP1) + 283) /*0x47dd00*/
+    if ( this->u32_11B + 4 <= *((char *)(((CellCoord *)&dword_87F7E8)->To_CellObj((__int16 *)&aP1) + 283) /*0x47dd00*/
       || (v50 = this->u32_26 + 1,
           LOWORD(aP1) = *v4 - 1,
           HIWORD(aP1) = v50,
-          this->q5AECC + 4 <= *((char *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)&aP1) + 283))
+          this->q5AECC + 4 <= *((char *)(((CellCoord *)&dword_87F7E8)->To_CellObj((__int16 *)&aP1) + 283))
       || (v51 = this->u32_26 - 1,
           LOWORD(aP1) = *v4 + 1,
           HIWORD(aP1) = v51,
-          this->q5AECC + 4 <= *((char *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)&aP1) + 283)) )
+          this->q5AECC + 4 <= *((char *)(((CellCoord *)&dword_87F7E8)->To_CellObj((__int16 *)&aP1) + 283)) )
     {
 LABEL_89:
       if ( LOBYTE(dword_8871E0->IncomingMessage) == 2 ) /*0x47dd0f*/

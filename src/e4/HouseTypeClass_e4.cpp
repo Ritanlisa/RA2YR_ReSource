@@ -185,20 +185,20 @@ AbstractClass * HouseTypeClass::LoadFromINI(uint8_t *** aP1, void *a2)
   char v81[2]; // [esp+36h] [ebp-C2h] BYREF
   InfantryTypeVector v82; // [esp+38h] [ebp-C0h] BYREF
   char Source[32]; // [esp+58h] [ebp-A0h] BYREF
-  char String[128]; // [esp+78h] [ebp-80h] BYREF
+  char String_buf[128]; // [esp+78h] [ebp-80h] BYREF
 
   v4 = this; /*0x51185e*/
   _EBX = v3; /*0x511861*/
   INIClass::ResetSection((INIClass *)this); /*0x511866*/
   if ( !(unsigned __int8)((AbstractTypeClass *)_EBX)->LoadFromINI((unsigned __int8 ***)this) ) /*0x51186e*/
     return 0; /*0x51215c*/
-  INIClass::GetString((INIClass *)this, (unsigned __int8 *)(_EBX + 36), aSuffix, &g_INI_DefaultBuffer, Source, 4); /*0x511892*/
+  (((INIClass *)this)->GetString((unsigned __int8 *)(_EBX + 36), aSuffix, &g_INI_DefaultBuffer, Source, 4); /*0x511892*/
   if ( strlen(Source) ) /*0x51189b*/
   {
     strcpy(&_EBX->q1A0, Source); /*0x5118c3*/
     v4 = this; /*0x5118cc*/
   }
-  INIClass::GetString((INIClass *)v4, (unsigned __int8 *)(_EBX + 36), aParentcountry, &_EBX->id, Source, 25); /*0x5118e2*/
+  (((INIClass *)v4)->GetString((unsigned __int8 *)(_EBX + 36), aParentcountry, &_EBX->id, Source, 25)); /*0x5118e2*/
   if ( Source ) /*0x5118ed*/
   {
     strncpy(Destination.__pad_0, Source, 0x18u); /*0x511901*/
@@ -221,7 +221,7 @@ AbstractClass * HouseTypeClass::LoadFromINI(uint8_t *** aP1, void *a2)
                               _EBX->wallOwner);
   Source[0] = _EBX->Prefix; /*0x51195a*/
   Source[1] = 0; /*0x511966*/
-  INIClass::GetString((INIClass *)v4, (unsigned __int8 *)(_EBX + 36), aPrefix, Source, v81, 2); /*0x51196b*/
+  (((INIClass *)v4)->GetString((unsigned __int8 *)(_EBX + 36), aPrefix, Source, v81, 2); /*0x51196b*/
   _EBX->Prefix = v81[0]; /*0x511974*/
   INIClass::ReadDouble_Overwrite( /*0x511990*/
     &v4->ptr_0,
@@ -383,17 +383,11 @@ AbstractClass * HouseTypeClass::LoadFromINI(uint8_t *** aP1, void *a2)
   INIClass::ReadDouble_Overwrite(&v4->ptr_0, (unsigned __int8 *)(_EBX + 36), aIncomemult, v78); /*0x511d0b*/
   __asm { fstp dword ptr [ebx+148h] } /*0x511d10*/
   _EBX->incomeMult_d = *(float *)&_RT1; /*0x511d10*/
-  if ( INIClass::GetString( /*0x511d2d*/
-         (INIClass *)v4,
-         (unsigned __int8 *)(_EBX + 36),
-         aVeteraninfantr,
-         &g_INI_DefaultBuffer,
-         String,
-         128) )
+  if ( ((INIClass *)(/*0x511d2d*/ (INIClass *)v4))->GetString((unsigned __int8 *)(_EBX + 36), aVeteraninfantr, &g_INI_DefaultBuffer, String_buf, 128) )
   {
     InfantryTypeVector::Construct(&v82, 0, 0); /*0x511d42*/
     /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EAC08) */  /*0x511d56*/
-    for ( i = strtok(String, Delimiter); i; i = strtok(0, Delimiter) ) /*0x511d64*/
+    for ( i = strtok(String_buf, Delimiter); i; i = strtok(0, Delimiter) ) /*0x511d64*/
     {
       if ( !*i ) /*0x511d66*/
         break; /*0x511d69*/
@@ -421,17 +415,11 @@ AbstractClass * HouseTypeClass::LoadFromINI(uint8_t *** aP1, void *a2)
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EAC28) */  /*0x511e05*/
   if ( UnitTypeVector_field_0x04 && BYTE1(Destination.q00C) ) /*0x511e15*/
     __3_YAXPAX_Z(UnitTypeVector_field_0x04); /*0x511e18*/
-  if ( INIClass::GetString( /*0x511e3a*/
-         (INIClass *)v4,
-         (unsigned __int8 *)(_EBX + 36),
-         aVeteranunits,
-         &g_INI_DefaultBuffer,
-         String,
-         128) )
+  if ( ((INIClass *)(/*0x511e3a*/ (INIClass *)v4))->GetString((unsigned __int8 *)(_EBX + 36), aVeteranunits, &g_INI_DefaultBuffer, String_buf, 128) )
   {
     UnitTypeVector::Construct(&Destination, 0, 0); /*0x511e4f*/
     /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EABE8) */  /*0x511e5e*/
-    for ( j = strtok(String, Delimiter); j; j = strtok(0, Delimiter) ) /*0x511e70*/
+    for ( j = strtok(String_buf, Delimiter); j; j = strtok(0, Delimiter) ) /*0x511e70*/
     {
       if ( !*j ) /*0x511e72*/
         break; /*0x511e75*/
@@ -467,17 +455,11 @@ AbstractClass * HouseTypeClass::LoadFromINI(uint8_t *** aP1, void *a2)
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EAC48) */  /*0x511f3b*/
   if ( InfantryTypeVector_field_0x04 && BYTE1(v82.q00C) ) /*0x511f4b*/
     __3_YAXPAX_Z(InfantryTypeVector_field_0x04); /*0x511f4e*/
-  if ( INIClass::GetString( /*0x511f70*/
-         (INIClass *)v4,
-         (unsigned __int8 *)(_EBX + 36),
-         aVeteranaircraf,
-         &g_INI_DefaultBuffer,
-         String,
-         128) )
+  if ( ((INIClass *)(/*0x511f70*/ (INIClass *)v4))->GetString((unsigned __int8 *)(_EBX + 36), aVeteranaircraf, &g_INI_DefaultBuffer, String_buf, 128) )
   {
     HouseTypeClass::readDefaultAlly((HouseTypeClass *)&Destination, 0, 0); /*0x511f85*/
     /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EABC8) */  /*0x511f94*/
-    for ( k = strtok(String, Delimiter); k; k = strtok(0, Delimiter) ) /*0x511fa6*/
+    for ( k = strtok(String_buf, Delimiter); k; k = strtok(0, Delimiter) ) /*0x511fa6*/
     {
       if ( !*k ) /*0x511fa8*/
         break; /*0x511fab*/
@@ -742,15 +724,15 @@ void * HouseTypeClass::ReadCountryName(int a1, unsigned char *** edx0, INIClass 
   char v20; // [esp+19h] [ebp-8Fh]
   int v21; // [esp+1Ch] [ebp-8Ch]
   int v22; // [esp+20h] [ebp-88h]
-  char String[128]; // [esp+28h] [ebp-80h] BYREF
+  char String_buf[128]; // [esp+28h] [ebp-80h] BYREF
 
-  if ( INIClass::GetString((INIClass *)edx0, a3, a4, &g_INI_DefaultBuffer, String, 128) ) /*0x67b91c*/
+  if ( (((INIClass *)edx0)->GetString(a3, a4, &g_INI_DefaultBuffer, String_buf, 128) ) /*0x67b91c*/
   {
     AircraftTypeVector::Constructor(&v17, 0, 0); /*0x67b931*/
     v22 = 10; /*0x67b93a*/
     v21 = 0; /*0x67b948*/
     v17 = (AircraftTypeVector)&g_ptr_7EABC8; /*0x67b94c*/
-    for ( i = strtok(String, Delimiter); i; i = strtok(0, Delimiter) ) /*0x67b95e*/
+    for ( i = strtok(String_buf, Delimiter); i; i = strtok(0, Delimiter) ) /*0x67b95e*/
     {
       if ( !*i ) /*0x67b960*/
         break; /*0x67b962*/
@@ -839,7 +821,7 @@ int HouseTypeClass::loadCountryData(uint8_t *a2, uint8_t *a3, int a4, void *a4_1
 {
 
   char Destination[128]; // [esp+0h] [ebp-80h] BYREF
-  if ( !INIClass::GetString((INIClass *)this, a2, a3, &g_INI_DefaultBuffer, Destination, 128) ) /*0x475712*/
+  if ( !(((INIClass *)this)->GetString(a2, a3, &g_INI_DefaultBuffer, Destination, 128) ) /*0x475712*/
     return a4; /*0x475782*/
   int result; // eax
   result = HouseTypeClass::Find((HouseTypeClass *)Destination); /*0x47571f*/

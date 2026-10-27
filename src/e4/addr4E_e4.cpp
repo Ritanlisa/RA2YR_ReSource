@@ -191,7 +191,7 @@ int GameOptionsDlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND hWnd)
   wchar_t *v26; // edi
   HWND v27; // eax
   HWND v28; // esi
-  wchar_t *String; // eax
+  wchar_t *String_buf; // eax
   unsigned int v30; // ebx
   unsigned int *WindowLongA; // eax
   HWND hWnda; // [esp+20h] [ebp+10h]
@@ -346,8 +346,8 @@ int GameOptionsDlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND hWnd)
         v28 = v27; /*0x4e2305*/
         if ( v27 ) /*0x4e2309*/
         {
-          String = GetStringCSF(v26, 0, aDRa2mdpostGame, 434); /*0x4e231d*/
-          SendMessageA(v28, 0x4B2u, 0, (LPARAM)String); /*0x4e232b*/
+          String_buf = GetStringCSF(v26, 0, aDRa2mdpostGame, 434); /*0x4e231d*/
+          SendMessageA(v28, 0x4B2u, 0, (LPARAM)String_buf); /*0x4e232b*/
           return 0; /*0x4e2337*/
         }
       }

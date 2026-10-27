@@ -55,7 +55,7 @@ int Options::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND a4)
   wchar_t *v6; // edi
   HWND DlgItem; // eax
   HWND v8; // esi
-  wchar_t *String; // eax
+  wchar_t *String_buf; // eax
   unsigned int v10; // ebx
   unsigned int *WindowLongA; // ebp
   void (*v12)(HWND, int); // edi
@@ -111,8 +111,8 @@ int Options::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND a4)
           v8 = DlgItem; /*0x4f1268*/
           if ( DlgItem ) /*0x4f126c*/
           {
-            String = GetStringCSF(v6, 0, g_Str_File_GOptions_CPP, 196); /*0x4f1280*/
-            SendMessageA(v8, 0x4B2u, 0, (LPARAM)String); /*0x4f128e*/
+            String_buf = GetStringCSF(v6, 0, g_Str_File_GOptions_CPP, 196); /*0x4f1280*/
+            SendMessageA(v8, 0x4B2u, 0, (LPARAM)String_buf); /*0x4f128e*/
             return 0; /*0x4f12a0*/
           }
           return 0; /*0x4f126c*/

@@ -47,7 +47,7 @@ struct INIClass {
     int sub_44FE60();
     INIClass();
     static void * Constructor(void *aP1);
-    static unsigned int GetString(unsigned __int8 *a2, unsigned __int8 *a3, char *Source, char *Destination, int Count);
+    // x145a: removed static 5p GetString mis-render (thiscall member 0x528A10 is authoritative; kept decl would make member calls ambiguous)
     void SetGameOptionsPing(void *a1 = 0);
     static int ClearSection(INIClass * aP1, int a2, uint8_t *a3);
     static int GetBase64Data(INIClass * aP1, char *a2, int a3, size_t Size);
@@ -115,7 +115,7 @@ static int WriteToString(INIClass * aP1, int a2);
     HWND RestoreParent();
     char UpdateGameUI();
     HWND CloseAll();
-    unsigned int GetString(uint8_t *a2, uint8_t *a3, char *Source, char *Destination, int Count, int aP4, int aP1, int aP3, int a1, int a4, int a5, int aP2);
+    unsigned int GetString(uint8_t *a2, uint8_t *a3, char *Source, char *Destination, int Count);  // 0x528A10 thiscall 5p (x145a binary truth)
     int ReadInt(String *a2, String *a3, int a4, int aP2, int aP1, int a1, int aP3);
     static int ParseValue(unsigned int* p0, uint8_t* p1, uint8_t* p2, unsigned int* p3);  // x4:signals@0x527cc0
 };

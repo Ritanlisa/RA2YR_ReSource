@@ -686,7 +686,7 @@ void* BuildingClass_ProcessSell(int * p_ComPtr_field_0x14, double a3, int a4, in
   if ( this != 2 ) /*0x739f0e*/
   {
 LABEL_202:
-    v96 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)&v110.q00C); /*0x73afd4*/
+    v96 = (((CellCoord *)&dword_87F7E8)->To_CellObj((__int16 *)&v110.q00C); /*0x73afd4*/
     if ( *(unsigned char *)(*(unsigned int *)(_EBP + 1732) + 3368) /*0x73aff9*/
       || (unsigned __int8)TechnoTypeClass::HasVoiceResponse((int *)_EBP, 17) )
     {
@@ -947,7 +947,7 @@ LABEL_61:
       {
         v110.q004 = v110.q00C - 0x10000; /*0x73a599*/
         v110.q008 = v110.q00C - 0x10000; /*0x73a5ac*/
-        v48 = (Cell *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)&v110.q008); /*0x73a5b0*/
+        v48 = (Cell *)(((CellCoord *)&dword_87F7E8)->To_CellObj((__int16 *)&v110.q008); /*0x73a5b0*/
         if ( v47 == Cell::IsBridge(v48) ) /*0x73a5be*/
         {
           v49 = (*(int (**)(int, int, unsigned int *))(*(unsigned int *)_EBP + 632))(_EBP, 21, v47) - 1; /*0x73a5ce*/
@@ -1069,10 +1069,10 @@ LABEL_61:
             {
               (*(void (**)(int, int, unsigned int))(*(unsigned int *)_EBP + 488))(_EBP, 2, 0); /*0x73aa48*/
               v71 = *(unsigned int *)_EBP; /*0x73aa4e*/
-              v72 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)&v110.q004); /*0x73aa5d*/
+              v72 = (((CellCoord *)&dword_87F7E8)->To_CellObj((__int16 *)&v110.q004); /*0x73aa5d*/
               (*(void (**)(int, void *, int))(v71 + 1152))(_EBP, v72, 1); /*0x73aa65*/
               (*(void (**)(int))(*(unsigned int *)_EBP + 492))(_EBP); /*0x73aa70*/
-              v73 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)&v110.q004); /*0x73aa80*/
+              v73 = (((CellCoord *)&dword_87F7E8)->To_CellObj((__int16 *)&v110.q004); /*0x73aa80*/
               TechnoClass::SetFocus((TechnoClass *)_EBP, (int)v73); /*0x73aa88*/
               (*(void (**)(int, int, unsigned int))(*(unsigned int *)_EBP + 488))(_EBP, 11, 0); /*0x73aa96*/
               goto LABEL_154; /*0x73aa9c*/

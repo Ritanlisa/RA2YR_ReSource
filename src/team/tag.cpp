@@ -119,7 +119,7 @@ bool TagClass::IsOnlyInstanceOfType() const
   if ( g_GameObjectCleanup <= 0 ) /*0x6e585d*/
     return 1; /*0x6e587d*/
   for ( i = (char *)g_TagClassCount; /*0x6e585f*/
-        *(TagClass **)i == this || *(TagTypeClass **)(i->u32_24 != this->buildingType;
+        *(TagClass **)i == this || *(TagTypeClass **)(i + 36) != this->buildingType;
         i += 4 )
   {
     if ( ++v1 >= g_GameObjectCleanup ) /*0x6e587b*/
@@ -195,7 +195,7 @@ int TagClass::Destroy()
   if ( *(int *)&DataGlobal_B0F6A8 < *(int *)&DataGlobal_B0F6A0 /*0x6e5270*/
     || (DataGlobal_B0F6A5 || !*(unsigned int *)&DataGlobal_B0F6A0)
     && g_BuildingLoadQueue_Array.UnitExitSound > 0
-    && (result = (*(int (__thiscall **)(int *, int, unsigned int))(g_BuildingLoadQueue_Array.ToTile + 8))(
+    && (result = (*(int (__thiscall **)(void *, int, unsigned int))((char *)g_BuildingLoadQueue_Array.ToTile + 8))(
                    &g_BuildingLoadQueue_Array.ToTile,
                    *(unsigned int *)&DataGlobal_B0F6A0 + g_BuildingLoadQueue_Array.UnitExitSound,
                    0),
@@ -209,8 +209,8 @@ int TagClass::Destroy()
 // 0x6e55c0
 int TagClass::AddTrigger(TriggerClass* a2)
 {
-  a2->nextTrigger = (int)(*(&this->ptr_20));
-  *(&this->ptr_20) = a2; /*0x6e55ca*/
+  a2->nextTrigger = this->firstTrigger;
+  this->firstTrigger = a2; /*0x6e55ca*/
   return (int)(a2); /*0x6e55cd*/
 }
 bool TagClass::RemoveTrigger(TriggerClass* trigger)
@@ -402,9 +402,7 @@ HRESULT __stdcall TagTypeClass::Load(IStream* stream) { return 0; }
 HRESULT __stdcall TagTypeClass::Save(IStream* stream, int clear_dirty) { return 0; }
 void TagTypeClass::pointerExpired(AbstractClass* ptr, bool removed) {}
 AbstractType __stdcall TagTypeClass::whatAmI() const { return AbstractType::TagType; }
-int TagTypeClass::objectSize() const { return 0; 
+int TagTypeClass::objectSize() const { return 0; }
 void TagTypeClass::calculateChecksum(void* checksum) const {
-
-} // namespace gamemd
-}  // L-fix: close namespace tail 1
+}  // TagTypeClass::calculateChecksum
 } // namespace gamemd

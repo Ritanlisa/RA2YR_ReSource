@@ -1341,20 +1341,8 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
     }
     while ( (int)m_1 < _ESI->numberStartingPoints ); /*0x689fbe*/
   }
-  INIClass::GetString( /*0x689fd6*/
-    (INIClass *)a3,
-    aBasic,
-    (unsigned __int8 *)aNextscenario,
-    &_ESI->Items,
-    &_ESI->Items,
-    260);
-  INIClass::GetString( /*0x689ff4*/
-    (INIClass *)a3,
-    aBasic,
-    (unsigned __int8 *)aAltnextscenari,
-    &_ESI->q108,
-    &_ESI->q108,
-    260);
+  (((INIClass *)a3)->GetString( /*0x689fd6*/ aBasic, (unsigned __int8 *)aNextscenario, &_ESI->Items, &_ESI->Items, 260));
+  (((INIClass *)a3)->GetString( /*0x689ff4*/ aBasic, (unsigned __int8 *)aAltnextscenari, &_ESI->q108, &_ESI->q108, 260));
   _ESI->AltNextScenario = INIClass::GetBool( /*0x68a011*/
                                (INIClass *)a3,
                                aBasic,
@@ -1777,34 +1765,10 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
                                 *(unsigned __int8 **)v78.__tail_10,
                                 (unsigned __int8 *)LODWORD(v79),
                                 SHIDWORD(v79));
-  INIClass::GetString( /*0x68a7b5*/
-    (INIClass *)a3,
-    g_INI_Key_Ranking,
-    (unsigned __int8 *)aUnderpartitle,
-    aGuiNounderpart,
-    &_ESI->underParTitle,
-    31);
-  INIClass::GetString( /*0x68a7d4*/
-    (INIClass *)a3,
-    g_INI_Key_Ranking,
-    (unsigned __int8 *)aUnderparmessag,
-    aGuiNounderparm,
-    &_ESI->underParMessage,
-    31);
-  INIClass::GetString( /*0x68a7f3*/
-    (INIClass *)a3,
-    g_INI_Key_Ranking,
-    (unsigned __int8 *)aOverpartitle,
-    aGuiNooverparti,
-    &_ESI->overParTitle,
-    31);
-  INIClass::GetString( /*0x68a812*/
-    (INIClass *)a3,
-    g_INI_Key_Ranking,
-    (unsigned __int8 *)aOverparmessage,
-    aGuiNooverparme,
-    &_ESI->overParMessage,
-    31);
+  (((INIClass *)a3)->GetString( /*0x68a7b5*/ g_INI_Key_Ranking, (unsigned __int8 *)aUnderpartitle, aGuiNounderpart, &_ESI->underParTitle, 31));
+  (((INIClass *)a3)->GetString( /*0x68a7d4*/ g_INI_Key_Ranking, (unsigned __int8 *)aUnderparmessag, aGuiNounderparm, &_ESI->underParMessage, 31));
+  (((INIClass *)a3)->GetString( /*0x68a7f3*/ g_INI_Key_Ranking, (unsigned __int8 *)aOverpartitle, aGuiNooverparti, &_ESI->overParTitle, 31));
+  (((INIClass *)a3)->GetString( /*0x68a812*/ g_INI_Key_Ranking, (unsigned __int8 *)aOverparmessage, aGuiNooverparme, &_ESI->overParMessage, 31));
   __asm { fild dword ptr [esi+3528h] } /*0x68a817*/
   __asm
   {
@@ -2084,7 +2048,7 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
   }
   else
   {
-    INIClass::GetString((INIClass *)a3, aBasic, (unsigned __int8 *)aPlayer, &g_INI_DefaultBuffer, Destination, 20); /*0x68accb*/
+    (((INIClass *)a3)->GetString(aBasic, (unsigned __int8 *)aPlayer, &g_INI_DefaultBuffer, Destination, 20); /*0x68accb*/
     v76 = HouseClass::FindByName(Destination); /*0x68acd4*/
     if ( v76 == -1 ) /*0x68acdc*/
       v76 = 0; /*0x68acde*/

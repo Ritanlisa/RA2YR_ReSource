@@ -739,7 +739,7 @@ char JumpjetLocomotion::Land()
   v49[0] = *v12 / 256; /*0x54cc66*/
   v49[1] = v12[1] / 256; /*0x54cc7f*/
   *(unsigned int *)v50 = *(unsigned int *)v49; /*0x54cc8d*/
-  v13 = (unsigned int *)*((unsigned int *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v50) + 57); /*0x54cc96*/
+  v13 = (unsigned int *)*((unsigned int *)(((CellCoord *)&dword_87F7E8)->To_CellObj(v50) + 57); /*0x54cc96*/
   if ( v13 == *(unsigned int **)&this->u32_C ) /*0x54cca1*/
     v13 = (unsigned int *)v13[12]; /*0x54cca3*/
   if ( v13 ) /*0x54cca8*/

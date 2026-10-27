@@ -870,7 +870,7 @@ void* WarheadTypeClass_ReadINI(WarheadTypeClass *a1)
   int v69; // [esp+44h] [ebp-9Ch]
   int v70; // [esp+48h] [ebp-98h]
   char Source[20]; // [esp+4Ch] [ebp-94h] BYREF
-  char String[128]; // [esp+60h] [ebp-80h] BYREF
+  char String_buf[128]; // [esp+60h] [ebp-80h] BYREF
 
   v4 = v3; /*0x772091*/
   INIClass::ResetSection((INIClass *)this); /*0x772095*/
@@ -1056,17 +1056,11 @@ void* WarheadTypeClass_ReadINI(WarheadTypeClass *a1)
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E4DB8) */  /*0x772447*/
   if ( *(unsigned int *)&v67.Items && v67.IsAllocated ) /*0x772457*/
     __3_YAXPAX_Z(*(void **)&v67.Items); /*0x77245a*/
-  if ( INIClass::GetString( /*0x772479*/
-         (INIClass *)this,
-         (unsigned __int8 *)(v4 + 36),
-         (unsigned __int8 *)aAnim_0,
-         &g_INI_DefaultBuffer,
-         String,
-         128) )
+  if ( ((INIClass *)(/*0x772479*/ (INIClass *)this))->GetString((unsigned __int8 *)(v4 + 36), (unsigned __int8 *)aAnim_0, &g_INI_DefaultBuffer, String_buf, 128) )
   {
     DynamicVectorClass::AnimTypeConstructor((DynamicVectorClass *)&v67, 0, 0); /*0x77248e*/
     /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EB6D4) */  /*0x77249d*/
-    for ( i = strtok(String, Delimiter); i; i = strtok(0, Delimiter) ) /*0x7724af*/
+    for ( i = strtok(String_buf, Delimiter); i; i = strtok(0, Delimiter) ) /*0x7724af*/
     {
       if ( !*i ) /*0x7724b1*/
         break; /*0x7724b4*/
@@ -1093,13 +1087,7 @@ void* WarheadTypeClass_ReadINI(WarheadTypeClass *a1)
   if ( v18 && BYTE1(v67.u32_28) ) /*0x772554*/
     __3_YAXPAX_Z(v18); /*0x772557*/
   v19 = v4->AssaultAnim_d; /*0x77255f*/
-  if ( INIClass::GetString( /*0x77257c*/
-         (INIClass *)this,
-         (unsigned __int8 *)(v4 + 36),
-         aAssaultanim,
-         &g_INI_DefaultBuffer,
-         String,
-         128) )
+  if ( ((INIClass *)(/*0x77257c*/ (INIClass *)this))->GetString((unsigned __int8 *)(v4 + 36), aAssaultanim, &g_INI_DefaultBuffer, String_buf, 128) )
   {
     v20 = AnimTypeClass::FindOrCreate(String); /*0x772589*/
   }
@@ -1108,24 +1096,18 @@ void* WarheadTypeClass_ReadINI(WarheadTypeClass *a1)
     v20 = v19; /*0x772590*/
   }
   v65 = 128; /*0x772596*/
-  v64 = (unsigned __int8 *)String; /*0x77259b*/
+  v64 = (unsigned __int8 *)String_buf; /*0x77259b*/
   v63 = &g_INI_DefaultBuffer; /*0x77259c*/
   p_INIClassIntList = aOccupantanim; /*0x7725a1*/
   v4->AssaultAnim_d = v20; /*0x7725a6*/
   v21 = v4->IsMagBeam; /*0x7725ac*/
-  if ( INIClass::GetString((INIClass *)this, (unsigned __int8 *)(v4 + 36), p_INIClassIntList, v63, (char *)v64, v65) ) /*0x7725b5*/
+  if ( (((INIClass *)this)->GetString((unsigned __int8 *)(v4 + 36), p_INIClassIntList, v63, (char *)v64, v65)) ) /*0x7725b5*/
     v22 = AnimTypeClass::FindOrCreate(String); /*0x7725c2*/
   else
     v22 = v21; /*0x7725c9*/
   v4->IsMagBeam = v22; /*0x7725cb*/
   v23 = v4->OpenToppedAnim_d; /*0x7725d1*/
-  if ( INIClass::GetString( /*0x7725ee*/
-         (INIClass *)this,
-         (unsigned __int8 *)(v4 + 36),
-         aOpentoppedanim,
-         &g_INI_DefaultBuffer,
-         String,
-         128) )
+  if ( ((INIClass *)(/*0x7725ee*/ (INIClass *)this))->GetString((unsigned __int8 *)(v4 + 36), aOpentoppedanim, &g_INI_DefaultBuffer, String_buf, 128) )
   {
     v24 = AnimTypeClass::FindOrCreate(String); /*0x7725fb*/
   }
@@ -1242,18 +1224,12 @@ void* WarheadTypeClass_ReadINI(WarheadTypeClass *a1)
   *(unsigned int *)(v4 + 344) = v54; /*0x7728f6*/
   *(unsigned char *)(v4 + 348) = INIClass::ReadBool_Overwrite(&this->ptr_0, (unsigned __int8 *)v63, v64, v65); /*0x772901*/
   Source[0] = 0; /*0x77291b*/
-  INIClass::GetString((INIClass *)this, (unsigned __int8 *)(v4 + 36), aAttachedpartic, Source, Source, 20); /*0x772920*/
+  (((INIClass *)this)->GetString((unsigned __int8 *)(v4 + 36), aAttachedpartic, Source, Source, 20)); /*0x772920*/
   v55 = WarheadTypeClass::applyDamage(Source); /*0x772929*/
   if ( v55 != -1 ) /*0x772931*/
     *(unsigned int *)(v4 + 284) = *(unsigned int *)(*(unsigned int *)&stru_A83CD9.alignmentPadding91[2] + 4 * v55); /*0x77293c*/
   v56 = *(unsigned int *)(v4 + 172); /*0x772942*/
-  if ( INIClass::GetString( /*0x77295f*/
-         (INIClass *)this,
-         (unsigned __int8 *)(v4 + 36),
-         g_INI_Key_Warhead,
-         &g_INI_DefaultBuffer,
-         String,
-         128) )
+  if ( ((INIClass *)(/*0x77295f*/ (INIClass *)this))->GetString((unsigned __int8 *)(v4 + 36), g_INI_Key_Warhead, &g_INI_DefaultBuffer, String_buf, 128) )
   {
     v57 = WarheadTypeClass::FindOrCreate(String); /*0x77296c*/
   }
@@ -1263,12 +1239,12 @@ void* WarheadTypeClass_ReadINI(WarheadTypeClass *a1)
   }
   v58 = *(unsigned int *)(v4 + 160); /*0x772975*/
   v65 = 128; /*0x77297f*/
-  v64 = (unsigned __int8 *)String; /*0x772984*/
+  v64 = (unsigned __int8 *)String_buf; /*0x772984*/
   v63 = &g_INI_DefaultBuffer; /*0x772985*/
   p_INIClassIntList = aProjectile; /*0x77298a*/
   v61 = (unsigned __int8 *)(v4 + 36); /*0x77298f*/
   *(unsigned int *)(v4 + 172) = v57; /*0x772992*/
-  if ( INIClass::GetString((INIClass *)this, v61, p_INIClassIntList, v63, (char *)v64, v65) ) /*0x772998*/
+  if ( (((INIClass *)this)->GetString(v61, p_INIClassIntList, v63, (char *)v64, v65)) ) /*0x772998*/
     *(unsigned int *)(v4 + 160) = ObjectTypeClass::FindOrCreate(String); /*0x7729aa*/
   else
     *(unsigned int *)(v4 + 160) = v58; /*0x7729c1*/
@@ -1454,7 +1430,7 @@ int WarheadTypeClass::LoadType()
     uint8_t *StringByIndex; // eax
     StringByIndex = (uint8_t *)INIClass::GetStringByIndex(v6->__pad_0, g_INI_Key_Warheads, i); /*0x6729c2*/
     char Destination[32]; // [esp+Ch] [ebp-20h] BYREF
-    if ( INIClass::GetString(v6, g_INI_Key_Warheads, StringByIndex, &g_INI_DefaultBuffer, Destination, 32) ) /*0x6729cf*/
+    if ( ((INIClass *)(v6))->GetString(g_INI_Key_Warheads, StringByIndex, &g_INI_DefaultBuffer, Destination, 32) ) /*0x6729cf*/
       WarheadTypeClass::FindOrCreate(Destination); /*0x6729dc*/
   }
   return KeyCount > 0; /*0x6729e8*/

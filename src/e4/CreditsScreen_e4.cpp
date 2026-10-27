@@ -44,9 +44,9 @@ INIClass * * CreditsScreen::DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned
     return 0; /*0x531c1d*/
   HWND DlgItem; // esi
   DlgItem = GetDlgItem(hWnd, 1461); /*0x531a73*/
-  wchar_t *String; // eax
-  String = GetStringCSF(g_Str_TXT_SHORT_TITLE, 0, g_Str_File_Init_CPP, 5680); /*0x531a75*/
-  SendMessageA(DlgItem, 0x4CDu, 0, (LPARAM)String); /*0x531a89*/
+  wchar_t *String_buf; // eax
+  String_buf = GetStringCSF(g_Str_TXT_SHORT_TITLE, 0, g_Str_File_Init_CPP, 5680); /*0x531a75*/
+  SendMessageA(DlgItem, 0x4CDu, 0, (LPARAM)String_buf); /*0x531a89*/
   char *ModuleVersion; // eax
   ModuleVersion = (char *)(GetModuleVersion()); /*0x531a8b*/
   char Buffer[256]; // [esp+14h] [ebp-280h] BYREF

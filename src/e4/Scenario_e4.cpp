@@ -164,7 +164,7 @@ int Scenario::ReadTeams()
   unsigned int v74[3]; // [esp+48h] [ebp-9Ch] BYREF
   unsigned int v75[3]; // [esp+54h] [ebp-90h] BYREF
   int v76; // [esp+60h] [ebp-84h] BYREF
-  char String[128]; // [esp+64h] [ebp-80h] BYREF
+  char String_buf[128]; // [esp+64h] [ebp-80h] BYREF
 
   v1 = this; /*0x44f827*/
   INIClass::ResetSection(this); /*0x44f82d*/
@@ -178,8 +178,8 @@ int Scenario::ReadTeams()
     while ( 1 ) /*0x44f874*/
     {
       StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(v1->ptr_0, (unsigned __int8 *)aStructures, v3); /*0x44f874*/
-      INIClass::GetString(v1, (unsigned __int8 *)aStructures, StringByIndex, 0, String, 128); /*0x44f88f*/
-      v5 = strtok(String, Delimiter); /*0x44f89e*/
+      ((INIClass *)(v1))->GetString((unsigned __int8 *)aStructures, StringByIndex, 0, String_buf, 128); /*0x44f88f*/
+      v5 = strtok(String_buf, Delimiter); /*0x44f89e*/
       v6 = HouseClass::FindByName(v5); /*0x44f8a8*/
       if ( v6 != -1 ) /*0x44f8b0*/
       {
@@ -1820,7 +1820,7 @@ int Scenario::FindBuildingTypeByName(unsigned char * a1, unsigned char * a2, CCI
 {
 
   char Destination[128]; // [esp+0h] [ebp-80h] BYREF
-  if ( INIClass::GetString((INIClass *)this, a1, a2, &g_INI_DefaultBuffer, Destination, 128) ) /*0x475912*/
+  if ( (((INIClass *)this)->GetString(a1, a2, &g_INI_DefaultBuffer, Destination, 128) ) /*0x475912*/
     return StringList::Find((StringList *)&unk_A83D10, Destination); /*0x475925*/
   else
     return aP3; /*0x475933*/

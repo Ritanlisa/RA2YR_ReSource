@@ -708,7 +708,7 @@ AbstractClass * * ParasiteClass::TryInfect(unsigned int * a2)
   else
   {
     void *v5; // eax
-    v5 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, (__int16 *)(this->creationFrame + 1372)); /*0x62aa11*/
+    v5 = (((CellCoord *)&DataGlobal_87F7E8)->To_CellObj((__int16 *)(this->creationFrame + 1372)); /*0x62aa11*/
     int v6 = **&this->creationFrame; // ebx /*0x62aa1f*/
     int v7; // eax
     int v15; // [esp+20h] [ebp-Ch] BYREF

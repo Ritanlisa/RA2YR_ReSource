@@ -685,13 +685,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
       this->u32_F0C = v4; /*0x45f30a*/
     }
   }
-  INIClass::GetString( /*0x45f32d*/
-    &dword_887180,
-    (unsigned __int8 *)(&this->ImageFile),
-    aDeployinganim,
-    &g_INI_DefaultBuffer,
-    Filename,
-    64);
+  ((INIClass *)(&dword_887180))->GetString( /*0x45f32d*/ (unsigned __int8 *)(&this->ImageFile), aDeployinganim, &g_INI_DefaultBuffer, Filename, 64);
   if ( strlen(Filename) ) /*0x45f336*/
   {
     _makepath(Source, 0, 0, Filename, ::Ext); /*0x45f357*/
@@ -717,13 +711,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
       this->DeployingAnim_2 = LoadFileSHP(Source, &this->DeployingAnimLoaded_d); /*0x45f3e2*/
     }
   }
-  INIClass::GetString( /*0x45f405*/
-    &dword_887180,
-    (unsigned __int8 *)(&this->ImageFile),
-    aRoofdeployinga,
-    &g_INI_DefaultBuffer,
-    Filename,
-    64);
+  ((INIClass *)(&dword_887180))->GetString( /*0x45f405*/ (unsigned __int8 *)(&this->ImageFile), aRoofdeployinga, &g_INI_DefaultBuffer, Filename, 64);
   if ( strlen(Filename) ) /*0x45f40e*/
   {
     _makepath(Source, 0, 0, Filename, ::Ext); /*0x45f42f*/
@@ -749,7 +737,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
       this->RoofDeployingAnim = LoadFileSHP(Source, &this->DeployingAnimLoaded_d); /*0x45f4be*/
     }
   }
-  INIClass::GetString(&dword_887180, (unsigned __int8 *)(&this->ImageFile), aDooranim, &g_INI_DefaultBuffer, Filename, 64); /*0x45f4e1*/
+  ((INIClass *)(&dword_887180))->GetString((unsigned __int8 *)(&this->ImageFile), aDooranim, &g_INI_DefaultBuffer, Filename, 64); /*0x45f4e1*/
   if ( strlen(Filename) ) /*0x45f4ea*/
   {
     _makepath(Source, 0, 0, Filename, ::Ext); /*0x45f507*/
@@ -762,13 +750,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
       this->DoorAnim = SearchMIXFile(Source, 0); /*0x45f548*/
     }
   }
-  INIClass::GetString( /*0x45f565*/
-    &dword_887180,
-    (unsigned __int8 *)(&this->ImageFile),
-    aUnderdooranim,
-    &g_INI_DefaultBuffer,
-    Filename,
-    64);
+  ((INIClass *)(&dword_887180))->GetString( /*0x45f565*/ (unsigned __int8 *)(&this->ImageFile), aUnderdooranim, &g_INI_DefaultBuffer, Filename, 64);
   if ( strlen(Filename) ) /*0x45f56e*/
   {
     _makepath(Source, 0, 0, Filename, ::Ext); /*0x45f58f*/
@@ -801,7 +783,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
     this->Rubble_d = 0; /*0x45f643*/
     *v14 = 0; /*0x45f649*/
   }
-  INIClass::GetString(&dword_887180, (unsigned __int8 *)(&this->ImageFile), aRubble, &g_INI_DefaultBuffer, Filename, 64); /*0x45f668*/
+  ((INIClass *)(&dword_887180))->GetString((unsigned __int8 *)(&this->ImageFile), aRubble, &g_INI_DefaultBuffer, Filename, 64); /*0x45f668*/
   if ( strlen(Filename) ) /*0x45f671*/
   {
     _makepath(Source, 0, 0, Filename, ::Ext); /*0x45f68e*/
@@ -820,13 +802,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
       this->Rubble_d = SearchMIXFile(Source, 0); /*0x45f6ee*/
     }
   }
-  INIClass::GetString( /*0x45f711*/
-    &dword_887180,
-    (unsigned __int8 *)(&this->ImageFile),
-    aUnderroofdoora,
-    &g_INI_DefaultBuffer,
-    Filename,
-    64);
+  ((INIClass *)(&dword_887180))->GetString( /*0x45f711*/ (unsigned __int8 *)(&this->ImageFile), aUnderroofdoora, &g_INI_DefaultBuffer, Filename, 64);
   if ( strlen(Filename) ) /*0x45f71a*/
   {
     _makepath(Source, 0, 0, Filename, ::Ext); /*0x45f73b*/
@@ -852,13 +828,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
       this->UnderRoofDoorAnim = SearchMIXFile(Source, 0); /*0x45f7c6*/
     }
   }
-  INIClass::GetString( /*0x45f7e9*/
-    &dword_887180,
-    (unsigned __int8 *)(&this->ImageFile),
-    aSpecialzoverla,
-    &g_INI_DefaultBuffer,
-    Filename,
-    64);
+  ((INIClass *)(&dword_887180))->GetString( /*0x45f7e9*/ (unsigned __int8 *)(&this->ImageFile), aSpecialzoverla, &g_INI_DefaultBuffer, Filename, 64);
   if ( strlen(Filename) ) /*0x45f7f2*/
   {
     _makepath(Source, 0, 0, Filename, ::Ext); /*0x45f80f*/
@@ -871,7 +841,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
       this->SpecialZOverlay = SearchMIXFile(Source, 0); /*0x45f850*/
     }
   }
-  INIClass::GetString(&dword_887180, (unsigned __int8 *)(&this->ImageFile), aBibshape, &g_INI_DefaultBuffer, Filename, 64); /*0x45f86d*/
+  ((INIClass *)(&dword_887180))->GetString((unsigned __int8 *)(&this->ImageFile), aBibshape, &g_INI_DefaultBuffer, Filename, 64); /*0x45f86d*/
   if ( strlen(Filename) ) /*0x45f876*/
   {
     _makepath(Source, 0, 0, Filename, ::Ext); /*0x45f897*/
@@ -897,13 +867,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
       this->BibShape = SearchMIXFile(Source, 0); /*0x45f922*/
     }
   }
-  INIClass::GetString( /*0x45f945*/
-    &dword_887180,
-    (unsigned __int8 *)(&this->ImageFile),
-    (unsigned __int8 *)g_INI_Key_Image,
-    &g_INI_DefaultBuffer,
-    Filename,
-    64);
+  ((INIClass *)(&dword_887180))->GetString( /*0x45f945*/ (unsigned __int8 *)(&this->ImageFile), (unsigned __int8 *)g_INI_Key_Image, &g_INI_DefaultBuffer, Filename, 64);
   if ( !this->Theater_d || aP1 == -1 ) /*0x45f95c*/
     v21 = ::Ext; /*0x45f97a*/
   else
@@ -973,7 +937,7 @@ void BuildingTypeClass::LoadVoxel()
   char Destination[4]; // [esp+14Ch] [ebp-180h] BYREF
   char v32[124]; // [esp+150h] [ebp-17Ch] BYREF
   char Buffer[4]; // [esp+1CCh] [ebp-100h] BYREF
-  char String[252]; // [esp+1D0h] [ebp-FCh] BYREF
+  char String_buf[252]; // [esp+1D0h] [ebp-FCh] BYREF
 
   if ( this->TurretAnimIsVoxel || this->BarrelAnimIsVoxel ) /*0x45faa4*/
   {
@@ -2372,13 +2336,7 @@ int BuildingTypeClass::FindAnimByName(INIClass * aP1, unsigned char * a2, AnimTy
 {
 
   char Destination[32]; // [esp+8h] [ebp-20h] BYREF
-  INIClass::GetString( /*0x474aba*/
-    (INIClass *)aP1,
-    a2,
-    aP3,
-    *(char **)(*(unsigned int *)(*(unsigned int *)&BuildingTypeClass_AnimTable + 4 * a4) + 772),
-    Destination,
-    32);
+  ((INIClass *)(/*0x474aba*/ (INIClass *)aP1))->GetString(a2, aP3, *(char **)(*(unsigned int *)(*(unsigned int *)&BuildingTypeClass_AnimTable + 4 * a4) + 772), Destination, 32);
   int v4 = 0; // esi /*0x474ac4*/
   if ( *(int *)g_AnimClass_SaveState <= 0 ) /*0x474ac8*/
     return a4; /*0x474b06*/

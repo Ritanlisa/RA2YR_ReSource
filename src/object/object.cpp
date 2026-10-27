@@ -15,6 +15,7 @@ using ra2::game::TechnoClass;
 #endif
 #include "object/object.hpp"
 #include "e4/classes/TechnoClass_e4.hpp"
+#include "e4/classes/AudioStream_e4.hpp"  // X145C: AudioStream::ReleaseChannel supply
 #include "type/object_type.hpp"
 #include "system/cell.hpp"
 #include "system/tactical.hpp"
@@ -74,13 +75,13 @@ bool ObjectClass::Remove()
 {
   int result; // eax
   int v3; // eax
-  IUnknown *v4; // [esp+4h] [ebp-4h] BYREF
+  void *v4; // [esp+4h] [ebp-4h] BYREF (was IUnknown*; MI-ambiguous — X145C)
 
   (*((unsigned char *)&(result))) = this->isSelected; /*0x5f44a4*/
   if ( (unsigned char)result ) /*0x5f44ac*/
   {
-    v4 = this; /*0x5f44be*/
-    v3 = (*(int (__thiscall **)(unsigned char *, IUnknown **))(*(unsigned int *)&((unsigned int *)&stru_A8EB00)[212] + 16))(&((unsigned int *)&stru_A8EB00)[212], &v4); /*0x5f44c2*/
+    v4 = (void *)this; /*0x5f44be*/
+    v3 = (*(int (__thiscall **)(void *, void **))(*(unsigned int *)&((unsigned int *)&stru_A8EB00)[212] + 16))(&((unsigned int *)&stru_A8EB00)[212], &v4); /*0x5f44c2*/
     if ( v3 != -1 && v3 < *(int *)&((unsigned int *)&stru_A8EB00)[228] ) /*0x5f44d2*/
     {
       --*(unsigned int *)&((unsigned int *)&stru_A8EB00)[228]; /*0x5f44d7*/
@@ -93,9 +94,9 @@ bool ObjectClass::Remove()
       }
     }
     this->isSelected = 0; /*0x5f44fc*/
-    result = MapClass::GetScrollMode((MapClass *)&DataGlobal_87F7E8); /*0x5f4503*/
-    if ( (IUnknown *)result == this ) /*0x5f450a*/
-      return MapClass::SetScrollMode((int)&DataGlobal_87F7E8, 0); /*0x5f4513*/
+    result = ((gamemd::MapClass *)&DataGlobal_87F7E8)->GetScrollMode(); /*0x5f4503*/
+    if ( (void *)(IUnknown *)result == (void *)this ) /*0x5f450a*/
+      return ((gamemd::MapClass *)&DataGlobal_87F7E8)->SetScrollMode(0); /*0x5f4513*/
   }
   return result; /*0x5f4518*/
 }
@@ -108,7 +109,7 @@ int ObjectClass::Destroy()
   attachedBomb = (ObjectClass *)this->attachedBomb; /*0x5f65f3*/
   if ( attachedBomb ) /*0x5f65f8*/
     (attachedBomb)->CleanupAudioAndRefs(); /*0x5f65fa*/
-  if ( this && (this->abstractFlags & 1) != 0 ) /*0x5f6607*/
+  if ( this && (*(unsigned int *)&this->abstractFlags & 1) != 0 ) /*0x5f6607*/
     ((TechnoClass *)this)->CleanupAll(0); /*0x5f660d*/
   AbstractClass::AnnounceExpiredPointer(&this->ptr_0, 1); /*0x5f6616*/
   (*((void (__thiscall **)(ObjectClass *))this->ptr_0 + 53))(this); /*0x5f661f*/
@@ -149,7 +150,8 @@ int ObjectClass::MarkForRedraw()
   if ( !(unsigned char)result ) /*0x5f4d18*/
   {
     this->needsRedraw = 1; /*0x5f4d1a*/
-    return MapClass::MarkForRedraw((GScreenClass *)&DataGlobal_87F7E8, 0); /*0x5f4d28*/
+    ((gamemd::MapClass *)&DataGlobal_87F7E8)->MarkForRedraw(0); /*0x5f4d28*/
+    return true;
   }
   return result; /*0x5f4d2d*/
 }
@@ -241,7 +243,7 @@ ObjectClass::ObjectClass() noexcept
     std::memset((&ambientSoundController), 0, sizeof(ambientSoundController));
     std::memset(&customSound_controller, 0, sizeof(customSound_controller));
 
-    abstractFlags |= kObjectFlag;
+    *(unsigned int *)&abstractFlags |= kObjectFlag;  /* flag in X10 void* slot (X145C)*/
 }
 
 // IDA: AudioController
@@ -253,15 +255,15 @@ void AudioController::Stop()
   int v3; // ecx
   int v4; // ebx
   RefCount **v5; // edi
-  Voice *v6; // [esp+0h] [ebp-Ch]
+  gamemd::Voice *v6; // [esp+0h] [ebp-Ch] (X145C qualify)
 
   result = (unsigned int *)(this->AudioController_field_00); /*0x405d41*/
   if ( g_AudioConfigState ) /*0x405d53*/
   {
     if ( this->AudioController_field_0C == &dword_87E294 ) /*0x405d60*/
     {
-      v2 = this->AudioController_field_00[0]; /*0x405d66*/
-      if ( this->AudioController_field_00[0] ) /*0x405d66*/
+      v2 = this->AudioController_field_00; /*0x405d66*/
+      if ( this->AudioController_field_00 ) /*0x405d66*/
       {
         if ( this->AudioController_field_08 == *(void **)(v2 + 36) /*0x405d93*/
           && this->AudioController_field_04 == *(void **)(v2 + 312)
@@ -272,7 +274,7 @@ void AudioController::Stop()
           {
             if ( (*(unsigned char *)(v2 + 24) & 2) != 0 ) /*0x405daf*/
               (v6)->Stop(); /*0x405db1*/
-            AudioStream::ReleaseChannel(*(AudioStream **)(v2 + 176)); /*0x405dbc*/
+            (*(gamemd::AudioStream **)(v2 + 176))->ReleaseChannel(); /*0x405dbc*/
             *(unsigned int *)(*(unsigned int *)(v2 + 176) + 192) = 0; /*0x405dc7*/
             *(unsigned int *)(*(unsigned int *)(v2 + 176) + 188) = 0; /*0x405dd3*/
             *(unsigned int *)(*(unsigned int *)(v2 + 176) + 180) = 0; /*0x405ddf*/
@@ -289,7 +291,7 @@ void AudioController::Stop()
             v5 = (RefCount **)(v2 + 40); /*0x405e2d*/
             do /*0x405e45*/
             {
-              RefCount::Decrement(*v5); /*0x405e32*/
+              ((gamemd::RefCount *)*v5)->Decrement(); /*0x405e32*/
               *v5 = 0; /*0x405e37*/
               ++v4; /*0x405e3f*/
               ++v5; /*0x405e40*/
@@ -308,7 +310,7 @@ void AudioController::Stop()
     }
   }
   result->AudioController_field_08 = 0; /*0x405e71*/
-  return result; /*0x405e74*/
+  return; /*0x405e74*/
 }
 
 // ============================================================================

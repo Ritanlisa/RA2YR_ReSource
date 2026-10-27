@@ -334,13 +334,7 @@ void ParticleTypeClass::ParticleTypeClass_LoadFromINI(uint8_t *** aP1)
   v46 = g_INI_Key_Warhead; /*0x645043*/
   v45 = (unsigned __int8 *)&this->BarrelVoxel; /*0x645048*/
   this->Damage_d = v9; /*0x64504b*/
-  if ( INIClass::GetString( /*0x645051*/
-         (INIClass *)aP1,
-         v45,
-         v46,
-         (char *)p_ParticleTypeClass_field_0x24,
-         (char *)v48,
-         ParticleTypeClass_field_0x2E0) )
+  if ( ((INIClass *)(/*0x645051*/ (INIClass *)aP1))->GetString(v45, v46, (char *)p_ParticleTypeClass_field_0x24, (char *)v48, ParticleTypeClass_field_0x2E0) )
   {
     v11 = WarheadTypeClass::FindOrCreate(Destination); /*0x64505e*/
   }
@@ -511,13 +505,7 @@ void ParticleTypeClass::ParticleTypeClass_LoadFromINI(uint8_t *** aP1)
   v46 = aNextparticle; /*0x645307*/
   v45 = (unsigned __int8 *)&this->BarrelVoxel; /*0x64530c*/
   this->FinalDamageState = v35; /*0x64530f*/
-  if ( INIClass::GetString( /*0x645315*/
-         (INIClass *)aP1,
-         v45,
-         v46,
-         (char *)p_ParticleTypeClass_field_0x24,
-         (char *)v48,
-         ParticleTypeClass_field_0x2E0) )
+  if ( ((INIClass *)(/*0x645315*/ (INIClass *)aP1))->GetString(v45, v46, (char *)p_ParticleTypeClass_field_0x24, (char *)v48, ParticleTypeClass_field_0x2E0) )
   {
     if ( _strcmpi(Source, g_Str__none_) ) /*0x64532c*/
     {
@@ -565,13 +553,7 @@ LABEL_17:
     this->q310 = v36; /*0x6453b4*/
   }
   Source[0] = 0; /*0x6453cb*/
-  INIClass::GetString( /*0x6453d0*/
-    (INIClass *)aP1,
-    (unsigned __int8 *)&this->BarrelVoxel,
-    aBehaveslike,
-    0,
-    Source,
-    32);
+  (((INIClass *)aP1)->GetString( /*0x6453d0*/ (unsigned __int8 *)&this->BarrelVoxel, aBehaveslike, 0, Source, 32));
   v41 = 0; /*0x6453d5*/
   v42 = off_8370BC; /*0x6453d7*/
   while ( _strcmpi(Source, *v42) ) /*0x6453ee*/

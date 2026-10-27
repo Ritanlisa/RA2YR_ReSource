@@ -5,6 +5,8 @@
 
 #include <cstring>
 #include "e4/classes/BuildingClass_e4.hpp"
+#define GAMEMD_TREE_UNIVERSE 1  // X145C: tree TU (Cell fwd block off in Cell_e4)
+#include "e4/classes/Cell_e4.hpp"  // X145C: Cell::GetGroundHeight supply (static form)
 
 namespace gamemd
 {
@@ -165,15 +167,15 @@ int ParticleClass::AdjustHeight()
 
   v2 = *(unsigned int *)(*(&this->q0103) + 788); /*0x62d5ec*/
   if ( !v2 ) /*0x62d5f5*/
-    return BuildingClass::UpdateFloatPosition(); /*0x62d6db*/
+    return (int)BuildingClass::UpdateFloatPosition((BuildingClass *)this); /*0x62d6db*/
   v3 = v2 - 1; /*0x62d5fb*/
   if ( v3 ) /*0x62d5fc*/
   {
     result = v3 - 1; /*0x62d602*/
     if ( !result ) /*0x62d603*/
     {
-      v5 = this->Tactical_E4; /*0x62d609*/
-      v13[0] = *(&this->ptr_C0); /*0x62d623*/
+      v5 = this->u32_E8; /*0x62d609*/
+      v13[0] = this->q0C0; /*0x62d623*/
       v6 = *(&this->q0100); /*0x62d627*/
       v13[2] = *(&this->q0101); /*0x62d630*/
       v7 = *(&this->q0101); /*0x62d636*/
@@ -188,10 +190,10 @@ int ParticleClass::AdjustHeight()
         v11 = this->u32_104 + v6; /*0x62d66a*/
         v12 = v8 + v7; /*0x62d66e*/
       }
-      if ( this->Tactical_E4 > 0.0 ) /*0x62d683*/
+      if ( this->u32_E8 > 0.0 ) /*0x62d683*/
       {
-        GroundHeight = Cell::GetGroundHeight(v13); /*0x62d69e*/
-        if ( (int)Cell::GetGroundHeight(&v10) > GroundHeight ) /*0x62d6a7*/
+        GroundHeight = Cell::GetGroundHeight((unsigned int *)v13); /*0x62d69e*/
+        if ( (int)Cell::GetGroundHeight((unsigned int *)&v10) > GroundHeight ) /*0x62d6a7*/
         {
           this->u32_12D = 1; /*0x62d6ab*/
           this->u32_131 = 1; /*0x62d6b1*/

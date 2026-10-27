@@ -1507,13 +1507,13 @@ int DlgProcScoreScreen(HWND hWnd, UINT, WPARAM wParam, LPARAM)
       v14 = &dword_A8B230->underParTitle; /*0x6c9235*/
       v15 = &dword_A8B230->underParMessage; /*0x6c923b*/
     }
-    wchar_t *String; // edi
-    String = GetStringCSF(v14, 0, aDRa2mdpostStls, 138); /*0x6c926e*/
+    wchar_t *String_buf; // edi
+    String_buf = GetStringCSF(v14, 0, aDRa2mdpostStls, 138); /*0x6c926e*/
     wchar_t *v17; // esi
     v17 = GetStringCSF(v15, 0, aDRa2mdpostStls, 139); /*0x6c927b*/
     HWND v18; // eax
     v18 = GetDlgItem(hWnd, 1779); /*0x6c927d*/
-    v33 = (LPARAM)String; /*0x6c927f*/
+    v33 = (LPARAM)String_buf; /*0x6c927f*/
     v19 = (void (__stdcall *)(HWND, UINT, WPARAM, LPARAM))SendMessageA; /*0x6c9280*/
     SendMessageA(v18, 0x4B2u, 0, v33); /*0x6c928e*/
     v20 = GetDlgItem(hWnd, 1780); /*0x6c9296*/

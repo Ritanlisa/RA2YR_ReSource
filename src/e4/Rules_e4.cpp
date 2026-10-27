@@ -282,7 +282,7 @@ int Rules::ReadMiscINI()
   int v260; // [esp-4h] [ebp-D8h]
   double v261[2]; // [esp+0h] [ebp-D4h]
   int v262; // [esp+18h] [ebp-BCh] BYREF
-  char String[128]; // [esp+1Ch] [ebp-B8h] BYREF
+  char String_buf[128]; // [esp+1Ch] [ebp-B8h] BYREF
   DynamicVector v264; // [esp+9Ch] [ebp-38h] BYREF
   int v265; // [esp+C8h] [ebp-Ch]
   int v266; // [esp+CCh] [ebp-8h]

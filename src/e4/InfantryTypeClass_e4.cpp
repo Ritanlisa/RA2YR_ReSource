@@ -319,7 +319,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   int v49; // [esp+40h] [ebp-8Ch]
   int v50; // [esp+44h] [ebp-88h]
   int v51; // [esp+48h] [ebp-84h]
-  char String[128]; // [esp+4Ch] [ebp-80h] BYREF
+  char String_buf[128]; // [esp+4Ch] [ebp-80h] BYREF
 
   v4 = v3; /*0x5240b0*/
   INIClass::ResetSection((INIClass *)this); /*0x5240b5*/
@@ -335,18 +335,12 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   PipIdx = INIClass::GetPipIdx((INIClass *)this, (unsigned __int8 *)(v4 + 36), aOccupypip, v4->OccupyPip_d); /*0x5240fd*/
   v6 = v4->OccupyWeapon_d; /*0x524102*/
   v45 = 128; /*0x52410c*/
-  v44.CapacityIncrement = (int)String; /*0x524111*/
+  v44.CapacityIncrement = (int)String_buf; /*0x524111*/
   v44.Count = (int)&g_INI_DefaultBuffer; /*0x524112*/
   *(unsigned int *)v44.IsInitialized = aOccupyweapon; /*0x524117*/
   v44.Capacity = v4 + 36; /*0x52411c*/
   v4->OccupyPip_d = PipIdx; /*0x52411f*/
-  if ( INIClass::GetString( /*0x524125*/
-         (INIClass *)this,
-         (unsigned __int8 *)v44.Capacity,
-         *(unsigned __int8 **)v44.IsInitialized,
-         (char *)v44.Count,
-         (char *)v44.CapacityIncrement,
-         v45) )
+  if ( ((INIClass *)(/*0x524125*/ (INIClass *)this))->GetString((unsigned __int8 *)v44.Capacity, *(unsigned __int8 **)v44.IsInitialized, (char *)v44.Count, (char *)v44.CapacityIncrement, v45) )
   {
     v7 = InfantryTypeClass::Find(String); /*0x524132*/
   }
@@ -356,13 +350,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   }
   v8 = v4->EliteOccupyWeapon; /*0x52413b*/
   v4->OccupyWeapon_d = v7; /*0x524141*/
-  if ( INIClass::GetString( /*0x52415e*/
-         (INIClass *)this,
-         (unsigned __int8 *)(v4 + 36),
-         aEliteoccupywea,
-         &g_INI_DefaultBuffer,
-         String,
-         128) )
+  if ( ((INIClass *)(/*0x52415e*/ (INIClass *)this))->GetString((unsigned __int8 *)(v4 + 36), aEliteoccupywea, &g_INI_DefaultBuffer, String_buf, 128) )
   {
     v9 = InfantryTypeClass::Find(String); /*0x52416b*/
   }
@@ -394,17 +382,11 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   *(unsigned int *)(v4 + 3744) = v11[1].vfptr; /*0x5241d4*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E4DB8) */  /*0x5241d7*/
   VectorClass::Destroy((int)&v48); /*0x5241df*/
-  if ( INIClass::GetString( /*0x5241fb*/
-         (INIClass *)this,
-         (unsigned __int8 *)(v4 + 36),
-         aDeadbodies,
-         &g_INI_DefaultBuffer,
-         String,
-         128) )
+  if ( ((INIClass *)(/*0x5241fb*/ (INIClass *)this))->GetString((unsigned __int8 *)(v4 + 36), aDeadbodies, &g_INI_DefaultBuffer, String_buf, 128) )
   {
     DynamicVectorClass::AnimTypeConstructor((DynamicVectorClass *)&v48, 0, 0); /*0x524210*/
     /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EB6D4) */  /*0x52421f*/
-    for ( i = strtok(String, Delimiter); i; i = strtok(0, Delimiter) ) /*0x524231*/
+    for ( i = strtok(String_buf, Delimiter); i; i = strtok(0, Delimiter) ) /*0x524231*/
     {
       if ( !*i ) /*0x524233*/
         break; /*0x524236*/
@@ -428,17 +410,11 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   *(unsigned int *)(v4 + 3688) = v14; /*0x5242bd*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7EB6F4) */  /*0x5242c9*/
   DynamicVectorClass::Destroy_Alt((_VectorClass_PBVAnimTypeClass *)&v48.q01C); /*0x5242cd*/
-  if ( INIClass::GetString( /*0x5242e9*/
-         (INIClass *)this,
-         (unsigned __int8 *)(v4 + 36),
-         aDeathanims,
-         &g_INI_DefaultBuffer,
-         String,
-         128) )
+  if ( ((INIClass *)(/*0x5242e9*/ (INIClass *)this))->GetString((unsigned __int8 *)(v4 + 36), aDeathanims, &g_INI_DefaultBuffer, String_buf, 128) )
   {
     DynamicVectorClass::AnimTypeConstructor((DynamicVectorClass *)&v48, 0, 0); /*0x5242fa*/
     /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EB6D4) */  /*0x524309*/
-    for ( j = strtok(String, Delimiter); j; j = strtok(0, Delimiter) ) /*0x52431b*/
+    for ( j = strtok(String_buf, Delimiter); j; j = strtok(0, Delimiter) ) /*0x52431b*/
     {
       if ( !*j ) /*0x52431d*/
         break; /*0x524320*/
@@ -475,32 +451,20 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   if ( v4->Cyborg_2 ) /*0x5243dd*/
     v4->DamageSparks = 1; /*0x5243e7*/
   v17 = v4->u32_EA4; /*0x5243ee*/
-  if ( !INIClass::GetString( /*0x524420*/
-          (INIClass *)this,
-          (unsigned __int8 *)(v4 + 36),
-          aEnterwatersoun,
-          &g_INI_DefaultBuffer,
-          String,
-          128)
-    || (Index = VocClass::FindIndex((VocClass *)String), Index == -1) )
+  if ( !((INIClass *)(/*0x524420*/ (INIClass *)this))->GetString((unsigned __int8 *)(v4 + 36), aEnterwatersoun, &g_INI_DefaultBuffer, String_buf, 128)
+    || (Index = VocClass::FindIndex((VocClass *)String_buf), Index == -1) )
   {
     Index = v17; /*0x524422*/
   }
   v19 = v4->u32_EA8; /*0x524424*/
   v45 = 128; /*0x52442e*/
-  v44.CapacityIncrement = (int)String; /*0x524433*/
+  v44.CapacityIncrement = (int)String_buf; /*0x524433*/
   v44.Count = (int)&g_INI_DefaultBuffer; /*0x524434*/
   *(unsigned int *)v44.IsInitialized = aLeavewatersoun; /*0x524439*/
   v44.Capacity = v4 + 36; /*0x52443e*/
   v4->u32_EA4 = Index; /*0x524441*/
-  if ( !INIClass::GetString( /*0x52445c*/
-          (INIClass *)this,
-          (unsigned __int8 *)v44.Capacity,
-          *(unsigned __int8 **)v44.IsInitialized,
-          (char *)v44.Count,
-          (char *)v44.CapacityIncrement,
-          v45)
-    || (v20 = VocClass::FindIndex((VocClass *)String), v20 == -1) )
+  if ( !((INIClass *)(/*0x52445c*/ (INIClass *)this))->GetString((unsigned __int8 *)v44.Capacity, *(unsigned __int8 **)v44.IsInitialized, (char *)v44.Count, (char *)v44.CapacityIncrement, v45)
+    || (v20 = VocClass::FindIndex((VocClass *)String_buf), v20 == -1) )
   {
     v20 = v19; /*0x52445e*/
   }

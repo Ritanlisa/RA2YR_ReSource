@@ -1,4 +1,5 @@
 #include "system/convert_class.hpp"
+#include "e4/classes/Math_e4.hpp"  // x145b: Math::RoundToInt supply
 #include "render/surface.hpp"
 #include "render/palette.hpp"
 
@@ -93,6 +94,7 @@ LightConvertClass::LightConvertClass(
 } // namespace gamemd
 
 #include "system/convert_class.hpp"
+#include "e4/classes/Math_e4.hpp"  // x145b: Math::RoundToInt supply
 #include "core/ddraw_init.hpp"
 #include "core/ddraw_init.hpp"
 #include "core/ddraw_init.hpp"
@@ -161,7 +163,7 @@ void LightConvertClass::UpdateColors(int red, int green, int blue, bool tinted) 
   if ( v6 >= 1 )
   {
     if ( !this->__pad_190 ) /*0x5560a8*/
-      this->__pad_190 = &unk_829C20; /*0x5560b2*/
+      *(void **)&this->__pad_190 = (void *)&unk_829C20; /*0x5560b2*/
     v7 = red; /*0x5560bc*/
     if ( red == -1 )
     {
@@ -251,19 +253,19 @@ void LightConvertClass::UpdateColors(int red, int green, int blue, bool tinted) 
         switch ( dword_829D20 ) /*0x5562de*/
         {
           case 0: /*0x5562de*/
-                        ConvertRGB24toRGB565( /*0x5562f8*/               this->u32_188,               v14,(__m64)(((long)(((unsigned long)(unsigned int)(v16) << 32) | (unsigned int)(v15)))),               ((long)(((unsigned long)(unsigned int)(v18) << 32) | (unsigned int)(v17))),               this->__pad_190);
+                        ConvertRGB24toRGB565( /*0x5562f8*/               this->u32_188,               v14,(__m64)(((long)(((unsigned long)(unsigned int)(v16) << 32) | (unsigned int)(v15)))),               (__m64)(((long)(((unsigned long)(unsigned int)(v18) << 32) | (unsigned int)(v17)))),               *(unsigned int *)&this->__pad_190);
             v14 += 256; /*0x556300*/
             break; /*0x556306*/
           case 1: /*0x5562de*/
-                        ConvertRGB24to655( /*0x55631e*/               this->u32_188,               v14,(__m64)(((long)(((unsigned long)(unsigned int)(v16) << 32) | (unsigned int)(v15)))),               ((long)(((unsigned long)(unsigned int)(v18) << 32) | (unsigned int)(v17))),               this->__pad_190);
+                        ConvertRGB24to655( /*0x55631e*/               this->u32_188,               v14,(__m64)(((long)(((unsigned long)(unsigned int)(v16) << 32) | (unsigned int)(v15)))),               (__m64)(((long)(((unsigned long)(unsigned int)(v18) << 32) | (unsigned int)(v17)))),               *(unsigned int *)&this->__pad_190);
             v14 += 256; /*0x556326*/
             break; /*0x55632c*/
           case 2: /*0x5562de*/
-                        ConvertRGB24to556( /*0x556344*/               this->u32_188,               v14,(__m64)(((long)(((unsigned long)(unsigned int)(v16) << 32) | (unsigned int)(v15)))),               ((long)(((unsigned long)(unsigned int)(v18) << 32) | (unsigned int)(v17))),               this->__pad_190);
+                        ConvertRGB24to556( /*0x556344*/               this->u32_188,               v14,(__m64)(((long)(((unsigned long)(unsigned int)(v16) << 32) | (unsigned int)(v15)))),               (__m64)(((long)(((unsigned long)(unsigned int)(v18) << 32) | (unsigned int)(v17)))),               *(unsigned int *)&this->__pad_190);
             v14 += 256; /*0x55634c*/
             break; /*0x556352*/
           case 3: /*0x5562de*/
-                        ConvertRGB24to565( /*0x55636a*/               this->u32_188,               v14,(__m64)(((long)(((unsigned long)(unsigned int)(v16) << 32) | (unsigned int)(v15)))),               ((long)(((unsigned long)(unsigned int)(v18) << 32) | (unsigned int)(v17))),               this->__pad_190);
+                        ConvertRGB24to565( /*0x55636a*/               this->u32_188,               v14,(__m64)(((long)(((unsigned long)(unsigned int)(v16) << 32) | (unsigned int)(v15)))),               (__m64)(((long)(((unsigned long)(unsigned int)(v18) << 32) | (unsigned int)(v17)))),               *(unsigned int *)&this->__pad_190);
             v14 += 256; /*0x556372*/
             break; /*0x556378*/
           default:

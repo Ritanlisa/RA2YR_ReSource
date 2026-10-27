@@ -72,12 +72,10 @@ static int FindHouseTypeByName(const char* name)
     // Global type list: dword_8B4124 holds array of HouseTypeClass*, g_ObjectTypeList holds count
     extern uint32_t g_ObjectTypeList; // 0x8b4130
     // The type array pointer is at 0x8b4124, 12 bytes before g_ObjectTypeList
-    extern HouseTypeClass** g_HouseTypeArray; // dword_8B4124
-
     if (!name || !*name) return -1;
     for (uint32_t i = 0; i < g_ObjectTypeList; ++i)
     {
-        HouseTypeClass* ht = g_HouseTypeArray[i];
+        HouseTypeClass* ht = ((HouseTypeClass **)g_HouseTypeArray)[i];
         if (ht && std::strcmp(ht->id, name) == 0)
             return (int)(i);
     }
@@ -88,8 +86,7 @@ HouseTypeClass* HouseTypeClass::FindParentCountry() const
 {
     int idx = FindHouseTypeByName(parentCountry);
     if (idx < 0) return nullptr;
-    extern HouseTypeClass** g_HouseTypeArray;
-    return g_HouseTypeArray[idx];
+    return ((HouseTypeClass **)g_HouseTypeArray)[idx];
 }
 
 int HouseTypeClass::FindParentCountryIndex() const

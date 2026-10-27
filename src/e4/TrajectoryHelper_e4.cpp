@@ -153,7 +153,7 @@ unsigned int * TrajectoryHelper::GetObstacle(unsigned char * a1, unsigned char *
   HIWORD(v41) = a6 / 256; /*0x4cc3a0*/
   v45 = a1; /*0x4cc3a9*/
   *(unsigned int *)v44 = v41; /*0x4cc3ad*/
-  v11 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v44); /*0x4cc3b6*/
+  v11 = (((CellCoord *)&dword_87F7E8)->To_CellObj(v44); /*0x4cc3b6*/
   v43 = v11; /*0x4cc3bc*/
   if ( *(unsigned char *)(a8 + 662) ) /*0x4cc3c0*/
   {
@@ -210,7 +210,7 @@ LABEL_16:
         if ( v32 > v31 ) /*0x4cc562*/
         {
 LABEL_22:
-          v34 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v44); /*0x4cc574*/
+          v34 = (((CellCoord *)&dword_87F7E8)->To_CellObj(v44); /*0x4cc574*/
           if ( *(unsigned char *)(a8 + 662) ) /*0x4cc589*/
           {
             v35 = (a4)->GetSlopeIndex(); /*0x4cc59e*/

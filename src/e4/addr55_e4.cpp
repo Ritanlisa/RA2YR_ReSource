@@ -1213,7 +1213,7 @@ void UpdateDeferredLightSurfaces(int a1, char a2)
         }
         else
         {
-          v6 = CellCoord::To_CellObj(&dword_87F7E8, (__int16 *)(*((unsigned int *)g_X99Vec_ABCA40.Items + v4) + 16)); /*0x554e27*/
+          v6 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((__int16 *)(*((unsigned int *)g_X99Vec_ABCA40.Items + v4) + 16)); /*0x554e27*/
           Tactical::CreateTacticalLightSurface((int)v6, &v24, &v25, &v26, &v27, (int)&v28, (int)&v29); /*0x554e2e*/
           **((unsigned int **)g_X99Vec_ABCA40.Items + dword_ABCA7C) = v24; /*0x554e46*/
           *(unsigned int *)(*((unsigned int *)g_X99Vec_ABCA40.Items + dword_ABCA7C) + 4) = v25; /*0x554e5a*/
@@ -1247,7 +1247,7 @@ void UpdateDeferredLightSurfaces(int a1, char a2)
         v19 = *((unsigned short *)v10 + 4); /*0x554f61*/
         v18 = *((unsigned int *)v10 + 1); /*0x554f62*/
         v17 = *(unsigned int *)v10; /*0x554f66*/
-        v11 = CellCoord::To_CellObj(&dword_87F7E8, (__int16 *)v10 + 8); /*0x554f6d*/
+        v11 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((__int16 *)v10 + 8); /*0x554f6d*/
         TacticalClass::SetView((int)v11, v17, v18, v19, v20, v21, v22); /*0x554f74*/
         __3_YAXPAX_Z(v10); /*0x554f7a*/
       }
@@ -3134,9 +3134,9 @@ AbstractClass * * Options_Screen_DlgProc(HWND hWnd, WPARAM wParam, unsigned int 
           HWND v16 = v15; // esi /*0x55ffa3*/
           if ( v15 ) /*0x55ffa7*/
           {
-            wchar_t *String; // eax
-            String = GetStringCSF(v14, 0, g_Str_File_MainOpt_cpp, 553); /*0x55ffbb*/
-            SendMessageA(v16, 0x4B2u, 0, (LPARAM)String); /*0x55ffc9*/
+            wchar_t *String_buf; // eax
+            String_buf = GetStringCSF(v14, 0, g_Str_File_MainOpt_cpp, 553); /*0x55ffbb*/
+            SendMessageA(v16, 0x4B2u, 0, (LPARAM)String_buf); /*0x55ffc9*/
             return 0; /*0x55ffd8*/
           }
         }

@@ -2910,7 +2910,7 @@ char WOL_RequestChannelList2(int a1, unsigned char a2)
 namespace gamemd {
 char RequestChannelListWOL()
 {
-  wchar_t *String; // eax
+  wchar_t *String_buf; // eax
   int v1; // edi
   DWORD v2; // ebx
   wchar_t *v3; // eax
@@ -2926,7 +2926,7 @@ char RequestChannelListWOL()
   const wchar_t *v14; // [esp+0h] [ebp-14h]
   void *v15; // [esp+10h] [ebp-4h] BYREF
 
-  String = GetStringCSF(aTxtReqChanlist, 0, g_Str_File_wonline_cpp, 2298); /*0x77f136*/
+  String_buf = GetStringCSF(aTxtReqChanlist, 0, g_Str_File_wonline_cpp, 2298); /*0x77f136*/
   ((WideString *)((wchar_t **)&v15))->Assign(String); /*0x77f140*/
   ShowUIMessage(0); /*0x77f150*/
   DeleteAndZero::Alt(&v15); /*0x77f159*/

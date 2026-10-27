@@ -934,6 +934,7 @@ extern int MCVRedeploy;  // data: 0xA8B320
 
 class SuperWeapon {
 int UpdateSuperWeaponsOwnedHouseClass(HouseClass* ownerHouse); // 0x50AF10 (IDA arg is the house pointer)
+char GetField10();  // 0x6CC2A0 (signals: thiscall 0-arg ret char; X145C supply for building_bodies call site)
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int CreateUnits();  // 0x445F80
     int CreateNukePayload();  // 0x46B310

@@ -45,7 +45,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     bool NeverAsk(int a1);  // 0x479110
     int SetCurrentInstance();  // 0x47ADA0
     int CheckDiscPresence(int a1);  // 0x4A8270
-    bool CreateDialog();  // 0x623CD0
+    bool ShowDiscPromptDialog();  // 0x623CD0 (x145b: 原 CreateDialog 与 winuser.h 函数式宏撞名 C2059; IDA 名 CD::CreateDialog)
     // --- gap2 auto-generated stub declarations (END) ---
 
     unsigned int u32_10;  // X10 supply (member_lookup)

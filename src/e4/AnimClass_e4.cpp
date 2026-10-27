@@ -483,7 +483,7 @@ LABEL_47:
     LOWORD(v91) = *v30 / 256; /*0x423220*/
     HIWORD(v91) = v30[1] / 256; /*0x423238*/
     *(float *)v100 = v91; /*0x423241*/
-    v31 = (int *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, (__int16 *)v100); /*0x423250*/
+    v31 = (int *)(((CellCoord *)&DataGlobal_87F7E8)->To_CellObj((__int16 *)v100); /*0x423250*/
     if ( !v31[13] ) /*0x423252*/
       TacticalClass::SetView(v31, 0, 0x10000, 0, 1000, 1000, 1000); /*0x423273*/
     v32 = this->u32_C8; /*0x42327b*/
@@ -508,7 +508,7 @@ LABEL_47:
       LOWORD(v92) = *v33 / 256; /*0x42331d*/
       HIWORD(v92) = v33[1] / 256; /*0x423336*/
       *(float *)v100 = v92; /*0x423343*/
-      v27 = *((__int16 *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, (__int16 *)v100) + 133); /*0x42334d*/
+      v27 = *((__int16 *)(((CellCoord *)&DataGlobal_87F7E8)->To_CellObj((__int16 *)v100) + 133); /*0x42334d*/
 LABEL_77:
       v106 = v27; /*0x423354*/
     }
@@ -641,7 +641,7 @@ LABEL_99:
   (v94) = ((v94) & ~0xFFFF) | ((*v60 / 256) & 0xFFFF); /*0x4235ef*/
   HIWORD(v94) = v60[1] / 256; /*0x423608*/
   *(unsigned int *)v101 = v94; /*0x423615*/
-  v61 = (CellClass *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v101); /*0x42361a*/
+  v61 = (CellClass *)(((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v101); /*0x42361a*/
   if ( (unsigned __int8)CellClass::QuickPassable(v61) ) /*0x423621*/
   {
     v41 = 0.0; /*0x42362a*/

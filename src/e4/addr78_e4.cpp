@@ -580,14 +580,14 @@ void * FormatWOLPlayerInfoForDisplay(wchar_t ** a1, HWND a2, WPARAM wParam)
   const wchar_t *v10; // [esp-4h] [ebp-2B4h]
   wchar_t *v11; // [esp-4h] [ebp-2B4h]
   DeleteAndZero v12; // [esp+10h] [ebp-2A0h] BYREF
-  String v13; // [esp+1Ch] [ebp-294h] BYREF
+  String_buf v13; // [esp+1Ch] [ebp-294h] BYREF
   int v14; // [esp+24h] [ebp-28Ch] BYREF
   int v15; // [esp+28h] [ebp-288h] BYREF
   int v16; // [esp+2Ch] [ebp-284h] BYREF
   int v17; // [esp+30h] [ebp-280h] BYREF
   char v18[108]; // [esp+34h] [ebp-27Ch] BYREF
   wchar_t *v19[67]; // [esp+A0h] [ebp-210h] BYREF
-  char String[132]; // [esp+1ACh] [ebp-104h] BYREF
+  char String_buf[132]; // [esp+1ACh] [ebp-104h] BYREF
   wchar_t Buffer[64]; // [esp+230h] [ebp-80h] BYREF
 
   if ( wParam == -1 ) /*0x780e46*/
@@ -626,14 +626,14 @@ LABEL_14:
     swprintf(Buffer, (const size_t)v8, v10); /*0x780f42*/
     WideString::Append2((WideString *)&v12, Buffer); /*0x780f52*/
   }
-  strncpy(String, (const char *)&v19[56], 0x80u); /*0x780f89*/
+  strncpy(String_buf, (const char *)&v19[56], 0x80u); /*0x780f89*/
   v14 = 0; /*0x780f95*/
   v15 = 0; /*0x780f99*/
   *(unsigned int *)&v13.m_3[1] = 0; /*0x780f9d*/
   v17 = 0; /*0x780fa1*/
   v16 = 0; /*0x780fa5*/
   unknown_libname_73(&v12.ptr_8); /*0x780fa9*/
-  ParseStringCommaInts(String, &v14, &v15, (int *)&v13.m_3[1], &v17, &v16, (void **)&v12.ptr_8); /*0x780fd2*/
+  ParseStringCommaInts(String_buf, &v14, &v15, (int *)&v13.m_3[1], &v17, &v16, (void **)&v12.ptr_8); /*0x780fd2*/
   if ( String::Length((String *)&v12.u32_8) ) /*0x780fdb*/
   {
     Render_Format((wchar_t **)&v12.ptr_4, (String *)&v12.u32_8); /*0x780fec*/
@@ -3432,28 +3432,10 @@ int WOL_FindLobbyID(char a1)  // G42.42a: FULL body restored (G42.41i stub rever
     sprintf(Buffer, "Territory%02d", *(unsigned int *)dword_A8B240); /*0x7882ad*/
     strcpy(Source, Buffer); /*0x7882d4*/
     if ( *(unsigned char *)(*(unsigned int *)(FindLobbyIDWOL_Find() + 4) + 20) ) /*0x7882ef*/
-      INIClass::GetString( /*0x788313*/
-        (unsigned __int8 ***)v18,
-        (unsigned __int8 *)aEurope,
-        (unsigned __int8 *)Buffer,
-        Source,
-        Destination,
-        32);
+      ((INIClass *)(/*0x788313*/ (unsigned __int8 ***)v18))->GetString((unsigned __int8 *)aEurope, (unsigned __int8 *)Buffer, Source, Destination, 32);
     else
-      INIClass::GetString( /*0x788308*/
-        (unsigned __int8 ***)v18,
-        (unsigned __int8 *)aNorthamerica,
-        (unsigned __int8 *)Buffer,
-        Source,
-        Destination,
-        32);
-    INIClass::GetString( /*0x788338*/
-      (unsigned __int8 ***)v18,
-      (unsigned __int8 *)Destination,
-      (unsigned __int8 *)g_INI_Key_Name,
-      aATerritory,
-      v31,
-      32);
+      ((INIClass *)(/*0x788308*/ (unsigned __int8 ***)v18))->GetString((unsigned __int8 *)aNorthamerica, (unsigned __int8 *)Buffer, Source, Destination, 32);
+    ((INIClass *)(/*0x788338*/ (unsigned __int8 ***)v18))->GetString((unsigned __int8 *)Destination, (unsigned __int8 *)g_INI_Key_Name, aATerritory, v31, 32);
     BulkCharToWide(String2, (unsigned __int8 *)v31, -1); /*0x78834d*/
     dword_B75E50 = (int)_wcsdup(String2); /*0x788364*/
     if ( v4 ) /*0x788369*/
@@ -3627,7 +3609,7 @@ namespace gamemd {
 int WOL_LeaveChannelEx(int a1, char ** a2, void * a3)
 {
 
-  wchar_t *String; // eax
+  wchar_t *String_buf; // eax
   int i; // esi
   HWND v6; // eax
   HWND Current; // eax
@@ -3649,8 +3631,8 @@ int WOL_LeaveChannelEx(int a1, char ** a2, void * a3)
       goto LABEL_14; /*0x788887*/
     Debug::Log(); /*0x78889d*/
     (*(void (**)(LPVOID))(*(unsigned int *)ppv + 36))(ppv); /*0x7888ad*/
-    String = GetStringCSF(g_Str_WOL_LeavingChannel, 0, g_Str_File_wonline_cpp, 10704); /*0x7888c1*/
-    WideString::Assign((wchar_t **)&v12, String); /*0x7888cb*/
+    String_buf = GetStringCSF(g_Str_WOL_LeavingChannel, 0, g_Str_File_wonline_cpp, 10704); /*0x7888c1*/
+    WideString::Assign((wchar_t **)&v12, String_buf); /*0x7888cb*/
     ShowUIMessage(64, (wchar_t **)&v12, 1); /*0x7888db*/
     DeleteAndZero::Alt(&v12); /*0x7888e4*/
     for ( i = 0; dword_B77DD0; ++i ) /*0x7888f2*/
@@ -4785,7 +4767,7 @@ int OnlineLobbyDlgProcWOL(HWND hDlg, unsigned int a2, int a3, HWND hWnd)
   wchar_t *v21; // eax
   wchar_t *v22; // eax
   wchar_t *v23; // eax
-  wchar_t *String; // eax
+  wchar_t *String_buf; // eax
   HWND v25; // esi
   int v26; // esi
   wchar_t *v27; // eax
@@ -4892,7 +4874,7 @@ int OnlineLobbyDlgProcWOL(HWND hDlg, unsigned int a2, int a3, HWND hWnd)
         (*(void (**)(LPVOID, char *))(*(unsigned int *)ppv + 96))(ppv, v45); /*0x78d7ee*/
         return 0; /*0x78d7fd*/
       }
-      String = GetStringCSF((wchar_t *)g_Str_TXT_NAME_ERROR, 0, g_Str_File_wonline_cpp, 14080); /*0x78d811*/
+      String_buf = GetStringCSF((wchar_t *)g_Str_TXT_NAME_ERROR, 0, g_Str_File_wonline_cpp, 14080); /*0x78d811*/
     }
     else
     {
@@ -4920,9 +4902,9 @@ int OnlineLobbyDlgProcWOL(HWND hDlg, unsigned int a2, int a3, HWND hWnd)
         DeleteAndZero::Alt(&v39); /*0x78d71f*/
         return 0; /*0x78d730*/
       }
-      String = GetStringCSF(aTxtNosquad, 0, g_Str_File_wonline_cpp, 14176); /*0x78d664*/
+      String_buf = GetStringCSF(aTxtNosquad, 0, g_Str_File_wonline_cpp, 14176); /*0x78d664*/
     }
-    Dialog::ShowStatusText(-1, (size_t)String); /*0x78d66c*/
+    Dialog::ShowStatusText(-1, (size_t)String_buf); /*0x78d66c*/
     return 0; /*0x78d680*/
   }
   if ( (unsigned __int16)a3 == 1474 ) /*0x78d19b*/
@@ -5120,7 +5102,7 @@ int sub_78DA30(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 namespace gamemd {
 int sub_78E230(HWND hWnd, UINT, WPARAM, HWND hCtl)
 {
-  wchar_t *String; // eax
+  wchar_t *String_buf; // eax
 
   if ( a2 > 0x111 ) /*0x78e23b*/
   {
@@ -5141,8 +5123,8 @@ int sub_78E230(HWND hWnd, UINT, WPARAM, HWND hCtl)
       HWND v40; // edi
       v40 = GetDlgItem(hWnd, 1582); /*0x78e788*/
       ListBox::Clear(v40); /*0x78e78c*/
-      String = GetStringCSF(g_Str_TXT_JANUARY, 0, g_Str_File_wonline_cpp, 15162); /*0x78e7a2*/
-      SendMessageA(v40, 0x4C2u, 0, (LPARAM)String); /*0x78e7b0*/
+      String_buf = GetStringCSF(g_Str_TXT_JANUARY, 0, g_Str_File_wonline_cpp, 15162); /*0x78e7a2*/
+      SendMessageA(v40, 0x4C2u, 0, (LPARAM)String_buf); /*0x78e7b0*/
       wchar_t *v42; // eax
       v42 = GetStringCSF(g_Str_TXT_FEBRUARY, 0, g_Str_File_wonline_cpp, 15163); /*0x78e7c3*/
       SendMessageA(v40, 0x4C2u, 0, (LPARAM)v42); /*0x78e7d1*/

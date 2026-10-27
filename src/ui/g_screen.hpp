@@ -68,6 +68,9 @@ public:
     // unmatched: no callgraph reference and no git history record
     virtual bool g_var_d6ef1e(const CellStruct& cell, HouseClass* house);
 
+    // x145b: 0x4F4410 vt+48 (csp slot authority); 1-arg 成员形态 = e4 树统一调用样式 (addr6A:147/SidebarClass_e4:589)
+    int InsertOrdered(int a1);  // 0x4F4410
+
     int32_t  ScreenShakeX;
     int32_t  ScreenShakeY;
     int32_t  GScreenClass_field_0C;

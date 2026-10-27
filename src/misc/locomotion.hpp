@@ -193,6 +193,7 @@ protected:
     public:  // symbol-anchor
     // === SYMBOL-ANCHOR (BEGIN) ===
     int Initialize();  // 0x4af540 -- LocomotionClass::Initialize
+    int Init();  // 0x55A6C0 (signals: thiscall 0-arg; X145C supply)
     int CheckBridgeBlock();  // 0x4cfa70 -- LocomotionClass::CheckBridgeBlock
     double GetSpeedMultiplier();  // 0x4dc760 -- LocomotionClass::GetSpeedMultiplier
     void* ProcessMove(int a1);  // 0x5172f0 -- LocomotionClass::ProcessMove
@@ -206,8 +207,12 @@ protected:
     unsigned int u32_1C;  // X10 supply (member_lookup)
     unsigned int u32_24;  // X10 supply (member_lookup)
     unsigned int u32_2C;  // X10 supply (member_lookup)
+    unsigned int ptr_30;  // X10 supply (member_lookup; offset 48) — X145C supply
     unsigned int u32_34;  // X10 supply (member_lookup)
     unsigned int u32_38;  // X10 supply (member_lookup)
+    unsigned int q040;  // X10 supply (member_lookup; offset 64) — X145C supply
+    unsigned int q044;  // X10 supply (member_lookup; offset 68) — X145C supply
+    unsigned int u32_48;  // X10 supply (member_lookup; offset 72) — X145C supply
     unsigned int u32_4C;  // X10 supply (member_lookup)
     unsigned int u32_58;  // X10 supply (member_lookup)
     unsigned int u32_5C;  // X10 supply (member_lookup)

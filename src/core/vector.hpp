@@ -112,9 +112,9 @@ public:
     int Capacity = 0;
     bool IsInitialized = true;
     bool IsAllocated = false;
-
-
-    void * ptr_0;  // 0x0 [X55 W3 supply (render vocab)]
+    // X55 ptr_0 supply member REMOVED (X145C): inflated sizeof to 20; radioLinks
+    // requires 16 bytes per IDA ctor 0x65a750 (q000=vfptr, Items, Capacity,
+    // IsInitialized, IsAllocated). vfptr already occupies offset 0.
 };
 
 template <typename T>

@@ -174,7 +174,7 @@ LABEL_14:
 }
 // 0x528A10
 namespace gamemd {
-unsigned int INIClass::GetString(uint8_t *a2, uint8_t *a3, char *Source, char *Destination, int Count, int aP4, int aP1, int aP3, int a1, int a4, int a5, int aP2)
+unsigned int INIClass::GetString(uint8_t *a2, uint8_t *a3, char *Source, char *Destination, int Count)
 {
 
   char *v6; // edi

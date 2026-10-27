@@ -50,6 +50,7 @@ class RadSiteClass;
 class TubeClass;
 class FoggedObjectClass;
 class TagClass;
+class AbstractClass;  // x145b fwd (landType @0xEC member supply, 消 C2143)
 #ifndef GAMEMD_USING_ObjectClass
 #define GAMEMD_USING_ObjectClass
 using ra2::game::ObjectClass;

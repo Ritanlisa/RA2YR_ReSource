@@ -1,5 +1,6 @@
 #include "network/winsock.hpp"
 #include "e4/classes/Socket_e4.hpp"
+#include "e4/classes/NetworkClass_e4.hpp"  // x145b: NetworkClass::UnregisterAsync supply
 #include "core/logging.hpp"
 #define _WINSOCK_DEPRECATED_NO_WARNINGS
 #include <winsock2.h>
@@ -33,12 +34,12 @@ WinsockInterfaceClass::WinsockInterfaceClass() noexcept
   /* X11: ptr_0 install elided (implicit via WinsockInterfaceClass virtuals 0x7b1abc) */
   if ( v2 ) /*0x7b1ac4*/
   {
-    NetworkClass::UnregisterAsync((SOCKET *)this); /*0x7b1ac6*/
-    (*(void (**)(int))(*&this->u32_10))(this); /*0x7b1ad0*/
+    ((NetworkClass *)this)->UnregisterAsync(); /*0x7b1ac6*/
+    (*(void (__thiscall **)(WinsockInterfaceClass *))(*(unsigned int *)&this->u32_10 + 4))(this); /*0x7b1ad0*/
     WSACleanup(); /*0x7b1ad3*/
     this->u32_3F068 = 0; /*0x7b1ad8*/
   }
-  v3 = *&this->u32_3C; /*0x7b1ade*/
+  v3 = (void *)this->u32_3C; /*0x7b1ade*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x7b1ae1*/
   if ( v3 && this->u32_45 ) /*0x7b1aec*/
   {
@@ -47,7 +48,7 @@ WinsockInterfaceClass::WinsockInterfaceClass() noexcept
   }
   this->u32_45 = 0; /*0x7b1afd*/
   this->u32_40 = 0; /*0x7b1b00*/
-  v4 = *&this->u32_24; /*0x7b1b03*/
+  v4 = (void *)this->u32_24; /*0x7b1b03*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x7b1b06*/
   if ( v4 && this->u32_2D ) /*0x7b1b11*/
   {
@@ -56,7 +57,7 @@ WinsockInterfaceClass::WinsockInterfaceClass() noexcept
   }
   this->u32_2D = 0; /*0x7b1b22*/
   this->u32_28 = 0; /*0x7b1b25*/
-  v5 = *&this->u32_C; /*0x7b1b28*/
+  v5 = (void *)this->u32_C; /*0x7b1b28*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x7b1b2b*/
   if ( v5 && this->u32_15 ) /*0x7b1b36*/
   {
@@ -278,7 +279,7 @@ bool IPXInterfaceClass::Bind(uint32_t network, const uint8_t node[6], uint16_t s
   else
   {
     Debug::Log(); /*0x7b1185*/
-    if ( (network)->initSocket(*((unsigned int *)network + 64702), (int)&name) ) /*0x7b119b*/
+    if ( ((IPXInterfaceClass *)this)->initSocket(*((unsigned int *)network + 64702), (int)&name) ) /*0x7b119b*/
     {
       Debug::Log(); /*0x7b1236*/
       v5 = *(unsigned short *)&name.sa_data[8]; /*0x7b123f*/
@@ -309,7 +310,7 @@ bool IPXInterfaceClass::Bind(uint32_t network, const uint8_t node[6], uint16_t s
         if ( setsockopt(*((unsigned int *)network + 64539), 1000, 16385, v6, 4) == -1 ) /*0x7b1383*/
           WSAGetLastError(); /*0x7b1385*/
         Debug::Log(); /*0x7b1390*/
-        Socket::ConfigureBuffers((WinsockInterfaceClass *)network, 0xFFFFFFFF); /*0x7b13ab*/
+        ((gamemd::Socket *)network)->ConfigureBuffers(0xFFFFFFFF); /*0x7b13ab*/
         Debug::Log(); /*0x7b13b5*/
         return 1; /*0x7b13bd*/
       }
@@ -447,6 +448,7 @@ bool UDPInterfaceClass::SetNonBlocking(bool nonBlock)
     if (!Socket || Socket == INVALID_SOCKET) return false;
     u_long mode = nonBlock ? 1 : 0;
     return ioctlsocket((SOCKET)Socket, FIONBIO, &mode) == 0;
+}
 
 bool UDPInterfaceClass::SetBroadcast(bool enable)
 {
@@ -455,6 +457,4 @@ bool UDPInterfaceClass::SetBroadcast(bool enable)
     return setsockopt((SOCKET)Socket, SOL_SOCKET, SO_BROADCAST,
                       (const char*)&opt, sizeof(opt)) == 0;
 
-} // namespace gamemd
-}  // L-fix: close namespace tail 1
-} // namespace gamemd
+} // namespace gamemd  // x145b: L-fix 多余的 namespace 尾已随 SetNonBlocking 补brace撤除

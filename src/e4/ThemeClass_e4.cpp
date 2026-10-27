@@ -50,7 +50,7 @@ int ThemeClass::ReadThemeEntry(uint8_t ***a2, void * aRepeat, void * aScenario, 
     return 0; /*0x720584*/
   const char *v3; // edi
   v3 = (const char *)this->q100 + 130); /*0x7204a6*/
-  INIClass::GetString((INIClass *)a2, (uint8_t *)this, aSound, &g_INI_DefaultBuffer, (char *)this->q100 + 130), 256); /*0x7204bf*/
+  (((INIClass *)a2)->GetString((unsigned __int8 *)this, aSound, &g_INI_DefaultBuffer, (char *)(this + 256), 256)), 256); /*0x7204bf*/
   while ( *v3 == 36 || *v3 == 35 ) /*0x7204cc*/
     ++v3; /*0x7204ce*/
   strcpy((char *)this->q100 + 130), v3); /*0x7204e9*/
@@ -101,7 +101,7 @@ void * ThemeClass::InitializeThemes(char * a2)
   for ( i = 0; v5 < KeyCount; i = v5 ) /*0x7205b7*/
   {
     StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(v2->ptr_0, g_INI_Key_Themes, v5); /*0x7205d1*/
-    if ( INIClass::GetString(v2, g_INI_Key_Themes, StringByIndex, &g_INI_DefaultBuffer, Destination, 32) ) /*0x7205de*/
+    if ( ((INIClass *)v2)->GetString((unsigned __int8 *)g_INI_Key_Themes, StringByIndex, &g_INI_DefaultBuffer, Destination, 32) ) /*0x7205de*/
     {
       if ( &v16 == (int *)-24 ) /*0x7205f1*/
         goto LABEL_10; /*0x7205f1*/

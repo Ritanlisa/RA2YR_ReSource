@@ -42,7 +42,7 @@ int32_t VocClass::FindIndex(const char* pName)
   while ( 1 )
   {
     v3 = (char *)**((unsigned int **)g_VocAudioConfig + v2); /*0x7514eb*/
-    v4 = (char *)(v3 ? (v3)->GetSampleName() : g_Str_Invalid_Voc);
+    v4 = (char *)(v3 ? ((VocClass *)v3)->GetSampleName() : g_Str_Invalid_Voc);
     if ( !_strcmpi((char *)pName, v4) ) /*0x7514ff*/
       break; /*0x7514ff*/
     if ( ++v2 >= g_VocPlayState ) /*0x751513*/
@@ -228,9 +228,7 @@ namespace gamemd {
 
 // --- AudioEventHandle ---
 
-bool AudioEventHandle::IsPlaying() const { return false; 
+bool AudioEventHandle::IsPlaying() const { return false; }
 void AudioEventHandle::Stop() {
-
-} // namespace gamemd
-}  // L-fix: close namespace tail 1
+}  // AudioEventHandle::Stop
 } // namespace gamemd

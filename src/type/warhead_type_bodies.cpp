@@ -5,11 +5,11 @@
 namespace gamemd {
 WarheadFlags::WarheadFlags(bool FF , bool Retal , bool Acquire) : ForceFire(FF), Retaliate(Retal), PassiveAcquire(Acquire) {}
 
-HRESULT __stdcall WarheadTypeClass::GetClassID(CLSID* pClassID) { return E_NOTIMPL; }
+HRESULT __stdcall WarheadTypeClass::GetClassIdentifier(CLSID* pClassID) { return E_NOTIMPL; }
 
-HRESULT __stdcall WarheadTypeClass::Load(IStream* pStm) { return S_OK; }
+HRESULT __stdcall WarheadTypeClass::LoadTypeData(IStream* pStm) { return S_OK; }
 
-HRESULT __stdcall WarheadTypeClass::Save(IStream* pStm, BOOL fClearDirty) { return S_OK; }
+HRESULT __stdcall WarheadTypeClass::SaveToINI(IStream* pStm, BOOL fClearDirty) { return S_OK; }
 
 AbstractType __stdcall WarheadTypeClass::whatAmI() const { return AbstractType::WarheadType; }
 

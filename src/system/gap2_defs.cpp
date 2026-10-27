@@ -23712,7 +23712,7 @@ int ScenarioClass::SaveGameOptions() {
 }
 // 0x623CD0
 namespace gamemd { 
-bool CD::CreateDialog() {
+bool CD::ShowDiscPromptDialog() {
   HWND Dialog; // eax
   Dialog *v3; // esi
   HWND DlgItem; // eax
@@ -27141,7 +27141,7 @@ int ScenarioClass::SaveGameOptions() {
 }
 // 0x623CD0
 namespace gamemd { 
-bool CD::CreateDialog() {
+bool CD::ShowDiscPromptDialog() {
   HWND Dialog; // eax
   Dialog *v3; // esi
   HWND DlgItem; // eax
@@ -27930,7 +27930,7 @@ int ScenarioClass::SaveGameOptions() {
 }
 // 0x623CD0
 namespace gamemd { 
-bool CD::CreateDialog() {
+bool CD::ShowDiscPromptDialog() {
   HWND Dialog; // eax
   Dialog *v3; // esi
   HWND DlgItem; // eax

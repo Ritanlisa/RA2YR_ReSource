@@ -56,7 +56,7 @@ TechnoClass * * Cell::IsOccupied(short * a2, char a3)
   {
     v15[0] = 0; /*0x419b44*/
     v15[1] = 0; /*0x419b4c*/
-    v5 = (Object *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, a2); /*0x419b54*/
+    v5 = (Object *)(((CellCoord *)&dword_87F7E8)->To_CellObj(a2); /*0x419b54*/
     ClosestObjectCell = (unsigned int *)Object::FindClosestObjectCell(v5, v15, 0, 0); /*0x419b5b*/
     if ( ClosestObjectCell ) /*0x419b62*/
     {
@@ -76,7 +76,7 @@ TechnoClass * * Cell::IsOccupied(short * a2, char a3)
   {
     v16 = 0; /*0x419bc1*/
   }
-  v14 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, a2); /*0x419bd1*/
+  v14 = (((CellCoord *)&dword_87F7E8)->To_CellObj(a2); /*0x419bd1*/
   v9 = 0; /*0x419bda*/
   if ( dword_8B3DD0 <= 0 ) /*0x419bde*/
     return 1; /*0x419c6b*/
@@ -614,7 +614,7 @@ LABEL_12:
       HIWORD(v15) = v8 + this->u32_26; /*0x487b0c*/
       LOWORD(v15) = v14 + this->u32_24; /*0x487b11*/
       aP1 = v15; /*0x487b1e*/
-      v9 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)&aP1); /*0x487b28*/
+      v9 = (((CellCoord *)&dword_87F7E8)->To_CellObj((__int16 *)&aP1); /*0x487b28*/
       if ( v9 != (unsigned int *)this ) /*0x487b2f*/
       {
         v10 = v9->u32_E4; /*0x487b35*/
@@ -745,7 +745,7 @@ Coord * * Cell::IsValidDestination(short * a2)
   v11 = (*(int (**)(Cell *, int))(this->Cell_field_0x0 + 132))(this, v10); /*0x4dcf7a*/
   if ( !MapSeed::CheckTileMatch((MapSeed *)&DataGlobal_87F7E8, v14, a2, *(unsigned int *)(v11 + 1460), 0, 0, 0) ) /*0x4dcf92*/
     return 0; /*0x4dcf92*/
-  v12 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, a2); /*0x4dcfa1*/
+  v12 = (((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(a2); /*0x4dcfa1*/
   return v12->u32_EC == 5 /*0x4dcfc7*/
       && !(*(int (**)(Cell *, unsigned int *, int, int, unsigned int, int))(this->Cell_field_0x0 + 428))(
             this,

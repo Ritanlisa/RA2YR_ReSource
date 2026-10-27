@@ -4,6 +4,7 @@
 #include "object/foot.hpp"  // full FootClass for locomotor member access
 #include "structure/globals_structure.hpp"  // g_CurrentFrame (Frame @ 0xA8ED84)
 #include "core/ida_vtables.h"  // gC_vftable3
+extern unsigned int stru_A8EB00;  // data: 0xA8EB00 (X145C supply)
 
 extern const IID IID_ILocomotion;  // data: 0x7ed358 (x87 W1 supply; same decl as e4 locomotion TUs)
 extern int g_OverlayTypeConfig;  // data: 0xB077F8 (e4_globals_decls.hpp:1335)
@@ -18,29 +19,29 @@ HRESULT __stdcall LocomotionClass::QueryInterface(const IID& a2, void** a3)
   if ( !a3 ) /*0x55a9b6*/
     return -2147467261; /*0x55a9b8*/
   *a3 = 0; /*0x55a9d9*/
-  if ( !memcmp(a2, &IID_IUnknown, 0x10u) ) /*0x55a9df*/
+  if ( !memcmp((const void *)&a2, &IID_IUnknown, 0x10u) ) /*0x55a9df*/
   {
     if ( this ) /*0x55a9e5*/
-      v4 = &this->ILocomotion[4]; /*0x55a9e7*/
+      v4 = &((char *)this)[4]; /*0x55a9e7*/
     else
       v4 = 0; /*0x55a9ec*/
     *a3 = v4; /*0x55a9ee*/
   }
-  if ( !memcmp(a2, &IID_IPersistStream, 0x10u) ) /*0x55a9ff*/
+  if ( !memcmp((const void *)&a2, &IID_IPersistStream, 0x10u) ) /*0x55a9ff*/
     *a3 = this; /*0x55aa03*/
-  if ( !memcmp(a2, &IID_ILocomotion, 0x10u) ) /*0x55aa13*/
+  if ( !memcmp((const void *)&a2, &IID_ILocomotion, 0x10u) ) /*0x55aa13*/
   {
     if ( this ) /*0x55aa1a*/
-      v5 = &this->ILocomotion[4]; /*0x55aa1c*/
+      v5 = &((char *)this)[4]; /*0x55aa1c*/
     else
       v5 = 0; /*0x55aa21*/
     *a3 = v5; /*0x55aa23*/
   }
-  if ( !memcmp(a2, &IID_IPersist, 0x10u) ) /*0x55aa33*/
+  if ( !memcmp((const void *)&a2, &IID_IPersist, 0x10u) ) /*0x55aa33*/
     *a3 = this; /*0x55aa3a*/
   if ( !*a3 ) /*0x55aa3c*/
     return -2147467262; /*0x55aa41*/
-  (*(void (__stdcall **)(LocomotionClass *))(*(unsigned int *)this->ILocomotion + 4))(this); /*0x55aa4c*/
+  (*(void (__stdcall **)(LocomotionClass *))(*(unsigned int *)this + 4))(this); /*0x55aa4c*/
   return 0; /*0x55a9bd*/
 }
 ULONG __stdcall LocomotionClass::AddRef() { return ++RefCount; }
@@ -120,7 +121,7 @@ bool LocomotionClass::Process()
   int v2; // ecx
   int v3; // ecx
 
-  LocomotionClass::Init(this); /*0x69ec53*/
+  this->Init(); /*0x69ec53*/
   this->u32_1C = 0; /*0x69ec5d*/
   this->Powered = 0; /*0x69ec60*/
   v2 = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x69ec63*/
@@ -145,9 +146,9 @@ bool LocomotionClass::Process()
   this->u32_64 = 0; /*0x69ecc8*/
   this->u32_65 = 1; /*0x69eccb*/
   this->u32_68 = 0; /*0x69eccf*/
-  *(unsigned int *)this->ILocomotion = 0; /*0x69ecd2*/
+  *(unsigned int *)this = 0; /*0x69ecd2*/
   *&this->u32_18 = 0; /*0x69ecd8*/
   this->u32_18 = (unsigned int)(&off_7F2D68); /*0x69ecdf*/
-  return (int)this->ILocomotion; /*0x69ece8*/
+  return (int)this; /*0x69ece8*/
 }
 } // namespace gamemd

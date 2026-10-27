@@ -128,7 +128,7 @@ class Mixer
 {
 public:
     // IDA 0x407150 area
-     void ReleaseChannel(int32_t channel);  // 0x406060
+     int ReleaseChannel();  // 0x406060 (bin: thiscall(Mixer*) 0-arg; receiver = channel block)
     // IDA 0x407150 area
     static void RequestAllBuffers();  // 0x4083D0
 
@@ -227,7 +227,7 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~Audio3D() = default;
 
-virtual void ComputeRotation(float *a2, unsigned int a3);  // 0x0055a7d0 g57w12-r raw-sync (def-form)
+virtual float *ComputeRotation(float *a2, unsigned int *a3);  // 0x0055a7d0 (bin ret float*, p2=int* per signals; X145C)
 
 };
 // 1 methods in IDA

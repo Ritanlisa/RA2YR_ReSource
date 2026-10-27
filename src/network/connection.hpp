@@ -44,7 +44,7 @@ public:
     void* allocPacketSlot();                                                                  // 0x48B750
     uint32_t initQueue(uint32_t);                                                             // 0x48BA10
     void sendAck();  // 0x48BF40
-    void receivePacket();                                                                     // 0x48C040
+    int receivePacket(int a2);                                                                // 0x48C040 (x145b: ida til this+1, int ret)
     void processTileUpdate();                                                                 // 0x48C320
     void serviceSendQueue();                                                                  // 0x48C3E0
     int connect();                                                                           // 0x48C5A0
@@ -76,8 +76,8 @@ public:
     virtual bool Open() override; // 0x69BC20
 
 virtual unsigned int * QueryInterface(char,int,int,int);  // 0x53F850
-    bool initConnection(int a2, int a3, int a4, short a5, int a6, int a7, int a8, int a9, int a1);  // 0x48BE60 (G42.35e: 9-param per def/ida)
-    bool closeConnection(int a2, int a1, int a3, int a4, int a5, int a6, int a7);  // 0x69BC20 (G42.35e: 7-param per def/ida)
+    void* initConnection(int a2, int a3, int a4, short a5, int a6, int a7, int a8, int a9);  // 0x48BE60 (x145b: ida til 8-param + void* ret; 旧 9 参 a1-last 为翻译残渣)
+    unsigned short closeConnection(int a2);  // 0x69BC20 (x145b: ida til __int16(this, int a2))
     bool send(int a2, int a3, int a4, int a5, int a6, int a7);
     int receive(int a2, int a3, int *a4, int **a5, int a6, int a7);
 

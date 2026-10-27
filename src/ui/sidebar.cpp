@@ -186,9 +186,8 @@ bool SidebarClass::AddCameo(int a2, int a3)
       for ( i = 0; i < v19; ++i ) /*0x6a6576*/
       {
         ((Hash *)(56 * (i + 60 * *((unsigned int *)v18 + 14)) + 11566720))->Reset(); /*0x6a6590*/
-        Hash::InsertOrdered( /*0x6a65b3*/
-          (GScreenClass *)&DataGlobal_87F7E8,
-          56 * (i + 60 * *((unsigned int *)v18 + 14)) + 11566720);
+        ((GScreenClass *)&DataGlobal_87F7E8)->InsertOrdered(
+          56 * (i + 60 * *((unsigned int *)v18 + 14)) + 11566720); /*0x6a65b3*/
       }
       g_CameoRenderFlag = 1; /*0x6a65bf*/
       ((Tactical *)this)->UpdateUIVisibility(); /*0x6a65c6*/

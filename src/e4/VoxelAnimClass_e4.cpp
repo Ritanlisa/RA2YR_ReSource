@@ -614,7 +614,7 @@ int VoxelAnimClass::VoxelAnimClass_Update()
             LOWORD(v89) = v97 / 256 + LOWORD(dword_89F688[v42]); /*0x74a363*/
             HIWORD(v89) = v98 / 256 + HIWORD(dword_89F688[v42]); /*0x74a372*/
             *(unsigned int *)v92 = v89; /*0x74a381*/
-            v43 = (unsigned __int8 *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v92); /*0x74a38a*/
+            v43 = (unsigned __int8 *)(((CellCoord *)&dword_87F7E8)->To_CellObj(v92); /*0x74a38a*/
             if ( (unsigned __int8)((ObjectClass *)(int)v43)->IsCoordValidMap(0) ) /*0x74a390*/
             {
               v44 = (CellClass *)*(&dword_B0F4EC->ptr_0 + FindBuildingByTiberiumType(127)); /*0x74a3b2*/

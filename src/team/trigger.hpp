@@ -103,6 +103,7 @@ public:
     void Disable();
 
     bool RegisterEvent(int event, ObjectClass* object, bool force_fire, bool persistent, TechnoClass* source);  // 0x7264C0
+    HouseClass *GetValue();  // 0x71FA30 (signals: thiscall 0-arg; X145C supply; ret typed by caller store into TriggerClass::house)
     // wrapper: delegates to TriggerClass::RegisterEvent at 0x7264C0
     bool FireActions(ObjectClass* obj, CellStruct location);
 

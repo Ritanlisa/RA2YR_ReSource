@@ -15121,7 +15121,7 @@ extern gamemd::Dialog stru_AC1B48;  // data: 0xAC1B48 [X55 W2 til type]
 
 // X25: fwd decl for qualified extern type (SidebarClass) -- resolves in both universes
 namespace gamemd { class SidebarClass; }
-extern gamemd::SidebarClass stru_AC4B48;  // data: 0xAC4B48 [X55 W2 til type]
+extern gamemd::SidebarClass &stru_AC4B48;  // data: 0xAC4B48 [X55 W2 til type]  // x145b: X88 同款 reference decl (SidebarClass 含纯虚 Draw, 抽象类不可作对象 C2259)
 extern gamemd::Timer stru_B0EA70;  // data: 0xB0EA70 [X55 W2 til type]
 
 // X25: fwd decl for qualified extern type (DynamicVector) -- resolves in both universes

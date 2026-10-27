@@ -655,7 +655,7 @@ int TechnoClass::ProcessDeployAction()
         else
         {
           v7 = *(unsigned int *)this->occupant; /*0x6afe87*/
-          v8 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v29); /*0x6afe8e*/
+          v8 = (((CellCoord *)&dword_87F7E8)->To_CellObj(v29); /*0x6afe8e*/
           (*(void (**)(int, void *, int))(v7 + 1152))(this->occupant, v8, 1); /*0x6afe97*/
           LOBYTE(v3) = (*(int (**)(int, int, unsigned int))(*(unsigned int *)this->occupant + 488))(this->occupant, 2, 0); /*0x6afea6*/
           this->customSound_controller[3] = 2; /*0x6afeac*/

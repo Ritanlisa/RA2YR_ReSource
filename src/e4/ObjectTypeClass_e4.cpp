@@ -129,7 +129,7 @@ int ObjectTypeClass::ReadInt(unsigned char * a2, unsigned char * a3, int a4)
     v4 = (char *)(*((unsigned int *)dword_A8E334 + a4) + 36); /*0x474f65*/
   }
   char Destination[32]; // [esp+1Ch] [ebp-20h] BYREF
-  INIClass::GetString(a2, a3, v4, Destination, 32); /*0x474f85*/
+  (((INIClass *)this)->GetString(a2, a3, v4, Destination, 32)); /*0x474f85*/
   return ObjectTypeClass_Read((ObjectClass *)Destination); /*0x474f93*/
 }
 } // namespace gamemd
@@ -669,23 +669,11 @@ void* ObjectTypeClass::LoadFromINI(uint8_t ***aP1, void *a2)
   if ( !(unsigned __int8)((AbstractTypeClass *)this)->LoadFromINI(a2) )
     return 0;  /*0x5f969e*/  /*0x5f92eb*/
   strcpy(Source, this->ImageFile);  /*0x5f931c*/
-  INIClass::GetString(
-    (INIClass *)a2,
-    (unsigned __int8 *)this->__pad_24,
-    (unsigned __int8 *)g_INI_Key_Image,
-    Source,
-    this->ImageFile,
-    25);  /*0x5f933b*/
+  (((INIClass *)a2)->GetString((unsigned __int8 *)this->__pad_24, (unsigned __int8 *)g_INI_Key_Image, Source, this->ImageFile, 25));  /*0x5f933b*/
   v34 = (int)strcpy(Source, this->AlphaImageFile);  /*0x5f9366*/
-  INIClass::GetString((INIClass *)a2, (unsigned __int8 *)this->__pad_24, aAlphaimage, Source, this->AlphaImageFile, 25);  /*0x5f9386*/
+  (((INIClass *)a2)->GetString((unsigned __int8 *)this->__pad_24, (unsigned __int8 *)g_INI_Key_Image, Source, this->ImageFile, 25));  /*0x5f9386*/
   CrushSound = this->CrushSound;  /*0x5f938b*/
-  if ( INIClass::GetString(
-         (INIClass *)a2,
-         (unsigned __int8 *)this->__pad_24,
-         aCrushsound,
-         &g_INI_DefaultBuffer,
-         (char *)&Destination,
-         128) )
+  if ( (((INIClass *)a2)->GetString((unsigned __int8 *)this->__pad_24, (unsigned __int8 *)g_INI_Key_Image, Source, this->ImageFile, 25)) )
   {  /*0x5f93a8*/
     Index = VocClass::FindIndex(&Destination);  /*0x5f93b5*/
     if ( Index != -1 )
@@ -693,13 +681,7 @@ void* ObjectTypeClass::LoadFromINI(uint8_t ***aP1, void *a2)
   }
   this->CrushSound = CrushSound;  /*0x5f93d5*/
   AmbientSound = this->AmbientSound;  /*0x5f93db*/
-  if ( !INIClass::GetString(
-          (INIClass *)a2,
-          (unsigned __int8 *)this->__pad_24,
-          aAmbientsound,
-          &g_INI_DefaultBuffer,
-          (char *)&Destination,
-          128)
+  if ( !(((INIClass *)a2)->GetString((unsigned __int8 *)this->__pad_24, (unsigned __int8 *)g_INI_Key_Image, Source, this->ImageFile, 25))
     || (v6 = VocClass::FindIndex(&Destination), v6 == -1) )
   {  /*0x5f93f9*/
     v6 = AmbientSound;  /*0x5f93fb*/
@@ -1394,7 +1376,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, void * _38C, unsigned char ***
   ObjectClass *v428; // [esp+8h] [ebp-37Ch]
   unsigned char v429[8]; // [esp+18h] [ebp-36Ch] BYREF
   int IntList; // [esp+24h] [ebp-360h] BYREF
-  char String[128]; // [esp+E4h] [ebp-2A0h] BYREF
+  char String_buf[128]; // [esp+E4h] [ebp-2A0h] BYREF
   char v434[32]; // [esp+164h] [ebp-220h] BYREF
 }
 } // namespace gamemd
@@ -1562,8 +1544,8 @@ namespace gamemd {
 int ObjectTypeClass::ReadPrerequisite(unsigned char * a2, unsigned char * a3, int a4)
 {
 
-  char String[32]; // [esp+0h] [ebp-20h] BYREF
-  if ( INIClass::GetString((INIClass *)this, a2, a3, &g_INI_DefaultBuffer, String, 32) ) /*0x4746f9*/
+  char String_buf[32]; // [esp+0h] [ebp-20h] BYREF
+  if ( (((INIClass *)this)->GetString(a2, a3, &g_INI_DefaultBuffer, String_buf, 32)) ) /*0x4746f9*/
     return (atoi(String) << 8) / 360; /*0x474727*/
   else
     return a4; /*0x47472f*/
@@ -1575,7 +1557,7 @@ unsigned char ** ObjectTypeClass::ReadSoundList(unsigned char ** a2, unsigned ch
 {
 
   char Buffer[64]; // [esp+0h] [ebp-40h] BYREF
-  if ( INIClass::GetString((INIClass *)this, a3, a4, &g_INI_DefaultBuffer, Buffer, 64) ) /*0x474759*/
+  if ( (((INIClass *)this)->GetString(a3, a4, &g_INI_DefaultBuffer, Buffer, 64)) ) /*0x474759*/
   {
     sscanf(Buffer, "%d,%d", &a4, &a3); /*0x474776*/
     (*(((unsigned short *)&(a4)) + 1)) = (unsigned short)a3; /*0x47478e*/
@@ -1607,7 +1589,7 @@ int ObjectTypeClass::loadTypeMember_54749E0(CCINIClass * aP1, unsigned char * a2
   char *v5; // eax
   v5 = sub_473960(a4); /*0x4749f1*/
   char Destination[32]; // [esp+4h] [ebp-20h] BYREF
-  INIClass::GetString(aP1, a2, v5, Destination, 32); /*0x474a03*/
+  (((INIClass *)this)->GetString(a2, a3, v5, Destination, 32)); /*0x474a03*/
   return ((ObjectTypeClass *)Destination)->loadTypeMember_473980(); /*0x474a11*/
 }
 } // namespace gamemd
@@ -1627,7 +1609,7 @@ int ObjectTypeClass::loadTypeMember_5474E40(INIClass * aP1, unsigned char * a2, 
 {
 
   char Destination[32]; // [esp+8h] [ebp-20h] BYREF
-  INIClass::GetString(aP1, a2, (&off_81BA88)[a4], Destination, 32); /*0x474e62*/
+  (((INIClass *)this)->GetString(a2, a3, (&off_81BA88)[a4], Destination, 32)); /*0x474e62*/
   int v4 = 0; // edi /*0x474e67*/
   char **v5 = &off_81BA88; // esi /*0x474e69*/
   while ( _strcmpi(Destination, *v5) ) /*0x474e80*/
@@ -1646,7 +1628,7 @@ int ObjectTypeClass::ReadDouble(unsigned char * a2, unsigned char * a3, int a4)
 {
 
   char Destination[100]; // [esp+4h] [ebp-64h] BYREF
-  INIClass::GetString(a2, a3, &g_INI_DefaultBuffer, Destination, 100); /*0x474fba*/
+  (((INIClass *)this)->GetString(a2, a3, &g_INI_DefaultBuffer, Destination, 100)); /*0x474fba*/
   if ( strlen(Destination) ) /*0x474fc3*/
     return ((VocClass *)Destination)->FindByName(); /*0x474fd4*/
   else
@@ -1661,7 +1643,7 @@ int ObjectTypeClass::ReadDouble2(INIClass * aP1, unsigned char * a2, void * a4)
 
   char *Name; // eax
   Name = AbstractType::FindName(a4); /*0x475001*/
-  INIClass::GetString(aP1, a2, Name, Destination[0].__pad_0, 32); /*0x475013*/
+  (((INIClass *)this)->GetString(a2, a3, Name, Destination[0].__pad_0, 32)); /*0x475013*/
   return StringTable::Lookup(Destination); /*0x475021*/
 }
 } // namespace gamemd
@@ -1673,7 +1655,7 @@ int ObjectTypeClass::ReadBool3(INIClass * aP1, unsigned char * a2, void * a4)
   char *v5; // eax
   v5 = sub_45DD20((ObjectClass *)a4); /*0x475071*/
   char Destination[32]; // [esp+4h] [ebp-20h] BYREF
-  INIClass::GetString(aP1, a2, v5, Destination, 32); /*0x475083*/
+  (((INIClass *)this)->GetString(a2, a3, v5, Destination, 32)); /*0x475083*/
   return sub_45DD50((ObjectClass *)Destination); /*0x475091*/
 }
 } // namespace gamemd
@@ -1717,7 +1699,7 @@ int ObjectTypeClass::loadTypeMember_476FC0(CCINIClass * aP1, unsigned char * a2,
   char *v5; // eax
   v5 = sub_48E030(aP3); /*0x476fdd*/
   char Destination[128]; // [esp+8h] [ebp-80h] BYREF
-  if ( INIClass::GetString((INIClass *)this, aP1, a2, v5, Destination, 128) ) /*0x476ff5*/
+  if ( (((INIClass *)this)->GetString(a2, a3, v5, Destination, 128)) ) /*0x476ff5*/
     return ((ObjectTypeClass *)Destination)->loadTypeMember_48DFF0(); /*0x477002*/
   else
     return aP3; /*0x477012*/
@@ -1728,10 +1710,10 @@ namespace gamemd {
 int ObjectTypeClass::loadTypeMember_5477590(CCINIClass * aP1, unsigned char * a2, CCINIClass * aP3)
 {
 
-  char String[128]; // [esp+8h] [ebp-80h] BYREF
-  INIClass::GetString(aP1, a2, (&off_81BABC)[aP3], String, 128); /*0x4775c1*/
+  char String_buf[128]; // [esp+8h] [ebp-80h] BYREF
+  (((INIClass *)this)->GetString(a2, a3, (&off_81BABC)[a4], String_buf, 128)); /*0x4775c1*/
   char *v4; // esi
-  v4 = strtok(String, Str); /*0x4775d5*/
+  v4 = strtok(String_buf, Str); /*0x4775d5*/
   int result; // eax
   result = _strcmpi(v4, g_INI_Key_None); /*0x4775dd*/
   if ( result ) /*0x4775e7*/

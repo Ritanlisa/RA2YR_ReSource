@@ -259,7 +259,7 @@ TechnoClass::TechnoClass() noexcept
     std::memset((&unusedGattlingSoundController), 0, sizeof(unusedGattlingSoundController));
     std::memset((&queuedVoiceSoundController), 0, sizeof(queuedVoiceSoundController));
 
-    abstractFlags |= 0x1u;
+    *(unsigned int *)&abstractFlags |= 0x1u;  /* flag in X10 void* slot (X145C)*/
 }
 
 FireError TechnoClass::GetFireErrorWithoutRange(AbstractClass* target, int weapon_index) const
@@ -1202,7 +1202,7 @@ int TechnoClass::GetCrew() const
   int v6; // esi
   bool v7; // zf
 
-  if ( !*(unsigned char *)((*((int (__thiscall **)(TechnoClass *))this->ptr_0 + 33))(this) + 3277) ) /*0x707d2b*/
+  if ( !*(unsigned char *)((*((int (__thiscall **)(void *))this->ptr_0 + 33))(this) + 3277) ) /*0x707d2b*/
     return 0; /*0x707d38*/
   owner = this->owner; /*0x707d39*/
   sideIndex = (int)(owner->sideIndex); /*0x707d40*/
@@ -1230,7 +1230,7 @@ int TechnoClass::GetCrew() const
   }
   if ( *(unsigned int *)(owner->relatedTagsCapacity + 188) == -1 ) /*0x707d8b*/
     return *(unsigned int *)(v5 + 3948); /*0x707dc5*/
-  if ( (*((uint8_t (__thiscall **)(TechnoClass *))this->ptr_0 + 171))(this) /*0x707db2*/
+  if ( (*((uint8_t (__thiscall **)(void *))this->ptr_0 + 171))(this) /*0x707db2*/
     && Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 99) < 15 )
   {
     return *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 3948); /*0x707dc4*/

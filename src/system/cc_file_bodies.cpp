@@ -51,11 +51,12 @@ MemoryBuffer& MemoryBuffer::operator=(MemoryBuffer&& other) noexcept {
         return *this;
     }
 
-void MemoryBuffer::Clear() noexcept {
+int MemoryBuffer::Clear() noexcept {
         MemoryBuffer tmp(std::move(*this));
         Buffer = nullptr;  // data: 0x8a3a08
         Size = 0;  // data: 0x87cba0
         Allocated = false;
+        return 0;
     }
 
 CCFileClass::CCFileClass(const noinit_t&) noexcept : CDFileClass(noinit_t()) {}

@@ -102,15 +102,15 @@ int ReadINIClassBuildingTypeList(TypeList_BuildingType * aP0, unsigned char *** 
   VectorClass v17; // [esp+Ch] [ebp-9Ch] BYREF
   void *v18; // [esp+1Ch] [ebp-8Ch]
   int v19; // [esp+20h] [ebp-88h]
-  char String[128]; // [esp+28h] [ebp-80h] BYREF
+  char String_buf[128]; // [esp+28h] [ebp-80h] BYREF
 
-  if ( INIClass::GetString((INIClass *)edx0, aP2, a3, &g_INI_DefaultBuffer, String, 128) ) /*0x67b57c*/
+  if ( (((INIClass *)edx0)->GetString(aP2, a3, &g_INI_DefaultBuffer, String_buf, 128) ) /*0x67b57c*/
   {
     (&v17)->BuildingTypeConstructor(0, 0); /*0x67b591*/
     v19 = 10; /*0x67b59a*/
     v18 = 0; /*0x67b5a8*/
     /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7ED90C) */  /*0x67b5ac*/
-    for ( i = strtok(String, Delimiter); i; i = strtok(0, Delimiter) ) /*0x67b5be*/
+    for ( i = strtok(String_buf, Delimiter); i; i = strtok(0, Delimiter) ) /*0x67b5be*/
     {
       if ( !*i ) /*0x67b5c0*/
         break; /*0x67b5c2*/
@@ -351,7 +351,7 @@ int GetINIClassInt(unsigned char *** a0, INIClass * aP1, unsigned char * a2, int
 
   char Destination[128]; // [esp+0h] [ebp-80h] BYREF
 
-  if ( INIClass::GetString((INIClass *)a0, aP1, a2, &g_INI_DefaultBuffer, Destination, 128) ) /*0x67bade*/
+  if ( (((INIClass *)a0)->GetString(aP1, a2, &g_INI_DefaultBuffer, Destination, 128) ) /*0x67bade*/
     return KeywordType::FindOrCreate2(Destination); /*0x67baeb*/
   else
     return a4; /*0x67baf9*/
@@ -365,7 +365,7 @@ int GetINIClassKeyword(unsigned char *** a0, INIClass * aP1, unsigned char * a2,
 
   char Destination[128]; // [esp+0h] [ebp-80h] BYREF
 
-  if ( INIClass::GetString((INIClass *)a0, aP1, a2, &g_INI_DefaultBuffer, Destination, 128) ) /*0x67bd4e*/
+  if ( (((INIClass *)a0)->GetString(aP1, a2, &g_INI_DefaultBuffer, Destination, 128) ) /*0x67bd4e*/
     return KeywordClass::FindOrCreate(Destination); /*0x67bd5b*/
   else
     return a4; /*0x67bd69*/

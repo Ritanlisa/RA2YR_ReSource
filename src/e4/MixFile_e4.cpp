@@ -296,11 +296,11 @@ unsigned int * MIXFile::Load(ObjectClass * a2)
   v3 = *(unsigned int *)this->__pad_000; /*0x6275a0*/
   if ( *(unsigned int *)this->__pad_000 == -1 ) /*0x6275a6*/
     return 0; /*0x6275ab*/
-  char String[256]; // [esp+24h] [ebp-400h] BYREF
-  strcpy(String, a2); /*0x6275d6*/
-  strcat(String, (const char *)&off_7E1BC6 + 112 * v3); /*0x627611*/
-  strcat(String, asc_826598); /*0x62763d*/
-  strcat(String, (const char *)off_836464); /*0x62766a*/
+  char String_buf[256]; // [esp+24h] [ebp-400h] BYREF
+  strcpy(String_buf, a2); /*0x6275d6*/
+  strcat(String_buf, (const char *)&off_7E1BC6 + 112 * v3); /*0x627611*/
+  strcat(String_buf, asc_826598); /*0x62763d*/
+  strcat(String_buf, (const char *)off_836464); /*0x62766a*/
   _strupr(String); /*0x627678*/
   Struct *v5 = v39; // esi /*0x627680*/
   int v6 = 256; // edi /*0x627687*/
@@ -312,7 +312,7 @@ unsigned int * MIXFile::Load(ObjectClass * a2)
   }
   while ( v6 ); /*0x627697*/
   void *v7; // eax
-  v7 = SearchMIXFile(String, 0); /*0x62769f*/
+  v7 = SearchMIXFile(String_buf, 0); /*0x62769f*/
   int v8 = 0; // ebx /*0x6276a4*/
   if ( !v7 ) /*0x6276a8*/
     return 0; /*0x6276ad*/

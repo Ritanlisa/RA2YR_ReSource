@@ -250,7 +250,7 @@ void* Factory_CalculateExitCell(Factory *aP0, Factory *aP0_dup, void * a1, void 
       HIWORD(v68) = v7[11] / 256; /*0x718e69*/
       *(unsigned int *)v71 = v68; /*0x718e76*/
       v25 = *v24; /*0x718e7a*/
-      v26 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v71); /*0x718e82*/
+      v26 = (((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v71); /*0x718e82*/
       if ( (*(int (**)(unsigned int, void *, int, int, unsigned int))(v25 + 428))(v7[3], v26, -1, -1, 0) ) /*0x718e8b*/
       {
         *v8 = g_BuildingLoadQueue_Array.BuildLimit; /*0x718e9d*/
@@ -282,7 +282,7 @@ void* Factory_CalculateExitCell(Factory *aP0, Factory *aP0_dup, void * a1, void 
             v69 = (*(int (**)(int, unsigned int))(*(unsigned int *)v35 + 188))(v35, 0); /*0x718f8e*/
             memset(v67, 0, sizeof(v67)); /*0x718fae*/
             v36 = v7[3]; /*0x718fb8*/
-            v59 = BYTE1(*((unsigned int *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, (__int16 *)&v68) + 80)) /*0x718fdd*/
+            v59 = BYTE1(*((unsigned int *)(((CellCoord *)&DataGlobal_87F7E8)->To_CellObj((__int16 *)&v68) + 80)) /*0x718fdd*/
                 & 1;
             TileIndex = MapClass::GetTileIndex( /*0x718fee*/
                           (MapClass *)&DataGlobal_87F7E8,
@@ -310,10 +310,10 @@ void* Factory_CalculateExitCell(Factory *aP0, Factory *aP0_dup, void * a1, void 
                                 0);
             if ( *(unsigned int *)v66 != g_BuildingLoadQueue_Array.unknown_int_398 ) /*0x71901f*/
             {
-              v38 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v66); /*0x71903d*/
+              v38 = (((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v66); /*0x71903d*/
               v61 = (char)this; /*0x71904f*/
               v60 = (unsigned int *)(*(int (**)(void *, int *))(*(unsigned int *)v38 + 72))(v38, &v78); /*0x71905a*/
-              v39 = (ObjectPlacement *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v66); /*0x71906a*/
+              v39 = (ObjectPlacement *)(((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v66); /*0x71906a*/
               v40 = ObjectPlacement::CalcPosition(v39, v81, v60, v61, v65, 0); /*0x719071*/
               *v8 = *v40; /*0x71907a*/
               v7[11] = v40[1]; /*0x71907f*/

@@ -1,6 +1,7 @@
 #include "network/network_ext.hpp"
+#include "network/connection.hpp"  // x145b: ModemConnectionClass 完整定义 (Flush -> queueSendPacket)
 #include "e4/e4_globals_decls.hpp"
-#include "e4/classes/ConnectionClass_e4.hpp"  // g57c5 W5d scope supply
+// x145b: e4 ConnectionClass_e4.hpp 移除 — 与 connection.hpp 的 class ConnectionClass C2011 冲突
 #include "e4/classes/IPXInterfaceClass_e4.hpp"  // g57c5 W5d scope supply
 #include "e4/classes/Waypoint_e4.hpp"  // g57c5 W5d scope supply
 // ---- g57c5 W5 vocab (declaration-only) ----
@@ -11,22 +12,24 @@ class IPXInterfaceClass;  // g57c5 W5 fwd
 // ---- g57c5 W5 end ----
 
 
+namespace gamemd
+{
 
 // --- IPXGlobalConnClass ---
 
 // 0x53fbd0
-void IPXGlobalConnClass::Flush(const void *a2, unsigned int a3, unsigned int a4, int a5, short a6, int a7)  // g57b5 W4: raw 真值补参 (a2,a3,a4,a5,a6,a7)
+int IPXGlobalConnClass::Flush(const void *a2, unsigned int a3, unsigned int *a4, int a5, short a6, int a7)  // g57b5 W4: raw 真值补参; x145b: ida til int(a4=_DWORD*) 真形
 {
   int v8; // eax
   int v9; // ecx
   unsigned int v11[3]; // [esp+Ch] [ebp-Ch] BYREF
 
-  Waypoint::InitInvalid((Waypoint *)v11); /*0x53fbdc*/
+  ((Waypoint *)v11)->InitInvalid(); /*0x53fbdc*/
   *(unsigned int *)(this->q020 + 8) = 0; /*0x53fbe6*/
   *(unsigned short *)(this->q020 + 12) = 0; /*0x53fbec*/
   *(unsigned short *)this->q020 = this->q024; /*0x53fbf7*/
   *(unsigned char *)(this->q020 + 2) = !a5 || !a4; /*0x53fc0d*/
-  *(unsigned int *)(this->q020 + 4) = *(unsigned int *)&this->PlayerIndex->q02C; /*0x53fc22*/
+  *(unsigned int *)(this->q020 + 4) = *(unsigned int *)((unsigned int *)this->PlayerIndex + 11); /*0x53fc22*/
   if ( a7 ) /*0x53fc2b*/
     *(unsigned int *)(this->q020 + 4) = a7; /*0x53fc30*/
   *(unsigned short *)(this->q020 + 14) = this->__pad_02E; /*0x53fc3f*/
@@ -40,8 +43,7 @@ void IPXGlobalConnClass::Flush(const void *a2, unsigned int a3, unsigned int a4,
     v11[2] = v9; /*0x53fc5b*/
   }
   memcpy((void *)(this->q020 + 16), a2, a3); /*0x53fc74*/
-  return ConnectionClass::queueSendPacket( /*0x53fc99*/
-           (ConnectionClass *)this->PlayerIndex,
+  return ((ModemConnectionClass *)this->PlayerIndex)->queueSendPacket( /*0x53fc99*/
            (const void *)this->q020,
            a3 + 16,
            v11,
@@ -49,7 +51,7 @@ void IPXGlobalConnClass::Flush(const void *a2, unsigned int a3, unsigned int a4,
            a6);
 }
 // 0x7b0f50
-void NetworkOptions::ApplySettings(int a2, char a3, int a4)  // g57b5 W4: raw 真值补参 (a2,a3,a4)
+int NetworkOptions::ApplySettings(int a2, char *a3, int a4)  // g57b5 W4: raw 真值补参; x145b: ida til int(char*) 真形
 {
   int v5; // eax
   unsigned char v7[6]; // [esp+8h] [ebp-110h] BYREF
@@ -63,7 +65,7 @@ void NetworkOptions::ApplySettings(int a2, char a3, int a4)  // g57b5 W4: raw �
 
   if ( !this->u32_3F068 ) /*0x7b0f50*/
     return 0; /*0x7b0f6c*/
-  v5 = IPXInterfaceClass::initSocket((unsigned int *)this, a2, (int)v7); /*0x7b0f7c*/
+  v5 = ((IPXInterfaceClass *)this)->initSocket(a2, (int)v7); /*0x7b0f7c*/
   v5 = v5; /*0x7b0f81*/
   if ( v5 )
   {
@@ -87,4 +89,7 @@ void NetworkOptions::ApplySettings(int a2, char a3, int a4)  // g57b5 W4: raw �
       return 0; /*0x7b1084*/
     strcpy(a3, Buffer); /*0x7b10a5*/
   }
+  return v5;
 }
+
+} // namespace gamemd

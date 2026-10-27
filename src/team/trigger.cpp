@@ -122,8 +122,8 @@ bool TriggerClass::RegisterEvent(int event, ObjectClass* object, bool force_fire
 
   char v7; // bl
   TriggerClass *v8; // edi
-  int Owner; // eax
-  int v11; // [esp-10h] [ebp-18h]
+  int Owner; // eax (FindOwner returns int per IDA proto)
+  TechnoClass *v11; // [esp-10h] [ebp-18h]
   char v12; // [esp+7h] [ebp-1h]
 
   if ( !this->enabled || this->destroyed ) /*0x7264cf*/
@@ -139,12 +139,12 @@ bool TriggerClass::RegisterEvent(int event, ObjectClass* object, bool force_fire
   {
     if ( (this->occuredEvents & (1 << v7)) != 0 /*0x726540*/
       || (v11 = source,
-          Owner = HouseClass::FindOwner(*(HouseClass **)(*(unsigned int *)(this->buildingType + 164) + 180)),
+          Owner = (*(HouseClass **)(*(unsigned int *)(this->buildingType + 164) + 180))->FindOwner(),
           TEventClass::Execute((TEventClass *)v8, event, Owner, object, &this->timer, (int)&persistent, v11)) )
     {
-      if ( TriggerClass::GetValue(v8) ) /*0x726551*/
-        this->house = TriggerClass::GetValue(v8); /*0x726561*/
-      if ( persistent && TEventClass::GetStateA((TEventClass *)v8) && TEventClass::GetStateB_SpyEvent((TEventClass *)v8) ) /*0x726579*/
+      if ( v8->GetValue() ) /*0x726551*/
+        this->house = v8->GetValue(); /*0x726561*/
+      if ( persistent && ((TEventClass *)v8)->GetStateA() && ((TEventClass *)v8)->GetStateB_SpyEvent() ) /*0x726579*/
         this->occuredEvents |= 1 << v7; /*0x726582*/
     }
     else
@@ -159,7 +159,7 @@ bool TriggerClass::RegisterEvent(int event, ObjectClass* object, bool force_fire
   {
 LABEL_16:
     if ( persistent ) /*0x7265a0*/
-      BuildingClass::ProcessUpgradeEffects((BuildingClass *)this); /*0x7265a4*/
+      ((BuildingClass *)this)->ProcessUpgradeEffects(); /*0x7265a4*/
   }
   return v12; /*0x7265af*/
 
@@ -214,7 +214,7 @@ TriggerTypeClass::Flags TriggerTypeClass::GetFlags() const
     ActionCategoryFlags = ((TriggerTypeClass *)FirstEvent->TEventClass_field_2C)->GetActionCategoryFlags(); /*0x7271f4*/
     FirstEvent = (TEventClass *)FirstEvent->TEventClass_field_28; /*0x7271f9*/
   }
-  for ( j = this->FirstAction; j; i |= v6 ) /*0x72720a*/
+  for ( j = this->firstAction; j; i |= v6 ) /*0x72720a*/
   {
     v6 = ((TriggerTypeClass *)j->TActionClass_field_2C)->Dispatch(); /*0x72720f*/
     j = (TActionClass *)j->TActionClass_field_28; /*0x727214*/
@@ -392,9 +392,7 @@ HRESULT __stdcall TriggerTypeClass::Load(IStream* stream) { return 0; }
 HRESULT __stdcall TriggerTypeClass::Save(IStream* stream, int clear_dirty) { return 0; }
 void TriggerTypeClass::pointerExpired(AbstractClass* ptr, bool removed) {}
 AbstractType __stdcall TriggerTypeClass::whatAmI() const { return AbstractType::TriggerType; }
-int TriggerTypeClass::objectSize() const { return 0; 
+int TriggerTypeClass::objectSize() const { return 0; }
 void TriggerTypeClass::calculateChecksum(void* checksum) const {
-
-} // namespace gamemd
-}  // L-fix: close namespace tail 1
+}  // TriggerTypeClass::calculateChecksum
 } // namespace gamemd

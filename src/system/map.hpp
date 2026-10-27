@@ -239,8 +239,8 @@ public:
     CoordStruct* FindFirstFirestorm(CoordStruct* out, const int* start, const int* end, const HouseClass* house = nullptr) const;  // 0x5880A0 (G42.35d: binary truth has int* params)
     CoordStruct FindFirstFirestorm(const CoordStruct& start, const CoordStruct& end, const HouseClass* house = nullptr) const;
 
-    int RevealArea1(CoordStruct* coords, int radius, HouseClass* owner, CellStruct arg4, uint8_t reveal_by_height, uint8_t arg6, uint8_t arg7, uint8_t arg8);  // 0x5678E0 (G42.35d: ida truth returns int)
-    int RevealArea2(CoordStruct* coords, int radius, HouseClass* owner, uint32_t arg4, uint8_t reveal_by_height, uint8_t arg6, uint8_t arg7, uint8_t arg8);  // 0x567DA0 (G42.35d: int return per ida)
+    int RevealArea1(int *coords, int radius, void *owner, char arg4, int arg5, char arg6, char arg7, char arg8);  // 0x5678E0 (x145b: ida til 9-param 真形 int*+void*)
+    int RevealArea2(int *coords, int radius, int owner, int arg4);  // 0x567DA0 (x145b: ida til 4-stack-arg 真形)
     // unmatched: no callgraph reference and no git history record
     void RevealArea3(CoordStruct* coords, int height, int radius, bool skip_reveal);
 

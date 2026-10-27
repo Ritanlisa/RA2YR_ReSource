@@ -665,7 +665,7 @@ int CCINIClass::InitFromINIEVA()
     for ( i = 0; v4 < v3; i = v4 ) /*0x753043*/
     {
       StringByIndex = (unsigned __int8 *)(v1->ptr_0)->GetStringByIndex(g_INI_Key_DialogList, v4); /*0x753060*/
-      KeyCount = INIClass::GetString(v1, g_INI_Key_DialogList, StringByIndex, &g_INI_DefaultBuffer, Destination, 200); /*0x75306d*/
+      KeyCount = ((INIClass *)(v1))->GetString(g_INI_Key_DialogList, StringByIndex, &g_INI_DefaultBuffer, Destination, 200); /*0x75306d*/
       if ( KeyCount ) /*0x753074*/
       {
         if ( &v11 == (int *)-28 ) /*0x753080*/
