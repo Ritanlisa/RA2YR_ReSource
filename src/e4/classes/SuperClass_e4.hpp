@@ -108,9 +108,6 @@ struct SuperClass {
     int qF98;  // 0xF98
     char __pad_F9C[76];  // 0xF9C
     int qFE8;  // 0xFE8
-    union {
-        struct { unsigned char __pad_6C; unsigned char Granted; unsigned char OneTime; unsigned char IsCharged; };  // 0x6C
-    };
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     static wchar_t * SetCurrentFrame(SuperClass *pThis);

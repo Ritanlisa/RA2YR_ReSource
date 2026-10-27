@@ -192,7 +192,7 @@ void GameInit::InitMultiplayerModes(int a2, int a3)  // g57b5 W4: raw 真值补�
   return this; /*0x5d8729*/
 }
 // 0x5e1ca0
-int GameLobby::DlgProc(int a2, HWND hWnd, UINT, WPARAM v20, unsigned int a6)  // g57c5 W5f: raw int 真值同步
+int GameLobby::DlgProc(int a2, HWND hWnd, UINT Msg, WPARAM, unsigned int a6)  // g57c5 W5f: raw int 真值同步
 {
 
   int v6; // ebx
@@ -378,11 +378,11 @@ LABEL_9:
     }
     return 0; /*0x5e1e4d*/
   }
-  v16 = UINT; /*0x5e1f1d*/
-  v17 = (StartCombo *)(unsigned __int16)UINT; /*0x5e1f23*/
-  if ( (unsigned __int16)UINT <= 0x540u ) /*0x5e1f2f*/
+  v16 = Msg; /*0x5e1f1d*/
+  v17 = (StartCombo *)(unsigned __int16)Msg; /*0x5e1f23*/
+  if ( (unsigned __int16)Msg <= 0x540u ) /*0x5e1f2f*/
   {
-    if ( (unsigned __int16)UINT == 1344 ) /*0x5e1f35*/
+    if ( (unsigned __int16)Msg == 1344 ) /*0x5e1f35*/
     {
       ReadChatMessage((wchar_t **)&hWnd, (HWND)v20); /*0x5e1fb8*/
       DeleteAndZero::Alt((DeleteAndZero *)&hWnd); /*0x5e1fc1*/
@@ -393,11 +393,11 @@ LABEL_9:
       }
       return 0; /*0x5e1fcf*/
     }
-    if ( (unsigned __int16)UINT <= 0x514u ) /*0x5e1f3d*/
+    if ( (unsigned __int16)Msg <= 0x514u ) /*0x5e1f3d*/
     {
-      if ( (unsigned __int16)UINT < 0x513u ) /*0x5e1f45*/
+      if ( (unsigned __int16)Msg < 0x513u ) /*0x5e1f45*/
       {
-        if ( (unsigned __int16)UINT == 2 ) /*0x5e1f50*/
+        if ( (unsigned __int16)Msg == 2 ) /*0x5e1f50*/
         {
           if ( !byte_AC0268 ) /*0x5e1f70*/
           {
@@ -406,25 +406,25 @@ LABEL_9:
           }
           return 0; /*0x5e1f70*/
         }
-        if ( (unsigned __int16)UINT != 1296 ) /*0x5e1f57*/
+        if ( (unsigned __int16)Msg != 1296 ) /*0x5e1f57*/
           return 0; /*0x5e1f66*/
       }
       goto LABEL_49; /*0x5e1f57*/
     }
-    if ( (unsigned __int16)UINT < 0x51Eu ) /*0x5e1f92*/
+    if ( (unsigned __int16)Msg < 0x51Eu ) /*0x5e1f92*/
       return 0; /*0x5e1f92*/
-    v18 = (unsigned __int16)UINT <= 0x528u; /*0x5e1f98*/
+    v18 = (unsigned __int16)Msg <= 0x528u; /*0x5e1f98*/
     goto LABEL_36; /*0x5e1f98*/
   }
-  if ( (unsigned __int16)UINT > 0x6ABu ) /*0x5e1ffd*/
+  if ( (unsigned __int16)Msg > 0x6ABu ) /*0x5e1ffd*/
   {
-    if ( (unsigned __int16)UINT < 0x76Du || (unsigned __int16)UINT > 0x774u ) /*0x5e20c9*/
+    if ( (unsigned __int16)Msg < 0x76Du || (unsigned __int16)Msg > 0x774u ) /*0x5e20c9*/
       return 0; /*0x5e20c9*/
     goto LABEL_49; /*0x5e20c9*/
   }
-  if ( (unsigned __int16)UINT < 0x6AAu ) /*0x5e2009*/
+  if ( (unsigned __int16)Msg < 0x6AAu ) /*0x5e2009*/
   {
-    if ( (unsigned __int16)UINT == 1439 ) /*0x5e2015*/
+    if ( (unsigned __int16)Msg == 1439 ) /*0x5e2015*/
     {
       if ( *(unsigned int *)&stru_A8D804.__pad_3D[579] ) /*0x5e2035*/
       {
@@ -441,20 +441,20 @@ LABEL_9:
       }
       return 0; /*0x5e2035*/
     }
-    if ( (unsigned __int16)UINT <= 0x6A0u ) /*0x5e201d*/
+    if ( (unsigned __int16)Msg <= 0x6A0u ) /*0x5e201d*/
       return 0; /*0x5e22ee*/
-    v18 = (unsigned __int16)UINT <= 0x6A8u; /*0x5e2023*/
+    v18 = (unsigned __int16)Msg <= 0x6A8u; /*0x5e2023*/
 LABEL_36:
     if ( !v18 ) /*0x5e1f9e*/
       return 0; /*0x5e1fad*/
   }
 LABEL_49:
-  if ( HIWORD(UINT) != 1 ) /*0x5e20d5*/
+  if ( HIWORD(Msg) != 1 ) /*0x5e20d5*/
     return 0; /*0x5e20d5*/
-  v20 = CountryCombo::IDToIndex((CountryCombo *)(unsigned __int16)UINT); /*0x5e20e2*/
+  v20 = CountryCombo::IDToIndex((CountryCombo *)(unsigned __int16)Msg); /*0x5e20e2*/
   v20 = v20; /*0x5e20e6*/
   v21 = StartCombo::IDToIndex(v17); /*0x5e20ef*/
-  UINT = v21; /*0x5e20f3*/
+  Msg = v21; /*0x5e20f3*/
   v22 = Dialog::SideIDToIndex((Dialog *)v17); /*0x5e20fc*/
   v48 = (ObjectClass *)v22; /*0x5e2100*/
   v23 = Dialog::OptionIDToIndex((Dialog *)v17); /*0x5e2104*/
@@ -475,7 +475,7 @@ LABEL_49:
     v29 = this; /*0x5e214b*/
     SelectLobbyCountry((HWND)this, ResourceID2CSF); /*0x5e2153*/
   }
-  else if ( v24 == (ObjectClass *)UINT ) /*0x5e215e*/
+  else if ( v24 == (ObjectClass *)Msg ) /*0x5e215e*/
   {
     v29 = this; /*0x5e2160*/
     AssignPlayerColor((HWND)this, ResourceIDCSF); /*0x5e2168*/
