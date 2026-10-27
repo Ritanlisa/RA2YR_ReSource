@@ -4394,7 +4394,7 @@ int MapClass::GetScrollMode(void *a1)
 
 }
 // 0x4F42F0
-int MapClass::MarkForRedraw(int a2, void *a2_2)
+int MapClass::MarkForRedraw(void *a1, void *a2_2)
 {
 
   if ( g_TacticalClass_Instance ) /*0x4f42f7*/

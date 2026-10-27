@@ -244,7 +244,7 @@ struct MapClass {
     int RevealArea2(int *coords, int radius, int owner, int arg4);  // 0x567da0
     INIClass * * SaveCellTagsToINI(char * a2, void * aIsomappack, void * aIsomappack2, void * aIsomappack3, void * aIsomappack4, void * aIsomappack5);
     void MapClass_IsRectInBounds(unsigned short * a2 = 0, int a3 = 0);
-    int MarkForRedraw(int a2, void *a2_2);
+    static int MarkForRedraw(void *a1, void *a2_2);
     MapClass * Destru_vt04(char * Block, char a2);
     VectorClass_flat * InitCellVe_vt00(unsigned int * Block, char a2);
     int GetTileDataField14(MapResourceClass * aP0);
