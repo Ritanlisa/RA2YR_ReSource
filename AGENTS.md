@@ -974,6 +974,65 @@ python tools/type_infer/auto_name.py
 
 ### 最近完成（按时间倒序）
 
+- **2026-10-26 (X134)**: Mission/Radio/Techno 链 own-part 对齐 + vt_slot 转换——最大幻影堆清偿
+  - **W1**: 修正 X133 表生成器的 base_n 口径（用二进制基类计数 122/157/161，旧表用编译计数）；
+    Mission binary own 35 / Radio own 4 / Techno own 148。arity 三源法：Capstone first-retn 主证 +
+    ida_cache head 交叉（**head 参数表含显式 this，须减 1**；__userpurge 再减寄存器参）+
+    槽体 mov eax,imm; ret 占位返回值实测（Return450 族全 450）。
+  - **W2**: 声明序=槽序重写三类 own part；Mission 34 + Radio 9 + Techno 477 幻影降级非虚
+    （纯虚 Destroyed/onBuildingPlacement 降级+占位 def，派生 6 处 override 摘除）；
+    Techno 54 个 inherited-range override 按基签名补齐（BASE_SIGS 正则须兼容
+    X132: slot/X133 slot 两代格式）；槽 122/124 的 Techno 幽灵再声明删除（二进制无 override）；
+    Mission slot 97 processStateUpdate 更名（def+19 调用点，虚派发语义修正）；
+    hasValidTarget→HasValidTarget、4 个大小写更名（def 缺失、调用点 0-2 处）。
+    占位 def 落独立 TU **src/object/techno_slot_defs.cpp**（techno.cpp 1313 行历史语法伤的
+    解析错误态会感染追加 def → C2653 级联）。
+  - **W3**: vt_slot 转换 **222 处**（Techno 156/Foot 29/Infantry 14/Unit 11/Building 9/Aircraft 3）；
+    跳过 115（34 arity 不符/79 派生 override 区/2 no-name）= .omo/x134/w3_ledger.json；
+    vt_slot_N 为字节偏移（N/4=槽号），首参==receiver 时删参。
+  - **W4**: **Mission 157=157 / Radio 161=161 / Techno 309=309 全部 bucket a**（池 a19/b244/c29，
+    前 a16/b246/c30）；build **22,219（基线 22,221，delta -2）**，0 新失败文件；
+    门全平（ptr-gate 165/130/12、generated-quality 12,176、fail-closed 6）；sizeof 冻结
+    （0 数据成员行变更）；tag x134-pre-1；未提交（按令）。
+  - 下一步：Foot/Building/Infantry/Unit 对齐（own 缺口 141→32/322/…，槽 162/206/210-214/254/
+    259-262/266-270/274/276-278/282/284/286-292/297-302/305-306/308 的 Building supply 声明已删，
+    由链虚函数接管）；W3 的 115 跳过项在派生对齐后解锁；arity 修正轮（I525/I526）。
+
+
+- **2026-10-25 (X132)**: AbstractClass 根链 24 槽对齐（本层级闭环，Techno 链对齐解锁前置）
+  - **证据链四层**: x128 权威 + 原始字节读回（0x7E1F50 系 VA 非 RVA）+ 内部调用图交叉
+    （GetCoords(22)→GetCoordsEx(19)→GetInvalidCoord(18)）+ 派生同槽名族（slot 8=ScalarDtor /
+    slot 9=Update 族全表一致）。**X131 审计模型 compiled-29 是 MI 伪影**——次级基类 override
+    （whatAmI/fetchId/createId/onNotice/notifySinks）不占主列，真编译=24=二进制数；根分歧 =
+    own-part 内容/顺序。slot 8 = **标量删除析构**（0x4105A0 装 4 vtable + test al,1 → delete），
+    根有虚析构、占据 own 首槽。
+  - **W2 落地**: own 16 槽按二进制序重写（slot 9 终名 `int PerFrameUpdate()`——试名
+    StubReturnFalse/Update 各炸 C2555，PerFrameUpdate 因 infantry.hpp:93/unit.hpp:115 已有同
+    RVA 锚声明=零冲突+双槽正确）；14 幽灵虚降级为非虚（initialize/pointerExpired/objectSize/
+    calculateChecksum/owningHouse*/arrayIndex/isDead/fetch*/isOnGround/isAirborne/updateLogic），
+    55 个派生头去 `override`（objectSize/pointerExpired）；次级列锚修正（whatAmI=0x410210/
+    fetchId=0x410220/createId=0x410230/onNotice=0x410580/notifySinks=0x410590；createId 旧锚
+    0x486920=幻影）。新虚全部落 binary-faithful 桩体（abstract.cpp +29 行）。
+  - **验收**: MSVC 22222 flat（delta 0，0 新失败文件，abstract.cpp=0 err）；sizeof 中性已证
+    （HEAD 与改后均 220/36/52——**220 vs 二进制 0x24 = 预存缺陷**，见 issues I524：基接口假
+    数据成员待用户裁决单独成轮）；门增长 0（ptr-gate 29,968 flat / generated-quality 12,176
+    flat / fail-closed 6 flat）。模型 bucket：AbstractClass = **a**（a15/b248/c29）。
+  - **W3/W4 状态**: w3_measure.json（校正 MI 模型）= 下一层差距账：ObjectClass own 99→98
+    （最近目标）、TechnoClass own 599→187（最大幻影堆）、Foot 141→32、Building 322 槽表；
+    vt_slot 868 处（425 this-receiver：Techno 169/Building 45/Infantry 45/Foot 45/Object 34）
+    **0 转换**——全部阻塞在 Techno 链逐类对齐（X133+），清单 = .omo/x132/w4_sites.json。
+  - 工件: .omo/x132/（w1_table.md / w2 脚本族+ledger / w3_measure.py / w4_inventory.py /
+    raw_vtable.py / sizeof_probe / build 日志 5 份）；tag x132-pre-1；issues I524 / learnings
+    L554。命名债：signals 0x410470 仍名 StubReturnFalse（rename_symbol.py 走四方同步，另轮）。
+    未提交（按令）。
+
+
+- **2026-10-24 (X123)**: til 源工件修复轮（`?` 病根在 til，修源不修输出）+ CSP 缺陷测量审计
+  - **W1 审计**（改前）：587 authority 类（`class_layouts_csp` 583 + `class_layouts_rebuilt` 4）全在 til；20 空名成员（t14 minimal-struct offset-0）+ **3,546 证据成员（csp/x112）无成员（443 类）**；7,251 authority 偏移被既有 pad 覆盖（D4 精细度缺口，渲染 `__pad_N[k]` 非 `?`）→ `.omo/x123/w1_til_audit.{json,md}`
+  - **W2 修复**（extend-in-place：空名/占位→canon-real 改名（20）+ 证据成员追加（3,546，仅 10 处宽度回退 char[N]），既有成员类型零改动；verify-before/after-set 双闸 + 每 50 类 idb_save）：**587/587 PASS，0 verify-fail**（`w2_repair_report.json`）
+  - **W3 证明**：X91 全量 107 函数/184 site 强制 fresh 反编译 → **member-`?` = 0**；fresh cache `anchors/ida_cache_qmarkfix/`（107 文件 + manifest）；样本 0x4A3270 `&this->?` → `&this->vfptr1`
+  - **W4 审计（仅测量）→ `docs/csp_defects.md`**：A return 缺陷精确带 **1,726**（csp void 且快照 proto 非 void；"全 void"旧载已过时，typed 4,733 生效；无原型带 7,036 待 B10 激活）；B LCA 过粗 live 带（owner_layout_mismatch 245 + this_cast 36，原 86 owner_too_coarse 已被供给波消解为 0，冻结 59）；C ORPHAN **19.0%**（自 25.1% 改善）+ TOP **62**（G31 后重现，有界）+ VOID_PTR 21.1%；D3 769 gap token（卫生）；D4 pad 精细度 7,251（新测量）；D5 X119 blockers（member-supply 206 已被 X120 治愈；visibility 185/E-bucket 5,557 开放）
+  - 备份 `decompile-results/gamemd_x123_pre.i64`（改前 0.51GB）；工具 `.omo/x123/s1-s4*.py`（幂等可重跑，`w4_measurements.json` 落盘）；未提交（按令）
 - **2026-09-14 (G9)**: RTTI 容器族证据补全 + 舰队修复五连 + 两波（提交 5494bf60/ffedee1a/8c3c3be5，三次重锚）
   - **G9 证据**：owner 考古链离线贯通（addr→vtable_signatures→rtti_vtable_class）；容器族回填 76 类 306 成员（RTTI 家族统一 + 三重冲突守卫）；signals._member_by_name 全量同步 +814（修复 TypeList::Count→全局 0xB79BE0 的 resolver fallback bug）；vt_ +23（RTTI 主表直读）；DataGlobal +4；til +7
   - **G9 修复**：THIS_CAST_PAREN G7 双括号 bug（residual-this-cast 696 真根因）；foreign-receiver 旁路+逆映射（缓存 Block 命名 → IDA 侧 0 事件对称，G6-G8 gap2 低 PASS 率隐藏成分）；hoist 双变体仲裁；memory-chain 词汇；守卫精确化；swap/rollback 括号 deficit 加固

@@ -38,6 +38,7 @@ from tools.type_infer.lattice import (
 from tools.type_infer.scope_vars import (
     X86_REGISTERS, is_register as _is_register,
     build_scoped_index as _build_scoped_index,
+    _scope_one_var,
 )
 
 # ── _X86_REGISTERS and _is_register now in scope_vars.py ───────────────────
@@ -369,6 +370,12 @@ class TypeInferenceEngine:
         # B7: (receiver_var_id, slot_idx) pairs captured from CALL_VTABLE
         self._vtcall_routes: list[tuple[int, int]] = []
 
+        # T9e (X142b): arithmetic-typing rule firings.
+        # root_id → (rule, tier, edge_description). Auditable evidence ledger:
+        # feeds T10 BFS seeding (confidence honest for rule-typed roots) and
+        # t9e_evidence.json (per-rule yield attribution).
+        self._t9e_fired: dict[int, tuple[str, int, str]] = {}
+
         # Results
         self.eq_types: dict[int, LatticeElement] = {}  # root → type
         self.confidences: dict[int, int] = {}           # root → confidence tier
@@ -426,6 +433,11 @@ class TypeInferenceEngine:
 
         # Store original name lookup for anchor matching
         self._scoped_to_original = seen
+        # Write map (function, reg) → sorted write addrs — reused by T9e for
+        # ad-hoc SSA scoping of PTR_ARITH operands (X3/I91: PTR_ARITH edges
+        # are excluded from build_scoped_index's variable registration, so
+        # their from/to must be scoped on demand).
+        self._writes = result["writes"]
         # Sorted function start addresses (signals.json-complete) for
         # instruction→function containment (TYPE_SEED scoping)
         self._func_addrs = sorted(set(_load_all_function_addrs()))
@@ -987,6 +999,19 @@ class TypeInferenceEngine:
             return None
 
         n_this = n_param = n_return = n_member = 0
+
+        # T9e R5 (X142b W3): 可靠签名表供 call-arg 反传（arg ← param 类型）。
+        # (cc, params, sig_reliable) —— sig_reliable 门与上方 param 锚同一把：
+        # 含 unknown 参数的签名（varargs 等）不反传，防调用方污染。
+        self._csp_sig_by_addr = {
+            addr: (
+                sig.get("calling_convention", ""),
+                sig.get("params", []),
+                all(p.get("real_type") not in (None, "", "unknown", "?")
+                    for p in sig.get("params", [])),
+            )
+            for addr, sig in sig_by_addr.items()
+        }
 
         def _anchor(var_name: str, lattice_type, source: str) -> None:
             nonlocal n_this, n_param, n_return, n_member
@@ -2028,6 +2053,245 @@ class TypeInferenceEngine:
             print(f"  VOID_PTR fallback (direction-isolated roots): {untyped}",
                   file=sys.stderr)
 
+        # ── T9e (X142b): arithmetic typing rules ──────────────────────────
+        # C 类型规则补全（用户裁定：常量/计算临时值可从其运算定型）。
+        # 此前 PTR_ARITH 边不建任何类型邻接（X3/I91——裸 index(int) 与类
+        # 指针目的地的假 join 防御），算术结果一律落 VOID_PTR→ORPHAN。
+        # T9e 在传播收敛后把算术结果接回类型图（只写入无型根——BOTTOM/
+        # VOID_PTR——绝不改写既有类型，零新 TOP）：
+        #   R1 const-store : x = <字面量>            → int（rank-0 二进制事实）
+        #   R2 ptr-plus    : x = p ± n（p 类类型）    → x 同类。ADD/SUB 双向
+        #                    同构（指针±整数仍同类，from/to 两侧互推）。
+        #                    （W3 将补：reg±reg 的加数寄存器=索引操作数 → int）
+        #   R3 ptr-cast    : 约束库无独立 cast 种类（汇编层 cast 是 no-op；
+        #                    类型化 cast 证据经 ASSIGN(成员/全局→reg) 已由
+        #                    既有传播覆盖）——零产量，记录在案不实现。
+        #   R4 int-arith   : x = a ∘ b（int/unknown）→ int（弱证据 INFERRED）
+        #   R5 call-arg    : x 为 sig_reliable 被调方第 k 实参 → 该参数位类型
+        #                    （类=tier 1 / int=弱 tier 4；与 csp_param 锚同门）
+        #   R6 cmp-result  : x = (a<b) → int/bool——提取器层已覆盖（setcc →
+        #                    TYPE_SEED bool 18,841 条；旗标不物化值），约束库
+        #                    无独立种类——零产量，记录在案不实现。
+        # 类证据（R2）先于标量证据（R4 下一阶段）——复合 lea [B+idx*S] 的
+        # ADD 与 SCALE 共享目的地时类优先。每个定型根记录 (rule, tier,
+        # edge) 供 T10 播种与 t9e_evidence.json 审计。
+        _ARITH_GPRS = ("eax", "ebx", "ecx", "edx", "esi", "edi")
+        _SCALARS_T9E = ("int", "float", "char*", "bool")
+        # R5: CALL_ARG 目的地 `0xADDR::paramN` 解析 + int 族参数白名单
+        _RE_T9E_PARAM = re.compile(r"^(0x[0-9A-Fa-f]{8})::param(\d+)$")
+        _T9E_INT_PARAMS = frozenset({
+            "int", "unsigned int", "bool", "BOOL", "long", "short", "char",
+            "DWORD", "BYTE", "WORD", "_DWORD", "_BYTE", "_WORD",
+            "__int8", "__int16", "__int32", "size_t",
+        })
+        _t9e_fired: dict[int, tuple[str, int, str]] = {}
+        _arith_writes = getattr(self, "_writes", None)
+        if _arith_writes is not None:
+            _arith_edges: list[tuple[str, int, int, int | None, str]] = []
+            for _c in self.constraints:
+                if _c.get("type") != "PTR_ARITH":
+                    continue
+                try:
+                    _a = int(_c.get("addr", ""), 16)
+                except (ValueError, TypeError):
+                    continue
+                _fr = self.var_to_id.get(_scope_one_var(
+                    _c.get("from", ""), _a, self._func_addrs, _arith_writes))
+                _to = self.var_to_id.get(_scope_one_var(
+                    _c.get("to", ""), _a, self._func_addrs, _arith_writes))
+                if _fr is None or _to is None:
+                    continue
+                _imm_id: int | None = None
+                _imm = _c.get("imm")
+                if isinstance(_imm, str) and _imm.strip().lower() in _ARITH_GPRS:
+                    _imm_id = self.var_to_id.get(_scope_one_var(
+                        _imm.strip().lower(), _a, self._func_addrs, _arith_writes))
+                _arith_edges.append(
+                    (_c.get("op", ""), _fr, _to, _imm_id, _c.get("addr", "")))
+            # R1 const-store 目的地（ASSIGN/STACK_ACCESS 字面量源；去重保序）
+            _const_dsts: list[int] = []
+            _const_seen: set[int] = set()
+            for _i, _c in enumerate(self.constraints):
+                if _c.get("type") not in ("ASSIGN", "STACK_ACCESS"):
+                    continue
+                _sf, _st = self._scoped_to_name[_i]
+                if _sf is None or _st is None or not _is_var_literal(_sf):
+                    continue
+                _tid = self.var_to_id.get(_st)
+                if _tid is None or _tid in _const_seen:
+                    continue
+                _const_seen.add(_tid)
+                _const_dsts.append(_tid)
+
+            for _t9e_round in range(3):
+                _changed = 0
+                # R1: const-store（每轮重查无型；事实无传播依赖）
+                for _tid in _const_dsts:
+                    _r = self.uf.find(_tid)
+                    if (root_types.get(_r, BOTTOM) in (BOTTOM, VOID_PTR)
+                            and _r not in frozen_roots):
+                        root_types[_r] = "int"
+                        _t9e_fired.setdefault(_r, (
+                            "const-store", 0,
+                            "literal store → %s" % self.id_to_var[_tid]))
+                        if _r not in in_worklist:
+                            worklist.append(_r)
+                            in_worklist.add(_r)
+                        _changed += 1
+                # Phase A: R2 ptr-plus — 类指针流（优先于标量）
+                for _op, _fr, _to, _imm, _as in _arith_edges:
+                    if _op not in ("ADD", "SUB"):
+                        continue
+                    _fr_r = self.uf.find(_fr)
+                    _to_r = self.uf.find(_to)
+                    _fr_t = root_types.get(_fr_r, BOTTOM)
+                    _to_t = root_types.get(_to_r, BOTTOM)
+                    _fr_cls = (_is_concrete(_fr_t)
+                               and _fr_t not in _SCALARS_T9E)
+                    _to_cls = (_is_concrete(_to_t)
+                               and _to_t not in _SCALARS_T9E)
+                    if _fr_r != _to_r:
+                        if (_fr_cls and _to_t in (BOTTOM, VOID_PTR)
+                                and _to_r not in frozen_roots):
+                            root_types[_to_r] = _fr_t
+                            _t9e_fired.setdefault(_to_r, (
+                                "ptr-plus", 1,
+                                "%s from=%s @ %s" % (
+                                    _op, self.id_to_var[_fr], _as)))
+                            if _to_r not in in_worklist:
+                                worklist.append(_to_r)
+                                in_worklist.add(_to_r)
+                            _changed += 1
+                        elif (_to_cls and _fr_t in (BOTTOM, VOID_PTR)
+                                and _fr_r not in frozen_roots):
+                            root_types[_fr_r] = _to_t
+                            _t9e_fired.setdefault(_fr_r, (
+                                "ptr-plus", 1,
+                                "%s reverse to=%s @ %s" % (
+                                    _op, self.id_to_var[_to], _as)))
+                            if _fr_r not in in_worklist:
+                                worklist.append(_fr_r)
+                                in_worklist.add(_fr_r)
+                            _changed += 1
+                # Phase B (W3): R4 int-arith — 标量流（仅仍无型者）。
+                #   SCALE      : index×const（imul/shl/lea 复合寻址变址项）
+                #                → int（弱证据 INFERRED）
+                #   ADD/SUB    : from 已有正 int 证据（非指针门控情形）→ to int
+                #   reg±reg    : 加数寄存器是指针运算的索引操作数 → int
+                # 注意：复合 lea [B+idx*S] 的 SCALE 与 ADD 共享 to——Phase A
+                # 已给 to 定类时此处 to_t 检查自然跳过（类优先于标量）。
+                for _op, _fr, _to, _imm, _as in _arith_edges:
+                    _to_r = self.uf.find(_to)
+                    _to_t = root_types.get(_to_r, BOTTOM)
+                    if _to_t not in (BOTTOM, VOID_PTR) or _to_r in frozen_roots:
+                        continue
+                    if _op == "SCALE":
+                        root_types[_to_r] = "int"
+                        _t9e_fired.setdefault(_to_r, (
+                            "int-arith", 4, "SCALE @ %s" % _as))
+                        if _to_r not in in_worklist:
+                            worklist.append(_to_r)
+                            in_worklist.add(_to_r)
+                        _changed += 1
+                    elif _op in ("ADD", "SUB"):
+                        _fr_r2 = self.uf.find(_fr)
+                        if (_fr_r2 != _to_r
+                                and root_types.get(_fr_r2, BOTTOM) == "int"):
+                            root_types[_to_r] = "int"
+                            _t9e_fired.setdefault(_to_r, (
+                                "int-arith", 4,
+                                "%s int-operand from=%s @ %s" % (
+                                    _op, self.id_to_var[_fr], _as)))
+                            if _to_r not in in_worklist:
+                                worklist.append(_to_r)
+                                in_worklist.add(_to_r)
+                            _changed += 1
+                    if _imm is not None:
+                        _imm_r2 = self.uf.find(_imm)
+                        if (root_types.get(_imm_r2, BOTTOM) in (BOTTOM, VOID_PTR)
+                                and _imm_r2 not in frozen_roots):
+                            root_types[_imm_r2] = "int"
+                            _t9e_fired.setdefault(_imm_r2, (
+                                "int-arith", 4,
+                                "%s index operand of %s @ %s" % (
+                                    _op, self.id_to_var[_fr], _as)))
+                            if _imm_r2 not in in_worklist:
+                                worklist.append(_imm_r2)
+                                in_worklist.add(_imm_r2)
+                            _changed += 1
+                # Phase C (W3): R5 call-arg — 可靠签名参数类型反传到实参。
+                # x 作为第 k 实参传入 sig_reliable 的被调方 → x 得该参数位
+                # 类型。类参数 = tier 1（与 csp_param 锚一跳之隔）；int 参数
+                # = 弱标量 tier 4。只写入无型根（BOTTOM/VOID_PTR），
+                # 不改写既有类型 → 零新 TOP。
+                _sig_by_addr = getattr(self, "_csp_sig_by_addr", None)
+                if _sig_by_addr:
+                    for _i, _c in enumerate(self.constraints):
+                        if _c.get("type") != "CALL_ARG":
+                            continue
+                        _sf, _st = self._scoped_to_name[_i]
+                        if _sf is None or _st is None:
+                            continue
+                        _m9 = _RE_T9E_PARAM.match(_st)
+                        if not _m9:
+                            continue
+                        _sig9 = _sig_by_addr.get(int(_m9.group(1), 16))
+                        if _sig9 is None or not _sig9[2]:
+                            continue
+                        _cc9, _params9, _ = _sig9
+                        _idx9 = int(_m9.group(2)) + (1 if _cc9 == "thiscall" else 0)
+                        if _idx9 < 0 or _idx9 >= len(_params9):
+                            continue
+                        _rt9 = str(_params9[_idx9].get("real_type", "") or "")
+                        _rt9 = _rt9.rstrip("*").strip()
+                        if _rt9.endswith("_csp"):
+                            _rt9 = _rt9[:-4]
+                        if _rt9 in ("unknown", "?", ""):
+                            continue
+                        _arg_id = self.var_to_id.get(_sf)
+                        if _arg_id is None:
+                            continue
+                        _arg_r = self.uf.find(_arg_id)
+                        if (root_types.get(_arg_r, BOTTOM) not in (BOTTOM, VOID_PTR)
+                                or _arg_r in frozen_roots):
+                            continue
+                        if _rt9 in _T9E_INT_PARAMS:
+                            root_types[_arg_r] = "int"
+                            _t9e_fired.setdefault(_arg_r, (
+                                "call-arg", 4,
+                                "param%d of %s (%s) int @ %s" % (
+                                    _idx9, _m9.group(1), _cc9,
+                                    _c.get("addr", ""))))
+                            if _arg_r not in in_worklist:
+                                worklist.append(_arg_r)
+                                in_worklist.add(_arg_r)
+                            _changed += 1
+                        else:
+                            for _pfx9 in ("class ", "struct ", "const "):
+                                if _rt9.startswith(_pfx9):
+                                    _rt9 = _rt9[len(_pfx9):]
+                            if _rt9 in self._member_types_by_class_classes:
+                                root_types[_arg_r] = _rt9
+                                _t9e_fired.setdefault(_arg_r, (
+                                    "call-arg", 1,
+                                    "param%d of %s (%s) → %s @ %s" % (
+                                        _idx9, _m9.group(1), _cc9, _rt9,
+                                        _c.get("addr", ""))))
+                                if _arg_r not in in_worklist:
+                                    worklist.append(_arg_r)
+                                    in_worklist.add(_arg_r)
+                                _changed += 1
+                if _changed and _t9e_round < 2:
+                    _propagate_round()
+            if _t9e_fired:
+                _by_rule: Counter = Counter(
+                    r for r, _t, _e in _t9e_fired.values())
+                print(f"  T9e arithmetic-typing fired: "
+                      f"{dict(_by_rule.most_common())}", file=sys.stderr)
+                self._t9e_fired = _t9e_fired
+                _propagate_round()
+
+
         # ── B10d (X29 Stage 1): usage-driven pointer promotion, rules A/B ──
         # 背景（L297 / I251 / slow_convergence_diagnosis §3.2）: 提取器给成员
         # 打的 int 种子、B6b 原始寄存器 int 种子（引擎按“函数内全部 SSA 版本”
@@ -2336,6 +2600,16 @@ class TypeInferenceEngine:
                 distance[root] = 0
                 queue.append((root, 0))
 
+        # T9e (X142b): rule-fired roots join the BFS at their evidence tier —
+        # arithmetic-typed vars are no longer labeled ORPHAN (dishonest:
+        # they carry a type with recorded provenance); downstream vars
+        # reached through them get ≥ tier+1.
+        for _r9e_root, (_rule, _tier, _edge) in sorted(
+                getattr(self, "_t9e_fired", {}).items()):
+            if _r9e_root not in distance:
+                distance[_r9e_root] = _tier
+                queue.append((_r9e_root, _tier))
+
         # BFS along every channel (meet + param + return) — combined graph
         # built in _seed_orphan_components; fall back to meet adjacency if
         # seeding was skipped.
@@ -2469,6 +2743,39 @@ class TypeInferenceEngine:
         self._generate_type_map()
         self._generate_top_causes_report()
         self._generate_contradictions_report()
+        self._generate_t9e_evidence()
+
+    def _generate_t9e_evidence(self) -> None:
+        """T9e (X142b) evidence ledger: per-rule yield with per-root provenance.
+
+        Written next to type_map.json so ORPHAN attribution stays auditable:
+        every arithmetic-typing firing records (rule, tier, edge, sample var).
+        """
+        fired = getattr(self, "_t9e_fired", None)
+        if not fired:
+            return
+        by_rule: Counter = Counter(rule for rule, _t, _e in fired.values())
+        rows = []
+        for root in sorted(fired):
+            rule, tier, edge = fired[root]
+            rows.append({
+                "root": root,
+                "var": self.id_to_var[root] if 0 <= root < len(self.id_to_var) else "?",
+                "rule": rule,
+                "tier": tier,
+                "edge": edge,
+            })
+        out = {
+            "note": "T9e arithmetic typing rules (X142b) — evidence ledger",
+            "total_fired": len(fired),
+            "by_rule": dict(by_rule.most_common()),
+            "firings": rows,
+        }
+        out_path = os.path.join(os.getcwd(), "t9e_evidence.json")
+        with open(out_path, "w", encoding="utf-8") as f:
+            json.dump(out, f, indent=1, ensure_ascii=False)
+        print(f"  T9e evidence: {len(fired)} firings "
+              f"({dict(by_rule.most_common())}) → {out_path}", file=sys.stderr)
 
     def _generate_top_causes_report(self) -> None:
         """Dump the T11-lite TOP-cause histogram: exact (typeA, typeB) meet
