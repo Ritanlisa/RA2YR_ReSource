@@ -1209,11 +1209,11 @@ public:
     virtual void write(); // 0x724C60
     // +9 more virtual methods
 
-    int X;  // 0x4 (X137C: disasm)
+    int Items;  // 0x4 (X139B: disasm n=10; was X; gadget-family Items)
 
-    int Y;  // 0x8 (X137C: disasm)
+    int Capacity;  // 0x8 (X139B: disasm n=8; was Y; gadget-family Capacity)
 
-    uint8_t ToolTipClass_field_0x0C[4];
+    int initEvent;  // 0xC (X139B: dword slot; was byte[4] field_0x0C; ToolTipText byte-view banked)
     uint8_t q010[4];
     uint8_t q014[4];
     uint8_t q018[4];

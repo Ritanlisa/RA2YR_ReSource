@@ -5,14 +5,32 @@
 namespace gamemd {
 int BuildingClass::initAnimation(int a1) { return 0; }  // X137B placeholder
 int BuildingClass::UpdateSidebar() { return 0; }  // X137B placeholder
-int BuildingClass::DrawPlacementPreview() { return 0; }  // X137B placeholder
-int BuildingClass::GetTurretAngle() { return 0; }  // X137B placeholder
-int BuildingClass::ProcessDemolish() { return 0; }  // X137B placeholder
+// 0x459e80 (X139A: def added — decl existed without body)
+HRESULT __stdcall BuildingClass::GetClassID(CLSID* pClassID)
+{
+  if ( !pClassID ) /*0x459e86*/
+    return -2147467261; /*0x459e88*/
+  pClassID->Data1 = 0x0E272DC6u; /*0x459e96*/
+  pClassID->Data2 = 0x9C0Fu; /*0x459e9e*/
+  pClassID->Data3 = 0xD111u; /*0x459e9e*/
+  pClassID->Data4[0] = 0xB7; /*0x459ea1*/
+  pClassID->Data4[1] = 0x09; /*0x459ea1*/
+  pClassID->Data4[2] = 0x00; /*0x459ea1*/
+  pClassID->Data4[3] = 0xA0; /*0x459ea1*/
+  pClassID->Data4[4] = 0x24; /*0x459eab*/
+  pClassID->Data4[5] = 0xDD; /*0x459eab*/
+  pClassID->Data4[6] = 0xAF; /*0x459eab*/
+  pClassID->Data4[7] = 0xD1; /*0x459eab*/
+  return 0; /*0x459eb5*/
+}
+int BuildingClass::DrawPlacementPreview(int a1, int a2) { return 0; }  // X137B placeholder (X139A arity: binary ret 8 @0x43DA80)
+int BuildingClass::GetTurretAngle(int a1, int a2) { return 0; }  // X137B placeholder (X139A arity: binary ret 8 @0x43ED40)
+int BuildingClass::ProcessDemolish(int a1, int a2, int a3, int a4) { return 0; }  // X137B placeholder (X139A arity: binary ret 16 @0x4415F0)
 int BuildingClass::ProcessPrimarySelect() { return 0; }  // X137B placeholder
-int BuildingClass::ScanCircleForUnits2() { return 0; }  // X137B placeholder
-int BuildingClass::ScanCircleForUnits() { return 0; }  // X137B placeholder
-int BuildingClass::UpdateTerrainEffect() { return 0; }  // X137B placeholder
-int BuildingClass::ScanCircleForTiberium() { return 0; }  // X137B placeholder
+int BuildingClass::ScanCircleForUnits2(int a1) { return 0; }  // X137B placeholder (X139A arity: binary ret 4 @0x455820)
+int BuildingClass::ScanCircleForUnits(int a1) { return 0; }  // X137B placeholder (X139A arity: binary ret 4 @0x4556D0)
+int BuildingClass::UpdateTerrainEffect(int a1) { return 0; }  // X137B placeholder (X139A arity: binary ret 4 @0x455A80)
+int BuildingClass::ScanCircleForTiberium(int a1) { return 0; }  // X137B placeholder (X139A arity: binary ret 4 @0x455980)
 int BuildingClass::StubReturn0() { return 0; }  // X137B placeholder
 HRESULT __stdcall BuildingClass::Load(IStream* stream) { return 0; }  // X137B placeholder
 HRESULT __stdcall BuildingClass::Save(IStream* stream, int clear_dirty) { return 0; }  // X137B placeholder

@@ -34,7 +34,7 @@ public:
     int Reset();
 
     uint32_t    hash_state_0;       // 0x00
-    uint32_t    hash_state_4;       // 0x04
+    uint32_t    m_Next;             // 0x04 (X139B: was hash_state_4)
 };
 
 // ============================================================================

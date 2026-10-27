@@ -1304,7 +1304,7 @@ void BuildingClass::ValidatePlacement(char a2) {
 
 }
 // 0x44efb0
-bool BuildingClass::ValidateFoundation()  // raw body 0x44efb0 follows
+bool BuildingClass::ValidateFoundation(int a1, int a2, int a3)  // raw body 0x44efb0 follows
 {
 
   int *v2; // eax

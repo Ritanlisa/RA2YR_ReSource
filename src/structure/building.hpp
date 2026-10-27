@@ -155,18 +155,18 @@ public:
     // X137B: BuildingClass own virtuals -- binary table 0x7E3EBC slots [309]-[321] (13)
     // declaration order = slot order; arity = Capstone first-retn/4.
     // ========================================================================
-    virtual bool ValidateFoundation();  // X137B slot 309 = 0x44EFB0 (bin: ValidateFoundation)
+    virtual bool ValidateFoundation(int a1, int a2, int a3);  // X137B slot 309 = 0x44EFB0 (bin: ValidateFoundation)
     virtual int initAnimation(int);  // X137B slot 310 = 0x447E00
     virtual int CreateUnits();  // X137B slot 311 = 0x445F80 (bin: CreateUnits)
     virtual int UpdateSidebar();  // X137B slot 312 = 0x4456D0
-    virtual int DrawPlacementPreview();  // X137B slot 313 = 0x43DA80 (bin: DrawPlacementPreview)
-    virtual int GetTurretAngle();  // X137B slot 314 = 0x43ED40
-    virtual int ProcessDemolish();  // X137B slot 315 = 0x4415F0
+    virtual int DrawPlacementPreview(int a1, int a2);  // X137B slot 313 = 0x43DA80 (bin: DrawPlacementPreview)
+    virtual int GetTurretAngle(int a1, int a2);  // X137B slot 314 = 0x43ED40
+    virtual int ProcessDemolish(int a1, int a2, int a3, int a4);  // X137B slot 315 = 0x4415F0
     virtual int ProcessPrimarySelect();  // X137B slot 316 = 0x448160
-    virtual int ScanCircleForUnits2();  // X137B slot 317 = 0x455820 (bin: ScanCircleForUnits2)
-    virtual int ScanCircleForUnits();  // X137B slot 318 = 0x4556D0 (bin: ScanCircleForUnits)
-    virtual int UpdateTerrainEffect();  // X137B slot 319 = 0x455A80 (bin: UpdateTerrainEffect)
-    virtual int ScanCircleForTiberium();  // X137B slot 320 = 0x455980 (bin: ScanCircleForTiberium)
+    virtual int ScanCircleForUnits2(int a1);  // X137B slot 317 = 0x455820 (bin: ScanCircleForUnits2)
+    virtual int ScanCircleForUnits(int a1);  // X137B slot 318 = 0x4556D0 (bin: ScanCircleForUnits)
+    virtual int UpdateTerrainEffect(int a1);  // X137B slot 319 = 0x455A80 (bin: UpdateTerrainEffect)
+    virtual int ScanCircleForTiberium(int a1);  // X137B slot 320 = 0x455980 (bin: ScanCircleForTiberium)
     virtual int StubReturn0();  // X137B slot 321 = 0x452250 (bin: StubReturn0)
 
     // wrapper: delegates to BuildingClass::Dtor at 0x43BCF0

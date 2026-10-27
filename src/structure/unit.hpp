@@ -186,7 +186,7 @@ public:
 
     // === Phase 3: Per-Frame & AI ===
     int PowerDrainUpdate(int a2) ;  // 0x744640
-    virtual int PerFrameUpdate();  // 0x746810 | X137B slot 9 = 0x746810
+    virtual int PerFrameUpdate() override;  // 0x746810 | X137B slot 9 = 0x746810
     int HandleTargetDestroyed(void* a1, void* aP2);  // 0x7446E0
     int CheckStatus();  // 0x6B4F20
     int ClearTargetRef(int a2);  // 0x6B7C60

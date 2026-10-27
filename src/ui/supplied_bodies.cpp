@@ -3275,10 +3275,10 @@ void ToolTipClass::updateString() {
   int v4; // edx
   void *v5; // eax
 
-  ToolTipClass_field_0x08 = (HWND)this->Y; /*0x7240ba*/
+  ToolTipClass_field_0x08 = (HWND)this->q008; /*0x7240ba*/
   /* X11: ptr_0 install elided (implicit via class virtuals 0x7240bd) — binary-proven install, was 0 */
   KillTimer(ToolTipClass_field_0x08, 0x54544950u); /*0x7240c4*/
-  if ( this->X ) /*0x7240ca*/
+  if ( this->Position ) /*0x7240ca*/
     this->InputThunkB(&this->ID); /*0x7240db*/
   operator delete((void *)(this->u32_24C7))); /*0x7240e5*/
   this->u32_24C = 0; /*0x7240ea*/
@@ -3307,7 +3307,7 @@ void ToolTipClass::updateString() {
     this->__pad_238 = 0; /*0x724191*/
   }
   this->u32_241 = 0; /*0x724194*/
-  this->u32_23C = 0; /*0x724197*/
+  this->q008 = 0; /*0x724197*/
 }
 } // namespace gamemd
 

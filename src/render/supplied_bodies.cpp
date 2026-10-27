@@ -3982,11 +3982,11 @@ namespace gamemd {
 void Voxel_Section::Constructor()
 {
   int v3; // eax
-  int v4; // eax
+  void *v4; // eax
   int v5; // ecx
   int v6; // eax
 
-  this->ptr_2 = 0; /*0x75e6bd*/
+  this->q004 = 0; /*0x75e6bd*/
   this->ptr_3 = 0; /*0x75e6c0*/
   this->q004 = 1; /*0x75e6c3*/
   this->CombatLightSize = 0; /*0x75e6c7*/
@@ -3999,7 +3999,7 @@ void Voxel_Section::Constructor()
     if ( v3 ) /*0x75e6e0*/
     {
       v4 = operator new(4 * v3); /*0x75e6e6*/
-      this->ptr_2 = v4; /*0x75e6f0*/
+      this->q004 = v4; /*0x75e6f0*/
       if ( v4 ) /*0x75e6f3*/
       {
         v5 = this->Capacity; /*0x75e6f5*/
@@ -4018,7 +4018,7 @@ void Voxel_Section::Constructor()
     }
     else
     {
-      this->ptr_2 = 0; /*0x75e718*/
+      this->q004 = 0; /*0x75e718*/
       this->IsAllocated = 0; /*0x75e71b*/
     }
   }

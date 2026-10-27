@@ -197,7 +197,7 @@ virtual unsigned int * Disconnect(int, int, int a2);  // 0x540030
     virtual void ReceivePacket(int a1);  // X75: slot 17 (0x540110) = IPXGlobalConnClass::ReceivePacket (sibling promoted)
 
 
-    uint8_t IPXGlobalConnClass_field_0x04[4];
+    void* PlayerIndex;  // 0x4 (X139B: mt __pad_004; was field_0x04 byte[4])
     uint8_t q008[4];
     uint8_t q00C[4];
     uint8_t q010[4];

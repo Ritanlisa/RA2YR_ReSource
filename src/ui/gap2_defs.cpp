@@ -7117,7 +7117,7 @@ int ToolTipClass::readString(int a1, void* a2) {
 
   if ( a1 ) /*0x724cdc*/
   {
-    (this->ToolTipText) = 0; /*0x724ce6*/
+    (this->initEvent) = 0; /*0x724ce6*/
     if ( a2 ) /*0x724cec*/
       v4 = a2; /*0x724d02*/
     else
@@ -7180,7 +7180,7 @@ int ToolTipClass::seekString(void* a1) {
   result = 0; /*0x724dc1*/
   if ( m_8 <= 0 ) /*0x724dc5*/
     return -1; /*0x724ddc*/
-  for ( i = *&this->Position; *i != *a1; ++i ) /*0x724dcb*/
+  for ( i = *&this->Items; *i != *a1; ++i ) /*0x724dcb*/
   {
     if ( ++result >= m_8 ) /*0x724dda*/
       return -1; /*0x724dda*/

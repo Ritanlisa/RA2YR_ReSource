@@ -1765,7 +1765,7 @@ public:
 
     uint8_t HashTable_field_0x04[4];
     uint8_t HashTable_field_0x08[4];
-    uint8_t HashTable_field_0x0C[4];
+    unsigned int q00C;  // 0xC (X139B: mt u32_C; was HashTable_field_0x0C)
     uint8_t HashTable_field_0x10[4];
 
     uint8_t u32_14[4];

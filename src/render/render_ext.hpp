@@ -1641,7 +1641,7 @@ public:
     virtual void Draw(); // 0x75D3A0
     void* Constructor(); // 0x75E6B0
 
-    uint8_t q004[4];
+    void* q004;  // 0x4 (X139B: retype; operator-new result stored)
 };
 
 } // namespace gamemd
