@@ -200,10 +200,10 @@ TiberiumClass::TiberiumClass(ObjectClass * aP1)
   v3 = *(unsigned int *)&stru_A8E960.random[528];  /*0x721794*/
   this->GrowthTimer[2] = 0;  /*0x72179a*/
   this->GrowthTimer[0] = v3;  /*0x7217a0*/
-  /* X11: vtable install elided (implicit via TiberiumClass_4 virtuals) */
-  /* X11: vtable install elided (implicit via TiberiumClass_4 virtuals) */
-  /* X11: vtable install elided (implicit via TiberiumClass_4 virtuals) */
-  /* X11: vtable install elided (implicit via TiberiumClass_4 virtuals) */
+  /* X11: vfptr install elided (implicit via TiberiumClass_4 virtuals) */
+  /* X11: vfptr install elided (implicit via TiberiumClass_4 virtuals) */
+  /* X11: vfptr install elided (implicit via TiberiumClass_4 virtuals) */
+  /* X11: vfptr install elided (implicit via TiberiumClass_4 virtuals) */
   *(unsigned int *)this->isInLogic = dword_B0F4F8;  /*0x7217c6*/  /*0x7217ba*/  /*0x7217b3*/  /*0x7217ac*/  /*0x7217a6*/
   if ( dword_B0F4F8 < dword_B0F4F0
     || (byte_B0F4F5 || !dword_B0F4F0)

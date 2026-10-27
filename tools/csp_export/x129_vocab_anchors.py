@@ -31,7 +31,7 @@ import difflib
 import json
 import os
 import re
-from collections import defaultdict, deque
+from collections import Counter, defaultdict, deque
 
 # ---------------------------------------------------------------- anchors
 ANCHOR_ANY = re.compile(r'/\*0x([0-9a-fA-F]+)\*/')
@@ -42,6 +42,139 @@ MEM_RE = re.compile(
     r'^\s{2,8}(.+?)\s*\b([A-Za-z_]\w*)\s*(?:\[(\d+)\])?\s*;\s*'
     r'//\s*(?:0x)?([0-9A-Fa-f]+)\s*$')
 STRUCT_RE = re.compile(r'^\s*(?:struct|class)\s+([A-Za-z_]\w*)\s*[:{]')
+
+# ------------------------------------------------------- X136 til supplies
+# Live til dump 2026-10-26 (gamemd.exe.i64, idc.get_type per label); evidence
+# trail in .omo/x136/plan.md + w1e_fresh_context.txt.  The raw-label decls
+# (ida_globals.h uchar/uint, force-included into every TU) conflict with the
+# x130 fresh-cache renders' member access, so each of these globals gets an
+# `<orig>_x136` typed ALIAS object (definitions: src/core/x136_til_alias_defs.cpp,
+# per-TU externs emitted by rematerialize_defs.sweep_missing_globals).  This
+# follows the g_BuildingLoadQueue_Array_flat/_host/_raw/_t family convention.
+X136_ALIAS_SUFFIX = '_x136'
+X136_TIL_ALIASES = {
+    # ident: (carrier class, kind)  kind: value=object, ptr=null pointer object
+    'stru_B0F5B8': ('DynamicVectorClass', 'value'),      # 0xB0F5B8 til DynamicVectorClass
+    'g_BuildingLoadQueue_Array': ('DynamicVectorClass', 'value'),  # 0xB0E840 (render is DVC-shaped)
+    'WeaponTypeClass_Array': ('WeaponTypeClass', 'value'),  # 0x887568 (til "T*" is a mis-guess; value object)
+    'dword_A8B230': ('AbstractClass', 'ptr'),            # 0xA8B230 til AbstractClass*
+    'dword_8871E0': ('RulesClass', 'ptr'),               # 0x8871E0 til RulesClass*
+    'DSurface_Alternate': ('DSurface', 'ptr'),           # 0x887310 til DSurface*
+    'stru_A8E3A8': ('MissionClass', 'value'),            # 0xA8E3A8 til MissionClass
+}
+# DynamicVector til-member aliases (live til vs corpus carrier -- the corpus
+# carrier keeps its X55-era member names; byte geometry is identical):
+# til_name -> (byte offset, element size in bytes)
+X136_DYNAMICVECTOR_TIL_MEMBERS = {
+    '__pad_0': (0x00, 1),
+    'DynamicVector_field_0x1': (0x01, 1),
+    '__pad_5': (0x05, 1),
+    'DynamicVector_field_0x8': (0x08, 4),
+    '__pad_C': (0x0C, 1),
+    'DynamicVector_field_0x10': (0x10, 4),
+    '__pad_14': (0x14, 1),
+    'DynamicVector_field_0x1C': (0x1C, 4),
+    '__pad_20': (0x20, 1),
+    'DynamicVector_field_0x28': (0x28, 4),
+}
+# X136: per-class til-member tables (same convention).  Corpus carriers keep
+# earlier-era member names (`_d` dedup suffixes); the fresh til render spells
+# the semantic INI names.  All entries are live-til-dump evidence.
+X136_TIL_MEMBERS = {
+    'DynamicVector': X136_DYNAMICVECTOR_TIL_MEMBERS,
+    'AnimTypeClass': {
+        'MiddleFrameHeight': (0x29C, 4),        # corpus MiddleFrameHeight_d
+        'AnimTypeClass_field_2A4': (0x2A4, 1),  # corpus scalar uchar
+        'Damage': (0x2A8, 4),                   # corpus double -> halves
+        'Start': (0x2B4, 4),                    # corpus Damage_d
+        'LoopStart': (0x2B8, 4),                # corpus LoopStart_d
+        'LoopEnd': (0x2BC, 4),                  # corpus LoopEnd_d
+        'End': (0x2C0, 4),                      # corpus End_d
+        'LoopCount': (0x2C4, 4),                # corpus LoopCount_d
+        'Next': (0x2C8, 4),                     # corpus Next_d
+        'SpawnsParticle': (0x2CC, 4),           # corpus SpawnsParticle_d
+        'DetailLevel': (0x2D4, 4),              # corpus DetailLevel_d
+        'TranslucencyDetailLevel': (0x2D8, 4),  # corpus ..._d
+        'RandomLoopDelay': (0x2DC, 4),          # corpus char[8]
+        'RandomRate': (0x2E4, 4),               # corpus char[8]
+        'Translucency': (0x2EC, 4),             # corpus Translucency_d
+        'Spawns': (0x2F0, 4),                   # corpus Spawns_d
+        'SpawnCount': (0x2F4, 4),               # corpus SpawnCount_d
+        'Report': (0x2F8, 4),                   # corpus Report_d
+        'StopSound': (0x2FC, 4),                # corpus StopSound_d
+        'BounceAnim': (0x300, 4),               # corpus BounceAnim_d
+        'ExpireAnim': (0x304, 4),               # corpus ExpireAnim_d
+        'TrailerAnim': (0x308, 4),              # corpus TrailerAnim_d
+        'TrailerSeperation': (0x30C, 4),        # corpus TrailerSeperation_d
+        'Elasticity': (0x310, 4),               # corpus Elasticity_d (double)
+        'MinZVel': (0x318, 4),                  # corpus MinZVel_d (double)
+        'AnimTypeClass_field_double_320': (0x320, 4),  # corpus double
+        'MaxXYVel': (0x328, 4),                 # corpus double
+        'Insignificant': (0x232, 1),            # corpus Insignificant_d
+        'Immune': (0x233, 1),                   # corpus __pad_233
+    },
+    'SideClass': {
+        'houseTypes': (0x098, 4),               # corpus houseTypes_d
+        'houseTypesCount': (0x09C, 4),          # corpus houseTypesCount_d
+        'field_A5': (0x0A5, 1),                 # corpus u8_A5
+        'field_A8': (0x0A8, 4),                 # corpus u32_A8
+    },
+    'Skirmish': {
+        'field_0': (0x00, 4),                   # corpus u32_0
+    },
+    'WeaponTypeClass': {
+        'AssaultAnim': (0x114, 4),              # corpus AssaultAnim_d
+        'OpenToppedAnim': (0x118, 4),           # corpus OpenToppedAnim_d
+        'LaserInnerColor': (0x120, 1),          # corpus LaserInnerColor_d char[3]
+        'UseFireParticles': (0x129, 1),         # corpus UseFireParticles_d
+        'IsSonic': (0x130, 1),                  # corpus IsSonic_d
+        'Spawner': (0x131, 1),                  # corpus Spawner_d
+        'LimboLaunch': (0x132, 1),              # corpus LimboLaunch_d
+        'DecloakToFire': (0x133, 1),            # corpus DecloakToFire_d
+        'CellRangefinding': (0x134, 1),         # corpus CellRangefinding_d
+        'NeverUse': (0x136, 1),                 # corpus NeverUse_d
+        'RevealOnFire': (0x137, 1),             # corpus RevealOnFire_d
+        'InfiniteMindControl': (0x140, 1),      # corpus InfiniteMindControl_d
+        'FireWhileMoving': (0x141, 1),          # corpus FireWhileMoving_d
+        'Suicide': (0x144, 1),                  # corpus Suicide_d
+        'Supress': (0x146, 1),                  # corpus Supress_d
+        'Camera': (0x147, 1),                   # corpus Camera_d
+        'Charges': (0x148, 1),                  # corpus Charges_d
+        'IsLaser': (0x149, 1),                  # corpus IsLaser_d
+        'AreaFire': (0x150, 1),                 # corpus AreaFire_d
+        'IsElectricBolt': (0x151, 1),           # corpus IsElectricBolt_d
+        'DrawBoltAsLaser': (0x152, 1),          # corpus DrawBoltAsLaser_d
+        'IsAlternateColor': (0x153, 1),         # corpus IsAlternateColor_d
+    },
+}
+# Corpus carrier headers providing COMPLETE types for instances whose members
+# the landed bodies dereference (e4 TU includes are selective; the sweep emits
+# these when the body touches the instance).
+X136_INSTANCE_HEADERS = {
+    'stru_A8E960': 'e4/classes/ScenarioClass_e4.hpp',
+    'stru_AC4B48': 'e4/classes/SidebarClass_e4.hpp',
+    'stru_B0F670': 'e4/classes/DynamicVector_e4.hpp',
+    'stru_A83CD9': 'e4/classes/_tree_full_e4.hpp',
+    'stru_B0F5B8': 'e4/classes/_tree_full_e4.hpp',
+    'dword_8871E0_x136': 'e4/classes/RulesClass_e4.hpp',
+    'dword_A8B230_x136': 'e4/classes/AbstractClass_e4.hpp',
+    'DSurface_Alternate_x136': 'e4/classes/DSurface_e4.hpp',
+    'stru_A8E3A8_x136': 'e4/classes/MissionClass_e4.hpp',
+    'WeaponTypeClass_Array_x136': 'e4/classes/WeaponTypeClass_e4.hpp',
+    'g_BuildingLoadQueue_Array_x136': 'e4/classes/_tree_full_e4.hpp',
+}
+# Corpus members whose type diverges from the til's (same byte geometry):
+# (class, member) -> rule.  'int-arith': til member is an integer, corpus
+# member is a pointer -> value uses need `(int)` (compare/assign excluded,
+# mirrors _sub_bare).  'dword-halves': corpus member is an 8-byte double,
+# til member is int[2] -> `M[k]` becomes LODWORD/HIDWORD(M).
+X136_TYPE_DIVERGENCE = {
+    ('AbstractClass', 'uniqueId'): 'int-arith',
+    ('RulesClass', 'BuildSpeed'): 'dword-halves',
+    ('RulesClass', 'GDIWallDefense'): 'dword-halves',
+    ('RulesClass', 'TunnelSpeed'): 'dword-halves',
+    ('RulesClass', 'TiberiumHeal'): 'dword-halves',
+}
 
 _SCALAR_OK = re.compile(
     r'^(?:unsigned\s+int|int|unsigned|long|unsigned\s+long|short|'
@@ -148,11 +281,17 @@ class VocabMapper:
 
         this -> `this->Name` (canonical corpus receiver); a declared-array
         global keeps pointer decay (`g->Name`); a struct-value receiver
-        (array element or reference) uses dot; locals keep their own sep."""
+        (array element or reference) uses dot; locals keep their own sep.
+        X136: til-alias globals with kind 'value' are corpus OBJECTS --
+        a rendered `->` must become `.` (the til's `T*` guess mis-typed
+        them); 'ptr' keeps the rendered separator."""
         if recv_text == 'this':
             return 'this->' + name
         base = re.match(r'^([A-Za-z_]\w*)', recv_text)
         base_name = base.group(1) if base else recv_text
+        kind = (getattr(self, 'x136_kinds', None) or {}).get(base_name)
+        if kind == 'value':
+            return recv_text + '.' + name
         if base_name in self.globals_typed:
             if '[' in recv_text:
                 return recv_text + '.' + name       # array element (value)
@@ -306,19 +445,24 @@ class VocabMapper:
         if off != 0:
             # secondary vtable slot call via vfptrN value
             self.stats['slot2'] += 1
-            return (ln[:m.start()] + '((%s)(%s)) + %s' %
+            # X136 paren accounting (see slot-scalar above)
+            return (ln[:m.start()] + '((%s)(%s) + %s' %
                     (cast, recv_expr, nbytes) + ln[m.end():])
         if kind == 'scalar':
             # scalar member VALUE + byte offset (int arithmetic)
             self.stats['slot-scalar'] += 1
-            return (ln[:m.start()] + '((%s)(%s + %s))' %
+            # X136 paren accounting: m.start() consumed the outer '(' of
+            # `(*(CAST)(INNER))`; the trailing `)' of the outer group is kept
+            # by the caller text, so the emit must open exactly one group.
+            return (ln[:m.start()] + '((%s)(%s + %s)' %
                     (cast, recv_expr, nbytes) + ln[m.end():])
         # pointer/array member: corpus element form *(CAST)recv.M + N/4
         if int(nbytes) % 4:
             self._note_unmapped(ln, 'slot-nondiv4')
             return ln
         self.stats['slot-elem'] += 1
-        return (ln[:m.start()] + '*(%s)%s + %d' %
+        # X136 paren accounting (see slot-scalar above)
+        return (ln[:m.start()] + '((%s)%s + %d' %
                 (cast, recv_expr, int(nbytes) // 4) + ln[m.end():])
 
     def _sub_bare(self, ln, m):
@@ -353,9 +497,20 @@ class VocabMapper:
             # corpus itself carries at these sites).  EXCEPT comparisons: an
             # int-compare on a pointer member must stay pointer-typed so
             # fix_pointer_compare can produce (void *)-1 (an int cast here
-            # would create an int==void* mismatch instead).
-            if re.match(r'\s*(==|!=|<|>|<=|>=)', post):
+            # would create an int==void* mismatch instead).  X136: also
+            # except ASSIGNMENT-LHS (`RECV.M = ...`) -- an lvalue must not
+            # be cast (C2106).
+            if re.match(r'\s*(==|!=|<|>|<=|>=)', post) or \
+                    re.match(r'\s*=[^=]', post):
                 self.stats['bare-ptr-cmp'] += 1
+                return pre + recv_expr + post
+            # X136 idempotence guard: a `(int)` we already emitted right
+            # before this access must not stack (the rewritten text still
+            # contains `recv.vfptr` when the corpus member is itself named
+            # vfptr, e.g. DynamicVectorClass; re-matching would multiply the
+            # cast up to the map_line guard).
+            if re.search(r'\(\s*int\s*\)\s*$', pre):
+                self.stats['bare-ptr-cast-kept'] += 1
                 return pre + recv_expr + post
             self.stats['bare-ptr-cast'] += 1
             return pre + '(int)' + recv_expr + post
@@ -396,6 +551,270 @@ def fix_pointer_compare(text, carriers, this_cls):
 
             out = pat.sub(_sub, out)
     return out
+
+
+# ------------------------------------------------------- X136 member passes
+_x136_stats = defaultdict(int)
+_x136_unresolved = []
+
+
+def _x136_corpus_member_at(carrier, byte):
+    """Corpus member whose storage STARTS at `byte`, else the member
+    CONTAINING it (returns (ent, delta)).  (None, 0) if uncovered."""
+    if not carrier:
+        return None, 0
+    ents = carrier.get(byte)
+    if ents:
+        return ents[0], 0
+    best = None
+    for off, es in carrier.items():
+        for e in es:
+            w = e[2] if e[2] else 1
+            end = off + max(w, 1)
+            if off < byte < end:
+                if best is None or off > best[0]:
+                    best = (off, e)
+    if best:
+        return best[1], byte - best[0]
+    return None, 0
+
+
+def _x136_member_off(carrier, name):
+    for off, ents in (carrier or {}).items():
+        for e in ents:
+            if e[1] == name:
+                return off
+    return 0
+
+
+def _x136_recv_cls(recv, globals_typed, locals_types, this_cls):
+    base = re.match(r'^([A-Za-z_]\w*)', recv)
+    base_name = base.group(1) if base else recv
+    if recv == 'this' or base_name == 'this':
+        return this_cls
+    if recv in globals_typed or base_name in globals_typed:
+        return globals_typed.get(recv) or globals_typed.get(base_name)
+    if recv in locals_types or base_name in locals_types:
+        return locals_types.get(recv) or locals_types.get(base_name)
+    return None
+
+
+def apply_x136_member_aliases(text, carriers, globals_typed,
+                              locals_types=None, this_cls=None):
+    """X136: rewrite til-render member vocabulary that the corpus carriers
+    spell differently (DynamicVector til names vs X55-era corpus names) or
+    type differently (til int vs corpus ptr / corpus double vs til int[2]).
+
+    Byte-geometry preserving.  Anything unresolvable is left untouched and
+    recorded in _x136_unresolved; such a site surfaces loudly at build time
+    (no silent geometry drift).
+
+    Returns (text, n_changed)."""
+    locals_types = locals_types or {}
+    watch = {}
+    interesting = (lambda c: c in X136_TIL_MEMBERS
+                   or any(k[0] == c for k in X136_TYPE_DIVERGENCE))
+    if this_cls and interesting(this_cls):
+        watch['this'] = this_cls
+    for name, cls in list(locals_types.items()) + list(globals_typed.items()):
+        if isinstance(cls, str) and interesting(cls):
+            watch.setdefault(name, cls)
+    if not watch:
+        return text, 0
+
+    recv_alt = '|'.join(sorted((re.escape(k) for k in watch),
+                               key=len, reverse=True))
+    n_changed = 0
+
+    def _cls_of(recv):
+        return watch.get(recv) or watch.get(
+            (re.match(r'^([A-Za-z_]\w*)', recv) or [None] and [recv][0]
+             and re.match(r'^([A-Za-z_]\w*)', recv).group(1)))
+
+    # -- pass 1: dword-halves divergence  RECV.MEM[k] -> LODWORD/HIDWORD
+    def _sub_halves(m):
+        recv, sep, mem, k = m.group(1), m.group(2), m.group(3), int(m.group(4))
+        cls = _cls_of(recv)
+        if X136_TYPE_DIVERGENCE.get((cls, mem)) != 'dword-halves':
+            return m.group(0)
+        mac = 'LODWORD' if k == 0 else ('HIDWORD' if k == 1 else None)
+        if mac is None:
+            _x136_unresolved.append(('halves-k%d' % k, m.group(0)[:120]))
+            return m.group(0)
+        _x136_stats['halves'] += 1
+        n_changed  # noqa: B018 (counted via stats; kept for symmetry)
+        return '%s(%s%s%s)' % (mac, recv, sep, mem)
+
+    text = re.sub(r'\b(%s)(->|\.)([A-Za-z_]\w*)\[(\d+)\]' % recv_alt,
+                  _sub_halves, text)
+
+    # -- pass 2: int-arith divergence  RECV.MEM (corpus ptr, til int)
+    def _sub_intarith(m):
+        recv, sep, mem = m.group(1), m.group(2), m.group(3)
+        cls = _cls_of(recv)
+        if X136_TYPE_DIVERGENCE.get((cls, mem)) != 'int-arith':
+            return m.group(0)
+        carrier = carriers.get(cls)
+        ent = None
+        for e in (carrier or {}).get(_x136_member_off(carrier, mem), []):
+            ent = e
+            break
+        if ent is None or ent[3] != 'ptr':
+            return m.group(0)
+        post = m.string[m.end():]
+        if re.match(r'\s*(==|!=|<|>|<=|>=)', post) or \
+                re.match(r'\s*=[^=]', post):
+            return m.group(0)
+        _x136_stats['int-arith'] += 1
+        return '(int)%s' % m.group(0)
+
+    text = re.sub(r'\b(%s)(->|\.)([A-Za-z_]\w*)\b' % recv_alt,
+                  _sub_intarith, text)
+
+    # -- pass 3: DynamicVector til-member aliases
+    def _sub_dv(m):
+        recv, sep, mem = m.group(1), m.group(2), m.group(3)
+        sub = m.group(4)[1:-1] if m.group(4) else None
+        cls = _cls_of(recv)
+        til = X136_DYNAMICVECTOR_TIL_MEMBERS.get(mem)
+        if cls != 'DynamicVector' or til is None:
+            return m.group(0)
+        carrier = carriers.get('DynamicVector')
+        off, esz = til
+        byte = off + (int(sub) * esz if sub else 0)
+        ent, delta = _x136_corpus_member_at(carrier, byte)
+        if ent is None:
+            _x136_unresolved.append(('dv-no-member@%X' % byte,
+                                     m.group(0)[:120]))
+            return m.group(0)
+        _decl, name, w, kind = ent
+        base = '%s%s%s' % (recv, sep, name)
+        if sub:
+            # byte-resolved element access on a byte-granular corpus member:
+            # scalar byte at the member start -> drop the subscript
+            if kind == 'scalar' and delta == 0:
+                _x136_stats['dv-elem'] += 1
+                return base
+            _x136_unresolved.append(('dv-elem-shape', m.group(0)[:120]))
+            return m.group(0)
+        if mem == name:
+            return m.group(0)
+        _x136_stats['dv-bare'] += 1
+        return base
+
+    # -- pass 3a: deref form `*(T *)recv.MEM` (til array-decay semantics):
+    # a scalar corpus member at that byte needs `&` before the receiver.
+    # Whole-construct pass (re.sub can only rewrite the match span; folding
+    # the prefix rewrite into the bare pass duplicates text).
+    def _sub_dv_deref(m):
+        cast, recv, sep, mem = m.group(1), m.group(2), m.group(3), m.group(4)
+        cls = _cls_of(recv)
+        til = X136_TIL_MEMBERS.get(cls, {}).get(mem)
+        if til is None:
+            return m.group(0)
+        carrier = carriers.get(cls)
+        off, _esz = til
+        ent, delta = _x136_corpus_member_at(carrier, off)
+        if ent is None:
+            _x136_unresolved.append(('dv-deref-no-member@%X' % off,
+                                     m.group(0)[:120]))
+            return m.group(0)
+        _decl, name, _w, kind = ent
+        if kind == 'scalar':
+            _x136_stats['dv-bare-addr'] += 1
+            return '*(%s *)&%s%s%s' % (cast.strip(), recv, sep, name)
+        if mem != name:
+            _x136_stats['dv-bare'] += 1
+            return '*(%s)%s%s%s' % (cast.strip(), recv, sep, name)
+        return m.group(0)
+
+    text = re.sub(r'\*\s*\(\s*([A-Za-z_][\w\s]*?)\s*\*\s*\)\s*'
+                  r'(%s)(->|\.)([A-Za-z_]\w*)\b' % recv_alt,
+                  _sub_dv_deref, text)
+
+    # -- pass 3b: bare member forms (deref contexts already consumed)
+    def _sub_dv_bare(m):
+        recv, sep, mem = m.group(1), m.group(2), m.group(3)
+        sub = m.group(4)[1:-1] if m.group(4) else None
+        cls = _cls_of(recv)
+        til = X136_TIL_MEMBERS.get(cls, {}).get(mem)
+        if til is None:
+            return m.group(0)
+        carrier = carriers.get(cls)
+        off, esz = til
+        byte = off + (int(sub) * esz if sub else 0)
+        ent, delta = _x136_corpus_member_at(carrier, byte)
+        if ent is None:
+            _x136_unresolved.append(('dv-no-member@%X' % byte,
+                                     m.group(0)[:120]))
+            return m.group(0)
+        _decl, name, w, kind = ent
+        base = '%s%s%s' % (recv, sep, name)
+        if sub:
+            # byte-resolved element access; the til ELEMENT WIDTH is esz:
+            #  a) corpus scalar at the byte, width == esz -> drop subscript
+            #  b) corpus 8-byte scalar (double) -> LODWORD/HIDWORD by delta
+            #  c) til dword elem over a narrower corpus scalar -> deref form
+            #  d) til dword elem inside a corpus char array -> deref at k'
+            if kind == 'scalar' and delta == 0 and w == esz:
+                _x136_stats['dv-elem'] += 1
+                return base
+            if kind == 'scalar' and w >= 8 and esz == 4:
+                _x136_stats['dv-halves'] += 1
+                return '%s(%s)' % ('LODWORD' if delta == 0 else 'HIDWORD',
+                                   base)
+            if kind == 'scalar' and esz == 4 and delta == 0 and w in (1, 2):
+                _x136_stats['dv-elem-wide'] += 1
+                return '*(unsigned int *)&%s' % base
+            if kind == 'arr' and esz == 4:
+                _x136_stats['dv-elem-arr'] += 1
+                return '*(unsigned int *)&%s[%d]' % (base, delta)
+            _x136_unresolved.append(('dv-elem-shape', m.group(0)[:120]))
+            return m.group(0)
+        if mem == name:
+            return m.group(0)
+        _x136_stats['dv-bare'] += 1
+        return base
+
+    text = re.sub(r'\b(%s)(->|\.)([A-Za-z_]\w*)((?:\[\d+\])?)' % recv_alt,
+                  _sub_dv_bare, text)
+    return text, n_changed
+
+
+def monotonic_reattach(new_text, donor_text):
+    """X136: HEAD-anchor completion.  When statement-level transfer cannot
+    attach every donor anchor (Hex-Rays coalesced/refined statements), the
+    remaining donor anchors are attached monotonically: each leftover anchor
+    goes to the next unanchored fresh statement in text order (both renders
+    share the function's statement order); if none remain, extras trail the
+    last statement (render_stmts appends extras -- the corpus convention:
+    position within a statement is not consumed downstream, the verifier
+    strips anchors before event extraction).
+
+    Returns (text, n_attached, n_anchors_after)."""
+    ds = split_statements(donor_text)
+    ns = split_statements(new_text)
+    have = Counter(a for s in ns for a in s['anchors'])
+    need = []
+    for s in ds:
+        for a in s['anchors']:
+            if have.get(a, 0) > 0:
+                have[a] -= 1
+            else:
+                need.append(a)
+    if not need:
+        return new_text, 0, sum(len(s['anchors']) for s in ns)
+    idxs = [i for i, s in enumerate(ns) if not s['anchors'] and s['norm']]
+    for k, a in enumerate(need):
+        if k < len(idxs):
+            ns[idxs[k]]['anchors'].append(a)
+        else:
+            for j in range(len(ns) - 1, -1, -1):
+                if ns[j]['norm']:
+                    ns[j]['anchors'].append(a)
+                    break
+    total = sum(len(s['anchors']) for s in ns)
+    return render_stmts(ns), len(need), total
 
 
 # ---------------------------------------------------------------- anchors

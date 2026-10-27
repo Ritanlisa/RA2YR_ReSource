@@ -3560,7 +3560,7 @@ public:
     virtual void Release(); // 0x5D26F0
     virtual _DWORD * QueryInterface(char p0);  // 0x5D2700 (x13:signals; virt=slot)
 
-    uint8_t q004[4];
+    _DWORD* q004;  // 0x4 (X79: slot-1 dword, type from return use)
     uint8_t q008[4];
     uint8_t q00C[4];
     uint8_t q010[4];

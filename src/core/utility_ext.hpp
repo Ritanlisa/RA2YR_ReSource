@@ -1767,6 +1767,7 @@ public:
     uint8_t HashTable_field_0x08[4];
     uint8_t HashTable_field_0x0C[4];
     uint8_t HashTable_field_0x10[4];
+
     uint8_t u32_14[4];
     uint8_t u32_18[4];
     uint8_t q01C[4];
@@ -2239,9 +2240,12 @@ public:
     virtual void QueryInterface(); // 0x49EFA0
     // +2 more virtual methods
 
-    uint8_t StringVector_field_0x04[4];
-    uint8_t StringVector_field_0x08[4];
-    uint8_t StringVector_field_0x0C[4];
+    void *Items;  // 0x4 (X137C: disasm n=5, ptr usage)
+
+    int Capacity;  // 0x8 (X137C: disasm n=3)
+
+    unsigned int IsInitialized;  // 0xC (X137C: disasm n=2; Cleanup5 alias banked)
+
     uint8_t q010[4];
     uint8_t q014[4];
     uint8_t q018[4];

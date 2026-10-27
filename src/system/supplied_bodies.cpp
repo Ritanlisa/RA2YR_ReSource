@@ -252,8 +252,9 @@ unsigned int * BufferIOFileClass::QueryInterface(char a2) {
 
 // 0x434A40
 namespace gamemd {
-// G42.34 T11: isolated as stub -- cache body itself contains unrenderable `this->?`
-// members (IDA decompile failure of BitFont dtor fields); verbatim cannot compile.
+// G42.34 T11 (historical): this def was once stubbed because the cache body
+// carried unrenderable unnamed-member tokens (X136 note: the tree token is
+// retired; this def was landed later and the note kept for provenance).
 {
   void *FileSize; // eax
   void **FilePointer; // esi

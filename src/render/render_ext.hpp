@@ -1063,9 +1063,12 @@ public:
     virtual unsigned int Write(int a2); // 0x4D2BA0  // G42.35 def-truth sync
     // +1 more virtual methods
 
-    uint8_t FoggedObject_DrawVector_field_0x04[4];
-    uint8_t FoggedObject_DrawVector_field_0x08[4];
-    uint8_t q00C[4];
+    void *Items;  // 0x4 (X137C: disasm)
+
+    int Capacity;  // 0x8 (X137C: disasm)
+
+    unsigned int IsInitialized;  // 0xC (X137C: disasm)
+
     uint8_t q010[4];
     uint8_t q014[4];
     unsigned int* __pad_0;  // G42.35 til-name member sync (body 0x4D2A10-0x4D2B07)
@@ -1498,16 +1501,20 @@ public:
     virtual int getItemWithIndex(unsigned int* a2); // 0x7538E0  // G42.35 def-truth sync
     virtual unsigned int* findItem(char a2); // 0x753960  // G42.35 def-truth sync
 
-    uint8_t VoxClass_Vector_field_0x04[4];
-    uint8_t VoxClass_Vector_field_0x08[4];
-    uint8_t VoxClass_Vector_field_0x0C[4];
+    void *Items;  // 0x4 (X137C: disasm n=5)
+
+    int Capacity;  // 0x8 (X137C: disasm n=3)
+
+    void (*initEvent)();  // 0xC (X137C: call site 0x7538be)
+
     uint8_t VoxClass_Vector_field_0x10[4];
 
     int q004;  // X10 supply (member_lookup)
     int q008;  // X10 supply (member_lookup)
     int q00C;  // X10 supply (member_lookup)
     int q010;  // X10 supply (member_lookup)
-    unsigned char u8_D;  // X10 supply (member_lookup)
+    unsigned char IsAllocated;  // 0xD (X137C: disasm n=3; was u8_D)
+
 };
 // 1 methods in IDA
 #ifndef GAMEMD_E4_VoxelAnimTypeVector  // G57w8: e4 flat carrier wins in e4 TUs (C2011 vs _tree_full_e4.hpp G57e1 carrier)

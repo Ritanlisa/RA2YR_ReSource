@@ -1075,47 +1075,47 @@ int MPCooperative::StartGame(int a2, void ** a3, void * Block, int a5, short a6,
   char *v16; // [esp-4h] [ebp-10h]
   int v17; // [esp+8h] [ebp-4h] BYREF
 
-  if ( !this->u32_40 ) /*0x5c2045*/
-  {
-    MovieClass::Create((MovieClass *)this); /*0x5c204c*/
-    (this->q340) = ((this->q340) & ~0xFF) | ((1) & 0xFF); /*0x5c2051*/
+  if ( !this->MPCooperative_field_0x40 )
+  {  /*0x5c2045*/
+    MovieClass::Create((MovieClass *)this);  /*0x5c204c*/
+    LOBYTE(this->MPCooperative_field_0x340) = 1;  /*0x5c2051*/
   }
-  MPCooperative_field_0x40 = (int *)this->u32_40; /*0x5c2058*/
-  if ( MPCooperative_field_0x40 ) /*0x5c205d*/
-  {
-    (MPCooperative_field_0x40)->GetSectionID(&v17); /*0x5c208d*/
-    if ( v17 != a2 ) /*0x5c209c*/
-      LOBYTE(this->q340) = 1; /*0x5c209e*/
-    v16 = a10; /*0x5c20ad*/
-    v15 = a9; /*0x5c20ae*/
-    (&v14)->Copy(&a3); /*0x5c20b9*/
-    DecodeCampaignPlayerName( /*0x5c20c2*/
-      (int)this->u32_40,
+  MPCooperative_field_0x40 = (int *)this->MPCooperative_field_0x40;  /*0x5c2058*/
+  if ( MPCooperative_field_0x40 )
+  {  /*0x5c205d*/
+    (MPCooperative_field_0x40)->GetSectionID(&v17);  /*0x5c208d*/
+    if ( v17 != a2 )
+      LOBYTE(this->MPCooperative_field_0x340) = 1;  /*0x5c209e*/  /*0x5c209c*/
+    v16 = a10;  /*0x5c20ad*/
+    v15 = a9;  /*0x5c20ae*/
+    (&v14)->Copy(&a3);  /*0x5c20b9*/
+    DecodeCampaignPlayerName(
+      this->MPCooperative_field_0x40,
       a2,
-      *(int *)v14.VectorClass,
-      *(void **)&v14.?[3],
-      *(int *)&v14.?[3],
-      v14.?,
+      (int)v14.vfptr,
+      (void *)v14.Items,
+      v14.Capacity,
+      *(__int16 *)v14.IsInitialized,
       v14.Count,
       v14.CapacityIncrement,
       v15,
-      v16);
-    v13 = Block; /*0x5c20c7*/
-    this->q33C = (CampaignClass *)a2; /*0x5c20cb*/
-    a3 = &g_ptr_7E8500; /*0x5c20d3*/
-    if ( v13 && HIBYTE(a6) ) /*0x5c20e3*/
-      __3_YAXPAX_Z(v13); /*0x5c20e6*/
-    return 1; /*0x5c20ef*/
+      v16);  /*0x5c20c2*/
+    v13 = Block;  /*0x5c20c7*/
+    this->MPCooperative_field_0x33C = a2;  /*0x5c20cb*/
+    a3 = &vt_VectorClass_int;  /*0x5c20d3*/
+    if ( v13 && HIBYTE(a6) )
+      __3_YAXPAX_Z(v13);  /*0x5c20e6*/  /*0x5c20e3*/
+    return 1;  /*0x5c20ef*/
   }
   else
   {
-    a3 = &g_ptr_7E8500; /*0x5c2063*/
-    if ( Block ) /*0x5c206d*/
-    {
-      if ( HIBYTE(a6) ) /*0x5c2075*/
-        __3_YAXPAX_Z(Block); /*0x5c2078*/
+    a3 = &vt_VectorClass_int;  /*0x5c2063*/
+    if ( Block )
+    {  /*0x5c206d*/
+      if ( HIBYTE(a6) )
+        __3_YAXPAX_Z(Block);  /*0x5c2078*/  /*0x5c2075*/
     }
-    return 0; /*0x5c2080*/
+    return 0;  /*0x5c2080*/
   }
 
 }

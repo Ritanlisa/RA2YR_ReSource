@@ -51,6 +51,85 @@ FORCED_TYPE = {
 
 FORCED_ONLY = '--forced-only' in sys.argv
 
+# ------------------------------------------------------------------ X136
+# Typed til-instance alias definitions (live til dump 2026-10-26; evidence in
+# .omo/x136/plan.md).  The raw-label decls in ida_globals.h are uchar/uint and
+# force-included into every TU, so the x130 fresh-cache renders' member access
+# needs typed ALIAS OBJECTS (g_BuildingLoadQueue_Array_flat family convention).
+# Per-TU extern declarations are emitted by rematerialize_defs
+# .sweep_missing_globals; this TU holds the definitions.
+X136_TIL_ALIASES = {
+    # ident: (carrier, kind, ida addr)   kind: 'value' | 'ptr'
+    'stru_B0F5B8': ('DynamicVectorClass', 'value', '0xB0F5B8'),
+    'g_BuildingLoadQueue_Array': ('DynamicVectorClass', 'value', '0xB0E840'),
+    'WeaponTypeClass_Array': ('WeaponTypeClass', 'value', '0x887568'),
+    'dword_A8B230': ('AbstractClass', 'ptr', '0xA8B230'),
+    'dword_8871E0': ('RulesClass', 'ptr', '0x8871E0'),
+    'DSurface_Alternate': ('DSurface', 'ptr', '0x887310'),
+    'stru_A8E3A8': ('MissionClass', 'value', '0xA8E3A8'),
+}
+X136_DEFS = ROOT / 'src' / 'core' / 'x136_til_alias_defs.cpp'
+X136_HDRS = {
+    'DynamicVectorClass': 'e4/classes/_tree_full_e4.hpp',
+    'WeaponTypeClass': 'e4/classes/WeaponTypeClass_e4.hpp',
+    'AbstractClass': 'e4/classes/AbstractClass_e4.hpp',
+    'RulesClass': 'e4/classes/RulesClass_e4.hpp',
+    'DSurface': 'e4/classes/DSurface_e4.hpp',
+    'MissionClass': 'e4/classes/MissionClass_e4.hpp',
+}
+
+
+def _apply_x136_aliases():
+    """Surgical: (re)emit only src/core/x136_til_alias_defs.cpp."""
+    used = []
+    for ident, (carrier, kind, addr) in sorted(X136_TIL_ALIASES.items(),
+                                               key=lambda kv: kv[1][2]):
+        used.append(carrier)
+    incs = ['#include "ida_globals.h"',
+            '#include "e4/e4_globals.hpp"  // X136: G57c2 FLAT-suppression macros + common carriers']
+    for h in sorted(set(X136_HDRS[c] for c in used)):
+        incs.append('#include "%s"' % h)
+    lines = [
+        '// GENERATED X136 til-instance typed alias definitions',
+        '// (gen_ida_globals.py --x136-aliases; table: X136_TIL_ALIASES).',
+        '//',
+        '// Evidence: live til dump 2026-10-26 (gamemd.exe.i64); trail in',
+        '// .omo/x136/.  The raw-label decls in ida_globals.h are uchar/uint',
+        '// and force-included into every TU, so the x130 fresh-cache renders\'',
+        '// member access needs typed ALIAS OBJECTS -- separate objects per the',
+        '// g_BuildingLoadQueue_Array_flat/_host/_raw/_t family convention.',
+        '// value form = zero-init object; ptr form = null pointer object;',
+        '// neither is read before the owning subsystem initializes the real',
+        '// .data image (Interim Fidelity Gap, same as the ida_globals.cpp',
+        '// zero-filled placeholders).',
+    ]
+    lines += incs
+    lines.append('')
+    lines.append('namespace gamemd {')
+    lines.append('')
+    for ident, (carrier, kind, addr) in sorted(X136_TIL_ALIASES.items(),
+                                               key=lambda kv: kv[1][2]):
+        alias = ident + '_x136'
+        if kind == 'ptr':
+            lines.append('%s *%s = 0;  // X136 til %s @ %s'
+                         % (carrier, alias, carrier, addr))
+        else:
+            lines.append('%s %s = {};  // X136 til %s @ %s'
+                         % (carrier, alias, carrier, addr))
+    lines.append('')
+    lines.append('} // namespace gamemd')
+    text = '\n'.join(lines) + '\n'
+    if not APPLY:
+        print('(dry run -- pass --apply; would write %s)' % X136_DEFS)
+        return
+    X136_DEFS.write_bytes(text.encode('utf-8'))
+    print('wrote %s (%d aliases)' % (X136_DEFS, len(X136_TIL_ALIASES)))
+
+
+if '--x136-aliases' in sys.argv:
+    _apply_x136_aliases()
+    raise SystemExit(0)
+
 
 def _apply_forced_only():
     """X89: surgical FORCED_TYPE application (no whole-file regen drift).

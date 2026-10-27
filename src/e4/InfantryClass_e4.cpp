@@ -26,6 +26,10 @@
 #include "e4/classes/TeamClass_e4.hpp"
 #include "e4/classes/FactoryClass_e4.hpp"
 #include "e4/classes/TechnoClass_e4.hpp"
+// X129: fresh-render label declarations (auto, idempotent)
+#include "e4/classes/ScenarioClass_e4.hpp"  // X136: complete type for stru_A8E960
+// X129: fresh-render label declarations (auto, idempotent)
+extern gamemd::DynamicVectorClass g_BuildingLoadQueue_Array_x136;  // X136: til alias of g_BuildingLoadQueue_Array (value form; til dump .omo/x136/)
 
 // 0x4D4DC0
 namespace gamemd {  // G42.18 ns repair
@@ -57,8 +61,8 @@ int InfantryClass::ScanTarget(int * a1)
     && !this->GetZAboveGround() )
   {
     ptr_0 = this->ptr_0; /*0x4d4de8*/
-    PlacementCellsAlt = (__int16 *)MapClass::FindPlacementCellsAlt((char *)this, &v17, (int)this); /*0x4d4df4*/
-    v4 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, PlacementCellsAlt); /*0x4d4dff*/
+    PlacementCellsAlt = (__int16 *)((char *)this)->FindPlacementCellsAlt(&v17, (int)this); /*0x4d4df4*/
+    v4 = ((CellCoord *)&dword_87F7E8)->To_CellObj(PlacementCellsAlt); /*0x4d4dff*/
     (*(void (**)(FootClass *, void *, int))(ptr_0 + 1152))(this, v4, 1); /*0x4d4e07*/
   }
   if ( this->q68E[0] ) /*0x4d4e0d*/
@@ -201,110 +205,108 @@ namespace gamemd {
 void* InfantryClass::Destruct(IUnknown * a1, AbstractClass * edx0)
 {
 
-
-  AbstractClass *pVal = &a1->ptr_2; // edi /*0x517d9a*/
-  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7EB034) */  /*0x517d9d*/
-  /* X11: ptr_0 install elided (implicit via InfantryClass virtuals 0x517da3) */
-  /* X11: ptr_0 install elided (implicit via off_7EB02C virtuals 0x517daa) */
-  /* X11: ptr_0 install elided (implicit via InfantryClass virtuals 0x517db1) */
-  if ( byte_A8E9A0 ) /*0x517dbe*/
-  {
-    InfantryTypeClass *Type; // eax
-    Type = a1->Type; /*0x517dc4*/
-    if ( Type ) /*0x517dcc*/
-    {
-      if ( HouseClass::CanBuild(a1->owner, (int)Type, 0, 0) == -1 ) /*0x517de3*/
-        a1->reloadTimer->recheckTechTree = 1; /*0x517deb*/
-      int *team; // ecx
-      team = (int *)a1->FootClass_field_5D4; /*0x517df2*/
-      if ( team ) /*0x517dfa*/
-      {
-        (team)->LiberateMember_Start((int)a1, 0xFFFFFFFF, 0); /*0x517e00*/
-        a1->FootClass_field_5D4 = 0; /*0x517e05*/
-      }
-      TechnoClass *slaveOwner = a1->isPlayingDamageSound; // eax /*0x517e0b*/
-      if ( slaveOwner ) /*0x517e13*/
-      {
-        SlaveManagerClass *slaveManager; // eax
-        slaveManager = (gamemd::SlaveManagerClass *)(slaveOwner->slaveManager); /*0x517e15*/
-        if ( slaveManager ) /*0x517e1d*/
-          (slaveManager)->LostSlave((int)a1); /*0x517e22*/
-      }
-      (a1->owner)->DecrementUnitCount(a1); /*0x517e2e*/
-      if ( !a1->Locomotor ) /*0x517e33*/
-        sub_7DC720(-2147467261); /*0x517e40*/
-      (*(void (**)(int))(*(unsigned int *)a1->currentMission + 172))(a1->currentMission); /*0x517e4e*/
-      a1->unknown_int_6E8 = 2; /*0x517e56*/
-      a1->Crawling = 0; /*0x517e60*/
-      a1->SequenceAnim[0] = 0; /*0x517e66*/
-      ((FootClass *)a1)->CleanupDirection(); /*0x517e6c*/
-    }
-  }
-  AbstractClass::AnnounceExpiredPointer(&a1->FootClass, 1); /*0x517e75*/
-  int v17[2]; // [esp+Ch] [ebp-8h] BYREF
-  v17[0] = (int)a1; /*0x517e89*/
+  AbstractClass *p_vfptr1; // edi
+  int Type; // eax
+  int *team; // ecx
+  int slaveOwner; // eax
+  SlaveManagerClass *v6; // eax
   int v7; // eax
-  v7 = (*(int (**)(char *, int *))(*(unsigned int *)&stru_A83D50.__pad_80[24] + 16))( /*0x517e8d*/
-         &stru_A83D50.__pad_80[24],
-         v17);
-  if ( v7 != -1 && v7 < *(int *)&stru_A83D50.__pad_80[40] ) /*0x517e9d*/
-  {
-    --*(unsigned int *)&stru_A83D50.__pad_80[40]; /*0x517ea2*/
-    for ( ; /*0x517ea8*/
-    v7 < *(int *)&stru_A83D50.__pad_80[40];
-    *(unsigned int *)(*(unsigned int *)&stru_A83D50.__pad_80[28] + 4 * v7 - 4) = *(unsigned int *)(*(unsigned int *)&stru_A83D50.__pad_80[28]
-    + 4 * v7) )
-    {
-      ++v7; /*0x517eb0*/
+  int Vtable3; // eax
+  int v9; // edx
+  int v10; // edi
+  int v11; // eax
+  int v12; // eax
+  signed int v13; // ecx
+  size_t i; // eax
+  unsigned int *v15; // eax
+  int v17[2]; // [esp+Ch] [ebp-8h] BYREF
+
+  p_vfptr1 = (AbstractClass *)&this->ptr_4;  /*0x517d9a*/
+  /* X11: vfptr install elided (implicit via InfantryClass_4 virtuals) */
+  /* X11: vfptr install elided (implicit via InfantryClass_4 virtuals) */
+  /* X11: vfptr install elided (implicit via off_7EB02C virtuals) */
+  /* X11: vfptr install elided (implicit via InfantryClass_4 virtuals) */
+  if ( stru_A8E960.nextScenario[64] )
+  {  /*0x517d9d*/  /*0x517da3*/  /*0x517daa*/  /*0x517db1*/  /*0x517dbe*/
+    Type = this->Type;  /*0x517dc4*/
+    if ( Type )
+    {  /*0x517dcc*/
+      if ( ((HouseClass *)this->owner)->CanBuild(Type, 0, 0) == -1 )
+        *(unsigned char *)(this->owner + 508) = 1;  /*0x517de3*/  /*0x517deb*/
+      team = (int *)this->team;  /*0x517df2*/
+      if ( team )
+      {  /*0x517dfa*/
+        (team)->LiberateMember_Start((int)this, 0xFFFFFFFF, 0);  /*0x517e00*/
+        this->team = 0;  /*0x517e05*/
+      }
+      slaveOwner = this->slaveOwner;  /*0x517e0b*/
+      if ( slaveOwner )
+      {  /*0x517e13*/
+        v6 = *(SlaveManagerClass **)(slaveOwner + 728);  /*0x517e15*/
+        if ( v6 )
+          (v6)->LostSlave((int)this);  /*0x517e1d*/  /*0x517e22*/
+      }
+      ((HouseClass *)this->owner)->DecrementUnitCount(this);  /*0x517e2e*/
+      if ( !this->locomotor )
+        sub_7DC720(-2147467261);  /*0x517e33*/  /*0x517e40*/
+      (*(void (**)(int))(*(unsigned int *)this->locomotor + 172))(this->locomotor);  /*0x517e4e*/
+      this->unknown_int_6E8 = 2;  /*0x517e56*/
+      this->Crawling[0] = 0;  /*0x517e60*/
+      this->SequenceAnim = 0;  /*0x517e66*/
+      ((FootClass *)this)->CleanupDirection();  /*0x517e6c*/
     }
   }
-  int Vtable3; // eax
-  Vtable3 = AbstractClass::GetVtable3(pVal); /*0x517ec3*/
-  void *ptr_0; // edx
-  ptr_0 = NumOfElements; /*0x517ec8*/
-  int v10 = Vtable3; // edi /*0x517ece*/
-  if ( g_BuildingLoadQueue_Array.ptr_0 ) /*0x517ed2*/
+  AbstractClass::AnnounceExpiredPointer((AbstractClass *)this, 1);  /*0x517e75*/
+  v17[0] = (int)this;  /*0x517e89*/
+  v7 = (*(int (**)(int *, int *))(dword_A83DE8 + 16))(&dword_A83DE8, v17);  /*0x517e8d*/
+  if ( v7 != -1 && v7 < dword_A83DF8 && v7 < --dword_A83DF8 )
   {
-    if ( !LOBYTE(g_BuildingLoadQueue_Array.ptr_0) ) /*0x517ede*/
+    do
     {
-      qsort( /*0x517eee*/
-        g_BuildingLoadQueue_Array.TechnoTypeClass,
-        (size_t)g_BuildingLoadQueue_Array.?,
-        8u,
-        (_CoreCrtNonSecureSearchSortCompareFunction)CompareFunction);
-      ptr_0 = (void *)(dword_B0E844); /*0x517ef3*/
-      dword_B0E850 = 0; /*0x517efc*/
-      (byte_B0E84C) = ((byte_B0E84C) & ~0xFF) | ((1) & 0xFF); /*0x517f02*/
+      ++v7;  /*0x517eb0*/
+      *((unsigned int *)dword_A83DEC + v7 - 1) = *((unsigned int *)dword_A83DEC + v7);
     }
-    v17[0] = v10; /*0x517f0d*/
-    int v11; // eax
-    v11 = BinaryArraySearch((int)g_BuildingLoadQueue_Array.TechnoTypeClass, (int)ptr_0, v17); /*0x517f18*/
-    if ( v11 ) /*0x517f1f*/
-    {
-      signed int v12; // eax
-      v12 = (signed int)(v11 - (unsigned int)g_BuildingLoadQueue_Array.TechnoTypeClass) >> 3; /*0x517f27*/
-      if ( v12 != -1 ) /*0x517f2d*/
-      {
-        int v13 = v12 + 1; // ecx /*0x517f2f*/
-        char *i; // eax
-        for ( i = (char *)NumOfElements; /*0x517f39*/
-        v13 < (int)g_BuildingLoadQueue_Array.?;
-        i = (char *)g_BuildingLoadQueue_Array.? )
-        {
-          unsigned int *v15; // eax
-          v15 = (char *)g_BuildingLoadQueue_Array.TechnoTypeClass + 8 * v13++; /*0x517f41*/
-          *(v15 - 2) = *v15; /*0x517f47*/
-          *(v15 - 1) = v15[1]; /*0x517f4d*/
+    while ( v7 < dword_A83DF8 );
+  }
+  Vtable3 = AbstractClass::GetVtable3(p_vfptr1);  /*0x517ec3*/
+  v9 = NumOfElements;  /*0x517ec8*/
+  v10 = Vtable3;  /*0x517ece*/
+  if ( NumOfElements )
+  {  /*0x517ed2*/
+    if ( !byte_B0E84C )
+    {  /*0x517ede*/
+      qsort(
+        (void *)(int)g_BuildingLoadQueue_Array_x136.vfptr,
+        NumOfElements,
+        8u,
+        (_CoreCrtNonSecureSearchSortCompareFunction)CompareFunction);  /*0x517eee*/
+      v9 = NumOfElements;  /*0x517ef3*/
+      dword_B0E850 = 0;  /*0x517efc*/
+      byte_B0E84C = 1;  /*0x517f02*/
+    }
+    v17[0] = v10;  /*0x517f0d*/
+    v11 = BinaryArraySearch((int)g_BuildingLoadQueue_Array_x136.vfptr, v9, v17);  /*0x517f18*/
+    if ( v11 )
+    {  /*0x517f1f*/
+      v12 = (v11 - (int)g_BuildingLoadQueue_Array_x136.vfptr) >> 3;  /*0x517f27*/
+      if ( v12 != -1 )
+      {  /*0x517f2d*/
+        v13 = v12 + 1;  /*0x517f2f*/
+        for ( i = NumOfElements; v13 < (int)NumOfElements; i = NumOfElements )
+        {  /*0x517f39*/
+          v15 = (unsigned int *)((int)g_BuildingLoadQueue_Array_x136.vfptr + 8 * v13++);  /*0x517f41*/
+          *(v15 - 2) = *v15;  /*0x517f47*/
+          *(v15 - 1) = v15[1];  /*0x517f4d*/
         }
-        NumOfElements= i - 1; /*0x517f62*/
-        *((unsigned int *)g_BuildingLoadQueue_Array.TechnoTypeClass + 2 * (int)NumOfElements) = 0; /*0x517f67*/
-        *((unsigned int *)g_BuildingLoadQueue_Array.TechnoTypeClass + 2 * (int)NumOfElements+ 1) = 0; /*0x517f77*/
-        dword_B0E850= 0; /*0x517f7b*/
+        NumOfElements = i - 1;  /*0x517f62*/
+        *(unsigned int *)((int)g_BuildingLoadQueue_Array_x136.vfptr + 8 * NumOfElements) = 0;  /*0x517f67*/
+        *(unsigned int *)((int)g_BuildingLoadQueue_Array_x136.vfptr + 8 * NumOfElements + 4) = 0;  /*0x517f77*/
+        dword_B0E850 = 0;  /*0x517f7b*/
       }
     }
   }
-  a1->isAliveFlag = 0; /*0x517f83*/
-  return ((FootClass *)a1)->Destruct(); /*0x517f8e*/
+  this->isAliveFlag[0] = 0;  /*0x517f83*/
+  return ((FootClass *)this)->Destruct();  /*0x517f8e*/
 
 }
 }

@@ -90,7 +90,7 @@ bool SuperWeaponTypeClass::IsAvailable()
   v37 = this->q160 > 0; /*0x4f6573*/
   p_ThirdSurvivorDivisor = &dword_8871E0->ThirdSurvivorDivisor; /*0x4f657d*/
   v32 = this->UIName > 0; /*0x4f6583*/
-  v3 = SuperWeaponTypeClass::FindByName((SuperWeaponTypeClass *)(*&this->SidebarImageFile_0x18 + 152)); /*0x4f6598*/
+  v3 = ((SuperWeaponTypeClass *)(*&this->SidebarImageFile_0x18 + 152))->FindByName(); /*0x4f6598*/
   v4 = p_ThirdSurvivorDivisor->uniqueId; /*0x4f659a*/
   v5 = 1 << v3; /*0x4f659d*/
   v6 = 0; /*0x4f659f*/
@@ -112,7 +112,7 @@ LABEL_5:
     }
     v9 = *(unsigned int **)(v7 + 4 * v6); /*0x4f65f4*/
   }
-  if ( DynamicVector::GetOrGrow(&this->q5564, v9[894]) ) /*0x4f65cc*/
+  if ( (&this->q5564)->GetOrGrow(v9[894]) ) /*0x4f65cc*/
     v32 = 1; /*0x4f65d5*/
   if ( v36 && v33 ) /*0x4f65e8*/
     return 1; /*0x4f65f3*/
@@ -121,7 +121,7 @@ LABEL_5:
   BuildableFromArray = HouseClass::FirstBuildableFromArray((HouseClass *)this, (int)&dword_8871E0->V3Rocket[4]); /*0x4f6616*/
   p_HarvesterLoadRate = &dword_8871E0->HarvesterLoadRate; /*0x4f6623*/
   v34 = BuildableFromArray != 0; /*0x4f662c*/
-  v14 = SuperWeaponTypeClass::FindByName((SuperWeaponTypeClass *)(*&this->SidebarImageFile_0x18 + 152)); /*0x4f6641*/
+  v14 = ((SuperWeaponTypeClass *)(*&this->SidebarImageFile_0x18 + 152))->FindByName(); /*0x4f6641*/
   v15 = p_HarvesterLoadRate[4]; /*0x4f6643*/
   v16 = 1 << v14; /*0x4f6646*/
   v17 = 0; /*0x4f6648*/
@@ -151,7 +151,7 @@ LABEL_17:
   if ( v20 ) /*0x4f6677*/
   {
     v21 = &dword_8871E0->HarvesterLoadRate; /*0x4f668c*/
-    v22 = 1 << SuperWeaponTypeClass::FindByName((SuperWeaponTypeClass *)(*&this->SidebarImageFile_0x18 + 152)); /*0x4f669e*/
+    v22 = 1 << ((SuperWeaponTypeClass *)(*&this->SidebarImageFile_0x18 + 152))->FindByName(); /*0x4f669e*/
     v23 = v21[4]; /*0x4f66a0*/
     v24 = 0; /*0x4f66a3*/
     if ( v23 <= 0 ) /*0x4f66a7*/
@@ -281,7 +281,7 @@ int SuperWeaponTypeClass::Construct(char *aP1, void *a2, void *a3, void *a4, voi
   this->u32_17C = 10; /*0x511520*/
   this->u32_178 = 0; /*0x511527*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_131447) */  /*0x51152a*/
-  AircraftTypeVector::Constructor(&this->vfptr1, 0, 0); /*0x51153a*/
+  (&this->vfptr1)->Constructor(0, 0); /*0x51153a*/
   this->q198 = 10; /*0x511542*/
   this->q194 = 0; /*0x511549*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_131447) */  /*0x51154c*/
@@ -291,7 +291,7 @@ int SuperWeaponTypeClass::Construct(char *aP1, void *a2, void *a3, void *a4, voi
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7EAB2C) */  /*0x511578*/
   /* X11: ptr_0 install elided (implicit via HouseTypeClass virtuals 0x51157f) */
   /* X11: ptr_0 install elided (implicit via HouseTypeClass virtuals 0x511586) */
-  AbstractClass::GenerateUniqueID(&this->vfptr1); /*0x51158d*/
+  (&this->vfptr1)->GenerateUniqueID(); /*0x51158d*/
   this->q1A0 = 0; /*0x511592*/
   v4 = dword_A83CA8; /*0x511598*/
   if ( dword_A83CA8 < dword_A83CA0 /*0x5115d6*/
@@ -532,7 +532,7 @@ void* SuperWeaponTypeClass::SD_vt25(unsigned char *** aP1)
   else
   {
     __asm { fmul ds:flt_7F4100 } /*0x6ced80*/
-    (v30) = ((v30) & ~0xFFFF) | ((Math::RoundToInt(a3)) & 0xFFFF); /*0x6ced86*/
+    LOWORD(v30) = Math::RoundToInt(a3); /*0x6ced86*/
     *(unsigned int *)(_EBP + 176) = v30; /*0x6ced8b*/
   }
   v31 = (char *)(_EBP + 204); /*0x6ced9c*/
@@ -595,7 +595,7 @@ int SuperWeaponTypeClass::SD_vt27(int a2, int a3)
   if ( a3
     && (*(int (**)(int))(*(unsigned int *)a3 + 44))(a3) == 6
     && (v4 = (*(int (**)(int))(*(unsigned int *)a3 + 44))(a3),
-        (unsigned __int8)HouseClass::IsAlliedWith(*(HouseClass **)(v4 == 6 ? a3 + 0x21C : 540), (HouseClass *)dword_A83D4C)) )
+        (unsigned __int8)(*(HouseClass **)(v4 == 6 ? a3 + 0x21C : 540))->IsAlliedWith((HouseClass *)dword_A83D4C)) )
   {
     return this->ActionValue[0]; /*0x6cefd3*/
   }
@@ -629,7 +629,7 @@ unsigned int * SuperWeaponTypeClass::SDDTOR(char a2)
     }
     while ( v3 < dword_A8E340 ); /*0x6cf046*/
   }
-  AbstractTypeClass::Dtor((AbstractTypeClass *)this); /*0x6cf04a*/
+  ((AbstractTypeClass *)this)->Dtor(); /*0x6cf04a*/
   if ( (a2 & 1) != 0 ) /*0x6cf054*/
     __3_YAXPAX_Z(this); /*0x6cf057*/
   return &this->vfptr; /*0x6cf061*/
@@ -668,10 +668,10 @@ int SuperWeaponTypeClass::FindOrCreate(INIClass * a2, unsigned char * a3, CCINIC
     return a4; /*0x4755f8*/
   void *v4; // esi
   v4 = (void *)PlayerSlot::NameToDialogID(Destination); /*0x475579*/
-  if ( (uint8_t)BuildingType::IsSpecialType(v4) ) /*0x47557d*/
+  if ( (uint8_t)(v4)->IsSpecialType() ) /*0x47557d*/
     return (int)v4; /*0x475586*/
   int result; // eax
-  result = SuperWeaponTypeClass::FindByName((SuperWeaponTypeClass *)Destination); /*0x475596*/
+  result = ((SuperWeaponTypeClass *)Destination)->FindByName(); /*0x475596*/
   if ( result == -1 ) /*0x47559e*/
   {
     SuperWeaponTypeClass *v6; // eax
@@ -734,7 +734,7 @@ namespace gamemd {
 SuperWeaponTypeClass::SuperWeaponTypeClass(void * aP1)
 {
 
-  AbstractTypeClass::Constructor(aP1); /*0x6ce5bb*/
+  (aP1)->Constructor(); /*0x6ce5bb*/
   this->WeaponType = 0; /*0x6ce5cb*/
   this->RechargeVoice = -1; /*0x6ce5d1*/
   this->ChargingVoice_d = -1; /*0x6ce5d7*/
@@ -804,13 +804,13 @@ int SuperWeaponTypeClass::SaveLoad_Prefix(int a1, int a2)
 {
 
   int result; // eax
-  result = AbstractClass::SaveLoad_Prefix_0(a1, a2); /*0x6ce814*/
+  result = (a1)->SaveLoad_Prefix_0(a2); /*0x6ce814*/
   if ( result >= 0 ) /*0x6ce81b*/
   {
     if ( a1 ) /*0x6ce823*/
     {
       char v4; // [esp+7h] [ebp-201h] BYREF
-      AbstractTypeClass::Init((int)a1, (int)&v4); /*0x6ce82c*/
+      ((int)a1)->Init((int)&v4); /*0x6ce82c*/
       a1->SidebarImage = 0; /*0x6ce831*/
       /* X11: ptr_0 install elided (implicit via SuperWeaponTypeClass virtuals 0x6ce83b) */
       /* X11: ptr_0 install elided (implicit via SuperWeaponTypeClass virtuals 0x6ce841) */
@@ -838,7 +838,7 @@ int SuperWeaponTypeClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a2, int
 {
 
   int result; // eax
-  result = AbstractClass::SaveLoad_Prefix((int *)aP0, a2, a3); /*0x6ce8df*/
+  result = ((int *)aP0)->SaveLoad_Prefix(a2, a3); /*0x6ce8df*/
   if ( result >= 0 ) /*0x6ce8e6*/
     return 0; /*0x6ce8e8*/
   return result; /*0x6ce8ea*/
@@ -867,7 +867,7 @@ int SuperWeaponTypeClass::SD_vt13(int * a2)
 {
 
 
-  AbstractTypeClass::ProcessPower((AbstractTypeClass *)this, a2); /*0x6ce919*/
+  ((AbstractTypeClass *)this)->ProcessPower(a2); /*0x6ce919*/
   Power::TimerProcess(this->ArrayIndex); /*0x6ce927*/
   Power::TimerProcess(this->ActionValue[0]); /*0x6ce935*/
   Power::TimerProcess(this->RechargeVoice); /*0x6ce943*/
@@ -876,28 +876,28 @@ int SuperWeaponTypeClass::SD_vt13(int * a2)
   int v3; // eax
   v3 = Power::TimerProcess(this->SuspendVoice); /*0x6ce96d*/
   LOBYTE(v3) = this->IsPowered_d; /*0x6ce972*/
-  Power::FlagProcess((Power *)a2, v3); /*0x6ce97b*/
+  ((Power *)a2)->FlagProcess(v3); /*0x6ce97b*/
   int v4; // ecx
   LOBYTE(v4) = this->DisableableFromShell_d; /*0x6ce980*/
-  Power::FlagProcess((Power *)a2, v4); /*0x6ce989*/
+  ((Power *)a2)->FlagProcess(v4); /*0x6ce989*/
   int v5; // edx
   LOBYTE(v5) = this->PreClick_d; /*0x6ce98e*/
   int v6; // eax
-  v6 = Power::FlagProcess((Power *)a2, v5); /*0x6ce997*/
+  v6 = ((Power *)a2)->FlagProcess(v5); /*0x6ce997*/
   LOBYTE(v6) = this->PostClick_d; /*0x6ce99c*/
-  Power::FlagProcess((Power *)a2, v6); /*0x6ce9a5*/
+  ((Power *)a2)->FlagProcess(v6); /*0x6ce9a5*/
   Power::TimerProcess(this->PreDependent_d); /*0x6ce9b3*/
   int v7; // edx
   LOBYTE(v7) = this->ShowTimer_d; /*0x6ce9b8*/
-  Power::FlagProcess((Power *)a2, v7); /*0x6ce9c1*/
+  ((Power *)a2)->FlagProcess(v7); /*0x6ce9c1*/
   Power::TimerProcess(this->RechargeTime); /*0x6ce9cf*/
   Power::TimerProcess((int)this->Type); /*0x6ce9dd*/
   int v8; // edx
   LOBYTE(v8) = this->UseChargeDrain_d; /*0x6ce9e2*/
   int v9; // eax
-  v9 = Power::FlagProcess((Power *)a2, v8); /*0x6ce9eb*/
+  v9 = ((Power *)a2)->FlagProcess(v8); /*0x6ce9eb*/
   LOBYTE(v9) = this->ManualControl_d; /*0x6ce9f0*/
-  return Power::FlagProcess((Power *)a2, v9); /*0x6ce9fe*/
+  return ((Power *)a2)->FlagProcess(v9); /*0x6ce9fe*/
 
 }
 } // namespace gamemd

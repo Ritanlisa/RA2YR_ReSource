@@ -37,6 +37,8 @@
 #include "e4/classes/HouseClass_e4.hpp"
 #include "e4/classes/BuildingClass_e4.hpp"
 #include "e4/classes/ObjectPtr_e4.hpp"
+// X129: fresh-render label declarations (auto, idempotent)
+#include "e4/classes/ScenarioClass_e4.hpp"  // X136: complete type for stru_A8E960
 
 // 0x71A450
 namespace gamemd {  // G42.18 ns repair
@@ -50,10 +52,10 @@ int TemporalClass::Constructor(void *a1, void *a2, void *a3, void *a4)
   v2 = *(unsigned int *)&stru_A8E960.random[528];  /*0x71a458*/
   this->TemporalClass_field_34 = 0;  /*0x71a45d*/
   *(unsigned int *)&this->__pad_28[4] = v2;  /*0x71a464*/
-  /* X11: vtable install elided (implicit via TemporalClass_4 virtuals) */
-  /* X11: vtable install elided (implicit via TemporalClass_4 virtuals) */
-  /* X11: vtable install elided (implicit via TemporalClass_4 virtuals) */
-  /* X11: vtable install elided (implicit via TemporalClass_4 virtuals) */
+  /* X11: vfptr install elided (implicit via TemporalClass_4 virtuals) */
+  /* X11: vfptr install elided (implicit via TemporalClass_4 virtuals) */
+  /* X11: vfptr install elided (implicit via TemporalClass_4 virtuals) */
+  /* X11: vfptr install elided (implicit via TemporalClass_4 virtuals) */
   if ( dword_B0EC70 < dword_B0EC68
     || (byte_B0EC6D || !dword_B0EC68)
     && dword_B0EC74 > 0
@@ -81,10 +83,10 @@ TemporalClass::TemporalClass(TechnoClass * aP1)
   ((AbstractClass *)this)->Constructor();  /*0x71a4e7*/
   *(unsigned int *)&this->__pad_28[4] = *(unsigned int *)&stru_A8E960.random[528];  /*0x71a4fb*/
   this->TemporalClass_field_34 = 0;  /*0x71a4fe*/
-  /* X11: vtable install elided (implicit via TemporalClass_4 virtuals) */
-  /* X11: vtable install elided (implicit via TemporalClass_4 virtuals) */
-  /* X11: vtable install elided (implicit via TemporalClass_4 virtuals) */
-  /* X11: vtable install elided (implicit via TemporalClass_4 virtuals) */
+  /* X11: vfptr install elided (implicit via TemporalClass_4 virtuals) */
+  /* X11: vfptr install elided (implicit via TemporalClass_4 virtuals) */
+  /* X11: vfptr install elided (implicit via TemporalClass_4 virtuals) */
+  /* X11: vfptr install elided (implicit via TemporalClass_4 virtuals) */
   this->creationFrame = aP1;  /*0x71a51c*/  /*0x71a515*/  /*0x71a50e*/  /*0x71a507*/  /*0x71a501*/
   *(unsigned int *)this->__pad_28 = 0;  /*0x71a51f*/
   *(unsigned int *)&this->__pad_28[4] = *(unsigned int *)&stru_A8E960.random[528];  /*0x71a529*/
@@ -377,31 +379,28 @@ namespace gamemd {
 void * TemporalClass::ProcessEvent(char a2, int aP1, int aP0, int a1, int aP2)
 {
 
+  int v3; // eax  /*0x71b1f3*/
+  TemporalClass *v5; // [esp+4h] [ebp-4h] BYREF  /*0x71b1f8*/
 
-  /* X11: ptr_0 install elided (base-interface slot, RHS g_ptr_7F5154) */  /*0x71b1bd*/
-  /* X11: ptr_0 install elided (qmark slot, RHS g_ptr_7F5154) */  /*0x71b1c3*/
-  /* X11: ptr_0 install elided (qmark slot, RHS g_ptr_7F5154) */  /*0x71b1ca*/
-  /* X11: ptr_0 install elided (qmark slot, RHS g_ptr_7F5154) */  /*0x71b1d1*/
-  TemporalClass *v5; // [esp+4h] [ebp-4h] BYREF
-  v5 = (gamemd::TemporalClass *)(aP1); /*0x71b1df*/
-  int v3; // eax
-  v3 = (*(int (**)(int *, TemporalClass **))(dword_B0EC60 + 16))( /*0x71b1e3*/
-         &DataGlobal_B0E840[1056],
-         &v5);
-  if ( v3 != -1 && v3 < g_BuildingLoadQueue_Array.?[0] ) /*0x71b1f3*/
-  {
-    --g_BuildingLoadQueue_Array.?[0]; /*0x71b1f8*/
-    for ( ; /*0x71b1fe*/
-    v3 < g_BuildingLoadQueue_Array;
-    *(unsigned int *)(g_BuildingLoadQueue_Count + 4 * v3 - 4) = *(unsigned int *)(g_BuildingLoadQueue_Count + 4 * v3) )
+  /* X11: vfptr install elided (implicit via TemporalClass_4 virtuals) */
+  /* X11: vfptr install elided (implicit via TemporalClass_4 virtuals) */
+  /* X11: vfptr install elided (implicit via TemporalClass_4 virtuals) */
+  /* X11: vfptr install elided (implicit via TemporalClass_4 virtuals) */
+  v5 = this;  /*0x71b1df*/  /*0x71b1d1*/  /*0x71b1ca*/  /*0x71b1c3*/  /*0x71b1bd*/
+  v3 = (*(int (**)(int *, TemporalClass **))(dword_B0EC60 + 16))(&dword_B0EC60, &v5);  /*0x71b1e3*/
+  if ( v3 != -1 && v3 < dword_B0EC70 && v3 < --dword_B0EC70 )
+  {  /*0x71b1fe*/
+    do
     {
-      ++v3; /*0x71b206*/
+      ++v3;  /*0x71b206*/
+      *((unsigned int *)dword_B0EC64 + v3 - 1) = *((unsigned int *)dword_B0EC64 + v3);
     }
+    while ( v3 < dword_B0EC70 );
   }
-  ((AbstractClass *)aP1)->DTOR(); /*0x71b21a*/
-  if ( (aP1 & 1) != 0 ) /*0x71b224*/
-    __3_YAXPAX_Z((void *)(aP1)); /*0x71b227*/
-  return &aP1->AbstractClass; /*0x71b231*/
+  ((AbstractClass *)this)->DTOR();  /*0x71b21a*/
+  if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);  /*0x71b227*/  /*0x71b224*/
+  return &this->vfptr;  /*0x71b231*/
 
 }
 } // namespace ra2

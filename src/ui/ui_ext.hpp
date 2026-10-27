@@ -458,12 +458,12 @@ public:
     virtual int SetItemData(wchar_t *String2); // 0x4883F0
     // +34 more virtual methods
 
-    uint8_t CheckListClass_field_0x04[4];
-    uint8_t q008[4];
-    uint8_t q00C[4];
-    uint8_t q010[4];
-    uint8_t q014[4];
-    uint8_t q018[4];
+    void *Items;  // 0x4 (X137C: binary dword, ptr usage; serves old X alias)
+    int Capacity;  // 0x8 (X137C)
+    void (*initEvent)();  // 0xC (X137C: call dword ptr [reg+0Ch])
+    int Height;  // 0x10 (X137C)
+    int Visible;  // 0x14 (X137C)
+    int ID;  // 0x18 (X137C: live disasm 0x5575A0 mov edx,[ecx+18h])
     uint8_t q01C[4];
     uint8_t u32_20[4];
     uint8_t q024[4];
@@ -475,7 +475,7 @@ public:
     uint8_t q03C[4];
     uint8_t q040[4];
     uint8_t CheckListClass_field_0x44[4];
-    uint8_t u32_48[4];
+    void (*AddItem_1)();  // 0x48 (X137C: call dword ptr [reg+48h])
     uint8_t q04C[4];
     uint8_t CheckListClass_field_0x50[4];
     unsigned char *__pad_0;  // 0x0
@@ -635,9 +635,12 @@ public:
     static unsigned int * Constructor(void *aP0, int aP1);  // 0x4E1340 G42.35 static-form sync (ui/supplied site 0x48E579)
 
     unsigned int *__pad_0;  // G42.34: supplied-bodies view (0x48E520 family)
-    uint8_t ControlClass_field_0x04[4];
-    uint8_t q008[4];
-    uint8_t q00C[4];
+    int X;  // 0x4 (X137C: gadget family layout, ambiguous disasm pick 0x4)
+
+    int Y;  // 0x8 (X137C: disasm)
+
+    int Width;  // 0xC (X137C: disasm)
+
 
     void * q028;  // G42.39 data supply
 
@@ -645,7 +648,8 @@ public:
 
     int m_Next;  // G42.39 data supply
 
-    unsigned int u32_14;  // G42.39 data supply
+    int Visible;  // 0x14 (X137C: disasm+name-encode; was u32_14)
+
 
     unsigned int u32_18;  // G42.39 data supply
 
@@ -721,7 +725,8 @@ public:
     uint8_t DropListClass_field_0x04[4];
     uint8_t u32_8[4];
     uint8_t u32_C[4];
-    uint8_t q010[4];
+    int Height;  // 0x10 (X137C: disasm)
+
     uint8_t u32_14[4];
     uint8_t u32_18[4];
     uint8_t q01C[4];
@@ -735,7 +740,8 @@ public:
     uint8_t DropListClass_field_0x3C[4];
     uint8_t DropListClass_field_0x40[4];
     uint8_t DropListClass_field_0x44[4];
-    uint8_t DropListClass_field_0x48[4];
+    void (*MarkDirty)();  // 0x48 (X137C: call dword ptr [reg+48h] x2)
+
     uint8_t DropListClass_field_0x4C[4];
     uint8_t DropListClass_field_0x50[4];
     unsigned int q02C;  // 0x2C
@@ -1009,7 +1015,8 @@ public:
     uint8_t u32_8[4];
     uint8_t q00C[4];
     uint8_t u32_10[4];
-    uint8_t q014[4];
+    int Visible;  // 0x14 (X137C: disasm)
+
     uint8_t u32_18[4];
     uint8_t u32_1C[4];
     unsigned int *__pad_0;  // G42.35: supplied-bodies ptr_0 view (sites 0x557609/0x55764F)
@@ -1121,8 +1128,10 @@ public:
     uint8_t q008[4];
     uint8_t q00C[4];
     uint8_t SliderClass_field_0x10[4];
-    uint8_t q014[4];
-    uint8_t q018[4];
+    int Visible;  // 0x14 (X137C: disasm)
+
+    int ID;  // 0x18 (X137C: disasm)
+
     uint8_t q01C[4];
     uint8_t q020[4];
     uint8_t q024[4];
@@ -1200,8 +1209,10 @@ public:
     virtual void write(); // 0x724C60
     // +9 more virtual methods
 
-    uint8_t q004[4];
-    uint8_t ToolTipClass_field_0x08[4];
+    int X;  // 0x4 (X137C: disasm)
+
+    int Y;  // 0x8 (X137C: disasm)
+
     uint8_t ToolTipClass_field_0x0C[4];
     uint8_t q010[4];
     uint8_t q014[4];

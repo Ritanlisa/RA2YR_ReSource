@@ -1728,10 +1728,10 @@ unsigned int * BuildingTypeClass::Construct(AbstractClass * aP1, void *a2, void 
   HIBYTE(this->AccelerationFactor[1]) = 0;  /*0x644ce2*/
   this->CloakingSpeed = -1;  /*0x644ce8*/
   this->DebrisTypes[0] = -1;  /*0x644cee*/
-  /* X11: vtable install elided (implicit via ParticleTypeClass_4 virtuals) */
-  /* X11: vtable install elided (implicit via ParticleTypeClass_4 virtuals) */
-  /* X11: vtable install elided (implicit via ParticleTypeClass_4 virtuals) */
-  /* X11: vtable install elided (implicit via ParticleTypeClass_4 virtuals) */
+  /* X11: vfptr install elided (implicit via ParticleTypeClass_4 virtuals) */
+  /* X11: vfptr install elided (implicit via ParticleTypeClass_4 virtuals) */
+  /* X11: vfptr install elided (implicit via ParticleTypeClass_4 virtuals) */
+  /* X11: vfptr install elided (implicit via ParticleTypeClass_4 virtuals) */
   if ( dword_A83DA8 < dword_A83DA0
     || (byte_A83DA5 || !dword_A83DA0)
     && dword_A83DAC > 0

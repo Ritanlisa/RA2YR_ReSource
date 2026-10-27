@@ -54,7 +54,7 @@ CellClass::CellClass()
     , CellClass_field_5C(0)
     , unknown60(0)
     , unknown64(0)
-    , unknown68(0)
+    , u32_44(0)
     , CellClass_field_6C(0)
     , unknown70(0)
     , unknown74(0)
@@ -870,6 +870,6 @@ int CellClass::IsTunnelEntrance()
   int16_t v1; // ax
 
   v1 = (*(this->tubeIndex + 1)); /*0x484ab0*/
-  return v1 >= 0 && v1 < FootClass_Array.primaryFacing[0] && this->radioLinks[3] == 10; /*0x484ad7*/
+  return v1 >= 0 && v1 < FootClass_Array.primaryFacing[0] && this->landType[3] == 10; /*0x484ad7*/
 }
 } // namespace gamemd

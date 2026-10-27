@@ -34,6 +34,7 @@ class BuildingTypeClass;
 class FactoryClass;
 class HouseClass;
 class InfantryClass;
+class InfantryTypeClass;
 class LightSourceClass;
 class TechnoTypeClass;
 class RulesClass;
@@ -45,14 +46,133 @@ public:
     static constexpr AbstractType kObjectTypeId = AbstractType::Building;
 
     // design: virtual function, no binary implementation matched in IDA
-    virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override;
+    virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override;  // X137B slot 3 = 0x459E80
 
-    virtual ~BuildingClass() override = default;  // 0x43BCF0
+    virtual ~BuildingClass() override = default;  // X137B slot 8 = 0x459F20 (deleting dtor; 0X43BCF0 = complete dtor)
+
+    // === X137B: inherited-range overrides (binary 0x7E3EBC slots 0-308 where RVA != TechnoClass) ===
+    virtual HRESULT __stdcall Load(IStream* stream) override;  // X137B slot 5 = 0x453E20 (bin: LoadFromStream)
+    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;  // X137B slot 6 = 0x454190 (bin: Size)
+    virtual int PerFrameUpdate() override;  // X137B slot 9 = 0x442C40 (bin: Update)
+    virtual int Unlink(int a1, int a2) override;  // X137B slot 10 = 0x44E8F0 (bin: OnObjectExpired)
+    virtual int COMStub_Return0_11() override;  // X137B slot 11 = 0x459EC0 (bin: Mission_Construction)
+    virtual int COMStub_Return0_12() override;  // X137B slot 12 = 0x459E70 (bin: Mission_Guard)
+    virtual int ProcessPower() override;  // X137B slot 13 = 0x454260 (bin: PowerDrainUpdate)
+    virtual unsigned int* GetInvalidCoord(unsigned int* out) override;  // X137B slot 18 = 0x447AC0 (bin: GetExitCoords)
+    virtual int* GetCoordsEx(int* outBuffer, AbstractClass* source) override;  // X137B slot 19 = 0x447E90 (bin: TogglePrimaryFactory)
+    virtual int DetectCloaked() override;  // X137B slot 23 = 0x43FB20 (bin: ProcessSpreadEffect)
+    virtual int COMStub_26(int a1, int a2) override;  // X137B slot 26 = 0x4544A0 (bin: UpdatePowerDrain)
+    virtual int HasC4(int a1) override;  // X137B slot 27 = 0x4513D0 (bin: ProductionCheck)
+    virtual int COMStub_28(int a1, int a2, int a3) override;  // X137B slot 28 = 0x447540 (bin: HandleRepairCursor)
+    virtual int COMStub_29(int a1, int a2) override;  // X137B slot 29 = 0x447210 (bin: HandleClickEvent)
+    virtual bool COMStub_Return0_32() override;  // X137B slot 32 = 0x457620 (bin: IsFactorySelectable)
+    virtual int COMStub_Return0_34() override;  // X137B slot 34 = 0x459EE0 (bin: GetTypePtr)
+    virtual int COMStub_Ret8487648_36() override;  // X137B slot 36 = 0x459ED0 (bin: GetTypeField60)
+    virtual bool COMStub_Return0_37() override;  // X137B slot 37 = 0x452630 (bin: CheckHealthForRepair)
+    virtual bool COMStub_Return0_38() override;  // X137B slot 38 = 0x4494C0 (bin: CanBeSold)
+    virtual bool COMStub_Return0_40() override;  // X137B slot 40 = 0x44F5C0 (bin: CanBeSoldCheck)
+    virtual int GetCoordsThunk1(int a1) override;  // X137B slot 41 = 0x4500A0 (bin: GetAdjustedExitCoords)
+    virtual int GetCoords_Alt(int a1, int a2) override;  // X137B slot 42 = 0x447B20 (bin: CalculateTurretAngle)
+    virtual int GetCoordsThunk2(int a1) override;  // X137B slot 43 = 0x459EF0 (bin: GetBuildCoordsAdjusted)
+    virtual int GetDrawPosition(int a1, int a2, int a3, int a4, int a5) override;  // X137B slot 44 = 0x453840 (bin: RenderExitPosition)
+    virtual int GetCoordsThunk3(int a1, int a2) override;  // X137B slot 45 = 0x44F640 (bin: GetFactoryPosition)
+    virtual int GetBoundingSize() override;  // X137B slot 46 = 0x449410 (bin: GetBoundingSizeExt)
+    virtual AbstractClass** Undeploy() override;  // X137B slot 53 = 0x445880 (bin: Sell)
+    virtual AbstractClass** Deploy(int a1, int a2) override;  // X137B slot 54 = 0x440580 (bin: Unlimbo_UnitDeliveryFix)
+    virtual AbstractClass** Destroy2(int a1) override;  // X137B slot 55 = 0x44EBF0 (bin: Disappear_PrismForward)
+    virtual int SetCellOverlayFlag(int a1) override;  // X137B slot 60 = 0x453D60 (bin: MarkCellOccupied)
+    virtual int ClearCellOverlayFlag(int a1) override;  // X137B slot 61 = 0x453DC0 (bin: ClearCellOccupied)
+    virtual int COMStub_64(int a1, int a2) override;  // X137B slot 64 = 0x443C60 (bin: UpdateConstruction)
+    virtual int CalcDrawRect(int a1, int a2, int a3) override;  // X137B slot 65 = 0x43CEA0 (bin: DrawFactoryProduction)
+    virtual int StubReturnFalse(int a1, int a2) override;  // X137B slot 69 = 0x43D290 (bin: Draw)
+    virtual int DelegateVt69(int a1, int a2) override;  // X137B slot 70 = 0x43D030 (bin: DisplayProductionFrame)
+    virtual int UpdateProductionDisplay(int a1) override;  // X137B slot 73 = 0x43F180 (bin: ProductionDisplayUpdate)
+    virtual RectangleStruct* getBoundsRect(RectangleStruct* out) const override;  // X137B slot 75 = 0x455C20 (bin: GetScreenCoords)
+    virtual int CheckStateFlag(int a1) override;  // X137B slot 76 = 0x456750 (bin: DrawDeployCircle)
+    virtual int COMStub_79(int a1, int a2) override;  // X137B slot 79 = 0x459C00 (bin: IsMassSelectable)
+    virtual int COMStub_80(int a1, int a2, int a3, int a4) override;  // X137B slot 80 = 0x4436F0 (bin: HandleRallyPointCommand)
+    virtual int COMStub_81(int a1, int a2, int a3) override;  // X137B slot 81 = 0x443410 (bin: HandleFactoryCommand)
+    virtual int COMStub_Return0_82(int a1) override;  // X137B slot 82 = 0x456E00 (bin: AcquireTarget)
+    virtual int COMStub_Return0_85(int a1, int a2, int a3) override;  // X137B slot 85 = 0x457C90 (bin: IronCurtain)
+    virtual int CreateDestructionEffect(int a1, int a2, int a3, int a4, int a5, int a6, int a7) override;  // X137B slot 91 = 0x442230 (bin: ProcessAttack)
+    virtual int ProcessInputKey(int a1, int a2, int a3) override;  // X137B slot 101 = 0x43C2D0 (bin: MissionController)
+    virtual int IsNotNull(int a1) override;  // X137B slot 102 = 0x44D5D0 (bin: CaptureBuilding)
+    virtual int StubReturnFalse4(int a1) override;  // X137B slot 103 = 0x446FF0 (bin: ToggleRepairMode)
+    virtual int COMStub_Return0_104(int a1) override;  // X137B slot 104 = 0x447110 (bin: ToggleSellMode)
+    virtual int COMStub_107(int a1, int a2, int a3, int a4, int a5) override;  // X137B slot 107 = 0x449440 (bin: GetCursorAction)
+    virtual bool isMissionDone() const override;  // X137B slot 128 = 0x454250 (bin: IsProducing)
+    virtual int StubReturn450() override;  // X137B slot 132 = 0x44ACF0 (bin: ProcessActiveUpdate)
+    virtual int StubReturn450_133() override;  // X137B slot 133 = 0x44B760 (bin: COMStub_133)
+    virtual int CheckState1() override;  // X137B slot 135 = 0x4496B0
+    virtual int CheckState2() override;  // X137B slot 136 = 0x449A40
+    virtual int CheckMissionStatus() override;  // X137B slot 137 = 0x44B770 (bin: COMStub_137)
+    virtual int GetMaxSize() override;  // X137B slot 143 = 0x44D880 (bin: ClearFactoryBib)
+    virtual int Return450G() override;  // X137B slot 145 = 0x449A50 (bin: setLoopCount)
+    virtual int Return450H() override;  // X137B slot 146 = 0x449C30 (bin: finalizeAnimation)
+    virtual int CheckMissionStatus2() override;  // X137B slot 147 = 0x44B780 (bin: ProcessRepair)
+    virtual int Return450I() override;  // X137B slot 148 = 0x44C980 (bin: ProcessSuperWeaponEffects)
+    virtual int Return450J() override;  // X137B slot 149 = 0x44E440 (bin: ProcessPowerPlantEffect)
+    virtual int StubReturnFalse_161() override;  // X137B slot 161 = 0x455DA0 (bin: CheckSpecialUpdateFlags)
+    virtual bool ShouldBeCloaked() const override;  // X137B slot 168 = 0x457770 (bin: UpdateCloak)
+    virtual bool ShouldNotBeCloaked() const override;  // X137B slot 169 = 0x4578C0 (bin: IsFootprintBlocked)
+    virtual int GetAnimationValue() const override;  // X137B slot 170 = 0x445E50 (bin: GetFacingToTarget)
+    virtual int HasActiveParam() const override;  // X137B slot 171 = 0x458DB0
+    virtual int GetAmmoCount() const override;  // X137B slot 174 = 0x44D700 (bin: GetAmmoCountScaled)
+    virtual int GetFiringAngle() const override;  // X137B slot 178 = 0x43E940 (bin: ComputeTargetAngle)
+    virtual int GetCrewCount() const override;  // X137B slot 180 = 0x451330
+    virtual int StubReturnFalse2_181() override;  // X137B slot 181 = 0x459870 (bin: MissionStubReturnZero)
+    virtual int StubReturnFalse3_182() override;  // X137B slot 182 = 0x459880 (bin: MissionStubReturnZero2)
+    virtual int StubReturnFalse4_183() override;  // X137B slot 183 = 0x459890 (bin: MissionStubReturnZero3)
+    virtual int StubReturnTrue3() override;  // X137B slot 184 = 0x4576F0 (bin: DestroyOnBridgeCollapse)
+    virtual int GetDrawHeight() override;  // X137B slot 187 = 0x43E900 (bin: GetZDrawOffset)
+    virtual void* GetTurretOffset(void* a1, int a2) override;  // X137B slot 192 = 0x453A70 (bin: GetTurretScreenPos)
+    virtual int Vt170() override;  // X137B slot 194 = 0x44D7D0 (bin: GetTargetFacing)
+    virtual InfantryTypeClass* GetCrew() const override;  // X137B slot 195 = 0x44EB10
+    virtual int ShouldScanArea() const override;  // X137B slot 201 = 0x457020 (bin: IsCellVisibleToPlayer)
+    virtual int StubReturnFalse11_212() override;  // X137B slot 212 = 0x4555D0 (bin: IsPoweredActive)
+    virtual int PickAlternateTarget() override;  // X137B slot 219 = 0x459C20 (bin: ProcessUpgradeTargeting)
+    virtual int vt_entry_68() override;  // X137B slot 238 = 0x44D760 (bin: PushScriptAction)
+    virtual int ReadINI(int a1, int a2, int a3) override;  // X137B slot 240 = 0x447F10 (bin: GetFireError)
+    virtual int SelectAutoTarget_Start_AU() override;  // X137B slot 241 = 0x445F00 (bin: SelectTargetTypeFlags)
+    virtual int AssignTarget_SyncLog(int syncFlag) override;  // X137B slot 242 = 0x443B90
+    virtual int ProcessCapture() override;  // X137B slot 245 = 0x448260 (bin: drawFrame)
+    virtual int SelectVocOrSfx(int a1) override;  // X137B slot 254 = 0x4526F0
+    virtual bool ProcessFrame() override;  // X137B slot 255 = 0x4527D0 (bin: HasOccupantAudio)
+    virtual int StubReturnFalse7() override;  // X137B slot 256 = 0x458DD0 (bin: CheckMissionGuard)
+    virtual int StubReturnFalse8() override;  // X137B slot 257 = 0x458E00 (bin: CheckMissionAttack)
+    virtual int StubReturnFalse9() override;  // X137B slot 258 = 0x4581F0 (bin: MissionStubReturnZero6)
+    virtual int UpdateLocomotion(int a1, int a2) override;  // X137B slot 260 = 0x454DB0 (bin: CleanupOccupation)
+    virtual int GetRangeModifier() const override;  // X137B slot 281 = 0x456F80 (bin: ProcessMissionDeploy)
+    virtual int StubReturnTrue2() override;  // X137B slot 282 = 0x459900 (bin: SpawnParticles)
+    virtual int Stub(void *a2, int a3) override;  // X137B slot 288 = 0x455D50 (bin: AssignDestination_SyncLog)
+    virtual int CompleteFactoryProduction(int a2, int a3) override;  // X137B slot 289 = 0x44D6A0 (bin: StartOrResumeProduction)
+    virtual int vt_entry_68_292() override;  // X137B slot 292 = 0x458A80 (bin: EvacuateFootprintCells)
+    virtual int RadarUpdateOn() override;  // X137B slot 293 = 0x456580 (bin: UpdateRevealField)
+    virtual int RadarUpdateOff() override;  // X137B slot 294 = 0x4565E0 (bin: UpdateGapGeneratorField)
+    virtual int RevealOwnCell() override;  // X137B slot 295 = 0x456640 (bin: UpdateDetectionField)
+
+    // ========================================================================
+    // X137B: BuildingClass own virtuals -- binary table 0x7E3EBC slots [309]-[321] (13)
+    // declaration order = slot order; arity = Capstone first-retn/4.
+    // ========================================================================
+    virtual bool ValidateFoundation();  // X137B slot 309 = 0x44EFB0 (bin: ValidateFoundation)
+    virtual int initAnimation(int);  // X137B slot 310 = 0x447E00
+    virtual int CreateUnits();  // X137B slot 311 = 0x445F80 (bin: CreateUnits)
+    virtual int UpdateSidebar();  // X137B slot 312 = 0x4456D0
+    virtual int DrawPlacementPreview();  // X137B slot 313 = 0x43DA80 (bin: DrawPlacementPreview)
+    virtual int GetTurretAngle();  // X137B slot 314 = 0x43ED40
+    virtual int ProcessDemolish();  // X137B slot 315 = 0x4415F0
+    virtual int ProcessPrimarySelect();  // X137B slot 316 = 0x448160
+    virtual int ScanCircleForUnits2();  // X137B slot 317 = 0x455820 (bin: ScanCircleForUnits2)
+    virtual int ScanCircleForUnits();  // X137B slot 318 = 0x4556D0 (bin: ScanCircleForUnits)
+    virtual int UpdateTerrainEffect();  // X137B slot 319 = 0x455A80 (bin: UpdateTerrainEffect)
+    virtual int ScanCircleForTiberium();  // X137B slot 320 = 0x455980 (bin: ScanCircleForTiberium)
+    virtual int StubReturn0();  // X137B slot 321 = 0x452250 (bin: StubReturn0)
 
     // wrapper: delegates to BuildingClass::Dtor at 0x43BCF0
-    virtual AbstractType __stdcall whatAmI() const override;
+    AbstractType __stdcall whatAmI() const;
     // wrapper: delegates to BuildingClass::Dtor at 0x43BCF0
-    virtual int objectSize() const ;
+    int objectSize() const ;
 
     // Construction / destruction lifecycle
 int Construct(int,int);  // 0x43B740
@@ -60,7 +180,7 @@ int Construct(int,int);  // 0x43B740
     int ScalarDtor() ;  // 0x459F20
     int Activate() ;  // 0x452480
     int Deactivate() ;   // 0x452480
-    virtual void Destroyed(ObjectClass* killer);  // 0x459E80
+    void Destroyed(ObjectClass* killer);  // 0x459E80
     int AfterDestruction();  // 0x441F60
     void Cleanup(int a2);  // 0x43EEB0
 
@@ -70,16 +190,15 @@ int Construct(int,int);  // 0x43B740
     // wrapper: delegates to BuildingClass::Size at 0x454190
     void Place(bool bUnk);
     // wrapper: delegates to BuildingClass::Size at 0x454190
-    virtual void onBuildingPlacement(uint32_t dwUnk, uint32_t dwUnk2);
+    void onBuildingPlacement(uint32_t dwUnk, uint32_t dwUnk2);
 
     // Foundation / cell
     // wrapper: delegates to BuildingClass::Size at 0x454190
-    virtual CellStruct* getFoundationCell(CellStruct* pCellStruct, uint32_t dwUnk, uint32_t dwUnk2) const;
+    CellStruct* getFoundationCell(CellStruct* pCellStruct, uint32_t dwUnk, uint32_t dwUnk2) const;
     // design: virtual function, no binary implementation matched in IDA
-    virtual int canPlaceHere(ObjectClass* pObj) const;
+    int canPlaceHere(ObjectClass* pObj) const;
     bool IsCellPlaceable(int cell_x, int cell_y) const;  // 0x4260F0
     void ValidatePlacement(char a2);  // 0x480630
-    bool ValidateFoundation();  // 0x44EFB0
     bool ValidateFoundation_0();  // 0x4DC8C0
     int* Validate(int* a2, int a3);  // 0x4DD890  // G42.35 def-truth sync (cache: int* __thiscall(BuildingClass*,int*,int); 调用形 object/render 同款静态形)
     bool ValidateCell(int cell_x, int cell_y);  // 0x4DD9F0
@@ -100,7 +219,7 @@ int Construct(int,int);  // 0x43B740
     void OnCellPlacementComplete(ObjectClass *a2);  // 0x710670 (IDA: thiscall(this, arg0))
 
     // Exit coordinates
-    virtual CoordStruct* GetExitCoords(CoordStruct* out, uint32_t unknown) const ;  // 0x447AC0
+    CoordStruct* GetExitCoords(CoordStruct* out, uint32_t unknown) const ;  // 0x447AC0
     CoordStruct* GetAdjustedExitCoords(CoordStruct* out) const;  // 0x4500A0
     int GetFactoryPosition() const;
     CoordStruct* CalcExitCoords(CoordStruct* out, int dir) const;  // 0x4FD150
@@ -113,12 +232,12 @@ int Construct(int,int);  // 0x43B740
     int RenderExitPosition(); // 0x453840 g57w11 r4: raw fn_45 int __thiscall (前 void 声明 C2556)
     // wrapper: delegates to BuildingClass::RenderExitPosition at 0x453840
     void ReassignFlagPosition();
-    virtual bool TogglePrimaryFactory();  // 0x447E90
+    bool TogglePrimaryFactory();  // 0x447E90
     int IsFactorySelectable();  // 0x457620
 
     // Construction update (ptr_0[8])
     // wrapper: delegates to BuildingClass::IsFactorySelectable at 0x457620
-    virtual void UpdateConstructionOptions();
+    void UpdateConstructionOptions();
     int Mission_Construction() ;
     int UpdateConstruction();  // 0x443C60
 
@@ -133,12 +252,12 @@ int CanAcceptType(int,int);  // 0x452670
     void AddToProductionQueue(int type_index);  // 0x4DA0E0
     void SetProduction(int type_index);  // 0x6395B0
     // wrapper: delegates to BuildingClass::SetProduction at 0x6395B0
-    virtual void onProductionComplete(uint32_t dwUnk, uint32_t dwUnk2);
+    void onProductionComplete(uint32_t dwUnk, uint32_t dwUnk2);
     int GetProductionFrame() const;  // 0x43EF90
 
     // Selling
     // wrapper: delegates to BuildingClass::GetProductionFrame at 0x43EF90
-    virtual int Mission_Selling();
+    int Mission_Selling();
     int Sell();  // 0x445880
     // wrapper: delegates to BuildingClass::Sell at 0x445880
     void CompleteSell();
@@ -151,7 +270,7 @@ int CanAcceptType(int,int);  // 0x452670
     void SellUnit(int a2);  // 0x4D9F70 retn 4 (W20M26 true sig)
 
     // Repair
-    virtual int Mission_Repair();
+    int Mission_Repair();
     int ProcessRepair();  // 0x44B780 g57w11 r4: raw int __thiscall (void 声明 C2562)
     bool CanRepair(TechnoClass* repairer);  // 0x457CE0
     int ToggleRepairMode(int aP1);  // 0x446FF0
@@ -160,8 +279,8 @@ int CanAcceptType(int,int);  // 0x452670
 
     // Missile / Super weapons
     // wrapper: delegates to BuildingClass::IsBeingRepairedOrCaptured at 0x7105E0
-    virtual int Mission_Missile();
-    virtual void processSuperWeapon(uint32_t dwUnk, uint32_t dwUnk2, uint32_t dwUnk3, uint32_t dwUnk4);
+    int Mission_Missile();
+    void processSuperWeapon(uint32_t dwUnk, uint32_t dwUnk2, uint32_t dwUnk3, uint32_t dwUnk4);
     void ProcessSuperWeaponEffects();   // 0x44C980
     int SWAvailable();  // 0x457630
     bool SW2Available();  // 0x457690
@@ -208,7 +327,7 @@ int CanAcceptType(int,int);  // 0x452670
     int GetPowerFrame();  // 0x4566B0
 
     // Capture / Occupancy / Infiltration
-    int ProcessCapture() override;  // 0x712130
+    int processCapture();  // 0x712130 (signals name; non-virtual helper — ProcessCapture = slot 245 chain name)
     int CaptureBuilding();
     void Capture();  // 0x4FCE80
     void DisableTemporal();  // 0x4521C0
@@ -262,12 +381,8 @@ int CanAcceptType(int,int);  // 0x452670
     // G42 归属正名 (自 FootClass 迁入): canon vt+1256/vt+1260 + IDA typed
     // this=BuildingClass* + 体读 this->Type@1312 (BuildingTypeClass*) +
     // DamageFireAnims[8]/C4Timer/EjectCrew 全 BuildingClass 成员
-    virtual int GetTurretAngle();  // 0x43ED40 vt+1256
-    virtual int ProcessDemolish();  // 0x4415F0 vt+1260
     // G42.34 同族迁入 (canon vt+1248/vt+1264; raw typed this=BuildingClass*;
     // 体读 this->Type@1312)
-    virtual int UpdateSidebar();  // 0x4456D0 vt+1248
-    virtual int ProcessPrimarySelect();  // 0x448160 vt+1264
 
     // Deploy / Undeploy
     int Deploy();  // 0x62A4A0
@@ -345,7 +460,7 @@ int CanAcceptType(int,int);  // 0x452670
     int GetZDrawOffset() const;  // 0x43E900
     int GetBoundingSizeExt() const;  // 0x449410
     // wrapper: delegates to BuildingClass::GetBoundingSizeExt at 0x449410
-    virtual ra2::game::LightConvertClass* GetRemapColour() const ;
+    ra2::game::LightConvertClass* GetRemapColour() const ;
 
     // Health / Stats
     double GetHealthRatio() const;  // 0x5F5C60
@@ -369,12 +484,11 @@ int CanAcceptType(int,int);  // 0x452670
     void ReadBuildingSettings();  // 0x475A60
     void ReadConstructionData();  // 0x44FEC0
     bool HasOccupantAudio();  // 0x4527D0
-    virtual ra2::game::WeaponStruct* SelectWeaponSlot(int weaponIndex);  // 0x4526F0 (slot 254 override: upgrade/occupant weapon slots)
+    ra2::game::WeaponStruct* SelectWeaponSlot(int weaponIndex);  // 0x4526F0 (slot 254 override: upgrade/occupant weapon slots)
     void UnloadUnits();  // 0x457DE0
     void AnimateUnloadUnits();  // 0x4585C0
     void SpawnParticles();  // 0x459900
     int ApplyFoundationDamage(unsigned short *a2, void *other);  // 0x45EE70 g57w11 r4: raw int(this,unsigned short*,void*)
-    int AssignTarget_SyncLog(int syncFlag) override;  // 0x443B90
     void AssignDestination_SyncLog();  // 0x455D50
     void DecrementTypeCounter();  // 0x4FF980
     void IncrementOccupantTypeCounter();  // 0x4FFA50
@@ -392,8 +506,6 @@ int CanAcceptType(int,int);  // 0x452670
     void BeginCrumblingTimer();  // 0x4A17C0
     void MarkCellOccupied(int cell_x, int cell_y);  // 0x453D60
     void ClearCellOccupied(int cell_x, int cell_y);  // 0x453DC0
-    void ScanCircleForTiberium();  // 0x455980
-    void UpdateTerrainEffect();  // 0x455A80
     bool IsTiberiumCollectorEligible();  // 0x483620
     bool IsTiberiumSiloEligible();  // 0x483690
     char UpdateBunker(double a2);  // 0x458E50 g57w11 r4: raw char(this,double)
@@ -410,7 +522,7 @@ int CanAcceptType(int,int);  // 0x452670
     void SetSlot(int slot);  // 0x717890
     // wrapper: delegates to BuildingClass::SetSlot at 0x717890
     uint32_t GetField184() const;
-    virtual int GetActionOnObject();  // 0x447210
+    int GetActionOnObject();  // 0x447210
     void HandleRepairCursor();  // 0x447540
     static BuildingClass* Create(BuildingTypeClass* type, CoordStruct* pos, HouseClass* owner);  // 0x466000
     static BuildingClass* AllocAndCtor();  // 0x70BF50
@@ -489,14 +601,13 @@ int CanAcceptType(int,int);  // 0x452670
     LightSourceClass*                     LightSource;
     uint32_t                              LaserFenceFrame;
     uint32_t                              FirestormWallFrame;
-    virtual void g_var_9bbfff(void *, int);  // W20M26 vt+0x100 (canon ('buildingclass', 'HouseClass::UpdateConstruction'))
-    virtual int ThunkTo159x4(int);  // W20M26 vt+0x274 (canon ('buildingclass', 'ObjectClass::ThunkTo159x4'))
-    virtual int ThunkTo636(int, int);
-    virtual int Vt46Thunk();  // vt+0x2BC (canon)
-    virtual void Destroy_0();  // vt+0xF8 (canon)  // W20M26 vt+0x278 (canon ('buildingclass', 'ObjectClass::ThunkTo636'))
-    virtual int ProcessDeploymentState();  // W20M26 vt+0x3A0 (base TechnoClass returns int; C2555) (canon ('buildingclass', 'TechnoClass::ProcessDeploymentState'))
-    virtual int * ValidateFoundation_1(void *, int, int);  // W20M26 vt+0x4D4 (canon ('buildingclass', 'HouseClass::ValidateFoundation_1'))
-    virtual int initAnimation(int);  // W20M26 vt+0x4D8 (canon ('buildingclass', 'AnimClass::initAnimation'))
+    void g_var_9bbfff(void *, int);  // W20M26 vt+0x100 (canon ('buildingclass', 'HouseClass::UpdateConstruction'))
+    int ThunkTo159x4(int);  // W20M26 vt+0x274 (canon ('buildingclass', 'ObjectClass::ThunkTo159x4'))
+    int ThunkTo636(int, int);
+    int Vt46Thunk();  // vt+0x2BC (canon)
+    void Destroy_0();  // vt+0xF8 (canon)  // W20M26 vt+0x278 (canon ('buildingclass', 'ObjectClass::ThunkTo636'))
+    int ProcessDeploymentState();  // W20M26 vt+0x3A0 (base TechnoClass returns int; C2555) (canon ('buildingclass', 'TechnoClass::ProcessDeploymentState'))
+    int * ValidateFoundation_1(void *, int, int);  // W20M26 vt+0x4D4 (canon ('buildingclass', 'HouseClass::ValidateFoundation_1'))
     int32_t                               q0BC;  // 0xBC (PR disasm [ebp+..]; canon None; W20M26)
     int32_t                               q0E8;  // 0xE8 (PR disasm [ebp+..]; canon None; W20M26)
     int32_t                               q114;  // 0x114 (PR disasm [ebp+..]; canon None; W20M26)
@@ -606,8 +717,6 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int FindClosestForRepair(int a1);  // 0x4dfcb0
     int FindClosestForRepair2(int a1);  // 0x4dfe00
     // === FUNCS-MOVE (END) ===
-
-    int CreateUnits();  // G42.39 supply (gap2_defs site)
 
     int CreateNukePayload();  // G42.39 supply (gap2_defs site)
 

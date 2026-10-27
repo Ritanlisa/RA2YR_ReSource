@@ -170,7 +170,7 @@ int FactoryClass::DemandProduction(int a2, void *a3, char a4)
     this->queuedCount = 0; /*0x4c9d92*/
     this->production = 0; /*0x4c9d95*/
     this->u32_58 = (*(int (**)(int, House *))(*(unsigned int *)a2 + 140))(a2, a3); /*0x4c9da4*/
-    if ( !(unsigned __int8)House::IsCurrentPlayer(a3) ) /*0x4c9da7*/
+    if ( !(unsigned __int8)(a3)->IsCurrentPlayer() ) /*0x4c9da7*/
     {
       v12 = this->u32_58; /*0x4c9db1*/
       if ( v12 ) /*0x4c9db6*/
@@ -194,7 +194,7 @@ int FactoryClass::DemandProduction(int a2, void *a3, char a4)
   else if ( this->u32_50 >= dword_8871E0->BaseUnderAttackSound /*0x4c9cea*/
          || HouseClass::ShouldDisableCameo(*&this->owner, a2) )
   {
-    if ( (unsigned __int8)House::IsHumanPlayer(a3) ) /*0x4c9d3f*/
+    if ( (unsigned __int8)(a3)->IsHumanPlayer() ) /*0x4c9d3f*/
       PlayVocClass(dword_8871E0->ShellButtonSlideSound, 0x2000u, 1.0, 0); /*0x4c9d5f*/
     return 0; /*0x4c9d65*/
   }
@@ -313,7 +313,7 @@ int FactoryClass::LoadFromStream(int a1, int * a2)
 
   v2 = a2; /*0x4ca273*/
   v3 = this; /*0x4ca279*/
-  result = AbstractClass::SaveLoad_Prefix_0(this, (int)a2); /*0x4ca27f*/
+  result = (this)->SaveLoad_Prefix_0((int)a2); /*0x4ca27f*/
   if ( result >= 0 ) /*0x4ca288*/
   {
     if ( v3 ) /*0x4ca290*/
@@ -397,37 +397,37 @@ int FactoryClass::Stat(int * a2)
   int v6; // eax
   int v7; // eax
 
-  Debug::Log(); /*0x4ca43f*/
-  Debug::Log(); /*0x4ca44d*/
-  (*(void (**)(unsigned int))(**&this->u32_58 + 44))(*&this->u32_58); /*0x4ca45a*/
-  Debug::Log(); /*0x4ca463*/
-  (*(void (**)(unsigned int))(**&this->u32_58 + 64))(*&this->u32_58); /*0x4ca470*/
-  Debug::Log(); /*0x4ca479*/
-  Debug::Log(); /*0x4ca489*/
-  Debug::Log(); /*0x4ca499*/
-  Debug::Log(); /*0x4ca4a7*/
-  Debug::Log(); /*0x4ca4b5*/
-  Debug::Log(); /*0x4ca4c3*/
-  (*((void (**)(void **))this->owner->? + 4))(&*(_DWORD *)(this->owner + 4)); /*0x4ca4d4*/
-  Debug::Log(); /*0x4ca4dd*/
-  (*((void (**)(void **))this->balance + 4))(&this->balance); /*0x4ca4ec*/
-  Debug::Log(); /*0x4ca4f5*/
-  v3 = ((AbstractClass *)this)->ProcessPower(); /*0x4ca504*/
-  LOBYTE(v3) = this->isSuspended; /*0x4ca509*/
-  ((Power *)a2)->FlagProcess(v3); /*0x4ca50f*/
-  LOBYTE(v4) = this->u8_5D; /*0x4ca514*/
-  ((Power *)a2)->FlagProcess(v4); /*0x4ca51a*/
-  Power::TimerProcess(this->balance); /*0x4ca525*/
-  Power::TimerProcess(this->originalBalance); /*0x4ca530*/
-  v5 = *&this->u32_58; /*0x4ca535*/
-  if ( v5 ) /*0x4ca53a*/
-  {
-    v6 = (*(int (**)(int))(*(unsigned int *)(v5 + 4) + 16))(v5 + 4); /*0x4ca543*/
-    Power::TimerProcess(v6); /*0x4ca549*/
+  Debug::Log();  /*0x4ca43f*/
+  Debug::Log();  /*0x4ca44d*/
+  (*(void (**)(unsigned int))(**(unsigned int **)&this->__pad_42[22] + 44))(*(unsigned int *)&this->__pad_42[22]);  /*0x4ca45a*/
+  Debug::Log();  /*0x4ca463*/
+  (*(void (**)(unsigned int))(**(unsigned int **)&this->__pad_42[22] + 64))(*(unsigned int *)&this->__pad_42[22]);  /*0x4ca470*/
+  Debug::Log();  /*0x4ca479*/
+  Debug::Log();  /*0x4ca489*/
+  Debug::Log();  /*0x4ca499*/
+  Debug::Log();  /*0x4ca4a7*/
+  Debug::Log();  /*0x4ca4b5*/
+  Debug::Log();  /*0x4ca4c3*/
+  (*(void (**)(int))(*(unsigned int *)(this->owner + 4) + 16))(this->owner + 4);  /*0x4ca4d4*/
+  Debug::Log();  /*0x4ca4dd*/
+  ((void (**)(int *))(this->ptr_4) + 16)(&this->ptr_4);  /*0x4ca4ec*/
+  Debug::Log();  /*0x4ca4f5*/
+  v3 = ((AbstractClass *)this)->ProcessPower();  /*0x4ca504*/
+  LOBYTE(v3) = this->isSuspended[0];  /*0x4ca509*/
+  ((Power *)a2)->FlagProcess(v3);  /*0x4ca50f*/
+  LOBYTE(v4) = this->__pad_42[27];  /*0x4ca514*/
+  ((Power *)a2)->FlagProcess(v4);  /*0x4ca51a*/
+  Power::TimerProcess((Checksummer *)a2, this->balance);  /*0x4ca525*/
+  Power::TimerProcess((Checksummer *)a2, this->originalBalance);  /*0x4ca530*/
+  v5 = *(unsigned int *)&this->__pad_42[22];  /*0x4ca535*/
+  if ( v5 )
+  {  /*0x4ca53a*/
+    v6 = (*(int (**)(int))(*(unsigned int *)(v5 + 4) + 16))(v5 + 4);  /*0x4ca543*/
+    Power::TimerProcess((Checksummer *)a2, v6);  /*0x4ca549*/
   }
-  Power::TimerProcess(this->specialItem); /*0x4ca554*/
-  v7 = (*((int (**)(void **))this->owner->? + 4))(&*(_DWORD *)(this->owner + 4)); /*0x4ca563*/
-  return Power::TimerProcess(v7); /*0x4ca56e*/
+  Power::TimerProcess((Checksummer *)a2, this->specialItem);  /*0x4ca554*/
+  v7 = (*(int (**)(int))(*(unsigned int *)(this->owner + 4) + 16))(this->owner + 4);  /*0x4ca563*/
+  return Power::TimerProcess((Checksummer *)a2, v7);  /*0x4ca56e*/
 
 }
 }
@@ -677,7 +677,7 @@ int FactoryClass::Seek(int * a1, int * a2, int a3)
   int v4; // edx
   int i; // ebx
 
-  result = AbstractClass::SaveLoad_Prefix((int *)a1, a2, a3); /*0x4ca3d2*/
+  result = ((int *)a1)->SaveLoad_Prefix(a2, a3); /*0x4ca3d2*/
   if ( result >= 0 ) /*0x4ca3d9*/
   {
     v4 = *a2; /*0x4ca3de*/

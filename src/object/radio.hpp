@@ -25,7 +25,7 @@ public:
     // ========================================================================
     virtual int ThunkTo159x4();  // X134 slot 157 = 0x65ACB0 (thunk family to RemoveElement)
     virtual int ThunkTo636();  // X134 slot 158 = 0x65AAA0 (thunk to byte-0x27C family)
-    virtual int RemoveElement(int a1, void* a2, int a3);  // X134 slot 159 = 0x65A970 (promoted; 3 stack args per vtable callsites)
+    virtual int RemoveElement(int a1, void* a2, int a3);  // X134 slot 159 = 0x65A970 (promoted; 3 stack args per vfptr callsites)
     virtual int UpdateObjects();  // X134 slot 160 = 0x65ACE0
 
     virtual ~RadioClass() = default; // X134: slot 8 = 0x65AEB0 (deleting dtor; 0x65A750 = complete dtor)

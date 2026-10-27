@@ -306,7 +306,8 @@ public:
     uint32_t                CellClass_field_5C;
     uint32_t                unknown60;
     uint32_t                unknown64;
-    uint32_t                unknown68;
+    uint32_t                u32_44;  // 0x44 (X137C: disasm n=3; was unknown68)
+
     uint32_t                CellClass_field_6C;
     uint32_t                unknown70;
     uint32_t                unknown74;
@@ -319,7 +320,7 @@ public:
     FootClass*              jumpjet;
     ObjectClass*            firstObject;
     ObjectClass*            altObject;
-    int                     landType;
+    AbstractClass*          landType;  // 0xEC (X137C retype int->AbstractClass*, authority mt; same 4B)
     double                  radLevel;
     RadSiteClass*           radSite;
     uint32_t                CellClass_field_FC;
@@ -538,6 +539,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* ptr_4;  // X10 supply (csp_canon_members)
     void* ptr_8;  // X10 supply (csp_canon_members)
     void* ptr_C;  // X10 supply (csp_canon_members)
+
 };
 
 } // namespace gamemd

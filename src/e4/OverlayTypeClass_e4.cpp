@@ -278,10 +278,10 @@ ScenarioClass * * OverlayTypeClass::SaveLoad_Prefix(int a1, int a2)
     if ( this )
     {  /*0x5feb13*/
       ((ObjectTypeClass *)this)->Construct((int)Buffer);  /*0x5feb1c*/
-      /* X11: vtable install elided (implicit via OverlayTypeClass_4 virtuals) */
-      /* X11: vtable install elided (implicit via OverlayTypeClass_4 virtuals) */
-      /* X11: vtable install elided (implicit via OverlayTypeClass_4 virtuals) */
-      /* X11: vtable install elided (implicit via OverlayTypeClass_4 virtuals) */
+      /* X11: vfptr install elided (implicit via OverlayTypeClass_4 virtuals) */
+      /* X11: vfptr install elided (implicit via OverlayTypeClass_4 virtuals) */
+      /* X11: vfptr install elided (implicit via OverlayTypeClass_4 virtuals) */
+      /* X11: vfptr install elided (implicit via OverlayTypeClass_4 virtuals) */
     }  /*0x5feb35*/  /*0x5feb2e*/  /*0x5feb27*/  /*0x5feb21*/
     ((char *)this)->LoadAnim();  /*0x5feb3e*/
     ((char *)this)->Load2DArt();  /*0x5feb45*/

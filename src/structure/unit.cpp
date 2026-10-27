@@ -170,7 +170,7 @@ UnitClass::UnitClass() noexcept
           else
           {
             v25 = (*(int (**)(int))(*(unsigned int *)this->Type + 188))(this->Type); /*0x41540d*/
-            this->missionStatus = v25 != this->vt_slot_456(this) ? 4 : 1;
+            this->missionStatus = v25 != this->GetZAboveGround() ? 4 : 1;
           }
         }
         else
@@ -187,7 +187,7 @@ UnitClass::UnitClass() noexcept
                 0);
         if ( v10 ) /*0x4152d5*/
         {
-          this->vt_slot_1152(this, v10, 1); /*0x4152de*/
+          this->Stub( v10, 1); /*0x4152de*/
         }
         else
         {
@@ -220,9 +220,9 @@ UnitClass::UnitClass() noexcept
         {
           if ( *(unsigned char *)&this->Type->Carryall_d ) /*0x4154dd*/
           {
-            this->vt_slot_292(this, 0); /*0x4154ed*/
+            this->UpdateProductionDisplay( 0); /*0x4154ed*/
             FootClass::MissionMoveCarryallLand((FootClass *)this); /*0x4154f5*/
-            this->vt_slot_292(this, 1); /*0x415500*/
+            this->UpdateProductionDisplay( 1); /*0x415500*/
           }
           else
           {
@@ -232,19 +232,19 @@ UnitClass::UnitClass() noexcept
                              v33,
                              this);
             MapClass::ApplyOverlayReveal((MapClass *)&dword_87F7E8, v27, v29); /*0x41552e*/
-            if ( this->vt_slot_256(this, v26) ) /*0x41553e*/
+            if ( this->COMStub_64(this, v26) ) /*0x41553e*/
               v26->u8_424 = 0; /*0x415548*/
-            v28 = (unsigned short *)this->vt_slot_440(this, v34); /*0x415559*/
+            v28 = (unsigned short *)this->GetCellCoords_Alt( v34); /*0x415559*/
             MapClass::FillRevealBuffer((MapClass *)&dword_87F7E8, v28, this); /*0x415565*/
             if ( !*(unsigned char *)(v26 + 1060) && v26->u32_5D4 ) /*0x415574*/
               TeamClass::AddMember((int *)this->team, v26, 0); /*0x415587*/
             if ( !this->passengers[1] ) /*0x41558c*/
-              this->vt_slot_1156(this, 0, 1); /*0x4155a2*/
+              this->CompleteFactoryProduction( 0, 1); /*0x4155a2*/
           }
         }
         else
         {
-          this->vt_slot_1156(this, 0, 1); /*0x4155b5*/
+          this->CompleteFactoryProduction( 0, 1); /*0x4155b5*/
         }
       }
       goto LABEL_9; /*0x415506*/
@@ -1393,7 +1393,7 @@ int UnitClass::SimpleDeployerUndeploy()
       this->Deployed[0] = 0; /*0x739e4f*/
     }
     if ( this->IsDisguised() ) /*0x739e5a*/
-      this->vt_slot_1136(this); /*0x739e68*/
+      this->CheckAction(); /*0x739e68*/
     v2 = this->COMStub_Return0_33(); /*0x739e72*/
     if ( *(unsigned int *)(v2 + 1392) != -1 ) /*0x739e7f*/
     {
@@ -2794,7 +2794,7 @@ LABEL_26:
             }
           }
         }
-        this->vt_slot_1348(this, 0, 0); /*0x735f6a*/
+        this->Destru_vt337( 0, 0); /*0x735f6a*/
         /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E192C) */  /*0x735f74*/
         if ( v78.q004 && BYTE1(v78.ObjectVector_field_0x0C) ) /*0x735f8a*/
           __3_YAXPAX_Z((void *)v78.q004); /*0x735f91*/
@@ -2832,7 +2832,7 @@ LABEL_24:
   v60 = this->ptr_0; /*0x736032*/
   this->FootClass_field_bool_68B[0] = 1; /*0x736038*/
   (*(void (**)(UnitClass *, int))(v60 + 396))(this, 2); /*0x73603f*/
-  this->vt_slot_1348(this, 0, 1072693248); /*0x73604f*/
+  this->Destru_vt337( 0, 1072693248); /*0x73604f*/
   v61 = this->location[1]; /*0x736057*/
   v62 = this->location[2]; /*0x73605a*/
   *(unsigned int *)v78.__pad_0 = this->location[0]; /*0x73605d*/

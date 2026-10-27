@@ -29,6 +29,10 @@
 #include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 #include "e4/classes/ObjectPtr_e4.hpp"
+// X129: fresh-render label declarations (auto, idempotent)
+#include "e4/classes/DynamicVector_e4.hpp"  // X136: complete type for stru_B0F670
+// X129: fresh-render label declarations (auto, idempotent)
+extern gamemd::AbstractClass *dword_A8B230_x136;  // X136: til alias of dword_A8B230 (ptr form; til dump .omo/x136/)
 
 // 0x41E350
 namespace gamemd {  // G42.18 ns repair
@@ -91,137 +95,137 @@ AnimTypeClass * AnimTypeClass::Construct(char *aP1, void *a2, void *a3, void *a4
   int v5; // eax
   AnimTypeClass **v6; // ecx
 
-  ((int *)this)->ConstructFull(aP1); /*0x42753a*/
-  this->MiddleFrameIndex = -1; /*0x427544*/
-  this->MiddleFrameWidth = 0; /*0x42754a*/
-  this->MiddleFrameHeight = 0; /*0x427550*/
-  *(unsigned int *)this->__pad_2A0 = 0; /*0x427556*/
-  this->AnimTypeClass_field_2A4 = 0; /*0x42755c*/
-  this->Damage[0] = 0; /*0x427562*/
-  this->Damage[1] = 0; /*0x427568*/
-  this->Rate = 1; /*0x42756e*/
-  this->Start = 0; /*0x427578*/
-  this->LoopStart_d = 0; /*0x42757e*/
-  this->LoopEnd_d = 0; /*0x427584*/
-  this->End_d = 0; /*0x42758a*/
-  this->LoopCount = 0; /*0x427590*/
-  this->Next_d = 0; /*0x427596*/
-  this->SpawnsParticle = -1; /*0x42759c*/
-  this->NumParticles = 0; /*0x4275a2*/
-  this->DetailLevel_d = 0; /*0x4275a8*/
-  this->TranslucencyDetailLevel_d = 0; /*0x4275ae*/
-  this->RandomLoopDelay_d[0] = 0; /*0x4275b4*/
-  this->RandomLoopDelay_d[1] = 0; /*0x4275ba*/
-  this->RandomRate_d[0] = 0; /*0x4275c0*/
-  this->RandomRate_d[1] = 0; /*0x4275c6*/
-  this->Translucency_d = 0; /*0x4275cc*/
-  this->Spawns_d = 0; /*0x4275d2*/
-  this->SpawnCount = 0; /*0x4275d8*/
-  this->Report_d = -1; /*0x4275de*/
-  this->StopSound_d = -1; /*0x4275e4*/
-  this->BounceAnim_d = 0; /*0x4275ea*/
-  this->ExpireAnim_d = 0; /*0x4275f0*/
-  this->TrailerAnim_d = 0; /*0x4275f6*/
-  this->TrailerSeperation = 0; /*0x4275fc*/
-  this->Elasticity[0] = -1610612736; /*0x427602*/
-  this->Elasticity[1] = 1072273817; /*0x42760c*/
-  this->MinZVel[0] = 0; /*0x42761b*/
-  this->MinZVel[1] = 1074528256; /*0x427621*/
-  this->AnimTypeClass_field_double_320[0] = 0; /*0x427627*/
-  this->AnimTypeClass_field_double_320[1] = 1074528256; /*0x42762d*/
-  this->MaxXYVel[0] = 0; /*0x427633*/
-  this->MaxXYVel[1] = 1076756480; /*0x427639*/
-  this->Warhead = 0; /*0x427643*/
-  this->DamageRadius = 0; /*0x427649*/
-  this->TiberiumSpawnType = 0; /*0x42764f*/
-  this->TiberiumSpreadRadius = 0; /*0x427655*/
-  this->YSortAdjust = 0; /*0x42765b*/
-  this->YDrawOffset = 0; /*0x427661*/
-  this->ZAdjust = 0; /*0x427667*/
-  this->MakeInfantry = -1; /*0x42766d*/
-  this->RunningFrames = 0; /*0x427673*/
-  this->IsFlamingGuy = 0; /*0x427679*/
-  this->IsVeins = 0; /*0x42767f*/
-  this->IsMeteor = 0; /*0x427685*/
-  this->TiberiumChainReaction = 0; /*0x42768b*/
-  this->IsTiberium = 0; /*0x427691*/
-  this->HideIfNoOre = 0; /*0x427697*/
-  this->Bouncer = 0; /*0x42769d*/
-  this->Tiled = 0; /*0x4276a3*/
-  this->ShouldUseCellDrawer = 1; /*0x4276a9*/
-  this->UseNormalLight = 0; /*0x4276b0*/
-  this->DemandLoad = 0; /*0x4276b6*/
-  this->FreeLoad = 0; /*0x4276bc*/
-  this->IsAnimatedTiberium = 0; /*0x4276c2*/
-  this->AltPalette = 0; /*0x4276c8*/
-  this->Normalized = 0; /*0x4276ce*/
-  this->Layer[0] = 3; /*0x4276d4*/
-  this->DoubleThick = 0; /*0x4276de*/
-  this->Flat_flag = 0; /*0x4276e4*/
-  this->Translucent = 0; /*0x4276ea*/
-  this->Scorch = 0; /*0x4276f0*/
-  this->Flamer = 0; /*0x4276f6*/
-  this->Crater = 0; /*0x4276fc*/
-  this->ForceBigCraters = 0; /*0x427702*/
-  this->Sticky = 0; /*0x42770b*/
-  this->PingPong = 0; /*0x427712*/
-  this->Reverse = 0; /*0x427718*/
-  this->Shadow = 0; /*0x42771e*/
-  this->PsiWarning = 0; /*0x427724*/
-  this->ShouldFogRemove = 1; /*0x42772a*/
-  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E35DC) */  /*0x427731*/
-  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E35DC) */  /*0x427737*/
-  /* X11: ptr_0 install elided (implicit via AnimTypeClass virtuals 0x42773d) */
-  /* X11: ptr_0 install elided (implicit via AnimTypeClass virtuals 0x427744) */
-  AbstractClass::GenerateUniqueID(&this->ptr_C); /*0x42774b*/
-  this->IsLogic_d = 1; /*0x427750*/
-  this->RadarInvisible_d = 1; /*0x427757*/
-  this->Selectable_d = 0; /*0x42775e*/
-  this->LegalTarget_d = 0; /*0x427764*/
-  this->Insignificant_d = 1; /*0x42776a*/
-  this->Immune_d = 1; /*0x427771*/
-  this->AllowCellContent_d = 0; /*0x427778*/
-  if ( dword_8B4160 < dword_8B4158 /*0x4277b0*/
-    || (BYTE1(FootClass_Array.?[5]) || !DataGlobal_8B3DC4)
-    && DataGlobal_8B3DC0[932] > 0
-    && (*(unsigned __int8 (**)(int *, int, unsigned int))(FootClass_Array.?[2] + 8))(
-         &DataGlobal_8B3DC0[912],
-         DataGlobal_8B3DC4 + FootClass_Array.?[1],
+  (&this->ptr_0)->ConstructFull(Source);  /*0x42753a*/
+  this->MiddleFrameIndex = -1;  /*0x427544*/
+  this->MiddleFrameWidth = 0;  /*0x42754a*/
+  this->MiddleFrameHeight_d = 0;  /*0x427550*/
+  *(unsigned int *)this->__pad_2A0 = 0;  /*0x427556*/
+  this->AnimTypeClass_field_2A4 = 0;  /*0x42755c*/
+  LODWORD(this->Damage) = 0;  /*0x427562*/
+  HIDWORD(this->Damage) = 0;  /*0x427568*/
+  this->Rate = 1;  /*0x42756e*/
+  this->Damage_d = 0;  /*0x427578*/
+  this->LoopStart_d = 0;  /*0x42757e*/
+  this->LoopEnd_d = 0;  /*0x427584*/
+  this->End_d = 0;  /*0x42758a*/
+  this->LoopCount_d = 0;  /*0x427590*/
+  this->Next_d = 0;  /*0x427596*/
+  this->SpawnsParticle_d = -1;  /*0x42759c*/
+  this->NumParticles = 0;  /*0x4275a2*/
+  this->DetailLevel_d = 0;  /*0x4275a8*/
+  this->TranslucencyDetailLevel_d = 0;  /*0x4275ae*/
+  *(unsigned int *)&this->RandomLoopDelay_d[0] = 0;  /*0x4275b4*/
+  *(unsigned int *)&this->RandomLoopDelay_d[4] = 0;  /*0x4275ba*/
+  *(unsigned int *)&this->RandomRate_d[0] = 0;  /*0x4275c0*/
+  *(unsigned int *)&this->RandomRate_d[4] = 0;  /*0x4275c6*/
+  this->Translucency_d = 0;  /*0x4275cc*/
+  this->Spawns_d = 0;  /*0x4275d2*/
+  this->SpawnCount_d = 0;  /*0x4275d8*/
+  this->Report_d = -1;  /*0x4275de*/
+  this->StopSound_d = -1;  /*0x4275e4*/
+  this->BounceAnim_d = 0;  /*0x4275ea*/
+  this->ExpireAnim_d = 0;  /*0x4275f0*/
+  this->TrailerAnim_d = 0;  /*0x4275f6*/
+  this->TrailerSeperation_d = 0;  /*0x4275fc*/
+  LODWORD(this->Elasticity_d) = -1610612736;  /*0x427602*/
+  HIDWORD(this->Elasticity_d) = 1072273817;  /*0x42760c*/
+  LODWORD(this->MinZVel_d) = 0;  /*0x42761b*/
+  HIDWORD(this->MinZVel_d) = 1074528256;  /*0x427621*/
+  LODWORD(this->AnimTypeClass_field_double_320) = 0;  /*0x427627*/
+  HIDWORD(this->AnimTypeClass_field_double_320) = 1074528256;  /*0x42762d*/
+  LODWORD(this->MaxXYVel) = 0;  /*0x427633*/
+  HIDWORD(this->MaxXYVel) = 1076756480;  /*0x427639*/
+  this->Warhead = 0;  /*0x427643*/
+  this->DamageRadius = 0;  /*0x427649*/
+  this->TiberiumSpawnType = 0;  /*0x42764f*/
+  this->TiberiumSpreadRadius = 0;  /*0x427655*/
+  this->YSortAdjust = 0;  /*0x42765b*/
+  this->YDrawOffset = 0;  /*0x427661*/
+  this->ZAdjust = 0;  /*0x427667*/
+  this->MakeInfantry = -1;  /*0x42766d*/
+  this->RunningFrames = 0;  /*0x427673*/
+  this->IsFlamingGuy[0] = 0;  /*0x427679*/
+  this->IsVeins[0] = 0;  /*0x42767f*/
+  this->IsMeteor[0] = 0;  /*0x427685*/
+  this->TiberiumChainReaction[0] = 0;  /*0x42768b*/
+  this->IsTiberium[0] = 0;  /*0x427691*/
+  this->HideIfNoOre[0] = 0;  /*0x427697*/
+  this->Bouncer[0] = 0;  /*0x42769d*/
+  this->Tiled[0] = 0;  /*0x4276a3*/
+  this->ShouldUseCellDrawer[0] = 1;  /*0x4276a9*/
+  this->UseNormalLight[0] = 0;  /*0x4276b0*/
+  this->DemandLoad[0] = 0;  /*0x4276b6*/
+  this->FreeLoad[0] = 0;  /*0x4276bc*/
+  this->IsAnimatedTiberium[0] = 0;  /*0x4276c2*/
+  this->AltPalette[0] = 0;  /*0x4276c8*/
+  this->Normalized[0] = 0;  /*0x4276ce*/
+  this->Layer = 3;  /*0x4276d4*/
+  this->DoubleThick[0] = 0;  /*0x4276de*/
+  this->Flat_flag[0] = 0;  /*0x4276e4*/
+  this->Translucent[0] = 0;  /*0x4276ea*/
+  this->Scorch[0] = 0;  /*0x4276f0*/
+  this->Flamer[0] = 0;  /*0x4276f6*/
+  this->Crater[0] = 0;  /*0x4276fc*/
+  this->ForceBigCraters[0] = 0;  /*0x427702*/
+  this->Sticky[0] = 0;  /*0x42770b*/
+  this->PingPong[0] = 0;  /*0x427712*/
+  this->Reverse[0] = 0;  /*0x427718*/
+  this->Shadow[0] = 0;  /*0x42771e*/
+  this->PsiWarning[0] = 0;  /*0x427724*/
+  this->ShouldFogRemove[0] = 1;  /*0x42772a*/
+  /* X11: vfptr install elided (implicit via AnimTypeClass_4 virtuals) */
+  /* X11: vfptr install elided (implicit via AnimTypeClass_4 virtuals) */
+  /* X11: vfptr install elided (implicit via AnimTypeClass_4 virtuals) */
+  /* X11: vfptr install elided (implicit via AnimTypeClass_4 virtuals) */
+  ((AbstractClass *)&this->ptr_4)->GenerateUniqueID();  /*0x42774b*/  /*0x427744*/  /*0x42773d*/  /*0x427737*/  /*0x427731*/
+  this->IsLogic[0] = 1;  /*0x427750*/
+  this->RadarInvisible[0] = 1;  /*0x427757*/
+  this->Selectable[0] = 0;  /*0x42775e*/
+  this->LegalTarget[0] = 0;  /*0x427764*/
+  this->Insignificant_d = 1;  /*0x42776a*/
+  this->__pad_233 = 1;  /*0x427771*/
+  this->AllowCellContent[0] = 0;  /*0x427778*/
+  if ( dword_8B4160 < dword_8B4158
+    || (byte_8B415D || !dword_8B4158)
+    && dword_8B4164 > 0
+    && (*(unsigned __int8 (**)(int *, int, unsigned int))(dword_8B4150 + 8))(
+         &dword_8B4150,
+         dword_8B4158 + dword_8B4164,
          0) )
-  {
-    v3 = dword_8B4160++; /*0x4277bd*/
-    *(unsigned int *)(dword_8B4154 + 4 * v3) = this; /*0x4277cc*/
+  {  /*0x4277b0*/
+    v3 = dword_8B4160++;  /*0x4277bd*/
+    *((unsigned int *)dword_8B4154 + v3) = this;  /*0x4277cc*/
   }
-  if ( g_BuildingLoadQueue_Array.LightBlueTint < g_BuildingLoadQueue_Array.LightRedTint /*0x427803*/
-    || (BYTE1(g_BuildingLoadQueue_Array.LightGreenTint) || !g_BuildingLoadQueue_Array.LightRedTint)
-    && g_BuildingLoadQueue_Array.PrimaryFirePixelOffset[0] > 0
-    && (*(unsigned __int8 (**)(int *, int, unsigned int))(g_BuildingLoadQueue_Array.LightVisibility + 8))(
-         &g_BuildingLoadQueue_Array.LightVisibility,
-         g_BuildingLoadQueue_Array.LightRedTint + g_BuildingLoadQueue_Array.PrimaryFirePixelOffset[0],
+  if ( stru_B0F670.q010 < stru_B0F670.DynamicVector_field_0x8
+    || (stru_B0F670.IsAllocated || !stru_B0F670.DynamicVector_field_0x8)
+    && *(int *)&stru_B0F670.CapacityIncrement > 0
+    && (*(unsigned __int8 (**)(DynamicVector *, int, unsigned int))(*(unsigned int)stru_B0F670.ptr_0 + 8))(
+         &stru_B0F670,
+         stru_B0F670.DynamicVector_field_0x8 + *(unsigned int *)&stru_B0F670.CapacityIncrement,
          0) )
-  {
-    v4 = g_BuildingLoadQueue_Array.LightBlueTint++; /*0x427810*/
-    *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v4) = this; /*0x42781f*/
+  {  /*0x427803*/
+    v4 = stru_B0F670.q010++;  /*0x427810*/
+    *(unsigned int *)(*(unsigned int *)&stru_B0F670.DynamicVector_field_0x1[3] + 4 * v4) = this;  /*0x42781f*/
   }
-  v5 = 0; /*0x427828*/
-  if ( FootClass_Array <= 0 ) /*0x42782c*/
-  {
-    LABEL_17:
-    v5 = -1; /*0x427840*/
+  v5 = 0;  /*0x427828*/
+  if ( dword_8B4160 <= 0 )
+  {  /*0x42782c*/
+LABEL_17:
+    v5 = -1;  /*0x427840*/
   }
   else
   {
-    v6 = (AnimTypeClass **)dword_8B4154; /*0x42782e*/
-    while ( *v6 != this ) /*0x427836*/
-    {
-      ++v5; /*0x427838*/
-      ++v6; /*0x427839*/
-      if ( v5 >= FootClass_Array ) /*0x42783e*/
-        goto LABEL_17; /*0x42783e*/
+    v6 = (AnimTypeClass **)dword_8B4154;  /*0x42782e*/
+    while ( *v6 != this )
+    {  /*0x427836*/
+      ++v5;  /*0x427838*/
+      ++v6;  /*0x427839*/
+      if ( v5 >= dword_8B4160 )
+        goto LABEL_17;  /*0x42783e*/  /*0x42783e*/
     }
   }
-  this->MiddleFrameIndex = v5; /*0x427842*/
-  return &this->ObjectTypeClass; /*0x42784a*/
+  this->MiddleFrameIndex = v5;  /*0x427842*/
+  return &this->ptr_0;  /*0x42784a*/
 
 }
 }
@@ -379,43 +383,43 @@ namespace gamemd {
 int AnimTypeClass::SaveLoad_Prefix(int a1, int a2)
 {
 
-  char v3[513]; // [esp+7h] [ebp-201h] BYREF
-
   int result; // eax
-  result = ObjectTypeClass::LoadCleanup((ObjectTypeClass *)a1, a2); /*0x428814*/
-  if ( result >= 0 ) /*0x42881b*/
-  {
-    if ( a1 ) /*0x428823*/
-    {
-      ObjectTypeClass::Construct((ObjectTypeClass *)a1, (int)v3); /*0x42882c*/
-      /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E35DC) */  /*0x428831*/
-      /* X11: ptr_0 install elided (qmark slot, RHS g_ptr_7E35DC) */  /*0x428837*/
-      /* X11: ptr_0 install elided (qmark slot, RHS g_ptr_7E35DC) */  /*0x42883e*/
-      /* X11: ptr_0 install elided (qmark slot, RHS g_ptr_7E35DC) */  /*0x428845*/
-    }
-    ((char *)a1)->LoadAnim(); /*0x42884e*/
-    ((char *)a1)->Load2DArt(); /*0x428855*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&a1->Next); /*0x428866*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&a1->ExpireAnim); /*0x428877*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&a1->TrailerAnim); /*0x428888*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&a1->BounceAnim); /*0x428899*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&a1->Spawns); /*0x4288aa*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&a1->Warhead); /*0x4288bb*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&a1->TiberiumSpawnType); /*0x4288cc*/
-    if ( !a1->DemandLoad ) /*0x4288d1*/
-    {
-      if ( a1->Theater[0] ) /*0x4288db*/
-      {
-        _makepath(&v3[1], 0, 0, (const char *)a1->__pad_24, (const char *)&off_7E1BC6 + 112 * dword_A8B230[130].uniqueId); /*0x428910*/
-        a1->Image = (SHPStruct *)SearchMIXFile(&v3[1], 1); /*0x428923*/
-        return 0; /*0x428932*/
+  char Buffer[513]; // [esp+7h] [ebp-201h] BYREF
+
+  result = ObjectTypeClass::LoadCleanup((ObjectTypeClass *)this, a2);  /*0x428814*/
+  if ( result >= 0 )
+  {  /*0x42881b*/
+    if ( this )
+    {  /*0x428823*/
+      ((ObjectTypeClass *)this)->Construct((int)Buffer);  /*0x42882c*/
+      /* X11: vfptr install elided (implicit via AnimTypeClass_4 virtuals) */
+      /* X11: vfptr install elided (implicit via AnimTypeClass_4 virtuals) */
+      /* X11: vfptr install elided (implicit via AnimTypeClass_4 virtuals) */
+      /* X11: vfptr install elided (implicit via AnimTypeClass_4 virtuals) */
+    }  /*0x428845*/  /*0x42883e*/  /*0x428837*/  /*0x428831*/
+    ((char *)this)->LoadAnim();  /*0x42884e*/
+    ((char *)this)->Load2DArt();  /*0x428855*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->Next_d);  /*0x428866*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->ExpireAnim_d);  /*0x428877*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->TrailerAnim_d);  /*0x428888*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->BounceAnim_d);  /*0x428899*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->Spawns_d);  /*0x4288aa*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->Warhead);  /*0x4288bb*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->TiberiumSpawnType);  /*0x4288cc*/
+    if ( !this->DemandLoad[0] )
+    {  /*0x4288d1*/
+      if ( this->Theater[0] )
+      {  /*0x4288db*/
+        _makepath(&Buffer[1], 0, 0, this->__pad_24, (const char *)&off_7E1BC6 + 112 * dword_A8B230_x136[117].uniqueId);  /*0x428910*/
+        this->Image = (int)SearchMIXFile(&Buffer[1], 1);  /*0x428923*/
+        return 0;  /*0x428932*/
       }
-      if ( a1->? ) /*0x428935*/
-        (*((void (**)(AnimTypeClass *, int))a1->ObjectTypeClass + 40))(a1, dword_A8B230[130].uniqueId); /*0x42894f*/
+      if ( this->NewTheater[0] )
+        ((void (**)(AnimTypeClass *, int))this->ptr_0 + 40)(this, dword_A8B230_x136[117].uniqueId);  /*0x42894f*/  /*0x428935*/
     }
-    return 0; /*0x428955*/
+    return 0;  /*0x428955*/
   }
-  return result; /*0x42892b*/
+  return result;  /*0x42892b*/
 
 }
 }
@@ -425,7 +429,7 @@ int AnimTypeClass::PowerDrainUpdate(int * a2)
 {
 
 
-  AbstractTypeClass::ProcessPower((AbstractTypeClass *)this, a2); /*0x4289d9*/
+  ((AbstractTypeClass *)this)->ProcessPower(a2); /*0x4289d9*/
   Power::TimerProcess(this->Layer[0]); /*0x4289e7*/
   int v3; // ecx
   LOBYTE(v3) = this->Normalized; /*0x4289ec*/
@@ -458,7 +462,7 @@ int AnimTypeClass::PowerDrainUpdate(int * a2)
   LOBYTE(v12) = this->Shadow; /*0x428a6a*/
   ((Power *)a2)->FlagProcess(v12); /*0x428a73*/
   Power::TimerProcess(this->MiddleFrameWidth); /*0x428a81*/
-  Checksummer::Add_double((Checksummer *)a2, this->Damage[0], this->Damage[1]); /*0x428a96*/
+  ((Checksummer *)a2)->Add_double(this->Damage[0], this->Damage[1]); /*0x428a96*/
   int v13; // edx
   LOBYTE(v13) = this->TiberiumChainReaction; /*0x428a9b*/
   ((Power *)a2)->FlagProcess(v13); /*0x428aa4*/
@@ -497,7 +501,7 @@ AnimTypeClass * * AnimTypeClass::FindOrCreate(char *Source, int a2, int aP0, int
     LABEL_6:
     v3 = (AnimTypeClass *)__2_YAPAXI_Z(0x378u); /*0x428bd6*/
     if ( v3 ) /*0x428be5*/
-      return AnimTypeClass::Construct(v3, Source); /*0x428bf1*/
+      return (v3)->Construct(Source); /*0x428bf1*/
     return 0; /*0x428be5*/
   }
   while ( _strcmpi((char *)(*(unsigned int *)(dword_8B4154 + 4 * v2) + 36), Source) ) /*0x428bca*/
@@ -549,7 +553,7 @@ int AnimTypeClass::GetDamage()
       TheaterObjectTypeClassSpecificID(Buffer, dword_A8B230[130].uniqueId); /*0x428cf3*/
     }
     (&v7)->Construct(Buffer); /*0x428d04*/
-    v4 = (SHPStruct *)CCFileClass::ReadEntireFile(&v7); /*0x428d0d*/
+    v4 = (SHPStruct *)(&v7)->ReadEntireFile(); /*0x428d0d*/
     this->Image = v4; /*0x428d14*/
     if ( v4 ) /*0x428d1a*/
     {
@@ -557,9 +561,9 @@ int AnimTypeClass::GetDamage()
     }
     else
     {
-      ObjectTypeClass::SetRTTI71((ObjectTypeClass *)Buffer); /*0x428d2c*/
+      ((ObjectTypeClass *)Buffer)->SetRTTI71(); /*0x428d2c*/
       (&v10)->Construct(Buffer); /*0x428d3d*/
-      v5 = (SHPStruct *)CCFileClass::ReadEntireFile(&v10); /*0x428d46*/
+      v5 = (SHPStruct *)(&v10)->ReadEntireFile(); /*0x428d46*/
       this->Image = v5; /*0x428d4d*/
       if ( v5 ) /*0x428d53*/
         this->ImageAllocated = 1; /*0x428d55*/
@@ -567,7 +571,7 @@ int AnimTypeClass::GetDamage()
       v12 = 0; /*0x428d6b*/
       ((Vector *)v11)->Clear(); /*0x428d76*/
       *(unsigned int *)v10.__tail_0 = &off_7E1668; /*0x428d7f*/
-      BufferIOFileClass::Dtor((BufferIOFileClass *)&v10); /*0x428d87*/
+      ((BufferIOFileClass *)&v10)->Dtor(); /*0x428d87*/
     }
     (*((void (**)(AnimTypeClass *, int))this->ptr_0 + 40))(this, dword_A8B230[130].uniqueId); /*0x428d9c*/
     Image = this->Image; /*0x428da2*/
@@ -575,7 +579,7 @@ int AnimTypeClass::GetDamage()
     v9 = 0; /*0x428db4*/
     ((Vector *)v8)->Clear(); /*0x428dbc*/
     *(unsigned int *)v7.__tail_0 = &off_7E1668; /*0x428dc5*/
-    BufferIOFileClass::Dtor((BufferIOFileClass *)&v7); /*0x428dcd*/
+    ((BufferIOFileClass *)&v7)->Dtor(); /*0x428dcd*/
     return (int)Image; /*0x428dd2*/
   }
   return result; /*0x428dd4*/
@@ -587,45 +591,43 @@ namespace gamemd {
 AnimTypeClass * AnimTypeClass::ddtor(char a2, int aP0, int aP1, int aP2, int a1, int a3)
 {
 
+  int v3; // eax  /*0x428f2c*/
+  int v4; // eax  /*0x428f31*/
+  AnimTypeClass *v6; // [esp+4h] [ebp-4h] BYREF  /*0x428f37*/
 
-  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E35DC) */  /*0x428ead*/
-  /* X11: ptr_0 install elided (qmark slot, RHS g_ptr_7E35DC) */  /*0x428eb3*/
-  /* X11: ptr_0 install elided (qmark slot, RHS g_ptr_7E35DC) */  /*0x428eba*/
-  /* X11: ptr_0 install elided (qmark slot, RHS g_ptr_7E35DC) */  /*0x428ec1*/
-  AnimTypeClass *v6; // [esp+4h] [ebp-4h] BYREF
-  v6 = aP0; /*0x428ecf*/
-  int v3; // eax
-  v3 = (*(int (**)(int *, AnimTypeClass **))(g_BuildingLoadQueue_Array.LightVisibility + 16))( /*0x428ed3*/
-         &g_BuildingLoadQueue_Array.LightVisibility,
-         &v6);
-  if ( v3 != -1 && v3 < g_BuildingLoadQueue_Array.LightBlueTint ) /*0x428ee3*/
-  {
-    --g_BuildingLoadQueue_Array.LightBlueTint; /*0x428ee8*/
-    for ( ; /*0x428eee*/
-    v3 < g_BuildingLoadQueue_Array.LightBlueTint;
-    *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v3 - 4) = *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity
-    + 4 * v3) )
-    {
-      ++v3; /*0x428ef6*/
+  /* X11: vfptr install elided (implicit via AnimTypeClass_4 virtuals) */
+  /* X11: vfptr install elided (implicit via AnimTypeClass_4 virtuals) */
+  /* X11: vfptr install elided (implicit via AnimTypeClass_4 virtuals) */
+  /* X11: vfptr install elided (implicit via AnimTypeClass_4 virtuals) */
+  v6 = this;  /*0x428ecf*/  /*0x428ec1*/  /*0x428eba*/  /*0x428eb3*/  /*0x428ead*/
+  v3 = (*(int (**)(DynamicVector *, AnimTypeClass **))(*(unsigned int)stru_B0F670.ptr_0 + 16))(
+         &stru_B0F670,
+         &v6);  /*0x428ed3*/
+  if ( v3 != -1 && v3 < stru_B0F670.q010 )
+  {  /*0x428ee3*/
+    --stru_B0F670.q010;  /*0x428ee8*/
+    for ( ;
+          v3 < stru_B0F670.q010;
+          *(unsigned int *)(*(unsigned int *)&stru_B0F670.DynamicVector_field_0x1[3] + 4 * v3 - 4) = *(unsigned int *)(*(unsigned int *)&stru_B0F670.DynamicVector_field_0x1[3] + 4 * v3) )
+    {  /*0x428eee*/
+      ++v3;  /*0x428ef6*/
     }
   }
-  v6 = aP0; /*0x428f18*/
-  int v4; // eax
-  v4 = (*(int (**)(int *, AnimTypeClass **))(DataGlobal_8B3DC0[912] + 16))(&DataGlobal_8B3DC0[912], &v6); /*0x428f1c*/
-  if ( v4 != -1 && v4 < FootClass_Array.?[0] ) /*0x428f2c*/
+  v6 = this;  /*0x428f18*/
+  v4 = (*(int (**)(int *, AnimTypeClass **))(dword_8B4150 + 16))(&dword_8B4150, &v6);  /*0x428f1c*/
+  if ( v4 != -1 && v4 < dword_8B4160 && v4 < --dword_8B4160 )
   {
-    --FootClass_Array.?[0]; /*0x428f31*/
-    for ( ; /*0x428f37*/
-    v4 < FootClass_Array;
-    *(unsigned int *)(FootClass_Array.?[3] + 4 * v4 - 4) = *(unsigned int *)(FootClass_Array.?[3] + 4 * v4) )
+    do
     {
-      ++v4; /*0x428f3f*/
+      ++v4;  /*0x428f3f*/
+      *((unsigned int *)dword_8B4154 + v4 - 1) = *((unsigned int *)dword_8B4154 + v4);
     }
+    while ( v4 < dword_8B4160 );
   }
-  ObjectTypeClass::Destruct((int)aP0); /*0x428f53*/
-  if ( (aP0 & 1) != 0 ) /*0x428f5d*/
-    __3_YAXPAX_Z(aP0); /*0x428f60*/
-  return &aP0->ObjectTypeClass; /*0x428f6a*/
+  ((int)this)->Destruct();  /*0x428f53*/
+  if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);  /*0x428f60*/  /*0x428f5d*/
+  return &this->ptr_0;  /*0x428f6a*/
 
 }
 } // namespace gamemd

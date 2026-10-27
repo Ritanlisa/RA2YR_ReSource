@@ -19,6 +19,7 @@ using ra2::game::RectangleStruct;
 class EBolt;
 // CSP: UnitTypeClass matched via T1
 class UnitTypeClass;
+class InfantryTypeClass;
 
 // Idle-order entry (heap-allocated, 20 bytes). Each entry tracks a unit
 // queued for idle-order exit-cell processing.
@@ -45,24 +46,97 @@ class UnitClass : public ra2::game::FootClass
 public:
     static constexpr AbstractType kObjectTypeId = AbstractType::Unit;
 
-    virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override;  // 0x6B4F50
+    virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override;  // X137B slot 3 = 0x746DE0 (prior: 0x6B4F50)
     // wrapper: delegates to UnitClass::GetClassID at 0x6B4F50
-    virtual HRESULT __stdcall Load(IStream* pStm) override;
+    virtual HRESULT __stdcall Load(IStream* pStm) override;  // X137B slot 5 = 0x744470
     // unmatched: no callgraph reference and no git history record
-    virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override;
+    virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override;  // X137B slot 6 = 0x744600
 
     // wrapper: delegates to UnitClass::GetClassID at 0x6B4F50
-    virtual ~UnitClass() override = default;
+    virtual ~UnitClass() override = default;  // X137B slot 8 = 0x746E80 (deleting dtor)
+
+    // === X137B: inherited-range overrides (binary 0x7F5C70 slots 0-340 where RVA != FootClass) ===
+    virtual int Unlink(int a1, int a2) override;  // X137B slot 10 = 0x7446E0 (bin: HandleTargetDestroyed)
+    virtual int COMStub_Return0_11() override;  // X137B slot 11 = 0x746E20 (bin: StubReturn1)
+    virtual int COMStub_Return0_12() override;  // X137B slot 12 = 0x746DD0 (bin: StubReturn2280)
+    virtual int ProcessPower() override;  // X137B slot 13 = 0x744640 (bin: PowerDrainUpdate)
+    virtual int DetectCloaked() override;  // X137B slot 23 = 0x7360C0 (bin: sub_7360C0)
+    virtual int COMStub_28(int a1, int a2, int a3) override;  // X137B slot 28 = 0x7404B0 (bin: GetInfantryCursorAction)
+    virtual int COMStub_29(int a1, int a2) override;  // X137B slot 29 = 0x73FD50 (bin: sub_73FD50)
+    virtual bool COMStub_Return0_32() override;  // X137B slot 32 = 0x746400 (bin: processParasiteAttachment)
+    virtual int COMStub_Return0_34() override;  // X137B slot 34 = 0x741490 (bin: checkTargetValidity)
+    virtual int COMStub_Ret8487648_36() override;  // X137B slot 36 = 0x746B20 (bin: GetCommandTooltip)
+    virtual int COMStub_50(int a1) override;  // X137B slot 50 = 0x746750 (bin: IsGuardingTarget)
+    virtual int LandingCheckStub(int a1) override;  // X137B slot 51 = 0x7465B0 (bin: updateParasiteState)
+    virtual int StubReturnFalse2(int a1) override;  // X137B slot 52 = 0x7465F0 (bin: detachParasites)
+    virtual AbstractClass** Undeploy() override;  // X137B slot 53 = 0x7440B0 (bin: ReturnCapturedFlag)
+    virtual AbstractClass** Deploy(int a1, int a2) override;  // X137B slot 54 = 0x737BA0 (bin: DispatchPlayerInput)
+    virtual int COMStub_Return0_56(int a1) override;  // X137B slot 56 = 0x744720 (bin: NotifyTeamOnDestruction)
+    virtual int SetCellOverlayFlag(int a1) override;  // X137B slot 60 = 0x7441B0 (bin: MarkCellImpassable)
+    virtual int ClearCellOverlayFlag(int a1) override;  // X137B slot 61 = 0x744210 (bin: ClearCellImpassable)
+    virtual int CalcDrawRect(int a1, int a2, int a3) override;  // X137B slot 65 = 0x73B0B0 (bin: ShouldSkipOccupierDraw)
+    virtual int StubReturnFalse(int a1, int a2) override;  // X137B slot 69 = 0x73CEC0 (bin: Draw)
+    virtual int COMStub_80(int a1, int a2, int a3, int a4) override;  // X137B slot 80 = 0x738910 (bin: SpawnInfantryFromBuilding)
+    virtual int COMStub_81(int a1, int a2, int a3) override;  // X137B slot 81 = 0x738890 (bin: ValidateMoveType)
+    virtual int CreateDestructionEffect(int a1, int a2, int a3, int a4, int a5, int a6, int a7) override;  // X137B slot 91 = 0x737C90 (bin: OnUnderAttack)
+    virtual int COMStub_Return0_92() override;  // X137B slot 92 = 0x746D60 (bin: releaseSpawns)
+    virtual int COMStub_Return0_93(int a1, int a2, int a3) override;  // X137B slot 93 = 0x743A50 (bin: Scatter)
+    virtual int COMStub_Return0_99(int a1) override;  // X137B slot 99 = 0x739EC0 (bin: ProcessSell)
+    virtual int ProcessInputKey(int a1, int a2, int a3) override;  // X137B slot 101 = 0x737430 (bin: MissionDispatch)
+    virtual int COMStub_107(int a1, int a2, int a3, int a4, int a5) override;  // X137B slot 107 = 0x73F0A0 (bin: EvaluateTarget)
+    virtual bool isMissionDone() const override;  // X137B slot 128 = 0x744270 (bin: CanBeTargeted)
+    virtual int StubReturn450() override;  // X137B slot 132 = 0x7447A0 (bin: ScanTarget_0)
+    virtual int CheckState1() override;  // X137B slot 135 = 0x740810 (bin: ProcessAIDecision)
+    virtual int CheckState2() override;  // X137B slot 136 = 0x744100 (bin: SelectAITarget)
+    virtual int CheckMissionStatus() override;  // X137B slot 137 = 0x73E5E0 (bin: ReadINI)
+    virtual int COMStub_Ret450_138() override;  // X137B slot 138 = 0x73EFC0 (bin: DeployIntoBuilding)
+    virtual int COMStub_Ret450_139() override;  // X137B slot 139 = 0x740A90 (bin: CheckRepairNeeded)
+    virtual int GetMaxSize() override;  // X137B slot 143 = 0x73D630 (bin: CompleteProduction)
+    virtual int CheckMissionStatus2() override;  // X137B slot 147 = 0x740EF0 (bin: EnterRepairBuilding)
+    virtual int COMStub_Ret450_151() override;  // X137B slot 151 = 0x740B10 (bin: updateTargeting)
+    virtual int selectTarget() override;  // X137B slot 167 = 0x744180 (bin: AreBuildingFlagsClear)
+    virtual int GetAnimationValue() const override;  // X137B slot 170 = 0x746E30 (bin: checkIronCurtainState)
+    virtual int ComputeAverageValue() const override;  // X137B slot 173 = 0x7414A0 (bin: GetAverageDamageScore)
+    virtual int GetAmmoCount() const override;  // X137B slot 174 = 0x740E50 (bin: GetAmmoCount_0)
+    virtual int SelectWeapon() override;  // X137B slot 185 = 0x746CD0 (bin: SelectAttackWeapon)
+    virtual int GetGlobalValue(int* outValue) const override;  // X137B slot 193 = 0x740B60 (bin: FindBestMovementDirection)
+    virtual int Vt170() override;  // X137B slot 194 = 0x740F80 (bin: GetDeployProgressValue)
+    virtual InfantryTypeClass* GetCrew() const override;  // X137B slot 195 = 0x740EE0 (bin: GetCrew_0)
+    virtual int HasPassengers() const override;  // X137B slot 223 = 0x746C90 (bin: checkSpawnState)
+    virtual int ReadINI(int a1, int a2, int a3) override;  // X137B slot 240 = 0x740FD0 (bin: CheckUnitFireConstraints)
+    virtual int SelectAutoTarget_Start_AU() override;  // X137B slot 241 = 0x743190 (bin: SelectAutoTargetWithGarrison)
+    virtual int FireWeapon() override;  // X137B slot 243 = 0x741340 (bin: FireWeaponBurst)
+    virtual int ProcessCapture() override;  // X137B slot 245 = 0x7463A0 (bin: TransferSlavedUnit)
+    virtual int StepAnimFrame() override;  // X137B slot 265 = 0x736CA0 (bin: UpdateUnitAnimation)
+    virtual int ActivateEffect() override;  // X137B slot 283 = 0x746670 (bin: ApplyObjectEffect)
+    virtual int CheckAction() override;  // X137B slot 284 = 0x746720 (bin: ClearAllTargets)
+    virtual int Stub(void *a2, int a3) override;  // X137B slot 288 = 0x741970 (bin: AssignDestination_SyncLog)
+    virtual int CompleteFactoryProduction(int a2, int a3) override;  // X137B slot 289 = 0x738970 (bin: RespondToDestruction)
+    virtual int GetTypeVt40() const override;  // X137B slot 303 = 0x746CB0 (bin: GetTypeVt40_2)
+    virtual int GetTypeVt41() override;  // X137B slot 304 = 0x746CC0 (bin: GetTypeVt41_2)
+    virtual int vt_entry_4D4() override;  // X137B slot 309 = 0x746420 (bin: CaptureTurret)
+    virtual int vt_entry_4D8() override;  // X137B slot 310 = 0x7464E0 (bin: TransferTurret)
+    virtual int vt_entry_4E4() override;  // X137B slot 313 = 0x736D50 (bin: IsC4AnimationActive)
+    virtual void sub_41C130(int) override;  // X137B slot 333 = 0x7416A0 (bin: ProcessSpecialUnitDeployCrush)
+    virtual void CalculateApproachPath(char a2) override;  // X137B slot 335 = 0x7414E0 (bin: ApproachTarget_DisallowMoving)
+
+    // ========================================================================
+    // X137B: UnitClass own virtuals -- binary table 0x7F5C70 slots [341]-[343] (3)
+    // declaration order = slot order; arity = Capstone first-retn/4.
+    // ========================================================================
+    virtual int DrawVoxel(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8);  // X137B slot 341 = 0x73B470 (bin: DrawVoxel)
+    virtual int RenderObject(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8);  // X137B slot 342 = 0x73C5F0 (bin: RenderObject)
+    virtual int RenderTechnoSHP(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9);  // X137B slot 343 = 0x73B140 (bin: RenderTechnoSHP)
 
     // unmatched: no callgraph reference and no git history record
-    virtual AbstractType __stdcall whatAmI() const override;
+    AbstractType __stdcall whatAmI() const;
     // design: virtual function, no binary implementation matched in IDA
-    virtual int objectSize() const ;
+    int objectSize() const ;
 
     // unmatched: no callgraph reference and no git history record
-    virtual void DrawAsVXL(Point2D* coords, RectangleStruct* bounding_rect, uint32_t dwUnk7, uint32_t dwUnk8);
+    void DrawAsVXL(Point2D* coords, RectangleStruct* bounding_rect, uint32_t dwUnk7, uint32_t dwUnk8);
     // unmatched: no callgraph reference and no git history record
-    virtual void DrawAsSHP(Point2D* coords, RectangleStruct* bounding_rect, uint32_t dwUnk7, uint32_t dwUnk8);
+    void DrawAsSHP(Point2D* coords, RectangleStruct* bounding_rect, uint32_t dwUnk7, uint32_t dwUnk8);
 
     // === Phase 3: Harvest/Unload ===
     // 0x4151e0 — merged harvest+unload state machine (case 3 = unload logic)
@@ -82,9 +156,9 @@ public:
     int MissionDispatch(int* a2, int a3, int* a4);  // 0x737430
 
     // === Phase 3: Movement ===
-    virtual int CalcMoveTarget();  // 0x7359F0
-    virtual int AssignDestination_SyncLog(int64_t a2);  // 0x741970
-    virtual int ApproachTarget_DisallowMoving(char a2);  // 0x7414E0
+    int CalcMoveTarget();  // 0x7359F0
+    int AssignDestination_SyncLog(int64_t a2);  // 0x741970
+    int ApproachTarget_DisallowMoving(char a2);  // 0x7414E0
     int UpdateRotation_TurretFacing_EMP();  // 0x736990
     int Scatter(CellStruct* threatPos, bool a3, bool a4);  // 0x743A50
     int IsCellBlockedByBridge(void* aP1);  // 0x458A00
@@ -95,7 +169,7 @@ public:
 
     // === Phase 3: Weapon Switching ===
     int SetTurret(unsigned int a2);  // 0x70DC70
-    virtual int EvaluateTarget(int a2, int a3, int a4, int a5, char a6);  // 0x73F0A0
+    int EvaluateTarget(int a2, int a3, int a4, int a5, char a6);  // 0x73F0A0
     bool CanCrushTarget(TechnoClass* aP1);  // 0x7438F0
     bool IsDeactivated();  // 0x70FBD0 (reads TechnoClass isDeactivated@+0x1C8)
 
@@ -106,14 +180,14 @@ public:
     void Destructor();  // 0x735780
 
     // === Phase 3: Stream & Save ===
-    virtual int LoadFromStream(void* a0, void* aP1);  // 0x744470
-    virtual int SaveLoadData(ObjectClass* aP1, int aP1a);  // 0x6B4EA0
-    virtual int SaveState(void* aP0, void* a1, void* aP2);  // 0x6B4F00
+    int LoadFromStream(void* a0, void* aP1);  // 0x744470
+    int SaveLoadData(ObjectClass* aP1, int aP1a);  // 0x6B4EA0
+    int SaveState(void* aP0, void* a1, void* aP2);  // 0x6B4F00
 
     // === Phase 3: Per-Frame & AI ===
     int PowerDrainUpdate(int a2) ;  // 0x744640
-    virtual int PerFrameUpdate();  // 0x746810
-    virtual int HandleTargetDestroyed(void* a1, void* aP2);  // 0x7446E0
+    virtual int PerFrameUpdate();  // 0x746810 | X137B slot 9 = 0x746810
+    int HandleTargetDestroyed(void* a1, void* aP2);  // 0x7446E0
     int CheckStatus();  // 0x6B4F20
     int ClearTargetRef(int a2);  // 0x6B7C60
     int ProcessIdleOrders();  // 0x6B7BB0

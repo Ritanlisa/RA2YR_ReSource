@@ -357,7 +357,7 @@ int CellClass::ClearOccupancyGrid() {
   for ( i = 0; i <= *isoTileTypeIndex; *(unsigned int *)(isoTileTypeIndex[2] + 4 * i - 4) = 0 ) /*0x42a5d0*/
     ++i; /*0x42a5d5*/
   *isoTileTypeIndex = 0; /*0x42a5e0*/
-  unknown68 = (unsigned int *)this->unknown68; /*0x42a5e2*/
+  unknown68 = (unsigned int *)this->u32_44; /*0x42a5e2*/
   for ( j = 0; j <= *unknown68; *(unsigned int *)(unknown68[2] + 4 * j - 4) = 0 ) /*0x42a5e9*/
     ++j; /*0x42a5ee*/
   *unknown68 = 0; /*0x42a5f9*/
@@ -2749,7 +2749,7 @@ void* CellClass::Construct() {
   this->CellClass_field_5C = -1; /*0x47bc33*/
   this->unknown60 = -1; /*0x47bc39*/
   this->unknown64 = -1; /*0x47bc3e*/
-  this->unknown68 = 0; /*0x47bc41*/
+  this->u32_44 = 0; /*0x47bc41*/
   *(unsigned short *)this->tubeIndex = -1; /*0x47bc48*/
   this->CellClass_field_6C = 0; /*0x47bc4f*/
   v2 = this->copyFlags & 0xFFFFFFE0; /*0x47bc58*/
@@ -9006,7 +9006,7 @@ void* CellClass::ScanOccupiers(void* a1) {
         && ((v12 = *&v11->q030, v12 != *&v4->q030)
           ? (v12 == -1
            ? (v13 = 0)
-           : (v13 = (v4[68].unknown68 & (1 << v12)) != 0))
+           : (v13 = (v4[68].u32_44 & (1 << v12)) != 0))
           : (v13 = 1),
             !v13) )
       {
@@ -14086,10 +14086,10 @@ void* CellClass::BuildPathfindingGraph() {
   int v8; // edi
   int *v9; // ebp
 
-  if ( this->unknown68 ) /*0x567118*/
+  if ( this->u32_44 ) /*0x567118*/
   {
-    operator delete(((void *)this->unknown68)); /*0x567120*/
-    this->unknown68 = 0; /*0x567128*/
+    operator delete(((void *)this->u32_44)); /*0x567120*/
+    this->u32_44 = 0; /*0x567128*/
   }
   if ( this->unknown70 ) /*0x56712b*/
   {
@@ -14119,7 +14119,7 @@ void* CellClass::BuildPathfindingGraph() {
   {
     v3 = 0; /*0x567180*/
   }
-  this->unknown68 = v3; /*0x567182*/
+  this->u32_44 = v3; /*0x567182*/
   this->unknown70 = operator new(10 * this->CellClass_field_6C); /*0x56719c*/
   CellClass::setOverlayType((CellClass *)&g_AudioInitFlag, (int)&this->landType); /*0x5671a5*/
   v6 = 0; /*0x5671aa*/
@@ -14550,7 +14550,7 @@ int CellClass::DetermineTileConnectivity(void* a1) {
   {
     v2 = 0; /*0x56d5c9*/
   }
-  unknown68 = this->unknown68; /*0x56d5d7*/
+  unknown68 = this->u32_44; /*0x56d5d7*/
   v15[2] = 1; /*0x56d5e0*/
   v15[6] = -1; /*0x56d5e8*/
   v5 = (unsigned __int8 *)(unknown68 + 4 * v2); /*0x56d5f0*/
@@ -26320,18 +26320,18 @@ int TacticalClass::UpdateObjects() {
   int v4; // [esp+Ch] [ebp+4h]
 
   v2 = 0; /*0x65ace4*/
-  result = this->radioLinks[2]; /*0x65ace6*/
+  result = this->landType[2]; /*0x65ace6*/
   if ( result > 0 ) /*0x65acee*/
   {
     do /*0x65ad1c*/
     {
-      if ( *(unsigned int *)(this->radioLinks[1] + 4 * v2) ) /*0x65acfb*/
+      if ( *(unsigned int *)(this->landType[1] + 4 * v2) ) /*0x65acfb*/
         (*((void (__thiscall **)(RadioClass *, int, unsigned char *, unsigned int))this->vfptr + 159))( /*0x65ad0d*/
           this,
           v4,
           &((unsigned int *)&stru_A8EB00)[76],
-          *(unsigned int *)(this->radioLinks[1] + 4 * v2));
-      result = this->radioLinks[2]; /*0x65ad13*/
+          *(unsigned int *)(this->landType[1] + 4 * v2));
+      result = this->landType[2]; /*0x65ad13*/
       ++v2; /*0x65ad19*/
     }
     while ( v2 < result ); /*0x65ad1c*/
@@ -30539,18 +30539,18 @@ int TacticalClass::UpdateObjects() {
   int v4; // [esp+Ch] [ebp+4h]
 
   v2 = 0; /*0x65ace4*/
-  result = this->radioLinks[2]; /*0x65ace6*/
+  result = this->landType[2]; /*0x65ace6*/
   if ( result > 0 ) /*0x65acee*/
   {
     do /*0x65ad1c*/
     {
-      if ( *(unsigned int *)(this->radioLinks[1] + 4 * v2) ) /*0x65acfb*/
+      if ( *(unsigned int *)(this->landType[1] + 4 * v2) ) /*0x65acfb*/
         (*((void (__thiscall **)(RadioClass *, int, unsigned char *, unsigned int))this->vfptr + 159))( /*0x65ad0d*/
           this,
           v4,
           &((unsigned int *)&stru_A8EB00)[76],
-          *(unsigned int *)(this->radioLinks[1] + 4 * v2));
-      result = this->radioLinks[2]; /*0x65ad13*/
+          *(unsigned int *)(this->landType[1] + 4 * v2));
+      result = this->landType[2]; /*0x65ad13*/
       ++v2; /*0x65ad19*/
     }
     while ( v2 < result ); /*0x65ad1c*/
@@ -33079,18 +33079,18 @@ int TacticalClass::UpdateObjects() {
   int v4; // [esp+Ch] [ebp+4h]
 
   v2 = 0; /*0x65ace4*/
-  result = this->radioLinks[2]; /*0x65ace6*/
+  result = this->landType[2]; /*0x65ace6*/
   if ( result > 0 ) /*0x65acee*/
   {
     do /*0x65ad1c*/
     {
-      if ( *(unsigned int *)(this->radioLinks[1] + 4 * v2) ) /*0x65acfb*/
+      if ( *(unsigned int *)(this->landType[1] + 4 * v2) ) /*0x65acfb*/
         (*((void (__thiscall **)(RadioClass *, int, unsigned char *, unsigned int))this->vfptr + 159))( /*0x65ad0d*/
           this,
           v4,
           &((unsigned int *)&stru_A8EB00)[76],
-          *(unsigned int *)(this->radioLinks[1] + 4 * v2));
-      result = this->radioLinks[2]; /*0x65ad13*/
+          *(unsigned int *)(this->landType[1] + 4 * v2));
+      result = this->landType[2]; /*0x65ad13*/
       ++v2; /*0x65ad19*/
     }
     while ( v2 < result ); /*0x65ad1c*/

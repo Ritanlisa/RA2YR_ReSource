@@ -26,26 +26,30 @@
 #include "e4/classes/TriggerTypeClass_e4.hpp"
 #include "e4/classes/ParticleSystemClass_e4.hpp"
 #include "e4/classes/TriggerClass_e4.hpp"
+// X129: fresh-render label declarations (auto, idempotent)
+#include "e4/classes/DynamicVector_e4.hpp"  // X136: complete type for stru_B0F670
+// X129: fresh-render label declarations (auto, idempotent)
+extern unsigned int dword_B0F6A8;  // data: 0xB0F6A8
 
 // 0x6E4F60
 namespace gamemd {  // G42.18 ns repair
 int TagClass::Destructor(void * a1)
 {
 
-  TagTypeClass *buildingType; // ecx
+  Debug *buildingType; // ecx
   int v3; // eax
-  ParticleSystemClass *ambientParticles; // ecx
+  TagClass **v4; // ecx
   int v5; // ecx
-  TagTypeClass *v6; // ecx
+  Debug *v6; // ecx
   int v7; // eax
   TagClass **v8; // ecx
-  void *SuperClass_field_0x6C; // ecx
-  TriggerClass *firstTrigger; // eax
-  TriggerTypeClass *v11; // eax
+  int v9; // ecx
+  int firstTrigger; // eax
+  int v11; // eax
   int Owner; // eax
   int v13; // ecx
   unsigned int *v14; // eax
-  TriggerClass *v15; // esi
+  int v15; // esi
   int v16; // eax
   int v17; // eax
   int v18; // eax
@@ -53,103 +57,104 @@ int TagClass::Destructor(void * a1)
   int v20; // eax
   unsigned int v22[4]; // [esp+10h] [ebp-10h] BYREF
 
-  /* X11: ptr_0 install elided (base-interface slot, RHS g_ptr_7F44B4) */  /*0x6e4f69*/
-  /* X11: ptr_0 install elided (implicit via TagClass virtuals 0x6e4f6f) */
-  /* X11: ptr_0 install elided (implicit via TagClass virtuals 0x6e4f76) */
-  /* X11: ptr_0 install elided (implicit via TagClass virtuals 0x6e4f7d) */
-  AbstractClass::AnnounceExpiredPointer(&a1->AbstractClass, 1); /*0x6e4f84*/
-  if ( byte_A8E9A0 ) /*0x6e4f90*/
-  {
-    if ( DataGlobal_A8EB00[604] ) /*0x6e4f9d*/
-    {
-      buildingType = a1->buildingType; /*0x6e4f9f*/
-      if ( buildingType ) /*0x6e4fa4*/
-      {
-        if ( (((Debug *)buildingType)->AccumFlags() & 0x10) != 0 ) /*0x6e4fad*/
-        {
-          v3 = 0; /*0x6e4fb5*/
-          if ( (int)FootClass_Array.? <= 0 ) /*0x6e4fb9*/
-          {
-            LABEL_9:
-            v3 = -1; /*0x6e4fcd*/
+  /* X11: vfptr install elided (implicit via TagClass_4 virtuals) */
+  /* X11: vfptr install elided (implicit via TagClass_4 virtuals) */
+  /* X11: vfptr install elided (implicit via TagClass_4 virtuals) */
+  /* X11: vfptr install elided (implicit via TagClass_4 virtuals) */
+  AbstractClass::AnnounceExpiredPointer((AbstractClass *)this, 1);  /*0x6e4f69*/  /*0x6e4f6f*/  /*0x6e4f76*/  /*0x6e4f7d*/  /*0x6e4f84*/
+  if ( stru_A8E960.nextScenario[64] )
+  {  /*0x6e4f90*/
+    if ( stru_A8E960.random[488] )
+    {  /*0x6e4f9d*/
+      buildingType = (Debug *)this->buildingType;  /*0x6e4f9f*/
+      if ( buildingType )
+      {  /*0x6e4fa4*/
+        if ( ((buildingType)->AccumFlags() & 0x10) != 0 )
+        {  /*0x6e4fad*/
+          v3 = 0;  /*0x6e4fb5*/
+          if ( dword_8B40D8 <= 0 )
+          {  /*0x6e4fb9*/
+LABEL_9:
+            v3 = -1;  /*0x6e4fcd*/
           }
           else
           {
-            ambientParticles = dword_8B40CC; /*0x6e4fbb*/
-            while ( ambientParticles->ObjectClass != a1 ) /*0x6e4fc3*/
-            {
-              ++v3; /*0x6e4fc5*/
-              ambientParticles = (ParticleSystemClass *)((char *)&ambientParticles->ptr_4); /*0x6e4fc6*/
-              if ( v3 >= (int)dword_8B40D8) /*0x6e4fcb*/
-                goto LABEL_9; /*0x6e4fcb*/
+            v4 = (TagClass **)dword_8B40CC;  /*0x6e4fbb*/
+            while ( *v4 != this )
+            {  /*0x6e4fc3*/
+              ++v3;  /*0x6e4fc5*/
+              ++v4;  /*0x6e4fc6*/
+              if ( v3 >= dword_8B40D8 )
+                goto LABEL_9;  /*0x6e4fcb*/  /*0x6e4fcb*/
             }
           }
-          v5 = dword_A83CDC; /*0x6e4fd0*/
-          if ( dword_A83CDC >= v3 ) /*0x6e4fd8*/
-          {
-            --dword_A83CDC; /*0x6e4fdd*/
-            if ( v5 - 1 < 0 && !FootClass_Array.ptr_0 ) /*0x6e4fe6*/
-              dword_A83CDC = 0; /*0x6e4fe8*/
+          v5 = *(int *)((char *)&stru_A83CD9.ptr_0 + 3);  /*0x6e4fd0*/
+          if ( *(int *)((char *)&stru_A83CD9.ptr_0 + 3) >= v3 )
+          {  /*0x6e4fd8*/
+            --*(int *)((char *)&stru_A83CD9.ptr_0 + 3);  /*0x6e4fdd*/
+            if ( v5 - 1 < 0 && !dword_8B40D8 )
+              *(int *)((char *)&stru_A83CD9.ptr_0 + 3) = 0;  /*0x6e4fe6*/  /*0x6e4fe8*/
           }
         }
       }
     }
-    if ( byte_A8E9A0 ) /*0x6e4ff5*/
-    {
-      if ( DataGlobal_A8EB00[604] ) /*0x6e5002*/
-      {
-        v6 = a1->buildingType; /*0x6e5004*/
-        if ( v6 ) /*0x6e5009*/
-        {
-          if ( (((Debug *)v6)->AccumFlags() & 4) != 0 ) /*0x6e5012*/
-          {
-            v7 = 0; /*0x6e501a*/
-            if ( dword_8B41B8 <= 0 ) /*0x6e501e*/
-            {
-              LABEL_22:
-              v7 = -1; /*0x6e5032*/
+    if ( stru_A8E960.nextScenario[64] )
+    {  /*0x6e4ff5*/
+      if ( stru_A8E960.random[488] )
+      {  /*0x6e5002*/
+        v6 = (Debug *)this->buildingType;  /*0x6e5004*/
+        if ( v6 )
+        {  /*0x6e5009*/
+          if ( ((v6)->AccumFlags() & 4) != 0 )
+          {  /*0x6e5012*/
+            v7 = 0;  /*0x6e501a*/
+            if ( dword_8B41B8 <= 0 )
+            {  /*0x6e501e*/
+LABEL_22:
+              v7 = -1;  /*0x6e5032*/
             }
             else
             {
-              v8 = (TagClass **)dword_8B41AC; /*0x6e5020*/
-              while ( *v8 != a1 ) /*0x6e5028*/
-              {
-                ++v7; /*0x6e502a*/
-                ++v8; /*0x6e502b*/
-                if ( v7 >= dword_8B41B8 ) /*0x6e5030*/
-                  goto LABEL_22; /*0x6e5030*/
+              v8 = (TagClass **)dword_8B41AC;  /*0x6e5020*/
+              while ( *v8 != this )
+              {  /*0x6e5028*/
+                ++v7;  /*0x6e502a*/
+                ++v8;  /*0x6e502b*/
+                if ( v7 >= dword_8B41B8 )
+                  goto LABEL_22;  /*0x6e5030*/  /*0x6e5030*/
               }
             }
-            SuperClass_field_0x6C = (void *)(dword_A83DBC); /*0x6e5035*/
-            if ( (int)dword_A83DBC >= v7 ) /*0x6e503d*/
-            {
-              --dword_A83DBC; /*0x6e5042*/
-              if ( (int)SuperClass_field_0x6C - 1 < 0 && !dword_8B41B8 ) /*0x6e504b*/
-                dword_A83DBC = 0; /*0x6e504d*/
+            v9 = dword_A83DBC;  /*0x6e5035*/
+            if ( dword_A83DBC >= v7 )
+            {  /*0x6e503d*/
+              --dword_A83DBC;  /*0x6e5042*/
+              if ( v9 - 1 < 0 && !dword_8B41B8 )
+                dword_A83DBC = 0;  /*0x6e504b*/  /*0x6e504d*/
             }
           }
         }
       }
-      if ( byte_A8E9A0 ) /*0x6e505a*/
-      {
-        if ( DataGlobal_A8EB00[604] ) /*0x6e5063*/
-        {
-          firstTrigger = a1->firstTrigger; /*0x6e5065*/
-          if ( firstTrigger ) /*0x6e506a*/
-          {
-            v11 = firstTrigger->buildingType; /*0x6e506c*/
-            if ( v11 ) /*0x6e5071*/
-            {
-              if ( v11->House && TagClass::HasValidHouse((TagClass *)a1->buildingType) ) /*0x6e5080*/
-              {
-                Owner = HouseClass::FindOwner((HouseClass *)a1->firstTrigger->buildingType->House->arrayIndex2); /*0x6e509b*/
-                v13 = *(unsigned int *)(Owner + 636); /*0x6e50a0*/
-                if ( v13 ) /*0x6e50a8*/
-                  *(unsigned int *)(Owner + 636) = v13 - 1; /*0x6e50ab*/
-                v14 = (unsigned int *)(Owner + 664); /*0x6e50b7*/
-                *v14 = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x6e50c1*/
-                v14[1] = v22[2]; /*0x6e50c7*/
-                v14[2] = 60; /*0x6e50ca*/
+      if ( stru_A8E960.nextScenario[64] )
+      {  /*0x6e505a*/
+        if ( stru_A8E960.random[488] )
+        {  /*0x6e5063*/
+          firstTrigger = this->firstTrigger;  /*0x6e5065*/
+          if ( firstTrigger )
+          {  /*0x6e506a*/
+            v11 = *(unsigned int *)(firstTrigger + 36);  /*0x6e506c*/
+            if ( v11 )
+            {  /*0x6e5071*/
+              if ( *(unsigned int *)(v11 + 164) && TagClass::HasValidHouse((TagClass *)this->buildingType) )
+              {  /*0x6e5080*/
+                Owner = HouseClass::FindOwner(*(HouseClass **)(*(unsigned int *)(*(unsigned int *)(this->firstTrigger + 36) + 164)
+                                                             + 184));  /*0x6e509b*/
+                v13 = *(unsigned int *)(Owner + 636);  /*0x6e50a0*/
+                if ( v13 )
+                  *(unsigned int *)(Owner + 636) = v13 - 1;  /*0x6e50a8*/  /*0x6e50ab*/
+                v14 = (unsigned int *)(Owner + 664);  /*0x6e50b7*/
+                *v14 = *(unsigned int *)&stru_A8E960.random[528];  /*0x6e50c1*/
+                v14[1] = v22[2];  /*0x6e50c7*/
+                v14[2] = 60;  /*0x6e50ca*/
               }
             }
           }
@@ -157,74 +162,67 @@ int TagClass::Destructor(void * a1)
       }
     }
   }
-  v15 = a1->firstTrigger; /*0x6e50cd*/
-  if ( v15 ) /*0x6e50d2*/
-  {
-    v16 = *(unsigned int *)&DataGlobal_B0F6A0; /*0x6e50d4*/
-    do /*0x6e50d9*/
-    {
-      if ( *(int *)&DataGlobal_B0F6A8 < v16 ) /*0x6e50df*/
-        goto LABEL_43; /*0x6e50df*/
-      if ( !DataGlobal_B0F6A5 && v16 || g_BuildingLoadQueue_Array.UnitExitSound <= 0 ) /*0x6e50f7*/
-        goto LABEL_45; /*0x6e50f7*/
-      if ( (*(unsigned __int8 (**)(int *, int, unsigned int))(g_BuildingLoadQueue_Array.ToTile + 8))( /*0x6e5109*/
-             &g_BuildingLoadQueue_Array.ToTile,
-             v16 + g_BuildingLoadQueue_Array.UnitExitSound,
+  v15 = this->firstTrigger;  /*0x6e50cd*/
+  if ( v15 )
+  {  /*0x6e50d2*/
+    v16 = dword_B0F6A0;  /*0x6e50d4*/
+    do
+    {  /*0x6e50d9*/
+      if ( dword_B0F6A8 < v16 )
+        goto LABEL_43;  /*0x6e50df*/  /*0x6e50df*/
+      if ( !byte_B0F6A5 && v16 || dword_B0F6AC <= 0 )
+        goto LABEL_45;  /*0x6e50f7*/  /*0x6e50f7*/
+      if ( (*(unsigned __int8 (**)(int *, int, unsigned int))(stru_B0F670.u32_28 + 8))(
+             &stru_B0F670.u32_28,
+             v16 + dword_B0F6AC,
              0) )
-      {
-        LABEL_43:
-        v17 = (*(unsigned int *)&DataGlobal_B0F6A8)++; /*0x6e5116*/
-        *(unsigned int *)(*(unsigned int *)DataGlobal_B0F69C + 4 * v17) = (unsigned int)(v15); /*0x6e5125*/
+      {  /*0x6e5109*/
+LABEL_43:
+        v17 = dword_B0F6A8++;  /*0x6e5116*/
+        *((unsigned int *)dword_B0F69C + v17) = v15;  /*0x6e5125*/
       }
-      v16 = *(unsigned int *)&DataGlobal_B0F6A0; /*0x6e5128*/
-      LABEL_45:
-      v15 = v15->nextTrigger; /*0x6e512d*/
+      v16 = dword_B0F6A0;  /*0x6e5128*/
+LABEL_45:
+      v15 = *(unsigned int *)(v15 + 40);  /*0x6e512d*/
     }
-    while ( v15 ); /*0x6e50d9*/
+    while ( v15 );  /*0x6e50d9*/
   }
-  v22[0] = (unsigned int)(a1); /*0x6e5134*/
-  v18 = (*(int (**)(int *, unsigned int *))(g_BuildingLoadQueue_Array.LightVisibility + 16))( /*0x6e5147*/
-          &g_BuildingLoadQueue_Array.LightVisibility,
-          v22);
-  if ( v18 != -1 && v18 < g_BuildingLoadQueue_Array.LightBlueTint ) /*0x6e5157*/
+  v22[0] = this;  /*0x6e5134*/
+  v18 = (*(int (**)(DynamicVector *, unsigned int *))(*(unsigned int)stru_B0F670.ptr_0 + 16))(&stru_B0F670, v22);  /*0x6e5147*/
+  if ( v18 != -1 && v18 < stru_B0F670.q010 )
+  {  /*0x6e5157*/
+    --stru_B0F670.q010;  /*0x6e515c*/
+    for ( ;
+          v18 < stru_B0F670.q010;
+          *(unsigned int *)(*(unsigned int *)&stru_B0F670.DynamicVector_field_0x1[3] + 4 * v18 - 4) = *(unsigned int *)(*(unsigned int *)&stru_B0F670.DynamicVector_field_0x1[3] + 4 * v18) )
+    {  /*0x6e5162*/
+      ++v18;  /*0x6e516a*/
+    }
+  }
+  v22[0] = this;  /*0x6e518c*/
+  v19 = (*(int (**)(int *, unsigned int *))(dword_B0F708 + 16))(&dword_B0F708, v22);  /*0x6e5190*/
+  if ( v19 != -1 && v19 < dword_B0F718 && v19 < --dword_B0F718 )
   {
-    --g_BuildingLoadQueue_Array.LightBlueTint; /*0x6e515c*/
-    for ( ; /*0x6e5162*/
-    v18 < g_BuildingLoadQueue_Array.LightBlueTint;
-    *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v18 - 4) = *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity
-    + 4 * v18) )
-    {
-      ++v18; /*0x6e516a*/
+    do
+    {  /*0x6e520c*/
+      ++v19;  /*0x6e51b3*/
+      *((unsigned int *)dword_B0F70C + v19 - 1) = *((unsigned int *)dword_B0F70C + v19);
     }
+    while ( v19 < dword_B0F718 );
   }
-  v22[0] = (unsigned int)(a1); /*0x6e518c*/
-  v19 = (*(int (**)(int *, unsigned int *))(g_BuildingLoadQueue_Array.ExitCoord[0] + 16))( /*0x6e5190*/
-          g_BuildingLoadQueue_Array.ExitCoord,
-          v22);
-  if ( v19 != -1 && v19 < g_BuildingLoadQueue_Array.unknown___2 ) /*0x6e51a0*/
-  {
-    --g_BuildingLoadQueue_Array.unknown___2; /*0x6e51a5*/
-    for ( ; /*0x6e51ab*/
-    v19 < g_BuildingLoadQueue_Array.unknown___2;
-    *(unsigned int *)(g_BuildingLoadQueue_Array.ExitCoord[1] + 4 * v19 - 4) = *(unsigned int *)(g_BuildingLoadQueue_Array.ExitCoord[1]
-    + 4 * v19) )
+  v22[0] = this;  /*0x6e51d5*/
+  v20 = (*(int (**)(int *, unsigned int *))(TagClass_Array + 16))(&TagClass_Array, v22);  /*0x6e51d9*/
+  if ( v20 != -1 && v20 < g_GameObjectCleanup && v20 < --g_GameObjectCleanup )
+  {  /*0x6e51f4*/
+    do
     {
-      ++v19; /*0x6e51b3*/
+      ++v20;  /*0x6e51fc*/
+      *((unsigned int *)g_TagClassCount + v20 - 1) = *((unsigned int *)g_TagClassCount + v20);  /*0x6e5200*/
     }
+    while ( v20 < g_GameObjectCleanup );  /*0x6e520c*/
   }
-  v22[0] = (unsigned int)(a1); /*0x6e51d5*/
-  v20 = (*(int (**)(int *, unsigned int *))(TagClass_Array + 16))(&TagClass_Array, v22); /*0x6e51d9*/
-  if ( v20 != -1 && v20 < g_GameObjectCleanup && v20 < --g_GameObjectCleanup ) /*0x6e51f4*/
-  {
-    do /*0x6e520c*/
-    {
-      ++v20; /*0x6e51fc*/
-      *((unsigned int *)g_TagClassCount + v20 - 1) = *((unsigned int *)g_TagClassCount + v20); /*0x6e5200*/
-    }
-    while ( v20 < g_GameObjectCleanup ); /*0x6e520c*/
-  }
-  AbstractClass::AnnounceExpiredPointer(&a1->AbstractClass, 1); /*0x6e5212*/
-  return ((AbstractClass *)a1)->DTOR(); /*0x6e521e*/
+  AbstractClass::AnnounceExpiredPointer((AbstractClass *)this, 1);  /*0x6e5212*/
+  return ((AbstractClass *)this)->DTOR();  /*0x6e521e*/
 
 }
 }  // G42.18 ns repair
@@ -259,14 +257,14 @@ int TagClass::Unlink(void *a1)
   {
     if ( v2->occuredEvents == this ) /*0x71ae05*/
       v2->occuredEvents = 0; /*0x71ae07*/
-    TagClass::Unlink(this->u32_44)); /*0x71ae0d*/
+    (this->u32_44)->Unlink()); /*0x71ae0d*/
   }
   int result = this->uniqueId; // eax /*0x71ae12*/
   if ( result ) /*0x71ae17*/
   {
     if ( result->enabled == this ) /*0x71ae1c*/
       result->enabled = 0; /*0x71ae1e*/
-    result = TagClass::Unlink(this->firstTrigger)); /*0x71ae24*/
+    result = (this->firstTrigger)->Unlink()); /*0x71ae24*/
   }
   TagTypeClass *buildingType; // ecx
   buildingType = this->buildingType; /*0x71ae29*/
@@ -336,7 +334,7 @@ int TagClass::ProcessTag(int * a2)
   TriggerClass *firstTrigger; // eax
   int v5; // eax
 
-  AbstractClass::ProcessPower((AbstractClass *)this); /*0x6e56e9*/
+  ((AbstractClass *)this)->ProcessPower(); /*0x6e56e9*/
   v3 = (*((int (**)(void **))this->buildingType->ptr_4 + 4))(&this->buildingType->ptr_4); /*0x6e56f7*/
   Power::TimerProcess(v3); /*0x6e56fd*/
   firstTrigger = this->firstTrigger; /*0x6e5702*/
@@ -346,7 +344,7 @@ int TagClass::ProcessTag(int * a2)
     firstTrigger = (TriggerClass *)Power::TimerProcess(v5); /*0x6e5716*/
   }
   LOBYTE(firstTrigger) = this->destroyed; /*0x6e571b*/
-  return Power::FlagProcess((Power *)a2, (int)firstTrigger); /*0x6e5726*/
+  return ((Power *)a2)->FlagProcess((int)firstTrigger); /*0x6e5726*/
 
 }
 } // namespace gamemd
@@ -357,7 +355,7 @@ int TagClass::LoadTag(TagClass * aP0, int aP1)
 {
 
   int result; // eax
-  result = AbstractClass::SaveLoad_Prefix_0((unsigned int *)(aP0), aP1); /*0x6e573b*/
+  result = ((unsigned int *)(aP0))->SaveLoad_Prefix_0(aP1); /*0x6e573b*/
   if ( result >= 0 ) /*0x6e5742*/
   {
     if ( aP0 ) /*0x6e5746*/
@@ -382,7 +380,7 @@ int TagClass::SaveTag(TechnoTypeClass * aP0, int * a1, int aP2)
 {
 
   int result; // eax
-  result = AbstractClass::SaveLoad_Prefix((int *)aP0, a1, aP2); /*0x6e57af*/
+  result = ((int *)aP0)->SaveLoad_Prefix(a1, aP2); /*0x6e57af*/
   if ( result >= 0 ) /*0x6e57b6*/
     return 0; /*0x6e57b8*/
   return result; /*0x6e57ba*/
@@ -410,7 +408,7 @@ namespace gamemd {
 TagClass * TagClass::ProcessTrigger(char a2)
 {
 
-  TagClass::Destructor(this); /*0x6e58b3*/
+  (this)->Destructor(); /*0x6e58b3*/
   if ( (a2 & 1) != 0 ) /*0x6e58bd*/
     __3_YAXPAX_Z(this); /*0x6e58c0*/
   return &this->AbstractClass; /*0x6e58ca*/

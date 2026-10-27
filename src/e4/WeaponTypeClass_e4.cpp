@@ -34,6 +34,8 @@
 #include "e4/classes/INIClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/VocClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/TypeList_e4.hpp"  // G57w10 D supply (bare TypeList carrier)
+// X129: fresh-render label declarations (auto, idempotent)
+extern gamemd::WeaponTypeClass WeaponTypeClass_Array_x136;  // X136: til alias of WeaponTypeClass_Array (value form; til dump .omo/x136/)
 
 // 0x512680
 namespace gamemd {  // G42.18 ns repair
@@ -92,104 +94,104 @@ namespace gamemd {
 unsigned int * WeaponTypeClass::Constructor(WeaponTypeClass * aP1, void *a2, void *a3, void *a4, void *a5)
 {
 
+  int v3; // eax
 
-  aP1->AbstractTypeClass::Constructor(a2); /*0x771c7a*/
-  aP1->AmbientDamage = 0; /*0x771c87*/
-  aP1->Burst = 1; /*0x771c8d*/
-  aP1->Projectile = 0; /*0x771c97*/
-  aP1->Damage = 0; /*0x771c9d*/
-  aP1->Speed = 0; /*0x771ca3*/
-  aP1->Warhead = 0; /*0x771ca9*/
-  aP1->ROF = 0; /*0x771caf*/
-  aP1->Range = 0; /*0x771cb6*/
-  aP1->MinimumRange = 0; /*0x771cbf*/
-  VectorClass::Construct((VectorClass *)aP1->Report, 0, 0); /*0x771cc5*/
-  aP1->Report[5] = 10; /*0x771cca*/
-  aP1->Report[4] = 0; /*0x771cd1*/
-  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_131447) */  /*0x771cd4*/
-  VectorClass::Construct((VectorClass *)aP1->DownReport, 0, 0); /*0x771ce4*/
-  aP1->DownReport[5] = 10; /*0x771ce9*/
-  aP1->DownReport[4] = 0; /*0x771cf0*/
-  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_131447) */  /*0x771cf3*/
-  AnimTypeVector::Constructor((AnimTypeVector *)aP1->Anim, 0, 0); /*0x771d03*/
-  aP1->Anim[5] = 10; /*0x771d08*/
-  aP1->Anim[4] = 0; /*0x771d0f*/
-  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_131447) */  /*0x771d12*/
-  aP1->OccupantAnim = 0; /*0x771d18*/
-  aP1->AssaultAnim_d = 0; /*0x771d1e*/
-  aP1->OpenToppedAnim_d = 0; /*0x771d24*/
-  aP1->AttachedParticleSystem = 0; /*0x771d2a*/
-  aP1->LaserInnerColor_d[0] = 0; /*0x771d30*/
-  aP1->LaserInnerColor_d[1] = 0; /*0x771d36*/
-  aP1->LaserInnerColor_d[2] = 0; /*0x771d3c*/
-  aP1->LaserOuterColor[0] = 0; /*0x771d42*/
-  aP1->LaserOuterColor[1] = 0; /*0x771d48*/
-  aP1->LaserOuterColor[2] = 0; /*0x771d4e*/
-  aP1->LaserOuterSpread[0] = 0; /*0x771d54*/
-  aP1->LaserOuterSpread[1] = 0; /*0x771d5a*/
-  aP1->LaserOuterSpread[2] = 0; /*0x771d60*/
-  aP1->UseFireParticles_d = 0; /*0x771d66*/
-  aP1->UseSparkParticles = 0; /*0x771d6c*/
-  aP1->OmniFire = 0; /*0x771d72*/
-  aP1->DistributedWeaponFire = 0; /*0x771d78*/
-  aP1->IsRailgun = 0; /*0x771d7e*/
-  aP1->Lobber = 0; /*0x771d84*/
-  aP1->Bright = 0; /*0x771d8a*/
-  aP1->IsSonic_d = 0; /*0x771d90*/
-  aP1->Spawner_d = 0; /*0x771d96*/
-  aP1->LimboLaunch_d = 0; /*0x771d9c*/
-  aP1->DecloakToFire_d = 1; /*0x771da2*/
-  aP1->CellRangefinding_d = 0; /*0x771da9*/
-  aP1->FireOnce = 0; /*0x771daf*/
-  aP1->NeverUse_d = 0; /*0x771db5*/
-  aP1->RevealOnFire_d = 1; /*0x771dbb*/
-  aP1->TerrainFire = 0; /*0x771dc2*/
-  aP1->SabotageCursor = 0; /*0x771dc8*/
-  aP1->MigAttackCursor = 0; /*0x771dce*/
-  aP1->DisguiseFireOnly = 0; /*0x771dd4*/
-  aP1->DisguiseFakeBlinkTime = 0; /*0x771dda*/
-  aP1->InfiniteMindControl_d = 0; /*0x771de0*/
-  aP1->FireWhileMoving_d = 1; /*0x771de6*/
-  aP1->DrainWeapon = 0; /*0x771ded*/
-  aP1->FireInTransport = 1; /*0x771df3*/
-  aP1->Suicide_d = 0; /*0x771dfa*/
-  aP1->TurboBoost = 0; /*0x771e00*/
-  aP1->Supress_d = 0; /*0x771e06*/
-  aP1->Camera_d = 0; /*0x771e0f*/
-  aP1->Charges_d = 0; /*0x771e16*/
-  aP1->IsLaser_d = 0; /*0x771e1c*/
-  aP1->DiskLaser = 0; /*0x771e22*/
-  aP1->IsLine = 0; /*0x771e28*/
-  aP1->IsBigLaser = 0; /*0x771e2e*/
-  aP1->IsHouseColor = 0; /*0x771e34*/
-  aP1->LaserDuration = 10; /*0x771e3a*/
-  aP1->IonSensitive = 0; /*0x771e41*/
-  aP1->AreaFire_d = 0; /*0x771e47*/
-  aP1->IsElectricBolt_d = 0; /*0x771e4d*/
-  aP1->DrawBoltAsLaser_d = 0; /*0x771e53*/
-  aP1->IsAlternateColor_d = 0; /*0x771e59*/
-  aP1->IsRadBeam = 0; /*0x771e5f*/
-  aP1->IsRadEruption = 0; /*0x771e65*/
-  aP1->RadLevel = 0; /*0x771e6b*/
-  aP1->IsMagBeam = 0; /*0x771e71*/
-  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F738C) */  /*0x771e77*/
-  /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F738C) */  /*0x771e7d*/
-  /* X11: ptr_0 install elided (implicit via WeaponTypeClass virtuals 0x771e83) */
-  /* X11: ptr_0 install elided (implicit via WeaponTypeClass virtuals 0x771e8a) */
-  AbstractClass::GenerateUniqueID((AbstractClass *)&aP1->ptr_4); /*0x771e91*/
-  if ( g_WeaponTypePool < dword_887570 /*0x771eca*/
+  (&this->ptr_0)->Constructor(Source);  /*0x771c7a*/
+  this->AmbientDamage = 0;  /*0x771c87*/
+  this->Burst = 1;  /*0x771c8d*/
+  this->Projectile = 0;  /*0x771c97*/
+  this->Damage = 0;  /*0x771c9d*/
+  this->Speed = 0;  /*0x771ca3*/
+  this->Warhead = 0;  /*0x771ca9*/
+  this->ROF = 0;  /*0x771caf*/
+  this->Range = 0;  /*0x771cb6*/
+  this->MinimumRange = 0;  /*0x771cbf*/
+  VectorClass::Construct((VectorClass *)this->Report, 0, 0);  /*0x771cc5*/
+  this->Report[5] = 10;  /*0x771cca*/
+  this->Report[4] = 0;  /*0x771cd1*/
+  this->Report[0] = (int)&vt_TypeList_int;  /*0x771cd4*/
+  VectorClass::Construct((VectorClass *)this->DownReport, 0, 0);  /*0x771ce4*/
+  this->DownReport[5] = 10;  /*0x771ce9*/
+  this->DownReport[4] = 0;  /*0x771cf0*/
+  this->DownReport[0] = (int)&vt_TypeList_int;  /*0x771cf3*/
+  ((AnimTypeVector *)this->Anim)->Constructor(0, 0);  /*0x771d03*/
+  this->Anim[5] = 10;  /*0x771d08*/
+  this->Anim[4] = 0;  /*0x771d0f*/
+  this->Anim[0] = (int)&vt_TypeList_AnimTypeClass_const;  /*0x771d12*/
+  this->OccupantAnim = 0;  /*0x771d18*/
+  this->AssaultAnim_d = 0;  /*0x771d1e*/
+  this->OpenToppedAnim_d = 0;  /*0x771d24*/
+  this->AttachedParticleSystem = 0;  /*0x771d2a*/
+  this->LaserInnerColor[0] = 0;  /*0x771d30*/
+  this->LaserInnerColor[1] = 0;  /*0x771d36*/
+  this->LaserInnerColor[2] = 0;  /*0x771d3c*/
+  this->LaserOuterColor[0] = 0;  /*0x771d42*/
+  this->LaserOuterColor[1] = 0;  /*0x771d48*/
+  this->LaserOuterColor[2] = 0;  /*0x771d4e*/
+  this->LaserOuterSpread[0] = 0;  /*0x771d54*/
+  this->LaserOuterSpread[1] = 0;  /*0x771d5a*/
+  this->LaserOuterSpread[2] = 0;  /*0x771d60*/
+  this->UseFireParticles_d = 0;  /*0x771d66*/
+  this->UseSparkParticles[0] = 0;  /*0x771d6c*/
+  this->OmniFire[0] = 0;  /*0x771d72*/
+  this->DistributedWeaponFire[0] = 0;  /*0x771d78*/
+  this->IsRailgun[0] = 0;  /*0x771d7e*/
+  this->Lobber[0] = 0;  /*0x771d84*/
+  this->Bright[0] = 0;  /*0x771d8a*/
+  this->IsSonic_d = 0;  /*0x771d90*/
+  this->Spawner_d = 0;  /*0x771d96*/
+  this->LimboLaunch_d = 0;  /*0x771d9c*/
+  this->DecloakToFire_d = 1;  /*0x771da2*/
+  this->CellRangefinding_d = 0;  /*0x771da9*/
+  this->FireOnce[0] = 0;  /*0x771daf*/
+  this->NeverUse_d = 0;  /*0x771db5*/
+  this->RevealOnFire_d = 1;  /*0x771dbb*/
+  this->TerrainFire[0] = 0;  /*0x771dc2*/
+  this->SabotageCursor[0] = 0;  /*0x771dc8*/
+  this->MigAttackCursor[0] = 0;  /*0x771dce*/
+  this->DisguiseFireOnly[0] = 0;  /*0x771dd4*/
+  this->DisguiseFakeBlinkTime = 0;  /*0x771dda*/
+  this->InfiniteMindControl_d = 0;  /*0x771de0*/
+  this->FireWhileMoving_d = 1;  /*0x771de6*/
+  this->DrainWeapon[0] = 0;  /*0x771ded*/
+  this->FireInTransport[0] = 1;  /*0x771df3*/
+  this->Suicide_d = 0;  /*0x771dfa*/
+  this->TurboBoost[0] = 0;  /*0x771e00*/
+  this->Supress_d = 0;  /*0x771e06*/
+  this->Camera_d = 0;  /*0x771e0f*/
+  this->Charges_d = 0;  /*0x771e16*/
+  this->IsLaser_d = 0;  /*0x771e1c*/
+  this->DiskLaser[0] = 0;  /*0x771e22*/
+  this->IsLine[0] = 0;  /*0x771e28*/
+  this->IsBigLaser[0] = 0;  /*0x771e2e*/
+  this->IsHouseColor[0] = 0;  /*0x771e34*/
+  this->LaserDuration[0] = 10;  /*0x771e3a*/
+  this->IonSensitive[0] = 0;  /*0x771e41*/
+  this->AreaFire_d = 0;  /*0x771e47*/
+  this->IsElectricBolt_d = 0;  /*0x771e4d*/
+  this->DrawBoltAsLaser_d = 0;  /*0x771e53*/
+  this->IsAlternateColor_d = 0;  /*0x771e59*/
+  this->IsRadBeam[0] = 0;  /*0x771e5f*/
+  this->IsRadEruption[0] = 0;  /*0x771e65*/
+  this->RadLevel = 0;  /*0x771e6b*/
+  this->IsMagBeam[0] = 0;  /*0x771e71*/
+  /* X11: vfptr install elided (implicit via WeaponTypeClass_4 virtuals) */
+  /* X11: vfptr install elided (implicit via WeaponTypeClass_4 virtuals) */
+  /* X11: vfptr install elided (implicit via WeaponTypeClass_4 virtuals) */
+  /* X11: vfptr install elided (implicit via WeaponTypeClass_4 virtuals) */
+  ((AbstractClass *)&this->ptr_4)->GenerateUniqueID();  /*0x771e91*/  /*0x771e8a*/  /*0x771e83*/  /*0x771e7d*/  /*0x771e77*/
+  if ( g_WeaponTypePool < dword_887570
     || (byte_887575 || !dword_887570)
     && dword_88757C > 0
-    && ((unsigned __int8 (*)(WeaponTypeClass **, int, unsigned int))WeaponTypeClass_Array->?)(
-         &WeaponTypeClass_Array,
+    && ((unsigned __int8 (*)(WeaponTypeClass **, int, unsigned int))(int)WeaponTypeClass_Array_x136.ptr_8)(
+         &WeaponTypeClass_Array_x136,
          dword_887570 + dword_88757C,
          0) )
-  {
-    int v3; // eax
-    v3 = g_WeaponTypePool++; /*0x771ed7*/
-    *((unsigned int *)g_WeaponTypeConfig + v3) = (unsigned int)(aP1); /*0x771ee6*/
+  {  /*0x771eca*/
+    v3 = g_WeaponTypePool++;  /*0x771ed7*/
+    *((unsigned int *)g_WeaponTypeConfig + v3) = this;  /*0x771ee6*/
   }
-  return &aP1->AbstractTypeClass; /*0x771eeb*/
+  return &this->ptr_0;  /*0x771eeb*/
 
 }
 } // namespace gamemd
@@ -284,17 +286,17 @@ int WeaponTypeClass::ProcessPower(int * a2, void *a2_2)
   ((AbstractTypeClass *)this)->ProcessPower(a2); /*0x772ae9*/
   Power::TimerProcess(this->AmbientDamage); /*0x772af7*/
   LOBYTE(v3) = this->IsSonic_d[0]; /*0x772afc*/
-  Power::FlagProcess((Power *)a2, (int)v3); /*0x772b05*/
+  ((Power *)a2)->FlagProcess((int)v3); /*0x772b05*/
   LOBYTE(v4) = this->TurboBoost[0]; /*0x772b0a*/
-  v5 = (unsigned __int8 *)Power::FlagProcess((Power *)a2, (int)v4); /*0x772b13*/
+  v5 = (unsigned __int8 *)((Power *)a2)->FlagProcess((int)v4); /*0x772b13*/
   LOBYTE(v5) = this->Supress_d[0]; /*0x772b18*/
-  Power::FlagProcess((Power *)a2, (int)v5); /*0x772b21*/
+  ((Power *)a2)->FlagProcess((int)v5); /*0x772b21*/
   LOBYTE(v6) = this->Camera_d[0]; /*0x772b26*/
-  Power::FlagProcess((Power *)a2, (int)v6); /*0x772b2f*/
+  ((Power *)a2)->FlagProcess((int)v6); /*0x772b2f*/
   LOBYTE(v7) = this->IsLaser_d[0]; /*0x772b34*/
-  v8 = (unsigned __int8 *)Power::FlagProcess((Power *)a2, (int)v7); /*0x772b3d*/
+  v8 = (unsigned __int8 *)((Power *)a2)->FlagProcess((int)v7); /*0x772b3d*/
   LOBYTE(v8) = this->IsHouseColor[0]; /*0x772b42*/
-  Power::FlagProcess((Power *)a2, (int)v8); /*0x772b4b*/
+  ((Power *)a2)->FlagProcess((int)v8); /*0x772b4b*/
   Power::TimerProcess(this->Burst); /*0x772b59*/
   Projectile = this->Projectile; /*0x772b5e*/
   if ( Projectile ) /*0x772b66*/
@@ -316,25 +318,25 @@ int WeaponTypeClass::ProcessPower(int * a2, void *a2_2)
   Power::TimerProcess(this->DownReport[4]); /*0x772be5*/
   Power::TimerProcess(this->Anim[4]); /*0x772bf3*/
   LOBYTE(v13) = this->UseFireParticles[0]; /*0x772bf8*/
-  v14 = (unsigned __int8 *)Power::FlagProcess((Power *)a2, (int)v13); /*0x772c01*/
+  v14 = (unsigned __int8 *)((Power *)a2)->FlagProcess((int)v13); /*0x772c01*/
   LOBYTE(v14) = this->Lobber[0]; /*0x772c06*/
-  Power::FlagProcess((Power *)a2, (int)v14); /*0x772c0f*/
+  ((Power *)a2)->FlagProcess((int)v14); /*0x772c0f*/
   LOBYTE(v15) = this->LaserDuration[0]; /*0x772c14*/
-  Power::FinalizeDrain((Power *)a2, (int)v15); /*0x772c1d*/
+  ((Power *)a2)->FinalizeDrain((int)v15); /*0x772c1d*/
   LOBYTE(v16) = this->IsBigLaser[0]; /*0x772c22*/
-  v17 = (unsigned __int8 *)Power::FlagProcess((Power *)a2, (int)v16); /*0x772c2b*/
+  v17 = (unsigned __int8 *)((Power *)a2)->FlagProcess((int)v16); /*0x772c2b*/
   LOBYTE(v17) = this->IsRailgun[0]; /*0x772c30*/
-  Power::FlagProcess((Power *)a2, (int)v17); /*0x772c39*/
+  ((Power *)a2)->FlagProcess((int)v17); /*0x772c39*/
   LOBYTE(v18) = this->Charges[0]; /*0x772c3e*/
-  Power::FlagProcess((Power *)a2, (int)v18); /*0x772c47*/
+  ((Power *)a2)->FlagProcess((int)v18); /*0x772c47*/
   LOBYTE(v19) = this->Bright[0]; /*0x772c4c*/
-  v20 = (unsigned __int8 *)Power::FlagProcess((Power *)a2, (int)v19); /*0x772c55*/
+  v20 = (unsigned __int8 *)((Power *)a2)->FlagProcess((int)v19); /*0x772c55*/
   LOBYTE(v20) = this->UseSparkParticles[0]; /*0x772c5a*/
-  Power::FlagProcess((Power *)a2, (int)v20); /*0x772c63*/
+  ((Power *)a2)->FlagProcess((int)v20); /*0x772c63*/
   LOBYTE(v21) = this->OmniFire[0]; /*0x772c68*/
-  Power::FlagProcess((Power *)a2, (int)v21); /*0x772c71*/
+  ((Power *)a2)->FlagProcess((int)v21); /*0x772c71*/
   LOBYTE(v22) = this->DistributedWeaponFire[0]; /*0x772c76*/
-  return Power::FlagProcess((Power *)a2, (int)v22); /*0x772c84*/
+  return ((Power *)a2)->FlagProcess((int)v22); /*0x772c84*/
 
 }
 } // namespace gamemd
@@ -352,11 +354,11 @@ int WeaponTypeClass_SaveLoad_Prefix(WeaponTypeClass *aP0, WeaponTypeClass *aP0, 
   int *v7; // esi
   v7 = (int *)(a2); /*0x772cf7*/
   int result; // eax
-  result = AbstractClass::SaveLoad_Prefix_0((unsigned int *)(v5), (int)a2); /*0x772cfd*/
+  result = ((unsigned int *)(v5))->SaveLoad_Prefix_0((int)a2); /*0x772cfd*/
   if ( result >= 0 ) /*0x772d04*/
   {
     if ( v5 ) /*0x772d0c*/
-      WeaponTypeClass::loadWeaponProperties(v5, (int)&aP0); /*0x772d15*/
+      (v5)->loadWeaponProperties((int)&aP0); /*0x772d15*/
     if ( v5 != (WeaponTypeClass *)-244 ) /*0x772d23*/
     {
       ((DynamicVectorClass *)v5->Anim)->AnimTypeConstructor(0, 0); /*0x772d2b*/
@@ -368,7 +370,7 @@ int WeaponTypeClass_SaveLoad_Prefix(WeaponTypeClass *aP0, WeaponTypeClass *aP0, 
     for ( i = 0; i < (int)a2; ++i ) /*0x772d4d*/
     {
       v7->sub_772D5B(&a3, 4, 0); /*0x772d5b*/
-      DynamicVector::Add_Alt4((DynamicVector *)v5->Anim, &a3); /*0x772d69*/
+      ((DynamicVector *)v5->Anim)->Add_Alt4(&a3); /*0x772d69*/
     }
     if ( Report ) /*0x772d77*/
     {
@@ -380,7 +382,7 @@ int WeaponTypeClass_SaveLoad_Prefix(WeaponTypeClass *aP0, WeaponTypeClass *aP0, 
     for ( j = 0; j < (int)a2; ++j ) /*0x772da2*/
     {
       v7->sub_772DB0(&a3, 4, 0); /*0x772db0*/
-      DynamicVector::Add_Alt((DynamicVector *)Report, &a3); /*0x772dba*/
+      ((DynamicVector *)Report)->Add_Alt(&a3); /*0x772dba*/
     }
     if ( v5 != (WeaponTypeClass *)-216 ) /*0x772dce*/
       TypeList::Construct((TypeList *)v5->DownReport); /*0x772dd2*/
@@ -389,7 +391,7 @@ int WeaponTypeClass_SaveLoad_Prefix(WeaponTypeClass *aP0, WeaponTypeClass *aP0, 
     for ( k = 0; k < (int)aP0; ++k ) /*0x772dee*/
     {
       v7->sub_772DFC(&a2, 4, 0); /*0x772dfc*/
-      DynamicVector::Add_Alt((DynamicVector *)v5->DownReport, &a2); /*0x772e06*/
+      ((DynamicVector *)v5->DownReport)->Add_Alt(&a2); /*0x772e06*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&v5->Warhead); /*0x772e1e*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&v5->Projectile); /*0x772e2f*/
@@ -411,7 +413,7 @@ int WeaponTypeClass_SaveLoad_Prefix_0(void * a1, unsigned int * a2, void * a3, v
 {
 
   int result; // eax
-  result = AbstractClass::SaveLoad_Prefix((int *)a1,(int *)(a2), (int)a3); /*0x772ec1*/
+  result = ((int *)a1)->SaveLoad_Prefix((int *)(a2), (int)a3); /*0x772ec1*/
   if ( result >= 0 ) /*0x772ec8*/
   {
     int v7 = *a2; // edx /*0x772ed4*/
@@ -499,7 +501,7 @@ WeaponTypeClass * WeaponTypeClass::ddtor(void ** Block, char a2)
   }
   BYTE1(v3[5].abstractFlags) = 0; /*0x773209*/
   v3[5].uniqueId = 0; /*0x77320f*/
-  AbstractTypeClass::Dtor((AbstractTypeClass *)v3); /*0x773215*/
+  ((AbstractTypeClass *)v3)->Dtor(); /*0x773215*/
   if ( ((unsigned __int8)this & 1) != 0 ) /*0x77321f*/
     __3_YAXPAX_Z(v3); /*0x773222*/
   return (WeaponTypeClass *)v3; /*0x77322c*/
@@ -541,7 +543,7 @@ char WeaponTypeClass::ReadTrajectoryData(uint8_t * Block, char * a3, int a4)
     }
     while ( v5 < v4 ); /*0x475c3a*/
   }
-  return INIClass::SetString(Block, a3, Source); /*0x475c61*/
+  return (Block)->SetString(a3, Source); /*0x475c61*/
 }
 }  // G42.18c ns repair
 // 0x475C70
@@ -568,7 +570,7 @@ char  WeaponTypeClass::ReadVeteranData(uint8_t * a2, char * a3, int a4, int * Bl
     {
       if ( Source[0] ) /*0x475cb1*/
         strcat(Source, Str); /*0x475cd8*/
-      SampleNameByIndex = VocClass::GetSampleNameByIndex(*v10++); /*0x475ce8*/
+      SampleNameByIndex = (*v10++)->GetSampleNameByIndex(); /*0x475ce8*/
       strcat(Source, SampleNameByIndex); /*0x475d0d*/
       --v11; /*0x475d14*/
     }
@@ -585,7 +587,7 @@ namespace gamemd {  // G42.18c ns repair
 unsigned int *  WeaponTypeClass::loadWeaponProperties(int aP1, void *a2)
 {
 
-  AbstractTypeClass::Init((int)this, aP1); /*0x771f08*/
+  ((int)this)->Init(aP1); /*0x771f08*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_131447) */  /*0x771f12*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_131447) */  /*0x771f18*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_131447) */  /*0x771f1e*/
@@ -655,7 +657,7 @@ namespace gamemd {
 
     NeedsSaveOrLink = (AbstractClass *)v23->NeedsSaveOrLink; /*0x432c10*/
     if ( NeedsSaveOrLink ) /*0x432c15*/
-      return AbstractClass::getTotalValue(NeedsSaveOrLink, a2); /*0x432c1c*/
+      return (NeedsSaveOrLink)->getTotalValue(a2); /*0x432c1c*/
     return result; /*0x432c21*/
   }
 } // namespace gamemd

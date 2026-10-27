@@ -535,7 +535,7 @@ int DropListClass::GetItem(int a1) {
   (*(void (__thiscall **)(void *, unsigned int, unsigned int, unsigned int, unsigned int))(*(unsigned int *)stru_887598.lineTrailer + 32))( /*0x4c314e*/
     stru_887598.lineTrailer,
     this->Width,
-    this->X,
+    this->Items,
     this->Visible,
     this->ID);
   this->GetSelected(); /*0x4c3155*/
@@ -600,7 +600,7 @@ int DropListClass::GetSelected() {
   int v3; // ecx
   int v5[4]; // [esp+0h] [ebp-10h] BYREF
 
-  v1 = this->X; /*0x4c32a6*/
+  v1 = this->Items; /*0x4c32a6*/
   v5[0] = (int)this->Width; /*0x4c32a9*/
   v2 = this->Visible; /*0x4c32ad*/
   v3 = this->ID; /*0x4c32b0*/
@@ -637,7 +637,7 @@ void* DropListClass::GetItemText(void* a1) {
   unsigned char v25[12]; // [esp+24h] [ebp-Ch] BYREF
 
   v3 = this->IsPrimaryInstance(); /*0x4c32ea*/
-  v4 = this->X; /*0x4c32f0*/
+  v4 = this->Items; /*0x4c32f0*/
   v22 = this->Width + 1; /*0x4c32ff*/
   v5 = this->Visible - 2; /*0x4c3307*/
   v23[0] = v4 + 1; /*0x4c330a*/
@@ -661,7 +661,7 @@ void* DropListClass::GetItemText(void* a1) {
       if ( v10 < (int)result ) /*0x4c33a7*/
       {
         v11 = Text::MeasureWidth((int)a1, 0) + this->Width + 1; /*0x4c33ba*/
-        v12 = this->X; /*0x4c33be*/
+        v12 = this->Items; /*0x4c33be*/
         v13 = this->q02C; /*0x4c33c1*/
         v21 = v11; /*0x4c33c4*/
         v22 = v12 + 1; /*0x4c33cd*/
@@ -1027,7 +1027,7 @@ namespace gamemd {
 void CheckListClass::initList() {
   void *v2; // eax
 
-  v2 = *&this->X; /*0x556eb6*/
+  v2 = *&this->Items; /*0x556eb6*/
   this->Height = 0; /*0x556eb9*/
   if ( v2 && (this->IsAllocated) ) /*0x556ec0*/
   {
@@ -1116,7 +1116,7 @@ namespace gamemd {
 void* CheckListClass::toggleItem(int a2) {
   void *v3; // eax
 
-  v3 = *&this->X; /*0x5571c3*/
+  v3 = *&this->Items; /*0x5571c3*/
   /* X11: ptr_0 install elided (implicit via class virtuals 0x5571c6) — binary-proven install, was 0 */
   if ( v3 && (this->IsAllocated) ) /*0x5571d0*/
   {
@@ -1463,12 +1463,12 @@ namespace gamemd {
 void* CheckListClass::drawList(int a2) {
   void *v3; // eax
 
-  v3 = *&this->X; /*0x558133*/
+  v3 = *&this->Items; /*0x558133*/
   /* X11: ptr_0 install elided (implicit via class virtuals 0x558136) — binary-proven install, was 0 */
   if ( v3 && (this->IsAllocated) ) /*0x558140*/
   {
     operator delete((v3)); /*0x558148*/
-    *&this->X = 0; /*0x558150*/
+    *&this->Items = 0; /*0x558150*/
   }
   (this->IsAllocated) = 0; /*0x55815b*/
   this->Capacity = 0; /*0x558161*/
@@ -1487,7 +1487,7 @@ void CheckListClass::scrollList() {
   if ( v2 && (this->IsAllocated) ) /*0x5581f0*/
   {
     operator delete((v2)); /*0x5581f6*/
-    *&this->X = 0; /*0x5581fe*/
+    *&this->Items = 0; /*0x5581fe*/
   }
   (this->IsAllocated) = 0; /*0x558201*/
   this->Capacity = 0; /*0x558204*/

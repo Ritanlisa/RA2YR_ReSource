@@ -201,6 +201,28 @@ if X129:
 
     _GLOBALS_TYPED = _build_globals_typed()
 
+    # X136: typed til-global aliases (live til dump; see x129_vocab_anchors).
+    # Bodies referencing these globals are alias-renamed (<orig>_x136) before
+    # the vocab pass; per-TU externs are emitted by sweep_missing_globals and
+    # the definitions live in src/core/x136_til_alias_defs.cpp.
+    _X136_ALIASES = X9.X136_TIL_ALIASES
+    _X136_SUFFIX = X9.X136_ALIAS_SUFFIX
+    _X136_GLOB_TYPED = {ident + _X136_SUFFIX: carrier
+                        for ident, (carrier, _k) in _X136_ALIASES.items()}
+    _X136_KIND = {ident + _X136_SUFFIX: kind
+                  for ident, (_c, kind) in _X136_ALIASES.items()}
+
+    def _merged_globals_typed():
+        g = dict(_GLOBALS_TYPED)
+        g.update(_X136_GLOB_TYPED)
+        return g
+
+    def _x136_alias_rename(text):
+        for ident in _X136_ALIASES:
+            text = re.sub(r'\b%s\b' % re.escape(ident),
+                          ident + _X136_SUFFIX, text)
+        return text
+
     def sweep_missing_globals(text):
         """Declare fresh-render label references missing from src (E1/G30
         #154 convention).  Declarations append to the regenerated file itself
@@ -248,6 +270,29 @@ if X129:
                     missing.append('extern unsigned char %s[%d];  // data: 0x%s'
                                    % (ident, ln_, addr))
                     have.add(ident)
+        # X136: carrier includes for instances dereferenced by this body
+        # (e4 TU includes are selective; a member access needs the COMPLETE
+        # type, not the e4_globals.hpp extern declaration)
+        for ident, hdr in X9.X136_INSTANCE_HEADERS.items():
+            if not re.search(r'\b%s\b' % re.escape(ident), text):
+                continue
+            if re.search(r'#include\s+[<"]%s[>"]' % re.escape(hdr), text):
+                continue
+            missing.append('#include "%s"  // X136: complete type for %s'
+                           % (hdr, ident))
+        # X136: typed til-global aliases referenced by this body (declared
+        # per-TU; definitions in src/core/x136_til_alias_defs.cpp)
+        for alias, carrier in sorted(_X136_GLOB_TYPED.items()):
+            if not re.search(r'\b%s\b' % re.escape(alias), text):
+                continue
+            if re.search(r'extern\s+[^\n]*\b%s\b' % re.escape(alias), text):
+                continue
+            kind = _X136_KIND.get(alias, 'value')
+            star = ' *' if kind == 'ptr' else ' '
+            missing.append('extern gamemd::%s%s%s;  // X136: til alias of %s'
+                           ' (%s form; til dump .omo/x136/)'
+                           % (carrier, star, alias,
+                              alias[:-len(_X136_SUFFIX)], kind))
         if not missing:
             # still upgrade stale `extern char aXxx[]` decls a previous run
             # wrote (sweep now emits unsigned char -- uint8_t* call sites)
@@ -591,6 +636,8 @@ for p in files:
                             refs + X11 elision + vfptr vocabulary."""
                             t = fix_vftable_refs(text)
                             t, _n_el = elide_installs_keep_anchors(t)
+                            # X136: alias-rename conflicting til globals
+                            t = _x136_alias_rename(t)
                             # local receiver types: `Cls *name;` decl lines
                             loc = {}
                             for _dl in re.finditer(
@@ -600,14 +647,27 @@ for p in files:
                                 ty = _dl.group(1).strip()
                                 if ty in _CARRIERS:
                                     loc[_dl.group(2)] = ty
-                            vm = X9.VocabMapper(_CARRIERS, this_cls, _GSCAL, loc,
-                                                _GLOBALS_TYPED)
+                            # X136: value-form carrier locals (`Cls name;`)
+                            for _dl in re.finditer(
+                                    r'^\s*(?:gamemd::)?([A-Za-z_]\w*)\s+'
+                                    r'([A-Za-z_]\w*)\s*(?:\[[^\]]*\])?\s*;',
+                                    t, re.M):
+                                ty = _dl.group(1)
+                                if ty in _CARRIERS:
+                                    loc[_dl.group(2)] = ty
+                            gtyped = _merged_globals_typed()
+                            vm = X9.VocabMapper(_CARRIERS, this_cls, _GSCAL,
+                                                loc, gtyped)
+                            vm.x136_kinds = _X136_KIND
                             t, n_un = vm.map_text(t)
                             if note_unmapped:
                                 for reason, site in vm.unmapped:
                                     stats['x129-unmap.' + reason.split(':')[0]] = \
                                         stats.get('x129-unmap.' +
                                                   reason.split(':')[0], 0) + 1
+                            # X136: til-vs-corpus member spelling/type rewrite
+                            t, _n136 = X9.apply_x136_member_aliases(
+                                t, _CARRIERS, gtyped, loc, this_cls)
                             return X9.fix_pointer_compare(t, _CARRIERS, this_cls), n_un
 
                         body, n_un = _x129_common(body, True)
@@ -643,6 +703,15 @@ for p in files:
                         else:
                             body2 = best[0]
                             new_na = len(ANCHOR.findall(body2))
+                            # X136: HEAD monotonic completion -- statement-
+                            # level transfer may leave donor anchors behind
+                            # (Hex-Rays coalescing); re-attach the remainder
+                            # monotonically so a def never loses anchors.
+                            if new_na < corpus_na:
+                                body2, n_mono, new_na = X9.monotonic_reattach(
+                                    body2, corpus_block)
+                                stats['x129-monotonic'] = \
+                                    stats.get('x129-monotonic', 0) + n_mono
                             if n_un:
                                 x129_refuse = 'x129-vocab-unmapped(%d)' % n_un
                             elif QMARK_MEMBER.search(body2):
@@ -743,20 +812,22 @@ for p in files:
                      r'extern unsigned char \1[', text2)
         if _up != text2:
             text2 = _up
+    if X129:
+        # X83 member-call form for fresh-render qualified calls
+        # (idempotent on preserved bodies, which already carry the form).
+        # X136: runs UNCONDITIONALLY -- the sweep's include/decl emission
+        # must reach files whose defs are already landed (text2 == raw);
+        # both passes are idempotent.
+        text2 = _x129_memberize(text2)[0]
+        if not isinstance(text2, str) or not text2.strip():
+            print('FAIL LOUD: %s post-process produced empty text -- '
+                  'write refused' % p)
+            text2 = raw
+        else:
+            text2, n_decl = sweep_missing_globals(text2)
+            stats['x129-decls'] = stats.get('x129-decls', 0) + n_decl
     if text2 != raw:
         files_changed += 1
-        if X129:
-            # X83 member-call form for fresh-render qualified calls
-            # (idempotent on preserved bodies, which already carry the form).
-            text2 = _x129_memberize(text2)[0]
-            if not isinstance(text2, str) or not text2.strip():
-                print('FAIL LOUD: %s post-process produced empty text -- '
-                      'write refused' % p)
-                files_changed -= 1
-                text2 = raw
-            else:
-                text2, n_decl = sweep_missing_globals(text2)
-                stats['x129-decls'] = stats.get('x129-decls', 0) + n_decl
         if APPLY and text2 != raw:
             _backup_before_write(p)
             with open(p, 'w', encoding='utf-8', newline='') as _fh:

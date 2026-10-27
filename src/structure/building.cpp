@@ -1425,7 +1425,7 @@ LABEL_12:
   v13 = this->Type; /*0x44f13b*/
   if ( *(unsigned char *)(v13 + 3278) && v13->WeaponsFactory ) /*0x44f14f*/
   {
-    v14 = (unsigned int *)this->vt_slot_168(this, v52, v5); /*0x44f167*/
+    v14 = (unsigned int *)this->GetCoords_Alt( v52, v5); /*0x44f167*/
     v58 = *v14 / 256; /*0x44f17d*/
     v48[1] = v14[1] / 256; /*0x44f1a3*/
     ++v48[1]; /*0x44f1a8*/
@@ -2279,7 +2279,7 @@ int BuildingClass::UpdateConstruction()
             0);
           return 0; /*0x444f16*/
         }
-        v118 = (unsigned int *)this->vt_slot_72(this, v243); /*0x444e00*/
+        v118 = (unsigned int *)this->GetInvalidCoord( v243); /*0x444e00*/
         v199 = 160; /*0x444e05*/
         LOWORD(v208) = *v118 / 256; /*0x444e18*/
         v119 = v118[1]; /*0x444e1d*/
@@ -2336,7 +2336,7 @@ int BuildingClass::UpdateConstruction()
           }
           v204 = ((short)(((v199) >> 16) & 0xFFFF) << 8) + 128; /*0x444a6e*/
           *(unsigned int *)v203 = ((__int16)v199 << 8) + 128; /*0x444a72*/
-          v96 = (int *)this->vt_slot_72(this, v242); /*0x444a82*/
+          v96 = (int *)this->GetInvalidCoord( v242); /*0x444a82*/
           v211 = *v96; /*0x444a8e*/
           Math::CalcAngle((double)v96[1] - (double)*(int *)v203, (double)*(int *)v202 - (double)v211); /*0x444aa7*/
           (v211) = ((v211) & ~0xFFFF) | ((Math::RoundToInt((v1 - 1.570796326794897) * -10430.06004058427)) & 0xFFFF); /*0x444ac0*/
@@ -2613,7 +2613,7 @@ int BuildingClass::UpdateConstruction()
         {
           (*(void (**)(char *, unsigned int))(*(unsigned int *)v244 + 292))(v244, 0); /*0x44459f*/
           v61 = *(unsigned int *)v244; /*0x4445a7*/
-          v62 = this->vt_slot_180(this, v238, 0); /*0x4445b4*/
+          v62 = this->GetCoordsThunk3( v238, 0); /*0x4445b4*/
           (*(void (**)(char *, int))(v61 + 436))(v244, v62); /*0x4445bd*/
           (*(void (**)(char *, int))(*(unsigned int *)v244 + 292))(v244, 1); /*0x4445c9*/
           this->vt_slot_632(this, 2, v244); /*0x4445d6*/
@@ -2625,7 +2625,7 @@ int BuildingClass::UpdateConstruction()
       }
       if ( !(unsigned __int8)Team::AllMembersValid((Team *)this) ) /*0x444177*/
         this->MissionDispatch( 16, 0); /*0x444187*/
-      v30 = (unsigned int *)this->vt_slot_72(this, &v213); /*0x444196*/
+      v30 = (unsigned int *)this->GetInvalidCoord( &v213); /*0x444196*/
       v203[0] = *v30 / 256; /*0x4441a9*/
       focus = this->focus; /*0x4441b2*/
       v203[1] = v30[1] / 256; /*0x4441c3*/
@@ -2759,7 +2759,7 @@ LABEL_99:
             this->vt_slot_632(this, 2, v4); /*0x44401b*/
             this->vt_slot_632(this, 24, v4); /*0x444028*/
             v22 = v4->ptr_0; /*0x444030*/
-            v23 = this->vt_slot_168(this, v240, v4); /*0x44403e*/
+            v23 = this->GetCoords_Alt( v240, v4); /*0x44403e*/
             (*(void (**)(ObjectClass *, int))(v22 + 436))(v4, v23); /*0x444047*/
             v4[10].abstractFlags = (int)this; /*0x44404d*/
             v24 = this->focus; /*0x444053*/

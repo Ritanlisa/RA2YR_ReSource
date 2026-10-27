@@ -45,7 +45,7 @@ int BlitPlainXlatAlpha_ushort::AddRef(int a2, uint8_t *a3, int a4, int a5, int a
 // 0x493d90
 void BlitPlainXlatAlpha_ushort::Release() {
   // Binary 0x493D90 (retn 24h) forwards its eight call-site arguments to
-  // vtable slot 1 and supplies 0 as the final argument. The model declaration
+  // vfptr slot 1 and supplies 0 as the final argument. The model declaration
   // (render_ext.hpp) is 0-argument, so there are no call-site values to
   // forward; the slot-1 call is preserved with the available (zero) values.
   this->AddRef(0, 0, 0, 0, 0, 0, 0, 0); /*0x493dba*/

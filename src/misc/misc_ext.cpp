@@ -26286,7 +26286,7 @@ _DWORD * MSEngine_Destru::QueryInterface(char p0)
   (this)->Destruct(); /*0x5d2703*/
   if ( (p0 & 1) != 0 ) /*0x5d270d*/
     operator delete((void *)(this)); /*0x5d2710*/
-  return this->vtable1; /*0x5d271a*/
+  return this->q004; /*0x5d271a*/
 }
 // 0x5d2e30
 void MSFont::Constructor_MSFont()
