@@ -43,7 +43,7 @@ struct WeaponTypeClass {
     int Warhead;  // 0xAC
     int ROF;  // 0xB0
     int Range;  // 0xB4
-    void * MinimumRange;  // 0xB8
+    int MinimumRange;  // 0xB8
     int Report[7];  // 0xBC
     int DownReport[7];  // 0xD8
     int Anim[7];  // 0xF4

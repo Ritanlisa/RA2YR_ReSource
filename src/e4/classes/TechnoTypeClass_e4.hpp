@@ -132,7 +132,7 @@ struct TechnoTypeClass {
     double RollAngle;  // 0x3A0
     double PitchSpeed;  // 0x3A8
     double PitchAngle;  // 0x3B0
-    void * BuildLimit;  // 0x3B8
+    int BuildLimit;  // 0x3B8
     void * Category;  // 0x3BC
     unsigned int unknown_3C0;  // 0x3C0
     unsigned int __pad_3C4;  // 0x3C4
@@ -142,8 +142,8 @@ struct TechnoTypeClass {
     bool PipsDrawForAll;  // 0x3D8
     unsigned char __pad_3D9;  // 0x3D9
     char __pad_3DA[2];  // 0x3DA
-    void * LeptonMindControlOffset;  // 0x3DC
-    void * PixelSelectionBracketDelta;  // 0x3E0
+    int LeptonMindControlOffset;  // 0x3DC
+    int PixelSelectionBracketDelta;  // 0x3E0
     int PipWrap;  // 0x3E4
     int Dock[7];  // 0x3E8
     BuildingTypeClass * DeploysInto;  // 0x404
@@ -198,7 +198,7 @@ struct TechnoTypeClass {
     int MindClearedSound;  // 0x5B0
     Movement * MovementZone;  // 0x5B4
     IUnknown * GuardRange;  // 0x5B8
-    void * MinDebris;  // 0x5BC
+    int MinDebris;  // 0x5BC
     int MaxDebris;  // 0x5C0
     int DebrisAnims[7];  // 0x5C4
     int Passengers;  // 0x5E0
@@ -211,21 +211,21 @@ struct TechnoTypeClass {
     bool RevealToAll;  // 0x5EE
     bool Drainable;  // 0x5EF
     int SensorsSight;  // 0x5F0
-    void * DetectDisguiseRange;  // 0x5F4
-    void * BombSight;  // 0x5F8
+    int DetectDisguiseRange;  // 0x5F4
+    int BombSight;  // 0x5F8
     int LeadershipRating;  // 0x5FC
     int NavalTargeting;  // 0x600
     int LandTargeting;  // 0x604
     float BuildTimeMultiplier;  // 0x608
-    void * MindControlRingOffset;  // 0x60C
+    int MindControlRingOffset;  // 0x60C
     int Cost;  // 0x610
     int Soylent;  // 0x614
     int FlightLevel;  // 0x618
-    void * AirstrikeTeam;  // 0x61C
+    int AirstrikeTeam;  // 0x61C
     int EliteAirstrikeTeam;  // 0x620
     char AirstrikeTeamType[4];  // 0x624
     AircraftTypeClass * EliteAirstrikeTeamType;  // 0x628
-    void * AirstrikeRechargeTime;  // 0x62C
+    int AirstrikeRechargeTime;  // 0x62C
     int EliteAirstrikeRechargeTime;  // 0x630
     int TechLevel;  // 0x634
     int Prerequisite[7];  // 0x638
@@ -237,7 +237,7 @@ struct TechnoTypeClass {
     int InitialAmmo;  // 0x680
     int Ammo;  // 0x684
     int IFVMode;  // 0x688
-    void * AirRangeBonus;  // 0x68C
+    int AirRangeBonus;  // 0x68C
     bool BerserkFriendly;  // 0x690
     bool SprayAttack;  // 0x691
     bool Pushy;  // 0x692
@@ -247,9 +247,9 @@ struct TechnoTypeClass {
     unsigned char __pad_696;  // 0x696
     char __pad_697[1];  // 0x697
     int Reload;  // 0x698
-    void * EmptyReload;  // 0x69C
-    void * ReloadIncrement;  // 0x6A0
-    void * RadialFireSegments;  // 0x6A4
+    int EmptyReload;  // 0x69C
+    int ReloadIncrement;  // 0x6A0
+    int RadialFireSegments;  // 0x6A4
     int DeployFireWeapon;  // 0x6A8
     bool DeployFire;  // 0x6AC
     bool DeployToLand;  // 0x6AD
@@ -271,7 +271,7 @@ struct TechnoTypeClass {
     unsigned char __pad_6C9;  // 0x6C9
     char __pad_6CA[2];  // 0x6CA
     unsigned int OwnerFlags;  // 0x6CC
-    void * AIBasePlanningSide;  // 0x6D0
+    int AIBasePlanningSide;  // 0x6D0
     bool StupidHunt;  // 0x6D4
     bool AllowedToStartInMultiplayer;  // 0x6D5
     char CameoFile[25];  // 0x6D6
@@ -315,7 +315,7 @@ struct TechnoTypeClass {
     bool HasTurretTooltips;  // 0x806
     unsigned char __pad_807;  // 0x807
     int TurretCount;  // 0x808
-    void * WeaponCount;  // 0x80C
+    int WeaponCount;  // 0x80C
     bool IsChargeTurret;  // 0x810
     unsigned char __pad_811;  // 0x811
     char __pad_812[2];  // 0x812

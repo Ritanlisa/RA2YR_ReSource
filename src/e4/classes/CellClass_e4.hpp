@@ -26,7 +26,7 @@ struct CellClass {
     unsigned char u8_D;  // 0xD
     char __pad_E[2];  // 0xE
     LightConvertClass * lightConvert;  // 0x10
-    void * isoTileTypeIndex;  // 0x14
+    int isoTileTypeIndex;  // 0x14
     TagClass * attachedTag;  // 0x18
     BuildingTypeClass * rubble;  // 0x1C
     int overlayTypeIndex;  // 0x20

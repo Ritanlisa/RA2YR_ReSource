@@ -417,7 +417,7 @@ struct InfantryTypeClass {
     int Palette;  // 0xDC4
     char __pad_DC8[44];  // 0xDC8
     int align_DF4;  // 0xDF4
-    void * ArrayIndex;  // 0xDF8
+    int ArrayIndex;  // 0xDF8
     void * Pip_d;  // 0xDFC
     void * OccupyPip_d;  // 0xE00
     char OccupyWeapon_d[28];  // 0xE04
@@ -460,7 +460,7 @@ struct InfantryTypeClass {
     bool NotHuman_2;  // 0xEAD
     bool Ivan_2;  // 0xEAE
     unsigned char __pad_EAF;  // 0xEAF
-    void * DetectionDistance;  // 0xEB0
+    int DetectionDistance;  // 0xEB0
     bool Occupier_d;  // 0xEB4
     bool Assaulter_2;  // 0xEB5
     unsigned char __pad_EB6;  // 0xEB6

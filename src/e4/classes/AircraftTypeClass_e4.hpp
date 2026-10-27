@@ -400,12 +400,12 @@ struct AircraftTypeClass {
     unsigned char __pad_DC8;  // 0xDC8
     char __pad_DC9[43];  // 0xDC9
     int align_DF4;  // 0xDF4
-    void * ArrayIndex;  // 0xDF8
+    int ArrayIndex;  // 0xDF8
     bool Carryall_d;  // 0xDFC
     unsigned char __pad_DFD;  // 0xDFD
     char __pad_DFE[2];  // 0xDFE
     int Trailer;  // 0xE00
-    void * SpawnDelay_d;  // 0xE04
+    int SpawnDelay_d;  // 0xE04
     bool Rotors_d;  // 0xE08
     bool CustomRotor_2;  // 0xE09
     bool Landable_2;  // 0xE0A

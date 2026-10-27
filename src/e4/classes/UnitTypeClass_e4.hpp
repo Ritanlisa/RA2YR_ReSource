@@ -436,13 +436,13 @@ struct UnitTypeClass {
     bool CarriesCrate_d;  // 0xE1A
     bool NonVehicle_d;  // 0xE1B
     int StandingFrames_d;  // 0xE1C
-    void * DeathFrames;  // 0xE20
+    int DeathFrames;  // 0xE20
     int DeathFrameRate;  // 0xE24
     int StartStandFrame;  // 0xE28
     int StartWalkFrame;  // 0xE2C
     int StartFiringFrame;  // 0xE30
     int StartDeathFrame;  // 0xE34
-    void * MaxDeathCounter_d;  // 0xE38
+    int MaxDeathCounter_d;  // 0xE38
     int Facings_d;  // 0xE3C
     int FiringSyncFrame0_d;  // 0xE40
     AircraftTypeClass * FiringSyncFrame1_d;  // 0xE44

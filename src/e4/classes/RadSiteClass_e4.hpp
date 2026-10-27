@@ -28,9 +28,9 @@ struct RadSiteClass {
     int Intensity;  // 0x54
     int Tint[3];  // 0x58
     LightSourceClass * IntensitySteps;  // 0x64
-    void * IntensityDecrement_d;  // 0x68
-    void * RadDuration;  // 0x6C
-    void * RadTimeLeft;  // 0x70
+    int IntensityDecrement_d;  // 0x68
+    int RadDuration;  // 0x6C
+    int RadTimeLeft;  // 0x70
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     static unsigned int Radiate(int p0);  // x4:signals@0x65b9c0

@@ -28,7 +28,7 @@ struct TriggerTypeClass {
     void * UIName;  // 0x60
     char Name[49];  // 0x64
     char tail_95[3];  // 0x95
-    void * ArrayIndex;  // 0x98
+    int ArrayIndex;  // 0x98
     char Difficulty[3];  // 0x9C
     bool Enabled;  // 0x9F
     bool MustTransfer;  // 0xA0

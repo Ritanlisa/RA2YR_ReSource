@@ -427,7 +427,7 @@ struct BuildingTypeClass {
     unsigned int u32_DCC;  // 0xDCC
     char __pad_DD0[36];  // 0xDD0
     int align_DF4;  // 0xDF4
-    void * ArrayIndex;  // 0xDF8
+    int ArrayIndex;  // 0xDF8
     SHPStruct* __pad_DFC;  // 0xDFC
     unsigned int qE00;  // 0xE00
     unsigned char u32_E04;  // 0xE04

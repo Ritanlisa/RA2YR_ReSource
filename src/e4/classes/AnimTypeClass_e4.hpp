@@ -93,7 +93,7 @@ struct AnimTypeClass {
     int LoopStart_d;  // 0x2B8
     int LoopEnd_d;  // 0x2BC
     int End_d;  // 0x2C0
-    void * LoopCount_d;  // 0x2C4
+    int LoopCount_d;  // 0x2C4
     AnimTypeClass * Next_d;  // 0x2C8
     ParticleTypeClass * SpawnsParticle_d;  // 0x2CC
     int NumParticles;  // 0x2D0
@@ -103,13 +103,13 @@ struct AnimTypeClass {
     char RandomRate_d[8];  // 0x2E4
     int Translucency_d;  // 0x2EC
     AnimTypeClass * Spawns_d;  // 0x2F0
-    void * SpawnCount_d;  // 0x2F4
+    int SpawnCount_d;  // 0x2F4
     int Report_d;  // 0x2F8
     int StopSound_d;  // 0x2FC
     AnimTypeClass * BounceAnim_d;  // 0x300
     AnimTypeClass * ExpireAnim_d;  // 0x304
     AnimTypeClass * TrailerAnim_d;  // 0x308
-    void * TrailerSeperation_d;  // 0x30C
+    int TrailerSeperation_d;  // 0x30C
     double Elasticity_d;  // 0x310
     double MinZVel_d;  // 0x318
     double AnimTypeClass_field_double_320;  // 0x320
@@ -117,7 +117,7 @@ struct AnimTypeClass {
     WarheadTypeClass * Warhead;  // 0x330
     int DamageRadius;  // 0x334
     OverlayTypeClass * TiberiumSpawnType;  // 0x338
-    void * TiberiumSpreadRadius;  // 0x33C
+    int TiberiumSpreadRadius;  // 0x33C
     int YSortAdjust;  // 0x340
     int YDrawOffset;  // 0x344
     int ZAdjust;  // 0x348

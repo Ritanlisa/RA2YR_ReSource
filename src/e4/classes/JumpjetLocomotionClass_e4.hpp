@@ -20,8 +20,8 @@ struct JumpjetLocomotionClass {
     char Dirty;  // 0x11
     unsigned char __pad_012;  // 0x12
     char __pad_13[1];  // 0x13
-    void * RefCount;  // 0x14
-    void * ptr_8;  // 0x18
+    int RefCount;  // 0x14
+    int ptr_8;  // 0x18
     char Speed[4];  // 0x1C
     int Climb;  // 0x20
     float Crash;  // 0x24

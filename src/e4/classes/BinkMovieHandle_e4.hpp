@@ -12,7 +12,7 @@ struct BinkMovieHandle {
     void* ptr_0;  // 0x0
     char* tempPath;  // 0x4
     DSurface* renderTarget;  // 0x8
-    void* width;  // 0xC
+    int width;  // 0xC
     int height;  // 0x10
     int currentFrame;  // 0x14
     int totalFrames;  // 0x18

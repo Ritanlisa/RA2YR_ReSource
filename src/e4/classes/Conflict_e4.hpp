@@ -9,7 +9,7 @@ struct Conflict {
     int __pad_000;  // 0x0
     Territory* Attacker;  // 0x4
     Territory* Defender;  // 0x8
-    void* Outcome;  // 0xC
+    int Outcome;  // 0xC
     unsigned int referenceCount;  // 0x10
     unsigned int __pad_014;  // 0x14
 // --- flat members (BEGIN) ---
