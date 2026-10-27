@@ -1304,12 +1304,13 @@ python tools/type_infer/auto_name.py
 ## 下一会话快速接手指引
 
 > **2026-10-28 编译收敛轮（当前状态，接手先核对）**
-> HEAD `7917d4ca`，MSVC **21,093**（本轮 22,176 → 21,093，**−1,083**，0 fatal）。门：def-count PASS 17,498 / anchors 354,332 / vtable 标识符 0 / tree `?` 1 / CSP verify 7/7 ALL PASS。
-> **已实测证伪、勿重跑**：批量 retype（MSVC **+20**，clang 的 −12 是假象）；语法层修复（−1，C2059 是 179 文件长尾）；C2352 纯头文件修法（**0 个**合格符号）；`LoadFileSHP` 改 const 形参（级联，错误只是从调用点挪进函数体）。
-> **唯一有效杠杆**：头文件真缺陷（`String_e4.hpp` 幻影匿名 union 一处删除 **−223**）；声明与调用点**同步**迁移（C2660 先 +224 后 −144）。
-> 剩余 21,093 条中 **10,390（49%）是「指针 vs 裸 dword」**（C2440 4,574 / C2664 4,073 / C2446 803 / C2109 940）。`anchors/x147_sig_alignment.json` 证明**签名已基本对齐（7,720 agree）**，故病因在**调用点的值类型**，不在签名。
-> 取证包（gitignored）：`.omo/x148/` — `findings.md`（0–13 节）/ `work_order_c2352.md` / `decl_conflicts.md` / `c2352_binary_classification.md` / `c2352_action_plan.md`。执行入口 = **`c2352_action_plan.md`**（53 member / 42 static-form / 19 no-this，二进制仲裁）。
-> 阻塞：子代理配额耗尽至 **2026-10-28 20:43:03**（两次探测确认）。恢复后按 action plan 单符号执行，每 5 个符号复核 def-count 与 anchors。
+> HEAD `81ddb49a`，MSVC **21,017**（本轮 22,176 → 21,017，**−1,159**，0 fatal）。门：def-count PASS 17,498 / anchors 354,332 / vtable 标识符 0 / tree `?` 1 / CSP verify 7/7 ALL PASS。
+> **已实测证伪、勿重跑**：批量 retype（MSVC **+20**）；语法层微修（长尾，单点 −1）；C2352 纯头文件修法（**0 个**合格符号）；`LoadFileSHP` 改 const（级联进函数体）；pad 名称合并（**净 0**）；语义成员补建（权威表无此成员=发明符号）；`String::Assign` 改 static-form（**净 +6**，C2660 反涨 19）；非 e4 头文件类型修正（**净 0**，说明手写头已正确）。
+> **唯一有效杠杆**：e4 头文件真缺陷——幻影匿名 union（`String` −223 / `SuperClass` −39，**已清零**）；**双权威一致的成员类型修正**（`anchors/member_types.json` ANCHORED × `tools/class_layouts.json` 对照声明，77 处 **−45**，提交 81ddb49a）；声明与调用点**同步**迁移（C2660 先 +224 后 −144）。
+> 剩余 21,017 条中 **C2440 4,536 + C2664 4,061 = 8,597（41%）是「指针 vs 裸 dword」**。`anchors/x147_sig_alignment.json` 证明**签名已基本对齐（7,720 agree）**，故病因在**调用点的值类型**，必须逐站点处理。
+> 取证包（gitignored）：`.omo/x148/` — `findings.md`（0–25 节）/ `c2352_action_plan.md`（53 member/42 static-form/19 no-this，二进制仲裁）/ `c2039_work_order.md` / `c2065_work_order.md` / `c2660_work_order.md` / `c2664_site_evidence.md` / `decl_conflicts.md` / `verify_wave.py`（逐文件对账，已自测）。
+> 阻塞：子代理配额耗尽至 **2026-10-28 20:43:03**；`general` 回落通道可写但吞吐约 1-2 处/20-30 分钟，六次尝试均停滞（X149–X151）。
+
 
 0. **【最高优先】先读 `docs/mech_rebuild_plan.md`——当前阶段 = Step-4 收敛（G31 数据供给轮，2026-09-22）。五连根因修复：①param 通道冒号 bug（4,824 参数类型从未生效）②this-key 通道接入（10,645 类类型）③stack_+N 通道接入（10,564 类类型槽，键=[esp+Xh] 显示值）④三处 →0x08 退格符损坏清除（裸 this+N 正则从未匹配过）⑤系统性漏}病修复（fix_leaks_general：472 文件/~4,350 函数，brace_delta/block_walker 块注释感知 span 基元）。CSP 供给：register_offset_members（注册 ~5,100 + ml→mt sync 17,061 + canon 宇宙 1,597→2,959 类）。违规 census 28,026→15,423，MEMORY=0。执行记录 = mech_rebuild_plan.md「G31 执行记录」节。下一步：①残 39 文件 ±brace 尾巴 ②IDA 在线 typed-snapshot 重导（残 15.4K 命中函数重反编译，typed lvars 原生 ->Member）③verify_changed 回归 FAIL 归因。G26 及此前 fleet/H5 配额管线已被取代，不要恢复执行。**
 
