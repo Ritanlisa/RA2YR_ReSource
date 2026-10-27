@@ -12,12 +12,12 @@ struct VectorClass_flat;  // fix_fwd_type_supply
 struct DynamicVectorClass_uint {
     void* ptr_0;  // 0x0
     void* Items;  // 0x4
-    void* Capacity;  // 0x8
+    int Capacity;  // 0x8
     char IsInitialized[1];  // 0xC
     unsigned char IsAllocated;  // 0xD
     unsigned char tail_E;  // 0xE
     char __pad_F[1];  // 0xF
-    void* Count;  // 0x10
+    int Count;  // 0x10
     unsigned int CapacityIncrement;  // 0x14
     char tail_18[92];  // 0x18
 // --- flat members (BEGIN) ---

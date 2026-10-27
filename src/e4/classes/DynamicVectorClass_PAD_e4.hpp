@@ -9,12 +9,12 @@ struct DynamicVector;  // fix_fwd_type_supply
 struct DynamicVectorClass_PAD {
     unsigned int vfptr;  // 0x0
     void* Items;  // 0x4
-    void* Capacity;  // 0x8
+    int Capacity;  // 0x8
     char IsInitialized[1];  // 0xC
     unsigned char IsAllocated;  // 0xD
     unsigned char __pad_00E;  // 0xE
     char __pad_F[1];  // 0xF
-    void* Count;  // 0x10
+    int Count;  // 0x10
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     wchar_t * ddtor(void *a1_1);  // 0x49E950
