@@ -1561,7 +1561,7 @@ CampaignScore * * ConvertDateMonthNames(wchar_t ** a1, void ** a2)
   v29 = (char *)((WideString *)(v43))->GetOrEmpty(); /*0x77962d*/
   char *v30; // eax
   v30 = ToWideStringChar(v29); /*0x779634*/
-  String::Assign_Bool(a2, v30); /*0x77963c*/
+  ((String *)a2)->Assign_Bool( v30); /*0x77963c*/
   ((DeleteAndZero *)v43)->Alt(); /*0x779645*/
 }
 }

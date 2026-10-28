@@ -2677,22 +2677,22 @@ AbstractClass * * WOL_InitVersionStrings()
       while ( v3 ); /*0x797c57*/
       atexit(sub_798120); /*0x797c5e*/
     }
-    String::Assign_Bool((String *)&stru_B76900.abstractFlags, a01W024V01); /*0x797c71*/
-    String::Assign_Bool((String *)&stru_B76900.nextArrayIndex, a01W026V01); /*0x797c80*/
-    String::Assign_Bool((String *)&stru_B76900.referenceCount, a01W028V01); /*0x797c8f*/
-    String::Assign_Bool((String *)&stru_B76900.NeedsSaveOrLink, a01W018V01); /*0x797c9e*/
-    String::Assign_Bool((String *)&stru_B76900.occupant, a01W020V01); /*0x797cad*/
-    String::Assign_Bool((String *)&stru_B76900.owningHouseIndex, a01W022V01); /*0x797cbc*/
-    String::Assign_Bool((String *)&stru_B76900.fallRate, a00W022V00); /*0x797ccb*/
-    String::Assign_Bool((String *)&stru_B76900.nextObject, a00W024V00); /*0x797cda*/
-    String::Assign_Bool((String *)&stru_B76900.attachedTag, a00W026V00); /*0x797ce9*/
-    String::Assign_Bool((String *)&stru_B76900.attachedBomb, a00W017V00); /*0x797cf8*/
-    String::Assign_Bool((String *)stru_B76900.ambientSoundController, a00W018V00); /*0x797d07*/
-    String::Assign_Bool((String *)&stru_B76900.ambientSoundController[1], a00W020V00); /*0x797d16*/
-    String::Assign_Bool((String *)&stru_B76900.ambientSoundController[2], a01W032V01); /*0x797d25*/
-    String::Assign_Bool((String *)&stru_B76900.ambientSoundController[3], a01W030V01); /*0x797d34*/
-    String::Assign_Bool((String *)&stru_B76900.ambientSoundController[4], a00W031V00); /*0x797d43*/
-    String::Assign_Bool((String *)stru_B76900.customSound_controller, a00W029V00); /*0x797d52*/
+    ((String *)(String *)&stru_B76900.abstractFlags)->Assign_Bool( a01W024V01); /*0x797c71*/
+    ((String *)(String *)&stru_B76900.nextArrayIndex)->Assign_Bool( a01W026V01); /*0x797c80*/
+    ((String *)(String *)&stru_B76900.referenceCount)->Assign_Bool( a01W028V01); /*0x797c8f*/
+    ((String *)(String *)&stru_B76900.NeedsSaveOrLink)->Assign_Bool( a01W018V01); /*0x797c9e*/
+    ((String *)(String *)&stru_B76900.occupant)->Assign_Bool( a01W020V01); /*0x797cad*/
+    ((String *)(String *)&stru_B76900.owningHouseIndex)->Assign_Bool( a01W022V01); /*0x797cbc*/
+    ((String *)(String *)&stru_B76900.fallRate)->Assign_Bool( a00W022V00); /*0x797ccb*/
+    ((String *)(String *)&stru_B76900.nextObject)->Assign_Bool( a00W024V00); /*0x797cda*/
+    ((String *)(String *)&stru_B76900.attachedTag)->Assign_Bool( a00W026V00); /*0x797ce9*/
+    ((String *)(String *)&stru_B76900.attachedBomb)->Assign_Bool( a00W017V00); /*0x797cf8*/
+    ((String *)(String *)stru_B76900.ambientSoundController)->Assign_Bool( a00W018V00); /*0x797d07*/
+    ((String *)(String *)&stru_B76900.ambientSoundController[1])->Assign_Bool( a00W020V00); /*0x797d16*/
+    ((String *)(String *)&stru_B76900.ambientSoundController[2])->Assign_Bool( a01W032V01); /*0x797d25*/
+    ((String *)(String *)&stru_B76900.ambientSoundController[3])->Assign_Bool( a01W030V01); /*0x797d34*/
+    ((String *)(String *)&stru_B76900.ambientSoundController[4])->Assign_Bool( a00W031V00); /*0x797d43*/
+    ((String *)(String *)stru_B76900.customSound_controller)->Assign_Bool( a00W029V00); /*0x797d52*/
     int i; // esi
     for ( i = 0; i < *(int *)&DataGlobal_B73BD8; ++i ) /*0x797d60*/
       Object::DtorWithDelete((Object *)(*(unsigned int *)&DataGlobal_B73BE0 + 4 * i), 0); /*0x797d6b*/

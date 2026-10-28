@@ -177,7 +177,7 @@ LABEL_103:
               *((unsigned int *)a3 + 10) = v15; /*0x7aab09*/
             }
 LABEL_43:
-            String::Assign_Bool((String *)v33, v6 + 52); /*0x7aab0c*/
+            ((String *)(String *)v33)->Assign_Bool( v6 + 52); /*0x7aab0c*/
             ((CChatEventSink *)v33)->EncodeString(39); /*0x7aab1f*/
             String::ToLower((String *)v33); /*0x7aab28*/
             if ( *(unsigned int *)&dword_A8B238 == 4 && dword_A8B244 == 3 ) /*0x7aab41*/

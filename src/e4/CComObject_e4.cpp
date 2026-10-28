@@ -1647,7 +1647,7 @@ int CComObject_CChatEventSink___ATL::DispatchStub_33(int a1, int a2, int a3)
       do /*0x7abac8*/
       {
         unknown_libname_73(&a2); /*0x7ab91b*/
-        String::Assign_Bool((String *)&a2, (const char *)(v4 + 36)); /*0x7ab928*/
+        ((String *)(String *)&a2)->Assign_Bool( (const char *)(v4 + 36)); /*0x7ab928*/
         String::ToLower((String *)&a2); /*0x7ab931*/
         HashTable::Lookup((HashTable *)&g_WOL_ConnectionPool, (const char **)&a2, &v13); /*0x7ab945*/
         v5 = *(unsigned int *)(v4 + 100); /*0x7ab94a*/
@@ -1738,7 +1738,7 @@ AbstractClass * * CComObject_CChatEventSink___ATL::DispatchStub_35(int a1, int a
 
   unknown_libname_73(v15); /*0x7abafa*/
   strcpy(v16, unk_A8B380); /*0x7abb1c*/
-  String::Assign_Bool((String *)v15, v16); /*0x7abb2e*/
+  ((String *)(String *)v15)->Assign_Bool( v16); /*0x7abb2e*/
   String::ToLower((String *)v15); /*0x7abb37*/
   v3 = *(String **)(*(unsigned int *)g_WOL_ConnectionPool.__pad_0 + 4 * (dword_B76548(v15) & ((1 << dword_B7653C) - 1))); /*0x7abb5d*/
   if ( v3 ) /*0x7abb62*/
@@ -1851,7 +1851,7 @@ AbstractClass * * CComObject_CChatEventSink___ATL::DispatchStub_34(int a1, int a
     {
       do /*0x7abd74*/
       {
-        String::Assign_Bool((String *)&a2, (const char *)(LODWORD(v4) + 36)); /*0x7abd74*/
+        ((String *)(String *)&a2)->Assign_Bool( (const char *)(LODWORD(v4) + 36)); /*0x7abd74*/
         v5 = *(String **)(*(unsigned int *)stru_B76680.__pad_0 /*0x7abd98*/
                         + 4 * (dword_B76698(&a2) & ((1 << SLOBYTE(stru_B76680.HashMap_field_0x0C)) - 1)));
         if ( !v5 ) /*0x7abd9d*/
@@ -1959,7 +1959,7 @@ AbstractClass * * CComObject_CChatEventSink___ATL::DispatchStub_36(int a1, int a
   dword_A8B3AC = a3; /*0x7abfbd*/
   unknown_libname_73(&a3); /*0x7abfc3*/
   strcpy(v15, unk_A8B380); /*0x7abfe5*/
-  String::Assign_Bool((String *)&a3, v15); /*0x7abff7*/
+  ((String *)(String *)&a3)->Assign_Bool( v15); /*0x7abff7*/
   String::ToLower((String *)&a3); /*0x7ac000*/
   v4 = *(String **)(*(unsigned int *)stru_B76680.__pad_0 /*0x7ac024*/
                   + 4 * (dword_B76698(&a3) & ((1 << SLOBYTE(stru_B76680.HashMap_field_0x0C)) - 1)));

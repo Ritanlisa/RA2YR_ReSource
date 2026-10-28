@@ -1467,7 +1467,7 @@ int InsertBuddyList(const char *a1, char a2)
   unknown_libname_73(v47); /*0x782336*/
   *v47->ptr_8.__pad_0 = -1; /*0x782349*/
   memset(&v47[16].m_3[1], 0, 0x6Cu); /*0x782351*/
-  String::Assign_Bool(v47, a1 + 36); /*0x78235b*/
+  ((String *)v47)->Assign_Bool( a1 + 36); /*0x78235b*/
   String::ToLower(v47); /*0x782364*/
   if ( g_WOL_HashTable ) /*0x782371*/
   {
@@ -1506,7 +1506,7 @@ int InsertBuddyList(const char *a1, char a2)
       *(unsigned int *)&v47[0].m_3[1] = 0; /*0x782446*/
       if ( *(int *)&stru_B778FC.m_3[1] > 0 ) /*0x78244e*/
         memcpy(&v47[3], dword_B77908, 0x6Cu); /*0x78245b*/
-      String::Assign_Bool(v47, &v47[7].m_3[1]); /*0x782466*/
+      ((String *)v47)->Assign_Bool( &v47[7].m_3[1]); /*0x782466*/
       String::ToLower(v47); /*0x78246f*/
       v7 = -1; /*0x78247a*/
       if ( g_WOL_HashTable ) /*0x78247f*/
@@ -1539,7 +1539,7 @@ int InsertBuddyList(const char *a1, char a2)
             *(unsigned int *)&v47[0].m_3[1] = v8; /*0x7824f8*/
             if ( !v10 && v8 < *(int *)&stru_B778FC.m_3[1] ) /*0x782504*/
               memcpy(&v47[3], (char *)dword_B77908 + v9, 0x6Cu); /*0x782518*/
-            String::Assign_Bool(v47, &v47[7].m_3[1]); /*0x782523*/
+            ((String *)v47)->Assign_Bool( &v47[7].m_3[1]); /*0x782523*/
             String::ToLower(v47); /*0x78252c*/
             v11 = g_WOL_HashTable; /*0x782531*/
             v7 = -1; /*0x782537*/
@@ -1581,7 +1581,7 @@ LABEL_45:
           v16 += 108; /*0x7825d4*/
           if ( v16 >= 0 && v15 < *(int *)&stru_B778FC.m_3[1] ) /*0x7825df*/
             memcpy(&v47[3], (char *)dword_B77908 + v16, 0x6Cu); /*0x7825f2*/
-          String::Assign_Bool(v47, &v47[7].m_3[1]); /*0x7825fd*/
+          ((String *)v47)->Assign_Bool( &v47[7].m_3[1]); /*0x7825fd*/
           String::ToLower(v47); /*0x782606*/
           v17 = g_WOL_HashTable; /*0x78260b*/
           v7 = -1; /*0x782611*/
@@ -1629,7 +1629,7 @@ LABEL_69:
             ++*(unsigned int *)&v47[0].m_3[1]; /*0x7826ca*/
             if ( !v10 && v21 < *(int *)&stru_B778FC.m_3[1] ) /*0x7826d6*/
               memcpy(&v47[3], (char *)dword_B77908 + v20, 0x6Cu); /*0x7826e9*/
-            String::Assign_Bool(v47, &v47[7].m_3[1]); /*0x7826f4*/
+            ((String *)v47)->Assign_Bool( &v47[7].m_3[1]); /*0x7826f4*/
             String::ToLower(v47); /*0x7826fd*/
             v22 = g_WOL_HashTable; /*0x782702*/
             v7 = -1; /*0x782708*/
@@ -1666,7 +1666,7 @@ LABEL_85:
       *(unsigned int *)&v47[0].m_3[1] = *v47->ptr_4.__pad_0; /*0x782779*/
       if ( *v47->ptr_4.__pad_0 >= 0 && *v47->ptr_4.__pad_0 < *(int *)&stru_B778FC.m_3[1] ) /*0x782781*/
         memcpy(&v47[3], (char *)dword_B77908 + 108 * *v47->ptr_4.__pad_0, 0x6Cu); /*0x782796*/
-      String::Assign_Bool(v47, &v47[7].m_3[1]); /*0x7827a1*/
+      ((String *)v47)->Assign_Bool( &v47[7].m_3[1]); /*0x7827a1*/
       String::ToLower(v47); /*0x7827aa*/
       v25 = g_WOL_HashTable; /*0x7827af*/
       v26 = -1; /*0x7827b5*/
@@ -1712,7 +1712,7 @@ LABEL_99:
             *(unsigned int *)&v47[0].m_3[1] = v29; /*0x78285d*/
             if ( !v10 && v29 < *(int *)&stru_B778FC.m_3[1] ) /*0x782869*/
               memcpy(&v47[3], (char *)dword_B77908 + v30, 0x6Cu); /*0x78287d*/
-            String::Assign_Bool(v47, &v47[7].m_3[1]); /*0x782888*/
+            ((String *)v47)->Assign_Bool( &v47[7].m_3[1]); /*0x782888*/
             String::ToLower(v47); /*0x782891*/
             v31 = g_WOL_HashTable; /*0x782896*/
             v26 = -1; /*0x78289c*/
@@ -1754,7 +1754,7 @@ LABEL_119:
           v35 += 108; /*0x782944*/
           if ( v35 >= 0 && v15 < *(int *)&stru_B778FC.m_3[1] ) /*0x78294f*/
             memcpy(&v47[3], (char *)dword_B77908 + v35, 0x6Cu); /*0x782963*/
-          String::Assign_Bool(v47, &v47[7].m_3[1]); /*0x78296e*/
+          ((String *)v47)->Assign_Bool( &v47[7].m_3[1]); /*0x78296e*/
           String::ToLower(v47); /*0x782977*/
           v36 = g_WOL_HashTable; /*0x78297c*/
           v26 = -1; /*0x782982*/
@@ -1803,7 +1803,7 @@ LABEL_143:
             v39 += 108; /*0x782a3a*/
             if ( v39 >= 0 && v15 < *(int *)&stru_B778FC.m_3[1] ) /*0x782a45*/
               memcpy(&v47[3], (char *)dword_B77908 + v39, 0x6Cu); /*0x782a59*/
-            String::Assign_Bool(v47, &v47[7].m_3[1]); /*0x782a64*/
+            ((String *)v47)->Assign_Bool( &v47[7].m_3[1]); /*0x782a64*/
             String::ToLower(v47); /*0x782a6d*/
             v40 = g_WOL_HashTable; /*0x782a72*/
             v26 = -1; /*0x782a78*/
@@ -2230,7 +2230,7 @@ void SortWOLPlayerList(char a1)
         *v5 = -1; /*0x783317*/
         unknown_libname_73(&v15); /*0x78331e*/
         memset(v22, 0, sizeof(v22)); /*0x783331*/
-        String::Assign_Bool(&v15, (const char *)&v21[9]); /*0x78333c*/
+        ((String *)&v15)->Assign_Bool( (const char *)&v21[9]); /*0x78333c*/
         String::ToLower((const char **)&v15); /*0x783345*/
         if ( g_WOL_HashTable ) /*0x783352*/
         {
