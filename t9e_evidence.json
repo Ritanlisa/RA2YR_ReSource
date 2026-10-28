@@ -1,11 +1,11 @@
 {
  "note": "T9e arithmetic typing rules (X142b) — evidence ledger",
- "total_fired": 2643,
+ "total_fired": 2618,
  "by_rule": {
   "int-arith": 1757,
-  "ptr-plus": 810,
-  "call-arg": 62,
-  "const-store": 14
+  "ptr-plus": 806,
+  "call-arg": 42,
+  "const-store": 13
  },
  "firings": [
   {
@@ -123,9 +123,9 @@
   {
    "root": 264853,
    "var": "0x004074D0::edx_v0x4074FA",
-   "rule": "ptr-plus",
-   "tier": 1,
-   "edge": "ADD from=0x004074D0::edi_v0x4074D2 @ 0x4074FA"
+   "rule": "int-arith",
+   "tier": 4,
+   "edge": "ADD int-operand from=0x004074D0::edi_v0x4074D2 @ 0x4074FA"
   },
   {
    "root": 265312,
@@ -1297,13 +1297,6 @@
    "edge": "SUB index operand of 0x00441F60::edi_v0x4420FD @ 0x4420FD"
   },
   {
-   "root": 312201,
-   "var": "0x00441F60::edi_v0x44203F",
-   "rule": "int-arith",
-   "tier": 4,
-   "edge": "ADD int-operand from=0x00441F60::esi_v0x44201F @ 0x44203F"
-  },
-  {
    "root": 312203,
    "var": "0x00441F60::edi_v0x4420C6",
    "rule": "int-arith",
@@ -1829,13 +1822,6 @@
    "edge": "SUB int-operand from=0x00465E70::ebx_v0x465E72 @ 0x465EB1"
   },
   {
-   "root": 336739,
-   "var": "0x004666E0::param0.member(0x60)",
-   "rule": "const-store",
-   "tier": 0,
-   "edge": "literal store → 0x004666E0::param0.member(0x60)"
-  },
-  {
    "root": 337518,
    "var": "0x00468D80::ecx_v0x468DFB",
    "rule": "int-arith",
@@ -2137,13 +2123,6 @@
    "edge": "ADD index operand of 0x00478BA0::edx_v0x478D8C @ 0x478D8C"
   },
   {
-   "root": 350118,
-   "var": "0x00478BA0::esi_v0x478BFF",
-   "rule": "ptr-plus",
-   "tier": 1,
-   "edge": "ADD reverse to=0x00478BA0::ebx_v0x478C30 @ 0x478C30"
-  },
-  {
    "root": 354285,
    "var": "0x0047EFE0::ebx_v0x47F221",
    "rule": "int-arith",
@@ -2198,13 +2177,6 @@
    "rule": "int-arith",
    "tier": 4,
    "edge": "SCALE @ 0x4802FE"
-  },
-  {
-   "root": 355753,
-   "var": "0x00480630::edi_v0x4807B9",
-   "rule": "int-arith",
-   "tier": 4,
-   "edge": "ADD int-operand from=0x00480630::esi_v0x48068D @ 0x4807B9"
   },
   {
    "root": 358112,
@@ -2422,13 +2394,6 @@
    "rule": "int-arith",
    "tier": 4,
    "edge": "ADD int-operand from=0x0048BB60::ecx_v0x48BBD4 @ 0x48BBE1"
-  },
-  {
-   "root": 366295,
-   "var": "0x0048D1E0::ecx_v0x48D95C",
-   "rule": "call-arg",
-   "tier": 4,
-   "edge": "param0 of 0x0069A310 (cdecl) int @ 0x48D961"
   },
   {
    "root": 370096,
@@ -2937,9 +2902,9 @@
   {
    "root": 385053,
    "var": "0x0049C0D0::edx_v0x49C47B",
-   "rule": "ptr-plus",
-   "tier": 1,
-   "edge": "ADD from=0x0049C0D0::esi_v0x49C448 @ 0x49C47B"
+   "rule": "int-arith",
+   "tier": 4,
+   "edge": "SCALE @ 0x49C47B"
   },
   {
    "root": 385395,
@@ -3630,9 +3595,9 @@
   {
    "root": 417442,
    "var": "0x004C38E0::edi_v0x4C394C",
-   "rule": "ptr-plus",
-   "tier": 1,
-   "edge": "ADD from=0x004C38E0::ecx_v0x4C3948 @ 0x4C394C"
+   "rule": "int-arith",
+   "tier": 4,
+   "edge": "ADD int-operand from=0x004C38E0::ecx_v0x4C3948 @ 0x4C394C"
   },
   {
    "root": 417504,
@@ -3644,16 +3609,16 @@
   {
    "root": 417543,
    "var": "0x004C3AD0::ecx_v0x4C3AF0",
-   "rule": "int-arith",
-   "tier": 4,
-   "edge": "SCALE @ 0x4C3AF0"
+   "rule": "ptr-plus",
+   "tier": 1,
+   "edge": "ADD from=0x004C3AD0::edi_v0x4C3AD4 @ 0x4C3AF0"
   },
   {
    "root": 417551,
    "var": "0x004C3AD0::edx_v0x4C3B06",
-   "rule": "int-arith",
-   "tier": 4,
-   "edge": "SCALE @ 0x4C3B06"
+   "rule": "ptr-plus",
+   "tier": 1,
+   "edge": "ADD from=0x004C3AD0::edi_v0x4C3AD4 @ 0x4C3B06"
   },
   {
    "root": 417579,
@@ -4144,13 +4109,6 @@
    "rule": "int-arith",
    "tier": 4,
    "edge": "ADD int-operand from=0x004F1CA0::eax_v0x4F20F8 @ 0x4F20FE"
-  },
-  {
-   "root": 456955,
-   "var": "0x004F2C70::edi_v0x4F2D94",
-   "rule": "call-arg",
-   "tier": 4,
-   "edge": "param2 of 0x00529A30 (thiscall) int @ 0x4F2DC8"
   },
   {
    "root": 457893,
@@ -5483,27 +5441,6 @@
    "edge": "ADD from=0x0055DEE0::eax_v0x55DF27 @ 0x55DF35"
   },
   {
-   "root": 539936,
-   "var": "0x0055E420::ecx_v0x55E588",
-   "rule": "call-arg",
-   "tier": 4,
-   "edge": "param0 of 0x0069A310 (cdecl) int @ 0x55E58D"
-  },
-  {
-   "root": 539960,
-   "var": "0x0055E420::ecx_v0x55E8FB",
-   "rule": "call-arg",
-   "tier": 4,
-   "edge": "param0 of 0x0069A310 (cdecl) int @ 0x55E900"
-  },
-  {
-   "root": 539992,
-   "var": "0x0055E420::ecx_v0x55ECA5",
-   "rule": "call-arg",
-   "tier": 4,
-   "edge": "param0 of 0x0069A310 (cdecl) int @ 0x55ECAA"
-  },
-  {
    "root": 540483,
    "var": "0x0055F6E0::edi_v0x55F73B",
    "rule": "int-arith",
@@ -5793,9 +5730,9 @@
   {
    "root": 550096,
    "var": "0x0056EE40::edi_v0x56EF0F",
-   "rule": "ptr-plus",
-   "tier": 1,
-   "edge": "ADD from=0x0056EE40::edx_v0x56EEFF @ 0x56EF0F"
+   "rule": "int-arith",
+   "tier": 4,
+   "edge": "ADD int-operand from=0x0056EE40::edx_v0x56EEFF @ 0x56EF0F"
   },
   {
    "root": 550203,
@@ -5835,9 +5772,9 @@
   {
    "root": 550528,
    "var": "0x0056F7A0::edi_v0x56F874",
-   "rule": "ptr-plus",
-   "tier": 1,
-   "edge": "ADD from=0x0056F7A0::edx_v0x56F864 @ 0x56F874"
+   "rule": "int-arith",
+   "tier": 4,
+   "edge": "ADD int-operand from=0x0056F7A0::edx_v0x56F864 @ 0x56F874"
   },
   {
    "root": 550639,
@@ -5877,9 +5814,9 @@
   {
    "root": 552437,
    "var": "0x00572330::edi_v0x5723FF",
-   "rule": "ptr-plus",
-   "tier": 1,
-   "edge": "ADD from=0x00572330::edx_v0x5723EF @ 0x5723FF"
+   "rule": "int-arith",
+   "tier": 4,
+   "edge": "ADD int-operand from=0x00572330::edx_v0x5723EF @ 0x5723FF"
   },
   {
    "root": 552544,
@@ -5919,9 +5856,9 @@
   {
    "root": 552869,
    "var": "0x00572C90::edi_v0x572D64",
-   "rule": "ptr-plus",
-   "tier": 1,
-   "edge": "ADD from=0x00572C90::edx_v0x572D54 @ 0x572D64"
+   "rule": "int-arith",
+   "tier": 4,
+   "edge": "ADD int-operand from=0x00572C90::edx_v0x572D54 @ 0x572D64"
   },
   {
    "root": 552980,
@@ -6437,16 +6374,16 @@
   {
    "root": 566612,
    "var": "0x00584E50::ecx_v0x584F76",
-   "rule": "ptr-plus",
-   "tier": 1,
-   "edge": "ADD from=0x00584E50::eax_v0x584F6E @ 0x584F76"
+   "rule": "int-arith",
+   "tier": 4,
+   "edge": "SCALE @ 0x584F76"
   },
   {
    "root": 566614,
    "var": "0x00584E50::ecx_v0x584F8F",
-   "rule": "ptr-plus",
-   "tier": 1,
-   "edge": "ADD from=0x00584E50::eax_v0x584F87 @ 0x584F8F"
+   "rule": "int-arith",
+   "tier": 4,
+   "edge": "SCALE @ 0x584F8F"
   },
   {
    "root": 566625,
@@ -8015,13 +7952,6 @@
    "rule": "ptr-plus",
    "tier": 1,
    "edge": "ADD from=0x005ADF20::edx_v0x5AE0D4 @ 0x5AE0DD"
-  },
-  {
-   "root": 595695,
-   "var": "0x005ADF20::esi_v0x5AE037",
-   "rule": "ptr-plus",
-   "tier": 1,
-   "edge": "ADD reverse to=0x005ADF20::edx_v0x5AE03D @ 0x5AE03D"
   },
   {
    "root": 595721,
@@ -9711,13 +9641,6 @@
    "edge": "ADD reverse to=0x006272A0::ebx_v0x627454 @ 0x627454"
   },
   {
-   "root": 682699,
-   "var": "0x00627B20::ecx_v0x627C06",
-   "rule": "call-arg",
-   "tier": 4,
-   "edge": "param1 of 0x004F4CE0 (thiscall) int @ 0x627C08"
-  },
-  {
    "root": 682721,
    "var": "0x00627B20::edx_v0x627B63",
    "rule": "ptr-plus",
@@ -9741,9 +9664,9 @@
   {
    "root": 683043,
    "var": "0x00628070::edx_v0x6280A4",
-   "rule": "ptr-plus",
-   "tier": 1,
-   "edge": "SUB from=0x00628070::edi_v0x628073 @ 0x6280A4"
+   "rule": "int-arith",
+   "tier": 4,
+   "edge": "SUB int-operand from=0x00628070::edi_v0x628073 @ 0x6280A4"
   },
   {
    "root": 683132,
@@ -10224,16 +10147,16 @@
   {
    "root": 702749,
    "var": "0x0063F960::ecx_v0x63F998",
-   "rule": "int-arith",
-   "tier": 4,
-   "edge": "ADD int-operand from=0x0063F960::eax_v0x63F98D @ 0x63F998"
+   "rule": "ptr-plus",
+   "tier": 1,
+   "edge": "ADD from=0x0063F960::eax_v0x63F98D @ 0x63F998"
   },
   {
    "root": 702760,
    "var": "0x0063F960::esi_v0x63F995",
-   "rule": "int-arith",
-   "tier": 4,
-   "edge": "ADD int-operand from=0x0063F960::eax_v0x63F98D @ 0x63F995"
+   "rule": "ptr-plus",
+   "tier": 1,
+   "edge": "ADD from=0x0063F960::eax_v0x63F98D @ 0x63F995"
   },
   {
    "root": 702874,
@@ -10245,30 +10168,30 @@
   {
    "root": 702977,
    "var": "0x0063FEA0::eax_v0x63FF49",
-   "rule": "int-arith",
-   "tier": 4,
-   "edge": "ADD int-operand from=0x0063FEA0::ecx_v0x63FF40 @ 0x63FF49"
+   "rule": "ptr-plus",
+   "tier": 1,
+   "edge": "ADD from=0x0063FEA0::ecx_v0x63FF40 @ 0x63FF49"
   },
   {
    "root": 702985,
    "var": "0x0063FEA0::eax_v0x63FF9D",
-   "rule": "int-arith",
-   "tier": 4,
-   "edge": "ADD int-operand from=0x0063FEA0::edx_v0x63FF94 @ 0x63FF9D"
+   "rule": "ptr-plus",
+   "tier": 1,
+   "edge": "ADD from=0x0063FEA0::edx_v0x63FF94 @ 0x63FF9D"
   },
   {
    "root": 702988,
    "var": "0x0063FEA0::eax_v0x63FFB5",
-   "rule": "int-arith",
-   "tier": 4,
-   "edge": "ADD int-operand from=0x0063FEA0::edx_v0x63FFAC @ 0x63FFB5"
+   "rule": "ptr-plus",
+   "tier": 1,
+   "edge": "ADD from=0x0063FEA0::edx_v0x63FFAC @ 0x63FFB5"
   },
   {
    "root": 702993,
    "var": "0x0063FEA0::eax_v0x63FFFD",
-   "rule": "int-arith",
-   "tier": 4,
-   "edge": "ADD int-operand from=0x0063FEA0::ecx_v0x63FFF4 @ 0x63FFFD"
+   "rule": "ptr-plus",
+   "tier": 1,
+   "edge": "ADD from=0x0063FEA0::ecx_v0x63FFF4 @ 0x63FFFD"
   },
   {
    "root": 705102,
@@ -10843,13 +10766,6 @@
    "rule": "call-arg",
    "tier": 4,
    "edge": "param1 of 0x00474B50 (thiscall) int @ 0x66B7BD"
-  },
-  {
-   "root": 741571,
-   "var": "0x00672AE0::ecx_v0x6738F7",
-   "rule": "call-arg",
-   "tier": 4,
-   "edge": "param0 of 0x0067B550 (cdecl) int @ 0x6738FB"
   },
   {
    "root": 742116,
@@ -11526,9 +11442,9 @@
   {
    "root": 752039,
    "var": "0x0067F7E0::edx_v0x67F860",
-   "rule": "int-arith",
-   "tier": 4,
-   "edge": "SCALE @ 0x67F860"
+   "rule": "ptr-plus",
+   "tier": 1,
+   "edge": "ADD from=0x0067F7E0::ecx_v0x67F854 @ 0x67F860"
   },
   {
    "root": 753552,
@@ -12156,9 +12072,9 @@
   {
    "root": 773445,
    "var": "0x0069BBF0::eax_v0x69BBF9",
-   "rule": "ptr-plus",
-   "tier": 1,
-   "edge": "ADD from=0x0069BBF0::ecx_v0x69BBF0 @ 0x69BBF9"
+   "rule": "int-arith",
+   "tier": 4,
+   "edge": "SCALE @ 0x69BBF9"
   },
   {
    "root": 773951,
@@ -13295,13 +13211,6 @@
    "edge": "SUB index operand of 0x006CBCA0::ecx_v0x6CBD63 @ 0x6CBD63"
   },
   {
-   "root": 813583,
-   "var": "0x006CC390::ebx_v0x6CC4A8",
-   "rule": "ptr-plus",
-   "tier": 1,
-   "edge": "ADD reverse to=0x006CC390::esi_v0x6CC4B5 @ 0x6CC4B5"
-  },
-  {
    "root": 813584,
    "var": "0x006CC390::ebx_v0x6CC960",
    "rule": "int-arith",
@@ -13710,9 +13619,9 @@
   {
    "root": 836709,
    "var": "0x006EA3E0::edi_v0x6EA4A5",
-   "rule": "int-arith",
-   "tier": 4,
-   "edge": "SUB int-operand from=0x006EA3E0::ecx_v0x6EA49F @ 0x6EA4A5"
+   "rule": "ptr-plus",
+   "tier": 1,
+   "edge": "SUB from=0x006EA3E0::ecx_v0x6EA49F @ 0x6EA4A5"
   },
   {
    "root": 837134,
@@ -16081,6 +15990,13 @@
    "edge": "SCALE @ 0x76D7ED"
   },
   {
+   "root": 935788,
+   "var": "0x0076DAD0::esi_v0x76DBBF",
+   "rule": "ptr-plus",
+   "tier": 1,
+   "edge": "ADD reverse to=0x0076DAD0::ecx_v0x76DDA6 @ 0x76DDA6"
+  },
+  {
    "root": 935828,
    "var": "0x0076DED0::eax_v0x76DF10",
    "rule": "int-arith",
@@ -17341,13 +17257,6 @@
    "edge": "ADD int-operand from=0x007B53B0::eax_v0x7B53D6 @ 0x7B53DE"
   },
   {
-   "root": 988613,
-   "var": "0x007B57A0::ebp_v0x7B57B4",
-   "rule": "call-arg",
-   "tier": 4,
-   "edge": "param0 of 0x007CA4B0 (cdecl) int @ 0x7B57D2"
-  },
-  {
    "root": 988711,
    "var": "0x007B57A0::edx_v0x7B57F0",
    "rule": "int-arith",
@@ -18225,9 +18134,9 @@
   {
    "root": 1017121,
    "var": "0x007D5B79::eax_v0x7D5BF0",
-   "rule": "ptr-plus",
-   "tier": 1,
-   "edge": "ADD from=0x007D5B79::esi_v0x7D5BD4 @ 0x7D5BF0"
+   "rule": "int-arith",
+   "tier": 4,
+   "edge": "SCALE @ 0x7D5BF0"
   },
   {
    "root": 1017875,
@@ -18363,13 +18272,6 @@
    "edge": "ADD from=0x007DDCD6::edi_v0x7DDDA8 @ 0x7DDDB1"
   },
   {
-   "root": 1112396,
-   "var": "Delimiter",
-   "rule": "call-arg",
-   "tier": 4,
-   "edge": "param1 of 0x007CB550 (cdecl) int @ 0x77DC54"
-  },
-  {
    "root": 1112410,
    "var": "Ext",
    "rule": "call-arg",
@@ -18391,48 +18293,6 @@
    "edge": "param1 of 0x007D4BF0 (cdecl) int @ 0x7D678E"
   },
   {
-   "root": 1113378,
-   "var": "aColor",
-   "rule": "call-arg",
-   "tier": 4,
-   "edge": "param2 of 0x00474B20 (thiscall) int @ 0x50130C"
-  },
-  {
-   "root": 1113715,
-   "var": "aDescription",
-   "rule": "call-arg",
-   "tier": 4,
-   "edge": "param2 of 0x00528E00 (thiscall) int @ 0x597820"
-  },
-  {
-   "root": 1115557,
-   "var": "aRandommap",
-   "rule": "call-arg",
-   "tier": 4,
-   "edge": "param1 of 0x00686700 (thiscall) int @ 0x5961F9"
-  },
-  {
-   "root": 1116046,
-   "var": "aSize",
-   "rule": "call-arg",
-   "tier": 4,
-   "edge": "param2 of 0x00527C10 (thiscall) int @ 0x4AD835"
-  },
-  {
-   "root": 1117609,
-   "var": "asc_830A14",
-   "rule": "call-arg",
-   "tier": 4,
-   "edge": "param1 of 0x007B57A0 (thiscall) int @ 0x789AFB"
-  },
-  {
-   "root": 1117614,
-   "var": "asc_8318B8",
-   "rule": "call-arg",
-   "tier": 4,
-   "edge": "param1 of 0x007B4C20 (thiscall) int @ 0x79D23F"
-  },
-  {
    "root": 1117979,
    "var": "byte_ABDD6A",
    "rule": "call-arg",
@@ -18445,20 +18305,6 @@
    "rule": "call-arg",
    "tier": 4,
    "edge": "param1 of 0x005520A0 (thiscall) int @ 0x56AF0D"
-  },
-  {
-   "root": 1165309,
-   "var": "g_INI_DefaultBuffer",
-   "rule": "call-arg",
-   "tier": 4,
-   "edge": "param1 of 0x00686700 (thiscall) int @ 0x599A3E"
-  },
-  {
-   "root": 1165405,
-   "var": "g_INI_Key_Lose",
-   "rule": "call-arg",
-   "tier": 4,
-   "edge": "param2 of 0x00475820 (thiscall) int @ 0x68B31E"
   },
   {
    "root": 1165422,
@@ -18475,32 +18321,11 @@
    "edge": "param1 of 0x0049B760 (thiscall) int @ 0x5C1ACE"
   },
   {
-   "root": 1166293,
-   "var": "off_83E188",
-   "rule": "call-arg",
-   "tier": 4,
-   "edge": "param2 of 0x00475820 (thiscall) int @ 0x68B304"
-  },
-  {
-   "root": 1166824,
-   "var": "stru_887430",
-   "rule": "call-arg",
-   "tier": 4,
-   "edge": "param1 of 0x00753F90 (cdecl) int @ 0x749CE8"
-  },
-  {
    "root": 1166972,
    "var": "stru_A9F9B8",
    "rule": "call-arg",
    "tier": 4,
    "edge": "param1 of 0x00750920 (cdecl) int @ 0x53B531"
-  },
-  {
-   "root": 1169856,
-   "var": "word_89F5D8",
-   "rule": "call-arg",
-   "tier": 4,
-   "edge": "param1 of 0x007B48D0 (thiscall) int @ 0x49DCF9"
   },
   {
    "root": 1169951,

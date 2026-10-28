@@ -1072,6 +1072,7 @@ class TypeInferenceEngine:
         self._load_func_signatures(valid_classes)
         self._load_ida_proto_anchors(valid_classes)
         self._load_vslot_return_anchors(valid_classes)
+        self._load_callarg_param_anchors(valid_classes)
 
         # ── orphan component seeding ──
         # ── TYPE_SEED 标量种子锚（提取器 Step 3 的立即数/浮点证据）──
@@ -1333,6 +1334,116 @@ class TypeInferenceEngine:
         if addr is not None:
             return self.var_to_id.get(f"0x{addr:08X}.return")
         return None
+
+    def _load_callarg_param_anchors(self, valid_classes):
+        """X198: 实参 -> 被调方参数类型的按位锚定（IDA 原型，逐参数独立）。"""
+        import re as _re
+        _p = os.path.normpath(os.path.join(
+            os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
+            "anchors", "ida_function_protos.json"))
+        if not os.path.exists(_p):
+            print("  callarg_param: proto file missing", file=sys.stderr)
+            return
+        with open(_p, "r", encoding="utf-8") as _f:
+            _protos = json.load(_f)
+
+        _VIEW = {
+            "int", "unsigned", "unsigned int", "char", "signed char", "unsigned char",
+            "short", "unsigned short", "long", "unsigned long", "__int64",
+            "unsigned __int64", "float", "double", "bool", "void", "_DWORD", "_WORD",
+            "_BYTE", "BYTE", "WORD", "DWORD", "QWORD", "UINT", "BOOL", "INT", "LPSTR",
+            "LPCSTR", "LPWSTR", "size_t", "intptr_t", "uintptr_t", "DWORD_PTR", "ULONG",
+            "USHORT", "UCHAR", "PVOID", "LPVOID", "HANDLE", "HWND", "HDC", "HINSTANCE",
+            "HMODULE", "FARPROC", "WPARAM", "LPARAM", "LRESULT", "HRESULT", "GUID", "IID",
+            "CLSID", "IUnknown", "wchar_t", "uint8_t", "uint16_t", "uint32_t", "int8_t",
+            "int16_t", "int32_t", "LONG", "VOID",
+        }
+        _cc_re = _re.compile(r"__\w*call|__cdecl|__stdcall|__thiscall|__fastcall|__userpurge|@<[^>]*>")
+        _ret_re = _re.compile(r"^(.*?)\(")
+        _split_re = _re.compile(r"\s*,\s*")
+
+        def _parse(proto):
+            m = _ret_re.match(proto or "")
+            if not m:
+                return None
+            cc = "thiscall" if "__thiscall" in proto else ("stdcall" if "__stdcall" in proto else "cdecl")
+            body = proto[m.end():]
+            if body.endswith(")"):
+                body = body[:-1]
+            params = []
+            for prm in _split_re.split(body):
+                prm = prm.strip()
+                if not prm:
+                    continue
+                prm = _cc_re.sub(" ", prm).strip()
+                toks = prm.rsplit(" ", 1)
+                if len(toks) == 2 and _re.fullmatch(r"[A-Za-z_]\w*", toks[1]):
+                    ptype, pname = toks[0].strip(), toks[1]
+                else:
+                    ptype, pname = prm, ""
+                params.append((ptype.replace(" *", "*").strip(), pname))
+            return cc, params
+
+        _callee = {}
+        for _a, _v in _protos.items():
+            parsed = _parse(_v.get("proto") or "")
+            if parsed:
+                _callee[_a] = parsed
+
+        try:
+            with open(CONSTRAINTS_PATH, "r", encoding="utf-8") as _f:
+                _edges = (json.load(_f).get("constraints") or [])
+        except Exception as _e:
+            print(f"  callarg_param: constraints load failed ({_e})", file=sys.stderr)
+            return
+
+        _arg_re = _re.compile(r"^(0x[0-9A-Fa-f]{8})::param(\d+)$")
+        n = 0
+        n_seen = 0
+        for e in _edges:
+            if e.get("type") != "CALL_ARG":
+                continue
+            m = _arg_re.match(str(e.get("to") or ""))
+            if not m:
+                continue
+            n_seen += 1
+            callee_key = "0x%08X" % int(m.group(1), 16)
+            idx = int(m.group(2))
+            parsed = _callee.get(callee_key)
+            if not parsed:
+                continue
+            cc, params = parsed
+            pos = idx + 1 if cc == "thiscall" else idx
+            if pos >= len(params):
+                continue
+            ptype = params[pos][0]
+            if not ptype or ptype.split("*")[0].strip() in _VIEW:
+                continue
+            if not ptype.endswith("*"):
+                continue
+            base = ptype.rstrip("*").strip()
+            if base in _VIEW or not base:
+                continue
+            lt = self._to_lattice_type(ptype, valid_classes)
+            if lt is None or lt in (VOID_PTR, TOP):
+                continue
+            try:
+                _ea = int(str(e.get("addr")), 16)
+            except (ValueError, TypeError):
+                continue
+            try:
+                _scoped = _scope_one_var(str(e.get("from") or ""), _ea,
+                                         self._func_addrs, self._writes)
+            except Exception:
+                continue
+            vid = self.var_to_id.get(_scoped)
+            if vid is None:
+                continue
+            a = Anchor(vid, _scoped, lt, "callarg_param")
+            self.anchors.append(a)
+            self.anchor_by_var[vid].append(a)
+            n += 1
+        print(f"  callarg_param anchors: {n} (candidate edges: {n_seen})", file=sys.stderr)
 
     def _load_vslot_return_anchors(self, valid_classes):
         """X196: 虚调用返回值 -> 落点变量的类型锚（slot 路由，含祖先回退）。"""
@@ -2098,6 +2209,7 @@ class TypeInferenceEngine:
             "name_owner": 4,
             "ida_proto": 3,
             "vslot_return": 3,
+            "callarg_param": 3,
             "cast_explicit": 3,
             "global_cast": 3,
             "ida_global_type": 3,
@@ -2530,9 +2642,11 @@ class TypeInferenceEngine:
         _arith_writes = getattr(self, "_writes", None)
         if _arith_writes is not None:
             _arith_edges: list[tuple[str, int, int, int | None, str]] = []
+            _pt_total = 0
             for _c in self.constraints:
                 if _c.get("type") != "PTR_ARITH":
                     continue
+                _pt_total += 1
                 try:
                     _a = int(_c.get("addr", ""), 16)
                 except (ValueError, TypeError):
@@ -2565,6 +2679,7 @@ class TypeInferenceEngine:
                 _const_seen.add(_tid)
                 _const_dsts.append(_tid)
 
+            _diag = {"fr_cls": 0, "to_cls": 0, "both": 0, "neither": 0}
             for _t9e_round in range(3):
                 _changed = 0
                 # R1: const-store（每轮重查无型；事实无传播依赖）
@@ -2592,6 +2707,10 @@ class TypeInferenceEngine:
                                and _fr_t not in _SCALARS_T9E)
                     _to_cls = (_is_concrete(_to_t)
                                and _to_t not in _SCALARS_T9E)
+                    if _fr_cls: _diag["fr_cls"] += 1
+                    if _to_cls: _diag["to_cls"] += 1
+                    if _fr_cls and _to_cls: _diag["both"] += 1
+                    if not _fr_cls and not _to_cls: _diag["neither"] += 1
                     if _fr_r != _to_r:
                         if (_fr_cls and _to_t in (BOTTOM, VOID_PTR)
                                 and _to_r not in frozen_roots):
@@ -2725,6 +2844,10 @@ class TypeInferenceEngine:
                                 _changed += 1
                 if _changed and _t9e_round < 2:
                     _propagate_round()
+            print(f"  t9e diag: pt_total={_pt_total} edges={len(_arith_edges)} "
+                  f"fr_cls={_diag['fr_cls']} to_cls={_diag['to_cls']} "
+                  f"both={_diag['both']} neither={_diag['neither']} "
+                  f"(counts over 3 rounds)", file=sys.stderr)
             if _t9e_fired:
                 _by_rule: Counter = Counter(
                     r for r, _t, _e in _t9e_fired.values())
