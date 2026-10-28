@@ -504,7 +504,7 @@ char ReceiveNetworkFile(int a1, DWORD a2, int a3, char a4)
     ((int *)&stru_AC4B48.__pad_2F4[284])->MeasureBuilding(-1, -1, (int)StringCSF, 0, 1); /*0x6942cf*/
     Screen::Capture(1, 0, a2, (int)v6); /*0x6942d8*/
     LoadScreen::Render((int)&stru_AC4B48.__pad_2F4[284], a2, (int)v6, NAN); /*0x6942ea*/
-    Network::UpdateLatencyDisplay((int)&stru_AC4B48.__pad_2F4[284], 0, 0.0, NAN); /*0x694302*/
+    ((Network *)(int)&stru_AC4B48.__pad_2F4[284])->UpdateLatencyDisplay( 0, 0.0, NAN); /*0x694302*/
   }
   v9 = a3; /*0x694307*/
   if ( a3 == 3 || (v10 = 10800, a3 != 4) ) /*0x69431b*/
@@ -547,12 +547,12 @@ char ReceiveNetworkFile(int a1, DWORD a2, int a3, char a4)
     if ( a4 ) /*0x6945eb*/
     {
       v30 = v12 / v25; /*0x694604*/
-      Network::UpdateLatencyDisplay((int)&stru_AC4B48.__pad_2F4[284], 0, (double)(v12 / v25), NAN); /*0x694611*/
+      ((Network *)(int)&stru_AC4B48.__pad_2F4[284])->UpdateLatencyDisplay( 0, (double)(v12 / v25), NAN); /*0x694611*/
     }
     if ( v26 == v25 ) /*0x694620*/
     {
       if ( a4 ) /*0x694685*/
-        Network::UpdateLatencyDisplay((int)&stru_AC4B48.__pad_2F4[284], 0, 100.0, NAN); /*0x69469d*/
+        ((Network *)(int)&stru_AC4B48.__pad_2F4[284])->UpdateLatencyDisplay( 0, 100.0, NAN); /*0x69469d*/
       v23 = 1; /*0x6946a2*/
 LABEL_53:
       v21 = v23; /*0x6946a7*/
@@ -608,13 +608,13 @@ LABEL_43:
   if ( a4 ) /*0x6944ef*/
   {
     v30 = v12 / v25; /*0x694508*/
-    Network::UpdateLatencyDisplay((int)&stru_AC4B48.__pad_2F4[284], 0, (double)(v12 / v25), NAN); /*0x694515*/
+    ((Network *)(int)&stru_AC4B48.__pad_2F4[284])->UpdateLatencyDisplay( 0, (double)(v12 / v25), NAN); /*0x694515*/
   }
   if ( v26 != v25 ) /*0x694524*/
     goto LABEL_42; /*0x694524*/
   v21 = 1; /*0x694659*/
   if ( a4 ) /*0x69465d*/
-    Network::UpdateLatencyDisplay((int)&stru_AC4B48.__pad_2F4[284], 0, 100.0, NAN); /*0x694675*/
+    ((Network *)(int)&stru_AC4B48.__pad_2F4[284])->UpdateLatencyDisplay( 0, 100.0, NAN); /*0x694675*/
 LABEL_54:
   if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x6946b4*/
     IPXManagerClass::destroyConnection((IPXManagerClass *)&stru_A8E960.nextScenario[96]); /*0x6946bb*/
@@ -923,7 +923,7 @@ LABEL_62:
     ((int *)&stru_AC4B48.__pad_2F4[284])->MeasureBuilding(-1, -1, (int)StringCSF, 0, 1); /*0x694cb2*/
     Screen::Capture(1, 0, v26, 0); /*0x694cbb*/
     LoadScreen::Render((int)&stru_AC4B48.__pad_2F4[284], v26, 0, NAN); /*0x694ccd*/
-    Network::UpdateLatencyDisplay((int)&stru_AC4B48.__pad_2F4[284], 0, 0.0, NAN); /*0x694ce2*/
+    ((Network *)(int)&stru_AC4B48.__pad_2F4[284])->UpdateLatencyDisplay( 0, 0.0, NAN); /*0x694ce2*/
   }
   v29 = v51; /*0x694ce7*/
   Timer::GetTicks(); /*0x694d03*/
@@ -963,7 +963,7 @@ LABEL_70:
         {
           v47 = 1; /*0x69514d*/
           if ( a4 ) /*0x695154*/
-            Network::UpdateLatencyDisplay((int)&stru_AC4B48.__pad_2F4[284], 0, 100.0, NAN); /*0x69516c*/
+            ((Network *)(int)&stru_AC4B48.__pad_2F4[284])->UpdateLatencyDisplay( 0, 100.0, NAN); /*0x69516c*/
 LABEL_115:
           v42 = v47; /*0x695171*/
           goto LABEL_116; /*0x695171*/
@@ -993,7 +993,7 @@ LABEL_115:
         if ( !a4 ) /*0x6950a8*/
           goto LABEL_70; /*0x6950a8*/
         v50 = v48 / v26; /*0x6950c5*/
-        Network::UpdateLatencyDisplay((int)&stru_AC4B48.__pad_2F4[284], 0, (double)(v48 / v26), NAN); /*0x6950d2*/
+        ((Network *)(int)&stru_AC4B48.__pad_2F4[284])->UpdateLatencyDisplay( 0, (double)(v48 / v26), NAN); /*0x6950d2*/
       }
     }
     MessageLoop(); /*0x694dbd*/
@@ -1057,7 +1057,7 @@ LABEL_115:
         if ( a4 ) /*0x694f63*/
         {
           v50 = v48 / v26; /*0x694f80*/
-          Network::UpdateLatencyDisplay((int)&stru_AC4B48.__pad_2F4[284], 0, (double)(v48 / v26), NAN); /*0x694f8d*/
+          ((Network *)(int)&stru_AC4B48.__pad_2F4[284])->UpdateLatencyDisplay( 0, (double)(v48 / v26), NAN); /*0x694f8d*/
         }
       }
       goto LABEL_70; /*0x694f92*/
@@ -1071,7 +1071,7 @@ LABEL_115:
   Debug::Log(); /*0x695114*/
   v42 = 1; /*0x695125*/
   if ( a4 ) /*0x695127*/
-    Network::UpdateLatencyDisplay((int)&stru_AC4B48.__pad_2F4[284], 0, 100.0, NAN); /*0x69513f*/
+    ((Network *)(int)&stru_AC4B48.__pad_2F4[284])->UpdateLatencyDisplay( 0, 100.0, NAN); /*0x69513f*/
 LABEL_116:
   if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x69517c*/
     IPXManagerClass::destroyConnection((IPXManagerClass *)&stru_A8E960.nextScenario[96]); /*0x695183*/

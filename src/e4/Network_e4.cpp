@@ -609,8 +609,8 @@ LABEL_25:
                 if ( ++v38 >= MEMORY[0xA8DA84] ) /*0x48da9f*/
                   goto LABEL_95; /*0x48da9f*/
               }
-              Network::UpdateLatencyDisplay( /*0x48dabd*/
-                (int)&g_UIManager,
+              ((Network *) /*0x48dabd*/
+                (int)&g_UIManager)->UpdateLatencyDisplay(
                 v38,
                 (double)*(int *)&DataGlobal_A8D667,
                 NAN);

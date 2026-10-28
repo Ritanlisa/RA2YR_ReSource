@@ -1232,7 +1232,7 @@ char Scenario::LoadWithProgress(void *a1, void *a2_x)
           do /*0x684bd2*/
           {
             for ( i = 0; i < *(int *)&stru_A8D804.__pad_3D[579]; ++i ) /*0x684b97*/
-              Network::UpdateLatencyDisplay((int)&stru_AC4B48.__pad_2F4[284], i, 100.0, NAN); /*0x684bae*/
+              ((Network *)(int)&stru_AC4B48.__pad_2F4[284])->UpdateLatencyDisplay( i, 100.0, NAN); /*0x684bae*/
             Progress::GetAverage((Progress *)&stru_AC4B48.__pad_2F4[284]); /*0x684bc2*/
             __asm /*0x684bc7*/
             {

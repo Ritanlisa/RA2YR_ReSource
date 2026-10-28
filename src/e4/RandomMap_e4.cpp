@@ -3622,7 +3622,7 @@ AbstractClass * * RandomMap::Generate(char a2, HWND hDlg, void *a3)
   if ( LOBYTE(dword_A8B230[381].ptr_4) ) /*0x598b1e*/
     ((Multiplayer *)&dword_A8B238)->ShowProgress(154); /*0x598b30*/
   else
-    Network::UpdateLatencyDisplay((int)&stru_AC4B48.__pad_2F4[284], 0, 55.0, NAN); /*0x598b4b*/
+    ((Network *)(int)&stru_AC4B48.__pad_2F4[284])->UpdateLatencyDisplay( 0, 55.0, NAN); /*0x598b4b*/
   if ( off_82AF14 ) /*0x598b57*/
     off_82AF14(); /*0x598b59*/
   if ( a2 ) /*0x598b62*/
@@ -3637,7 +3637,7 @@ AbstractClass * * RandomMap::Generate(char a2, HWND hDlg, void *a3)
   if ( LOBYTE(dword_A8B230[381].ptr_4) ) /*0x598ba4*/
     ((Multiplayer *)&dword_A8B238)->ShowProgress(159); /*0x598bb6*/
   else
-    Network::UpdateLatencyDisplay((int)&stru_AC4B48.__pad_2F4[284], 0, 60.0, NAN); /*0x598bd1*/
+    ((Network *)(int)&stru_AC4B48.__pad_2F4[284])->UpdateLatencyDisplay( 0, 60.0, NAN); /*0x598bd1*/
   if ( off_82AF14 ) /*0x598bdd*/
     off_82AF14(); /*0x598bdf*/
   if ( a2 ) /*0x598be8*/
@@ -3691,7 +3691,7 @@ AbstractClass * * RandomMap::Generate(char a2, HWND hDlg, void *a3)
   if ( LOBYTE(dword_A8B230[381].ptr_4) ) /*0x598d07*/
     ((Multiplayer *)&dword_A8B238)->ShowProgress(164); /*0x598d19*/
   else
-    Network::UpdateLatencyDisplay((int)&stru_AC4B48.__pad_2F4[284], 0, 65.0, NAN); /*0x598d34*/
+    ((Network *)(int)&stru_AC4B48.__pad_2F4[284])->UpdateLatencyDisplay( 0, 65.0, NAN); /*0x598d34*/
   if ( off_82AF14 ) /*0x598d40*/
     off_82AF14(); /*0x598d42*/
   Debug::Log(); /*0x598d49*/
@@ -3707,7 +3707,7 @@ AbstractClass * * RandomMap::Generate(char a2, HWND hDlg, void *a3)
   if ( LOBYTE(dword_A8B230[381].ptr_4) ) /*0x598d8d*/
     ((Multiplayer *)&dword_A8B238)->ShowProgress(169); /*0x598d9f*/
   else
-    Network::UpdateLatencyDisplay((int)&stru_AC4B48.__pad_2F4[284], 0, 70.0, NAN); /*0x598dba*/
+    ((Network *)(int)&stru_AC4B48.__pad_2F4[284])->UpdateLatencyDisplay( 0, 70.0, NAN); /*0x598dba*/
   if ( off_82AF14 ) /*0x598dc6*/
     off_82AF14(); /*0x598dc8*/
   if ( a2 ) /*0x598dd1*/
@@ -3733,7 +3733,7 @@ AbstractClass * * RandomMap::Generate(char a2, HWND hDlg, void *a3)
   if ( LOBYTE(dword_A8B230[381].ptr_4) ) /*0x598e6c*/
     ((Multiplayer *)&dword_A8B238)->ShowProgress(174); /*0x598e7e*/
   else
-    Network::UpdateLatencyDisplay((int)&stru_AC4B48.__pad_2F4[284], 0, 75.0, NAN); /*0x598e99*/
+    ((Network *)(int)&stru_AC4B48.__pad_2F4[284])->UpdateLatencyDisplay( 0, 75.0, NAN); /*0x598e99*/
   Debug::Log(); /*0x598ea3*/
   do /*0x598ebd*/
   {
@@ -3806,7 +3806,7 @@ AbstractClass * * RandomMap::Generate(char a2, HWND hDlg, void *a3)
   if ( LOBYTE(dword_A8B230[381].ptr_4) ) /*0x598fff*/
     ((Multiplayer *)&dword_A8B238)->ShowProgress(179); /*0x599011*/
   else
-    Network::UpdateLatencyDisplay((int)&stru_AC4B48.__pad_2F4[284], 0, 80.0, NAN); /*0x59902c*/
+    ((Network *)(int)&stru_AC4B48.__pad_2F4[284])->UpdateLatencyDisplay( 0, 80.0, NAN); /*0x59902c*/
   if ( off_82AF14 ) /*0x599038*/
     off_82AF14(); /*0x59903a*/
   if ( a2 ) /*0x599043*/
@@ -3826,7 +3826,7 @@ AbstractClass * * RandomMap::Generate(char a2, HWND hDlg, void *a3)
   if ( LOBYTE(dword_A8B230[381].ptr_4) ) /*0x5990a4*/
     ((Multiplayer *)&dword_A8B238)->ShowProgress(184); /*0x5990b6*/
   else
-    Network::UpdateLatencyDisplay((int)&stru_AC4B48.__pad_2F4[284], 0, 85.0, NAN); /*0x5990d1*/
+    ((Network *)(int)&stru_AC4B48.__pad_2F4[284])->UpdateLatencyDisplay( 0, 85.0, NAN); /*0x5990d1*/
   if ( off_82AF14 ) /*0x5990dd*/
     off_82AF14(); /*0x5990df*/
   if ( a2 ) /*0x5990e8*/
@@ -3854,7 +3854,7 @@ AbstractClass * * RandomMap::Generate(char a2, HWND hDlg, void *a3)
   if ( LOBYTE(dword_A8B230[381].ptr_4) ) /*0x59918f*/
     ((Multiplayer *)&dword_A8B238)->ShowProgress(189); /*0x5991a1*/
   else
-    Network::UpdateLatencyDisplay((int)&stru_AC4B48.__pad_2F4[284], 0, 90.0, NAN); /*0x5991bc*/
+    ((Network *)(int)&stru_AC4B48.__pad_2F4[284])->UpdateLatencyDisplay( 0, 90.0, NAN); /*0x5991bc*/
   if ( off_82AF14 ) /*0x5991c8*/
     off_82AF14(); /*0x5991ca*/
   if ( a2 ) /*0x5991d3*/
@@ -3893,7 +3893,7 @@ AbstractClass * * RandomMap::Generate(char a2, HWND hDlg, void *a3)
   if ( LOBYTE(dword_A8B230[381].ptr_4) ) /*0x5992c1*/
     ((Multiplayer *)&dword_A8B238)->ShowProgress(194); /*0x5992d3*/
   else
-    Network::UpdateLatencyDisplay((int)&stru_AC4B48.__pad_2F4[284], 0, 95.0, NAN); /*0x5992ee*/
+    ((Network *)(int)&stru_AC4B48.__pad_2F4[284])->UpdateLatencyDisplay( 0, 95.0, NAN); /*0x5992ee*/
   if ( off_82AF14 ) /*0x5992fa*/
     off_82AF14(); /*0x5992fc*/
   if ( a2 ) /*0x599305*/
@@ -3955,7 +3955,7 @@ AbstractClass * * RandomMap::Generate(char a2, HWND hDlg, void *a3)
   if ( LOBYTE(dword_A8B230[381].ptr_4) ) /*0x59947e*/
     ((Multiplayer *)&dword_A8B238)->ShowProgress(199); /*0x599490*/
   else
-    Network::UpdateLatencyDisplay((int)&stru_AC4B48.__pad_2F4[284], 0, 100.0, NAN); /*0x5994ab*/
+    ((Network *)(int)&stru_AC4B48.__pad_2F4[284])->UpdateLatencyDisplay( 0, 100.0, NAN); /*0x5994ab*/
   Debug::Log(); /*0x5994b5*/
   if ( v38 ) /*0x5994c3*/
   {
@@ -3965,7 +3965,7 @@ AbstractClass * * RandomMap::Generate(char a2, HWND hDlg, void *a3)
     if ( LOBYTE(dword_A8B230[381].ptr_4) ) /*0x5994ea*/
       ((Multiplayer *)&dword_A8B238)->ShowProgress(99); /*0x5994f9*/
     else
-      Network::UpdateLatencyDisplay((int)&stru_AC4B48.__pad_2F4[284], 0, 0.0, NAN); /*0x599510*/
+      ((Network *)(int)&stru_AC4B48.__pad_2F4[284])->UpdateLatencyDisplay( 0, 0.0, NAN); /*0x599510*/
     VtableStub::sub_643E70(&stru_AC4B48.__pad_2F4[284]); /*0x59951a*/
   }
 
@@ -4128,7 +4128,7 @@ AbstractClass * * RandomMap::SetupTheater(char a2)
   INIClass::SetDouble(v81.__pad_0, aLighting, aIonground, 0.0); /*0x5999c7*/
   INIClass::SetDouble(v81.__pad_0, aLighting, aIonlevel, 0.0); /*0x5999dc*/
   if ( !LOBYTE(dword_A8B230[381].ptr_4) ) /*0x5999e7*/
-    Network::UpdateLatencyDisplay((int)&stru_AC4B48.__pad_2F4[284], 0, 1.0, NAN); /*0x599a03*/
+    ((Network *)(int)&stru_AC4B48.__pad_2F4[284])->UpdateLatencyDisplay( 0, 1.0, NAN); /*0x599a03*/
   if ( off_82AF14 ) /*0x599a0f*/
     off_82AF14(); /*0x599a11*/
   BuildingClass::FreeUpgradeQueue(); /*0x599a13*/
@@ -4167,7 +4167,7 @@ AbstractClass * * RandomMap::SetupTheater(char a2)
   if ( LOBYTE(dword_A8B230[381].ptr_4) ) /*0x599b59*/
     ((Multiplayer *)&dword_A8B238)->ShowProgress(101); /*0x599b68*/
   else
-    Network::UpdateLatencyDisplay((int)&stru_AC4B48.__pad_2F4[284], 0, 2.0, NAN); /*0x599b83*/
+    ((Network *)(int)&stru_AC4B48.__pad_2F4[284])->UpdateLatencyDisplay( 0, 2.0, NAN); /*0x599b83*/
   v20 = *&v17->ptr_178; /*0x599b8e*/
   v21 = v17->u32_38; /*0x599b94*/
   uniqueId = dword_A8B230[130].uniqueId; /*0x599b99*/
@@ -4252,7 +4252,7 @@ LABEL_59:
   if ( LOBYTE(dword_A8B230[381].ptr_4) ) /*0x599cef*/
     ((Multiplayer *)&dword_A8B238)->ShowProgress(104); /*0x599cfe*/
   else
-    Network::UpdateLatencyDisplay((int)&stru_AC4B48.__pad_2F4[284], 0, 5.0, NAN); /*0x599d19*/
+    ((Network *)(int)&stru_AC4B48.__pad_2F4[284])->UpdateLatencyDisplay( 0, 5.0, NAN); /*0x599d19*/
   if ( off_82AF14 ) /*0x599d25*/
     off_82AF14(); /*0x599d27*/
   if ( v69 ) /*0x599d2d*/
@@ -4275,7 +4275,7 @@ LABEL_59:
   if ( LOBYTE(dword_A8B230[381].ptr_4) ) /*0x599d9a*/
     ((Multiplayer *)&dword_A8B238)->ShowProgress(109); /*0x599da9*/
   else
-    Network::UpdateLatencyDisplay((int)&stru_AC4B48.__pad_2F4[284], 0, 10.0, NAN); /*0x599dc4*/
+    ((Network *)(int)&stru_AC4B48.__pad_2F4[284])->UpdateLatencyDisplay( 0, 10.0, NAN); /*0x599dc4*/
   for ( i = dword_8B4118; dword_8B4118 > 0; i = dword_8B4118 ) /*0x599dd0*/
   {
     v33 = *((unsigned int *)dword_8B410C + i - 1); /*0x599dd8*/
@@ -4323,14 +4323,14 @@ LABEL_59:
   if ( LOBYTE(dword_A8B230[381].ptr_4) ) /*0x599ec9*/
     ((Multiplayer *)&dword_A8B238)->ShowProgress(114); /*0x599ed8*/
   else
-    Network::UpdateLatencyDisplay((int)&stru_AC4B48.__pad_2F4[284], 0, 15.0, NAN); /*0x599ef3*/
+    ((Network *)(int)&stru_AC4B48.__pad_2F4[284])->UpdateLatencyDisplay( 0, 15.0, NAN); /*0x599ef3*/
   MapClass::ProcessRegion((MapClass *)&dword_87F7E8); /*0x599efd*/
   Terrain::ConnectivityGraph((Terrain *)&dword_87F7E8); /*0x599f07*/
   MapClass::BuildSubzones((MapClass *)&dword_87F7E8); /*0x599f11*/
   if ( LOBYTE(dword_A8B230[381].ptr_4) ) /*0x599f1c*/
     ((Multiplayer *)&dword_A8B238)->ShowProgress(119); /*0x599f2b*/
   else
-    Network::UpdateLatencyDisplay((int)&stru_AC4B48.__pad_2F4[284], 0, 20.0, NAN); /*0x599f46*/
+    ((Network *)(int)&stru_AC4B48.__pad_2F4[284])->UpdateLatencyDisplay( 0, 20.0, NAN); /*0x599f46*/
   if ( off_82AF14 ) /*0x599f52*/
     off_82AF14(); /*0x599f54*/
   ScenarioClass::ClearAllWaypoints((char *)dword_A8B230); /*0x599f5c*/
@@ -4347,7 +4347,7 @@ LABEL_59:
   if ( LOBYTE(dword_A8B230[381].ptr_4) ) /*0x59a01c*/
     ((Multiplayer *)&dword_A8B238)->ShowProgress(124); /*0x59a02b*/
   else
-    Network::UpdateLatencyDisplay((int)&stru_AC4B48.__pad_2F4[284], 0, 25.0, NAN); /*0x59a046*/
+    ((Network *)(int)&stru_AC4B48.__pad_2F4[284])->UpdateLatencyDisplay( 0, 25.0, NAN); /*0x59a046*/
   if ( off_82AF14 ) /*0x59a052*/
     off_82AF14(); /*0x59a054*/
   v45 = LODWORD(v75[0]); /*0x59a061*/
@@ -4360,7 +4360,7 @@ LABEL_59:
   if ( LOBYTE(dword_A8B230[381].ptr_4) ) /*0x59a08f*/
     ((Multiplayer *)&dword_A8B238)->ShowProgress(129); /*0x59a0a1*/
   else
-    Network::UpdateLatencyDisplay((int)&stru_AC4B48.__pad_2F4[284], 0, 30.0, NAN); /*0x59a0bc*/
+    ((Network *)(int)&stru_AC4B48.__pad_2F4[284])->UpdateLatencyDisplay( 0, 30.0, NAN); /*0x59a0bc*/
   if ( off_82AF14 ) /*0x59a0c8*/
     off_82AF14(); /*0x59a0ca*/
   v46 = v76; /*0x59a0cc*/
@@ -4372,7 +4372,7 @@ LABEL_59:
   if ( LOBYTE(dword_A8B230[381].ptr_4) ) /*0x59a10d*/
     ((Multiplayer *)&dword_A8B238)->ShowProgress(134); /*0x59a11f*/
   else
-    Network::UpdateLatencyDisplay((int)&stru_AC4B48.__pad_2F4[284], 0, 35.0, NAN); /*0x59a13a*/
+    ((Network *)(int)&stru_AC4B48.__pad_2F4[284])->UpdateLatencyDisplay( 0, 35.0, NAN); /*0x59a13a*/
   v47 = (void (*)())off_82AF14; /*0x59a13f*/
   if ( off_82AF14 ) /*0x59a146*/
   {
@@ -4437,7 +4437,7 @@ LABEL_153:
   if ( LOBYTE(dword_A8B230[381].ptr_4) ) /*0x59a2a9*/
     ((Multiplayer *)&dword_A8B238)->ShowProgress(139); /*0x59a2bd*/
   else
-    Network::UpdateLatencyDisplay((int)&stru_AC4B48.__pad_2F4[284], 0, 40.0, NAN); /*0x59a2d8*/
+    ((Network *)(int)&stru_AC4B48.__pad_2F4[284])->UpdateLatencyDisplay( 0, 40.0, NAN); /*0x59a2d8*/
   if ( off_82AF14 ) /*0x59a2e4*/
     off_82AF14(); /*0x59a2e6*/
   if ( dword_ABED10 ) /*0x59a2ef*/
@@ -4501,7 +4501,7 @@ LABEL_153:
   if ( LOBYTE(dword_A8B230[381].ptr_4) ) /*0x59a3e3*/
     ((Multiplayer *)&dword_A8B238)->ShowProgress(144); /*0x59a3f5*/
   else
-    Network::UpdateLatencyDisplay((int)&stru_AC4B48.__pad_2F4[284], 0, 45.0, NAN); /*0x59a410*/
+    ((Network *)(int)&stru_AC4B48.__pad_2F4[284])->UpdateLatencyDisplay( 0, 45.0, NAN); /*0x59a410*/
   if ( off_82AF14 ) /*0x59a41c*/
     off_82AF14(); /*0x59a41e*/
   dword_ABED14 = 0; /*0x59a426*/
@@ -4563,7 +4563,7 @@ LABEL_153:
   if ( LOBYTE(dword_A8B230[381].ptr_4) ) /*0x59a5f8*/
     ((Multiplayer *)&dword_A8B238)->ShowProgress(149); /*0x59a60a*/
   else
-    Network::UpdateLatencyDisplay((int)&stru_AC4B48.__pad_2F4[284], 0, 50.0, NAN); /*0x59a625*/
+    ((Network *)(int)&stru_AC4B48.__pad_2F4[284])->UpdateLatencyDisplay( 0, 50.0, NAN); /*0x59a625*/
   if ( !wcslen((const wchar_t *)&v52->__pad_078) ) /*0x59a62e*/
   {
     StringCSF = GetStringCSF(aTxtRandomMapDe, 0, aDRa2mdpostMapg, 6746); /*0x59a64b*/

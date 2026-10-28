@@ -66,7 +66,7 @@ int Event::Dispatch(void *a1_1, void *a2_1, void *a3_1, void *a4_1, void *a5_1)
       do /*0x48d15f*/
       {
         if ( v2[0] == 108 && v3[0] != dword_A8DB30 ) /*0x48d129*/
-          Network::UpdateLatencyDisplay((int)dword_AC4F58, 1, (double)*(int *)&v3[1], NAN); /*0x48d144*/
+          ((Network *)(int)dword_AC4F58)->UpdateLatencyDisplay( 1, (double)*(int *)&v3[1], NAN); /*0x48d144*/
       }
       while ( ObjectTypeClass::CreateInstance((int)&unk_A8EA70, (int)v2, (int)v1) > 0 ); /*0x48d15f*/
     }

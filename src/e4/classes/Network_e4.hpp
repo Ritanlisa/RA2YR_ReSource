@@ -117,7 +117,7 @@ struct Network {
     unsigned int u32_3F568;  // 0x3F568
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
-    static unsigned int UpdateLatencyDisplay(int p0, double p1, double p2);  // x4:signals@0x643c50
+    unsigned int UpdateLatencyDisplay(int p0, double p1, double p2);  // x4:signals@0x643c50
     int SendBeaconDelete(int a2, int a3);  // 0x4311C0
     int SendBeacon(wchar_t *aP1, int a3, int a4, char a5);  // 0x431450
     int Dispatch(void *a1_1, void *a2_1, void *a3_1, void *a4_1, void *a5_1);  // 0x48D1E0

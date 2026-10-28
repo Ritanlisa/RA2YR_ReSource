@@ -284,7 +284,7 @@ int Multiplayer::ShowProgress(int a2)
       fnstsw ax
     }
     if ( (result & 0x100) != 0 ) /*0x69aef1*/
-      result = Network::UpdateLatencyDisplay((int)&stru_AC4B48.__pad_2F4[284], 0, v15, NAN); /*0x69af0a*/
+      result = ((Network *)(int)&stru_AC4B48.__pad_2F4[284])->UpdateLatencyDisplay( 0, v15, NAN); /*0x69af0a*/
     if ( this->u32_284C != 1 ) /*0x69af16*/
     {
       Ticks = Timer::GetTicks(); /*0x69af26*/
