@@ -1950,8 +1950,8 @@ int JumpjetLocomotionClass::SmoothObjectPlacement(int a1, int a2, int a3, int a4
       }
       FootClass *v15 = v4->Owner; // ecx /*0x54b421*/
       if ( v15->queuedMission != 7 && (*((int (**)(FootClass *))v15->ptr_0 + 97))(v15) != 7 ) /*0x54b438*/
-        v4->Owner->movementDestination = (AbstractClass *)Coord::To_Cell( /*0x54b44b*/
-                                                            (Coord *)&DataGlobal_87F7E8,
+        v4->Owner->movementDestination = (AbstractClass *)(/*0x54b44b*/
+                                                            (Coord *)&DataGlobal_87F7E8)->To_Cell(
                                                             &v4->__pad_39[3]);
       (*((unsigned char *)&(v4->DestinationCoords[2]))) = 1; /*0x54b451*/
       result = *(unsigned int *)&v4->IsMoving; /*0x54b455*/

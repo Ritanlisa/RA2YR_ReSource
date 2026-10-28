@@ -404,7 +404,7 @@ int Movement::CalcVelocity(double *a1, Vector3 *a2, double a3, void **a4, int16_
   v90 = *v62; /*0x5b26c0*/
   LODWORD(v91) = *((unsigned int *)v62 + 2); /*0x5b26d8*/
   GroundHeight = Cell::GetGroundHeight(&v90); /*0x5b26eb*/
-  if ( (Coord::To_Cell((Coord *)&dword_87F7E8, &v90)->flags & 0x100) != 0 ) /*0x5b26fb*/
+  if ( (((Coord *)&dword_87F7E8)->To_Cell( &v90)->flags & 0x100) != 0 ) /*0x5b26fb*/
     GroundHeight += dword_ABEF44; /*0x5b26fd*/
   v64 = SLODWORD(v89) / 256; /*0x5b2713*/
   if ( a7 || a8 ) /*0x5b271f*/

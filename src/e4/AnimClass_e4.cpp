@@ -92,7 +92,7 @@ int AnimClass::Destruct(AnimClass * a2, void *a2_2)
       v13[1] = *(unsigned int *)a2->__pad_A0; /*0x422991*/
       v13[2] = a2->q0A4; /*0x422998*/
       CellClass *v6; // eax
-      v6 = (gamemd::CellClass *)(Coord::To_Cell((Coord *)&DataGlobal_87F7E8, v13)); /*0x4229a1*/
+      v6 = (gamemd::CellClass *)(((Coord *)&DataGlobal_87F7E8)->To_Cell( v13)); /*0x4229a1*/
       v6->flags[0] &= ~0x20000u; /*0x4229b7*/
     }
     if ( (unsigned __int8)((ObjectClass *)a2)->Undeploy() ) /*0x4229bb*/
@@ -474,7 +474,7 @@ LABEL_47:
     if ( v25[2].__pad_C[209] ) /*0x42314f*/
       goto LABEL_78; /*0x423157*/
     v26 = (unsigned int *)(*((int (**)(AnimClass *, int *))this->AnimClass_field_0x0 + 43))(this, &v108); /*0x423166*/
-    v27 = *(__int16 *)Coord::To_Cell((Coord *)&DataGlobal_87F7E8, v26)->CellClass_field_10C; /*0x423177*/
+    v27 = *(__int16 *)((Coord *)&DataGlobal_87F7E8)->To_Cell( v26)->CellClass_field_10C; /*0x423177*/
     goto LABEL_77; /*0x42317e*/
   }
   if ( this->q196 ) /*0x4231f3*/
@@ -483,7 +483,7 @@ LABEL_47:
     LOWORD(v91) = *v30 / 256; /*0x423220*/
     HIWORD(v91) = v30[1] / 256; /*0x423238*/
     *(float *)v100 = v91; /*0x423241*/
-    v31 = (int *)(((CellCoord *)&DataGlobal_87F7E8)->To_CellObj((__int16 *)v100); /*0x423250*/
+    v31 = (int *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj((__int16 *)v100); /*0x423250*/
     if ( !v31[13] ) /*0x423252*/
       TacticalClass::SetView(v31, 0, 0x10000, 0, 1000, 1000, 1000); /*0x423273*/
     v32 = this->u32_C8; /*0x42327b*/
@@ -508,7 +508,7 @@ LABEL_47:
       LOWORD(v92) = *v33 / 256; /*0x42331d*/
       HIWORD(v92) = v33[1] / 256; /*0x423336*/
       *(float *)v100 = v92; /*0x423343*/
-      v27 = *((__int16 *)(((CellCoord *)&DataGlobal_87F7E8)->To_CellObj((__int16 *)v100) + 133); /*0x42334d*/
+      v27 = *((__int16 *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj((__int16 *)v100) + 133); /*0x42334d*/
 LABEL_77:
       v106 = v27; /*0x423354*/
     }
@@ -548,7 +548,7 @@ LABEL_78:
   if ( !v40 ) /*0x4233fc*/
     goto LABEL_99; /*0x4233fc*/
   v42 = (unsigned int *)(*((int (**)(AnimClass *, int *))this->AnimClass_field_0x0 + 18))(this, &v108); /*0x42340b*/
-  v43 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, v42); /*0x423414*/
+  v43 = ((Coord *)&DataGlobal_87F7E8)->To_Cell( v42); /*0x423414*/
   v44 = Cell::IsBridge((Cell *)v43); /*0x42341b*/
   v93 = v44; /*0x423422*/
   if ( !v44 ) /*0x423426*/
@@ -641,7 +641,7 @@ LABEL_99:
   (v94) = ((v94) & ~0xFFFF) | ((*v60 / 256) & 0xFFFF); /*0x4235ef*/
   HIWORD(v94) = v60[1] / 256; /*0x423608*/
   *(unsigned int *)v101 = v94; /*0x423615*/
-  v61 = (CellClass *)(((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v101); /*0x42361a*/
+  v61 = (CellClass *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v101); /*0x42361a*/
   if ( (unsigned __int8)CellClass::QuickPassable(v61) ) /*0x423621*/
   {
     v41 = 0.0; /*0x42362a*/
@@ -1543,7 +1543,7 @@ char AnimClass::ProcessAreaEffect(AnimClass * a1)
   char v1; // bl
   v1 = ((Input *)a1)->OffsetToDirection(); /*0x426314*/
   CellClass *v2; // esi
-  v2 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, a1); /*0x426321*/
+  v2 = ((Coord *)&DataGlobal_87F7E8)->To_Cell( a1); /*0x426321*/
   if ( Cell::GetGroundHeight((unsigned int *)(a1)) + Map_MaxHeight > (int)a1->ptr_8 ) /*0x426335*/
   {
     result = ~(1 << v1) & (*((unsigned char *)&(v2->occupationFlags))); /*0x426370*/

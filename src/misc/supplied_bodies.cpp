@@ -1539,7 +1539,7 @@ char DropPod::ProcessLanding() {
   v56 = *v4; /*0x4ce87b*/
   v57 = v4[1]; /*0x4ce887*/
   GroundHeight = v4[2]; /*0x4ce88e*/
-  if ( (Coord::To_Cell((Coord *)&dword_87F7E8, &v56)->flags & 0x100) != 0 && v3 >= dword_8B3CAC ) /*0x4ce8ae*/
+  if ( (((Coord *)&dword_87F7E8)->To_Cell( &v56)->flags & 0x100) != 0 && v3 >= dword_8B3CAC ) /*0x4ce8ae*/
   {
     v3 -= dword_8B3CAC; /*0x4ce8b0*/
     v50 = v3; /*0x4ce8b2*/
@@ -1588,7 +1588,7 @@ char DropPod::ProcessLanding() {
     if ( v9 ) /*0x4ce97e*/
       v53 = (unsigned __int16 *)(*(int (**)(int))(*(unsigned int *)v9 + 12))(v9); /*0x4ce986*/
   }
-  v11 = Coord::To_Cell((Coord *)&dword_87F7E8, &this->u32_1C); /*0x4ce998*/
+  v11 = ((Coord *)&dword_87F7E8)->To_Cell( &this->u32_1C); /*0x4ce998*/
   if ( !this->u32_18 ) /*0x4ce99f*/
     goto LABEL_26; /*0x4ce99f*/
   v12 = Cell::IsBridge((Cell *)v11); /*0x4ce9a3*/
@@ -1657,7 +1657,7 @@ LABEL_26:
   v57 = ((short)(((v15) >> 16) & 0xFFFF) << 8) + 128; /*0x4cea9e*/
   v56 = ((__int16)v15 << 8) + 128; /*0x4ceaa8*/
   GroundHeight = Cell::GetGroundHeight(&v56); /*0x4ceab1*/
-  if ( (*((unsigned int *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)&v52) + 80) & 0x100) != 0 ) /*0x4ceacd*/
+  if ( (*((unsigned int *)((CellCoord *)&dword_87F7E8)->To_CellObj((__int16 *)&v52) + 80) & 0x100) != 0 ) /*0x4ceacd*/
     GroundHeight += dword_8B3CAC; /*0x4ceadb*/
   (*(void (**)(DropPod *, int, int, int))(this->u32_4 + 68))(&this->u32_4, v56, v57, GroundHeight); /*0x4ceaff*/
 LABEL_32:
@@ -1709,7 +1709,7 @@ LABEL_32:
       v56 = *v29; /*0x4cecb1*/
       v57 = v29[1]; /*0x4cecbd*/
       GroundHeight = v29[2]; /*0x4cecc4*/
-      if ( (Coord::To_Cell((Coord *)&dword_87F7E8, &v56)->flags & 0x100) != 0 ) /*0x4cecdb*/
+      if ( (((Coord *)&dword_87F7E8)->To_Cell( &v56)->flags & 0x100) != 0 ) /*0x4cecdb*/
       {
         v30 = Cell::GetGroundHeight(&v56); /*0x4cece7*/
         if ( GroundHeight >= dword_8B3CAC + v30 ) /*0x4cecfa*/
@@ -1735,7 +1735,7 @@ LABEL_32:
           LOWORD(v53) = LOWORD(dword_89F688[i & 7]) + *(unsigned short *)(this->u32_C + 1372); /*0x4ced87*/
           HIWORD(v53) = v33; /*0x4ced8d*/
           *(unsigned int *)v54 = v53; /*0x4ced9b*/
-          v34 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v54); /*0x4ced9f*/
+          v34 = ((CellCoord *)&dword_87F7E8)->To_CellObj(v54); /*0x4ced9f*/
           --v34[290]; /*0x4cedb0*/
         }
         v35 = 0; /*0x4cedcd*/
@@ -1748,7 +1748,7 @@ LABEL_32:
           LOWORD(v53) = LOWORD(dword_89F688[v35 & 7]) + *(unsigned short *)(this->u32_C + 1372); /*0x4cedfb*/
           HIWORD(v53) = v36; /*0x4cee01*/
           *(unsigned int *)v54 = v53; /*0x4cee0f*/
-          v37 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v54); /*0x4cee13*/
+          v37 = ((CellCoord *)&dword_87F7E8)->To_CellObj(v54); /*0x4cee13*/
           ++v35; /*0x4cee20*/
           ++v37[290]; /*0x4cee24*/
         }
@@ -1766,7 +1766,7 @@ LABEL_32:
           LOWORD(v53) = LOWORD(dword_89F688[v38 & 7]) + *(unsigned short *)(this->u32_C + 1372); /*0x4cee6e*/
           HIWORD(v53) = v39; /*0x4cee74*/
           *(unsigned int *)v54 = v53; /*0x4cee82*/
-          v40 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v54); /*0x4cee86*/
+          v40 = ((CellCoord *)&dword_87F7E8)->To_CellObj(v54); /*0x4cee86*/
           ++v38; /*0x4cee93*/
           ++v40[290]; /*0x4cee97*/
         }
@@ -1779,7 +1779,7 @@ LABEL_32:
         || (LOWORD(v53) = this->u32_1C / 256,
             HIWORD(v53) = this->u32_20 / 256,
             *(unsigned int *)v54 = v53,
-            v44 = (Cell *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v54),
+            v44 = (Cell *)((CellCoord *)&dword_87F7E8)->To_CellObj(v54),
             v45 = Cell::IsBridge(v44),
             v45 == (unsigned int *)Team::GetMember(this->u32_C, 0)) )
       {
@@ -1850,7 +1850,7 @@ int PathfindingClass::FindPath(unsigned int *a2) {
   }
   else
   {
-    v11 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v23); /*0x4ffbb4*/
+    v11 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v23); /*0x4ffbb4*/
     v12 = (int *)v11->vt_slot_72(v27); /*0x4ffbc5*/
     v9 = *v12; /*0x4ffbc7*/
     v10 = v12[1]; /*0x4ffbc9*/
@@ -1880,7 +1880,7 @@ int PathfindingClass::FindPath(unsigned int *a2) {
   }
   else
   {
-    v19 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v23); /*0x4ffc7b*/
+    v19 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v23); /*0x4ffc7b*/
     v20 = (int *)v19->vt_slot_72(v27); /*0x4ffc89*/
     v24 = *v20; /*0x4ffc8e*/
     v25 = v20[1]; /*0x4ffc95*/
@@ -2050,7 +2050,7 @@ void * BuildingLoadQueue::GetNext() {
   v7 = *(unsigned int *)this->m_Queue; /*0x6e6ed4*/
   v8[0] = v7 % 1000; /*0x6e6ee5*/
   v8[1] = v7 / 1000; /*0x6e6f00*/
-  return CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v8); /*0x6e6ecb*/
+  return ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v8); /*0x6e6ecb*/
 }
 }
 // 0x6E6F20

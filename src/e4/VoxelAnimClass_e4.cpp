@@ -229,7 +229,7 @@ Coord * * VoxelAnimClass::ProcessAnim(int * a2, unsigned int * a3)
     v33 = *&this->__pad_0A0; /*0x749beb*/
     GroundHeight = *&this->q0A4; /*0x749bf2*/
     GroundHeight = Cell::GetGroundHeight((unsigned int *)(&v32)); /*0x749c05*/
-    if ( (Coord::To_Cell((Coord *)&DataGlobal_87F7E8, &v32)->flags[0] & 0x100) == 0 ) /*0x749c1b*/
+    if ( (((Coord *)&DataGlobal_87F7E8)->To_Cell( &v32)->flags[0] & 0x100) == 0 ) /*0x749c1b*/
       goto LABEL_6; /*0x749c1b*/
     v27 = (int)(*&this->location); /*0x749c1f*/
     v28 = *&this->__pad_0A0; /*0x749c26*/
@@ -300,7 +300,7 @@ Coord * * VoxelAnimClass::ProcessAnim(int * a2, unsigned int * a3)
         v27 = (int)(*&this->location); /*0x749e17*/
         v29 = v11; /*0x749e1f*/
         v28 = v12; /*0x749e29*/
-        v13 = (gamemd::CellClass *)(Coord::To_Cell((Coord *)&DataGlobal_87F7E8, &v27)); /*0x749e2d*/
+        v13 = (gamemd::CellClass *)(((Coord *)&DataGlobal_87F7E8)->To_Cell( &v27)); /*0x749e2d*/
         VoxelAnimClass_field_0x10C = this->q10C; /*0x749e32*/
         v15 = *(__int16 *)v13->CellClass_field_10A; /*0x749e38*/
         if ( VoxelAnimClass_field_0x10C ) /*0x749e41*/
@@ -482,7 +482,7 @@ int VoxelAnimClass::VoxelAnimClass_Update()
     v97 = *&v1->location; /*0x749fac*/
     v98 = *&v1->__pad_0A0; /*0x749fbd*/
     v99 = *&v1->q0A4; /*0x749fc4*/
-    v8 = Coord::To_Cell((Coord *)&dword_87F7E8, &v97)->landType == 2; /*0x749fd5*/
+    v8 = ((Coord *)&dword_87F7E8)->To_Cell( &v97)->landType == 2; /*0x749fd5*/
     v101 = *&v1->location; /*0x749fda*/
     v102 = *&v1->__pad_0A0; /*0x749fe1*/
     v9 = *&v1->q0A4; /*0x749fe5*/
@@ -614,7 +614,7 @@ int VoxelAnimClass::VoxelAnimClass_Update()
             LOWORD(v89) = v97 / 256 + LOWORD(dword_89F688[v42]); /*0x74a363*/
             HIWORD(v89) = v98 / 256 + HIWORD(dword_89F688[v42]); /*0x74a372*/
             *(unsigned int *)v92 = v89; /*0x74a381*/
-            v43 = (unsigned __int8 *)(((CellCoord *)&dword_87F7E8)->To_CellObj(v92); /*0x74a38a*/
+            v43 = (unsigned __int8 *)((CellCoord *)&dword_87F7E8)->To_CellObj(v92); /*0x74a38a*/
             if ( (unsigned __int8)((ObjectClass *)(int)v43)->IsCoordValidMap(0) ) /*0x74a390*/
             {
               v44 = (CellClass *)*(&dword_B0F4EC->ptr_0 + FindBuildingByTiberiumType(127)); /*0x74a3b2*/
@@ -713,7 +713,7 @@ int VoxelAnimClass::VoxelAnimClass_Update()
         if ( !v87 ) /*0x74a5ca*/
         {
           v54 = (unsigned int *)Coord::GetCoords(&v101, v86); /*0x74a5db*/
-          v55 = Coord::To_Cell((Coord *)&dword_87F7E8, v54); /*0x74a5eb*/
+          v55 = ((Coord *)&dword_87F7E8)->To_Cell( v54); /*0x74a5eb*/
           if ( (unsigned __int8)((ObjectClass *)(int)v55)->IsCoordValidMap(0) ) /*0x74a5f0*/
           {
             v56 = (CellClass *)*(&dword_B0F4EC->ptr_0 + FindBuildingByTiberiumType(127)); /*0x74a612*/
@@ -795,7 +795,7 @@ int VoxelAnimClass::VoxelAnimClass_Update()
     v97 = *&v1->location; /*0x74a7f9*/
     v98 = *&v1->__pad_0A0; /*0x74a80a*/
     v99 = *&v1->q0A4; /*0x74a811*/
-    if ( Coord::To_Cell((Coord *)&dword_87F7E8, &v97)->landType == 2 ) /*0x74a821*/
+    if ( ((Coord *)&dword_87F7E8)->To_Cell( &v97)->landType == 2 ) /*0x74a821*/
     {
       v1->q140 = 0; /*0x74a823*/
     }
@@ -815,7 +815,7 @@ int VoxelAnimClass::VoxelAnimClass_Update()
         }
       }
       v72 = (unsigned int *)Coord::GetCoords(&v105, v86); /*0x74a88b*/
-      for ( i = (int *)Coord::To_Cell((Coord *)&dword_87F7E8, v72)->firstObject; i; i = (int *)i[12] ) /*0x74a8a3*/
+      for ( i = (int *)((Coord *)&dword_87F7E8)->To_Cell( v72)->firstObject; i; i = (int *)i[12] ) /*0x74a8a3*/
       {
         v74 = i[39]; /*0x74a8af*/
         v102 = i[40]; /*0x74a8b8*/
@@ -1067,7 +1067,7 @@ int VoxelAnimClass::DrawVoxelFrame(int a2, int a3, int a4)
   unsigned int *v5; // eax
   unsigned char v7[12]; // [esp+4h] [ebp-Ch] BYREF
   v5 = (unsigned int *)(*((int (**)(VoxelAnimClass *, unsigned char *))this->VoxelAnimClass_field_0x0 + 18))(this, v7); /*0x749b2f*/
-  if ( (Coord::To_Cell((Coord *)&DataGlobal_87F7E8, v5)->copyFlags & 0x10) != 0 ) /*0x749b44*/
+  if ( (((Coord *)&DataGlobal_87F7E8)->To_Cell( v5)->copyFlags & 0x10) != 0 ) /*0x749b44*/
     this->needsRedraw = 1; /*0x749b46*/
   return ObjectClass::CalcDrawRect((ObjectClass *)this); /*0x749b60*/
 

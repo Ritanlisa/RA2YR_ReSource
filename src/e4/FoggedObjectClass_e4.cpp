@@ -63,7 +63,7 @@ int FoggedObjectClass::InitBuildingFog(unsigned int * a2, int a3, int a4)
   this->u32_34 = *a2; /*0x4d09b4*/
   this->u32_38 = a2[1]; /*0x4d09b9*/
   this->u32_3C = a2[2]; /*0x4d09c4*/
-  this->q050 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, a2)->level; /*0x4d09da*/
+  this->q050 = ((Coord *)&DataGlobal_87F7E8)->To_Cell( a2)->level; /*0x4d09da*/
   this->u32_54 = -1; /*0x4d09dd*/
   this->u32_58 = 0; /*0x4d09e4*/
   FoggedObject::DrawVector_Constructor(&this->q5C, 0, 0); /*0x4d09e7*/
@@ -75,7 +75,7 @@ int FoggedObjectClass::InitBuildingFog(unsigned int * a2, int a3, int a4)
   /* X11: ptr_0 install elided (legacy slot spelling slot, RHS g_var_b5181c) */  /*0x4d0a0c*/
   /* X11: ptr_0 install elided (legacy slot spelling slot, RHS g_var_b5181c) */  /*0x4d0a13*/
   /* X11: ptr_0 install elided (legacy slot spelling slot, RHS g_var_b5181c) */  /*0x4d0a1a*/
-  v5 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, a2); /*0x4d0a2a*/
+  v5 = ((Coord *)&DataGlobal_87F7E8)->To_Cell( a2); /*0x4d0a2a*/
   PlacementRect = BuildingClass::GetPlacementRect((BuildingClass *)v5, v25); /*0x4d0a3b*/
   StartCoords = House::GetStartCoords((House *)v5, v26); /*0x4d0a3d*/
   if ( StartCoords[2] <= 0 || StartCoords[3] <= 0 ) /*0x4d0a4e*/
@@ -198,7 +198,7 @@ int FoggedObjectClass::InitTerrainFog(unsigned int *aP1, int a3, int a4)
   this->House = 0; /*0x4d0c61*/
   this->Cell = 0; /*0x4d0c64*/
   this->q030 = 29; /*0x4d0c67*/
-  v5 = Coord::To_Cell((Coord *)&dword_87F7E8, aP1)->level[0]; /*0x4d0c73*/
+  v5 = ((Coord *)&dword_87F7E8)->To_Cell( aP1)->level[0]; /*0x4d0c73*/
   this->u32_54 = a3; /*0x4d0c85*/
   this->q050 = v5; /*0x4d0c8c*/
   this->u32_58 = a4; /*0x4d0c8f*/
@@ -211,7 +211,7 @@ int FoggedObjectClass::InitTerrainFog(unsigned int *aP1, int a3, int a4)
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_b5181c) */  /*0x4d0cb8*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_b5181c) */  /*0x4d0cbf*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_b5181c) */  /*0x4d0cc6*/
-  v6 = Coord::To_Cell((Coord *)&dword_87F7E8, aP1); /*0x4d0ccd*/
+  v6 = ((Coord *)&dword_87F7E8)->To_Cell( aP1); /*0x4d0ccd*/
   v7 = aP1[1]; /*0x4d0cd4*/
   v8 = aP1[2]; /*0x4d0cd7*/
   v23[0] = *aP1; /*0x4d0cda*/
@@ -362,7 +362,7 @@ AbstractClass * FoggedObjectClass::Constructor(BuildingClass * aP1, FoggedObject
   v49[1] = v5; /*0x4d0f4d*/
   v50 = v6; /*0x4d0f57*/
   v7 = &this->q5C; /*0x4d0f67*/
-  this->q050 = Coord::To_Cell((Coord *)&dword_87F7E8, v49)->level[0]; /*0x4d0f6a*/
+  this->q050 = ((Coord *)&dword_87F7E8)->To_Cell( v49)->level[0]; /*0x4d0f6a*/
   this->u32_54 = -1; /*0x4d0f73*/
   this->u32_58 = 0; /*0x4d0f7a*/
   FoggedObject::DrawVector_Constructor(&this->q5C, 0, 0); /*0x4d0f81*/
@@ -575,7 +575,7 @@ AbstractClass * * FoggedObjectClass::InitDrawRecord(unsigned int * a2)
   v22[0] = a2[39]; /*0x4d13bb*/
   v22[1] = v3; /*0x4d13c9*/
   v23 = v4; /*0x4d13cd*/
-  this->q050 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, v22)->level; /*0x4d13e4*/
+  this->q050 = ((Coord *)&DataGlobal_87F7E8)->To_Cell( v22)->level; /*0x4d13e4*/
   this->u32_54 = -1; /*0x4d13e7*/
   this->u32_58 = 0; /*0x4d13ee*/
   FoggedObject::DrawVector_Constructor(&this->q5C, 0, 0); /*0x4d13f1*/

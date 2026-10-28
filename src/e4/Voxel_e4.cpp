@@ -1227,7 +1227,7 @@ void* Voxel::DrawHelper(IUnknown * aP1)
       {
         if ( (*(int (**)(unsigned int))(*v16 + 44))(*(unsigned int *)(v15 + 1444)) == 6 ) /*0x75c417*/
         {
-          v17 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, aP1); /*0x75c41f*/
+          v17 = ((Coord *)&DataGlobal_87F7E8)->To_Cell( aP1); /*0x75c41f*/
           if ( Cell::IsBridge((Cell *)v17) == v16 ) /*0x75c42d*/
             v39 = 1; /*0x75c42f*/
         }
@@ -1241,17 +1241,17 @@ void* Voxel::DrawHelper(IUnknown * aP1)
         v19 = (unsigned int *)this->u32_C; /*0x75c44b*/
         v35 = 0; /*0x75c44f*/
         v36 = 0; /*0x75c453*/
-        v20 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, aP1); /*0x75c463*/
+        v20 = ((Coord *)&DataGlobal_87F7E8)->To_Cell( aP1); /*0x75c463*/
         if ( Object::FindClosestObjectCell((Object *)v20, &v35, 0, 0) == v19[183] )
         {
           v21 = v19 ? ((*(int (**)(unsigned int *))(*v19 + 44))(v19) == 15 ? (unsigned int)v19 : 0) : 0;
-          v22 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, aP1); /*0x75c49a*/
+          v22 = ((Coord *)&DataGlobal_87F7E8)->To_Cell( aP1); /*0x75c49a*/
           if ( BuildingClass::CheckBridge(*(BuildingClass **)(*(unsigned int *)(this->u32_C + 732) + 728), v21, v22) ) /*0x75c4b0*/
             v39 = 1; /*0x75c4b9*/
         }
       }
     }
-    if ( (Coord::To_Cell((Coord *)&DataGlobal_87F7E8, v38)->flags[0] & 0x100) == 0 /*0x75c513*/
+    if ( (((Coord *)&DataGlobal_87F7E8)->To_Cell( v38)->flags[0] & 0x100) == 0 /*0x75c513*/
       || (v23 = (int *)(this->u32_C + 156),
           v35 = *v23,
           v36 = v23[1],
@@ -1261,14 +1261,14 @@ void* Voxel::DrawHelper(IUnknown * aP1)
     {
       v33 = 0; /*0x75c515*/
     }
-    v25 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, v38); /*0x75c53a*/
+    v25 = ((Coord *)&DataGlobal_87F7E8)->To_Cell( v38); /*0x75c53a*/
     v26 = ObjectPlacement::CalcPosition((ObjectPlacement *)v25, &v35, v38, v39, v33, 0); /*0x75c541*/
     Voxel_field_0x28 = this->u32_28; /*0x75c548*/
     this->u32_28 = *v26; /*0x75c54d*/
     this->u32_2C = v26->ptr_4; /*0x75c552*/
     v31 = this->u32_C; /*0x75c55b*/
     *(unsigned int *)this->__pad_30 = v26->ptr_8; /*0x75c562*/
-    v27 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, this->u32_28); /*0x75c565*/
+    v27 = ((Coord *)&DataGlobal_87F7E8)->To_Cell( this->u32_28); /*0x75c565*/
     if ( !(unsigned __int8)CrateClass::ProcessPickup((CrateClass *)v27, v31) ) /*0x75c56c*/
     {
       v28 = this->u32_C; /*0x75c575*/
@@ -1390,7 +1390,7 @@ CellStruct * * Voxel::renderSection(ObjectClass * aP1)
   int v7; // ecx
   unsigned int *v8; // edx
 
-  v3 = (__int16 *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, aP1); /*0x75f4cd*/
+  v3 = (__int16 *)((CellCoord *)&dword_87F7E8)->To_CellObj(aP1); /*0x75f4cd*/
   v4 = *&this->u32_1F0; /*0x75f4d2*/
   v5 = &this->u32_1F0; /*0x75f4d8*/
   aP1 = v3; /*0x75f4de*/
@@ -2131,7 +2131,7 @@ void* Voxel::FaceBlit()
         if ( *(void **)v36 != v39 ) /*0x761222*/
         {
           *(unsigned int *)v36 = *(unsigned int *)((CellStruct *)&v40)->Set( v13, v12 / 256); /*0x761247*/
-          v14 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v36); /*0x76124b*/
+          v14 = ((CellCoord *)&dword_87F7E8)->To_CellObj(v36); /*0x76124b*/
           v15 = *(unsigned int *)v2->__pad_0; /*0x761250*/
           *(unsigned int *)v38 = v14; /*0x761253*/
           if ( (*(int (**)(Voxel *, __int16 *))(v15 + 16))(v2, v38) == -1 ) /*0x761264*/
@@ -2182,7 +2182,7 @@ void* Voxel::FaceBlit()
                                         (CellStruct *)&v43)->Set(
                                         *(unsigned int *)v49.__pad_0 / 256,
                                         v49.Coord3D_field_0x04 / 256);
-          v23 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v36); /*0x76149c*/
+          v23 = ((CellCoord *)&dword_87F7E8)->To_CellObj(v36); /*0x76149c*/
           v24 = *(unsigned int *)v2->__pad_0; /*0x7614a1*/
           v39 = v23; /*0x7614a4*/
           if ( (*(int (**)(Voxel *, void **))(v24 + 16))(v2, &v39) == -1 ) /*0x7614b5*/

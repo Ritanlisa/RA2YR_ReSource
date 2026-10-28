@@ -1079,7 +1079,7 @@ LABEL_31:
               {
                 HIWORD(v83) = v62 + HIWORD(v77); /*0x4367bd*/
                 *(unsigned int *)v92 = v83; /*0x4367c6*/
-                v63 = (unsigned int *)*((unsigned int *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v92) + 57); /*0x4367d4*/
+                v63 = (unsigned int *)*((unsigned int *)((CellCoord *)&dword_87F7E8)->To_CellObj(v92) + 57); /*0x4367d4*/
                 if ( v63 ) /*0x4367dc*/
                 {
                   do /*0x43688d*/
@@ -2318,7 +2318,7 @@ int SuperWeapon::CreateNukePayload() {
   (*((unsigned short *)&(ppv))) = *v8 / 256; /*0x46b341*/
   (*(((unsigned short *)&(ppv)) + 1)) = v8[1] / 256; /*0x46b35a*/
   *(unsigned int *)ppv = ppv; /*0x46b367*/
-  (*((unsigned int *)&(v26))) = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, ppv); /*0x46b376*/
+  (*((unsigned int *)&(v26))) = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(ppv); /*0x46b376*/
   ppv = 0; /*0x46b385*/
   v9 = (unsigned int *)*((unsigned int *)g_WeaponTypeConfig /*0x46b38d*/
                  + SuperWeaponClass::FindByName((SuperWeaponClass *)&stru_81AF8C.abstractFlags));
@@ -2413,7 +2413,7 @@ int BuildingClass::CheckAdjacentCells() {
             (*((unsigned short *)&(v10))) = v11 + (*((unsigned short *)&(dword_89F688[v7]))); /*0x4854ef*/
             (*(((unsigned short *)&(v10)) + 1)) = (*(((unsigned short *)&(v11)) + 1)) + (*(((unsigned short *)&(dword_89F688[v7])) + 1)); /*0x4854f8*/
             v11 = v10; /*0x485501*/
-            result = (int)CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&v11); /*0x48550b*/
+            result = (int)((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v11); /*0x48550b*/
             v4 = dword_A83D84; /*0x485510*/
           }
           else
@@ -2490,7 +2490,7 @@ namespace gamemd {
 int BuildingClass::updateSellBack(void* aP1, void* aP2) {
   Object *v3; // eax
 
-  v3 = (Object *)CellCoord::To_CellObj((CellCoord *)this, aP1); /*0x4aa29c*/
+  v3 = (Object *)((CellCoord *)this)->To_CellObj(aP1); /*0x4aa29c*/
   return Object::FindObjectCell(v3, aP2, 0); /*0x4aa2a8*/
 }
 // 0x47c5a0
@@ -2934,7 +2934,7 @@ int SuperWeapon::EvaluateAITarget(int v5, void* a2) {
         (v4) = ((v4) & ~0xFF) | ((*(unsigned char *)(*(unsigned int *)(v5 + 40) + 236)) & 0xFF); /*0x4faf35*/
         if ( (unsigned char)v4 )
         {
-          a2 = (__int16 *)CellCoord::To_CellObj(&dword_87F7E8, a2); /*0x4faf5f*/
+          a2 = (__int16 *)((CellCoord *)(&dword_87F7E8))->To_CellObj(a2); /*0x4faf5f*/
           v5 = CellStruct::Equals(&this->u32_5494, &MEMORY[0xA8EF98])
              ? this->q5490
              : this->u32_5494;
@@ -2947,7 +2947,7 @@ int SuperWeapon::EvaluateAITarget(int v5, void* a2) {
           }
           else
           {
-            v9 = CellCoord::To_CellObj(&dword_87F7E8, (__int16 *)&v5); /*0x4fafac*/
+            v9 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((__int16 *)&v5); /*0x4fafac*/
             v10 = (int *)(*(int (**)(void *, char *))(*(unsigned int *)v9 + 72))(v9, v17); /*0x4fafba*/
             v6 = *v10; /*0x4fafbd*/
             v7 = v10[1]; /*0x4fafbf*/
@@ -3366,7 +3366,7 @@ int InfantryClass::ProcessDeployment(void* a1, int a2, int a3, void* a4, int a5,
           v78 = v9->location; /*0x5181d2*/
           v79 = v9->locationY; /*0x5181de*/
           v80 = v9->locationZ; /*0x5181e5*/
-          if ( Coord::To_Cell((Coord *)&dword_87F7E8, &v78)->landType == 2 ) /*0x5181fa*/
+          if ( ((Coord *)&dword_87F7E8)->To_Cell( &v78)->landType == 2 ) /*0x5181fa*/
           {
             if ( v9->isBomb ) /*0x518200*/
             {
@@ -3570,7 +3570,7 @@ int InfantryClass::ProcessDeployment(void* a1, int a2, int a3, void* a4, int a5,
                     ptr_0 = ((ptr_0) & 0xFFFF0000u) | ((unsigned int)(*v49 / 256) & 0xFFFFu); /*0x5188f8*/
                     ptr_0 = ((ptr_0) & 0xFFFFu) | (((unsigned int)(v49[1] / 256) & 0xFFFFu) << 16); /*0x518910*/
                     *(unsigned int *)ptr_0 = ptr_0; /*0x518919*/
-                    v50 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, ptr_0); /*0x518928*/
+                    v50 = ((CellCoord *)&dword_87F7E8)->To_CellObj(ptr_0); /*0x518928*/
                     v77 = 0; /*0x51892a*/
                     for ( i = v50->u32_E4; i; i = (unsigned int *)i[12] ) /*0x518937*/
                     {
@@ -3593,7 +3593,7 @@ int InfantryClass::ProcessDeployment(void* a1, int a2, int a3, void* a4, int a5,
                     v99[2] = v54; /*0x5189a5*/
                     v97[1] = v9->locationY; /*0x5189af*/
                     v97[2] = v9->locationZ; /*0x5189c7*/
-                    v55 = Coord::To_Cell((Coord *)&dword_87F7E8, v97); /*0x5189dd*/
+                    v55 = ((Coord *)&dword_87F7E8)->To_Cell( v97); /*0x5189dd*/
                     v56 = ObjectPlacement::CalcPosition((ObjectPlacement *)v55, v102, v99, 0, 0, 0); /*0x5189e4*/
                     if ( *v56 == dword_A8F200 && v56[1] == dword_A8F204 && v56[2] == dword_A8F208 ) /*0x518a0d*/
                       goto LABEL_76; /*0x518a0d*/
@@ -3891,7 +3891,7 @@ int InfantryClass::Update() {
       v20 = this->location[0]; /*0x51bcee*/
       v21 = this->location[1]; /*0x51bcff*/
       v22 = this->location[2]; /*0x51bd06*/
-      v8 = Coord::To_Cell((Coord *)&dword_87F7E8, &v20); /*0x51bd0a*/
+      v8 = ((Coord *)&dword_87F7E8)->To_Cell( &v20); /*0x51bd0a*/
       v9 = (BuildingClass *)Cell::IsBridge((Cell *)v8); /*0x51bd11*/
       v10 = v9; /*0x51bd16*/
       if ( !v9 ) /*0x51bd1a*/

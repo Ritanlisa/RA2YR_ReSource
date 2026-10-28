@@ -179,7 +179,7 @@ void* Factory_CalculateExitCell(Factory *aP0, Factory *aP0_dup, void * a1, void 
   }
   else
   {
-    if ( (Coord::To_Cell((Coord *)&DataGlobal_87F7E8, v73)->flags[0] & 0x100) == 0 /*0x718c6e*/
+    if ( (((Coord *)&DataGlobal_87F7E8)->To_Cell( v73)->flags[0] & 0x100) == 0 /*0x718c6e*/
       || (v12 = (int *)(v7[3] + 156),
           v75 = *v12,
           v76 = v12[1],
@@ -230,7 +230,7 @@ void* Factory_CalculateExitCell(Factory *aP0, Factory *aP0_dup, void * a1, void 
         {
           if ( (*(int (**)(unsigned int))(*v20 + 44))(*(unsigned int *)(v19 + 1444)) == 6 ) /*0x718dcb*/
           {
-            v21 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, v10); /*0x718dd3*/
+            v21 = ((Coord *)&DataGlobal_87F7E8)->To_Cell( v10); /*0x718dd3*/
             if ( Cell::IsBridge((Cell *)v21) == v20 ) /*0x718de1*/
               LOBYTE(a5) = 1; /*0x718de3*/
           }
@@ -240,7 +240,7 @@ void* Factory_CalculateExitCell(Factory *aP0, Factory *aP0_dup, void * a1, void 
       v78 = v7[11]; /*0x718dfa*/
       v62 = a5; /*0x718e05*/
       v79 = v7[12]; /*0x718e06*/
-      v22 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, &v74); /*0x718e1e*/
+      v22 = ((Coord *)&DataGlobal_87F7E8)->To_Cell( &v74); /*0x718e1e*/
       v23 = ObjectPlacement::CalcPosition((ObjectPlacement *)v22, &v80, &v74, v62, v67[0], 0); /*0x718e25*/
       *v8 = *v23; /*0x718e32*/
       v7[11] = v23->ptr_4; /*0x718e3b*/
@@ -250,14 +250,14 @@ void* Factory_CalculateExitCell(Factory *aP0, Factory *aP0_dup, void * a1, void 
       HIWORD(v68) = v7[11] / 256; /*0x718e69*/
       *(unsigned int *)v71 = v68; /*0x718e76*/
       v25 = *v24; /*0x718e7a*/
-      v26 = (((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v71); /*0x718e82*/
+      v26 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v71); /*0x718e82*/
       if ( (*(int (**)(unsigned int, void *, int, int, unsigned int))(v25 + 428))(v7[3], v26, -1, -1, 0) ) /*0x718e8b*/
       {
         *v8 = g_BuildingLoadQueue_Array.BuildLimit; /*0x718e9d*/
         v7[11] = g_BuildingLoadQueue_Array.Category[0]; /*0x718ea4*/
         v7[12] = g_BuildingLoadQueue_Array.unknown_3C0[0]; /*0x718ead*/
       }
-      v27 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, &v76); /*0x718eba*/
+      v27 = ((Coord *)&DataGlobal_87F7E8)->To_Cell( &v76); /*0x718eba*/
       (*(void (**)(CellClass *, int *))(v27->mapCoords[0] + 72))(v27, &v79); /*0x718ec8*/
       if ( *v8 == g_BuildingLoadQueue_Array.BuildLimit /*0x718ef5*/
         && v7[11] == g_BuildingLoadQueue_Array.Category[0]
@@ -276,7 +276,7 @@ void* Factory_CalculateExitCell(Factory *aP0, Factory *aP0_dup, void * a1, void 
             *(unsigned short *)&v67[2] = v31[1] / 256; /*0x718f5c*/
             v68 = *(unsigned int *)v67; /*0x718f65*/
             v33 = (unsigned int *)(*(int (**)(int, int *, unsigned int))(*(unsigned int *)v32 + 76))(v32, &v78, 0); /*0x718f70*/
-            v34 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, v33); /*0x718f79*/
+            v34 = ((Coord *)&DataGlobal_87F7E8)->To_Cell( v33); /*0x718f79*/
             v35 = v7[3]; /*0x718f7e*/
             *(unsigned int *)v71 = v34; /*0x718f81*/
             v69 = (*(int (**)(int, unsigned int))(*(unsigned int *)v35 + 188))(v35, 0); /*0x718f8e*/
@@ -310,10 +310,10 @@ void* Factory_CalculateExitCell(Factory *aP0, Factory *aP0_dup, void * a1, void 
                                 0);
             if ( *(unsigned int *)v66 != g_BuildingLoadQueue_Array.unknown_int_398 ) /*0x71901f*/
             {
-              v38 = (((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v66); /*0x71903d*/
+              v38 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v66); /*0x71903d*/
               v61 = (char)this; /*0x71904f*/
               v60 = (unsigned int *)(*(int (**)(void *, int *))(*(unsigned int *)v38 + 72))(v38, &v78); /*0x71905a*/
-              v39 = (ObjectPlacement *)(((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v66); /*0x71906a*/
+              v39 = (ObjectPlacement *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v66); /*0x71906a*/
               v40 = ObjectPlacement::CalcPosition(v39, v81, v60, v61, v65, 0); /*0x719071*/
               *v8 = *v40; /*0x71907a*/
               v7[11] = v40[1]; /*0x71907f*/

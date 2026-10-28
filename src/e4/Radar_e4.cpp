@@ -1979,7 +1979,7 @@ AbstractClass * * Radar::ScanWaypoints(MouseClass * aP0, MouseClass * aP1, int a
           if ( v10->q220 == 2 /*0x6926cf*/
       && (v28 = dword_A83D4C->relatedTagsCount,
           v12 = (unsigned int *)(*(int (**)(unsigned char *, unsigned int *))(*&v10->q120))(v10, v31),
-          v13 = Coord::To_Cell(&dword_87F7E8, v12),
+          v13 = ((Coord *)&dword_87F7E8)->To_Cell( v12),
           !Cell::IsPassableOffset(v13, v28))
       || *(unsigned char *)((*(int (**)(unsigned char *))(v10->alignmentPadding)(v10) + 3226) )
           {
@@ -1993,7 +1993,7 @@ AbstractClass * * Radar::ScanWaypoints(MouseClass * aP0, MouseClass * aP1, int a
     || aP1[1773] != 15
     || (v29 = dword_A83D4C->relatedTagsCount,
         v15 = (unsigned int *)(*(int (**)(unsigned char *, unsigned int *))(*&v10->q120))(v10, v31),
-        v16 = Coord::To_Cell(&dword_87F7E8, v15),
+        v16 = ((Coord *)&dword_87F7E8)->To_Cell( v15),
         Cell::IsPassableOffset(v16, v29)) )
   {
     if ( v9 ) /*0x692734*/

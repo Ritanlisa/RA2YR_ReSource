@@ -507,8 +507,8 @@ LABEL_153:
       *(unsigned int *)&v120.q004 = v79[1]; /*0x6dee31*/
       v120.u32_8 = v79[2]; /*0x6dee42*/
       v120.u32_8 = Cell::GetGroundHeight(&v120); /*0x6dee4f*/
-      if ( (*((unsigned int *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v119) + 80) & 0x100) != 0 /*0x6dee81*/
-        || (*((unsigned int *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v119) + 80) & 0x400) != 0 )
+      if ( (*((unsigned int *)((CellCoord *)&dword_87F7E8)->To_CellObj(v119) + 80) & 0x100) != 0 /*0x6dee81*/
+        || (*((unsigned int *)((CellCoord *)&dword_87F7E8)->To_CellObj(v119) + 80) & 0x400) != 0 )
       {
         v120.u32_8 += dword_B0E6D4; /*0x6dee8e*/
       }
@@ -955,7 +955,7 @@ LABEL_60:
       *(unsigned int *)&v120.q004 = *(unsigned int *)&v120.u32_14; /*0x6dda40*/
       v120.u32_8 = *(unsigned int *)&v120.q018; /*0x6dda4a*/
       v120.u32_8 = Cell::GetGroundHeight(&v120); /*0x6dda57*/
-      if ( (*((unsigned int *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v119) + 80) & 0x100) != 0 ) /*0x6dda6f*/
+      if ( (*((unsigned int *)((CellCoord *)&dword_87F7E8)->To_CellObj(v119) + 80) & 0x100) != 0 ) /*0x6dda6f*/
         v120.u32_8 += dword_B0E6D4; /*0x6dda7d*/
       v13 = *Coord::ToCell(&v120, v120.__pad_C); /*0x6dda8f*/
       if ( !(unsigned __int8)LightningStorm::IsActive() ) /*0x6dda91*/
@@ -1056,8 +1056,8 @@ LABEL_279:
       *(unsigned int *)&v120.q004 = v114[1]; /*0x6df7cc*/
       v120.u32_8 = v114[2]; /*0x6df7d8*/
       v120.u32_8 = Cell::GetGroundHeight(&v120); /*0x6df7eb*/
-      if ( (*((unsigned int *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v119) + 80) & 0x100) != 0 /*0x6df817*/
-        || (*((unsigned int *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v119) + 80) & 0x400) != 0 )
+      if ( (*((unsigned int *)((CellCoord *)&dword_87F7E8)->To_CellObj(v119) + 80) & 0x100) != 0 /*0x6df817*/
+        || (*((unsigned int *)((CellCoord *)&dword_87F7E8)->To_CellObj(v119) + 80) & 0x400) != 0 )
       {
         v120.u32_8 += dword_B0E6D4; /*0x6df825*/
       }
@@ -1215,7 +1215,7 @@ AbstractClass * * TerrainClass::ProcessSpawnAnim(unsigned int * a1, AbstractClas
     LOWORD(aP2) = v4 + LOWORD(g_DDrawSurfaceManager.scenario[v7 + 82]); /*0x71d061*/
     HIWORD(aP2) = v5 + v8; /*0x71d06d*/
     a1 = aP2; /*0x71d076*/
-    v9 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, (__int16 *)&a1); /*0x71d080*/
+    v9 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj((__int16 *)&a1); /*0x71d080*/
     ++v9[290]; /*0x71d091*/
   }
   v10 = (unsigned int *)(*((int (**)(char *))this->ObjectClass + 43))(v14); /*0x71d0ab*/
@@ -1223,14 +1223,14 @@ AbstractClass * * TerrainClass::ProcessSpawnAnim(unsigned int * a1, AbstractClas
   v11 = *(unsigned int *)&g_TacticalClass_Instance[45] + this->TerrainClass_field_rect_D0[3]; /*0x71d0d6*/
   this->TerrainClass_field_rect_D0[2] += *(unsigned int *)&g_TacticalClass_Instance[44]; /*0x71d0dd*/
   this->TerrainClass_field_rect_D0[3] = v11; /*0x71d0df*/
-  if ( *(unsigned int *)&Coord::To_Cell((Coord *)&DataGlobal_87F7E8, v3)->__pad_28[28] != -1 ) /*0x71d0ef*/
+  if ( *(unsigned int *)&((Coord *)&DataGlobal_87F7E8)->To_Cell( v3)->__pad_28[28] != -1 ) /*0x71d0ef*/
   {
     if ( *(unsigned char *)(*(unsigned int *)(*(unsigned int *)g_BuildingTypeClass_Array /*0x71d108*/
-    + 4 * *(unsigned int *)&Coord::To_Cell((Coord *)&DataGlobal_87F7E8, v3)->__pad_28[28])
+    + 4 * *(unsigned int *)&((Coord *)&DataGlobal_87F7E8)->To_Cell( v3)->__pad_28[28])
     + 681) )
     {
-      *(unsigned int *)&Coord::To_Cell((Coord *)&DataGlobal_87F7E8, v3)->__pad_28[28] = -1; /*0x71d123*/
-      Coord::To_Cell((Coord *)&DataGlobal_87F7E8, v3)->powerup = 0; /*0x71d12b*/
+      *(unsigned int *)&((Coord *)&DataGlobal_87F7E8)->To_Cell( v3)->__pad_28[28] = -1; /*0x71d123*/
+      ((Coord *)&DataGlobal_87F7E8)->To_Cell( v3)->powerup = 0; /*0x71d12b*/
     }
   }
   return 1; /*0x71d137*/

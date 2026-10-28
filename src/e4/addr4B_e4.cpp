@@ -666,7 +666,7 @@ char E4Recv_4B0DF0::sub_4B0DF0(unsigned int *a2, unsigned int *aP1, int a4, int 
     void *ptr_8; // [esp-4h] [ebp-10h]
     ptr_8 = aP1->ptr_C; /*0x4b0e7a*/
     CellClass *v7; // eax
-    v7 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, aP1); /*0x4b0e81*/
+    v7 = ((Coord *)&DataGlobal_87F7E8)->To_Cell( aP1); /*0x4b0e81*/
     if ( (unsigned __int8)CrateClass::ProcessPickup((CrateClass *)v7, (int)ptr_8) && !*((unsigned char *)aP1->ptr_C + 129) ) /*0x4b0e94*/
     {
       JumpjetLocomotion::MoveTo((int)aP1, aP1, 1); /*0x4b0ea3*/

@@ -708,7 +708,7 @@ AbstractClass * * ParasiteClass::TryInfect(unsigned int * a2)
   else
   {
     void *v5; // eax
-    v5 = (((CellCoord *)&DataGlobal_87F7E8)->To_CellObj((__int16 *)(this->creationFrame + 1372)); /*0x62aa11*/
+    v5 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj((__int16 *)(this->creationFrame + 1372)); /*0x62aa11*/
     int v6 = **&this->creationFrame; // ebx /*0x62aa1f*/
     int v7; // eax
     int v15; // [esp+20h] [ebp-Ch] BYREF
@@ -996,10 +996,10 @@ Coord * * ParasiteClass::Update(void *a1, void *a2, void *a3, void *a4)
   Coord3D::Set(&v69, v16, v47, v50); /*0x62bf13*/
   GroundHeight = Cell::GetGroundHeight(&v69); /*0x62bf2d*/
   v67 = dword_AC4A0C + GroundHeight; /*0x62bf3d*/
-  v17 = (Cell *)Coord::To_Cell((Coord *)&dword_87F7E8, &v69); /*0x62bf46*/
+  v17 = (Cell *)((Coord *)&dword_87F7E8)->To_Cell( &v69); /*0x62bf46*/
   v58 = 0; /*0x62bf4d*/
   v57 = 0; /*0x62bf52*/
-  if ( (v17->u32_140 & 0x100) != 0 || (Coord::To_Cell((Coord *)&dword_87F7E8, &v68)->flags & 0x100) != 0 ) /*0x62bf74*/
+  if ( (v17->u32_140 & 0x100) != 0 || (((Coord *)&dword_87F7E8)->To_Cell( &v68)->flags & 0x100) != 0 ) /*0x62bf74*/
   {
     if ( v69.q008 < v67 ) /*0x62bf84*/
     {
@@ -1109,7 +1109,7 @@ LABEL_50:
     {
       this->u16_12A = *(unsigned short *)(v29 + 732); /*0x62c236*/
       v68 = this->u32_D; /*0x62c23f*/
-      firstObject = Coord::To_Cell((Coord *)&dword_87F7E8, &v68)->firstObject; /*0x62c260*/
+      firstObject = ((Coord *)&dword_87F7E8)->To_Cell( &v68)->firstObject; /*0x62c260*/
       if ( firstObject ) /*0x62c268*/
       {
         do /*0x62c30d*/

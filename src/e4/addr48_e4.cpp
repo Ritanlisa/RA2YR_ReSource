@@ -331,7 +331,7 @@ int PlaySoundEffectAt(TechnoClass * aP0, int aP1, unsigned int *a2, int aP3, cha
   LOWORD(v101) = *aP0 / 256; /*0x48931c*/
   HIWORD(v101) = aP0[1] / 256; /*0x489330*/
   v108 = v101; /*0x48933d*/
-  v9 = (unsigned int *)CellCoord::To_CellObj(&v108); /*0x489342*/
+  v9 = (unsigned int *)((CellCoord *)(&dword_87F7E8))->To_CellObj(&v108); /*0x489342*/
   v10 = aP3->q124; /*0x489347*/
   v112 = v9; /*0x489353*/
   v110 = 0; /*0x489357*/
@@ -413,7 +413,7 @@ int PlaySoundEffectAt(TechnoClass * aP0, int aP1, unsigned int *a2, int aP3, cha
       LOWORD(v131) = v108 + LOWORD(dword_ABD490[v103]); /*0x4895e1*/
       (v131) = ((v131) & ~(0xFFFF << 16)) | (((v21) & 0xFFFF) << 16); /*0x4895e6*/
       j = v131; /*0x4895f6*/
-      v22 = (unsigned int *)CellCoord::To_CellObj(&j); /*0x489608*/
+      v22 = (unsigned int *)((CellCoord *)(&dword_87F7E8))->To_CellObj(&j); /*0x489608*/
       v112 = v22; /*0x48960a*/
       v23 = v22->u32_44; /*0x48960e*/
       if ( v23 != -1 ) /*0x489614*/
@@ -625,13 +625,13 @@ LABEL_82:
             {
               (v127) = ((v127) & ~0xFFFF) | ((v57) & 0xFFFF); /*0x489be5*/
               (v127) = ((v127) & ~(0xFFFF << 16)) | (((v58) & 0xFFFF) << 16); /*0x489bec*/
-              v59 = *(unsigned int **)(CellCoord::To_CellObj(&v127) + 232); /*0x489c00*/
+              v59 = *(unsigned int **)(((CellCoord *)(&dword_87F7E8))->To_CellObj(&v127) + 232); /*0x489c00*/
             }
             else
             {
               (v131) = ((v131) & ~0xFFFF) | ((v57) & 0xFFFF); /*0x489c0c*/
               (v131) = ((v131) & ~(0xFFFF << 16)) | (((v58) & 0xFFFF) << 16); /*0x489c19*/
-              v59 = *(unsigned int **)(CellCoord::To_CellObj(&v131) + 228); /*0x489c23*/
+              v59 = *(unsigned int **)(((CellCoord *)(&dword_87F7E8))->To_CellObj(&v131) + 228); /*0x489c23*/
             }
             v60 = v59; /*0x489c29*/
             v112 = v59; /*0x489c2d*/
@@ -712,7 +712,7 @@ LABEL_82:
     }
   }
   v100 = v56 == *((unsigned int *)dword_8871E0 + 1020); /*0x489e9f*/
-  v71 = CellCoord::To_CellObj(&v108); /*0x489ea9*/
+  v71 = ((CellCoord *)(&dword_87F7E8))->To_CellObj(&v108); /*0x489ea9*/
   if ( (BYTE1(*(unsigned int *)dword_A8B230) & 0x80u) != 0 && v56->u32_144 )
   {
     v72 = *(unsigned int *)(v71 + 320); /*0x489ed2*/
@@ -720,7 +720,7 @@ LABEL_82:
     v106 = 0; /*0x489edb*/
     if ( (v72 & 0x100) != 0
       && ((v72 & 0x80u) == 0 ? (v115[0] = *(unsigned int *)(v71->u32_2C + 36)) : (v115[0] = v71->ptr_24),
-          (v74 = CellCoord::To_CellObj(v115), (v106 = v74) != 0)
+          (v74 = ((CellCoord *)(&dword_87F7E8))->To_CellObj(v115), (v106 = v74) != 0)
        && ((v75 = *(unsigned int *)(v74 + 68), v75 == 24) || v75 == 25)) )
     {
       v76 = g_TerrainSoundTable2; /*0x489f6b*/
@@ -1700,7 +1700,7 @@ int E4Recv_486D90::sub_486D90(char a2)
       LOWORD(v11) = LOWORD(g_DDrawSurfaceManager.scenario[v9 + 82]) + v10[0]; /*0x486dee*/
       HIWORD(v11) = v10[1] + HIWORD(g_DDrawSurfaceManager.scenario[v9 + 82]); /*0x486df3*/
       *(unsigned int *)v10 = v11; /*0x486e02*/
-      pVal = (((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v10); /*0x486e06*/
+      pVal = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v10); /*0x486e06*/
     }
     else
     {
@@ -2004,7 +2004,7 @@ int GetWarheadVersusMultiplier(int aP0, int aP1, int aP2, BulletClass * aP3)
     return 0; /*0x48a501*/
   if ( aP2 == 2 /*0x48a54f*/
     && *(unsigned char *)(aP1 + 333)
-    && (*((unsigned int *)Coord::To_Cell(&dword_87F7E8, aP3) + 80) & 0x100) == 0
+    && (*((unsigned int *)((Coord *)&dword_87F7E8)->To_Cell( aP3) + 80) & 0x100) == 0
     && aP3[2] < Cell::GetGroundHeight(aP3) + 2 * dword_89E870 )
   {
     int v6 = dword_8871E0->u32_BD0; // ecx /*0x48a557*/

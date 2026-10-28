@@ -474,7 +474,7 @@ int AnimClass::Undeploy() {
     v5[0] = this->Coord_9C; /*0x425556*/
     v5[1] = *(unsigned int *)this->__pad_A0; /*0x425567*/
     v5[2] = this->AnimClass_field_0xA4; /*0x42556e*/
-    v3 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, v5); /*0x425572*/
+    v3 = ((Coord *)&DataGlobal_87F7E8)->To_Cell( v5); /*0x425572*/
     v3->flags[0] &= ~0x20000u; /*0x425588*/
   }
   if ( !(uint8_t)ObjectClass::Undeploy((ObjectClass *)this) ) /*0x42558c*/
@@ -537,7 +537,7 @@ int AnimClass::UpdateDamageRadius(void* a1) {
   int result; // eax
 
   v3 = Input::OffsetToDirection((Input *)a1); /*0x426287*/
-  v4 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, a1); /*0x426294*/
+  v4 = ((Coord *)&DataGlobal_87F7E8)->To_Cell( a1); /*0x426294*/
   if ( Map_MaxHeight + Cell::GetGroundHeight(a1) <= a1[2] && (v4->flags[0] & 0x100) != 0 ) /*0x4262b3*/
   {
     (*((unsigned char *)&(v4->altOccupationFlags))) |= 1 << v3; /*0x4262c3*/
@@ -877,7 +877,7 @@ void BulletClass::SetupVoxelTransform(void* a1, void* a2) {
             v27 = *&_ESI->Coord_9C; /*0x4682c6*/
             v28 = v9; /*0x4682ce*/
             v29 = v10; /*0x4682d8*/
-            if ( (Coord::To_Cell((Coord *)&DataGlobal_87F7E8, &v27)->flags[0] & 0x100) != 0 /*0x4682f3*/
+            if ( (((Coord *)&DataGlobal_87F7E8)->To_Cell( &v27)->flags[0] & 0x100) != 0 /*0x4682f3*/
               && v8 >= dword_89DE64 )
             {
               v8 -= dword_89DE64; /*0x4682f9*/
@@ -957,7 +957,7 @@ int BulletClass::LoseTarget() {
   }
   else
   {
-    v2 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v4); /*0x4684b5*/
+    v2 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v4); /*0x4684b5*/
     this->AbstractClass_10C = v2; /*0x4684ba*/
   }
   return (int16_t)v2; /*0x4684c0*/
@@ -996,7 +996,7 @@ int BulletClass::ProcessImpact(void* a1, void* a2) {
     }
     else
     {
-      BulletClass_field_0xB0 = (char *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, (int16_t *)&a1); /*0x46858f*/
+      BulletClass_field_0xB0 = (char *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj((int16_t *)&a1); /*0x46858f*/
       this->AbstractClass_10C = BulletClass_field_0xB0; /*0x468594*/
     }
   }
@@ -1422,14 +1422,14 @@ bool BulletClass::CheckBulletCollision(void* a1) {
   *a1 = *&this->DamageMultiplier; /*0x468bc8*/
   a1[1] = *&this->q0A0; /*0x468bcd*/
   a1[2] = *&this->q0A4; /*0x468bd3*/
-  v4 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, a1); /*0x468be0*/
+  v4 = ((Coord *)&DataGlobal_87F7E8)->To_Cell( a1); /*0x468be0*/
   BulletClass_field_0xAC = this->u32_AC; /*0x468be2*/
   v4 = v4; /*0x468be8*/
   if ( BulletClass_field_0xAC[662] || BulletClass_field_0xAC[664] ) /*0x468bf6*/
   {
-    v6 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, this->q134); /*0x468c21*/
-    v7 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, &this->q140); /*0x468c28*/
-    v8 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, &this->NextAnim); /*0x468c36*/
+    v6 = ((Coord *)&DataGlobal_87F7E8)->To_Cell( this->q134); /*0x468c21*/
+    v7 = ((Coord *)&DataGlobal_87F7E8)->To_Cell( &this->q140); /*0x468c28*/
+    v8 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(&this->NextAnim); /*0x468c36*/
     BulletClass_field_0xB0 = this->q_B0; /*0x468c3b*/
     if ( BulletClass_field_0xB0 ) /*0x468c43*/
       BulletClass_field_0xB0 = BulletClass_field_0xB0->ptr_8.referenceCount; /*0x468c45*/
@@ -4539,7 +4539,7 @@ void TerrainClass::ProcessSlope(void* a1) {
       (*((unsigned short *)&(v64))) = v3 + *a1; /*0x574028*/
       (*(((unsigned short *)&(v64)) + 1)) = v4 + v6; /*0x57402d*/
       *(unsigned int *)v68 = v64; /*0x574040*/
-      v7 = *((unsigned int *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v68) + 17); /*0x574049*/
+      v7 = *((unsigned int *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v68) + 17); /*0x574049*/
       if ( v7 >= 205 && v7 <= 232 ) /*0x574058*/
       {
         v8 = v4 + v5[1]; /*0x574072*/
@@ -5062,7 +5062,7 @@ int TiberiumClass::Grow(void* a1) {
       {
         if ( !*(unsigned int *)(80 * (v28 + g_MapCellWidth * v29) + g_MissionQueueFrame.localVariables[163] + 56) ) /*0x59cc17*/
         {
-          v30 = (Cell *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v85); /*0x59cc2d*/
+          v30 = (Cell *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v85); /*0x59cc2d*/
           if ( (uint8_t)Cell::IsEmpty(v30) ) /*0x59cc34*/
           {
             if ( *(unsigned char *)(80 * (v85[0] + g_MapCellWidth * v85[1]) + g_MissionQueueFrame.localVariables[163] + 68) ) /*0x59cc60*/
@@ -5214,7 +5214,7 @@ int TiberiumClass::Grow(void* a1) {
     {
       if ( v50 ) /*0x59ce98*/
         *(unsigned int *)(80 * (*(int16_t *)v47 + g_MapCellWidth * *(int16_t *)(v47 + 2)) + v50 + 56) = this->u32_308; /*0x59ceba*/
-      v51 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, (int16_t *)v47); /*0x59cec4*/
+      v51 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj((int16_t *)v47); /*0x59cec4*/
       v52 = (char *)Block; /*0x59cecf*/
       v51[14] = g_CellPassabilityLUT; /*0x59ced3*/
       *((unsigned char *)v51 + 282) = 0; /*0x59ced6*/
@@ -5237,7 +5237,7 @@ int TiberiumClass::Grow(void* a1) {
           v57 = g_MissionQueueFrame.localVariables[163] + 80 * (v55 + g_MapCellWidth * (*((signed short *)(((unsigned char *)&(v93)) + 2)))); /*0x59cf7b*/
           if ( *(unsigned int *)(v57 + 56) /*0x59cfb9*/
             || *(unsigned int *)(v57 + 60) == this->u32_308
-            || (v58 = (Cell *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v89),
+            || (v58 = (Cell *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v89),
                 !(uint8_t)Cell::IsEmpty(v58))
             || !*(unsigned char *)(v57 + 68) )
           {
@@ -5347,7 +5347,7 @@ int TiberiumClass::Grow(void* a1) {
     {
       while ( inited ) /*0x59d18b*/
       {
-        v72 = (Cell *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v71); /*0x59d19c*/
+        v72 = (Cell *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v71); /*0x59d19c*/
         v73 = g_MissionQueueFrame.localVariables[163] + 80 * (*v71 + g_MapCellWidth * v71[1]); /*0x59d1ba*/
         if ( !*(unsigned int *)(v73 + 56) && (uint8_t)Cell::IsEmpty(v72) && *(unsigned char *)(v73 + 68) ) /*0x59d1ce*/
         {
@@ -5537,7 +5537,7 @@ int OverlayClass::WriteINI() {
     {
       v19 = i; /*0x5fd748*/
       v20 = v2; /*0x5fd74d*/
-      v8 = (char *)CellCoord::To_CellObj(&dword_87F7E8, &v19); /*0x5fd752*/
+      v8 = (char *)((CellCoord *)(&dword_87F7E8))->To_CellObj(&v19); /*0x5fd752*/
       v3 += (signed int)LCW::Compress((int)v26, v8 + 68, 1); /*0x5fd764*/
     }
     ++v2; /*0x5fd76f*/
@@ -5570,7 +5570,7 @@ int OverlayClass::WriteINI() {
     {
       v19 = j; /*0x5fd840*/
       v20 = v10; /*0x5fd845*/
-      v16 = (char *)CellCoord::To_CellObj(&dword_87F7E8, &v19); /*0x5fd84a*/
+      v16 = (char *)((CellCoord *)(&dword_87F7E8))->To_CellObj(&v19); /*0x5fd84a*/
       v11 += (signed int)LCW::Compress((int)v25, v16 + 286, 1); /*0x5fd85e*/
     }
     ++v10; /*0x5fd869*/
@@ -6110,7 +6110,7 @@ void ParticleClass::CheckWaterImpact() {
   v13 = (char *)this->u32_C8 + v11 + v5; /*0x62d485*/
   v15 = v12; /*0x62d48d*/
   v17 = (int)v13; /*0x62d491*/
-  if ( (Coord::To_Cell((Coord *)&DataGlobal_87F7E8, v18)->flags[0] & 0x100) != 0 /*0x62d4e5*/
+  if ( (((Coord *)&DataGlobal_87F7E8)->To_Cell( v18)->flags[0] & 0x100) != 0 /*0x62d4e5*/
     && (v14 = dword_AC4A0C + Cell::GetGroundHeight(v18), v19 < v14)
     && (double)v14 - (double)dword_AC4A18 * 2.5 <= (double)v17 )
   {
@@ -6275,7 +6275,7 @@ int ParticleSystemClass::Constructor(int a2, int *a3, int a4, void *a5, unsigned
     *(&this->abstractFlags4) = v12[1]; /*0x62ddb8*/
     *(&this->abstractFlags5) = v12[2]; /*0x62ddbe*/
     v13 = (unsigned int *)a4->vt_slot_72(v24); /*0x62ddc8*/
-    if ( (Coord::To_Cell((Coord *)&DataGlobal_87F7E8, v13)->flags[0] & 0x100) != 0 /*0x62ddeb*/
+    if ( (((Coord *)&DataGlobal_87F7E8)->To_Cell( v13)->flags[0] & 0x100) != 0 /*0x62ddeb*/
       && a4->ReturnZeroPos() == 11 )
     {
       *(&this->abstractFlags5) += dword_AC4A8C; /*0x62ddfa*/
@@ -7426,7 +7426,7 @@ int RadSiteClass::Constructor() {
   /* X11: ptr_0 install elided (implicit via class virtuals 0x65b303) — binary-proven install, was 0 */
   this->ptr_8 = 0; /*0x65b30a*/
   /* X11: ptr_0 install elided (implicit via class virtuals 0x65b311) — binary-proven install, was 0 */
-  v2 = (TerrainClass *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, (int16_t *)this->BaseCell); /*0x65b318*/
+  v2 = (TerrainClass *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj((int16_t *)this->BaseCell); /*0x65b318*/
   TerrainClass::SetFieldF8(v2, 0); /*0x65b321*/
   (*((unsigned char *)&(v3))) = 1; /*0x65b326*/
   AbstractClass::AnnounceExpiredPointer(&this->ptr_0, v3); /*0x65b32a*/
@@ -7733,7 +7733,7 @@ int TerrainClass::UpdateAnims(int a1, int a2, int a3, int a4, int a5, int a6, vo
             v14 = this->location[2]; /*0x71ba19*/
             v21[1] = this->location[1]; /*0x71ba26*/
             v21[2] = v14; /*0x71ba2a*/
-            a3 = Coord::To_Cell((Coord *)&dword_87F7E8, v21)->a3; /*0x71ba3e*/
+            a3 = ((Coord *)&dword_87F7E8)->To_Cell( v21)->a3; /*0x71ba3e*/
             v18 = (void *)Return::HRESULT_Fail(v10, v11, v12); /*0x71ba51*/
             WarheadVersusMultiplier = (void *)GetWarheadVersusMultiplier( /*0x71ba7b*/
                                                 100,
@@ -7919,7 +7919,7 @@ void* TerrainClass::ClearCellFlags(void* a1) {
   v3 = a1; /*0x71c099*/
   (*((unsigned short *)&(a1))) = *a1 / 256; /*0x71c0ab*/
   (*(((unsigned short *)&(a1)) + 1)) = v3[1] / 256; /*0x71c0c4*/
-  result = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, (int16_t *)&a1); /*0x71c0d6*/
+  result = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj((int16_t *)&a1); /*0x71c0d6*/
   if ( (v2 & 1) != 0 ) /*0x71c0de*/
     result->q124 &= ~4u; /*0x71c0e0*/
   if ( (v2 & 2) != 0 ) /*0x71c0ea*/
@@ -7943,7 +7943,7 @@ void* TerrainClass::SetOccupyBit_PassableTerrain(void* a1) {
   v3 = a1; /*0x71c139*/
   (*((unsigned short *)&(a1))) = *a1 / 256; /*0x71c14b*/
   (*(((unsigned short *)&(a1)) + 1)) = v3[1] / 256; /*0x71c164*/
-  result = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, (int16_t *)&a1); /*0x71c176*/
+  result = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj((int16_t *)&a1); /*0x71c176*/
   if ( (v2 & 1) != 0 ) /*0x71c17e*/
     result->q124 |= 4u; /*0x71c180*/
   if ( (v2 & 2) != 0 ) /*0x71c18a*/
@@ -7975,7 +7975,7 @@ void TerrainClass::Draw(void* a1, void* a2) {
   int v20; // [esp+20h] [ebp-4h]
 
   *(unsigned int *)v17 = *(unsigned int *)(*((int (__thiscall **)(TerrainClass *, int **))this->ptr_0 + 110))(this, &v18); /*0x71c1d4*/
-  v4 = (int *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v17); /*0x71c1d8*/
+  v4 = (int *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v17); /*0x71c1d8*/
   ptr_0 = (int (__thiscall **)(TerrainClass *))this->ptr_0; /*0x71c1dd*/
   v6 = v4; /*0x71c1df*/
   v18 = v4; /*0x71c1e3*/
@@ -8058,7 +8058,7 @@ void TerrainClass::ProcessDestructionAnim(void* a1, void* a2) {
   int v16; // [esp+1Ch] [ebp-4h]
 
   *(unsigned int *)v14 = *(unsigned int *)(*((int (__thiscall **)(TerrainClass *, unsigned int *))this->ptr_0 + 110))(this, &v13); /*0x71c384*/
-  v4 = (int *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v14); /*0x71c391*/
+  v4 = (int *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v14); /*0x71c391*/
   v5 = (*((int (__thiscall **)(TerrainClass *))this->ptr_0 + 27))(this); /*0x71c396*/
   if ( v5 ) /*0x71c39a*/
   {
@@ -8146,7 +8146,7 @@ int TerrainClass::IsPlacementValid(int a1, int a2, int a3, int a4, int a5) {
       v15 = 1; /*0x71c585*/
       *(unsigned int *)v17 = v16; /*0x71c587*/
     }
-    v11 = (int *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v17); /*0x71c54d*/
+    v11 = (int *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v17); /*0x71c54d*/
     if ( !(uint8_t)CellClass::IsPassable(v11, v15, 0, 0) ) /*0x71c55b*/
       return 7; /*0x71c59a*/
   }
@@ -8325,7 +8325,7 @@ int TerrainClass::Update() {
           v15 = *location; /*0x71c8ad*/
           v16 = location->Y; /*0x71c8be*/
           v17 = location->Z; /*0x71c8c5*/
-          v14 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, &v15); /*0x71c8c9*/
+          v14 = ((Coord *)&DataGlobal_87F7E8)->To_Cell( &v15); /*0x71c8c9*/
           (*((unsigned char *)&(result))) = CellClass::SpawnTiberiumTree(v14, 1); /*0x71c8d0*/
         }
       }
@@ -8363,7 +8363,7 @@ int TerrainClass::ApplyCellModifications() {
       (*((unsigned short *)&(v12))) = v5; /*0x71c982*/
       (*(((unsigned short *)&(v12)) + 1)) = (*(((unsigned short *)&(v2)) + 1)) + v4; /*0x71c98e*/
       *(unsigned int *)v13 = v12; /*0x71c99d*/
-      v6 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v13); /*0x71c9a1*/
+      v6 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v13); /*0x71c9a1*/
       ++v3; /*0x71c9ae*/
       --v6[290]; /*0x71c9b2*/
     }
@@ -8371,12 +8371,12 @@ int TerrainClass::ApplyCellModifications() {
     v14[0] = this->location[0]; /*0x71c9c6*/
     v14[1] = this->location[1]; /*0x71c9d2*/
     v14[2] = this->location[2]; /*0x71c9de*/
-    v7 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, v14); /*0x71c9e2*/
+    v7 = ((Coord *)&DataGlobal_87F7E8)->To_Cell( v14); /*0x71c9e2*/
     v7->occupationFlags &= ~0x40u; /*0x71c9f6*/
   }
   *(unsigned int *)v11 = *(unsigned int *)(*((int (__thiscall **)(TerrainClass *, int16_t *))this->ptr_0 + 110))(this, v13); /*0x71ca0a*/
   v8 = ObjectClass::Undeploy((ObjectClass *)this); /*0x71ca21*/
-  v9 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v11); /*0x71ca23*/
+  v9 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v11); /*0x71ca23*/
   House::AnnounceUpgrade((int)v9, -1); /*0x71ca2a*/
   if ( !dword_A8E7AC ) /*0x71ca36*/
   {
@@ -8766,7 +8766,7 @@ void* TubeClass::Construct(void* a1, int a2) {
   }
   if ( *a1 || a1[1] ) /*0x728084*/
   {
-    v5 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, a1); /*0x728091*/
+    v5 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(a1); /*0x728091*/
     v6 = 0; /*0x72809c*/
     if ( FootClass_Array.primaryFacing[0] <= 0 ) /*0x7280a0*/
     {
@@ -8826,7 +8826,7 @@ void* TubeClass::ProcessEvent(int a1) {
   /* X11: ptr_0 install elided (implicit via class virtuals 0x728723) — binary-proven install, was 0 */
   /* X11: ptr_0 install elided (implicit via class virtuals 0x72872a) — binary-proven install, was 0 */
   AbstractClass::AnnounceExpiredPointer((AbstractClass *)this, 1); /*0x728731*/
-  v3 = (int16_t *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, &this->occupant); /*0x72873f*/
+  v3 = (int16_t *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(&this->occupant); /*0x72873f*/
   if ( v3 ) /*0x728746*/
   {
     v4 = 0; /*0x72874f*/
@@ -9112,7 +9112,7 @@ int WaveClass::DrawWave(void* a1, int a2) {
   {
     ptr_0 = (int (__thiscall **)(WaveClass *, CellClass *, int, int, unsigned int, int))this->ptr_0; /*0x75f8eb*/
     v8 = a1[2]; /*0x75f8f1*/
-    v5 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, a1); /*0x75f8fa*/
+    v5 = ((Coord *)&DataGlobal_87F7E8)->To_Cell( a1); /*0x75f8fa*/
     if ( ptr_0[107](this, v5, -1, v8, 0, 1) ) /*0x75f902*/
       return 0; /*0x75f902*/
   }

@@ -589,7 +589,7 @@ LABEL_20:
     v33 = this->location[1]; /*0x5fdb32*/
     v34 = this->location[2]; /*0x5fdb41*/
     v20 = (char *)dword_B054D4 + 4 * *(unsigned int *)(*(int *)((char *)&stru_A83CD9.estimatedHealth + 3) + 90196); /*0x5fdb60*/
-    v27 = *(__int16 *)Coord::To_Cell((Coord *)&dword_87F7E8, &v32)->CellClass_field_10C; /*0x5fdb7c*/
+    v27 = *(__int16 *)((Coord *)&dword_87F7E8)->To_Cell( &v32)->CellClass_field_10C; /*0x5fdb7c*/
     DrawToSurfaceSHP( /*0x5fdb9a*/
       (int)g_DSurface_Hidden_2,
       *(unsigned int *)(*(unsigned int *)v20 + 780),
@@ -622,7 +622,7 @@ LABEL_20:
       v32 = *location; /*0x5fdbf4*/
       v34 = v23; /*0x5fdbfc*/
       v33 = v24; /*0x5fdc06*/
-      v25 = Coord::To_Cell((Coord *)&dword_87F7E8, &v32); /*0x5fdc0a*/
+      v25 = ((Coord *)&dword_87F7E8)->To_Cell( &v32); /*0x5fdc0a*/
     }
     else
     {
@@ -630,13 +630,13 @@ LABEL_20:
       if ( (unsigned __int8)LayerClass::CoordinatesLegal((LayerClass *)&dword_87F7E8, v26) ) /*0x5fdc2c*/
       {
         v28 = (__int16 *)Tactical::PixelToCell((Tactical *)g_TacticalClass_Instance, &a2, &v30); /*0x5fdc4a*/
-        v25 = (((CellCoord *)&dword_87F7E8)->To_CellObj(v28); /*0x5fdc4b*/
+        v25 = ((CellCoord *)&dword_87F7E8)->To_CellObj(v28); /*0x5fdc4b*/
       }
       else
       {
         LOWORD(a2) = 1; /*0x5fdc58*/
         HIWORD(a2) = dword_87F8DC; /*0x5fdc5f*/
-        v25 = (((CellCoord *)&dword_87F7E8)->To_CellObj((__int16 *)&a2); /*0x5fdc6a*/
+        v25 = ((CellCoord *)&dword_87F7E8)->To_CellObj((__int16 *)&a2); /*0x5fdc6a*/
       }
     }
     DrawToSurfaceSHP( /*0x5fdcaa*/
@@ -789,7 +789,7 @@ LABEL_39:
     v29 = v19->ptr_8; /*0x62ae03*/
     if ( v20 && (*(int (**)(int))(*(unsigned int *)v20 + 44))(v20) == 1 ) /*0x62ae11*/
     {
-      v21 = Coord::To_Cell((Coord *)&dword_87F7E8, &v27); /*0x62ae1d*/
+      v21 = ((Coord *)&dword_87F7E8)->To_Cell( &v27); /*0x62ae1d*/
       v22 = (int *)(*(int (**)(CellClass *, int *))(v21->mapCoords + 72))(v21, v31); /*0x62ae2b*/
       v27 = *v22; /*0x62ae30*/
       v28 = v22[1]; /*0x62ae37*/
@@ -797,7 +797,7 @@ LABEL_39:
     }
     if ( *(unsigned char *)&this->ptr_28->q08C ) /*0x62ae45*/
     {
-      if ( (Coord::To_Cell((Coord *)&dword_87F7E8, &v27)->flags & 0x100) != 0 ) /*0x62ae67*/
+      if ( (((Coord *)&dword_87F7E8)->To_Cell( &v27)->flags & 0x100) != 0 ) /*0x62ae67*/
       {
         v29 += dword_AC497C; /*0x62ae75*/
         *(unsigned char *)(*&this->q024 + 140) = 1; /*0x62ae7c*/
@@ -805,7 +805,7 @@ LABEL_39:
       }
       goto LABEL_29; /*0x62ae67*/
     }
-    if ( (Coord::To_Cell((Coord *)&dword_87F7E8, &v27)->flags & 0x100) != 0 ) /*0x62aea9*/
+    if ( (((Coord *)&dword_87F7E8)->To_Cell( &v27)->flags & 0x100) != 0 ) /*0x62aea9*/
     {
       v23 = (unsigned int *)(*(int (**)(Cell *, int *))(v13->Cell_field_0x0 + 72))(v13, v31); /*0x62aeb5*/
       if ( v29 >= (int)v23[2] ) /*0x62aec1*/
@@ -845,7 +845,7 @@ LABEL_34:
   {
     if ( (*(int (**)(int))(*(unsigned int *)v7 + 44))(v7) == 1 ) /*0x62ac8b*/
     {
-      v8 = Coord::To_Cell((Coord *)&dword_87F7E8, &v27); /*0x62ac97*/
+      v8 = ((Coord *)&dword_87F7E8)->To_Cell( &v27); /*0x62ac97*/
       v9 = (int *)(*(int (**)(CellClass *, unsigned char *))(v8->mapCoords + 72))(v8, v30); /*0x62aca5*/
       v27 = *v9; /*0x62acaa*/
       v10 = *&this->ptr_28; /*0x62acae*/
@@ -1594,7 +1594,7 @@ int sub_5A7E90(int a1, unsigned short * a2)
             }
             else
             {
-              v8 = (((CellCoord *)&dword_87F7E8)->To_CellObj(v12); /*0x5a7f33*/
+              v8 = ((CellCoord *)&dword_87F7E8)->To_CellObj(v12); /*0x5a7f33*/
               v2 = v10; /*0x5a7f38*/
               if ( v13[i + 4 + (unsigned int)v4 * v10[185]] ) /*0x5a7f4b*/
               {

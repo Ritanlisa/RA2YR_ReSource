@@ -98,7 +98,7 @@ TechnoClass * * TriggerTypeClass::ReadINI(unsigned int * a0, TechnoClass * aP1, 
   }
   v8 = (aP2[20] & 1) != 0 ? (BuildingClass *)aP2 : 0;
   v9 = (unsigned int *)(*(int (**)(unsigned char *, int *))(*(unsigned int *)aP2 + 72))(aP2, &v39); /*0x6fc18e*/
-  v10 = Coord::To_Cell((Coord *)&dword_87F7E8, v9); /*0x6fc19e*/
+  v10 = ((Coord *)&dword_87F7E8)->To_Cell( v9); /*0x6fc19e*/
   if ( this ) /*0x6fc1a0*/
   {
     if ( (this->abstractFlags & 4) != 0 && this->u32_6AD ) /*0x6fc1a8*/

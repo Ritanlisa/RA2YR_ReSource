@@ -246,7 +246,7 @@ int InfantryTypeClass::CreateInfantry(short * a2, AbstractClass * ppv)
       v13[0] = (*a2 << 8) + 128; /*0x523b93*/
       v13[1] = v7 + 128; /*0x523b9b*/
       v13[2] = 0; /*0x523bb1*/
-      v8 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, v13); /*0x523bb9*/
+      v8 = ((Coord *)&DataGlobal_87F7E8)->To_Cell( v13); /*0x523bb9*/
       v9 = ObjectPlacement::CalcPosition((ObjectPlacement *)v8, v15, v13, 0, 0, 0); /*0x523bc0*/
       v14[0] = *v9; /*0x523bcf*/
       v10 = v9->ptr_4; /*0x523bd5*/

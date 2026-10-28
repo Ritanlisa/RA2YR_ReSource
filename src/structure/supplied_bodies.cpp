@@ -237,7 +237,7 @@ namespace gamemd {
     (*(((unsigned short *)&(v7)) + 1)) = (*(((unsigned short *)&(v2)) + 1)) + v3[1]; /*0x44e3f8*/
     *(unsigned int *)v8 = v7; /*0x44e401*/
     v3 += 2; /*0x44e40a*/
-    v4 = (BuildingClass *)*((unsigned int *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v8) + 57); /*0x44e412*/
+    v4 = (BuildingClass *)*((unsigned int *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v8) + 57); /*0x44e412*/
     if ( v4 ) /*0x44e41a*/
     {
       while ( bug == v4 ) /*0x44e41e*/
@@ -614,14 +614,14 @@ namespace gamemd {
       (*((unsigned short *)&(v15))) = v10; /*0x45794e*/
       (*(((unsigned short *)&(v15)) + 1)) = v11; /*0x457953*/
       *(unsigned int *)v19 = v15; /*0x457963*/
-      v12 = (Object *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v19); /*0x457967*/
+      v12 = (Object *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v19); /*0x457967*/
       ClosestObjectCell = (BuildingClass *)Object::FindClosestObjectCell(v12, v24, 0, 0); /*0x45796e*/
       if ( ClosestObjectCell == bug ) /*0x457975*/
       {
         (*((unsigned short *)&(v16))) = v10; /*0x457977*/
         (*(((unsigned short *)&(v16)) + 1)) = v11; /*0x45797c*/
         *(unsigned int *)v20 = v16; /*0x457991*/
-        v14 = (WTFMode *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v20); /*0x457995*/
+        v14 = (WTFMode *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v20); /*0x457995*/
         ClosestObjectCell = (BuildingClass *)WTFMode::FindObjectByType(v14, 0); /*0x45799c*/
       }
       if ( ClosestObjectCell ) /*0x4579a3*/
@@ -1230,7 +1230,7 @@ int UnitClass::Mission_Harvest()
               WaypointCoords = (__int16 *)TechnoClass::GetWaypointCoords( /*0x415381*/
                                             *(TechnoClass **)(*(unsigned int *)(v14 + 1492) + 36),
                                             &v31);
-              v18 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, WaypointCoords); /*0x41538c*/
+              v18 = ((CellCoord *)&dword_87F7E8)->To_CellObj(WaypointCoords); /*0x41538c*/
               NearbyCell = InfantryClass::FindNearbyCell((InfantryClass *)this, (int)v18); /*0x415394*/
               (*(void (**)(AircraftClass *, void *, int))(ptr_0 + 1152))(this, NearbyCell, 1); /*0x41539c*/
             }
@@ -1238,7 +1238,7 @@ int UnitClass::Mission_Harvest()
             {
               v20 = this->ptr_0; /*0x4153ad*/
               Waypoint_Location = (__int16 *)ScenarioClass::Get_Waypoint_Location((char *)dword_A8B230, &v32, 700); /*0x4153bb*/
-              v22 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, Waypoint_Location); /*0x4153c6*/
+              v22 = ((CellCoord *)&dword_87F7E8)->To_CellObj(Waypoint_Location); /*0x4153c6*/
               v23 = InfantryClass::FindNearbyCell((InfantryClass *)this, (int)v22); /*0x4153ce*/
               (*(void (**)(AircraftClass *, void *, int))(v20 + 1152))(this, v23, 1); /*0x4153d6*/
               team = this->team; /*0x4153dc*/
@@ -1459,7 +1459,7 @@ namespace gamemd {
   int v4; // ecx
   int v5; // ecx
 
-  result = (int)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, bug); /*0x426101*/
+  result = (int)((CellCoord *)&dword_87F7E8)->To_CellObj(bug); /*0x426101*/
   if ( (result->u8_140 & 0x100) != 0 /*0x426142*/
     && this->location[2] - Map_CellHeight * result->u8_11B > 2 * Map_CellHeight )
   {
@@ -2690,14 +2690,14 @@ namespace gamemd {
     return v2; /*0x42ad00*/
   v3 = bug; /*0x42ad06*/
   *(unsigned int *)v28 = *(unsigned int *)(*(int (__thiscall **)(int, int *))(*(unsigned int *)bug + 440))(bug, &bug); /*0x42ad25*/
-  v4 = (char *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v28); /*0x42ad32*/
+  v4 = (char *)((CellCoord *)&dword_87F7E8)->To_CellObj(v28); /*0x42ad32*/
   v5 = ((unsigned int)((*ProgressTimer::GetValue((ProgressTimer *)(v3 + 904), &v34) >> 12) + 1) >> 1) & 7; /*0x42ad4d*/
   v6 = (*((unsigned short *)&(dword_89F688[v5]))) + v28[0]; /*0x42ad50*/
   (*((unsigned short *)&(v5))) = (*(((unsigned short *)&(dword_89F688[v5])) + 1)); /*0x42ad5f*/
   (*((unsigned short *)&(bug))) = v6; /*0x42ad67*/
   (*(((unsigned short *)&(bug)) + 1)) = v28[1] + v5; /*0x42ad7b*/
   *(unsigned int *)v32 = bug; /*0x42ad84*/
-  v7 = (int16_t *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v32); /*0x42ad8d*/
+  v7 = (int16_t *)((CellCoord *)&dword_87F7E8)->To_CellObj(v32); /*0x42ad8d*/
   v27 = v7; /*0x42ad8f*/
   if ( (v7->u32_140 & 0x100) != 0 /*0x42adb8*/
     && ((v8 = v4[283] - v7->u32_11B, (int)(((*(((unsigned int *)&(v8)) + 1)) ^ v8) - (*(((unsigned int *)&(v8)) + 1))) > 3) || *(unsigned char *)(v3 + 140)) )
@@ -2747,7 +2747,7 @@ namespace gamemd {
             v16 = *v15; /*0x42aeff*/
             if ( *v15 == 8 ) /*0x42af04*/
             {
-              v17 = *((int16_t *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v26) + 139); /*0x42af15*/
+              v17 = *((int16_t *)((CellCoord *)&dword_87F7E8)->To_CellObj(v26) + 139); /*0x42af15*/
               if ( v17 == -1 ) /*0x42af1f*/
               {
                 v30 = 0; /*0x42af31*/
@@ -2766,8 +2766,8 @@ namespace gamemd {
               v18 = v31; /*0x42af65*/
             }
             *(unsigned int *)v26 = v18; /*0x42af69*/
-            v20 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v26); /*0x42af80*/
-            v21 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v26); /*0x42af88*/
+            v20 = ((CellCoord *)&dword_87F7E8)->To_CellObj(v26); /*0x42af80*/
+            v21 = ((CellCoord *)&dword_87F7E8)->To_CellObj(v26); /*0x42af88*/
             ++v15; /*0x42af9e*/
             ++v13; /*0x42afad*/
             v21->u32_140 ^= (v21->u32_140 ^ ~v20->u32_140) & 0x40000; /*0x42afae*/
@@ -2798,7 +2798,7 @@ namespace gamemd {
             (*((unsigned short *)&(bug))) = v22 + v30; /*0x42afe4*/
             (*(((unsigned short *)&(bug)) + 1)) = v23 + (*(((unsigned short *)&(v30)) + 1)); /*0x42afe9*/
             *(unsigned int *)v33 = bug; /*0x42affc*/
-            v24 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v33); /*0x42b000*/
+            v24 = ((CellCoord *)&dword_87F7E8)->To_CellObj(v33); /*0x42b000*/
             if ( v24->q124 ) /*0x42b005*/
             {
               v31 = v24->ptr_24; /*0x42b017*/
@@ -2865,7 +2865,7 @@ namespace gamemd {
             v16 = *v15; /*0x42aeff*/
             if ( *v15 == 8 ) /*0x42af04*/
             {
-              v17 = *((int16_t *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v26) + 139); /*0x42af15*/
+              v17 = *((int16_t *)((CellCoord *)&dword_87F7E8)->To_CellObj(v26) + 139); /*0x42af15*/
               if ( v17 == -1 ) /*0x42af1f*/
               {
                 v30 = 0; /*0x42af31*/
@@ -2884,8 +2884,8 @@ namespace gamemd {
               v18 = v31; /*0x42af65*/
             }
             *(unsigned int *)v26 = v18; /*0x42af69*/
-            v20 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v26); /*0x42af80*/
-            v21 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v26); /*0x42af88*/
+            v20 = ((CellCoord *)&dword_87F7E8)->To_CellObj(v26); /*0x42af80*/
+            v21 = ((CellCoord *)&dword_87F7E8)->To_CellObj(v26); /*0x42af88*/
             ++v15; /*0x42af9e*/
             ++v13; /*0x42afad*/
             v21[80] ^= (v21[80] ^ ~v20[80]) & 0x40000; /*0x42afae*/
@@ -2916,7 +2916,7 @@ namespace gamemd {
             bug = ((bug) & 0xFFFF0000u) | ((unsigned int)(v22 + v30) & 0xFFFFu); /*0x42afe4*/
             bug = ((bug) & 0xFFFFu) | (((unsigned int)(v23 + (unsigned short)((v30) >> 16)) & 0xFFFFu) << 16); /*0x42afe9*/
             *(unsigned int *)v33 = bug; /*0x42affc*/
-            v24 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v33); /*0x42b000*/
+            v24 = ((CellCoord *)&dword_87F7E8)->To_CellObj(v33); /*0x42b000*/
             if ( v24->q124 ) /*0x42b005*/
             {
               v31 = v24[9]; /*0x42b017*/
@@ -3132,7 +3132,7 @@ namespace gamemd {
             v20 = v62 ? ((v62->abstractFlags & 4) != 0 ? (unsigned int)v62 : 0) : 0;
             v21 = (unsigned int *)bug->CalculateTurretAngle(/*0x43c91b*/
                               bug, v59, v20);
-            v22 = Coord::To_Cell((Coord *)&dword_87F7E8, v21); /*0x43c927*/
+            v22 = ((Coord *)&dword_87F7E8)->To_Cell( v21); /*0x43c927*/
             v23 = *(CellClass **)(v20 + 1444); /*0x43c92c*/
             if ( v23 ) /*0x43c934*/
             {
@@ -3190,7 +3190,7 @@ namespace gamemd {
             (*((unsigned short *)&(v64))) = *v34 + 3; /*0x43ca8d*/
             (*(((unsigned short *)&(v64)) + 1)) = v34[1] + 1; /*0x43ca92*/
             v64 = v64; /*0x43ca9f*/
-            *v16 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (int16_t *)&v64); /*0x43caae*/
+            *v16 = ((CellCoord *)&dword_87F7E8)->To_CellObj((int16_t *)&v64); /*0x43caae*/
             if ( bug->RemoveElement(/*0x43cac1*/
                    bug, 18, v16, v62) == 20 )
             {
@@ -3221,7 +3221,7 @@ namespace gamemd {
         v58[0] = bug->location[0]; /*0x43cb83*/
         v58[1] = bug->location[1]; /*0x43cb94*/
         v58[2] = bug->location[2]; /*0x43cb9b*/
-        *v16 = Coord::To_Cell((Coord *)&dword_87F7E8, v58); /*0x43cba4*/
+        *v16 = ((Coord *)&dword_87F7E8)->To_Cell( v58); /*0x43cba4*/
         bug->RemoveElement(18, v16, v62); /*0x43cbae*/
         return 1; /*0x43cbc0*/
       }
@@ -3608,7 +3608,7 @@ namespace gamemd {
         }
         if ( v10 > 0 ) /*0x43d148*/
         {
-          v11 = (int16_t *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v2); /*0x43d15e*/
+          v11 = (int16_t *)((CellCoord *)&dword_87F7E8)->To_CellObj(v2); /*0x43d15e*/
           v12 = bug->GetMember41(/*0x43d173*/
                   bug, 2, 0, v11[133], 0, 0, 0, 0, 0, 0);
           v22 = -2 - ZCoordToScreenY(v12); /*0x43d18f*/
@@ -3653,7 +3653,7 @@ namespace gamemd {
         }
         if ( v17 > 0 ) /*0x43d21f*/
         {
-          v19 = (int16_t *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v2); /*0x43d235*/
+          v19 = (int16_t *)((CellCoord *)&dword_87F7E8)->To_CellObj(v2); /*0x43d235*/
           v20 = bug->GetMember41(/*0x43d24a*/
                   bug, 0, 0, v19[133], 0, 0, 0, 0, 0, 0);
           v23 = -ZCoordToScreenY(v20); /*0x43d259*/
@@ -4096,7 +4096,7 @@ void BuildingClass::Unlimbo_UnitDeliveryFix()
 
     v2 = v161; /*0x440585*/
     ptr_0 = this->ptr_0; /*0x440595*/
-    v5 = Coord::To_Cell((Coord *)&dword_87F7E8, v161); /*0x44059d*/
+    v5 = ((Coord *)&dword_87F7E8)->To_Cell( v161); /*0x44059d*/
     v6 = ptr_0->vt_slot_428(/*0x4405a5*/
            this, v5, -1, -1, 0, 1);
     v7 = v6 == 0; /*0x4405ad*/
@@ -4106,7 +4106,7 @@ void BuildingClass::Unlimbo_UnitDeliveryFix()
       Type = this->Type; /*0x4405c1*/
       if ( Type == dword_8871E0->NukeDown ) /*0x4405cd*/
       {
-        v9 = Coord::To_Cell((Coord *)&dword_87F7E8, v2); /*0x4405d5*/
+        v9 = ((Coord *)&dword_87F7E8)->To_Cell( v2); /*0x4405d5*/
         wallOwnerIndex = v9->wallOwnerIndex; /*0x4405da*/
         v11 = 0; /*0x4405dd*/
         if ( wallOwnerIndex >= 0 ) /*0x4405e1*/
@@ -4130,7 +4130,7 @@ void BuildingClass::Unlimbo_UnitDeliveryFix()
       }
       else if ( Type->ToOverlay ) /*0x440606*/
       {
-        v9 = Coord::To_Cell((Coord *)&dword_87F7E8, v2); /*0x440616*/
+        v9 = ((Coord *)&dword_87F7E8)->To_Cell( v2); /*0x440616*/
         v15 = v9->wallOwnerIndex; /*0x44061b*/
         v16 = 0; /*0x44061e*/
         if ( v15 >= 0 ) /*0x440622*/
@@ -4154,7 +4154,7 @@ void BuildingClass::Unlimbo_UnitDeliveryFix()
           (v154) = ((v154) & ~0xFFFF) | ((unsigned int)(v45 + *i) & 0xFFFF); /*0x4406ce*/
           (v154) = ((v154) & ~(0xFFFFULL << 16)) | (((uint64_t)(unsigned int)(v18) & 0xFFFF) << 16) /*0x4406d3*/
           *(unsigned int *)v155 = v154; /*0x4406e2*/
-          v19 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v155); /*0x4406eb*/
+          v19 = ((CellCoord *)&dword_87F7E8)->To_CellObj(v155); /*0x4406eb*/
           v20 = 0; /*0x4406ed*/
           v21 = v19->q050; /*0x4406ef*/
           if ( v21 >= 0 ) /*0x4406f4*/
@@ -4186,7 +4186,7 @@ void BuildingClass::Unlimbo_UnitDeliveryFix()
     if ( v26->Wall ) /*0x44077a*/
     {
       v27 = this->ptr_0; /*0x440788*/
-      v28 = Coord::To_Cell((Coord *)&dword_87F7E8, v2); /*0x440798*/
+      v28 = ((Coord *)&dword_87F7E8)->To_Cell( v2); /*0x440798*/
       result = v27->vt_slot_428(/*0x4407a0*/
                  this, v28, -1, -1, 0, 1);
       if ( !result ) /*0x4407a8*/
@@ -4200,7 +4200,7 @@ void BuildingClass::Unlimbo_UnitDeliveryFix()
 
           {
             v30 = this->owner; /*0x4407e6*/
-            Coord::To_Cell((Coord *)&dword_87F7E8, v2)->wallOwnerIndex = this->warpFactor_2; /*0x4407fc*/
+            ((Coord *)&dword_87F7E8)->To_Cell( v2)->wallOwnerIndex = this->warpFactor_2; /*0x4407fc*/
             (*(void (__thiscall **)(BuildingClass *, int))((char *)this->ptr_0 + 628))(this, 3); /*0x440803*/
             MapClass::RevealArea1( /*0x44082d*/
               (MapClass *)&dword_87F7E8,
@@ -4309,7 +4309,7 @@ void BuildingClass::Unlimbo_UnitDeliveryFix()
         v154 = ((v154) & 0xFFFF0000u) | ((unsigned int)(v2->ptr_0 / 256) & 0xFFFFu); /*0x440aa1*/
         v154 = ((v154) & 0xFFFFu) | (((unsigned int)(v2->ptr_0 / 256) & 0xFFFFu) << 16); /*0x440aba*/
         *(unsigned int *)v155 = v154; /*0x440ac3*/
-        v39 = (Cell *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v155); /*0x440ac7*/
+        v39 = (Cell *)((CellCoord *)&dword_87F7E8)->To_CellObj(v155); /*0x440ac7*/
         v40 = Cell::IsBridge(v39); /*0x440ace*/
         v40 = v40; /*0x440ad3*/
         if ( v40 ) /*0x440ad7*/
@@ -4346,7 +4346,7 @@ void BuildingClass::Unlimbo_UnitDeliveryFix()
               j += 4 )
         {
           *(unsigned int *)v155 = *CellStruct::Add((CellStruct *)j, &v45, &v162); /*0x440be5*/
-          if ( (*((unsigned int *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v155) + 80) & 0x400000) == 0 ) /*0x440bf4*/
+          if ( (*((unsigned int *)((CellCoord *)&dword_87F7E8)->To_CellObj(v155) + 80) & 0x400000) == 0 ) /*0x440bf4*/
             goto LABEL_84; /*0x440bf4*/
         }
         BuildingClass::CreateFoggedObjects(this, 0, 0, 0); /*0x440c03*/
@@ -4382,7 +4382,7 @@ void BuildingClass::Unlimbo_UnitDeliveryFix()
             {
               v162 = ((v162) & 0xFFFF0000u) | ((unsigned int)(v49 + v50) & 0xFFFFu); /*0x440cc1*/
               *(unsigned int *)v155 = v162; /*0x440cd0*/
-              v51 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v155); /*0x440cd4*/
+              v51 = ((CellCoord *)&dword_87F7E8)->To_CellObj(v155); /*0x440cd4*/
               ++v49; /*0x440ce1*/
               ++v51[290]; /*0x440ce4*/
             }
@@ -4400,7 +4400,7 @@ void BuildingClass::Unlimbo_UnitDeliveryFix()
       *(unsigned char *)(this->owner + 508) = 1; /*0x440d1e*/
       v52 = this->isDiscoveredByCurrentPlayer[0]; /*0x440d25*/
       this->BuildingClass_field_544 = 0; /*0x440d2d*/
-      if ( !v52 && (Coord::To_Cell((Coord *)&dword_87F7E8, v2)->copyFlags & 0x10) != 0 || *(unsigned int *)&dword_A8B238 ) /*0x440d54*/
+      if ( !v52 && (((Coord *)&dword_87F7E8)->To_Cell( v2)->copyFlags & 0x10) != 0 || *(unsigned int *)&dword_A8B238 ) /*0x440d54*/
       {
         (*(void (__thiscall **)(BuildingClass *, Object *))((char *)this->ptr_0 + 408))(this, dword_A83D4C); /*0x440d61*/
       }
@@ -4463,7 +4463,7 @@ void BuildingClass::Unlimbo_UnitDeliveryFix()
           v160[2] = v159 + v62; /*0x440f28*/
           v156[1] = v63; /*0x440f2c*/
           v156[2] = v64; /*0x440f30*/
-          v65 = Coord::To_Cell((Coord *)&dword_87F7E8, v156); /*0x440f34*/
+          v65 = ((Coord *)&dword_87F7E8)->To_Cell( v156); /*0x440f34*/
           v66 = ParticleSystemClass::Constructor( /*0x440f4e*/
                   v60,
                   this->Type->q764,
@@ -4483,21 +4483,21 @@ void BuildingClass::Unlimbo_UnitDeliveryFix()
       v67 = dword_8871E0; /*0x440f61*/
       if ( this->Type == dword_8871E0->NukeDown ) /*0x440f72*/
       {
-        smudgeTypeIndex = Coord::To_Cell((Coord *)&dword_87F7E8, v161)->smudgeTypeIndex; /*0x440f87*/
+        smudgeTypeIndex = ((Coord *)&dword_87F7E8)->To_Cell( v161)->smudgeTypeIndex; /*0x440f87*/
         v157 = smudgeTypeIndex; /*0x440f8e*/
         v162 = ((v162) & 0xFFFFu) | (((unsigned int)((unsigned short)((smudgeTypeIndex) >> 16)) & 0xFFFFu) << 16); /*0x440f99*/
         v162 = ((v162) & 0xFFFF0000u) | ((unsigned int)(smudgeTypeIndex + 1) & 0xFFFFu); /*0x440f9e*/
-        v69 = (BuildingClass *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (short *)&v162); /*0x440fb3*/
+        v69 = (BuildingClass *)((CellCoord *)&dword_87F7E8)->To_CellObj((short *)&v162); /*0x440fb3*/
         BuildingClass::ValidatePlacement(v69, 0); /*0x440fba*/
         v162 = ((v162) & 0xFFFFu) | (((unsigned int)((unsigned short)((smudgeTypeIndex) >> 16)) & 0xFFFFu) << 16); /*0x440fc2*/
         v162 = ((v162) & 0xFFFF0000u) | ((unsigned int)(smudgeTypeIndex - 1) & 0xFFFFu); /*0x440fc7*/
-        v70 = (BuildingClass *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (short *)&v162); /*0x440fe0*/
+        v70 = (BuildingClass *)((CellCoord *)&dword_87F7E8)->To_CellObj((short *)&v162); /*0x440fe0*/
         BuildingClass::ValidatePlacement(v70, 0); /*0x440fe7*/
         v162 = &smudgeTypeIndex->u32_10000; /*0x440ff4*/
-        v71 = (BuildingClass *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (short *)&v162); /*0x44100d*/
+        v71 = (BuildingClass *)((CellCoord *)&dword_87F7E8)->To_CellObj((short *)&v162); /*0x44100d*/
         BuildingClass::ValidatePlacement(v71, 0); /*0x441014*/
         v162 = (int *)(smudgeTypeIndex - 0x10000); /*0x44101f*/
-        v72 = (BuildingClass *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (short *)&v162); /*0x441038*/
+        v72 = (BuildingClass *)((CellCoord *)&dword_87F7E8)->To_CellObj((short *)&v162); /*0x441038*/
         BuildingClass::ValidatePlacement(v72, 0); /*0x44103f*/
         v67 = dword_8871E0; /*0x441044*/
         v2 = v161; /*0x441049*/
@@ -4505,28 +4505,28 @@ void BuildingClass::Unlimbo_UnitDeliveryFix()
       v73 = this->Type; /*0x44104d*/
       if ( v73 == v67->FlameDamage || v73 == v67->NukeWarhead ) /*0x441063*/
       {
-        v74 = (int *)Coord::To_Cell((Coord *)&dword_87F7E8, v2)->smudgeTypeIndex; /*0x441070*/
+        v74 = (int *)((Coord *)&dword_87F7E8)->To_Cell( v2)->smudgeTypeIndex; /*0x441070*/
         v162 = v74; /*0x441077*/
         v161 = ((v161) & 0xFFFFu) | (((unsigned int)((unsigned short)((v74) >> 16)) & 0xFFFFu) << 16); /*0x441083*/
         v161 = ((v161) & 0xFFFF0000u) | ((unsigned int)((unsigned short)v74 - 1) & 0xFFFFu); /*0x441088*/
-        v75 = (BuildingClass *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (short *)&v161); /*0x44109d*/
+        v75 = (BuildingClass *)((CellCoord *)&dword_87F7E8)->To_CellObj((short *)&v161); /*0x44109d*/
         BuildingClass::ValidatePlacement(v75, 0); /*0x4410a4*/
         v161 = ((v161) & 0xFFFF0000u) | ((unsigned int)((unsigned short)v74 + 3) & 0xFFFFu); /*0x4410b0*/
         v161 = ((v161) & 0xFFFFu) | (((unsigned int)((unsigned short)((v74) >> 16)) & 0xFFFFu) << 16); /*0x4410b5*/
-        v76 = (BuildingClass *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (short *)&v161); /*0x4410ca*/
+        v76 = (BuildingClass *)((CellCoord *)&dword_87F7E8)->To_CellObj((short *)&v161); /*0x4410ca*/
         BuildingClass::ValidatePlacement(v76, 0); /*0x4410d1*/
         v67 = dword_8871E0; /*0x4410d6*/
       }
       v77 = this->Type; /*0x4410db*/
       if ( v77 == v67->FlameDamage2 || v77 == v67->NukeProjectile ) /*0x4410f1*/
       {
-        v78 = Coord::To_Cell((Coord *)&dword_87F7E8, v2)->smudgeTypeIndex; /*0x4410fe*/
+        v78 = ((Coord *)&dword_87F7E8)->To_Cell( v2)->smudgeTypeIndex; /*0x4410fe*/
         v157 = v78; /*0x441105*/
         v161 = (TechnoClass *)(v78 - 0x10000); /*0x441118*/
-        v79 = (BuildingClass *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (short *)&v161); /*0x44112a*/
+        v79 = (BuildingClass *)((CellCoord *)&dword_87F7E8)->To_CellObj((short *)&v161); /*0x44112a*/
         BuildingClass::ValidatePlacement(v79, 0); /*0x441131*/
         v161 = &v78->TechnoClass_30000; /*0x44113e*/
-        v80 = (BuildingClass *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (short *)&v161); /*0x441157*/
+        v80 = (BuildingClass *)((CellCoord *)&dword_87F7E8)->To_CellObj((short *)&v161); /*0x441157*/
         BuildingClass::ValidatePlacement(v80, 0); /*0x44115e*/
       }
       if ( this->Type->HasSpotlight ) /*0x441169*/
@@ -5793,13 +5793,13 @@ namespace gamemd {
   {
     v4 = v13; /*0x44757d*/
     v5 = TechnoClass::HandleCursor((TechnoClass *)bug, v13, 0, v15); /*0x447592*/
-    v6 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v13); /*0x447594*/
+    v6 = ((CellCoord *)&dword_87F7E8)->To_CellObj(v13); /*0x447594*/
     v7 = (unsigned int *)v6->vt_slot_72(v12); /*0x4475a2*/
     if ( !(uint8_t)Cell::IsPassable(v7) ) /*0x4475ab*/
     {
       if ( v5 == 1 ) /*0x4475b7*/
       {
-        if ( *((unsigned int *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v13) + 59) == 5 ) /*0x4475cb*/
+        if ( *((unsigned int *)((CellCoord *)&dword_87F7E8)->To_CellObj(v13) + 59) == 5 ) /*0x4475cb*/
         {
           v8 = bug->Type; /*0x4475cd*/
           if ( v8->ResourceDestination ) /*0x4475d3*/
@@ -5846,8 +5846,8 @@ namespace gamemd {
       v12[1] = (v10 << 8) + 128; /*0x4476b1*/
       if ( !ptr_0->vt_slot_716(bug, v12) ) /*0x4476b5*/
         v5 = 2; /*0x4476bf*/
-      if ( (*((unsigned int *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v4) + 80) & 0x100) == 0 /*0x4476e5*/
-        && *((unsigned int *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v4) + 19) )
+      if ( (*((unsigned int *)((CellCoord *)&dword_87F7E8)->To_CellObj(v4) + 80) & 0x100) == 0 /*0x4476e5*/
+        && *((unsigned int *)((CellCoord *)&dword_87F7E8)->To_CellObj(v4) + 19) )
       {
         v5 = 2; /*0x4476ec*/
         goto LABEL_35; /*0x4476f1*/
@@ -5914,8 +5914,8 @@ namespace gamemd {
       v12[1] = (v10 << 8) + 128; /*0x4476b1*/
       if ( !ptr_0->vt_slot_716(bug, v12) ) /*0x4476b5*/
         v5 = 2; /*0x4476bf*/
-      if ( (*((unsigned int *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v4) + 80) & 0x100) == 0 /*0x4476e5*/
-        && *((unsigned int *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v4) + 19) )
+      if ( (*((unsigned int *)((CellCoord *)&dword_87F7E8)->To_CellObj(v4) + 80) & 0x100) == 0 /*0x4476e5*/
+        && *((unsigned int *)((CellCoord *)&dword_87F7E8)->To_CellObj(v4) + 19) )
       {
         v5 = 2; /*0x4476ec*/
         goto LABEL_35; /*0x4476f1*/
@@ -7186,7 +7186,7 @@ namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
         BuildingClass::StartProduction(this, 2); /*0x44c9c7*/
         owner = this->owner; /*0x44c9cc*/
         this->missionStatus = 1; /*0x44c9d2*/
-        v4 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, &owner->u32_5784); /*0x44c9e8*/
+        v4 = ((CellCoord *)&dword_87F7E8)->To_CellObj(&owner->u32_5784); /*0x44c9e8*/
         v5 = this->owner; /*0x44c9ed*/
         v6 = v4; /*0x44c9f8*/
         v7 = (void *)*((unsigned int *)dword_8B4154 + AnimTypeClass::FindIndex((AnimTypeClass *)&stru_819030.Type)); /*0x44ca0f*/
@@ -7215,7 +7215,7 @@ LABEL_7:
       case 2: /*0x44c9b5*/
 LABEL_9:
         (*(void (**)(BuildingClass *, double *))(this->ptr_0 + 72))(this, &v78); /*0x44ca97*/
-        v11 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)(this->owner + 22404)); /*0x44cab5*/
+        v11 = ((CellCoord *)&dword_87F7E8)->To_CellObj((__int16 *)(this->owner + 22404)); /*0x44cab5*/
         v12 = *(int **)(*((unsigned int *)dword_A8E334 + this->FiringSWType) + 156); /*0x44cad0*/
         UIObjectCOM = (Function *)CreateUIObjectCOM(v12[40], (int)v11, (int)this, v12[41], v12[43], 255, 1); /*0x44caed*/
         v14 = (int)UIObjectCOM; /*0x44caf2*/
@@ -7299,7 +7299,7 @@ LABEL_20:
     {
       ptr_0 = this->ptr_0; /*0x44cced*/
       v64 = (unsigned int)(this->owner + 22404); /*0x44ccf6*/
-      v21 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)v64); /*0x44ccfc*/
+      v21 = ((CellCoord *)&dword_87F7E8)->To_CellObj((__int16 *)v64); /*0x44ccfc*/
       (*(void (**)(BuildingClass *, void *, unsigned int))(ptr_0 + 972))(this, v21, (((v64) >> 32) & 0xFFFFFFFFu)); /*0x44cd04*/
       (*(void (**)(BuildingClass *, int, unsigned int))(this->ptr_0 + 488))(this, 5, 0); /*0x44cd12*/
     }
@@ -7309,12 +7309,12 @@ LABEL_20:
       {
         case 0: /*0x44cd3b*/
           v22 = this->ptr_0; /*0x44cd48*/
-          v23 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)(this->owner + 22400)); /*0x44cd56*/
+          v23 = ((CellCoord *)&dword_87F7E8)->To_CellObj((__int16 *)(this->owner + 22400)); /*0x44cd56*/
           v24 = *(AnimClass **)(*(int (**)(BuildingClass *, unsigned char *, void *))(v22 + 1256))(this, v92, v23); /*0x44cd72*/
           v25 = this->ptr_0; /*0x44cd74*/
           v73 = (__int16 *)(this->owner + 22400); /*0x44cd7c*/
           v74 = v24; /*0x44cd82*/
-          v26 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v73); /*0x44cd86*/
+          v26 = ((CellCoord *)&dword_87F7E8)->To_CellObj(v73); /*0x44cd86*/
           v79 = *(void ***)(*(int (**)(BuildingClass *, unsigned char *, void *))(v25 + 712))(this, v91, v26); /*0x44cdae*/
           if ( abs16(*(unsigned short *)ProgressTimer::GetValue((ProgressTimer *)this->primaryFacing, &v93) - (unsigned short)v74) ) /*0x44cdce*/
           {
@@ -7348,8 +7348,8 @@ LABEL_20:
           return 32; /*0x44cec9*/
         case 2: /*0x44cd3b*/
           v28 = *(unsigned int *)(*(int (**)(BuildingClass *, unsigned int))(this->ptr_0 + 1016))(this, 0); /*0x44cefe*/
-          v29 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)(this->owner + 22400)); /*0x44cf22*/
-          LODWORD(v78) = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)(this->owner + 22400)); /*0x44cf2a*/
+          v29 = ((CellCoord *)&dword_87F7E8)->To_CellObj((__int16 *)(this->owner + 22400)); /*0x44cf22*/
+          LODWORD(v78) = ((CellCoord *)&dword_87F7E8)->To_CellObj((__int16 *)(this->owner + 22400)); /*0x44cf2a*/
           if ( stru_A8E960.random[503] || *(unsigned int *)(this->owner + 22400) == g_TerrainTypeTable ) /*0x44cf50*/
           {
             BuildingClass::StartProduction(this, 1); /*0x44d564*/
@@ -8016,7 +8016,7 @@ namespace gamemd {
               (*(((unsigned short *)&(v84.m_Position)) + 1)) = v54; /*0x44df42*/
               i = v84.m_Position; /*0x44df52*/
               v55 = *(unsigned int *)v84.m_Size; /*0x44df56*/
-              v56 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, (int16_t *)&i); /*0x44df5d*/
+              v56 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj((int16_t *)&i); /*0x44df5d*/
               (*(void (__thiscall **)(int, void *, int))(v55 + 1152))(v84.m_Size, v56, 1); /*0x44df65*/
               m_Size = (unsigned int *)v84.m_Size; /*0x44df6b*/
             }
@@ -8114,12 +8114,12 @@ namespace gamemd {
     *(unsigned int *)v84.m_Position = v84.StreamClass_field_0C; /*0x44d980*/
     v84.m_Data = (void *)v84.m_Position; /*0x44d984*/
     LandHeight = ObjectClass::GetLandHeight((ObjectClass *)bug); /*0x44d98d*/
-    v17 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, (int16_t *)&v84.m_Data); /*0x44d999*/
+    v17 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj((int16_t *)&v84.m_Data); /*0x44d999*/
     v18 = (*(int (__thiscall **)(int, void *, int, int, unsigned int, int))(v16 + 428))(v4, v17, v8, LandHeight, 0, 1); /*0x44d9a1*/
     v19 = *(unsigned int *)v4; /*0x44d9a7*/
     v83 = v18 == 0; /*0x44d9b1*/
     v79 = ObjectClass::GetLandHeight((ObjectClass *)bug); /*0x44d9bb*/
-    v20 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, (int16_t *)v84.m_Position); /*0x44d9c7*/
+    v20 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj((int16_t *)v84.m_Position); /*0x44d9c7*/
     if ( !(*(int (__thiscall **)(int, void *, int, int, unsigned int, int))(v19 + 428))(v4, v20, v8, v79, 0, 1) ) /*0x44d9cf*/
       break; /*0x44d9cf*/
     if ( !v82 ) /*0x44da20*/
@@ -8139,7 +8139,7 @@ namespace gamemd {
   }
   if ( !v83 && v82 ) /*0x44d9e7*/
     goto LABEL_17; /*0x44d9e7*/
-  if ( (*((unsigned int *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, (int16_t *)v84.m_Position) + 80) & 0x100) != 0 ) /*0x44da01*/
+  if ( (*((unsigned int *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj((int16_t *)v84.m_Position) + 80) & 0x100) != 0 ) /*0x44da01*/
   {
   LABEL_13:
     v21 = v84.m_Size; /*0x44da03*/
@@ -8179,7 +8179,7 @@ namespace gamemd {
                             0,
                             0,
                             v81);
-    v27 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, (int16_t *)&v84.m_Data); /*0x44db05*/
+    v27 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj((int16_t *)&v84.m_Data); /*0x44db05*/
     v28 = (unsigned int *)v27->vt_slot_72(v91); /*0x44db13*/
     i = *(unsigned int *)((CellStruct *)&v87)->Set( *v28 / 256, v28[1] / 256); /*0x44db42*/
     v24 = 0; /*0x44db5f*/
@@ -8220,7 +8220,7 @@ namespace gamemd {
     p_m_Position = (int16_t *)&v84.m_Position; /*0x44dc34*/
   else
     p_m_Position = (int16_t *)&v84.m_Data; /*0x44dc3b*/
-  v33 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, p_m_Position); /*0x44dc41*/
+  v33 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(p_m_Position); /*0x44dc41*/
   (*(void (__thiscall **)(int, void *))(v32 + 1152))(v4, v33); /*0x44dc49*/
   if ( bug->Type->ExtraPowerBonus > 0 ) /*0x44dc5d*/
     (*((unsigned char *)&(bug->owner->HouseClass_field_timer_B[2]))) = 1; /*0x44dc65*/
@@ -8261,12 +8261,12 @@ namespace gamemd {
     *(unsigned int *)v84.m_Position = v84.StreamClass_field_0C; /*0x44d980*/
     v84.m_Data = (void *)v84.m_Position; /*0x44d984*/
     LandHeight = ObjectClass::GetLandHeight((ObjectClass *)bug); /*0x44d98d*/
-    v17 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, (int16_t *)&v84.m_Data); /*0x44d999*/
+    v17 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj((int16_t *)&v84.m_Data); /*0x44d999*/
     v18 = (*(int (__thiscall **)(int, void *, int, int, unsigned int, int))(v16 + 428))(v4, v17, v8, LandHeight, 0, 1); /*0x44d9a1*/
     v19 = *(unsigned int *)v4; /*0x44d9a7*/
     v83 = v18 == 0; /*0x44d9b1*/
     v79 = ObjectClass::GetLandHeight((ObjectClass *)bug); /*0x44d9bb*/
-    v20 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, (int16_t *)v84.m_Position); /*0x44d9c7*/
+    v20 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj((int16_t *)v84.m_Position); /*0x44d9c7*/
     if ( !(*(int (__thiscall **)(int, void *, int, int, unsigned int, int))(v19 + 428))(v4, v20, v8, v79, 0, 1) ) /*0x44d9cf*/
       break; /*0x44d9cf*/
     if ( !v82 ) /*0x44da20*/
@@ -8286,7 +8286,7 @@ namespace gamemd {
   }
   if ( !v83 && v82 ) /*0x44d9e7*/
     goto LABEL_17; /*0x44d9e7*/
-  if ( (*((unsigned int *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, (int16_t *)v84.q000) + 80) & 0x100) != 0 ) /*0x44da01*/
+  if ( (*((unsigned int *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj((int16_t *)v84.q000) + 80) & 0x100) != 0 ) /*0x44da01*/
   {
   LABEL_13:
     v21 = v84.m_Size; /*0x44da03*/
@@ -8326,7 +8326,7 @@ namespace gamemd {
                             0,
                             0,
                             v81);
-    v27 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, (int16_t *)&v84.m_Data); /*0x44db05*/
+    v27 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj((int16_t *)&v84.m_Data); /*0x44db05*/
     v28 = (unsigned int *)v27->vt_slot_72(v91); /*0x44db13*/
     i = *(unsigned int *)((CellStruct *)&v87)->Set( *v28 / 256, v28[1] / 256); /*0x44db42*/
     v24 = 0; /*0x44db5f*/
@@ -8367,7 +8367,7 @@ namespace gamemd {
     p_m_Position = (int16_t *)&v84.m_Position; /*0x44dc34*/
   else
     p_m_Position = (int16_t *)&v84.m_Data; /*0x44dc3b*/
-  v33 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, p_m_Position); /*0x44dc41*/
+  v33 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(p_m_Position); /*0x44dc41*/
   (*(void (__thiscall **)(int, void *))(v32 + 1152))(v4, v33); /*0x44dc49*/
   if ( bug->Type->ExtraPowerBonus > 0 ) /*0x44dc5d*/
     bug->owner->HouseClass_field_timer_B[2] = ((bug->owner->HouseClass_field_timer_B[2]) & 0xFFFFFF00u) | ((unsigned int)(1) & 0xFFu); /*0x44dc65*/
@@ -9638,7 +9638,7 @@ namespace gamemd {
         (*((unsigned short *)&(v14))) = v6 + (*((unsigned short *)&(g_DDrawSurfaceManager.scenario[v8 + 82]))); /*0x452aed*/
         (*(((unsigned short *)&(v14)) + 1)) = v7 + (*(((unsigned short *)&(g_DDrawSurfaceManager.scenario[v8 + 82])) + 1)); /*0x452af2*/
         *(unsigned int *)v16 = v14; /*0x452aff*/
-        v9 = (Cell *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v16); /*0x452b09*/
+        v9 = (Cell *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v16); /*0x452b09*/
         v10 = Cell::IsBridge(v9); /*0x452b10*/
         v11 = v10; /*0x452b15*/
         if ( v10 ) /*0x452b19*/
@@ -9727,7 +9727,7 @@ namespace gamemd {
     (*((unsigned short *)&(v18))) = a2 + *v11; /*0x452c76*/
     (*(((unsigned short *)&(v18)) + 1)) = (*(((unsigned short *)&(a2)) + 1)) + v11[1]; /*0x452c7b*/
     a2 = v18; /*0x452c8e*/
-    v12 = (Cell *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, (int16_t *)&a2); /*0x452c92*/
+    v12 = (Cell *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj((int16_t *)&a2); /*0x452c92*/
     v13 = Cell::IsBridge(v12); /*0x452c99*/
     v14 = (int)v13; /*0x452c9e*/
     if ( !v13 ) /*0x452ca2*/
@@ -9785,7 +9785,7 @@ namespace gamemd {
     v18 = ((v18) & 0xFFFF0000u) | ((unsigned int)(a2 + *v11) & 0xFFFFu); /*0x452c76*/
     v18 = ((v18) & 0xFFFFu) | (((unsigned int)((unsigned short)((a2) >> 16) + v11[1]) & 0xFFFFu) << 16); /*0x452c7b*/
     a2 = v18; /*0x452c8e*/
-    v12 = (Cell *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, (int16_t *)&a2); /*0x452c92*/
+    v12 = (Cell *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj((int16_t *)&a2); /*0x452c92*/
     v13 = Cell::IsBridge(v12); /*0x452c99*/
     v14 = (int)v13; /*0x452c9e*/
     if ( !v13 ) /*0x452ca2*/
@@ -9880,7 +9880,7 @@ namespace gamemd {
               (*((unsigned short *)&(v20))) = v19[0] + *v6; /*0x452ec2*/
               (*(((unsigned short *)&(v20)) + 1)) = v7; /*0x452ec7*/
               *(unsigned int *)v19 = v20; /*0x452eda*/
-              v8 = (Cell *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v19); /*0x452ede*/
+              v8 = (Cell *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v19); /*0x452ede*/
               v9 = Cell::IsBridge(v8); /*0x452ee5*/
               if ( v9 == v21 ) /*0x452eee*/
                 break; /*0x452eee*/
@@ -9910,7 +9910,7 @@ namespace gamemd {
             *(unsigned int *)v19 = v26; /*0x452fd5*/
             do /*0x453048*/
             {
-              v16 = (int *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v19); /*0x452fe8*/
+              v16 = (int *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v19); /*0x452fe8*/
               if ( BuildingClass::FindByCellHash((BuildingClass *)v16) != -1 ) /*0x452ff4*/
                 CellClass::ReduceTiberium(v16, 12); /*0x452ffa*/
               if ( v16->u32_44 == 126 ) /*0x453002*/
@@ -9918,7 +9918,7 @@ namespace gamemd {
               (*((unsigned short *)&(v27))) = *v6 + v19[0]; /*0x45301c*/
               (*(((unsigned short *)&(v27)) + 1)) = v19[1] + v6[1]; /*0x453021*/
               *(unsigned int *)v19 = v27; /*0x453034*/
-              v17 = (Cell *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v19); /*0x453038*/
+              v17 = (Cell *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v19); /*0x453038*/
               v18 = Cell::IsBridge(v17); /*0x45303f*/
             }
             while ( v18 != v21 ); /*0x453048*/
@@ -9977,7 +9977,7 @@ namespace gamemd {
       (*((unsigned short *)&(v20))) = a2 + *v9; /*0x45311b*/
       (*(((unsigned short *)&(v20)) + 1)) = (*(((unsigned short *)&(a2)) + 1)) + v9->ptr_2; /*0x453120*/
       a2 = v20; /*0x453133*/
-      v10 = (Cell *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, (int16_t *)&a2); /*0x453137*/
+      v10 = (Cell *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj((int16_t *)&a2); /*0x453137*/
       result = (int)Cell::IsBridge(v10); /*0x45313e*/
       result = result; /*0x453143*/
       if ( result ) /*0x453147*/
@@ -10040,7 +10040,7 @@ namespace gamemd {
   int v19; // [esp+18h] [ebp-8h]
   int v20; // [esp+1Ch] [ebp-4h] BYREF
 
-  v2 = (Cell *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, (int16_t *)bug); /*0x45324f*/
+  v2 = (Cell *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj((int16_t *)bug); /*0x45324f*/
   if ( v2 ) /*0x453256*/
   {
     v2 = (Cell *)Cell::IsBridge(v2); /*0x45325e*/
@@ -10070,7 +10070,7 @@ namespace gamemd {
             if ( v17[1] == (*(((unsigned short *)&(v18)) + 1)) ) /*0x4532e5*/
               break; /*0x4532e5*/
           }
-          v12 = (Cell *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v17); /*0x4532f1*/
+          v12 = (Cell *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v17); /*0x4532f1*/
           v13 = (BuildingClass *)Cell::IsBridge(v12); /*0x4532f8*/
           v6 = v13; /*0x4532fd*/
           if ( !v13 ) /*0x453301*/
@@ -10175,7 +10175,7 @@ namespace gamemd {
       (*((unsigned short *)&(v36))) = v8; /*0x453494*/
       (*(((unsigned short *)&(v36)) + 1)) = v6 / 256 + v9; /*0x4534a3*/
       *(unsigned int *)v30 = v36; /*0x4534b2*/
-      v10 = (Cell *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v30); /*0x4534b6*/
+      v10 = (Cell *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v30); /*0x4534b6*/
       v11 = Cell::IsBridge(v10); /*0x4534bd*/
       v12 = v11; /*0x4534c2*/
       v13 = v32 & 3; /*0x4534c4*/
@@ -10268,7 +10268,7 @@ namespace gamemd {
                 v12->u32_80 = 1; /*0x4536ec*/
                 if ( v28 ) /*0x4536f5*/
                 {
-                  v19 = (unsigned int *)*((unsigned int *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v30) + 57); /*0x453706*/
+                  v19 = (unsigned int *)*((unsigned int *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v30) + 57); /*0x453706*/
                   while ( v19 ) /*0x45370e*/
                   {
                     v20 = (*(int (__thiscall **)(unsigned int *))(*v19 + 44))(v19); /*0x453714*/
@@ -10299,7 +10299,7 @@ namespace gamemd {
                 (*((unsigned short *)&(v38))) = v22; /*0x45377c*/
                 (*(((unsigned short *)&(v38)) + 1)) = v23; /*0x453781*/
                 *(unsigned int *)v30 = v38; /*0x45378e*/
-                v24 = (Cell *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v30); /*0x453798*/
+                v24 = (Cell *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v30); /*0x453798*/
                 v12 = Cell::IsBridge(v24); /*0x4537a4*/
               }
               while ( v12 ); /*0x4537a8*/
@@ -10499,7 +10499,7 @@ namespace gamemd {
   v1 = v5; /*0x453d60*/
   (*((unsigned short *)&(v5))) = *v5 / 256; /*0x453d72*/
   (*(((unsigned short *)&(v5)) + 1)) = v1->ptr_4 / 256; /*0x453d8b*/
-  v2 = CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&v5); /*0x453d9d*/
+  v2 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v5); /*0x453d9d*/
   v3 = v2->q124; /*0x453da2*/
   result = (int)(v2 + 73); /*0x453da8*/
   (*((unsigned char *)&(v3))) = v3 | 0x80; /*0x453dad*/
@@ -10519,7 +10519,7 @@ namespace gamemd {
   v1 = v5; /*0x453dc0*/
   (*((unsigned short *)&(v5))) = *v5 / 256; /*0x453dd2*/
   (*(((unsigned short *)&(v5)) + 1)) = v1->ptr_4 / 256; /*0x453deb*/
-  v2 = CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&v5); /*0x453dfd*/
+  v2 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v5); /*0x453dfd*/
   v3 = v2->q124; /*0x453e02*/
   result = (int)(v2 + 73); /*0x453e08*/
   (*((unsigned char *)&(v3))) = v3 & 0x7F; /*0x453e0d*/
@@ -11172,7 +11172,7 @@ namespace gamemd {
         result = DetectDisguiseRange * DetectDisguiseRange; /*0x455a3c*/
         if ( v5 * v5 + v4 * v4 < DetectDisguiseRange * DetectDisguiseRange ) /*0x455a44*/
         {
-          v6 = (BuildingClass *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v9); /*0x455a50*/
+          v6 = (BuildingClass *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v9); /*0x455a50*/
           result = BuildingClass::evaulateDefense(v6, v10); /*0x455a5c*/
         }
         ++v4; /*0x455a61*/
@@ -11197,7 +11197,7 @@ namespace gamemd {
         result = DetectDisguiseRange * DetectDisguiseRange; /*0x455a3c*/
         if ( v5 * v5 + v4 * v4 < DetectDisguiseRange * DetectDisguiseRange ) /*0x455a44*/
         {
-          v6 = (BuildingClass *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v9); /*0x455a50*/
+          v6 = (BuildingClass *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v9); /*0x455a50*/
           result = BuildingClass::evaulateDefense(v6, v10); /*0x455a5c*/
         }
         ++v4; /*0x455a61*/
@@ -11254,7 +11254,7 @@ namespace gamemd {
           *(unsigned int *)v10 = v9; /*0x455b54*/
           if ( v6 * v6 + v5 * v5 < DetectDisguiseRange * DetectDisguiseRange ) /*0x455b58*/
           {
-            v7 = (BuildingClass *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v10); /*0x455b64*/
+            v7 = (BuildingClass *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v10); /*0x455b64*/
             result = BuildingClass::processGarrison(v7, v11); /*0x455b70*/
           }
           ++v5; /*0x455b75*/
@@ -11457,7 +11457,7 @@ namespace gamemd {
   {
     v4 = *(unsigned int *)(*(unsigned int *)&g_InfantryClassLimit + 4 * i); /*0x45770a*/
     v5 = (unsigned int *)(*(int (__thiscall **)(int, unsigned char *, unsigned int))(*(unsigned int *)v4 + 76))(v4, v9, 0); /*0x457716*/
-    v6 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, v5); /*0x45771f*/
+    v6 = ((Coord *)&DataGlobal_87F7E8)->To_Cell( v5); /*0x45771f*/
     v7 = (BuildingClass *)Cell::IsBridge((Cell *)v6); /*0x457726*/
     if ( *(unsigned char *)(v4 + 144) ) /*0x45772b*/
     {
@@ -11558,7 +11558,7 @@ namespace gamemd {
     v45[1] += v11; /*0x457e70*/
     v15 = *v14; /*0x457e75*/
     v16 = **v14; /*0x457e7b*/
-    v17 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v45); /*0x457e8b*/
+    v17 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v45); /*0x457e8b*/
     if ( (*(int (__thiscall **)(int *, void *, int, int, unsigned int, int))(v16 + 428))(v15, v17, -1, -1, 0, 1) ) /*0x457e93*/
     {
       while ( 1 ) /*0x457ea6*/
@@ -11568,7 +11568,7 @@ namespace gamemd {
           break; /*0x457eb8*/
         --v45[1]; /*0x457eba*/
         v19 = *v15; /*0x457ebf*/
-        v20 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v45); /*0x457ed3*/
+        v20 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v45); /*0x457ed3*/
         if ( !(*(int (__thiscall **)(int *, void *, int, int, unsigned int, int))(v19 + 428))(v15, v20, -1, -1, 0, 1) ) /*0x457edb*/
           goto LABEL_5; /*0x457ee3*/
       }
@@ -11592,7 +11592,7 @@ namespace gamemd {
           break; /*0x457f36*/
         --v45[0]; /*0x457f38*/
         v24 = *v15; /*0x457f3d*/
-        v25 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v45); /*0x457f51*/
+        v25 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v45); /*0x457f51*/
         if ( !(*(int (__thiscall **)(int *, void *, int, int, unsigned int, int))(v24 + 428))(v15, v25, -1, -1, 0, 1) ) /*0x457f59*/
         {
           v12 = 1; /*0x457f67*/
@@ -11613,7 +11613,7 @@ namespace gamemd {
           break; /*0x457fad*/
         ++v45[0]; /*0x457faf*/
         v27 = *v15; /*0x457fb4*/
-        v28 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v45); /*0x457fc8*/
+        v28 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v45); /*0x457fc8*/
         if ( !(*(int (__thiscall **)(int *, void *, int, int, unsigned int, int))(v27 + 428))(v15, v28, -1, -1, 0, 1) ) /*0x457fd0*/
         {
           v12 = 1; /*0x457fde*/
@@ -11635,7 +11635,7 @@ namespace gamemd {
           break; /*0x458027*/
         ++v45[1]; /*0x45802d*/
         v31 = *v15; /*0x458032*/
-        v32 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v45); /*0x458046*/
+        v32 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v45); /*0x458046*/
         if ( !(*(int (__thiscall **)(int *, void *, int, int, unsigned int, int))(v31 + 428))(v15, v32, -1, -1, 0, 1) ) /*0x45804e*/
         {
           *(unsigned int *)v46 = *(unsigned int *)v45; /*0x45805c*/
@@ -11654,7 +11654,7 @@ namespace gamemd {
       *(unsigned int *)v46 = v54; /*0x458177*/
     }
   LABEL_19:
-    v33 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v46); /*0x458060*/
+    v33 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v46); /*0x458060*/
     v34 = (int *)(*(int (__thiscall **)(void *, unsigned char *))(*(unsigned int *)v33 + 72))(v33, v53); /*0x458078*/
     v50 = *v34; /*0x45807d*/
     v51 = v34[1]; /*0x458084*/
@@ -12062,7 +12062,7 @@ namespace gamemd {
                          (int16_t *)&v29,
                          0,
                          0);
-      v25 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v24); /*0x4597ee*/
+      v25 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v24); /*0x4597ee*/
       (*((void (__thiscall **)(TechnoClass *, void *, int))bunkerLinkedUnit->ptr_0 + 288))(bunkerLinkedUnit, v25, 1); /*0x4597fa*/
       (*((void (__thiscall **)(TechnoClass *, int, unsigned int))bunkerLinkedUnit->ptr_0 + 122))(bunkerLinkedUnit, 2, 0); /*0x459807*/
       v26 = (void (__thiscall **)(BuildingClass *, int, unsigned int))bug->ptr_0; /*0x45980d*/
@@ -12178,7 +12178,7 @@ namespace gamemd {
                          (int16_t *)&v29,
                          0,
                          0);
-      v25 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v24); /*0x4597ee*/
+      v25 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v24); /*0x4597ee*/
       (*((void (__thiscall **)(TechnoClass *, void *, int))bunkerLinkedUnit->ptr_0 + 288))(bunkerLinkedUnit, v25, 1); /*0x4597fa*/
       (*((void (__thiscall **)(TechnoClass *, int, unsigned int))bunkerLinkedUnit->ptr_0 + 122))(bunkerLinkedUnit, 2, 0); /*0x459807*/
       v26 = (void (__thiscall **)(BuildingClass *, int, unsigned int))bug->ptr_0; /*0x45980d*/
@@ -12399,7 +12399,7 @@ namespace gamemd {
     *(unsigned int *)v13 = v14; /*0x45eeed*/
     if ( (uint8_t)LayerClass::CoordinatesLegal((LayerClass *)&dword_87F7E8, v13) ) /*0x45eef1*/
     {
-      v7 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v13); /*0x45ef04*/
+      v7 = ((CellCoord *)&dword_87F7E8)->To_CellObj(v13); /*0x45ef04*/
       v8 = v7->u32_44; /*0x45ef09*/
       if ( v8 != -1 && (this != (BuildingClass *)dword_8871E0->NukeDown || v8 != 2) ) /*0x45ef26*/
         return 2; /*0x45f017*/
@@ -12427,9 +12427,9 @@ namespace gamemd {
               || (v15[0] = v9->location,
                   v15[1] = v9->gapRadius_d,
                   v15[2] = v9->isImmobilized_d,
-                  Coord::To_Cell((Coord *)&dword_87F7E8, v15) == v9->q5A4) )
+                  ((Coord *)&dword_87F7E8)->To_Cell( v15) == v9->q5A4) )
             {
-              v10 = (Cell *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v13); /*0x45effa*/
+              v10 = (Cell *)((CellCoord *)&dword_87F7E8)->To_CellObj(v13); /*0x45effa*/
               Cell::ApplyDamage(v10, (int)&dword_89C8D0, 1, 1, 0); /*0x45f001*/
             }
           }
@@ -14241,7 +14241,7 @@ namespace gamemd {
   v12 = *(unsigned int *)bug; /*0x4a1828*/
   if ( !BuildingClass::CreateCraterAtCell((BuildingClass *)&v12) ) /*0x4a182c*/
     return 0; /*0x4a18e3*/
-  v7 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, bug); /*0x4a183f*/
+  v7 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(bug); /*0x4a183f*/
   Tactical::AddCellToDrawList((int *)g_TacticalClass_Instance, (int)v7); /*0x4a184b*/
   p_vtable3->mapCoords[0] = v12; /*0x4a1859*/
   v14 = *(double *)(*(unsigned int *)&g_RulesClass_Instance + 5752) * 1800.0; /*0x4a187a*/
@@ -14260,7 +14260,7 @@ namespace gamemd {
   v12 = *(unsigned int *)bug; /*0x4a1828*/
   if ( !BuildingClass::CreateCraterAtCell((BuildingClass *)&v12) ) /*0x4a182c*/
     return 0; /*0x4a18e3*/
-  v7 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, bug); /*0x4a183f*/
+  v7 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(bug); /*0x4a183f*/
   Tactical::AddCellToDrawList((int *)g_TacticalClass_Instance, (int)v7); /*0x4a184b*/
   p_vtable3->mapCoords[0] = v12; /*0x4a1859*/
   v14 = *(double *)(*(unsigned int *)&g_RulesClass_Instance + 5752) * 1800.0; /*0x4a187a*/
@@ -14303,10 +14303,10 @@ namespace gamemd {
   v17 = dword_A8E7AC; /*0x4a1907*/
   dword_A8E7AC = 0; /*0x4a190b*/
   if ( (uint8_t)LayerClass::IsWithinUsableArea((LayerClass *)&dword_87F7E8, (int16_t *)bug, 1) /*0x4a1933*/
-    && (v3 = (BuildingClass *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (int16_t *)bug),
+    && (v3 = (BuildingClass *)((CellCoord *)&dword_87F7E8)->To_CellObj((int16_t *)bug),
         v3->ptr_0.ptr_0.ptr_0.ptr_0.ambientSoundController[2] == -1) )
   {
-    if ( *((unsigned int *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (int16_t *)bug) + 59) == 2 ) /*0x4a1952*/
+    if ( *((unsigned int *)((CellCoord *)&dword_87F7E8)->To_CellObj((int16_t *)bug) + 59) == 2 ) /*0x4a1952*/
     {
       v4 = (Object *)operator new(0xB0u); /*0x4a1954*/
       if ( v4 ) /*0x4a195e*/
@@ -14644,7 +14644,7 @@ namespace gamemd {
           0,
           0) )
     goto LABEL_10; /*0x4ddb2f*/
-  v16 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v4); /*0x4ddb49*/
+  v16 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v4); /*0x4ddb49*/
   result = (*((int (__thiscall **)(BuildingClass *, unsigned int *, int, int, unsigned int, int))this->ptr_0 + 107))( /*0x4ddb52*/
              this,
              v16,
@@ -14675,7 +14675,7 @@ namespace gamemd {
           0,
           0) )
     goto LABEL_10; /*0x4ddb2f*/
-  v16 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v4); /*0x4ddb49*/
+  v16 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v4); /*0x4ddb49*/
   result = (*((int (__thiscall **)(BuildingClass *, unsigned int *, int, int, unsigned int, int))this->ptr_0 + 107))( /*0x4ddb52*/
              this,
              v16,
@@ -14933,7 +14933,7 @@ namespace gamemd {
             }
             else
             {
-              v19 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v15); /*0x4fd37d*/
+              v19 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v15); /*0x4fd37d*/
               v20 = (int *)v19->vt_slot_72(v43); /*0x4fd38b*/
               v16 = *v20; /*0x4fd38e*/
               v14 = v39; /*0x4fd390*/
@@ -15092,7 +15092,7 @@ namespace gamemd {
             }
             else
             {
-              v19 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v15); /*0x4fd37d*/
+              v19 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v15); /*0x4fd37d*/
               v20 = (int *)v19->vt_slot_72(v43); /*0x4fd38b*/
               v16 = *v20; /*0x4fd38e*/
               v14 = v39; /*0x4fd390*/
@@ -16033,7 +16033,7 @@ namespace gamemd {
     else
     {
       v10 = *(unsigned int *)bug->occupant; /*0x6b0ead*/
-      v11 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v21); /*0x6b0eb4*/
+      v11 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v21); /*0x6b0eb4*/
       (*(void (__thiscall **)(int, void *, int))(v10 + 1152))(bug->occupant, v11, 1); /*0x6b0ebd*/
       result = (unsigned int *)(*(int (__thiscall **)(int, int, unsigned int))(*(unsigned int *)bug->occupant + 488))( /*0x6b0ecc*/
                            bug->occupant,
@@ -16066,7 +16066,7 @@ namespace gamemd {
       *(unsigned int *)v21 = result; /*0x6b0f8e*/
       if ( result != (unsigned int *)dword_B0B5B8 ) /*0x6b0f92*/
       {
-        v18 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v21); /*0x6b0fac*/
+        v18 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v21); /*0x6b0fac*/
         result = (unsigned int *)TechnoClass::SetFocus((TechnoClass *)bug->occupant, (int)v18); /*0x6b0fb5*/
         bug->customSound_controller[3] = 6; /*0x6b0fba*/
         bug->customSound_controller[4] = 0x7FFFFFFF; /*0x6b0fbd*/
@@ -16104,7 +16104,7 @@ namespace gamemd {
       *(unsigned int *)v21 = result; /*0x6b0f8e*/
       if ( result != (unsigned int *)dword_B0B5B8 ) /*0x6b0f92*/
       {
-        v18 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v21); /*0x6b0fac*/
+        v18 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v21); /*0x6b0fac*/
         result = (unsigned int *)TechnoClass::SetFocus((TechnoClass *)bug->occupant, (int)v18); /*0x6b0fb5*/
         bug->customSound_controller[3] = 6; /*0x6b0fba*/
         bug->customSound_controller[4] = 0x7FFFFFFF; /*0x6b0fbd*/
@@ -16439,7 +16439,7 @@ int UnitClass::ProcessExitQueue()
                       v30 = (int16_t *)(*((int (__thiscall **)(TechnoClass *, int *))this->owner->ptr_0 + 110))( /*0x6b75d9*/
                                          this->owner,
                                          &v82);
-                      v31 = (Cell *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v30); /*0x6b75e5*/
+                      v31 = (Cell *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v30); /*0x6b75e5*/
                       v32 = *v9; /*0x6b75ea*/
                       NeighbourContent = Cell::GetNeighbourContent(v31, 0); /*0x6b75f2*/
                       (*(void (__thiscall **)(unsigned int *, void *, int))(v32 + 1152))(v9, NeighbourContent, 1); /*0x6b75fa*/
@@ -16480,7 +16480,7 @@ int UnitClass::ProcessExitQueue()
             if ( !this->SpawnManagerClass_field_68 ) /*0x6b765c*/
               goto LABEL_55; /*0x6b7661*/
             v37 = (int16_t *)(*((int (__thiscall **)(TechnoClass *, int *))this->owner->ptr_0 + 110))(this->owner, &v83); /*0x6b76a9*/
-            v38 = (Cell *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v37); /*0x6b76b5*/
+            v38 = (Cell *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v37); /*0x6b76b5*/
             v39 = *v9; /*0x6b76ba*/
             v40 = Cell::GetNeighbourContent(v38, 4u); /*0x6b76c2*/
             (*(void (__thiscall **)(unsigned int *, void *, int))(v39 + 1152))(v9, v40, 1); /*0x6b76ca*/
@@ -17126,19 +17126,19 @@ namespace gamemd {
                   && !(uint8_t)HouseClass::IsAlliedWith((void *)bug->owner, (void *)dword_A83D4C)
                   && !dword_A83D4C->defeated )
                 {
-                  if ( *((unsigned int *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v25) + 76) != 1 /*0x6fb32c*/
-                    && *((int *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v25) + 76) >= 0 )
+                  if ( *((unsigned int *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v25) + 76) != 1 /*0x6fb32c*/
+                    && *((int *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v25) + 76) >= 0 )
                   {
-                    v19 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v25); /*0x6fb338*/
+                    v19 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v25); /*0x6fb338*/
                     ++v19->q130; /*0x6fb349*/
                   }
-                  v20 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v25); /*0x6fb355*/
+                  v20 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v25); /*0x6fb355*/
                   ++v20->q134; /*0x6fb366*/
-                  if ( *((int *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v25) + 76) >= 1 ) /*0x6fb37d*/
+                  if ( *((int *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v25) + 76) >= 1 ) /*0x6fb37d*/
                   {
-                    v21 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v25); /*0x6fb389*/
+                    v21 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v25); /*0x6fb389*/
                     v21->u32_12C &= ~0x10u; /*0x6fb3a0*/
-                    v22 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v25); /*0x6fb3a8*/
+                    v22 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v25); /*0x6fb3a8*/
                     v22->u32_12C &= ~8u; /*0x6fb3bb*/
                   }
                   v16 = v27; /*0x6fb3bd*/
@@ -17148,7 +17148,7 @@ namespace gamemd {
                   || (uint8_t)HouseClass::IsAlliedWith((void *)bug->owner, (void *)dword_A83D4C)
                   || dword_A83D4C->defeated )
                 {
-                  v24 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v25); /*0x6fb403*/
+                  v24 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v25); /*0x6fb403*/
                   ++v24[79]; /*0x6fb414*/
                 }
               }
@@ -17253,19 +17253,19 @@ namespace gamemd {
                 && !(uint8_t)HouseClass::IsAlliedWith((void *)bug->owner, (void *)dword_A83D4C)
                 && !dword_A83D4C->defeated )
               {
-                v19 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v25); /*0x6fb5eb*/
+                v19 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v25); /*0x6fb5eb*/
                 --v19->q134; /*0x6fb5fc*/
                 if ( dword_A83D4C[33].__pad_B0[42] ) /*0x6fb603*/
                 {
-                  if ( *((int *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v25) + 77) <= 0 ) /*0x6fb628*/
+                  if ( *((int *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v25) + 77) <= 0 ) /*0x6fb628*/
                   {
-                    v20 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v25); /*0x6fb634*/
+                    v20 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v25); /*0x6fb634*/
                     --v20->q130; /*0x6fb645*/
-                    if ( *((int *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v25) + 76) <= 0 ) /*0x6fb65e*/
+                    if ( *((int *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v25) + 76) <= 0 ) /*0x6fb65e*/
                     {
-                      v21 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v25); /*0x6fb66a*/
+                      v21 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v25); /*0x6fb66a*/
                       v21->u32_12C |= 8u; /*0x6fb681*/
-                      v22 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v25); /*0x6fb689*/
+                      v22 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v25); /*0x6fb689*/
                       v22->u32_12C |= 0x10u; /*0x6fb69c*/
                     }
                   }
@@ -17276,7 +17276,7 @@ namespace gamemd {
                 || (uint8_t)HouseClass::IsAlliedWith((void *)bug->owner, (void *)dword_A83D4C)
                 || dword_A83D4C->defeated )
               {
-                v24 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v25); /*0x6fb6e0*/
+                v24 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v25); /*0x6fb6e0*/
                 --v24[79]; /*0x6fb6f1*/
               }
             }
@@ -17441,7 +17441,7 @@ namespace gamemd {
   v19[0] = *v2 / 256; /*0x70f916*/
   v19[1] = v2[1] / 256; /*0x70f92e*/
   *(unsigned int *)v27 = *(unsigned int *)v19; /*0x70f937*/
-  if ( *((unsigned int *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v27) + 59) == 5 ) /*0x70f94d*/
+  if ( *((unsigned int *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v27) + 59) == 5 ) /*0x70f94d*/
   {
     *v30 = *(unsigned int *)v27; /*0x70f957*/
     return (int)v30; /*0x70f94f*/
@@ -17464,10 +17464,10 @@ namespace gamemd {
             (*((unsigned short *)&(v21))) = v6 + v27[0]; /*0x70f9a0*/
             (*(((unsigned short *)&(v21)) + 1)) = v27[1] - v4; /*0x70f9a5*/
             *(unsigned int *)v19 = v21; /*0x70f9b2*/
-            v7 = (Cell *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v19); /*0x70f9bc*/
+            v7 = (Cell *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v19); /*0x70f9bc*/
             if ( (uint8_t)Cell::IsBridge2(v7) ) /*0x70f9c3*/
             {
-              v8 = (Building *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v19); /*0x70f9d6*/
+              v8 = (Building *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v19); /*0x70f9d6*/
               NthOfType = Building::GetNthOfType(v8); /*0x70f9dd*/
               if ( NthOfType > v5 ) /*0x70f9e4*/
               {
@@ -17478,10 +17478,10 @@ namespace gamemd {
             (*((unsigned short *)&(v22))) = v6 + v27[0]; /*0x70f9fe*/
             (*(((unsigned short *)&(v22)) + 1)) = v4 + v27[1]; /*0x70fa03*/
             *(unsigned int *)v19 = v22; /*0x70fa16*/
-            v10 = (Cell *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v19); /*0x70fa1a*/
+            v10 = (Cell *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v19); /*0x70fa1a*/
             if ( (uint8_t)Cell::IsBridge2(v10) ) /*0x70fa21*/
             {
-              v11 = (Building *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v19); /*0x70fa34*/
+              v11 = (Building *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v19); /*0x70fa34*/
               v12 = Building::GetNthOfType(v11); /*0x70fa3b*/
               if ( v12 > v5 ) /*0x70fa42*/
               {
@@ -17493,10 +17493,10 @@ namespace gamemd {
             (*((unsigned short *)&(v23))) = v27[0] - v4; /*0x70fa64*/
             (*(((unsigned short *)&(v23)) + 1)) = v6 + v27[1]; /*0x70fa69*/
             *(unsigned int *)v19 = v23; /*0x70fa76*/
-            v13 = (Cell *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v19); /*0x70fa80*/
+            v13 = (Cell *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v19); /*0x70fa80*/
             if ( (uint8_t)Cell::IsBridge2(v13) ) /*0x70fa87*/
             {
-              v14 = (Building *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v19); /*0x70fa9a*/
+              v14 = (Building *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v19); /*0x70fa9a*/
               v15 = Building::GetNthOfType(v14); /*0x70faa1*/
               if ( v15 > v5 ) /*0x70faa8*/
               {
@@ -17507,10 +17507,10 @@ namespace gamemd {
             (*((unsigned short *)&(v24))) = v4 + v27[0]; /*0x70fac6*/
             (*(((unsigned short *)&(v24)) + 1)) = v6 + v27[1]; /*0x70facb*/
             *(unsigned int *)v19 = v24; /*0x70fada*/
-            v16 = (Cell *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v19); /*0x70fade*/
+            v16 = (Cell *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v19); /*0x70fade*/
             if ( (uint8_t)Cell::IsBridge2(v16) ) /*0x70fae5*/
             {
-              v17 = (Building *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v19); /*0x70faf8*/
+              v17 = (Building *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v19); /*0x70faf8*/
               v18 = Building::GetNthOfType(v17); /*0x70faff*/
               if ( v18 > v5 ) /*0x70fb06*/
               {
@@ -17552,10 +17552,10 @@ namespace gamemd {
             v21 = ((v21) & 0xFFFF0000u) | ((unsigned int)(v6 + v27[0]) & 0xFFFFu); /*0x70f9a0*/
             v21 = ((v21) & 0xFFFFu) | (((unsigned int)(v27[1] - v4) & 0xFFFFu) << 16); /*0x70f9a5*/
             *(unsigned int *)v19 = v21; /*0x70f9b2*/
-            v7 = (Cell *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v19); /*0x70f9bc*/
+            v7 = (Cell *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v19); /*0x70f9bc*/
             if ( (uint8_t)Cell::IsBridge2(v7) ) /*0x70f9c3*/
             {
-              v8 = (Building *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v19); /*0x70f9d6*/
+              v8 = (Building *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v19); /*0x70f9d6*/
               NthOfType = Building::GetNthOfType(v8); /*0x70f9dd*/
               if ( NthOfType > v5 ) /*0x70f9e4*/
               {
@@ -17566,10 +17566,10 @@ namespace gamemd {
             v22 = ((v22) & 0xFFFF0000u) | ((unsigned int)(v6 + v27[0]) & 0xFFFFu); /*0x70f9fe*/
             v22 = ((v22) & 0xFFFFu) | (((unsigned int)(v4 + v27[1]) & 0xFFFFu) << 16); /*0x70fa03*/
             *(unsigned int *)v19 = v22; /*0x70fa16*/
-            v10 = (Cell *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v19); /*0x70fa1a*/
+            v10 = (Cell *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v19); /*0x70fa1a*/
             if ( (uint8_t)Cell::IsBridge2(v10) ) /*0x70fa21*/
             {
-              v11 = (Building *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v19); /*0x70fa34*/
+              v11 = (Building *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v19); /*0x70fa34*/
               v12 = Building::GetNthOfType(v11); /*0x70fa3b*/
               if ( v12 > v5 ) /*0x70fa42*/
               {
@@ -17581,10 +17581,10 @@ namespace gamemd {
             v23 = ((v23) & 0xFFFF0000u) | ((unsigned int)(v27[0] - v4) & 0xFFFFu); /*0x70fa64*/
             v23 = ((v23) & 0xFFFFu) | (((unsigned int)(v6 + v27[1]) & 0xFFFFu) << 16); /*0x70fa69*/
             *(unsigned int *)v19 = v23; /*0x70fa76*/
-            v13 = (Cell *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v19); /*0x70fa80*/
+            v13 = (Cell *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v19); /*0x70fa80*/
             if ( (uint8_t)Cell::IsBridge2(v13) ) /*0x70fa87*/
             {
-              v14 = (Building *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v19); /*0x70fa9a*/
+              v14 = (Building *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v19); /*0x70fa9a*/
               v15 = Building::GetNthOfType(v14); /*0x70faa1*/
               if ( v15 > v5 ) /*0x70faa8*/
               {
@@ -17595,10 +17595,10 @@ namespace gamemd {
             v24 = ((v24) & 0xFFFF0000u) | ((unsigned int)(v4 + v27[0]) & 0xFFFFu); /*0x70fac6*/
             v24 = ((v24) & 0xFFFFu) | (((unsigned int)(v6 + v27[1]) & 0xFFFFu) << 16); /*0x70facb*/
             *(unsigned int *)v19 = v24; /*0x70fada*/
-            v16 = (Cell *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v19); /*0x70fade*/
+            v16 = (Cell *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v19); /*0x70fade*/
             if ( (uint8_t)Cell::IsBridge2(v16) ) /*0x70fae5*/
             {
-              v17 = (Building *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v19); /*0x70faf8*/
+              v17 = (Building *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v19); /*0x70faf8*/
               v18 = Building::GetNthOfType(v17); /*0x70faff*/
               if ( v18 > v5 ) /*0x70fb06*/
               {
@@ -17855,7 +17855,7 @@ namespace gamemd {
 
   bug = bug; /*0x722af4*/
   v4 = Cell::PosToIndex((Cell *)bug); /*0x722b09*/
-  v5 = (BuildingClass *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, bug); /*0x722b0b*/
+  v5 = (BuildingClass *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(bug); /*0x722b0b*/
   (*((unsigned char *)&(result))) = BuildingClass::IsTiberiumSiloEligible(v5); /*0x722b12*/
   if ( (unsigned char)result ) /*0x722b19*/
   {
@@ -18290,7 +18290,7 @@ int UnitClass::ProcessResourceHarvesting()
   v19 = this->location[0]; /*0x73d465*/
   v20 = this->location[1]; /*0x73d476*/
   v21 = this->location[2]; /*0x73d47d*/
-  v3 = (ObjectClass *)Coord::To_Cell((Coord *)&dword_87F7E8, &v19); /*0x73d486*/
+  v3 = (ObjectClass *)((Coord *)&dword_87F7E8)->To_Cell( &v19); /*0x73d486*/
   if ( this->movementDestination ) /*0x73d488*/
     return 1; /*0x73d49d*/
   if ( !*(unsigned char *)&this->Type->Harvester_2 ) /*0x73d4a4*/

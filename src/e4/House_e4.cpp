@@ -290,7 +290,7 @@ LABEL_48:
               LOWORD(aP1) = *v4 + *inited; /*0x47dae6*/
               HIWORD(aP1) = inited[1] + this->u32_26; /*0x47daf3*/
               *(unsigned int *)v55 = aP1; /*0x47dafc*/
-              v44 = (((CellCoord *)&dword_87F7E8)->To_CellObj(v55); /*0x47db05*/
+              v44 = ((CellCoord *)&dword_87F7E8)->To_CellObj(v55); /*0x47db05*/
               inited += 2; /*0x47db1b*/
               v44[80] |= 0x10000u; /*0x47db1e*/
             }
@@ -990,7 +990,7 @@ AbstractClass * * House::ChooseHouseEnemy(BuildingClass * aP1)
       return 0; /*0x50dede*/
     }
   }
-  v15 = (gamemd::CellClass *)(Coord::To_Cell((Coord *)&DataGlobal_87F7E8, &v40)); /*0x50dcb9*/
+  v15 = (gamemd::CellClass *)(((Coord *)&DataGlobal_87F7E8)->To_Cell( &v40)); /*0x50dcb9*/
   smudgeTypeIndex_low = SLOWORD(v15->smudgeTypeIndex); /*0x50dcbe*/
   smudgeTypeIndex_high = SHIWORD(v15->smudgeTypeIndex); /*0x50dcc2*/
   v37 = *(unsigned int *)&DataGlobal_87F8EC / 2; /*0x50dcd9*/

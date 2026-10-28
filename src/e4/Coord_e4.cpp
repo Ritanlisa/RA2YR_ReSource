@@ -195,9 +195,9 @@ void * Coord::Scale(float aP1, void *a2)
 }
 // 0x565730
 namespace gamemd {
-void * Coord::To_Cell(void *aP1_raw, void *a2)
+void * Coord::To_Cell(void *a2)
 {
-  unsigned int *aP1 = (unsigned int *)aP1_raw; // binary truth: int* coords
+  unsigned int *aP1 = (unsigned int *)this; // binary truth: int* coords
 
 
   int v2; // eax

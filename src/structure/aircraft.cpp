@@ -419,7 +419,7 @@ int AircraftClass::Mission_Attack()
             (void *)openCell, transitionCount,
             (int)&g_AircraftStatusFlag, (int)&g_AircraftStatusFlag,
             4, 1, 0);
-        void *v84 = CellCoord::To_CellObj((void *)&dword_87F7E8, (void *)openCell);
+        void *v84 = ((CellCoord *)((void *)&dword_87F7E8))->To_CellObj((void *)openCell);
         this->AssignDestination_SyncLog((int)(v84), 1);
         AircraftClass_field_bool_6D5 = false;
         if (airstrike != nullptr && ammo > 0)
@@ -1247,7 +1247,7 @@ int AircraftClass::ValidateLandingCell()
     if ( *(unsigned int *)v9 != g_AircraftStatusFlag ) /*0x415aa7*/
     {
       ptr_0 = (void (__thiscall **)(AircraftClass *, void *, int))verified->ptr_0; /*0x415ab8*/
-      v6 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v9); /*0x415ac6*/
+      v6 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v9); /*0x415ac6*/
       ptr_0[288](verified, v6, 1); /*0x415ace*/
       return 3; /*0x415ade*/
     }
@@ -1478,7 +1478,7 @@ int AircraftClass::CheckReloadTimer()
       v16 = A92B->location[0]; /*0x41a64a*/
       v17 = A92B->location[1]; /*0x41a65b*/
       v18 = A92B->location[2]; /*0x41a662*/
-      v7 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, &v16); /*0x41a666*/
+      v7 = ((Coord *)&DataGlobal_87F7E8)->To_Cell( &v16); /*0x41a666*/
       v6[288](A92B, v7, 1); /*0x41a66e*/
       (*((void (__thiscall **)(AircraftClass *, int, unsigned int))A92B->ptr_0 + 122))(A92B, 2, 0); /*0x41a67c*/
       return 1; /*0x41a683*/

@@ -135,7 +135,7 @@ char BuildingPlacement::ProcessBuildingPlacementAction()
   int v50; // [esp+68h] [ebp-4h]
 
   v2 = &this->q040; /*0x54c55e*/
-  v3 = Coord::To_Cell((Coord *)&dword_87F7E8, &this->q040); /*0x54c562*/
+  v3 = ((Coord *)&dword_87F7E8)->To_Cell( &this->q040); /*0x54c562*/
   BuildingPlacement_field_0x0C = this->q00C; /*0x54c567*/
   v5 = (BuildingPlacement *)v3; /*0x54c56a*/
   if ( !*(unsigned char *)(BuildingPlacement_field_0x0C + 1709) ) /*0x54c56c*/
@@ -196,7 +196,7 @@ char BuildingPlacement::ProcessBuildingPlacementAction()
     if ( v18[45] != 7 && (*(int (**)(unsigned int *))(*v18 + 388))(v18) != 7 ) /*0x54c6d9*/
     {
       if ( !v46 /*0x54c70c*/
-        || (Coord::To_Cell((Coord *)&dword_87F7E8, &this->q040)->flags & 0x100) == 0
+        || (((Coord *)&dword_87F7E8)->To_Cell( &this->q040)->flags & 0x100) == 0
         && (v47 > 2 || v47 == 2 && !this->u32_90) )
       {
         LOBYTE(v12) = (*(char (**)(int *))(this->q004 + 72))(&this->q004); /*0x54ca43*/
@@ -244,7 +244,7 @@ char BuildingPlacement::ProcessBuildingPlacementAction()
     v48 = *v27; /*0x54c7ce*/
     v49 = v27[1]; /*0x54c7da*/
     v50 = v27[2]; /*0x54c7e6*/
-    v12 = Coord::To_Cell((Coord *)&dword_87F7E8, &v48); /*0x54c7ea*/
+    v12 = ((Coord *)&dword_87F7E8)->To_Cell( &v48); /*0x54c7ea*/
     if ( (v12->flags & 0x100) != 0 ) /*0x54c7f8*/
     {
       LOBYTE(v12) = dword_ABC5DC; /*0x54c7fa*/
@@ -277,7 +277,7 @@ char BuildingPlacement::ProcessBuildingPlacementAction()
       v48 = *v31; /*0x54c888*/
       v49 = v31[1]; /*0x54c894*/
       v50 = v31[2]; /*0x54c8a0*/
-      if ( (Coord::To_Cell((Coord *)&dword_87F7E8, &v48)->flags & 0x100) != 0 ) /*0x54c8b2*/
+      if ( (((Coord *)&dword_87F7E8)->To_Cell( &v48)->flags & 0x100) != 0 ) /*0x54c8b2*/
         *(unsigned char *)(this->q00C + 140) = 1; /*0x54c8b7*/
     }
     (*(void (**)(int, int))(*(unsigned int *)this->q00C + 292))( /*0x54c8c5*/

@@ -109,9 +109,9 @@ namespace gamemd {
 class CellClass;
 class HouseClass;
 
-// IDA 0x5657A0 -- global fn (mis-modeled as virtual member in misc_ext.hpp).
+// 0x5657A0 CellCoord::To_CellObj is the real member from core/cellcoord.hpp
 struct CellCoord {
-    static CellClass* To_CellObj(void* map, const void* coords);  // 0x5657A0
+// p->To_CellObj(coord)).
 };
 
 // raw static-call receivers keep their raw cast targets; signatures mirror
@@ -883,7 +883,7 @@ int BuildingClass::AfterDestruction()
       (v24) = ((v24) & ~0xFFFF) | ((v23[0] + *v6) & 0xFFFF); /*0x441ffe*/
       (v24) = ((v24) & ~(0xFFFF << 16)) | (((v7) & 0xFFFF) << 16); /*0x442007*/
       *(unsigned int *)v25 = v24; /*0x442016*/
-      v8 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v25); /*0x44201f*/
+      v8 = ((CellCoord *)&dword_87F7E8)->To_CellObj(v25); /*0x44201f*/
       BuildingClass::CreatePlacementCrater((BuildingClass *)v8); /*0x442023*/
       v8->u32_44 = 239; /*0x44202c*/
       v8->q040 = 0; /*0x442033*/
@@ -892,7 +892,7 @@ int BuildingClass::AfterDestruction()
       Radar::Update((Radar *)&dword_87F7E8, &v8->u32_48); /*0x442053*/
       AbstractClass::ClearTargetToMeClearManagerTarget((int)v8); /*0x44205a*/
     }
-    v9 = (BuildingClass *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v23); /*0x442077*/
+    v9 = (BuildingClass *)((CellCoord *)&dword_87F7E8)->To_CellObj(v23); /*0x442077*/
     v9->ambientSoundController[1] = v1->Type; /*0x442082*/
     PlacementRect = BuildingClass::GetPlacementRect(v9, v30); /*0x442091*/
     StartCoords = House::GetStartCoords((House *)v9, &v31); /*0x442093*/
@@ -944,7 +944,7 @@ int BuildingClass::AfterDestruction()
     v27[1] = v14 - dword_886FA4; /*0x44215a*/
     v19 = Rect::Construct(&v31, v27, v18, v16); /*0x44215e*/
     Cell::CreateCrater(*v19, v19->Y, v19->Width, v19->Height, 0); /*0x442184*/
-    v20 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v23); /*0x442193*/
+    v20 = ((CellCoord *)&dword_87F7E8)->To_CellObj(v23); /*0x442193*/
     result = Tactical::AddCellToDrawList((int *)g_TacticalClass_Instance, (int)v20); /*0x44219f*/
   }
   (result) = ((result) & ~0xFF) | ((*(unsigned char *)(v1->Type + 5991)) & 0xFF); /*0x4421aa*/
@@ -1139,7 +1139,7 @@ void BuildingClass::ValidatePlacement(char a2) {
     {
       occupant = this->occupant; /*0x48065e*/
       *(unsigned int *)v48 = *CellStruct::Add((CellStruct *)&occupant, &v52, (unsigned short *)(4 * (v3 & 7) + 9041544)); /*0x480684*/
-      v4 = (char *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v48); /*0x48068d*/
+      v4 = (char *)((CellCoord *)&dword_87F7E8)->To_CellObj(v48); /*0x48068d*/
     }
     else
     {
@@ -1194,7 +1194,7 @@ void BuildingClass::ValidatePlacement(char a2) {
           LOWORD(v46) = v43[0] + v20; /*0x48081e*/
           HIWORD(v46) = v43[1] + v19; /*0x48082d*/
           *(unsigned int *)v43 = v46; /*0x480836*/
-          v18 = (BuildingPlacement *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v43); /*0x48083f*/
+          v18 = (BuildingPlacement *)((CellCoord *)&dword_87F7E8)->To_CellObj(v43); /*0x48083f*/
         }
         else
         {
@@ -1280,7 +1280,7 @@ void BuildingClass::ValidatePlacement(char a2) {
             LOWORD(v45) = LOWORD(dword_89F688[v30]) + *(unsigned short *)v15; /*0x4809bc*/
             HIWORD(v45) = v31; /*0x4809c5*/
             *(unsigned int *)v42 = v45; /*0x4809d4*/
-            v32 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v42); /*0x4809d8*/
+            v32 = ((CellCoord *)&dword_87F7E8)->To_CellObj(v42); /*0x4809d8*/
             --v32[290]; /*0x4809e9*/
           }
         }
@@ -1377,7 +1377,7 @@ bool BuildingClass::ValidateFoundation(int a1, int a2, int a3)  // raw body 0x44
     if ( (unsigned __int8)LayerClass::CoordinatesLegal((LayerClass *)&dword_87F7E8, v48) ) /*0x44f008*/
     {
       v6 = *v5; /*0x44f011*/
-      v7 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v48); /*0x44f025*/
+      v7 = ((CellCoord *)&dword_87F7E8)->To_CellObj(v48); /*0x44f025*/
       if ( !(*(int (**)(int *, void *, int, int, unsigned int, int))(v6 + 428))(v5, v7, -1, -1, 0, 1) ) /*0x44f02d*/
       {
         *v53 = *(unsigned int *)v48; /*0x44f042*/
@@ -1393,7 +1393,7 @@ bool BuildingClass::ValidateFoundation(int a1, int a2, int a3)  // raw body 0x44
     if ( (unsigned __int8)LayerClass::CoordinatesLegal((LayerClass *)&dword_87F7E8, v48) ) /*0x44f081*/
     {
       v9 = *v5; /*0x44f08a*/
-      v10 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v48); /*0x44f09e*/
+      v10 = ((CellCoord *)&dword_87F7E8)->To_CellObj(v48); /*0x44f09e*/
       if ( !(*(int (**)(int *, void *, int, int, unsigned int, int))(v9 + 428))(v5, v10, -1, -1, 0, 1) ) /*0x44f0a6*/
       {
         *v53 = *(unsigned int *)v48; /*0x44f0bb*/
@@ -1409,7 +1409,7 @@ bool BuildingClass::ValidateFoundation(int a1, int a2, int a3)  // raw body 0x44
     if ( (unsigned __int8)LayerClass::CoordinatesLegal((LayerClass *)&dword_87F7E8, v48) ) /*0x44f0f8*/
     {
       v11 = *v5; /*0x44f101*/
-      v12 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v48); /*0x44f115*/
+      v12 = ((CellCoord *)&dword_87F7E8)->To_CellObj(v48); /*0x44f115*/
       if ( !(*(int (**)(int *, void *, int, int, unsigned int, int))(v11 + 428))(v5, v12, -1, -1, 0, 1) ) /*0x44f11d*/
       {
 LABEL_12:
@@ -1429,7 +1429,7 @@ LABEL_12:
     if ( (unsigned __int8)LayerClass::CoordinatesLegal((LayerClass *)&dword_87F7E8, v48) ) /*0x44f1b3*/
     {
       v15 = *v5; /*0x44f1bc*/
-      v16 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v48); /*0x44f1d0*/
+      v16 = ((CellCoord *)&dword_87F7E8)->To_CellObj(v48); /*0x44f1d0*/
       if ( !(*(int (**)(int *, void *, int, int, unsigned int, unsigned int))(v15 + 428))(v5, v16, -1, -1, 0, 0) ) /*0x44f1d8*/
       {
         *v53 = *(unsigned int *)v48; /*0x44f1ed*/
@@ -1440,7 +1440,7 @@ LABEL_12:
     if ( (unsigned __int8)LayerClass::CoordinatesLegal((LayerClass *)&dword_87F7E8, v48) ) /*0x44f205*/
     {
       v17 = *v5; /*0x44f20e*/
-      v18 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v48); /*0x44f222*/
+      v18 = ((CellCoord *)&dword_87F7E8)->To_CellObj(v48); /*0x44f222*/
       if ( !(*(int (**)(int *, void *, int, int, unsigned int, unsigned int))(v17 + 428))(v5, v18, -1, -1, 0, 0) ) /*0x44f22a*/
       {
         *v53 = *(unsigned int *)v48; /*0x44f23f*/
@@ -1452,7 +1452,7 @@ LABEL_12:
     if ( (unsigned __int8)LayerClass::CoordinatesLegal((LayerClass *)&dword_87F7E8, v48) ) /*0x44f25c*/
     {
       v19 = *v5; /*0x44f265*/
-      v20 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v48); /*0x44f279*/
+      v20 = ((CellCoord *)&dword_87F7E8)->To_CellObj(v48); /*0x44f279*/
       if ( !(*(int (**)(int *, void *, int, int, unsigned int, unsigned int))(v19 + 428))(v5, v20, -1, -1, 0, 0) ) /*0x44f281*/
       {
         *v53 = *(unsigned int *)v48; /*0x44f296*/
@@ -1465,7 +1465,7 @@ LABEL_12:
     if ( (unsigned __int8)LayerClass::CoordinatesLegal((LayerClass *)&dword_87F7E8, (__int16 *)&v62) ) /*0x44f2c5*/
     {
       v21 = *v5; /*0x44f2ce*/
-      v22 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)&v62); /*0x44f2e2*/
+      v22 = ((CellCoord *)&dword_87F7E8)->To_CellObj((__int16 *)&v62); /*0x44f2e2*/
       if ( !(*(int (**)(int *, void *, int, int, unsigned int, unsigned int))(v21 + 428))(v5, v22, -1, -1, 0, 0) ) /*0x44f2ea*/
       {
         *v53 = v62; /*0x44f2ff*/
@@ -1487,7 +1487,7 @@ LABEL_12:
       if ( (unsigned __int8)LayerClass::CoordinatesLegal((LayerClass *)&dword_87F7E8, v48) ) /*0x44f374*/
       {
         v26 = *v5; /*0x44f37d*/
-        v27 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v48); /*0x44f391*/
+        v27 = ((CellCoord *)&dword_87F7E8)->To_CellObj(v48); /*0x44f391*/
         if ( !(*(int (**)(int *, void *, int, int, unsigned int, unsigned int))(v26 + 428))(v5, v27, -1, -1, 0, 0) ) /*0x44f399*/
           goto LABEL_36; /*0x44f3a1*/
         (v4) = ((v4) & ~0xFFFF) | ((v51) & 0xFFFF); /*0x44f331*/
@@ -1511,7 +1511,7 @@ LABEL_12:
       if ( (unsigned __int8)LayerClass::CoordinatesLegal((LayerClass *)&dword_87F7E8, v48) ) /*0x44f404*/
       {
         v33 = *v5; /*0x44f40d*/
-        v34 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v48); /*0x44f421*/
+        v34 = ((CellCoord *)&dword_87F7E8)->To_CellObj(v48); /*0x44f421*/
         if ( !(*(int (**)(int *, void *, int, int, unsigned int, int))(v33 + 428))(v5, v34, -1, -1, 0, 1) ) /*0x44f431*/
           goto LABEL_12; /*0x44f431*/
         v30 = v50; /*0x44f437*/
@@ -1522,7 +1522,7 @@ LABEL_12:
       if ( (unsigned __int8)LayerClass::CoordinatesLegal((LayerClass *)&dword_87F7E8, v48) ) /*0x44f45c*/
       {
         v35 = *v5; /*0x44f465*/
-        v36 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v48); /*0x44f479*/
+        v36 = ((CellCoord *)&dword_87F7E8)->To_CellObj(v48); /*0x44f479*/
         if ( !(*(int (**)(int *, void *, int, int, unsigned int, int))(v35 + 428))(v5, v36, -1, -1, 0, 1) ) /*0x44f481*/
           goto LABEL_36; /*0x44f489*/
       }
@@ -1547,7 +1547,7 @@ LABEL_12:
       if ( (unsigned __int8)LayerClass::CoordinatesLegal((LayerClass *)&dword_87F7E8, v48) ) /*0x44f4fa*/
       {
         v43 = *v5; /*0x44f503*/
-        v44 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v48); /*0x44f517*/
+        v44 = ((CellCoord *)&dword_87F7E8)->To_CellObj(v48); /*0x44f517*/
         if ( !(*(int (**)(int *, void *, int, int, unsigned int, int))(v43 + 428))(v5, v44, -1, -1, 0, 1) ) /*0x44f527*/
           goto LABEL_12; /*0x44f527*/
         v40 = v49; /*0x44f52d*/
@@ -1558,7 +1558,7 @@ LABEL_12:
       if ( (unsigned __int8)LayerClass::CoordinatesLegal((LayerClass *)&dword_87F7E8, v48) ) /*0x44f552*/
       {
         v45 = *v5; /*0x44f55b*/
-        v46 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v48); /*0x44f56f*/
+        v46 = ((CellCoord *)&dword_87F7E8)->To_CellObj(v48); /*0x44f56f*/
         if ( !(*(int (**)(int *, void *, int, int, unsigned int, int))(v45 + 428))(v5, v46, -1, -1, 0, 1) ) /*0x44f577*/
           break; /*0x44f577*/
       }
@@ -1642,7 +1642,7 @@ void BuildingClass::SetRallyPoint(CoordStruct* target)
 
   v33 = 0; /*0x44387b*/
   v4 = 0; /*0x44387f*/
-  v5 = *((unsigned int *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0_raw.__pad_58[416], (int16_t *)target) + 80); /*0x443886*/
+  v5 = *((unsigned int *)((CellCoord *)&stru_87F5F0_raw.__pad_58[416])->To_CellObj((int16_t *)target) + 80); /*0x443886*/
   v6 = this->gattlingValue; /*0x44388c*/
   v32[0] = (((v5) >> 8) & 0xFF) & 1; /*0x443898*/
   if ( ((BuildingTypeClass *)v6)->BuildingTypeClass_field_ED8 == 3 ) /*0x4438a5*/
@@ -1683,7 +1683,7 @@ void BuildingClass::SetRallyPoint(CoordStruct* target)
                       0);
   if ( *(unsigned int *)v34 != g_TerrainTypeTable ) /*0x443969*/
   {
-    v11 = (unsigned int *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0_raw.__pad_58[416], v34); /*0x443987*/
+    v11 = (unsigned int *)((CellCoord *)&stru_87F5F0_raw.__pad_58[416])->To_CellObj(v34); /*0x443987*/
     WaypointCoords = ((ScriptAction *)v32)->GetWaypointCoords(v11); /*0x443991*/
     v27 = *(unsigned int *)WaypointCoords; /*0x4439a1*/
     v29 = WaypointCoords->ptr_4; /*0x4439a3*/
@@ -1766,7 +1766,7 @@ int BuildingClass::MarkExitPath(unsigned short *a2, int a3) {
       result = LayerClass::CoordinatesLegal((LayerClass *)this, (int16_t *)&a3); /*0x4a96ba*/
       if ( (unsigned char)result ) /*0x4a96c1*/
       {
-        result = (int)CellCoord::To_CellObj((CellCoord *)this, (int16_t *)&a3); /*0x4a96ca*/
+        result = (int)((CellCoord *)this)->To_CellObj((int16_t *)&a3); /*0x4a96ca*/
         v10 = result->copyFlags; /*0x4a96cf*/
         if ( v7 ) /*0x4a96d7*/
           result->copyFlags = v10 | 4; /*0x4a96dc*/
@@ -2420,7 +2420,7 @@ int BuildingClass::UpdateConstruction()
                 TechnoClass::SetFocus((TechnoClass *)v244, *((unsigned int *)v244 + 361)); /*0x444ce2*/
               (*(void (**)(char *, int, unsigned int))(*(unsigned int *)v244 + 488))(v244, 2, 0); /*0x444cef*/
               v114 = *(unsigned int *)v244; /*0x444cf5*/
-              v115 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, &v194[2]); /*0x444d03*/
+              v115 = ((CellCoord *)&dword_87F7E8)->To_CellObj(&v194[2]); /*0x444d03*/
               (*(void (**)(char *, void *, int))(v114 + 1152))(v244, v115, 1); /*0x444d0b*/
             }
             if ( !(unsigned __int8)House::IsCurrentPlayer((House *)this->owner) || *(unsigned char *)&this->Type->Hospital ) /*0x444d26*/
@@ -2433,9 +2433,9 @@ int BuildingClass::UpdateConstruction()
               }
               else
               {
-                v116 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v193); /*0x444d8d*/
+                v116 = ((CellCoord *)&dword_87F7E8)->To_CellObj(v193); /*0x444d8d*/
                 TechnoClass::SetFocus((TechnoClass *)v244, (int)v116); /*0x444d95*/
-                v117 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v193); /*0x444da4*/
+                v117 = ((CellCoord *)&dword_87F7E8)->To_CellObj(v193); /*0x444da4*/
                 BuildingClass::AddToProductionQueue((int)v244, (int)v117); /*0x444dac*/
               }
             }
@@ -2544,7 +2544,7 @@ int BuildingClass::UpdateConstruction()
           {
             (*(void (**)(char *, int, unsigned int))(*(unsigned int *)v244 + 488))(v244, 2, 0); /*0x4448d6*/
             v86 = *(unsigned int *)v244; /*0x4448dc*/
-            v87 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v196); /*0x4448ea*/
+            v87 = ((CellCoord *)&dword_87F7E8)->To_CellObj(v196); /*0x4448ea*/
             (*(void (**)(char *, void *, int))(v86 + 1152))(v244, v87, 1); /*0x4448f2*/
             if ( !(unsigned __int8)House::IsCurrentPlayer((House *)this->owner) ) /*0x4448fe*/
             {
@@ -2556,7 +2556,7 @@ int BuildingClass::UpdateConstruction()
               }
               else
               {
-                v192 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v196); /*0x444965*/
+                v192 = ((CellCoord *)&dword_87F7E8)->To_CellObj(v196); /*0x444965*/
                 TechnoClass::SetFocus((TechnoClass *)v244, (int)v192); /*0x444966*/
               }
             }
@@ -2639,7 +2639,7 @@ int BuildingClass::UpdateConstruction()
         Math::CalcAngle((double)v37 - (double)(__int16)v34, (double)(__int16)v33 - (double)v36); /*0x444258*/
         (v204) = ((v204) & ~0xFFFF) | ((Math::RoundToInt((v1 - 1.570796326794897) * -10430.06004058427)) & 0xFFFF); /*0x444271*/
         v38 = (((v204 >> 12) + 1) >> 1) & 7; /*0x44428a*/
-        v39 = (Cell *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v203); /*0x44428d*/
+        v39 = (Cell *)((CellCoord *)&dword_87F7E8)->To_CellObj(v203); /*0x44428d*/
         if ( Cell::IsBridge(v39) == (unsigned int *)this ) /*0x44429b*/
         {
           v40 = (unsigned short *)(4 * (v38 & 7) + 9041544); /*0x4442a0*/
@@ -2649,18 +2649,18 @@ int BuildingClass::UpdateConstruction()
             LOWORD(v201) = *v40 + v203[0]; /*0x4442b9*/
             HIWORD(v201) = v41; /*0x4442be*/
             *(unsigned int *)v203 = v201; /*0x4442cb*/
-            v42 = (Cell *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v203); /*0x4442d5*/
+            v42 = (Cell *)((CellCoord *)&dword_87F7E8)->To_CellObj(v203); /*0x4442d5*/
           }
           while ( Cell::IsBridge(v42) == (unsigned int *)this ); /*0x4442e3*/
         }
       }
-      if ( this->focus && *((unsigned int *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v203) + 59) == 2 ) /*0x444307*/
+      if ( this->focus && *((unsigned int *)((CellCoord *)&dword_87F7E8)->To_CellObj(v203) + 59) == 2 ) /*0x444307*/
       {
         v195 = 0.0; /*0x44430e*/
         *(unsigned int *)&v194[2] = &v220; /*0x444313*/
         v220 = 0; /*0x44431a*/
         v221[0] = 0; /*0x44431e*/
-        CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v203); /*0x444322*/
+        ((CellCoord *)&dword_87F7E8)->To_CellObj(v203); /*0x444322*/
         JUMPOUT(0x444329); /*0x444329*/
       }
       v43 = this->ptr_0; /*0x44434b*/
@@ -2695,7 +2695,7 @@ int BuildingClass::UpdateConstruction()
                            (__int16 *)&v215,
                            0,
                            0);
-      v48 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v202); /*0x4443f1*/
+      v48 = ((CellCoord *)&dword_87F7E8)->To_CellObj(v202); /*0x4443f1*/
       v49 = *(unsigned int *)v244; /*0x4443f8*/
       v50 = (*(int (**)(void *, unsigned char *, int))(*(unsigned int *)v48 + 72))(v48, v239, 64); /*0x444406*/
       if ( (*(unsigned __int8 (**)(char *, int))(v49 + 216))(v244, v50) ) /*0x44440c*/
@@ -2708,7 +2708,7 @@ int BuildingClass::UpdateConstruction()
         }
         (*(void (**)(char *, unsigned int))(*(unsigned int *)v244 + 292))(v244, 0); /*0x444445*/
         v52 = *(unsigned int *)v244; /*0x44444b*/
-        v53 = (CellClass *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)&v195); /*0x44445f*/
+        v53 = (CellClass *)((CellCoord *)&dword_87F7E8)->To_CellObj((__int16 *)&v195); /*0x44445f*/
         Coords = CellClass::GetCoords(v53, v240); /*0x444466*/
         (*(void (**)(char *, int *))(v52 + 436))(v244, Coords); /*0x44446e*/
         (*(void (**)(char *, int))(*(unsigned int *)v244 + 292))(v244, 1); /*0x44447a*/
@@ -2836,7 +2836,7 @@ LABEL_99:
             else
             {
               v14 = v4->ptr_0; /*0x443f05*/
-              v15 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v203); /*0x443f14*/
+              v15 = ((CellCoord *)&dword_87F7E8)->To_CellObj(v203); /*0x443f14*/
               (*(void (**)(ObjectClass *, void *, int))(v14 + 1152))(v4, v15, 1); /*0x443f1c*/
               (*(void (**)(ObjectClass *, int))(v4->ptr_0 + 496))(v4, 2); /*0x443f29*/
             }
@@ -3321,7 +3321,7 @@ int BuildingClass::Sell()
         (*((unsigned short *)&(v49))) = v55 + (*((unsigned short *)&(dword_89F688[v20]))); /*0x445b13*/
         (*(((unsigned short *)&(v49)) + 1)) = (*(((unsigned short *)&(v55)) + 1)) + (*(((unsigned short *)&(dword_89F688[v20])) + 1)); /*0x445b1c*/
         *(unsigned int *)v53 = v49; /*0x445b2b*/
-        v21 = (BuildingClass *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v53); /*0x445b34*/
+        v21 = (BuildingClass *)((CellCoord *)&dword_87F7E8)->To_CellObj(v53); /*0x445b34*/
         BuildingClass::ValidatePlacement(v21, 0); /*0x445b3a*/
         v22 = v21->ambientSoundController[2]; /*0x445b3f*/
         if ( v22 != -1 && *(unsigned char *)(*(&dword_A83D84->ptr_0 + v22) + 680) && (v21->u8_FE) < 0x10u ) /*0x445b60*/
@@ -3336,12 +3336,12 @@ int BuildingClass::Sell()
       (*(((unsigned short *)&(v50)) + 1)) = (*(((unsigned short *)&(v55)) + 1)); /*0x445ba2*/
       (*((unsigned short *)&(v50))) = v55 - 1; /*0x445baf*/
       *(unsigned int *)v53 = v50; /*0x445bbe*/
-      v25 = (BuildingClass *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v53); /*0x445bc2*/
+      v25 = (BuildingClass *)((CellCoord *)&dword_87F7E8)->To_CellObj(v53); /*0x445bc2*/
       BuildingClass::ValidatePlacement(v25, 0); /*0x445bc9*/
       (*(((unsigned short *)&(v50)) + 1)) = (*(((unsigned short *)&(v55)) + 1)); /*0x445bd1*/
       (*((unsigned short *)&(v50))) = v55 + 3; /*0x445bd6*/
       *(unsigned int *)v53 = v50; /*0x445be3*/
-      v26 = (BuildingClass *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v53); /*0x445bee*/
+      v26 = (BuildingClass *)((CellCoord *)&dword_87F7E8)->To_CellObj(v53); /*0x445bee*/
       BuildingClass::ValidatePlacement(v26, 0); /*0x445bf5*/
       v18 = dword_8871E0; /*0x445bfa*/
     }
@@ -3351,12 +3351,12 @@ int BuildingClass::Sell()
       v28 = (*(((unsigned short *)&(v55)) + 1)); /*0x445c17*/
       v55 = v55; /*0x445c1b*/
       *(unsigned int *)v53 = v55 - 0x10000; /*0x445c36*/
-      v30 = (BuildingClass *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v53); /*0x445c40*/
+      v30 = (BuildingClass *)((CellCoord *)&dword_87F7E8)->To_CellObj(v53); /*0x445c40*/
       BuildingClass::ValidatePlacement(v30, 0); /*0x445c47*/
       (*((unsigned short *)&(v51))) = v55; /*0x445c53*/
       (*(((unsigned short *)&(v51)) + 1)) = v28 + 3; /*0x445c58*/
       *(unsigned int *)v53 = v51; /*0x445c68*/
-      v31 = (BuildingClass *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v53); /*0x445c6c*/
+      v31 = (BuildingClass *)((CellCoord *)&dword_87F7E8)->To_CellObj(v53); /*0x445c6c*/
       BuildingClass::ValidatePlacement(v31, 0); /*0x445c73*/
     }
     v32 = (BuildingTypeClass *)this->Type; /*0x445c78*/
@@ -3386,7 +3386,7 @@ int BuildingClass::Sell()
             {
               (*((unsigned short *)&(v52))) = v40 + v39; /*0x445cf9*/
               *(unsigned int *)v52 = v52; /*0x445d02*/
-              v41 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v52); /*0x445d0c*/
+              v41 = ((CellCoord *)&dword_87F7E8)->To_CellObj(v52); /*0x445d0c*/
               ++v39; /*0x445d19*/
               --v41[290]; /*0x445d1c*/
             }
@@ -4471,7 +4471,7 @@ LABEL_231:
 
                     v66->MissionDispatch(2, 0); /*0x44bf87*/
 
-                    v72 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (uint16_t *)&v151.m_Data); /*0x44bf9a*/
+                    v72 = ((CellCoord *)&dword_87F7E8)->To_CellObj((uint16_t *)&v151.m_Data); /*0x44bf9a*/
 
                     v66->Stub(v72, 1); /*0x44bfa2*/
 
@@ -4956,7 +4956,7 @@ LABEL_231:
 
                     v106->MissionDispatch(2, 0); /*0x44c47a*/
 
-                    v113 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (uint16_t *)&v151.m_Data); /*0x44c48e*/
+                    v113 = ((CellCoord *)&dword_87F7E8)->To_CellObj((uint16_t *)&v151.m_Data); /*0x44c48e*/
 
                     v106->Stub(v113, 1); /*0x44c496*/
 
@@ -8259,7 +8259,7 @@ bool BuildingClass::CheckMissionAttack()
           if ( Type->ToTile ) /*0x43f1f1*/
           {
             ptr_0 = (int (__thiscall **)(BuildingClass *, void *, int, int, unsigned int, int))v1->TechnoClass; /*0x43f1fd*/
-            v6 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v92); /*0x43f210*/
+            v6 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v92); /*0x43f210*/
             if ( ptr_0[107](v1, v6, -1, -1, 0, 1) ) /*0x43f218*/
               goto LABEL_33; /*0x43f218*/
             FoundationWidth = (v1->Type)->GetFoundationWidth(); /*0x43f22c*/
@@ -8282,12 +8282,12 @@ bool BuildingClass::CheckMissionAttack()
                 v81 = (int)owner; /*0x43f294*/
                 v80 = (int)v13; /*0x43f29b*/
                 v79 = v13->ptr_0; /*0x43f2a0*/
-                v14 = (int *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v87); /*0x43f2a7*/
+                v14 = (int *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v87); /*0x43f2a7*/
                 if ( (uint8_t)((gamemd::CellClass *)(void *)(v14))->IsPassable(v79, v80, v81) /*0x43f2fb*/
-                  && *((unsigned int *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v87) + 14) != *(unsigned int *)(v1->Type->ToTile + 660)
-                  && *((unsigned int *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v87) + 59) != 1 )
+                  && *((unsigned int *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v87) + 14) != *(unsigned int *)(v1->Type->ToTile + 660)
+                  && *((unsigned int *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v87) + 59) != 1 )
                 {
-                  v15 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v87); /*0x43f30b*/
+                  v15 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v87); /*0x43f30b*/
                   v16 = v15[18]; /*0x43f310*/
                   if ( v16 != -1 ) /*0x43f316*/
                   {
@@ -8316,10 +8316,10 @@ bool BuildingClass::CheckMissionAttack()
                             v25 = v23 + v94; /*0x43f387*/
                             (v49) = ((v49) & ~0xFFFF) | ((unsigned int)(v23 + v94) & 0xFFFF); /*0x43f38f*/
                             *(unsigned int *)v49 = v49; /*0x43f398*/
-                            *((unsigned int *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v49) + 18) = -1; /*0x43f3a1*/
+                            *((unsigned int *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v49) + 18) = -1; /*0x43f3a1*/
                             (k) = ((k) & ~0xFFFF) | ((unsigned int)(v25) & 0xFFFF); /*0x43f3a8*/
                             *(unsigned int *)k = k; /*0x43f3bb*/
-                            v26 = (BuildingClass *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, k); /*0x43f3bf*/
+                            v26 = (BuildingClass *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(k); /*0x43f3bf*/
                             ((gamemd::BuildingClass *)(void *)(v26))->CreateDestructionCrater(); /*0x43f3c6*/
                             v18 = *(unsigned int *)(v17 + 664); /*0x43f3cb*/
                             ++v23; /*0x43f3d1*/
@@ -8380,7 +8380,7 @@ bool BuildingClass::CheckMissionAttack()
                     v83 = ((v83) & 0xFFFF0000u) | ((unsigned int)(v92[0] + v31 - 1) & 0xFFFFu); /*0x43f568*/
                     v83 = ((v83) & 0xFFFFu) | (((unsigned int)(v32 + v92[1]) & 0xFFFFu) << 16); /*0x43f574*/
                     *(unsigned int *)v93 = v83; /*0x43f57d*/
-                    v33 = (BuildingClass *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v93); /*0x43f587*/
+                    v33 = (BuildingClass *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v93); /*0x43f587*/
                     ((gamemd::BuildingClass *)(void *)(v33))->CreatePlacementCrater(); /*0x43f58e*/
                     ++v31; /*0x43f593*/
                   }
@@ -8415,7 +8415,7 @@ bool BuildingClass::CheckMissionAttack()
             if ( v113 != 3 ) /*0x43f65b*/
             {
               v35 = (int (__thiscall **)(BuildingClass *, void *, int, int, unsigned int, int))v1->TechnoClass; /*0x43f65d*/
-              v36 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v92); /*0x43f670*/
+              v36 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v92); /*0x43f670*/
               result = v35[107](v1, v36, -1, -1, 0, 1); /*0x43f678*/
               if ( result ) /*0x43f680*/
                 goto LABEL_34; /*0x43f680*/
@@ -8473,7 +8473,7 @@ bool BuildingClass::CheckMissionAttack()
                   v84 = ((v84) & 0xFFFF0000u) | ((unsigned int)(v50 + v92[0]) & 0xFFFFu); /*0x43f7ee*/
                   v84 = ((v84) & 0xFFFFu) | (((unsigned int)(i + v92[1]) & 0xFFFFu) << 16); /*0x43f7f3*/
                   *(unsigned int *)v93 = v84; /*0x43f800*/
-                  v51 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v93); /*0x43f80a*/
+                  v51 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v93); /*0x43f80a*/
                   v52 = v51[18]; /*0x43f80f*/
                   if ( v52 != -1 ) /*0x43f815*/
                   {
@@ -8500,10 +8500,10 @@ bool BuildingClass::CheckMissionAttack()
                             v59 = v57 + v94; /*0x43f88c*/
                             j = ((j) & 0xFFFF0000u) | ((unsigned int)(v57 + v94) & 0xFFFFu); /*0x43f894*/
                             *(unsigned int *)j = j; /*0x43f89d*/
-                            *((unsigned int *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, j) + 18) = -1; /*0x43f8a6*/
+                            *((unsigned int *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(j) + 18) = -1; /*0x43f8a6*/
                             v99 = ((v99) & 0xFFFF0000u) | ((unsigned int)(v59) & 0xFFFFu); /*0x43f8ad*/
                             *(unsigned int *)v99 = v99; /*0x43f8c0*/
-                            v60 = (BuildingClass *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v99); /*0x43f8c4*/
+                            v60 = (BuildingClass *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v99); /*0x43f8c4*/
                             ((gamemd::BuildingClass *)(void *)(v60))->CreateDestructionCrater(); /*0x43f8cb*/
                             v54 = *(unsigned int *)(v53 + 664); /*0x43f8d0*/
                             ++v57; /*0x43f8d6*/
@@ -8542,7 +8542,7 @@ bool BuildingClass::CheckMissionAttack()
                   v85 = ((v85) & 0xFFFF0000u) | ((unsigned int)(v92[0] + v64 - 1) & 0xFFFFu); /*0x43f95e*/
                   v85 = ((v85) & 0xFFFFu) | (((unsigned int)(v62 - 1 + v92[1]) & 0xFFFFu) << 16); /*0x43f96a*/
                   *(unsigned int *)v93 = v85; /*0x43f979*/
-                  v65 = (BuildingClass *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v93); /*0x43f97d*/
+                  v65 = (BuildingClass *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v93); /*0x43f97d*/
                   ((gamemd::BuildingClass *)(void *)(v65))->CreatePlacementCrater(); /*0x43f984*/
                   ++v64; /*0x43f989*/
                 }
@@ -8748,7 +8748,7 @@ void BuildingClass::Capture()
 
   if ( *a2 != *(unsigned short *)&((unsigned int *)&stru_A8EB00)[948] || a2[1] != *(unsigned short *)&((unsigned int *)&stru_A8EB00)[950] ) /*0x4fcea4*/
   {
-    v3 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, a2); /*0x4fceb0*/
+    v3 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(a2); /*0x4fceb0*/
     v4 = v3->u32_44; /*0x4fceb5*/
     if ( v4 != -1 ) /*0x4fcebb*/
     {
@@ -8779,15 +8779,15 @@ void BuildingClass::Capture()
                 if ( dword_A83D4C == (Object *)this && !a3 ) /*0x4fcf7e*/
                   PlayVocClass(*(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 1700), 0x2000, 1.0, 0); /*0x4fcf98*/
                 (*(void (__thiscall **)(unsigned char *, BuildingClass *))(*(unsigned int *)v11 + 132))(v11, this); /*0x4fcfa2*/
-                *((unsigned int *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, a2) + 17) = -1; /*0x4fcfbc*/
-                *((unsigned char *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, a2) + 286) = 0; /*0x4fcfca*/
-                *((unsigned int *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, a2) + 20) = -1; /*0x4fcfdd*/
-                v12 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, a2); /*0x4fcfe0*/
+                *((unsigned int *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(a2) + 17) = -1; /*0x4fcfbc*/
+                *((unsigned char *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(a2) + 286) = 0; /*0x4fcfca*/
+                *((unsigned int *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(a2) + 20) = -1; /*0x4fcfdd*/
+                v12 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(a2); /*0x4fcfe0*/
                 House::AnnounceUpgrade((int)v12, -1); /*0x4fcfe7*/
-                v13 = (BuildingClass *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, a2); /*0x4fcff4*/
+                v13 = (BuildingClass *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(a2); /*0x4fcff4*/
                 BuildingClass::ValidatePlacement(v13, 0); /*0x4fcffb*/
                 BuildingClass::AddUpgrade((int *)&DataGlobal_87F7E8, (int)a2); /*0x4fd006*/
-                v14 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, a2); /*0x4fd011*/
+                v14 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(a2); /*0x4fd011*/
                 AbstractClass::ClearTargetToMeClearManagerTarget((int)v14); /*0x4fd018*/
                 Cell::SetRadar((Cell *)&DataGlobal_87F7E8, a2); /*0x4fd023*/
                 Radar::Update((Radar *)&DataGlobal_87F7E8, a2); /*0x4fd02e*/
@@ -8966,12 +8966,12 @@ void BuildingClass::EjectCrew()
         v52 = ((int16_t)v6 << 8) + 164; /*0x442e66*/
         if ( (*(int (__thiscall **)(int))(*(unsigned int *)i + 44))(i) == 1 ) /*0x442e74*/
         {
-          v12 = Coord::To_Cell((Coord *)&dword_87F7E8, &v51); /*0x442e80*/
+          v12 = ((Coord *)&dword_87F7E8)->To_Cell( &v51); /*0x442e80*/
           v13 = (int *)v12->GetOccupier(v59); /*0x442e8e*/
         }
         else
         {
-          v14 = Coord::To_Cell((Coord *)&dword_87F7E8, &v51); /*0x442ebe*/
+          v14 = ((Coord *)&dword_87F7E8)->To_Cell( &v51); /*0x442ebe*/
           v13 = ObjectPlacement::CalcPosition((ObjectPlacement *)v14, v58, &v51, 0, 0, 0); /*0x442ec5*/
         }
         v51 = *v13; /*0x442e93*/
@@ -9031,7 +9031,7 @@ void BuildingClass::EjectCrew()
       (*((unsigned short *)&(v48))) = v23; /*0x44304f*/
       (*(((unsigned short *)&(v48)) + 1)) = v24; /*0x443058*/
       *(unsigned int *)v48 = v48; /*0x443067*/
-      v25 = (bool *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v48); /*0x44306b*/
+      v25 = (bool *)((CellCoord *)&dword_87F7E8)->To_CellObj(v48); /*0x44306b*/
       owner = this->owner; /*0x443070*/
       v25 = v25; /*0x443076*/
       if ( !this->u32_412 /*0x4430aa*/
@@ -9057,7 +9057,7 @@ void BuildingClass::EjectCrew()
           v53 = 0; /*0x44315a*/
           v51 = (v48[0] << 8) + 128; /*0x44315e*/
           v52 = (v48[1] << 8) + 164; /*0x443166*/
-          v30 = Coord::To_Cell((Coord *)&dword_87F7E8, &v51); /*0x44317b*/
+          v30 = ((Coord *)&dword_87F7E8)->To_Cell( &v51); /*0x44317b*/
           v31 = ObjectPlacement::CalcPosition((ObjectPlacement *)v30, v60, &v51, 0, 0, 0); /*0x443182*/
           v51 = *v31; /*0x443191*/
           v32 = v31->ptr_4; /*0x443197*/
@@ -9288,7 +9288,7 @@ int BuildingClass::CleanupOccupation() {
                 v65[2] = v70 + v22; /*0x454fd5*/
                 v67[1] = v23; /*0x454fd9*/
                 v24 = v24; /*0x454fdd*/
-                v25 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, v67); /*0x454fe1*/
+                v25 = ((Coord *)&DataGlobal_87F7E8)->To_Cell( v67); /*0x454fe1*/
                 v26 = ParticleSystemClass::Constructor( /*0x454fff*/
                         v20,
                         this->Type->NaturalParticleSystem[0],
@@ -9363,7 +9363,7 @@ int BuildingClass::CleanupOccupation() {
                     (*((unsigned short *)&(v65[0]))) = v44 + (*((unsigned short *)&(v67[0]))); /*0x45537d*/
                     (*(((unsigned short *)&(v65[0])) + 1)) = (unsigned short)v63 + (*(((unsigned short *)&(v67[0])) + 1)); /*0x455382*/
                     *(unsigned int *)v62 = v65[0]; /*0x45538f*/
-                    v45 = (BuildingClass *)CellCoord::To_CellObj( /*0x45539e*/
+                    v45 = (BuildingClass *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj( /*0x45539e*/
                                              (CellCoord *)&DataGlobal_87F7E8,
                                              (int16_t *)v62);
                     if ( (uint8_t)Cell::HasOccupierBit((Cell *)v45, v43) ) /*0x4553a3*/
@@ -9478,7 +9478,7 @@ int BuildingClass::CleanupOccupation() {
                 (*(((unsigned short *)&(v64)) + 1)) = v33 + (*(((unsigned short *)&(v65[0])) + 1)); /*0x45517b*/
                 (*((unsigned short *)&(v64))) = k + (*((unsigned short *)&(v65[0]))); /*0x455180*/
                 v64 = v64; /*0x45518d*/
-                v36 = (BuildingClass *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, (int16_t *)&v64); /*0x4551a0*/
+                v36 = (BuildingClass *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj((int16_t *)&v64); /*0x4551a0*/
                 if ( !(uint8_t)Cell::HasOccupierBit((Cell *)v36, v62[0]) ) /*0x4551a5*/
                 {
                   BuildingClass::checkOccupant(v36, v62[0]); /*0x4551b9*/
@@ -9662,7 +9662,7 @@ void BuildingClass::ProcessUpgradeEffects()
   if ( !v3 || v4 != g_MissionQueueFrame.localVariables[228] || v5 != g_MissionQueueFrame.localVariables[229] ) /*0x5b17ea*/
   {
     GroundHeight = Cell::GetGroundHeight(&v12); /*0x5b1801*/
-    if ( (Coord::To_Cell((Coord *)&DataGlobal_87F7E8, a2)->flags[0] & 0x100) != 0 ) /*0x5b1813*/
+    if ( (((Coord *)&DataGlobal_87F7E8)->To_Cell( a2)->flags[0] & 0x100) != 0 ) /*0x5b1813*/
     {
       v6 = (int *)((char *)this->ptr_C + 156); /*0x5b1818*/
       v15 = *v6; /*0x5b1820*/
@@ -9679,7 +9679,7 @@ void BuildingClass::ProcessUpgradeEffects()
     this->ptr_12->ClearCellOccupied(&this->occupant); /*0x5b1879*/
   }
   ptr_8 = this->ptr_C; /*0x5b1886*/
-  v8 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, &v12); /*0x5b188d*/
+  v8 = ((Coord *)&DataGlobal_87F7E8)->To_Cell( &v12); /*0x5b188d*/
   if ( !(uint8_t)CrateClass::ProcessPickup((CrateClass *)v8, (int)ptr_8) || (v9 = this->ptr_C, v9[129]) ) /*0x5b18a0*/
   {
     *p_occupant = g_MissionQueueFrame.localVariables[227]; /*0x5b18ca*/

@@ -1757,7 +1757,7 @@ AbstractClass * * E4Recv_54BA30::UpdateFootMovement()
     v34 = *v6; /*0x54ba59*/
     v35 = v6[1]; /*0x54ba65*/
     v36 = v6[2]; /*0x54ba71*/
-    if ( (Coord::To_Cell((Coord *)&DataGlobal_87F7E8, &v34)->flags[0] & 0x100) != 0 && v4 >= dword_ABC5DC ) /*0x54ba8c*/
+    if ( (((Coord *)&DataGlobal_87F7E8)->To_Cell( &v34)->flags[0] & 0x100) != 0 && v4 >= dword_ABC5DC ) /*0x54ba8c*/
       v4 -= dword_ABC5DC; /*0x54ba8e*/
   }
   int v7; // eax
@@ -1848,7 +1848,7 @@ AbstractClass * * E4Recv_54BA30::UpdateFootMovement()
     unsigned int v9; // edi
     v9 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 7); /*0x54bb08*/
     Cell *v10; // eax
-    v10 = (Cell *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v31); /*0x54bb14*/
+    v10 = (Cell *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v31); /*0x54bb14*/
     int v11 = *_ESI->ptr_C; // ebx /*0x54bb1f*/
     void *NeighbourContent; // eax
     NeighbourContent = Cell::GetNeighbourContent(v10, v9); /*0x54bb23*/

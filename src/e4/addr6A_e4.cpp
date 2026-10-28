@@ -655,7 +655,7 @@ int TechnoClass::ProcessDeployAction()
         else
         {
           v7 = *(unsigned int *)this->occupant; /*0x6afe87*/
-          v8 = (((CellCoord *)&dword_87F7E8)->To_CellObj(v29); /*0x6afe8e*/
+          v8 = ((CellCoord *)&dword_87F7E8)->To_CellObj(v29); /*0x6afe8e*/
           (*(void (**)(int, void *, int))(v7 + 1152))(this->occupant, v8, 1); /*0x6afe97*/
           LOBYTE(v3) = (*(int (**)(int, int, unsigned int))(*(unsigned int *)this->occupant + 488))(this->occupant, 2, 0); /*0x6afea6*/
           this->customSound_controller[3] = 2; /*0x6afeac*/
@@ -874,7 +874,7 @@ char E4Recv_6A04C0::sub_6A04C0(IUnknown * aP1)
     void *ptr_8; // [esp-4h] [ebp-10h]
     ptr_8 = this->M12; /*0x6a054a*/
     CellClass *v7; // eax
-    v7 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, aP1); /*0x6a0551*/
+    v7 = ((Coord *)&DataGlobal_87F7E8)->To_Cell( aP1); /*0x6a0551*/
     if ( (unsigned __int8)CrateClass::ProcessPickup((CrateClass *)v7, (int)ptr_8) && !*((unsigned char *)this->M72 + 129) ) /*0x6a0564*/
     {
       WalkLocomotion::MoveTo((int)this, aP1, 1); /*0x6a0573*/

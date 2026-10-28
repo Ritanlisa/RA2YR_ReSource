@@ -1806,6 +1806,6 @@ int CellClass::SpiralFindClosest(IUnknown * aP0, MouseClass * aP1, IUnknown * aP
 namespace gamemd {
 int CellClass::GetByte284(IUnknown * aP0)
 {
-  return *((uint8_t *)Coord::To_Cell(&dword_87F7E8, aP0) + 284); /*0x6d6ae9*/
+  return *((uint8_t *)((Coord *)&dword_87F7E8)->To_Cell( aP0) + 284); /*0x6d6ae9*/
 }
 } // namespace gamemd

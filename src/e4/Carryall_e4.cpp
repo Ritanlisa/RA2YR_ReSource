@@ -221,8 +221,8 @@ FootClass * * Carryall::MissionStateMachine()
       v27[2] = v21; /*0x417201*/
       v28[1] = this->u32_A0; /*0x41720c*/
       v28[2] = v22; /*0x417216*/
-      v26 = BYTE1(Coord::To_Cell((Coord *)&DataGlobal_87F7E8, v27)->flags[0]) & 1; /*0x41722f*/
-      v23 = (gamemd::CellClass *)(Coord::To_Cell((Coord *)&DataGlobal_87F7E8, v28)); /*0x417236*/
+      v26 = BYTE1(((Coord *)&DataGlobal_87F7E8)->To_Cell( v27)->flags[0]) & 1; /*0x41722f*/
+      v23 = (gamemd::CellClass *)(((Coord *)&DataGlobal_87F7E8)->To_Cell( v28)); /*0x417236*/
       Building = (unsigned char *)(CellClass::FindBuilding(v23, v26)); /*0x417242*/
       if ( Building /*0x417270*/
           && Building == (unsigned char *)((Team *)this)->GetMember(0)

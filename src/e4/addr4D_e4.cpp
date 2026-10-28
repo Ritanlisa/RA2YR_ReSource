@@ -177,7 +177,7 @@ int sub_4D2370()
         LOWORD(v9) = (unsigned short)v5 + *v4; /*0x4d2408*/
         HIWORD(v9) = HIWORD(v5) + v4[1]; /*0x4d240d*/
         v11 = v9; /*0x4d241c*/
-        v6 = (((CellCoord *)&dword_87F7E8)->To_CellObj((__int16 *)&v11); /*0x4d2420*/
+        v6 = ((CellCoord *)&dword_87F7E8)->To_CellObj((__int16 *)&v11); /*0x4d2420*/
         v4 += 2; /*0x4d2436*/
         v6->u32_140 |= 0x400000u; /*0x4d2439*/
       }
@@ -189,7 +189,7 @@ int sub_4D2370()
       v13[0] = *v7; /*0x4d2442*/
       v13[1] = v7[1]; /*0x4d244e*/
       v13[2] = v7[2]; /*0x4d2455*/
-      v8 = Coord::To_Cell((Coord *)&dword_87F7E8, v13); /*0x4d245e*/
+      v8 = ((Coord *)&dword_87F7E8)->To_Cell( v13); /*0x4d245e*/
       v8->flags |= 0x400000u; /*0x4d2474*/
     }
     result = g_FootClassConfig; /*0x4d247c*/

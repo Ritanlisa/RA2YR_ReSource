@@ -1017,7 +1017,7 @@ void* * TacticalClass::DrawBuildingsInView(AbstractClass * aP1)
     v54 = 0; /*0x6d6db9*/
   if ( v8 < 0 ) /*0x6d6dbf*/
     v53 = 0; /*0x6d6dc1*/
-  smudgeTypeIndex = Coord::To_Cell((Coord *)&dword_87F7E8, &v53)->smudgeTypeIndex; /*0x6d6dd4*/
+  smudgeTypeIndex = ((Coord *)&dword_87F7E8)->To_Cell( &v53)->smudgeTypeIndex; /*0x6d6dd4*/
   v11 = (unsigned __int64)(2290649225LL * aP1[3]) >> 32; /*0x6d6de3*/
   v12 = aP1[2]; /*0x6d6de5*/
   v38[0] = smudgeTypeIndex; /*0x6d6df3*/
@@ -1052,7 +1052,7 @@ void* * TacticalClass::DrawBuildingsInView(AbstractClass * aP1)
         {
           if ( (unsigned __int8)LayerClass::CoordinatesLegal((LayerClass *)&dword_87F7E8, v32) ) /*0x6d6ebc*/
           {
-            v18 = (House *)(((CellCoord *)&dword_87F7E8)->To_CellObj(v32); /*0x6d6ed3*/
+            v18 = (House *)((CellCoord *)&dword_87F7E8)->To_CellObj(v32); /*0x6d6ed3*/
             v19 = (int)v18; /*0x6d6ed8*/
             if ( *&v18->ptr_44 != -1 ) /*0x6d6ede*/
             {
@@ -1112,7 +1112,7 @@ void* * TacticalClass::DrawBuildingsInView(AbstractClass * aP1)
           {
             if ( (unsigned __int8)LayerClass::CoordinatesLegal((LayerClass *)&dword_87F7E8, v32) ) /*0x6d709e*/
             {
-              v28 = (BuildingClass *)(((CellCoord *)&dword_87F7E8)->To_CellObj(v32); /*0x6d70b5*/
+              v28 = (BuildingClass *)((CellCoord *)&dword_87F7E8)->To_CellObj(v32); /*0x6d70b5*/
               v29 = (int)v28; /*0x6d70ba*/
               if ( v28->ambientSoundController[2] != -1 ) /*0x6d70c0*/
               {
@@ -1282,7 +1282,7 @@ void * TacticalClass::IsOccupiedByTechno(unsigned int * a2)
           || *((unsigned int *)v6 + 136) != 2
           || (Object_field_0x30 = dword_A83D4C->relatedTagsCount,
               v8 = (unsigned int *)(*(int (**)(unsigned char *, char *))(*(unsigned int *)v6 + 72))(v6, v22),
-              v9 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, v8),
+              v9 = ((Coord *)&DataGlobal_87F7E8)->To_Cell( v8),
               (unsigned __int8)((Cell *)v9)->IsPassableOffset((int)Object_field_0x30)) )
         {
           v7 = 1; /*0x6da43e*/
@@ -1389,7 +1389,7 @@ void* TacticalClass::DrawPlacementCircles()
       if ( BuildingClass::GetPowerFrame(v4) > 0 ) /*0x6dbeac*/
       {
         *(float *)v53 = *(float *)&dword_88095C; /*0x6dbec0*/
-        v5 = (CellClass *)(((CellCoord *)&dword_87F7E8)->To_CellObj(v53); /*0x6dbecb*/
+        v5 = (CellClass *)((CellCoord *)&dword_87F7E8)->To_CellObj(v53); /*0x6dbecb*/
         Coords = CellClass::GetCoords(v5, v57); /*0x6dbed2*/
         v7 = *Coords; /*0x6dbed7*/
         v8 = Coords[1]; /*0x6dbed9*/
@@ -1496,7 +1496,7 @@ void* TacticalClass::DrawPlacementCircles()
     if ( v30 <= 0.0 ) /*0x6dc1db*/
       return; /*0x6dc1db*/
     *(unsigned int *)v54 = *(unsigned int *)&dword_88095C; /*0x6dc1f6*/
-    v31 = (CellClass *)(((CellCoord *)&dword_87F7E8)->To_CellObj(v54); /*0x6dc1fa*/
+    v31 = (CellClass *)((CellCoord *)&dword_87F7E8)->To_CellObj(v54); /*0x6dc1fa*/
     v32 = CellClass::GetCoords(v31, v57); /*0x6dc201*/
     v33 = v32->ptr_4; /*0x6dc20d*/
     v55 = *v32 - 126; /*0x6dc210*/

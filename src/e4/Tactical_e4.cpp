@@ -1009,7 +1009,7 @@ int Tactical::MouseOver(MouseClass * aP0, MouseClass * aP1, MouseClass * aP2, Mo
     result = dword_A8B230->ptr_0; /*0x6924aa*/
     if ( (dword_A8B230->ptr_0 & 0x1000) != 0 ) /*0x6924af*/
     {
-      v23 = Coord::To_Cell((Coord *)&dword_87F7E8, &v34); /*0x6924bb*/
+      v23 = ((Coord *)&dword_87F7E8)->To_Cell( &v34); /*0x6924bb*/
       result = (int)Cell::IsBridge((Cell *)v23); /*0x6924c2*/
       if ( result ) /*0x6924c9*/
       {
@@ -1033,7 +1033,7 @@ int Tactical::MouseOver(MouseClass * aP0, MouseClass * aP1, MouseClass * aP2, Mo
         if ( result->q220 == 2 /*0x692575*/
           && (v32 = *(unsigned int *)(*(int *)((char *)&stru_A83CD9.estimatedHealth + 3) + 48),
               v27 = (unsigned int *)(*(int (**)(int, unsigned int *))(*(unsigned int *)result + 72))(result, v37),
-              v28 = Coord::To_Cell((Coord *)&dword_87F7E8, v27),
+              v28 = ((Coord *)&dword_87F7E8)->To_Cell( v27),
               result = Cell::IsPassableOffset((Cell *)v28, v32),
               !(unsigned char)result)
           || (result = (*(int (**)(int))(*(unsigned int *)v26 + 132))(v26), result->u32_C9A) )
@@ -1052,7 +1052,7 @@ int Tactical::MouseOver(MouseClass * aP0, MouseClass * aP1, MouseClass * aP2, Mo
             if ( v29[1773] == 15 /*0x6925dc*/
               && (v33 = *(unsigned int *)(*(int *)((char *)&stru_A83CD9.estimatedHealth + 3) + 48),
                   v30 = (unsigned int *)(*(int (**)(int, unsigned int *))(*(unsigned int *)v26 + 72))(v26, v37),
-                  v31 = Coord::To_Cell((Coord *)&dword_87F7E8, v30),
+                  v31 = ((Coord *)&dword_87F7E8)->To_Cell( v30),
                   result = Cell::IsPassableOffset((Cell *)v31, v33),
                   !(unsigned char)result)
               || *(unsigned char *)(*((unsigned int *)v29 + 328) + 5889) )
@@ -1467,7 +1467,7 @@ unsigned int * Tactical::PixelToCell(unsigned int *aP1, int *aP2)
     (v17) = ((v17) & ~0xFFFF) | ((Math::RoundToInt(v50)) & 0xFFFF); /*0x6d6715*/
     v40[0] = v16 / 256; /*0x6d672a*/
     v40[1] = v17 / 256; /*0x6d6747*/
-    v18 = (Cell *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v40); /*0x6d6751*/
+    v18 = (Cell *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v40); /*0x6d6751*/
     v35 = v12 - 15 * v18->Cell_field_0x11B; /*0x6d6768*/
     if ( ((int)v18->u32_140 & 0x100) != 0 )
     {

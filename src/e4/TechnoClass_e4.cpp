@@ -1155,7 +1155,7 @@ HouseClass * * TechnoClass::RenderTechnoSHP(int * a0, int * a1, int * a2, HouseC
   LOWORD(v36) = *v13 / 256; /*0x73b165*/
   HIWORD(v36) = v13[1] / 256; /*0x73b17e*/
   *(unsigned int *)v38 = v36; /*0x73b18b*/
-  v14 = (CellClass *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v38); /*0x73b190*/
+  v14 = (CellClass *)((CellCoord *)&dword_87F7E8)->To_CellObj(v38); /*0x73b190*/
   if ( (unsigned __int8)CellClass::QuickPassable(v14) ) /*0x73b197*/
     a9 = 0; /*0x73b1a0*/
   v15 = 0; /*0x73b1ae*/
@@ -1948,7 +1948,7 @@ LABEL_102:
     v138 = v10[39]; /*0x73c390*/
     v139 = v10[40]; /*0x73c39c*/
     v140 = v10[41]; /*0x73c3a6*/
-    v73 = (Cell *)Coord::To_Cell((Coord *)&dword_87F7E8, &v138); /*0x73c3b7*/
+    v73 = (Cell *)((Coord *)&dword_87F7E8)->To_Cell( &v138); /*0x73c3b7*/
     if ( *((unsigned char *)v10 + 1060) ) /*0x73c3b9*/
     {
       if ( !*((unsigned char *)v10 + 140) && v72 >= dword_B1D0AC ) /*0x73c3d3*/
@@ -2110,24 +2110,24 @@ char TechnoClass::ScanAdjacentCells()
   __int16 v16[2]; // [esp+20h] [ebp-4h] BYREF
 
   *(unsigned int *)v12 = *(unsigned int *)(*((int (**)(TechnoClass *, __int16 *))this->RadioClass + 110))(this, v16); /*0x703ce4*/
-  v2 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v12); /*0x703ced*/
+  v2 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v12); /*0x703ced*/
   if ( !v2 || this->onBridge ) /*0x703cf7*/
     return 0; /*0x703cf7*/
   v13[0] = v12[0] + LOWORD(g_DDrawSurfaceManager.scenario[86]); /*0x703d1c*/
   v13[1] = v12[1] + HIWORD(g_DDrawSurfaceManager.scenario[86]); /*0x703d21*/
   *(unsigned int *)v14 = *(unsigned int *)v13; /*0x703d2e*/
-  v3 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v14); /*0x703d4f*/
+  v3 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v14); /*0x703d4f*/
   v13[1] = v12[1] + HIWORD(g_DDrawSurfaceManager.scenario[82]); /*0x703d57*/
   v13[0] = v12[0] + LOWORD(g_DDrawSurfaceManager.scenario[82]); /*0x703d5c*/
   *(unsigned int *)v15 = *(unsigned int *)v13; /*0x703d69*/
-  v4 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v15); /*0x703d88*/
+  v4 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v15); /*0x703d88*/
   v13[1] = v12[1] + HIWORD(g_DDrawSurfaceManager.scenario[84]); /*0x703d91*/
   v13[0] = v12[0] + LOWORD(g_DDrawSurfaceManager.scenario[84]); /*0x703d96*/
   *(unsigned int *)v16 = *(unsigned int *)v13; /*0x703da9*/
-  v5 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v16); /*0x703dbc*/
+  v5 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v16); /*0x703dbc*/
   v13[0] = v12[0] + LOWORD(g_DDrawSurfaceManager.scenario[88]); /*0x703dcb*/
   v13[1] = v12[1] + HIWORD(g_DDrawSurfaceManager.scenario[88]); /*0x703dd4*/
-  v6 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v13); /*0x703de7*/
+  v6 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v13); /*0x703de7*/
   if ( (v2[80] & 0x400) != 0 ) /*0x703df5*/
     return 1; /*0x703df5*/
   if ( v3 ) /*0x703df9*/

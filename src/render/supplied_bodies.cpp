@@ -318,7 +318,7 @@ int BuildingQueue::IsCellSuitable(int a2)
   v5 = (unsigned __int8 *)*((unsigned int *)dword_A83C6C + result); /*0x42e7af*/
   if ( !v5[5489] ) /*0x42e7b2*/
     goto LABEL_9; /*0x42e7b2*/
-  result = (int)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)(v4 + 4)); /*0x42e7c5*/
+  result = (int)((CellCoord *)&dword_87F7E8)->To_CellObj((__int16 *)(v4 + 4)); /*0x42e7c5*/
   if ( result->u32_44 == *(unsigned int *)(*((unsigned int *)v5 + 917) + 660) ) /*0x42e7d9*/
   {
     (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x42e7dc*/
@@ -2326,7 +2326,7 @@ int TacticalMapClass::ProcessCell(int16_t *a2, int a3)
   int v43; // [esp+50h] [ebp-4h]
   char v44; // [esp+58h] [ebp+4h]
 
-  v4 = (int *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, a2); /*0x6d7f38*/
+  v4 = (int *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(a2); /*0x6d7f38*/
   v5 = (*a2 << 8) + 128; /*0x6d7f5b*/
   v6 = (a2[1] << 8) + 128; /*0x6d7f68*/
   v43 = 0; /*0x6d7f6a*/
@@ -2359,7 +2359,7 @@ int TacticalMapClass::ProcessCell(int16_t *a2, int a3)
         goto LABEL_34; /*0x6d8021*/
       v36[0] = v33 + ((v11 + 1) >> 1); /*0x6d8031*/
       v36[1] = v34 - (v11 >> 1) + 1; /*0x6d8036*/
-      v14 = (char *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v36); /*0x6d8040*/
+      v14 = (char *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v36); /*0x6d8040*/
       v15 = 0; /*0x6d8042*/
       v32 = v14; /*0x6d8044*/
       v16 = v14->u32_11B; /*0x6d804b*/
@@ -2415,7 +2415,7 @@ LABEL_33:
         v27 = v25 - this->u32_B0; /*0x6d81ea*/
         v39[1] = v24 / 256 - v26 - this->u32_B4; /*0x6d81ee*/
         v39[0] = v27 - 30; /*0x6d8204*/
-        v28 = (int *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v37); /*0x6d820f*/
+        v28 = (int *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v37); /*0x6d820f*/
         TacticalClass::CheckCellVisibility(v28, v39, &DSurface_ViewBounds, 0); /*0x6d8216*/
         goto LABEL_34; /*0x6d8216*/
       }
@@ -2875,7 +2875,7 @@ LABEL_31:
           }
           else
           {
-            v27 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)v66.__pad_0); /*0x73ea5d*/
+            v27 = ((CellCoord *)&dword_87F7E8)->To_CellObj((__int16 *)v66.__pad_0); /*0x73ea5d*/
             TechnoClass::SetFocus((TechnoClass *)this, (int)v27); /*0x73ea65*/
           }
           return 1; /*0x73ea83*/
@@ -3020,7 +3020,7 @@ LABEL_75:
             else
             {
               v50 = *(unsigned int *)this; /*0x73ed9e*/
-              v51 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)v66.__pad_0); /*0x73edad*/
+              v51 = ((CellCoord *)&dword_87F7E8)->To_CellObj((__int16 *)v66.__pad_0); /*0x73edad*/
               (*(void (**)(Class_7F5C70 *, void *, int))(v50 + 1152))(this, v51, 1); /*0x73edb5*/
             }
           }
@@ -3048,7 +3048,7 @@ LABEL_75:
         v69 = this->u32_9C; /*0x73eefc*/
         v70 = this->u32_A0; /*0x73ef08*/
         v71 = this->u32_A4; /*0x73ef0f*/
-        v58 = Coord::To_Cell((Coord *)&dword_87F7E8, &v69); /*0x73ef18*/
+        v58 = ((Coord *)&dword_87F7E8)->To_Cell( &v69); /*0x73ef18*/
         v59 = Cell::IsBridge((Cell *)v58); /*0x73ef1f*/
         if ( v59 ) /*0x73ef26*/
         {
@@ -3060,7 +3060,7 @@ LABEL_75:
                                              (char *)this,
                                              &v66.ComPtr_field_0x1C,
                                              (int)v59);
-            v63 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, PlacementCellsAlt); /*0x73ef5a*/
+            v63 = ((CellCoord *)&dword_87F7E8)->To_CellObj(PlacementCellsAlt); /*0x73ef5a*/
             (*(void (**)(Class_7F5C70 *, void *, int))(v61 + 1152))(this, v63, 1); /*0x73ef62*/
           }
         }

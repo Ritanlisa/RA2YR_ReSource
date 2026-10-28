@@ -716,7 +716,7 @@ char JumpjetLocomotion::Land()
     FacingClass::Update(&this->q054, v49); /*0x54cb39*/
   }
   v10 = dword_ABC5DC + Cell::GetGroundHeight(&v51); /*0x54cb5e*/
-  if ( (Coord::To_Cell((Coord *)&dword_87F7E8, &v51)->flags & 0x100) == 0 || v3 < v10 || (v45 = 1, v53 >= v10) ) /*0x54cb7f*/
+  if ( (((Coord *)&dword_87F7E8)->To_Cell( &v51)->flags & 0x100) == 0 || v3 < v10 || (v45 = 1, v53 >= v10) ) /*0x54cb7f*/
     v45 = 0; /*0x54cb81*/
   v49[0] = v51 / 256; /*0x54cba0*/
   v49[1] = v52 / 256; /*0x54cbb5*/
@@ -739,7 +739,7 @@ char JumpjetLocomotion::Land()
   v49[0] = *v12 / 256; /*0x54cc66*/
   v49[1] = v12[1] / 256; /*0x54cc7f*/
   *(unsigned int *)v50 = *(unsigned int *)v49; /*0x54cc8d*/
-  v13 = (unsigned int *)*((unsigned int *)(((CellCoord *)&dword_87F7E8)->To_CellObj(v50) + 57); /*0x54cc96*/
+  v13 = (unsigned int *)*((unsigned int *)((CellCoord *)&dword_87F7E8)->To_CellObj(v50) + 57); /*0x54cc96*/
   if ( v13 == *(unsigned int **)&this->u32_C ) /*0x54cca1*/
     v13 = (unsigned int *)v13[12]; /*0x54cca3*/
   if ( v13 ) /*0x54cca8*/
@@ -829,7 +829,7 @@ char JumpjetLocomotion::Land()
   v54 = *v23; /*0x54cdd3*/
   v55 = v23[1]; /*0x54cddf*/
   v56 = v23[2]; /*0x54cde6*/
-  v24 = Coord::To_Cell((Coord *)&dword_87F7E8, &v54); /*0x54cdf4*/
+  v24 = ((Coord *)&dword_87F7E8)->To_Cell( &v54); /*0x54cdf4*/
   landType = v24->landType; /*0x54cdf6*/
   if ( landType != 2 || (v48 = 1, v45) ) /*0x54ce0c*/
     v48 = 0; /*0x54ce0e*/
@@ -1086,7 +1086,7 @@ void* JumpjetLocomotion::UpdateFacing()
   v22 = *(unsigned int *)this->u32_C + 156; /*0x54d2a4*/
   v62 = *(double *)v22; /*0x54d2ab*/
   v63 = *(unsigned int *)(v22 + 8); /*0x54d2c3*/
-  if ( (Coord::To_Cell((Coord *)&dword_87F7E8, &v62)->flags & 0x100) != 0 ) /*0x54d2d5*/
+  if ( (((Coord *)&dword_87F7E8)->To_Cell( &v62)->flags & 0x100) != 0 ) /*0x54d2d5*/
   {
     v23 = *(unsigned int *)this->u32_C + 156; /*0x54d2da*/
     v62 = *(double *)v23; /*0x54d2e2*/
@@ -1117,7 +1117,7 @@ void* JumpjetLocomotion::UpdateFacing()
     v28 = *(unsigned int *)this->u32_C + 156; /*0x54d379*/
     v62 = *(double *)v28; /*0x54d381*/
     v63 = *(unsigned int *)(v28 + 8); /*0x54d394*/
-    if ( (Coord::To_Cell((Coord *)&dword_87F7E8, &v62)->flags & 0x100) != 0 ) /*0x54d3ab*/
+    if ( (((Coord *)&dword_87F7E8)->To_Cell( &v62)->flags & 0x100) != 0 ) /*0x54d3ab*/
     {
       v29 = *(unsigned int *)this->u32_C; /*0x54d3ad*/
       if ( !v29->q08C ) /*0x54d3b0*/

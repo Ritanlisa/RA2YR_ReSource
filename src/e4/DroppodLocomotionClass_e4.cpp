@@ -126,7 +126,7 @@ int DropPodLocomotionClass::ILoco_Process(DropPodLocomotionClass * a1)
       if ( !(*(unsigned int *)&stru_A8E960.random[528] % 3) ) /*0x4b5f1f*/
       {
         v33 = 0.0; /*0x4b5f39*/
-        v23 = Coord::To_Cell((Coord *)&dword_87F7E8, this->IsOutOfMap); /*0x4b5f41*/
+        v23 = ((Coord *)&dword_87F7E8)->To_Cell( this->IsOutOfMap); /*0x4b5f41*/
         ClosestObjectCell = Object::FindClosestObjectCell((Object *)v23, &v33, 0, 0); /*0x4b5f48*/
         if ( !(unsigned __int8)Object::IsAlliedWithObjectHouse(*(Object **)&this->Owner->u32_21C, ClosestObjectCell) ) /*0x4b5f57*/
         {

@@ -1694,7 +1694,7 @@ bool DeployScriptActionPlane(int a1, int edx0, void * a2, void * a3)
     while ( v15 ); /*0x65da1e*/
     *(ScriptActionQueue *)v47 = v44; /*0x65da28*/
     v16 = 0; /*0x65da37*/
-    v17 = (Cell *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v47); /*0x65da39*/
+    v17 = (Cell *)((CellCoord *)&dword_87F7E8)->To_CellObj(v47); /*0x65da39*/
     v18 = -1; /*0x65da3b*/
     do /*0x65da72*/
     {
@@ -1808,7 +1808,7 @@ LABEL_44:
   (*(void (**)(CellClass *, int, unsigned int))(mapCoords + 488))(v32, 26, 0); /*0x65dc59*/
   (*(void (**)(CellClass *, unsigned int, int))(v32->mapCoords + 1152))(v32, 0, 1); /*0x65dc67*/
   v38 = v32->mapCoords; /*0x65dc6d*/
-  v39 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v47); /*0x65dc79*/
+  v39 = ((CellCoord *)&dword_87F7E8)->To_CellObj(v47); /*0x65dc79*/
   (*(void (**)(CellClass *, void *))(v38 + 968))(v32, v39); /*0x65dc81*/
   ++dword_A8E7AC; /*0x65dc95*/
   ((Coord *)v48)->Subtract( ((__int16)v36 << 8) + 128, (SHIWORD(v45) << 8) + 128, 0); /*0x65dcb6*/
@@ -1997,7 +1997,7 @@ LABEL_5:
         v57[1] = ((short)(((v49) >> 16) & 0xFFFF) << 8) + 128; /*0x65e209*/
         (*(void (**)(unsigned int *, unsigned int *))(v18 + 436))(v5, v57); /*0x65e210*/
         v19 = *v5; /*0x65e216*/
-        v20 = CellCoord::To_CellObj(&dword_87F7E8, (__int16 *)&v49); /*0x65e225*/
+        v20 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((__int16 *)&v49); /*0x65e225*/
         (*(void (**)(unsigned int *, void *, int))(v19 + 1152))(v5, v20, 1); /*0x65e22d*/
         if ( !v5->u32_674 ) /*0x65e23d*/
           sub_7DC720(-2147467261); /*0x65e260*/
@@ -2054,7 +2054,7 @@ LABEL_46:
       }
       if ( (((v48) >> 8) & 0xFF) ) /*0x65e2d9*/
       {
-        v22 = CellCoord::To_CellObj(&dword_87F7E8, (__int16 *)&v49); /*0x65e2ee*/
+        v22 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((__int16 *)&v49); /*0x65e2ee*/
         Coords = CellClass::GetCoords(v22, v61); /*0x65e2f5*/
         v24 = *Coords; /*0x65e2fa*/
         v25 = Coords[1]; /*0x65e2fc*/
@@ -2076,7 +2076,7 @@ LABEL_46:
         v60[2] = v5[41] + -256 - v28; /*0x65e373*/
         (*(void (**)(unsigned int *, unsigned int *))(v29 + 436))(v5, v60); /*0x65e379*/
         v30 = *v5; /*0x65e37f*/
-        v31 = CellCoord::To_CellObj(&dword_87F7E8, (__int16 *)&v49); /*0x65e38e*/
+        v31 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((__int16 *)&v49); /*0x65e38e*/
         (*(void (**)(unsigned int *, void *, int))(v30 + 1152))(v5, v31, 1); /*0x65e396*/
         v5->vt_slot_1348(0, 1072693248); /*0x65e3a8*/
         if ( !v5->u32_674 ) /*0x65e3b8*/
@@ -2092,7 +2092,7 @@ LABEL_46:
       else
       {
         v33 = *v5; /*0x65e40a*/
-        v34 = CellCoord::To_CellObj(&dword_87F7E8, (__int16 *)&v49); /*0x65e425*/
+        v34 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((__int16 *)&v49); /*0x65e425*/
         v35 = CellClass::GetCoords(v34, v62); /*0x65e42c*/
         v32 = (*(int (**)(unsigned int *, int *, unsigned int))(v33 + 216))( /*0x65e434*/
                 v5,
@@ -2113,7 +2113,7 @@ LABEL_39:
         if ( !LayerClass::CoordinatesLegal(&dword_87F7E8, (__int16 *)&a2) ) /*0x65e550*/
         {
           v43 = *v5; /*0x65e559*/
-          v44 = CellCoord::To_CellObj(&dword_87F7E8, (__int16 *)&a2); /*0x65e570*/
+          v44 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((__int16 *)&a2); /*0x65e570*/
           if ( !(*(int (**)(unsigned int *, void *, int, int, unsigned int, int))(v43 + 428))(v5, v44, v40, -1, 0, 1) ) /*0x65e578*/
             break; /*0x65e578*/
         }
@@ -2509,7 +2509,7 @@ void* ExecuteScriptTypeClassActions(unsigned int * ecx0, int a2)
     v14 = dword_B04C58; /*0x65edce*/
     v15 = dword_B04C5C; /*0x65edda*/
     *(unsigned int *)&v49[84] = dword_B04C60; /*0x65edea*/
-    v16 = (ObjectPlacement *)Coord::To_Cell((Coord *)&DataGlobal_87F7E8, &v49[12]); /*0x65edf3*/
+    v16 = (ObjectPlacement *)((Coord *)&DataGlobal_87F7E8)->To_Cell( &v49[12]); /*0x65edf3*/
     *(unsigned int *)v49 = 0; /*0x65edf7*/
     while ( v14 == dword_B04C58 && v15 == dword_B04C5C && *(unsigned int *)&v49[84] == dword_B04C60 && *(int *)v49 < 255 ) /*0x65ee2d*/
     {
