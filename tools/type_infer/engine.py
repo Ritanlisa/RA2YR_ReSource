@@ -1009,6 +1009,7 @@ class TypeInferenceEngine:
 
         # ── function_signatures anchors ──
         self._load_func_signatures(valid_classes)
+        self._load_ida_proto_anchors(valid_classes)
 
         # ── orphan component seeding ──
         # ── TYPE_SEED 标量种子锚（提取器 Step 3 的立即数/浮点证据）──
@@ -1271,6 +1272,107 @@ class TypeInferenceEngine:
             return self.var_to_id.get(f"0x{addr:08X}.return")
         return None
 
+    def _load_ida_proto_anchors(self, valid_classes):
+        """X193b: 用 anchors/vtable_slot_signatures.json 的 IDA 原型补签名锚。
+
+        该文件是**地址键**的真实反编译原型（17,554 个槽位目标，10,670 带 proto），
+        覆盖 function_signatures.json 未收录的函数。约束图变量同样是地址式
+        （0xADDR.return / 0xADDR:this / 0xADDR::paramN），因此天然可 join。
+        与已有 sig_by_addr 冲突时不覆盖（function_signatures 优先）。
+        """
+        _anchors_dir = os.path.normpath(os.path.join(
+            os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
+            "anchors"))
+        # 两个来源：虚表槽位目标（10,670 带原型）+ 全量快照（19,059 带原型）。
+        # 后者离线从 decompile-results/full_export 提取，覆盖前者未收录的 8,411 个函数。
+        raw = {}
+        for _name in ("vtable_slot_signatures.json", "ida_function_protos.json"):
+            _p = os.path.normpath(os.path.join(_anchors_dir, _name))
+            if not os.path.exists(_p):
+                continue
+            with open(_p, "r", encoding="utf-8") as f:
+                _d = json.load(f)
+            for _a, _v in _d.items():
+                _pr = (_v.get("proto") or "").strip()
+                if _a not in raw or (_pr and not (raw[_a].get("proto") or "").strip()):
+                    raw[_a] = _v
+        if not raw:
+            print("  ida_proto: no source", file=sys.stderr)
+            return
+
+        def split_params(sig_body):
+            parts, depth, cur = [], 0, ""
+            for ch in sig_body:
+                if ch in "<(":
+                    depth += 1
+                elif ch in ">)":
+                    depth -= 1
+                if ch == "," and depth == 0:
+                    parts.append(cur.strip()); cur = ""
+                else:
+                    cur += ch
+            if cur.strip():
+                parts.append(cur.strip())
+            return parts
+
+        proto_re = re.compile(r"^(.*?)\s*\(\s*(.*?)\s*\)\s*$")
+        def parse(proto):
+            m = proto_re.match(proto)
+            if not m:
+                return None
+            ret = m.group(1)
+            ret = re.sub(r"__\w*call|__cdecl|__stdcall|__thiscall|__fastcall|__userpurge|@<[^>]*>", " ", ret).strip()
+            ret = ret.replace(" *", "*").strip()
+            params = []
+            for prm in split_params(m.group(2)):
+                if not prm:
+                    continue
+                toks = prm.rsplit(" ", 1)
+                if len(toks) == 2 and re.fullmatch(r"[A-Za-z_]\w*", toks[1]):
+                    ptype, pname = toks[0].strip(), toks[1]
+                else:
+                    ptype, pname = prm.strip(), ""
+                ptype = re.sub(r"__\w*call|__cdecl|__stdcall|__thiscall|__fastcall", " ", ptype)
+                params.append({"name": pname, "type": ptype.replace(" *", "*").strip()})
+            return ret, params
+
+        n_ret = n_this = n_param = 0
+        for addr_s, info in raw.items():
+            proto = (info.get("proto") or "").strip()
+            if not proto or "(" not in proto:
+                continue
+            parsed = parse(proto)
+            if not parsed:
+                continue
+            ret, params = parsed
+            try:
+                addr = int(addr_s, 16)
+            except ValueError:
+                continue
+            key = "0x%08X" % addr
+            if ret and ret != "void":
+                lt = self._to_lattice_type(ret, valid_classes)
+                vid = self.var_to_id.get(key + ".return")
+                if lt is not None and vid is not None:
+                    self.anchors.append(Anchor(vid, key + ".return", lt, "ida_proto"))
+                    self.anchor_by_var[vid].append(self.anchors[-1]); n_ret += 1
+            for i, p in enumerate(params):
+                lt = self._to_lattice_type(p["type"], valid_classes)
+                if lt is None:
+                    continue
+                if i == 0 and (p["name"] == "this" or p["type"].endswith("*")):
+                    vid = self.var_to_id.get(key + ":this")
+                    if vid is not None:
+                        self.anchors.append(Anchor(vid, key + ":this", lt, "ida_proto"))
+                        self.anchor_by_var[vid].append(self.anchors[-1]); n_this += 1
+                else:
+                    idx = i - 1 if params and (params[0]["name"] == "this") else i
+                    vid = self.var_to_id.get(key + "::param%d" % idx)
+                    if vid is not None:
+                        self.anchors.append(Anchor(vid, key + "::param%d" % idx, lt, "ida_proto"))
+                        self.anchor_by_var[vid].append(self.anchors[-1]); n_param += 1
+        print(f"  ida_proto anchors: ret={n_ret} this={n_this} param={n_param}", file=sys.stderr)
+
     def _load_func_signatures(self, valid_classes: set[str]) -> None:
         """Load function signature anchors from IDA-extracted function_signatures.json.
 
@@ -1298,6 +1400,17 @@ class TypeInferenceEngine:
         # Build fast lookup: func_name → signature
         sig_by_name: dict[str, dict] = functions
 
+        # X193: 约束图的变量名是**地址式**（0xADDR.return / 0xADDR::paramN），
+        # 而本文件的键是函数名——没有地址索引时整条通道恒为 0（实测 6,632 函数 0 命中）。
+        sig_by_addr: dict[int, dict] = {}
+        for _s in functions.values():
+            _a = _s.get("addr")
+            if isinstance(_a, str):
+                try:
+                    sig_by_addr[int(_a, 16)] = _s
+                except ValueError:
+                    pass
+
         param_matched = 0
         this_matched = 0
         return_matched = 0
@@ -1307,6 +1420,10 @@ class TypeInferenceEngine:
             if var_name.endswith(".return"):
                 func_name = var_name[:-7]  # strip ".return"
                 sig = sig_by_name.get(func_name)
+                if sig is None:
+                    _m = re.match(r"^0x([0-9A-Fa-f]{8})$", func_name)
+                    if _m:
+                        sig = sig_by_addr.get(int(_m.group(1), 16))
                 if sig is None:
                     continue
                 ret_type = sig.get("ret_type", "")
@@ -1338,7 +1455,10 @@ class TypeInferenceEngine:
 
             sig = sig_by_name.get(func_name)
             if sig is None:
-                # Try alternative name formats (some functions use '?' mangling)
+                _m = re.match(r"^0x([0-9A-Fa-f]{8})$", func_name)
+                if _m:
+                    sig = sig_by_addr.get(int(_m.group(1), 16))
+            if sig is None:
                 continue
 
             params = sig.get("params", [])
@@ -1808,6 +1928,7 @@ class TypeInferenceEngine:
         # value-flow joins below.
         _SRC_RANK = {
             "name_owner": 4,
+            "ida_proto": 3,
             "cast_explicit": 3,
             "global_cast": 3,
             "ida_global_type": 3,
