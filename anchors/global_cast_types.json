@@ -1,86 +1,208 @@
 {
- "dword_A8B230": {
-  "type": "Random",
-  "sites": 370,
-  "dominant": 357,
-  "pct": 96.5
+ "g_VisibilitySystem": {
+  "type": "HouseClass",
+  "explains": 0,
+  "sites": 869,
+  "classes": {
+   "PlayerClass": 4,
+   "Game": 1,
+   "Network": 486,
+   "HouseClass": 15,
+   "BufferIO": 363
+  }
+ },
+ "g_MissionQueueFrame": {
+  "type": "BuildingClass",
+  "explains": 2,
+  "sites": 97185,
+  "classes": {
+   "AbstractClass": 177,
+   "VectorClass": 2,
+   "Random": 94485,
+   "WaypointPath": 363,
+   "ListNode": 198,
+   "LoadGame": 1,
+   "ObjectClass": 2,
+   "CellClass": 1713,
+   "ScenarioClass": 60,
+   "BuildingClass": 136,
+   "RandomMap": 44,
+   "bool": 1,
+   "MapClass": 1,
+   "_WORD": 2
+  }
  },
  "ppv": {
+  "type": "InfantryClass",
+  "explains": 1,
+  "sites": 187,
+  "classes": {
+   "ObjectClass": 72,
+   "NetworkAddress": 10,
+   "CellStruct": 42,
+   "StreamClass": 42,
+   "InfantryClass": 21
+  }
+ },
+ "stru_A8E960": {
   "type": "ObjectClass",
-  "sites": 15,
-  "dominant": 9,
-  "pct": 60.0
+  "explains": 0,
+  "sites": 4261,
+  "classes": {
+   "GameSettings": 1,
+   "ScenarioClass": 1,
+   "AudioController": 2,
+   "AudioSource": 2,
+   "Network": 284,
+   "IPXManagerClass": 517,
+   "NullModemClass": 1,
+   "EventClass": 2,
+   "Stream": 6,
+   "Count": 7,
+   "ObjectTypeClass": 8,
+   "Connection": 6,
+   "ObjectClass": 3403,
+   "NetworkBuffer": 3,
+   "Modem": 1,
+   "AudioOptionsClass": 1,
+   "SessionClass": 1,
+   "Rules": 14,
+   "Vector": 1
+  }
  },
- "g_LogicClass": {
-  "type": "DynamicVectorClass",
-  "sites": 6,
-  "dominant": 5,
-  "pct": 83.3
- },
- "g_GameNetworkObject": {
-  "type": "MessageListClass",
-  "sites": 15,
-  "dominant": 14,
-  "pct": 93.3
+ "stru_A8D804": {
+  "type": "ObjectClass",
+  "explains": 0,
+  "sites": 264,
+  "classes": {
+   "NetworkID": 8,
+   "Network": 124,
+   "ObjectClass": 1,
+   "PtrVector": 129,
+   "Modem": 2
+  }
  },
  "stru_B73E10": {
-  "type": "String",
-  "sites": 55,
-  "dominant": 47,
-  "pct": 85.5
+  "type": "ObjectClass",
+  "explains": 0,
+  "sites": 535,
+  "classes": {
+   "String": 527,
+   "DeleteAndZero": 6,
+   "ObjectClass": 1,
+   "Array": 1
+  }
  },
- "g_DialogHashMap_Base": {
-  "type": "HashTable",
-  "sites": 6,
-  "dominant": 6,
-  "pct": 100.0
- },
- "g_CellClassManager": {
-  "type": "GadgetGrid",
-  "sites": 9,
-  "dominant": 8,
-  "pct": 88.9
+ "stru_AC4B48": {
+  "type": "FactoryClass",
+  "explains": 0,
+  "sites": 430,
+  "classes": {
+   "DynamicVectorClass": 275,
+   "_VectorClass_PAVPlanningNodeClass": 1,
+   "ScriptActionVector": 1,
+   "LoadScreen": 4,
+   "Function": 3,
+   "Scenario": 3,
+   "Progress": 2,
+   "Sidebar": 1,
+   "Array": 1,
+   "ObjectClass": 1,
+   "LoadingScreen": 3,
+   "FactoryClass": 135
+  }
  },
  "g_WOL_UserList": {
-  "type": "DynamicClass",
-  "sites": 28,
-  "dominant": 20,
-  "pct": 71.4
- },
- "g_WebBrowserConfig": {
-  "type": "String",
-  "sites": 30,
-  "dominant": 22,
-  "pct": 73.3
- },
- "g_WebBrowser": {
-  "type": "String",
-  "sites": 17,
-  "dominant": 16,
-  "pct": 94.1
+  "type": "CChatEventSink",
+  "explains": 0,
+  "sites": 268,
+  "classes": {
+   "DynamicClass": 20,
+   "DynamicArray": 4,
+   "ObjectClass": 2,
+   "CChatEventSink": 242
+  }
  },
  "stru_B765F8": {
-  "type": "HashTable",
-  "sites": 7,
-  "dominant": 5,
-  "pct": 71.4
+  "type": "ObjectClass",
+  "explains": 0,
+  "sites": 247,
+  "classes": {
+   "HashTable": 125,
+   "ObjectClass": 1,
+   "StringVector": 121
+  }
  },
- "g_WOL_AuthObject": {
-  "type": "String",
-  "sites": 20,
-  "dominant": 14,
-  "pct": 70.0
+ "Block": {
+  "type": "ObjectClass",
+  "explains": 0,
+  "sites": 485,
+  "classes": {
+   "AudioQueue": 1,
+   "String": 242,
+   "__int64": 121,
+   "ObjectClass": 121
+  }
+ },
+ "stru_B76AD0": {
+  "type": "CChatEventSink",
+  "explains": 0,
+  "sites": 364,
+  "classes": {
+   "Array": 1,
+   "CChatEventSink": 121,
+   "DynamicVector": 242
+  }
+ },
+ "Destination": {
+  "type": "CCFileClass",
+  "explains": 1,
+  "sites": 7,
+  "classes": {
+   "HouseTypeClass": 3,
+   "_VectorClass_PBVUnitTypeClass": 1,
+   "CCFileClass": 1,
+   "Vector": 1,
+   "BufferIOFileClass": 1
+  }
  },
  "CCINIClass_INI_RA2MD": {
   "type": "INIClass",
-  "sites": 9,
-  "dominant": 7,
-  "pct": 77.8
+  "explains": 0,
+  "sites": 24479,
+  "classes": {
+   "bool": 2,
+   "INIClass": 24477
+  }
+ },
+ "g_SidebarFlag": {
+  "type": "GadgetClass",
+  "explains": 1,
+  "sites": 6463,
+  "classes": {
+   "ScenarioClass": 3225,
+   "LinkClass": 3225,
+   "ShapeButton": 2,
+   "ButtonClass": 1,
+   "GadgetClass": 6,
+   "DialogControl": 4
+  }
  },
  "Source": {
-  "type": "String",
+  "type": "ObjectClass",
+  "explains": 0,
   "sites": 5,
-  "dominant": 4,
-  "pct": 80.0
+  "classes": {
+   "String": 4,
+   "ObjectClass": 1
+  }
+ },
+ "g_AudioInitFlag": {
+  "type": "CellClass",
+  "explains": 0,
+  "sites": 30,
+  "classes": {
+   "CellClass": 30
+  }
  }
 }

@@ -27,6 +27,11 @@ def J(p):
 # global scope, outside `namespace gamemd`).
 GLOBAL_OVERRIDES = {
     '0x887644': ('::Stream *', 'class Stream;'),  # g_ZBufferDescriptor -> Stream*
+    # X177: cast-dominance unification (exact-address casts, >=90% dominance)
+    '0xAC1B00': ('HashTable', 'namespace gamemd { class HashTable; }'),  # g_DialogHashMap_Base 6/6
+    '0xB73E40': ('String', 'namespace gamemd { class String; }'),        # g_WebBrowser 16/17
+    '0xA8BC60': ('MessageListClass',
+                 'namespace gamemd { class MessageListClass; }'),        # self-contained fwd
 }
 
 

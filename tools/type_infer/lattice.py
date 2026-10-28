@@ -176,6 +176,26 @@ def _load_hierarchy(class_layouts_path: Optional[str] = None) -> tuple[
     """
     rtti_direct, rtti_class_names = _load_rtti_truth()
 
+    # X179: RTTI Base Class Array（??_R2<Class>@@8）—— 从 IDA 直接提取的
+    # 完整基类列表（954 类，含 MI 与模板基类）。这是最强继承证据，优先于
+    # rtti_hierarchy.json 的 directed 边（后者缺非多态/单例类）。
+    try:
+        _ba_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(
+            os.path.abspath(__file__)))), "anchors", "rtti_base_arrays.json")
+        if os.path.exists(_ba_path):
+            with open(_ba_path, "r", encoding="utf-8") as _bf:
+                _base_arrays = json.load(_bf)
+            for _cls, _bases in _base_arrays.items():
+                if not isinstance(_bases, list) or not _bases:
+                    continue
+                # 数组首项是类自身；其余为全部基类（含间接基类）
+                _direct = [b for b in _bases[1:] if isinstance(b, str) and b != _cls]
+                if _direct:
+                    rtti_direct[_cls] = _direct
+            rtti_class_names |= set(_base_arrays)
+    except Exception as _e:
+        print(f"  rtti_base_arrays load failed ({_e})", file=sys.stderr)
+
     # X178: 第三路继承证据 —— 头文件声明 `class X : public Y`。
     # 非多态类（无 vtable → 无 RTTI）的继承关系此前完全缺失（class_layouts
     # 的 parent 多为 None），导致"最派生类"规则无从判定、全局类型只剩

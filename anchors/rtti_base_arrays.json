@@ -1,0 +1,4525 @@
+{
+"CDFileClass": [
+"CDFileClass",
+"BufferIOFileClass",
+"RawFileClass",
+"FileClass"
+],
+"CCFileClass": [
+"CCFileClass",
+"CDFileClass",
+"BufferIOFileClass",
+"RawFileClass",
+"FileClass"
+],
+"?$VectorClass@USubzoneConnectionStruct@@": [
+"??_R1A@?0A@A@?$VectorClass@USubzoneConnectionStruct@@@@8"
+],
+"?$DynamicVectorClass@PAVTechnoClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVTechnoClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVTechnoClass@@@@8"
+],
+"?$DynamicVectorClass@PAVBombClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVBombClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVBombClass@@@@8"
+],
+"?$VectorClass@PAVTechnoClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVTechnoClass@@@@8"
+],
+"?$VectorClass@PAVBombClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVBombClass@@@@8"
+],
+"?$DynamicVectorClass@PBVCommandClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PBVCommandClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PBVCommandClass@@@@8"
+],
+"?$VectorClass@PBVCommandClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PBVCommandClass@@@@8"
+],
+"?$DynamicVectorClass@PAVLightConvertClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVLightConvertClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVLightConvertClass@@@@8"
+],
+"?$VectorClass@PAVLightConvertClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVLightConvertClass@@@@8"
+],
+"?$DynamicVectorClass@PAVIsometricTileClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVIsometricTileClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVIsometricTileClass@@@@8"
+],
+"?$VectorClass@PAVIsometricTileClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVIsometricTileClass@@@@8"
+],
+"LogicClass": [
+"LogicClass",
+"LayerClass",
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVObjectClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVObjectClass@@@@8"
+],
+"?$VectorClass@PAVObjectClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVObjectClass@@@@8"
+],
+"MouseClass": [
+"MouseClass",
+"ScrollClass",
+"TabClass",
+"SidebarClass",
+"PowerClass",
+"RadarClass",
+"DisplayClass",
+"MapClass",
+"GScreenClass",
+"IGameMap",
+"IUnknown",
+"8INoticeSink"
+],
+"?$DynamicVectorClass@PAVMixFileClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVMixFileClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVMixFileClass@@@@8"
+],
+"?$VectorClass@PAVMixFileClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVMixFileClass@@@@8"
+],
+"?$List@PAUINISection@INIClass@@": [
+"??_R1A@?0A@A@?$List@PAUINISection@INIClass@@@@8",
+"GenericList"
+],
+"CCINIClass": [
+"CCINIClass",
+"INIClass"
+],
+"GenericNode": [
+"GenericNode"
+],
+"GenericList": [
+"GenericList"
+],
+"?$DynamicVectorClass@PAVScriptClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVScriptClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVScriptClass@@@@8"
+],
+"?$VectorClass@PAVScriptClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVScriptClass@@@@8"
+],
+"?$DynamicVectorClass@PAVVoxelAnimClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVVoxelAnimClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVVoxelAnimClass@@@@8"
+],
+"?$VectorClass@PAVVoxelAnimClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVVoxelAnimClass@@@@8"
+],
+"?$DynamicVectorClass@PAVWarheadTypeClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVWarheadTypeClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVWarheadTypeClass@@@@8"
+],
+"?$VectorClass@PAVWarheadTypeClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVWarheadTypeClass@@@@8"
+],
+"?$DynamicVectorClass@PAVWeaponTypeClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVWeaponTypeClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVWeaponTypeClass@@@@8"
+],
+"?$VectorClass@PAVWeaponTypeClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVWeaponTypeClass@@@@8"
+],
+"INoticeSink": [
+"INoticeSink"
+],
+"AbstractClass": [
+"AbstractClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"IRTTITypeInfo",
+"1IUnknown",
+"INoticeSink",
+"INoticeSource"
+],
+"INoticeSource": [
+"INoticeSource"
+],
+"AbstractTypeClass": [
+"AbstractTypeClass",
+"AbstractClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"IRTTITypeInfo",
+"1IUnknown",
+"INoticeSink",
+"INoticeSource"
+],
+"BSurface": [
+"BSurface",
+"XSurface",
+"Surface"
+],
+"XSurface": [
+"XSurface",
+"Surface"
+],
+"Surface": [
+"Surface"
+],
+"AircraftClass": [
+"AircraftClass",
+"FootClass",
+"TechnoClass",
+"RadioClass",
+"MissionClass",
+"ObjectClass",
+"AbstractClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"IRTTITypeInfo",
+"1IUnknown",
+"INoticeSink",
+"INoticeSource",
+"FlasherClass",
+"StageClass",
+"IFlyControl",
+"1IUnknown"
+],
+"AircraftTypeClass": [
+"AircraftTypeClass",
+"TechnoTypeClass",
+"ObjectTypeClass",
+"AbstractTypeClass",
+"AbstractClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"IRTTITypeInfo",
+"1IUnknown",
+"INoticeSink",
+"INoticeSource"
+],
+"?$DynamicVectorClass@PAVAirstrikeClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVAirstrikeClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVAirstrikeClass@@@@8"
+],
+"?$VectorClass@PAVAirstrikeClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVAirstrikeClass@@@@8"
+],
+"AirstrikeClass": [
+"AirstrikeClass",
+"AbstractClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"IRTTITypeInfo",
+"1IUnknown",
+"INoticeSink",
+"INoticeSource"
+],
+"AITriggerTypeClass": [
+"AITriggerTypeClass",
+"AbstractTypeClass",
+"AbstractClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"IRTTITypeInfo",
+"1IUnknown",
+"INoticeSink",
+"INoticeSource"
+],
+"?$DynamicVectorClass@PAVAlphaLightingRemapClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVAlphaLightingRemapClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVAlphaLightingRemapClass@@@@8"
+],
+"?$VectorClass@PAVAlphaLightingRemapClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVAlphaLightingRemapClass@@@@8"
+],
+"?$DynamicVectorClass@PAVAlphaShapeClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVAlphaShapeClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVAlphaShapeClass@@@@8"
+],
+"?$VectorClass@PAVAlphaShapeClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVAlphaShapeClass@@@@8"
+],
+"AlphaShapeClass": [
+"AlphaShapeClass",
+"AbstractClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"IRTTITypeInfo",
+"1IUnknown",
+"INoticeSink",
+"INoticeSource"
+],
+"AnimClass": [
+"AnimClass",
+"ObjectClass",
+"AbstractClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"IRTTITypeInfo",
+"1IUnknown",
+"INoticeSink",
+"INoticeSource",
+"StageClass"
+],
+"Animate": [
+"Animate"
+],
+"AnimFile": [
+"AnimFile",
+"Animate"
+],
+"AnimTypeClass": [
+"AnimTypeClass",
+"ObjectTypeClass",
+"AbstractTypeClass",
+"AbstractClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"IRTTITypeInfo",
+"1IUnknown",
+"INoticeSink",
+"INoticeSource"
+],
+"ApplicationClass": [
+"ApplicationClass",
+"IApplication",
+"IUnknown"
+],
+"?$DynamicVectorClass@I": [
+"I",
+"I"
+],
+"?$VectorClass@I": [
+"I"
+],
+"?$VectorClass@G": [
+"G"
+],
+"?$DynamicVectorClass@G": [
+"G",
+"G"
+],
+"BaseClass": [
+"BaseClass"
+],
+"?$DynamicVectorClass@VBaseNodeClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@VBaseNodeClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@VBaseNodeClass@@@@8"
+],
+"?$DynamicVectorClass@VCell@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@VCell@@@@8",
+"??_R1A@?0A@A@?$VectorClass@VCell@@@@8"
+],
+"?$VectorClass@VCell@@": [
+"??_R1A@?0A@A@?$VectorClass@VCell@@@@8"
+],
+"?$VectorClass@VBaseNodeClass@@": [
+"??_R1A@?0A@A@?$VectorClass@VBaseNodeClass@@@@8"
+],
+"BufferIOFileClass": [
+"BufferIOFileClass",
+"RawFileClass",
+"FileClass"
+],
+"BitFont": [
+"BitFont"
+],
+"BitText": [
+"BitText"
+],
+"BuildingLightClass": [
+"BuildingLightClass",
+"ObjectClass",
+"AbstractClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"IRTTITypeInfo",
+"1IUnknown",
+"INoticeSink",
+"INoticeSource"
+],
+"BombClass": [
+"BombClass",
+"AbstractClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"IRTTITypeInfo",
+"1IUnknown",
+"INoticeSink",
+"INoticeSource"
+],
+"NeuronClass": [
+"NeuronClass",
+"AbstractClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"IRTTITypeInfo",
+"1IUnknown",
+"INoticeSink",
+"INoticeSource"
+],
+"BrainClass": [
+"BrainClass"
+],
+"?$VectorClass@PAVNeuronClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVNeuronClass@@@@8"
+],
+"?$DynamicVectorClass@PAVInfantryClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVInfantryClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVInfantryClass@@@@8"
+],
+"BuildingClass": [
+"BuildingClass",
+"TechnoClass",
+"RadioClass",
+"MissionClass",
+"ObjectClass",
+"AbstractClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"IRTTITypeInfo",
+"1IUnknown",
+"INoticeSink",
+"INoticeSource",
+"FlasherClass",
+"StageClass"
+],
+"?$VectorClass@PAVInfantryClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVInfantryClass@@@@8"
+],
+"?$VectorClass@PBVParticleSystemTypeClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PBVParticleSystemTypeClass@@@@8"
+],
+"?$DynamicVectorClass@PBVParticleSystemTypeClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PBVParticleSystemTypeClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PBVParticleSystemTypeClass@@@@8"
+],
+"?$VectorClass@PAVReestablish@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVReestablish@@@@8"
+],
+"?$DynamicVectorClass@PAVReestablish@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVReestablish@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVReestablish@@@@8"
+],
+"?$DynamicVectorClass@PAVFoggedObjectClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVFoggedObjectClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVFoggedObjectClass@@@@8"
+],
+"?$VectorClass@PAVFoggedObjectClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVFoggedObjectClass@@@@8"
+],
+"BuildingTypeClass": [
+"BuildingTypeClass",
+"TechnoTypeClass",
+"ObjectTypeClass",
+"AbstractTypeClass",
+"AbstractClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"IRTTITypeInfo",
+"1IUnknown",
+"INoticeSink",
+"INoticeSource"
+],
+"?$VectorClass@V?$TPoint3D@H@@": [
+"??_R1A@?0A@A@?$VectorClass@V?$TPoint3D@H@@@@8"
+],
+"?$DynamicVectorClass@PAVBulletClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVBulletClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVBulletClass@@@@8"
+],
+"?$VectorClass@PAVBulletClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVBulletClass@@@@8"
+],
+"BulletClass": [
+"BulletClass",
+"ObjectClass",
+"AbstractClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"IRTTITypeInfo",
+"1IUnknown",
+"INoticeSink",
+"INoticeSource"
+],
+"BulletTypeClass": [
+"BulletTypeClass",
+"ObjectTypeClass",
+"AbstractTypeClass",
+"AbstractClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"IRTTITypeInfo",
+"1IUnknown",
+"INoticeSink",
+"INoticeSource"
+],
+"CampaignClass": [
+"CampaignClass",
+"AbstractTypeClass",
+"AbstractClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"IRTTITypeInfo",
+"1IUnknown",
+"INoticeSink",
+"INoticeSource"
+],
+"CampaignScoreClass": [
+"CampaignScoreClass"
+],
+"CampaignEndScoreClass": [
+"CampaignEndScoreClass"
+],
+"?$DynamicVectorClass@PAVCaptureManagerClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVCaptureManagerClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVCaptureManagerClass@@@@8"
+],
+"?$VectorClass@PAVCaptureManagerClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVCaptureManagerClass@@@@8"
+],
+"?$DynamicVectorClass@PAUControlNode@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAUControlNode@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAUControlNode@@@@8"
+],
+"CaptureManagerClass": [
+"CaptureManagerClass",
+"AbstractClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"IRTTITypeInfo",
+"1IUnknown",
+"INoticeSink",
+"INoticeSource"
+],
+"?$VectorClass@PAUControlNode@@": [
+"??_R1A@?0A@A@?$VectorClass@PAUControlNode@@@@8"
+],
+"CarryoverClass": [
+"CarryoverClass",
+"LinkClass"
+],
+"CD": [
+"CD",
+"DiskSwap"
+],
+"SHAPipe": [
+"SHAPipe",
+"Pipe"
+],
+"FileStraw": [
+"FileStraw",
+"Straw"
+],
+"FilePipe": [
+"FilePipe",
+"Pipe"
+],
+"?$VectorClass@H": [
+"H"
+],
+"?$TypeList@H": [
+"H",
+"H",
+"H"
+],
+"?$VectorClass@PAVTechnoTypeClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVTechnoTypeClass@@@@8"
+],
+"?$TypeList@PAVTechnoTypeClass@@": [
+"??_R1A@?0A@A@?$TypeList@PAVTechnoTypeClass@@@@8",
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVTechnoTypeClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVTechnoTypeClass@@@@8"
+],
+"?$TypeList@VRGBClass@@": [
+"??_R1A@?0A@A@?$TypeList@VRGBClass@@@@8",
+"??_R1A@?0A@A@?$DynamicVectorClass@VRGBClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@VRGBClass@@@@8"
+],
+"?$VectorClass@VRGBClass@@": [
+"??_R1A@?0A@A@?$VectorClass@VRGBClass@@@@8"
+],
+"?$DynamicVectorClass@H": [
+"H",
+"H"
+],
+"CellClass": [
+"CellClass",
+"AbstractClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"IRTTITypeInfo",
+"1IUnknown",
+"INoticeSink",
+"INoticeSource"
+],
+"?$DynamicVectorClass@PAVObjectClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVObjectClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVObjectClass@@@@8"
+],
+"CheckListClass": [
+"CheckListClass",
+"ListClass",
+"ControlClass",
+"GadgetClass",
+"LinkClass"
+],
+"ColorListClass": [
+"ColorListClass",
+"ListClass",
+"ControlClass",
+"GadgetClass",
+"LinkClass"
+],
+"?$VectorClass@PAUDamageGroup@@": [
+"??_R1A@?0A@A@?$VectorClass@PAUDamageGroup@@@@8"
+],
+"?$DynamicVectorClass@PAUDamageGroup@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAUDamageGroup@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAUDamageGroup@@@@8"
+],
+"CommBufferClass": [
+"CommBufferClass"
+],
+"ConnectionClass": [
+"ConnectionClass"
+],
+"ControlClass": [
+"ControlClass",
+"GadgetClass",
+"LinkClass"
+],
+"?$DynamicVectorClass@PAVConvertClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVConvertClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVConvertClass@@@@8"
+],
+"?$VectorClass@PAVConvertClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVConvertClass@@@@8"
+],
+"ConvertClass": [
+"ConvertClass"
+],
+"?$RLEBlitTransXlatAlphaZReadWrite@G": [
+"G",
+"RLEBlitter"
+],
+"?$BlitTranslucent50ZeroAlpha@G": [
+"G",
+"Blitter"
+],
+"?$RLEBlitTransXlatAlpha@G": [
+"G",
+"RLEBlitter"
+],
+"?$BlitTransLucent75ZReadWrite@G": [
+"G",
+"Blitter"
+],
+"?$BlitTransLucent75AlphaZReadWarp@G": [
+"G",
+"Blitter"
+],
+"?$BlitTransLucent50AlphaZReadWrite@G": [
+"G",
+"Blitter"
+],
+"?$BlitTransZRemapXlatAlpha@G": [
+"G",
+"Blitter"
+],
+"?$BlitTransRemapDest@E": [
+"E",
+"Blitter"
+],
+"?$RLEBlitTransLucent50ZReadWarp@G": [
+"G",
+"RLEBlitter"
+],
+"?$BlitTransZRemapXlat@G": [
+"G",
+"Blitter"
+],
+"?$BlitTransLucent25ZReadWrite@G": [
+"G",
+"Blitter"
+],
+"?$RLEBlitTransXlat@E": [
+"E",
+"RLEBlitter"
+],
+"?$BlitTransDarkenZRead@G": [
+"G",
+"Blitter"
+],
+"?$RLEBlitTransLucent50AlphaZRead@G": [
+"G",
+"RLEBlitter"
+],
+"?$BlitTransZRemapXlatAlphaZRead@G": [
+"G",
+"Blitter"
+],
+"?$BlitTransLucent25AlphaZRead@G": [
+"G",
+"Blitter"
+],
+"?$BlitTransZRemapXlat@E": [
+"E",
+"Blitter"
+],
+"?$RLEBlitTransLucent75Alpha@G": [
+"G",
+"RLEBlitter"
+],
+"?$RLEBlitTransLucent25ZReadWarp@G": [
+"G",
+"RLEBlitter"
+],
+"?$RLEBlitTransZRemapXlatAlpha@G": [
+"G",
+"RLEBlitter"
+],
+"?$BlitPlainXlatZRead@G": [
+"G",
+"Blitter"
+],
+"?$RLEBlitTransLucent50Alpha@G": [
+"G",
+"RLEBlitter"
+],
+"?$BlitPlainXlat@G": [
+"G",
+"Blitter"
+],
+"?$BlitTransZRemapXlatZRead@G": [
+"G",
+"Blitter"
+],
+"?$RLEBlitTransLucent75ZRead@G": [
+"G",
+"RLEBlitter"
+],
+"?$RLEBlitTransLucent75AlphaZReadWrite@G": [
+"G",
+"RLEBlitter"
+],
+"?$RLEBlitTransLucent75ZReadWrite@G": [
+"G",
+"RLEBlitter"
+],
+"?$RLEBlitTransLucent75AlphaZRead@G": [
+"G",
+"RLEBlitter"
+],
+"?$BlitTransLucent50AlphaZReadWarp@G": [
+"G",
+"Blitter"
+],
+"?$BlitTransLucent25@G": [
+"G",
+"Blitter"
+],
+"?$RLEBlitTransLucent50@G": [
+"G",
+"RLEBlitter"
+],
+"?$RLEBlitTransXlatZReadWrite@E": [
+"E",
+"RLEBlitter"
+],
+"?$BlitTransLucent50ZRead@G": [
+"G",
+"Blitter"
+],
+"?$RLEBlitTransZRemapXlat@G": [
+"G",
+"RLEBlitter"
+],
+"?$RLEBlitTransDarkenZRead@G": [
+"G",
+"RLEBlitter"
+],
+"?$BlitTransRemapXlat@E": [
+"E",
+"Blitter"
+],
+"?$RLEBlitTransLucent50AlphaZReadWarp@G": [
+"G",
+"RLEBlitter"
+],
+"?$BlitTransXlat@G": [
+"G",
+"Blitter"
+],
+"?$BlitTransDarken@G": [
+"G",
+"Blitter"
+],
+"?$BlitTransLucent75@G": [
+"G",
+"Blitter"
+],
+"?$RLEBlitTransXlatZRead@E": [
+"E",
+"RLEBlitter"
+],
+"?$BlitTransXlatWriteAlpha@G": [
+"G",
+"Blitter"
+],
+"?$BlitTransLucent75ZRead@G": [
+"G",
+"Blitter"
+],
+"?$BlitTransLucent50Alpha@G": [
+"G",
+"Blitter"
+],
+"?$BlitTransLucent50ZReadWarp@G": [
+"G",
+"Blitter"
+],
+"?$RLEBlitTransRemapDestZReadWrite@E": [
+"E",
+"RLEBlitter"
+],
+"?$RLEBlitTransZRemapXlatZReadWrite@E": [
+"E",
+"RLEBlitter"
+],
+"?$BlitPlainXlatZReadWrite@G": [
+"G",
+"Blitter"
+],
+"?$BlitTransXlatZRead@G": [
+"G",
+"Blitter"
+],
+"?$RLEBlitTransDarken@G": [
+"G",
+"RLEBlitter"
+],
+"?$RLEBlitTransLucent25@G": [
+"G",
+"RLEBlitter"
+],
+"?$RLEBlitTransLucent25AlphaZRead@G": [
+"G",
+"RLEBlitter"
+],
+"?$RLEBlitTransZRemapXlatZRead@E": [
+"E",
+"RLEBlitter"
+],
+"?$RLEBlitTransZRemapXlatZReadWrite@G": [
+"G",
+"RLEBlitter"
+],
+"?$BlitTransLucent75ZReadWarp@G": [
+"G",
+"Blitter"
+],
+"?$RLEBlitTransLucent25AlphaZReadWrite@G": [
+"G",
+"RLEBlitter"
+],
+"?$RLEBlitTransXlatZReadWrite@G": [
+"G",
+"RLEBlitter"
+],
+"?$BlitTransLucent25ZRead@G": [
+"G",
+"Blitter"
+],
+"?$RLEBlitTransLucent50AlphaZReadWrite@G": [
+"G",
+"RLEBlitter"
+],
+"?$RLEBlitTransZRemapXlat@E": [
+"E",
+"RLEBlitter"
+],
+"?$RLEBlitTransLucent25Alpha@G": [
+"G",
+"RLEBlitter"
+],
+"?$RLEBlitTransLucent50ZRead@G": [
+"G",
+"RLEBlitter"
+],
+"?$RLEBlitTransLucent50ZReadWrite@G": [
+"G",
+"RLEBlitter"
+],
+"?$BlitTransLucent25Alpha@G": [
+"G",
+"Blitter"
+],
+"?$BlitTransLucent50@G": [
+"G",
+"Blitter"
+],
+"?$RLEBlitTransXlatAlphaZRead@G": [
+"G",
+"RLEBlitter"
+],
+"?$BlitTransLucent25ZReadWarp@G": [
+"G",
+"Blitter"
+],
+"?$BlitTransXlatMultWriteAlpha@G": [
+"G",
+"Blitter"
+],
+"?$BlitTransZRemapXlatAlphaZReadWrite@G": [
+"G",
+"Blitter"
+],
+"?$RLEBlitTransLucent25ZRead@G": [
+"G",
+"RLEBlitter"
+],
+"?$RLEBlitTransLucent25ZReadWrite@G": [
+"G",
+"RLEBlitter"
+],
+"?$BlitTransLucent25AlphaZReadWarp@G": [
+"G",
+"Blitter"
+],
+"?$RLEBlitTransLucent25AlphaZReadWarp@G": [
+"G",
+"RLEBlitter"
+],
+"?$RLEBlitTransLucent75ZReadWarp@G": [
+"G",
+"RLEBlitter"
+],
+"?$BlitTransXlatZReadWrite@G": [
+"G",
+"Blitter"
+],
+"?$BlitTranslucent50NonzeroAlpha@G": [
+"G",
+"Blitter"
+],
+"?$BlitTransDarkenZReadWrite@G": [
+"G",
+"Blitter"
+],
+"?$RLEBlitTransLucent75AlphaZReadWarp@G": [
+"G",
+"RLEBlitter"
+],
+"?$BlitTransXlatAlpha@G": [
+"G",
+"Blitter"
+],
+"?$RLEBlitTransRemapXlatZReadWrite@E": [
+"E",
+"RLEBlitter"
+],
+"?$RLEBlitTransRemapDestZRead@E": [
+"E",
+"RLEBlitter"
+],
+"?$RLEBlitTransDarkenZReadWrite@G": [
+"G",
+"RLEBlitter"
+],
+"?$BlitTransLucent75AlphaZReadWrite@G": [
+"G",
+"Blitter"
+],
+"?$BlitTransLucent50ZReadWrite@G": [
+"G",
+"Blitter"
+],
+"?$RLEBlitTransXlatZRead@G": [
+"G",
+"RLEBlitter"
+],
+"?$RLEBlitTransLucent75@G": [
+"G",
+"RLEBlitter"
+],
+"?$BlitTransXlatAlphaZReadWrite@G": [
+"G",
+"Blitter"
+],
+"?$RLEBlitTransXlat@G": [
+"G",
+"RLEBlitter"
+],
+"?$BlitPlainXlat@E": [
+"E",
+"Blitter"
+],
+"?$RLEBlitTransZRemapXlatAlphaZReadWrite@G": [
+"G",
+"RLEBlitter"
+],
+"?$BlitTransXlat@E": [
+"E",
+"Blitter"
+],
+"?$RLEBlitTransZRemapXlatAlphaZRead@G": [
+"G",
+"RLEBlitter"
+],
+"?$BlitTranslucentWriteAlpha@G": [
+"G",
+"Blitter"
+],
+"?$RLEBlitTransRemapXlatZRead@E": [
+"E",
+"RLEBlitter"
+],
+"?$BlitTransLucent50AlphaZRead@G": [
+"G",
+"Blitter"
+],
+"?$BlitPlainXlatAlpha@G": [
+"G",
+"Blitter"
+],
+"?$RLEBlitTransRemapXlat@E": [
+"E",
+"RLEBlitter"
+],
+"?$BlitTransZRemapXlatZReadWrite@G": [
+"G",
+"Blitter"
+],
+"?$RLEBlitTransZRemapXlatZRead@G": [
+"G",
+"RLEBlitter"
+],
+"?$BlitTransXlatAlphaZRead@G": [
+"G",
+"Blitter"
+],
+"?$RLEBlitTransRemapDest@E": [
+"E",
+"RLEBlitter"
+],
+"?$BlitTransLucent25AlphaZReadWrite@G": [
+"G",
+"Blitter"
+],
+"?$BlitTransLucent75AlphaZRead@G": [
+"G",
+"Blitter"
+],
+"?$BlitTransLucent75Alpha@G": [
+"G",
+"Blitter"
+],
+"Blitter": [
+"Blitter"
+],
+"RLEBlitter": [
+"RLEBlitter"
+],
+"?$DynamicVectorClass@PAD": [
+"PAD",
+"PAD"
+],
+"?$DynamicVectorClass@PAV?$DynamicVectorClass@PAD@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAV?$DynamicVectorClass@PAD@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAV?$DynamicVectorClass@PAD@@@@8"
+],
+"?$VectorClass@PAV?$DynamicVectorClass@PAD@@": [
+"??_R1A@?0A@A@?$VectorClass@PAV?$DynamicVectorClass@PAD@@@@8"
+],
+"?$VectorClass@PAD": [
+"PAD"
+],
+"CounterClass": [
+"CounterClass",
+"H"
+],
+"?$VectorClass@UtagCONNECTDATA@@": [
+"??_R1A@?0A@A@?$VectorClass@UtagCONNECTDATA@@@@8"
+],
+"EnumConnectionsClass": [
+"EnumConnectionsClass",
+"IEnumConnections",
+"IUnknown"
+],
+"?$DynamicVectorClass@UtagCONNECTDATA@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@UtagCONNECTDATA@@@@8",
+"??_R1A@?0A@A@?$VectorClass@UtagCONNECTDATA@@@@8"
+],
+"ConnectionPointClass": [
+"ConnectionPointClass",
+"IConnectionPoint",
+"IUnknown"
+],
+"?$VectorClass@PAUIConnectionPoint@@": [
+"??_R1A@?0A@A@?$VectorClass@PAUIConnectionPoint@@@@8"
+],
+"EnumConnectionPointsClass": [
+"EnumConnectionPointsClass",
+"IEnumConnectionPoints",
+"IUnknown"
+],
+"?$DynamicVectorClass@PAUIConnectionPoint@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAUIConnectionPoint@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAUIConnectionPoint@@@@8"
+],
+"CStreamClass": [
+"CStreamClass",
+"IStream",
+"ISequentialStream",
+"1IUnknown",
+"ILinkStream",
+"1IUnknown"
+],
+"?$VectorClass@PAU_DDSURFACEDESC@@": [
+"??_R1A@?0A@A@?$VectorClass@PAU_DDSURFACEDESC@@@@8"
+],
+"?$DynamicVectorClass@PAU_DDSURFACEDESC@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAU_DDSURFACEDESC@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAU_DDSURFACEDESC@@@@8"
+],
+"Dial8Class": [
+"Dial8Class",
+"ControlClass",
+"GadgetClass",
+"LinkClass"
+],
+"?$DynamicVectorClass@PAVDiskLaserClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVDiskLaserClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVDiskLaserClass@@@@8"
+],
+"?$VectorClass@PAVDiskLaserClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVDiskLaserClass@@@@8"
+],
+"DiskLaserClass": [
+"DiskLaserClass",
+"AbstractClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"IRTTITypeInfo",
+"1IUnknown",
+"INoticeSink",
+"INoticeSource"
+],
+"LayerClass": [
+"LayerClass",
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVObjectClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVObjectClass@@@@8"
+],
+"TacticalClass@DisplayClass": [
+"DisplayClass",
+"GadgetClass",
+"LinkClass"
+],
+"DisplayClass": [
+"DisplayClass",
+"MapClass",
+"GScreenClass",
+"IGameMap",
+"IUnknown"
+],
+"BufferStraw": [
+"BufferStraw",
+"Straw"
+],
+"Straw": [
+"Straw"
+],
+"BufferPipe": [
+"BufferPipe",
+"Pipe"
+],
+"Pipe": [
+"Pipe"
+],
+"DriveLocomotionClass": [
+"DriveLocomotionClass",
+"LocomotionClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"ILocomotion",
+"1IUnknown",
+"IPiggyback",
+"1IUnknown"
+],
+"DropListClass": [
+"DropListClass",
+"EditClass",
+"ControlClass",
+"GadgetClass",
+"LinkClass"
+],
+"EditClass": [
+"EditClass",
+"ControlClass",
+"GadgetClass",
+"LinkClass"
+],
+"ShapeButtonClass": [
+"ShapeButtonClass",
+"ToggleClass",
+"ControlClass",
+"GadgetClass",
+"LinkClass"
+],
+"ToggleClass": [
+"ToggleClass",
+"ControlClass",
+"GadgetClass",
+"LinkClass"
+],
+"DropPodLocomotionClass": [
+"DropPodLocomotionClass",
+"LocomotionClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"ILocomotion",
+"1IUnknown",
+"IPiggyback",
+"1IUnknown"
+],
+"?$DynamicVectorClass@PAVTechnoTypeClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVTechnoTypeClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVTechnoTypeClass@@@@8"
+],
+"?$VectorClass@PAUCrossDissolveEffect@@": [
+"??_R1A@?0A@A@?$VectorClass@PAUCrossDissolveEffect@@@@8"
+],
+"?$DynamicVectorClass@PAUCrossDissolveEffect@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAUCrossDissolveEffect@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAUCrossDissolveEffect@@@@8"
+],
+"?$VectorClass@PAUButtonFadeEffect@@": [
+"??_R1A@?0A@A@?$VectorClass@PAUButtonFadeEffect@@@@8"
+],
+"?$DynamicVectorClass@PAUButtonFadeEffect@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAUButtonFadeEffect@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAUButtonFadeEffect@@@@8"
+],
+"DSurface": [
+"DSurface",
+"XSurface",
+"Surface"
+],
+"?$DynamicVectorClass@PAVEBolt@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVEBolt@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVEBolt@@@@8"
+],
+"?$VectorClass@PAVEBolt@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVEBolt@@@@8"
+],
+"?$DynamicVectorClass@PAVEgoClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVEgoClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVEgoClass@@@@8"
+],
+"?$VectorClass@PAVEgoClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVEgoClass@@@@8"
+],
+"?$DynamicVectorClass@PAVEMPulseClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVEMPulseClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVEMPulseClass@@@@8"
+],
+"?$VectorClass@PAVEMPulseClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVEMPulseClass@@@@8"
+],
+"EMPulseClass": [
+"EMPulseClass",
+"AbstractClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"IRTTITypeInfo",
+"1IUnknown",
+"INoticeSink",
+"INoticeSource"
+],
+"?$DynamicVectorClass@PBVTechnoTypeClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PBVTechnoTypeClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PBVTechnoTypeClass@@@@8"
+],
+"FactoryClass": [
+"FactoryClass",
+"AbstractClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"IRTTITypeInfo",
+"1IUnknown",
+"INoticeSink",
+"INoticeSource",
+"8StageClass"
+],
+"?$VectorClass@PBVTechnoTypeClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PBVTechnoTypeClass@@@@8"
+],
+"FlyLocomotionClass": [
+"FlyLocomotionClass",
+"LocomotionClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"ILocomotion",
+"1IUnknown"
+],
+"FoggedObjectClass": [
+"FoggedObjectClass",
+"AbstractClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"IRTTITypeInfo",
+"1IUnknown",
+"INoticeSink",
+"INoticeSource"
+],
+"?$DynamicVectorClass@UDrawRecord@FoggedObjectClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@UDrawRecord@FoggedObjectClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@UDrawRecord@FoggedObjectClass@@@@8"
+],
+"?$VectorClass@UDrawRecord@FoggedObjectClass@@": [
+"??_R1A@?0A@A@?$VectorClass@UDrawRecord@FoggedObjectClass@@@@8"
+],
+"?$DynamicVectorClass@PAVFootClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVFootClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVFootClass@@@@8"
+],
+"?$VectorClass@PAVFootClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVFootClass@@@@8"
+],
+"FootClass": [
+"FootClass",
+"TechnoClass",
+"RadioClass",
+"MissionClass",
+"ObjectClass",
+"AbstractClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"IRTTITypeInfo",
+"1IUnknown",
+"INoticeSink",
+"INoticeSource",
+"FlasherClass",
+"StageClass"
+],
+"?$DynamicVectorClass@PAVAbstractClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVAbstractClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVAbstractClass@@@@8"
+],
+"?$VectorClass@PAVAbstractClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVAbstractClass@@@@8"
+],
+"?$VectorClass@V?$DistributionObject@PAVCellClass@@@?$DiscreteDistributionClass@VCellClass@@@@": [
+"??_R1A@?0A@A@?$VectorClass@V?$DistributionObject@PAVCellClass@@@?$DiscreteDistributionClass@VCellClass@@@@@@8"
+],
+"?$DynamicVectorClass@V?$DistributionObject@PAVCellClass@@@?$DiscreteDistributionClass@VCellClass@@@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@V?$DistributionObject@PAVCellClass@@@?$DiscreteDistributionClass@VCellClass@@@@@@8",
+"??_R1A@?0A@A@?$VectorClass@V?$DistributionObject@PAVCellClass@@@?$DiscreteDistributionClass@VCellClass@@@@@@8"
+],
+"GadgetClass": [
+"GadgetClass",
+"LinkClass"
+],
+"LinkClass": [
+"LinkClass"
+],
+"GaugeClass": [
+"GaugeClass",
+"ControlClass",
+"GadgetClass",
+"LinkClass"
+],
+"TriColorGaugeClass": [
+"TriColorGaugeClass",
+"GaugeClass",
+"ControlClass",
+"GadgetClass",
+"LinkClass"
+],
+"?$DynamicVectorClass@PAVAITriggerTypeClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVAITriggerTypeClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVAITriggerTypeClass@@@@8"
+],
+"?$VectorClass@PAVAITriggerTypeClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVAITriggerTypeClass@@@@8"
+],
+"?$DynamicVectorClass@PAVTriggerTypeClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVTriggerTypeClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVTriggerTypeClass@@@@8"
+],
+"?$VectorClass@PAVTriggerTypeClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVTriggerTypeClass@@@@8"
+],
+"?$DynamicVectorClass@PAVTriggerClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVTriggerClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVTriggerClass@@@@8"
+],
+"?$VectorClass@PAVTriggerClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVTriggerClass@@@@8"
+],
+"?$DynamicVectorClass@PAVBuildingLightClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVBuildingLightClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVBuildingLightClass@@@@8"
+],
+"?$VectorClass@PAVBuildingLightClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVBuildingLightClass@@@@8"
+],
+"?$DynamicVectorClass@PAVParticleSystemClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVParticleSystemClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVParticleSystemClass@@@@8"
+],
+"?$VectorClass@PAVParticleSystemClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVParticleSystemClass@@@@8"
+],
+"?$DynamicVectorClass@PAVTubeClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVTubeClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVTubeClass@@@@8"
+],
+"?$VectorClass@PAVTubeClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVTubeClass@@@@8"
+],
+"?$DynamicVectorClass@PAVWaveClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVWaveClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVWaveClass@@@@8"
+],
+"?$VectorClass@PAVWaveClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVWaveClass@@@@8"
+],
+"?$DynamicVectorClass@PAVOverlayClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVOverlayClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVOverlayClass@@@@8"
+],
+"?$VectorClass@PAVOverlayClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVOverlayClass@@@@8"
+],
+"?$DynamicVectorClass@PAVParticleClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVParticleClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVParticleClass@@@@8"
+],
+"?$VectorClass@PAVParticleClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVParticleClass@@@@8"
+],
+"?$DynamicVectorClass@PAVSmudgeClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVSmudgeClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVSmudgeClass@@@@8"
+],
+"?$VectorClass@PAVSmudgeClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVSmudgeClass@@@@8"
+],
+"?$DynamicVectorClass@PAVTerrainClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVTerrainClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVTerrainClass@@@@8"
+],
+"?$VectorClass@PAVTerrainClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVTerrainClass@@@@8"
+],
+"?$DynamicVectorClass@PAVBuildingClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVBuildingClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVBuildingClass@@@@8"
+],
+"?$VectorClass@PAVBuildingClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVBuildingClass@@@@8"
+],
+"?$DynamicVectorClass@PAVAircraftClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVAircraftClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVAircraftClass@@@@8"
+],
+"?$VectorClass@PAVAircraftClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVAircraftClass@@@@8"
+],
+"?$DynamicVectorClass@PAVUnitClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVUnitClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVUnitClass@@@@8"
+],
+"?$VectorClass@PAVUnitClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVUnitClass@@@@8"
+],
+"?$DynamicVectorClass@PAVHouseClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVHouseClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVHouseClass@@@@8"
+],
+"?$VectorClass@PAVHouseClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVHouseClass@@@@8"
+],
+"?$DynamicVectorClass@PAVAnimClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVAnimClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVAnimClass@@@@8"
+],
+"?$VectorClass@PAVAnimClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVAnimClass@@@@8"
+],
+"?$DynamicVectorClass@PAVTeamClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVTeamClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVTeamClass@@@@8"
+],
+"?$VectorClass@PAVTeamClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVTeamClass@@@@8"
+],
+"?$DynamicVectorClass@PAVFactoryClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVFactoryClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVFactoryClass@@@@8"
+],
+"?$VectorClass@PAVFactoryClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVFactoryClass@@@@8"
+],
+"?$DynamicVectorClass@PAVCampaignClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVCampaignClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVCampaignClass@@@@8"
+],
+"?$VectorClass@PAVCampaignClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVCampaignClass@@@@8"
+],
+"?$DynamicVectorClass@PAVSideClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVSideClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVSideClass@@@@8"
+],
+"?$VectorClass@PAVSideClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVSideClass@@@@8"
+],
+"?$DynamicVectorClass@PAVHouseTypeClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVHouseTypeClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVHouseTypeClass@@@@8"
+],
+"?$VectorClass@PAVHouseTypeClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVHouseTypeClass@@@@8"
+],
+"?$DynamicVectorClass@PAVTaskForceClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVTaskForceClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVTaskForceClass@@@@8"
+],
+"?$VectorClass@PAVTaskForceClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVTaskForceClass@@@@8"
+],
+"?$DynamicVectorClass@PAVTeamTypeClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVTeamTypeClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVTeamTypeClass@@@@8"
+],
+"?$VectorClass@PAVTeamTypeClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVTeamTypeClass@@@@8"
+],
+"?$DynamicVectorClass@PAVScriptTypeClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVScriptTypeClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVScriptTypeClass@@@@8"
+],
+"?$VectorClass@PAVScriptTypeClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVScriptTypeClass@@@@8"
+],
+"?$DynamicVectorClass@PAVOverlayTypeClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVOverlayTypeClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVOverlayTypeClass@@@@8"
+],
+"?$VectorClass@PAVOverlayTypeClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVOverlayTypeClass@@@@8"
+],
+"?$DynamicVectorClass@PAVSmudgeTypeClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVSmudgeTypeClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVSmudgeTypeClass@@@@8"
+],
+"?$VectorClass@PAVSmudgeTypeClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVSmudgeTypeClass@@@@8"
+],
+"?$DynamicVectorClass@PAVTerrainTypeClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVTerrainTypeClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVTerrainTypeClass@@@@8"
+],
+"?$VectorClass@PAVTerrainTypeClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVTerrainTypeClass@@@@8"
+],
+"?$DynamicVectorClass@PAVBuildingTypeClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVBuildingTypeClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVBuildingTypeClass@@@@8"
+],
+"?$VectorClass@PAVBuildingTypeClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVBuildingTypeClass@@@@8"
+],
+"?$DynamicVectorClass@PAVAircraftTypeClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVAircraftTypeClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVAircraftTypeClass@@@@8"
+],
+"?$VectorClass@PAVAircraftTypeClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVAircraftTypeClass@@@@8"
+],
+"?$DynamicVectorClass@PAVUnitTypeClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVUnitTypeClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVUnitTypeClass@@@@8"
+],
+"?$VectorClass@PAVUnitTypeClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVUnitTypeClass@@@@8"
+],
+"?$DynamicVectorClass@PAVAnimTypeClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVAnimTypeClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVAnimTypeClass@@@@8"
+],
+"?$VectorClass@PAVAnimTypeClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVAnimTypeClass@@@@8"
+],
+"?$DynamicVectorClass@PAVInfantryTypeClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVInfantryTypeClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVInfantryTypeClass@@@@8"
+],
+"?$VectorClass@PAVInfantryTypeClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVInfantryTypeClass@@@@8"
+],
+"?$DynamicVectorClass@PAVBulletTypeClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVBulletTypeClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVBulletTypeClass@@@@8"
+],
+"?$VectorClass@PAVBulletTypeClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVBulletTypeClass@@@@8"
+],
+"?$DynamicVectorClass@PAVVoxelAnimTypeClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVVoxelAnimTypeClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVVoxelAnimTypeClass@@@@8"
+],
+"?$VectorClass@PAVVoxelAnimTypeClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVVoxelAnimTypeClass@@@@8"
+],
+"?$DynamicVectorClass@PAVIsometricTileTypeClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVIsometricTileTypeClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVIsometricTileTypeClass@@@@8"
+],
+"?$VectorClass@PAVIsometricTileTypeClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVIsometricTileTypeClass@@@@8"
+],
+"?$DynamicVectorClass@PAVParticleTypeClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVParticleTypeClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVParticleTypeClass@@@@8"
+],
+"?$VectorClass@PAVParticleTypeClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVParticleTypeClass@@@@8"
+],
+"?$DynamicVectorClass@PAVParticleSystemTypeClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVParticleSystemTypeClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVParticleSystemTypeClass@@@@8"
+],
+"?$VectorClass@PAVParticleSystemTypeClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVParticleSystemTypeClass@@@@8"
+],
+"?$DynamicVectorClass@PAVSuperWeaponTypeClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVSuperWeaponTypeClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVSuperWeaponTypeClass@@@@8"
+],
+"?$VectorClass@PAVSuperWeaponTypeClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVSuperWeaponTypeClass@@@@8"
+],
+"?$DynamicVectorClass@PAVSuperClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVSuperClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVSuperClass@@@@8"
+],
+"?$VectorClass@PAVSuperClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVSuperClass@@@@8"
+],
+"?$DynamicVectorClass@PAVAbstractTypeClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVAbstractTypeClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVAbstractTypeClass@@@@8"
+],
+"?$VectorClass@PAVAbstractTypeClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVAbstractTypeClass@@@@8"
+],
+"TiberianSunClassFactory": [
+"TiberianSunClassFactory",
+"IClassFactory",
+"IUnknown"
+],
+"VersionClass": [
+"VersionClass"
+],
+"?$VectorClass@PAUThemeControl@@": [
+"??_R1A@?0A@A@?$VectorClass@PAUThemeControl@@@@8"
+],
+"?$DynamicVectorClass@PAVTagClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVTagClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVTagClass@@@@8"
+],
+"?$VectorClass@PAVTagClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVTagClass@@@@8"
+],
+"INIClass": [
+"INIClass"
+],
+"?$DynamicVectorClass@PAVGraphicMenuItem@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVGraphicMenuItem@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVGraphicMenuItem@@@@8"
+],
+"GraphicMenu": [
+"GraphicMenu"
+],
+"?$VectorCursor@PAVGraphicMenuItem@@V?$DynamicVectorClass@PAVGraphicMenuItem@@@@": [
+"??_R1A@?0A@A@?$VectorCursor@PAVGraphicMenuItem@@V?$DynamicVectorClass@PAVGraphicMenuItem@@@@@@8"
+],
+"?$VectorClass@PAVGraphicMenuItem@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVGraphicMenuItem@@@@8"
+],
+"GraphicMenuAnimItem": [
+"GraphicMenuAnimItem",
+"GraphicMenuItem"
+],
+"GraphicMenuImageItem": [
+"GraphicMenuImageItem",
+"GraphicMenuItem"
+],
+"GraphicMenuItem": [
+"GraphicMenuItem"
+],
+"GraphicMenuShortcutItem": [
+"GraphicMenuShortcutItem",
+"GraphicMenuItem"
+],
+"?$VectorCursor@IV?$DynamicVectorClass@I@@": [
+"??_R1A@?0A@A@?$VectorCursor@IV?$DynamicVectorClass@I@@@@8"
+],
+"GScreenClass": [
+"GScreenClass",
+"IGameMap",
+"IUnknown"
+],
+"?$DynamicVectorClass@PAUBuildChoiceClass@HouseClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAUBuildChoiceClass@HouseClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAUBuildChoiceClass@HouseClass@@@@8"
+],
+"?$VectorClass@PAUBuildChoiceClass@HouseClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAUBuildChoiceClass@HouseClass@@@@8"
+],
+"HouseClass": [
+"HouseClass",
+"AbstractClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"IRTTITypeInfo",
+"1IUnknown",
+"INoticeSink",
+"INoticeSource",
+"IHouse",
+"1IUnknown",
+"IPublicHouse",
+"1IUnknown",
+"IConnectionPointContainer",
+"1IUnknown"
+],
+"?$DynamicVectorClass@UScoutStruct@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@UScoutStruct@@@@8",
+"??_R1A@?0A@A@?$VectorClass@UScoutStruct@@@@8"
+],
+"?$DynamicVectorClass@UAngerStruct@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@UAngerStruct@@@@8",
+"??_R1A@?0A@A@?$VectorClass@UAngerStruct@@@@8"
+],
+"?$DynamicVectorClass@PAUStartingTechnoStruct@HouseClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAUStartingTechnoStruct@HouseClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAUStartingTechnoStruct@HouseClass@@@@8"
+],
+"?$VectorClass@UScoutStruct@@": [
+"??_R1A@?0A@A@?$VectorClass@UScoutStruct@@@@8"
+],
+"?$VectorClass@UAngerStruct@@": [
+"??_R1A@?0A@A@?$VectorClass@UAngerStruct@@@@8"
+],
+"?$VectorClass@PAUStartingTechnoStruct@HouseClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAUStartingTechnoStruct@HouseClass@@@@8"
+],
+"?$VectorClass@PBVTeamTypeClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PBVTeamTypeClass@@@@8"
+],
+"?$TypeList@PBVTeamTypeClass@@": [
+"??_R1A@?0A@A@?$TypeList@PBVTeamTypeClass@@@@8",
+"??_R1A@?0A@A@?$DynamicVectorClass@PBVTeamTypeClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PBVTeamTypeClass@@@@8"
+],
+"?$VectorClass@PBVBuildingTypeClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PBVBuildingTypeClass@@@@8"
+],
+"?$DynamicVectorClass@PBVBuildingTypeClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PBVBuildingTypeClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PBVBuildingTypeClass@@@@8"
+],
+"?$VectorClass@_N": [
+"_N"
+],
+"?$DynamicVectorClass@_N": [
+"_N",
+"_N"
+],
+"?$VectorClass@V?$DistributionObject@PAVBuildingTypeClass@@@?$DiscreteDistributionClass@VBuildingTypeClass@@@@": [
+"??_R1A@?0A@A@?$VectorClass@V?$DistributionObject@PAVBuildingTypeClass@@@?$DiscreteDistributionClass@VBuildingTypeClass@@@@@@8"
+],
+"?$DynamicVectorClass@V?$DistributionObject@PAVBuildingTypeClass@@@?$DiscreteDistributionClass@VBuildingTypeClass@@@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@V?$DistributionObject@PAVBuildingTypeClass@@@?$DiscreteDistributionClass@VBuildingTypeClass@@@@@@8",
+"??_R1A@?0A@A@?$VectorClass@V?$DistributionObject@PAVBuildingTypeClass@@@?$DiscreteDistributionClass@VBuildingTypeClass@@@@@@8"
+],
+"?$DynamicVectorClass@PBVTeamTypeClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PBVTeamTypeClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PBVTeamTypeClass@@@@8"
+],
+"?$TypeList@PBVAircraftTypeClass@@": [
+"??_R1A@?0A@A@?$TypeList@PBVAircraftTypeClass@@@@8",
+"??_R1A@?0A@A@?$DynamicVectorClass@PBVAircraftTypeClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PBVAircraftTypeClass@@@@8"
+],
+"?$TypeList@PBVUnitTypeClass@@": [
+"??_R1A@?0A@A@?$TypeList@PBVUnitTypeClass@@@@8",
+"??_R1A@?0A@A@?$DynamicVectorClass@PBVUnitTypeClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PBVUnitTypeClass@@@@8"
+],
+"?$TypeList@PBVInfantryTypeClass@@": [
+"??_R1A@?0A@A@?$TypeList@PBVInfantryTypeClass@@@@8",
+"??_R1A@?0A@A@?$DynamicVectorClass@PBVInfantryTypeClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PBVInfantryTypeClass@@@@8"
+],
+"HouseTypeClass": [
+"HouseTypeClass",
+"AbstractTypeClass",
+"AbstractClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"IRTTITypeInfo",
+"1IUnknown",
+"INoticeSink",
+"INoticeSource"
+],
+"?$VectorClass@PBVUnitTypeClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PBVUnitTypeClass@@@@8"
+],
+"?$VectorClass@PBVAircraftTypeClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PBVAircraftTypeClass@@@@8"
+],
+"?$VectorClass@PBVInfantryTypeClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PBVInfantryTypeClass@@@@8"
+],
+"?$DynamicVectorClass@PBVInfantryTypeClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PBVInfantryTypeClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PBVInfantryTypeClass@@@@8"
+],
+"?$DynamicVectorClass@PBVUnitTypeClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PBVUnitTypeClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PBVUnitTypeClass@@@@8"
+],
+"?$DynamicVectorClass@PBVAircraftTypeClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PBVAircraftTypeClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PBVAircraftTypeClass@@@@8"
+],
+"HoverLocomotionClass": [
+"HoverLocomotionClass",
+"LocomotionClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"ILocomotion",
+"1IUnknown"
+],
+"LocomotionClass": [
+"LocomotionClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"ILocomotion",
+"1IUnknown"
+],
+"InfantryClass": [
+"InfantryClass",
+"FootClass",
+"TechnoClass",
+"RadioClass",
+"MissionClass",
+"ObjectClass",
+"AbstractClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"IRTTITypeInfo",
+"1IUnknown",
+"INoticeSink",
+"INoticeSource",
+"FlasherClass",
+"StageClass"
+],
+"InfantryTypeClass": [
+"InfantryTypeClass",
+"TechnoTypeClass",
+"ObjectTypeClass",
+"AbstractTypeClass",
+"AbstractClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"IRTTITypeInfo",
+"1IUnknown",
+"INoticeSink",
+"INoticeSource"
+],
+"?$TypeList@PBVAnimTypeClass@@": [
+"??_R1A@?0A@A@?$TypeList@PBVAnimTypeClass@@@@8",
+"??_R1A@?0A@A@?$DynamicVectorClass@PBVAnimTypeClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PBVAnimTypeClass@@@@8"
+],
+"?$VectorClass@PBVAnimTypeClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PBVAnimTypeClass@@@@8"
+],
+"?$DynamicVectorClass@PBVAnimTypeClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PBVAnimTypeClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PBVAnimTypeClass@@@@8"
+],
+"CacheStraw": [
+"CacheStraw",
+"Straw"
+],
+"?$List@PAUINIEntry@INIClass@@": [
+"??_R1A@?0A@A@?$List@PAUINIEntry@INIClass@@@@8",
+"GenericList"
+],
+"INIEntry@INIClass": [
+"INIClass",
+"??_R1A@?0A@A@?$Node@PAUINIEntry@INIClass@@@@8",
+"GenericNode"
+],
+"?$Node@PAUINISection@INIClass@@": [
+"??_R1A@?0A@A@?$Node@PAUINISection@INIClass@@@@8",
+"GenericNode"
+],
+"INISection@INIClass": [
+"INIClass",
+"??_R1A@?0A@A@?$Node@PAUINISection@INIClass@@@@8",
+"GenericNode"
+],
+"Base64Straw": [
+"Base64Straw",
+"Straw"
+],
+"Base64Pipe": [
+"Base64Pipe",
+"Pipe"
+],
+"?$VectorClass@PAVCCINIClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVCCINIClass@@@@8"
+],
+"?$DynamicVectorClass@PAVCCINIClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVCCINIClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVCCINIClass@@@@8"
+],
+"ToggleRepairCommandClass": [
+"ToggleRepairCommandClass",
+"CommandClass"
+],
+"SidebarUpCommandClass": [
+"SidebarUpCommandClass",
+"CommandClass"
+],
+"DeployCommandClass": [
+"DeployCommandClass",
+"CommandClass"
+],
+"CombatantSelectCommandClass": [
+"CombatantSelectCommandClass",
+"CommandClass"
+],
+"CenterREventCommandClass": [
+"CenterREventCommandClass",
+"CommandClass"
+],
+"AllToCheerCommandClass": [
+"AllToCheerCommandClass",
+"CommandClass"
+],
+"AllianceCommandClass": [
+"AllianceCommandClass",
+"CommandClass"
+],
+"BeaconPlacementCommandClass": [
+"BeaconPlacementCommandClass",
+"CommandClass"
+],
+"SetUnitTabCommandClass": [
+"SetUnitTabCommandClass",
+"CommandClass"
+],
+"StopCommandClass": [
+"StopCommandClass",
+"CommandClass"
+],
+"PlanningModeCommandClass": [
+"PlanningModeCommandClass",
+"CommandClass"
+],
+"SetView2CommandClass": [
+"SetView2CommandClass",
+"CommandClass"
+],
+"CenterBaseCommandClass": [
+"CenterBaseCommandClass",
+"CommandClass"
+],
+"OptionsCommandClass": [
+"OptionsCommandClass",
+"CommandClass"
+],
+"SetInfantryTabCommandClass": [
+"SetInfantryTabCommandClass",
+"CommandClass"
+],
+"PrevObjectCommandClass": [
+"PrevObjectCommandClass",
+"CommandClass"
+],
+"SetView1CommandClass": [
+"SetView1CommandClass",
+"CommandClass"
+],
+"CenterViewCommandClass": [
+"CenterViewCommandClass",
+"CommandClass"
+],
+"SetDefenseTabCommandClass": [
+"SetDefenseTabCommandClass",
+"CommandClass"
+],
+"VeterancyNavCommandClass": [
+"VeterancyNavCommandClass",
+"CommandClass"
+],
+"View4CommandClass": [
+"View4CommandClass",
+"CommandClass"
+],
+"FollowCommandClass": [
+"FollowCommandClass",
+"CommandClass"
+],
+"SetStructureTabCommandClass": [
+"SetStructureTabCommandClass",
+"CommandClass"
+],
+"HealthNavCommandClass": [
+"HealthNavCommandClass",
+"CommandClass"
+],
+"View3CommandClass": [
+"View3CommandClass",
+"CommandClass"
+],
+"SetView4CommandClass": [
+"SetView4CommandClass",
+"CommandClass"
+],
+"CreateTeamCommandClass": [
+"CreateTeamCommandClass",
+"CommandClass"
+],
+"TypeSelectCommandClass": [
+"TypeSelectCommandClass",
+"CommandClass"
+],
+"View2CommandClass": [
+"View2CommandClass",
+"CommandClass"
+],
+"SetView3CommandClass": [
+"SetView3CommandClass",
+"CommandClass"
+],
+"View1CommandClass": [
+"View1CommandClass",
+"CommandClass"
+],
+"NextObjectCommandClass": [
+"NextObjectCommandClass",
+"CommandClass"
+],
+"ScatterCommandClass": [
+"ScatterCommandClass",
+"CommandClass"
+],
+"MultiplayerSyncCommandClass": [
+"MultiplayerSyncCommandClass",
+"CommandClass"
+],
+"ToggleSellCommandClass": [
+"ToggleSellCommandClass",
+"CommandClass"
+],
+"SidebarDownCommandClass": [
+"SidebarDownCommandClass",
+"CommandClass"
+],
+"GuardCommandClass": [
+"GuardCommandClass",
+"CommandClass"
+],
+"MultiplayerDebugCommandClass": [
+"MultiplayerDebugCommandClass",
+"CommandClass"
+],
+"CommandClass": [
+"CommandClass"
+],
+"SelectTeamCommandClass": [
+"SelectTeamCommandClass",
+"CommandClass"
+],
+"AddTeamCommandClass": [
+"AddTeamCommandClass",
+"CommandClass"
+],
+"CenterTeamCommandClass": [
+"CenterTeamCommandClass",
+"CommandClass"
+],
+"TauntCommandClass": [
+"TauntCommandClass",
+"CommandClass"
+],
+"ScreenCaptureCommandClass": [
+"ScreenCaptureCommandClass",
+"CommandClass"
+],
+"PageUserCommandClass": [
+"PageUserCommandClass",
+"CommandClass"
+],
+"CursorPositionCommandClass": [
+"CursorPositionCommandClass",
+"CommandClass"
+],
+"DeleteCommandClass": [
+"DeleteCommandClass",
+"CommandClass"
+],
+"?$rc_ptr@VWDTTerritory@@": [
+"??_R1A@?0A@A@?$rc_ptr@VWDTTerritory@@@@8",
+"rc_ptr_base"
+],
+"?$DynamicVectorClass@PBVAnimClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PBVAnimClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PBVAnimClass@@@@8"
+],
+"?$VectorClass@PBVAnimClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PBVAnimClass@@@@8"
+],
+"?$DynamicVectorClass@PAVIonBlastClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVIonBlastClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVIonBlastClass@@@@8"
+],
+"?$VectorClass@PAVIonBlastClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVIonBlastClass@@@@8"
+],
+"IPXConnClass": [
+"IPXConnClass",
+"ConnectionClass"
+],
+"IPXGlobalConnClass": [
+"IPXGlobalConnClass",
+"IPXConnClass",
+"ConnectionClass"
+],
+"IPXManagerClass": [
+"IPXManagerClass",
+"ConnManClass"
+],
+"ConnManClass": [
+"ConnManClass"
+],
+"IsometricTileClass": [
+"IsometricTileClass",
+"ObjectClass",
+"AbstractClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"IRTTITypeInfo",
+"1IUnknown",
+"INoticeSink",
+"INoticeSource"
+],
+"?$DynamicVectorClass@PAUTileInsertType@IsometricTileTypeClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAUTileInsertType@IsometricTileTypeClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAUTileInsertType@IsometricTileTypeClass@@@@8"
+],
+"?$VectorClass@PAUTileInsertType@IsometricTileTypeClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAUTileInsertType@IsometricTileTypeClass@@@@8"
+],
+"IsometricTileTypeClass": [
+"IsometricTileTypeClass",
+"ObjectTypeClass",
+"AbstractTypeClass",
+"AbstractClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"IRTTITypeInfo",
+"1IUnknown",
+"INoticeSink",
+"INoticeSource"
+],
+"?$DynamicVectorClass@PAG": [
+"PAG",
+"PAG"
+],
+"?$VectorClass@PAG": [
+"PAG"
+],
+"JumpjetLocomotionClass": [
+"JumpjetLocomotionClass",
+"LocomotionClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"ILocomotion",
+"1IUnknown",
+"IPiggyback",
+"1IUnknown"
+],
+"?$DynamicVectorClass@PAUKamikazeControl@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAUKamikazeControl@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAUKamikazeControl@@@@8"
+],
+"?$VectorClass@PAUKamikazeControl@@": [
+"??_R1A@?0A@A@?$VectorClass@PAUKamikazeControl@@@@8"
+],
+"?$DynamicVectorClass@PAVLaserDrawClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVLaserDrawClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVLaserDrawClass@@@@8"
+],
+"?$VectorClass@PAVLaserDrawClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVLaserDrawClass@@@@8"
+],
+"LCWPipe": [
+"LCWPipe",
+"Pipe"
+],
+"LCWStraw": [
+"LCWStraw",
+"Straw"
+],
+"LoadProgressMgr": [
+"LoadProgressMgr",
+"INoticeSink"
+],
+"?$DynamicVectorClass@PAVLightSourceClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVLightSourceClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVLightSourceClass@@@@8"
+],
+"?$VectorClass@PAVLightSourceClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVLightSourceClass@@@@8"
+],
+"?$DynamicVectorClass@PAVPendingCellClass@LightSourceClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVPendingCellClass@LightSourceClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVPendingCellClass@LightSourceClass@@@@8"
+],
+"?$VectorClass@PAVPendingCellClass@LightSourceClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVPendingCellClass@LightSourceClass@@@@8"
+],
+"LightSourceClass": [
+"LightSourceClass",
+"AbstractClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"IRTTITypeInfo",
+"1IUnknown",
+"INoticeSink",
+"INoticeSource"
+],
+"LightConvertClass": [
+"LightConvertClass",
+"ConvertClass"
+],
+"?$DynamicVectorClass@PAVLineTrail@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVLineTrail@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVLineTrail@@@@8"
+],
+"?$VectorClass@PAVLineTrail@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVLineTrail@@@@8"
+],
+"ListClass": [
+"ListClass",
+"ControlClass",
+"GadgetClass",
+"LinkClass"
+],
+"?$DynamicVectorClass@PBG": [
+"PBG",
+"PBG"
+],
+"?$VectorClass@PBG": [
+"PBG"
+],
+"SliderClass": [
+"SliderClass",
+"GaugeClass",
+"ControlClass",
+"GadgetClass",
+"LinkClass"
+],
+"?$DynamicVectorClass@PAVFileEntryClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVFileEntryClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVFileEntryClass@@@@8"
+],
+"LoadOptionsClass": [
+"LoadOptionsClass"
+],
+"?$VectorClass@PAVFileEntryClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVFileEntryClass@@@@8"
+],
+"LZOPipe": [
+"LZOPipe",
+"Pipe"
+],
+"LZOStraw": [
+"LZOStraw",
+"Straw"
+],
+"MapClass": [
+"MapClass",
+"GScreenClass",
+"IGameMap",
+"IUnknown"
+],
+"?$DynamicVectorClass@UZoneConnectionClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@UZoneConnectionClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@UZoneConnectionClass@@@@8"
+],
+"?$DynamicVectorClass@USubzoneTrackingStruct@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@USubzoneTrackingStruct@@@@8",
+"??_R1A@?0A@A@?$VectorClass@USubzoneTrackingStruct@@@@8"
+],
+"?$VectorClass@PAVCellClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVCellClass@@@@8"
+],
+"?$VectorClass@UZoneConnectionClass@@": [
+"??_R1A@?0A@A@?$VectorClass@UZoneConnectionClass@@@@8"
+],
+"?$VectorClass@USubzoneTrackingStruct@@": [
+"??_R1A@?0A@A@?$VectorClass@USubzoneTrackingStruct@@@@8"
+],
+"?$DynamicVectorClass@U?$HashObject@II@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@U?$HashObject@II@@@@8",
+"??_R1A@?0A@A@?$VectorClass@U?$HashObject@II@@@@8"
+],
+"?$DynamicVectorClass@U?$HashObject@IUSubzoneConnectionStruct@@@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@U?$HashObject@IUSubzoneConnectionStruct@@@@@@8",
+"??_R1A@?0A@A@?$VectorClass@U?$HashObject@IUSubzoneConnectionStruct@@@@@@8"
+],
+"?$VectorClass@W4PassabilityType@@": [
+"??_R1A@?0A@A@?$VectorClass@W4PassabilityType@@@@8"
+],
+"?$DynamicVectorClass@W4PassabilityType@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@W4PassabilityType@@@@8",
+"??_R1A@?0A@A@?$VectorClass@W4PassabilityType@@@@8"
+],
+"?$DynamicVectorClass@USubzoneConnectionStruct@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@USubzoneConnectionStruct@@@@8",
+"??_R1A@?0A@A@?$VectorClass@USubzoneConnectionStruct@@@@8"
+],
+"?$VectorClass@U?$HashObject@II@@": [
+"??_R1A@?0A@A@?$VectorClass@U?$HashObject@II@@@@8"
+],
+"?$VectorClass@U?$HashObject@IUSubzoneConnectionStruct@@@@": [
+"??_R1A@?0A@A@?$VectorClass@U?$HashObject@IUSubzoneConnectionStruct@@@@@@8"
+],
+"?$DynamicVectorClass@PAVMapRegionClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVMapRegionClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVMapRegionClass@@@@8"
+],
+"?$VectorClass@PAVMapRegionClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVMapRegionClass@@@@8"
+],
+"MapSeedClass": [
+"MapSeedClass",
+"LoadOptionsClass"
+],
+"?$TypeList@PBVBuildingTypeClass@@": [
+"??_R1A@?0A@A@?$TypeList@PBVBuildingTypeClass@@@@8",
+"??_R1A@?0A@A@?$DynamicVectorClass@PBVBuildingTypeClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PBVBuildingTypeClass@@@@8"
+],
+"?$VectorClass@PAU_WIN32_FIND_DATAA@@": [
+"??_R1A@?0A@A@?$VectorClass@PAU_WIN32_FIND_DATAA@@@@8"
+],
+"?$DynamicVectorClass@PAU_WIN32_FIND_DATAA@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAU_WIN32_FIND_DATAA@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAU_WIN32_FIND_DATAA@@@@8"
+],
+"?$DynamicVectorClass@V?$TRect@H@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@V?$TRect@H@@@@8",
+"??_R1A@?0A@A@?$VectorClass@V?$TRect@H@@@@8"
+],
+"?$VectorClass@V?$TRect@H@@": [
+"??_R1A@?0A@A@?$VectorClass@V?$TRect@H@@@@8"
+],
+"?$DynamicVectorClass@PAVCellClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVCellClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVCellClass@@@@8"
+],
+"?$VectorClass@N": [
+"N"
+],
+"?$DynamicVectorClass@N": [
+"N",
+"N"
+],
+"MapSelect": [
+"MapSelect",
+"MSEngine"
+],
+"MechLocomotionClass": [
+"MechLocomotionClass",
+"LocomotionClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"ILocomotion",
+"1IUnknown"
+],
+"MissionClass": [
+"MissionClass",
+"ObjectClass",
+"AbstractClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"IRTTITypeInfo",
+"1IUnknown",
+"INoticeSink",
+"INoticeSource"
+],
+"?$List@PAVMixFileClass@@": [
+"??_R1A@?0A@A@?$List@PAVMixFileClass@@@@8",
+"GenericList"
+],
+"MixFileClass": [
+"MixFileClass",
+"??_R1A@?0A@A@?$Node@PAVMixFileClass@@@@8",
+"GenericNode"
+],
+"BlowStraw": [
+"BlowStraw",
+"Straw"
+],
+"TabClass": [
+"TabClass",
+"SidebarClass",
+"PowerClass",
+"RadarClass",
+"DisplayClass",
+"MapClass",
+"GScreenClass",
+"IGameMap",
+"IUnknown",
+"8INoticeSink"
+],
+"?$DynamicVectorClass@PBD": [
+"PBD",
+"PBD"
+],
+"?$VectorClass@PBD": [
+"PBD"
+],
+"VQMovieHandle": [
+"VQMovieHandle",
+"MovieHandle"
+],
+"MovieHandle": [
+"MovieHandle"
+],
+"BinkMovieHandle": [
+"BinkMovieHandle",
+"MovieHandle"
+],
+"MultiplayerBattle": [
+"MultiplayerBattle",
+"MultiplayerGameMode"
+],
+"MultiplayerBattleTeam": [
+"MultiplayerBattleTeam",
+"MultiplayerTeam"
+],
+"MPCooperative": [
+"MPCooperative",
+"MultiplayerGameMode"
+],
+"?$DynamicVectorClass@PAVCoopCampaignClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVCoopCampaignClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVCoopCampaignClass@@@@8"
+],
+"?$DynamicVectorClass@PAUNodeNameType@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAUNodeNameType@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAUNodeNameType@@@@8"
+],
+"?$VectorClass@PAVCoopCampaignClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVCoopCampaignClass@@@@8"
+],
+"?$VectorClass@PAUNodeNameType@@": [
+"??_R1A@?0A@A@?$VectorClass@PAUNodeNameType@@@@8"
+],
+"?$VectorClass@PAUMPlayerScoreType@@": [
+"??_R1A@?0A@A@?$VectorClass@PAUMPlayerScoreType@@@@8"
+],
+"?$DynamicVectorClass@PAUMPlayerScoreType@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAUMPlayerScoreType@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAUMPlayerScoreType@@@@8"
+],
+"FreeForAll": [
+"FreeForAll",
+"MultiplayerGameMode"
+],
+"MultiplayerManBattle": [
+"MultiplayerManBattle",
+"MultiplayerGameMode"
+],
+"Megawealth": [
+"Megawealth",
+"MultiplayerGameMode"
+],
+"MultiplayerObserverTeam": [
+"MultiplayerObserverTeam",
+"MultiplayerTeam"
+],
+"MultiplayerSiege": [
+"MultiplayerSiege",
+"MultiplayerGameMode"
+],
+"MultiplayerSiegeDefenderTeam": [
+"MultiplayerSiegeDefenderTeam",
+"MultiplayerTeam"
+],
+"MultiplayerSiegeAttackerTeam": [
+"MultiplayerSiegeAttackerTeam",
+"MultiplayerTeam"
+],
+"UnholyAlliance": [
+"UnholyAlliance",
+"MultiplayerGameMode"
+],
+"MSAnim": [
+"MSAnim"
+],
+"MSShapeAnim": [
+"MSShapeAnim",
+"MSAnim"
+],
+"MSFadeAnim": [
+"MSFadeAnim",
+"MSShapeAnim",
+"MSAnim"
+],
+"MSOverlayAnim": [
+"MSOverlayAnim",
+"MSFadeAnim",
+"MSShapeAnim",
+"MSAnim"
+],
+"MSBinkAnim": [
+"MSBinkAnim",
+"MSAnim"
+],
+"MSVQAnim": [
+"MSVQAnim",
+"MSAnim"
+],
+"MSBitPrintAnim": [
+"MSBitPrintAnim",
+"MSAnim"
+],
+"MSPrintAnim": [
+"MSPrintAnim",
+"MSAnim"
+],
+"MSPCXAnim": [
+"MSPCXAnim",
+"MSAnim"
+],
+"?$DynamicVectorClass@PAVMSAnimEntry@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVMSAnimEntry@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVMSAnimEntry@@@@8"
+],
+"?$DynamicVectorClass@PAVMapStage@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVMapStage@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVMapStage@@@@8"
+],
+"?$DynamicVectorClass@PAVMSSfxEntry@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVMSSfxEntry@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVMSSfxEntry@@@@8"
+],
+"?$VectorClass@PAVMSAnimEntry@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVMSAnimEntry@@@@8"
+],
+"?$VectorClass@PAVMapStage@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVMapStage@@@@8"
+],
+"?$VectorClass@PAVMSSfxEntry@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVMSSfxEntry@@@@8"
+],
+"?$DynamicVectorClass@VPoint2D@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@VPoint2D@@@@8",
+"??_R1A@?0A@A@?$VectorClass@VPoint2D@@@@8"
+],
+"?$DynamicVectorClass@PAVMapSelection@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVMapSelection@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVMapSelection@@@@8"
+],
+"?$DynamicVectorClass@PAVMSTextEntry@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVMSTextEntry@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVMSTextEntry@@@@8"
+],
+"?$VectorClass@VPoint2D@@": [
+"??_R1A@?0A@A@?$VectorClass@VPoint2D@@@@8"
+],
+"?$VectorClass@PAVMapSelection@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVMapSelection@@@@8"
+],
+"?$VectorClass@PAVMSTextEntry@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVMSTextEntry@@@@8"
+],
+"?$DynamicVectorClass@PAVMSSfx@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVMSSfx@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVMSSfx@@@@8"
+],
+"?$DynamicVectorClass@PAVMSAnim@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVMSAnim@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVMSAnim@@@@8"
+],
+"MSEngine": [
+"MSEngine"
+],
+"?$VectorClass@PAVMSSfx@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVMSSfx@@@@8"
+],
+"?$VectorClass@PAVMSAnim@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVMSAnim@@@@8"
+],
+"MSFont": [
+"MSFont"
+],
+"?$DynamicVectorClass@PAUHWND__@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAUHWND__@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAUHWND__@@@@8"
+],
+"?$VectorClass@PAUHWND__@@": [
+"??_R1A@?0A@A@?$VectorClass@PAUHWND__@@@@8"
+],
+"?$DynamicVectorClass@UAcceleratorTracker@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@UAcceleratorTracker@@@@8",
+"??_R1A@?0A@A@?$VectorClass@UAcceleratorTracker@@@@8"
+],
+"?$VectorClass@UAcceleratorTracker@@": [
+"??_R1A@?0A@A@?$VectorClass@UAcceleratorTracker@@@@8"
+],
+"?$DynamicVectorClass@PAVMultiplayerGameMode@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVMultiplayerGameMode@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVMultiplayerGameMode@@@@8"
+],
+"?$VectorClass@PAVMultiplayerGameMode@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVMultiplayerGameMode@@@@8"
+],
+"MultiplayerGameMode": [
+"MultiplayerGameMode"
+],
+"?$DynamicVectorClass@PAVMultiplayerTeam@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVMultiplayerTeam@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVMultiplayerTeam@@@@8"
+],
+"?$VectorClass@PAVMultiplayerTeam@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVMultiplayerTeam@@@@8"
+],
+"InitializerBase@MultiplayerGameMode": [
+"MultiplayerGameMode"
+],
+"?$Initializer@VFreeForAll@@@MultiplayerGameMode": [
+"MultiplayerGameMode",
+"MultiplayerGameMode"
+],
+"?$Initializer@VUnholyAlliance@@@MultiplayerGameMode": [
+"MultiplayerGameMode",
+"MultiplayerGameMode"
+],
+"?$Initializer@VMultiplayerSiege@@@MultiplayerGameMode": [
+"MultiplayerGameMode",
+"MultiplayerGameMode"
+],
+"?$Initializer@VMultiplayerManBattle@@@MultiplayerGameMode": [
+"MultiplayerGameMode",
+"MultiplayerGameMode"
+],
+"?$Initializer@VMultiplayerBattle@@@MultiplayerGameMode": [
+"MultiplayerGameMode",
+"MultiplayerGameMode"
+],
+"?$Initializer@VMPCooperative@@@MultiplayerGameMode": [
+"MultiplayerGameMode",
+"MultiplayerGameMode"
+],
+"MultiplayerTeam": [
+"MultiplayerTeam"
+],
+"?$DynamicVectorClass@PBVMultiMission@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PBVMultiMission@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PBVMultiMission@@@@8"
+],
+"?$VectorClass@PBVMultiMission@@": [
+"??_R1A@?0A@A@?$VectorClass@PBVMultiMission@@@@8"
+],
+"NullModemConnClass": [
+"NullModemConnClass",
+"ConnectionClass"
+],
+"NullModemClass": [
+"NullModemClass",
+"ConnManClass"
+],
+"ObjectClass": [
+"ObjectClass",
+"AbstractClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"IRTTITypeInfo",
+"1IUnknown",
+"INoticeSink",
+"INoticeSource"
+],
+"?$DynamicVectorClass@PAVObjectTypeClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVObjectTypeClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVObjectTypeClass@@@@8"
+],
+"?$VectorClass@PAVObjectTypeClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVObjectTypeClass@@@@8"
+],
+"ObjectTypeClass": [
+"ObjectTypeClass",
+"AbstractTypeClass",
+"AbstractClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"IRTTITypeInfo",
+"1IUnknown",
+"INoticeSink",
+"INoticeSource"
+],
+"OverlayClass": [
+"OverlayClass",
+"ObjectClass",
+"AbstractClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"IRTTITypeInfo",
+"1IUnknown",
+"INoticeSink",
+"INoticeSource"
+],
+"OverlayTypeClass": [
+"OverlayTypeClass",
+"ObjectTypeClass",
+"AbstractTypeClass",
+"AbstractClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"IRTTITypeInfo",
+"1IUnknown",
+"INoticeSink",
+"INoticeSource"
+],
+"?$DynamicVectorClass@PAVSpotLightClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVSpotLightClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVSpotLightClass@@@@8"
+],
+"?$VectorClass@PAVSpotLightClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVSpotLightClass@@@@8"
+],
+"DialogControl@OwnerDraw": [
+"OwnerDraw"
+],
+"SimpleDialogControl@OwnerDraw": [
+"OwnerDraw",
+"OwnerDraw"
+],
+"?$DynamicVectorClass@VHSVClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@VHSVClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@VHSVClass@@@@8"
+],
+"?$DynamicVectorClass@U?$HashObject@VHashString@@PAVSchemeNode@@@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@U?$HashObject@VHashString@@PAVSchemeNode@@@@@@8",
+"??_R1A@?0A@A@?$VectorClass@U?$HashObject@VHashString@@PAVSchemeNode@@@@@@8"
+],
+"?$VectorClass@PAVColorScheme@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVColorScheme@@@@8"
+],
+"?$DynamicVectorClass@PAVColorScheme@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVColorScheme@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVColorScheme@@@@8"
+],
+"?$VectorClass@U?$HashObject@VHashString@@PAVSchemeNode@@@@": [
+"??_R1A@?0A@A@?$VectorClass@U?$HashObject@VHashString@@PAVSchemeNode@@@@@@8"
+],
+"?$VectorClass@VHSVClass@@": [
+"??_R1A@?0A@A@?$VectorClass@VHSVClass@@@@8"
+],
+"?$DynamicVectorClass@PAVParasiteClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVParasiteClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVParasiteClass@@@@8"
+],
+"?$VectorClass@PAVParasiteClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVParasiteClass@@@@8"
+],
+"ParasiteClass": [
+"ParasiteClass",
+"AbstractClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"IRTTITypeInfo",
+"1IUnknown",
+"INoticeSink",
+"INoticeSource"
+],
+"ParticleClass": [
+"ParticleClass",
+"ObjectClass",
+"AbstractClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"IRTTITypeInfo",
+"1IUnknown",
+"INoticeSink",
+"INoticeSource"
+],
+"ParticleSystemClass": [
+"ParticleSystemClass",
+"ObjectClass",
+"AbstractClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"IRTTITypeInfo",
+"1IUnknown",
+"INoticeSink",
+"INoticeSource"
+],
+"PixelFXClass": [
+"PixelFXClass"
+],
+"PKPipe": [
+"PKPipe",
+"Pipe"
+],
+"BlowPipe": [
+"BlowPipe",
+"Pipe"
+],
+"PKStraw": [
+"PKStraw",
+"Straw"
+],
+"?$DynamicVectorClass@PAVEventClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVEventClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVEventClass@@@@8"
+],
+"?$VectorClass@PAVEventClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVEventClass@@@@8"
+],
+"?$DynamicVectorClass@PAVPlanningNodeClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVPlanningNodeClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVPlanningNodeClass@@@@8"
+],
+"?$VectorClass@PAVPlanningNodeClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVPlanningNodeClass@@@@8"
+],
+"?$DynamicVectorClass@PAVPlanningTokenClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVPlanningTokenClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVPlanningTokenClass@@@@8"
+],
+"?$VectorClass@PAVPlanningTokenClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVPlanningTokenClass@@@@8"
+],
+"?$DynamicVectorClass@PAVPlanningBranchClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVPlanningBranchClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVPlanningBranchClass@@@@8"
+],
+"?$DynamicVectorClass@PAVPlanningMemberClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVPlanningMemberClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVPlanningMemberClass@@@@8"
+],
+"?$VectorClass@PAVPlanningMemberClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVPlanningMemberClass@@@@8"
+],
+"?$VectorClass@PAVPlanningBranchClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVPlanningBranchClass@@@@8"
+],
+"PowerClass": [
+"PowerClass",
+"RadarClass",
+"DisplayClass",
+"MapClass",
+"GScreenClass",
+"IGameMap",
+"IUnknown"
+],
+"ProgressScreenClass": [
+"ProgressScreenClass",
+"8INoticeSource"
+],
+"ParticleSystemTypeClass": [
+"ParticleSystemTypeClass",
+"ObjectTypeClass",
+"AbstractTypeClass",
+"AbstractClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"IRTTITypeInfo",
+"1IUnknown",
+"INoticeSink",
+"INoticeSource"
+],
+"ParticleTypeClass": [
+"ParticleTypeClass",
+"ObjectTypeClass",
+"AbstractTypeClass",
+"AbstractClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"IRTTITypeInfo",
+"1IUnknown",
+"INoticeSink",
+"INoticeSource"
+],
+"?$DynamicVectorClass@VRGBClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@VRGBClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@VRGBClass@@@@8"
+],
+"RTacticalClass@RadarClass": [
+"RadarClass",
+"GadgetClass",
+"LinkClass"
+],
+"RadarClass": [
+"RadarClass",
+"DisplayClass",
+"MapClass",
+"GScreenClass",
+"IGameMap",
+"IUnknown"
+],
+"?$VectorClass@U?$HashObject@URadarTrackingStruct@@PAVTechnoClass@@@@": [
+"??_R1A@?0A@A@?$VectorClass@U?$HashObject@URadarTrackingStruct@@PAVTechnoClass@@@@@@8"
+],
+"?$DynamicVectorClass@U?$HashObject@URadarTrackingStruct@@PAVTechnoClass@@@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@U?$HashObject@URadarTrackingStruct@@PAVTechnoClass@@@@@@8",
+"??_R1A@?0A@A@?$VectorClass@U?$HashObject@URadarTrackingStruct@@PAVTechnoClass@@@@@@8"
+],
+"?$DynamicVectorClass@PAVRadBeam@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVRadBeam@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVRadBeam@@@@8"
+],
+"?$VectorClass@PAVRadBeam@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVRadBeam@@@@8"
+],
+"RadioClass": [
+"RadioClass",
+"MissionClass",
+"ObjectClass",
+"AbstractClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"IRTTITypeInfo",
+"1IUnknown",
+"INoticeSink",
+"INoticeSource"
+],
+"?$DynamicVectorClass@PAVRadSiteClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVRadSiteClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVRadSiteClass@@@@8"
+],
+"?$VectorClass@PAVRadSiteClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVRadSiteClass@@@@8"
+],
+"RadSiteClass": [
+"RadSiteClass",
+"AbstractClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"IRTTITypeInfo",
+"1IUnknown",
+"INoticeSink",
+"INoticeSource"
+],
+"RAMFileClass": [
+"RAMFileClass",
+"FileClass"
+],
+"FileClass": [
+"FileClass"
+],
+"RawFileClass": [
+"RawFileClass",
+"FileClass"
+],
+"rc_ptr_base": [
+"rc_ptr_base"
+],
+"ReferenceCounted": [
+"ReferenceCounted"
+],
+"?$DynamicVectorClass@PAVRadarEventClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVRadarEventClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVRadarEventClass@@@@8"
+],
+"?$VectorClass@PAVRadarEventClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVRadarEventClass@@@@8"
+],
+"RandomStraw": [
+"RandomStraw",
+"Straw"
+],
+"RocketLocomotionClass": [
+"RocketLocomotionClass",
+"LocomotionClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"ILocomotion",
+"1IUnknown"
+],
+"?$DynamicVectorClass@PAUConnectionListStruct@OwnerTalkClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAUConnectionListStruct@OwnerTalkClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAUConnectionListStruct@OwnerTalkClass@@@@8"
+],
+"?$VectorClass@PAUConnectionListStruct@OwnerTalkClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAUConnectionListStruct@OwnerTalkClass@@@@8"
+],
+"?$TypeList@PBVTerrainTypeClass@@": [
+"??_R1A@?0A@A@?$TypeList@PBVTerrainTypeClass@@@@8",
+"??_R1A@?0A@A@?$DynamicVectorClass@PBVTerrainTypeClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PBVTerrainTypeClass@@@@8"
+],
+"?$TypeList@PBVSmudgeTypeClass@@": [
+"??_R1A@?0A@A@?$TypeList@PBVSmudgeTypeClass@@@@8",
+"??_R1A@?0A@A@?$DynamicVectorClass@PBVSmudgeTypeClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PBVSmudgeTypeClass@@@@8"
+],
+"?$TypeList@PBVVoxelAnimTypeClass@@": [
+"??_R1A@?0A@A@?$TypeList@PBVVoxelAnimTypeClass@@@@8",
+"??_R1A@?0A@A@?$DynamicVectorClass@PBVVoxelAnimTypeClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PBVVoxelAnimTypeClass@@@@8"
+],
+"?$VectorClass@PBVSmudgeTypeClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PBVSmudgeTypeClass@@@@8"
+],
+"?$VectorClass@PBVVoxelAnimTypeClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PBVVoxelAnimTypeClass@@@@8"
+],
+"?$VectorClass@PBVTerrainTypeClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PBVTerrainTypeClass@@@@8"
+],
+"?$DynamicVectorClass@PBVVoxelAnimTypeClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PBVVoxelAnimTypeClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PBVVoxelAnimTypeClass@@@@8"
+],
+"?$DynamicVectorClass@PBVSmudgeTypeClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PBVSmudgeTypeClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PBVSmudgeTypeClass@@@@8"
+],
+"?$DynamicVectorClass@PBVTerrainTypeClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PBVTerrainTypeClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PBVTerrainTypeClass@@@@8"
+],
+"ScorePrintClass": [
+"ScorePrintClass",
+"ScoreAnimClass"
+],
+"ScoreTimeClass": [
+"ScoreTimeClass",
+"ScoreAnimClass"
+],
+"ScoreAnimClass": [
+"ScoreAnimClass"
+],
+"ScoreFontClass": [
+"ScoreFontClass"
+],
+"ScoreFullFontClass": [
+"ScoreFullFontClass",
+"ScoreFontClass"
+],
+"ScoreBigFontClass": [
+"ScoreBigFontClass",
+"ScoreFontClass"
+],
+"ScriptClass": [
+"ScriptClass",
+"AbstractClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"IRTTITypeInfo",
+"1IUnknown",
+"INoticeSink",
+"INoticeSource"
+],
+"ScriptTypeClass": [
+"ScriptTypeClass",
+"AbstractTypeClass",
+"AbstractClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"IRTTITypeInfo",
+"1IUnknown",
+"INoticeSink",
+"INoticeSource"
+],
+"ScrollClass": [
+"ScrollClass",
+"TabClass",
+"SidebarClass",
+"PowerClass",
+"RadarClass",
+"DisplayClass",
+"MapClass",
+"GScreenClass",
+"IGameMap",
+"IUnknown",
+"8INoticeSink"
+],
+"?$DynamicVectorClass@PAVPhoneEntryClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVPhoneEntryClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVPhoneEntryClass@@@@8"
+],
+"?$DynamicVectorClass@PAVMultiMission@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVMultiMission@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVMultiMission@@@@8"
+],
+"?$DynamicVectorClass@PAUGlobalPacketType@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAUGlobalPacketType@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAUGlobalPacketType@@@@8"
+],
+"?$VectorClass@PAVPhoneEntryClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVPhoneEntryClass@@@@8"
+],
+"?$VectorClass@PAVMultiMission@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVMultiMission@@@@8"
+],
+"?$VectorClass@PAUGlobalPacketType@@": [
+"??_R1A@?0A@A@?$VectorClass@PAUGlobalPacketType@@@@8"
+],
+"?$VectorClass@W4DiskID@@": [
+"??_R1A@?0A@A@?$VectorClass@W4DiskID@@@@8"
+],
+"?$VectorClass@VWstring@@": [
+"??_R1A@?0A@A@?$VectorClass@VWstring@@@@8"
+],
+"?$TypeList@W4DiskID@@": [
+"??_R1A@?0A@A@?$TypeList@W4DiskID@@@@8",
+"??_R1A@?0A@A@?$DynamicVectorClass@W4DiskID@@@@8",
+"??_R1A@?0A@A@?$VectorClass@W4DiskID@@@@8"
+],
+"?$DynamicVectorClass@VWstring@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@VWstring@@@@8",
+"??_R1A@?0A@A@?$VectorClass@VWstring@@@@8"
+],
+"ShipLocomotionClass": [
+"ShipLocomotionClass",
+"LocomotionClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"ILocomotion",
+"1IUnknown",
+"IPiggyback",
+"1IUnknown"
+],
+"SideClass": [
+"SideClass",
+"AbstractTypeClass",
+"AbstractClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"IRTTITypeInfo",
+"1IUnknown",
+"INoticeSink",
+"INoticeSource"
+],
+"SBGadgetClass@SidebarClass": [
+"SidebarClass",
+"GadgetClass",
+"LinkClass"
+],
+"SelectClass@StripClass@SidebarClass": [
+"SidebarClass",
+"ControlClass",
+"GadgetClass",
+"LinkClass"
+],
+"SidebarClass": [
+"SidebarClass",
+"PowerClass",
+"RadarClass",
+"DisplayClass",
+"MapClass",
+"GScreenClass",
+"IGameMap",
+"IUnknown"
+],
+"?$DynamicVectorClass@PAVSlaveManagerClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVSlaveManagerClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVSlaveManagerClass@@@@8"
+],
+"?$VectorClass@PAVSlaveManagerClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVSlaveManagerClass@@@@8"
+],
+"SlaveManagerClass": [
+"SlaveManagerClass",
+"AbstractClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"IRTTITypeInfo",
+"1IUnknown",
+"INoticeSink",
+"INoticeSource"
+],
+"?$DynamicVectorClass@PAUSlaveControl@SlaveManagerClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAUSlaveControl@SlaveManagerClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAUSlaveControl@SlaveManagerClass@@@@8"
+],
+"?$VectorClass@PAUSlaveControl@SlaveManagerClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAUSlaveControl@SlaveManagerClass@@@@8"
+],
+"?$DynamicVectorClass@UUndoInfoStruct@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@UUndoInfoStruct@@@@8",
+"??_R1A@?0A@A@?$VectorClass@UUndoInfoStruct@@@@8"
+],
+"?$VectorClass@UUndoInfoStruct@@": [
+"??_R1A@?0A@A@?$VectorClass@UUndoInfoStruct@@@@8"
+],
+"SmudgeClass": [
+"SmudgeClass",
+"ObjectClass",
+"AbstractClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"IRTTITypeInfo",
+"1IUnknown",
+"INoticeSink",
+"INoticeSource"
+],
+"SmudgeTypeClass": [
+"SmudgeTypeClass",
+"ObjectTypeClass",
+"AbstractTypeClass",
+"AbstractClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"IRTTITypeInfo",
+"1IUnknown",
+"INoticeSink",
+"INoticeSource"
+],
+"?$DynamicVectorClass@PAVSpawnManagerClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVSpawnManagerClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVSpawnManagerClass@@@@8"
+],
+"?$VectorClass@PAVSpawnManagerClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVSpawnManagerClass@@@@8"
+],
+"SpawnManagerClass": [
+"SpawnManagerClass",
+"AbstractClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"IRTTITypeInfo",
+"1IUnknown",
+"INoticeSink",
+"INoticeSource"
+],
+"?$DynamicVectorClass@PAUSpawnControl@SpawnManagerClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAUSpawnControl@SpawnManagerClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAUSpawnControl@SpawnManagerClass@@@@8"
+],
+"?$VectorClass@PAUSpawnControl@SpawnManagerClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAUSpawnControl@SpawnManagerClass@@@@8"
+],
+"?$DynamicVectorClass@K": [
+"K",
+"K"
+],
+"?$VectorClass@K": [
+"K"
+],
+"?$TClassFactory@VCStreamClass@@": [
+"??_R1A@?0A@A@?$TClassFactory@VCStreamClass@@@@8",
+"IClassFactory",
+"IUnknown"
+],
+"?$TClassFactory@VWaveClass@@": [
+"??_R1A@?0A@A@?$TClassFactory@VWaveClass@@@@8",
+"IClassFactory",
+"IUnknown"
+],
+"?$TClassFactory@VTerrainTypeClass@@": [
+"??_R1A@?0A@A@?$TClassFactory@VTerrainTypeClass@@@@8",
+"IClassFactory",
+"IUnknown"
+],
+"?$TClassFactory@VTerrainClass@@": [
+"??_R1A@?0A@A@?$TClassFactory@VTerrainClass@@@@8",
+"IClassFactory",
+"IUnknown"
+],
+"?$TClassFactory@VSuperWeaponTypeClass@@": [
+"??_R1A@?0A@A@?$TClassFactory@VSuperWeaponTypeClass@@@@8",
+"IClassFactory",
+"IUnknown"
+],
+"?$TClassFactory@VSuperClass@@": [
+"??_R1A@?0A@A@?$TClassFactory@VSuperClass@@@@8",
+"IClassFactory",
+"IUnknown"
+],
+"?$TClassFactory@VTactical@@": [
+"??_R1A@?0A@A@?$TClassFactory@VTactical@@@@8",
+"IClassFactory",
+"IUnknown"
+],
+"?$TClassFactory@VCellClass@@": [
+"??_R1A@?0A@A@?$TClassFactory@VCellClass@@@@8",
+"IClassFactory",
+"IUnknown"
+],
+"?$TClassFactory@VEMPulseClass@@": [
+"??_R1A@?0A@A@?$TClassFactory@VEMPulseClass@@@@8",
+"IClassFactory",
+"IUnknown"
+],
+"?$TClassFactory@VLightSourceClass@@": [
+"??_R1A@?0A@A@?$TClassFactory@VLightSourceClass@@@@8",
+"IClassFactory",
+"IUnknown"
+],
+"?$TClassFactory@VSideClass@@": [
+"??_R1A@?0A@A@?$TClassFactory@VSideClass@@@@8",
+"IClassFactory",
+"IUnknown"
+],
+"?$TClassFactory@VTiberiumClass@@": [
+"??_R1A@?0A@A@?$TClassFactory@VTiberiumClass@@@@8",
+"IClassFactory",
+"IUnknown"
+],
+"?$TClassFactory@VTubeClass@@": [
+"??_R1A@?0A@A@?$TClassFactory@VTubeClass@@@@8",
+"IClassFactory",
+"IUnknown"
+],
+"?$TClassFactory@VCampaignClass@@": [
+"??_R1A@?0A@A@?$TClassFactory@VCampaignClass@@@@8",
+"IClassFactory",
+"IUnknown"
+],
+"?$TClassFactory@VBuildingLightClass@@": [
+"??_R1A@?0A@A@?$TClassFactory@VBuildingLightClass@@@@8",
+"IClassFactory",
+"IUnknown"
+],
+"?$TClassFactory@VWaypointPathClass@@": [
+"??_R1A@?0A@A@?$TClassFactory@VWaypointPathClass@@@@8",
+"IClassFactory",
+"IUnknown"
+],
+"?$TClassFactory@VTemporalClass@@": [
+"??_R1A@?0A@A@?$TClassFactory@VTemporalClass@@@@8",
+"IClassFactory",
+"IUnknown"
+],
+"?$TClassFactory@VAirstrikeClass@@": [
+"??_R1A@?0A@A@?$TClassFactory@VAirstrikeClass@@@@8",
+"IClassFactory",
+"IUnknown"
+],
+"?$TClassFactory@VSpawnManagerClass@@": [
+"??_R1A@?0A@A@?$TClassFactory@VSpawnManagerClass@@@@8",
+"IClassFactory",
+"IUnknown"
+],
+"?$TClassFactory@VSlaveManagerClass@@": [
+"??_R1A@?0A@A@?$TClassFactory@VSlaveManagerClass@@@@8",
+"IClassFactory",
+"IUnknown"
+],
+"?$TClassFactory@VCaptureManagerClass@@": [
+"??_R1A@?0A@A@?$TClassFactory@VCaptureManagerClass@@@@8",
+"IClassFactory",
+"IUnknown"
+],
+"?$TClassFactory@VDiskLaserClass@@": [
+"??_R1A@?0A@A@?$TClassFactory@VDiskLaserClass@@@@8",
+"IClassFactory",
+"IUnknown"
+],
+"?$TClassFactory@VParasiteClass@@": [
+"??_R1A@?0A@A@?$TClassFactory@VParasiteClass@@@@8",
+"IClassFactory",
+"IUnknown"
+],
+"?$TClassFactory@VBombClass@@": [
+"??_R1A@?0A@A@?$TClassFactory@VBombClass@@@@8",
+"IClassFactory",
+"IUnknown"
+],
+"?$TClassFactory@VRadSiteClass@@": [
+"??_R1A@?0A@A@?$TClassFactory@VRadSiteClass@@@@8",
+"IClassFactory",
+"IUnknown"
+],
+"?$TClassFactory@VTEventClass@@": [
+"??_R1A@?0A@A@?$TClassFactory@VTEventClass@@@@8",
+"IClassFactory",
+"IUnknown"
+],
+"?$TClassFactory@VVoxelAnimTypeClass@@": [
+"??_R1A@?0A@A@?$TClassFactory@VVoxelAnimTypeClass@@@@8",
+"IClassFactory",
+"IUnknown"
+],
+"?$TClassFactory@VVoxelAnimClass@@": [
+"??_R1A@?0A@A@?$TClassFactory@VVoxelAnimClass@@@@8",
+"IClassFactory",
+"IUnknown"
+],
+"?$TClassFactory@VTActionClass@@": [
+"??_R1A@?0A@A@?$TClassFactory@VTActionClass@@@@8",
+"IClassFactory",
+"IUnknown"
+],
+"?$TClassFactory@VTriggerClass@@": [
+"??_R1A@?0A@A@?$TClassFactory@VTriggerClass@@@@8",
+"IClassFactory",
+"IUnknown"
+],
+"?$TClassFactory@VTriggerTypeClass@@": [
+"??_R1A@?0A@A@?$TClassFactory@VTriggerTypeClass@@@@8",
+"IClassFactory",
+"IUnknown"
+],
+"?$TClassFactory@VScriptClass@@": [
+"??_R1A@?0A@A@?$TClassFactory@VScriptClass@@@@8",
+"IClassFactory",
+"IUnknown"
+],
+"?$TClassFactory@VScriptTypeClass@@": [
+"??_R1A@?0A@A@?$TClassFactory@VScriptTypeClass@@@@8",
+"IClassFactory",
+"IUnknown"
+],
+"?$TClassFactory@VTagClass@@": [
+"??_R1A@?0A@A@?$TClassFactory@VTagClass@@@@8",
+"IClassFactory",
+"IUnknown"
+],
+"?$TClassFactory@VTagTypeClass@@": [
+"??_R1A@?0A@A@?$TClassFactory@VTagTypeClass@@@@8",
+"IClassFactory",
+"IUnknown"
+],
+"?$TClassFactory@VTeamClass@@": [
+"??_R1A@?0A@A@?$TClassFactory@VTeamClass@@@@8",
+"IClassFactory",
+"IUnknown"
+],
+"?$TClassFactory@VTeamTypeClass@@": [
+"??_R1A@?0A@A@?$TClassFactory@VTeamTypeClass@@@@8",
+"IClassFactory",
+"IUnknown"
+],
+"?$TClassFactory@VTaskForceClass@@": [
+"??_R1A@?0A@A@?$TClassFactory@VTaskForceClass@@@@8",
+"IClassFactory",
+"IUnknown"
+],
+"?$TClassFactory@VUnitTypeClass@@": [
+"??_R1A@?0A@A@?$TClassFactory@VUnitTypeClass@@@@8",
+"IClassFactory",
+"IUnknown"
+],
+"?$TClassFactory@VBuildingTypeClass@@": [
+"??_R1A@?0A@A@?$TClassFactory@VBuildingTypeClass@@@@8",
+"IClassFactory",
+"IUnknown"
+],
+"?$TClassFactory@VAircraftTypeClass@@": [
+"??_R1A@?0A@A@?$TClassFactory@VAircraftTypeClass@@@@8",
+"IClassFactory",
+"IUnknown"
+],
+"?$TClassFactory@VInfantryTypeClass@@": [
+"??_R1A@?0A@A@?$TClassFactory@VInfantryTypeClass@@@@8",
+"IClassFactory",
+"IUnknown"
+],
+"?$TClassFactory@VBulletTypeClass@@": [
+"??_R1A@?0A@A@?$TClassFactory@VBulletTypeClass@@@@8",
+"IClassFactory",
+"IUnknown"
+],
+"?$TClassFactory@VIsometricTileTypeClass@@": [
+"??_R1A@?0A@A@?$TClassFactory@VIsometricTileTypeClass@@@@8",
+"IClassFactory",
+"IUnknown"
+],
+"?$TClassFactory@VOverlayTypeClass@@": [
+"??_R1A@?0A@A@?$TClassFactory@VOverlayTypeClass@@@@8",
+"IClassFactory",
+"IUnknown"
+],
+"?$TClassFactory@VSmudgeTypeClass@@": [
+"??_R1A@?0A@A@?$TClassFactory@VSmudgeTypeClass@@@@8",
+"IClassFactory",
+"IUnknown"
+],
+"?$TClassFactory@VUnitClass@@": [
+"??_R1A@?0A@A@?$TClassFactory@VUnitClass@@@@8",
+"IClassFactory",
+"IUnknown"
+],
+"?$TClassFactory@VBuildingClass@@": [
+"??_R1A@?0A@A@?$TClassFactory@VBuildingClass@@@@8",
+"IClassFactory",
+"IUnknown"
+],
+"?$TClassFactory@VAircraftClass@@": [
+"??_R1A@?0A@A@?$TClassFactory@VAircraftClass@@@@8",
+"IClassFactory",
+"IUnknown"
+],
+"?$TClassFactory@VInfantryClass@@": [
+"??_R1A@?0A@A@?$TClassFactory@VInfantryClass@@@@8",
+"IClassFactory",
+"IUnknown"
+],
+"?$TClassFactory@VAnimClass@@": [
+"??_R1A@?0A@A@?$TClassFactory@VAnimClass@@@@8",
+"IClassFactory",
+"IUnknown"
+],
+"?$TClassFactory@VAnimTypeClass@@": [
+"??_R1A@?0A@A@?$TClassFactory@VAnimTypeClass@@@@8",
+"IClassFactory",
+"IUnknown"
+],
+"?$TClassFactory@VHouseTypeClass@@": [
+"??_R1A@?0A@A@?$TClassFactory@VHouseTypeClass@@@@8",
+"IClassFactory",
+"IUnknown"
+],
+"?$TClassFactory@VHouseClass@@": [
+"??_R1A@?0A@A@?$TClassFactory@VHouseClass@@@@8",
+"IClassFactory",
+"IUnknown"
+],
+"?$TClassFactory@VDriveLocomotionClass@@": [
+"??_R1A@?0A@A@?$TClassFactory@VDriveLocomotionClass@@@@8",
+"IClassFactory",
+"IUnknown"
+],
+"?$TClassFactory@VJumpjetLocomotionClass@@": [
+"??_R1A@?0A@A@?$TClassFactory@VJumpjetLocomotionClass@@@@8",
+"IClassFactory",
+"IUnknown"
+],
+"?$TClassFactory@VHoverLocomotionClass@@": [
+"??_R1A@?0A@A@?$TClassFactory@VHoverLocomotionClass@@@@8",
+"IClassFactory",
+"IUnknown"
+],
+"?$TClassFactory@VRocketLocomotionClass@@": [
+"??_R1A@?0A@A@?$TClassFactory@VRocketLocomotionClass@@@@8",
+"IClassFactory",
+"IUnknown"
+],
+"?$TClassFactory@VTunnelLocomotionClass@@": [
+"??_R1A@?0A@A@?$TClassFactory@VTunnelLocomotionClass@@@@8",
+"IClassFactory",
+"IUnknown"
+],
+"?$TClassFactory@VWalkLocomotionClass@@": [
+"??_R1A@?0A@A@?$TClassFactory@VWalkLocomotionClass@@@@8",
+"IClassFactory",
+"IUnknown"
+],
+"?$TClassFactory@VDropPodLocomotionClass@@": [
+"??_R1A@?0A@A@?$TClassFactory@VDropPodLocomotionClass@@@@8",
+"IClassFactory",
+"IUnknown"
+],
+"?$TClassFactory@VFlyLocomotionClass@@": [
+"??_R1A@?0A@A@?$TClassFactory@VFlyLocomotionClass@@@@8",
+"IClassFactory",
+"IUnknown"
+],
+"?$TClassFactory@VTeleportLocomotionClass@@": [
+"??_R1A@?0A@A@?$TClassFactory@VTeleportLocomotionClass@@@@8",
+"IClassFactory",
+"IUnknown"
+],
+"?$TClassFactory@VMechLocomotionClass@@": [
+"??_R1A@?0A@A@?$TClassFactory@VMechLocomotionClass@@@@8",
+"IClassFactory",
+"IUnknown"
+],
+"?$TClassFactory@VShipLocomotionClass@@": [
+"??_R1A@?0A@A@?$TClassFactory@VShipLocomotionClass@@@@8",
+"IClassFactory",
+"IUnknown"
+],
+"?$TClassFactory@VBulletClass@@": [
+"??_R1A@?0A@A@?$TClassFactory@VBulletClass@@@@8",
+"IClassFactory",
+"IUnknown"
+],
+"?$TClassFactory@VFactoryClass@@": [
+"??_R1A@?0A@A@?$TClassFactory@VFactoryClass@@@@8",
+"IClassFactory",
+"IUnknown"
+],
+"?$TClassFactory@VWarheadTypeClass@@": [
+"??_R1A@?0A@A@?$TClassFactory@VWarheadTypeClass@@@@8",
+"IClassFactory",
+"IUnknown"
+],
+"?$TClassFactory@VWeaponTypeClass@@": [
+"??_R1A@?0A@A@?$TClassFactory@VWeaponTypeClass@@@@8",
+"IClassFactory",
+"IUnknown"
+],
+"?$TClassFactory@VParticleClass@@": [
+"??_R1A@?0A@A@?$TClassFactory@VParticleClass@@@@8",
+"IClassFactory",
+"IUnknown"
+],
+"?$TClassFactory@VParticleTypeClass@@": [
+"??_R1A@?0A@A@?$TClassFactory@VParticleTypeClass@@@@8",
+"IClassFactory",
+"IUnknown"
+],
+"?$TClassFactory@VParticleSystemClass@@": [
+"??_R1A@?0A@A@?$TClassFactory@VParticleSystemClass@@@@8",
+"IClassFactory",
+"IUnknown"
+],
+"?$TClassFactory@VParticleSystemTypeClass@@": [
+"??_R1A@?0A@A@?$TClassFactory@VParticleSystemTypeClass@@@@8",
+"IClassFactory",
+"IUnknown"
+],
+"?$TClassFactory@VAITriggerTypeClass@@": [
+"??_R1A@?0A@A@?$TClassFactory@VAITriggerTypeClass@@@@8",
+"IClassFactory",
+"IUnknown"
+],
+"?$TClassFactory@VNeuronClass@@": [
+"??_R1A@?0A@A@?$TClassFactory@VNeuronClass@@@@8",
+"IClassFactory",
+"IUnknown"
+],
+"?$TClassFactory@VFoggedObjectClass@@": [
+"??_R1A@?0A@A@?$TClassFactory@VFoggedObjectClass@@@@8",
+"IClassFactory",
+"IUnknown"
+],
+"?$TClassFactory@VAlphaShapeClass@@": [
+"??_R1A@?0A@A@?$TClassFactory@VAlphaShapeClass@@@@8",
+"IClassFactory",
+"IUnknown"
+],
+"StaticButtonClass": [
+"StaticButtonClass",
+"GadgetClass",
+"LinkClass"
+],
+"?$rc_ptr@VPlayerProfile@@": [
+"??_R1A@?0A@A@?$rc_ptr@VPlayerProfile@@@@8",
+"rc_ptr_base"
+],
+"?$DynamicVectorClass@PAVSubTitle@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVSubTitle@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVSubTitle@@@@8"
+],
+"?$VectorClass@PAVSubTitle@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVSubTitle@@@@8"
+],
+"SuperClass": [
+"SuperClass",
+"AbstractClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"IRTTITypeInfo",
+"1IUnknown",
+"INoticeSink",
+"INoticeSource"
+],
+"SuperWeaponTypeClass": [
+"SuperWeaponTypeClass",
+"AbstractTypeClass",
+"AbstractClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"IRTTITypeInfo",
+"1IUnknown",
+"INoticeSink",
+"INoticeSource"
+],
+"SwizzleManagerClass": [
+"SwizzleManagerClass",
+"ISwizzle",
+"IUnknown"
+],
+"?$DynamicVectorClass@VSwizzlePointerClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@VSwizzlePointerClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@VSwizzlePointerClass@@@@8"
+],
+"?$VectorClass@VSwizzlePointerClass@@": [
+"??_R1A@?0A@A@?$VectorClass@VSwizzlePointerClass@@@@8"
+],
+"?$DynamicVectorClass@UDirtyAreaStruct@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@UDirtyAreaStruct@@@@8",
+"??_R1A@?0A@A@?$VectorClass@UDirtyAreaStruct@@@@8"
+],
+"?$VectorClass@UDirtyAreaStruct@@": [
+"??_R1A@?0A@A@?$VectorClass@UDirtyAreaStruct@@@@8"
+],
+"?$DynamicVectorClass@PAVShadowControlClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVShadowControlClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVShadowControlClass@@@@8"
+],
+"?$VectorClass@PAVShadowControlClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVShadowControlClass@@@@8"
+],
+"Tactical": [
+"Tactical",
+"AbstractClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"IRTTITypeInfo",
+"1IUnknown",
+"INoticeSink",
+"INoticeSource"
+],
+"?$DynamicVectorClass@PAVTActionClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVTActionClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVTActionClass@@@@8"
+],
+"?$VectorClass@PAVTActionClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVTActionClass@@@@8"
+],
+"TActionClass": [
+"TActionClass",
+"AbstractClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"IRTTITypeInfo",
+"1IUnknown",
+"INoticeSink",
+"INoticeSource"
+],
+"TagClass": [
+"TagClass",
+"AbstractClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"IRTTITypeInfo",
+"1IUnknown",
+"INoticeSink",
+"INoticeSource"
+],
+"?$DynamicVectorClass@PAVTagTypeClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVTagTypeClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVTagTypeClass@@@@8"
+],
+"?$VectorClass@PAVTagTypeClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVTagTypeClass@@@@8"
+],
+"TagTypeClass": [
+"TagTypeClass",
+"AbstractTypeClass",
+"AbstractClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"IRTTITypeInfo",
+"1IUnknown",
+"INoticeSink",
+"INoticeSource"
+],
+"TaskForceClass": [
+"TaskForceClass",
+"AbstractTypeClass",
+"AbstractClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"IRTTITypeInfo",
+"1IUnknown",
+"INoticeSink",
+"INoticeSource"
+],
+"TeamClass": [
+"TeamClass",
+"AbstractClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"IRTTITypeInfo",
+"1IUnknown",
+"INoticeSink",
+"INoticeSource"
+],
+"TeamTypeClass": [
+"TeamTypeClass",
+"AbstractTypeClass",
+"AbstractClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"IRTTITypeInfo",
+"1IUnknown",
+"INoticeSink",
+"INoticeSource"
+],
+"?$VectorClass@V?$DistributionObject@PAVAITriggerTypeClass@@@?$DiscreteDistributionClass@VAITriggerTypeClass@@@@": [
+"??_R1A@?0A@A@?$VectorClass@V?$DistributionObject@PAVAITriggerTypeClass@@@?$DiscreteDistributionClass@VAITriggerTypeClass@@@@@@8"
+],
+"?$DynamicVectorClass@V?$DistributionObject@PAVAITriggerTypeClass@@@?$DiscreteDistributionClass@VAITriggerTypeClass@@@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@V?$DistributionObject@PAVAITriggerTypeClass@@@?$DiscreteDistributionClass@VAITriggerTypeClass@@@@@@8",
+"??_R1A@?0A@A@?$VectorClass@V?$DistributionObject@PAVAITriggerTypeClass@@@?$DiscreteDistributionClass@VAITriggerTypeClass@@@@@@8"
+],
+"TechnoClass": [
+"TechnoClass",
+"RadioClass",
+"MissionClass",
+"ObjectClass",
+"AbstractClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"IRTTITypeInfo",
+"1IUnknown",
+"INoticeSink",
+"INoticeSource",
+"FlasherClass",
+"StageClass"
+],
+"?$TypeList@PBVParticleSystemTypeClass@@": [
+"??_R1A@?0A@A@?$TypeList@PBVParticleSystemTypeClass@@@@8",
+"??_R1A@?0A@A@?$DynamicVectorClass@PBVParticleSystemTypeClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PBVParticleSystemTypeClass@@@@8"
+],
+"TechnoTypeClass": [
+"TechnoTypeClass",
+"ObjectTypeClass",
+"AbstractTypeClass",
+"AbstractClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"IRTTITypeInfo",
+"1IUnknown",
+"INoticeSink",
+"INoticeSource"
+],
+"TeleportLocomotionClass": [
+"TeleportLocomotionClass",
+"LocomotionClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"ILocomotion",
+"1IUnknown",
+"IPiggyback",
+"1IUnknown"
+],
+"?$DynamicVectorClass@PAVTemporalClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVTemporalClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVTemporalClass@@@@8"
+],
+"?$VectorClass@PAVTemporalClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVTemporalClass@@@@8"
+],
+"TemporalClass": [
+"TemporalClass",
+"AbstractClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"IRTTITypeInfo",
+"1IUnknown",
+"INoticeSink",
+"INoticeSource"
+],
+"TerrainClass": [
+"TerrainClass",
+"ObjectClass",
+"AbstractClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"IRTTITypeInfo",
+"1IUnknown",
+"INoticeSink",
+"INoticeSource",
+"StageClass"
+],
+"TerrainTypeClass": [
+"TerrainTypeClass",
+"ObjectTypeClass",
+"AbstractTypeClass",
+"AbstractClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"IRTTITypeInfo",
+"1IUnknown",
+"INoticeSink",
+"INoticeSource"
+],
+"?$DynamicVectorClass@PAVTEventClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVTEventClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVTEventClass@@@@8"
+],
+"?$VectorClass@PAVTEventClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVTEventClass@@@@8"
+],
+"TEventClass": [
+"TEventClass",
+"AbstractClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"IRTTITypeInfo",
+"1IUnknown",
+"INoticeSink",
+"INoticeSource"
+],
+"TextButtonClass": [
+"TextButtonClass",
+"ToggleClass",
+"ControlClass",
+"GadgetClass",
+"LinkClass"
+],
+"?$DynamicVectorClass@PAUThemeControl@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAUThemeControl@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAUThemeControl@@@@8"
+],
+"?$DynamicVectorClass@PAVTiberiumClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVTiberiumClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVTiberiumClass@@@@8"
+],
+"?$VectorClass@PAVTiberiumClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVTiberiumClass@@@@8"
+],
+"TiberiumClass": [
+"TiberiumClass",
+"AbstractTypeClass",
+"AbstractClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"IRTTITypeInfo",
+"1IUnknown",
+"INoticeSink",
+"INoticeSource"
+],
+"?$DynamicVectorClass@PBVToolTip@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PBVToolTip@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PBVToolTip@@@@8"
+],
+"ToolTipManager": [
+"ToolTipManager"
+],
+"?$VectorClass@PBVToolTip@@": [
+"??_R1A@?0A@A@?$VectorClass@PBVToolTip@@@@8"
+],
+"TriggerClass": [
+"TriggerClass",
+"AbstractClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"IRTTITypeInfo",
+"1IUnknown",
+"INoticeSink",
+"INoticeSource"
+],
+"TriggerTypeClass": [
+"TriggerTypeClass",
+"AbstractTypeClass",
+"AbstractClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"IRTTITypeInfo",
+"1IUnknown",
+"INoticeSink",
+"INoticeSource"
+],
+"TubeClass": [
+"TubeClass",
+"AbstractClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"IRTTITypeInfo",
+"1IUnknown",
+"INoticeSink",
+"INoticeSource"
+],
+"TunnelLocomotionClass": [
+"TunnelLocomotionClass",
+"LocomotionClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"ILocomotion",
+"1IUnknown"
+],
+"TextLabelClass": [
+"TextLabelClass",
+"GadgetClass",
+"LinkClass"
+],
+"UnitClass": [
+"UnitClass",
+"FootClass",
+"TechnoClass",
+"RadioClass",
+"MissionClass",
+"ObjectClass",
+"AbstractClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"IRTTITypeInfo",
+"1IUnknown",
+"INoticeSink",
+"INoticeSource",
+"FlasherClass",
+"StageClass"
+],
+"UnitTypeClass": [
+"UnitTypeClass",
+"TechnoTypeClass",
+"ObjectTypeClass",
+"AbstractTypeClass",
+"AbstractClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"IRTTITypeInfo",
+"1IUnknown",
+"INoticeSink",
+"INoticeSource"
+],
+"VoxelAnimClass": [
+"VoxelAnimClass",
+"ObjectClass",
+"AbstractClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"IRTTITypeInfo",
+"1IUnknown",
+"INoticeSink",
+"INoticeSource",
+"BounceClass"
+],
+"VoxelAnimTypeClass": [
+"VoxelAnimTypeClass",
+"ObjectTypeClass",
+"AbstractTypeClass",
+"AbstractClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"IRTTITypeInfo",
+"1IUnknown",
+"INoticeSink",
+"INoticeSource"
+],
+"?$VectorClass@E": [
+"E"
+],
+"?$DynamicVectorClass@PAVVeinholeMonsterClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVVeinholeMonsterClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVVeinholeMonsterClass@@@@8"
+],
+"?$VectorClass@PAVVeinholeMonsterClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVVeinholeMonsterClass@@@@8"
+],
+"VeinholeMonsterClass": [
+"VeinholeMonsterClass",
+"ObjectClass",
+"AbstractClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"IRTTITypeInfo",
+"1IUnknown",
+"INoticeSink",
+"INoticeSource"
+],
+"?$DynamicVectorClass@PAVVocClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVVocClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVVocClass@@@@8"
+],
+"?$VectorClass@PAVVocClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVVocClass@@@@8"
+],
+"?$DynamicVectorClass@PAVVoxClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVVoxClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVVoxClass@@@@8"
+],
+"?$VectorClass@PAVVoxClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVVoxClass@@@@8"
+],
+"?$DynamicVectorClass@PAVMovieHandle@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVMovieHandle@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVMovieHandle@@@@8"
+],
+"?$VectorClass@PAVMovieHandle@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVMovieHandle@@@@8"
+],
+"WalkLocomotionClass": [
+"WalkLocomotionClass",
+"LocomotionClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"ILocomotion",
+"1IUnknown",
+"IPiggyback",
+"1IUnknown"
+],
+"WarheadTypeClass": [
+"WarheadTypeClass",
+"AbstractTypeClass",
+"AbstractClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"IRTTITypeInfo",
+"1IUnknown",
+"INoticeSink",
+"INoticeSource"
+],
+"WaveClass": [
+"WaveClass",
+"ObjectClass",
+"AbstractClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"IRTTITypeInfo",
+"1IUnknown",
+"INoticeSink",
+"INoticeSource"
+],
+"?$DynamicVectorClass@PAVWaypointPathClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAVWaypointPathClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAVWaypointPathClass@@@@8"
+],
+"?$VectorClass@PAVWaypointPathClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAVWaypointPathClass@@@@8"
+],
+"?$DynamicVectorClass@VWaypointClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@VWaypointClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@VWaypointClass@@@@8"
+],
+"WaypointPathClass": [
+"WaypointPathClass",
+"AbstractClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"IRTTITypeInfo",
+"1IUnknown",
+"INoticeSink",
+"INoticeSource"
+],
+"?$VectorClass@VWaypointClass@@": [
+"??_R1A@?0A@A@?$VectorClass@VWaypointClass@@@@8"
+],
+"?$rc_ptr@VCampaign@WorldDominationTour@@": [
+"??_R1A@?0A@A@?$rc_ptr@VCampaign@WorldDominationTour@@@@8",
+"rc_ptr_base"
+],
+"?$DynamicVectorClass@V?$rc_ptr@VConflict@WorldDominationTour@@@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@V?$rc_ptr@VConflict@WorldDominationTour@@@@@@8",
+"??_R1A@?0A@A@?$VectorClass@V?$rc_ptr@VConflict@WorldDominationTour@@@@@@8"
+],
+"?$rc_ptr@VConflict@WorldDominationTour@@": [
+"??_R1A@?0A@A@?$rc_ptr@VConflict@WorldDominationTour@@@@8",
+"rc_ptr_base"
+],
+"Campaign@WorldDominationTour": [
+"WorldDominationTour",
+"ReferenceCounted"
+],
+"?$rc_ptr@VCampaignProperties@WorldDominationTour@@": [
+"??_R1A@?0A@A@?$rc_ptr@VCampaignProperties@WorldDominationTour@@@@8",
+"rc_ptr_base"
+],
+"?$rc_ptr@VState@WorldDominationTour@@": [
+"??_R1A@?0A@A@?$rc_ptr@VState@WorldDominationTour@@@@8",
+"rc_ptr_base"
+],
+"?$VectorClass@V?$rc_ptr@VConflict@WorldDominationTour@@@@": [
+"??_R1A@?0A@A@?$VectorClass@V?$rc_ptr@VConflict@WorldDominationTour@@@@@@8"
+],
+"?$rc_ptr@VHistory@WorldDominationTour@@": [
+"??_R1A@?0A@A@?$rc_ptr@VHistory@WorldDominationTour@@@@8",
+"rc_ptr_base"
+],
+"?$VectorCursor@V?$rc_ptr@VConflict@WorldDominationTour@@@@V?$DynamicVectorClass@V?$rc_ptr@VConflict@WorldDominationTour@@@@@@": [
+"??_R1A@?0A@A@?$VectorCursor@V?$rc_ptr@VConflict@WorldDominationTour@@@@V?$DynamicVectorClass@V?$rc_ptr@VConflict@WorldDominationTour@@@@@@@@8"
+],
+"Conflict@WorldDominationTour": [
+"WorldDominationTour",
+"ReferenceCounted"
+],
+"?$DynamicVectorClass@V?$rc_ptr@VGameOption@WorldDominationTour@@@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@V?$rc_ptr@VGameOption@WorldDominationTour@@@@@@8",
+"??_R1A@?0A@A@?$VectorClass@V?$rc_ptr@VGameOption@WorldDominationTour@@@@@@8"
+],
+"?$VectorClass@V?$rc_ptr@VGameOption@WorldDominationTour@@@@": [
+"??_R1A@?0A@A@?$VectorClass@V?$rc_ptr@VGameOption@WorldDominationTour@@@@@@8"
+],
+"?$rc_ptr@VFlagGameOption@WorldDominationTour@@": [
+"??_R1A@?0A@A@?$rc_ptr@VFlagGameOption@WorldDominationTour@@@@8",
+"rc_ptr_base"
+],
+"?$rc_ptr@VGameOption@WorldDominationTour@@": [
+"??_R1A@?0A@A@?$rc_ptr@VGameOption@WorldDominationTour@@@@8",
+"rc_ptr_base"
+],
+"?$rc_ptr@V?$ValueGameOption@E@WorldDominationTour@@": [
+"??_R1A@?0A@A@?$rc_ptr@V?$ValueGameOption@E@WorldDominationTour@@@@8",
+"rc_ptr_base"
+],
+"?$VectorCursor@V?$rc_ptr@VGameOption@WorldDominationTour@@@@V?$DynamicVectorClass@V?$rc_ptr@VGameOption@WorldDominationTour@@@@@@": [
+"??_R1A@?0A@A@?$VectorCursor@V?$rc_ptr@VGameOption@WorldDominationTour@@@@V?$DynamicVectorClass@V?$rc_ptr@VGameOption@WorldDominationTour@@@@@@@@8"
+],
+"?$rc_ptr@VMapSizeGameOption@WorldDominationTour@@": [
+"??_R1A@?0A@A@?$rc_ptr@VMapSizeGameOption@WorldDominationTour@@@@8",
+"rc_ptr_base"
+],
+"GameOption@WorldDominationTour": [
+"WorldDominationTour",
+"ReferenceCounted"
+],
+"?$ValueGameOption@E@WorldDominationTour": [
+"WorldDominationTour",
+"WorldDominationTour",
+"ReferenceCounted"
+],
+"FlagGameOption@WorldDominationTour": [
+"WorldDominationTour",
+"WorldDominationTour",
+"ReferenceCounted"
+],
+"MapSizeGameOption@WorldDominationTour": [
+"WorldDominationTour",
+"WorldDominationTour",
+"ReferenceCounted"
+],
+"History@WorldDominationTour": [
+"WorldDominationTour",
+"ReferenceCounted"
+],
+"?$rc_ptr@VWDTState@@": [
+"??_R1A@?0A@A@?$rc_ptr@VWDTState@@@@8",
+"rc_ptr_base"
+],
+"MSFrameAnim": [
+"MSFrameAnim",
+"MSAnim"
+],
+"?$rc_ptr@VMap@WorldDominationTour@@": [
+"??_R1A@?0A@A@?$rc_ptr@VMap@WorldDominationTour@@@@8",
+"rc_ptr_base"
+],
+"?$DynamicVectorClass@V?$rc_ptr@VTerritory@WorldDominationTour@@@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@V?$rc_ptr@VTerritory@WorldDominationTour@@@@@@8",
+"??_R1A@?0A@A@?$VectorClass@V?$rc_ptr@VTerritory@WorldDominationTour@@@@@@8"
+],
+"Map@WorldDominationTour": [
+"WorldDominationTour",
+"ReferenceCounted"
+],
+"?$DynamicVectorClass@PAUAnimationPalette@Map@WorldDominationTour@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAUAnimationPalette@Map@WorldDominationTour@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAUAnimationPalette@Map@WorldDominationTour@@@@8"
+],
+"?$VectorClass@V?$rc_ptr@VTerritory@WorldDominationTour@@@@": [
+"??_R1A@?0A@A@?$VectorClass@V?$rc_ptr@VTerritory@WorldDominationTour@@@@@@8"
+],
+"?$VectorClass@PAUAnimationPalette@Map@WorldDominationTour@@": [
+"??_R1A@?0A@A@?$VectorClass@PAUAnimationPalette@Map@WorldDominationTour@@@@8"
+],
+"?$rc_ptr@VTerritory@WorldDominationTour@@": [
+"??_R1A@?0A@A@?$rc_ptr@VTerritory@WorldDominationTour@@@@8",
+"rc_ptr_base"
+],
+"?$VectorCursor@V?$TRect@H@@V?$VectorClass@V?$TRect@H@@@@": [
+"??_R1A@?0A@A@?$VectorCursor@V?$TRect@H@@V?$VectorClass@V?$TRect@H@@@@@@8"
+],
+"?$VectorClass@VCentroid@WorldDominationTour@@": [
+"??_R1A@?0A@A@?$VectorClass@VCentroid@WorldDominationTour@@@@8"
+],
+"WDTTerritory": [
+"WDTTerritory",
+"ReferenceCounted"
+],
+"?$VectorClass@V?$rc_ptr@VWDTTerritory@@@@": [
+"??_R1A@?0A@A@?$VectorClass@V?$rc_ptr@VWDTTerritory@@@@@@8"
+],
+"?$DynamicVectorClass@V?$rc_ptr@VWDTTerritory@@@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@V?$rc_ptr@VWDTTerritory@@@@@@8",
+"??_R1A@?0A@A@?$VectorClass@V?$rc_ptr@VWDTTerritory@@@@@@8"
+],
+"WDTState": [
+"WDTState",
+"ReferenceCounted"
+],
+"CampaignProperties@WorldDominationTour": [
+"WorldDominationTour",
+"ReferenceCounted"
+],
+"Selection@WorldDominationTour": [
+"WorldDominationTour",
+"MSEngine"
+],
+"?$VectorCursor@PAVMSSfxEntry@@V?$DynamicVectorClass@PAVMSSfxEntry@@@@": [
+"??_R1A@?0A@A@?$VectorCursor@PAVMSSfxEntry@@V?$DynamicVectorClass@PAVMSSfxEntry@@@@@@8"
+],
+"?$VectorCursor@PAVMSAnim@@V?$DynamicVectorClass@PAVMSAnim@@@@": [
+"??_R1A@?0A@A@?$VectorCursor@PAVMSAnim@@V?$DynamicVectorClass@PAVMSAnim@@@@@@8"
+],
+"?$VectorCursor@V?$rc_ptr@VTerritory@WorldDominationTour@@@@V?$DynamicVectorClass@V?$rc_ptr@VTerritory@WorldDominationTour@@@@@@": [
+"??_R1A@?0A@A@?$VectorCursor@V?$rc_ptr@VTerritory@WorldDominationTour@@@@V?$DynamicVectorClass@V?$rc_ptr@VTerritory@WorldDominationTour@@@@@@@@8"
+],
+"State@WorldDominationTour": [
+"WorldDominationTour",
+"ReferenceCounted"
+],
+"Territory@WorldDominationTour": [
+"WorldDominationTour",
+"ReferenceCounted"
+],
+"Anim@Voices@WorldDominationTour": [
+"WorldDominationTour",
+"MSAnim"
+],
+"WeaponTypeClass": [
+"WeaponTypeClass",
+"AbstractTypeClass",
+"AbstractClass",
+"IPersistStream",
+"IPersist",
+"1IUnknown",
+"IRTTITypeInfo",
+"1IUnknown",
+"INoticeSink",
+"INoticeSource"
+],
+"WebBrowser": [
+"WebBrowser",
+"IWOLBrowserEvent",
+"IUnknown"
+],
+"WinModemClass": [
+"WinModemClass"
+],
+"CCToolTip": [
+"CCToolTip",
+"ToolTipManager"
+],
+"PlayerProfile": [
+"PlayerProfile",
+"ReferenceCounted"
+],
+"SimpleWonlineDialogControl": [
+"SimpleWonlineDialogControl",
+"OwnerDraw",
+"OwnerDraw"
+],
+"?$CComObject@VCNetUtilEventSink@@@ATL": [
+"ATL",
+"CNetUtilEventSink",
+"ATL",
+"ATL",
+"WOL",
+"IUnknown"
+],
+"?$CComObject@VCChatEventSink@@@ATL": [
+"ATL",
+"CChatEventSink",
+"ATL",
+"ATL",
+"WOL",
+"IUnknown"
+],
+"CNetUtilEventSink": [
+"CNetUtilEventSink",
+"ATL",
+"ATL",
+"WOL",
+"IUnknown"
+],
+"CChatEventSink": [
+"CChatEventSink",
+"ATL",
+"ATL",
+"WOL",
+"IUnknown"
+],
+"WonlineStringDialogControl": [
+"WonlineStringDialogControl",
+"SimpleWonlineDialogControl",
+"OwnerDraw",
+"OwnerDraw"
+],
+"CreateGameDialogControl": [
+"CreateGameDialogControl",
+"WonlineStringDialogControl",
+"SimpleWonlineDialogControl",
+"OwnerDraw",
+"OwnerDraw"
+],
+"?$VectorClass@PAUtConnInfoStruct@@": [
+"??_R1A@?0A@A@?$VectorClass@PAUtConnInfoStruct@@@@8"
+],
+"?$DynamicVectorClass@PAUtConnInfoStruct@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAUtConnInfoStruct@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAUtConnInfoStruct@@@@8"
+],
+"?$CComObject@VCDownloadEventSink@@@ATL": [
+"ATL",
+"CDownloadEventSink",
+"ATL",
+"ATL",
+"WOL",
+"IUnknown"
+],
+"FactionSelectDialogControl@WorldDominationTour": [
+"WorldDominationTour",
+"OwnerDraw",
+"OwnerDraw"
+],
+"IPXInterfaceClass": [
+"IPXInterfaceClass",
+"WinsockInterfaceClass"
+],
+"?$DynamicVectorClass@PAUWinsockBufferType@WinsockInterfaceClass@@": [
+"??_R1A@?0A@A@?$DynamicVectorClass@PAUWinsockBufferType@WinsockInterfaceClass@@@@8",
+"??_R1A@?0A@A@?$VectorClass@PAUWinsockBufferType@WinsockInterfaceClass@@@@8"
+],
+"WinsockInterfaceClass": [
+"WinsockInterfaceClass"
+],
+"?$VectorClass@PAUWinsockBufferType@WinsockInterfaceClass@@": [
+"??_R1A@?0A@A@?$VectorClass@PAUWinsockBufferType@WinsockInterfaceClass@@@@8"
+],
+"?$DynamicVectorClass@PAE": [
+"PAE",
+"PAE"
+],
+"UDPInterfaceClass": [
+"UDPInterfaceClass",
+"WinsockInterfaceClass"
+],
+"?$VectorClass@PAE": [
+"PAE"
+],
+"WWMouseClass": [
+"WWMouseClass",
+"Mouse"
+],
+"Mouse": [
+"Mouse"
+],
+"?$BlitTrans@G": [
+"G",
+"Blitter"
+],
+"?$BlitTrans@E": [
+"E",
+"Blitter"
+],
+"?$BlitPlain@G": [
+"G",
+"Blitter"
+],
+"?$BlitPlain@E": [
+"E",
+"Blitter"
+],
+"type_info": [
+"type_info"
+],
+"__non_rtti_object": [
+"__non_rtti_object",
+"bad_typeid",
+"exception"
+],
+"bad_typeid": [
+"bad_typeid",
+"exception"
+],
+"bad_cast": [
+"bad_cast",
+"exception"
+],
+"exception": [
+"exception"
+],
+"_com_error": [
+"_com_error"
+]
+}
