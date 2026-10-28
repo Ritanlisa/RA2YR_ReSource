@@ -9890,8 +9890,8 @@ int HouseClass::AIBuildBase() {
     while ( v76 ); /*0x50a8d3*/
   }
   LayerClass::CellIteratorReset((LayerClass *)&DataGlobal_87F7E8); /*0x50a8de*/
-  v23 = LayerClass::CellIteratorNext((LayerClass *)&DataGlobal_87F7E8); /*0x50a8e8*/
-  for ( k = 0; v23; v23 = LayerClass::CellIteratorNext((LayerClass *)&DataGlobal_87F7E8) ) /*0x50a8f1*/
+  v23 = ((LayerClass *)&DataGlobal_87F7E8)->CellIteratorNext(); /*0x50a8e8*/
+  for ( k = 0; v23; v23 = ((LayerClass *)&DataGlobal_87F7E8)->CellIteratorNext() ) /*0x50a8f1*/
   {
     if ( *(unsigned int *)(v23 + 80) == this->relatedTagsCount ) /*0x50a8fb*/
     {

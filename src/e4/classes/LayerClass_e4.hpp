@@ -35,7 +35,7 @@ struct LayerClass {
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     static unsigned int Load(int* p0);  // x4:signals@0x551b90
-    int CellIteratorNext(void *a1 = 0);
+    int CellIteratorNext();
     int CellIteratorReset();
     int CoordinatesLegal(int16_t *aP1);
     int IsWithinUsableArea(void *aP1, char aP2, void *a3 = 0);

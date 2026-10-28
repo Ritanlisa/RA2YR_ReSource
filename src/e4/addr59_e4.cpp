@@ -439,9 +439,9 @@ ObjectClass * * RandomMap_DistributeTerrain()
   LOWORD(v5) = *(unsigned short *)(dword_87F800[v4] + 2 * v3); /*0x594bc1*/
   Map_Helper_58CE90(v34); /*0x594bc5*/
   LayerClass::CellIteratorReset((LayerClass *)&dword_87F7E8); /*0x594bcf*/
-  for ( i = LayerClass::CellIteratorNext((LayerClass *)&dword_87F7E8); /*0x594be2*/
+  for ( i = ((LayerClass *)&dword_87F7E8)->CellIteratorNext(); /*0x594be2*/
         i;
-        i = LayerClass::CellIteratorNext((LayerClass *)&dword_87F7E8) )
+        i = ((LayerClass *)&dword_87F7E8)->CellIteratorNext() )
   {
     if ( (unsigned __int8)MapSeed::IsCellInBounds((MapSeed *)(i + 36)) /*0x594c2b*/
       && *(unsigned int *)&dword_ABED10[40 * *(__int16 *)(i + 36) + 28 + 40 * g_MapCellWidth * *(__int16 *)(i + 38)] == -1
@@ -1149,7 +1149,7 @@ int sub_59C630()
   __int64 v12; // [esp+18h] [ebp-8h]
 
   LayerClass::CellIteratorReset(&dword_87F7E8); /*0x59c63a*/
-  result = LayerClass::CellIteratorNext(&dword_87F7E8); /*0x59c644*/
+  result = ((LayerClass *)&dword_87F7E8)->CellIteratorNext(); /*0x59c644*/
   for ( i = result; result; i = result ) /*0x59c64f*/
   {
     if ( *(unsigned int *)(i + 56) == g_CellPassabilityLUT && !*(unsigned char *)(i + 282) ) /*0x59c668*/
@@ -1202,7 +1202,7 @@ LABEL_25:
         PlaceMapSeedClassBuildings(v7 + g_CellPassabilityLUT, (unsigned short *)(i + 36), v8, -1); /*0x59c795*/
       }
     }
-    result = LayerClass::CellIteratorNext(&dword_87F7E8); /*0x59c7e2*/
+    result = ((LayerClass *)&dword_87F7E8)->CellIteratorNext(); /*0x59c7e2*/
   }
   return result; /*0x59c7f3*/
 

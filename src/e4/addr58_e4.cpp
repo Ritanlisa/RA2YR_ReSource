@@ -888,9 +888,9 @@ ScenarioClass * * ComputeMapCameraBounds()
     v12 = 10000; /*0x58b929*/
     v25 = 10000; /*0x58b933*/
     v13 = 0; /*0x58b937*/
-    for ( j = (__int16 *)LayerClass::CellIteratorNext((LayerClass *)&dword_87F7E8); /*0x58b942*/
+    for ( j = (__int16 *)((LayerClass *)&dword_87F7E8)->CellIteratorNext(); /*0x58b942*/
           j;
-          j = (__int16 *)LayerClass::CellIteratorNext((LayerClass *)&dword_87F7E8) )
+          j = (__int16 *)((LayerClass *)&dword_87F7E8)->CellIteratorNext() )
     {
       if ( (unsigned __int8)LayerClass::IsWithinUsableArea((LayerClass *)&dword_87F7E8, j + 18, 1) ) /*0x58b953*/
       {

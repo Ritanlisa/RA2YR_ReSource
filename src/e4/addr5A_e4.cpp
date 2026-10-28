@@ -500,7 +500,7 @@ int GenerateTerrainHeightMapInternal()
   unsigned __int16 *v18; // [esp+Ch] [ebp-4h]
 
   LayerClass::CellIteratorReset((LayerClass *)&dword_87F7E8); /*0x5a33f9*/
-  result = (CellClass *)LayerClass::CellIteratorNext((LayerClass *)&dword_87F7E8); /*0x5a3403*/
+  result = (CellClass *)((LayerClass *)&dword_87F7E8)->CellIteratorNext(); /*0x5a3403*/
   for ( i = result; result; i = result ) /*0x5a340c*/
   {
     if ( (unsigned __int8)CellClass::IsTerrainType(i) ) /*0x5a3417*/
@@ -560,7 +560,7 @@ int GenerateTerrainHeightMapInternal()
       }
     }
 LABEL_24:
-    result = (CellClass *)LayerClass::CellIteratorNext((LayerClass *)&dword_87F7E8); /*0x5a35cf*/
+    result = (CellClass *)((LayerClass *)&dword_87F7E8)->CellIteratorNext(); /*0x5a35cf*/
   }
   return result; /*0x5a35e6*/
 

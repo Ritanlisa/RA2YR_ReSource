@@ -729,9 +729,9 @@ void* Tactical_Radar_Render(void * a1, void * a2, void * a3, void * a4, void * a
     v58 = 10000; /*0x640a70*/
     v52 = 0; /*0x640a74*/
     v11 = 0; /*0x640a7c*/
-    for ( i = LayerClass::CellIteratorNext((LayerClass *)&DataGlobal_87F7E8); /*0x640a85*/
+    for ( i = ((LayerClass *)&DataGlobal_87F7E8)->CellIteratorNext(); /*0x640a85*/
           i;
-          i = LayerClass::CellIteratorNext((LayerClass *)&DataGlobal_87F7E8) )
+          i = ((LayerClass *)&DataGlobal_87F7E8)->CellIteratorNext() )
     {
       v13 = (unsigned int *)(i + 36); /*0x640a8b*/
       if ( (unsigned __int8)LayerClass::IsWithinUsableArea( /*0x640a96*/
@@ -1634,7 +1634,7 @@ void* Tactical::DrawTacticalConnectorLines()
 
   LayerClass::CellIteratorReset((LayerClass *)&DataGlobal_87F7E8); /*0x6db221*/
   CellClass *v2; // ebp
-  v2 = (CellClass *)LayerClass::CellIteratorNext((LayerClass *)&DataGlobal_87F7E8); /*0x6db236*/
+  v2 = (CellClass *)((LayerClass *)&DataGlobal_87F7E8)->CellIteratorNext(); /*0x6db236*/
   int result = 255 >> g_BitMask_Blue << g_BitMask_Green; // eax /*0x6db251*/
   int v4; // edi
   v4 = result | (255 >> g_BitShift_Green_0 << g_BitShift_Red); /*0x6db283*/
@@ -1763,7 +1763,7 @@ void* Tactical::DrawTacticalConnectorLines()
           &v37,
           v5);
       }
-      result = LayerClass::CellIteratorNext((LayerClass *)&DataGlobal_87F7E8); /*0x6db51c*/
+      result = ((LayerClass *)&DataGlobal_87F7E8)->CellIteratorNext(); /*0x6db51c*/
       v2 = (CellClass *)result; /*0x6db521*/
     }
     while ( result ); /*0x6db525*/

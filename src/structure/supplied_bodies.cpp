@@ -18161,7 +18161,7 @@ namespace gamemd {
   for ( i = Object::ComputeAllocationSize() - 1; i >= 0; *(unsigned char *)(bug->passengers[0] + i + 1) = 0 ) /*0x7233dc*/
     --i; /*0x7233e4*/
   LayerClass::CellIteratorReset((LayerClass *)&DataGlobal_87F7E8); /*0x7233f1*/
-  result = LayerClass::CellIteratorNext((LayerClass *)&DataGlobal_87F7E8); /*0x7233fb*/
+  result = ((LayerClass *)&DataGlobal_87F7E8)->CellIteratorNext(); /*0x7233fb*/
   for ( j = (BuildingClass *)result; result; j = (BuildingClass *)result ) /*0x723404*/
   {
     if ( BuildingClass::FindByCellHash(j) == *(unsigned int *)&bug->isInLogic /*0x723421*/
@@ -18207,7 +18207,7 @@ namespace gamemd {
       }
       *(unsigned char *)(Cell::PosToIndex(p_occupant) + bug->passengers[0]) = 1; /*0x7234e7*/
     }
-    result = LayerClass::CellIteratorNext((LayerClass *)&DataGlobal_87F7E8); /*0x7234f0*/
+    result = ((LayerClass *)&DataGlobal_87F7E8)->CellIteratorNext(); /*0x7234f0*/
   }
   return result; /*0x723501*/
 }
@@ -18215,7 +18215,7 @@ namespace gamemd {
   for ( i = Object::ComputeAllocationSize() - 1; i >= 0; *(unsigned char *)(bug->passengers[0] + i + 1) = 0 ) /*0x7233dc*/
     --i; /*0x7233e4*/
   LayerClass::CellIteratorReset((LayerClass *)&DataGlobal_87F7E8); /*0x7233f1*/
-  result = LayerClass::CellIteratorNext((LayerClass *)&DataGlobal_87F7E8); /*0x7233fb*/
+  result = ((LayerClass *)&DataGlobal_87F7E8)->CellIteratorNext(); /*0x7233fb*/
   for ( j = (BuildingClass *)result; result; j = (BuildingClass *)result ) /*0x723404*/
   {
     if ( BuildingClass::FindByCellHash(j) == *(unsigned int *)&bug->isInLogic /*0x723421*/
@@ -18261,7 +18261,7 @@ namespace gamemd {
       }
       *(unsigned char *)(Cell::PosToIndex(p_occupant) + bug->passengers[0]) = 1; /*0x7234e7*/
     }
-    result = LayerClass::CellIteratorNext((LayerClass *)&DataGlobal_87F7E8); /*0x7234f0*/
+    result = ((LayerClass *)&DataGlobal_87F7E8)->CellIteratorNext(); /*0x7234f0*/
   }
   return result; /*0x723501*/
 }

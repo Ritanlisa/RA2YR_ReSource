@@ -281,7 +281,7 @@ void* CreateMapObject(ProgressScreenClass * aP0, int aP1)
   dword_87F8F4 = 1; /*0x578f0d*/
   dword_87F8FC = dword_87F8DC - 1; /*0x578f16*/
   dword_87F900 = (dword_87F8DC << 11) + dword_87F924 + 4; /*0x578f25*/
-  for ( j = LayerClass::CellIteratorNext(&dword_87F7E8); j; j = LayerClass::CellIteratorNext(&dword_87F7E8) ) /*0x578f35*/
+  for ( j = ((LayerClass *)&dword_87F7E8)->CellIteratorNext(); j; j = ((LayerClass *)&dword_87F7E8)->CellIteratorNext() ) /*0x578f35*/
   {
     if ( !v2 ) /*0x578f39*/
       break; /*0x578f39*/
@@ -291,7 +291,7 @@ void* CreateMapObject(ProgressScreenClass * aP0, int aP1)
   dword_87F8F4 = 1; /*0x578f66*/
   dword_87F8FC = dword_87F8DC - 1; /*0x578f72*/
   dword_87F900 = (dword_87F8DC << 11) + dword_87F924 + 4; /*0x578f81*/
-  for ( k = LayerClass::CellIteratorNext(&dword_87F7E8); k; k = LayerClass::CellIteratorNext(&dword_87F7E8) ) /*0x578f8f*/
+  for ( k = ((LayerClass *)&dword_87F7E8)->CellIteratorNext(); k; k = ((LayerClass *)&dword_87F7E8)->CellIteratorNext() ) /*0x578f8f*/
   {
     if ( !v2 ) /*0x578f93*/
       break; /*0x578f93*/

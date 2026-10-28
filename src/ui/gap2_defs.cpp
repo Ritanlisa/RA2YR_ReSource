@@ -2262,9 +2262,9 @@ int MouseClass::DrawCursor() {
 LABEL_13:
                   pStm = 0; /*0x5be7d8*/
                   LayerClass::CellIteratorReset((LayerClass *)this); /*0x5be7e2*/
-                  for ( i = (unsigned int *)LayerClass::CellIteratorNext((LayerClass *)this); /*0x5be7f0*/
+                  for ( i = (unsigned int *)((LayerClass *)this)->CellIteratorNext(); /*0x5be7f0*/
                         i;
-                        i = (unsigned int *)LayerClass::CellIteratorNext((LayerClass *)this) )
+                        i = (unsigned int *)((LayerClass *)this)->CellIteratorNext() )
                   {
                     *(unsigned int *)v22 = i[9]; /*0x5be7fc*/
                     if ( (unsigned __int8)Cell::Exists((Cell *)this, v22) ) /*0x5be800*/
@@ -2280,7 +2280,7 @@ LABEL_13:
                   if ( result >= 0 ) /*0x5be82f*/
                   {
                     LayerClass::CellIteratorReset((LayerClass *)this); /*0x5be83d*/
-                    v15 = (IPersistStream *)LayerClass::CellIteratorNext((LayerClass *)this); /*0x5be849*/
+                    v15 = (IPersistStream *)((LayerClass *)this)->CellIteratorNext(); /*0x5be849*/
                     if ( v15 ) /*0x5be84d*/
                     {
                       do /*0x5be87f*/
@@ -2291,7 +2291,7 @@ LABEL_13:
                           OleSaveToStream(v15, v2); /*0x5be86e*/
                           pStm = (LPSTREAM)((char *)pStm - 1); /*0x5be870*/
                         }
-                        v15 = (IPersistStream *)LayerClass::CellIteratorNext((LayerClass *)this); /*0x5be87b*/
+                        v15 = (IPersistStream *)((LayerClass *)this)->CellIteratorNext(); /*0x5be87b*/
                       }
                       while ( v15 ); /*0x5be87f*/
                       v14 = v23; /*0x5be881*/

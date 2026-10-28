@@ -556,7 +556,7 @@ void * LayerClass::Reveal(int a2)
     dword_87F8F4 = 1; /*0x577e42*/
     dword_87F8FC = dword_87F8DC - 1; /*0x577e4b*/
     dword_87F900 = (dword_87F8DC << 11) + dword_87F924 + 4; /*0x577e5a*/
-    v4 = LayerClass::CellIteratorNext((LayerClass *)&dword_87F7E8); /*0x577e60*/
+    v4 = ((LayerClass *)&dword_87F7E8)->CellIteratorNext(); /*0x577e60*/
     if ( v4 ) /*0x577e67*/
     {
       while ( 1 ) /*0x577e6e*/
@@ -570,7 +570,7 @@ void * LayerClass::Reveal(int a2)
         if ( v6 != this->u32_F4 + 5 ) /*0x577e8e*/
           goto LABEL_21; /*0x577e8e*/
         LABEL_24:
-        v4 = LayerClass::CellIteratorNext((LayerClass *)&dword_87F7E8); /*0x577ee9*/
+        v4 = ((LayerClass *)&dword_87F7E8)->CellIteratorNext(); /*0x577ee9*/
         if ( !v4 ) /*0x577ef5*/
           goto LABEL_25; /*0x577ef5*/
       }
@@ -598,7 +598,7 @@ void * LayerClass::Reveal(int a2)
 }
 // 0x578290
 namespace gamemd {
-int LayerClass::CellIteratorNext(void *a1)
+int LayerClass::CellIteratorNext()
 {
 
   int v8; // esi

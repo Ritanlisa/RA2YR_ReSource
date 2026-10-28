@@ -1095,7 +1095,7 @@ char ProcessSlaveManagerTerrain()
   int v27; // [esp+14h] [ebp-4h]
 
   LayerClass::CellIteratorReset((LayerClass *)&dword_87F7E8); /*0x6b3858*/
-  v1 = (unsigned int *)LayerClass::CellIteratorNext((LayerClass *)&dword_87F7E8); /*0x6b3862*/
+  v1 = (unsigned int *)((LayerClass *)&dword_87F7E8)->CellIteratorNext(); /*0x6b3862*/
   for ( i = v1; v1; i = v1 ) /*0x6b386d*/
   {
     v2 = v1[9]; /*0x6b3877*/
@@ -1181,7 +1181,7 @@ char ProcessSlaveManagerTerrain()
       }
     }
 LABEL_36:
-    v1 = (unsigned int *)LayerClass::CellIteratorNext((LayerClass *)&dword_87F7E8); /*0x6b3a47*/
+    v1 = (unsigned int *)((LayerClass *)&dword_87F7E8)->CellIteratorNext(); /*0x6b3a47*/
   }
   __3_YAXPAX_Z(g_SlaveManagerPool); /*0x6b3a68*/
   g_SlaveManagerPool = 0; /*0x6b3a6d*/

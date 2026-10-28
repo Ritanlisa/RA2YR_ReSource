@@ -160,9 +160,9 @@ unsigned int * Pathfinding::ExpandNode(CellStruct * a1, int a2)
   }
   *v6 = 0; /*0x5a5404*/
   ((LayerClass *)&dword_87F7E8)->CellIteratorReset(); /*0x5a5406*/
-  for ( i = LayerClass::CellIteratorNext((LayerClass *)&dword_87F7E8); /*0x5a5417*/
+  for ( i = ((LayerClass *)&dword_87F7E8)->CellIteratorNext(); /*0x5a5417*/
         i;
-        i = LayerClass::CellIteratorNext((LayerClass *)&dword_87F7E8) )
+        i = ((LayerClass *)&dword_87F7E8)->CellIteratorNext() )
   {
     *(unsigned int *)&v79[2] = *(unsigned int *)(i + 36); /*0x5a541c*/
     *(unsigned int *)&dword_ABED10[40 * v79[2] + 30 + 40 * g_MapCellWidth * v79[3]] = 0; /*0x5a5441*/

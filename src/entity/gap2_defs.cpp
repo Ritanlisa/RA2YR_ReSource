@@ -4942,9 +4942,9 @@ int TiberiumClass::Grow(void* a1) {
     v9 = 0; /*0x59ca07*/
   }
   LayerClass::CellIteratorReset((LayerClass *)&DataGlobal_87F7E8); /*0x59ca10*/
-  for ( i = LayerClass::CellIteratorNext((LayerClass *)&DataGlobal_87F7E8); /*0x59ca21*/
+  for ( i = ((LayerClass *)&DataGlobal_87F7E8)->CellIteratorNext(); /*0x59ca21*/
         i;
-        i = LayerClass::CellIteratorNext((LayerClass *)&DataGlobal_87F7E8) )
+        i = ((LayerClass *)&DataGlobal_87F7E8)->CellIteratorNext() )
   {
     (*((unsigned int *)&(v94))) = *(unsigned int *)(i + 36); /*0x59ca26*/
     *(unsigned int *)(80 * ((*((signed short *)&(v94))) + g_MapCellWidth * (*((signed short *)(((unsigned char *)&(v94)) + 2)))) + g_MissionQueueFrame.localVariables[163] + 60) = 0; /*0x59ca4b*/
@@ -5400,9 +5400,9 @@ int TiberiumClass::Grow(void* a1) {
       {
         (*((unsigned int *)&(v96))) = this->u32_308; /*0x59d33f*/
         LayerClass::CellIteratorReset((LayerClass *)&DataGlobal_87F7E8); /*0x59d343*/
-        for ( j = LayerClass::CellIteratorNext((LayerClass *)&DataGlobal_87F7E8); /*0x59d354*/
+        for ( j = ((LayerClass *)&DataGlobal_87F7E8)->CellIteratorNext(); /*0x59d354*/
               j;
-              j = LayerClass::CellIteratorNext((LayerClass *)&DataGlobal_87F7E8) )
+              j = ((LayerClass *)&DataGlobal_87F7E8)->CellIteratorNext() )
         {
           if ( g_MissionQueueFrame.localVariables[163] ) /*0x59d35e*/
             v77 = *(unsigned int *)(80 * (*(int16_t *)(j + 36) + g_MapCellWidth * *(int16_t *)(j + 38)) /*0x59d37c*/
@@ -5439,9 +5439,9 @@ int TiberiumClass::Grow(void* a1) {
   }
   v79 = this->ptr_8.SpreadPercentage[1]; /*0x59d3b6*/
   LayerClass::CellIteratorReset((LayerClass *)&DataGlobal_87F7E8); /*0x59d3c1*/
-  for ( k = LayerClass::CellIteratorNext((LayerClass *)&DataGlobal_87F7E8); /*0x59d3d4*/
+  for ( k = ((LayerClass *)&DataGlobal_87F7E8)->CellIteratorNext(); /*0x59d3d4*/
         k;
-        k = LayerClass::CellIteratorNext((LayerClass *)&DataGlobal_87F7E8) )
+        k = ((LayerClass *)&DataGlobal_87F7E8)->CellIteratorNext() )
   {
     (*((unsigned int *)&(v96))) = *(unsigned int *)(k + 36); /*0x59d3d9*/
     v81 = g_MissionQueueFrame.localVariables[163] + 80 * ((*((signed short *)&(v96))) + g_MapCellWidth * (*((signed short *)(((unsigned char *)&(v96)) + 2)))); /*0x59d3fa*/

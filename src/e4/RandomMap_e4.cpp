@@ -281,7 +281,7 @@ int RandomMap::GenerateTerrain(RandomMap *self)
           v34 = -1; /*0x58cd46*/
         v35 = *((char *)(((CellCoord *)&dword_87F7E8)->To_CellObj(v49) + 283); /*0x58cd6d*/
         ((LayerClass *)&dword_87F7E8)->CellIteratorReset(); /*0x58cd79*/
-        v36 = LayerClass::CellIteratorNext((LayerClass *)&dword_87F7E8); /*0x58cd83*/
+        v36 = ((LayerClass *)&dword_87F7E8)->CellIteratorNext(); /*0x58cd83*/
         if ( v36 ) /*0x58cd8a*/
         {
           v37 = *(unsigned int *)v47; /*0x58cd90*/
@@ -300,7 +300,7 @@ int RandomMap::GenerateTerrain(RandomMap *self)
                 v39 = v35; /*0x58cddb*/
               *(unsigned char *)(v36 + 283) = v39; /*0x58cddd*/
             }
-            v36 = LayerClass::CellIteratorNext((LayerClass *)&dword_87F7E8); /*0x58cde8*/
+            v36 = ((LayerClass *)&dword_87F7E8)->CellIteratorNext(); /*0x58cde8*/
           }
           while ( v36 ); /*0x58cdef*/
         }
@@ -341,9 +341,9 @@ int RandomMap::GenerateTerrain(RandomMap *self)
             {
               v24 = *((char *)(((CellCoord *)&dword_87F7E8)->To_CellObj(v49) + 283); /*0x58cbea*/
               ((LayerClass *)&dword_87F7E8)->CellIteratorReset(); /*0x58cbf6*/
-              for ( j = LayerClass::CellIteratorNext((LayerClass *)&dword_87F7E8); /*0x58cc09*/
+              for ( j = ((LayerClass *)&dword_87F7E8)->CellIteratorNext(); /*0x58cc09*/
                     j;
-                    j = LayerClass::CellIteratorNext((LayerClass *)&dword_87F7E8) )
+                    j = ((LayerClass *)&dword_87F7E8)->CellIteratorNext() )
               {
                 LODWORD(v52) = *(unsigned int *)(j + 36); /*0x58cc17*/
                 v26 = &dword_ABED10[40 * SLOWORD(v52) + 40 * g_MapCellWidth * SWORD1(v52)]; /*0x58cc32*/
@@ -612,7 +612,7 @@ unsigned int * RandomMap::TerrainAlloc(void *a1_1)
   }
   v17 = v3; /*0x58d454*/
   ((LayerClass *)&DataGlobal_87F7E8)->CellIteratorReset(); /*0x58d458*/
-  v4 = LayerClass::CellIteratorNext((LayerClass *)&DataGlobal_87F7E8); /*0x58d467*/
+  v4 = ((LayerClass *)&DataGlobal_87F7E8)->CellIteratorNext(); /*0x58d467*/
   if ( !v4 ) /*0x58d46b*/
     return &v3->ptr_0; /*0x58d592*/
   do
@@ -662,7 +662,7 @@ unsigned int * RandomMap::TerrainAlloc(void *a1_1)
         }
       }
     }
-    v4 = LayerClass::CellIteratorNext((LayerClass *)&DataGlobal_87F7E8); /*0x58d57d*/
+    v4 = ((LayerClass *)&DataGlobal_87F7E8)->CellIteratorNext(); /*0x58d57d*/
   }
   while ( v4 );
   return &v3->ptr_0; /*0x58d588*/
@@ -3721,9 +3721,9 @@ AbstractClass * * RandomMap::Generate(char a2, HWND hDlg, void *a3)
   RandomMap::PlaceShoreObjects((RandomMap *)v33); /*0x598e1a*/
   Debug::Log(); /*0x598e24*/
   LayerClass::CellIteratorReset((LayerClass *)&dword_87F7E8); /*0x598e31*/
-  for ( k = LayerClass::CellIteratorNext((LayerClass *)&dword_87F7E8); /*0x598e42*/
+  for ( k = ((LayerClass *)&dword_87F7E8)->CellIteratorNext(); /*0x598e42*/
         k;
-        k = LayerClass::CellIteratorNext((LayerClass *)&dword_87F7E8) )
+        k = ((LayerClass *)&dword_87F7E8)->CellIteratorNext() )
   {
     House::AnnounceUpgrade(k, -1); /*0x598e48*/
   }
@@ -3796,9 +3796,9 @@ AbstractClass * * RandomMap::Generate(char a2, HWND hDlg, void *a3)
   dword_ABED14 = 0; /*0x598fbd*/
   Debug::Log(); /*0x598fc3*/
   LayerClass::CellIteratorReset((LayerClass *)&dword_87F7E8); /*0x598fd0*/
-  for ( n = LayerClass::CellIteratorNext((LayerClass *)&dword_87F7E8); /*0x598fe1*/
+  for ( n = ((LayerClass *)&dword_87F7E8)->CellIteratorNext(); /*0x598fe1*/
         n;
-        n = LayerClass::CellIteratorNext((LayerClass *)&dword_87F7E8) )
+        n = ((LayerClass *)&dword_87F7E8)->CellIteratorNext() )
   {
     House::AnnounceUpgrade(n, -1); /*0x598fe7*/
   }
@@ -3839,9 +3839,9 @@ AbstractClass * * RandomMap::Generate(char a2, HWND hDlg, void *a3)
     off_82AF14(); /*0x599128*/
   Debug::Log(); /*0x59912f*/
   LayerClass::CellIteratorReset((LayerClass *)&dword_87F7E8); /*0x59913c*/
-  for ( ii = LayerClass::CellIteratorNext((LayerClass *)&dword_87F7E8); /*0x59914d*/
+  for ( ii = ((LayerClass *)&dword_87F7E8)->CellIteratorNext(); /*0x59914d*/
         ii;
-        ii = LayerClass::CellIteratorNext((LayerClass *)&dword_87F7E8) )
+        ii = ((LayerClass *)&dword_87F7E8)->CellIteratorNext() )
   {
     House::AnnounceUpgrade(ii, -1); /*0x599153*/
   }
@@ -3869,9 +3869,9 @@ AbstractClass * * RandomMap::Generate(char a2, HWND hDlg, void *a3)
   if ( v25->attachedBomb ) /*0x59921f*/
   {
     LayerClass::CellIteratorReset((LayerClass *)&dword_87F7E8); /*0x59923e*/
-    for ( jj = LayerClass::CellIteratorNext((LayerClass *)&dword_87F7E8); /*0x59924f*/
+    for ( jj = ((LayerClass *)&dword_87F7E8)->CellIteratorNext(); /*0x59924f*/
           jj;
-          jj = LayerClass::CellIteratorNext((LayerClass *)&dword_87F7E8) )
+          jj = ((LayerClass *)&dword_87F7E8)->CellIteratorNext() )
     {
       v39 = *(_VectorClass_VCell **)(jj + 36); /*0x59925a*/
       v27 = &dword_ABED10[40 * (__int16)v39 + 40 * g_MapCellWidth * SHIWORD(v39)]; /*0x59927b*/
@@ -3907,9 +3907,9 @@ AbstractClass * * RandomMap::Generate(char a2, HWND hDlg, void *a3)
     off_82AF14(); /*0x599352*/
   Debug::Log(); /*0x599359*/
   LayerClass::CellIteratorReset((LayerClass *)&dword_87F7E8); /*0x599366*/
-  for ( kk = LayerClass::CellIteratorNext((LayerClass *)&dword_87F7E8); /*0x599377*/
+  for ( kk = ((LayerClass *)&dword_87F7E8)->CellIteratorNext(); /*0x599377*/
         kk;
-        kk = LayerClass::CellIteratorNext((LayerClass *)&dword_87F7E8) )
+        kk = ((LayerClass *)&dword_87F7E8)->CellIteratorNext() )
   {
     House::AnnounceUpgrade(kk, -1); /*0x59937d*/
   }
@@ -4306,9 +4306,9 @@ LABEL_59:
   if ( off_82AF14 ) /*0x599e6c*/
     off_82AF14(); /*0x599e6e*/
   LayerClass::CellIteratorReset((LayerClass *)&dword_87F7E8); /*0x599e75*/
-  for ( n = LayerClass::CellIteratorNext((LayerClass *)&dword_87F7E8); /*0x599e86*/
+  for ( n = ((LayerClass *)&dword_87F7E8)->CellIteratorNext(); /*0x599e86*/
         n;
-        n = LayerClass::CellIteratorNext((LayerClass *)&dword_87F7E8) )
+        n = ((LayerClass *)&dword_87F7E8)->CellIteratorNext() )
   {
     *(unsigned char *)(n + 284) = 0; /*0x599e8d*/
     *(unsigned char *)(n + 283) = 4; /*0x599e93*/
@@ -4489,9 +4489,9 @@ LABEL_153:
     dword_ABED10 = 0; /*0x59a37f*/
   }
   LayerClass::CellIteratorReset((LayerClass *)&dword_87F7E8); /*0x59a38a*/
-  for ( ii = LayerClass::CellIteratorNext((LayerClass *)&dword_87F7E8); /*0x59a39b*/
+  for ( ii = ((LayerClass *)&dword_87F7E8)->CellIteratorNext(); /*0x59a39b*/
         ii;
-        ii = LayerClass::CellIteratorNext((LayerClass *)&dword_87F7E8) )
+        ii = ((LayerClass *)&dword_87F7E8)->CellIteratorNext() )
   {
     LODWORD(v75[0]) = *(unsigned int *)(ii + 36); /*0x59a3a0*/
     *(unsigned int *)&dword_ABED10[40 * SLOWORD(v75[0]) + 40 * g_MapCellWidth * SWORD1(v75[0])] = LODWORD(v75[0]); /*0x59a3c1*/
@@ -4598,9 +4598,9 @@ int RandomMap::FinalizeMapData()
   unsigned int *v19; // [esp+10h] [ebp-4h] BYREF
 
   LayerClass::CellIteratorReset((LayerClass *)&dword_87F7E8); /*0x59a6cc*/
-  for ( i = LayerClass::CellIteratorNext((LayerClass *)&dword_87F7E8); /*0x59a6dd*/
+  for ( i = ((LayerClass *)&dword_87F7E8)->CellIteratorNext(); /*0x59a6dd*/
         i;
-        i = LayerClass::CellIteratorNext((LayerClass *)&dword_87F7E8) )
+        i = ((LayerClass *)&dword_87F7E8)->CellIteratorNext() )
   {
     *(unsigned int *)(i + 56) = g_CellPassabilityLUT; /*0x59a6e5*/
   }
@@ -4623,9 +4623,9 @@ int RandomMap::FinalizeMapData()
     RandomMap::ArrangeBuildingGrid(this); /*0x59a718*/
   }
   LayerClass::CellIteratorReset((LayerClass *)&dword_87F7E8); /*0x59a722*/
-  for ( j = (Cell *)LayerClass::CellIteratorNext((LayerClass *)&dword_87F7E8); /*0x59a735*/
+  for ( j = (Cell *)((LayerClass *)&dword_87F7E8)->CellIteratorNext(); /*0x59a735*/
         j;
-        j = (Cell *)LayerClass::CellIteratorNext((LayerClass *)&dword_87F7E8) )
+        j = (Cell *)((LayerClass *)&dword_87F7E8)->CellIteratorNext() )
   {
     if ( j->q038 == g_CellPassabilityLUT ) /*0x59a741*/
     {
@@ -4693,7 +4693,7 @@ int RandomMap::FinalizeMapData()
   }
   dword_ABED14 = 0; /*0x59a87a*/
   LayerClass::CellIteratorReset((LayerClass *)&dword_87F7E8); /*0x59a884*/
-  result = LayerClass::CellIteratorNext((LayerClass *)&dword_87F7E8); /*0x59a88e*/
+  result = ((LayerClass *)&dword_87F7E8)->CellIteratorNext(); /*0x59a88e*/
   for ( n = (Cell *)result; result; n = (Cell *)result ) /*0x59a897*/
   {
     if ( (unsigned __int8)CellClass::IsTerrainType((CellClass *)n) ) /*0x59a89b*/
@@ -4705,7 +4705,7 @@ int RandomMap::FinalizeMapData()
           v18->q038 = dword_AA0E18; /*0x59a8c0*/
       }
     }
-    result = LayerClass::CellIteratorNext((LayerClass *)&dword_87F7E8); /*0x59a8d0*/
+    result = ((LayerClass *)&dword_87F7E8)->CellIteratorNext(); /*0x59a8d0*/
   }
   return result; /*0x59a8db*/
 
@@ -4773,9 +4773,9 @@ void RandomMap::ArrangeBuildingGrid()
   v27[2] = dword_87F8EC; /*0x59adc4*/
   ArrangeBuildingPlacementGrid((int)&v28, v5 + v6, v27); /*0x59add7*/
   LayerClass::CellIteratorReset((LayerClass *)&dword_87F7E8); /*0x59ade1*/
-  for ( i = LayerClass::CellIteratorNext((LayerClass *)&dword_87F7E8); /*0x59adf2*/
+  for ( i = ((LayerClass *)&dword_87F7E8)->CellIteratorNext(); /*0x59adf2*/
         i;
-        i = LayerClass::CellIteratorNext((LayerClass *)&dword_87F7E8) )
+        i = ((LayerClass *)&dword_87F7E8)->CellIteratorNext() )
   {
     v19 = *(unsigned int *)(i + 36); /*0x59adf7*/
     *(unsigned int *)&dword_ABED10[40 * (__int16)v19 + 30 + 40 * g_MapCellWidth * (short)(((v19) >> 16) & 0xFFFF)] = 0; /*0x59ae1c*/
@@ -4874,9 +4874,9 @@ void RandomMap::FillTerrainProgressively()
   v18 = v5 + 1; /*0x59b03f*/
   LayerClass::CellIteratorReset((LayerClass *)&DataGlobal_87F7E8); /*0x59b043*/
   int i; // eax
-  for ( i = LayerClass::CellIteratorNext((LayerClass *)&DataGlobal_87F7E8); /*0x59b054*/
+  for ( i = ((LayerClass *)&DataGlobal_87F7E8)->CellIteratorNext(); /*0x59b054*/
   i;
-  i = LayerClass::CellIteratorNext((LayerClass *)&DataGlobal_87F7E8) )
+  i = ((LayerClass *)&DataGlobal_87F7E8)->CellIteratorNext() )
   {
     v15 = *(unsigned int *)(i + 36); /*0x59b059*/
     *(unsigned int *)(80 * ((__int16)v15 + g_MapCellWidth * (short)(((v15) >> 16) & 0xFFFF)) + g_MissionQueueFrame.localVariables[163] + 60) = 0; /*0x59b07a*/
@@ -4904,9 +4904,9 @@ void RandomMap::FillTerrainProgressively()
       v20 = (double)v13 / v22; /*0x59b15b*/
       LayerClass::CellIteratorReset((LayerClass *)&DataGlobal_87F7E8); /*0x59b15f*/
       int j; // ecx
-      for ( j = LayerClass::CellIteratorNext((LayerClass *)&DataGlobal_87F7E8); /*0x59b172*/
+      for ( j = ((LayerClass *)&DataGlobal_87F7E8)->CellIteratorNext(); /*0x59b172*/
       j;
-      j = LayerClass::CellIteratorNext((LayerClass *)&DataGlobal_87F7E8) )
+      j = ((LayerClass *)&DataGlobal_87F7E8)->CellIteratorNext() )
       {
         if ( !*(unsigned int *)(80 * (*(__int16 *)(j + 36) + g_MapCellWidth * *(__int16 *)(j + 38)) /*0x59b191*/
           + g_MissionQueueFrame.localVariables[163]
@@ -5001,9 +5001,9 @@ int RandomMap::PlaceTerrainFeatures()
   (v2) = ((v2) & ~0xFFFF) | ((Math::RoundToInt(v51 * 0.06 * v39)) & 0xFFFF); /*0x59b26b*/
   v49 = v2; /*0x59b275*/
   LayerClass::CellIteratorReset((LayerClass *)&DataGlobal_87F7E8); /*0x59b27c*/
-  for ( i = LayerClass::CellIteratorNext((LayerClass *)&DataGlobal_87F7E8); /*0x59b28d*/
+  for ( i = ((LayerClass *)&DataGlobal_87F7E8)->CellIteratorNext(); /*0x59b28d*/
         i;
-        i = LayerClass::CellIteratorNext((LayerClass *)&DataGlobal_87F7E8) )
+        i = ((LayerClass *)&DataGlobal_87F7E8)->CellIteratorNext() )
   {
     *(unsigned int *)(80 * ((__int16)*(unsigned int *)(i + 36) + g_MapCellWidth * (__int16)HIWORD(*(unsigned int *)(i + 36))) /*0x59b2b7*/
               + g_MissionQueueFrame.localVariables[163]
@@ -5149,9 +5149,9 @@ void PlaceShoreObjects()
   v21 = 10000; /*0x59b765*/
   LayerClass::CellIteratorReset((LayerClass *)&DataGlobal_87F7E8); /*0x59b76d*/
   Cell *i; // ebp
-  for ( i = (Cell *)LayerClass::CellIteratorNext((LayerClass *)&DataGlobal_87F7E8); /*0x59b780*/
+  for ( i = (Cell *)((LayerClass *)&DataGlobal_87F7E8)->CellIteratorNext(); /*0x59b780*/
   i;
-  i = (Cell *)LayerClass::CellIteratorNext((LayerClass *)&DataGlobal_87F7E8) )
+  i = (Cell *)((LayerClass *)&DataGlobal_87F7E8)->CellIteratorNext() )
   {
     if ( (uint8_t)((Cell *)(i))->IsShore() ) /*0x59b784*/
     {
@@ -5689,9 +5689,9 @@ LABEL_27:
     }
     inited = MapClass::InitTileData((MapClass *)&dword_87F7E8, this->u32_308, 1); /*0x59c43d*/
     LayerClass::CellIteratorReset((LayerClass *)&dword_87F7E8); /*0x59c441*/
-    for ( i = LayerClass::CellIteratorNext((LayerClass *)&dword_87F7E8); /*0x59c452*/
+    for ( i = ((LayerClass *)&dword_87F7E8)->CellIteratorNext(); /*0x59c452*/
           i;
-          i = LayerClass::CellIteratorNext((LayerClass *)&dword_87F7E8) )
+          i = ((LayerClass *)&dword_87F7E8)->CellIteratorNext() )
     {
       v72 = *(unsigned int *)(i + 56); /*0x59c454*/
       if ( v72 >= dword_ABAD28 && v72 < dword_ABAD28 + 42 ) /*0x59c466*/
@@ -5710,9 +5710,9 @@ LABEL_27:
       v73 = g_CellPassabilityLUT; /*0x59c48c*/
       v74 = this->u32_308; /*0x59c492*/
       LayerClass::CellIteratorReset((LayerClass *)&dword_87F7E8); /*0x59c49d*/
-      for ( j = LayerClass::CellIteratorNext((LayerClass *)&dword_87F7E8); /*0x59c4ae*/
+      for ( j = ((LayerClass *)&dword_87F7E8)->CellIteratorNext(); /*0x59c4ae*/
             j;
-            j = LayerClass::CellIteratorNext((LayerClass *)&dword_87F7E8) )
+            j = ((LayerClass *)&dword_87F7E8)->CellIteratorNext() )
       {
         LODWORD(v95) = *(unsigned int *)(j + 36); /*0x59c4b3*/
         v76 = &dword_ABED10[40 * SLOWORD(v95) + 40 * g_MapCellWidth * SWORD1(v95)]; /*0x59c4d4*/
@@ -6123,9 +6123,9 @@ int RandomMap::SpreadArea(MouseClass * aP1, float a3, MapResourceClass * aP3, sh
     v100 = 1.570796326794897; /*0x5a09f3*/
   }
   LayerClass::CellIteratorReset((LayerClass *)&dword_87F7E8); /*0x5a0a08*/
-  for ( i = LayerClass::CellIteratorNext((LayerClass *)&dword_87F7E8); /*0x5a0a19*/
+  for ( i = ((LayerClass *)&dword_87F7E8)->CellIteratorNext(); /*0x5a0a19*/
         i;
-        i = LayerClass::CellIteratorNext((LayerClass *)&dword_87F7E8) )
+        i = ((LayerClass *)&dword_87F7E8)->CellIteratorNext() )
   {
     v96 = *(unsigned int *)(i + 36); /*0x5a0a1e*/
     *(unsigned int *)&dword_ABED10[40 * (__int16)v96 + 30 + 40 * g_MapCellWidth * (short)(((v96) >> 16) & 0xFFFF)] = 0; /*0x5a0a43*/
@@ -7108,15 +7108,15 @@ VectorClass_flat * * RandomMap::PlaceResources()
 
   _ESI = this; /*0x5a3aec*/
   LayerClass::CellIteratorReset((LayerClass *)&dword_87F7E8); /*0x5a3af8*/
-  for ( i = LayerClass::CellIteratorNext((LayerClass *)&dword_87F7E8); /*0x5a3b0b*/
+  for ( i = ((LayerClass *)&dword_87F7E8)->CellIteratorNext(); /*0x5a3b0b*/
         i;
-        i = LayerClass::CellIteratorNext((LayerClass *)&dword_87F7E8) )
+        i = ((LayerClass *)&dword_87F7E8)->CellIteratorNext() )
   {
     LODWORD(v68) = *(unsigned int *)(i + 36); /*0x5a3b10*/
     *(unsigned int *)&dword_ABED10[40 * SLOWORD(v68) + 30 + 40 * g_MapCellWidth * SWORD1(v68)] = 0; /*0x5a3b35*/
   }
   LayerClass::CellIteratorReset((LayerClass *)&dword_87F7E8); /*0x5a3b47*/
-  v4 = LayerClass::CellIteratorNext((LayerClass *)&dword_87F7E8); /*0x5a3b56*/
+  v4 = ((LayerClass *)&dword_87F7E8)->CellIteratorNext(); /*0x5a3b56*/
   do /*0x5a3b86*/
   {
     *(unsigned long long *)&v73 = (unsigned int)Random::State((Random *)&stru_ABE890); /*0x5a3b62*/
@@ -7313,7 +7313,7 @@ LABEL_30:
         goto LABEL_34; /*0x5a3ef1*/
       }
 LABEL_35:
-      v4 = LayerClass::CellIteratorNext((LayerClass *)&dword_87F7E8); /*0x5a3efc*/
+      v4 = ((LayerClass *)&dword_87F7E8)->CellIteratorNext(); /*0x5a3efc*/
       if ( !v4 ) /*0x5a3f0a*/
       {
         _ESI = this; /*0x5a3f10*/
@@ -7379,9 +7379,9 @@ LABEL_34:
   }
 LABEL_37:
   LayerClass::CellIteratorReset((LayerClass *)&dword_87F7E8); /*0x5a3f14*/
-  for ( j = (CellClass *)LayerClass::CellIteratorNext((LayerClass *)&dword_87F7E8); /*0x5a3f2a*/
+  for ( j = (CellClass *)((LayerClass *)&dword_87F7E8)->CellIteratorNext(); /*0x5a3f2a*/
         j;
-        j = (CellClass *)LayerClass::CellIteratorNext((LayerClass *)&dword_87F7E8) )
+        j = (CellClass *)((LayerClass *)&dword_87F7E8)->CellIteratorNext() )
   {
     CellClass::DetermineTileType(j); /*0x5a3f2e*/
   }
@@ -7627,15 +7627,15 @@ int RandomMap::GenerateRandomMapTerrain()
 
   _EDI = this; /*0x5a428d*/
   LayerClass::CellIteratorReset((LayerClass *)&dword_87F7E8); /*0x5a4298*/
-  for ( i = LayerClass::CellIteratorNext((LayerClass *)&dword_87F7E8); /*0x5a42ab*/
+  for ( i = ((LayerClass *)&dword_87F7E8)->CellIteratorNext(); /*0x5a42ab*/
         i;
-        i = LayerClass::CellIteratorNext((LayerClass *)&dword_87F7E8) )
+        i = ((LayerClass *)&dword_87F7E8)->CellIteratorNext() )
   {
     v31 = *(unsigned int *)(i + 36); /*0x5a42b0*/
     *(unsigned int *)&dword_ABED10[40 * (__int16)v31 + 30 + 40 * g_MapCellWidth * (short)(((v31) >> 16) & 0xFFFF)] = 0; /*0x5a42d5*/
   }
   LayerClass::CellIteratorReset((LayerClass *)&dword_87F7E8); /*0x5a42e7*/
-  v4 = LayerClass::CellIteratorNext((LayerClass *)&dword_87F7E8); /*0x5a42f6*/
+  v4 = ((LayerClass *)&dword_87F7E8)->CellIteratorNext(); /*0x5a42f6*/
   if ( v4 ) /*0x5a42fa*/
   {
     do /*0x5a43e6*/
@@ -7686,15 +7686,15 @@ int RandomMap::GenerateRandomMapTerrain()
           }
         }
       }
-      v4 = LayerClass::CellIteratorNext((LayerClass *)&dword_87F7E8); /*0x5a43e2*/
+      v4 = ((LayerClass *)&dword_87F7E8)->CellIteratorNext(); /*0x5a43e2*/
     }
     while ( v4 ); /*0x5a43e6*/
     _EDI = this; /*0x5a43ec*/
   }
   LayerClass::CellIteratorReset((LayerClass *)&dword_87F7E8); /*0x5a43f5*/
-  for ( j = (CellClass *)LayerClass::CellIteratorNext((LayerClass *)&dword_87F7E8); /*0x5a4406*/
+  for ( j = (CellClass *)((LayerClass *)&dword_87F7E8)->CellIteratorNext(); /*0x5a4406*/
         j;
-        j = (CellClass *)LayerClass::CellIteratorNext((LayerClass *)&dword_87F7E8) )
+        j = (CellClass *)((LayerClass *)&dword_87F7E8)->CellIteratorNext() )
   {
     CellClass::DetermineTileType(j); /*0x5a440a*/
   }

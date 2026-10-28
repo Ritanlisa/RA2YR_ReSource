@@ -2889,9 +2889,9 @@ void Terrain::PlaceTiberiumTrees(ScenarioClass * aP0, int a2, int a3, char a4)
         ++i; /*0x5a29c1*/
       *v9 = 0; /*0x5a29d1*/
       LayerClass::CellIteratorReset((LayerClass *)&dword_87F7E8); /*0x5a29d3*/
-      for ( j = LayerClass::CellIteratorNext((LayerClass *)&dword_87F7E8); /*0x5a29e4*/
+      for ( j = ((LayerClass *)&dword_87F7E8)->CellIteratorNext(); /*0x5a29e4*/
             j;
-            j = LayerClass::CellIteratorNext((LayerClass *)&dword_87F7E8) )
+            j = ((LayerClass *)&dword_87F7E8)->CellIteratorNext() )
       {
         v63 = *(unsigned int *)(j + 36); /*0x5a29e9*/
         *(unsigned int *)&dword_ABED10[40 * (__int16)v63 + 30 + 40 * g_MapCellWidth * (short)(((v63) >> 16) & 0xFFFF)] = 0; /*0x5a2a0a*/

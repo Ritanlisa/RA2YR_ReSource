@@ -1204,7 +1204,7 @@ void MapClass_LoadIsometricTiles(char a1, char a2)
   if ( !a1 ) /*0x546dc8*/
   {
     LayerClass::CellIteratorReset(&dword_87F7E8); /*0x546dd3*/
-    for ( i = LayerClass::CellIteratorNext(&dword_87F7E8); i; i = LayerClass::CellIteratorNext(&dword_87F7E8) ) /*0x546de6*/
+    for ( i = ((LayerClass *)&dword_87F7E8)->CellIteratorNext(); i; i = ((LayerClass *)&dword_87F7E8)->CellIteratorNext() ) /*0x546de6*/
     {
       v4 = *(unsigned int *)(i + 56); /*0x546dec*/
       inited = 0; /*0x546def*/

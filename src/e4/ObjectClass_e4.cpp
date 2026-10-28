@@ -6301,9 +6301,9 @@ char ObjectClass::SpreadMapSeedTerrainFromWaypoints() {
         v6 = 0; /*0x5a204e*/
       }
       LayerClass::CellIteratorReset((LayerClass *)&DataGlobal_87F7E8); /*0x5a2055*/
-      for ( i = LayerClass::CellIteratorNext((LayerClass *)&DataGlobal_87F7E8); /*0x5a2066*/
+      for ( i = ((LayerClass *)&DataGlobal_87F7E8)->CellIteratorNext(); /*0x5a2066*/
             i;
-            i = LayerClass::CellIteratorNext((LayerClass *)&DataGlobal_87F7E8) )
+            i = ((LayerClass *)&DataGlobal_87F7E8)->CellIteratorNext() )
       {
         v50 = *(unsigned int *)(i + 36); /*0x5a206b*/
         *(unsigned int *)(80 * ((__int16)v50 + g_MapCellWidth * (short)(((v50) >> 16) & 0xFFFF)) + g_MissionQueueFrame.localVariables[163] + 60) = 0; /*0x5a208c*/
@@ -6991,7 +6991,7 @@ int ObjectClass::GenerateTerrainHeightMap() {
   ProcessSlaveManagerTerrain(v27); /*0x5a36c1*/
   LayerClass::CellIteratorReset((LayerClass *)&dword_87F7E8); /*0x5a36cb*/
   v12 = 0; /*0x5a36da*/
-  v13 = LayerClass::CellIteratorNext((LayerClass *)&dword_87F7E8); /*0x5a36dc*/
+  v13 = ((LayerClass *)&dword_87F7E8)->CellIteratorNext(); /*0x5a36dc*/
   v36[0] = 0; /*0x5a36f1*/
   result = 65537; /*0x5a370d*/
   v36[1] = 1; /*0x5a3711*/
@@ -7028,7 +7028,7 @@ int ObjectClass::GenerateTerrainHeightMap() {
         goto LABEL_21; /*0x5a3823*/
       }
 LABEL_24:
-      result = LayerClass::CellIteratorNext((LayerClass *)&dword_87F7E8); /*0x5a3893*/
+      result = ((LayerClass *)&dword_87F7E8)->CellIteratorNext(); /*0x5a3893*/
       v13 = result; /*0x5a389d*/
       v12 = 0; /*0x5a389f*/
       if ( !result ) /*0x5a38a3*/
