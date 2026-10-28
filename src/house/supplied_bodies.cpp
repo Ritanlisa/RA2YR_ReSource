@@ -504,9 +504,9 @@ LABEL_89:
     if ( (stru_A8E960.waypoints[170] & 1) == 0 ) /*0x4f8873*/
     {
       stru_A8E960.waypoints[170] |= 1u; /*0x4f8882*/
-      *(unsigned int *)&stru_A8E960.waypoints[86] = Random::Range(&Randomizer_Global, 0, 1); /*0x4f888d*/
+      *(unsigned int *)&stru_A8E960.waypoints[86] = ((Random *)(&Randomizer_Global))->Range(0, 1); /*0x4f888d*/
     }
-    if ( !Random::Range(&Randomizer_Global, 0, 2) )
+    if ( !((Random *)(&Randomizer_Global))->Range(0, 2) )
     {
       v28 = (int *)(*(unsigned int *)&stru_A8E960.waypoints[86]
                   ? (dword_87F8DC << 11) + dword_87F924 + 22580
@@ -515,7 +515,7 @@ LABEL_89:
       if ( v29 ) /*0x4f88e6*/
       {
         if ( *(unsigned int *)(v29 + 304) != 1 || (*(unsigned char *)(v29 + 300) & 0x18) != 0 ) /*0x4f88f8*/
-          Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2); /*0x4f8908*/
+          ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 2); /*0x4f8908*/
       }
     }
   }
@@ -525,7 +525,7 @@ LABEL_89:
   {
     Ticks = 0; /*0x4f8956*/
     v119 = 0; /*0x4f895a*/
-    v30 = (Object *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)&v3[31].__pad_140[320]); /*0x4f895e*/
+    v30 = (Object *)((CellCoord *)&dword_87F7E8)->To_CellObj((__int16 *)&v3[31].__pad_140[320]); /*0x4f895e*/
     ClosestObjectCell = Object::FindClosestObjectCell(v30, &Ticks, 0, 0); /*0x4f8965*/
     v32 = (unsigned int *)ClosestObjectCell; /*0x4f896a*/
     if ( ClosestObjectCell ) /*0x4f896e*/

@@ -255,7 +255,7 @@ UnitClass::UnitClass() noexcept
 LABEL_9:
       MissionControl = MissionClass::GetMissionControl((MissionClass *)this); /*0x41525a*/
       (v8) = ((v8) & ~0xFFFF) | ((Math::RoundToInt(*((double *)MissionControl + 2) * 900.0)) & 0xFFFF); /*0x41526a*/
-      return v8 + Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2);
+      return v8 + ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 2);
   }
 
 }
@@ -6996,7 +6996,7 @@ int UnitClass::Scatter(CellStruct* threatPos, bool a3, bool a4)
   }
   if ( (*(int (__thiscall **)(Class_7F5C70 *))(*&this->ptr_4))(this) == 1 && this->Unloading /*0x743d33*/
     || this->FootClass_field_5A4 && (!(unsigned char)a3 || this->FootClass_field_bool_6AF)
-    || this->target && !(((unsigned char *)&(a2))[4]) && Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 1, 4) != 1 )
+    || this->target && !(((unsigned char *)&(a2))[4]) && ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(1, 4) != 1 )
   {
     goto LABEL_66; /*0x743d33*/
   }
@@ -7006,7 +7006,7 @@ int UnitClass::Scatter(CellStruct* threatPos, bool a3, bool a4)
     && *(unsigned int *)(_ESI + 8) == dword_B1CFF0 )
   {
     v18 = ((unsigned int)((*ProgressTimer::GetValue(&this->ptr_4, &v39) >> 12) + 1) >> 1) & 7; /*0x743dfc*/
-    v17 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2) + v18 - 1; /*0x743e04*/
+    v17 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 2) + v18 - 1; /*0x743e04*/
   }
   else
   {
@@ -7026,7 +7026,7 @@ int UnitClass::Scatter(CellStruct* threatPos, bool a3, bool a4)
     __asm { fsub ds:dbl_7E2820 } /*0x743d9d*/
     __asm { fmul ds:dbl_7E2818 }
     (*((unsigned short *)&(a3))) = Math::RoundToInt(v5); /*0x743dba*/
-    v16 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2); /*0x743dc5*/
+    v16 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 2); /*0x743dc5*/
     v17 = v16 + ((((unsigned int)a3 >> 12) + 1) >> 1) - 1; /*0x743dd4*/
   }
   v19 = *(unsigned int *)this; /*0x743e08*/
@@ -7251,8 +7251,7 @@ int UnitClass::CheckForNearbyEnemies()
     if ( v10 ) /*0x746a2e*/
       goto LABEL_25; /*0x746a2e*/
   }
-  v12 = Random::Range( /*0x746a30*/
-          (Random *)&dword_A8B230[14].NeedsSaveOrLink,
+  v12 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range( /*0x746a30*/
           0,
           *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 4104) - 1);
   if ( v12 >= *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 4104) - 1 ) /*0x746a5f*/
@@ -7844,7 +7843,7 @@ int UnitClass::OnUnderAttack(ObjectClass* attacker, int damage, int weaponIdx, C
       goto LABEL_83; /*0x7381db*/
     if ( *(unsigned int *)(v43 + 1504) ) /*0x7381e9*/
       goto LABEL_83; /*0x7381e9*/
-    _EAX = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2147483646); /*0x738209*/
+    _EAX = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 2147483646); /*0x738209*/
     _ECX = dword_8871E0; /*0x73820e*/
     a5 = (int *)_EAX; /*0x738214*/
     __asm /*0x738218*/
@@ -7888,8 +7887,7 @@ int UnitClass::OnUnderAttack(ObjectClass* attacker, int damage, int weaponIdx, C
       v74 = this->tiltForwardsRate; /*0x7382d3*/
       if ( (*(uint8_t (__thiscall **)(int, int *, unsigned int, int *))(v51 + 216))(v47, &v72, 0, v65) ) /*0x7382dc*/
       {
-        v50->health = Random::Range( /*0x73830f*/
-                        (Random *)&dword_A8B230[14].NeedsSaveOrLink,
+        v50->health = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range( /*0x73830f*/
                         5,
                         *(unsigned int *)(v50[10].ptr_0.ptr_8 + 160) / 2);
         v50->COMStub_Return0_93(&dword_B1CFE8, 1, 0); /*0x73831f*/
@@ -9747,7 +9745,7 @@ int UnitClass::ApproachEvaluate()
         fmul ds:dbl_7E27F8
       }
       (*((unsigned short *)&(v21))) = Math::RoundToInt(v1); /*0x4d4579*/
-      return v21 + Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2); /*0x4d45a1*/
+      return v21 + ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 2); /*0x4d45a1*/
     case 1:
       target = this->target; /*0x4d45d8*/
       if ( target )

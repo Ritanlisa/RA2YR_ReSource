@@ -1133,7 +1133,7 @@ TechnoTypeClass * ObjectClass::sub_404BB0()
     v9 = occupant[78]; /*0x404bfd*/
     if ( v9 && (this->nextArrayIndex & 8) == 0 ) /*0x404c0b*/
     {
-      this->infantryBlinkTimer[2] = Random::Range(&Randomizer_Global, 0, v9 - 1); /*0x404c1b*/
+      this->infantryBlinkTimer[2] = ((Random *)(&Randomizer_Global))->Range(0, v9 - 1); /*0x404c1b*/
       v5 = 1; /*0x404c21*/
     }
     v10 = occupant[4]; /*0x404c26*/
@@ -1163,7 +1163,7 @@ TechnoTypeClass * ObjectClass::sub_404BB0()
         }
         else
         {
-          temporalUsing = Random::Range(&Randomizer_Global, occupant[78], occupant[77] - occupant[79] - 1); /*0x404c8f*/
+          temporalUsing = ((Random *)(&Randomizer_Global))->Range(occupant[78], occupant[77] - occupant[79] - 1); /*0x404c8f*/
           this->temporalUsing = temporalUsing; /*0x404c94*/
         }
       }
@@ -1198,7 +1198,7 @@ TechnoTypeClass * ObjectClass::sub_404BB0()
     goto LABEL_29; /*0x404cfa*/
   v15 = 1; /*0x404cfc*/
   LABEL_30:
-  v16 = Random::Range(&Randomizer_Global, v15, *(unsigned int *)this->gapSuperCharged - 1); /*0x404d05*/
+  v16 = ((Random *)(&Randomizer_Global))->Range(v15, *(unsigned int *)this->gapSuperCharged - 1); /*0x404d05*/
     v17 = this->infantryBlinkTimer[v16 + 2]; /*0x404d1e*/
     v18 = v16; /*0x404d2f*/
     if ( v16 < *(unsigned int *)this->gapSuperCharged - 1 ) /*0x404d31*/
@@ -1233,7 +1233,7 @@ int E4Recv_405AC0::sub_405AC0()
   v5 = v2->q024; /*0x405af5*/
   if ( (*(unsigned char *)(v5 + 16) & 0x88) == 0 || v3 || v2->q268 ) /*0x405b02*/
   {
-    v6 = Random::Range(&Randomizer_Global, *(unsigned int *)(v5 + 88), *(unsigned int *)(v5 + 92)); /*0x405b19*/
+    v6 = ((Random *)(&Randomizer_Global))->Range(*(unsigned int *)(v5 + 88), *(unsigned int *)(v5 + 92)); /*0x405b19*/
     if ( v6 < 0x21 ) /*0x405b21*/
     {
   LABEL_2:

@@ -3072,7 +3072,7 @@ LABEL_75:
   }
   MissionControl = MissionClass::GetMissionControl((MissionClass *)this); /*0x73ef77*/
   (v65) = ((v65) & ~0xFFFF) | ((Math::RoundToInt(*((double *)MissionControl + 2) * 900.0)) & 0xFFFF); /*0x73ef87*/
-  return v65 + Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2); /*0x73e62b*/
+  return v65 + ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 2); /*0x73e62b*/
 
 }
 } // namespace gamemd

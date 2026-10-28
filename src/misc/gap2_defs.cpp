@@ -37,6 +37,7 @@ using ra2::game::ObjectClass;
 #include "e4/classes/ScenarioClass_e4.hpp"  // X136: complete type for stru_A8E960
 #include "e4/classes/_tree_full_e4.hpp"  // X136: complete type for stru_A83CD9
 #include "e4/classes/RulesClass_e4.hpp"  // X136: complete type for dword_8871E0_x136
+#include "core/cellcoord.hpp"  // X181A: complete CellCoord (p->To_CellObj)
 // X129: fresh-render label declarations (auto, idempotent)
 extern unsigned char aAalimit[8];  // data: 0x83D23C
 extern unsigned char aAaratio[8];  // data: 0x83D244

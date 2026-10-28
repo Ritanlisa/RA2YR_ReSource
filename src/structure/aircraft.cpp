@@ -665,7 +665,7 @@ int AircraftClass::Mission_Retreat()
   LABEL_6:
       MissionControl = MissionClass::GetMissionControl((MissionClass *)v7); /*0x416713*/
       (*((unsigned short *)&(v10))) = Math::RoundToInt(*((double *)MissionControl + 2) * 900.0); /*0x416723*/
-      return v10 + Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2); /*0x416747*/
+      return v10 + ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 2); /*0x416747*/
   }
   return result; /*0x416747*/
 }
@@ -1424,7 +1424,7 @@ int AircraftClass::CheckReloadTimer()
     (*((void (__thiscall **)(AircraftClass *, unsigned int, int))verified->ptr_0 + 289))(verified, 0, 1); /*0x414aac*/
     MissionControl = MissionClass::GetMissionControl((MissionClass *)verified); /*0x414ab4*/
     (*((unsigned short *)&(v4))) = Math::RoundToInt(*((double *)MissionControl + 2) * 900.0); /*0x414ac2*/
-    return v4 + Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2); /*0x414ade*/
+    return v4 + ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 2); /*0x414ade*/
   }
 }
 // 0x41a5c0
@@ -1566,7 +1566,7 @@ int AircraftClass::CheckReloadTimer()
       {
         v14 = MissionClass::GetMissionControl((MissionClass *)A92B); /*0x41a8f8*/
         (*((unsigned short *)&(v15))) = Math::RoundToInt(*((double *)v14 + 2) * 900.0); /*0x41a906*/
-        return v15 + Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2); /*0x41a921*/
+        return v15 + ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 2); /*0x41a921*/
       }
     }
     else

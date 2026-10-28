@@ -33,6 +33,7 @@ using ra2::game::AbstractClass;
 #include "e4/e4_globals_decls.hpp"
 #include "e4/classes/HouseClass_e4.hpp"
 #include "system/map.hpp"
+#include "core/cellcoord.hpp"  // X181A: complete CellCoord (p->To_CellObj)
 // ---- g57b5 W6: TU-local globals (csp_canon 驱动) ----extern int AudioSource;  // 词表 (canon 无条目, int 兜底) L1306
 // ---- g57c5 W5 vocab (declaration-only) ----
 namespace ra2 { namespace game {
@@ -1231,7 +1232,7 @@ int TechnoClass::GetCrew() const
   if ( *(unsigned int *)(owner->relatedTagsCapacity + 188) == -1 ) /*0x707d8b*/
     return *(unsigned int *)(v5 + 3948); /*0x707dc5*/
   if ( (*((uint8_t (__thiscall **)(void *))this->ptr_0 + 171))(this) /*0x707db2*/
-    && Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 99) < 15 )
+    && ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 99) < 15 )
   {
     return *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 3948); /*0x707dc4*/
   }

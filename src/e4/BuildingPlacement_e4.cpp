@@ -147,7 +147,7 @@ char BuildingPlacement::ProcessBuildingPlacementAction()
     {
       if ( (unsigned __int8)ObjectClass::HasLinkedObject(this->q00C) ) /*0x54c5b5*/
       {
-        v7 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 7); /*0x54c5d6*/
+        v7 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 7); /*0x54c5d6*/
         v8 = (Cell *)(*(int (**)(int))(*(unsigned int *)this->q00C + 444))(this->q00C); /*0x54c5da*/
         v9 = *(unsigned int *)this->q00C; /*0x54c5e6*/
         NeighbourContent = (v8)->GetNeighbourContent(v7); /*0x54c5ea*/
@@ -696,7 +696,7 @@ unsigned int * BuildingPlacement::FindPosition(int * a0, IUnknown * aP1, IUnknow
   v6 = (*(int (**)(unsigned int *))(*v3 + 728))(v3) + v5; /*0x500222*/
   int v7; // eax
   if ( (*(int (**)(unsigned int *))(*v3 + 724))(v3) + v6 ) /*0x50022e*/
-    v7 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 1, 4); /*0x50024b*/
+    v7 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(1, 4); /*0x50024b*/
   else
     v7 = 0; /*0x500237*/
   int *v8; // eax

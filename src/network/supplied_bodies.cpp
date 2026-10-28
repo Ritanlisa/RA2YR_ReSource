@@ -1920,7 +1920,7 @@ void ModemHost::InitDialog()
     SendMessageA(v46, 0xF1u, MultiEngineer == 1, 0); /*0x5b8aac*/
   Debug::Log(); /*0x5b8ac7*/
   NetworkBuffer::GetField((NetworkBuffer *)&((unsigned int *)&stru_A8EB00)[252]); /*0x5b8ad4*/
-  v47 = Random::Range(&Randomizer_Global, 1, 0x7FFF); /*0x5b8ae5*/
+  v47 = ((Random *)(&Randomizer_Global))->Range(1, 0x7FFF); /*0x5b8ae5*/
   srand(v47); /*0x5b8aeb*/
   v48 = rand(); /*0x5b8af3*/
   v49 = g_UIControlState; /*0x5b8b04*/

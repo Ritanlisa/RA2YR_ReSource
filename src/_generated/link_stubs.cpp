@@ -2009,7 +2009,7 @@ bool gamemd::DisplayClass::ConvertAction(gamemd::Vector2D<short> const& a0, bool
   }
   else if ( *a2 != *(_WORD *)&stru_8A0390.bombVisible || a2[1] != *(_WORD *)&stru_8A0390.alignmentPadding69[1] ) /*0x4aafe0*/
   {
-    v56 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], a2); /*0x4aaff1*/
+    v56 = ((CellCoord *)&stru_87F5F0.__pad_58[416])->To_CellObj(a2); /*0x4aaff1*/
   }
   if ( HIBYTE(this->q11B0)
       && *(_DWORD *)&this->__pad_11B4[8]
@@ -2021,7 +2021,7 @@ bool gamemd::DisplayClass::ConvertAction(gamemd::Vector2D<short> const& a0, bool
     *v10 = (*a2 << 8) + 128; /*0x4aaf4b*/
     v10[1] = v11 + 128; /*0x4aaf53*/
     v10[2] = 0; /*0x4aaf5b*/
-    v12 = (*((_DWORD *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], a2) + 80) & 0x100) != 0
+    v12 = (*((_DWORD *)((CellCoord *)&stru_87F5F0.__pad_58[416])->To_CellObj(a2) + 80) & 0x100) != 0
     ? dword_8A0730
     : 0;
     *(_DWORD *)(*(_DWORD *)&this->__pad_11B4[8] + 8) = Cell::GetGroundHeight(*(_DWORD **)&this->__pad_11B4[8]) + v12; /*0x4aaf94*/
@@ -7027,7 +7027,7 @@ void gamemd::DisplayClass::LeftMouseButtonUp(gamemd::Vector3D<int> const& a0, ga
       LABEL_64:
       if ( v28 == 61 ) /*0x4abe8b*/
       {
-        v33 = (char *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], a3); /*0x4abe9a*/
+        v33 = (char *)((CellCoord *)&stru_87F5F0.__pad_58[416])->To_CellObj(a3); /*0x4abe9a*/
         PlayerClass::FindNearestWaypoint( /*0x4abed7*/
             (PlayerClass *)&g_VisibilitySystem,
             (*a3 << 8) + 128,
@@ -7096,7 +7096,7 @@ void gamemd::DisplayClass::LeftMouseButtonUp(gamemd::Vector3D<int> const& a0, ga
               {
                 if ( !dword_A8B538 ) /*0x4ac046*/
                 {
-                  v40 = *((char *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], a3) + 283); /*0x4ac05a*/
+                  v40 = *((char *)((CellCoord *)&stru_87F5F0.__pad_58[416])->To_CellObj(a3) + 283); /*0x4ac05a*/
                   PlacePlayerBeacon( /*0x4ac09d*/
                       &g_VisibilitySystem,
                       (int)dword_A83D4C->q030,

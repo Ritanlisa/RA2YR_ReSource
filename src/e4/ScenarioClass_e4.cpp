@@ -301,7 +301,7 @@ LABEL_6:
 namespace gamemd {
 int ScenarioClass_dispatchEvents()
 {
-  return Random::Range((Random *)&((unsigned int *)(dword_A8B230))[14].NeedsSaveOrLink, 0, 9); /*0x69b684*/
+  return ((Random *)&((unsigned int *)(dword_A8B230))[14].NeedsSaveOrLink)->Range(0, 9); /*0x69b684*/
 }
 }
 // 0x5D6440

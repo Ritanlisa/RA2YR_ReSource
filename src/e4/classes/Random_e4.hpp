@@ -17,9 +17,8 @@ struct Random {
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int AdvanceRandomBytes(char a2);
-    static int Range(Random * aP1, int a2, int a3);
+    int Range(int a2, int a3);  // X181A: real member (0x65C7E0 thiscall, 2 stack args)
     int State();
-    static int State(void *aP0);
     static int Gaussian(void *aP0);
     static int AdvanceRandomBytes(void *aP0);  // G57a1 static-form sync
 };

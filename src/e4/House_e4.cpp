@@ -781,7 +781,7 @@ int House::UpdateHouseAI()
             }
           }
         }
-        return Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 1, 7) + 105; /*0x4fd911*/
+        return ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(1, 7) + 105; /*0x4fd911*/
       }
     }
     v30 = (int *)(*&this->u32_6C); /*0x4fd88a*/
@@ -802,7 +802,7 @@ int House::UpdateHouseAI()
     v32 = 0; /*0x4fd8c3*/
     goto LABEL_72; /*0x4fd8c3*/
   }
-  return Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 1, 7) + 105; /*0x4fd927*/
+  return ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(1, 7) + 105; /*0x4fd927*/
 
 }
 }

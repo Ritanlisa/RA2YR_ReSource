@@ -504,7 +504,7 @@ void * ObjectClass::ProductionCompletionCallback(TechnoClass *self)
       {
         v6 = (unsigned int *)*(&dword_B0F4EC->ptr_0 + v3); /*0x424db3*/
         CellClass::ReduceTiberium(&v5->mapCoords, (unsigned __int8)v5->powerup[0] + 1); /*0x424dc0*/
-        if ( (int)v6[53] > 0 && !((int)abs32(Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink)) % 3) ) /*0x424def*/
+        if ( (int)v6[53] > 0 && !((int)abs32(((Random *)&dword_A8B230[14].NeedsSaveOrLink)->State()) % 3) ) /*0x424def*/
         {
           v7 = (AnimClass *)__2_YAPAXI_Z(0x1C8u); /*0x424e04*/
           if ( v7 ) /*0x424e0b*/
@@ -517,7 +517,7 @@ void * ObjectClass::ProductionCompletionCallback(TechnoClass *self)
             v20 = v11 + 10; /*0x424e2e*/
             v17 = v6[53] - 1; /*0x424e3f*/
             v19 = v10; /*0x424e42*/
-            v12 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, v17); /*0x424e46*/
+            v12 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, v17); /*0x424e46*/
             v13 = AnimClass::ctor(v7, *(void **)(v6[50] + 4 * v12), &v18, 0, 1, (void *)0x600, 0, 0); /*0x424e69*/
           }
           else
@@ -610,7 +610,7 @@ unsigned int * ObjectClass::CreateUnitOnCompletion_addr42(TechnoClass *self)
     int v20; // [esp+18h] [ebp-18h]
     if ( !v12->u8_36B /*0x4250ab*/
       || v12->u8_36D
-      && (v20 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2147483646),
+      && (v20 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 2147483646),
           (double)v20 * 4.656612877414201e-10 >= 0.5) )
     {
       LOBYTE(v11) = *(unsigned char *)(this->missionTimer[0] + 877); /*0x4250d7*/

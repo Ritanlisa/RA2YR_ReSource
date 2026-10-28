@@ -450,7 +450,7 @@ LABEL_15:
       {
         while ( 1 ) /*0x68c12f*/
         {
-          v8 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, v15 - 1); /*0x68c12f*/
+          v8 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, v15 - 1); /*0x68c12f*/
           if ( v8 < v15 ) /*0x68c13a*/
           {
             v9 = v8; /*0x68c13d*/
@@ -627,7 +627,7 @@ int sub_5C98A0()
       {
         int v17; // edi
         v17 = dword_A8D25C[v5]; /*0x5c9a05*/
-        dword_A8D25C[v5] = v17 + v17 / 2 + Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, v17 / 2, v17); /*0x5c9a2a*/
+        dword_A8D25C[v5] = v17 + v17 / 2 + ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(v17 / 2, v17); /*0x5c9a2a*/
       }
       Debug::Log(); /*0x5c9a6e*/
       result = i; /*0x5c9a73*/
@@ -923,7 +923,7 @@ LABEL_17:
         }
         else
         {
-          v13 = (Cell *)(((CellCoord *)&dword_87F7E8)->To_CellObj(v17); /*0x5a7dba*/
+          v13 = (Cell *)((CellCoord *)&dword_87F7E8)->To_CellObj(v17); /*0x5a7dba*/
           v14 = v20[v9 + 4 + v7 * v16[185]]; /*0x5a7dcf*/
           if ( v14 /*0x5a7e27*/
             && (!(unsigned __int8)Cell::IsEmpty(v13) && !sub_4863A0((ObjectClass *)v13)

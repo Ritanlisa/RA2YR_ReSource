@@ -201,7 +201,7 @@ unsigned int * ScenarioClass::Get_Waypoint_Location(unsigned int *a2, int a3) {
 // 0x68BCE0
 namespace gamemd {
 void * ScenarioClass::GetCellFromArray(int a2) {
-  return CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, &this->waypoints); /*0x68bcf6*/
+  return ((CellCoord *)&dword_87F7E8)->To_CellObj(&this->waypoints); /*0x68bcf6*/
 }
 } // namespace gamemd
 

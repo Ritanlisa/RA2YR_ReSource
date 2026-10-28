@@ -300,25 +300,21 @@ TechnoTypeClass * * Skirmish::RandomizeSettings(int aP1)
 {
 
 
-  this->u32_4C = Random::Range( /*0x597282*/
-                             &Randomizer_Global,
+  this->u32_4C = ((Random *)(&Randomizer_Global))->Range( /*0x597282*/
                              *((unsigned int *)&stru_82ADA8.BounceAnim + aP1),
                              stru_82ADA8.Elasticity[aP1 + 1]);
-  this->ptr_44 = (gamemd::TechnoTypeClass *)(Random::Range(&Randomizer_Global, stru_82ADA8.Layer[aP1], dword_82B120[aP1])); /*0x59729f*/
-  this->ptr_60 = Random::Range( /*0x5972bc*/
-                             &Randomizer_Global,
+  this->ptr_44 = (gamemd::TechnoTypeClass *)(((Random *)(&Randomizer_Global))->Range(stru_82ADA8.Layer[aP1], dword_82B120[aP1])); /*0x59729f*/
+  this->ptr_60 = ((Random *)(&Randomizer_Global))->Range( /*0x5972bc*/
                              g_MissionQueueFrame.localVariables[aP1 + 175],
                              *(&stru_82ADA8.RunningFrames + aP1));
-  this->u32_6C = Random::Range( /*0x5972d9*/
-                             &Randomizer_Global,
+  this->u32_6C = ((Random *)(&Randomizer_Global))->Range( /*0x5972d9*/
                              g_MissionQueueFrame.localVariables[aP1 + 165],
                              stru_82ADA8.MaxXYVel[aP1]);
-  this->ptr_70 = Random::Range( /*0x5972f6*/
-                             &Randomizer_Global,
+  this->ptr_70 = ((Random *)(&Randomizer_Global))->Range( /*0x5972f6*/
                              *(&stru_82ADA8.TranslucencyDetailLevel + aP1),
                              stru_82ADA8.RandomRate[aP1 + 2]);
   this->u32_54 = 20 * this->u32_40; /*0x59730b*/
-  this->u32_58 = Random::Range(&Randomizer_Global, 0, 100); /*0x597313*/
+  this->u32_58 = ((Random *)(&Randomizer_Global))->Range(0, 100); /*0x597313*/
   int v3; // eax
   v3 = *(unsigned int *)(g_MissionQueueFrame.briefingCsf[6] + 4 * aP1); /*0x597322*/
   int v4; // esi
@@ -343,9 +339,9 @@ TechnoTypeClass * * Skirmish::RandomizeSettings(int aP1)
   }
   if ( v3 > v4 ) /*0x59734e*/
     v3 = v4; /*0x597350*/
-  this->u32_5C = Random::Range(&Randomizer_Global, v3, v4); /*0x59736a*/
+  this->u32_5C = ((Random *)(&Randomizer_Global))->Range(v3, v4); /*0x59736a*/
   int result; // eax
-  result = Random::Range(&Randomizer_Global, 0, 0xFFFF); /*0x59736d*/
+  result = ((Random *)(&Randomizer_Global))->Range(0, 0xFFFF); /*0x59736d*/
   this->ptr_74 = (gamemd::TechnoTypeClass *)(result); /*0x597372*/
   return (gamemd::TechnoTypeClass **)(result); /*0x597375*/
 

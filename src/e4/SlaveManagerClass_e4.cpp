@@ -486,8 +486,7 @@ TechnoClass * * SlaveManagerClass_ProcessSlaves(unsigned int *a1, void * a2, voi
             v20 = *(unsigned int *)v9; /*0x6af86a*/
             v78.slaveOwner = *v19; /*0x6af870*/
             a3 = 1; /*0x6af874*/
-            a2 = (int *)CellCoord::To_CellObj( /*0x6af881*/
-                                                    (CellCoord *)&dword_87F7E8,
+            a2 = (int *)((CellCoord *)&dword_87F7E8)->To_CellObj( /*0x6af881*/
                                                     (__int16 *)&v78.slaveOwner);
             (*(void (**)(wchar_t *))(v20 + 1152))(v9); /*0x6af884*/
             (*(void (**)(wchar_t *, int, unsigned int))(*(unsigned int *)v9 + 488))(v9, 2, 0); /*0x6af892*/
@@ -497,8 +496,7 @@ TechnoClass * * SlaveManagerClass_ProcessSlaves(unsigned int *a1, void * a2, voi
           {
             v11 = *(unsigned int *)v9; /*0x6af78c*/
             a3 = 1; /*0x6af792*/
-            a2 = (int *)CellCoord::To_CellObj( /*0x6af79f*/
-                                                    (CellCoord *)&dword_87F7E8,
+            a2 = (int *)((CellCoord *)&dword_87F7E8)->To_CellObj( /*0x6af79f*/
                                                     (__int16 *)&v78.abstractFlags);
             (*(void (**)(wchar_t *))(v11 + 1152))(v9); /*0x6af7a2*/
             (*(void (**)(wchar_t *, int, unsigned int))(*(unsigned int *)v9 + 488))(v9, 2, 0); /*0x6af7b0*/
@@ -546,8 +544,7 @@ TechnoClass * * SlaveManagerClass_ProcessSlaves(unsigned int *a1, void * a2, voi
             }
             v30 = *(unsigned int *)v9; /*0x6af987*/
             a3 = 1; /*0x6af98d*/
-            a2 = (int *)CellCoord::To_CellObj( /*0x6af99a*/
-                                                    (CellCoord *)&dword_87F7E8,
+            a2 = (int *)((CellCoord *)&dword_87F7E8)->To_CellObj( /*0x6af99a*/
                                                     (__int16 *)&v78.referenceCount);
             (*(void (**)(wchar_t *))(v30 + 1152))(v9); /*0x6af99d*/
             (*(void (**)(wchar_t *, int, unsigned int))(*(unsigned int *)v9 + 488))(v9, 2, 0); /*0x6af9ab*/
@@ -687,8 +684,7 @@ LABEL_48:
           v66 = *(unsigned int *)v9; /*0x6afc93*/
           v78.NeedsSaveOrLink = *v65; /*0x6afc99*/
           a3 = 1; /*0x6afc9d*/
-          a2 = (int *)CellCoord::To_CellObj( /*0x6afcaa*/
-                                                  (CellCoord *)&dword_87F7E8,
+          a2 = (int *)((CellCoord *)&dword_87F7E8)->To_CellObj( /*0x6afcaa*/
                                                   (__int16 *)&v78.NeedsSaveOrLink);
           (*(void (**)(wchar_t *))(v66 + 1152))(v9); /*0x6afcad*/
           (*(void (**)(wchar_t *, int, unsigned int))(*(unsigned int *)v9 + 488))(v9, 2, 0); /*0x6afcbb*/

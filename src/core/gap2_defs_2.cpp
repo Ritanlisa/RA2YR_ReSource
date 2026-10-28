@@ -573,14 +573,14 @@ void Player::RandomAssign() {
         if ( v5 ) /*0x69b915*/
           v3->u32_4B = (*(int (**)(int))(*(unsigned int *)v5 + 108))(v5); /*0x69b91c*/
         else
-          v3->u32_4B = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 9); /*0x69b935*/
+          v3->u32_4B = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 9); /*0x69b935*/
       }
       if ( v3->u32_57 == -2 ) /*0x69b941*/
       {
         v3->u32_57 = -1; /*0x69b943*/
         v3->q053 = -1; /*0x69b946*/
         do /*0x69b966*/
-          v6 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 7); /*0x69b95e*/
+          v6 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 7); /*0x69b95e*/
         while ( NetworkSession::IsPlayerInGame((NetworkSession *)&dword_A8B238, v6) ); /*0x69b966*/
         v3->q053 = v6; /*0x69b96f*/
       }
@@ -600,14 +600,14 @@ void Player::RandomAssign() {
       if ( v8 ) /*0x69b9ef*/
         v9 = (*(int (**)(int))(*(unsigned int *)v8 + 112))(v8); /*0x69b9f3*/
       else
-        v9 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 9); /*0x69ba07*/
+        v9 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 9); /*0x69ba07*/
       *(unsigned int *)v7 = v9; /*0x69ba0c*/
     }
     if ( *((unsigned int *)v7 + 8) == -2 ) /*0x69ba11*/
     {
       while ( 1 ) /*0x69ba23*/
       {
-        v10 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 7); /*0x69ba23*/
+        v10 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 7); /*0x69ba23*/
         if ( v10 == -2 ) /*0x69ba2a*/
           break; /*0x69ba2a*/
         v11 = 0; /*0x69ba32*/

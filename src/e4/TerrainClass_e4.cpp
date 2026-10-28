@@ -927,7 +927,7 @@ LABEL_60:
         ++v63; /*0x6de7f7*/
       }
       while ( v63 < 702 ); /*0x6de7fe*/
-      v65 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, v62 - 1); /*0x6de80f*/
+      v65 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, v62 - 1); /*0x6de80f*/
       v66 = CoordStruct::Set2((CoordStruct *)&v120.u32_10, (__int16 *)&v120.__pad_C[4 * v65 + 160], 0); /*0x6de824*/
       PlayAudioAt2(*(unsigned int *)(a1 + 144), v66, 0); /*0x6de831*/
       return result; /*0x6de842*/

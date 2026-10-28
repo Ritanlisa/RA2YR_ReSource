@@ -1549,8 +1549,8 @@ int JumpjetLocomotionClass::ClearLocomotionDirty(unsigned char * a1)
   if ( (*(uint8_t (__stdcall **)(FlyLocomotionClass *))(*(unsigned int *)a1->0 + 16))(a1) ) /*0x4cfd28*/
   {
     a1->__pad_4F[0] = 1; /*0x4cfd2f*/
-    *(unsigned int *)&a1->__pad_4F[1] = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 20, 30); /*0x4cfd48*/
-    if ( Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 99) < 50 ) /*0x4cfd63*/
+    *(unsigned int *)&a1->__pad_4F[1] = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(20, 30); /*0x4cfd48*/
+    if ( ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 99) < 50 ) /*0x4cfd63*/
       *(unsigned int *)&a1->__pad_4F[1] = -*(unsigned int *)&a1->__pad_4F[1]; /*0x4cfd6a*/
     (*(void (__stdcall **)(FlyLocomotionClass *))(*(unsigned int *)a1->0 + 72))(a1); /*0x4cfd70*/
     a1->FlyLocomotionClass_field_54 = 0; /*0x4cfd73*/
@@ -1667,11 +1667,10 @@ int JumpjetLocomotionClass::ClearLocomotionDirty_0(unsigned char * a1)
       if ( currentMission != 7 ) /*0x516c0f*/
       {
         (*((unsigned char *)&(a1->CurrentWobbles[1]))) = 1; /*0x516c11*/
-        *(unsigned int *)&a1->HoverLocomotionClass_field_bool_68 = Random::Range( /*0x516c2a*/
-                                                                 (Random *)&dword_A8B230[14].NeedsSaveOrLink,
+        *(unsigned int *)&a1->HoverLocomotionClass_field_bool_68 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range( /*0x516c2a*/
                                                                  20,
                                                                  30);
-        if ( Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 99) < 50 ) /*0x516c44*/
+        if ( ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 99) < 50 ) /*0x516c44*/
           *(unsigned int *)&a1->HoverLocomotionClass_field_bool_68 = -*(unsigned int *)&a1->HoverLocomotionClass_field_bool_68; /*0x516c4b*/
       }
     }
@@ -4411,11 +4410,10 @@ char JumpjetLocomotionClass::RandomizeLocomotionParam(HoverLocomotionClass * aP0
   if ( !(*(uint8_t (__stdcall **)(HoverLocomotionClass *, int))(*(unsigned int *)aP0->0 + 104))(aP0, aP1) ) /*0x516fcd*/
     return 0; /*0x517017*/
   (aP0->HoverLocomotionClass_field_bool_68) = 1; /*0x516fd4*/
-  *&aP0->HoverLocomotionClass_field_bool_68 = Random::Range( /*0x516fed*/
-                                                           (Random *)&dword_A8B230[14].NeedsSaveOrLink,
+  *&aP0->HoverLocomotionClass_field_bool_68 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range( /*0x516fed*/
                                                            20,
                                                            30);
-  if ( Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 99) < 50 ) /*0x517007*/
+  if ( ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 99) < 50 ) /*0x517007*/
     *&aP0->HoverLocomotionClass_field_bool_68 = -*&aP0->HoverLocomotionClass_field_bool_68; /*0x51700e*/
   return 1; /*0x517013*/
 }

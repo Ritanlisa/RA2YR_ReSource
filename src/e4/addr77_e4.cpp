@@ -3489,7 +3489,7 @@ char E4Recv_770970::sub_770970(int a2, int a3, void ** a4)
   if ( v7 == 1 ) /*0x7709ae*/
     v9 = 0; /*0x7709b0*/
   else
-    v9 = Random::Range(&Randomizer_Global, 0, v7 - 1); /*0x7709bd*/
+    v9 = ((Random *)(&Randomizer_Global))->Range(0, v7 - 1); /*0x7709bd*/
   v10 = *((unsigned int *)v6[1] + v9); /*0x7709ca*/
   if ( ptr_0 == 3 ) /*0x7709cd*/
   {
@@ -3539,7 +3539,7 @@ char E4Recv_770A50::sub_770A50(int a2, int a3, void ** a4)
   if ( v7 == 1 ) /*0x770a8e*/
     v9 = 0; /*0x770a90*/
   else
-    v9 = Random::Range(&Randomizer_Global, 0, v7 - 1); /*0x770a9d*/
+    v9 = ((Random *)(&Randomizer_Global))->Range(0, v7 - 1); /*0x770a9d*/
   v10 = *((unsigned int *)v6[1] + v9); /*0x770aaa*/
   if ( ptr_0 == 3 ) /*0x770aad*/
   {
@@ -3590,7 +3590,7 @@ char E4Recv_770B30::sub_770B30(int a2, void ** a3)
   if ( v6 == 1 ) /*0x770b66*/
     v8 = 0; /*0x770b68*/
   else
-    v8 = Random::Range(&Randomizer_Global, 0, v6 - 1); /*0x770b75*/
+    v8 = ((Random *)(&Randomizer_Global))->Range(0, v6 - 1); /*0x770b75*/
   v9 = *(unsigned int *)(*((unsigned int *)v5 + 1) + 4 * v8); /*0x770b82*/
   if ( ptr_0 == 3 ) /*0x770b85*/
   {
@@ -3677,7 +3677,7 @@ char E4Recv_770F10::sub_770F10(int a2, int a3, void ** a4)
   if ( v6 == 1 ) /*0x770f3e*/
     v8 = 0; /*0x770f40*/
   else
-    v8 = Random::Range(&Randomizer_Global, 0, v6 - 1); /*0x770f4d*/
+    v8 = ((Random *)(&Randomizer_Global))->Range(0, v6 - 1); /*0x770f4d*/
   v9 = *((unsigned int *)v5[1] + v8); /*0x770f57*/
   if ( a2 == 3 ) /*0x770f61*/
   {
@@ -3725,7 +3725,7 @@ char E4Recv_770FE0::sub_770FE0(int a2, int a3, void ** a4)
   if ( v6 == 1 ) /*0x77100e*/
     v8 = 0; /*0x771010*/
   else
-    v8 = Random::Range(&Randomizer_Global, 0, v6 - 1); /*0x77101d*/
+    v8 = ((Random *)(&Randomizer_Global))->Range(0, v6 - 1); /*0x77101d*/
   v9 = *(unsigned int *)(v5[1] + 4 * v8); /*0x771027*/
   if ( a2 == 3 ) /*0x771031*/
   {

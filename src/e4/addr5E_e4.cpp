@@ -6191,7 +6191,7 @@ unsigned int * AssignRandomMapStartPositions(MouseClass * aP0, IUnknown * aP1, i
   LABEL_8:
     if ( a5 ) /*0x5ee739*/
   {
-      v10 = Random::Range(&dword_A8B230[14].NeedsSaveOrLink, 0, v6 - 1); /*0x5ee74e*/
+      v10 = ((Random *)(&dword_A8B230[14].NeedsSaveOrLink))->Range(0, v6 - 1); /*0x5ee74e*/
       *(unsigned char *)(v10 + v9) = 1; /*0x5ee757*/
       *((unsigned int *)dword_A8B230 + v10 + 1120) = aP1; /*0x5ee761*/
       *aP0 = *(unsigned int *)(*(unsigned int *)(a3 + 4) + 4 * v10); /*0x5ee770*/
@@ -6302,7 +6302,7 @@ unsigned int * AssignRandomMapStartPositions(MouseClass * aP0, IUnknown * aP1, i
       return v34; /*0x5ee9b5*/
   }
   }
-  v12 = Random::Range(&dword_A8B230[14].NeedsSaveOrLink, 0, v6 - 3); /*0x5ee798*/
+  v12 = ((Random *)(&dword_A8B230[14].NeedsSaveOrLink))->Range(0, v6 - 3); /*0x5ee798*/
   v6 = *(unsigned int *)(a3 + 16); /*0x5ee79d*/
   v13 = 0; /*0x5ee7a0*/
   v28 = 0; /*0x5ee7a4*/

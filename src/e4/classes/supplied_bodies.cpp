@@ -1384,7 +1384,7 @@ unsigned int * ScriptAction::ReadParameter()
   v5[1] = v2; /*0x6e1856*/
   if ( (unsigned short)v1 == *(unsigned short *)dword_B0E680 && (unsigned short)v2 == *(unsigned short *)&dword_B0E680[2] ) /*0x6e1875*/
     return 0; /*0x6e189e*/
-  v3 = (Cell *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v5); /*0x6e1886*/
+  v3 = (Cell *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v5); /*0x6e1886*/
   result = Cell::IsBridge(v3); /*0x6e188a*/
   if ( !result ) /*0x6e1891*/
     return CellClass::FindInfantry((CellClass *)v3, 0); /*0x6e1896*/
@@ -1744,7 +1744,7 @@ int ScriptAction::ExecuteMissionCmd()
         default:
           if ( *(int *)((*(int (**)(TechnoClass *))(this->ptr_0 + 132))(this) + 1200) > 0 ) /*0x6ffd59*/
           {
-            v6 = Random::State(&Randomizer_Global); /*0x6ffd65*/
+            v6 = ((Random *)(&Randomizer_Global))->State(); /*0x6ffd65*/
             v7 = (*(int (**)(TechnoClass *))(this->ptr_0 + 132))(this); /*0x6ffd6b*/
             v11[0] = this->ptr_0; /*0x6ffd7b*/
             (*(void (**)(TechnoClass *, unsigned int))(v11[0] + 852))( /*0x6ffd93*/

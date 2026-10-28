@@ -1,5 +1,6 @@
 #include "misc/audio_ext.hpp"
 #include "e4/classes/Matrix2D_e4.hpp"  // g57c5 W5d scope supply
+#include "core/cellcoord.hpp"  // X181A: complete CellCoord (p->To_CellObj)
 // X145C: CellCoord::To_CellObj / DataGlobal_87F7E8 supplies deferred — include-order
 // twin conflicts (CellStruct C2371, AudioController C2874) in this TU; body errors
 // at To_Cell block + Audio3D::field_8 (missing member supply) remain.

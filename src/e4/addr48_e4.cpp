@@ -759,7 +759,7 @@ LABEL_166:
               if ( *(unsigned char *)(aP3 + 324) ) /*0x48a14a*/
               {
                 if ( aP3 == *((unsigned int *)dword_8871E0 + 1020) /*0x48a182*/
-                  || (v86 = Random::Range(1, dword_8871E0->TiberiumLongScan), v86 < v113) )
+                  || (v86 = ((Random *)(((unsigned int *)dword_A8B230 + 134)))->Range(dword_8871E0->TiberiumLongScan), v86 < v113) )
                 {
                   v87 = 3; /*0x48a199*/
                   if ( (unsigned __int8)CellClass::SetTerrainType(&v108) ) /*0x48a192*/
@@ -786,7 +786,7 @@ LABEL_189:
           if ( v88 >= 74 && v88 <= 99 ) /*0x48a21f*/
           {
             if ( aP3 == *((unsigned int *)dword_8871E0 + 1020) /*0x48a24e*/
-              || (v89 = Random::Range(1, dword_8871E0->TiberiumLongScan), v89 < v113) )
+              || (v89 = ((Random *)(((unsigned int *)dword_A8B230 + 134)))->Range(dword_8871E0->TiberiumLongScan), v89 < v113) )
             {
               if ( (unsigned __int8)CellClass::CheckTilePassable2(&v108) ) /*0x48a25a*/
                 AbstractClass::ClearTargetToMeClearManagerTarget(v71); /*0x48a265*/
@@ -796,7 +796,7 @@ LABEL_189:
           if ( v90 >= 205 && v90 <= 230 ) /*0x48a279*/
           {
             if ( aP3 == *((unsigned int *)dword_8871E0 + 1020) /*0x48a2a8*/
-              || (v91 = Random::Range(1, dword_8871E0->TiberiumLongScan), v91 < v113) )
+              || (v91 = ((Random *)(((unsigned int *)dword_A8B230 + 134)))->Range(dword_8871E0->TiberiumLongScan), v91 < v113) )
             {
               if ( (unsigned __int8)CellClass::CheckTilePassable(&v108) ) /*0x48a2b4*/
                 AbstractClass::ClearTargetToMeClearManagerTarget(v71); /*0x48a2bf*/
@@ -812,7 +812,7 @@ LABEL_151:
           if ( *(unsigned char *)(aP3 + 324) ) /*0x489fc5*/
           {
             if ( aP3 == *((unsigned int *)dword_8871E0 + 1020) /*0x489ffe*/
-              || (v80 = Random::Range(1, dword_8871E0->TiberiumLongScan), v80 < v113) )
+              || (v80 = ((Random *)(((unsigned int *)dword_A8B230 + 134)))->Range(dword_8871E0->TiberiumLongScan), v80 < v113) )
             {
               v81 = 3; /*0x48a015*/
               if ( (unsigned __int8)CellClass::SetTerrainType(&v108) ) /*0x48a00e*/
@@ -864,7 +864,7 @@ LABEL_203:
     v95 = 0; /*0x48a37c*/
     if ( *((int *)dword_8871E0 + 26) > 0 ) /*0x48a383*/
     {
-      while ( (int)Random::Range(0, 99) >= 15 ) /*0x48a39c*/
+      while ( (int)((Random *)(0))->Range(99) >= 15 ) /*0x48a39c*/
       {
         if ( ++v95 >= *((unsigned int *)dword_8871E0 + 26) ) /*0x48a3a8*/
           goto LABEL_213; /*0x48a3a8*/
@@ -873,7 +873,7 @@ LABEL_203:
         DamageAnimClass::Constructor(*(unsigned int *)(*((unsigned int *)dword_8871E0 + 23) + 4 * v95), v94, 0); /*0x48a3cf*/
     }
 LABEL_213:
-    if ( (int)Random::Range(0, 99) < 25 ) /*0x48a3eb*/
+    if ( (int)((Random *)(0))->Range(99) < 25 ) /*0x48a3eb*/
     {
       if ( __2_YAPAXI_Z(0x100u) ) /*0x48a3f2*/
         ParticleSystemClass::Constructor(*((unsigned int *)dword_8871E0 + 29), v94, 0, 0, &dword_89E830, 0); /*0x48a416*/
@@ -2024,7 +2024,7 @@ int GetWarheadVersusMultiplier(int aP0, int aP1, int aP2, BulletClass * aP3)
   if ( !v9 ) /*0x48a5bb*/
     return 0; /*0x48a5bb*/
   if ( *(unsigned char *)(aP1 + 340) ) /*0x48a5bd*/
-    return *(unsigned int *)(*(unsigned int *)(aP1 + 264) + 4 * Random::Range(&dword_A8B230[14].NeedsSaveOrLink, 0, v9 - 1)); /*0x48a5e4*/
+    return *(unsigned int *)(*(unsigned int *)(aP1 + 264) + 4 * ((Random *)(&dword_A8B230[14].NeedsSaveOrLink))->Range(0, v9 - 1)); /*0x48a5e4*/
   int v10 = 25 * v9 - 1; // eax /*0x48a5ee*/
   if ( v4 >= v10 ) /*0x48a5f4*/
     v4 = v10; /*0x48a5f6*/

@@ -3516,7 +3516,7 @@ if ( lParam >= 0 && lParam < dword_A8DA84 ) /*0x64aafb*/
             + 2 * *(unsigned int *)dword_AC51FC;
           }
         }
-        *(unsigned int *)dword_AC51FC = Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink) /*0x64de54*/
+        *(unsigned int *)dword_AC51FC = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->State() /*0x64de54*/
         + (*(unsigned int *)dword_AC51FC >> 31)
         + 2 * *(unsigned int *)dword_AC51FC;
         return AllocateTriggerLog((int)dword_A8ED84 % 256); /*0x64de75*/

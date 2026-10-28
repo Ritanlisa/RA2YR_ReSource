@@ -747,7 +747,7 @@ LABEL_202:
         v110.q018 = *(unsigned int *)(_EBP + 160); /*0x739ffb*/
         v110.q01C = *(unsigned int *)(_EBP + 164); /*0x73a002*/
         v14 = (*(int (**)(int))(v13 + 132))(_EBP) + 1212; /*0x73a015*/
-        v15 = Random::State(&Randomizer_Global); /*0x73a01b*/
+        v15 = ((Random *)(&Randomizer_Global))->State(); /*0x73a01b*/
         p_ComPtr_field_0x14 = &v110.q014; /*0x73a022*/
         StartAudioControllerAt( /*0x73a033*/
           *(unsigned int *)(*(unsigned int *)(v14 + 4) + 4 * (v15 % *(unsigned int *)(v14 + 16))),
@@ -761,7 +761,7 @@ LABEL_202:
         v16 = *(unsigned int *)_EBP; /*0x73a06b*/
         v110.q01C = *(unsigned int *)(_EBP + 164); /*0x73a071*/
         v17 = (*(int (**)(int))(v16 + 132))(_EBP) + 1296; /*0x73a082*/
-        v18 = Random::State(&Randomizer_Global); /*0x73a088*/
+        v18 = ((Random *)(&Randomizer_Global))->State(); /*0x73a088*/
         p_ComPtr_field_0x14 = &v110.q014; /*0x73a08f*/
         StartAudioControllerAt( /*0x73a0a0*/
           *(unsigned int *)(*(unsigned int *)(v17 + 4) + 4 * (v18 % *(unsigned int *)(v17 + 16))),

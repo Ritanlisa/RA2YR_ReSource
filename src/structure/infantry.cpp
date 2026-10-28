@@ -283,7 +283,7 @@ int InfantryClass::ProcessDeployAction(int deploy_type, bool a3, bool a4)
     v20 = *(unsigned int *)(this->Type->Sequence[0] + 36 * v4 + 4); /*0x51da61*/
     if ( v20 <= 1 ) /*0x51da68*/
       v20 = 1; /*0x51da6a*/
-    this->animation[0] = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, v20 - 1); /*0x51da84*/
+    this->animation[0] = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, v20 - 1); /*0x51da84*/
   }
   else
   {
@@ -1503,7 +1503,7 @@ int InfantryClass::ProcessIdleAction()
   {
     v14 = *&dword_8871E0->BridgeStrength * 1800.0; /*0x51cdeb*/
     v15 = *&dword_8871E0->BridgeStrength * 450.0; /*0x51cdfb*/
-    v12 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2147483646); /*0x51ce0c*/
+    v12 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 2147483646); /*0x51ce0c*/
     v3 = *(unsigned int *)&stru_A8E960.random[528]; /*0x51ce10*/
     LOWORD(v4) = Math::RoundToInt((v14 - v15) * ((double)(int)v12 * 4.656612877414201e-10) + v15); /*0x51ce26*/
     v5 = v17; /*0x51ce2b*/
@@ -1514,9 +1514,9 @@ int InfantryClass::ProcessIdleAction()
       || (unsigned __int8)House::IsCurrentPlayer((House *)this->owner)
       || this->PanicDurationLeft <= 50 )
     {
-      v6 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 10); /*0x51cea1*/
+      v6 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 10); /*0x51cea1*/
       v7 = ObjectClass::StepCleanup((ObjectClass *)this, &unk_82554C); /*0x51cea8*/
-      if ( v7 && Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 10) < 5 ) /*0x51cec6*/
+      if ( v7 && ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 10) < 5 ) /*0x51cec6*/
         v6 = 8; /*0x51cec8*/
       result = v6 - 1; /*0x51cecd*/
       switch ( v6 ) /*0x51ced9*/
@@ -1533,7 +1533,7 @@ int InfantryClass::ProcessIdleAction()
           result = this->Type; /*0x51cf73*/
           if ( result->u32_E98 <= 0 ) /*0x51cf81*/
             goto LABEL_22; /*0x51cf81*/
-          result = Random::Range(&Randomizer_Global, 0, 2); /*0x51cf90*/
+          result = ((Random *)(&Randomizer_Global))->Range(0, 2); /*0x51cf90*/
           if ( result ) /*0x51cf97*/
             goto LABEL_22; /*0x51cf97*/
           v16 = this->location[0]; /*0x51cfa7*/
@@ -1550,7 +1550,7 @@ int InfantryClass::ProcessIdleAction()
           (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x51cef2*/
           break; /*0x51cef8*/
         case 6: /*0x51ced9*/
-          (v12) = ((v12) & ~0xFFFF) | (((unsigned __int16)Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 7) << 13) & 0xFFFF); /*0x51cf11*/
+          (v12) = ((v12) & ~0xFFFF) | (((unsigned __int16)((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 7) << 13) & 0xFFFF); /*0x51cf11*/
           (v8) = ((v8) & ~0xFF) | ((0) & 0xFF); /*0x51cf16*/
           (v8) = ((v8) & ~(0xFF << 8)) | (((((v12 >> 7) + 1) >> 1) & 0xFF) << 8); /*0x51cf27*/
           (v13) = ((v13) & ~0xFFFF) | ((v8) & 0xFFFF); /*0x51cf2f*/
@@ -1558,7 +1558,7 @@ int InfantryClass::ProcessIdleAction()
           (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x51cf3b*/
           break; /*0x51cf41*/
         case 8: /*0x51ced9*/
-          (v12) = ((v12) & ~0xFFFF) | (((unsigned __int16)Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 7) << 13) & 0xFFFF); /*0x51cff1*/
+          (v12) = ((v12) & ~0xFFFF) | (((unsigned __int16)((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 7) << 13) & 0xFFFF); /*0x51cff1*/
           (v10) = ((v10) & ~0xFF) | ((0) & 0xFF); /*0x51cff6*/
           (v10) = ((v10) & ~(0xFF << 8)) | (((((v12 >> 7) + 1) >> 1) & 0xFF) << 8); /*0x51d007*/
           LOWORD(v14) = v10; /*0x51d009*/
@@ -1581,7 +1581,7 @@ int InfantryClass::ProcessIdleAction()
           break; /*0x51d057*/
         case 9: /*0x51ced9*/
         case 10: /*0x51ced9*/
-          (v12) = ((v12) & ~0xFFFF) | (((unsigned __int16)Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 7) << 13) & 0xFFFF); /*0x51d06f*/
+          (v12) = ((v12) & ~0xFFFF) | (((unsigned __int16)((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 7) << 13) & 0xFFFF); /*0x51d06f*/
           (v11) = ((v11) & ~0xFF) | ((0) & 0xFF); /*0x51d074*/
           (v11) = ((v11) & ~(0xFF << 8)) | (((((v12 >> 7) + 1) >> 1) & 0xFF) << 8); /*0x51d085*/
           LOWORD(v15) = v11; /*0x51d08d*/
@@ -1734,7 +1734,7 @@ int InfantryClass::GetIdleTimer()
                   this->ShouldDeploy[0] = 1; /*0x52167c*/
                   MissionControl = MissionClass::GetMissionControl((MissionClass *)this); /*0x521683*/
                   LOWORD(v25) = Math::RoundToInt(*((double *)MissionControl + 2) * 900.0); /*0x521691*/
-                  return v25 + Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2); /*0x5216ad*/
+                  return v25 + ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 2); /*0x5216ad*/
                 }
                 else
                 {
@@ -1781,14 +1781,14 @@ int InfantryClass::GetIdleTimer()
     }
     v12 = MissionClass::GetMissionControl((MissionClass *)this); /*0x521486*/
     LOWORD(v13) = Math::RoundToInt(*((double *)v12 + 2) * 900.0); /*0x521494*/
-    return (int)v13 + Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 10, 20); /*0x5214b0*/
+    return (int)v13 + ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(10, 20); /*0x5214b0*/
   }
   else
   {
     this->vt_slot_1064(this); /*0x5214bd*/
     v14 = MissionClass::GetMissionControl((MissionClass *)this); /*0x5214c5*/
     LOWORD(v15) = Math::RoundToInt(*((double *)v14 + 2) * 900.0); /*0x5214d3*/
-    return (int)v15 + Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2); /*0x5214ee*/
+    return (int)v15 + ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 2); /*0x5214ee*/
   }
 
 }
@@ -2532,7 +2532,7 @@ LABEL_33:
             LOWORD(ptr_0) = Math::RoundToInt(a2); /*0x51d350*/
             v15 = ptr_0; /*0x51d355*/
           }
-          v16 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 4); /*0x51d385*/
+          v16 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 4); /*0x51d385*/
           v17 = *v7; /*0x51d38a*/
           v46 = ((((v15 >> 12) + 1) >> 1) & 7) + v16 - 2; /*0x51d390*/
           a3 = 0; /*0x51d39f*/
@@ -2588,7 +2588,7 @@ LABEL_33:
           __asm { fsub ds:dbl_7E2820 } /*0x51d293*/
           __asm { fmul ds:dbl_7E2818 }
           (ptr_0) = ((ptr_0) & ~0xFFFF) | ((Math::RoundToInt(a2)) & 0xFFFF); /*0x51d2a7*/
-          v11 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 4); /*0x51d2ba*/
+          v11 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 4); /*0x51d2ba*/
           v46 = v11 + ((((ptr_0 >> 12) + 1) >> 1) & 7) - 2; /*0x51d2d0*/
         }
         v21 = *v7; /*0x51d487*/
@@ -2739,7 +2739,7 @@ int InfantryClass::FindNearbyCell()
             }
             while ( 2 ) /*0x418f40*/
             {
-              v10 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 7); /*0x418f40*/
+              v10 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 7); /*0x418f40*/
               LODWORD(v21) = (__int16)v19; /*0x418f59*/
               v22 = v10; /*0x418f5d*/
               __asm { fild dword ptr [esp+50h+var_30] } /*0x418f61*/
@@ -2945,7 +2945,7 @@ int InfantryClass::EnterBuilding()
     (*((void (__thiscall **)(InfantryClass *))this->ptr_0 + 266))(this); /*0x51f500*/
     MissionControl = MissionClass::GetMissionControl((MissionClass *)this); /*0x51f508*/
     (*((unsigned short *)&(v10))) = Math::RoundToInt(*((double *)MissionControl + 2) * 900.0); /*0x51f516*/
-    return v10 + Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2); /*0x51f532*/
+    return v10 + ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 2); /*0x51f532*/
   }
   else
   {
@@ -6825,7 +6825,7 @@ int InfantryClass::RepairBridge()
             q004 = location->q004; /*0x5197c5*/
             u32_8 = location->u32_8; /*0x5197cc*/
             v18 = v17->Vt34Thunk(this) + 1212; /*0x5197df*/
-            v19 = (unsigned int)Random::State(&Randomizer_Global) % *(unsigned int *)(v18 + 16); /*0x5197f0*/
+            v19 = (unsigned int)((Random *)(&Randomizer_Global))->State() % *(unsigned int *)(v18 + 16); /*0x5197f0*/
             v20 = *(unsigned int *)(v18 + 4); /*0x5197f3*/
             p_Cell_field_0x0 = (CellClass *)&q000; /*0x5197f6*/
             StartAudioControllerAt(*(unsigned int *)(v20 + 4 * v19), &q000, 0); /*0x519803*/
@@ -6839,7 +6839,7 @@ int InfantryClass::RepairBridge()
             q000 = v21; /*0x519830*/
             u32_8 = v22; /*0x519836*/
             v24 = v23->Vt34Thunk(this) + 1296; /*0x519847*/
-            v25 = Random::State(&Randomizer_Global); /*0x51984d*/
+            v25 = ((Random *)(&Randomizer_Global))->State(); /*0x51984d*/
             StartAudioControllerAt( /*0x519865*/
               *(unsigned int *)(*(unsigned int *)(v24 + 4) + 4 * (v25 % *(unsigned int *)(v24 + 16))),
               &q000,
@@ -7521,7 +7521,7 @@ void InfantryClass::CalculateApproachPath(char a2)
                 (*(void (__stdcall **)(int))(*(unsigned int *)this->locomotor[0] + 72))(this->locomotor[0]); /*0x52249c*/
                 this->ShouldDeploy = 1; /*0x5224a1*/
                 MissionClass::GetMissionControl((MissionClass *)this); /*0x5224a8*/
-                Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2); /*0x5224bd*/
+                ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 2); /*0x5224bd*/
               }
             }
           }

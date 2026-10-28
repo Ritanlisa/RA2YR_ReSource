@@ -2362,14 +2362,14 @@ namespace gamemd {
     if ( BuildingTypeClass::GetFoundationWidth(this->Type) > 2 ) /*0x4417b5*/
     {
       FoundationWidth = BuildingTypeClass::GetFoundationWidth(this->Type); /*0x4417bd*/
-      Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, FoundationWidth - 2); /*0x4417d3*/
+      ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, FoundationWidth - 2); /*0x4417d3*/
     }
     if ( BuildingTypeClass::GetFoundationHeight((int *)this->Type, 0) > 2 ) /*0x4417e7*/
     {
       FoundationHeight = BuildingTypeClass::GetFoundationHeight((int *)this->Type, 0); /*0x4417f0*/
-      Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, FoundationHeight - 2); /*0x441805*/
+      ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, FoundationHeight - 2); /*0x441805*/
     }
-    if ( Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 99) >= 50 ) /*0x441821*/
+    if ( ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 99) >= 50 ) /*0x441821*/
     {
       v65 = 0; /*0x441892*/
       v17 = this->location[0]; /*0x441896*/
@@ -2416,9 +2416,9 @@ namespace gamemd {
       v29 = (AnimClass *)operator new(0x1C8u); /*0x4419c1*/
       if ( v29 ) /*0x4419c8*/
       {
-        v30 = (void *)Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 3); /*0x4419f3*/
+        v30 = (void *)((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 3); /*0x4419f3*/
         Explosion = this->Type->Explosion; /*0x4419f5*/
-        v32 = Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink); /*0x4419fb*/
+        v32 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->State(); /*0x4419fb*/
         AnimClass::ctor(v29, *(void **)(Explosion[1] + 4 * (v32 % Explosion[4])), &v66, v30, 1, (void *)0x600, 0, 0); /*0x441a1f*/
       }
     }
@@ -2446,7 +2446,7 @@ namespace gamemd {
           v35 = (AnimClass *)operator new(0x1C8u); /*0x441ace*/
           if ( v35 ) /*0x441ad5*/
           {
-            v36 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 1, 3); /*0x441af1*/
+            v36 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(1, 3); /*0x441af1*/
             Index = AnimTypeClass::FindIndex(&stru_818E00); /*0x441af3*/
             AnimClass::ctor( /*0x441b1a*/
               v35,
@@ -2470,7 +2470,7 @@ namespace gamemd {
     FloatPositive = FirstFloatPositive(&this->tiltSidewaysAngle); /*0x441b5b*/
     Float::SubtractClamped(&this->tiltSidewaysAngle, 1.0, FloatPositive); /*0x441b65*/
     Float::SubtractClamped(this->owner->ownedTiberium, 1.0, FloatPositive); /*0x441b7e*/
-    v39 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 256, 768); /*0x441b9a*/
+    v39 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(256, 768); /*0x441b9a*/
     v66 = this->location[0]; /*0x441ba6*/
     v67 = this->location[1]; /*0x441bad*/
     v68 = this->location[2]; /*0x441bb8*/
@@ -2506,7 +2506,7 @@ namespace gamemd {
   {
     v43 = *(void **)(this->Type->DestroyAnim[1] /*0x441ce3*/
                    + 4
-                   * ((unsigned int)Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink)
+                   * ((unsigned int)((Random *)&dword_A8B230[14].NeedsSaveOrLink)->State()
                     % this->Type->DestroyAnim[4]));
     if ( v43 ) /*0x441ce8*/
     {
@@ -2565,7 +2565,7 @@ namespace gamemd {
       v57 = v71 + this->location[2]; /*0x441eb5*/
       v67 = v54 + v56; /*0x441eb7*/
       v68 = v57; /*0x441ecb*/
-      v58 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, v76 - 1); /*0x441ecf*/
+      v58 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, v76 - 1); /*0x441ecf*/
       v59 = (ParticleSystemClass *)ParticleSystemClass::Constructor( /*0x441eed*/
                                      v55,
                                      *((unsigned int *)v75.Items + v58),
@@ -2651,14 +2651,14 @@ namespace gamemd {
     if ( BuildingTypeClass::GetFoundationWidth(this->Type) > 2 ) /*0x4417b5*/
     {
       FoundationWidth = BuildingTypeClass::GetFoundationWidth(this->Type); /*0x4417bd*/
-      Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, FoundationWidth - 2); /*0x4417d3*/
+      ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, FoundationWidth - 2); /*0x4417d3*/
     }
     if ( BuildingTypeClass::GetFoundationHeight((int *)this->Type, 0) > 2 ) /*0x4417e7*/
     {
       FoundationHeight = BuildingTypeClass::GetFoundationHeight((int *)this->Type, 0); /*0x4417f0*/
-      Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, FoundationHeight - 2); /*0x441805*/
+      ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, FoundationHeight - 2); /*0x441805*/
     }
-    if ( Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 99) >= 50 ) /*0x441821*/
+    if ( ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 99) >= 50 ) /*0x441821*/
     {
       v65 = 0; /*0x441892*/
       v17 = this->location[0]; /*0x441896*/
@@ -2705,9 +2705,9 @@ namespace gamemd {
       v29 = (AnimClass *)new unsigned char[0x1C8u]; /*0x4419c1*/
       if ( v29 ) /*0x4419c8*/
       {
-        v30 = (void *)Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 3); /*0x4419f3*/
+        v30 = (void *)((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 3); /*0x4419f3*/
         Explosion = this->Type->Explosion; /*0x4419f5*/
-        v32 = Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink); /*0x4419fb*/
+        v32 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->State(); /*0x4419fb*/
         AnimClass::ctor(v29, *(void **)(Explosion[1] + 4 * (v32 % Explosion[4])), &v66, v30, 1, (void *)0x600, 0, 0); /*0x441a1f*/
       }
     }
@@ -2735,7 +2735,7 @@ namespace gamemd {
           v35 = (AnimClass *)new unsigned char[0x1C8u]; /*0x441ace*/
           if ( v35 ) /*0x441ad5*/
           {
-            v36 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 1, 3); /*0x441af1*/
+            v36 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(1, 3); /*0x441af1*/
             Index = AnimTypeClass::FindIndex(&stru_818E00); /*0x441af3*/
             AnimClass::ctor( /*0x441b1a*/
               v35,
@@ -2759,7 +2759,7 @@ namespace gamemd {
     FloatPositive = FirstFloatPositive(&this->tiltSidewaysAngle); /*0x441b5b*/
     Float::SubtractClamped((int *)&this->tiltSidewaysAngle, 1.0, FloatPositive); /*0x441b65*/
     Float::SubtractClamped(this->owner->ownedTiberium, 1.0, FloatPositive); /*0x441b7e*/
-    v39 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 256, 768); /*0x441b9a*/
+    v39 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(256, 768); /*0x441b9a*/
     v66 = this->location[0]; /*0x441ba6*/
     v67 = this->location[1]; /*0x441bad*/
     v68 = this->location[2]; /*0x441bb8*/
@@ -2795,7 +2795,7 @@ namespace gamemd {
   {
     v43 = *(void **)(this->Type->DestroyAnim[1] /*0x441ce3*/
                    + 4
-                   * ((unsigned int)Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink)
+                   * ((unsigned int)((Random *)&dword_A8B230[14].NeedsSaveOrLink)->State()
                     % this->Type->DestroyAnim[4]));
     if ( v43 ) /*0x441ce8*/
     {
@@ -2854,7 +2854,7 @@ namespace gamemd {
       v57 = v71 + this->location[2]; /*0x441eb5*/
       v67 = v54 + v56; /*0x441eb7*/
       v68 = v57; /*0x441ecb*/
-      v58 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, v76 - 1); /*0x441ecf*/
+      v58 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, v76 - 1); /*0x441ecf*/
       v59 = (ParticleSystemClass *)ParticleSystemClass::Constructor( /*0x441eed*/
                                      v55,
                                      *((unsigned int *)v75.Items + v58),
@@ -3235,7 +3235,7 @@ namespace gamemd {
 // G42.34: BuildingClass 载体在 gamemd (structure/building.hpp)
 {
   if ( hpp->HasBeenCaptured /*0x44eb43*/
-    || Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 99) >= 25
+    || ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 99) >= 25
     || hpp->Type->Factory[0] != 7 )
   {
     return TechnoClass::GetCrew((TechnoClass *)hpp); /*0x44eb55*/
@@ -4610,7 +4610,7 @@ bool FootClass::CheckVoiceResponse() const
   }
   MissionControl = MissionClass::GetMissionControl((MissionClass *)this); /*0x4d4c73*/
   (*((unsigned short *)&(v8))) = Math::RoundToInt(*((double *)MissionControl + 2) * 900.0); /*0x4d4c81*/
-  return v8 + Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2); /*0x4d4c9e*/
+  return v8 + ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 2); /*0x4d4c9e*/
 }
 } // namespace ra2::game
 
@@ -4654,7 +4654,7 @@ void FootClass::ProcessMissionVoice()
   LABEL_15:
   MissionControl = MissionClass::GetMissionControl((MissionClass *)this); /*0x4d4d86*/
   (*((unsigned short *)&(v7))) = Math::RoundToInt(*((double *)MissionControl + 2) * 900.0); /*0x4d4d96*/
-  return v7 + Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2); /*0x4d4db3*/
+  return v7 + ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 2); /*0x4d4db3*/
 }
 } // namespace ra2::game
 
@@ -4847,7 +4847,7 @@ void FootClass::ProcessTeamAction()
   }
   MissionControl = MissionClass::GetMissionControl((MissionClass *)this); /*0x4d946e*/
   (*((unsigned short *)&(v14))) = Math::RoundToInt(*((double *)MissionControl + 2) * 900.0); /*0x4d947c*/
-  return v14 + Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2); /*0x4d9499*/
+  return v14 + ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 2); /*0x4d9499*/
 }
 } // namespace ra2::game
 
@@ -5488,7 +5488,7 @@ void FootClass::ProcessMovement()
   }
   MissionControl = MissionClass::GetMissionControl((MissionClass *)this); /*0x4da4a6*/
   (v14) = ((v14) & ~0xFFFF) | ((Math::RoundToInt(*((double *)MissionControl + 2) * 900.0)) & 0xFFFF); /*0x4da4b4*/
-  return v14 + Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2); /*0x4da4d2*/
+  return v14 + ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 2); /*0x4da4d2*/
 
 }
 } // namespace ra2::game
@@ -6489,7 +6489,7 @@ void FootClass::ProcessMissionState()
   }
   MissionControl = MissionClass::GetMissionControl((MissionClass *)this); /*0x4de19c*/
   (v23) = ((v23) & ~0xFFFF) | ((Math::RoundToInt(*((double *)MissionControl + 2) * 900.0)) & 0xFFFF); /*0x4de1aa*/
-  return v23 + Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2); /*0x4de122*/
+  return v23 + ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 2); /*0x4de122*/
 
 }
 } // namespace ra2::game
@@ -6820,13 +6820,13 @@ void FootClass::UpdateTeamAI()
   TechnoClass::CleanupAll((TechnoClass *)this, a2); /*0x4dec99*/
   if ( (*(int (**)(FootClass *))&this->ptr_0->ChargerBarrels_0x12)(this) != 15 && !dword_A8E7AC ) /*0x4decb5*/
   {
-    *&this->auxParticles2 = (double)Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2147483646) /*0x4decf0*/
+    *&this->auxParticles2 = (double)((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 2147483646) /*0x4decf0*/
                                    * 4.656612877414201e-10
                                    * 0.15
                                    + 0.1;
-    if ( !Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 1) ) /*0x4ded02*/
+    if ( !((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 1) ) /*0x4ded02*/
       *&this->auxParticles2 = -*&this->auxParticles2; /*0x4ded13*/
-    *&this->firingParticles = (double)Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2147483646) /*0x4ded45*/
+    *&this->firingParticles = (double)((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 2147483646) /*0x4ded45*/
                                      * 4.656612877414201e-10
                                      * 0.1;
   }
@@ -7388,7 +7388,6 @@ int FootClass::Jumpjet_OccupyCell()
       if ( result->FootClass_E0 == this ) /*0x4e00f7*/
       {
         result = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj( /*0x4e00ff*/
-                   (CellCoord *)&DataGlobal_87F7E8,
                    (int16_t *)this->currentJumpjetMapCoords);
         result->u32_E0 = 0; /*0x4e0104*/
       }
@@ -8490,7 +8489,7 @@ int ObjectClass::FinalizeCellPlacement(int a2)
                 (v98) = ((v98) & ~(0xFFFF << 16)) | (((v44) & 0xFFFF) << 16); /*0x5fcb2c*/
                 *(unsigned int *)v99 = v98; /*0x5fcb3b*/
                 v45 = ((CellCoord *)&dword_87F7E8)->To_CellObj(v99); /*0x5fcb4a*/
-                v45[17] = dword_8333F0[v41] + (Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink) & 3); /*0x5fcb67*/
+                v45[17] = dword_8333F0[v41] + (((Random *)&dword_A8B230[14].NeedsSaveOrLink)->State() & 3); /*0x5fcb67*/
                 *((unsigned char *)v45 + 286) = v42; /*0x5fcb6a*/
                 House::AnnounceUpgrade((int)v45, -1); /*0x5fcb70*/
                 ++v42; /*0x5fcb75*/
@@ -8631,7 +8630,7 @@ int ObjectClass::FinalizeCellPlacement(int a2)
                 (v98) = ((v98) & ~(0xFFFF << 16)) | (((v72) & 0xFFFF) << 16); /*0x5fcf5a*/
                 *(unsigned int *)v100 = v98; /*0x5fcf69*/
                 v73 = ((CellCoord *)&dword_87F7E8)->To_CellObj(v100); /*0x5fcf78*/
-                v73[17] = dword_833438[v69] + (Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink) & 3); /*0x5fcf95*/
+                v73[17] = dword_833438[v69] + (((Random *)&dword_A8B230[14].NeedsSaveOrLink)->State() & 3); /*0x5fcf95*/
                 *((unsigned char *)v73 + 286) = v70; /*0x5fcf98*/
                 House::AnnounceUpgrade((int)v73, -1); /*0x5fcf9e*/
                 ++v70; /*0x5fcfa3*/
@@ -8802,10 +8801,10 @@ bool FootClass::CreateWakes()
   v12 = 3; /*0x629ef0*/
   do /*0x629fba*/
   {
-    (*((unsigned int *)&(v13))) = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, -180, 180); /*0x629f13*/
+    (*((unsigned int *)&(v13))) = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(-180, 180); /*0x629f13*/
     __asm { fild [esp+40h+var_30] } /*0x629f1c*/
     __asm { fstp [esp+48h+var_28] }
-    (*((unsigned int *)&(v13))) = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, -64, 64); /*0x629f33*/
+    (*((unsigned int *)&(v13))) = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(-64, 64); /*0x629f33*/
     __asm /*0x629f37*/
     {
       fild [esp+40h+var_30]
@@ -9931,7 +9930,6 @@ int TechnoClass::IsWaypointHidden() const
                     result == 3)
                 && (Waypoint_Location = (int16_t *)ScenarioClass::Get_Waypoint_Location((char *)dword_A8B230, v6, v4),
                     result = ((LayerClass *)&DataGlobal_87F7E8)->IsWithinUsableArea(
-                               (LayerClass *)&DataGlobal_87F7E8,
                                Waypoint_Location,
                                1),
                     !(unsigned char)result);
@@ -13353,7 +13351,7 @@ void FootClass::UpdateLocomotion()
             fcomp qword ptr [eax+1708h]
             fnstsw ax
           }
-          if ( (BYTE1(_EAX) & 0x41) != 0 && Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 99) < 10 ) /*0x6fbc72*/
+          if ( (BYTE1(_EAX) & 0x41) != 0 && ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 99) < 10 ) /*0x6fbc72*/
             this->TransitionEffectState( 1); /*0x6fbc7a*/
         }
         break;
@@ -13432,7 +13430,7 @@ void FootClass::UpdateLocomotion()
           fcomp qword ptr [eax+1708h]
           fnstsw ax
         }
-        if ( (BYTE1(_EAX) & 0x41) == 0 || Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 99) < 4 ) /*0x6fb8cf*/
+        if ( (BYTE1(_EAX) & 0x41) == 0 || ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 99) < 4 ) /*0x6fb8cf*/
           this->vt_slot_1120(this, 0); /*0x6fb8a9*/
       }
     }
@@ -13770,7 +13768,7 @@ int TechnoClass::CalculateROF()
   currentBurstIndex = this->currentBurstIndex; /*0x6fd04e*/
   if ( currentBurstIndex >= *(unsigned int *)(v3 + 156) ) /*0x6fd05c*/
   {
-    v7 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2); /*0x6fd0b0*/
+    v7 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 2); /*0x6fd0b0*/
     (*((unsigned short *)&(v8))) = Math::RoundToInt((double)*(int *)(v3 + 176) * *&this->owner[108] + (double)v7); /*0x6fd0cf*/
     v9 = v8; /*0x6fd0da*/
     v15 = v8; /*0x6fd0de*/
@@ -13812,14 +13810,14 @@ int TechnoClass::CalculateROF()
   else
   {
     if ( currentBurstIndex <= 0 ) /*0x6fd060*/
-      return Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 3, 5); /*0x6fd060*/
+      return ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(3, 5); /*0x6fd060*/
     if ( currentBurstIndex > 4 ) /*0x6fd065*/
-      return Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 3, 5); /*0x6fd065*/
+      return ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(3, 5); /*0x6fd065*/
     if ( !v4 ) /*0x6fd069*/
-      return Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 3, 5); /*0x6fd069*/
+      return ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(3, 5); /*0x6fd069*/
     v6 = *(unsigned int *)(v4[1].ironTintTimer[2] + 4 * currentBurstIndex + 3652); /*0x6fd071*/
     if ( v6 == -1 ) /*0x6fd07b*/
-      return Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 3, 5); /*0x6fd094*/
+      return ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(3, 5); /*0x6fd094*/
     else
       return v6; /*0x6fd07e*/
   }
@@ -15962,7 +15960,7 @@ LABEL_89:
                         v41 = (unsigned int *)*v40; /*0x7086c1*/
                         v42 = *(unsigned int *)(*v40 + 1492); /*0x7086c3*/
                         v43 = v42 && *(unsigned char *)(*(unsigned int *)(v42 + 36) + 246); /*0x7086da*/
-                        if ( Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 99) >= 66 || v43 ) /*0x7086fc*/
+                        if ( ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 99) >= 66 || v43 ) /*0x7086fc*/
                           (*(void (**)(unsigned int *, int, unsigned int))(*v41 + 488))(v41, 11, 0); /*0x70870e*/
                         else
                           (*(void (**)(unsigned int *, int, unsigned int))(*v41 + 488))(v41, 21, 0); /*0x708704*/
@@ -16333,7 +16331,7 @@ int TechnoClass::SelectRandomTarget()
     result = v2 + 1072; /*0x708ecd*/
     if ( !v3 ) /*0x708ed4*/
       return result; /*0x708ed4*/
-    v5 = Random::State(&Randomizer_Global); /*0x708ee8*/
+    v5 = ((Random *)(&Randomizer_Global))->State(); /*0x708ee8*/
     v6 = (*((int (__thiscall **)(TechnoClass *))this->ptr_0 + 33))(this) + 1072; /*0x708ef2*/
     return (*((int (__thiscall **)(TechnoClass *, unsigned int))this->ptr_0 + 213))( /*0x708fa7*/
              this,
@@ -16346,7 +16344,7 @@ int TechnoClass::SelectRandomTarget()
     result = v11 + 1044; /*0x708f6e*/
     if ( !v12 ) /*0x708f75*/
       return result; /*0x708f75*/
-    v5 = Random::State(&Randomizer_Global); /*0x708f85*/
+    v5 = ((Random *)(&Randomizer_Global))->State(); /*0x708f85*/
     v6 = (*((int (__thiscall **)(TechnoClass *))this->ptr_0 + 33))(this) + 1044; /*0x708f8f*/
     return (*((int (__thiscall **)(TechnoClass *, unsigned int))this->ptr_0 + 213))( /*0x708f8f*/
              this,
@@ -16357,7 +16355,7 @@ int TechnoClass::SelectRandomTarget()
   result = v7 + 1100; /*0x708f17*/
   if ( v8 ) /*0x708f1e*/
   {
-    v9 = Random::State(&Randomizer_Global); /*0x708f2e*/
+    v9 = ((Random *)(&Randomizer_Global))->State(); /*0x708f2e*/
     v10 = (*((int (__thiscall **)(TechnoClass *))this->ptr_0 + 33))(this); /*0x708f34*/
     return (*((int (__thiscall **)(TechnoClass *, unsigned int))this->ptr_0 + 213))( /*0x708f54*/
              this,
@@ -16382,7 +16380,7 @@ int TechnoClass::ResponseMove_Pickup()
   result = v2 + 1128; /*0x708fd1*/
   if ( v3 ) /*0x708fd8*/
   {
-    v5 = Random::State(&Randomizer_Global); /*0x708fea*/
+    v5 = ((Random *)(&Randomizer_Global))->State(); /*0x708fea*/
     v6 = (*((int (__thiscall **)(TechnoClass *))this->ptr_0 + 33))(this); /*0x708fec*/
     return (*((int (__thiscall **)(TechnoClass *, unsigned int))this->ptr_0 + 213))( /*0x70900c*/
              this,
@@ -16474,7 +16472,7 @@ int TechnoClass::VoiceAttack()
   }
   if ( v4 != -1 ) /*0x70917b*/
     return (*((int (__thiscall **)(TechnoClass *, int))this->ptr_0 + 213))(this, v4); /*0x709175*/
-  v8 = Random::State(&Randomizer_Global); /*0x70919c*/
+  v8 = ((Random *)(&Randomizer_Global))->State(); /*0x70919c*/
   v9 = (*((int (__thiscall **)(TechnoClass *))this->ptr_0 + 33))(this); /*0x70919e*/
   return (*((int (__thiscall **)(TechnoClass *, unsigned int))this->ptr_0 + 213))( /*0x709173*/
            this,
@@ -16500,9 +16498,9 @@ int TechnoClass::BeginFiringSequence()
 
   this->unknown_4FC = (int)dword_A8ED84; /*0x70982e*/
   if ( this->currentMission == 11 ) /*0x70983f*/
-    v2 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2) + *&dword_8871E0->u32_E04; /*0x709864*/
+    v2 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 2) + *&dword_8871E0->u32_E04; /*0x709864*/
   else
-    v2 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2) + *&dword_8871E0->u32_E08; /*0x70989a*/
+    v2 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 2) + *&dword_8871E0->u32_E08; /*0x70989a*/
   this->targetingTimer[0] = (int)dword_A8ED84; /*0x70986c*/
   this->targetingTimer[1] = v11; /*0x7098b0*/
   this->targetingTimer[2] = v2; /*0x7098b6*/
@@ -18542,7 +18540,7 @@ int TechnoClass::GattlingRateUp_GattlingRateDownReset()
       *(float *)v14 = this->location; /*0x70dfaf*/
       *(float *)&v14[1] = this->ptr_4; /*0x70dfb6*/
       *(float *)&v14[2] = this->ptr_8; /*0x70dfbd*/
-      v11 = Random::State(&Randomizer_Global); /*0x70dfc6*/
+      v11 = ((Random *)(&Randomizer_Global))->State(); /*0x70dfc6*/
       LOBYTE(v9) = (unsigned __int8)StartAudioControllerAt( /*0x70dfdd*/
                                       *(unsigned int *)(v6[48] + 4 * (v11 % v10)),
                                       v14,
@@ -19458,7 +19456,7 @@ int TechnoClass::DispatchPlayerInput()
   v6 = (unsigned __int8 *)this->u32_6C4; /*0x737bf5*/
   if ( v6[3608] || v6[3609] ) /*0x737c03*/
   {
-    this->animation[0] = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 29); /*0x737c4c*/
+    this->animation[0] = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 29); /*0x737c4c*/
     v9 = *(unsigned int *)&stru_A8E960.random[528]; /*0x737c52*/
     this->animation[5] = 1; /*0x737c62*/
     this->animation[2] = v9; /*0x737c69*/
@@ -19712,7 +19710,7 @@ int TechnoClass::DeployIntoBuilding()
     fmul ds:dbl_7E27F8
   }
   (*((unsigned short *)&(v9))) = Math::RoundToInt(v1); /*0x73f069*/
-  return v9 + Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2); /*0x73f087*/
+  return v9 + ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 2); /*0x73f087*/
 }
 } // namespace ra2::game
 
@@ -19884,7 +19882,7 @@ int TechnoClass::ProcessAIDecision()
   LABEL_34:
     MissionControl = MissionClass::GetMissionControl((MissionClass *)this); /*0x740a1f*/
     (*((unsigned short *)&(v17))) = Math::RoundToInt(*((double *)MissionControl + 2) * 900.0); /*0x740a2f*/
-    return v17 + Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2); /*0x740a4f*/
+    return v17 + ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 2); /*0x740a4f*/
   }
   Type = this->Type; /*0x740854*/
   if ( *(unsigned char *)(Type + 3598) || Type->Weeder_2 ) /*0x740864*/
@@ -20582,7 +20580,7 @@ int TechnoClass::SelectAITarget()
   BuildingClass::InitBuildLimit((BuildingClass *)this->slaveManager); /*0x744138*/
   MissionControl = MissionClass::GetMissionControl((MissionClass *)this); /*0x74413f*/
   (*((unsigned short *)&(v4))) = Math::RoundToInt(*((double *)MissionControl + 2) * 900.0); /*0x74414d*/
-  return v4 + Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2); /*0x74416a*/
+  return v4 + ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 2); /*0x74416a*/
 }
 } // namespace ra2::game
 

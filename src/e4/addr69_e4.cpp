@@ -1548,7 +1548,7 @@ int ObjectClass::sub_69B690()
 
   while ( 1 ) /*0x69b6aa*/
   {
-    result = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 7); /*0x69b6aa*/
+    result = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 7); /*0x69b6aa*/
     if ( result == -2 ) /*0x69b6b1*/
       return result; /*0x69b6fa*/
     v3 = this->u32_284C; /*0x69b6b3*/

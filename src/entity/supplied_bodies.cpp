@@ -740,7 +740,7 @@ int* AnimClass::ctor(void* a1, void* a2, void* a3, int a4, void* a5, void* a6, i
     {
       v23 = v20[186]; /*0x4221dd*/
       if ( v21 <= v23 ) /*0x4221e5*/
-        ProductionTimeMult = (char *)Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, v21, v23); /*0x4221f5*/
+        ProductionTimeMult = (char *)((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(v21, v23); /*0x4221f5*/
     }
     if ( *(unsigned char *)(this->AnimClass_field_0xC8 + 866) ) /*0x422200*/
       ProductionTimeMult = Rules::GetProductionTimeMult( /*0x42220e*/

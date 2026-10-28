@@ -846,7 +846,7 @@ int PostLoadInitScenario()
     {
       if ( (n)->GetNthOfType() ) /*0x68507a*/
       {
-        if ( !Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, dword_8871E0[1].AmmoCrateDamage - 1) ) /*0x68509e*/
+        if ( !((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, dword_8871E0[1].AmmoCrateDamage - 1) ) /*0x68509e*/
         {
           v31 = (AnimClass *)__2_YAPAXI_Z(0x1C8u); /*0x6850b1*/
           if ( v31 ) /*0x6850b8*/
@@ -1679,7 +1679,7 @@ LABEL_47:
         }
         else
         {
-          v25 = Random::Range((unsigned int *)dword_A8B230 + 134, 0, v84 - 1); /*0x688a08*/
+          v25 = ((Random *)((unsigned int *)dword_A8B230 + 134))->Range(0, v84 - 1); /*0x688a08*/
           *((unsigned char *)v85 + v25) = 1; /*0x688a0d*/
           v59 = 1; /*0x688a19*/
           v26 = *((unsigned int *)v81 + v25); /*0x688a21*/
@@ -1744,13 +1744,13 @@ LABEL_47:
             {
               if ( v77 > 0 ) /*0x688c91*/
               {
-                v49 = Random::Range((unsigned int *)dword_A8B230 + 134, 0, v77 - 1); /*0x688ca2*/
+                v49 = ((Random *)((unsigned int *)dword_A8B230 + 134))->Range(0, v77 - 1); /*0x688ca2*/
                 v47 = *((unsigned int *)v74 + v49); /*0x688cab*/
               }
             }
             else
             {
-              v48 = Random::Range((unsigned int *)dword_A8B230 + 134, 0, v71 - 1); /*0x688c7d*/
+              v48 = ((Random *)((unsigned int *)dword_A8B230 + 134))->Range(0, v71 - 1); /*0x688c7d*/
               v47 = *((unsigned int *)v68 + v48); /*0x688c86*/
             }
             v50 = (void *)(*(int (**)(int, LPVOID))(*(unsigned int *)v47 + 140))(v47, ppv); /*0x688cbd*/
@@ -1820,7 +1820,7 @@ LABEL_111:
       }
     }
   }
-  v54[252] = Random::Range((unsigned int *)dword_A8B230 + 134, 0, 0xFFFF); /*0x688e48*/
+  v54[252] = ((Random *)((unsigned int *)dword_A8B230 + 134))->Range(0, 0xFFFF); /*0x688e48*/
   v54[251] = aFinishedUnitGe; /*0x688e5f*/
   Debug::Log(); /*0x688e64*/
   v80 = &g_ptr_7E38D0; /*0x688e75*/
@@ -1919,7 +1919,7 @@ int FindInfantryDeployPosition(int *a1, RadarClass * a2, int a3)
   if ( a3 < 32 ) /*0x688fc4*/
   {
 LABEL_8:
-    v29 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 7); /*0x688fce*/
+    v29 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 7); /*0x688fce*/
     v30 = 0; /*0x688fe6*/
     v37 = 0; /*0x688fea*/
     while ( 1 ) /*0x689032*/
@@ -1995,8 +1995,8 @@ LABEL_8:
         v20 = (__int16)v13; /*0x6890c7*/
         v38 = dword_87F90C + dword_87F914 - 1; /*0x6890d0*/
         v39 = dword_87F910 + dword_87F918 - 1; /*0x6890e5*/
-        v32 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 1); /*0x6890fe*/
-        if ( Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 99) >= 50 ) /*0x68910a*/
+        v32 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 1); /*0x6890fe*/
+        if ( ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 99) >= 50 ) /*0x68910a*/
         {
           v21 = v20 - v32; /*0x68911e*/
           if ( v21 < v15 ) /*0x689124*/
@@ -2008,8 +2008,8 @@ LABEL_8:
           if ( v21 > v38 ) /*0x689118*/
             (v21) = ((v21) & ~0xFFFF) | ((v38) & 0xFFFF); /*0x68911a*/
         }
-        v22 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 1); /*0x68913d*/
-        if ( Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 99) >= 50 ) /*0x689156*/
+        v22 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 1); /*0x68913d*/
+        if ( ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 99) >= 50 ) /*0x689156*/
         {
           v23 = v19 - v22; /*0x689166*/
           if ( v23 < v16 ) /*0x68916a*/

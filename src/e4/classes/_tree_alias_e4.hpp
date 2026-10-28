@@ -4,19 +4,15 @@
 // This header only adds types that math.hpp does NOT define.
 #pragma once
 #include "e4/classes/_fwd_e4.hpp"
+// CellCoord: single authority is core/cellcoord.hpp (X181A: layout + the real
+// member To_CellObj; the old e4 twin struct is removed so TUs pulling both
+// headers no longer clash on the class name).  Must stay OUTSIDE namespace
+// gamemd -- the header opens its own.
+#include "core/cellcoord.hpp"
 
 
 
 
 namespace gamemd {
-
-// CellCoord: tree class (misc_ext.hpp) with a virtual To_CellObj; e4 bodies
-// call it static-style with (MapClass_Instance*, coord*) — interim stub.
-struct CellCoord {
-    unsigned int tail_0;  // 0x0
-    char __pad_4[312];  // 0x4
-    unsigned int u32_13C;  // 0x13C
-    void* To_CellObj(int16_t *a3);
-};
 
 } // namespace gamemd

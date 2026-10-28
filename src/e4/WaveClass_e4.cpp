@@ -189,7 +189,7 @@ char WaveClass::DamageArea(ObjectClass * aP1)
     v16 = v2; /*0x75f34a*/
     LOWORD(aP1) = *aP1 / 256; /*0x75f359*/
     HIWORD(aP1) = v5->ptr_4 / 256; /*0x75f372*/
-    v6 = (char *)(((CellCoord *)&dword_87F7E8)->To_CellObj((__int16 *)&aP1); /*0x75f391*/
+    v6 = (char *)((CellCoord *)&dword_87F7E8)->To_CellObj((__int16 *)&aP1); /*0x75f391*/
     v7 = (unsigned int *)(*(int (**)(int, unsigned int))(*(unsigned int *)this->Owner + 1016))(this->Owner, 0); /*0x75f395*/
     v8 = (unsigned int *)*v7; /*0x75f39b*/
     v17 = *(unsigned int *)(*v7 + 172); /*0x75f3a9*/
@@ -228,7 +228,7 @@ char WaveClass::DamageArea(ObjectClass * aP1)
     if ( (unsigned char)Owner ) /*0x75f486*/
     {
       v13 = dword_8871E0->RadLightFactor[1]; /*0x75f497*/
-      Owner = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 99); /*0x75f4a3*/
+      Owner = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 99); /*0x75f4a3*/
       if ( Owner < v13 ) /*0x75f4aa*/
         LOBYTE(Owner) = LayerClass::DestroyCliff(&dword_87F7E8.field_0, v14, (int)v6); /*0x75f4b2*/
     }

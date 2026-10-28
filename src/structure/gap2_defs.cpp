@@ -2838,7 +2838,7 @@ int SuperWeapon::SelectSuperWeaponTarget(int a1) {
             : (v9 = 1),
               !v9) )
         {
-          if ( Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 99) < 90 /*0x4fadc9*/
+          if ( ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 99) < 90 /*0x4fadc9*/
             && ((*(int (**)(int))(*(unsigned int *)v6 + 384))(v6) > v4 || v4 == -1) )
           {
             v4 = (*(int (**)(int))(*(unsigned int *)v6 + 384))(v6); /*0x4fadd5*/
@@ -2962,7 +2962,7 @@ int SuperWeapon::EvaluateAITarget(int v5, void* a2) {
           if ( v4 <= dword_8871E0->TechnoTypeClass_EE4 ) /*0x4fb018*/
           {
             v13 = *(unsigned int *)(dword_8871E0->qEC8 + 4 * this->q184); /*0x4fb032*/
-            v4 = Random::Range((unsigned int *)dword_A8B230 + 134, 0, 99); /*0x4fb03d*/
+            v4 = ((Random *)((unsigned int *)dword_A8B230 + 134))->Range(0, 99); /*0x4fb03d*/
             if ( v4 <= v13 ) /*0x4fb044*/
             {
               if ( this->q060 <= 0 ) /*0x4fb04f*/

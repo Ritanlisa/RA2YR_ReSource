@@ -560,7 +560,7 @@ int Mission_e4::GetMissionDelay(void *a1_1)
     result = dword_A8E7AC; /*0x70f79e*/
     if ( !dword_A8E7AC ) /*0x70f7a5*/
     {
-      result = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 4, 8); /*0x70f7b6*/
+      result = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(4, 8); /*0x70f7b6*/
       *p_Mission_field_0x180 = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x70f7c1*/
       int v4; // [esp+8h] [ebp-8h]
       p_Mission_field_0x180[1] = v4; /*0x70f7c7*/

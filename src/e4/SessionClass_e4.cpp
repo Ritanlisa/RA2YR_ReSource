@@ -1974,7 +1974,7 @@ int SessionClass::AssignColor(int a2, char aP2)
     {
       while ( 1 ) /*0x69b80e*/
       {
-        result = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 7); /*0x69b80e*/
+        result = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 7); /*0x69b80e*/
         if ( result == -2 ) /*0x69b815*/
           break; /*0x69b815*/
         v5 = this->StartSpots[4]; /*0x69b817*/
@@ -2545,7 +2545,7 @@ int SessionClass::AssignSide(int a2, char aP2)
     LOBYTE(result) = aP2; /*0x69b76c*/
     if ( aP2 ) /*0x69b772*/
     {
-      result = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 9); /*0x69b783*/
+      result = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 9); /*0x69b783*/
       this->Side = result; /*0x69b788*/
       this->Side2 = -2; /*0x69b78e*/
     }

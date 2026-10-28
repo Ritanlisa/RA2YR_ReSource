@@ -1282,7 +1282,7 @@ AbstractClass * * CreateCliffRampMap(IUnknown * aP0)
   unsigned int v63[4]; // [esp+CCh] [ebp-10h] BYREF
 
   v1 = aP0; /*0x57dd5d*/
-  result = *((unsigned int *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, aP0) + 17); /*0x57dd6c*/
+  result = *((unsigned int *)((CellCoord *)&dword_87F7E8)->To_CellObj(aP0) + 17); /*0x57dd6c*/
   if ( result >= 74 && result <= 101 ) /*0x57dd7b*/
   {
     v3 = *aP0 + (aP0[1] << 9); /*0x57dd92*/
@@ -1568,7 +1568,7 @@ void* CreateCliffStraightMap(IUnknown * aP0)
   unsigned int v65[4]; // [esp+CCh] [ebp-10h] BYREF
 
   v1 = aP0; /*0x57e2ac*/
-  v2 = *((unsigned int *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)aP0) + 17); /*0x57e2bc*/
+  v2 = *((unsigned int *)((CellCoord *)&dword_87F7E8)->To_CellObj((__int16 *)aP0) + 17); /*0x57e2bc*/
   if ( v2 >= 74 && v2 <= 101 ) /*0x57e2cb*/
   {
     v3 = SLOWORD(aP0->ptr_0) + (SHIWORD(aP0->ptr_0) << 9); /*0x57e2e6*/
@@ -1857,7 +1857,7 @@ AbstractClass * * CreateCliffBridgeMap(IUnknown * aP0)
   unsigned int v63[4]; // [esp+CCh] [ebp-10h] BYREF
 
   v1 = aP0; /*0x57e7ad*/
-  result = *((unsigned int *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, aP0) + 17); /*0x57e7bc*/
+  result = *((unsigned int *)((CellCoord *)&dword_87F7E8)->To_CellObj(aP0) + 17); /*0x57e7bc*/
   if ( result >= 205 && result <= 232 ) /*0x57e7cf*/
   {
     v3 = *aP0 + (aP0[1] << 9); /*0x57e7e6*/
@@ -2143,7 +2143,7 @@ void* CreateCliffStraightBridgeMap(IUnknown * aP0)
   unsigned int v65[4]; // [esp+CCh] [ebp-10h] BYREF
 
   v1 = aP0; /*0x57ed0c*/
-  v2 = *((unsigned int *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)aP0) + 17); /*0x57ed1c*/
+  v2 = *((unsigned int *)((CellCoord *)&dword_87F7E8)->To_CellObj((__int16 *)aP0) + 17); /*0x57ed1c*/
   if ( v2 >= 205 && v2 <= 232 ) /*0x57ed2f*/
   {
     v3 = SLOWORD(aP0->ptr_0) + (SHIWORD(aP0->ptr_0) << 9); /*0x57ed4a*/

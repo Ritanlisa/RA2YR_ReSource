@@ -811,7 +811,7 @@ int HouseClass::Construct(int a2, void *a2_1, void *a3, void *a4, void *a5, void
   }
   memset(&this->u8_15F9, 0, 0x10810u); /*0x4f6324*/
   *(&this->q076) |= 1 << *(&this->ptr_C); /*0x4f633d*/
-  v68 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 450, 1800); /*0x4f635a*/
+  v68 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(450, 1800); /*0x4f635a*/
   (v51) = ((v51) & ~0xFFFF) | ((Math::RoundToInt((double)v68 * *&dword_8871E0->u32_10A8)) & 0xFFFF); /*0x4f6368*/
   *(&this->u8_157C) = *(unsigned int *)&stru_A8E960.random[528]; /*0x4f6373*/
   *(&this->u8_157D) = *(unsigned int *)&Destination[4]; /*0x4f637d*/
@@ -950,7 +950,9 @@ int HouseClass::IsCellOccupied(IUnknown * aP1, char a3)
   {
     if ( this->dword_A8EF98 != dword_A8EF98 ) /*0x4fbf1b*/
     {
-      *((unsigned int *)((CellCoord *)(&dword_87F7E8))->To_CellObjthis->killedUnitsOfHouses) + 17) = -1; /*0x4fbf35*/
+      // 0x4FBF35: arg = &this->killedUnitsOfHouses (HouseClass+0x53E0, ESI at
+      // 0x4FBF2A), ECX = &dword_87F7E8 at 0x4FBF2B; [eax+0x44] = -1.
+      *((unsigned int *)((CellCoord *)&dword_87F7E8)->To_CellObj((int16_t *)&this->killedUnitsOfHouses) + 17) = -1; /*0x4fbf35*/
       result = dword_A8EF98; /*0x4fbf3c*/
       this->dword_A8EF98 = dword_A8EF98; /*0x4fbf41*/
     }
@@ -1958,7 +1960,7 @@ LABEL_43:
     v67 = 0; /*0x507738*/
     if ( v131 && v129.m_10 ) /*0x507748*/
     {
-      v68 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 1, v131); /*0x507759*/
+      v68 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(1, v131); /*0x507759*/
       v69 = *(char **)&v129.m_1[3]; /*0x507765*/
       v70 = 0; /*0x50776c*/
       if ( v129.m_10 <= 0 ) /*0x507770*/
@@ -2973,12 +2975,12 @@ AbstractClass * * HouseClass::AIDecision(ObjectClass * aP0, int * a1)
       {
         if ( v19 > v28 / 3 && v16 ) /*0x5d734d*/
         {
-          v20 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, v16 - 1); /*0x5d735f*/
+          v20 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, v16 - 1); /*0x5d735f*/
           InfantryTypeVector_field_0x1C = v30.q01C; /*0x5d7364*/
         }
         else
         {
-          v20 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, v30.q010 - 1); /*0x5d737e*/
+          v20 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, v30.q010 - 1); /*0x5d737e*/
           InfantryTypeVector_field_0x1C = v30.u32_4; /*0x5d7383*/
         }
         v22 = *(unsigned int *)(InfantryTypeVector_field_0x1C + 4 * v20); /*0x5d7387*/

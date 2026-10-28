@@ -223,7 +223,7 @@ int AudioStream::SelectRandom()
     if ( (v3 & 2) != 0 ) /*0x4047de*/
     {
       int v5; // eax
-      v5 = Random::Range(&Randomizer_Global, 0, v4 - 1); /*0x4047ea*/
+      v5 = ((Random *)(&Randomizer_Global))->Range(0, v4 - 1); /*0x4047ea*/
       int v6 = this->u32_1E0 - 1; // edi /*0x404803*/
       this->u32_AC = *&this->u8_4 * v5 + 352); /*0x404804*/
       v5 = v5; /*0x40480c*/

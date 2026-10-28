@@ -1372,9 +1372,9 @@ int SuperWeapon_Update()
         while ( 1 ) /*0x53a9a7*/
         {
           *(unsigned int *)v36 = LightningStorm_Coords; /*0x53a9a7*/
-          v22 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, -v21, v21); /*0x53a9ab*/
+          v22 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(-v21, v21); /*0x53a9ab*/
           v36[0] += v22; /*0x53a9b6*/
-          v23 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, -v21, v21); /*0x53a9c3*/
+          v23 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(-v21, v21); /*0x53a9c3*/
           v24 = 0; /*0x53a9c8*/
           v36[1] += v23; /*0x53a9ca*/
           v35 = 0; /*0x53a9d6*/

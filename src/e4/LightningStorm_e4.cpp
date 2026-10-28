@@ -47,8 +47,8 @@ int LightningStorm::Start(int a1, int a2, int a3, void * a4)
   {  /*0x539ec3*/
     for ( ; !(unsigned __int8)((LayerClass *)&dword_87F7E8)->CoordinatesLegal((__int16 *)&a3); a3 = v12 )
     {  /*0x539edd*/
-      v7 = Random::Range((Random *)&dword_A8B230[13].uniqueId, 0, dword_87F918);  /*0x539f04*/
-      LOWORD(v12) = Random::Range((Random *)&dword_A8B230[13].uniqueId, 0, dword_87F914);  /*0x539f1e*/
+      v7 = ((Random *)&dword_A8B230[13].uniqueId)->Range(0, dword_87F918);  /*0x539f04*/
+      LOWORD(v12) = ((Random *)&dword_A8B230[13].uniqueId)->Range(0, dword_87F914);  /*0x539f1e*/
       HIWORD(v12) = v7;  /*0x539f23*/
     }
     result = a3;  /*0x539f3e*/
@@ -300,7 +300,7 @@ int LightningStorm::Strike2(int a1, int a2, int a3)
     {  /*0x53a617*/
       if ( (unsigned char)v11 )
       {  /*0x53a61b*/
-        v11 = Random::Range((Random *)&dword_A8B230[13].uniqueId, 2, 4);  /*0x53a62c*/
+        v11 = ((Random *)&dword_A8B230[13].uniqueId)->Range(2, 4);  /*0x53a62c*/
         if ( v11 > 0 )
         {  /*0x53a633*/
           v21 = v11;  /*0x53a635*/
@@ -310,7 +310,7 @@ int LightningStorm::Strike2(int a1, int a2, int a3)
             v22 = (AnimClass *)v11;  /*0x53a641*/
             if ( v11 )
             {  /*0x53a648*/
-              v23 = Random::Range((Random *)&dword_A8B230[13].uniqueId, 0, dword_8871E0->ExecutePlanSound - 1);  /*0x53a665*/
+              v23 = ((Random *)&dword_A8B230[13].uniqueId)->Range(0, dword_8871E0->ExecutePlanSound - 1);  /*0x53a665*/
               LOBYTE(v11) = (unsigned __int8)AnimClass::ctor(
                                                v22,
                                                *(void **)(dword_8871E0->DefaultChronoSound + 4 * v23),

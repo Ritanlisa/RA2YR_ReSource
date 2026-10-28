@@ -2915,7 +2915,7 @@ void TeamClass::ProcessTeamMovement(int a2, int a3) {
         }
         else
         {
-          v16 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v19); /*0x6ee588*/
+          v16 = ((CellCoord *)&dword_87F7E8)->To_CellObj(v19); /*0x6ee588*/
           TeamClass::SelectMember((int)this, (int)v16); /*0x6ee589*/
         }
         v3 = this; /*0x6ee596*/
@@ -3028,7 +3028,7 @@ void TeamClass::SelectBestMember(int a2, int a3) {
         }
         else
         {
-          v17 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v19); /*0x6ee7be*/
+          v17 = ((CellCoord *)&dword_87F7E8)->To_CellObj(v19); /*0x6ee7be*/
           TeamClass::SelectMember((int)this, (int)v17); /*0x6ee7bf*/
         }
         v3 = this; /*0x6ee7cc*/
@@ -3305,7 +3305,7 @@ void TeamClass::SelectDeploymentTarget(int a2, int a3) {
     }
     else
     {
-      v12 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 255); /*0x6efadc*/
+      v12 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 255); /*0x6efadc*/
       (v13) = ((v13) & ~0xFF) | ((0) & 0xFF); /*0x6efae1*/
       (v13) = ((v13) & ~(0xFF << 8)) | (((v12) & 0xFF) << 8); /*0x6efae3*/
       v14 = v13; /*0x6efaea*/
@@ -3360,7 +3360,7 @@ void TeamClass::SelectDeploymentTarget(int a2, int a3) {
                         (__int16 *)&v25,
                         0,
                         0);
-    v21 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v24); /*0x6efc4f*/
+    v21 = ((CellCoord *)&dword_87F7E8)->To_CellObj(v24); /*0x6efc4f*/
     TeamClass::SelectMember((int)v26, (int)v21); /*0x6efc59*/
     this = v26; /*0x6efc5e*/
   }

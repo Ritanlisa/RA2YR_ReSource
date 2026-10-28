@@ -767,7 +767,7 @@ void UpdateTimedStateMachine(int * a1)
         {
         LABEL_16:
         a1[112] = 3; /*0x70ea31*/
-        v7 = Random::Range(&dword_A8B230[14].NeedsSaveOrLink, -5, 5); /*0x70ea4b*/
+        v7 = ((Random *)(&dword_A8B230[14].NeedsSaveOrLink))->Range(-5, 5); /*0x70ea4b*/
         a1[109] = (int)dword_A8ED84; /*0x70ea59*/
         a1[110] = v21; /*0x70ea5f*/
         a1[111] = v7 + 20; /*0x70ea62*/
@@ -972,7 +972,7 @@ int E4Recv_7011A0::sub_7011A0()
   LOWORD(v10) = *v6 / 256; /*0x7011ff*/
   HIWORD(v10) = v6[1] / 256; /*0x701218*/
   *(unsigned int *)v11 = v10; /*0x701225*/
-  v7 = (char *)(((CellCoord *)&dword_87F7E8)->To_CellObj(v11); /*0x701234*/
+  v7 = (char *)((CellCoord *)&dword_87F7E8)->To_CellObj(v11); /*0x701234*/
   ScenarioClass::CalcMinShroudLevel((ScenarioClass *)&dword_87F7E8); /*0x701236*/
   v8 = *(unsigned int *)&stru_B0EA70.__pad_1C[168] * v7[283]; /*0x70127d*/
   (v9) = ((v9) & ~0xFFFF) | ((Math::RoundToInt(v1)) & 0xFFFF); /*0x70127f*/

@@ -47,6 +47,7 @@ int PlayAudioAt2(int a1, int a2, int a3);  // 0x750e20
 void globalHelper_051EE0(int a1, int a2, int a3);  // 0x451ee0
 #include "e4/classes/FacingClass_e4.hpp"  // gB C2027 supply
 #include "e4/classes/Math_e4.hpp"  // gB C2027 supply
+#include "core/cellcoord.hpp"  // X181A: complete CellCoord (p->To_CellObj)
 
 // ---- G57W20M26 vocab (ProcessRepair transplant) ----
 extern char aEvaUnitrepaire[];  // raw 0x44b96e
@@ -110,9 +111,8 @@ class CellClass;
 class HouseClass;
 
 // 0x5657A0 CellCoord::To_CellObj is the real member from core/cellcoord.hpp
-struct CellCoord {
+// (X181A removed the local static-form shadow struct; call sites are now
 // p->To_CellObj(coord)).
-};
 
 // raw static-call receivers keep their raw cast targets; signatures mirror
 // the raw call sites exactly (receiver-first).
@@ -2808,7 +2808,7 @@ LABEL_99:
           v199 = dword_87F8F0; /*0x443e27*/
           v198 = 0; /*0x443e28*/
         }
-        v11 = Random::Range(p_NeedsSaveOrLink, (int)v198, v199); /*0x443e50*/
+        v11 = ((Random *)(p_NeedsSaveOrLink))->Range((int)v198, v199); /*0x443e50*/
         (v204) = ((v204) & ~0xFFFF) | ((v11 + v204) & 0xFFFF); /*0x443e55*/
         HIWORD(v204) += v11; /*0x443e5a*/
         v199 = 0; /*0x443e6e*/
@@ -8869,7 +8869,7 @@ int BuildingClass::ProcessStructureAbandoned() {
 int BuildingClass::GetCrewCount()
 {
   if ( this->HasBeenCaptured /*0x44eb43*/
-    || Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 99) >= 25
+    || ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 99) >= 25
     || this->Type->Factory[0] != 7 )
   {
     return TechnoClass::GetCrew((TechnoClass *)this); /*0x44eb55*/
@@ -9036,7 +9036,7 @@ void BuildingClass::EjectCrew()
       v25 = v25; /*0x443076*/
       if ( !this->u32_412 /*0x4430aa*/
         && v47 > 0
-        && Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, v46) == 1 )
+        && ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, v46) == 1 )
       {
         v27 = 0; /*0x4430b4*/
         v28 = this->GetCrew(); /*0x4430bc*/
@@ -9074,7 +9074,7 @@ void BuildingClass::EjectCrew()
             Debug::Log(); /*0x4431d8*/
             v34 = *(unsigned int *)(v27->Type + 160); /*0x4431eb*/
             --v47; /*0x4431f1*/
-            v35 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 5, v34); /*0x443203*/
+            v35 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(5, v34); /*0x443203*/
             v36 = *(unsigned int *)v27; /*0x443208*/
             v27->HouseClass_6C = v35; /*0x443214*/
             (*(void (__thiscall **)(int, unsigned int *, int, unsigned int))(v36 + 372))(v27, &g_BuildingClassPool, 1, 0); /*0x443217*/
@@ -9098,7 +9098,7 @@ void BuildingClass::EjectCrew()
       (*((unsigned char *)&(Type))) = Cell::IsBuildable(v25, 1, 1, 1, -1, 0, -1, 1); /*0x4432a3*/
       if ( (unsigned char)Type ) /*0x4432aa*/
       {
-        if ( Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 99) >= 50 ) /*0x4432c7*/
+        if ( ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 99) >= 50 ) /*0x4432c7*/
         {
           v58[1] = (v48[1] << 8) + 128; /*0x44337d*/
           v58[0] = (v48[0] << 8) + 128; /*0x443392*/
@@ -9364,7 +9364,6 @@ int BuildingClass::CleanupOccupation() {
                     (*(((unsigned short *)&(v65[0])) + 1)) = (unsigned short)v63 + (*(((unsigned short *)&(v67[0])) + 1)); /*0x455382*/
                     *(unsigned int *)v62 = v65[0]; /*0x45538f*/
                     v45 = (BuildingClass *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj( /*0x45539e*/
-                                             (CellCoord *)&DataGlobal_87F7E8,
                                              (int16_t *)v62);
                     if ( (uint8_t)Cell::HasOccupierBit((Cell *)v45, v43) ) /*0x4553a3*/
                     {

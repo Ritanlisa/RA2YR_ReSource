@@ -153,13 +153,13 @@ void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
   {
     if ( v11.q010 <= 0 ) /*0x4d00f8*/
       goto LABEL_45; /*0x4d00f8*/
-    v7 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, v11.q010 - 1); /*0x4d0109*/
+    v7 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, v11.q010 - 1); /*0x4d0109*/
     v8 = (unsigned int *)v11.q004; /*0x4d0111*/
     v9 = *(unsigned int *)this->Owner; /*0x4d0115*/
   }
   else
   {
-    v7 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, v10.q010 - 1); /*0x4d00e2*/
+    v7 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, v10.q010 - 1); /*0x4d00e2*/
     v8 = (unsigned int *)v10.q004; /*0x4d00ea*/
     v9 = *(unsigned int *)this->Owner; /*0x4d00ee*/
   }

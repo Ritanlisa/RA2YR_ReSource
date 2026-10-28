@@ -463,7 +463,7 @@ int Warhead::ProcessDamageArea()
   v18 = v16 / v29; /*0x65b73a*/
   this->u32_64 = v18; /*0x65b741*/
   this->u32_68 = v8 / v18; /*0x65b749*/
-  v19 = (((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(&this->u32_80); /*0x65b750*/
+  v19 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(&this->u32_80); /*0x65b750*/
   v20 = (int *)(*(int (**)(void *, unsigned char *))(*(unsigned int *)v19 + 72))(v19, v35); /*0x65b75e*/
   v31 = *v20; /*0x65b763*/
   v33 = v20[1]; /*0x65b76a*/

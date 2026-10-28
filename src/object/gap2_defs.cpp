@@ -30,6 +30,7 @@ namespace gamemd { using ra2::game::AbstractClass;
 #include "e4/classes/Game_e4.hpp"  // w16g4 C3861 Game:: supply
 #include "e4/classes/CellClass_e4.hpp"  // w16g4 C3861 CellClass:: supply
 #include "system/map.hpp"
+#include "core/cellcoord.hpp"  // X181A: complete CellCoord (p->To_CellObj)
 // [w18j2] C3861 supply (raw-evidenced)
 namespace gamemd { int Stub3(int p0); }  // x4:signals@0x4b4c70
 namespace gamemd { int GetStatus(); }  // x4:empty@0x4bbc90
@@ -355,8 +356,8 @@ int TechnoClass::SmokeUpdate(double a2) {  // g57b5 W4: raw 真值补参 (a2)
           }
           if ( ((uint8_t)dword_A8ED84 & 3) == 0 ) /*0x414e34*/
           {
-            v11 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, -170, 170); /*0x414e6a*/
-            v12 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, -170, 170); /*0x414e75*/
+            v11 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(-170, 170); /*0x414e6a*/
+            v12 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(-170, 170); /*0x414e75*/
             v13 = v3->GetZAboveGround(); /*0x414e77*/
             v14 = v3[41]; /*0x414e82*/
             v15 = v11 + v3[40]; /*0x414e89*/
@@ -415,7 +416,7 @@ int TechnoClass::SmokeUpdate(double a2) {  // g57b5 W4: raw 真值补参 (a2)
           if ( a2 < *(double *)dword_8871E0->RefundPercent && v3->GetZAboveGround() > 0 )
           {
             v23 = v3->health != 0 ? 10 : 80;
-            if ( Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 99) < v23 ) /*0x4150d4*/
+            if ( ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 99) < v23 ) /*0x4150d4*/
             {
               v24 = (AnimClass *)operator new(0x1C8u); /*0x4150e0*/
               if ( v24 ) /*0x4150e7*/
@@ -2178,7 +2179,7 @@ int ObjectClass::UpdateTiberiumGrowth(int a1) {
   v7 = *(unsigned int **)&dword_B0F4EC->ptr_0[4 * BuildingByTiberiumType]; /*0x48190c*/
   v15 = v7[46]; /*0x481915*/
   if ( a1 ) /*0x48191f*/
-    this->deployAnim = Random::Range(&dword_A8B230[14].NeedsSaveOrLink, v7[56], v7[56] + 700 * v7[58] - 700); /*0x481955*/
+    this->deployAnim = ((Random *)(&dword_A8B230[14].NeedsSaveOrLink))->Range(v7[56], v7[56] + 700 * v7[58] - 700); /*0x481955*/
   v8 = 0; /*0x481958*/
   v9 = 1; /*0x48195a*/
   do /*0x4819bc*/
@@ -7303,7 +7304,7 @@ int ObjectClass::NotifyExpired(void* a1, void* a2) {
     }
     if ( v16 > 10 && !dword_A8E7AC ) /*0x7079fb*/
     {
-      v17 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 4, 8); /*0x707a0d*/
+      v17 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(4, 8); /*0x707a0d*/
       v18 = v43[1]; /*0x707a18*/
       this->targetingTimer[0] = (int)dword_A8ED84; /*0x707a1c*/
       this->targetingTimer[1] = v18; /*0x707a22*/

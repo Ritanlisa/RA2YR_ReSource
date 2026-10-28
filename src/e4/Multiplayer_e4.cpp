@@ -146,10 +146,9 @@ void * Multiplayer::FindStartPositions(void *a1)
     {
       do /*0x688643*/
       {
-        v14 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, *(unsigned int *)&g_AircraftTrackerState - 10); /*0x688551*/
+        v14 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, *(unsigned int *)&g_AircraftTrackerState - 10); /*0x688551*/
         LOWORD(v22) = *(unsigned short *)&DataGlobal_87F90C /*0x688573*/
-        + Random::Range(
-                        (Random *)&dword_A8B230[14].NeedsSaveOrLink,
+        + ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(
                         10,
                         *(unsigned int *)&g_AircraftTrackerPool - 10);
         HIWORD(v22) = v14 + *(unsigned short *)&DataGlobal_87F910 + 10; /*0x688588*/

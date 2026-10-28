@@ -6540,7 +6540,7 @@ int * RandomCoordScatter(int * a0, IUnknown * aP1, int aP2, ScenarioClass * aP3)
 
   v18 = a1; /*0x49f42a*/
   LOWORD(v16) = 0; /*0x49f438*/
-  v6 = Random::State((unsigned int *)dword_A8B230 + 134); /*0x49f43f*/
+  v6 = ((Random *)((unsigned int *)dword_A8B230 + 134))->State(); /*0x49f43f*/
   (v7) = ((v7) & ~0xFF) | ((0) & 0xFF); /*0x49f448*/
   (v7) = ((v7) & ~(0xFF << 8)) | (((v6) & 0xFF) << 8); /*0x49f44a*/
   v8 = a2[2]; /*0x49f451*/

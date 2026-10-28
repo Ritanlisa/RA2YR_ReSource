@@ -175,12 +175,12 @@ char CaptureManagerClass::HandleOverload()
           v13 = v11[2]; /*0x471b7a*/
           v28 = *v11; /*0x471b88*/
           v30 = v13; /*0x471b8c*/
-          v14 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, -200, 200); /*0x471b98*/
+          v14 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(-200, 200); /*0x471b98*/
           v15 = (int *)(this->overloadCount + 156); /*0x471b9a*/
           v24 = *v15; /*0x471bac*/
           v25 = v15[1]; /*0x471bb8*/
           v26 = v15[2]; /*0x471bc5*/
-          v16 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, -200, 200); /*0x471bc9*/
+          v16 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(-200, 200); /*0x471bc9*/
           v27[0] = v24 + v16; /*0x471bde*/
           v27[1] = v14 + v12; /*0x471be2*/
           v27[2] = v13 + 100; /*0x471be6*/
@@ -203,7 +203,7 @@ char CaptureManagerClass::HandleOverload()
           v21 = 0.015; /*0x471c41*/
           if ( v2 != 1 ) /*0x471c49*/
             v21 = 0.029999999; /*0x471c4b*/
-          v2 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 100); /*0x471c62*/
+          v2 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 100); /*0x471c62*/
           v18 = v21; /*0x471c67*/
           if ( v2 < 50 ) /*0x471c6e*/
             v18 = -v18; /*0x471c70*/
@@ -658,7 +658,7 @@ void CaptureManagerClass::DecideUnitFate(int aP1, void *a2)
   {
     v9 = &dword_8871E0->DynamicVector_EA0; /*0x47245f*/
   }
-  v13 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 1, 100); /*0x4724f7*/
+  v13 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(1, 100); /*0x4724f7*/
   v27 = 0; /*0x4724f9*/
   if ( v13 <= 0 )
   {

@@ -84,7 +84,7 @@ int InfantryClass::ScanTarget(int * a1)
     this->vt_slot_1156(this, 0, 1); /*0x4d4e7a*/
   v7 = *((double *)MissionClass::GetMissionControl((MissionClass *)this) + 2) * 900.0; /*0x4d4e8a*/
   LOWORD(v8) = Math::RoundToInt(v7); /*0x4d4e90*/
-  v9 = (int)v8 + Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2); /*0x4d4eb3*/
+  v9 = (int)v8 + ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 2); /*0x4d4eb3*/
   if ( !this->target
     || (!this
      || this->vt_slot_44(this) != 15
@@ -197,7 +197,7 @@ int InfantryClass::ProcessDeploy(void ** a1)
   LABEL_25:
   MissionControl = MissionClass::GetMissionControl((MissionClass *)a1); /*0x4d5582*/
   (*((unsigned short *)&(v11))) = Math::RoundToInt(*((double *)MissionControl + 2) * 900.0); /*0x4d5592*/
-  return v11 + Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2); /*0x4d55b0*/
+  return v11 + ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 2); /*0x4d55b0*/
 }
 }
 // 0x517D90

@@ -1334,7 +1334,7 @@ int UnitClass::Mission_Harvest()
 LABEL_9:
       MissionControl = MissionClass::GetMissionControl((MissionClass *)this); /*0x41525a*/
       (v8) = ((v8) & ~0xFFFF) | ((Math::RoundToInt(*((double *)MissionControl + 2) * 900.0)) & 0xFFFF); /*0x41526a*/
-      return v8 + Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2);
+      return v8 + ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 2);
   }
 
 }
@@ -4938,8 +4938,7 @@ namespace gamemd {
           {
             FoundationHeight = BuildingTypeClass::GetFoundationHeight((int *)bug->Type, 0); /*0x4427a6*/
             FoundationWidth = BuildingTypeClass::GetFoundationWidth((BuildingTypeClass *)bug->Type); /*0x4427a8*/
-            switch ( Random::Range( /*0x4427d7*/
-                       (Random *)&dword_A8B230[14].NeedsSaveOrLink,
+            switch ( ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range( /*0x4427d7*/
                        0,
                        FoundationHeight + FoundationWidth + 5) )
             {
@@ -4951,7 +4950,7 @@ namespace gamemd {
                 v33 = (AnimClass *)operator new(0x1C8u); /*0x4427e8*/
                 if ( v33 ) /*0x4427ef*/
                 {
-                  v34 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 1, 3); /*0x442804*/
+                  v34 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(1, 3); /*0x442804*/
                   v35 = (void **)dword_8871E0->Easy[11]; /*0x442818*/
                   v61 = v34; /*0x44281e*/
                   v58 = RandomCoordScatter(v81, &v75, v9, 96, 0); /*0x442834*/
@@ -4965,7 +4964,7 @@ namespace gamemd {
                 v37 = (AnimClass *)operator new(0x1C8u); /*0x442845*/
                 if ( v37 ) /*0x44284c*/
                 {
-                  v62 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 1, 3); /*0x44287b*/
+                  v62 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(1, 3); /*0x44287b*/
                   v38 = (void **)(dword_8871E0->Easy[11] + 4); /*0x44288a*/
                   v59 = RandomCoordScatter(v82, &v75, v9, 96, 0); /*0x442894*/
                   v36 = AnimClass::ctor(v37, *v38, v59, 0, v62, (void *)0x600, 0, 0); /*0x442896*/
@@ -5112,7 +5111,7 @@ namespace gamemd {
             && bug->IsPoweredActive() )
           {
             (*((unsigned short *)&(v73))) = 0; /*0x442a66*/
-            v41 = Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink); /*0x442a73*/
+            v41 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->State(); /*0x442a73*/
             (*((unsigned char *)&(v42))) = 0; /*0x442a78*/
             (*(((unsigned char *)&(v42)) + (sizeof(v42) - 1))) = v41; /*0x442a7e*/
             v43 = v73; /*0x442a80*/
@@ -5328,8 +5327,7 @@ namespace gamemd {
           {
             FoundationHeight = BuildingTypeClass::GetFoundationHeight((int *)bug->Type, 0); /*0x4427a6*/
             FoundationWidth = BuildingTypeClass::GetFoundationWidth((BuildingTypeClass *)bug->Type); /*0x4427a8*/
-            switch ( Random::Range( /*0x4427d7*/
-                       (Random *)&dword_A8B230[14].NeedsSaveOrLink,
+            switch ( ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range( /*0x4427d7*/
                        0,
                        FoundationHeight + FoundationWidth + 5) )
             {
@@ -5341,7 +5339,7 @@ namespace gamemd {
                 v33 = (AnimClass *)new unsigned char[0x1C8u]; /*0x4427e8*/
                 if ( v33 ) /*0x4427ef*/
                 {
-                  v34 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 1, 3); /*0x442804*/
+                  v34 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(1, 3); /*0x442804*/
                   v35 = (void **)dword_8871E0->Easy[11]; /*0x442818*/
                   v61 = v34; /*0x44281e*/
                   v58 = RandomCoordScatter(v81, &v75, v9, 96, 0); /*0x442834*/
@@ -5355,7 +5353,7 @@ namespace gamemd {
                 v37 = (AnimClass *)new unsigned char[0x1C8u]; /*0x442845*/
                 if ( v37 ) /*0x44284c*/
                 {
-                  v62 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 1, 3); /*0x44287b*/
+                  v62 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(1, 3); /*0x44287b*/
                   v38 = (void **)(dword_8871E0->Easy[11] + 4); /*0x44288a*/
                   v59 = RandomCoordScatter(v82, &v75, v9, 96, 0); /*0x442894*/
                   v36 = AnimClass::ctor(v37, *v38, v59, 0, v62, (void *)0x600, 0, 0); /*0x442896*/
@@ -5502,7 +5500,7 @@ namespace gamemd {
             && bug->IsPoweredActive() )
           {
             v73 = ((v73) & 0xFFFF0000u) | ((unsigned int)(0) & 0xFFFFu); /*0x442a66*/
-            v41 = Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink); /*0x442a73*/
+            v41 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->State(); /*0x442a73*/
             v42 = ((v42) & 0xFFFFFF00u) | ((unsigned int)(0) & 0xFFu); /*0x442a78*/
             v42 = ((v42) & 0xFFFF00FFu) | (((unsigned int)(v41) & 0xFFu) << 8); /*0x442a7e*/
             v43 = v73; /*0x442a80*/
@@ -6897,7 +6895,7 @@ namespace gamemd {
         fmul ds:dbl_7E27F8
       }
       (*((unsigned short *)&(v6))) = Math::RoundToInt(v1); /*0x44ad36*/
-      return v6 + Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2); /*0x44ad59*/
+      return v6 + ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 2); /*0x44ad59*/
     }
     v8 = bug->target; /*0x44ad5a*/
     if ( v8 )
@@ -6996,7 +6994,7 @@ namespace gamemd {
         fmul ds:dbl_7E27F8
       }
       v6 = ((v6) & 0xFFFF0000u) | ((unsigned int)(Math::RoundToInt(v1)) & 0xFFFFu); /*0x44ad36*/
-      return v6 + Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2); /*0x44ad59*/
+      return v6 + ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 2); /*0x44ad59*/
     }
     v8 = bug->target; /*0x44ad5a*/
     if ( v8 )
@@ -7627,7 +7625,7 @@ LABEL_20:
             if ( !*(unsigned char *)((*(int (**)(BuildingClass *))(this->ptr_0 + 132))(this) + 3285) ) /*0x44d4ca*/
             {
               v56 = *(unsigned int *)(*(unsigned int *)(v28 + 192) /*0x44d4fb*/
-                              + 4 * ((unsigned int)Random::State(&Randomizer_Global) % *(unsigned int *)(v28 + 204)));
+                              + 4 * ((unsigned int)((Random *)(&Randomizer_Global))->State() % *(unsigned int *)(v28 + 204)));
               v57 = (unsigned int *)(*(int (**)(BuildingClass *, double *, unsigned int, unsigned int, unsigned int, unsigned int))(this->ptr_0 + 176))( /*0x44d510*/
                                 this,
                                 v87,
@@ -8052,7 +8050,7 @@ namespace gamemd {
         fmul ds:dbl_7E27F8
       }
       (*((unsigned short *)&(v73))) = Math::RoundToInt(v1); /*0x44e277*/
-      return v73 + Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2); /*0x44e29c*/
+      return v73 + ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 2); /*0x44e29c*/
     }
     if ( Type->Naval && Type->Cloakable ) /*0x44e2b0*/
     {
@@ -8232,7 +8230,7 @@ namespace gamemd {
     fmul ds:dbl_7E27F8
   }
   (*((unsigned short *)&(v35))) = Math::RoundToInt(v1); /*0x44dc94*/
-  return v35 + Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2); /*0x44dcb1*/
+  return v35 + ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 2); /*0x44dcb1*/
 }
   v4 = LinkedList::Pop((LinkedList *)bug->passengers); /*0x44d8d8*/
   if ( !v4 ) /*0x44d8dc*/
@@ -8379,7 +8377,7 @@ namespace gamemd {
     fmul ds:dbl_7E27F8
   }
   v35 = ((v35) & 0xFFFF0000u) | ((unsigned int)(Math::RoundToInt(v1)) & 0xFFFFu); /*0x44dc94*/
-  return v35 + Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2); /*0x44dcb1*/
+  return v35 + ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 2); /*0x44dcb1*/
 }
 // 0x44E440
 namespace gamemd {  
@@ -8553,7 +8551,7 @@ namespace gamemd {
           fmul ds:dbl_7E27F8
         }
         (*((unsigned short *)&(v8))) = Math::RoundToInt(v1); /*0x44e4ca*/
-        result = v8 + Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2); /*0x44e4e6*/
+        result = v8 + ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 2); /*0x44e4e6*/
         break; /*0x44e4ed*/
     }
   }
@@ -13180,7 +13178,7 @@ namespace gamemd {
   if ( !transporter ) /*0x485caa*/
   {
     v9 = 0; /*0x485cd0*/
-    (v1->u8_FE) = (int)abs32(Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink)) % 3 + 48; /*0x485cd2*/
+    (v1->u8_FE) = (int)abs32(((Random *)&dword_A8B230[14].NeedsSaveOrLink)->State()) % 3 + 48; /*0x485cd2*/
     v68 = 0; /*0x485cd8*/
     while ( 1 ) /*0x485ce4*/
     {
@@ -13208,7 +13206,7 @@ namespace gamemd {
           NeighbourContent->ambientSoundController[2] = 126; /*0x48619c*/
           v69.Height = v40; /*0x4861a8*/
           (NeighbourContent->u8_FE) = 2 * (NeighbourContent->transporter) /*0x4861d7*/
-                                               + (abs32(Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink)) & 1)
+                                               + (abs32(((Random *)&dword_A8B230[14].NeedsSaveOrLink)->State()) & 1)
                                                + 51;
           v56 = (const RECT *)CellStruct::Copy(&DSurface_ViewBounds, v83); /*0x4861e2*/
           v47 = (struct tagRECT *)BuildingClass::GetPlacementRect(NeighbourContent, v86); /*0x486201*/
@@ -13273,7 +13271,7 @@ namespace gamemd {
             }
             v77 = v20; /*0x485e6e*/
             NeighbourContent->ambientSoundController[2] = 126; /*0x485f28*/
-            v24 = Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink); /*0x485f47*/
+            v24 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->State(); /*0x485f47*/
             (NeighbourContent->u8_FE) = 3 * v70 + abs32(v24 % 3); /*0x485f69*/
             House::AnnounceUpgrade((int)NeighbourContent, -1); /*0x485f71*/
             v78[0] = DSurface_ViewBounds.field_0; /*0x485f81*/
@@ -13348,7 +13346,7 @@ namespace gamemd {
     }
   }
   (v1->u8_FE) = 2 * (v1->transporter) /*0x4862c0*/
-                         + (abs32(Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink)) & 1)
+                         + (abs32(((Random *)&dword_A8B230[14].NeedsSaveOrLink)->State()) & 1)
                          + 51;
   LABEL_62:
   v59 = (const RECT *)CellStruct::Copy(&DSurface_ViewBounds, v83); /*0x4862c6*/
@@ -13392,7 +13390,7 @@ namespace gamemd {
   if ( !transporter ) /*0x485caa*/
   {
     v9 = 0; /*0x485cd0*/
-    v1->transporter = ((v1->transporter) & 0xFF00FFFFu) | (((unsigned int)((int)abs32(Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink)) % 3 + 48) & 0xFFu) << 16); /*0x485cd2*/
+    v1->transporter = ((v1->transporter) & 0xFF00FFFFu) | (((unsigned int)((int)abs32(((Random *)&dword_A8B230[14].NeedsSaveOrLink)->State()) % 3 + 48) & 0xFFu) << 16); /*0x485cd2*/
     v68 = 0; /*0x485cd8*/
     while ( 1 ) /*0x485ce4*/
     {
@@ -13420,7 +13418,7 @@ namespace gamemd {
           NeighbourContent->ambientSoundController[2] = 126; /*0x48619c*/
           v69.Height = v40; /*0x4861a8*/
           (NeighbourContent->u8_FE) = 2 * (NeighbourContent->transporter) /*0x4861d7*/
-                                               + (abs32(Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink)) & 1)
+                                               + (abs32(((Random *)&dword_A8B230[14].NeedsSaveOrLink)->State()) & 1)
                                                + 51;
           v56 = (const RECT *)CellStruct::Copy(&DSurface_ViewBounds, v83); /*0x4861e2*/
           v47 = (struct tagRECT *)BuildingClass::GetPlacementRect(NeighbourContent, v86); /*0x486201*/
@@ -13485,7 +13483,7 @@ namespace gamemd {
             }
             v77 = v20; /*0x485e6e*/
             NeighbourContent->ambientSoundController[2] = 126; /*0x485f28*/
-            v24 = Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink); /*0x485f47*/
+            v24 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->State(); /*0x485f47*/
             NeighbourContent->transporter = ((NeighbourContent->transporter) & 0xFF00FFFFu) | (((unsigned int)(3 * v70 + abs32(v24 % 3)) & 0xFFu) << 16); /*0x485f69*/
             House::AnnounceUpgrade((int)NeighbourContent, -1); /*0x485f71*/
             v78[0] = DSurface_ViewBounds.field_0; /*0x485f81*/
@@ -13560,7 +13558,7 @@ namespace gamemd {
     }
   }
   (((unsigned char *)&(v1->transporter))[2]) = 2 * (*((unsigned char *)&(v1->transporter))) /*0x4862c0*/
-                         + (abs32(Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink)) & 1)
+                         + (abs32(((Random *)&dword_A8B230[14].NeedsSaveOrLink)->State()) & 1)
                          + 51;
   LABEL_62:
   v59 = (const RECT *)CellStruct::Copy(&DSurface_ViewBounds, v83); /*0x4862c6*/
@@ -14246,7 +14244,7 @@ namespace gamemd {
   p_vtable3->mapCoords[0] = v12; /*0x4a1859*/
   v14 = *(double *)(*(unsigned int *)&g_RulesClass_Instance + 5752) * 1800.0; /*0x4a187a*/
   v13 = *(double *)(*(unsigned int *)&g_RulesClass_Instance + 5752) * 450.0; /*0x4a188a*/
-  v15 = (int16_t *)Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2147483646); /*0x4a189b*/
+  v15 = (int16_t *)((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 2147483646); /*0x4a189b*/
   v8 = *(void **)&((unsigned int *)&stru_A8EB00)[416]; /*0x4a189f*/
   (*((unsigned short *)&(v9))) = Math::RoundToInt((v14 - v13) * ((double)(int)v15 * 4.656612877414201e-10) + v13); /*0x4a18b5*/
   v10 = (void *)(*(((unsigned int *)&(v14)) + 1)); /*0x4a18ba*/
@@ -14265,7 +14263,7 @@ namespace gamemd {
   p_vtable3->mapCoords[0] = v12; /*0x4a1859*/
   v14 = *(double *)(*(unsigned int *)&g_RulesClass_Instance + 5752) * 1800.0; /*0x4a187a*/
   v13 = *(double *)(*(unsigned int *)&g_RulesClass_Instance + 5752) * 450.0; /*0x4a188a*/
-  v15 = (int16_t *)Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2147483646); /*0x4a189b*/
+  v15 = (int16_t *)((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 2147483646); /*0x4a189b*/
   v8 = *(void **)&((unsigned int *)&stru_A8EB00)[416]; /*0x4a189f*/
   (*((unsigned short *)&(v9))) = Math::RoundToInt((v14 - v13) * ((double)(int)v15 * 4.656612877414201e-10) + v13); /*0x4a18b5*/
   v10 = (void *)(unsigned int)((v14) >> 32); /*0x4a18ba*/
@@ -17866,7 +17864,7 @@ namespace gamemd {
         AudioClass::ProcessEvent((AudioClass *)this); /*0x722b43*/
       *(unsigned int *)(*(&this->nextArrayIndex3) + 8 * *(&this->nextArrayIndex0)) = *(unsigned int *)bug; /*0x722b58*/
       *(float *)(*(&this->nextArrayIndex3) + 8 * *(&this->nextArrayIndex0) + 4) = (float)(*(unsigned int *)&((unsigned int *)&stru_A8EB00)[416] /*0x722b95*/
-                                                              + (int)abs32(Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink))
+                                                              + (int)abs32(((Random *)&dword_A8B230[14].NeedsSaveOrLink)->State())
                                                               % 50);
       v7 = *(&this->nextArrayIndex0); /*0x722b99*/
       v8 = (unsigned int *)*(&this->nextArrayIndex1); /*0x722ba5*/

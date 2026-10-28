@@ -135,7 +135,7 @@ int DropPodLocomotionClass::ILoco_Process(DropPodLocomotionClass * a1)
           v34[0] = *v25; /*0x4b5f7a*/
           v34[1] = v25->ptr_4; /*0x4b5f86*/
           v35 = v25->ptr_8; /*0x4b5f8d*/
-          v27 = Random::State(&Randomizer_Global); /*0x4b5f91*/
+          v27 = ((Random *)(&Randomizer_Global))->State(); /*0x4b5f91*/
           StartAudioControllerAt(*(unsigned int *)(DropPodWeapon[48] + 4 * (v27 % v26)), &v36, 0); /*0x4b5fa8*/
           PlaySoundEffectAt(v34, 2 * DropPodWeapon[41], (unsigned int *)this->Owner, DropPodWeapon[43], 1, 0); /*0x4b5fc7*/
           v28 = (AnimClass *)__2_YAPAXI_Z(0x1C8u); /*0x4b5fd6*/

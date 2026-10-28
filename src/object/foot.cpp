@@ -9,6 +9,7 @@
 #include "e4/classes/Math_e4.hpp"  // g57c5 W5d scope supply
 #include "e4/classes/MovementAI_e4.hpp"  // g57c5 W5d scope supply
 #include "system/map.hpp"
+#include "core/cellcoord.hpp"  // X181A: complete CellCoord (p->To_CellObj)
 // [w18j2] C3861 supply (raw-evidenced)
 namespace gamemd { int Begin(TechnoClass *p_this); }  // x4:ida@0x6f9e50
 namespace gamemd { int CheckAmbiguity(int p0, char p1); }  // x4:signals@0x578540
@@ -206,7 +207,7 @@ bool FootClass::MovementAI()
     (*((unsigned short *)&(Traversability))) = *v3 / 256; /*0x4da5bb*/
     (*(((unsigned short *)&(Traversability)) + 1)) = v3[1] / 256; /*0x4da5d3*/
     *(unsigned int *)v45 = Traversability; /*0x4da5dc*/
-    v4 = (double *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v45); /*0x4da5e6*/
+    v4 = (double *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v45); /*0x4da5e6*/
     Traversability = Cell::GetTraversability(v4); /*0x4da5f4*/
     if ( Traversability > 0 ) /*0x4da5f8*/
     {
@@ -399,7 +400,7 @@ bool FootClass::MovementAI()
         v47 = this->location[1]; /*0x4daaab*/
         v48 = this->location[2]; /*0x4daab2*/
         v20 = ptr_0[33](this) + 1268; /*0x4daac5*/
-        v21 = Random::State(&Randomizer_Global); /*0x4daacb*/
+        v21 = ((Random *)(&Randomizer_Global))->State(); /*0x4daacb*/
         StartAudioControllerAt( /*0x4daae2*/
           *(unsigned int *)(*(unsigned int *)(v20 + 4) + 4 * (v21 % *(unsigned int *)(v20 + 16))),
           &v46,

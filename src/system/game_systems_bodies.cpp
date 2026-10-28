@@ -14,6 +14,7 @@
 #include "e4/classes/NetworkLobby_e4.hpp"
 #include "e4/classes/WideString_e4.hpp"
 #include "e4/classes/SidebarClass_e4.hpp"
+#include "core/cellcoord.hpp"  // X181A: complete CellCoord (p->To_CellObj)
 // [w18j2] C3861 supply (raw-evidenced)
 namespace gamemd { int Hash_Compute(unsigned int *a1, int a2); }  // w18j2 raw 0x0064DE80
 // [w18j2] C3861 supply (raw-evidenced)
@@ -5010,7 +5011,7 @@ LABEL_334:
       if ( !v202 ) /*0x4b8e93*/
       {
 LABEL_344:
-        v293 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2147483646); /*0x4b8e99*/
+        v293 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 2147483646); /*0x4b8e99*/
         __asm /*0x4b8eb4*/
         {
           fild dword ptr [esp+680h+var_640]
@@ -7165,7 +7166,7 @@ void SkirmishMapGen::DlgProc()
       EnableWindow(DlgItem, MEMORY[0xA8ED6B] == 0); /*0x596ba6*/
       if ( dword_ABE04C == -1 ) /*0x596baf*/
       {
-        dword_ABE04C = Random::Range((unsigned int *)dword_A8B230 + 134, 0, 0xFFFF); /*0x596bc8*/
+        dword_ABE04C = ((Random *)((unsigned int *)dword_A8B230 + 134))->Range(0, 0xFFFF); /*0x596bc8*/
         byte_ABE2D8 = 1; /*0x596bcd*/
       }
       byte_82B030 = 1; /*0x596bda*/
@@ -7437,16 +7438,16 @@ LABEL_18:
       }
       Skirmish::ReadSettings(stru_ABDFD8, hWnd); /*0x596776*/
       RandomMap::SetupDialog(stru_ABDFD8, hWnd); /*0x596781*/
-      dword_ABE010 = (unsigned int)Random::Range(Randomizer_Global, 0, 100) >= 0x32; /*0x59679e*/
-      dword_ABE014 = Random::Range(Randomizer_Global, 1, 4); /*0x5967b7*/
-      dword_ABE020 = Random::Range(Randomizer_Global, 0, 3); /*0x5967ca*/
-      dword_ABE018 = Random::Range(Randomizer_Global, 0, 3); /*0x5967dd*/
-      dword_ABE03C = Random::Range(Randomizer_Global, 0, 3); /*0x5967f3*/
+      dword_ABE010 = (unsigned int)((Random *)(&Randomizer_Global))->Range(0, 100) >= 0x32; /*0x59679e*/
+      dword_ABE014 = ((Random *)(&Randomizer_Global))->Range(1, 4); /*0x5967b7*/
+      dword_ABE020 = ((Random *)(&Randomizer_Global))->Range(0, 3); /*0x5967ca*/
+      dword_ABE018 = ((Random *)(&Randomizer_Global))->Range(0, 3); /*0x5967dd*/
+      dword_ABE03C = ((Random *)(&Randomizer_Global))->Range(0, 3); /*0x5967f3*/
       dword_ABE040 = dword_ABE03C; /*0x5967f8*/
       Skirmish::RandomizeSettings(stru_ABDFD8, dword_ABE014); /*0x5967fd*/
       v46 = GetStringCSF(aTxtRandomMapDe, 0, aDRa2mdpostMapg, 3934); /*0x596813*/
       wcscpy(&unk_ABE050, v46); /*0x59681e*/
-      dword_ABE04C = Random::Range(Randomizer_Global, 0, 0xFFFF); /*0x59683c*/
+      dword_ABE04C = ((Random *)(&Randomizer_Global))->Range(0, 0xFFFF); /*0x59683c*/
       SettingsClass::ClampValues((int *)stru_ABDFD8); /*0x596841*/
       RandomMap::SetupDialog(stru_ABDFD8, hWnd); /*0x59684c*/
       v47 = dword_ABE154; /*0x596851*/

@@ -257,25 +257,25 @@ CellClass * * InitializeBuildabilityGrid(int a1)
           {
             if ( v13 <= dword_87F914 + dword_87F90C && v14 >= dword_87F910 && v14 <= dword_87F918 + dword_87F910 ) /*0x6b28cd*/
             {
-              v15 = *((unsigned __int8 *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)v26) + 284); /*0x6b28ef*/
-              v11 = 15 * *((char *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)v26) + 283) /*0x6b291b*/
+              v15 = *((unsigned __int8 *)((CellCoord *)&dword_87F7E8)->To_CellObj((__int16 *)v26) + 284); /*0x6b28ef*/
+              v11 = 15 * *((char *)((CellCoord *)&dword_87F7E8)->To_CellObj((__int16 *)v26) + 283) /*0x6b291b*/
                   + *(unsigned int *)*(&off_83FF18 + v15);
-              v16 = (CellClass *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)v26); /*0x6b291d*/
+              v16 = (CellClass *)((CellCoord *)&dword_87F7E8)->To_CellObj((__int16 *)v26); /*0x6b291d*/
               if ( !(unsigned __int8)CellClass::IsBuildable(v16) ) /*0x6b292a*/
                 goto LABEL_24; /*0x6b292a*/
               *(unsigned int *)v24 = *(unsigned int *)v26 - 0x10000; /*0x6b2959*/
-              v17 = (CellClass *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v24); /*0x6b295d*/
+              v17 = (CellClass *)((CellCoord *)&dword_87F7E8)->To_CellObj(v24); /*0x6b295d*/
               if ( !(unsigned __int8)CellClass::IsBuildable(v17) ) /*0x6b2966*/
                 goto LABEL_24; /*0x6b2966*/
               LOWORD(v21) = v26[0] - 1; /*0x6b2979*/
               HIWORD(v21) = v26[1] - 1; /*0x6b2982*/
               *(unsigned int *)v24 = v21; /*0x6b2991*/
-              v18 = (CellClass *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v24); /*0x6b2995*/
+              v18 = (CellClass *)((CellCoord *)&dword_87F7E8)->To_CellObj(v24); /*0x6b2995*/
               if ( !(unsigned __int8)CellClass::IsBuildable(v18) /*0x6b29d6*/
                 || ((v22) = ((v22) & ~(0xFFFF << 16)) | (((v26[1]) & 0xFFFF) << 16),
                     (v22) = ((v22) & ~0xFFFF) | ((v26[0] - 1) & 0xFFFF),
                     *(unsigned int *)v24 = v22,
-                    v19 = (CellClass *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v24),
+                    v19 = (CellClass *)((CellCoord *)&dword_87F7E8)->To_CellObj(v24),
                     !(unsigned __int8)CellClass::IsBuildable(v19)) )
               {
 LABEL_24:
@@ -429,8 +429,8 @@ AbstractClass * * SlaveManager_InitGrid()
         }
         else
         {
-          v15 = *((unsigned __int8 *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v31) + 284); /*0x6b2c6c*/
-          v16 = 15 * *((char *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v31) + 283) /*0x6b2c95*/
+          v15 = *((unsigned __int8 *)((CellCoord *)&dword_87F7E8)->To_CellObj(v31) + 284); /*0x6b2c6c*/
+          v16 = 15 * *((char *)((CellCoord *)&dword_87F7E8)->To_CellObj(v31) + 283) /*0x6b2c95*/
               + *(unsigned int *)*(&off_83FF18 + v15);
           v17 = dword_ABED04; /*0x6b2c97*/
           v38 = v16; /*0x6b2c9c*/
@@ -443,7 +443,7 @@ AbstractClass * * SlaveManager_InitGrid()
           {
             v35 = v40.q010 - 0x10000; /*0x6b2cdc*/
             *(unsigned int *)v32 = v40.q010 - 0x10000; /*0x6b2ceb*/
-            v20 = (int *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v32); /*0x6b2cf4*/
+            v20 = (int *)((CellCoord *)&dword_87F7E8)->To_CellObj(v32); /*0x6b2cf4*/
             *(unsigned int *)v40.__pad_0 = v20->ptr_24; /*0x6b2cfd*/
             if ( !(unsigned __int8)MapSeed::IsCellInBounds(&v40) /*0x6b2d4e*/
               || v20->u32_44 != -1
@@ -464,7 +464,7 @@ AbstractClass * * SlaveManager_InitGrid()
             LOWORD(v36) = LOWORD(v40.q010) - 1; /*0x6b2daa*/
             HIWORD(v36) = HIWORD(v40.q010) - 1; /*0x6b2daf*/
             v40.q004 = (int)v36; /*0x6b2dbe*/
-            v24 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)&v40.q004); /*0x6b2dc7*/
+            v24 = ((CellCoord *)&dword_87F7E8)->To_CellObj((__int16 *)&v40.q004); /*0x6b2dc7*/
             *(unsigned int *)v40.__pad_0 = v24->ptr_24; /*0x6b2dd0*/
             if ( !(unsigned __int8)MapSeed::IsCellInBounds(&v40) /*0x6b2e21*/
               || v24->u32_44 != -1
@@ -491,13 +491,13 @@ AbstractClass * * SlaveManager_InitGrid()
                                         (CellStruct *)&v40.q010)->Add(
                                         &v40.q00C,
                                         v37);
-            v28 = (TechnoClass *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)&v40.q008); /*0x6b2e93*/
+            v28 = (TechnoClass *)((CellCoord *)&dword_87F7E8)->To_CellObj((__int16 *)&v40.q008); /*0x6b2e93*/
             if ( !System_Init_6B2520(v28) ) /*0x6b2e9c*/
               v30[4] = 1; /*0x6b2ea9*/
           }
           if ( (unsigned __int8)((MapSeed *)&v40.q010)->IsCellInBounds() ) /*0x6b2eb1*/
           {
-            v29 = (TechnoClass *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)&v40.q010); /*0x6b2ec4*/
+            v29 = (TechnoClass *)((CellCoord *)&dword_87F7E8)->To_CellObj((__int16 *)&v40.q010); /*0x6b2ec4*/
             if ( !System_Init_6B2520(v29) ) /*0x6b2ecd*/
               v30[4] = 1; /*0x6b2eda*/
           }
@@ -684,7 +684,7 @@ LABEL_107:
     {
       v96[1] = dword_8759AC + (unsigned short)v8; /*0x6b3080*/
       v96[0] = dword_8759A8 + v11; /*0x6b308f*/
-      v12 = (char *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v96); /*0x6b3099*/
+      v12 = (char *)((CellCoord *)&dword_87F7E8)->To_CellObj(v96); /*0x6b3099*/
       if ( !(unsigned __int8)CellClass::IsBuildable((CellClass *)v12) ) /*0x6b30a8*/
         goto LABEL_104; /*0x6b30a8*/
       v13 = (unsigned int)v100 * dword_8759A4 + v83; /*0x6b30c5*/
@@ -798,7 +798,7 @@ LABEL_31:
             {
               (v94) = ((v94) & ~0xFFFF) | ((v34 + v33) & 0xFFFF); /*0x6b32e5*/
               *(unsigned int *)v95 = v94; /*0x6b32ee*/
-              *((unsigned int *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v95) + 18) = -1; /*0x6b32fd*/
+              *((unsigned int *)((CellCoord *)&dword_87F7E8)->To_CellObj(v95) + 18) = -1; /*0x6b32fd*/
               v31 = *(unsigned int *)(v30 + 664); /*0x6b3304*/
               ++v34; /*0x6b330a*/
             }
@@ -991,7 +991,7 @@ LABEL_110:
         {
           v98[0] = v77; /*0x6b36c7*/
           v98[1] = v82; /*0x6b36d2*/
-          v63 = (CellClass *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v98); /*0x6b36dc*/
+          v63 = (CellClass *)((CellCoord *)&dword_87F7E8)->To_CellObj(v98); /*0x6b36dc*/
           v64 = (v63)->GetScreenRect(v108); /*0x6b36e8*/
           v65 = *v64; /*0x6b36ed*/
           v105 = v64[1]; /*0x6b36f2*/
@@ -1723,7 +1723,7 @@ LABEL_37:
       v18 = (UnitClass *)__2_YAPAXI_Z(0xB0u); /*0x6b5bfe*/
       if ( v18 ) /*0x6b5c05*/
       {
-        v19 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, i - 1); /*0x6b5c1a*/
+        v19 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, i - 1); /*0x6b5c1a*/
         UnitClass::Create(v18, *((void **)v31 + v19), v4, -1); /*0x6b5c2c*/
       }
     }
@@ -1733,7 +1733,7 @@ LABEL_37:
     v16 = (UnitClass *)__2_YAPAXI_Z(0xB0u); /*0x6b5bc3*/
     if ( v16 ) /*0x6b5bca*/
     {
-      v17 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, v28 - 1); /*0x6b5bde*/
+      v17 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, v28 - 1); /*0x6b5bde*/
       UnitClass::Create(v16, *((void **)Block + v17), v4, -1); /*0x6b5bee*/
     }
   }
@@ -1886,7 +1886,7 @@ LABEL_37:
       v19 = (UnitClass *)__2_YAPAXI_Z(0xB0u); /*0x6b5eee*/
       if ( v19 ) /*0x6b5ef5*/
       {
-        v20 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, i - 1); /*0x6b5f0a*/
+        v20 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, i - 1); /*0x6b5f0a*/
         UnitClass::Create(v19, *((void **)v32 + v20), v4, -1); /*0x6b5f1c*/
       }
     }
@@ -1896,7 +1896,7 @@ LABEL_37:
     v17 = (UnitClass *)__2_YAPAXI_Z(0xB0u); /*0x6b5eb3*/
     if ( v17 ) /*0x6b5eba*/
     {
-      v18 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, v29 - 1); /*0x6b5ece*/
+      v18 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, v29 - 1); /*0x6b5ece*/
       UnitClass::Create(v17, *((void **)Block + v18), v4, -1); /*0x6b5ede*/
     }
   }

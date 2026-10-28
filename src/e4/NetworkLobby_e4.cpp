@@ -456,7 +456,7 @@ int NetworkLobby::DlgProc(HWND hDlg, UINT, WPARAM nIDDlgItem, unsigned int lPara
         if ( a2 == 1175 ) /*0x5dec2b*/
         {
           NetworkBuffer::GetField((NetworkBuffer *)&stru_A8E960.random[364]); /*0x5dec36*/
-          v20 = Random::Range(&Randomizer_Global, 1, 0x7FFF); /*0x5dec47*/
+          v20 = ((Random *)(&Randomizer_Global))->Range(1, 0x7FFF); /*0x5dec47*/
           srand(v20); /*0x5dec4d*/
           *(unsigned int *)&stru_A8E960.random[544] = rand(); /*0x5dec5c*/
           Dialog::RestoreParent((Dialog *)hDlg); /*0x5dec61*/

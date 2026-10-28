@@ -5093,20 +5093,20 @@ int Lightning::Draw(int p0, int p1, int p2, int p3, int p4, int p5, int p6)
         }
         if ( result > 128 ) /*0x4c21cb*/
         {
-          v30 = Random::Range(&Randomizer_Global, -v13, v13); /*0x4c222e*/
+          v30 = ((Random *)(&Randomizer_Global))->Range(-v13, v13); /*0x4c222e*/
           v77[0] += v30; /*0x4c223b*/
-          v31 = Random::Range(&Randomizer_Global, -v13, v13); /*0x4c2244*/
+          v31 = ((Random *)(&Randomizer_Global))->Range(-v13, v13); /*0x4c2244*/
           v77[1] += v31; /*0x4c2251*/
-          v32 = Random::Range(&Randomizer_Global, -v13, v13); /*0x4c225a*/
+          v32 = ((Random *)(&Randomizer_Global))->Range(-v13, v13); /*0x4c225a*/
           v77[2] += v32; /*0x4c225f*/
         }
         else
         {
-          v27 = Random::Range(&Randomizer_Global, -1, 1); /*0x4c21d6*/
+          v27 = ((Random *)(&Randomizer_Global))->Range(-1, 1); /*0x4c21d6*/
           v77[0] += 2 * v13 * v27; /*0x4c21ee*/
-          v28 = Random::Range(&Randomizer_Global, -1, 1); /*0x4c21f2*/
+          v28 = ((Random *)(&Randomizer_Global))->Range(-1, 1); /*0x4c21f2*/
           v77[1] += 2 * v13 * v28; /*0x4c220a*/
-          v29 = Random::Range(&Randomizer_Global, -1, 1); /*0x4c220e*/
+          v29 = ((Random *)(&Randomizer_Global))->Range(-1, 1); /*0x4c220e*/
           v77[2] += 2 * v13 * v29; /*0x4c221d*/
         }
         if ( v62 <= v79 ) /*0x4c2272*/
@@ -5116,9 +5116,9 @@ int Lightning::Draw(int p0, int p1, int p2, int p3, int p4, int p5, int p6)
           v60 = 2; /*0x4c22dc*/
           do /*0x4c232a*/
           {
-            *(v39 - 1) += Random::Range(&Randomizer_Global, v38, v13); /*0x4c22fc*/
-            *v39 += Random::Range(&Randomizer_Global, v38, v13); /*0x4c230f*/
-            v40 = Random::Range(&Randomizer_Global, v38, v13); /*0x4c2311*/
+            *(v39 - 1) += ((Random *)(&Randomizer_Global))->Range(v38, v13); /*0x4c22fc*/
+            *v39 += ((Random *)(&Randomizer_Global))->Range(v38, v13); /*0x4c230f*/
+            v40 = ((Random *)(&Randomizer_Global))->Range(v38, v13); /*0x4c2311*/
             v41 = v39[1]; /*0x4c2316*/
             v39 += 3; /*0x4c2319*/
             *(v39 - 2) = v40 + v41; /*0x4c2322*/
@@ -5133,11 +5133,11 @@ int Lightning::Draw(int p0, int p1, int p2, int p3, int p4, int p5, int p6)
           v59 = 2; /*0x4c227a*/
           do /*0x4c22d2*/
           {
-            v35 = Random::Range(&Randomizer_Global, v33, v13); /*0x4c2289*/
+            v35 = ((Random *)(&Randomizer_Global))->Range(v33, v13); /*0x4c2289*/
             *(v34 - 1) = v77[0] + (v35 >> 1); /*0x4c229d*/
-            v36 = Random::Range(&Randomizer_Global, v33, v13); /*0x4c22a0*/
+            v36 = ((Random *)(&Randomizer_Global))->Range(v33, v13); /*0x4c22a0*/
             *v34 = v77[1] + (v36 >> 1); /*0x4c22b4*/
-            v37 = Random::Range(&Randomizer_Global, v33, v13); /*0x4c22b6*/
+            v37 = ((Random *)(&Randomizer_Global))->Range(v33, v13); /*0x4c22b6*/
             v34 += 3; /*0x4c22bf*/
             *(v34 - 2) = v77[2] + (v37 >> 1); /*0x4c22c6*/
             --v59; /*0x4c22ce*/
@@ -6340,8 +6340,7 @@ char MapSeed::PlaceCityBlock(int16_t* p0, int16_t* p1, void* p2)
               if ( (unsigned __int8)(&v59)->IsCellInBounds() ) /*0x59120f*/
               {
                 SetLayerDataMap((__int16 *)v59.__pad_0, (int)p2); /*0x591220*/
-                v59.MapSeed_field_0x10 = (int)CellCoord::To_CellObj( /*0x591238*/
-                                                (CellCoord *)&DataGlobal_87F7E8,
+                v59.MapSeed_field_0x10 = (int)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj( /*0x591238*/
                                                 (__int16 *)v59.__pad_0);
                 v18 = List::FindByValue((List *)p2); /*0x59123c*/
                 *(unsigned char *)(v59.MapSeed_field_0x10 + 283) = *(unsigned char *)(v18 + 16); /*0x591248*/
@@ -15604,7 +15603,7 @@ LABEL_75:
   if ( dword_B77E1C <= 1 ) /*0x7a4b83*/
     v37 = 0; /*0x7a4b95*/
   else
-    v37 = Random::Range(&Randomizer_Global, 0, dword_B77E1C - 1); /*0x7a4b8e*/
+    v37 = ((Random *)(&Randomizer_Global))->Range(0, dword_B77E1C - 1); /*0x7a4b8e*/
   dword_B77E20 = v37; /*0x7a4b9d*/
   Debug::Log(); /*0x7a4ba2*/
   v38 = GetStringCSF(aTxtDetectingFi, 0, g_Str_File_wonline_cpp, 5458); /*0x7a4bc5*/
@@ -18536,7 +18535,7 @@ void* CellCoord::To_CellObj(int16_t *a3)
   void *result; // eax
 
   v2 = *a3 + (a3[1] << 9); /*0x5657af*/
-  if ( v2 >= 0x40000 || (result = *(void **)(a3->u32_13C + 4 * v2)) == 0 ) /*0x5657c6*/
+  if ( v2 >= 0x40000 || (result = *(void **)(this->u32_13C + 4 * v2)) == 0 ) /*0x5657c6*/
   {
     g_MissionQueueFrame.briefing[139] = *(unsigned int *)a3; /*0x5657cf*/
     return &g_MissionQueueFrame.briefing[130]; /*0x5657ca*/
@@ -20623,7 +20622,7 @@ LABEL_119:
               v4 += v6; /*0x481adf*/
             }
             while ( (int)v5 < (int)dword_81DAD8 ); /*0x481ae7*/
-            v7 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 1, v4); /*0x481af8*/
+            v7 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(1, v4); /*0x481af8*/
             v8 = 0; /*0x481afd*/
             v9 = 0; /*0x481aff*/
             v10 = dword_81DA8C; /*0x481b01*/
@@ -20830,8 +20829,7 @@ LABEL_93:
                   {
                     v33 = *(unsigned char **)(*(int *)((char *)&stru_A83CD9.ptr_8 + 3) /*0x482186*/
                                     + 4
-                                    * Random::Range(
-                                        (Random *)&dword_A8B230[14].NeedsSaveOrLink,
+                                    * ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(
                                         0,
                                         *(int *)((char *)&stru_A83CD9.abstractFlags + 3) - 1));
                     v35 = 0; /*0x48218f*/
@@ -20962,7 +20960,7 @@ LABEL_121:
               if ( !j ) /*0x482482*/
               {
                 (v47) = ((v47) & ~0xFFFF) | ((Math::RoundToInt(*(double *)&v120)) & 0xFFFF); /*0x482488*/
-                v46 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, v47, v47 + 900); /*0x4824a5*/
+                v46 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(v47, v47 + 900); /*0x4824a5*/
               }
               if ( !(unsigned __int8)(*(House **)(p0 + 540))->IsHumanPlayer() || *(unsigned int *)&dword_A8B238 ) /*0x4824bf*/
                 (*(HouseClass **)(p0 + 540))->AddPower(v46); /*0x4824d4*/
@@ -21078,7 +21076,7 @@ LABEL_121:
               j = 5; /*0x4825b4*/
               do /*0x482713*/
               {
-                *(unsigned int *)v122.__pad_C = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 512); /*0x4825d3*/
+                *(unsigned int *)v122.__pad_C = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 512); /*0x4825d3*/
                 *(unsigned int *)&v122.u32_14 = this->u32_24; /*0x4825da*/
                 v50 = (*(__int16 *)&v122.u32_14 << 8) + 128; /*0x4825f8*/
                 v51 = (*(__int16 *)&v122.q016 << 8) + 128; /*0x4825fe*/
@@ -21469,18 +21467,18 @@ LABEL_121:
               goto LABEL_221; /*0x481e92*/
             case 17: /*0x481de0*/
               Debug::Log(); /*0x481ea8*/
-              v27 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, dword_B0F4F8 - 1); /*0x481eca*/
+              v27 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, dword_B0F4F8 - 1); /*0x481eca*/
               if ( v27 == 1 ) /*0x481ecf*/
                 v27 = 0; /*0x481ed1*/
               Crate::FindPlacement((int)this, v27, 1); /*0x481ed8*/
-              v28 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 10, 20); /*0x481ef2*/
+              v28 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(10, 20); /*0x481ef2*/
               result = v28 - 1; /*0x481ef4*/
               if ( v28 ) /*0x481ef7*/
               {
                 v29 = v28; /*0x481efd*/
                 do /*0x481f66*/
                 {
-                  v114 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 768); /*0x481f21*/
+                  v114 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 768); /*0x481f21*/
                   v30 = (int *)(*(int (**)(CrateClass *, char *))(*(unsigned int *)this->__pad_0 + 72))( /*0x481f27*/
                                  this,
                                  &v122.__pad_C[236]);
@@ -21627,8 +21625,8 @@ void CrateClass::FindPlacement()
   v4 = (BuildingClass *)((char *)this + 16 * i + 344); /*0x56bd84*/
   while ( 1 ) /*0x56bdb6*/
   {
-    v5 = dword_87F90C + Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, dword_87F914 - 1); /*0x56bdb6*/
-    v6 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, dword_87F918 - 1); /*0x56bdc1*/
+    v5 = dword_87F90C + ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, dword_87F914 - 1); /*0x56bdb6*/
+    v6 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, dword_87F918 - 1); /*0x56bdc1*/
     LOWORD(v14) = v5; /*0x56bdcc*/
     HIWORD(v14) = dword_87F910 + v6; /*0x56bdd3*/
     v7 = (__int16)(dword_87F910 + v6) << 9; /*0x56bde2*/
@@ -30978,7 +30976,7 @@ int * ObjectPlacement::CalcPosition(int* p0, int* p1, char p2, char p3, char p4)
     }
     if ( !v11 ) /*0x481318*/
     {
-      v24 = (uint8_t *)(4 * Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 3) + 8506520); /*0x48139f*/
+      v24 = (uint8_t *)(4 * ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 3) + 8506520); /*0x48139f*/
       goto LABEL_30; /*0x4813a6*/
     }
     if ( v11 == 1
@@ -31249,14 +31247,14 @@ _DWORD * __stdcall ObserverClass::FindStartingCell(int* p0, int p1, int p2, int 
     if ( *(unsigned int *)(dword_A8DA78[v9] + 107) != -1 ) /*0x5d69a1*/
     {
   LABEL_13:
-      v10 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, *(unsigned int *)(p2 + 16) - 1); /*0x5d692e*/
+      v10 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, *(unsigned int *)(p2 + 16) - 1); /*0x5d692e*/
       Debug::Log(); /*0x5d695f*/
       *(unsigned char *)(v10 + p3) = 1; /*0x5d696a*/
       *(&dword_A8B230[124].uniqueId + v10) = p1; /*0x5d6977*/
       *(unsigned int *)this->__pad_0 = *(unsigned int *)(*(unsigned int *)(p2 + 4) + 4 * v10); /*0x5d6984*/
       return this->__pad_0; /*0x5d698c*/
     }
-    v12 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, *(unsigned int *)(p2 + 16) - 1); /*0x5d69bd*/
+    v12 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, *(unsigned int *)(p2 + 16) - 1); /*0x5d69bd*/
     *(unsigned char *)(v12 + p3) = 1; /*0x5d69c1*/
     *(&dword_A8B230[124].uniqueId + v12) = p1; /*0x5d69ca*/
     byte_ABFDD4 = 1; /*0x5d69d1*/
@@ -41560,7 +41558,7 @@ void VeinholeMonsterClass::UpdateGrowth()
                                  *(unsigned int *)(*(unsigned int *)&g_BuildingProductionQueue + 4 * v14),
                                  (int)&v45);
           FireAtSW->u32_C8 = 12; /*0x74d108*/
-          v42 = (double)Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2147483646) /*0x74d136*/
+          v42 = (double)((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 2147483646) /*0x74d136*/
               * 4.656612877414201e-10
               * 6.283185307179586;
           v16 = (*(((unsigned int *)&(v42)) + 1)); /*0x74d13a*/
@@ -41594,7 +41592,7 @@ void VeinholeMonsterClass::UpdateGrowth()
   LABEL_73:
         if ( v3[52].Locomotor_field_00 == dword_846024[v3[50].Locomotor_field_00] ) /*0x74d1e9*/
         {
-          (*((unsigned int *)&(v42))) = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2147483646); /*0x74d201*/
+          (*((unsigned int *)&(v42))) = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 2147483646); /*0x74d201*/
           if ( (double)(*((signed int *)&(v42))) * 4.656612877414201e-10 < 0.1 ) /*0x74d21a*/
           {
             v3[52].Locomotor_field_00 = dword_846034[v3[50].Locomotor_field_00] - 1; /*0x74d22a*/

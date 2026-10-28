@@ -229,7 +229,7 @@ unsigned int * Pathfinding::ExpandNode(CellStruct * a1, int a2)
   {
     while ( v20 ) /*0x5a5565*/
     {
-      *((unsigned int *)(((CellCoord *)&dword_87F7E8)->To_CellObj(&v20->X) + 14) = dword_ABC2B0; /*0x5a557c*/
+      *((unsigned int *)((CellCoord *)&dword_87F7E8)->To_CellObj(&v20->X) + 14) = dword_ABC2B0; /*0x5a557c*/
       Capacity = v24->Capacity; /*0x5a557f*/
       if ( v24[1].ptr_0 < Capacity /*0x5a55a2*/
         || (v24->IsAllocated[0] || !Capacity)
@@ -253,7 +253,7 @@ unsigned int * Pathfinding::ExpandNode(CellStruct * a1, int a2)
           && v79[3] - v79[2] < dword_ABED04
           && v31 <= dword_ABED08 )
         {
-          v32 = (Cell *)(((CellCoord *)&dword_87F7E8)->To_CellObj(v73); /*0x5a563b*/
+          v32 = (Cell *)((CellCoord *)&dword_87F7E8)->To_CellObj(v73); /*0x5a563b*/
           if ( (unsigned __int8)Cell::IsEmpty(v32) ) /*0x5a563f*/
           {
             if ( *(unsigned int *)&v32->__pad_3C[8] == -1 ) /*0x5a5650*/
@@ -270,7 +270,7 @@ unsigned int * Pathfinding::ExpandNode(CellStruct * a1, int a2)
                 *(unsigned int *)&v79[2] = abs32(v37); /*0x5a56b1*/
                 if ( *(int *)&v79[2] <= (int)(((((v38) >> 32) & 0xFFFFFFFFu) ^ v38) - (((v38) >> 32) & 0xFFFFFFFFu)) ) /*0x5a56b5*/
                   *(unsigned int *)&v79[2] = ((((v38) >> 32) & 0xFFFFFFFFu) ^ v38) - (((v38) >> 32) & 0xFFFFFFFFu); /*0x5a56b7*/
-                v82 = (unsigned int)Random::State((Random *)&stru_ABE890); /*0x5a56c5*/
+                v82 = (unsigned int)((Random *)&stru_ABE890)->State(); /*0x5a56c5*/
                 v39 = v73[1]; /*0x5a56d5*/
                 v40 = v73[0]; /*0x5a56e0*/
                 v41 = (double)*(int *)&v79[2]; /*0x5a56eb*/
@@ -354,7 +354,7 @@ unsigned int * Pathfinding::ExpandNode(CellStruct * a1, int a2)
     || (v54 = (CellStruct *)v24[1].ptr_0, a2 = v52 * v53, a1 = v54, (double)(int)v54 * 1.6 <= (double)(v52 * v53)) )
   {
     for ( j = v24[1].ptr_0 - 1; j >= 0; v72[14] = 0xFFFF ) /*0x5a5aa3*/
-      v72 = (((CellCoord *)&dword_87F7E8)->To_CellObj((__int16 *)(v24->Items + 4 * j--)); /*0x5a5ab6*/
+      v72 = ((CellCoord *)&dword_87F7E8)->To_CellObj((__int16 *)(v24->Items + 4 * j--)); /*0x5a5ab6*/
     if ( v24 ) /*0x5a5ac3*/
       (*(void (**)(VectorClass *, int))v24->ptr_0)(v24, 1); /*0x5a5acb*/
     return 0; /*0x5a5ad0*/
@@ -418,14 +418,14 @@ unsigned int * Pathfinding::ExpandNode(CellStruct * a1, int a2)
         *(double *)v80 = (double)v82; /*0x5a5988*/
         do /*0x5a59b3*/
         {
-          v78 = (unsigned int)Random::State((Random *)&stru_ABE890); /*0x5a5996*/
+          v78 = (unsigned int)((Random *)&stru_ABE890)->State(); /*0x5a5996*/
           (v66) = ((v66) & ~0xFFFF) | ((Math::RoundToInt((double)v78 * *(double *)v80 * 2.328306437080797e-10)) & 0xFFFF); /*0x5a59ac*/
         }
         while ( v66 > v65 ); /*0x5a59b3*/
         v81[0] = *(unsigned int *)(v24->Items + 4 * v66); /*0x5a59bb*/
         do /*0x5a59e7*/
         {
-          v77 = (unsigned int)Random::State((Random *)&stru_ABE890); /*0x5a59c9*/
+          v77 = (unsigned int)((Random *)&stru_ABE890)->State(); /*0x5a59c9*/
           (v67) = ((v67) & ~0xFFFF) | ((Math::RoundToInt((double)v77 * 0.000000001629814505956558)) & 0xFFFF); /*0x5a59db*/
           *(unsigned int *)v79 = v67; /*0x5a59e3*/
         }

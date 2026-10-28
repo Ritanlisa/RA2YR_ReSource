@@ -32,6 +32,7 @@ using ra2::game::AbstractClass;
 #include "e4/classes/Random_e4.hpp"
 #include "entity/rad_site.hpp"
 #include "system/layer.hpp"
+#include "core/cellcoord.hpp"  // X181A: complete CellCoord (p->To_CellObj)
 
 namespace gamemd
 {
@@ -258,13 +259,13 @@ int CellClass::RegisterForRedraw(int16_t *a2, int a1, int a5, int a6)
   float v14; // [esp+14h] [ebp+4h]
 
   v13 = Cell::PosToIndex((Cell *)a2); /*0x7235b8*/
-  result = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, a2); /*0x7235bc*/
+  result = ((CellCoord *)&dword_87F7E8)->To_CellObj(a2); /*0x7235bc*/
   if ( result->u32_11E < 0xBu ) /*0x7235c8*/
   {
     if ( *(unsigned int *)this->CellClass_field_10C > Object::ComputeAllocationSize() - 10 ) /*0x7235de*/
       BuildingClass::RebuildOccupancy2((BuildingClass *)this); /*0x7235e2*/
     *(unsigned int *)(*(unsigned int *)this->unknown118 + 8 * *(unsigned int *)this->CellClass_field_10C) = *(unsigned int *)a2; /*0x7235f6*/
-    *(float *)(*(unsigned int *)this->unknown118 + 8 * *(unsigned int *)this->CellClass_field_10C + 4) = (float)(*(unsigned int *)&stru_A8E960.random[528] + (int)abs32(Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink)) % 50); /*0x723632*/
+    *(float *)(*(unsigned int *)this->unknown118 + 8 * *(unsigned int *)this->CellClass_field_10C + 4) = (float)(*(unsigned int *)&stru_A8E960.random[528] + (int)abs32(((Random *)&dword_A8B230[14].NeedsSaveOrLink)->State()) % 50); /*0x723632*/
     v4 = *(unsigned int *)this->CellClass_field_10C; /*0x723636*/
     v5 = *(unsigned int **)this->unknown110; /*0x723642*/
     v6 = *(unsigned int *)this->unknown118 + 8 * v4; /*0x723648*/

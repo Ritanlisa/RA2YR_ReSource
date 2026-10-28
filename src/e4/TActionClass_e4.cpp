@@ -1208,7 +1208,7 @@ char TActionClass::PlayAudioAtRandomWP(int a2, int a3, int a4, int a5)
   }
   while ( v7 < 702 ); /*0x6e17cc*/
   __int16 *v9; // ecx
-  v9 = (__int16 *)&v15[Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, v5 - 1)]; /*0x6e17e3*/
+  v9 = (__int16 *)&v15[((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, v5 - 1)]; /*0x6e17e3*/
   int v10; // eax
   v10 = (v9[1] << 8) + 128; /*0x6e1800*/
   unsigned int v13[3]; // [esp+10h] [ebp-1A0h] BYREF

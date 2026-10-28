@@ -211,7 +211,7 @@ AnimClass * * Building::ComputePosition(int *aP1)
     aP1->u32_8 = Map_InvalidCoord_Z; /*0x4260ac*/
     return (gamemd::AnimClass **)(aP1); /*0x4260b5*/
   }
-  v26 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 7); /*0x426032*/
+  v26 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 7); /*0x426032*/
   v27 = 0; /*0x426034*/
   while ( 1 ) /*0x426046*/
   {

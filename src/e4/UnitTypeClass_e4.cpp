@@ -89,7 +89,7 @@ INIClass * * UnitTypeClass::ReadINIEntry()
     {
       v8[0] = i; /*0x6b4df6*/
       v8[1] = v1; /*0x6b4e01*/
-      v3 = (((CellCoord *)&dword_87F7E8)->To_CellObj(v8); /*0x6b4e0b*/
+      v3 = ((CellCoord *)&dword_87F7E8)->To_CellObj(v8); /*0x6b4e0b*/
       v4 = v3->u32_48; /*0x6b4e0d*/
       if ( v4 != -1 && !v3->u32_11F ) /*0x6b4e15*/
       {
@@ -220,7 +220,7 @@ char UnitTypeClass::CreateUnit(short *a2, void *ppv)
     return 0; /*0x747554*/
   (*((unsigned short *)&(ppv))) = 0; /*0x7474e4*/
   char v6; // al
-  v6 = Random::State((Random *)&((unsigned int *)(dword_A8B230))[14].NeedsSaveOrLink); /*0x7474f1*/
+  v6 = ((Random *)&((unsigned int *)(dword_A8B230))[14].NeedsSaveOrLink)->State(); /*0x7474f1*/
   unsigned int v7; // edx
   v7 = (unsigned int)ppv; /*0x7474f6*/
   uint16_t v8; // cx

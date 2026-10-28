@@ -396,7 +396,7 @@ TechnoClass::TechnoClass(AbstractClass * aP1)
   LOBYTE(this->abstractFlags) |= 1u; /*0x6f3237*/
   this->initialOwner = (HouseClass *)aP1; /*0x6f3241*/
   memset(&this->fireParticles, 0, 0x20u); /*0x6f3247*/
-  *(unsigned short *)this->unknown_short_3C8 = Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink); /*0x6f3259*/
+  *(unsigned short *)this->unknown_short_3C8 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->State(); /*0x6f3259*/
   return &this->ptr_0; /*0x6f3262*/
 
 }
@@ -971,7 +971,7 @@ int TechnoClass_DrawAirstrikeFlare_SetContext(int a1, int a2, int a3, int a4, in
   if ( (unsigned char)result ) /*0x7058e8*/
   {
     v10 = (int *)g_DSurface_Hidden_2; /*0x7058f0*/
-    v11 = Random::Range(Randomizer_Global, 190, 270); /*0x705905*/
+    v11 = ((Random *)(&Randomizer_Global))->Range(190, 270); /*0x705905*/
     v21 = 0; /*0x70590c*/
     if ( v11 <= 255 ) /*0x70591c*/
     {

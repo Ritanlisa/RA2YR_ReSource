@@ -605,9 +605,9 @@ void* AnimClass::InitRotation(void* a1, int a2, int a3, int a4, int a5, int a6, 
   *&this->needsSave = _ET1; /*0x439838*/
   this->objectTypeFlags = (void *)*a8; /*0x43983d*/
   *(unsigned long long *)this->owningHouseIndex = *(unsigned long long *)(a8 + 1); /*0x439842*/
-  v33 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, -65535, 0xFFFF); /*0x43985c*/
-  v34 = (unsigned int *)Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, -65535, 0xFFFF); /*0x439890*/
-  v32 = (int *)Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, -65535, 0xFFFF); /*0x43989c*/
+  v33 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(-65535, 0xFFFF); /*0x43985c*/
+  v34 = (unsigned int *)((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(-65535, 0xFFFF); /*0x439890*/
+  v32 = (int *)((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(-65535, 0xFFFF); /*0x43989c*/
   __asm /*0x4398a3*/
   {
     fild [esp+68h+arg_0]
@@ -1148,13 +1148,12 @@ int BulletClass::ProcessObstacle(void* a1, void* a2) {
     Math::Sqrt(v43); /*0x4687a0*/
     __asm { fstp dword ptr [esp+58h+var_44+4] } /*0x4687c5*/
     __asm { fld dword ptr [esp+50h+var_44+4] }
-    v12 = Random::Range( /*0x4687d2*/
-            (Random *)&dword_A8B230[14].NeedsSaveOrLink,
+    v12 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range( /*0x4687d2*/
             0,
             2 * *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 5940));
     (*((unsigned short *)&(v13))) = Math::RoundToInt(a2); /*0x4687d4*/
     v54 = v13 * v12 / *(unsigned int *)(*(unsigned int *)(_EBX + 304) + 180); /*0x4687fe*/
-    v51 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2147483646); /*0x468807*/
+    v51 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 2147483646); /*0x468807*/
     __asm /*0x46880b*/
     {
       fild dword ptr [esp+50h+var_44+4]
@@ -1630,7 +1629,7 @@ int BulletClass::Fire(int a1) {
         Warhead::ApplyDamage((char *)this, &v27); /*0x469033*/
         if ( !this->isAliveFlag ) /*0x469038*/
           break; /*0x469040*/
-        v24 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 256, 512); /*0x469057*/
+        v24 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(256, 512); /*0x469057*/
         v25 = RandomCoordScatter(v34, &v30, a2, v24, 0); /*0x469067*/
         ++v23; /*0x46906e*/
         v27 = *v25; /*0x46906f*/
@@ -5017,7 +5016,7 @@ int TiberiumClass::Grow(void* a1) {
       }
       do /*0x59cb48*/
       {
-        v90 = (unsigned int)Random::State((Random *)&g_MissionQueueFrame.globalVariables[1552]); /*0x59cb25*/
+        v90 = (unsigned int)((Random *)&g_MissionQueueFrame.globalVariables[1552])->State(); /*0x59cb25*/
         __asm /*0x59cb31*/
         {
           fild [esp+70h+var_3C]
@@ -5037,7 +5036,7 @@ int TiberiumClass::Grow(void* a1) {
       }
       do /*0x59cb95*/
       {
-        v86 = (unsigned int)Random::State((Random *)&g_MissionQueueFrame.globalVariables[1552]); /*0x59cb74*/
+        v86 = (unsigned int)((Random *)&g_MissionQueueFrame.globalVariables[1552])->State(); /*0x59cb74*/
         __asm /*0x59cb80*/
         {
           fild [esp+70h+var_54]
@@ -5258,7 +5257,7 @@ int TiberiumClass::Grow(void* a1) {
             }
             Math::Sqrt(v82); /*0x59cffa*/
             __asm { fstp dword ptr [esp+78h+var_20] } /*0x59cfff*/
-            v97 = (unsigned long)((unsigned int)Random::State((Random *)&g_MissionQueueFrame.globalVariables[1552])); /*0x59d010*/
+            v97 = (unsigned long)((unsigned int)((Random *)&g_MissionQueueFrame.globalVariables[1552])->State()); /*0x59d010*/
             __asm { fild [esp+70h+var_8] } /*0x59d01c*/
             __asm
             {
@@ -5717,7 +5716,7 @@ int ParticleClass::Construct(int a1, void* a2, float a3, int a4) {
   }
   if ( *(unsigned int *)(_ESI->u32_AC + 788) == 1 ) /*0x62b7e5*/
   {
-    v46 = Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink) % 2; /*0x62b803*/
+    v46 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->State() % 2; /*0x62b803*/
     __asm /*0x62b807*/
     {
       fild [esp+28h+arg_0]
@@ -5730,10 +5729,10 @@ int ParticleClass::Construct(int a1, void* a2, float a3, int a4) {
   _ESI->u32_12A = *(unsigned short *)(v21 + 732); /*0x62b824*/
   if ( *(unsigned int *)(v21 + 788) == 4 ) /*0x62b834*/
     v22 = *(unsigned short *)(_ESI->u32_AC + 736) /*0x62b85c*/
-        + abs32(Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink) % 10);
+        + abs32(((Random *)&dword_A8B230[14].NeedsSaveOrLink)->State() % 10);
   else
     v22 = *(unsigned short *)(_ESI->u32_AC + 736) /*0x62b889*/
-        + abs32(Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink) % *(unsigned int *)(_ESI->u32_AC + 736));
+        + abs32(((Random *)&dword_A8B230[14].NeedsSaveOrLink)->State() % *(unsigned int *)(_ESI->u32_AC + 736));
   _ESI->q128 = v22; /*0x62b890*/
   v38 = a2[2]; /*0x62b8ad*/
   if ( v38 <= (int)Cell::GetGroundHeight(a2) ) /*0x62b8ba*/
@@ -5875,7 +5874,7 @@ int ParticleClass::Construct(int a1, void* a2, float a3, int a4) {
       || *(unsigned char *)(v32 + 728)
       || *(unsigned char *)(v32 + 729) )
     {
-      v49 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2147483646); /*0x62bac5*/
+      v49 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 2147483646); /*0x62bac5*/
       __asm { fild [esp+28h+arg_0] } /*0x62bacf*/
       __asm
       {
@@ -5926,7 +5925,7 @@ void ParticleClass::UpdateParticlePhysics() {
   v14 = v2 * v3; /*0x62c3e1*/
   v15 = v18 * v3; /*0x62c3ed*/
   v16 = v19 * v3; /*0x62c3f9*/
-  *(float *)this->Tactical_E4 = ((double)Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2147483646) /*0x62c422*/
+  *(float *)this->Tactical_E4 = ((double)((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 2147483646) /*0x62c422*/
                             * 4.656612877414201e-10
                             - 0.5)
                            * 0.1
@@ -5944,7 +5943,7 @@ void ParticleClass::UpdateParticlePhysics() {
   v9 = *(unsigned int *)this->ptr_0; /*0x62c481*/
   v19 = v8; /*0x62c483*/
   v9->SetPosition(this, &v17); /*0x62c48e*/
-  v13 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2147483646); /*0x62c4ac*/
+  v13 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 2147483646); /*0x62c4ac*/
   ParticleClass_field_0xAC = (double *)this->u32_AC; /*0x62c4b0*/
   v11 = (double)v13 * 4.656612877414201e-10 * 0.05 /*0x62c4cc*/
       + ParticleClass_field_0xAC[86]
@@ -5982,16 +5981,16 @@ void ParticleClass::UpdateAnimationDrift() {
 
   if ( (((unsigned int *)&stru_A8EB00)[416] & 1) != 0 ) /*0x62c54d*/
   {
-    if ( (abs32(Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink)) & 3) == 0 ) /*0x62c56a*/
+    if ( (abs32(((Random *)&dword_A8B230[14].NeedsSaveOrLink)->State()) & 3) == 0 ) /*0x62c56a*/
     {
       v2 = 0; /*0x62c576*/
       v3 = 0; /*0x62c57e*/
-      v4 = Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink); /*0x62c580*/
+      v4 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->State(); /*0x62c580*/
       p_NeedsSaveOrLink = (Random *)&dword_A8B230[14].NeedsSaveOrLink; /*0x62c592*/
       if ( (abs32(v4) & 1) != 0 ) /*0x62c598*/
-        v3 = (int)abs32(Random::State(p_NeedsSaveOrLink)) % 3 - 1; /*0x62c5c5*/
+        v3 = (int)abs32(((Random *)(p_NeedsSaveOrLink))->State()) % 3 - 1; /*0x62c5c5*/
       else
-        v2 = (int)abs32(Random::State(p_NeedsSaveOrLink)) % 3 - 1; /*0x62c5ae*/
+        v2 = (int)abs32(((Random *)(p_NeedsSaveOrLink))->State()) % 3 - 1; /*0x62c5ae*/
       v6 = (IUnknown *)((char *)this->q0C0 + v2); /*0x62c5d1*/
       v7 = (IUnknown *)((char *)this->u32_C4 + v3); /*0x62c5d9*/
       this->q0C0 = v6; /*0x62c5dd*/
@@ -6531,7 +6530,7 @@ int ParticleClass::CreateInstance(void* a1, float a2, int a3) {
   v13 = this->TargetCoords; /*0x62e579*/
   if ( v12 < a3 ) /*0x62e581*/
     v7 = v12; /*0x62e583*/
-  v14 = (int)abs32(Random::State(&dword_A8B230[14].NeedsSaveOrLink)) % v7; /*0x62e59b*/
+  v14 = (int)abs32(((Random *)(&dword_A8B230[14].NeedsSaveOrLink))->State()) % v7; /*0x62e59b*/
   v15 = v12 - 2; /*0x62e59d*/
   v16 = v12 - v14; /*0x62e5a0*/
   if ( v15 > v16 - 2 ) /*0x62e5a7*/
@@ -6869,9 +6868,9 @@ int ParticleSystemClass::SpawnParticle() {
         __asm { fstp [esp+0F8h+var_AC] } /*0x62f4a5*/
         __asm { fstp st }
         v85 = v10; /*0x62f4af*/
-        (*((unsigned int *)&(v71))) = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2147483646); /*0x62f4c5*/
-        (*((unsigned int *)&(v79))) = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2147483646); /*0x62f4d4*/
-        v80 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2147483646); /*0x62f4ef*/
+        (*((unsigned int *)&(v71))) = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 2147483646); /*0x62f4c5*/
+        (*((unsigned int *)&(v79))) = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 2147483646); /*0x62f4d4*/
+        v80 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 2147483646); /*0x62f4ef*/
         _EAX = this->Type; /*0x62f4f3*/
         __asm /*0x62f4f9*/
         {
@@ -6959,9 +6958,9 @@ int ParticleSystemClass::SpawnParticle() {
         *(unsigned int *)((*((unsigned int *)&(v37))) + 268) = v73; /*0x62f66b*/
         *(float *)((*((unsigned int *)&(v37))) + 272) = v74; /*0x62f671*/
         *(float *)((*((unsigned int *)&(v37))) + 276) = v21; /*0x62f678*/
-        v80 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, (*((signed int *)&(v67))), (*((signed int *)(((unsigned char *)&(v67)) + 4)))); /*0x62f69e*/
-        (*((unsigned int *)&(v79))) = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2147483646); /*0x62f6b4*/
-        (*((unsigned int *)&(v71))) = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2147483646); /*0x62f6c3*/
+        v80 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range((*((signed int *)&(v67))), (*((signed int *)(((unsigned char *)&(v67)) + 4)))); /*0x62f69e*/
+        (*((unsigned int *)&(v79))) = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 2147483646); /*0x62f6b4*/
+        (*((unsigned int *)&(v71))) = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 2147483646); /*0x62f6c3*/
         _EAX = this->Type; /*0x62f6c7*/
         __asm { fild dword ptr [esp+0F0h+var_D0] } /*0x62f6cd*/
         __asm
@@ -7048,7 +7047,7 @@ int ParticleSystemClass::SpawnParticle() {
         *_ESI = v45; /*0x62f7af*/
         *(float *)((*((unsigned int *)&(v37))) + 272) = v46; /*0x62f7b1*/
         *(float *)((*((unsigned int *)&(v37))) + 276) = v47; /*0x62f7b4*/
-        (*((unsigned int *)&(v71))) = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2147483646); /*0x62f7ce*/
+        (*((unsigned int *)&(v71))) = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 2147483646); /*0x62f7ce*/
         _ECX = this->Type; /*0x62f7d2*/
         __asm /*0x62f7d8*/
         {
@@ -8175,7 +8174,7 @@ int TerrainClass::PlayAmbientAnimation() {
   v2 = *&this->u32_C8; /*0x71c5d2*/
   if ( *(unsigned int *)(v2 + 156) != 6 || *(unsigned char *)(v2 + 689) ) /*0x71c5e5*/
     return 0; /*0x71c69d*/
-  v3 = Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink); /*0x71c60a*/
+  v3 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->State(); /*0x71c60a*/
   v4 = (AnimClass *)operator new(0x1C8u); /*0x71c611*/
   if ( v4 ) /*0x71c618*/
   {
@@ -8269,7 +8268,7 @@ int TerrainClass::Update() {
   {
     if ( !*(unsigned int *)this->__pad_0C0 ) /*0x71c74d*/
     {
-      v2 = Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink); /*0x71c761*/
+      v2 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->State(); /*0x71c761*/
       v3 = *&this->u32_C8; /*0x71c773*/
       if ( (double)((int)abs32(v2) % 1000000) * 0.000001 < *(float *)(v3 + 676) ) /*0x71c796*/
       {

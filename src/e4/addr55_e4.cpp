@@ -2636,7 +2636,7 @@ LABEL_128:
         if ( v40 ) /*0x55dde5*/
         {
           if ( *(unsigned int *)(v40 + 304) != 1 || (*(unsigned char *)(v40 + 300) & 0x18) != 0 ) /*0x55ddf7*/
-            Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2); /*0x55de08*/
+            ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 2); /*0x55de08*/
         }
       }
     }

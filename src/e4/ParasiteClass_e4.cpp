@@ -265,7 +265,7 @@ void ParasiteClass::DeploySquad()
       case 1: /*0x6298bc*/
         if ( BuildingClass::AnimController((BuildingClass *)_ESI) ) /*0x62998d*/
         {
-          v17 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 1); /*0x6299a9*/
+          v17 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 1); /*0x6299a9*/
           _ESI[1].ptr_C = 0; /*0x6299b7*/
           _ESI[1].ptr_4 = 3 - (v17 != 0); /*0x6299ba*/
           _ESI[1].ptr_8 = 0; /*0x6299bd*/
@@ -323,7 +323,7 @@ LABEL_20:
             fsub ds:dbl_7E2808
             fstp [esp+70h+var_34+4]
           }
-          if ( Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 1) ) /*0x629aee*/
+          if ( ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 1) ) /*0x629aee*/
             __asm { fld ds:dbl_7EF8F0 } /*0x629af7*/
           else
             __asm { fld qword ptr [esp+68h+var_3C+4] } /*0x629aff*/
@@ -352,7 +352,7 @@ LABEL_20:
           v24 = (AnimClass *)__2_YAPAXI_Z(0x1C8u); /*0x629b55*/
           if ( v24 ) /*0x629b5c*/
           {
-            v25 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, v20 - 1); /*0x629b6f*/
+            v25 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, v20 - 1); /*0x629b6f*/
             AnimClass::ctor( /*0x629b97*/
               v24,
               *(void **)(dword_8871E0->Normal[10] + 4 * v25),
@@ -432,7 +432,7 @@ LABEL_20:
             0);
           if ( *(unsigned int *)this->__pad_28 ) /*0x629d41*/
           {
-            v36 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 1); /*0x629d58*/
+            v36 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 1); /*0x629d58*/
             _ESI[1].ptr_C = 0; /*0x629d66*/
             _ESI[1].ptr_4 = 3 - (v36 != 0); /*0x629d69*/
             _ESI[1].ptr_8 = 0; /*0x629d6c*/
@@ -623,7 +623,7 @@ LABEL_8:
           AnimClass::ctor(v17, v16, &v31, 0, 1, (void *)0x600, 0, 0); /*0x62a165*/
       }
     }
-    v18 = -(Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 1) != 0); /*0x62a189*/
+    v18 = -(((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 1) != 0); /*0x62a189*/
     v26[1] = (__int16)(v15 - 0x3FFF) - 0x3FFF; /*0x62a191*/
     (v18) = ((v18) & ~0xFF) | ((v18 & 0xFC) & 0xFF); /*0x62a195*/
     v19 = v33; /*0x62a19e*/
@@ -935,14 +935,14 @@ Coord * * ParasiteClass::Update(void *a1, void *a2, void *a3, void *a4)
   v59 = (Triple)this->q09C; /*0x62bd75*/
   v60 = this->q0A0; /*0x62bd88*/
   v61 = this->u32_A4; /*0x62bd8f*/
-  if ( (abs32(Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink)) & 7) == 0 ) /*0x62bd9f*/
+  if ( (abs32(((Random *)&dword_A8B230[14].NeedsSaveOrLink)->State()) & 7) == 0 ) /*0x62bd9f*/
   {
     v2 = 0; /*0x62bdab*/
     v3 = 0; /*0x62bdad*/
-    if ( (abs32(Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink)) & 1) != 0 ) /*0x62bdc1*/
-      v3 = (int)abs32(Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink)) % 3 - 1; /*0x62be05*/
+    if ( (abs32(((Random *)&dword_A8B230[14].NeedsSaveOrLink)->State()) & 1) != 0 ) /*0x62bdc1*/
+      v3 = (int)abs32(((Random *)&dword_A8B230[14].NeedsSaveOrLink)->State()) % 3 - 1; /*0x62be05*/
     else
-      v2 = (int)abs32(Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink)) % 3 - 1; /*0x62bde2*/
+      v2 = (int)abs32(((Random *)&dword_A8B230[14].NeedsSaveOrLink)->State()) % 3 - 1; /*0x62bde2*/
     v4 = v2 + this->__pad_C0; /*0x62be11*/
     v5 = v3 + this->u32_C4; /*0x62be1b*/
     this->__pad_C0 = v4; /*0x62be1f*/

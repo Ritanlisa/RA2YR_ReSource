@@ -472,7 +472,7 @@ LABEL_55:
         if ( (unsigned __int8)((CellClass *)aP3)->IsActiveOrNext() ) /*0x70cc05*/
         {
           v34 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6092); /*0x70cc1e*/
-          if ( Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 99) < v34 ) /*0x70cc31*/
+          if ( ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 99) < v34 ) /*0x70cc31*/
             LayerClass::DestroyCliff((int *)&DataGlobal_87F7E8, v35, (int)aP3); /*0x70cc39*/
         }
       }
@@ -494,7 +494,7 @@ LABEL_55:
   if ( (unsigned __int8)CellClass::IsActiveOrNext(v26) ) /*0x70cae9*/
   {
     v27 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6092); /*0x70cb01*/
-    if ( Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 99) < v27 ) /*0x70cb14*/
+    if ( ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 99) < v27 ) /*0x70cb14*/
     {
       v28 = ((Coord *)&DataGlobal_87F7E8)->To_Cell( &v49); /*0x70cb20*/
       LayerClass::DestroyCliff((int *)&DataGlobal_87F7E8, v29, (int)v28); /*0x70cb2b*/

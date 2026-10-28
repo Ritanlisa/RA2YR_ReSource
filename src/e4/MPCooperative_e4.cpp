@@ -1338,7 +1338,7 @@ int MPCooperative::SyncState()
         }
         while ( 1 ) /*0x5c2921*/
         {
-          v25 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 7); /*0x5c2921*/
+          v25 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 7); /*0x5c2921*/
           if ( v25 == -2 ) /*0x5c2926*/
             break; /*0x5c2926*/
           v26 = dword_ABF460; /*0x5c2928*/
@@ -1615,7 +1615,7 @@ void MPCooperative_Play(AnimClass * aP0, int a2, int a3)
   }
   else
   {
-    for ( result = Random::Range((unsigned int *)dword_A8B230 + 134, 0, dword_A8B230[127].ptr_8 - 1); /*0x5c2d70*/
+    for ( result = ((Random *)((unsigned int *)dword_A8B230 + 134))->Range(0, dword_A8B230[127].ptr_8 - 1); /*0x5c2d70*/
     *(unsigned char *)(result + a3);
     result = (result + 1) % dword_A8B230[127].ptr_8 )
     {
@@ -1688,7 +1688,7 @@ unsigned int * MPCooperative::selectTeam(unsigned int * a1, int a2, int a3, int 
   }
   else
   {
-    for ( j = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, (int)dword_A8B230[127].ptr_8 - 1); /*0x5c2e54*/
+    for ( j = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, (int)dword_A8B230[127].ptr_8 - 1); /*0x5c2e54*/
     *(unsigned char *)(j + a4);
     j = (j + 1) % (int)dword_A8B230[127].ptr_8 )
     {
@@ -2019,7 +2019,7 @@ int MPCooperative::ReceiveMessage()
   v7 = v3 - 1; /*0x5c356c*/
   do /*0x5c35c2*/
   {
-    v8 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, v7); /*0x5c3586*/
+    v8 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, v7); /*0x5c3586*/
     v9 = 0; /*0x5c358c*/
     v10 = *(unsigned int *)(v12->abstractFlags + 4 * v11); /*0x5c3591*/
     if ( *(int *)(v10 + 16) > 0 ) /*0x5c3599*/
@@ -2075,7 +2075,7 @@ int MPCooperative::HandleEvent()
   v7 = v3 - 1; /*0x5c366c*/
   do /*0x5c36c2*/
   {
-    v8 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, v7); /*0x5c3686*/
+    v8 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, v7); /*0x5c3686*/
     v9 = 0; /*0x5c368c*/
     v10 = *(unsigned int *)(v12->u32_2C + 4 * v11); /*0x5c3691*/
     if ( *(int *)(v10 + 16) > 0 ) /*0x5c3699*/

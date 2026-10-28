@@ -1846,7 +1846,7 @@ AbstractClass * * E4Recv_54BA30::UpdateFootMovement()
   else if ( (unsigned __int8)ObjectClass::HasLinkedObject(_ESI->ptr_C) ) /*0x54baea*/
   {
     unsigned int v9; // edi
-    v9 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 7); /*0x54bb08*/
+    v9 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 7); /*0x54bb08*/
     Cell *v10; // eax
     v10 = (Cell *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v31); /*0x54bb14*/
     int v11 = *_ESI->ptr_C; // ebx /*0x54bb1f*/

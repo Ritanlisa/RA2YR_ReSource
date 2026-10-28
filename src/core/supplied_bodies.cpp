@@ -2387,7 +2387,7 @@ LABEL_56:
 LABEL_64:
       if ( v28 == 61 ) /*0x4abe8b*/
       {
-        v33 = (char *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, a3); /*0x4abe9a*/
+        v33 = (char *)((CellCoord *)&dword_87F7E8)->To_CellObj(a3); /*0x4abe9a*/
         PlayerClass::FindNearestWaypoint( /*0x4abed7*/
           (PlayerClass *)&g_VisibilitySystem,
           (*a3 << 8) + 128,
@@ -2456,7 +2456,7 @@ LABEL_92:
               {
                 if ( !dword_A8B538[0] ) /*0x4ac046*/
                 {
-                  v40 = *((char *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, a3) + 283); /*0x4ac05a*/
+                  v40 = *((char *)((CellCoord *)&dword_87F7E8)->To_CellObj(a3) + 283); /*0x4ac05a*/
                   PlacePlayerBeacon( /*0x4ac09d*/
                     &g_VisibilitySystem,
                     *(unsigned int *)(*(int *)((char *)&stru_A83CD9.estimatedHealth + 3) + 48),

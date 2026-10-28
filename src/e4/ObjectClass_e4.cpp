@@ -3484,7 +3484,7 @@ int ObjectClass::RenderAlphaShapes()
     if ( result ) /*0x43c0ea*/
     {
       v3 = (TechnoClass *)((char *)v23 + 1480); /*0x43c105*/
-      v14 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, (int)result - 1); /*0x43c10b*/
+      v14 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, (int)result - 1); /*0x43c10b*/
       v4 = 5592; /*0x43c10f*/
       v15 = (char *)v23 + 1480; /*0x43c114*/
       do /*0x43c28e*/
@@ -3527,7 +3527,7 @@ int ObjectClass::RenderAlphaShapes()
               v9[64] = 0; /*0x43c22d*/
             v12 = *((unsigned int *)v9[50] + 176); /*0x43c23d*/
             if ( v12 > 0 ) /*0x43c245*/
-              v9[43] = (void *)Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, v12 - 1); /*0x43c25b*/
+              v9[43] = (void *)((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, v12 - 1); /*0x43c25b*/
             result = (void **)++v14; /*0x43c269*/
             if ( v14 >= (int)v16 ) /*0x43c270*/
               v14 = 0; /*0x43c272*/
@@ -4733,7 +4733,7 @@ int ObjectClass::RenderAlphaShapes()
                           v25 = (AnimClass *)new unsigned char[0x1C8u]; /*0x4c5834*/
                           if ( v25 ) /*0x4c583b*/
                           {
-                                                     v29 = (void *)Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 25); /*0x4c585b*/
+                                                     v29 = (void *)((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 25); /*0x4c585b*/
                                                      v26 = (int *)v23->vt_slot_72(v38); /*0x4c5863*/
                                                      v27 = (BuildingClass *)AnimClass::ctor( /*0x4c5876*/
                                                      v25,
@@ -6141,7 +6141,7 @@ char ObjectClass::PlaceNeutralBuilding() {
     *(double *)&v24 = (double)(unsigned int)dword_8871E0->MessageDelay[0]; /*0x59545d*/
     do /*0x59548c*/
     {
-      *(unsigned long long *)v22 = (unsigned int)Random::State((Random *)&stru_ABE890); /*0x59546b*/
+      *(unsigned long long *)v22 = (unsigned int)((Random *)&stru_ABE890)->State(); /*0x59546b*/
       (v6) = ((v6) & ~0xFFFF) | ((Math::RoundToInt((double)*(__int64 *)v22 * *(double *)&v24 * 2.328306437080797e-10)) & 0xFFFF); /*0x595485*/
     }
     while ( v6 > v5 ); /*0x59548c*/
@@ -6158,7 +6158,7 @@ char ObjectClass::PlaceNeutralBuilding() {
     *(double *)v22 = (double)attachedBomb; /*0x5954d6*/
     do /*0x595501*/
     {
-      v24 = (unsigned int)Random::State((Random *)&stru_ABE890); /*0x5954e4*/
+      v24 = (unsigned int)((Random *)&stru_ABE890)->State(); /*0x5954e4*/
       (v8) = ((v8) & ~0xFFFF) | ((Math::RoundToInt((double)v24 * *(double *)v22 * 2.328306437080797e-10)) & 0xFFFF); /*0x5954fa*/
     }
     while ( v8 > v7 ); /*0x595501*/
@@ -7131,7 +7131,7 @@ void ObjectClass::ScatterMapSeedBuildings(void* a2) {
 
   do /*0x5a831e*/
   {
-    v43 = (unsigned int)Random::State((Random *)&stru_ABE890); /*0x5a82f6*/
+    v43 = (unsigned int)((Random *)&stru_ABE890)->State(); /*0x5a82f6*/
     LOWORD(v3) = Math::RoundToInt((double)v43 * 0.000000001164153218540399 + 8.0); /*0x5a8312*/
     v39 = v3; /*0x5a831a*/
   }
@@ -7189,7 +7189,7 @@ LABEL_11:
       v37 = (double)(unsigned int)v38; /*0x5a8443*/
       do /*0x5a8476*/
       {
-        v46 = (unsigned int)Random::State((Random *)&stru_ABE890); /*0x5a8451*/
+        v46 = (unsigned int)((Random *)&stru_ABE890)->State(); /*0x5a8451*/
         (v13) = ((v13) & ~0xFFFF) | ((Math::RoundToInt((double)v46 * v44 * 2.328306437080797e-10 + v37)) & 0xFFFF); /*0x5a846b*/
         v36.StringVector_field_0x18 = v13; /*0x5a8472*/
       }
@@ -7215,14 +7215,14 @@ LABEL_11:
         {
           do /*0x5a8518*/
           {
-            v50 = (unsigned int)Random::State((Random *)&stru_ABE890); /*0x5a84f3*/
+            v50 = (unsigned int)((Random *)&stru_ABE890)->State(); /*0x5a84f3*/
             LOWORD(v17) = Math::RoundToInt((double)v50 * 0.000000003492459655621196); /*0x5a850e*/
             v18 = (__int16)v17; /*0x5a8513*/
           }
           while ( (unsigned int)v17 > 0xE ); /*0x5a8518*/
           do /*0x5a853e*/
           {
-            v47 = (unsigned int)Random::State((Random *)&stru_ABE890); /*0x5a8524*/
+            v47 = (unsigned int)((Random *)&stru_ABE890)->State(); /*0x5a8524*/
             (v19) = ((v19) & ~0xFFFF) | ((Math::RoundToInt((double)v47 * 0.000000003492459655621196)) & 0xFFFF); /*0x5a8536*/
           }
           while ( v19 > 0xE ); /*0x5a853e*/
@@ -7342,7 +7342,7 @@ void* ObjectClass::PlaceRandomAIBuildings() {
   {
     do /*0x5a95e7*/
     {
-      v32 = (unsigned int)Random::State((Random *)&stru_ABE890); /*0x5a95c9*/
+      v32 = (unsigned int)((Random *)&stru_ABE890)->State(); /*0x5a95c9*/
       LOWORD(result) = Math::RoundToInt((double)v32 * 6.984919311242392e-10); /*0x5a95df*/
     }
     while ( (unsigned int)result > 2 ); /*0x5a95e7*/
@@ -7373,7 +7373,7 @@ void* ObjectClass::PlaceRandomAIBuildings() {
     Owner = HouseClass::FindOwner(v5); /*0x5a9641*/
     do /*0x5a966d*/
     {
-      v32 = (unsigned int)Random::State((Random *)&stru_ABE890); /*0x5a964f*/
+      v32 = (unsigned int)((Random *)&stru_ABE890)->State(); /*0x5a964f*/
       LOWORD(result) = Math::RoundToInt((double)v32 * 0.000000001164153218540399); /*0x5a9665*/
     }
     while ( (unsigned int)result > 4 ); /*0x5a966d*/
@@ -7393,7 +7393,7 @@ void* ObjectClass::PlaceRandomAIBuildings() {
           *(double *)v30 = (double)v33; /*0x5a96b4*/
           do /*0x5a96df*/
           {
-            v34 = (unsigned int)Random::State((Random *)&stru_ABE890); /*0x5a96c2*/
+            v34 = (unsigned int)((Random *)&stru_ABE890)->State(); /*0x5a96c2*/
             (v9) = ((v9) & ~0xFFFF) | ((Math::RoundToInt((double)v34 * *(double *)v30 * 2.328306437080797e-10)) & 0xFFFF); /*0x5a96d8*/
           }
           while ( v9 > v8 ); /*0x5a96df*/
@@ -7728,7 +7728,7 @@ v15 = 0; /*0x5d6edb*/
 if ( dword_A80238 <= 0 ) /*0x5d6edf*/
 {
   LABEL_42:
-    Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 0xFFFF); /*0x5d6feb*/
+    ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 0xFFFF); /*0x5d6feb*/
     Debug::Log(); /*0x5d7009*/
     return 1; /*0x5d701a*/
 }
@@ -10114,7 +10114,7 @@ char ObjectClass::SelectTeamMembers(ScriptClass * aP1, int a3) {
     }
     else
     {
-      v8 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, v5 - 1); /*0x6ee85c*/
+      v8 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, v5 - 1); /*0x6ee85c*/
       v9 = v3->fallRate; /*0x6ee861*/
       v10 = 0; /*0x6ee864*/
       v11 = *(unsigned int *)(v9 + 22060); /*0x6ee866*/
@@ -10181,7 +10181,7 @@ char ObjectClass::SelectTeamMembers(ScriptClass * aP1, int a3) {
       }
         else
       {
-        v19 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, v14 - 1); /*0x6ee94e*/
+        v19 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, v14 - 1); /*0x6ee94e*/
         v20 = v3->customSound_controller[1]; /*0x6ee957*/
         v21 = -1; /*0x6ee95a*/
         v22 = v20; /*0x6ee95d*/
@@ -10496,15 +10496,15 @@ int ObjectClass::SpreadRadiationAreaEffect(InfantryClass * aP1) {
         v24 = *Coords; /*0x6fd8e8*/
         v25 = Coords->ptr_4; /*0x6fd8f6*/
         v26 = Coords->ptr_8; /*0x6fd8fd*/
-        v7 = Random::Range(&Randomizer_Global, -128, 128); /*0x6fd912*/
-        v8 = Random::Range(&Randomizer_Global, -128, 128); /*0x6fd914*/
+        v7 = ((Random *)(&Randomizer_Global))->Range(-128, 128); /*0x6fd912*/
+        v8 = ((Random *)(&Randomizer_Global))->Range(-128, 128); /*0x6fd914*/
         v24 += v7; /*0x6fd925*/
         v25 += v8; /*0x6fd92e*/
         v9 = (char *)RadBeam::Create((RadBeam *)2); /*0x6fd93b*/
         TechnoClass::drawSelectionBox(v9, (int)&v12); /*0x6fd940*/
-        v10 = Random::Range(&Randomizer_Global, 5, 20); /*0x6fd95f*/
-        v19 = Random::Range(&Randomizer_Global, 100, 500); /*0x6fd96f*/
-        v11 = Random::Range(&Randomizer_Global, 0, 20); /*0x6fd97f*/
+        v10 = ((Random *)(&Randomizer_Global))->Range(5, 20); /*0x6fd95f*/
+        v19 = ((Random *)(&Randomizer_Global))->Range(100, 500); /*0x6fd96f*/
+        v11 = ((Random *)(&Randomizer_Global))->Range(0, 20); /*0x6fd97f*/
         TechnoClass::drawPipScale((TechnoClass *)v9, &v27); /*0x6fd981*/
         TechnoClass::drawSpawnPips((TechnoClass *)v9, &v24); /*0x6fd98d*/
         TechnoClass::drawAmmoPips((TechnoClass *)v9, v10); /*0x6fd995*/

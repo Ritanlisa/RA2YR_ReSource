@@ -1418,7 +1418,7 @@ void Terrain::ProcessCellModification(int16_t *aP1)
       LOWORD(aP1) = *v2 + v4; /*0x570079*/
       HIWORD(aP1) = v6; /*0x57007e*/
       *(unsigned int *)v76 = aP1; /*0x570091*/
-      v7 = *((unsigned int *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v76) + 17); /*0x57009a*/
+      v7 = *((unsigned int *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v76) + 17); /*0x57009a*/
       if ( v7 >= 74 && v7 <= 101 ) /*0x5700a5*/
       {
         v8 = v2[1] + v5; /*0x5700b9*/
@@ -1901,7 +1901,7 @@ AbstractClass * * Terrain::RecursiveModify(IUnknown * aP1)
       LOWORD(aP1) = ((v2->field_0) & 0xFFFF) + v4; /*0x573568*/
       HIWORD(aP1) = v6; /*0x57356d*/
       *(unsigned int *)v85 = aP1; /*0x573580*/
-      v7 = *((unsigned int *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v85) + 17); /*0x573589*/
+      v7 = *((unsigned int *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v85) + 17); /*0x573589*/
       if ( v7 >= 205 && v7 <= 232 ) /*0x573598*/
       {
         v8 = (((v2->field_0) >> 16) & 0xFFFF) + v5; /*0x5735ab*/
@@ -2954,7 +2954,7 @@ void Terrain::PlaceTiberiumTrees(ScenarioClass * aP0, int a2, int a3, char a4)
       ++v60; /*0x5a2afe*/
       *(unsigned int *)v57 = v26; /*0x5a2b02*/
     }
-    v27 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v5); /*0x5a2b17*/
+    v27 = ((CellCoord *)&dword_87F7E8)->To_CellObj(v5); /*0x5a2b17*/
     v28 = *v5 + g_MapCellWidth * v5[1]; /*0x5a2b27*/
     *(unsigned int *)v55 = v27; /*0x5a2b2f*/
     if ( HIBYTE(dword_ABED10[40 * v28 + 34]) ) /*0x5a2b39*/
@@ -2971,7 +2971,7 @@ void Terrain::PlaceTiberiumTrees(ScenarioClass * aP0, int a2, int a3, char a4)
       {
         do /*0x5a2bbc*/
         {
-          v68 = (unsigned int)Random::State((Random *)&stru_ABE890); /*0x5a2b98*/
+          v68 = (unsigned int)((Random *)&stru_ABE890)->State(); /*0x5a2b98*/
           __asm /*0x5a2ba4*/
           {
             fild [esp+80h+var_2C]
@@ -2996,7 +2996,7 @@ void Terrain::PlaceTiberiumTrees(ScenarioClass * aP0, int a2, int a3, char a4)
     {
       do /*0x5a2c40*/
       {
-        v69 = (unsigned int)Random::State((Random *)&stru_ABE890); /*0x5a2c22*/
+        v69 = (unsigned int)((Random *)&stru_ABE890)->State(); /*0x5a2c22*/
         __asm /*0x5a2c2e*/
         {
           fild [esp+80h+var_24]
@@ -3027,7 +3027,7 @@ LABEL_49:
       *(unsigned int *)v55 = v62; /*0x5a2cab*/
       if ( !(unsigned __int8)((LayerClass *)&dword_87F7E8)->IsWithinUsableArea( v55, 1) ) /*0x5a2cbc*/
         goto LABEL_67; /*0x5a2cbc*/
-      v38 = (BuildingClass *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v55); /*0x5a2cd1*/
+      v38 = (BuildingClass *)((CellCoord *)&dword_87F7E8)->To_CellObj(v55); /*0x5a2cd1*/
       v63 = (int)v38; /*0x5a2cd5*/
       if ( (unsigned __int8)Cell::IsEmpty((Cell *)v38) ) /*0x5a2cd9*/
       {
@@ -3052,7 +3052,7 @@ LABEL_58:
           }
           Math::Sqrt(v52); /*0x5a2d6d*/
           __asm { fstp [esp+88h+var_38] } /*0x5a2d72*/
-          v70 = (unsigned int)Random::State((Random *)&stru_ABE890); /*0x5a2d83*/
+          v70 = (unsigned int)((Random *)&stru_ABE890)->State(); /*0x5a2d83*/
           __asm { fild [esp+80h+var_1C] } /*0x5a2d8f*/
           v41 = v55[1]; /*0x5a2d93*/
           __asm { fmul ds:dbl_7ED7C0 } /*0x5a2d98*/
@@ -3159,9 +3159,9 @@ unsigned int * Terrain::ClimbCheck(AbstractClass * aP0, AbstractClass * aP1)
   LOWORD(aP1) = v2; /*0x6d6445*/
   v3 = ((__int16)v2 << 8) + 128; /*0x6d6462*/
   v4 = (SHIWORD(aP1) << 8) + 128; /*0x6d6468*/
-  v5 = (*((unsigned int *)CellCoord::To_CellObj(&dword_87F7E8, (__int16 *)&aP1) + 80) & 0x1000) != 0; /*0x6d6486*/
+  v5 = (*((unsigned int *)((CellCoord *)(&dword_87F7E8))->To_CellObj((__int16 *)&aP1) + 80) & 0x1000) != 0; /*0x6d6486*/
   v6 = v4 + 1536; /*0x6d649d*/
-  v14 = *((char *)CellCoord::To_CellObj(&dword_87F7E8, (__int16 *)&aP1) + 283); /*0x6d64a3*/
+  v14 = *((char *)((CellCoord *)(&dword_87F7E8))->To_CellObj((__int16 *)&aP1) + 283); /*0x6d64a3*/
   v7 = v3 + 1536; /*0x6d64a7*/
   v15 = 0; /*0x6d64a9*/
   while ( 1 ) /*0x6d64b1*/
@@ -3171,7 +3171,7 @@ unsigned int * Terrain::ClimbCheck(AbstractClass * aP0, AbstractClass * aP1)
     LOWORD(v13) = v7 / 256; /*0x6d64c9*/
     HIWORD(v13) = v6 / 256; /*0x6d64e0*/
     v12 = v13; /*0x6d64e9*/
-    v8 = CellCoord::To_CellObj(&dword_87F7E8, (__int16 *)&v12); /*0x6d64f3*/
+    v8 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((__int16 *)&v12); /*0x6d64f3*/
     v9 = *(&v8->u32_11B) - v14; /*0x6d64ff*/
     if ( v5 ) /*0x6d6505*/
       v9 += 4 * ((v8->u32_140 >> 8) & 1); /*0x6d6513*/

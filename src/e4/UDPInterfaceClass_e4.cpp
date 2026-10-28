@@ -277,7 +277,7 @@ LABEL_22:
       }
 LABEL_71:
       v31 = Network_Process_7B2730(); /*0x7b3f50*/
-      if ( v31 > 0 && Random::Range(&Randomizer_Global, 0, 99) <= v31 ) /*0x7b3f6b*/
+      if ( v31 > 0 && ((Random *)(&Randomizer_Global))->Range(0, 99) <= v31 ) /*0x7b3f6b*/
         return 0; /*0x7b3f76*/
       v13 = IPXInterfaceClass::processPacket((IPXInterfaceClass *)this); /*0x7b3f80*/
       v13->uniqueId = v27 - 4; /*0x7b3f8f*/

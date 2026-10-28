@@ -330,7 +330,7 @@ int Trigger_AllocateLog(int a1)
     v3 = 828 * a1 + 11298400; /*0x650ada*/
     v83 = (unsigned int *)v3; /*0x650ae1*/
     *(unsigned int *)v3 = *(unsigned int *)MEMORY[0xAC51FC]; /*0x650ae5*/
-    dword_AC6664[207 * a1] = Random::State((unsigned int *)dword_A8B230 + 134); /*0x650af7*/
+    dword_AC6664[207 * a1] = ((Random *)((unsigned int *)dword_A8B230 + 134))->State(); /*0x650af7*/
     dword_AC6664[207 * a1 + 1] = MEMORY[0xA8ED84]; /*0x650b00*/
     v4 = 0; /*0x650b03*/
     v5 = 828 * a1 + 11298412; /*0x650b05*/
@@ -755,7 +755,7 @@ int Trigger_AllocateLog(int a1)
   }
   else
   {
-    result = Random::State((unsigned int *)dword_A8B230 + 134); /*0x650ab7*/
+    result = ((Random *)((unsigned int *)dword_A8B230 + 134))->State(); /*0x650ab7*/
     dword_AFA26C = result; /*0x650abc*/
   }
   return result; /*0x650ac1*/
@@ -1133,7 +1133,7 @@ AbstractClass * * UpdateProjectileTrails()
       {
         if ( *(unsigned char *)(v10 + 9) ) /*0x6592d6*/
         {
-          v14 = Random::Range(&Randomizer_Global, 0, 99); /*0x6592e8*/
+          v14 = ((Random *)(&Randomizer_Global))->Range(0, 99); /*0x6592e8*/
           LOWORD(v15) = Math::RoundToInt(v24 * 100.0); /*0x6592f4*/
           if ( v14 < (int)v15 ) /*0x6592fb*/
             Block->u32_9 = 0; /*0x659301*/

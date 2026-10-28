@@ -1658,9 +1658,9 @@ int TacticalClass::RenderCells()
         v40 = 1; /*0x550470*/
         if ( (unsigned char)v9 || BYTE1(_EBX->field44) || BYTE2(_EBX->field44) )
         {
-          field30 = Random::Range(&Randomizer_Global, -HIBYTE(_EBX->field44), HIBYTE(_EBX->field44)); /*0x5504a6*/
-          TacticalClass_field_4C = Random::Range(&Randomizer_Global, -LOBYTE(_EBX->field48), LOBYTE(_EBX->field48)); /*0x5504bf*/
-          *(float *)&v44 = COERCE_FLOAT(Random::Range(&Randomizer_Global, -BYTE1(_EBX->field48), BYTE1(_EBX->field48))); /*0x5504d8*/
+          field30 = ((Random *)(&Randomizer_Global))->Range(-HIBYTE(_EBX->field44), HIBYTE(_EBX->field44)); /*0x5504a6*/
+          TacticalClass_field_4C = ((Random *)(&Randomizer_Global))->Range(-LOBYTE(_EBX->field48), LOBYTE(_EBX->field48)); /*0x5504bf*/
+          *(float *)&v44 = COERCE_FLOAT(((Random *)(&Randomizer_Global))->Range(-BYTE1(_EBX->field48), BYTE1(_EBX->field48))); /*0x5504d8*/
           v11 = (int)(LOBYTE(_EBX->field44) + field30) < 0 ? 0 : LOBYTE(_EBX->field44) + field30;
           if ( v11 > 255 ) /*0x5504f6*/
             v11 = 255; /*0x5504f8*/

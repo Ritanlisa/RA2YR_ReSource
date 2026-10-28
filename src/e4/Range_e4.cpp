@@ -24,7 +24,7 @@ long long Range_RandomInt(MouseClass * aP0, MapClass * aP1)
   do /*0x598089*/
   {
     int64_t v6; // [esp+8h] [ebp-18h]
-    v6 = (unsigned int)Random::State(&unk_ABE890); /*0x598068*/
+    v6 = (unsigned int)((Random *)(&unk_ABE890))->State(); /*0x598068*/
     result = Math::RoundToInt((double)v6 * v3 * 2.328306437080797e-10 + v7); /*0x598082*/
   }
   while ( (unsigned int)result > (unsigned int)(aP1) ); /*0x598089*/

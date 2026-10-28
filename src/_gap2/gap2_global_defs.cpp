@@ -42,6 +42,7 @@ namespace gamemd { struct Stream; }  // X89: LNK override pointee
 #include "e4/classes/ScenarioClass_e4.hpp"  // X136: complete type for stru_A8E960
 #include "e4/classes/_tree_full_e4.hpp"  // X136: complete type for stru_A83CD9
 #include "e4/classes/AbstractClass_e4.hpp"  // X136: complete type for dword_A8B230_x136
+#include "core/cellcoord.hpp"  // X181A: complete CellCoord (p->To_CellObj)
 // X129: fresh-render label declarations (auto, idempotent)
 extern unsigned char aActions[8];  // data: 0x844A34
 extern unsigned char aBriggenrPcx[13];  // data: 0x836000
@@ -424,7 +425,7 @@ int Gap2Recv_4048B0::PrefetchAudioSamples() {
     v6 = occupant[78]; /*0x404905*/
     if ( v6 ) /*0x40490d*/
     {
-      v7 = Random::Range(&Randomizer_Global, 0, v6 - 1); /*0x404918*/
+      v7 = ((Random *)(&Randomizer_Global))->Range(0, v6 - 1); /*0x404918*/
       *(&this->owningHouseIndex + this->lineTrailer) = (int)LoadSampleAudioMixer( /*0x404938*/
                                                               (int *)dword_87E298,
                                                               *(unsigned int *)(this->occupant + 4 * v7 + 180));
@@ -463,7 +464,7 @@ int Gap2Recv_4048B0::PrefetchAudioSamples() {
     }
     if ( (result & 2) != 0 ) /*0x4049d0*/
     {
-      v12 = Random::Range(&Randomizer_Global, occupant[78], occupant[77] - occupant[79] - 1); /*0x4049ee*/
+      v12 = ((Random *)(&Randomizer_Global))->Range(occupant[78], occupant[77] - occupant[79] - 1); /*0x4049ee*/
       *(&this->owningHouseIndex + this->lineTrailer) = (int)LoadSampleAudioMixer( /*0x404a0e*/
                                                               (int *)dword_87E298,
                                                               *(unsigned int *)(this->occupant + 4 * v12 + 180));
@@ -490,13 +491,13 @@ int Gap2Recv_4048B0::PrefetchAudioSamples() {
     v14 = occupant[79]; /*0x404a60*/
     if ( !v14 ) /*0x404a68*/
       return result; /*0x404a68*/
-    v15 = *(unsigned int *)(this->occupant + 4 * Random::Range(&Randomizer_Global, occupant[77] - v14, occupant[77] - 1) + 180); /*0x404a88*/
+    v15 = *(unsigned int *)(this->occupant + 4 * ((Random *)(&Randomizer_Global))->Range(occupant[77] - v14, occupant[77] - 1) + 180); /*0x404a88*/
     goto LABEL_25; /*0x404a88*/
   }
   v17 = occupant[79]; /*0x404acd*/
   v18 = -1; /*0x404ad3*/
   if ( v17 && (occupant[4] & 0x40) != 0 ) /*0x404ade*/
-    v18 = Random::Range(&Randomizer_Global, occupant[77] - v17, occupant[77] - 1); /*0x404af7*/
+    v18 = ((Random *)(&Randomizer_Global))->Range(occupant[77] - v17, occupant[77] - 1); /*0x404af7*/
   result = sub_404BB0((TechnoClass *)this); /*0x404afb*/
   if ( result < 0 ) /*0x404b02*/
   {
@@ -585,8 +586,8 @@ int Gap2Recv_4055C0::UpdateVoicePlayback() {
               LODWORD(v2) = sub_405B50(occupant[16] + alignmentPadding154, 0),
               (this->suspendedMission = v2) != 0) )
         {
-          this->initialOwner = Random::Range(&Randomizer_Global, occupant[24], occupant[25]) + 100; /*0x405691*/
-          v5 = Random::Range(&Randomizer_Global, 0, occupant[26]); /*0x40569c*/
+          this->initialOwner = ((Random *)(&Randomizer_Global))->Range(occupant[24], occupant[25]) + 100; /*0x405691*/
+          v5 = ((Random *)(&Randomizer_Global))->Range(0, occupant[26]); /*0x40569c*/
           suspendedMission = (ObjectClass *)this->suspendedMission; /*0x4056a1*/
           this->veterancy = v5; /*0x4056a7*/
           sub_4026C0(suspendedMission); /*0x4056ad*/
@@ -605,7 +606,7 @@ int Gap2Recv_4055C0::UpdateVoicePlayback() {
             v8 = 33; /*0x405736*/
             if ( v7 ) /*0x40573b*/
               v8 = occupant[22]; /*0x40573d*/
-            LODWORD(v2) = Random::Range(&Randomizer_Global, v8, occupant[23]); /*0x40574a*/
+            LODWORD(v2) = ((Random *)(&Randomizer_Global))->Range(v8, occupant[23]); /*0x40574a*/
             if ( (int)v2 >= 33 ) /*0x405752*/
             {
               v9 = (int)v2; /*0x40575b*/
@@ -1195,7 +1196,7 @@ LABEL_27:
     *(unsigned int *)v29 = *(unsigned int *)v26; /*0x419a98*/
   if ( v25 == -1 ) /*0x419aa1*/
     return 0; /*0x419aef*/
-  if ( Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 99) >= 50 ) /*0x419abb*/
+  if ( ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 99) >= 50 ) /*0x419abb*/
     return ((CellCoord *)&dword_87F7E8)->To_CellObj(v29); /*0x419adf*/
   return ((CellCoord *)&dword_87F7E8)->To_CellObj(v26); /*0x4197f3*/
 
@@ -6125,7 +6126,7 @@ LABEL_36:
 LABEL_37:
     if ( v7 > 0 ) /*0x580fe6*/
     {
-      v27 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, v7 - 1); /*0x580ff8*/
+      v27 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, v7 - 1); /*0x580ff8*/
       v28 = (int *)&v61[2 * v27 + 2]; /*0x581005*/
       v29 = *(__int16 *)v28 + ((__int16)v61[2 * v27 + 3] << 9); /*0x581017*/
       if ( v29 >= 0x40000 || (result = *(CellClass **)(dword_87F924 + 4 * v29)) == 0 ) /*0x58102d*/
@@ -8900,7 +8901,7 @@ void* Gap2Recv_597430::Team_Start_597430() {
     }
     else
     {
-      v4 = Random::Range(&Randomizer_Global, 0, 0xFFFF); /*0x5974ab*/
+      v4 = ((Random *)(&Randomizer_Global))->Range(0, 0xFFFF); /*0x5974ab*/
       v3 = v7; /*0x5974b0*/
     }
     *&this->isOnMap = v4; /*0x5974bb*/
@@ -10149,7 +10150,7 @@ LABEL_31:
   (*((unsigned short *)&(v21))) = Math::RoundToInt(v42); /*0x62ca53*/
   ((Coord *)&v50)->Subtract(v21, v28, v31); /*0x62ca5d*/
   (*(void (**)(TechnoClass *, Coord3D *))&this->ptr_0->AudioController_1B4)(this, &v50); /*0x62ca6c*/
-  v41 = COERCE_FLOAT(Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2147483646)); /*0x62ca8b*/
+  v41 = COERCE_FLOAT(((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 2147483646)); /*0x62ca8b*/
   currentMission = this->currentMission; /*0x62ca8f*/
   v23 = (double)(*((signed int *)&(v41))) * 4.656612877414201e-10 * 0.05 /*0x62caab*/
   + *(double *)(currentMission + 688)
@@ -10411,7 +10412,7 @@ if ( v3 > 0 ) /*0x62e857*/
 {
     if ( v3 == 1 ) /*0x62e860*/
       goto LABEL_4; /*0x62e860*/
-    v49 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2147483646); /*0x62e879*/
+    v49 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 2147483646); /*0x62e879*/
     _ECX = this->currentMission; /*0x62e87d*/
     __asm /*0x62e883*/
     {
@@ -10677,7 +10678,7 @@ if ( v3 > 0 ) /*0x62e857*/
     this->flashing[0] = v36; /*0x62ec69*/
     if ( v36 <= 0 ) /*0x62ec71*/
       (this->VectorClass_2C8) = 1; /*0x62ec73*/
-    v50 = COERCE_FLOAT(Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2147483646)); /*0x62ec91*/
+    v50 = COERCE_FLOAT(((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 2147483646)); /*0x62ec91*/
     __asm /*0x62ec95*/
     {
       fild [esp+78h+var_58]
@@ -19877,7 +19878,7 @@ int Gap2Recv_70E5A0::UpdateTechnoIdleTimer() {
       {
   LABEL_13:
           this->M420 = 3; /*0x70e67a*/
-    result = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, -5, 5) + 20; /*0x70e69f*/
+    result = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(-5, 5) + 20; /*0x70e69f*/
     this->M408 = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x70e6a2*/
     this->M412 = v18; /*0x70e6a8*/
     this->M416 = result; /*0x70e6ab*/
@@ -21273,7 +21274,7 @@ int Gap2Recv_737180::UpdateInfantryIdleWander() {
     result = v3 / 5; /*0x7371af*/
     if ( v5 == 4 ) /*0x7371b4*/
     {
-      this->animation[0] = 30 * Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2); /*0x7371e3*/
+      this->animation[0] = 30 * ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 2); /*0x7371e3*/
       this->animation[2] = (int)dword_A8ED84; /*0x7371ee*/
       result = v24; /*0x7371f0*/
       this->animation[5] = 1; /*0x7371f4*/
@@ -21283,7 +21284,7 @@ int Gap2Recv_737180::UpdateInfantryIdleWander() {
     return result; /*0x737206*/
   }
   if ( v3 % 30 == 29 ) /*0x737211*/
-    this->animation[0] = 30 * Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2); /*0x737230*/
+    this->animation[0] = 30 * ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 2); /*0x737230*/
   this->animation[2] = (int)dword_A8ED84; /*0x737246*/
   v24 = v24; /*0x737248*/
   this->animation[5] = 1; /*0x73724c*/
@@ -21337,9 +21338,9 @@ int Gap2Recv_737180::UpdateInfantryIdleWander() {
         result = this->target; /*0x737318*/
         if ( !result ) /*0x737320*/
         {
-          if ( this->M1748 == -1 || !Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2) ) /*0x73733a*/
+          if ( this->M1748 == -1 || !((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 2) ) /*0x73733a*/
           {
-            v13 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 7); /*0x737393*/
+            v13 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 7); /*0x737393*/
             this->M1748 = v13; /*0x737395*/
           }
           else
@@ -24452,7 +24453,7 @@ void (int a2)->TerritorySelectWDT_Delete(char a3, int a4) {
   v12 = this->primaryFacing[6 * a2 + 1]; /*0x771540*/
   if ( v12 > 0 )
   {
-    v13 = v12 == 1 ? 0 : Random::Range(&Randomizer_Global, 0, v12 - 1);
+    v13 = v12 == 1 ? 0 : ((Random *)(&Randomizer_Global))->Range(0, v12 - 1);
     if ( Map_Remove_770CE0(ptr_0, *(unsigned int *)(this->barrelFacing[6 * a2 + 4] + 4 * v13), (char **)&v17) ) /*0x77156f*/
     {
       if ( !(unsigned __int8)Audio::IsPlaying() ) /*0x77157c*/

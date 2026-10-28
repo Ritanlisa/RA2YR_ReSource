@@ -33,6 +33,7 @@
 #include "e4/classes/VeterancyStruct_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/List_MixFileClass_e4.hpp"  // X74 typed-global merge (0x5b3de2)
 #include "core/ida_vtables.h"  // gC_vftable3
+#include "core/cellcoord.hpp"  // X181A: complete CellCoord (p->To_CellObj)
 // X129: fresh-render label declarations (auto, idempotent)
 extern unsigned char aAircraft_0[9];  // data: 0x83F02C
 extern unsigned char aAllowableunitm[22];  // data: 0x83E060
@@ -3542,7 +3543,7 @@ void CellClass::UpdateAnimations() {
     result = *(unsigned int *)&g_RulesClass_Instance; /*0x47de2e*/
     if ( *(int *)(*(unsigned int *)&g_RulesClass_Instance + 360) > 0 ) /*0x47de3b*/
     {
-      result = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2147483646); /*0x47de54*/
+      result = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 2147483646); /*0x47de54*/
       v9 = (double)result * 4.656612877414201e-10; /*0x47de61*/
       v10 = v9 < 0.95; /*0x47de67*/
       v11 = 0; /*0x47de67*/
@@ -3555,19 +3556,18 @@ void CellClass::UpdateAnimations() {
         v24 = ((this->smudgeTypeIndex) << 8) + 128; /*0x47de9c*/
         v26 = dword_89E7B4 + v13; /*0x47deb6*/
         v25 = (smudgeTypeIndex_high << 8) + 128; /*0x47dec2*/
-        v15 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2147483646); /*0x47dec6*/
+        v15 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 2147483646); /*0x47dec6*/
         (*((unsigned short *)&(v16))) = Math::RoundToInt(((double)v15 * 4.656612877414201e-10 - 0.5) * 50.0 + (double)v24); /*0x47dee9*/
         v24 = v16; /*0x47deee*/
-        v17 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2147483646); /*0x47df04*/
+        v17 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 2147483646); /*0x47df04*/
         (*((unsigned short *)&(v18))) = Math::RoundToInt(((double)v17 * 4.656612877414201e-10 - 0.5) * 50.0 + (double)v25); /*0x47df27*/
         v25 = v18; /*0x47df3f*/
-        if ( (double)Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2147483646) * 4.656612877414201e-10 < 0.5 ) /*0x47df61*/
+        if ( (double)((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 2147483646) * 4.656612877414201e-10 < 0.5 ) /*0x47df61*/
         {
           v19 = (AnimClass *)operator new(0x1C8u); /*0x47df6d*/
           if ( v19 ) /*0x47df74*/
           {
-            v20 = Random::Range( /*0x47df91*/
-                    (Random *)&dword_A8B230[14].NeedsSaveOrLink,
+            v20 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range( /*0x47df91*/
                     0,
                     *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 332) - 1);
             AnimClass::ctor( /*0x47dfba*/
@@ -3585,9 +3585,8 @@ void CellClass::UpdateAnimations() {
         v21 = (AnimClass *)result; /*0x47dfc9*/
         if ( result ) /*0x47dfd0*/
         {
-          v22 = (void *)Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 1, 5); /*0x47dff2*/
-          v23 = Random::Range( /*0x47e004*/
-                  (Random *)&dword_A8B230[14].NeedsSaveOrLink,
+          v22 = (void *)((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(1, 5); /*0x47dff2*/
+          v23 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range( /*0x47e004*/
                   0,
                   *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 360) - 1);
           return (int)AnimClass::ctor( /*0x47e02c*/
@@ -3791,7 +3790,7 @@ int CellClass::SpawnTiberiumTree(int a1) {
     return 0; /*0x483809*/
   }
   v13 = *(&dword_B0F4EC->ptr_0 + v5); /*0x48382f*/
-  v7 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 7); /*0x48383e*/
+  v7 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 7); /*0x48383e*/
   v8 = 0; /*0x483840*/
   while ( 1 ) /*0x483845*/
   {
@@ -4709,7 +4708,7 @@ int Crate::FindPlacement(int a1, int a2) {
       if ( v5 ) /*0x4871eb*/
       {
         *(unsigned int *)v46 = this->__pad_024; /*0x4871fa*/
-        v6 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 1); /*0x487208*/
+        v6 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 1); /*0x487208*/
         Object::SpawnAtCell( /*0x48723f*/
           v5,
           *(unsigned int *)(*(int *)((char *)&stru_A83CD9.lineTrailer + 3)
@@ -4725,7 +4724,7 @@ int Crate::FindPlacement(int a1, int a2) {
       if ( v7 ) /*0x48724d*/
       {
         *(unsigned int *)v46 = this->__pad_024; /*0x487258*/
-        v8 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 11); /*0x487266*/
+        v8 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 11); /*0x487266*/
         Object::SpawnAtCell( /*0x48728c*/
           v7,
           *(unsigned int *)(*(int *)((char *)&stru_A83CD9.lineTrailer + 3) + 4 * (v8 + *(unsigned int *)(v4->jumpjet + 660))),
@@ -7385,7 +7384,7 @@ void* CellClass::FindOpenNeighbor(void* a1, int a2, int a3, int a4, int a5, int 
       {
         v66 = 1; /*0x4aa65f*/
         a2 = 2 * v10->unknown108 + 2; /*0x4aa66e*/
-        v25 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 1, v10->unknown104); /*0x4aa67b*/
+        v25 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(1, v10->unknown104); /*0x4aa67b*/
       }
       else
       {
@@ -7394,11 +7393,11 @@ void* CellClass::FindOpenNeighbor(void* a1, int a2, int a3, int a4, int a5, int 
           v24 = v10->unknown104; /*0x4aa629*/
           v66 = 1; /*0x4aa62f*/
   LABEL_35:
-          v25 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 1, v24); /*0x4aa694*/
+          v25 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(1, v24); /*0x4aa694*/
           goto LABEL_36; /*0x4aa6a2*/
         }
         v65 = 1; /*0x4aa645*/
-        v25 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2 * v10->unknown108); /*0x4aa651*/
+        v25 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 2 * v10->unknown108); /*0x4aa651*/
       }
   LABEL_36:
       v23 = v25 - 1; /*0x4aa6a7*/
@@ -7571,7 +7570,7 @@ void* CellClass::FindOpenNeighbor(void* a1, int a2, int a3, int a4, int a5, int 
       }
       else
       {
-        v50 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, v11 - 1); /*0x4aa94e*/
+        v50 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, v11 - 1); /*0x4aa94e*/
         Items = v79.Items; /*0x4aa953*/
         a3 = *((unsigned int *)v79.Items + v50); /*0x4aa95a*/
       }
@@ -8473,7 +8472,7 @@ void ScenarioClass::LoadMapData(void* a1) {
   ((LayerClass *)this)->CellIteratorReset(); /*0x4acf81*/
   for ( i = ((LayerClass *)this)->CellIteratorNext(); i; i = ((LayerClass *)this)->CellIteratorNext() ) /*0x4acf91*/
   {
-    v7 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, j); /*0x4acfa5*/
+    v7 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, j); /*0x4acfa5*/
     v8 = (unsigned char)Int_Overwrite + *(unsigned char *)(i + 283); /*0x4acfba*/
     *(unsigned int *)(i + 56) = *(unsigned int *)v42 + v7; /*0x4acfbc*/
     *(unsigned char *)(i + 283) = v8; /*0x4acfbf*/
@@ -16030,17 +16029,17 @@ int CellClass::ApplyCliffMod2(void* a1) {
         v42 = ((__int16)smudgeTypeIndex << 8) + 128; /*0x575382*/
         v43 = ((short)(((smudgeTypeIndex) >> 16) & 0xFFFF) << 8) + 128; /*0x575386*/
         v44 = dword_ABDE88 * v18->level[0]; /*0x57539f*/
-        v20 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2147483646); /*0x5753a9*/
+        v20 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 2147483646); /*0x5753a9*/
         (v21) = ((v21) & ~0xFFFF) | ((Math::RoundToInt(((double)v20 * 4.656612877414201e-10 - 0.5) * 50.0 + (double)v42)) & 0xFFFF); /*0x5753cc*/
         v42 = v21; /*0x5753e4*/
-        v38 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2147483646); /*0x5753ed*/
+        v38 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 2147483646); /*0x5753ed*/
         (v22) = ((v22) & ~0xFFFF) | ((Math::RoundToInt(((double)v38 * 4.656612877414201e-10 - 0.5) * 50.0 + (double)v43)) & 0xFFFF); /*0x57540b*/
         v43 = v22; /*0x575415*/
         v23 = (AnimClass *)__2_YAPAXI_Z(0x1C8u); /*0x57541e*/
         if ( v23 ) /*0x575425*/
         {
-          v24 = (void *)Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 1, 5); /*0x575442*/
-          v25 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, dword_8871E0->CrateUnitSound - 1); /*0x575459*/
+          v24 = (void *)((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(1, 5); /*0x575442*/
+          v25 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, dword_8871E0->CrateUnitSound - 1); /*0x575459*/
           (v23)->ctor(*(void **)(dword_8871E0->CrateFireSound + 4 * v25), &v42, v24, 1, (void *)0x600, 0, 0); /*0x575481*/
         }
         LOWORD(v35) = (unsigned short)v15; /*0x57548b*/
@@ -16201,17 +16200,17 @@ int CellClass::ApplyCliffMod(void* a1) {
         v42 = ((__int16)smudgeTypeIndex << 8) + 128; /*0x5756a4*/
         v43 = ((short)(((smudgeTypeIndex) >> 16) & 0xFFFF) << 8) + 128; /*0x5756a8*/
         v44 = dword_ABDE88 * v18->level[0]; /*0x5756c1*/
-        v20 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2147483646); /*0x5756cb*/
+        v20 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 2147483646); /*0x5756cb*/
         (v21) = ((v21) & ~0xFFFF) | ((Math::RoundToInt(((double)v20 * 4.656612877414201e-10 - 0.5) * 50.0 + (double)v42)) & 0xFFFF); /*0x5756ee*/
         v42 = v21; /*0x575706*/
-        v37 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2147483646); /*0x57570f*/
+        v37 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 2147483646); /*0x57570f*/
         (v22) = ((v22) & ~0xFFFF) | ((Math::RoundToInt(((double)v37 * 4.656612877414201e-10 - 0.5) * 50.0 + (double)v43)) & 0xFFFF); /*0x57572d*/
         v43 = v22; /*0x575737*/
         v23 = (AnimClass *)__2_YAPAXI_Z(0x1C8u); /*0x575740*/
         if ( v23 ) /*0x575747*/
         {
-          v24 = (void *)Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 1, 5); /*0x575764*/
-          v25 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, dword_8871E0->CrateUnitSound - 1); /*0x57577b*/
+          v24 = (void *)((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(1, 5); /*0x575764*/
+          v25 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, dword_8871E0->CrateUnitSound - 1); /*0x57577b*/
           (v23)->ctor(*(void **)(dword_8871E0->CrateFireSound + 4 * v25), &v42, v24, 1, (void *)0x600, 0, 0); /*0x5757a3*/
         }
         LOWORD(v36) = (unsigned short)v15 + 1; /*0x5757ad*/
@@ -16373,17 +16372,17 @@ int CellClass::ApplyTerrainMod2(void* a1) {
         v42 = ((__int16)smudgeTypeIndex << 8) + 128; /*0x5759dd*/
         v43 = ((short)(((smudgeTypeIndex) >> 16) & 0xFFFF) << 8) + 128; /*0x5759e1*/
         v44 = dword_ABDE88 * v18->level[0]; /*0x5759fa*/
-        v20 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2147483646); /*0x575a04*/
+        v20 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 2147483646); /*0x575a04*/
         (v21) = ((v21) & ~0xFFFF) | ((Math::RoundToInt(((double)v20 * 4.656612877414201e-10 - 0.5) * 50.0 + (double)v42)) & 0xFFFF); /*0x575a27*/
         v42 = v21; /*0x575a3f*/
-        v38 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2147483646); /*0x575a48*/
+        v38 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 2147483646); /*0x575a48*/
         (v22) = ((v22) & ~0xFFFF) | ((Math::RoundToInt(((double)v38 * 4.656612877414201e-10 - 0.5) * 50.0 + (double)v43)) & 0xFFFF); /*0x575a66*/
         v43 = v22; /*0x575a70*/
         v23 = (AnimClass *)__2_YAPAXI_Z(0x1C8u); /*0x575a79*/
         if ( v23 ) /*0x575a80*/
         {
-          v24 = (void *)Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 1, 5); /*0x575a9d*/
-          v25 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, dword_8871E0->CrateUnitSound - 1); /*0x575ab4*/
+          v24 = (void *)((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(1, 5); /*0x575a9d*/
+          v25 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, dword_8871E0->CrateUnitSound - 1); /*0x575ab4*/
           (v23)->ctor(*(void **)(dword_8871E0->CrateFireSound + 4 * v25), &v42, v24, 1, (void *)0x600, 0, 0); /*0x575adc*/
         }
         LOWORD(v35) = (unsigned short)v15; /*0x575ae6*/
@@ -16544,17 +16543,17 @@ int CellClass::ApplyTerrainMod(void* a1) {
         v42 = ((__int16)smudgeTypeIndex << 8) + 128; /*0x575d0f*/
         v43 = ((short)(((smudgeTypeIndex) >> 16) & 0xFFFF) << 8) + 128; /*0x575d13*/
         v44 = dword_ABDE88 * v18->level[0]; /*0x575d2c*/
-        v20 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2147483646); /*0x575d36*/
+        v20 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 2147483646); /*0x575d36*/
         (v21) = ((v21) & ~0xFFFF) | ((Math::RoundToInt(((double)v20 * 4.656612877414201e-10 - 0.5) * 50.0 + (double)v42)) & 0xFFFF); /*0x575d59*/
         v42 = v21; /*0x575d71*/
-        v37 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2147483646); /*0x575d7a*/
+        v37 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 2147483646); /*0x575d7a*/
         (v22) = ((v22) & ~0xFFFF) | ((Math::RoundToInt(((double)v37 * 4.656612877414201e-10 - 0.5) * 50.0 + (double)v43)) & 0xFFFF); /*0x575d98*/
         v43 = v22; /*0x575da2*/
         v23 = (AnimClass *)__2_YAPAXI_Z(0x1C8u); /*0x575dab*/
         if ( v23 ) /*0x575db2*/
         {
-          v24 = (void *)Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 1, 5); /*0x575dcf*/
-          v25 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, dword_8871E0->CrateUnitSound - 1); /*0x575de6*/
+          v24 = (void *)((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(1, 5); /*0x575dcf*/
+          v25 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, dword_8871E0->CrateUnitSound - 1); /*0x575de6*/
           (v23)->ctor(*(void **)(dword_8871E0->CrateFireSound + 4 * v25), &v42, v24, 1, (void *)0x600, 0, 0); /*0x575e0e*/
         }
         LOWORD(v36) = (unsigned short)v15 + 1; /*0x575e18*/
@@ -35261,7 +35260,7 @@ int ScenarioClass::LoadNetworkConfig() {
                                                aMultiplayer,
                                                aForceportbase,
                                                0);
-    v5 = Random::Range(&Randomizer_Global, 0, 0x8000); /*0x6981b1*/
+    v5 = ((Random *)(&Randomizer_Global))->Range(0, 0x8000); /*0x6981b1*/
     dword_ABFED8 = INIClass::ReadInt_Overwrite( /*0x6981d5*/
                      (bool *)dword_8870C0.__pad_0,
                      aMultiplayer,
@@ -36192,7 +36191,6 @@ int CellClass::IsBuildable() {
     && (result & 0x800) == 0
     || *&this->q044 != -1
     || (result = ((LayerClass *)&DataGlobal_87F7E8)->CoordinatesLegal(
-                   (LayerClass *)&DataGlobal_87F7E8,
                    &this->smudgeTypeIndex),
         !(unsigned char)result) )
   {
@@ -37697,7 +37695,7 @@ int FactoryClass::CompleteProduction() {
               0,
               1) )
         (*(void (**)(Class_7F5C70 *, unsigned int, unsigned int))(*(unsigned int *)_ESI + 972))(_ESI, *(unsigned int *)&_ESI[692], 0); /*0x73dd36*/
-      return Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2) + 14; /*0x73dd5a*/
+      return ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 2) + 14; /*0x73dd5a*/
     }
 LABEL_4:
     v7 = *(unsigned int *)&_ESI[1732]; /*0x73d672*/
@@ -37775,7 +37773,7 @@ LABEL_4:
             }
             (v81) = ((v81) & ~0xFFFF) | ((Math::RoundToInt(v2)) & 0xFFFF); /*0x73e346*/
             v74 = v81; /*0x73e34d*/
-            v75 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2); /*0x73e350*/
+            v75 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 2); /*0x73e350*/
             return v74 + v75; /*0x73e350*/
           }
           _EDX = dword_8871E0; /*0x73e355*/
@@ -38011,7 +38009,7 @@ LABEL_90:
               fmul ds:dbl_7E27F8
             }
             (v54) = ((v54) & ~0xFFFF) | ((Math::RoundToInt(v2)) & 0xFFFF); /*0x73de4a*/
-            return v54 + Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2); /*0x73de6d*/
+            return v54 + ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 2); /*0x73de6d*/
           }
         }
         else
@@ -38285,7 +38283,7 @@ LABEL_150:
   }
   (v73) = ((v73) & ~0xFFFF) | ((Math::RoundToInt(v2)) & 0xFFFF); /*0x73e299*/
   v74 = v73; /*0x73e2a0*/
-  v75 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2); /*0x73e2b0*/
+  v75 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 2); /*0x73e2b0*/
   return v74 + v75; /*0x73d730*/
 
 }

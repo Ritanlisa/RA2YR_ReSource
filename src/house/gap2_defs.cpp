@@ -34,6 +34,7 @@ using ra2::game::ObjectClass;
 #include "e4/classes/HouseClass_e4.hpp"  // w16g4 C3861 HouseClass:: supply
 #include "e4/classes/Radar_e4.hpp"  // w16g4 C3861 Radar:: supply
 #include "system/map.hpp"
+#include "core/cellcoord.hpp"  // X181A: complete CellCoord (p->To_CellObj)
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
     int UpdateHouseClassAnger(unsigned int p0, int p1, int p2, int p3);  // x4:signals@0x504790
@@ -3355,7 +3356,7 @@ int HouseClass::DefeatPlayer() {
     else if ( LOWORD(this->killedUnitsOfHouses[0]) != *(unsigned short *)&stru_A8E960.waypoints[6] /*0x4fc14c*/
            || HIWORD(this->killedUnitsOfHouses[0]) != *(unsigned short *)&stru_A8E960.waypoints[8] )
     {
-      v5 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)this->killedUnitsOfHouses); /*0x4fc156*/
+      v5 = ((CellCoord *)&dword_87F7E8)->To_CellObj((__int16 *)this->killedUnitsOfHouses); /*0x4fc156*/
       HouseClass::IsCellOccupied(&this->ptr_0, (int)v5, 1); /*0x4fc15e*/
     }
   }
@@ -4522,7 +4523,7 @@ int HouseClass::AutoBuild() {
     && !*(unsigned short *)(v81 + 6) )
   {
     v26 = (*(int (**)(int *, int))(this->base[7] + 20))(&this->base[7], v81); /*0x4fe59c*/
-    if ( Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 99) < *(unsigned int *)(*&dword_8871E0->qDD8 /*0x4fe5bd*/
+    if ( ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 99) < *(unsigned int *)(*&dword_8871E0->qDD8 /*0x4fe5bd*/
                                                                                        + 4
                                                                                        * *&this->u32_184)
       && HouseClass::FindBuildLocation((int)this, v26) )
@@ -4657,7 +4658,7 @@ LABEL_87:
       if ( v73 ) /*0x4fe99d*/
       {
         v75 = (unsigned int *)(v81 + 4); /*0x4fe9a7*/
-        v76 = (Cell *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)(v81 + 4)); /*0x4fe9b0*/
+        v76 = (Cell *)((CellCoord *)&dword_87F7E8)->To_CellObj((__int16 *)(v81 + 4)); /*0x4fe9b0*/
         v77 = (char *)Cell::IsBridge(v76); /*0x4fe9be*/
         v78 = (unsigned int *)*((unsigned int *)dword_A83C6C + BuildingTypeClass::FindIndexByName(v74)); /*0x4fe9d2*/
         if ( v77 ) /*0x4fe9d4*/
@@ -4985,13 +4986,13 @@ LABEL_6:
       while ( v27 < *(int *)((char *)&stru_A83CD9.abstractFlags + 3) ); /*0x4fee37*/
       v1 = this; /*0x4fee3d*/
     }
-    if ( (double)*(int *)(*&dword_8871E0->q13F4 + 4 * *&v1->u32_184) * 0.01 > (double)Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2147483646) * 4.656612877414201e-10 ) /*0x4fee89*/
+    if ( (double)*(int *)(*&dword_8871E0->q13F4 + 4 * *&v1->u32_184) * 0.01 > (double)((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 2147483646) * 4.656612877414201e-10 ) /*0x4fee89*/
     {
       v1->ratioTeamBuildings = v30; /*0x4fee90*/
       return 15; /*0x4feea4*/
     }
     if ( v26 ) /*0x4feea7*/
-      v1->ratioTeamBuildings = v43[Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, v26 - 1) + 100]; /*0x4feec5*/
+      v1->ratioTeamBuildings = v43[((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, v26 - 1) + 100]; /*0x4feec5*/
   }
   return 15; /*0x4feb08*/
 
@@ -5133,10 +5134,10 @@ int HouseClass::AIInfantryProduction() {
     while ( v15 < dword_A8E358 ); /*0x4ff161*/
     v1 = this; /*0x4ff167*/
   }
-  if ( (double)*(int *)(*&dword_8871E0->q13F4 + 4 * *&v1->u32_184) * 0.01 <= (double)Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2147483646) * 4.656612877414201e-10 ) /*0x4ff1b3*/
+  if ( (double)*(int *)(*&dword_8871E0->q13F4 + 4 * *&v1->u32_184) * 0.01 <= (double)((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 2147483646) * 4.656612877414201e-10 ) /*0x4ff1b3*/
   {
     if ( v14 ) /*0x4ff1d1*/
-      v1->baseDefenseTeamCount = v29[Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, v14 - 1) + 100]; /*0x4ff1ef*/
+      v1->baseDefenseTeamCount = v29[((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, v14 - 1) + 100]; /*0x4ff1ef*/
     return 15; /*0x4ff1f8*/
   }
   else
@@ -5283,10 +5284,10 @@ int HouseClass::AIAircraftProduction() {
     while ( v15 < dword_A8B228 ); /*0x4ff491*/
     v1 = this; /*0x4ff497*/
   }
-  if ( (double)*(int *)(*&dword_8871E0->q13F4 + 4 * *&v1->u32_184) * 0.01 <= (double)Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2147483646) * 4.656612877414201e-10 ) /*0x4ff4e3*/
+  if ( (double)*(int *)(*&dword_8871E0->q13F4 + 4 * *&v1->u32_184) * 0.01 <= (double)((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 2147483646) * 4.656612877414201e-10 ) /*0x4ff4e3*/
   {
     if ( v14 ) /*0x4ff501*/
-      *(unsigned int *)v1->pad_5658 = v29[Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, v14 - 1) + 100]; /*0x4ff51f*/
+      *(unsigned int *)v1->pad_5658 = v29[((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, v14 - 1) + 100]; /*0x4ff51f*/
     return 15; /*0x4ff528*/
   }
   else
@@ -6073,7 +6074,7 @@ void* HouseClass::GenerateAttackCoords(void* a1, int a2) {
   switch ( a2 ) /*0x501b24*/
   {
     case 0: /*0x501b24*/
-      v6 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, unknown5498); /*0x501b42*/
+      v6 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, unknown5498); /*0x501b42*/
       LODWORD(v45) = *HouseClass::GetCurrentOption(this, &v47.Coord3D_field_0x04); /*0x501b57*/
       if ( (unsigned __int8)CellStruct::Equals((CellStruct *)&v45, &stru_A8E960.waypoints[6]) ) /*0x501b5b*/
       {
@@ -6083,7 +6084,7 @@ void* HouseClass::GenerateAttackCoords(void* a1, int a2) {
       }
       else
       {
-        v8 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)&v45); /*0x501b89*/
+        v8 = ((CellCoord *)&dword_87F7E8)->To_CellObj((__int16 *)&v45); /*0x501b89*/
         v9 = (int *)(*(int (**)(void *, int *))(*(unsigned int *)v8 + 72))(v8, &v53); /*0x501b97*/
         v50 = *v9; /*0x501b9c*/
         v51 = v9[1]; /*0x501ba3*/
@@ -6093,8 +6094,8 @@ void* HouseClass::GenerateAttackCoords(void* a1, int a2) {
       v10 = RandomCoordScatter(v55, &v50, v3, v6, 1); /*0x501bb9*/
       goto LABEL_23; /*0x501bbe*/
     case 1: /*0x501b24*/
-      v46[1] = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, unknown5498, 2 * unknown5498); /*0x501bdc*/
-      LOWORD(v45) = Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink); /*0x501beb*/
+      v46[1] = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(unknown5498, 2 * unknown5498); /*0x501bdc*/
+      LOWORD(v45) = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->State(); /*0x501beb*/
       v11 = LODWORD(v45); /*0x501bf0*/
       BYTE1(v11) = BYTE1(v45) & 0x3F; /*0x501bf4*/
       LODWORD(v45) = ((unsigned __int16)v11 ^ (unsigned __int16)((v11 & 0xE000) - 1)) & 0xE000 ^ v11; /*0x501c11*/
@@ -6107,7 +6108,7 @@ void* HouseClass::GenerateAttackCoords(void* a1, int a2) {
       }
       else
       {
-        v13 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)v46); /*0x501c57*/
+        v13 = ((CellCoord *)&dword_87F7E8)->To_CellObj((__int16 *)v46); /*0x501c57*/
         v14 = (int *)(*(int (**)(void *, Coord3D *))(*(unsigned int *)v13 + 72))(v13, &v56); /*0x501c68*/
         v53 = *v14; /*0x501c6d*/
         v54 = v14[1]; /*0x501c74*/
@@ -6141,8 +6142,8 @@ void* HouseClass::GenerateAttackCoords(void* a1, int a2) {
       v10 = Coord3D::Set((Coord3D *)&v48[1], (int)v17, (int)v36, v40); /*0x501ce5*/
       goto LABEL_23; /*0x501ce5*/
     case 2: /*0x501b24*/
-      v47.Coord3D_field_0x04 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, unknown5498, 2 * unknown5498); /*0x501d03*/
-      LOWORD(v45) = Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink); /*0x501d12*/
+      v47.Coord3D_field_0x04 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(unknown5498, 2 * unknown5498); /*0x501d03*/
+      LOWORD(v45) = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->State(); /*0x501d12*/
       v18 = LODWORD(v45); /*0x501d17*/
       BYTE1(v18) = BYTE1(v45) & 0x3F | 0x40; /*0x501d22*/
       LODWORD(v45) = ((unsigned __int16)v18 ^ (unsigned __int16)((v18 & 0xE000) - 1)) & 0xE000 ^ v18; /*0x501d3b*/
@@ -6155,7 +6156,7 @@ void* HouseClass::GenerateAttackCoords(void* a1, int a2) {
       }
       else
       {
-        v20 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)v46); /*0x501d81*/
+        v20 = ((CellCoord *)&dword_87F7E8)->To_CellObj((__int16 *)v46); /*0x501d81*/
         v21 = (int *)(*(int (**)(void *, Coord3D *))(*(unsigned int *)v20 + 72))(v20, &v56); /*0x501d92*/
         v53 = *v21; /*0x501d97*/
         v54 = v21[1]; /*0x501d9e*/
@@ -6189,8 +6190,8 @@ void* HouseClass::GenerateAttackCoords(void* a1, int a2) {
       v10 = Coord3D::Set((Coord3D *)&v46[1], (int)v24, (int)v37, v41); /*0x501e0f*/
       goto LABEL_23; /*0x501e0f*/
     case 3: /*0x501b24*/
-      v46[1] = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, unknown5498, 2 * unknown5498); /*0x501e2d*/
-      LOWORD(v45) = Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink); /*0x501e3c*/
+      v46[1] = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(unknown5498, 2 * unknown5498); /*0x501e2d*/
+      LOWORD(v45) = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->State(); /*0x501e3c*/
       v25 = LODWORD(v45); /*0x501e41*/
       BYTE1(v25) = BYTE1(v45) & 0x3F | 0x80; /*0x501e4c*/
       LODWORD(v45) = ((unsigned __int16)v25 ^ (unsigned __int16)((v25 & 0xE000) - 1)) & 0xE000 ^ v25; /*0x501e65*/
@@ -6203,7 +6204,7 @@ void* HouseClass::GenerateAttackCoords(void* a1, int a2) {
       }
       else
       {
-        v27 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)v46); /*0x501eab*/
+        v27 = ((CellCoord *)&dword_87F7E8)->To_CellObj((__int16 *)v46); /*0x501eab*/
         v28 = (int *)(*(int (**)(void *, Coord3D *))(*(unsigned int *)v27 + 72))(v27, &v56); /*0x501ebc*/
         v53 = *v28; /*0x501ec1*/
         v54 = v28[1]; /*0x501ec8*/
@@ -6239,8 +6240,8 @@ LABEL_23:
       v49 = *(Coord3D *)v10; /*0x501f3e*/
       break; /*0x501f52*/
     case 4: /*0x501b24*/
-      v46[1] = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, unknown5498, 2 * unknown5498); /*0x501f70*/
-      LOWORD(v45) = Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink); /*0x501f7f*/
+      v46[1] = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(unknown5498, 2 * unknown5498); /*0x501f70*/
+      LOWORD(v45) = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->State(); /*0x501f7f*/
       LODWORD(v45) |= 0xC000u; /*0x501f98*/
       _EDI = HouseClass::GetStartCoords(this, v57); /*0x501fa7*/
       v43 = _EDI[2]; /*0x501fc2*/
@@ -7177,7 +7178,7 @@ LABEL_88:
       v50 = v47; /*0x505a8b*/
       do /*0x505b1f*/
       {
-        v51 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, v48, v86 - 1); /*0x505aa9*/
+        v51 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(v48, v86 - 1); /*0x505aa9*/
         if ( v86 < v85.Capacity /*0x505ad4*/
           || (v85.IsAllocated[0] || !v85.Capacity)
           && v87 > 0
@@ -7309,7 +7310,7 @@ LABEL_145:
     v65 = v62; /*0x505cf1*/
     do /*0x505d87*/
     {
-      v66 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 3, v88.m_10 - 1); /*0x505d13*/
+      v66 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(3, v88.m_10 - 1); /*0x505d13*/
       if ( v88.m_10 < v88.m_8 /*0x505d3e*/
         || (BYTE1(v88.m_C) || !v88.m_8)
         && v89 > 0
@@ -7573,7 +7574,7 @@ void* HouseClass::ScanBuildLocation(void* a1, int a2, void* a3, int a4) {
       if ( v13 ) /*0x5061bc*/
       {
         v14 = (unsigned int *)(*(int (**)(int, int *))(*(unsigned int *)v13 + 72))(v13, &v89); /*0x5061cf*/
-        v15 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)&v67); /*0x5061d7*/
+        v15 = ((CellCoord *)&dword_87F7E8)->To_CellObj((__int16 *)&v67); /*0x5061d7*/
         v16 = (Vector3 *)(*(int (**)(void *, unsigned int *))(*(unsigned int *)v15 + 72))(v15, v95); /*0x5061e8*/
         v17 = Vector3::Subtract(v16, v88, v14); /*0x5061f6*/
         if ( (int)Coord::Length((Coord *)v17) > *&dword_8871E0->u32_E0C << 8 ) /*0x506213*/
@@ -7627,7 +7628,7 @@ void* HouseClass::ScanBuildLocation(void* a1, int a2, void* a3, int a4) {
             }
             else
             {
-              v30 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v65); /*0x506389*/
+              v30 = ((CellCoord *)&dword_87F7E8)->To_CellObj(v65); /*0x506389*/
               v31 = (int *)(*(int (**)(void *, unsigned int *))(*(unsigned int *)v30 + 72))(v30, v95); /*0x50639d*/
               v27 = *v31; /*0x50639f*/
               v28 = v31[1]; /*0x5063a1*/
@@ -7707,7 +7708,7 @@ LABEL_33:
         }
         v35 = NumOfElements; /*0x5064fa*/
       }
-      v98 = *((char *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v69) + 283); /*0x506521*/
+      v98 = *((char *)((CellCoord *)&dword_87F7E8)->To_CellObj(v69) + 283); /*0x506521*/
       v39 = *(unsigned int *)v75.__tail_10; /*0x506528*/
       v40 = 1 << *&v67->TargetSpecialThreatCoefficient; /*0x506534*/
       v41 = 0; /*0x506536*/
@@ -7878,7 +7879,7 @@ LABEL_72:
                  v66,
                  v67) )
           {
-            v56 = (char *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v66); /*0x506a07*/
+            v56 = (char *)((CellCoord *)&dword_87F7E8)->To_CellObj(v66); /*0x506a07*/
             v57 = v98 - v56[283]; /*0x506a1c*/
             if ( (int)(((((v57) >> 32) & 0xFFFFFFFFu) ^ v57) - (((v57) >> 32) & 0xFFFFFFFFu)) < 3 ) /*0x506a24*/
             {
@@ -8280,11 +8281,11 @@ int HouseClass::ComputePowerDistribution() {
   v5 = v3[22571] + 3000; /*0x508194*/
   v6 = v3[22570] + 3000; /*0x5081a4*/
   v7 = Math::RoundToInt((double)*(int *)(dword_8871E0->DetailMinFrameRateNormal + 4 * this->u32_184) * 0.0099999998 * (double)v4); /*0x5081bf*/
-  v14 = Random::Range(&dword_A8B230[14].NeedsSaveOrLink, -v7, v7) + v4; /*0x5081e7*/
+  v14 = ((Random *)(&dword_A8B230[14].NeedsSaveOrLink))->Range(-v7, v7) + v4; /*0x5081e7*/
   v8 = Math::RoundToInt((double)*(int *)(dword_8871E0->DetailMinFrameRateNormal + 4 * this->u32_184) * 0.0099999998 * (double)v5); /*0x5081fe*/
-  v13 = Random::Range(&dword_A8B230[14].NeedsSaveOrLink, -v8, v8) + v5; /*0x50822b*/
+  v13 = ((Random *)(&dword_A8B230[14].NeedsSaveOrLink))->Range(-v8, v8) + v5; /*0x50822b*/
   v9 = Math::RoundToInt((double)*(int *)(dword_8871E0->DetailMinFrameRateNormal + 4 * this->u32_184) * 0.0099999998 * (double)v6); /*0x50823c*/
-  v10 = Random::Range(&dword_A8B230[14].NeedsSaveOrLink, -v9, v9) + v6; /*0x508256*/
+  v10 = ((Random *)(&dword_A8B230[14].NeedsSaveOrLink))->Range(-v9, v9) + v6; /*0x508256*/
   result = v10 + v14 + v13; /*0x50825b*/
   if ( result <= 0 ) /*0x50826a*/
   {
@@ -8487,7 +8488,7 @@ void HouseClass::FindAutoBuildLocation() {
   v115[2] = v9; /*0x508464*/
   v115[3] = v9; /*0x50846b*/
   v82 = 0; /*0x508472*/
-  v113 = *((char *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, &v6->teamDelayTimer) + 283); /*0x508488*/
+  v113 = *((char *)((CellCoord *)&dword_87F7E8)->To_CellObj(&v6->teamDelayTimer) + 283); /*0x508488*/
   for ( i = 0; (int)i < 16; i += 4 ) /*0x50848f*/
   {
     v10 = i; /*0x508493*/
@@ -8501,7 +8502,7 @@ void HouseClass::FindAutoBuildLocation() {
     v107 = v12; /*0x5084c2*/
     while ( (unsigned short)v11 != v107 || v86[1] != *(unsigned short *)((char *)v114 + v10 + 2) ) /*0x5084e1*/
     {
-      v13 = (Cell *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v86); /*0x5084f1*/
+      v13 = (Cell *)((CellCoord *)&dword_87F7E8)->To_CellObj(v86); /*0x5084f1*/
       v14 = *(int *)((char *)&dword_7EA7A0 + v10) & 7; /*0x508501*/
       v15 = v13; /*0x508504*/
       v16 = LOWORD(dword_89F688[v14]) + v86[0]; /*0x508506*/
@@ -8509,7 +8510,7 @@ void HouseClass::FindAutoBuildLocation() {
       LOWORD(v106) = v16; /*0x50851d*/
       HIWORD(v106) = v86[1] + v14; /*0x508537*/
       *(unsigned int *)v112 = v106; /*0x508546*/
-      v17 = (Cell *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v112); /*0x508559*/
+      v17 = (Cell *)((CellCoord *)&dword_87F7E8)->To_CellObj(v112); /*0x508559*/
       v18 = *&v15->u32_EC; /*0x508564*/
       v19 = v15->Cell_field_0x11B - v113; /*0x50856a*/
       v20 = *&v17->u32_EC; /*0x50856b*/
@@ -9163,7 +9164,7 @@ LABEL_26:
   v3 = this->powerOutput; /*0x50984a*/
   if ( this->powerDrain > v3 ) /*0x509852*/
     goto LABEL_31; /*0x509852*/
-  v3 = Random::Range((unsigned int *)dword_A8B230 + 134, 0, 1); /*0x509863*/
+  v3 = ((Random *)((unsigned int *)dword_A8B230 + 134))->Range(0, 1); /*0x509863*/
   if ( !v3 ) /*0x50986a*/
     goto LABEL_31; /*0x50986a*/
   return v3; /*0x509780*/
@@ -9450,7 +9451,7 @@ int HouseClass::Fire_PsyDom(int a1) {
                 (v21) = ((v21) & ~0xFFFF) | ((*(unsigned short *)(v7 + 36) + *(unsigned short *)v8) & 0xFFFF); /*0x50a207*/
                 (v21) = ((v21) & ~(0xFFFF << 16)) | (((v9) & 0xFFFF) << 16); /*0x50a210*/
                 *(unsigned int *)v24 = v21; /*0x50a21f*/
-                for ( i = (TechnoClass *)*((unsigned int *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v24) + 57); /*0x50a236*/
+                for ( i = (TechnoClass *)*((unsigned int *)((CellCoord *)&dword_87F7E8)->To_CellObj(v24) + 57); /*0x50a236*/
                       i && (i->abstractFlags & 4) != 0;
                       i = (TechnoClass *)v11->nextObject )
                 {
@@ -9582,7 +9583,7 @@ int HouseClass::FireSuperWeaponAtBestTarget(int a1) {
           v17 = v13; /*0x50a3e7*/
           enemyHouseIndex = CellClass::GetTileData((int16_t *)&v17, (int)this); /*0x50a3ec*/
           if ( *(unsigned char *)(v7 + 1773) == 15 ) /*0x50a3f8*/
-            enemyHouseIndex = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 100); /*0x50a40a*/
+            enemyHouseIndex = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 100); /*0x50a40a*/
           if ( enemyHouseIndex > v15 ) /*0x50a413*/
           {
             v15 = enemyHouseIndex; /*0x50a415*/
@@ -11011,7 +11012,7 @@ void* HouseClass::FindSWBuilding(void* a1) {
         || (*(int (__thiscall **)(unsigned char *))(*(unsigned int *)v5 + 44))(v5) == 6 && v5[1773] == 15 )
       {
         v21 = v33; /*0x50cfaa*/
-        v4 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, v33 + 10); /*0x50cfc5*/
+        v4 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, v33 + 10); /*0x50cfc5*/
       }
       else
       {
@@ -11061,7 +11062,7 @@ void* HouseClass::FindSWBuilding(void* a1) {
     v25 = Block; /*0x50d137*/
     goto LABEL_87; /*0x50d137*/
   }
-  v24 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, v44 - 1); /*0x50d0bf*/
+  v24 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, v44 - 1); /*0x50d0bf*/
   v25 = Block; /*0x50d0c4*/
   v26 = *((unsigned int *)Block + v24); /*0x50d0c8*/
   if ( !v26 ) /*0x50d0cd*/
@@ -11201,7 +11202,7 @@ void* HouseClass::GetStartCoords(void* aP1) {
   }
   else
   {
-    v4 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v6); /*0x50dfa4*/
+    v4 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v6); /*0x50dfa4*/
     v5 = (unsigned int *)v4->vt_slot_72(v7); /*0x50dfb5*/
     *aP1 = *v5; /*0x50dfbf*/
     aP1[1] = v5[1]; /*0x50dfc4*/
@@ -12164,7 +12165,7 @@ int HouseClass::EvaluateTarget() {
           v9 = globalHelper_0DA020(&v16, &v14); /*0x6eba5a*/
           v10 = *(unsigned int *)repairStationsCount; /*0x6eba61*/
           *(unsigned int *)v15 = *v9; /*0x6eba67*/
-          v11 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v15); /*0x6eba73*/
+          v11 = ((CellCoord *)&dword_87F7E8)->To_CellObj(v15); /*0x6eba73*/
           (*(void (**)(int, void *, int))(v10 + 1152))(repairStationsCount, v11, 1); /*0x6eba7b*/
         }
       }

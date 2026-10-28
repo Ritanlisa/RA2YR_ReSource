@@ -584,10 +584,9 @@ int VoxelAnimClass::VoxelAnimClass_Update()
           v36 = *(unsigned int *)(v35 + 728); /*0x74a290*/
           if ( v36 > 0 ) /*0x74a298*/
           {
-            v37 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, v36); /*0x74a2b3*/
+            v37 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, v36); /*0x74a2b3*/
             v38 = v37 /*0x74a2cd*/
-                + Random::Range(
-                    (Random *)&dword_A8B230[14].NeedsSaveOrLink,
+                + ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(
                     0,
                     *(unsigned int *)(v1->q104 + 728));
             if ( v38 > 0 ) /*0x74a2d1*/
@@ -624,7 +623,7 @@ int VoxelAnimClass::VoxelAnimClass_Update()
                 if ( v94 ) /*0x74a3d0*/
                 {
                   v93 = v43->ptr_24; /*0x74a3e8*/
-                  v45 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 1); /*0x74a3ec*/
+                  v45 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 1); /*0x74a3ec*/
                   Object::SpawnAtCell( /*0x74a427*/
                     v94,
                     *(unsigned int *)(*(int *)((char *)&stru_A83CD9.lineTrailer + 3)
@@ -640,7 +639,7 @@ int VoxelAnimClass::VoxelAnimClass_Update()
                 if ( v94 ) /*0x74a437*/
                 {
                   *(unsigned int *)v95 = v43->ptr_24; /*0x74a44b*/
-                  v46 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 11); /*0x74a44f*/
+                  v46 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 11); /*0x74a44f*/
                   Object::SpawnAtCell( /*0x74a477*/
                     v94,
                     *(unsigned int *)(*(int *)((char *)&stru_A83CD9.lineTrailer + 3)
@@ -723,7 +722,7 @@ int VoxelAnimClass::VoxelAnimClass_Update()
               if ( v57 ) /*0x74a62e*/
               {
                 *(unsigned int *)v96 = v55->smudgeTypeIndex; /*0x74a647*/
-                v58 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 1); /*0x74a64b*/
+                v58 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 1); /*0x74a64b*/
                 Object::SpawnAtCell( /*0x74a682*/
                   v57,
                   *(unsigned int *)(*(int *)((char *)&stru_A83CD9.lineTrailer + 3)
@@ -743,7 +742,7 @@ int VoxelAnimClass::VoxelAnimClass_Update()
               if ( v59 ) /*0x74a690*/
               {
                 *(unsigned int *)v96 = v55->smudgeTypeIndex; /*0x74a6a4*/
-                v60 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 11); /*0x74a6a8*/
+                v60 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(0, 11); /*0x74a6a8*/
                 Object::SpawnAtCell( /*0x74a6ce*/
                   v59,
                   *(unsigned int *)(*(int *)((char *)&stru_A83CD9.lineTrailer + 3)

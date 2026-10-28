@@ -115,7 +115,7 @@ int AISelectTeamHouseClass(IUnknown * aP0, int a2, int a3)
   v55 = 0; /*0x6f0adf*/
   if ( v5 != -1 ) /*0x6f0ae3*/
     v55 = (unsigned int *)*(&dword_A8022C->ptr_0 + v5); /*0x6f0aee*/
-  if ( Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 1, 100) <= *(unsigned int *)(a2 + 22108) /*0x6f0b12*/
+  if ( ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(1, 100) <= *(unsigned int *)(a2 + 22108) /*0x6f0b12*/
     && *(unsigned char *)(a2 + 498) )
   {
     v6 = 0; /*0x6f0b26*/
@@ -220,7 +220,7 @@ LABEL_35:
         goto LABEL_58; /*0x6f0ccd*/
       if ( !v60.m_10 ) /*0x6f0cd9*/
         goto LABEL_58; /*0x6f0cd9*/
-      v23 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 1, v62); /*0x6f0cee*/
+      v23 = ((Random *)&dword_A8B230[14].NeedsSaveOrLink)->Range(1, v62); /*0x6f0cee*/
       v24 = 0; /*0x6f0cf3*/
       if ( v60.m_10 <= 0 ) /*0x6f0cfb*/
         goto LABEL_58; /*0x6f0cfb*/

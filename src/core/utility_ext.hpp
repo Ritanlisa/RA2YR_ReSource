@@ -1322,8 +1322,7 @@ public:
     virtual int Dtor(); // 0x6406F0 G42.35 C6 体签名
     static int Dtor(void *aP0);  // 0x6406F0 G42.35 static-form sync (ui/supplied site 0x46E088)
     virtual unsigned int * Constructor(); // 0x65D430 G42.35 C6 体签名
-    virtual void Release(); // 0x65D460
-    static int Release(void *aP0);  // 0x65D460 G42.35 static-form sync (ui/supplied sites 0x76564B/0x765659)
+    virtual void Release(); // 0x65D460 thiscall (x181c: static-form overload removed)
     // +4 more virtual methods
 
     uint8_t ComPtr_field_0x04[4];
@@ -2024,8 +2023,12 @@ public:
     virtual ~Random() = default;
 
     virtual int Gaussian(); // 0x5980C0 G42.35 C7 体签名
-    virtual int State(); // 0x65C780 G42.35 C8 体签名
-    virtual int Range(int a1, int a2);  // 0x65C7E0  // G42.35 def-truth sync (调用形 (Random*,min,max) @0x73E62B)
+    // X181A: State/Range are NOT virtual in the binary (no vtable slot holds
+    // 0x65C780 / 0x65C7E0 -- every call site is a direct `call`); declaring
+    // them virtual would turn the restored p->Method() sites into indirect
+    // dispatch through a vptr these globals do not have.
+    int State(); // 0x65C780 G42.35 C8 体签名
+    int Range(int a1, int a2);  // 0x65C7E0 (G42.35 def-truth sync @0x73E62B)
     virtual void AdvanceRandomBytes(); // 0x661850
 
     uint8_t q004[4];
