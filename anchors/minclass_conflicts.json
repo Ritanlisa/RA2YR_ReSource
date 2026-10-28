@@ -275,7 +275,69 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x00402220",
+     "ObjectClass"
+    ],
+    [
+     "self",
+     "0x004025B0",
+     "Voice"
+    ],
+    [
+     "self",
+     "0x004026B0",
+     "AudioStream"
+    ],
+    [
+     "self",
+     "0x004026C0",
+     "(unknown)"
+    ],
+    [
+     "self",
+     "0x00402720",
+     "Audio"
+    ],
+    [
+     "self",
+     "0x00405AC0",
+     "(unknown)"
+    ],
+    [
+     "edge",
+     "0x00402720",
+     "Audio"
+    ],
+    [
+     "edge",
+     "0x004026B0",
+     "AudioStream"
+    ],
+    [
+     "edge",
+     "0x004026B0",
+     "AudioStream"
+    ],
+    [
+     "edge",
+     "0x004025B0",
+     "Voice"
+    ],
+    [
+     "edge",
+     "0x004026B0",
+     "AudioStream"
+    ],
+    [
+     "edge",
+     "0x004026B0",
+     "AudioStream"
+    ]
+   ]
   },
   {
    "cluster": "G:87E790",
@@ -369,7 +431,69 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x00403820",
+     "AudioStream"
+    ],
+    [
+     "self",
+     "0x00403870",
+     "CoordBounds"
+    ],
+    [
+     "self",
+     "0x004038A0",
+     "AudioStream"
+    ],
+    [
+     "self",
+     "0x004038C0",
+     "AudioStream"
+    ],
+    [
+     "edge",
+     "0x00403820",
+     "AudioStream"
+    ],
+    [
+     "edge",
+     "0x00403870",
+     "CoordBounds"
+    ],
+    [
+     "edge",
+     "0x004038A0",
+     "AudioStream"
+    ],
+    [
+     "edge",
+     "0x004038C0",
+     "AudioStream"
+    ],
+    [
+     "edge",
+     "0x00403820",
+     "AudioStream"
+    ],
+    [
+     "edge",
+     "0x00403870",
+     "CoordBounds"
+    ],
+    [
+     "edge",
+     "0x004038A0",
+     "AudioStream"
+    ],
+    [
+     "edge",
+     "0x004038C0",
+     "AudioStream"
+    ]
+   ]
   },
   {
    "cluster": "R:404140:ecx",
@@ -460,7 +584,29 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x00404140",
+     "Voice"
+    ],
+    [
+     "self",
+     "0x004047B0",
+     "AudioStream"
+    ],
+    [
+     "self",
+     "0x004054A0",
+     "Audio"
+    ],
+    [
+     "self",
+     "0x004055C0",
+     "(unknown)"
+    ]
+   ]
   },
   {
    "cluster": "G:A9F9B8",
@@ -511,7 +657,69 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x00405BE0",
+     "AudioController"
+    ],
+    [
+     "self",
+     "0x00405C00",
+     "AudioFileClass"
+    ],
+    [
+     "self",
+     "0x00405D40",
+     "AudioController"
+    ],
+    [
+     "self",
+     "0x00405FD0",
+     "AudioFile"
+    ],
+    [
+     "self",
+     "0x00406060",
+     "Mixer"
+    ],
+    [
+     "edge",
+     "0x00405FD0",
+     "AudioFile"
+    ],
+    [
+     "edge",
+     "0x00405BE0",
+     "AudioController"
+    ],
+    [
+     "edge",
+     "0x00406060",
+     "Mixer"
+    ],
+    [
+     "edge",
+     "0x00406060",
+     "Mixer"
+    ],
+    [
+     "edge",
+     "0x00405C00",
+     "AudioFileClass"
+    ],
+    [
+     "edge",
+     "0x00405BE0",
+     "AudioController"
+    ],
+    [
+     "edge",
+     "0x00405FD0",
+     "AudioFile"
+    ]
+   ]
   },
   {
    "cluster": "P:4093B0:1",
@@ -557,7 +765,19 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x004070B0",
+     "Audio"
+    ],
+    [
+     "self",
+     "0x004080F0",
+     "ThemeManager"
+    ]
+   ]
   },
   {
    "cluster": "M:407680:this:0x34",
@@ -616,7 +836,44 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x004079C0",
+     "AudioStream"
+    ],
+    [
+     "self",
+     "0x00408E70",
+     "Count"
+    ],
+    [
+     "self",
+     "0x00409310",
+     "AudioStream"
+    ],
+    [
+     "edge",
+     "0x00409310",
+     "AudioStream"
+    ],
+    [
+     "edge",
+     "0x00408E70",
+     "Count"
+    ],
+    [
+     "edge",
+     "0x00409310",
+     "AudioStream"
+    ],
+    [
+     "edge",
+     "0x00408E70",
+     "Count"
+    ]
+   ]
   },
   {
    "cluster": "R:4114B0:ecx",
@@ -657,6 +914,13 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x004114B0",
+     "StreamClass"
+    ]
+   ],
    "c2_pinned": [
     "StreamClass"
    ],
@@ -729,7 +993,69 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "exact_conflict"
+   "reason": "exact_conflict",
+   "c2_pins": [
+    [
+     "self",
+     "0x004137A0",
+     "VectorClass"
+    ],
+    [
+     "self",
+     "0x00413800",
+     "LoadGame"
+    ],
+    [
+     "self",
+     "0x00412B40",
+     "AircraftTrackerClass"
+    ],
+    [
+     "self",
+     "0x004134A0",
+     "GadgetGrid"
+    ],
+    [
+     "self",
+     "0x004135D0",
+     "GadgetGrid"
+    ],
+    [
+     "self",
+     "0x004136C0",
+     "LoadGame"
+    ],
+    [
+     "self",
+     "0x00413850",
+     "SaveGame"
+    ],
+    [
+     "self",
+     "0x004138C0",
+     "Coord"
+    ],
+    [
+     "edge",
+     "0x00412B40",
+     "AircraftTrackerClass"
+    ],
+    [
+     "edge",
+     "0x004137A0",
+     "VectorClass"
+    ],
+    [
+     "edge",
+     "0x004137A0",
+     "VectorClass"
+    ],
+    [
+     "edge",
+     "0x004138C0",
+     "Coord"
+    ]
+   ]
   },
   {
    "cluster": "R:41C2E0:ecx",
@@ -762,6 +1088,13 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x0041C2E0",
+     "Vector"
+    ]
+   ],
    "c2_pinned": [
     "Vector"
    ],
@@ -826,6 +1159,48 @@
     "C8": 1597
    },
    "reason": "exact_conflict",
+   "c2_pins": [
+    [
+     "self",
+     "0x0041C500",
+     "BuildingTypeClass"
+    ],
+    [
+     "self",
+     "0x0041C590",
+     "BuildingTypeClass"
+    ],
+    [
+     "edge",
+     "0x0041C590",
+     "BuildingTypeClass"
+    ],
+    [
+     "edge",
+     "0x0041C500",
+     "BuildingTypeClass"
+    ],
+    [
+     "edge",
+     "0x0041C590",
+     "BuildingTypeClass"
+    ],
+    [
+     "edge",
+     "0x0041C590",
+     "BuildingTypeClass"
+    ],
+    [
+     "edge",
+     "0x0041C500",
+     "BuildingTypeClass"
+    ],
+    [
+     "edge",
+     "0x0041C590",
+     "BuildingTypeClass"
+    ]
+   ],
    "c2_pinned": [
     "BuildingTypeClass"
    ]
@@ -883,7 +1258,29 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x0041D540",
+     "ObjectClass"
+    ],
+    [
+     "self",
+     "0x0041DA20",
+     "AirstrikeClass"
+    ],
+    [
+     "self",
+     "0x0041DB40",
+     "WTFMode"
+    ],
+    [
+     "self",
+     "0x0041DC80",
+     "AirstrikeClass"
+    ]
+   ]
   },
   {
    "cluster": "P:750010:0",
@@ -969,7 +1366,19 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x0041D7E0",
+     "Warhead"
+    ],
+    [
+     "self",
+     "0x0041D860",
+     "AirstrikeClass"
+    ]
+   ]
   },
   {
    "cluster": "R:41E720:ecx",
@@ -1060,7 +1469,24 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x0041E720",
+     "TriggerClass"
+    ],
+    [
+     "self",
+     "0x0041EAF0",
+     "AITriggerTypeClass"
+    ],
+    [
+     "self",
+     "0x0041EE90",
+     "AITriggerTypeClass"
+    ]
+   ]
   },
   {
    "cluster": "R:424C90:ecx",
@@ -1088,7 +1514,14 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x00424C90",
+     "AnimClass"
+    ]
+   ]
   },
   {
    "cluster": "R:425260:ecx",
@@ -1116,7 +1549,14 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x00425260",
+     "AnimClass"
+    ]
+   ]
   },
   {
    "cluster": "R:426630:ecx",
@@ -1148,7 +1588,14 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x00426630",
+     "CDTimerClass"
+    ]
+   ]
   },
   {
    "cluster": "R:4266D0:ecx",
@@ -1197,6 +1644,13 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x004266D0",
+     "(unknown)"
+    ]
+   ],
    "c2_pinned": [
     "AnimFile"
    ],
@@ -1297,7 +1751,69 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x00429A90",
+     "BuildingClass"
+    ],
+    [
+     "self",
+     "0x0042A460",
+     "BuildingClass"
+    ],
+    [
+     "self",
+     "0x0042A5B0",
+     "CellClass"
+    ],
+    [
+     "self",
+     "0x0042A6D0",
+     "Tactical"
+    ],
+    [
+     "self",
+     "0x0042AC00",
+     "CellClass"
+    ],
+    [
+     "self",
+     "0x0042ACF0",
+     "BuildingClass"
+    ],
+    [
+     "self",
+     "0x0042C290",
+     "Pathfinding"
+    ],
+    [
+     "self",
+     "0x0042D170",
+     "Pathfinding"
+    ],
+    [
+     "edge",
+     "0x0042A6D0",
+     "Tactical"
+    ],
+    [
+     "edge",
+     "0x0042D170",
+     "Pathfinding"
+    ],
+    [
+     "edge",
+     "0x0042D170",
+     "Pathfinding"
+    ],
+    [
+     "edge",
+     "0x0042D170",
+     "Pathfinding"
+    ]
+   ]
   },
   {
    "cluster": "M:56D6E0:this:0x28",
@@ -1331,7 +1847,24 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x0042B1C0",
+     "Cell"
+    ],
+    [
+     "self",
+     "0x0074CDB0",
+     "(unknown)"
+    ],
+    [
+     "edge",
+     "0x0042B1C0",
+     "Cell"
+    ]
+   ]
   },
   {
    "cluster": "M:634470:this:0x4",
@@ -1386,7 +1919,69 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x0042E410",
+     "Rect"
+    ],
+    [
+     "self",
+     "0x004F9A50",
+     "HouseClass"
+    ],
+    [
+     "edge",
+     "0x0042E410",
+     "Rect"
+    ],
+    [
+     "edge",
+     "0x0042E410",
+     "Rect"
+    ],
+    [
+     "edge",
+     "0x0042E410",
+     "Rect"
+    ],
+    [
+     "edge",
+     "0x0042E410",
+     "Rect"
+    ],
+    [
+     "edge",
+     "0x004F9A50",
+     "HouseClass"
+    ],
+    [
+     "edge",
+     "0x004F9A50",
+     "HouseClass"
+    ],
+    [
+     "edge",
+     "0x004F9A50",
+     "HouseClass"
+    ],
+    [
+     "edge",
+     "0x0042E410",
+     "Rect"
+    ],
+    [
+     "edge",
+     "0x0042E410",
+     "Rect"
+    ],
+    [
+     "edge",
+     "0x0042E410",
+     "Rect"
+    ]
+   ]
   },
   {
    "cluster": "M:5C05A0:this:0x10",
@@ -1420,6 +2015,18 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x00432AB0",
+     "BinkMovieHandle"
+    ],
+    [
+     "edge",
+     "0x00432AB0",
+     "BinkMovieHandle"
+    ]
+   ],
    "c2_pinned": [
     "BinkMovieHandle"
    ],
@@ -1485,7 +2092,29 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x00433CF0",
+     "Text"
+    ],
+    [
+     "self",
+     "0x00434120",
+     "FontClass"
+    ],
+    [
+     "self",
+     "0x00434500",
+     "FontClass"
+    ],
+    [
+     "edge",
+     "0x00433CF0",
+     "Text"
+    ]
+   ]
   },
   {
    "cluster": "G:B2D804",
@@ -1528,7 +2157,59 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x0043AD00",
+     "Buffer"
+    ],
+    [
+     "self",
+     "0x0043AE50",
+     "Vector"
+    ],
+    [
+     "edge",
+     "0x0043AD00",
+     "Buffer"
+    ],
+    [
+     "edge",
+     "0x0043AD00",
+     "Buffer"
+    ],
+    [
+     "edge",
+     "0x0043AE50",
+     "Vector"
+    ],
+    [
+     "edge",
+     "0x0043AE50",
+     "Vector"
+    ],
+    [
+     "edge",
+     "0x0043AD00",
+     "Buffer"
+    ],
+    [
+     "edge",
+     "0x0043AE50",
+     "Vector"
+    ],
+    [
+     "edge",
+     "0x0043AD00",
+     "Buffer"
+    ],
+    [
+     "edge",
+     "0x0043AE50",
+     "Vector"
+    ]
+   ]
   },
   {
    "cluster": "M:4690B0:this:0xB0",
@@ -1558,7 +2239,29 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x00452820",
+     "Warhead"
+    ],
+    [
+     "edge",
+     "0x00452820",
+     "Warhead"
+    ],
+    [
+     "edge",
+     "0x00710000",
+     "FootClass"
+    ],
+    [
+     "self",
+     "0x00710000",
+     "FootClass"
+    ]
+   ]
   },
   {
    "cluster": "R:458750:ecx",
@@ -1595,6 +2298,13 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x00458750",
+     "HouseClass"
+    ]
+   ],
    "c2_pinned": [
     "HouseClass"
    ],
@@ -1634,7 +2344,24 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x00471FF0",
+     "CaptureManagerClass"
+    ],
+    [
+     "self",
+     "0x00472140",
+     "CaptureManager"
+    ],
+    [
+     "edge",
+     "0x00471FF0",
+     "CaptureManagerClass"
+    ]
+   ]
   },
   {
    "cluster": "M:6D3D10:this:0x2BC",
@@ -1672,6 +2399,23 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x00472160",
+     "CaptureManagerClass"
+    ],
+    [
+     "edge",
+     "0x00472160",
+     "CaptureManagerClass"
+    ],
+    [
+     "edge",
+     "0x00472160",
+     "CaptureManagerClass"
+    ]
+   ],
    "c2_pinned": [
     "CaptureManagerClass"
    ],
@@ -1722,6 +2466,18 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x00473460",
+     "HouseClass"
+    ],
+    [
+     "edge",
+     "0x00473460",
+     "HouseClass"
+    ]
+   ],
    "c2_pinned": [
     "HouseClass"
    ],
@@ -1789,7 +2545,19 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x004737F0",
+     "ReinforcementClass"
+    ],
+    [
+     "self",
+     "0x007265C0",
+     "BuildingClass"
+    ]
+   ]
   },
   {
    "cluster": "R:4787E0:ecx",
@@ -1830,6 +2598,13 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x004787E0",
+     "INIClass"
+    ]
+   ],
    "c2_pinned": [
     "CCINIClass",
     "INIClass",
@@ -1933,7 +2708,69 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x0047B3A0",
+     "Isometric"
+    ],
+    [
+     "self",
+     "0x0047C3D0",
+     "Object"
+    ],
+    [
+     "self",
+     "0x0047C4D0",
+     "PlacementList"
+    ],
+    [
+     "self",
+     "0x0047C5A0",
+     "Object"
+    ],
+    [
+     "self",
+     "0x0047C620",
+     "CellClass"
+    ],
+    [
+     "self",
+     "0x0047E8A0",
+     "CellClass"
+    ],
+    [
+     "self",
+     "0x0047EC90",
+     "BuildingPlacement"
+    ],
+    [
+     "self",
+     "0x00481180",
+     "ObjectPlacement"
+    ],
+    [
+     "self",
+     "0x00485080",
+     "JumpjetLocomotionClass"
+    ],
+    [
+     "self",
+     "0x00486920",
+     "BuildingClass"
+    ],
+    [
+     "self",
+     "0x00486FF0",
+     "Cell"
+    ],
+    [
+     "self",
+     "0x00487A10",
+     "Cell"
+    ]
+   ]
   },
   {
    "cluster": "P:47C4D0:3",
@@ -2010,7 +2847,24 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x0047BDB0",
+     "(unknown)"
+    ],
+    [
+     "self",
+     "0x00480350",
+     "TacticalClass"
+    ],
+    [
+     "self",
+     "0x004814F0",
+     "CellClass"
+    ]
+   ]
   },
   {
    "cluster": "R:47DD70:ecx",
@@ -2059,6 +2913,13 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x0047DD70",
+     "CellClass"
+    ]
+   ],
    "c2_pinned": [
     "CellClass"
    ],
@@ -2159,7 +3020,69 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x00484680",
+     "TacticalMap"
+    ],
+    [
+     "self",
+     "0x004F6540",
+     "SuperWeaponTypeClass"
+    ],
+    [
+     "self",
+     "0x004F6EC0",
+     "HouseClass"
+    ],
+    [
+     "self",
+     "0x004F9B70",
+     "HouseClass"
+    ],
+    [
+     "self",
+     "0x004F9F90",
+     "HouseClass"
+    ],
+    [
+     "self",
+     "0x004FAD20",
+     "SuperWeapon"
+    ],
+    [
+     "self",
+     "0x004FAE50",
+     "SuperWeapon"
+    ],
+    [
+     "self",
+     "0x004FD500",
+     "House"
+    ],
+    [
+     "self",
+     "0x004FD9A0",
+     "(unknown)"
+    ],
+    [
+     "self",
+     "0x004FDD10",
+     "HouseClass"
+    ],
+    [
+     "self",
+     "0x004FEA60",
+     "HouseClass"
+    ],
+    [
+     "self",
+     "0x00501AC0",
+     "HouseClass"
+    ]
+   ]
   },
   {
    "cluster": "M:48C3E0:this:0x4",
@@ -2216,7 +3139,49 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x0048B570",
+     "PacketQueue"
+    ],
+    [
+     "self",
+     "0x0048B720",
+     "Terrain"
+    ],
+    [
+     "self",
+     "0x0048BA10",
+     "ConnectionClass"
+    ],
+    [
+     "edge",
+     "0x0048BA10",
+     "ConnectionClass"
+    ],
+    [
+     "edge",
+     "0x0048B570",
+     "PacketQueue"
+    ],
+    [
+     "edge",
+     "0x0048B720",
+     "Terrain"
+    ],
+    [
+     "edge",
+     "0x0048B570",
+     "PacketQueue"
+    ],
+    [
+     "edge",
+     "0x0048B570",
+     "PacketQueue"
+    ]
+   ]
   },
   {
    "cluster": "M:542450:this:0x4",
@@ -2253,7 +3218,59 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x0048BA80",
+     "CellClass"
+    ],
+    [
+     "self",
+     "0x0048BA90",
+     "IPXManagerClass"
+    ],
+    [
+     "edge",
+     "0x0048BA80",
+     "CellClass"
+    ],
+    [
+     "edge",
+     "0x0048BA80",
+     "CellClass"
+    ],
+    [
+     "edge",
+     "0x0048BA80",
+     "CellClass"
+    ],
+    [
+     "edge",
+     "0x0048BA90",
+     "IPXManagerClass"
+    ],
+    [
+     "edge",
+     "0x0048BA80",
+     "CellClass"
+    ],
+    [
+     "edge",
+     "0x0048BA80",
+     "CellClass"
+    ],
+    [
+     "edge",
+     "0x0048BA80",
+     "CellClass"
+    ],
+    [
+     "edge",
+     "0x0048BA90",
+     "IPXManagerClass"
+    ]
+   ]
   },
   {
    "cluster": "M:5C21D0:this:0x40",
@@ -2312,7 +3329,69 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x0049BC80",
+     "Movie"
+    ],
+    [
+     "self",
+     "0x0049BCA0",
+     "MPCooperative"
+    ],
+    [
+     "self",
+     "0x0049BCC0",
+     "Movie"
+    ],
+    [
+     "self",
+     "0x0049BCE0",
+     "MPCooperative"
+    ],
+    [
+     "edge",
+     "0x0049BCC0",
+     "Movie"
+    ],
+    [
+     "edge",
+     "0x0049BC80",
+     "Movie"
+    ],
+    [
+     "edge",
+     "0x0049BC80",
+     "Movie"
+    ],
+    [
+     "edge",
+     "0x0049BCE0",
+     "MPCooperative"
+    ],
+    [
+     "edge",
+     "0x0049BC80",
+     "Movie"
+    ],
+    [
+     "edge",
+     "0x0049BCA0",
+     "MPCooperative"
+    ],
+    [
+     "edge",
+     "0x0049BCC0",
+     "Movie"
+    ],
+    [
+     "edge",
+     "0x0049BCC0",
+     "Movie"
+    ]
+   ]
   },
   {
    "cluster": "M:5C1A10:this:0x40",
@@ -2403,7 +3482,54 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x0049CAF0",
+     "Movie"
+    ],
+    [
+     "self",
+     "0x0049D070",
+     "Array"
+    ],
+    [
+     "edge",
+     "0x0049CAF0",
+     "Movie"
+    ],
+    [
+     "edge",
+     "0x0049D070",
+     "Array"
+    ],
+    [
+     "edge",
+     "0x0049D070",
+     "Array"
+    ],
+    [
+     "edge",
+     "0x0049D070",
+     "Array"
+    ],
+    [
+     "edge",
+     "0x0049CAF0",
+     "Movie"
+    ],
+    [
+     "edge",
+     "0x0049CAF0",
+     "Movie"
+    ],
+    [
+     "edge",
+     "0x0049D070",
+     "Array"
+    ]
+   ]
   },
   {
    "cluster": "M:599650:this:0x180",
@@ -2433,6 +3559,18 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x0049E8E0",
+     "INISectionList"
+    ],
+    [
+     "edge",
+     "0x0049E8E0",
+     "INISectionList"
+    ]
+   ],
    "c2_pinned": [
     "INISectionList"
    ],
@@ -2484,7 +3622,19 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x004A1DE0",
+     "Checksummer"
+    ],
+    [
+     "self",
+     "0x004A1DB0",
+     "Checksum"
+    ]
+   ]
   },
   {
    "cluster": "P:4B4780:2",
@@ -2539,7 +3689,24 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x004B0AD0",
+     "JumpjetLocomotion"
+    ],
+    [
+     "self",
+     "0x004B0DF0",
+     "(unknown)"
+    ],
+    [
+     "self",
+     "0x004B4780",
+     "JumpjetLocomotion"
+    ]
+   ]
   },
   {
    "cluster": "R:4B5210:ecx",
@@ -2628,7 +3795,19 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x004B5210",
+     "TechnoClass"
+    ],
+    [
+     "self",
+     "0x00556600",
+     "LinkedList"
+    ]
+   ]
   },
   {
    "cluster": "G:8A38E0",
@@ -2673,7 +3852,59 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x004C6180",
+     "Scenario"
+    ],
+    [
+     "self",
+     "0x004C6210",
+     "GameResult"
+    ],
+    [
+     "self",
+     "0x004C6320",
+     "LoadGame"
+    ],
+    [
+     "self",
+     "0x004C6340",
+     "SaveGame"
+    ],
+    [
+     "edge",
+     "0x004C6340",
+     "SaveGame"
+    ],
+    [
+     "edge",
+     "0x004C6320",
+     "LoadGame"
+    ],
+    [
+     "edge",
+     "0x004C6180",
+     "Scenario"
+    ],
+    [
+     "edge",
+     "0x004C6210",
+     "GameResult"
+    ],
+    [
+     "edge",
+     "0x004C6210",
+     "GameResult"
+    ],
+    [
+     "edge",
+     "0x004C6210",
+     "GameResult"
+    ]
+   ]
   },
   {
    "cluster": "P:4C6320:0",
@@ -2708,7 +3939,24 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x00539AE0",
+     "SuperWeapon"
+    ],
+    [
+     "self",
+     "0x0067E730",
+     "LoadGame"
+    ],
+    [
+     "self",
+     "0x0067F9C0",
+     "Game"
+    ]
+   ]
   },
   {
    "cluster": "P:4C6340:0",
@@ -2743,7 +3991,24 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x00539890",
+     "SuperWeaponClass"
+    ],
+    [
+     "self",
+     "0x0067D300",
+     "SaveGame"
+    ],
+    [
+     "self",
+     "0x0067F7E0",
+     "SaveGame"
+    ]
+   ]
   },
   {
    "cluster": "R:4CA670:ecx",
@@ -2780,6 +4045,13 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x004CA670",
+     "FactoryClass"
+    ]
+   ],
    "c2_pinned": [
     "FactoryClass"
    ],
@@ -2872,7 +4144,29 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x004CD2A0",
+     "FootClass"
+    ],
+    [
+     "self",
+     "0x004CE680",
+     "FootClass"
+    ],
+    [
+     "self",
+     "0x004CE840",
+     "DropPod"
+    ],
+    [
+     "self",
+     "0x004CF950",
+     "TechnoClass"
+    ]
+   ]
   },
   {
    "cluster": "P:5785F0:1",
@@ -2906,6 +4200,13 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x004CD510",
+     "JumpjetLocomotionClass"
+    ]
+   ],
    "c2_pinned": [
     "JumpjetLocomotionClass"
    ],
@@ -2955,7 +4256,14 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x004CFA70",
+     "LocomotionClass"
+    ]
+   ]
   },
   {
    "cluster": "M:486C50:this:0x4",
@@ -2989,6 +4297,18 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x004D2790",
+     "CellClass"
+    ],
+    [
+     "edge",
+     "0x004D2790",
+     "CellClass"
+    ]
+   ],
    "c2_pinned": [
     "CellClass"
    ],
@@ -3049,7 +4369,29 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x004DB0D0",
+     "TechnoClass"
+    ],
+    [
+     "self",
+     "0x00706BD0",
+     "(unknown)"
+    ],
+    [
+     "self",
+     "0x00707280",
+     "(unknown)"
+    ],
+    [
+     "self",
+     "0x00707480",
+     "Surface"
+    ]
+   ]
   },
   {
    "cluster": "G:A802C8",
@@ -3087,7 +4429,34 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x004F1AA0",
+     "OptionQueue"
+    ],
+    [
+     "self",
+     "0x00652540",
+     "(unknown)"
+    ],
+    [
+     "edge",
+     "0x004F1AA0",
+     "OptionQueue"
+    ],
+    [
+     "edge",
+     "0x004F1AA0",
+     "OptionQueue"
+    ],
+    [
+     "edge",
+     "0x004F1AA0",
+     "OptionQueue"
+    ]
+   ]
   },
   {
    "cluster": "M:4C9B20:this:0x60",
@@ -3139,6 +4508,23 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x004F9790",
+     "HouseClass"
+    ],
+    [
+     "self",
+     "0x004F9970",
+     "HouseClass"
+    ],
+    [
+     "edge",
+     "0x004F9790",
+     "HouseClass"
+    ]
+   ],
    "c2_pinned": [
     "HouseClass"
    ],
@@ -3232,6 +4618,48 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x004FAA10",
+     "HouseClass"
+    ],
+    [
+     "self",
+     "0x004FB0E0",
+     "HouseClass"
+    ],
+    [
+     "self",
+     "0x004FB6B0",
+     "HouseClass"
+    ],
+    [
+     "edge",
+     "0x004FAA10",
+     "HouseClass"
+    ],
+    [
+     "edge",
+     "0x004FAA10",
+     "HouseClass"
+    ],
+    [
+     "edge",
+     "0x004FAA10",
+     "HouseClass"
+    ],
+    [
+     "edge",
+     "0x004FAA10",
+     "HouseClass"
+    ],
+    [
+     "edge",
+     "0x004FAA10",
+     "HouseClass"
+    ]
+   ],
    "c2_pinned": [
     "HouseClass"
    ],
@@ -3265,7 +4693,14 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x004FB840",
+     "BuildingPlacement"
+    ]
+   ]
   },
   {
    "cluster": "P:49FAE0:4",
@@ -3329,7 +4764,29 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x004FD060",
+     "HouseClass"
+    ],
+    [
+     "self",
+     "0x004FD150",
+     "BuildingClass"
+    ],
+    [
+     "self",
+     "0x004FFB20",
+     "PathfindingClass"
+    ],
+    [
+     "self",
+     "0x004FFD50",
+     "(unknown)"
+    ]
+   ]
   },
   {
    "cluster": "P:505360:1",
@@ -3424,7 +4881,44 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x004FE3E0",
+     "HouseClass"
+    ],
+    [
+     "self",
+     "0x00506EF0",
+     "HouseClass"
+    ],
+    [
+     "self",
+     "0x00507B80",
+     "(unknown)"
+    ],
+    [
+     "self",
+     "0x00507D70",
+     "HouseClass"
+    ],
+    [
+     "self",
+     "0x00507F60",
+     "HouseClass"
+    ],
+    [
+     "self",
+     "0x0050C340",
+     "HouseClass"
+    ],
+    [
+     "self",
+     "0x005082C0",
+     "HouseClass"
+    ]
+   ]
   },
   {
    "cluster": "R:4FEEE0:ecx",
@@ -3453,6 +4947,13 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x004FEEE0",
+     "HouseClass"
+    ]
+   ],
    "c2_pinned": [
     "HouseClass"
    ],
@@ -3487,6 +4988,13 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x004FF210",
+     "HouseClass"
+    ]
+   ],
    "c2_pinned": [
     "HouseClass"
    ],
@@ -3560,7 +5068,24 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x00501750",
+     "(unknown)"
+    ],
+    [
+     "self",
+     "0x005018C0",
+     "HouseClass"
+    ],
+    [
+     "self",
+     "0x00502A80",
+     "HouseClass"
+    ]
+   ]
   },
   {
    "cluster": "P:577AB0:0",
@@ -3647,6 +5172,13 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x00508F60",
+     "HouseClass"
+    ]
+   ],
    "c2_pinned": [
     "HouseClass"
    ],
@@ -3701,6 +5233,13 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x00509140",
+     "HouseClass"
+    ]
+   ],
    "c2_pinned": [
     "HouseClass"
    ],
@@ -3766,7 +5305,29 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x0050BA00",
+     "(unknown)"
+    ],
+    [
+     "self",
+     "0x006B1A70",
+     "SlaveManagerClass"
+    ],
+    [
+     "self",
+     "0x0048AB90",
+     "TechnoClass"
+    ],
+    [
+     "edge",
+     "0x0048AB90",
+     "TechnoClass"
+    ]
+   ]
   },
   {
    "cluster": "R:50E830:ecx",
@@ -3819,6 +5380,13 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x0050E830",
+     "TeamTypeVector"
+    ]
+   ],
    "c2_pinned": [
     "TeamTypeVector"
    ],
@@ -3877,6 +5445,13 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x00512DC0",
+     "InfantryTypeVector"
+    ]
+   ],
    "c2_pinned": [
     "InfantryTypeVector"
    ],
@@ -3935,6 +5510,13 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x00513190",
+     "UnitTypeVector"
+    ]
+   ],
    "c2_pinned": [
     "UnitTypeVector"
    ],
@@ -4032,7 +5614,29 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x00514F70",
+     "MovementAI"
+    ],
+    [
+     "self",
+     "0x00515ED0",
+     "(unknown)"
+    ],
+    [
+     "self",
+     "0x005164D0",
+     "MovementAI"
+    ],
+    [
+     "self",
+     "0x00517110",
+     "(unknown)"
+    ]
+   ]
   },
   {
    "cluster": "P:519630:0",
@@ -4153,6 +5757,13 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x00522D00",
+     "SlaveManagerClass"
+    ]
+   ],
    "c2_pinned": [
     "SlaveManagerClass"
    ],
@@ -4187,6 +5798,13 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x00522D20",
+     "SlaveManagerClass"
+    ]
+   ],
    "c2_pinned": [
     "SlaveManagerClass"
    ],
@@ -4221,6 +5839,13 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x00522D30",
+     "SlaveManagerClass"
+    ]
+   ],
    "c2_pinned": [
     "SlaveManagerClass"
    ],
@@ -4255,6 +5880,13 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x00522FC0",
+     "SlaveManagerClass"
+    ]
+   ],
    "c2_pinned": [
     "SlaveManagerClass"
    ],
@@ -4310,7 +5942,69 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x005387D0",
+     "SortedArray"
+    ],
+    [
+     "self",
+     "0x005388A0",
+     "SortedArray"
+    ],
+    [
+     "self",
+     "0x00538980",
+     "SortedArray"
+    ],
+    [
+     "self",
+     "0x00538B80",
+     "KeyboardConfig"
+    ],
+    [
+     "self",
+     "0x0055F6C0",
+     "SyncDelay"
+    ],
+    [
+     "self",
+     "0x0055F6E0",
+     "SortedVector"
+    ],
+    [
+     "edge",
+     "0x00538980",
+     "SortedArray"
+    ],
+    [
+     "edge",
+     "0x005388A0",
+     "SortedArray"
+    ],
+    [
+     "edge",
+     "0x005387D0",
+     "SortedArray"
+    ],
+    [
+     "edge",
+     "0x00538980",
+     "SortedArray"
+    ],
+    [
+     "edge",
+     "0x005388A0",
+     "SortedArray"
+    ],
+    [
+     "edge",
+     "0x005387D0",
+     "SortedArray"
+    ]
+   ]
   },
   {
    "cluster": "G:A8BB1C",
@@ -4369,7 +6063,69 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x0053ED20",
+     "NetworkID"
+    ],
+    [
+     "self",
+     "0x0053EDA0",
+     "Network"
+    ],
+    [
+     "self",
+     "0x0053EE70",
+     "GUID"
+    ],
+    [
+     "self",
+     "0x0053F0E0",
+     "Network"
+    ],
+    [
+     "self",
+     "0x0053F200",
+     "Network"
+    ],
+    [
+     "edge",
+     "0x0053EE70",
+     "GUID"
+    ],
+    [
+     "edge",
+     "0x005E9290",
+     "NetworkLobby"
+    ],
+    [
+     "self",
+     "0x0053EF30",
+     "NetworkID"
+    ],
+    [
+     "self",
+     "0x0053ECB0",
+     "Waypoint"
+    ],
+    [
+     "self",
+     "0x0053EDE0",
+     "Struct"
+    ],
+    [
+     "edge",
+     "0x0053F0E0",
+     "Network"
+    ],
+    [
+     "edge",
+     "0x0053F200",
+     "Network"
+    ]
+   ]
   },
   {
    "cluster": "M:543330:this:0xAC",
@@ -4399,6 +6155,18 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x005471B0",
+     "HouseClass"
+    ],
+    [
+     "edge",
+     "0x005471B0",
+     "HouseClass"
+    ]
+   ],
    "c2_pinned": [
     "HouseClass"
    ],
@@ -4433,6 +6201,13 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x005471F0",
+     "CellClass"
+    ]
+   ],
    "c2_pinned": [
     "CellClass"
    ],
@@ -4499,6 +6274,13 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x0054B980",
+     "HouseClass"
+    ]
+   ],
    "c2_pinned": [
     "HouseClass"
    ],
@@ -4577,6 +6359,13 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x0054BFF0",
+     "MovementClass"
+    ]
+   ],
    "c2_pinned": [
     "MovementClass"
    ],
@@ -4641,7 +6430,49 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x0054F050",
+     "EventQueue"
+    ],
+    [
+     "self",
+     "0x0054F1C0",
+     "EventBuffer"
+    ],
+    [
+     "self",
+     "0x0054F200",
+     "EventClass"
+    ],
+    [
+     "self",
+     "0x0054F2F0",
+     "InputManager"
+    ],
+    [
+     "self",
+     "0x0054F650",
+     "EventQueue"
+    ],
+    [
+     "self",
+     "0x0054F670",
+     "InputManager"
+    ],
+    [
+     "self",
+     "0x0054F6B0",
+     "EventQueue"
+    ],
+    [
+     "self",
+     "0x0054F790",
+     "InputManager"
+    ]
+   ]
   },
   {
    "cluster": "R:54FE60:ecx",
@@ -4730,6 +6561,13 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x0054FE60",
+     "TimerClass"
+    ]
+   ],
    "c2_pinned": [
     "TimerClass"
    ],
@@ -4801,7 +6639,19 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x00558DD0",
+     "SaveLoadDialog"
+    ],
+    [
+     "self",
+     "0x005596A0",
+     "LoadSaveDialog"
+    ]
+   ]
   },
   {
    "cluster": "P:473A80:0",
@@ -4831,7 +6681,19 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x005595F0",
+     "(unknown)"
+    ],
+    [
+     "self",
+     "0x0065F520",
+     "ScenarioClass"
+    ]
+   ]
   },
   {
    "cluster": "P:5D4510:0",
@@ -4882,6 +6744,13 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x0055E420",
+     "Chat"
+    ]
+   ],
    "c2_pinned": [
     "Chat"
    ],
@@ -4940,6 +6809,13 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x00589100",
+     "Subzone"
+    ]
+   ],
    "c2_pinned": [
     "Subzone"
    ],
@@ -4990,6 +6866,13 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x0058C070",
+     "TileNode"
+    ]
+   ],
    "c2_pinned": [
     "TileNode"
    ],
@@ -5037,7 +6920,19 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x00594870",
+     "(unknown)"
+    ],
+    [
+     "self",
+     "0x00594F40",
+     "BuildingPlacement"
+    ]
+   ]
   },
   {
    "cluster": "G:ABDFB8",
@@ -5071,6 +6966,43 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x005980C0",
+     "Random"
+    ],
+    [
+     "edge",
+     "0x005980C0",
+     "Random"
+    ],
+    [
+     "edge",
+     "0x005980C0",
+     "Random"
+    ],
+    [
+     "edge",
+     "0x005980C0",
+     "Random"
+    ],
+    [
+     "edge",
+     "0x005980C0",
+     "Random"
+    ],
+    [
+     "edge",
+     "0x005980C0",
+     "Random"
+    ],
+    [
+     "edge",
+     "0x005980C0",
+     "Random"
+    ]
+   ],
    "c2_pinned": [
     "Random"
    ],
@@ -5133,6 +7065,13 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x005AE220",
+     "CampaignClass"
+    ]
+   ],
    "c2_pinned": [
     "CampaignClass"
    ],
@@ -5177,7 +7116,19 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x005AE460",
+     "CampaignClass"
+    ],
+    [
+     "self",
+     "0x005AE100",
+     "ScenarioClass"
+    ]
+   ]
   },
   {
    "cluster": "P:4C9480:2",
@@ -5243,6 +7194,13 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x005B01C0",
+     "BuildingClass"
+    ]
+   ],
    "c2_pinned": [
     "BuildingClass"
    ],
@@ -5314,7 +7272,34 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x005BCB90",
+     "(unknown)"
+    ],
+    [
+     "self",
+     "0x005BCE10",
+     "(unknown)"
+    ],
+    [
+     "self",
+     "0x005BD0D0",
+     "Debug"
+    ],
+    [
+     "self",
+     "0x005BD2E0",
+     "(unknown)"
+    ],
+    [
+     "self",
+     "0x005BD490",
+     "Text"
+    ]
+   ]
   },
   {
    "cluster": "M:7693A0:this:0x64",
@@ -5350,7 +7335,34 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x005CC690",
+     "(unknown)"
+    ],
+    [
+     "self",
+     "0x005CC6A0",
+     "MSAnim"
+    ],
+    [
+     "edge",
+     "0x005CC6A0",
+     "MSAnim"
+    ],
+    [
+     "edge",
+     "0x005CC6A0",
+     "MSAnim"
+    ],
+    [
+     "edge",
+     "0x005CC6A0",
+     "MSAnim"
+    ]
+   ]
   },
   {
    "cluster": "P:473A80:2",
@@ -5442,7 +7454,29 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x005CEEF0",
+     "SessionClass"
+    ],
+    [
+     "self",
+     "0x005CF5F0",
+     "SessionClass"
+    ],
+    [
+     "self",
+     "0x0068CD20",
+     "ScoreScreen"
+    ],
+    [
+     "self",
+     "0x00759260",
+     "Stream"
+    ]
+   ]
   },
   {
    "cluster": "M:4F3690:this:0x10",
@@ -5477,7 +7511,39 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x005D26C0",
+     "Team"
+    ],
+    [
+     "self",
+     "0x005D1E50",
+     "DSurface"
+    ],
+    [
+     "edge",
+     "0x005D26C0",
+     "Team"
+    ],
+    [
+     "edge",
+     "0x005D1E50",
+     "DSurface"
+    ],
+    [
+     "edge",
+     "0x005D26C0",
+     "Team"
+    ],
+    [
+     "edge",
+     "0x005D1E50",
+     "DSurface"
+    ]
+   ]
   },
   {
    "cluster": "P:473A80:1",
@@ -5539,6 +7605,13 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x005D2E90",
+     "FontClass"
+    ]
+   ],
    "c2_pinned": [
     "FontClass"
    ],
@@ -5618,7 +7691,34 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x005D5820",
+     "Audio"
+    ],
+    [
+     "self",
+     "0x007209D0",
+     "Movie"
+    ],
+    [
+     "self",
+     "0x00720A80",
+     "Movie"
+    ],
+    [
+     "self",
+     "0x00720BB0",
+     "ThemeClass"
+    ],
+    [
+     "self",
+     "0x00721140",
+     "RulesClass"
+    ]
+   ]
   },
   {
    "cluster": "G:AC1858",
@@ -5678,7 +7778,54 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x00625090",
+     "HashTable"
+    ],
+    [
+     "self",
+     "0x006252F0",
+     "ComboBoxOwnerDraw"
+    ],
+    [
+     "self",
+     "0x00625390",
+     "ComboBoxOwnerDraw"
+    ],
+    [
+     "self",
+     "0x006258E0",
+     "ComboBoxOwnerDraw"
+    ],
+    [
+     "edge",
+     "0x00625090",
+     "HashTable"
+    ],
+    [
+     "edge",
+     "0x006252F0",
+     "ComboBoxOwnerDraw"
+    ],
+    [
+     "edge",
+     "0x00625090",
+     "HashTable"
+    ],
+    [
+     "edge",
+     "0x00625390",
+     "ComboBoxOwnerDraw"
+    ],
+    [
+     "edge",
+     "0x006258E0",
+     "ComboBoxOwnerDraw"
+    ]
+   ]
   },
   {
    "cluster": "R:628240:ecx",
@@ -5731,6 +7878,13 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x00628240",
+     "FileExtension"
+    ]
+   ],
    "c2_pinned": [
     "FileExtension"
    ],
@@ -5766,6 +7920,13 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x00628DD0",
+     "FileExtension"
+    ]
+   ],
    "c2_pinned": [
     "FileExtension"
    ],
@@ -5829,6 +7990,18 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x0062A8E0",
+     "ParasiteClass"
+    ],
+    [
+     "self",
+     "0x0062A980",
+     "ParasiteClass"
+    ]
+   ],
    "c2_pinned": [
     "ParasiteClass"
    ],
@@ -5908,7 +8081,24 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x0062BD50",
+     "ParasiteClass"
+    ],
+    [
+     "self",
+     "0x0062CE40",
+     "ParticleClass"
+    ],
+    [
+     "edge",
+     "0x0062CE40",
+     "ParticleClass"
+    ]
+   ]
   },
   {
    "cluster": "P:634290:0",
@@ -5971,7 +8161,44 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x006339B0",
+     "TeamClass"
+    ],
+    [
+     "self",
+     "0x00636980",
+     "TeamClass"
+    ],
+    [
+     "self",
+     "0x0063B550",
+     "ScriptAction"
+    ],
+    [
+     "self",
+     "0x0063BE10",
+     "BuildingClass"
+    ],
+    [
+     "self",
+     "0x0063BE60",
+     "BuildingClass"
+    ],
+    [
+     "self",
+     "0x00633EA0",
+     "TeamClass"
+    ],
+    [
+     "self",
+     "0x00633F20",
+     "TeamClass"
+    ]
+   ]
   },
   {
    "cluster": "P:6343C0:3",
@@ -6034,7 +8261,54 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x006342D0",
+     "Function"
+    ],
+    [
+     "self",
+     "0x00634770",
+     "(unknown)"
+    ],
+    [
+     "self",
+     "0x00635350",
+     "ScenarioClass"
+    ],
+    [
+     "self",
+     "0x00635490",
+     "(unknown)"
+    ],
+    [
+     "self",
+     "0x00635830",
+     "BuildingClass"
+    ],
+    [
+     "self",
+     "0x00635A40",
+     "TeamClass"
+    ],
+    [
+     "self",
+     "0x00635C10",
+     "TeamClass"
+    ],
+    [
+     "self",
+     "0x0063C690",
+     "(unknown)"
+    ],
+    [
+     "self",
+     "0x0063CAE0",
+     "(unknown)"
+    ]
+   ]
   },
   {
    "cluster": "P:72AD20:1",
@@ -6067,7 +8341,34 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x006343C0",
+     "ScriptAction"
+    ],
+    [
+     "self",
+     "0x00635560",
+     "(unknown)"
+    ],
+    [
+     "self",
+     "0x00635680",
+     "(unknown)"
+    ],
+    [
+     "self",
+     "0x0063D400",
+     "DSurface"
+    ],
+    [
+     "self",
+     "0x0063D480",
+     "(unknown)"
+    ]
+   ]
   },
   {
    "cluster": "R:635060:ecx",
@@ -6112,6 +8413,13 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x00635060",
+     "FactoryClass"
+    ]
+   ],
    "c2_pinned": [
     "FactoryClass"
    ],
@@ -6202,6 +8510,13 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x00635F20",
+     "ScriptAction"
+    ]
+   ],
    "c2_pinned": [
     "ScriptAction"
    ],
@@ -6244,7 +8559,19 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x00637E00",
+     "ScriptAction"
+    ],
+    [
+     "self",
+     "0x004C6CB0",
+     "EventClass"
+    ]
+   ]
   },
   {
    "cluster": "R:640A40:ecx",
@@ -6273,6 +8600,13 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x00640A40",
+     "Tactical"
+    ]
+   ],
    "c2_pinned": [
     "Tactical"
    ],
@@ -6352,7 +8686,19 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x00643AE0",
+     "LoadScreen"
+    ],
+    [
+     "self",
+     "0x00643C50",
+     "Network"
+    ]
+   ]
   },
   {
    "cluster": "R:658DE0:ecx",
@@ -6405,6 +8751,13 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x00658DE0",
+     "RadarHashVector"
+    ]
+   ],
    "c2_pinned": [
     "RadarHashVector"
    ],
@@ -6499,7 +8852,19 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x00659650",
+     "(unknown)"
+    ],
+    [
+     "self",
+     "0x00659AC0",
+     "ProjectileTrail"
+    ]
+   ]
   },
   {
    "cluster": "R:665650:ecx",
@@ -6588,6 +8953,13 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x00665650",
+     "RulesClass"
+    ]
+   ],
    "c2_pinned": [
     "RulesClass"
    ],
@@ -6684,7 +9056,19 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x00675210",
+     "RulesClass"
+    ],
+    [
+     "self",
+     "0x00664D20",
+     "HouseClass"
+    ]
+   ]
   },
   {
    "cluster": "R:67AFF0:ecx",
@@ -6737,6 +9121,13 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x0067AFF0",
+     "SmudgeTypeVector"
+    ]
+   ],
    "c2_pinned": [
     "SmudgeTypeVector"
    ],
@@ -6795,6 +9186,13 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x0067B370",
+     "TerrainTypeVector"
+    ]
+   ],
    "c2_pinned": [
     "TerrainTypeVector"
    ],
@@ -6853,6 +9251,13 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x0067C280",
+     "SmudgeTypeList"
+    ]
+   ],
    "c2_pinned": [
     "SmudgeTypeList"
    ],
@@ -6910,6 +9315,13 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x006812E0",
+     "GameOptions"
+    ]
+   ],
    "c2_pinned": [
     "GameOptions"
    ],
@@ -7005,6 +9417,13 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x0068B940",
+     "Power"
+    ]
+   ],
    "c2_pinned": [
     "Power"
    ],
@@ -7063,6 +9482,13 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x0068C200",
+     "TechnoTypeVector"
+    ]
+   ],
    "c2_pinned": [
     "TechnoTypeVector"
    ],
@@ -7149,6 +9575,13 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x0068C710",
+     "FontClass"
+    ]
+   ],
    "c2_pinned": [
     "FontClass"
    ],
@@ -7205,6 +9638,18 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x00690A10",
+     "ScoreScreen"
+    ],
+    [
+     "self",
+     "0x00690AE0",
+     "ScoreScreen"
+    ]
+   ],
    "c2_pinned": [
     "ScoreScreen"
    ],
@@ -7249,7 +9694,69 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x00691500",
+     "SessionClass"
+    ],
+    [
+     "self",
+     "0x00691590",
+     "(unknown)"
+    ],
+    [
+     "self",
+     "0x006915A0",
+     "TeamClass"
+    ],
+    [
+     "self",
+     "0x006915B0",
+     "TeamClass"
+    ],
+    [
+     "self",
+     "0x006915D0",
+     "SessionClass"
+    ],
+    [
+     "edge",
+     "0x006915B0",
+     "TeamClass"
+    ],
+    [
+     "edge",
+     "0x006915D0",
+     "SessionClass"
+    ],
+    [
+     "edge",
+     "0x00691500",
+     "SessionClass"
+    ],
+    [
+     "edge",
+     "0x006915A0",
+     "TeamClass"
+    ],
+    [
+     "edge",
+     "0x00691500",
+     "SessionClass"
+    ],
+    [
+     "edge",
+     "0x00691500",
+     "SessionClass"
+    ],
+    [
+     "edge",
+     "0x00691500",
+     "SessionClass"
+    ]
+   ]
   },
   {
    "cluster": "P:622650:2",
@@ -7314,7 +9821,34 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x006956D0",
+     "Network"
+    ],
+    [
+     "self",
+     "0x00695FD0",
+     "NetworkDialog"
+    ],
+    [
+     "self",
+     "0x00696200",
+     "(unknown)"
+    ],
+    [
+     "self",
+     "0x006964C0",
+     "NetworkDialog"
+    ],
+    [
+     "self",
+     "0x00696610",
+     "NetworkDialog"
+    ]
+   ]
   },
   {
    "cluster": "R:6967B0:ecx",
@@ -7360,7 +9894,24 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x006967B0",
+     "(unknown)"
+    ],
+    [
+     "self",
+     "0x00696950",
+     "(unknown)"
+    ],
+    [
+     "self",
+     "0x006969C0",
+     "ListBox"
+    ]
+   ]
   },
   {
    "cluster": "R:697840:ecx",
@@ -7449,6 +10000,13 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x00697840",
+     "ObjectManager"
+    ]
+   ],
    "c2_pinned": [
     "ObjectManager"
    ],
@@ -7520,6 +10078,13 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x00698F90",
+     "GameSetup"
+    ]
+   ],
    "c2_pinned": [
     "GameSetup"
    ],
@@ -7560,7 +10125,44 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x0069B540",
+     "Network"
+    ],
+    [
+     "self",
+     "0x0069B5B0",
+     "LoadGame"
+    ],
+    [
+     "edge",
+     "0x0069B540",
+     "Network"
+    ],
+    [
+     "edge",
+     "0x0069B560",
+     "SaveGame"
+    ],
+    [
+     "edge",
+     "0x0069B5B0",
+     "LoadGame"
+    ],
+    [
+     "edge",
+     "0x0069B540",
+     "Network"
+    ],
+    [
+     "self",
+     "0x0069B560",
+     "SaveGame"
+    ]
+   ]
   },
   {
    "cluster": "P:6A3DB0:2",
@@ -7615,7 +10217,24 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x006A01A0",
+     "WalkLocomotion"
+    ],
+    [
+     "self",
+     "0x006A04C0",
+     "(unknown)"
+    ],
+    [
+     "self",
+     "0x006A3DB0",
+     "WalkLocomotion"
+    ]
+   ]
   },
   {
    "cluster": "P:6A8420:3",
@@ -7650,7 +10269,19 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x006A8710",
+     "TabCameoListClass"
+    ],
+    [
+     "self",
+     "0x006A87F0",
+     "(unknown)"
+    ]
+   ]
   },
   {
    "cluster": "R:6B04C0:ecx",
@@ -7687,6 +10318,13 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x006B04C0",
+     "FactoryClass"
+    ]
+   ],
    "c2_pinned": [
     "FactoryClass"
    ],
@@ -7721,6 +10359,13 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x006B0750",
+     "FactoryClass"
+    ]
+   ],
    "c2_pinned": [
     "FactoryClass"
    ],
@@ -7767,6 +10412,13 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x006B0C80",
+     "FactoryClass"
+    ]
+   ],
    "c2_pinned": [
     "FactoryClass"
    ],
@@ -7813,6 +10465,13 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x006B1020",
+     "SlaveManagerClass"
+    ]
+   ],
    "c2_pinned": [
     "SlaveManagerClass"
    ],
@@ -7856,7 +10515,29 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x006B5F80",
+     "Cell"
+    ],
+    [
+     "self",
+     "0x006B6080",
+     "UnitClass"
+    ],
+    [
+     "edge",
+     "0x006B5F80",
+     "Cell"
+    ],
+    [
+     "edge",
+     "0x006B6080",
+     "UnitClass"
+    ]
+   ]
   },
   {
    "cluster": "M:6FCD40:this:0x2D0",
@@ -7911,7 +10592,29 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x006B7100",
+     "TaskManager"
+    ],
+    [
+     "self",
+     "0x006B7BB0",
+     "UnitClass"
+    ],
+    [
+     "self",
+     "0x006B7C60",
+     "UnitClass"
+    ],
+    [
+     "edge",
+     "0x006B7BB0",
+     "UnitClass"
+    ]
+   ]
   },
   {
    "cluster": "M:6DD8B0:this:0x258",
@@ -8004,7 +10707,44 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x006CB560",
+     "SuperClass"
+    ],
+    [
+     "self",
+     "0x006CC080",
+     "SuperClass"
+    ],
+    [
+     "self",
+     "0x006CC260",
+     "Super"
+    ],
+    [
+     "edge",
+     "0x006CB560",
+     "SuperClass"
+    ],
+    [
+     "edge",
+     "0x006CB560",
+     "SuperClass"
+    ],
+    [
+     "edge",
+     "0x006CB560",
+     "SuperClass"
+    ],
+    [
+     "edge",
+     "0x006CB560",
+     "SuperClass"
+    ]
+   ]
   },
   {
    "cluster": "R:6CB920:ecx",
@@ -8086,6 +10826,13 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x006CB920",
+     "SuperClass"
+    ]
+   ],
    "c2_pinned": [
     "SuperClass"
    ],
@@ -8164,7 +10911,19 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x006CBCA0",
+     "SuperWeapon"
+    ],
+    [
+     "self",
+     "0x006CBEE0",
+     "SidebarClass"
+    ]
+   ]
   },
   {
    "cluster": "P:6D9B50:2",
@@ -8239,7 +10998,19 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x006D3D10",
+     "TacticalMap"
+    ],
+    [
+     "self",
+     "0x006D9B50",
+     "TacticalClass"
+    ]
+   ]
   },
   {
    "cluster": "R:6D4E20:ecx",
@@ -8268,6 +11039,13 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x006D4E20",
+     "Tactical"
+    ]
+   ],
    "c2_pinned": [
     "Tactical"
    ],
@@ -8327,7 +11105,19 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x006D9FF0",
+     "PlayerClass"
+    ],
+    [
+     "self",
+     "0x006DA5C0",
+     "BuildingClass"
+    ]
+   ]
   },
   {
    "cluster": "R:6DD8B0:ecx",
@@ -8384,6 +11174,13 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x006DD8B0",
+     "TerrainClass"
+    ]
+   ],
    "c2_pinned": [
     "TerrainClass"
    ],
@@ -8426,7 +11223,34 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x006E0110",
+     "ScenarioClass"
+    ],
+    [
+     "self",
+     "0x006E2290",
+     "TActionClass"
+    ],
+    [
+     "self",
+     "0x006E2520",
+     "TActionClass"
+    ],
+    [
+     "self",
+     "0x006E26D0",
+     "ScenarioClass"
+    ],
+    [
+     "self",
+     "0x006E2C40",
+     "TActionClass"
+    ]
+   ]
   },
   {
    "cluster": "P:68BD00:3",
@@ -8460,7 +11284,19 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x006E0490",
+     "(unknown)"
+    ],
+    [
+     "self",
+     "0x006E18B0",
+     "CellClass"
+    ]
+   ]
   },
   {
    "cluster": "R:6E0B60:ecx",
@@ -8489,6 +11325,13 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x006E0B60",
+     "TActionClass"
+    ]
+   ],
    "c2_pinned": [
     "TActionClass"
    ],
@@ -8524,7 +11367,19 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x006E1BD0",
+     "ScenarioClass"
+    ],
+    [
+     "self",
+     "0x006E1C40",
+     "SuperClass"
+    ]
+   ]
   },
   {
    "cluster": "R:6E4200:ecx",
@@ -8557,6 +11412,13 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x006E4200",
+     "TActionClass"
+    ]
+   ],
    "c2_pinned": [
     "TActionClass"
    ],
@@ -8657,7 +11519,49 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x006EA0D0",
+     "(unknown)"
+    ],
+    [
+     "self",
+     "0x006EA500",
+     "TeamClass"
+    ],
+    [
+     "self",
+     "0x006EA610",
+     "TeamClass"
+    ],
+    [
+     "self",
+     "0x006EAEE0",
+     "TeamClass"
+    ],
+    [
+     "self",
+     "0x006EBAD0",
+     "TeamClass"
+    ],
+    [
+     "self",
+     "0x006EBF50",
+     "TeamClass"
+    ],
+    [
+     "self",
+     "0x006EDB50",
+     "TeamClass"
+    ],
+    [
+     "edge",
+     "0x006EA500",
+     "TeamClass"
+    ]
+   ]
   },
   {
    "cluster": "P:6E9050:1",
@@ -8687,6 +11591,13 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x006EC3A0",
+     "TeamClass"
+    ]
+   ],
    "c2_pinned": [
     "TeamClass"
    ],
@@ -8725,6 +11636,13 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x006F1E20",
+     "TriggerClass"
+    ]
+   ],
    "c2_pinned": [
     "TriggerClass"
    ],
@@ -8767,6 +11685,13 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x006F47A0",
+     "HouseClass"
+    ]
+   ],
    "c2_pinned": [
     "HouseClass"
    ],
@@ -8809,6 +11734,13 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x0071AB10",
+     "TemporalClass"
+    ]
+   ],
    "c2_pinned": [
     "TemporalClass"
    ],
@@ -8855,6 +11787,13 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x0071E940",
+     "TEventClass"
+    ]
+   ],
    "c2_pinned": [
     "TEventClass"
    ],
@@ -8888,7 +11827,14 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x00721290",
+     "GameSettings"
+    ]
+   ]
   },
   {
    "cluster": "P:42B1C0:1",
@@ -8955,7 +11901,44 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x00722440",
+     "(unknown)"
+    ],
+    [
+     "self",
+     "0x00722770",
+     "BuildingClass"
+    ],
+    [
+     "self",
+     "0x00722AF0",
+     "BuildingClass"
+    ],
+    [
+     "self",
+     "0x00722F00",
+     "(unknown)"
+    ],
+    [
+     "self",
+     "0x00723260",
+     "BuildingClass"
+    ],
+    [
+     "self",
+     "0x007233A0",
+     "BuildingClass"
+    ],
+    [
+     "self",
+     "0x007235A0",
+     "CellClass"
+    ]
+   ]
   },
   {
    "cluster": "R:729370:ecx",
@@ -9000,6 +11983,13 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x00729370",
+     "AnimClass"
+    ]
+   ],
    "c2_pinned": [
     "AnimClass"
    ],
@@ -9038,6 +12028,13 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x007298F0",
+     "AnimClass"
+    ]
+   ],
    "c2_pinned": [
     "AnimClass"
    ],
@@ -9076,6 +12073,13 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x00740DF0",
+     "HouseClass"
+    ]
+   ],
    "c2_pinned": [
     "HouseClass"
    ],
@@ -9114,6 +12118,13 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x00740E20",
+     "HouseClass"
+    ]
+   ],
    "c2_pinned": [
     "HouseClass"
    ],
@@ -9157,7 +12168,19 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x007447B0",
+     "BuildingClass"
+    ],
+    [
+     "self",
+     "0x00746000",
+     "BuildingTypeClass"
+    ]
+   ]
   },
   {
    "cluster": "P:755DB0:0",
@@ -9212,7 +12235,19 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x00755CD0",
+     "File"
+    ],
+    [
+     "self",
+     "0x00755DB0",
+     "Voxel"
+    ]
+   ]
   },
   {
    "cluster": "P:758EA0:2",
@@ -9258,7 +12293,19 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x00758B70",
+     "(unknown)"
+    ],
+    [
+     "self",
+     "0x00758EA0",
+     "VoxelRenderer"
+    ]
+   ]
   },
   {
    "cluster": "R:759940:ecx",
@@ -9319,7 +12366,19 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x00759940",
+     "MovieClass"
+    ],
+    [
+     "self",
+     "0x00759BC0",
+     "(unknown)"
+    ]
+   ]
   },
   {
    "cluster": "M:75A100:this:0xAC",
@@ -9353,6 +12412,18 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x00759FB0",
+     "VoxelRenderer"
+    ],
+    [
+     "edge",
+     "0x00759FB0",
+     "VoxelRenderer"
+    ]
+   ],
    "c2_pinned": [
     "VoxelRenderer"
    ],
@@ -9415,6 +12486,13 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x0075AEC0",
+     "VoxelAnim"
+    ]
+   ],
    "c2_pinned": [
     "VoxelAnim"
    ],
@@ -9473,6 +12551,13 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x0075E6B0",
+     "Voxel_Section"
+    ]
+   ],
    "c2_pinned": [
     "Voxel_Section"
    ],
@@ -9511,6 +12596,13 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x00773600",
+     "WebBrowser"
+    ]
+   ],
    "c2_pinned": [
     "WebBrowser"
    ],
@@ -9565,6 +12657,13 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x0077A7C0",
+     "WOLGameList"
+    ]
+   ],
    "c2_pinned": [
     "WOLGameList"
    ],
@@ -9611,7 +12710,59 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x007ADB00",
+     "(unknown)"
+    ],
+    [
+     "self",
+     "0x007AEDD0",
+     "CChatEventSink"
+    ],
+    [
+     "self",
+     "0x007AEE90",
+     "CChatEventSink"
+    ],
+    [
+     "self",
+     "0x007AEEC0",
+     "Vector"
+    ],
+    [
+     "edge",
+     "0x007AEEC0",
+     "Vector"
+    ],
+    [
+     "edge",
+     "0x007AEEC0",
+     "Vector"
+    ],
+    [
+     "edge",
+     "0x007AEEC0",
+     "Vector"
+    ],
+    [
+     "edge",
+     "0x007AEEC0",
+     "Vector"
+    ],
+    [
+     "edge",
+     "0x007AEEC0",
+     "Vector"
+    ],
+    [
+     "edge",
+     "0x007AEEC0",
+     "Vector"
+    ]
+   ]
   },
   {
    "cluster": "G:B76530",
@@ -9681,7 +12832,69 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "exact_conflict"
+   "reason": "exact_conflict",
+   "c2_pins": [
+    [
+     "self",
+     "0x007ACBE0",
+     "(unknown)"
+    ],
+    [
+     "self",
+     "0x007AE180",
+     "(unknown)"
+    ],
+    [
+     "self",
+     "0x007AE1F0",
+     "HashTable"
+    ],
+    [
+     "self",
+     "0x007AE460",
+     "HashMap"
+    ],
+    [
+     "self",
+     "0x007AE510",
+     "HashTable"
+    ],
+    [
+     "self",
+     "0x007AE5B0",
+     "CComObject_CChatEventSink___ATL"
+    ],
+    [
+     "edge",
+     "0x007AE460",
+     "HashMap"
+    ],
+    [
+     "edge",
+     "0x007AE1F0",
+     "HashTable"
+    ],
+    [
+     "edge",
+     "0x007AE1F0",
+     "HashTable"
+    ],
+    [
+     "edge",
+     "0x007AE1F0",
+     "HashTable"
+    ],
+    [
+     "edge",
+     "0x007AE5B0",
+     "CComObject_CChatEventSink___ATL"
+    ],
+    [
+     "edge",
+     "0x007AE510",
+     "HashTable"
+    ]
+   ]
   },
   {
    "cluster": "G:B76990",
@@ -9736,7 +12949,44 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x007ACE60",
+     "HashTable"
+    ],
+    [
+     "self",
+     "0x007AE7C0",
+     "(unknown)"
+    ],
+    [
+     "self",
+     "0x007AE830",
+     "(unknown)"
+    ],
+    [
+     "edge",
+     "0x007ACE60",
+     "HashTable"
+    ],
+    [
+     "edge",
+     "0x007ACE60",
+     "HashTable"
+    ],
+    [
+     "edge",
+     "0x007ACE60",
+     "HashTable"
+    ],
+    [
+     "edge",
+     "0x007ACE60",
+     "HashTable"
+    ]
+   ]
   },
   {
    "cluster": "G:B73E10",
@@ -9774,7 +13024,29 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x007AD790",
+     "Array"
+    ],
+    [
+     "self",
+     "0x007AD930",
+     "CChatEventSink"
+    ],
+    [
+     "edge",
+     "0x007AD930",
+     "CChatEventSink"
+    ],
+    [
+     "edge",
+     "0x007AD790",
+     "Array"
+    ]
+   ]
   },
   {
    "cluster": "G:B76230",
@@ -9810,6 +13082,13 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x005E2670",
+     "GameSetup"
+    ]
+   ],
    "c2_pinned": [
     "GameSetup"
    ],
@@ -9905,7 +13184,24 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x007BD690",
+     "Surface"
+    ],
+    [
+     "self",
+     "0x007BDF80",
+     "DSurface"
+    ],
+    [
+     "self",
+     "0x007C2C60",
+     "DSurface"
+    ]
+   ]
   },
   {
    "cluster": "M:430BA0:this:0x1CC",
@@ -9935,7 +13231,29 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "edge",
+     "0x005BF260",
+     "Movie"
+    ],
+    [
+     "edge",
+     "0x005BF260",
+     "Movie"
+    ],
+    [
+     "edge",
+     "0x005BF260",
+     "Movie"
+    ],
+    [
+     "edge",
+     "0x00539EB0",
+     "LightningStorm"
+    ]
+   ]
   },
   {
    "cluster": "M:458810:this:0x520",
@@ -9962,7 +13280,49 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x005AE9B0",
+     "Matrix3x3"
+    ],
+    [
+     "edge",
+     "0x005AE9B0",
+     "Matrix3x3"
+    ],
+    [
+     "edge",
+     "0x005AE9E0",
+     "Matrix3x3"
+    ],
+    [
+     "edge",
+     "0x005AE980",
+     "Matrix3x4"
+    ],
+    [
+     "edge",
+     "0x005AEAD0",
+     "BuildingClass"
+    ],
+    [
+     "self",
+     "0x005AE9E0",
+     "Matrix3x3"
+    ],
+    [
+     "self",
+     "0x005AE980",
+     "Matrix3x4"
+    ],
+    [
+     "self",
+     "0x005AEAD0",
+     "BuildingClass"
+    ]
+   ]
   },
   {
    "cluster": "P:69BBE0:0",
@@ -9988,7 +13348,19 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x00607FD0",
+     "Dialog"
+    ],
+    [
+     "self",
+     "0x00608260",
+     "SkirmishSetup"
+    ]
+   ]
   },
   {
    "cluster": "P:5EC9F0:0",
@@ -10015,7 +13387,19 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x005EC030",
+     "MultiplayerLobby"
+    ],
+    [
+     "self",
+     "0x005EBA00",
+     "Lobby"
+    ]
+   ]
   },
   {
    "cluster": "P:4E49A0:0",
@@ -10045,7 +13429,54 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x004E4820",
+     "Lobby"
+    ],
+    [
+     "self",
+     "0x0046F8F0",
+     "Skirmish"
+    ],
+    [
+     "self",
+     "0x004E3B90",
+     "SkirmishDialog"
+    ],
+    [
+     "self",
+     "0x004E5310",
+     "Lobby"
+    ],
+    [
+     "self",
+     "0x004E5D60",
+     "Lobby"
+    ],
+    [
+     "self",
+     "0x005E9E00",
+     "NetworkLobby"
+    ],
+    [
+     "self",
+     "0x005EADA0",
+     "(unknown)"
+    ],
+    [
+     "self",
+     "0x005EAE40",
+     "(unknown)"
+    ],
+    [
+     "self",
+     "0x006AE6E0",
+     "Skirmish"
+    ]
+   ]
   },
   {
    "cluster": "R:48DC90:ecx",
@@ -10068,7 +13499,14 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x0048DC90",
+     "MapClass"
+    ]
+   ]
   },
   {
    "cluster": "R:50C8C0:ecx",
@@ -10092,6 +13530,13 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x0050C8C0",
+     "HouseClass"
+    ]
+   ],
    "c2_pinned": [
     "HouseClass"
    ],
@@ -10120,7 +13565,14 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x004E14A0",
+     "ObjectClass"
+    ]
+   ]
   },
   {
    "cluster": "R:4E14B0:ecx",
@@ -10143,7 +13595,14 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x004E14B0",
+     "ObjectClass"
+    ]
+   ]
   },
   {
    "cluster": "G:83E480",
@@ -10168,7 +13627,24 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x0052FF90",
+     "(unknown)"
+    ],
+    [
+     "self",
+     "0x00778210",
+     "ScoreScreen"
+    ],
+    [
+     "edge",
+     "0x00778210",
+     "ScoreScreen"
+    ]
+   ]
   },
   {
    "cluster": "M:536080:this:0x4",
@@ -10197,7 +13673,39 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x007311C0",
+     "TacticalClass"
+    ],
+    [
+     "edge",
+     "0x007311C0",
+     "TacticalClass"
+    ],
+    [
+     "self",
+     "0x007314C0",
+     "SquadClass"
+    ],
+    [
+     "edge",
+     "0x007314C0",
+     "SquadClass"
+    ],
+    [
+     "self",
+     "0x007313A0",
+     "TacticalClass"
+    ],
+    [
+     "edge",
+     "0x007313A0",
+     "TacticalClass"
+    ]
+   ]
   },
   {
    "cluster": "R:53F4E0:ecx",
@@ -10220,7 +13728,14 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x0053F4E0",
+     "Struct"
+    ]
+   ]
   },
   {
    "cluster": "G:845530",
@@ -10246,7 +13761,19 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x0072B820",
+     "Palette"
+    ],
+    [
+     "self",
+     "0x0072B390",
+     "LoadingScreen"
+    ]
+   ]
   },
   {
    "cluster": "R:5CA7D0:ecx",
@@ -10269,7 +13796,14 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x005CA7D0",
+     "MPBattleClass"
+    ]
+   ]
   },
   {
    "cluster": "R:5EF280:ecx",
@@ -10292,7 +13826,14 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x005EF280",
+     "Struct"
+    ]
+   ]
   },
   {
    "cluster": "R:6D0260:ecx",
@@ -10315,7 +13856,14 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x006D0260",
+     "BlowStraw_29"
+    ]
+   ]
   },
   {
    "cluster": "R:6E21E0:ecx",
@@ -10339,6 +13887,13 @@
     "C8": 1597
    },
    "reason": "empty_domain",
+   "c2_pins": [
+    [
+     "self",
+     "0x006E21E0",
+     "TActionClass"
+    ]
+   ],
    "c2_pinned": [
     "TActionClass"
    ],

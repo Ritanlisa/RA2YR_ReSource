@@ -959,6 +959,7 @@ def main():
         return [[o, w] for (o, w) in obs if not covers(ci, o, w if w else 4)]
 
     # ---------------- C2：this 传递 ----------------
+    c2_pin_log = {}
     for e in raw:
         if e.get("type") != "CALL_ARG":
             continue
@@ -976,6 +977,8 @@ def main():
         if target is None or target not in ents:
             continue
         fam["C2"][target] = fam["C2"].get(target, FULL) & allowed_of(owner_of_fn[callee][0])
+        c2_pin_log.setdefault(target, []).append(
+            ["edge", "0x%08X" % callee, names[owner_of_fn[callee][0]]])
         census["C2"] += 1
     for e in raw:
         if e.get("type") != "FUNC_PARAM":
@@ -1000,6 +1003,9 @@ def main():
                 m &= allowed_of(ci_this)
         if m != FULL:
             fam["C2"][target] = fam["C2"].get(target, FULL) & m
+            c2_pin_log.setdefault(target, []).append(
+                ["self", "0x%08X" % a,
+                 names[owner_of_fn[a][0]] if a in owner_of_fn else "(unknown)"])
             census["C2"] += 1
     print("[C2] evidence=%d entities=%d" % (census["C2"], len(fam["C2"])), flush=True)
 
@@ -1884,6 +1890,11 @@ def main():
                        ("exact_contradicts_family" if "exact_contradicts_family" in flags else
                         ("exact_width_conflict" if "width_conflict" in flags else "empty_domain"))),
         }
+        pins = []
+        for eid in cl["ents"]:
+            pins.extend(c2_pin_log.get(eid, [])[:6])
+        if pins:
+            rec["c2_pins"] = pins[:12]
         if c2_names:
             rec["c2_pinned"] = c2_names
             # 哪些族把钉住类排除在域外（"still binds" 的精确口径）
