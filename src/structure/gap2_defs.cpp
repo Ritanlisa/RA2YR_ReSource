@@ -1985,22 +1985,22 @@ LABEL_130:
         switch ( *(unsigned int *)&this->Type->SuperWeapon ) /*0x446948*/
         {
           case 0: /*0x446948*/
-            VoxClass::FindAndPlay((VoxClass *)aEvaNuclearsilo, -1); /*0x446959*/
+            ((VoxClass *)(VoxClass *)aEvaNuclearsilo)->FindAndPlay( -1); /*0x446959*/
             break; /*0x446959*/
           case 1: /*0x446948*/
-            VoxClass::FindAndPlay((VoxClass *)aEvaIroncurtain_1, -1); /*0x446965*/
+            ((VoxClass *)(VoxClass *)aEvaIroncurtain_1)->FindAndPlay( -1); /*0x446965*/
             break; /*0x446965*/
           case 2: /*0x446948*/
-            VoxClass::FindAndPlay((VoxClass *)aEvaWeatherdevi, -1); /*0x446971*/
+            ((VoxClass *)(VoxClass *)aEvaWeatherdevi)->FindAndPlay( -1); /*0x446971*/
             break; /*0x446971*/
           case 3: /*0x446948*/
-            VoxClass::FindAndPlay((VoxClass *)&stru_818E58.Name[8], -1); /*0x446995*/
+            ((VoxClass *)(VoxClass *)&stru_818E58.Name[8])->FindAndPlay( -1); /*0x446995*/
             break; /*0x446995*/
           case 7: /*0x446948*/
-            VoxClass::FindAndPlay((VoxClass *)aEvaPsychicdomi_1, -1); /*0x44697d*/
+            ((VoxClass *)(VoxClass *)aEvaPsychicdomi_1)->FindAndPlay( -1); /*0x44697d*/
             break; /*0x44697d*/
           case 9: /*0x446948*/
-            VoxClass::FindAndPlay((VoxClass *)&stru_818E58.RussianVoice[7], -1); /*0x446989*/
+            ((VoxClass *)(VoxClass *)&stru_818E58.RussianVoice[7])->FindAndPlay( -1); /*0x446989*/
             break; /*0x446989*/
           default:
             break;
@@ -4506,35 +4506,35 @@ int SuperWeapon::UpdateSuperWeaponReadyState(int a1) {
       switch ( *(unsigned int *)(v9 + 180) ) /*0x6cbde6*/
       {
         case 0: /*0x6cbde6*/
-          VoxClass::FindAndPlay((VoxClass *)&stru_842440.VocClass_field_94, -1); /*0x6cbdf7*/
+          ((VoxClass *)(VoxClass *)&stru_842440.VocClass_field_94)->FindAndPlay( -1); /*0x6cbdf7*/
           break; /*0x6cbdf7*/
         case 1: /*0x6cbde6*/
-          VoxClass::FindAndPlay((VoxClass *)&stru_842440.Name[4], -1); /*0x6cbe03*/
+          ((VoxClass *)(VoxClass *)&stru_842440.Name[4])->FindAndPlay( -1); /*0x6cbe03*/
           break; /*0x6cbe03*/
         case 2: /*0x6cbde6*/
-          VoxClass::FindAndPlay((VoxClass *)&stru_842440.Loop, -1); /*0x6cbe1b*/
+          ((VoxClass *)(VoxClass *)&stru_842440.Loop)->FindAndPlay( -1); /*0x6cbe1b*/
           break; /*0x6cbe1b*/
         case 3: /*0x6cbde6*/
-          VoxClass::FindAndPlay((VoxClass *)stru_842440.Volume, -1); /*0x6cbe33*/
+          ((VoxClass *)(VoxClass *)stru_842440.Volume)->FindAndPlay( -1); /*0x6cbe33*/
           break; /*0x6cbe33*/
         case 5: /*0x6cbde6*/
         case 6: /*0x6cbde6*/
-          VoxClass::FindAndPlay((VoxClass *)&stru_842440, -1); /*0x6cbe3f*/
+          ((VoxClass *)(VoxClass *)&stru_842440)->FindAndPlay( -1); /*0x6cbe3f*/
           break; /*0x6cbe3f*/
         case 7: /*0x6cbde6*/
-          VoxClass::FindAndPlay((VoxClass *)&stru_842440.Volume[6], -1); /*0x6cbe27*/
+          ((VoxClass *)(VoxClass *)&stru_842440.Volume[6])->FindAndPlay( -1); /*0x6cbe27*/
           break; /*0x6cbe27*/
         case 8: /*0x6cbde6*/
-          VoxClass::FindAndPlay((VoxClass *)aEvaSpyplanerea, -1); /*0x6cbe4b*/
+          ((VoxClass *)(VoxClass *)aEvaSpyplanerea)->FindAndPlay( -1); /*0x6cbe4b*/
           break; /*0x6cbe4b*/
         case 9: /*0x6cbde6*/
-          VoxClass::FindAndPlay((VoxClass *)aEvaGeneticmuta_1, -1); /*0x6cbe57*/
+          ((VoxClass *)(VoxClass *)aEvaGeneticmuta_1)->FindAndPlay( -1); /*0x6cbe57*/
           break; /*0x6cbe57*/
         case 0xA: /*0x6cbde6*/
-          VoxClass::FindAndPlay((VoxClass *)&stru_842440.MaxFDelta, -1); /*0x6cbe0f*/
+          ((VoxClass *)(VoxClass *)&stru_842440.MaxFDelta)->FindAndPlay( -1); /*0x6cbe0f*/
           break; /*0x6cbe0f*/
         case 0xB: /*0x6cbde6*/
-          VoxClass::FindAndPlay(&g_Str_EVA_PsychicRevealReady, -1); /*0x6cbe63*/
+          ((VoxClass *)&g_Str_EVA_PsychicRevealReady)->FindAndPlay( -1); /*0x6cbe63*/
           break; /*0x6cbe63*/
         default:
           break;

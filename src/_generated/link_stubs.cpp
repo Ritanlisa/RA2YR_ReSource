@@ -7214,7 +7214,7 @@ void gamemd::DisplayClass::LeftMouseButtonUp(gamemd::Vector3D<int> const& a0, ga
   }
   if ( !this->__pad_41E[3426] || !this->__pad_41E[3427] ) /*0x4abab2*/
   {
-    VoxClass::FindAndPlay(&g_Str_EVA_CannotDeployHere, -1); /*0x4abc80*/
+    ((VoxClass *)&g_Str_EVA_CannotDeployHere)->FindAndPlay( -1); /*0x4abc80*/
     TechnoClass::GetField(); /*0x4abc85*/
     return result; /*0x4abc91*/
   }

@@ -2578,7 +2578,7 @@ LABEL_121:
   }
   if ( !this->__pad_F5E[546] || !this->__pad_F5E[547] ) /*0x4abab2*/
   {
-    VoxClass::FindAndPlay(&g_Str_EVA_CannotDeployHere, -1); /*0x4abc80*/
+    ((VoxClass *)&g_Str_EVA_CannotDeployHere)->FindAndPlay( -1); /*0x4abc80*/
     TechnoClass::GetField(); /*0x4abc85*/
     return result; /*0x4abc91*/
   }

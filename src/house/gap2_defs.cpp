@@ -2451,7 +2451,7 @@ int HouseClass::NotifyUnderAttack(void* a1) {
           v9 = (int)v8[1]; /*0x4f94c9*/
           HIWORD(v16) = (int)v9 / 256; /*0x4f94d5*/
           if ( (unsigned __int8)CreateTriggerClassIfFarEnough(4, (((v9) >> 32) & 0xFF), (int)v16) ) /*0x4f94e4*/
-            VoxClass::FindAndPlay((VoxClass *)&stru_82474C.RussianVoice[3], -1); /*0x4f94fb*/
+            ((VoxClass *)(VoxClass *)&stru_82474C.RussianVoice[3])->FindAndPlay( -1); /*0x4f94fb*/
           goto LABEL_31; /*0x4f9500*/
         }
       }
@@ -2462,7 +2462,7 @@ int HouseClass::NotifyUnderAttack(void* a1) {
     HIWORD(v17) = (int)v11 / 256; /*0x4f9535*/
     if ( (unsigned __int8)CreateTriggerClassIfFarEnough(3, (((v11) >> 32) & 0xFF), (int)v17) ) /*0x4f9544*/
     {
-      VoxClass::FindAndPlay((VoxClass *)&stru_82474C.Name[7], -1); /*0x4f955b*/
+      ((VoxClass *)(VoxClass *)&stru_82474C.Name[7])->FindAndPlay( -1); /*0x4f955b*/
 LABEL_30:
       PlayVocClass(dword_8871E0->YuriMindControlSound, 0x2000u, 1.0, 0); /*0x4f95b8*/
     }
@@ -2475,7 +2475,7 @@ LABEL_30:
     HIWORD(v18) = (int)v13 / 256; /*0x4f9591*/
     if ( (unsigned __int8)CreateTriggerClassIfFarEnough(16, (((v13) >> 32) & 0xFF), (int)v18) ) /*0x4f95a0*/
     {
-      VoxClass::FindAndPlay(&stru_82474C, -1); /*0x4f95b3*/
+      ((VoxClass *)&stru_82474C)->FindAndPlay( -1); /*0x4f95b3*/
       goto LABEL_30; /*0x4f95b3*/
     }
   }
@@ -2632,11 +2632,11 @@ int HouseClass::HandleAlliance(int a1, int a2) {
              || (v21 = (void *)this->relatedTagsCount, v21 == dword_A83D4C->relatedTagsCount)
              || v21 != (void *)-1 && ((int)dword_A83D4C[33].Object_field_0xE8 & (1 << (char)v21)) != 0) )
           {
-            VoxClass::FindAndPlay((VoxClass *)stru_82479C.Priority, -1); /*0x4f9ebb*/
+            ((VoxClass *)(VoxClass *)stru_82479C.Priority)->FindAndPlay( -1); /*0x4f9ebb*/
           }
           else
           {
-            VoxClass::FindAndPlay((VoxClass *)&stru_82479C.YuriVoice[4], -1); /*0x4f9ec7*/
+            ((VoxClass *)(VoxClass *)&stru_82479C.YuriVoice[4])->FindAndPlay( -1); /*0x4f9ec7*/
           }
         }
         goto LABEL_79; /*0x4f9ebb*/
@@ -2647,7 +2647,7 @@ int HouseClass::HandleAlliance(int a1, int a2) {
       if ( this == (int *)dword_A83D4C ) /*0x4f9efe*/
       {
   LABEL_71:
-        VoxClass::FindAndPlay((VoxClass *)&stru_82479C.Name[6], -1); /*0x4f9ee6*/
+        ((VoxClass *)(VoxClass *)&stru_82479C.Name[6])->FindAndPlay( -1); /*0x4f9ee6*/
         goto LABEL_79; /*0x4f9ef0*/
       }
       if ( (Object *)a1 != dword_A83D4C ) /*0x4f9f29*/
@@ -2660,7 +2660,7 @@ int HouseClass::HandleAlliance(int a1, int a2) {
       if ( !a1->currentPlayer && !a1->PlayerControl ) /*0x4f9f1e*/
         goto LABEL_79; /*0x4f9f1e*/
     }
-    VoxClass::FindAndPlay(&stru_82479C, -1); /*0x4f9f35*/
+    ((VoxClass *)&stru_82479C)->FindAndPlay( -1); /*0x4f9f35*/
     goto LABEL_79; /*0x4f9f35*/
   }
   return result; /*0x4f9f56*/
@@ -2745,7 +2745,7 @@ int HouseClass::SetAlliance(int a1, int a2) {
     {
       goto LABEL_31; /*0x4fa206*/
     }
-    VoxClass::FindAndPlay(&stru_824808, -1); /*0x4fa1d5*/
+    ((VoxClass *)&stru_824808)->FindAndPlay( -1); /*0x4fa1d5*/
   LABEL_31:
     (*((unsigned char *)&(relatedTagsCapacity))) = Radar::UpdateReveal(0, 0); /*0x4fa1da*/
   }
@@ -3114,7 +3114,7 @@ int HouseClass::CompleteProduction(void* a1, int a2, int a3, int a4) {
         {
           v27 = 0; /*0x4fb364*/
           if ( this == (HouseClass *)dword_A83D4C ) /*0x4fb36b*/
-            VoxClass::FindAndPlay(&g_Str_EVA_CannotDeployHere, -1); /*0x4fb377*/
+            ((VoxClass *)&g_Str_EVA_CannotDeployHere)->FindAndPlay( -1); /*0x4fb377*/
           if ( !((unsigned int *)&stru_A8EB00)[391] && this == (HouseClass *)dword_A83D4C ) /*0x4fb38f*/
           {
             *(unsigned int *)&g_RadarBlipPool = *(unsigned int *)&dword_880978; /*0x4fb3a6*/
@@ -3178,7 +3178,7 @@ int HouseClass::CompleteProduction(void* a1, int a2, int a3, int a4) {
           v26 = (int)v25[1]; /*0x4fb616*/
           (*(((unsigned short *)&(a4)) + 1)) = (int)v26 / 256; /*0x4fb622*/
           if ( (uint8_t)CreateTriggerClassIfFarEnough(6, (((unsigned char *)&(v26))[4]), a4) ) /*0x4fb631*/
-            VoxClass::FindAndPlay(&stru_8249A0, -1); /*0x4fb644*/
+            ((VoxClass *)&stru_8249A0)->FindAndPlay( -1); /*0x4fb644*/
         }
         ProductionQueue::CompleteOrCancel((ProductionQueue *)primaryForShips); /*0x4fb649*/
         HouseClass::CancelProduction(this, a1, a2, a3, 0); /*0x4fb663*/
@@ -3408,7 +3408,7 @@ int HouseClass::DefeatPlayer() {
       v38 = v10; /*0x4fc2bb*/
       PlayerColorScheme = SessionClass::GetPlayerColorScheme(dword_A8B394); /*0x4fc2c7*/
       MessageListClass::AddMessage(&unk_A8BC60, 0, 0, Buffer, PlayerColorScheme, 16454, v38, 0); /*0x4fc2db*/
-      VoxClass::FindAndPlay(&stru_824C08, -1); /*0x4fc2ea*/
+      ((VoxClass *)&stru_824C08)->FindAndPlay( -1); /*0x4fc2ea*/
     }
   }
   else
@@ -3423,7 +3423,7 @@ int HouseClass::DefeatPlayer() {
       swprintf(Buffer, (const size_t)v12, (const wchar_t *const)&this->uiName[4]); /*0x4fc372*/
       (v13) = ((v13) & ~0xFFFF) | ((Math::RoundToInt(*&dword_8871E0->u32_14C0 * 900.0)) & 0xFFFF); /*0x4fc38d*/
       MessageListClass::AddMessage(&unk_A8BC60, 0, 0, Buffer, this->startingCell, 16454, v13, 0); /*0x4fc3ad*/
-      VoxClass::FindAndPlay(&stru_824B70, -1); /*0x4fc3bc*/
+      ((VoxClass *)&stru_824B70)->FindAndPlay( -1); /*0x4fc3bc*/
     }
   }
   MapClass::MarkForRedraw((GScreenClass *)&dword_87F7E8, 0); /*0x4fc3c8*/
@@ -3704,7 +3704,7 @@ int HouseClass::ClearLowPowerTargets() {
             {
               StringCSF = GetStringCSF((char *)&stru_824C08.RussianVoice[7], 0, g_Str_File_House_CPP, 5642); /*0x4fcb8e*/
               HouseClass::SetOwnerName((HouseClass *)g_TacticalClass_Instance, StringCSF, 2); /*0x4fcb9a*/
-              VoxClass::FindAndPlay((VoxClass *)&stru_824C08.Name[9], -1); /*0x4fcba9*/
+              ((VoxClass *)(VoxClass *)&stru_824C08.Name[9])->FindAndPlay( -1); /*0x4fcba9*/
               goto LABEL_26; /*0x4fcba9*/
             }
           }
@@ -3713,7 +3713,7 @@ int HouseClass::ClearLowPowerTargets() {
             Scenario::ClearScreen(v16); /*0x4fcb39*/
             v13 = GetStringCSF(aTxtScenarioWon, 0, g_Str_File_House_CPP, 5639); /*0x4fcb51*/
             HouseClass::SetOwnerName((HouseClass *)g_TacticalClass_Instance, v13, 0); /*0x4fcb5d*/
-            VoxClass::FindAndPlay((VoxClass *)stru_824C08.Type, -1); /*0x4fcb6c*/
+            ((VoxClass *)(VoxClass *)stru_824C08.Type)->FindAndPlay( -1); /*0x4fcb6c*/
         LABEL_26:
             MapClass::MarkForRedraw((GScreenClass *)&DataGlobal_87F7E8, 0); /*0x4fcbae*/
           }
@@ -3817,7 +3817,7 @@ int HouseClass::ClearLowPowerTargets() {
               Scenario::ClearScreen(v18); /*0x4fcd22*/
               StringCSF = GetStringCSF(aTxtScenarioLos, 0, g_Str_File_House_CPP, 5694); /*0x4fcd3a*/
               HouseClass::SetOwnerName((HouseClass *)g_TacticalClass_Instance, StringCSF, 1); /*0x4fcd46*/
-              VoxClass::FindAndPlay((VoxClass *)aEvaMissionfail, -1); /*0x4fcd55*/
+              ((VoxClass *)(VoxClass *)aEvaMissionfail)->FindAndPlay( -1); /*0x4fcd55*/
               goto LABEL_26; /*0x4fcd55*/
             }
             if ( this == (HouseClass *)dword_A83D4C ) /*0x4fcd62*/
@@ -3825,7 +3825,7 @@ int HouseClass::ClearLowPowerTargets() {
               v17 = GetStringCSF(aTxtLost, 0, g_Str_File_House_CPP, 5697); /*0x4fcd77*/
               HouseClass::SetOwnerName((HouseClass *)g_TacticalClass_Instance, v17, 3); /*0x4fcd83*/
               if ( dword_A83D4C != (Object *)HouseClass_Observer ) /*0x4fcd95*/
-                VoxClass::FindAndPlay(&stru_824C08, -1); /*0x4fcda1*/
+                ((VoxClass *)&stru_824C08)->FindAndPlay( -1); /*0x4fcda1*/
         LABEL_26:
               MapClass::MarkForRedraw((GScreenClass *)&DataGlobal_87F7E8, 0); /*0x4fcda6*/
             }
@@ -11256,7 +11256,7 @@ void HouseClass::ReactivateTechnos(int a1) {
         {
   LABEL_15:
           if ( !dword_A8E7AC ) /*0x50e31c*/
-            VoxClass::FindAndPlay(&stru_824FE4, -1); /*0x50e328*/
+            ((VoxClass *)&stru_824FE4)->FindAndPlay( -1); /*0x50e328*/
         }
       }
     }

@@ -124,7 +124,7 @@ void FootClass::Destroyed(int a2)
   {
     v3 = ((__int64 (*)(FootClass *, unsigned char *))*((unsigned int *)this->ptr_0 + 110))(this, v4); /*0x4d98f0*/
     if ( (unsigned __int8)CreateTriggerClassIfFarEnough(7, (int)(((v3) >> 32) & 0xFFFFFFFFu), *(unsigned int *)v3) ) /*0x4d98fe*/
-      VoxClass::FindAndPlay((VoxClass *)&stru_822420.ImageFile[8], -1); /*0x4d9911*/
+      ((VoxClass *)(VoxClass *)&stru_822420.ImageFile[8])->FindAndPlay( -1); /*0x4d9911*/
   }
 
 }

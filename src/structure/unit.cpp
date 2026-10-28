@@ -7615,7 +7615,7 @@ int UnitClass::OnUnderAttack(ObjectClass* attacker, int damage, int weaponIdx, C
             (*((unsigned short *)&(a5))) = *v57 / 256; /*0x7384fa*/
             (*(((unsigned short *)&(a5)) + 1)) = v57[1] / 256; /*0x738513*/
             if ( (uint8_t)CreateTriggerClassIfFarEnough(4, (int)a5, (int)a5) ) /*0x73851d*/
-              VoxClass::FindAndPlay((VoxClass *)aEvaOreminerund, -1); /*0x738530*/
+              ((VoxClass *)(VoxClass *)aEvaOreminerund)->FindAndPlay( -1); /*0x738530*/
           }
         }
       }

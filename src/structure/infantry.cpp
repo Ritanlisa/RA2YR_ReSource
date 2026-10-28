@@ -6956,7 +6956,7 @@ int InfantryClass::RepairBridge()
                       this,
                       &p_Cell_field_0x0);
               if ( (uint8_t)CreateTriggerClassIfFarEnough(14, (int)((v50) >> 32), *(unsigned int *)v50) ) /*0x519bb6*/
-                VoxClass::FindAndPlay(&stru_825538, -1); /*0x519bc9*/
+                ((VoxClass *)&stru_825538)->FindAndPlay( -1); /*0x519bc9*/
             }
             if ( *&dword_8871E0->q248 != -1 ) /*0x519bda*/
             {

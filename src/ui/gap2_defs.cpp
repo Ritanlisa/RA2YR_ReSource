@@ -5726,11 +5726,11 @@ LABEL_85:
             if ( v10 == 16 ) /*0x6ab6a9*/
             {
               if ( !ShouldDisableCameo ) /*0x6ab6ad*/
-                VoxClass::FindAndPlay((VoxClass *)aEvaTraining, -1); /*0x6ab6b9*/
+                ((VoxClass *)(VoxClass *)aEvaTraining)->FindAndPlay( -1); /*0x6ab6b9*/
             }
             else if ( !ShouldDisableCameo ) /*0x6ab6bd*/
             {
-              VoxClass::FindAndPlay(&stru_83FB38, -1); /*0x6ab6c9*/
+              ((VoxClass *)&stru_83FB38)->FindAndPlay( -1); /*0x6ab6c9*/
             }
           }
           TypeProductionCount = SidebarClass::getTypeProductionCount( /*0x6ab6e6*/

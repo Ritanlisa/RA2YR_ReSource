@@ -3422,7 +3422,7 @@ int ObjectClass::RenderAlphaShapes()
         v21 = *(unsigned int *)&(&dword_A83D4C)[134].__pad_90[4]; /*0x430d4a*/
         v16 = GetStringCSF((char *)stru_818A68.Priority, 0, "D:\\ra2mdpost\\Beacon.CPP", 812); /*0x430d5a*/
         MessageListClass::AddMessage((MessageListClass *)&g_GameNetworkObject, 0, 0, v16, v21, 16454, 225, 0); /*0x430d69*/
-        VoxClass::FindAndPlay((VoxClass *)&stru_818A68.YuriVoice[8], -1); /*0x430d78*/
+        ((VoxClass *)(VoxClass *)&stru_818A68.YuriVoice[8])->FindAndPlay( -1); /*0x430d78*/
         PlayVocClass(*(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 460), 0x2000, 1.0, 0); /*0x430d94*/
         v24 = 32; /*0x430d9f*/
         strcpy(v25, ToWideStringChar((char *)*(unsigned int *)dword_A8DA78)); /*0x430dcf*/
@@ -3448,7 +3448,7 @@ int ObjectClass::RenderAlphaShapes()
               (v22) = ((v22) & ~0xFFFF) | ((unsigned int)(a3 / 256) & 0xFFFF); /*0x430ee6*/
               (v22) = ((v22) & ~(0xFFFFULL << 16)) | (((uint64_t)(unsigned int)(a4 / 256) & 0xFFFF) << 16); /*0x430ef9*/
               if ( (uint8_t)CreateTriggerClassIfFarEnough(11, (uint8_t)(a4 >> 31), v22) ) /*0x430f08*/
-                VoxClass::FindAndPlay(&stru_818A68, -1); /*0x430f1b*/
+                ((VoxClass *)&stru_818A68)->FindAndPlay( -1); /*0x430f1b*/
             }
           }
         }

@@ -1337,7 +1337,7 @@ int SuperWeapon_Update()
             v31 = 3; /*0x53aaf8*/
             if ( *(int *)((char *)&stru_A83CD9.estimatedHealth + 3) ) /*0x53aaff*/
               v31 = *(unsigned int *)(*(int *)((char *)&stru_A83CD9.estimatedHealth + 3) + 90196); /*0x53ab01*/
-            VoxClass::FindAndPlay(&stru_828080, -1); /*0x53ab11*/
+            ((VoxClass *)&stru_828080)->FindAndPlay( -1); /*0x53ab11*/
             StringCSF = GetStringCSF(aTxtLightningSt_0, 0, g_Str_File_Ion_cpp, 974); /*0x53ab31*/
             (v17) = ((v17) & ~0xFF) | ((MessageListClass::AddMessage(&unk_A8BC60, 0, 0, StringCSF, v31, 70, 150, 0)) & 0xFF); /*0x53ab40*/
           }

@@ -9444,7 +9444,7 @@ namespace gamemd {
       bug->owner->recheckTechTree = 1; /*0x4523b8*/
       BuildingClass::Deactivate(bug); /*0x4523c0*/
       if ( (uint8_t)House::IsHumanPlayer((House *)bug->owner) ) /*0x4523cb*/
-        VoxClass::FindAndPlay((VoxClass *)&stru_818E00.TrailerAnim, -1); /*0x4523de*/
+        ((VoxClass *)(VoxClass *)&stru_818E00.TrailerAnim)->FindAndPlay( -1); /*0x4523de*/
       Type = bug->Type; /*0x4523e3*/
       v5 = Type->Factory[0]; /*0x4523e9*/
       if ( v5 ) /*0x4523f1*/

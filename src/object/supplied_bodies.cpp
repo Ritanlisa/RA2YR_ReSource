@@ -3175,7 +3175,7 @@ namespace gamemd {
       owner = this->owner; /*0x448205*/
       this->isPrimaryFactory = 1; /*0x44820b*/
       if ( (uint8_t)House::IsHumanPlayer((House *)owner) ) /*0x448212*/
-        VoxClass::FindAndPlay((VoxClass *)&stru_818E00.ChargerBarrels[9], -1); /*0x448226*/
+        ((VoxClass *)(VoxClass *)&stru_818E00.ChargerBarrels[9])->FindAndPlay( -1); /*0x448226*/
       if ( this->Type->Factory[0] == 7 ) /*0x448238*/
         House::ChooseHouseEnemy((House *)this->owner, (int)this); /*0x448241*/
       goto LABEL_17; /*0x448241*/
@@ -7730,7 +7730,7 @@ int TechnoClass::GarrisonBuilding()
       (*(void (**)(unsigned int *, int))(*a2 + 292))(a2, 2); /*0x5229a2*/
       if ( (unsigned __int8)House::IsHumanPlayer((House *)this->owner) ) /*0x5229ae*/
       {
-        VoxClass::FindAndPlay(&stru_8255B0, -1); /*0x5229c1*/
+        ((VoxClass *)&stru_8255B0)->FindAndPlay( -1); /*0x5229c1*/
         v9 = (unsigned int *)this->GetInvalidCoord( v12); /*0x5229d0*/
         StartAudioControllerAt(dword_8871E0->PsychicDominatorActivateSound, v9, 0); /*0x5229e0*/
       }

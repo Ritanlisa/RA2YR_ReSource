@@ -630,7 +630,7 @@ LABEL_145:
              + *(unsigned int *)&v3[31].__pad_140[228]
              + *(unsigned int *)&v3[31].__pad_140[232] > 0 )
           {
-            VoxClass::FindAndPlay((VoxClass *)&stru_819030.Name[5], -1); /*0x4f8ba0*/
+            ((VoxClass *)(VoxClass *)&stru_819030.Name[5])->FindAndPlay( -1); /*0x4f8ba0*/
             HouseClass::updateFactoryQueue((HouseClass *)&dword_87F7E8); /*0x4f8baa*/
             _EAX = dword_8871E0; /*0x4f8baf*/
             __asm /*0x4f8bb4*/
@@ -687,7 +687,7 @@ LABEL_161:
               {
                 if ( !*(unsigned int *)&stru_A8E960.waypoints[174] ) /*0x4f8d08*/
                 {
-                  VoxClass::FindAndPlay(&stru_82473C, -1); /*0x4f8d14*/
+                  ((VoxClass *)&stru_82473C)->FindAndPlay( -1); /*0x4f8d14*/
                   _EDX = dword_8871E0; /*0x4f8d19*/
                   __asm /*0x4f8d20*/
                   {

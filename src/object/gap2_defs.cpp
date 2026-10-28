@@ -3057,7 +3057,7 @@ void TechnoClass::Process(int a1) {
         {
   LABEL_15:
           if ( !dword_A8E7AC ) /*0x50e25c*/
-            VoxClass::FindAndPlay(&g_Str_EVA_RobotTanksOffline, -1); /*0x50e268*/
+            ((VoxClass *)&g_Str_EVA_RobotTanksOffline)->FindAndPlay( -1); /*0x50e268*/
         }
       }
     }

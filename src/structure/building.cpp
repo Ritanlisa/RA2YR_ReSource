@@ -6778,7 +6778,7 @@ int BuildingClass::ToggleRepairMode(int aP1) {
       owner = (House *)aP1->owner; /*0x447097*/
       aP1->NeedsRepairs[0] = 1; /*0x44709d*/
       if ( (uint8_t)House::IsHumanPlayer(owner) ) /*0x4470a4*/
-        VoxClass::FindAndPlay((VoxClass *)aEvaRepairing, -1); /*0x4470b7*/
+        ((VoxClass *)(VoxClass *)aEvaRepairing)->FindAndPlay( -1); /*0x4470b7*/
     }
   }
   else
@@ -8843,7 +8843,7 @@ int BuildingClass::ProcessStructureAbandoned() {
           PlayVocClass(dword_8871E0->GeneticMutatorActivateSound, 0x2000, 1.0, 0); /*0x4582a9*/
           v9 = ((int64_t (__thiscall *)(BuildingClass *, unsigned char *))*(unsigned int *)&this->ptr_0->airstrikeTintTimer)(this, v10); /*0x4582b7*/
           if ( (uint8_t)CreateTriggerClassIfFarEnough(15, (*((signed int *)(((unsigned char *)&(v9)) + 4))), *(unsigned int *)v9) ) /*0x4582c5*/
-            VoxClass::FindAndPlay(&stru_81926C, -1); /*0x4582d8*/
+            ((VoxClass *)&stru_81926C)->FindAndPlay( -1); /*0x4582d8*/
         }
         PlayHealthDependentBuildingAnim((TechnoClass *)this); /*0x4582df*/
         this->drawFrame_0(v4, 0); /*0x4582eb*/
