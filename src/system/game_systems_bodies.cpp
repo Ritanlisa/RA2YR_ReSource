@@ -385,7 +385,7 @@ LABEL_9:
     if ( (unsigned __int16)Msg == 1344 ) /*0x5e1f35*/
     {
       ReadChatMessage((wchar_t **)&hWnd, (HWND)v20); /*0x5e1fb8*/
-      DeleteAndZero::Alt((DeleteAndZero *)&hWnd); /*0x5e1fc1*/
+      ((DeleteAndZero *)&hWnd)->Alt(); /*0x5e1fc1*/
       if ( (((v16) >> 16) & 0xFFFF) == 1281 ) /*0x5e1fcf*/
       {
         SendNetworkLobbyChatMessage((HWND)this, (int)Math::InitDegToRad, 61680); /*0x5e1fe6*/
@@ -2077,7 +2077,7 @@ LABEL_259:
         v143 = *(void **)&v214[60]; /*0x60eef4*/
         if ( *(unsigned int *)&v214[60] ) /*0x60eefd*/
         {
-          DeleteAndZero::Alt(*(DeleteAndZero **)&v214[60]); /*0x60ef01*/
+          ((DeleteAndZero *)*(DeleteAndZero **)&v214[60])->Alt(); /*0x60ef01*/
           __3_YAXPAX_Z(v143); /*0x60ef07*/
         }
         if ( dword_AC18C4 ) /*0x60ef16*/
@@ -2304,9 +2304,9 @@ LABEL_151:
             Y[1] = v64; /*0x60e2fb*/
             SendMessageA(v66, 0x4E9u, 0, (LPARAM)Y); /*0x60e2ff*/
             WideString::AssignFromPtr((WideString *)&v189, (const wchar_t **)&v184); /*0x60e30a*/
-            DeleteAndZero::Alt(&v184); /*0x60e313*/
+            ((DeleteAndZero *)&v184)->Alt(); /*0x60e313*/
             WideString::Reassign_Alt((WideString *)&dy, &v189); /*0x60e321*/
-            DeleteAndZero::Alt((DeleteAndZero *)&v189); /*0x60e32a*/
+            ((DeleteAndZero *)&v189)->Alt(); /*0x60e32a*/
             v67 = WideString::GetOrEmpty((WideString *)&dy); /*0x60e338*/
             if ( wcscmp(v67, &g_TypeClass_DefaultString) ) /*0x60e33e*/
               goto LABEL_137; /*0x60e33e*/
@@ -2317,9 +2317,9 @@ LABEL_151:
             Y[1] = -1; /*0x60e389*/
             SendMessageA(v69, 0x4E9u, 0, (LPARAM)Y); /*0x60e391*/
             WideString::AssignFromPtr((WideString *)&dy.DeleteAndZero_field_0x04, (const wchar_t **)&v184); /*0x60e39c*/
-            DeleteAndZero::Alt(&v184); /*0x60e3a5*/
+            ((DeleteAndZero *)&v184)->Alt(); /*0x60e3a5*/
             WideString::Reassign_Alt((WideString *)&dy, (const wchar_t **)&dy.DeleteAndZero_field_0x04); /*0x60e3b3*/
-            DeleteAndZero::Alt((DeleteAndZero *)&dy.DeleteAndZero_field_0x04); /*0x60e3bc*/
+            ((DeleteAndZero *)&dy.DeleteAndZero_field_0x04)->Alt(); /*0x60e3bc*/
             v70 = WideString::GetOrEmpty((WideString *)&dy); /*0x60e3ca*/
             if ( wcscmp(v70, &g_TypeClass_DefaultString) ) /*0x60e3d0*/
             {
@@ -2327,7 +2327,7 @@ LABEL_137:
               v177 = WideString::GetOrEmpty_Alt((WideString *)&dy); /*0x60e3e5*/
               SendMessageA(DlgItem, 0x4B2u, 0, (LPARAM)v177); /*0x60e3f2*/
             }
-            DeleteAndZero::Alt(&dy); /*0x60e3f8*/
+            ((DeleteAndZero *)&dy)->Alt(); /*0x60e3f8*/
           }
         }
         return 0; /*0x60e409*/
@@ -2646,7 +2646,7 @@ void GameSetup_DisplayPlayers()
       {
         v21 = v20; /*0x5db4ce*/
         v20 = (DeleteAndZero *)v20->u32_8; /*0x5db4d0*/
-        DeleteAndZero::Alt(v21); /*0x5db4d9*/
+        ((DeleteAndZero *)v21)->Alt(); /*0x5db4d9*/
         operator delete((void *)(v21)); /*0x5db4df*/
       }
       *((unsigned int *)Block + v18++) = 0; /*0x5db4f0*/
@@ -2698,8 +2698,8 @@ void GameSetup_DisplayPlayers()
       while ( v39 > v48 ); /*0x5db5a8*/
     }
     operator delete((Block)); /*0x5db5b3*/
-    DeleteAndZero::Alt((DeleteAndZero *)&v35.q004); /*0x5db5bf*/
-    DeleteAndZero::Alt(&v35); /*0x5db5c8*/
+    ((DeleteAndZero *)&v35.q004)->Alt(); /*0x5db5bf*/
+    ((DeleteAndZero *)&v35)->Alt(); /*0x5db5c8*/
   }
 }
 // 0x5e2670
@@ -3256,8 +3256,8 @@ void LoadSaveDialog::FillList()
     }
   }
 LABEL_55:
-  DeleteAndZero::Alt((DeleteAndZero *)&v42.DeleteAndZero_field_0x04); /*0x559bf5*/
-  DeleteAndZero::Alt(&v42); /*0x559c02*/
+  ((DeleteAndZero *)&v42.DeleteAndZero_field_0x04)->Alt(); /*0x559bf5*/
+  ((DeleteAndZero *)&v42)->Alt(); /*0x559c02*/
 
 }
 // 0x4b6c30
@@ -6403,8 +6403,8 @@ void MultiplayerGameMode::Dtor()
     (**v4)(v4, 1); /*0x5d5d64*/
   DeleteAndZero((ObjectClass *)this->q048)); /*0x5d5d69*/
   DeleteAndZero((ObjectClass *)this->q044)); /*0x5d5d71*/
-  DeleteAndZero::Alt(&this->u32_C); /*0x5d5d79*/
-  DeleteAndZero::Alt(&this->q020); /*0x5d5d81*/
+  ((DeleteAndZero *)&this->u32_C)->Alt(); /*0x5d5d79*/
+  ((DeleteAndZero *)&this->q020)->Alt(); /*0x5d5d81*/
   MultiplayerGameMode_field_0x0C = (void *)this->u32_C; /*0x5d5d86*/
   this->u32_8 = (int)0; /*0x5d5d89*/
   if ( MultiplayerGameMode_field_0x0C && (this->u32_15) ) /*0x5d5d93*/

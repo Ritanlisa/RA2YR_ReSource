@@ -1038,7 +1038,7 @@ wchar_t ** UI_Assign(wchar_t ** a1, HWND a2, LPARAM, LPARAM)
   lParam[1] = LPARAM; /*0x603f2b*/
   SendMessageA(a2, 0x4E9u, 0, (LPARAM)lParam); /*0x603f2f*/
   ((WideString *)a1)->AssignFromPtr((const wchar_t **)&v8); /*0x603f3c*/
-  DeleteAndZero::Alt((DeleteAndZero *)&v8); /*0x603f45*/
+  ((DeleteAndZero *)&v8)->Alt(); /*0x603f45*/
   return a1; /*0x603f4c*/
 
 }

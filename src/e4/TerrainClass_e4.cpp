@@ -525,7 +525,7 @@ LABEL_153:
         result);
       Mouse::ReleaseCapture((ScrollClass *)&dword_87F7E8); /*0x6def01*/
       MapClass::MarkForRedraw((GScreenClass *)&dword_87F7E8, 0); /*0x6def0c*/
-      ((TacticalMap *)(GScreenClass *)&dword_87F7E8)->Redraw(); /*0x6def16*/
+      TacticalMap::Redraw((GScreenClass *)&dword_87F7E8); /*0x6def16*/
       Sleep(0x3E8u); /*0x6def20*/
       return result; /*0x6def32*/
     case 0x32:
@@ -535,7 +535,7 @@ LABEL_153:
       stru_A8E960.random[552] = BYTE2(dword_A8B230[381].ptr_C); /*0x6def6d*/
       (*(void (**)(MouseClass *))(dword_887640->HandleClick_ph + 16))(dword_887640); /*0x6def74*/
       MapClass::MarkForRedraw((GScreenClass *)&dword_87F7E8, 0); /*0x6def7d*/
-      ((TacticalMap *)(GScreenClass *)&dword_87F7E8)->Redraw(); /*0x6def87*/
+      TacticalMap::Redraw((GScreenClass *)&dword_87F7E8); /*0x6def87*/
       return result; /*0x6def98*/
     case 0x33:
       TActionClass::executeRepairAction((TActionClass *)&dword_87F7E8, (int)a5); /*0x6defa8*/

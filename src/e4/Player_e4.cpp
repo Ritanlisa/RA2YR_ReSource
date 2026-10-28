@@ -44,7 +44,7 @@ void Player::BuildListString(wchar_t * Destination)
       GetPlayerTypeString((String *)&v6.ptr_4, v3); /*0x5e8e2b*/
       v4 = CharStringToWide((wchar_t **)&v6.ptr_8, (const char **)&v6.ptr_4); /*0x5e8e38*/
       WideString::Reassign_Alt((WideString *)&v6, (const wchar_t **)v4); /*0x5e8e42*/
-      DeleteAndZero::Alt((DeleteAndZero *)&v6.ptr_8); /*0x5e8e4b*/
+      ((DeleteAndZero *)&v6.ptr_8)->Alt(); /*0x5e8e4b*/
       j_DeleteAndZero((ObjectClass *)&v6.ptr_4); /*0x5e8e54*/
     }
     else
@@ -54,7 +54,7 @@ void Player::BuildListString(wchar_t * Destination)
     v5 = WideString::GetOrEmpty((WideString *)&v6); /*0x5e8e5d*/
     wcscat((wchar_t *)this, v5); /*0x5e8e64*/
     wcscat((wchar_t *)this, asc_8304FC); /*0x5e8e6f*/
-    DeleteAndZero::Alt(&v6); /*0x5e8e7b*/
+    ((DeleteAndZero *)&v6)->Alt(); /*0x5e8e7b*/
     ++v2; /*0x5e8e80*/
   }
   while ( (int)v2 < (int)&stru_A8D804.__pad_3D[623] ); /*0x5e8e89*/

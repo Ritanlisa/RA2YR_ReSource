@@ -449,8 +449,8 @@ int Options::DeleteAndZero(void *a1, void *a2)
     {
       char *v4; // esi
       v4 = (char *)this->field_8 + v3; /*0x6244f4*/
-      DeleteAndZero::Alt(&v4->u32_8); /*0x6244f9*/
-      DeleteAndZero::Alt(&v4->__pad_004); /*0x624501*/
+      ((DeleteAndZero *)&v4->u32_8)->Alt(); /*0x6244f9*/
+      ((DeleteAndZero *)&v4->__pad_004)->Alt(); /*0x624501*/
       result = *(unsigned int *)this->__pad_0; /*0x624506*/
       ++v2; /*0x624508*/
       v3 += 24; /*0x624509*/
@@ -593,7 +593,7 @@ AbstractClass * * Options::DestroyComposite(void * Block, char a2)
   v6 = *&Block->u32_40; /*0x6255bb*/
   if ( v6 ) /*0x6255c0*/
   {
-    DeleteAndZero::Alt(*&Block->u32_40); /*0x6255c4*/
+    ((DeleteAndZero *)*&Block->u32_40)->Alt(); /*0x6255c4*/
     operator delete((v6)); /*0x6255ca*/
   }
   if ( (a2 & 1) != 0 ) /*0x6255d9*/
@@ -647,8 +647,8 @@ void * Options::RebuildDropdownList(ObjectClass * aP1)
     do /*0x625665*/
     {
       v8 = (char *)v5[2] + v7; /*0x62564b*/
-      DeleteAndZero::Alt((DeleteAndZero *)(v8 + 8)); /*0x625650*/
-      DeleteAndZero::Alt((DeleteAndZero *)(v8 + 4)); /*0x625658*/
+      ((DeleteAndZero *)(v8 + 8))->Alt(); /*0x625650*/
+      ((DeleteAndZero *)(v8 + 4))->Alt(); /*0x625658*/
       ++v4; /*0x62565f*/
       v7 += 24; /*0x625660*/
     }
@@ -696,8 +696,8 @@ void * Options::RebuildDropdownList(ObjectClass * aP1)
     }
     v3 = (int *)this; /*0x625752*/
   }
-  DeleteAndZero::Alt((DeleteAndZero *)&v19.q004); /*0x62575a*/
-  DeleteAndZero::Alt(&v19); /*0x625763*/
+  ((DeleteAndZero *)&v19.q004)->Alt(); /*0x62575a*/
+  ((DeleteAndZero *)&v19)->Alt(); /*0x625763*/
   return v3; /*0x62576a*/
 
 }

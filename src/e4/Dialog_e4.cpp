@@ -1668,7 +1668,7 @@ AbstractClass * * Dialog::DestroyDialogSystem()
   v5 = *(void **)&v15[60]; /*0x61042a*/
   if ( *(unsigned int *)&v15[60] ) /*0x610430*/
   {
-    DeleteAndZero::Alt(*(DeleteAndZero **)&v15[60]); /*0x610434*/
+    ((DeleteAndZero *)*(DeleteAndZero **)&v15[60])->Alt(); /*0x610434*/
     __3_YAXPAX_Z(v5); /*0x61043a*/
   }
   if ( dword_AC18C4 ) /*0x610449*/
@@ -2567,7 +2567,7 @@ CampaignClass * * Dialog::CleanupTree()
   Dialog_field_0x3C = (DeleteAndZero *)this->u32_3C; /*0x6233fa*/
   if ( Dialog_field_0x3C ) /*0x6233ff*/
   {
-    DeleteAndZero::Alt(Dialog_field_0x3C); /*0x623403*/
+    ((DeleteAndZero *)Dialog_field_0x3C)->Alt(); /*0x623403*/
     __3_YAXPAX_Z(Dialog_field_0x3C); /*0x623409*/
   }
 

@@ -1560,7 +1560,7 @@ LABEL_64:
   GameResult::CalcScore((GameResult *)&stru_8A38E0); /*0x685d7a*/
   if ( *(unsigned int *)&stru_887338.__pad_1C[20] ) /*0x685d87*/
     Tooltip::Enable(*(Tooltip **)&stru_887338.__pad_1C[20], stru_A8E960.random[12]); /*0x685d90*/
-  ((TacticalMap *)(GScreenClass *)&dword_87F7E8)->Redraw(); /*0x685d9a*/
+  TacticalMap::Redraw((GScreenClass *)&dword_87F7E8); /*0x685d9a*/
   return FadePalette(&FileSystem_TEMPERAT_PAL, 7, (void (*)(void))Event::Dispatch); /*0x6858fa*/
 
 }
@@ -1798,7 +1798,7 @@ LABEL_65:
     GameResult::CalcScore((GameResult *)&stru_8A38E0); /*0x68639a*/
     if ( *(unsigned int *)&stru_887338.__pad_1C[20] ) /*0x6863a7*/
       Tooltip::Enable(*(Tooltip **)&stru_887338.__pad_1C[20], stru_A8E960.random[12]); /*0x6863af*/
-    (v15) = ((v15) & ~0xFF) | ((((TacticalMap *)(GScreenClass *)&dword_87F7E8)->Redraw()) & 0xFF); /*0x6863b9*/
+    (v15) = ((v15) & ~0xFF) | ((TacticalMap::Redraw((GScreenClass *)&dword_87F7E8)) & 0xFF); /*0x6863b9*/
     goto LABEL_60; /*0x6863be*/
   }
   if ( dword_887628 ) /*0x6861fd*/

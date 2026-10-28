@@ -727,7 +727,7 @@ Coord * * CComObject_CChatEventSink___ATL::DispatchStub_22(int a1, int a2, int a
     {
       (*(void (**)(LPVOID, char *))(*(unsigned int *)ppv + 60))(ppv, g_INI_Key_A1); /*0x7a7ffc*/
     }
-    DeleteAndZero::Alt(&v23); /*0x7a8003*/
+    ((DeleteAndZero *)&v23)->Alt(); /*0x7a8003*/
     return 0; /*0x7a8014*/
   }
   Current = (HWND)Dialog::GetCurrent(); /*0x7a801c*/
@@ -1158,13 +1158,13 @@ LABEL_22:
       (*(void (**)(LPVOID, const char *, wchar_t *))(v23 + 236))(ppv, a3, v24); /*0x7a9510*/
     }
     PlayVocClass(*(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1708), 0x2000, 1.0, 0); /*0x7a952d*/
-    DeleteAndZero::Alt(&v26); /*0x7a9536*/
+    ((DeleteAndZero *)&v26)->Alt(); /*0x7a9536*/
     return 0; /*0x7a953e*/
   }
   else
   {
 LABEL_12:
-    DeleteAndZero::Alt(&v26); /*0x7a92b3*/
+    ((DeleteAndZero *)&v26)->Alt(); /*0x7a92b3*/
     return 0; /*0x7a92b8*/
   }
 
@@ -1220,7 +1220,7 @@ AbstractClass * * CComObject_CChatEventSink___ATL::DispatchStub_44(int a1, int a
   {
     v6 = 0; /*0x7a958b*/
   }
-  DeleteAndZero::Alt((DeleteAndZero *)v18); /*0x7a95dc*/
+  ((DeleteAndZero *)v18)->Alt(); /*0x7a95dc*/
   if ( !v6 ) /*0x7a95e3*/
     return 0; /*0x7a95e7*/
   if ( !IsBuddyOrIgnoreWOL((const char *)a3) ) /*0x7a95f5*/
@@ -1604,14 +1604,14 @@ int CComObject_CChatEventSink___ATL::DispatchStub_24(int a1, int a2, int a3, int
         v14 = WideString::GetOrEmpty(v24); /*0x7ab843*/
         DrawDialogText(-1, v14, DlgItem); /*0x7ab850*/
       }
-      DeleteAndZero::Alt((DeleteAndZero *)v24); /*0x7ab859*/
+      ((DeleteAndZero *)v24)->Alt(); /*0x7ab859*/
     }
     else
     {
       v12 = WideString::GetOrEmpty(v24); /*0x7ab7fd*/
       ShowDialogConfirm(v12, 0, (unsigned __int8 (*)(void))GameLoop::Thunk, 0); /*0x7ab806*/
       ++dword_B77DD4; /*0x7ab815*/
-      DeleteAndZero::Alt((DeleteAndZero *)v24); /*0x7ab81a*/
+      ((DeleteAndZero *)v24)->Alt(); /*0x7ab81a*/
     }
   }
   LeaveChannelWOL((const char *)a4); /*0x7ab8b2*/
@@ -2336,7 +2336,7 @@ int CComObject_CChatEventSink___ATL::Unadvise(int a1, int a2, const char * a3, c
         v8 = ((WideString *)((wchar_t **)&a4))->GetOrEmpty(); /*0x7ab06f*/
         Dialog::ShowMessage(16711935, (size_t)g_Str_Trace__hs, v7, v8); /*0x7ab081*/
       }
-      DeleteAndZero::Alt((DeleteAndZero *)&a4); /*0x7ab08d*/
+      ((DeleteAndZero *)&a4)->Alt(); /*0x7ab08d*/
     }
   }
   return 0; /*0x7ab092*/
@@ -2382,7 +2382,7 @@ int CComObject_CChatEventSink___ATL::DispatchStub_42(int a1, int a2, const char 
     {
       v6 = 0; /*0x7ab0d2*/
     }
-    DeleteAndZero::Alt((DeleteAndZero *)&a2); /*0x7ab123*/
+    ((DeleteAndZero *)&a2)->Alt(); /*0x7ab123*/
     if ( v6 && IsBuddyOrIgnoreWOL(v5) ) /*0x7ab12f*/
     {
       char *v9; // esi
@@ -2439,7 +2439,7 @@ int CComObject_CChatEventSink___ATL::EnumDependents(int a1, int a2, int a3, cons
         v9 = ((WideString *)((wchar_t **)&a5))->GetOrEmpty(); /*0x7ab22f*/
         Dialog::ShowMessage(3166463, (size_t)g_Str_Trace__hs, v8, v9); /*0x7ab241*/
       }
-      DeleteAndZero::Alt((DeleteAndZero *)&a5); /*0x7ab24d*/
+      ((DeleteAndZero *)&a5)->Alt(); /*0x7ab24d*/
     }
   }
   return 0; /*0x7ab252*/
@@ -2485,7 +2485,7 @@ int CComObject_CChatEventSink___ATL::DispatchStub_43(int a1, int a2, int a3, con
     {
       v7 = 0; /*0x7ab292*/
     }
-    DeleteAndZero::Alt((DeleteAndZero *)&a2); /*0x7ab2e3*/
+    ((DeleteAndZero *)&a2)->Alt(); /*0x7ab2e3*/
     if ( v7 && IsBuddyOrIgnoreWOL(v6) ) /*0x7ab2ef*/
     {
       char *v10; // esi

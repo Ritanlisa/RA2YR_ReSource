@@ -4698,8 +4698,8 @@ unsigned int * VectorCursor::drawCursor(char a2) {
 namespace gamemd {
 void ** PlayerProfile::QueryInterface(char a2) {
   *this = (PlayerProfile)0; /*0x77b036*/
-  DeleteAndZero::Alt(&this->DeleteAndZero_46); /*0x77b03c*/
-  DeleteAndZero::Alt(&this->DeleteAndZero_14); /*0x77b044*/
+  ((DeleteAndZero *)&this->DeleteAndZero_46)->Alt(); /*0x77b03c*/
+  ((DeleteAndZero *)&this->DeleteAndZero_14)->Alt(); /*0x77b044*/
   DeleteAndZero(&this->ObjectClass_3); /*0x77b04c*/
   ReferenceCounted::Constructor((ReferenceCounted *)this); /*0x77b053*/
   if ( (a2 & 1) != 0 ) /*0x77b05d*/

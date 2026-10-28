@@ -4404,9 +4404,9 @@ wchar_t ** sub_603FC0(wchar_t ** a1, HWND a2, HWND hWnd, unsigned short a4, void
   lParam[1] = v10; /*0x60401a*/
   SendMessageA(a2, 0x4E9u, 0, (LPARAM)lParam); /*0x60401e*/
   WideString::AssignFromPtr((WideString *)&a5, (const wchar_t **)&v9); /*0x604029*/
-  DeleteAndZero::Alt((DeleteAndZero *)&v9); /*0x604032*/
+  ((DeleteAndZero *)&v9)->Alt(); /*0x604032*/
   WideString::AssignFromPtr((WideString *)a1, (const wchar_t **)&a5); /*0x60403e*/
-  DeleteAndZero::Alt(&a5); /*0x604047*/
+  ((DeleteAndZero *)&a5)->Alt(); /*0x604047*/
   return a1; /*0x60404e*/
 }
 } // namespace gamemd

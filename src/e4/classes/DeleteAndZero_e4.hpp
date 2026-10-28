@@ -12,7 +12,7 @@ struct DeleteAndZero {
     unsigned int ptr_8;  // 0x8
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
-    static int Alt(void *aP0 = 0);  // 139 static-form call sites, 0 member-form; matches ui/command_ext.hpp static decl
+    int Alt();  // 0x7B6760 thiscall (x181b: real member, receiver implicit)
     int Alt2();
     void ** OrFree(char a2, void *a1 = 0);
 };

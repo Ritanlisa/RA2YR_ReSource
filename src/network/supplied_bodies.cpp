@@ -2700,7 +2700,7 @@ namespace gamemd {
 void MultiplayerTeam::Destructor()
 {
   /* X11: ptr_0 install elided (implicit via class virtuals 0x5d8c80) — binary-proven install, was 0 */
-  DeleteAndZero::Alt(&this->__pad_004); /*0x5d8c89*/
+  ((DeleteAndZero *)&this->__pad_004)->Alt(); /*0x5d8c89*/
 }
 } // namespace gamemd
 
@@ -2709,7 +2709,7 @@ namespace gamemd {
 void MultiplayerTeam_Destru::QueryInterface()
 {
   *(unsigned int *)this->tail_0 = 0; /*0x5d8d56*/
-  DeleteAndZero::Alt(&this->DeleteAndZero_4); /*0x5d8d5c*/
+  ((DeleteAndZero *)&this->DeleteAndZero_4)->Alt(); /*0x5d8d5c*/
   if ( (a2 & 1) != 0 ) /*0x5d8d66*/
     operator delete((this)); /*0x5d8d69*/
   return (void **)this; /*0x5d8d73*/
@@ -2887,7 +2887,7 @@ void NetworkSettings::DlgProc()
           return 0; /*0x5ddef3*/
         case 0x540u: /*0x5ddc72*/
           ReadChatMessage((wchar_t **)&a3, (HWND)a3.DeleteAndZero_field_0x04); /*0x5dde9c*/
-          DeleteAndZero::Alt(&a3); /*0x5ddea5*/
+          ((DeleteAndZero *)&a3)->Alt(); /*0x5ddea5*/
           if ( (v4) = ((v4) & ~(0xFFFF << 16)) | (((= 1281) & 0xFFFF) << 16)) /*0x5ddeb3*/
           {
             SendNetworkLobbyChatMessage(hWnd, (int)Math::InitDegToRad, 61680); /*0x5ddeca*/
@@ -3373,7 +3373,7 @@ void Modem::CheckStatus()
   if ( (unsigned char)a2 ) /*0x5f0abf*/
   {
     MapClass::MarkForRedraw((GScreenClass *)&DataGlobal_87F7E8, 2); /*0x5f0ac8*/
-    ((TacticalMap *)(GScreenClass *)&DataGlobal_87F7E8)->Redraw(); /*0x5f0ad2*/
+    TacticalMap::Redraw((GScreenClass *)&DataGlobal_87F7E8); /*0x5f0ad2*/
   }
   switch ( v9 ) /*0x5f0ae0*/
   {
@@ -5880,8 +5880,8 @@ void WOLGameList::PopulateLobbyLists()
     if ( v49 ) /*0x7a3af5*/
       ShowUserProfileWOL(v49); /*0x7a3af9*/
     DeleteAndZero((ObjectClass *)&v51[24]); /*0x7a3b02*/
-    DeleteAndZero::Alt((DeleteAndZero *)&v51[40]); /*0x7a3b0b*/
-    DeleteAndZero::Alt((DeleteAndZero *)&v51[36]); /*0x7a3b14*/
+    ((DeleteAndZero *)&v51[40])->Alt(); /*0x7a3b0b*/
+    ((DeleteAndZero *)&v51[36])->Alt(); /*0x7a3b14*/
   }
   return 0; /*0x7a3134*/
 }

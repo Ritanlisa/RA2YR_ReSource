@@ -380,7 +380,7 @@ LABEL_111:
     SendMessageA(DlgItem, 0x4C0u, 0xFFFFFFFF, (LPARAM)v32); /*0x5eb621*/
     if ( !v35 ) /*0x5eb629*/
       ShowWindow(DlgItem, 5); /*0x5eb62e*/
-    DeleteAndZero::Alt((DeleteAndZero *)&v38); /*0x5eb638*/
+    ((DeleteAndZero *)&v38)->Alt(); /*0x5eb638*/
     v36 = (ObjectClass *)v16->ptr_0 + 1); /*0x5eb641*/
   }
   while ( (int)&v16->ptr_0 + 1 < 8 );
@@ -537,7 +537,7 @@ int Lobby::BuildPlayerList()
       v3 = ToWideStringCharAlt((char **)&v7.ptr_8, (const wchar_t **)&v7.ptr_4); /*0x77dbeb*/
       String::Reassign((String *)&v7, (const char **)v3); /*0x77dbf5*/
       j_DeleteAndZero((ObjectClass *)&v7.ptr_8); /*0x77dbfe*/
-      DeleteAndZero::Alt((DeleteAndZero *)&v7.ptr_4); /*0x77dc07*/
+      ((DeleteAndZero *)&v7.ptr_4)->Alt(); /*0x77dc07*/
     }
     else
     {

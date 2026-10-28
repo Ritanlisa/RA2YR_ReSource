@@ -391,7 +391,7 @@ LABEL_151:
                 Dialog::ShowMessageBox(v26, v75, 0, 0, 0, (int)v76); /*0x6ad316*/
                 v27 = GetDlgItem((HWND)hWnd, 1559); /*0x6ad323*/
                 EnableWindow(v27, 1); /*0x6ad32a*/
-                DeleteAndZero::Alt(&v83); /*0x6ad334*/
+                ((DeleteAndZero *)&v83)->Alt(); /*0x6ad334*/
                 return; /*0x6ad343*/
               }
               MultiplayerGameMode::GetFirst(); /*0x6ad346*/
@@ -615,7 +615,7 @@ LABEL_151:
               g_UIControlState = 0; /*0x6ad8bd*/
             }
             *WindowLongA = v83.ptr_4; /*0x6ad8d3*/
-            DeleteAndZero::Alt(&v83); /*0x6ad8d5*/
+            ((DeleteAndZero *)&v83)->Alt(); /*0x6ad8d5*/
           }
           break;
       }

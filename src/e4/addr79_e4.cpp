@@ -2123,7 +2123,7 @@ CampaignScore * * WOL_LobbyDlgProc(HWND hWnd, LONG, int a3, HWND a4)
       else
         v12 = SendMessageA(v10, 0x4CCu, 0, (LPARAM)v17); /*0x796ce8*/
       SendMessageA(v10, 0x19Au, v12, i); /*0x796d02*/
-      DeleteAndZero::Alt((void **)&a2); /*0x796d08*/
+      ((DeleteAndZero *)(void **)&a2)->Alt(); /*0x796d08*/
     }
     SendMessageA(v10, 0x186u, 0xFFFFFFFF, 0); /*0x796d1a*/
     return 0; /*0x796d1f*/
@@ -2507,7 +2507,7 @@ LABEL_7:
   v5 = GetStringCSF(aTxtFetchingWdt, 0, g_Str_File_wonline_cpp, 24455); /*0x7978b6*/
   ((WideString *)(wchar_t **)&v33)->Assign( v5); /*0x7978c0*/
   ShowUIMessage(16, (wchar_t **)&v33, 0); /*0x7978cf*/
-  DeleteAndZero::Alt((DeleteAndZero *)&v33); /*0x7978d8*/
+  ((DeleteAndZero *)&v33)->Alt(); /*0x7978d8*/
   do /*0x797949*/
   {
     v6 = 30000; /*0x7978ed*/
@@ -3321,7 +3321,7 @@ void MainLobbyDlgProcWOL(HWND hWnd, LPARAM lParam, ObjectClass)
             v38 = WideString::GetOrEmpty_Alt((WideString *)&a2.q004); /*0x7999ee*/
             v39 = SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)v38); /*0x7999fc*/
             SendMessageA(DlgItem, 0x151u, v39, *(LPARAM *)&hWnd.m_3[1]); /*0x799a0a*/
-            DeleteAndZero::Alt((DeleteAndZero *)&a2.q004); /*0x799a10*/
+            ((DeleteAndZero *)&a2.q004)->Alt(); /*0x799a10*/
           }
           ++*(unsigned int *)&hWnd.m_3[1]; /*0x799a1d*/
         }
@@ -3356,7 +3356,7 @@ void MainLobbyDlgProcWOL(HWND hWnd, LPARAM lParam, ObjectClass)
         DeleteAndZero((ObjectClass *)&v55.q004); /*0x799b27*/
         v62 = &g_ptr_7F3F44; /*0x799b30*/
         ComPtr::Release((ComPtr *)&v62); /*0x799b38*/
-        DeleteAndZero::Alt(&v55); /*0x799b41*/
+        ((DeleteAndZero *)&v55)->Alt(); /*0x799b41*/
       }
       return 0; /*0x7998ed*/
     }
@@ -3431,7 +3431,7 @@ void MainLobbyDlgProcWOL(HWND hWnd, LPARAM lParam, ObjectClass)
             DeleteAndZero((ObjectClass *)&v55); /*0x7997dd*/
             DeleteAndZero((ObjectClass *)&v55.q004); /*0x7997e6*/
             DeleteAndZero((ObjectClass *)&hWnd); /*0x7997ef*/
-            DeleteAndZero::Alt((DeleteAndZero *)&a2.q004); /*0x7997f8*/
+            ((DeleteAndZero *)&a2.q004)->Alt(); /*0x7997f8*/
           }
           MainLobbyDlgProcWOL_Get((HWND)v4, 1); /*0x799801*/
           InvalidateRect(v26, 0, 0); /*0x799811*/
@@ -5080,15 +5080,15 @@ int WOLLoginDialogProc(HWND hWnd, unsigned int a2, int a3, HWND a4)
           HWND v19; // eax
           v19 = GetDlgItem(hWnd, 1474); /*0x79da68*/
           EnableWindow(v19, v20); /*0x79da6f*/
-          DeleteAndZero::Alt((void **)&a4); /*0x79da7c*/
+          ((DeleteAndZero *)(void **)&a4)->Alt(); /*0x79da7c*/
           break;
         case 0x400u: /*0x79d98e*/
           unknown_libname_74(&a4); /*0x79d9d7*/
           GetEditControlText(v4, (void **)&a4); /*0x79d9e5*/
           ((WideString *)((wchar_t **)&a2))->Assign(asc_831D9C); /*0x79d9f6*/
           WString::TrimRight((const wchar_t **)&a4, (const wchar_t **)&a2); /*0x79da0a*/
-          DeleteAndZero::Alt((void **)&a2); /*0x79da16*/
-          DeleteAndZero::Alt((void **)&a4); /*0x79da22*/
+          ((DeleteAndZero *)(void **)&a2)->Alt(); /*0x79da16*/
+          ((DeleteAndZero *)(void **)&a4)->Alt(); /*0x79da22*/
           return 0; /*0x79da30*/
           HWND v18; // eax
         case 0x501u: /*0x79d98e*/
@@ -5116,7 +5116,7 @@ int WOLLoginDialogProc(HWND hWnd, unsigned int a2, int a3, HWND a4)
     {
       ((WideString *)((wchar_t **)&a3))->Assign(asc_831D9C); /*0x79d8d1*/
       WString::TrimRight((const wchar_t **)&a4, (const wchar_t **)&a3); /*0x79d8e5*/
-      DeleteAndZero::Alt((void **)&a3); /*0x79d8f1*/
+      ((DeleteAndZero *)(void **)&a3)->Alt(); /*0x79d8f1*/
       char v21[108]; // [esp+10h] [ebp-6Ch] BYREF
       memset(v21, 0, sizeof(v21)); /*0x79d901*/
       strcpy(&v21[36], ((String *)((char **)&g_WOL_LoginObject))->GetOrEmpty()); /*0x79d927*/
@@ -5128,7 +5128,7 @@ int WOLLoginDialogProc(HWND hWnd, unsigned int a2, int a3, HWND a4)
     }
     InvalidateRect(v14, 0, 0); /*0x79d95b*/
     CloseDialog(hWnd, 1474); /*0x79d968*/
-    DeleteAndZero::Alt((void **)&a4); /*0x79d974*/
+    ((DeleteAndZero *)(void **)&a4)->Alt(); /*0x79d974*/
     return 0; /*0x79d97c*/
   }
   return result; /*0x79d771*/
@@ -5163,13 +5163,13 @@ LABEL_7:
           break; /*0x79daf2*/
       }
       ++v4; /*0x79daff*/
-      DeleteAndZero::Alt((DeleteAndZero *)v6); /*0x79db00*/
+      ((DeleteAndZero *)v6)->Alt(); /*0x79db00*/
       if ( v4 >= SendMessageA(a2, 0x18Bu, 0, 0) ) /*0x79db13*/
         goto LABEL_7; /*0x79db13*/
     }
     WideString::RemoveChar(v6, 0x28u); /*0x79db2f*/
     ToWideStringCharAlt((char **)a1, (const wchar_t **)v6); /*0x79db3a*/
-    DeleteAndZero::Alt((DeleteAndZero *)v6); /*0x79db43*/
+    ((DeleteAndZero *)v6)->Alt(); /*0x79db43*/
     return a1; /*0x79db48*/
   }
 
@@ -5926,7 +5926,7 @@ LABEL_6:
     StringCSF = GetStringCSF(g_Str_WOL_LeavingChannel, 0, g_Str_File_wonline_cpp, 10704); /*0x79f1fd*/
     ((WideString *)v51)->Assign( StringCSF); /*0x79f207*/
     ShowUIMessage(64, (wchar_t **)v51, 1); /*0x79f217*/
-    DeleteAndZero::Alt((DeleteAndZero *)v51); /*0x79f220*/
+    ((DeleteAndZero *)v51)->Alt(); /*0x79f220*/
     for ( i = 0; dword_B77DD0; ++i ) /*0x79f22e*/
     {
       if ( i >= 150 ) /*0x79f23c*/
@@ -6509,7 +6509,7 @@ Coord * * WOL_JoinLobby()
             v18 = GetStringCSF(g_Str_WOL_LeavingChannel, 0, g_Str_File_wonline_cpp, 10704); /*0x7a018f*/
             ((WideString *)((wchar_t **)String2))->Assign(v18); /*0x7a0199*/
             ShowUIMessage(64, (wchar_t **)String2, 0); /*0x7a01a8*/
-            DeleteAndZero::Alt((DeleteAndZero *)String2); /*0x7a01b1*/
+            ((DeleteAndZero *)String2)->Alt(); /*0x7a01b1*/
             for ( j = 0; g_WOL_ChannelState; ++j ) /*0x7a01bf*/
             {
               if ( j >= 150 ) /*0x7a01cd*/
@@ -6585,7 +6585,7 @@ Coord * * WOL_JoinLobby()
     v26 = GetStringCSF(g_Str_WOL_LeavingChannel, 0, g_Str_File_wonline_cpp, 10704); /*0x7a0367*/
     ((WideString *)((wchar_t **)String2))->Assign(v26); /*0x7a0371*/
     ShowUIMessage(64, (wchar_t **)String2, 1); /*0x7a0381*/
-    DeleteAndZero::Alt((DeleteAndZero *)String2); /*0x7a038a*/
+    ((DeleteAndZero *)String2)->Alt(); /*0x7a038a*/
     for ( k = 0; g_WOL_ChannelState; ++k ) /*0x7a0398*/
     {
       if ( k >= 150 ) /*0x7a03a6*/

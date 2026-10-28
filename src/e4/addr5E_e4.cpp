@@ -1041,7 +1041,7 @@ if ( v32 || (v32 = (Lobby *)Dialog::FindByHandle((Dialog *)0xBD)) != 0 )
         }
         ((WideString *)&v196)->Assign( Destination); /*0x5e4157*/
         v37 = ((NetworkLobby *)&v196)->DeleteAndZero(); /*0x5e4169*/
-        DeleteAndZero::Alt(&v196); /*0x5e416b*/
+        ((DeleteAndZero *)&v196)->Alt(); /*0x5e416b*/
         if ( v37 || (v37 = Player::FindByName((Player *)Destination)) != 0 )
         {
           if ( v37 != (wchar_t *)g_Lobby_MaxPlayers
@@ -1408,7 +1408,7 @@ LABEL_171:
           }
         }
         free((void *)v197.ptr_4); /*0x5e4be1*/
-        DeleteAndZero::Alt((DeleteAndZero *)&v196.u32_8); /*0x5e4bed*/
+        ((DeleteAndZero *)&v196.u32_8)->Alt(); /*0x5e4bed*/
         return 0; /*0x5e4bfe*/
       case 'G':
         if ( Dialog::FindByHandle((Dialog *)0xC9) ) /*0x5e4c08*/
@@ -1554,7 +1554,7 @@ LABEL_171:
     if ( (v124 & 4) != 0 ) /*0x5e4fa9*/
     {
       v124 &= ~4u; /*0x5e4faf*/
-      DeleteAndZero::Alt((DeleteAndZero *)&v197.ptr_8); /*0x5e4fb2*/
+      ((DeleteAndZero *)&v197.ptr_8)->Alt(); /*0x5e4fb2*/
     }
     if ( (v124 & 2) != 0 ) /*0x5e4fba*/
     {
@@ -1562,7 +1562,7 @@ LABEL_171:
       DeleteAndZero((ObjectClass *)&v196); /*0x5e4fc3*/
     }
     if ( (v124 & 1) != 0 ) /*0x5e4fcb*/
-      DeleteAndZero::Alt((DeleteAndZero *)&v197.uniqueId); /*0x5e4fd1*/
+      ((DeleteAndZero *)&v197.uniqueId)->Alt(); /*0x5e4fd1*/
     v126 = strtok(0, Delimiter); /*0x5e4fde*/
     v127 = dword_A8BB0C; /*0x5e4fe3*/
     v197.ptr_8 = dword_A8BB0C; /*0x5e4fee*/
@@ -1995,7 +1995,7 @@ LABEL_463:
       byte_AC11C6 = dword_A8B320; /*0x5e5ee4*/
       byte_AC11C7 = stru_A8B250.__pad_0[17]; /*0x5e5eee*/
       dword_8316F8 = stru_A8E960.homeCell; /*0x5e5ef4*/
-      DeleteAndZero::Alt((DeleteAndZero *)&v197.attachedTag); /*0x5e5ef9*/
+      ((DeleteAndZero *)&v197.attachedTag)->Alt(); /*0x5e5ef9*/
       return v195 == 0; /*0x5e5f04*/
     }
     while ( 1 ) /*0x5e5873*/
@@ -3108,7 +3108,7 @@ if ( v64 && v65 )
               }
             }
           }
-          DeleteAndZero::Alt(&v28); /*0x5e6219*/
+          ((DeleteAndZero *)&v28)->Alt(); /*0x5e6219*/
         }
         }
         // 0x5E6230
@@ -3206,7 +3206,7 @@ if ( v64 && v65 )
                     DeleteAndZero_field_0x08 = v13->DeleteAndZero_field_0x08; /*0x5e63a9*/
                     if ( v13 ) /*0x5e63ad*/
                     {
-                      DeleteAndZero::Alt(v13); /*0x5e63b1*/
+                      ((DeleteAndZero *)v13)->Alt(); /*0x5e63b1*/
                       operator delete((void *)(v13)); /*0x5e63b7*/
                     }
                     v14 = *(float *)&v21; /*0x5e63c5*/
@@ -3227,7 +3227,7 @@ if ( v64 && v65 )
             }
           }
           LABEL_30:
-          DeleteAndZero::Alt((DeleteAndZero *)&v19); /*0x5e6420*/
+          ((DeleteAndZero *)&v19)->Alt(); /*0x5e6420*/
         }
         }
         // 0x5E6520
@@ -4970,7 +4970,7 @@ void SetupMultiplayerLobbyScreen(SkirmishDialog * hDlg, wchar_t * a2, int a3)
           GetPlayerTypeString((char **)&v24, v19); /*0x5ec77e*/
           v20 = CharStringToWide((wchar_t **)&v24.ptr_C, (const char **)&v24); /*0x5ec78b*/
           WideString::Reassign_Alt(&v24.ptr_8, (const wchar_t **)v20); /*0x5ec795*/
-          DeleteAndZero::Alt((DeleteAndZero *)&v24.ptr_C); /*0x5ec79e*/
+          ((DeleteAndZero *)&v24.ptr_C)->Alt(); /*0x5ec79e*/
           DeleteAndZero(&v24); /*0x5ec7a7*/
           }
           else
@@ -4982,9 +4982,9 @@ void SetupMultiplayerLobbyScreen(SkirmishDialog * hDlg, wchar_t * a2, int a3)
           v22 = ToWideStringCharAlt((char **)&v24.ptr_C, (const wchar_t **)&v24); /*0x5ec7c7*/
           sprintf((char *const)&v24.uniqueId, "O%d%s", g_MPCooperativeState, *v22); /*0x5ec7e0*/
           DeleteAndZero((ObjectClass *)&v24.ptr_C); /*0x5ec7ec*/
-          DeleteAndZero::Alt((DeleteAndZero *)&v24); /*0x5ec7f5*/
+          ((DeleteAndZero *)&v24)->Alt(); /*0x5ec7f5*/
           Network::SendOptionsGame((char *)&v24.uniqueId); /*0x5ec7fe*/
-          DeleteAndZero::Alt((DeleteAndZero *)&v24.ptr_8); /*0x5ec807*/
+          ((DeleteAndZero *)&v24.ptr_8)->Alt(); /*0x5ec807*/
           dword_831700 = v23; /*0x5ec816*/
           dword_AC11CC = (int)v24.ptr_4; /*0x5ec81c*/
       }

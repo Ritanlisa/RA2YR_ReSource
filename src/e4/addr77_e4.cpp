@@ -1253,8 +1253,8 @@ unsigned int * PlayerProfile_Load(unsigned int * a1, const char ** a2)
       ComPtr::Constructor(*(ComPtr **)v17.bombVisible); /*0x778ebf*/
       /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7F3F44) */  /*0x778ec6*/
       ComPtr::Set(v16, (int)AccountInfoWOL_Load); /*0x778ecd*/
-      DeleteAndZero::Alt((DeleteAndZero *)&v17.uniqueId); /*0x778ed6*/
-      DeleteAndZero::Alt((DeleteAndZero *)&v17.abstractFlags); /*0x778edf*/
+      ((DeleteAndZero *)&v17.uniqueId)->Alt(); /*0x778ed6*/
+      ((DeleteAndZero *)&v17.abstractFlags)->Alt(); /*0x778edf*/
       DeleteAndZero((ObjectClass *)&v17.ptr_8); /*0x778ee8*/
       DeleteAndZero((ObjectClass *)&v17.ptr_C); /*0x778ef1*/
       DeleteAndZero((ObjectClass *)&v17.ptr_4); /*0x778efa*/
@@ -1562,7 +1562,7 @@ CampaignScore * * ConvertDateMonthNames(wchar_t ** a1, void ** a2)
   char *v30; // eax
   v30 = ToWideStringChar(v29); /*0x779634*/
   String::Assign_Bool(a2, v30); /*0x77963c*/
-  DeleteAndZero::Alt((DeleteAndZero *)v43); /*0x779645*/
+  ((DeleteAndZero *)v43)->Alt(); /*0x779645*/
 }
 }
 // 0x77B2A0
@@ -2631,7 +2631,7 @@ LABEL_16:
     {
       ((WideString *)&v24)->Assign( *(wchar_t **)(*(unsigned int *)&stru_A8D804.__pad_3D[567] + 4 * v12)); /*0x77e9e9*/
       ToWideStringCharAlt((char **)&v23, (const wchar_t **)&v24); /*0x77e9f6*/
-      DeleteAndZero::Alt(&v24); /*0x77e9ff*/
+      ((DeleteAndZero *)&v24)->Alt(); /*0x77e9ff*/
       v13 = String::ToLowerCopy(&v23, (char **)&v24.u32_8); /*0x77ea12*/
       v14 = String::Compare((String *)v13, (const char **)&v24.q004); /*0x77ea22*/
       DeleteAndZero((ObjectClass *)&v24.u32_8); /*0x77ea24*/
@@ -2734,7 +2734,7 @@ int SetupLobbyPlayerSlot(CCINIClass * aP0, CCINIClass * aP1, CCINIClass * aP2, i
   {
     ((WideString *)&v27)->Assign( *v7); /*0x77ed26*/
     ToWideStringCharAlt((char **)&v26, (const wchar_t **)&v27); /*0x77ed33*/
-    DeleteAndZero::Alt(&v27); /*0x77ed3c*/
+    ((DeleteAndZero *)&v27)->Alt(); /*0x77ed3c*/
     v8 = String::ToLowerCopy(&v26, (char **)&v27.u32_8); /*0x77ed4a*/
     v9 = String::Compare((String *)&v26.ptr_4, (const char **)v8); /*0x77ed5d*/
     DeleteAndZero((ObjectClass *)&v27.u32_8); /*0x77ed5f*/
@@ -2929,7 +2929,7 @@ char RequestChannelListWOL()
   String_buf = GetStringCSF(aTxtReqChanlist, 0, g_Str_File_wonline_cpp, 2298); /*0x77f136*/
   ((WideString *)((wchar_t **)&v15))->Assign(String); /*0x77f140*/
   ShowUIMessage(0); /*0x77f150*/
-  DeleteAndZero::Alt(&v15); /*0x77f159*/
+  ((DeleteAndZero *)&v15)->Alt(); /*0x77f159*/
   v1 = 0; /*0x77f16a*/
   while ( 1 ) /*0x77f179*/
   {
@@ -6565,7 +6565,7 @@ int sub_77D1A0()
 namespace gamemd {
 int unknown_libname_53()
 {
-  DeleteAndZero::Alt(&unk_B76230); /*0x77d1c5*/
+  ((DeleteAndZero *)&unk_B76230)->Alt(); /*0x77d1c5*/
 }
 } // namespace gamemd
 

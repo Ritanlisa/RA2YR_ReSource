@@ -1924,8 +1924,8 @@ wchar_t ** E4Recv_767320::sub_767320(wchar_t ** a2, int a3, const wchar_t ** a4)
     StringCSF = GetStringCSF((wchar_t *)v8, 0, g_Str_File_WDTGameOptions_cpp, 22); /*0x76738c*/
     v9 = ConcatWString((wchar_t **)&v14, v7, (const wchar_t **)&a4); /*0x767399*/
     WideString::AssignConcat((const wchar_t **)v9, a2, StringCSF); /*0x7673a0*/
-    DeleteAndZero::Alt((DeleteAndZero *)&v14); /*0x7673a9*/
-    DeleteAndZero::Alt((DeleteAndZero *)&a4); /*0x7673b2*/
+    ((DeleteAndZero *)&v14)->Alt(); /*0x7673a9*/
+    ((DeleteAndZero *)&a4)->Alt(); /*0x7673b2*/
   }
   else
   {

@@ -11276,7 +11276,7 @@ void* ObjectClass::TerritorySelectWDT_Create(void* a2) {
                                  v5,
                                  &v11);
                                  WideString::Reassign_Alt(&v11, v6); /*0x766680*/
-                                 DeleteAndZero::Alt(&v13); /*0x766689*/
+                                 ((DeleteAndZero *)&v13)->Alt(); /*0x766689*/
                                  --v3; /*0x766692*/
                                  v2 |= v15[2]; /*0x766693*/
       }
@@ -11306,7 +11306,7 @@ void* ObjectClass::TerritorySelectWDT_Create(void* a2) {
                                  v8,
                                  &v11);
                                  WideString::Reassign_Alt(&v11, v9); /*0x766735*/
-                                 DeleteAndZero::Alt(&v13); /*0x76673e*/
+                                 ((DeleteAndZero *)&v13)->Alt(); /*0x76673e*/
                                  --v3; /*0x766747*/
                                  v2 |= v15[2]; /*0x766748*/
       }
@@ -11317,7 +11317,7 @@ void* ObjectClass::TerritorySelectWDT_Create(void* a2) {
   }
   WideString::AssignFromPtr(a2, (const wchar_t **)&v11); /*0x766776*/
   v16 = &g_var_0f5bcb; /*0x76677f*/
-  DeleteAndZero::Alt(&v11); /*0x766787*/
+  ((DeleteAndZero *)&v11)->Alt(); /*0x766787*/
   return a2; /*0x76678e*/
 
 }
@@ -11604,8 +11604,8 @@ void* ObjectClass::LoadAccountInfoWOL() {
   ComPtr::Set(abstractFlags, (int)AccountInfoWOL_Load); /*0x7789d6*/
   v11.customSound_controller[2] = (int)&off_7E1668; /*0x7789df*/
   ((BufferIOFileClass *)&v11.customSound_controller[2])->Dtor(); /*0x7789e7*/
-  DeleteAndZero::Alt((DeleteAndZero *)&v11.uniqueId); /*0x7789f0*/
-  DeleteAndZero::Alt((DeleteAndZero *)&v11.ptr_C); /*0x7789f9*/
+  ((DeleteAndZero *)&v11.uniqueId)->Alt(); /*0x7789f0*/
+  ((DeleteAndZero *)&v11.ptr_C)->Alt(); /*0x7789f9*/
   DeleteAndZero((ObjectClass *)&v11.ptr_4); /*0x778a02*/
   DeleteAndZero((ObjectClass *)&v11.ptr_8); /*0x778a0b*/
   return abstractFlags->__pad_000; /*0x778a12*/

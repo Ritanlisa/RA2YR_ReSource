@@ -277,7 +277,6 @@ public:
     virtual void OrFree(); // 0x624480
     virtual void Alt2(); // 0x7B5340
     virtual void Alt(); // 0x7B6760
-    static void Alt(void *aP0);  // 0x7B6760 G42.35 static-form sync (ui/supplied site 0x46E112)
 
     uint8_t DeleteAndZero_field_0x04[4];
     uint8_t DeleteAndZero_field_0x08[4];

@@ -825,7 +825,7 @@ LABEL_75:
       goto LABEL_45;
     case 1344: /*0x5de7d6*/
       ReadChatMessage((wchar_t **)&v37, (HWND)lParam); /*0x5de7e3*/
-      DeleteAndZero::Alt(&v37); /*0x5de7ec*/
+      ((DeleteAndZero *)&v37)->Alt(); /*0x5de7ec*/
       if ( HIWORD(nIDDlgItem) != 1281 ) /*0x5de7fa*/
         return 0; /*0x5de7fa*/
       SendNetworkLobbyChatMessage(hDlg, (int)Math::InitDegToRad, 61680); /*0x5de80f*/

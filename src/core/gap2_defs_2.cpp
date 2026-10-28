@@ -1063,12 +1063,12 @@ void* COMClass::adviseConnection(void* a1, int a2, void* a3) {
       (const wchar_t **)v9,
       (wchar_t **)&v13.ptr_8,
       (wchar_t *)&v14[0].DeleteAndZero_field_0x04);
-    DeleteAndZero::Alt((DeleteAndZero *)&v13.ptr_8); /*0x766b44*/
-    DeleteAndZero::Alt(v14); /*0x766b4d*/
-    DeleteAndZero::Alt((DeleteAndZero *)&v13.ptr_4); /*0x766b56*/
+    ((DeleteAndZero *)&v13.ptr_8)->Alt(); /*0x766b44*/
+    ((DeleteAndZero *)v14)->Alt(); /*0x766b4d*/
+    ((DeleteAndZero *)&v13.ptr_4)->Alt(); /*0x766b56*/
   }
   ((WideString *)a1)->Assign( (wchar_t *)&v14[0].DeleteAndZero_field_0x04); /*0x766b69*/
-  DeleteAndZero::Alt(&v13); /*0x766b72*/
+  ((DeleteAndZero *)&v13)->Alt(); /*0x766b72*/
   DeleteAndZero((ObjectClass *)&Format); /*0x766b7b*/
   return a1; /*0x766b82*/
 }
