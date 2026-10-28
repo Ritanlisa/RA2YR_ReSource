@@ -996,7 +996,7 @@ LABEL_50:
         byte_A8E378 = byte_B04894; /*0x6498ca*/
         MapClass::MarkForRedraw((GScreenClass *)&dword_87F7E8, 2); /*0x6498cf*/
         if ( byte_A8E378 ) /*0x6498db*/
-          TacticalMap::Redraw((GScreenClass *)&dword_87F7E8); /*0x6498e2*/
+          ((TacticalMap *)(GScreenClass *)&dword_87F7E8)->Redraw(); /*0x6498e2*/
       }
     }
     if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x6498ee*/
@@ -1221,7 +1221,7 @@ LABEL_162:
                     InputManager_ProcessEvents::Vtable((GScreenClass *)&dword_87F7E8, &v101.q080, v116, &v117); /*0x649827*/
                     SyncDelayClass::ProcessNetworkSync((SyncDelayClass *)&v101.q080); /*0x649833*/
                     (*(void (**)(LPPERSISTSTREAM))(*(unsigned int *)g_TacticalClass_Instance + 92))(g_TacticalClass_Instance); /*0x649840*/
-                    TacticalMap::Redraw((GScreenClass *)&dword_87F7E8); /*0x649848*/
+                    ((TacticalMap *)(GScreenClass *)&dword_87F7E8)->Redraw(); /*0x649848*/
                   }
                   ++*(unsigned int *)&v101.u32_3C; /*0x64984d*/
                   goto LABEL_4; /*0x649851*/
@@ -1238,7 +1238,7 @@ LABEL_223:
                     byte_A8E378 = byte_B04894; /*0x649bef*/
                     MapClass::MarkForRedraw((GScreenClass *)&dword_87F7E8, 2); /*0x649bf4*/
                     if ( byte_A8E378 ) /*0x649c00*/
-                      TacticalMap::Redraw((GScreenClass *)&dword_87F7E8); /*0x649c07*/
+                      ((TacticalMap *)(GScreenClass *)&dword_87F7E8)->Redraw(); /*0x649c07*/
                   }
                   if ( (*(int (**)(int *))(*a1 + 16))(a1) > 0 ) /*0x649c17*/
                   {
@@ -1377,7 +1377,7 @@ LABEL_148:
                     byte_A8E378 = byte_B04894; /*0x649a5a*/
                     MapClass::MarkForRedraw((GScreenClass *)&dword_87F7E8, 2); /*0x649a5f*/
                     if ( byte_A8E378 ) /*0x649a6b*/
-                      TacticalMap::Redraw((GScreenClass *)&dword_87F7E8); /*0x649a72*/
+                      ((TacticalMap *)(GScreenClass *)&dword_87F7E8)->Redraw(); /*0x649a72*/
                   }
                 }
                 if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x649a7e*/
@@ -1386,7 +1386,7 @@ LABEL_148:
                 return 7; /*0x649a9e*/
               }
               MapClass::MarkForRedraw((GScreenClass *)&dword_87F7E8, 2); /*0x649436*/
-              TacticalMap::Redraw((GScreenClass *)&dword_87F7E8); /*0x649440*/
+              ((TacticalMap *)(GScreenClass *)&dword_87F7E8)->Redraw(); /*0x649440*/
               v62 = Timer::GetTicks(); /*0x64944c*/
               *(unsigned int *)&v101.__pad_1C[124] = v13; /*0x64945a*/
               v100 = v13; /*0x649461*/
@@ -1433,7 +1433,7 @@ LABEL_148:
                 byte_A8E378 = byte_B04894; /*0x649ae2*/
                 MapClass::MarkForRedraw((GScreenClass *)&dword_87F7E8, 2); /*0x649ae7*/
                 if ( byte_A8E378 ) /*0x649af3*/
-                  TacticalMap::Redraw((GScreenClass *)&dword_87F7E8); /*0x649afa*/
+                  ((TacticalMap *)(GScreenClass *)&dword_87F7E8)->Redraw(); /*0x649afa*/
               }
             }
             if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x649b06*/
@@ -1451,7 +1451,7 @@ LABEL_148:
                 byte_A8E378 = byte_B04894; /*0x649b65*/
                 MapClass::MarkForRedraw((GScreenClass *)&dword_87F7E8, 2); /*0x649b6a*/
                 if ( byte_A8E378 ) /*0x649b76*/
-                  TacticalMap::Redraw((GScreenClass *)&dword_87F7E8); /*0x649b7d*/
+                  ((TacticalMap *)(GScreenClass *)&dword_87F7E8)->Redraw(); /*0x649b7d*/
               }
             }
             if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x649b89*/
@@ -1479,7 +1479,7 @@ LABEL_116:
         byte_A8E378 = byte_B04894; /*0x649972*/
         MapClass::MarkForRedraw((GScreenClass *)&dword_87F7E8, 2); /*0x649977*/
         if ( byte_A8E378 ) /*0x649983*/
-          TacticalMap::Redraw((GScreenClass *)&dword_87F7E8); /*0x64998a*/
+          ((TacticalMap *)(GScreenClass *)&dword_87F7E8)->Redraw(); /*0x64998a*/
       }
     }
     Network::SendUnreachable(v92); /*0x64998f*/
@@ -1489,7 +1489,7 @@ LABEL_116:
     if ( Network_Process_64B410((int)v8, (int *)a7) ) /*0x64924c*/
     {
       MapClass::MarkForRedraw((GScreenClass *)&dword_87F7E8, 2); /*0x649260*/
-      TacticalMap::Redraw((GScreenClass *)&dword_87F7E8); /*0x64926a*/
+      ((TacticalMap *)(GScreenClass *)&dword_87F7E8)->Redraw(); /*0x64926a*/
       v59 = Timer::GetTicks(); /*0x649276*/
       *(unsigned int *)&v101.__pad_1C[112] = v13; /*0x649284*/
       v100 = v13; /*0x64928b*/
@@ -1518,7 +1518,7 @@ LABEL_116:
         byte_A8E378 = byte_B04894; /*0x6499d7*/
         MapClass::MarkForRedraw((GScreenClass *)&dword_87F7E8, 2); /*0x6499dc*/
         if ( byte_A8E378 ) /*0x6499e8*/
-          TacticalMap::Redraw((GScreenClass *)&dword_87F7E8); /*0x6499ef*/
+          ((TacticalMap *)(GScreenClass *)&dword_87F7E8)->Redraw(); /*0x6499ef*/
       }
     }
   }

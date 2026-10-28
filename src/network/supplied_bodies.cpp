@@ -3373,7 +3373,7 @@ void Modem::CheckStatus()
   if ( (unsigned char)a2 ) /*0x5f0abf*/
   {
     MapClass::MarkForRedraw((GScreenClass *)&DataGlobal_87F7E8, 2); /*0x5f0ac8*/
-    TacticalMap::Redraw((GScreenClass *)&DataGlobal_87F7E8); /*0x5f0ad2*/
+    ((TacticalMap *)(GScreenClass *)&DataGlobal_87F7E8)->Redraw(); /*0x5f0ad2*/
   }
   switch ( v9 ) /*0x5f0ae0*/
   {

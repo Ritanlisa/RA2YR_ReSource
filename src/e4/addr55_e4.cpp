@@ -2468,7 +2468,7 @@ LABEL_70:
     Event::Dispatch(); /*0x55d835*/
     UpdateChronosphereEffect(); /*0x55d83a*/
     (*(void (**)(LPPERSISTSTREAM))(*(unsigned int *)g_TacticalClass_Instance + 92))(g_TacticalClass_Instance); /*0x55d847*/
-    TacticalMap::Redraw((GScreenClass *)&dword_87F7E8); /*0x55d84f*/
+    ((TacticalMap *)(GScreenClass *)&dword_87F7E8)->Redraw(); /*0x55d84f*/
     SyncDelay::Start((SyncDelay *)v43); /*0x55d854*/
     byte_ABCD58 = 0; /*0x55d866*/
     return stru_A8E960.nextScenario[64] == 0; /*0x55d877*/
@@ -2488,7 +2488,7 @@ LABEL_72:
     if ( (stru_A8E960.random[528] & 7) == 7 && *(unsigned int *)&dword_A8B238 == 4 ) /*0x55d8dc*/
       IPXManagerClass::ProcessQueue((IPXManagerClass *)&stru_A8E960.nextScenario[96]); /*0x55d8e3*/
     MarkAllFootOccupancies(v43); /*0x55d8e8*/
-    TacticalMap::Redraw((GScreenClass *)&dword_87F7E8); /*0x55d8f2*/
+    ((TacticalMap *)(GScreenClass *)&dword_87F7E8)->Redraw(); /*0x55d8f2*/
     v21 = dword_A8D5F8; /*0x55d8f7*/
   }
   stru_A8E960.random[553] = 0; /*0x55d903*/
@@ -2580,7 +2580,7 @@ LABEL_72:
       CCFileClass::Read(&dword_A8D58C, &dword_ABCDFC, 4); /*0x55db98*/
       CCFileClass::Read(&dword_A8D58C, &dword_ABCE00, 4); /*0x55dba9*/
       MapClass::MarkForRedraw((GScreenClass *)&dword_87F7E8, 0); /*0x55dbb4*/
-      TacticalMap::Redraw((GScreenClass *)&dword_87F7E8); /*0x55dbbe*/
+      ((TacticalMap *)(GScreenClass *)&dword_87F7E8)->Redraw(); /*0x55dbbe*/
     }
   }
   ((ObjectClass *)&stru_8A0390)->ProcessAutoSave(); /*0x55dbc8*/

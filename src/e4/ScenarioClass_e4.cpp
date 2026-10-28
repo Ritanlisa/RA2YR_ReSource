@@ -522,7 +522,7 @@ int ScenarioClass::CleanupTemporary()
   Mouse::SetCursor((int)&DataGlobal_87F7E8, 0, 0); /*0x683f79*/
   (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 12))(stru_887598.lineTrailer); /*0x683f86*/
   MapClass::MarkForRedraw((GScreenClass *)&DataGlobal_87F7E8, 2); /*0x683f90*/
-  TacticalMap::Redraw((GScreenClass *)&DataGlobal_87F7E8); /*0x683f9a*/
+  ((TacticalMap *)(GScreenClass *)&DataGlobal_87F7E8)->Redraw(); /*0x683f9a*/
   return (*(int (**)(void *, ScenarioClass *))(*(unsigned int *)stru_887598.lineTrailer + 16))(
            stru_887598.lineTrailer,
            this);
