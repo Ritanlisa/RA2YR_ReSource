@@ -1090,6 +1090,7 @@ class TypeInferenceEngine:
         self._load_func_signatures(valid_classes)
         self._load_ida_proto_anchors(valid_classes)
         self._load_vslot_return_anchors(valid_classes)
+        self._load_ida_callarg_types(valid_classes)
         self._load_callarg_param_anchors(valid_classes)
         self._load_def_reclass_anchors(valid_classes, member_types)
 
@@ -1353,6 +1354,138 @@ class TypeInferenceEngine:
         if addr is not None:
             return self.var_to_id.get(f"0x{addr:08X}.return")
         return None
+
+    def _load_ida_callarg_types(self, valid_classes):
+        """X202: IDA 调用点实参类型 -> 实参锚 + 参数 S2 相互约束。"""
+        import re as _re
+        _p = os.path.normpath(os.path.join(
+            os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
+            "anchors", "ida_call_args.json"))
+        if not os.path.exists(_p):
+            print("  ida_callarg: file missing", file=sys.stderr)
+            return
+        with open(_p, "r", encoding="utf-8") as _f:
+            _calls = json.load(_f)
+        _by_ea = {}
+        for _ea, _v in _calls.items():
+            try:
+                _by_ea[int(_ea, 16)] = _v
+            except ValueError:
+                pass
+        try:
+            with open(CONSTRAINTS_PATH, "r", encoding="utf-8") as _f:
+                _edges = (json.load(_f).get("constraints") or [])
+        except Exception as _e:
+            print(f"  ida_callarg: constraints load failed ({_e})", file=sys.stderr)
+            return
+
+        _VIEW = ("void*", "char*", "int*", "unsigned", "_DWORD*", "BYTE*", "float*",
+                 "double*", "short*", "_BYTE*", "_WORD*", "const char*", "char**")
+        def _cls_of(t):
+            t = (t or "").strip()
+            if "*" not in t or "(" in t:
+                return None
+            if any(v in t for v in _VIEW):
+                return None
+            return t.rstrip("*").strip() or None
+
+        _PARAM = _re.compile(r"^(0x[0-9A-Fa-f]{8})::param(\d+)$")
+        _existing = {}
+        for _a in self.anchors:
+            _existing.setdefault(_a.var_id, _a.lattice_type)
+
+        n_arg = 0
+        _own_anchor = {}
+        _s2 = {}
+        for e in _edges:
+            if e.get("type") != "CALL_ARG":
+                continue
+            m = _PARAM.match(str(e.get("to") or ""))
+            if not m:
+                continue
+            try:
+                _ea = int(str(e.get("addr")), 16)
+            except (ValueError, TypeError):
+                continue
+            callv = _by_ea.get(_ea)
+            if not callv:
+                continue
+            idx = int(m.group(2))
+            args = callv.get("args") or []
+            pick = None
+            for ai in (idx + 1, idx):
+                if 0 <= ai < len(args):
+                    cls = _cls_of(args[ai].get("type"))
+                    if cls:
+                        pick = cls
+                        break
+            if not pick:
+                continue
+            lt = self._to_lattice_type(pick, valid_classes)
+            if lt is None or lt in (VOID_PTR, TOP):
+                continue
+            # S2 -> 参数（调用方约束被调方）
+            _s2.setdefault(str(e.get("to")), set()).add(lt)
+            # S2 -> 实参本身（直接证据）
+            fr = e.get("from")
+            if isinstance(fr, str):
+                try:
+                    scoped = _scope_one_var(fr, _ea, self._func_addrs, self._writes)
+                except Exception:
+                    scoped = None
+                if scoped:
+                    vid = self.var_to_id.get(scoped)
+                    if vid is not None:
+                        prev = _existing.get(vid)
+                        if prev is None:
+                            _existing[vid] = lt
+                            a = Anchor(vid, scoped, lt, "ida_callarg")
+                            self.anchors.append(a)
+                            self.anchor_by_var[vid].append(a)
+                            _own_anchor[vid] = a
+                            n_arg += 1
+
+        n_param = 0
+        n_conflict = 0
+        for pname, types in _s2.items():
+            vid = self.var_to_id.get(pname)
+            if vid is None:
+                continue
+            joined = BOTTOM
+            bad = False
+            for t in types:
+                if joined == BOTTOM:
+                    joined = t
+                else:
+                    joined = self.lattice.meet(joined, t)
+                    if joined in (TOP, VOID_PTR):
+                        bad = True
+                        break
+            if bad or joined in (BOTTOM, TOP, VOID_PTR):
+                n_conflict += 1
+                continue
+            prev = _existing.get(vid)
+            if prev is not None and prev not in (BOTTOM, VOID_PTR, TOP):
+                # 强约束：S1 与 S2 必须相容；相容则收窄到更派生的公共后代
+                m2 = self.lattice.meet(prev, joined)
+                if m2 in (TOP, VOID_PTR):
+                    n_conflict += 1
+                    continue
+                joined = m2
+            if prev == joined:
+                continue
+            _existing[vid] = joined
+            # 同一变量已经由本通道锚定过 -> 直接改那个锚的类型，绝不新增第二个
+            if vid in _own_anchor:
+                _own_anchor[vid].lattice_type = joined
+            else:
+                a = Anchor(vid, pname, joined, "ida_param_s2")
+                self.anchors.append(a)
+                self.anchor_by_var[vid].append(a)
+                _own_anchor[vid] = a
+            n_param += 1
+        print(f"  ida_callarg anchors: arg={n_arg} param_s2={n_param} "
+              f"(conflicts abstained: {n_conflict})", file=sys.stderr)
 
     def _load_callarg_param_anchors(self, valid_classes):
         """X198: 实参 -> 被调方参数类型的按位锚定（IDA 原型，逐参数独立）。"""
@@ -2542,6 +2675,8 @@ class TypeInferenceEngine:
             "ida_proto": 3,
             "vslot_return": 3,
             "callarg_param": 3,
+            "ida_callarg": 4,
+            "ida_param_s2": 4,
             "cast_explicit": 3,
             "global_cast": 3,
             "ida_global_type": 3,
