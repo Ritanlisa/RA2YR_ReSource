@@ -5981,11 +5981,11 @@ int ObjectClass::BuildTileAdjacencyTable(IUnknown * aP1) {
       v9 = g_TerrainBridgeIndex; /*0x585233*/
     v10 = dword_82A944[v7->Cell_field_0x38 - v9]; /*0x58523f*/
     v11 = (unsigned short *)(4 * (v10 & 7) + 9041544); /*0x58524b*/
-    *(unsigned int *)v62 = *CellStruct::Add((CellStruct *)v59, &aP1, v11); /*0x585265*/
+    *(unsigned int *)v62 = *((CellStruct *)v59)->Add( &aP1, v11); /*0x585265*/
     v12 = (unsigned short *)(4 * (((unsigned char)v10 - 4) & 7) + 9041544); /*0x585271*/
-    *(unsigned int *)v64 = *CellStruct::Add((CellStruct *)v59, &aP1, v12); /*0x58528b*/
-    *(unsigned int *)v63 = *CellStruct::Add((CellStruct *)v60, &aP1, v11); /*0x5852a0*/
-    *(unsigned int *)v61 = *CellStruct::Add((CellStruct *)v60, &aP1, v12); /*0x5852ab*/
+    *(unsigned int *)v64 = *((CellStruct *)v59)->Add( &aP1, v12); /*0x58528b*/
+    *(unsigned int *)v63 = *((CellStruct *)v60)->Add( &aP1, v11); /*0x5852a0*/
+    *(unsigned int *)v61 = *((CellStruct *)v60)->Add( &aP1, v12); /*0x5852ab*/
   }
   LOBYTE(v65) = 0; /*0x5852b5*/
   LOBYTE(v66) = 0; /*0x5852ba*/
@@ -6380,7 +6380,7 @@ char ObjectClass::SpreadMapSeedTerrainFromWaypoints() {
             v25 = (float *)&v4[2 * v44]; /*0x5a21c8*/
             while ( 1 ) /*0x5a21ef*/
             {
-              v52 = *CellStruct::Add(v23, &v57, (unsigned short *)(4 * (v24 & 7) + 9041544)); /*0x5a21ef*/
+              v52 = *((CellStruct *)v23)->Add( &v57, (unsigned short *)(4 * (v24 & 7) + 9041544)); /*0x5a21ef*/
               *(unsigned int *)v43 = v52; /*0x5a21f3*/
               v26 = (short)(((v52) >> 16) & 0xFFFF) + (__int16)v52; /*0x5a21ff*/
               if ( v26 > g_MissionQueueFrame.localVariables[160] /*0x5a2243*/

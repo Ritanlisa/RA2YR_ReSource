@@ -1138,7 +1138,7 @@ void BuildingClass::ValidatePlacement(char a2) {
     if ( (unsigned int)*v2 < 8 ) /*0x480652*/
     {
       occupant = this->occupant; /*0x48065e*/
-      *(unsigned int *)v48 = *CellStruct::Add((CellStruct *)&occupant, &v52, (unsigned short *)(4 * (v3 & 7) + 9041544)); /*0x480684*/
+      *(unsigned int *)v48 = *((CellStruct *)&occupant)->Add( &v52, (unsigned short *)(4 * (v3 & 7) + 9041544)); /*0x480684*/
       v4 = (char *)((CellCoord *)&dword_87F7E8)->To_CellObj(v48); /*0x48068d*/
     }
     else

@@ -4741,7 +4741,7 @@ void (int a2)->DestroyCliffMap(int a3, IUnknown * aP3) {
             v16 = &unk_ABDC50; /*0x569956*/
           }
           v16->level[0] += 4; /*0x569969*/
-          v17 = *CellStruct::Add((CellStruct *)v77, &v72, dword_89F688); /*0x56997d*/
+          v17 = *((CellStruct *)v77)->Add( &v72, dword_89F688); /*0x56997d*/
           *(unsigned int *)v71 = v17; /*0x56997f*/
           v18 = (__int16)v17 + ((short)(((v17) >> 16) & 0xFFFF) << 9); /*0x56998e*/
           if ( v18 >= 0x40000 || (v19 = *(CellClass **)(dword_87F924 + 4 * v18)) == 0 ) /*0x5699a4*/
@@ -4750,7 +4750,7 @@ void (int a2)->DestroyCliffMap(int a3, IUnknown * aP3) {
             v19 = &unk_ABDC50; /*0x5699ac*/
           }
           v19->level[0] += 4; /*0x5699bf*/
-          v20 = *CellStruct::Add((CellStruct *)v77, &v73, &dword_89F698); /*0x5699d3*/
+          v20 = *((CellStruct *)v77)->Add( &v73, &dword_89F698); /*0x5699d3*/
           *(unsigned int *)v71 = v20; /*0x5699d5*/
           v21 = (__int16)v20 + ((short)(((v20) >> 16) & 0xFFFF) << 9); /*0x5699e4*/
           if ( v21 >= 0x40000 || (v22 = *(CellClass **)(dword_87F924 + 4 * v21)) == 0 ) /*0x5699fa*/
@@ -4791,14 +4791,14 @@ LABEL_41:
           }
         }
         Cell::UpdateTileType(v77, 0, 0); /*0x569cfe*/
-        *(unsigned int *)v71 = *CellStruct::Add((CellStruct *)v77, &v75, &dword_89F6A0); /*0x569d1c*/
+        *(unsigned int *)v71 = *((CellStruct *)v77)->Add( &v75, &dword_89F6A0); /*0x569d1c*/
         v40 = InvalidateTileRegionMap((ObjectClass *)this, v71); /*0x569d21*/
 LABEL_86:
         v63 |= v40; /*0x569d88*/
         break; /*0x569d88*/
       }
       Cell::UpdateTileType(v77, 0, 0); /*0x569ccc*/
-      *(unsigned int *)v71 = *CellStruct::Add((CellStruct *)v77, &v75, &dword_89F6A0); /*0x569cea*/
+      *(unsigned int *)v71 = *((CellStruct *)v77)->Add( &v75, &dword_89F6A0); /*0x569cea*/
 LABEL_85:
       v40 = InvalidateTileRegionMap((ObjectClass *)this, v71); /*0x569d80*/
       goto LABEL_86; /*0x569d83*/
@@ -4808,14 +4808,14 @@ LABEL_85:
     if ( v13 == dword_ABC1D0 && v64->height[0] == 2 ) /*0x569ac5*/
     {
       Cell::UpdateTileType(v77, 0, 0); /*0x569d2e*/
-      *(unsigned int *)v71 = *CellStruct::Add((CellStruct *)v77, &v75, dword_89F688); /*0x569d4c*/
+      *(unsigned int *)v71 = *((CellStruct *)v77)->Add( &v75, dword_89F688); /*0x569d4c*/
       v40 = InvalidateTileRegionMap((ObjectClass *)this, v71); /*0x569d51*/
       goto LABEL_86; /*0x569d51*/
     }
     if ( v13 == dword_AA1540 && v64->height[0] == 2 ) /*0x569ada*/
     {
       Cell::UpdateTileType(v77, 0, 0); /*0x569d5e*/
-      *(unsigned int *)v71 = *CellStruct::Add((CellStruct *)v77, &v75, dword_89F688); /*0x569d7c*/
+      *(unsigned int *)v71 = *((CellStruct *)v77)->Add( &v75, dword_89F688); /*0x569d7c*/
       goto LABEL_85; /*0x569d7c*/
     }
     if ( v13 != v8 && v13 != v8 + 3 && v13 != v8 + 4 && v13 != v8 + 2 && v13 != v8 + 1 || v64->height[0] != 2 ) /*0x569b07*/
@@ -4836,7 +4836,7 @@ LABEL_85:
       v29 = &unk_ABDC50; /*0x569b79*/
     }
     v29->level[0] += 4; /*0x569b8c*/
-    v30 = *CellStruct::Add((CellStruct *)v77, &v74, &dword_89F690); /*0x569ba0*/
+    v30 = *((CellStruct *)v77)->Add( &v74, &dword_89F690); /*0x569ba0*/
     *(unsigned int *)v71 = v30; /*0x569ba2*/
     v31 = (__int16)v30 + ((short)(((v30) >> 16) & 0xFFFF) << 9); /*0x569bb1*/
     if ( v31 >= 0x40000 || (v32 = *(CellClass **)(dword_87F924 + 4 * v31)) == 0 ) /*0x569bc7*/
@@ -4845,7 +4845,7 @@ LABEL_85:
       v32 = &unk_ABDC50; /*0x569bcf*/
     }
     v32->level[0] += 4; /*0x569be2*/
-    v33 = *CellStruct::Add((CellStruct *)v77, &v75, &dword_89F6A0); /*0x569bf6*/
+    v33 = *((CellStruct *)v77)->Add( &v75, &dword_89F6A0); /*0x569bf6*/
     *(unsigned int *)v71 = v33; /*0x569bf8*/
     v34 = (__int16)v33 + ((short)(((v33) >> 16) & 0xFFFF) << 9); /*0x569c07*/
     if ( v34 >= 0x40000 || (v35 = *(CellClass **)(dword_87F924 + 4 * v34)) == 0 ) /*0x569c1d*/
@@ -5149,7 +5149,7 @@ int Gap2Recv_56A080::PlaceTerrainCliffsRegion() {
               if ( v13 == v5 + 4 ) /*0x56a350*/
               {
                 Cell::SetTileType((__int16 *)&v31, v5 + g_Cell_BuildabilityLUT - 1, -1, -1, 0); /*0x56a36e*/
-                v22 = *CellStruct::Add((CellStruct *)&v31, &v41, dword_89F688); /*0x56a386*/
+                v22 = *((CellStruct *)&v31)->Add( &v41, dword_89F688); /*0x56a386*/
                 v39 = v22; /*0x56a388*/
                 v38 = v22; /*0x56a38c*/
                 v23 = (__int16)v22 + ((short)(((v22) >> 16) & 0xFFFF) << 9); /*0x56a39b*/
@@ -5159,7 +5159,7 @@ int Gap2Recv_56A080::PlaceTerrainCliffsRegion() {
                   v24 = &unk_ABDC50; /*0x56a3b9*/
                 }
                 v24->level[0] += 4; /*0x56a3d0*/
-                v25 = *CellStruct::Add((CellStruct *)&v38, &v42, &dword_89F690); /*0x56a3e0*/
+                v25 = *((CellStruct *)&v38)->Add( &v42, &dword_89F690); /*0x56a3e0*/
                 v39 = v25; /*0x56a3e2*/
                 v26 = (__int16)v25 + ((short)(((v25) >> 16) & 0xFFFF) << 9); /*0x56a3f1*/
                 if ( v26 >= 0x40000 || (v27 = *(CellClass **)(dword_87F924 + 4 * v26)) == 0 ) /*0x56a407*/
@@ -5168,7 +5168,7 @@ int Gap2Recv_56A080::PlaceTerrainCliffsRegion() {
                   v27 = &unk_ABDC50; /*0x56a40f*/
                 }
                 v27->level[0] += 4; /*0x56a422*/
-                *(unsigned int *)v40 = *CellStruct::Add((CellStruct *)&v38, &v43, &dword_89F6A0); /*0x56a43c*/
+                *(unsigned int *)v40 = *((CellStruct *)&v38)->Add( &v43, &dword_89F6A0); /*0x56a43c*/
                 v28 = ((CellCoord *)&dword_87F7E8)->To_CellObj(v40); /*0x56a446*/
                 v28[283] += 4; /*0x56a459*/
               }
@@ -6369,7 +6369,7 @@ int ObjectClass::CollectMatchingTileCells( unsigned short * a1, int a3, int a4, 
                   TileVector::PushBack(v18, v38); /*0x583f5d*/
               }
               v36 = ((CellStruct *)&v48)->Set(v10, v34); /*0x583f68*/
-              *(unsigned int *)v38 = *CellStruct::Add((CellStruct *)a1, &v49, v36); /*0x583f91*/
+              *(unsigned int *)v38 = *((CellStruct *)a1)->Add( &v49, v36); /*0x583f91*/
               if ( (v41)->GetTileIndex(v38, aP4, 0) == a6 ) /*0x583fa1*/
               {
                 v37 = (&v53)->Set(v38[0], v38[1], aP7, aP4a); /*0x583fc6*/
@@ -6782,11 +6782,11 @@ int (void* v56)->UpdateCellConnectivityGraph() {
       v9 = g_TerrainBridgeIndex; /*0x584edf*/
     v10 = dword_82A944[v7->Cell_field_0x38 - v9]; /*0x584eeb*/
     v11 = (unsigned short *)(4 * (v10 & 7) + 9041544); /*0x584ef7*/
-    *(unsigned int *)v53 = *CellStruct::Add((CellStruct *)v50, &v56, v11); /*0x584f19*/
+    *(unsigned int *)v53 = *((CellStruct *)v50)->Add( &v56, v11); /*0x584f19*/
     v12 = (unsigned short *)(4 * (((unsigned char)v10 - 4) & 7) + 9041544); /*0x584f1d*/
-    *(unsigned int *)v55 = *CellStruct::Add((CellStruct *)v50, &v56, v12); /*0x584f2e*/
-    *(unsigned int *)v54 = *CellStruct::Add((CellStruct *)v51, &v56, v11); /*0x584f4c*/
-    *(unsigned int *)v56 = *CellStruct::Add((CellStruct *)v51, &v56, v12); /*0x584f57*/
+    *(unsigned int *)v55 = *((CellStruct *)v50)->Add( &v56, v12); /*0x584f2e*/
+    *(unsigned int *)v54 = *((CellStruct *)v51)->Add( &v56, v11); /*0x584f4c*/
+    *(unsigned int *)v56 = *((CellStruct *)v51)->Add( &v56, v12); /*0x584f57*/
   }
   v13 = 0; /*0x584f61*/
   v56 = (int *)this->v56; /*0x584f63*/
@@ -7027,7 +7027,7 @@ void (MapClass * aP1)->FloodFillConnectedCells(int a3) {
     }
     for ( j = 0; j < 8; ++j ) /*0x585af5*/
     {
-      v20 = CellStruct::Add((CellStruct *)&k, &v38, (unsigned short *)(4 * (j & 7) + 9041544)); /*0x585b0d*/
+      v20 = ((CellStruct *)&k)->Add( &v38, (unsigned short *)(4 * (j & 7) + 9041544)); /*0x585b0d*/
       v21 = this->M244; /*0x585b14*/
       v35 = *v20; /*0x585b1a*/
       aP1 = v35; /*0x585b1e*/

@@ -487,8 +487,8 @@ AbstractClass * * SlaveManager_InitGrid()
           {
             v37[0] = -1; /*0x6b2e70*/
             v37[1] = 0; /*0x6b2e77*/
-            v40.q008 = *CellStruct::Add( /*0x6b2e89*/
-                                        (CellStruct *)&v40.q010,
+            v40.q008 = *(/*0x6b2e89*/
+                                        (CellStruct *)&v40.q010)->Add(
                                         &v40.q00C,
                                         v37);
             v28 = (TechnoClass *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)&v40.q008); /*0x6b2e93*/

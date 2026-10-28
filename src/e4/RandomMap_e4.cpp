@@ -203,7 +203,7 @@ int RandomMap::GenerateTerrain(RandomMap *self)
         *(unsigned int *)&dword_ABED10[40 * (__int16)v45 + 28 + 40 * g_MapCellWidth * (short)(((v45) >> 16) & 0xFFFF)] = v5; /*0x58c92d*/
       for ( i = 0; i < 8; ++i ) /*0x58c931*/
       {
-        LODWORD(v52) = *CellStruct::Add((CellStruct *)&v45, &v53, (unsigned short *)(4 * (i & 7) + 9041544)); /*0x58c956*/
+        LODWORD(v52) = *((CellStruct *)&v45)->Add( &v53, (unsigned short *)(4 * (i & 7) + 9041544)); /*0x58c956*/
         *(unsigned int *)v46 = LODWORD(v52); /*0x58c95a*/
         v7 = dword_ABED04; /*0x58c968*/
         v8 = &dword_ABED10[40 * SLOWORD(v52) + 40 * g_MapCellWidth * SWORD1(v52)]; /*0x58c97d*/
@@ -324,7 +324,7 @@ int RandomMap::GenerateTerrain(RandomMap *self)
     *(unsigned int *)v47 = *(unsigned int *)(v17[1] + 4 * v19); /*0x58cb2a*/
     while ( 1 ) /*0x58cb51*/
     {
-      LODWORD(v52) = *CellStruct::Add((CellStruct *)v47, &v53, (unsigned short *)(4 * (v20 & 7) + 9041544)); /*0x58cb51*/
+      LODWORD(v52) = *((CellStruct *)v47)->Add( &v53, (unsigned short *)(4 * (v20 & 7) + 9041544)); /*0x58cb51*/
       *(unsigned int *)v49 = LODWORD(v52); /*0x58cb55*/
       v21 = SWORD1(v52) + SLOWORD(v52); /*0x58cb61*/
       if ( v21 > dword_ABED04 ) /*0x58cb66*/
@@ -6373,7 +6373,7 @@ LABEL_51:
     p_RandomMap_field_0x8 = (RandomMap *)((char *)Block + 8 * v91); /*0x5a0d86*/
     while ( 1 ) /*0x5a0df4*/
     {
-      LODWORD(v97) = *CellStruct::Add((CellStruct *)v42, &v99, (unsigned short *)(4 * (v47 & 7) + 9041544)); /*0x5a0dad*/
+      LODWORD(v97) = *((CellStruct *)v42)->Add( &v99, (unsigned short *)(4 * (v47 & 7) + 9041544)); /*0x5a0dad*/
       *(unsigned int *)v90 = LODWORD(v97); /*0x5a0db1*/
       v48 = SWORD1(v97) + SLOWORD(v97); /*0x5a0dbd*/
       if ( v48 <= dword_ABED04 /*0x5a0de6*/

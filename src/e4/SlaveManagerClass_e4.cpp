@@ -475,7 +475,7 @@ TechnoClass * * SlaveManagerClass_ProcessSlaves(unsigned int *a1, void * a2, voi
               v17 = *(unsigned int *)(v4 + 36); /*0x6af81f*/
               v77 = ((CellStruct *)v83)->Set( LOWORD(v78.ptr_8) - 1, FoundationHeight / 2); /*0x6af839*/
               v18 = (CellStruct *)(*(int (**)(int, int *))(*(unsigned int *)v17 + 440))(v17, &v78.creationFrame); /*0x6af849*/
-              v19 = CellStruct::Add(v18, &v82, v77); /*0x6af851*/
+              v19 = ((CellStruct *)v18)->Add( &v82, v77); /*0x6af851*/
             }
             else
             {
@@ -536,7 +536,7 @@ TechnoClass * * SlaveManagerClass_ProcessSlaves(unsigned int *a1, void * a2, voi
               v28 = *(unsigned int *)(v4 + 36); /*0x6af93f*/
               HIWORD(v78.master) = v27 / 2; /*0x6af946*/
               v29 = (CellStruct *)(*(int (**)(int, int *))(*(unsigned int *)v28 + 440))(v28, &v78.slaves); /*0x6af95c*/
-              v78.referenceCount = *CellStruct::Add(v29, &v78.slaveVectorCapacity, &v78.master); /*0x6af96b*/
+              v78.referenceCount = *((CellStruct *)v29)->Add( &v78.slaveVectorCapacity, &v78.master); /*0x6af96b*/
             }
             else
             {
@@ -587,7 +587,7 @@ TechnoClass * * SlaveManagerClass_ProcessSlaves(unsigned int *a1, void * a2, voi
                                     v38,
                                     &v82,
                                     &v78.SlaveManagerClass_field_54);
-              v40 = CellStruct::Add(v39, v73, a2); /*0x6afa7d*/
+              v40 = ((CellStruct *)v39)->Add( v73, a2); /*0x6afa7d*/
             }
             else
             {
@@ -622,7 +622,7 @@ TechnoClass * * SlaveManagerClass_ProcessSlaves(unsigned int *a1, void * a2, voi
                                   v49,
                                   v78.__pad_48,
                                   &v78.slaveVectorCapacity);
-            v51 = CellStruct::Add(v50, v74, a2); /*0x6afb86*/
+            v51 = ((CellStruct *)v50)->Add( v74, a2); /*0x6afb86*/
           }
           else
           {
@@ -674,7 +674,7 @@ LABEL_48:
                                   v79,
                                   &v78.SlaveManagerClass_field_60,
                                   &v78.uniqueId);
-            v65 = CellStruct::Add(v64, &v78.SlaveManagerClass_field_5C, (unsigned short *)a3); /*0x6afc7a*/
+            v65 = ((CellStruct *)v64)->Add( &v78.SlaveManagerClass_field_5C, (unsigned short *)a3); /*0x6afc7a*/
           }
           else
           {

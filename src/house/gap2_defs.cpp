@@ -7745,9 +7745,9 @@ LABEL_88:
         v95[0] = v42; /*0x506560*/
         do /*0x5065cc*/
         {
-          *(unsigned int *)v94 = *CellStruct::Add((CellStruct *)v95, &v102, (unsigned short *)(4 * (v41 & 7) + 9041544)); /*0x50659c*/
-          if ( (v40 & *((unsigned int *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v94) + 55)) != 0 ) /*0x5065ae*/
-            baseSpawnCell = *CellStruct::Add((CellStruct *)&baseSpawnCell, &v101, (unsigned short *)(4 * (v41 & 7) + 9041544)); /*0x5065c4*/
+          *(unsigned int *)v94 = *((CellStruct *)v95)->Add( &v102, (unsigned short *)(4 * (v41 & 7) + 9041544)); /*0x50659c*/
+          if ( (v40 & *((unsigned int *)((CellCoord *)&dword_87F7E8)->To_CellObj(v94) + 55)) != 0 ) /*0x5065ae*/
+            baseSpawnCell = *((CellStruct *)&baseSpawnCell)->Add( &v101, (unsigned short *)(4 * (v41 & 7) + 9041544)); /*0x5065c4*/
           ++v41; /*0x5065c8*/
         }
         while ( v41 < 8 ); /*0x5065cc*/
@@ -8675,9 +8675,9 @@ LABEL_58:
           }
           v44 += 3; /*0x50899e*/
           v51 = (unsigned short *)(4 * (v95 & 7) + 9041544); /*0x5089a1*/
-          v111 = *CellStruct::Add((CellStruct *)&v88, &v117, v51); /*0x5089b8*/
-          v110 = *CellStruct::Add((CellStruct *)&v111, v120, v51); /*0x5089d8*/
-          v52 = (unsigned __int16 **)CellStruct::Add((CellStruct *)&v110, &v119, v51); /*0x5089e6*/
+          v111 = *((CellStruct *)&v88)->Add( &v117, v51); /*0x5089b8*/
+          v110 = *((CellStruct *)&v111)->Add( v120, v51); /*0x5089d8*/
+          v52 = (unsigned __int16 **)((CellStruct *)&v110)->Add( &v119, v51); /*0x5089e6*/
         }
         else
         {
@@ -8701,7 +8701,7 @@ LABEL_58:
             v56[3] = 0; /*0x508a60*/
           }
           ++v44; /*0x508a67*/
-          v52 = (unsigned __int16 **)CellStruct::Add((CellStruct *)&v88, &v118, (unsigned short *)(4 * (v95 & 7) + 9041544)); /*0x508a7f*/
+          v52 = (unsigned __int16 **)((CellStruct *)&v88)->Add( &v118, (unsigned short *)(4 * (v95 & 7) + 9041544)); /*0x508a7f*/
         }
         v43 = *v52; /*0x508a84*/
         v88 = *v52; /*0x508a8c*/
@@ -10753,15 +10753,15 @@ void HouseClass::SetPrimaryTechBuilding() {
         VectorClass::InsertAt(v59, v8); /*0x50c7e0*/
         v44 = FoundationWidth + 1; /*0x50c7e5*/
         v45 = ((CellStruct *)v59)->Set( v44, 0); /*0x50c7ed*/
-        v25 = *CellStruct::Add(v62, &v58, v45); /*0x50c808*/
+        v25 = *((CellStruct *)v62)->Add( &v58, v45); /*0x50c808*/
         v46 = BuildLocation::InitCandidate(v52, &v25); /*0x50c812*/
         VectorClass::InsertAt(v46, v8); /*0x50c81a*/
         v47 = ((CellStruct *)v59)->Set( 0, v55 + 1); /*0x50c82d*/
-        v25 = *CellStruct::Add(v62, &v58, v47); /*0x50c852*/
+        v25 = *((CellStruct *)v62)->Add( &v58, v47); /*0x50c852*/
         v48 = BuildLocation::InitCandidate(v52, &v25); /*0x50c856*/
         VectorClass::InsertAt(v48, v8); /*0x50c85e*/
         v49 = ((CellStruct *)v59)->Set( v44, v55 + 1); /*0x50c869*/
-        v25 = *CellStruct::Add(v62, &v58, v49); /*0x50c88e*/
+        v25 = *((CellStruct *)v62)->Add( &v58, v49); /*0x50c88e*/
         v50 = BuildLocation::InitCandidate(v52, &v25); /*0x50c892*/
         VectorClass::InsertAt(v50, v8); /*0x50c89a*/
         return 1; /*0x50c89f*/

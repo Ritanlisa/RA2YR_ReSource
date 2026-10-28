@@ -39892,7 +39892,7 @@ void TileSystem::BuildNodes()
         v36 = (float *)((char *)Block + 8 * v157.u32_C); /*0x58d954*/
         while ( 1 ) /*0x58d97e*/
         {
-          v162 = *CellStruct::Add(v35, &v161, (unsigned short *)(4 * (v146 & 7) + 9041544)); /*0x58d97e*/
+          v162 = *((CellStruct *)v35)->Add( &v161, (unsigned short *)(4 * (v146 & 7) + 9041544)); /*0x58d97e*/
           *(unsigned int *)v162 = v162; /*0x58d982*/
           v37 = (short)((v162) >> 16) + (int16_t)v162; /*0x58d98e*/
           if ( v37 > g_MissionQueueFrame.localVariables[160] /*0x58d9b7*/
@@ -40108,7 +40108,7 @@ void TileSystem::BuildNodes()
             v83 = 0; /*0x58de25*/
             for ( m = 0; m < 8; ++m ) /*0x58de27*/
             {
-              v84 = *CellStruct::Add((CellStruct *)&v157, &v161, (unsigned short *)(4 * (v83 & 7) + 9041544)); /*0x58de44*/
+              v84 = *((CellStruct *)&v157)->Add( &v161, (unsigned short *)(4 * (v83 & 7) + 9041544)); /*0x58de44*/
               v158 = v84; /*0x58de4c*/
               v85 = (short)((v84) >> 16) + (int16_t)v84; /*0x58de58*/
               if ( v85 > g_MissionQueueFrame.localVariables[160] /*0x58de81*/
@@ -40183,7 +40183,7 @@ void TileSystem::BuildNodes()
           v158 = *(unsigned int *)(v95[1] + 4 * v98); /*0x58e009*/
           do /*0x58e08d*/
           {
-            *(unsigned int *)v157.__pad_000 = *CellStruct::Add((CellStruct *)&v158, &v161, (unsigned short *)(4 * (v99 & 7) + 9041544)); /*0x58e030*/
+            *(unsigned int *)v157.__pad_000 = *((CellStruct *)&v158)->Add( &v161, (unsigned short *)(4 * (v99 & 7) + 9041544)); /*0x58e030*/
             v100 = *(int16_t *)&v157.__pad_002 + *(int16_t *)v157.__pad_000; /*0x58e03c*/
             if ( v100 > g_MissionQueueFrame.localVariables[160] /*0x58e059*/
               && *(int16_t *)v157.__pad_000 - *(int16_t *)&v157.__pad_002 < g_MissionQueueFrame.localVariables[160]

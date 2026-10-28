@@ -1763,7 +1763,7 @@ LABEL_19:
         goto LABEL_20; /*0x42b504*/
       }
     }
-    v15 = CellStruct::Add(&v50, &v57, (unsigned short *)(4 * *v12 + 9041544)); /*0x42b4ef*/
+    v15 = ((CellStruct *)&v50)->Add( &v57, (unsigned short *)(4 * *v12 + 9041544)); /*0x42b4ef*/
     goto LABEL_16; /*0x42b4ef*/
   }
 LABEL_20:
@@ -1825,7 +1825,7 @@ LABEL_52:
           if ( !v41 ) /*0x42b793*/
             goto LABEL_53; /*0x42b793*/
         }
-        v43 = (int **)CellStruct::Add(&a6, &a4, (unsigned short *)(4 * *v40 + 9041544)); /*0x42b784*/
+        v43 = (int **)((CellStruct *)&a6)->Add( &a4, (unsigned short *)(4 * *v40 + 9041544)); /*0x42b784*/
         goto LABEL_51; /*0x42b784*/
       }
       v26 = 1; /*0x42b5f5*/

@@ -969,7 +969,7 @@ LABEL_7:
       (v29) = ((v29) & ~0xFFFF) | ((*v6 / 256) & 0xFFFF); /*0x738dbf*/
       HIWORD(v29) = v6[1] / 256; /*0x738dd7*/
       *(unsigned int *)v28 = v29; /*0x738de4*/
-      v7 = CellStruct::Add((CellStruct *)v28, v31, &g_DDrawSurfaceManager.scenario[89]); /*0x738de9*/
+      v7 = ((CellStruct *)v28)->Add( v31, &g_DDrawSurfaceManager.scenario[89]); /*0x738de9*/
       Type = this->Type; /*0x738df0*/
       v30 = *v7; /*0x738df6*/
       if ( (*(unsigned __int8 (**)(int, int *, unsigned int))(*(unsigned int *)Type->DeploysInto[0] + 168))( /*0x738e08*/

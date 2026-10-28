@@ -1936,13 +1936,13 @@ bool InfantryClass::CanMoveThroughCell()
   if ( v1 >= 0 && v1 < FootClass_Array.primaryFacing[0] && this->radioLinks[3] == 10 ) /*0x484d8a*/
     return 1; /*0x484d8e*/
   occupant = this->occupant; /*0x484d9c*/
-  *(unsigned int *)v14 = *CellStruct::Add((CellStruct *)&occupant, v16, &g_DDrawSurfaceManager.scenario[85]); /*0x484db6*/
+  *(unsigned int *)v14 = *((CellStruct *)&occupant)->Add( v16, &g_DDrawSurfaceManager.scenario[85]); /*0x484db6*/
   v3 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v14); /*0x484dbf*/
   v4 = v3; /*0x484dc4*/
   if ( !v3 ) /*0x484dc8*/
     return 0; /*0x484dc8*/
   occupant = v3->ptr_24; /*0x484dd5*/
-  *(unsigned int *)v15 = *CellStruct::Add((CellStruct *)&occupant, v16, &g_DDrawSurfaceManager.scenario[85]); /*0x484def*/
+  *(unsigned int *)v15 = *((CellStruct *)&occupant)->Add( v16, &g_DDrawSurfaceManager.scenario[85]); /*0x484def*/
   v5 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v15); /*0x484df8*/
   if ( !v5 ) /*0x484dff*/
     return 0; /*0x484dff*/
@@ -1958,7 +1958,7 @@ bool InfantryClass::CanMoveThroughCell()
   *(unsigned int *)v15 = occupant; /*0x484e76*/
   v9 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v15); /*0x484e88*/
   occupant = v4->ptr_24; /*0x484e97*/
-  *(unsigned int *)v16 = *CellStruct::Add((CellStruct *)&occupant, &v17, &g_DDrawSurfaceManager.scenario[84]); /*0x484eac*/
+  *(unsigned int *)v16 = *((CellStruct *)&occupant)->Add( &v17, &g_DDrawSurfaceManager.scenario[84]); /*0x484eac*/
   v10 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v16); /*0x484eb0*/
   if ( !v9 || !v10 ) /*0x484ebb*/
     return 0; /*0x484ebb*/
@@ -4276,7 +4276,7 @@ LABEL_159:
                 v10 = slaveManager->occupant; /*0x6b08d7*/
                 v20[1] = FoundationHeight / 2; /*0x6b08de*/
                 v11 = (CellStruct *)(*(int (__thiscall **)(int, int *))(*(unsigned int *)v10 + 440))(v10, &v24); /*0x6b08f4*/
-                v12 = *CellStruct::Add(v11, &v22, v20); /*0x6b0901*/
+                v12 = *((CellStruct *)v11)->Add( &v22, v20); /*0x6b0901*/
               }
               else
               {
@@ -4288,7 +4288,7 @@ LABEL_159:
                 || (*(int (__thiscall **)(int))(*(unsigned int *)v13 + 44))(v13) != 6
                 || (*(unsigned int *)v20 = *BuildingClass::GetRallyPointCoord(slaveManager, &v25),
                     v22 = -65536,
-                    *(unsigned int *)v20 = *CellStruct::Add((CellStruct *)v20, &v24, &v22),
+                    *(unsigned int *)v20 = *((CellStruct *)v20)->Add( &v24, &v22),
                     v14 = (Cell *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v20),
                     v15 = Cell::IsBridge(v14) == (unsigned int *)slaveManager->occupant,
                     v16 = *(unsigned int *)v20,
@@ -5169,13 +5169,13 @@ int InfantryClass::ValidateAttackPosition()
   if ( v2 >= 0 && v2 < FootClass_Array.primaryFacing[0] && this->radioLinks[3] == 10 ) /*0x484b0d*/
     return 1; /*0x484b18*/
   occupant = this->occupant; /*0x484b20*/
-  *(unsigned int *)v19 = *CellStruct::Add((CellStruct *)&occupant, v21, &g_DDrawSurfaceManager.scenario[82]); /*0x484b3a*/
+  *(unsigned int *)v19 = *((CellStruct *)&occupant)->Add( v21, &g_DDrawSurfaceManager.scenario[82]); /*0x484b3a*/
   v4 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v19); /*0x484b43*/
   v5 = v4; /*0x484b48*/
   if ( v4 ) /*0x484b4c*/
   {
     occupant = v4->ptr_24; /*0x484b59*/
-    *(unsigned int *)v20 = *CellStruct::Add((CellStruct *)&occupant, v21, &g_DDrawSurfaceManager.scenario[82]); /*0x484b73*/
+    *(unsigned int *)v20 = *((CellStruct *)&occupant)->Add( v21, &g_DDrawSurfaceManager.scenario[82]); /*0x484b73*/
     v6 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v20); /*0x484b81*/
     if ( v6 ) /*0x484b85*/
     {

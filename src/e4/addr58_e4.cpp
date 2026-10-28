@@ -442,7 +442,7 @@ int MarkCliffEdgePassability(int a1)
         if ( *(unsigned short *)v3 == v4 )
         {
           v5 = (unsigned short *)(4 * (*(unsigned short *)(v3 + 2) >= *(unsigned short *)(v3 + 6) ? 0 : 4) + 9041544);
-          for ( i = (unsigned __int16 *)*CellStruct::Add((CellStruct *)v3, &v29, v5); /*0x586c71*/
+          for ( i = (unsigned __int16 *)*((CellStruct *)v3)->Add( &v29, v5); /*0x586c71*/
                 i != *(unsigned __int16 **)(v3 + 4);
                 i = v23 )
           {
@@ -479,7 +479,7 @@ int MarkCliffEdgePassability(int a1)
         else
         {
           v13 = (unsigned short *)(4 * ((*(unsigned short *)v3 >= v4 ? 6 : 2) & 7) + 9041544);
-          for ( j = (unsigned __int16 *)*CellStruct::Add((CellStruct *)v3, &v30, v13); ; j = v25 ) /*0x586d69*/
+          for ( j = (unsigned __int16 *)*((CellStruct *)v3)->Add( &v30, v13); ; j = v25 ) /*0x586d69*/
           {
             v15 = (unsigned short)j == *(unsigned short *)(v3 + 4); /*0x586d6b*/
             v31 = j; /*0x586d6f*/

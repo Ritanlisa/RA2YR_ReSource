@@ -4345,7 +4345,7 @@ void BuildingClass::Unlimbo_UnitDeliveryFix()
               *(unsigned short *)j != 0x7FFF || j->ptr_8_2 != 0x7FFF;
               j += 4 )
         {
-          *(unsigned int *)v155 = *CellStruct::Add((CellStruct *)j, &v45, &v162); /*0x440be5*/
+          *(unsigned int *)v155 = *((CellStruct *)j)->Add( &v45, &v162); /*0x440be5*/
           if ( (*((unsigned int *)((CellCoord *)&dword_87F7E8)->To_CellObj(v155) + 80) & 0x400000) == 0 ) /*0x440bf4*/
             goto LABEL_84; /*0x440bf4*/
         }

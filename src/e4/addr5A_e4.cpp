@@ -1003,7 +1003,7 @@ void FloodFillPathfinding(Random * aP0, int a2, CellClass * aP2, int a4, char a5
       {
         int v39; // [esp+14h] [ebp-34h] BYREF
         int v48; // [esp+3Ch] [ebp-Ch] BYREF
-        v39 = (int)(*(unsigned int *)CellStruct::Add(((CellStruct *)(v40)), (unsigned int *)(&v48), (unsigned short *)(4 * (v25 & 7) + 9041544))); /*0x5a4d44*/
+        v39 = (int)(*(unsigned int *)((CellStruct *)((CellStruct *)(v40)))->Add( (unsigned int *)(&v48), (unsigned short *)(4 * (v25 & 7) + 9041544))); /*0x5a4d44*/
         int v43; // [esp+24h] [ebp-24h]
         v43 = (*((signed short *)(((unsigned char *)&(v39)) + 2))) + (int16_t)v39; /*0x5a4d55*/
         if ( v43 > dword_ABED04 /*0x5a4d81*/

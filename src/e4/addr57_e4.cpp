@@ -147,7 +147,7 @@ Coord * * sub_575EE0(void * a1, int a2)
         TeamClass::Update_0(v11, 31, 0, dword_ABD480, 0, 0); /*0x576009*/
       int v12; // ecx
       int v32; // [esp+18h] [ebp-14h] BYREF
-      v12 = (int)(*CellStruct::Add(&a2, &v32, dword_89F688)); /*0x576021*/
+      v12 = (int)(*((CellStruct *)&a2)->Add( &v32, dword_89F688)); /*0x576021*/
       unsigned int v13; // eax
       v13 = (int16_t)v12 + ((*((signed short *)(((unsigned char *)&(v12)) + 2))) << 9); /*0x576032*/
       void *v14; // eax
@@ -166,7 +166,7 @@ Coord * * sub_575EE0(void * a1, int a2)
         TeamClass::Update_0(v16, 31, 0, dword_ABD480, 0, 0); /*0x57606e*/
       int v17; // ecx
       int v33; // [esp+1Ch] [ebp-10h] BYREF
-      v17 = (int)(*CellStruct::Add((unsigned short *)v15 + 18, &v33, dword_89F688)); /*0x576085*/
+      v17 = (int)(*((CellStruct *)(unsigned short *)v15 + 18)->Add( &v33, dword_89F688)); /*0x576085*/
       unsigned int v18; // eax
       v18 = (int16_t)v17 + ((*((signed short *)(((unsigned char *)&(v17)) + 2))) << 9); /*0x576096*/
       if ( v18 >= 0x40000 || (v4 = *(void **)(dword_87F924 + 4 * v18)) == 0 ) /*0x5760ac*/
@@ -184,7 +184,7 @@ Coord * * sub_575EE0(void * a1, int a2)
     {
       int v20; // ecx
       int v34; // [esp+20h] [ebp-Ch] BYREF
-      v20 = (int)(*CellStruct::Add(&a2, &v34, &dword_89F690)); /*0x5760f0*/
+      v20 = (int)(*((CellStruct *)&a2)->Add( &v34, &dword_89F690)); /*0x5760f0*/
       unsigned int v21; // eax
       v21 = (int16_t)v20 + ((*((signed short *)(((unsigned char *)&(v20)) + 2))) << 9); /*0x576101*/
       void *v22; // eax
@@ -199,7 +199,7 @@ Coord * * sub_575EE0(void * a1, int a2)
         TeamClass::Update_0(v23, 31, 0, dword_ABD480, 0, 0); /*0x576139*/
       int v24; // ecx
       int v35; // [esp+24h] [ebp-8h] BYREF
-      v24 = (int)(*CellStruct::Add(&a2, &v35, &dword_89F6A0)); /*0x576151*/
+      v24 = (int)(*((CellStruct *)&a2)->Add( &v35, &dword_89F6A0)); /*0x576151*/
       unsigned int v25; // eax
       v25 = (int16_t)v24 + ((*((signed short *)(((unsigned char *)&(v24)) + 2))) << 9); /*0x576162*/
       void *v26; // eax
@@ -218,7 +218,7 @@ Coord * * sub_575EE0(void * a1, int a2)
         TeamClass::Update_0(v28, 31, 0, dword_ABD480, 0, 0); /*0x57619e*/
       int v31; // [esp+14h] [ebp-18h] BYREF
       int v36; // [esp+28h] [ebp-4h] BYREF
-      v31 = (int)(*CellStruct::Add((unsigned short *)v27 + 18, &v36, &dword_89F6A0)); /*0x5761c1*/
+      v31 = (int)(*((CellStruct *)(unsigned short *)v27 + 18)->Add( &v36, &dword_89F6A0)); /*0x5761c1*/
       v4 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v31); /*0x5761c5*/
       void **v29; // ecx
       v29 = (void **)v4->u32_3C; /*0x5761ca*/
@@ -1477,7 +1477,7 @@ AbstractClass * * CreateCliffRampMap(IUnknown * aP0)
         LOBYTE(v54) = 1; /*0x57e1e8*/
         BuildingClass::AddUpgrade(&dword_87F7E8.field_0, (int)v1); /*0x57e1ec*/
         right = 0x10000; /*0x57e1fd*/
-        v50[0] = *CellStruct::Add((CellStruct *)v1, v52, &right); /*0x57e21a*/
+        v50[0] = *((CellStruct *)v1)->Add( v52, &right); /*0x57e21a*/
         BuildingClass::AddUpgrade(&dword_87F7E8.field_0, (int)v50); /*0x57e21e*/
         v39 = ((CellStruct *)v52)->Set( 0, 1); /*0x57e22a*/
         v50[0] = *CellStruct::Sub((CellStruct *)v1, &right, v39); /*0x57e248*/
@@ -2052,7 +2052,7 @@ AbstractClass * * CreateCliffBridgeMap(IUnknown * aP0)
         LOBYTE(v54) = 1; /*0x57ec45*/
         BuildingClass::AddUpgrade(&dword_87F7E8.field_0, (int)v1); /*0x57ec49*/
         right = 0x10000; /*0x57ec5a*/
-        v50[0] = *CellStruct::Add((CellStruct *)v1, v52, &right); /*0x57ec77*/
+        v50[0] = *((CellStruct *)v1)->Add( v52, &right); /*0x57ec77*/
         BuildingClass::AddUpgrade(&dword_87F7E8.field_0, (int)v50); /*0x57ec7b*/
         v39 = ((CellStruct *)v52)->Set( 0, 1); /*0x57ec87*/
         v50[0] = *CellStruct::Sub((CellStruct *)v1, &right, v39); /*0x57eca5*/

@@ -73,7 +73,7 @@ char CellClass::UpdateVariant3(unsigned short *aP0, int aP1)
   __int16 v32[4]; // [esp+Ch] [ebp-8h] BYREF
 
   v2 = aP1; /*0x56ef56*/
-  v3 = *CellStruct::Add(aP0, &aP1, (unsigned short *)(4 * (aP1 & 7) + 9041544)); /*0x56ef77*/
+  v3 = *((CellStruct *)aP0)->Add( &aP1, (unsigned short *)(4 * (aP1 & 7) + 9041544)); /*0x56ef77*/
   aP1 = v3; /*0x56ef79*/
   *(unsigned int *)v32 = v3; /*0x56ef7d*/
   v4 = (__int16)v3 + ((short)(((v3) >> 16) & 0xFFFF) << 9); /*0x56ef8c*/
@@ -241,7 +241,7 @@ char CellClass::UpdateVariant4(unsigned short *aP0, int aP1)
   __int16 v32[4]; // [esp+Ch] [ebp-8h] BYREF
 
   v2 = aP1; /*0x56f2f6*/
-  v3 = *CellStruct::Add(aP0, &aP1, (unsigned short *)(4 * (aP1 & 7) + 9041544)); /*0x56f317*/
+  v3 = *((CellStruct *)aP0)->Add( &aP1, (unsigned short *)(4 * (aP1 & 7) + 9041544)); /*0x56f317*/
   aP1 = v3; /*0x56f319*/
   *(unsigned int *)v32 = v3; /*0x56f31d*/
   v4 = (__int16)v3 + ((short)(((v3) >> 16) & 0xFFFF) << 9); /*0x56f32c*/
@@ -408,7 +408,7 @@ char CellClass::UpdateTerrain(unsigned short *aP0, int aP1)
   __int16 v31[4]; // [esp+Ch] [ebp-8h] BYREF
 
   v2 = aP1; /*0x56f8b6*/
-  v3 = *CellStruct::Add(aP0, &aP1, (unsigned short *)(4 * (aP1 & 7) + 9041544)); /*0x56f8d7*/
+  v3 = *((CellStruct *)aP0)->Add( &aP1, (unsigned short *)(4 * (aP1 & 7) + 9041544)); /*0x56f8d7*/
   aP1 = v3; /*0x56f8d9*/
   *(unsigned int *)v31 = v3; /*0x56f8dd*/
   v4 = (__int16)v3 + ((short)(((v3) >> 16) & 0xFFFF) << 9); /*0x56f8ec*/
@@ -577,7 +577,7 @@ char CellClass::UpdateTileVariant2(unsigned short *aP0, int aP1)
   __int16 v31[4]; // [esp+Ch] [ebp-8h] BYREF
 
   v2 = aP1; /*0x56fc86*/
-  v3 = *CellStruct::Add(aP0, &aP1, (unsigned short *)(4 * (aP1 & 7) + 9041544)); /*0x56fca7*/
+  v3 = *((CellStruct *)aP0)->Add( &aP1, (unsigned short *)(4 * (aP1 & 7) + 9041544)); /*0x56fca7*/
   aP1 = v3; /*0x56fca9*/
   *(unsigned int *)v31 = v3; /*0x56fcad*/
   v4 = (__int16)v3 + ((short)(((v3) >> 16) & 0xFFFF) << 9); /*0x56fcbc*/
@@ -747,7 +747,7 @@ char CellClass::UpdateVariant7(unsigned short *aP0, int aP1)
   __int16 v32[4]; // [esp+Ch] [ebp-8h] BYREF
 
   v2 = aP1; /*0x572446*/
-  v3 = *CellStruct::Add(aP0, &aP1, (unsigned short *)(4 * (aP1 & 7) + 9041544)); /*0x572467*/
+  v3 = *((CellStruct *)aP0)->Add( &aP1, (unsigned short *)(4 * (aP1 & 7) + 9041544)); /*0x572467*/
   aP1 = v3; /*0x572469*/
   *(unsigned int *)v32 = v3; /*0x57246d*/
   v4 = (__int16)v3 + ((short)(((v3) >> 16) & 0xFFFF) << 9); /*0x57247c*/
@@ -915,7 +915,7 @@ char CellClass::UpdateVariant8(unsigned short *aP0, int aP1)
   __int16 v32[4]; // [esp+Ch] [ebp-8h] BYREF
 
   v2 = aP1; /*0x5727e6*/
-  v3 = *CellStruct::Add(aP0, &aP1, (unsigned short *)(4 * (aP1 & 7) + 9041544)); /*0x572807*/
+  v3 = *((CellStruct *)aP0)->Add( &aP1, (unsigned short *)(4 * (aP1 & 7) + 9041544)); /*0x572807*/
   aP1 = v3; /*0x572809*/
   *(unsigned int *)v32 = v3; /*0x57280d*/
   v4 = (__int16)v3 + ((short)(((v3) >> 16) & 0xFFFF) << 9); /*0x57281c*/
@@ -1082,7 +1082,7 @@ char CellClass::UpdateVariant5(unsigned short *aP0, int aP1)
   __int16 v31[4]; // [esp+Ch] [ebp-8h] BYREF
 
   v2 = aP1; /*0x572da6*/
-  v3 = *CellStruct::Add(aP0, &aP1, (unsigned short *)(4 * (aP1 & 7) + 9041544)); /*0x572dc7*/
+  v3 = *((CellStruct *)aP0)->Add( &aP1, (unsigned short *)(4 * (aP1 & 7) + 9041544)); /*0x572dc7*/
   aP1 = v3; /*0x572dc9*/
   *(unsigned int *)v31 = v3; /*0x572dcd*/
   v4 = (__int16)v3 + ((short)(((v3) >> 16) & 0xFFFF) << 9); /*0x572ddc*/
@@ -1251,7 +1251,7 @@ HouseClass * * CellClass::UpdateVariant6(IUnknown * aP0, IUnknown * aP1)
   __int16 v31[4]; // [esp+Ch] [ebp-8h] BYREF
 
   v2 = aP1; /*0x573176*/
-  v3 = *CellStruct::Add(aP0, &aP1, (unsigned short *)(4 * (aP1 & 7) + 9041544)); /*0x573197*/
+  v3 = *((CellStruct *)aP0)->Add( &aP1, (unsigned short *)(4 * (aP1 & 7) + 9041544)); /*0x573197*/
   aP1 = v3; /*0x573199*/
   *(unsigned int *)v31 = v3; /*0x57319d*/
   v4 = (__int16)v3 + ((short)(((v3) >> 16) & 0xFFFF) << 9); /*0x5731ac*/
