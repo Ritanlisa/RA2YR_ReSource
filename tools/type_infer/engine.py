@@ -749,6 +749,35 @@ class TypeInferenceEngine:
             n_name += 1
         print(f"  name_owner this anchors: {n_name}", file=sys.stderr)
 
+        # X173: explicit-cast anchors. A cast `y = (T)x` is a LEGAL kind
+        # crossing: y is authoritative T and is frozen against value-flow
+        # joins, so the strict pointer/scalar rule cannot turn it into a
+        # contradiction. Source: anchors/cast_anchors.json (cast facts from
+        # ida_cache_x128 joined to constraint-var ids via x117 ssa_key).
+        n_cast = 0
+        _cast_path = os.path.normpath(os.path.join(
+            os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
+            "anchors", "cast_anchors.json"))
+        if os.path.exists(_cast_path):
+            try:
+                with open(_cast_path, "r", encoding="utf-8") as _cf:
+                    _casts = json.load(_cf)
+                for _key, _spec in _casts.items():
+                    _vid = self.var_to_id.get(_key)
+                    if _vid is None:
+                        continue
+                    _lt = self._to_lattice_type(_spec.get("type"), valid_classes)
+                    if _lt is None or _lt in (VOID_PTR, TOP):
+                        continue
+                    _a = Anchor(var_id=_vid, var_name=_key,
+                                lattice_type=_lt, source="cast_explicit")
+                    self.anchors.append(_a)
+                    self.anchor_by_var[_vid].append(_a)
+                    n_cast += 1
+            except Exception as _e:
+                print(f"  cast anchors load failed ({_e})", file=sys.stderr)
+        print(f"  explicit cast anchors: {n_cast}", file=sys.stderr)
+
         # ── 库字符串函数参数/返回锚（CRT/Win32 例外）──
         lib_matched = 0
         for addr, spec in _LIB_STRING_FUNCS.items():
@@ -1716,6 +1745,7 @@ class TypeInferenceEngine:
         # value-flow joins below.
         _SRC_RANK = {
             "name_owner": 4,
+            "cast_explicit": 3,
             "rtti_vtable_class": 3,
             "singleton_ctor_store": 3,
             "ctor_vtable_install": 3,

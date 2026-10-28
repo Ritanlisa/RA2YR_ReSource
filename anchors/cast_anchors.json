@@ -1,0 +1,5684 @@
+{
+"0x00403730::edi_v0x403744": {
+"type": "int",
+"kind": "scalar",
+"func": "AudioQueue::StopAllVoices",
+"src": "v5"
+},
+"0x00403FA0::esi_v0x403FB2": {
+"type": "Voice *",
+"kind": "ptr",
+"func": "sub_403FA0",
+"src": "v6"
+},
+"0x004041D0::esi_v0x4041F6": {
+"type": "int",
+"kind": "scalar",
+"func": "ProcessAudioFrame",
+"src": "v40"
+},
+"0x00404E70::esi_v0x404E82": {
+"type": "int",
+"kind": "scalar",
+"func": "AudioStream::CleanupChannels",
+"src": "v3"
+},
+"0x00408390::eax_v0x408390": {
+"type": "AudioQueue *",
+"kind": "ptr",
+"func": "sub_408390",
+"src": "AudioQueue"
+},
+"0x004083D0::eax_v0x4083D0": {
+"type": "AudioQueue *",
+"kind": "ptr",
+"func": "Mixer::RequestAllBuffers",
+"src": "AudioQueue"
+},
+"0x004091C0::eax_v0x4091D2": {
+"type": "char *",
+"kind": "ptr",
+"func": "ReadAudioStream",
+"src": "a1"
+},
+"0x004091C0::edi_v0x40921A": {
+"type": "int",
+"kind": "scalar",
+"func": "ReadAudioStream",
+"src": "a1"
+},
+"0x00410A60::eax_v0x410A7F": {
+"type": "int",
+"kind": "scalar",
+"func": "AbstractTypeClass::LoadFromINI",
+"src": "GetStringCSF"
+},
+"0x00410ED0::ebx_v0x4111BC": {
+"type": "int",
+"kind": "scalar",
+"func": "Buffer::FillCircularBufferScroll",
+"src": "v45"
+},
+"0x00410ED0::ebx_v0x41113F": {
+"type": "int",
+"kind": "scalar",
+"func": "Buffer::FillCircularBufferScroll",
+"src": "v36"
+},
+"0x00412B40::esi_v0x412B83": {
+"type": "__int16",
+"kind": "scalar",
+"func": "AircraftTrackerClass::FillCurrentVector",
+"src": "v5"
+},
+"0x00412B40::esi_v0x412C4B": {
+"type": "__int16",
+"kind": "scalar",
+"func": "AircraftTrackerClass::FillCurrentVector",
+"src": "a3"
+},
+"0x00412B40::esi_v0x412D7D": {
+"type": "__int16",
+"kind": "scalar",
+"func": "AircraftTrackerClass::FillCurrentVector",
+"src": "v114"
+},
+"0x00412B40::esi_v0x412EA7": {
+"type": "__int16",
+"kind": "scalar",
+"func": "AircraftTrackerClass::FillCurrentVector",
+"src": "v114"
+},
+"0x00412B40::esi_v0x412FCD": {
+"type": "__int16",
+"kind": "scalar",
+"func": "AircraftTrackerClass::FillCurrentVector",
+"src": "v114"
+},
+"0x004134A0::esi_v0x4134B9": {
+"type": "__int16",
+"kind": "scalar",
+"func": "GadgetGrid::InsertItem",
+"src": "v5"
+},
+"0x004135D0::esi_v0x4135EC": {
+"type": "__int16",
+"kind": "scalar",
+"func": "GadgetGrid::RemoveItem",
+"src": "v3"
+},
+"0x004138C0::esi_v0x4138E3": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Coord::ToGridIndex",
+"src": "a3"
+},
+"0x004138C0::eax_v0x41395C": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Coord::ToGridIndex",
+"src": "a4"
+},
+"0x0041D830::eax_v0x41D835": {
+"type": "char",
+"kind": "scalar",
+"func": "AirstrikeClass::StartMission",
+"src": "a3"
+},
+"0x00420F40::stack_+0x34": {
+"type": "char *",
+"kind": "ptr",
+"func": "UpdateSpotlightsFoo",
+"src": "DSurface_ViewBounds"
+},
+"0x00420F40::stack_+0x10": {
+"type": "char *",
+"kind": "ptr",
+"func": "UpdateSpotlightsFoo",
+"src": "v13"
+},
+"0x00420F40::stack_+0x1c": {
+"type": "char *",
+"kind": "ptr",
+"func": "UpdateSpotlightsFoo",
+"src": "v57"
+},
+"0x00421350::stack_+0x1c": {
+"type": "int",
+"kind": "scalar",
+"func": "RenderAlphaShapes",
+"src": "v14"
+},
+"0x00422CA0::edx_v0x423448": {
+"type": "char *",
+"kind": "ptr",
+"func": "AnimClass::Render",
+"src": "dword_8871E0"
+},
+"0x00422CA0::edx_v0x423525": {
+"type": "char *",
+"kind": "ptr",
+"func": "AnimClass::Render",
+"src": "dword_8871E0"
+},
+"0x00425D10::esi_v0x425D4B": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Building::ComputePosition",
+"src": "v6"
+},
+"0x00425D10::edi_v0x425D61": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Building::ComputePosition",
+"src": "v6"
+},
+"0x00425D10::stack_+0x18": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Building::ComputePosition",
+"src": "v6"
+},
+"0x00425D10::edx_v0x425D7F": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Building::ComputePosition",
+"src": "v10"
+},
+"0x00425D10::stack_+0x14": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Building::ComputePosition",
+"src": "v10"
+},
+"0x00425D10::eax_v0x425D86": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Building::ComputePosition",
+"src": "v10"
+},
+"0x004270D0::eax_v0x4271E9": {
+"type": "_DWORD",
+"kind": "scalar",
+"func": "sub_4270D0",
+"src": "v8"
+},
+"0x0042C290::ecx_v0x42C85C": {
+"type": "int",
+"kind": "scalar",
+"func": "Pathfinding::AStar",
+"src": "v104"
+},
+"0x0042C900::eax_v0x42C95F": {
+"type": "Cell *",
+"kind": "ptr",
+"func": "FindPathWithRetry",
+"src": "CellCoord"
+},
+"0x0042E780::eax_v0x42E789": {
+"type": "int",
+"kind": "scalar",
+"func": "BuildingQueue::IsCellSuitable",
+"src": "Cell"
+},
+"0x004311C0::eax_v0x4311CC": {
+"type": "int",
+"kind": "scalar",
+"func": "Network::SendBeaconDelete",
+"src": "this"
+},
+"0x00431700::eax_v0x431700": {
+"type": "int",
+"kind": "scalar",
+"func": "HouseClass::Render",
+"src": "v7"
+},
+"0x00433CF0::eax_v0x433E71": {
+"type": "int",
+"kind": "scalar",
+"func": "Text::Layout",
+"src": "a3"
+},
+"0x004373B0::stack_+0x5c": {
+"type": "char *",
+"kind": "ptr",
+"func": "BlitterCopySHP",
+"src": "a2"
+},
+"0x00437A10::edi_v0x437CFA": {
+"type": "int",
+"kind": "scalar",
+"func": "BlitterRLEBlitSHP",
+"src": "a2"
+},
+"0x0043DA80::edx_v0x43DC3C": {
+"type": "char *",
+"kind": "ptr",
+"func": "FootClass::DrawPlacementPreview",
+"src": "dword_8871E0"
+},
+"0x0043DA80::edx_v0x43DCFA": {
+"type": "char *",
+"kind": "ptr",
+"func": "FootClass::DrawPlacementPreview",
+"src": "dword_8871E0"
+},
+"0x0043E940::eax_v0x43EA31": {
+"type": "int",
+"kind": "scalar",
+"func": "TechnoClass::ComputeTargetAngle",
+"src": "v63"
+},
+"0x00443410::eax_v0x443410": {
+"type": "int",
+"kind": "scalar",
+"func": "BuildingClass::HandleFactoryCommand",
+"src": "ScenarioClass"
+},
+"0x004436F0::eax_v0x4436F0": {
+"type": "int",
+"kind": "scalar",
+"func": "ObjectClass::HandleRallyPointCommand",
+"src": "EventClass"
+},
+"0x00443C60::stack_+0x24": {
+"type": "int",
+"kind": "scalar",
+"func": "BuildingClass::UpdateConstruction",
+"src": "v244"
+},
+"0x00443C60::stack_+0x64": {
+"type": "int",
+"kind": "scalar",
+"func": "BuildingClass::UpdateConstruction",
+"src": "v90"
+},
+"0x00443C60::stack_+0x58": {
+"type": "int",
+"kind": "scalar",
+"func": "BuildingClass::UpdateConstruction",
+"src": "v206"
+},
+"0x00443C60::stack_+0x38": {
+"type": "__int16",
+"kind": "scalar",
+"func": "BuildingClass::UpdateConstruction",
+"src": "v34"
+},
+"0x00443C60::stack_+0x28": {
+"type": "int",
+"kind": "scalar",
+"func": "BuildingClass::UpdateConstruction",
+"src": "v244"
+},
+"0x00458A00::eax_v0x458A0A": {
+"type": "int",
+"kind": "scalar",
+"func": "UnitClass::IsCellBlockedByBridge",
+"src": "Cell"
+},
+"0x00458A80::eax_v0x458C91": {
+"type": "int",
+"kind": "scalar",
+"func": "TechnoClass::EvacuateFootprintCells",
+"src": "Block"
+},
+"0x00468090::ebx_v0x46837F": {
+"type": "BuildingClass *",
+"kind": "ptr",
+"func": "BulletClass::SetupVoxelTransform",
+"src": "dword_87F6C0"
+},
+"0x004690B0::edi_v0x469C58": {
+"type": "AnimClass *",
+"kind": "ptr",
+"func": "Warhead::ApplyDamage",
+"src": "__2_YAPAXI_Z"
+},
+"0x004690B0::eax_v0x469C7C": {
+"type": "void *",
+"kind": "ptr",
+"func": "Warhead::ApplyDamage",
+"src": "Return"
+},
+"0x004690B0::edi_v0x469DC1": {
+"type": "int *",
+"kind": "ptr",
+"func": "Warhead::ApplyDamage",
+"src": "4"
+},
+"0x004690B0::edi_v0x469E3E": {
+"type": "AnimClass *",
+"kind": "ptr",
+"func": "Warhead::ApplyDamage",
+"src": "__2_YAPAXI_Z"
+},
+"0x004690B0::ebx_v0x469F7D": {
+"type": "int *",
+"kind": "ptr",
+"func": "Warhead::ApplyDamage",
+"src": "_FFFFFFFC"
+},
+"0x004690B0::esi_v0x46A14E": {
+"type": "int *",
+"kind": "ptr",
+"func": "Warhead::ApplyDamage",
+"src": "_FFFFFFFC"
+},
+"0x004690B0::esi_v0x46A2BB": {
+"type": "AnimClass *",
+"kind": "ptr",
+"func": "Warhead::ApplyDamage",
+"src": "result"
+},
+"0x0046A310::eax_v0x46A3BD": {
+"type": "int",
+"kind": "scalar",
+"func": "Warhead::ApplyPostDamageEffects",
+"src": "Coord"
+},
+"0x0046B0C0::esi_v0x46B1FE": {
+"type": "char *",
+"kind": "ptr",
+"func": "BulletClass::RenderVoxelBullet",
+"src": "dword_B054D4"
+},
+"0x0046DFD0::stack_+0x20": {
+"type": "int",
+"kind": "scalar",
+"func": "CampaignScore::DialogProc",
+"src": "Math"
+},
+"0x0046DFD0::stack_+0x14": {
+"type": "LPARAM",
+"kind": "class",
+"func": "CampaignScore::DialogProc",
+"src": "GetStringCSF"
+},
+"0x0046FA20::eax_v0x46FA49": {
+"type": "int",
+"kind": "scalar",
+"func": "Lobby::UpdateReadyIcons",
+"src": "CacheDialogInvalidate"
+},
+"0x00479740::esi_v0x479769": {
+"type": "char",
+"kind": "scalar",
+"func": "sub_479740",
+"src": "BytesReturned"
+},
+"0x00479BA0::esi_v0x479BAA": {
+"type": "char",
+"kind": "scalar",
+"func": "sub_479BA0",
+"src": "BytesReturned"
+},
+"0x00479D60::esi_v0x479D6A": {
+"type": "char",
+"kind": "scalar",
+"func": "sub_479D60",
+"src": "BytesReturned"
+},
+"0x00479EF0::esi_v0x479EFA": {
+"type": "char",
+"kind": "scalar",
+"func": "sub_479EF0",
+"src": "BytesReturned"
+},
+"0x0047A3F0::esi_v0x47A406": {
+"type": "char",
+"kind": "scalar",
+"func": "CDROM::DeviceIoControl",
+"src": "a2"
+},
+"0x0047B0C0::eax_v0x47B0CD": {
+"type": "int",
+"kind": "scalar",
+"func": "FileFind::Next",
+"src": "hFindFile"
+},
+"0x0047C620::eax_v0x47C620": {
+"type": "int",
+"kind": "scalar",
+"func": "CellClass::IsPassable",
+"src": "PlacementList"
+},
+"0x0047E040::esi_v0x47E33D": {
+"type": "int",
+"kind": "scalar",
+"func": "UpdateCellClassNeighborTerrain",
+"src": "v30"
+},
+"0x0047E040::eax_v0x47E3FA": {
+"type": "int",
+"kind": "scalar",
+"func": "UpdateCellClassNeighborTerrain",
+"src": "CellCoord"
+},
+"0x0047E470::esi_v0x47E76D": {
+"type": "int",
+"kind": "scalar",
+"func": "SetCellClassOccupancyFlags",
+"src": "v30"
+},
+"0x0047E470::eax_v0x47E82A": {
+"type": "int",
+"kind": "scalar",
+"func": "SetCellClassOccupancyFlags",
+"src": "CellCoord"
+},
+"0x004801F0::eax_v0x48020D": {
+"type": "char",
+"kind": "scalar",
+"func": "TacticalClass::RenderCellFogOfWar",
+"src": "v4"
+},
+"0x004801F0::eax_v0x48023E": {
+"type": "char",
+"kind": "scalar",
+"func": "TacticalClass::RenderCellFogOfWar",
+"src": "result"
+},
+"0x004814F0::eax_v0x48157B": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::InitRandomOffsets",
+"src": "v11"
+},
+"0x00487D70::eax_v0x487D77": {
+"type": "int",
+"kind": "scalar",
+"func": "CellClass::AttachObject",
+"src": "FootClass"
+},
+"0x0048A620::esi_v0x48A69B": {
+"type": "char",
+"kind": "scalar",
+"func": "CreateSmokeEffectAt",
+"src": "a1"
+},
+"0x0048A8D0::eax_v0x48A8F8": {
+"type": "int",
+"kind": "scalar",
+"func": "ComputeMathFacingAngle",
+"src": "a6"
+},
+"0x00491B40::eax_v0x491B41": {
+"type": "int",
+"kind": "scalar",
+"func": "sub_491B40",
+"src": "g_ZBufferDescriptor"
+},
+"0x00491EA0::eax_v0x491EA1": {
+"type": "int",
+"kind": "scalar",
+"func": "sub_491EA0",
+"src": "g_ZBufferDescriptor"
+},
+"0x00492E10::eax_v0x492E10": {
+"type": "int",
+"kind": "scalar",
+"func": "sub_492E10",
+"src": "v15"
+},
+"0x00493050::eax_v0x493050": {
+"type": "int",
+"kind": "scalar",
+"func": "sub_493050",
+"src": "v15"
+},
+"0x00493170::eax_v0x493170": {
+"type": "int",
+"kind": "scalar",
+"func": "sub_493170",
+"src": "v15"
+},
+"0x004933D0::eax_v0x4933D0": {
+"type": "int",
+"kind": "scalar",
+"func": "sub_4933D0",
+"src": "v15"
+},
+"0x00493930::eax_v0x493930": {
+"type": "int",
+"kind": "scalar",
+"func": "BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25",
+"src": "v14"
+},
+"0x00493A60::eax_v0x493A60": {
+"type": "int",
+"kind": "scalar",
+"func": "BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent50",
+"src": "v16"
+},
+"0x00493B90::eax_v0x493B90": {
+"type": "int",
+"kind": "scalar",
+"func": "BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25_0",
+"src": "v14"
+},
+"0x00493CC0::eax_v0x493CF8": {
+"type": "int",
+"kind": "scalar",
+"func": "BlitPlainXlatAlpha_ushort::AddRef",
+"src": "v16"
+},
+"0x00494B60::eax_v0x494B98": {
+"type": "int",
+"kind": "scalar",
+"func": "BlitTransXlatAlphaZRead_ushort::AddRef",
+"src": "v16"
+},
+"0x00494C40::eax_v0x494C78": {
+"type": "int",
+"kind": "scalar",
+"func": "BlitTransXlatAlphaZRead_ushort::BlitRect",
+"src": "v17"
+},
+"0x004965B0::eax_v0x4965B1": {
+"type": "int",
+"kind": "scalar",
+"func": "sub_4965B0",
+"src": "g_ZBufferDescriptor"
+},
+"0x004966D0::eax_v0x4966E7": {
+"type": "int",
+"kind": "scalar",
+"func": "sub_4966D0",
+"src": "g_ZBufferDescriptor"
+},
+"0x00496820::eax_v0x496821": {
+"type": "int",
+"kind": "scalar",
+"func": "sub_496820",
+"src": "g_ZBufferDescriptor"
+},
+"0x00496930::eax_v0x496931": {
+"type": "int",
+"kind": "scalar",
+"func": "sub_496930",
+"src": "g_ZBufferDescriptor"
+},
+"0x00496A80::eax_v0x496A81": {
+"type": "int",
+"kind": "scalar",
+"func": "sub_496A80",
+"src": "g_ZBufferDescriptor"
+},
+"0x00496BC0::eax_v0x496BC1": {
+"type": "int",
+"kind": "scalar",
+"func": "sub_496BC0",
+"src": "g_ZBufferDescriptor"
+},
+"0x00496D10::eax_v0x496D11": {
+"type": "int",
+"kind": "scalar",
+"func": "sub_496D10",
+"src": "g_ZBufferDescriptor"
+},
+"0x00496E60::eax_v0x496E61": {
+"type": "int",
+"kind": "scalar",
+"func": "sub_496E60",
+"src": "g_ZBufferDescriptor"
+},
+"0x00496FB0::eax_v0x496FB1": {
+"type": "int",
+"kind": "scalar",
+"func": "sub_496FB0",
+"src": "g_ZBufferDescriptor"
+},
+"0x004A2600::eax_v0x4A271E": {
+"type": "int",
+"kind": "scalar",
+"func": "CountdownTimer::UpdateDisplay",
+"src": "abs32"
+},
+"0x004A40C0::eax_v0x4A40C0": {
+"type": "int",
+"kind": "scalar",
+"func": "sub_4A40C0",
+"src": "g_lpDirectDraw7"
+},
+"0x004A4780::eax_v0x4A47A0": {
+"type": "int",
+"kind": "scalar",
+"func": "Surface::CreateSurfacePalette",
+"src": "g_lpDirectDraw7"
+},
+"0x004A53B0::stack_+0x20": {
+"type": "int",
+"kind": "scalar",
+"func": "Dial8Class::Constructor",
+"src": "42"
+},
+"0x004A7340::stack_+0x3c": {
+"type": "int",
+"kind": "scalar",
+"func": "DiskLaserClass::Update",
+"src": "v20"
+},
+"0x004A8EB0::stack_+0x2c": {
+"type": "BuildingTypeClass *",
+"kind": "ptr",
+"func": "GetBuildingPlacement",
+"src": "BuildingTypeClass"
+},
+"0x004A8EB0::esi_v0x4A8F74": {
+"type": "char *",
+"kind": "ptr",
+"func": "GetBuildingPlacement",
+"src": "FoundationHeight"
+},
+"0x004A8EB0::ecx_v0x4A8FD7": {
+"type": "HouseClass *",
+"kind": "ptr",
+"func": "GetBuildingPlacement",
+"src": "v15"
+},
+"0x004AA440::ebx_v0x4AA4A1": {
+"type": "int",
+"kind": "scalar",
+"func": "CellClass::FindOpenNeighbor",
+"src": "a3"
+},
+"0x004ACE70::esi_v0x4AD2AF": {
+"type": "int",
+"kind": "scalar",
+"func": "ScenarioClass::LoadMapData",
+"src": "v17"
+},
+"0x004AE4C0::eax_v0x4AE4CF": {
+"type": "TacticalMap *",
+"kind": "ptr",
+"func": "MapClass::UpdateLightingPostProcess",
+"src": "LayerClass"
+},
+"0x004AE6B0::eax_v0x4AE6B0": {
+"type": "int",
+"kind": "scalar",
+"func": "DisplayClass::Render",
+"src": "dword_B73554"
+},
+"0x004AFF60::stack_+0x20": {
+"type": "int",
+"kind": "scalar",
+"func": "JumpjetLocomotionClass::ComputeVoxelTransform",
+"src": "v14"
+},
+"0x004AFF60::stack_+0x1c": {
+"type": "int",
+"kind": "scalar",
+"func": "JumpjetLocomotionClass::ComputeVoxelTransform",
+"src": "v17"
+},
+"0x004B0AD0::eax_v0x4B0AF3": {
+"type": "int",
+"kind": "scalar",
+"func": "JumpjetLocomotion::MoveTo",
+"src": "JumpjetLocomotion"
+},
+"0x004B0F20::stack_+0x84": {
+"type": "CellClass *",
+"kind": "ptr",
+"func": "JumpjetLocomotion::ProcessCollision",
+"src": "v25"
+},
+"0x004B0F20::esi_v0x4B1F9A": {
+"type": "_DWORD *",
+"kind": "ptr",
+"func": "JumpjetLocomotion::ProcessCollision",
+"src": "this"
+},
+"0x004B0F20::eax_v0x4B1F7C": {
+"type": "_BYTE *",
+"kind": "ptr",
+"func": "JumpjetLocomotion::ProcessCollision",
+"src": "12"
+},
+"0x004B2630::eax_v0x4B27C9": {
+"type": "Cell **",
+"kind": "ptr",
+"func": "JumpjetLocomotion::Update",
+"src": "Coord"
+},
+"0x004B2630::ecx_v0x4B2861": {
+"type": "int",
+"kind": "scalar",
+"func": "JumpjetLocomotion::Update",
+"src": "v227"
+},
+"0x004B2630::ebx_v0x4B2867": {
+"type": "_DWORD *",
+"kind": "ptr",
+"func": "JumpjetLocomotion::Update",
+"src": "this"
+},
+"0x004B2630::edi_v0x4B2B5D": {
+"type": "Object *",
+"kind": "ptr",
+"func": "JumpjetLocomotion::Update",
+"src": "CellCoord"
+},
+"0x004B2630::eax_v0x4B2DA2": {
+"type": "int",
+"kind": "scalar",
+"func": "JumpjetLocomotion::Update",
+"src": "v53"
+},
+"0x004B2630::esi_v0x4B3044": {
+"type": "Object *",
+"kind": "ptr",
+"func": "JumpjetLocomotion::Update",
+"src": "CellCoord"
+},
+"0x004B2630::eax_v0x4B334E": {
+"type": "Cell **",
+"kind": "ptr",
+"func": "JumpjetLocomotion::Update",
+"src": "Coord"
+},
+"0x004B2630::eax_v0x4B3497": {
+"type": "Cell *",
+"kind": "ptr",
+"func": "JumpjetLocomotion::Update",
+"src": "CellCoord"
+},
+"0x004B2630::eax_v0x4B3933": {
+"type": "Cell *",
+"kind": "ptr",
+"func": "JumpjetLocomotion::Update",
+"src": "CellCoord"
+},
+"0x004B2630::eax_v0x4B3B45": {
+"type": "Object *",
+"kind": "ptr",
+"func": "JumpjetLocomotion::Update",
+"src": "CellCoord"
+},
+"0x004B2630::eax_v0x4B4016": {
+"type": "CrateClass *",
+"kind": "ptr",
+"func": "JumpjetLocomotion::Update",
+"src": "CellCoord"
+},
+"0x004B2630::ecx_v0x4B438A": {
+"type": "Cell *",
+"kind": "ptr",
+"func": "JumpjetLocomotion::Update",
+"src": "CellCoord"
+},
+"0x004B2630::edx_v0x4B446B": {
+"type": "int *",
+"kind": "ptr",
+"func": "JumpjetLocomotion::Update",
+"src": "this"
+},
+"0x004B48D0::eax_v0x4B48DE": {
+"type": "_BYTE",
+"kind": "class",
+"func": "JumpjetLocomotionClass::MoveToChecked",
+"src": "this"
+},
+"0x004B5B70::stack_+0x28": {
+"type": "int",
+"kind": "scalar",
+"func": "DroppodLocomotionClass::ILoco_Process",
+"src": "v5"
+},
+"0x004B6C30::stack_+0x100": {
+"type": "int",
+"kind": "scalar",
+"func": "LoadScreen::RenderLoop",
+"src": "v25"
+},
+"0x004B6C30::ecx_v0x4B7291": {
+"type": "int",
+"kind": "scalar",
+"func": "LoadScreen::RenderLoop",
+"src": "v339"
+},
+"0x004B6C30::eax_v0x4B7DA1": {
+"type": "int",
+"kind": "scalar",
+"func": "LoadScreen::RenderLoop",
+"src": "v339"
+},
+"0x004BB830::eax_v0x4BB94A": {
+"type": "int",
+"kind": "scalar",
+"func": "DSurface::FillRectWithFlags",
+"src": "a4"
+},
+"0x004BB830::eax_v0x4BB9FA": {
+"type": "_DWORD",
+"kind": "scalar",
+"func": "DSurface::FillRectWithFlags",
+"src": "thisa"
+},
+"0x004BC750::stack_+0x30": {
+"type": "_WORD *",
+"kind": "ptr",
+"func": "DSurface::DrawLineFaded",
+"src": "v160"
+},
+"0x004BC750::stack_+0x10": {
+"type": "_WORD *",
+"kind": "ptr",
+"func": "DSurface::DrawLineFaded",
+"src": "v160"
+},
+"0x004C1F20::stack_+0x64": {
+"type": "char *",
+"kind": "ptr",
+"func": "Lightning::Draw",
+"src": "v78"
+},
+"0x004C38E0::stack_+0x12": {
+"type": "char",
+"kind": "scalar",
+"func": "sub_4C38E0",
+"src": "v11"
+},
+"0x004C9220::esi_v0x4C9266": {
+"type": "__int16",
+"kind": "scalar",
+"func": "FacingClass::Update",
+"src": "result"
+},
+"0x004C95D0::esi_v0x4C9606": {
+"type": "__int16",
+"kind": "scalar",
+"func": "sub_4C95D0",
+"src": "LOWORD"
+},
+"0x004C95D0::eax_v0x4C960C": {
+"type": "__int16",
+"kind": "scalar",
+"func": "sub_4C95D0",
+"src": "LOWORD"
+},
+"0x004CCFD0::eax_v0x4CCFDC": {
+"type": "_BYTE",
+"kind": "class",
+"func": "JumpjetLocomotionClass::ComputeMoveToPosition",
+"src": "v14"
+},
+"0x004D0980::eax_v0x4D0A74": {
+"type": "int",
+"kind": "scalar",
+"func": "FoggedObjectClass::InitBuildingFog",
+"src": "v27"
+},
+"0x004D0EF0::ecx_v0x4D1156": {
+"type": "int",
+"kind": "scalar",
+"func": "FoggedObjectClass::Constructor",
+"src": "v53"
+},
+"0x004D1890::eax_v0x4D1890": {
+"type": "int",
+"kind": "scalar",
+"func": "TacticalClass::DrawBuildings",
+"src": "g_hWnd"
+},
+"0x004D1890::ecx_v0x4D20E3": {
+"type": "char *",
+"kind": "ptr",
+"func": "TacticalClass::DrawBuildings",
+"src": "DSurface_ViewBounds"
+},
+"0x004D1890::stack_+0x48": {
+"type": "int",
+"kind": "scalar",
+"func": "TacticalClass::DrawBuildings",
+"src": "v64"
+},
+"0x004D1890::edx_v0x4D1D41": {
+"type": "char *",
+"kind": "ptr",
+"func": "TacticalClass::DrawBuildings",
+"src": "DSurface_ViewBounds"
+},
+"0x004D1890::stack_+0x84": {
+"type": "int",
+"kind": "scalar",
+"func": "TacticalClass::DrawBuildings",
+"src": "dword_89DDBC"
+},
+"0x004D1890::ecx_v0x4D1B79": {
+"type": "char *",
+"kind": "ptr",
+"func": "TacticalClass::DrawBuildings",
+"src": "DSurface_ViewBounds"
+},
+"0x004D9960::ebx_v0x4D9964": {
+"type": "char",
+"kind": "scalar",
+"func": "FootClass::HandleTargetDestroyed",
+"src": "a3"
+},
+"0x004DA2C0::stack_+0x10": {
+"type": "int",
+"kind": "scalar",
+"func": "FootClass::ProcessMovement",
+"src": "v21"
+},
+"0x004DA2C0::stack_+0x14": {
+"type": "int",
+"kind": "scalar",
+"func": "FootClass::ProcessMovement",
+"src": "v21"
+},
+"0x004DB8A0::eax_v0x4DB952": {
+"type": "int",
+"kind": "scalar",
+"func": "sub_4DB8A0",
+"src": "ppv"
+},
+"0x004DBA50::edx_v0x4DBA95": {
+"type": "__int16",
+"kind": "scalar",
+"func": "TechnoClass::GetTargetCellCenter",
+"src": "v5"
+},
+"0x004DBDF0::ecx_v0x4DBE10": {
+"type": "__int16",
+"kind": "scalar",
+"func": "TechnoClass::GetDeployCoords",
+"src": "v5"
+},
+"0x004DC810::eax_v0x4DC810": {
+"type": "int",
+"kind": "scalar",
+"func": "FootClass::SetBuildingType",
+"src": "v6"
+},
+"0x004DE1D0::stack_+0x28": {
+"type": "char",
+"kind": "scalar",
+"func": "ObjectClass::FindPlacementCell",
+"src": "a3"
+},
+"0x004DEE50::stack_+0x10": {
+"type": "int",
+"kind": "scalar",
+"func": "FootClass::vt_entry_530",
+"src": "this"
+},
+"0x004F1720::eax_v0x4F1720": {
+"type": "int",
+"kind": "scalar",
+"func": "Options::InitDialogControls",
+"src": "GetDlgItem"
+},
+"0x004F1CA0::ebx_v0x4F1F33": {
+"type": "char",
+"kind": "scalar",
+"func": "LoadFromINIGraphicMenu",
+"src": "retaddr"
+},
+"0x004F3460::eax_v0x4F35B9": {
+"type": "MSPCXAnim *",
+"kind": "ptr",
+"func": "sub_4F3460",
+"src": "__2_YAPAXI_Z"
+},
+"0x004F9A50::eax_v0x4F9A50": {
+"type": "int",
+"kind": "scalar",
+"func": "HouseClass::IsAlliedWith",
+"src": "this"
+},
+"0x004FC820::eax_v0x4FC821": {
+"type": "HouseClass *",
+"kind": "ptr",
+"func": "HouseClass::DestroyAllNonBuildingsNonNaval",
+"src": "ObjectClass"
+},
+"0x004FC8D0::eax_v0x4FC8D1": {
+"type": "HouseClass *",
+"kind": "ptr",
+"func": "HouseClass::DestroyAllNonBuildingsNaval",
+"src": "ObjectClass"
+},
+"0x004FE3E0::stack_+0x1c": {
+"type": "int",
+"kind": "scalar",
+"func": "HouseClass::AutoBuild",
+"src": "v3"
+},
+"0x00501640::eax_v0x501640": {
+"type": "int",
+"kind": "scalar",
+"func": "HouseClass::CanDetect",
+"src": "dword_A8B230"
+},
+"0x00506D50::esi_v0x506D94": {
+"type": "__int16",
+"kind": "scalar",
+"func": "MapClass::CalcVisibleCellRange",
+"src": "v5"
+},
+"0x00506EF0::stack_+0x74": {
+"type": "void *",
+"kind": "ptr",
+"func": "HouseClass::AutoBuildScanAndSort",
+"src": "__2_YAPAXI_Z"
+},
+"0x00506EF0::eax_v0x507026": {
+"type": "__int16",
+"kind": "scalar",
+"func": "HouseClass::AutoBuildScanAndSort",
+"src": "v10"
+},
+"0x00506EF0::stack_+0x2c": {
+"type": "int",
+"kind": "scalar",
+"func": "HouseClass::AutoBuildScanAndSort",
+"src": "v37"
+},
+"0x0050C340::esi_v0x50C3FE": {
+"type": "BuildingTypeClass *",
+"kind": "ptr",
+"func": "HouseClass::FindBuildLocation",
+"src": "CellData"
+},
+"0x0050EEE0::esi_v0x50EEF4": {
+"type": "_DWORD *",
+"kind": "ptr",
+"func": "VectorClass_UAngerStruct::Release",
+"src": "v6"
+},
+"0x0050F070::edi_v0x50F084": {
+"type": "_DWORD *",
+"kind": "ptr",
+"func": "VectorClass_UAngerStruct::SetCapacity_0",
+"src": "v6"
+},
+"0x0050F210::esi_v0x50F224": {
+"type": "char *",
+"kind": "ptr",
+"func": "VectorClass_UScoutStruct::Release",
+"src": "v6"
+},
+"0x00513F40::stack_+0x24": {
+"type": "int",
+"kind": "scalar",
+"func": "ObjectClass::BuildTransform",
+"src": "v15"
+},
+"0x00513F40::stack_+0x18": {
+"type": "int",
+"kind": "scalar",
+"func": "ObjectClass::BuildTransform",
+"src": "v20"
+},
+"0x00514310::stack_+0x54": {
+"type": "int",
+"kind": "scalar",
+"func": "InfantryClass::DeployAnimation",
+"src": "v65"
+},
+"0x0051B350::ecx_v0x51B404": {
+"type": "__int16",
+"kind": "scalar",
+"func": "InfantryClass::CalcMoveTarget",
+"src": "v69"
+},
+"0x0051B350::stack_+0x5c": {
+"type": "int",
+"kind": "scalar",
+"func": "InfantryClass::CalcMoveTarget",
+"src": "v44"
+},
+"0x0051CDB0::eax_v0x51CDB9": {
+"type": "int",
+"kind": "scalar",
+"func": "InfantryClass::ProcessIdleAction",
+"src": "StartAudioControllerAt"
+},
+"0x0051D6F0::eax_v0x51DA02": {
+"type": "int",
+"kind": "scalar",
+"func": "InfantryClass::ProcessDeployAction",
+"src": "Rules"
+},
+"0x0051FB00::ecx_v0x51FC22": {
+"type": "__int16",
+"kind": "scalar",
+"func": "PlaceScenarioInfantry",
+"src": "v17"
+},
+"0x005247D0::ecx_v0x5247FA": {
+"type": "void *",
+"kind": "ptr",
+"func": "InfantryTypeClass::ClampToGroundHeight",
+"src": "Cell"
+},
+"0x00525A60::stack_+0x1c": {
+"type": "int",
+"kind": "scalar",
+"func": "INIClass::LoadFile",
+"src": "v28"
+},
+"0x00526A30::stack_+0x8": {
+"type": "int",
+"kind": "scalar",
+"func": "INIClass::FindKey",
+"src": "v5"
+},
+"0x00526B10::stack_+0x20": {
+"type": "int",
+"kind": "scalar",
+"func": "HashTableSection::FindSection",
+"src": "v16"
+},
+"0x00526D90::stack_+0xc": {
+"type": "int",
+"kind": "scalar",
+"func": "INIClass::GetStringByIndexEx",
+"src": "v8"
+},
+"0x00527CC0::stack_+0x14": {
+"type": "int",
+"kind": "scalar",
+"func": "INIClass::ParseValue",
+"src": "v15"
+},
+"0x005283D0::esi_v0x52842F": {
+"type": "HashTable *",
+"kind": "ptr",
+"func": "INIClass::ReadDouble_Overwrite",
+"src": "v8"
+},
+"0x005283D0::eax_v0x5283D3": {
+"type": "int",
+"kind": "scalar",
+"func": "INIClass::ReadDouble_Overwrite",
+"src": "a3"
+},
+"0x00528660::stack_+0x24": {
+"type": "int",
+"kind": "scalar",
+"func": "INIClass::SetString",
+"src": "this"
+},
+"0x005295F0::eax_v0x5295F3": {
+"type": "int",
+"kind": "scalar",
+"func": "INIClass::ReadBool_Overwrite",
+"src": "a3"
+},
+"0x0052D9A0::edi_v0x52DA5C": {
+"type": "int",
+"kind": "scalar",
+"func": "MenuSelect",
+"src": "dword_A8E284"
+},
+"0x0052F3F0::ecx_v0x52F3F0": {
+"type": "WinsockInterface *",
+"kind": "ptr",
+"func": "Network::Init",
+"src": "Network"
+},
+"0x0052FC20::eax_v0x52FE3E": {
+"type": "int",
+"kind": "scalar",
+"func": "InitRandomSeed",
+"src": "SeedInitRNG"
+},
+"0x005312A0::edi_v0x5314A5": {
+"type": "size_t",
+"kind": "class",
+"func": "ShowLoadingScreen",
+"src": "v16"
+},
+"0x00534FA0::esi_v0x534FAA": {
+"type": "int",
+"kind": "scalar",
+"func": "MixFile::LoadSide",
+"src": "this"
+},
+"0x0053A6C0::eax_v0x53AA26": {
+"type": "__int16",
+"kind": "scalar",
+"func": "UpdateSuperWeapons",
+"src": "v25"
+},
+"0x0053D580::stack_+0x18": {
+"type": "int",
+"kind": "scalar",
+"func": "ZBuffer::RenderSprite",
+"src": "v26"
+},
+"0x0053D580::stack_+0x1c": {
+"type": "int",
+"kind": "scalar",
+"func": "ZBuffer::RenderSprite",
+"src": "v27"
+},
+"0x0053DE00::eax_v0x53DF94": {
+"type": "AudioMixer *",
+"kind": "ptr",
+"func": "InitializeAudioStreaming",
+"src": "sub_4087F0"
+},
+"0x0053DE00::eax_v0x53E016": {
+"type": "HWND *",
+"kind": "ptr",
+"func": "InitializeAudioStreaming",
+"src": "dword_AA044C"
+},
+"0x0053EE70::eax_v0x53EE70": {
+"type": "int",
+"kind": "scalar",
+"func": "GUID::Compare",
+"src": "this"
+},
+"0x00540E70::eax_v0x540E7A": {
+"type": "int",
+"kind": "scalar",
+"func": "SessionClass::initInternet",
+"src": "IPXConnClass"
+},
+"0x00545150::eax_v0x546388": {
+"type": "TerrainTypeClass *",
+"kind": "ptr",
+"func": "LoadTerrainTypeClassTheatre",
+"src": "__2_YAPAXI_Z"
+},
+"0x00545150::eax_v0x5469F0": {
+"type": "TerrainTypeClass *",
+"kind": "ptr",
+"func": "LoadTerrainTypeClassTheatre",
+"src": "__2_YAPAXI_Z"
+},
+"0x00545150::eax_v0x546BCD": {
+"type": "_DWORD *",
+"kind": "ptr",
+"func": "LoadTerrainTypeClassTheatre",
+"src": "v51"
+},
+"0x00549E90::eax_v0x54A008": {
+"type": "_DWORD",
+"kind": "scalar",
+"func": "TerrainClass::InitTheatre",
+"src": "v24"
+},
+"0x0054B4D0::eax_v0x54B4D0": {
+"type": "int",
+"kind": "scalar",
+"func": "JumpjetLocomotionClass::MoveToDestination",
+"src": "v9"
+},
+"0x0054BA30::eax_v0x54BA52": {
+"type": "int *",
+"kind": "ptr",
+"func": "UpdateFootMovement",
+"src": "vfptr3"
+},
+"0x0054BA30::ecx_v0x54BBD6": {
+"type": "int *",
+"kind": "ptr",
+"func": "UpdateFootMovement",
+"src": "_ESI"
+},
+"0x0054BA30::ecx_v0x54BD03": {
+"type": "_BYTE *",
+"kind": "ptr",
+"func": "UpdateFootMovement",
+"src": "_ESI"
+},
+"0x0054BA30::eax_v0x54BB14": {
+"type": "Cell *",
+"kind": "ptr",
+"func": "UpdateFootMovement",
+"src": "CellCoord"
+},
+"0x0054BD30::ecx_v0x54BDFC": {
+"type": "_BYTE *",
+"kind": "ptr",
+"func": "UpdateFootMoveToState",
+"src": "this"
+},
+"0x0054BD30::ecx_v0x54BE25": {
+"type": "BuildingClass *",
+"kind": "ptr",
+"func": "UpdateFootMoveToState",
+"src": "this"
+},
+"0x0054BD30::ecx_v0x54BE8D": {
+"type": "BuildingClass *",
+"kind": "ptr",
+"func": "UpdateFootMoveToState",
+"src": "this"
+},
+"0x0054BD30::eax_v0x54BFA1": {
+"type": "CellClass *",
+"kind": "ptr",
+"func": "UpdateFootMoveToState",
+"src": "CellCoord"
+},
+"0x0054DCC0::stack_+0x14": {
+"type": "int",
+"kind": "scalar",
+"func": "JumpjetLocomotionClass::ComputeMovementTransform",
+"src": "v10"
+},
+"0x0054DCC0::stack_+0x18": {
+"type": "int",
+"kind": "scalar",
+"func": "JumpjetLocomotionClass::ComputeMovementTransform",
+"src": "v13"
+},
+"0x0054F720::eax_v0x54F768": {
+"type": "int",
+"kind": "scalar",
+"func": "Timer::PumpMessages",
+"src": "MessageLoop"
+},
+"0x00550260::edx_v0x5504EE": {
+"type": "int",
+"kind": "scalar",
+"func": "TacticalClass::RenderCells",
+"src": "LOBYTE"
+},
+"0x00551C60::eax_v0x551D42": {
+"type": "_DWORD",
+"kind": "scalar",
+"func": "BitStreamIOLCW",
+"src": "a1"
+},
+"0x00552B10::eax_v0x552B6F": {
+"type": "int",
+"kind": "scalar",
+"func": "Scenario::ComputeDisplayPosition",
+"src": "v5"
+},
+"0x00558280::edi_v0x5582AE": {
+"type": "_DWORD *",
+"kind": "ptr",
+"func": "VectorClass_PBG::Release",
+"src": "__2_YAPAXI_Z"
+},
+"0x0055AFB0::esi_v0x55B530": {
+"type": "char *",
+"kind": "ptr",
+"func": "Scenario::Update",
+"src": "dword_8B40EC"
+},
+"0x0055CF10::eax_v0x55CF1D": {
+"type": "char",
+"kind": "scalar",
+"func": "Map_Get_55CF10",
+"src": "dword_887628"
+},
+"0x0055D360::ebx_v0x55D59C": {
+"type": "int",
+"kind": "scalar",
+"func": "GameFrameLoop",
+"src": "dword_A8B550"
+},
+"0x0055DEE0::stack_+0x10": {
+"type": "int",
+"kind": "scalar",
+"func": "SyncDelayClass::ProcessNetworkSync",
+"src": "v4"
+},
+"0x0055DEE0::eax_v0x55DEED": {
+"type": "int",
+"kind": "scalar",
+"func": "SyncDelayClass::ProcessNetworkSync",
+"src": "v5"
+},
+"0x0055FDB0::stack_+0x60": {
+"type": "int",
+"kind": "scalar",
+"func": "ScreenDlgProcOptions",
+"src": "v51"
+},
+"0x005656D0::eax_v0x5656ED": {
+"type": "__int16",
+"kind": "scalar",
+"func": "MapClass::IsCellPassable",
+"src": "a2"
+},
+"0x00565C10::eax_v0x565C9C": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::UpdateTerrainAndWaypoints",
+"src": "v6"
+},
+"0x00565C10::stack_+0x5c": {
+"type": "int",
+"kind": "scalar",
+"func": "CellClass::UpdateTerrainAndWaypoints",
+"src": "Block"
+},
+"0x00565C10::edx_v0x566379": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::UpdateTerrainAndWaypoints",
+"src": "v53"
+},
+"0x00565C10::eax_v0x566545": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::UpdateTerrainAndWaypoints",
+"src": "v161"
+},
+"0x00565C10::esi_v0x566B86": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::UpdateTerrainAndWaypoints",
+"src": "v103"
+},
+"0x00565C10::ecx_v0x566EF2": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::UpdateTerrainAndWaypoints",
+"src": "HIWORD"
+},
+"0x00565C10::eax_v0x566FB8": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::UpdateTerrainAndWaypoints",
+"src": "v134"
+},
+"0x005673A0::stack_+0x24": {
+"type": "__int16",
+"kind": "scalar",
+"func": "MapClass::RevealArea0",
+"src": "v48"
+},
+"0x005673A0::eax_v0x567778": {
+"type": "__int16",
+"kind": "scalar",
+"func": "MapClass::RevealArea0",
+"src": "v40"
+},
+"0x005678E0::eax_v0x5679FF": {
+"type": "__int16",
+"kind": "scalar",
+"func": "MapClass::RevealArea1",
+"src": "v18"
+},
+"0x005678E0::edx_v0x567A06": {
+"type": "__int16",
+"kind": "scalar",
+"func": "MapClass::RevealArea1",
+"src": "v18"
+},
+"0x005678E0::stack_+0x24": {
+"type": "__int16",
+"kind": "scalar",
+"func": "MapClass::RevealArea1",
+"src": "HIWORD"
+},
+"0x005678E0::eax_v0x567C8F": {
+"type": "__int16",
+"kind": "scalar",
+"func": "MapClass::RevealArea1",
+"src": "v57"
+},
+"0x00567DA0::eax_v0x567ED7": {
+"type": "__int16",
+"kind": "scalar",
+"func": "MapClass::RevealArea2",
+"src": "v28"
+},
+"0x00568350::eax_v0x56837E": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Tactical::IsCellVisible",
+"src": "a2"
+},
+"0x005683C0::eax_v0x5686EF": {
+"type": "__int16",
+"kind": "scalar",
+"func": "MapClass::FillRevealBuffer",
+"src": "v32"
+},
+"0x00568BB0::eax_v0x568D14": {
+"type": "__int16",
+"kind": "scalar",
+"func": "MapClass::PostProcessReveal",
+"src": "v21"
+},
+"0x00568BB0::eax_v0x568D8E": {
+"type": "__int16",
+"kind": "scalar",
+"func": "MapClass::PostProcessReveal",
+"src": "v22"
+},
+"0x00568E40::eax_v0x568F1D": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Terrain::PlaceCliffs",
+"src": "v67"
+},
+"0x00568E40::eax_v0x56906E": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Terrain::PlaceCliffs",
+"src": "v17"
+},
+"0x00568E40::eax_v0x5690C4": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Terrain::PlaceCliffs",
+"src": "v20"
+},
+"0x00568E40::eax_v0x569291": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Terrain::PlaceCliffs",
+"src": "v30"
+},
+"0x00568E40::eax_v0x5692E7": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Terrain::PlaceCliffs",
+"src": "v33"
+},
+"0x00568E40::eax_v0x569607": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Terrain::PlaceCliffs",
+"src": "v84"
+},
+"0x00569760::eax_v0x56983D": {
+"type": "__int16",
+"kind": "scalar",
+"func": "DestroyCliffMap",
+"src": "v67"
+},
+"0x00569760::eax_v0x56998E": {
+"type": "__int16",
+"kind": "scalar",
+"func": "DestroyCliffMap",
+"src": "v17"
+},
+"0x00569760::eax_v0x5699E4": {
+"type": "__int16",
+"kind": "scalar",
+"func": "DestroyCliffMap",
+"src": "v20"
+},
+"0x00569760::eax_v0x569BB1": {
+"type": "__int16",
+"kind": "scalar",
+"func": "DestroyCliffMap",
+"src": "v30"
+},
+"0x00569760::eax_v0x569C07": {
+"type": "__int16",
+"kind": "scalar",
+"func": "DestroyCliffMap",
+"src": "v33"
+},
+"0x00569760::eax_v0x569F2D": {
+"type": "__int16",
+"kind": "scalar",
+"func": "DestroyCliffMap",
+"src": "v83"
+},
+"0x0056A080::ecx_v0x56A0CC": {
+"type": "__int16",
+"kind": "scalar",
+"func": "PlaceTerrainCliffsRegion",
+"src": "result"
+},
+"0x0056A080::ecx_v0x56A1F1": {
+"type": "__int16",
+"kind": "scalar",
+"func": "PlaceTerrainCliffsRegion",
+"src": "dword_89F6A0"
+},
+"0x0056A080::ecx_v0x56A24A": {
+"type": "__int16",
+"kind": "scalar",
+"func": "PlaceTerrainCliffsRegion",
+"src": "v15"
+},
+"0x0056A080::eax_v0x56A2A4": {
+"type": "__int16",
+"kind": "scalar",
+"func": "PlaceTerrainCliffsRegion",
+"src": "v15"
+},
+"0x0056A080::eax_v0x56A39B": {
+"type": "__int16",
+"kind": "scalar",
+"func": "PlaceTerrainCliffsRegion",
+"src": "v22"
+},
+"0x0056A080::eax_v0x56A3F1": {
+"type": "__int16",
+"kind": "scalar",
+"func": "PlaceTerrainCliffsRegion",
+"src": "v25"
+},
+"0x0056A4C0::eax_v0x56A56F": {
+"type": "__int16",
+"kind": "scalar",
+"func": "FlattenCliffMap",
+"src": "v34"
+},
+"0x0056A4C0::ecx_v0x56A706": {
+"type": "__int16",
+"kind": "scalar",
+"func": "FlattenCliffMap",
+"src": "dword_89F6A0"
+},
+"0x0056A4C0::ecx_v0x56A763": {
+"type": "__int16",
+"kind": "scalar",
+"func": "FlattenCliffMap",
+"src": "v36"
+},
+"0x0056A4C0::eax_v0x56A7BC": {
+"type": "__int16",
+"kind": "scalar",
+"func": "FlattenCliffMap",
+"src": "v16"
+},
+"0x0056A4C0::ecx_v0x56A87F": {
+"type": "__int16",
+"kind": "scalar",
+"func": "FlattenCliffMap",
+"src": "LOWORD"
+},
+"0x0056A4C0::ecx_v0x56A8D7": {
+"type": "__int16",
+"kind": "scalar",
+"func": "FlattenCliffMap",
+"src": "v39"
+},
+"0x0056A4C0::eax_v0x56A930": {
+"type": "__int16",
+"kind": "scalar",
+"func": "FlattenCliffMap",
+"src": "v24"
+},
+"0x0056A980::eax_v0x56AA2F": {
+"type": "__int16",
+"kind": "scalar",
+"func": "RepairMapCliff",
+"src": "v34"
+},
+"0x0056A980::ecx_v0x56ABC6": {
+"type": "__int16",
+"kind": "scalar",
+"func": "RepairMapCliff",
+"src": "dword_89F6A0"
+},
+"0x0056A980::ecx_v0x56AC23": {
+"type": "__int16",
+"kind": "scalar",
+"func": "RepairMapCliff",
+"src": "v36"
+},
+"0x0056A980::eax_v0x56AC7C": {
+"type": "__int16",
+"kind": "scalar",
+"func": "RepairMapCliff",
+"src": "v16"
+},
+"0x0056A980::ecx_v0x56AD3F": {
+"type": "__int16",
+"kind": "scalar",
+"func": "RepairMapCliff",
+"src": "LOWORD"
+},
+"0x0056A980::ecx_v0x56AD97": {
+"type": "__int16",
+"kind": "scalar",
+"func": "RepairMapCliff",
+"src": "v39"
+},
+"0x0056A980::eax_v0x56ADF0": {
+"type": "__int16",
+"kind": "scalar",
+"func": "RepairMapCliff",
+"src": "v24"
+},
+"0x0056B0F0::edx_v0x56B13B": {
+"type": "__int16",
+"kind": "scalar",
+"func": "sub_56B0F0",
+"src": "v6"
+},
+"0x0056B8A0::eax_v0x56B8E3": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::DecompressRawCellData",
+"src": "a2"
+},
+"0x0056BD40::eax_v0x56BDE2": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CrateClass::FindPlacement",
+"src": "dword_87F910"
+},
+"0x0056C210::edi_v0x56C359": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Object::FindNearestObjectAtCell",
+"src": "v3"
+},
+"0x0056C510::ecx_v0x56C6D7": {
+"type": "int",
+"kind": "scalar",
+"func": "Terrain::ConnectivityGraph",
+"src": "v88"
+},
+"0x0056C510::stack_+0x3c": {
+"type": "int",
+"kind": "scalar",
+"func": "Terrain::ConnectivityGraph",
+"src": "v67"
+},
+"0x0056DC20::eax_v0x56DD61": {
+"type": "__int16",
+"kind": "scalar",
+"func": "LayerClass::Pathfinding_Find",
+"src": "v86"
+},
+"0x0056DC20::eax_v0x56DF77": {
+"type": "__int16",
+"kind": "scalar",
+"func": "LayerClass::Pathfinding_Find",
+"src": "v86"
+},
+"0x0056DC20::eax_v0x56E1B9": {
+"type": "__int16",
+"kind": "scalar",
+"func": "LayerClass::Pathfinding_Find",
+"src": "v86"
+},
+"0x0056DC20::eax_v0x56E3BB": {
+"type": "__int16",
+"kind": "scalar",
+"func": "LayerClass::Pathfinding_Find",
+"src": "v79"
+},
+"0x0056E7C0::eax_v0x56E808": {
+"type": "__int16",
+"kind": "scalar",
+"func": "MapClass::CheckCellsBuildable",
+"src": "v16"
+},
+"0x0056E990::eax_v0x56EB1F": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Cell::UpdateTileType",
+"src": "v14"
+},
+"0x0056EB80::eax_v0x56ECD0": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Cell::SetTileType",
+"src": "v14"
+},
+"0x0056EB80::eax_v0x56ECD3": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Cell::SetTileType",
+"src": "a5"
+},
+"0x0056ED40::eax_v0x56ED7D": {
+"type": "__int16",
+"kind": "scalar",
+"func": "globalHelper_06ED40",
+"src": "a2"
+},
+"0x0056EE40::eax_v0x56EE7D": {
+"type": "__int16",
+"kind": "scalar",
+"func": "globalHelper_06EE40",
+"src": "a2"
+},
+"0x0056EF50::eax_v0x56EF8C": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::UpdateVariant3",
+"src": "v3"
+},
+"0x0056EF50::eax_v0x56F08B": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::UpdateVariant3",
+"src": "v32"
+},
+"0x0056EF50::eax_v0x56F0D9": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::UpdateVariant3",
+"src": "v32"
+},
+"0x0056EF50::eax_v0x56F127": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::UpdateVariant3",
+"src": "v32"
+},
+"0x0056EF50::edx_v0x56F167": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::UpdateVariant3",
+"src": "v32"
+},
+"0x0056F2F0::eax_v0x56F32C": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::UpdateVariant4",
+"src": "v3"
+},
+"0x0056F2F0::eax_v0x56F42B": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::UpdateVariant4",
+"src": "v32"
+},
+"0x0056F2F0::eax_v0x56F479": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::UpdateVariant4",
+"src": "v32"
+},
+"0x0056F2F0::eax_v0x56F4C7": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::UpdateVariant4",
+"src": "v32"
+},
+"0x0056F2F0::edx_v0x56F507": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::UpdateVariant4",
+"src": "v32"
+},
+"0x0056F690::eax_v0x56F6CD": {
+"type": "__int16",
+"kind": "scalar",
+"func": "globalHelper_06F690",
+"src": "a2"
+},
+"0x0056F7A0::eax_v0x56F7DD": {
+"type": "__int16",
+"kind": "scalar",
+"func": "globalHelper_06F7A0",
+"src": "a2"
+},
+"0x0056F8B0::eax_v0x56F8EC": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::UpdateTerrain",
+"src": "v3"
+},
+"0x0056F8B0::eax_v0x56FA8E": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::UpdateTerrain",
+"src": "v31"
+},
+"0x0056FC80::eax_v0x56FCBC": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::UpdateTileVariant2",
+"src": "v3"
+},
+"0x0056FC80::eax_v0x56FE5E": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::UpdateTileVariant2",
+"src": "v31"
+},
+"0x00570050::eax_v0x57015C": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Terrain::ProcessCellModification",
+"src": "v13"
+},
+"0x00570050::eax_v0x5701B6": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Terrain::ProcessCellModification",
+"src": "v16"
+},
+"0x00570050::eax_v0x57020C": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Terrain::ProcessCellModification",
+"src": "v19"
+},
+"0x00570050::eax_v0x5702D7": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Terrain::ProcessCellModification",
+"src": "v25"
+},
+"0x00570050::eax_v0x5703F1": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Terrain::ProcessCellModification",
+"src": "v32"
+},
+"0x00570050::eax_v0x57087D": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Terrain::ProcessCellModification",
+"src": "v59"
+},
+"0x00570050::eax_v0x5708D3": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Terrain::ProcessCellModification",
+"src": "v62"
+},
+"0x00570050::eax_v0x570929": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Terrain::ProcessCellModification",
+"src": "v65"
+},
+"0x00570050::eax_v0x5705A0": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Terrain::ProcessCellModification",
+"src": "v40"
+},
+"0x00570050::eax_v0x5705F7": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Terrain::ProcessCellModification",
+"src": "v43"
+},
+"0x00570050::eax_v0x57064C": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Terrain::ProcessCellModification",
+"src": "v46"
+},
+"0x00571050::eax_v0x57109D": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::ProcessTileChange",
+"src": "a2"
+},
+"0x00571050::eax_v0x5710DA": {
+"type": "int",
+"kind": "scalar",
+"func": "CellClass::ProcessTileChange",
+"src": "a2"
+},
+"0x00571050::eax_v0x57128B": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::ProcessTileChange",
+"src": "v24"
+},
+"0x00571050::ebx_v0x57121E": {
+"type": "int",
+"kind": "scalar",
+"func": "CellClass::ProcessTileChange",
+"src": "v41"
+},
+"0x00571490::eax_v0x5715F5": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::PropagateTerrainVariant2",
+"src": "v12"
+},
+"0x00571490::eax_v0x571634": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::PropagateTerrainVariant2",
+"src": "v12"
+},
+"0x00571490::edx_v0x57186E": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::PropagateTerrainVariant2",
+"src": "v122"
+},
+"0x00571490::eax_v0x57169C": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::PropagateTerrainVariant2",
+"src": "v15"
+},
+"0x00571490::eax_v0x571736": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::PropagateTerrainVariant2",
+"src": "v122"
+},
+"0x00571490::eax_v0x571B28": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::PropagateTerrainVariant2",
+"src": "v55"
+},
+"0x00571490::eax_v0x571B65": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::PropagateTerrainVariant2",
+"src": "v55"
+},
+"0x00571490::eax_v0x571BC9": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::PropagateTerrainVariant2",
+"src": "v58"
+},
+"0x00571490::edx_v0x571C09": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::PropagateTerrainVariant2",
+"src": "v122"
+},
+"0x00571490::eax_v0x571C65": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::PropagateTerrainVariant2",
+"src": "v122"
+},
+"0x00571490::eax_v0x571CB6": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::PropagateTerrainVariant2",
+"src": "v114"
+},
+"0x00571490::eax_v0x571D1E": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::PropagateTerrainVariant2",
+"src": "v55"
+},
+"0x00572230::eax_v0x57226D": {
+"type": "__int16",
+"kind": "scalar",
+"func": "globalHelper_072230",
+"src": "a2"
+},
+"0x00572330::eax_v0x57236D": {
+"type": "__int16",
+"kind": "scalar",
+"func": "globalHelper_072330",
+"src": "a2"
+},
+"0x00572440::eax_v0x57247C": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::UpdateVariant7",
+"src": "v3"
+},
+"0x00572440::eax_v0x57257B": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::UpdateVariant7",
+"src": "v32"
+},
+"0x00572440::eax_v0x5725C9": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::UpdateVariant7",
+"src": "v32"
+},
+"0x00572440::eax_v0x572617": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::UpdateVariant7",
+"src": "v32"
+},
+"0x00572440::edx_v0x572657": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::UpdateVariant7",
+"src": "v32"
+},
+"0x005727E0::eax_v0x57281C": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::UpdateVariant8",
+"src": "v3"
+},
+"0x005727E0::eax_v0x57291B": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::UpdateVariant8",
+"src": "v32"
+},
+"0x005727E0::eax_v0x572969": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::UpdateVariant8",
+"src": "v32"
+},
+"0x005727E0::eax_v0x5729B7": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::UpdateVariant8",
+"src": "v32"
+},
+"0x005727E0::edx_v0x5729F7": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::UpdateVariant8",
+"src": "v32"
+},
+"0x00572B80::eax_v0x572BBD": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::SetTileType13",
+"src": "a2"
+},
+"0x00572C90::eax_v0x572CCD": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::SetTileType14",
+"src": "a2"
+},
+"0x00572DA0::eax_v0x572DDC": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::UpdateVariant5",
+"src": "v3"
+},
+"0x00572DA0::eax_v0x572F7E": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::UpdateVariant5",
+"src": "v31"
+},
+"0x00573170::eax_v0x5731AC": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::UpdateVariant6",
+"src": "v3"
+},
+"0x00573170::eax_v0x57334E": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::UpdateVariant6",
+"src": "v31"
+},
+"0x00573540::eax_v0x57364A": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Terrain::RecursiveModify",
+"src": "v14"
+},
+"0x00573540::eax_v0x5736A4": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Terrain::RecursiveModify",
+"src": "v17"
+},
+"0x00573540::eax_v0x5736FA": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Terrain::RecursiveModify",
+"src": "v20"
+},
+"0x00573540::ecx_v0x5737C0": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Terrain::RecursiveModify",
+"src": "v83"
+},
+"0x00573540::eax_v0x5738EF": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Terrain::RecursiveModify",
+"src": "v38"
+},
+"0x00573540::ecx_v0x573AAC": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Terrain::RecursiveModify",
+"src": "v87"
+},
+"0x00573540::eax_v0x573B18": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Terrain::RecursiveModify",
+"src": "v52"
+},
+"0x00573540::eax_v0x573B6E": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Terrain::RecursiveModify",
+"src": "v55"
+},
+"0x00573540::eax_v0x573DA0": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Terrain::RecursiveModify",
+"src": "v67"
+},
+"0x00573540::eax_v0x573DF6": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Terrain::RecursiveModify",
+"src": "v70"
+},
+"0x00573540::eax_v0x573E4C": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Terrain::RecursiveModify",
+"src": "v73"
+},
+"0x00574000::eax_v0x5741DD": {
+"type": "__int16",
+"kind": "scalar",
+"func": "TerrainClass::ProcessSlope",
+"src": "v22"
+},
+"0x00574000::ecx_v0x5742B7": {
+"type": "__int16",
+"kind": "scalar",
+"func": "TerrainClass::ProcessSlope",
+"src": "a2"
+},
+"0x00574000::eax_v0x5743DA": {
+"type": "__int16",
+"kind": "scalar",
+"func": "TerrainClass::ProcessSlope",
+"src": "v40"
+},
+"0x00574780::esi_v0x574784": {
+"type": "CellStruct *",
+"kind": "ptr",
+"func": "MapClass::TransitionCliff",
+"src": "a2"
+},
+"0x00574C20::eax_v0x574DF9": {
+"type": "__int16",
+"kind": "scalar",
+"func": "MapClass::ApplyTerrainDamage",
+"src": "v22"
+},
+"0x00574C20::ecx_v0x574ED3": {
+"type": "__int16",
+"kind": "scalar",
+"func": "MapClass::ApplyTerrainDamage",
+"src": "a2"
+},
+"0x00574C20::eax_v0x574FF6": {
+"type": "__int16",
+"kind": "scalar",
+"func": "MapClass::ApplyTerrainDamage",
+"src": "v40"
+},
+"0x00575220::eax_v0x575337": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::ApplyCliffMod2",
+"src": "v15"
+},
+"0x00575540::eax_v0x575659": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::ApplyCliffMod",
+"src": "v15"
+},
+"0x00575540::eax_v0x575812": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::ApplyCliffMod",
+"src": "a2"
+},
+"0x00575870::eax_v0x575992": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::ApplyTerrainMod2",
+"src": "v15"
+},
+"0x00575BA0::eax_v0x575CC4": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::ApplyTerrainMod",
+"src": "v15"
+},
+"0x00575BA0::eax_v0x575E7D": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::ApplyTerrainMod",
+"src": "a2"
+},
+"0x00575EE0::eax_v0x575FCD": {
+"type": "__int16",
+"kind": "scalar",
+"func": "UpdateTeamsInAreaMap",
+"src": "dword_89F698"
+},
+"0x00575EE0::eax_v0x576032": {
+"type": "__int16",
+"kind": "scalar",
+"func": "UpdateTeamsInAreaMap",
+"src": "v12"
+},
+"0x00575EE0::eax_v0x576096": {
+"type": "__int16",
+"kind": "scalar",
+"func": "UpdateTeamsInAreaMap",
+"src": "v17"
+},
+"0x00575EE0::eax_v0x576101": {
+"type": "__int16",
+"kind": "scalar",
+"func": "UpdateTeamsInAreaMap",
+"src": "v20"
+},
+"0x00575EE0::eax_v0x576162": {
+"type": "__int16",
+"kind": "scalar",
+"func": "UpdateTeamsInAreaMap",
+"src": "v24"
+},
+"0x00576770::eax_v0x5767BB": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Terrain::CreateCrater",
+"src": "a2"
+},
+"0x00576770::eax_v0x57699D": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Terrain::CreateCrater",
+"src": "v21"
+},
+"0x00576BA0::eax_v0x576CD5": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::PropagateTerrainVariant5",
+"src": "v11"
+},
+"0x00576BA0::eax_v0x576D1C": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::PropagateTerrainVariant5",
+"src": "v11"
+},
+"0x00576BA0::edx_v0x576F61": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::PropagateTerrainVariant5",
+"src": "v106"
+},
+"0x00576BA0::eax_v0x576D85": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::PropagateTerrainVariant5",
+"src": "v11"
+},
+"0x00576BA0::eax_v0x576E1E": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::PropagateTerrainVariant5",
+"src": "v106"
+},
+"0x00576BA0::eax_v0x577205": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::PropagateTerrainVariant5",
+"src": "v51"
+},
+"0x00576BA0::eax_v0x57724A": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::PropagateTerrainVariant5",
+"src": "v51"
+},
+"0x00576BA0::eax_v0x5772B1": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::PropagateTerrainVariant5",
+"src": "v51"
+},
+"0x00576BA0::edx_v0x5772EF": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::PropagateTerrainVariant5",
+"src": "v107"
+},
+"0x00576BA0::eax_v0x57734B": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::PropagateTerrainVariant5",
+"src": "v107"
+},
+"0x00576BA0::eax_v0x57739C": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::PropagateTerrainVariant5",
+"src": "flags"
+},
+"0x00576BA0::eax_v0x577408": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::PropagateTerrainVariant5",
+"src": "v51"
+},
+"0x00577C90::esi_v0x577D19": {
+"type": "DisplayClass *",
+"kind": "ptr",
+"func": "TActionClass::executeRepairAction",
+"src": "LayerClass"
+},
+"0x00578880::esi_v0x5788FD": {
+"type": "__int16",
+"kind": "scalar",
+"func": "MapClass::FastCellLookup",
+"src": "MapClass_field_0x100"
+},
+"0x00578880::stack_+0x10": {
+"type": "__int16",
+"kind": "scalar",
+"func": "MapClass::FastCellLookup",
+"src": "MapClass_field_0x100"
+},
+"0x00578880::eax_v0x578A74": {
+"type": "__int16",
+"kind": "scalar",
+"func": "MapClass::FastCellLookup",
+"src": "v8"
+},
+"0x00578880::eax_v0x578A77": {
+"type": "__int16",
+"kind": "scalar",
+"func": "MapClass::FastCellLookup",
+"src": "v7"
+},
+"0x00578E60::eax_v0x578F2A": {
+"type": "Cell *",
+"kind": "ptr",
+"func": "CreateMapObject",
+"src": "LayerClass"
+},
+"0x00578E60::esi_v0x578F8B": {
+"type": "Cell *",
+"kind": "ptr",
+"func": "CreateMapObject",
+"src": "LayerClass"
+},
+"0x00579010::eax_v0x579071": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Cliff::ProcessTransitions",
+"src": "v22"
+},
+"0x00579010::eax_v0x5790CF": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Cliff::ProcessTransitions",
+"src": "v23"
+},
+"0x00579010::eax_v0x57912C": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Cliff::ProcessTransitions",
+"src": "v24"
+},
+"0x00579010::eax_v0x579189": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Cliff::ProcessTransitions",
+"src": "v25"
+},
+"0x00579620::eax_v0x579679": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Terrain::SelectTileType",
+"src": "v37"
+},
+"0x00579620::eax_v0x5796CB": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Terrain::SelectTileType",
+"src": "v37"
+},
+"0x00579620::eax_v0x579896": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Terrain::SelectTileType",
+"src": "v38"
+},
+"0x00579620::eax_v0x57992B": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Terrain::SelectTileType",
+"src": "v38"
+},
+"0x00579620::eax_v0x57997E": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Terrain::SelectTileType",
+"src": "v38"
+},
+"0x00579620::eax_v0x579A1F": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Terrain::SelectTileType",
+"src": "v38"
+},
+"0x00579620::eax_v0x579750": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Terrain::SelectTileType",
+"src": "v38"
+},
+"0x00579620::eax_v0x5797A4": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Terrain::SelectTileType",
+"src": "v38"
+},
+"0x00579B70::eax_v0x579C17": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Cell::GetAdjacencyFlags",
+"src": "v44"
+},
+"0x00579B70::edx_v0x579D0F": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Cell::GetAdjacencyFlags",
+"src": "v44"
+},
+"0x0057A0C0::ebx_v0x57A0F6": {
+"type": "__int16 *",
+"kind": "ptr",
+"func": "MapClass::InitTileData",
+"src": "v5"
+},
+"0x0057A430::eax_v0x57A4FD": {
+"type": "__int16",
+"kind": "scalar",
+"func": "RecursiveCellClassNeighbourUpdate",
+"src": "v48"
+},
+"0x0057A430::eax_v0x57A554": {
+"type": "__int16",
+"kind": "scalar",
+"func": "RecursiveCellClassNeighbourUpdate",
+"src": "v49"
+},
+"0x0057A430::eax_v0x57A5BF": {
+"type": "__int16",
+"kind": "scalar",
+"func": "RecursiveCellClassNeighbourUpdate",
+"src": "v50"
+},
+"0x0057A430::eax_v0x57A613": {
+"type": "__int16",
+"kind": "scalar",
+"func": "RecursiveCellClassNeighbourUpdate",
+"src": "v50"
+},
+"0x0057A430::eax_v0x57A67F": {
+"type": "__int16",
+"kind": "scalar",
+"func": "RecursiveCellClassNeighbourUpdate",
+"src": "v50"
+},
+"0x0057A430::eax_v0x57A6D2": {
+"type": "__int16",
+"kind": "scalar",
+"func": "RecursiveCellClassNeighbourUpdate",
+"src": "v50"
+},
+"0x0057A430::eax_v0x57A73E": {
+"type": "__int16",
+"kind": "scalar",
+"func": "RecursiveCellClassNeighbourUpdate",
+"src": "v50"
+},
+"0x0057A430::eax_v0x57A791": {
+"type": "__int16",
+"kind": "scalar",
+"func": "RecursiveCellClassNeighbourUpdate",
+"src": "v50"
+},
+"0x0057B210::esi_v0x57B2F7": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Cell::GetTerrainMask",
+"src": "v5"
+},
+"0x0057B440::ecx_v0x57B4D5": {
+"type": "__int16",
+"kind": "scalar",
+"func": "GenerateTerrainMap",
+"src": "v9"
+},
+"0x0057B440::edx_v0x57B4E8": {
+"type": "__int16",
+"kind": "scalar",
+"func": "GenerateTerrainMap",
+"src": "v10"
+},
+"0x0057B790::eax_v0x57B7FE": {
+"type": "CellClass *",
+"kind": "ptr",
+"func": "MapClass::TriggerEVA",
+"src": "CellClass"
+},
+"0x0057B870::eax_v0x57B895": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Map_Create",
+"src": "v8"
+},
+"0x0057B870::eax_v0x57B8D4": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Map_Create",
+"src": "v9"
+},
+"0x0057BCF0::eax_v0x57BD55": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::ApplyTileModification",
+"src": "v58"
+},
+"0x0057BCF0::eax_v0x57BD96": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::ApplyTileModification",
+"src": "v58"
+},
+"0x0057CAB0::eax_v0x57CAD5": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Map_Create_57CAB0",
+"src": "v8"
+},
+"0x0057CAB0::eax_v0x57CB14": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Map_Create_57CAB0",
+"src": "v9"
+},
+"0x0057CF60::eax_v0x57CFC5": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::ApplyTileModification3",
+"src": "v58"
+},
+"0x0057CF60::eax_v0x57D006": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::ApplyTileModification3",
+"src": "v58"
+},
+"0x0057F200::esi_v0x57F204": {
+"type": "CellStruct *",
+"kind": "ptr",
+"func": "CellClass::ApplyCliffTileModifications",
+"src": "a2"
+},
+"0x0057F440::esi_v0x57F444": {
+"type": "CellStruct *",
+"kind": "ptr",
+"func": "CellClass::ApplyTileMod58",
+"src": "a2"
+},
+"0x0057FBC0::edx_v0x57FC73": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::ApplyTileModification7",
+"src": "v48"
+},
+"0x0057FBC0::edx_v0x57FCAE": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::ApplyTileModification7",
+"src": "v48"
+},
+"0x00580600::edx_v0x5806B7": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::ApplyTileModification8",
+"src": "v48"
+},
+"0x00580600::edx_v0x5806F2": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::ApplyTileModification8",
+"src": "v48"
+},
+"0x00580BC0::stack_+0x18": {
+"type": "__int16",
+"kind": "scalar",
+"func": "FindMapSpawnCell",
+"src": "v39"
+},
+"0x00581140::eax_v0x581154": {
+"type": "Terrain *",
+"kind": "ptr",
+"func": "LayerClass::DestroyCliff",
+"src": "v98"
+},
+"0x00581140::eax_v0x581354": {
+"type": "__int16",
+"kind": "scalar",
+"func": "LayerClass::DestroyCliff",
+"src": "a3"
+},
+"0x00581140::eax_v0x5814AF": {
+"type": "__int16",
+"kind": "scalar",
+"func": "LayerClass::DestroyCliff",
+"src": "a3"
+},
+"0x00581140::ebx_v0x5816B3": {
+"type": "char *",
+"kind": "ptr",
+"func": "LayerClass::DestroyCliff",
+"src": "v89"
+},
+"0x00581140::edx_v0x581765": {
+"type": "__int16",
+"kind": "scalar",
+"func": "LayerClass::DestroyCliff",
+"src": "v31"
+},
+"0x00581140::esi_v0x58176D": {
+"type": "__int16",
+"kind": "scalar",
+"func": "LayerClass::DestroyCliff",
+"src": "v31"
+},
+"0x00581140::stack_+0x2c": {
+"type": "void *",
+"kind": "ptr",
+"func": "LayerClass::DestroyCliff",
+"src": "v95"
+},
+"0x00581140::eax_v0x581A53": {
+"type": "__int16",
+"kind": "scalar",
+"func": "LayerClass::DestroyCliff",
+"src": "v92"
+},
+"0x00581140::eax_v0x581BC1": {
+"type": "__int16",
+"kind": "scalar",
+"func": "LayerClass::DestroyCliff",
+"src": "v92"
+},
+"0x00581140::eax_v0x581C95": {
+"type": "__int16",
+"kind": "scalar",
+"func": "LayerClass::DestroyCliff",
+"src": "HIWORD"
+},
+"0x00581140::edx_v0x581E6B": {
+"type": "__int16",
+"kind": "scalar",
+"func": "LayerClass::DestroyCliff",
+"src": "v78"
+},
+"0x00581140::esi_v0x581E73": {
+"type": "__int16",
+"kind": "scalar",
+"func": "LayerClass::DestroyCliff",
+"src": "v78"
+},
+"0x00582D70::eax_v0x582DB1": {
+"type": "__int16",
+"kind": "scalar",
+"func": "RadarClass::RenderBlips",
+"src": "v5"
+},
+"0x00582D70::eax_v0x582E66": {
+"type": "__int16",
+"kind": "scalar",
+"func": "RadarClass::RenderBlips",
+"src": "v11"
+},
+"0x00582D70::eax_v0x582EA3": {
+"type": "__int16",
+"kind": "scalar",
+"func": "RadarClass::RenderBlips",
+"src": "a2"
+},
+"0x005835D0::stack_+0x1c": {
+"type": "__int16 *",
+"kind": "ptr",
+"func": "FindCliffSeedCell",
+"src": "dword_ABD480"
+},
+"0x005835D0::esi_v0x58364F": {
+"type": "Cell *",
+"kind": "ptr",
+"func": "FindCliffSeedCell",
+"src": "Cell"
+},
+"0x00583820::eax_v0x583A73": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Pathfinding::CheckCliff",
+"src": "a3"
+},
+"0x00584030::eax_v0x584071": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Map_Helper_584030",
+"src": "v11"
+},
+"0x005840C0::eax_v0x5843E7": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CheckMapReachability",
+"src": "a2"
+},
+"0x00584550::eax_v0x584D5C": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Radar::Update",
+"src": "v74"
+},
+"0x00584E50::eax_v0x584E75": {
+"type": "__int16",
+"kind": "scalar",
+"func": "UpdateCellConnectivityGraph",
+"src": "v3"
+},
+"0x005851B0::eax_v0x5851D5": {
+"type": "__int16",
+"kind": "scalar",
+"func": "BuildTileAdjacencyTable",
+"src": "v3"
+},
+"0x005851B0::ebx_v0x58524B": {
+"type": "_WORD *",
+"kind": "ptr",
+"func": "BuildTileAdjacencyTable",
+"src": "4"
+},
+"0x005851B0::edi_v0x585271": {
+"type": "_WORD *",
+"kind": "ptr",
+"func": "BuildTileAdjacencyTable",
+"src": "4"
+},
+"0x005856B0::eax_v0x58589D": {
+"type": "int",
+"kind": "scalar",
+"func": "MapClass::InitializeTileData",
+"src": "GetTileDataEntry"
+},
+"0x00585930::eax_v0x585B76": {
+"type": "__int16",
+"kind": "scalar",
+"func": "FloodFillConnectedCells",
+"src": "a2"
+},
+"0x00585930::stack_+0x20": {
+"type": "__int16",
+"kind": "scalar",
+"func": "FloodFillConnectedCells",
+"src": "v29"
+},
+"0x00585D00::ebx_v0x585D37": {
+"type": "__int16 *",
+"kind": "ptr",
+"func": "MapClass::LoadTerrainData",
+"src": "__2_YAPAXI_Z"
+},
+"0x00585D00::eax_v0x585DCC": {
+"type": "Cell *",
+"kind": "ptr",
+"func": "MapClass::LoadTerrainData",
+"src": "LayerClass"
+},
+"0x00585D00::eax_v0x585E38": {
+"type": "int",
+"kind": "scalar",
+"func": "MapClass::LoadTerrainData",
+"src": "GetTileDataEntry"
+},
+"0x00586360::eax_v0x5863C8": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Cell::IsPassable",
+"src": "v7"
+},
+"0x00586360::eax_v0x5863D9": {
+"type": "int",
+"kind": "scalar",
+"func": "Cell::IsPassable",
+"src": "Cell"
+},
+"0x00586360::eax_v0x586454": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Cell::IsPassable",
+"src": "v10"
+},
+"0x005864A0::eax_v0x586508": {
+"type": "__int16",
+"kind": "scalar",
+"func": "FogOfWar_Get",
+"src": "v8"
+},
+"0x005864A0::eax_v0x586593": {
+"type": "__int16",
+"kind": "scalar",
+"func": "FogOfWar_Get",
+"src": "v12"
+},
+"0x00586780::eax_v0x5867DF": {
+"type": "__int16",
+"kind": "scalar",
+"func": "MapClass::IsAreaFree",
+"src": "v6"
+},
+"0x00586780::eax_v0x586816": {
+"type": "int",
+"kind": "scalar",
+"func": "MapClass::IsAreaFree",
+"src": "Cell"
+},
+"0x00586780::eax_v0x5867AC": {
+"type": "int",
+"kind": "scalar",
+"func": "MapClass::IsAreaFree",
+"src": "v16"
+},
+"0x00586990::eax_v0x586A7C": {
+"type": "__int16",
+"kind": "scalar",
+"func": "LayerClass::Update_Pathfinding_2",
+"src": "a2"
+},
+"0x00586BF0::eax_v0x586D8C": {
+"type": "__int16",
+"kind": "scalar",
+"func": "MarkCliffEdgePassability",
+"src": "j"
+},
+"0x00586BF0::eax_v0x586DD2": {
+"type": "__int16",
+"kind": "scalar",
+"func": "MarkCliffEdgePassability",
+"src": "j"
+},
+"0x00586E50::eax_v0x586ECD": {
+"type": "__int16",
+"kind": "scalar",
+"func": "HouseClass::ClampToUsableCell",
+"src": "v5"
+},
+"0x00586E50::eax_v0x586ED0": {
+"type": "__int16",
+"kind": "scalar",
+"func": "HouseClass::ClampToUsableCell",
+"src": "v3"
+},
+"0x00587180::ecx_v0x58727C": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::SetTerrainType",
+"src": "smudgeTypeIndex"
+},
+"0x00587180::ecx_v0x58724C": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::SetTerrainType",
+"src": "smudgeTypeIndex"
+},
+"0x00587410::eax_v0x587870": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::CheckConnectivity",
+"src": "i"
+},
+"0x00587410::eax_v0x5879F6": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::CheckConnectivity",
+"src": "i"
+},
+"0x00587410::eax_v0x587A94": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::CheckConnectivity",
+"src": "i"
+},
+"0x00587410::eax_v0x587BFA": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::CheckConnectivity",
+"src": "i"
+},
+"0x00587C50::eax_v0x587D24": {
+"type": "char **",
+"kind": "ptr",
+"func": "DiagnoseMapCheck",
+"src": "v33"
+},
+"0x005880A0::eax_v0x58816C": {
+"type": "__int16",
+"kind": "scalar",
+"func": "MapClass::FindFirstFirestorm",
+"src": "v34"
+},
+"0x005880A0::ecx_v0x5881D0": {
+"type": "__int16",
+"kind": "scalar",
+"func": "MapClass::FindFirstFirestorm",
+"src": "i"
+},
+"0x005880A0::eax_v0x588259": {
+"type": "__int16",
+"kind": "scalar",
+"func": "MapClass::FindFirstFirestorm",
+"src": "i"
+},
+"0x00588570::eax_v0x588595": {
+"type": "int",
+"kind": "scalar",
+"func": "globalHelper_088570",
+"src": "Cell"
+},
+"0x00589370::eax_v0x589385": {
+"type": "int",
+"kind": "scalar",
+"func": "MapClass::AllocateCellDataBuffer",
+"src": "a3"
+},
+"0x00589740::esi_v0x58977F": {
+"type": "VectorClass *",
+"kind": "ptr",
+"func": "VectorClass_USubzoneTrackingStruct::Release",
+"src": "v5"
+},
+"0x00589740::esi_v0x589876": {
+"type": "char *",
+"kind": "ptr",
+"func": "VectorClass_USubzoneTrackingStruct::Release",
+"src": "v11"
+},
+"0x00589740::ecx_v0x5898C2": {
+"type": "void *",
+"kind": "ptr",
+"func": "VectorClass_USubzoneTrackingStruct::Release",
+"src": "v13"
+},
+"0x0058A150::edi_v0x58A185": {
+"type": "_DWORD *",
+"kind": "ptr",
+"func": "VectorClass_W4PassabilityType::SetCapacity_0",
+"src": "v5"
+},
+"0x0058A470::edx_v0x58A490": {
+"type": "void *",
+"kind": "ptr",
+"func": "VectorClass_USubzoneTrackingStruct::QueryInterface",
+"src": "v3"
+},
+"0x0058A6E0::edi_v0x58A715": {
+"type": "_DWORD *",
+"kind": "ptr",
+"func": "VectorClass_UHashObject_uint_uint::Release",
+"src": "v5"
+},
+"0x0058B820::edx_v0x58B9C2": {
+"type": "int",
+"kind": "scalar",
+"func": "ComputeMapCameraBounds",
+"src": "k"
+},
+"0x0058B820::stack_+0x10": {
+"type": "int",
+"kind": "scalar",
+"func": "ComputeMapCameraBounds",
+"src": "k"
+},
+"0x0058B820::ebx_v0x58B937": {
+"type": "int",
+"kind": "scalar",
+"func": "ComputeMapCameraBounds",
+"src": "k"
+},
+"0x0058C800::ecx_v0x58CCC1": {
+"type": "__int16",
+"kind": "scalar",
+"func": "RandomMap::GenerateTerrain",
+"src": "v29"
+},
+"0x0058CF90::eax_v0x58CF96": {
+"type": "int",
+"kind": "scalar",
+"func": "RandomMap::GenerateTerrainForAllCells",
+"src": "dword_ABED10"
+},
+"0x0058D010::eax_v0x58D016": {
+"type": "int",
+"kind": "scalar",
+"func": "Map_Helper_58D010",
+"src": "RandomMap"
+},
+"0x0058D1C0::eax_v0x58D1C9": {
+"type": "int",
+"kind": "scalar",
+"func": "RandomMap::ExpandTerrainCells",
+"src": "RandomMap"
+},
+"0x0058D1C0::stack_+0xc": {
+"type": "int",
+"kind": "scalar",
+"func": "RandomMap::ExpandTerrainCells",
+"src": "v12"
+},
+"0x0058D620::stack_+0x4c": {
+"type": "CellStruct *",
+"kind": "ptr",
+"func": "TileSystem::BuildNodes",
+"src": "v65"
+},
+"0x0058E5D0::edx_v0x58E66D": {
+"type": "__int16",
+"kind": "scalar",
+"func": "TileSystem::AnalyzeTileConnectivity",
+"src": "v9"
+},
+"0x0058EF10::eax_v0x58EF37": {
+"type": "Cell *",
+"kind": "ptr",
+"func": "ResetMapState",
+"src": "LayerClass"
+},
+"0x0058F0C0::edx_v0x58F182": {
+"type": "__int16",
+"kind": "scalar",
+"func": "RandomMap::CollectBorderCells",
+"src": "v10"
+},
+"0x005902C0::edi_v0x5903D9": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Object_Helper",
+"src": "v5"
+},
+"0x005905D0::edx_v0x59065F": {
+"type": "int",
+"kind": "scalar",
+"func": "RandomMap::AllocateArea",
+"src": "v43"
+},
+"0x00592AF0::ebx_v0x592E1A": {
+"type": "int",
+"kind": "scalar",
+"func": "PlaceMapSeedCityBlockVariant",
+"src": "v60"
+},
+"0x00593550::esi_v0x5935E2": {
+"type": "int",
+"kind": "scalar",
+"func": "MapSeed::PlaceCityBlock2",
+"src": "v68"
+},
+"0x00594190::edi_v0x5941C9": {
+"type": "__int16",
+"kind": "scalar",
+"func": "sub_594190",
+"src": "v3"
+},
+"0x005942F0::esi_v0x594329": {
+"type": "__int16",
+"kind": "scalar",
+"func": "sub_5942F0",
+"src": "v3"
+},
+"0x00594F40::stack_+0x34": {
+"type": "__int16",
+"kind": "scalar",
+"func": "BuildingPlacement::SelectBuildingPlacementCells",
+"src": "v11"
+},
+"0x00594F40::stack_+0x3c": {
+"type": "__int16",
+"kind": "scalar",
+"func": "BuildingPlacement::SelectBuildingPlacementCells",
+"src": "v26"
+},
+"0x0059A8F0::stack_+0x54": {
+"type": "double",
+"kind": "scalar",
+"func": "ArrangeBuildingPlacementGrid",
+"src": "q010"
+},
+"0x0059AD10::stack_+0x28": {
+"type": "double",
+"kind": "scalar",
+"func": "RandomMap::ArrangeBuildingGrid",
+"src": "v4"
+},
+"0x0059AD10::stack_+0x10": {
+"type": "char *",
+"kind": "ptr",
+"func": "RandomMap::ArrangeBuildingGrid",
+"src": "Block"
+},
+"0x0059AFA0::stack_+0x28": {
+"type": "__int16",
+"kind": "scalar",
+"func": "RandomMap::FillTerrainProgressively",
+"src": "v12"
+},
+"0x0059B200::stack_+0x60": {
+"type": "__int16",
+"kind": "scalar",
+"func": "RandomMap::PlaceTerrainFeatures",
+"src": "v21"
+},
+"0x0059B6D0::eax_v0x59B6E0": {
+"type": "Cell *",
+"kind": "ptr",
+"func": "SmallFunc_59B6D0",
+"src": "LayerClass"
+},
+"0x0059C920::ecx_v0x59CE32": {
+"type": "int",
+"kind": "scalar",
+"func": "TiberiumClass::Grow",
+"src": "v49"
+},
+"0x0059D510::edx_v0x59E384": {
+"type": "int",
+"kind": "scalar",
+"func": "Tiberium::ProcessGrowth",
+"src": "v27"
+},
+"0x0059E740::ecx_v0x59EB12": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Tiberium::CalculateSpread",
+"src": "i"
+},
+"0x0059E740::eax_v0x59ED92": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Tiberium::CalculateSpread",
+"src": "k"
+},
+"0x0059E740::ecx_v0x59FD65": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Tiberium::CalculateSpread",
+"src": "v117"
+},
+"0x0059E740::eax_v0x59FD68": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Tiberium::CalculateSpread",
+"src": "v117"
+},
+"0x0059E740::ecx_v0x59F041": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Tiberium::CalculateSpread",
+"src": "v119"
+},
+"0x0059E740::ecx_v0x59F8D4": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Tiberium::CalculateSpread",
+"src": "v117"
+},
+"0x0059E740::edx_v0x59F4F2": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Tiberium::CalculateSpread",
+"src": "v119"
+},
+"0x0059E740::ecx_v0x59F4F5": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Tiberium::CalculateSpread",
+"src": "v119"
+},
+"0x005A0160::edx_v0x5A0228": {
+"type": "__int16",
+"kind": "scalar",
+"func": "TiberiumClass::Spread",
+"src": "v14"
+},
+"0x005A0700::eax_v0x5A07E5": {
+"type": "__int16",
+"kind": "scalar",
+"func": "RandomMap::CellListAlloc",
+"src": "v11"
+},
+"0x005A08D0::eax_v0x5A0A91": {
+"type": "__int16",
+"kind": "scalar",
+"func": "RandomMap::SpreadArea",
+"src": "v94"
+},
+"0x005A17F0::eax_v0x5A1807": {
+"type": "Cell *",
+"kind": "ptr",
+"func": "MapClass::FindPassableNeighbor",
+"src": "LayerClass"
+},
+"0x005A1C70::eax_v0x5A1DBF": {
+"type": "int",
+"kind": "scalar",
+"func": "sub_5A1C70",
+"src": "RandomMap"
+},
+"0x005A1F60::eax_v0x5A1F7E": {
+"type": "Cell *",
+"kind": "ptr",
+"func": "SmallFunc_5A1F60",
+"src": "LayerClass"
+},
+"0x005A28C0::stack_+0x40": {
+"type": "int",
+"kind": "scalar",
+"func": "Terrain::PlaceTiberiumTrees",
+"src": "v43"
+},
+"0x005A38C0::edx_v0x5A3938": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::Reset",
+"src": "smudgeTypeIndex"
+},
+"0x005A38C0::edi_v0x5A3966": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::Reset",
+"src": "v6"
+},
+"0x005A38C0::edx_v0x5A3972": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::Reset",
+"src": "v7"
+},
+"0x005A45E0::ecx_v0x5A48F3": {
+"type": "__int16",
+"kind": "scalar",
+"func": "ScatterTerrainTrees",
+"src": "v28"
+},
+"0x005A45E0::eax_v0x5A48BB": {
+"type": "_BYTE",
+"kind": "class",
+"func": "ScatterTerrainTrees",
+"src": "v47"
+},
+"0x005A5B50::eax_v0x5A5B87": {
+"type": "int",
+"kind": "scalar",
+"func": "MapSeedClass::PlaceBuildingClusters",
+"src": "v41"
+},
+"0x005A5B50::ebx_v0x5A5E10": {
+"type": "int",
+"kind": "scalar",
+"func": "MapSeedClass::PlaceBuildingClusters",
+"src": "v27"
+},
+"0x005A7070::eax_v0x5A71D7": {
+"type": "__int16",
+"kind": "scalar",
+"func": "globalHelper_0A7070",
+"src": "v27"
+},
+"0x005A7250::edi_v0x5A72B1": {
+"type": "__int16",
+"kind": "scalar",
+"func": "IsAreaClearMap",
+"src": "result"
+},
+"0x005A7440::ecx_v0x5A7529": {
+"type": "__int16",
+"kind": "scalar",
+"func": "IsMapClassAreaUniform",
+"src": "v16"
+},
+"0x005A7440::stack_+0x1c": {
+"type": "__int16",
+"kind": "scalar",
+"func": "IsMapClassAreaUniform",
+"src": "v16"
+},
+"0x005A76E0::edx_v0x5A77C5": {
+"type": "__int16",
+"kind": "scalar",
+"func": "MapSeedClass::ValidateRectBounds",
+"src": "v14"
+},
+"0x005A78D0::stack_+0x1c": {
+"type": "__int16",
+"kind": "scalar",
+"func": "PlaceMapSeedBuildingsStrategic",
+"src": "v11"
+},
+"0x005A7B40::esi_v0x5A7B55": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::ProcessUpdate",
+"src": "this"
+},
+"0x005A7B40::edi_v0x5A7B9D": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::ProcessUpdate",
+"src": "bridgeOwnerCell"
+},
+"0x005A7B40::edi_v0x5A7C2A": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::ProcessUpdate",
+"src": "bridgeOwnerCell"
+},
+"0x005A7B40::esi_v0x5A7C2D": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::ProcessUpdate",
+"src": "v16"
+},
+"0x005A7B40::stack_+0x18": {
+"type": "__int16",
+"kind": "scalar",
+"func": "CellClass::ProcessUpdate",
+"src": "v16"
+},
+"0x005A7FA0::esi_v0x5A800C": {
+"type": "__int16",
+"kind": "scalar",
+"func": "DrawIsoTile",
+"src": "i"
+},
+"0x005A89D0::ebx_v0x5A8BA4": {
+"type": "_DWORD *",
+"kind": "ptr",
+"func": "ScheduleMapSeedBuildings",
+"src": "4"
+},
+"0x005A89D0::edi_v0x5A8C41": {
+"type": "char *",
+"kind": "ptr",
+"func": "ScheduleMapSeedBuildings",
+"src": "v20"
+},
+"0x005A89D0::esi_v0x5A8DEF": {
+"type": "char *",
+"kind": "ptr",
+"func": "ScheduleMapSeedBuildings",
+"src": "Block"
+},
+"0x005A89D0::ebx_v0x5A8D12": {
+"type": "char *",
+"kind": "ptr",
+"func": "ScheduleMapSeedBuildings",
+"src": "Block"
+},
+"0x005A9C40::stack_+0x14": {
+"type": "int",
+"kind": "scalar",
+"func": "InitializePathData",
+"src": "v7"
+},
+"0x005A9C40::stack_+0x1c": {
+"type": "int",
+"kind": "scalar",
+"func": "InitializePathData",
+"src": "v51"
+},
+"0x005A9C40::stack_+0x24": {
+"type": "int",
+"kind": "scalar",
+"func": "InitializePathData",
+"src": "v59"
+},
+"0x005AE8F0::eax_v0x5AE8F1": {
+"type": "int",
+"kind": "scalar",
+"func": "Matrix3x3::Multiply",
+"src": "this"
+},
+"0x005B0080::eax_v0x5B008A": {
+"type": "int",
+"kind": "scalar",
+"func": "JumpjetLocomotionClass::ConvertCoordToCell_1",
+"src": "Coord"
+},
+"0x005B0120::eax_v0x5B0120": {
+"type": "int",
+"kind": "scalar",
+"func": "JumpjetLocomotionClass::SyncMatrixTransformState",
+"src": "this"
+},
+"0x005B20F0::eax_v0x5B227F": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Movement::CalcVelocity",
+"src": "v85"
+},
+"0x005B20F0::edx_v0x5B258F": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Movement::CalcVelocity",
+"src": "v86"
+},
+"0x005B4430::eax_v0x5B454C": {
+"type": "char *",
+"kind": "ptr",
+"func": "LookupFileInfoCache",
+"src": "Previous"
+},
+"0x005BDF70::ecx_v0x5BE21A": {
+"type": "int",
+"kind": "scalar",
+"func": "MouseClass::LoadGameAssets",
+"src": "v25"
+},
+"0x005C1A10::eax_v0x5C1AF0": {
+"type": "int",
+"kind": "scalar",
+"func": "MPCooperative::CopyTo",
+"src": "MissionClass"
+},
+"0x005C23B0::eax_v0x5C23B3": {
+"type": "int",
+"kind": "scalar",
+"func": "MovieClass::ReadConfig",
+"src": "hDlg"
+},
+"0x005C7520::ebx_v0x5C76F2": {
+"type": "char *",
+"kind": "ptr",
+"func": "SubtractBigIntegerWithSign",
+"src": "v41"
+},
+"0x005C7990::edx_v0x5C7AF2": {
+"type": "char *",
+"kind": "ptr",
+"func": "DivideBigInteger",
+"src": "v18"
+},
+"0x005C9B10::stack_+0xc": {
+"type": "int",
+"kind": "scalar",
+"func": "MPScore::DlgProc",
+"src": "GetDlgItem"
+},
+"0x005CB6D0::eax_v0x5CB72A": {
+"type": "__int16 *",
+"kind": "ptr",
+"func": "MSShapeAnim::Constructor",
+"src": "LoadFileClassToBuffer"
+},
+"0x005CBD20::eax_v0x5CBD70": {
+"type": "__int16 *",
+"kind": "ptr",
+"func": "Trigger::initTrigger",
+"src": "LoadFileClassToBuffer"
+},
+"0x005CC250::eax_v0x5CC29C": {
+"type": "__int16 *",
+"kind": "ptr",
+"func": "MSOverlayAnim::Init",
+"src": "LoadFileClassToBuffer"
+},
+"0x005CDEE0::eax_v0x5CDF11": {
+"type": "int",
+"kind": "scalar",
+"func": "MSPrintAnim::Draw",
+"src": "v26"
+},
+"0x005D1B30::eax_v0x5D1BF4": {
+"type": "int",
+"kind": "scalar",
+"func": "MSEngine::Destruct",
+"src": "p_MSEngine_field_0x8"
+},
+"0x005D1C90::eax_v0x5D1D12": {
+"type": "int",
+"kind": "scalar",
+"func": "UI_Load_5D1C90",
+"src": "a3"
+},
+"0x005D1D80::eax_v0x5D1D80": {
+"type": "int",
+"kind": "scalar",
+"func": "Session::RemoveTeam",
+"src": "a2"
+},
+"0x005D9410::stack_+0x40": {
+"type": "int",
+"kind": "scalar",
+"func": "Network::ResolveAndConnect",
+"src": "v29"
+},
+"0x005D9DB0::esi_v0x5D9DFF": {
+"type": "char *",
+"kind": "ptr",
+"func": "DetectPortAllocationPattern",
+"src": "v5"
+},
+"0x005DAFE0::eax_v0x5DB567": {
+"type": "int",
+"kind": "scalar",
+"func": "GameSetup::DisplayPlayers",
+"src": "v43"
+},
+"0x005E00B0::eax_v0x5E072B": {
+"type": "HWND",
+"kind": "class",
+"func": "NetworkLobby::MessageHandler",
+"src": "Dialog"
+},
+"0x005E1CA0::stack_+0x14": {
+"type": "int",
+"kind": "scalar",
+"func": "GameLobby::DlgProc",
+"src": "ResourceID4CSF"
+},
+"0x005E3D10::edx_v0x5E4104": {
+"type": "int",
+"kind": "scalar",
+"func": "SetupNetworkLobbyDialog",
+"src": "g_MPCooperativeState"
+},
+"0x005E74E0::eax_v0x5E75D9": {
+"type": "int",
+"kind": "scalar",
+"func": "Session::PrepareGame",
+"src": "unknown_libname_27"
+},
+"0x005E9340::eax_v0x5E9375": {
+"type": "int",
+"kind": "scalar",
+"func": "Audio_Helper",
+"src": "g_MPCooperativeState"
+},
+"0x005EB7B0::eax_v0x5EB7C1": {
+"type": "int",
+"kind": "scalar",
+"func": "UpdateMultiplayerLobbySlots",
+"src": "a2"
+},
+"0x005EB7B0::stack_+0xc": {
+"type": "int",
+"kind": "scalar",
+"func": "UpdateMultiplayerLobbySlots",
+"src": "a2"
+},
+"0x005EC3A0::esi_v0x5EC5D0": {
+"type": "ObjectClass *",
+"kind": "ptr",
+"func": "SetupMultiplayerLobbyScreen",
+"src": "vfptr1"
+},
+"0x005EE510::eax_v0x5EE54C": {
+"type": "int",
+"kind": "scalar",
+"func": "RefreshLobbyPlayerSlots",
+"src": "dword_A8B23C"
+},
+"0x005F0180::eax_v0x5F0180": {
+"type": "char",
+"kind": "scalar",
+"func": "HandlePlayerDisconnection",
+"src": "dword_A8022C"
+},
+"0x005F5940::eax_v0x5F5952": {
+"type": "int",
+"kind": "scalar",
+"func": "ObjectClass::ParachuteDrop",
+"src": "AnimClass"
+},
+"0x005F6A70::eax_v0x5F6AEA": {
+"type": "int",
+"kind": "scalar",
+"func": "ObjectClass::CheckGroundHeightDiff",
+"src": "Coord"
+},
+"0x005F9070::eax_v0x5F928C": {
+"type": "__int16",
+"kind": "scalar",
+"func": "ObjectTypeClass::Load2DArt",
+"src": "result"
+},
+"0x005FA620::eax_v0x5FAC45": {
+"type": "int",
+"kind": "scalar",
+"func": "GameSettings::Read",
+"src": "_ESI"
+},
+"0x005FC570::eax_v0x5FCEF2": {
+"type": "__int16",
+"kind": "scalar",
+"func": "ObjectClass::FinalizeCellPlacement",
+"src": "HIWORD"
+},
+"0x005FD970::stack_+0x18": {
+"type": "char *",
+"kind": "ptr",
+"func": "Object::HandleAction",
+"src": "DSurface_ViewBounds"
+},
+"0x006071E0::stack_+0x90": {
+"type": "int",
+"kind": "scalar",
+"func": "RenderGadgetClassAnimation",
+"src": "dword_B0FAF8"
+},
+"0x006071E0::stack_+0x78": {
+"type": "int",
+"kind": "scalar",
+"func": "RenderGadgetClassAnimation",
+"src": "dword_B0F9DC"
+},
+"0x006071E0::stack_+0x94": {
+"type": "int",
+"kind": "scalar",
+"func": "RenderGadgetClassAnimation",
+"src": "dword_B0FB00"
+},
+"0x006071E0::stack_+0x48": {
+"type": "int",
+"kind": "scalar",
+"func": "RenderGadgetClassAnimation",
+"src": "Block"
+},
+"0x00618D40::eax_v0x61A14D": {
+"type": "int",
+"kind": "scalar",
+"func": "Options::DialogProc",
+"src": "v116"
+},
+"0x00618D40::eax_v0x61A29A": {
+"type": "int",
+"kind": "scalar",
+"func": "Options::DialogProc",
+"src": "v116"
+},
+"0x00618D40::esi_v0x61A6EA": {
+"type": "int",
+"kind": "scalar",
+"func": "Options::DialogProc",
+"src": "Parent"
+},
+"0x00618D40::edx_v0x61B798": {
+"type": "void *",
+"kind": "ptr",
+"func": "Options::DialogProc",
+"src": "v380"
+},
+"0x00618D40::esi_v0x61B7E9": {
+"type": "char *",
+"kind": "ptr",
+"func": "Options::DialogProc",
+"src": "v289"
+},
+"0x00618D40::eax_v0x61B8B1": {
+"type": "_DWORD *",
+"kind": "ptr",
+"func": "Options::DialogProc",
+"src": "v379"
+},
+"0x00618D40::stack_+0x7c": {
+"type": "int",
+"kind": "scalar",
+"func": "Options::DialogProc",
+"src": "v324"
+},
+"0x00618D40::edi_v0x61C2DA": {
+"type": "int *",
+"kind": "ptr",
+"func": "Options::DialogProc",
+"src": "v356"
+},
+"0x00618D40::esi_v0x61AFFB": {
+"type": "Options *",
+"kind": "ptr",
+"func": "Options::DialogProc",
+"src": "v379"
+},
+"0x00618D40::ecx_v0x61B017": {
+"type": "char *",
+"kind": "ptr",
+"func": "Options::DialogProc",
+"src": "v236"
+},
+"0x00618D40::edi_v0x61B106": {
+"type": "Text *",
+"kind": "ptr",
+"func": "Options::DialogProc",
+"src": "unsigned"
+},
+"0x00618D40::eax_v0x61ACB0": {
+"type": "int",
+"kind": "scalar",
+"func": "Options::DialogProc",
+"src": "v209"
+},
+"0x0061E700::stack_+0x54": {
+"type": "int",
+"kind": "scalar",
+"func": "GroupLabel::WndProc",
+"src": "this"
+},
+"0x00621E90::stack_+0x18": {
+"type": "int",
+"kind": "scalar",
+"func": "Dialog::DrawBackground",
+"src": "this"
+},
+"0x00621E90::stack_+0x10": {
+"type": "int",
+"kind": "scalar",
+"func": "Dialog::DrawBackground",
+"src": "this"
+},
+"0x00622470::stack_+0x4": {
+"type": "int",
+"kind": "scalar",
+"func": "AddDynamicVector",
+"src": "v6"
+},
+"0x00624810::stack_+0x14": {
+"type": "int",
+"kind": "scalar",
+"func": "DynamicVector::GrowCapacity",
+"src": "v5"
+},
+"0x006248A0::ecx_v0x6248A8": {
+"type": "int",
+"kind": "scalar",
+"func": "Options::EnsureCapacity",
+"src": "this"
+},
+"0x00625440::stack_+0x10": {
+"type": "int",
+"kind": "scalar",
+"func": "DynamicArray::ShrinkCapacity",
+"src": "v6"
+},
+"0x006254D0::ecx_v0x6254D8": {
+"type": "int",
+"kind": "scalar",
+"func": "Options::ReadOptionValue",
+"src": "this"
+},
+"0x00627590::edi_v0x627687": {
+"type": "Struct *",
+"kind": "ptr",
+"func": "MIXFile::Load",
+"src": "v40"
+},
+"0x00627F90::edi_v0x627FBA": {
+"type": "_DWORD *",
+"kind": "ptr",
+"func": "DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::SetCapacity",
+"src": "__2_YAPAXI_Z"
+},
+"0x006297F0::stack_+0x5c": {
+"type": "int",
+"kind": "scalar",
+"func": "ParasiteClass::DeploySquad",
+"src": "v22"
+},
+"0x0062BD50::esi_v0x62BDAD": {
+"type": "int",
+"kind": "scalar",
+"func": "ParasiteClass::Update",
+"src": "abs32"
+},
+"0x0062BD50::edi_v0x62BDAB": {
+"type": "int",
+"kind": "scalar",
+"func": "ParasiteClass::Update",
+"src": "abs32"
+},
+"0x0062BD50::eax_v0x62C113": {
+"type": "_DWORD *",
+"kind": "ptr",
+"func": "ParasiteClass::Update",
+"src": "Matrix3x3"
+},
+"0x0062C540::edi_v0x62C57E": {
+"type": "int",
+"kind": "scalar",
+"func": "ParticleClass::UpdateAnimationDrift",
+"src": "abs32"
+},
+"0x0062C6E0::eax_v0x62C9C8": {
+"type": "_DWORD *",
+"kind": "ptr",
+"func": "UpdateParticleSystem",
+"src": "Matrix3x3"
+},
+"0x0062E4C0::eax_v0x62E4DD": {
+"type": "ObjectClass *",
+"kind": "ptr",
+"func": "ParticleClass::CreateInstance",
+"src": "__2_YAPAXI_Z"
+},
+"0x0062E4C0::ecx_v0x62E5A9": {
+"type": "_DWORD *",
+"kind": "ptr",
+"func": "ParticleClass::CreateInstance",
+"src": "v14"
+},
+"0x0062E840::stack_+0x20": {
+"type": "ObjectClass *",
+"kind": "ptr",
+"func": "UpdateProductionParticleSystem",
+"src": "Random"
+},
+"0x0062ED40::stack_+0x30": {
+"type": "ObjectClass *",
+"kind": "ptr",
+"func": "UpdateBuildingParticleSystem",
+"src": "v32"
+},
+"0x0062F9A0::stack_+0x24": {
+"type": "double",
+"kind": "scalar",
+"func": "UpdateBuildingDamageParticles",
+"src": "v38"
+},
+"0x00630310::eax_v0x6308F1": {
+"type": "_DWORD",
+"kind": "scalar",
+"func": "DecodeFrameSHP",
+"src": "v15"
+},
+"0x00632C40::eax_v0x632C4B": {
+"type": "int",
+"kind": "scalar",
+"func": "CheckSum::AccumulateModulo",
+"src": "Hash_Check"
+},
+"0x00632DC0::eax_v0x632E2B": {
+"type": "int",
+"kind": "scalar",
+"func": "GameClass::WriteEncryptedStream",
+"src": "v6"
+},
+"0x00633130::eax_v0x633221": {
+"type": "int",
+"kind": "scalar",
+"func": "GameClass::ReadEncryptedStream",
+"src": "v12"
+},
+"0x00636E60::eax_v0x636E69": {
+"type": "int",
+"kind": "scalar",
+"func": "ArrayClass::GetAt_Wrap",
+"src": "v4"
+},
+"0x00639800::stack_+0x18": {
+"type": "int",
+"kind": "scalar",
+"func": "CompleteBuildingProduction",
+"src": "v2"
+},
+"0x00639800::stack_+0x20": {
+"type": "int",
+"kind": "scalar",
+"func": "CompleteBuildingProduction",
+"src": "v2"
+},
+"0x0063B550::edi_v0x63B739": {
+"type": "char *",
+"kind": "ptr",
+"func": "ScriptAction::ProcessIdleAction",
+"src": "v60"
+},
+"0x0063B550::esi_v0x63B99A": {
+"type": "char *",
+"kind": "ptr",
+"func": "ScriptAction::ProcessIdleAction",
+"src": "DSurface_ViewBounds"
+},
+"0x0063B550::esi_v0x63BBCD": {
+"type": "Coord3D *",
+"kind": "ptr",
+"func": "ScriptAction::ProcessIdleAction",
+"src": "Display"
+},
+"0x0063B550::edi_v0x63BD40": {
+"type": "ArrayClass *",
+"kind": "ptr",
+"func": "ScriptAction::ProcessIdleAction",
+"src": "ArrayClass"
+},
+"0x0063C690::ebx_v0x63C7AA": {
+"type": "int",
+"kind": "scalar",
+"func": "RenderScenarioActionLines",
+"src": "DSurface_ViewBounds"
+},
+"0x0063C690::edi_v0x63C9F1": {
+"type": "char *",
+"kind": "ptr",
+"func": "RenderScenarioActionLines",
+"src": "v25"
+},
+"0x0063CAE0::esi_v0x63CB8B": {
+"type": "ObjectClass *",
+"kind": "ptr",
+"func": "RenderScenarioActionLines2",
+"src": "Function"
+},
+"0x0063CAE0::edx_v0x63CC46": {
+"type": "char *",
+"kind": "ptr",
+"func": "RenderScenarioActionLines2",
+"src": "v18"
+},
+"0x0063CAE0::esi_v0x63CD93": {
+"type": "char *",
+"kind": "ptr",
+"func": "RenderScenarioActionLines2",
+"src": "v26"
+},
+"0x0063D210::ecx_v0x63D21C": {
+"type": "int",
+"kind": "scalar",
+"func": "ActionScenarioClassCoordToScreen",
+"src": "DSurface_ViewBounds"
+},
+"0x0063F080::ecx_v0x63F1C3": {
+"type": "int",
+"kind": "scalar",
+"func": "ProcessVoxelVertexData",
+"src": "v29"
+},
+"0x00640A40::stack_+0x40": {
+"type": "int",
+"kind": "scalar",
+"func": "Tactical::Radar_Render",
+"src": "LoadFileSHP"
+},
+"0x00641140::esi_v0x641770": {
+"type": "int",
+"kind": "scalar",
+"func": "MiniMap::Render",
+"src": "v46"
+},
+"0x00642C20::eax_v0x642C53": {
+"type": "int",
+"kind": "scalar",
+"func": "SHPClass::Load",
+"src": "LoadFileSHP"
+},
+"0x00643400::eax_v0x643463": {
+"type": "Color *",
+"kind": "ptr",
+"func": "LoadScreen::RenderProgressBackground",
+"src": "FindBuildingAnimByName"
+},
+"0x00643AE0::eax_v0x643BC7": {
+"type": "Color *",
+"kind": "ptr",
+"func": "LoadScreen::Render",
+"src": "FindBuildingAnimByName"
+},
+"0x00643AE0::eax_v0x643C0E": {
+"type": "Color *",
+"kind": "ptr",
+"func": "LoadScreen::Render",
+"src": "Render_Render_642BB0"
+},
+"0x006442D0::stack_+0x14": {
+"type": "int",
+"kind": "scalar",
+"func": "ParticleSystemTypeClass::GetType",
+"src": "off_836EE0"
+},
+"0x0064B240::eax_v0x64B394": {
+"type": "int",
+"kind": "scalar",
+"func": "KickNetworkPlayerNow",
+"src": "v16"
+},
+"0x0064C380::stack_+0x28": {
+"type": "Performance *",
+"kind": "ptr",
+"func": "Network::ProcessEventList",
+"src": "byte_8B4206"
+},
+"0x0064CDA0::eax_v0x64CDE9": {
+"type": "CellClass *",
+"kind": "ptr",
+"func": "ProcessNetworkMapEvent",
+"src": "Network_Process_6E7C20"
+},
+"0x0064CDA0::eax_v0x64CF94": {
+"type": "float *",
+"kind": "ptr",
+"func": "ProcessNetworkMapEvent",
+"src": "Coord"
+},
+"0x0064CDA0::ebx_v0x64CFCC": {
+"type": "_DWORD *",
+"kind": "ptr",
+"func": "ProcessNetworkMapEvent",
+"src": "v76"
+},
+"0x0064CDA0::esi_v0x64D0F0": {
+"type": "char *",
+"kind": "ptr",
+"func": "ProcessNetworkMapEvent",
+"src": "Base"
+},
+"0x0064CDA0::stack_+0xb4": {
+"type": "double",
+"kind": "scalar",
+"func": "ProcessNetworkMapEvent",
+"src": "v72"
+},
+"0x0064CDA0::stack_+0x64": {
+"type": "float",
+"kind": "scalar",
+"func": "ProcessNetworkMapEvent",
+"src": "v73"
+},
+"0x0064DEA0::stack_+0x88": {
+"type": "int",
+"kind": "scalar",
+"func": "Multiplay::LogToSYNC_NOMPDEBUG",
+"src": "GetTextBufferEntry"
+},
+"0x00650A90::edi_v0x650ADA": {
+"type": "int",
+"kind": "scalar",
+"func": "AllocateTriggerLog",
+"src": "v83"
+},
+"0x00653FA0::stack_+0xc": {
+"type": "Color *",
+"kind": "ptr",
+"func": "RenderScoreboardSidebar",
+"src": "FindBuildingAnimByName"
+},
+"0x00654490::ecx_v0x6545B2": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Shroud::ProcessCellVisibility",
+"src": "a2"
+},
+"0x00656EC0::stack_+0x60": {
+"type": "char *",
+"kind": "ptr",
+"func": "Radar::RenderMinimap",
+"src": "v60"
+},
+"0x00656EC0::eax_v0x656F76": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Radar::RenderMinimap",
+"src": "v96"
+},
+"0x00656EC0::ecx_v0x656F81": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Radar::RenderMinimap",
+"src": "v96"
+},
+"0x0065B580::edi_v0x65B71B": {
+"type": "int",
+"kind": "scalar",
+"func": "Warhead::ProcessDamageArea",
+"src": "v15"
+},
+"0x0065CBF0::eax_v0x65CBF4": {
+"type": "int",
+"kind": "scalar",
+"func": "FileClass::Open",
+"src": "CreateFileA"
+},
+"0x0065D8E0::edi_v0x65D8E7": {
+"type": "int",
+"kind": "scalar",
+"func": "DeployScriptActionPlane",
+"src": "v46"
+},
+"0x0065EC30::eax_v0x65ED10": {
+"type": "LPVOID *",
+"kind": "ptr",
+"func": "ExecuteScriptTypeClassActions",
+"src": "v9"
+},
+"0x0065FA70::eax_v0x65FB07": {
+"type": "int",
+"kind": "scalar",
+"func": "CreateTriggerClassIfFarEnough",
+"src": "Team_Load_65FB80"
+},
+"0x006632E0::eax_v0x6632E0": {
+"type": "int",
+"kind": "scalar",
+"func": "JumpjetLocomotionClass::ComputeFloatExpression_3",
+"src": "this"
+},
+"0x006691E0::stack_+0x18": {
+"type": "int",
+"kind": "scalar",
+"func": "Rules::ReadMiscINI",
+"src": "AnimTypeClass"
+},
+"0x0066D530::ebx_v0x66F0CB": {
+"type": "_DWORD *",
+"kind": "ptr",
+"func": "RulesClass::LoadFromINI",
+"src": "_ESI"
+},
+"0x0066D530::ebx_v0x66F101": {
+"type": "_DWORD *",
+"kind": "ptr",
+"func": "RulesClass::LoadFromINI",
+"src": "_ESI"
+},
+"0x0066D530::eax_v0x66FDD1": {
+"type": "int *",
+"kind": "ptr",
+"func": "RulesClass::LoadFromINI",
+"src": "INIClass"
+},
+"0x0066D530::eax_v0x66FE90": {
+"type": "int *",
+"kind": "ptr",
+"func": "RulesClass::LoadFromINI",
+"src": "INIClass"
+},
+"0x0066D530::eax_v0x66FF03": {
+"type": "int *",
+"kind": "ptr",
+"func": "RulesClass::LoadFromINI",
+"src": "INIClass"
+},
+"0x0066D530::eax_v0x670073": {
+"type": "int *",
+"kind": "ptr",
+"func": "RulesClass::LoadFromINI",
+"src": "INIClass"
+},
+"0x0066D530::eax_v0x6700E6": {
+"type": "int *",
+"kind": "ptr",
+"func": "RulesClass::LoadFromINI",
+"src": "INIClass"
+},
+"0x0066D530::eax_v0x670256": {
+"type": "int *",
+"kind": "ptr",
+"func": "RulesClass::LoadFromINI",
+"src": "INIClass"
+},
+"0x0066D530::eax_v0x670408": {
+"type": "int *",
+"kind": "ptr",
+"func": "RulesClass::LoadFromINI",
+"src": "INIClass"
+},
+"0x0066D530::eax_v0x670442": {
+"type": "int *",
+"kind": "ptr",
+"func": "RulesClass::LoadFromINI",
+"src": "INIClass"
+},
+"0x0066D530::eax_v0x67047B": {
+"type": "int *",
+"kind": "ptr",
+"func": "RulesClass::LoadFromINI",
+"src": "INIClass"
+},
+"0x0066D530::eax_v0x670681": {
+"type": "int *",
+"kind": "ptr",
+"func": "RulesClass::LoadFromINI",
+"src": "INIClass"
+},
+"0x0066D530::eax_v0x670780": {
+"type": "int *",
+"kind": "ptr",
+"func": "RulesClass::LoadFromINI",
+"src": "ReadINIClassInfantryTypeList"
+},
+"0x0066D530::eax_v0x671A53": {
+"type": "int *",
+"kind": "ptr",
+"func": "RulesClass::LoadFromINI",
+"src": "INIClass"
+},
+"0x00673E80::eax_v0x673E90": {
+"type": "int",
+"kind": "scalar",
+"func": "RulesClass::ReadPowerupsSection",
+"src": "strtok"
+},
+"0x00679D90::eax_v0x679DBB": {
+"type": "GameConfig *",
+"kind": "ptr",
+"func": "GameConfig::ComputeHash",
+"src": "MultiplayerGameMode"
+},
+"0x00679D90::eax_v0x679DC6": {
+"type": "INIClass *",
+"kind": "ptr",
+"func": "GameConfig::ComputeHash",
+"src": "GameConfig"
+},
+"0x00686890::edx_v0x686A23": {
+"type": "_DWORD *",
+"kind": "ptr",
+"func": "ScenarioClass::SetupAlliances",
+"src": "v13"
+},
+"0x00686B20::eax_v0x687617": {
+"type": "IPersistStream *",
+"kind": "ptr",
+"func": "ScenarioClass::LoadMap",
+"src": "TacticalMap"
+},
+"0x006886B0::stack_+0x50": {
+"type": "_DWORD",
+"kind": "scalar",
+"func": "GenerateScenarioUnits",
+"src": "ppv"
+},
+"0x006886B0::ecx_v0x6888F6": {
+"type": "_DWORD *",
+"kind": "ptr",
+"func": "GenerateScenarioUnits",
+"src": "dword_8871E0"
+},
+"0x006886B0::esi_v0x688B41": {
+"type": "int *",
+"kind": "ptr",
+"func": "GenerateScenarioUnits",
+"src": "__2_YAPAXI_Z"
+},
+"0x006886B0::esi_v0x688B6B": {
+"type": "int *",
+"kind": "ptr",
+"func": "GenerateScenarioUnits",
+"src": "UnitClass"
+},
+"0x00688ED0::ebx_v0x6890BE": {
+"type": "__int16",
+"kind": "scalar",
+"func": "FindInfantryDeployPosition",
+"src": "v14"
+},
+"0x0068ED80::stack_+0x24": {
+"type": "double",
+"kind": "scalar",
+"func": "Render_Get",
+"src": "v13"
+},
+"0x0068F060::ecx_v0x68F07A": {
+"type": "int",
+"kind": "scalar",
+"func": "Screen::TransitionRender",
+"src": "Format"
+},
+"0x0068F060::ebx_v0x68F2D8": {
+"type": "int",
+"kind": "scalar",
+"func": "Screen::TransitionRender",
+"src": "Format"
+},
+"0x00692300::stack_+0x14": {
+"type": "char *",
+"kind": "ptr",
+"func": "Tactical::MouseOver",
+"src": "DSurface_ViewBounds"
+},
+"0x00692300::eax_v0x69234B": {
+"type": "int",
+"kind": "scalar",
+"func": "Tactical::MouseOver",
+"src": "a4"
+},
+"0x00692B60::stack_+0x30": {
+"type": "int",
+"kind": "scalar",
+"func": "Viewport::ProcessScroll",
+"src": "DSurface_ViewBounds"
+},
+"0x00692B60::stack_+0x20": {
+"type": "int",
+"kind": "scalar",
+"func": "Viewport::ProcessScroll",
+"src": "g_DisplayWidth"
+},
+"0x006930A0::stack_+0x14": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Tactical::HandleTacticalMouseInput",
+"src": "a5"
+},
+"0x0069CB00::ebx_v0x69CB1B": {
+"type": "void *",
+"kind": "ptr",
+"func": "VectorClass_Wstring::ddtor",
+"src": "v2"
+},
+"0x0069F670::stack_+0x20": {
+"type": "int",
+"kind": "scalar",
+"func": "JumpjetLocomotionClass::ComputeVoxelTransform2",
+"src": "v14"
+},
+"0x0069F670::stack_+0x1c": {
+"type": "int",
+"kind": "scalar",
+"func": "JumpjetLocomotionClass::ComputeVoxelTransform2",
+"src": "v17"
+},
+"0x006A01A0::eax_v0x6A01C3": {
+"type": "int",
+"kind": "scalar",
+"func": "WalkLocomotion::MoveTo",
+"src": "WalkLocomotion"
+},
+"0x006A05F0::esi_v0x6A15DD": {
+"type": "_DWORD *",
+"kind": "ptr",
+"func": "WalkLocomotion::ProcessCollision",
+"src": "this"
+},
+"0x006A05F0::eax_v0x6A15BF": {
+"type": "_BYTE *",
+"kind": "ptr",
+"func": "WalkLocomotion::ProcessCollision",
+"src": "12"
+},
+"0x006A1C80::eax_v0x6A1E19": {
+"type": "Cell **",
+"kind": "ptr",
+"func": "WalkLocomotion::Update",
+"src": "Coord"
+},
+"0x006A1C80::ecx_v0x6A1EB1": {
+"type": "int",
+"kind": "scalar",
+"func": "WalkLocomotion::Update",
+"src": "v227"
+},
+"0x006A1C80::ebx_v0x6A1EB7": {
+"type": "_DWORD *",
+"kind": "ptr",
+"func": "WalkLocomotion::Update",
+"src": "this"
+},
+"0x006A1C80::edi_v0x6A21AD": {
+"type": "Object *",
+"kind": "ptr",
+"func": "WalkLocomotion::Update",
+"src": "CellCoord"
+},
+"0x006A1C80::eax_v0x6A23F2": {
+"type": "int",
+"kind": "scalar",
+"func": "WalkLocomotion::Update",
+"src": "v53"
+},
+"0x006A1C80::esi_v0x6A2694": {
+"type": "Object *",
+"kind": "ptr",
+"func": "WalkLocomotion::Update",
+"src": "CellCoord"
+},
+"0x006A1C80::eax_v0x6A28AF": {
+"type": "int",
+"kind": "scalar",
+"func": "WalkLocomotion::Update",
+"src": "v79"
+},
+"0x006A1C80::eax_v0x6A299D": {
+"type": "Cell **",
+"kind": "ptr",
+"func": "WalkLocomotion::Update",
+"src": "Coord"
+},
+"0x006A1C80::eax_v0x6A2AE6": {
+"type": "Cell *",
+"kind": "ptr",
+"func": "WalkLocomotion::Update",
+"src": "CellCoord"
+},
+"0x006A1C80::eax_v0x6A2F82": {
+"type": "Cell *",
+"kind": "ptr",
+"func": "WalkLocomotion::Update",
+"src": "CellCoord"
+},
+"0x006A1C80::eax_v0x6A3194": {
+"type": "Object *",
+"kind": "ptr",
+"func": "WalkLocomotion::Update",
+"src": "CellCoord"
+},
+"0x006A1C80::eax_v0x6A3682": {
+"type": "CrateClass *",
+"kind": "ptr",
+"func": "WalkLocomotion::Update",
+"src": "CellCoord"
+},
+"0x006A1C80::ecx_v0x6A3A0B": {
+"type": "Cell *",
+"kind": "ptr",
+"func": "WalkLocomotion::Update",
+"src": "CellCoord"
+},
+"0x006A1C80::esi_v0x6A3C3E": {
+"type": "int *",
+"kind": "ptr",
+"func": "WalkLocomotion::Update",
+"src": "this"
+},
+"0x006A3F00::eax_v0x6A3F0E": {
+"type": "_BYTE",
+"kind": "class",
+"func": "JumpjetLocomotionClass::MoveToChecked_0",
+"src": "this"
+},
+"0x006A5130::eax_v0x6A5187": {
+"type": "char *",
+"kind": "ptr",
+"func": "SidebarClass::CalcBounds",
+"src": "g_DSurface_ViewBounds"
+},
+"0x006A8B30::esi_v0x6A8DC6": {
+"type": "AbstractClass *",
+"kind": "ptr",
+"func": "SidebarClass::UpdateCameos",
+"src": "v22"
+},
+"0x006A8B30::esi_v0x6A8DFB": {
+"type": "SidebarClass *",
+"kind": "ptr",
+"func": "SidebarClass::UpdateCameos",
+"src": "AbstractClass"
+},
+"0x006A8B30::ecx_v0x6A90D9": {
+"type": "int *",
+"kind": "ptr",
+"func": "SidebarClass::UpdateCameos",
+"src": "v36"
+},
+"0x006A8B30::ecx_v0x6A90F5": {
+"type": "_DWORD *",
+"kind": "ptr",
+"func": "SidebarClass::UpdateCameos",
+"src": "v36"
+},
+"0x006A8B30::ecx_v0x6A9195": {
+"type": "int *",
+"kind": "ptr",
+"func": "SidebarClass::UpdateCameos",
+"src": "v36"
+},
+"0x006A8B30::ecx_v0x6A91A6": {
+"type": "int *",
+"kind": "ptr",
+"func": "SidebarClass::UpdateCameos",
+"src": "v36"
+},
+"0x006A9540::stack_+0x80": {
+"type": "int",
+"kind": "scalar",
+"func": "Sidebar::UpdateProductionDisplay",
+"src": "v32"
+},
+"0x006A9540::esi_v0x6AA353": {
+"type": "Color *",
+"kind": "ptr",
+"func": "Sidebar::UpdateProductionDisplay",
+"src": "dword_884C14"
+},
+"0x006AE3F0::esi_v0x6AE4DB": {
+"type": "StartCombo *",
+"kind": "ptr",
+"func": "Skirmish::Setup_DlgProc",
+"src": "DlgCtrlID"
+},
+"0x006B0AE0::eax_v0x6B0AEA": {
+"type": "int",
+"kind": "scalar",
+"func": "TechnoClass::MutateAll",
+"src": "StartAudioControllerAt"
+},
+"0x006B2700::eax_v0x6B2889": {
+"type": "__int16",
+"kind": "scalar",
+"func": "InitializeBuildabilityGrid",
+"src": "v10"
+},
+"0x006B2A70::ecx_v0x6B2CA3": {
+"type": "__int16",
+"kind": "scalar",
+"func": "InitSlaveManagerGrid",
+"src": "HIWORD"
+},
+"0x006B2A70::edx_v0x6B2D73": {
+"type": "__int16",
+"kind": "scalar",
+"func": "InitSlaveManagerGrid",
+"src": "LOWORD"
+},
+"0x006B2A70::ecx_v0x6B2D76": {
+"type": "__int16",
+"kind": "scalar",
+"func": "InitSlaveManagerGrid",
+"src": "HIWORD"
+},
+"0x006B2A70::edx_v0x6B2E3D": {
+"type": "__int16",
+"kind": "scalar",
+"func": "InitSlaveManagerGrid",
+"src": "LOWORD"
+},
+"0x006B2F30::ecx_v0x6B30C5": {
+"type": "_DWORD",
+"kind": "scalar",
+"func": "ProcessBuildingClassConstruction",
+"src": "v100"
+},
+"0x006B3850::ecx_v0x6B3892": {
+"type": "__int16",
+"kind": "scalar",
+"func": "ProcessSlaveManagerTerrain",
+"src": "v2"
+},
+"0x006B3CD0::ecx_v0x6B3D59": {
+"type": "__int16",
+"kind": "scalar",
+"func": "sub_6B3CD0",
+"src": "a3"
+},
+"0x006B3E60::edx_v0x6B3EC4": {
+"type": "__int16",
+"kind": "scalar",
+"func": "ComputeTerrainFlowField",
+"src": "a3"
+},
+"0x006B4100::eax_v0x6B4130": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Map_Get_6B4100",
+"src": "occupant"
+},
+"0x006B4240::esi_v0x6B4267": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Map_Helper_6B4240",
+"src": "v26"
+},
+"0x006B56D0::eax_v0x6B56EB": {
+"type": "int",
+"kind": "scalar",
+"func": "SmudgeTypeClass::GetSize",
+"src": "SearchMIXFile"
+},
+"0x006B5C90::eax_v0x6B5CBB": {
+"type": "int",
+"kind": "scalar",
+"func": "TimedCreateUnitAtCoords",
+"src": "v32"
+},
+"0x006B5F80::eax_v0x6B5F83": {
+"type": "int",
+"kind": "scalar",
+"func": "Cell::IsWalkable",
+"src": "Cell"
+},
+"0x006B9740::ecx_v0x6B992E": {
+"type": "int",
+"kind": "scalar",
+"func": "ChatEvent::ProcessStrings",
+"src": "Block"
+},
+"0x006B9740::edx_v0x6B9947": {
+"type": "int",
+"kind": "scalar",
+"func": "ChatEvent::ProcessStrings",
+"src": "Block"
+},
+"0x006C2810::eax_v0x6C2841": {
+"type": "UnitTypeClass *",
+"kind": "ptr",
+"func": "TClassFactory_UnitTypeClass::GetClassIdentifier",
+"src": "__2_YAPAXI_Z"
+},
+"0x006C2B10::eax_v0x6C2B41": {
+"type": "AircraftTypeClass *",
+"kind": "ptr",
+"func": "TClassFactory_AircraftTypeClass::GetClassIdentifier",
+"src": "__2_YAPAXI_Z"
+},
+"0x006C6F50::esi_v0x6C856A": {
+"type": "u_short *",
+"kind": "ptr",
+"func": "ProcessGameResults",
+"src": "v266"
+},
+"0x006C9F10::eax_v0x6CA0EA": {
+"type": "ObjectClass *",
+"kind": "ptr",
+"func": "ParseMovieSubtitles",
+"src": "__2_YAPAXI_Z"
+},
+"0x006CC260::eax_v0x6CC260": {
+"type": "int",
+"kind": "scalar",
+"func": "Super::GetDefaultTimer",
+"src": "this"
+},
+"0x006CC390::eax_v0x6CC3A3": {
+"type": "int",
+"kind": "scalar",
+"func": "SuperClass::Launch",
+"src": "PlayAudioAt2"
+},
+"0x006CC390::edi_v0x6CD560": {
+"type": "int",
+"kind": "scalar",
+"func": "SuperClass::Launch",
+"src": "v120"
+},
+"0x006D2360::stack_+0x10": {
+"type": "float",
+"kind": "scalar",
+"func": "Matrix3x4::TransformCell",
+"src": "v9"
+},
+"0x006D3290::eax_v0x6D33C1": {
+"type": "int",
+"kind": "scalar",
+"func": "DrawBuildingAnimFrame",
+"src": "TacticalClass"
+},
+"0x006D3870::eax_v0x6D3A63": {
+"type": "int",
+"kind": "scalar",
+"func": "TacticalClass::ClickFindBuilding",
+"src": "a3"
+},
+"0x006D3AC0::eax_v0x6D3CB3": {
+"type": "int",
+"kind": "scalar",
+"func": "TacticalClass::ClickFindOverlay",
+"src": "a3"
+},
+"0x006D5030::ecx_v0x6D5077": {
+"type": "int",
+"kind": "scalar",
+"func": "RadarClass::DrawBlips",
+"src": "v3"
+},
+"0x006D5030::ebx_v0x6D5116": {
+"type": "__int16",
+"kind": "scalar",
+"func": "RadarClass::DrawBlips",
+"src": "v42"
+},
+"0x006D5030::ecx_v0x6D5125": {
+"type": "__int16",
+"kind": "scalar",
+"func": "RadarClass::DrawBlips",
+"src": "v6"
+},
+"0x006D5030::edx_v0x6D5594": {
+"type": "__int16",
+"kind": "scalar",
+"func": "RadarClass::DrawBlips",
+"src": "v4"
+},
+"0x006D5030::stack_+0x1c": {
+"type": "__int16",
+"kind": "scalar",
+"func": "RadarClass::DrawBlips",
+"src": "v4"
+},
+"0x006D5730::eax_v0x6D573F": {
+"type": "int",
+"kind": "scalar",
+"func": "RenderBridgeRadarBlips",
+"src": "CellClass"
+},
+"0x006D6D10::ebx_v0x6D6ED8": {
+"type": "int",
+"kind": "scalar",
+"func": "TacticalClass::DrawBuildingsInView",
+"src": "v18"
+},
+"0x006D6D10::ecx_v0x6D7044": {
+"type": "int",
+"kind": "scalar",
+"func": "TacticalClass::DrawBuildingsInView",
+"src": "v40"
+},
+"0x006D6D10::ebx_v0x6D70BA": {
+"type": "int",
+"kind": "scalar",
+"func": "TacticalClass::DrawBuildingsInView",
+"src": "v28"
+},
+"0x006D7C00::eax_v0x6D7DED": {
+"type": "float *",
+"kind": "ptr",
+"func": "TacticalClass::DrawTerrain",
+"src": "Coord3D"
+},
+"0x006D8C60::eax_v0x6D8D3B": {
+"type": "int",
+"kind": "scalar",
+"func": "sub_6D8C60",
+"src": "g_TacticalClass_Instance"
+},
+"0x006D8DB0::eax_v0x6D8F13": {
+"type": "int",
+"kind": "scalar",
+"func": "TacticalMap::RenderAllObjects",
+"src": "v85"
+},
+"0x006D9A50::edx_v0x6D9AC4": {
+"type": "char *",
+"kind": "ptr",
+"func": "Render_Render_6D9A50",
+"src": "DSurface_ViewBounds"
+},
+"0x006E9140::esi_v0x6E9146": {
+"type": "int",
+"kind": "scalar",
+"func": "TeamClass::Update",
+"src": "v3"
+},
+"0x006E9140::edi_v0x6E99FD": {
+"type": "int *",
+"kind": "ptr",
+"func": "TeamClass::Update",
+"src": "v41"
+},
+"0x006E9140::edi_v0x6E9C22": {
+"type": "_DWORD *",
+"kind": "ptr",
+"func": "TeamClass::Update",
+"src": "v46"
+},
+"0x006EAA90::ebx_v0x6EAA99": {
+"type": "int",
+"kind": "scalar",
+"func": "TeamClass::RecruitMember",
+"src": "v14"
+},
+"0x006EAEE0::ebx_v0x6EAEEC": {
+"type": "BuildingClass *",
+"kind": "ptr",
+"func": "TeamClass::FindClosestEnemy",
+"src": "v6"
+},
+"0x006EC9A0::esi_v0x6EC9C2": {
+"type": "int",
+"kind": "scalar",
+"func": "TeamClass::SelectWaypointTarget",
+"src": "CellFromArray"
+},
+"0x006EE5C0::esi_v0x6EE5E4": {
+"type": "int",
+"kind": "scalar",
+"func": "TeamClass::SelectBestMember",
+"src": "v5"
+},
+"0x006EF110::esi_v0x6EF2C4": {
+"type": "TechnoClass *",
+"kind": "ptr",
+"func": "DispatchTeamOrders",
+"src": "v3"
+},
+"0x006EF700::edi_v0x6EF728": {
+"type": "HouseClass **",
+"kind": "ptr",
+"func": "DeployTeamMembersAtStart",
+"src": "firstUnit"
+},
+"0x006EFC70::stack_+0x10": {
+"type": "int",
+"kind": "scalar",
+"func": "ProcessAISuperWeaponSelection",
+"src": "this"
+},
+"0x006F0130::stack_+0x14": {
+"type": "int",
+"kind": "scalar",
+"func": "TeamClass::CheckMemberSuperWeapon",
+"src": "v27"
+},
+"0x006F3F40::edi_v0x6F3FA4": {
+"type": "SpawnManagerClass *",
+"kind": "ptr",
+"func": "TechnoClass::Update",
+"src": "__2_YAPAXI_Z"
+},
+"0x006F3F40::edi_v0x6F40B3": {
+"type": "CaptureManagerClass *",
+"kind": "ptr",
+"func": "TechnoClass::Update",
+"src": "__2_YAPAXI_Z"
+},
+"0x006F3F40::eax_v0x6F4136": {
+"type": "ParasiteClass *",
+"kind": "ptr",
+"func": "TechnoClass::Update",
+"src": "__2_YAPAXI_Z"
+},
+"0x006F4EB0::eax_v0x6F4F46": {
+"type": "int",
+"kind": "scalar",
+"func": "TechnoClass::PushNearbyUnits",
+"src": "Block"
+},
+"0x006F5090::eax_v0x6F5090": {
+"type": "int",
+"kind": "scalar",
+"func": "FootClass::CompleteProduction",
+"src": "v10"
+},
+"0x006F5190::ecx_v0x6F52EC": {
+"type": "int",
+"kind": "scalar",
+"func": "TechnoClass::DrawHealthBar",
+"src": "Rules"
+},
+"0x006F6AC0::edi_v0x6F6BFF": {
+"type": "CellClass *",
+"kind": "ptr",
+"func": "TechnoClass::CleanupDeploy",
+"src": "CellCoord"
+},
+"0x006F7660::eax_v0x6F7668": {
+"type": "__int16",
+"kind": "scalar",
+"func": "TechnoClass::IsInRange",
+"src": "Math"
+},
+"0x006FCDB0::eax_v0x6FCDBE": {
+"type": "int",
+"kind": "scalar",
+"func": "TechnoClass::AssignTarget_SyncLog",
+"src": "Coord"
+},
+"0x006FFE00::eax_v0x6FFE39": {
+"type": "int",
+"kind": "scalar",
+"func": "NetworkClass::RecordEvent",
+"src": "NetworkClass"
+},
+"0x00700D50::eax_v0x700D83": {
+"type": "int",
+"kind": "scalar",
+"func": "TechnoClass::CanAttack",
+"src": "Cell"
+},
+"0x00706BD0::eax_v0x706BDD": {
+"type": "int",
+"kind": "scalar",
+"func": "QueueTechnoVoiceLine",
+"src": "RenderTechnoOverlaySHP"
+},
+"0x0070AA60::eax_v0x70AA6E": {
+"type": "int",
+"kind": "scalar",
+"func": "TechnoClass::DrawPowerIndicator",
+"src": "RenderTextLabel"
+},
+"0x0070BF50::edi_v0x70BF84": {
+"type": "int *",
+"kind": "ptr",
+"func": "BuildingClass::AllocAndCtor",
+"src": "a2"
+},
+"0x0070E5A0::eax_v0x70E5A9": {
+"type": "int",
+"kind": "scalar",
+"func": "UpdateTechnoIdleTimer",
+"src": "this"
+},
+"0x00712170::stack_+0x24": {
+"type": "int",
+"kind": "scalar",
+"func": "ObjectTypeClass::LoadExtras",
+"src": "v412"
+},
+"0x00712170::edi_v0x7128D6": {
+"type": "int *",
+"kind": "ptr",
+"func": "ObjectTypeClass::LoadExtras",
+"src": "_EBP"
+},
+"0x00712170::eax_v0x71293B": {
+"type": "_DWORD *",
+"kind": "ptr",
+"func": "ObjectTypeClass::LoadExtras",
+"src": "v426"
+},
+"0x00712170::eax_v0x713A61": {
+"type": "void *",
+"kind": "ptr",
+"func": "ObjectTypeClass::LoadExtras",
+"src": "v428"
+},
+"0x00712170::eax_v0x713B5E": {
+"type": "void *",
+"kind": "ptr",
+"func": "ObjectTypeClass::LoadExtras",
+"src": "v428"
+},
+"0x00712170::eax_v0x713CF6": {
+"type": "void *",
+"kind": "ptr",
+"func": "ObjectTypeClass::LoadExtras",
+"src": "v428"
+},
+"0x00712170::eax_v0x713DF3": {
+"type": "void *",
+"kind": "ptr",
+"func": "ObjectTypeClass::LoadExtras",
+"src": "v428"
+},
+"0x00712170::eax_v0x714222": {
+"type": "_DWORD *",
+"kind": "ptr",
+"func": "ObjectTypeClass::LoadExtras",
+"src": "v426"
+},
+"0x00712170::ecx_v0x715FFB": {
+"type": "_DWORD *",
+"kind": "ptr",
+"func": "ObjectTypeClass::LoadExtras",
+"src": "v411"
+},
+"0x00718B70::stack_+0x1c": {
+"type": "char",
+"kind": "scalar",
+"func": "Factory::CalculateExitCell",
+"src": "this"
+},
+"0x00718B70::eax_v0x7190D2": {
+"type": "int",
+"kind": "scalar",
+"func": "Factory::CalculateExitCell",
+"src": "v10"
+},
+"0x00718B70::eax_v0x71920C": {
+"type": "__int16",
+"kind": "scalar",
+"func": "Factory::CalculateExitCell",
+"src": "v51"
+},
+"0x00721D10::eax_v0x721D7E": {
+"type": "TiberiumClass *",
+"kind": "ptr",
+"func": "SmallFunc_721D10",
+"src": "__2_YAPAXI_Z"
+},
+"0x00725C70::eax_v0x725C71": {
+"type": "int",
+"kind": "scalar",
+"func": "ProcessExpiredPointers",
+"src": "v8"
+},
+"0x007265C0::eax_v0x7265FD": {
+"type": "HouseClass *",
+"kind": "ptr",
+"func": "BuildingClass::ExecuteTriggers",
+"src": "HouseClass"
+},
+"0x007327D0::eax_v0x7327FB": {
+"type": "int",
+"kind": "scalar",
+"func": "MoveFeedback::ProcessCommand",
+"src": "EventClass"
+},
+"0x007327D0::esi_v0x732800": {
+"type": "int",
+"kind": "scalar",
+"func": "MoveFeedback::ProcessCommand",
+"src": "v9"
+},
+"0x00733E10::eax_v0x733E23": {
+"type": "VectorClass *",
+"kind": "ptr",
+"func": "SelectFactionThemeMusic",
+"src": "__2_YAPAXI_Z"
+},
+"0x00733E10::ebx_v0x733E3A": {
+"type": "ObjectClass *",
+"kind": "ptr",
+"func": "SelectFactionThemeMusic",
+"src": "SelectFactionThemeMusic_Helper_734330"
+},
+"0x007359F0::edx_v0x735AB8": {
+"type": "__int16",
+"kind": "scalar",
+"func": "UnitClass::CalcMoveTarget",
+"src": "v5"
+},
+"0x007359F0::stack_+0x58": {
+"type": "int",
+"kind": "scalar",
+"func": "UnitClass::CalcMoveTarget",
+"src": "v46"
+},
+"0x00736579::eax_v0x736589": {
+"type": "int",
+"kind": "scalar",
+"func": "InfantryClass::UpdateBehavior",
+"src": "Cell"
+},
+"0x00737C90::stack_+0x34": {
+"type": "int",
+"kind": "scalar",
+"func": "UnitClass::OnUnderAttack",
+"src": "v13"
+},
+"0x0073B140::stack_+0x2c": {
+"type": "int",
+"kind": "scalar",
+"func": "TechnoClass::RenderTechnoSHP",
+"src": "a2"
+},
+"0x0073B140::stack_+0x30": {
+"type": "int",
+"kind": "scalar",
+"func": "TechnoClass::RenderTechnoSHP",
+"src": "a3"
+},
+"0x0073CEC0::edi_v0x73D3DC": {
+"type": "char *",
+"kind": "ptr",
+"func": "TechnoClass::Draw",
+"src": "dword_B054D4"
+},
+"0x00741970::edx_v0x742250": {
+"type": "__int16",
+"kind": "scalar",
+"func": "UnitClass::AssignDestination_SyncLog",
+"src": "HIWORD"
+},
+"0x007473E0::eax_v0x7474A1": {
+"type": "int",
+"kind": "scalar",
+"func": "InitVisceroidArt",
+"src": "SearchMIXFile"
+},
+"0x00747EB0::ecx_v0x747EDA": {
+"type": "void *",
+"kind": "ptr",
+"func": "UnitTypeClass::ClampToGroundHeight",
+"src": "Cell"
+},
+"0x007483B0::eax_v0x7483C4": {
+"type": "int *",
+"kind": "ptr",
+"func": "CopySHPFrameToSurface",
+"src": "4"
+},
+"0x00748AF0::eax_v0x748B0D": {
+"type": "int *",
+"kind": "ptr",
+"func": "sub_748AF0",
+"src": "4"
+},
+"0x0074C9F0::stack_+0x30": {
+"type": "int",
+"kind": "scalar",
+"func": "DestroyVeinholeMonster",
+"src": "v1"
+},
+"0x0074D760::eax_v0x74D787": {
+"type": "int",
+"kind": "scalar",
+"func": "CleanupVeinholeSystem",
+"src": "dword_B1D294"
+},
+"0x00750EC0::eax_v0x750EC6": {
+"type": "int *",
+"kind": "ptr",
+"func": "UpdateVocClass",
+"src": "PushFrontLinkedListAlt"
+},
+"0x00750EC0::eax_v0x750EFE": {
+"type": "AudioMixer *",
+"kind": "ptr",
+"func": "UpdateVocClass",
+"src": "VocClass"
+},
+"0x00750EC0::esi_v0x750ECB": {
+"type": "int *",
+"kind": "ptr",
+"func": "UpdateVocClass",
+"src": "NextAlt"
+},
+"0x00752290::eax_v0x7522D0": {
+"type": "int",
+"kind": "scalar",
+"func": "Audio_Init_752290",
+"src": "AudioStream"
+},
+"0x00752370::eax_v0x752370": {
+"type": "LinkedList *",
+"kind": "ptr",
+"func": "ThemeClass::ClearQueues",
+"src": "AudioQueue"
+},
+"0x00752370::esi_v0x7523B7": {
+"type": "LinkedList *",
+"kind": "ptr",
+"func": "ThemeClass::ClearQueues",
+"src": "AudioQueue"
+},
+"0x00752370::esi_v0x7523ED": {
+"type": "LinkedList *",
+"kind": "ptr",
+"func": "ThemeClass::ClearQueues",
+"src": "AudioQueue"
+},
+"0x00752480::eax_v0x752480": {
+"type": "int",
+"kind": "scalar",
+"func": "UpdateThemeManager",
+"src": "g_InfantryDrawState"
+},
+"0x00752480::esi_v0x7524F1": {
+"type": "LinkedList *",
+"kind": "ptr",
+"func": "UpdateThemeManager",
+"src": "AudioQueue"
+},
+"0x00752760::eax_v0x75283A": {
+"type": "LinkedList *",
+"kind": "ptr",
+"func": "UpdateThemes",
+"src": "AudioQueue"
+},
+"0x00752760::eax_v0x75287F": {
+"type": "LinkedList *",
+"kind": "ptr",
+"func": "UpdateThemes",
+"src": "AudioQueue"
+},
+"0x00752A40::esi_v0x752A5D": {
+"type": "LinkedList *",
+"kind": "ptr",
+"func": "ClearThemeQueuePlaylist",
+"src": "AudioQueue"
+},
+"0x00752AD0::eax_v0x752AD0": {
+"type": "int",
+"kind": "scalar",
+"func": "Audio_Init_752AD0",
+"src": "AudioStream"
+},
+"0x00755A40::eax_v0x755A6E": {
+"type": "float *",
+"kind": "ptr",
+"func": "InterpolateVoxelAnimPose",
+"src": "Math"
+},
+"0x0075ACB0::eax_v0x75ACBD": {
+"type": "int",
+"kind": "scalar",
+"func": "JumpjetLocomotionClass::ConvertCoordToCell_4",
+"src": "Coord"
+},
+"0x0075ADA0::eax_v0x75ADA0": {
+"type": "int",
+"kind": "scalar",
+"func": "JumpjetLocomotionClass::DispatchVirtualCall_8",
+"src": "this"
+},
+"0x0075FA90::ebx_v0x75FB4E": {
+"type": "char *",
+"kind": "ptr",
+"func": "Voxel::ShadowCalc",
+"src": "v61"
+},
+"0x007602E0::ebx_v0x76039E": {
+"type": "char *",
+"kind": "ptr",
+"func": "Surface::RenderToSurfaceVoxel",
+"src": "v61"
+},
+"0x007676F0::edi_v0x767714": {
+"type": "int",
+"kind": "scalar",
+"func": "System_Init_7676F0",
+"src": "v4"
+},
+"0x0076B8C0::esi_v0x76B8F5": {
+"type": "ComPtr *",
+"kind": "ptr",
+"func": "VectorClass_rc_ptr_WDTTerritory::Release",
+"src": "v5"
+},
+"0x0076CA60::edi_v0x76CB30": {
+"type": "ObjectClass *",
+"kind": "ptr",
+"func": "ConstructWDTSelection_Create_76CA60",
+"src": "Audio"
+},
+"0x0076CDA0::eax_v0x76D0E6": {
+"type": "void *",
+"kind": "ptr",
+"func": "ShowWDTTerritorySelection",
+"src": "Count"
+},
+"0x0076D180::eax_v0x76D27C": {
+"type": "void *",
+"kind": "ptr",
+"func": "WDTGame::ProcessTerritorySelection",
+"src": "Count"
+},
+"0x0076E2F0::stack_+0x10": {
+"type": "char",
+"kind": "scalar",
+"func": "Team_Start_76E2F0",
+"src": "v12"
+},
+"0x00770270::ebx_v0x770284": {
+"type": "int *",
+"kind": "ptr",
+"func": "WinsockInterface::ProcessPacket",
+"src": "this"
+},
+"0x00772080::eax_v0x77236B": {
+"type": "_DWORD *",
+"kind": "ptr",
+"func": "WarheadTypeClass::ReadINI",
+"src": "INIClassIntList"
+},
+"0x00772080::stack_+0x10": {
+"type": "int",
+"kind": "scalar",
+"func": "WarheadTypeClass::ReadINI",
+"src": "AnimTypeClass"
+},
+"0x00772080::eax_v0x7723F1": {
+"type": "_DWORD *",
+"kind": "ptr",
+"func": "WarheadTypeClass::ReadINI",
+"src": "INIClassIntList"
+},
+"0x007748B0::stack_+0x0": {
+"type": "DWORD",
+"kind": "class",
+"func": "WinModemClass::GetClassIdentifier",
+"src": "this"
+},
+"0x00777EA0::eax_v0x777EA0": {
+"type": "int",
+"kind": "scalar",
+"func": "ProcessCompositionIME",
+"src": "dword_B7355C"
+},
+"0x0077DC90::eax_v0x77DD4F": {
+"type": "int",
+"kind": "scalar",
+"func": "OpenURLWOL",
+"src": "ProcessInformation"
+},
+"0x0077F900::ebx_v0x77F916": {
+"type": "int",
+"kind": "scalar",
+"func": "Game::ProcessIdle",
+"src": "v6"
+},
+"0x0077F900::ebx_v0x77FDBA": {
+"type": "int",
+"kind": "scalar",
+"func": "Game::ProcessIdle",
+"src": "v15"
+},
+"0x00781FB0::eax_v0x781FE5": {
+"type": "char",
+"kind": "scalar",
+"func": "InsertGameSettings",
+"src": "dword_B77908"
+},
+"0x00785EA0::eax_v0x785F48": {
+"type": "int",
+"kind": "scalar",
+"func": "RunWOLMainLoop_Delete",
+"src": "GetDlgItem"
+},
+"0x00791B10::esi_v0x7922E1": {
+"type": "int",
+"kind": "scalar",
+"func": "WOLobby::ChatDlgProc",
+"src": "Math"
+},
+"0x007A2730::eax_v0x7A2730": {
+"type": "int",
+"kind": "scalar",
+"func": "Network_Create_7A2730",
+"src": "ppv"
+},
+"0x007A5890::eax_v0x7A6E5F": {
+"type": "char",
+"kind": "scalar",
+"func": "CChatEventSink::HandleChatEvent",
+"src": "g_MPCooperativeState"
+},
+"0x007A9970::ebx_v0x7AA1C3": {
+"type": "int",
+"kind": "scalar",
+"func": "CChatEventSink::HandleUserSearch",
+"src": "v57"
+},
+"0x007ACE30::eax_v0x7ACE30": {
+"type": "int",
+"kind": "scalar",
+"func": "DynamicStringArray::Get",
+"src": "String"
+},
+"0x007AD930::stack_+0x10": {
+"type": "int",
+"kind": "scalar",
+"func": "CChatEventSink::GrowBuffer",
+"src": "v6"
+},
+"0x007ADA70::stack_+0x10": {
+"type": "int",
+"kind": "scalar",
+"func": "WOLGameList::EnsureCapacity",
+"src": "v6"
+},
+"0x007AED40::stack_+0x14": {
+"type": "int",
+"kind": "scalar",
+"func": "CChatEventSink::ProcessChatEvent",
+"src": "v5"
+},
+"0x007AF640::eax_v0x7AF640": {
+"type": "int",
+"kind": "scalar",
+"func": "sub_7AF640",
+"src": "DSurface_Alternate"
+},
+"0x007B93F0::stack_+0x4": {
+"type": "int",
+"kind": "scalar",
+"func": "Mouse::DrawCursor",
+"src": "this"
+},
+"0x007BC040::eax_v0x7BC101": {
+"type": "char *",
+"kind": "ptr",
+"func": "CalcSurfaceBlitRects",
+"src": "a3"
+},
+"0x007BC040::ecx_v0x7BC107": {
+"type": "char *",
+"kind": "ptr",
+"func": "CalcSurfaceBlitRects",
+"src": "a6"
+},
+"0x007BC580::edx_v0x7BC5A5": {
+"type": "double",
+"kind": "scalar",
+"func": "sub_7BC580",
+"src": "this"
+},
+"0x007BCB50::ebx_v0x7BCE3C": {
+"type": "int",
+"kind": "scalar",
+"func": "Buffer::FillCircularBufferScroll2",
+"src": "v45"
+},
+"0x007BCB50::ebx_v0x7BCDBF": {
+"type": "int",
+"kind": "scalar",
+"func": "Buffer::FillCircularBufferScroll2",
+"src": "v36"
+},
+"0x007BD690::edx_v0x7BDB89": {
+"type": "int",
+"kind": "scalar",
+"func": "Surface::CommitSurfaceBuffersAudio",
+"src": "v32"
+},
+"0x007C2590::stack_+0x14": {
+"type": "int",
+"kind": "scalar",
+"func": "RenderAudioVideoFrame",
+"src": "v21"
+},
+"0x007C3D60::eax_v0x7C3D7A": {
+"type": "int *",
+"kind": "ptr",
+"func": "sub_7C3D60",
+"src": "4"
+},
+"0x007C946E::esi_v0x7C946F": {
+"type": "int",
+"kind": "scalar",
+"func": "__heap_alloc",
+"src": "a1"
+},
+"0x007C9DD4::ecx_v0x7C9ED3": {
+"type": "char",
+"kind": "scalar",
+"func": "_strtoxl",
+"src": "vfptr"
+},
+"0x007C9FF0::eax_v0x7CA059": {
+"type": "int",
+"kind": "scalar",
+"func": "__makepath",
+"src": "Ext"
+},
+"0x007CC682::edx_v0x7CC696": {
+"type": "char *",
+"kind": "ptr",
+"func": "_wcsstr",
+"src": "result"
+},
+"0x007CD2CB::ecx_v0x7CD3CB": {
+"type": "int",
+"kind": "scalar",
+"func": "_localtime",
+"src": "Time"
+},
+"0x007CE2A5::eax_v0x7CE79F": {
+"type": "int",
+"kind": "scalar",
+"func": "__output",
+"src": "int64_arg"
+},
+"0x007CE2A5::eax_v0x7CE601": {
+"type": "int",
+"kind": "scalar",
+"func": "__output",
+"src": "v30"
+},
+"0x007CFFC8::edi_v0x7D000A": {
+"type": "char *",
+"kind": "ptr",
+"func": "___sbh_resize_block",
+"src": "a2"
+},
+"0x007D21BE::esi_v0x7D2808": {
+"type": "char *",
+"kind": "ptr",
+"func": "__woutput",
+"src": "v46"
+},
+"0x007D3A6D::edx_v0x7D40D5": {
+"type": "char *",
+"kind": "ptr",
+"func": "__winput",
+"src": "malloc"
+},
+"0x007D5EF8::eax_v0x7D5EF8": {
+"type": "int *",
+"kind": "ptr",
+"func": "__FF_MSGBANNER",
+"src": "dword_B78230"
+},
+"0x007D77D6::eax_v0x7D77D9": {
+"type": "int",
+"kind": "scalar",
+"func": "__wctomb_lk",
+"src": "lpMultiByteStr"
+},
+"0x007D9872::esi_v0x7D9C74": {
+"type": "char *",
+"kind": "ptr",
+"func": "___strgtold12",
+"src": "0"
+},
+"0x007DA725::esi_v0x7DA798": {
+"type": "int",
+"kind": "scalar",
+"func": "___crtCompareStringA",
+"src": "strncnt_0"
+},
+"0x007DB207::esi_v0x7DB343": {
+"type": "int",
+"kind": "scalar",
+"func": "_$I10_OUTPUT",
+"src": "77"
+},
+"0x007DB207::edi_v0x7DB382": {
+"type": "__int16",
+"kind": "scalar",
+"func": "_$I10_OUTPUT",
+"src": "v9"
+},
+"0x007DD505::eax_v0x7DDA02": {
+"type": "int",
+"kind": "scalar",
+"func": "_output",
+"src": "int64_arg_1"
+},
+"0x007DD505::eax_v0x7DD864": {
+"type": "int",
+"kind": "scalar",
+"func": "_output",
+"src": "v28"
+}
+}
