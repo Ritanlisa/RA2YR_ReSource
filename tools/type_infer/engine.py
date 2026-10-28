@@ -477,13 +477,50 @@ class TypeInferenceEngine:
         } if os.path.exists(MEMBER_TYPES_PATH) else {}
         self._member_types_by_class_classes = set(self.lattice._ancestors)
 
+        # X194: 约束图的成员变量是地址限定形式 0xADDR:this.member(0xNN)，
+        # 而 _parse_member_var 期望类限定形式（Class::Func.this.member(0xNN)）——
+        # 两者永不匹配，这是 member_types 通道实测恒为 0 的根因（60,703 条证据空转）。
+        _owner_by_addr = {}
+        for _fname in ("ida_function_protos.json", "vtable_slot_signatures.json"):
+            _p = os.path.normpath(os.path.join(
+                os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
+                "anchors", _fname))
+            if not os.path.exists(_p):
+                continue
+            try:
+                with open(_p, "r", encoding="utf-8") as _f:
+                    for _a, _v in json.load(_f).items():
+                        _nm = _v.get("name") or ""
+                        if "::" in _nm:
+                            try:
+                                _owner_by_addr["0x%08X" % int(_a, 16)] = _nm.split("::")[0]
+                            except ValueError:
+                                pass
+            except Exception:
+                pass
+        _ADDR_MEMBER_RE = re.compile(r"^(0x[0-9A-Fa-f]{8}):this\.member\(0x([0-9A-Fa-f]+)\)$")
+        n_addr_form = 0
+
         matched = 0
         for var_name, var_id in self.var_to_id.items():
             parsed = _parse_member_var(var_name)
             if parsed is None:
-                continue
+                _m_ad = _ADDR_MEMBER_RE.match(var_name)
+                if _m_ad is None:
+                    continue
+                _cls = _owner_by_addr.get("0x%08X" % int(_m_ad.group(1), 16))
+                if not _cls:
+                    continue
+                parsed = (_cls, int(_m_ad.group(2), 16))
+                n_addr_form += 1
             cls_name, offset = parsed
             anchor_info = member_types.get((cls_name, offset))
+            if anchor_info is None:
+                # 成员可能声明在基类：沿 RTTI 继承链回退
+                for _anc in (self.lattice._ancestors.get(cls_name) or ()):
+                    anchor_info = member_types.get((_anc, offset))
+                    if anchor_info is not None:
+                        break
             if anchor_info is None:
                 continue
             typ_name = anchor_info.get("type", "")
@@ -503,7 +540,7 @@ class TypeInferenceEngine:
             self.anchors.append(anchor)
             self.anchor_by_var[var_id].append(anchor)
             matched += 1
-        print(f"  member_types anchors: {matched}", file=sys.stderr)
+        print(f"  member_types anchors: {matched} (addr-form vars seen: {n_addr_form})", file=sys.stderr)
 
         # ── csp_functions 签名锚点（RTTI 重锚定提取器的地址式变量）──
         self._load_csp_signature_anchors(valid_classes, member_types)
