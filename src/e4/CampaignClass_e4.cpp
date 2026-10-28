@@ -332,7 +332,7 @@ LABEL_47:
   ((Vector *)v31)->Clear(); /*0x49ca7e*/
   *(unsigned int *)v30.__tail_0 = &off_7E1668; /*0x49ca8f*/
   ((BufferIOFileClass *)&v30)->Dtor(); /*0x49ca96*/
-  HashTable::DestroyHashTableINIClass((INIClass *)&v28); /*0x49ca9f*/
+  ((HashTable *)(INIClass *)&v28)->DestroyHashTableINIClass(); /*0x49ca9f*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x49caab*/
   v35 = 0; /*0x49cab2*/
   ((Vector *)v34)->Clear(); /*0x49cab9*/

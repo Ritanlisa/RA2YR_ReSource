@@ -11576,7 +11576,7 @@ void* ObjectClass::LoadAccountInfoWOL() {
       v6 = CharToWideString(v5); /*0x77896f*/
       WideString::Reassign((void **)&v11.uniqueId, (wchar_t *)v6); /*0x778979*/
     }
-    HashTable::DestroyHashTableINIClass((INIClass *)&v11.nextArrayIndex); /*0x778982*/
+    ((HashTable *)(INIClass *)&v11.nextArrayIndex)->DestroyHashTableINIClass(); /*0x778982*/
   }
   v7 = (ReferenceCounted *)operator new(0x44u); /*0x778989*/
   if ( v7 ) /*0x778993*/
@@ -11648,7 +11648,7 @@ int ObjectClass::ReadSettingsWOL() {
     DeleteAndZero((ObjectClass *)&v3); /*0x779d97*/
     INIClass::SaveToPipe(&v4, (int)&v5); /*0x779da5*/
   }
-  HashTable::DestroyHashTableINIClass(&v4); /*0x779dae*/
+  ((HashTable *)&v4)->DestroyHashTableINIClass(); /*0x779dae*/
   *(unsigned int *)v5.q000 = &off_7E1668; /*0x779db7*/
   return ((BufferIOFileClass *)&v5)->Dtor(); /*0x779dc4*/
 }

@@ -3628,7 +3628,7 @@ LABEL_56:
   Debug::Log(); /*0x6bd785*/
   memcpy(dword_886980, WinMain_Init(v226, v224, 1), 0x204u); /*0x6bd7ad*/
   v182 = (int)algn_886B84; /*0x6bd7ad*/
-  HashTable::DestroyHashTableINIClass((INIClass *)v226); /*0x6bd7b5*/
+  ((HashTable *)(INIClass *)v226)->DestroyHashTableINIClass(); /*0x6bd7b5*/
   WinMain_Helper_65C2A0(&v225); /*0x6bd7c0*/
   v183 = dword_81C1D0; /*0x6bd7c5*/
   SetSoundWarning(-2); /*0x6bd7d0*/

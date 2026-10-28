@@ -1258,7 +1258,7 @@ unsigned int * PlayerProfile_Load(unsigned int * a1, const char ** a2)
       DeleteAndZero((ObjectClass *)&v17.ptr_8); /*0x778ee8*/
       DeleteAndZero((ObjectClass *)&v17.ptr_C); /*0x778ef1*/
       DeleteAndZero((ObjectClass *)&v17.ptr_4); /*0x778efa*/
-      HashTable::DestroyHashTableINIClass((INIClass *)&v17.nextArrayIndex); /*0x778f03*/
+      ((HashTable *)(INIClass *)&v17.nextArrayIndex)->DestroyHashTableINIClass(); /*0x778f03*/
       v17.spawnStatus = (int)&off_7E1668; /*0x778f0f*/
       ((BufferIOFileClass *)&v17.spawnStatus)->Dtor(); /*0x778f1a*/
       return (ObjectClass *)v16; /*0x778f1f*/
@@ -1267,7 +1267,7 @@ unsigned int * PlayerProfile_Load(unsigned int * a1, const char ** a2)
     {
       ((ObjectClass *)a1)->LoadAccountInfoWOL(); /*0x778b65*/
       DeleteAndZero((ObjectClass *)&v17.ptr_4); /*0x778b6e*/
-      HashTable::DestroyHashTableINIClass((INIClass *)&v17.nextArrayIndex); /*0x778b77*/
+      ((HashTable *)(INIClass *)&v17.nextArrayIndex)->DestroyHashTableINIClass(); /*0x778b77*/
       v17.spawnStatus = (int)&off_7E1668; /*0x778b83*/
       ((BufferIOFileClass *)&v17.spawnStatus)->Dtor(); /*0x778b8e*/
       return a1; /*0x778b93*/
@@ -5124,7 +5124,7 @@ char sub_779730()
                        (uint8_t *)&off_84A11C,
                        (uint8_t *)g_INI_Key_AutoLogin,
                        1);
-    HashTable::DestroyHashTableINIClass(v2); /*0x779806*/
+    ((HashTable *)v2)->DestroyHashTableINIClass(); /*0x779806*/
     v8[0] = (unsigned int)&off_7E1668; /*0x77980f*/
     ((BufferIOFileClass *)(v8))->Dtor(); /*0x779817*/
     return Bool_Overwrite; /*0x77981c*/
@@ -5178,7 +5178,7 @@ int ReadWOLGameOption(INIClass * a1)
     INIClass::SetBool((char *)v3, (uint8_t *)&off_84A11C, g_INI_Key_AutoLogin, a1); /*0x779909*/
     INIClass::SaveToPipe(v3, (int)v9); /*0x779917*/
   }
-  HashTable::DestroyHashTableINIClass(v3); /*0x779920*/
+  ((HashTable *)v3)->DestroyHashTableINIClass(); /*0x779920*/
   v9[0] = (unsigned int)&off_7E1668; /*0x779929*/
   return ((BufferIOFileClass *)(v9))->Dtor(); /*0x779936*/
 }
@@ -5221,7 +5221,7 @@ char sub_779940()
                        (uint8_t *)&off_84A11C,
                        (uint8_t *)aAddmatchbuddie,
                        1);
-    HashTable::DestroyHashTableINIClass(v2); /*0x779a16*/
+    ((HashTable *)v2)->DestroyHashTableINIClass(); /*0x779a16*/
     v8[0] = (unsigned int)&off_7E1668; /*0x779a1f*/
     ((BufferIOFileClass *)(v8))->Dtor(); /*0x779a27*/
     return Bool_Overwrite; /*0x779a2c*/
@@ -5275,7 +5275,7 @@ int ReadWOLLobbyOption(INIClass * a1)
     INIClass::SetBool((char *)v3, (uint8_t *)&off_84A11C, aAddmatchbuddie, a1); /*0x779b19*/
     INIClass::SaveToPipe(v3, (int)v9); /*0x779b27*/
   }
-  HashTable::DestroyHashTableINIClass(v3); /*0x779b30*/
+  ((HashTable *)v3)->DestroyHashTableINIClass(); /*0x779b30*/
   v9[0] = (unsigned int)&off_7E1668; /*0x779b39*/
   return ((BufferIOFileClass *)(v9))->Dtor(); /*0x779b46*/
 }

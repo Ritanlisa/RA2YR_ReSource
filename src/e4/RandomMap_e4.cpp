@@ -3109,7 +3109,7 @@ AbstractClass * * LoadInfo(wchar_t * Destination, int a2)
   /* X11: ptr_0 install elided (implicit via INIClass virtuals 0x597e1c) */
   if ( !FileStraw::Open((FileStraw *)&v4, (int)&v5, 0) ) /*0x597e2b*/
   {
-    HashTable::DestroyHashTableINIClass(&v4); /*0x597f38*/
+    ((HashTable *)&v4)->DestroyHashTableINIClass(); /*0x597f38*/
     /* X11: ptr_0 install elided (implicit via CCFileClass virtuals 0x597f44) */
     v7 = 0; /*0x597f4c*/
     Vector::Clear((int)v6); /*0x597f53*/
@@ -3143,7 +3143,7 @@ AbstractClass * * LoadInfo(wchar_t * Destination, int a2)
     strncpy((char *)Destination + 256, (const char *)(a2 + 304), 0x20u); /*0x597ecd*/
   Destination->u32_1B0 = *(unsigned int *)(a2 + 24); /*0x597ee5*/
   Destination->u32_1AC = *(unsigned int *)(a2 + 20); /*0x597eee*/
-  HashTable::DestroyHashTableINIClass(&v4); /*0x597ef4*/
+  ((HashTable *)&v4)->DestroyHashTableINIClass(); /*0x597ef4*/
   /* X11: ptr_0 install elided (implicit via CCFileClass virtuals 0x597f00) */
   v7 = 0; /*0x597f08*/
   Vector::Clear((int)v6); /*0x597f0f*/
@@ -4568,7 +4568,7 @@ LABEL_153:
     StringCSF = GetStringCSF(aTxtRandomMapDe, 0, aDRa2mdpostMapg, 6746); /*0x59a64b*/
     wcscpyv52->__pad_078, StringCSF); /*0x59a652*/
   }
-  return HashTable::DestroyHashTableINIClass(&v81); /*0x59a663*/
+  return ((HashTable *)&v81)->DestroyHashTableINIClass(); /*0x59a663*/
 
 }
 } // namespace gamemd

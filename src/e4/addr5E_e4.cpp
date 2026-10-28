@@ -1670,7 +1670,7 @@ LABEL_171:
               wcscpy((wchar_t *)&dword_A8B320 + 1, (const wchar_t *)v139); /*0x5e5386*/
               v138 = 1; /*0x5e538e*/
             }
-            HashTable::DestroyHashTableINIClass((INIClass *)&v197.ambientSoundController[3]); /*0x5e5394*/
+            ((HashTable *)(INIClass *)&v197.ambientSoundController[3])->DestroyHashTableINIClass(); /*0x5e5394*/
           }
           /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x5e53a0*/
           v203 = 0; /*0x5e53ab*/
@@ -3262,7 +3262,7 @@ if ( v64 && v65 )
           v4[0] = &g_ptr_7EA5F4; /*0x5e65d9*/
           if ( !FileStraw::Open(v4, (int)v10, 0) ) /*0x5e65e1*/
           {
-            HashTable::DestroyHashTableINIClass(v4); /*0x5e65ee*/
+            ((HashTable *)v4)->DestroyHashTableINIClass(); /*0x5e65ee*/
             v10[0] = &g_ptr_7E16B0; /*0x5e65fa*/
             v12 = 0; /*0x5e6602*/
             Vector::Clear((int)v11); /*0x5e6609*/
@@ -3285,7 +3285,7 @@ if ( v64 && v65 )
             if ( !Int_Overwrite ) /*0x5e6685*/
               Int_Overwrite = 8; /*0x5e6687*/
           }
-          HashTable::DestroyHashTableINIClass(v4); /*0x5e6690*/
+          ((HashTable *)v4)->DestroyHashTableINIClass(); /*0x5e6690*/
           v10[0] = &g_ptr_7E16B0; /*0x5e669c*/
           v12 = 0; /*0x5e66a4*/
           Vector::Clear((int)v11); /*0x5e66ab*/

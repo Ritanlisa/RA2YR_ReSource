@@ -7009,7 +7009,7 @@ int sub_40DFB0()
 namespace gamemd {
 int unknown_libname_5()
 {
-  HashTable::DestroyHashTableINIClass((void **)&dword_887180); /*0x40e055*/
+  ((HashTable *)(void **)&dword_887180)->DestroyHashTableINIClass(); /*0x40e055*/
 }
 } // namespace gamemd
 
@@ -7042,7 +7042,7 @@ int sub_40E060()
 namespace gamemd {
 int unknown_libname_6()
 {
-  HashTable::DestroyHashTableINIClass((void **)&dword_887208); /*0x40e105*/
+  ((HashTable *)(void **)&dword_887208)->DestroyHashTableINIClass(); /*0x40e105*/
 }
 } // namespace gamemd
 
@@ -7075,7 +7075,7 @@ int sub_40E110()
 namespace gamemd {
 int unknown_libname_7()
 {
-  HashTable::DestroyHashTableINIClass((void **)&dword_887128); /*0x40e1b5*/
+  ((HashTable *)(void **)&dword_887128)->DestroyHashTableINIClass(); /*0x40e1b5*/
 }
 } // namespace gamemd
 
@@ -7114,7 +7114,7 @@ int sub_40E1C0()
 namespace gamemd {
 int unknown_libname_8()
 {
-  HashTable::DestroyHashTableINIClass((void **)&dword_887058); /*0x40e265*/
+  ((HashTable *)(void **)&dword_887058)->DestroyHashTableINIClass(); /*0x40e265*/
 }
 } // namespace gamemd
 
@@ -7147,7 +7147,7 @@ int sub_40E270()
 namespace gamemd {
 int unknown_libname_9()
 {
-  HashTable::DestroyHashTableINIClass((void **)&dword_8870C0); /*0x40e315*/
+  ((HashTable *)(void **)&dword_8870C0)->DestroyHashTableINIClass(); /*0x40e315*/
 }
 } // namespace gamemd
 
@@ -7185,7 +7185,7 @@ GenericNode * GenericNode::sub_40E390(GenericNode ** Block, char a2)
 namespace gamemd {
 ObjectClass *  ObjectClass::sub_40E4A0(void ** Block, char a2)
 {
-  HashTable::DestroyHashTableINIClass((INIClass *)Block); /*0x40e4a3*/
+  ((HashTable *)(INIClass *)Block)->DestroyHashTableINIClass(); /*0x40e4a3*/
   if ( (a2 & 1) != 0 ) /*0x40e4ad*/
     operator delete((Block)); /*0x40e4b0*/
   return &Block->ptr_0; /*0x40e4ba*/

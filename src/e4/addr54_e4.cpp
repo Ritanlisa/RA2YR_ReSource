@@ -1170,7 +1170,7 @@ LABEL_217:
   Vector::Clear((int)v159); /*0x546d65*/
   v158[0] = (int)&off_7E1668; /*0x546d71*/
   ((BufferIOFileClass *)v158)->Dtor(); /*0x546d78*/
-  return HashTable::DestroyHashTableINIClass(v75); /*0x546d86*/
+  return ((HashTable *)v75)->DestroyHashTableINIClass(); /*0x546d86*/
 
 }
 

@@ -6158,7 +6158,7 @@ void LoadingScreen::Render()
       *(unsigned int *)&v80.m_Colors[328] = 0; /*0x5540bf*/
       Vector::Clear((int)&v80.m_Colors[316]); /*0x5540ca*/
       BufferIOFileClass::Destruct((BufferIOFileClass *)&v80.m_Colors[228]); /*0x5540d6*/
-      return (const wchar_t *)HashTable::DestroyHashTableINIClass((INIClass *)&v80.m_Colors[140]); /*0x5540e2*/
+      return (const wchar_t *)((HashTable *)(INIClass *)&v80.m_Colors[140])->DestroyHashTableINIClass(); /*0x5540e2*/
     }
     else
     {

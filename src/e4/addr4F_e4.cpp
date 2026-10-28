@@ -1546,7 +1546,7 @@ int sub_4F1B80(char ** a1, int a2)
       v3 = 0; /*0x4f1c5c*/
     else
       v3 = LoadFromINIGraphicMenu(v4, &v5, a2); /*0x4f1c58*/
-    HashTable::DestroyHashTableINIClass(&v5); /*0x4f1c62*/
+    ((HashTable *)&v5)->DestroyHashTableINIClass(); /*0x4f1c62*/
     /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x4f1c6e*/
     v8 = 0; /*0x4f1c76*/
     Vector::Clear((int)v7); /*0x4f1c7d*/

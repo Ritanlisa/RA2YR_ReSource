@@ -1133,7 +1133,7 @@ void HouseClass::processTargetSelection() {
 // 0x4F2810
 namespace gamemd { 
 void* HouseClass::g_var_89a06f(int a2) {
-  HashTable::DestroyHashTableINIClass((INIClass *)this); /*0x4f2813*/
+  ((HashTable *)(INIClass *)this)->DestroyHashTableINIClass(); /*0x4f2813*/
   if ( (a2 & 1) != 0 ) /*0x4f281d*/
     operator delete((this)); /*0x4f2820*/
   return &this->ptr_0; /*0x4f282a*/

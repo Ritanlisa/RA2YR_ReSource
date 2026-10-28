@@ -301,7 +301,7 @@ HashTable_flat * * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int
       this->M60 = 0; /*0x764efb*/
       this->M40 = 0; /*0x764efe*/
     }
-    HashTable::DestroyHashTableINIClass((INIClass *)&v24.occupant); /*0x764f05*/
+    ((HashTable *)(INIClass *)&v24.occupant)->DestroyHashTableINIClass(); /*0x764f05*/
   }
   v24.customSound = (int)&off_7E1668; /*0x764f0e*/
   ((BufferIOFileClass *)&v24.customSound)->Dtor(); /*0x764f16*/
@@ -419,7 +419,7 @@ AbstractClass * * E4Recv_7651D0::sub_7651D0()
   INIClass::SaveToPipe((INIClass *)&v7.ptr_8, (int)&v7.location[1]); /*0x76534a*/
   v7.location[1] = (int)&off_7E1668; /*0x765356*/
   ((BufferIOFileClass *)&v7.location[1])->Dtor(); /*0x765361*/
-  return HashTable::DestroyHashTableINIClass((INIClass *)&v7.ptr_8); /*0x76536f*/
+  return ((HashTable *)(INIClass *)&v7.ptr_8)->DestroyHashTableINIClass(); /*0x76536f*/
 
 }
 }
@@ -984,7 +984,7 @@ LABEL_68:
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7ED970) */  /*0x769b92*/
   MSEngine::ddtor(&v51); /*0x769b9a*/
   BufferIOFileClass::Destruct(&v56); /*0x769ba6*/
-  HashTable::DestroyHashTableINIClass((INIClass *)&v55.ambientSoundController[1]); /*0x769baf*/
+  ((HashTable *)(INIClass *)&v55.ambientSoundController[1])->DestroyHashTableINIClass(); /*0x769baf*/
   return BufferIOFileClass::Destruct((BufferIOFileClass *)v55.needsRedraw); /*0x769bc0*/
 
 }
@@ -1547,7 +1547,7 @@ AbstractClass * * ObjectClass::sub_764A20()
     ((String *)&v4)->Assign( g_INI_Key_CampaignID); /*0x764ac5*/
     Int = INIClass::ReadInt((bool *)&v4.ptr_4, (char **)this, (char **)&v4, -1); /*0x764adf*/
     DeleteAndZero((ObjectClass *)&v4); /*0x764ae1*/
-    HashTable::DestroyHashTableINIClass((INIClass *)&v4.ptr_4); /*0x764aea*/
+    ((HashTable *)(INIClass *)&v4.ptr_4)->DestroyHashTableINIClass(); /*0x764aea*/
     *(unsigned int *)v16.__pad_0 = &off_7E1668; /*0x764af3*/
     ((BufferIOFileClass *)&v16)->Dtor(); /*0x764afb*/
     return Int; /*0x764b00*/

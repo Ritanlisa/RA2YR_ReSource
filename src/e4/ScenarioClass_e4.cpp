@@ -440,7 +440,7 @@ LABEL_21:
   ((Vector *)v21)->Clear(); /*0x683cd8*/
   *(unsigned int *)v20.__tail_0 = &off_7E1668; /*0x683ce1*/
   ((BufferIOFileClass *)&v20)->Dtor(); /*0x683ce9*/
-  HashTable::DestroyHashTableINIClass((INIClass *)&v19); /*0x683cf2*/
+  ((HashTable *)(INIClass *)&v19)->DestroyHashTableINIClass(); /*0x683cf2*/
   Debug::Log(); /*0x683cfd*/
   v11 = StringList::Find((StringList *)((char *)&stru_A83CD9.attachedTag + 3), aLoading); /*0x683d0f*/
   ((ThemeClass *)((char *)&stru_A83CD9.attachedTag + 3))->Play(v11); /*0x683d1a*/
@@ -614,7 +614,7 @@ int ScenarioClass_Construct(void * a2)
       ((Vector *)v13)->Clear(); /*0x686862*/
       *(unsigned int *)v12.__tail_0 = &off_7E1668; /*0x68686b*/
       ((BufferIOFileClass *)&v12)->Dtor(); /*0x686873*/
-      HashTable::DestroyHashTableINIClass((INIClass *)&v11); /*0x68687c*/
+      ((HashTable *)(INIClass *)&v11)->DestroyHashTableINIClass(); /*0x68687c*/
       return Map; /*0x686881*/
     }
     else
@@ -625,7 +625,7 @@ int ScenarioClass_Construct(void * a2)
       ((Vector *)v13)->Clear(); /*0x6867ea*/
       *(unsigned int *)v12.__tail_0 = &off_7E1668; /*0x6867f3*/
       ((BufferIOFileClass *)&v12)->Dtor(); /*0x6867fb*/
-      HashTable::DestroyHashTableINIClass((INIClass *)&v11); /*0x686804*/
+      ((HashTable *)(INIClass *)&v11)->DestroyHashTableINIClass(); /*0x686804*/
       return 0; /*0x686809*/
     }
   }

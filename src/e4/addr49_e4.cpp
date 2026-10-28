@@ -2359,7 +2359,7 @@ int E4Recv_49D390::LoadCoopCampaignSave(IUnknown * aP1)
   ((INIClass *)(/*0x49d602*/ (unsigned __int8 ***)v20))->GetString((unsigned __int8 *)v25, (unsigned __int8 *)Buffer, g_Str_undefined, aP1, 260);
   if ( strcmp(aP1, g_Str_undefined) ) /*0x49d614*/
     goto LABEL_5; /*0x49d63a*/
-  HashTable::DestroyHashTableINIClass(v20); /*0x49d644*/
+  ((HashTable *)v20)->DestroyHashTableINIClass(); /*0x49d644*/
   v17[0] = &g_ptr_7E16B0; /*0x49d64d*/
   v19 = 0; /*0x49d655*/
   Vector::Clear((int)v18); /*0x49d659*/

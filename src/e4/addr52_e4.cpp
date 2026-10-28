@@ -1278,7 +1278,7 @@ LABEL_94:
   if ( !CCINIClass::Load((CCINIClass *)&v83[284], (int)&v83[68], 0, 0) ) /*0x52c763*/
   {
     Debug::Log(); /*0x52c771*/
-    HashTable::DestroyHashTableINIClass((INIClass *)&v83[284]); /*0x52c780*/
+    ((HashTable *)(INIClass *)&v83[284])->DestroyHashTableINIClass(); /*0x52c780*/
     goto LABEL_93; /*0x52c785*/
   }
   Audio::LoadSoundINI(v77); /*0x52c78a*/
@@ -1292,7 +1292,7 @@ LABEL_94:
     *(unsigned int *)&v83[276] = 0; /*0x52c7ea*/
     Vector::Clear((int)&v83[264]); /*0x52c7f1*/
     BufferIOFileClass::Destruct((BufferIOFileClass *)&v83[176]); /*0x52c7fd*/
-    HashTable::DestroyHashTableINIClass((INIClass *)&v83[284]); /*0x52c809*/
+    ((HashTable *)(INIClass *)&v83[284])->DestroyHashTableINIClass(); /*0x52c809*/
     *(unsigned int *)&v83[68] = &g_ptr_7E16B0; /*0x52c80e*/
     goto LABEL_94; /*0x52c812*/
   }
@@ -1302,13 +1302,13 @@ LABEL_94:
   if ( !CCINIClass::Load((CCINIClass *)&v83[372], (int)&v83[176], 0, 0) ) /*0x52c843*/
   {
     Debug::Log(); /*0x52c851*/
-    HashTable::DestroyHashTableINIClass((INIClass *)&v83[372]); /*0x52c860*/
+    ((HashTable *)(INIClass *)&v83[372])->DestroyHashTableINIClass(); /*0x52c860*/
     *(unsigned int *)&v83[176] = &g_ptr_7E16B0; /*0x52c86c*/
     *(unsigned int *)&v83[276] = 0; /*0x52c877*/
     Vector::Clear((int)&v83[264]); /*0x52c87e*/
     BufferIOFileClass::Destruct((BufferIOFileClass *)&v83[176]); /*0x52c88a*/
 LABEL_109:
-    HashTable::DestroyHashTableINIClass((INIClass *)&v83[284]); /*0x52c9a2*/
+    ((HashTable *)(INIClass *)&v83[284])->DestroyHashTableINIClass(); /*0x52c9a2*/
     CCFileClass::Destruct((CCFileClass *)&v83[68]); /*0x52c9b2*/
     return -1; /*0x52c9c3*/
   }
@@ -1321,7 +1321,7 @@ LABEL_109:
     Debug::Log(); /*0x52c8d9*/
 LABEL_108:
     CCFileClass::Destruct((CCFileClass *)&v83[548]); /*0x52c97e*/
-    HashTable::DestroyHashTableINIClass((INIClass *)&v83[372]); /*0x52c991*/
+    ((HashTable *)(INIClass *)&v83[372])->DestroyHashTableINIClass(); /*0x52c991*/
     CCFileClass::Destruct((CCFileClass *)&v83[176]); /*0x52c99d*/
     goto LABEL_109; /*0x52c99d*/
   }
@@ -1335,7 +1335,7 @@ LABEL_108:
   if ( !InitBulkData() ) /*0x52c94d*/
   {
 LABEL_107:
-    HashTable::DestroyHashTableINIClass((INIClass *)&v83[460]); /*0x52c972*/
+    ((HashTable *)(INIClass *)&v83[460])->DestroyHashTableINIClass(); /*0x52c972*/
     goto LABEL_108; /*0x52c979*/
   }
   Debug::Log(); /*0x52c954*/
@@ -1396,11 +1396,11 @@ LABEL_106:
   InitCommands(v81); /*0x52cae4*/
   Debug::Log(); /*0x52caee*/
   CompleteGameInit(v82); /*0x52caf6*/
-  HashTable::DestroyHashTableINIClass((INIClass *)&v83[460]); /*0x52cb02*/
+  ((HashTable *)(INIClass *)&v83[460])->DestroyHashTableINIClass(); /*0x52cb02*/
   CCFileClass::Destruct((CCFileClass *)&v83[548]); /*0x52cb0e*/
-  HashTable::DestroyHashTableINIClass((INIClass *)&v83[372]); /*0x52cb1a*/
+  ((HashTable *)(INIClass *)&v83[372])->DestroyHashTableINIClass(); /*0x52cb1a*/
   CCFileClass::Destruct((CCFileClass *)&v83[176]); /*0x52cb26*/
-  HashTable::DestroyHashTableINIClass((INIClass *)&v83[284]); /*0x52cb32*/
+  ((HashTable *)(INIClass *)&v83[284])->DestroyHashTableINIClass(); /*0x52cb32*/
   CCFileClass::Destruct((CCFileClass *)&v83[68]); /*0x52cb3b*/
   return 0; /*0x52baab*/
 
@@ -1630,7 +1630,7 @@ LABEL_36:
     /* X11: ptr_0 install elided (X67 star-deref, RHS CCINIClass_Vtable) */  /*0x52d267*/
     if ( CCINIClass::Load(&v19, (int)&v25, 1, 0) > 1 ) /*0x52d277*/
     {
-      HashTable::DestroyHashTableINIClass((INIClass *)&v19); /*0x52d281*/
+      ((HashTable *)(INIClass *)&v19)->DestroyHashTableINIClass(); /*0x52d281*/
       /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x52d28d*/
       v27 = 0; /*0x52d294*/
       Vector::Clear((int)v26); /*0x52d29b*/
@@ -1650,7 +1650,7 @@ LABEL_36:
       return 0; /*0x52d30b*/
     }
     RulesClass::Addition(*(RulesClass **)&DSurface_ViewBounds.__pad_FC[324]); /*0x52d317*/
-    HashTable::DestroyHashTableINIClass((INIClass *)&v19); /*0x52d320*/
+    ((HashTable *)(INIClass *)&v19)->DestroyHashTableINIClass(); /*0x52d320*/
   }
   v13 = 0; /*0x52d329*/
   if ( *(int *)dwInitParam.__tail_10 > 0 ) /*0x52d32d*/
