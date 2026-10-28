@@ -41,6 +41,26 @@ _SCALAR_PSEUDO = frozenset({"int", "float", "char*", "bool"})
 # 具体度最高：bool 是 int 域内 0/1 子域的证据，join(bool, int)=bool。
 _PSEUDO_SPECIFICITY = {"int": 0, "float": 1, "char*": 2, "bool": 3}
 
+# X172 experiment: strict pointer/scalar separation.
+# When LATTICE_PTRKIND=1, joining a scalar (int/float/bool) with a pointer
+# (class type or char*) is a CONTRADICTION (TOP) instead of silently letting
+# the pointer absorb the scalar. Pointers still join among themselves via LCA.
+import os as _os
+_PTRKIND = _os.environ.get("LATTICE_PTRKIND") == "1"
+_SCALAR_ONLY = frozenset({"int", "float", "bool"})
+
+
+def _kind(t):
+    """'scalar' for int/float/bool, 'ptr' for char* and class types, else None."""
+    if t in _SCALAR_ONLY:
+        return "scalar"
+    if t == "char*":
+        return "ptr"
+    if isinstance(t, str) and t not in ("int", "float", "bool"):
+        return "ptr"          # concrete class name -> object pointer
+    return None
+
+
 
 def _most_specific_pseudo(a: str, b: str) -> str:
     return a if _PSEUDO_SPECIFICITY[a] >= _PSEUDO_SPECIFICITY[b] else b
@@ -389,6 +409,10 @@ class TypeLattice:
         # returning VOID_PTR here would erode char* domains when int evidence
         # joins in (T9c/T9d aggregate joins mix both freely).
         if _is_concrete(a) and _is_concrete(b):
+            if _PTRKIND:
+                ka, kb = _kind(a), _kind(b)
+                if ka and kb and ka != kb:
+                    return TOP      # X172: pointer must not unify with scalar
             a_scalar = a in _SCALAR_PSEUDO
             b_scalar = b in _SCALAR_PSEUDO
             if a_scalar and b_scalar:

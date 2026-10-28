@@ -99,6 +99,12 @@ STRUCTURAL_TRUTH_PATH = os.path.normpath(os.path.join(
     os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
     "anchors", "structural_truth.json"
 ))
+# X173: signals.json 提供函数名 -> 归属类。`Class::Method` 的 this 就是
+# Class；无 `::` 的名字是自由函数（根本没有 this）。
+SIGNALS_PATH = os.path.normpath(os.path.join(
+    os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
+    "signals.json"
+))
 
 # 外部库字符串函数锚（CRT/Win32 —— 用户许可的库函数例外）：
 # 地址 → {paramN: 'char*'}，'ret' 键为返回 char*。均为 cdecl 栈参数。
@@ -658,6 +664,27 @@ class TypeInferenceEngine:
         # slot_this: vtable 槽位成员资格 → 包含类最深公共祖先（rank 2
         #   结构事实; 与更精确锚 meet 时精确者存活, 无关冲突交 T11 暴露）
         st_path = STRUCTURAL_TRUTH_PATH
+        # X173: name-derived this owner (highest trust). Offline vtable-install
+        # scanning attributes `mov [reg], offset vt` to THIS even when reg is a
+        # fresh allocation (factory) or a member subobject — measured: 801/1398
+        # install anchors contradict the function's own name and 280 sit on
+        # free functions (no this at all). The name is the reliable signal.
+        _name_owner = {}
+        try:
+            with open(SIGNALS_PATH, "r", encoding="utf-8") as _f:
+                _sig = json.load(_f)
+            for _a, _e in (_sig.get("symbols") or {}).items():
+                if not isinstance(_e, dict):
+                    continue
+                _nm = _e.get("name") or ""
+                try:
+                    _ai = int(str(_a), 16)
+                except Exception:
+                    continue
+                _name_owner[_ai] = _nm.split("::")[0] if "::" in _nm else ""
+        except Exception as _e:
+            print(f"  signals name-owner load failed ({_e})", file=sys.stderr)
+        n_name_skipped = 0
         n_inst = n_slot = 0
         if os.path.exists(st_path):
             with open(st_path, "r", encoding="utf-8") as f:
@@ -667,6 +694,14 @@ class TypeInferenceEngine:
                                       ("slot_this", "structural_slot"),
                                       ("this_pass", "structural_slot")):
                 for addr_str, cls in (st.get(section) or {}).items():
+                    try:
+                        _own = _name_owner.get(int(addr_str, 16))
+                    except Exception:
+                        _own = None
+                    if _own is not None and _own != cls:
+                        # name says otherwise (or it is a free function) -> drop
+                        n_name_skipped += 1
+                        continue
                     lattice_type = self._to_lattice_type(cls, valid_classes)
                     if lattice_type is None or lattice_type in (VOID_PTR, TOP):
                         continue
@@ -692,6 +727,27 @@ class TypeInferenceEngine:
                         n_slot += 1
             print(f"  structural truth anchors: install={n_inst} "
                   f"slot={n_slot}", file=sys.stderr)
+            print(f"  structural anchors dropped by name-owner rule: {n_name_skipped}",
+                  file=sys.stderr)
+
+        # X173: inject name-derived this anchors (rank 4, above ctor/structural)
+        n_name = 0
+        for _ai, _own in _name_owner.items():
+            if not _own:
+                continue
+            lattice_type = self._to_lattice_type(_own, valid_classes)
+            if lattice_type is None or lattice_type in (VOID_PTR, TOP):
+                continue
+            var_name = f"0x{_ai:08X}:this"
+            var_id = self.var_to_id.get(var_name)
+            if var_id is None:
+                continue
+            anchor = Anchor(var_id=var_id, var_name=var_name,
+                            lattice_type=lattice_type, source="name_owner")
+            self.anchors.append(anchor)
+            self.anchor_by_var[var_id].append(anchor)
+            n_name += 1
+        print(f"  name_owner this anchors: {n_name}", file=sys.stderr)
 
         # ── 库字符串函数参数/返回锚（CRT/Win32 例外）──
         lib_matched = 0
@@ -1659,6 +1715,7 @@ class TypeInferenceEngine:
         # reportable conflict set. Anchored roots are FROZEN against
         # value-flow joins below.
         _SRC_RANK = {
+            "name_owner": 4,
             "rtti_vtable_class": 3,
             "singleton_ctor_store": 3,
             "ctor_vtable_install": 3,
