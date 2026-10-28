@@ -3663,7 +3663,7 @@ void LoadScreen::RenderLoop()
     v384 = 0; /*0x4b6cd1*/
     Vector::Clear((int)v383); /*0x4b6cdc*/
     *(unsigned int *)v382.__tail_0 = &off_7E1668; /*0x4b6ce8*/
-    BufferIOFileClass::Dtor((BufferIOFileClass *)&v382); /*0x4b6cef*/
+    ((BufferIOFileClass *)&v382)->Dtor(); /*0x4b6cef*/
     ++v2; /*0x4b6cf4*/
   }
   while ( v2 < 4 ); /*0x4b6cfa*/
@@ -5375,7 +5375,7 @@ LABEL_397:
   v387 = 0; /*0x4b9666*/
   Vector::Clear((int)v386); /*0x4b966d*/
   *(unsigned int *)v385.__tail_0 = &off_7E1668; /*0x4b9679*/
-  return BufferIOFileClass::Dtor((BufferIOFileClass *)&v385); /*0x4b9689*/
+  return ((BufferIOFileClass *)&v385)->Dtor(); /*0x4b9689*/
 
 }
 
@@ -6753,7 +6753,7 @@ LABEL_70:
             v61 = 0; /*0x5592fa*/
             Vector::Clear((int)v60); /*0x559305*/
             *(unsigned int *)v59.__tail_0 = &off_7E1668; /*0x55930e*/
-            BufferIOFileClass::Dtor((BufferIOFileClass *)&v59); /*0x559316*/
+            ((BufferIOFileClass *)&v59)->Dtor(); /*0x559316*/
             v34 = Buffer; /*0x55931b*/
           }
           if ( v34 ) /*0x559324*/

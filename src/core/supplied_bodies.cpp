@@ -226,7 +226,7 @@ unsigned int * GraphicMenuImageItem::ddtor(unsigned int * a2) {
   v9 = 0; /*0x4f37d6*/
   Vector::Clear((int)v8); /*0x4f37de*/
   /* X11: ptr_0 install elided (implicit via off_7E1668 virtuals 0x4f37e7) */
-  result = (unsigned int *)BufferIOFileClass::Dtor((BufferIOFileClass *)&v7); /*0x4f37ef*/
+  result = (unsigned int *)((BufferIOFileClass *)&v7)->Dtor(); /*0x4f37ef*/
   if ( v5 ) /*0x4f37f6*/
   {
     result = (unsigned int *)operator new(0x30u); /*0x4f37fa*/

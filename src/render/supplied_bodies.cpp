@@ -1880,7 +1880,7 @@ unsigned int * PaletteClass::Load()
     v13 = 0; /*0x5cb5d3*/
     Vector::Clear((int)v12); /*0x5cb5db*/
     *(unsigned int *)v11.__tail_0 = &off_7E1668; /*0x5cb5e4*/
-    BufferIOFileClass::Dtor((BufferIOFileClass *)&v11); /*0x5cb5ec*/
+    ((BufferIOFileClass *)&v11)->Dtor(); /*0x5cb5ec*/
     return 0; /*0x5cb5f7*/
   }
   v4 = 0; /*0x5cb5fa*/
@@ -1907,7 +1907,7 @@ unsigned int * PaletteClass::Load()
   v13 = 0; /*0x5cb68f*/
   Vector::Clear((int)v12); /*0x5cb697*/
   *(unsigned int *)v11.__tail_0 = &off_7E1668; /*0x5cb6a0*/
-  BufferIOFileClass::Dtor((BufferIOFileClass *)&v11); /*0x5cb6a8*/
+  ((BufferIOFileClass *)&v11)->Dtor(); /*0x5cb6a8*/
   return v9; /*0x5cb5f3*/
 
 }

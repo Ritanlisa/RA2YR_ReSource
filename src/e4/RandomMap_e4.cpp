@@ -8065,7 +8065,7 @@ AbstractClass * * RandomMap::RegenerateRandomMapPreview()
       v19 = 0; /*0x5b9ea2*/
       Vector::Clear((int)v18); /*0x5b9eaa*/
       *(unsigned int *)v17.CDFileClass = &off_7E1668; /*0x5b9eb3*/
-      BufferIOFileClass::Dtor((BufferIOFileClass *)&v17); /*0x5b9ebb*/
+      ((BufferIOFileClass *)&v17)->Dtor(); /*0x5b9ebb*/
       if ( v13 ) /*0x5b9ec2*/
       {
         v14 = (ObjectClass *)__2_YAPAXI_Z(4u); /*0x5b9ec6*/

@@ -11603,7 +11603,7 @@ void* ObjectClass::LoadAccountInfoWOL() {
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_var_5878c0) */  /*0x7789cf*/
   ComPtr::Set(abstractFlags, (int)AccountInfoWOL_Load); /*0x7789d6*/
   v11.customSound_controller[2] = (int)&off_7E1668; /*0x7789df*/
-  BufferIOFileClass::Dtor((BufferIOFileClass *)&v11.customSound_controller[2]); /*0x7789e7*/
+  ((BufferIOFileClass *)&v11.customSound_controller[2])->Dtor(); /*0x7789e7*/
   DeleteAndZero::Alt((DeleteAndZero *)&v11.uniqueId); /*0x7789f0*/
   DeleteAndZero::Alt((DeleteAndZero *)&v11.ptr_C); /*0x7789f9*/
   DeleteAndZero((ObjectClass *)&v11.ptr_4); /*0x778a02*/
@@ -11650,7 +11650,7 @@ int ObjectClass::ReadSettingsWOL() {
   }
   HashTable::DestroyHashTableINIClass(&v4); /*0x779dae*/
   *(unsigned int *)v5.q000 = &off_7E1668; /*0x779db7*/
-  return BufferIOFileClass::Dtor((BufferIOFileClass *)&v5); /*0x779dc4*/
+  return ((BufferIOFileClass *)&v5)->Dtor(); /*0x779dc4*/
 }
 } // namespace gamemd
 // --- x93 csp-relocation defs (END) ---

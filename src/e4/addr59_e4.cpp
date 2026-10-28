@@ -883,7 +883,7 @@ LABEL_39:
   v20 = 0; /*0x5962c7*/
   ((Vector *)v19)->Clear(); /*0x5962ce*/
   *(unsigned int *)v18.__tail_0 = &off_7E1668; /*0x5962d7*/
-  BufferIOFileClass::Dtor((BufferIOFileClass *)&v18); /*0x5962df*/
+  ((BufferIOFileClass *)&v18)->Dtor(); /*0x5962df*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EBFA4) */  /*0x5962e8*/
   return ComPtr::Release(&v17); /*0x5962f5*/
 

@@ -1993,13 +1993,13 @@ int AbstractClass::LoadTypeFile() {
         v10 = 0; /*0x45f104*/
         Vector::Clear((int)v9); /*0x45f10f*/
         /* X11: ptr_0 install elided (implicit via off_7E1668 virtuals 0x45f118) */
-        BufferIOFileClass::Dtor((BufferIOFileClass *)&v8); /*0x45f120*/
+        ((BufferIOFileClass *)&v8)->Dtor(); /*0x45f120*/
       }
       /* X11: ptr_0 install elided (implicit via class virtuals 0x45f129) — binary-proven install, was 0 */
       v7 = 0; /*0x45f131*/
       Vector::Clear((int)v6); /*0x45f139*/
       /* X11: ptr_0 install elided (implicit via off_7E1668 virtuals 0x45f142) */
-      BufferIOFileClass::Dtor((BufferIOFileClass *)&v5); /*0x45f14a*/
+      ((BufferIOFileClass *)&v5)->Dtor(); /*0x45f14a*/
     }
     return this->u32_A4; /*0x45f14f*/
   }
@@ -2042,7 +2042,7 @@ int AbstractClass::LoadTheaterSHP() {
         v10 = 0; /*0x465a20*/
         Vector::Clear((int)v9); /*0x465a28*/
         /* X11: ptr_0 install elided (implicit via off_7E1668 virtuals 0x465a31) */
-        BufferIOFileClass::Dtor((BufferIOFileClass *)&v8); /*0x465a39*/
+        ((BufferIOFileClass *)&v8)->Dtor(); /*0x465a39*/
       }
       this->u32_E00 = v3; /*0x465a40*/
       if ( v3 ) /*0x465a46*/
@@ -2069,7 +2069,7 @@ int AbstractClass::LoadTheaterSHP() {
       v13 = 0; /*0x465abd*/
       Vector::Clear((int)v12); /*0x465ac8*/
       /* X11: ptr_0 install elided (implicit via off_7E1668 virtuals 0x465ad1) */
-      BufferIOFileClass::Dtor((BufferIOFileClass *)&v11); /*0x465ad9*/
+      ((BufferIOFileClass *)&v11)->Dtor(); /*0x465ad9*/
     }
     return this->u32_E00; /*0x465ade*/
   }

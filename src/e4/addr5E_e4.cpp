@@ -1676,7 +1676,7 @@ LABEL_171:
           v203 = 0; /*0x5e53ab*/
           Vector::Clear((int)v201); /*0x5e53b2*/
           *(unsigned int *)v200.__tail_0 = &off_7E1668; /*0x5e53be*/
-          BufferIOFileClass::Dtor((BufferIOFileClass *)&v200); /*0x5e53c9*/
+          ((BufferIOFileClass *)&v200)->Dtor(); /*0x5e53c9*/
         }
         ++v197.ptr_0; /*0x5e53db*/
       }

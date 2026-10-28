@@ -632,13 +632,13 @@ LABEL_93:
         v56 = 0; /*0x5f8a17*/
         Vector::Clear((int)v55); /*0x5f8a1e*/
         *(unsigned int *)v54.__tail_0 = &off_7E1668; /*0x5f8a2a*/
-        BufferIOFileClass::Dtor((BufferIOFileClass *)&v54); /*0x5f8a35*/
+        ((BufferIOFileClass *)&v54)->Dtor(); /*0x5f8a35*/
       }
       /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x5f8a3e*/
       v53 = 0; /*0x5f8a46*/
       Vector::Clear((int)v52); /*0x5f8a4a*/
       *(unsigned int *)v51.__tail_0 = &off_7E1668; /*0x5f8a53*/
-      BufferIOFileClass::Dtor((BufferIOFileClass *)&v51); /*0x5f8a5b*/
+      ((BufferIOFileClass *)&v51)->Dtor(); /*0x5f8a5b*/
     }
   }
 LABEL_122:
@@ -734,7 +734,7 @@ LABEL_146:
   v60 = 0; /*0x5f8cad*/
   Vector::Clear((int)v59); /*0x5f8cb4*/
   *(unsigned int *)v58.__tail_0 = &off_7E1668; /*0x5f8cc0*/
-  return BufferIOFileClass::Dtor((BufferIOFileClass *)&v58); /*0x5f8cd0*/
+  return ((BufferIOFileClass *)&v58)->Dtor(); /*0x5f8cd0*/
 
 }
 }

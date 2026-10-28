@@ -2449,7 +2449,7 @@ LABEL_31:
     *(unsigned int *)&v48[156] = 0; /*0x6ba0ea*/
     Vector::Clear((int)&v48[144]); /*0x6ba0f1*/
     *(unsigned int *)&v48[56] = &off_7E1668; /*0x6ba0fa*/
-    BufferIOFileClass::Dtor((BufferIOFileClass *)&v48[56]); /*0x6ba102*/
+    ((BufferIOFileClass *)&v48[56])->Dtor(); /*0x6ba102*/
     return 1; /*0x6ba10a*/
   }
   else
@@ -2458,7 +2458,7 @@ LABEL_31:
     *(unsigned int *)&v48[156] = 0; /*0x6b9d70*/
     Vector::Clear((int)&v48[144]); /*0x6b9d77*/
     *(unsigned int *)&v48[56] = &off_7E1668; /*0x6b9d80*/
-    BufferIOFileClass::Dtor((BufferIOFileClass *)&v48[56]); /*0x6b9d88*/
+    ((BufferIOFileClass *)&v48[56])->Dtor(); /*0x6b9d88*/
     return 0; /*0x6b9d90*/
   }
 

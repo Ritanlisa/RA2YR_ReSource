@@ -1260,7 +1260,7 @@ unsigned int * PlayerProfile_Load(unsigned int * a1, const char ** a2)
       DeleteAndZero((ObjectClass *)&v17.ptr_4); /*0x778efa*/
       HashTable::DestroyHashTableINIClass((INIClass *)&v17.nextArrayIndex); /*0x778f03*/
       v17.spawnStatus = (int)&off_7E1668; /*0x778f0f*/
-      BufferIOFileClass::Dtor((BufferIOFileClass *)&v17.spawnStatus); /*0x778f1a*/
+      ((BufferIOFileClass *)&v17.spawnStatus)->Dtor(); /*0x778f1a*/
       return (ObjectClass *)v16; /*0x778f1f*/
     }
     else
@@ -1269,7 +1269,7 @@ unsigned int * PlayerProfile_Load(unsigned int * a1, const char ** a2)
       DeleteAndZero((ObjectClass *)&v17.ptr_4); /*0x778b6e*/
       HashTable::DestroyHashTableINIClass((INIClass *)&v17.nextArrayIndex); /*0x778b77*/
       v17.spawnStatus = (int)&off_7E1668; /*0x778b83*/
-      BufferIOFileClass::Dtor((BufferIOFileClass *)&v17.spawnStatus); /*0x778b8e*/
+      ((BufferIOFileClass *)&v17.spawnStatus)->Dtor(); /*0x778b8e*/
       return a1; /*0x778b93*/
     }
   }
@@ -1277,7 +1277,7 @@ unsigned int * PlayerProfile_Load(unsigned int * a1, const char ** a2)
   {
     ((ObjectClass *)a1)->LoadAccountInfoWOL(); /*0x778a93*/
     v17.spawnStatus = (int)&off_7E1668; /*0x778a9f*/
-    BufferIOFileClass::Dtor((BufferIOFileClass *)&v17.spawnStatus); /*0x778aaa*/
+    ((BufferIOFileClass *)&v17.spawnStatus)->Dtor(); /*0x778aaa*/
     return a1; /*0x778aaf*/
   }
 

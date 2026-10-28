@@ -2290,7 +2290,7 @@ int E4Recv_49D390::LoadCoopCampaignSave(IUnknown * aP1)
     v19 = 0; /*0x49d432*/
     Vector::Clear((int)v18); /*0x49d436*/
     v17[0] = &off_7E1668; /*0x49d43f*/
-    BufferIOFileClass::Dtor(v17); /*0x49d447*/
+    ((BufferIOFileClass *)v17)->Dtor(); /*0x49d447*/
     return 0; /*0x49d457*/
   }
   CCFileClass::Reset(v17); /*0x49d45f*/
@@ -2364,7 +2364,7 @@ int E4Recv_49D390::LoadCoopCampaignSave(IUnknown * aP1)
   v19 = 0; /*0x49d655*/
   Vector::Clear((int)v18); /*0x49d659*/
   v17[0] = &off_7E1668; /*0x49d662*/
-  BufferIOFileClass::Dtor(v17); /*0x49d66a*/
+  ((BufferIOFileClass *)v17)->Dtor(); /*0x49d66a*/
   return 1; /*0x49d44c*/
 
 }

@@ -369,7 +369,7 @@ char ** LoadFromINIGraphicMenu(void * a1, void * a2, void * a3)
     v39 = 0; /*0x4f1e02*/
     Vector::Clear((int)&v38.location[1]); /*0x4f1e09*/
     v38.ambientSoundController[3] = (int)&off_7E1668; /*0x4f1e12*/
-    BufferIOFileClass::Dtor((BufferIOFileClass *)&v38.ambientSoundController[3]); /*0x4f1e1a*/
+    ((BufferIOFileClass *)&v38.ambientSoundController[3])->Dtor(); /*0x4f1e1a*/
     if ( v13 ) /*0x4f1e21*/
     {
       v14 = (MSVQAnim *)__2_YAPAXI_Z(0x30u); /*0x4f1e25*/
@@ -412,7 +412,7 @@ LABEL_18:
     v39 = 0; /*0x4f1e93*/
     Vector::Clear((int)&v38.location[1]); /*0x4f1e9e*/
     v38.ambientSoundController[3] = (int)&off_7E1668; /*0x4f1ea7*/
-    BufferIOFileClass::Dtor((BufferIOFileClass *)&v38.ambientSoundController[3]); /*0x4f1eaf*/
+    ((BufferIOFileClass *)&v38.ambientSoundController[3])->Dtor(); /*0x4f1eaf*/
     if ( v16 ) /*0x4f1eb6*/
     {
       Config = 0; /*0x4f1ec3*/
@@ -1551,7 +1551,7 @@ int sub_4F1B80(char ** a1, int a2)
     v8 = 0; /*0x4f1c76*/
     Vector::Clear((int)v7); /*0x4f1c7d*/
     *(unsigned int *)v6.__tail_0 = &off_7E1668; /*0x4f1c86*/
-    BufferIOFileClass::Dtor((BufferIOFileClass *)&v6); /*0x4f1c8e*/
+    ((BufferIOFileClass *)&v6)->Dtor(); /*0x4f1c8e*/
     return v3; /*0x4f1c93*/
   }
   else
@@ -1560,7 +1560,7 @@ int sub_4F1B80(char ** a1, int a2)
     v8 = 0; /*0x4f1bb3*/
     Vector::Clear((int)v7); /*0x4f1bba*/
     *(unsigned int *)v6.__tail_0 = &off_7E1668; /*0x4f1bc3*/
-    BufferIOFileClass::Dtor((BufferIOFileClass *)&v6); /*0x4f1bcb*/
+    ((BufferIOFileClass *)&v6)->Dtor(); /*0x4f1bcb*/
     return 0; /*0x4f1bd0*/
   }
 
@@ -1732,14 +1732,14 @@ int * E4Recv_4F2F10::sub_4F2F10(GraphicMenuAnimItem * a2, unsigned int * a3, Gra
   *(unsigned int *)&v15.bombVisible = 0; /*0x4f3015*/
   Vector::Clear((int)&v15.customSound_controller[3]); /*0x4f3019*/
   /* X11: ptr_0 install elided (implicit via off_7E1668 virtuals 0x4f3027) */
-  BufferIOFileClass::Dtor((BufferIOFileClass *)&v15.ptr_4); /*0x4f302b*/
+  ((BufferIOFileClass *)&v15.ptr_4)->Dtor(); /*0x4f302b*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E16B0) */  /*0x4f3037*/
   int v17; // [esp+E4h] [ebp-8h]
   v17 = 0; /*0x4f303e*/
   char v16[12]; // [esp+D8h] [ebp-14h] BYREF
   Vector::Clear((int)v16); /*0x4f3045*/
   v15.estimatedHealth = (int)&off_7E1668; /*0x4f3051*/
-  BufferIOFileClass::Dtor((BufferIOFileClass *)&v15.estimatedHealth); /*0x4f3058*/
+  ((BufferIOFileClass *)&v15.estimatedHealth)->Dtor(); /*0x4f3058*/
   return (int *)this->__pad_0; /*0x4f305f*/
 
 }

@@ -39,8 +39,7 @@ public:
     uint32_t FileClass;  // 0x0 (no offset truth)  G42.34 T11: QueryInterface body 0x432610 installs vftable via this->FileClass and returns &this->FileClass (IDA til member view; name shadows type FileClass -- member wins in member-access contexts)
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* Constructor();  // 0x431B20
-    int Dtor();  // 0x431B80
-    static int Dtor(void *aP0);  // 0x431B80 G42.35 static-form sync (ui/supplied sites 0x5D3062/0x5D30A9)
+    int Dtor();  // 0x431B80 thiscall (x181c: static-form overload removed; real member)
     bool Read();  // 0x431F30
     BOOL Write(int a2, const CHAR *a3);
     int Open(const CHAR *a2);

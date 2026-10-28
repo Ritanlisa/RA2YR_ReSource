@@ -185,7 +185,7 @@ LABEL_30:
     v21 = 0; /*0x40154f*/
     ((Vector *)v20)->Clear(); /*0x401556*/
     v19[0] = (int)&off_7E1668; /*0x40155f*/
-    BufferIOFileClass::Dtor(v19); /*0x401567*/
+    ((BufferIOFileClass *)v19)->Dtor(); /*0x401567*/
     return 0; /*0x40156c*/
   }
   v10 = 0; /*0x401375*/
@@ -235,7 +235,7 @@ LABEL_24:
   v21 = 0; /*0x4014b4*/
   ((Vector *)v20)->Clear(); /*0x4014bb*/
   v19[0] = (int)&off_7E1668; /*0x4014c4*/
-  BufferIOFileClass::Dtor(v19); /*0x4014cc*/
+  ((BufferIOFileClass *)v19)->Dtor(); /*0x4014cc*/
   return v3; /*0x4014d3*/
 
 }
@@ -1416,7 +1416,7 @@ LABEL_11:
     v16 = 0; /*0x406c6f*/
     Vector::Clear((int)v15); /*0x406c76*/
     *(unsigned int *)v14.__tail_0 = &off_7E1668; /*0x406c7f*/
-    BufferIOFileClass::Dtor((BufferIOFileClass *)&v14); /*0x406c87*/
+    ((BufferIOFileClass *)&v14)->Dtor(); /*0x406c87*/
     if ( v4 ) /*0x406c91*/
     {
       v5 = (MixFileClass *)__2_YAPAXI_Z(0x28u); /*0x406c93*/

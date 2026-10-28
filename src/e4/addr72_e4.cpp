@@ -331,7 +331,7 @@ int Palette_LoadSimple(char * Source, unsigned int * a2, unsigned int * a3)
   v19 = 0; /*0x72aee9*/
   Vector::Clear((int)v18); /*0x72aef1*/
   *(unsigned int *)v17.__tail_0 = &off_7E1668; /*0x72aefa*/
-  return BufferIOFileClass::Dtor((BufferIOFileClass *)&v17); /*0x72af07*/
+  return ((BufferIOFileClass *)&v17)->Dtor(); /*0x72af07*/
 
 }
 }

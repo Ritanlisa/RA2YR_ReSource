@@ -240,7 +240,7 @@ void* LoadFileSHP(char* Source, bool* a2) {
         v9[3] = 0;                                                                             /*0x4a3940*/
         ((VectorClass<int>*)(void*)v9)->Clear();               // Vector::Clear @0x43AE50           /*0x4a3948*/
         *(uint32_t*)v8 = (uint32_t)&off_7E1668;                // CDFileClass vftable install       /*0x4a3951*/
-        BufferIOFileClass::Dtor((BufferIOFileClass*)(void*)v8);                                   /*0x4a3959*/
+        ((BufferIOFileClass*)(void*)v8)->Dtor();                                   /*0x4a3959*/
         return v5;                                                                             /*0x4a395e*/
     }
     return result;                                                                             /*0x4a3961*/

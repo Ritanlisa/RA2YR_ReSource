@@ -304,7 +304,7 @@ HashTable_flat * * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int
     HashTable::DestroyHashTableINIClass((INIClass *)&v24.occupant); /*0x764f05*/
   }
   v24.customSound = (int)&off_7E1668; /*0x764f0e*/
-  BufferIOFileClass::Dtor((BufferIOFileClass *)&v24.customSound); /*0x764f16*/
+  ((BufferIOFileClass *)&v24.customSound)->Dtor(); /*0x764f16*/
   return this; /*0x764f1d*/
 
 }
@@ -400,7 +400,7 @@ AbstractClass * * E4Recv_7651D0::sub_7651D0()
   FileStraw::Open((FileStraw *)&v7.ptr_8, (int)&v7.ambientSoundController[3], 0); /*0x765288*/
   CCFileClass::Close((BufferIOFileClass *)&v7.ambientSoundController[3]); /*0x765291*/
   v7.ambientSoundController[3] = (int)&off_7E1668; /*0x76529a*/
-  BufferIOFileClass::Dtor((BufferIOFileClass *)&v7.ambientSoundController[3]); /*0x7652a2*/
+  ((BufferIOFileClass *)&v7.ambientSoundController[3])->Dtor(); /*0x7652a2*/
   String::Assign((String *)&v7, g_INI_Key_CampaignID); /*0x7652b0*/
   v2 = &this->ptr_48; /*0x7652ba*/
   INIClass::SetIntFormat((char *)&v7.ptr_8, (char **)&this->ambientSoundController[3], (char **)&v7, 0, 0); /*0x7652c4*/
@@ -418,7 +418,7 @@ AbstractClass * * E4Recv_7651D0::sub_7651D0()
   CCFileClass::Reopen((CDFileClass *)&v7.location[1], g_Str_File_WDTHist_ini, (CHAR *)2); /*0x765339*/
   INIClass::SaveToPipe((INIClass *)&v7.ptr_8, (int)&v7.location[1]); /*0x76534a*/
   v7.location[1] = (int)&off_7E1668; /*0x765356*/
-  BufferIOFileClass::Dtor((BufferIOFileClass *)&v7.location[1]); /*0x765361*/
+  ((BufferIOFileClass *)&v7.location[1])->Dtor(); /*0x765361*/
   return HashTable::DestroyHashTableINIClass((INIClass *)&v7.ptr_8); /*0x76536f*/
 
 }
@@ -1549,13 +1549,13 @@ AbstractClass * * ObjectClass::sub_764A20()
     DeleteAndZero((ObjectClass *)&v4); /*0x764ae1*/
     HashTable::DestroyHashTableINIClass((INIClass *)&v4.ptr_4); /*0x764aea*/
     *(unsigned int *)v16.__pad_0 = &off_7E1668; /*0x764af3*/
-    BufferIOFileClass::Dtor((BufferIOFileClass *)&v16); /*0x764afb*/
+    ((BufferIOFileClass *)&v16)->Dtor(); /*0x764afb*/
     return Int; /*0x764b00*/
   }
   else
   {
     *(unsigned int *)v16.__pad_0 = &off_7E1668; /*0x764b0f*/
-    BufferIOFileClass::Dtor((BufferIOFileClass *)&v16); /*0x764b17*/
+    ((BufferIOFileClass *)&v16)->Dtor(); /*0x764b17*/
     return -1; /*0x764b1c*/
   }
 

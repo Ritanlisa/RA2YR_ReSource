@@ -944,7 +944,7 @@ LABEL_6:
   v12 = 0; /*0x6c9c33*/
   Vector::Clear((int)v11); /*0x6c9c3a*/
   *(unsigned int *)v10.__tail_0 = &off_7E1668; /*0x6c9c43*/
-  BufferIOFileClass::Dtor((BufferIOFileClass *)&v10); /*0x6c9c4b*/
+  ((BufferIOFileClass *)&v10)->Dtor(); /*0x6c9c4b*/
   return 1; /*0x6c9c0b*/
 
 }

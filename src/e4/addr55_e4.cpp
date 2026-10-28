@@ -4340,7 +4340,7 @@ int E4Recv_5595F0::sub_5595F0(char * Buffer)
   int v7[3]; // [esp+60h] [ebp-14h] BYREF
   Vector::Clear((int)v7); /*0x559649*/
   *(unsigned int *)v6.CDFileClass = &off_7E1668; /*0x559652*/
-  return BufferIOFileClass::Dtor((BufferIOFileClass *)&v6); /*0x55965f*/
+  return ((BufferIOFileClass *)&v6)->Dtor(); /*0x55965f*/
 
 }
 } // namespace gamemd

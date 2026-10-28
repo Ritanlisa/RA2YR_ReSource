@@ -682,7 +682,7 @@ int Audio::LoadWAVFiles(void *a1_1)
           v12 = 0; /*0x720901*/
           ((Vector *)v11)->Clear(); /*0x72090c*/
           *(unsigned int *)v10.__tail_0 = &off_7E1668; /*0x720915*/
-          BufferIOFileClass::Dtor((BufferIOFileClass *)&v10); /*0x72091d*/
+          ((BufferIOFileClass *)&v10)->Dtor(); /*0x72091d*/
           IsSoundEnabled = *&this->q024; /*0x720922*/
         }
       }

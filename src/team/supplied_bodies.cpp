@@ -1862,7 +1862,7 @@ int CampaignClass::LoadFromINI() {
     v73 = 0; /*0x49db44*/
     Vector::Clear((int)v72); /*0x49db4b*/
     *(unsigned int *)v71.__tail_0 = &off_7E1668; /*0x49db54*/
-    return BufferIOFileClass::Dtor((BufferIOFileClass *)&v71); /*0x49db69*/
+    return ((BufferIOFileClass *)&v71)->Dtor(); /*0x49db69*/
   }
   KeyCount = INIClass::GetKeyCount((char *)this, g_INI_Key_Campaigns); /*0x49db78*/
   *&this->scenario[52] = KeyCount; /*0x49db7c*/
@@ -2177,7 +2177,7 @@ LABEL_80:
   v73 = 0; /*0x49e382*/
   Vector::Clear((int)v72); /*0x49e389*/
   *(unsigned int *)v71.__tail_0 = &off_7E1668; /*0x49e392*/
-  return BufferIOFileClass::Dtor((BufferIOFileClass *)&v71); /*0x49db61*/
+  return ((BufferIOFileClass *)&v71)->Dtor(); /*0x49db61*/
 
 }
 } // namespace gamemd

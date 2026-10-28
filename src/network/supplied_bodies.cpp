@@ -1944,7 +1944,7 @@ void ModemHost::InitDialog()
   v61 = 0; /*0x5b8ba4*/
   Vector::Clear((int)v60); /*0x5b8bac*/
   /* X11: ptr_0 install elided (implicit via off_7E1668 virtuals 0x5b8bb5) */
-  BufferIOFileClass::Dtor(&v59); /*0x5b8bbd*/
+  ((BufferIOFileClass *)&v59)->Dtor(); /*0x5b8bbd*/
   if ( v52 ) /*0x5b8bc4*/
   {
     v53 = (ObjectClass *)new unsigned char[4u]; /*0x5b8bc8*/

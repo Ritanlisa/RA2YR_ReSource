@@ -311,7 +311,7 @@ int ShowLoadingScreen(void * a1, void * a2, void * a3)
   v44 = 0; /*0x531647*/
   ((Vector *)v43)->Clear(); /*0x531652*/
   *(unsigned int *)v42.__tail_0 = &off_7E1668; /*0x53165b*/
-  return BufferIOFileClass::Dtor((BufferIOFileClass *)&v42); /*0x531668*/
+  return ((BufferIOFileClass *)&v42)->Dtor(); /*0x531668*/
 
 }
 }
@@ -378,7 +378,7 @@ LABEL_12:
     v9 = 0; /*0x5317a8*/
     ((Vector *)v8)->Clear(); /*0x5317ac*/
     *(unsigned int *)v7.__tail_0 = &off_7E1668; /*0x5317b5*/
-    BufferIOFileClass::Dtor((BufferIOFileClass *)&v7); /*0x5317bd*/
+    ((BufferIOFileClass *)&v7)->Dtor(); /*0x5317bd*/
     return 0; /*0x5317cb*/
   }
   (&v10)->Construct(aDpodHva); /*0x5317dd*/
@@ -397,19 +397,19 @@ LABEL_16:
     v12 = 0; /*0x531821*/
     ((Vector *)v11)->Clear(); /*0x531828*/
     *(unsigned int *)v10.__tail_0 = &off_7E1668; /*0x531831*/
-    BufferIOFileClass::Dtor((BufferIOFileClass *)&v10); /*0x531839*/
+    ((BufferIOFileClass *)&v10)->Dtor(); /*0x531839*/
     goto LABEL_12; /*0x53183e*/
   }
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x531852*/
   v12 = 0; /*0x53185a*/
   ((Vector *)v11)->Clear(); /*0x531861*/
   *(unsigned int *)v10.__tail_0 = &off_7E1668; /*0x53186a*/
-  BufferIOFileClass::Dtor((BufferIOFileClass *)&v10); /*0x531872*/
+  ((BufferIOFileClass *)&v10)->Dtor(); /*0x531872*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x53187b*/
   v9 = 0; /*0x531883*/
   ((Vector *)v8)->Clear(); /*0x531887*/
   *(unsigned int *)v7.__tail_0 = &off_7E1668; /*0x531890*/
-  BufferIOFileClass::Dtor((BufferIOFileClass *)&v7); /*0x531898*/
+  ((BufferIOFileClass *)&v7)->Dtor(); /*0x531898*/
   return 1; /*0x5317c4*/
 
 }
@@ -1095,7 +1095,7 @@ char sub_538F20(int a1, int a2, char * Source)
       v22 = 0; /*0x538fa5*/
       Vector::Clear((int)v21); /*0x538fad*/
       *(unsigned int *)v20.__tail_0 = &off_7E1668; /*0x538fb6*/
-      BufferIOFileClass::Dtor((BufferIOFileClass *)&v20); /*0x538fba*/
+      ((BufferIOFileClass *)&v20)->Dtor(); /*0x538fba*/
     }
     if ( byte_A9F91C ) /*0x538fc6*/
       sub_538D40(v16); /*0x538fc8*/
@@ -1113,7 +1113,7 @@ char sub_538F20(int a1, int a2, char * Source)
     v22 = 0; /*0x53901d*/
     Vector::Clear((int)v21); /*0x539025*/
     *(unsigned int *)v20.__tail_0 = &off_7E1668; /*0x53902e*/
-    BufferIOFileClass::Dtor((BufferIOFileClass *)&v20); /*0x539032*/
+    ((BufferIOFileClass *)&v20)->Dtor(); /*0x539032*/
   }
   DDraw::WaitForIdle((DDraw *)v16); /*0x539037*/
   v5 = (int *)(*(int (**)(int, unsigned int, unsigned int))(*(unsigned int *)a1 + 92))(a1, 0, 0); /*0x539049*/
@@ -2411,7 +2411,7 @@ int E4Recv_538C40::sub_538C40(char * Source)
   v4 = 0; /*0x538c96*/
   Vector::Clear((int)v3); /*0x538c9e*/
   *(unsigned int *)v2.__tail_0 = &off_7E1668; /*0x538ca7*/
-  return BufferIOFileClass::Dtor((BufferIOFileClass *)&v2); /*0x538cb4*/
+  return ((BufferIOFileClass *)&v2)->Dtor(); /*0x538cb4*/
 
 }
 } // namespace gamemd
@@ -2436,7 +2436,7 @@ int E4Recv_538CC0::sub_538CC0(char * Source)
   v4 = 0; /*0x538d0f*/
   Vector::Clear((int)v3); /*0x538d17*/
   *(unsigned int *)v2.__tail_0 = &off_7E1668; /*0x538d20*/
-  return BufferIOFileClass::Dtor((BufferIOFileClass *)&v2); /*0x538d2d*/
+  return ((BufferIOFileClass *)&v2)->Dtor(); /*0x538d2d*/
 
 }
 } // namespace gamemd

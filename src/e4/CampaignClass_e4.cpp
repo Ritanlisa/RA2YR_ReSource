@@ -331,13 +331,13 @@ LABEL_47:
   v32 = 0; /*0x49ca77*/
   ((Vector *)v31)->Clear(); /*0x49ca7e*/
   *(unsigned int *)v30.__tail_0 = &off_7E1668; /*0x49ca8f*/
-  BufferIOFileClass::Dtor((BufferIOFileClass *)&v30); /*0x49ca96*/
+  ((BufferIOFileClass *)&v30)->Dtor(); /*0x49ca96*/
   HashTable::DestroyHashTableINIClass((INIClass *)&v28); /*0x49ca9f*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x49caab*/
   v35 = 0; /*0x49cab2*/
   ((Vector *)v34)->Clear(); /*0x49cab9*/
   *(unsigned int *)v33.__tail_0 = &off_7E1668; /*0x49cac5*/
-  BufferIOFileClass::Dtor((BufferIOFileClass *)&v33); /*0x49cacc*/
+  ((BufferIOFileClass *)&v33)->Dtor(); /*0x49cacc*/
   this->scenario[68] = 1; /*0x49cad2*/
   return 1; /*0x49c618*/
 

@@ -198,7 +198,7 @@ void GameConfig::Constructor(void *a1, void *a2, void *a3, void *a4)
     v8 = 0; /*0x5d686b*/
     ((Vector *)v7)->Clear(); /*0x5d686f*/
     *(unsigned int *)v6.__tail_0 = &off_7E1668; /*0x5d6878*/
-    BufferIOFileClass::Dtor((BufferIOFileClass *)&v6); /*0x5d6880*/
+    ((BufferIOFileClass *)&v6)->Dtor(); /*0x5d6880*/
   }
   return *&v1->q038; /*0x5d6888*/
 

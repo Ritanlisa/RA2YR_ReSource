@@ -205,7 +205,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
         v28.location[2] = 0; /*0x76d745*/
         ((Vector *)v28.isInLogic)->Clear(); /*0x76d74c*/
         v28.ambientSoundController[1] = (int)&off_7E1668; /*0x76d755*/
-        BufferIOFileClass::Dtor((BufferIOFileClass *)&v28.ambientSoundController[1]); /*0x76d75d*/
+        ((BufferIOFileClass *)&v28.ambientSoundController[1])->Dtor(); /*0x76d75d*/
       }
       CCFileClass::Construct2(&v29, this->u8_474); /*0x76d770*/
       if ( (unsigned __int8)(&v29)->Open(0) )

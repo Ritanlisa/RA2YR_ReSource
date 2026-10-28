@@ -1521,7 +1521,7 @@ LABEL_24:
     v21 = 0; /*0x52cef3*/
     Vector::Clear((int)v20); /*0x52cefa*/
     *(unsigned int *)v19.__pad_0 = &off_7E1668; /*0x52cf03*/
-    BufferIOFileClass::Dtor((BufferIOFileClass *)&v19); /*0x52cf0b*/
+    ((BufferIOFileClass *)&v19)->Dtor(); /*0x52cf0b*/
   }
   while ( FindNextFileA(FirstFileA, &FindFileData) ); /*0x52cf19*/
   FindClose(FirstFileA); /*0x52cf28*/
@@ -1566,7 +1566,7 @@ LABEL_36:
     v21 = 0; /*0x52cfe5*/
     Vector::Clear((int)v20); /*0x52cfec*/
     *(unsigned int *)v19.__pad_0 = &off_7E1668; /*0x52cffa*/
-    BufferIOFileClass::Dtor((BufferIOFileClass *)&v19); /*0x52cffe*/
+    ((BufferIOFileClass *)&v19)->Dtor(); /*0x52cffe*/
   }
   if ( *(int *)dwInitParam.__tail_10 <= 0 ) /*0x52d013*/
   {
@@ -1582,7 +1582,7 @@ LABEL_36:
     v24 = 0; /*0x52d077*/
     Vector::Clear((int)v23); /*0x52d07e*/
     *(unsigned int *)v22.__tail_0 = &off_7E1668; /*0x52d08a*/
-    BufferIOFileClass::Dtor((BufferIOFileClass *)&v22); /*0x52d091*/
+    ((BufferIOFileClass *)&v22)->Dtor(); /*0x52d091*/
     /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EB80C) */  /*0x52d09a*/
     VectorClass_ptr_CCINIClass::ddtor(&dwInitParam); /*0x52d0a2*/
     return 0; /*0x52d0b3*/
@@ -1635,12 +1635,12 @@ LABEL_36:
       v27 = 0; /*0x52d294*/
       Vector::Clear((int)v26); /*0x52d29b*/
       *(unsigned int *)v25.__tail_0 = &off_7E1668; /*0x52d2a7*/
-      BufferIOFileClass::Dtor((BufferIOFileClass *)&v25); /*0x52d2ae*/
+      ((BufferIOFileClass *)&v25)->Dtor(); /*0x52d2ae*/
       /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x52d2ba*/
       v24 = 0; /*0x52d2c1*/
       Vector::Clear((int)v23); /*0x52d2c8*/
       *(unsigned int *)v22.__tail_0 = &off_7E1668; /*0x52d2d4*/
-      BufferIOFileClass::Dtor((BufferIOFileClass *)&v22); /*0x52d2db*/
+      ((BufferIOFileClass *)&v22)->Dtor(); /*0x52d2db*/
       /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EB80C) */  /*0x52d2e4*/
       if ( *(unsigned int *)&dwInitParam.m_1[3] ) /*0x52d2ee*/
       {
@@ -1674,17 +1674,17 @@ LABEL_36:
   v29[3] = 0; /*0x52d38b*/
   Vector::Clear((int)v29); /*0x52d392*/
   *(unsigned int *)v28.__tail_0 = &off_7E1668; /*0x52d39e*/
-  BufferIOFileClass::Dtor((BufferIOFileClass *)&v28); /*0x52d3a5*/
+  ((BufferIOFileClass *)&v28)->Dtor(); /*0x52d3a5*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x52d3b1*/
   v27 = 0; /*0x52d3b8*/
   Vector::Clear((int)v26); /*0x52d3bf*/
   *(unsigned int *)v25.__tail_0 = &off_7E1668; /*0x52d3cb*/
-  BufferIOFileClass::Dtor((BufferIOFileClass *)&v25); /*0x52d3d2*/
+  ((BufferIOFileClass *)&v25)->Dtor(); /*0x52d3d2*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x52d3de*/
   v24 = 0; /*0x52d3e5*/
   Vector::Clear((int)v23); /*0x52d3ec*/
   *(unsigned int *)v22.__tail_0 = &off_7E1668; /*0x52d3f8*/
-  BufferIOFileClass::Dtor((BufferIOFileClass *)&v22); /*0x52d3ff*/
+  ((BufferIOFileClass *)&v22)->Dtor(); /*0x52d3ff*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EB80C) */  /*0x52d408*/
   if ( *(unsigned int *)&dwInitParam.m_1[3] && BYTE1(dwInitParam.m_C) ) /*0x52d418*/
     __3_YAXPAX_Z(*(void **)&dwInitParam.m_1[3]); /*0x52d41b*/
