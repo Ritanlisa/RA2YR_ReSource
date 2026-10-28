@@ -4153,22 +4153,22 @@ unsigned int * InitializePathData()
   ((WaypointPath *)&g_MissionQueueFrame.globalVariables[936])->Constructor( &v119, &v121); /*0x5ab742*/
   v123 = *(unsigned int *)((CellStruct *)v125)->Set( 0, 0); /*0x5ab758*/
   v124 = 6; /*0x5ab762*/
-  ListNode::Alloc((ListNode *)&g_MissionQueueFrame.globalVariables[948], &v123); /*0x5ab76a*/
+  ((ListNode *)(ListNode *)&g_MissionQueueFrame.globalVariables[948])->Alloc( &v123); /*0x5ab76a*/
   v123 = *(unsigned int *)((CellStruct *)v125)->Set( 0, 0); /*0x5ab786*/
   v124 = 6; /*0x5ab78a*/
-  ListNode::Alloc((ListNode *)&g_MissionQueueFrame.globalVariables[960], &v123); /*0x5ab792*/
+  ((ListNode *)(ListNode *)&g_MissionQueueFrame.globalVariables[960])->Alloc( &v123); /*0x5ab792*/
   v123 = *(unsigned int *)((CellStruct *)v125)->Set( 0, 1); /*0x5ab7ae*/
   v124 = 6; /*0x5ab7b2*/
-  ListNode::Alloc((ListNode *)&g_MissionQueueFrame.globalVariables[972], &v123); /*0x5ab7ba*/
+  ((ListNode *)(ListNode *)&g_MissionQueueFrame.globalVariables[972])->Alloc( &v123); /*0x5ab7ba*/
   v123 = *(unsigned int *)((CellStruct *)v125)->Set( 2, 0); /*0x5ab7d0*/
   v124 = 2; /*0x5ab7da*/
-  ListNode::Alloc((ListNode *)&g_MissionQueueFrame.globalVariables[984], &v123); /*0x5ab7de*/
+  ((ListNode *)(ListNode *)&g_MissionQueueFrame.globalVariables[984])->Alloc( &v123); /*0x5ab7de*/
   v123 = *(unsigned int *)((CellStruct *)v125)->Set( 1, 0); /*0x5ab7fa*/
   v124 = 2; /*0x5ab7fe*/
-  ListNode::Alloc((ListNode *)&g_MissionQueueFrame.globalVariables[996], &v123); /*0x5ab802*/
+  ((ListNode *)(ListNode *)&g_MissionQueueFrame.globalVariables[996])->Alloc( &v123); /*0x5ab802*/
   v123 = *(unsigned int *)((CellStruct *)v125)->Set( 1, 0); /*0x5ab81e*/
   v124 = 2; /*0x5ab822*/
-  ListNode::Alloc((ListNode *)&g_MissionQueueFrame.globalVariables[1008], &v123); /*0x5ab826*/
+  ((ListNode *)(ListNode *)&g_MissionQueueFrame.globalVariables[1008])->Alloc( &v123); /*0x5ab826*/
   v121 = *(unsigned int *)((CellStruct *)v125)->Set( 3, 1); /*0x5ab839*/
   v122 = 2; /*0x5ab83d*/
   v119 = *(unsigned int *)((CellStruct *)&v123)->Set( 0, 0); /*0x5ab85c*/
@@ -4219,22 +4219,22 @@ unsigned int * InitializePathData()
   ((WaypointPath *)&g_MissionQueueFrame.globalVariables[1128])->Constructor( &v119, &v121); /*0x5aba84*/
   v123 = *(unsigned int *)((CellStruct *)v125)->Set( 1, 1); /*0x5aba9a*/
   v124 = 7; /*0x5abaa4*/
-  ListNode::Alloc((ListNode *)&g_MissionQueueFrame.globalVariables[1140], &v123); /*0x5abaac*/
+  ((ListNode *)(ListNode *)&g_MissionQueueFrame.globalVariables[1140])->Alloc( &v123); /*0x5abaac*/
   v123 = *(unsigned int *)((CellStruct *)v125)->Set( 1, 1); /*0x5abac8*/
   v124 = 7; /*0x5abacc*/
-  ListNode::Alloc((ListNode *)&g_MissionQueueFrame.globalVariables[1152], &v123); /*0x5abad4*/
+  ((ListNode *)(ListNode *)&g_MissionQueueFrame.globalVariables[1152])->Alloc( &v123); /*0x5abad4*/
   v123 = *(unsigned int *)((CellStruct *)v125)->Set( 1, 1); /*0x5abaf0*/
   v124 = 7; /*0x5abaf4*/
-  ListNode::Alloc((ListNode *)&g_MissionQueueFrame.globalVariables[1164], &v123); /*0x5abafc*/
+  ((ListNode *)(ListNode *)&g_MissionQueueFrame.globalVariables[1164])->Alloc( &v123); /*0x5abafc*/
   v123 = *(unsigned int *)((CellStruct *)v125)->Set( 3, 3); /*0x5abb12*/
   v124 = 3; /*0x5abb1c*/
-  ListNode::Alloc((ListNode *)&g_MissionQueueFrame.globalVariables[1176], &v123); /*0x5abb20*/
+  ((ListNode *)(ListNode *)&g_MissionQueueFrame.globalVariables[1176])->Alloc( &v123); /*0x5abb20*/
   v123 = *(unsigned int *)((CellStruct *)v125)->Set( 1, 2); /*0x5abb3c*/
   v124 = 3; /*0x5abb40*/
-  ListNode::Alloc((ListNode *)&g_MissionQueueFrame.globalVariables[1188], &v123); /*0x5abb44*/
+  ((ListNode *)(ListNode *)&g_MissionQueueFrame.globalVariables[1188])->Alloc( &v123); /*0x5abb44*/
   v123 = *(unsigned int *)((CellStruct *)v125)->Set( 2, 2); /*0x5abb60*/
   v124 = 3; /*0x5abb64*/
-  ListNode::Alloc((ListNode *)&g_MissionQueueFrame.globalVariables[1200], &v123); /*0x5abb68*/
+  ((ListNode *)(ListNode *)&g_MissionQueueFrame.globalVariables[1200])->Alloc( &v123); /*0x5abb68*/
   v121 = *(unsigned int *)((CellStruct *)v125)->Set( 4, 2); /*0x5abb7c*/
   v122 = 3; /*0x5abb85*/
   v119 = *(unsigned int *)((CellStruct *)&v123)->Set( 1, 1); /*0x5abb9f*/
@@ -4289,22 +4289,22 @@ unsigned int * InitializePathData()
   ((WaypointPath *)&g_MissionQueueFrame.globalVariables[1332])->Constructor( &v119, &v121); /*0x5abe0a*/
   v123 = *(unsigned int *)((CellStruct *)v125)->Set( 0, 3); /*0x5abe26*/
   v124 = 4; /*0x5abe2a*/
-  ListNode::Alloc((ListNode *)&g_MissionQueueFrame.globalVariables[1344], &v123); /*0x5abe32*/
+  ((ListNode *)(ListNode *)&g_MissionQueueFrame.globalVariables[1344])->Alloc( &v123); /*0x5abe32*/
   v123 = *(unsigned int *)((CellStruct *)v125)->Set( 0, 2); /*0x5abe48*/
   v124 = 4; /*0x5abe52*/
-  ListNode::Alloc((ListNode *)&g_MissionQueueFrame.globalVariables[1356], &v123); /*0x5abe5a*/
+  ((ListNode *)(ListNode *)&g_MissionQueueFrame.globalVariables[1356])->Alloc( &v123); /*0x5abe5a*/
   v123 = *(unsigned int *)((CellStruct *)v125)->Set( 0, 2); /*0x5abe76*/
   v124 = 4; /*0x5abe7a*/
-  ListNode::Alloc((ListNode *)&g_MissionQueueFrame.globalVariables[1368], &v123); /*0x5abe82*/
+  ((ListNode *)(ListNode *)&g_MissionQueueFrame.globalVariables[1368])->Alloc( &v123); /*0x5abe82*/
   v123 = *(unsigned int *)((CellStruct *)v125)->Set( 0, 0); /*0x5abe9e*/
   v124 = 0; /*0x5abea2*/
-  ListNode::Alloc((ListNode *)&g_MissionQueueFrame.globalVariables[1380], &v123); /*0x5abea6*/
+  ((ListNode *)(ListNode *)&g_MissionQueueFrame.globalVariables[1380])->Alloc( &v123); /*0x5abea6*/
   v123 = *(unsigned int *)((CellStruct *)v125)->Set( 0, 0); /*0x5abebc*/
   v124 = 0; /*0x5abec6*/
-  ListNode::Alloc((ListNode *)&g_MissionQueueFrame.globalVariables[1392], &v123); /*0x5abeca*/
+  ((ListNode *)(ListNode *)&g_MissionQueueFrame.globalVariables[1392])->Alloc( &v123); /*0x5abeca*/
   v123 = *(unsigned int *)((CellStruct *)v125)->Set( 0, 0); /*0x5abee6*/
   v124 = 0; /*0x5abeea*/
-  ListNode::Alloc((ListNode *)&g_MissionQueueFrame.globalVariables[1404], &v123); /*0x5abeee*/
+  ((ListNode *)(ListNode *)&g_MissionQueueFrame.globalVariables[1404])->Alloc( &v123); /*0x5abeee*/
   v121 = *(unsigned int *)((CellStruct *)v125)->Set( 0, 3); /*0x5abf06*/
   v122 = 4; /*0x5abf0a*/
   v119 = *(unsigned int *)((CellStruct *)&v123)->Set( 1, 0); /*0x5abf28*/
