@@ -33,8 +33,26 @@
     python tools/csp_export/minclass_solver.py
     python tools/csp_export/minclass_solver.py --no-reg-flow
     python tools/csp_export/minclass_solver.py --build-facts   # 从 full_export 重建二进制事实缓存
-    python tools/csp_export/minclass_solver.py --evidence spec         # 仅 layout_evidence.json
-    python tools/csp_export/minclass_solver.py --evidence spec+proto   # 叠加 proto-this 通道（默认）
+    python tools/csp_export/minclass_solver.py --evidence spec         # 仅 layout_evidence.json（默认，非循环）
+    python tools/csp_export/minclass_solver.py --evidence spec+proto   # 叠加 proto-this 通道（备选，循环口径）
+
+等式合并策略（proven-same-object，2026-10-29 收紧）
+    跨帧合并的唯一合法目标是"同一调用点的实参值 = 形参槽位在该点的值"。
+    被调方形参实体（T:<callee> / P:<callee>:k）被所有调用点共享，是多态汇合点；
+    把多个调用点的实参实体并进同一汇合点会把无关对象粘成一簇
+    （X152: 105 个 C2 空域冲突簇中 71% 是此伪影，如 G:87E790 同时钉到
+    AudioStream+CoordBounds）。收紧后：
+      - 多源汇合点（>1 个不同来源实体）一律拒绝合并（multi_caller_join）
+      - 单源汇合点仍按来源种类门控：
+          T:/P:（调用方自身的 this/形参）→ 允许（逐站同一对象）
+          G:（全局）→ 仅当 C8 ctor/vtable-install 证明其类时允许（global_unproven）
+          M:<fn>:this:<off>（成员链）→ 仅当 member_types.json 解析出成员类时
+            允许（member_chain_unproven）
+          R:（寄存器）→ 仅当到达定义不跨 call / 不经控制流汇合时允许
+            （reg_flow_tainted；重定义由数据流 kill 语义天然排除）
+          其它 → 拒绝（unproven_kind）
+      - 同帧等式（FUNC_PARAM: this/形参 ↔ 本函数寄存器）与 new→ctor 保持不变
+    每个被拒合并按原因计数（rejected_merges），与合并 census 一同打印并落盘。
 """
 import argparse
 import bisect
@@ -263,6 +281,17 @@ def build_universe(use_evidence=True):
         for a in anc[i]:
             desc[a].add(i)
 
+    # MI 边自检：rtti_base_arrays 的多基链必须完整进入 desc。
+    # X152 曾怀疑 Surface→DSurface 缺失导致"存在公共后代却判空域"——在此可观测。
+    def _has_desc(base, dc):
+        ib, idc = resolve(base), resolve(dc)
+        return bool(ib is not None and idc is not None and idc in desc[ib])
+
+    mi_probe = {("%s->%s" % (b, d)): _has_desc(b, d)
+                for (b, d) in (("Surface", "DSurface"), ("XSurface", "DSurface"),
+                               ("ObjectClass", "UnitClass"),
+                               ("AbstractClass", "TechnoClass"))}
+
     vtables = [set() for _ in range(n)]
     slot_count = [None] * n
     for i, c in enumerate(names):
@@ -303,6 +332,7 @@ def build_universe(use_evidence=True):
         "anc": anc, "desc": desc, "vtables": vtables, "slot_count": slot_count,
         "slot_set": slot_set, "n_layout": sum(1 for x in has_layout if x),
         "n_auth": auth_hit,
+        "n_desc_edges": sum(len(d) for d in desc), "desc_mi_probe": mi_probe,
     }
 
 
@@ -380,6 +410,8 @@ def build_cfg(lines):
 
 
 def merge_state(a, b):
+    """寄存器状态汇合。值为 (entity_id, clean) 元组或 None：
+    两路同源但洁净度不一 → 保留源、置污染；异源或单侧无定义 → None。"""
     if a is None:
         return dict(b) if b else {}
     if b is None:
@@ -387,15 +419,24 @@ def merge_state(a, b):
     out = {}
     for r in set(a) | set(b):
         va, vb = a.get(r), b.get(r)
-        out[r] = va if va == vb else None
+        if va == vb:
+            out[r] = va
+        elif va is not None and vb is not None and va[0] == vb[0]:
+            out[r] = (va[0], False)
+        else:
+            out[r] = None
     return out
 
 
 def transfer(st, ins, addr):
-    """就地更新寄存器状态（entity id 或 None）"""
+    """就地更新寄存器状态（值为 (entity_id, clean) 元组或 None）"""
     if ins.startswith("call"):
         for r in ("eax", "ecx", "edx"):
             st[r] = None
+        for r, v in st.items():
+            # 跨 call 仍存活的到达定义（callee-saved 寄存器）→ 污染（等式规则 3）
+            if v is not None and v[1]:
+                st[r] = (v[0], False)
         return
     m = RE_MOVRR.match(ins)
     if m:
@@ -528,9 +569,13 @@ def parse_export(interest):
             if hits:
                 blocks, succ = build_cfg(lines)
                 if blocks:
-                    start2idx = {blk[0][0]: i for i, blk in enumerate(blocks)}
+                    npred = collections.Counter()
+                    for sis in succ.values():
+                        for si in sis:
+                            npred[si] += 1
                     in_state = [None] * len(blocks)
-                    in_state[0] = ({"ecx": "T:%X" % fn} if "__thiscall" in proto else {})
+                    in_state[0] = ({"ecx": ("T:%X" % fn, True)}
+                                   if "__thiscall" in proto else {})
                     work = [0]
                     while work:
                         bi = work.pop()
@@ -539,19 +584,24 @@ def parse_export(interest):
                             transfer(st, ins, a)
                         for si in succ.get(blocks[bi][0][0], ()):
                             merged = merge_state(in_state[si], st)
+                            if merged and npred.get(si, 0) >= 2:
+                                # 控制流汇合点：任何穿越它的到达定义 → 污染（等式规则 3）
+                                merged = {r: ((v[0], False) if v else v)
+                                          for r, v in merged.items()}
                             if in_state[si] is None or merged != in_state[si]:
                                 in_state[si] = merged
                                 work.append(si)
-                    # 回放块，在 interest 站点记录唯一到达值
+                    # 回放块，在 interest 站点记录唯一到达值 + 洁净标志
                     for bi, blk in enumerate(blocks):
                         st = dict(in_state[bi]) if in_state[bi] else {}
                         for (a, ins) in blk:
                             regs = interest_by_addr.get(a)
                             if regs:
                                 for reg in sorted(regs):
-                                    src = st.get(reg)
-                                    if src is not None:
-                                        reg_links.append((a, reg, src))
+                                    v = st.get(reg)
+                                    if v is not None and v[0] is not None:
+                                        reg_links.append(
+                                            (a, reg, v[0], 1 if v[1] else 0))
                             transfer(st, ins, a)
     # ---- 解析 call 目标 ----
     ctor_calls = []
@@ -659,11 +709,13 @@ def main():
     ap.add_argument("--no-reg-flow", action="store_true")
     ap.add_argument("--no-families", default="")
     ap.add_argument("--max-pair-improve", type=int, default=40000)
-    ap.add_argument("--evidence", choices=("none", "spec", "spec+proto"), default="spec+proto",
+    ap.add_argument("--evidence", choices=("none", "spec", "spec+proto"), default="spec",
                     help="none=不用访问证据（HEAD 基线口径）; "
-                         "spec=仅 anchors/layout_evidence.json (ctor_types/vtable_install); "
-                         "spec+proto=叠加 proto-this 通道（函数原型已类型化的 this 声明，"
-                         "与 C2 FUNC_PARAM 掩码同源）。默认 spec+proto。")
+                         "spec=仅 anchors/layout_evidence.json (ctor_types/vtable_install)，"
+                         "默认（非循环口径）; "
+                         "spec+proto=叠加 proto-this 通道——与 C2 FUNC_PARAM 掩码同源"
+                         "（函数原型已类型化的 this 声明），用 proto 派生类验证 proto 布局"
+                         "属循环论证，仅作备选口径报告。")
     args = ap.parse_args()
 
     t_start = time.time()
@@ -671,9 +723,15 @@ def main():
     names, idx, resolve, n = U["names"], U["idx"], U["resolve"], U["n"]
     FULL = (1 << n) - 1
     print("[universe] classes=%d with_layout=%d authority_joined=%d sizes=%d slot_count=%d "
-          "evidence_classes=%d"
+          "evidence_classes=%d desc_edges=%d"
           % (n, U["n_layout"], U["n_auth"], sum(1 for s in U["size"] if s is not None),
-             sum(1 for s in U["slot_count"] if s is not None), U["n_evidence"]), flush=True)
+             sum(1 for s in U["slot_count"] if s is not None), U["n_evidence"],
+             U["n_desc_edges"]), flush=True)
+    if not all(U["desc_mi_probe"].values()):
+        print("[universe][warn] desc MI probe incomplete: %s"
+              % U["desc_mi_probe"], flush=True)
+    else:
+        print("[universe] desc MI probe ok: %s" % U["desc_mi_probe"], flush=True)
     eff_bump = sum(1 for i in range(n) if U["eff_size"][i] is not None
                    and U["size"][i] is not None and U["eff_size"][i] > U["size"][i])
     print("[evidence] extent>declared: %d classes (effective_size = max(declared, observed_extent))"
@@ -859,6 +917,19 @@ def main():
                 interest.add((a, fr))
 
     facts = load_or_build_facts(args.build_facts, interest)
+    # reg_links v2: [addr, reg, src, clean]（clean=不跨 call / 不经控制流汇合）
+    site_reg = {}
+    facts_v1 = False
+    if facts:
+        for lk in facts.get("reg_links", ()):
+            if len(lk) >= 4:
+                site_reg[(lk[0], lk[1])] = (lk[2], bool(lk[3]))
+            else:
+                facts_v1 = True
+                site_reg[(lk[0], lk[1])] = (lk[2], True)
+    if facts_v1:
+        print("[warn] facts reg_links 为 v1（无 taint 标志）——建议 --build-facts 重建",
+              flush=True)
     if facts:
         for fn, site, size, dest in facts["alloc_sites"]:
             touch("N:%X" % site, "new@%X" % site)
@@ -972,6 +1043,16 @@ def main():
             continue
         callee = hx(to.split(":")[0])
         if callee is None or callee not in owner_of_fn:
+            continue
+        if fr in REGS:
+            # 寄存器实参：经洁净到达定义解析回调用方 this 实体后直接钉 C2
+            # （约束通道，非合并——不再依赖跨帧等式传播）
+            sr = site_reg.get((hx(e.get("addr")) or 0, fr))
+            if sr and sr[1] and sr[0] in ents:
+                fam["C2"][sr[0]] = fam["C2"].get(sr[0], FULL) & allowed_of(owner_of_fn[callee][0])
+                c2_pin_log.setdefault(sr[0], []).append(
+                    ["reg", "0x%08X" % callee, names[owner_of_fn[callee][0]]])
+                census["C2"] += 1
             continue
         target = ent_id(fr, fn_at(hx(e.get("addr")) or 0))
         if target is None or target not in ents:
@@ -1323,33 +1404,114 @@ def main():
         a = hx(str(fr).split(":")[0]) if isinstance(fr, str) else None
         un(ent_id(fr, a), ent_id(e.get("to"), a), "func_param")
 
-    for e in raw:
-        if e.get("type") != "CALL_ARG" or not is_arg_target(e.get("to")):
-            continue
-        fr = e.get("from")
-        if not isinstance(fr, str) or fr in REGS or fr.startswith("stack_+"):
-            continue
-        a = hx(e.get("addr")) or 0
-        un(ent_id(fr, fn_at(a)), ent_id(e.get("to")), "callarg_direct")
-
-    if not args.no_reg_flow and facts:
-        rl = {}
-        for addr, reg, src in facts.get("reg_links", ()):
-            rl[(addr, reg)] = src
+    # ---- 跨帧等式候选收集（proven-same-object 收紧，X152） ----
+    # 唯一目标形态：调用点实参值 → 被调方共享形参实体（T:<callee> / P:<callee>:k）。
+    # 被调方形参被所有调用点共享 = 多态汇合点；把 >1 个不同来源实体并进去
+    # 会把无关对象粘成一簇（X152: C2 空域冲突簇的 71% 由此产生）。
+    cands = []                                    # (channel, from_eid, to_eid, kind, clean, site)
+    target_froms = collections.defaultdict(set)   # to_entity -> {distinct from entities}
+    if facts:
         for e in raw:
             if e.get("type") != "CALL_ARG" or not is_arg_target(e.get("to")):
                 continue
             fr = e.get("from")
-            if not isinstance(fr, str) or fr not in REGS:
+            if not isinstance(fr, str) or fr.startswith("stack_+"):
                 continue
             a = hx(e.get("addr")) or 0
-            src = rl.get((a, fr))
-            if src:
-                un(src, ent_id(e.get("to")), "reg_def")
+            te = ent_id(e.get("to"))
+            if te is None:
+                continue
+            if fr in REGS:
+                if args.no_reg_flow:
+                    continue
+                sr = site_reg.get((a, fr))
+                if sr and sr[0]:
+                    cands.append(("reg_def", sr[0], te, sr[0][0], bool(sr[1]), a))
+                    target_froms[te].add(sr[0])
+                continue
+            fe = ent_id(fr, fn_at(a))
+            if fe is None:
+                continue                          # 实体不可解析——原本也不产生合并
+            cands.append(("callarg_direct", fe, te, fe[0], True, a))
+            target_froms[te].add(fe)
+
+    rejected_merges = collections.Counter()
+    rejected_examples = collections.defaultdict(list)
+
+    def reject(reason, detail):
+        rejected_merges[reason] += 1
+        lst = rejected_examples[reason]
+        if len(lst) < 6:
+            lst.append(detail)
+
+    def global_proven(fe):
+        """C8 ctor/vtable-install 证明的全局类（等式规则 2）：
+        vtable-install（facts 扫描 mov [g_X], offset ??_7Class）或
+        singleton_types（构造存储锚定 = ctor 证明）。"""
+        if any(s == "C8:vtable-install" for _ci, s in exact.get(fe, ())):
+            return True
+        try:
+            ga = int(fe[2:], 16)
+        except ValueError:
+            return False
+        return any(("%s" % k) in ("0x%08X" % ga, "0x%x" % ga) or hx(k) == ga
+                   for k in singl)
+
+    mtypes = jload("anchors/member_types.json", {}) or {}
+
+    def member_chain_class(fe):
+        """M:<fn>:this:<off> → 成员类（等式规则 1）；无法解析 → None"""
+        try:
+            fn = int(fe[2:].split(":", 1)[0], 16)
+            which = fe.split(":")[2]
+            off = int(fe.rsplit(":", 1)[1])
+        except (ValueError, IndexError):
+            return None
+        if which != "this":
+            return None
+        own = owner_of_fn.get(fn)
+        if own is None:
+            return None
+        cn = names[own[0]]
+        for fmt in ("%s+0x%X" % (cn, off), "%s+0x%x" % (cn, off)):
+            rec = mtypes.get(fmt)
+            if rec:
+                return type_class(rec.get("type") or "")
+        return None
+
+    multi_joins = sum(1 for s in target_froms.values() if len(s) > 1)
+    for channel, fe, te, kind, clean, site in cands:
+        detail = {"channel": channel, "from": fe, "to": te, "site": "0x%X" % site}
+        if len(target_froms[te]) > 1:
+            reject("multi_caller_join", detail)   # 多态汇合点：非同一对象
+            continue
+        if channel == "reg_def":
+            if not clean:
+                reject("reg_flow_tainted", detail)  # 跨 call / 控制流汇合
+                continue
+        elif kind == "G":
+            if not global_proven(fe):
+                reject("global_unproven", detail)
+                continue
+        elif kind == "M":
+            if member_chain_class(fe) is None:
+                reject("member_chain_unproven", detail)
+                continue
+        elif kind not in ("T", "P"):
+            reject("unproven_kind", detail)
+            continue
+        un(fe, te, channel)
 
     for a_eid, b_eid in c5_link:
         un(a_eid, b_eid, "new_ctor")
 
+    print("[merge-census] candidates=%d (callarg_direct=%d reg_def=%d) "
+          "targets=%d multi_source_joins=%d"
+          % (len(cands), sum(1 for c in cands if c[0] == "callarg_direct"),
+             sum(1 for c in cands if c[0] == "reg_def"),
+             len(target_froms), multi_joins), flush=True)
+    print("[merge-rejects] " + ("  ".join("%s=%d" % kv for kv in sorted(rejected_merges.items()))
+                                or "(none)"), flush=True)
     print("[equality] " + "  ".join(
         "%s=%d(exact-rej %d)" % (k, v["unions"], v["exact_conflicts"])
         for k, v in sorted(ch_stats.items())), flush=True)
@@ -1911,6 +2073,9 @@ def main():
             "generated_by": "tools/csp_export/minclass_solver.py",
             "families": all_fams, "reg_flow": not args.no_reg_flow,
             "evidence_mode": args.evidence,
+            "evidence_note": ("default=spec（非循环口径）；spec+proto 为循环备选口径"),
+            "merge_policy": "proven-same-object (X152)",
+            "rejected_merges": dict(rejected_merges),
             "K": K, "K_upper": K_upper, "lower_bound": LB,
             "constrained_clusters": len(constrain), "free_clusters": res["free"],
             "conflicts": res["n_conflicts"], "c1_gaps": res["c1_gaps"],
@@ -1939,6 +2104,18 @@ def main():
                                       "exact_conflicts": v["exact_conflicts"],
                                       "examples": v["examples"]}
                                   for k, v in sorted(ch_stats.items())},
+            "merge_census": {
+                "policy": "proven-same-object (X152)",
+                "candidates": len(cands),
+                "callarg_direct": sum(1 for c in cands if c[0] == "callarg_direct"),
+                "reg_def": sum(1 for c in cands if c[0] == "reg_def"),
+                "param_targets": len(target_froms),
+                "multi_source_joins": multi_joins,
+            },
+            "rejected_merges": {
+                "counts": dict(rejected_merges),
+                "examples": {k: v for k, v in rejected_examples.items()},
+            },
         },
     }
     cpath = os.path.join(ROOT, "anchors/minclass_conflicts.json")
@@ -1950,6 +2127,11 @@ def main():
         "meta": {"generated_by": "tools/csp_export/minclass_solver.py",
                  "families": all_fams, "reg_flow": not args.no_reg_flow,
                  "evidence_mode": args.evidence,
+                 "evidence_note": ("default=spec（非循环口径：仅 layout_evidence/ctor_types/"
+                                   "vtable_install）；spec+proto 用 proto 派生类验证 proto "
+                                   "布局，与 C2 掩码同源，属循环口径，仅作备选报告"),
+                 "merge_policy": "proven-same-object (X152)",
+                 "rejected_merges": dict(rejected_merges),
                  "K_min": K, "K_upper": K_upper, "lower_bound": LB,
                  "constrained_clusters": len(constrain), "free_clusters": res["free"],
                  "conflicts": res["n_conflicts"], "c1_gaps": res["c1_gaps"],
