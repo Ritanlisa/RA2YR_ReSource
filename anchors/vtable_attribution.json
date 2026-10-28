@@ -1,5 +1,64 @@
 {
  "meta": {
+  "audit": {
+   "authority": {
+    "classes": 954,
+    "primary_slots": 13204,
+    "secondary_slots": 840,
+    "secondary_tables": 260,
+    "slots_with_proto": 13188
+   },
+   "known_good_reproduction": {
+    "BuildingClass": 322,
+    "FootClass": 341,
+    "MissionClass": 157,
+    "ObjectClass": 122,
+    "RadioClass": 161,
+    "TechnoClass": 309
+   },
+   "method": "binary vtable capacity (primary + every secondary) vs depth-0 `virtual` count in class body",
+   "over_classes": [
+    "?$List@PAUINIEntry@INIClass@@",
+    "?$List@PAUINISection@INIClass@@",
+    "?$List@PAVMixFileClass@@",
+    "?$VectorCursor@IV?$DynamicVectorClass@I@@",
+    "?$VectorCursor@PAVGraphicMenuItem@@V?$DynamicVectorClass@PAVGraphicMenuItem@@@@",
+    "?$VectorCursor@PAVMSAnim@@V?$DynamicVectorClass@PAVMSAnim@@@@",
+    "?$VectorCursor@PAVMSSfxEntry@@V?$DynamicVectorClass@PAVMSSfxEntry@@@@",
+    "?$VectorCursor@V?$TRect@H@@V?$VectorClass@V?$TRect@H@@@@",
+    "?$VectorCursor@V?$rc_ptr@VConflict@WorldDominationTour@@@@V?$DynamicVectorClass@V?$rc_ptr@VConflict@WorldDominationTour@@@@@@",
+    "?$VectorCursor@V?$rc_ptr@VGameOption@WorldDominationTour@@@@V?$DynamicVectorClass@V?$rc_ptr@VGameOption@WorldDominationTour@@@@@@",
+    "?$VectorCursor@V?$rc_ptr@VTerritory@WorldDominationTour@@@@V?$DynamicVectorClass@V?$rc_ptr@VTerritory@WorldDominationTour@@@@@@",
+    "BlowStraw",
+    "CD",
+    "ConnectionClass",
+    "ConnectionPointClass",
+    "EnumConnectionPointsClass",
+    "EnumConnectionsClass",
+    "GScreenClass",
+    "INIClass",
+    "LoadProgressMgr",
+    "MSFont",
+    "MultiplayerBattleTeam",
+    "RandomStraw",
+    "ScoreAnimClass"
+   ],
+   "regen_of_vtable_slot_authority": "0 value diffs (pure function of x128 + slot signatures)",
+   "report": ".omo/x191/virtual_audit.md",
+   "unnamed_vtables": {
+    "after_real_unnamed": 0,
+    "before": 162,
+    "high_confidence_attributions": 0,
+    "real_tables_attributed": 1214,
+    "real_vtables_among_them": 0
+   },
+   "virtual_audit": {
+    "NO_HEADER": 207,
+    "OK": 231,
+    "OVER": 24,
+    "UNDER": 492
+   }
+  },
   "falsification": [
    "1214/1214 real vtables have ??_R4<Class>@@6B@ at [vt-4]; 0/162 of these do",
    "1177 ??_7<Class>@@6B@ symbols exist in the IDB and all are inside the x128 universe",
