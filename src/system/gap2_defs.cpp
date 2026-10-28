@@ -36191,7 +36191,7 @@ int CellClass::IsBuildable() {
         (result & 0x500) != 0)
     && (result & 0x800) == 0
     || *&this->q044 != -1
-    || (result = LayerClass::CoordinatesLegal(
+    || (result = ((LayerClass *)&DataGlobal_87F7E8)->CoordinatesLegal(
                    (LayerClass *)&DataGlobal_87F7E8,
                    &this->smudgeTypeIndex),
         !(unsigned char)result) )

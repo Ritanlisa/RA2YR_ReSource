@@ -720,7 +720,7 @@ char JumpjetLocomotion::Land()
     v45 = 0; /*0x54cb81*/
   v49[0] = v51 / 256; /*0x54cba0*/
   v49[1] = v52 / 256; /*0x54cbb5*/
-  if ( (unsigned __int8)LayerClass::CoordinatesLegal((LayerClass *)&dword_87F7E8, v49) ) /*0x54cbc2*/
+  if ( (unsigned __int8)((LayerClass *)&dword_87F7E8)->CoordinatesLegal( v49) ) /*0x54cbc2*/
   {
     RemoveTarget(this->u32_C); /*0x54cbd4*/
     (*(void (**)(unsigned int, unsigned int))(**(unsigned int **)&this->u32_C + 292))(*(unsigned int *)&this->u32_C, 0); /*0x54cbe1*/

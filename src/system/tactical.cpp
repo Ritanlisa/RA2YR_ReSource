@@ -294,7 +294,7 @@ int TacticalClass::RenderIsometric(int *viewRect, unsigned int *flags)
       v27 = v32; /*0x6d76d2*/
       do /*0x6d7817*/
       {
-        if ( (unsigned __int8)LayerClass::CoordinatesLegal(v21) ) /*0x6d76e0*/
+        if ( (unsigned __int8)((LayerClass *)&dword_87F7E8)->CoordinatesLegal(v21) ) /*0x6d76e0*/
         {
           v17 = (CellClass *)((CellCoord *)&dword_87F7E8)->To_CellObj(v21); /*0x6d76fc*/
           ScreenRect = v17->GetScreenRect(v41); /*0x6d7708*/
@@ -520,7 +520,7 @@ int TacticalClass::DrawMap(int *viewRect, int *bounds)
               v33 = v20; /*0x6d7a1a*/
               do /*0x6d7bcb*/
               {
-                if ( (unsigned __int8)LayerClass::CoordinatesLegal(v31) ) /*0x6d7a28*/
+                if ( (unsigned __int8)((LayerClass *)&dword_87F7E8)->CoordinatesLegal(v31) ) /*0x6d7a28*/
                 {
                   v22 = ((CellCoord *)(&dword_87F7E8))->To_CellObj(v31); /*0x6d7a44*/
                   NthOfType = ((Building *)v22)->GetNthOfType(); /*0x6d7a4d*/
@@ -709,7 +709,7 @@ int TacticalClass::DrawTerrain(int *a2, unsigned int *a4)
         v35 = v25; /*0x6d7e33*/
         do /*0x6d7ef5*/
         {
-          if ( (unsigned __int8)LayerClass::CoordinatesLegal((__int16 *)&a2) ) /*0x6d7e41*/
+          if ( (unsigned __int8)((LayerClass *)&dword_87F7E8)->CoordinatesLegal((__int16 *)&a2) ) /*0x6d7e41*/
           {
             v29 = (float *)v48.Set( /*0x6d7e91*/
                              ((((__int16)a2 << 8) + 128) / 256) << 8,
@@ -945,7 +945,7 @@ Point2D* TacticalClass::CalcBuildingDrawPos(Point2D* out, BuildingClass* buildin
           v30 = v13; /*0x6d735d*/
           do /*0x6d7532*/
           {
-            if ( (unsigned __int8)LayerClass::CoordinatesLegal(v27) ) /*0x6d736b*/
+            if ( (unsigned __int8)((LayerClass *)&dword_87F7E8)->CoordinatesLegal(v27) ) /*0x6d736b*/
             {
               v16 = ((CellCoord *)&dword_87F7E8)->To_CellObj(v27); /*0x6d7387*/
               ((Coord *)v45)->Subtract((((v27[0] << 8) + 128) / 256) << 8, (((v27[1] << 8) + 128) / 256) << 8, 0); /*0x6d73cc*/

@@ -1400,7 +1400,7 @@ int SuperWeapon_Update()
             v35 = 1; /*0x53aa48*/
           }
 LABEL_52:
-          if ( (unsigned __int8)LayerClass::CoordinatesLegal((LayerClass *)&dword_87F7E8, v36) && !v35 ) /*0x53aa66*/
+          if ( (unsigned __int8)((LayerClass *)&dword_87F7E8)->CoordinatesLegal( v36) && !v35 ) /*0x53aa66*/
             break; /*0x53aa66*/
           (v17) = ((v17) & ~0xFF) | ((--v37) & 0xFF); /*0x53aa6c*/
           if ( v37 <= 0 ) /*0x53aa73*/

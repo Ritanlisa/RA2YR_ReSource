@@ -615,7 +615,7 @@ LABEL_20:
     v34 = this->location[2]; /*0x5fdba9*/
     LOWORD(a2) = v21 / 256; /*0x5fdbb9*/
     HIWORD(a2) = v22 / 256; /*0x5fdbd1*/
-    if ( (unsigned __int8)LayerClass::CoordinatesLegal((LayerClass *)&dword_87F7E8, (__int16 *)&a2) ) /*0x5fdbe3*/
+    if ( (unsigned __int8)((LayerClass *)&dword_87F7E8)->CoordinatesLegal( (__int16 *)&a2) ) /*0x5fdbe3*/
     {
       v23 = this->location[2]; /*0x5fdbee*/
       v24 = this->location[1]; /*0x5fdbf1*/
@@ -627,7 +627,7 @@ LABEL_20:
     else
     {
       v26 = (__int16 *)Tactical::PixelToCell((Tactical *)g_TacticalClass_Instance, &a2, &v30); /*0x5fdc21*/
-      if ( (unsigned __int8)LayerClass::CoordinatesLegal((LayerClass *)&dword_87F7E8, v26) ) /*0x5fdc2c*/
+      if ( (unsigned __int8)((LayerClass *)&dword_87F7E8)->CoordinatesLegal( v26) ) /*0x5fdc2c*/
       {
         v28 = (__int16 *)Tactical::PixelToCell((Tactical *)g_TacticalClass_Instance, &a2, &v30); /*0x5fdc4a*/
         v25 = ((CellCoord *)&dword_87F7E8)->To_CellObj(v28); /*0x5fdc4b*/

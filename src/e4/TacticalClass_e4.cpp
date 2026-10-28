@@ -1050,7 +1050,7 @@ void* * TacticalClass::DrawBuildingsInView(AbstractClass * aP1)
         v37 = v40; /*0x6d6eae*/
         do /*0x6d7019*/
         {
-          if ( (unsigned __int8)LayerClass::CoordinatesLegal((LayerClass *)&dword_87F7E8, v32) ) /*0x6d6ebc*/
+          if ( (unsigned __int8)((LayerClass *)&dword_87F7E8)->CoordinatesLegal( v32) ) /*0x6d6ebc*/
           {
             v18 = (House *)((CellCoord *)&dword_87F7E8)->To_CellObj(v32); /*0x6d6ed3*/
             v19 = (int)v18; /*0x6d6ed8*/
@@ -1110,7 +1110,7 @@ void* * TacticalClass::DrawBuildingsInView(AbstractClass * aP1)
           v34 = v27; /*0x6d7090*/
           do /*0x6d71b7*/
           {
-            if ( (unsigned __int8)LayerClass::CoordinatesLegal((LayerClass *)&dword_87F7E8, v32) ) /*0x6d709e*/
+            if ( (unsigned __int8)((LayerClass *)&dword_87F7E8)->CoordinatesLegal( v32) ) /*0x6d709e*/
             {
               v28 = (BuildingClass *)((CellCoord *)&dword_87F7E8)->To_CellObj(v32); /*0x6d70b5*/
               v29 = (int)v28; /*0x6d70ba*/

@@ -30,7 +30,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     // --- gap2 auto-generated stub declarations (END) ---
     public:  // symbol-anchor
     // === SYMBOL-ANCHOR (BEGIN) ===
-    static bool __stdcall CoordinatesLegal(void* a1);  // 0x568300 (IDA: int __stdcall(int16_t*), 无接收者)
+    bool CoordinatesLegal(void* a1);  // 0x568300 (IDA: int __stdcall(int16_t*), 无接收者)
     void* Reveal(int a1);  // 0x577d90 -- LayerClass::Reveal
     int CellIteratorNext();  // 0x578290 -- LayerClass::CellIteratorNext
     int CellIteratorReset();  // 0x578350 -- LayerClass::CellIteratorReset

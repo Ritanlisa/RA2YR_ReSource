@@ -801,7 +801,7 @@ void CellClass::ReduceTiberium(int v23)
       (*((unsigned short *)&(v23))) = *(unsigned short *)v18 + (*((unsigned short *)&(g_DDrawSurfaceManager.scenario[v20 + 82]))); /*0x480c1b*/
       (*(((unsigned short *)&(v23)) + 1)) = v18->q002 + (*(((unsigned short *)&(g_DDrawSurfaceManager.scenario[v20 + 82])) + 1)); /*0x480c24*/
       v23 = v23; /*0x480c33*/
-      if ( (uint8_t)LayerClass::CoordinatesLegal((LayerClass *)&DataGlobal_87F7E8, (int16_t *)&v23) ) /*0x480c37*/
+      if ( (uint8_t)((LayerClass *)&DataGlobal_87F7E8)->CoordinatesLegal( (int16_t *)&v23) ) /*0x480c37*/
       {
         if ( !*((unsigned char *)&v17->radSite->ptr_0 + Cell::PosToIndex((Cell *)&v23)) ) /*0x480c4f*/
           BuildingClass::AddOccupancy(v17->mapCoords, (int16_t *)&v23); /*0x480c5c*/

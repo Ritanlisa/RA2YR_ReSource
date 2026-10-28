@@ -1374,7 +1374,7 @@ bool BuildingClass::ValidateFoundation(int a1, int a2, int a3)  // raw body 0x44
     LOWORD(v55) = v4 + 1; /*0x44efec*/
     HIWORD(v55) = (((v51) >> 16) & 0xFFFF) + 2; /*0x44eff1*/
     *(unsigned int *)v48 = v55; /*0x44f004*/
-    if ( (unsigned __int8)LayerClass::CoordinatesLegal((LayerClass *)&dword_87F7E8, v48) ) /*0x44f008*/
+    if ( (unsigned __int8)((LayerClass *)&dword_87F7E8)->CoordinatesLegal( v48) ) /*0x44f008*/
     {
       v6 = *v5; /*0x44f011*/
       v7 = ((CellCoord *)&dword_87F7E8)->To_CellObj(v48); /*0x44f025*/
@@ -1390,7 +1390,7 @@ bool BuildingClass::ValidateFoundation(int a1, int a2, int a3)  // raw body 0x44
     LOWORD(v56) = v4 + 2; /*0x44f062*/
     HIWORD(v56) = (((v51) >> 16) & 0xFFFF) + 2; /*0x44f06e*/
     *(unsigned int *)v48 = v56; /*0x44f07d*/
-    if ( (unsigned __int8)LayerClass::CoordinatesLegal((LayerClass *)&dword_87F7E8, v48) ) /*0x44f081*/
+    if ( (unsigned __int8)((LayerClass *)&dword_87F7E8)->CoordinatesLegal( v48) ) /*0x44f081*/
     {
       v9 = *v5; /*0x44f08a*/
       v10 = ((CellCoord *)&dword_87F7E8)->To_CellObj(v48); /*0x44f09e*/
@@ -1406,7 +1406,7 @@ bool BuildingClass::ValidateFoundation(int a1, int a2, int a3)  // raw body 0x44
     LOWORD(v57) = v4 + 2; /*0x44f0dc*/
     HIWORD(v57) = (((v51) >> 16) & 0xFFFF) + 1; /*0x44f0e1*/
     *(unsigned int *)v48 = v57; /*0x44f0f4*/
-    if ( (unsigned __int8)LayerClass::CoordinatesLegal((LayerClass *)&dword_87F7E8, v48) ) /*0x44f0f8*/
+    if ( (unsigned __int8)((LayerClass *)&dword_87F7E8)->CoordinatesLegal( v48) ) /*0x44f0f8*/
     {
       v11 = *v5; /*0x44f101*/
       v12 = ((CellCoord *)&dword_87F7E8)->To_CellObj(v48); /*0x44f115*/
@@ -1426,7 +1426,7 @@ LABEL_12:
     v48[1] = v14[1] / 256; /*0x44f1a3*/
     ++v48[1]; /*0x44f1a8*/
     v48[0] = v58 + 1; /*0x44f1ae*/
-    if ( (unsigned __int8)LayerClass::CoordinatesLegal((LayerClass *)&dword_87F7E8, v48) ) /*0x44f1b3*/
+    if ( (unsigned __int8)((LayerClass *)&dword_87F7E8)->CoordinatesLegal( v48) ) /*0x44f1b3*/
     {
       v15 = *v5; /*0x44f1bc*/
       v16 = ((CellCoord *)&dword_87F7E8)->To_CellObj(v48); /*0x44f1d0*/
@@ -1437,7 +1437,7 @@ LABEL_12:
       }
     }
     --v48[1]; /*0x44f1f6*/
-    if ( (unsigned __int8)LayerClass::CoordinatesLegal((LayerClass *)&dword_87F7E8, v48) ) /*0x44f205*/
+    if ( (unsigned __int8)((LayerClass *)&dword_87F7E8)->CoordinatesLegal( v48) ) /*0x44f205*/
     {
       v17 = *v5; /*0x44f20e*/
       v18 = ((CellCoord *)&dword_87F7E8)->To_CellObj(v48); /*0x44f222*/
@@ -1449,7 +1449,7 @@ LABEL_12:
     }
     ++v48[1]; /*0x44f248*/
     --v48[0]; /*0x44f24d*/
-    if ( (unsigned __int8)LayerClass::CoordinatesLegal((LayerClass *)&dword_87F7E8, v48) ) /*0x44f25c*/
+    if ( (unsigned __int8)((LayerClass *)&dword_87F7E8)->CoordinatesLegal( v48) ) /*0x44f25c*/
     {
       v19 = *v5; /*0x44f265*/
       v20 = ((CellCoord *)&dword_87F7E8)->To_CellObj(v48); /*0x44f279*/
@@ -1462,7 +1462,7 @@ LABEL_12:
   }
   if ( v62 != g_TerrainTypeTable ) /*0x44f2ab*/
   {
-    if ( (unsigned __int8)LayerClass::CoordinatesLegal((LayerClass *)&dword_87F7E8, (__int16 *)&v62) ) /*0x44f2c5*/
+    if ( (unsigned __int8)((LayerClass *)&dword_87F7E8)->CoordinatesLegal( (__int16 *)&v62) ) /*0x44f2c5*/
     {
       v21 = *v5; /*0x44f2ce*/
       v22 = ((CellCoord *)&dword_87F7E8)->To_CellObj((__int16 *)&v62); /*0x44f2e2*/
@@ -1484,7 +1484,7 @@ LABEL_12:
       LOWORD(v59) = v4 + *v25; /*0x44f358*/
       HIWORD(v59) = (((v51) >> 16) & 0xFFFF) + v25[1]; /*0x44f361*/
       *(unsigned int *)v48 = v59; /*0x44f36a*/
-      if ( (unsigned __int8)LayerClass::CoordinatesLegal((LayerClass *)&dword_87F7E8, v48) ) /*0x44f374*/
+      if ( (unsigned __int8)((LayerClass *)&dword_87F7E8)->CoordinatesLegal( v48) ) /*0x44f374*/
       {
         v26 = *v5; /*0x44f37d*/
         v27 = ((CellCoord *)&dword_87F7E8)->To_CellObj(v48); /*0x44f391*/
@@ -1508,7 +1508,7 @@ LABEL_12:
       v32 = v51 + v30; /*0x44f3ef*/
       LOWORD(v60) = v51 + v30; /*0x44f3f2*/
       *(unsigned int *)v48 = v60; /*0x44f3fb*/
-      if ( (unsigned __int8)LayerClass::CoordinatesLegal((LayerClass *)&dword_87F7E8, v48) ) /*0x44f404*/
+      if ( (unsigned __int8)((LayerClass *)&dword_87F7E8)->CoordinatesLegal( v48) ) /*0x44f404*/
       {
         v33 = *v5; /*0x44f40d*/
         v34 = ((CellCoord *)&dword_87F7E8)->To_CellObj(v48); /*0x44f421*/
@@ -1519,7 +1519,7 @@ LABEL_12:
       (v49) = ((v49) & ~0xFFFF) | ((v32) & 0xFFFF); /*0x44f43f*/
       (v49) = ((v49) & ~(0xFFFF << 16)) | ((((((v51) >> 16) & 0xFFFF) - 1) & 0xFFFF) << 16); /*0x44f449*/
       *(unsigned int *)v48 = v49; /*0x44f458*/
-      if ( (unsigned __int8)LayerClass::CoordinatesLegal((LayerClass *)&dword_87F7E8, v48) ) /*0x44f45c*/
+      if ( (unsigned __int8)((LayerClass *)&dword_87F7E8)->CoordinatesLegal( v48) ) /*0x44f45c*/
       {
         v35 = *v5; /*0x44f465*/
         v36 = ((CellCoord *)&dword_87F7E8)->To_CellObj(v48); /*0x44f479*/
@@ -1544,7 +1544,7 @@ LABEL_12:
       v42 = (((v51) >> 16) & 0xFFFF) + v40; /*0x44f4e5*/
       HIWORD(v61) = (((v51) >> 16) & 0xFFFF) + v40; /*0x44f4e8*/
       *(unsigned int *)v48 = v61; /*0x44f4f1*/
-      if ( (unsigned __int8)LayerClass::CoordinatesLegal((LayerClass *)&dword_87F7E8, v48) ) /*0x44f4fa*/
+      if ( (unsigned __int8)((LayerClass *)&dword_87F7E8)->CoordinatesLegal( v48) ) /*0x44f4fa*/
       {
         v43 = *v5; /*0x44f503*/
         v44 = ((CellCoord *)&dword_87F7E8)->To_CellObj(v48); /*0x44f517*/
@@ -1555,7 +1555,7 @@ LABEL_12:
       (v50) = ((v50) & ~(0xFFFF << 16)) | (((v42) & 0xFFFF) << 16); /*0x44f535*/
       (v50) = ((v50) & ~0xFFFF) | ((v51 - 1) & 0xFFFF); /*0x44f53f*/
       *(unsigned int *)v48 = v50; /*0x44f54e*/
-      if ( (unsigned __int8)LayerClass::CoordinatesLegal((LayerClass *)&dword_87F7E8, v48) ) /*0x44f552*/
+      if ( (unsigned __int8)((LayerClass *)&dword_87F7E8)->CoordinatesLegal( v48) ) /*0x44f552*/
       {
         v45 = *v5; /*0x44f55b*/
         v46 = ((CellCoord *)&dword_87F7E8)->To_CellObj(v48); /*0x44f56f*/
@@ -1763,7 +1763,7 @@ int BuildingClass::MarkExitPath(unsigned short *a2, int a3) {
       (*((unsigned short *)&(a3))) = *a3 + v9; /*0x4a96a1*/
       (*(((unsigned short *)&(a3)) + 1)) = (unsigned short)v6; /*0x4a96a6*/
       a3 = a3; /*0x4a96b3*/
-      result = LayerClass::CoordinatesLegal((LayerClass *)this, (int16_t *)&a3); /*0x4a96ba*/
+      result = ((LayerClass *)this)->CoordinatesLegal( (int16_t *)&a3); /*0x4a96ba*/
       if ( (unsigned char)result ) /*0x4a96c1*/
       {
         result = (int)((CellCoord *)this)->To_CellObj((int16_t *)&a3); /*0x4a96ca*/

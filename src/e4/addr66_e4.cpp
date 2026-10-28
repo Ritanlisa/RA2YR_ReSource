@@ -961,7 +961,7 @@ LABEL_119:
         (v149) = ((v149) & ~0xFFFF) | ((v129 / 256) & 0xFFFF); /*0x662f45*/
         (v149) = ((v149) & ~(0xFFFF << 16)) | (((v166 / 256) & 0xFFFF) << 16); /*0x662f58*/
         v150 = v149; /*0x662f65*/
-        if ( (unsigned __int8)LayerClass::CoordinatesLegal((LayerClass *)&dword_87F7E8, (__int16 *)&v150) ) /*0x662f6f*/
+        if ( (unsigned __int8)((LayerClass *)&dword_87F7E8)->CoordinatesLegal( (__int16 *)&v150) ) /*0x662f6f*/
           (*(void (**)(int, int *))(*(unsigned int *)this->Owner + 436))(this->Owner, &v158); /*0x662f82*/
         v131 = (int *)(*(int (**)(int, unsigned int *))(*(unsigned int *)this->Owner + 440))(this->Owner, v164); /*0x662f92*/
         v132 = this->Owner; /*0x662f98*/
@@ -1126,7 +1126,7 @@ LABEL_38:
         LOWORD(v148) = SLODWORD(v155) / 256; /*0x6626d4*/
         HIWORD(v148) = SHIDWORD(v155) / 256; /*0x6626eb*/
         LODWORD(v157) = v148; /*0x6626f4*/
-        if ( (unsigned __int8)LayerClass::CoordinatesLegal((LayerClass *)&dword_87F7E8, (__int16 *)&v157) ) /*0x6626fe*/
+        if ( (unsigned __int8)((LayerClass *)&dword_87F7E8)->CoordinatesLegal( (__int16 *)&v157) ) /*0x6626fe*/
           (*(void (**)(int, double *))(*(unsigned int *)this->Owner + 436))(this->Owner, &v155); /*0x662715*/
       }
       else

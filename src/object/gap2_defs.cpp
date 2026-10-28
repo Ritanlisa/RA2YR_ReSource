@@ -388,7 +388,7 @@ int TechnoClass::SmokeUpdate(double a2) {  // g57b5 W4: raw 真值补参 (a2)
                (uint8_t)((LayerClass *)&dword_87F7E8)->IsWithinUsableArea( v20, 1))
            || !v3->Destru_vt311())
           && ((v21 = (int16_t *)v3->GetCellCoords_Alt(&v30),
-               (uint8_t)LayerClass::CoordinatesLegal((LayerClass *)&dword_87F7E8, v21))
+               (uint8_t)((LayerClass *)&dword_87F7E8)->CoordinatesLegal( v21))
            || !v3->Destru_vt311()) )
         {
           if ( v3->movementDestination == &unk_ABDC50 ) /*0x414fec*/
@@ -3315,7 +3315,7 @@ int AbstractClass::ModifyCellTiles(int a1) {
         (*((unsigned short *)&(v31))) = *v7 + v6; /*0x5433b0*/
         (*(((unsigned short *)&(v31)) + 1)) = v27 + v7[1]; /*0x5433b9*/
         *(unsigned int *)v32 = v31; /*0x5433c8*/
-        if ( !(uint8_t)LayerClass::CoordinatesLegal((LayerClass *)&dword_87F7E8, v32) ) /*0x5433cc*/
+        if ( !(uint8_t)((LayerClass *)&dword_87F7E8)->CoordinatesLegal( v32) ) /*0x5433cc*/
           goto LABEL_44; /*0x5433cc*/
         v8 = (uint8_t *)((CellCoord *)&dword_87F7E8)->To_CellObj(v32); /*0x5433e8*/
         v9 = v2[4].referenceCount; /*0x5433ea*/

@@ -2031,7 +2031,7 @@ LABEL_31:
             LOWORD(v54) = LOWORD(dword_89F688[v38]) + v49; /*0x65e4a5*/
             HIWORD(v54) = v39; /*0x65e4b1*/
             a2 = v54; /*0x65e4c0*/
-            if ( LayerClass::CoordinatesLegal(&dword_87F7E8, (__int16 *)&a2) ) /*0x65e4c7*/
+            if ( ((LayerClass *)&dword_87F7E8)->CoordinatesLegal( (__int16 *)&a2) ) /*0x65e4c7*/
               break; /*0x65e4c7*/
             if ( ++v37 >= 8 ) /*0x65e4d4*/
             {
@@ -2110,7 +2110,7 @@ LABEL_39:
         LOWORD(v55) = LOWORD(dword_89F688[v41]) + v49; /*0x65e529*/
         HIWORD(v55) = (((v49) >> 16) & 0xFFFF) + v42; /*0x65e53b*/
         a2 = v55; /*0x65e544*/
-        if ( !LayerClass::CoordinatesLegal(&dword_87F7E8, (__int16 *)&a2) ) /*0x65e550*/
+        if ( !((LayerClass *)&dword_87F7E8)->CoordinatesLegal( (__int16 *)&a2) ) /*0x65e550*/
         {
           v43 = *v5; /*0x65e559*/
           v44 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((__int16 *)&a2); /*0x65e570*/

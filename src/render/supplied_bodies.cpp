@@ -2355,7 +2355,7 @@ int TacticalMapClass::ProcessCell(int16_t *a2, int a3)
       v13 = v34 - (v11 >> 1) + 1; /*0x6d8009*/
       v35[0] = v33 + ((v11 + 1) >> 1); /*0x6d8010*/
       v35[1] = v34 - (v11 >> 1) + 1; /*0x6d8015*/
-      if ( !(unsigned __int8)LayerClass::CoordinatesLegal((LayerClass *)&DataGlobal_87F7E8, v35) ) /*0x6d8021*/
+      if ( !(unsigned __int8)((LayerClass *)&DataGlobal_87F7E8)->CoordinatesLegal( v35) ) /*0x6d8021*/
         goto LABEL_34; /*0x6d8021*/
       v36[0] = v33 + ((v11 + 1) >> 1); /*0x6d8031*/
       v36[1] = v34 - (v11 >> 1) + 1; /*0x6d8036*/

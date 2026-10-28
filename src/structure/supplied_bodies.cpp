@@ -12397,7 +12397,7 @@ namespace gamemd {
     (*((unsigned short *)&(v14))) = *v5 + *a2; /*0x45eed5*/
     (*(((unsigned short *)&(v14)) + 1)) = v6; /*0x45eede*/
     *(unsigned int *)v13 = v14; /*0x45eeed*/
-    if ( (uint8_t)LayerClass::CoordinatesLegal((LayerClass *)&dword_87F7E8, v13) ) /*0x45eef1*/
+    if ( (uint8_t)((LayerClass *)&dword_87F7E8)->CoordinatesLegal( v13) ) /*0x45eef1*/
     {
       v7 = ((CellCoord *)&dword_87F7E8)->To_CellObj(v13); /*0x45ef04*/
       v8 = v7->u32_44; /*0x45ef09*/

@@ -3733,7 +3733,7 @@ int ObjectClass::RenderAlphaShapes()
         (v9) = ((v9) & ~0xFFFF) | ((unsigned int)(*v4 + v2) & 0xFFFF); /*0x459cf7*/
         (v9) = ((v9) & ~(0xFFFFULL << 16)) | (((uint64_t)(unsigned int)(v5) & 0xFFFF) << 16); /*0x459d00*/
         *(unsigned int *)v8 = v9; /*0x459d0f*/
-        if ( (uint8_t)LayerClass::CoordinatesLegal((LayerClass *)&dword_87F7E8, v8) ) /*0x459d13*/
+        if ( (uint8_t)((LayerClass *)&dword_87F7E8)->CoordinatesLegal( v8) ) /*0x459d13*/
         {
           if ( !*((unsigned int *)((CellCoord *)&dword_87F7E8)->To_CellObj(v8) + 57) ) /*0x459d2b*/
           {
@@ -4972,7 +4972,7 @@ int ObjectClass::RenderAlphaShapes()
     (a3) = ((a3) & ~0xFFFF) | ((unsigned int)(*a2 / 256) & 0xFFFF); /*0x4ce558*/
     (a3) = ((a3) & ~(0xFFFFULL << 16)) | (((uint64_t)(unsigned int)(a2[1] / 256) & 0xFFFF) << 16); /*0x4ce571*/
     return 2 /*0x4ce58e*/
-    - ((uint8_t)LayerClass::CoordinatesLegal((LayerClass *)&DataGlobal_87F7E8, (int16_t *)&a3) != 0);
+    - ((uint8_t)((LayerClass *)&DataGlobal_87F7E8)->CoordinatesLegal( (int16_t *)&a3) != 0);
   }
 // 0x004DC340
   char ObjectClass::DrawFootTargetLine()
@@ -5054,7 +5054,7 @@ int ObjectClass::RenderAlphaShapes()
     v23 = v8[2]; /*0x4dc426*/
     v19[0] = v21 / 256; /*0x4dc436*/
     v19[1] = v22 / 256; /*0x4dc44e*/
-    if ( (uint8_t)LayerClass::CoordinatesLegal((LayerClass *)&dword_87F7E8, v19) /*0x4dc481*/
+    if ( (uint8_t)((LayerClass *)&dword_87F7E8)->CoordinatesLegal( v19) /*0x4dc481*/
       && (((Coord *)&dword_87F7E8)->To_Cell( &v21)->flags & 0x100) != 0 )
     {
       v5 = dword_8B3DF4 + Cell::GetGroundHeight(&v21); /*0x4dc492*/
