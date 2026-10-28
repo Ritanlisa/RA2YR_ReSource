@@ -433,7 +433,7 @@ AbstractClass * * TiberiumClass::SaveLoad_Prefix(int a1, int a2)
       /* X11: ptr_0 install elided (implicit via TiberiumClass virtuals 0x721fd4) */
       /* X11: ptr_0 install elided (implicit via TiberiumClass virtuals 0x721fdb) */
     }
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v2->Image_d); /*0x721fee*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &v2->Image_d); /*0x721fee*/
     if ( v2 != (TiberiumClass *)-196 ) /*0x721ff5*/
       AnimTypeList::Constructor(&v2->u32_C4); /*0x721ff9*/
     (*(void (**)(int, TiberiumClass **, int, unsigned int))(*(unsigned int *)v11 + 12))(v11, &a1, 4, 0); /*0x722009*/
@@ -453,7 +453,7 @@ AbstractClass * * TiberiumClass::SaveLoad_Prefix(int a1, int a2)
     if ( v2->Debris[0] > 0 ) /*0x722045*/
     {
       do /*0x722064*/
-        ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v2->Value + 4 * v13++)); /*0x722056*/
+        ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, (int *)(v2->Value + 4 * v13++)); /*0x722056*/
       while ( v13 < v2->Debris[0] ); /*0x722064*/
       result = 0; /*0x722066*/
     }

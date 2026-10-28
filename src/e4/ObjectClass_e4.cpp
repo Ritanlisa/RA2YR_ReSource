@@ -451,25 +451,25 @@ LABEL_28:
             aP0->locomotor = 0; /*0x4db566*/
             OleLoadFromStream(v4, &IID_ILocomotion, &aP0->locomotor); /*0x4db568*/
             aP0->FootClass_field_5A0 = 0; /*0x4db574*/
-            ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(aP0 + 1492)); /*0x4db580*/
-            ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->disguisedAsHouse); /*0x4db591*/
-            ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->FootClass_field_5A4); /*0x4db5a2*/
-            ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->FootClass_field_5A8); /*0x4db5b3*/
-            ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->FootClass_field_5C8); /*0x4db5c4*/
-            ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->FootClass_field_5CC); /*0x4db5d5*/
-            ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->FootClass_field_5DC); /*0x4db5e6*/
-            ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->FootClass_field_694); /*0x4db5f7*/
-            ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->parasiteImUsing); /*0x4db608*/
+            ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, (int *)(aP0 + 1492)); /*0x4db580*/
+            ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &aP0->disguisedAsHouse); /*0x4db591*/
+            ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &aP0->FootClass_field_5A4); /*0x4db5a2*/
+            ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &aP0->FootClass_field_5A8); /*0x4db5b3*/
+            ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &aP0->FootClass_field_5C8); /*0x4db5c4*/
+            ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &aP0->FootClass_field_5CC); /*0x4db5d5*/
+            ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &aP0->FootClass_field_5DC); /*0x4db5e6*/
+            ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &aP0->FootClass_field_694); /*0x4db5f7*/
+            ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &aP0->parasiteImUsing); /*0x4db608*/
             AudioController::Init(&aP0->audioController7); /*0x4db613*/
             aP0->FootClass_field_53C = 0; /*0x4db618*/
             aP0->FootClass_field_540 = 0; /*0x4db61e*/
             for ( i = 0; i < aP0->q5BC; ++i ) /*0x4db62e*/
               ObjectPtr::RegisterForTracking( /*0x4db63f*/
-                (int)&SwizzleManagerClass_Instance,
+                &SwizzleManagerClass_Instance,
                 (int *)(aP0->q_5B0 + 4 * i));
             for ( j = 0; j < aP0->q598; ++j ) /*0x4db659*/
               ObjectPtr::RegisterForTracking( /*0x4db66a*/
-                (int)&SwizzleManagerClass_Instance,
+                &SwizzleManagerClass_Instance,
                 (int *)(*(unsigned int *)(aP0 + 1420) + 4 * j));
             return 0; /*0x4db67a*/
           }

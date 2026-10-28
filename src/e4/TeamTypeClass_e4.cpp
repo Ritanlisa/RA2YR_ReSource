@@ -1085,10 +1085,10 @@ int TeamTypeClass::LoadTypeData(AbstractTypeClass * aP0, int aP1)
       /* X11: ptr_0 install elided (implicit via TeamTypeClass virtuals 0x6f1be1) */
       /* X11: ptr_0 install elided (implicit via TeamTypeClass virtuals 0x6f1be8) */
     }
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->u32_C4); /*0x6f1bfb*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->q0D0); /*0x6f1c0c*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->FootClass_E0); /*0x6f1c1d*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)aP0 + 57); /*0x6f1c2e*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &aP0->u32_C4); /*0x6f1bfb*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &aP0->q0D0); /*0x6f1c0c*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &aP0->FootClass_E0); /*0x6f1c1d*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, (int *)aP0 + 57); /*0x6f1c2e*/
     return 0; /*0x6f1c33*/
   }
   return result; /*0x6f1c35*/

@@ -1805,7 +1805,7 @@ int MouseClass::LoadGameAssets() {
           v16 = 75; /*0x5be0ce*/
           do /*0x5be0e2*/
           {
-            ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v15); /*0x5be0d9*/
+            ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, v15); /*0x5be0d9*/
             v15 += 13; /*0x5be0de*/
             --v16; /*0x5be0e1*/
           }
@@ -1814,9 +1814,9 @@ int MouseClass::LoadGameAssets() {
           --v73; /*0x5be0ef*/
         }
         while ( v73 ); /*0x5be0f3*/
-        ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->MouseClass_field_0x11A4); /*0x5be101*/
-        ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->MouseClass_field_0x11A8); /*0x5be112*/
-        ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->MouseClass_field_0x11A0); /*0x5be123*/
+        ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &this->MouseClass_field_0x11A4); /*0x5be101*/
+        ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &this->MouseClass_field_0x11A8); /*0x5be112*/
+        ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &this->MouseClass_field_0x11A0); /*0x5be123*/
         (*(void (**)(MouseClass *))&this->HandleClick_ph->q058)(this); /*0x5be12d*/
         (*(void (**)(MouseClass *))&this->HandleClick_ph->UIName)(this); /*0x5be135*/
         MouseClass_field_0x0 = this->HandleClick_ph; /*0x5be138*/

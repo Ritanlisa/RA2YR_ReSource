@@ -90,7 +90,7 @@ AbstractClass * * IsometricTileTypeClass::LoadTypeData(int * a1, int a2)
       /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7ECC1C) */  /*0x549d0f*/
       /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7ECC1C) */  /*0x549d16*/
     }
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)a1 + 175); /*0x549d2a*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, (int *)a1 + 175); /*0x549d2a*/
     for ( j = 0; j < *(int *)&g_SurfaceAnimState; *(unsigned int *)(*(unsigned int *)&DataGlobal_87F69C + 4 * j - 4) = 0 ) /*0x549d39*/
       ++j; /*0x549d41*/
     ((TerrainClass *)a1)->InitTheatre(); /*0x549d56*/

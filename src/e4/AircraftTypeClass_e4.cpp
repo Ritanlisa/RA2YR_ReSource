@@ -306,7 +306,7 @@ int  AircraftTypeClass::LoadFromINI(ObjectTypeClass * aP0, int aP1)
       /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E283C) */  /*0x41ce51*/
       /* X11: ptr_0 install elided (implicit via AircraftTypeClass virtuals 0x41ce58) */
     }
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->u32_E00); /*0x41ce6b*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &aP0->u32_E00); /*0x41ce6b*/
     (aP0->TechnoTypeClass)->LoadAnim(); /*0x41ce72*/
     (aP0->TechnoTypeClass)->Load2DArt(); /*0x41ce79*/
     return 0; /*0x41ce7e*/

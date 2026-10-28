@@ -399,13 +399,13 @@ int AnimTypeClass::SaveLoad_Prefix(int a1, int a2)
     }  /*0x428845*/  /*0x42883e*/  /*0x428837*/  /*0x428831*/
     ((char *)this)->LoadAnim();  /*0x42884e*/
     ((char *)this)->Load2DArt();  /*0x428855*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->Next_d);  /*0x428866*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->ExpireAnim_d);  /*0x428877*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->TrailerAnim_d);  /*0x428888*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->BounceAnim_d);  /*0x428899*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->Spawns_d);  /*0x4288aa*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->Warhead);  /*0x4288bb*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->TiberiumSpawnType);  /*0x4288cc*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &this->Next_d);  /*0x428866*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &this->ExpireAnim_d);  /*0x428877*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &this->TrailerAnim_d);  /*0x428888*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &this->BounceAnim_d);  /*0x428899*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &this->Spawns_d);  /*0x4288aa*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &this->Warhead);  /*0x4288bb*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &this->TiberiumSpawnType);  /*0x4288cc*/
     if ( !this->DemandLoad[0] )
     {  /*0x4288d1*/
       if ( this->Theater[0] )

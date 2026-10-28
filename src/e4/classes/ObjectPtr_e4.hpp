@@ -9,7 +9,7 @@ struct ObjectPtr {
     unsigned int tail_0;  // 0x0
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
-    static int __stdcall RegisterForTracking(int p0, int* p1);  // x4:signals@0x6cf240
+    static int __stdcall RegisterForTracking(void* p0, void* p1);  // x4:signals@0x6cf240 (IDA 0x6CF240: a1 deref'd at +4/+8/+12/+17/+20/+24 => pointer)
 };
 
 } // namespace gamemd

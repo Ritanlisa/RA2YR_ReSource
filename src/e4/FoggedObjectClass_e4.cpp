@@ -708,7 +708,7 @@ int FoggedObjectClass::LoadTypeData(int * a1, int a2)
     /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_b5181c) */  /*0x4d2569*/
     /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_b5181c) */  /*0x4d2570*/
   }
-  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v3->House); /*0x4d2580*/
+  ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &v3->House); /*0x4d2580*/
   v5 = *v2; /*0x4d2585*/
   this = 0; /*0x4d2590*/
   result = (*(int (**)(int *, FoggedObjectClass **, int, unsigned int))(v5 + 12))(v2, &this, 4, 0); /*0x4d2594*/
@@ -784,7 +784,7 @@ LABEL_22:
       v11->q008 = v20; /*0x4d262e*/
       v11->q00C = v21; /*0x4d2635*/
     }
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(16 * v3[2].vfptr3 + v3[2].vfptr - 16)); /*0x4d264b*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, (int *)(16 * v3[2].vfptr3 + v3[2].vfptr - 16)); /*0x4d264b*/
     if ( ++v17 >= (int)this ) /*0x4d265f*/
       goto LABEL_14; /*0x4d265f*/
   }

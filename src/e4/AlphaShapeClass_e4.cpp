@@ -118,7 +118,7 @@ int  AlphaShapeClass::SD_vt05(int aP1, void *a2)
       /* X11: ptr_0 install elided (implicit via AlphaShapeClass virtuals 0x420e14) */
       /* X11: ptr_0 install elided (implicit via AlphaShapeClass virtuals 0x420e1b) */
     }
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance,&this->q024); /*0x420e2b*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance,&this->q024); /*0x420e2b*/
     this->u32_38 = 0; /*0x420e30*/
   }
   return Prefix_0; /*0x420e39*/

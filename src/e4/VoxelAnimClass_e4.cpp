@@ -865,9 +865,9 @@ int VoxelAnimClass::SaveLoad_Prefix(ObjectClass * aP1, int aP1a)
     }
     AudioController::Init((AudioController *)(aP1 + 69)); /*0x74a9b8*/
     AudioController::Init((AudioController *)(aP1 + 74)); /*0x74a9c3*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, aP1 + 65); /*0x74a9d4*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, aP1 + 66); /*0x74a9e5*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, aP1 + 67); /*0x74a9f6*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, aP1 + 65); /*0x74a9d4*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, aP1 + 66); /*0x74a9e5*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, aP1 + 67); /*0x74a9f6*/
   }
   return Register; /*0x74a9fd*/
 }

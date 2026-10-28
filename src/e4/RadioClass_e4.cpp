@@ -125,7 +125,7 @@ int RadioClass::LoadState(int aP1, int aP2)
         {
           do /*0x65ac33*/
             ObjectPtr::RegisterForTracking( /*0x65ac29*/
-              (int)&SwizzleManagerClass_Instance,
+              &SwizzleManagerClass_Instance,
               (int *)(*(unsigned int *)(v3 + 228) + 4 * v9++));
           while ( v9 < aP2 ); /*0x65ac33*/
         }

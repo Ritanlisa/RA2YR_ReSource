@@ -1995,7 +1995,7 @@ int Tactical::InitMap(int a1, int a2)
       v5 = (int *)&a1->__pad_AC[56]; /*0x6dbd63*/
       do /*0x6dbd80*/
       {
-        ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v5); /*0x6dbd6f*/
+        ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, v5); /*0x6dbd6f*/
         ++v4; /*0x6dbd7a*/
         ++v5; /*0x6dbd7b*/
       }

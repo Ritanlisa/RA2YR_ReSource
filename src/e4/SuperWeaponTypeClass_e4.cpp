@@ -799,8 +799,8 @@ int SuperWeaponTypeClass::SaveLoad_Prefix(int a1, int a2)
       /* X11: ptr_0 install elided (implicit via SuperWeaponTypeClass virtuals 0x6ce848) */
       /* X11: ptr_0 install elided (implicit via SuperWeaponTypeClass virtuals 0x6ce84f) */
     }
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&a1->WeaponType); /*0x6ce862*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&a1->AuxBuilding); /*0x6ce873*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &a1->WeaponType); /*0x6ce862*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &a1->AuxBuilding); /*0x6ce873*/
     char Buffer[512]; // [esp+8h] [ebp-200h] BYREF
     _makepath(Buffer, 0, 0, (const char *)a1->SidebarImageFile, Ext); /*0x6ce88d*/
     SHPStruct *v3; // eax

@@ -1752,7 +1752,7 @@ int Object::LoadObject(ObjectClass * aP1, int aP1a)
       aP1[2] = &g_ptr_7EF3A8; /*0x5fd924*/
       aP1[3] = &g_ptr_7EF3A8; /*0x5fd92b*/
     }
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, aP1 + 43); /*0x5fd93e*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, aP1 + 43); /*0x5fd93e*/
   }
   return Register; /*0x5fd945*/
 }

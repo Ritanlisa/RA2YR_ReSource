@@ -184,9 +184,9 @@ int BombClass::Write(int a2, int aP0, int aP1, int a1, int aP2)
     }
     AudioController::Init((AudioController *)&aP0->audioController[3]); /*0x438b85*/
     aP0->BombClass_field_54 = 0; /*0x438b8d*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->BombClass_field_28); /*0x438b9a*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)aP0->__pad_24); /*0x438ba8*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->BombClass_field_2C); /*0x438bb6*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &aP0->BombClass_field_28); /*0x438b9a*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, (int *)aP0->__pad_24); /*0x438ba8*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &aP0->BombClass_field_2C); /*0x438bb6*/
   }
   return Prefix_0; /*0x438bbd*/
 

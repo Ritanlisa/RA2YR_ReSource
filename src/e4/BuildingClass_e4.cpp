@@ -128,15 +128,15 @@ LABEL_13:
       byte_B0E84C = 0; /*0x453f28*/
       ++NumOfElements; /*0x453f2f*/
     }
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v1->Type); /*0x453f40*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v1->Factory); /*0x453f51*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v1->C4AppliedBy); /*0x453f62*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v1->FirestormAnim); /*0x453f73*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v1->PsiWarnAnim); /*0x453f84*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v1->Spotlight); /*0x453f95*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &v1->Type); /*0x453f40*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &v1->Factory); /*0x453f51*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &v1->C4AppliedBy); /*0x453f62*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &v1->FirestormAnim); /*0x453f73*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &v1->PsiWarnAnim); /*0x453f84*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &v1->Spotlight); /*0x453f95*/
     AudioController::Init((AudioController *)v1->WasOnline); /*0x453fa0*/
     AudioController::Init(&v1->Audio8_2); /*0x453fab*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v1->SecretProduction); /*0x453fbc*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &v1->SecretProduction); /*0x453fbc*/
     result = (*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)v9 + 12))(v9, &v34, 4, 0); /*0x453fcd*/
     if ( result >= 0 ) /*0x453fd2*/
     {
@@ -148,7 +148,7 @@ LABEL_24:
         if ( v13 > 0 ) /*0x454050*/
         {
           do /*0x45406b*/
-            ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v1->Occupants + 4 * v18++)); /*0x454061*/
+            ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, (int *)(v1->Occupants + 4 * v18++)); /*0x454061*/
           while ( v18 < v34 ); /*0x45406b*/
         }
         result = (*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)v9 + 12))(v9, &v34, 4, 0); /*0x45407a*/
@@ -163,14 +163,14 @@ LABEL_36:
             if ( v19 > 0 ) /*0x4540ff*/
             {
               do /*0x45411a*/
-                ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v1->Audio7[4] + 4 * v25++)); /*0x454110*/
+                ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, (int *)(v1->Audio7[4] + 4 * v25++)); /*0x454110*/
               while ( v25 < v34 ); /*0x45411a*/
             }
             Anims = v1->Anims; /*0x45411c*/
             v27 = 21; /*0x454122*/
             do /*0x454136*/
             {
-              ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, Anims++); /*0x45412d*/
+              ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, Anims++); /*0x45412d*/
               --v27; /*0x454135*/
             }
             while ( v27 ); /*0x454136*/
@@ -178,7 +178,7 @@ LABEL_36:
             v29 = 3; /*0x45413e*/
             do /*0x454152*/
             {
-              ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, Upgrades++); /*0x454149*/
+              ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, Upgrades++); /*0x454149*/
               --v29; /*0x454151*/
             }
             while ( v29 ); /*0x454152*/
@@ -186,7 +186,7 @@ LABEL_36:
             v31 = 8; /*0x45415a*/
             do /*0x45416e*/
             {
-              ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, DamageFireAnims++); /*0x454165*/
+              ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, DamageFireAnims++); /*0x454165*/
               --v31; /*0x45416d*/
             }
             while ( v31 ); /*0x45416e*/
@@ -1377,11 +1377,11 @@ int BuildingClass::SaveLoad_Register()
   result = AbstractClass::SaveLoad_Prefix_0((unsigned int *)v2, v3); /*0x5f5e8b*/
   if ( result >= 0 ) /*0x5f5e92*/
   {
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v2->nextObject); /*0x5f5e9d*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v2->attachedTag); /*0x5f5eab*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v2->attachedBomb); /*0x5f5eb9*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v2->nextArrayIndex); /*0x5f5ec7*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v2->parachute); /*0x5f5ed8*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &v2->nextObject); /*0x5f5e9d*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &v2->attachedTag); /*0x5f5eab*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &v2->attachedBomb); /*0x5f5eb9*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &v2->nextArrayIndex); /*0x5f5ec7*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &v2->parachute); /*0x5f5ed8*/
     AudioController::Init(&v2->ambientSoundController); /*0x5f5ee0*/
     AudioController::Init(&v2->customSound_controller); /*0x5f5ee8*/
     v2->lineTrailer = 0; /*0x5f5eed*/

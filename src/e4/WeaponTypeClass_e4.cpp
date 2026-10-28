@@ -393,15 +393,15 @@ int WeaponTypeClass_SaveLoad_Prefix(WeaponTypeClass *aP0, WeaponTypeClass *aP0, 
       v7->sub_772DFC(&a2, 4, 0); /*0x772dfc*/
       ((DynamicVector *)v5->DownReport)->Add_Alt(&a2); /*0x772e06*/
     }
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&v5->Warhead); /*0x772e1e*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&v5->Projectile); /*0x772e2f*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&v5->AttachedParticleSystem); /*0x772e40*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&v5->AssaultAnim_d); /*0x772e51*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&v5->OccupantAnim); /*0x772e62*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&v5->OpenToppedAnim_d); /*0x772e73*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &v5->Warhead); /*0x772e1e*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &v5->Projectile); /*0x772e2f*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &v5->AttachedParticleSystem); /*0x772e40*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &v5->AssaultAnim_d); /*0x772e51*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &v5->OccupantAnim); /*0x772e62*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &v5->OpenToppedAnim_d); /*0x772e73*/
     int m; // esi
     for ( m = 0; m < v5-((unsigned int *)(>Anim))[4]; ++m ) /*0x772e83*/
-      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v5-((unsigned int *)(>Anim))[1] + 4 * m)); /*0x772e94*/
+      ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, (int *)(v5-((unsigned int *)(>Anim))[1] + 4 * m)); /*0x772e94*/
     return 0; /*0x772ea4*/
   }
   return result; /*0x772ea6*/

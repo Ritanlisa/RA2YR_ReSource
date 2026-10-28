@@ -41,7 +41,7 @@ int ScriptClass::LoadState(AbstractClass * aP0, int aP1)
       /* X11: ptr_0 install elided (implicit via ScriptClass virtuals 0x691661) */
       /* X11: ptr_0 install elided (implicit via ScriptClass virtuals 0x691668) */
     }
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->buildingType); /*0x691678*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &aP0->buildingType); /*0x691678*/
     return 0; /*0x69167d*/
   }
   return result; /*0x69167f*/

@@ -872,9 +872,9 @@ int BulletTypeClass::SaveLoad_Prefix(gamemd::ObjectTypeClass* aP0, int aP1)
     }
     (aP0->vfptr)->LoadAnim(); /*0x46c6e1*/
     (aP0->vfptr)->Load2DArt(); /*0x46c6e8*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)aP0 + 182); /*0x46c6f9*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)aP0 + 172); /*0x46c70a*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)aP0 + 173); /*0x46c71b*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, (int *)aP0 + 182); /*0x46c6f9*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, (int *)aP0 + 172); /*0x46c70a*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, (int *)aP0 + 173); /*0x46c71b*/
     return 0; /*0x46c720*/
   }
   return result; /*0x46c722*/

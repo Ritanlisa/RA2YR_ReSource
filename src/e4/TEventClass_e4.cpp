@@ -831,9 +831,9 @@ int TEventClass::SaveLoad_Prefix(TEventClass * aP0, int aP1)
       /* X11: ptr_0 install elided (implicit via TEventClass virtuals 0x71f8f1) */
       /* X11: ptr_0 install elided (implicit via TEventClass virtuals 0x71f8f8) */
     }
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->TEventClass_field_28); /*0x71f908*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->TEventClass_field_30); /*0x71f916*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->TEventClass_field_54); /*0x71f924*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &aP0->TEventClass_field_28); /*0x71f908*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &aP0->TEventClass_field_30); /*0x71f916*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &aP0->TEventClass_field_54); /*0x71f924*/
     return 0; /*0x71f929*/
   }
   return result; /*0x71f92b*/

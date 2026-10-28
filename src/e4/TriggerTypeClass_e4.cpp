@@ -485,10 +485,10 @@ int TriggerTypeClass::LoadTypeData(AbstractTypeClass * aP0, int aP1)
       /* X11: ptr_0 install elided (implicit via TriggerTypeClass virtuals 0x727c21) */
       /* X11: ptr_0 install elided (implicit via TriggerTypeClass virtuals 0x727c28) */
     }
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->q11C); /*0x727c3b*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->q11C); /*0x727c4c*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->q11C); /*0x727c5d*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->q11C); /*0x727c6e*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &aP0->q11C); /*0x727c3b*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &aP0->q11C); /*0x727c4c*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &aP0->q11C); /*0x727c5d*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &aP0->q11C); /*0x727c6e*/
     return 0; /*0x727c73*/
   }
   return result; /*0x727c75*/

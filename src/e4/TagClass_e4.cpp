@@ -366,8 +366,8 @@ int TagClass::LoadTag(TagClass * aP0, int aP1)
       /* X11: ptr_0 install elided (implicit via TagClass virtuals 0x6e5761) */
       /* X11: ptr_0 install elided (implicit via TagClass virtuals 0x6e5768) */
     }
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->buildingType); /*0x6e5778*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->firstTrigger); /*0x6e5786*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &aP0->buildingType); /*0x6e5778*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &aP0->firstTrigger); /*0x6e5786*/
     return 0; /*0x6e578b*/
   }
   return result; /*0x6e578d*/

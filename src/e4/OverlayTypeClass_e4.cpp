@@ -279,7 +279,7 @@ ScenarioClass * * OverlayTypeClass::SaveLoad_Prefix(int a1, int a2)
     }  /*0x5feb35*/  /*0x5feb2e*/  /*0x5feb27*/  /*0x5feb21*/
     ((char *)this)->LoadAnim();  /*0x5feb3e*/
     ((char *)this)->Load2DArt();  /*0x5feb45*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->CellAnim_d);  /*0x5feb56*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &this->CellAnim_d);  /*0x5feb56*/
     if ( !this->DrawFlat_d[0] )
     {  /*0x5feb5b*/
       if ( this->Theater[0] )

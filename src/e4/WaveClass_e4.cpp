@@ -68,8 +68,8 @@ int WaveClass::LoadWaveData(int a2, int a3)
       v4->ptr_4 = &off_7F6BC8; /*0x75f6b8*/
     }
     v4->u32_14C = v4->q_B0 == 3 ? v4 + 384 : v4 + 336;
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v4->u32_AC); /*0x75f6ee*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v4->q1D4); /*0x75f6ff*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &v4->u32_AC); /*0x75f6ee*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &v4->q1D4); /*0x75f6ff*/
     Register = (*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)v3 + 12))(v3, &a2, 4, 0); /*0x75f712*/
     if ( Register >= 0 ) /*0x75f716*/
     {
@@ -83,7 +83,7 @@ LABEL_17:
         {
           do /*0x75f7b8*/
             ObjectPtr::RegisterForTracking( /*0x75f7ae*/
-              (int)&SwizzleManagerClass_Instance,
+              &SwizzleManagerClass_Instance,
               (int *)(v4->u32_1F4 + 4 * v11++));
           while ( v11 < a2 ); /*0x75f7b8*/
         }

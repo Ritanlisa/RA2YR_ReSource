@@ -427,11 +427,11 @@ int AirstrikeClass::Write(AirstrikeClass * aP0, int aP1)
       /* X11: ptr_0 install elided (implicit via AirstrikeClass virtuals 0x41d724) */
       /* X11: ptr_0 install elided (implicit via AirstrikeClass virtuals 0x41d72b) */
     }
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->owner); /*0x41d73b*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->AirstrikeClass_field_50); /*0x41d749*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->AirstrikeClass_field_54); /*0x41d757*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->AirstrikeClass_field_58); /*0x41d765*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->AirstrikeClass_field_5C); /*0x41d773*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &aP0->owner); /*0x41d73b*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &aP0->AirstrikeClass_field_50); /*0x41d749*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &aP0->AirstrikeClass_field_54); /*0x41d757*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &aP0->AirstrikeClass_field_58); /*0x41d765*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &aP0->AirstrikeClass_field_5C); /*0x41d773*/
   }
   return Prefix_0; /*0x41d77a*/
 }

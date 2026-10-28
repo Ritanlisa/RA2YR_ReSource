@@ -500,12 +500,12 @@ int VoxelAnimTypeClass::SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1)
       /* X11: ptr_0 install elided (implicit via VoxelAnimTypeClass virtuals 0x74b845) */
       /* X11: ptr_0 install elided (implicit via VoxelAnimTypeClass virtuals 0x74b84c) */
     }
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->Warhead); /*0x74b85f*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->BounceAnim); /*0x74b870*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->ExpireAnim); /*0x74b881*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->TrailerAnim); /*0x74b892*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->Spawns); /*0x74b8a3*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->AttachedSystem); /*0x74b8b4*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &aP0->Warhead); /*0x74b85f*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &aP0->BounceAnim); /*0x74b870*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &this->ExpireAnim); /*0x74b881*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &this->TrailerAnim); /*0x74b892*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &this->Spawns); /*0x74b8a3*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &this->AttachedSystem); /*0x74b8b4*/
     ((char *)aP0)->LoadAnim(); /*0x74b8bb*/
     return 0; /*0x74b8c0*/
   }

@@ -3482,7 +3482,7 @@ int AbstractClass::COMStub_5(void* a1, int a2) {
       a1[2] = 0; /*0x5439c4*/
       a1[3] = 0; /*0x5439cb*/
     }
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, a1 + 43); /*0x5439de*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, a1 + 43); /*0x5439de*/
   }
   return Register; /*0x5439e5*/
 }

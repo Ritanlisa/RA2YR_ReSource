@@ -837,7 +837,7 @@ int CaptureManagerClass::LoadFromStream(int a1, int * a2)
       /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_a777aa) */  /*0x47277a*/
       /* X11: ptr_0 install elided (X67 recv-slot, RHS g_var_a777aa) */  /*0x472781*/
     }
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v3->overloadCount); /*0x472791*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &v3->overloadCount); /*0x472791*/
     v6 = *v2; /*0x472796*/
     this = 0; /*0x4727a1*/
     result = (*(int (**)(int *, CaptureManagerClass **, int, unsigned int))(v6 + 12))(v2, &this, 4, 0); /*0x4727a5*/
@@ -855,10 +855,10 @@ LABEL_19:
           do /*0x4728c4*/
           {
             ObjectPtr::RegisterForTracking( /*0x4728a9*/
-              (int)&SwizzleManagerClass_Instance,
+              &SwizzleManagerClass_Instance,
               (int *)(*(unsigned int *)(v3->controlNodeCount + 4 * v15) + 4));
             ObjectPtr::RegisterForTracking( /*0x4728ba*/
-              (int)&SwizzleManagerClass_Instance,
+              &SwizzleManagerClass_Instance,
               *(int **)(v3->controlNodeCount + 4 * v15++));
           }
           while ( v15 < (int)this ); /*0x4728c4*/

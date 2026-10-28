@@ -5304,9 +5304,9 @@ int InfantryClass::LoadFromStream()
       (*((unsigned char *)&(g_BuildingLoadQueue_Array.ptr_C))) = 0; /*0x521aab*/
       ++g_BuildingLoadQueue_Array.ptr_4; /*0x521ab2*/
     }
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v2->Type); /*0x521ac3*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v2->disguiseAsType); /*0x521ad4*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v2->disguisedAsHouse); /*0x521ae5*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &v2->Type); /*0x521ac3*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &v2->disguiseAsType); /*0x521ad4*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &v2->disguisedAsHouse); /*0x521ae5*/
     return 0; /*0x521aea*/
   }
   return result; /*0x521aec*/

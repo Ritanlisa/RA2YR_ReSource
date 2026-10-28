@@ -3902,7 +3902,7 @@ int CellClass::SaveLoad_Prefix() {
       v12 = v2->DiskLaserClass_field_0x28; /*0x483b06*/
       for ( j = 0; j < *(unsigned int *)(v12 + 16); ++j ) /*0x483b0e*/
       {
-        ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(*(unsigned int *)(v12 + 4) + 4 * j)); /*0x483b1c*/
+        ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, (int *)(*(unsigned int *)(v12 + 4) + 4 * j)); /*0x483b1c*/
         v12 = v2->DiskLaserClass_field_0x28; /*0x483b21*/
       }
 LABEL_20:
@@ -3919,14 +3919,14 @@ LABEL_20:
         v16 = (unsigned int *)dword_87F924; /*0x483b5c*/
       }
       v16[v17] = v2; /*0x483b61*/
-      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v2->SuperClass_field_0x2C); /*0x483b6d*/
-      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v2->ptr_30); /*0x483b7b*/
-      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v2->__pad_3C); /*0x483b89*/
-      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v2->FootClass_E0); /*0x483b9a*/
-      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v2->Tactical_E4); /*0x483bab*/
-      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v2->q0E8); /*0x483bbc*/
-      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v2->u32_F8); /*0x483bcd*/
-      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v2->q040); /*0x483bdb*/
+      ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &v2->SuperClass_field_0x2C); /*0x483b6d*/
+      ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &v2->ptr_30); /*0x483b7b*/
+      ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &v2->__pad_3C); /*0x483b89*/
+      ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &v2->FootClass_E0); /*0x483b9a*/
+      ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &v2->Tactical_E4); /*0x483bab*/
+      ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &v2->q0E8); /*0x483bbc*/
+      ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &v2->u32_F8); /*0x483bcd*/
+      ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &v2->q040); /*0x483bdb*/
       v19 = v2->u32_44; /*0x483be0*/
       if ( v19 == 179 || v19 == 242 ) /*0x483bef*/
       {
@@ -12795,7 +12795,7 @@ int LayerClass::Load(unsigned int * a2) {
       if ( (int)v6 > 0 ) /*0x551c32*/
       {
         do /*0x551c4c*/
-          ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(this->count + 4 * v12++)); /*0x551c40*/
+          ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, (int *)(this->count + 4 * v12++)); /*0x551c40*/
         while ( v12 < (int)a2 ); /*0x551c4c*/
       }
       return 0; /*0x551c4e*/
@@ -34545,7 +34545,7 @@ void ScenarioClass::SaveLoad_Prefix_0(int a1) {
     (&this->ionAmbient)->Add_Alt(&v14); /*0x6895c4*/
   }
   for ( m = 0; m < this->dropshipUnitCounts; ++m ) /*0x6895dc*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(this->allowableUnitsCount + 4 * m)); /*0x6895ed*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, (int *)(this->allowableUnitsCount + 4 * m)); /*0x6895ed*/
   if ( this->missionTimer_text ) /*0x6895fd*/
     this->missionTimer_text_csf = GetStringCSF(&this->missionTimer_text, 0, g_Str_File_Scenario_CPP, 6608); /*0x68961e*/
   else

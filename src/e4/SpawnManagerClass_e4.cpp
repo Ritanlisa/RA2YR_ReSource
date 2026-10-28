@@ -416,14 +416,14 @@ LABEL_20:
         {
           do /*0x6b8069*/
             ObjectPtr::RegisterForTracking( /*0x6b805f*/
-              (int)&SwizzleManagerClass_Instance,
+              &SwizzleManagerClass_Instance,
               *(int **)(v2->spawnVectorCount + 4 * v14++));
           while ( v14 < v16 ); /*0x6b8069*/
         }
-        ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v2->owner); /*0x6b8074*/
-        ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v2->spawnOwner); /*0x6b8082*/
-        ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v2->SpawnManagerClass_field_68); /*0x6b8090*/
-        ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v2->SpawnManagerClass_field_6C); /*0x6b809e*/
+        ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &v2->owner); /*0x6b8074*/
+        ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &v2->spawnOwner); /*0x6b8082*/
+        ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &v2->SpawnManagerClass_field_68); /*0x6b8090*/
+        ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &v2->SpawnManagerClass_field_6C); /*0x6b809e*/
       }
       else
       {

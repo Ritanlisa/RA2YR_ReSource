@@ -1674,10 +1674,10 @@ int TActionClass::SaveLoad_Prefix(AbstractClass * aP0, int aP1)
       /* X11: ptr_0 install elided (implicit via TActionClass virtuals 0x6e3de1) */
       /* X11: ptr_0 install elided (implicit via TActionClass virtuals 0x6e3de8) */
     }
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->u32_53A0); /*0x6e3df8*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->u32_53A0); /*0x6e3e06*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->u32_53A0); /*0x6e3e14*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->u32_53A0); /*0x6e3e22*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &aP0->u32_53A0); /*0x6e3df8*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &aP0->u32_53A0); /*0x6e3e06*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &aP0->u32_53A0); /*0x6e3e14*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &aP0->u32_53A0); /*0x6e3e22*/
     return 0; /*0x6e3e27*/
   }
   return result; /*0x6e3e29*/

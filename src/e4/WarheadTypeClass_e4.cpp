@@ -608,14 +608,14 @@ int WarheadTypeClass::SaveLoad_Prefix(unsigned int * a1, int a2)
     int m; // esi
     for ( m = 0; m < v2->u32_114; ++m ) /*0x75e24f*/
       ObjectPtr::RegisterForTracking( /*0x75e260*/
-        (int)&SwizzleManagerClass_Instance,
+        &SwizzleManagerClass_Instance,
         (int *)(v2->u32_108 + 4 * m));
     int n; // esi
     for ( n = 0; n < v2->unused_1CC[0]; ++n ) /*0x75e27a*/
       ObjectPtr::RegisterForTracking( /*0x75e28b*/
-        (int)&SwizzleManagerClass_Instance,
+        &SwizzleManagerClass_Instance,
         (int *)(v2->PsychicDamage + 4 * n));
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v2->ptr_4); /*0x75e2a7*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &v2->ptr_4); /*0x75e2a7*/
     return 0; /*0x75e2ac*/
   }
   return result; /*0x75e2ae*/

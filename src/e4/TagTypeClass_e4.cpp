@@ -334,7 +334,7 @@ int TagTypeClass::LoadTypeData(AbstractTypeClass * aP0, int aP1)
       /* X11: ptr_0 install elided (implicit via TagTypeClass virtuals 0x6e6441) */
       /* X11: ptr_0 install elided (implicit via TagTypeClass virtuals 0x6e6448) */
     }
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->u32_A0); /*0x6e645b*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &aP0->u32_A0); /*0x6e645b*/
     return 0; /*0x6e6460*/
   }
   return result; /*0x6e6462*/

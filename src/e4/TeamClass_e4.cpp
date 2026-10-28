@@ -3111,17 +3111,17 @@ int TeamClass::SaveLoad_Prefix(AbstractClass * aP0, int aP1)
       /* X11: ptr_0 install elided (implicit via TeamClass virtuals 0x6ec492) */
       /* X11: ptr_0 install elided (implicit via TeamClass virtuals 0x6ec499) */
     }
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->Coord_9C); /*0x6ec4a9*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->Coord_9C); /*0x6ec4b7*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->Coord_9C); /*0x6ec4c5*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->Coord_9C); /*0x6ec4d3*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->Coord_9C); /*0x6ec4e1*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->unknown38); /*0x6ec4ef*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->Coord_9C); /*0x6ec4fd*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->Coord_9C); /*0x6ec50b*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->Coord_9C); /*0x6ec519*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->Coord_9C); /*0x6ec527*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->unknown44); /*0x6ec535*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &aP0->Coord_9C); /*0x6ec4a9*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &aP0->Coord_9C); /*0x6ec4b7*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &aP0->Coord_9C); /*0x6ec4c5*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &aP0->Coord_9C); /*0x6ec4d3*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &aP0->Coord_9C); /*0x6ec4e1*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &aP0->unknown38); /*0x6ec4ef*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &aP0->Coord_9C); /*0x6ec4fd*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &aP0->Coord_9C); /*0x6ec50b*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &aP0->Coord_9C); /*0x6ec519*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &aP0->Coord_9C); /*0x6ec527*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &aP0->unknown44); /*0x6ec535*/
     return 0; /*0x6ec53a*/
   }
   return result; /*0x6ec53c*/

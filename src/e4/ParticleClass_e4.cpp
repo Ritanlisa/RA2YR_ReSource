@@ -220,8 +220,8 @@ int ParticleClass::LoadParticleData(ObjectClass * aP1, int aP1a)
       aP1[2] = &g_ptr_7EF928; /*0x62d7d1*/
       aP1[3] = &g_ptr_7EF928; /*0x62d7d8*/
     }
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance,&aP1->q02B); /*0x62d7eb*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, aP1 + 73); /*0x62d7fc*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance,&aP1->q02B); /*0x62d7eb*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, aP1 + 73); /*0x62d7fc*/
     return 0; /*0x62d801*/
   }
   return result; /*0x62d803*/

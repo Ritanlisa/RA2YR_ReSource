@@ -645,7 +645,7 @@ int ParticleTypeClass::SaveLoad_Prefix(int a1, int a2)
       /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F0188) */  /*0x6456b0*/
       /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F0188) */  /*0x6456b7*/
     }
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v3->ParticleTypeClass_field_0x2E4); /*0x6456ca*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &v3->ParticleTypeClass_field_0x2E4); /*0x6456ca*/
     v5 = *v2; /*0x6456cf*/
     this = 0; /*0x6456db*/
     result = (*(int (**)(int *, ParticleTypeClass **, int, unsigned int))(v5 + 12))(v2, &this, 4, 0); /*0x6456df*/

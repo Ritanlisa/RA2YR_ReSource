@@ -621,13 +621,13 @@ int HouseTypeClass::SaveLoad_Prefix(unsigned int * i, int a2)
     }
     int k; // esi
     for ( k = 0; k < v2->veteranAircraft[0]; ++k ) /*0x5123f4*/
-      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v2->veteranInfantryCount + 4 * k)); /*0x512405*/
+      ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, (int *)(v2->veteranInfantryCount + 4 * k)); /*0x512405*/
     int m; // esi
     for ( m = 0; m < *&v2->pad_16D; ++m ) /*0x51241f*/
-      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(*&v2->smartAi + 4 * m)); /*0x512430*/
+      ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, (int *)(*&v2->smartAi + 4 * m)); /*0x512430*/
     int n; // esi
     for ( n = 0; n < *&v2->pad_16D; ++n ) /*0x51244a*/
-      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(*&v2->pad_16D + 4 * n)); /*0x51245b*/
+      ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, (int *)(*&v2->pad_16D + 4 * n)); /*0x51245b*/
     return 0; /*0x51246b*/
   }
   return result; /*0x51246d*/

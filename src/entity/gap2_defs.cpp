@@ -1676,12 +1676,12 @@ int BulletClass::SaveLoad_Prefix(void* a1, int a2) {
       v5 = g_BuildingLoadQueue_Array.SecondSpawnOffset[1]++; /*0x46af24*/
       *(unsigned int *)(g_BuildingLoadQueue_Array.SecretHouses[0] + 4 * v5) = a1; /*0x46af33*/
     }
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, a1 + 43); /*0x46af42*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, a1 + 44); /*0x46af53*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, a1 + 74); /*0x46af64*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, a1 + 67); /*0x46af75*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, a1 + 76); /*0x46af86*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, a1 + 85); /*0x46af91*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, a1 + 43); /*0x46af42*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, a1 + 44); /*0x46af53*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, a1 + 74); /*0x46af64*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, a1 + 67); /*0x46af75*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, a1 + 76); /*0x46af86*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, a1 + 85); /*0x46af91*/
     return v4; /*0x46af97*/
   }
   return result; /*0x46af99*/
@@ -7301,9 +7301,9 @@ int ParticleSystemClass::Write(int a1, void* a1_2) {
       /* X11: ptr_0 install elided (implicit via class virtuals 0x62ff7a) — binary-proven install, was 0 */
       /* X11: ptr_0 install elided (implicit via off_7EFB70 virtuals 0x62ff81) */
     }
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v4->u32_AC); /*0x62ff94*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v4->Tactical_E4); /*0x62ffa5*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v4->FootClass_E0); /*0x62ffb6*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &v4->u32_AC); /*0x62ff94*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &v4->Tactical_E4); /*0x62ffa5*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &v4->FootClass_E0); /*0x62ffb6*/
     v6 = *a1_2; /*0x62ffbb*/
     a1 = 0; /*0x62ffc7*/
     result = (*(int (__stdcall **)(int *, int *, int, unsigned int))(v6 + 12))(a1_2, &a1, 4, 0); /*0x62ffcb*/
@@ -7313,7 +7313,7 @@ int ParticleSystemClass::Write(int a1, void* a1_2) {
       {
   LABEL_14:
         for ( i = 0; i < v4->pad21; ++i ) /*0x630065*/
-          ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v4->nextObject + 4 * i)); /*0x630076*/
+          ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, (int *)(v4->nextObject + 4 * i)); /*0x630076*/
         return 0; /*0x630086*/
       }
       else

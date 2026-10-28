@@ -192,9 +192,9 @@ int TriggerClass::LoadTrigger(TriggerClass * aP0, int aP1)
       /* X11: ptr_0 install elided (implicit via TriggerClass virtuals 0x726891) */
       /* X11: ptr_0 install elided (implicit via TriggerClass virtuals 0x726898) */
     }
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->buildingType); /*0x7268a8*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->nextTrigger); /*0x7268b6*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->house); /*0x7268c4*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &aP0->buildingType); /*0x7268a8*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &aP0->nextTrigger); /*0x7268b6*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &aP0->house); /*0x7268c4*/
     return 0; /*0x7268c9*/
   }
   return result; /*0x7268cb*/

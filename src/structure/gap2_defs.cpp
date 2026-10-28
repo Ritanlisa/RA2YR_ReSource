@@ -1146,8 +1146,8 @@ int BuildingLightClass::SD_vt05(void* a1, int a2) {
       a1[2] = 0; /*0x436984*/
       a1[3] = 0; /*0x43698b*/
     }
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, a1 + 57); /*0x43699e*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, a1 + 56); /*0x4369af*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, a1 + 57); /*0x43699e*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, a1 + 56); /*0x4369af*/
   }
   return Register; /*0x4369b6*/
 }
@@ -4136,7 +4136,7 @@ int SuperWeapon::SerializeSuperWeaponState() {
                                0);
                     if ( result >= 0 ) /*0x539bc8*/
                     {
-                      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &PsyDom_Anim); /*0x539bd8*/
+                      ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &PsyDom_Anim); /*0x539bd8*/
                       result = (*(int (__stdcall **)(SuperWeapon *, int *, int, unsigned int))(*&this->q030))( /*0x539be9*/
                                  this,
                                  &LightningStorm_Coords,
@@ -4159,8 +4159,8 @@ int SuperWeapon::SerializeSuperWeaponState() {
                           if ( result >= 0 ) /*0x539c1c*/
                           {
                             ObjectPtr::RegisterForTracking( /*0x539c2c*/
-                              (int)&SwizzleManagerClass_Instance,
-                              (int *)&LightningStorm_Owner);
+                              &SwizzleManagerClass_Instance,
+                              &LightningStorm_Owner);
                             result = (*(int (__stdcall **)(SuperWeapon *, House **, int, unsigned int))(*&this->q030))( /*0x539c3d*/
                                        this,
                                        &PsyDom_Owner,
@@ -4168,7 +4168,7 @@ int SuperWeapon::SerializeSuperWeaponState() {
                                        0);
                             if ( result >= 0 ) /*0x539c42*/
                             {
-                              ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&PsyDom_Owner); /*0x539c52*/
+                              ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &PsyDom_Owner); /*0x539c52*/
                               result = (*(int (__stdcall **)(SuperWeapon *, int *, int, unsigned int))(*&this->q030))( /*0x539c63*/
                                          this,
                                          &v16,
@@ -4186,7 +4186,7 @@ int SuperWeapon::SerializeSuperWeaponState() {
                                   {
                                     do /*0x539d0f*/
                                       ObjectPtr::RegisterForTracking( /*0x539d05*/
-                                        (int)&SwizzleManagerClass_Instance,
+                                        &SwizzleManagerClass_Instance,
                                         (int *)dword_A9FA64 + v6++);
                                     while ( v6 < v16 ); /*0x539d0f*/
                                   }
@@ -4207,7 +4207,7 @@ int SuperWeapon::SerializeSuperWeaponState() {
                                       {
                                         do /*0x539dc9*/
                                           ObjectPtr::RegisterForTracking( /*0x539dbf*/
-                                            (int)&SwizzleManagerClass_Instance,
+                                            &SwizzleManagerClass_Instance,
                                             (int *)dword_A9F9D4 + v10++);
                                         while ( v10 < v16 ); /*0x539dc9*/
                                       }
@@ -4228,7 +4228,7 @@ int SuperWeapon::SerializeSuperWeaponState() {
                                           {
                                             do /*0x539e87*/
                                               ObjectPtr::RegisterForTracking( /*0x539e7d*/
-                                                (int)&SwizzleManagerClass_Instance,
+                                                &SwizzleManagerClass_Instance,
                                                 (int *)dword_A9FA1C + v15++);
                                             while ( v15 < v16 ); /*0x539e87*/
                                           }

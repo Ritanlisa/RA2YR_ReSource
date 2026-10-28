@@ -5828,9 +5828,9 @@ long gamemd::TEventClass::Load(struct IStream* a0)
       ((unsigned int *)this)[0] = (void *)&g_ptr_7F554C; /*0x71f8f1*/
       ((unsigned int *)this)[0] = (void *)&g_ptr_7F554C; /*0x71f8f8*/
     }
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->TEventClass_field_28); /*0x71f908*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->TEventClass_field_30); /*0x71f916*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->TEventClass_field_54); /*0x71f924*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &this->TEventClass_field_28); /*0x71f908*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &this->TEventClass_field_30); /*0x71f916*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &this->TEventClass_field_54); /*0x71f924*/
     return 0; /*0x71f929*/
   }
   return result; /*0x71f92b*/
@@ -5878,7 +5878,7 @@ long gamemd::TacticalClass::Load(struct IStream* a0)
       v5 = (int *)&this->q0AC[56]; /*0x6dbd63*/
       do /*0x6dbd80*/
       {
-        ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v5); /*0x6dbd6f*/
+        ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, v5); /*0x6dbd6f*/
         ++v4; /*0x6dbd7a*/
         ++v5; /*0x6dbd7b*/
       }

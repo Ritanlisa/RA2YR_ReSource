@@ -70,7 +70,7 @@ namespace gamemd {
     void VectorClass_BuildingConstructor(void *a1, int a2, int a3);  // g57w11 r4: raw 0x510550 VectorClass::BuildingConstructor (自由函数形同 CellConstructor 先例);
     // g57w11 r4 item2d: 调用侧词汇 (类型在本 TU 无完整定义; 静态形按 raw 调用形)
     int HouseTypeClass_Find(void *a1);  // raw 0x472341 HouseTypeClass::Find 静态调用形 (g57w11 item2e: 参数适配)
-    struct ObjectPtr { static void RegisterForTracking(int a1, unsigned int **a2); };  // raw 0x4b6bc7 调用形
+    struct ObjectPtr { static void RegisterForTracking(void *a1, void *a2); };  // raw 0x4b6bc7 调用形 (IDA 0x6CF240 a1 is a pointer)
     struct Map { static int CanScroll(void **a1); };  // raw 0x4f21c7 调用形
     // g57w11 r4 item2e: raw 模板裸名渲染 → 自由函数词汇 (C2955)
     void DynamicVectorClass_Copy(void *dst, unsigned int *src);   // raw 0x4f78a6 (TypeList<int>::Copy 实例)
@@ -893,7 +893,7 @@ int HouseClass::RegisterForSwizzleTracking() {
     p_abstractFlags = &this->abstractFlags; /*0x4b6bbe*/
     do /*0x4b6bd5*/
     {
-      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, p_abstractFlags); /*0x4b6bc7*/
+      ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, p_abstractFlags); /*0x4b6bc7*/
       result = this->uniqueId; /*0x4b6bcc*/
       ++v2; /*0x4b6bcf*/
       ++p_abstractFlags; /*0x4b6bd0*/

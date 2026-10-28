@@ -418,8 +418,8 @@ int LoadGame::LoadPointArray(int a2)
       v3 = (*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, v4, 8, 0); /*0x54e805*/
       if ( v3 < 0 ) /*0x54e809*/
         break; /*0x54e809*/
-      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v4); /*0x54e811*/
-      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v4 + 1); /*0x54e81f*/
+      ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, v4); /*0x54e811*/
+      ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, v4 + 1); /*0x54e81f*/
       int LoadGame_field_0x14 = v12->q014; // eax /*0x54e828*/
       int *p_LoadGame_field_0x0C = &v12->q00C; // esi /*0x54e82b*/
       if ( v12->q01C >= LoadGame_field_0x14 ) /*0x54e833*/

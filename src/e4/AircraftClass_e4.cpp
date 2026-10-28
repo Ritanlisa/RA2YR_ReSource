@@ -709,8 +709,8 @@ void* AircraftClass::LoadFromStream(unsigned int * a0, FootClass * aP1)
       (*((unsigned char *)&(g_BuildingLoadQueue_Array.ptr_C))) = 0; /*0x41b585*/
       ++g_BuildingLoadQueue_Array.ptr_4; /*0x41b58c*/
     }
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v2->Type); /*0x41b59d*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v2->AircraftClass_field_6CC); /*0x41b5ae*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &v2->Type); /*0x41b59d*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &v2->AircraftClass_field_6CC); /*0x41b5ae*/
     return 0; /*0x41b5b3*/
   }
   return result; /*0x41b5b5*/

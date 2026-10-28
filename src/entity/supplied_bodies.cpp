@@ -364,10 +364,10 @@ int AnimClass::SaveLoad_Prefix(int a2, int a3)
     }
     (&a2->AudioController_1A0)->Init(); /*0x4252dc*/
     (&a2->AudioController_1B4)->Init(); /*0x4252e7*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &a2->q0C8); /*0x4252f8*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &a2->q0CC); /*0x425309*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &a2->u32_17C); /*0x42531a*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &a2->q_180); /*0x42532b*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &a2->q0C8); /*0x4252f8*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &a2->q0CC); /*0x425309*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &a2->u32_17C); /*0x42531a*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &a2->q_180); /*0x42532b*/
     v4 = a2->q0D8; /*0x425330*/
     if ( v4 <= -1 ) /*0x425339*/
     {

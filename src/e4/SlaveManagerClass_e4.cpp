@@ -874,12 +874,12 @@ AbstractClass * * SlaveManagerClass::LoadManager(unsigned int * a1, int a2)
   {
           do /*0x6b12d3*/
           ObjectPtr::RegisterForTracking( /*0x6b12c9*/
-              (int)&SwizzleManagerClass_Instance,
+              &SwizzleManagerClass_Instance,
               *(int **)(a1->slaveVectorCount + 4 * v14++));
           while ( v14 < v16 ); /*0x6b12d3*/
   }
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &a1->master); /*0x6b12de*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &a1->house); /*0x6b12ec*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &a1->master); /*0x6b12de*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &a1->house); /*0x6b12ec*/
       }
       else
       {

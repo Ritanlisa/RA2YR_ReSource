@@ -2797,7 +2797,7 @@ void LoadGame::LoadIteratedData()
     if ( v5 > 0 ) /*0x41375b*/
     {
       do /*0x413775*/
-        ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(*((unsigned int *)i - 1) + 4 * v11++)); /*0x413769*/
+        ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, (int *)(*((unsigned int *)i - 1) + 4 * v11++)); /*0x413769*/
       while ( v11 < a2 ); /*0x413775*/
     }
     if ( ++v12 >= 400 ) /*0x413788*/
@@ -2866,7 +2866,7 @@ void LoadGame::DeserializePointerArrays()
       {
         do /*0x43930b*/
           ObjectPtr::RegisterForTracking( /*0x4392ff*/
-            (int)&SwizzleManagerClass_Instance,
+            &SwizzleManagerClass_Instance,
             (int *)(this->s_LoadVersion + 4 * v11++));
         while ( v11 < a2 ); /*0x43930b*/
       }
@@ -2883,7 +2883,7 @@ void LoadGame::DeserializePointerArrays()
           {
             do /*0x4393bc*/
               ObjectPtr::RegisterForTracking( /*0x4393b0*/
-                (int)&SwizzleManagerClass_Instance,
+                &SwizzleManagerClass_Instance,
                 (int *)(this->q01C + 4 * v18++));
             while ( v18 < a2 ); /*0x4393bc*/
           }

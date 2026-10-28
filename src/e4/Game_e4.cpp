@@ -1433,7 +1433,7 @@ CellStruct * * Game::SerializeGameSaveState()
              0);  /*0x67f9d3*/
   if ( result >= 0 )
   {
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&stru_A8E960.random[516]);  /*0x67f9e8*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &stru_A8E960.random[516]);  /*0x67f9e8*/
     result = (*(int (**)(Game *, char *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 12))(
                this,
                (char *)&stru_A83CD9.estimatedHealth + 3,
@@ -1442,7 +1442,7 @@ CellStruct * * Game::SerializeGameSaveState()
     if ( result >= 0 )
     {
       ObjectPtr::RegisterForTracking(
-        (int)&SwizzleManagerClass_Instance,
+        &SwizzleManagerClass_Instance,
         (int *)((char *)&stru_A83CD9.estimatedHealth + 3));  /*0x67fa0e*/
       result = (*(int (**)(Game *, char *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 12))(
                  this,
@@ -1460,7 +1460,7 @@ CellStruct * * Game::SerializeGameSaveState()
 LABEL_14:
             for ( i = 0; i < *(int *)&stru_A8E960.random[340]; ++i )
               ObjectPtr::RegisterForTracking(
-                (int)&SwizzleManagerClass_Instance,
+                &SwizzleManagerClass_Instance,
                 (int *)(*(unsigned int *)&stru_A8E960.random[328] + 4 * i));  /*0x67fade*/  /*0x67face*/
             result = (*(int (**)(Game *, float *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 12))(
                        this,
@@ -1482,7 +1482,7 @@ LABEL_14:
                 {
 LABEL_27:
                   for ( j = 0; j < dword_8B40D8; ++j )
-                    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)dword_8B40CC + j);  /*0x67fbc2*/  /*0x67fbb2*/
+                    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, (int *)dword_8B40CC + j);  /*0x67fbc2*/  /*0x67fbb2*/
                   result = (*(int (**)(Game *, int *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 12))(
                              this,
                              &v13,
@@ -1495,7 +1495,7 @@ LABEL_27:
                     {
 LABEL_39:
                       for ( k = 0; k < dword_8B41B8; ++k )
-                        ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)dword_8B41AC + k);  /*0x67fc84*/  /*0x67fc74*/
+                        ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, (int *)dword_8B41AC + k);  /*0x67fc84*/  /*0x67fc74*/
                       result = (*(int (**)(Game *, int *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 12))(
                                  this,
                                  dword_81DA8C,

@@ -4028,7 +4028,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~ObjectPtr() = default;
 
-    virtual int __stdcall RegisterForTracking(int p0, int* p1);  // 0x6CF240 (x13:signals; virt=slot)
+    virtual int __stdcall RegisterForTracking(void* p0, void* p1);  // 0x6CF240 (x13:signals; virt=slot; a1 is a pointer per IDA deref)
 
 };
 // 6 methods in IDA

@@ -1208,9 +1208,9 @@ int ParasiteClass::LoadParasite(int * a0, AbstractClass * aP1)
       v5 = g_BuildingLoadQueue_Array.SecondSpawnOffset[1]++; /*0x629664*/
       *(unsigned int *)(g_BuildingLoadQueue_Array.SecretHouses[0] + 4 * v5) = a0; /*0x629673*/
     }
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &a0->creationFrame); /*0x62967f*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)a0->__pad_28); /*0x62968d*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)a0 + 17); /*0x629698*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &a0->creationFrame); /*0x62967f*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, (int *)a0->__pad_28); /*0x62968d*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, (int *)a0 + 17); /*0x629698*/
     return v3; /*0x62969e*/
   }
   return result; /*0x6296a0*/

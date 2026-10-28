@@ -1159,18 +1159,18 @@ DynamicVectorClass_flat * * TechnoTypeClass::SaveLoad_Prefix(ObjectTypeClass * a
   result = ObjectTypeClass::LoadCleanup((ObjectTypeClass *)this, a2);  /*0x71641c*/
   if ( result >= 0 )
   {  /*0x716423*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->DeploysInto);  /*0x716435*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->UndeploysInto);  /*0x716446*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->PowersUnit);  /*0x716457*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->NaturalParticleSystem);  /*0x716468*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->RefinerySmokeParticleSystem);  /*0x716479*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->JumpjetAccel);  /*0x71648a*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->SuppressionThreshold);  /*0x71649b*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->SlavesNumber);  /*0x7164ac*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->AirstrikeTeamType);  /*0x7164bd*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->EliteAirstrikeTeamType);  /*0x7164ce*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->UnloadingClass);  /*0x7164df*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->DeployingAnim);  /*0x7164f0*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &this->DeploysInto);  /*0x716435*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &this->UndeploysInto);  /*0x716446*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &this->PowersUnit);  /*0x716457*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &this->NaturalParticleSystem);  /*0x716468*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &this->RefinerySmokeParticleSystem);  /*0x716479*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &this->JumpjetAccel);  /*0x71648a*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &this->SuppressionThreshold);  /*0x71649b*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &this->SlavesNumber);  /*0x7164ac*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &this->AirstrikeTeamType);  /*0x7164bd*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &this->EliteAirstrikeTeamType);  /*0x7164ce*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &this->UnloadingClass);  /*0x7164df*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &this->DeployingAnim);  /*0x7164f0*/
     if ( this != (TechnoTypeClass *)-1000 )
       TypeList::BuildingTypeConstructor(Dock);  /*0x7164fb*/  /*0x7164f7*/
     (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v36, 4, 0);  /*0x71650c*/
@@ -1332,20 +1332,20 @@ DynamicVectorClass_flat * * TechnoTypeClass::SaveLoad_Prefix(ObjectTypeClass * a
       TypeList::PushBack((TypeList *)this->DestroyParticleSystems, &v37);  /*0x716add*/
     }
     for ( i11 = 0; i11 < this->Dock[4]; ++i11 )
-      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(this->Dock[1] + 4 * i11));  /*0x716b04*/  /*0x716af3*/
+      ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, (int *)(this->Dock[1] + 4 * i11));  /*0x716b04*/  /*0x716af3*/
     for ( i12 = 0; i12 < this->Explosion[4]; ++i12 )
-      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(this->Explosion[1] + 4 * i12));  /*0x716b2f*/  /*0x716b1e*/
+      ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, (int *)(this->Explosion[1] + 4 * i12));  /*0x716b2f*/  /*0x716b1e*/
     for ( i13 = 0; i13 < this->DestroyAnim[4]; ++i13 )
-      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(this->DestroyAnim[1] + 4 * i13));  /*0x716b5a*/  /*0x716b49*/
+      ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, (int *)(this->DestroyAnim[1] + 4 * i13));  /*0x716b5a*/  /*0x716b49*/
     for ( i14 = 0; i14 < this->DebrisTypes[4]; ++i14 )
-      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(this->DebrisTypes[1] + 4 * i14));  /*0x716b85*/  /*0x716b74*/
+      ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, (int *)(this->DebrisTypes[1] + 4 * i14));  /*0x716b85*/  /*0x716b74*/
     for ( i15 = 0; i15 < this->DebrisAnims[4]; ++i15 )
-      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(this->DebrisAnims[1] + 4 * i15));  /*0x716bb0*/  /*0x716b9f*/
+      ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, (int *)(this->DebrisAnims[1] + 4 * i15));  /*0x716bb0*/  /*0x716b9f*/
     Weapon = (int *)this->Weapon;  /*0x716bc0*/
     v30 = 18;  /*0x716bc6*/
     do
     {  /*0x716bda*/
-      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, Weapon);  /*0x716bd1*/
+      ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, Weapon);  /*0x716bd1*/
       Weapon += 7;  /*0x716bd6*/
       --v30;  /*0x716bd9*/
     }
@@ -1354,18 +1354,18 @@ DynamicVectorClass_flat * * TechnoTypeClass::SaveLoad_Prefix(ObjectTypeClass * a
     v32 = 18;  /*0x716be2*/
     do
     {  /*0x716bf6*/
-      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, EliteWeapon);  /*0x716bed*/
+      ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, EliteWeapon);  /*0x716bed*/
       EliteWeapon += 7;  /*0x716bf2*/
       --v32;  /*0x716bf5*/
     }
     while ( v32 );  /*0x716bf6*/
     for ( i16 = 0; i16 < this->DamageParticleSystems[4]; ++i16 )
       ObjectPtr::RegisterForTracking(
-        (int)&SwizzleManagerClass_Instance,
+        &SwizzleManagerClass_Instance,
         (int *)(this->DamageParticleSystems[1] + 4 * i16));  /*0x716c15*/  /*0x716c04*/
     for ( i17 = 0; i17 < this->DestroyParticleSystems[4]; ++i17 )
       ObjectPtr::RegisterForTracking(
-        (int)&SwizzleManagerClass_Instance,
+        &SwizzleManagerClass_Instance,
         (int *)(this->DestroyParticleSystems[1] + 4 * i17));  /*0x716c40*/  /*0x716c2f*/
     _makepath(Buffer, 0, 0, this->ImageFile, Ext);  /*0x716c66*/
     this->Image = (int)SearchMIXFile(Buffer, 0);  /*0x716c96*/

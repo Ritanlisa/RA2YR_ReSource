@@ -1322,9 +1322,9 @@ int SuperClass::LoadFromStream(AbstractClass * aP0, int aP1)
       v3 = g_BuildingLoadQueue_Array.SecondSpawnOffset[1]++; /*0x6cdf7d*/
       *(unsigned int *)(g_BuildingLoadQueue_Array.SecretHouses[0] + 4 * v3) = aP0; /*0x6cdf8c*/
     }
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->q028); /*0x6cdf98*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->SuperClass_field_0x2C); /*0x6cdfa6*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->SuperClass_field_0x68); /*0x6cdfb1*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &aP0->q028); /*0x6cdf98*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &aP0->SuperClass_field_0x2C); /*0x6cdfa6*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &aP0->SuperClass_field_0x68); /*0x6cdfb1*/
     *&aP0->u32_48 = 0; /*0x6cdfb6*/
     *&aP0->q04C = 0; /*0x6cdfbd*/
     return 0; /*0x6cdfc4*/

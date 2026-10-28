@@ -430,12 +430,12 @@ int TemporalClass::LoadTemporal(AbstractClass * aP0, int aP1)
       /* X11: ptr_0 install elided (implicit via TemporalClass virtuals 0x71a694) */
       /* X11: ptr_0 install elided (implicit via TemporalClass virtuals 0x71a69b) */
     }
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->u32_24); /*0x71a6ab*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)aP0->q028); /*0x71a6b9*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->q040); /*0x71a6c7*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->u32_44); /*0x71a6d5*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->u32_38); /*0x71a6e3*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)aP0 + 15); /*0x71a6f1*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &aP0->u32_24); /*0x71a6ab*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, (int *)aP0->q028); /*0x71a6b9*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &aP0->q040); /*0x71a6c7*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &aP0->u32_44); /*0x71a6d5*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &aP0->u32_38); /*0x71a6e3*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, (int *)aP0 + 15); /*0x71a6f1*/
   }
   return Prefix_0; /*0x71a6f8*/
 }

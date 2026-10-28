@@ -642,9 +642,9 @@ int AITriggerTypeClass::GetClassIdentifier(unsigned int * a2)
       /* X11: ptr_0 install elided (implicit via class virtuals 0x41e571) — binary-proven install, was 0 */
       /* X11: ptr_0 install elided (implicit via class virtuals 0x41e578) — binary-proven install, was 0 */
     }
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->u32_D8); /*0x41e58b*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->u32_DC); /*0x41e59c*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->FootClass_E0); /*0x41e5ad*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &this->u32_D8); /*0x41e58b*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &this->u32_DC); /*0x41e59c*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &this->FootClass_E0); /*0x41e5ad*/
     return 0; /*0x41e5b2*/
   }
   return result; /*0x41e5b4*/
@@ -30694,9 +30694,9 @@ int __stdcall NeuronClass::Fire(int* p0, int p1)
       /* X11: ptr_0 install elided (implicit via class virtuals 0x43a571) — binary-proven install, was 0 */
       /* X11: ptr_0 install elided (implicit via class virtuals 0x43a578) — binary-proven install, was 0 */
     }
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->DiskLaserClass_field_0x28); /*0x43a588*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->u32_24); /*0x43a596*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->SuperClass_field_0x2C); /*0x43a5a4*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &this->DiskLaserClass_field_0x28); /*0x43a588*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &this->u32_24); /*0x43a596*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &this->SuperClass_field_0x2C); /*0x43a5a4*/
     return 0; /*0x43a5a9*/
   }
   return result; /*0x43a5ab*/
@@ -34974,8 +34974,8 @@ int __stdcall SwizzleManager::SaveLoad(int* p0, int* p1)
     v6 = (*(int (__thiscall **)(int *, unsigned int))(*p0 + 36))(p0, 0); /*0x55ab07*/
     v7 = (*(int (__stdcall **)(int *, int *, int))(v5 + 12))(v2, p0, v6); /*0x55ab13*/
     p0[5] = v4; /*0x55ab1b*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, p0 + 3); /*0x55ab1e*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, p0 + 2); /*0x55ab2c*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, p0 + 3); /*0x55ab1e*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, p0 + 2); /*0x55ab2c*/
     return v7; /*0x55ab33*/
   }
   return result; /*0x55aace*/

@@ -9194,8 +9194,8 @@ int UnitClass::LoadFromStream(void* a0, void* aP1)
       (*((unsigned char *)&(g_BuildingLoadQueue_Array.ptr_C))) = 0; /*0x7445bb*/
       ++g_BuildingLoadQueue_Array.ptr_4; /*0x7445c2*/
     }
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v2->Type); /*0x7445d3*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v2->FollowerCar); /*0x7445e4*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &v2->Type); /*0x7445d3*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &v2->FollowerCar); /*0x7445e4*/
     v2->ElectricBolt = 0; /*0x7445eb*/
     return 0; /*0x7445e9*/
   }
@@ -9364,7 +9364,7 @@ int UnitClass::SaveLoadData(ObjectClass* aP1, int aP1a)
       aP1[2] = 0; /*0x6b4ed4*/
       aP1[3] = 0; /*0x6b4edb*/
     }
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, aP1 + 43); /*0x6b4eee*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, aP1 + 43); /*0x6b4eee*/
   }
   return Register; /*0x6b4ef5*/
 }

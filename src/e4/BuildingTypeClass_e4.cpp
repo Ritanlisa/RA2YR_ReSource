@@ -1353,11 +1353,11 @@ LABEL_32:
         v9 *= 120; /*0x465219*/
         v1[1].ptr_4 = (int)&dword_89C900 + v9; /*0x465228*/
         v1[1].ChargerTurrets[8] = (int)&dword_89D368 + v9; /*0x46522e*/
-        ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&v1[1].UINameLabel[31]); /*0x465234*/
-        ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v1->ptr_4.ImageAllocated); /*0x465245*/
-        ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v1[1].AlphaImage); /*0x465256*/
-        ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v1[1].MainVoxel); /*0x465267*/
-        ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v1[1].TurretVoxel); /*0x465278*/
+        ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &v1[1].UINameLabel[31]); /*0x465234*/
+        ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, v1->ptr_4.ImageAllocated); /*0x465245*/
+        ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &v1[1].AlphaImage); /*0x465256*/
+        ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &v1[1].MainVoxel); /*0x465267*/
+        ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &v1[1].TurretVoxel); /*0x465278*/
         ((BuildingTypeClass *)v1)->LoadVoxel(); /*0x46527f*/
         v1[1].ptr_8 = 0; /*0x465284*/
         LOBYTE(v1[1].ptr_C) = 0; /*0x46528a*/

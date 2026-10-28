@@ -344,12 +344,12 @@ LABEL_14:
         {
           do /*0x4ca390*/
             ObjectPtr::RegisterForTracking( /*0x4ca386*/
-              (int)&SwizzleManagerClass_Instance,
+              &SwizzleManagerClass_Instance,
               (int *)(*&v3->q044 + 4 * v12++));
           while ( v12 < (int)this ); /*0x4ca390*/
         }
-        ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v3->owner); /*0x4ca39b*/
-        ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v3->u32_58); /*0x4ca3a9*/
+        ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &v3->owner); /*0x4ca39b*/
+        ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &v3->u32_58); /*0x4ca3a9*/
         return 0; /*0x4ca3ae*/
       }
       else

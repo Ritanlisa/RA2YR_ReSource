@@ -662,7 +662,7 @@ ObjectTypeClass * * InfantryTypeClass_LoadTypeData(InfantryTypeClass *aP0, Infan
       DynamicVector::Add_Alt4((DynamicVector *)aP0->DeadBodies, &a2); /*0x524a56*/
     }
     for ( j = 0; j < aP0->DeadBodies[4]; ++j ) /*0x524a6c*/
-      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(aP0->DeadBodies[1] + 4 * j)); /*0x524a7d*/
+      ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, (int *)(aP0->DeadBodies[1] + 4 * j)); /*0x524a7d*/
     if ( aP0 != (InfantryTypeClass *)-3692 ) /*0x524a95*/
     {
       ((DynamicVectorClass *)aP0->DeathAnims)->AnimTypeConstructor(0, 0); /*0x524a9d*/
@@ -675,12 +675,12 @@ ObjectTypeClass * * InfantryTypeClass_LoadTypeData(InfantryTypeClass *aP0, Infan
       DynamicVector::Add_Alt4((DynamicVector *)aP0->DeathAnims, &aP0); /*0x524ad8*/
     }
     for ( m = 0; m < aP0->DeathAnims[4]; ++m ) /*0x524aef*/
-      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(aP0->DeathAnims[1] + 4 * m)); /*0x524b00*/
+      ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, (int *)(aP0->DeathAnims[1] + 4 * m)); /*0x524b00*/
     v13 = operator new(0x5E8u); /*0x524b15*/
     aP0->Sequence[0] = v13; /*0x524b1d*/
     (*(void (__stdcall **)(int, int, int, unsigned int))(aP0->ptr_C)(aP0, v13, 1512, 0); /*0x524b2e*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, aP0->OccupyWeapon); /*0x524b3d*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, aP0->EliteOccupyWeapon); /*0x524b4e*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, aP0->OccupyWeapon); /*0x524b3d*/
+    ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, aP0->EliteOccupyWeapon); /*0x524b4e*/
   }
   return result; /*0x524b57*/
 }
