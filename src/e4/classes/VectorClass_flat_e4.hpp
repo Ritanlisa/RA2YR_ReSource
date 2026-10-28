@@ -220,7 +220,7 @@ void ClearAndFree4();
     char Set(int a2, unsigned int * a3, void *a3_2);  // 0x???
     VectorClass_flat * Get(unsigned int * Block, char a2);  // 0x???
     int Destructor(void *a1 = 0);  // 0x???
-    void Dtor(void *a1 = 0);  // 0x???
+    void Dtor();  // 0x679F70 thiscall (x183b: receiver param removed)
     int FindItemIndex(int a2);  // 0x???
     bool SetCapacity(const char ** a2);  // 0x???
     char Remove(int a2, int * a3);

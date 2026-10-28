@@ -37,6 +37,7 @@ using ra2::game::ObjectClass;
 #include "e4/classes/ScenarioClass_e4.hpp"  // X136: complete type for stru_A8E960
 #include "e4/classes/_tree_full_e4.hpp"  // X136: complete type for stru_A83CD9
 #include "e4/classes/RulesClass_e4.hpp"  // X136: complete type for dword_8871E0_x136
+#include "e4/classes/VectorClass_flat_e4.hpp"  // x183b: complete VectorClass_flat (VectorClass::Dtor 0x679F70)
 #include "core/cellcoord.hpp"  // X181A: complete CellCoord (p->To_CellObj)
 // X129: fresh-render label declarations (auto, idempotent)
 extern unsigned char aAalimit[8];  // data: 0x83D23C
@@ -3898,7 +3899,7 @@ int RulesClass::LoadFromINI() {
                          v331[0],
                          v331[1]);
       TypeList::CopyFull(&_ESI->TypeList_1158, IntList); /*0x66fda0*/
-      VectorClass::Dtor((VectorClass *)&v332); /*0x66fda9*/
+      ((VectorClass_flat *)&v332)->Dtor(); /*0x66fda9*/
       VectorClass::Copy(&v329, &_ESI->DynamicVector_1174); /*0x66fdba*/
       v200 = (int *)INIClass::ReadIntList( /*0x66fdd1*/
                       (INIClass *)v338,
@@ -3913,7 +3914,7 @@ int RulesClass::LoadFromINI() {
                       v331[0],
                       v331[1]);
       TypeList::CopyFull(&_ESI->DynamicVector_1174, v200); /*0x66fdd9*/
-      VectorClass::Dtor((VectorClass *)&v332); /*0x66fde2*/
+      ((VectorClass_flat *)&v332)->Dtor(); /*0x66fde2*/
       *&_ESI->u32_1300 = INIClass::ReadInt_Overwrite( /*0x66fe00*/
                                             (bool *)v338,
                                             g_INI_Key_General,
@@ -3949,7 +3950,7 @@ int RulesClass::LoadFromINI() {
                       v331[0],
                       v331[1]);
       TypeList::CopyFull(&_ESI->TypeList_13F0, v203); /*0x66fe98*/
-      VectorClass::Dtor((VectorClass *)&v332); /*0x66fea1*/
+      ((VectorClass_flat *)&v332)->Dtor(); /*0x66fea1*/
       VectorClass::Copy(&v329, &_ESI->TypeList_1390); /*0x66feb2*/
       v204 = (int *)INIClass::ReadIntList( /*0x66feca*/
                       (INIClass *)v338,
@@ -3964,7 +3965,7 @@ int RulesClass::LoadFromINI() {
                       v331[0],
                       v331[1]);
       TypeList::CopyFull(&_ESI->TypeList_1390, v204); /*0x66fed2*/
-      VectorClass::Dtor((VectorClass *)&v332); /*0x66fedb*/
+      ((VectorClass_flat *)&v332)->Dtor(); /*0x66fedb*/
       VectorClass::Copy(&v329, &_ESI->TypeList_13AC); /*0x66feec*/
       v205 = (int *)INIClass::ReadIntList( /*0x66ff03*/
                       (INIClass *)v338,
@@ -3979,7 +3980,7 @@ int RulesClass::LoadFromINI() {
                       v331[0],
                       v331[1]);
       TypeList::CopyFull(&_ESI->TypeList_13AC, v205); /*0x66ff0b*/
-      VectorClass::Dtor((VectorClass *)&v332); /*0x66ff14*/
+      ((VectorClass_flat *)&v332)->Dtor(); /*0x66ff14*/
       VectorClass::Copy(&v329, &_ESI->DynamicVector_13C8); /*0x66ff25*/
       v206 = (int *)INIClass::ReadIntList( /*0x66ff3d*/
                       (INIClass *)v338,
@@ -3994,7 +3995,7 @@ int RulesClass::LoadFromINI() {
                       v331[0],
                       v331[1]);
       TypeList::CopyFull(&_ESI->DynamicVector_13C8, v206); /*0x66ff45*/
-      VectorClass::Dtor((VectorClass *)&v332); /*0x66ff4e*/
+      ((VectorClass_flat *)&v332)->Dtor(); /*0x66ff4e*/
       (*(_ESI->AlliedWallTransparency + (sizeof(_ESI->ElevationBonusCap[1]) - 1))) = INIClass::ReadBool_Overwrite( /*0x66ff6d*/
                                              (int *)v338,
                                              g_INI_Key_General,
@@ -4039,7 +4040,7 @@ int RulesClass::LoadFromINI() {
                       v331[0],
                       v331[1]);
       TypeList::CopyFull(&_ESI->TypeList_D80, v207); /*0x670041*/
-      VectorClass::Dtor((VectorClass *)&v332); /*0x67004a*/
+      ((VectorClass_flat *)&v332)->Dtor(); /*0x67004a*/
       VectorClass::Copy(&v329, &_ESI->TypeList_D9C); /*0x67005b*/
       v208 = (int *)INIClass::ReadIntList( /*0x670073*/
                       (INIClass *)v338,
@@ -4054,7 +4055,7 @@ int RulesClass::LoadFromINI() {
                       v331[0],
                       v331[1]);
       TypeList::CopyFull(&_ESI->TypeList_D9C, v208); /*0x67007b*/
-      VectorClass::Dtor((VectorClass *)&v332); /*0x670084*/
+      ((VectorClass_flat *)&v332)->Dtor(); /*0x670084*/
       VectorClass::Copy(&v329, &_ESI->TypeList_DB8); /*0x670095*/
       v209 = (int *)INIClass::ReadIntList( /*0x6700ad*/
                       (INIClass *)v338,
@@ -4069,7 +4070,7 @@ int RulesClass::LoadFromINI() {
                       v331[0],
                       v331[1]);
       TypeList::CopyFull(&_ESI->TypeList_DB8, v209); /*0x6700b5*/
-      VectorClass::Dtor((VectorClass *)&v332); /*0x6700be*/
+      ((VectorClass_flat *)&v332)->Dtor(); /*0x6700be*/
       VectorClass::Copy(&v329, &_ESI->TypeList_DD4); /*0x6700cf*/
       v210 = (int *)INIClass::ReadIntList( /*0x6700e6*/
                       (INIClass *)v338,
@@ -4084,7 +4085,7 @@ int RulesClass::LoadFromINI() {
                       v331[0],
                       v331[1]);
       TypeList::CopyFull(&_ESI->TypeList_DD4, v210); /*0x6700ee*/
-      VectorClass::Dtor((VectorClass *)&v332); /*0x6700f7*/
+      ((VectorClass_flat *)&v332)->Dtor(); /*0x6700f7*/
       *&_ESI->u32_DF0 = INIClass::ReadInt_Overwrite( /*0x670115*/
                                            (bool *)v338,
                                            g_INI_Key_General,
@@ -4139,7 +4140,7 @@ int RulesClass::LoadFromINI() {
                       v331[0],
                       v331[1]);
       TypeList::CopyFull(&_ESI->TypeList_E10, v211); /*0x670224*/
-      VectorClass::Dtor((VectorClass *)&v332); /*0x67022d*/
+      ((VectorClass_flat *)&v332)->Dtor(); /*0x67022d*/
       VectorClass::Copy(&v329, &_ESI->TypeList_E2C); /*0x67023e*/
       v212 = (int *)INIClass::ReadIntList( /*0x670256*/
                       (INIClass *)v338,
@@ -4154,7 +4155,7 @@ int RulesClass::LoadFromINI() {
                       v331[0],
                       v331[1]);
       TypeList::CopyFull(&_ESI->TypeList_E2C, v212); /*0x67025e*/
-      VectorClass::Dtor((VectorClass *)&v332); /*0x670267*/
+      ((VectorClass_flat *)&v332)->Dtor(); /*0x670267*/
       *&_ESI->Color_E48 = INIClass::ReadInt_Overwrite( /*0x670286*/
                                            (bool *)v338,
                                            g_INI_Key_General,
@@ -4215,7 +4216,7 @@ int RulesClass::LoadFromINI() {
                       v331[0],
                       v331[1]);
       TypeList::CopyFull(&_ESI->TypeList_EC4, v213); /*0x670396*/
-      VectorClass::Dtor((VectorClass *)&v332); /*0x67039f*/
+      ((VectorClass_flat *)&v332)->Dtor(); /*0x67039f*/
       *&_ESI->Color_EE0 = INIClass::ReadInt_Overwrite( /*0x6703be*/
                                            (bool *)v338,
                                            g_INI_Key_General,
@@ -4241,7 +4242,7 @@ int RulesClass::LoadFromINI() {
                       v331[0],
                       v331[1]);
       TypeList::CopyFull(&_ESI->DynamicVector_E4C, v214); /*0x670410*/
-      VectorClass::Dtor((VectorClass *)&v332); /*0x670419*/
+      ((VectorClass_flat *)&v332)->Dtor(); /*0x670419*/
       VectorClass::Copy(&v329, &_ESI->DynamicVector_E68); /*0x67042a*/
       v215 = (int *)INIClass::ReadIntList( /*0x670442*/
                       (INIClass *)v338,
@@ -4256,7 +4257,7 @@ int RulesClass::LoadFromINI() {
                       v331[0],
                       v331[1]);
       TypeList::CopyFull(&_ESI->DynamicVector_E68, v215); /*0x67044a*/
-      VectorClass::Dtor((VectorClass *)&v332); /*0x670453*/
+      ((VectorClass_flat *)&v332)->Dtor(); /*0x670453*/
       VectorClass::Copy(&v329, &_ESI->DynamicVector_E84); /*0x670464*/
       v216 = (int *)INIClass::ReadIntList( /*0x67047b*/
                       (INIClass *)v338,
@@ -4271,7 +4272,7 @@ int RulesClass::LoadFromINI() {
                       v331[0],
                       v331[1]);
       TypeList::CopyFull(&_ESI->DynamicVector_E84, v216); /*0x670483*/
-      VectorClass::Dtor((VectorClass *)&v332); /*0x67048c*/
+      ((VectorClass_flat *)&v332)->Dtor(); /*0x67048c*/
       VectorClass::Copy(&v329, &_ESI->DynamicVector_EA0); /*0x67049d*/
       v217 = (int *)INIClass::ReadIntList( /*0x6704b5*/
                       (INIClass *)v338,
@@ -4286,7 +4287,7 @@ int RulesClass::LoadFromINI() {
                       v331[0],
                       v331[1]);
       TypeList::CopyFull(&_ESI->DynamicVector_EA0, v217); /*0x6704bd*/
-      VectorClass::Dtor((VectorClass *)&v332); /*0x6704c6*/
+      ((VectorClass_flat *)&v332)->Dtor(); /*0x6704c6*/
       *&_ESI->Color_EBC = INIClass::ReadInt_Overwrite( /*0x6704e5*/
                                            (bool *)v338,
                                            g_INI_Key_General,
@@ -4311,7 +4312,7 @@ int RulesClass::LoadFromINI() {
                       v331[0],
                       v331[1]);
       TypeList::CopyFull(&_ESI->DynamicVector_1304, v218); /*0x67053b*/
-      VectorClass::Dtor((VectorClass *)&v332); /*0x670544*/
+      ((VectorClass_flat *)&v332)->Dtor(); /*0x670544*/
       VectorClass::Copy(&v329, &_ESI->DynamicVector_1320); /*0x670555*/
       v219 = (int *)INIClass::ReadIntList( /*0x67056c*/
                       (INIClass *)v338,
@@ -4326,7 +4327,7 @@ int RulesClass::LoadFromINI() {
                       v331[0],
                       v331[1]);
       TypeList::CopyFull(&_ESI->DynamicVector_1320, v219); /*0x670574*/
-      VectorClass::Dtor((VectorClass *)&v332); /*0x67057d*/
+      ((VectorClass_flat *)&v332)->Dtor(); /*0x67057d*/
       VectorClass::Copy(&v329, &_ESI->DynamicVector_133C); /*0x67058e*/
       v220 = (int *)INIClass::ReadIntList( /*0x6705a6*/
                       (INIClass *)v338,
@@ -4341,7 +4342,7 @@ int RulesClass::LoadFromINI() {
                       v331[0],
                       v331[1]);
       TypeList::CopyFull(&_ESI->DynamicVector_133C, v220); /*0x6705ae*/
-      VectorClass::Dtor((VectorClass *)&v332); /*0x6705b7*/
+      ((VectorClass_flat *)&v332)->Dtor(); /*0x6705b7*/
       VectorClass::Copy(&v329, &_ESI->DynamicVector_1358); /*0x6705c8*/
       v221 = (int *)INIClass::ReadIntList( /*0x6705e0*/
                       (INIClass *)v338,
@@ -4356,7 +4357,7 @@ int RulesClass::LoadFromINI() {
                       v331[0],
                       v331[1]);
       TypeList::CopyFull(&_ESI->DynamicVector_1358, v221); /*0x6705e8*/
-      VectorClass::Dtor((VectorClass *)&v332); /*0x6705f1*/
+      ((VectorClass_flat *)&v332)->Dtor(); /*0x6705f1*/
       VectorClass::Copy(&v329, &_ESI->DynamicVector_1374); /*0x670602*/
       v222 = (int *)INIClass::ReadIntList( /*0x670619*/
                       (INIClass *)v338,
@@ -4371,7 +4372,7 @@ int RulesClass::LoadFromINI() {
                       v331[0],
                       v331[1]);
       TypeList::CopyFull(&_ESI->DynamicVector_1374, v222); /*0x670621*/
-      VectorClass::Dtor((VectorClass *)&v332); /*0x67062a*/
+      ((VectorClass_flat *)&v332)->Dtor(); /*0x67062a*/
       v223 = (int *)ReadINIClassInfantryTypeList( /*0x670648*/
                       (int)&v332,
                       v338,
@@ -4394,7 +4395,7 @@ int RulesClass::LoadFromINI() {
                       v331[0],
                       v331[1]);
       TypeList::CopyFull(&_ESI->qFFC, v224); /*0x670689*/
-      VectorClass::Dtor((VectorClass *)&v332); /*0x670692*/
+      ((VectorClass_flat *)&v332)->Dtor(); /*0x670692*/
       v225 = (int *)ReadINIClassInfantryTypeList( /*0x6706b0*/
                       (int)&v332,
                       v338,
@@ -4417,7 +4418,7 @@ int RulesClass::LoadFromINI() {
                       v331[0],
                       v331[1]);
       TypeList::CopyFull(&_ESI->DynamicVector_C58, v226); /*0x6706f1*/
-      VectorClass::Dtor((VectorClass *)&v332); /*0x6706fa*/
+      ((VectorClass_flat *)&v332)->Dtor(); /*0x6706fa*/
       v227 = (int *)ReadINIClassInfantryTypeList( /*0x670718*/
                       (int)&v332,
                       v338,
@@ -4440,7 +4441,7 @@ int RulesClass::LoadFromINI() {
                       v331[0],
                       v331[1]);
       TypeList::CopyFull(&_ESI->DynamicVector_C90, v228); /*0x670759*/
-      VectorClass::Dtor((VectorClass *)&v332); /*0x670762*/
+      ((VectorClass_flat *)&v332)->Dtor(); /*0x670762*/
       v229 = (int *)ReadINIClassInfantryTypeList( /*0x670780*/
                       (int)&v332,
                       v338,
@@ -4463,7 +4464,7 @@ int RulesClass::LoadFromINI() {
                       v331[0],
                       v331[1]);
       TypeList::CopyFull(&_ESI->DynamicVector_CC8, v230); /*0x6707c1*/
-      VectorClass::Dtor((VectorClass *)&v332); /*0x6707ca*/
+      ((VectorClass_flat *)&v332)->Dtor(); /*0x6707ca*/
       v231 = (int *)ReadINIClassInfantryTypeList( /*0x6707e8*/
                       (int)&v332,
                       v338,
@@ -4486,7 +4487,7 @@ int RulesClass::LoadFromINI() {
                       v331[0],
                       v331[1]);
       TypeList::CopyFull(&_ESI->DynamicVector_1194, v232); /*0x670829*/
-      VectorClass::Dtor((VectorClass *)&v332); /*0x670832*/
+      ((VectorClass_flat *)&v332)->Dtor(); /*0x670832*/
       VectorClass::Copy(&v329, &_ESI->TypeList_11B0); /*0x670843*/
       v233 = (int *)INIClass::ReadIntList( /*0x67085b*/
                       (INIClass *)v338,
@@ -4501,7 +4502,7 @@ int RulesClass::LoadFromINI() {
                       v331[0],
                       v331[1]);
       TypeList::CopyFull(&_ESI->TypeList_11B0, v233); /*0x670863*/
-      VectorClass::Dtor((VectorClass *)&v332); /*0x67086c*/
+      ((VectorClass_flat *)&v332)->Dtor(); /*0x67086c*/
       VectorClass::Copy(&v329, &_ESI->TypeList_11CC); /*0x67087d*/
       v234 = (int *)INIClass::ReadIntList( /*0x670895*/
                       (INIClass *)v338,
@@ -4516,7 +4517,7 @@ int RulesClass::LoadFromINI() {
                       v331[0],
                       v331[1]);
       TypeList::CopyFull(&_ESI->TypeList_11CC, v234); /*0x67089d*/
-      VectorClass::Dtor((VectorClass *)&v332); /*0x6708a6*/
+      ((VectorClass_flat *)&v332)->Dtor(); /*0x6708a6*/
       VectorClass::Copy(&v329, &_ESI->TypeList_11E8); /*0x6708b7*/
       v235 = (int *)INIClass::ReadIntList( /*0x6708ce*/
                       (INIClass *)v338,
@@ -4531,7 +4532,7 @@ int RulesClass::LoadFromINI() {
                       v331[0],
                       v331[1]);
       TypeList::CopyFull(&_ESI->TypeList_11E8, v235); /*0x6708d6*/
-      VectorClass::Dtor((VectorClass *)&v332); /*0x6708df*/
+      ((VectorClass_flat *)&v332)->Dtor(); /*0x6708df*/
       VectorClass::Copy(&v329, &_ESI->TypeList_1204); /*0x6708f0*/
       v236 = (int *)INIClass::ReadIntList( /*0x670908*/
                       (INIClass *)v338,
@@ -4546,7 +4547,7 @@ int RulesClass::LoadFromINI() {
                       v331[0],
                       v331[1]);
       TypeList::CopyFull(&_ESI->TypeList_1204, v236); /*0x670910*/
-      VectorClass::Dtor((VectorClass *)&v332); /*0x670919*/
+      ((VectorClass_flat *)&v332)->Dtor(); /*0x670919*/
       VectorClass::Copy(&v329, &_ESI->TypeList_1220); /*0x67092a*/
       v237 = (int *)INIClass::ReadIntList( /*0x670942*/
                       (INIClass *)v338,
@@ -4561,7 +4562,7 @@ int RulesClass::LoadFromINI() {
                       v331[0],
                       v331[1]);
       TypeList::CopyFull(&_ESI->TypeList_1220, v237); /*0x67094a*/
-      VectorClass::Dtor((VectorClass *)&v332); /*0x670953*/
+      ((VectorClass_flat *)&v332)->Dtor(); /*0x670953*/
       VectorClass::Copy(&v329, &_ESI->TypeList_123C); /*0x670964*/
       v238 = (int *)INIClass::ReadIntList( /*0x67097b*/
                       (INIClass *)v338,
@@ -4576,7 +4577,7 @@ int RulesClass::LoadFromINI() {
                       v331[0],
                       v331[1]);
       TypeList::CopyFull(&_ESI->TypeList_123C, v238); /*0x670983*/
-      VectorClass::Dtor((VectorClass *)&v332); /*0x67098c*/
+      ((VectorClass_flat *)&v332)->Dtor(); /*0x67098c*/
       VectorClass::Copy(&v329, &_ESI->TypeList_1258); /*0x67099d*/
       v239 = (int *)INIClass::ReadIntList( /*0x6709b5*/
                       (INIClass *)v338,
@@ -4591,7 +4592,7 @@ int RulesClass::LoadFromINI() {
                       v331[0],
                       v331[1]);
       TypeList::CopyFull(&_ESI->TypeList_1258, v239); /*0x6709bd*/
-      VectorClass::Dtor((VectorClass *)&v332); /*0x6709c6*/
+      ((VectorClass_flat *)&v332)->Dtor(); /*0x6709c6*/
       VectorClass::Copy(&v329, &_ESI->TypeList_1274); /*0x6709d7*/
       v240 = (int *)INIClass::ReadIntList( /*0x6709ef*/
                       (INIClass *)v338,
@@ -4606,7 +4607,7 @@ int RulesClass::LoadFromINI() {
                       v331[0],
                       v331[1]);
       TypeList::CopyFull(&_ESI->TypeList_1274, v240); /*0x6709f7*/
-      VectorClass::Dtor((VectorClass *)&v332); /*0x670a00*/
+      ((VectorClass_flat *)&v332)->Dtor(); /*0x670a00*/
       VectorClass::Copy(&v329, &_ESI->TypeList_1290); /*0x670a11*/
       v241 = (int *)INIClass::ReadIntList( /*0x670a28*/
                       (INIClass *)v338,
@@ -4621,7 +4622,7 @@ int RulesClass::LoadFromINI() {
                       v331[0],
                       v331[1]);
       TypeList::CopyFull(&_ESI->TypeList_1290, v241); /*0x670a30*/
-      VectorClass::Dtor((VectorClass *)&v332); /*0x670a39*/
+      ((VectorClass_flat *)&v332)->Dtor(); /*0x670a39*/
       VectorClass::Copy(&v329, &_ESI->TypeList_12AC); /*0x670a4a*/
       v242 = (int *)INIClass::ReadIntList( /*0x670a62*/
                       (INIClass *)v338,
@@ -4636,7 +4637,7 @@ int RulesClass::LoadFromINI() {
                       v331[0],
                       v331[1]);
       TypeList::CopyFull(&_ESI->TypeList_12AC, v242); /*0x670a6a*/
-      VectorClass::Dtor((VectorClass *)&v332); /*0x670a73*/
+      ((VectorClass_flat *)&v332)->Dtor(); /*0x670a73*/
       VectorClass::Copy(&v329, &_ESI->TypeList_12C8); /*0x670a84*/
       v243 = (int *)INIClass::ReadIntList( /*0x670a9c*/
                       (INIClass *)v338,
@@ -4651,7 +4652,7 @@ int RulesClass::LoadFromINI() {
                       v331[0],
                       v331[1]);
       TypeList::CopyFull(&_ESI->TypeList_12C8, v243); /*0x670aa4*/
-      VectorClass::Dtor((VectorClass *)&v332); /*0x670aad*/
+      ((VectorClass_flat *)&v332)->Dtor(); /*0x670aad*/
       VectorClass::Copy(&v329, &_ESI->TypeList_12E4); /*0x670abe*/
       v244 = (int *)INIClass::ReadIntList( /*0x670ad5*/
                       (INIClass *)v338,
@@ -4666,7 +4667,7 @@ int RulesClass::LoadFromINI() {
                       v331[0],
                       v331[1]);
       TypeList::CopyFull(&_ESI->TypeList_12E4, v244); /*0x670add*/
-      VectorClass::Dtor((VectorClass *)&v332); /*0x670ae6*/
+      ((VectorClass_flat *)&v332)->Dtor(); /*0x670ae6*/
       v245 = *&_ESI->u32_1410; /*0x670af1*/
       v331[1] = *&_ESI->u32_1414; /*0x670afd*/
       v331[0] = v245; /*0x670afe*/
@@ -5272,7 +5273,7 @@ int RulesClass::LoadFromINI() {
                       v331[0],
                       v331[1]);
       TypeList::CopyFull(&_ESI->__pad_43C, v303); /*0x671a21*/
-      VectorClass::Dtor((VectorClass *)&v332); /*0x671a2a*/
+      ((VectorClass_flat *)&v332)->Dtor(); /*0x671a2a*/
       VectorClass::Copy(&v329, &_ESI->DynamicVector_458); /*0x671a3b*/
       v304 = (int *)INIClass::ReadIntList( /*0x671a53*/
                       (INIClass *)v338,
@@ -5287,7 +5288,7 @@ int RulesClass::LoadFromINI() {
                       v331[0],
                       v331[1]);
       TypeList::CopyFull(&_ESI->DynamicVector_458, v304); /*0x671a5b*/
-      VectorClass::Dtor((VectorClass *)&v332); /*0x671a64*/
+      ((VectorClass_flat *)&v332)->Dtor(); /*0x671a64*/
       VectorClass::Copy(&v329, &_ESI->DynamicVector_474); /*0x671a75*/
       v305 = (int *)INIClass::ReadIntList( /*0x671a8c*/
                       (INIClass *)v338,
@@ -5302,7 +5303,7 @@ int RulesClass::LoadFromINI() {
                       v331[0],
                       v331[1]);
       TypeList::CopyFull(&_ESI->DynamicVector_474, v305); /*0x671a94*/
-      VectorClass::Dtor((VectorClass *)&v332); /*0x671a9d*/
+      ((VectorClass_flat *)&v332)->Dtor(); /*0x671a9d*/
       _ESI->NukeTakeOff = (AnimTypeClass *)INIClass::ReadInt_Overwrite( /*0x671ab8*/
                                              (bool *)v338,
                                              g_INI_Key_General,

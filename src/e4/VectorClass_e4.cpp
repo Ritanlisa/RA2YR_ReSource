@@ -8917,7 +8917,7 @@ unsigned int * VectorClass_ptr_RadarEventClass::loc_660FD0(unsigned int * Block,
 
 }
 // 0x679F70
-void VectorClass_flat::Dtor(void *a1)
+void VectorClass_flat::Dtor()
 {
 
   void *Items; // eax
