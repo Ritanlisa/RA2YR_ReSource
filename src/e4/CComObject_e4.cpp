@@ -299,7 +299,7 @@ LABEL_37:
     goto LABEL_38; /*0x7a514f*/
   }
 LABEL_39:
-  String::Assign((String *)v20, (const char *)(a4 + 401)); /*0x7a5173*/
+  ((String *)v20)->Assign( (const char *)(a4 + 401)); /*0x7a5173*/
   String::ToLower((String *)v20); /*0x7a518e*/
   v17 = *(String **)(*(unsigned int *)g_WOL_ListParser.__pad_0 + 4 * (dword_B768D8(v20) & ((1 << dword_B768CC) - 1))); /*0x7a51b2*/
   if ( v17 ) /*0x7a51b7*/
@@ -562,7 +562,7 @@ Coord * * CComObject_CChatEventSink___ATL::DispatchStub_23(int a1, int a2, int a
     while ( 1 ) /*0x7a7be3*/
     {
       ++v21; /*0x7a7be3*/
-      String::Assign((String *)&v19.m_3[1], (const char *)(v20 + 36)); /*0x7a7be7*/
+      ((String *)&v19.m_3[1])->Assign( (const char *)(v20 + 36)); /*0x7a7be7*/
       String::ToLower((String *)&v19.m_3[1]); /*0x7a7bf0*/
       v8 = 0; /*0x7a7bf5*/
       if ( v6 <= 0 ) /*0x7a7bf9*/
@@ -1074,7 +1074,7 @@ CampaignScore * * CComObject_CChatEventSink___ATL::DispatchStub_28(int a1, int a
 
   if ( a2 < 0 ) /*0x7a920d*/
     return 0; /*0x7a920f*/
-  String::Assign((String *)&v26.q004, a4); /*0x7a9227*/
+  ((String *)&v26.q004)->Assign( a4); /*0x7a9227*/
   CharStringToWide((wchar_t **)&v26, (const char **)&v26.q004); /*0x7a9234*/
   DeleteAndZero((ObjectClass *)&v26.q004); /*0x7a923d*/
   if ( !a3 ) /*0x7a924b*/

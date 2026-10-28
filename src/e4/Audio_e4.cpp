@@ -430,7 +430,7 @@ ObjectClass * * Audio::ParseVolume(const char ** a1, ObjectClass * aP2)
   int v5; // eax
   String v7; // [esp+4h] [ebp-8h] BYREF
 
-  String::Assign((String *)this, 0); /*0x5d0478*/
+  ((String *)this)->Assign( 0); /*0x5d0478*/
   this->u32_4 = 0; /*0x5d0483*/
   this->u32_8 = 0; /*0x5d0487*/
   this->u32_C = 255; /*0x5d048e*/

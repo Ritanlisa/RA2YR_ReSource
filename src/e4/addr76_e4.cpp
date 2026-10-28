@@ -266,7 +266,7 @@ HashTable_flat * * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int
     /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7EA5F4) */  /*0x764dff*/
     FileStraw::Open((FileStraw *)&v24.occupant, (int)&v24.customSound, 0); /*0x764e07*/
     CCFileClass::Close((CCFileClass *)&v24.customSound); /*0x764e10*/
-    String::Assign((String *)&v24, g_INI_Key_CampaignID); /*0x764e1e*/
+    ((String *)&v24)->Assign( g_INI_Key_CampaignID); /*0x764e1e*/
     Int = INIClass::ReadInt((bool *)&v24.occupant, &this->M24, (String *)&v24, -1); /*0x764e3b*/
     DeleteAndZero(&v24); /*0x764e3d*/
     this->M48 = Int < 0 ? 0 : Int;
@@ -276,7 +276,7 @@ HashTable_flat * * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int
       do
       {
         RegionStringWOL = GetRegionStringWOL((ObjectClass *)v16); /*0x764e6a*/
-        v19 = String::Assign((String *)&v24.ptr_4, g_INI_Key_LastDay); /*0x764e79*/
+        v19 = ((String *)&v24.ptr_4)->Assign( g_INI_Key_LastDay); /*0x764e79*/
         String::Concat((String *)v19, (char **)&v24, RegionStringWOL); /*0x764e80*/
         DeleteAndZero((ObjectClass *)&v24.ptr_4); /*0x764e89*/
         v20 = INIClass::ReadInt((bool *)&v24.occupant, &this->M24, (String *)&v24, 0); /*0x764e9d*/
@@ -286,7 +286,7 @@ HashTable_flat * * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int
         v18 += 4; /*0x764eb9*/
       }
       while ( v16 < 4 );
-      String::Assign((String *)&v24, aPlayerfaction); /*0x764eca*/
+      ((String *)&v24)->Assign( aPlayerfaction); /*0x764eca*/
       this->u32_44 = INIClass::ReadInt( /*0x764ee9*/
                                  (bool *)&v24.occupant,
                                  &this->M24,
@@ -401,14 +401,14 @@ AbstractClass * * E4Recv_7651D0::sub_7651D0()
   CCFileClass::Close((BufferIOFileClass *)&v7.ambientSoundController[3]); /*0x765291*/
   v7.ambientSoundController[3] = (int)&off_7E1668; /*0x76529a*/
   ((BufferIOFileClass *)&v7.ambientSoundController[3])->Dtor(); /*0x7652a2*/
-  String::Assign((String *)&v7, g_INI_Key_CampaignID); /*0x7652b0*/
+  ((String *)&v7)->Assign( g_INI_Key_CampaignID); /*0x7652b0*/
   v2 = &this->ptr_48; /*0x7652ba*/
   INIClass::SetIntFormat((char *)&v7.ptr_8, (char **)&this->ambientSoundController[3], (char **)&v7, 0, 0); /*0x7652c4*/
   DeleteAndZero(&v7); /*0x7652cd*/
   for ( i = 0; i < 4; ++i ) /*0x7652d2*/
   {
     RegionStringWOL = GetRegionStringWOL((ObjectClass *)i); /*0x7652db*/
-    v4 = String::Assign((String *)&v7.ptr_4, g_INI_Key_LastDay); /*0x7652ea*/
+    v4 = ((String *)&v7.ptr_4)->Assign( g_INI_Key_LastDay); /*0x7652ea*/
     String::Concat((String *)v4, (char **)&v7, RegionStringWOL); /*0x7652f1*/
     DeleteAndZero((ObjectClass *)&v7.ptr_4); /*0x7652fa*/
     INIClass::SetIntFormat((char *)&v7.ptr_8, v2, (char **)&v7, 0, 0); /*0x76530b*/
@@ -961,7 +961,7 @@ LABEL_68:
       v45 = _7694C0[1]; /*0x769aa9*/
       v55.fallRate = *_7694C0; /*0x769aac*/
       v55.nextObject = v45; /*0x769ab0*/
-      v46 = String::Assign((String *)&v55.abstractFlags, aTarget_0); /*0x769acc*/
+      v46 = ((String *)&v55.abstractFlags)->Assign( aTarget_0); /*0x769acc*/
       v47 = String::Concat((String *)v46, (char **)&v55.nextArrayIndex, (char **)&v55.uniqueId); /*0x769ad3*/
       INIClass::GetInt((char *)&v55.ambientSoundController[1], (char **)&v55, v47, &v55.fallRate); /*0x769ae2*/
       DeleteAndZero((ObjectClass *)&v55.nextArrayIndex); /*0x769aeb*/
@@ -1140,7 +1140,7 @@ SessionClass * * WorldDominationTour__Territory::Constructor(int aP1, unsigned i
   {
     if ( !*v8 && !this->ptr_14 ) /*0x76faf0*/
     {
-      String::Assign((char **)&a4, aTarget800); /*0x76fb00*/
+      ((String *)(char **)&a4)->Assign( aTarget800); /*0x76fb00*/
       v25 = INIClass::GetCoordPair(a2, v35, v17, (char **)&a4, &this->ptr_10); /*0x76fb15*/
       v26 = *v25; /*0x76fb1a*/
       v27 = v25->headNode; /*0x76fb1c*/
@@ -1150,7 +1150,7 @@ SessionClass * * WorldDominationTour__Territory::Constructor(int aP1, unsigned i
     }
     if ( !*v9 && !this->u32_1C ) /*0x76fb32*/
     {
-      String::Assign((char **)&a4, aOrigin800); /*0x76fb42*/
+      ((String *)(char **)&a4)->Assign( aOrigin800); /*0x76fb42*/
       v28 = INIClass::GetCoordPair(a2, v35, v17, (char **)&a4, &this->ptr_18); /*0x76fb57*/
       v29 = *v28; /*0x76fb5c*/
       v30 = v28->headNode; /*0x76fb5e*/
@@ -1544,7 +1544,7 @@ AbstractClass * * ObjectClass::sub_764A20()
     *(unsigned int *)&v4.ptr_4 = &g_ptr_7EA5F4; /*0x764aa6*/
     FileStraw::Open((FileStraw *)&v4.ptr_4, (int)&v16, 0); /*0x764aae*/
     CCFileClass::Close((BufferIOFileClass *)&v16); /*0x764ab7*/
-    String::Assign(&v4, g_INI_Key_CampaignID); /*0x764ac5*/
+    ((String *)&v4)->Assign( g_INI_Key_CampaignID); /*0x764ac5*/
     Int = INIClass::ReadInt((bool *)&v4.ptr_4, (char **)this, (char **)&v4, -1); /*0x764adf*/
     DeleteAndZero((ObjectClass *)&v4); /*0x764ae1*/
     HashTable::DestroyHashTableINIClass((INIClass *)&v4.ptr_4); /*0x764aea*/
@@ -2922,7 +2922,7 @@ void E4Recv_76DFD0::sub_76DFD0()
   char *v4; // [esp+Ch] [ebp-8h]
   int v5; // [esp+10h] [ebp-4h]
 
-  String::Assign(&v3, aMapenter); /*0x76dfdf*/
+  ((String *)&v3)->Assign( aMapenter); /*0x76dfdf*/
   if ( (unsigned __int8)String::NotEquals(&v3, 0) ) /*0x76dfea*/
   {
     v4 = &this->u8_494; /*0x76e001*/
@@ -2956,7 +2956,7 @@ unsigned int * E4Recv_76E090::sub_76E090()
   _VectorCursor_PAVMSSfxEntry_V_DynamicVectorClass_PAVMSSfxEntry v5; // [esp+10h] [ebp-Ch] BYREF
   int v6; // [esp+18h] [ebp-4h]
 
-  String::Assign(&v4, aMapleave); /*0x76e09f*/
+  ((String *)&v4)->Assign( aMapleave); /*0x76e09f*/
   if ( (unsigned __int8)String::NotEquals(&v4, 0) ) /*0x76e0aa*/
   {
     *(unsigned int *)&v5.m_1[3] = &this->turretRotateSoundController[3]; /*0x76e0c1*/

@@ -11375,7 +11375,7 @@ void ObjectClass::ConstructWDTSelection_Create_76CA60(Selection_WorldDominationT
       INIClass::GetStringByIndexEx(v5, (char **)&a2, v4, v7); /*0x76caab*/
       if ( (unsigned __int8)String::NotEquals((String *)&a2, 0) ) /*0x76cab6*/
       {
-        String::Assign(&v18, 0); /*0x76cac9*/
+        ((String *)&v18)->Assign( 0); /*0x76cac9*/
         v8 = INIClass::ReadString(v5, v4, (char **)&a2, (char **)&v18, (int)&v17) > 0; /*0x76caeb*/
         DeleteAndZero((ObjectClass *)&v18); /*0x76caee*/
         if ( v8 ) /*0x76caf5*/
@@ -11537,7 +11537,7 @@ void* ObjectClass::LoadAccountInfoWOL() {
     v4 = (uint8_t *)String::GetOrEmpty_Alt((String *)&stru_B73590); /*0x778812*/
     if ( INIClass::BinarySearchSection((int)&v11.nextArrayIndex, v4) ) /*0x77881c*/
     {
-      String::Assign((String *)&v11, g_INI_Key_Server); /*0x778832*/
+      ((String *)&v11)->Assign( g_INI_Key_Server); /*0x778832*/
       INIClass::ReadString( /*0x77884f*/
         (INIClass *)&v11.nextArrayIndex,
         (char **)&stru_B73590,
@@ -11545,16 +11545,16 @@ void* ObjectClass::LoadAccountInfoWOL() {
         (char **)&v11.ptr_8,
         (int)&v11.ptr_8);
       DeleteAndZero(&v11); /*0x778858*/
-      String::Assign((String *)&v11, g_INI_Key_Locale); /*0x778866*/
+      ((String *)&v11)->Assign( g_INI_Key_Locale); /*0x778866*/
       Int = INIClass::ReadInt((bool *)&v11.nextArrayIndex, (char **)&stru_B73590, (char **)&v11, 0); /*0x778883*/
       DeleteAndZero(&v11); /*0x778885*/
-      String::Assign((String *)&v11, g_INI_Key_Country); /*0x778893*/
+      ((String *)&v11)->Assign( g_INI_Key_Country); /*0x778893*/
       v1 = INIClass::ReadInt((bool *)&v11.nextArrayIndex, (char **)&stru_B73590, (char **)&v11, -2); /*0x7788b1*/
       DeleteAndZero(&v11); /*0x7788b3*/
-      String::Assign((String *)&v11, &g_INI_Key_Color); /*0x7788c1*/
+      ((String *)&v11)->Assign( &g_INI_Key_Color); /*0x7788c1*/
       v3 = INIClass::ReadInt((bool *)&v11.nextArrayIndex, (char **)&stru_B73590, (char **)&v11, -2); /*0x7788df*/
       DeleteAndZero(&v11); /*0x7788e1*/
-      String::Assign((String *)&v11, g_INI_Key_UpdateTime); /*0x7788ef*/
+      ((String *)&v11)->Assign( g_INI_Key_UpdateTime); /*0x7788ef*/
       INIClass::ReadString( /*0x77890c*/
         (INIClass *)&v11.nextArrayIndex,
         (char **)&stru_B73590,
@@ -11564,7 +11564,7 @@ void* ObjectClass::LoadAccountInfoWOL() {
       DeleteAndZero(&v11); /*0x778915*/
       LocalizeWOLDateString((char **)&v11.ptr_4, &v11.ptr_C); /*0x778922*/
       DeleteAndZero::Alt2((DeleteAndZero *)&v11.ptr_4); /*0x77892b*/
-      String::Assign((String *)&v11, g_INI_Key_UpdateDate); /*0x778939*/
+      ((String *)&v11)->Assign( g_INI_Key_UpdateDate); /*0x778939*/
       INIClass::ReadString( /*0x778956*/
         (INIClass *)&v11.nextArrayIndex,
         (char **)&stru_B73590,
@@ -11641,8 +11641,8 @@ int ObjectClass::ReadSettingsWOL() {
   if ( (uint8_t)File::IsReady((BufferIOFileClass *)&v5, 0) ) /*0x779d42*/
   {
     FileStraw::Open((FileStraw *)&v4, (int)&v5, 0); /*0x779d55*/
-    String::Assign(&v3, g_INI_Key_AutoLogin); /*0x779d63*/
-    String::Assign((String *)&v3.ptr_4, g_INI_Key_DefaultPersona); /*0x779d71*/
+    ((String *)&v3)->Assign( g_INI_Key_AutoLogin); /*0x779d63*/
+    ((String *)&v3.ptr_4)->Assign( g_INI_Key_DefaultPersona); /*0x779d71*/
     INIClass::SetStringOrEmpty(v4.ptr_0, (char **)&v3.ptr_4, (char **)&v3, (char **)this); /*0x779d85*/
     DeleteAndZero((ObjectClass *)&v3.ptr_4); /*0x779d8e*/
     DeleteAndZero((ObjectClass *)&v3); /*0x779d97*/

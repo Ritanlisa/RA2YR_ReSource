@@ -61,7 +61,7 @@ int ComStreamClass::Write(int a2, uint8_t *a3, const char *lParam, const char *l
   dword_B77DF0 = (int)a3; /*0x7a3dba*/
   if ( a3 ) /*0x7a3dbf*/
     goto LABEL_16; /*0x7a3dbf*/
-  String::Assign((String *)v22, lParama); /*0x7a3dd3*/
+  ((String *)v22)->Assign( lParama); /*0x7a3dd3*/
   LoadPlayerProfile((ObjectClass *)&v22[0].ptr_0.ptr_4, (const char **)v22); /*0x7a3de0*/
   DeleteAndZero(v22); /*0x7a3de9*/
   v22[0].ptr_0.ptr_0 = 0; /*0x7a3df2*/
@@ -111,7 +111,7 @@ v5 = (HWND)Dialog::FindByHandle((Dialog *)0x10F); /*0x7a3e4a*/
 LABEL_14:
         v15 = GetDlgItem(v5, 1771); /*0x7a3f99*/
         v10(v15, 1); /*0x7a3fa4*/
-        String::Assign((String *)v22, lParama); /*0x7a3fb2*/
+        ((String *)v22)->Assign( lParama); /*0x7a3fb2*/
         FillPersonaInfoWOL(v22[0].ptr_0.ptr_8, v5, (char **)v22, (wchar_t **)1); /*0x7a3fc3*/
         DeleteAndZero(v22); /*0x7a3fcc*/
       }

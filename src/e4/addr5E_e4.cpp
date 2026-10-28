@@ -557,7 +557,7 @@ int SendMultiplayerStartSignal()
 
   if ( ppv ) /*0x5e3abb*/
   {
-    String::Assign((char **)&v12, 0); /*0x5e3ac3*/
+    ((String *)(char **)&v12)->Assign( 0); /*0x5e3ac3*/
     v0 = SendMultiplayerStartSignal_Start_77EBA0(&v12); /*0x5e3ad5*/
     DeleteAndZero(&v12); /*0x5e3ad7*/
   }
@@ -574,7 +574,7 @@ int SendMultiplayerStartSignal()
   {
     if ( ppv ) /*0x5e3b13*/
     {
-      String::Assign((char **)&v12, 0); /*0x5e3b1b*/
+      ((String *)(char **)&v12)->Assign( 0); /*0x5e3b1b*/
       AssignWOLPlayerSide((const char **)&v12, 0); /*0x5e3b26*/
       DeleteAndZero(&v12); /*0x5e3b2f*/
     }
@@ -1159,7 +1159,7 @@ LABEL_101:
       v47 = atol(v5 + 1); /*0x5e4395*/
       if ( ppv ) /*0x5e43a1*/
       {
-        String::Assign((String *)&v196, (const char *)a2); /*0x5e43a8*/
+        ((String *)&v196)->Assign( (const char *)a2); /*0x5e43a8*/
         AssignWOLPlayerSide((String *)&v196, v47); /*0x5e43b3*/
         DeleteAndZero((ObjectClass *)&v196); /*0x5e43bc*/
       }
@@ -1174,7 +1174,7 @@ LABEL_101:
     switch ( v6 )
     {
       case 'L':
-        String::Assign((String *)&v196, Source + 1); /*0x5e47f0*/
+        ((String *)&v196)->Assign( Source + 1); /*0x5e47f0*/
         CharStringToWide((wchar_t **)&v196.u32_8, (const char **)&v196); /*0x5e47fd*/
         DeleteAndZero((ObjectClass *)&v196); /*0x5e4806*/
         v76 = WideString::GetOrEmpty((WideString *)&v196.u32_8); /*0x5e480f*/
@@ -1546,7 +1546,7 @@ LABEL_171:
     }
     else
     {
-      String::Assign((String *)&v196, v123); /*0x5e4f85*/
+      ((String *)&v196)->Assign( v123); /*0x5e4f85*/
       v124 = 6; /*0x5e4f92*/
       v125 = UI_Setup_7B83E0((wchar_t **)&v197.ptr_8, (const char **)&v196); /*0x5e4f97*/
     }
@@ -2081,7 +2081,7 @@ LABEL_449:
         dword_AC1178 = 0; /*0x5e5ac3*/
       if ( !ppv ) /*0x5e5acf*/
         goto LABEL_520; /*0x5e5acf*/
-      String::Assign((String *)&v197, (const char *)v176); /*0x5e5ad6*/
+      ((String *)&v197)->Assign( (const char *)v176); /*0x5e5ad6*/
       v178 = SetupLobbyPlayerSlot((const char **)&v197, v197.ptr_8, v166, v197.uniqueId, v169); /*0x5e5af3*/
       DeleteAndZero(&v197); /*0x5e5af5*/
       if ( v178 ) /*0x5e5afc*/

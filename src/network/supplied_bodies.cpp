@@ -5705,7 +5705,7 @@ void WOLGameList::PopulateLobbyLists()
         v10(v11, 0x4A8u, v29 | (uint16_t)dword_B76AEC, (LPARAM)&v51[32]); /*0x7a3622*/
         ++*(unsigned int *)&v51[4]; /*0x7a3624*/
       }
-      String::Assign((String *)v51, (const char *)(v6 + 64)); /*0x7a3630*/
+      ((String *)v51)->Assign( (const char *)(v6 + 64)); /*0x7a3630*/
       String::ToLower((String *)v51); /*0x7a3639*/
       if ( *(int ***)a4 == &off_802100 ) /*0x7a364c*/
       {

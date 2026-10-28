@@ -2386,7 +2386,7 @@ AbstractClass * * Palette_LoadFromFile(int a1, int a2, char * Source, int a4, in
       (*(void (**)(unsigned int *))(*v10 + 96))(v10); /*0x6b9f71*/
     }
     v50[0] = v10; /*0x6b9f80*/
-    String::Assign((String *)v48, Source); /*0x6b9f87*/
+    ((String *)v48)->Assign( Source); /*0x6b9f87*/
     String::ToLower((String *)v48); /*0x6b9f90*/
     v37 = v5->ptr_4; /*0x6b9f95*/
     v38 = 0; /*0x6b9f98*/

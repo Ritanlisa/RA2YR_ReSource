@@ -273,7 +273,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
         }
         else
         {
-          String::Assign((String *)&v28, aTargetzoom); /*0x76d944*/
+          ((String *)&v28)->Assign( aTargetzoom); /*0x76d944*/
           if ( (unsigned __int8)String::NotEquals((String *)&v28, 0) ) /*0x76d94e*/
           {
             Trigger::processTrigger((Trigger *)&v25, &this->__pad_494, 0); /*0x76d963*/

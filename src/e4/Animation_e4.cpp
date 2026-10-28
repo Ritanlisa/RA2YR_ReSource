@@ -280,10 +280,10 @@ ObjectClass * * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass 
   while ( 1 ) /*0x770574*/
   {
     v6 = *(void **)this; /*0x770574*/
-    String::Assign((String *)&aP2, off_83E188); /*0x77057f*/
+    ((String *)&aP2)->Assign( off_83E188); /*0x77057f*/
     INIClass::ReadTokenizedPair(v5, v4, v3, v6, 0, (char **)&aP2); /*0x770590*/
     j_DeleteAndZero((ObjectClass *)&aP2); /*0x770599*/
-    String::Assign((String *)&a1, g_INI_Key_Lose); /*0x7705a7*/
+    ((String *)&a1)->Assign( g_INI_Key_Lose); /*0x7705a7*/
     INIClass::ReadTokenizedPair(v5, v4, v3, v6, 1, (char **)&a1); /*0x7705b8*/
     j_DeleteAndZero((ObjectClass *)&a1); /*0x7705c1*/
     (&v23)->Assign(aDraw); /*0x7705cf*/
@@ -298,7 +298,7 @@ ObjectClass * * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass 
   v7 = StaticString::Factory(*(StaticString **)v22); /*0x77061c*/
   ConcatStringAlloc((char **)&v23.m_3[1], (const char **)v7, (char **)&v23); /*0x770627*/
   unknown_libname_73(&a1); /*0x770630*/
-  String::Assign((String *)&aP2, &g_INI_DefaultBuffer); /*0x77063e*/
+  ((String *)&aP2)->Assign( &g_INI_DefaultBuffer); /*0x77063e*/
   INIClass::ReadString(v4, v3, (char **)&v23.m_3[1], (char **)&aP2, (int)&a1); /*0x770655*/
   j_DeleteAndZero((ObjectClass *)&aP2); /*0x77065e*/
   (*(void (**)(Animation *))(*(unsigned int *)&v22[892] + 12))(v22 + 892); /*0x770671*/
@@ -337,7 +337,7 @@ ObjectClass * * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass 
   v14 = StaticString::Factory(*(StaticString **)v22); /*0x77073b*/
   ConcatStringAlloc((char **)&v23.m_3[1], (const char **)v14, (char **)&v23); /*0x770746*/
   unknown_libname_73(&a1); /*0x77074f*/
-  String::Assign((String *)&aP2, &g_INI_DefaultBuffer); /*0x77075d*/
+  ((String *)&aP2)->Assign( &g_INI_DefaultBuffer); /*0x77075d*/
   INIClass::ReadString(v4, v3, (char **)&v23.m_3[1], (char **)&aP2, (int)&a1); /*0x770774*/
   j_DeleteAndZero((ObjectClass *)&aP2); /*0x77077d*/
   (*(void (**)(Animation *))(*(unsigned int *)&v22[916] + 12))(v22 + 916); /*0x770790*/

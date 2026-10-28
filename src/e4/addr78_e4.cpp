@@ -466,7 +466,7 @@ wchar_t ** FormatWOLPlayerInfo(wchar_t ** a1, const char * a2)
   WideString v26; // [esp+2Ch] [ebp-70h] BYREF
   const wchar_t *v27[27]; // [esp+30h] [ebp-6Ch] BYREF
 
-  String::Assign(&v23, a2 + 36); /*0x780aa6*/
+  ((String *)&v23)->Assign( a2 + 36); /*0x780aa6*/
   v4 = CharStringToWide((wchar_t **)&v25.ptr_4, (const char **)&v23); /*0x780abd*/
   WideString::AssignConcat((WideString *)v4, (wchar_t **)&v23.m_3[1], (wchar_t *)L" : ");
   DeleteAndZero::Alt((DeleteAndZero *)&v25.ptr_4); /*0x780acd*/
@@ -508,7 +508,7 @@ LABEL_6:
     v7 = GetStringCSF(g_Str_TXT_UNRANKED, 0, g_Str_File_wonline_cpp, 2939); /*0x780b31*/
     WideString::Append2((WideString *)&v23.m_3[1], v7); /*0x780b4c*/
   }
-  String::Assign(&v24, a2 + 46); /*0x780b59*/
+  ((String *)&v24)->Assign( a2 + 46); /*0x780b59*/
   if ( !String::Length(&v24) ) /*0x780b62*/
     String::Assign_Alt(&v24, a2 + 87); /*0x780b73*/
   if ( String::Length(&v24) ) /*0x780b7c*/
@@ -605,7 +605,7 @@ LABEL_14:
     goto LABEL_14; /*0x78106a*/
   }
   memcpy(v19, (char *)dword_B76AE8 + 268 * v5, sizeof(v19)); /*0x780ea4*/
-  String::Assign(&v13, (const char *)&v19[13]); /*0x780eb2*/
+  ((String *)&v13)->Assign( (const char *)&v19[13]); /*0x780eb2*/
   CChatEventSink::EncodeString((CChatEventSink *)&v13, 39); /*0x780ebd*/
   memset(v18, 0, sizeof(v18)); /*0x780ecf*/
   v6 = (&v13)->GetOrEmpty(); /*0x780ed5*/
@@ -2759,7 +2759,7 @@ LABEL_48:
     String::Reassign((String *)&stru_B73E10.q030, (const char **)ConfigWOL); /*0x78738c*/
     DeleteAndZero((ObjectClass *)&v41.q008); /*0x787395*/
   }
-  String::Assign((String *)&v41, &g_INI_DefaultBuffer); /*0x7873a3*/
+  ((String *)&v41)->Assign( &g_INI_DefaultBuffer); /*0x7873a3*/
   ((ObjectClass *)(ObjectClass *)&v41)->ReadSettingsWOL(); /*0x7873ac*/
   DeleteAndZero((ObjectClass *)&v41); /*0x7873b5*/
   if ( v38 ) /*0x7873c0*/
@@ -3092,7 +3092,7 @@ LABEL_25:
           v15 = strtok((char *)v64.q004, (const char *)v64.q008); /*0x787a74*/
           while ( v15 ) /*0x787a7b*/
           {
-            String::Assign((String *)&v67.ptr_4, v15); /*0x787a82*/
+            ((String *)&v67.ptr_4)->Assign( v15); /*0x787a82*/
             CharStringToWide((wchar_t **)&v67, (const char **)&v67.ptr_4); /*0x787a8f*/
             DeleteAndZero((ObjectClass *)&v67.ptr_4); /*0x787a98*/
             v16 = WideString::GetOrEmpty((WideString *)&v67); /*0x787aa1*/
@@ -3453,7 +3453,7 @@ int WOL_FindLobbyID(char a1)  // G42.42a: FULL body restored (G42.41i stub rever
     v3 = 0; /*0x7883b8*/
   }
   v11 = FormatStringInt((char **)&v13, dword_B77DD4, 1); /*0x7883cf*/
-  v5 = String::Assign((char **)&v14, g_Str_Lob_41_); /*0x7883da*/
+  v5 = ((String *)(char **)&v14)->Assign( g_Str_Lob_41_); /*0x7883da*/
   String::Concat((const char **)v5, (char **)&v15, v11); /*0x7883e1*/
   DeleteAndZero((void **)&v14); /*0x7883ea*/
   DeleteAndZero((void **)&v13); /*0x7883f3*/
@@ -3488,7 +3488,7 @@ LABEL_50:
       return v6; /*0x788697*/
     }
 LABEL_23:
-    String::Assign((char **)&v13, (const char *)&v32[13]); /*0x78847d*/
+    ((String *)(char **)&v13)->Assign( (const char *)&v32[13]); /*0x78847d*/
     if ( String::Compare((const char **)&v13, (const char **)&v15) && (!a1 || v32[3] <= 25) ) /*0x7884b4*/
     {
       DeleteAndZero((void **)&v13); /*0x788609*/
@@ -4228,7 +4228,7 @@ int PopulateWOLUserList(HWND hWnd, char a2)
       if ( v8 >= 0 && v4 < ptr_0 ) /*0x7897c4*/
         v9 = (char *)dword_B778E0 + v8; /*0x7897cc*/
       Debug::Log(); /*0x7897d8*/
-      String::Assign(&v18, v9 + 24); /*0x7897e5*/
+      ((String *)&v18)->Assign( v9 + 24); /*0x7897e5*/
       unknown_libname_73(&v21); /*0x7897ee*/
       v10 = String::Tokenize(&v18, 0, asc_8318B8, &v21); /*0x789803*/
       if ( v10 >= 0 ) /*0x78980a*/
@@ -5914,7 +5914,7 @@ char ** sub_789630(char ** a1, int a2)
   int v3; // eax
   String v5; // [esp+4h] [ebp-8h] BYREF
 
-  String::Assign(&v5, (const char *)(a2 + 24)); /*0x78963e*/
+  ((String *)&v5)->Assign( (const char *)(a2 + 24)); /*0x78963e*/
   unknown_libname_73(&v5.ptr_4); /*0x789647*/
   v3 = String::Tokenize(&v5, 0, asc_8318B8, (void **)&v5.ptr_4); /*0x78965c*/
   if ( v3 >= 0 ) /*0x789663*/

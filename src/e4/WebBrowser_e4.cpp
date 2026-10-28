@@ -426,7 +426,7 @@ int WebBrowser::GoBack()
 
   wcstombs((char *)&v4[0].q008, Source, 0x40u); /*0x773d55*/
   wcstombs(v5, v7, 0x40u); /*0x773d69*/
-  String::Assign(&v2, (const char *)&v4[0].q008); /*0x773d7a*/
+  ((String *)&v2)->Assign( (const char *)&v4[0].q008); /*0x773d7a*/
   Debug::Log(); /*0x773d8e*/
   LoadPlayerProfile(&v2.m_3[1], (const char **)&v2); /*0x773d9e*/
   *&v4->__pad_0.__pad_0 = 0; /*0x773da9*/

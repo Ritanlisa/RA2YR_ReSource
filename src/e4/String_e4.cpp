@@ -98,7 +98,7 @@ ObjectClass * * String::SplitComma(ObjectClass * aP1)
   int v8; // eax
   char *v10; // [esp+Ch] [ebp-4h] BYREF
 
-  String::Assign((String *)this, 0); /*0x5d0389*/
+  ((String *)this)->Assign( 0); /*0x5d0389*/
   this->ptr_4 = 0; /*0x5d0392*/
   this->ptr_8 = 0; /*0x5d0395*/
   this->u32_C = 0; /*0x5d0398*/

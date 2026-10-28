@@ -7458,7 +7458,7 @@ void* SidebarClass::FindProductionData() {
 
   v7 = (char *)this; /*0x77da50*/
   v1 = ToWideStringChar((char *)this); /*0x77da52*/
-  String::Assign((String *)&v7, v1); /*0x77da5c*/
+  ((String *)&v7)->Assign( v1); /*0x77da5c*/
   String::ToLower((String *)&v7); /*0x77da65*/
   v2 = (char *)__2_YAPAXI_Z(0x6Cu); /*0x77da71*/
   if ( !v2 ) /*0x77da78*/

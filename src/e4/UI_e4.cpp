@@ -1950,7 +1950,7 @@ void sub_7A2750()
 
   Current = Dialog::GetCurrent(); /*0x7a2753*/
   DlgItem = GetDlgItem(Current, 1439); /*0x7a2768*/
-  String::Assign((char **)&v4, 0); /*0x7a276c*/
+  ((String *)(char **)&v4)->Assign( 0); /*0x7a276c*/
   v2 = SendMultiplayerStartSignal_Start_77EBA0((const char **)&v4) != 1; /*0x7a2781*/
   DeleteAndZero(&v4); /*0x7a2784*/
   if ( v2 ) /*0x7a278b*/

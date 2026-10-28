@@ -3315,7 +3315,7 @@ void MainLobbyDlgProcWOL(HWND hWnd, LPARAM lParam, ObjectClass)
             && *(unsigned int *)hWnd.__pad_0
             && strlen(*(const char **)hWnd.__pad_0) )
           {
-            String::Assign(&v56, *(const char **)hWnd.__pad_0); /*0x7999cf*/
+            ((String *)&v56)->Assign( *(const char **)hWnd.__pad_0); /*0x7999cf*/
             CharStringToWide((wchar_t **)&a2.q004, (const char **)&v56); /*0x7999dc*/
             DeleteAndZero((ObjectClass *)&v56); /*0x7999e5*/
             v38 = WideString::GetOrEmpty_Alt((WideString *)&a2.q004); /*0x7999ee*/
@@ -3402,7 +3402,7 @@ void MainLobbyDlgProcWOL(HWND hWnd, LPARAM lParam, ObjectClass)
             DeleteAndZero((ObjectClass *)&v58); /*0x799713*/
             if ( hWnd.m_3[1] ) /*0x79971e*/
             {
-              String::Assign(&v54, &g_INI_DefaultBuffer); /*0x799729*/
+              ((String *)&v54)->Assign( &g_INI_DefaultBuffer); /*0x799729*/
               ((ObjectClass *)(ObjectClass *)&v54)->ReadSettingsWOL(); /*0x799732*/
               DeleteAndZero((ObjectClass *)&v54); /*0x79973b*/
             }
@@ -3412,7 +3412,7 @@ void MainLobbyDlgProcWOL(HWND hWnd, LPARAM lParam, ObjectClass)
             DeleteAndZero((ObjectClass *)&v59); /*0x799769*/
             if ( hWnd.m_3[1] ) /*0x799774*/
             {
-              String::Assign((String *)&v54.ptr_4, &g_INI_DefaultBuffer); /*0x79977f*/
+              ((String *)&v54.ptr_4)->Assign( &g_INI_DefaultBuffer); /*0x79977f*/
               SavePersonaConfigWOL((ObjectClass *)&v54.ptr_4); /*0x799788*/
               DeleteAndZero((ObjectClass *)&v54.ptr_4); /*0x799791*/
             }
@@ -3441,7 +3441,7 @@ void MainLobbyDlgProcWOL(HWND hWnd, LPARAM lParam, ObjectClass)
           ((ObjectClass *)(ObjectClass *)&v60)->LoadAccountInfoWOL(); /*0x799838*/
           if ( v61 ) /*0x799843*/
           {
-            String::Assign((String *)&v55.u32_8, &g_INI_DefaultBuffer); /*0x79984e*/
+            ((String *)&v55.u32_8)->Assign( &g_INI_DefaultBuffer); /*0x79984e*/
             FillPersonaInfoWOL((int)v61, (HWND)v4, (char **)&v55.u32_8, 0); /*0x79985f*/
             DeleteAndZero((ObjectClass *)&v55.u32_8); /*0x799868*/
             v32 = GetDlgItem((HWND)v4, 1791); /*0x79987b*/
@@ -3475,7 +3475,7 @@ void MainLobbyDlgProcWOL(HWND hWnd, LPARAM lParam, ObjectClass)
             DeleteAndZero((ObjectClass *)&v57); /*0x7995e2*/
             if ( v23 ) /*0x7995e9*/
             {
-              String::Assign((String *)&a2, &g_INI_DefaultBuffer); /*0x7995f4*/
+              ((String *)&a2)->Assign( &g_INI_DefaultBuffer); /*0x7995f4*/
               ((ObjectClass *)&a2)->ReadSettingsWOL(); /*0x7995fd*/
               DeleteAndZero(&a2); /*0x799606*/
             }
@@ -3969,7 +3969,7 @@ LABEL_123:
             DeleteAndZero((ObjectClass *)&v86.ptr_4); /*0x79a741*/
             if ( LOBYTE(a2.q004) ) /*0x79a74c*/
             {
-              String::Assign((String *)&a2, &g_INI_DefaultBuffer); /*0x79a757*/
+              ((String *)&a2)->Assign( &g_INI_DefaultBuffer); /*0x79a757*/
               ((ObjectClass *)&a2)->ReadSettingsWOL(); /*0x79a760*/
               DeleteAndZero(&a2); /*0x79a769*/
             }
@@ -3979,7 +3979,7 @@ LABEL_123:
             DeleteAndZero((ObjectClass *)&v87); /*0x79a797*/
             if ( LOBYTE(a2.q004) ) /*0x79a7a2*/
             {
-              String::Assign(&v85, &g_INI_DefaultBuffer); /*0x79a7ad*/
+              ((String *)&v85)->Assign( &g_INI_DefaultBuffer); /*0x79a7ad*/
               SavePersonaConfigWOL((ObjectClass *)&v85); /*0x79a7b6*/
               DeleteAndZero((ObjectClass *)&v85); /*0x79a7bf*/
             }
@@ -6122,7 +6122,7 @@ LABEL_142:
         }
         if ( v26 != 1 ) /*0x79f5f4*/
           goto LABEL_117; /*0x79f5f4*/
-        String::Assign((String *)v51, &v52[52]); /*0x79f606*/
+        ((String *)v51)->Assign( &v52[52]); /*0x79f606*/
         v27 = 0; /*0x79f616*/
         memset(&v51[4], 0, 0x10Cu); /*0x79f618*/
         DynamicArray_field_0x10 = stru_B76AD0.DynamicArray_field_0x10; /*0x79f61a*/

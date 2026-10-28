@@ -109,14 +109,14 @@ void ObjectClass::sub_770E70(ObjectClass * aP1, ObjectClass * aP2, ObjectClass, 
   void *v5; // edi
   char *v6; // [esp+10h] [ebp-4h] BYREF
 
-  String::Assign((String *)&v6, off_83E188); /*0x770e80*/
+  ((String *)&v6)->Assign( off_83E188); /*0x770e80*/
   v5 = aP3; /*0x770e85*/
   INIClass::ReadTokenizedPair((INIClass *)this, aP2, ObjectClass, aP3, 0, &v6); /*0x770e9d*/
   j_DeleteAndZero((ObjectClass *)&v6); /*0x770ea6*/
-  String::Assign((String *)&aP3, g_INI_Key_Lose); /*0x770eb4*/
+  ((String *)&aP3)->Assign( g_INI_Key_Lose); /*0x770eb4*/
   INIClass::ReadTokenizedPair((INIClass *)this, aP2, ObjectClass, v5, 1, (char **)&aP3); /*0x770ec5*/
   j_DeleteAndZero((ObjectClass *)&aP3); /*0x770ece*/
-  String::Assign((String *)&aP3, aDraw); /*0x770edc*/
+  ((String *)&aP3)->Assign( aDraw); /*0x770edc*/
   INIClass::ReadTokenizedPair((INIClass *)this, aP2, ObjectClass, v5, 2, (char **)&aP3); /*0x770eed*/
   j_DeleteAndZero((ObjectClass *)&aP3); /*0x770ef6*/
 
@@ -1156,7 +1156,7 @@ unsigned int * PlayerProfile_Load(unsigned int * a1, const char ** a2)
     if ( INIClass::BinarySearchSection((int)&v17.nextArrayIndex, v5) )
     {
       unknown_libname_73(&v17.ptr_C); /*0x778ba4*/
-      String::Assign((String *)&v17, g_INI_Key_Server); /*0x778bb2*/
+      ((String *)&v17)->Assign( g_INI_Key_Server); /*0x778bb2*/
       INIClass::ReadString( /*0x778bcf*/
         (INIClass *)&v17.nextArrayIndex,
         (char **)&v17.ptr_4,
@@ -1164,35 +1164,35 @@ unsigned int * PlayerProfile_Load(unsigned int * a1, const char ** a2)
         (char **)&v17.ptr_C,
         (int)&v17.ptr_C);
       DeleteAndZero(&v17); /*0x778bd8*/
-      String::Assign((String *)&v17, g_INI_Key_Locale); /*0x778be6*/
+      ((String *)&v17)->Assign( g_INI_Key_Locale); /*0x778be6*/
       Int = INIClass::ReadInt((bool *)&v17.nextArrayIndex, (String *)&v17.ptr_4, (String *)&v17, 0); /*0x778c03*/
       DeleteAndZero(&v17); /*0x778c05*/
       v7 = (unsigned __int8 *)String::GetOrEmpty((String *)&v17.ptr_4); /*0x778c14*/
       Bool_Overwrite = INIClass::ReadBool_Overwrite(&v17.nextArrayIndex, v7, (unsigned __int8 *)aLocaleverified, 0); /*0x778c23*/
       v17.customSound_controller[4] = Bool_Overwrite; /*0x778c2e*/
-      String::Assign((String *)&v17, g_INI_Key_Country); /*0x778c32*/
+      ((String *)&v17)->Assign( g_INI_Key_Country); /*0x778c32*/
       v9 = INIClass::ReadInt((bool *)&v17.nextArrayIndex, (String *)&v17.ptr_4, (String *)&v17, -2); /*0x778c50*/
       DeleteAndZero(&v17); /*0x778c52*/
-      String::Assign((String *)&v17, aColor); /*0x778c60*/
+      ((String *)&v17)->Assign( aColor); /*0x778c60*/
       v10 = INIClass::ReadInt((bool *)&v17.nextArrayIndex, (String *)&v17.ptr_4, (String *)&v17, -2); /*0x778c7e*/
       DeleteAndZero(&v17); /*0x778c80*/
-      String::Assign((String *)&v17, aRank); /*0x778c8e*/
+      ((String *)&v17)->Assign( aRank); /*0x778c8e*/
       v17.customSound_controller[3] = INIClass::ReadInt( /*0x778cac*/
                                         (bool *)&v17.nextArrayIndex,
                                         (String *)&v17.ptr_4,
                                         (String *)&v17,
                                         -1);
       DeleteAndZero(&v17); /*0x778cb0*/
-      String::Assign((String *)&v17, &stru_842DD4.EliteWeapon[320]); /*0x778cbe*/
+      ((String *)&v17)->Assign( &stru_842DD4.EliteWeapon[320]); /*0x778cbe*/
       *(unsigned int *)v17.isOnMap = INIClass::ReadInt((bool *)&v17.nextArrayIndex, (String *)&v17.ptr_4, (String *)&v17, -1); /*0x778cdc*/
       DeleteAndZero(&v17); /*0x778ce3*/
-      String::Assign((String *)&v17, aWins); /*0x778cf1*/
+      ((String *)&v17)->Assign( aWins); /*0x778cf1*/
       v17.customSound = INIClass::ReadInt((bool *)&v17.nextArrayIndex, (String *)&v17.ptr_4, (String *)&v17, -1); /*0x778d0f*/
       DeleteAndZero(&v17); /*0x778d13*/
-      String::Assign((String *)&v17, aLosses); /*0x778d21*/
+      ((String *)&v17)->Assign( aLosses); /*0x778d21*/
       v17.health = INIClass::ReadInt((bool *)&v17.nextArrayIndex, (String *)&v17.ptr_4, (String *)&v17, -1); /*0x778d3f*/
       DeleteAndZero(&v17); /*0x778d43*/
-      String::Assign((String *)&v17, aDisconnects); /*0x778d51*/
+      ((String *)&v17)->Assign( aDisconnects); /*0x778d51*/
       v17.customSound_controller[2] = INIClass::ReadInt( /*0x778d6f*/
                                         (bool *)&v17.nextArrayIndex,
                                         (String *)&v17.ptr_4,
@@ -1207,7 +1207,7 @@ unsigned int * PlayerProfile_Load(unsigned int * a1, const char ** a2)
                                       1);
       unknown_libname_73(&v17.ptr_8); /*0x778d9d*/
       unknown_libname_74(&v17.abstractFlags); /*0x778da6*/
-      String::Assign((String *)&v17, g_INI_Key_UpdateTime); /*0x778db4*/
+      ((String *)&v17)->Assign( g_INI_Key_UpdateTime); /*0x778db4*/
       INIClass::ReadString( /*0x778dd1*/
         (INIClass *)&v17.nextArrayIndex,
         (char **)&v17.ptr_4,
@@ -1218,7 +1218,7 @@ unsigned int * PlayerProfile_Load(unsigned int * a1, const char ** a2)
       LocalizeWOLDateString((String *)&v17.ptr_8, (WideString *)&v17.abstractFlags); /*0x778de7*/
       DeleteAndZero::Alt2((DeleteAndZero *)&v17.ptr_8); /*0x778df0*/
       unknown_libname_74(&v17.uniqueId); /*0x778df9*/
-      String::Assign((String *)&v17, g_INI_Key_UpdateDate); /*0x778e07*/
+      ((String *)&v17)->Assign( g_INI_Key_UpdateDate); /*0x778e07*/
       INIClass::ReadString( /*0x778e24*/
         (INIClass *)&v17.nextArrayIndex,
         (char **)&v17.ptr_4,
@@ -3428,7 +3428,7 @@ void E4Recv_770850::sub_770850(unsigned int * a1, char ** a2, int a4, ObjectClas
   v6 = StaticString::Factory((StaticString *)this->ptr_0); /*0x77085e*/
   ConcatStringAlloc((char **)&v17.ptr_4, (const char **)v6, v16); /*0x770869*/
   unknown_libname_73(&v17); /*0x770872*/
-  String::Assign((String *)&aP4, &g_INI_DefaultBuffer); /*0x770880*/
+  ((String *)&aP4)->Assign( &g_INI_DefaultBuffer); /*0x770880*/
   INIClass::ReadString((INIClass *)a1, a2, (char **)&v17.ptr_4, (char **)&aP4, (int)&v17); /*0x77089d*/
   DeleteAndZero((ObjectClass *)&aP4); /*0x7708a6*/
   v7 = *((unsigned int *)this + 6 * a4 + 223); /*0x7708b2*/
