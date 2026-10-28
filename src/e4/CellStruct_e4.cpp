@@ -8,7 +8,7 @@
 
 // 0x42D510
 namespace gamemd {  // G42.18 ns repair
-void* CellStruct::Add(CellStruct *aP0, unsigned int *aP1, unsigned short *aP2)  // G57w11: def 同步 hpp（raw 0x42D510）
+void* CellStruct::Add(unsigned int *aP1, unsigned short *aP2)  // 0x42D510 thiscall (x181c: receiver param dropped)
 {
 
   __int16 v3; // dx
