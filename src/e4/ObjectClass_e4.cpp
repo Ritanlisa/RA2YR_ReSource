@@ -11534,7 +11534,7 @@ void* ObjectClass::LoadAccountInfoWOL() {
     /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7EA5F4) */  /*0x7787f7*/
     FileStraw::Open((FileStraw *)&v11.nextArrayIndex, (int)&v11.customSound_controller[2], 0); /*0x7787ff*/
     CCFileClass::Close((BufferIOFileClass *)&v11.customSound_controller[2]); /*0x778808*/
-    v4 = (uint8_t *)String::GetOrEmpty_Alt((String *)&stru_B73590); /*0x778812*/
+    v4 = (uint8_t *)((String *)(String *)&stru_B73590)->GetOrEmpty_Alt(); /*0x778812*/
     if ( INIClass::BinarySearchSection((int)&v11.nextArrayIndex, v4) ) /*0x77881c*/
     {
       ((String *)&v11)->Assign( g_INI_Key_Server); /*0x778832*/
@@ -11572,7 +11572,7 @@ void* ObjectClass::LoadAccountInfoWOL() {
         (char **)&v11.ptr_4,
         (int)&v11.ptr_4);
       DeleteAndZero(&v11); /*0x77895f*/
-      v5 = String::GetOrEmpty_Alt((String *)&v11.ptr_4); /*0x778968*/
+      v5 = ((String *)(String *)&v11.ptr_4)->GetOrEmpty_Alt(); /*0x778968*/
       v6 = CharToWideString(v5); /*0x77896f*/
       ((WideString *)(void **)&v11.uniqueId)->Reassign( (wchar_t *)v6); /*0x778979*/
     }

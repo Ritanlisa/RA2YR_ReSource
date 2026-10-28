@@ -708,7 +708,7 @@ Coord * * CComObject_CChatEventSink___ATL::DispatchStub_22(int a1, int a2, int a
   Flagged = GameSettings::FindFlagged(); /*0x7a7f4d*/
   if ( Flagged ) /*0x7a7f51*/
   {
-    v9 = String::GetOrEmpty_Alt((String *)&stru_B73E10.q030); /*0x7a7f58*/
+    v9 = ((String *)(String *)&stru_B73E10.q030)->GetOrEmpty_Alt(); /*0x7a7f58*/
     if ( !_strcmpi(Flagged + 36, v9) ) /*0x7a7f62*/
       return 0; /*0x7a7f6c*/
   }
@@ -1147,7 +1147,7 @@ LABEL_22:
       DlgItem = GetDlgItem((HWND)Current, 1343); /*0x7a94b5*/
       ChatCommand = ExtractChatCommand((String *)&v26.q004, DlgItem); /*0x7a94c8*/
       v21 = GetDlgItem((HWND)Current, 1816); /*0x7a94ce*/
-      v22 = String::GetOrEmpty_Alt(ChatCommand); /*0x7a94d0*/
+      v22 = ((String *)ChatCommand)->GetOrEmpty_Alt(); /*0x7a94d0*/
       SendMessageA(v21, 0x4B4u, 0, (LPARAM)v22); /*0x7a94de*/
       DeleteAndZero((ObjectClass *)&v26.q004); /*0x7a94e8*/
     }

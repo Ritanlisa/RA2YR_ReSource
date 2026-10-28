@@ -1152,7 +1152,7 @@ unsigned int * PlayerProfile_Load(unsigned int * a1, const char ** a2)
     CCFileClass::Close((CCFileClass *)&v17.spawnStatus); /*0x778b34*/
     String::AssignFromPtr((String *)&v17.ptr_4, a2); /*0x778b3e*/
     String::ToLower((String *)&v17.ptr_4); /*0x778b47*/
-    v5 = (unsigned __int8 *)String::GetOrEmpty_Alt((String *)&v17.ptr_4); /*0x778b50*/
+    v5 = (unsigned __int8 *)((String *)(String *)&v17.ptr_4)->GetOrEmpty_Alt(); /*0x778b50*/
     if ( INIClass::BinarySearchSection((int)&v17.nextArrayIndex, v5) )
     {
       unknown_libname_73(&v17.ptr_C); /*0x778ba4*/
@@ -1226,7 +1226,7 @@ unsigned int * PlayerProfile_Load(unsigned int * a1, const char ** a2)
         (char **)&v17.ptr_8,
         (int)&v17.ptr_8);
       DeleteAndZero(&v17); /*0x778e2d*/
-      v12 = String::GetOrEmpty_Alt((String *)&v17.ptr_8); /*0x778e36*/
+      v12 = ((String *)(String *)&v17.ptr_8)->GetOrEmpty_Alt(); /*0x778e36*/
       v13 = CharToWideString(v12); /*0x778e3d*/
       ((WideString *)&v17.uniqueId)->Reassign( (wchar_t *)v13); /*0x778e47*/
       v14 = (ReferenceCounted *)__2_YAPAXI_Z(0x44u); /*0x778e4e*/
@@ -2606,7 +2606,7 @@ Coord * * AssignWOLPlayerSide(const char ** a1, int a2)
     {
       if ( v10 >= 0 && v9 < v7 ) /*0x77e966*/
         v8 = (char *)dword_B77908 + v10; /*0x77e96d*/
-      v11 = String::GetOrEmpty_Alt((String *)&v23.ptr_4); /*0x77e978*/
+      v11 = ((String *)(String *)&v23.ptr_4)->GetOrEmpty_Alt(); /*0x77e978*/
       if ( !_strcmpi(v11, v8 + 36) ) /*0x77e97e*/
         break; /*0x77e97e*/
       v7 = *(unsigned int *)&stru_B778FC.m_3[1]; /*0x77e98a*/

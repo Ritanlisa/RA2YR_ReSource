@@ -1049,7 +1049,7 @@ void* COMClass::adviseConnection(void* a1, int a2, void* a3) {
 
   v5 = ((int (__thiscall *)(unsigned int))this->q010)(a2->ptr_4); /*0x766ab0*/
   FromStringInt((char **)&Format, v5); /*0x766ab9*/
-  v6 = String::GetOrEmpty_Alt(&this->q014); /*0x766acb*/
+  v6 = ((String *)&this->q014)->GetOrEmpty_Alt(); /*0x766acb*/
   StringCSF = GetStringCSF((char *)v6, 0, aDRa2mdpostWdtg, 161); /*0x766ad4*/
   ((WideString *)(wchar_t **)&v13)->Assign( StringCSF); /*0x766ade*/
   v11 = Format; /*0x766ae7*/

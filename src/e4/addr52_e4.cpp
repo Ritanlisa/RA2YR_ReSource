@@ -397,9 +397,9 @@ char ** E4Recv_529E70::sub_529E70(char ** a2, char * Source, char ** a4, char **
   KeyValuePair v27[3]; // [esp+24h] [ebp-4Ch] BYREF
   char Destination[64]; // [esp+30h] [ebp-40h] BYREF
 
-  v6 = (char **)String::GetOrEmpty_Alt((String *)a4); /*0x529e85*/
+  v6 = (char **)((String *)(String *)a4)->GetOrEmpty_Alt(); /*0x529e85*/
   a4 = v6; /*0x529e87*/
-  v7 = String::GetOrEmpty_Alt((String *)Source); /*0x529e90*/
+  v7 = ((String *)(String *)Source)->GetOrEmpty_Alt(); /*0x529e90*/
   Source = &g_INI_DefaultBuffer; /*0x529e98*/
   if ( &v22 == (int *)-48 || !v7 || !v6 ) /*0x529eb0*/
     goto LABEL_18; /*0x529eb0*/
@@ -591,9 +591,9 @@ Color * * E4Recv_52A2F0::sub_52A2F0(float * a2, float Source, char ** a4, float 
   KeyValuePair v29[3]; // [esp+24h] [ebp-4Ch] BYREF
   char Destination[64]; // [esp+30h] [ebp-40h] BYREF
 
-  v6 = (char **)String::GetOrEmpty_Alt((String *)a4); /*0x52a305*/
+  v6 = (char **)((String *)(String *)a4)->GetOrEmpty_Alt(); /*0x52a305*/
   a4 = v6; /*0x52a307*/
-  v7 = String::GetOrEmpty_Alt((String *)LODWORD(Source)); /*0x52a310*/
+  v7 = ((String *)(String *)LODWORD(Source))->GetOrEmpty_Alt(); /*0x52a310*/
   Source = COERCE_FLOAT(&g_INI_DefaultBuffer); /*0x52a318*/
   if ( &v22 == (int *)-48 || !v7 || !v6 ) /*0x52a330*/
     goto LABEL_18; /*0x52a330*/

@@ -324,7 +324,7 @@ char ** LoadFromINIGraphicMenu(void * a1, void * a2, void * a3)
   v38.abstractFlags = (int)v3; /*0x4f1caf*/
   v38.uniqueId = (int)a2; /*0x4f1cb3*/
   v40 = 0; /*0x4f1cb7*/
-  v5 = (unsigned __int8 *)String::GetOrEmpty_Alt(v3); /*0x4f1cbe*/
+  v5 = (unsigned __int8 *)((String *)v3)->GetOrEmpty_Alt(); /*0x4f1cbe*/
   if ( !INIClass::BinarySearchSection((int)a2, v5) ) /*0x4f1cc6*/
     return 0; /*0x4f1cc6*/
   v7 = __2_YAPAXI_Z(0x70u); /*0x4f1cdd*/
@@ -762,7 +762,7 @@ int ParseINIAnimGadgetDefinition(void * a2, void * a4, void * a3, void * aOrigin
       DeleteAndZero(&a4); /*0x4f2e54*/
       v24 += *ptr_0; /*0x4f2e65*/
       v25 += ptr_0->ptr_4; /*0x4f2e77*/
-      v16 = (unsigned __int8 *)String::GetOrEmpty_Alt(Source); /*0x4f2e7b*/
+      v16 = (unsigned __int8 *)((String *)Source)->GetOrEmpty_Alt(); /*0x4f2e7b*/
       v21.ptr_0 = INIClass::ReadBool_Overwrite((int *)a2->__pad_0, v16, aLoop, 1); /*0x4f2e91*/
       ((String *)&a4)->Assign( g_INI_Key_Rate); /*0x4f2e95*/
       Int = INIClass::ReadInt((bool *)a2->__pad_0, Source, (String *)&a4, 5); /*0x4f2ead*/
@@ -1713,7 +1713,7 @@ int * E4Recv_4F2F10::sub_4F2F10(GraphicMenuAnimItem * a2, unsigned int * a3, Gra
     if ( (unsigned __int8)CCFileClass::Open((CCFileClass *)&v15.ptr_4, 0) ) /*0x4f2f8f*/
     {
       char *v11; // eax
-      v11 = String::GetOrEmpty_Alt((String *)a7); /*0x4f2f9a*/
+      v11 = ((String *)(String *)a7)->GetOrEmpty_Alt(); /*0x4f2f9a*/
       ((String *)&v15)->Assign( v11); /*0x4f2fa4*/
       this->u32_24 = PaletteClass::Load((PaletteClass *)&v15); /*0x4f2fb6*/
       DeleteAndZero(&v15); /*0x4f2fb9*/

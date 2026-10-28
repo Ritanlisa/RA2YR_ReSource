@@ -1211,11 +1211,11 @@ LABEL_100:
   }
   if ( v10 ) /*0x781c19*/
     __3_YAXPAX_Z(v10); /*0x781c1c*/
-  v27 = String::GetOrEmpty_Alt(&v52); /*0x781c28*/
+  v27 = ((String *)&v52)->GetOrEmpty_Alt(); /*0x781c28*/
   v28 = v46; /*0x781c2d*/
   v29 = SendMessageA(v46, 0x4C5u, 0, (LPARAM)v27); /*0x781c3f*/
   SendMessageA(v28, 0x186u, v29, 0); /*0x781c49*/
-  v30 = String::GetOrEmpty_Alt(&v51); /*0x781c4f*/
+  v30 = ((String *)&v51)->GetOrEmpty_Alt(); /*0x781c4f*/
   v31 = SendMessageA(v28, 0x4C5u, 0, (LPARAM)v30); /*0x781c5c*/
   if ( v31 != -1 ) /*0x781c61*/
     SendMessageA(v28, 0x197u, v31, 0); /*0x781c6b*/
@@ -2651,7 +2651,7 @@ int WOL_LoginFlow()
             if ( strlen(*(const char **)v41.__pad_0) ) /*0x78715b*/
             {
               v35 = *(char **)v41.__pad_0; /*0x787165*/
-              v7 = String::GetOrEmpty_Alt((String *)&v39); /*0x78716a*/
+              v7 = ((String *)(String *)&v39)->GetOrEmpty_Alt(); /*0x78716a*/
               if ( !_strcmpi(v7, v35) ) /*0x787170*/
                 break; /*0x787170*/
             }
@@ -3661,7 +3661,7 @@ int WOL_LeaveChannelEx(int a1, char ** a2, void * a3)
     else
     {
 LABEL_14:
-      strcpy((char *)(a1 + 215), String::GetOrEmpty_Alt(v13)); /*0x78899f*/
+      strcpy((char *)(a1 + 215), ((String *)v13)->GetOrEmpty_Alt()); /*0x78899f*/
       memcpy(&MEMORY[0xB73BE8], (const void *)a1, 0x10Cu); /*0x7889b4*/
       v10 = WideString::GetOrEmpty_Alt((wchar_t **)&a3); /*0x7889ba*/
       ((WideString *)(wchar_t **)&v12)->Assign( v10); /*0x7889c4*/
@@ -4236,7 +4236,7 @@ int PopulateWOLUserList(HWND hWnd, char a2)
       String::AssignFromPtr((String *)&v18.ptr_4, (const char **)&v18); /*0x789822*/
       DeleteAndZero((ObjectClass *)&v21); /*0x78982b*/
       DeleteAndZero((ObjectClass *)&v18); /*0x789834*/
-      v11 = String::GetOrEmpty_Alt((String *)&v18.ptr_4); /*0x789845*/
+      v11 = ((String *)(String *)&v18.ptr_4)->GetOrEmpty_Alt(); /*0x789845*/
       if ( a2 ) /*0x789843*/
       {
         v12 = SendMessageA((HWND)hWnd, 0x4BCu, 0, (LPARAM)v11); /*0x789855*/
@@ -4675,7 +4675,7 @@ LABEL_72:
   {
     if ( v32 >= 0 && v31 < v29 ) /*0x78a256*/
       v30 = (char *)dword_B77908 + v32; /*0x78a25e*/
-    v33 = String::GetOrEmpty_Alt((String *)&stru_B73E10.q030); /*0x78a26a*/
+    v33 = ((String *)(String *)&stru_B73E10.q030)->GetOrEmpty_Alt(); /*0x78a26a*/
     if ( !_strcmpi(v33, v30 + 36) ) /*0x78a270*/
       break; /*0x78a270*/
     v29 = *(unsigned int *)&stru_B778FC.m_3[1]; /*0x78a27c*/

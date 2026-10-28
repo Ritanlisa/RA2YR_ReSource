@@ -3836,7 +3836,7 @@ LABEL_133:
           if ( strlen(*(const char **)&hWnd.m_3[1]) ) /*0x79a9f9*/
           {
             v81 = *(const void **)&hWnd.m_3[1]; /*0x79aa03*/
-            v56 = String::GetOrEmpty_Alt((String *)&stru_B73E10.q030); /*0x79aa09*/
+            v56 = ((String *)(String *)&stru_B73E10.q030)->GetOrEmpty_Alt(); /*0x79aa09*/
             if ( !_strcmpi(v56, v81) ) /*0x79aa0f*/
               break; /*0x79aa0f*/
           }
@@ -3856,11 +3856,11 @@ LABEL_133:
     (dword_84A238) = ((dword_84A238) & ~0xFF) | ((0) & 0xFF); /*0x79abf3*/
     LOBYTE(a2.q004) = 1; /*0x79abfa*/
 LABEL_106:
-    v57 = String::GetOrEmpty_Alt((String *)&stru_B73E10.q030); /*0x79aa4b*/
+    v57 = ((String *)(String *)&stru_B73E10.q030)->GetOrEmpty_Alt(); /*0x79aa4b*/
     SendMessageA(v52, 0x4B4u, 0, (LPARAM)v57); /*0x79aa5e*/
     if ( ((String *)&stru_B73E10.q030)->Length() ) /*0x79aa65*/
     {
-      v58 = String::GetOrEmpty_Alt((String *)&g_WebBrowserConfig); /*0x79aa73*/
+      v58 = ((String *)(String *)&g_WebBrowserConfig)->GetOrEmpty_Alt(); /*0x79aa73*/
       SendMessageA(*(HWND *)&v85.ptr_4, 0x4B4u, 0, (LPARAM)v58); /*0x79aa85*/
       (dword_84A238) = ((dword_84A238) & ~0xFF) | ((0) & 0xFF); /*0x79aa87*/
     }
@@ -3956,7 +3956,7 @@ LABEL_123:
         case 1771: /*0x79a594*/
           byte_B77EA0 = 1; /*0x79a6c3*/
           v44 = GetDlgItem((HWND)v3, 1576); /*0x79a6d1*/
-          v45 = String::GetOrEmpty_Alt((String *)&stru_B73E10.q030); /*0x79a6d3*/
+          v45 = ((String *)(String *)&stru_B73E10.q030)->GetOrEmpty_Alt(); /*0x79a6d3*/
           *(unsigned int *)hWnd.__pad_0 = SendMessageA(v44, 0x4B9u, 0xFFFFFFFF, (LPARAM)v45); /*0x79a6ec*/
           if ( *(unsigned int *)hWnd.__pad_0 != -1 ) /*0x79a6f0*/
           {
@@ -4095,7 +4095,7 @@ LABEL_123:
               ((DeleteAndZero *)(DeleteAndZero *)&g_WebBrowserConfig)->Alt2(); /*0x79a273*/
               (dword_84A238) = ((dword_84A238) & ~0xFF) | ((1) & 0xFF); /*0x79a284*/
               v19 = GetDlgItem((HWND)v3, 1836); /*0x79a292*/
-              v20 = String::GetOrEmpty_Alt((String *)&g_WebBrowserConfig); /*0x79a294*/
+              v20 = ((String *)(String *)&g_WebBrowserConfig)->GetOrEmpty_Alt(); /*0x79a294*/
               SendMessageA(v19, 0x4B4u, 0, (LPARAM)v20); /*0x79a2a8*/
               hWnd.__pad_0[0] = byte_B77E68; /*0x79a2be*/
               v21 = SendMessageA((HWND)a2.q004, 0x147u, 0, 0); /*0x79a2c4*/
@@ -4113,7 +4113,7 @@ LABEL_123:
                     &a2.q004);
                   String::Assign_Alt((String *)&g_WebBrowserConfig, (const char *)a2.q004); /*0x79a322*/
                   v23 = GetDlgItem((HWND)v3, 1836); /*0x79a334*/
-                  v24 = String::GetOrEmpty_Alt((String *)&g_WebBrowserConfig); /*0x79a336*/
+                  v24 = ((String *)(String *)&g_WebBrowserConfig)->GetOrEmpty_Alt(); /*0x79a336*/
                   SendMessageA(v23, 0x4B4u, 0, (LPARAM)v24); /*0x79a344*/
                   (dword_84A238) = ((dword_84A238) & ~0xFF) | ((0) & 0xFF); /*0x79a346*/
                   hWnd.__pad_0[0] = 1; /*0x79a34d*/
@@ -4159,7 +4159,7 @@ LABEL_123:
                   if ( strlen(*(const char **)&hWnd.m_3[1]) ) /*0x79a0bd*/
                   {
                     v76 = *(const void **)&hWnd.m_3[1]; /*0x79a0c7*/
-                    v11 = String::GetOrEmpty_Alt((String *)&a2.q004); /*0x79a0cc*/
+                    v11 = ((String *)(String *)&a2.q004)->GetOrEmpty_Alt(); /*0x79a0cc*/
                     if ( !_strcmpi(v11, v76) ) /*0x79a0dc*/
                     {
                       String::Assign_Alt((String *)&stru_B73E10.q030, *(const char **)&hWnd.m_3[1]); /*0x79a10a*/
@@ -4188,7 +4188,7 @@ LABEL_43:
 LABEL_44:
             byte_B77EA0 = 1; /*0x79a13f*/
             v13 = GetDlgItem((HWND)v3, 1836); /*0x79a159*/
-            v14 = String::GetOrEmpty_Alt((String *)&g_WebBrowserConfig); /*0x79a15b*/
+            v14 = ((String *)(String *)&g_WebBrowserConfig)->GetOrEmpty_Alt(); /*0x79a15b*/
             SendMessageA(v13, 0x4B4u, 0, (LPARAM)v14); /*0x79a16f*/
             InvalidateRect(v13, 0, 0); /*0x79a176*/
             byte_B77EA0 = 0; /*0x79a181*/
@@ -6165,7 +6165,7 @@ LABEL_94:
             {
               if ( v32 >= 0 && v27 < v31 ) /*0x79f711*/
                 memcpy(&v51[4], (char *)dword_B76AE8 + v32, 0x10Cu); /*0x79f725*/
-              v33 = String::GetOrEmpty_Alt((String *)v51); /*0x79f72b*/
+              v33 = ((String *)(String *)v51)->GetOrEmpty_Alt(); /*0x79f72b*/
               if ( !_strcmpi(&v51[56], v33) ) /*0x79f736*/
                 break; /*0x79f736*/
               v31 = stru_B76AD0.DynamicArray_field_0x10; /*0x79f742*/
@@ -6189,7 +6189,7 @@ LABEL_94:
         {
           if ( (int)v12 >= 0 && v27 < DynamicArray_field_0x10 ) /*0x79f62b*/
             memcpy(&v51[4], (char *)v12 + (unsigned int)dword_B76AE8, 0x10Cu); /*0x79f63f*/
-          v29 = String::GetOrEmpty_Alt((String *)v51); /*0x79f645*/
+          v29 = ((String *)(String *)v51)->GetOrEmpty_Alt(); /*0x79f645*/
           if ( !_strcmpi(&v51[56], v29) ) /*0x79f650*/
             break; /*0x79f650*/
           DynamicArray_field_0x10 = stru_B76AD0.DynamicArray_field_0x10; /*0x79f660*/

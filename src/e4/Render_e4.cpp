@@ -673,7 +673,7 @@ wchar_t ** Render_Format(wchar_t ** a1, char ** a2)
   wchar_t *v8; // esi
   char *v9; // eax
 
-  v4 = String::GetOrEmpty_Alt(a2); /*0x780d9f*/
+  v4 = ((String *)a2)->GetOrEmpty_Alt(); /*0x780d9f*/
   if ( _strcmpi(v4, aRandmapSed) ) /*0x780da5*/
   {
     v7 = 0; /*0x780ddb*/
@@ -688,7 +688,7 @@ LABEL_6:
       while ( 1 ) /*0x780de6*/
       {
         v8 = *(wchar_t **)(dword_A8B8CC + 4 * v7); /*0x780de6*/
-        v9 = String::GetOrEmpty_Alt(a2); /*0x780def*/
+        v9 = ((String *)a2)->GetOrEmpty_Alt(); /*0x780def*/
         if ( !_strcmpi(v9, v8 + 44) ) /*0x780df5*/
           break; /*0x780df5*/
         if ( ++v7 >= dword_A8B8D8 ) /*0x780e09*/
