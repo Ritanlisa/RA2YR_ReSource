@@ -499,7 +499,7 @@ int GenerateTerrainHeightMapInternal()
   unsigned __int16 *v17; // [esp+8h] [ebp-8h]
   unsigned __int16 *v18; // [esp+Ch] [ebp-4h]
 
-  LayerClass::CellIteratorReset((LayerClass *)&dword_87F7E8); /*0x5a33f9*/
+  ((LayerClass *)&dword_87F7E8)->CellIteratorReset(); /*0x5a33f9*/
   result = (CellClass *)((LayerClass *)&dword_87F7E8)->CellIteratorNext(); /*0x5a3403*/
   for ( i = result; result; i = result ) /*0x5a340c*/
   {

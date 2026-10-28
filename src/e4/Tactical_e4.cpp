@@ -1632,7 +1632,7 @@ void* Tactical::DrawTacticalConnectorLines()
   int v57[3]; // [esp+CCh] [ebp-48h] BYREF
   unsigned char v58[12]; // [esp+D8h] [ebp-3Ch] BYREF
 
-  LayerClass::CellIteratorReset((LayerClass *)&DataGlobal_87F7E8); /*0x6db221*/
+  ((LayerClass *)&DataGlobal_87F7E8)->CellIteratorReset(); /*0x6db221*/
   CellClass *v2; // ebp
   v2 = (CellClass *)((LayerClass *)&DataGlobal_87F7E8)->CellIteratorNext(); /*0x6db236*/
   int result = 255 >> g_BitMask_Blue << g_BitMask_Green; // eax /*0x6db251*/

@@ -18158,7 +18158,7 @@ namespace gamemd {
   *v3 = 0; /*0x7233d0*/
   for ( i = Object::ComputeAllocationSize() - 1; i >= 0; *(unsigned char *)(bug->passengers[0] + i + 1) = 0 ) /*0x7233dc*/
     --i; /*0x7233e4*/
-  LayerClass::CellIteratorReset((LayerClass *)&DataGlobal_87F7E8); /*0x7233f1*/
+  ((LayerClass *)&DataGlobal_87F7E8)->CellIteratorReset(); /*0x7233f1*/
   result = ((LayerClass *)&DataGlobal_87F7E8)->CellIteratorNext(); /*0x7233fb*/
   for ( j = (BuildingClass *)result; result; j = (BuildingClass *)result ) /*0x723404*/
   {
@@ -18212,7 +18212,7 @@ namespace gamemd {
   *v3 = 0; /*0x7233d0*/
   for ( i = Object::ComputeAllocationSize() - 1; i >= 0; *(unsigned char *)(bug->passengers[0] + i + 1) = 0 ) /*0x7233dc*/
     --i; /*0x7233e4*/
-  LayerClass::CellIteratorReset((LayerClass *)&DataGlobal_87F7E8); /*0x7233f1*/
+  ((LayerClass *)&DataGlobal_87F7E8)->CellIteratorReset(); /*0x7233f1*/
   result = ((LayerClass *)&DataGlobal_87F7E8)->CellIteratorNext(); /*0x7233fb*/
   for ( j = (BuildingClass *)result; result; j = (BuildingClass *)result ) /*0x723404*/
   {

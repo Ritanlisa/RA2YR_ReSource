@@ -4940,7 +4940,7 @@ int TiberiumClass::Grow(void* a1) {
   {
     v9 = 0; /*0x59ca07*/
   }
-  LayerClass::CellIteratorReset((LayerClass *)&DataGlobal_87F7E8); /*0x59ca10*/
+  ((LayerClass *)&DataGlobal_87F7E8)->CellIteratorReset(); /*0x59ca10*/
   for ( i = ((LayerClass *)&DataGlobal_87F7E8)->CellIteratorNext(); /*0x59ca21*/
         i;
         i = ((LayerClass *)&DataGlobal_87F7E8)->CellIteratorNext() )
@@ -5398,7 +5398,7 @@ int TiberiumClass::Grow(void* a1) {
       if ( inited ) /*0x59d32e*/
       {
         (*((unsigned int *)&(v96))) = this->u32_308; /*0x59d33f*/
-        LayerClass::CellIteratorReset((LayerClass *)&DataGlobal_87F7E8); /*0x59d343*/
+        ((LayerClass *)&DataGlobal_87F7E8)->CellIteratorReset(); /*0x59d343*/
         for ( j = ((LayerClass *)&DataGlobal_87F7E8)->CellIteratorNext(); /*0x59d354*/
               j;
               j = ((LayerClass *)&DataGlobal_87F7E8)->CellIteratorNext() )
@@ -5437,7 +5437,7 @@ int TiberiumClass::Grow(void* a1) {
     return 1; /*0x59d2e3*/
   }
   v79 = this->ptr_8.SpreadPercentage[1]; /*0x59d3b6*/
-  LayerClass::CellIteratorReset((LayerClass *)&DataGlobal_87F7E8); /*0x59d3c1*/
+  ((LayerClass *)&DataGlobal_87F7E8)->CellIteratorReset(); /*0x59d3c1*/
   for ( k = ((LayerClass *)&DataGlobal_87F7E8)->CellIteratorNext(); /*0x59d3d4*/
         k;
         k = ((LayerClass *)&DataGlobal_87F7E8)->CellIteratorNext() )

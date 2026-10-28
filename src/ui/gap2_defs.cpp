@@ -2261,7 +2261,7 @@ int MouseClass::DrawCursor() {
                 {
 LABEL_13:
                   pStm = 0; /*0x5be7d8*/
-                  LayerClass::CellIteratorReset((LayerClass *)this); /*0x5be7e2*/
+                  ((LayerClass *)this)->CellIteratorReset(); /*0x5be7e2*/
                   for ( i = (unsigned int *)((LayerClass *)this)->CellIteratorNext(); /*0x5be7f0*/
                         i;
                         i = (unsigned int *)((LayerClass *)this)->CellIteratorNext() )
@@ -2279,7 +2279,7 @@ LABEL_13:
                   v23 = result; /*0x5be82b*/
                   if ( result >= 0 ) /*0x5be82f*/
                   {
-                    LayerClass::CellIteratorReset((LayerClass *)this); /*0x5be83d*/
+                    ((LayerClass *)this)->CellIteratorReset(); /*0x5be83d*/
                     v15 = (IPersistStream *)((LayerClass *)this)->CellIteratorNext(); /*0x5be849*/
                     if ( v15 ) /*0x5be84d*/
                     {

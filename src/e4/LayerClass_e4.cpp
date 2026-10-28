@@ -643,7 +643,7 @@ int LayerClass::CellIteratorNext()
 }
 // 0x578350
 namespace gamemd {
-int LayerClass::CellIteratorReset(void *a1)
+int LayerClass::CellIteratorReset()
 {
 
   int v1 = this->u32_F4; // eax /*0x578350*/

@@ -1094,7 +1094,7 @@ char ProcessSlaveManagerTerrain()
   int v26; // [esp+10h] [ebp-8h]
   int v27; // [esp+14h] [ebp-4h]
 
-  LayerClass::CellIteratorReset((LayerClass *)&dword_87F7E8); /*0x6b3858*/
+  ((LayerClass *)&dword_87F7E8)->CellIteratorReset(); /*0x6b3858*/
   v1 = (unsigned int *)((LayerClass *)&dword_87F7E8)->CellIteratorNext(); /*0x6b3862*/
   for ( i = v1; v1; i = v1 ) /*0x6b386d*/
   {

@@ -438,7 +438,7 @@ ObjectClass * * RandomMap_DistributeTerrain()
   v4 = v44[dword_ABE014]; /*0x594bb6*/
   LOWORD(v5) = *(unsigned short *)(dword_87F800[v4] + 2 * v3); /*0x594bc1*/
   Map_Helper_58CE90(v34); /*0x594bc5*/
-  LayerClass::CellIteratorReset((LayerClass *)&dword_87F7E8); /*0x594bcf*/
+  ((LayerClass *)&dword_87F7E8)->CellIteratorReset(); /*0x594bcf*/
   for ( i = ((LayerClass *)&dword_87F7E8)->CellIteratorNext(); /*0x594be2*/
         i;
         i = ((LayerClass *)&dword_87F7E8)->CellIteratorNext() )
@@ -1148,7 +1148,7 @@ int sub_59C630()
   __int64 v11; // [esp+10h] [ebp-10h]
   __int64 v12; // [esp+18h] [ebp-8h]
 
-  LayerClass::CellIteratorReset(&dword_87F7E8); /*0x59c63a*/
+  ((LayerClass *)&dword_87F7E8)->CellIteratorReset(); /*0x59c63a*/
   result = ((LayerClass *)&dword_87F7E8)->CellIteratorNext(); /*0x59c644*/
   for ( i = result; result; i = result ) /*0x59c64f*/
   {
