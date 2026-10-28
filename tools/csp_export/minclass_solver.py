@@ -213,6 +213,28 @@ def build_universe(use_evidence=True):
                 w = rec.get("size") if isinstance(rec, dict) else None
                 members[i][off] = int(w) if isinstance(w, int) and w > 0 else None
 
+    # ---- 模板实例继承基模板的 offset 0（vfptr）----
+    # 实测：全部 125 个 VectorClass_* 实例的布局缺 offset 0，而其基模板 VectorClass
+    # 有 (0,4)；于是 C2 唯一钉到的类被 C1 以"缺 offset 0"排除，制造 290 个假冲突。
+    # 只补 offset 0（多态对象首成员），不搬其它成员，避免掩盖真实布局错误。
+    _idx_by_name = {nm: i for i, nm in enumerate(names)}
+    n_tmpl0 = 0
+    for i, c in enumerate(names):
+        if "_" not in c or 0 in members[i]:
+            continue
+        parts = c.split("_")
+        base_i = None
+        for k in range(len(parts) - 1, 0, -1):
+            pfx = "_".join(parts[:k])
+            if pfx in _idx_by_name:
+                base_i = _idx_by_name[pfx]
+                break
+        if base_i is None or 0 not in members[base_i]:
+            continue
+        members[i][0] = members[base_i][0]
+        n_tmpl0 += 1
+    print("[layout] template instances given base offset0 (vfptr): %d" % n_tmpl0, flush=True)
+
     size = [None] * n
     for i in range(n):
         s = layout_size[i]
