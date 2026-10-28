@@ -163,7 +163,7 @@ void E4Recv_7714B0::sub_7714B0(int a2, char a3, int a4)
     LOBYTE(this->currentBurstIndex) = 1; /*0x771517*/
   unknown_libname_73(&v17); /*0x771522*/
   ptr_0 = this->ptr_0; /*0x77152b*/
-  DeleteAndZero::Alt2(&v17); /*0x77153b*/
+  ((DeleteAndZero *)&v17)->Alt2(); /*0x77153b*/
   v12 = this->primaryFacing[6 * a2 + 1]; /*0x771540*/
   if ( v12 > 0 )
   {

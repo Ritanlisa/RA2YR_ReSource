@@ -1216,7 +1216,7 @@ unsigned int * PlayerProfile_Load(unsigned int * a1, const char ** a2)
         (int)&v17.ptr_8);
       DeleteAndZero(&v17); /*0x778dda*/
       LocalizeWOLDateString((String *)&v17.ptr_8, (WideString *)&v17.abstractFlags); /*0x778de7*/
-      DeleteAndZero::Alt2((DeleteAndZero *)&v17.ptr_8); /*0x778df0*/
+      ((DeleteAndZero *)(DeleteAndZero *)&v17.ptr_8)->Alt2(); /*0x778df0*/
       unknown_libname_74(&v17.uniqueId); /*0x778df9*/
       ((String *)&v17)->Assign( g_INI_Key_UpdateDate); /*0x778e07*/
       INIClass::ReadString( /*0x778e24*/
@@ -3482,7 +3482,7 @@ char E4Recv_770970::sub_770970(int a2, int a3, void ** a4)
   v4 = a4; /*0x770976*/
   ptr_0 = this->ptr_0; /*0x77097f*/
   v6 = &this->ptr_8 + 37 * a2 + 12 * a3; /*0x770990*/
-  DeleteAndZero::Alt2((DeleteAndZero *)a4); /*0x770996*/
+  ((DeleteAndZero *)(DeleteAndZero *)a4)->Alt2(); /*0x770996*/
   v7 = (int)v6[4]; /*0x77099b*/
   if ( v7 <= 0 ) /*0x7709a0*/
     return 0; /*0x7709a4*/
@@ -3532,7 +3532,7 @@ char E4Recv_770A50::sub_770A50(int a2, int a3, void ** a4)
   v4 = a4; /*0x770a56*/
   ptr_0 = this->ptr_0; /*0x770a5f*/
   v6 = &this->NeedsSaveOrLink + 37 * a2 + 12 * a3; /*0x770a70*/
-  DeleteAndZero::Alt2((DeleteAndZero *)a4); /*0x770a76*/
+  ((DeleteAndZero *)(DeleteAndZero *)a4)->Alt2(); /*0x770a76*/
   v7 = (int)v6[4]; /*0x770a7b*/
   if ( v7 <= 0 ) /*0x770a80*/
     return 0; /*0x770a84*/
@@ -3583,7 +3583,7 @@ char E4Recv_770B30::sub_770B30(int a2, void ** a3)
   v3 = a3; /*0x770b38*/
   ptr_0 = this->ptr_0; /*0x770b41*/
   v5 = (char *)this + 24 * a2 + 892; /*0x770b43*/
-  DeleteAndZero::Alt2((DeleteAndZero *)a3); /*0x770b4c*/
+  ((DeleteAndZero *)(DeleteAndZero *)a3)->Alt2(); /*0x770b4c*/
   v6 = *((unsigned int *)v5 + 4); /*0x770b51*/
   if ( v6 <= 0 ) /*0x770b56*/
     return 0; /*0x770b5a*/
@@ -3670,7 +3670,7 @@ char E4Recv_770F10::sub_770F10(int a2, int a3, void ** a4)
 
   v4 = a4; /*0x770f17*/
   v5 = &this->ptr_4 + 12 * a3; /*0x770f21*/
-  DeleteAndZero::Alt2((DeleteAndZero *)a4); /*0x770f27*/
+  ((DeleteAndZero *)(DeleteAndZero *)a4)->Alt2(); /*0x770f27*/
   v6 = (int)v5[4]; /*0x770f2c*/
   if ( v6 <= 0 ) /*0x770f31*/
     return 0; /*0x770f34*/
@@ -3718,7 +3718,7 @@ char E4Recv_770FE0::sub_770FE0(int a2, int a3, void ** a4)
 
   v4 = a4; /*0x770fe7*/
   v5 = &this->referenceCount + 12 * a3; /*0x770ff1*/
-  DeleteAndZero::Alt2((DeleteAndZero *)a4); /*0x770ff7*/
+  ((DeleteAndZero *)(DeleteAndZero *)a4)->Alt2(); /*0x770ff7*/
   v6 = v5[4]; /*0x770ffc*/
   if ( v6 <= 0 ) /*0x771001*/
     return 0; /*0x771004*/

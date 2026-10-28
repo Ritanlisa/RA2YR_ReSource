@@ -200,7 +200,7 @@ int ScoreScreen::RemoveItem(int a2, int a3, char aP3, char a5, int a6)
     if ( aP3 )
     {
       v18 = *(unsigned int *)this->__pad_0; /*0x771401*/
-      DeleteAndZero::Alt2(&v25); /*0x771407*/
+      ((DeleteAndZero *)&v25)->Alt2(); /*0x771407*/
       v19 = *((unsigned int *)v13 + 12); /*0x77140c*/
       if ( v19 > 0 )
       {

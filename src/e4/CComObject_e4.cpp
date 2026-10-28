@@ -2111,7 +2111,7 @@ ObjectClass * * CComObject_CChatEventSink___ATL::DispatchStub_37(int a1, int a2,
           DeleteAndZero((ObjectClass *)&a2); /*0x7ac3ed*/
           goto LABEL_20; /*0x7ac3f4*/
         }
-        DeleteAndZero::Alt2((DeleteAndZero *)&g_WOL_AuthObject); /*0x7ac365*/
+        ((DeleteAndZero *)(DeleteAndZero *)&g_WOL_AuthObject)->Alt2(); /*0x7ac365*/
       }
       if ( *(unsigned int *)&stru_B76900.needsRedraw ) /*0x7ac371*/
       {

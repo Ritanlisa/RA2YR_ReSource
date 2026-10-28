@@ -11563,7 +11563,7 @@ void* ObjectClass::LoadAccountInfoWOL() {
         (int)&v11.ptr_4);
       DeleteAndZero(&v11); /*0x778915*/
       LocalizeWOLDateString((char **)&v11.ptr_4, &v11.ptr_C); /*0x778922*/
-      DeleteAndZero::Alt2((DeleteAndZero *)&v11.ptr_4); /*0x77892b*/
+      ((DeleteAndZero *)(DeleteAndZero *)&v11.ptr_4)->Alt2(); /*0x77892b*/
       ((String *)&v11)->Assign( g_INI_Key_UpdateDate); /*0x778939*/
       INIClass::ReadString( /*0x778956*/
         (INIClass *)&v11.nextArrayIndex,

@@ -1823,7 +1823,7 @@ unsigned int * E4Recv_4F3C40::sub_4F3C40(int a2, const char ** a3)
       }
       v5 = String::Tokenize((String *)a3, v5, asc_824370, (void **)&a2); /*0x4f3d05*/
       if ( v5 == -1 ) /*0x4f3d0a*/
-        DeleteAndZero::Alt2((DeleteAndZero *)&a2); /*0x4f3d10*/
+        ((DeleteAndZero *)(DeleteAndZero *)&a2)->Alt2(); /*0x4f3d10*/
     }
     while ( ((String *)&a2)->Length() ); /*0x4f3d19*/
     v3 = this; /*0x4f3d22*/

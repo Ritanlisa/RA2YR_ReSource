@@ -2519,7 +2519,7 @@ int E4Recv_786DC0::sub_786DC0()
   char *v6; // [esp+10h] [ebp-8h] BYREF
   char *v7; // [esp+14h] [ebp-4h] BYREF
 
-  DeleteAndZero::Alt2((DeleteAndZero *)&g_WebBrowserConfig); /*0x786dcd*/
+  ((DeleteAndZero *)(DeleteAndZero *)&g_WebBrowserConfig)->Alt2(); /*0x786dcd*/
   int v2 = 1; // esi /*0x786dd2*/
   while ( 1 ) /*0x786de5*/
   {
@@ -2540,7 +2540,7 @@ int E4Recv_786DC0::sub_786DC0()
     }
     if ( ++v2 > 32 ) /*0x786e21*/
     {
-      DeleteAndZero::Alt2((DeleteAndZero *)&g_WebBrowser); /*0x786e28*/
+      ((DeleteAndZero *)(DeleteAndZero *)&g_WebBrowser)->Alt2(); /*0x786e28*/
       return 0; /*0x786e35*/
     }
   }
@@ -2636,7 +2636,7 @@ int WOL_LoginFlow()
     ReadAutoLoginWOL((ObjectClass *)&v39); /*0x78710f*/
     if ( ((String *)&v39)->Length() ) /*0x787118*/
     {
-      DeleteAndZero::Alt2((DeleteAndZero *)&g_WebBrowserConfig); /*0x78712a*/
+      ((DeleteAndZero *)(DeleteAndZero *)&g_WebBrowserConfig)->Alt2(); /*0x78712a*/
       v6 = 1; /*0x78712f*/
       while ( 1 ) /*0x787142*/
       {
@@ -2659,7 +2659,7 @@ int WOL_LoginFlow()
         }
         if ( ++v6 > 32 ) /*0x787180*/
         {
-          DeleteAndZero::Alt2((DeleteAndZero *)&stru_B73E10.q030); /*0x787187*/
+          ((DeleteAndZero *)(DeleteAndZero *)&stru_B73E10.q030)->Alt2(); /*0x787187*/
           goto LABEL_48; /*0x78718c*/
         }
       }
@@ -3101,7 +3101,7 @@ LABEL_25:
             ((DeleteAndZero *)&v67)->Alt(); /*0x787ac8*/
           }
           Dialog::ShowMessage(-1, (size_t)asc_830174); /*0x787add*/
-          DeleteAndZero::Alt2((DeleteAndZero *)&unk_B73AE0); /*0x787aea*/
+          ((DeleteAndZero *)(DeleteAndZero *)&unk_B73AE0)->Alt2(); /*0x787aea*/
           __3_YAXPAX_Z(v14); /*0x787af0*/
         }
       }
@@ -5190,12 +5190,12 @@ int sub_78E230(HWND hWnd, UINT, WPARAM, HWND hCtl)
     }
     if ( (uint16_t)a3 == 1 ) /*0x78e290*/
     {
-      DeleteAndZero::Alt2((void **)&unk_B76E34); /*0x78e2d0*/
+      ((DeleteAndZero *)(void **)&unk_B76E34)->Alt2(); /*0x78e2d0*/
       HWND v5; // eax
       v5 = GetDlgItem(hWnd, 1574); /*0x78e2e5*/
       if ( v5 ) /*0x78e2e9*/
         GetDialogText(v5, (void **)&unk_B76E34); /*0x78e2f2*/
-      DeleteAndZero::Alt2((void **)&unk_B73B30); /*0x78e2fc*/
+      ((DeleteAndZero *)(void **)&unk_B73B30)->Alt2(); /*0x78e2fc*/
       HWND v6; // eax
       v6 = GetDlgItem(hWnd, 1582); /*0x78e307*/
       char *v7; // eax
@@ -5351,7 +5351,7 @@ int sub_78E230(HWND hWnd, UINT, WPARAM, HWND hCtl)
       {
         dword_B73A1C = 0; /*0x78e63c*/
       }
-      DeleteAndZero::Alt2((void **)&stru_B7622C); /*0x78e64b*/
+      ((DeleteAndZero *)(void **)&stru_B7622C)->Alt2(); /*0x78e64b*/
       HWND v31; // eax
       v31 = GetDlgItem(hWnd, 1583); /*0x78e656*/
       if ( v31 ) /*0x78e65a*/
@@ -5361,7 +5361,7 @@ int sub_78E230(HWND hWnd, UINT, WPARAM, HWND hCtl)
         v32 = ((String *)(&stru_B7622C))->GetOrEmpty(); /*0x78e66d*/
         dword_B73AB8 = atol(v32); /*0x78e67b*/
       }
-      DeleteAndZero::Alt2((void **)&unk_B76908); /*0x78e685*/
+      ((DeleteAndZero *)(void **)&unk_B76908)->Alt2(); /*0x78e685*/
       HWND v33; // eax
       v33 = GetDlgItem(hWnd, 1584); /*0x78e690*/
       if ( v33 ) /*0x78e694*/
@@ -5462,24 +5462,24 @@ int WOLobbySmallDlgProc(HWND hWnd, UINT, WPARAM, HWND hCtl)
   }
   int v5; // ebx
   v5 = GameSetup::LookupDialogHash(hWnd); /*0x78e9e2*/
-  DeleteAndZero::Alt2((void **)&unk_B77794); /*0x78e9e4*/
+  ((DeleteAndZero *)(void **)&unk_B77794)->Alt2(); /*0x78e9e4*/
   HWND v6; // eax
   v6 = GetDlgItem(hWnd, 1576); /*0x78e9f5*/
   if ( v6 ) /*0x78e9f9*/
     GetDialogText(v6, (void **)&unk_B77794); /*0x78ea02*/
-  DeleteAndZero::Alt2((void **)&unk_B778F4); /*0x78ea0c*/
+  ((DeleteAndZero *)(void **)&unk_B778F4)->Alt2(); /*0x78ea0c*/
   HWND v7; // eax
   v7 = GetDlgItem(hWnd, 1836); /*0x78ea17*/
   if ( v7 ) /*0x78ea1b*/
     GetDialogText(v7, (void **)&unk_B778F4); /*0x78ea24*/
-  DeleteAndZero::Alt2((void **)&unk_B778FC); /*0x78ea2e*/
+  ((DeleteAndZero *)(void **)&unk_B778FC)->Alt2(); /*0x78ea2e*/
   HWND v8; // eax
   v8 = GetDlgItem(hWnd, 1575); /*0x78ea39*/
   if ( v8 ) /*0x78ea3d*/
     GetDialogText(v8, (void **)&unk_B778FC); /*0x78ea46*/
   if ( v5 == 243 ) /*0x78ea51*/
   {
-    DeleteAndZero::Alt2((void **)&stru_B765EC); /*0x78ea58*/
+    ((DeleteAndZero *)(void **)&stru_B765EC)->Alt2(); /*0x78ea58*/
     HWND v9; // eax
     v9 = GetDlgItem(hWnd, 1509); /*0x78ea63*/
     if ( v9 ) /*0x78ea67*/
