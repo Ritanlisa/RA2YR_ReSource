@@ -655,7 +655,7 @@ int WideString::Length(void *a1)
 
 // 0x7B7600
 namespace gamemd {
-short WideString::Reassign(wchar_t * String, void *a2_1)
+short WideString::Reassign(wchar_t * String)
 {
 
   int v3; // eax

@@ -4951,7 +4951,7 @@ void WOLPersona::FormatDateTime()
       v9 = 633; /*0x77a659*/
       goto LABEL_26; /*0x77a659*/
   }
-  WideString::Reassign(&this->q040, StringCSF); /*0x77a66f*/
+  ((WideString *)&this->q040)->Reassign( StringCSF); /*0x77a66f*/
   WString::Append(&this->SafeDelete_20, (wchar_t *)asc_82083C); /*0x77a67e*/
   v5 = CharToWideString(String); /*0x77a687*/
   WString::Append(&this->SafeDelete_20, (wchar_t *)v5); /*0x77a68f*/
@@ -4962,7 +4962,7 @@ void WOLPersona::FormatDateTime()
   v12[0] = 0; /*0x77a6d3*/
   String::Wrapper5to4((int)v12, 64, (int)aHMS, (int)v2); /*0x77a6d8*/
   v7 = CharToWideString(v12); /*0x77a6e4*/
-  result = WideString::Reassign(&this->u32_3C, (wchar_t *)v7); /*0x77a6ed*/
+  result = ((WideString *)&this->u32_3C)->Reassign( (wchar_t *)v7); /*0x77a6ed*/
   this->u32_8 = 1; /*0x77a6f3*/
   return result; /*0x77a6f2*/
 }
@@ -5689,19 +5689,19 @@ void WOLGameList::PopulateLobbyLists()
         v10(v11, 0x4A8u, v29 | (uint16_t)dword_B779D8, (LPARAM)&v51[32]); /*0x7a34c8*/
         *(unsigned int *)&v51[32] = 1; /*0x7a34d6*/
         BulkCharToWide(String, (uint8_t *)(v6 + 64), -1); /*0x7a34de*/
-        WideString::Reassign(&v51[36], String); /*0x7a34ef*/
+        ((WideString *)&v51[36])->Reassign( String); /*0x7a34ef*/
         v10(v11, 0x4A8u, v29 | (uint16_t)dword_B73E08, (LPARAM)&v51[32]); /*0x7a350e*/
         swprintf(Buffer, (const size_t)g_Str_Fmt_PctD, *(const wchar_t *const *)(v6 + 16)); /*0x7a3521*/
-        WideString::Reassign(&v51[36], Buffer); /*0x7a3535*/
+        ((WideString *)&v51[36])->Reassign( Buffer); /*0x7a3535*/
         v10(v11, 0x4A8u, v29 | (uint16_t)dword_B76904, (LPARAM)&v51[32]); /*0x7a3552*/
         swprintf(Buffer, (const size_t)g_Str_Fmt_PctD, *(const wchar_t *const *)(v6 + 8)); /*0x7a3565*/
-        WideString::Reassign(&v51[36], Buffer); /*0x7a3579*/
+        ((WideString *)&v51[36])->Reassign( Buffer); /*0x7a3579*/
         v10(v11, 0x4A8u, v29 | (uint16_t)dword_B77CE4, (LPARAM)&v51[32]); /*0x7a3598*/
         swprintf(Buffer, (const size_t)g_Str_Fmt_PctD, *(const wchar_t *const *)(v6 + 12)); /*0x7a35ab*/
-        WideString::Reassign(&v51[36], Buffer); /*0x7a35bf*/
+        ((WideString *)&v51[36])->Reassign( Buffer); /*0x7a35bf*/
         v10(v11, 0x4A8u, v29 | (uint16_t)dword_B73AB4, (LPARAM)&v51[32]); /*0x7a35de*/
         swprintf(Buffer, (const size_t)g_Str_Fmt_PctD, *(const wchar_t *const *)(v6 + 32)); /*0x7a35f1*/
-        WideString::Reassign(&v51[36], Buffer); /*0x7a3605*/
+        ((WideString *)&v51[36])->Reassign( Buffer); /*0x7a3605*/
         v10(v11, 0x4A8u, v29 | (uint16_t)dword_B76AEC, (LPARAM)&v51[32]); /*0x7a3622*/
         ++*(unsigned int *)&v51[4]; /*0x7a3624*/
       }

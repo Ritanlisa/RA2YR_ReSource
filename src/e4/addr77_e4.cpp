@@ -1228,7 +1228,7 @@ unsigned int * PlayerProfile_Load(unsigned int * a1, const char ** a2)
       DeleteAndZero(&v17); /*0x778e2d*/
       v12 = String::GetOrEmpty_Alt((String *)&v17.ptr_8); /*0x778e36*/
       v13 = CharToWideString(v12); /*0x778e3d*/
-      WideString::Reassign((WideString *)&v17.uniqueId, (wchar_t *)v13); /*0x778e47*/
+      ((WideString *)&v17.uniqueId)->Reassign( (wchar_t *)v13); /*0x778e47*/
       v14 = (ReferenceCounted *)__2_YAPAXI_Z(0x44u); /*0x778e4e*/
       if ( v14 )
         AccountInfoWOL_Load = LoadAccountInfoWOL_Load(
@@ -1293,7 +1293,7 @@ CampaignScore * * LocalizeWOLDateString(char ** a1, void ** a2)
   v3 = ((String *)(a1))->GetOrEmpty_Alt(); /*0x778f33*/
   char *v4; // eax
   v4 = CharToWideString(v3); /*0x778f3a*/
-  WideString::Reassign(a2, (wchar_t *)v4); /*0x778f42*/
+  ((WideString *)a2)->Reassign( (wchar_t *)v4); /*0x778f42*/
   wchar_t *v5; // eax
   v5 = ((WideString *)(a2))->GetOrEmpty(); /*0x778f4e*/
   if ( wcsstr(v5, L"Jan") ) /*0x778f54*/
@@ -1436,7 +1436,7 @@ CampaignScore * * ConvertDateMonthNames(wchar_t ** a1, void ** a2)
   unknown_libname_74(v43); /*0x77923b*/
   wchar_t *v4; // eax
   v4 = WideString::GetOrEmpty_Alt((WideString *)a1); /*0x779242*/
-  WideString::Reassign(v43, v4); /*0x77924c*/
+  ((WideString *)v43)->Reassign( v4); /*0x77924c*/
   wchar_t *StringCSF; // [esp-4h] [ebp-10h]
   StringCSF = GetStringCSF(g_Str_TXT_JANUARY, 0, g_Str_File_WOLPersonaInformation_cpp, 191); /*0x77926b*/
   wchar_t *v5; // eax

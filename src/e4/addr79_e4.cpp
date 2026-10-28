@@ -1145,12 +1145,12 @@ AbstractClass * * WOL_StartGame()
       {
         v9 = GetStringCSF(aTxtAwayQuickma, 0, g_Str_File_wonline_cpp, 20329); /*0x794e46*/
         byte_B77E40 = 1; /*0x794e50*/
-        WideString::Reassign(&stru_B7622C.ptr_4, v9); /*0x794e58*/
+        ((WideString *)&stru_B7622C.ptr_4)->Reassign( v9); /*0x794e58*/
       }
       else
       {
         byte_B77E40 = 0; /*0x794e21*/
-        WideString::Reassign(&stru_B7622C.ptr_4, &g_TypeClass_DefaultString); /*0x794e28*/
+        ((WideString *)&stru_B7622C.ptr_4)->Reassign( &g_TypeClass_DefaultString); /*0x794e28*/
       }
     }
     else
@@ -6367,7 +6367,7 @@ Coord * * WOL_JoinLobby()
   g_WOL_GameListPool = time(0); /*0x79fc93*/
   StringCSF = GetStringCSF(aTxtAwayQuickma, 0, g_Str_File_wonline_cpp, 28003); /*0x79fca2*/
   byte_B77E40 = 1; /*0x79fcac*/
-  WideString::Reassign(&stru_B7622C.ptr_4, StringCSF); /*0x79fcb4*/
+  ((WideString *)&stru_B7622C.ptr_4)->Reassign( StringCSF); /*0x79fcb4*/
   g_NetworkLobbyState = 0; /*0x79fcb9*/
   Network::Init(); /*0x79fcbf*/
   g_WOL_GameListState = 0; /*0x79fcc9*/
@@ -6384,7 +6384,7 @@ Coord * * WOL_JoinLobby()
     SetEvent(Handles); /*0x79fd26*/
     LABEL_10:
     byte_B77E40 = 0; /*0x79fd66*/
-    WideString::Reassign(&stru_B7622C.ptr_4, &g_TypeClass_DefaultString); /*0x79fd77*/
+    ((WideString *)&stru_B7622C.ptr_4)->Reassign( &g_TypeClass_DefaultString); /*0x79fd77*/
     return 0; /*0x79fd88*/
   }
   if ( !RequestChannelListWOL() ) /*0x79fd35*/
@@ -6473,7 +6473,7 @@ Coord * * WOL_JoinLobby()
               ShowDialogConfirm(v17, 0, (uint8_t (*)(void))GameLoop::Thunk, (char)v33); /*0x7a0279*/
               LABEL_71:
               byte_B77E40 = 0; /*0x7a0282*/
-              WideString::Reassign(&stru_B7622C.ptr_4, &g_TypeClass_DefaultString); /*0x7a0293*/
+              ((WideString *)&stru_B7622C.ptr_4)->Reassign( &g_TypeClass_DefaultString); /*0x7a0293*/
               goto LABEL_73; /*0x7a0298*/
             }
             g_WOL_GameListState = 0; /*0x79ffa7*/

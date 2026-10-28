@@ -2597,14 +2597,14 @@ void GameSetup_DisplayPlayers()
           v16 = *(unsigned int *)(dword_A8DA78[v13] + 83); /*0x5db351*/
           v34 = 4; /*0x5db358*/
           v35.u32_8 = dword_8316A8[v16]; /*0x5db367*/
-          WideString::Reassign((void **)&v35.q004, &g_TypeClass_DefaultString); /*0x5db36b*/
+          ((WideString *)(void **)&v35.q004)->Reassign( &g_TypeClass_DefaultString); /*0x5db36b*/
           v17 = (uint16_t)v13 << 16; /*0x5db384*/
           SendDlgItemMessageA(v6, 1342, 0x4A8u, v17 | (uint16_t)dword_AC01A0, (LPARAM)&v34); /*0x5db39a*/
           v34 = 2; /*0x5db3a5*/
-          WideString::Reassign((void **)&v35.q004, Buffer); /*0x5db3ad*/
+          ((WideString *)(void **)&v35.q004)->Reassign( Buffer); /*0x5db3ad*/
           v36 = Default; /*0x5db3d5*/
           SendDlgItemMessageA(v6, 1342, 0x4A8u, v17 | (uint16_t)dword_AC01D0, (LPARAM)&v34); /*0x5db3d9*/
-          WideString::Reassign((void **)&v35.q004, &g_TypeClass_DefaultString); /*0x5db3e4*/
+          ((WideString *)(void **)&v35.q004)->Reassign( &g_TypeClass_DefaultString); /*0x5db3e4*/
           v34 = 2; /*0x5db3e9*/
           if ( v32 == 2 ) /*0x5db3f8*/
           {
@@ -3195,7 +3195,7 @@ void LoadSaveDialog::FillList()
         if ( hFindFilea[110] ) /*0x5599ff*/
         {
           lParam = 1; /*0x559a10*/
-          WideString::Reassign((WideString *)&v42, asc_829F78); /*0x559a18*/
+          ((WideString *)&v42)->Reassign( asc_829F78); /*0x559a18*/
           v26 = (unsigned __int16)v25 << 16; /*0x559a2a*/
           (v26) = ((v26) & ~0xFF) | ((-56) & 0xFF); /*0x559a2d*/
           SendMessageA(hWnd, 0x4A8u, v26, (LPARAM)&lParam); /*0x559a37*/
@@ -3210,7 +3210,7 @@ void LoadSaveDialog::FillList()
           v27 = MultiByteToWideChar(0, 0, FileName, -1, WideCharStr, 128); /*0x559ab6*/
           v47 = 0; /*0x559abc*/
           WideCharStr[v27] = 0; /*0x559ac4*/
-          WideString::Reassign((WideString *)&v42, WideCharStr); /*0x559ad8*/
+          ((WideString *)&v42)->Reassign( WideCharStr); /*0x559ad8*/
           v28 = (unsigned __int16)v25 << 16; /*0x559ae7*/
           v29 = v28; /*0x559aea*/
           (v29) = ((v29) & ~0xFF) | ((-1) & 0xFF); /*0x559aed*/
@@ -3220,7 +3220,7 @@ void LoadSaveDialog::FillList()
           v30 = MultiByteToWideChar(0, 0, FileName, -1, WideCharStr, 128); /*0x559b33*/
           v47 = 0; /*0x559b40*/
           WideCharStr[v30] = 0; /*0x559b4d*/
-          WideString::Reassign((WideString *)&v42, WideCharStr); /*0x559b55*/
+          ((WideString *)&v42)->Reassign( WideCharStr); /*0x559b55*/
           SendMessageA(hWnd, 0x4A8u, v28 | 0x13B, (LPARAM)&lParam); /*0x559b6c*/
           v25 = v40; /*0x559b6e*/
           v24 = (LPARAM)hFindFilea; /*0x559b72*/

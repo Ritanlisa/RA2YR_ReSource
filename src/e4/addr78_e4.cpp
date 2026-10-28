@@ -405,8 +405,8 @@ void PopulateWOLLobbyListBox()  // G42.41i: truth 0x7806C0 = void
             SendMessageA(DlgItem, 0x19Au, v13, v17); /*0x78090b*/
             ((Gadget *)&v18[20])->InitProperties(); /*0x780911*/
             *(unsigned int *)&v18[20] = 1; /*0x780922*/
-            WideString::Reassign((void **)&v18[24], Buffer); /*0x78092a*/
-            WideString::Reassign((void **)&v18[28], &g_TypeClass_DefaultString); /*0x780938*/
+            ((WideString *)(void **)&v18[24])->Reassign( Buffer); /*0x78092a*/
+            ((WideString *)(void **)&v18[28])->Reassign( &g_TypeClass_DefaultString); /*0x780938*/
             SendMessageA( /*0x780962*/
               DlgItem,
               0x4A8u,
@@ -1078,8 +1078,8 @@ LABEL_67:
               SendMessageA(v46, 0x19Au, v19, v15); /*0x781878*/
               Gadget::InitProperties(&v39); /*0x781882*/
               *(unsigned int *)v39.q000 = 1; /*0x781893*/
-              WideString::Reassign((void **)&v39.m_1[3], Buffer); /*0x78189b*/
-              WideString::Reassign((void **)&v39.m_5[3], &g_TypeClass_DefaultString); /*0x7818a9*/
+              ((WideString *)(void **)&v39.m_1[3])->Reassign( Buffer); /*0x78189b*/
+              ((WideString *)(void **)&v39.m_5[3])->Reassign( &g_TypeClass_DefaultString); /*0x7818a9*/
               v40 = -1; /*0x7818bb*/
               if ( g_MenuStateFlags ) /*0x7818bf*/
               {
@@ -1094,49 +1094,49 @@ LABEL_67:
               v22 = v20 << 16; /*0x781900*/
               SendMessageA(v46, 0x4A8u, v22 | (unsigned __int16)dword_B77A8C, (LPARAM)&v39); /*0x781917*/
               *(unsigned int *)v39.__pad_0 = 0; /*0x781924*/
-              WideString::Reassign((void **)&v39.m_5[3], &g_TypeClass_DefaultString); /*0x781928*/
+              ((WideString *)(void **)&v39.m_5[3])->Reassign( &g_TypeClass_DefaultString); /*0x781928*/
               *(unsigned int *)v39.__pad_0 = 2; /*0x781931*/
-              WideString::Reassign((void **)&v39.m_5[3], &g_TypeClass_DefaultString); /*0x78193e*/
+              ((WideString *)(void **)&v39.m_5[3])->Reassign( &g_TypeClass_DefaultString); /*0x78193e*/
               if ( *(unsigned int *)&dword_A8B238 != 4 ) /*0x78194a*/
                 goto LABEL_80; /*0x78194a*/
               if ( (v58[8] & 0x100) != 0 ) /*0x78195c*/
               {
                 v41 = HashTable::Find(&g_DialogHashTable, g_Str_File_wolclan_pcx, 0); /*0x78197f*/
                 StringCSF = GetStringCSF(aTxtBattleclanG, 0, g_Str_File_wonline_cpp, 3351); /*0x781988*/
-                WideString::Reassign((void **)&v39.m_5[3], StringCSF); /*0x781989*/
+                ((WideString *)(void **)&v39.m_5[3])->Reassign( StringCSF); /*0x781989*/
                 goto LABEL_81; /*0x781989*/
               }
               if ( v58[5] || (v58[8] & 0x100) != 0 ) /*0x781996*/
               {
                 v41 = HashTable::Find(&g_DialogHashTable, g_Str_File_woltrny_pcx, 0); /*0x7819b9*/
                 v35 = GetStringCSF(aTxtTournamentG, 0, g_Str_File_wonline_cpp, 3356); /*0x7819c2*/
-                WideString::Reassign((void **)&v39.m_5[3], v35); /*0x7819c3*/
+                ((WideString *)(void **)&v39.m_5[3])->Reassign( v35); /*0x7819c3*/
               }
               else
               {
 LABEL_80:
                 v41 = HashTable::Find(&g_DialogHashTable, g_Str_File_gt18_pcx, 0); /*0x7819d5*/
-                WideString::Reassign((void **)&v39.m_5[3], &g_TypeClass_DefaultString); /*0x7819e2*/
+                ((WideString *)(void **)&v39.m_5[3])->Reassign( &g_TypeClass_DefaultString); /*0x7819e2*/
               }
 LABEL_81:
               SendMessageA(v21, 0x4A8u, v22 | (unsigned __int16)dword_B778D0, (LPARAM)&v39); /*0x7819e7*/
               *(unsigned int *)v39.__pad_0 = 2; /*0x781a07*/
-              WideString::Reassign((void **)&v39.m_5[3], &g_TypeClass_DefaultString); /*0x781a14*/
+              ((WideString *)(void **)&v39.m_5[3])->Reassign( &g_TypeClass_DefaultString); /*0x781a14*/
               if ( (v58[7] & 0x100) != 0 ) /*0x781a23*/
               {
                 v41 = HashTable::Find(&g_DialogHashTable, g_Str_File_wolpriv_pcx, 0); /*0x781a46*/
                 v36 = GetStringCSF(aTxtGamePasswor, 0, g_Str_File_wonline_cpp, 3370); /*0x781a4f*/
-                WideString::Reassign((void **)&v39.m_5[3], v36); /*0x781a50*/
+                ((WideString *)(void **)&v39.m_5[3])->Reassign( v36); /*0x781a50*/
               }
               else
               {
                 *(unsigned int *)v39.__pad_0 = 0; /*0x781a52*/
-                WideString::Reassign((void **)&v39.m_5[3], &g_TypeClass_DefaultString); /*0x781a5f*/
+                ((WideString *)(void **)&v39.m_5[3])->Reassign( &g_TypeClass_DefaultString); /*0x781a5f*/
               }
               SendMessageA(v21, 0x4A8u, v22 | (unsigned __int16)dword_B778CC, (LPARAM)&v39); /*0x781a7c*/
               *(unsigned int *)v39.__pad_0 = 0; /*0x781a82*/
-              WideString::Reassign((void **)&v39.m_1[3], &g_TypeClass_DefaultString); /*0x781a8b*/
-              WideString::Reassign((void **)&v39.m_5[3], &g_TypeClass_DefaultString); /*0x781a99*/
+              ((WideString *)(void **)&v39.m_1[3])->Reassign( &g_TypeClass_DefaultString); /*0x781a8b*/
+              ((WideString *)(void **)&v39.m_5[3])->Reassign( &g_TypeClass_DefaultString); /*0x781a99*/
               if ( (v58[8] & 0x600) != 0 ) /*0x781aac*/
               {
                 if ( v44 || !v45 ) /*0x781ab6*/
@@ -1163,7 +1163,7 @@ LABEL_92:
               if ( v58[10] == -1 ) /*0x781b24*/
               {
                 *(unsigned int *)v39.__pad_0 = 1; /*0x781b2f*/
-                WideString::Reassign((void **)&v39.m_1[3], asc_84A6E0); /*0x781b37*/
+                ((WideString *)(void **)&v39.m_1[3])->Reassign( asc_84A6E0); /*0x781b37*/
                 v24 = (const wchar_t *)v58[10]; /*0x781b3c*/
               }
               else
@@ -1174,7 +1174,7 @@ LABEL_92:
               v37 = v24; /*0x781b51*/
               v25 = GetStringCSF(aWolGameping, 0, g_Str_File_wonline_cpp, 3410); /*0x781b63*/
               swprintf(Buffer, (const size_t)v25, v37); /*0x781b71*/
-              WideString::Reassign((void **)&v39.m_5[3], Buffer); /*0x781b85*/
+              ((WideString *)(void **)&v39.m_5[3])->Reassign( Buffer); /*0x781b85*/
               SendMessageA(v21, 0x4A8u, v22 | (unsigned __int16)dword_B7643C, (LPARAM)&v39); /*0x781ba2*/
               ((DeleteAndZero *)&v39.m_5[3])->Alt(); /*0x781ba8*/
               ((DeleteAndZero *)&v39.m_1[3])->Alt(); /*0x781bb1*/
@@ -5932,6 +5932,6 @@ namespace gamemd {
 short WOL_ChatMessage(char a1, wchar_t * a2)
 {
   byte_B77E40 = a1; /*0x78abf0*/
-  return WideString::Reassign((WideString *)&unk_B76230, a2); /*0x78ac01*/
+  return ((WideString *)&unk_B76230)->Reassign( a2); /*0x78ac01*/
 }
 }

@@ -11574,7 +11574,7 @@ void* ObjectClass::LoadAccountInfoWOL() {
       DeleteAndZero(&v11); /*0x77895f*/
       v5 = String::GetOrEmpty_Alt((String *)&v11.ptr_4); /*0x778968*/
       v6 = CharToWideString(v5); /*0x77896f*/
-      WideString::Reassign((void **)&v11.uniqueId, (wchar_t *)v6); /*0x778979*/
+      ((WideString *)(void **)&v11.uniqueId)->Reassign( (wchar_t *)v6); /*0x778979*/
     }
     ((HashTable *)(INIClass *)&v11.nextArrayIndex)->DestroyHashTableINIClass(); /*0x778982*/
   }
