@@ -3248,8 +3248,8 @@ if ( lParam >= 0 && lParam < dword_A8DA84 ) /*0x64aafb*/
                       v42 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v75); /*0x64d4df*/
                       if ( !((LayerClass *)&dword_87F7E8)->IsWithinUsableArea( (int16_t *)&v75, 1) ) /*0x64d4f0*/
                         goto LABEL_75; /*0x64d4f0*/
-                      v43 = MapClass::GetTileIndex( /*0x64d520*/
-                        &dword_87F7E8,
+                      v43 = ((MapClass *)/*0x64d520*/
+                        &dword_87F7E8)->GetTileIndex(
                         (int16_t *)&v75,
                         *(unsigned int *)(v127 + 1460),
                         (v42->q141) & 1);

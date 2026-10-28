@@ -2188,13 +2188,13 @@ void * ObjectClass::FindPathWithRetry(short * a2, int aP4, int a5, int a6, int a
     v13 = *(unsigned int *)((*(int (**)(char *))(*(unsigned int *)a4 + 132))(a4) + 1460); /*0x42c96d*/
   else
     v13 = a7; /*0x42c95f*/
-  TileIndex = MapClass::GetTileIndex((MapClass *)&dword_87F7E8, a2, v13, a4[140]); /*0x42c98d*/
+  TileIndex = ((MapClass *)&dword_87F7E8)->GetTileIndex( a2, v13, a4[140]); /*0x42c98d*/
   if ( a7 == -1 ) /*0x42c991*/
     a8 = *(unsigned int *)((*(int (**)(char *))(*(unsigned int *)a4 + 132))(a4) + 1460); /*0x42c9a9*/
   else
     a8 = a7; /*0x42c993*/
   v14 = ((CellCoord *)&dword_87F7E8)->To_CellObj(a3); /*0x42c9b7*/
-  v15 = MapClass::GetTileIndex((MapClass *)&dword_87F7E8, a3, a8, BYTE1(v14->u32_140) & 1); /*0x42c9d7*/
+  v15 = ((MapClass *)&dword_87F7E8)->GetTileIndex( a3, a8, BYTE1(v14->u32_140) & 1); /*0x42c9d7*/
   v33 = v15; /*0x42c9e0*/
   LOBYTE(v15) = a4[140]; /*0x42c9e4*/
   *(unsigned int *)v29 = *Pathfinding::CrossBridge(&a8, (int)v30, v15); /*0x42ca01*/

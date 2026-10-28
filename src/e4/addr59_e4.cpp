@@ -446,7 +446,7 @@ ObjectClass * * RandomMap_DistributeTerrain()
     if ( (unsigned __int8)MapSeed::IsCellInBounds((MapSeed *)(i + 36)) /*0x594c2b*/
       && *(unsigned int *)&dword_ABED10[40 * *(__int16 *)(i + 36) + 28 + 40 * g_MapCellWidth * *(__int16 *)(i + 38)] == -1
       && !*(unsigned int *)(i + 76)
-      && (unsigned __int16 *)MapClass::GetTileIndex((MapClass *)&dword_87F7E8, (__int16 *)(i + 36), v4, 0) == v5 )
+      && (unsigned __int16 *)((MapClass *)&dword_87F7E8)->GetTileIndex( (__int16 *)(i + 36), v4, 0) == v5 )
     {
       FloodFillRandomMapTerrain(i, v4, (int)v5); /*0x594c32*/
     }

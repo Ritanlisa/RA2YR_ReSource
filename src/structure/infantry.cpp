@@ -5929,7 +5929,7 @@ int InfantryClass::GetActionOnObject_EMP(AbstractClass* object, int flags)
                                      &a2,
                                      ((unsigned int *)this->Type)[0],
                                      (uint8_t)this->ptr_0);
-                  TileIndex = MapClass::GetTileIndex((MapClass *)&DataGlobal_87F7E8, v41, (int)v58, v51); /*0x51ef64*/
+                  TileIndex = ((MapClass *)&DataGlobal_87F7E8)->GetTileIndex( v41, (int)v58, v51); /*0x51ef64*/
                   v43 = v5[328]; /*0x51ef69*/
                   v58[0] = TileIndex; /*0x51ef71*/
                   a2 = (int *)(*(int (__thiscall **)(int, unsigned int))(*(unsigned int *)v43 + 144))(v43, 0); /*0x51ef7d*/
@@ -5948,7 +5948,7 @@ int InfantryClass::GetActionOnObject_EMP(AbstractClass* object, int flags)
                       v48 = this->Type; /*0x51effa*/
                       v56 = ((v56) & 0xFFFFu) | (((unsigned int)(v46 + (unsigned short)((g_DDrawSurfaceManager.scenario[v47 + 82]) >> 16)) & 0xFFFFu) << 16); /*0x51f000*/
                       v57[0] = v56; /*0x51f009*/
-                      v49 = MapClass::GetTileIndex((MapClass *)&DataGlobal_87F7E8, (int16_t *)v57, *&v48->MovementZone, 0); /*0x51f01e*/
+                      v49 = ((MapClass *)&DataGlobal_87F7E8)->GetTileIndex( (int16_t *)v57, *&v48->MovementZone, 0); /*0x51f01e*/
                       if ( v49 == v57[1] ) /*0x51f027*/
                         break; /*0x51f027*/
                       if ( ++v55 >= 8 ) /*0x51f035*/

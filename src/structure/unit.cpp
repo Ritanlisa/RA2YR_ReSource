@@ -1647,8 +1647,8 @@ int UnitClass::MissionDispatch(int* a2, int a3, int* a4)
       retaddr = *(_UNKNOWN **)(*(int (**)(Class_7F5C70 *))(*&this->Deployed))(this); /*0x7378df*/
       v14 = ((CellCoord *)&dword_87F7E8)->To_CellObj((__int16 *)&retaddr); /*0x7378ee*/
       v15 = (*(int (**)(BuildingClass *, unsigned int))(a2->ptr_0 + 132))(a2, 0); /*0x7378f0*/
-      TileIndex = MapClass::GetTileIndex( /*0x73790e*/
-                    (MapClass *)&dword_87F7E8,
+      TileIndex = (/*0x73790e*/
+                    (MapClass *)&dword_87F7E8)->GetTileIndex(
                     &this->u32_AB8,
                     *(unsigned int *)(v15 + 1460),
                     (char)v28);
@@ -1656,7 +1656,7 @@ int UnitClass::MissionDispatch(int* a2, int a3, int* a4)
       if ( a2 && (a2->abstractFlags & 4) != 0 ) /*0x73791b*/
       {
         v18 = (*(int (**)(BuildingClass *))(a2->ptr_0 + 132))(a2); /*0x737923*/
-        v17 = MapClass::GetTileIndex((MapClass *)&dword_87F7E8, (__int16 *)a2->Anims, *(unsigned int *)(v18 + 1460), 0); /*0x73793c*/
+        v17 = ((MapClass *)&dword_87F7E8)->GetTileIndex( (__int16 *)a2->Anims, *(unsigned int *)(v18 + 1460), 0); /*0x73793c*/
       }
       if ( TileIndex == v17 && (this->FootClass_field_5A4 || v14[59] != 2) ) /*0x737972*/
       {
@@ -3245,7 +3245,7 @@ LABEL_90:
                 *(unsigned short *)v135.__pad_0 = 0; /*0x741ffa*/
                 *(unsigned short *)&v135.ComPtr_2 = 0; /*0x741fff*/
                 v126 = v33[365]; /*0x742022*/
-                TileIndex = MapClass::GetTileIndex((MapClass *)&dword_87F7E8, v5 + 18, v126, 0); /*0x74202f*/
+                TileIndex = ((MapClass *)&dword_87F7E8)->GetTileIndex( v5 + 18, v126, 0); /*0x74202f*/
                 v135.q008 = *LayerClass::Pathfinding_Find( /*0x742050*/
                                             (Type *)&dword_87F7E8,
                                             v35,
@@ -3749,7 +3749,7 @@ LABEL_318:
               v123 = this->Type; /*0x7430b0*/
               v135.ComPtr_field_0x04 = v135.q00C; /*0x7430bb*/
               v127 = *(unsigned int *)(v123 + 1460); /*0x7430c9*/
-              v124 = MapClass::GetTileIndex((MapClass *)&dword_87F7E8, (__int16 *)&v135.q010, v127, 0); /*0x7430d7*/
+              v124 = ((MapClass *)&dword_87F7E8)->GetTileIndex( (__int16 *)&v135.q010, v127, 0); /*0x7430d7*/
               v135.q00C = *LayerClass::Pathfinding_Find( /*0x7430fc*/
                                           (Type *)&dword_87F7E8,
                                           v125,
@@ -9678,8 +9678,8 @@ int UnitClass::ApproachEvaluate()
             v72 = 0; /*0x4d4459*/
             v64 = *(unsigned int *)(v16[33](this) + 1460); /*0x4d4471*/
             v17 = (*((int (__thiscall **)(FootClass *))this->ptr_0 + 33))(this); /*0x4d4475*/
-            TileIndex = MapClass::GetTileIndex( /*0x4d4498*/
-                          (MapClass *)&DataGlobal_87F7E8,
+            TileIndex = (/*0x4d4498*/
+                          (MapClass *)&DataGlobal_87F7E8)->GetTileIndex(
                           (int16_t *)(this->FootClass_field_5DC + 36),
                           *(unsigned int *)(v17 + 1460),
                           0);

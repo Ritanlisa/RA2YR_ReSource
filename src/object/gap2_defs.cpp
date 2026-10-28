@@ -4997,7 +4997,7 @@ int ObjectClass::ParachuteDrop(int a1) {
         v13 = v5; /*0x5f59e4*/
         v6 = (uint8_t)this->onBridge; /*0x5f59e7*/
         (*(((unsigned short *)&(v15)) + 1)) = v1[1] / 256; /*0x5f59f0*/
-        TileIndex = MapClass::GetTileIndex((MapClass *)&DataGlobal_87F7E8, (int16_t *)&v15, v5, v6); /*0x5f5a10*/
+        TileIndex = ((MapClass *)&DataGlobal_87F7E8)->GetTileIndex( (int16_t *)&v15, v5, v6); /*0x5f5a10*/
         v7 = this->GetSpecialValue(); /*0x5f5a17*/
         result = Cell::IsBuildable(v4, *(unsigned int *)(v7 + 1660), 0, 0, TileIndex, v13, -1, 1); /*0x5f5a26*/
         if ( (unsigned char)result ) /*0x5f5a2d*/

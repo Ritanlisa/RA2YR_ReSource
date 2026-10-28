@@ -284,8 +284,8 @@ void* Factory_CalculateExitCell(Factory *aP0, Factory *aP0_dup, void * a1, void 
             v36 = v7[3]; /*0x718fb8*/
             v59 = BYTE1(*((unsigned int *)(((CellCoord *)&DataGlobal_87F7E8)->To_CellObj((__int16 *)&v68) + 80)) /*0x718fdd*/
                 & 1;
-            TileIndex = MapClass::GetTileIndex( /*0x718fee*/
-                          (MapClass *)&DataGlobal_87F7E8,
+            TileIndex = (/*0x718fee*/
+                          (MapClass *)&DataGlobal_87F7E8)->GetTileIndex(
                           (__int16 *)(*(unsigned int *)v71 + 36),
                           v30,
                           v69);

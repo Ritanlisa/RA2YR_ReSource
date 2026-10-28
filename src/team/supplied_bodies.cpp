@@ -2889,7 +2889,7 @@ void TeamClass::ProcessTeamMovement(int a2, int a3) {
         HIWORD(v25) = v13[1] / 256; /*0x6ee50d*/
         LOBYTE(v13) = firstUnit->onBridge; /*0x6ee516*/
         *(unsigned int *)v20 = v25; /*0x6ee520*/
-        TileIndex = MapClass::GetTileIndex((MapClass *)&dword_87F7E8, v20, v8, (char)v13); /*0x6ee538*/
+        TileIndex = ((MapClass *)&dword_87F7E8)->GetTileIndex( v20, v8, (char)v13); /*0x6ee538*/
         v14 = (*(int (**)(int))(*(unsigned int *)firstUnit + 132))(firstUnit); /*0x6ee53b*/
         *(unsigned int *)v19 = *LayerClass::Pathfinding_Find( /*0x6ee565*/
                             (Type *)&dword_87F7E8,
@@ -3002,7 +3002,7 @@ void TeamClass::SelectBestMember(int a2, int a3) {
         HIWORD(a3) = v14[1] / 256; /*0x6ee743*/
         LOBYTE(v14) = firstUnit->onBridge; /*0x6ee74c*/
         *(unsigned int *)v20 = a3; /*0x6ee756*/
-        TileIndex = MapClass::GetTileIndex((MapClass *)&dword_87F7E8, v20, v9, (char)v14); /*0x6ee76e*/
+        TileIndex = ((MapClass *)&dword_87F7E8)->GetTileIndex( v20, v9, (char)v14); /*0x6ee76e*/
         v15 = (*(int (**)(int))(*(unsigned int *)firstUnit + 132))(firstUnit); /*0x6ee771*/
         *(unsigned int *)v19 = *LayerClass::Pathfinding_Find( /*0x6ee79b*/
                             (Type *)&dword_87F7E8,

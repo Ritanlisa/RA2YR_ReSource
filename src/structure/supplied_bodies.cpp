@@ -1045,7 +1045,7 @@ namespace gamemd {
     FoundationHeight = 1; /*0x6b03cd*/
   }
   v14 = (int16_t *)(*(int (__thiscall **)(int, int *))(*(unsigned int *)this->occupant + 440))(this->occupant, &v19); /*0x6b03f4*/
-  TileIndex = MapClass::GetTileIndex((MapClass *)&DataGlobal_87F7E8, v14, 0, 0); /*0x6b0400*/
+  TileIndex = ((MapClass *)&DataGlobal_87F7E8)->GetTileIndex( v14, 0, 0); /*0x6b0400*/
   v16 = *LayerClass::Pathfinding_Find( /*0x6b041c*/
            (Type *)&DataGlobal_87F7E8,
            (int)v20,

@@ -1464,7 +1464,7 @@ void * TechnoClass::FindClosestPlacementCell()
             *(unsigned int *)v33 = *(unsigned int *)v4->GetCellCoords_Alt(&v38); /*0x41a287*/
             v35 = 0; /*0x41a2a0*/
             v36 = 0; /*0x41a2a5*/
-            TileIndex = MapClass::GetTileIndex((MapClass *)&dword_87F7E8, v33, 0, 0); /*0x41a2aa*/
+            TileIndex = ((MapClass *)&dword_87F7E8)->GetTileIndex( v33, 0, 0); /*0x41a2aa*/
             v10 = *LayerClass::Pathfinding_Find( /*0x41a2c5*/
                      (Type *)&dword_87F7E8,
                      (int)&v39,
@@ -1502,7 +1502,7 @@ void * TechnoClass::FindClosestPlacementCell()
           v35 = 0; /*0x41a334*/
           v36 = 0; /*0x41a339*/
           v12 = (int16_t *)ptr_0->GetCellCoords_Alt(this, &v39); /*0x41a33e*/
-          v29 = MapClass::GetTileIndex((MapClass *)&dword_87F7E8, v12, 0, 0); /*0x41a351*/
+          v29 = ((MapClass *)&dword_87F7E8)->GetTileIndex( v12, 0, 0); /*0x41a351*/
           v13 = ((int64_t (__thiscall *)(TechnoClass *, int *))*(unsigned int *)&this->ptr_0->airstrikeTintTimer)(this, &v38); /*0x41a35a*/
           *(unsigned int *)v37 = *LayerClass::Pathfinding_Find( /*0x41a37c*/
                               (Type *)&dword_87F7E8,
@@ -1557,7 +1557,7 @@ void * TechnoClass::FindClosestPlacementCell()
             *(unsigned int *)v33 = *(unsigned int *)v16->GetCellCoords_Alt(&v39); /*0x41a49b*/
             v35 = 0; /*0x41a4b4*/
             v36 = 0; /*0x41a4b9*/
-            v26 = MapClass::GetTileIndex((MapClass *)&dword_87F7E8, v33, 0, 0); /*0x41a4be*/
+            v26 = ((MapClass *)&dword_87F7E8)->GetTileIndex( v33, 0, 0); /*0x41a4be*/
             v27 = *LayerClass::Pathfinding_Find( /*0x41a4d9*/
                      (Type *)&dword_87F7E8,
                      (int)&v38,
@@ -12510,7 +12510,7 @@ int TechnoClass::SelectAutoTarget_Start_AU()
     HIWORD(TileIndex) = v10[1] / 256; /*0x6f8e99*/
     v105 = TileIndex; /*0x6f8ea2*/
     v12 = (*(int (**)(TechnoClass *, int))(v11 + 132))(this, 1); /*0x6f8ea8*/
-    TileIndex = (int *)MapClass::GetTileIndex((MapClass *)&dword_87F7E8, v106, *(unsigned int *)(v12 + 1460), (char)v109); /*0x6f8ec4*/
+    TileIndex = (int *)((MapClass *)&dword_87F7E8)->GetTileIndex( v106, *(unsigned int *)(v12 + 1460), (char)v109); /*0x6f8ec4*/
   }
   if ( this->COMStub_Return0_11() == 15 ) /*0x6f8ed2*/
   {

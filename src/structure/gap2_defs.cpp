@@ -2095,7 +2095,7 @@ LABEL_130:
             v102 = v99[433]; /*0x446c7d*/
             (v127) = ((v127) & ~(0xFFFF << 16)) | (((v130 / 256) & 0xFFFF) << 16); /*0x446c86*/
             v120 = *(unsigned int *)(v102 + 1460); /*0x446ca8*/
-            TileIndex = MapClass::GetTileIndex((MapClass *)&dword_87F7E8, (__int16 *)&v128, v120, 0); /*0x446cb6*/
+            TileIndex = ((MapClass *)&dword_87F7E8)->GetTileIndex( (__int16 *)&v128, v120, 0); /*0x446cb6*/
             v104 = *LayerClass::Pathfinding_Find( /*0x446cd2*/
                       (Type *)&dword_87F7E8,
                       (int)&v129,
@@ -2140,7 +2140,7 @@ LABEL_130:
             v109 = v99[433]; /*0x446dbf*/
             (v127) = ((v127) & ~(0xFFFF << 16)) | (((v130 / 256) & 0xFFFF) << 16); /*0x446dc8*/
             v121 = *(unsigned int *)(v109 + 1460); /*0x446deb*/
-            v110 = MapClass::GetTileIndex((MapClass *)&dword_87F7E8, (__int16 *)&v128, v121, 0); /*0x446df9*/
+            v110 = ((MapClass *)&dword_87F7E8)->GetTileIndex( (__int16 *)&v128, v121, 0); /*0x446df9*/
             v111 = *LayerClass::Pathfinding_Find( /*0x446e15*/
                       (Type *)&dword_87F7E8,
                       (int)&v129,

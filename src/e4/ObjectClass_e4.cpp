@@ -769,7 +769,7 @@ void* * ObjectClass::FindPlacementCell(FootClass * aP0, int aP1, IUnknown ** a2,
   {
     a4 = 0; /*0x4de4d7*/
     v32 = BYTE1(*((unsigned int *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v8) + 80)) & 1; /*0x4de4fc*/
-    TileIndex = MapClass::GetTileIndex((MapClass *)&DataGlobal_87F7E8, (__int16 *)(v37 + 36), v16, v36[0]); /*0x4de50b*/
+    TileIndex = ((MapClass *)&DataGlobal_87F7E8)->GetTileIndex( (__int16 *)(v37 + 36), v16, v36[0]); /*0x4de50b*/
     v26 = v7->Vt34Thunk(); /*0x4de510*/
     v24 = (void **)LayerClass::Pathfinding_Find( /*0x4de528*/
                      &DataGlobal_87F7E8,
@@ -2110,7 +2110,7 @@ void* ObjectClass::FindPlacementPosition(int a2, int a3, int a4, int a5)
       HIWORD(a5) = a3 / 256; /*0x718561*/
       *(unsigned int *)v39 = a5; /*0x71857b*/
       v36 = BYTE1(*((unsigned int *)((CellCoord *)&dword_87F7E8)->To_CellObj(v39) + 80)) & 1; /*0x7185b5*/
-      TileIndex = MapClass::GetTileIndex((MapClass *)&dword_87F7E8, v40 + 18, v14, v38[0]); /*0x7185bf*/
+      TileIndex = ((MapClass *)&dword_87F7E8)->GetTileIndex( v40 + 18, v14, v38[0]); /*0x7185bf*/
       *(unsigned int *)v41 = *LayerClass::Pathfinding_Find( /*0x7185e6*/
                           (Type *)&dword_87F7E8,
                           v16,
