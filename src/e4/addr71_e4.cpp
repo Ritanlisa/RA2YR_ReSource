@@ -264,7 +264,7 @@ int InitializeCellSpreadTables()
   dword_B0EEEC = *(unsigned int *)((CellStruct *)&v4)->Set(1, 1); /*0x71da0b*/
   dword_B0EEF0 = *(unsigned int *)((CellStruct *)&v4)->Set(2, 1); /*0x71da19*/
   dword_B0EEF4 = *(unsigned int *)((CellStruct *)&v4)->Set(3, 1); /*0x71da3a*/
-  dword_B0EEF8 = *(unsigned int *)CellStruct::Set(&v4, 0x7FFF, 0x7FFF); /*0x71da4c*/
+  dword_B0EEF8 = *(unsigned int *)((CellStruct *)&v4)->Set( 0x7FFF, 0x7FFF); /*0x71da4c*/
   dword_B0EEFC = 0; /*0x71da62*/
   memset(&unk_B0EF00, 0, 0x230u); /*0x71da73*/
   return Arr  return Array::ForEach((gamemd::Array*)(&dword_B0EEFC), 4, 141, (int (__thiscall *)(int))__0Iostream_init_QAE_XZ_2); 

@@ -1745,7 +1745,7 @@ AbstractClass * * GeneratePathWaypoints(unsigned int * a1, int * a2, int a3, int
       v14 = *((__int16 *)CellCoord::To_CellObj(&dword_87F7E8, (__int16 *)&v50) + 139); /*0x42b4b5*/
       if ( v14 == -1 ) /*0x42b4bf*/
       {
-        v15 = (int *)CellStruct::Set(&TileDataCellClass, 0, 0); /*0x42b4d7*/
+        v15 = (int *)((CellStruct *)&TileDataCellClass)->Set( 0, 0); /*0x42b4d7*/
 LABEL_16:
         v11 = (int *)*v15; /*0x42b4f4*/
         goto LABEL_17; /*0x42b4f4*/
@@ -1812,7 +1812,7 @@ LABEL_53:
           v42 = *((__int16 *)CellCoord::To_CellObj(&dword_87F7E8, (__int16 *)&a6) + 139); /*0x42b74a*/
           if ( v42 == -1 ) /*0x42b754*/
           {
-            v43 = (int **)CellStruct::Set(&a2, 0, 0); /*0x42b76c*/
+            v43 = (int **)((CellStruct *)&a2)->Set( 0, 0); /*0x42b76c*/
 LABEL_51:
             v39 = *v43; /*0x42b789*/
             goto LABEL_52; /*0x42b789*/

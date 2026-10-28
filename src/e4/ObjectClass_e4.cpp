@@ -7416,14 +7416,14 @@ void* ObjectClass::PlaceRandomAIBuildings() {
             do /*0x5a9750*/
             {
               v12 = Range_RandomInt(0, v11); /*0x5a973a*/
-              v13 = CellStruct::Set((CellStruct *)&v31, 0, 0); /*0x5a973c*/
+              v13 = ((CellStruct *)&v31)->Set( 0, 0); /*0x5a973c*/
             }
             while ( (unsigned __int8)CellStruct::Equals((CellStruct *)&dword_ABED10[40 * v12], v13) ); /*0x5a9750*/
             ++v6; /*0x5a9765*/
             *(unsigned int *)v26 = *(unsigned int *)&dword_ABED10[40 * v12]; /*0x5a976f*/
             if ( v6 > 200 ) /*0x5a9773*/
             {
-              v15 = *(unsigned int *)CellStruct::Set((CellStruct *)&v32, 0, 0); /*0x5a979e*/
+              v15 = *(unsigned int *)((CellStruct *)&v32)->Set( 0, 0); /*0x5a979e*/
               goto LABEL_29; /*0x5a97a0*/
             }
             v14 = (Cell *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v26); /*0x5a977f*/

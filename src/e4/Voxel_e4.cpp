@@ -2127,10 +2127,10 @@ void* Voxel::FaceBlit()
         v50.Coord3D_field_0x08 = v9->q008; /*0x7611ea*/
         v12 = v11; /*0x7611f7*/
         v13 = v10 / 256; /*0x76120d*/
-        v39 = *(void **)CellStruct::Set((CellStruct *)&v41, v10 / 256, v11 / 256); /*0x76121e*/
+        v39 = *(void **)((CellStruct *)&v41)->Set( v10 / 256, v11 / 256); /*0x76121e*/
         if ( *(void **)v36 != v39 ) /*0x761222*/
         {
-          *(unsigned int *)v36 = *(unsigned int *)CellStruct::Set((CellStruct *)&v40, v13, v12 / 256); /*0x761247*/
+          *(unsigned int *)v36 = *(unsigned int *)((CellStruct *)&v40)->Set( v13, v12 / 256); /*0x761247*/
           v14 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v36); /*0x76124b*/
           v15 = *(unsigned int *)v2->__pad_0; /*0x761250*/
           *(unsigned int *)v38 = v14; /*0x761253*/
@@ -2144,16 +2144,16 @@ void* Voxel::FaceBlit()
   }
   else
   {
-    *(unsigned int *)v36 = *(unsigned int *)CellStruct::Set( /*0x7612e0*/
-                                  (CellStruct *)&v41,
+    *(unsigned int *)v36 = *(unsigned int *)(/*0x7612e0*/
+                                  (CellStruct *)&v41)->Set(
                                   *&this->u32_FC / 256,
                                   *&this->q100 / 256);
-    *(unsigned int *)v38 = *(unsigned int *)CellStruct::Set( /*0x761312*/
-                                  (CellStruct *)&v41,
+    *(unsigned int *)v38 = *(unsigned int *)(/*0x761312*/
+                                  (CellStruct *)&v41)->Set(
                                   *&this->q108 / 256,
                                   *&this->u32_10C / 256);
-    v16 = CellStruct::Set( /*0x76133c*/
-            (CellStruct *)&v41,
+    v16 = (/*0x76133c*/
+            (CellStruct *)&v41)->Set(
             *&this->u32_C0 / 256,
             *&this->u32_C4 / 256);
     v17 = *&this->u32_140; /*0x761349*/
@@ -2175,11 +2175,11 @@ void* Voxel::FaceBlit()
         v31 = v21; /*0x7613ed*/
         (v22) = ((v22) & ~0xFFFF) | ((Math::RoundToInt(v19)) & 0xFFFF); /*0x7613fa*/
         v49 = *(Coord3D *)Coord3D::Set(&v50, v22, v31, v34); /*0x761411*/
-        v40 = *(float *)CellStruct::Set((CellStruct *)&v42, *(unsigned int *)v49.__pad_0 / 256, v49.Coord3D_field_0x04 / 256); /*0x76144f*/
+        v40 = *(float *)((CellStruct *)&v42)->Set( *(unsigned int *)v49.__pad_0 / 256, v49.Coord3D_field_0x04 / 256); /*0x76144f*/
         if ( *(unsigned int *)v36 != LODWORD(v40) ) /*0x761453*/
         {
-          *(unsigned int *)v36 = *(unsigned int *)CellStruct::Set( /*0x761498*/
-                                        (CellStruct *)&v43,
+          *(unsigned int *)v36 = *(unsigned int *)(/*0x761498*/
+                                        (CellStruct *)&v43)->Set(
                                         *(unsigned int *)v49.__pad_0 / 256,
                                         v49.Coord3D_field_0x04 / 256);
           v23 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v36); /*0x76149c*/
@@ -2197,7 +2197,7 @@ void* Voxel::FaceBlit()
       v32 = v27; /*0x761508*/
       (v28) = ((v28) & ~0xFFFF) | ((Math::RoundToInt(v25)) & 0xFFFF); /*0x761515*/
       v49 = *(Coord3D *)Coord3D::Set(&v51, v28, v32, v35); /*0x76152c*/
-      v41 = *(unsigned int *)CellStruct::Set((CellStruct *)&v44, *(unsigned int *)v49.__pad_0 / 256, v49.Coord3D_field_0x04 / 256); /*0x76156e*/
+      v41 = *(unsigned int *)((CellStruct *)&v44)->Set( *(unsigned int *)v49.__pad_0 / 256, v49.Coord3D_field_0x04 / 256); /*0x76156e*/
       if ( (unsigned __int8)Coord::Compare2D((Coord *)v37, &v41) ) /*0x761572*/
       {
         *(unsigned int *)v37 = *Coord::ToCell((Coord *)&v49, v45); /*0x761592*/

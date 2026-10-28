@@ -1479,7 +1479,7 @@ AbstractClass * * CreateCliffRampMap(IUnknown * aP0)
         right = 0x10000; /*0x57e1fd*/
         v50[0] = *CellStruct::Add((CellStruct *)v1, v52, &right); /*0x57e21a*/
         BuildingClass::AddUpgrade(&dword_87F7E8.field_0, (int)v50); /*0x57e21e*/
-        v39 = CellStruct::Set((CellStruct *)v52, 0, 1); /*0x57e22a*/
+        v39 = ((CellStruct *)v52)->Set( 0, 1); /*0x57e22a*/
         v50[0] = *CellStruct::Sub((CellStruct *)v1, &right, v39); /*0x57e248*/
         BuildingClass::AddUpgrade(&dword_87F7E8.field_0, (int)v50); /*0x57e24c*/
       }
@@ -2054,7 +2054,7 @@ AbstractClass * * CreateCliffBridgeMap(IUnknown * aP0)
         right = 0x10000; /*0x57ec5a*/
         v50[0] = *CellStruct::Add((CellStruct *)v1, v52, &right); /*0x57ec77*/
         BuildingClass::AddUpgrade(&dword_87F7E8.field_0, (int)v50); /*0x57ec7b*/
-        v39 = CellStruct::Set((CellStruct *)v52, 0, 1); /*0x57ec87*/
+        v39 = ((CellStruct *)v52)->Set( 0, 1); /*0x57ec87*/
         v50[0] = *CellStruct::Sub((CellStruct *)v1, &right, v39); /*0x57eca5*/
         BuildingClass::AddUpgrade(&dword_87F7E8.field_0, (int)v50); /*0x57eca9*/
       }
@@ -2564,39 +2564,39 @@ int InitializeTileNeighborTable()
   dword_ABDDC4 = 0; /*0x5793b1*/
   dword_ABDDBC = 0; /*0x5793bc*/
   dword_ABDDC0 = 0; /*0x5793c2*/
-  dword_ABDDC8 = *(unsigned int *)CellStruct::Set(&v1, 0, 0); /*0x5793d4*/
-  dword_ABDDCC = *(unsigned int *)CellStruct::Set(&v1, 0, 0); /*0x5793e7*/
-  dword_ABDDD0 = *(unsigned int *)CellStruct::Set(&v1, 0, 0); /*0x5793f4*/
-  dword_ABDDD4 = *(unsigned int *)CellStruct::Set(&v1, 0, 0); /*0x57940c*/
-  dword_ABDDD8 = *(unsigned int *)CellStruct::Set(&v1, 0, 0); /*0x57941f*/
-  dword_ABDDDC = *(unsigned int *)CellStruct::Set(&v1, 0, 0); /*0x57942c*/
-  dword_ABDDE0 = *(unsigned int *)CellStruct::Set(&v1, 0, 0); /*0x579444*/
-  dword_ABDDE4 = *(unsigned int *)CellStruct::Set(&v1, 0, 0); /*0x579457*/
-  dword_ABDDE8 = *(unsigned int *)CellStruct::Set(&v1, 0, 0); /*0x579464*/
-  dword_ABDDEC = *(unsigned int *)CellStruct::Set(&v1, 0, 0); /*0x57947c*/
-  dword_ABDDF0 = *(unsigned int *)CellStruct::Set(&v1, 0, 0); /*0x57948f*/
-  dword_ABDDF4 = *(unsigned int *)CellStruct::Set(&v1, 0, 0); /*0x57949c*/
-  dword_ABDDF8 = *(unsigned int *)CellStruct::Set(&v1, 0, 0); /*0x5794b4*/
-  dword_ABDDFC = *(unsigned int *)CellStruct::Set(&v1, 0, 0); /*0x5794c7*/
-  dword_ABDE00 = *(unsigned int *)CellStruct::Set(&v1, 0, 0); /*0x5794d4*/
-  dword_ABDE04 = *(unsigned int *)CellStruct::Set(&v1, 0, 0); /*0x5794ec*/
-  dword_ABDE08 = *(unsigned int *)CellStruct::Set(&v1, 0, 0); /*0x5794ff*/
-  dword_ABDE0C = *(unsigned int *)CellStruct::Set(&v1, 0, 0); /*0x57950c*/
-  dword_ABDE10 = *(unsigned int *)CellStruct::Set(&v1, 0, 0); /*0x579524*/
-  dword_ABDE14 = *(unsigned int *)CellStruct::Set(&v1, 0, 0); /*0x579537*/
-  dword_ABDE18 = *(unsigned int *)CellStruct::Set(&v1, 0, 0); /*0x579544*/
-  dword_ABDE1C = *(unsigned int *)CellStruct::Set(&v1, 0, 0); /*0x57955c*/
-  dword_ABDE20 = *(unsigned int *)CellStruct::Set(&v1, 0, 0); /*0x579570*/
-  dword_ABDE24 = *(unsigned int *)CellStruct::Set(&v1, 1, 0); /*0x57957d*/
-  dword_ABDE28 = *(unsigned int *)CellStruct::Set(&v1, 0, 0); /*0x579595*/
-  dword_ABDE2C = *(unsigned int *)CellStruct::Set(&v1, 0, 0); /*0x5795a8*/
-  dword_ABDE30 = *(unsigned int *)CellStruct::Set(&v1, 0, 0); /*0x5795b5*/
-  dword_ABDE34 = *(unsigned int *)CellStruct::Set(&v1, 0, 0); /*0x5795cd*/
-  dword_ABDE38 = *(unsigned int *)CellStruct::Set(&v1, 0, 0); /*0x5795e0*/
-  dword_ABDE3C = *(unsigned int *)CellStruct::Set(&v1, 0, 0); /*0x5795ed*/
-  dword_ABDE40 = *(unsigned int *)CellStruct::Set(&v1, 0, 0); /*0x579605*/
+  dword_ABDDC8 = *(unsigned int *)((CellStruct *)&v1)->Set( 0, 0); /*0x5793d4*/
+  dword_ABDDCC = *(unsigned int *)((CellStruct *)&v1)->Set( 0, 0); /*0x5793e7*/
+  dword_ABDDD0 = *(unsigned int *)((CellStruct *)&v1)->Set( 0, 0); /*0x5793f4*/
+  dword_ABDDD4 = *(unsigned int *)((CellStruct *)&v1)->Set( 0, 0); /*0x57940c*/
+  dword_ABDDD8 = *(unsigned int *)((CellStruct *)&v1)->Set( 0, 0); /*0x57941f*/
+  dword_ABDDDC = *(unsigned int *)((CellStruct *)&v1)->Set( 0, 0); /*0x57942c*/
+  dword_ABDDE0 = *(unsigned int *)((CellStruct *)&v1)->Set( 0, 0); /*0x579444*/
+  dword_ABDDE4 = *(unsigned int *)((CellStruct *)&v1)->Set( 0, 0); /*0x579457*/
+  dword_ABDDE8 = *(unsigned int *)((CellStruct *)&v1)->Set( 0, 0); /*0x579464*/
+  dword_ABDDEC = *(unsigned int *)((CellStruct *)&v1)->Set( 0, 0); /*0x57947c*/
+  dword_ABDDF0 = *(unsigned int *)((CellStruct *)&v1)->Set( 0, 0); /*0x57948f*/
+  dword_ABDDF4 = *(unsigned int *)((CellStruct *)&v1)->Set( 0, 0); /*0x57949c*/
+  dword_ABDDF8 = *(unsigned int *)((CellStruct *)&v1)->Set( 0, 0); /*0x5794b4*/
+  dword_ABDDFC = *(unsigned int *)((CellStruct *)&v1)->Set( 0, 0); /*0x5794c7*/
+  dword_ABDE00 = *(unsigned int *)((CellStruct *)&v1)->Set( 0, 0); /*0x5794d4*/
+  dword_ABDE04 = *(unsigned int *)((CellStruct *)&v1)->Set( 0, 0); /*0x5794ec*/
+  dword_ABDE08 = *(unsigned int *)((CellStruct *)&v1)->Set( 0, 0); /*0x5794ff*/
+  dword_ABDE0C = *(unsigned int *)((CellStruct *)&v1)->Set( 0, 0); /*0x57950c*/
+  dword_ABDE10 = *(unsigned int *)((CellStruct *)&v1)->Set( 0, 0); /*0x579524*/
+  dword_ABDE14 = *(unsigned int *)((CellStruct *)&v1)->Set( 0, 0); /*0x579537*/
+  dword_ABDE18 = *(unsigned int *)((CellStruct *)&v1)->Set( 0, 0); /*0x579544*/
+  dword_ABDE1C = *(unsigned int *)((CellStruct *)&v1)->Set( 0, 0); /*0x57955c*/
+  dword_ABDE20 = *(unsigned int *)((CellStruct *)&v1)->Set( 0, 0); /*0x579570*/
+  dword_ABDE24 = *(unsigned int *)((CellStruct *)&v1)->Set( 1, 0); /*0x57957d*/
+  dword_ABDE28 = *(unsigned int *)((CellStruct *)&v1)->Set( 0, 0); /*0x579595*/
+  dword_ABDE2C = *(unsigned int *)((CellStruct *)&v1)->Set( 0, 0); /*0x5795a8*/
+  dword_ABDE30 = *(unsigned int *)((CellStruct *)&v1)->Set( 0, 0); /*0x5795b5*/
+  dword_ABDE34 = *(unsigned int *)((CellStruct *)&v1)->Set( 0, 0); /*0x5795cd*/
+  dword_ABDE38 = *(unsigned int *)((CellStruct *)&v1)->Set( 0, 0); /*0x5795e0*/
+  dword_ABDE3C = *(unsigned int *)((CellStruct *)&v1)->Set( 0, 0); /*0x5795ed*/
+  dword_ABDE40 = *(unsigned int *)((CellStruct *)&v1)->Set( 0, 0); /*0x579605*/
   int result; // eax
-  result = *(unsigned int *)CellStruct::Set(&v1, 0, 0); /*0x579610*/
+  result = *(unsigned int *)((CellStruct *)&v1)->Set( 0, 0); /*0x579610*/
   dword_ABDE44 = result; /*0x579613*/
   return result; /*0x579612*/
 }
@@ -2657,42 +2657,42 @@ int * InitializeCliffRampTable()
   dword_ABDB78 = -131072; /*0x57aa44*/
   dword_ABDB7C = -65537; /*0x57aa50*/
   dword_ABDB80 = -1; /*0x57aa56*/
-  dword_ABDB84 = *(unsigned int *)CellStruct::Set(&v1, -1, -1); /*0x57aa63*/
-  dword_ABDB88 = *(unsigned int *)CellStruct::Set(&v1, -1, 0); /*0x57aa7b*/
-  dword_ABDB8C = *(unsigned int *)CellStruct::Set(&v1, -1, 0); /*0x57aa8e*/
-  dword_ABDB90 = *(unsigned int *)CellStruct::Set(&v1, -1, 0); /*0x57aa9b*/
-  dword_ABDB94 = *(unsigned int *)CellStruct::Set(&v1, -1, 0); /*0x57aab4*/
-  dword_ABDB98 = *(unsigned int *)CellStruct::Set(&v1, -2, -1); /*0x57aac8*/
-  dword_ABDB9C = *(unsigned int *)CellStruct::Set(&v1, -2, 0); /*0x57aad5*/
-  dword_ABDBA0 = *(unsigned int *)CellStruct::Set(&v1, -1, 0); /*0x57aae8*/
-  dword_ABDBA4 = *(unsigned int *)CellStruct::Set(&v1, -1, 0); /*0x57ab00*/
-  dword_ABDBA8 = *(unsigned int *)CellStruct::Set(&v1, 0, 0); /*0x57ab0d*/
-  dword_ABDBAC = *(unsigned int *)CellStruct::Set(&v1, 0, 0); /*0x57ab25*/
-  dword_ABDBB0 = *(unsigned int *)CellStruct::Set(&v1, 0, 0); /*0x57ab38*/
-  dword_ABDBB4 = *(unsigned int *)CellStruct::Set(&v1, 0, 0); /*0x57ab45*/
-  dword_ABDBB8 = *(unsigned int *)CellStruct::Set(&v1, 0, 0); /*0x57ab5d*/
-  dword_ABDBBC = *(unsigned int *)CellStruct::Set(&v1, -1, 0); /*0x57ab70*/
-  dword_ABDBC0 = *(unsigned int *)CellStruct::Set(&v1, 0, 0); /*0x57ab7d*/
-  dword_ABDBC4 = *(unsigned int *)CellStruct::Set(&v1, 0, 0); /*0x57ab95*/
-  dword_ABDBC8 = *(unsigned int *)CellStruct::Set(&v1, 0, 0); /*0x57aba8*/
-  dword_ABDBCC = *(unsigned int *)CellStruct::Set(&v1, 0, 0); /*0x57abb5*/
-  dword_ABDBD0 = *(unsigned int *)CellStruct::Set(&v1, 0, 0); /*0x57abcd*/
-  dword_ABDBD4 = *(unsigned int *)CellStruct::Set(&v1, 0, 0); /*0x57abe0*/
-  dword_ABDBD8 = *(unsigned int *)CellStruct::Set(&v1, 0, -1); /*0x57abed*/
-  dword_ABDBDC = *(unsigned int *)CellStruct::Set(&v1, 0, 0); /*0x57ac05*/
-  dword_ABDBE0 = *(unsigned int *)CellStruct::Set(&v1, 0, -1); /*0x57ac18*/
-  dword_ABDBE4 = *(unsigned int *)CellStruct::Set(&v1, 0, -1); /*0x57ac25*/
-  dword_ABDBE8 = *(unsigned int *)CellStruct::Set(&v1, -1, -1); /*0x57ac3d*/
-  dword_ABDBEC = *(unsigned int *)CellStruct::Set(&v1, -1, -1); /*0x57ac50*/
-  dword_ABDBF0 = *(unsigned int *)CellStruct::Set(&v1, -1, 0); /*0x57ac5d*/
-  dword_ABDBF4 = *(unsigned int *)CellStruct::Set(&v1, -1, 0); /*0x57ac75*/
-  dword_ABDBF8 = *(unsigned int *)CellStruct::Set(&v1, 0, 0); /*0x57ac88*/
-  dword_ABDBFC = *(unsigned int *)CellStruct::Set(&v1, 0, 0); /*0x57ac95*/
-  dword_ABDC00 = *(unsigned int *)CellStruct::Set(&v1, 0, -1); /*0x57acad*/
-  dword_ABDC04 = *(unsigned int *)CellStruct::Set(&v1, 0, -1); /*0x57acc0*/
-  dword_ABDC08 = *(unsigned int *)CellStruct::Set(&v1, 0, 0); /*0x57accd*/
+  dword_ABDB84 = *(unsigned int *)((CellStruct *)&v1)->Set( -1, -1); /*0x57aa63*/
+  dword_ABDB88 = *(unsigned int *)((CellStruct *)&v1)->Set( -1, 0); /*0x57aa7b*/
+  dword_ABDB8C = *(unsigned int *)((CellStruct *)&v1)->Set( -1, 0); /*0x57aa8e*/
+  dword_ABDB90 = *(unsigned int *)((CellStruct *)&v1)->Set( -1, 0); /*0x57aa9b*/
+  dword_ABDB94 = *(unsigned int *)((CellStruct *)&v1)->Set( -1, 0); /*0x57aab4*/
+  dword_ABDB98 = *(unsigned int *)((CellStruct *)&v1)->Set( -2, -1); /*0x57aac8*/
+  dword_ABDB9C = *(unsigned int *)((CellStruct *)&v1)->Set( -2, 0); /*0x57aad5*/
+  dword_ABDBA0 = *(unsigned int *)((CellStruct *)&v1)->Set( -1, 0); /*0x57aae8*/
+  dword_ABDBA4 = *(unsigned int *)((CellStruct *)&v1)->Set( -1, 0); /*0x57ab00*/
+  dword_ABDBA8 = *(unsigned int *)((CellStruct *)&v1)->Set( 0, 0); /*0x57ab0d*/
+  dword_ABDBAC = *(unsigned int *)((CellStruct *)&v1)->Set( 0, 0); /*0x57ab25*/
+  dword_ABDBB0 = *(unsigned int *)((CellStruct *)&v1)->Set( 0, 0); /*0x57ab38*/
+  dword_ABDBB4 = *(unsigned int *)((CellStruct *)&v1)->Set( 0, 0); /*0x57ab45*/
+  dword_ABDBB8 = *(unsigned int *)((CellStruct *)&v1)->Set( 0, 0); /*0x57ab5d*/
+  dword_ABDBBC = *(unsigned int *)((CellStruct *)&v1)->Set( -1, 0); /*0x57ab70*/
+  dword_ABDBC0 = *(unsigned int *)((CellStruct *)&v1)->Set( 0, 0); /*0x57ab7d*/
+  dword_ABDBC4 = *(unsigned int *)((CellStruct *)&v1)->Set( 0, 0); /*0x57ab95*/
+  dword_ABDBC8 = *(unsigned int *)((CellStruct *)&v1)->Set( 0, 0); /*0x57aba8*/
+  dword_ABDBCC = *(unsigned int *)((CellStruct *)&v1)->Set( 0, 0); /*0x57abb5*/
+  dword_ABDBD0 = *(unsigned int *)((CellStruct *)&v1)->Set( 0, 0); /*0x57abcd*/
+  dword_ABDBD4 = *(unsigned int *)((CellStruct *)&v1)->Set( 0, 0); /*0x57abe0*/
+  dword_ABDBD8 = *(unsigned int *)((CellStruct *)&v1)->Set( 0, -1); /*0x57abed*/
+  dword_ABDBDC = *(unsigned int *)((CellStruct *)&v1)->Set( 0, 0); /*0x57ac05*/
+  dword_ABDBE0 = *(unsigned int *)((CellStruct *)&v1)->Set( 0, -1); /*0x57ac18*/
+  dword_ABDBE4 = *(unsigned int *)((CellStruct *)&v1)->Set( 0, -1); /*0x57ac25*/
+  dword_ABDBE8 = *(unsigned int *)((CellStruct *)&v1)->Set( -1, -1); /*0x57ac3d*/
+  dword_ABDBEC = *(unsigned int *)((CellStruct *)&v1)->Set( -1, -1); /*0x57ac50*/
+  dword_ABDBF0 = *(unsigned int *)((CellStruct *)&v1)->Set( -1, 0); /*0x57ac5d*/
+  dword_ABDBF4 = *(unsigned int *)((CellStruct *)&v1)->Set( -1, 0); /*0x57ac75*/
+  dword_ABDBF8 = *(unsigned int *)((CellStruct *)&v1)->Set( 0, 0); /*0x57ac88*/
+  dword_ABDBFC = *(unsigned int *)((CellStruct *)&v1)->Set( 0, 0); /*0x57ac95*/
+  dword_ABDC00 = *(unsigned int *)((CellStruct *)&v1)->Set( 0, -1); /*0x57acad*/
+  dword_ABDC04 = *(unsigned int *)((CellStruct *)&v1)->Set( 0, -1); /*0x57acc0*/
+  dword_ABDC08 = *(unsigned int *)((CellStruct *)&v1)->Set( 0, 0); /*0x57accd*/
   int *result; // eax
-  result = (int *)CellStruct::Set(&v1, 0, 0); /*0x57acd8*/
+  result = (int *)((CellStruct *)&v1)->Set( 0, 0); /*0x57acd8*/
   dword_ABDC0C = *result; /*0x57ace0*/
   return result; /*0x57acdf*/
 }

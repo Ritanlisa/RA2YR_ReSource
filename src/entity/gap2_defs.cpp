@@ -986,7 +986,7 @@ int BulletClass::ProcessImpact(void* a1, void* a2) {
     v7 = (unsigned int *)(*(int (__thiscall **)(char *, char *))(*(unsigned int *)BulletClass_field_0x10C + 72))( /*0x46851e*/
                      BulletClass_field_0x10C,
                      v11);
-    a1 = *(char **)CellStruct::Set((CellStruct *)&v10, *v7 / 256, v7[1] / 256); /*0x46854d*/
+    a1 = *(char **)((CellStruct *)&v10)->Set( *v7 / 256, v7[1] / 256); /*0x46854d*/
     (*((unsigned short *)&(BulletClass_field_0xB0))) = dword_A8E7AC; /*0x468551*/
     if ( dword_A8E7AC /*0x468575*/
       || ((*((unsigned short *)&(BulletClass_field_0xB0))) = this->AbstractClass_10C->IsHeightAboveThreshold(),

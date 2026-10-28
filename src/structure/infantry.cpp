@@ -4765,11 +4765,11 @@ int InfantryClass::AssignDestination_SyncLog(AbstractClass* dest, int sync_flag)
     if ( dest ) /*0x51aaa0*/
     {
       v7 = (unsigned int *)(*((int (__thiscall **)(InfantryClass *, int *))this->ptr_0 + 18))(this, &ppv.q00C); /*0x51aab0*/
-      v8 = *(unsigned int *)CellStruct::Set((CellStruct *)&ppv.ComPtr_field_0x08, *v7 / 256, v7[1] / 256); /*0x51aadd*/
+      v8 = *(unsigned int *)((CellStruct *)&ppv.ComPtr_field_0x08)->Set( *v7 / 256, v7[1] / 256); /*0x51aadd*/
       ptr_0 = (int (__thiscall **)(AbstractClass *, int *))v6->ptr_0; /*0x51aadf*/
       *(unsigned int *)ppv.__pad_000 = v8; /*0x51aae8*/
       v10 = (unsigned int *)ptr_0[18](v6, &ppv.q018); /*0x51aaec*/
-      result = *(unsigned int *)CellStruct::Set((CellStruct *)&ppv.q004, *v10 / 256, v10[1] / 256); /*0x51ab19*/
+      result = *(unsigned int *)((CellStruct *)&ppv.q004)->Set( *v10 / 256, v10[1] / 256); /*0x51ab19*/
       ppv.q004 = result; /*0x51ab1e*/
       if ( result == v8 ) /*0x51ab22*/
         return result; /*0x51ab22*/

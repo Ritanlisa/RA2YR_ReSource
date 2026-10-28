@@ -2517,9 +2517,9 @@ int MapSeed_ScheduleBuildings(int * a1)
           do /*0x5a8c27*/
           {
             *(v21 - 2) = 0xFFFF; /*0x5a8bf3*/
-            *(v21 - 1) = *(unsigned int *)CellStruct::Set((CellStruct *)&v50.u8_10, 0, 0); /*0x5a8c09*/
+            *(v21 - 1) = *(unsigned int *)((CellStruct *)&v50.u8_10)->Set( 0, 0); /*0x5a8c09*/
             *v21 = 0xFFFF; /*0x5a8c0c*/
-            v23 = *(unsigned int *)CellStruct::Set(&v50, 0, 0); /*0x5a8c17*/
+            v23 = *(unsigned int *)((CellStruct *)&v50)->Set( 0, 0); /*0x5a8c17*/
             v21[2] = -1; /*0x5a8c19*/
             v21[1] = v23; /*0x5a8c20*/
             v21 += 5; /*0x5a8c23*/
@@ -4135,226 +4135,226 @@ unsigned int * InitializePathData()
   v124 = 2; /*0x5ab670*/
   v125[1] = 6; /*0x5ab674*/
   WaypointPath::Constructor((WaypointPath *)&g_MissionQueueFrame.globalVariables[900], v125, &v123); /*0x5ab67c*/
-  v121 = *(unsigned int *)CellStruct::Set((CellStruct *)v125, 1, 0); /*0x5ab68f*/
+  v121 = *(unsigned int *)((CellStruct *)v125)->Set( 1, 0); /*0x5ab68f*/
   v122 = 2; /*0x5ab698*/
-  v119 = *(unsigned int *)CellStruct::Set((CellStruct *)&v123, 0, 0); /*0x5ab6b2*/
+  v119 = *(unsigned int *)((CellStruct *)&v123)->Set( 0, 0); /*0x5ab6b2*/
   v120 = 6; /*0x5ab6b6*/
   WaypointPath::Constructor((WaypointPath *)&g_MissionQueueFrame.globalVariables[912], &v119, &v121); /*0x5ab6be*/
-  v121 = *(unsigned int *)CellStruct::Set((CellStruct *)v125, 0, 0); /*0x5ab6d6*/
+  v121 = *(unsigned int *)((CellStruct *)v125)->Set( 0, 0); /*0x5ab6d6*/
   v122 = 2; /*0x5ab6da*/
-  v119 = *(unsigned int *)CellStruct::Set((CellStruct *)&v123, 0, 0); /*0x5ab6f4*/
+  v119 = *(unsigned int *)((CellStruct *)&v123)->Set( 0, 0); /*0x5ab6f4*/
   v120 = 6; /*0x5ab6f8*/
   WaypointPath::Constructor((WaypointPath *)&g_MissionQueueFrame.globalVariables[924], &v119, &v121); /*0x5ab700*/
-  v121 = *(unsigned int *)CellStruct::Set((CellStruct *)v125, 0, 0); /*0x5ab718*/
+  v121 = *(unsigned int *)((CellStruct *)v125)->Set( 0, 0); /*0x5ab718*/
   v122 = 2; /*0x5ab71c*/
-  v116 = *(unsigned int *)CellStruct::Set((CellStruct *)&v123, 0, 0); /*0x5ab725*/
+  v116 = *(unsigned int *)((CellStruct *)&v123)->Set( 0, 0); /*0x5ab725*/
   v120 = 6; /*0x5ab727*/
   v119 = v116; /*0x5ab72f*/
   WaypointPath::Constructor((WaypointPath *)&g_MissionQueueFrame.globalVariables[936], &v119, &v121); /*0x5ab742*/
-  v123 = *(unsigned int *)CellStruct::Set((CellStruct *)v125, 0, 0); /*0x5ab758*/
+  v123 = *(unsigned int *)((CellStruct *)v125)->Set( 0, 0); /*0x5ab758*/
   v124 = 6; /*0x5ab762*/
   ListNode::Alloc((ListNode *)&g_MissionQueueFrame.globalVariables[948], &v123); /*0x5ab76a*/
-  v123 = *(unsigned int *)CellStruct::Set((CellStruct *)v125, 0, 0); /*0x5ab786*/
+  v123 = *(unsigned int *)((CellStruct *)v125)->Set( 0, 0); /*0x5ab786*/
   v124 = 6; /*0x5ab78a*/
   ListNode::Alloc((ListNode *)&g_MissionQueueFrame.globalVariables[960], &v123); /*0x5ab792*/
-  v123 = *(unsigned int *)CellStruct::Set((CellStruct *)v125, 0, 1); /*0x5ab7ae*/
+  v123 = *(unsigned int *)((CellStruct *)v125)->Set( 0, 1); /*0x5ab7ae*/
   v124 = 6; /*0x5ab7b2*/
   ListNode::Alloc((ListNode *)&g_MissionQueueFrame.globalVariables[972], &v123); /*0x5ab7ba*/
-  v123 = *(unsigned int *)CellStruct::Set((CellStruct *)v125, 2, 0); /*0x5ab7d0*/
+  v123 = *(unsigned int *)((CellStruct *)v125)->Set( 2, 0); /*0x5ab7d0*/
   v124 = 2; /*0x5ab7da*/
   ListNode::Alloc((ListNode *)&g_MissionQueueFrame.globalVariables[984], &v123); /*0x5ab7de*/
-  v123 = *(unsigned int *)CellStruct::Set((CellStruct *)v125, 1, 0); /*0x5ab7fa*/
+  v123 = *(unsigned int *)((CellStruct *)v125)->Set( 1, 0); /*0x5ab7fa*/
   v124 = 2; /*0x5ab7fe*/
   ListNode::Alloc((ListNode *)&g_MissionQueueFrame.globalVariables[996], &v123); /*0x5ab802*/
-  v123 = *(unsigned int *)CellStruct::Set((CellStruct *)v125, 1, 0); /*0x5ab81e*/
+  v123 = *(unsigned int *)((CellStruct *)v125)->Set( 1, 0); /*0x5ab81e*/
   v124 = 2; /*0x5ab822*/
   ListNode::Alloc((ListNode *)&g_MissionQueueFrame.globalVariables[1008], &v123); /*0x5ab826*/
-  v121 = *(unsigned int *)CellStruct::Set((CellStruct *)v125, 3, 1); /*0x5ab839*/
+  v121 = *(unsigned int *)((CellStruct *)v125)->Set( 3, 1); /*0x5ab839*/
   v122 = 2; /*0x5ab83d*/
-  v119 = *(unsigned int *)CellStruct::Set((CellStruct *)&v123, 0, 0); /*0x5ab85c*/
+  v119 = *(unsigned int *)((CellStruct *)&v123)->Set( 0, 0); /*0x5ab85c*/
   v120 = 6; /*0x5ab860*/
   WaypointPath::Constructor((WaypointPath *)&g_MissionQueueFrame.globalVariables[1020], &v119, &v121); /*0x5ab868*/
-  v121 = *(unsigned int *)CellStruct::Set((CellStruct *)v125, 3, 0); /*0x5ab880*/
+  v121 = *(unsigned int *)((CellStruct *)v125)->Set( 3, 0); /*0x5ab880*/
   v122 = 2; /*0x5ab884*/
-  v119 = *(unsigned int *)CellStruct::Set((CellStruct *)&v123, 0, 1); /*0x5ab89e*/
+  v119 = *(unsigned int *)((CellStruct *)&v123)->Set( 0, 1); /*0x5ab89e*/
   v120 = 6; /*0x5ab8a2*/
   WaypointPath::Constructor((WaypointPath *)&g_MissionQueueFrame.globalVariables[1032], &v119, &v121); /*0x5ab8aa*/
   *(unsigned int *)&g_MissionQueueFrame.globalVariables[1044] = 0; /*0x5ab8b5*/
   *(unsigned int *)&g_MissionQueueFrame.globalVariables[1048] = 0; /*0x5ab8bb*/
-  v121 = *(unsigned int *)CellStruct::Set((CellStruct *)v125, 3, 3); /*0x5ab8ce*/
+  v121 = *(unsigned int *)((CellStruct *)v125)->Set( 3, 3); /*0x5ab8ce*/
   v122 = 3; /*0x5ab8d2*/
-  v119 = *(unsigned int *)CellStruct::Set((CellStruct *)&v123, 1, 1); /*0x5ab8e5*/
+  v119 = *(unsigned int *)((CellStruct *)&v123)->Set( 1, 1); /*0x5ab8e5*/
   v120 = 7; /*0x5ab8f0*/
   WaypointPath::Constructor((WaypointPath *)&g_MissionQueueFrame.globalVariables[1056], &v119, &v121); /*0x5ab8f8*/
-  v121 = *(unsigned int *)CellStruct::Set((CellStruct *)v125, 3, 3); /*0x5ab90b*/
+  v121 = *(unsigned int *)((CellStruct *)v125)->Set( 3, 3); /*0x5ab90b*/
   v122 = 3; /*0x5ab914*/
-  v119 = *(unsigned int *)CellStruct::Set((CellStruct *)&v123, 1, 1); /*0x5ab92e*/
+  v119 = *(unsigned int *)((CellStruct *)&v123)->Set( 1, 1); /*0x5ab92e*/
   v120 = 7; /*0x5ab932*/
   WaypointPath::Constructor((WaypointPath *)&g_MissionQueueFrame.globalVariables[1068], &v119, &v121); /*0x5ab93a*/
-  v117 = *(unsigned int *)CellStruct::Set((CellStruct *)v125, 3, 3); /*0x5ab94a*/
+  v117 = *(unsigned int *)((CellStruct *)v125)->Set( 3, 3); /*0x5ab94a*/
   v122 = 3; /*0x5ab94c*/
   v121 = v117; /*0x5ab950*/
-  v119 = *(unsigned int *)CellStruct::Set((CellStruct *)&v123, 1, 1); /*0x5ab970*/
+  v119 = *(unsigned int *)((CellStruct *)&v123)->Set( 1, 1); /*0x5ab970*/
   v120 = 7; /*0x5ab974*/
   WaypointPath::Constructor((WaypointPath *)&g_MissionQueueFrame.globalVariables[1080], &v119, &v121); /*0x5ab97c*/
-  v121 = *(unsigned int *)CellStruct::Set((CellStruct *)v125, 3, 3); /*0x5ab994*/
+  v121 = *(unsigned int *)((CellStruct *)v125)->Set( 3, 3); /*0x5ab994*/
   v122 = 3; /*0x5ab998*/
-  v119 = *(unsigned int *)CellStruct::Set((CellStruct *)&v123, 1, 1); /*0x5ab9ab*/
+  v119 = *(unsigned int *)((CellStruct *)&v123)->Set( 1, 1); /*0x5ab9ab*/
   v120 = 7; /*0x5ab9b6*/
   WaypointPath::Constructor((WaypointPath *)&g_MissionQueueFrame.globalVariables[1092], &v119, &v121); /*0x5ab9be*/
-  v121 = *(unsigned int *)CellStruct::Set((CellStruct *)v125, 2, 2); /*0x5ab9d1*/
+  v121 = *(unsigned int *)((CellStruct *)v125)->Set( 2, 2); /*0x5ab9d1*/
   v122 = 3; /*0x5ab9da*/
-  v119 = *(unsigned int *)CellStruct::Set((CellStruct *)&v123, 1, 1); /*0x5ab9f4*/
+  v119 = *(unsigned int *)((CellStruct *)&v123)->Set( 1, 1); /*0x5ab9f4*/
   v120 = 7; /*0x5ab9f8*/
   WaypointPath::Constructor((WaypointPath *)&g_MissionQueueFrame.globalVariables[1104], &v119, &v121); /*0x5aba00*/
-  v121 = *(unsigned int *)CellStruct::Set((CellStruct *)v125, 1, 1); /*0x5aba18*/
+  v121 = *(unsigned int *)((CellStruct *)v125)->Set( 1, 1); /*0x5aba18*/
   v122 = 3; /*0x5aba1c*/
-  v119 = *(unsigned int *)CellStruct::Set((CellStruct *)&v123, 1, 1); /*0x5aba36*/
+  v119 = *(unsigned int *)((CellStruct *)&v123)->Set( 1, 1); /*0x5aba36*/
   v120 = 7; /*0x5aba3a*/
   WaypointPath::Constructor((WaypointPath *)&g_MissionQueueFrame.globalVariables[1116], &v119, &v121); /*0x5aba42*/
-  v121 = *(unsigned int *)CellStruct::Set((CellStruct *)v125, 1, 1); /*0x5aba55*/
+  v121 = *(unsigned int *)((CellStruct *)v125)->Set( 1, 1); /*0x5aba55*/
   v122 = 3; /*0x5aba59*/
-  v119 = *(unsigned int *)CellStruct::Set((CellStruct *)&v123, 1, 1); /*0x5aba71*/
+  v119 = *(unsigned int *)((CellStruct *)&v123)->Set( 1, 1); /*0x5aba71*/
   v120 = 7; /*0x5aba7c*/
   WaypointPath::Constructor((WaypointPath *)&g_MissionQueueFrame.globalVariables[1128], &v119, &v121); /*0x5aba84*/
-  v123 = *(unsigned int *)CellStruct::Set((CellStruct *)v125, 1, 1); /*0x5aba9a*/
+  v123 = *(unsigned int *)((CellStruct *)v125)->Set( 1, 1); /*0x5aba9a*/
   v124 = 7; /*0x5abaa4*/
   ListNode::Alloc((ListNode *)&g_MissionQueueFrame.globalVariables[1140], &v123); /*0x5abaac*/
-  v123 = *(unsigned int *)CellStruct::Set((CellStruct *)v125, 1, 1); /*0x5abac8*/
+  v123 = *(unsigned int *)((CellStruct *)v125)->Set( 1, 1); /*0x5abac8*/
   v124 = 7; /*0x5abacc*/
   ListNode::Alloc((ListNode *)&g_MissionQueueFrame.globalVariables[1152], &v123); /*0x5abad4*/
-  v123 = *(unsigned int *)CellStruct::Set((CellStruct *)v125, 1, 1); /*0x5abaf0*/
+  v123 = *(unsigned int *)((CellStruct *)v125)->Set( 1, 1); /*0x5abaf0*/
   v124 = 7; /*0x5abaf4*/
   ListNode::Alloc((ListNode *)&g_MissionQueueFrame.globalVariables[1164], &v123); /*0x5abafc*/
-  v123 = *(unsigned int *)CellStruct::Set((CellStruct *)v125, 3, 3); /*0x5abb12*/
+  v123 = *(unsigned int *)((CellStruct *)v125)->Set( 3, 3); /*0x5abb12*/
   v124 = 3; /*0x5abb1c*/
   ListNode::Alloc((ListNode *)&g_MissionQueueFrame.globalVariables[1176], &v123); /*0x5abb20*/
-  v123 = *(unsigned int *)CellStruct::Set((CellStruct *)v125, 1, 2); /*0x5abb3c*/
+  v123 = *(unsigned int *)((CellStruct *)v125)->Set( 1, 2); /*0x5abb3c*/
   v124 = 3; /*0x5abb40*/
   ListNode::Alloc((ListNode *)&g_MissionQueueFrame.globalVariables[1188], &v123); /*0x5abb44*/
-  v123 = *(unsigned int *)CellStruct::Set((CellStruct *)v125, 2, 2); /*0x5abb60*/
+  v123 = *(unsigned int *)((CellStruct *)v125)->Set( 2, 2); /*0x5abb60*/
   v124 = 3; /*0x5abb64*/
   ListNode::Alloc((ListNode *)&g_MissionQueueFrame.globalVariables[1200], &v123); /*0x5abb68*/
-  v121 = *(unsigned int *)CellStruct::Set((CellStruct *)v125, 4, 2); /*0x5abb7c*/
+  v121 = *(unsigned int *)((CellStruct *)v125)->Set( 4, 2); /*0x5abb7c*/
   v122 = 3; /*0x5abb85*/
-  v119 = *(unsigned int *)CellStruct::Set((CellStruct *)&v123, 1, 1); /*0x5abb9f*/
+  v119 = *(unsigned int *)((CellStruct *)&v123)->Set( 1, 1); /*0x5abb9f*/
   v120 = 7; /*0x5abba3*/
   WaypointPath::Constructor((WaypointPath *)&g_MissionQueueFrame.globalVariables[1212], &v119, &v121); /*0x5abbab*/
-  v121 = *(unsigned int *)CellStruct::Set((CellStruct *)v125, 2, 4); /*0x5abbc4*/
+  v121 = *(unsigned int *)((CellStruct *)v125)->Set( 2, 4); /*0x5abbc4*/
   v122 = 3; /*0x5abbc8*/
-  v119 = *(unsigned int *)CellStruct::Set((CellStruct *)&v123, 1, 1); /*0x5abbe2*/
+  v119 = *(unsigned int *)((CellStruct *)&v123)->Set( 1, 1); /*0x5abbe2*/
   v120 = 7; /*0x5abbe6*/
   WaypointPath::Constructor((WaypointPath *)&g_MissionQueueFrame.globalVariables[1224], &v119, &v121); /*0x5abbee*/
   *(unsigned int *)&g_MissionQueueFrame.globalVariables[1236] = 0; /*0x5abbf9*/
   *(unsigned int *)&g_MissionQueueFrame.globalVariables[1240] = 0; /*0x5abbff*/
-  v121 = *(unsigned int *)CellStruct::Set((CellStruct *)v125, 0, 3); /*0x5abc12*/
+  v121 = *(unsigned int *)((CellStruct *)v125)->Set( 0, 3); /*0x5abc12*/
   v122 = 4; /*0x5abc16*/
-  v119 = *(unsigned int *)CellStruct::Set((CellStruct *)&v123, 0, 0); /*0x5abc2d*/
+  v119 = *(unsigned int *)((CellStruct *)&v123)->Set( 0, 0); /*0x5abc2d*/
   v120 = 0; /*0x5abc38*/
   WaypointPath::Constructor((WaypointPath *)&g_MissionQueueFrame.globalVariables[1248], &v119, &v121); /*0x5abc3c*/
-  v121 = *(unsigned int *)CellStruct::Set((CellStruct *)v125, 0, 3); /*0x5abc4f*/
+  v121 = *(unsigned int *)((CellStruct *)v125)->Set( 0, 3); /*0x5abc4f*/
   v122 = 4; /*0x5abc58*/
-  v119 = *(unsigned int *)CellStruct::Set((CellStruct *)&v123, 0, 0); /*0x5abc76*/
+  v119 = *(unsigned int *)((CellStruct *)&v123)->Set( 0, 0); /*0x5abc76*/
   v120 = 0; /*0x5abc7a*/
   WaypointPath::Constructor((WaypointPath *)&g_MissionQueueFrame.globalVariables[1260], &v119, &v121); /*0x5abc7e*/
-  v121 = *(unsigned int *)CellStruct::Set((CellStruct *)v125, 0, 3); /*0x5abc96*/
+  v121 = *(unsigned int *)((CellStruct *)v125)->Set( 0, 3); /*0x5abc96*/
   v122 = 4; /*0x5abc9a*/
-  v119 = *(unsigned int *)CellStruct::Set((CellStruct *)&v123, 0, 0); /*0x5abcb8*/
+  v119 = *(unsigned int *)((CellStruct *)&v123)->Set( 0, 0); /*0x5abcb8*/
   v120 = 0; /*0x5abcbc*/
   WaypointPath::Constructor((WaypointPath *)&g_MissionQueueFrame.globalVariables[1272], &v119, &v121); /*0x5abcc0*/
-  v121 = *(unsigned int *)CellStruct::Set((CellStruct *)v125, 0, 3); /*0x5abcd8*/
+  v121 = *(unsigned int *)((CellStruct *)v125)->Set( 0, 3); /*0x5abcd8*/
   v122 = 4; /*0x5abcdc*/
-  v119 = *(unsigned int *)CellStruct::Set((CellStruct *)&v123, 0, 0); /*0x5abcf3*/
+  v119 = *(unsigned int *)((CellStruct *)&v123)->Set( 0, 0); /*0x5abcf3*/
   v120 = 0; /*0x5abcfe*/
   WaypointPath::Constructor((WaypointPath *)&g_MissionQueueFrame.globalVariables[1284], &v119, &v121); /*0x5abd02*/
-  v121 = *(unsigned int *)CellStruct::Set((CellStruct *)v125, 0, 2); /*0x5abd15*/
+  v121 = *(unsigned int *)((CellStruct *)v125)->Set( 0, 2); /*0x5abd15*/
   v122 = 4; /*0x5abd1e*/
-  v119 = *(unsigned int *)CellStruct::Set((CellStruct *)&v123, 0, 0); /*0x5abd3c*/
+  v119 = *(unsigned int *)((CellStruct *)&v123)->Set( 0, 0); /*0x5abd3c*/
   v120 = 0; /*0x5abd40*/
   WaypointPath::Constructor((WaypointPath *)&g_MissionQueueFrame.globalVariables[1296], &v119, &v121); /*0x5abd44*/
-  v121 = *(unsigned int *)CellStruct::Set((CellStruct *)v125, 0, 1); /*0x5abd5c*/
+  v121 = *(unsigned int *)((CellStruct *)v125)->Set( 0, 1); /*0x5abd5c*/
   v122 = 4; /*0x5abd60*/
-  v119 = *(unsigned int *)CellStruct::Set((CellStruct *)&v123, 0, 0); /*0x5abd7e*/
+  v119 = *(unsigned int *)((CellStruct *)&v123)->Set( 0, 0); /*0x5abd7e*/
   v120 = 0; /*0x5abd82*/
   WaypointPath::Constructor((WaypointPath *)&g_MissionQueueFrame.globalVariables[1308], &v119, &v121); /*0x5abd86*/
-  v121 = *(unsigned int *)CellStruct::Set((CellStruct *)v125, 0, 0); /*0x5abd9e*/
+  v121 = *(unsigned int *)((CellStruct *)v125)->Set( 0, 0); /*0x5abd9e*/
   v122 = 4; /*0x5abda2*/
-  v119 = *(unsigned int *)CellStruct::Set((CellStruct *)&v123, 0, 0); /*0x5abdb9*/
+  v119 = *(unsigned int *)((CellStruct *)&v123)->Set( 0, 0); /*0x5abdb9*/
   v120 = 0; /*0x5abdc4*/
   WaypointPath::Constructor((WaypointPath *)&g_MissionQueueFrame.globalVariables[1320], &v119, &v121); /*0x5abdc8*/
-  v121 = *(unsigned int *)CellStruct::Set((CellStruct *)v125, 0, 0); /*0x5abddb*/
+  v121 = *(unsigned int *)((CellStruct *)v125)->Set( 0, 0); /*0x5abddb*/
   v122 = 4; /*0x5abde4*/
-  v119 = *(unsigned int *)CellStruct::Set((CellStruct *)&v123, 0, 0); /*0x5abe02*/
+  v119 = *(unsigned int *)((CellStruct *)&v123)->Set( 0, 0); /*0x5abe02*/
   v120 = 0; /*0x5abe06*/
   WaypointPath::Constructor((WaypointPath *)&g_MissionQueueFrame.globalVariables[1332], &v119, &v121); /*0x5abe0a*/
-  v123 = *(unsigned int *)CellStruct::Set((CellStruct *)v125, 0, 3); /*0x5abe26*/
+  v123 = *(unsigned int *)((CellStruct *)v125)->Set( 0, 3); /*0x5abe26*/
   v124 = 4; /*0x5abe2a*/
   ListNode::Alloc((ListNode *)&g_MissionQueueFrame.globalVariables[1344], &v123); /*0x5abe32*/
-  v123 = *(unsigned int *)CellStruct::Set((CellStruct *)v125, 0, 2); /*0x5abe48*/
+  v123 = *(unsigned int *)((CellStruct *)v125)->Set( 0, 2); /*0x5abe48*/
   v124 = 4; /*0x5abe52*/
   ListNode::Alloc((ListNode *)&g_MissionQueueFrame.globalVariables[1356], &v123); /*0x5abe5a*/
-  v123 = *(unsigned int *)CellStruct::Set((CellStruct *)v125, 0, 2); /*0x5abe76*/
+  v123 = *(unsigned int *)((CellStruct *)v125)->Set( 0, 2); /*0x5abe76*/
   v124 = 4; /*0x5abe7a*/
   ListNode::Alloc((ListNode *)&g_MissionQueueFrame.globalVariables[1368], &v123); /*0x5abe82*/
-  v123 = *(unsigned int *)CellStruct::Set((CellStruct *)v125, 0, 0); /*0x5abe9e*/
+  v123 = *(unsigned int *)((CellStruct *)v125)->Set( 0, 0); /*0x5abe9e*/
   v124 = 0; /*0x5abea2*/
   ListNode::Alloc((ListNode *)&g_MissionQueueFrame.globalVariables[1380], &v123); /*0x5abea6*/
-  v123 = *(unsigned int *)CellStruct::Set((CellStruct *)v125, 0, 0); /*0x5abebc*/
+  v123 = *(unsigned int *)((CellStruct *)v125)->Set( 0, 0); /*0x5abebc*/
   v124 = 0; /*0x5abec6*/
   ListNode::Alloc((ListNode *)&g_MissionQueueFrame.globalVariables[1392], &v123); /*0x5abeca*/
-  v123 = *(unsigned int *)CellStruct::Set((CellStruct *)v125, 0, 0); /*0x5abee6*/
+  v123 = *(unsigned int *)((CellStruct *)v125)->Set( 0, 0); /*0x5abee6*/
   v124 = 0; /*0x5abeea*/
   ListNode::Alloc((ListNode *)&g_MissionQueueFrame.globalVariables[1404], &v123); /*0x5abeee*/
-  v121 = *(unsigned int *)CellStruct::Set((CellStruct *)v125, 0, 3); /*0x5abf06*/
+  v121 = *(unsigned int *)((CellStruct *)v125)->Set( 0, 3); /*0x5abf06*/
   v122 = 4; /*0x5abf0a*/
-  v119 = *(unsigned int *)CellStruct::Set((CellStruct *)&v123, 1, 0); /*0x5abf28*/
+  v119 = *(unsigned int *)((CellStruct *)&v123)->Set( 1, 0); /*0x5abf28*/
   v120 = 0; /*0x5abf2c*/
   WaypointPath::Constructor((WaypointPath *)&g_MissionQueueFrame.globalVariables[1416], &v119, &v121); /*0x5abf30*/
-  v121 = *(unsigned int *)CellStruct::Set((CellStruct *)v125, 1, 3); /*0x5abf4d*/
+  v121 = *(unsigned int *)((CellStruct *)v125)->Set( 1, 3); /*0x5abf4d*/
   v122 = 4; /*0x5abf51*/
-  v119 = *(unsigned int *)CellStruct::Set((CellStruct *)&v123, 0, 0); /*0x5abf64*/
+  v119 = *(unsigned int *)((CellStruct *)&v123)->Set( 0, 0); /*0x5abf64*/
   v120 = 0; /*0x5abf6f*/
   WaypointPath::Constructor((WaypointPath *)&g_MissionQueueFrame.globalVariables[1428], &v119, &v121); /*0x5abf73*/
   *(unsigned int *)&g_MissionQueueFrame.globalVariables[1440] = 0; /*0x5abf7e*/
   *(unsigned int *)&g_MissionQueueFrame.globalVariables[1444] = 0; /*0x5abf84*/
-  v121 = *(unsigned int *)CellStruct::Set((CellStruct *)v125, 0, 0); /*0x5abf92*/
+  v121 = *(unsigned int *)((CellStruct *)v125)->Set( 0, 0); /*0x5abf92*/
   v122 = 2; /*0x5abf9b*/
-  v119 = *(unsigned int *)CellStruct::Set((CellStruct *)&v123, 0, 0); /*0x5abfaf*/
+  v119 = *(unsigned int *)((CellStruct *)&v123)->Set( 0, 0); /*0x5abfaf*/
   v120 = 6; /*0x5abfb3*/
   WaypointPath::Constructor((WaypointPath *)&g_MissionQueueFrame.globalVariables[1452], &v119, &v121); /*0x5abfc2*/
-  v121 = *(unsigned int *)CellStruct::Set((CellStruct *)v125, 0, 0); /*0x5abfda*/
+  v121 = *(unsigned int *)((CellStruct *)v125)->Set( 0, 0); /*0x5abfda*/
   v122 = 2; /*0x5abfde*/
-  v119 = *(unsigned int *)CellStruct::Set((CellStruct *)&v123, 0, 0); /*0x5abff8*/
+  v119 = *(unsigned int *)((CellStruct *)&v123)->Set( 0, 0); /*0x5abff8*/
   v120 = 6; /*0x5abffc*/
   WaypointPath::Constructor((WaypointPath *)&g_MissionQueueFrame.globalVariables[1464], &v119, &v121); /*0x5ac000*/
-  v121 = *(unsigned int *)CellStruct::Set((CellStruct *)v125, 0, 0); /*0x5ac018*/
+  v121 = *(unsigned int *)((CellStruct *)v125)->Set( 0, 0); /*0x5ac018*/
   v122 = 4; /*0x5ac01c*/
-  v119 = *(unsigned int *)CellStruct::Set((CellStruct *)&v123, 0, 0); /*0x5ac02f*/
+  v119 = *(unsigned int *)((CellStruct *)&v123)->Set( 0, 0); /*0x5ac02f*/
   v120 = 0; /*0x5ac03a*/
   WaypointPath::Constructor((WaypointPath *)&g_MissionQueueFrame.globalVariables[1476], &v119, &v121); /*0x5ac03e*/
-  v121 = *(unsigned int *)CellStruct::Set((CellStruct *)v125, 0, 0); /*0x5ac051*/
+  v121 = *(unsigned int *)((CellStruct *)v125)->Set( 0, 0); /*0x5ac051*/
   v122 = 4; /*0x5ac05a*/
-  v119 = *(unsigned int *)CellStruct::Set((CellStruct *)&v123, 0, 0); /*0x5ac074*/
+  v119 = *(unsigned int *)((CellStruct *)&v123)->Set( 0, 0); /*0x5ac074*/
   v120 = 0; /*0x5ac078*/
   WaypointPath::Constructor((WaypointPath *)&g_MissionQueueFrame.globalVariables[1488], &v119, &v121); /*0x5ac07c*/
-  v121 = *(unsigned int *)CellStruct::Set((CellStruct *)v125, 0, 0); /*0x5ac094*/
+  v121 = *(unsigned int *)((CellStruct *)v125)->Set( 0, 0); /*0x5ac094*/
   v122 = 2; /*0x5ac098*/
-  v119 = *(unsigned int *)CellStruct::Set((CellStruct *)&v123, 0, 0); /*0x5ac0a7*/
+  v119 = *(unsigned int *)((CellStruct *)&v123)->Set( 0, 0); /*0x5ac0a7*/
   v120 = 6; /*0x5ac0ab*/
   WaypointPath::Constructor((WaypointPath *)&g_MissionQueueFrame.globalVariables[1500], &v119, &v121); /*0x5ac0ba*/
-  v121 = *(unsigned int *)CellStruct::Set((CellStruct *)v125, 0, 0); /*0x5ac0d2*/
+  v121 = *(unsigned int *)((CellStruct *)v125)->Set( 0, 0); /*0x5ac0d2*/
   v122 = 2; /*0x5ac0d6*/
-  v119 = *(unsigned int *)CellStruct::Set((CellStruct *)&v123, 0, 0); /*0x5ac0e9*/
+  v119 = *(unsigned int *)((CellStruct *)&v123)->Set( 0, 0); /*0x5ac0e9*/
   v120 = 6; /*0x5ac0f4*/
   WaypointPath::Constructor((WaypointPath *)&g_MissionQueueFrame.globalVariables[1512], &v119, &v121); /*0x5ac0f8*/
-  v121 = *(unsigned int *)CellStruct::Set((CellStruct *)v125, 0, 0); /*0x5ac10b*/
+  v121 = *(unsigned int *)((CellStruct *)v125)->Set( 0, 0); /*0x5ac10b*/
   v122 = 4; /*0x5ac114*/
-  v119 = *(unsigned int *)CellStruct::Set((CellStruct *)&v123, 0, 0); /*0x5ac12e*/
+  v119 = *(unsigned int *)((CellStruct *)&v123)->Set( 0, 0); /*0x5ac12e*/
   v120 = 0; /*0x5ac132*/
   WaypointPath::Constructor((WaypointPath *)&g_MissionQueueFrame.globalVariables[1524], &v119, &v121); /*0x5ac136*/
-  v121 = *(unsigned int *)CellStruct::Set((CellStruct *)v125, 0, 0); /*0x5ac14e*/
+  v121 = *(unsigned int *)((CellStruct *)v125)->Set( 0, 0); /*0x5ac14e*/
   v122 = 4; /*0x5ac152*/
-  v119 = *(unsigned int *)CellStruct::Set((CellStruct *)&v123, 0, 0); /*0x5ac16c*/
+  v119 = *(unsigned int *)((CellStruct *)&v123)->Set( 0, 0); /*0x5ac16c*/
   v120 = 0; /*0x5ac170*/
   return WaypointPath::Constructor((WaypointPath *)&g_MissionQueueFrame.globalVariables[1536], &v119, &v121); /*0x5ac179*/
 

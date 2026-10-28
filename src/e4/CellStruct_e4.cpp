@@ -67,7 +67,7 @@ void* CellStruct::Sub(unsigned int *aP1, unsigned short *aP2)
 }
 // 0x42D470
 namespace gamemd {
-unsigned int * CellStruct::Set(int16_t a2, int16_t a3, void *a3_1)
+unsigned int * CellStruct::Set(int16_t a2, int16_t a3)
 {
 
   this->X = a2; /*0x42d47c*/

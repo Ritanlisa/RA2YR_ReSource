@@ -10752,15 +10752,15 @@ void HouseClass::SetPrimaryTechBuilding() {
         v61 = 0; /*0x50c7d8*/
         VectorClass::InsertAt(v59, v8); /*0x50c7e0*/
         v44 = FoundationWidth + 1; /*0x50c7e5*/
-        v45 = CellStruct::Set(v59, v44, 0); /*0x50c7ed*/
+        v45 = ((CellStruct *)v59)->Set( v44, 0); /*0x50c7ed*/
         v25 = *CellStruct::Add(v62, &v58, v45); /*0x50c808*/
         v46 = BuildLocation::InitCandidate(v52, &v25); /*0x50c812*/
         VectorClass::InsertAt(v46, v8); /*0x50c81a*/
-        v47 = CellStruct::Set(v59, 0, v55 + 1); /*0x50c82d*/
+        v47 = ((CellStruct *)v59)->Set( 0, v55 + 1); /*0x50c82d*/
         v25 = *CellStruct::Add(v62, &v58, v47); /*0x50c852*/
         v48 = BuildLocation::InitCandidate(v52, &v25); /*0x50c856*/
         VectorClass::InsertAt(v48, v8); /*0x50c85e*/
-        v49 = CellStruct::Set(v59, v44, v55 + 1); /*0x50c869*/
+        v49 = ((CellStruct *)v59)->Set( v44, v55 + 1); /*0x50c869*/
         v25 = *CellStruct::Add(v62, &v58, v49); /*0x50c88e*/
         v50 = BuildLocation::InitCandidate(v52, &v25); /*0x50c892*/
         VectorClass::InsertAt(v50, v8); /*0x50c89a*/

@@ -657,7 +657,7 @@ int TacticalClass::DrawTerrain(int *a2, unsigned int *a4)
   v9 = v8; /*0x6d7c8c*/
   LOWORD(v10) = Math::RoundToInt(v42); /*0x6d7c8e*/
   ((Coord *)&v44)->Subtract((int)v9, (int)v10, 0); /*0x6d7c9b*/
-  v11 = *(unsigned int *)CellStruct::Set((CellStruct *)&v36, v44 / 256, v45 / 256); /*0x6d7ccb*/
+  v11 = *(unsigned int *)((CellStruct *)&v36)->Set( v44 / 256, v45 / 256); /*0x6d7ccb*/
   v12 = this->TacticalClass_field_2C; /*0x6d7ccd*/
   HIWORD(v37[0]) = (((v11) >> 16) & 0xFFFF); /*0x6d7cd3*/
   LOWORD(v37[0]) = v11 - 2; /*0x6d7ce0*/

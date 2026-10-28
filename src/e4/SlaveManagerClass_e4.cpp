@@ -473,7 +473,7 @@ TechnoClass * * SlaveManagerClass_ProcessSlaves(unsigned int *a1, void * a2, voi
               v78.ptr_8 = FoundationWidth; /*0x6af813*/
               FoundationHeight = (v15)->GetFoundationHeight(0); /*0x6af817*/
               v17 = *(unsigned int *)(v4 + 36); /*0x6af81f*/
-              v77 = CellStruct::Set((CellStruct *)v83, LOWORD(v78.ptr_8) - 1, FoundationHeight / 2); /*0x6af839*/
+              v77 = ((CellStruct *)v83)->Set( LOWORD(v78.ptr_8) - 1, FoundationHeight / 2); /*0x6af839*/
               v18 = (CellStruct *)(*(int (**)(int, int *))(*(unsigned int *)v17 + 440))(v17, &v78.creationFrame); /*0x6af849*/
               v19 = CellStruct::Add(v18, &v82, v77); /*0x6af851*/
             }
@@ -601,7 +601,7 @@ TechnoClass * * SlaveManagerClass_ProcessSlaves(unsigned int *a1, void * a2, voi
             slaveOwner = v78.slaveOwner; /*0x6afa9a*/
             a2 = v85; /*0x6afaa9*/
             v43 = (unsigned int *)(*(int (**)(int))(*(unsigned int *)v41 + 72))(v41); /*0x6afaaa*/
-            v83[0] = *(unsigned int *)CellStruct::Set((CellStruct *)&v78.slaveCount, *v43 / 256, v43[1] / 256); /*0x6afad9*/
+            v83[0] = *(unsigned int *)((CellStruct *)&v78.slaveCount)->Set( *v43 / 256, v43[1] / 256); /*0x6afad9*/
             LOWORD(v78.ptr_8) = LOWORD(v83[0]) - slaveOwner; /*0x6afaef*/
             HIWORD(v78.ptr_8) = HIWORD(v83[0]) - HIWORD(v78.house); /*0x6afaf4*/
             v78.ptr_0 = v78.ptr_8; /*0x6afb01*/
@@ -617,7 +617,7 @@ TechnoClass * * SlaveManagerClass_ProcessSlaves(unsigned int *a1, void * a2, voi
             v78.ptr_0 = v46; /*0x6afb4e*/
             v48 = (v47)->GetFoundationHeight(0); /*0x6afb52*/
             v49 = *(unsigned int *)(v4 + 36); /*0x6afb5a*/
-            v74 = CellStruct::Set((CellStruct *)&v78.slaves, LOWORD(v78.ptr_0) - 1, v48 / 2); /*0x6afb71*/
+            v74 = ((CellStruct *)&v78.slaves)->Set( LOWORD(v78.ptr_0) - 1, v48 / 2); /*0x6afb71*/
             v50 = (CellStruct *)(*(int (**)(int, char *, int *))(*(unsigned int *)v49 + 440))( /*0x6afb7e*/
                                   v49,
                                   v78.__pad_48,

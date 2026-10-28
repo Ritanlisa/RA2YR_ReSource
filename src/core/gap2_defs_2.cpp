@@ -400,7 +400,7 @@ int unknown::Release(int a1, void* a2) {
         {
           (*((unsigned short *)&(v7[-1].field_2C4))) = 0; /*0x5895b8*/
           (*(((unsigned short *)&(v7[-1].field_2C4)) + 1)) = 0; /*0x5895bc*/
-          CellStruct::Set(v7, 0, 0); /*0x5895c0*/
+          ((CellStruct *)v7)->Set( 0, 0); /*0x5895c0*/
           (v7->u8_10) = 0; /*0x5895c5*/
           *(unsigned int *)v7->__pad_8 = -1; /*0x5895c9*/
           v7 = &v7->u8_10; /*0x5895d0*/

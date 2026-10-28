@@ -26,7 +26,7 @@ struct CellStruct {
     static unsigned int * Copy(CellStruct *aP0, void* aP1);
 BOOL Equals(unsigned short * a2, void *a2_2);  // 0x50E470
     void* Sub(unsigned int *aP1, unsigned short *aP2);  // 0x588C60
-    unsigned int * Set(int16_t a2, int16_t a3, void *a3_1 = 0);  // 0x42D470
+    unsigned int * Set(int16_t a2, int16_t a3);  // 0x42D470 thiscall (x181c: stale receiver param removed)
 };
 #endif // GAMEMD_TREE_UNIVERSE
 } // namespace gamemd

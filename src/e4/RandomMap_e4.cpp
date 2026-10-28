@@ -1205,7 +1205,7 @@ void* RandomMap::PlaceBuildings(int a2, int a3)
       v10 = 40 * v8; /*0x58f386*/
       if ( *(unsigned int *)&dword_ABED10[40 * v8 + 28] == this->RandomMap_field_0x8 ) /*0x58f38f*/
       {
-        v11 = CellStruct::Set((CellStruct *)&v126, 0, 0); /*0x58f39c*/
+        v11 = ((CellStruct *)&v126)->Set( 0, 0); /*0x58f39c*/
         if ( !(unsigned __int8)CellStruct::Equals((CellStruct *)&dword_ABED10[v10], v11) ) /*0x58f3aa*/
           break; /*0x58f3aa*/
       }
@@ -7411,14 +7411,14 @@ LABEL_37:
         do /*0x5a3fb3*/
         {
           v32 = Range_RandomInt(0, v31); /*0x5a3f9d*/
-          v33 = CellStruct::Set((CellStruct *)&v70, 0, 0); /*0x5a3f9f*/
+          v33 = ((CellStruct *)&v70)->Set( 0, 0); /*0x5a3f9f*/
         }
         while ( (unsigned __int8)CellStruct::Equals((CellStruct *)&dword_ABED10[40 * v32], v33) ); /*0x5a3fb3*/
         ++v30; /*0x5a3fc8*/
         *(unsigned int *)v67 = *(unsigned int *)&dword_ABED10[40 * v32]; /*0x5a3fd2*/
         if ( v30 > 200 ) /*0x5a3fd6*/
         {
-          v35 = *(unsigned int *)CellStruct::Set((CellStruct *)&v71, 0, 0); /*0x5a3fff*/
+          v35 = *(unsigned int *)((CellStruct *)&v71)->Set( 0, 0); /*0x5a3fff*/
           goto LABEL_49; /*0x5a4001*/
         }
         v34 = (Cell *)(((CellCoord *)&dword_87F7E8)->To_CellObj(v67); /*0x5a3fe2*/
@@ -7536,7 +7536,7 @@ LABEL_49:
           v50 = v49; /*0x5a417c*/
         }
         while ( (unsigned int)v49 > v48 ); /*0x5a4180*/
-        v51 = CellStruct::Set((CellStruct *)&v71, 0, 0); /*0x5a4188*/
+        v51 = ((CellStruct *)&v71)->Set( 0, 0); /*0x5a4188*/
       }
       while ( (unsigned __int8)CellStruct::Equals((CellStruct *)&dword_ABED10[40 * (unsigned int)v50], v51) ); /*0x5a419c*/
       *(unsigned int *)v69 = *(unsigned int *)&dword_ABED10[40 * (unsigned int)v50]; /*0x5a41be*/
@@ -7742,7 +7742,7 @@ int RandomMap::GenerateRandomMapTerrain()
             v15 = v14; /*0x5a44a2*/
           }
           while ( v14 > v13 ); /*0x5a44a6*/
-          v16 = CellStruct::Set((CellStruct *)&v33, 0, 0); /*0x5a44ae*/
+          v16 = ((CellStruct *)&v33)->Set( 0, 0); /*0x5a44ae*/
         }
         while ( (unsigned __int8)CellStruct::Equals((CellStruct *)&dword_ABED10[40 * v15], v16) ); /*0x5a44c2*/
         ++v12; /*0x5a44d6*/
@@ -7910,7 +7910,7 @@ LABEL_8:
             v16 = v15; /*0x5a817b*/
           }
           while ( v15 > v14 ); /*0x5a817f*/
-          v17 = CellStruct::Set((CellStruct *)&v30, 0, 0); /*0x5a8187*/
+          v17 = ((CellStruct *)&v30)->Set( 0, 0); /*0x5a8187*/
         }
         while ( (unsigned __int8)CellStruct::Equals( /*0x5a819b*/
                                    (CellStruct *)(g_MissionQueueFrame.localVariables[163] + 80 * v16),

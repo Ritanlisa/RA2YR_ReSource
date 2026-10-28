@@ -8181,7 +8181,7 @@ namespace gamemd {
                             v81);
     v27 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, (int16_t *)&v84.m_Data); /*0x44db05*/
     v28 = (unsigned int *)v27->vt_slot_72(v91); /*0x44db13*/
-    i = *(unsigned int *)CellStruct::Set((CellStruct *)&v87, *v28 / 256, v28[1] / 256); /*0x44db42*/
+    i = *(unsigned int *)((CellStruct *)&v87)->Set( *v28 / 256, v28[1] / 256); /*0x44db42*/
     v24 = 0; /*0x44db5f*/
     v88 = ((int16_t)i << 8) + 128; /*0x44db61*/
     (*((unsigned int *)&(v89))) = ((*((signed short *)(((unsigned char *)&(i)) + 2))) << 8) + 128; /*0x44db65*/
@@ -8328,7 +8328,7 @@ namespace gamemd {
                             v81);
     v27 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, (int16_t *)&v84.m_Data); /*0x44db05*/
     v28 = (unsigned int *)v27->vt_slot_72(v91); /*0x44db13*/
-    i = *(unsigned int *)CellStruct::Set((CellStruct *)&v87, *v28 / 256, v28[1] / 256); /*0x44db42*/
+    i = *(unsigned int *)((CellStruct *)&v87)->Set( *v28 / 256, v28[1] / 256); /*0x44db42*/
     v24 = 0; /*0x44db5f*/
     v88 = ((int16_t)i << 8) + 128; /*0x44db61*/
     v89 = ((short)((i) >> 16) << 8) + 128; /*0x44db65*/
@@ -16022,7 +16022,7 @@ namespace gamemd {
     else
       v6 = 0; /*0x6b0e01*/
     v7 = (unsigned int *)(*(int (__thiscall **)(unsigned int, unsigned char *))(**(unsigned int **)(v6 + 1444) + 72))(*(unsigned int *)(v6 + 1444), v23); /*0x6b0e24*/
-    v8 = (int *)CellStruct::Set((CellStruct *)&v22, *v7 / 256, v7[1] / 256); /*0x6b0e4c*/
+    v8 = (int *)((CellStruct *)&v22)->Set( *v7 / 256, v7[1] / 256); /*0x6b0e4c*/
     *(unsigned int *)v21 = *BuildingClass::FindPlacementCells2(bug, &v22, *v8); /*0x6b0e69*/
     if ( *(unsigned int *)v21 == dword_B0B5B8 ) /*0x6b0e6d*/
     {
@@ -16061,7 +16061,7 @@ namespace gamemd {
       && (v15 = *(unsigned int *)(bug->occupant + 536)) != 0 )
     {
       v16 = (unsigned int *)(*(int (__thiscall **)(int, unsigned char *))(*(unsigned int *)v15 + 72))(v15, v23); /*0x6b0f49*/
-      v17 = (int *)CellStruct::Set((CellStruct *)&v22, *v16 / 256, v16[1] / 256); /*0x6b0f71*/
+      v17 = (int *)((CellStruct *)&v22)->Set( *v16 / 256, v16[1] / 256); /*0x6b0f71*/
       result = (unsigned int *)*BuildingClass::FindPlacementCells2(bug, &v22, *v17); /*0x6b0f85*/
       *(unsigned int *)v21 = result; /*0x6b0f8e*/
       if ( result != (unsigned int *)dword_B0B5B8 ) /*0x6b0f92*/
@@ -16099,7 +16099,7 @@ namespace gamemd {
       && (v15 = *(unsigned int *)(bug->occupant + 536)) != 0 )
     {
       v16 = (unsigned int *)(*(int (__thiscall **)(int, unsigned char *))(*(unsigned int *)v15 + 72))(v15, v23); /*0x6b0f49*/
-      v17 = (int *)CellStruct::Set((CellStruct *)&v22, *v16 / 256, v16[1] / 256); /*0x6b0f71*/
+      v17 = (int *)((CellStruct *)&v22)->Set( *v16 / 256, v16[1] / 256); /*0x6b0f71*/
       result = (unsigned int *)*BuildingClass::FindPlacementCells2(bug, &v22, *v17); /*0x6b0f85*/
       *(unsigned int *)v21 = result; /*0x6b0f8e*/
       if ( result != (unsigned int *)dword_B0B5B8 ) /*0x6b0f92*/
