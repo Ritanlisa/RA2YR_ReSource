@@ -22,7 +22,7 @@ struct TypeList {
     static unsigned int *  CopyConstructor(unsigned int * a2);  // 0x513740
     static unsigned int *  AnimTypeCopy(unsigned int * a2);  // 0x5255F0
     static unsigned int * BuildingTypeConstructor(TypeList *aP1);  // 0x5AC400
-    static unsigned int *  BuildingTypeCopy(unsigned int * a2);  // 0x5AD660
+    unsigned int *  BuildingTypeCopy(unsigned int * a2);  // 0x5AD660
     static void InfantryCleanup(TypeList *aP1);  // 0x67A030
     static int *  CopyFull(int * a2);  // 0x67A090
     static int *  CopyAircraft(int * a2);  // 0x67A110
