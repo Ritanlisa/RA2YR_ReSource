@@ -1,9 +1,9 @@
 {
  "note": "T9e arithmetic typing rules (X142b) — evidence ledger",
- "total_fired": 2646,
+ "total_fired": 2643,
  "by_rule": {
-  "int-arith": 1758,
-  "ptr-plus": 812,
+  "int-arith": 1757,
+  "ptr-plus": 810,
   "call-arg": 62,
   "const-store": 14
  },
@@ -401,6 +401,13 @@
    "edge": "ADD from=0x004166C0::eax_v0x41672A @ 0x416733"
   },
   {
+   "root": 277634,
+   "var": "0x00417BD0::ecx_v0x417BE4",
+   "rule": "int-arith",
+   "tier": 4,
+   "edge": "SUB int-operand from=0x00417BD0::eax_v0x417BE1 @ 0x417BE4"
+  },
+  {
    "root": 279904,
    "var": "0x0041A5C0::ecx_v0x41A916",
    "rule": "ptr-plus",
@@ -490,13 +497,6 @@
    "rule": "ptr-plus",
    "tier": 1,
    "edge": "SUB from=0x0041BB30::esi_v0x41BB37 @ 0x41BB5C"
-  },
-  {
-   "root": 280920,
-   "var": "0x0041BC30::eax_v0x41BCE6",
-   "rule": "int-arith",
-   "tier": 4,
-   "edge": "SUB index operand of 0x0041BC30::ecx_v0x41BCF0 @ 0x41BCF0"
   },
   {
    "root": 281484,
@@ -4097,6 +4097,13 @@
    "edge": "SCALE @ 0x4E24C5"
   },
   {
+   "root": 442449,
+   "var": "0x004E29A0::ecx_v0x4E29C5",
+   "rule": "int-arith",
+   "tier": 4,
+   "edge": "ADD int-operand from=0x004E29A0::edi_v0x4E29B7 @ 0x4E29C5"
+  },
+  {
    "root": 443751,
    "var": "0x004E4C20::ecx_v0x4E4D64",
    "rule": "int-arith",
@@ -4242,6 +4249,13 @@
    "rule": "ptr-plus",
    "tier": 1,
    "edge": "ADD from=0x004FD9A0::eax_v0x4FD9F7 @ 0x4FDA01"
+  },
+  {
+   "root": 466651,
+   "var": "0x004FF550::edi_v0x4FF631",
+   "rule": "ptr-plus",
+   "tier": 1,
+   "edge": "ADD reverse to=0x004FF550::ecx_v0x4FF666 @ 0x4FF666"
   },
   {
    "root": 466798,
@@ -13617,13 +13631,6 @@
    "edge": "SCALE @ 0x6E411A"
   },
   {
-   "root": 834025,
-   "var": "0x006E6160::esi_v0x6E6193",
-   "rule": "ptr-plus",
-   "tier": 1,
-   "edge": "ADD reverse to=0x006E6160::ecx_v0x6E61A4 @ 0x6E61A4"
-  },
-  {
    "root": 834504,
    "var": "0x006E6AB0::eax_v0x6E6ADA",
    "rule": "int-arith",
@@ -14091,13 +14098,6 @@
    "rule": "ptr-plus",
    "tier": 1,
    "edge": "ADD from=0x00707D20::eax_v0x707D9B @ 0x707DA4"
-  },
-  {
-   "root": 860041,
-   "var": "0x00707DD0::ecx_v0x707E4B",
-   "rule": "int-arith",
-   "tier": 4,
-   "edge": "ADD index operand of 0x00707DD0::eax_v0x707E53 @ 0x707E53"
   },
   {
    "root": 861303,
@@ -15003,20 +15003,6 @@
    "edge": "ADD reverse to=0x00737BA0::edx_v0x737C57 @ 0x737C57"
   },
   {
-   "root": 898635,
-   "var": "0x0073D450::esi_v0x73D538",
-   "rule": "ptr-plus",
-   "tier": 1,
-   "edge": "ADD reverse to=0x0073D450::edx_v0x73D5CE @ 0x73D5CE"
-  },
-  {
-   "root": 898636,
-   "var": "0x0073D450::esi_v0x73D5F5",
-   "rule": "ptr-plus",
-   "tier": 1,
-   "edge": "ADD reverse to=0x0073D450::edx_v0x73D609 @ 0x73D609"
-  },
-  {
    "root": 900594,
    "var": "0x00740810::ecx_v0x740A3F",
    "rule": "ptr-plus",
@@ -15064,13 +15050,6 @@
    "rule": "ptr-plus",
    "tier": 1,
    "edge": "ADD from=0x00744470::esi_v0x744472 @ 0x74447A"
-  },
-  {
-   "root": 904508,
-   "var": "0x00746100::eax_v0x7462B5",
-   "rule": "int-arith",
-   "tier": 4,
-   "edge": "SUB index operand of 0x00746100::ecx_v0x7462BF @ 0x7462BF"
   },
   {
    "root": 904574,

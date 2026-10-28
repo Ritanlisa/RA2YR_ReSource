@@ -499,6 +499,7 @@ class TypeInferenceEngine:
             except Exception:
                 pass
         _ADDR_MEMBER_RE = re.compile(r"^(0x[0-9A-Fa-f]{8}):this\.member\(0x([0-9A-Fa-f]+)\)$")
+        _layouts_cl = None
         n_addr_form = 0
 
         matched = 0
@@ -521,6 +522,29 @@ class TypeInferenceEngine:
                     anchor_info = member_types.get((_anc, offset))
                     if anchor_info is not None:
                         break
+            if anchor_info is None:
+                # 第二权威兜底：tools/class_layouts.json 的扁平偏移→类型表
+                if _layouts_cl is None:
+                    _lp = os.path.normpath(os.path.join(
+                        os.path.dirname(os.path.dirname(os.path.dirname(
+                            os.path.abspath(__file__)))), "tools", "class_layouts.json"))
+                    try:
+                        with open(_lp, "r", encoding="utf-8") as _lf:
+                            _layouts_cl = json.load(_lf)
+                    except Exception:
+                        _layouts_cl = {}
+                def _layout_type(_c, _o):
+                    _e = (_layouts_cl.get(_c) or {}).get("offsets") or {}
+                    _rec = _e.get(str(_o)) or _e.get(hex(_o)) or _e.get("0x%X" % _o)
+                    return (_rec or {}).get("type")
+                _t = _layout_type(cls_name, offset)
+                if not _t:
+                    for _anc in (self.lattice._ancestors.get(cls_name) or ()):
+                        _t = _layout_type(_anc, offset)
+                        if _t:
+                            break
+                if _t:
+                    anchor_info = {"type": _t}
             if anchor_info is None:
                 continue
             typ_name = anchor_info.get("type", "")
@@ -1047,6 +1071,7 @@ class TypeInferenceEngine:
         # ── function_signatures anchors ──
         self._load_func_signatures(valid_classes)
         self._load_ida_proto_anchors(valid_classes)
+        self._load_vslot_return_anchors(valid_classes)
 
         # ── orphan component seeding ──
         # ── TYPE_SEED 标量种子锚（提取器 Step 3 的立即数/浮点证据）──
@@ -1308,6 +1333,112 @@ class TypeInferenceEngine:
         if addr is not None:
             return self.var_to_id.get(f"0x{addr:08X}.return")
         return None
+
+    def _load_vslot_return_anchors(self, valid_classes):
+        """X196: 虚调用返回值 -> 落点变量的类型锚（slot 路由，含祖先回退）。"""
+        import re as _re
+        _auth_p = os.path.normpath(os.path.join(
+            os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
+            "anchors", "vtable_slot_authority.json"))
+        if not os.path.exists(_auth_p):
+            print("  vslot_return: authority missing", file=sys.stderr)
+            return
+        with open(_auth_p, "r", encoding="utf-8") as _f:
+            _auth = json.load(_f)
+
+        _owner = {}
+        for _fname in ("ida_function_protos.json", "vtable_slot_signatures.json"):
+            _p = os.path.normpath(os.path.join(
+                os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
+                "anchors", _fname))
+            if not os.path.exists(_p):
+                continue
+            try:
+                with open(_p, "r", encoding="utf-8") as _f:
+                    for _a, _v in json.load(_f).items():
+                        _nm = _v.get("name") or ""
+                        if "::" in _nm:
+                            try:
+                                _owner["0x%08X" % int(_a, 16)] = _nm.split("::")[0]
+                            except ValueError:
+                                pass
+            except Exception:
+                pass
+
+        _ret_re = _re.compile(r"^(.*?)\s*\(")
+        _cc_re = _re.compile(r"__\w*call|__cdecl|__stdcall|__thiscall|__fastcall|__userpurge|@<[^>]*>")
+
+        def _ret_of(proto):
+            m = _ret_re.match(proto or "")
+            if not m:
+                return ""
+            t = _cc_re.sub(" ", m.group(1)).strip().replace(" *", "*").strip()
+            if not t or t == "void":
+                return ""
+            return t
+
+        def _slot_ret(cls, slot):
+            seen = set()
+            cur = cls
+            while cur and cur not in seen:
+                seen.add(cur)
+                ent = _auth.get(cur) or {}
+                rec = (ent.get("slots") or {}).get(str(slot))
+                if rec:
+                    t = _ret_of(rec.get("proto") or "")
+                    if t:
+                        return t
+                nxt = None
+                for anc in (self.lattice._ancestors.get(cur) or ()):
+                    if anc in _auth:
+                        nxt = anc
+                        break
+                cur = nxt
+            return ""
+
+        try:
+            with open(CONSTRAINTS_PATH, "r", encoding="utf-8") as _f:
+                _raw = json.load(_f)
+            _edges = _raw.get("constraints") or []
+        except Exception as _e:
+            print(f"  vslot_return: constraints load failed ({_e})", file=sys.stderr)
+            return
+
+        _slot_re = _re.compile(r"^vtable_slot_0x([0-9A-Fa-f]+)\.return$")
+        n = 0
+        for e in _edges:
+            if e.get("type") != "RETURN_TO":
+                continue
+            src = e.get("from") or ""
+            m = _slot_re.match(src)
+            if not m:
+                continue
+            dst = e.get("to") or ""
+            if "::" not in dst:
+                continue
+            slot = int(m.group(1), 16)
+            caller_fn = dst.split("::")[0]
+            try:
+                caller_fn = "0x%08X" % int(caller_fn, 16)
+            except ValueError:
+                continue
+            cls = _owner.get(caller_fn)
+            if not cls:
+                continue
+            rt = _slot_ret(cls, slot)
+            if not rt:
+                continue
+            lt = self._to_lattice_type(rt, valid_classes)
+            if lt is None or lt in (VOID_PTR, TOP):
+                continue
+            vid = self.var_to_id.get(dst)
+            if vid is None:
+                continue
+            a = Anchor(vid, dst, lt, "vslot_return")
+            self.anchors.append(a)
+            self.anchor_by_var[vid].append(a)
+            n += 1
+        print(f"  vslot_return anchors: {n}", file=sys.stderr)
 
     def _load_ida_proto_anchors(self, valid_classes):
         """X193b: 用 anchors/vtable_slot_signatures.json 的 IDA 原型补签名锚。
@@ -1966,6 +2097,7 @@ class TypeInferenceEngine:
         _SRC_RANK = {
             "name_owner": 4,
             "ida_proto": 3,
+            "vslot_return": 3,
             "cast_explicit": 3,
             "global_cast": 3,
             "ida_global_type": 3,
