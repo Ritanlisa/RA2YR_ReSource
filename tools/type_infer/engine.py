@@ -778,6 +778,34 @@ class TypeInferenceEngine:
                 print(f"  cast anchors load failed ({_e})", file=sys.stderr)
         print(f"  explicit cast anchors: {n_cast}", file=sys.stderr)
 
+        # X178: 全局变量的"一个变量一个类型"锚 —— 取该全局所有 (T*)&g 类类型
+        # cast 的多数派（视图 cast int*/char*/void*/_DWORD* 已排除）。这把
+        # "变量自身类型固定"作为强约束注入，覆盖被视图 join 污染成 VOID_PTR
+        # 的全局（如 dword_87F7E8 之前落到 VOID_PTR）。
+        n_gcast = 0
+        _g_path = os.path.normpath(os.path.join(
+            os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
+            "anchors", "global_cast_types.json"))
+        if os.path.exists(_g_path):
+            try:
+                with open(_g_path, "r", encoding="utf-8") as _gf:
+                    _gmap = json.load(_gf)
+                for _gname, _spec in _gmap.items():
+                    _vid = self.var_to_id.get(_gname)
+                    if _vid is None:
+                        continue
+                    _lt = self._to_lattice_type(_spec.get("type"), valid_classes)
+                    if _lt is None or _lt in (VOID_PTR, TOP):
+                        continue
+                    _a = Anchor(var_id=_vid, var_name=_gname,
+                                lattice_type=_lt, source="global_cast")
+                    self.anchors.append(_a)
+                    self.anchor_by_var[_vid].append(_a)
+                    n_gcast += 1
+            except Exception as _e:
+                print(f"  global cast anchors load failed ({_e})", file=sys.stderr)
+        print(f"  global_cast anchors: {n_gcast}", file=sys.stderr)
+
         # ── 库字符串函数参数/返回锚（CRT/Win32 例外）──
         lib_matched = 0
         for addr, spec in _LIB_STRING_FUNCS.items():
@@ -1746,6 +1774,7 @@ class TypeInferenceEngine:
         _SRC_RANK = {
             "name_owner": 4,
             "cast_explicit": 3,
+            "global_cast": 3,
             "rtti_vtable_class": 3,
             "singleton_ctor_store": 3,
             "ctor_vtable_install": 3,

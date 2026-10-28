@@ -1,0 +1,86 @@
+{
+ "dword_A8B230": {
+  "type": "Random",
+  "sites": 370,
+  "dominant": 357,
+  "pct": 96.5
+ },
+ "ppv": {
+  "type": "ObjectClass",
+  "sites": 15,
+  "dominant": 9,
+  "pct": 60.0
+ },
+ "g_LogicClass": {
+  "type": "DynamicVectorClass",
+  "sites": 6,
+  "dominant": 5,
+  "pct": 83.3
+ },
+ "g_GameNetworkObject": {
+  "type": "MessageListClass",
+  "sites": 15,
+  "dominant": 14,
+  "pct": 93.3
+ },
+ "stru_B73E10": {
+  "type": "String",
+  "sites": 55,
+  "dominant": 47,
+  "pct": 85.5
+ },
+ "g_DialogHashMap_Base": {
+  "type": "HashTable",
+  "sites": 6,
+  "dominant": 6,
+  "pct": 100.0
+ },
+ "g_CellClassManager": {
+  "type": "GadgetGrid",
+  "sites": 9,
+  "dominant": 8,
+  "pct": 88.9
+ },
+ "g_WOL_UserList": {
+  "type": "DynamicClass",
+  "sites": 28,
+  "dominant": 20,
+  "pct": 71.4
+ },
+ "g_WebBrowserConfig": {
+  "type": "String",
+  "sites": 30,
+  "dominant": 22,
+  "pct": 73.3
+ },
+ "g_WebBrowser": {
+  "type": "String",
+  "sites": 17,
+  "dominant": 16,
+  "pct": 94.1
+ },
+ "stru_B765F8": {
+  "type": "HashTable",
+  "sites": 7,
+  "dominant": 5,
+  "pct": 71.4
+ },
+ "g_WOL_AuthObject": {
+  "type": "String",
+  "sites": 20,
+  "dominant": 14,
+  "pct": 70.0
+ },
+ "CCINIClass_INI_RA2MD": {
+  "type": "INIClass",
+  "sites": 9,
+  "dominant": 7,
+  "pct": 77.8
+ },
+ "Source": {
+  "type": "String",
+  "sites": 5,
+  "dominant": 4,
+  "pct": 80.0
+ }
+}
