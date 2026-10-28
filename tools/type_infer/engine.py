@@ -810,7 +810,9 @@ class TypeInferenceEngine:
         # （字符串/标量已过滤）——这是 IDA 自身对全局的声明，优先级与
         # global_cast 同级但来源独立。
         n_ida_g = 0
-        _ida_g_path = os.path.normpath(os.path.join(
+        _ida_g_path = None   # X184 停用：IDA 对对象全局只给兜底类型（IUnknown/ObjectClass*），
+                             # 与 cast 用法证据冲突（实测 +77 TOP），净收益为负。导出文件保留作参考。
+        if False and os.path.normpath(os.path.join(
             os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
             "anchors", "ida_global_type_anchors.json"))
         if os.path.exists(_ida_g_path):
