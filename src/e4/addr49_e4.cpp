@@ -6552,7 +6552,7 @@ int * RandomCoordScatter(int * a0, IUnknown * aP1, int aP2, ScenarioClass * aP3)
   v21 = v9; /*0x49f49d*/
   Math::ArcTan2(v16); /*0x49f4a1*/
   (v10) = ((v10) & ~0xFFFF) | ((Math::RoundToInt(a3 * v19 + (double)*a2)) & 0xFFFF); /*0x49f4af*/
-  Coord::Subtract(&v16, v10, v21, v8); /*0x49f4bf*/
+  ((Coord *)&v16)->Subtract( v10, v21, v8); /*0x49f4bf*/
   v11 = HIDWORD(v16); /*0x49f4c4*/
   v12 = v17; /*0x49f4c8*/
   v13 = LODWORD(v16); /*0x49f4d0*/

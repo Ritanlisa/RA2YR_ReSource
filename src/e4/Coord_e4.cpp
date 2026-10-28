@@ -122,13 +122,13 @@ unsigned int * Coord::ToCell(unsigned int *aP1)
 }
 // 0x41C230
 namespace gamemd {
-void * Coord::Subtract(int aP1, int aP2, int aP3, void *a4)
+_DWORD * Coord::Subtract(int aP1, int aP2, int aP3)
 {
 
   *(unsigned int *)&this->__pad_0 = aP1; /*0x41c23a*/
-  *&this->u32_4 = aP2; /*0x41c240*/
+  *(unsigned int *)&this->Coord_field_0x2[2] = aP2; /*0x41c240*/
   this->u32_8 = (unsigned int)((void *)aP3); /*0x41c243*/
-  return (void *)(&this->__pad_0); /*0x41c246*/
+  return (_DWORD *)(&this->__pad_0); /*0x41c246*/
 
 }
 }

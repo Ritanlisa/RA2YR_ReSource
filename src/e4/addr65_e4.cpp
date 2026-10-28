@@ -1811,7 +1811,7 @@ LABEL_44:
   v39 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v47); /*0x65dc79*/
   (*(void (**)(CellClass *, void *))(v38 + 968))(v32, v39); /*0x65dc81*/
   ++dword_A8E7AC; /*0x65dc95*/
-  Coord::Subtract((Coord *)v48, ((__int16)v36 << 8) + 128, (SHIWORD(v45) << 8) + 128, 0); /*0x65dcb6*/
+  ((Coord *)v48)->Subtract( ((__int16)v36 << 8) + 128, (SHIWORD(v45) << 8) + 128, 0); /*0x65dcb6*/
   v40 = (*(int (**)(CellClass *, unsigned int *, unsigned int))(v32->mapCoords + 216))(v32, v48, 0); /*0x65dcc6*/
   --dword_A8E7AC; /*0x65dcda*/
   if ( v40 ) /*0x65dce0*/

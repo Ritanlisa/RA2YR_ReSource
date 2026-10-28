@@ -1452,7 +1452,7 @@ void * TechnoClass::FindClosestPlacementCell()
         {
           v5 = (unsigned int *)v4->GetCoords_0(v43); /*0x41a1e6*/
           v6 = (unsigned int *)this->GetCoords_0(v44); /*0x41a1ef*/
-          v7 = Coord::Subtract((Coord *)v45, *v6 - *v5, v6[1] - v5[1], v6[2] - v5[2]); /*0x41a210*/
+          v7 = ((Coord *)v45)->Subtract( *v6 - *v5, v6[1] - v5[1], v6[2] - v5[2]); /*0x41a210*/
           v40 = *v7; /*0x41a217*/
           v41 = v7->u32_4; /*0x41a222*/
           v42 = v7->u32_8; /*0x41a229*/
@@ -10684,35 +10684,35 @@ void TechnoClass::DrawHealthBar(Point2D* pLocation, RectangleStruct* pBounds, bo
             v79 = *(unsigned int *)v77.__pad_000 - v16; /*0x6f5472*/
             q008 = v77.u32_8; /*0x6f547a*/
             v80 = v17 + v77.u32_4; /*0x6f5487*/
-            v78 = *(Coord3D *)Coord::Subtract( /*0x6f5498*/
-                                (Coord *)&v86,
+            v78 = *(Coord3D *)(/*0x6f5498*/
+                                (Coord *)&v86)->Subtract(
                                 v16 + *(unsigned int *)v77.__pad_000,
                                 v17 + v77.u32_4,
                                 v77.u32_8);
             DrawTacticalLine3D(&v78, &v79, v76); /*0x6f54b7*/
             *(unsigned int *)v82.__pad_000 = -v17; /*0x6f54c9*/
-            v21 = Coord::Subtract( /*0x6f54db*/
-                    (Coord *)&v86,
+            v21 = (/*0x6f54db*/
+                    (Coord *)&v86)->Subtract(
                     v16 + *(unsigned int *)v77.__pad_000,
                     v77.u32_4 - v17,
                     v77.u32_8);
             v79 = *v21; /*0x6f54e2*/
             v80 = v21->u32_4; /*0x6f54ee*/
             q008 = v21->u32_8; /*0x6f54fb*/
-            v78 = *(Coord3D *)Coord::Subtract( /*0x6f5512*/
-                                (Coord *)&v86,
+            v78 = *(Coord3D *)(/*0x6f5512*/
+                                (Coord *)&v86)->Subtract(
                                 v16 + *(unsigned int *)v77.__pad_000,
                                 v17 + v77.u32_4,
                                 v77.u32_8);
             DrawTacticalLine3D(&v78, &v79, v76); /*0x6f5531*/
-            v78 = *(Coord3D *)Coord::Subtract( /*0x6f5557*/
-                                (Coord *)&v86,
+            v78 = *(Coord3D *)(/*0x6f5557*/
+                                (Coord *)&v86)->Subtract(
                                 *(unsigned int *)v77.__pad_000 - v16,
                                 v17 + v77.u32_4,
                                 v14 + v77.u32_8);
-            Coord::Subtract((Coord *)&v79, -v16, v17, 0); /*0x6f5571*/
-            v22 = Coord::Subtract( /*0x6f559b*/
-                    (Coord *)&v86,
+            ((Coord *)&v79)->Subtract( -v16, v17, 0); /*0x6f5571*/
+            v22 = (/*0x6f559b*/
+                    (Coord *)&v86)->Subtract(
                     *(unsigned int *)v77.__pad_000 + v79,
                     v80 + v77.u32_4,
                     q008 + v77.u32_8);
@@ -10721,16 +10721,16 @@ void TechnoClass::DrawHealthBar(Point2D* pLocation, RectangleStruct* pBounds, bo
             v85 = v22->u32_8; /*0x6f55bd*/
             DrawTacticalLine3D(&v83, (int *)v78.__pad_000, v76); /*0x6f55c1*/
             v23 = *(unsigned int *)v82.__pad_000; /*0x6f55ce*/
-            v24 = Coord::Subtract( /*0x6f55e3*/
-                    (Coord *)&v86,
+            v24 = (/*0x6f55e3*/
+                    (Coord *)&v86)->Subtract(
                     v16 + *(unsigned int *)v77.__pad_000,
                     *(unsigned int *)v82.__pad_000 + v77.u32_4,
                     v14 + v77.u32_8);
             v83 = *v24; /*0x6f55ea*/
             v84 = v24->u32_4; /*0x6f55f1*/
             v85 = v24->u32_8; /*0x6f5600*/
-            v25 = Coord::Subtract( /*0x6f5613*/
-                    (Coord *)&v86,
+            v25 = (/*0x6f5613*/
+                    (Coord *)&v86)->Subtract(
                     v16 + *(unsigned int *)v77.__pad_000,
                     v23 + v77.u32_4,
                     v77.u32_8);
@@ -10748,9 +10748,9 @@ void TechnoClass::DrawHealthBar(Point2D* pLocation, RectangleStruct* pBounds, bo
           }
           if ( (*((int (__thiscall **)(TechnoClass *))v2->ptr_0 + 11))(v2) == 15 ) /*0x6f5697*/
           {
-            Coord::Subtract((Coord *)&v89, v15 / 2, v17, 0); /*0x6f5a06*/
-            v47 = Coord::Subtract( /*0x6f5a30*/
-                    (Coord *)&v92,
+            ((Coord *)&v89)->Subtract( v15 / 2, v17, 0); /*0x6f5a06*/
+            v47 = (/*0x6f5a30*/
+                    (Coord *)&v92)->Subtract(
                     *(unsigned int *)v77.__pad_000 + v89,
                     v90 + v77.u32_4,
                     v91 + v77.u32_8);
@@ -10758,9 +10758,9 @@ void TechnoClass::DrawHealthBar(Point2D* pLocation, RectangleStruct* pBounds, bo
             v87 = v47[1]; /*0x6f5a45*/
             v88 = v47[2]; /*0x6f5a4c*/
             *(unsigned int *)v82.__pad_000 = v15 / -2; /*0x6f5a55*/
-            Coord::Subtract((Coord *)&v83, v15 / -2, v17, 0); /*0x6f5a59*/
-            v78 = *(Coord3D *)Coord::Subtract( /*0x6f5a8c*/
-                                (Coord *)&v92,
+            ((Coord *)&v83)->Subtract( v15 / -2, v17, 0); /*0x6f5a59*/
+            v78 = *(Coord3D *)(/*0x6f5a8c*/
+                                (Coord *)&v92)->Subtract(
                                 *(unsigned int *)v77.__pad_000 + v83,
                                 v84 + v77.u32_4,
                                 v85 + v77.u32_8);
@@ -10788,18 +10788,18 @@ void TechnoClass::DrawHealthBar(Point2D* pLocation, RectangleStruct* pBounds, bo
                 0,
                 q004,
                 v74);
-            Coord::Subtract((Coord *)&v88, v82.u32_8, v17, v14); /*0x6f5b36*/
-            v53 = Coord::Subtract( /*0x6f5b63*/
-                    (Coord *)&v96,
+            ((Coord *)&v88)->Subtract( v82.u32_8, v17, v14); /*0x6f5b36*/
+            v53 = (/*0x6f5b63*/
+                    (Coord *)&v96)->Subtract(
                     v77.u32_8 + v88,
                     v89 + *(unsigned int *)v78.__pad_000,
                     v90 + v78.u32_4);
             v85 = *v53; /*0x6f5b6c*/
             v86 = v53[1]; /*0x6f5b74*/
             v87 = v53[2]; /*0x6f5b84*/
-            Coord::Subtract((Coord *)&v91, v82.u32_8, v17, 0); /*0x6f5b88*/
-            v54 = Coord::Subtract( /*0x6f5bb2*/
-                    (Coord *)&v96,
+            ((Coord *)&v91)->Subtract( v82.u32_8, v17, 0); /*0x6f5b88*/
+            v54 = (/*0x6f5bb2*/
+                    (Coord *)&v96)->Subtract(
                     v77.u32_8 + v91,
                     v92 + *(unsigned int *)v78.__pad_000,
                     v93 + v78.u32_4);
@@ -10827,18 +10827,18 @@ void TechnoClass::DrawHealthBar(Point2D* pLocation, RectangleStruct* pBounds, bo
                 v77.u32_4,
                 0);
             v60 = -v17; /*0x6f5c57*/
-            Coord::Subtract((Coord *)&v88, v15 / 2, v60, 0); /*0x6f5c61*/
-            v61 = Coord::Subtract( /*0x6f5c8b*/
-                    (Coord *)&v96,
+            ((Coord *)&v88)->Subtract( v15 / 2, v60, 0); /*0x6f5c61*/
+            v61 = (/*0x6f5c8b*/
+                    (Coord *)&v96)->Subtract(
                     v77.u32_8 + v88,
                     v89 + *(unsigned int *)v78.__pad_000,
                     v90 + v78.u32_4);
             v85 = *v61; /*0x6f5c93*/
             v86 = v61[1]; /*0x6f5c9c*/
             v87 = v61[2]; /*0x6f5ca7*/
-            Coord::Subtract((Coord *)&v91, v15 / 2, v60, v14); /*0x6f5cab*/
-            v62 = Coord::Subtract( /*0x6f5cd5*/
-                    (Coord *)&v96,
+            ((Coord *)&v91)->Subtract( v15 / 2, v60, v14); /*0x6f5cab*/
+            v62 = (/*0x6f5cd5*/
+                    (Coord *)&v96)->Subtract(
                     v77.u32_8 + v91,
                     v92 + *(unsigned int *)v78.__pad_000,
                     v93 + v78.u32_4);
@@ -10859,16 +10859,16 @@ void TechnoClass::DrawHealthBar(Point2D* pLocation, RectangleStruct* pBounds, bo
               (*(void (__stdcall **)(int *, int *))(v67 + 96))(&q008, &v78.u32_8); /*0x6f5d77*/
             else
               (*(void (__stdcall **)(int *, int *))(v67 + 96))(&v78.u32_8, &q008); /*0x6f5d6b*/
-            Coord::Subtract((Coord *)&v86, *(int *)v82.__pad_000, v60, v14); /*0x6f5d85*/
-            v68 = Coord::Subtract( /*0x6f5db2*/
-                    (Coord *)v95,
+            ((Coord *)&v86)->Subtract( *(int *)v82.__pad_000, v60, v14); /*0x6f5d85*/
+            v68 = (/*0x6f5db2*/
+                    (Coord *)v95)->Subtract(
                     *(unsigned int *)v77.__pad_000 + v86,
                     v87 + v77.u32_4,
                     v88 + v77.u32_8);
             v89 = *v68; /*0x6f5dba*/
             v90 = v68[1]; /*0x6f5dc3*/
             v91 = v68[2]; /*0x6f5dce*/
-            Coord::Subtract((Coord *)&v79, v15 / 2, v60, v14); /*0x6f5dd2*/
+            ((Coord *)&v79)->Subtract( v15 / 2, v60, v14); /*0x6f5dd2*/
             v69 = Coord3D::Add(&v77, &v92, &v79); /*0x6f5de5*/
             v83 = *v69; /*0x6f5dec*/
             v84 = v69[1]; /*0x6f5df3*/
@@ -10877,17 +10877,17 @@ void TechnoClass::DrawHealthBar(Point2D* pLocation, RectangleStruct* pBounds, bo
           }
           else
           {
-            Coord::Subtract((Coord *)&v83, v15 / 2, v17, v14); /*0x6f56a4*/
-            v26 = Coord::Subtract( /*0x6f56ce*/
-                    (Coord *)&v86,
+            ((Coord *)&v83)->Subtract( v15 / 2, v17, v14); /*0x6f56a4*/
+            v26 = (/*0x6f56ce*/
+                    (Coord *)&v86)->Subtract(
                     *(unsigned int *)v77.__pad_000 + v83,
                     v84 + v77.u32_4,
                     v85 + v77.u32_8);
             v79 = *v26; /*0x6f56d5*/
             v80 = v26[1]; /*0x6f56e1*/
             q008 = v26[2]; /*0x6f56ee*/
-            v82 = *(Coord3D *)Coord::Subtract( /*0x6f5707*/
-                                (Coord *)&v86,
+            v82 = *(Coord3D *)(/*0x6f5707*/
+                                (Coord *)&v86)->Subtract(
                                 v16 + *(unsigned int *)v77.__pad_000,
                                 v17 + v77.u32_4,
                                 v77.u32_8);
@@ -10912,18 +10912,18 @@ void TechnoClass::DrawHealthBar(Point2D* pLocation, RectangleStruct* pBounds, bo
                 0,
                 q004,
                 v74);
-            Coord::Subtract((Coord *)&v85, v15 / 2, v17, v14); /*0x6f57aa*/
-            v31 = Coord::Subtract( /*0x6f57d7*/
-                    (Coord *)&v98,
+            ((Coord *)&v85)->Subtract( v15 / 2, v17, v14); /*0x6f57aa*/
+            v31 = (/*0x6f57d7*/
+                    (Coord *)&v98)->Subtract(
                     v77.u32_8 + v85,
                     v86 + *(unsigned int *)v78.__pad_000,
                     v87 + v78.u32_4);
             v91 = *v31; /*0x6f57df*/
             v92 = v31[1]; /*0x6f57ea*/
             v93 = v31[2]; /*0x6f57f7*/
-            Coord::Subtract((Coord *)&q008, v15 / 2, -v17, v14); /*0x6f57fb*/
-            v32 = Coord::Subtract( /*0x6f5828*/
-                    (Coord *)&v98,
+            ((Coord *)&q008)->Subtract( v15 / 2, -v17, v14); /*0x6f57fb*/
+            v32 = (/*0x6f5828*/
+                    (Coord *)&v98)->Subtract(
                     v77.u32_8 + q008,
                     *(unsigned int *)v82.__pad_000 + *(unsigned int *)v78.__pad_000,
                     v82.u32_4 + v78.u32_4);
@@ -10952,18 +10952,18 @@ void TechnoClass::DrawHealthBar(Point2D* pLocation, RectangleStruct* pBounds, bo
                 &v78.u32_8,
                 v77.u32_4,
                 0);
-            Coord::Subtract((Coord *)&v91, v15 / 2, v17, v14); /*0x6f58d7*/
-            v40 = Coord::Subtract( /*0x6f5901*/
-                    (Coord *)&v94,
+            ((Coord *)&v91)->Subtract( v15 / 2, v17, v14); /*0x6f58d7*/
+            v40 = (/*0x6f5901*/
+                    (Coord *)&v94)->Subtract(
                     v77.u32_8 + v91,
                     v92 + *(unsigned int *)v78.__pad_000,
                     v93 + v78.u32_4);
             q008 = *v40; /*0x6f5909*/
             *(unsigned int *)v82.__pad_000 = v40[1]; /*0x6f5915*/
             v82.u32_4 = v40[2]; /*0x6f591f*/
-            Coord::Subtract((Coord *)&v85, v15 / -2, v17, v14); /*0x6f5923*/
-            v41 = Coord::Subtract( /*0x6f594d*/
-                    (Coord *)&v94,
+            ((Coord *)&v85)->Subtract( v15 / -2, v17, v14); /*0x6f5923*/
+            v41 = (/*0x6f594d*/
+                    (Coord *)&v94)->Subtract(
                     v77.u32_8 + v85,
                     v86 + *(unsigned int *)v78.__pad_000,
                     v87 + v78.u32_4);
@@ -11133,7 +11133,7 @@ namespace gamemd {
     v5 = *v4; /*0x6f64d7*/
     v6 = v4[1]; /*0x6f64dd*/
     v7 = v4[2]; /*0x6f64e0*/
-    v8 = Coord::Subtract((Coord *)&v55, *v4 / 2, v6 / 2, v7 / 2); /*0x6f64fb*/
+    v8 = ((Coord *)&v55)->Subtract( *v4 / 2, v6 / 2, v7 / 2); /*0x6f64fb*/
     v9 = v6 - v8->u32_4; /*0x6f650b*/
     v57 = *v8 - v5; /*0x6f6523*/
     v58 = v9; /*0x6f652e*/

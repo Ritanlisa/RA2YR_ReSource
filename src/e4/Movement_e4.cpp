@@ -206,7 +206,7 @@ int Movement::CalcVelocity(double *a1, Vector3 *a2, double a3, void **a4, int16_
     HIDWORD(v92) = v25; /*0x5b22dd*/
     (v26) = ((v26) & ~0xFFFF) | ((Math::RoundToInt(a3)) & 0xFFFF); /*0x5b22e1*/
     v78 = (((v26 + a2->u32_8 & 0xFFFFFFFFull)) << 32 | (HIDWORD(v92) + a2->u32_4 & 0xFFFFFFFFull)); /*0x5b22f9*/
-    v27 = Coord::Subtract((Coord *)&v92, (int)v24 + *(unsigned int *)a2->__pad_0, v78, (int)(((v78) >> 32) & 0xFFFFFFFFu)); /*0x5b22ff*/
+    v27 = ((Coord *)&v92)->Subtract( (int)v24 + *(unsigned int *)a2->__pad_0, v78, (int)(((v78) >> 32) & 0xFFFFFFFFu)); /*0x5b22ff*/
     v28 = v27->q004; /*0x5b2308*/
     v29 = v27->q008; /*0x5b230b*/
     *(unsigned int *)a2->__pad_0 = *v27; /*0x5b230e*/
@@ -249,8 +249,8 @@ int Movement::CalcVelocity(double *a1, Vector3 *a2, double a3, void **a4, int16_
   LOWORD(v34) = Math::RoundToInt(a3); /*0x5b237f*/
   HIDWORD(v92) = v34; /*0x5b2384*/
   (v35) = ((v35) & ~0xFFFF) | ((Math::RoundToInt(a3)) & 0xFFFF); /*0x5b2388*/
-  v36 = Coord::Subtract( /*0x5b23a6*/
-          (Coord *)&v90,
+  v36 = (/*0x5b23a6*/
+          (Coord *)&v90)->Subtract(
           (int)v33 + *(unsigned int *)a2->__pad_0,
           a2->u32_4 + HIDWORD(v92),
           a2->u32_8 + v35);
@@ -276,8 +276,8 @@ int Movement::CalcVelocity(double *a1, Vector3 *a2, double a3, void **a4, int16_
   Vector3_field_0x08 = a2->u32_8; /*0x5b240e*/
   v49 = a4[1]; /*0x5b2411*/
   v88.field_4 = v50; /*0x5b2414*/
-  v51 = (double *)Coord::Subtract( /*0x5b242c*/
-                    (Coord *)&v90,
+  v51 = (double *)(/*0x5b242c*/
+                    (Coord *)&v90)->Subtract(
                     (int)*a4 - *(unsigned int *)a2->__pad_0,
                     (int)v49 - a2->u32_4,
                     (int)v47 - Vector3_field_0x08);
@@ -395,9 +395,9 @@ int Movement::CalcVelocity(double *a1, Vector3 *a2, double a3, void **a4, int16_
   LOWORD(v59) = Math::RoundToInt(v46); /*0x5b266d*/
   HIDWORD(v90) = v59; /*0x5b2672*/
   (v60) = ((v60) & ~0xFFFF) | ((Math::RoundToInt(v46)) & 0xFFFF); /*0x5b2676*/
-  v61 = Coord::Subtract((Coord *)&v88.field_4, 6 * (unsigned int)v58, 6 * HIDWORD(v90), 6 * v60); /*0x5b2695*/
-  v62 = (double *)Coord::Subtract( /*0x5b26b9*/
-                    (Coord *)v87,
+  v61 = ((Coord *)&v88.field_4)->Subtract( 6 * (unsigned int)v58, 6 * HIDWORD(v90), 6 * v60); /*0x5b2695*/
+  v62 = (double *)(/*0x5b26b9*/
+                    (Coord *)v87)->Subtract(
                     *(unsigned int *)a2->__pad_0 + *v61,
                     a2->u32_4 + v61->q004,
                     a2->u32_8 + v61->q008);

@@ -20873,8 +20873,8 @@ LABEL_111:
               if ( !result ) /*0x48220f*/
                 goto LABEL_221; /*0x48220f*/
               *(unsigned int *)&v122.u32_14 = this->u32_24; /*0x48221a*/
-              Coord::Subtract( /*0x48223f*/
-                &v122,
+              ((Coord *)/*0x48223f*/
+                &v122)->Subtract(
                 (*(__int16 *)&v122.u32_14 << 8) + 128,
                 (*(__int16 *)&v122.q016 << 8) + 128,
                 0);
@@ -20891,8 +20891,8 @@ LABEL_111:
                 if ( (unsigned char)result ) /*0x4822a9*/
                 {
                   *(unsigned int *)&v122.u32_14 = this->u32_24; /*0x4822b7*/
-                  Coord::Subtract( /*0x4822d4*/
-                    &v122,
+                  ((Coord *)/*0x4822d4*/
+                    &v122)->Subtract(
                     (*(__int16 *)&v122.u32_14 << 8) + 128,
                     (*(__int16 *)&v122.q016 << 8) + 128,
                     0);
@@ -20972,8 +20972,8 @@ LABEL_121:
               if ( (unsigned char)result ) /*0x4824e9*/
               {
                 *(unsigned int *)&v122.u32_14 = this->u32_24; /*0x4824f7*/
-                Coord::Subtract( /*0x482515*/
-                  &v122,
+                ((Coord *)/*0x482515*/
+                  &v122)->Subtract(
                   (*(__int16 *)&v122.u32_14 << 8) + 128,
                   (*(__int16 *)&v122.q016 << 8) + 128,
                   0);
@@ -21173,8 +21173,8 @@ LABEL_121:
               Debug::Log(); /*0x481fac*/
               ((LayerClass *)&dword_87F7E8)->Reveal(*(unsigned int *)(p0 + 540)); /*0x481fc3*/
               *(unsigned int *)&v122.u32_14 = this->u32_24; /*0x481fd0*/
-              Coord::Subtract( /*0x481fee*/
-                &v122,
+              ((Coord *)/*0x481fee*/
+                &v122)->Subtract(
                 (*(__int16 *)&v122.u32_14 << 8) + 128,
                 (*(__int16 *)&v122.q016 << 8) + 128,
                 0);

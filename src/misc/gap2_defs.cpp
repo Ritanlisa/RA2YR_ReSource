@@ -934,8 +934,7 @@ int (int a1)->MainFootClass(char a2) {  // g57b5 W4: raw 真值补参 (a2)
   v40 = this->m_State;  /*0x51547b*/
   if ( !*(unsigned char *)(v40 + 144) || *(unsigned char *)(v40 + 129) || *(unsigned char *)(v40 + 141) )
     return 7;  /*0x51549a*/  /*0x5158ff*/
-  v41 = Coord::Subtract(
-          (Coord *)&v108,
+  v41 = ((Coord *)&v108)->Subtract(
           dword_89F6D8[2 * v34] + *(unsigned int *)(v40 + 156),
           *(unsigned int *)(v40 + 160) + dword_89F6DC[2 * v34],
           *(unsigned int *)(v40 + 164));  /*0x5154d0*/
@@ -1175,8 +1174,7 @@ LABEL_97:
       if ( !a1 )
       {  /*0x515583*/  /*0x515752*/
         v56 = (unsigned int *)(*(int (**)(int, char *))(*(unsigned int *)this->m_State + 72))(this->m_State, v111);  /*0x515827*/
-        v57 = Coord::Subtract(
-                (Coord *)&v112,
+        v57 = ((Coord *)&v112)->Subtract(
                 *v56 - this->MovementAI_field_18,
                 v56[1] - this->field_1C,
                 v56[2] - this->field_20);  /*0x515848*/
@@ -1573,8 +1571,8 @@ LABEL_19:
     if ( (unsigned __int8)FootClass::ClearSomeVector2((FootClass *)this->m_State) ) /*0x5166ea*/
       goto LABEL_28; /*0x5166ea*/
     v20 = (unsigned int *)(*(int (**)(int, int *))(*(unsigned int *)this->m_State + 72))(this->m_State, &v65); /*0x516701*/
-    v21 = Coord::Subtract( /*0x516721*/
-            (Coord *)v68,
+    v21 = (/*0x516721*/
+            (Coord *)v68)->Subtract(
             *v20 - *p_MovementAI_field_18,
             v20[1] - this->q01C,
             v20[2] - this->u32_20);

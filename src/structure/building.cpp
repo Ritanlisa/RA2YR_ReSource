@@ -8445,7 +8445,7 @@ bool BuildingClass::CheckMissionAttack()
                         (float *)g_TacticalClass_Instance)->TransformCell(
                         v111,
                         (int *)&v1->Type->qF70[v4 + 12]);
-                v44 = Coord::Subtract((Coord *)v112, *v43 + v94, v95 + v43[1], v96 + v43[2]); /*0x43f761*/
+                v44 = ((Coord *)v112)->Subtract( *v43 + v94, v95 + v43[1], v96 + v43[2]); /*0x43f761*/
                 v105[0] = *v44; /*0x43f768*/
                 v105[1] = v44[1]; /*0x43f76f*/
                 v45 = v44[2]; /*0x43f777*/

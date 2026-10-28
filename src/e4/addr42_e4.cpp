@@ -775,7 +775,7 @@ int ObjectClass::ConstructionPositionTracker(TechnoClass *self)
     v54 = *v4; /*0x4256fc*/
     v47 = v7 - this->animation[5]; /*0x425708*/
     v56 = this->animation[6]; /*0x425709*/
-    v8 = Coord::Subtract((Coord *)&v51, v6 - v54, v47, 0); /*0x425718*/
+    v8 = ((Coord *)&v51)->Subtract( v6 - v54, v47, 0); /*0x425718*/
     v54 = *v8; /*0x42571f*/
     v55 = v8->q004; /*0x42572a*/
     v56 = v8->q008; /*0x425731*/

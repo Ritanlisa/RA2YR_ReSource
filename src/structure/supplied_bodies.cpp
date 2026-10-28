@@ -5019,7 +5019,7 @@ namespace gamemd {
             v16 = (unsigned int *)*((unsigned int *)Block + v15); /*0x442523*/
             v17 = (unsigned int *)(*(int (__thiscall **)(unsigned int *, char *))(*v16 + 72))(v16, v85); /*0x442537*/
             v18 = (unsigned int *)bug->GetExitCoords(v86); /*0x442543*/
-            v19 = Coord::Subtract((Coord *)v83, *v18 - *v17, v18[1] - v17[1], v18[2] - v17[2]); /*0x442564*/
+            v19 = ((Coord *)v83)->Subtract( *v18 - *v17, v18[1] - v17[1], v18[2] - v17[2]); /*0x442564*/
             v75 = *v19; /*0x44256b*/
             v76 = v19->u32_4; /*0x442576*/
             GroundHeight = v19->u32_8; /*0x44257d*/
@@ -5409,7 +5409,7 @@ namespace gamemd {
             v16 = (unsigned int *)*((unsigned int *)Block + v15); /*0x442523*/
             v17 = (unsigned int *)(*(int (__thiscall **)(unsigned int *, char *))(*v16 + 72))(v16, v85); /*0x442537*/
             v18 = (unsigned int *)bug->GetExitCoords(v86); /*0x442543*/
-            v19 = Coord::Subtract((Coord *)v83, *v18 - *v17, v18[1] - v17[1], v18[2] - v17[2]); /*0x442564*/
+            v19 = ((Coord *)v83)->Subtract( *v18 - *v17, v18[1] - v17[1], v18[2] - v17[2]); /*0x442564*/
             v75 = *v19; /*0x44256b*/
             v76 = v19[1]; /*0x442576*/
             GroundHeight = v19[2]; /*0x44257d*/
@@ -12755,8 +12755,8 @@ namespace gamemd {
     if ( v4[682] ) /*0x47fe35*/
       (*((unsigned char *)&(v20[0]))) = 0; /*0x47fe3f*/
     v7 = (*((unsigned char *)&(v20[0]))) + v5[3] / 2; /*0x47fe67*/
-    Coord::Subtract( /*0x47fe9d*/
-      (Coord *)v20,
+    (/*0x47fe9d*/
+      (Coord *)v20)->Subtract(
       ((((this->occupant) << 8) + 128) / 256) << 8,
       ((((*((signed short *)(this->occupant + 2))) << 8) + 128) / 256) << 8,
       0);
@@ -16956,55 +16956,55 @@ namespace gamemd {
         v12 = -v9; /*0x6f6198*/
         v13 = v10[1]; /*0x6f619a*/
         v14 = v10[2]; /*0x6f61a3*/
-        Coord::Subtract((Coord *)&v30, -v27, v12, v29); /*0x6f61b1*/
-        v15 = Coord::Subtract((Coord *)v42, v11 + v30, v13 + v31, v14 + v32); /*0x6f61d1*/
+        ((Coord *)&v30)->Subtract( -v27, v12, v29); /*0x6f61b1*/
+        v15 = ((Coord *)v42)->Subtract( v11 + v30, v13 + v31, v14 + v32); /*0x6f61d1*/
         v36 = *v15; /*0x6f61da*/
         v37 = v15->u32_4; /*0x6f61e2*/
         v38 = v15->u32_8; /*0x6f61f2*/
-        Coord::Subtract((Coord *)&v33, -v27, v12, 0); /*0x6f61f6*/
-        v16 = Coord::Subtract((Coord *)v42, v11 + v33, v13 + v34, v14 + v35); /*0x6f6216*/
+        ((Coord *)&v33)->Subtract( -v27, v12, 0); /*0x6f61f6*/
+        v16 = ((Coord *)v42)->Subtract( v11 + v33, v13 + v34, v14 + v35); /*0x6f6216*/
         v39 = *v16; /*0x6f621d*/
         v40 = v16->u32_4; /*0x6f6229*/
         v41 = v16->u32_8; /*0x6f6238*/
         DrawTacticalLine3D(&v39, &v36, v26); /*0x6f623c*/
-        Coord::Subtract((Coord *)&v39, v27, v12, 0); /*0x6f624d*/
-        v17 = Coord::Subtract((Coord *)v42, v11 + v39, v13 + v40, v14 + v41); /*0x6f626d*/
+        ((Coord *)&v39)->Subtract( v27, v12, 0); /*0x6f624d*/
+        v17 = ((Coord *)v42)->Subtract( v11 + v39, v13 + v40, v14 + v41); /*0x6f626d*/
         v33 = *v17; /*0x6f6274*/
         v34 = v17->u32_4; /*0x6f627b*/
         v35 = v17->u32_8; /*0x6f628e*/
-        Coord::Subtract((Coord *)&v36, -v27, v12, 0); /*0x6f6292*/
-        v18 = Coord::Subtract((Coord *)v42, v11 + v36, v13 + v37, v14 + v38); /*0x6f62b2*/
+        ((Coord *)&v36)->Subtract( -v27, v12, 0); /*0x6f6292*/
+        v18 = ((Coord *)v42)->Subtract( v11 + v36, v13 + v37, v14 + v38); /*0x6f62b2*/
         v30 = *v18; /*0x6f62b9*/
         v31 = v18->u32_4; /*0x6f62c5*/
         v32 = v18->u32_8; /*0x6f62d4*/
         DrawTacticalLine3D(&v30, &v33, v26); /*0x6f62d8*/
-        Coord::Subtract((Coord *)&v39, -v27, v28, 0); /*0x6f62ed*/
-        v19 = Coord::Subtract((Coord *)v42, v11 + v39, v13 + v40, v14 + v41); /*0x6f630d*/
+        ((Coord *)&v39)->Subtract( -v27, v28, 0); /*0x6f62ed*/
+        v19 = ((Coord *)v42)->Subtract( v11 + v39, v13 + v40, v14 + v41); /*0x6f630d*/
         v33 = *v19; /*0x6f6316*/
         v34 = v19->u32_4; /*0x6f6322*/
         v35 = v19->u32_8; /*0x6f632e*/
-        Coord::Subtract((Coord *)&v36, -v27, v12, 0); /*0x6f6332*/
-        v20 = Coord::Subtract((Coord *)v42, v11 + v36, v13 + v37, v14 + v38); /*0x6f6352*/
+        ((Coord *)&v36)->Subtract( -v27, v12, 0); /*0x6f6332*/
+        v20 = ((Coord *)v42)->Subtract( v11 + v36, v13 + v37, v14 + v38); /*0x6f6352*/
         v30 = *v20; /*0x6f6359*/
         v31 = v20->u32_4; /*0x6f6364*/
         v32 = v20->u32_8; /*0x6f636b*/
         DrawTacticalLine3D(&v30, &v33, v26); /*0x6f6378*/
-        v21 = Coord::Subtract((Coord *)v42, v11 - v27, v13 + v28, v14 + v29); /*0x6f6398*/
+        v21 = ((Coord *)v42)->Subtract( v11 - v27, v13 + v28, v14 + v29); /*0x6f6398*/
         v36 = *v21; /*0x6f639f*/
         v37 = v21->u32_4; /*0x6f63ab*/
         v38 = v21->u32_8; /*0x6f63bc*/
-        Coord::Subtract((Coord *)&v39, -v27, v12, v29); /*0x6f63c0*/
-        v22 = Coord::Subtract((Coord *)v42, v11 + v39, v13 + v40, v14 + v41); /*0x6f63e0*/
+        ((Coord *)&v39)->Subtract( -v27, v12, v29); /*0x6f63c0*/
+        v22 = ((Coord *)v42)->Subtract( v11 + v39, v13 + v40, v14 + v41); /*0x6f63e0*/
         v33 = *v22; /*0x6f63e7*/
         v34 = v22->u32_4; /*0x6f63ee*/
         v35 = v22->u32_8; /*0x6f63fd*/
         DrawTacticalLine3D(&v33, &v36, v26); /*0x6f6406*/
-        v23 = Coord::Subtract((Coord *)v42, v11 + v27, v13 + v12, v14 + v29); /*0x6f6423*/
+        v23 = ((Coord *)v42)->Subtract( v11 + v27, v13 + v12, v14 + v29); /*0x6f6423*/
         v36 = *v23; /*0x6f642a*/
         v37 = v23->u32_4; /*0x6f6431*/
         v38 = v23->u32_8; /*0x6f6447*/
-        Coord::Subtract((Coord *)&v39, -v27, v12, v29); /*0x6f644b*/
-        v24 = Coord::Subtract((Coord *)v42, v11 + v39, v40 + v13, v41 + v14); /*0x6f6469*/
+        ((Coord *)&v39)->Subtract( -v27, v12, v29); /*0x6f644b*/
+        v24 = ((Coord *)v42)->Subtract( v11 + v39, v40 + v13, v41 + v14); /*0x6f6469*/
         v33 = *v24; /*0x6f6470*/
         v34 = v24->u32_4; /*0x6f6477*/
         v35 = v24->u32_8; /*0x6f6486*/

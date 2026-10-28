@@ -2196,7 +2196,7 @@ int InfantryClass::CalcMoveTarget()
       v74[1] = (int)v39; /*0x51b70a*/
       Math::ArcTan2(v73); /*0x51b70e*/
       LOWORD(v40) = Math::RoundToInt(v1 * (double)v65 + (double)v83); /*0x51b71e*/
-      Coord::Subtract((Coord *)&v80, (int)v40, v74[1], v38); /*0x51b72e*/
+      ((Coord *)&v80)->Subtract( (int)v40, v74[1], v38); /*0x51b72e*/
       v42 = v37 & 0x80000001; /*0x51b73f*/
       v41 = v42 == 0; /*0x51b73f*/
       v77 = v80; /*0x51b745*/
@@ -2221,8 +2221,8 @@ int InfantryClass::CalcMoveTarget()
     if ( v72 != -1 ) /*0x51b4c3*/
     {
       v17 = v6[this->unknownBool685[0] + 12]; /*0x51b4d3*/
-      v18 = Coord::Subtract( /*0x51b4ff*/
-              (Coord *)&v83,
+      v18 = (/*0x51b4ff*/
+              (Coord *)&v83)->Subtract(
               *unknownCoords568 + dword_89F6D8[2 * (v17 & 7)],
               this->unknownCoords568[1] + dword_89F6DC[2 * (v17 & 7)],
               this->unknownCoords568[2]);
@@ -2256,7 +2256,7 @@ int InfantryClass::CalcMoveTarget()
       LODWORD(v68) = v30; /*0x51b609*/
       Math::ArcTan2(v64); /*0x51b60d*/
       LOWORD(v31) = Math::RoundToInt(v1 * v66 + (double)v83); /*0x51b61d*/
-      Coord::Subtract((Coord *)&v77, (int)v31, SLODWORD(v68), v29); /*0x51b62d*/
+      ((Coord *)&v77)->Subtract( (int)v31, SLODWORD(v68), v29); /*0x51b62d*/
       v80 = v77; /*0x51b63e*/
       v81 = v78; /*0x51b646*/
       v82 = (unsigned __int16 *)v79; /*0x51b650*/

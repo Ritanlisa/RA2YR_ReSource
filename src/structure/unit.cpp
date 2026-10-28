@@ -2675,7 +2675,7 @@ int UnitClass::CalcMoveTarget()
       LODWORD(v73[0]) = v41; /*0x735da8*/
       Math::ArcTan2(COERCE_DOUBLE((((v40 & 0xFFFFFFFFull)) << 32 | (LODWORD(v74) & 0xFFFFFFFFull)))); /*0x735dac*/
       LOWORD(v42) = Math::RoundToInt(v9 * (double)(int)v65 + (double)v79); /*0x735dbc*/
-      Coord::Subtract((Coord *)&v78, (int)v42, SLODWORD(v73[0]), v39); /*0x735dcc*/
+      ((Coord *)&v78)->Subtract( (int)v42, SLODWORD(v73[0]), v39); /*0x735dcc*/
       v44 = v38 & 0x80000001; /*0x735ddd*/
       v43 = v44 == 0; /*0x735ddd*/
       v75 = *(unsigned int *)v78.__pad_0; /*0x735de3*/
@@ -2701,8 +2701,8 @@ int UnitClass::CalcMoveTarget()
     (*(void (**)(UnitClass *, int *, double))(ptr_0 + 436))(this, this->unknownCoords568, v9); /*0x735b58*/
     if ( v18 != -1 ) /*0x735b64*/
     {
-      v19 = Coord::Subtract( /*0x735b92*/
-              (Coord *)&v79,
+      v19 = (/*0x735b92*/
+              (Coord *)&v79)->Subtract(
               dword_89F6D8[2 * (v18 & 7)] + *unknownCoords568,
               this->unknownCoords568[1] + dword_89F6DC[2 * (v18 & 7)],
               this->unknownCoords568[2]);
@@ -2734,7 +2734,7 @@ int UnitClass::CalcMoveTarget()
       v72 = v31; /*0x735ca7*/
       Math::ArcTan2(COERCE_DOUBLE((((v30 & 0xFFFFFFFFull)) << 32 | (LODWORD(v74) & 0xFFFFFFFFull)))); /*0x735cab*/
       LOWORD(v32) = Math::RoundToInt(v9 * v66 + (double)v79); /*0x735cbb*/
-      Coord::Subtract((Coord *)&v75, (int)v32, (int)v72, v29); /*0x735ccb*/
+      ((Coord *)&v75)->Subtract( (int)v32, (int)v72, v29); /*0x735ccb*/
       v34 = v18 & 0x80000001; /*0x735cdc*/
       v33 = v34 == 0; /*0x735cdc*/
       *(unsigned int *)v78.__pad_0 = v75; /*0x735ce2*/

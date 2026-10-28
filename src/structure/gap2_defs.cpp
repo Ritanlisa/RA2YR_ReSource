@@ -584,7 +584,7 @@ int BuildingLightClass::Draw_Start(int a1, int a2) {
                   ptr_0 = this->ptr_0; /*0x435e3c*/
                   v77 = v27; /*0x435e3e*/
                   v29 = (unsigned int *)(*(int (**)(BuildingLightClass *, double *))(ptr_0 + 72))(this, &v90); /*0x435e42*/
-                  v30 = Coord::Subtract((Coord *)v93, *v29 - v75, v29[1] - v76, v29[2] - v27); /*0x435e65*/
+                  v30 = ((Coord *)v93)->Subtract( *v29 - v75, v29[1] - v76, v29[2] - v27); /*0x435e65*/
                   v71 = *v30; /*0x435e6c*/
                   v72 = v30->q004; /*0x435e77*/
                   v73 = v30->q008; /*0x435e7e*/
@@ -1049,7 +1049,7 @@ LABEL_31:
                               this->FollowingObject,
                               v94);
             v51 = (unsigned int *)(*(int (**)(BuildingLightClass *, float *))(this->ptr_0 + 72))(this, v96); /*0x4366b9*/
-            v52 = Coord::Subtract((Coord *)v95, *v51 - *v50, v51[1] - v50[1], v51[2] - v50[2]); /*0x4366dc*/
+            v52 = ((Coord *)v95)->Subtract( *v51 - *v50, v51[1] - v50[1], v51[2] - v50[2]); /*0x4366dc*/
             v80 = *v52; /*0x4366e6*/
             v81 = v52->q004; /*0x4366ed*/
             v82 = v52->q008; /*0x4366f8*/
@@ -2954,7 +2954,7 @@ int SuperWeapon::EvaluateAITarget(int v5, void* a2) {
             v8 = v10[2]; /*0x4fafc2*/
           }
           v11 = (unsigned int *)(*(int (**)(__int16 *, char *))(*(unsigned int *)a2 + 72))(a2, v18); /*0x4fafd0*/
-          v12 = Coord::Subtract(v19, v6 - *v11, v7 - v11[1], v8 - v11[2]); /*0x4fafe8*/
+          v12 = ((Coord *)v19)->Subtract( v6 - *v11, v7 - v11[1], v8 - v11[2]); /*0x4fafe8*/
           v16[0] = *v12; /*0x4fafef*/
           v16[1] = v12->q004; /*0x4faffa*/
           v16[2] = v12->q008; /*0x4fb001*/

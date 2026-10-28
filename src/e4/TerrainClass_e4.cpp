@@ -891,7 +891,7 @@ LABEL_60:
       return result; /*0x6ddb56*/
     case 0x5E:
       v11 = ScenarioClass::Get_Waypoint_Location((char *)dword_A8B230, v120.__pad_C, a1->u32_44); /*0x6dd922*/
-      Coord::Subtract((Coord *)&v120.u32_10, ((__int16)*v11 << 8) + 128, ((__int16)(((*v11) >> 16) & 0xFFFF) << 8) + 128, 0); /*0x6dd94e*/
+      ((Coord *)&v120.u32_10)->Subtract( ((__int16)*v11 << 8) + 128, ((__int16)(((*v11) >> 16) & 0xFFFF) << 8) + 128, 0); /*0x6dd94e*/
       *(unsigned int *)v120.__pad_0 = *(unsigned int *)&v120.u32_10; /*0x6dd95f*/
       *(unsigned int *)&v120.q004 = *(unsigned int *)&v120.u32_14; /*0x6dd967*/
       v120.u32_8 = *(unsigned int *)&v120.q018; /*0x6dd971*/
@@ -950,7 +950,7 @@ LABEL_60:
       return result; /*0x6de8e1*/
     case 0x66:
       *(unsigned int *)v119 = *ScenarioClass::Get_Waypoint_Location((char *)dword_A8B230, v120.__pad_C, a1->u32_44); /*0x6dda03*/
-      Coord::Subtract((Coord *)&v120.u32_10, (v119[0] << 8) + 128, (v119[1] << 8) + 128, 0); /*0x6dda27*/
+      ((Coord *)&v120.u32_10)->Subtract( (v119[0] << 8) + 128, (v119[1] << 8) + 128, 0); /*0x6dda27*/
       *(unsigned int *)v120.__pad_0 = *(unsigned int *)&v120.u32_10; /*0x6dda38*/
       *(unsigned int *)&v120.q004 = *(unsigned int *)&v120.u32_14; /*0x6dda40*/
       v120.u32_8 = *(unsigned int *)&v120.q018; /*0x6dda4a*/

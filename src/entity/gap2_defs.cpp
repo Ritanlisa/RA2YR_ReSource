@@ -226,7 +226,7 @@ void* BulletClass::FlightUpdate(int a1, int a2) {
       {
         v24 = (unsigned int *)(*(int (**)(Class_7E22A4 *, unsigned char *))(*&this->q_120))(this, v67); /*0x4160dd*/
         v25 = (unsigned int *)(*(int (**)(int, double *))(*(unsigned int *)v6 + 72))(v6, &v70); /*0x4160e6*/
-        v26 = Coord::Subtract((Coord *)&v71[1], *v25 - *v24, v25[1] - v24[1], v25[2] - v24[2]); /*0x416106*/
+        v26 = ((Coord *)&v71[1])->Subtract( *v25 - *v24, v25[1] - v24[1], v25[2] - v24[2]); /*0x416106*/
         LODWORD(v68) = *v26; /*0x41610d*/
         v27 = v26->q004; /*0x416111*/
         __asm { fild [esp+78h+var_54+4] } /*0x416114*/
@@ -372,9 +372,9 @@ void* BulletClass::FlightUpdate(int a1, int a2) {
         v69 = this->q0A4; /*0x41634f*/
         if ( (unsigned __int8)Cell::IsPassable(&v68) ) /*0x416358*/
           goto LABEL_21; /*0x416358*/
-        Coord::Subtract((Coord *)&v68, 512, 512, 0); /*0x416375*/
-        v47 = Coord::Subtract( /*0x41639d*/
-                (Coord *)&v71[1],
+        ((Coord *)&v68)->Subtract( 512, 512, 0); /*0x416375*/
+        v47 = (/*0x41639d*/
+                (Coord *)&v71[1])->Subtract(
                 *(unsigned int *)v46 + LODWORD(v68),
                 this->q0A0 + HIDWORD(v68),
                 this->q0A4 + v69);
@@ -382,9 +382,9 @@ void* BulletClass::FlightUpdate(int a1, int a2) {
         *(unsigned long long *)&v67[4] = *(unsigned long long *)(v47 + 1); /*0x4163ab*/
         if ( (unsigned __int8)Cell::IsPassable(v67) ) /*0x4163c0*/
           goto LABEL_21; /*0x4163c0*/
-        Coord::Subtract((Coord *)&v68, -512, -512, 0); /*0x4163dd*/
-        v48 = Coord::Subtract( /*0x416405*/
-                (Coord *)&v71[1],
+        ((Coord *)&v68)->Subtract( -512, -512, 0); /*0x4163dd*/
+        v48 = (/*0x416405*/
+                (Coord *)&v71[1])->Subtract(
                 *(unsigned int *)v46 + LODWORD(v68),
                 this->q0A0 + HIDWORD(v68),
                 this->q0A4 + v69);
@@ -392,18 +392,17 @@ void* BulletClass::FlightUpdate(int a1, int a2) {
         *(unsigned long long *)&v67[4] = *(unsigned long long *)(v48 + 1); /*0x416413*/
         if ( (unsigned __int8)Cell::IsPassable(v67) ) /*0x416428*/
           goto LABEL_21; /*0x416428*/
-        Coord::Subtract((Coord *)&v68, 512, -512, 0); /*0x416445*/
-        v49 = Coord::Subtract( /*0x41646d*/
-                (Coord *)&v71[1],
+        ((Coord *)&v68)->Subtract( 512, -512, 0); /*0x416445*/
+        v49 = (/*0x41646d*/
+                (Coord *)&v71[1])->Subtract(
                 *(unsigned int *)v46 + LODWORD(v68),
                 this->q0A0 + HIDWORD(v68),
                 this->q0A4 + v69);
         *(unsigned int *)v67 = *v49; /*0x416474*/
         *(unsigned long long *)&v67[4] = *(unsigned long long *)(v49 + 1); /*0x41647b*/
         if ( (unsigned __int8)Cell::IsPassable(v67) /*0x416514*/
-          || (Coord::Subtract((Coord *)&v68, 512, -512, 0),
-              v50 = Coord::Subtract(
-                      (Coord *)&v71[1],
+          || (((Coord *)&v68)->Subtract( 512, -512, 0),
+              v50 = ((Coord *)&v71[1])->Subtract(
                       *(unsigned int *)v46 + LODWORD(v68),
                       this->q0A0 + HIDWORD(v68),
                       this->q0A4 + v69),
@@ -1541,7 +1540,7 @@ int BulletClass::Fire(int a1) {
     if ( v9 ) /*0x468ddd*/
     {
       v10 = (unsigned int *)v9->GetInvalidCoord(v33); /*0x468dea*/
-      v11 = Coord::Subtract((Coord *)v34, v27 - *v10, v28 - v10[1], v29 - v10[2]); /*0x468e0e*/
+      v11 = ((Coord *)v34)->Subtract( v27 - *v10, v28 - v10[1], v29 - v10[2]); /*0x468e0e*/
       v30 = *v11; /*0x468e18*/
       v31 = v11->u32_4; /*0x468e1f*/
       v32 = v11->u32_8; /*0x468e2a*/

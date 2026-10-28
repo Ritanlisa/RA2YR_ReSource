@@ -4652,7 +4652,7 @@ int ObjectClass::RenderAlphaShapes()
             v6 = ((v23->u32_26) << 8) + 128; /*0x4c556a*/
             v7 = ((short)((v23->occupant) >> 16) << 8) + 128; /*0x4c5570*/
             v8 = (unsigned int *)(*(int (**)(int, unsigned char *))(v5->q048)(v5, v38); /*0x4c5576*/
-            v9 = Coord::Subtract((Coord *)v39, *v8 - v6, v8[1] - v7, v8[2]); /*0x4c558c*/
+            v9 = ((Coord *)v39)->Subtract( *v8 - v6, v8[1] - v7, v8[2]); /*0x4c558c*/
             v35 = *v9; /*0x4c5593*/
             v36 = v9->u32_4; /*0x4c559e*/
             v37 = v9->u32_8; /*0x4c55a5*/
@@ -9179,8 +9179,8 @@ bool ObjectClass::RenderProjectileTrail() {
   if ( !LOBYTE(this->ptr_8) ) /*0x65965f*/
   {
     LOBYTE(this->ptr_8) = 1; /*0x659666*/
-    v4 = Coord::Subtract( /*0x65968c*/
-           (Coord *)&v38,
+    v4 = (/*0x65968c*/
+           (Coord *)&v38)->Subtract(
            this->nextObject - this->occupant,
            this->attachedTag - this->owningHouseIndex,
            this->attachedBomb - this->fallRate);
@@ -9215,8 +9215,8 @@ bool ObjectClass::RenderProjectileTrail() {
       _ESI->attachedTag = v9; /*0x65971a*/
       _ESI->attachedBomb = v10; /*0x65971d*/
       owningHouseIndex = _ESI->owningHouseIndex; /*0x659729*/
-      v11 = Coord::Subtract( /*0x659741*/
-              (Coord *)&v38,
+      v11 = (/*0x659741*/
+              (Coord *)&v38)->Subtract(
               _ESI->nextObject - _ESI->occupant,
               _ESI->attachedTag - owningHouseIndex,
               _ESI->attachedBomb - _ESI->fallRate);
@@ -9848,26 +9848,26 @@ char ObjectClass::PlayWaypointEffect(int a2, int a3, int a4, IUnknown * aP4) {
   v25 = WorldCoords[2]; /*0x6e04c7*/
   PlaySoundEffectAt(&v23, 100, 0, *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 4008), 1, 0); /*0x6e04dd*/
   v7 = Cell::GetWorldCoords((Cell *)dword_A8B230, &v20, *&this->isAliveFlag); /*0x6e04f4*/
-  v8 = Coord::Subtract((Coord *)v33, *v7 + 85, v7[1] + 85, v7[2]); /*0x6e0510*/
+  v8 = ((Coord *)v33)->Subtract( *v7 + 85, v7[1] + 85, v7[2]); /*0x6e0510*/
   v23 = *v8; /*0x6e0519*/
   v24 = v8->u32_4; /*0x6e0528*/
   v25 = v8->u32_8; /*0x6e052f*/
   PlaySoundEffectAt(&v23, 100, 0, *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 4008), 1, 0); /*0x6e0545*/
   v9 = Cell::GetWorldCoords((Cell *)dword_A8B230, v33, *&this->isAliveFlag); /*0x6e055c*/
-  v10 = Coord::Subtract((Coord *)&v20, *v9 - 85, v9[1] + 85, v9[2]); /*0x6e0578*/
+  v10 = ((Coord *)&v20)->Subtract( *v9 - 85, v9[1] + 85, v9[2]); /*0x6e0578*/
   v23 = *v10; /*0x6e0581*/
   v24 = v10->u32_4; /*0x6e058a*/
   v25 = v10->u32_8; /*0x6e0591*/
   PlaySoundEffectAt(&v23, 100, 0, *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 4008), 1, 0); /*0x6e05ad*/
-  Coord::Subtract((Coord *)&v23, 85, -85, 0); /*0x6e05bc*/
+  ((Coord *)&v23)->Subtract( 85, -85, 0); /*0x6e05bc*/
   v11 = Cell::GetWorldCoords((Cell *)dword_A8B230, v33, *&this->isAliveFlag); /*0x6e05d3*/
-  v12 = Coord::Subtract((Coord *)v33, *v11 + v23, v11[1] + v24, v11[2] + v25); /*0x6e05fb*/
+  v12 = ((Coord *)v33)->Subtract( *v11 + v23, v11[1] + v24, v11[2] + v25); /*0x6e05fb*/
   v20 = *v12; /*0x6e0604*/
   v21 = v12->u32_4; /*0x6e060d*/
   v22 = v12->u32_8; /*0x6e0619*/
   PlaySoundEffectAt(&v20, 100, 0, *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 4008), 1, 0); /*0x6e062f*/
   v13 = Cell::GetWorldCoords((Cell *)dword_A8B230, v33, *&this->isAliveFlag); /*0x6e0646*/
-  v14 = Coord::Subtract((Coord *)v33, *v13 - 85, v13[1] - 85, v13[2]); /*0x6e0662*/
+  v14 = ((Coord *)v33)->Subtract( *v13 - 85, v13[1] - 85, v13[2]); /*0x6e0662*/
   v23 = *v14; /*0x6e066b*/
   v24 = v14->u32_4; /*0x6e067a*/
   v25 = v14->u32_8; /*0x6e0681*/

@@ -578,7 +578,7 @@ int AircraftClass::Mission_Retreat()
         v37 = v7->waveEffect - v18; /*0x416811*/
         v36 = v7->location - v17; /*0x416812*/
         v47 = a2; /*0x416817*/
-        v19 = Coord::Subtract((Coord *)v50, v36, v37, 0); /*0x41681b*/
+        v19 = ((Coord *)v50)->Subtract( v36, v37, 0); /*0x41681b*/
         v46[0] = *v19; /*0x416822*/
         v46[1] = v19->u32_4; /*0x416829*/
         v47 = v19->u32_8; /*0x416834*/

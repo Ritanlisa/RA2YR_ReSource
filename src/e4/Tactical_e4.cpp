@@ -742,8 +742,8 @@ void* Tactical_Radar_Render(void * a1, void * a2, void * a3, void * a4, void * a
         v56 = (unsigned int *)*v13; /*0x640aa7*/
         v14 = (SHIWORD(v56) << 8) + 128; /*0x640ab9*/
         v15 = ((__int16)v56 << 8) + 128; /*0x640ac3*/
-        Coord::Subtract((Coord *)&v66, v15, v14, 0); /*0x640acb*/
-        Coord::Subtract((Coord *)&v71, v15, v14, 0); /*0x640ad8*/
+        ((Coord *)&v66)->Subtract( v15, v14, 0); /*0x640acb*/
+        ((Coord *)&v71)->Subtract( v15, v14, 0); /*0x640ad8*/
         IsoCoord::ToScreenOffset(v71, v67, &v55, &v59); /*0x640af7*/
         v16 = v59 / 30; /*0x640b2a*/
         if ( v55 / 60 < v10 ) /*0x640b2e*/
@@ -774,8 +774,8 @@ void* Tactical_Radar_Render(void * a1, void * a2, void * a3, void * a4, void * a
         v56 = (unsigned int *)*ScenarioClass::Get_Waypoint_Location((char *)dword_A8B230, &v65, v19); /*0x640bc8*/
         v20 = (SHIWORD(v56) << 8) + 128; /*0x640bde*/
         v21 = ((__int16)v56 << 8) + 128; /*0x640be4*/
-        Coord::Subtract((Coord *)&v71, v21, v20, 0); /*0x640bec*/
-        Coord::Subtract((Coord *)&v66, v21, v20, 0); /*0x640bf9*/
+        ((Coord *)&v71)->Subtract( v21, v20, 0); /*0x640bec*/
+        ((Coord *)&v66)->Subtract( v21, v20, 0); /*0x640bf9*/
         IsoCoord::ToScreenOffset(v66, v72, &v55, &FileSHP); /*0x640c18*/
         v76 = 4; /*0x640c61*/
         v75[1] = FileSHP / 30 - v58 - 1; /*0x640c65*/
@@ -856,7 +856,7 @@ void* Tactical_Radar_Render(void * a1, void * a2, void * a3, void * a4, void * a
           {
             v60 = *ScenarioClass::Get_Waypoint_Location((char *)dword_A8B230, &a5, v38); /*0x640eb0*/
             v41 = ((short)(((v60) >> 16) & 0xFFFF) << 8) + 128; /*0x640ec2*/
-            Coord::Subtract((Coord *)&v74, ((__int16)v60 << 8) + 128, v41, 0); /*0x640ed4*/
+            ((Coord *)&v74)->Subtract( ((__int16)v60 << 8) + 128, v41, 0); /*0x640ed4*/
             IsoCoord::ToScreenOffset(v74, v41, &v76, &v68); /*0x640eef*/
             v39 = (char *)dword_A8B230; /*0x640f32*/
             v42 = *(int *)((char *)&dword_A8B230->ptr_0 + v40); /*0x640f3a*/

@@ -600,7 +600,7 @@ LABEL_10:
   }
 LABEL_12:
   aP1 = *(unsigned __int16 **)(&this->u32_24); /*0x487aaa*/
-  Coord::Subtract((Coord *)v17, ((__int16)aP1 << 8) + 128, (SHIWORD(aP1) << 8) + 128, 0); /*0x487ad0*/
+  ((Coord *)v17)->Subtract( ((__int16)aP1 << 8) + 128, (SHIWORD(aP1) << 8) + 128, 0); /*0x487ad0*/
   v16[0] = 128; /*0x487adc*/
   v16[1] = 128; /*0x487ae0*/
   inited = Isometric::InitTables(this, v16); /*0x487ae9*/

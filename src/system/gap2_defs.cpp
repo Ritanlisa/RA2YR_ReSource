@@ -36326,8 +36326,8 @@ int TacticalClass::ClickFindBuilding(void* a1, void* a2, int a3) {
     visibleCells = this->visibleCells[0]; /*0x6d388f*/
     do /*0x6d3982*/
     {
-      Coord::Subtract( /*0x6d38df*/
-        (Coord *)v18,
+      (/*0x6d38df*/
+        (Coord *)v18)->Subtract(
         ((((int16_t)*(unsigned int *)(*visibleCells + 36) << 8) + 128) / 256) << 8,
         ((((int16_t)(*(((unsigned short *)&(*(unsigned int *)(*visibleCells + 36))) + 1)) << 8) + 128) / 256) << 8,
         0);
@@ -36429,8 +36429,8 @@ int TacticalClass::ClickFindOverlay(void* a1, void* a2, int a3) {
     visibleCells = this->visibleCells[0]; /*0x6d3adf*/
     do /*0x6d3bd2*/
     {
-      Coord::Subtract( /*0x6d3b2f*/
-        (Coord *)v18,
+      (/*0x6d3b2f*/
+        (Coord *)v18)->Subtract(
         ((((int16_t)*(unsigned int *)(*visibleCells + 36) << 8) + 128) / 256) << 8,
         ((((int16_t)(*(((unsigned short *)&(*(unsigned int *)(*visibleCells + 36))) + 1)) << 8) + 128) / 256) << 8,
         0);
@@ -36638,8 +36638,8 @@ int RadarClass::DrawBlips(int a1) {
       GroundHeight = 0; /*0x6d530a*/
       if ( v16 == 7 ) /*0x6d530e*/
       {
-        Coord::Subtract( /*0x6d5337*/
-          (Coord *)&v56,
+        (/*0x6d5337*/
+          (Coord *)&v56)->Subtract(
           ((((__int16)(dword_880960 + (unsigned short)v42 + dword_88095C) << 8) + 128) / 256) << 8,
           ((((__int16)(v8 + *(&dword_88095C + 1) + *(&dword_880960 + 1)) << 8) + 128) / 256) << 8,
           0);

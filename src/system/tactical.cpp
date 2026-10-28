@@ -1369,8 +1369,8 @@ void* TacticalClass::DrawBuildings(const RectangleStruct& viewRect)
               *&v6->u32_44 = *(unsigned int *)(v4 + 36); /*0x4d1a09*/
               powerup = powerup; /*0x4d1a0f*/
               v6->powerup = *(unsigned char *)(v4 + 44); /*0x4d1a13*/
-              Coord::Subtract( /*0x4d1a5b*/
-                (Coord *)v106,
+              (/*0x4d1a5b*/
+                (Coord *)v106)->Subtract(
                 ((((*((signed short *)&(v6->smudgeTypeIndex))) << 8) + 128) / 256) << 8,
                 ((((*((signed short *)(((unsigned char *)&(v6->smudgeTypeIndex)) + 2))) << 8) + 128) / 256) << 8,
                 0);

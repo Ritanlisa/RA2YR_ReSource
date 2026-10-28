@@ -451,7 +451,7 @@ void TacticalClass::InterpolateView()
         {
           unsigned int *v11; // eax
           int v30[3]; // [esp+3Ch] [ebp-Ch] BYREF
-          v11 = (unsigned int *)(Coord::Subtract((int)(/*0x4ae384*/ (Coord *)v30), v3 - *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&((unsigned int *)&stru_A8EB00)[216] + 4 * v10) + 156), v4 - *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&((unsigned int *)&stru_A8EB00)[216] + 4 * v10) + 160), v5 - *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&((unsigned int *)&stru_A8EB00)[216] + 4 * v10) + 164)));
+          v11 = (unsigned int *)(((Coord *)(int)(/*0x4ae384*/ (Coord *)v30))->Subtract( v3 - *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&((unsigned int *)&stru_A8EB00)[216] + 4 * v10) + 156), v4 - *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&((unsigned int *)&stru_A8EB00)[216] + 4 * v10) + 160), v5 - *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&((unsigned int *)&stru_A8EB00)[216] + 4 * v10) + 164)));
           v29[0] = *v11; /*0x4ae38b*/
           v29[1] = v11[1]; /*0x4ae396*/
           v29[2] = v11[2]; /*0x4ae39d*/
@@ -755,7 +755,7 @@ signed int TacticalClass::RenderIsometricOverlay(int *aP1, int *aP2, char a4)
     do /*0x6d2f79*/
     {
       unsigned int v19[3]; // [esp+18h] [ebp-4Ch] BYREF
-      Coord::Subtract((int)(/*0x6d2eaf*/         (Coord *)v19),         ((((__int16)*(unsigned int *)(*visibleCells + 36) << 8) + 128) / 256) << 8,         ((((__int16)HIWORD(*(unsigned int *)(*visibleCells + 36)) << 8) + 128) / 256) << 8,         0);
+      ((Coord *)(int)(/*0x6d2eaf*/         (Coord *)v19))->Subtract(         ((((__int16)*(unsigned int *)(*visibleCells + 36) << 8) + 128) / 256) << 8,         ((((__int16)HIWORD(*(unsigned int *)(*visibleCells + 36)) << 8) + 128) / 256) << 8,         0);
       v20 = v19[0]; /*0x6d2ec0*/
       v21 = v19[1]; /*0x6d2ec4*/
       v22 = v19[2]; /*0x6d2ed4*/
@@ -1066,7 +1066,7 @@ void* * TacticalClass::DrawBuildingsInView(AbstractClass * aP1)
               v58 = v21->u32_4; /*0x6d6f35*/
               if ( v21->u32_8 > 0 && v21->q00C > 0 ) /*0x6d6f4c*/
               {
-                Coord::Subtract((Coord *)v56, (((v32[0] << 8) + 128) / 256) << 8, (((v32[1] << 8) + 128) / 256) << 8, 0); /*0x6d6f98*/
+                ((Coord *)v56)->Subtract( (((v32[0] << 8) + 128) / 256) << 8, (((v32[1] << 8) + 128) / 256) << 8, 0); /*0x6d6f98*/
                 v44 = v56[0]; /*0x6d6fb2*/
                 v45 = v56[1]; /*0x6d6fb6*/
                 v46 = v56[2]; /*0x6d6fc6*/
