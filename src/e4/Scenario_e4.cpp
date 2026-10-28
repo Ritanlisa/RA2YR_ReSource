@@ -1537,21 +1537,21 @@ LABEL_64:
     SessionClass::CreateConnections((SessionClass *)&dword_A8B238); /*0x685cad*/
     if ( *(unsigned int *)&dword_A8B238 == 3 ) /*0x685cba*/
     {
-      if ( (unsigned int)(Network::GetLobbyStatus((Network *)&stru_A8E960.nextScenario[96]) + 2) >= 0xF ) /*0x685ccc*/
-        v25 = Network::GetLobbyStatus((Network *)&stru_A8E960.nextScenario[96]) + 2; /*0x685cdf*/
+      if ( (unsigned int)(((Network *)(Network *)&stru_A8E960.nextScenario[96])->GetLobbyStatus() + 2) >= 0xF ) /*0x685ccc*/
+        v25 = ((Network *)(Network *)&stru_A8E960.nextScenario[96])->GetLobbyStatus() + 2; /*0x685cdf*/
       else
         v25 = 15; /*0x685cce*/
       Network::SetConnectionParams((IPXManagerClass *)&stru_A8E960.nextScenario[96], v25, -1, 600, 1); /*0x685cf0*/
-      if ( (unsigned int)(Network::GetLobbyStatus((Network *)&stru_A8E960.nextScenario[96]) + 2) >= 0x3C ) /*0x685d05*/
-        v26 = Network::GetLobbyStatus((Network *)&stru_A8E960.nextScenario[96]) + 2; /*0x685d18*/
+      if ( (unsigned int)(((Network *)(Network *)&stru_A8E960.nextScenario[96])->GetLobbyStatus() + 2) >= 0x3C ) /*0x685d05*/
+        v26 = ((Network *)(Network *)&stru_A8E960.nextScenario[96])->GetLobbyStatus() + 2; /*0x685d18*/
       else
         v26 = 60; /*0x685d07*/
       TacticalClass::SetCameraPosition((IPXManagerClass *)&stru_A8E960.nextScenario[96], v26, -1, 600); /*0x685d27*/
     }
     else if ( *(unsigned int *)&dword_A8B238 == 4 && !dword_A8B570 ) /*0x685d3a*/
     {
-      if ( (unsigned int)(Network::GetLobbyStatus((Network *)&stru_A8E960.nextScenario[96]) + 2) >= 0x3C ) /*0x685d4c*/
-        v27 = Network::GetLobbyStatus((Network *)&stru_A8E960.nextScenario[96]) + 2; /*0x685d5f*/
+      if ( (unsigned int)(((Network *)(Network *)&stru_A8E960.nextScenario[96])->GetLobbyStatus() + 2) >= 0x3C ) /*0x685d4c*/
+        v27 = ((Network *)(Network *)&stru_A8E960.nextScenario[96])->GetLobbyStatus() + 2; /*0x685d5f*/
       else
         v27 = 60; /*0x685d4e*/
       Network::SetConnectionParams((IPXManagerClass *)&stru_A8E960.nextScenario[96], v27, -1, 600, 1); /*0x685d70*/
@@ -1775,21 +1775,21 @@ LABEL_65:
       SessionClass::CreateConnections((SessionClass *)&dword_A8B238); /*0x6862ce*/
       if ( *(unsigned int *)&dword_A8B238 == 3 ) /*0x6862db*/
       {
-        if ( (unsigned int)(Network::GetLobbyStatus((Network *)&stru_A8E960.nextScenario[96]) + 2) >= 0xF ) /*0x6862ed*/
-          v24 = Network::GetLobbyStatus((Network *)&stru_A8E960.nextScenario[96]) + 2; /*0x686300*/
+        if ( (unsigned int)(((Network *)(Network *)&stru_A8E960.nextScenario[96])->GetLobbyStatus() + 2) >= 0xF ) /*0x6862ed*/
+          v24 = ((Network *)(Network *)&stru_A8E960.nextScenario[96])->GetLobbyStatus() + 2; /*0x686300*/
         else
           v24 = 15; /*0x6862ef*/
         Network::SetConnectionParams((IPXManagerClass *)&stru_A8E960.nextScenario[96], v24, -1, 600, 1); /*0x686311*/
-        if ( (unsigned int)(Network::GetLobbyStatus((Network *)&stru_A8E960.nextScenario[96]) + 2) >= 0x3C ) /*0x686326*/
-          v25 = Network::GetLobbyStatus((Network *)&stru_A8E960.nextScenario[96]) + 2; /*0x686339*/
+        if ( (unsigned int)(((Network *)(Network *)&stru_A8E960.nextScenario[96])->GetLobbyStatus() + 2) >= 0x3C ) /*0x686326*/
+          v25 = ((Network *)(Network *)&stru_A8E960.nextScenario[96])->GetLobbyStatus() + 2; /*0x686339*/
         else
           v25 = 60; /*0x686328*/
         TacticalClass::SetCameraPosition((IPXManagerClass *)&stru_A8E960.nextScenario[96], v25, -1, 600); /*0x686348*/
       }
       else if ( *(unsigned int *)&dword_A8B238 == 4 && !dword_A8B570 ) /*0x68635a*/
       {
-        if ( (unsigned int)(Network::GetLobbyStatus((Network *)&stru_A8E960.nextScenario[96]) + 2) >= 0x3C ) /*0x68636c*/
-          v26 = Network::GetLobbyStatus((Network *)&stru_A8E960.nextScenario[96]) + 2; /*0x68637f*/
+        if ( (unsigned int)(((Network *)(Network *)&stru_A8E960.nextScenario[96])->GetLobbyStatus() + 2) >= 0x3C ) /*0x68636c*/
+          v26 = ((Network *)(Network *)&stru_A8E960.nextScenario[96])->GetLobbyStatus() + 2; /*0x68637f*/
         else
           v26 = 60; /*0x68636e*/
         Network::SetConnectionParams((IPXManagerClass *)&stru_A8E960.nextScenario[96], v26, -1, 600, 1); /*0x686390*/
