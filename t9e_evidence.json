@@ -1,10 +1,10 @@
 {
  "note": "T9e arithmetic typing rules (X142b) — evidence ledger",
- "total_fired": 2618,
+ "total_fired": 2621,
  "by_rule": {
-  "int-arith": 1757,
-  "ptr-plus": 806,
-  "call-arg": 42,
+  "int-arith": 1762,
+  "ptr-plus": 805,
+  "call-arg": 41,
   "const-store": 13
  },
  "firings": [
@@ -3005,13 +3005,6 @@
    "edge": "SCALE @ 0x49E7E3"
   },
   {
-   "root": 387146,
-   "var": "0x0049E7C0::esi_v0x49E7F6",
-   "rule": "ptr-plus",
-   "tier": 1,
-   "edge": "ADD reverse to=0x0049E7C0::ecx_v0x49E7F9 @ 0x49E7F9"
-  },
-  {
    "root": 387886,
    "var": "0x0049F550::edi_v0x49F56E",
    "rule": "int-arith",
@@ -5075,13 +5068,6 @@
    "rule": "int-arith",
    "tier": 4,
    "edge": "SUB int-operand from=0x0052D790::ebx_v0x52D7CC @ 0x52D7D2"
-  },
-  {
-   "root": 504441,
-   "var": "0x0052F620::esi_v0x52F7D6",
-   "rule": "call-arg",
-   "tier": 4,
-   "edge": "param0 of 0x007CA4B0 (cdecl) int @ 0x52F885"
   },
   {
    "root": 504652,
@@ -8990,6 +8976,13 @@
    "edge": "literal store → 0x005E00B0::stack_+0x20"
   },
   {
+   "root": 636686,
+   "var": "0x005E2820::ebx_v0x5E2917",
+   "rule": "int-arith",
+   "tier": 4,
+   "edge": "SUB int-operand from=0x005E2820::edi_v0x5E290A @ 0x5E2917"
+  },
+  {
    "root": 636712,
    "var": "0x005E2820::edx_v0x5E28DF",
    "rule": "int-arith",
@@ -9998,13 +9991,6 @@
    "edge": "ADD from=0x006340B0::esi_v0x6340B4 @ 0x634248"
   },
   {
-   "root": 692437,
-   "var": "0x00634470::esi_v0x6344D6",
-   "rule": "int-arith",
-   "tier": 4,
-   "edge": "ADD index operand of 0x00634470::ecx_v0x6344EB @ 0x6344EB"
-  },
-  {
    "root": 693112,
    "var": "0x00634E10::ebx_v0x634E9B",
    "rule": "ptr-plus",
@@ -10052,6 +10038,20 @@
    "rule": "int-arith",
    "tier": 4,
    "edge": "ADD int-operand from=0x00635A40::esi_v0x635A8E @ 0x635A9B"
+  },
+  {
+   "root": 694094,
+   "var": "0x00635DF0::edi_v0x635E56",
+   "rule": "int-arith",
+   "tier": 4,
+   "edge": "SUB int-operand from=0x00635DF0::eax_v0x635E4C @ 0x635E56"
+  },
+  {
+   "root": 694141,
+   "var": "0x00635E90::edi_v0x635EE7",
+   "rule": "int-arith",
+   "tier": 4,
+   "edge": "SUB int-operand from=0x00635E90::eax_v0x635EE1 @ 0x635EE7"
   },
   {
    "root": 694328,
@@ -10157,13 +10157,6 @@
    "rule": "ptr-plus",
    "tier": 1,
    "edge": "ADD from=0x0063F960::eax_v0x63F98D @ 0x63F995"
-  },
-  {
-   "root": 702874,
-   "var": "0x0063FB20::esi_v0x63FB80",
-   "rule": "int-arith",
-   "tier": 4,
-   "edge": "ADD int-operand from=0x0063FB20::ecx_v0x63FB72 @ 0x63FB80"
   },
   {
    "root": 702977,
@@ -17453,18 +17446,18 @@
    "edge": "SCALE @ 0x7BD603"
   },
   {
+   "root": 997680,
+   "var": "0x007BE830::eax_v0x7BE864",
+   "rule": "int-arith",
+   "tier": 4,
+   "edge": "ADD int-operand from=0x007BE830::edx_v0x7BE85D @ 0x7BE864"
+  },
+  {
    "root": 997707,
    "var": "0x007BE830::ecx_v0x7BE857",
    "rule": "int-arith",
    "tier": 4,
    "edge": "ADD index operand of 0x007BE830::edx_v0x7BE85D @ 0x7BE864"
-  },
-  {
-   "root": 997727,
-   "var": "0x007BE830::edx_v0x7BE8D9",
-   "rule": "int-arith",
-   "tier": 4,
-   "edge": "ADD index operand of 0x007BE830::ecx_v0x7BE8D3 @ 0x7BE8E0"
   },
   {
    "root": 1000393,
@@ -18090,6 +18083,34 @@
    "edge": "ADD from=0x007D4B92::edx_v0x7D4B92 @ 0x7D4BAC"
   },
   {
+   "root": 1016384,
+   "var": "0x007D4C00::edi_v0x7D4C4F",
+   "rule": "int-arith",
+   "tier": 4,
+   "edge": "SUB int-operand from=0x007D4C00::ecx_v0x7D4C2A @ 0x7D4C4F"
+  },
+  {
+   "root": 1016385,
+   "var": "0x007D4C00::edi_v0x7D4C54",
+   "rule": "int-arith",
+   "tier": 4,
+   "edge": "SUB int-operand from=0x007D4C00::ecx_v0x7D4C2A @ 0x7D4C54"
+  },
+  {
+   "root": 1016386,
+   "var": "0x007D4C00::edi_v0x7D4C59",
+   "rule": "int-arith",
+   "tier": 4,
+   "edge": "SUB int-operand from=0x007D4C00::ecx_v0x7D4C2A @ 0x7D4C59"
+  },
+  {
+   "root": 1016387,
+   "var": "0x007D4C00::edi_v0x7D4C5E",
+   "rule": "int-arith",
+   "tier": 4,
+   "edge": "SUB int-operand from=0x007D4C00::ecx_v0x7D4C2A @ 0x7D4C5E"
+  },
+  {
    "root": 1016979,
    "var": "0x007D58C8::eax_v0x7D58E7",
    "rule": "int-arith",
@@ -18334,5 +18355,76 @@
    "tier": 4,
    "edge": "param1 of 0x00558810 (thiscall) int @ 0x5968E1"
   }
- ]
+ ],
+ "def_reclass": {
+  "note": "*def@ placeholder edge reclassification (X200)",
+  "edges": 259189,
+  "anchors": {
+   "imm": 48961,
+   "mem": 1473,
+   "math": 7603,
+   "total": 58037
+  },
+  "pending": {
+   "mem": 18173,
+   "math": 0
+  },
+  "skip": {
+   "math_typed": 55900,
+   "pop": 48326,
+   "unknown": 41699,
+   "mem_no_base_or_disp": 17118,
+   "lea": 13380,
+   "mem_no_member_type": 7381,
+   "mem_same_root": 3364,
+   "mem_typed": 2387,
+   "mem_stack_base": 361,
+   "math_frozen": 336,
+   "mem_base_unscoped": 88,
+   "dest_unscoped": 9,
+   "mem_frozen": 4
+  },
+  "mem_classes_top": {
+   "int": 1074,
+   "char[1]": 158,
+   "char[2]": 38,
+   "ObjectClass": 27,
+   "char[3]": 26,
+   "AbstractClass": 15,
+   "char[4]": 14,
+   "char[12]": 12,
+   "BuildingTypeClass": 8,
+   "IUnknown": 8,
+   "char[260]": 8,
+   "VectorClass": 8,
+   "char[28]": 7,
+   "DynamicVector": 7,
+   "float": 7,
+   "bool": 5,
+   "SequenceStruct": 5,
+   "WinModemClass": 5,
+   "char[8]": 4,
+   "UnitTypeClass": 4,
+   "SHPStruct": 4,
+   "int[3]": 3,
+   "Pipe": 2,
+   "WaypointPathClass": 2,
+   "AnimTypeClass": 2,
+   "char[800]": 2,
+   "TriggerClass": 2,
+   "char[116]": 1,
+   "char[16]": 1,
+   "char[1181]": 1,
+   "BuildingAnimStruct": 1,
+   "wchar_t": 1,
+   "WarheadTypeClass": 1,
+   "Cell": 1,
+   "SpawnManagerClass": 1,
+   "CellStruct": 1,
+   "CampaignClass": 1,
+   "char[44]": 1,
+   "char[21]": 1,
+   "MPGameModeClass": 1
+  }
+ }
 }

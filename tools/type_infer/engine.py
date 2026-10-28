@@ -64,6 +64,12 @@ MEMBER_TYPES_PATH = os.path.normpath(os.path.join(
     os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
     "anchors", "member_types.json"
 ))
+# X200: `*def@0xADDR` 占位边重分类证据（离线快照反汇编分类产物）。
+# 每个值：{to, kind: imm|mem|lea|pop|math|unknown, imm, base, disp, insn}
+DEF_RECLASS_PATH = os.path.normpath(os.path.join(
+    os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
+    "anchors", "def_reclass.json"
+))
 GLOBAL_TYPES_PATH = os.path.normpath(os.path.join(
     os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
     "anchors", "global_types.json"
@@ -381,6 +387,18 @@ class TypeInferenceEngine:
         # feeds T10 BFS seeding (confidence honest for rule-typed roots) and
         # t9e_evidence.json (per-rule yield attribution).
         self._t9e_fired: dict[int, tuple[str, int, str]] = {}
+
+        # X200: `*def@` reclassification channel (*def@ is the extractor's
+        # catch-all "unknown" marker). imm edges anchor int immediately; mem
+        # edges resolve a member type once their base register carries a
+        # class (load-time or deferred after T9); math edges type only
+        # still-untyped destinations. Populated by _load_def_reclass_anchors.
+        self._drc_stats: dict[str, Any] = {}
+        self._drc_mem_pending: list[tuple] = []
+        self._drc_math_pending: list[tuple] = []
+        self._drc_mem_log: list[dict] | None = None
+        self._def_member_types: dict = {}
+        self._def_valid_classes: set[str] = set()
 
         # Results
         self.eq_types: dict[int, LatticeElement] = {}  # root → type
@@ -1073,6 +1091,7 @@ class TypeInferenceEngine:
         self._load_ida_proto_anchors(valid_classes)
         self._load_vslot_return_anchors(valid_classes)
         self._load_callarg_param_anchors(valid_classes)
+        self._load_def_reclass_anchors(valid_classes, member_types)
 
         # ── orphan component seeding ──
         # ── TYPE_SEED 标量种子锚（提取器 Step 3 的立即数/浮点证据）──
@@ -1444,6 +1463,319 @@ class TypeInferenceEngine:
             self.anchor_by_var[vid].append(a)
             n += 1
         print(f"  callarg_param anchors: {n} (candidate edges: {n_seen})", file=sys.stderr)
+
+    # ── X200: `*def@` 占位边重分类（imm / mem / math）─────────────────────
+    def _def_member_type(self, cls, disp, member_types, valid_classes):
+        """(class, offset) → member lattice type；与 member_types 通道同源。
+
+        权威顺序：anchors/member_types.json（含 RTTI 祖先链回退）→
+        tools/class_layouts.json 扁平偏移表（同样含祖先链回退）。
+        void*/未知类型返回 None（无信息锚不落地）。
+        """
+        info = member_types.get((cls, disp))
+        if info is None:
+            for _anc in sorted(self.lattice._ancestors.get(cls) or ()):
+                info = member_types.get((_anc, disp))
+                if info is not None:
+                    break
+        typ = (info or {}).get("type", "") if info else ""
+        if not typ:
+            _layouts = getattr(self, "_def_class_layouts", None)
+            if _layouts is None:
+                _lp = os.path.normpath(os.path.join(
+                    os.path.dirname(os.path.dirname(os.path.dirname(
+                        os.path.abspath(__file__)))), "tools", "class_layouts.json"))
+                try:
+                    with open(_lp, "r", encoding="utf-8") as _lf:
+                        _layouts = json.load(_lf)
+                except Exception:
+                    _layouts = {}
+                self._def_class_layouts = _layouts
+
+            def _layout_type(_c, _o):
+                _e = (_layouts.get(_c) or {}).get("offsets") or {}
+                _rec = _e.get(str(_o)) or _e.get(hex(_o)) or _e.get("0x%X" % _o)
+                return (_rec or {}).get("type")
+
+            typ = _layout_type(cls, disp) or ""
+            if not typ:
+                for _anc in sorted(self.lattice._ancestors.get(cls) or ()):
+                    typ = _layout_type(_anc, disp) or ""
+                    if typ:
+                        break
+        if not typ:
+            return None
+        lt = self._to_lattice_type(str(typ), valid_classes)
+        if lt is None or lt in (BOTTOM, VOID_PTR, TOP):
+            return None
+        return lt
+
+    def _add_def_anchor(self, vid, name, lt, stats):
+        _a = Anchor(vid, name, lt, "def_reclass")
+        self.anchors.append(_a)
+        self.anchor_by_var[vid].append(_a)
+        stats["anchors_total"] = stats.get("anchors_total", 0) + 1
+
+    def _load_def_reclass_anchors(self, valid_classes, member_types):
+        """X200: 用离线指令分类给 `*def@` 占位边落地类型锚。
+
+        `*def@0xADDR` 是提取器的兜底“未知定义”标记；该地址的真实指令形状
+        携带的证据：
+          imm  → 目标寄存器 = 整型常量（二进制事实，直接锚 int）
+          mem  → 目标 = [base+disp]；base 有具体类时按成员类型锚定
+                 （member_types → 祖先链 → class_layouts）；基址无类则挂起，
+                 待 T9 传播后再判（deferred）
+          math → 算术结果，仅当目标仍无型时落 int（避免污染指针流）
+          pop / lea / unknown → 不产锚（只记数）
+        寄存器名不是变量：全部经 _scope_one_var 映射到 SSA 名。
+        """
+        if not os.path.exists(DEF_RECLASS_PATH):
+            print("  def_reclass: anchors/def_reclass.json missing", file=sys.stderr)
+            return
+        with open(DEF_RECLASS_PATH, "r", encoding="utf-8") as _f:
+            data = json.load(_f)
+
+        _SCALARS = ("int", "float", "char*", "bool")
+        stats: dict[str, Any] = {
+            "edges": len(data),
+            "imm": 0, "mem": 0, "math": 0,
+            "mem_pending": 0, "math_pending": 0,
+            "anchors_total": 0,
+            "skip": Counter(),
+            "mem_classes": Counter(),
+        }
+        self._drc_stats = stats
+        self._drc_mem_pending = []
+        self._drc_math_pending = []
+        self._drc_mem_log = [] if os.environ.get("X200_LOG") else None
+        self._def_member_types = member_types
+        self._def_valid_classes = valid_classes
+
+        # 已加载通道的根级类索引（mem 基址“当前已有类”的判定源）。
+        _by_root: dict[int, list] = defaultdict(list)
+        for _a in self.anchors:
+            _by_root[self.uf.find(_a.var_id)].append(_a.lattice_type)
+
+        def _root_class(_root):
+            joined = BOTTOM
+            have = False
+            for _t in _by_root.get(_root, ()):
+                if _t in (BOTTOM, VOID_PTR, TOP) or _t in _SCALARS:
+                    continue
+                joined = _t if not have else self.lattice.join(joined, _t)
+                have = True
+                if joined in (VOID_PTR, TOP):
+                    return None
+            return joined if have else None
+
+        _imm_seen: set[int] = set()
+        _drc_type_by_root: dict[int, LatticeElement] = {}
+
+        for _addr_key, _rec in data.items():
+            try:
+                _addr = int(str(_addr_key), 16)
+            except (TypeError, ValueError):
+                continue
+            _kind = str(_rec.get("kind") or "unknown")
+            _to = str(_rec.get("to") or "")
+            if not _to:
+                continue
+            try:
+                _dest_name = _scope_one_var(_to, _addr, self._func_addrs, self._writes)
+            except Exception:
+                continue
+            _dest_vid = self.var_to_id.get(_dest_name)
+            if _dest_vid is None:
+                stats["skip"]["dest_unscoped"] += 1
+                continue
+
+            if _kind == "imm":
+                if _dest_vid in _imm_seen:
+                    continue
+                _imm_seen.add(_dest_vid)
+                self._add_def_anchor(_dest_vid, _dest_name, "int", stats)
+                stats["imm"] += 1
+
+            elif _kind == "mem":
+                _base = _rec.get("base")
+                _disp = _rec.get("disp")
+                if not _base or _disp is None:
+                    stats["skip"]["mem_no_base_or_disp"] += 1
+                    continue
+                _base = str(_base).lower()
+                if _base in ("esp", "ebp"):
+                    # 栈槽 = 局部变量，不是成员访问
+                    stats["skip"]["mem_stack_base"] += 1
+                    continue
+                try:
+                    _base_name = _scope_one_var(_base, _addr, self._func_addrs, self._writes)
+                except Exception:
+                    stats["skip"]["mem_base_unscoped"] += 1
+                    continue
+                _base_vid = self.var_to_id.get(_base_name)
+                if _base_vid is None:
+                    stats["skip"]["mem_base_unscoped"] += 1
+                    continue
+                _disp = int(_disp)
+                _cand = (_dest_vid, _base_vid, _disp, _addr, _dest_name,
+                         _base_name, _rec.get("insn"))
+                _base_root = self.uf.find(_base_vid)
+                _cls = _root_class(_base_root)
+                if not _cls:
+                    self._drc_mem_pending.append(_cand)
+                    continue
+                _lt = self._def_member_type(_cls, _disp, member_types, valid_classes)
+                if _lt is None:
+                    stats["skip"]["mem_no_member_type"] += 1
+                    self._drc_mem_pending.append(_cand)
+                    continue
+                _dest_root = self.uf.find(_dest_vid)
+                _prev = _drc_type_by_root.get(_dest_root)
+                if _prev is not None and self.lattice.meet(_prev, _lt) == TOP:
+                    stats["skip"]["mem_root_conflict"] += 1
+                    continue
+                _existing_cls = _root_class(_dest_root)
+                if (_existing_cls is not None
+                        and self.lattice.meet(_existing_cls, _lt) == TOP):
+                    stats["skip"]["mem_dest_conflict"] += 1
+                    continue
+                _drc_type_by_root[_dest_root] = _lt
+                self._add_def_anchor(_dest_vid, _dest_name, _lt, stats)
+                stats["mem"] += 1
+                stats["mem_classes"][str(_lt)] += 1
+                if self._drc_mem_log is not None:
+                    self._drc_mem_log.append({
+                        "stage": "load", "addr": "0x%08X" % _addr,
+                        "insn": _rec.get("insn"), "dest": _dest_name,
+                        "base": _base_name, "base_class": str(_cls),
+                        "disp": _disp, "member_type": str(_lt)})
+
+            elif _kind == "math":
+                self._drc_math_pending.append((_dest_vid, _addr, _dest_name))
+            else:
+                stats["skip"][_kind] += 1
+
+        stats["mem_pending"] = len(self._drc_mem_pending)
+        stats["math_pending"] = len(self._drc_math_pending)
+        print(
+            "  def_reclass: %d edges (imm=%d mem=%d math_cand=%d "
+            "mem_pending=%d math_pending=%d)" % (
+                stats["edges"], stats["imm"], stats["mem"],
+                len(self._drc_math_pending), stats["mem_pending"],
+                stats["math_pending"]),
+            file=sys.stderr)
+
+    def _resolve_def_reclass_deferred(self, root_types, frozen_roots,
+                                      queue_root, propagate_round):
+        """T9 收敛后解析 mem / math 延迟锚（X200）。
+
+        mem：基址根已被传播赋予具体类 → 按成员类型锚定目的地。只写仍无型
+        的目的地根（不做改写 → 零新 TOP）；内层闭包至多 8 轮以解析链式
+        成员加载（`mov esi,[edi+8]` → `mov eax,[esi+0Ch]`）。
+        math：只写仍无型的目的地根 → int。
+
+        晚到的锚仍追加进 self.anchors：T10 以 anchor 距离播种置信度，
+        因此这些根是诚实的 ANCHORED（指令级二进制证据）。
+        """
+        stats = getattr(self, "_drc_stats", None)
+        if not stats:
+            return
+        member_types = getattr(self, "_def_member_types", {}) or {}
+        valid_classes = getattr(self, "_def_valid_classes", set()) or set()
+        _SCALARS = ("int", "float", "char*", "bool")
+
+        pending = self._drc_mem_pending
+        for _outer in range(3):
+            changed_any = 0
+            for _round in range(8):
+                if not pending:
+                    break
+                remaining = []
+                changed = 0
+                for _cand in pending:
+                    (_dest_vid, _base_vid, _disp, _addr,
+                     _dest_name, _base_name, _insn) = _cand
+                    _base_root = self.uf.find(_base_vid)
+                    _dest_root = self.uf.find(_dest_vid)
+                    if _base_root == _dest_root:
+                        stats["skip"]["mem_same_root"] += 1
+                        continue
+                    _cls = root_types.get(_base_root, BOTTOM)
+                    if (not _is_concrete(_cls) or _cls in (VOID_PTR, TOP)
+                            or _cls in _SCALARS):
+                        remaining.append(_cand)
+                        continue
+                    _lt = self._def_member_type(_cls, _disp, member_types, valid_classes)
+                    if _lt is None:
+                        stats["skip"]["mem_no_member_type"] += 1
+                        remaining.append(_cand)
+                        continue
+                    if _dest_root in frozen_roots:
+                        stats["skip"]["mem_frozen"] += 1
+                        continue
+                    _cur = root_types.get(_dest_root, BOTTOM)
+                    if _cur not in (BOTTOM, VOID_PTR):
+                        stats["skip"]["mem_typed"] += 1
+                        continue
+                    root_types[_dest_root] = _lt
+                    self._add_def_anchor(_dest_vid, _dest_name, _lt, stats)
+                    stats["mem"] += 1
+                    stats["mem_classes"][str(_lt)] += 1
+                    if self._drc_mem_log is not None:
+                        self._drc_mem_log.append({
+                            "stage": "deferred", "addr": "0x%08X" % _addr,
+                            "insn": _insn, "dest": _dest_name,
+                            "base": _base_name, "base_class": str(_cls),
+                            "disp": _disp, "member_type": str(_lt)})
+                    queue_root(_dest_root)
+                    changed += 1
+                pending = remaining
+                self._drc_mem_pending = pending
+                if not changed:
+                    break
+                changed_any += changed
+
+            # math：只写仍无型的目的地根（弱证据，见任务规则）
+            for (_dest_vid, _addr, _dest_name) in self._drc_math_pending:
+                _dest_root = self.uf.find(_dest_vid)
+                if _dest_root in frozen_roots:
+                    stats["skip"]["math_frozen"] += 1
+                    continue
+                _cur = root_types.get(_dest_root, BOTTOM)
+                if _cur not in (BOTTOM, VOID_PTR):
+                    stats["skip"]["math_typed"] += 1
+                    continue
+                root_types[_dest_root] = "int"
+                self._add_def_anchor(_dest_vid, _dest_name, "int", stats)
+                stats["math"] += 1
+                queue_root(_dest_root)
+                changed_any += 1
+            self._drc_math_pending = []
+
+            if not changed_any:
+                break
+            # 延迟锚向下游传播 → 可能让更多 mem 基址获得类 → 再解析一轮
+            propagate_round()
+
+        stats["mem_pending"] = len(self._drc_mem_pending)
+        stats["math_pending"] = 0  # all math candidates consumed above
+        print(
+            f"  def_reclass anchors: imm={stats['imm']} mem={stats['mem']} "
+            f"math={stats['math']} (of {stats['edges']} edges)",
+            file=sys.stderr)
+        _log_path = os.environ.get("X200_LOG")
+        if _log_path and self._drc_mem_log is not None:
+            try:
+                with open(_log_path, "w", encoding="utf-8") as _lf:
+                    json.dump({
+                        "stats": {
+                            _k: (dict(_v) if isinstance(_v, Counter) else _v)
+                            for _k, _v in stats.items()},
+                        "mem_anchors": self._drc_mem_log,
+                    }, _lf, indent=1, ensure_ascii=False)
+            except Exception as _e:
+                print(f"  def_reclass X200_LOG write failed: {_e}",
+                      file=sys.stderr)
 
     def _load_vslot_return_anchors(self, valid_classes):
         """X196: 虚调用返回值 -> 落点变量的类型锚（slot 路由，含祖先回退）。"""
@@ -2222,6 +2554,7 @@ class TypeInferenceEngine:
             "csp_member": 2,
             "csp_param": 2,
             "csp_return": 2,
+            "def_reclass": 1,
         }
         anchors_by_root: dict[int, list] = defaultdict(list)
         for anchor in self.anchors:
@@ -3131,6 +3464,14 @@ class TypeInferenceEngine:
             print(f"  B10d ERROR: {_e}", file=sys.stderr)
             raise
 
+        # ── X200: `*def@` 重分类延迟锚（mem / math）─────────────────────
+        # 必须在 T9 收敛后运行：mem 依赖基址寄存器经传播获得的类；math 仅在
+        # 目的地仍无型时落 int。晚到锚仍入 self.anchors（T10 播种）。
+        self._resolve_def_reclass_deferred(
+            root_types, frozen_roots,
+            lambda _r: (worklist.append(_r), in_worklist.add(_r)),
+            _propagate_round)
+
         self.eq_types = root_types
         self.top_causes = top_causes
         self.top_cause_roots = top_cause_roots
@@ -3315,13 +3656,18 @@ class TypeInferenceEngine:
 
         Written next to type_map.json so ORPHAN attribution stays auditable:
         every arithmetic-typing firing records (rule, tier, edge, sample var).
+        X200 adds the `*def@` reclassification channel summary here (same
+        ledger file): per-kind anchor yield, deferred resolution outcome and
+        the member classes actually used — no per-edge dump (file size).
         """
         fired = getattr(self, "_t9e_fired", None)
-        if not fired:
+        drc = getattr(self, "_drc_stats", None)
+        if not fired and not drc:
             return
-        by_rule: Counter = Counter(rule for rule, _t, _e in fired.values())
+        by_rule: Counter = Counter(
+            rule for rule, _t, _e in (fired or {}).values())
         rows = []
-        for root in sorted(fired):
+        for root in sorted(fired or {}):
             rule, tier, edge = fired[root]
             rows.append({
                 "root": root,
@@ -3332,15 +3678,36 @@ class TypeInferenceEngine:
             })
         out = {
             "note": "T9e arithmetic typing rules (X142b) — evidence ledger",
-            "total_fired": len(fired),
+            "total_fired": len(fired or {}),
             "by_rule": dict(by_rule.most_common()),
             "firings": rows,
         }
+        if drc:
+            out["def_reclass"] = {
+                "note": "*def@ placeholder edge reclassification (X200)",
+                "edges": drc.get("edges", 0),
+                "anchors": {
+                    "imm": drc.get("imm", 0),
+                    "mem": drc.get("mem", 0),
+                    "math": drc.get("math", 0),
+                    "total": drc.get("anchors_total", 0),
+                },
+                "pending": {
+                    "mem": drc.get("mem_pending", 0),
+                    "math": drc.get("math_pending", 0),
+                },
+                "skip": dict((drc.get("skip") or Counter()).most_common()),
+                "mem_classes_top": dict(
+                    (drc.get("mem_classes") or Counter()).most_common(40)),
+            }
         out_path = os.path.join(os.getcwd(), "t9e_evidence.json")
         with open(out_path, "w", encoding="utf-8") as f:
             json.dump(out, f, indent=1, ensure_ascii=False)
-        print(f"  T9e evidence: {len(fired)} firings "
-              f"({dict(by_rule.most_common())}) → {out_path}", file=sys.stderr)
+        if fired:
+            print(f"  T9e evidence: {len(fired)} firings "
+                  f"({dict(by_rule.most_common())}) → {out_path}", file=sys.stderr)
+        else:
+            print(f"  evidence ledger → {out_path}", file=sys.stderr)
 
     def _generate_top_causes_report(self) -> None:
         """Dump the T11-lite TOP-cause histogram: exact (typeA, typeB) meet
