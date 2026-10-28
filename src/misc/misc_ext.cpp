@@ -13616,7 +13616,7 @@ int ArtConfig::ParseLayoutEntry(int* p0, char** p1, char** p2, int p3)
   __1_Timevec_std__QAE_XZ((const char **)&v26); /*0x769065*/
   v14 = this->u32_48 + v13; /*0x76906f*/
   v15 = 5; /*0x769077*/
-  if ( (unsigned __int8)String::NotEquals(&v24, 0) && String::Length(&v24) ) /*0x769089*/
+  if ( (unsigned __int8)String::NotEquals(&v24, 0) && ((String *)&v24)->Length() ) /*0x769089*/
   {
     __1_Timevec_std__QAE_XZ((const char **)&v24); /*0x769096*/
     v15 = v16; /*0x76909b*/

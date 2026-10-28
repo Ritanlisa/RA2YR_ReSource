@@ -876,8 +876,8 @@ LABEL_46:
           v19.ambientSoundController[2] = _strcmpi(v14, g_Str_false) != 0; /*0x5d7979*/
         }
         if ( ((WideString *)&v19.referenceCount)->Length() /*0x5d79a3*/
-          && String::Length((String *)&v19.ptr_8)
-          && String::Length((String *)&v19.nextArrayIndex) )
+          && ((String *)&v19.ptr_8)->Length()
+          && ((String *)&v19.nextArrayIndex)->Length() )
         {
           v15 = 0; /*0x5d79d3*/
           v19.occupant = (*(int (**)(int, int *, int *, int *, int *, int, int))(*(unsigned int *)v19.customSound /*0x5d79d5*/

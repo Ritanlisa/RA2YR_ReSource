@@ -104,22 +104,22 @@ ObjectClass * * String::SplitComma(ObjectClass * aP1)
   this->u32_C = 0; /*0x5d0398*/
   unknown_libname_73(&v10); /*0x5d039b*/
   v3 = (aP1)->Tokenize(0, Delimiter, (void **)&v10); /*0x5d03ba*/
-  if ( String::Length((String *)&v10) ) /*0x5d03bc*/
+  if ( ((String *)&v10)->Length() ) /*0x5d03bc*/
     ((String *)this)->Reassign((const char **)&v10); /*0x5d03cc*/
   v4 = (aP1)->Tokenize(v3, Delimiter, (void **)&v10); /*0x5d03e7*/
-  if ( String::Length((String *)&v10) ) /*0x5d03e9*/
+  if ( ((String *)&v10)->Length() ) /*0x5d03e9*/
   {
     __1_Timevec_std__QAE_XZ((const char **)&v10); /*0x5d03f6*/
     this->ptr_4 = v5; /*0x5d03fb*/
   }
   v6 = (aP1)->Tokenize(v4, Delimiter, (void **)&v10); /*0x5d0414*/
-  if ( String::Length((String *)&v10) ) /*0x5d0416*/
+  if ( ((String *)&v10)->Length() ) /*0x5d0416*/
   {
     __1_Timevec_std__QAE_XZ((const char **)&v10); /*0x5d0423*/
     this->ptr_8 = v7; /*0x5d0428*/
   }
   (aP1)->Tokenize(v6, Delimiter, (void **)&v10); /*0x5d0438*/
-  if ( String::Length((String *)&v10) ) /*0x5d0441*/
+  if ( ((String *)&v10)->Length() ) /*0x5d0441*/
   {
     __1_Timevec_std__QAE_XZ((const char **)&v10); /*0x5d044e*/
     this->u32_C = v8; /*0x5d0453*/
@@ -220,7 +220,7 @@ int String::TrimLeft(const char **a2, const char **aP1, int a1, int a3, int aP2,
 }
 // 0x7B54B0
 namespace gamemd {
-unsigned int String::Length(void *a1)
+unsigned int String::Length()
 {
 
   if ( *(unsigned int *)this->q000 ) /*0x7b54b1*/
@@ -665,9 +665,9 @@ unsigned int String::ComputeHash(void *a1_1)
 {
 
   unsigned int v2; // esi
-  v2 = String::Length(a1_1); /*0x5e262c*/
+  v2 = ((String *)a1_1)->Length(); /*0x5e262c*/
   unsigned int i; // edi
-  for ( i = 0; i < String::Length(a1_1); ++i ) /*0x5e2630*/
+  for ( i = 0; i < ((String *)a1_1)->Length(); ++i ) /*0x5e2630*/
   {
     char *v4; // eax
     v4 = ((String *)(a1_1))->GetOrEmpty(); /*0x5e263b*/

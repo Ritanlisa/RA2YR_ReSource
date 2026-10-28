@@ -5719,8 +5719,8 @@ void LoadingScreen::Render()
         && (*(unsigned __int8 (**)(ObjectClass *))(dword_A8B23C->ptr_0 + 8))(dword_A8B23C)
         && (*(unsigned int *)v80.m_Colors = 0,
             CampaignClass::FindMission((int)&g_DDrawSurfaceManager, byte_A8B8E0, &v80),
-            String::Length((String *)(*(unsigned int *)v80.m_Colors + 72)))
-        && String::Length((String *)(*(unsigned int *)v80.m_Colors + 68)) )
+            ((String *)(*(unsigned int *)v80.m_Colors + 72))->Length())
+        && ((String *)(*(unsigned int *)v80.m_Colors + 68))->Length() )
       {
         v29 = String::GetOrEmpty((String *)(*(unsigned int *)v80.m_Colors + 72)); /*0x553373*/
         Palette::LoadFile(v29); /*0x55337a*/

@@ -26,7 +26,7 @@ struct String {
     int NormalizeNewlines();  // 0x5F3350
     int To_Waypoint();  // 0x763690
     int TrimLeft(const char **a2, const char **aP1, int a1, int a3, int aP2, int aP3, int a4, int a5);
-    unsigned int Length(void *a1 = 0);  // 0x7B54B0
+    unsigned int Length();  // 0x7B54B0
     AbstractClass * * Replace(char * SubStr, const char * a3);  // 0x7B57A0
     AbstractClass * * Replace(char * SubStr, const char * a3, void *a3_1 = 0);  // G42.33 b7 static-form sync
     AbstractClass * * Tokenize(int a2, ObjectClass * aP2, ObjectClass * aP3);  // 0x7B5F10

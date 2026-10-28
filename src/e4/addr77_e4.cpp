@@ -1602,12 +1602,12 @@ int RunWOLMainLoop(char a1)
   BYTE1(stru_A83CD9.ambientSoundController[3]) = 1; /*0x77b312*/
   v18 = v3; /*0x77b319*/
   RunWOLMainLoop_Find(v15); /*0x77b31d*/
-  if ( !String::Length((String *)&stru_B73E10.CChatEventSink_field_0x30) ) /*0x77b327*/
+  if ( !((String *)&stru_B73E10.CChatEventSink_field_0x30)->Length() ) /*0x77b327*/
   {
     AutoLoginWOL = ReadAutoLoginWOL((ObjectClass *)&v19); /*0x77b334*/
     String::Reassign((String *)&stru_B73E10.CChatEventSink_field_0x30, (const char **)AutoLoginWOL); /*0x77b33f*/
     DeleteAndZero((ObjectClass *)&v19); /*0x77b348*/
-    if ( !String::Length((String *)&stru_B73E10.CChatEventSink_field_0x30) ) /*0x77b352*/
+    if ( !((String *)&stru_B73E10.CChatEventSink_field_0x30)->Length() ) /*0x77b352*/
     {
       (v20) = ((v20) & 0xFFFFFFFF00000000ull) | ((0) & 0xFFFFFFFFull); /*0x77b361*/
       (v20) = ((v20) & ~(0xFFull << 32)) | (((0) & 0xFFull) << 32); /*0x77b365*/
@@ -2585,7 +2585,7 @@ Coord * * AssignWOLPlayerSide(const char ** a1, int a2)
   DeleteAndZero v24; // [esp+1Ch] [ebp-78h] BYREF
   unsigned char v25[108]; // [esp+28h] [ebp-6Ch] BYREF
 
-  v4 = String::Length(a1) == 0; /*0x77e913*/
+  v4 = ((String *)a1)->Length() == 0; /*0x77e913*/
   p_CChatEventSink_field_0x30 = (int *)a1; /*0x77e915*/
   if ( v4 ) /*0x77e917*/
     p_CChatEventSink_field_0x30 = &stru_B73E10.CChatEventSink_field_0x30; /*0x77e919*/

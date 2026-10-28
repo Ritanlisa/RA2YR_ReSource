@@ -2103,7 +2103,7 @@ ObjectClass * * CComObject_CChatEventSink___ATL::DispatchStub_37(int a1, int a2,
         v5 = *(unsigned int *)g_WOL_BuddyList; /*0x7ac32c*/
       }
       *(unsigned int *)g_WOL_BuddyList = v5 + 1; /*0x7ac337*/
-      if ( String::Length((String *)&g_WOL_AuthObject) ) /*0x7ac33c*/
+      if ( ((String *)&g_WOL_AuthObject)->Length() ) /*0x7ac33c*/
       {
         if ( (unsigned int)(time(0) - *(unsigned int *)g_WOL_ParseState) < 5 ) /*0x7ac35a*/
         {

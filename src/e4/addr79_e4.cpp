@@ -3084,7 +3084,7 @@ int Multiplayer_GameMode_DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned in
       }
       else if ( a2 == 1175 ) /*0x798998*/
       {
-        if ( String::Length((const char **)&dword_B73E40) ) /*0x7989a3*/
+        if ( ((String *)(const char **)&dword_B73E40)->Length() ) /*0x7989a3*/
         {
           LoadPlayerProfile(&Type, (const char **)&dword_B73E40); /*0x7989b5*/
           int v35; // [esp+18h] [ebp-208h]
@@ -3540,11 +3540,11 @@ void MainLobbyDlgProcWOL(HWND hWnd, LPARAM lParam, ObjectClass)
             InvalidateRect(v8, 0, 0); /*0x7992cb*/
             if ( v61 ) /*0x7992d7*/
               FillPersonaInfoWOL((int)v61, (HWND)v4, (char **)&stru_B73E10.q030, 0); /*0x7992e1*/
-            v12 = v10 != -1 && String::Length((String *)&stru_B73E10.q030); /*0x799300*/
+            v12 = v10 != -1 && ((String *)&stru_B73E10.q030)->Length(); /*0x799300*/
             v50 = v12; /*0x799308*/
             v13 = GetDlgItem((HWND)v4, 1771); /*0x79930f*/
             EnableWindow(v13, v50); /*0x799318*/
-            v14 = v10 != -1 && String::Length((String *)&stru_B73E10.q030); /*0x799334*/
+            v14 = v10 != -1 && ((String *)&stru_B73E10.q030)->Length(); /*0x799334*/
             v51 = v14; /*0x799336*/
             v15 = GetDlgItem((HWND)v4, 1671); /*0x79933d*/
             EnableWindow(v15, v51); /*0x799340*/
@@ -3789,7 +3789,7 @@ LABEL_133:
       unknown_libname_73(&a2.q004); /*0x79ad3c*/
       v73 = GetDlgItem((HWND)v3, 1576); /*0x79ad4b*/
       GetDialogText(v73, (String *)&a2.q004); /*0x79ad51*/
-      if ( String::Length((String *)&a2.q004) && String::Length((String *)&g_WebBrowserConfig) == 8 ) /*0x79ad70*/
+      if ( ((String *)&a2.q004)->Length() && ((String *)&g_WebBrowserConfig)->Length() == 8 ) /*0x79ad70*/
       {
         v74 = GetDlgItem((HWND)v3, 1337); /*0x79ad81*/
         PostMessageA(v74, 0xF5u, 0, 0); /*0x79ad84*/
@@ -3858,14 +3858,14 @@ LABEL_133:
 LABEL_106:
     v57 = String::GetOrEmpty_Alt((String *)&stru_B73E10.q030); /*0x79aa4b*/
     SendMessageA(v52, 0x4B4u, 0, (LPARAM)v57); /*0x79aa5e*/
-    if ( String::Length((String *)&stru_B73E10.q030) ) /*0x79aa65*/
+    if ( ((String *)&stru_B73E10.q030)->Length() ) /*0x79aa65*/
     {
       v58 = String::GetOrEmpty_Alt((String *)&g_WebBrowserConfig); /*0x79aa73*/
       SendMessageA(*(HWND *)&v85.ptr_4, 0x4B4u, 0, (LPARAM)v58); /*0x79aa85*/
       (dword_84A238) = ((dword_84A238) & ~0xFF) | ((0) & 0xFF); /*0x79aa87*/
     }
-    if ( !String::Length((String *)&stru_B73E10.q030) /*0x79aaae*/
-      || (v59 = String::Length((String *)&g_WebBrowserConfig), hWnd.m_3[1] = 1, v59 != 8) )
+    if ( !((String *)&stru_B73E10.q030)->Length() /*0x79aaae*/
+      || (v59 = ((String *)&g_WebBrowserConfig)->Length(), hWnd.m_3[1] = 1, v59 != 8) )
     {
       hWnd.m_3[1] = 0; /*0x79aab0*/
     }
@@ -3875,7 +3875,7 @@ LABEL_106:
     EnableWindow(v60, 0); /*0x79aae9*/
     InvalidateRect(v60, 0, 0); /*0x79aaf4*/
     SendMessageA(v60, 0x49Du, 0, 0); /*0x79ab04*/
-    v82 = String::Length((String *)&stru_B73E10.q030) != 0; /*0x79ab18*/
+    v82 = ((String *)&stru_B73E10.q030)->Length() != 0; /*0x79ab18*/
     v61 = GetDlgItem((HWND)v3, 1771); /*0x79ab1f*/
     EnableWindow(v61, v82); /*0x79ab28*/
     v83 = (unsigned __int8)hWnd.m_3[1]; /*0x79ab34*/
@@ -4024,8 +4024,8 @@ LABEL_123:
           unknown_libname_73(&a2.q004); /*0x79a5ce*/
           v38 = GetDlgItem((HWND)v3, 1576); /*0x79a5e3*/
           GetDialogText(v38, (String *)&a2.q004); /*0x79a5e9*/
-          if ( !String::Length((String *)&a2.q004) /*0x79a60d*/
-            || (v39 = String::Length((String *)&g_WebBrowserConfig), hWnd.m_3[1] = 1, v39 != 8) )
+          if ( !((String *)&a2.q004)->Length() /*0x79a60d*/
+            || (v39 = ((String *)&g_WebBrowserConfig)->Length(), hWnd.m_3[1] = 1, v39 != 8) )
           {
             hWnd.m_3[1] = 0; /*0x79a60f*/
           }
@@ -4119,8 +4119,8 @@ LABEL_123:
                   hWnd.__pad_0[0] = 1; /*0x79a34d*/
                 }
               }
-              if ( !String::Length((String *)&stru_B73E10.q030) /*0x79a372*/
-                || (v25 = String::Length((String *)&g_WebBrowserConfig), LOBYTE(a2.q004) = 1, v25 != 8) )
+              if ( !((String *)&stru_B73E10.q030)->Length() /*0x79a372*/
+                || (v25 = ((String *)&g_WebBrowserConfig)->Length(), LOBYTE(a2.q004) = 1, v25 != 8) )
               {
                 LOBYTE(a2.q004) = 0; /*0x79a374*/
               }
@@ -4128,7 +4128,7 @@ LABEL_123:
               SendMessageA(v26, 0xF1u, (unsigned __int8)hWnd.__pad_0[0], 0); /*0x79a396*/
               EnableWindow(v26, 0); /*0x79a3a1*/
               InvalidateRect(v26, 0, 0); /*0x79a3a8*/
-              v79 = String::Length((String *)&stru_B73E10.q030) != 0; /*0x79a3c0*/
+              v79 = ((String *)&stru_B73E10.q030)->Length() != 0; /*0x79a3c0*/
               v27 = GetDlgItem((HWND)v3, 1771); /*0x79a3c7*/
               EnableWindow(v27, v79); /*0x79a3ca*/
               ptr_4_low = LOBYTE(a2.q004); /*0x79a3d6*/
@@ -4192,8 +4192,8 @@ LABEL_44:
             SendMessageA(v13, 0x4B4u, 0, (LPARAM)v14); /*0x79a16f*/
             InvalidateRect(v13, 0, 0); /*0x79a176*/
             byte_B77EA0 = 0; /*0x79a181*/
-            if ( !String::Length((String *)&stru_B73E10.q030) /*0x79a1a3*/
-              || (v15 = String::Length((String *)&g_WebBrowserConfig), hWnd.__pad_0[0] = 1, v15 != 8) )
+            if ( !((String *)&stru_B73E10.q030)->Length() /*0x79a1a3*/
+              || (v15 = ((String *)&g_WebBrowserConfig)->Length(), hWnd.__pad_0[0] = 1, v15 != 8) )
             {
               hWnd.__pad_0[0] = 0; /*0x79a1a5*/
             }
@@ -4205,7 +4205,7 @@ LABEL_44:
             SendMessageA(v16, 0x49Du, 0, 0); /*0x79a1f1*/
             ShowWindow(v16, 5); /*0x79a1f6*/
             InvalidateRect(v16, 0, 0); /*0x79a201*/
-            v77 = String::Length((String *)&stru_B73E10.q030) != 0; /*0x79a219*/
+            v77 = ((String *)&stru_B73E10.q030)->Length() != 0; /*0x79a219*/
             v17 = GetDlgItem((HWND)v3, 1771); /*0x79a220*/
             EnableWindow(v17, v77); /*0x79a229*/
             v78 = (unsigned __int8)hWnd.__pad_0[0]; /*0x79a234*/
@@ -4352,7 +4352,7 @@ bool WOL_FindBuddy()
   unsigned char v12[268]; // [esp+14h] [ebp-218h] BYREF
   char v13[268]; // [esp+120h] [ebp-10Ch] BYREF
 
-  if ( !String::Length(&g_WOL_LoginObject) ) /*0x79bc8f*/
+  if ( !((String *)&g_WOL_LoginObject)->Length() ) /*0x79bc8f*/
     return 0; /*0x79bca4*/
   if ( !dword_B76994 ) /*0x79bcac*/
     return 0; /*0x79bcac*/
@@ -4435,13 +4435,13 @@ int E4Recv_79BF50::sub_79BF50(HWND hDlg)
   BOOL BuddyWOL; // [esp-4h] [ebp-18h]
   uint8_t v9; // [esp+10h] [ebp-4h]
 
-  v7 = String::Length((String *)&g_WOL_LoginObject) != 0; /*0x79bf6f*/
+  v7 = ((String *)&g_WOL_LoginObject)->Length() != 0; /*0x79bf6f*/
   DlgItem = GetDlgItem((HWND)hDlg, 1795); /*0x79bf76*/
   EnableWindow(DlgItem, v7); /*0x79bf7f*/
   BuddyWOL = FindBuddyWOL(); /*0x79bf8b*/
   v3 = GetDlgItem((HWND)hDlg, 1581); /*0x79bf92*/
   EnableWindow(v3, BuddyWOL); /*0x79bf95*/
-  if ( String::Length((String *)&g_WOL_LoginObject) ) /*0x79bf9c*/
+  if ( ((String *)&g_WOL_LoginObject)->Length() ) /*0x79bf9c*/
   {
     if ( !stru_B76900.lastLayer ) /*0x79bfb2*/
       goto LABEL_10; /*0x79bfb2*/
@@ -4666,7 +4666,7 @@ AbstractClass * * int WOL_RefreshChannelList()
     *(unsigned int *)&stru_B76900.needsRedraw = v5 + 1; /*0x79cfca*/
     DeleteAndZero((ObjectClass *)&v9); /*0x79cfcf*/
   }
-  if ( String::Length((String *)&g_WOL_AuthObject) ) /*0x79cfe7*/
+  if ( ((String *)&g_WOL_AuthObject)->Length() ) /*0x79cfe7*/
   {
     result = time(0) - *(unsigned int *)g_WOL_ParseState; /*0x79d000*/
     if ( result < 5 ) /*0x79d005*/
@@ -4779,7 +4779,7 @@ AbstractClass * * WOL_SendGameList()
           }
         }
       }
-      if ( String::Length(&v13) ) /*0x79d22d*/
+      if ( ((String *)&v13)->Length() ) /*0x79d22d*/
         String::Append(&v13, asc_8318B8); /*0x79d23f*/
       String::Append2(&v13, (char **)&v13.ptr_4); /*0x79d24d*/
       DeleteAndZero((ObjectClass *)&v13.ptr_4); /*0x79d256*/
@@ -5373,7 +5373,7 @@ int WOL_GameSetup_DlgProc(HWND hWnd, unsigned int a2, unsigned int a3, HWND a4)
       v14 = *(unsigned int *)g_WOL_BuddyList; /*0x79e303*/
     }
     *(unsigned int *)g_WOL_BuddyList = v14 + 1; /*0x79e30e*/
-    if ( String::Length((String *)&g_WOL_AuthObject) ) /*0x79e313*/
+    if ( ((String *)&g_WOL_AuthObject)->Length() ) /*0x79e313*/
     {
       if ( (unsigned int)(time(0) - *(unsigned int *)g_WOL_ParseState) < 5 ) /*0x79e331*/
       {
@@ -5527,7 +5527,7 @@ AbstractClass * * WOL_PlayerOptions_DlgProc(HWND hWnd, unsigned int a2, UINT_PTR
                   stru_B76970.q010);
                 DeleteAndZero((ObjectClass *)&v39); /*0x79ef43*/
               }
-              if ( !String::Length((String *)&unk_B73ACC) ) /*0x79ef5e*/
+              if ( !((String *)&unk_B73ACC)->Length() ) /*0x79ef5e*/
                 goto LABEL_112; /*0x79ef5e*/
               if ( (unsigned int)(time(0) - dword_B779D0) >= 5 ) /*0x79ef75*/
               {
@@ -5592,7 +5592,7 @@ LABEL_116:
                 {
                   unknown_libname_73(&v39); /*0x79ea99*/
                   GetDialogText(a4, &v39); /*0x79eaa9*/
-                  v35 = String::Length(&v39) != 0; /*0x79eabd*/
+                  v35 = ((String *)&v39)->Length() != 0; /*0x79eabd*/
                   v17 = GetDlgItem(hWnd, 1794); /*0x79eac4*/
                   EnableWindow(v17, v35); /*0x79eacb*/
                   DeleteAndZero((ObjectClass *)&v39); /*0x79ead5*/
@@ -5625,7 +5625,7 @@ LABEL_116:
               SendMessageA(v18, 0xF5u, 0, 0); /*0x79eb71*/
               return 0; /*0x79eb80*/
             }
-            if ( String::Length((String *)&unk_B76E24) ) /*0x79eb88*/
+            if ( ((String *)&unk_B76E24)->Length() ) /*0x79eb88*/
             {
               if ( stru_B76990.HashTable_field_0x04 ) /*0x79eb9c*/
               {
@@ -5662,13 +5662,13 @@ LABEL_116:
           DeleteAndZero::Alt2((DeleteAndZero *)&unk_B76E24); /*0x79ec5b*/
         else
           GetListBoxItemText(a4, v22, (void **)&unk_B76E24); /*0x79ec6b*/
-        v36 = String::Length((String *)&unk_B76E24) != 0; /*0x79ec88*/
+        v36 = ((String *)&unk_B76E24)->Length() != 0; /*0x79ec88*/
         v23 = GetDlgItem(hWnd, 1795); /*0x79ec8f*/
         EnableWindow(v23, v36); /*0x79ec98*/
         BuddyWOL = FindBuddyWOL(); /*0x79eca4*/
         v24 = GetDlgItem(hWnd, 1581); /*0x79ecab*/
         EnableWindow(v24, BuddyWOL); /*0x79ecae*/
-        if ( String::Length((String *)&unk_B76E24) ) /*0x79ecb5*/
+        if ( ((String *)&unk_B76E24)->Length() ) /*0x79ecb5*/
         {
           if ( !stru_B76990.HashTable_field_0x04 ) /*0x79eccb*/
             goto LABEL_88; /*0x79eccb*/
@@ -5737,7 +5737,7 @@ LABEL_90:
             stru_B76970.q010);
           DeleteAndZero((ObjectClass *)&v39); /*0x79e904*/
         }
-        if ( String::Length((String *)&unk_B73ACC) ) /*0x79e918*/
+        if ( ((String *)&unk_B73ACC)->Length() ) /*0x79e918*/
         {
           if ( (unsigned int)(time(0) - dword_B779D0) < 5 ) /*0x79e936*/
             return 0; /*0x79e936*/
@@ -6076,7 +6076,7 @@ LABEL_48:
         goto LABEL_117; /*0x79f561*/
       case 1581: /*0x79f411*/
         memset(v52, 0, sizeof(v52)); /*0x79f574*/
-        if ( !String::Length((String *)&unk_B76E24) ) /*0x79f57b*/
+        if ( !((String *)&unk_B76E24)->Length() ) /*0x79f57b*/
           goto LABEL_117; /*0x79f57b*/
         v49 = 0; /*0x79f597*/
         if ( !GameOptionsScreenWOL_Helper_7AE8E0( /*0x79f59b*/

@@ -194,7 +194,7 @@ Coord * * RunWOLMainLoop_Read(void * a1, void * a2)
   LOBYTE(v12.q004) = 0; /*0x798df1*/
   ReadRegistryOptionsWOL((ObjectClass *)&v12); /*0x798df6*/
   Screen::Capture(1, 0, v2, a2); /*0x798dff*/
-  if ( g_UIPointerTable && strlen(byte_B761A8) && String::Length((String *)&stru_B73E10.q030) ) /*0x798e27*/
+  if ( g_UIPointerTable && strlen(byte_B761A8) && ((String *)&stru_B73E10.q030)->Length() ) /*0x798e27*/
   {
     v3 = *(unsigned int *)g_UIPointerTable; /*0x798e3f*/
     v9 = g_NetworkRematchState & 0xFFFF00; /*0x798e49*/
@@ -353,7 +353,7 @@ int sub_799D30()
     }
     else
     {
-      if ( g_UIPointerTable && strlen(byte_B761A8) && String::Length((String *)&stru_B73E10.q030) ) /*0x799dd2*/
+      if ( g_UIPointerTable && strlen(byte_B761A8) && ((String *)&stru_B73E10.q030)->Length() ) /*0x799dd2*/
       {
         v6 = *(unsigned int *)g_UIPointerTable; /*0x799dea*/
         v11 = g_NetworkRematchState & 0xFFFF00; /*0x799df4*/

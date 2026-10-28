@@ -724,7 +724,7 @@ int ParseINIAnimGadgetDefinition(void * a2, void * a4, void * a3, void * aOrigin
   INIClass::ReadString(a2, (char **)Source, (char **)&v20, (char **)&v21, (int)&v19); /*0x4f2ced*/
   j_DeleteAndZero((ObjectClass *)&v20); /*0x4f2cf6*/
   j_DeleteAndZero((ObjectClass *)&v21); /*0x4f2cff*/
-  if ( String::Length(&v19) ) /*0x4f2d08*/
+  if ( ((String *)&v19)->Length() ) /*0x4f2d08*/
   {
     unknown_libname_73(&v19.m_3[1]); /*0x4f2d29*/
     (&v20)->Assign(&g_INI_DefaultBuffer); /*0x4f2d37*/
@@ -732,7 +732,7 @@ int ParseINIAnimGadgetDefinition(void * a2, void * a4, void * a3, void * aOrigin
     INIClass::ReadString(a2, (char **)Source, (char **)&v21, (char **)&v20, (int)&v19.m_3[1]); /*0x4f2d5c*/
     j_DeleteAndZero((ObjectClass *)&v21); /*0x4f2d65*/
     j_DeleteAndZero((ObjectClass *)&v20); /*0x4f2d6e*/
-    if ( String::Length((String *)&v19.ptr_4) ) /*0x4f2d77*/
+    if ( ((String *)&v19.ptr_4)->Length() ) /*0x4f2d77*/
     {
       v8 = 0; /*0x4f2d9e*/
       v22 = 0; /*0x4f2da9*/
@@ -953,7 +953,7 @@ MSAnim * * E4Recv_4F3460::sub_4F3460(int a2, ReferenceCounted * a3, unsigned int
   unknown_libname_73(&this->q034); /*0x4f34aa*/
   v15 = a9; /*0x4f34af*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EA674) */  /*0x4f34b3*/
-  if ( String::Length(v15) && (a3 = __2_YAPAXI_Z(0x10u)) != 0 ) /*0x4f34d4*/
+  if ( ((String *)v15)->Length() && (a3 = __2_YAPAXI_Z(0x10u)) != 0 ) /*0x4f34d4*/
   {
     ((String *)(char **)&a2)->Assign( aHighlightsound); /*0x4f34df*/
     v10 = 1; /*0x4f34ee*/
@@ -968,7 +968,7 @@ MSAnim * * E4Recv_4F3460::sub_4F3460(int a2, ReferenceCounted * a3, unsigned int
     DeleteAndZero((void **)&a2); /*0x4f3508*/
   String::Reassign(&this->q034, a10); /*0x4f3515*/
   v17 = a7; /*0x4f351a*/
-  v18 = String::Length(a7); /*0x4f3520*/
+  v18 = ((String *)a7)->Length(); /*0x4f3520*/
   v19 = a4; /*0x4f3525*/
   if ( v18 )
   {
@@ -982,7 +982,7 @@ MSAnim * * E4Recv_4F3460::sub_4F3460(int a2, ReferenceCounted * a3, unsigned int
     }
   }
   v22 = a6; /*0x4f3569*/
-  if ( String::Length(a6) )
+  if ( ((String *)a6)->Length() )
   {
     v23 = __2_YAPAXI_Z(0x3Cu); /*0x4f357a*/
     v24 = v23 ? MSPCXAnim::Construct(v23, v22, (int)(v12 + 6), v19, 1) : 0;
@@ -991,7 +991,7 @@ MSAnim * * E4Recv_4F3460::sub_4F3460(int a2, ReferenceCounted * a3, unsigned int
       PriorityQueue::Add(v12, (int)v24); /*0x4f35a3*/
   }
   v25 = a8; /*0x4f35a8*/
-  if ( String::Length(a8) ) /*0x4f35ae*/
+  if ( ((String *)a8)->Length() ) /*0x4f35ae*/
   {
     v26 = __2_YAPAXI_Z(0x3Cu); /*0x4f35b9*/
     if ( v26 ) /*0x4f35c3*/
@@ -1168,7 +1168,7 @@ int E4Recv_4F3D40::sub_4F3D40()
     (v1) |= ((((1u)) & 0xFF) << 8); /*0x4f3e06*/
     String::Erase(&v8, 0, 6); /*0x4f3e09*/
   }
-  v2 = String::Length(&v8); /*0x4f3e12*/
+  v2 = ((String *)&v8)->Length(); /*0x4f3e12*/
   if ( v2 ) /*0x4f3e1a*/
   {
     if ( v2 == 1 ) /*0x4f3e1d*/
@@ -1800,7 +1800,7 @@ unsigned int * E4Recv_4F3C40::sub_4F3C40(int a2, const char ** a3)
   unknown_libname_73(&a2); /*0x4f3c82*/
   int v5; // edi
   v5 = String::Tokenize((String *)a3, 0, Str, (void **)&a2); /*0x4f3c9f*/
-  if ( String::Length((String *)&a2) ) /*0x4f3ca1*/
+  if ( ((String *)&a2)->Length() ) /*0x4f3ca1*/
   {
     do /*0x4f3d19*/
     {
@@ -1825,7 +1825,7 @@ unsigned int * E4Recv_4F3C40::sub_4F3C40(int a2, const char ** a3)
       if ( v5 == -1 ) /*0x4f3d0a*/
         DeleteAndZero::Alt2((DeleteAndZero *)&a2); /*0x4f3d10*/
     }
-    while ( String::Length((String *)&a2) ); /*0x4f3d19*/
+    while ( ((String *)&a2)->Length() ); /*0x4f3d19*/
     v3 = this; /*0x4f3d22*/
   }
   DeleteAndZero((ObjectClass *)&a2); /*0x4f3d2a*/

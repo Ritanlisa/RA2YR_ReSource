@@ -509,9 +509,9 @@ LABEL_6:
     WideString::Append2((WideString *)&v23.m_3[1], v7); /*0x780b4c*/
   }
   ((String *)&v24)->Assign( a2 + 46); /*0x780b59*/
-  if ( !String::Length(&v24) ) /*0x780b62*/
+  if ( !((String *)&v24)->Length() ) /*0x780b62*/
     String::Assign_Alt(&v24, a2 + 87); /*0x780b73*/
-  if ( String::Length(&v24) ) /*0x780b7c*/
+  if ( ((String *)&v24)->Length() ) /*0x780b7c*/
   {
     v8 = CharStringToWide((wchar_t **)&v25, (const char **)&v24); /*0x780b8d*/
     v9 = FormatWideStringPrefix((wchar_t **)&v24.m_3[1], asc_84A69C, v8); /*0x780b9c*/
@@ -634,7 +634,7 @@ LABEL_14:
   v16 = 0; /*0x780fa5*/
   unknown_libname_73(&v12.ptr_8); /*0x780fa9*/
   ParseStringCommaInts(String_buf, &v14, &v15, (int *)&v13.m_3[1], &v17, &v16, (void **)&v12.ptr_8); /*0x780fd2*/
-  if ( String::Length((String *)&v12.u32_8) ) /*0x780fdb*/
+  if ( ((String *)&v12.u32_8)->Length() ) /*0x780fdb*/
   {
     Render_Format((wchar_t **)&v12.ptr_4, (String *)&v12.u32_8); /*0x780fec*/
     if ( WideString::Length((WideString *)&v12.ptr_4) ) /*0x780ff5*/
@@ -2634,7 +2634,7 @@ int WOL_LoginFlow()
   if ( InfantryClass::SetField6((InfantryClass *)&v43) ) /*0x7870f9*/
   {
     ReadAutoLoginWOL((ObjectClass *)&v39); /*0x78710f*/
-    if ( String::Length((String *)&v39) ) /*0x787118*/
+    if ( ((String *)&v39)->Length() ) /*0x787118*/
     {
       DeleteAndZero::Alt2((DeleteAndZero *)&g_WebBrowserConfig); /*0x78712a*/
       v6 = 1; /*0x78712f*/
@@ -2673,7 +2673,7 @@ int WOL_LoginFlow()
         if ( !v42 ) /*0x7871e4*/
           goto LABEL_29; /*0x7871e4*/
         v9 = (String *)((char *)v42 + 12); /*0x7871e6*/
-        if ( !String::Length((String *)((char *)v42 + 12)) ) /*0x7871eb*/
+        if ( !((String *)((char *)v42 + 12))->Length() ) /*0x7871eb*/
           goto LABEL_29; /*0x7871eb*/
         v8 = 1; /*0x7871f9*/
         if ( g_WOL_UserList.ptr_0 <= 1 ) /*0x787200*/
@@ -2701,10 +2701,10 @@ LABEL_29:
         LoadPlayerProfile((ObjectClass *)&v41.q008, (const char **)&v39); /*0x78726a*/
         if ( v42 ) /*0x787275*/
         {
-          if ( String::Length((String *)((char *)v42 + 12)) ) /*0x78727a*/
+          if ( ((String *)((char *)v42 + 12))->Length() ) /*0x78727a*/
           {
             v11 = (String *)((char *)v42 + 12); /*0x78728f*/
-            if ( String::Length((String *)((char *)v42 + 12)) && (v8 = 1, g_WOL_UserList.ptr_0 > 1) ) /*0x7872a9*/
+            if ( ((String *)((char *)v42 + 12))->Length() && (v8 = 1, g_WOL_UserList.ptr_0 > 1) ) /*0x7872a9*/
             {
               while ( 1 ) /*0x7872b6*/
               {
@@ -2753,7 +2753,7 @@ LABEL_40:
 LABEL_48:
     DeleteAndZero((ObjectClass *)&v39); /*0x787359*/
   }
-  if ( !String::Length((String *)&stru_B73E10.q030) && (unsigned __int8)Flag::IsNot2(&v43) ) /*0x787374*/
+  if ( !((String *)&stru_B73E10.q030)->Length() && (unsigned __int8)Flag::IsNot2(&v43) ) /*0x787374*/
   {
     ConfigWOL = LoadConfigWOL((ObjectClass *)&v41.q008); /*0x787381*/
     String::Reassign((String *)&stru_B73E10.q030, (const char **)ConfigWOL); /*0x78738c*/
@@ -2777,8 +2777,8 @@ LABEL_48:
                        (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))OptionsDlgProcWOL,
                        (LPARAM)&v43.q008);
   Dialog::Show(Dialog); /*0x787424*/
-  if ( !String::Length((String *)&stru_B73E10.q030) /*0x78743c*/
-    || String::Length((String *)&g_WebBrowserConfig) )
+  if ( !((String *)&stru_B73E10.q030)->Length() /*0x78743c*/
+    || ((String *)&g_WebBrowserConfig)->Length() )
   {
     DlgItem = GetDlgItem((HWND)Dialog, 1576); /*0x787452*/
   }
@@ -2839,7 +2839,7 @@ LABEL_98:
     ComPtr::Set((ComPtr *)&v41.q008, dword_B75E4C); /*0x787528*/
   }
   v22 = (String *)((char *)v42 + 12); /*0x787531*/
-  if ( !String::Length((String *)((char *)v42 + 12)) ) /*0x787536*/
+  if ( !((String *)((char *)v42 + 12))->Length() ) /*0x787536*/
     goto LABEL_82; /*0x787536*/
   ptr_0 = g_WOL_UserList.ptr_0; /*0x787543*/
   v24 = 1; /*0x787549*/
@@ -3080,9 +3080,9 @@ LABEL_25:
       Screen::Capture(1, 0, 0, 0); /*0x7879f4*/
       Network_Load_72CD60(); /*0x7879f9*/
       hWnd = (HWND)CreateDialog(0x113u, (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))WOLobby::DlgProc, 0); /*0x787a13*/
-      if ( String::Length((String *)&unk_B73AE0) ) /*0x787a15*/
+      if ( ((String *)&unk_B73AE0)->Length() ) /*0x787a15*/
       {
-        v11 = String::Length((String *)&unk_B73AE0); /*0x787a27*/
+        v11 = ((String *)&unk_B73AE0)->Length(); /*0x787a27*/
         v12 = (char *)__2_YAPAXI_Z(v11 + 1); /*0x787a33*/
         if ( v12 ) /*0x787a3a*/
         {
@@ -3953,7 +3953,7 @@ LABEL_27:
           }
           v27 = (Dialog *)CreateDialogIndirect(g_hInstance, v22, g_hWnd, (DLGPROC)WOLobbySmallDlgProc, 0); /*0x78905f*/
           SetupDialog(v27, v22); /*0x789065*/
-          if ( String::Length((String *)&unk_B77794) ) /*0x78906f*/
+          if ( ((String *)&unk_B77794)->Length() ) /*0x78906f*/
           {
             v28 = String::GetOrEmpty((String *)&unk_B77794); /*0x789082*/
             v29 = GetDlgItem((HWND)v27, 1576); /*0x78908a*/
@@ -3964,7 +3964,7 @@ LABEL_27:
             v30 = GetDlgItem((HWND)v27, 1576); /*0x789095*/
             SendMessageA(v30, 0x4B4u, 0, (LPARAM)&g_INI_DefaultBuffer); /*0x7890a4*/
           }
-          if ( String::Length((String *)&stru_B765EC) ) /*0x7890ab*/
+          if ( ((String *)&stru_B765EC)->Length() ) /*0x7890ab*/
           {
             v31 = String::GetOrEmpty((String *)&stru_B765EC); /*0x7890be*/
             v32 = GetDlgItem((HWND)v27, 1509); /*0x7890c6*/
@@ -3975,7 +3975,7 @@ LABEL_27:
             v33 = GetDlgItem((HWND)v27, 1509); /*0x7890d1*/
             SendMessageA(v33, 0x4B4u, 0, (LPARAM)&g_INI_DefaultBuffer); /*0x7890e0*/
           }
-          if ( String::Length((String *)&unk_B778F4) ) /*0x7890e7*/
+          if ( ((String *)&unk_B778F4)->Length() ) /*0x7890e7*/
           {
             v34 = String::GetOrEmpty((String *)&unk_B778F4); /*0x7890fa*/
             v35 = GetDlgItem((HWND)v27, 1836); /*0x789102*/
@@ -3986,7 +3986,7 @@ LABEL_27:
             v36 = GetDlgItem((HWND)v27, 1836); /*0x78910d*/
             SendMessageA(v36, 0x4B4u, 0, (LPARAM)&g_INI_DefaultBuffer); /*0x78911c*/
           }
-          if ( String::Length(&stru_B778FC) ) /*0x789123*/
+          if ( ((String *)&stru_B778FC)->Length() ) /*0x789123*/
           {
             v37 = String::GetOrEmpty(&stru_B778FC); /*0x789136*/
             v38 = GetDlgItem((HWND)v27, 1575); /*0x78913e*/
@@ -4247,7 +4247,7 @@ int PopulateWOLUserList(HWND hWnd, char a2)
         v12 = SendMessageA((HWND)hWnd, 0x4C8u, 0, (LPARAM)v11); /*0x789870*/
         SendMessageA((HWND)hWnd, 0x19Au, v12, v4); /*0x78987a*/
       }
-      if ( String::Length(&v20) ) /*0x789880*/
+      if ( ((String *)&v20)->Length() ) /*0x789880*/
       {
         v15 = String::ToLowerCopy((String *)&v18.ptr_4, v23); /*0x78989b*/
         v13 = String::ToLowerCopy(&v20, &v22); /*0x7898a1*/
@@ -4994,7 +4994,7 @@ LABEL_50:
       unknown_libname_74(&v39); /*0x78d1d8*/
       v5 = GetDlgItem(hDlg, 1344); /*0x78d1ed*/
       GetEditControlText(v5, &v39); /*0x78d1f3*/
-      v6 = String::Length((const char **)&v40) && WideString::Length((const wchar_t **)&v39); /*0x78d212*/
+      v6 = ((String *)(const char **)&v40)->Length() && WideString::Length((const wchar_t **)&v39); /*0x78d212*/
       v37 = v6; /*0x78d21b*/
       v7 = GetDlgItem(hDlg, 1474); /*0x78d222*/
       EnableWindow(v7, v37); /*0x78d225*/
@@ -5012,7 +5012,7 @@ LABEL_50:
   unknown_libname_73(&v40); /*0x78d284*/
   v9 = GetDlgItem(hDlg, 1473); /*0x78d299*/
   GetDialogText(v9, &v40); /*0x78d29f*/
-  v10 = WideString::Length((const wchar_t **)&v39) && String::Length((const char **)&v40); /*0x78d2be*/
+  v10 = WideString::Length((const wchar_t **)&v39) && ((String *)(const char **)&v40)->Length(); /*0x78d2be*/
   v38 = v10; /*0x78d2c7*/
   v11 = GetDlgItem(hDlg, 1474); /*0x78d2ce*/
   EnableWindow(v11, v38); /*0x78d2d1*/
@@ -5879,7 +5879,7 @@ namespace gamemd {
 int E4Recv_786E70::sub_786E70()
 {
 
-  if ( !String::Length((String *)this) ) /*0x786e75*/
+  if ( !((String *)this)->Length() ) /*0x786e75*/
     return -1; /*0x786e75*/
   void *ptr_0 = g_WOL_UserList.ptr_0; // ecx /*0x786e7e*/
   int v3 = 1; // edi /*0x786e84*/

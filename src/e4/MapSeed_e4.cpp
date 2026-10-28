@@ -208,7 +208,7 @@ AbstractClass * * MapSeed::InsertName()
       v8 = *(unsigned int *)g_WOL_BuddyList.__pad_0; /*0x79c7f7*/
     }
     *(unsigned int *)g_WOL_BuddyList.__pad_0 = v8 + 1; /*0x79c802*/
-    if ( String::Length((String *)&unk_B73ACC) ) /*0x79c807*/
+    if ( ((String *)&unk_B73ACC)->Length() ) /*0x79c807*/
     {
       if ( (unsigned int)(time(0) - dword_B779D0) < 5 ) /*0x79c825*/
       {

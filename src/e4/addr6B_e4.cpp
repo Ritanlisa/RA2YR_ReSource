@@ -5517,7 +5517,7 @@ unsigned int E4Recv_6B94E0::sub_6B94E0()
   unsigned int v2; // esi
   unsigned int i; // edi
 
-  v2 = String::Length((String *)this); /*0x6b94ec*/
+  v2 = ((String *)this)->Length(); /*0x6b94ec*/
   for (); ++i ) /*0x6b94f0*/
   {
     char *v4; // eax
