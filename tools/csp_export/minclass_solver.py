@@ -1,0 +1,1839 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""minclass_solver.py —— 最小类数 CSP 求解器（约束族 C1-C8）。
+
+候选集合（类宇宙）
+    anchors/class_db.json   1,597 类：继承真值 / vtable 集合 / vtable_slot_count / size / ctors
+    tools/class_layouts.json 1,282 类：扁平成员表 {offset: size}（C1 宽度相容判据）
+    anchors/vtable_slot_authority.json 954 类 / 13,204 槽位（C3、C6）
+
+约束族（每族给出"该实体允许的类集合"或 EXACT 单类）
+    C1 成员访问     : 类必须在每个被访问偏移上都有成员；宽度相容按 obs_w <= member_w
+    C2 this 传递    : thiscall 的 this 实参类 ⊑ 被调方声明的 this 类；函数自身 this 同规
+    C3 虚表槽位     : obj->vtable[k] 的接收者类必须拥有槽位 k（无槽位数据的类=未知，放行）
+    C4 ctor/dtor 装表 (EXACT) : 在 [this+0] 装入 vtable 的函数，其 this 的类 == 该 vtable 的类
+    C5 分配长度 (EXACT)       : operator new N 产生的对象 sizeof(class) == N
+    C6 虚表槽位数 (EXACT)     : 已知 vtable 身份的对象，class.vtable_slot_count == N
+    C7 参数/返回方差          : 形参声明类 / 调用点实参类约束实体；T ⊑ U 方差校验
+    C8 全局对象身份           : 全局地址按值类对象 / 装了 vtable / 名字证据 → 该类
+
+求解
+    实体 = MEMBER_ACCESS base ∪ FUNC_PARAM 端点 ∪ CALL_ARG 目标 ∪ CALL_VTABLE receiver ∪ new 站点
+    等式 = FUNC_PARAM / CALL_ARG 具名实体 / 寄存器到达定义（CFG must 分析） / new→ctor
+    簇域 = C1(簇内观测并集) ∩ 各族掩码 ∩ EXACT
+    目标 = 最少不同类数：贪心集合覆盖 + 局部改进（去冗余 + 2 换 1），附不相交域打包下界
+    空域绝不静默丢弃：全部进 anchors/minclass_conflicts.json（best-effort 域仍参与覆盖）
+
+用法
+    python tools/csp_export/minclass_solver.py
+    python tools/csp_export/minclass_solver.py --no-reg-flow
+    python tools/csp_export/minclass_solver.py --build-facts   # 从 full_export 重建二进制事实缓存
+"""
+import argparse
+import bisect
+import collections
+import glob
+import io
+import json
+import os
+import re
+import time
+
+ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+FAMILIES = ["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8"]
+FAMILY_DESC = {
+    "C1": "member access (offset, obs_w<=member_w)",
+    "C2": "this passing (arg class ⊑ callee this-class)",
+    "C3": "vtable slot membership",
+    "C4": "ctor/dtor vtable install @this+0 (EXACT)",
+    "C5": "operator new size (EXACT)",
+    "C6": "vtable identity slot count (EXACT)",
+    "C7": "param/return variance",
+    "C8": "global object identity",
+}
+
+REGS = {"eax", "ebx", "ecx", "edx", "esi", "edi", "ebp", "esp"}
+DATA_LO, DATA_HI = 0x812000, 0xB7A000          # .data（AGENTS.md）
+
+FACTS_PATH = "anchors/minclass_binary_facts.json"
+FACTS_SRC = "decompile-results/full_export/src/*.cpp"
+
+
+def jload(path, default=None):
+    p = path if os.path.isabs(path) else os.path.join(ROOT, path)
+    if not os.path.exists(p):
+        return default
+    with io.open(p, encoding="utf-8") as fh:
+        return json.load(fh)
+
+
+def hx(v, default=None):
+    if isinstance(v, int):
+        return v
+    if not isinstance(v, str):
+        return default
+    s = v.strip().lower()
+    if s.startswith("0x"):
+        s = s[2:]
+    try:
+        return int(s, 16)
+    except ValueError:
+        return default
+
+
+class UF:
+    def __init__(self):
+        self.p = {}
+
+    def find(self, x):
+        p = self.p
+        if x not in p:
+            p[x] = x
+            return x
+        r = x
+        while p[r] != r:
+            r = p[r]
+        while p[x] != r:
+            p[x], x = r, p[x]
+        return r
+
+    def union(self, a, b):
+        ra, rb = self.find(a), self.find(b)
+        if ra == rb:
+            return False
+        if ra > rb:
+            ra, rb = rb, ra
+        self.p[rb] = ra
+        return True
+
+
+# ==========================================================================
+# 1. 类宇宙
+# ==========================================================================
+def build_universe():
+    db = jload("anchors/class_db.json")["classes"]
+    lay = jload("tools/class_layouts.json")
+    align = jload("anchors/class_name_align.json", {})
+    malias = jload("anchors/mangled_alias.json", {})
+    r2c = {k: v["canon"] for k, v in (align.get("rtti_to_canon") or {}).items()}
+
+    names = list(db.keys())
+    idx = {nm: i for i, nm in enumerate(names)}
+    n = len(names)
+
+    alias = {}
+    for k in names:
+        alias[k] = k
+    for rn, rec in (align.get("rtti_to_canon") or {}).items():
+        c = rec.get("canon")
+        if c in idx and rn not in alias:
+            alias[rn] = c
+    for k, v in (malias or {}).items():
+        if isinstance(v, str) and v in idx and k not in alias:
+            alias[k] = v
+        elif isinstance(v, dict):
+            for cand in ("canon", "canonical", "name"):
+                if v.get(cand) in idx and k not in alias:
+                    alias[k] = v[cand]
+                    break
+
+    def resolve(name):
+        if not isinstance(name, str):
+            return None
+        s = name.strip()
+        if not s:
+            return None
+        if s in idx:
+            return idx[s]
+        if s in alias:
+            return idx[alias[s]]
+        t = s
+        for _ in range(8):
+            if t in idx:
+                return idx[t]
+            if t in alias:
+                return idx[alias[t]]
+            if t.endswith("@"):
+                t = t[:-1]
+                continue
+            break
+        if s.startswith("?$"):
+            base = s[2:].split("@", 1)[0]
+            if base in idx:
+                return idx[base]
+        return None
+
+    members = [dict() for _ in range(n)]
+    layout_size = [None] * n
+    has_layout = [False] * n
+    for i, c in enumerate(names):
+        recs = [c] + [r for r in (db[c].get("rtti_names") or []) if r != c]
+        cand = [r for r in recs if r in lay] + \
+               [r2c[r] for r in recs if r in r2c and r2c[r] in lay]
+        best = None
+        for r in cand:
+            o = lay[r].get("offsets") or {}
+            if best is None or len(o) > len(best[1]):
+                best = (r, o, lay[r].get("size"))
+        if best:
+            has_layout[i] = True
+            if isinstance(best[2], int):
+                layout_size[i] = best[2]
+            for k, rec in (best[1] or {}).items():
+                try:
+                    off = int(str(k), 10)
+                except ValueError:
+                    continue
+                w = rec.get("size") if isinstance(rec, dict) else None
+                members[i][off] = int(w) if isinstance(w, int) and w > 0 else None
+
+    size = [None] * n
+    for i in range(n):
+        s = layout_size[i]
+        if s is None:
+            s = db[names[i]].get("size")
+        size[i] = int(s) if isinstance(s, int) else None
+
+    rtti_base = jload("anchors/rtti_base_arrays.json", {})
+    anc = [set([i]) for i in range(n)]
+    for i, c in enumerate(names):
+        for a in db[c].get("full_ancestors") or []:
+            j = resolve(a)
+            if j is not None:
+                anc[i].add(j)
+        for rn in (db[c].get("rtti_names") or []) + [c]:
+            for a in rtti_base.get(rn) or []:
+                j = resolve(a)
+                if j is not None:
+                    anc[i].add(j)
+        for r in [c] + list(db[c].get("rtti_names") or []) + \
+                 [r2c[x] for x in (db[c].get("rtti_names") or []) if x in r2c]:
+            rec = lay.get(r)
+            p = rec.get("parent") if isinstance(rec, dict) else None
+            j = resolve(p) if p else None
+            if j is not None:
+                anc[i].add(j)
+    changed = True
+    while changed:
+        changed = False
+        for i in range(n):
+            add = set()
+            for a in anc[i]:
+                if a != i:
+                    add |= anc[a]
+            if not add <= anc[i]:
+                anc[i] |= add
+                changed = True
+    desc = [set() for _ in range(n)]
+    for i in range(n):
+        for a in anc[i]:
+            desc[a].add(i)
+
+    vtables = [set() for _ in range(n)]
+    slot_count = [None] * n
+    for i, c in enumerate(names):
+        for va in (db[c].get("vtables") or {}):
+            v = hx(va)
+            if v is not None:
+                vtables[i].add(v)
+        sc = db[c].get("vtable_slot_count")
+        if isinstance(sc, int):
+            slot_count[i] = sc
+
+    auth = jload("anchors/vtable_slot_authority.json", {})
+    slot_set = [None] * n
+    auth_hit = 0
+    for k, rec in auth.items():
+        i = resolve(k)
+        if i is None:
+            continue
+        auth_hit += 1
+        ss = set()
+        for sk in (rec.get("slots") or {}):
+            try:
+                ss.add(int(sk))
+            except (TypeError, ValueError):
+                pass
+        slot_set[i] = ss if slot_set[i] is None else (slot_set[i] | ss)
+        sc = rec.get("slot_count")
+        if isinstance(sc, int):
+            slot_count[i] = sc          # authority（二进制 .rdata 实测）优先于 class_db
+        v = hx(rec.get("vtable"))
+        if v is not None:
+            vtables[i].add(v)
+
+    return {
+        "db": db, "names": names, "idx": idx, "resolve": resolve, "n": n,
+        "members": members, "has_layout": has_layout, "size": size,
+        "anc": anc, "desc": desc, "vtables": vtables, "slot_count": slot_count,
+        "slot_set": slot_set, "n_layout": sum(1 for x in has_layout if x),
+        "n_auth": auth_hit,
+    }
+
+
+# ==========================================================================
+# 2. 二进制事实（C4/C5/C6/C8 与寄存器等式链）
+# ==========================================================================
+RE_FN = re.compile(r"^// ([^\n]+)\n// addr=0x([0-9A-Fa-f]+) size=0x([0-9A-Fa-f]+)$", re.M)
+RE_PROTO = re.compile(r"^// proto: (.*)$", re.M)
+RE_LINE = re.compile(r"^//   ([0-9a-f]{6,8}): (.*)$", re.M)
+RE_MOVVT = re.compile(
+    r"mov\s+(?:dword ptr )?\[([a-z]{2,3})(?:\+([0-9A-Fa-f]+h?))?\],\s*offset (\?\?_7\S+)$")
+RE_MOVVT_G = re.compile(
+    r"mov\s+(?:dword ptr )?\[([^\]]+)\],\s*offset (\?\?_7\S+)$")
+RE_MOVRR = re.compile(r"mov\s+([a-z]{2,3}),\s*([a-z]{2,3})$")
+RE_WRREG = re.compile(
+    r"(?:mov|xor|add|sub|lea|pop|inc|dec|and|or|shl|shr|sar|imul|neg|not)\s+([a-z]{2,3})\b")
+RE_JMP = re.compile(r"^(j[a-z]+|loop[a-z]*)\s+(?:short\s+|near\s+)?([A-Za-z_][\w]*)$")
+RE_LABEL = re.compile(r"^(?:loc|def|unk)_([0-9A-Fa-f]{6,8})$")
+RE_RET = re.compile(r"^retn?\b")
+
+
+def vt_sym_to_name(sym):
+    s = sym[4:] if sym.startswith("??_7") else sym
+    s = re.sub(r"(_\d+)?6B@$", "", s)
+    return s
+
+
+def build_cfg(lines):
+    """lines: [(addr, ins)] → (blocks: [(start, [(addr,ins)])], succ: {start: [start]})."""
+    if not lines:
+        return [], {}
+    addrs = [a for a, _ in lines]
+    aset = set(addrs)
+    succ_i = {}
+    targets = set()
+    for i, (a, ins) in enumerate(lines):
+        nxt = addrs[i + 1] if i + 1 < len(lines) else None
+        m = RE_JMP.match(ins)
+        if m:
+            tgt = m.group(2)
+            lm = RE_LABEL.match(tgt)
+            s = set()
+            if lm:
+                t = int(lm.group(1), 16)
+                if t in aset:
+                    s.add(t)
+                    targets.add(t)
+            if not ins.startswith("jmp") and nxt is not None:
+                s.add(nxt)
+            succ_i[a] = s
+        elif RE_RET.match(ins) or ins.startswith("jmp"):
+            succ_i[a] = set()
+        else:
+            succ_i[a] = {nxt} if nxt is not None else set()
+    leaders = {addrs[0]} | targets
+    for i, (a, ins) in enumerate(lines):
+        if (RE_JMP.match(ins) or ins.startswith("call") or RE_RET.match(ins)) \
+                and i + 1 < len(lines):
+            leaders.add(addrs[i + 1])
+    blocks = []
+    cur = []
+    for a, ins in lines:
+        if a in leaders and cur:
+            blocks.append(cur)
+            cur = []
+        cur.append((a, ins))
+    if cur:
+        blocks.append(cur)
+    start2idx = {b[0][0]: i for i, b in enumerate(blocks)}
+    succ = {}
+    for b in blocks:
+        last_a = b[-1][0]
+        succ[b[0][0]] = [start2idx[x] for x in succ_i.get(last_a, ()) if x in start2idx]
+    return blocks, succ
+
+
+def merge_state(a, b):
+    if a is None:
+        return dict(b) if b else {}
+    if b is None:
+        return dict(a)
+    out = {}
+    for r in set(a) | set(b):
+        va, vb = a.get(r), b.get(r)
+        out[r] = va if va == vb else None
+    return out
+
+
+def transfer(st, ins, addr):
+    """就地更新寄存器状态（entity id 或 None）"""
+    if ins.startswith("call"):
+        for r in ("eax", "ecx", "edx"):
+            st[r] = None
+        return
+    m = RE_MOVRR.match(ins)
+    if m:
+        d, s = m.group(1), m.group(2)
+        st[d] = st.get(s)
+        return
+    m = re.match(r"mov\s+([a-z]{2,3}),\s*offset\s+([A-Za-z_0-9]+)$", ins)
+    if m:
+        st[m.group(1)] = None
+        return
+    m = RE_WRREG.match(ins)
+    if m:
+        st[m.group(1)] = None
+
+
+def parse_export(interest):
+    """interest: {(call_addr, reg)} —— 需要解析来源的 CALL_ARG 站点"""
+    files = sorted(glob.glob(os.path.join(ROOT, FACTS_SRC)))
+    if not files:
+        return None
+    interest_by_addr = collections.defaultdict(set)
+    for (a, r) in interest:
+        interest_by_addr[a].add(r)
+    interest_addrs = sorted(interest_by_addr)
+    allocs, installs, ginst, ctor_raw, sym2addr, reg_links = [], [], [], [], {}, []
+    t0 = time.time()
+    for path in files:
+        txt = io.open(path, encoding="utf-8", errors="replace", newline="").read().replace("\r\n", "\n")
+        for b in re.split(r"^// =+$", txt, flags=re.M):
+            m = RE_FN.search(b)
+            if not m:
+                continue
+            name = m.group(1).strip()
+            fn = int(m.group(2), 16)
+            sym2addr[name] = fn
+            sym2addr[name.replace("::", "__")] = fn
+            pm = RE_PROTO.search(b)
+            proto = pm.group(1) if pm else ""
+            lines = []
+            for lm in RE_LINE.finditer(b):
+                ins = lm.group(2).split(";", 1)[0].strip()
+                lines.append((int(lm.group(1), 16), ins))
+            if not lines:
+                continue
+            # ---- operator new / malloc 站点 ----
+            for i, (a, ins) in enumerate(lines):
+                if not ins.startswith("call "):
+                    continue
+                tgt = ins[5:].strip()
+                if not ("YAPAXI" in tgt or tgt == "_malloc" or "??_U" in tgt):
+                    continue
+                size = None
+                if i > 0:
+                    prev = lines[i - 1][1]
+                    mm = re.match(r"push\s+([0-9A-Fa-f]+h?)$", prev)
+                    if mm:
+                        sv = mm.group(1)
+                        size = int(sv[:-1], 16) if sv.endswith("h") else int(sv, 10)
+                    else:
+                        mm = re.match(r"push\s+([a-z]{2,3})$", prev)
+                        if mm:
+                            reg = mm.group(1)
+                            for j in range(i - 2, max(-1, i - 10), -1):
+                                ins2 = lines[j][1]
+                                m2 = re.match(r"mov\s+%s,\s*([0-9A-Fa-f]+h?)$" % reg, ins2)
+                                if not m2:
+                                    m2 = re.match(r"lea\s+%s,\s*\[([0-9A-Fa-f]+h?)\]$" % reg, ins2)
+                                if m2:
+                                    sv = m2.group(1)
+                                    try:
+                                        size = int(sv[:-1], 16) if sv.endswith("h") else int(sv, 10)
+                                    except ValueError:
+                                        size = None
+                                    break
+                                if re.match(r"mov\s+%s\b" % reg, ins2):
+                                    break
+                if size is None or not (0 < size <= 0x40000):
+                    continue
+                dest = None
+                for j in range(i + 1, min(i + 6, len(lines))):
+                    mm = re.match(r"mov\s+([a-z]{2,3}),\s*eax$", lines[j][1])
+                    if mm:
+                        dest = mm.group(1)
+                        break
+                allocs.append((fn, a, size, dest))
+            # ---- vtable 安装（保守 ecx 别名追踪）----
+            aliases = {"ecx"} if "__thiscall" in proto else set()
+            prev_mov_ecx = None
+            for a, ins in lines:
+                if ins.startswith("call"):
+                    if prev_mov_ecx:
+                        ctor_raw.append((fn, a, prev_mov_ecx[1], ins[5:].strip()))
+                    prev_mov_ecx = None
+                    aliases -= {"eax", "ecx", "edx"}
+                    continue
+                mm = RE_MOVVT.match(ins)
+                if mm:
+                    reg, off, sym = mm.group(1), mm.group(2), mm.group(3)
+                    o = 0
+                    if off:
+                        o = int(off[:-1], 16) if off.endswith("h") else int(off, 16)
+                    if reg in aliases:
+                        installs.append((fn, a, o, vt_sym_to_name(sym)))
+                    prev_mov_ecx = None
+                    continue
+                mm = RE_MOVVT_G.match(ins)
+                if mm:
+                    dst, sym = mm.group(1).strip(), mm.group(2)
+                    if not re.match(r"^[a-z]{2,3}(?:\+.*)?$", dst):
+                        ginst.append((fn, a, dst, vt_sym_to_name(sym)))
+                    prev_mov_ecx = None
+                    continue
+                mm = RE_MOVRR.match(ins)
+                if mm:
+                    d, s = mm.group(1), mm.group(2)
+                    if s in aliases:
+                        aliases.add(d)
+                    else:
+                        aliases.discard(d)
+                    prev_mov_ecx = (a, s) if d == "ecx" else None
+                    continue
+                mm = RE_WRREG.match(ins)
+                if mm:
+                    aliases.discard(mm.group(1))
+                prev_mov_ecx = None
+            # ---- 寄存器到达定义（仅对该函数内的 CALL_ARG 站点做）----
+            # interest 以 (addr,reg) 给出；用全局地址区间判定本函数是否命中
+            _i = bisect.bisect_left(interest_addrs, lines[0][0])
+            hits = _i < len(interest_addrs) and interest_addrs[_i] <= lines[-1][0]
+            if hits:
+                blocks, succ = build_cfg(lines)
+                if blocks:
+                    start2idx = {blk[0][0]: i for i, blk in enumerate(blocks)}
+                    in_state = [None] * len(blocks)
+                    in_state[0] = ({"ecx": "T:%X" % fn} if "__thiscall" in proto else {})
+                    work = [0]
+                    while work:
+                        bi = work.pop()
+                        st = dict(in_state[bi]) if in_state[bi] else {}
+                        for (a, ins) in blocks[bi]:
+                            transfer(st, ins, a)
+                        for si in succ.get(blocks[bi][0][0], ()):
+                            merged = merge_state(in_state[si], st)
+                            if in_state[si] is None or merged != in_state[si]:
+                                in_state[si] = merged
+                                work.append(si)
+                    # 回放块，在 interest 站点记录唯一到达值
+                    for bi, blk in enumerate(blocks):
+                        st = dict(in_state[bi]) if in_state[bi] else {}
+                        for (a, ins) in blk:
+                            regs = interest_by_addr.get(a)
+                            if regs:
+                                for reg in sorted(regs):
+                                    src = st.get(reg)
+                                    if src is not None:
+                                        reg_links.append((a, reg, src))
+                            transfer(st, ins, a)
+    # ---- 解析 call 目标 ----
+    ctor_calls = []
+    for fn, a, reg, tgt in ctor_raw:
+        t = sym2addr.get(tgt)
+        if t is None:
+            mm = re.match(r"^(?:sub_)?([0-9A-Fa-f]{6,8})$", tgt)
+            if mm:
+                t = int(mm.group(1), 16)
+        if t is not None:
+            ctor_calls.append((fn, a, reg, t))
+    return {
+        "meta": {
+            "generated_by": "minclass_solver.py --build-facts",
+            "source": FACTS_SRC, "files": len(files),
+        },
+        "alloc_sites": allocs,
+        "this_installs": installs,
+        "global_installs": ginst,
+        "ctor_calls": ctor_calls,
+        "reg_links": reg_links,
+    }
+
+
+def load_or_build_facts(rebuild, interest):
+    path = os.path.join(ROOT, FACTS_PATH)
+    if os.path.exists(path) and not rebuild:
+        d = jload(FACTS_PATH)
+        if d:
+            return d
+    d = parse_export(interest)
+    if d is None:
+        return None
+    with io.open(path, "w", encoding="utf-8") as fh:
+        json.dump(d, fh, ensure_ascii=False, separators=(",", ":"))
+    return d
+
+
+# ==========================================================================
+# 3. 实体命名
+# ==========================================================================
+GLOBAL_NAME2ADDR = None
+
+
+def global_addr(tok):
+    global GLOBAL_NAME2ADDR
+    tok = tok.strip()
+    if tok.startswith("0x"):
+        a = hx(tok)
+        return a if a is not None and DATA_LO <= a < DATA_HI else None
+    m = re.search(r"([0-9A-Fa-f]{6,8})$", tok)
+    if m and re.search(r"(dword|byte|word|stru|off|qword|flt)_", tok):
+        a = int(m.group(1), 16)
+        if DATA_LO <= a < DATA_HI:
+            return a
+    if GLOBAL_NAME2ADDR is None:
+        GLOBAL_NAME2ADDR = {}
+        for p in ("anchors/ida_global_types.json", "anchors/global_types.json"):
+            d = jload(p, {}) or {}
+            for a, rec in d.items():
+                aa = hx(a)
+                nm = (rec or {}).get("name")
+                if aa is not None and nm and DATA_LO <= aa < DATA_HI and nm not in GLOBAL_NAME2ADDR:
+                    GLOBAL_NAME2ADDR[nm] = aa
+    return GLOBAL_NAME2ADDR.get(tok)
+
+
+def ent_id(raw, fn=None):
+    if not isinstance(raw, str):
+        return None
+    s = raw.strip()
+    if s in REGS:
+        return ("R:%X:%s" % (fn, s)) if fn is not None else None
+    if s.startswith("stack_+"):
+        return ("S:%X:%s" % (fn, s[6:])) if fn is not None else None
+    if s.startswith("vtable_slot_"):
+        a = hx(s[len("vtable_slot_"):].split(":")[0])
+        return ("V:%X" % a) if a is not None else None
+    if s.startswith("offset "):
+        g = global_addr(s[7:].strip())
+        return ("G:%X" % g) if g is not None else None
+    if s.startswith("0x") or re.match(r"^[0-9A-Fa-f]{6,8}:", s):
+        a = hx(s.split(":")[0])
+        if a is None:
+            return None
+        if ".member(" in s:
+            off = s.split(".member(", 1)[1].rstrip(")")
+            which = "this"
+            if "::param" in s:
+                which = "p" + s.split("::param", 1)[1].split(".")[0]
+            return "M:%X:%s:%s" % (a, which, off)
+        if s.endswith(":this"):
+            return "T:%X" % a
+        if "::param" in s:
+            return "P:%X:%s" % (a, s.split("::param", 1)[1])
+    return None
+
+
+# ==========================================================================
+# 4. 主流程
+# ==========================================================================
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--build-facts", action="store_true")
+    ap.add_argument("--no-reg-flow", action="store_true")
+    ap.add_argument("--no-families", default="")
+    ap.add_argument("--max-pair-improve", type=int, default=40000)
+    args = ap.parse_args()
+
+    t_start = time.time()
+    U = build_universe()
+    names, idx, resolve, n = U["names"], U["idx"], U["resolve"], U["n"]
+    FULL = (1 << n) - 1
+    print("[universe] classes=%d with_layout=%d authority_joined=%d sizes=%d slot_count=%d"
+          % (n, U["n_layout"], U["n_auth"], sum(1 for s in U["size"] if s is not None),
+             sum(1 for s in U["slot_count"] if s is not None)), flush=True)
+
+    raw = jload("tools/type_infer/constraints/raw_constraints.json")["constraints"]
+    protos = jload("anchors/ida_function_protos.json", {})
+    faddrs = sorted(int(a, 16) for a in protos)
+    print("[data] raw edges=%d functions=%d" % (len(raw), len(protos)), flush=True)
+
+    def fn_at(a):
+        if not faddrs or a is None:
+            return None
+        i = bisect.bisect_right(faddrs, a) - 1
+        return faddrs[i] if i >= 0 else None
+
+    # ---------------- 实体与观测 ----------------
+    census = {f: 0 for f in FAMILIES}
+    exact_count = {f: 0 for f in FAMILIES}
+    ents = collections.defaultdict(lambda: {"obs": set(), "raw": set()})
+
+    def touch(eid, raw_id):
+        if eid is None or eid.startswith(("R:", "S:", "V:")):
+            return None
+        ents[eid]["raw"].add(raw_id)
+        return eid
+
+    for e in raw:
+        if e.get("type") != "MEMBER_ACCESS":
+            continue
+        eid = ent_id(e.get("base"))
+        if eid is None:
+            continue
+        try:
+            o = int(e.get("offset") or 0)
+        except (TypeError, ValueError):
+            continue
+        w = e.get("width")
+        w = int(w) if isinstance(w, (int, float)) and w > 0 else None
+        touch(eid, e.get("base"))
+        ents[eid]["obs"].add((o, w))
+        census["C1"] += 1
+
+    for e in raw:
+        t = e.get("type")
+        if t == "FUNC_PARAM":
+            fr = e.get("from")
+            a = hx(str(fr).split(":")[0]) if ":this" in str(fr) else None
+            touch(ent_id(fr, a), fr)
+        elif t == "CALL_ARG":
+            a = hx(e.get("addr")) or 0
+            touch(ent_id(e.get("to")), e.get("to"))
+            touch(ent_id(e.get("from"), fn_at(a)), e.get("from"))
+        elif t == "CALL_VTABLE":
+            a = hx(e.get("addr")) or 0
+            touch(ent_id(e.get("receiver"), fn_at(a)), e.get("receiver"))
+            touch(ent_id(e.get("to")), e.get("to"))
+        elif t == "RETURN":
+            touch(ent_id(e.get("to")), e.get("to"))
+
+    interest = set()
+    for e in raw:
+        if e.get("type") != "CALL_ARG":
+            continue
+        fr = e.get("from")
+        if isinstance(fr, str) and fr in REGS:
+            a = hx(e.get("addr")) or 0
+            if a:
+                interest.add((a, fr))
+
+    facts = load_or_build_facts(args.build_facts, interest)
+    if facts:
+        for fn, site, size, dest in facts["alloc_sites"]:
+            touch("N:%X" % site, "new@%X" % site)
+    else:
+        print("[warn] binary facts missing: C4/C5/C6/reg-flow degrade", flush=True)
+
+    print("[entities] total=%d with_obs=%d obs>=2=%d"
+          % (len(ents), sum(1 for r in ents.values() if r["obs"]),
+             sum(1 for r in ents.values() if len(r["obs"]) >= 2)), flush=True)
+
+    fam = {f: {} for f in FAMILIES}
+    exact = collections.defaultdict(list)
+    c1_gaps = []                                # C1 无解（布局缺口），不丢实体
+
+    # ---------------- C1：成员偏移 ----------------
+    # C1 密度门：布局只覆盖 >=70% dword 的类视为"完整"，缺失偏移可判负；
+    # 稀疏布局（观测得到的成员表）缺失偏移不算反证 —— 实测证明多数布局是稀疏的：
+    # TechnoClass 1312B 只有 257 个成员（78%），AnimClass 6324B 只有 65 个（4%）。
+    dense = [False] * n
+    for i in range(n):
+        if not U["has_layout"][i]:
+            continue
+        sz = U["size"][i]
+        if not sz or sz < 8:
+            continue
+        dense[i] = (len(U["members"][i]) * 4) >= 0.7 * sz
+    dense_list = [i for i in range(n) if dense[i]]
+    dense_mask = 0
+    sparse_mask = 0
+    for i in range(n):
+        if dense[i]:
+            dense_mask |= (1 << i)
+        else:
+            sparse_mask |= (1 << i)
+    print("[C1] layout density gate: dense=%d sparse=%d (threshold 70%% dword coverage)"
+          % (len(dense_list), n - len(dense_list)), flush=True)
+
+    # C1 用字节覆盖模型：把每个成员展开成 [off, off+width) 区间并合并。
+    # 这样 "dword 读 4 个连续 bool"（合法）不会被误判为宽度冲突；
+    # 而 "byte 读 int 成员" 也天然合法（区间被覆盖）。
+    intervals = [[] for _ in range(n)]
+    for i in range(n):
+        if not U["has_layout"][i]:
+            continue
+        iv = []
+        for off, w in U["members"][i].items():
+            ww = w if isinstance(w, int) and w > 0 else 4
+            iv.append((off, off + ww))
+        iv.sort()
+        merged = []
+        for a, b in iv:
+            if merged and a <= merged[-1][1]:
+                if b > merged[-1][1]:
+                    merged[-1] = (merged[-1][0], b)
+            else:
+                merged.append((a, b))
+        intervals[i] = merged
+
+    def covers(ci, o, w):
+        for (a, b) in intervals[ci]:
+            if a <= o and o + w <= b:
+                return True
+            if a > o:
+                return False
+        return False
+
+    c1_cache = {}
+    c1_range_cache = {}
+
+    def c1_ok_mask(o, w):
+        key = (o, w)
+        m = c1_range_cache.get(key)
+        if m is None:
+            m = sparse_mask                       # 稀疏布局：未知 → 放行
+            for ci in dense_list:
+                if covers(ci, o, w):
+                    m |= (1 << ci)
+            c1_range_cache[key] = m
+        return m
+
+    def c1_mask(obs):
+        """C1：dense 类必须覆盖每个被访问的字节区间；稀疏类只做"未知放行"。"""
+        key = tuple(sorted(obs))
+        m = c1_cache.get(key)
+        if m is None:
+            m = FULL
+            for (o, w) in key:
+                m &= c1_ok_mask(o, w if w else 4)
+                if not m:
+                    break
+            c1_cache[key] = m
+        return m
+
+    def c1_width_conflict(ci, obs):
+        """exact 类与观测的字节区间矛盾（只对 dense 布局成立；稀疏=布局缺口）"""
+        if not dense[ci]:
+            return []
+        return [[o, w] for (o, w) in obs if not covers(ci, o, w if w else 4)]
+
+    # ---------------- 函数声明类 ----------------
+    owner_of_fn = {}
+    for a, v in protos.items():
+        nm = (v or {}).get("name") or ""
+        if "::" in nm:
+            ci = resolve(nm.split("::")[0])
+            if ci is not None:
+                owner_of_fn[int(a, 16)] = (ci, nm)
+    allowed_cache = {}
+
+    def allowed_of(ci):
+        m = allowed_cache.get(ci)
+        if m is None:
+            m = 1 << ci
+            for d in U["desc"][ci]:
+                m |= (1 << d)
+            allowed_cache[ci] = m
+        return m
+
+    def parse_proto(proto):
+        if not proto:
+            return None
+        m = re.match(r"^(.*?)\s*(__\w+)\s*\((.*)\)\s*$", proto)
+        if not m:
+            return None
+        ret, cc, argstr = m.group(1).strip(), m.group(2), m.group(3).strip()
+        params = [p.strip() for p in argstr.split(",")] if argstr else []
+        return ret, cc, params
+
+    def type_class(t):
+        if not isinstance(t, str) or "*" not in t:
+            return None
+        s = re.sub(r"\b(const|volatile|struct|class)\b", " ", t)
+        s = s.replace("*", " ").replace("&", " ")
+        s = re.sub(r"\[[^\]]*\]", " ", s)
+        toks = [x for x in re.split(r"\s+", s) if x]
+        for tok in reversed(toks):
+            ci = resolve(tok)
+            if ci is not None:
+                return ci
+        return None
+
+
+    # ---------------- C2：this 传递 ----------------
+    for e in raw:
+        if e.get("type") != "CALL_ARG":
+            continue
+        fr, to = e.get("from"), e.get("to")
+        if not (isinstance(fr, str) and isinstance(to, str)):
+            continue
+        if fr.startswith("vtable_slot_") or to.startswith("vtable_slot_"):
+            continue
+        if not to.endswith(":this"):
+            continue
+        callee = hx(to.split(":")[0])
+        if callee is None or callee not in owner_of_fn:
+            continue
+        target = ent_id(fr, fn_at(hx(e.get("addr")) or 0))
+        if target is None or target not in ents:
+            continue
+        fam["C2"][target] = fam["C2"].get(target, FULL) & allowed_of(owner_of_fn[callee][0])
+        census["C2"] += 1
+    for e in raw:
+        if e.get("type") != "FUNC_PARAM":
+            continue
+        fr = e.get("from")
+        if not (isinstance(fr, str) and fr.endswith(":this")):
+            continue
+        a = hx(fr.split(":")[0])
+        if a is None:
+            continue
+        target = ent_id(fr)
+        if target not in ents:
+            continue
+        m = FULL
+        if a in owner_of_fn:
+            m &= allowed_of(owner_of_fn[a][0])
+        # proto 直接声明的 this 类型（自由函数/无 "::" 名也适用）
+        pr = parse_proto((protos.get("0x%08X" % a) or protos.get("0x%x" % a) or {}).get("proto"))
+        if pr and pr[1] == "__thiscall" and pr[2] and "this" in pr[2][0]:
+            ci_this = type_class(pr[2][0])
+            if ci_this is not None:
+                m &= allowed_of(ci_this)
+        if m != FULL:
+            fam["C2"][target] = fam["C2"].get(target, FULL) & m
+            census["C2"] += 1
+    print("[C2] evidence=%d entities=%d" % (census["C2"], len(fam["C2"])), flush=True)
+
+    # ---------------- C3：虚表槽位（3 值：满足 ∪ 未知）----------------
+    slot_mask = collections.defaultdict(int)
+    for i in range(n):
+        ss = U["slot_set"][i]
+        if ss is not None and len(ss) >= 0:
+            for s in ss:
+                slot_mask[s] |= (1 << i)
+    c3_known = collections.defaultdict(int)
+    for i in range(n):
+        if U["slot_set"][i] is not None:
+            c3_known["any"] |= (1 << i)
+    unknown_slot = FULL & ~c3_known["any"]
+
+    def c3_mask(slot):
+        return slot_mask.get(slot, 0) | unknown_slot
+
+    for e in raw:
+        if e.get("type") != "CALL_VTABLE":
+            continue
+        recv = e.get("receiver")
+        try:
+            slot = int(e.get("vtable_slot"))
+        except (TypeError, ValueError):
+            continue
+        target = ent_id(recv, fn_at(hx(e.get("addr")) or 0)) if recv else None
+        if target is None or target not in ents:
+            continue
+        fam["C3"][target] = fam["C3"].get(target, FULL) & c3_mask(slot)
+        census["C3"] += 1
+    print("[C3] evidence=%d entities=%d" % (census["C3"], len(fam["C3"])), flush=True)
+
+    # ---------------- C4：ctor/dtor 装表 EXACT ----------------
+    src = collections.defaultdict(lambda: {"export": set(), "committed": set()})
+    for a, cname in (jload("anchors/ctor_types.json", {}) or {}).items():
+        ci = resolve(cname)
+        aa = hx(a)
+        if ci is not None and aa is not None:
+            src[aa]["committed"].add(ci)
+    for a, cname in ((jload("anchors/structural_truth.json", {}) or {}).get("vtable_install") or {}).items():
+        ci = resolve(cname)
+        aa = hx(a)
+        if ci is not None and aa is not None:
+            src[aa]["committed"].add(ci)
+    if facts:
+        for fn, site, off, sym in facts["this_installs"]:
+            if off != 0:
+                continue
+            ci = resolve(sym)
+            if ci is not None:
+                src[fn]["export"].add(ci)
+    c4_disagree = []
+    for aa, rec in src.items():
+        ex, cm = rec["export"], rec["committed"]
+        pick = ex if len(ex) == 1 else (cm if len(ex) == 0 and len(cm) == 1 else None)
+        if pick is None:
+            if len(ex | cm) > 1:
+                c4_disagree.append({"func": "0x%08X" % aa,
+                                    "export": [names[c] for c in sorted(ex)],
+                                    "committed": [names[c] for c in sorted(cm)]})
+            continue
+        eid = "T:%X" % aa
+        if eid in ents:
+            ci = next(iter(pick))
+            exact[eid].append((ci, "C4"))
+            exact_count["C4"] += 1
+            census["C4"] += 1
+    print("[C4] exact this=%d source_disagreements=%d" % (exact_count["C4"], len(c4_disagree)),
+          flush=True)
+
+    # ---------------- C5：operator new 长度 EXACT ----------------
+    c5_link = []
+    size_obs = collections.defaultdict(collections.Counter)
+    size_mask_cache = {}
+
+    def size_mask(sz):
+        m = size_mask_cache.get(sz)
+        if m is None:
+            m = 0
+            for i in range(n):
+                if U["size"][i] == sz:
+                    m |= (1 << i)
+            size_mask_cache[sz] = m
+        return m
+
+    def known_size(ci):
+        s = U["size"][ci]
+        return s
+
+    if facts:
+        unknown_size = 0
+        for i in range(n):
+            if U["size"][i] is None:
+                unknown_size |= (1 << i)
+        ctor_calls = collections.defaultdict(list)
+        for fn, a, reg, tgt in facts["ctor_calls"]:
+            ctor_calls[fn].append((a, tgt, reg))
+        for lst in ctor_calls.values():
+            lst.sort()
+        for fn, site, size, dest in facts["alloc_sites"]:
+            eid = "N:%X" % site
+            m = size_mask(size) | unknown_size
+            if m and m != FULL:
+                fam["C5"][eid] = fam["C5"].get(eid, FULL) & m
+                census["C5"] += 1
+            if not dest:
+                continue
+            for (ca, tgt, reg) in ctor_calls.get(fn, ()):
+                if ca <= site:
+                    continue
+                if ca - site > 0x200:
+                    break
+                if reg == dest:
+                    # 只有"直接 ctor 的类尺寸 == 分配尺寸"时才是 most-derived（否则是基类 ctor）
+                    t_eid = "T:%X" % tgt
+                    for ci, _s in exact.get(t_eid, ()):
+                        if known_size(ci) == size:
+                            c5_link.append((eid, t_eid))
+                            size_obs[ci][size] += 1
+                    break
+    print("[C5] alloc_sites=%d size_validated_links=%d classes_with_size_evidence=%d"
+          % (len((facts or {}).get("alloc_sites", [])), len(c5_link), len(size_obs)), flush=True)
+
+    # ---------------- C6：vtable 身份 → 槽位数 EXACT（3 值）----------------
+    sc_mask_cache = {}
+
+    def sc_mask(sc):
+        m = sc_mask_cache.get(sc)
+        if m is None:
+            m = 0
+            for i in range(n):
+                if U["slot_count"][i] == sc:
+                    m |= (1 << i)
+            sc_mask_cache[sc] = m
+        return m
+
+    known_sc = 0
+    for i in range(n):
+        if U["slot_count"][i] is not None:
+            known_sc |= (1 << i)
+    unknown_sc = FULL & known_sc
+    if facts:
+        for fn, site, off, sym in facts["this_installs"]:
+            ci = resolve(sym)
+            if ci is None:
+                continue
+            eid = "T:%X" % fn
+            if eid not in ents:
+                continue
+            sc = U["slot_count"][ci]
+            if sc is None:
+                continue
+            m = sc_mask(sc) | unknown_sc
+            if m != FULL:
+                fam["C6"][eid] = fam["C6"].get(eid, FULL) & m
+                census["C6"] += 1
+    print("[C6] evidence=%d entities=%d" % (census["C6"], len(fam["C6"])), flush=True)
+
+    # ---------------- C7：参数/返回方差 ----------------
+    for a, v in protos.items():
+        pr = parse_proto((v or {}).get("proto"))
+        if not pr:
+            continue
+        ret, cc, params = pr
+        if cc != "__thiscall" or not params or "this" not in params[0]:
+            continue
+        aa = hx(a)
+        for k, ptxt in enumerate(params[1:]):
+            ci = type_class(ptxt)
+            if ci is None:
+                continue
+            eid = "P:%X:%d" % (aa, k)
+            if eid not in ents:
+                continue
+            fam["C7"][eid] = fam["C7"].get(eid, FULL) & allowed_of(ci)
+            census["C7"] += 1
+
+    callargs = jload("anchors/ida_call_args.json", {}) or {}
+    viol = []
+    arg_type_pairs = 0
+    for ea, rec in callargs.items():
+        fn = hx((rec or {}).get("fn"))
+        if fn is None:
+            continue
+        v = protos.get("0x%08X" % fn) or protos.get("0x%x" % fn)
+        pr = parse_proto((v or {}).get("proto"))
+        cc, params = (pr[1], pr[2]) if pr else ("", [])
+        shift = 1 if (cc == "__thiscall" and params and "this" in params[0]) else 0
+        for arg in (rec or {}).get("args") or []:
+            i = arg.get("i")
+            if not isinstance(i, int):
+                continue
+            tc = type_class(arg.get("type"))
+            if tc is None:
+                continue
+            # C7b 只做方差校验（T ⊑ U），不把多站点的实参类型累积成域：
+            # 同一形参在不同调用点静态类型不同是常态，累积会产生假冲突。
+            arg_type_pairs += 1
+            pi = i + shift
+            if pi < len(params):
+                uc = type_class(params[pi])
+                if uc is not None and uc not in U["anc"][tc]:
+                    viol.append({"call": "0x%08X" % (hx(ea) or 0),
+                                 "callee": "0x%08X" % fn, "arg_i": i,
+                                 "arg_class": names[tc], "param_class": names[uc]})
+    print("[C7] evidence=%d entities=%d arg_type_pairs=%d variance_violations=%d"
+          % (census["C7"], len(fam["C7"]), arg_type_pairs, len(viol)), flush=True)
+
+    # ---------------- C8：全局对象身份 ----------------
+    gtypes = jload("anchors/ida_global_types.json", {}) or {}
+    singl = jload("anchors/singleton_types.json", {}) or {}
+    gcast = jload("anchors/global_cast_types.json", {}) or {}
+
+    def global_class(addr):
+        for key in ("0x%08X" % addr, "0x%x" % addr):
+            for src_d in (gtypes, singl):
+                rec = src_d.get(key)
+                if not rec:
+                    continue
+                t = rec.get("type") or ""
+                if "*" in t:
+                    return None
+                ci = resolve(t.strip())
+                if ci is not None:
+                    return ci
+        return None
+
+    # C6 数据一致性：class_db.vtable_slot_count vs authority.slot_count
+    sc_disagree = []
+    auth_raw = jload("anchors/vtable_slot_authority.json", {}) or {}
+    for cc, rec in auth_raw.items():
+        ci = resolve(cc)
+        if ci is None:
+            continue
+        a_sc = rec.get("slot_count")
+        d_sc = U["db"][names[ci]].get("vtable_slot_count")
+        if isinstance(a_sc, int) and isinstance(d_sc, int) and a_sc != d_sc:
+            sc_disagree.append({"class": names[ci], "class_db": d_sc, "authority": a_sc,
+                                "vtable": rec.get("vtable")})
+    print("[C6] slot_count class_db vs authority disagreements=%d" % len(sc_disagree), flush=True)
+
+    c8_entities = set()
+    for eid in list(ents):
+        if not eid.startswith("G:"):
+            continue
+        ci = global_class(int(eid[2:], 16))
+        if ci is not None:
+            exact[eid].append((ci, "C8:global-type"))
+            census["C8"] += 1
+            exact_count["C8"] += 1
+            c8_entities.add(eid)
+    for nm, rec in gcast.items():
+        ci = resolve((rec or {}).get("type"))
+        addr = global_addr(nm)
+        if ci is not None and addr is not None:
+            eid = "G:%X" % addr
+            if eid in ents:
+                exact[eid].append((ci, "C8:cast-type"))
+                census["C8"] += 1
+                exact_count["C8"] += 1
+                c8_entities.add(eid)
+    for fn, site, dst, sym in (facts or {}).get("global_installs", []):
+        ci = resolve(sym)
+        g = global_addr(dst)
+        if ci is not None and g is not None:
+            eid = "G:%X" % g
+            if eid in ents:
+                exact[eid].append((ci, "C8:vtable-install"))
+                census["C8"] += 1
+                exact_count["C8"] += 1
+                c8_entities.add(eid)
+    print("[C8] evidence=%d entities=%d (global vtable installs=%d)"
+          % (census["C8"], len(c8_entities), len((facts or {}).get("global_installs", []))),
+          flush=True)
+
+    # ---------------- 等式（union-find + 证据审计） ----------------
+    uf = UF()
+    ch_stats = collections.defaultdict(lambda: {"unions": 0, "exact_conflicts": 0,
+                                                "examples": []})
+    root_exact = {}
+    for eid, lst in exact.items():
+        root_exact.setdefault(uf.find(eid), set()).update(ci for ci, _s in lst)
+
+    def un(a, b, channel):
+        if a is None or b is None:
+            return False
+        ra, rb = uf.find(a), uf.find(b)
+        if ra == rb:
+            return False
+        ea, eb = root_exact.get(ra, set()), root_exact.get(rb, set())
+        if ea and eb and ea.isdisjoint(eb):
+            st = ch_stats[channel]
+            st["exact_conflicts"] += 1
+            if len(st["examples"]) < 6:
+                st["examples"].append({"a": a, "b": b,
+                                       "a_classes": [names[c] for c in sorted(ea)],
+                                       "b_classes": [names[c] for c in sorted(eb)]})
+            return False          # EXACT 硬约束：不合并，记录矛盾证据
+        uf.union(a, b)
+        nr = uf.find(a)
+        root_exact[nr] = ea | eb
+        ch_stats[channel]["unions"] += 1
+        return True
+
+    def is_arg_target(to):
+        return isinstance(to, str) and (to.endswith(":this") or "::param" in to) \
+            and not to.startswith("vtable_slot_")
+
+    for e in raw:
+        if e.get("type") != "FUNC_PARAM":
+            continue
+        fr = e.get("from")
+        a = hx(str(fr).split(":")[0]) if isinstance(fr, str) else None
+        un(ent_id(fr, a), ent_id(e.get("to"), a), "func_param")
+
+    for e in raw:
+        if e.get("type") != "CALL_ARG" or not is_arg_target(e.get("to")):
+            continue
+        fr = e.get("from")
+        if not isinstance(fr, str) or fr in REGS or fr.startswith("stack_+"):
+            continue
+        a = hx(e.get("addr")) or 0
+        un(ent_id(fr, fn_at(a)), ent_id(e.get("to")), "callarg_direct")
+
+    if not args.no_reg_flow and facts:
+        rl = {}
+        for addr, reg, src in facts.get("reg_links", ()):
+            rl[(addr, reg)] = src
+        for e in raw:
+            if e.get("type") != "CALL_ARG" or not is_arg_target(e.get("to")):
+                continue
+            fr = e.get("from")
+            if not isinstance(fr, str) or fr not in REGS:
+                continue
+            a = hx(e.get("addr")) or 0
+            src = rl.get((a, fr))
+            if src:
+                un(src, ent_id(e.get("to")), "reg_def")
+
+    for a_eid, b_eid in c5_link:
+        un(a_eid, b_eid, "new_ctor")
+
+    print("[equality] " + "  ".join(
+        "%s=%d(exact-rej %d)" % (k, v["unions"], v["exact_conflicts"])
+        for k, v in sorted(ch_stats.items())), flush=True)
+
+    # ---------------- 簇 ----------------
+    groups = collections.defaultdict(list)
+    for eid in ents:
+        groups[uf.find(eid)].append(eid)
+    clusters = []
+    for root, members in groups.items():
+        obs = set()
+        exs = {}
+        for m in members:
+            obs |= ents[m]["obs"]
+            for ci, s in exact.get(m, ()):
+                exs.setdefault(ci, []).append(s)
+        clusters.append({"root": root, "ents": members, "obs": obs,
+                         "exact": exs})
+    print("[clusters] %d (entities %d)" % (len(clusters), len(ents)), flush=True)
+    ALL_EXACT_CLASSES = {ci for cl in clusters for ci in cl["exact"]}
+
+    # ---------------- 求解 ----------------
+    def cluster_domains(enabled, apply_c1=True):
+        """返回 [(cluster, domain, exact_ci, exact_src, flags)]。
+
+        语义层级（硬→软）：
+          1) EXACT（C4/C8）决定类；族侧矛盾/宽度冲突只作为 flags 诊断记录，
+             不销毁簇（否则 K 会因"簇被移除"而假性下降）。
+          2) 无 EXACT 时，各族域求交；交为空 → flags 记录，域退化为非空族域的并
+             （best-effort，仍参与覆盖，绝不静默丢实体）。
+        """
+        out = []
+        for cl in clusters:
+            m_c1 = c1_mask(cl["obs"]) if (cl["obs"] and apply_c1) else FULL
+            m = m_c1
+            masks = {"C1": m_c1}
+            for f in enabled:
+                if f == "C1":
+                    continue
+                mf = FULL
+                hit = False
+                for eid in cl["ents"]:
+                    fm = fam[f].get(eid)
+                    if fm is not None:
+                        mf &= fm
+                        hit = True
+                masks[f] = mf if hit else FULL
+                m &= masks[f]
+            exs = {}
+            for ci, ss in cl["exact"].items():
+                kept = []
+                for s in ss:
+                    if s.startswith("C4") and "C4" not in enabled:
+                        continue
+                    if s.startswith("C8") and "C8" not in enabled:
+                        continue
+                    kept.append(s)
+                if kept:
+                    exs[ci] = kept
+            exact_ci = None
+            exact_src = []
+            flags = {}
+            if len(exs) == 1:
+                exact_ci = next(iter(exs))
+                exact_src = [(names[exact_ci], s) for s in exs[exact_ci]]
+                if cl["obs"]:
+                    wconf = c1_width_conflict(exact_ci, cl["obs"])
+                    if wconf:
+                        flags["width_conflict"] = wconf
+                contra = [f for f in enabled
+                          if f != "C1" and masks.get(f, FULL) and not (masks[f] >> exact_ci) & 1]
+                if (masks["C1"] >> exact_ci) & 1 == 0 and cl["obs"] and "width_conflict" not in flags:
+                    contra.append("C1(missing-offset)")
+                if contra:
+                    flags["exact_contradicts_family"] = contra
+                out.append((cl, 1 << exact_ci, exact_ci, exact_src, flags))
+                continue
+            if len(exs) > 1:
+                srcs = [(names[ci], s) for ci, ss in exs.items() for s in ss]
+                domain = 0
+                for ci in exs:
+                    domain |= (1 << ci)
+                flags["exact_conflict"] = sorted(names[ci] for ci in exs)
+                out.append((cl, domain or FULL, None, srcs, flags))
+                continue
+            if m:
+                out.append((cl, m, None, [], flags))
+                continue
+            # 无 EXACT 且交为空
+            fallback = 0
+            for f, mf in masks.items():
+                if mf and mf != FULL:
+                    fallback |= mf
+            if "C1" in masks and not m_c1 and cl["obs"]:
+                flags["c1_gap"] = True
+            else:
+                flags["empty_domain"] = True
+            out.append((cl, fallback or FULL, None, [], flags))
+        return out
+
+    def greedy(dom_list):
+        nc = len(dom_list)
+        cover_of = collections.defaultdict(set)
+        cls_of_cluster = []
+        for ci_cl, (cl, m) in enumerate(dom_list):
+            mm = m
+            lst = []
+            while mm:
+                b = mm & -mm
+                i = b.bit_length() - 1
+                lst.append(i)
+                cover_of[i].add(ci_cl)
+                mm ^= b
+            cls_of_cluster.append(lst)
+        uncovered = set(range(nc))
+        counts = {i: len(s) for i, s in cover_of.items()}
+        # 特异性偏好：优先选择"被单点域/EXACT 强制过"的类，避免稀疏布局的
+        # 宽域类（如 Options）吃掉成千上万个无信息簇，导致赋值不可解释。
+        support = collections.Counter()
+        for (cl, m) in dom_list:
+            if m.bit_count() == 1:
+                support[m.bit_length() - 1] += 1
+        for ci in ALL_EXACT_CLASSES:
+            support[ci] += 1
+        chosen, assign = [], {}
+        while uncovered:
+            best, bestn, bestsup = -1, 0, -1
+            for i, c in counts.items():
+                if c > bestn or (c == bestn and c > 0 and support.get(i, 0) > bestsup):
+                    best, bestn, bestsup = i, c, support.get(i, 0)
+            if best < 0 or bestn == 0:
+                break
+            take = cover_of[best] & uncovered
+            for cl in take:
+                assign[cl] = best
+                for c in cls_of_cluster[cl]:
+                    if counts.get(c, 0) > 0:
+                        counts[c] -= 1
+            counts[best] = -1
+            chosen.append(best)
+            uncovered -= take
+        return chosen, cover_of, uncovered, assign
+
+    def improve(dom_list, chosen, cover_of, max_pairs):
+        doms = [m for (_, m) in dom_list]
+        chosen = list(chosen)
+        replaced = 0
+
+        def make_index():
+            idx_ = collections.defaultdict(list)
+            for c in chosen:
+                for cl in cover_of[c]:
+                    idx_[cl].append(c)
+            return idx_
+
+        idx = make_index()
+        changed = True
+        while changed:
+            changed = False
+            for c in sorted(chosen, key=lambda x: len(cover_of.get(x, ()))):
+                if all(len(idx.get(cl, ())) >= 2 for cl in cover_of.get(c, ())):
+                    chosen.remove(c)
+                    for cl in cover_of.get(c, ()):
+                        idx[cl].remove(c)
+                    replaced += 1
+                    changed = True
+                    break
+        n_pairs = 0
+        while n_pairs < max_pairs:
+            idx = make_index()
+            excl1 = collections.defaultdict(list)
+            pair2 = collections.defaultdict(list)
+            for cl, cs in idx.items():
+                if len(cs) == 1:
+                    excl1[cs[0]].append(cl)
+                elif len(cs) == 2:
+                    pair2[(min(cs), max(cs))].append(cl)
+            mergeable = [c for c in chosen
+                         if any(doms[cl].bit_count() > 1 for cl in cover_of.get(c, ()))]
+            improved = False
+            for ii in range(len(mergeable)):
+                if improved or n_pairs >= max_pairs:
+                    break
+                a = mergeable[ii]
+                for b in mergeable[ii + 1:]:
+                    n_pairs += 1
+                    if n_pairs >= max_pairs:
+                        break
+                    excl = excl1.get(a, []) + excl1.get(b, []) + \
+                        pair2.get((min(a, b), max(a, b)), [])
+                    if not excl:
+                        chosen.remove(b)
+                        replaced += 1
+                        improved = True
+                        break
+                    excl.sort(key=lambda cl: doms[cl].bit_count())
+                    inter = doms[excl[0]]
+                    for cl in excl[1:]:
+                        inter &= doms[cl]
+                        if not inter:
+                            break
+                    inter &= ~(1 << a) & ~(1 << b)
+                    if not inter:
+                        continue
+                    cand = inter.bit_length() - 1
+                    chosen = [x for x in chosen if x not in (a, b)] + [cand]
+                    replaced += 1
+                    improved = True
+                    break
+            if not improved:
+                break
+        return chosen, replaced
+
+    def lower_bound(dom_list):
+        idxs = sorted(range(len(dom_list)), key=lambda i: dom_list[i][1].bit_count())
+        picked_union = 0
+        lb = 0
+        for i in idxs:
+            m = dom_list[i][1]
+            if m and not (m & picked_union):
+                picked_union |= m
+                lb += 1
+        return lb
+
+    HARD_FLAGS = ("exact_conflict", "empty_domain")
+
+    def solve(enabled):
+        doms = cluster_domains([x for x in enabled if x != "C1"])
+        conflicted = [d for d in doms if any(k in d[4] for k in HARD_FLAGS)]
+        clean = [d for d in doms if not any(k in d[4] for k in HARD_FLAGS)]
+        diag_flagged = sum(1 for d in doms if d[4] and d not in conflicted)
+        # 规格口径：冲突簇移出赋值（进 conflicts 报告），K 只在可满足簇上求解。
+        constrained = [(cl, m) for (cl, m, exci, exsrc, fl) in clean if m != FULL]
+        free = len(doms) - len(constrained) - len(conflicted)
+        chosen, cover_of, unc, assign = greedy(constrained)
+        k0 = len(chosen)
+        chosen, merges = improve(constrained, chosen, cover_of, args.max_pair_improve)
+        k = len(chosen)
+        k_solvable = k
+        # 每个冲突簇至少还需要一个类 → K_upper（保守上界，不是同一优化问题）
+        k_upper = k + len(conflicted)
+        # 硬下界：单点域去重 + 不相交域打包
+        pinned_classes = {m.bit_length() - 1 for (cl, m) in constrained if m.bit_count() == 1}
+        forced = set()
+        for cl, m, exci, exsrc, flags in doms:
+            if exci is not None:
+                forced.add(exci)
+            elif m and m.bit_count() == 1:
+                forced.add(m.bit_length() - 1)
+        lb = max(lower_bound(constrained), len(pinned_classes))
+        bad_cover = sum(1 for (cl, m) in constrained
+                        if not any((m >> c) & 1 for c in chosen))
+        gaps = sum(1 for d in clean if "c1_gap" in d[4])
+        bad_exact = sum(1 for d in conflicted
+                        if "exact_conflict" in d[4] or "width_conflict" in d[4]
+                        or "exact_contradicts_family" in d[4])
+        flagged = [d for d in doms if d[4]]
+        return {
+            "conflicted": conflicted, "constrained": constrained,
+            "free": free, "chosen": chosen, "k": k, "k_solvable": k_solvable,
+            "k_upper": k_upper,
+            "k_greedy": k0, "lower_bound": lb, "merges": merges, "assign": assign,
+            "c1_gaps": gaps, "exact_conflicts": bad_exact,
+            "n_conflicts": len(conflicted), "pinned_classes": len(pinned_classes),
+            "forced_classes": len(forced), "bad_cover": bad_cover,
+            "flagged": flagged, "diag_flagged": diag_flagged,
+        }
+
+    family_table = []
+    enabled = []
+    prev_k = None
+    prev_pin = None
+    for f in FAMILIES:
+        enabled.append(f)
+        t0 = time.time()
+        res = solve(enabled)
+        dt = time.time() - t0
+        if f == "C1":
+            ents_touched = sum(1 for r in ents.values() if r["obs"])
+        else:
+            ents_touched = len(fam[f]) + (exact_count[f] if f in ("C4", "C8") else 0)
+        pinned = sum(1 for (cl, m) in res["constrained"] if m.bit_count() == 1)
+        k_total = res["k"]                          # 全簇（含冲突 best-effort）覆盖
+        family_table.append({
+            "family": f, "desc": FAMILY_DESC[f], "evidence": census[f],
+            "entities_touched": ents_touched,
+            "clusters_constrained": len(res["constrained"]),
+            "clusters_pinned": pinned, "clusters_free": res["free"],
+            "pinned_classes": res["pinned_classes"],
+            "forced_classes": res["forced_classes"],
+            "conflicts": res["n_conflicts"], "c1_gaps": res["c1_gaps"],
+            "K": res["k"], "K_upper": res["k_upper"], "K_total": k_total,
+            "K_greedy": res["k_greedy"],
+            "delta_forced": (res["forced_classes"] - prev_pin) if prev_pin is not None
+            else res["forced_classes"],
+            "delta_K": (k_total - prev_k) if prev_k is not None else k_total,
+            "lower_bound": res["lower_bound"], "merges": res["merges"],
+            "bad_cover": res["bad_cover"],
+            "solve_s": round(dt, 1),
+        })
+        prev_k = k_total
+        prev_pin = res["forced_classes"]
+        print("[%s] evid=%d ents=%d constrained=%d pinned=%d/%dcls free=%d | K=%d "
+              "LB=%d (greedy %d merges %d bad_cover %d) conflicts=%d gaps=%d | %.1fs"
+              % (f, census[f], ents_touched, len(res["constrained"]), pinned,
+                 res["forced_classes"], res["free"], res["k"], res["lower_bound"],
+                 res["k_greedy"], res["merges"], res["bad_cover"], res["n_conflicts"],
+                 res["c1_gaps"], dt), flush=True)
+
+    # ---------------- 最终解 ----------------
+    all_fams = [f for f in FAMILIES if f not in (args.no_families or "").split(",")]
+    res = solve(all_fams)
+    K, K_upper, LB = res["k"], res["k_upper"], res["lower_bound"]
+    chosen, constrain, assign = res["chosen"], res["constrained"], res["assign"]
+    print("\n== FINAL ==")
+    print("K_min=%d  K_upper(=K+conflicts)=%d  lower_bound=%d  constrained=%d free=%d "
+          "conflicts=%d c1_gaps=%d exact_conflicts=%d unassigned=%d"
+          % (K, K_upper, LB, len(constrain), res["free"], res["n_conflicts"],
+             res["c1_gaps"], res["exact_conflicts"], len(constrain) - len(assign)),
+          flush=True)
+
+    # 赋值释义：K 由覆盖求解确定；每个簇在"已选类 ∩ 域"里选支持度最高者，
+    # 避免宽域稀疏类（Options）把无信息簇全部吞掉，使每类实体数不可解释。
+    support2 = collections.Counter()
+    cover_sz = collections.Counter()
+    for (cl, m) in constrain:
+        if m.bit_count() == 1:
+            support2[m.bit_length() - 1] += 1
+    for ci in ALL_EXACT_CLASSES:
+        support2[ci] += 1
+    for c in chosen:
+        cover_sz[c] = sum(1 for (cl, m) in constrain if (m >> c) & 1)
+    assign = {}
+    for ci_cl, (cl, m) in enumerate(constrain):
+        c = max((x for x in chosen if (m >> x) & 1),
+                key=lambda x: (support2[x], -cover_sz[x], -x), default=None)
+        if c is not None:
+            assign[ci_cl] = c
+
+    per_class = collections.defaultdict(lambda: {"clusters": 0, "entities": 0,
+                                                 "families": collections.Counter()})
+    for ci_cl, c in assign.items():
+        rec = per_class[names[c]]
+        rec["clusters"] += 1
+        rec["entities"] += len(constrain[ci_cl][0]["ents"])
+        for eid in constrain[ci_cl][0]["ents"]:
+            for f in all_fams:
+                if f != "C1" and eid in fam[f]:
+                    rec["families"][f] += 1
+            if eid in exact:
+                rec["families"]["EXACT"] += 1
+    class_counts = [{"class": nm, "clusters": r["clusters"], "entities": r["entities"],
+                     "families": dict(r["families"])}
+                    for nm, r in sorted(per_class.items(), key=lambda kv: -kv[1]["clusters"])]
+    print("chosen classes=%d (multi-cluster=%d)" % (len(class_counts),
+                                                    sum(1 for x in class_counts if x["clusters"] > 1)),
+          flush=True)
+
+    # ---------------- 诊断：严格 C1（"必须有成员"）无匹配 ----------------
+    # 这是原型报告 2,048 个实体无布局匹配的复现与归因：严格语义下无解 ≠ 类不存在，
+    # 而是 (a) 布局表稀疏（观测所得），(b) 成员链/形参的类未知，(c) 偏移是伪偏移。
+    strict_cache = {}
+    all_cov_cache = {}
+    starts = [[a for (a, b) in intervals[i]] for i in range(n)]
+
+    def covers_all(ci, o, w):
+        iv = intervals[ci]
+        st = starts[ci]
+        if not iv:
+            return False
+        k = bisect.bisect_right(st, o) - 1
+        if k < 0:
+            return False
+        a, b = iv[k]
+        return a <= o and o + w <= b
+
+    def all_cov_mask(o, w):
+        key = (o, w)
+        m = all_cov_cache.get(key)
+        if m is None:
+            m = 0
+            for ci in range(n):
+                if covers_all(ci, o, w):
+                    m |= (1 << ci)
+            all_cov_cache[key] = m
+        return m
+
+    def c1_strict(obs):
+        """严格 C1：类必须覆盖每个被访问的字节区间（不区分布局密度）"""
+        key = tuple(sorted(obs))
+        m = strict_cache.get(key)
+        if m is None:
+            m = FULL
+            for (o, w) in key:
+                m &= all_cov_mask(o, w if w else 4)
+                if not m:
+                    break
+            strict_cache[key] = m
+        return m
+
+    # 原型 v2 的严格规则复现：布局存在 + 所有偏移存在 + 宽度完全相等
+    # （这是原型报告 2,048 个实体"无布局匹配"的口径；用于归因，不参与求解）
+    off_eq = collections.defaultdict(int)
+    ow_eq = collections.defaultdict(int)
+    for i in range(n):
+        if not U["has_layout"][i]:
+            continue
+        for off, w in U["members"][i].items():
+            if w is None:
+                continue
+            off_eq[off] |= (1 << i)
+            ow_eq[(off, w)] |= (1 << i)
+    proto_cache = {}
+
+    def proto_rule_mask(obs):
+        key = tuple(obs)
+        m = proto_cache.get(key)
+        if m is None:
+            m = FULL
+            for (o, w) in key:
+                if w is None:
+                    m &= off_eq.get(o, 0)
+                else:
+                    m &= ow_eq.get((o, w), 0)
+                if not m:
+                    break
+            proto_cache[key] = m
+        return m
+
+    proto_stats = collections.Counter()
+    proto_examples = []
+    for eid, rec in ents.items():
+        obs = rec["obs"]
+        if len(obs) < 2:
+            continue
+        proto_stats["entities_ge2"] += 1
+        if proto_rule_mask(obs):
+            proto_stats["matched_strict"] += 1
+            continue
+        # 归因
+        wrelax = 0
+        for (o, w) in obs:
+            base = off_eq.get(o, 0)
+            if w is None:
+                wrelax |= base
+            else:
+                allowed = 0
+                for mw in (1, 2, 4, 8, 16):
+                    if mw >= w:
+                        allowed |= ow_eq.get((o, mw), 0)
+                wrelax |= allowed
+        # 是否存在"仅宽度不同"的类
+        cand = FULL
+        for (o, w) in obs:
+            base = off_eq.get(o, 0)
+            cand &= base
+            if not cand:
+                break
+        if cand:
+            cause = "width_mismatch_only"
+        elif any(o > 4096 for o, w in obs):
+            cause = "suspicious_large_offset"
+        elif eid.startswith("M:"):
+            cause = "member_chain_unknown_class"
+        elif eid.startswith("P:"):
+            cause = "param_unknown_class"
+        elif eid.startswith("G:"):
+            cause = "global_unknown_class"
+        else:
+            cause = "no_class_has_all_offsets_sparse_layout"
+        proto_stats[cause] += 1
+        if len(proto_examples) < 24:
+            proto_examples.append({"entity": eid, "obs": sorted(obs)[:10], "cause": cause})
+    print("[diag] prototype_rule: entities(>=2 obs)=%d matched=%d no_match=%d %s"
+          % (proto_stats["entities_ge2"], proto_stats["matched_strict"],
+             proto_stats["entities_ge2"] - proto_stats["matched_strict"],
+             {k: v for k, v in proto_stats.items()
+              if k not in ("entities_ge2", "matched_strict")}), flush=True)
+
+    nomatch = []
+    by_cause = collections.Counter()
+    strict_nomatch = 0
+    for cl in clusters:
+        if not cl["obs"]:
+            continue
+        if c1_strict(cl["obs"]):
+            continue
+        strict_nomatch += 1
+        if cl["exact"]:
+            cause = "exact_class_layout_gap"
+        elif any(e.startswith("M:") for e in cl["ents"]):
+            cause = "member_chain_unknown_class"
+        elif any(e.startswith("P:") for e in cl["ents"]):
+            cause = "param_unknown_class"
+        elif all(len(ents[e]["obs"]) <= 2 for e in cl["ents"]):
+            cause = "sparse_obs_lt2"
+        else:
+            cause = "no_class_has_all_offsets"
+        # 超大偏移（> size）多半是伪偏移（地址/常量被当成 offset）
+        if any(o > 4096 for o, w in cl["obs"]):
+            cause = "suspicious_large_offset"
+        by_cause[cause] += 1
+        if len(nomatch) < 400:
+            nomatch.append({"cluster": cl["root"], "entities": cl["ents"][:6],
+                            "obs": sorted(cl["obs"])[:12],
+                            "exact": [names[c] for c in cl["exact"]][:4], "cause": cause})
+    print("[diag] strict_C1_no_match=%d %s" % (strict_nomatch, dict(by_cause)),
+          flush=True)
+
+    # ---------------- 写盘 ----------------
+    def rec_conflict(cl, m, exci, exsrc, flags):
+        per = {}
+        per["C1"] = c1_mask(cl["obs"]).bit_count() if cl["obs"] else n
+        for f in all_fams:
+            if f == "C1":
+                continue
+            mm = FULL
+            hit = False
+            for eid in cl["ents"]:
+                fm = fam[f].get(eid)
+                if fm is not None:
+                    mm &= fm
+                    hit = True
+            per[f] = mm.bit_count() if hit else n
+        return {
+            "cluster": cl["root"], "entities": cl["ents"][:8],
+            "n_entities": len(cl["ents"]), "obs": sorted(cl["obs"])[:16],
+            "exact": exsrc[:6], "flags": flags,
+            "family_domain_sizes": per,
+            "reason": ("exact_conflict" if "exact_conflict" in flags else
+                       ("exact_contradicts_family" if "exact_contradicts_family" in flags else
+                        ("exact_width_conflict" if "width_conflict" in flags else "empty_domain"))),
+        }
+
+    table_out = [{k: v for k, v in row.items() if k != "solve_s"} for row in family_table]
+    conflict_report = {
+        "meta": {
+            "generated_by": "tools/csp_export/minclass_solver.py",
+            "families": all_fams, "reg_flow": not args.no_reg_flow,
+            "K": K, "K_upper": K_upper, "lower_bound": LB,
+            "constrained_clusters": len(constrain), "free_clusters": res["free"],
+            "conflicts": res["n_conflicts"], "c1_gaps": res["c1_gaps"],
+            "universe": n, "entities": len(ents),
+        },
+        "family_table": table_out,
+        "conflicts": [rec_conflict(*c) for c in res["conflicted"]],
+        "diagnostics": {
+            "no_layout_match": {"count": sum(by_cause.values()),
+                                "by_cause": dict(by_cause), "samples": nomatch},
+            "prototype_rule_c1": {
+                "description": "prototype v2 rule: layout exists AND every offset exists "
+                               "AND width strictly equal (entity level, obs>=2)",
+                "entities_ge2": proto_stats["entities_ge2"],
+                "matched_strict": proto_stats["matched_strict"],
+                "no_match": proto_stats["entities_ge2"] - proto_stats["matched_strict"],
+                "by_cause": {k: v for k, v in proto_stats.items()
+                             if k not in ("entities_ge2", "matched_strict")},
+                "samples": proto_examples,
+            },
+            "c4_source_disagreements": c4_disagree[:300],
+            "c6_slot_count_disagreements": sc_disagree[:300],
+            "c7_variance_violations": viol[:500],
+            "c7_variance_violation_count": len(viol),
+            "equality_channels": {k: {"unions": v["unions"],
+                                      "exact_conflicts": v["exact_conflicts"],
+                                      "examples": v["examples"]}
+                                  for k, v in sorted(ch_stats.items())},
+        },
+    }
+    cpath = os.path.join(ROOT, "anchors/minclass_conflicts.json")
+    with io.open(cpath, "w", encoding="utf-8") as fh:
+        json.dump(conflict_report, fh, ensure_ascii=False, indent=1)
+    print("[out] %s (%.1f KB)" % (cpath, os.path.getsize(cpath) / 1024.0), flush=True)
+
+    result = {
+        "meta": {"generated_by": "tools/csp_export/minclass_solver.py",
+                 "families": all_fams, "reg_flow": not args.no_reg_flow,
+                 "K_min": K, "K_upper": K_upper, "lower_bound": LB,
+                 "constrained_clusters": len(constrain), "free_clusters": res["free"],
+                 "conflicts": res["n_conflicts"], "c1_gaps": res["c1_gaps"],
+                 "entities": len(ents), "universe": n},
+        "family_table": table_out,
+        "chosen_classes": class_counts,
+    }
+    rpath = os.path.join(ROOT, "anchors/minclass_result.json")
+    with io.open(rpath, "w", encoding="utf-8") as fh:
+        json.dump(result, fh, ensure_ascii=False, indent=1)
+    print("[out] %s (%.1f KB)" % (rpath, os.path.getsize(rpath) / 1024.0), flush=True)
+    print("[time] %.1fs" % (time.time() - t_start), flush=True)
+
+    print("\n| family | evidence | entities | constrained | forced_cls | K | K_upper | dForced | LB | conflicts | C1 gaps |")
+    print("|---|---|---|---|---|---|---|---|---|---|---|")
+    for row in family_table:
+        print("| %s | %d | %d | %d | %d | %d | %d | %+d | %d | %d | %d |"
+              % (row["family"], row["evidence"], row["entities_touched"],
+                 row["clusters_constrained"], row["forced_classes"], row["K"],
+                 row["K_upper"], row["delta_forced"], row["lower_bound"],
+                 row["conflicts"], row["c1_gaps"]))
+
+
+if __name__ == "__main__":
+    main()
+
+
+
+
+
+
