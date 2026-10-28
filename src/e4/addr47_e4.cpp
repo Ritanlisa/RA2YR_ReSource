@@ -196,16 +196,16 @@ VectorClass_flat * * LoadBuildingTypeClassPrerequisites(unsigned int * a1, unsig
     (a1)->Copy(&v21); /*0x4773cb*/
     /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E4DD8) */  /*0x4773d9*/
     /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E4DB8) */  /*0x4773df*/
-    VectorClass::Destroy((int)&v21); /*0x4773e3*/
+    ((VectorClass *)(int)&v21)->Destroy(); /*0x4773e3*/
     a5 = &g_ptr_7E4DB8; /*0x4773ef*/
-    VectorClass::Destroy((int)&a5); /*0x4773f6*/
+    ((VectorClass *)(int)&a5)->Destroy(); /*0x4773f6*/
     return a1; /*0x4773fb*/
   }
   else
   {
     VectorClass::Copy(a1, &a5); /*0x477413*/
     a5 = &g_ptr_7E4DB8; /*0x47741f*/
-    VectorClass::Destroy((int)&a5); /*0x47742a*/
+    ((VectorClass *)(int)&a5)->Destroy(); /*0x47742a*/
     return a1; /*0x47742f*/
   }
 

@@ -3654,7 +3654,7 @@ unsigned int * VectorClass_flat::Copy(VectorClass_flat * aP1, void *a2)
   /* X11: ptr_0 install elided (implicit via VectorClass virtuals 0x4777ca) */
   if ( aP1 != (DynamicVectorClass *)a2 ) /*0x4777d0*/
   {
-    VectorClass::Destroy((int)aP1); /*0x4777d2*/
+    ((VectorClass *)(int)aP1)->Destroy(); /*0x4777d2*/
     v3 = a2[2]; /*0x4777d8*/
     aP1->Capacity = v3; /*0x4777dd*/
     if ( v3 ) /*0x4777e0*/

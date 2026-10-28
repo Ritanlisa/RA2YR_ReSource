@@ -1562,7 +1562,7 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E4DB8) */  /*0x68a43f*/
   if ( &v78 != (_VectorClass_PAVTechnoTypeClass *)(_ESI + 13552) ) /*0x68a445*/
   {
-    VectorClass::Destroy((int)&v78); /*0x68a447*/
+    ((VectorClass *)(int)&v78)->Destroy(); /*0x68a447*/
     v23 = *(unsigned int *)(_ESI + 13560); /*0x68a44d*/
     v24 = m_1; /*0x68a450*/
     m_1->m_8 = v23; /*0x68a456*/

@@ -381,7 +381,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   *(unsigned int *)(v4 + 3740) = v11->CapacityIncrement; /*0x5241ca*/
   *(unsigned int *)(v4 + 3744) = v11[1].vfptr; /*0x5241d4*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E4DB8) */  /*0x5241d7*/
-  VectorClass::Destroy((int)&v48); /*0x5241df*/
+  ((VectorClass *)(int)&v48)->Destroy(); /*0x5241df*/
   if ( ((INIClass *)(/*0x5241fb*/ (INIClass *)this))->GetString((unsigned __int8 *)(v4 + 36), aDeadbodies, &g_INI_DefaultBuffer, String_buf, 128) )
   {
     DynamicVectorClass::AnimTypeConstructor((DynamicVectorClass *)&v48, 0, 0); /*0x524210*/

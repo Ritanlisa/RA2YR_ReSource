@@ -2841,9 +2841,9 @@ CampaignClass * * RandomMap::CleanupRandomMapData()
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x5959b5*/
   ((DynamicVectorClass_flat *)&this->u32_2C4)->Destroy(); /*0x5959bb*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x5959cb*/
-  VectorClass::Destroy((int)&this->u32_A80); /*0x5959cd*/
+  ((VectorClass *)(int)&this->u32_A80)->Destroy(); /*0x5959cd*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x5959d8*/
-  VectorClass::Destroy((int)&this->u32_A10); /*0x5959da*/
+  ((VectorClass *)(int)&this->u32_A10)->Destroy(); /*0x5959da*/
   v8 = (void *)this->u32_26C; /*0x5959df*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x5959e5*/
   if ( v8 && this->u8_275 ) /*0x5959ef*/
@@ -3238,7 +3238,7 @@ WeaponStruct * * RandomMap::LoadConfig()
   *&this->u32_19C = v8->CapacityIncrement; /*0x598344*/
   *&this->u32_1A0 = v8[1].vfptr; /*0x59834a*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E4DB8) */  /*0x598356*/
-  VectorClass::Destroy((int)&v27); /*0x59835a*/
+  ((VectorClass *)(int)&v27)->Destroy(); /*0x59835a*/
   IntList = &v24; /*0x598364*/
   DynamicVectorClass::Copy(&v24, &this->u32_284); /*0x598369*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E4DD8) */  /*0x59837b*/
@@ -3260,7 +3260,7 @@ WeaponStruct * * RandomMap::LoadConfig()
   this->u32_298 = v9->CapacityIncrement; /*0x5983a9*/
   this->u32_29C = v9[1].vfptr; /*0x5983b3*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E4DB8) */  /*0x5983b6*/
-  VectorClass::Destroy((int)&v27); /*0x5983ba*/
+  ((VectorClass *)(int)&v27)->Destroy(); /*0x5983ba*/
   IntList = &v24; /*0x5983cb*/
   DynamicVectorClass::Copy(&v24, &this->u32_2A0); /*0x5983cf*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E4DD8) */  /*0x5983e1*/
@@ -3282,7 +3282,7 @@ WeaponStruct * * RandomMap::LoadConfig()
   this->u32_2B4 = v10->CapacityIncrement; /*0x59840f*/
   this->u32_2B8 = v10[1].vfptr; /*0x598419*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E4DB8) */  /*0x59841c*/
-  VectorClass::Destroy((int)&v27); /*0x598420*/
+  ((VectorClass *)(int)&v27)->Destroy(); /*0x598420*/
   IntList = &v24; /*0x598431*/
   DynamicVectorClass::Copy(&v24, &this->q1A4); /*0x598435*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E4DD8) */  /*0x598447*/
@@ -3304,7 +3304,7 @@ WeaponStruct * * RandomMap::LoadConfig()
   *&this->u32_1B8 = v11->CapacityIncrement; /*0x598475*/
   *&this->u32_1BC = v11[1].vfptr; /*0x59847b*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E4DB8) */  /*0x59847e*/
-  VectorClass::Destroy((int)&v27); /*0x598486*/
+  ((VectorClass *)(int)&v27)->Destroy(); /*0x598486*/
   IntList = &v24; /*0x598497*/
   DynamicVectorClass::Copy(&v24, &this->q1C0); /*0x59849b*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E4DD8) */  /*0x5984ad*/
@@ -3326,7 +3326,7 @@ WeaponStruct * * RandomMap::LoadConfig()
   *&this->u32_1D4 = v12->CapacityIncrement; /*0x5984db*/
   *&this->u32_1D8 = v12[1].vfptr; /*0x5984e5*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E4DB8) */  /*0x5984e8*/
-  VectorClass::Destroy((int)&v27); /*0x5984ec*/
+  ((VectorClass *)(int)&v27)->Destroy(); /*0x5984ec*/
   IntList = &v24; /*0x5984fd*/
   DynamicVectorClass::Copy(&v24, &this->q1DC); /*0x598501*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E4DD8) */  /*0x598513*/
@@ -3348,7 +3348,7 @@ WeaponStruct * * RandomMap::LoadConfig()
   *&this->q014 = v13->CapacityIncrement; /*0x598541*/
   *&this->u32_1F4 = v13[1].vfptr; /*0x59854b*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E4DB8) */  /*0x59854e*/
-  VectorClass::Destroy((int)&v27); /*0x598552*/
+  ((VectorClass *)(int)&v27)->Destroy(); /*0x598552*/
   IntList = &v24; /*0x598563*/
   DynamicVectorClass::Copy(&v24, &this->q1F8); /*0x598567*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E4DD8) */  /*0x598579*/
@@ -3370,7 +3370,7 @@ WeaponStruct * * RandomMap::LoadConfig()
   this->q20C = v14->CapacityIncrement; /*0x5985a7*/
   this->u32_210 = v14[1].vfptr; /*0x5985b1*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E4DB8) */  /*0x5985b4*/
-  VectorClass::Destroy((int)&v27); /*0x5985b8*/
+  ((VectorClass *)(int)&v27)->Destroy(); /*0x5985b8*/
   IntList = &v24; /*0x5985c9*/
   DynamicVectorClass::Copy(&v24, &this->u32_214); /*0x5985cd*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E4DD8) */  /*0x5985df*/
@@ -3392,7 +3392,7 @@ WeaponStruct * * RandomMap::LoadConfig()
   this->u32_228 = v15->CapacityIncrement; /*0x59860d*/
   this->u32_22C = v15[1].vfptr; /*0x598617*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E4DB8) */  /*0x59861a*/
-  VectorClass::Destroy((int)&v27); /*0x59861e*/
+  ((VectorClass *)(int)&v27)->Destroy(); /*0x59861e*/
   IntList = &v24; /*0x59862f*/
   DynamicVectorClass::Copy(&v24, &this->u32_230); /*0x598633*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E4DD8) */  /*0x598645*/
@@ -3414,7 +3414,7 @@ WeaponStruct * * RandomMap::LoadConfig()
   this->u32_244 = v16->CapacityIncrement; /*0x598673*/
   this->u32_248 = v16[1].vfptr; /*0x59867d*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E4DB8) */  /*0x598680*/
-  VectorClass::Destroy((int)&v27); /*0x598684*/
+  ((VectorClass *)(int)&v27)->Destroy(); /*0x598684*/
   IntList = &v24; /*0x598695*/
   DynamicVectorClass::Copy(&v24, &this->u32_24C); /*0x598699*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E4DD8) */  /*0x5986ab*/
@@ -3459,7 +3459,7 @@ WeaponStruct * * RandomMap::LoadConfig()
   this->u32_27C = v18->CapacityIncrement; /*0x59874f*/
   this->u32_280 = v18[1].vfptr; /*0x598759*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E4DB8) */  /*0x59875c*/
-  VectorClass::Destroy((int)&v27); /*0x598760*/
+  ((VectorClass *)(int)&v27)->Destroy(); /*0x598760*/
   this->u32_2FC = INIClass::ReadInt_Overwrite( /*0x59877f*/
                               (bool *)v3->__pad_0,
                               off_82B134,

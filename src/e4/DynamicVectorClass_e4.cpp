@@ -696,7 +696,7 @@ unsigned int * DynamicVectorClass_flat::Copy(DynamicVector * aP1, void *a2)
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E4DB8) */  /*0x4779fa*/
   if ( this != (DynamicVectorClass *)a2 ) /*0x477a00*/
   {
-    VectorClass::Destroy((int)this); /*0x477a02*/
+    ((VectorClass *)(int)this)->Destroy(); /*0x477a02*/
     v3 = a2[2]; /*0x477a08*/
     this->Capacity = v3; /*0x477a0d*/
     if ( v3 ) /*0x477a10*/
