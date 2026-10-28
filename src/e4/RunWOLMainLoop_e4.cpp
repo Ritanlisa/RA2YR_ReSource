@@ -136,7 +136,7 @@ int sub_785EA0()
     if ( !(*(int (**)(LPVOID))(*(unsigned int *)ppv + 52))(ppv) ) /*0x785f7d*/
     {
       StringCSF = GetStringCSF(aTxtWolLoggingO, 0, g_Str_File_wonline_cpp, 9527); /*0x785f9a*/
-      WideString::Assign((wchar_t **)&v15, StringCSF); /*0x785fa4*/
+      ((WideString *)(wchar_t **)&v15)->Assign( StringCSF); /*0x785fa4*/
       ShowUIMessage(32, (wchar_t **)&v15, 0); /*0x785fb4*/
       DeleteAndZero::Alt((DeleteAndZero *)&v15); /*0x785fbd*/
       for ( j = 0; j < 5; ++j ) /*0x785fc8*/
@@ -337,7 +337,7 @@ int sub_799D30()
   if ( result == 1 ) /*0x799d3b*/
   {
     StringCSF = GetStringCSF(g_Str_TXT_FETCHING_SERVLIST, 0, g_Str_File_wonline_cpp, 24300); /*0x799d52*/
-    WideString::Assign((WideString *)&v13, StringCSF); /*0x799d5c*/
+    ((WideString *)&v13)->Assign( StringCSF); /*0x799d5c*/
     ShowUIMessage(16, (wchar_t **)&v13, 0); /*0x799d6c*/
     DeleteAndZero::Alt(&v13); /*0x799d75*/
     v4 = 8960; /*0x799d7f*/

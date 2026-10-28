@@ -597,7 +597,7 @@ bool Team_Start_76ED10(void * a1, void * a2)
   State = FileClass::GetState((unsigned int *)(v13[19] + 8)); /*0x76ed3f*/
   ScoreText::ShowAlt(v13, (const wchar_t **)(State + 20), 0); /*0x76ed4c*/
   StringCSF = GetStringCSF(g_Str_WDT_TerritorySelectToolTip, 0, g_Str_File_WDTSel_cpp, 1230); /*0x76ed62*/
-  WideString::Assign((wchar_t **)&v9, StringCSF); /*0x76ed6c*/
+  ((WideString *)(wchar_t **)&v9)->Assign( StringCSF); /*0x76ed6c*/
   ScoreText::Show(v13, (const wchar_t **)&v9); /*0x76ed7a*/
   ((DeleteAndZero *)&v9)->Alt(); /*0x76ed83*/
   Team_Start_76E2F0((int)v13, a2); /*0x76ed8d*/

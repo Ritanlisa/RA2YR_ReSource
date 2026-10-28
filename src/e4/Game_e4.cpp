@@ -1911,8 +1911,8 @@ void Game::EncodeGameSetupState(char * Buffer)
       v7 = v34[0]; /*0x77e62a*/
       v12 = dword_A8E230[v8]; /*0x77e62e*/
 LABEL_16:
-      WideString::Assign( /*0x77e635*/
-        (WideString *)&v22.q004,
+      (/*0x77e635*/
+        (WideString *)&v22.q004)->Assign(
         *(wchar_t **)(*(unsigned int *)&stru_A8D804.__pad_3D[567] + 4 * v5));
       ToWideStringCharAlt((char **)&v22.u32_8, (const wchar_t **)&v22.q004); /*0x77e650*/
       ((DeleteAndZero *)&v22.q004)->Alt(); /*0x77e659*/

@@ -446,7 +446,7 @@ CampaignScore * WOLobby_Get(wchar_t ** a1, HWND a2, WPARAM wParam)
     }
     StringCSF = GetStringCSF(aSttLobbylistus, 0, g_Str_File_wonline_cpp, 3055); /*0x781113*/
   }
-  WideString::Assign((WideString *)a1, StringCSF); /*0x78111b*/
+  ((WideString *)a1)->Assign( StringCSF); /*0x78111b*/
   return a1; /*0x7810fb*/
 
 }

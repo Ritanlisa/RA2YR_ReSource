@@ -1039,7 +1039,7 @@ if ( v32 || (v32 = (Lobby *)Dialog::FindByHandle((Dialog *)0xBD)) != 0 )
           v35 = (int)g_MPCooperativeState; /*0x5e4358*/
           goto LABEL_98; /*0x5e4358*/
         }
-        WideString::Assign((WideString *)&v196, Destination); /*0x5e4157*/
+        ((WideString *)&v196)->Assign( Destination); /*0x5e4157*/
         v37 = ((NetworkLobby *)&v196)->DeleteAndZero(); /*0x5e4169*/
         DeleteAndZero::Alt(&v196); /*0x5e416b*/
         if ( v37 || (v37 = Player::FindByName((Player *)Destination)) != 0 )
@@ -1542,7 +1542,7 @@ LABEL_171:
     if ( *(unsigned int *)&dword_A8B238 == 4 && UI_Setup_77CF40() ) /*0x5e4f62*/
     {
       v124 = 1; /*0x5e4f74*/
-      v125 = WideString::Assign((WideString *)&v197.uniqueId, &g_TypeClass_DefaultString); /*0x5e4f79*/
+      v125 = ((WideString *)&v197.uniqueId)->Assign( &g_TypeClass_DefaultString); /*0x5e4f79*/
     }
     else
     {

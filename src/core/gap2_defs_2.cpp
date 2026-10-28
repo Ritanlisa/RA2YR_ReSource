@@ -1051,13 +1051,13 @@ void* COMClass::adviseConnection(void* a1, int a2, void* a3) {
   FromStringInt((char **)&Format, v5); /*0x766ab9*/
   v6 = String::GetOrEmpty_Alt(&this->q014); /*0x766acb*/
   StringCSF = GetStringCSF((char *)v6, 0, aDRa2mdpostWdtg, 161); /*0x766ad4*/
-  WideString::Assign((wchar_t **)&v13, StringCSF); /*0x766ade*/
+  ((WideString *)(wchar_t **)&v13)->Assign( StringCSF); /*0x766ade*/
   v11 = Format; /*0x766ae7*/
   v8 = WideString::GetOrEmpty((wchar_t **)&v13); /*0x766aec*/
   swprintf((wchar_t *const)&v14[0].DeleteAndZero_field_0x04, (const size_t)v8, v11); /*0x766af7*/
   if ( WideString::Length(a3) ) /*0x766b08*/
   {
-    WideString::Assign((wchar_t **)&v13.ptr_4, (wchar_t *)L", "); /*0x766b1a*/
+    ((WideString *)(wchar_t **)&v13.ptr_4)->Assign( (wchar_t *)L", "); /*0x766b1a*/
     v9 = ConcatWString((wchar_t **)v14, a3, (const wchar_t **)&v13.ptr_4); /*0x766b34*/
     WideString::AssignConcat( /*0x766b3b*/
       (const wchar_t **)v9,
@@ -1067,7 +1067,7 @@ void* COMClass::adviseConnection(void* a1, int a2, void* a3) {
     DeleteAndZero::Alt(v14); /*0x766b4d*/
     DeleteAndZero::Alt((DeleteAndZero *)&v13.ptr_4); /*0x766b56*/
   }
-  WideString::Assign(a1, (wchar_t *)&v14[0].DeleteAndZero_field_0x04); /*0x766b69*/
+  ((WideString *)a1)->Assign( (wchar_t *)&v14[0].DeleteAndZero_field_0x04); /*0x766b69*/
   DeleteAndZero::Alt(&v13); /*0x766b72*/
   DeleteAndZero((ObjectClass *)&Format); /*0x766b7b*/
   return a1; /*0x766b82*/

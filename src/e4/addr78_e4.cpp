@@ -490,7 +490,7 @@ wchar_t ** FormatWOLPlayerInfo(wchar_t ** a1, const char * a2)
     if ( v11 ) /*0x780c14*/
       memcpy(v27, v11, sizeof(v27)); /*0x780c1f*/
     v22 = FormatWideString((wchar_t **)&v24.m_3[1], v27[7]); /*0x780c36*/
-    v21 = WideString::Assign((WideString *)&v25, (wchar_t *)asc_82083C); /*0x780c49*/
+    v21 = ((WideString *)&v25)->Assign( (wchar_t *)asc_82083C); /*0x780c49*/
     StringCSF = GetStringCSF(g_Str_TXT_RANK, 0, g_Str_File_wonline_cpp, 2937); /*0x780c59*/
     v13 = (&v26)->Assign(StringCSF); /*0x780c63*/
     v14 = WideString::ConcatAlloc((WideString *)v13, (wchar_t **)&v25.ptr_8, (const wchar_t **)v21); /*0x780c6a*/
@@ -594,7 +594,7 @@ void * FormatWOLPlayerInfoForDisplay(wchar_t ** a1, HWND a2, WPARAM wParam)
   {
     StringCSF = GetStringCSF(aSttLobbylistga, 0, g_Str_File_wonline_cpp, 2987); /*0x780e4d*/
 LABEL_14:
-    WideString::Assign((WideString *)a1, StringCSF); /*0x78106f*/
+    ((WideString *)a1)->Assign( StringCSF); /*0x78106f*/
     return a1; /*0x781077*/
   }
   memset(v19, 0, sizeof(v19)); /*0x780e6a*/
@@ -611,7 +611,7 @@ LABEL_14:
   v6 = (&v13)->GetOrEmpty(); /*0x780ed5*/
   strncpy(&v18[36], v6, 0xAu); /*0x780ee0*/
   FormatWOLPlayerInfo((wchar_t **)&v12, v18); /*0x780ef0*/
-  v7 = WideString::Assign((WideString *)&v12.ptr_4, (wchar_t *)L", "); /*0x780efe*/
+  v7 = ((WideString *)&v12.ptr_4)->Assign( (wchar_t *)L", "); /*0x780efe*/
   WideString::Append((WideString *)&v12, (const wchar_t **)v7); /*0x780f08*/
   DeleteAndZero::Alt((DeleteAndZero *)&v12.ptr_4); /*0x780f11*/
   if ( v19[10] == (wchar_t *)-1 ) /*0x780f20*/
@@ -2612,7 +2612,7 @@ int WOL_LoginFlow()
   dword_B77DD0 = 0; /*0x78706f*/
   v40 = 0; /*0x787075*/
   StringCSF = GetStringCSF(g_Str_TXT_FETCHING_SERVLIST, 0, g_Str_File_wonline_cpp, 24300); /*0x787079*/
-  WideString::Assign((WideString *)&v39, StringCSF); /*0x787083*/
+  ((WideString *)&v39)->Assign( StringCSF); /*0x787083*/
   ShowUIMessage(16, (wchar_t **)&v39, 0); /*0x787092*/
   DeleteAndZero::Alt(&v39); /*0x78709b*/
   v4 = 8960; /*0x7870a5*/
@@ -3006,7 +3006,7 @@ int NetworkLobbyWOL(HWND hWnd, char a2)
   v66 = 0; /*0x787786*/
   if ( byte_B77DC1 && *(unsigned int *)&dword_A8B238 == 4 && dword_A8B244 == 3 && dword_A8D584 != -1 && dword_A8D584 < 8 ) /*0x7877bb*/
   {
-    WideString::Assign((WideString *)&v67, (wchar_t *)&unk_A8D1FC + 56 * dword_A8D584); /*0x7877d8*/
+    ((WideString *)&v67)->Assign( (wchar_t *)&unk_A8D1FC + 56 * dword_A8D584); /*0x7877d8*/
     ToWideStringCharAlt((char **)&v67.ptr_4, (const wchar_t **)&v67); /*0x7877e5*/
     DeleteAndZero::Alt((DeleteAndZero *)&v67); /*0x7877ee*/
     v3 = String::GetOrEmpty((String *)&v67.ptr_4); /*0x7877fe*/
@@ -3106,7 +3106,7 @@ LABEL_25:
         }
       }
       StringCSF = GetStringCSF(aGuiLogincomple, 0, g_Str_File_wonline_cpp, 10388); /*0x787b09*/
-      WideString::Assign((WideString *)&v67.ptr_4, StringCSF); /*0x787b13*/
+      ((WideString *)&v67.ptr_4)->Assign( StringCSF); /*0x787b13*/
       ShowUIMessage(16, (wchar_t **)&v67.ptr_4, 0); /*0x787b23*/
       DeleteAndZero::Alt((DeleteAndZero *)&v67.ptr_4); /*0x787b2c*/
     }
@@ -3632,7 +3632,7 @@ int WOL_LeaveChannelEx(int a1, char ** a2, void * a3)
     Debug::Log(); /*0x78889d*/
     (*(void (**)(LPVOID))(*(unsigned int *)ppv + 36))(ppv); /*0x7888ad*/
     String_buf = GetStringCSF(g_Str_WOL_LeavingChannel, 0, g_Str_File_wonline_cpp, 10704); /*0x7888c1*/
-    WideString::Assign((wchar_t **)&v12, String_buf); /*0x7888cb*/
+    ((WideString *)(wchar_t **)&v12)->Assign( String_buf); /*0x7888cb*/
     ShowUIMessage(64, (wchar_t **)&v12, 1); /*0x7888db*/
     DeleteAndZero::Alt(&v12); /*0x7888e4*/
     for ( i = 0; dword_B77DD0; ++i ) /*0x7888f2*/
@@ -3664,7 +3664,7 @@ LABEL_14:
       strcpy((char *)(a1 + 215), String::GetOrEmpty_Alt(v13)); /*0x78899f*/
       memcpy(&MEMORY[0xB73BE8], (const void *)a1, 0x10Cu); /*0x7889b4*/
       v10 = WideString::GetOrEmpty_Alt((wchar_t **)&a3); /*0x7889ba*/
-      WideString::Assign((wchar_t **)&v12, v10); /*0x7889c4*/
+      ((WideString *)(wchar_t **)&v12)->Assign( v10); /*0x7889c4*/
       ShowUIMessage(2, (wchar_t **)&v12, 0); /*0x7889d4*/
       DeleteAndZero::Alt(&v12); /*0x7889dd*/
       Debug::Log(); /*0x7889e8*/
@@ -3798,7 +3798,7 @@ int CreateAccountWOL(int a2, int a3)
   memset(&v56[4], 0, 224); /*0x788b6b*/
   memset(v57, 0, sizeof(v57)); /*0x788b92*/
   StringCSF = GetStringCSF(aWolNewaccountf, 0, g_Str_File_wonline_cpp, 10826); /*0x788ba0*/
-  WideString::Assign((WideString *)&v50, StringCSF); /*0x788baa*/
+  ((WideString *)&v50)->Assign( StringCSF); /*0x788baa*/
   ShowUIMessage(128, (wchar_t **)&v50, 0); /*0x788bb9*/
   DeleteAndZero::Alt(&v50); /*0x788bc2*/
   Debug::Log(); /*0x788bcc*/
@@ -4044,7 +4044,7 @@ LABEL_75:
             return result; /*0x7894d7*/
           }
           v41 = GetStringCSF(aTxtReqNick, 0, g_Str_File_wonline_cpp, 11085); /*0x78934c*/
-          WideString::Assign((WideString *)&v52.q004, v41); /*0x789356*/
+          ((WideString *)&v52.q004)->Assign( v41); /*0x789356*/
           ShowUIMessage(256, (wchar_t **)&v52.q004, 1); /*0x789366*/
           DeleteAndZero::Alt((DeleteAndZero *)&v52.q004); /*0x78936f*/
           if ( dword_B77DF0 >= 0 ) /*0x78937b*/
@@ -4054,7 +4054,7 @@ LABEL_75:
       else
       {
         v23 = GetStringCSF(aWolRequestingn, 0, g_Str_File_wonline_cpp, 10942); /*0x788f44*/
-        WideString::Assign((WideString *)&v52, v23); /*0x788f4e*/
+        ((WideString *)&v52)->Assign( v23); /*0x788f4e*/
         ShowUIMessage(256, (wchar_t **)&v52, 1); /*0x788f5e*/
         DeleteAndZero::Alt(&v52); /*0x788f67*/
         if ( dword_B77E60 >= 0 ) /*0x788f73*/
@@ -4326,7 +4326,7 @@ char ValidateJoinWOL(ObjectClass *aP0, int a2, int a3, int a4)
       v9 = (*(unsigned int *)(a2 + 32) & 0x400) != 0
          ? GetStringCSF((wchar_t *)aWolResolutionl, 0, g_Str_File_wonline_cpp, 11491)
          : GetStringCSF(aWolResolutionl_0, 0, g_Str_File_wonline_cpp, 11492);
-      WideString::Assign((wchar_t **)&v17.ptr_4, v9); /*0x7899e2*/
+      ((WideString *)(wchar_t **)&v17.ptr_4)->Assign( v9); /*0x7899e2*/
       v10 = WideString::GetOrEmpty((wchar_t **)&v17.ptr_4); /*0x7899f2*/
       if ( ShowDialogConfirm(v10, 4, (unsigned __int8 (*)(void))GameLoop::Thunk, 1) == 6 ) /*0x789a06*/
       {
@@ -4371,7 +4371,7 @@ char ValidateJoinWOL(ObjectClass *aP0, int a2, int a3, int a4)
     }
     StringCSF = GetStringCSF(g_Str_TXT_JOINLOB, 0, g_Str_File_wonline_cpp, 11547); /*0x789b2b*/
     v16 = v14; /*0x789b30*/
-    WideString::Assign(&v16, StringCSF); /*0x789b34*/
+    ((WideString *)&v16)->Assign( StringCSF); /*0x789b34*/
     v15 = LeaveChannelExWOL(a2, (char **)&v17, v16) == 0; /*0x789b4a*/
     DeleteAndZero((ObjectClass *)&v17); /*0x789b4d*/
     return v15; /*0x789b52*/
@@ -4518,7 +4518,7 @@ LABEL_22:
     Debug::Log(); /*0x789df0*/
     (*(void (**)(LPVOID))(*(unsigned int *)ppv + 36))(ppv); /*0x789e00*/
     StringCSF = GetStringCSF(g_Str_WOL_LeavingChannel, 0, g_Str_File_wonline_cpp, 10704); /*0x789e14*/
-    WideString::Assign((WideString *)&v46.q004, StringCSF); /*0x789e1e*/
+    ((WideString *)&v46.q004)->Assign( StringCSF); /*0x789e1e*/
     ShowUIMessage(192, (wchar_t **)&v46.q004, 0); /*0x789e2e*/
     DeleteAndZero::Alt((DeleteAndZero *)&v46.q004); /*0x789e37*/
     for ( i = 0; dword_B77DD0; ++i ) /*0x789e45*/
@@ -4651,7 +4651,7 @@ LABEL_72:
     return 0; /*0x78a2ea*/
   }
   v25 = GetStringCSF(aGuiCreatingcha, 0, g_Str_File_wonline_cpp, 11803); /*0x78a1cc*/
-  WideString::Assign((WideString *)&v46, v25); /*0x78a1d6*/
+  ((WideString *)&v46)->Assign( v25); /*0x78a1d6*/
   ShowUIMessage(4, (wchar_t **)&v46, 0); /*0x78a1e5*/
   v26 = (HWND)Dialog::FindByHandle((Dialog *)0xC4); /*0x78a1ef*/
   if ( v26 ) /*0x78a1f6*/
@@ -5681,7 +5681,7 @@ wchar_t ** WOL_FormatLocaleString(wchar_t ** a1, int a2)
   DeleteAndZero((ObjectClass *)&v7.u32_8); /*0x780a27*/
   v4 = String::GetOrEmpty((String *)&v7.q004); /*0x780a3a*/
   StringCSF = GetStringCSF((wchar_t *)v4, 0, g_Str_File_wonline_cpp, 2909); /*0x780a43*/
-  WideString::Assign((WideString *)&v7, StringCSF); /*0x780a4d*/
+  ((WideString *)&v7)->Assign( StringCSF); /*0x780a4d*/
   WideString::AssignFromPtr((WideString *)a1, (const wchar_t **)&v7); /*0x780a65*/
   DeleteAndZero::Alt(&v7); /*0x780a6e*/
   DeleteAndZero((ObjectClass *)&v7.q004); /*0x780a77*/

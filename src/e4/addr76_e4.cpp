@@ -1919,7 +1919,7 @@ wchar_t ** E4Recv_767320::sub_767320(wchar_t ** a2, int a3, const wchar_t ** a4)
   v7 = a4; /*0x767351*/
   if ( WideString::Length(a4) ) /*0x767357*/
   {
-    WideString::Assign((wchar_t **)&a4, (wchar_t *)L", "); /*0x76736a*/
+    ((WideString *)(wchar_t **)&a4)->Assign( (wchar_t *)L", "); /*0x76736a*/
     v8 = String::GetOrEmpty((String *)&a3); /*0x76737a*/
     StringCSF = GetStringCSF((wchar_t *)v8, 0, g_Str_File_WDTGameOptions_cpp, 22); /*0x76738c*/
     v9 = ConcatWString((wchar_t **)&v14, v7, (const wchar_t **)&a4); /*0x767399*/
@@ -1931,7 +1931,7 @@ wchar_t ** E4Recv_767320::sub_767320(wchar_t ** a2, int a3, const wchar_t ** a4)
   {
     v11 = String::GetOrEmpty((String *)&a3); /*0x7673d3*/
     v12 = GetStringCSF((wchar_t *)v11, 0, g_Str_File_WDTGameOptions_cpp, 25); /*0x7673dc*/
-    WideString::Assign(a2, v12); /*0x7673e8*/
+    ((WideString *)a2)->Assign( v12); /*0x7673e8*/
   }
   DeleteAndZero((ObjectClass *)&a3); /*0x7673bb*/
   return a2; /*0x7673c3*/

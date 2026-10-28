@@ -289,7 +289,7 @@ LABEL_79:
     {
       v10 = GetStringCSF(g_Str_GUI_Open, 0, g_Str_File_netshare_cpp, 5455); /*0x5eb398*/
     }
-    WideString::Assign((wchar_t **)&v38, v10); /*0x5eb39f*/
+    ((WideString *)(wchar_t **)&v38)->Assign( v10); /*0x5eb39f*/
     v12 = CharToWideString(unk_A8B380); /*0x5eb3a9*/
     if ( !wcscmp((const wchar_t *)v12, (const wchar_t *)&g_CurrentPlayerName) ) /*0x5eb3b4*/
     {
@@ -533,7 +533,7 @@ int Lobby::BuildPlayerList()
     unknown_libname_73(&v7); /*0x77dbc9*/
     if ( (unsigned __int8)IsKnownPointer((ObjectClass *)v2) ) /*0x77dbd0*/
     {
-      WideString::Assign((wchar_t **)&v7.ptr_4, v2); /*0x77dbde*/
+      ((WideString *)(wchar_t **)&v7.ptr_4)->Assign( v2); /*0x77dbde*/
       v3 = ToWideStringCharAlt((char **)&v7.ptr_8, (const wchar_t **)&v7.ptr_4); /*0x77dbeb*/
       String::Reassign((String *)&v7, (const char **)v3); /*0x77dbf5*/
       j_DeleteAndZero((ObjectClass *)&v7.ptr_8); /*0x77dbfe*/

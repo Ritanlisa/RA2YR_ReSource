@@ -2505,7 +2505,7 @@ LABEL_7:
     goto LABEL_7; /*0x79788f*/
   }
   v5 = GetStringCSF(aTxtFetchingWdt, 0, g_Str_File_wonline_cpp, 24455); /*0x7978b6*/
-  WideString::Assign((wchar_t **)&v33, v5); /*0x7978c0*/
+  ((WideString *)(wchar_t **)&v33)->Assign( v5); /*0x7978c0*/
   ShowUIMessage(16, (wchar_t **)&v33, 0); /*0x7978cf*/
   DeleteAndZero::Alt((DeleteAndZero *)&v33); /*0x7978d8*/
   do /*0x797949*/
@@ -3297,7 +3297,7 @@ void MainLobbyDlgProcWOL(HWND hWnd, LPARAM lParam, ObjectClass)
         ListBox::Clear((ListBox *)DlgItem); /*0x799920*/
         SendMessageA(DlgItem, 0x141u, 9u, 0); /*0x799935*/
         StringCSF = GetStringCSF(aGuiDefault, 0, g_Str_File_wonline_cpp, 25247); /*0x799948*/
-        WideString::Assign((WideString *)&v55, StringCSF); /*0x799952*/
+        ((WideString *)&v55)->Assign( StringCSF); /*0x799952*/
         v36 = WideString::GetOrEmpty_Alt((WideString *)&v55); /*0x79995b*/
         v37 = SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)v36); /*0x79996b*/
         SendMessageA(DlgItem, 0x151u, v37, -1); /*0x799976*/
@@ -5924,7 +5924,7 @@ LABEL_6:
     Debug::Log(); /*0x79f1d9*/
     (*(void (**)(LPVOID))(*(unsigned int *)ppv + 36))(ppv); /*0x79f1e9*/
     StringCSF = GetStringCSF(g_Str_WOL_LeavingChannel, 0, g_Str_File_wonline_cpp, 10704); /*0x79f1fd*/
-    WideString::Assign((WideString *)v51, StringCSF); /*0x79f207*/
+    ((WideString *)v51)->Assign( StringCSF); /*0x79f207*/
     ShowUIMessage(64, (wchar_t **)v51, 1); /*0x79f217*/
     DeleteAndZero::Alt((DeleteAndZero *)v51); /*0x79f220*/
     for ( i = 0; dword_B77DD0; ++i ) /*0x79f22e*/

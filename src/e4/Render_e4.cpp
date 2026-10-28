@@ -680,7 +680,7 @@ wchar_t ** Render_Format(wchar_t ** a1, char ** a2)
     if ( dword_A8B8D8 <= 0 ) /*0x780ddf*/
     {
 LABEL_6:
-      WideString::Assign((WideString *)a1, &g_TypeClass_DefaultString); /*0x780e0b*/
+      ((WideString *)a1)->Assign( &g_TypeClass_DefaultString); /*0x780e0b*/
       return a1; /*0x780e17*/
     }
     else
@@ -694,14 +694,14 @@ LABEL_6:
         if ( ++v7 >= dword_A8B8D8 ) /*0x780e09*/
           goto LABEL_6; /*0x780e09*/
       }
-      WideString::Assign((WideString *)a1, v8); /*0x780e21*/
+      ((WideString *)a1)->Assign( v8); /*0x780e21*/
       return a1; /*0x780e26*/
     }
   }
   else
   {
     StringCSF = GetStringCSF(aTxtRandomMapDe, 0, g_Str_File_wonline_cpp, 2970); /*0x780dc2*/
-    WideString::Assign((WideString *)a1, StringCSF); /*0x780dca*/
+    ((WideString *)a1)->Assign( StringCSF); /*0x780dca*/
     return a1; /*0x780dcf*/
   }
 

@@ -2629,7 +2629,7 @@ LABEL_16:
   {
     while ( 1 ) /*0x77e9e9*/
     {
-      WideString::Assign((WideString *)&v24, *(wchar_t **)(*(unsigned int *)&stru_A8D804.__pad_3D[567] + 4 * v12)); /*0x77e9e9*/
+      ((WideString *)&v24)->Assign( *(wchar_t **)(*(unsigned int *)&stru_A8D804.__pad_3D[567] + 4 * v12)); /*0x77e9e9*/
       ToWideStringCharAlt((char **)&v23, (const wchar_t **)&v24); /*0x77e9f6*/
       DeleteAndZero::Alt(&v24); /*0x77e9ff*/
       v13 = String::ToLowerCopy(&v23, (char **)&v24.u32_8); /*0x77ea12*/
@@ -2732,7 +2732,7 @@ int SetupLobbyPlayerSlot(CCINIClass * aP0, CCINIClass * aP1, CCINIClass * aP2, i
   v7 = (wchar_t **)&stru_A8D804.__pad_3D[591]; /*0x77ed1a*/
   while ( 1 ) /*0x77ed26*/
   {
-    WideString::Assign((WideString *)&v27, *v7); /*0x77ed26*/
+    ((WideString *)&v27)->Assign( *v7); /*0x77ed26*/
     ToWideStringCharAlt((char **)&v26, (const wchar_t **)&v27); /*0x77ed33*/
     DeleteAndZero::Alt(&v27); /*0x77ed3c*/
     v8 = String::ToLowerCopy(&v26, (char **)&v27.u32_8); /*0x77ed4a*/
