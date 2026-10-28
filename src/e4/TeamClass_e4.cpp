@@ -2639,7 +2639,7 @@ void TeamClass::MoveTeamToWaypoint(ScriptClass * aP1, TeamClass * aP2)
       || !(uint8_t)((SessionClass *)v3->currentScript)->SetField()
       || (Entry = ((SessionClass *)v3->currentScript)->GetEntry(v16), *Entry != 3)
       || (Waypoint_Location = (int16_t *)((ScenarioClass *)((char *)dword_A8B230))->Get_Waypoint_Location(&aP1, Entry[1]),
-          (uint8_t)LayerClass::IsWithinUsableArea(
+          (uint8_t)((LayerClass *)&DataGlobal_87F7E8)->IsWithinUsableArea(
                              (LayerClass *)&DataGlobal_87F7E8,
                              Waypoint_Location,
                              1)) )

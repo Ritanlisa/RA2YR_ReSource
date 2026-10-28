@@ -373,11 +373,11 @@ void* Radar::ProcessSubzone(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnk
     {
       v101[1] = (__int16)v115; /*0x5825b1*/
       v101[0] = v9; /*0x5825bd*/
-      if ( (unsigned __int8)LayerClass::IsWithinUsableArea((LayerClass *)this, v101, 1) ) /*0x5825c2*/
+      if ( (unsigned __int8)((LayerClass *)this)->IsWithinUsableArea( v101, 1) ) /*0x5825c2*/
       {
         v101[1] = (__int16)v115; /*0x5825de*/
         v101[0] = v9 + 1; /*0x5825ea*/
-        if ( (unsigned __int8)LayerClass::IsWithinUsableArea((LayerClass *)this, v101, 1) ) /*0x5825ef*/
+        if ( (unsigned __int8)((LayerClass *)this)->IsWithinUsableArea( v101, 1) ) /*0x5825ef*/
         {
           v17 = (unsigned __int16)aP3 | (v89 << 16); /*0x582612*/
           (v113) = ((v113) & ~0xFF) | ((0) & 0xFF); /*0x58261a*/
@@ -447,11 +447,11 @@ LABEL_14:
     {
       v101[0] = v94; /*0x582741*/
       v101[1] = (__int16)v115; /*0x58274d*/
-      if ( (unsigned __int8)LayerClass::IsWithinUsableArea((LayerClass *)this, v101, 1) ) /*0x582752*/
+      if ( (unsigned __int8)((LayerClass *)this)->IsWithinUsableArea( v101, 1) ) /*0x582752*/
       {
         v101[0] = v94 - 1; /*0x582770*/
         v101[1] = (__int16)v115; /*0x58277c*/
-        if ( (unsigned __int8)LayerClass::IsWithinUsableArea((LayerClass *)this, v101, 1) ) /*0x582781*/
+        if ( (unsigned __int8)((LayerClass *)this)->IsWithinUsableArea( v101, 1) ) /*0x582781*/
         {
           v33 = (unsigned __int16)aP3 | (v90 << 16); /*0x5827a8*/
           (v113) = ((v113) & ~0xFF) | ((0) & 0xFF); /*0x5827b2*/
@@ -547,11 +547,11 @@ LABEL_33:
           v54 = *(unsigned __int8 *)(v52 + 8) - *(unsigned __int8 *)(v47 + 8); /*0x5829c9*/
           if ( (int)(((((v54) >> 32) & 0xFFFFFFFFu) ^ v54) - (((v54) >> 32) & 0xFFFFFFFFu)) < 2 ) /*0x5829d1*/
           {
-            if ( (unsigned __int8)LayerClass::IsWithinUsableArea((LayerClass *)this, v95, 1) ) /*0x5829e2*/
+            if ( (unsigned __int8)((LayerClass *)this)->IsWithinUsableArea( v95, 1) ) /*0x5829e2*/
             {
               v108[1] = (unsigned short)v115 - 1; /*0x5829fd*/
               v108[0] = v51; /*0x582a07*/
-              if ( (unsigned __int8)LayerClass::IsWithinUsableArea((LayerClass *)this, v108, 1) ) /*0x582a0c*/
+              if ( (unsigned __int8)((LayerClass *)this)->IsWithinUsableArea( v108, 1) ) /*0x582a0c*/
               {
                 v55 = (unsigned __int16)aP3 | (v91 << 16); /*0x582a26*/
                 if ( v49 < v99 || ((v113) = ((v113) & ~0xFF) | ((0) & 0xFF), v49 > v100) ) /*0x582a37*/
@@ -656,11 +656,11 @@ LABEL_82:
             v74 = v114[8] - *(unsigned __int8 *)(v71 + 8); /*0x582c18*/
             if ( (int)(((((v74) >> 32) & 0xFFFFFFFFu) ^ v74) - (((v74) >> 32) & 0xFFFFFFFFu)) < 2 ) /*0x582c20*/
             {
-              if ( (unsigned __int8)LayerClass::IsWithinUsableArea((LayerClass *)this, v95, 1) ) /*0x582c33*/
+              if ( (unsigned __int8)((LayerClass *)this)->IsWithinUsableArea( v95, 1) ) /*0x582c33*/
               {
                 (v104) = ((v104) & ~0xFFFF) | ((v9) & 0xFFFF); /*0x582c4a*/
                 (v104) = ((v104) & ~(0xFFFF << 16)) | ((((unsigned short)v72 + 1) & 0xFFFF) << 16); /*0x582c4f*/
-                if ( (unsigned __int8)LayerClass::IsWithinUsableArea((LayerClass *)this, (__int16 *)&v104, 1) ) /*0x582c54*/
+                if ( (unsigned __int8)((LayerClass *)this)->IsWithinUsableArea( (__int16 *)&v104, 1) ) /*0x582c54*/
                 {
                   v75 = (unsigned __int16)aP3 | (v92 << 16); /*0x582c6e*/
                   if ( v9 < v99 || ((v113) = ((v113) & ~0xFF) | ((0) & 0xFF), v9 > v100) ) /*0x582c7f*/
@@ -865,7 +865,7 @@ AbstractClass * * Radar::Update(int16_t *aP1, void *a2, void *a3, void *a4)
 
   v2 = this; /*0x584561*/
   v115 = this; /*0x584566*/
-  if ( (unsigned __int8)LayerClass::IsWithinUsableArea((LayerClass *)this, a2, 1) )
+  if ( (unsigned __int8)((LayerClass *)this)->IsWithinUsableArea( a2, 1) )
   {
     for ( i = 2; ; --i ) /*0x584577*/
     {
@@ -1146,7 +1146,7 @@ LABEL_73:
               {
                 v108[0] = v74; /*0x584d2c*/
                 v108[1] = v71; /*0x584d31*/
-                if ( (unsigned __int8)LayerClass::IsWithinUsableArea((LayerClass *)v2, v108, 1) ) /*0x584d36*/
+                if ( (unsigned __int8)((LayerClass *)v2)->IsWithinUsableArea( v108, 1) ) /*0x584d36*/
                 {
                   v75 = (__int16)v74 /*0x584d5c*/
                       + (__int16)v71 * (*&v2->u32_F8 + *&v2->u32_F4 + 1);
@@ -1207,7 +1207,7 @@ LABEL_72:
     {
       v117[0] = v29; /*0x584862*/
       v117[1] = v28; /*0x584867*/
-      if ( (unsigned __int8)LayerClass::IsWithinUsableArea((LayerClass *)v2, v117, 1) )
+      if ( (unsigned __int8)((LayerClass *)v2)->IsWithinUsableArea( v117, 1) )
       {
         v116[0] = v29; /*0x584880*/
         v116[1] = v28; /*0x584885*/
@@ -2075,7 +2075,7 @@ AbstractClass * * Radar::ScanWaypoints(MouseClass * aP0, MouseClass * aP1, int a
   LABEL_61:
         if ( v23->q20C == -1 /*0x692996*/
           || !(uint8_t)((int (__fastcall *)(void *))Radar::IsRadarTargetEligible)(v23)
-          || (v30 = 42, !LayerClass::IsWithinUsableArea(&dword_87F7E8, v14, 1)) )
+          || (v30 = 42, !((LayerClass *)&dword_87F7E8)->IsWithinUsableArea( v14, 1)) )
   {
           v30 = 43; /*0x6929a7*/
   }

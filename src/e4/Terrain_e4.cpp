@@ -3025,7 +3025,7 @@ LABEL_49:
       LOWORD(v62) = *v5 + LOWORD(dword_89F688[v36]); /*0x5a2c99*/
       (v62) = ((v62) & ~(0xFFFF << 16)) | (((v37) & 0xFFFF) << 16); /*0x5a2ca2*/
       *(unsigned int *)v55 = v62; /*0x5a2cab*/
-      if ( !(unsigned __int8)LayerClass::IsWithinUsableArea((LayerClass *)&dword_87F7E8, v55, 1) ) /*0x5a2cbc*/
+      if ( !(unsigned __int8)((LayerClass *)&dword_87F7E8)->IsWithinUsableArea( v55, 1) ) /*0x5a2cbc*/
         goto LABEL_67; /*0x5a2cbc*/
       v38 = (BuildingClass *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v55); /*0x5a2cd1*/
       v63 = (int)v38; /*0x5a2cd5*/

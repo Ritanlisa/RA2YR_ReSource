@@ -6283,7 +6283,7 @@ LABEL_23:
   {
     v44 = *Coord::ToCell((Coord *)&v49, &v48[1]); /*0x502097*/
   }
-  if ( (unsigned __int8)LayerClass::IsWithinUsableArea((LayerClass *)&dword_87F7E8, (__int16 *)&v44, 1) ) /*0x5020a7*/
+  if ( (unsigned __int8)((LayerClass *)&dword_87F7E8)->IsWithinUsableArea( (__int16 *)&v44, 1) ) /*0x5020a7*/
     *a1 = v44; /*0x5020df*/
   else
     *a1 = *HouseClass::ClampToUsableCell((HouseClass *)&dword_87F7E8, &v48[1], (__int16 *)&v44); /*0x5020c9*/
@@ -8522,7 +8522,7 @@ void HouseClass::FindAutoBuildLocation() {
       if ( CellClass::FindInfantry((CellClass *)v15, 0) || (v84 = 1, CellClass::FindInfantry((CellClass *)v17, 0)) ) /*0x5085e0*/
         v84 = 0; /*0x5085ee*/
       v21 = v15->u32_11C == 0; /*0x508607*/
-      IsWithinUsableArea = LayerClass::IsWithinUsableArea((LayerClass *)&dword_87F7E8, v86, 1); /*0x50860a*/
+      IsWithinUsableArea = ((LayerClass *)&dword_87F7E8)->IsWithinUsableArea( v86, 1); /*0x50860a*/
       if ( !v90 || !v85 ) /*0x508621*/
         goto LABEL_36; /*0x508621*/
       if ( !v89 || !v79 || !v84 || !v21 || !IsWithinUsableArea ) /*0x508645*/
@@ -9488,7 +9488,7 @@ int HouseClass::Fire_PsyDom(int a1) {
           (v3) = ((v3) & ~0xFF) | ((v20) & 0xFF); /*0x50a2dd*/
           if ( v20 && (v18[0] != *(unsigned short *)&stru_A8E960.waypoints[6] || v18[1] != *(unsigned short *)&stru_A8E960.waypoints[8]) ) /*0x50a301*/
           {
-            (v3) = ((v3) & ~0xFF) | ((LayerClass::IsWithinUsableArea((LayerClass *)&dword_87F7E8, v18, 1)) & 0xFF); /*0x50a30f*/
+            (v3) = ((v3) & ~0xFF) | ((((LayerClass *)&dword_87F7E8)->IsWithinUsableArea( v18, 1)) & 0xFF); /*0x50a30f*/
             if ( (unsigned char)v3 ) /*0x50a316*/
             {
               v16 = (*(int (**)(int, char *))&this->supers->uniqueId)(&this->supers, &a1); /*0x50a32e*/
@@ -9534,7 +9534,7 @@ int HouseClass::Fire_PsyDom(int a1) {
           v3 = ((v3) & 0xFFFFFF00u) | ((unsigned int)(v19) & 0xFFu); /*0x50a2dd*/
           if ( v19 && (v15[0] != *(unsigned short *)&((unsigned int *)&stru_A8EB00)[948] || v15[1] != *(unsigned short *)&((unsigned int *)&stru_A8EB00)[950]) ) /*0x50a301*/
           {
-            v3 = ((v3) & 0xFFFFFF00u) | ((unsigned int)(LayerClass::IsWithinUsableArea((LayerClass *)&DataGlobal_87F7E8, v15, 1)) & 0xFFu); /*0x50a30f*/
+            v3 = ((v3) & 0xFFFFFF00u) | ((unsigned int)(((LayerClass *)&DataGlobal_87F7E8)->IsWithinUsableArea( v15, 1)) & 0xFFu); /*0x50a30f*/
             if ( (unsigned char)v3 ) /*0x50a316*/
             {
               v16 = (*(int (**)(int, char *))(this->supers + 16))(&this->uniqueId, &a1); /*0x50a32e*/
@@ -11005,7 +11005,7 @@ void* HouseClass::FindSWBuilding(void* a1) {
       (*((unsigned short *)&(v35))) = *v20 / 256; /*0x50cf56*/
       (*(((unsigned short *)&(v35)) + 1)) = v20[1] / 256; /*0x50cf6e*/
       *(unsigned int *)v35 = v35; /*0x50cf77*/
-      if ( !(uint8_t)LayerClass::IsWithinUsableArea((LayerClass *)&DataGlobal_87F7E8, v35, 1) ) /*0x50cf81*/
+      if ( !(uint8_t)((LayerClass *)&DataGlobal_87F7E8)->IsWithinUsableArea( v35, 1) ) /*0x50cf81*/
         v4 = 0; /*0x50cf8a*/
       if ( *((unsigned int *)v5 + 136) == 2 /*0x50cfa8*/
         || (*(int (__thiscall **)(unsigned char *))(*(unsigned int *)v5 + 44))(v5) == 6 && v5[1773] == 15 )
@@ -11427,7 +11427,7 @@ void* HouseClass::ClampToUsableCell(void* a1, void* a2) {
         (*((unsigned short *)&(a2))) = v3; /*0x586f8b*/
         (*(((unsigned short *)&(a2)) + 1)) = v5; /*0x586f90*/
       }
-      while ( !(uint8_t)LayerClass::IsWithinUsableArea((LayerClass *)this, (int16_t *)&a2, 1) ); /*0x586f9c*/
+      while ( !(uint8_t)((LayerClass *)this)->IsWithinUsableArea( (int16_t *)&a2, 1) ); /*0x586f9c*/
     }
   }
   else
@@ -11439,7 +11439,7 @@ void* HouseClass::ClampToUsableCell(void* a1, void* a2) {
       (*((unsigned short *)&(a2))) = v3; /*0x586f53*/
       (*(((unsigned short *)&(a2)) + 1)) = v5; /*0x586f58*/
     }
-    while ( !(uint8_t)LayerClass::IsWithinUsableArea((LayerClass *)this, (int16_t *)&a2, 1) ); /*0x586f64*/
+    while ( !(uint8_t)((LayerClass *)this)->IsWithinUsableArea( (int16_t *)&a2, 1) ); /*0x586f64*/
   }
   (*(((unsigned short *)&(a2)) + 1)) = v5; /*0x586fa2*/
   (*((unsigned short *)&(a2))) = v3; /*0x586fa7*/

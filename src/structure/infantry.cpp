@@ -451,8 +451,8 @@ bool InfantryClass::CanDeployAtCell(int16_t *a2, int16_t *a3)
   if ( v9 == 1 ) /*0x5222ba*/
     return 0; /*0x5222c2*/
   if ( v9 >= 4 /*0x5222e3*/
-    || !(unsigned __int8)LayerClass::IsWithinUsableArea((LayerClass *)&dword_87F7E8, a2, 1)
-    || !(unsigned __int8)LayerClass::IsWithinUsableArea((LayerClass *)&dword_87F7E8, a3, 1) )
+    || !(unsigned __int8)((LayerClass *)&dword_87F7E8)->IsWithinUsableArea( a2, 1)
+    || !(unsigned __int8)((LayerClass *)&dword_87F7E8)->IsWithinUsableArea( a3, 1) )
   {
     return 1; /*0x52232d*/
   }
@@ -1997,7 +1997,7 @@ int InfantryClass::MoveToCell(int* a2, int a3)
     {
       (*((unsigned short *)&(a2))) = *v3 / 256; /*0x51e045*/
       (*(((unsigned short *)&(a2)) + 1)) = v3->u32_4 / 256; /*0x51e05e*/
-      if ( (uint8_t)LayerClass::IsWithinUsableArea((LayerClass *)&dword_87F7E8, (int16_t *)&a2, 1) ) /*0x51e06b*/
+      if ( (uint8_t)((LayerClass *)&dword_87F7E8)->IsWithinUsableArea( (int16_t *)&a2, 1) ) /*0x51e06b*/
         v6 = 0; /*0x51e02e*/
     }
     v12 = v6; /*0x51e081*/
@@ -2615,7 +2615,7 @@ LABEL_33:
           HIWORD(v47) = v43[1] + v28; /*0x51d569*/
           ptr_0 = (unsigned int)v47; /*0x51d572*/
           v30 = ((CellCoord *)&dword_87F7E8)->To_CellObj((__int16 *)&ptr_0); /*0x51d587*/
-          if ( (unsigned __int8)LayerClass::IsWithinUsableArea((LayerClass *)&dword_87F7E8, (__int16 *)&ptr_0, 1) ) /*0x51d589*/
+          if ( (unsigned __int8)((LayerClass *)&dword_87F7E8)->IsWithinUsableArea( (__int16 *)&ptr_0, 1) ) /*0x51d589*/
           {
             v31 = *v7; /*0x51d596*/
             LandHeight = ObjectClass::GetLandHeight((ObjectClass *)v7); /*0x51d59e*/
@@ -2768,7 +2768,7 @@ int InfantryClass::FindNearbyCell()
                 v20[0] = Math::RoundToInt(v2); /*0x418fde*/
                 v20[1] = v12; /*0x418fe3*/
                 *(unsigned int *)v17 = *(unsigned int *)v20; /*0x418ff4*/
-                if ( (unsigned __int8)LayerClass::IsWithinUsableArea((LayerClass *)&dword_87F7E8, v17, 1) ) /*0x418ff8*/
+                if ( (unsigned __int8)((LayerClass *)&dword_87F7E8)->IsWithinUsableArea( v17, 1) ) /*0x418ff8*/
                 {
                   v13 = ((CellCoord *)&dword_87F7E8)->To_CellObj(v17); /*0x419010*/
                   if ( *(unsigned int *)v17 != LODWORD(v18) ) /*0x41901c*/

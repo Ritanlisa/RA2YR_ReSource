@@ -6314,7 +6314,7 @@ int FootClass::ValidateTargetCell()
   (*((unsigned short *)&(v13[0]))) = *v5 / 256; /*0x4ddc99*/
   (*(((unsigned short *)&(v13[0])) + 1)) = v5[1] / 256; /*0x4ddcb2*/
   a2 = v13[0]; /*0x4ddcbf*/
-  result = LayerClass::IsWithinUsableArea((LayerClass *)&DataGlobal_87F7E8, (int16_t *)&a2, 1); /*0x4ddcc4*/
+  result = ((LayerClass *)&DataGlobal_87F7E8)->IsWithinUsableArea( (int16_t *)&a2, 1); /*0x4ddcc4*/
   if ( result ) /*0x4ddccb*/
   {
     v13[0] = 0; /*0x4ddce9*/
@@ -6371,7 +6371,7 @@ int FootClass::HandleCursorWithCheck()
   if ( (uint8_t)Cell::IsPassable(v8) && v5 ) /*0x4dde79*/
   {
     if ( !*(unsigned char *)((*((int (__thiscall **)(FootClass *))this->ptr_0 + 33))(this) + 3213) /*0x4dde97*/
-      || !(uint8_t)LayerClass::IsWithinUsableArea((LayerClass *)&DataGlobal_87F7E8, a2, 1) )
+      || !(uint8_t)((LayerClass *)&DataGlobal_87F7E8)->IsWithinUsableArea( a2, 1) )
     {
       return 2; /*0x4ddebe*/
     }
@@ -7906,7 +7906,7 @@ int FootClass::FindNearestApproachableCell()
           v17 = v15 * v9[185]; /*0x5870c3*/
           LOWORD(v23) = v16 + v29; /*0x5870c6*/
           *(unsigned int *)v21 = v23; /*0x5870d5*/
-          if ( *(unsigned int *)(v26 + 4 * (v16 + v17) + 16) && (unsigned __int8)LayerClass::IsWithinUsableArea(v27, v21, 1) ) /*0x5870ec*/
+          if ( *(unsigned int *)(v26 + 4 * (v16 + v17) + 16) && (unsigned __int8)((LayerClass *)v27)->IsWithinUsableArea( v21, 1) ) /*0x5870ec*/
           {
             v18 = v21[1] - a4[1]; /*0x587110*/
             v28 = (v21[0] - *a4) * (v21[0] - *a4) + v18 * v18; /*0x58711c*/
@@ -9930,7 +9930,7 @@ int TechnoClass::IsWaypointHidden() const
                     v4 = Entry[1],
                     result == 3)
                 && (Waypoint_Location = (int16_t *)ScenarioClass::Get_Waypoint_Location((char *)dword_A8B230, v6, v4),
-                    result = LayerClass::IsWithinUsableArea(
+                    result = ((LayerClass *)&DataGlobal_87F7E8)->IsWithinUsableArea(
                                (LayerClass *)&DataGlobal_87F7E8,
                                Waypoint_Location,
                                1),
@@ -10446,7 +10446,7 @@ int FootClass::CompleteProduction()
     if ( attachedTag ) /*0x6f5105*/
       TeamClass::Update_0(attachedTag, 34, (int)this, dword_B0EA50, 0, 0); /*0x6f5115*/
     if ( !this->isInPlayfield[0] /*0x6f5130*/
-      && (unsigned __int8)LayerClass::IsWithinUsableArea((LayerClass *)&dword_87F7E8, (__int16 *)&v10, 1) )
+      && (unsigned __int8)((LayerClass *)&dword_87F7E8)->IsWithinUsableArea( (__int16 *)&v10, 1) )
     {
       this->isInPlayfield[0] = 1; /*0x6f5139*/
     }
@@ -14465,7 +14465,7 @@ LABEL_38:
   {
     return 0; /*0x700c29*/
   }
-  if ( !(unsigned __int8)LayerClass::IsWithinUsableArea((LayerClass *)&dword_87F7E8, a2, 1) ) /*0x700af6*/
+  if ( !(unsigned __int8)((LayerClass *)&dword_87F7E8)->IsWithinUsableArea( a2, 1) ) /*0x700af6*/
     return 2; /*0x700af6*/
   if ( v33 ) /*0x700b09*/
     return 1; /*0x700b17*/
@@ -17936,7 +17936,7 @@ int TechnoClass::ShouldScanArea() const
   LOWORD(v12) = *v4 / 256; /*0x70d25b*/
   HIWORD(v12) = v4[1] / 256; /*0x70d273*/
   *(unsigned int *)v13 = v12; /*0x70d27c*/
-  if ( !(unsigned __int8)LayerClass::IsWithinUsableArea((LayerClass *)&dword_87F7E8, v13, 1) ) /*0x70d286*/
+  if ( !(unsigned __int8)((LayerClass *)&dword_87F7E8)->IsWithinUsableArea( v13, 1) ) /*0x70d286*/
     return 0; /*0x70d40a*/
   v5 = this->GetZAboveGround(); /*0x70d2a3*/
   if ( !(unsigned __int8)Audio::IsMediumVolume(&this->veterancy) && !(unsigned __int8)Audio::IsLoud(&this->veterancy) ) /*0x70d2b9*/

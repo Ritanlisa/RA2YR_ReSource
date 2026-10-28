@@ -502,7 +502,7 @@ int Surface::RenderRadar()
     while ( 1 ) /*0x65528b*/
     {
       *(unsigned int *)v35 = *(unsigned int *)(this->u32_1228 + 4 * v4); /*0x65528b*/
-      if ( !(unsigned __int8)LayerClass::IsWithinUsableArea((LayerClass *)this, v35, 1) ) /*0x655298*/
+      if ( !(unsigned __int8)((LayerClass *)this)->IsWithinUsableArea( v35, 1) ) /*0x655298*/
         goto LABEL_32; /*0x655298*/
       v5 = v35[0] + this->u32_1490 - v35[1]; /*0x6552b8*/
       v6 = 2; /*0x6552bf*/

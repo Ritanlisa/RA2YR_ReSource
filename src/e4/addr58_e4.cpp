@@ -135,12 +135,12 @@ LABEL_22:
     }
     v13 = dword_ABD480; /*0x583711*/
     v22 = dword_ABD480; /*0x583723*/
-    if ( LayerClass::IsWithinUsableArea(&dword_87F7E8, (__int16 *)&aP1, 1) ) /*0x583727*/
+    if ( ((LayerClass *)&dword_87F7E8)->IsWithinUsableArea( (__int16 *)&aP1, 1) ) /*0x583727*/
     {
       v13 = (int)aP1; /*0x583730*/
       v22 = (int)aP1; /*0x583734*/
     }
-    if ( LayerClass::IsWithinUsableArea(&dword_87F7E8, (__int16 *)&v21, 1) ) /*0x583744*/
+    if ( ((LayerClass *)&dword_87F7E8)->IsWithinUsableArea( (__int16 *)&v21, 1) ) /*0x583744*/
     {
       if ( (((((v22) >> 16) & 0xFFFF) & 0xFFFFu) << 16 | (v13 & 0xFFFFu)) == dword_ABD480 ) /*0x583758*/
         goto LABEL_28; /*0x583758*/
@@ -892,7 +892,7 @@ ScenarioClass * * ComputeMapCameraBounds()
           j;
           j = (__int16 *)((LayerClass *)&dword_87F7E8)->CellIteratorNext() )
     {
-      if ( (unsigned __int8)LayerClass::IsWithinUsableArea((LayerClass *)&dword_87F7E8, j + 18, 1) ) /*0x58b953*/
+      if ( (unsigned __int8)((LayerClass *)&dword_87F7E8)->IsWithinUsableArea( j + 18, 1) ) /*0x58b953*/
       {
         v15 = (unsigned int *)(*(int (**)(__int16 *))(*(unsigned int *)j + 72))(j); /*0x58b973*/
         v16 = (int *)(*(int (**)(__int16 *, char *, unsigned int))(*(unsigned int *)j + 72))(j, v28, v15[1]); /*0x58b983*/

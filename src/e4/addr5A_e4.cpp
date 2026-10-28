@@ -1391,7 +1391,7 @@ LABEL_14:
         }
         while ( v13 > v12 ); /*0x5a6a82*/
         v18 = *(unsigned int *)(*(unsigned int *)(a1 + 4) + 4 * v13); /*0x5a6a9a*/
-        if ( LayerClass::IsWithinUsableArea(&dword_87F7E8, (__int16 *)&v18, 1) /*0x5a6aba*/
+        if ( ((LayerClass *)&dword_87F7E8)->IsWithinUsableArea( (__int16 *)&v18, 1) /*0x5a6aba*/
           && !*((unsigned int *)((CellCoord *)(&dword_87F7E8))->To_CellObj((__int16 *)&v18) + 57) )
         {
           do /*0x5a6aea*/
@@ -2328,7 +2328,7 @@ LABEL_14:
         (v25) = ((v25) & ~0xFFFF) | ((v15) & 0xFFFF); /*0x5a88a7*/
         (v25) = ((v25) & ~(0xFFFF << 16)) | (((v16) & 0xFFFF) << 16); /*0x5a88ac*/
         v21 = v25; /*0x5a88b9*/
-        if ( LayerClass::IsWithinUsableArea(&dword_87F7E8, (__int16 *)&v21, 1) /*0x5a88df*/
+        if ( ((LayerClass *)&dword_87F7E8)->IsWithinUsableArea( (__int16 *)&v21, 1) /*0x5a88df*/
           && !*((unsigned int *)((CellCoord *)(&dword_87F7E8))->To_CellObj((__int16 *)&v21) + 57) )
         {
           do /*0x5a890f*/

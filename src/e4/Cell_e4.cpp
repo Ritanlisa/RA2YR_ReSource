@@ -50,7 +50,7 @@ TechnoClass * * Cell::IsOccupied(short * a2, char a3)
   unsigned int v15[2]; // [esp+14h] [ebp-8h] BYREF
   char v16; // [esp+20h] [ebp+4h]
 
-  if ( !(unsigned __int8)LayerClass::IsWithinUsableArea((LayerClass *)&dword_87F7E8, a2, 1) ) /*0x419b18*/
+  if ( !(unsigned __int8)((LayerClass *)&dword_87F7E8)->IsWithinUsableArea( a2, 1) ) /*0x419b18*/
     return 1; /*0x419b18*/
   if ( *(unsigned char *)(this->u32_6C4 + 3412) ) /*0x419b2b*/
   {
@@ -716,7 +716,7 @@ Coord * * Cell::IsValidDestination(short * a2)
   unsigned int v16[3]; // [esp+1Ch] [ebp-Ch] BYREF
   __int16 *v17; // [esp+2Ch] [ebp+4h]
 
-  if ( !(unsigned __int8)LayerClass::IsWithinUsableArea((LayerClass *)&DataGlobal_87F7E8, a2, 1) ) /*0x4dce93*/
+  if ( !(unsigned __int8)((LayerClass *)&DataGlobal_87F7E8)->IsWithinUsableArea( a2, 1) ) /*0x4dce93*/
     return 0; /*0x4dce93*/
   if ( !*(unsigned int *)&dword_A8B238 ) /*0x4dcea7*/
   {

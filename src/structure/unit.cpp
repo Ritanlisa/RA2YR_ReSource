@@ -813,7 +813,7 @@ LABEL_82:
   v49 = (__int16 *)(*(int (**)(int, TeleportLocomotionClass **))(*(unsigned int *)v2->Owner + 440))( /*0x719a81*/
                      v2->Owner,
                      &this);
-  if ( !(unsigned __int8)LayerClass::IsWithinUsableArea((LayerClass *)&dword_87F7E8, v49, 1) ) /*0x719a8d*/
+  if ( !(unsigned __int8)((LayerClass *)&dword_87F7E8)->IsWithinUsableArea( v49, 1) ) /*0x719a8d*/
     *(unsigned char *)(v2->Owner + 981) = 0; /*0x719a99*/
   if ( !*(unsigned int *)(v2->Owner + 640) ) /*0x719aa3*/
     ProcessUnitDeploymentAtCell((TechnoClass *)&v2[-1].Piggybackee, *v45, v2->LastCoords[0], v2->LastCoords[1]); /*0x719ac4*/
@@ -7055,7 +7055,7 @@ int UnitClass::Scatter(CellStruct* threatPos, bool a3, bool a4)
     (*(((unsigned short *)&(v37.StreamClass_field_0C)) + 1)) = (*(((unsigned short *)&(v37.m_Data)) + 1)) + v28; /*0x743ef1*/
     a3 = (unsigned int *)v37.StreamClass_field_0C; /*0x743efa*/
     v29 = ((CellCoord *)&dword_87F7E8)->To_CellObj((int16_t *)&a3); /*0x743f08*/
-    if ( !(uint8_t)LayerClass::IsWithinUsableArea((LayerClass *)&dword_87F7E8, (int16_t *)&a3, 1) ) /*0x743f16*/
+    if ( !(uint8_t)((LayerClass *)&dword_87F7E8)->IsWithinUsableArea( (int16_t *)&a3, 1) ) /*0x743f16*/
       goto LABEL_56; /*0x743f16*/
     v30 = *(unsigned int *)this; /*0x743f23*/
     LandHeight = ObjectClass::GetLandHeight((ObjectClass *)this); /*0x743f2c*/

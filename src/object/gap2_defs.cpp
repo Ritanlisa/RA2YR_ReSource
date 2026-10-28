@@ -385,7 +385,7 @@ int TechnoClass::SmokeUpdate(double a2) {  // g57b5 W4: raw 真值补参 (a2)
         if ( (v19->FlyBy_2
            || v19->FlyBack
            || (v20 = (int16_t *)v3->GetCellCoords_Alt(&v30),
-               (uint8_t)LayerClass::IsWithinUsableArea((LayerClass *)&dword_87F7E8, v20, 1))
+               (uint8_t)((LayerClass *)&dword_87F7E8)->IsWithinUsableArea( v20, 1))
            || !v3->Destru_vt311())
           && ((v21 = (int16_t *)v3->GetCellCoords_Alt(&v30),
                (uint8_t)LayerClass::CoordinatesLegal((LayerClass *)&dword_87F7E8, v21))

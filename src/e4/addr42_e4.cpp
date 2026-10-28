@@ -2224,8 +2224,8 @@ LABEL_18:
   if ( *(unsigned char *)((*(int (**)(char *))(*(unsigned int *)a4 + 132))(a4) + 3220) /*0x42cb1b*/
     || !a4[981]
     || (*(unsigned __int8 (**)(char *))(*(unsigned int *)a4 + 800))(a4)
-    || !(unsigned __int8)LayerClass::IsWithinUsableArea((LayerClass *)&dword_87F7E8, v29, 1)
-    || (IsWithinUsableArea = LayerClass::IsWithinUsableArea((LayerClass *)&dword_87F7E8, v28, 1),
+    || !(unsigned __int8)((LayerClass *)&dword_87F7E8)->IsWithinUsableArea( v29, 1)
+    || (IsWithinUsableArea = ((LayerClass *)&dword_87F7E8)->IsWithinUsableArea( v28, 1),
         LOBYTE(a8) = 1,
         !IsWithinUsableArea) )
   {

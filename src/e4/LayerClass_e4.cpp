@@ -658,9 +658,8 @@ int LayerClass::CellIteratorReset(void *a1)
 }
 // 0x578460
 namespace gamemd {
-int LayerClass::IsWithinUsableArea(void *aP1_raw, char aP2, void *a3)
+int LayerClass::IsWithinUsableArea(int16_t *aP1, char aP2)
 {
-  int16_t *aP1 = (int16_t *)aP1_raw; // binary truth: int16* coords
 
   int v3; // esi
   int v4; // edx
@@ -671,14 +670,14 @@ int LayerClass::IsWithinUsableArea(void *aP1_raw, char aP2, void *a3)
   int v9; // esi
 
   v3 = 0; /*0x57846b*/
-  v4 = aP2[1]; /*0x57846d*/
-  v5 = *aP2; /*0x578472*/
-  if ( a3 ) /*0x578477*/
+  v4 = aP1[1]; /*0x57846d*/
+  v5 = *aP1; /*0x578472*/
+  if ( aP2 ) /*0x578477*/
   {
     v6 = v5 + (v4 << 9); /*0x57847e*/
     if ( v6 >= 0x40000 || (v7 = *(int **)(*(unsigned int *)&g_Shroud_CellArray + 4 * v6)) == 0 ) /*0x578494*/
     {
-      g_MissionQueueFrame.briefing[139] = *(unsigned int *)aP2; /*0x578498*/
+      g_MissionQueueFrame.briefing[139] = *(unsigned int *)aP1; /*0x578498*/
       v7 = &g_MissionQueueFrame.briefing[130]; /*0x57849d*/
     }
     v3 = *((char *)v7 + 283); /*0x5784a8*/

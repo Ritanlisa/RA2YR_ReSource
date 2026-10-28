@@ -734,8 +734,8 @@ void* Tactical_Radar_Render(void * a1, void * a2, void * a3, void * a4, void * a
           i = ((LayerClass *)&DataGlobal_87F7E8)->CellIteratorNext() )
     {
       v13 = (unsigned int *)(i + 36); /*0x640a8b*/
-      if ( (unsigned __int8)LayerClass::IsWithinUsableArea( /*0x640a96*/
-                              (LayerClass *)&DataGlobal_87F7E8,
+      if ( (unsigned __int8)(/*0x640a96*/
+                              (LayerClass *)&DataGlobal_87F7E8)->IsWithinUsableArea(
                               (__int16 *)(i + 36),
                               0) )
       {

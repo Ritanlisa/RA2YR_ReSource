@@ -1760,7 +1760,7 @@ LABEL_41:
   }
 LABEL_44:
   if ( !v12 /*0x65db49*/
-    || (IsWithinUsableArea = LayerClass::IsWithinUsableArea((LayerClass *)&dword_87F7E8, (__int16 *)&v44, 1),
+    || (IsWithinUsableArea = ((LayerClass *)&dword_87F7E8)->IsWithinUsableArea( (__int16 *)&v44, 1),
         LOBYTE(v45) = 1,
         !IsWithinUsableArea) )
   {

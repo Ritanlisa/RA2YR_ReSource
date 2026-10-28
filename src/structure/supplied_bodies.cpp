@@ -2728,7 +2728,7 @@ namespace gamemd {
       if ( v29->ambientSoundController[0] == 2 /*0x42ae74*/
         || v12 != v14
         && *(unsigned int *)(v12 + 1656) > *(unsigned int *)(v14 + 1656)
-        && (uint8_t)LayerClass::IsWithinUsableArea((LayerClass *)&dword_87F7E8, v26, 1) )
+        && (uint8_t)((LayerClass *)&dword_87F7E8)->IsWithinUsableArea( v26, 1) )
       {
         v15 = v9 + 376; /*0x42ae88*/
         if ( (*(int (__thiscall **)(int *))(*v9 + 44))(v9) == 1 ) /*0x42ae8e*/
@@ -2846,7 +2846,7 @@ namespace gamemd {
       if ( v29->ambientSoundController[0] == 2 /*0x42ae74*/
         || v12 != v14
         && *(unsigned int *)(v12 + 1656) > *(unsigned int *)(v14 + 1656)
-        && (uint8_t)LayerClass::IsWithinUsableArea((LayerClass *)&dword_87F7E8, v26, 1) )
+        && (uint8_t)((LayerClass *)&dword_87F7E8)->IsWithinUsableArea( v26, 1) )
       {
         v15 = v9 + 376; /*0x42ae88*/
         if ( (*(int (__thiscall **)(int *))(*v9 + 44))(v9) == 1 ) /*0x42ae8e*/
@@ -12826,8 +12826,8 @@ namespace gamemd {
   int v7; // eax
   int v8; // eax
 
-  if ( !(uint8_t)LayerClass::IsWithinUsableArea( /*0x483c90*/
-                           (LayerClass *)&DataGlobal_87F7E8,
+  if ( !(uint8_t)(/*0x483c90*/
+                           (LayerClass *)&DataGlobal_87F7E8)->IsWithinUsableArea(
                            (int16_t *)&bug->occupant,
                            1) )
   {
@@ -14302,7 +14302,7 @@ namespace gamemd {
   v1 = dword_A8E7AC; /*0x4a18f5*/
   v17 = dword_A8E7AC; /*0x4a1907*/
   dword_A8E7AC = 0; /*0x4a190b*/
-  if ( (uint8_t)LayerClass::IsWithinUsableArea((LayerClass *)&dword_87F7E8, (int16_t *)bug, 1) /*0x4a1933*/
+  if ( (uint8_t)((LayerClass *)&dword_87F7E8)->IsWithinUsableArea( (int16_t *)bug, 1) /*0x4a1933*/
     && (v3 = (BuildingClass *)((CellCoord *)&dword_87F7E8)->To_CellObj((int16_t *)bug),
         v3->ptr_0.ptr_0.ptr_0.ptr_0.ambientSoundController[2] == -1) )
   {
@@ -14605,7 +14605,7 @@ namespace gamemd {
   v6 = a2[1]; /*0x4dda00*/
   (*((unsigned short *)&(a2))) = a3 + *a2; /*0x4dda0e*/
   (*(((unsigned short *)&(a2)) + 1)) = a4 + v6; /*0x4dda13*/
-  result = LayerClass::IsWithinUsableArea((LayerClass *)&DataGlobal_87F7E8, (int16_t *)&a2, 1); /*0x4dda2a*/
+  result = ((LayerClass *)&DataGlobal_87F7E8)->IsWithinUsableArea( (int16_t *)&a2, 1); /*0x4dda2a*/
   if ( !(unsigned char)result ) /*0x4dda31*/
     goto LABEL_10; /*0x4dda31*/
   v8 = (int16_t)a2; /*0x4dda37*/

@@ -1258,8 +1258,8 @@ LABEL_22:
             v61[1] = v80; /*0x58f591*/
             v14 = (CellLand *)(((CellCoord *)&dword_87F7E8)->To_CellObj(v68); /*0x58f5a5*/
             v15 = (CellLand *)(((CellCoord *)&dword_87F7E8)->To_CellObj(v61); /*0x58f5ac*/
-            if ( !(unsigned __int8)LayerClass::IsWithinUsableArea((LayerClass *)&dword_87F7E8, v68, 1) /*0x58f5e9*/
-              || !(unsigned __int8)LayerClass::IsWithinUsableArea((LayerClass *)&dword_87F7E8, v61, 1)
+            if ( !(unsigned __int8)((LayerClass *)&dword_87F7E8)->IsWithinUsableArea( v68, 1) /*0x58f5e9*/
+              || !(unsigned __int8)((LayerClass *)&dword_87F7E8)->IsWithinUsableArea( v61, 1)
               || (unsigned __int8)CellLand::IsBuildable(v14)
               || (unsigned __int8)CellLand::IsBuildable(v15) )
             {
@@ -1282,8 +1282,8 @@ LABEL_22:
         v66[1] = (__int16)v76; /*0x58f486*/
         v12 = (CellLand *)(((CellCoord *)&dword_87F7E8)->To_CellObj(v62); /*0x58f49a*/
         v13 = (CellLand *)(((CellCoord *)&dword_87F7E8)->To_CellObj(v66); /*0x58f4a1*/
-        if ( !(unsigned __int8)LayerClass::IsWithinUsableArea((LayerClass *)&dword_87F7E8, v62, 1) /*0x58f4e6*/
-          || !(unsigned __int8)LayerClass::IsWithinUsableArea((LayerClass *)&dword_87F7E8, v66, 1)
+        if ( !(unsigned __int8)((LayerClass *)&dword_87F7E8)->IsWithinUsableArea( v62, 1) /*0x58f4e6*/
+          || !(unsigned __int8)((LayerClass *)&dword_87F7E8)->IsWithinUsableArea( v66, 1)
           || (unsigned __int8)CellLand::IsBuildable(v12)
           || (unsigned __int8)CellLand::IsBuildable(v13) )
         {
@@ -1324,8 +1324,8 @@ LABEL_37:
             v65[0] = v83; /*0x58f797*/
             v18 = (CellLand *)(((CellCoord *)&dword_87F7E8)->To_CellObj(v59); /*0x58f7ab*/
             v19 = (CellLand *)(((CellCoord *)&dword_87F7E8)->To_CellObj(v65); /*0x58f7b2*/
-            if ( !(unsigned __int8)LayerClass::IsWithinUsableArea((LayerClass *)&dword_87F7E8, v59, 1) /*0x58f7ef*/
-              || !(unsigned __int8)LayerClass::IsWithinUsableArea((LayerClass *)&dword_87F7E8, v65, 1)
+            if ( !(unsigned __int8)((LayerClass *)&dword_87F7E8)->IsWithinUsableArea( v59, 1) /*0x58f7ef*/
+              || !(unsigned __int8)((LayerClass *)&dword_87F7E8)->IsWithinUsableArea( v65, 1)
               || (unsigned __int8)CellLand::IsBuildable(v18)
               || (unsigned __int8)CellLand::IsBuildable(v19) )
             {
@@ -1347,8 +1347,8 @@ LABEL_37:
         v63[0] = v71; /*0x58f68c*/
         v16 = (CellLand *)(((CellCoord *)&dword_87F7E8)->To_CellObj(v70); /*0x58f6a0*/
         v17 = (CellLand *)(((CellCoord *)&dword_87F7E8)->To_CellObj(v63); /*0x58f6a7*/
-        if ( !(unsigned __int8)LayerClass::IsWithinUsableArea((LayerClass *)&dword_87F7E8, v70, 1) /*0x58f6ec*/
-          || !(unsigned __int8)LayerClass::IsWithinUsableArea((LayerClass *)&dword_87F7E8, v63, 1)
+        if ( !(unsigned __int8)((LayerClass *)&dword_87F7E8)->IsWithinUsableArea( v70, 1) /*0x58f6ec*/
+          || !(unsigned __int8)((LayerClass *)&dword_87F7E8)->IsWithinUsableArea( v63, 1)
           || (unsigned __int8)CellLand::IsBuildable(v16)
           || (unsigned __int8)CellLand::IsBuildable(v17) )
         {
@@ -1985,7 +1985,7 @@ LABEL_57:
             }
             while ( v34 > v33 ); /*0x5908b4*/
             *(unsigned int *)v41 = *(unsigned int *)(v32[1] + 4 * v34); /*0x5908c8*/
-            if ( (unsigned __int8)LayerClass::IsWithinUsableArea((LayerClass *)&dword_87F7E8, v41, 1) ) /*0x5908cc*/
+            if ( (unsigned __int8)((LayerClass *)&dword_87F7E8)->IsWithinUsableArea( v41, 1) ) /*0x5908cc*/
             {
               v37 = (double)v44 * 0.0099999998; /*0x5908ea*/
               v40 += RandomMap::CheckCellPlacement(v31, v41, v43, v37) != 0; /*0x590900*/
@@ -7942,7 +7942,7 @@ LABEL_19:
         v33[2] = 8; /*0x5a8253*/
         v33[3] = 8; /*0x5a8257*/
         if ( !(unsigned __int8)IsAreaClearMap(v33, 0, 0) /*0x5a8274*/
-          || !(unsigned __int8)LayerClass::IsWithinUsableArea((LayerClass *)&DataGlobal_87F7E8, v21, 1) )
+          || !(unsigned __int8)((LayerClass *)&DataGlobal_87F7E8)->IsWithinUsableArea( v21, 1) )
         {
           goto LABEL_8; /*0x5a827b*/
         }

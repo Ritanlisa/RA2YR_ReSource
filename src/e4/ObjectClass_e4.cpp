@@ -137,7 +137,7 @@ int ObjectClass::SpawnInfantry(int aP1, int16_t *aP2, int16_t *aP3, void **aP4)
                      aP2,
                      0,
                      aP4);
-  if ( !(unsigned __int8)LayerClass::IsWithinUsableArea((LayerClass *)&dword_87F7E8, v7, 1) && referenceCount != 2 ) /*0x4d7dbf*/
+  if ( !(unsigned __int8)((LayerClass *)&dword_87F7E8)->IsWithinUsableArea( v7, 1) && referenceCount != 2 ) /*0x4d7dbf*/
     return 0; /*0x4d7dc1*/
   switch ( referenceCount ) /*0x4d7de0*/
   {
@@ -675,7 +675,7 @@ void* * ObjectClass::FindPlacementCell(FootClass * aP0, int aP1, IUnknown ** a2,
   v7 = v6; /*0x4de1d5*/
   v8 = (__int16 *)a3; /*0x4de1de*/
   v35 = (*(int (**)(unsigned int *, unsigned int *, int, unsigned int))(*v6 + 112))(v6, a3, a4, 0); /*0x4de1f4*/
-  IsWithinUsableArea = LayerClass::IsWithinUsableArea((LayerClass *)&DataGlobal_87F7E8, v8, 1); /*0x4de1f8*/
+  IsWithinUsableArea = ((LayerClass *)&DataGlobal_87F7E8)->IsWithinUsableArea( v8, 1); /*0x4de1f8*/
   v10 = *v8; /*0x4de1fd*/
   LOBYTE(a3) = IsWithinUsableArea; /*0x4de200*/
   v11 = (v8[1] << 8) + 128; /*0x4de218*/
@@ -4225,7 +4225,7 @@ int ObjectClass::RenderAlphaShapes()
     int v5; // esi
     unsigned int *v6; // esi
 
-    result = LayerClass::IsWithinUsableArea(&dword_87F7E8, (int16_t *)(v23 + 36), 1); /*0x4838ef*/
+    result = ((LayerClass *)&dword_87F7E8)->IsWithinUsableArea( (int16_t *)(v23 + 36), 1); /*0x4838ef*/
     if ( result ) /*0x4838f6*/
 
     {

@@ -34,7 +34,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* Reveal(int a1);  // 0x577d90 -- LayerClass::Reveal
     int CellIteratorNext();  // 0x578290 -- LayerClass::CellIteratorNext
     int CellIteratorReset();  // 0x578350 -- LayerClass::CellIteratorReset
-    bool IsWithinUsableArea(int a1, int a2);  // 0x578460 -- LayerClass::IsWithinUsableArea
+    bool IsWithinUsableArea(void* a1, int a2);  // 0x578460 -- LayerClass::IsWithinUsableArea
     int DestroyCliff(int a1, int a2, int a3);  // 0x581140 -- LayerClass::DestroyCliff
     // === SYMBOL-ANCHOR (END) ===
     public:  // funcs-move
