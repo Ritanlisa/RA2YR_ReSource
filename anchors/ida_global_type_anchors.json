@@ -1,0 +1,2492 @@
+{
+"__imp_RegQueryInfoKeyA": {
+"type": "LSTATUS (__stdcall*)(HKEY hKey, LPSTR lpClass, LPDWORD lpcchClass, LPDWORD lpReserved, LPDWORD lpcSubKeys, LPDWORD lpcbMaxSubKeyLen, LPDWORD lpcbMaxClassLen, LPDWORD lpcValues, LPDWORD lpcbMaxValueNameLen, LPDWORD lpcbMaxValueLen, LPDWORD lpcbSecurityDescriptor, PFILETIME lpftLastWriteTime)",
+"addr": "0x007E1000",
+"size": 4
+},
+"__imp_RegCloseKey": {
+"type": "LSTATUS (__stdcall*)(HKEY hKey)",
+"addr": "0x007E1004",
+"size": 4
+},
+"__imp_RegQueryValueExA": {
+"type": "LSTATUS (__stdcall*)(HKEY hKey, LPCSTR lpValueName, LPDWORD lpReserved, LPDWORD lpType, LPBYTE lpData, LPDWORD lpcbData)",
+"addr": "0x007E1008",
+"size": 4
+},
+"__imp_RegOpenKeyExA": {
+"type": "LSTATUS (__stdcall*)(HKEY hKey, LPCSTR lpSubKey, DWORD ulOptions, REGSAM samDesired, PHKEY phkResult)",
+"addr": "0x007E100C",
+"size": 4
+},
+"__imp_RegDeleteValueA": {
+"type": "LSTATUS (__stdcall*)(HKEY hKey, LPCSTR lpValueName)",
+"addr": "0x007E1010",
+"size": 4
+},
+"__imp_RegSetValueExA": {
+"type": "LSTATUS (__stdcall*)(HKEY hKey, LPCSTR lpValueName, DWORD Reserved, DWORD dwType, const BYTE*lpData, DWORD cbData)",
+"addr": "0x007E1014",
+"size": 4
+},
+"__imp_RegCreateKeyExA": {
+"type": "LSTATUS (__stdcall*)(HKEY hKey, LPCSTR lpSubKey, DWORD Reserved, LPSTR lpClass, DWORD dwOptions, REGSAM samDesired, const LPSECURITY_ATTRIBUTES lpSecurityAttributes, PHKEY phkResult, LPDWORD lpdwDisposition)",
+"addr": "0x007E1018",
+"size": 4
+},
+"__imp_RegEnumKeyExA": {
+"type": "LSTATUS (__stdcall*)(HKEY hKey, DWORD dwIndex, LPSTR lpName, LPDWORD lpcchName, LPDWORD lpReserved, LPSTR lpClass, LPDWORD lpcchClass, PFILETIME lpftLastWriteTime)",
+"addr": "0x007E101C",
+"size": 4
+},
+"__imp_RegDeleteKeyA": {
+"type": "LSTATUS (__stdcall*)(HKEY hKey, LPCSTR lpSubKey)",
+"addr": "0x007E1020",
+"size": 4
+},
+"__imp_ImageList_DragShowNolock": {
+"type": "BOOL (__stdcall*)(BOOL fShow)",
+"addr": "0x007E1028",
+"size": 4
+},
+"__imp_InitCommonControls": {
+"type": "void (__stdcall*)()",
+"addr": "0x007E102C",
+"size": 4
+},
+"__imp_ImageList_DragMove": {
+"type": "BOOL (__stdcall*)(int x, int y)",
+"addr": "0x007E1030",
+"size": 4
+},
+"__imp_ImageList_DragEnter": {
+"type": "BOOL (__stdcall*)(HWND hwndLock, int x, int y)",
+"addr": "0x007E1034",
+"size": 4
+},
+"__imp_ImageList_BeginDrag": {
+"type": "BOOL (__stdcall*)(HIMAGELIST himlTrack, int iTrack, int dxHotspot, int dyHotspot)",
+"addr": "0x007E1038",
+"size": 4
+},
+"__imp_ImageList_Destroy": {
+"type": "BOOL (__stdcall*)(HIMAGELIST himl)",
+"addr": "0x007E103C",
+"size": 4
+},
+"__imp_ImageList_EndDrag": {
+"type": "void (__stdcall*)()",
+"addr": "0x007E1040",
+"size": 4
+},
+"__imp_DirectDrawCreate": {
+"type": "HRESULT (__stdcall*)(GUID*lpGUID, LPDIRECTDRAW*lplpDD, IUnknown*pUnkOuter)",
+"addr": "0x007E1048",
+"size": 4
+},
+"__imp_DirectSoundCreate": {
+"type": "HRESULT (__stdcall*)(LPCGUID pcGuidDevice, LPDIRECTSOUND*ppDS, LPUNKNOWN pUnkOuter)",
+"addr": "0x007E1050",
+"size": 4
+},
+"__imp_CreateDIBSection": {
+"type": "HBITMAP (__stdcall*)(HDC hdc, const BITMAPINFO*pbmi, UINT usage, void**ppvBits, HANDLE hSection, DWORD offset)",
+"addr": "0x007E1058",
+"size": 4
+},
+"__imp_SelectObject": {
+"type": "HGDIOBJ (__stdcall*)(HDC hdc, HGDIOBJ h)",
+"addr": "0x007E105C",
+"size": 4
+},
+"__imp_CreateFontIndirectA": {
+"type": "HFONT (__stdcall*)(const LOGFONTA*lplf)",
+"addr": "0x007E1060",
+"size": 4
+},
+"__imp_GetTextMetricsA": {
+"type": "BOOL (__stdcall*)(HDC hdc, LPTEXTMETRICA lptm)",
+"addr": "0x007E1064",
+"size": 4
+},
+"__imp_TextOutA": {
+"type": "BOOL (__stdcall*)(HDC hdc, int x, int y, LPCSTR lpString, int c)",
+"addr": "0x007E1068",
+"size": 4
+},
+"__imp_SetTextColor": {
+"type": "COLORREF (__stdcall*)(HDC hdc, COLORREF color)",
+"addr": "0x007E106C",
+"size": 4
+},
+"__imp_GetDeviceCaps": {
+"type": "int (__stdcall*)(HDC hdc, int index)",
+"addr": "0x007E1070",
+"size": 4
+},
+"__imp_SetBkMode": {
+"type": "int (__stdcall*)(HDC hdc, int mode)",
+"addr": "0x007E1074",
+"size": 4
+},
+"__imp_CreateSolidBrush": {
+"type": "HBRUSH (__stdcall*)(COLORREF color)",
+"addr": "0x007E1078",
+"size": 4
+},
+"__imp_SetBkColor": {
+"type": "COLORREF (__stdcall*)(HDC hdc, COLORREF color)",
+"addr": "0x007E107C",
+"size": 4
+},
+"__imp_GetBkColor": {
+"type": "COLORREF (__stdcall*)(HDC hdc)",
+"addr": "0x007E1080",
+"size": 4
+},
+"__imp_GetBkMode": {
+"type": "int (__stdcall*)(HDC hdc)",
+"addr": "0x007E1084",
+"size": 4
+},
+"__imp_GetTextColor": {
+"type": "COLORREF (__stdcall*)(HDC hdc)",
+"addr": "0x007E1088",
+"size": 4
+},
+"__imp_RestoreDC": {
+"type": "BOOL (__stdcall*)(HDC hdc, int nSavedDC)",
+"addr": "0x007E108C",
+"size": 4
+},
+"__imp_DPtoLP": {
+"type": "BOOL (__stdcall*)(HDC hdc, LPPOINT lppt, int c)",
+"addr": "0x007E1090",
+"size": 4
+},
+"__imp_GetStockObject": {
+"type": "HGDIOBJ (__stdcall*)(int i)",
+"addr": "0x007E1094",
+"size": 4
+},
+"__imp_SetViewportOrgEx": {
+"type": "BOOL (__stdcall*)(HDC hdc, int x, int y, LPPOINT lppt)",
+"addr": "0x007E1098",
+"size": 4
+},
+"__imp_ModifyWorldTransform": {
+"type": "BOOL (__stdcall*)(HDC hdc, const XFORM*lpxf, DWORD mode)",
+"addr": "0x007E109C",
+"size": 4
+},
+"__imp_SetWindowOrgEx": {
+"type": "BOOL (__stdcall*)(HDC hdc, int x, int y, LPPOINT lppt)",
+"addr": "0x007E10A0",
+"size": 4
+},
+"__imp_SaveDC": {
+"type": "int (__stdcall*)(HDC hdc)",
+"addr": "0x007E10A4",
+"size": 4
+},
+"__imp_SetGraphicsMode": {
+"type": "int (__stdcall*)(HDC hdc, int iMode)",
+"addr": "0x007E10A8",
+"size": 4
+},
+"__imp_DeleteObject": {
+"type": "BOOL (__stdcall*)(HGDIOBJ ho)",
+"addr": "0x007E10AC",
+"size": 4
+},
+"__imp_ImmAssociateContext": {
+"type": "HIMC (__stdcall*)(HWND, HIMC)",
+"addr": "0x007E10B4",
+"size": 4
+},
+"__imp_ImmGetContext": {
+"type": "HIMC (__stdcall*)(HWND)",
+"addr": "0x007E10B8",
+"size": 4
+},
+"__imp_ImmNotifyIME": {
+"type": "BOOL (__stdcall*)(HIMC, DWORD dwAction, DWORD dwIndex, DWORD dwValue)",
+"addr": "0x007E10BC",
+"size": 4
+},
+"__imp_ImmGetCandidateListA": {
+"type": "DWORD (__stdcall*)(HIMC, DWORD deIndex, LPCANDIDATELIST lpCandList, DWORD dwBufLen)",
+"addr": "0x007E10C0",
+"size": 4
+},
+"__imp_ImmGetCompositionStringA": {
+"type": "LONG (__stdcall*)(HIMC, DWORD, LPVOID lpBuf, DWORD dwBufLen)",
+"addr": "0x007E10C4",
+"size": 4
+},
+"__imp_ImmSetOpenStatus": {
+"type": "BOOL (__stdcall*)(HIMC, BOOL)",
+"addr": "0x007E10C8",
+"size": 4
+},
+"__imp_VirtualProtect": {
+"type": "BOOL (__stdcall*)(LPVOID lpAddress, SIZE_T dwSize, DWORD flNewProtect, PDWORD lpflOldProtect)",
+"addr": "0x007E10D0",
+"size": 4
+},
+"__imp_GetSystemTime": {
+"type": "void (__stdcall*)(LPSYSTEMTIME lpSystemTime)",
+"addr": "0x007E10D4",
+"size": 4
+},
+"__imp_GlobalMemoryStatus": {
+"type": "void (__stdcall*)(LPMEMORYSTATUS lpBuffer)",
+"addr": "0x007E10D8",
+"size": 4
+},
+"__imp_CreateProcessA": {
+"type": "BOOL (__stdcall*)(LPCSTR lpApplicationName, LPSTR lpCommandLine, LPSECURITY_ATTRIBUTES lpProcessAttributes, LPSECURITY_ATTRIBUTES lpThreadAttributes, BOOL bInheritHandles, DWORD dwCreationFlags, LPVOID lpEnvironment, LPCSTR lpCurrentDirectory, LPSTARTUPINFOA lpStartupInfo, LPPROCESS_INFORMATION lpProcessInformation)",
+"addr": "0x007E10DC",
+"size": 4
+},
+"__imp_DeleteFileA": {
+"type": "BOOL (__stdcall*)(LPCSTR lpFileName)",
+"addr": "0x007E10E0",
+"size": 4
+},
+"__imp_GetTempFileNameA": {
+"type": "UINT (__stdcall*)(LPCSTR lpPathName, LPCSTR lpPrefixString, UINT uUnique, LPSTR lpTempFileName)",
+"addr": "0x007E10E4",
+"size": 4
+},
+"__imp_GetWindowsDirectoryA": {
+"type": "UINT (__stdcall*)(LPSTR lpBuffer, UINT uSize)",
+"addr": "0x007E10E8",
+"size": 4
+},
+"__imp_GetTimeFormatA": {
+"type": "int (__stdcall*)(LCID Locale, DWORD dwFlags, const SYSTEMTIME*lpTime, LPCSTR lpFormat, LPSTR lpTimeStr, int cchTime)",
+"addr": "0x007E10EC",
+"size": 4
+},
+"__imp_GetDateFormatA": {
+"type": "int (__stdcall*)(LCID Locale, DWORD dwFlags, const SYSTEMTIME*lpDate, LPCSTR lpFormat, LPSTR lpDateStr, int cchDate)",
+"addr": "0x007E10F0",
+"size": 4
+},
+"__imp_FileTimeToSystemTime": {
+"type": "BOOL (__stdcall*)(const FILETIME*lpFileTime, LPSYSTEMTIME lpSystemTime)",
+"addr": "0x007E10F4",
+"size": 4
+},
+"__imp_FileTimeToLocalFileTime": {
+"type": "BOOL (__stdcall*)(const FILETIME*lpFileTime, LPFILETIME lpLocalFileTime)",
+"addr": "0x007E10F8",
+"size": 4
+},
+"__imp_SystemTimeToFileTime": {
+"type": "BOOL (__stdcall*)(const SYSTEMTIME*lpSystemTime, LPFILETIME lpFileTime)",
+"addr": "0x007E10FC",
+"size": 4
+},
+"__imp_CompareFileTime": {
+"type": "LONG (__stdcall*)(const FILETIME*lpFileTime1, const FILETIME*lpFileTime2)",
+"addr": "0x007E1100",
+"size": 4
+},
+"__imp_CopyFileA": {
+"type": "BOOL (__stdcall*)(LPCSTR lpExistingFileName, LPCSTR lpNewFileName, BOOL bFailIfExists)",
+"addr": "0x007E1104",
+"size": 4
+},
+"__imp_CreateDirectoryA": {
+"type": "BOOL (__stdcall*)(LPCSTR lpPathName, LPSECURITY_ATTRIBUTES lpSecurityAttributes)",
+"addr": "0x007E1108",
+"size": 4
+},
+"__imp_MulDiv": {
+"type": "int (__stdcall*)(int nNumber, int nNumerator, int nDenominator)",
+"addr": "0x007E110C",
+"size": 4
+},
+"__imp_EscapeCommFunction": {
+"type": "BOOL (__stdcall*)(HANDLE hFile, DWORD dwFunc)",
+"addr": "0x007E1110",
+"size": 4
+},
+"__imp_ClearCommBreak": {
+"type": "BOOL (__stdcall*)(HANDLE hFile)",
+"addr": "0x007E1114",
+"size": 4
+},
+"__imp_SetCommBreak": {
+"type": "BOOL (__stdcall*)(HANDLE hFile)",
+"addr": "0x007E1118",
+"size": 4
+},
+"__imp_ReadFile": {
+"type": "BOOL (__stdcall*)(HANDLE hFile, LPVOID lpBuffer, DWORD nNumberOfBytesToRead, LPDWORD lpNumberOfBytesRead, LPOVERLAPPED lpOverlapped)",
+"addr": "0x007E111C",
+"size": 4
+},
+"__imp_GetFileSize": {
+"type": "DWORD (__stdcall*)(HANDLE hFile, LPDWORD lpFileSizeHigh)",
+"addr": "0x007E1120",
+"size": 4
+},
+"__imp_FileTimeToDosDateTime": {
+"type": "BOOL (__stdcall*)(const FILETIME*lpFileTime, LPWORD lpFatDate, LPWORD lpFatTime)",
+"addr": "0x007E1124",
+"size": 4
+},
+"__imp_GetFileInformationByHandle": {
+"type": "BOOL (__stdcall*)(HANDLE hFile, LPBY_HANDLE_FILE_INFORMATION lpFileInformation)",
+"addr": "0x007E1128",
+"size": 4
+},
+"__imp_SetFileTime": {
+"type": "BOOL (__stdcall*)(HANDLE hFile, const FILETIME*lpCreationTime, const FILETIME*lpLastAccessTime, const FILETIME*lpLastWriteTime)",
+"addr": "0x007E112C",
+"size": 4
+},
+"__imp_DosDateTimeToFileTime": {
+"type": "BOOL (__stdcall*)(WORD wFatDate, WORD wFatTime, LPFILETIME lpFileTime)",
+"addr": "0x007E1130",
+"size": 4
+},
+"__imp_VirtualQuery": {
+"type": "SIZE_T (__stdcall*)(LPCVOID lpAddress, PMEMORY_BASIC_INFORMATION lpBuffer, SIZE_T dwLength)",
+"addr": "0x007E1134",
+"size": 4
+},
+"__imp_GetTickCount": {
+"type": "DWORD (__stdcall*)()",
+"addr": "0x007E1138",
+"size": 4
+},
+"__imp_WaitForMultipleObjects": {
+"type": "DWORD (__stdcall*)(DWORD nCount, const HANDLE*lpHandles, BOOL bWaitAll, DWORD dwMilliseconds)",
+"addr": "0x007E113C",
+"size": 4
+},
+"__imp_lstrcpyA": {
+"type": "LPSTR (__stdcall*)(LPSTR lpString1, LPCSTR lpString2)",
+"addr": "0x007E1140",
+"size": 4
+},
+"__imp_SetUnhandledExceptionFilter": {
+"type": "LPTOP_LEVEL_EXCEPTION_FILTER (__stdcall*)(LPTOP_LEVEL_EXCEPTION_FILTER lpTopLevelExceptionFilter)",
+"addr": "0x007E1144",
+"size": 4
+},
+"__imp_SetCurrentDirectoryA": {
+"type": "BOOL (__stdcall*)(LPCSTR lpPathName)",
+"addr": "0x007E1148",
+"size": 4
+},
+"__imp_OpenMutexA": {
+"type": "HANDLE (__stdcall*)(DWORD dwDesiredAccess, BOOL bInheritHandle, LPCSTR lpName)",
+"addr": "0x007E114C",
+"size": 4
+},
+"__imp_GetFileTime": {
+"type": "BOOL (__stdcall*)(HANDLE hFile, LPFILETIME lpCreationTime, LPFILETIME lpLastAccessTime, LPFILETIME lpLastWriteTime)",
+"addr": "0x007E1150",
+"size": 4
+},
+"__imp_GetLogicalDriveStringsA": {
+"type": "DWORD (__stdcall*)(DWORD nBufferLength, LPSTR lpBuffer)",
+"addr": "0x007E1154",
+"size": 4
+},
+"__imp_ClearCommError": {
+"type": "BOOL (__stdcall*)(HANDLE hFile, LPDWORD lpErrors, LPCOMSTAT lpStat)",
+"addr": "0x007E1158",
+"size": 4
+},
+"__imp_IsBadReadPtr": {
+"type": "BOOL (__stdcall*)(const void*lp, UINT_PTR ucb)",
+"addr": "0x007E115C",
+"size": 4
+},
+"__imp_lstrcatA": {
+"type": "LPSTR (__stdcall*)(LPSTR lpString1, LPCSTR lpString2)",
+"addr": "0x007E1160",
+"size": 4
+},
+"__imp_GetCommState": {
+"type": "BOOL (__stdcall*)(HANDLE hFile, LPDCB lpDCB)",
+"addr": "0x007E1164",
+"size": 4
+},
+"__imp_CreateEventA": {
+"type": "HANDLE (__stdcall*)(LPSECURITY_ATTRIBUTES lpEventAttributes, BOOL bManualReset, BOOL bInitialState, LPCSTR lpName)",
+"addr": "0x007E1168",
+"size": 4
+},
+"__imp_PurgeComm": {
+"type": "BOOL (__stdcall*)(HANDLE hFile, DWORD dwFlags)",
+"addr": "0x007E116C",
+"size": 4
+},
+"__imp_SetupComm": {
+"type": "BOOL (__stdcall*)(HANDLE hFile, DWORD dwInQueue, DWORD dwOutQueue)",
+"addr": "0x007E1170",
+"size": 4
+},
+"__imp_GetCommMask": {
+"type": "BOOL (__stdcall*)(HANDLE hFile, LPDWORD lpEvtMask)",
+"addr": "0x007E1174",
+"size": 4
+},
+"__imp_ResetEvent": {
+"type": "BOOL (__stdcall*)(HANDLE hEvent)",
+"addr": "0x007E1178",
+"size": 4
+},
+"__imp_GetCommModemStatus": {
+"type": "BOOL (__stdcall*)(HANDLE hFile, LPDWORD lpModemStat)",
+"addr": "0x007E117C",
+"size": 4
+},
+"__imp_GetOverlappedResult": {
+"type": "BOOL (__stdcall*)(HANDLE hFile, LPOVERLAPPED lpOverlapped, LPDWORD lpNumberOfBytesTransferred, BOOL bWait)",
+"addr": "0x007E1180",
+"size": 4
+},
+"__imp_GetVersionExA": {
+"type": "BOOL (__stdcall*)(LPOSVERSIONINFOA lpVersionInformation)",
+"addr": "0x007E1184",
+"size": 4
+},
+"__imp_GetExitCodeProcess": {
+"type": "BOOL (__stdcall*)(HANDLE hProcess, LPDWORD lpExitCode)",
+"addr": "0x007E1188",
+"size": 4
+},
+"__imp_GetCurrentDirectoryA": {
+"type": "DWORD (__stdcall*)(DWORD nBufferLength, LPSTR lpBuffer)",
+"addr": "0x007E118C",
+"size": 4
+},
+"__imp_HeapDestroy": {
+"type": "BOOL (__stdcall*)(HANDLE hHeap)",
+"addr": "0x007E1190",
+"size": 4
+},
+"__imp_GetComputerNameA": {
+"type": "BOOL (__stdcall*)(LPSTR lpBuffer, LPDWORD nSize)",
+"addr": "0x007E1194",
+"size": 4
+},
+"__imp_ReleaseMutex": {
+"type": "BOOL (__stdcall*)(HANDLE hMutex)",
+"addr": "0x007E1198",
+"size": 4
+},
+"__imp_FlushInstructionCache": {
+"type": "BOOL (__stdcall*)(HANDLE hProcess, LPCVOID lpBaseAddress, SIZE_T dwSize)",
+"addr": "0x007E119C",
+"size": 4
+},
+"__imp_WriteFile": {
+"type": "BOOL (__stdcall*)(HANDLE hFile, LPCVOID lpBuffer, DWORD nNumberOfBytesToWrite, LPDWORD lpNumberOfBytesWritten, LPOVERLAPPED lpOverlapped)",
+"addr": "0x007E11A0",
+"size": 4
+},
+"__imp_GetCurrentProcess": {
+"type": "HANDLE (__stdcall*)()",
+"addr": "0x007E11A4",
+"size": 4
+},
+"__imp_GetModuleFileNameA": {
+"type": "DWORD (__stdcall*)(HMODULE hModule, LPSTR lpFilename, DWORD nSize)",
+"addr": "0x007E11A8",
+"size": 4
+},
+"__imp_lstrlenA": {
+"type": "int (__stdcall*)(LPCSTR lpString)",
+"addr": "0x007E11AC",
+"size": 4
+},
+"__imp_TerminateProcess": {
+"type": "BOOL (__stdcall*)(HANDLE hProcess, UINT uExitCode)",
+"addr": "0x007E11B0",
+"size": 4
+},
+"__imp_IsBadCodePtr": {
+"type": "BOOL (__stdcall*)(FARPROC lpfn)",
+"addr": "0x007E11B4",
+"size": 4
+},
+"__imp_DeviceIoControl": {
+"type": "BOOL (__stdcall*)(HANDLE hDevice, DWORD dwIoControlCode, LPVOID lpInBuffer, DWORD nInBufferSize, LPVOID lpOutBuffer, DWORD nOutBufferSize, LPDWORD lpBytesReturned, LPOVERLAPPED lpOverlapped)",
+"addr": "0x007E11B8",
+"size": 4
+},
+"__imp_CreateFileA": {
+"type": "HANDLE (__stdcall*)(LPCSTR lpFileName, DWORD dwDesiredAccess, DWORD dwShareMode, LPSECURITY_ATTRIBUTES lpSecurityAttributes, DWORD dwCreationDisposition, DWORD dwFlagsAndAttributes, HANDLE hTemplateFile)",
+"addr": "0x007E11BC",
+"size": 4
+},
+"__imp_SetFilePointer": {
+"type": "DWORD (__stdcall*)(HANDLE hFile, LONG lDistanceToMove, PLONG lpDistanceToMoveHigh, DWORD dwMoveMethod)",
+"addr": "0x007E11C0",
+"size": 4
+},
+"__imp_MultiByteToWideChar": {
+"type": "int (__stdcall*)(UINT CodePage, DWORD dwFlags, LPCCH lpMultiByteStr, int cbMultiByte, LPWSTR lpWideCharStr, int cchWideChar)",
+"addr": "0x007E11C4",
+"size": 4
+},
+"__imp_InterlockedIncrement": {
+"type": "LONG (__stdcall*)(volatile LONG*lpAddend)",
+"addr": "0x007E11C8",
+"size": 4
+},
+"__imp_InterlockedDecrement": {
+"type": "LONG (__stdcall*)(volatile LONG*lpAddend)",
+"addr": "0x007E11CC",
+"size": 4
+},
+"__imp_GetCurrentThreadId": {
+"type": "DWORD (__stdcall*)()",
+"addr": "0x007E11D0",
+"size": 4
+},
+"__imp_QueryPerformanceCounter": {
+"type": "BOOL (__stdcall*)(LARGE_INTEGER*lpPerformanceCount)",
+"addr": "0x007E11D4",
+"size": 4
+},
+"__imp_QueryPerformanceFrequency": {
+"type": "BOOL (__stdcall*)(LARGE_INTEGER*lpFrequency)",
+"addr": "0x007E11D8",
+"size": 4
+},
+"__imp_WaitForSingleObject": {
+"type": "DWORD (__stdcall*)(HANDLE hHandle, DWORD dwMilliseconds)",
+"addr": "0x007E11DC",
+"size": 4
+},
+"__imp_CloseHandle": {
+"type": "BOOL (__stdcall*)(HANDLE hObject)",
+"addr": "0x007E11E0",
+"size": 4
+},
+"__imp_DeleteCriticalSection": {
+"type": "void (__stdcall*)(LPCRITICAL_SECTION lpCriticalSection)",
+"addr": "0x007E11E4",
+"size": 4
+},
+"__imp_EnterCriticalSection": {
+"type": "void (__stdcall*)(LPCRITICAL_SECTION lpCriticalSection)",
+"addr": "0x007E11E8",
+"size": 4
+},
+"__imp_LeaveCriticalSection": {
+"type": "void (__stdcall*)(LPCRITICAL_SECTION lpCriticalSection)",
+"addr": "0x007E11EC",
+"size": 4
+},
+"__imp_Sleep": {
+"type": "void (__stdcall*)(DWORD dwMilliseconds)",
+"addr": "0x007E11F0",
+"size": 4
+},
+"__imp_InitializeCriticalSection": {
+"type": "void (__stdcall*)(LPCRITICAL_SECTION lpCriticalSection)",
+"addr": "0x007E11F4",
+"size": 4
+},
+"__imp_CreateThread": {
+"type": "HANDLE (__stdcall*)(LPSECURITY_ATTRIBUTES lpThreadAttributes, SIZE_T dwStackSize, LPTHREAD_START_ROUTINE lpStartAddress, LPVOID lpParameter, DWORD dwCreationFlags, LPDWORD lpThreadId)",
+"addr": "0x007E11F8",
+"size": 4
+},
+"__imp_SetThreadPriority": {
+"type": "BOOL (__stdcall*)(HANDLE hThread, int nPriority)",
+"addr": "0x007E11FC",
+"size": 4
+},
+"__imp_GetLastError": {
+"type": "DWORD (__stdcall*)()",
+"addr": "0x007E1200",
+"size": 4
+},
+"__imp_FormatMessageA": {
+"type": "DWORD (__stdcall*)(DWORD dwFlags, LPCVOID lpSource, DWORD dwMessageId, DWORD dwLanguageId, LPSTR lpBuffer, DWORD nSize, va_list*Arguments)",
+"addr": "0x007E1204",
+"size": 4
+},
+"__imp_FindFirstFileA": {
+"type": "HANDLE (__stdcall*)(LPCSTR lpFileName, LPWIN32_FIND_DATAA lpFindFileData)",
+"addr": "0x007E1208",
+"size": 4
+},
+"__imp_FindNextFileA": {
+"type": "BOOL (__stdcall*)(HANDLE hFindFile, LPWIN32_FIND_DATAA lpFindFileData)",
+"addr": "0x007E120C",
+"size": 4
+},
+"__imp_FreeConsole": {
+"type": "BOOL (__stdcall*)()",
+"addr": "0x007E1210",
+"size": 4
+},
+"__imp_ExitProcess": {
+"type": "void (__stdcall __noreturn*)(UINT uExitCode)",
+"addr": "0x007E1214",
+"size": 4
+},
+"__imp_AllocConsole": {
+"type": "BOOL (__stdcall*)()",
+"addr": "0x007E1218",
+"size": 4
+},
+"__imp_GetVolumeInformationA": {
+"type": "BOOL (__stdcall*)(LPCSTR lpRootPathName, LPSTR lpVolumeNameBuffer, DWORD nVolumeNameSize, LPDWORD lpVolumeSerialNumber, LPDWORD lpMaximumComponentLength, LPDWORD lpFileSystemFlags, LPSTR lpFileSystemNameBuffer, DWORD nFileSystemNameSize)",
+"addr": "0x007E121C",
+"size": 4
+},
+"__imp_LoadLibraryA": {
+"type": "HMODULE (__stdcall*)(LPCSTR lpLibFileName)",
+"addr": "0x007E1220",
+"size": 4
+},
+"__imp_FreeLibrary": {
+"type": "BOOL (__stdcall*)(HMODULE hLibModule)",
+"addr": "0x007E1224",
+"size": 4
+},
+"__imp_LockResource": {
+"type": "LPVOID (__stdcall*)(HGLOBAL hResData)",
+"addr": "0x007E1228",
+"size": 4
+},
+"__imp_FindResourceA": {
+"type": "HRSRC (__stdcall*)(HMODULE hModule, LPCSTR lpName, LPCSTR lpType)",
+"addr": "0x007E122C",
+"size": 4
+},
+"__imp_LoadResource": {
+"type": "HGLOBAL (__stdcall*)(HMODULE hModule, HRSRC hResInfo)",
+"addr": "0x007E1230",
+"size": 4
+},
+"__imp_SetEvent": {
+"type": "BOOL (__stdcall*)(HANDLE hEvent)",
+"addr": "0x007E1234",
+"size": 4
+},
+"__imp_UnmapViewOfFile": {
+"type": "BOOL (__stdcall*)(LPCVOID lpBaseAddress)",
+"addr": "0x007E1238",
+"size": 4
+},
+"__imp_OpenEventA": {
+"type": "HANDLE (__stdcall*)(DWORD dwDesiredAccess, BOOL bInheritHandle, LPCSTR lpName)",
+"addr": "0x007E123C",
+"size": 4
+},
+"__imp_GetModuleHandleA": {
+"type": "HMODULE (__stdcall*)(LPCSTR lpModuleName)",
+"addr": "0x007E1240",
+"size": 4
+},
+"__imp_MapViewOfFileEx": {
+"type": "LPVOID (__stdcall*)(HANDLE hFileMappingObject, DWORD dwDesiredAccess, DWORD dwFileOffsetHigh, DWORD dwFileOffsetLow, SIZE_T dwNumberOfBytesToMap, LPVOID lpBaseAddress)",
+"addr": "0x007E1244",
+"size": 4
+},
+"__imp_CreateMutexA": {
+"type": "HANDLE (__stdcall*)(LPSECURITY_ATTRIBUTES lpMutexAttributes, BOOL bInitialOwner, LPCSTR lpName)",
+"addr": "0x007E1248",
+"size": 4
+},
+"__imp_WideCharToMultiByte": {
+"type": "int (__stdcall*)(UINT CodePage, DWORD dwFlags, LPCWCH lpWideCharStr, int cchWideChar, LPSTR lpMultiByteStr, int cbMultiByte, LPCCH lpDefaultChar, LPBOOL lpUsedDefaultChar)",
+"addr": "0x007E124C",
+"size": 4
+},
+"__imp_GetProcAddress": {
+"type": "FARPROC (__stdcall*)(HMODULE hModule, LPCSTR lpProcName)",
+"addr": "0x007E1250",
+"size": 4
+},
+"__imp_GetDiskFreeSpaceA": {
+"type": "BOOL (__stdcall*)(LPCSTR lpRootPathName, LPDWORD lpSectorsPerCluster, LPDWORD lpBytesPerSector, LPDWORD lpNumberOfFreeClusters, LPDWORD lpTotalNumberOfClusters)",
+"addr": "0x007E1254",
+"size": 4
+},
+"__imp_SetCommTimeouts": {
+"type": "BOOL (__stdcall*)(HANDLE hFile, LPCOMMTIMEOUTS lpCommTimeouts)",
+"addr": "0x007E1258",
+"size": 4
+},
+"__imp_GetDriveTypeA": {
+"type": "UINT (__stdcall*)(LPCSTR lpRootPathName)",
+"addr": "0x007E125C",
+"size": 4
+},
+"__imp_SetCommState": {
+"type": "BOOL (__stdcall*)(HANDLE hFile, LPDCB lpDCB)",
+"addr": "0x007E1260",
+"size": 4
+},
+"__imp_GetStartupInfoA": {
+"type": "void (__stdcall*)(LPSTARTUPINFOA lpStartupInfo)",
+"addr": "0x007E1264",
+"size": 4
+},
+"__imp_RtlUnwind": {
+"type": "void (__stdcall*)(PVOID TargetFrame, PVOID TargetIp, PEXCEPTION_RECORD ExceptionRecord, PVOID ReturnValue)",
+"addr": "0x007E1268",
+"size": 4
+},
+"__imp_SetConsoleMode": {
+"type": "BOOL (__stdcall*)(HANDLE hConsoleHandle, DWORD dwMode)",
+"addr": "0x007E126C",
+"size": 4
+},
+"__imp_GetConsoleMode": {
+"type": "BOOL (__stdcall*)(HANDLE hConsoleHandle, LPDWORD lpMode)",
+"addr": "0x007E1270",
+"size": 4
+},
+"__imp_GetTimeZoneInformation": {
+"type": "DWORD (__stdcall*)(LPTIME_ZONE_INFORMATION lpTimeZoneInformation)",
+"addr": "0x007E1274",
+"size": 4
+},
+"__imp_HeapAlloc": {
+"type": "LPVOID (__stdcall*)(HANDLE hHeap, DWORD dwFlags, SIZE_T dwBytes)",
+"addr": "0x007E1278",
+"size": 4
+},
+"__imp_HeapFree": {
+"type": "BOOL (__stdcall*)(HANDLE hHeap, DWORD dwFlags, LPVOID lpMem)",
+"addr": "0x007E127C",
+"size": 4
+},
+"__imp_GetCommandLineA": {
+"type": "LPSTR (__stdcall*)()",
+"addr": "0x007E1280",
+"size": 4
+},
+"__imp_GetLocalTime": {
+"type": "void (__stdcall*)(LPSYSTEMTIME lpSystemTime)",
+"addr": "0x007E1284",
+"size": 4
+},
+"__imp_GetVersion": {
+"type": "DWORD (__stdcall*)()",
+"addr": "0x007E1288",
+"size": 4
+},
+"__imp_ReadConsoleInputA": {
+"type": "BOOL (__stdcall*)(HANDLE hConsoleInput, PINPUT_RECORD lpBuffer, DWORD nLength, LPDWORD lpNumberOfEventsRead)",
+"addr": "0x007E128C",
+"size": 4
+},
+"__imp_VirtualFree": {
+"type": "BOOL (__stdcall*)(LPVOID lpAddress, SIZE_T dwSize, DWORD dwFreeType)",
+"addr": "0x007E1290",
+"size": 4
+},
+"__imp_VirtualAlloc": {
+"type": "LPVOID (__stdcall*)(LPVOID lpAddress, SIZE_T dwSize, DWORD flAllocationType, DWORD flProtect)",
+"addr": "0x007E1294",
+"size": 4
+},
+"__imp_HeapCreate": {
+"type": "HANDLE (__stdcall*)(DWORD flOptions, SIZE_T dwInitialSize, SIZE_T dwMaximumSize)",
+"addr": "0x007E1298",
+"size": 4
+},
+"__imp_IsBadWritePtr": {
+"type": "BOOL (__stdcall*)(LPVOID lp, UINT_PTR ucb)",
+"addr": "0x007E129C",
+"size": 4
+},
+"__imp_HeapSize": {
+"type": "SIZE_T (__stdcall*)(HANDLE hHeap, DWORD dwFlags, LPCVOID lpMem)",
+"addr": "0x007E12A0",
+"size": 4
+},
+"__imp_HeapReAlloc": {
+"type": "LPVOID (__stdcall*)(HANDLE hHeap, DWORD dwFlags, LPVOID lpMem, SIZE_T dwBytes)",
+"addr": "0x007E12A4",
+"size": 4
+},
+"__imp_LCMapStringW": {
+"type": "int (__stdcall*)(LCID Locale, DWORD dwMapFlags, LPCWSTR lpSrcStr, int cchSrc, LPWSTR lpDestStr, int cchDest)",
+"addr": "0x007E12A8",
+"size": 4
+},
+"__imp_TlsSetValue": {
+"type": "BOOL (__stdcall*)(DWORD dwTlsIndex, LPVOID lpTlsValue)",
+"addr": "0x007E12AC",
+"size": 4
+},
+"__imp_LCMapStringA": {
+"type": "int (__stdcall*)(LCID Locale, DWORD dwMapFlags, LPCSTR lpSrcStr, int cchSrc, LPSTR lpDestStr, int cchDest)",
+"addr": "0x007E12B0",
+"size": 4
+},
+"__imp_SetLastError": {
+"type": "void (__stdcall*)(DWORD dwErrCode)",
+"addr": "0x007E12B4",
+"size": 4
+},
+"__imp_TlsGetValue": {
+"type": "LPVOID (__stdcall*)(DWORD dwTlsIndex)",
+"addr": "0x007E12B8",
+"size": 4
+},
+"__imp_GetCurrentThread": {
+"type": "HANDLE (__stdcall*)()",
+"addr": "0x007E12BC",
+"size": 4
+},
+"__imp_RaiseException": {
+"type": "void (__stdcall*)(DWORD dwExceptionCode, DWORD dwExceptionFlags, DWORD nNumberOfArguments, const ULONG_PTR*lpArguments)",
+"addr": "0x007E12C0",
+"size": 4
+},
+"__imp_FlushFileBuffers": {
+"type": "BOOL (__stdcall*)(HANDLE hFile)",
+"addr": "0x007E12C4",
+"size": 4
+},
+"__imp_SetHandleCount": {
+"type": "UINT (__stdcall*)(UINT uNumber)",
+"addr": "0x007E12C8",
+"size": 4
+},
+"__imp_GetStdHandle": {
+"type": "HANDLE (__stdcall*)(DWORD nStdHandle)",
+"addr": "0x007E12CC",
+"size": 4
+},
+"__imp_GetFileType": {
+"type": "DWORD (__stdcall*)(HANDLE hFile)",
+"addr": "0x007E12D0",
+"size": 4
+},
+"__imp_GetCPInfo": {
+"type": "BOOL (__stdcall*)(UINT CodePage, LPCPINFO lpCPInfo)",
+"addr": "0x007E12D4",
+"size": 4
+},
+"__imp_GetACP": {
+"type": "UINT (__stdcall*)()",
+"addr": "0x007E12D8",
+"size": 4
+},
+"__imp_GetOEMCP": {
+"type": "UINT (__stdcall*)()",
+"addr": "0x007E12DC",
+"size": 4
+},
+"__imp_SetConsoleCtrlHandler": {
+"type": "BOOL (__stdcall*)(PHANDLER_ROUTINE HandlerRoutine, BOOL Add)",
+"addr": "0x007E12E0",
+"size": 4
+},
+"__imp_GetFileAttributesA": {
+"type": "DWORD (__stdcall*)(LPCSTR lpFileName)",
+"addr": "0x007E12E4",
+"size": 4
+},
+"__imp_GetCurrentProcessId": {
+"type": "DWORD (__stdcall*)()",
+"addr": "0x007E12E8",
+"size": 4
+},
+"__imp_UnhandledExceptionFilter": {
+"type": "LONG (__stdcall*)(struct _EXCEPTION_POINTERS*ExceptionInfo)",
+"addr": "0x007E12EC",
+"size": 4
+},
+"__imp_FreeEnvironmentStringsA": {
+"type": "BOOL (__stdcall*)(LPCH penv)",
+"addr": "0x007E12F0",
+"size": 4
+},
+"__imp_FreeEnvironmentStringsW": {
+"type": "BOOL (__stdcall*)(LPWCH penv)",
+"addr": "0x007E12F4",
+"size": 4
+},
+"__imp_GetEnvironmentStrings": {
+"type": "LPCH (__stdcall*)()",
+"addr": "0x007E12F8",
+"size": 4
+},
+"__imp_GetEnvironmentStringsW": {
+"type": "LPWCH (__stdcall*)()",
+"addr": "0x007E12FC",
+"size": 4
+},
+"__imp_FindClose": {
+"type": "BOOL (__stdcall*)(HANDLE hFindFile)",
+"addr": "0x007E1300",
+"size": 4
+},
+"__imp_IsValidLocale": {
+"type": "BOOL (__stdcall*)(LCID Locale, DWORD dwFlags)",
+"addr": "0x007E1304",
+"size": 4
+},
+"__imp_IsValidCodePage": {
+"type": "BOOL (__stdcall*)(UINT CodePage)",
+"addr": "0x007E1308",
+"size": 4
+},
+"__imp_GetLocaleInfoA": {
+"type": "int (__stdcall*)(LCID Locale, LCTYPE LCType, LPSTR lpLCData, int cchData)",
+"addr": "0x007E130C",
+"size": 4
+},
+"__imp_EnumSystemLocalesA": {
+"type": "BOOL (__stdcall*)(LOCALE_ENUMPROCA lpLocaleEnumProc, DWORD dwFlags)",
+"addr": "0x007E1310",
+"size": 4
+},
+"__imp_GetUserDefaultLCID": {
+"type": "LCID (__stdcall*)()",
+"addr": "0x007E1314",
+"size": 4
+},
+"__imp_SetStdHandle": {
+"type": "BOOL (__stdcall*)(DWORD nStdHandle, HANDLE hHandle)",
+"addr": "0x007E1318",
+"size": 4
+},
+"__imp_GetStringTypeA": {
+"type": "BOOL (__stdcall*)(LCID Locale, DWORD dwInfoType, LPCSTR lpSrcStr, int cchSrc, LPWORD lpCharType)",
+"addr": "0x007E131C",
+"size": 4
+},
+"__imp_GetStringTypeW": {
+"type": "BOOL (__stdcall*)(DWORD dwInfoType, LPCWCH lpSrcStr, int cchSrc, LPWORD lpCharType)",
+"addr": "0x007E1320",
+"size": 4
+},
+"__imp_CompareStringA": {
+"type": "int (__stdcall*)(LCID Locale, DWORD dwCmpFlags, PCNZCH lpString1, int cchCount1, PCNZCH lpString2, int cchCount2)",
+"addr": "0x007E1324",
+"size": 4
+},
+"__imp_CompareStringW": {
+"type": "int (__stdcall*)(LCID Locale, DWORD dwCmpFlags, PCNZWCH lpString1, int cchCount1, PCNZWCH lpString2, int cchCount2)",
+"addr": "0x007E1328",
+"size": 4
+},
+"__imp_SetEnvironmentVariableA": {
+"type": "BOOL (__stdcall*)(LPCSTR lpName, LPCSTR lpValue)",
+"addr": "0x007E132C",
+"size": 4
+},
+"__imp_TlsAlloc": {
+"type": "DWORD (__stdcall*)()",
+"addr": "0x007E1330",
+"size": 4
+},
+"__imp_SetEndOfFile": {
+"type": "BOOL (__stdcall*)(HANDLE hFile)",
+"addr": "0x007E1334",
+"size": 4
+},
+"__imp_GetLocaleInfoW": {
+"type": "int (__stdcall*)(LCID Locale, LCTYPE LCType, LPWSTR lpLCData, int cchData)",
+"addr": "0x007E1338",
+"size": 4
+},
+"__imp_lstrlenW": {
+"type": "int (__stdcall*)(LPCWSTR lpString)",
+"addr": "0x007E133C",
+"size": 4
+},
+"__imp_LocalFree": {
+"type": "HLOCAL (__stdcall*)(HLOCAL hMem)",
+"addr": "0x007E1340",
+"size": 4
+},
+"__imp_WriteConsoleA": {
+"type": "BOOL (__stdcall*)(HANDLE hConsoleOutput, const void*lpBuffer, DWORD nNumberOfCharsToWrite, LPDWORD lpNumberOfCharsWritten, LPVOID lpReserved)",
+"addr": "0x007E1344",
+"size": 4
+},
+"__imp_TlsFree": {
+"type": "BOOL (__stdcall*)(DWORD dwTlsIndex)",
+"addr": "0x007E1348",
+"size": 4
+},
+"__imp_FatalAppExitA": {
+"type": "void (__stdcall*)(UINT uAction, LPCSTR lpMessageText)",
+"addr": "0x007E134C",
+"size": 4
+},
+"__imp_PeekConsoleInputA": {
+"type": "BOOL (__stdcall*)(HANDLE hConsoleInput, PINPUT_RECORD lpBuffer, DWORD nLength, LPDWORD lpNumberOfEventsRead)",
+"addr": "0x007E1350",
+"size": 4
+},
+"__imp_GetNumberOfConsoleInputEvents": {
+"type": "BOOL (__stdcall*)(HANDLE hConsoleInput, LPDWORD lpNumberOfEvents)",
+"addr": "0x007E1354",
+"size": 4
+},
+"__imp_SetErrorInfo": {
+"type": "HRESULT (__stdcall*)(ULONG dwReserved, IErrorInfo*perrinfo)",
+"addr": "0x007E135C",
+"size": 4
+},
+"__imp_LoadTypeLib": {
+"type": "HRESULT (__stdcall*)(LPCOLESTR szFile, ITypeLib**pptlib)",
+"addr": "0x007E1360",
+"size": 4
+},
+"__imp_SysFreeString": {
+"type": "void (__stdcall*)(BSTR bstrString)",
+"addr": "0x007E1364",
+"size": 4
+},
+"__imp_SysAllocString": {
+"type": "BSTR (__stdcall*)(const OLECHAR*psz)",
+"addr": "0x007E1368",
+"size": 4
+},
+"__imp_GetErrorInfo": {
+"type": "HRESULT (__stdcall*)(ULONG dwReserved, IErrorInfo**pperrinfo)",
+"addr": "0x007E136C",
+"size": 4
+},
+"__imp_RegisterActiveObject": {
+"type": "HRESULT (__stdcall*)(IUnknown*punk, const IID*const rclsid, DWORD dwFlags, DWORD*pdwRegister)",
+"addr": "0x007E1370",
+"size": 4
+},
+"__imp_VariantChangeType": {
+"type": "HRESULT (__stdcall*)(VARIANTARG*pvargDest, const VARIANTARG*pvarSrc, USHORT wFlags, VARTYPE vt)",
+"addr": "0x007E1374",
+"size": 4
+},
+"__imp_CreateErrorInfo": {
+"type": "HRESULT (__stdcall*)(ICreateErrorInfo**pperrinfo)",
+"addr": "0x007E1378",
+"size": 4
+},
+"__imp_VariantClear": {
+"type": "HRESULT (__stdcall*)(VARIANTARG*pvarg)",
+"addr": "0x007E137C",
+"size": 4
+},
+"__imp_VariantInit": {
+"type": "void (__stdcall*)(VARIANTARG*pvarg)",
+"addr": "0x007E1380",
+"size": 4
+},
+"__imp_RevokeActiveObject": {
+"type": "HRESULT (__stdcall*)(DWORD dwRegister, void*pvReserved)",
+"addr": "0x007E1384",
+"size": 4
+},
+"__imp_FindExecutableA": {
+"type": "HINSTANCE (__stdcall*)(LPCSTR lpFile, LPCSTR lpDirectory, LPSTR lpResult)",
+"addr": "0x007E138C",
+"size": 4
+},
+"__imp_DefWindowProcA": {
+"type": "LRESULT (__stdcall*)(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)",
+"addr": "0x007E1394",
+"size": 4
+},
+"__imp_MoveWindow": {
+"type": "BOOL (__stdcall*)(HWND hWnd, int X, int Y, int nWidth, int nHeight, BOOL bRepaint)",
+"addr": "0x007E1398",
+"size": 4
+},
+"__imp_GetUpdateRect": {
+"type": "BOOL (__stdcall*)(HWND hWnd, LPRECT lpRect, BOOL bErase)",
+"addr": "0x007E139C",
+"size": 4
+},
+"__imp_GetFocus": {
+"type": "HWND (__stdcall*)()",
+"addr": "0x007E13A0",
+"size": 4
+},
+"__imp_GetDC": {
+"type": "HDC (__stdcall*)(HWND hWnd)",
+"addr": "0x007E13A4",
+"size": 4
+},
+"__imp_GetKeyState": {
+"type": "SHORT (__stdcall*)(int nVirtKey)",
+"addr": "0x007E13A8",
+"size": 4
+},
+"__imp_GetActiveWindow": {
+"type": "HWND (__stdcall*)()",
+"addr": "0x007E13AC",
+"size": 4
+},
+"__imp_GetCapture": {
+"type": "HWND (__stdcall*)()",
+"addr": "0x007E13B0",
+"size": 4
+},
+"__imp_GetDlgCtrlID": {
+"type": "int (__stdcall*)(HWND hWnd)",
+"addr": "0x007E13B4",
+"size": 4
+},
+"__imp_ChildWindowFromPointEx": {
+"type": "HWND (__stdcall*)(HWND hwnd, POINT pt, UINT flags)",
+"addr": "0x007E13B8",
+"size": 4
+},
+"__imp_GetWindowRect": {
+"type": "BOOL (__stdcall*)(HWND hWnd, LPRECT lpRect)",
+"addr": "0x007E13BC",
+"size": 4
+},
+"__imp_GetCursorPos": {
+"type": "BOOL (__stdcall*)(LPPOINT lpPoint)",
+"addr": "0x007E13C0",
+"size": 4
+},
+"__imp_CloseWindow": {
+"type": "BOOL (__stdcall*)(HWND hWnd)",
+"addr": "0x007E13C4",
+"size": 4
+},
+"__imp_EndDialog": {
+"type": "BOOL (__stdcall*)(HWND hDlg, INT_PTR nResult)",
+"addr": "0x007E13C8",
+"size": 4
+},
+"__imp_SetFocus": {
+"type": "HWND (__stdcall*)(HWND hWnd)",
+"addr": "0x007E13CC",
+"size": 4
+},
+"__imp_SetDlgItemTextA": {
+"type": "BOOL (__stdcall*)(HWND hDlg, int nIDDlgItem, LPCSTR lpString)",
+"addr": "0x007E13D0",
+"size": 4
+},
+"__imp_DialogBoxParamA": {
+"type": "INT_PTR (__stdcall*)(HINSTANCE hInstance, LPCSTR lpTemplateName, HWND hWndParent, DLGPROC lpDialogFunc, LPARAM dwInitParam)",
+"addr": "0x007E13D4",
+"size": 4
+},
+"__imp_DialogBoxIndirectParamA": {
+"type": "INT_PTR (__stdcall*)(HINSTANCE hInstance, LPCDLGTEMPLATEA hDialogTemplate, HWND hWndParent, DLGPROC lpDialogFunc, LPARAM dwInitParam)",
+"addr": "0x007E13D8",
+"size": 4
+},
+"__imp_ShowCursor": {
+"type": "int (__stdcall*)(BOOL bShow)",
+"addr": "0x007E13DC",
+"size": 4
+},
+"__imp_GetAsyncKeyState": {
+"type": "SHORT (__stdcall*)(int vKey)",
+"addr": "0x007E13E0",
+"size": 4
+},
+"__imp_ToAscii": {
+"type": "int (__stdcall*)(UINT uVirtKey, UINT uScanCode, const BYTE*lpKeyState, LPWORD lpChar, UINT uFlags)",
+"addr": "0x007E13E4",
+"size": 4
+},
+"__imp_MapVirtualKeyA": {
+"type": "UINT (__stdcall*)(UINT uCode, UINT uMapType)",
+"addr": "0x007E13E8",
+"size": 4
+},
+"__imp_GetSystemMetrics": {
+"type": "int (__stdcall*)(int nIndex)",
+"addr": "0x007E13EC",
+"size": 4
+},
+"__imp_SetWindowPos": {
+"type": "BOOL (__stdcall*)(HWND hWnd, HWND hWndInsertAfter, int X, int Y, int cx, int cy, UINT uFlags)",
+"addr": "0x007E13F0",
+"size": 4
+},
+"__imp_DestroyWindow": {
+"type": "BOOL (__stdcall*)(HWND hWnd)",
+"addr": "0x007E13F4",
+"size": 4
+},
+"__imp_ReleaseCapture": {
+"type": "BOOL (__stdcall*)()",
+"addr": "0x007E13F8",
+"size": 4
+},
+"__imp_SetCapture": {
+"type": "HWND (__stdcall*)(HWND hWnd)",
+"addr": "0x007E13FC",
+"size": 4
+},
+"__imp_AdjustWindowRectEx": {
+"type": "BOOL (__stdcall*)(LPRECT lpRect, DWORD dwStyle, BOOL bMenu, DWORD dwExStyle)",
+"addr": "0x007E1400",
+"size": 4
+},
+"__imp_GetMenu": {
+"type": "HMENU (__stdcall*)(HWND hWnd)",
+"addr": "0x007E1404",
+"size": 4
+},
+"__imp_AdjustWindowRect": {
+"type": "BOOL (__stdcall*)(LPRECT lpRect, DWORD dwStyle, BOOL bMenu)",
+"addr": "0x007E1408",
+"size": 4
+},
+"__imp_GetSysColor": {
+"type": "DWORD (__stdcall*)(int nIndex)",
+"addr": "0x007E140C",
+"size": 4
+},
+"__imp_IsDlgButtonChecked": {
+"type": "UINT (__stdcall*)(HWND hDlg, int nIDButton)",
+"addr": "0x007E1410",
+"size": 4
+},
+"__imp_CheckDlgButton": {
+"type": "BOOL (__stdcall*)(HWND hDlg, int nIDButton, UINT uCheck)",
+"addr": "0x007E1414",
+"size": 4
+},
+"__imp_WaitForInputIdle": {
+"type": "DWORD (__stdcall*)(HANDLE hProcess, DWORD dwMilliseconds)",
+"addr": "0x007E1418",
+"size": 4
+},
+"__imp_GetTopWindow": {
+"type": "HWND (__stdcall*)(HWND hWnd)",
+"addr": "0x007E141C",
+"size": 4
+},
+"__imp_GetForegroundWindow": {
+"type": "HWND (__stdcall*)()",
+"addr": "0x007E1420",
+"size": 4
+},
+"__imp_LoadIconA": {
+"type": "HICON (__stdcall*)(HINSTANCE hInstance, LPCSTR lpIconName)",
+"addr": "0x007E1424",
+"size": 4
+},
+"__imp_SetActiveWindow": {
+"type": "HWND (__stdcall*)(HWND hWnd)",
+"addr": "0x007E1428",
+"size": 4
+},
+"__imp_RedrawWindow": {
+"type": "BOOL (__stdcall*)(HWND hWnd, const RECT*lprcUpdate, HRGN hrgnUpdate, UINT flags)",
+"addr": "0x007E142C",
+"size": 4
+},
+"__imp_GetWindowContextHelpId": {
+"type": "DWORD (__stdcall*)(HWND)",
+"addr": "0x007E1430",
+"size": 4
+},
+"__imp_WinHelpA": {
+"type": "BOOL (__stdcall*)(HWND hWndMain, LPCSTR lpszHelp, UINT uCommand, ULONG_PTR dwData)",
+"addr": "0x007E1434",
+"size": 4
+},
+"__imp_ChildWindowFromPoint": {
+"type": "HWND (__stdcall*)(HWND hWndParent, POINT Point)",
+"addr": "0x007E1438",
+"size": 4
+},
+"__imp_LoadCursorA": {
+"type": "HCURSOR (__stdcall*)(HINSTANCE hInstance, LPCSTR lpCursorName)",
+"addr": "0x007E143C",
+"size": 4
+},
+"__imp_SetCursor": {
+"type": "HCURSOR (__stdcall*)(HCURSOR hCursor)",
+"addr": "0x007E1440",
+"size": 4
+},
+"__imp_PostQuitMessage": {
+"type": "void (__stdcall*)(int nExitCode)",
+"addr": "0x007E1444",
+"size": 4
+},
+"__imp_FindWindowA": {
+"type": "HWND (__stdcall*)(LPCSTR lpClassName, LPCSTR lpWindowName)",
+"addr": "0x007E1448",
+"size": 4
+},
+"__imp_SetCursorPos": {
+"type": "BOOL (__stdcall*)(int X, int Y)",
+"addr": "0x007E144C",
+"size": 4
+},
+"__imp_CreateDialogIndirectParamA": {
+"type": "HWND (__stdcall*)(HINSTANCE hInstance, LPCDLGTEMPLATEA lpTemplate, HWND hWndParent, DLGPROC lpDialogFunc, LPARAM dwInitParam)",
+"addr": "0x007E1450",
+"size": 4
+},
+"__imp_GetKeyNameTextA": {
+"type": "int (__stdcall*)(LONG lParam, LPSTR lpString, int cchSize)",
+"addr": "0x007E1454",
+"size": 4
+},
+"__imp_ScreenToClient": {
+"type": "BOOL (__stdcall*)(HWND hWnd, LPPOINT lpPoint)",
+"addr": "0x007E1458",
+"size": 4
+},
+"__imp_LockWindowUpdate": {
+"type": "BOOL (__stdcall*)(HWND hWndLock)",
+"addr": "0x007E145C",
+"size": 4
+},
+"__imp_MessageBoxA": {
+"type": "int (__stdcall*)(HWND hWnd, LPCSTR lpText, LPCSTR lpCaption, UINT uType)",
+"addr": "0x007E1460",
+"size": 4
+},
+"__imp_ReleaseDC": {
+"type": "int (__stdcall*)(HWND hWnd, HDC hDC)",
+"addr": "0x007E1464",
+"size": 4
+},
+"__imp_WindowFromPoint": {
+"type": "HWND (__stdcall*)(POINT Point)",
+"addr": "0x007E1468",
+"size": 4
+},
+"__imp_UpdateWindow": {
+"type": "BOOL (__stdcall*)(HWND hWnd)",
+"addr": "0x007E146C",
+"size": 4
+},
+"__imp_SetWindowLongA": {
+"type": "LONG (__stdcall*)(HWND hWnd, int nIndex, LONG dwNewLong)",
+"addr": "0x007E1470",
+"size": 4
+},
+"__imp_GetWindowLongA": {
+"type": "LONG (__stdcall*)(HWND hWnd, int nIndex)",
+"addr": "0x007E1474",
+"size": 4
+},
+"__imp_ValidateRect": {
+"type": "BOOL (__stdcall*)(HWND hWnd, const RECT*lpRect)",
+"addr": "0x007E1478",
+"size": 4
+},
+"__imp_IntersectRect": {
+"type": "BOOL (__stdcall*)(LPRECT lprcDst, const RECT*lprcSrc1, const RECT*lprcSrc2)",
+"addr": "0x007E147C",
+"size": 4
+},
+"__imp_MessageBoxIndirectA": {
+"type": "int (__stdcall*)(const MSGBOXPARAMSA*lpmbp)",
+"addr": "0x007E1480",
+"size": 4
+},
+"__imp_PeekMessageA": {
+"type": "BOOL (__stdcall*)(LPMSG lpMsg, HWND hWnd, UINT wMsgFilterMin, UINT wMsgFilterMax, UINT wRemoveMsg)",
+"addr": "0x007E1484",
+"size": 4
+},
+"__imp_CallWindowProcA": {
+"type": "LRESULT (__stdcall*)(WNDPROC lpPrevWndFunc, HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)",
+"addr": "0x007E1488",
+"size": 4
+},
+"__imp_KillTimer": {
+"type": "BOOL (__stdcall*)(HWND hWnd, UINT_PTR uIDEvent)",
+"addr": "0x007E148C",
+"size": 4
+},
+"__imp_SendDlgItemMessageA": {
+"type": "LRESULT (__stdcall*)(HWND hDlg, int nIDDlgItem, UINT Msg, WPARAM wParam, LPARAM lParam)",
+"addr": "0x007E1490",
+"size": 4
+},
+"__imp_SetTimer": {
+"type": "UINT_PTR (__stdcall*)(HWND hWnd, UINT_PTR nIDEvent, UINT uElapse, TIMERPROC lpTimerFunc)",
+"addr": "0x007E1494",
+"size": 4
+},
+"__imp_ShowWindow": {
+"type": "BOOL (__stdcall*)(HWND hWnd, int nCmdShow)",
+"addr": "0x007E1498",
+"size": 4
+},
+"__imp_InvalidateRect": {
+"type": "BOOL (__stdcall*)(HWND hWnd, const RECT*lpRect, BOOL bErase)",
+"addr": "0x007E149C",
+"size": 4
+},
+"__imp_EnableWindow": {
+"type": "BOOL (__stdcall*)(HWND hWnd, BOOL bEnable)",
+"addr": "0x007E14A0",
+"size": 4
+},
+"__imp_SendMessageA": {
+"type": "LRESULT (__stdcall*)(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)",
+"addr": "0x007E14A4",
+"size": 4
+},
+"__imp_GetDlgItem": {
+"type": "HWND (__stdcall*)(HWND hDlg, int nIDDlgItem)",
+"addr": "0x007E14A8",
+"size": 4
+},
+"__imp_PostMessageA": {
+"type": "BOOL (__stdcall*)(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)",
+"addr": "0x007E14AC",
+"size": 4
+},
+"__imp_wsprintfA": {
+"type": "int (*)(LPSTR, LPCSTR, ...)",
+"addr": "0x007E14B0",
+"size": 4
+},
+"__imp_SetRect": {
+"type": "BOOL (__stdcall*)(LPRECT lprc, int xLeft, int yTop, int xRight, int yBottom)",
+"addr": "0x007E14B4",
+"size": 4
+},
+"__imp_ClientToScreen": {
+"type": "BOOL (__stdcall*)(HWND hWnd, LPPOINT lpPoint)",
+"addr": "0x007E14B8",
+"size": 4
+},
+"__imp_TranslateMessage": {
+"type": "BOOL (__stdcall*)(const MSG*lpMsg)",
+"addr": "0x007E14BC",
+"size": 4
+},
+"__imp_DispatchMessageA": {
+"type": "LRESULT (__stdcall*)(const MSG*lpMsg)",
+"addr": "0x007E14C0",
+"size": 4
+},
+"__imp_GetClientRect": {
+"type": "BOOL (__stdcall*)(HWND hWnd, LPRECT lpRect)",
+"addr": "0x007E14C4",
+"size": 4
+},
+"__imp_GetWindow": {
+"type": "HWND (__stdcall*)(HWND hWnd, UINT uCmd)",
+"addr": "0x007E14C8",
+"size": 4
+},
+"__imp_BringWindowToTop": {
+"type": "BOOL (__stdcall*)(HWND hWnd)",
+"addr": "0x007E14CC",
+"size": 4
+},
+"__imp_SetForegroundWindow": {
+"type": "BOOL (__stdcall*)(HWND hWnd)",
+"addr": "0x007E14D0",
+"size": 4
+},
+"__imp_CreateWindowExA": {
+"type": "HWND (__stdcall*)(DWORD dwExStyle, LPCSTR lpClassName, LPCSTR lpWindowName, DWORD dwStyle, int X, int Y, int nWidth, int nHeight, HWND hWndParent, HMENU hMenu, HINSTANCE hInstance, LPVOID lpParam)",
+"addr": "0x007E14D4",
+"size": 4
+},
+"__imp_RegisterClassA": {
+"type": "ATOM (__stdcall*)(const WNDCLASSA*lpWndClass)",
+"addr": "0x007E14D8",
+"size": 4
+},
+"__imp_GetClassNameA": {
+"type": "int (__stdcall*)(HWND hWnd, LPSTR lpClassName, int nMaxCount)",
+"addr": "0x007E14DC",
+"size": 4
+},
+"__imp_IsWindowVisible": {
+"type": "BOOL (__stdcall*)(HWND hWnd)",
+"addr": "0x007E14E0",
+"size": 4
+},
+"__imp_EnumChildWindows": {
+"type": "BOOL (__stdcall*)(HWND hWndParent, WNDENUMPROC lpEnumFunc, LPARAM lParam)",
+"addr": "0x007E14E4",
+"size": 4
+},
+"__imp_IsWindowEnabled": {
+"type": "BOOL (__stdcall*)(HWND hWnd)",
+"addr": "0x007E14E8",
+"size": 4
+},
+"__imp_GetParent": {
+"type": "HWND (__stdcall*)(HWND hWnd)",
+"addr": "0x007E14EC",
+"size": 4
+},
+"__imp_GetNextDlgTabItem": {
+"type": "HWND (__stdcall*)(HWND hDlg, HWND hCtl, BOOL bPrevious)",
+"addr": "0x007E14F0",
+"size": 4
+},
+"__imp_IsDialogMessageA": {
+"type": "BOOL (__stdcall*)(HWND hDlg, LPMSG lpMsg)",
+"addr": "0x007E14F4",
+"size": 4
+},
+"__imp_TranslateAcceleratorA": {
+"type": "int (__stdcall*)(HWND hWnd, HACCEL hAccTable, LPMSG lpMsg)",
+"addr": "0x007E14F8",
+"size": 4
+},
+"__imp_CharToOemBuffA": {
+"type": "BOOL (__stdcall*)(LPCSTR lpszSrc, LPSTR lpszDst, DWORD cchDstLength)",
+"addr": "0x007E14FC",
+"size": 4
+},
+"__imp_BeginPaint": {
+"type": "HDC (__stdcall*)(HWND hWnd, LPPAINTSTRUCT lpPaint)",
+"addr": "0x007E1500",
+"size": 4
+},
+"__imp_EndPaint": {
+"type": "BOOL (__stdcall*)(HWND hWnd, const PAINTSTRUCT*lpPaint)",
+"addr": "0x007E1504",
+"size": 4
+},
+"__imp_CreateDialogParamA": {
+"type": "HWND (__stdcall*)(HINSTANCE hInstance, LPCSTR lpTemplateName, HWND hWndParent, DLGPROC lpDialogFunc, LPARAM dwInitParam)",
+"addr": "0x007E1508",
+"size": 4
+},
+"__imp_GetWindowTextA": {
+"type": "int (__stdcall*)(HWND hWnd, LPSTR lpString, int nMaxCount)",
+"addr": "0x007E150C",
+"size": 4
+},
+"__imp_RegisterHotKey": {
+"type": "BOOL (__stdcall*)(HWND hWnd, int id, UINT fsModifiers, UINT vk)",
+"addr": "0x007E1510",
+"size": 4
+},
+"__imp_VerQueryValueA": {
+"type": "BOOL (__stdcall*)(LPCVOID pBlock, LPCSTR lpSubBlock, LPVOID*lplpBuffer, PUINT puLen)",
+"addr": "0x007E1518",
+"size": 4
+},
+"__imp_GetFileVersionInfoSizeA": {
+"type": "DWORD (__stdcall*)(LPCSTR lptstrFilename, LPDWORD lpdwHandle)",
+"addr": "0x007E151C",
+"size": 4
+},
+"__imp_GetFileVersionInfoA": {
+"type": "BOOL (__stdcall*)(LPCSTR lptstrFilename, DWORD dwHandle, DWORD dwLen, LPVOID lpData)",
+"addr": "0x007E1520",
+"size": 4
+},
+"__imp_timeKillEvent": {
+"type": "MMRESULT (__stdcall*)(UINT uTimerID)",
+"addr": "0x007E1528",
+"size": 4
+},
+"__imp_timeEndPeriod": {
+"type": "MMRESULT (__stdcall*)(UINT uPeriod)",
+"addr": "0x007E152C",
+"size": 4
+},
+"__imp_timeGetTime": {
+"type": "DWORD (__stdcall*)()",
+"addr": "0x007E1530",
+"size": 4
+},
+"__imp_timeSetEvent": {
+"type": "MMRESULT (__stdcall*)(UINT uDelay, UINT uResolution, LPTIMECALLBACK fptc, DWORD_PTR dwUser, UINT fuEvent)",
+"addr": "0x007E1534",
+"size": 4
+},
+"__imp_timeBeginPeriod": {
+"type": "MMRESULT (__stdcall*)(UINT uPeriod)",
+"addr": "0x007E1538",
+"size": 4
+},
+"__imp_getsockopt": {
+"type": "int (__stdcall*)(SOCKET s, int level, int optname, char*optval, int*optlen)",
+"addr": "0x007E1540",
+"size": 4
+},
+"__imp_ntohl": {
+"type": "u_long (__stdcall*)(u_long netlong)",
+"addr": "0x007E1544",
+"size": 4
+},
+"__imp_htons": {
+"type": "u_short (__stdcall*)(u_short hostshort)",
+"addr": "0x007E1548",
+"size": 4
+},
+"__imp_recvfrom": {
+"type": "int (__stdcall*)(SOCKET s, char*buf, int len, int flags, struct sockaddr*from, int*fromlen)",
+"addr": "0x007E154C",
+"size": 4
+},
+"__imp_htonl": {
+"type": "u_long (__stdcall*)(u_long hostlong)",
+"addr": "0x007E1550",
+"size": 4
+},
+"__imp_setsockopt": {
+"type": "int (__stdcall*)(SOCKET s, int level, int optname, const char*optval, int optlen)",
+"addr": "0x007E1554",
+"size": 4
+},
+"__imp_sendto": {
+"type": "int (__stdcall*)(SOCKET s, const char*buf, int len, int flags, const struct sockaddr*to, int tolen)",
+"addr": "0x007E1558",
+"size": 4
+},
+"__imp_ntohs": {
+"type": "u_short (__stdcall*)(u_short netshort)",
+"addr": "0x007E155C",
+"size": 4
+},
+"__imp_gethostname": {
+"type": "int (__stdcall*)(char*name, int namelen)",
+"addr": "0x007E1560",
+"size": 4
+},
+"__imp_WSAStartup": {
+"type": "int (__stdcall*)(WORD wVersionRequested, LPWSADATA lpWSAData)",
+"addr": "0x007E1564",
+"size": 4
+},
+"__imp_EnumProtocolsA": {
+"type": "INT (__stdcall*)(LPINT lpiProtocols, LPVOID lpProtocolBuffer, LPDWORD lpdwBufferLength)",
+"addr": "0x007E1568",
+"size": 4
+},
+"__imp_WSAAsyncSelect": {
+"type": "int (__stdcall*)(SOCKET s, HWND hWnd, u_int wMsg, int lEvent)",
+"addr": "0x007E156C",
+"size": 4
+},
+"__imp_WSACleanup": {
+"type": "int (__stdcall*)()",
+"addr": "0x007E1570",
+"size": 4
+},
+"__imp_WSAGetLastError": {
+"type": "int (__stdcall*)()",
+"addr": "0x007E1574",
+"size": 4
+},
+"__imp_inet_ntoa": {
+"type": "char*(__stdcall*)(struct in_addr in)",
+"addr": "0x007E1578",
+"size": 4
+},
+"__imp_socket": {
+"type": "SOCKET (__stdcall*)(int af, int type, int protocol)",
+"addr": "0x007E157C",
+"size": 4
+},
+"__imp_bind": {
+"type": "int (__stdcall*)(SOCKET s, const struct sockaddr*name, int namelen)",
+"addr": "0x007E1580",
+"size": 4
+},
+"__imp_closesocket": {
+"type": "int (__stdcall*)(SOCKET s)",
+"addr": "0x007E1584",
+"size": 4
+},
+"__imp_gethostbyname": {
+"type": "struct hostent*(__stdcall*)(const char*name)",
+"addr": "0x007E1588",
+"size": 4
+},
+"__imp_StgCreateDocfile": {
+"type": "HRESULT (__stdcall*)(const WCHAR*pwcsName, DWORD grfMode, DWORD reserved, IStorage**ppstgOpen)",
+"addr": "0x007E15C8",
+"size": 4
+},
+"__imp_CoRevokeClassObject": {
+"type": "HRESULT (__stdcall*)(DWORD dwRegister)",
+"addr": "0x007E15CC",
+"size": 4
+},
+"__imp_OleUninitialize": {
+"type": "void (__stdcall*)()",
+"addr": "0x007E15D0",
+"size": 4
+},
+"__imp_OleInitialize": {
+"type": "HRESULT (__stdcall*)(LPVOID pvReserved)",
+"addr": "0x007E15D4",
+"size": 4
+},
+"__imp_CoRegisterClassObject": {
+"type": "HRESULT (__stdcall*)(const IID*const rclsid, LPUNKNOWN pUnk, DWORD dwClsContext, DWORD flags, LPDWORD lpdwRegister)",
+"addr": "0x007E15D8",
+"size": 4
+},
+"__imp_CoDisconnectObject": {
+"type": "HRESULT (__stdcall*)(LPUNKNOWN pUnk, DWORD dwReserved)",
+"addr": "0x007E15DC",
+"size": 4
+},
+"__imp_StringFromGUID2": {
+"type": "int (__stdcall*)(const GUID*const rguid, LPOLESTR lpsz, int cchMax)",
+"addr": "0x007E15E0",
+"size": 4
+},
+"__imp_StgOpenStorage": {
+"type": "HRESULT (__stdcall*)(const WCHAR*pwcsName, IStorage*pstgPriority, DWORD grfMode, SNB snbExclude, DWORD reserved, IStorage**ppstgOpen)",
+"addr": "0x007E15E4",
+"size": 4
+},
+"__imp_CoFileTimeNow": {
+"type": "HRESULT (__stdcall*)(FILETIME*lpFileTime)",
+"addr": "0x007E15E8",
+"size": 4
+},
+"__imp_StringFromCLSID": {
+"type": "HRESULT (__stdcall*)(const IID*const rclsid, LPOLESTR*lplpsz)",
+"addr": "0x007E15EC",
+"size": 4
+},
+"__imp_CLSIDFromString": {
+"type": "HRESULT (__stdcall*)(LPCOLESTR lpsz, LPCLSID pclsid)",
+"addr": "0x007E15F0",
+"size": 4
+},
+"__imp_OleSaveToStream": {
+"type": "HRESULT (__stdcall*)(LPPERSISTSTREAM pPStm, LPSTREAM pStm)",
+"addr": "0x007E15F4",
+"size": 4
+},
+"__imp_OleLoadFromStream": {
+"type": "HRESULT (__stdcall*)(LPSTREAM pStm, const IID*const iidInterface, LPVOID*ppvObj)",
+"addr": "0x007E15F8",
+"size": 4
+},
+"__imp_CoCreateInstance": {
+"type": "HRESULT (__stdcall*)(const IID*const rclsid, LPUNKNOWN pUnkOuter, DWORD dwClsContext, const IID*const riid, LPVOID*ppv)",
+"addr": "0x007E15FC",
+"size": 4
+},
+"__imp_OleRun": {
+"type": "HRESULT (__stdcall*)(LPUNKNOWN pUnknown)",
+"addr": "0x007E1600",
+"size": 4
+},
+"??_7CD@@6B@": {
+"type": "_DWORD (__stdcall*)(_DWORD)",
+"addr": "0x007E4C30",
+"size": 4
+},
+"g_INI_Key_Special": {
+"type": "SuperWeaponTypeClass",
+"addr": "0x00817318",
+"size": 4
+},
+"riid": {
+"type": "IID",
+"addr": "0x00817BC0",
+"size": 12
+},
+"g_INI_Key_Civilian": {
+"type": "HouseTypeClass",
+"addr": "0x00818164",
+"size": 4
+},
+"psz": {
+"type": "OLECHAR",
+"addr": "0x008186E8",
+"size": 4
+},
+"aSun": {
+"type": "OLECHAR",
+"addr": "0x00818704",
+"size": 8
+},
+"aEvaBeaconplace": {
+"type": "VoxClass",
+"addr": "0x00818A9C",
+"size": 17
+},
+"aEvaBuildinginf": {
+"type": "VoxClass",
+"addr": "0x00819198",
+"size": 24
+},
+"aEvaRadarsabota": {
+"type": "VoxClass",
+"addr": "0x008191E4",
+"size": 19
+},
+"aEvaUnitspeedup": {
+"type": "VoxClass",
+"addr": "0x0081CE80",
+"size": 22
+},
+"aEvaUnitarmorup": {
+"type": "VoxClass",
+"addr": "0x0081CEB8",
+"size": 22
+},
+"g_Str_EVA_CannotDeployHere": {
+"type": "VoxClass",
+"addr": "0x0082012C",
+"size": 4
+},
+"lpString2": {
+"type": "LPCSTR",
+"addr": "0x00820E8C",
+"size": 4
+},
+"aDropland": {
+"type": "AnimTypeClass",
+"addr": "0x0082242C",
+"size": 9
+},
+"g_RulesInitConfig": {
+"type": "LPARAM",
+"addr": "0x00822CF4",
+"size": 4
+},
+"FileTime": {
+"type": "FILETIME",
+"addr": "0x00822D5C",
+"size": 8
+},
+"g_Str_EVA_RobotTanksOffline": {
+"type": "VoxClass",
+"addr": "0x00824E4C",
+"size": 84
+},
+"wParam": {
+"type": "WPARAM",
+"addr": "0x00825C80",
+"size": 4
+},
+"aAlliedcampaign": {
+"type": "VocClass",
+"addr": "0x008263F0",
+"size": 21
+},
+"aSovietcampaign": {
+"type": "VocClass",
+"addr": "0x00826408",
+"size": 21
+},
+"aXgrymed2": {
+"type": "AnimTypeClass",
+"addr": "0x0082ADB4",
+"size": 9
+},
+"aXgrymed1": {
+"type": "AnimTypeClass",
+"addr": "0x0082ADC0",
+"size": 9
+},
+"aNeutral": {
+"type": "SuperWeaponTypeClass",
+"addr": "0x0082BA08",
+"size": 8
+},
+"g_MPCooperativeState": {
+"type": "ObjectClass*",
+"addr": "0x008316A4",
+"size": 4
+},
+"g_Str_MSG_PlanningModeNoDeploy": {
+"type": "PlanManager",
+"addr": "0x00836C34",
+"size": 4
+},
+"g_INI_Key_PDPLANE": {
+"type": "TypeClass",
+"addr": "0x00839708",
+"size": 4
+},
+"aEvaUnabletocom": {
+"type": "VoxClass",
+"addr": "0x0083FB58",
+"size": 19
+},
+"aEvaOnhold": {
+"type": "VoxClass",
+"addr": "0x0083FB6C",
+"size": 11
+},
+"aEvaSelecttarge": {
+"type": "VoxClass",
+"addr": "0x0083FB78",
+"size": 17
+},
+"aEvaCanceled": {
+"type": "VoxClass",
+"addr": "0x0083FB8C",
+"size": 13
+},
+"g_Audio_MixerEnabled": {
+"type": "ObjectClass*",
+"addr": "0x00840A70",
+"size": 4
+},
+"dwRegister": {
+"type": "DWORD",
+"addr": "0x00840A74",
+"size": 4
+},
+"szFile": {
+"type": "OLECHAR",
+"addr": "0x00840AD0",
+"size": 4
+},
+"Data": {
+"type": "BYTE",
+"addr": "0x00840B4C",
+"size": 13
+},
+"g_Str_WW_TiberianSun_1": {
+"type": "BYTE",
+"addr": "0x00840B5C",
+"size": 17
+},
+"g_Str_EVA_PsychicRevealReady": {
+"type": "VoxClass",
+"addr": "0x008423FC",
+"size": 4
+},
+"aEvaChronospher": {
+"type": "VoxClass",
+"addr": "0x008425A4",
+"size": 26
+},
+"g_INI_Key_TRUCKA": {
+"type": "BuildingTypeClass",
+"addr": "0x00842DCC",
+"size": 4
+},
+"uElapse": {
+"type": "UINT",
+"addr": "0x0084A248",
+"size": 4
+},
+"File": {
+"type": "FILE",
+"addr": "0x0087BF70",
+"size": 32
+},
+"lpCriticalSection": {
+"type": "LPCRITICAL_SECTION",
+"addr": "0x0087C2EC",
+"size": 4
+},
+"Block": {
+"type": "char*",
+"addr": "0x0087C484",
+"size": 4
+},
+"dwTlsIndex": {
+"type": "DWORD",
+"addr": "0x0087C7A8",
+"size": 4
+},
+"lpMultiByteStr": {
+"type": "LPSTR",
+"addr": "0x0087CAEC",
+"size": 4
+},
+"g_AudioStreamObject": {
+"type": "DListNode",
+"addr": "0x0087E180",
+"size": 12
+},
+"g_MixerBuffer1": {
+"type": "AudioMixer",
+"addr": "0x0087E2C0",
+"size": 40
+},
+"g_MixerBuffer5": {
+"type": "AudioMixer",
+"addr": "0x0087E340",
+"size": 40
+},
+"g_MixerBuffer8": {
+"type": "AudioMixer",
+"addr": "0x0087E3C0",
+"size": 40
+},
+"g_MixerBuffer4": {
+"type": "AudioMixer",
+"addr": "0x0087E450",
+"size": 40
+},
+"g_MixerBuffer2": {
+"type": "AudioMixer",
+"addr": "0x0087E4E0",
+"size": 40
+},
+"g_MixerBuffer3": {
+"type": "AudioMixer",
+"addr": "0x0087E578",
+"size": 40
+},
+"g_MixerBuffer7": {
+"type": "AudioMixer",
+"addr": "0x0087E5F8",
+"size": 40
+},
+"g_MixerBuffer6": {
+"type": "AudioMixer",
+"addr": "0x0087E6A0",
+"size": 40
+},
+"g_AudioFileData": {
+"type": "ObjectClass*",
+"addr": "0x0087E724",
+"size": 4
+},
+"g_Audio_Enabled": {
+"type": "AudioStream*",
+"addr": "0x0087E728",
+"size": 4
+},
+"g_MixerChannel_SFX": {
+"type": "ObjectClass*",
+"addr": "0x0087E73C",
+"size": 4
+},
+"g_MixerChannel_Voice": {
+"type": "ObjectClass*",
+"addr": "0x0087E740",
+"size": 4
+},
+"g_MixerChannel_Theme": {
+"type": "ObjectClass*",
+"addr": "0x0087E744",
+"size": 4
+},
+"g_MixerChannel_Score": {
+"type": "ObjectClass*",
+"addr": "0x0087E748",
+"size": 4
+},
+"g_MixerChannel_Misc": {
+"type": "ObjectClass*",
+"addr": "0x0087E74C",
+"size": 4
+},
+"g_MixerChannel_Ambient": {
+"type": "ObjectClass*",
+"addr": "0x0087E750",
+"size": 4
+},
+"g_MixerChannel_Stream": {
+"type": "ObjectClass*",
+"addr": "0x0087E754",
+"size": 4
+},
+"g_MixerState": {
+"type": "ObjectClass*",
+"addr": "0x0087E758",
+"size": 4
+},
+"ThreadId": {
+"type": "DWORD",
+"addr": "0x0087E7F4",
+"size": 1
+},
+"ppDS": {
+"type": "LPDIRECTSOUND",
+"addr": "0x0087E89C",
+"size": 4
+},
+"g_LogicClass": {
+"type": "LogicClass",
+"addr": "0x0087F778",
+"size": 24
+},
+"Randomizer_Global": {
+"type": "Random",
+"addr": "0x00886B88",
+"size": 20
+},
+"DSurface_ViewBounds": {
+"type": "CellStruct",
+"addr": "0x00886FA0",
+"size": 8
+},
+"g_IniSectionList": {
+"type": "List_INISection",
+"addr": "0x00887064",
+"size": 56
+},
+"DSurface_Tile": {
+"type": "DSurface*",
+"addr": "0x008872FC",
+"size": 4
+},
+"DSurface_Sidebar": {
+"type": "DSurface*",
+"addr": "0x00887300",
+"size": 4
+},
+"g_DSurface_Primary": {
+"type": "DSurface*",
+"addr": "0x00887308",
+"size": 4
+},
+"g_DSurface_Hidden": {
+"type": "ObjectClass*",
+"addr": "0x0088730C",
+"size": 4
+},
+"DSurface_Alternate": {
+"type": "DSurface*",
+"addr": "0x00887310",
+"size": 4
+},
+"g_DSurface_Hidden_2": {
+"type": "AudioStream*",
+"addr": "0x00887314",
+"size": 4
+},
+"DSurface_Composite": {
+"type": "AudioStream*",
+"addr": "0x0088731C",
+"size": 4
+},
+"g_TacticalClass_Instance": {
+"type": "LPPERSISTSTREAM",
+"addr": "0x00887324",
+"size": 4
+},
+"WarheadTypeClass_Array": {
+"type": "WarheadTypeClass*",
+"addr": "0x008874C0",
+"size": 4
+},
+"WeaponTypeClass_Array": {
+"type": "WeaponTypeClass*",
+"addr": "0x00887568",
+"size": 4
+},
+"g_ZBufferDescriptor": {
+"type": "Stream*",
+"addr": "0x00887644",
+"size": 4
+},
+"g_CellClassManager": {
+"type": "VectorClass",
+"addr": "0x00887888",
+"size": 24
+},
+"g_FogOfWarState": {
+"type": "Text*",
+"addr": "0x0089C4D0",
+"size": 4
+},
+"g_DDrawSurfaceManager": {
+"type": "CampaignClass",
+"addr": "0x0089F518",
+"size": 4
+},
+"lpBaseAddress": {
+"type": "LPCVOID",
+"addr": "0x0089F75C",
+"size": 4
+},
+"hLibModule": {
+"type": "HMODULE",
+"addr": "0x0089F974",
+"size": 4
+},
+"g_lpDirectDraw7": {
+"type": "LPDIRECTDRAW",
+"addr": "0x008A0094",
+"size": 4
+},
+"g_DisplayWidth": {
+"type": "LoadingScreen*",
+"addr": "0x008A00A4",
+"size": 8
+},
+"g_DDraw_ErrorCallback": {
+"type": "int (__thiscall*)(_DWORD)",
+"addr": "0x008A00B0",
+"size": 4
+},
+"FootClass_Array": {
+"type": "FootClass",
+"addr": "0x008B3DC0",
+"size": 4
+},
+"PsyDom_Owner": {
+"type": "House*",
+"addr": "0x00A9FAC8",
+"size": 4
+},
+"LightningStorm_Owner": {
+"type": "HouseClass*",
+"addr": "0x00A9FACC",
+"size": 4
+},
+"Stream": {
+"type": "FILE*",
+"addr": "0x00AA0468",
+"size": 4
+},
+"g_MissionQueueFrame": {
+"type": "ScenarioClass",
+"addr": "0x00ABC5F8",
+"size": 4
+},
+"g_MixFileList": {
+"type": "List_MixFileClass",
+"addr": "0x00ABEFD8",
+"size": 28
+},
+"color": {
+"type": "COLORREF",
+"addr": "0x00ABF110",
+"size": 4
+},
+"hInstance": {
+"type": "HINSTANCE",
+"addr": "0x00ABF230",
+"size": 4
+},
+"hWndParent": {
+"type": "HWND",
+"addr": "0x00ABF234",
+"size": 4
+},
+"h": {
+"type": "HGDIOBJ",
+"addr": "0x00ABF244",
+"size": 4
+},
+"g_MultiplayerModeConfig": {
+"type": "MultiplayerGameMode",
+"addr": "0x00ABFDA0",
+"size": 4
+},
+"g_NetworkSetupConfig": {
+"type": "WPARAM",
+"addr": "0x00AC0260",
+"size": 4
+},
+"hDlg": {
+"type": "HWND",
+"addr": "0x00AC0D40",
+"size": 4
+},
+"g_UIControlState": {
+"type": "Skirmish*",
+"addr": "0x00AC1154",
+"size": 4
+},
+"ppv": {
+"type": "LPVOID",
+"addr": "0x00AC116C",
+"size": 4
+},
+"g_UIPointerTable": {
+"type": "LPVOID",
+"addr": "0x00AC1170",
+"size": 4
+},
+"g_HouseClass_ObserverFlags": {
+"type": "LPARAM",
+"addr": "0x00AC119C",
+"size": 4
+},
+"g_Lobby_PlayerCount": {
+"type": "LPARAM",
+"addr": "0x00AC11A0",
+"size": 4
+},
+"g_Lobby_PlayerTeam": {
+"type": "LPARAM",
+"addr": "0x00AC11A4",
+"size": 4
+},
+"g_Lobby_PlayerSide": {
+"type": "LPARAM",
+"addr": "0x00AC11A8",
+"size": 4
+},
+"g_Lobby_PlayerColor": {
+"type": "LPARAM",
+"addr": "0x00AC11AC",
+"size": 4
+},
+"g_Lobby_PlayerReady": {
+"type": "wchar_t*",
+"addr": "0x00AC11B0",
+"size": 4
+},
+"g_Lobby_MaxPlayers": {
+"type": "LPARAM",
+"addr": "0x00AC11B4",
+"size": 4
+},
+"g_DialogPool": {
+"type": "Dialog",
+"addr": "0x00AC18C0",
+"size": 4
+},
+"g_DialogHashTable": {
+"type": "HashTable",
+"addr": "0x00AC4848",
+"size": 4
+},
+"g_GameScreenManager": {
+"type": "HWND",
+"addr": "0x00AC48D0",
+"size": 4
+},
+"g_FileExtensionState": {
+"type": "FileSystem*",
+"addr": "0x00AC48F0",
+"size": 4
+},
+"g_SidebarFlag": {
+"type": "ShapeButtonClass",
+"addr": "0x00B0B408",
+"size": 12
+},
+"g_AnimationManager": {
+"type": "DynamicVector",
+"addr": "0x00B0BC88",
+"size": 4
+},
+"pdwRegister": {
+"type": "DWORD",
+"addr": "0x00B0BCEC",
+"size": 4
+},
+"SwizzleManagerClass_Instance": {
+"type": "SwizzleManagerClass",
+"addr": "0x00B0C110",
+"size": 4
+},
+"g_BuildingLoadQueue_Array": {
+"type": "BuildingTypeClass",
+"addr": "0x00B0E840",
+"size": 4
+},
+"g_InfantryDrawState": {
+"type": "Audio*",
+"addr": "0x00B1D4CC",
+"size": 4
+},
+"g_ClipboardBuffer": {
+"type": "HWND",
+"addr": "0x00B72D20",
+"size": 4
+},
+"hWnd": {
+"type": "HWND",
+"addr": "0x00B72F44",
+"size": 4
+},
+"dwInitParam": {
+"type": "HWND",
+"addr": "0x00B72F54",
+"size": 4
+},
+"himl": {
+"type": "HIMAGELIST",
+"addr": "0x00B730A8",
+"size": 4
+},
+"g_hInstance": {
+"type": "HINSTANCE",
+"addr": "0x00B732F0",
+"size": 4
+},
+"g_hWnd": {
+"type": "HWND",
+"addr": "0x00B73550",
+"size": 4
+},
+"g_WindowManager": {
+"type": "Array",
+"addr": "0x00B73AA8",
+"size": 4
+},
+"Addend": {
+"type": "LONG",
+"addr": "0x00B7649C",
+"size": 4
+},
+"g_WOL_ConnectionPool": {
+"type": "HashMap",
+"addr": "0x00B76530",
+"size": 4
+},
+"g_WOL_ListParser": {
+"type": "HashMap",
+"addr": "0x00B768C0",
+"size": 4
+},
+"g_WOL_BuddyList": {
+"type": "DynamicVector",
+"addr": "0x00B779B0",
+"size": 4
+},
+"g_WOL_HashTable": {
+"type": "HashTable*",
+"addr": "0x00B77E0C",
+"size": 4
+},
+"CodePage": {
+"type": "UINT",
+"addr": "0x00B782B0",
+"size": 4
+},
+"Locale": {
+"type": "LCID",
+"addr": "0x00B78544",
+"size": 4
+},
+"String1": {
+"type": "char*",
+"addr": "0x00B78554",
+"size": 4
+},
+"lpTopLevelExceptionFilter": {
+"type": "LPTOP_LEVEL_EXCEPTION_FILTER",
+"addr": "0x00B7856C",
+"size": 4
+},
+"LCData": {
+"type": "WCHAR",
+"addr": "0x00B7858C",
+"size": 2
+},
+"uNumber": {
+"type": "UINT",
+"addr": "0x00B78B80",
+"size": 4
+},
+"lp": {
+"type": "LPVOID",
+"addr": "0x00B78B98",
+"size": 4
+}
+}

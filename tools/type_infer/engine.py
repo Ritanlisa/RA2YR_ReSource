@@ -806,6 +806,42 @@ class TypeInferenceEngine:
                 print(f"  global cast anchors load failed ({_e})", file=sys.stderr)
         print(f"  global_cast anchors: {n_gcast}", file=sys.stderr)
 
+        # X184: IDA 侧的全局类型（Step-1 证据直取）。只收类/指针型
+        # （字符串/标量已过滤）——这是 IDA 自身对全局的声明，优先级与
+        # global_cast 同级但来源独立。
+        n_ida_g = 0
+        _ida_g_path = os.path.normpath(os.path.join(
+            os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
+            "anchors", "ida_global_type_anchors.json"))
+        if os.path.exists(_ida_g_path):
+            try:
+                with open(_ida_g_path, "r", encoding="utf-8") as _gf2:
+                    _gmap2 = json.load(_gf2)
+                _cast_names = set()
+                if os.path.exists(_g_path):
+                    try:
+                        with open(_g_path, "r", encoding="utf-8") as _cf2:
+                            _cast_names = set(json.load(_cf2))
+                    except Exception:
+                        _cast_names = set()
+                for _gname, _spec in _gmap2.items():
+                    if _gname in _cast_names:
+                        continue      # usage (cast) evidence outranks IDA's data typing
+                    _vid = self.var_to_id.get(_gname)
+                    if _vid is None:
+                        continue
+                    _lt = self._to_lattice_type(_spec.get("type"), valid_classes)
+                    if _lt is None or _lt in (VOID_PTR, TOP):
+                        continue
+                    _a = Anchor(var_id=_vid, var_name=_gname,
+                                lattice_type=_lt, source="ida_global_type")
+                    self.anchors.append(_a)
+                    self.anchor_by_var[_vid].append(_a)
+                    n_ida_g += 1
+            except Exception as _e:
+                print(f"  ida_global_type load failed ({_e})", file=sys.stderr)
+        print(f"  ida_global_type anchors: {n_ida_g}", file=sys.stderr)
+
         # ── 库字符串函数参数/返回锚（CRT/Win32 例外）──
         lib_matched = 0
         for addr, spec in _LIB_STRING_FUNCS.items():
@@ -1775,6 +1811,7 @@ class TypeInferenceEngine:
             "name_owner": 4,
             "cast_explicit": 3,
             "global_cast": 3,
+            "ida_global_type": 3,
             "rtti_vtable_class": 3,
             "singleton_ctor_store": 3,
             "ctor_vtable_install": 3,
