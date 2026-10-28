@@ -812,10 +812,7 @@ class TypeInferenceEngine:
         n_ida_g = 0
         _ida_g_path = None   # X184 停用：IDA 对对象全局只给兜底类型（IUnknown/ObjectClass*），
                              # 与 cast 用法证据冲突（实测 +77 TOP），净收益为负。导出文件保留作参考。
-        if False and os.path.normpath(os.path.join(
-            os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
-            "anchors", "ida_global_type_anchors.json"))
-        if os.path.exists(_ida_g_path):
+        if _ida_g_path and os.path.exists(_ida_g_path):
             try:
                 with open(_ida_g_path, "r", encoding="utf-8") as _gf2:
                     _gmap2 = json.load(_gf2)
