@@ -12,12 +12,13 @@
    "C8"
   ],
   "reg_flow": true,
-  "K": 656,
-  "K_upper": 999,
-  "lower_bound": 656,
-  "constrained_clusters": 8486,
+  "evidence_mode": "spec+proto",
+  "K": 680,
+  "K_upper": 871,
+  "lower_bound": 680,
+  "constrained_clusters": 8637,
   "free_clusters": 20564,
-  "conflicts": 343,
+  "conflicts": 191,
   "c1_gaps": 0,
   "universe": 1597,
   "entities": 43827
@@ -30,7 +31,7 @@
    "entities_touched": 11620,
    "clusters_constrained": 6462,
    "clusters_pinned": 0,
-   "clusters_free": 22931,
+   "clusters_free": 22930,
    "pinned_classes": 0,
    "forced_classes": 0,
    "conflicts": 0,
@@ -50,20 +51,20 @@
    "desc": "this passing (arg class ⊑ callee this-class)",
    "evidence": 17306,
    "entities_touched": 11870,
-   "clusters_constrained": 6261,
-   "clusters_pinned": 1714,
-   "clusters_free": 22232,
-   "pinned_classes": 519,
-   "forced_classes": 519,
-   "conflicts": 900,
+   "clusters_constrained": 6603,
+   "clusters_pinned": 2034,
+   "clusters_free": 22231,
+   "pinned_classes": 593,
+   "forced_classes": 593,
+   "conflicts": 558,
    "c1_gaps": 0,
-   "K": 522,
-   "K_upper": 1422,
-   "K_total": 522,
-   "K_greedy": 522,
-   "delta_forced": 519,
-   "delta_K": 521,
-   "lower_bound": 522,
+   "K": 598,
+   "K_upper": 1156,
+   "K_total": 598,
+   "K_greedy": 598,
+   "delta_forced": 593,
+   "delta_K": 597,
+   "lower_bound": 598,
    "merges": 0,
    "bad_cover": 0
   },
@@ -72,20 +73,20 @@
    "desc": "vtable slot membership",
    "evidence": 19080,
    "entities_touched": 3075,
-   "clusters_constrained": 6898,
-   "clusters_pinned": 1673,
-   "clusters_free": 21550,
-   "pinned_classes": 517,
-   "forced_classes": 517,
-   "conflicts": 945,
+   "clusters_constrained": 7228,
+   "clusters_pinned": 1981,
+   "clusters_free": 21549,
+   "pinned_classes": 590,
+   "forced_classes": 590,
+   "conflicts": 615,
    "c1_gaps": 0,
-   "K": 521,
-   "K_upper": 1466,
-   "K_total": 521,
-   "K_greedy": 521,
-   "delta_forced": -2,
-   "delta_K": -1,
-   "lower_bound": 521,
+   "K": 595,
+   "K_upper": 1210,
+   "K_total": 595,
+   "K_greedy": 595,
+   "delta_forced": -3,
+   "delta_K": -3,
+   "lower_bound": 595,
    "merges": 0,
    "bad_cover": 0
   },
@@ -94,20 +95,20 @@
    "desc": "ctor/dtor vtable install @this+0 (EXACT)",
    "evidence": 1295,
    "entities_touched": 1295,
-   "clusters_constrained": 7492,
-   "clusters_pinned": 2587,
-   "clusters_free": 21544,
-   "pinned_classes": 658,
-   "forced_classes": 658,
-   "conflicts": 357,
+   "clusters_constrained": 7649,
+   "clusters_pinned": 2732,
+   "clusters_free": 21543,
+   "pinned_classes": 684,
+   "forced_classes": 684,
+   "conflicts": 200,
    "c1_gaps": 0,
-   "K": 658,
-   "K_upper": 1015,
-   "K_total": 658,
-   "K_greedy": 658,
-   "delta_forced": 141,
-   "delta_K": 137,
-   "lower_bound": 658,
+   "K": 684,
+   "K_upper": 884,
+   "K_total": 684,
+   "K_greedy": 684,
+   "delta_forced": 94,
+   "delta_K": 89,
+   "lower_bound": 684,
    "merges": 0,
    "bad_cover": 0
   },
@@ -116,20 +117,20 @@
    "desc": "operator new size (EXACT)",
    "evidence": 842,
    "entities_touched": 839,
-   "clusters_constrained": 8326,
-   "clusters_pinned": 2587,
+   "clusters_constrained": 8482,
+   "clusters_pinned": 2732,
    "clusters_free": 20710,
-   "pinned_classes": 658,
-   "forced_classes": 658,
-   "conflicts": 357,
+   "pinned_classes": 684,
+   "forced_classes": 684,
+   "conflicts": 200,
    "c1_gaps": 0,
-   "K": 658,
-   "K_upper": 1015,
-   "K_total": 658,
-   "K_greedy": 659,
+   "K": 684,
+   "K_upper": 884,
+   "K_total": 684,
+   "K_greedy": 685,
    "delta_forced": 0,
    "delta_K": 0,
-   "lower_bound": 658,
+   "lower_bound": 684,
    "merges": 1,
    "bad_cover": 0
   },
@@ -138,20 +139,20 @@
    "desc": "vtable identity slot count (EXACT)",
    "evidence": 1684,
    "entities_touched": 1394,
-   "clusters_constrained": 8314,
-   "clusters_pinned": 2581,
+   "clusters_constrained": 8465,
+   "clusters_pinned": 2721,
    "clusters_free": 20710,
-   "pinned_classes": 651,
-   "forced_classes": 651,
-   "conflicts": 369,
+   "pinned_classes": 675,
+   "forced_classes": 675,
+   "conflicts": 217,
    "c1_gaps": 0,
-   "K": 651,
-   "K_upper": 1020,
-   "K_total": 651,
-   "K_greedy": 652,
-   "delta_forced": -7,
-   "delta_K": -7,
-   "lower_bound": 651,
+   "K": 675,
+   "K_upper": 892,
+   "K_total": 675,
+   "K_greedy": 676,
+   "delta_forced": -9,
+   "delta_K": -9,
+   "lower_bound": 675,
    "merges": 1,
    "bad_cover": 0
   },
@@ -160,20 +161,20 @@
    "desc": "param/return variance",
    "evidence": 79,
    "entities_touched": 79,
-   "clusters_constrained": 8377,
-   "clusters_pinned": 2634,
+   "clusters_constrained": 8528,
+   "clusters_pinned": 2774,
    "clusters_free": 20646,
-   "pinned_classes": 652,
-   "forced_classes": 652,
-   "conflicts": 370,
+   "pinned_classes": 676,
+   "forced_classes": 676,
+   "conflicts": 218,
    "c1_gaps": 0,
-   "K": 652,
-   "K_upper": 1022,
-   "K_total": 652,
-   "K_greedy": 653,
+   "K": 676,
+   "K_upper": 894,
+   "K_total": 676,
+   "K_greedy": 677,
    "delta_forced": 1,
    "delta_K": 1,
-   "lower_bound": 652,
+   "lower_bound": 676,
    "merges": 1,
    "bad_cover": 0
   },
@@ -182,53 +183,25 @@
    "desc": "global object identity",
    "evidence": 176,
    "entities_touched": 176,
-   "clusters_constrained": 8486,
-   "clusters_pinned": 2748,
+   "clusters_constrained": 8637,
+   "clusters_pinned": 2888,
    "clusters_free": 20564,
-   "pinned_classes": 656,
-   "forced_classes": 656,
-   "conflicts": 343,
+   "pinned_classes": 680,
+   "forced_classes": 680,
+   "conflicts": 191,
    "c1_gaps": 0,
-   "K": 656,
-   "K_upper": 999,
-   "K_total": 656,
-   "K_greedy": 656,
+   "K": 680,
+   "K_upper": 871,
+   "K_total": 680,
+   "K_greedy": 680,
    "delta_forced": 4,
    "delta_K": 4,
-   "lower_bound": 656,
+   "lower_bound": 680,
    "merges": 0,
    "bad_cover": 0
   }
  ],
  "conflicts": [
-  {
-   "cluster": "R:401F90:ecx",
-   "entities": [
-    "T:401F90"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     12,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1407,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
   {
    "cluster": "M:402C70:this:0x110",
    "entities": [
@@ -293,237 +266,8 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1120,
+    "C1": 999,
     "C2": 0,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:4022C0:ecx",
-   "entities": [
-    "T:4022C0"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     176,
-     4
-    ],
-    [
-     364,
-     4
-    ],
-    [
-     368,
-     4
-    ],
-    [
-     372,
-     4
-    ],
-    [
-     376,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1120,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:402330:ecx",
-   "entities": [
-    "T:402330"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     168,
-     4
-    ],
-    [
-     180,
-     4
-    ],
-    [
-     212,
-     4
-    ],
-    [
-     360,
-     4
-    ],
-    [
-     364,
-     4
-    ],
-    [
-     368,
-     4
-    ],
-    [
-     372,
-     4
-    ],
-    [
-     376,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1120,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "P:401000:0",
-   "entities": [
-    "T:4023F0",
-    "P:401000:0"
-   ],
-   "n_entities": 2,
-   "obs": [
-    [
-     164,
-     4
-    ],
-    [
-     168,
-     4
-    ],
-    [
-     184,
-     4
-    ],
-    [
-     360,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1120,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:4024A0:ecx",
-   "entities": [
-    "T:4024A0"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     12,
-     4
-    ],
-    [
-     144,
-     4
-    ],
-    [
-     148,
-     4
-    ],
-    [
-     152,
-     4
-    ],
-    [
-     156,
-     4
-    ],
-    [
-     160,
-     4
-    ],
-    [
-     164,
-     1
-    ],
-    [
-     164,
-     4
-    ],
-    [
-     168,
-     4
-    ],
-    [
-     176,
-     4
-    ],
-    [
-     180,
-     4
-    ],
-    [
-     184,
-     4
-    ],
-    [
-     188,
-     4
-    ],
-    [
-     192,
-     4
-    ],
-    [
-     348,
-     4
-    ],
-    [
-     352,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1119,
-    "C2": 1,
     "C3": 1597,
     "C4": 1597,
     "C5": 1597,
@@ -616,7 +360,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1126,
+    "C1": 1010,
     "C2": 0,
     "C3": 1597,
     "C4": 1597,
@@ -707,7 +451,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1115,
+    "C1": 993,
     "C2": 0,
     "C3": 1597,
     "C4": 1597,
@@ -758,40 +502,8 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1119,
+    "C1": 997,
     "C2": 0,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:406650:ecx",
-   "entities": [
-    "T:406650"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     16,
-     1
-    ],
-    [
-     76,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1145,
-    "C2": 1,
     "C3": 1597,
     "C4": 1597,
     "C5": 1597,
@@ -836,68 +548,8 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1232,
-    "C2": 0,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:4071C0:ecx",
-   "entities": [
-    "T:4071C0"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     1
-    ],
-    [
-     0,
-     4
-    ],
-    [
-     4,
-     4
-    ],
-    [
-     8,
-     4
-    ],
-    [
-     12,
-     4
-    ],
-    [
-     16,
-     4
-    ],
-    [
-     20,
-     4
-    ],
-    [
-     24,
-     4
-    ],
-    [
-     28,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
     "C1": 1136,
-    "C2": 1,
+    "C2": 0,
     "C3": 1597,
     "C4": 1597,
     "C5": 1597,
@@ -955,157 +607,9 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1120,
+    "C1": 997,
     "C2": 0,
     "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:408000:ecx",
-   "entities": [
-    "T:408000"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     12,
-     4
-    ],
-    [
-     20,
-     4
-    ],
-    [
-     128,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1126,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:4080D0:ecx",
-   "entities": [
-    "T:4080D0"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     12,
-     1
-    ],
-    [
-     20,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1240,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:408930:ecx",
-   "entities": [
-    "T:408930"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     4,
-     4
-    ],
-    [
-     8,
-     4
-    ],
-    [
-     12,
-     4
-    ],
-    [
-     16,
-     4
-    ],
-    [
-     20,
-     4
-    ],
-    [
-     40,
-     4
-    ],
-    [
-     44,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1151,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:411310:ecx",
-   "entities": [
-    "T:411310"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     20,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1250,
-    "C2": 1,
-    "C3": 1319,
     "C4": 1597,
     "C5": 1597,
     "C6": 1597,
@@ -1143,7 +647,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1182,
+    "C1": 1073,
     "C2": 1,
     "C3": 1184,
     "C4": 1597,
@@ -1152,7 +656,13 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "StreamClass"
+   ],
+   "pinned_excluded_by": [
+    "C1"
+   ]
   },
   {
    "cluster": "G:887888",
@@ -1210,7 +720,7 @@
     ]
    },
    "family_domain_sizes": {
-    "C1": 1114,
+    "C1": 993,
     "C2": 0,
     "C3": 1082,
     "C4": 1597,
@@ -1220,6 +730,44 @@
     "C8": 1597
    },
    "reason": "exact_conflict"
+  },
+  {
+   "cluster": "R:41C2E0:ecx",
+   "entities": [
+    "T:41C2E0"
+   ],
+   "n_entities": 1,
+   "obs": [
+    [
+     16,
+     4
+    ],
+    [
+     20,
+     4
+    ]
+   ],
+   "exact": [],
+   "flags": {
+    "empty_domain": true
+   },
+   "family_domain_sizes": {
+    "C1": 1148,
+    "C2": 1,
+    "C3": 1597,
+    "C4": 1597,
+    "C5": 1597,
+    "C6": 1597,
+    "C7": 1597,
+    "C8": 1597
+   },
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "Vector"
+   ],
+   "pinned_excluded_by": [
+    "C1"
+   ]
   },
   {
    "cluster": "G:B0E840",
@@ -1268,7 +816,7 @@
     ]
    },
    "family_domain_sizes": {
-    "C1": 1149,
+    "C1": 1162,
     "C2": 1,
     "C3": 1597,
     "C4": 1597,
@@ -1277,7 +825,10 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "exact_conflict"
+   "reason": "exact_conflict",
+   "c2_pinned": [
+    "BuildingTypeClass"
+   ]
   },
   {
    "cluster": "R:41D540:ecx",
@@ -1323,7 +874,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1131,
+    "C1": 1015,
     "C2": 0,
     "C3": 1597,
     "C4": 1597,
@@ -1409,7 +960,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1131,
+    "C1": 1011,
     "C2": 0,
     "C3": 1224,
     "C4": 1597,
@@ -1500,7 +1051,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1122,
+    "C1": 1003,
     "C2": 0,
     "C3": 1597,
     "C4": 1597,
@@ -1528,36 +1079,8 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1120,
+    "C1": 998,
     "C2": 0,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:424CA0:ecx",
-   "entities": [
-    "T:424CA0"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     384,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1120,
-    "C2": 1,
     "C3": 1597,
     "C4": 1597,
     "C5": 1597,
@@ -1584,36 +1107,8 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1119,
+    "C1": 997,
     "C2": 0,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:425270:ecx",
-   "entities": [
-    "T:425270"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     414,
-     1
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1119,
-    "C2": 1,
     "C3": 1597,
     "C4": 1597,
     "C5": 1597,
@@ -1644,7 +1139,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1182,
+    "C1": 1290,
     "C2": 0,
     "C3": 1597,
     "C4": 1597,
@@ -1692,7 +1187,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1114,
+    "C1": 993,
     "C2": 1,
     "C3": 1225,
     "C4": 1597,
@@ -1701,7 +1196,13 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "AnimFile"
+   ],
+   "pinned_excluded_by": [
+    "C3"
+   ]
   },
   {
    "cluster": "G:87E8B8",
@@ -1787,7 +1288,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1114,
+    "C1": 993,
     "C2": 0,
     "C3": 1478,
     "C4": 1597,
@@ -1821,40 +1322,8 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1206,
+    "C1": 1345,
     "C2": 0,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:42DCA0:ecx",
-   "entities": [
-    "T:42DCA0"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     8,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1182,
-    "C2": 1,
     "C3": 1597,
     "C4": 1597,
     "C5": 1597,
@@ -1908,7 +1377,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1114,
+    "C1": 993,
     "C2": 0,
     "C3": 1597,
     "C4": 1597,
@@ -1941,7 +1410,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1403,
+    "C1": 1303,
     "C2": 1,
     "C3": 1166,
     "C4": 1597,
@@ -1950,7 +1419,13 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "BinkMovieHandle"
+   ],
+   "pinned_excluded_by": [
+    "C3"
+   ]
   },
   {
    "cluster": "M:61E700:this:0x64",
@@ -2001,92 +1476,8 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1135,
+    "C1": 1031,
     "C2": 0,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:437FC0:ecx",
-   "entities": [
-    "T:437FC0"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1206,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:438000:ecx",
-   "entities": [
-    "T:438000"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1206,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:438030:ecx",
-   "entities": [
-    "T:438030"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1206,
-    "C2": 1,
     "C3": 1597,
     "C4": 1597,
     "C5": 1597,
@@ -2128,201 +1519,9 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1182,
+    "C1": 1294,
     "C2": 0,
     "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:43AE10:ecx",
-   "entities": [
-    "T:43AE10"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     4,
-     4
-    ],
-    [
-     8,
-     1
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1182,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:44FEC0:ecx",
-   "entities": [
-    "T:44FEC0"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     4,
-     4
-    ],
-    [
-     52,
-     4
-    ],
-    [
-     540,
-     4
-    ],
-    [
-     1312,
-     4
-    ],
-    [
-     1536,
-     4
-    ],
-    [
-     1632,
-     1
-    ],
-    [
-     1737,
-     1
-    ],
-    [
-     1738,
-     1
-    ],
-    [
-     1739,
-     1
-    ],
-    [
-     1756,
-     1
-    ],
-    [
-     1794,
-     1
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1114,
-    "C2": 1,
-    "C3": 1097,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:450630:ecx",
-   "entities": [
-    "T:450630"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     52,
-     4
-    ],
-    [
-     108,
-     4
-    ],
-    [
-     112,
-     4
-    ],
-    [
-     128,
-     1
-    ],
-    [
-     540,
-     4
-    ],
-    [
-     784,
-     4
-    ],
-    [
-     977,
-     1
-    ],
-    [
-     1312,
-     4
-    ],
-    [
-     1739,
-     1
-    ],
-    [
-     1756,
-     1
-    ],
-    [
-     1758,
-     1
-    ],
-    [
-     1763,
-     1
-    ],
-    [
-     1766,
-     1
-    ],
-    [
-     1768,
-     1
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1114,
-    "C2": 1,
-    "C3": 1097,
     "C4": 1597,
     "C5": 1597,
     "C6": 1597,
@@ -2350,41 +1549,9 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1118,
+    "C1": 995,
     "C2": 0,
     "C3": 1082,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:452940:ecx",
-   "entities": [
-    "T:452940"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     1312,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1118,
-    "C2": 1,
-    "C3": 1213,
     "C4": 1597,
     "C5": 1597,
     "C6": 1597,
@@ -2418,7 +1585,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1117,
+    "C1": 995,
     "C2": 1,
     "C3": 1082,
     "C4": 1597,
@@ -2427,210 +1594,13 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:45AEA0:ecx",
-   "entities": [
-    "T:45AEA0"
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "HouseClass"
    ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1206,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:45AF20:ecx",
-   "entities": [
-    "T:45AF20"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1206,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "M:441F60:this:0x520",
-   "entities": [
-    "T:45F160",
-    "M:441F60:this:0x520"
-   ],
-   "n_entities": 2,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     5364,
-     4
-    ],
-    [
-     5992,
-     1
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1114,
-    "C2": 1,
-    "C3": 1148,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:46B260:ecx",
-   "entities": [
-    "T:46B260"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     304,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1124,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "M:6FC0B0:this:0x2BC",
-   "entities": [
-    "T:471C90",
-    "M:6FC0B0:this:0x2BC"
-   ],
-   "n_entities": 2,
-   "obs": [
-    [
-     52,
-     4
-    ],
-    [
-     60,
-     4
-    ],
-    [
-     64,
-     1
-    ],
-    [
-     72,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1142,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "M:4690B0:this:0x2BC",
-   "entities": [
-    "T:471D40",
-    "M:4690B0:this:0x2BC"
-   ],
-   "n_entities": 2,
-   "obs": [
-    [
-     40,
-     4
-    ],
-    [
-     52,
-     4
-    ],
-    [
-     60,
-     4
-    ],
-    [
-     72,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1142,
-    "C2": 1,
-    "C3": 1224,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
+   "pinned_excluded_by": [
+    "C3"
+   ]
   },
   {
    "cluster": "M:53B080:this:0x2BC",
@@ -2655,7 +1625,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1154,
+    "C1": 1041,
     "C2": 0,
     "C3": 1097,
     "C4": 1597,
@@ -2692,7 +1662,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1144,
+    "C1": 1028,
     "C2": 1,
     "C3": 1161,
     "C4": 1597,
@@ -2701,111 +1671,13 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:4722A0:ecx",
-   "entities": [
-    "T:4722A0"
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "CaptureManagerClass"
    ],
-   "n_entities": 1,
-   "obs": [
-    [
-     52,
-     4
-    ],
-    [
-     60,
-     4
-    ],
-    [
-     64,
-     1
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1145,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:4722C0:ecx",
-   "entities": [
-    "T:4722C0"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     52,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1156,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:4726C0:ecx",
-   "entities": [
-    "T:4726C0"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     52,
-     4
-    ],
-    [
-     60,
-     4
-    ],
-    [
-     64,
-     1
-    ],
-    [
-     68,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1145,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
+   "pinned_excluded_by": [
+    "C3"
+   ]
   },
   {
    "cluster": "M:44D880:this:0x3C8",
@@ -2840,7 +1712,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1140,
+    "C1": 1117,
     "C2": 1,
     "C3": 1161,
     "C4": 1597,
@@ -2849,7 +1721,13 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "HouseClass"
+   ],
+   "pinned_excluded_by": [
+    "C3"
+   ]
   },
   {
    "cluster": "P:502D30:1",
@@ -2902,7 +1780,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1136,
+    "C1": 1030,
     "C2": 0,
     "C3": 1597,
     "C4": 1597,
@@ -2942,7 +1820,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1162,
+    "C1": 1228,
     "C2": 4,
     "C3": 1478,
     "C4": 1597,
@@ -2951,35 +1829,16 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:47B0C0:ecx",
-   "entities": [
-    "T:47B0C0"
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "CCINIClass",
+    "INIClass",
+    "INIEntry@INIClass",
+    "INISection@INIClass"
    ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     1
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1208,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
+   "pinned_excluded_by": [
+    "C3"
+   ]
   },
   {
    "cluster": "P:47B3A0:0",
@@ -3065,7 +1924,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1120,
+    "C1": 1000,
     "C2": 0,
     "C3": 1165,
     "C4": 1597,
@@ -3142,7 +2001,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1118,
+    "C1": 995,
     "C2": 0,
     "C3": 1148,
     "C4": 1597,
@@ -3190,7 +2049,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1124,
+    "C1": 1002,
     "C2": 1,
     "C3": 1097,
     "C4": 1597,
@@ -3199,51 +2058,13 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:483780:ecx",
-   "entities": [
-    "T:483780"
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "CellClass"
    ],
-   "n_entities": 1,
-   "obs": [
-    [
-     36,
-     4
-    ],
-    [
-     68,
-     4
-    ],
-    [
-     228,
-     4
-    ],
-    [
-     284,
-     1
-    ],
-    [
-     286,
-     1
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1122,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
+   "pinned_excluded_by": [
+    "C3"
+   ]
   },
   {
    "cluster": "M:438BF0:this:0x28",
@@ -3329,237 +2150,9 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1114,
+    "C1": 993,
     "C2": 0,
     "C3": 1097,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:484FF0:ecx",
-   "entities": [
-    "T:484FF0"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     68,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1150,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:4865B0:ecx",
-   "entities": [
-    "T:4865B0"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     56,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1150,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:486650:ecx",
-   "entities": [
-    "T:486650"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     56,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1150,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:486670:ecx",
-   "entities": [
-    "T:486670"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     56,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1150,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:486900:ecx",
-   "entities": [
-    "T:486900"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     56,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1150,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:486C50:ecx",
-   "entities": [
-    "T:486C50"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     40,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1173,
-    "C2": 1,
-    "C3": 1300,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:487C70:ecx",
-   "entities": [
-    "T:487C70"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     248,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1125,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:487E00:ecx",
-   "entities": [
-    "T:487E00"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     228,
-     4
-    ],
-    [
-     256,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1124,
-    "C2": 1,
-    "C3": 1597,
     "C4": 1597,
     "C5": 1597,
     "C6": 1597,
@@ -3614,7 +2207,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1157,
+    "C1": 1043,
     "C2": 0,
     "C3": 1597,
     "C4": 1597,
@@ -3651,138 +2244,8 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1183,
+    "C1": 1081,
     "C2": 0,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "M:542EC0:this:0x4",
-   "entities": [
-    "T:48BAA0",
-    "M:542EC0:this:0x4",
-    "M:5F1F00:this:0x4"
-   ],
-   "n_entities": 3,
-   "obs": [
-    [
-     20,
-     4
-    ],
-    [
-     24,
-     4
-    ],
-    [
-     28,
-     4
-    ],
-    [
-     32,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1182,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:490490:ecx",
-   "entities": [
-    "T:490490"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     8,
-     4
-    ],
-    [
-     12,
-     4
-    ],
-    [
-     16,
-     4
-    ],
-    [
-     20,
-     4
-    ],
-    [
-     24,
-     4
-    ],
-    [
-     28,
-     4
-    ],
-    [
-     32,
-     4
-    ],
-    [
-     36,
-     4
-    ],
-    [
-     40,
-     4
-    ],
-    [
-     44,
-     4
-    ],
-    [
-     48,
-     4
-    ],
-    [
-     52,
-     4
-    ],
-    [
-     56,
-     4
-    ],
-    [
-     60,
-     4
-    ],
-    [
-     64,
-     4
-    ],
-    [
-     68,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1119,
-    "C2": 1,
     "C3": 1597,
     "C4": 1597,
     "C5": 1597,
@@ -3840,7 +2303,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1126,
+    "C1": 1013,
     "C2": 0,
     "C3": 1597,
     "C4": 1597,
@@ -3931,7 +2394,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1129,
+    "C1": 1009,
     "C2": 0,
     "C3": 1597,
     "C4": 1597,
@@ -3960,7 +2423,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1206,
+    "C1": 1345,
     "C2": 1,
     "C3": 1597,
     "C4": 1597,
@@ -3969,131 +2432,13 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:49EA10:ecx",
-   "entities": [
-    "T:49EA10"
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "INISectionList"
    ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     4,
-     4
-    ],
-    [
-     8,
-     4
-    ],
-    [
-     12,
-     1
-    ],
-    [
-     16,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1149,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:49FA00:ecx",
-   "entities": [
-    "T:49FA00"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     4,
-     4
-    ],
-    [
-     8,
-     4
-    ],
-    [
-     16,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1149,
-    "C2": 1,
-    "C3": 1558,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:49FA70:ecx",
-   "entities": [
-    "T:49FA70"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     4,
-     4
-    ],
-    [
-     8,
-     4
-    ],
-    [
-     16,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1149,
-    "C2": 1,
-    "C3": 1558,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
+   "pinned_excluded_by": [
+    "C6"
+   ]
   },
   {
    "cluster": "P:4A1DE0:1",
@@ -4130,161 +2475,9 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1163,
+    "C1": 1223,
     "C2": 0,
     "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:4A31F0:ecx",
-   "entities": [
-    "T:4A31F0"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1206,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:4A71A0:ecx",
-   "entities": [
-    "T:4A71A0"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     36,
-     4
-    ],
-    [
-     40,
-     4
-    ],
-    [
-     44,
-     4
-    ],
-    [
-     48,
-     4
-    ],
-    [
-     52,
-     4
-    ],
-    [
-     56,
-     4
-    ],
-    [
-     60,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1129,
-    "C2": 1,
-    "C3": 1213,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:4A7900:ecx",
-   "entities": [
-    "T:4A7900"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     36,
-     4
-    ],
-    [
-     40,
-     4
-    ],
-    [
-     48,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1161,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:4AC2B0:ecx",
-   "entities": [
-    "T:4AC2B0"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     129,
-     1
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1129,
-    "C2": 1,
-    "C3": 1097,
     "C4": 1597,
     "C5": 1597,
     "C6": 1597,
@@ -4337,65 +2530,9 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1124,
+    "C1": 1015,
     "C2": 0,
     "C3": 1097,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:4B4D50:ecx",
-   "entities": [
-    "T:4B4D50"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1206,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:4B4D60:ecx",
-   "entities": [
-    "T:4B4D60"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1206,
-    "C2": 1,
-    "C3": 1597,
     "C4": 1597,
     "C5": 1597,
     "C6": 1597,
@@ -4482,45 +2619,9 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1126,
+    "C1": 1015,
     "C2": 0,
     "C3": 1240,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:4C58C0:ecx",
-   "entities": [
-    "T:4C58C0"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     36,
-     2
-    ],
-    [
-     38,
-     2
-    ],
-    [
-     40,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1173,
-    "C2": 1,
-    "C3": 1597,
     "C4": 1597,
     "C5": 1597,
     "C6": 1597,
@@ -4563,7 +2664,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1145,
+    "C1": 1036,
     "C2": 0,
     "C3": 1597,
     "C4": 1597,
@@ -4598,7 +2699,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1206,
+    "C1": 1345,
     "C2": 0,
     "C3": 1300,
     "C4": 1597,
@@ -4633,7 +2734,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1206,
+    "C1": 1345,
     "C2": 0,
     "C3": 1473,
     "C4": 1597,
@@ -4669,7 +2770,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1133,
+    "C1": 1025,
     "C2": 1,
     "C3": 1161,
     "C4": 1597,
@@ -4678,7 +2779,13 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "FactoryClass"
+   ],
+   "pinned_excluded_by": [
+    "C3"
+   ]
   },
   {
    "cluster": "R:4CD2A0:ecx",
@@ -4756,7 +2863,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1125,
+    "C1": 1010,
     "C2": 0,
     "C3": 1080,
     "C4": 1597,
@@ -4789,7 +2896,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1119,
+    "C1": 995,
     "C2": 1,
     "C3": 1082,
     "C4": 1597,
@@ -4798,47 +2905,13 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:4CE5A0:ecx",
-   "entities": [
-    "T:4CE5A0"
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "JumpjetLocomotionClass"
    ],
-   "n_entities": 1,
-   "obs": [
-    [
-     4,
-     4
-    ],
-    [
-     12,
-     4
-    ],
-    [
-     83,
-     1
-    ],
-    [
-     84,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1127,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
+   "pinned_excluded_by": [
+    "C3"
+   ]
   },
   {
    "cluster": "R:4CFA70:ecx",
@@ -4873,37 +2946,9 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1135,
+    "C1": 1028,
     "C2": 12,
     "C3": 1097,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:4D0490:ecx",
-   "entities": [
-    "T:4D0490"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1206,
-    "C2": 1,
-    "C3": 1597,
     "C4": 1597,
     "C5": 1597,
     "C6": 1597,
@@ -4934,7 +2979,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1133,
+    "C1": 1014,
     "C2": 1,
     "C3": 1151,
     "C4": 1597,
@@ -4943,7 +2988,13 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "CellClass"
+   ],
+   "pinned_excluded_by": [
+    "C3"
+   ]
   },
   {
    "cluster": "P:4AEC60:2",
@@ -4989,7 +3040,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1115,
+    "C1": 994,
     "C2": 0,
     "C3": 1082,
     "C4": 1597,
@@ -5027,41 +3078,9 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1179,
+    "C1": 1286,
     "C2": 0,
     "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:4F3A90:ecx",
-   "entities": [
-    "T:4F3A90"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     8,
-     1
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1185,
-    "C2": 1,
-    "C3": 1473,
     "C4": 1597,
     "C5": 1597,
     "C6": 1597,
@@ -5110,7 +3129,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1118,
+    "C1": 995,
     "C2": 1,
     "C3": 1097,
     "C4": 1597,
@@ -5119,7 +3138,13 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "HouseClass"
+   ],
+   "pinned_excluded_by": [
+    "C3"
+   ]
   },
   {
    "cluster": "M:44EBF0:this:0xEB8",
@@ -5197,7 +3222,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1114,
+    "C1": 993,
     "C2": 1,
     "C3": 1151,
     "C4": 1597,
@@ -5206,7 +3231,13 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "HouseClass"
+   ],
+   "pinned_excluded_by": [
+    "C3"
+   ]
   },
   {
    "cluster": "R:4FB840:ecx",
@@ -5225,7 +3256,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1163,
+    "C1": 1065,
     "C2": 0,
     "C3": 1597,
     "C4": 1597,
@@ -5289,7 +3320,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1114,
+    "C1": 993,
     "C2": 0,
     "C3": 1161,
     "C4": 1597,
@@ -5384,7 +3415,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1114,
+    "C1": 993,
     "C2": 0,
     "C3": 1597,
     "C4": 1597,
@@ -5412,7 +3443,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1114,
+    "C1": 993,
     "C2": 1,
     "C3": 1161,
     "C4": 1597,
@@ -5421,7 +3452,13 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "HouseClass"
+   ],
+   "pinned_excluded_by": [
+    "C3"
+   ]
   },
   {
    "cluster": "R:4FF210:ecx",
@@ -5440,7 +3477,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1114,
+    "C1": 993,
     "C2": 1,
     "C3": 1161,
     "C4": 1597,
@@ -5449,39 +3486,13 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:500300:ecx",
-   "entities": [
-    "T:500300"
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "HouseClass"
    ],
-   "n_entities": 1,
-   "obs": [
-    [
-     48,
-     4
-    ],
-    [
-     22408,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1114,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
+   "pinned_excluded_by": [
+    "C3"
+   ]
   },
   {
    "cluster": "P:501A20:1",
@@ -5540,7 +3551,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1114,
+    "C1": 993,
     "C2": 0,
     "C3": 1473,
     "C4": 1597,
@@ -5626,7 +3637,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1114,
+    "C1": 993,
     "C2": 1,
     "C3": 1097,
     "C4": 1597,
@@ -5635,7 +3646,13 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "HouseClass"
+   ],
+   "pinned_excluded_by": [
+    "C3"
+   ]
   },
   {
    "cluster": "R:509140:ecx",
@@ -5674,7 +3691,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1114,
+    "C1": 993,
     "C2": 1,
     "C3": 1151,
     "C4": 1597,
@@ -5683,7 +3700,13 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "HouseClass"
+   ],
+   "pinned_excluded_by": [
+    "C3"
+   ]
   },
   {
    "cluster": "M:7729F0:this:0xB4",
@@ -5734,40 +3757,8 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1114,
+    "C1": 993,
     "C2": 0,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:50D250:ecx",
-   "entities": [
-    "T:50D250"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     22280,
-     4
-    ],
-    [
-     22292,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1114,
-    "C2": 1,
     "C3": 1597,
     "C4": 1597,
     "C5": 1597,
@@ -5818,7 +3809,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1145,
+    "C1": 1121,
     "C2": 1,
     "C3": 1597,
     "C4": 1597,
@@ -5827,47 +3818,13 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:512BD0:ecx",
-   "entities": [
-    "T:512BD0"
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "TeamTypeVector"
    ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     4,
-     4
-    ],
-    [
-     8,
-     4
-    ],
-    [
-     13,
-     1
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1162,
-    "C2": 1,
-    "C3": 1478,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
+   "pinned_excluded_by": [
+    "C6"
+   ]
   },
   {
    "cluster": "R:512DC0:ecx",
@@ -5910,7 +3867,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1145,
+    "C1": 1121,
     "C2": 1,
     "C3": 1597,
     "C4": 1597,
@@ -5919,55 +3876,13 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:512F20:ecx",
-   "entities": [
-    "T:512F20"
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "InfantryTypeVector"
    ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     4,
-     4
-    ],
-    [
-     8,
-     4
-    ],
-    [
-     13,
-     1
-    ],
-    [
-     16,
-     4
-    ],
-    [
-     20,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1145,
-    "C2": 1,
-    "C3": 1558,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
+   "pinned_excluded_by": [
+    "C6"
+   ]
   },
   {
    "cluster": "R:513190:ecx",
@@ -6010,7 +3925,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1145,
+    "C1": 1121,
     "C2": 1,
     "C3": 1597,
     "C4": 1597,
@@ -6019,287 +3934,13 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:513370:ecx",
-   "entities": [
-    "T:513370"
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "UnitTypeVector"
    ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     4,
-     4
-    ],
-    [
-     8,
-     4
-    ],
-    [
-     13,
-     1
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1162,
-    "C2": 1,
-    "C3": 1478,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:513560:ecx",
-   "entities": [
-    "T:513560"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     4,
-     4
-    ],
-    [
-     8,
-     4
-    ],
-    [
-     12,
-     1
-    ],
-    [
-     13,
-     1
-    ],
-    [
-     16,
-     4
-    ],
-    [
-     20,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1145,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 521,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:5136C0:ecx",
-   "entities": [
-    "T:5136C0"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     4,
-     4
-    ],
-    [
-     8,
-     4
-    ],
-    [
-     13,
-     1
-    ],
-    [
-     16,
-     4
-    ],
-    [
-     20,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1145,
-    "C2": 1,
-    "C3": 1558,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:5137D0:ecx",
-   "entities": [
-    "T:5137D0"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     4,
-     4
-    ],
-    [
-     8,
-     4
-    ],
-    [
-     12,
-     1
-    ],
-    [
-     13,
-     1
-    ],
-    [
-     16,
-     4
-    ],
-    [
-     20,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1145,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 521,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:513860:ecx",
-   "entities": [
-    "T:513860"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     4,
-     4
-    ],
-    [
-     8,
-     4
-    ],
-    [
-     12,
-     1
-    ],
-    [
-     13,
-     1
-    ],
-    [
-     16,
-     4
-    ],
-    [
-     20,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1145,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 521,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:513D20:ecx",
-   "entities": [
-    "T:513D20"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     12,
-     4
-    ],
-    [
-     96,
-     4
-    ],
-    [
-     100,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1125,
-    "C2": 1,
-    "C3": 1097,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
+   "pinned_excluded_by": [
+    "C6"
+   ]
   },
   {
    "cluster": "P:5163B0:1",
@@ -6382,53 +4023,9 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1125,
+    "C1": 1009,
     "C2": 0,
     "C3": 1080,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:5163B0:ecx",
-   "entities": [
-    "T:5163B0"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     4,
-     4
-    ],
-    [
-     12,
-     4
-    ],
-    [
-     24,
-     4
-    ],
-    [
-     28,
-     4
-    ],
-    [
-     32,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1170,
-    "C2": 1,
-    "C3": 1082,
     "C4": 1597,
     "C5": 1597,
     "C6": 1597,
@@ -6514,50 +4111,13 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1114,
+    "C1": 993,
     "C2": 1597,
     "C3": 1082,
     "C4": 1597,
     "C5": 1597,
     "C6": 1597,
     "C7": 1,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "P:42D170:2",
-   "entities": [
-    "T:5221D0",
-    "P:42D170:2"
-   ],
-   "n_entities": 2,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     140,
-     1
-    ],
-    [
-     540,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1119,
-    "C2": 1,
-    "C3": 1097,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
     "C8": 1597
    },
    "reason": "empty_domain"
@@ -6583,7 +4143,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1127,
+    "C1": 1008,
     "C2": 1,
     "C3": 1087,
     "C4": 1597,
@@ -6592,7 +4152,13 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "SlaveManagerClass"
+   ],
+   "pinned_excluded_by": [
+    "C3"
+   ]
   },
   {
    "cluster": "R:522D20:ecx",
@@ -6611,7 +4177,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1206,
+    "C1": 1345,
     "C2": 1,
     "C3": 1087,
     "C4": 1597,
@@ -6620,7 +4186,13 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "SlaveManagerClass"
+   ],
+   "pinned_excluded_by": [
+    "C3"
+   ]
   },
   {
    "cluster": "R:522D30:ecx",
@@ -6639,7 +4211,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1206,
+    "C1": 1345,
     "C2": 1,
     "C3": 1082,
     "C4": 1597,
@@ -6648,7 +4220,13 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "SlaveManagerClass"
+   ],
+   "pinned_excluded_by": [
+    "C3"
+   ]
   },
   {
    "cluster": "R:522FC0:ecx",
@@ -6667,7 +4245,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1206,
+    "C1": 1345,
     "C2": 1,
     "C3": 1097,
     "C4": 1597,
@@ -6676,275 +4254,13 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:5233A0:ecx",
-   "entities": [
-    "T:5233A0"
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "SlaveManagerClass"
    ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1206,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:52B170:ecx",
-   "entities": [
-    "T:52B170"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     4,
-     4
-    ],
-    [
-     12,
-     1
-    ],
-    [
-     16,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1149,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:52B210:ecx",
-   "entities": [
-    "T:52B210"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     4,
-     4
-    ],
-    [
-     12,
-     1
-    ],
-    [
-     16,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1149,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:52B390:ecx",
-   "entities": [
-    "T:52B390"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     4,
-     4
-    ],
-    [
-     12,
-     1
-    ],
-    [
-     16,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1149,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:52B430:ecx",
-   "entities": [
-    "T:52B430"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     4,
-     4
-    ],
-    [
-     12,
-     1
-    ],
-    [
-     16,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1149,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:52B4F0:ecx",
-   "entities": [
-    "T:52B4F0"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     4,
-     4
-    ],
-    [
-     12,
-     1
-    ],
-    [
-     16,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1149,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:52B620:ecx",
-   "entities": [
-    "T:52B620"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     4,
-     4
-    ],
-    [
-     12,
-     1
-    ],
-    [
-     16,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1149,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
+   "pinned_excluded_by": [
+    "C3"
+   ]
   },
   {
    "cluster": "G:87F680",
@@ -6985,7 +4301,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1149,
+    "C1": 1162,
     "C2": 0,
     "C3": 1597,
     "C4": 1597,
@@ -7044,40 +4360,8 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1198,
+    "C1": 1338,
     "C2": 0,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:544C80:ecx",
-   "entities": [
-    "T:544C80"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     164,
-     4
-    ],
-    [
-     756,
-     1
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1119,
-    "C2": 1,
     "C3": 1597,
     "C4": 1597,
     "C5": 1597,
@@ -7105,7 +4389,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1206,
+    "C1": 1345,
     "C2": 1,
     "C3": 1148,
     "C4": 1597,
@@ -7114,7 +4398,13 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "HouseClass"
+   ],
+   "pinned_excluded_by": [
+    "C3"
+   ]
   },
   {
    "cluster": "R:5471F0:ecx",
@@ -7133,7 +4423,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1206,
+    "C1": 1345,
     "C2": 1,
     "C3": 1148,
     "C4": 1597,
@@ -7142,39 +4432,13 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:547CF0:ecx",
-   "entities": [
-    "T:547CF0"
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "CellClass"
    ],
-   "n_entities": 1,
-   "obs": [
-    [
-     700,
-     4
-    ],
-    [
-     752,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1119,
-    "C2": 1,
-    "C3": 1148,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
+   "pinned_excluded_by": [
+    "C3"
+   ]
   },
   {
    "cluster": "R:54B980:ecx",
@@ -7225,7 +4489,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1125,
+    "C1": 1006,
     "C2": 1,
     "C3": 1080,
     "C4": 1597,
@@ -7234,7 +4498,91 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "HouseClass"
+   ],
+   "pinned_excluded_by": [
+    "C3"
+   ]
+  },
+  {
+   "cluster": "R:54BFF0:ecx",
+   "entities": [
+    "T:54BFF0"
+   ],
+   "n_entities": 1,
+   "obs": [
+    [
+     12,
+     4
+    ],
+    [
+     28,
+     4
+    ],
+    [
+     32,
+     4
+    ],
+    [
+     44,
+     4
+    ],
+    [
+     64,
+     4
+    ],
+    [
+     68,
+     4
+    ],
+    [
+     80,
+     4
+    ],
+    [
+     112,
+     4
+    ],
+    [
+     116,
+     4
+    ],
+    [
+     120,
+     4
+    ],
+    [
+     124,
+     4
+    ],
+    [
+     128,
+     4
+    ]
+   ],
+   "exact": [],
+   "flags": {
+    "empty_domain": true
+   },
+   "family_domain_sizes": {
+    "C1": 1005,
+    "C2": 1,
+    "C3": 1097,
+    "C4": 1597,
+    "C5": 1597,
+    "C6": 1597,
+    "C7": 1597,
+    "C8": 1597
+   },
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "MovementClass"
+   ],
+   "pinned_excluded_by": [
+    "C1"
+   ]
   },
   {
    "cluster": "P:53BAD0:0",
@@ -7284,7 +4632,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1119,
+    "C1": 996,
     "C2": 0,
     "C3": 1216,
     "C4": 1597,
@@ -7372,7 +4720,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1125,
+    "C1": 1013,
     "C2": 1,
     "C3": 1597,
     "C4": 1597,
@@ -7381,79 +4729,13 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:554100:ecx",
-   "entities": [
-    "T:554100"
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "TimerClass"
    ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     4,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1198,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:554150:ecx",
-   "entities": [
-    "T:554150"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     4,
-     4
-    ],
-    [
-     8,
-     4
-    ],
-    [
-     12,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1160,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
+   "pinned_excluded_by": [
+    "C1"
+   ]
   },
   {
    "cluster": "P:600630:1",
@@ -7510,7 +4792,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1130,
+    "C1": 1039,
     "C2": 0,
     "C3": 1300,
     "C4": 1597,
@@ -7540,7 +4822,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1560,
+    "C1": 1540,
     "C2": 0,
     "C3": 1597,
     "C4": 1597,
@@ -7550,6 +4832,62 @@
     "C8": 1597
    },
    "reason": "empty_domain"
+  },
+  {
+   "cluster": "P:5D4510:0",
+   "entities": [
+    "T:55E420",
+    "P:5D4510:0",
+    "P:7CA405:3"
+   ],
+   "n_entities": 3,
+   "obs": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     4
+    ],
+    [
+     4,
+     4
+    ],
+    [
+     16,
+     4
+    ],
+    [
+     44,
+     4
+    ],
+    [
+     80,
+     4
+    ]
+   ],
+   "exact": [],
+   "flags": {
+    "empty_domain": true
+   },
+   "family_domain_sizes": {
+    "C1": 1025,
+    "C2": 1,
+    "C3": 1572,
+    "C4": 1597,
+    "C5": 1597,
+    "C6": 1597,
+    "C7": 1597,
+    "C8": 1597
+   },
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "Chat"
+   ],
+   "pinned_excluded_by": [
+    "C1"
+   ]
   },
   {
    "cluster": "R:589100:ecx",
@@ -7592,7 +4930,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1145,
+    "C1": 1121,
     "C2": 1,
     "C3": 1597,
     "C4": 1597,
@@ -7601,48 +4939,13 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "M:589740:this:0x4",
-   "entities": [
-    "T:58AD10",
-    "M:589740:this:0x4"
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "Subzone"
    ],
-   "n_entities": 2,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     4,
-     4
-    ],
-    [
-     8,
-     4
-    ],
-    [
-     13,
-     1
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1162,
-    "C2": 1,
-    "C3": 1478,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
+   "pinned_excluded_by": [
+    "C6"
+   ]
   },
   {
    "cluster": "R:58C070:ecx",
@@ -7677,7 +4980,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1130,
+    "C1": 1037,
     "C2": 1,
     "C3": 1597,
     "C4": 1597,
@@ -7686,75 +4989,13 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:58D0A0:ecx",
-   "entities": [
-    "T:58D0A0"
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "TileNode"
    ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     2
-    ],
-    [
-     2,
-     2
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1206,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:58D620:ecx",
-   "entities": [
-    "T:58D620"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     12,
-     4
-    ],
-    [
-     26,
-     1
-    ],
-    [
-     56,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1138,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
+   "pinned_excluded_by": [
+    "C6"
+   ]
   },
   {
    "cluster": "P:42FCB0:5",
@@ -7787,7 +5028,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1129,
+    "C1": 1039,
     "C2": 0,
     "C3": 1597,
     "C4": 1597,
@@ -7820,7 +5061,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1155,
+    "C1": 1180,
     "C2": 1,
     "C3": 1597,
     "C4": 1597,
@@ -7829,79 +5070,13 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:5A76E0:ecx",
-   "entities": [
-    "T:5A76E0"
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "Random"
    ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     4,
-     4
-    ],
-    [
-     8,
-     4
-    ],
-    [
-     12,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1160,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:5AC230:ecx",
-   "entities": [
-    "T:5AC230"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     2
-    ],
-    [
-     2,
-     2
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1206,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
+   "pinned_excluded_by": [
+    "C1"
+   ]
   },
   {
    "cluster": "R:5AE220:ecx",
@@ -7948,7 +5123,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1124,
+    "C1": 1003,
     "C2": 1,
     "C3": 1165,
     "C4": 1597,
@@ -7957,7 +5132,13 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "CampaignClass"
+   ],
+   "pinned_excluded_by": [
+    "C3"
+   ]
   },
   {
    "cluster": "P:5AE220:1",
@@ -7987,7 +5168,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1128,
+    "C1": 1007,
     "C2": 0,
     "C3": 1597,
     "C4": 1597,
@@ -8052,7 +5233,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1129,
+    "C1": 1037,
     "C2": 1,
     "C3": 1080,
     "C4": 1597,
@@ -8061,438 +5242,13 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:5B3F50:ecx",
-   "entities": [
-    "T:5B3F50"
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "BuildingClass"
    ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     4,
-     4
-    ],
-    [
-     8,
-     4
-    ],
-    [
-     12,
-     4
-    ],
-    [
-     18,
-     1
-    ],
-    [
-     32,
-     4
-    ],
-    [
-     36,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1131,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 521,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "P:7CA489:3",
-   "entities": [
-    "T:5B59B0",
-    "T:5B5AD0",
-    "P:7CA489:3"
-   ],
-   "n_entities": 3,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     8,
-     1
-    ],
-    [
-     9,
-     1
-    ],
-    [
-     72,
-     4
-    ],
-    [
-     76,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1128,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "P:7DD0F8:3",
-   "entities": [
-    "T:5B9550",
-    "P:7DD0F8:3"
-   ],
-   "n_entities": 2,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     9,
-     1
-    ],
-    [
-     76,
-     4
-    ],
-    [
-     80,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1128,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:5B9680:ecx",
-   "entities": [
-    "T:5B9680"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     9,
-     1
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1182,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:5B96B0:ecx",
-   "entities": [
-    "T:5B96B0"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     9,
-     1
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1182,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:5B96E0:ecx",
-   "entities": [
-    "T:5B96E0"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     9,
-     1
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1182,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:5B9710:ecx",
-   "entities": [
-    "T:5B9710"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     9,
-     1
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1182,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:5B9750:ecx",
-   "entities": [
-    "T:5B9750"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     9,
-     1
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1182,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:5BA970:ecx",
-   "entities": [
-    "T:5BA970"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1206,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:5BB6E0:ecx",
-   "entities": [
-    "T:5BB6E0"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     4,
-     4
-    ],
-    [
-     8,
-     4
-    ],
-    [
-     12,
-     4
-    ],
-    [
-     16,
-     4
-    ],
-    [
-     20,
-     4
-    ],
-    [
-     24,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1139,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:5BBEE0:ecx",
-   "entities": [
-    "T:5BBEE0"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     4,
-     4
-    ],
-    [
-     8,
-     4
-    ],
-    [
-     12,
-     4
-    ],
-    [
-     16,
-     4
-    ],
-    [
-     20,
-     4
-    ],
-    [
-     24,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1139,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
+   "pinned_excluded_by": [
+    "C3"
+   ]
   },
   {
    "cluster": "P:5BD360:0",
@@ -8549,36 +5305,8 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1114,
+    "C1": 993,
     "C2": 0,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:5C3EC0:ecx",
-   "entities": [
-    "T:5C3EC0"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     64,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1149,
-    "C2": 1,
     "C3": 1597,
     "C4": 1597,
     "C5": 1597,
@@ -8613,7 +5341,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1147,
+    "C1": 1040,
     "C2": 0,
     "C3": 1597,
     "C4": 1597,
@@ -8705,7 +5433,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1117,
+    "C1": 995,
     "C2": 0,
     "C3": 1165,
     "C4": 1597,
@@ -8740,7 +5468,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1171,
+    "C1": 1065,
     "C2": 0,
     "C3": 1300,
     "C4": 1597,
@@ -8801,7 +5529,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1186,
+    "C1": 1091,
     "C2": 1,
     "C3": 1597,
     "C4": 1597,
@@ -8810,7 +5538,13 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "FontClass"
+   ],
+   "pinned_excluded_by": [
+    "C1"
+   ]
   },
   {
    "cluster": "P:407000:0",
@@ -8875,100 +5609,8 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1129,
+    "C1": 1047,
     "C2": 0,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:5F19E0:ecx",
-   "entities": [
-    "T:5F19E0"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     52,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1156,
-    "C2": 1,
-    "C3": 1572,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:600670:ecx",
-   "entities": [
-    "T:600670"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     4,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1198,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:600680:ecx",
-   "entities": [
-    "T:600680"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     4,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1198,
-    "C2": 1,
     "C3": 1597,
     "C4": 1597,
     "C5": 1597,
@@ -9027,80 +5669,8 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1130,
+    "C1": 1050,
     "C2": 0,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:625440:ecx",
-   "entities": [
-    "T:625440"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     4,
-     4
-    ],
-    [
-     8,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1179,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:625990:ecx",
-   "entities": [
-    "T:625990"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     4,
-     4
-    ],
-    [
-     8,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1179,
-    "C2": 1,
     "C3": 1597,
     "C4": 1597,
     "C5": 1597,
@@ -9151,7 +5721,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1145,
+    "C1": 1121,
     "C2": 1,
     "C3": 1597,
     "C4": 1597,
@@ -9160,55 +5730,13 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:628D10:ecx",
-   "entities": [
-    "T:628D10"
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "FileExtension"
    ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     4,
-     4
-    ],
-    [
-     8,
-     4
-    ],
-    [
-     13,
-     1
-    ],
-    [
-     16,
-     4
-    ],
-    [
-     20,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1145,
-    "C2": 1,
-    "C3": 1558,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
+   "pinned_excluded_by": [
+    "C6"
+   ]
   },
   {
    "cluster": "P:4F4C70:1",
@@ -9228,7 +5756,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1125,
+    "C1": 1003,
     "C2": 1,
     "C3": 1597,
     "C4": 1597,
@@ -9237,7 +5765,13 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "FileExtension"
+   ],
+   "pinned_excluded_by": [
+    "C1"
+   ]
   },
   {
    "cluster": "R:62A8E0:ecx",
@@ -9285,7 +5819,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1128,
+    "C1": 1017,
     "C2": 1,
     "C3": 1082,
     "C4": 1597,
@@ -9294,7 +5828,13 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "ParasiteClass"
+   ],
+   "pinned_excluded_by": [
+    "C3"
+   ]
   },
   {
    "cluster": "M:62E840:this:0xC0",
@@ -9359,7 +5899,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1122,
+    "C1": 1002,
     "C2": 0,
     "C3": 1597,
     "C4": 1597,
@@ -9422,7 +5962,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1117,
+    "C1": 995,
     "C2": 0,
     "C3": 1097,
     "C4": 1597,
@@ -9485,7 +6025,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1123,
+    "C1": 1004,
     "C2": 0,
     "C3": 1213,
     "C4": 1597,
@@ -9518,7 +6058,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1576,
+    "C1": 1585,
     "C2": 0,
     "C3": 1213,
     "C4": 1597,
@@ -9528,6 +6068,56 @@
     "C8": 1597
    },
    "reason": "empty_domain"
+  },
+  {
+   "cluster": "R:635060:ecx",
+   "entities": [
+    "T:635060"
+   ],
+   "n_entities": 1,
+   "obs": [
+    [
+     28,
+     1
+    ],
+    [
+     36,
+     4
+    ],
+    [
+     168,
+     4
+    ],
+    [
+     176,
+     4
+    ],
+    [
+     180,
+     4
+    ]
+   ],
+   "exact": [],
+   "flags": {
+    "empty_domain": true
+   },
+   "family_domain_sizes": {
+    "C1": 1006,
+    "C2": 1,
+    "C3": 1597,
+    "C4": 1597,
+    "C5": 1597,
+    "C6": 1597,
+    "C7": 1597,
+    "C8": 1597
+   },
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "FactoryClass"
+   ],
+   "pinned_excluded_by": [
+    "C1"
+   ]
   },
   {
    "cluster": "R:635F20:ecx",
@@ -9602,7 +6192,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1125,
+    "C1": 1005,
     "C2": 1,
     "C3": 1597,
     "C4": 1597,
@@ -9611,7 +6201,13 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "ScriptAction"
+   ],
+   "pinned_excluded_by": [
+    "C6"
+   ]
   },
   {
    "cluster": "R:4C6CB0:ecx",
@@ -9639,37 +6235,9 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1199,
+    "C1": 1338,
     "C2": 0,
     "C3": 1081,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:6406F0:ecx",
-   "entities": [
-    "T:6406F0"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1206,
-    "C2": 1,
-    "C3": 1597,
     "C4": 1597,
     "C5": 1597,
     "C6": 1597,
@@ -9695,7 +6263,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1206,
+    "C1": 1345,
     "C2": 1,
     "C3": 1166,
     "C4": 1597,
@@ -9704,91 +6272,13 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:6425F0:ecx",
-   "entities": [
-    "T:6425F0"
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "Tactical"
    ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1206,
-    "C2": 1,
-    "C3": 1166,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:642B20:ecx",
-   "entities": [
-    "T:642B20"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     128,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1132,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:642B30:ecx",
-   "entities": [
-    "T:642B30"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     128,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1132,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
+   "pinned_excluded_by": [
+    "C3"
+   ]
   },
   {
    "cluster": "P:643AE0:1",
@@ -9853,64 +6343,8 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1124,
+    "C1": 1008,
     "C2": 0,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:643E60:ecx",
-   "entities": [
-    "T:643E60"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     100,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1135,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:643E70:ecx",
-   "entities": [
-    "T:643E70"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     100,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1135,
-    "C2": 1,
     "C3": 1597,
     "C4": 1597,
     "C5": 1597,
@@ -9961,7 +6395,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1145,
+    "C1": 1121,
     "C2": 1,
     "C3": 1597,
     "C4": 1597,
@@ -9970,7 +6404,13 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "RadarHashVector"
+   ],
+   "pinned_excluded_by": [
+    "C6"
+   ]
   },
   {
    "cluster": "R:659650:ecx",
@@ -10050,37 +6490,9 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1122,
+    "C1": 1003,
     "C2": 0,
     "C3": 1212,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:660840:ecx",
-   "entities": [
-    "T:660840"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1206,
-    "C2": 1,
-    "C3": 1478,
     "C4": 1597,
     "C5": 1597,
     "C6": 1597,
@@ -10166,7 +6578,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1114,
+    "C1": 993,
     "C2": 1,
     "C3": 1597,
     "C4": 1597,
@@ -10175,7 +6587,13 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "RulesClass"
+   ],
+   "pinned_excluded_by": [
+    "C6"
+   ]
   },
   {
    "cluster": "P:664D20:0",
@@ -10257,7 +6675,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1114,
+    "C1": 993,
     "C2": 0,
     "C3": 1478,
     "C4": 1597,
@@ -10309,7 +6727,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1145,
+    "C1": 1121,
     "C2": 1,
     "C3": 1597,
     "C4": 1597,
@@ -10318,55 +6736,13 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:67B100:ecx",
-   "entities": [
-    "T:67B100"
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "SmudgeTypeVector"
    ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     4,
-     4
-    ],
-    [
-     8,
-     4
-    ],
-    [
-     13,
-     1
-    ],
-    [
-     16,
-     4
-    ],
-    [
-     20,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1145,
-    "C2": 1,
-    "C3": 1558,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
+   "pinned_excluded_by": [
+    "C6"
+   ]
   },
   {
    "cluster": "R:67B370:ecx",
@@ -10409,7 +6785,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1145,
+    "C1": 1121,
     "C2": 1,
     "C3": 1597,
     "C4": 1597,
@@ -10418,7 +6794,13 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "TerrainTypeVector"
+   ],
+   "pinned_excluded_by": [
+    "C6"
+   ]
   },
   {
    "cluster": "R:67C280:ecx",
@@ -10461,7 +6843,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1145,
+    "C1": 1121,
     "C2": 1,
     "C3": 1597,
     "C4": 1597,
@@ -10470,119 +6852,13 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:67FDD0:ecx",
-   "entities": [
-    "T:67FDD0"
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "SmudgeTypeList"
    ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1206,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:681120:ecx",
-   "entities": [
-    "T:681120"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     392,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1120,
-    "C2": 2,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:681140:ecx",
-   "entities": [
-    "T:681140"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     396,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1115,
-    "C2": 2,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:6812D0:ecx",
-   "entities": [
-    "T:6812D0"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     1008,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1119,
-    "C2": 2,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
+   "pinned_excluded_by": [
+    "C6"
+   ]
   },
   {
    "cluster": "R:6812E0:ecx",
@@ -10624,7 +6900,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1114,
+    "C1": 993,
     "C2": 1,
     "C3": 1597,
     "C4": 1597,
@@ -10633,35 +6909,13 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:683030:ecx",
-   "entities": [
-    "T:683030"
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "GameOptions"
    ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1206,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
+   "pinned_excluded_by": [
+    "C1"
+   ]
   },
   {
    "cluster": "P:4A1DB0:2",
@@ -10741,7 +6995,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1114,
+    "C1": 993,
     "C2": 1,
     "C3": 1597,
     "C4": 1597,
@@ -10750,7 +7004,13 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "Power"
+   ],
+   "pinned_excluded_by": [
+    "C1"
+   ]
   },
   {
    "cluster": "R:68C200:ecx",
@@ -10793,7 +7053,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1145,
+    "C1": 1121,
     "C2": 1,
     "C3": 1597,
     "C4": 1597,
@@ -10802,7 +7062,13 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "TechnoTypeVector"
+   ],
+   "pinned_excluded_by": [
+    "C6"
+   ]
   },
   {
    "cluster": "R:68C710:ecx",
@@ -10873,7 +7139,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1118,
+    "C1": 996,
     "C2": 1,
     "C3": 1597,
     "C4": 1597,
@@ -10882,7 +7148,13 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "FontClass"
+   ],
+   "pinned_excluded_by": [
+    "C1"
+   ]
   },
   {
    "cluster": "P:690640:0",
@@ -10923,7 +7195,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1144,
+    "C1": 1115,
     "C2": 1,
     "C3": 1597,
     "C4": 1597,
@@ -10932,7 +7204,13 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "ScoreScreen"
+   ],
+   "pinned_excluded_by": [
+    "C6"
+   ]
   },
   {
    "cluster": "M:6E9140:this:0x28",
@@ -10962,7 +7240,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1164,
+    "C1": 1062,
     "C2": 0,
     "C3": 1597,
     "C4": 1597,
@@ -11027,7 +7305,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1122,
+    "C1": 1000,
     "C2": 0,
     "C3": 1597,
     "C4": 1597,
@@ -11073,7 +7351,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1128,
+    "C1": 1040,
     "C2": 0,
     "C3": 1597,
     "C4": 1597,
@@ -11161,7 +7439,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1114,
+    "C1": 993,
     "C2": 1,
     "C3": 1597,
     "C4": 1597,
@@ -11170,7 +7448,13 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "ObjectManager"
+   ],
+   "pinned_excluded_by": [
+    "C6"
+   ]
   },
   {
    "cluster": "P:5275C0:7",
@@ -11226,7 +7510,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1140,
+    "C1": 1100,
     "C2": 1,
     "C3": 1597,
     "C4": 1597,
@@ -11235,7 +7519,13 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "GameSetup"
+   ],
+   "pinned_excluded_by": [
+    "C1"
+   ]
   },
   {
    "cluster": "G:A8B250",
@@ -11261,95 +7551,8 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1165,
+    "C1": 1085,
     "C2": 0,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "P:69D8C0:0",
-   "entities": [
-    "T:69D8C0",
-    "T:69D960",
-    "T:69D9E0",
-    "P:69D8C0:0",
-    "T:69DB30",
-    "P:69DB30:0",
-    "P:69D8C0:2"
-   ],
-   "n_entities": 7,
-   "obs": [
-    [
-     0,
-     1
-    ],
-    [
-     44,
-     4
-    ],
-    [
-     48,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1133,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:69E580:ecx",
-   "entities": [
-    "T:69E580",
-    "T:69E740"
-   ],
-   "n_entities": 2,
-   "obs": [
-    [
-     0,
-     2
-    ],
-    [
-     8,
-     4
-    ],
-    [
-     12,
-     4
-    ],
-    [
-     16,
-     1
-    ],
-    [
-     20,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1145,
-    "C2": 1,
     "C3": 1597,
     "C4": 1597,
     "C5": 1597,
@@ -11403,7 +7606,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1124,
+    "C1": 1015,
     "C2": 0,
     "C3": 1097,
     "C4": 1597,
@@ -11438,77 +7641,9 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1139,
+    "C1": 1029,
     "C2": 0,
     "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "G:880D2C",
-   "entities": [
-    "T:6ABAC0",
-    "G:880D2C",
-    "G:881CC0",
-    "G:882C54",
-    "G:883BE8"
-   ],
-   "n_entities": 5,
-   "obs": [
-    [
-     84,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1140,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:6AF580:ecx",
-   "entities": [
-    "T:6AF580"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     36,
-     4
-    ],
-    [
-     60,
-     4
-    ],
-    [
-     72,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1145,
-    "C2": 1,
-    "C3": 1300,
     "C4": 1597,
     "C5": 1597,
     "C6": 1597,
@@ -11542,7 +7677,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1145,
+    "C1": 1037,
     "C2": 1,
     "C3": 1097,
     "C4": 1597,
@@ -11551,7 +7686,13 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "FactoryClass"
+   ],
+   "pinned_excluded_by": [
+    "C3"
+   ]
   },
   {
    "cluster": "R:6B0750:ecx",
@@ -11570,7 +7711,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1180,
+    "C1": 1088,
     "C2": 1,
     "C3": 1097,
     "C4": 1597,
@@ -11579,43 +7720,13 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:6B0A20:ecx",
-   "entities": [
-    "T:6B0A20"
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "FactoryClass"
    ],
-   "n_entities": 1,
-   "obs": [
-    [
-     48,
-     4
-    ],
-    [
-     60,
-     4
-    ],
-    [
-     72,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1143,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
+   "pinned_excluded_by": [
+    "C3"
+   ]
   },
   {
    "cluster": "R:6B0C80:ecx",
@@ -11646,7 +7757,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1132,
+    "C1": 1017,
     "C2": 1,
     "C3": 1082,
     "C4": 1597,
@@ -11655,7 +7766,13 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "FactoryClass"
+   ],
+   "pinned_excluded_by": [
+    "C3"
+   ]
   },
   {
    "cluster": "R:6B1020:ecx",
@@ -11686,7 +7803,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1128,
+    "C1": 1016,
     "C2": 1,
     "C3": 1097,
     "C4": 1597,
@@ -11695,59 +7812,13 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:6B25C0:ecx",
-   "entities": [
-    "T:6B25C0"
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "SlaveManagerClass"
    ],
-   "n_entities": 1,
-   "obs": [
-    [
-     36,
-     2
-    ],
-    [
-     38,
-     2
-    ],
-    [
-     56,
-     4
-    ],
-    [
-     68,
-     4
-    ],
-    [
-     228,
-     4
-    ],
-    [
-     232,
-     4
-    ],
-    [
-     320,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1121,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
+   "pinned_excluded_by": [
+    "C3"
+   ]
   },
   {
    "cluster": "M:6B4BE0:this:0xAC",
@@ -11776,7 +7847,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1119,
+    "C1": 997,
     "C2": 0,
     "C3": 1597,
     "C4": 1597,
@@ -11831,218 +7902,9 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1130,
+    "C1": 1011,
     "C2": 0,
     "C3": 1097,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "M:6FC0B0:this:0x2D0",
-   "entities": [
-    "T:6B7D30",
-    "M:6FC0B0:this:0x2D0"
-   ],
-   "n_entities": 2,
-   "obs": [
-    [
-     60,
-     4
-    ],
-    [
-     72,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1145,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:6B7D50:ecx",
-   "entities": [
-    "T:6B7D50"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     60,
-     4
-    ],
-    [
-     72,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1145,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:6B83A0:ecx",
-   "entities": [
-    "T:6B83A0"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     4,
-     4
-    ],
-    [
-     8,
-     4
-    ],
-    [
-     12,
-     1
-    ],
-    [
-     13,
-     1
-    ],
-    [
-     16,
-     4
-    ],
-    [
-     20,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1145,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 521,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:6BAC40:ecx",
-   "entities": [
-    "T:6BAC40"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     4,
-     4
-    ],
-    [
-     8,
-     4
-    ],
-    [
-     12,
-     4
-    ],
-    [
-     20,
-     1
-    ],
-    [
-     24,
-     4
-    ],
-    [
-     48,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1130,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:6C95E0:ecx",
-   "entities": [
-    "T:6C95E0"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     4,
-     4
-    ],
-    [
-     8,
-     4
-    ],
-    [
-     12,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1160,
-    "C2": 1,
-    "C3": 1597,
     "C4": 1597,
     "C5": 1597,
     "C6": 1597,
@@ -12133,7 +7995,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1129,
+    "C1": 1005,
     "C2": 0,
     "C3": 1597,
     "C4": 1597,
@@ -12214,7 +8076,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1130,
+    "C1": 1005,
     "C2": 1,
     "C3": 1161,
     "C4": 1597,
@@ -12223,7 +8085,13 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "SuperClass"
+   ],
+   "pinned_excluded_by": [
+    "C3"
+   ]
   },
   {
    "cluster": "R:6CBCA0:ecx",
@@ -12287,60 +8155,8 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1130,
+    "C1": 1005,
     "C2": 0,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:6D1810:ecx",
-   "entities": [
-    "T:6D1810"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     4,
-     4
-    ],
-    [
-     8,
-     4
-    ],
-    [
-     12,
-     4
-    ],
-    [
-     16,
-     4
-    ],
-    [
-     20,
-     4
-    ],
-    [
-     24,
-     1
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1140,
-    "C2": 1,
     "C3": 1597,
     "C4": 1597,
     "C5": 1597,
@@ -12414,7 +8230,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1114,
+    "C1": 993,
     "C2": 0,
     "C3": 1137,
     "C4": 1597,
@@ -12442,7 +8258,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1130,
+    "C1": 1008,
     "C2": 1,
     "C3": 1161,
     "C4": 1597,
@@ -12451,7 +8267,13 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "Tactical"
+   ],
+   "pinned_excluded_by": [
+    "C3"
+   ]
   },
   {
    "cluster": "P:6DA5C0:0",
@@ -12496,60 +8318,8 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1114,
+    "C1": 993,
     "C2": 0,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:6DA080:ecx",
-   "entities": [
-    "T:6DA080"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     176,
-     4
-    ],
-    [
-     180,
-     4
-    ],
-    [
-     3472,
-     4
-    ],
-    [
-     3476,
-     4
-    ],
-    [
-     3480,
-     4
-    ],
-    [
-     3484,
-     4
-    ],
-    [
-     3504,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1114,
-    "C2": 1,
     "C3": 1597,
     "C4": 1597,
     "C5": 1597,
@@ -12604,7 +8374,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1128,
+    "C1": 1005,
     "C2": 1,
     "C3": 1080,
     "C4": 1597,
@@ -12613,7 +8383,13 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "TerrainClass"
+   ],
+   "pinned_excluded_by": [
+    "C3"
+   ]
   },
   {
    "cluster": "P:68BCC0:2",
@@ -12641,7 +8417,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1129,
+    "C1": 1008,
     "C2": 0,
     "C3": 1597,
     "C4": 1597,
@@ -12675,7 +8451,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1129,
+    "C1": 1008,
     "C2": 0,
     "C3": 1597,
     "C4": 1597,
@@ -12703,7 +8479,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1131,
+    "C1": 1008,
     "C2": 1,
     "C3": 1082,
     "C4": 1597,
@@ -12712,7 +8488,13 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "TActionClass"
+   ],
+   "pinned_excluded_by": [
+    "C3"
+   ]
   },
   {
    "cluster": "P:6CB560:4",
@@ -12733,36 +8515,8 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1131,
+    "C1": 1008,
     "C2": 0,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:6E38F0:ecx",
-   "entities": [
-    "T:6E38F0"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     68,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1150,
-    "C2": 1,
     "C3": 1597,
     "C4": 1597,
     "C5": 1597,
@@ -12793,7 +8547,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1130,
+    "C1": 1046,
     "C2": 1,
     "C3": 1081,
     "C4": 1597,
@@ -12802,135 +8556,13 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:6E6E20:ecx",
-   "entities": [
-    "T:6E6E20"
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "TActionClass"
    ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     4,
-     1
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1204,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:6E6F20:ecx",
-   "entities": [
-    "T:6E6F20"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     4,
-     1
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1204,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:6E6FF0:ecx",
-   "entities": [
-    "T:6E6FF0"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     4,
-     1
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1204,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:6E7A80:ecx",
-   "entities": [
-    "T:6E7A80"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     4,
-     1
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1204,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
+   "pinned_excluded_by": [
+    "C3"
+   ]
   },
   {
    "cluster": "M:4151E0:this:0x5D4",
@@ -13016,50 +8648,9 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1129,
+    "C1": 1005,
     "C2": 0,
     "C3": 1082,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "M:6EA500:this:0x24",
-   "entities": [
-    "M:6EA500:this:0x24",
-    "T:6F1870"
-   ],
-   "n_entities": 2,
-   "obs": [
-    [
-     156,
-     4
-    ],
-    [
-     179,
-     1
-    ],
-    [
-     228,
-     4
-    ],
-    [
-     245,
-     1
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1124,
-    "C2": 1,
-    "C3": 1597,
     "C4": 1597,
     "C5": 1597,
     "C6": 1597,
@@ -13086,7 +8677,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1140,
+    "C1": 1031,
     "C2": 1,
     "C3": 1082,
     "C4": 1597,
@@ -13095,17 +8686,27 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "TeamClass"
+   ],
+   "pinned_excluded_by": [
+    "C3"
+   ]
   },
   {
-   "cluster": "R:6EF5F0:ecx",
+   "cluster": "R:6F1E20:ecx",
    "entities": [
-    "T:6EF5F0"
+    "T:6F1E20"
    ],
    "n_entities": 1,
    "obs": [
     [
-     84,
+     169,
+     1
+    ],
+    [
+     180,
      4
     ]
    ],
@@ -13114,7 +8715,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1140,
+    "C1": 1008,
     "C2": 1,
     "C3": 1597,
     "C4": 1597,
@@ -13123,79 +8724,13 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:6F18E0:ecx",
-   "entities": [
-    "T:6F18E0"
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "TriggerClass"
    ],
-   "n_entities": 1,
-   "obs": [
-    [
-     216,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1127,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:6F1FA0:ecx",
-   "entities": [
-    "T:6F1FA0"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     228,
-     4
-    ],
-    [
-     236,
-     4
-    ],
-    [
-     240,
-     1
-    ],
-    [
-     241,
-     1
-    ],
-    [
-     246,
-     1
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1124,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
+   "pinned_excluded_by": [
+    "C1"
+   ]
   },
   {
    "cluster": "R:6F47A0:ecx",
@@ -13222,7 +8757,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1117,
+    "C1": 995,
     "C2": 1,
     "C3": 1155,
     "C4": 1597,
@@ -13231,84 +8766,13 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "P:709290:0",
-   "entities": [
-    "P:709290:0",
-    "T:709480"
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "HouseClass"
    ],
-   "n_entities": 2,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     692,
-     4
-    ],
-    [
-     1276,
-     4
-    ],
-    [
-     1292,
-     1
-    ],
-    [
-     1444,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1117,
-    "C2": 1,
-    "C3": 1213,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:712130:ecx",
-   "entities": [
-    "T:712130"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     2200,
-     4
-    ],
-    [
-     2228,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1114,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
+   "pinned_excluded_by": [
+    "C3"
+   ]
   },
   {
    "cluster": "R:71AB10:ecx",
@@ -13335,7 +8799,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1145,
+    "C1": 1030,
     "C2": 1,
     "C3": 1082,
     "C4": 1597,
@@ -13344,7 +8808,13 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "TemporalClass"
+   ],
+   "pinned_excluded_by": [
+    "C3"
+   ]
   },
   {
    "cluster": "R:71E940:ecx",
@@ -13375,7 +8845,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1135,
+    "C1": 1022,
     "C2": 1,
     "C3": 1112,
     "C4": 1597,
@@ -13384,7 +8854,13 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "TEventClass"
+   ],
+   "pinned_excluded_by": [
+    "C3"
+   ]
   },
   {
    "cluster": "R:721290:ecx",
@@ -13403,7 +8879,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1407,
+    "C1": 1311,
     "C2": 0,
     "C3": 1597,
     "C4": 1597,
@@ -13470,105 +8946,9 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1124,
+    "C1": 1001,
     "C2": 0,
     "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:724730:ecx",
-   "entities": [
-    "T:724730"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     4,
-     4
-    ],
-    [
-     564,
-     4
-    ],
-    [
-     592,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1115,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:724AD0:ecx",
-   "entities": [
-    "T:724AD0"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     4,
-     4
-    ],
-    [
-     16,
-     4
-    ],
-    [
-     20,
-     4
-    ],
-    [
-     24,
-     4
-    ],
-    [
-     28,
-     4
-    ],
-    [
-     32,
-     4
-    ],
-    [
-     36,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1132,
-    "C2": 1,
-    "C3": 1319,
     "C4": 1597,
     "C5": 1597,
     "C6": 1597,
@@ -13610,7 +8990,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1142,
+    "C1": 1034,
     "C2": 1,
     "C3": 1080,
     "C4": 1597,
@@ -13619,7 +8999,13 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "AnimClass"
+   ],
+   "pinned_excluded_by": [
+    "C3"
+   ]
   },
   {
    "cluster": "R:7298F0:ecx",
@@ -13642,7 +9028,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1210,
+    "C1": 1125,
     "C2": 1,
     "C3": 1080,
     "C4": 1597,
@@ -13651,7 +9037,13 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "AnimClass"
+   ],
+   "pinned_excluded_by": [
+    "C3"
+   ]
   },
   {
    "cluster": "R:740DF0:ecx",
@@ -13674,7 +9066,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1116,
+    "C1": 994,
     "C2": 1,
     "C3": 1097,
     "C4": 1597,
@@ -13683,7 +9075,13 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "HouseClass"
+   ],
+   "pinned_excluded_by": [
+    "C3"
+   ]
   },
   {
    "cluster": "R:740E20:ecx",
@@ -13706,7 +9104,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1116,
+    "C1": 994,
     "C2": 1,
     "C3": 1097,
     "C4": 1597,
@@ -13715,7 +9113,13 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "HouseClass"
+   ],
+   "pinned_excluded_by": [
+    "C3"
+   ]
   },
   {
    "cluster": "P:746000:0",
@@ -13744,101 +9148,9 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1118,
+    "C1": 995,
     "C2": 0,
     "C3": 1097,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:74FD50:ecx",
-   "entities": [
-    "T:74FD50"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     60,
-     4
-    ],
-    [
-     64,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1147,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:74FD60:ecx",
-   "entities": [
-    "T:74FD60"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     60,
-     4
-    ],
-    [
-     64,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1147,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:7533F0:ecx",
-   "entities": [
-    "T:7533F0"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1206,
-    "C2": 1,
-    "C3": 1478,
     "C4": 1597,
     "C5": 1597,
     "C6": 1597,
@@ -13891,7 +9203,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1140,
+    "C1": 1098,
     "C2": 0,
     "C3": 1597,
     "C4": 1597,
@@ -13937,7 +9249,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1146,
+    "C1": 1126,
     "C2": 0,
     "C3": 1597,
     "C4": 1597,
@@ -13998,64 +9310,8 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1117,
+    "C1": 995,
     "C2": 0,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:759F70:ecx",
-   "entities": [
-    "T:759F70"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     1304,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1119,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:759F80:ecx",
-   "entities": [
-    "T:759F80"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     1308,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1119,
-    "C2": 1,
     "C3": 1597,
     "C4": 1597,
     "C5": 1597,
@@ -14087,7 +9343,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1128,
+    "C1": 1016,
     "C2": 1,
     "C3": 1231,
     "C4": 1597,
@@ -14096,7 +9352,13 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "VoxelRenderer"
+   ],
+   "pinned_excluded_by": [
+    "C1"
+   ]
   },
   {
    "cluster": "R:75AEC0:ecx",
@@ -14143,7 +9405,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1128,
+    "C1": 1030,
     "C2": 1,
     "C3": 1080,
     "C4": 1597,
@@ -14152,7 +9414,13 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "VoxelAnim"
+   ],
+   "pinned_excluded_by": [
+    "C1"
+   ]
   },
   {
    "cluster": "R:75E6B0:ecx",
@@ -14195,7 +9463,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1145,
+    "C1": 1121,
     "C2": 1,
     "C3": 1597,
     "C4": 1597,
@@ -14204,33 +9472,27 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "Voxel_Section"
+   ],
+   "pinned_excluded_by": [
+    "C6"
+   ]
   },
   {
-   "cluster": "R:7693F0:ecx",
+   "cluster": "R:773600:ecx",
    "entities": [
-    "T:7693F0"
+    "T:773600"
    ],
    "n_entities": 1,
    "obs": [
     [
-     100,
+     8,
      4
     ],
     [
-     104,
-     1
-    ],
-    [
-     108,
-     4
-    ],
-    [
-     112,
-     4
-    ],
-    [
-     116,
+     1036,
      1
     ]
    ],
@@ -14239,7 +9501,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1132,
+    "C1": 995,
     "C2": 1,
     "C3": 1597,
     "C4": 1597,
@@ -14248,63 +9510,13 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:76B080:ecx",
-   "entities": [
-    "T:76B080"
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "WebBrowser"
    ],
-   "n_entities": 1,
-   "obs": [
-    [
-     68,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1150,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:76B090:ecx",
-   "entities": [
-    "T:76B090"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     72,
-     1
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1148,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
+   "pinned_excluded_by": [
+    "C1"
+   ]
   },
   {
    "cluster": "R:77A7C0:ecx",
@@ -14343,7 +9555,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1144,
+    "C1": 1036,
     "C2": 1,
     "C3": 1597,
     "C4": 1597,
@@ -14352,39 +9564,13 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:77A840:ecx",
-   "entities": [
-    "T:77A840"
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "WOLGameList"
    ],
-   "n_entities": 1,
-   "obs": [
-    [
-     36,
-     4
-    ],
-    [
-     40,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1173,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
+   "pinned_excluded_by": [
+    "C1"
+   ]
   },
   {
    "cluster": "G:B76520",
@@ -14416,7 +9602,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1179,
+    "C1": 1286,
     "C2": 0,
     "C3": 1597,
     "C4": 1597,
@@ -14486,7 +9672,7 @@
     ]
    },
    "family_domain_sizes": {
-    "C1": 1130,
+    "C1": 1050,
     "C2": 0,
     "C3": 1597,
     "C4": 1597,
@@ -14541,60 +9727,8 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1130,
+    "C1": 1050,
     "C2": 0,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:7ACF70:ecx",
-   "entities": [
-    "T:7ACF70"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     4,
-     4
-    ],
-    [
-     8,
-     4
-    ],
-    [
-     12,
-     4
-    ],
-    [
-     20,
-     1
-    ],
-    [
-     24,
-     4
-    ],
-    [
-     48,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1130,
-    "C2": 1,
     "C3": 1597,
     "C4": 1597,
     "C5": 1597,
@@ -14631,291 +9765,8 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1179,
+    "C1": 1286,
     "C2": 0,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:7AD9D0:ecx",
-   "entities": [
-    "T:7AD9D0"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     4,
-     4
-    ],
-    [
-     8,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1179,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:7ADA70:ecx",
-   "entities": [
-    "T:7ADA70"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     4,
-     4
-    ],
-    [
-     8,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1179,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:7AE0C0:ecx",
-   "entities": [
-    "T:7AE0C0"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     12,
-     4
-    ],
-    [
-     24,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1210,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "G:B76640",
-   "entities": [
-    "T:7AE0E0",
-    "T:7AEF50",
-    "G:B76640"
-   ],
-   "n_entities": 3,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     8,
-     4
-    ],
-    [
-     12,
-     4
-    ],
-    [
-     20,
-     1
-    ],
-    [
-     24,
-     4
-    ],
-    [
-     48,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1130,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:7AE950:ecx",
-   "entities": [
-    "T:7AE950"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     4,
-     4
-    ],
-    [
-     8,
-     4
-    ],
-    [
-     12,
-     4
-    ],
-    [
-     20,
-     1
-    ],
-    [
-     24,
-     4
-    ],
-    [
-     48,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1130,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "R:7AEC00:ecx",
-   "entities": [
-    "T:7AEC00"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     8,
-     4
-    ],
-    [
-     12,
-     4
-    ],
-    [
-     20,
-     1
-    ],
-    [
-     24,
-     4
-    ],
-    [
-     48,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1130,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "M:69C970:this:0x4",
-   "entities": [
-    "T:7B4860",
-    "M:69C970:this:0x4"
-   ],
-   "n_entities": 2,
-   "obs": [
-    [
-     0,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1206,
-    "C2": 1,
     "C3": 1597,
     "C4": 1597,
     "C5": 1597,
@@ -14949,7 +9800,7 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1206,
+    "C1": 1345,
     "C2": 1,
     "C3": 1597,
     "C4": 1597,
@@ -14958,7 +9809,13 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "GameSetup"
+   ],
+   "pinned_excluded_by": [
+    "C1"
+   ]
   },
   {
    "cluster": "R:7BD690:ecx",
@@ -15039,51 +9896,8 @@
     "empty_domain": true
    },
    "family_domain_sizes": {
-    "C1": 1114,
+    "C1": 993,
     "C2": 0,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 1597,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain"
-  },
-  {
-   "cluster": "M:759940:this:0x200",
-   "entities": [
-    "T:7C3990",
-    "T:7C3690",
-    "M:759940:this:0x200",
-    "T:7C3710",
-    "T:7C3230",
-    "T:7C2D00",
-    "M:759C30:this:0x200",
-    "M:759E10:this:0x200"
-   ],
-   "n_entities": 8,
-   "obs": [
-    [
-     80,
-     4
-    ],
-    [
-     120,
-     4
-    ],
-    [
-     328,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1123,
-    "C2": 1,
     "C3": 1597,
     "C4": 1597,
     "C5": 1597,
@@ -15277,7 +10091,13 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "HouseClass"
+   ],
+   "pinned_excluded_by": [
+    "C3"
+   ]
   },
   {
    "cluster": "R:4E14A0:ecx",
@@ -15518,14 +10338,20 @@
     "C7": 1597,
     "C8": 1597
    },
-   "reason": "empty_domain"
+   "reason": "empty_domain",
+   "c2_pinned": [
+    "TActionClass"
+   ],
+   "pinned_excluded_by": [
+    "C3"
+   ]
   }
  ],
  "diagnostics": {
   "no_layout_match": {
-   "count": 62,
+   "count": 30,
    "by_cause": {
-    "suspicious_large_offset": 62
+    "suspicious_large_offset": 30
    },
    "samples": [
     {
@@ -15786,71 +10612,6 @@
      "cause": "suspicious_large_offset"
     },
     {
-     "cluster": "G:886B88",
-     "entities": [
-      "T:41C230",
-      "T:42EB20",
-      "T:43A0B0",
-      "M:43D290:this:0x520",
-      "M:43F180:this:0x520",
-      "M:440580:this:0x520"
-     ],
-     "obs": [
-      [
-       0,
-       1
-      ],
-      [
-       0,
-       4
-      ],
-      [
-       4,
-       4
-      ],
-      [
-       8,
-       4
-      ],
-      [
-       108,
-       4
-      ],
-      [
-       120,
-       4
-      ],
-      [
-       501,
-       1
-      ],
-      [
-       562,
-       1
-      ],
-      [
-       600,
-       4
-      ],
-      [
-       612,
-       4
-      ],
-      [
-       668,
-       4
-      ],
-      [
-       672,
-       4
-      ]
-     ],
-     "exact": [
-      "Random"
-     ],
-     "cause": "suspicious_large_offset"
-    },
-    {
      "cluster": "P:420270:0",
      "entities": [
       "P:420270:0"
@@ -15950,217 +10711,6 @@
      "obs": [
       [
        1048576,
-       4
-      ]
-     ],
-     "exact": [],
-     "cause": "suspicious_large_offset"
-    },
-    {
-     "cluster": "M:634470:this:0x4",
-     "entities": [
-      "T:42E410",
-      "T:4F9A50",
-      "T:6339E0",
-      "M:634470:this:0x4",
-      "T:634510",
-      "M:635350:this:0x4"
-     ],
-     "obs": [
-      [
-       0,
-       4
-      ],
-      [
-       4,
-       4
-      ],
-      [
-       8,
-       4
-      ],
-      [
-       12,
-       4
-      ],
-      [
-       48,
-       4
-      ],
-      [
-       22408,
-       4
-      ]
-     ],
-     "exact": [],
-     "cause": "suspicious_large_offset"
-    },
-    {
-     "cluster": "M:445880:this:0x21c",
-     "entities": [
-      "M:445880:this:0x21c"
-     ],
-     "obs": [
-      [
-       356,
-       4
-      ],
-      [
-       360,
-       4
-      ],
-      [
-       508,
-       1
-      ],
-      [
-       724,
-       4
-      ],
-      [
-       21388,
-       4
-      ]
-     ],
-     "exact": [],
-     "cause": "suspicious_large_offset"
-    },
-    {
-     "cluster": "M:445F80:this:0x21c",
-     "entities": [
-      "M:445F80:this:0x21c"
-     ],
-     "obs": [
-      [
-       356,
-       4
-      ],
-      [
-       360,
-       4
-      ],
-      [
-       508,
-       1
-      ],
-      [
-       600,
-       4
-      ],
-      [
-       612,
-       4
-      ],
-      [
-       724,
-       4
-      ],
-      [
-       21388,
-       4
-      ],
-      [
-       22392,
-       1
-      ],
-      [
-       22393,
-       1
-      ]
-     ],
-     "exact": [],
-     "cause": "suspicious_large_offset"
-    },
-    {
-     "cluster": "M:448260:this:0x21c",
-     "entities": [
-      "M:448260:this:0x21c"
-     ],
-     "obs": [
-      [
-       52,
-       4
-      ],
-      [
-       80,
-       4
-      ],
-      [
-       104,
-       4
-      ],
-      [
-       108,
-       4
-      ],
-      [
-       120,
-       4
-      ],
-      [
-       128,
-       4
-      ],
-      [
-       152,
-       4
-      ],
-      [
-       176,
-       4
-      ],
-      [
-       200,
-       4
-      ],
-      [
-       224,
-       4
-      ],
-      [
-       248,
-       4
-      ],
-      [
-       272,
-       4
-      ]
-     ],
-     "exact": [],
-     "cause": "suspicious_large_offset"
-    },
-    {
-     "cluster": "P:4561F0:0",
-     "entities": [
-      "P:4561F0:0"
-     ],
-     "obs": [
-      [
-       0,
-       4
-      ],
-      [
-       16,
-       4
-      ],
-      [
-       48,
-       4
-      ],
-      [
-       220,
-       4
-      ],
-      [
-       1032,
-       4
-      ],
-      [
-       1516,
-       1
-      ],
-      [
-       22304,
        4
       ]
      ],
@@ -16276,60 +10826,6 @@
      "exact": [
       "CCINIClass"
      ],
-     "cause": "suspicious_large_offset"
-    },
-    {
-     "cluster": "P:484180:0",
-     "entities": [
-      "P:484180:0"
-     ],
-     "obs": [
-      [
-       0,
-       4
-      ],
-      [
-       4,
-       4
-      ],
-      [
-       8,
-       4
-      ],
-      [
-       13632,
-       4
-      ],
-      [
-       13636,
-       4
-      ],
-      [
-       13656,
-       4
-      ],
-      [
-       13660,
-       4
-      ],
-      [
-       13680,
-       4
-      ],
-      [
-       13684,
-       4
-      ],
-      [
-       13708,
-       4
-      ],
-      [
-       13712,
-       4
-      ]
-     ],
-     "exact": [],
      "cause": "suspicious_large_offset"
     },
     {
@@ -16452,183 +10948,6 @@
      "cause": "suspicious_large_offset"
     },
     {
-     "cluster": "P:4101C0:2",
-     "entities": [
-      "T:4F5190",
-      "P:4101C0:2",
-      "P:4101C0:5"
-     ],
-     "obs": [
-      [
-       0,
-       4
-      ],
-      [
-       4,
-       4
-      ],
-      [
-       8,
-       4
-      ],
-      [
-       12,
-       4
-      ],
-      [
-       36,
-       4
-      ],
-      [
-       40,
-       4
-      ],
-      [
-       44,
-       4
-      ],
-      [
-       640,
-       4
-      ],
-      [
-       648,
-       4
-      ],
-      [
-       90212,
-       4
-      ],
-      [
-       90216,
-       4
-      ],
-      [
-       90220,
-       4
-      ]
-     ],
-     "exact": [
-      "HouseClass"
-     ],
-     "cause": "suspicious_large_offset"
-    },
-    {
-     "cluster": "P:7258D0:4",
-     "entities": [
-      "T:4F7140",
-      "P:7258D0:4"
-     ],
-     "obs": [
-      [
-       0,
-       4
-      ],
-      [
-       4,
-       4
-      ],
-      [
-       8,
-       4
-      ],
-      [
-       12,
-       4
-      ],
-      [
-       36,
-       4
-      ],
-      [
-       40,
-       4
-      ],
-      [
-       44,
-       4
-      ],
-      [
-       52,
-       4
-      ],
-      [
-       56,
-       4
-      ],
-      [
-       60,
-       4
-      ],
-      [
-       64,
-       4
-      ],
-      [
-       69,
-       1
-      ]
-     ],
-     "exact": [
-      "HouseClass"
-     ],
-     "cause": "suspicious_large_offset"
-    },
-    {
-     "cluster": "R:4FAF00:ecx",
-     "entities": [
-      "T:4FAF00"
-     ],
-     "obs": [
-      [
-       52,
-       4
-      ],
-      [
-       84,
-       4
-      ],
-      [
-       96,
-       4
-      ],
-      [
-       388,
-       4
-      ],
-      [
-       492,
-       1
-      ],
-      [
-       21648,
-       4
-      ],
-      [
-       21652,
-       2
-      ],
-      [
-       21652,
-       4
-      ],
-      [
-       21654,
-       2
-      ],
-      [
-       21748,
-       4
-      ],
-      [
-       21756,
-       4
-      ]
-     ],
-     "exact": [],
-     "cause": "suspicious_large_offset"
-    },
-    {
      "cluster": "R:4FCE00:ecx",
      "entities": [
       "T:4FCE00"
@@ -16648,56 +10967,6 @@
       ],
       [
        90196,
-       4
-      ]
-     ],
-     "exact": [],
-     "cause": "suspicious_large_offset"
-    },
-    {
-     "cluster": "P:49FAE0:4",
-     "entities": [
-      "T:4FD060",
-      "T:4FD150",
-      "T:4FFB20",
-      "T:4FFD50",
-      "P:49FAE0:4"
-     ],
-     "obs": [
-      [
-       0,
-       4
-      ],
-      [
-       108,
-       4
-      ],
-      [
-       120,
-       4
-      ],
-      [
-       752,
-       4
-      ],
-      [
-       21648,
-       4
-      ],
-      [
-       21652,
-       2
-      ],
-      [
-       21652,
-       4
-      ],
-      [
-       21654,
-       2
-      ],
-      [
-       21656,
        4
       ]
      ],
@@ -16938,200 +11207,6 @@
      "cause": "suspicious_large_offset"
     },
     {
-     "cluster": "P:5054B0:0",
-     "entities": [
-      "P:5054B0:0"
-     ],
-     "obs": [
-      [
-       0,
-       1
-      ],
-      [
-       0,
-       4
-      ],
-      [
-       1,
-       1
-      ],
-      [
-       4,
-       4
-      ],
-      [
-       8,
-       4
-      ],
-      [
-       12,
-       4
-      ],
-      [
-       13,
-       1
-      ],
-      [
-       16,
-       4
-      ],
-      [
-       20,
-       4
-      ],
-      [
-       3576,
-       4
-      ],
-      [
-       4984,
-       4
-      ],
-      [
-       22284,
-       4
-      ]
-     ],
-     "exact": [],
-     "cause": "suspicious_large_offset"
-    },
-    {
-     "cluster": "R:508150:ecx",
-     "entities": [
-      "T:508150"
-     ],
-     "obs": [
-      [
-       388,
-       4
-      ],
-      [
-       22016,
-       4
-      ],
-      [
-       90268,
-       4
-      ],
-      [
-       90272,
-       4
-      ],
-      [
-       90276,
-       4
-      ]
-     ],
-     "exact": [],
-     "cause": "suspicious_large_offset"
-    },
-    {
-     "cluster": "P:577AB0:0",
-     "entities": [
-      "T:508F60",
-      "P:577AB0:0",
-      "P:577D90:0"
-     ],
-     "obs": [
-      [
-       0,
-       4
-      ],
-      [
-       36,
-       2
-      ],
-      [
-       38,
-       2
-      ],
-      [
-       48,
-       4
-      ],
-      [
-       108,
-       4
-      ],
-      [
-       120,
-       4
-      ],
-      [
-       300,
-       4
-      ],
-      [
-       304,
-       4
-      ],
-      [
-       308,
-       4
-      ],
-      [
-       320,
-       4
-      ],
-      [
-       492,
-       1
-      ],
-      [
-       493,
-       1
-      ]
-     ],
-     "exact": [],
-     "cause": "suspicious_large_offset"
-    },
-    {
-     "cluster": "M:7729F0:this:0xB4",
-     "entities": [
-      "T:50BA00",
-      "T:6B1A70",
-      "P:4CAC40:0",
-      "T:48AB90",
-      "M:7729F0:this:0xB4"
-     ],
-     "obs": [
-      [
-       0,
-       2
-      ],
-      [
-       2,
-       2
-      ],
-      [
-       22265,
-       1
-      ],
-      [
-       22266,
-       1
-      ],
-      [
-       22267,
-       1
-      ],
-      [
-       22268,
-       1
-      ],
-      [
-       22269,
-       1
-      ],
-      [
-       22270,
-       1
-      ]
-     ],
-     "exact": [],
-     "cause": "suspicious_large_offset"
-    },
-    {
      "cluster": "R:50BF60:ecx",
      "entities": [
       "T:50BF60"
@@ -17163,192 +11238,6 @@
       ],
       [
        21408,
-       4
-      ]
-     ],
-     "exact": [],
-     "cause": "suspicious_large_offset"
-    },
-    {
-     "cluster": "M:42EB50:this:0x74",
-     "entities": [
-      "T:50CAD0",
-      "M:42EB50:this:0x74"
-     ],
-     "obs": [
-      [
-       344,
-       4
-      ],
-      [
-       388,
-       4
-      ],
-      [
-       21720,
-       4
-      ]
-     ],
-     "exact": [],
-     "cause": "suspicious_large_offset"
-    },
-    {
-     "cluster": "P:518F90:0",
-     "entities": [
-      "P:518F90:0"
-     ],
-     "obs": [
-      [
-       0,
-       4
-      ],
-      [
-       4,
-       4
-      ],
-      [
-       8,
-       4
-      ],
-      [
-       266,
-       2
-      ],
-      [
-       320,
-       4
-      ],
-      [
-       448,
-       4
-      ],
-      [
-       456,
-       4
-      ],
-      [
-       1292,
-       4
-      ],
-      [
-       6104,
-       4
-      ],
-      [
-       13684,
-       4
-      ]
-     ],
-     "exact": [],
-     "cause": "suspicious_large_offset"
-    },
-    {
-     "cluster": "P:599650:0",
-     "entities": [
-      "P:599650:0"
-     ],
-     "obs": [
-      [
-       0,
-       4
-      ],
-      [
-       36,
-       4
-      ],
-      [
-       56,
-       4
-      ],
-      [
-       68,
-       4
-      ],
-      [
-       282,
-       1
-      ],
-      [
-       283,
-       1
-      ],
-      [
-       284,
-       1
-      ],
-      [
-       286,
-       1
-      ],
-      [
-       320,
-       4
-      ],
-      [
-       4696,
-       4
-      ],
-      [
-       13636,
-       4
-      ],
-      [
-       13720,
-       1
-      ]
-     ],
-     "exact": [],
-     "cause": "suspicious_large_offset"
-    },
-    {
-     "cluster": "P:6A4F20:1",
-     "entities": [
-      "T:5BE9B0",
-      "P:6A4F20:1"
-     ],
-     "obs": [
-      [
-       0,
-       4
-      ],
-      [
-       21784,
-       4
-      ]
-     ],
-     "exact": [
-      "TabClass"
-     ],
-     "cause": "suspicious_large_offset"
-    },
-    {
-     "cluster": "P:656150:0",
-     "entities": [
-      "P:656150:0"
-     ],
-     "obs": [
-      [
-       0,
-       1
-      ],
-      [
-       36,
-       4
-      ],
-      [
-       124,
-       4
-      ],
-      [
-       196,
-       4
-      ],
-      [
-       208,
-       4
-      ],
-      [
-       90196,
        4
       ]
      ],
@@ -17414,259 +11303,6 @@
      "cause": "suspicious_large_offset"
     },
     {
-     "cluster": "P:686890:0",
-     "entities": [
-      "P:686890:0"
-     ],
-     "obs": [
-      [
-       0,
-       4
-      ],
-      [
-       4,
-       4
-      ],
-      [
-       8,
-       4
-      ],
-      [
-       52,
-       4
-      ],
-      [
-       136,
-       4
-      ],
-      [
-       140,
-       4
-      ],
-      [
-       388,
-       4
-      ],
-      [
-       492,
-       1
-      ],
-      [
-       22388,
-       4
-      ]
-     ],
-     "exact": [],
-     "cause": "suspicious_large_offset"
-    },
-    {
-     "cluster": "P:6886B0:0",
-     "entities": [
-      "P:6886B0:0"
-     ],
-     "obs": [
-      [
-       0,
-       4
-      ],
-      [
-       8,
-       4
-      ],
-      [
-       32,
-       4
-      ],
-      [
-       52,
-       4
-      ],
-      [
-       140,
-       4
-      ],
-      [
-       172,
-       4
-      ],
-      [
-       216,
-       4
-      ],
-      [
-       496,
-       4
-      ],
-      [
-       21468,
-       4
-      ],
-      [
-       21472,
-       4
-      ]
-     ],
-     "exact": [],
-     "cause": "suspicious_large_offset"
-    },
-    {
-     "cluster": "P:6CFE20:0",
-     "entities": [
-      "T:692290",
-      "P:6CFE20:0"
-     ],
-     "obs": [
-      [
-       0,
-       4
-      ],
-      [
-       21784,
-       4
-      ],
-      [
-       21832,
-       4
-      ],
-      [
-       21836,
-       1
-      ],
-      [
-       21840,
-       4
-      ],
-      [
-       21844,
-       4
-      ],
-      [
-       21848,
-       1
-      ],
-      [
-       21849,
-       1
-      ],
-      [
-       21850,
-       1
-      ]
-     ],
-     "exact": [
-      "ScrollClass"
-     ],
-     "cause": "suspicious_large_offset"
-    },
-    {
-     "cluster": "P:63F6B0:0",
-     "entities": [
-      "T:6A4E60",
-      "P:63F6B0:0",
-      "P:63F6B0:4"
-     ],
-     "obs": [
-      [
-       0,
-       4
-      ],
-      [
-       21404,
-       4
-      ],
-      [
-       21408,
-       4
-      ],
-      [
-       21412,
-       1
-      ],
-      [
-       21413,
-       1
-      ],
-      [
-       21414,
-       1
-      ],
-      [
-       21416,
-       1
-      ],
-      [
-       21780,
-       1
-      ],
-      [
-       21781,
-       1
-      ]
-     ],
-     "exact": [
-      "SidebarClass"
-     ],
-     "cause": "suspicious_large_offset"
-    },
-    {
-     "cluster": "P:6A8B30:0",
-     "entities": [
-      "P:6A8B30:0"
-     ],
-     "obs": [
-      [
-       0,
-       4
-      ],
-      [
-       4,
-       4
-      ],
-      [
-       8,
-       4
-      ],
-      [
-       12,
-       4
-      ],
-      [
-       16,
-       4
-      ],
-      [
-       28,
-       1
-      ],
-      [
-       28,
-       4
-      ],
-      [
-       32,
-       4
-      ],
-      [
-       36,
-       4
-      ],
-      [
-       44,
-       4
-      ],
-      [
-       48,
-       4
-      ],
-      [
-       56,
-       4
-      ]
-     ],
-     "exact": [],
-     "cause": "suspicious_large_offset"
-    },
-    {
      "cluster": "P:6CC390:0",
      "entities": [
       "P:6CC390:0"
@@ -17725,136 +11361,6 @@
      "cause": "suspicious_large_offset"
     },
     {
-     "cluster": "P:6A4E60:1",
-     "entities": [
-      "T:6CFE20",
-      "P:6A4E60:1",
-      "P:6A4E60:4"
-     ],
-     "obs": [
-      [
-       0,
-       4
-      ],
-      [
-       21804,
-       4
-      ],
-      [
-       21812,
-       4
-      ],
-      [
-       21816,
-       4
-      ],
-      [
-       21824,
-       4
-      ],
-      [
-       21828,
-       1
-      ],
-      [
-       21829,
-       1
-      ],
-      [
-       21830,
-       1
-      ]
-     ],
-     "exact": [
-      "TabClass"
-     ],
-     "cause": "suspicious_large_offset"
-    },
-    {
-     "cluster": "P:6DD8B0:0",
-     "entities": [
-      "P:6DD8B0:0"
-     ],
-     "obs": [
-      [
-       0,
-       1
-      ],
-      [
-       0,
-       4
-      ],
-      [
-       1,
-       1
-      ],
-      [
-       4,
-       4
-      ],
-      [
-       8,
-       4
-      ],
-      [
-       12,
-       4
-      ],
-      [
-       16,
-       4
-      ],
-      [
-       20,
-       4
-      ],
-      [
-       24,
-       4
-      ],
-      [
-       32,
-       4
-      ],
-      [
-       36,
-       4
-      ],
-      [
-       52,
-       4
-      ]
-     ],
-     "exact": [],
-     "cause": "suspicious_large_offset"
-    },
-    {
-     "cluster": "M:6F7CA0:this:0x21c",
-     "entities": [
-      "M:6F7CA0:this:0x21c"
-     ],
-     "obs": [
-      [
-       48,
-       4
-      ],
-      [
-       388,
-       4
-      ],
-      [
-       585,
-       1
-      ],
-      [
-       22016,
-       4
-      ]
-     ],
-     "exact": [],
-     "cause": "suspicious_large_offset"
-    },
-    {
      "cluster": "M:702D40:this:0x21c",
      "entities": [
       "M:702D40:this:0x21c"
@@ -17892,64 +11398,6 @@
       ],
       [
        21644,
-       4
-      ]
-     ],
-     "exact": [],
-     "cause": "suspicious_large_offset"
-    },
-    {
-     "cluster": "P:739EC0:0",
-     "entities": [
-      "P:739EC0:0"
-     ],
-     "obs": [
-      [
-       0,
-       2
-      ],
-      [
-       0,
-       4
-      ],
-      [
-       2,
-       2
-      ],
-      [
-       4,
-       4
-      ],
-      [
-       8,
-       4
-      ],
-      [
-       44,
-       4
-      ],
-      [
-       48,
-       4
-      ],
-      [
-       68,
-       4
-      ],
-      [
-       72,
-       4
-      ],
-      [
-       92,
-       4
-      ],
-      [
-       132,
-       4
-      ],
-      [
-       168,
        4
       ]
      ],
@@ -18008,188 +11456,6 @@
       ],
       [
        40,
-       4
-      ]
-     ],
-     "exact": [
-      "WinsockInterfaceClass"
-     ],
-     "cause": "suspicious_large_offset"
-    },
-    {
-     "cluster": "R:7B1AB0:ecx",
-     "entities": [
-      "T:7B1AB0"
-     ],
-     "obs": [
-      [
-       0,
-       4
-      ],
-      [
-       8,
-       4
-      ],
-      [
-       12,
-       4
-      ],
-      [
-       16,
-       4
-      ],
-      [
-       21,
-       1
-      ],
-      [
-       32,
-       4
-      ],
-      [
-       36,
-       4
-      ],
-      [
-       40,
-       4
-      ],
-      [
-       45,
-       1
-      ],
-      [
-       56,
-       4
-      ],
-      [
-       60,
-       4
-      ],
-      [
-       64,
-       4
-      ]
-     ],
-     "exact": [
-      "WinsockInterfaceClass"
-     ],
-     "cause": "suspicious_large_offset"
-    },
-    {
-     "cluster": "R:7B1B50:ecx",
-     "entities": [
-      "T:7B1B50",
-      "T:7B2E50",
-      "T:7B4170"
-     ],
-     "obs": [
-      [
-       0,
-       4
-      ],
-      [
-       258152,
-       1
-      ],
-      [
-       258872,
-       4
-      ],
-      [
-       258876,
-       4
-      ],
-      [
-       258880,
-       4
-      ],
-      [
-       258885,
-       1
-      ],
-      [
-       258888,
-       4
-      ],
-      [
-       259408,
-       4
-      ],
-      [
-       259412,
-       4
-      ],
-      [
-       259416,
-       4
-      ],
-      [
-       259421,
-       1
-      ],
-      [
-       259424,
-       4
-      ]
-     ],
-     "exact": [
-      "UDPInterfaceClass"
-     ],
-     "cause": "suspicious_large_offset"
-    },
-    {
-     "cluster": "R:7B2780:ecx",
-     "entities": [
-      "T:7B2780"
-     ],
-     "obs": [
-      [
-       0,
-       4
-      ],
-      [
-       8,
-       4
-      ],
-      [
-       12,
-       4
-      ],
-      [
-       16,
-       4
-      ],
-      [
-       21,
-       1
-      ],
-      [
-       32,
-       4
-      ],
-      [
-       36,
-       4
-      ],
-      [
-       40,
-       4
-      ],
-      [
-       45,
-       1
-      ],
-      [
-       56,
-       4
-      ],
-      [
-       60,
-       4
-      ],
-      [
-       64,
        4
       ]
      ],
@@ -18263,34 +11529,16 @@
   "prototype_rule_c1": {
    "description": "prototype v2 rule: layout exists AND every offset exists AND width strictly equal (entity level, obs>=2)",
    "entities_ge2": 7841,
-   "matched_strict": 5793,
-   "no_match": 2048,
+   "matched_strict": 6501,
+   "no_match": 1340,
    "by_cause": {
-    "width_mismatch_only": 1007,
-    "no_class_has_all_offsets_sparse_layout": 472,
-    "param_unknown_class": 172,
-    "suspicious_large_offset": 304,
-    "member_chain_unknown_class": 93
+    "width_mismatch_only": 890,
+    "suspicious_large_offset": 270,
+    "member_chain_unknown_class": 55,
+    "no_class_has_all_offsets_sparse_layout": 39,
+    "param_unknown_class": 86
    },
    "samples": [
-    {
-     "entity": "T:4010A0",
-     "obs": [
-      [
-       0,
-       1
-      ],
-      [
-       40,
-       1
-      ],
-      [
-       80,
-       1
-      ]
-     ],
-     "cause": "width_mismatch_only"
-    },
     {
      "entity": "P:4011C0:0",
      "obs": [
@@ -18308,44 +11556,6 @@
       ],
       [
        28,
-       4
-      ]
-     ],
-     "cause": "width_mismatch_only"
-    },
-    {
-     "entity": "T:402330",
-     "obs": [
-      [
-       168,
-       4
-      ],
-      [
-       180,
-       4
-      ],
-      [
-       212,
-       4
-      ],
-      [
-       360,
-       4
-      ],
-      [
-       364,
-       4
-      ],
-      [
-       368,
-       4
-      ],
-      [
-       372,
-       4
-      ],
-      [
-       376,
        4
       ]
      ],
@@ -18564,20 +11774,6 @@
      "cause": "width_mismatch_only"
     },
     {
-     "entity": "T:404140",
-     "obs": [
-      [
-       24,
-       1
-      ],
-      [
-       176,
-       4
-      ]
-     ],
-     "cause": "width_mismatch_only"
-    },
-    {
      "entity": "T:404700",
      "obs": [
       [
@@ -18777,7 +11973,7 @@
        4
       ]
      ],
-     "cause": "no_class_has_all_offsets_sparse_layout"
+     "cause": "width_mismatch_only"
     },
     {
      "entity": "M:4055C0:this:0x24",
@@ -18963,7 +12159,97 @@
        4
       ]
      ],
-     "cause": "param_unknown_class"
+     "cause": "width_mismatch_only"
+    },
+    {
+     "entity": "T:40A090",
+     "obs": [
+      [
+       76,
+       4
+      ],
+      [
+       80,
+       2
+      ],
+      [
+       84,
+       2
+      ],
+      [
+       244,
+       4
+      ],
+      [
+       472,
+       4
+      ],
+      [
+       476,
+       4
+      ],
+      [
+       480,
+       4
+      ]
+     ],
+     "cause": "width_mismatch_only"
+    },
+    {
+     "entity": "T:40D290",
+     "obs": [
+      [
+       0,
+       4
+      ],
+      [
+       21784,
+       4
+      ]
+     ],
+     "cause": "width_mismatch_only"
+    },
+    {
+     "entity": "T:410170",
+     "obs": [
+      [
+       0,
+       4
+      ],
+      [
+       4,
+       4
+      ],
+      [
+       8,
+       4
+      ],
+      [
+       12,
+       4
+      ],
+      [
+       16,
+       4
+      ],
+      [
+       20,
+       1
+      ],
+      [
+       24,
+       4
+      ],
+      [
+       28,
+       4
+      ],
+      [
+       32,
+       1
+      ]
+     ],
+     "cause": "width_mismatch_only"
     }
    ]
   },
@@ -25720,7 +19006,7 @@
     "examples": []
    },
    "new_ctor": {
-    "unions": 5,
+    "unions": 6,
     "exact_conflicts": 0,
     "examples": []
    },

@@ -6,13 +6,18 @@
     anchors/class_db.json   1,597 类：继承真值 / vtable 集合 / vtable_slot_count / size / ctors
     tools/class_layouts.json 1,282 类：扁平成员表 {offset: size}（C1 宽度相容判据）
     anchors/vtable_slot_authority.json 954 类 / 13,204 槽位（C3、C6）
+    anchors/layout_evidence.json 二进制访问证据（gen_layout_evidence.py 产物）：
+        每类 observed_extent（访问范围，尺寸下界）+ 观测 (offset,width) 成员。
+        effective_size = max(declared_size, observed_extent)；C1 密度门与 C5 用
+        effective_size，declared_size 仅保留为参考。observed_extent 不是 sizeof——
+        sizeof 唯一精确来源是 C5 (operator new)。
 
 约束族（每族给出"该实体允许的类集合"或 EXACT 单类）
     C1 成员访问     : 类必须在每个被访问偏移上都有成员；宽度相容按 obs_w <= member_w
     C2 this 传递    : thiscall 的 this 实参类 ⊑ 被调方声明的 this 类；函数自身 this 同规
     C3 虚表槽位     : obj->vtable[k] 的接收者类必须拥有槽位 k（无槽位数据的类=未知，放行）
     C4 ctor/dtor 装表 (EXACT) : 在 [this+0] 装入 vtable 的函数，其 this 的类 == 该 vtable 的类
-    C5 分配长度 (EXACT)       : operator new N 产生的对象 sizeof(class) == N
+    C5 分配长度 (EXACT)       : operator new N 产生的对象 effective_size(class) == N
     C6 虚表槽位数 (EXACT)     : 已知 vtable 身份的对象，class.vtable_slot_count == N
     C7 参数/返回方差          : 形参声明类 / 调用点实参类约束实体；T ⊑ U 方差校验
     C8 全局对象身份           : 全局地址按值类对象 / 装了 vtable / 名字证据 → 该类
@@ -28,6 +33,8 @@
     python tools/csp_export/minclass_solver.py
     python tools/csp_export/minclass_solver.py --no-reg-flow
     python tools/csp_export/minclass_solver.py --build-facts   # 从 full_export 重建二进制事实缓存
+    python tools/csp_export/minclass_solver.py --evidence spec         # 仅 layout_evidence.json
+    python tools/csp_export/minclass_solver.py --evidence spec+proto   # 叠加 proto-this 通道（默认）
 """
 import argparse
 import bisect
@@ -111,7 +118,7 @@ class UF:
 # ==========================================================================
 # 1. 类宇宙
 # ==========================================================================
-def build_universe():
+def build_universe(use_evidence=True):
     db = jload("anchors/class_db.json")["classes"]
     lay = jload("tools/class_layouts.json")
     align = jload("anchors/class_name_align.json", {})
@@ -195,6 +202,32 @@ def build_universe():
             s = db[names[i]].get("size")
         size[i] = int(s) if isinstance(s, int) else None
 
+    # ---- 二进制访问证据（observed extent 是尺寸下界，非 sizeof）----
+    eff_size = list(size)
+    n_ev = 0
+    ev_root = ((jload("anchors/layout_evidence.json", {}) or {}).get("classes") or {}) \
+        if use_evidence else {}
+    for cls, rec in ev_root.items():
+        i = resolve(cls)
+        if i is None:
+            continue
+        ext = rec.get("observed_extent")
+        if not isinstance(ext, int) or ext <= 0:
+            continue
+        n_ev += 1
+        for ent in rec.get("extra_offsets") or []:
+            try:
+                off = int(ent["off"])
+                w = int(ent.get("width") or 4)
+            except (KeyError, TypeError, ValueError):
+                continue
+            if w <= 0:
+                continue
+            prev = members[i].get(off)
+            members[i][off] = w if not isinstance(prev, int) or prev <= 0 else max(prev, w)
+        cur = eff_size[i]
+        eff_size[i] = ext if cur is None else max(cur, ext)
+
     rtti_base = jload("anchors/rtti_base_arrays.json", {})
     anc = [set([i]) for i in range(n)]
     for i, c in enumerate(names):
@@ -266,6 +299,7 @@ def build_universe():
     return {
         "db": db, "names": names, "idx": idx, "resolve": resolve, "n": n,
         "members": members, "has_layout": has_layout, "size": size,
+        "eff_size": eff_size, "n_evidence": n_ev,
         "anc": anc, "desc": desc, "vtables": vtables, "slot_count": slot_count,
         "slot_set": slot_set, "n_layout": sum(1 for x in has_layout if x),
         "n_auth": auth_hit,
@@ -625,20 +659,144 @@ def main():
     ap.add_argument("--no-reg-flow", action="store_true")
     ap.add_argument("--no-families", default="")
     ap.add_argument("--max-pair-improve", type=int, default=40000)
+    ap.add_argument("--evidence", choices=("none", "spec", "spec+proto"), default="spec+proto",
+                    help="none=不用访问证据（HEAD 基线口径）; "
+                         "spec=仅 anchors/layout_evidence.json (ctor_types/vtable_install); "
+                         "spec+proto=叠加 proto-this 通道（函数原型已类型化的 this 声明，"
+                         "与 C2 FUNC_PARAM 掩码同源）。默认 spec+proto。")
     args = ap.parse_args()
 
     t_start = time.time()
-    U = build_universe()
+    U = build_universe(use_evidence=(args.evidence != "none"))
     names, idx, resolve, n = U["names"], U["idx"], U["resolve"], U["n"]
     FULL = (1 << n) - 1
-    print("[universe] classes=%d with_layout=%d authority_joined=%d sizes=%d slot_count=%d"
+    print("[universe] classes=%d with_layout=%d authority_joined=%d sizes=%d slot_count=%d "
+          "evidence_classes=%d"
           % (n, U["n_layout"], U["n_auth"], sum(1 for s in U["size"] if s is not None),
-             sum(1 for s in U["slot_count"] if s is not None)), flush=True)
+             sum(1 for s in U["slot_count"] if s is not None), U["n_evidence"]), flush=True)
+    eff_bump = sum(1 for i in range(n) if U["eff_size"][i] is not None
+                   and U["size"][i] is not None and U["eff_size"][i] > U["size"][i])
+    print("[evidence] extent>declared: %d classes (effective_size = max(declared, observed_extent))"
+          % eff_bump, flush=True)
 
     raw = jload("tools/type_infer/constraints/raw_constraints.json")["constraints"]
     protos = jload("anchors/ida_function_protos.json", {})
     faddrs = sorted(int(a, 16) for a in protos)
     print("[data] raw edges=%d functions=%d" % (len(raw), len(protos)), flush=True)
+
+    # ---------------- 函数声明类（提前定义：proto 证据通道与 C2 共用） ----------------
+    owner_of_fn = {}
+    for a, v in protos.items():
+        nm = (v or {}).get("name") or ""
+        if "::" in nm:
+            ci = resolve(nm.split("::")[0])
+            if ci is not None:
+                owner_of_fn[int(a, 16)] = (ci, nm)
+    allowed_cache = {}
+
+    def allowed_of(ci):
+        m = allowed_cache.get(ci)
+        if m is None:
+            m = 1 << ci
+            for d in U["desc"][ci]:
+                m |= (1 << d)
+            allowed_cache[ci] = m
+        return m
+
+    def parse_proto(proto):
+        if not proto:
+            return None
+        m = re.match(r"^(.*?)\s*(__\w+)\s*\((.*)\)\s*$", proto)
+        if not m:
+            return None
+        ret, cc, argstr = m.group(1).strip(), m.group(2), m.group(3).strip()
+        params = [p.strip() for p in argstr.split(",")] if argstr else []
+        return ret, cc, params
+
+    def type_class(t):
+        if not isinstance(t, str) or "*" not in t:
+            return None
+        s = re.sub(r"\b(const|volatile|struct|class)\b", " ", t)
+        s = s.replace("*", " ").replace("&", " ")
+        s = re.sub(r"\[[^\]]*\]", " ", s)
+        toks = [x for x in re.split(r"\s+", s) if x]
+        for tok in reversed(toks):
+            ci = resolve(tok)
+            if ci is not None:
+                return ci
+        return None
+
+    # ---------------- proto-this 证据通道（--evidence spec+proto） ----------------
+    # 与 C2 FUNC_PARAM 掩码同一来源：函数原型里已类型化的 this 声明
+    # （源自 CSP/binary 锚回写的 til）。把每个原型 this 类的 this 访问并入
+    # observed 成员表与 effective_size（同一滤噪规则）。仅扩展证据，不改声明。
+    if args.evidence == "spec+proto":
+        n_proto_fn = 0
+        proto_sites = collections.defaultdict(list)      # ci -> [(off, w, addr)]
+        for a, v in protos.items():
+            pr = parse_proto((v or {}).get("proto"))
+            if not pr or pr[1] != "__thiscall" or not pr[2] or "this" not in pr[2][0]:
+                continue
+            ci_this = type_class(pr[2][0])
+            if ci_this is None:
+                continue
+            fa = hx(a)
+            if fa is None:
+                continue
+            n_proto_fn += 1
+            proto_sites[ci_this].append((fa, None))
+        fn_access = collections.defaultdict(list)        # fn -> [(off, w)]
+        for e in raw:
+            if e.get("type") != "MEMBER_ACCESS":
+                continue
+            b = e.get("base")
+            if not (isinstance(b, str) and b.endswith(":this")):
+                continue
+            fa = hx(b.split(":")[0])
+            if fa is None:
+                continue
+            try:
+                o = int(e.get("offset") or 0)
+            except (TypeError, ValueError):
+                continue
+            w = e.get("width")
+            w = int(w) if isinstance(w, (int, float)) and w > 0 else 4
+            fn_access[fa].append((o, w))
+        added_classes = 0
+        added_sites = 0
+        for ci_this, fns in proto_sites.items():
+            offs_all = collections.defaultdict(list)
+            for fa, _x in fns:
+                offs_all[fa] = fn_access.get(fa, [])
+            merged = collections.defaultdict(int)
+            for fa, lst in offs_all.items():
+                for (o, w) in lst:
+                    if o > 4096 and not any(abs(o - o2) <= 64 for o2 in
+                                            [x for (x, _w) in lst if x <= 4096]):
+                        near = False
+                        for fa2, lst2 in offs_all.items():
+                            if fa2 == fa:
+                                continue
+                            if any(o2 <= 4096 and abs(o - o2) <= 64 for (o2, _w) in lst2):
+                                near = True
+                                break
+                        if not near:
+                            continue
+                    merged[o] = max(merged[o], w)
+            if not merged:
+                continue
+            added_classes += 1
+            ext = 0
+            for o, w in merged.items():
+                prev = U["members"][ci_this].get(o)
+                U["members"][ci_this][o] = w if not isinstance(prev, int) or prev <= 0 \
+                    else max(prev, w)
+                added_sites += 1
+                ext = max(ext, o + w)
+            cur = U["eff_size"][ci_this]
+            U["eff_size"][ci_this] = ext if cur is None else max(cur, ext)
+        print("[evidence] proto-this channel: typed_fns=%d classes_extended=%d sites=%d"
+              % (n_proto_fn, added_classes, added_sites), flush=True)
 
     def fn_at(a):
         if not faddrs or a is None:
@@ -723,7 +881,7 @@ def main():
     for i in range(n):
         if not U["has_layout"][i]:
             continue
-        sz = U["size"][i]
+        sz = U["eff_size"][i]                # effective_size（含 observed extent 下界）
         if not sz or sz < 8:
             continue
         dense[i] = (len(U["members"][i]) * 4) >= 0.7 * sz
@@ -799,49 +957,6 @@ def main():
         if not dense[ci]:
             return []
         return [[o, w] for (o, w) in obs if not covers(ci, o, w if w else 4)]
-
-    # ---------------- 函数声明类 ----------------
-    owner_of_fn = {}
-    for a, v in protos.items():
-        nm = (v or {}).get("name") or ""
-        if "::" in nm:
-            ci = resolve(nm.split("::")[0])
-            if ci is not None:
-                owner_of_fn[int(a, 16)] = (ci, nm)
-    allowed_cache = {}
-
-    def allowed_of(ci):
-        m = allowed_cache.get(ci)
-        if m is None:
-            m = 1 << ci
-            for d in U["desc"][ci]:
-                m |= (1 << d)
-            allowed_cache[ci] = m
-        return m
-
-    def parse_proto(proto):
-        if not proto:
-            return None
-        m = re.match(r"^(.*?)\s*(__\w+)\s*\((.*)\)\s*$", proto)
-        if not m:
-            return None
-        ret, cc, argstr = m.group(1).strip(), m.group(2), m.group(3).strip()
-        params = [p.strip() for p in argstr.split(",")] if argstr else []
-        return ret, cc, params
-
-    def type_class(t):
-        if not isinstance(t, str) or "*" not in t:
-            return None
-        s = re.sub(r"\b(const|volatile|struct|class)\b", " ", t)
-        s = s.replace("*", " ").replace("&", " ")
-        s = re.sub(r"\[[^\]]*\]", " ", s)
-        toks = [x for x in re.split(r"\s+", s) if x]
-        for tok in reversed(toks):
-            ci = resolve(tok)
-            if ci is not None:
-                return ci
-        return None
-
 
     # ---------------- C2：this 传递 ----------------
     for e in raw:
@@ -967,13 +1082,13 @@ def main():
         if m is None:
             m = 0
             for i in range(n):
-                if U["size"][i] == sz:
+                if U["eff_size"][i] == sz:
                     m |= (1 << i)
             size_mask_cache[sz] = m
         return m
 
     def known_size(ci):
-        s = U["size"][ci]
+        s = U["eff_size"][ci]
         return s
 
     if facts:
@@ -1741,7 +1856,11 @@ def main():
     # ---------------- 写盘 ----------------
     def rec_conflict(cl, m, exci, exsrc, flags):
         per = {}
-        per["C1"] = c1_mask(cl["obs"]).bit_count() if cl["obs"] else n
+        masks_f = {}
+        m_c1 = c1_mask(cl["obs"]) if cl["obs"] else FULL
+        per["C1"] = m_c1.bit_count()
+        masks_f["C1"] = m_c1
+        c2_names = None
         for f in all_fams:
             if f == "C1":
                 continue
@@ -1753,7 +1872,10 @@ def main():
                     mm &= fm
                     hit = True
             per[f] = mm.bit_count() if hit else n
-        return {
+            masks_f[f] = mm if hit else FULL
+            if f == "C2" and hit and 1 <= mm.bit_count() <= 8:
+                c2_names = [names[i] for i in range(n) if (mm >> i) & 1]
+        rec = {
             "cluster": cl["root"], "entities": cl["ents"][:8],
             "n_entities": len(cl["ents"]), "obs": sorted(cl["obs"])[:16],
             "exact": exsrc[:6], "flags": flags,
@@ -1762,12 +1884,22 @@ def main():
                        ("exact_contradicts_family" if "exact_contradicts_family" in flags else
                         ("exact_width_conflict" if "width_conflict" in flags else "empty_domain"))),
         }
+        if c2_names:
+            rec["c2_pinned"] = c2_names
+            # 哪些族把钉住类排除在域外（"still binds" 的精确口径）
+            excl = [f for f in all_fams
+                    if any(not (masks_f.get(f, FULL) >> i) & 1
+                           for i in range(n) if (names[i] in c2_names))]
+            if excl:
+                rec["pinned_excluded_by"] = excl
+        return rec
 
     table_out = [{k: v for k, v in row.items() if k != "solve_s"} for row in family_table]
     conflict_report = {
         "meta": {
             "generated_by": "tools/csp_export/minclass_solver.py",
             "families": all_fams, "reg_flow": not args.no_reg_flow,
+            "evidence_mode": args.evidence,
             "K": K, "K_upper": K_upper, "lower_bound": LB,
             "constrained_clusters": len(constrain), "free_clusters": res["free"],
             "conflicts": res["n_conflicts"], "c1_gaps": res["c1_gaps"],
@@ -1806,6 +1938,7 @@ def main():
     result = {
         "meta": {"generated_by": "tools/csp_export/minclass_solver.py",
                  "families": all_fams, "reg_flow": not args.no_reg_flow,
+                 "evidence_mode": args.evidence,
                  "K_min": K, "K_upper": K_upper, "lower_bound": LB,
                  "constrained_clusters": len(constrain), "free_clusters": res["free"],
                  "conflicts": res["n_conflicts"], "c1_gaps": res["c1_gaps"],
