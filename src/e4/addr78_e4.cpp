@@ -5594,7 +5594,7 @@ int GameSetup_DlgProc(HWND hWnd, unsigned int a2, int a3, HWND a4)
       {
         if ( SendMessageA(a4, 0xF0u, 0, 0) != 1 ) /*0x78ee21*/
         {
-          Theme::QueueSong((int)&unk_A83D10, -3); /*0x78ee82*/
+          ((Theme *)((int)&unk_A83D10))->QueueSong( -3); /*0x78ee82*/
           return 0; /*0x78ee8d*/
         }
         if ( !Theme::IsPlaying((Theme *)&unk_A83D10) ) /*0x78ee28*/
@@ -5606,7 +5606,7 @@ int GameSetup_DlgProc(HWND hWnd, unsigned int a2, int a3, HWND a4)
         {
           LABEL_37:
           Theme::Stop((Theme *)&unk_A83D10, 0); /*0x78ee37*/
-          Theme::QueueSong((int)&unk_A83D10, -2); /*0x78ee43*/
+          ((Theme *)((int)&unk_A83D10))->QueueSong( -2); /*0x78ee43*/
           return 0; /*0x78ee4e*/
         }
       }

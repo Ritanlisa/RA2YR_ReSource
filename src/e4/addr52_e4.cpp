@@ -2348,7 +2348,7 @@ LABEL_134:
         v11 = 4; /*0x52ded3*/
         CreditsPower::Display((CreditsPower *)v50, j, 4); /*0x52ded8*/
         v19 = StringList::Find((StringList *)((char *)&stru_A83CD9.attachedTag + 3), g_INI_Key_INTRO); /*0x52dee7*/
-        Theme::QueueSong((int)&stru_A83CD9.attachedTag + 3, v19); /*0x52def2*/
+        ((Theme *)((int)&stru_A83CD9.attachedTag + 3))->QueueSong( v19); /*0x52def2*/
         Screen::Capture(1, 0, 0, -1); /*0x52defb*/
         goto LABEL_134; /*0x52df00*/
       case 16: /*0x52dce1*/

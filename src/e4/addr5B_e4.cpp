@@ -1514,7 +1514,7 @@ int Movie_RenderFrame(int a1, char a2, int a3, char a4)
     if ( a2 ) /*0x5bffe2*/
       dword_887640->hideCursor(); /*0x5bffec*/
     if ( a3 != -1 ) /*0x5bfff6*/
-      Theme::QueueSong(a3); /*0x5bfffe*/
+      ((Theme *)(a3))->QueueSong(); /*0x5bfffe*/
     do /*0x5c0049*/
     {
       if ( *(unsigned int *)(a1 + 12) == 2 || v12 ) /*0x5c000f*/

@@ -64,12 +64,12 @@ Coord * * sub_77E110()
     {
 LABEL_5:
       ((Theme *)&MEMORY[0xA83D10])->Stop(0); /*0x77e16a*/
-      (v1) = ((v1) & ~0xFF) | ((Theme::QueueSong((int)&MEMORY[0xA83D10], -2)) & 0xFF); /*0x77e176*/
+      (v1) = ((v1) & ~0xFF) | ((((Theme *)((int)&MEMORY[0xA83D10]))->QueueSong( -2)) & 0xFF); /*0x77e176*/
     }
   }
   else
   {
-    (v1) = ((v1) & ~0xFF) | ((Theme::QueueSong((int)&MEMORY[0xA83D10], -3)) & 0xFF); /*0x77e1c2*/
+    (v1) = ((v1) & ~0xFF) | ((((Theme *)((int)&MEMORY[0xA83D10]))->QueueSong( -3)) & 0xFF); /*0x77e1c2*/
   }
   return v1; /*0x77e17b*/
 

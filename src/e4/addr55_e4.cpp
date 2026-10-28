@@ -2285,12 +2285,12 @@ LABEL_8:
     if ( stru_A8E960.random[49] ) /*0x55d418*/
     {
       if ( v2 == -1 ) /*0x55d41d*/
-        Theme::QueueSong((int)&stru_A83CD9.attachedTag + 3, -2); /*0x55d421*/
+        ((Theme *)((int)&stru_A83CD9.attachedTag + 3))->QueueSong( -2); /*0x55d421*/
     }
     else if ( v2 != -3 ) /*0x55d426*/
     {
       Theme::Stop((Theme *)&stru_A83CD9.attachedTag + 3, 1); /*0x55d42f*/
-      Theme::QueueSong((int)&stru_A83CD9.attachedTag + 3, -3); /*0x55d43b*/
+      ((Theme *)((int)&stru_A83CD9.attachedTag + 3))->QueueSong( -3); /*0x55d43b*/
     }
   }
   if ( !*(unsigned int *)&dword_A8B238 ) /*0x55d447*/

@@ -660,7 +660,7 @@ ObjectClass * * E4Recv_4F2300::ProcessGraphicMenu()
     (*(void (**)(State *, int))(*(unsigned int *)v4->ConstructorWithVtable + 12))(v4, this->ptr_0 + 4)); /*0x4f260c*/
   ObjectClass *v16; // [esp+Ah] [ebp-44h]
   UI_Process(v16); /*0x4f260f*/
-  Theme::QueueSong((int)&unk_A83D10, -3); /*0x4f261b*/
+  ((Theme *)((int)&unk_A83D10))->QueueSong( -3); /*0x4f261b*/
   if ( v4 ) /*0x4f2622*/
     return v4->Players; /*0x4f2624*/
   else

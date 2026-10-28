@@ -336,7 +336,7 @@ AbstractClass * * Options::Screen_Save(void *a1)
       int v10 = dword_A83D14; // eax /*0x55fbe5*/
       if ( dword_A83D14 == -1 ) /*0x55fbed*/
         v10 = dword_A83D18; /*0x55fbef*/
-      Theme::QueueSong((int)&unk_A83D10, v10); /*0x55fbfa*/
+      ((Theme *)((int)&unk_A83D10))->QueueSong( v10); /*0x55fbfa*/
       ((Theme *)&unk_A83D10)->Stop(0); /*0x55fc06*/
     }
   }

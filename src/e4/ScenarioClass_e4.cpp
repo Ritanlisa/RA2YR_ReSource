@@ -473,7 +473,7 @@ LABEL_21:
   if ( dword_A8B230[202].ptr_8 == -1 ) /*0x683e50*/
     ((Theme *)&stru_A83CD9.attachedTag + 3)->Stop(1); /*0x683e66*/
   else
-    Theme::QueueSong((int)&stru_A83CD9.attachedTag + 3, dword_A8B230[202].ptr_8); /*0x683e58*/
+    ((Theme *)((int)&stru_A83CD9.attachedTag + 3))->QueueSong( dword_A8B230[202].ptr_8); /*0x683e58*/
   DisableIME(); /*0x683e6b*/
   stru_A8E960.random[488] = 1; /*0x683e75*/
   byte_A8E378 = 1; /*0x683e7f*/

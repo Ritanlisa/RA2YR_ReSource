@@ -1,0 +1,2890 @@
+{
+ "meta": {
+  "falsification": [
+   "1214/1214 real vtables have ??_R4<Class>@@6B@ at [vt-4]; 0/162 of these do",
+   "1177 ??_7<Class>@@6B@ symbols exist in the IDB and all are inside the x128 universe",
+   "no install instruction (mov <mem>, offset V) exists for any of the 162",
+   "146/162 have zero slots that are function starts; the other 16 are jump/atexit/branch tables"
+  ],
+  "generated_by": ".omo/x191/build_attribution.py",
+  "idb": "gamemd.exe.i64",
+  "method": [
+   "xrefs_to(V) -> decode instruction -> containing function",
+   "install = mov <mem>, offset V (vtable store); push/cmp/mov reg, offset V are string/compare uses",
+   "[vt-4] resolved: a real MSVC vftable points at a ??_R4<Class>@@6B@ COL",
+   "??_7<Class>@@6B@ data symbols enumerated as the authoritative primary-vftable universe"
+  ],
+  "result": {
+   "attributed": 0,
+   "entries": 162,
+   "kinds": {
+    "fnptr_array": 9,
+    "mixed_fnptr_array": 7,
+    "non_vtable_data": 146
+   },
+   "non_vtable_artifacts": 162,
+   "real_vtables": 0
+  },
+  "source": "anchors/vtable_authority_x128.json (162 entries with class=null) + live IDA xref/insn scan"
+ },
+ "vtables": {
+  "0x7F371C": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 0,
+   "idt_name": "",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".rdata",
+   "slot_count": 2,
+   "vtable": "0x7F371C",
+   "xref_total": 0
+  },
+  "0x7F95C4": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 0,
+   "idt_name": "",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".rdata",
+   "slot_count": 2,
+   "vtable": "0x7F95C4",
+   "xref_total": 0
+  },
+  "0x7F9634": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 0,
+   "idt_name": "",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".rdata",
+   "slot_count": 2,
+   "vtable": "0x7F9634",
+   "xref_total": 0
+  },
+  "0x7F9654": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 0,
+   "idt_name": "",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".rdata",
+   "slot_count": 2,
+   "vtable": "0x7F9654",
+   "xref_total": 0
+  },
+  "0x7F96F8": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 0,
+   "idt_name": "",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".rdata",
+   "slot_count": 13,
+   "vtable": "0x7F96F8",
+   "xref_total": 0
+  },
+  "0x7F9770": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [
+    {
+     "from_addr": "0x87C200",
+     "func_name": null,
+     "insn": "<data>"
+    }
+   ],
+   "fn_start_slots": 0,
+   "idt_name": "aSat",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".rdata",
+   "slot_count": 8,
+   "vtable": "0x7F9770",
+   "xref_total": 1
+  },
+  "0x7F979C": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 0,
+   "idt_name": "",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".rdata",
+   "slot_count": 2,
+   "vtable": "0x7F979C",
+   "xref_total": 0
+  },
+  "0x7F9848": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [
+    {
+     "from_addr": "0x87C4CC",
+     "func_name": null,
+     "insn": "off_87C4CC"
+    }
+   ],
+   "fn_start_slots": 0,
+   "idt_name": "off_7F9848",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".rdata",
+   "slot_count": 2,
+   "vtable": "0x7F9848",
+   "xref_total": 1
+  },
+  "0x7F98F4": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 0,
+   "idt_name": "",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".rdata",
+   "slot_count": 2,
+   "vtable": "0x7F98F4",
+   "xref_total": 0
+  },
+  "0x7F9900": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 0,
+   "idt_name": "",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".rdata",
+   "slot_count": 2,
+   "vtable": "0x7F9900",
+   "xref_total": 0
+  },
+  "0x7F9EC4": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 0,
+   "idt_name": "",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".rdata",
+   "slot_count": 2,
+   "vtable": "0x7F9EC4",
+   "xref_total": 0
+  },
+  "0x7FA274": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 0,
+   "idt_name": "",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".rdata",
+   "slot_count": 3,
+   "vtable": "0x7FA274",
+   "xref_total": 0
+  },
+  "0x7FA2D4": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [
+    {
+     "from_addr": "0x7D7397",
+     "func_name": "_ProcessCodePage",
+     "insn": "push    offset off_7FA2D4; Str2"
+    }
+   ],
+   "fn_start_slots": 0,
+   "idt_name": "off_7FA2D4",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".rdata",
+   "slot_count": 2,
+   "vtable": "0x7FA2D4",
+   "xref_total": 1
+  },
+  "0x7FA2E4": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 0,
+   "idt_name": "",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".rdata",
+   "slot_count": 2,
+   "vtable": "0x7FA2E4",
+   "xref_total": 0
+  },
+  "0x7FA2F4": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 0,
+   "idt_name": "",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".rdata",
+   "slot_count": 2,
+   "vtable": "0x7FA2F4",
+   "xref_total": 0
+  },
+  "0x7FA300": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 0,
+   "idt_name": "",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".rdata",
+   "slot_count": 2,
+   "vtable": "0x7FA300",
+   "xref_total": 0
+  },
+  "0x7FA30C": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 0,
+   "idt_name": "",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".rdata",
+   "slot_count": 2,
+   "vtable": "0x7FA30C",
+   "xref_total": 0
+  },
+  "0x7FA318": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 0,
+   "idt_name": "",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".rdata",
+   "slot_count": 2,
+   "vtable": "0x7FA318",
+   "xref_total": 0
+  },
+  "0x7FA324": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 0,
+   "idt_name": "",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".rdata",
+   "slot_count": 2,
+   "vtable": "0x7FA324",
+   "xref_total": 0
+  },
+  "0x7FA330": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 0,
+   "idt_name": "",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".rdata",
+   "slot_count": 2,
+   "vtable": "0x7FA330",
+   "xref_total": 0
+  },
+  "0x7FA3E8": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 0,
+   "idt_name": "",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".rdata",
+   "slot_count": 3,
+   "vtable": "0x7FA3E8",
+   "xref_total": 0
+  },
+  "0x7FA43C": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 0,
+   "idt_name": "",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".rdata",
+   "slot_count": 3,
+   "vtable": "0x7FA43C",
+   "xref_total": 0
+  },
+  "0x7FA458": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 0,
+   "idt_name": "",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".rdata",
+   "slot_count": 2,
+   "vtable": "0x7FA458",
+   "xref_total": 0
+  },
+  "0x7FA470": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 1,
+   "idt_name": "",
+   "install_sites": 0,
+   "kind": "mixed_fnptr_array",
+   "seq": ".rdata",
+   "slot_count": 2,
+   "vtable": "0x7FA470",
+   "xref_total": 0
+  },
+  "0x7FA47C": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 0,
+   "idt_name": "",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".rdata",
+   "slot_count": 2,
+   "vtable": "0x7FA47C",
+   "xref_total": 0
+  },
+  "0x7FA48C": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 0,
+   "idt_name": "",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".rdata",
+   "slot_count": 2,
+   "vtable": "0x7FA48C",
+   "xref_total": 0
+  },
+  "0x80F220": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [
+    {
+     "from_addr": "0x80F11C",
+     "func_name": null,
+     "insn": "__IMPORT_DESCRIPTOR_ADVAPI32"
+    }
+   ],
+   "fn_start_slots": 0,
+   "idt_name": "off_80F220",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".rdata",
+   "slot_count": 9,
+   "vtable": "0x80F220",
+   "xref_total": 1
+  },
+  "0x80F250": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 0,
+   "idt_name": "",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".rdata",
+   "slot_count": 5,
+   "vtable": "0x80F250",
+   "xref_total": 0
+  },
+  "0x80F278": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [
+    {
+     "from_addr": "0x80F108",
+     "func_name": null,
+     "insn": "__IMPORT_DESCRIPTOR_GDI32"
+    }
+   ],
+   "fn_start_slots": 0,
+   "idt_name": "off_80F278",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".rdata",
+   "slot_count": 22,
+   "vtable": "0x80F278",
+   "xref_total": 1
+  },
+  "0x80F2D4": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [
+    {
+     "from_addr": "0x80F1E4",
+     "func_name": null,
+     "insn": "__IMPORT_DESCRIPTOR_IMM32"
+    }
+   ],
+   "fn_start_slots": 0,
+   "idt_name": "off_80F2D4",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".rdata",
+   "slot_count": 6,
+   "vtable": "0x80F2D4",
+   "xref_total": 1
+  },
+  "0x80F2F0": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [
+    {
+     "from_addr": "0x80F0E0",
+     "func_name": null,
+     "insn": "__IMPORT_DESCRIPTOR_KERNEL32"
+    }
+   ],
+   "fn_start_slots": 0,
+   "idt_name": "off_80F2F0",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".rdata",
+   "slot_count": 162,
+   "vtable": "0x80F2F0",
+   "xref_total": 1
+  },
+  "0x80F5B4": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [
+    {
+     "from_addr": "0x80F0F4",
+     "func_name": null,
+     "insn": "__IMPORT_DESCRIPTOR_USER32"
+    }
+   ],
+   "fn_start_slots": 0,
+   "idt_name": "off_80F5B4",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".rdata",
+   "slot_count": 96,
+   "vtable": "0x80F5B4",
+   "xref_total": 1
+  },
+  "0x80F738": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [
+    {
+     "from_addr": "0x80F1BC",
+     "func_name": null,
+     "insn": "__IMPORT_DESCRIPTOR_VERSION"
+    }
+   ],
+   "fn_start_slots": 0,
+   "idt_name": "off_80F738",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".rdata",
+   "slot_count": 3,
+   "vtable": "0x80F738",
+   "xref_total": 1
+  },
+  "0x80F748": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [
+    {
+     "from_addr": "0x80F16C",
+     "func_name": null,
+     "insn": "__IMPORT_DESCRIPTOR_WINMM"
+    }
+   ],
+   "fn_start_slots": 0,
+   "idt_name": "off_80F748",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".rdata",
+   "slot_count": 5,
+   "vtable": "0x80F748",
+   "xref_total": 1
+  },
+  "0x80F7B0": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [
+    {
+     "from_addr": "0x80F1F8",
+     "func_name": null,
+     "insn": "__IMPORT_DESCRIPTOR_binkw32"
+    }
+   ],
+   "fn_start_slots": 0,
+   "idt_name": "off_80F7B0",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".rdata",
+   "slot_count": 13,
+   "vtable": "0x80F7B0",
+   "xref_total": 1
+  },
+  "0x80F7E8": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [
+    {
+     "from_addr": "0x80F144",
+     "func_name": null,
+     "insn": "__IMPORT_DESCRIPTOR_ole32"
+    }
+   ],
+   "fn_start_slots": 0,
+   "idt_name": "off_80F7E8",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".rdata",
+   "slot_count": 15,
+   "vtable": "0x80F7E8",
+   "xref_total": 1
+  },
+  "0x812004": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 216,
+   "idt_name": "",
+   "install_sites": 0,
+   "kind": "mixed_fnptr_array",
+   "seq": ".data",
+   "slot_count": 3944,
+   "vtable": "0x812004",
+   "xref_total": 0
+  },
+  "0x815DAC": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 4,
+   "idt_name": "",
+   "install_sites": 0,
+   "kind": "fnptr_array",
+   "seq": ".data",
+   "slot_count": 4,
+   "vtable": "0x815DAC",
+   "xref_total": 0
+  },
+  "0x815DC4": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 3,
+   "idt_name": "",
+   "install_sites": 0,
+   "kind": "fnptr_array",
+   "seq": ".data",
+   "slot_count": 3,
+   "vtable": "0x815DC4",
+   "xref_total": 0
+  },
+  "0x81632C": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 0,
+   "idt_name": "",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 11,
+   "vtable": "0x81632C",
+   "xref_total": 0
+  },
+  "0x81636C": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 1,
+   "idt_name": "",
+   "install_sites": 0,
+   "kind": "mixed_fnptr_array",
+   "seq": ".data",
+   "slot_count": 4,
+   "vtable": "0x81636C",
+   "xref_total": 0
+  },
+  "0x817288": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 0,
+   "idt_name": "",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 2,
+   "vtable": "0x817288",
+   "xref_total": 0
+  },
+  "0x817588": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 0,
+   "idt_name": "",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 2,
+   "vtable": "0x817588",
+   "xref_total": 0
+  },
+  "0x8182DC": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 0,
+   "idt_name": "",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 4,
+   "vtable": "0x8182DC",
+   "xref_total": 0
+  },
+  "0x8186E8": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [
+    {
+     "from_addr": "0x429432",
+     "func_name": "sub_429420",
+     "insn": "push    offset psz; psz"
+    }
+   ],
+   "fn_start_slots": 0,
+   "idt_name": "psz",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 6,
+   "vtable": "0x8186E8",
+   "xref_total": 1
+  },
+  "0x8190DC": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [
+    {
+     "from_addr": "0x45002B",
+     "func_name": "BuildingClass::ReadConstructionData",
+     "insn": "push    (offset stru_8190C8.Name+14h); Format"
+    },
+    {
+     "from_addr": "0x450056",
+     "func_name": "BuildingClass::ReadConstructionData",
+     "insn": "push    (offset stru_8190C8.Name+14h); Format"
+    },
+    {
+     "from_addr": "0x49D75F",
+     "func_name": "SerializeCampaignOptions",
+     "insn": "push    (offset stru_8190C8.Name+14h); Format"
+    }
+   ],
+   "fn_start_slots": 0,
+   "idt_name": "",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 2,
+   "vtable": "0x8190DC",
+   "xref_total": 4
+  },
+  "0x81B164": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [
+    {
+     "from_addr": "0x46BF2E",
+     "func_name": "BulletTypeClass::LoadFromINI",
+     "insn": "push    offset off_81B164; unsigned __int8 *"
+    },
+    {
+     "from_addr": "0x714B1B",
+     "func_name": "ObjectTypeClass::LoadExtras",
+     "insn": "push    offset off_81B164; unsigned __int8 *"
+    }
+   ],
+   "fn_start_slots": 0,
+   "idt_name": "off_81B164",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 2,
+   "vtable": "0x81B164",
+   "xref_total": 2
+  },
+  "0x81D98C": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [
+    {
+     "from_addr": "0x7E5284",
+     "func_name": null,
+     "insn": "<data>"
+    }
+   ],
+   "fn_start_slots": 0,
+   "idt_name": "off_81D98C",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 2,
+   "vtable": "0x81D98C",
+   "xref_total": 1
+  },
+  "0x82052C": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [
+    {
+     "from_addr": "0x4B96D2",
+     "func_name": "TextRenderer::RenderCentered",
+     "insn": "push    offset aSD; BufferCount"
+    },
+    {
+     "from_addr": "0x4B96E3",
+     "func_name": "TextRenderer::RenderCentered",
+     "insn": "push    offset aSD; BufferCount"
+    }
+   ],
+   "fn_start_slots": 0,
+   "idt_name": "aSD",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 2,
+   "vtable": "0x82052C",
+   "xref_total": 2
+  },
+  "0x820544": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [
+    {
+     "from_addr": "0x4B9A52",
+     "func_name": "DisplayBuildingInfoPanel",
+     "insn": "push    offset off_820544; BufferCount"
+    }
+   ],
+   "fn_start_slots": 0,
+   "idt_name": "off_820544",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 2,
+   "vtable": "0x820544",
+   "xref_total": 1
+  },
+  "0x820558": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [
+    {
+     "from_addr": "0x4B9A2F",
+     "func_name": "DisplayBuildingInfoPanel",
+     "insn": "push    offset off_820558; BufferCount"
+    }
+   ],
+   "fn_start_slots": 0,
+   "idt_name": "off_820558",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 4,
+   "vtable": "0x820558",
+   "xref_total": 1
+  },
+  "0x82056C": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 0,
+   "idt_name": "",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 2,
+   "vtable": "0x82056C",
+   "xref_total": 0
+  },
+  "0x820578": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [
+    {
+     "from_addr": "0x4B9A18",
+     "func_name": "DisplayBuildingInfoPanel",
+     "insn": "push    offset off_820578; BufferCount"
+    }
+   ],
+   "fn_start_slots": 0,
+   "idt_name": "off_820578",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 4,
+   "vtable": "0x820578",
+   "xref_total": 1
+  },
+  "0x820594": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [
+    {
+     "from_addr": "0x4B99E9",
+     "func_name": "DisplayBuildingInfoPanel",
+     "insn": "push    offset off_820594; BufferCount"
+    }
+   ],
+   "fn_start_slots": 0,
+   "idt_name": "off_820594",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 2,
+   "vtable": "0x820594",
+   "xref_total": 1
+  },
+  "0x8205A8": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [
+    {
+     "from_addr": "0x4B99D5",
+     "func_name": "DisplayBuildingInfoPanel",
+     "insn": "push    offset off_8205A8; BufferCount"
+    }
+   ],
+   "fn_start_slots": 0,
+   "idt_name": "off_8205A8",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 2,
+   "vtable": "0x8205A8",
+   "xref_total": 1
+  },
+  "0x8205BC": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [
+    {
+     "from_addr": "0x4B99AD",
+     "func_name": "DisplayBuildingInfoPanel",
+     "insn": "push    offset aNameS_0; BufferCount"
+    }
+   ],
+   "fn_start_slots": 0,
+   "idt_name": "aNameS_0",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 2,
+   "vtable": "0x8205BC",
+   "xref_total": 1
+  },
+  "0x820804": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [
+    {
+     "from_addr": "0x4C40A6",
+     "func_name": "CreditsPower::Display",
+     "insn": "mov     edi, offset off_820804"
+    }
+   ],
+   "fn_start_slots": 0,
+   "idt_name": "off_820804",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 5,
+   "vtable": "0x820804",
+   "xref_total": 1
+  },
+  "0x82081C": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [
+    {
+     "from_addr": "0x4C409A",
+     "func_name": "CreditsPower::Display",
+     "insn": "mov     edi, offset off_82081C"
+    }
+   ],
+   "fn_start_slots": 0,
+   "idt_name": "off_82081C",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 7,
+   "vtable": "0x82081C",
+   "xref_total": 1
+  },
+  "0x825BAC": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [
+    {
+     "from_addr": "0x527607",
+     "func_name": "INIClass::SetInt",
+     "insn": "push    offset off_825BAC; Format"
+    },
+    {
+     "from_addr": "0x5276A8",
+     "func_name": "INIClass::SetIntFormat",
+     "insn": "push    offset off_825BAC; Format"
+    }
+   ],
+   "fn_start_slots": 0,
+   "idt_name": "off_825BAC",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 4,
+   "vtable": "0x825BAC",
+   "xref_total": 2
+  },
+  "0x825CC0": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 0,
+   "idt_name": "",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 2,
+   "vtable": "0x825CC0",
+   "xref_total": 0
+  },
+  "0x8278B4": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [
+    {
+     "from_addr": "0x537A60",
+     "func_name": "Commands::ddtor",
+     "insn": "mov     eax, offset g_INI_Key_De; \"De\""
+    },
+    {
+     "from_addr": "0x537AC0",
+     "func_name": "CreateTeamCommand::performAction_189",
+     "insn": "mov     eax, offset g_INI_Key_De; \"De\""
+    },
+    {
+     "from_addr": "0x55DFE7",
+     "func_name": "SyncDelayClass::ProcessNetworkSync",
+     "insn": "push    offset g_INI_Key_De; String2"
+    }
+   ],
+   "fn_start_slots": 0,
+   "idt_name": "g_INI_Key_De",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 2,
+   "vtable": "0x8278B4",
+   "xref_total": 3
+  },
+  "0x8278C0": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [
+    {
+     "from_addr": "0x537A70",
+     "func_name": "Commands::Release",
+     "insn": "mov     eax, offset off_8278C0"
+    }
+   ],
+   "fn_start_slots": 0,
+   "idt_name": "off_8278C0",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 5,
+   "vtable": "0x8278C0",
+   "xref_total": 1
+  },
+  "0x8278D8": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 0,
+   "idt_name": "",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 2,
+   "vtable": "0x8278D8",
+   "xref_total": 0
+  },
+  "0x8278E4": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 0,
+   "idt_name": "",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 2,
+   "vtable": "0x8278E4",
+   "xref_total": 0
+  },
+  "0x8278F0": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [
+    {
+     "from_addr": "0x537A80",
+     "func_name": "Commands::StubReturn8550640",
+     "insn": "mov     eax, offset off_8278F0"
+    }
+   ],
+   "fn_start_slots": 0,
+   "idt_name": "off_8278F0",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 2,
+   "vtable": "0x8278F0",
+   "xref_total": 1
+  },
+  "0x8278FC": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 0,
+   "idt_name": "",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 5,
+   "vtable": "0x8278FC",
+   "xref_total": 0
+  },
+  "0x827914": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 0,
+   "idt_name": "",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 2,
+   "vtable": "0x827914",
+   "xref_total": 0
+  },
+  "0x827920": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 0,
+   "idt_name": "",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 2,
+   "vtable": "0x827920",
+   "xref_total": 0
+  },
+  "0x82794C": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [
+    {
+     "from_addr": "0x537AD0",
+     "func_name": "CreateTeamCommand::performAction_190",
+     "insn": "mov     eax, offset aGameSyncLoggin; \"Game sync logging\""
+    }
+   ],
+   "fn_start_slots": 0,
+   "idt_name": "aGameSyncLoggin",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 4,
+   "vtable": "0x82794C",
+   "xref_total": 1
+  },
+  "0x827960": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 0,
+   "idt_name": "",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 3,
+   "vtable": "0x827960",
+   "xref_total": 0
+  },
+  "0x827970": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [
+    {
+     "from_addr": "0x537AE0",
+     "func_name": "CreateTeamCommand::performAction_191",
+     "insn": "mov     eax, offset off_827970"
+    }
+   ],
+   "fn_start_slots": 0,
+   "idt_name": "off_827970",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 2,
+   "vtable": "0x827970",
+   "xref_total": 1
+  },
+  "0x82797C": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 0,
+   "idt_name": "",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 2,
+   "vtable": "0x82797C",
+   "xref_total": 0
+  },
+  "0x827988": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 0,
+   "idt_name": "",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 4,
+   "vtable": "0x827988",
+   "xref_total": 0
+  },
+  "0x82799C": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 0,
+   "idt_name": "",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 3,
+   "vtable": "0x82799C",
+   "xref_total": 0
+  },
+  "0x8279AC": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 0,
+   "idt_name": "",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 2,
+   "vtable": "0x8279AC",
+   "xref_total": 0
+  },
+  "0x828708": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [
+    {
+     "from_addr": "0x542E37",
+     "func_name": "ScoreBoard::Render",
+     "insn": "push    offset off_828708; BufferCount"
+    },
+    {
+     "from_addr": "0x55F54A",
+     "func_name": "DrawHUD",
+     "insn": "push    offset off_828708; BufferCount"
+    }
+   ],
+   "fn_start_slots": 0,
+   "idt_name": "off_828708",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 4,
+   "vtable": "0x828708",
+   "xref_total": 2
+  },
+  "0x828724": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [
+    {
+     "from_addr": "0x542DA6",
+     "func_name": "ScoreBoard::Render",
+     "insn": "push    offset off_828724; BufferCount"
+    }
+   ],
+   "fn_start_slots": 0,
+   "idt_name": "off_828724",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 5,
+   "vtable": "0x828724",
+   "xref_total": 1
+  },
+  "0x828748": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [
+    {
+     "from_addr": "0x542D42",
+     "func_name": "ScoreBoard::Render",
+     "insn": "push    offset off_828748; BufferCount"
+    }
+   ],
+   "fn_start_slots": 0,
+   "idt_name": "off_828748",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 2,
+   "vtable": "0x828748",
+   "xref_total": 1
+  },
+  "0x82876C": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [
+    {
+     "from_addr": "0x542CDC",
+     "func_name": "ScoreBoard::Render",
+     "insn": "push    offset off_82876C; BufferCount"
+    }
+   ],
+   "fn_start_slots": 0,
+   "idt_name": "off_82876C",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 2,
+   "vtable": "0x82876C",
+   "xref_total": 1
+  },
+  "0x828788": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [
+    {
+     "from_addr": "0x542C78",
+     "func_name": "ScoreBoard::Render",
+     "insn": "push    offset off_828788; BufferCount"
+    },
+    {
+     "from_addr": "0x55F4DB",
+     "func_name": "DrawHUD",
+     "insn": "push    offset off_828788; BufferCount"
+    }
+   ],
+   "fn_start_slots": 0,
+   "idt_name": "off_828788",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 3,
+   "vtable": "0x828788",
+   "xref_total": 2
+  },
+  "0x8287A4": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [
+    {
+     "from_addr": "0x542BB9",
+     "func_name": "ScoreBoard::Render",
+     "insn": "push    offset off_8287A4; BufferCount"
+    }
+   ],
+   "fn_start_slots": 0,
+   "idt_name": "off_8287A4",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 4,
+   "vtable": "0x8287A4",
+   "xref_total": 1
+  },
+  "0x8287C8": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 0,
+   "idt_name": "",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 2,
+   "vtable": "0x8287C8",
+   "xref_total": 0
+  },
+  "0x8287DC": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [
+    {
+     "from_addr": "0x542AED",
+     "func_name": "ScoreBoard::Render",
+     "insn": "push    offset off_8287DC; BufferCount"
+    }
+   ],
+   "fn_start_slots": 0,
+   "idt_name": "off_8287DC",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 3,
+   "vtable": "0x8287DC",
+   "xref_total": 1
+  },
+  "0x828814": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [
+    {
+     "from_addr": "0x5429FE",
+     "func_name": "ScoreBoard::Render",
+     "insn": "push    offset off_828814; BufferCount"
+    }
+   ],
+   "fn_start_slots": 0,
+   "idt_name": "off_828814",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 3,
+   "vtable": "0x828814",
+   "xref_total": 1
+  },
+  "0x828830": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [
+    {
+     "from_addr": "0x5428BC",
+     "func_name": "ScoreBoard::Render",
+     "insn": "push    offset off_828830; BufferCount"
+    }
+   ],
+   "fn_start_slots": 0,
+   "idt_name": "off_828830",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 3,
+   "vtable": "0x828830",
+   "xref_total": 1
+  },
+  "0x828848": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [
+    {
+     "from_addr": "0x5427ED",
+     "func_name": "ScoreBoard::Render",
+     "insn": "push    offset aFspsD; \"FSPS : %d\""
+    }
+   ],
+   "fn_start_slots": 0,
+   "idt_name": "aFspsD",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 2,
+   "vtable": "0x828848",
+   "xref_total": 1
+  },
+  "0x828864": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 0,
+   "idt_name": "",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 2,
+   "vtable": "0x828864",
+   "xref_total": 0
+  },
+  "0x82887C": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [
+    {
+     "from_addr": "0x5426CF",
+     "func_name": "ScoreBoard::Render",
+     "insn": "push    offset off_82887C; BufferCount"
+    }
+   ],
+   "fn_start_slots": 0,
+   "idt_name": "off_82887C",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 6,
+   "vtable": "0x82887C",
+   "xref_total": 1
+  },
+  "0x8288A0": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [
+    {
+     "from_addr": "0x542657",
+     "func_name": "ScoreBoard::Render",
+     "insn": "push    offset off_8288A0; BufferCount"
+    }
+   ],
+   "fn_start_slots": 0,
+   "idt_name": "off_8288A0",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 5,
+   "vtable": "0x8288A0",
+   "xref_total": 1
+  },
+  "0x82A0E8": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [
+    {
+     "from_addr": "0x55EA4B",
+     "func_name": "Chat::ProcessMessages",
+     "insn": "push    offset off_82A0E8; BufferCount"
+    }
+   ],
+   "fn_start_slots": 0,
+   "idt_name": "off_82A0E8",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 2,
+   "vtable": "0x82A0E8",
+   "xref_total": 1
+  },
+  "0x82A18C": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [
+    {
+     "from_addr": "0x55F615",
+     "func_name": "DrawHUD",
+     "insn": "push    offset off_82A18C; BufferCount"
+    }
+   ],
+   "fn_start_slots": 0,
+   "idt_name": "off_82A18C",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 2,
+   "vtable": "0x82A18C",
+   "xref_total": 1
+  },
+  "0x82A1D0": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [
+    {
+     "from_addr": "0x55F423",
+     "func_name": "DrawHUD",
+     "insn": "push    offset off_82A1D0; BufferCount"
+    }
+   ],
+   "fn_start_slots": 0,
+   "idt_name": "off_82A1D0",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 4,
+   "vtable": "0x82A1D0",
+   "xref_total": 1
+  },
+  "0x82A1E8": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 0,
+   "idt_name": "",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 2,
+   "vtable": "0x82A1E8",
+   "xref_total": 0
+  },
+  "0x82A1F4": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [
+    {
+     "from_addr": "0x55F3A3",
+     "func_name": "DrawHUD",
+     "insn": "push    offset off_82A1F4; BufferCount"
+    }
+   ],
+   "fn_start_slots": 0,
+   "idt_name": "off_82A1F4",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 4,
+   "vtable": "0x82A1F4",
+   "xref_total": 1
+  },
+  "0x82A224": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [
+    {
+     "from_addr": "0x55F2F0",
+     "func_name": "DrawHUD",
+     "insn": "push    offset off_82A224; BufferCount"
+    }
+   ],
+   "fn_start_slots": 0,
+   "idt_name": "off_82A224",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 2,
+   "vtable": "0x82A224",
+   "xref_total": 1
+  },
+  "0x82B754": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [
+    {
+     "from_addr": "0x82B198",
+     "func_name": null,
+     "insn": "<data>"
+    },
+    {
+     "from_addr": "0x82B254",
+     "func_name": null,
+     "insn": "<data>"
+    }
+   ],
+   "fn_start_slots": 0,
+   "idt_name": "aCar",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 2,
+   "vtable": "0x82B754",
+   "xref_total": 2
+  },
+  "0x82BA5C": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 0,
+   "idt_name": "",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 2,
+   "vtable": "0x82BA5C",
+   "xref_total": 0
+  },
+  "0x82C5C8": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [
+    {
+     "from_addr": "0x5B5B62",
+     "func_name": "ModemGame::UpdatePlayerNameAndColor",
+     "insn": "push    offset aSS; BufferCount"
+    },
+    {
+     "from_addr": "0x5B95D5",
+     "func_name": "ModemGuest::UpdateGuestPlayerInfo",
+     "insn": "push    offset aSS; BufferCount"
+    }
+   ],
+   "fn_start_slots": 0,
+   "idt_name": "aSS",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 3,
+   "vtable": "0x82C5C8",
+   "xref_total": 2
+  },
+  "0x82E198": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 0,
+   "idt_name": "",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 6,
+   "vtable": "0x82E198",
+   "xref_total": 0
+  },
+  "0x831820": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [
+    {
+     "from_addr": "0x5E584A",
+     "func_name": "SetupNetworkLobbyDialog",
+     "insn": "push    offset off_831820; BufferCount"
+    }
+   ],
+   "fn_start_slots": 0,
+   "idt_name": "off_831820",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 3,
+   "vtable": "0x831820",
+   "xref_total": 1
+  },
+  "0x831830": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 0,
+   "idt_name": "",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 2,
+   "vtable": "0x831830",
+   "xref_total": 0
+  },
+  "0x83183C": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 0,
+   "idt_name": "",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 3,
+   "vtable": "0x83183C",
+   "xref_total": 0
+  },
+  "0x832A08": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [
+    {
+     "from_addr": "0x5F32EB",
+     "func_name": "NullModemClass::Negotiate",
+     "insn": "push    offset off_832A08"
+    },
+    {
+     "from_addr": "0x69610A",
+     "func_name": "NetworkDialog::InitModemSettings",
+     "insn": "mov     edi, offset off_832A08"
+    }
+   ],
+   "fn_start_slots": 0,
+   "idt_name": "off_832A08",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 2,
+   "vtable": "0x832A08",
+   "xref_total": 2
+  },
+  "0x832AE0": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [
+    {
+     "from_addr": "0x5F82DA",
+     "func_name": "VoxelAnimType::LoadAnim",
+     "insn": "push    offset off_832AE0; Format"
+    },
+    {
+     "from_addr": "0x5F837B",
+     "func_name": "VoxelAnimType::LoadAnim",
+     "insn": "push    offset off_832AE0; Format"
+    }
+   ],
+   "fn_start_slots": 0,
+   "idt_name": "off_832AE0",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 3,
+   "vtable": "0x832AE0",
+   "xref_total": 2
+  },
+  "0x835870": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 0,
+   "idt_name": "",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 2,
+   "vtable": "0x835870",
+   "xref_total": 0
+  },
+  "0x836468": {
+   "class": null,
+   "col": "unk_836468",
+   "confidence": "none",
+   "evidence": [
+    {
+     "from_addr": "0x836464",
+     "func_name": null,
+     "insn": "off_836464"
+    }
+   ],
+   "fn_start_slots": 0,
+   "idt_name": "unk_836468",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 3,
+   "vtable": "0x836468",
+   "xref_total": 1
+  },
+  "0x839354": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [
+    {
+     "from_addr": "0x6541F4",
+     "func_name": "RenderScoreboardSidebar",
+     "insn": "push    offset asc_839354; \"________\""
+    }
+   ],
+   "fn_start_slots": 0,
+   "idt_name": "asc_839354",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 4,
+   "vtable": "0x839354",
+   "xref_total": 1
+  },
+  "0x83A5C8": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 0,
+   "idt_name": "",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 2,
+   "vtable": "0x83A5C8",
+   "xref_total": 0
+  },
+  "0x83D5A8": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [
+    {
+     "from_addr": "0x67D082",
+     "func_name": "SaveScenarioClassGame_AdjustMPSaveFileName",
+     "insn": "push    offset off_83D5A8"
+    },
+    {
+     "from_addr": "0x67E56C",
+     "func_name": "Game::LoadSaved",
+     "insn": "push    offset off_83D5A8"
+    }
+   ],
+   "fn_start_slots": 0,
+   "idt_name": "off_83D5A8",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 4,
+   "vtable": "0x83D5A8",
+   "xref_total": 2
+  },
+  "0x83D6C0": {
+   "class": null,
+   "col": "g_INI_Key_GameType",
+   "confidence": "none",
+   "evidence": [
+    {
+     "from_addr": "0x681C71",
+     "func_name": "ScenarioPropertyReadCOM",
+     "insn": "cmp     eax, offset g_INI_Key_GameType; \"GameType\""
+    },
+    {
+     "from_addr": "0x681D07",
+     "func_name": "ScenarioPropertyReadCOM",
+     "insn": "cmp     eax, offset g_INI_Key_GameType; \"GameType\""
+    },
+    {
+     "from_addr": "0x681DA3",
+     "func_name": "ScenarioPropertyReadCOM",
+     "insn": "cmp     eax, offset g_INI_Key_GameType; \"GameType\""
+    }
+   ],
+   "fn_start_slots": 0,
+   "idt_name": "g_INI_Key_GameType",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 4,
+   "vtable": "0x83D6C0",
+   "xref_total": 12
+  },
+  "0x83D6D4": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 0,
+   "idt_name": "aCampaign_0",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 4,
+   "vtable": "0x83D6D4",
+   "xref_total": 0
+  },
+  "0x83D6E8": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 0,
+   "idt_name": "",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 7,
+   "vtable": "0x83D6E8",
+   "xref_total": 0
+  },
+  "0x83D708": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 1,
+   "idt_name": "",
+   "install_sites": 0,
+   "kind": "mixed_fnptr_array",
+   "seq": ".data",
+   "slot_count": 5,
+   "vtable": "0x83D708",
+   "xref_total": 0
+  },
+  "0x83D724": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 1,
+   "idt_name": "",
+   "install_sites": 0,
+   "kind": "mixed_fnptr_array",
+   "seq": ".data",
+   "slot_count": 5,
+   "vtable": "0x83D724",
+   "xref_total": 0
+  },
+  "0x83D73C": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 0,
+   "idt_name": "aExecutableName",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 7,
+   "vtable": "0x83D73C",
+   "xref_total": 0
+  },
+  "0x83D75C": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 1,
+   "idt_name": "",
+   "install_sites": 0,
+   "kind": "mixed_fnptr_array",
+   "seq": ".data",
+   "slot_count": 4,
+   "vtable": "0x83D75C",
+   "xref_total": 0
+  },
+  "0x83D770": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 0,
+   "idt_name": "",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 4,
+   "vtable": "0x83D770",
+   "xref_total": 0
+  },
+  "0x83D784": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 0,
+   "idt_name": "",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 2,
+   "vtable": "0x83D784",
+   "xref_total": 0
+  },
+  "0x83D790": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 0,
+   "idt_name": "aStartTime",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 2,
+   "vtable": "0x83D790",
+   "xref_total": 0
+  },
+  "0x83D79C": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 0,
+   "idt_name": "",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 2,
+   "vtable": "0x83D79C",
+   "xref_total": 0
+  },
+  "0x83D7A8": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 0,
+   "idt_name": "",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 8,
+   "vtable": "0x83D7A8",
+   "xref_total": 0
+  },
+  "0x83D7CC": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 0,
+   "idt_name": "",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 3,
+   "vtable": "0x83D7CC",
+   "xref_total": 0
+  },
+  "0x83D7DC": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 1,
+   "idt_name": "",
+   "install_sites": 0,
+   "kind": "mixed_fnptr_array",
+   "seq": ".data",
+   "slot_count": 6,
+   "vtable": "0x83D7DC",
+   "xref_total": 0
+  },
+  "0x83D7F8": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [
+    {
+     "from_addr": "0x83D65C",
+     "func_name": null,
+     "insn": "off_83D65C"
+    }
+   ],
+   "fn_start_slots": 0,
+   "idt_name": "off_83D7F8",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 10,
+   "vtable": "0x83D7F8",
+   "xref_total": 1
+  },
+  "0x83DC38": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [
+    {
+     "from_addr": "0x686FC5",
+     "func_name": "ScenarioClass::LoadMap",
+     "insn": "push    offset aMissing; \"MISSING:\""
+    }
+   ],
+   "fn_start_slots": 0,
+   "idt_name": "aMissing",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 3,
+   "vtable": "0x83DC38",
+   "xref_total": 1
+  },
+  "0x83F0FC": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 0,
+   "idt_name": "",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 2,
+   "vtable": "0x83F0FC",
+   "xref_total": 0
+  },
+  "0x83F4CC": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [
+    {
+     "from_addr": "0x699EA2",
+     "func_name": "SessionClass::LoadMissionList",
+     "insn": "push    offset off_83F4CC; BufferCount"
+    }
+   ],
+   "fn_start_slots": 0,
+   "idt_name": "off_83F4CC",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 3,
+   "vtable": "0x83F4CC",
+   "xref_total": 1
+  },
+  "0x83F4DC": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [
+    {
+     "from_addr": "0x699E88",
+     "func_name": "SessionClass::LoadMissionList",
+     "insn": "push    offset off_83F4DC; BufferCount"
+    }
+   ],
+   "fn_start_slots": 0,
+   "idt_name": "off_83F4DC",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 2,
+   "vtable": "0x83F4DC",
+   "xref_total": 1
+  },
+  "0x8421F8": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 0,
+   "idt_name": "",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 3,
+   "vtable": "0x8421F8",
+   "xref_total": 0
+  },
+  "0x842208": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [
+    {
+     "from_addr": "0x8421E0",
+     "func_name": null,
+     "insn": "<data>"
+    }
+   ],
+   "fn_start_slots": 0,
+   "idt_name": "aRight_0",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 2,
+   "vtable": "0x842208",
+   "xref_total": 1
+  },
+  "0x842214": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [
+    {
+     "from_addr": "0x8421D8",
+     "func_name": null,
+     "insn": "off_8421D8"
+    }
+   ],
+   "fn_start_slots": 0,
+   "idt_name": "aLeft",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 2,
+   "vtable": "0x842214",
+   "xref_total": 1
+  },
+  "0x842220": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [
+    {
+     "from_addr": "0x8421C8",
+     "func_name": null,
+     "insn": "<data>"
+    }
+   ],
+   "fn_start_slots": 0,
+   "idt_name": "off_842220",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 2,
+   "vtable": "0x842220",
+   "xref_total": 1
+  },
+  "0x84222C": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [
+    {
+     "from_addr": "0x8421C0",
+     "func_name": null,
+     "insn": "<data>"
+    }
+   ],
+   "fn_start_slots": 0,
+   "idt_name": "off_84222C",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 2,
+   "vtable": "0x84222C",
+   "xref_total": 1
+  },
+  "0x842238": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [
+    {
+     "from_addr": "0x8421B8",
+     "func_name": null,
+     "insn": "<data>"
+    }
+   ],
+   "fn_start_slots": 0,
+   "idt_name": "aPosition",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 4,
+   "vtable": "0x842238",
+   "xref_total": 1
+  },
+  "0x84224C": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [
+    {
+     "from_addr": "0x8421B0",
+     "func_name": null,
+     "insn": "<data>"
+    }
+   ],
+   "fn_start_slots": 0,
+   "idt_name": "off_84224C",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 4,
+   "vtable": "0x84224C",
+   "xref_total": 1
+  },
+  "0x842260": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [
+    {
+     "from_addr": "0x8421A8",
+     "func_name": null,
+     "insn": "off_8421A8"
+    }
+   ],
+   "fn_start_slots": 0,
+   "idt_name": "off_842260",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 2,
+   "vtable": "0x842260",
+   "xref_total": 1
+  },
+  "0x842328": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [
+    {
+     "from_addr": "0x6CA183",
+     "func_name": "ParseMovieSubtitles",
+     "insn": "push    offset aEn; String"
+    },
+    {
+     "from_addr": "0x6CA18E",
+     "func_name": "ParseMovieSubtitles",
+     "insn": "push    offset aEn; String2"
+    }
+   ],
+   "fn_start_slots": 0,
+   "idt_name": "aEn",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 4,
+   "vtable": "0x842328",
+   "xref_total": 2
+  },
+  "0x842354": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [
+    {
+     "from_addr": "0x6C9F7C",
+     "func_name": "ParseMovieSubtitles",
+     "insn": "push    offset g_INI_Key_BeginMovie; \"BeginMovie\""
+    },
+    {
+     "from_addr": "0x6C9F87",
+     "func_name": "ParseMovieSubtitles",
+     "insn": "push    offset g_INI_Key_BeginMovie; \"BeginMovie\""
+    },
+    {
+     "from_addr": "0x6CA291",
+     "func_name": "sub_6CA1E0",
+     "insn": "push    offset g_INI_Key_BeginMovie; \"BeginMovie\""
+    }
+   ],
+   "fn_start_slots": 0,
+   "idt_name": "g_INI_Key_BeginMovie",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 5,
+   "vtable": "0x842354",
+   "xref_total": 4
+  },
+  "0x845820": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [
+    {
+     "from_addr": "0x734EDE",
+     "func_name": "GetStringCSF",
+     "insn": "push    offset aMissingHs; \"MISSING:'%hs'\""
+    }
+   ],
+   "fn_start_slots": 0,
+   "idt_name": "aMissingHs",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 3,
+   "vtable": "0x845820",
+   "xref_total": 1
+  },
+  "0x845840": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 0,
+   "idt_name": "",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 3,
+   "vtable": "0x845840",
+   "xref_total": 0
+  },
+  "0x845854": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 0,
+   "idt_name": "",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 10,
+   "vtable": "0x845854",
+   "xref_total": 0
+  },
+  "0x845880": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 0,
+   "idt_name": "",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 11,
+   "vtable": "0x845880",
+   "xref_total": 0
+  },
+  "0x846840": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [
+    {
+     "from_addr": "0x756843",
+     "func_name": "Voxel::ProcessColor",
+     "insn": "call    funcs_756843[esi*4]"
+    }
+   ],
+   "fn_start_slots": 32,
+   "idt_name": "funcs_756843",
+   "install_sites": 0,
+   "kind": "fnptr_array",
+   "seq": ".data",
+   "slot_count": 32,
+   "vtable": "0x846840",
+   "xref_total": 1
+  },
+  "0x84962C": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [
+    {
+     "from_addr": "0x7737E3",
+     "func_name": "WebBrowser::LoadURLFromRegistry",
+     "insn": "push    offset aFr; Source"
+    },
+    {
+     "from_addr": "0x773CD8",
+     "func_name": "WebBrowser::Clone",
+     "insn": "push    offset aFr; Source"
+    }
+   ],
+   "fn_start_slots": 0,
+   "idt_name": "aFr",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 2,
+   "vtable": "0x84962C",
+   "xref_total": 2
+  },
+  "0x8496B8": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [
+    {
+     "from_addr": "0x773B1C",
+     "func_name": "WebBrowser::Write",
+     "insn": "push    offset aMain; \"Main\""
+    }
+   ],
+   "fn_start_slots": 0,
+   "idt_name": "aMain",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 2,
+   "vtable": "0x8496B8",
+   "xref_total": 1
+  },
+  "0x8496C4": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [
+    {
+     "from_addr": "0x773CAF",
+     "func_name": "WebBrowser::Clone",
+     "insn": "push    offset aBadpageHtm; \"BadPage.htm\""
+    }
+   ],
+   "fn_start_slots": 0,
+   "idt_name": "aBadpageHtm",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 3,
+   "vtable": "0x8496C4",
+   "xref_total": 1
+  },
+  "0x84A014": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 0,
+   "idt_name": "",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 2,
+   "vtable": "0x84A014",
+   "xref_total": 0
+  },
+  "0x84A078": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 0,
+   "idt_name": "",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 2,
+   "vtable": "0x84A078",
+   "xref_total": 0
+  },
+  "0x84A118": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 0,
+   "idt_name": "",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 2,
+   "vtable": "0x84A118",
+   "xref_total": 0
+  },
+  "0x84A720": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 0,
+   "idt_name": "",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 2,
+   "vtable": "0x84A720",
+   "xref_total": 0
+  },
+  "0x84AAA0": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [
+    {
+     "from_addr": "0x7A4012",
+     "func_name": "ComStreamClass::Write",
+     "insn": "mov     ecx, offset aUnknownStatus; \"Unknown Status\""
+    }
+   ],
+   "fn_start_slots": 0,
+   "idt_name": "aUnknownStatus",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 3,
+   "vtable": "0x84AAA0",
+   "xref_total": 1
+  },
+  "0x84AAB0": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 0,
+   "idt_name": "",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 3,
+   "vtable": "0x84AAB0",
+   "xref_total": 0
+  },
+  "0x84AB90": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [
+    {
+     "from_addr": "0x7A496C",
+     "func_name": "CChatEventSink::HandleServerList",
+     "insn": "push    offset aMgl; \"MGL\""
+    }
+   ],
+   "fn_start_slots": 0,
+   "idt_name": "aMgl",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 5,
+   "vtable": "0x84AB90",
+   "xref_total": 1
+  },
+  "0x84D780": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [
+    {
+     "from_addr": "0x7AF311",
+     "func_name": "StaticString::Factory",
+     "insn": "push    offset off_84D780; char *"
+    }
+   ],
+   "fn_start_slots": 0,
+   "idt_name": "off_84D780",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 2,
+   "vtable": "0x84D780",
+   "xref_total": 1
+  },
+  "0x86E0D8": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 0,
+   "idt_name": "",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 6914,
+   "vtable": "0x86E0D8",
+   "xref_total": 0
+  },
+  "0x875910": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 0,
+   "idt_name": "",
+   "install_sites": 0,
+   "kind": "non_vtable_data",
+   "seq": ".data",
+   "slot_count": 4,
+   "vtable": "0x875910",
+   "xref_total": 0
+  },
+  "0x877074": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 2,
+   "idt_name": "",
+   "install_sites": 0,
+   "kind": "fnptr_array",
+   "seq": ".data",
+   "slot_count": 2,
+   "vtable": "0x877074",
+   "xref_total": 0
+  },
+  "0x877084": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 2,
+   "idt_name": "",
+   "install_sites": 0,
+   "kind": "fnptr_array",
+   "seq": ".data",
+   "slot_count": 2,
+   "vtable": "0x877084",
+   "xref_total": 0
+  },
+  "0x87B1F0": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 2,
+   "idt_name": "",
+   "install_sites": 0,
+   "kind": "fnptr_array",
+   "seq": ".data",
+   "slot_count": 2,
+   "vtable": "0x87B1F0",
+   "xref_total": 0
+  },
+  "0x87B200": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [],
+   "fn_start_slots": 2,
+   "idt_name": "",
+   "install_sites": 0,
+   "kind": "fnptr_array",
+   "seq": ".data",
+   "slot_count": 2,
+   "vtable": "0x87B200",
+   "xref_total": 0
+  },
+  "0x87BEB8": {
+   "class": null,
+   "col": null,
+   "confidence": "none",
+   "evidence": [
+    {
+     "from_addr": "0x7CBDAF",
+     "func_name": "__cinit",
+     "insn": "mov     eax, off_87BEB8"
+    }
+   ],
+   "fn_start_slots": 3,
+   "idt_name": "off_87BEB8",
+   "install_sites": 0,
+   "kind": "fnptr_array",
+   "seq": ".data",
+   "slot_count": 3,
+   "vtable": "0x87BEB8",
+   "xref_total": 1
+  },
+  "0x87C4D0": {
+   "class": null,
+   "col": "off_7F9848",
+   "confidence": "none",
+   "evidence": [
+    {
+     "from_addr": "0x7C8F6D",
+     "func_name": "__cfltcvt_init_13",
+     "insn": "mov     off_87C4D0, eax"
+    },
+    {
+     "from_addr": "0x7CE64F",
+     "func_name": "__output",
+     "insn": "call    off_87C4D0"
+    },
+    {
+     "from_addr": "0x7D255E",
+     "func_name": "__woutput",
+     "insn": "call    off_87C4D0"
+    }
+   ],
+   "fn_start_slots": 6,
+   "idt_name": "off_87C4D0",
+   "install_sites": 0,
+   "kind": "fnptr_array",
+   "seq": ".data",
+   "slot_count": 6,
+   "vtable": "0x87C4D0",
+   "xref_total": 4
+  }
+ }
+}

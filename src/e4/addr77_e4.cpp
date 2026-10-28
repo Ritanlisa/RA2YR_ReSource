@@ -1596,7 +1596,7 @@ int RunWOLMainLoop(char a1)
   if ( *(int *)((char *)&stru_A83CD9.attachedBomb + 3) == -1 ) /*0x77b2e0*/
     v2 = *(int *)((char *)stru_A83CD9.ambientSoundController + 3); /*0x77b2e2*/
   if ( v2 == StringList::Find((StringList *)((char *)&stru_A83CD9.attachedTag + 3), g_INI_Key_INTRO) ) /*0x77b2f9*/
-    Theme::QueueSong((int)&stru_A83CD9.attachedTag + 3, -3); /*0x77b302*/
+    ((Theme *)((int)&stru_A83CD9.attachedTag + 3))->QueueSong( -3); /*0x77b302*/
   ReadWOLAccountINI(); /*0x77b307*/
   v3 = BYTE1(stru_A83CD9.ambientSoundController[3]); /*0x77b30c*/
   BYTE1(stru_A83CD9.ambientSoundController[3]) = 1; /*0x77b312*/

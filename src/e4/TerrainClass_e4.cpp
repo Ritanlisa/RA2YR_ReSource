@@ -309,7 +309,7 @@ LABEL_158:
       PlayVocClass(*(unsigned int *)(a1 + 144), 0x2000u, 1.0, 0); /*0x6de791*/
       return result; /*0x6de7a2*/
     case 0x14:
-      Theme::QueueSong((int)&stru_A83CD9.attachedTag + 3, *(unsigned int *)(a1 + 144)); /*0x6de8f0*/
+      ((Theme *)((int)&stru_A83CD9.attachedTag + 3))->QueueSong( *(unsigned int *)(a1 + 144)); /*0x6de8f0*/
       return result; /*0x6de901*/
     case 0x15:
       UpdateThemeManager(*(unsigned int *)(a1 + 144), 2, -1); /*0x6de911*/
