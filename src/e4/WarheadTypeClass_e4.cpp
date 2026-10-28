@@ -1068,13 +1068,13 @@ void* WarheadTypeClass_ReadINI(WarheadTypeClass *a1)
       if ( INIClassIntList ) /*0x7724c3*/
         DynamicVector::Add_Alt4(&v67, &INIClassIntList); /*0x7724ce*/
     }
-    TypeList::AnimTypeCopy((TypeList *)&v67.q01C, &v67); /*0x7724ef*/
+    ((TypeList *)(TypeList *)&v67.q01C)->AnimTypeCopy( &v67); /*0x7724ef*/
     /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EB6F4) */  /*0x7724f8*/
     DynamicVectorClass::Destroy_Alt((_VectorClass_PBVAnimTypeClass *)&v67); /*0x772500*/
   }
   else
   {
-    TypeList::AnimTypeCopy((TypeList *)&v67.q01C, &v4->InfiniteMindControl); /*0x772512*/
+    ((TypeList *)(TypeList *)&v67.q01C)->AnimTypeCopy( &v4->InfiniteMindControl); /*0x772512*/
   }
   VectorClass::CopyDefault(&v4->InfiniteMindControl, &v67.q01C); /*0x772524*/
   v16 = v68; /*0x77252d*/

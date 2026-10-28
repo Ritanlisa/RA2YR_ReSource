@@ -394,13 +394,13 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
       if ( INIClassIntList ) /*0x524245*/
         (&v48)->Add_Alt4(&INIClassIntList); /*0x524250*/
     }
-    TypeList::AnimTypeCopy((TypeList *)&v48.q01C, &v48); /*0x524271*/
+    ((TypeList *)(TypeList *)&v48.q01C)->AnimTypeCopy( &v48); /*0x524271*/
     /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EB6F4) */  /*0x52427a*/
     DynamicVectorClass::Destroy_Alt((_VectorClass_PBVAnimTypeClass *)&v48); /*0x524282*/
   }
   else
   {
-    TypeList::AnimTypeCopy((TypeList *)&v48.q01C, &v4->qE50); /*0x524294*/
+    ((TypeList *)(TypeList *)&v48.q01C)->AnimTypeCopy( &v4->qE50); /*0x524294*/
   }
   VectorClass::CopyDefault(&v4->qE50, &v48.q01C); /*0x5242a6*/
   v13 = v50; /*0x5242af*/
@@ -422,13 +422,13 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
       if ( INIClassIntList ) /*0x52432f*/
         (&v48)->Add_Alt4(&INIClassIntList); /*0x52433a*/
     }
-    TypeList::AnimTypeCopy((TypeList *)&v48.q01C, &v48); /*0x52435b*/
+    ((TypeList *)(TypeList *)&v48.q01C)->AnimTypeCopy( &v48); /*0x52435b*/
     /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EB6F4) */  /*0x524364*/
     DynamicVectorClass::Destroy_Alt((_VectorClass_PBVAnimTypeClass *)&v48); /*0x524368*/
   }
   else
   {
-    TypeList::AnimTypeCopy((TypeList *)&v48.q01C, &v4->u32_E6C); /*0x52437a*/
+    ((TypeList *)(TypeList *)&v48.q01C)->AnimTypeCopy( &v4->u32_E6C); /*0x52437a*/
   }
   InfantryTypeClass::CopyDataArray(&v4->u32_E6C, &v48.q01C); /*0x52438c*/
   *(unsigned int *)(v4 + 3716) = v51; /*0x524399*/

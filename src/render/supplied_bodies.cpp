@@ -3517,13 +3517,13 @@ void Voxel_Section::Draw()
       if ( v84 ) /*0x75d6c1*/
         DynamicVector::Add_Alt4(&v86, &v84); /*0x75d6cc*/
     }
-    TypeList::AnimTypeCopy(&v85, &v86); /*0x75d6ed*/
+    ((TypeList *)&v85)->AnimTypeCopy( &v86); /*0x75d6ed*/
     /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EB6F4) */  /*0x75d6f6*/
     DynamicVectorClass::Destroy_Alt((_VectorClass_PBVAnimTypeClass *)&v86); /*0x75d6fe*/
   }
   else
   {
-    TypeList::AnimTypeCopy(&v85, _ESI->__pad_104); /*0x75d710*/
+    ((TypeList *)&v85)->AnimTypeCopy( _ESI->__pad_104); /*0x75d710*/
   }
   VectorClass::CopyDefault((VectorClass *)_ESI->__pad_104, &v85); /*0x75d722*/
   CapacityIncrement = v85.q104; /*0x75d72b*/

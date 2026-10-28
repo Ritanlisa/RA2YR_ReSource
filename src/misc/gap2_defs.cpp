@@ -2479,13 +2479,13 @@ int RulesClass::LoadFromINI() {
           if ( v332.q01C ) /*0x66d5c5*/
             (&v332)->Add_Alt4(&v332.q01C); /*0x66d5d0*/
         }
-        TypeList::AnimTypeCopy((TypeList *)&v332.u32_24, &v332); /*0x66d5f1*/
+        ((TypeList *)(TypeList *)&v332.u32_24)->AnimTypeCopy( &v332); /*0x66d5f1*/
         /* X11: ptr_0 install elided (implicit via VectorClass_AnimTypeClass_const__ virtuals 0x66d5fa) */
         DynamicVectorClass::Destroy_Alt((_VectorClass_PBVAnimTypeClass *)&v332); /*0x66d602*/
       }
       else
       {
-        TypeList::AnimTypeCopy((TypeList *)&v332.u32_24, &_ESI->Stream_2A0); /*0x66d614*/
+        ((TypeList *)(TypeList *)&v332.u32_24)->AnimTypeCopy( &_ESI->Stream_2A0); /*0x66d614*/
       }
       (&_ESI->Stream_2A0)->CopyDefault(&v332.u32_24); /*0x66d626*/
       *&_ESI->u32_2B0 = v334; /*0x66d62f*/
@@ -2566,13 +2566,13 @@ int RulesClass::LoadFromINI() {
           if ( v332.q01C ) /*0x66d8f2*/
             (&v332)->Add_Alt4(&v332.q01C); /*0x66d8fd*/
         }
-        TypeList::AnimTypeCopy((TypeList *)&v332.u32_24, &v332); /*0x66d91e*/
+        ((TypeList *)(TypeList *)&v332.u32_24)->AnimTypeCopy( &v332); /*0x66d91e*/
         /* X11: ptr_0 install elided (implicit via VectorClass_AnimTypeClass_const__ virtuals 0x66d927) */
         DynamicVectorClass::Destroy_Alt((_VectorClass_PBVAnimTypeClass *)&v332); /*0x66d92f*/
       }
       else
       {
-        TypeList::AnimTypeCopy((TypeList *)&v332.u32_24, &_ESI->GUICloseSound); /*0x66d941*/
+        ((TypeList *)(TypeList *)&v332.u32_24)->AnimTypeCopy( &_ESI->GUICloseSound); /*0x66d941*/
       }
       (&_ESI->GUICloseSound)->CopyDefault(&v332.u32_24); /*0x66d953*/
       _ESI->GUIComboOpenSound = (int)v334; /*0x66d95c*/
@@ -2593,13 +2593,13 @@ int RulesClass::LoadFromINI() {
           if ( v332.q01C ) /*0x66d9f4*/
             (&v332)->Add_Alt4(&v332.q01C); /*0x66d9ff*/
         }
-        TypeList::AnimTypeCopy((TypeList *)&v332.u32_24, &v332); /*0x66da20*/
+        ((TypeList *)(TypeList *)&v332.u32_24)->AnimTypeCopy( &v332); /*0x66da20*/
         /* X11: ptr_0 install elided (implicit via VectorClass_AnimTypeClass_const__ virtuals 0x66da29) */
         DynamicVectorClass::Destroy_Alt((_VectorClass_PBVAnimTypeClass *)&v332); /*0x66da31*/
       }
       else
       {
-        TypeList::AnimTypeCopy((TypeList *)&v332.u32_24, &_ESI->ScoreAnimSound); /*0x66da43*/
+        ((TypeList *)(TypeList *)&v332.u32_24)->AnimTypeCopy( &_ESI->ScoreAnimSound); /*0x66da43*/
       }
       (&_ESI->ScoreAnimSound)->CopyDefault(&v332.u32_24); /*0x66da55*/
       _ESI->BuildingAbandonedSound = (int)v334; /*0x66da5e*/
@@ -2620,13 +2620,13 @@ int RulesClass::LoadFromINI() {
           if ( v332.q01C ) /*0x66daf7*/
             (&v332)->Add_Alt4(&v332.q01C); /*0x66db02*/
         }
-        TypeList::AnimTypeCopy((TypeList *)&v332.u32_24, &v332); /*0x66db23*/
+        ((TypeList *)(TypeList *)&v332.u32_24)->AnimTypeCopy( &v332); /*0x66db23*/
         /* X11: ptr_0 install elided (implicit via VectorClass_AnimTypeClass_const__ virtuals 0x66db2c) */
         DynamicVectorClass::Destroy_Alt((_VectorClass_PBVAnimTypeClass *)&v332); /*0x66db34*/
       }
       else
       {
-        TypeList::AnimTypeCopy((TypeList *)&v332.u32_24, &_ESI->PlaceBeaconSound); /*0x66db46*/
+        ((TypeList *)(TypeList *)&v332.u32_24)->AnimTypeCopy( &_ESI->PlaceBeaconSound); /*0x66db46*/
       }
       (&_ESI->PlaceBeaconSound)->CopyDefault(&v332.u32_24); /*0x66db58*/
       _ESI->ExecutePlanSound = (int)v334; /*0x66db61*/
@@ -2647,13 +2647,13 @@ int RulesClass::LoadFromINI() {
           if ( v332.q01C ) /*0x66dbfa*/
             (&v332)->Add_Alt4(&v332.q01C); /*0x66dc05*/
         }
-        TypeList::AnimTypeCopy((TypeList *)&v332.u32_24, &v332); /*0x66dc26*/
+        ((TypeList *)(TypeList *)&v332.u32_24)->AnimTypeCopy( &v332); /*0x66dc26*/
         /* X11: ptr_0 install elided (implicit via VectorClass_AnimTypeClass_const__ virtuals 0x66dc2f) */
         DynamicVectorClass::Destroy_Alt((_VectorClass_PBVAnimTypeClass *)&v332); /*0x66dc37*/
       }
       else
       {
-        TypeList::AnimTypeCopy((TypeList *)&v332.u32_24, &_ESI->CrateRevealSound); /*0x66dc49*/
+        ((TypeList *)(TypeList *)&v332.u32_24)->AnimTypeCopy( &_ESI->CrateRevealSound); /*0x66dc49*/
       }
       (&_ESI->CrateRevealSound)->CopyDefault(&v332.u32_24); /*0x66dc5b*/
       _ESI->CrateUnitSound = (int)v334; /*0x66dc64*/
@@ -2687,13 +2687,13 @@ int RulesClass::LoadFromINI() {
           if ( v332.q01C ) /*0x66dd7a*/
             (&v332)->Add_Alt4(&v332.q01C); /*0x66dd85*/
         }
-        TypeList::AnimTypeCopy((TypeList *)&v332.u32_24, &v332); /*0x66dda6*/
+        ((TypeList *)(TypeList *)&v332.u32_24)->AnimTypeCopy( &v332); /*0x66dda6*/
         /* X11: ptr_0 install elided (implicit via VectorClass_AnimTypeClass_const__ virtuals 0x66ddaf) */
         DynamicVectorClass::Destroy_Alt((_VectorClass_PBVAnimTypeClass *)&v332); /*0x66ddb7*/
       }
       else
       {
-        TypeList::AnimTypeCopy((TypeList *)&v332.u32_24, &_ESI->Stream_2BC); /*0x66ddc9*/
+        ((TypeList *)(TypeList *)&v332.u32_24)->AnimTypeCopy( &_ESI->Stream_2BC); /*0x66ddc9*/
       }
       (&_ESI->Stream_2BC)->CopyDefault(&v332.u32_24); /*0x66dddb*/
       *&_ESI->q2CC = v334; /*0x66dde4*/
@@ -2714,13 +2714,13 @@ int RulesClass::LoadFromINI() {
           if ( v332.q01C ) /*0x66de7d*/
             (&v332)->Add_Alt4(&v332.q01C); /*0x66de88*/
         }
-        TypeList::AnimTypeCopy((TypeList *)&v332.u32_24, &v332); /*0x66dea9*/
+        ((TypeList *)(TypeList *)&v332.u32_24)->AnimTypeCopy( &v332); /*0x66dea9*/
         /* X11: ptr_0 install elided (implicit via VectorClass_AnimTypeClass_const__ virtuals 0x66deb2) */
         DynamicVectorClass::Destroy_Alt((_VectorClass_PBVAnimTypeClass *)&v332); /*0x66deba*/
       }
       else
       {
-        TypeList::AnimTypeCopy((TypeList *)&v332.u32_24, &_ESI->Stream_2D8); /*0x66decc*/
+        ((TypeList *)(TypeList *)&v332.u32_24)->AnimTypeCopy( &_ESI->Stream_2D8); /*0x66decc*/
       }
       (&_ESI->Stream_2D8)->CopyDefault(&v332.u32_24); /*0x66dede*/
       *&_ESI->q2E8 = v334; /*0x66dee7*/

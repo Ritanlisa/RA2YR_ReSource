@@ -303,13 +303,13 @@ char TiberiumClass::LoadFromINI(uint8_t *** aP1, void *a2)
       if ( v23 ) /*0x721ba1*/
         (&v25)->Add_Alt4(&v23); /*0x721bac*/
     }
-    TypeList::AnimTypeCopy(&v24, &v25); /*0x721bcd*/
+    ((TypeList *)&v24)->AnimTypeCopy( &v25); /*0x721bcd*/
     /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EB6F4) */  /*0x721bd6*/
     DynamicVectorClass::Destroy_Alt((_VectorClass_PBVAnimTypeClass *)&v25); /*0x721bde*/
   }
   else
   {
-    TypeList::AnimTypeCopy(&v24, &v5->u32_C4); /*0x721bf0*/
+    ((TypeList *)&v24)->AnimTypeCopy( &v5->u32_C4); /*0x721bf0*/
   }
   (&v5->u32_C4)->CopyDefault(&v24); /*0x721c03*/
   CapacityIncrement = v24.CapacityIncrement; /*0x721c0c*/
