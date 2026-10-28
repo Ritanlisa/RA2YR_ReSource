@@ -1031,6 +1031,7 @@ def main():
 
     # ---------------- C2：this 传递 ----------------
     c2_pin_log = {}
+    name_proto_disagree = set()
     for e in raw:
         if e.get("type") != "CALL_ARG":
             continue
@@ -1074,21 +1075,28 @@ def main():
         if target not in ents:
             continue
         m = FULL
-        if a in owner_of_fn:
-            m &= allowed_of(owner_of_fn[a][0])
-        # proto 直接声明的 this 类型（自由函数/无 "::" 名也适用）
         pr = parse_proto((protos.get("0x%08X" % a) or protos.get("0x%x" % a) or {}).get("proto"))
+        ci_this = None
         if pr and pr[1] == "__thiscall" and pr[2] and "this" in pr[2][0]:
             ci_this = type_class(pr[2][0])
-            if ci_this is not None:
-                m &= allowed_of(ci_this)
+        if ci_this is not None:
+            # proto 的 this 类型是二进制直接证据：优先于名字派生的 owner。
+            # 二者不兼容时（实测 931 个函数，名字多把方法错挂到 AbstractClass 等
+            # 宽类上）取 proto，避免 allowed_of(owner) ∩ allowed_of(proto) = ∅
+            # 把整个实体判成冲突。
+            m &= allowed_of(ci_this)
+            if a in owner_of_fn and owner_of_fn[a][0] != ci_this:
+                name_proto_disagree.add(a)
+        elif a in owner_of_fn:
+            m &= allowed_of(owner_of_fn[a][0])
         if m != FULL:
             fam["C2"][target] = fam["C2"].get(target, FULL) & m
             c2_pin_log.setdefault(target, []).append(
                 ["self", "0x%08X" % a,
                  names[owner_of_fn[a][0]] if a in owner_of_fn else "(unknown)"])
             census["C2"] += 1
-    print("[C2] evidence=%d entities=%d" % (census["C2"], len(fam["C2"])), flush=True)
+    print("[C2] evidence=%d entities=%d name_proto_disagree=%d (proto this preferred)"
+          % (census["C2"], len(fam["C2"]), len(name_proto_disagree)), flush=True)
 
     # ---------------- C3：虚表槽位（3 值：满足 ∪ 未知）----------------
     slot_mask = collections.defaultdict(int)
@@ -2052,11 +2060,20 @@ def main():
                        ("exact_contradicts_family" if "exact_contradicts_family" in flags else
                         ("exact_width_conflict" if "width_conflict" in flags else "empty_domain"))),
         }
+        if per.get("C2") == 0:
+            dbg = []
+            for eid in cl["ents"][:4]:
+                m2 = fam["C2"].get(eid)
+                dbg.append([eid, None if m2 is None else m2.bit_count(),
+                            None if m2 is None else [names[i] for i in range(n) if (m2 >> i) & 1][:6]])
+            rec_dbg = dbg
         pins = []
         for eid in cl["ents"]:
             pins.extend(c2_pin_log.get(eid, [])[:6])
         if pins:
             rec["c2_pins"] = pins[:12]
+        if per.get("C2") == 0:
+            rec["c2_mask_debug"] = rec_dbg
         if c2_names:
             rec["c2_pinned"] = c2_names
             # 哪些族把钉住类排除在域外（"still binds" 的精确口径）
