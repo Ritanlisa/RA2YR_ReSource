@@ -39,7 +39,7 @@ unsigned int * AnimTypeConstructor(DynamicVector * aP1, DynamicVector * aP2, voi
 unsigned int * BuildingTypeConstructor(int a2, int a3);
 unsigned int * Construct(int a2, int a3, void *a3_2, void *a4, void *a5, void *a6, void *a7 = 0, void *a8 = 0, void *a9 = 0);
 unsigned int * Copy(DynamicVector * aP1, void *a2);
-int Destroy(void *a1);
+int Destroy();  // 0x50EA00 thiscall (x183b: receiver param removed)
     void* VectorClass;  // 0x0 (no offset truth)
 int Destroy_Alt();
     void* ptr_0_2;  // 0x0 (no offset truth)

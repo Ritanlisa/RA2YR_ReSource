@@ -1117,18 +1117,18 @@ DynamicVector * DynamicVectorClass_PAD::Destructor(unsigned int * Block, char a2
 
 // 0x50EA00
 namespace gamemd {  // G42.18c ns repair
-int DynamicVectorClass_flat::Destroy(void *a1)
+int DynamicVectorClass_flat::Destroy()
 {
 
   int result; // eax
-  result = ((unsigned int)(a1->Items)); /*0x50ea06*/
-  if ( result && (((unsigned char *)&(*(unsigned int *)&a1->IsAllocated))[1]) ) /*0x50ea0d*/
+  result = ((unsigned int)(this->Items)); /*0x50ea06*/
+  if ( result && (((unsigned char *)&(*(unsigned int *)&this->IsAllocated))[1]) ) /*0x50ea0d*/
   {
-    operator delete((*(void **)&a1->Items)); /*0x50ea13*/
-    a1->Items = (unsigned int)(0); /*0x50ea1b*/
+    operator delete((*(void **)&this->Items)); /*0x50ea13*/
+    this->Items = (unsigned int)(0); /*0x50ea1b*/
   }
-  (((unsigned char *)&(*(unsigned int *)&a1->IsInitialized))[1]) = 0; /*0x50ea1e*/
-  a1->Capacity = 0; /*0x50ea21*/
+  (((unsigned char *)&(*(unsigned int *)&this->IsInitialized))[1]) = 0; /*0x50ea1e*/
+  this->Capacity = 0; /*0x50ea21*/
   return result; /*0x50ea24*/
 }
 }  // G42.18c ns repair

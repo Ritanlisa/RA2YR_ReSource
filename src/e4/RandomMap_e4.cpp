@@ -22,6 +22,7 @@
 #include "e4/classes/BuildingTypeClass_e4.hpp"  // W16G3 C2027 supply (0x5924xx)
 #include "e4/classes/RadioClass_e4.hpp"
 #include "e4/classes/VectorClass_flat_e4.hpp"
+#include "e4/classes/DynamicVectorClass_flat_e4.hpp"  // x183b: complete DynamicVectorClass_flat (DynamicVectorClass::Destroy 0x50EA00)
 #include "e4/classes/MapClass_e4.hpp"
 #include "e4/classes/RadarClass_e4.hpp"
 #include "e4/classes/TacticalClass_e4.hpp"
@@ -2836,9 +2837,9 @@ CampaignClass * * RandomMap::CleanupRandomMapData()
     *&this->__pad_17C = 0; /*0x595998*/
   }
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x5959a4*/
-  DynamicVectorClass::Destroy(&this->u32_2E0); /*0x5959aa*/
+  ((DynamicVectorClass_flat *)&this->u32_2E0)->Destroy(); /*0x5959aa*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x5959b5*/
-  DynamicVectorClass::Destroy(&this->u32_2C4); /*0x5959bb*/
+  ((DynamicVectorClass_flat *)&this->u32_2C4)->Destroy(); /*0x5959bb*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x5959cb*/
   VectorClass::Destroy((int)&this->u32_A80); /*0x5959cd*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E8500) */  /*0x5959d8*/
@@ -3475,20 +3476,20 @@ WeaponStruct * * RandomMap::LoadConfig()
       if ( IntList ) /*0x5987e7*/
         DynamicVector::Add_Alt3(&v27, &IntList); /*0x5987f2*/
     }
-    TypeList::BuildingTypeCopy((TypeList *)&v27.u32_24, &v27); /*0x598813*/
+    ((TypeList *)(TypeList *)&v27.u32_24)->BuildingTypeCopy( &v27); /*0x598813*/
     /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EAA08) */  /*0x59881c*/
-    DynamicVectorClass::Destroy((_VectorClass_PBVBuildingTypeClass *)&v27); /*0x598820*/
+    ((DynamicVectorClass_flat *)&v27)->Destroy(); /*0x598820*/
     v20 = *(unsigned int **)v27.__pad_20; /*0x598825*/
   }
   else
   {
     v20 = *(unsigned int **)v27.__pad_20; /*0x59882b*/
-    TypeList::BuildingTypeCopy((TypeList *)&v27.u32_24, *(unsigned int **)v27.__pad_20); /*0x598834*/
+    ((TypeList *)(TypeList *)&v27.u32_24)->BuildingTypeCopy( *(unsigned int **)v27.__pad_20); /*0x598834*/
   }
   DynamicVector::Copy((DynamicVector *)v20, &v27.u32_24); /*0x598840*/
   v20[6] = v28; /*0x59884d*/
   *(unsigned int *)&v27.u32_24 = &g_ptr_7EAA08; /*0x598850*/
-  DynamicVectorClass::Destroy((_VectorClass_PBVBuildingTypeClass *)&v27.u32_24); /*0x598854*/
+  ((DynamicVectorClass_flat *)&v27.u32_24)->Destroy(); /*0x598854*/
   if ( ((INIClass *)(v3))->GetString(off_82B134, aSnoworepatchla, &g_INI_DefaultBuffer, String_buf, 128) ) /*0x598879*/
   {
     TypeList::BuildingTypeConstructor((TypeList *)&v27); /*0x598886*/
@@ -3500,20 +3501,20 @@ WeaponStruct * * RandomMap::LoadConfig()
       if ( IntList ) /*0x5988b6*/
         DynamicVector::Add_Alt3(&v27, &IntList); /*0x5988c1*/
     }
-    TypeList::BuildingTypeCopy((TypeList *)&v27.u32_24, &v27); /*0x5988e2*/
+    ((TypeList *)(TypeList *)&v27.u32_24)->BuildingTypeCopy( &v27); /*0x5988e2*/
     /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EAA08) */  /*0x5988eb*/
-    DynamicVectorClass::Destroy((_VectorClass_PBVBuildingTypeClass *)&v27); /*0x5988ef*/
+    ((DynamicVectorClass_flat *)&v27)->Destroy(); /*0x5988ef*/
     DynamicVector_field_0x1C = v27.q01C; /*0x5988f4*/
   }
   else
   {
     DynamicVector_field_0x1C = v27.q01C; /*0x5988fa*/
-    TypeList::BuildingTypeCopy((TypeList *)&v27.u32_24, (unsigned int *)v27.q01C); /*0x598903*/
+    ((TypeList *)(TypeList *)&v27.u32_24)->BuildingTypeCopy( (unsigned int *)v27.q01C); /*0x598903*/
   }
   DynamicVector::Copy((DynamicVector *)DynamicVector_field_0x1C, &v27.u32_24); /*0x59890f*/
   *(unsigned int *)&v27.u32_24 = &g_ptr_7EAA08; /*0x598918*/
   *(unsigned int *)(DynamicVector_field_0x1C + 24) = v28; /*0x59891c*/
-  DynamicVectorClass::Destroy((_VectorClass_PBVBuildingTypeClass *)&v27.u32_24); /*0x598923*/
+  ((DynamicVectorClass_flat *)&v27.u32_24)->Destroy(); /*0x598923*/
   if ( v3 ) /*0x59892a*/
     (**(void (***)(INIClass *, int))v3->__pad_0)(v3, 1); /*0x598932*/
   CCFileClass::Reset(&v29); /*0x598938*/

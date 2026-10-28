@@ -15,6 +15,7 @@
 #include "e4/classes/HashTable_flat_e4.hpp"
 #include "e4/classes/INIClass_e4.hpp"
 #include "e4/classes/VectorClass_flat_e4.hpp"
+#include "e4/classes/DynamicVectorClass_flat_e4.hpp"  // x183b: complete DynamicVectorClass_flat (DynamicVectorClass::Destroy 0x50EA00)
 #include "e4/classes/AircraftTypeClass_e4.hpp"
 #include "e4/classes/InfantryTypeClass_e4.hpp"
 #include "e4/e4_protos.h"
@@ -154,7 +155,7 @@ int ReadINIClassBuildingTypeList(TypeList_BuildingType * aP0, unsigned char *** 
     /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7EAA08) */  /*0x67b6a6*/
     if ( aP0 != a4 ) /*0x67b6ac*/
     {
-      DynamicVectorClass::Destroy((_VectorClass_PBVBuildingTypeClass *)aP0); /*0x67b6b0*/
+      ((DynamicVectorClass_flat *)aP0)->Destroy(); /*0x67b6b0*/
       Capacity = a4->Capacity; /*0x67b6b6*/
       aP0->Capacity = Capacity; /*0x67b6bb*/
       if ( Capacity ) /*0x67b6be*/
