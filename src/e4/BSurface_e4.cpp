@@ -324,7 +324,7 @@ int BSurface::GetPitch()
 namespace gamemd {
 BSurface * BSurface::ScalarDtor(char * Block, char a2)
 {
-  Vector::Clear((int)&Block->Buffer); /*0x411656*/
+  ((Vector *)(int)&Block->Buffer)->Clear(); /*0x411656*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS Surface_Vtable) */  /*0x41165f*/
   if ( (a2 & 1) != 0 ) /*0x411667*/
     operator delete((Block)); /*0x41166a*/

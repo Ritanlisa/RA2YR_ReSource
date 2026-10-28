@@ -1878,7 +1878,7 @@ unsigned int * PaletteClass::Load()
   {
     /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x5cb5cb*/
     v13 = 0; /*0x5cb5d3*/
-    Vector::Clear((int)v12); /*0x5cb5db*/
+    ((Vector *)(int)v12)->Clear(); /*0x5cb5db*/
     *(unsigned int *)v11.__tail_0 = &off_7E1668; /*0x5cb5e4*/
     ((BufferIOFileClass *)&v11)->Dtor(); /*0x5cb5ec*/
     return 0; /*0x5cb5f7*/
@@ -1905,7 +1905,7 @@ unsigned int * PaletteClass::Load()
     v9 = 0; /*0x5cb681*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x5cb687*/
   v13 = 0; /*0x5cb68f*/
-  Vector::Clear((int)v12); /*0x5cb697*/
+  ((Vector *)(int)v12)->Clear(); /*0x5cb697*/
   *(unsigned int *)v11.__tail_0 = &off_7E1668; /*0x5cb6a0*/
   ((BufferIOFileClass *)&v11)->Dtor(); /*0x5cb6a8*/
   return v9; /*0x5cb5f3*/

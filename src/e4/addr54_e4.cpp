@@ -945,7 +945,7 @@ LABEL_26:
               strncpy((char *)(v3 + 757), v182, 0xEu); /*0x5466cc*/
             v171[0] = &g_ptr_7E16B0; /*0x5466db*/
             v173 = 0; /*0x5466e6*/
-            Vector::Clear((int)v172); /*0x5466f1*/
+            ((Vector *)(int)v172)->Clear(); /*0x5466f1*/
             v171[0] = &off_7E1668; /*0x546702*/
             ((BufferIOFileClass *)v171)->Dtor(); /*0x546709*/
             if ( v58 ) /*0x546714*/
@@ -971,7 +971,7 @@ LABEL_26:
               strncpy((char *)(v3 + 757), v182, 0xEu); /*0x5467e7*/
             v174[0] = &g_ptr_7E16B0; /*0x5467f6*/
             v176 = 0; /*0x546801*/
-            Vector::Clear((int)v175); /*0x546808*/
+            ((Vector *)(int)v175)->Clear(); /*0x546808*/
             v174[0] = &off_7E1668; /*0x546814*/
             ((BufferIOFileClass *)v174)->Dtor(); /*0x54681b*/
             if ( v58 ) /*0x546826*/
@@ -992,7 +992,7 @@ LABEL_26:
               strncpy((char *)(v3 + 757), v182, 0xEu); /*0x546897*/
             v165[0] = &g_ptr_7E16B0; /*0x5468a6*/
             v167 = 0; /*0x5468b1*/
-            Vector::Clear((int)v166); /*0x5468b8*/
+            ((Vector *)(int)v166)->Clear(); /*0x5468b8*/
             v165[0] = &off_7E1668; /*0x5468c4*/
             ((BufferIOFileClass *)v165)->Dtor(); /*0x5468cb*/
             if ( v58 ) /*0x54690e*/
@@ -1020,7 +1020,7 @@ LABEL_189:
             strncpy((char *)(v3 + 757), v182, 0xEu); /*0x54697b*/
           v177[0] = &g_ptr_7E16B0; /*0x54698a*/
           v179 = 0; /*0x546995*/
-          Vector::Clear((int)v178); /*0x54699c*/
+          ((Vector *)(int)v178)->Clear(); /*0x54699c*/
           v177[0] = &off_7E1668; /*0x5469a8*/
           ((BufferIOFileClass *)v177)->Dtor(); /*0x5469af*/
 LABEL_190:
@@ -1152,22 +1152,22 @@ LABEL_217:
   }
   v168[0] = &g_ptr_7E16B0; /*0x546ccb*/
   v170 = 0; /*0x546cd2*/
-  Vector::Clear((int)v169); /*0x546cd9*/
+  ((Vector *)(int)v169)->Clear(); /*0x546cd9*/
   v168[0] = &off_7E1668; /*0x546cea*/
   ((BufferIOFileClass *)v168)->Dtor(); /*0x546cf1*/
   v161[0] = &g_ptr_7E16B0; /*0x546cfd*/
   v163 = 0; /*0x546d04*/
-  Vector::Clear((int)v162); /*0x546d0b*/
+  ((Vector *)(int)v162)->Clear(); /*0x546d0b*/
   v161[0] = &off_7E1668; /*0x546d17*/
   ((BufferIOFileClass *)v161)->Dtor(); /*0x546d1e*/
   v149[0] = (int)&g_ptr_7E16B0; /*0x546d2a*/
   v151 = 0; /*0x546d31*/
-  Vector::Clear((int)v150); /*0x546d38*/
+  ((Vector *)(int)v150)->Clear(); /*0x546d38*/
   v149[0] = (int)&off_7E1668; /*0x546d44*/
   ((BufferIOFileClass *)v149)->Dtor(); /*0x546d4b*/
   v158[0] = (int)&g_ptr_7E16B0; /*0x546d57*/
   v160 = 0; /*0x546d5e*/
-  Vector::Clear((int)v159); /*0x546d65*/
+  ((Vector *)(int)v159)->Clear(); /*0x546d65*/
   v158[0] = (int)&off_7E1668; /*0x546d71*/
   ((BufferIOFileClass *)v158)->Dtor(); /*0x546d78*/
   return ((HashTable *)v75)->DestroyHashTableINIClass(); /*0x546d86*/

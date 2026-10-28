@@ -4338,7 +4338,7 @@ int E4Recv_5595F0::sub_5595F0(char * Buffer)
   int v8; // [esp+6Ch] [ebp-8h]
   v8 = 0; /*0x559641*/
   int v7[3]; // [esp+60h] [ebp-14h] BYREF
-  Vector::Clear((int)v7); /*0x559649*/
+  ((Vector *)(int)v7)->Clear(); /*0x559649*/
   *(unsigned int *)v6.CDFileClass = &off_7E1668; /*0x559652*/
   return ((BufferIOFileClass *)&v6)->Dtor(); /*0x55965f*/
 

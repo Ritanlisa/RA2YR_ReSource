@@ -329,7 +329,7 @@ int Palette_LoadSimple(char * Source, unsigned int * a2, unsigned int * a3)
   }
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x72aee1*/
   v19 = 0; /*0x72aee9*/
-  Vector::Clear((int)v18); /*0x72aef1*/
+  ((Vector *)(int)v18)->Clear(); /*0x72aef1*/
   *(unsigned int *)v17.__tail_0 = &off_7E1668; /*0x72aefa*/
   return ((BufferIOFileClass *)&v17)->Dtor(); /*0x72af07*/
 

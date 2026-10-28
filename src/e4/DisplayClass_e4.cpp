@@ -1084,7 +1084,7 @@ DisplayClass * DisplayClass::Read(char * Block, char a2, void *a3)
 namespace gamemd {
 int * DisplayClass::processDisplayMode(char a2)
 {
-  Vector::Clear((int)&this->ptr_4); /*0x4aec36*/
+  ((Vector *)(int)&this->ptr_4)->Clear(); /*0x4aec36*/
   Straw::Dtor(); /*0x4aec3d*/
   if ( (a2 & 1) != 0 ) /*0x4aec47*/
     operator delete((void *)(this)); /*0x4aec4a*/

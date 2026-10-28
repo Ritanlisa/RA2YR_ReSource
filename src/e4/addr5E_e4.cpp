@@ -1674,7 +1674,7 @@ LABEL_171:
           }
           /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x5e53a0*/
           v203 = 0; /*0x5e53ab*/
-          Vector::Clear((int)v201); /*0x5e53b2*/
+          ((Vector *)(int)v201)->Clear(); /*0x5e53b2*/
           *(unsigned int *)v200.__tail_0 = &off_7E1668; /*0x5e53be*/
           ((BufferIOFileClass *)&v200)->Dtor(); /*0x5e53c9*/
         }
@@ -3265,7 +3265,7 @@ if ( v64 && v65 )
             ((HashTable *)v4)->DestroyHashTableINIClass(); /*0x5e65ee*/
             v10[0] = &g_ptr_7E16B0; /*0x5e65fa*/
             v12 = 0; /*0x5e6602*/
-            Vector::Clear((int)v11); /*0x5e6609*/
+            ((Vector *)(int)v11)->Clear(); /*0x5e6609*/
             v10[0] = (unsigned int)&off_7E1668; /*0x5e6612*/
             ((BufferIOFileClass *)(v10))->Dtor(); /*0x5e661a*/
             return 0; /*0x5e662a*/
@@ -3288,7 +3288,7 @@ if ( v64 && v65 )
           ((HashTable *)v4)->DestroyHashTableINIClass(); /*0x5e6690*/
           v10[0] = &g_ptr_7E16B0; /*0x5e669c*/
           v12 = 0; /*0x5e66a4*/
-          Vector::Clear((int)v11); /*0x5e66ab*/
+          ((Vector *)(int)v11)->Clear(); /*0x5e66ab*/
           v10[0] = (unsigned int)&off_7E1668; /*0x5e66b4*/
           ((BufferIOFileClass *)(v10))->Dtor(); /*0x5e66bc*/
           return Int_Overwrite; /*0x5e661f*/
@@ -3636,7 +3636,7 @@ void ExchangeMultiplayerGameInfo()
     operator delete((void *)(v4)); /*0x5e7b99*/
     Network::SetConnectionParams(unk_A8E9C0, 30, -1, 600, 1); /*0x5e7bb1*/
     LZOStraw::Destructor(v14); /*0x5e7bba*/
-    Vector::Clear((int)v12); /*0x5e7bc3*/
+    ((Vector *)(int)v12)->Clear(); /*0x5e7bc3*/
     Straw::Dtor(v11); /*0x5e7bcc*/
     ((RawFileClass *)(v13))->Dtor(); /*0x5e7bd5*/
   }
@@ -3685,7 +3685,7 @@ char LoadScenarioClassByIndex(int a1)
   v17[0] = &g_ptr_7E16B0; /*0x5e7c4f*/
   v5 = v4 == 0; /*0x5e7c57*/
   v19 = 0; /*0x5e7c5a*/
-  Vector::Clear((int)v18); /*0x5e7c62*/
+  ((Vector *)(int)v18)->Clear(); /*0x5e7c62*/
   v17[0] = (unsigned int)&off_7E1668; /*0x5e7c6b*/
   ((BufferIOFileClass *)(v17))->Dtor(); /*0x5e7c73*/
   if ( !v5 ) /*0x5e7c7a*/
@@ -3732,14 +3732,14 @@ char LoadScenarioClassByIndex(int a1)
     dword_A8BB04 = v13->vt_slot_44(); /*0x5e7e45*/
     v17[0] = &g_ptr_7E16B0; /*0x5e7e4a*/
     v19 = 0; /*0x5e7e4e*/
-    Vector::Clear((int)v18); /*0x5e7e52*/
+    ((Vector *)(int)v18)->Clear(); /*0x5e7e52*/
     v17[0] = (unsigned int)&off_7E1668; /*0x5e7e60*/
     ((BufferIOFileClass *)(v17))->Dtor(); /*0x5e7e64*/
     v14 = CCFileClass::Construct(v17, &byte_A8B8E0); /*0x5e7e72*/
     dword_A8BB04 = v14->vt_slot_44(); /*0x5e7e82*/
     v17[0] = &g_ptr_7E16B0; /*0x5e7e87*/
     v19 = 0; /*0x5e7e8b*/
-    Vector::Clear((int)v18); /*0x5e7e8f*/
+    ((Vector *)(int)v18)->Clear(); /*0x5e7e8f*/
     v17[0] = (unsigned int)&off_7E1668; /*0x5e7e98*/
     ((BufferIOFileClass *)(v17))->Dtor(); /*0x5e7e9c*/
     return 1; /*0x5e7ea1*/

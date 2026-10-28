@@ -2288,7 +2288,7 @@ int E4Recv_49D390::LoadCoopCampaignSave(IUnknown * aP1)
     (v20)->DestroyHashTableINIClass(); /*0x49d41d*/
     v17[0] = &g_ptr_7E16B0; /*0x49d42a*/
     v19 = 0; /*0x49d432*/
-    Vector::Clear((int)v18); /*0x49d436*/
+    ((Vector *)(int)v18)->Clear(); /*0x49d436*/
     v17[0] = &off_7E1668; /*0x49d43f*/
     ((BufferIOFileClass *)v17)->Dtor(); /*0x49d447*/
     return 0; /*0x49d457*/
@@ -2362,7 +2362,7 @@ int E4Recv_49D390::LoadCoopCampaignSave(IUnknown * aP1)
   ((HashTable *)v20)->DestroyHashTableINIClass(); /*0x49d644*/
   v17[0] = &g_ptr_7E16B0; /*0x49d64d*/
   v19 = 0; /*0x49d655*/
-  Vector::Clear((int)v18); /*0x49d659*/
+  ((Vector *)(int)v18)->Clear(); /*0x49d659*/
   v17[0] = &off_7E1668; /*0x49d662*/
   ((BufferIOFileClass *)v17)->Dtor(); /*0x49d66a*/
   return 1; /*0x49d44c*/

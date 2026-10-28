@@ -367,7 +367,7 @@ char ** LoadFromINIGraphicMenu(void * a1, void * a2, void * a3)
     v13 = v12->Open(0, p_nextObject); /*0x4f1df8*/
     /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E16B0) */  /*0x4f1dfa*/
     v39 = 0; /*0x4f1e02*/
-    Vector::Clear((int)&v38.location[1]); /*0x4f1e09*/
+    ((Vector *)(int)&v38.location[1])->Clear(); /*0x4f1e09*/
     v38.ambientSoundController[3] = (int)&off_7E1668; /*0x4f1e12*/
     ((BufferIOFileClass *)&v38.ambientSoundController[3])->Dtor(); /*0x4f1e1a*/
     if ( v13 ) /*0x4f1e21*/
@@ -410,7 +410,7 @@ LABEL_18:
     v16 = v15->Open(0); /*0x4f1e89*/
     /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E16B0) */  /*0x4f1e8b*/
     v39 = 0; /*0x4f1e93*/
-    Vector::Clear((int)&v38.location[1]); /*0x4f1e9e*/
+    ((Vector *)(int)&v38.location[1])->Clear(); /*0x4f1e9e*/
     v38.ambientSoundController[3] = (int)&off_7E1668; /*0x4f1ea7*/
     ((BufferIOFileClass *)&v38.ambientSoundController[3])->Dtor(); /*0x4f1eaf*/
     if ( v16 ) /*0x4f1eb6*/
@@ -1549,7 +1549,7 @@ int sub_4F1B80(char ** a1, int a2)
     ((HashTable *)&v5)->DestroyHashTableINIClass(); /*0x4f1c62*/
     /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x4f1c6e*/
     v8 = 0; /*0x4f1c76*/
-    Vector::Clear((int)v7); /*0x4f1c7d*/
+    ((Vector *)(int)v7)->Clear(); /*0x4f1c7d*/
     *(unsigned int *)v6.__tail_0 = &off_7E1668; /*0x4f1c86*/
     ((BufferIOFileClass *)&v6)->Dtor(); /*0x4f1c8e*/
     return v3; /*0x4f1c93*/
@@ -1558,7 +1558,7 @@ int sub_4F1B80(char ** a1, int a2)
   {
     /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x4f1bab*/
     v8 = 0; /*0x4f1bb3*/
-    Vector::Clear((int)v7); /*0x4f1bba*/
+    ((Vector *)(int)v7)->Clear(); /*0x4f1bba*/
     *(unsigned int *)v6.__tail_0 = &off_7E1668; /*0x4f1bc3*/
     ((BufferIOFileClass *)&v6)->Dtor(); /*0x4f1bcb*/
     return 0; /*0x4f1bd0*/
@@ -1730,14 +1730,14 @@ int * E4Recv_4F2F10::sub_4F2F10(GraphicMenuAnimItem * a2, unsigned int * a3, Gra
   }
   /* X11: ptr_0 install elided (implicit via CCFileClass virtuals 0x4f3011) */
   *(unsigned int *)&v15.bombVisible = 0; /*0x4f3015*/
-  Vector::Clear((int)&v15.customSound_controller[3]); /*0x4f3019*/
+  ((Vector *)(int)&v15.customSound_controller[3])->Clear(); /*0x4f3019*/
   /* X11: ptr_0 install elided (implicit via off_7E1668 virtuals 0x4f3027) */
   ((BufferIOFileClass *)&v15.ptr_4)->Dtor(); /*0x4f302b*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E16B0) */  /*0x4f3037*/
   int v17; // [esp+E4h] [ebp-8h]
   v17 = 0; /*0x4f303e*/
   char v16[12]; // [esp+D8h] [ebp-14h] BYREF
-  Vector::Clear((int)v16); /*0x4f3045*/
+  ((Vector *)(int)v16)->Clear(); /*0x4f3045*/
   v15.estimatedHealth = (int)&off_7E1668; /*0x4f3051*/
   ((BufferIOFileClass *)&v15.estimatedHealth)->Dtor(); /*0x4f3058*/
   return (int *)this->__pad_0; /*0x4f305f*/

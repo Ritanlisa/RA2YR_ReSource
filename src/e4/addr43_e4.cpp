@@ -1625,7 +1625,7 @@ char sub_437290(int * a1, int a2, int * a3)
                  v11,
                  0,
                  1);
-  Vector::Clear((int)v17); /*0x437334*/
+  ((Vector *)(int)v17)->Clear(); /*0x437334*/
   return v6; /*0x4372a7*/
 }
 } // namespace gamemd

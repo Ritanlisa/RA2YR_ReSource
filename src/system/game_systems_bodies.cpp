@@ -3662,7 +3662,7 @@ void LoadScreen::RenderLoop()
     v380[v2] = (int)v4; /*0x4b6cc3*/
     /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x4b6cca*/
     v384 = 0; /*0x4b6cd1*/
-    Vector::Clear((int)v383); /*0x4b6cdc*/
+    ((Vector *)(int)v383)->Clear(); /*0x4b6cdc*/
     *(unsigned int *)v382.__tail_0 = &off_7E1668; /*0x4b6ce8*/
     ((BufferIOFileClass *)&v382)->Dtor(); /*0x4b6cef*/
     ++v2; /*0x4b6cf4*/
@@ -5374,7 +5374,7 @@ LABEL_397:
   v311.Capacity = 0; /*0x4b9657*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x4b965b*/
   v387 = 0; /*0x4b9666*/
-  Vector::Clear((int)v386); /*0x4b966d*/
+  ((Vector *)(int)v386)->Clear(); /*0x4b966d*/
   *(unsigned int *)v385.__tail_0 = &off_7E1668; /*0x4b9679*/
   return ((BufferIOFileClass *)&v385)->Dtor(); /*0x4b9689*/
 
@@ -6157,7 +6157,7 @@ void LoadingScreen::Render()
         0);
       *(unsigned int *)&v80.m_Colors[228] = &g_ptr_7E16B0; /*0x5540b4*/
       *(unsigned int *)&v80.m_Colors[328] = 0; /*0x5540bf*/
-      Vector::Clear((int)&v80.m_Colors[316]); /*0x5540ca*/
+      ((Vector *)(int)&v80.m_Colors[316])->Clear(); /*0x5540ca*/
       BufferIOFileClass::Destruct((BufferIOFileClass *)&v80.m_Colors[228]); /*0x5540d6*/
       return (const wchar_t *)((HashTable *)(INIClass *)&v80.m_Colors[140])->DestroyHashTableINIClass(); /*0x5540e2*/
     }
@@ -6752,7 +6752,7 @@ LABEL_70:
             while ( (unsigned __int8)CCFileClass::Open(&v59, 0) == 1 ); /*0x5592e9*/
             /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x5592f2*/
             v61 = 0; /*0x5592fa*/
-            Vector::Clear((int)v60); /*0x559305*/
+            ((Vector *)(int)v60)->Clear(); /*0x559305*/
             *(unsigned int *)v59.__tail_0 = &off_7E1668; /*0x55930e*/
             ((BufferIOFileClass *)&v59)->Dtor(); /*0x559316*/
             v34 = Buffer; /*0x55931b*/

@@ -1154,7 +1154,7 @@ void House::Constructor(void *a1, void *a2, void *a3, void *a4)
     int v5; // [esp+68h] [ebp-8h]
     v5 = 0; /*0x69e0d0*/
     char v4[12]; // [esp+5Ch] [ebp-14h] BYREF
-    Vector::Clear((int)v4); /*0x69e0d8*/
+    ((Vector *)(int)v4)->Clear(); /*0x69e0d8*/
     *(unsigned int *)v3.__tail_0 = &off_7E1668; /*0x69e0e1*/
     ((BufferIOFileClass *)&v3)->Dtor(); /*0x69e0e9*/
   }

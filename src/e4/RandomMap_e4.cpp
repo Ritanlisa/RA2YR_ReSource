@@ -3113,7 +3113,7 @@ AbstractClass * * LoadInfo(wchar_t * Destination, int a2)
     HashTable::DestroyHashTableINIClass(&v4); /*0x597f38*/
     /* X11: ptr_0 install elided (implicit via CCFileClass virtuals 0x597f44) */
     v7 = 0; /*0x597f4c*/
-    Vector::Clear((int)v6); /*0x597f53*/
+    ((Vector *)(int)v6)->Clear(); /*0x597f53*/
     /* X11: ptr_0 install elided (implicit via off_7E1668 virtuals 0x597f5c) */
     ((BufferIOFileClass *)((BufferIOFileClass *)&v5))->Dtor(); /*0x597f64*/
     return 0; /*0x597f6b*/
@@ -3147,7 +3147,7 @@ AbstractClass * * LoadInfo(wchar_t * Destination, int a2)
   HashTable::DestroyHashTableINIClass(&v4); /*0x597ef4*/
   /* X11: ptr_0 install elided (implicit via CCFileClass virtuals 0x597f00) */
   v7 = 0; /*0x597f08*/
-  Vector::Clear((int)v6); /*0x597f0f*/
+  ((Vector *)(int)v6)->Clear(); /*0x597f0f*/
   /* X11: ptr_0 install elided (implicit via off_7E1668 virtuals 0x597f18) */
   ((BufferIOFileClass *)((BufferIOFileClass *)&v5))->Dtor(); /*0x597f20*/
   return 1; /*0x597f26*/
@@ -8064,7 +8064,7 @@ AbstractClass * * RandomMap::RegenerateRandomMapPreview()
       v13 = v12->vt_slot_20(0); /*0x5b9e98*/
       /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x5b9e9a*/
       v19 = 0; /*0x5b9ea2*/
-      Vector::Clear((int)v18); /*0x5b9eaa*/
+      ((Vector *)(int)v18)->Clear(); /*0x5b9eaa*/
       *(unsigned int *)v17.CDFileClass = &off_7E1668; /*0x5b9eb3*/
       BufferIOFileClass::Dtor((BufferIOFileClass *)&v17); /*0x5b9ebb*/
       if ( v13 ) /*0x5b9ec2*/

@@ -252,7 +252,7 @@ unsigned int * SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
       v55 = 0; /*0x630460*/
       v12 = 0; /*0x630464*/
     }
-    Vector::Clear((int)&v65); /*0x630459*/
+    ((Vector *)(int)&v65)->Clear(); /*0x630459*/
   }
   else
   {

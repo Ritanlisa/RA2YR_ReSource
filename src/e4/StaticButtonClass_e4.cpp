@@ -24,7 +24,7 @@ StaticButtonClass * StaticButtonClass::QueryInterface(char a2)
   /* X11: ptr_0 install elided (implicit via StaticButtonClass virtuals 0x6c6886) */
   if ( v3 ) /*0x6c688e*/
     __3_YAXPAX_Z(v3); /*0x6c6891*/
-  Vector::Clear((int)&this->u32_90); /*0x6c689c*/
+  ((Vector *)(int)&this->u32_90)->Clear(); /*0x6c689c*/
   ((ShpButtonClass *)this)->Dtor(); /*0x6c68a3*/
   if ( (a2 & 1) != 0 ) /*0x6c68ad*/
     __3_YAXPAX_Z(this); /*0x6c68b0*/

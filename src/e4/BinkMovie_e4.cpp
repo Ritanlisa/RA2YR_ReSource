@@ -919,7 +919,7 @@ int BinkMovie::InitKeyframeTracking(char * Source, void * aSubtitlemdTxt)
 LABEL_6:
     /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x6c9be2*/
     v12 = 0; /*0x6c9bee*/
-    Vector::Clear((int)v11); /*0x6c9bf5*/
+    ((Vector *)(int)v11)->Clear(); /*0x6c9bf5*/
     *(unsigned int *)v10.__tail_0 = &off_7E1668; /*0x6c9bfe*/
     ((BufferIOFileClass *)&v10)->Dtor(); /*0x6c9c06*/
     return 0; /*0x6c9c16*/
@@ -942,7 +942,7 @@ LABEL_6:
   FileStraw::Destructor(&v6); /*0x6c9c22*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x6c9c2b*/
   v12 = 0; /*0x6c9c33*/
-  Vector::Clear((int)v11); /*0x6c9c3a*/
+  ((Vector *)(int)v11)->Clear(); /*0x6c9c3a*/
   *(unsigned int *)v10.__tail_0 = &off_7E1668; /*0x6c9c43*/
   ((BufferIOFileClass *)&v10)->Dtor(); /*0x6c9c4b*/
   return 1; /*0x6c9c0b*/

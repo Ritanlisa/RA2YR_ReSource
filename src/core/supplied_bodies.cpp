@@ -224,7 +224,7 @@ unsigned int * GraphicMenuImageItem::ddtor(unsigned int * a2) {
   v5 = v4->Open(0); /*0x4f37cc*/
   /* X11: ptr_0 install elided (implicit via class virtuals 0x4f37ce) — binary-proven install, was 0 */
   v9 = 0; /*0x4f37d6*/
-  Vector::Clear((int)v8); /*0x4f37de*/
+  ((Vector *)(int)v8)->Clear(); /*0x4f37de*/
   /* X11: ptr_0 install elided (implicit via off_7E1668 virtuals 0x4f37e7) */
   result = (unsigned int *)((BufferIOFileClass *)&v7)->Dtor(); /*0x4f37ef*/
   if ( v5 ) /*0x4f37f6*/

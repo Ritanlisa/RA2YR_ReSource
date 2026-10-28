@@ -1349,7 +1349,7 @@ void* * LoadVQMovie(char * Source, int * a2, int a3, int a4, IUnknown * a5, int 
   /* X11: ptr_0 install elided (implicit via CCFileClass virtuals 0x5bfb2a) */
   v45 = v17 == 0; /*0x5bfb32*/
   v55 = 0; /*0x5bfb37*/
-  Vector::Clear((int)v54); /*0x5bfb3e*/
+  ((Vector *)(int)v54)->Clear(); /*0x5bfb3e*/
   /* X11: ptr_0 install elided (implicit via off_7E1668 virtuals 0x5bfb47) */
   ((BufferIOFileClass *)((BufferIOFileClass *)&v53))->Dtor(); /*0x5bfb4f*/
   if ( v45 ) /*0x5bfb58*/

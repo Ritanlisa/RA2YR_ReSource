@@ -1860,7 +1860,7 @@ int CampaignClass::LoadFromINI() {
     this->scenario[56] = 0; /*0x49db39*/
     /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x49db3c*/
     v73 = 0; /*0x49db44*/
-    Vector::Clear((int)v72); /*0x49db4b*/
+    ((Vector *)(int)v72)->Clear(); /*0x49db4b*/
     *(unsigned int *)v71.__tail_0 = &off_7E1668; /*0x49db54*/
     return ((BufferIOFileClass *)&v71)->Dtor(); /*0x49db69*/
   }
@@ -2175,7 +2175,7 @@ LABEL_80:
   this->scenario[56] = 1; /*0x49e36f*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x49e37a*/
   v73 = 0; /*0x49e382*/
-  Vector::Clear((int)v72); /*0x49e389*/
+  ((Vector *)(int)v72)->Clear(); /*0x49e389*/
   *(unsigned int *)v71.__tail_0 = &off_7E1668; /*0x49e392*/
   return ((BufferIOFileClass *)&v71)->Dtor(); /*0x49db61*/
 

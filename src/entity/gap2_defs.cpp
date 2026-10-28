@@ -5583,10 +5583,10 @@ int OverlayClass::WriteINI() {
   }
   DSurface_Alternate->vt_slot_96(); /*0x5fd8a8*/
   LCWPipe::Dtor(v25); /*0x5fd8af*/
-  Vector::Clear((int)v24); /*0x5fd8b8*/
+  ((Vector *)(int)v24)->Clear(); /*0x5fd8b8*/
   Pipe::Dtor(v23); /*0x5fd8c1*/
   LCWPipe::Dtor(v26); /*0x5fd8ca*/
-  Vector::Clear((int)v22); /*0x5fd8d3*/
+  ((Vector *)(int)v22)->Clear(); /*0x5fd8d3*/
   return Pipe::Dtor(v21); /*0x5fd8e1*/
 }
 }

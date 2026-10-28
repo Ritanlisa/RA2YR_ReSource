@@ -2447,7 +2447,7 @@ LABEL_31:
     DeleteAndZero((ObjectClass *)v48); /*0x6ba0d6*/
     *(unsigned int *)&v48[56] = &g_ptr_7E16B0; /*0x6ba0e2*/
     *(unsigned int *)&v48[156] = 0; /*0x6ba0ea*/
-    Vector::Clear((int)&v48[144]); /*0x6ba0f1*/
+    ((Vector *)(int)&v48[144])->Clear(); /*0x6ba0f1*/
     *(unsigned int *)&v48[56] = &off_7E1668; /*0x6ba0fa*/
     ((BufferIOFileClass *)&v48[56])->Dtor(); /*0x6ba102*/
     return 1; /*0x6ba10a*/
@@ -2456,7 +2456,7 @@ LABEL_31:
   {
     *(unsigned int *)&v48[56] = &g_ptr_7E16B0; /*0x6b9d68*/
     *(unsigned int *)&v48[156] = 0; /*0x6b9d70*/
-    Vector::Clear((int)&v48[144]); /*0x6b9d77*/
+    ((Vector *)(int)&v48[144])->Clear(); /*0x6b9d77*/
     *(unsigned int *)&v48[56] = &off_7E1668; /*0x6b9d80*/
     ((BufferIOFileClass *)&v48[56])->Dtor(); /*0x6b9d88*/
     return 0; /*0x6b9d90*/
@@ -4472,7 +4472,7 @@ void WinMain_Setup()
   v16 = dword_A83DB8; /*0x6bea83*/
   if ( dword_A83DB8 ) /*0x6bea8b*/
   {
-    Vector::Clear(dword_A83DB8); /*0x6bea8f*/
+    ((Vector *)dword_A83DB8)->Clear(); /*0x6bea8f*/
     operator delete((v16)); /*0x6bea95*/
     dword_A83DB8 = 0; /*0x6bea9d*/
   }

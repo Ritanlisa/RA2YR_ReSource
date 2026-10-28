@@ -1093,7 +1093,7 @@ char sub_538F20(int a1, int a2, char * Source)
       }
       /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x538f9d*/
       v22 = 0; /*0x538fa5*/
-      Vector::Clear((int)v21); /*0x538fad*/
+      ((Vector *)(int)v21)->Clear(); /*0x538fad*/
       *(unsigned int *)v20.__tail_0 = &off_7E1668; /*0x538fb6*/
       ((BufferIOFileClass *)&v20)->Dtor(); /*0x538fba*/
     }
@@ -1111,7 +1111,7 @@ char sub_538F20(int a1, int a2, char * Source)
     }
     /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x539015*/
     v22 = 0; /*0x53901d*/
-    Vector::Clear((int)v21); /*0x539025*/
+    ((Vector *)(int)v21)->Clear(); /*0x539025*/
     *(unsigned int *)v20.__tail_0 = &off_7E1668; /*0x53902e*/
     ((BufferIOFileClass *)&v20)->Dtor(); /*0x539032*/
   }
@@ -2409,7 +2409,7 @@ int E4Recv_538C40::sub_538C40(char * Source)
   }
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x538c8e*/
   v4 = 0; /*0x538c96*/
-  Vector::Clear((int)v3); /*0x538c9e*/
+  ((Vector *)(int)v3)->Clear(); /*0x538c9e*/
   *(unsigned int *)v2.__tail_0 = &off_7E1668; /*0x538ca7*/
   return ((BufferIOFileClass *)&v2)->Dtor(); /*0x538cb4*/
 
@@ -2434,7 +2434,7 @@ int E4Recv_538CC0::sub_538CC0(char * Source)
   }
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x538d07*/
   v4 = 0; /*0x538d0f*/
-  Vector::Clear((int)v3); /*0x538d17*/
+  ((Vector *)(int)v3)->Clear(); /*0x538d17*/
   *(unsigned int *)v2.__tail_0 = &off_7E1668; /*0x538d20*/
   return ((BufferIOFileClass *)&v2)->Dtor(); /*0x538d2d*/
 

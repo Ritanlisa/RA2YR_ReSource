@@ -3442,7 +3442,7 @@ int WOL_FindLobbyID(char a1)  // G42.42a: FULL body restored (G42.41i stub rever
       (*(void (**)(unsigned int *, int))*v4)(v4, 1); /*0x788372*/
     v28[0] = &g_ptr_7E16B0; /*0x78837b*/
     v30 = 0; /*0x788386*/
-    Vector::Clear((int)v29); /*0x78838d*/
+    ((Vector *)(int)v29)->Clear(); /*0x78838d*/
     v28[0] = &off_7E1668; /*0x788399*/
     ((BufferIOFileClass *)v28)->Dtor(); /*0x7883a4*/
     ((HashTable *)v18)->DestroyHashTableINIClass(); /*0x7883ad*/

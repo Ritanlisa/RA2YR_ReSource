@@ -299,7 +299,7 @@ int ObjectTypeClass_LoadTheaterSHP(int a1)
       int v7; // [esp+70h] [ebp-208h]
       v7 = 0; /*0x71dd49*/
       unsigned char v6[12]; // [esp+64h] [ebp-214h] BYREF
-      Vector::Clear((int)v6); /*0x71dd4d*/
+      ((Vector *)(int)v6)->Clear(); /*0x71dd4d*/
       v5[0] = (unsigned int)&off_7E1668; /*0x71dd56*/
       ((BufferIOFileClass *)(v5))->Dtor(); /*0x71dd5e*/
     }

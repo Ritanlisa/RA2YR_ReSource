@@ -559,7 +559,7 @@ int VoxelAnimType::LoadAnim(void *a1)
 LABEL_92:
       /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x5f881e*/
       v53 = 0; /*0x5f882a*/
-      Vector::Clear((int)v52); /*0x5f882e*/
+      ((Vector *)(int)v52)->Clear(); /*0x5f882e*/
       *(unsigned int *)v51.__tail_0 = &off_7E1668; /*0x5f8833*/
       ((BufferIOFileClass *)&v51)->Dtor(); /*0x5f883f*/
     }
@@ -630,13 +630,13 @@ LABEL_93:
         }
         /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x5f8a0c*/
         v56 = 0; /*0x5f8a17*/
-        Vector::Clear((int)v55); /*0x5f8a1e*/
+        ((Vector *)(int)v55)->Clear(); /*0x5f8a1e*/
         *(unsigned int *)v54.__tail_0 = &off_7E1668; /*0x5f8a2a*/
         ((BufferIOFileClass *)&v54)->Dtor(); /*0x5f8a35*/
       }
       /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x5f8a3e*/
       v53 = 0; /*0x5f8a46*/
-      Vector::Clear((int)v52); /*0x5f8a4a*/
+      ((Vector *)(int)v52)->Clear(); /*0x5f8a4a*/
       *(unsigned int *)v51.__tail_0 = &off_7E1668; /*0x5f8a53*/
       ((BufferIOFileClass *)&v51)->Dtor(); /*0x5f8a5b*/
     }
@@ -732,7 +732,7 @@ LABEL_123:
 LABEL_146:
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x5f8c9b*/
   v60 = 0; /*0x5f8cad*/
-  Vector::Clear((int)v59); /*0x5f8cb4*/
+  ((Vector *)(int)v59)->Clear(); /*0x5f8cb4*/
   *(unsigned int *)v58.__tail_0 = &off_7E1668; /*0x5f8cc0*/
   return ((BufferIOFileClass *)&v58)->Dtor(); /*0x5f8cd0*/
 

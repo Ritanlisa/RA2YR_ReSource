@@ -1414,7 +1414,7 @@ LABEL_11:
     v4 = v3->vt_slot_20(0); /*0x406c65*/
     /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x406c67*/
     v16 = 0; /*0x406c6f*/
-    Vector::Clear((int)v15); /*0x406c76*/
+    ((Vector *)(int)v15)->Clear(); /*0x406c76*/
     *(unsigned int *)v14.__tail_0 = &off_7E1668; /*0x406c7f*/
     ((BufferIOFileClass *)&v14)->Dtor(); /*0x406c87*/
     if ( v4 ) /*0x406c91*/

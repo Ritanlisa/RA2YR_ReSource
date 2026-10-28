@@ -1573,7 +1573,7 @@ void ModemGame::ReceiveMapPreview()
     __3_YAXPAX_Z(v6); /*0x5b7593*/
     __3_YAXPAX_Z(v4); /*0x5b7599*/
     LZOStraw::Destructor((LZOStraw *)v15); /*0x5b75a5*/
-    Vector::Clear((int)&v14); /*0x5b75ae*/
+    ((Vector *)(int)&v14)->Clear(); /*0x5b75ae*/
     Straw::Dtor(&v12); /*0x5b75b7*/
     RawFileClass::Dtor((RawFileClass *)&v14.Buffer_field_1C); /*0x5b75c0*/
   }
@@ -1942,7 +1942,7 @@ void ModemHost::InitDialog()
   v51 = CCFileClass::Construct((CCFileClass *)&v59.FilePointer, byte_A8B8E0); /*0x5b8b88*/
   v52 = v51->vt_slot_20(0); /*0x5b8b9a*/
   v61 = 0; /*0x5b8ba4*/
-  Vector::Clear((int)v60); /*0x5b8bac*/
+  ((Vector *)(int)v60)->Clear(); /*0x5b8bac*/
   /* X11: ptr_0 install elided (implicit via off_7E1668 virtuals 0x5b8bb5) */
   ((BufferIOFileClass *)&v59)->Dtor(); /*0x5b8bbd*/
   if ( v52 ) /*0x5b8bc4*/

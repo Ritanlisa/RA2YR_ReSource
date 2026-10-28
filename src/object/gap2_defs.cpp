@@ -1992,13 +1992,13 @@ int AbstractClass::LoadTypeFile() {
           this->u32_A8 = 1; /*0x45f0ee*/
         /* X11: ptr_0 install elided (implicit via class virtuals 0x45f0fc) — binary-proven install, was 0 */
         v10 = 0; /*0x45f104*/
-        Vector::Clear((int)v9); /*0x45f10f*/
+        ((Vector *)(int)v9)->Clear(); /*0x45f10f*/
         /* X11: ptr_0 install elided (implicit via off_7E1668 virtuals 0x45f118) */
         ((BufferIOFileClass *)&v8)->Dtor(); /*0x45f120*/
       }
       /* X11: ptr_0 install elided (implicit via class virtuals 0x45f129) — binary-proven install, was 0 */
       v7 = 0; /*0x45f131*/
-      Vector::Clear((int)v6); /*0x45f139*/
+      ((Vector *)(int)v6)->Clear(); /*0x45f139*/
       /* X11: ptr_0 install elided (implicit via off_7E1668 virtuals 0x45f142) */
       ((BufferIOFileClass *)&v5)->Dtor(); /*0x45f14a*/
     }
@@ -2041,7 +2041,7 @@ int AbstractClass::LoadTheaterSHP() {
         v3 = (int16_t *)CCFileClass::ReadEntireFile(&v8); /*0x465a16*/
         /* X11: ptr_0 install elided (implicit via class virtuals 0x465a18) — binary-proven install, was 0 */
         v10 = 0; /*0x465a20*/
-        Vector::Clear((int)v9); /*0x465a28*/
+        ((Vector *)(int)v9)->Clear(); /*0x465a28*/
         /* X11: ptr_0 install elided (implicit via off_7E1668 virtuals 0x465a31) */
         ((BufferIOFileClass *)&v8)->Dtor(); /*0x465a39*/
       }
@@ -2068,7 +2068,7 @@ int AbstractClass::LoadTheaterSHP() {
       }
       /* X11: ptr_0 install elided (implicit via class virtuals 0x465ab5) — binary-proven install, was 0 */
       v13 = 0; /*0x465abd*/
-      Vector::Clear((int)v12); /*0x465ac8*/
+      ((Vector *)(int)v12)->Clear(); /*0x465ac8*/
       /* X11: ptr_0 install elided (implicit via off_7E1668 virtuals 0x465ad1) */
       ((BufferIOFileClass *)&v11)->Dtor(); /*0x465ad9*/
     }
