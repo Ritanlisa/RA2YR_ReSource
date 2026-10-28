@@ -2040,7 +2040,7 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
   (v75) = ((v75) & ~0xFFFF) | ((Math::RoundToInt(a2)) & 0xFFFF); /*0x68ac8e*/
   HIDWORD(v79) = 55; /*0x68ac93*/
   *(unsigned int *)(_ESI + 13716) = v75; /*0x68ac9a*/
-  Multiplayer::ShowProgress((Multiplayer *)&dword_A8B238, SHIDWORD(v79)); /*0x68aca0*/
+  ((Multiplayer *)&dword_A8B238)->ShowProgress( SHIDWORD(v79)); /*0x68aca0*/
   Event::Dispatch(); /*0x68aca5*/
   if ( *(unsigned int *)&dword_A8B238 ) /*0x68acb1*/
   {
@@ -2059,11 +2059,11 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
   *(unsigned char *)(*(int *)((char *)&stru_A83CD9.estimatedHealth + 3) + 492) = 1; /*0x68ad0c*/
   *(unsigned char *)(*(int *)((char *)&stru_A83CD9.estimatedHealth + 3) + 493) = 1; /*0x68ad18*/
   *(unsigned int *)(*(int *)((char *)&stru_A83CD9.estimatedHealth + 3) + 22260) = 0; /*0x68ad25*/
-  Multiplayer::ShowProgress((Multiplayer *)&dword_A8B238, SHIDWORD(v79)); /*0x68ad34*/
+  ((Multiplayer *)&dword_A8B238)->ShowProgress( SHIDWORD(v79)); /*0x68ad34*/
   Event::Dispatch(); /*0x68ad39*/
   if ( stru_A8E960.random[503] ) /*0x68ad45*/
     TheatreClass::InitView(); /*0x68ad47*/
-  Multiplayer::ShowProgress((Multiplayer *)&dword_A8B238, 60); /*0x68ad53*/
+  ((Multiplayer *)&dword_A8B238)->ShowProgress( 60); /*0x68ad53*/
   Event::Dispatch(); /*0x68ad58*/
   return 1; /*0x68ad5d*/
 

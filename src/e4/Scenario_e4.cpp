@@ -1202,14 +1202,14 @@ char Scenario::LoadWithProgress(void *a1, void *a2_x)
     PostLoadInitScenario(v18); /*0x684ace*/
     if ( *(unsigned int *)&dword_A8B238 == 3 || *(unsigned int *)&dword_A8B238 == 4 ) /*0x684adf*/
     {
-      Multiplayer::ShowProgress((Multiplayer *)&dword_A8B238, 99); /*0x684ae8*/
+      ((Multiplayer *)&dword_A8B238)->ShowProgress( 99); /*0x684ae8*/
       if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x684af3*/
       {
         if ( stru_A8D804.__pad_3D[863] ) /*0x684afc*/
           Process::WaitForExit((Process *)&dword_B052D0, 0x3A98u, 1); /*0x684b0a*/
       }
     }
-    Multiplayer::ShowProgress((Multiplayer *)&dword_A8B238, BYTE1(dword_A8B230[375].ptr_0) != 0 ? 200 : 100);
+    ((Multiplayer *)&dword_A8B238)->ShowProgress( BYTE1(dword_A8B230[375].ptr_0) != 0 ? 200 : 100);
     byte_A8B8C1 = 0; /*0x684b30*/
     byte_A8B8C2 = 0; /*0x684b37*/
     Sync = WaitForMultiplayerLoadSync(v28); /*0x684b43*/

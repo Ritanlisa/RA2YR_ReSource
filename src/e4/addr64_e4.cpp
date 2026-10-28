@@ -915,7 +915,7 @@ LABEL_27:
     Debug::Log(); /*0x648b22*/
     if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x648b32*/
       Network::Disconnect((Network *)&stru_A8E960.nextScenario[96]); /*0x648b39*/
-    Multiplayer::ShowProgress((Multiplayer *)&dword_A8B238, BYTE1(dword_A8B230[375].ptr_0) != 0 ? 200 : 100);
+    ((Multiplayer *)&dword_A8B238)->ShowProgress( BYTE1(dword_A8B230[375].ptr_0) != 0 ? 200 : 100);
     v105 = Timer::GetTicks(); /*0x648b76*/
     v107 = 180; /*0x648b7d*/
     *(unsigned int *)&v101.q020 = v105; /*0x648b84*/

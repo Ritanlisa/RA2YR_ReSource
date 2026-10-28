@@ -797,14 +797,14 @@ void TheaterClass_LoadMIX(int a1)
         v28 = 25; /*0x534d8b*/
       if ( v28 != v26 ) /*0x534d92*/
       {
-        Multiplayer::ShowProgress(dword_A8B238, v28); /*0x534d9a*/
+        ((Multiplayer *)dword_A8B238)->ShowProgress( v28); /*0x534d9a*/
         v26 = v28; /*0x534d9f*/
       }
       Event::Dispatch(); /*0x534da1*/
     }
     FileSystem::InitExtensionState(a1); /*0x534db4*/
     LoadTheaterClassMIX_Load_717840(); /*0x534db9*/
-    Multiplayer::ShowProgress(dword_A8B238, 25); /*0x534dc5*/
+    ((Multiplayer *)dword_A8B238)->ShowProgress( 25); /*0x534dc5*/
   }
 
 }

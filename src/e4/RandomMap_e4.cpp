@@ -3619,7 +3619,7 @@ AbstractClass * * RandomMap::Generate(char a2, HWND hDlg, void *a3)
   }
   FindMapCell(); /*0x598b14*/
   if ( LOBYTE(dword_A8B230[381].ptr_4) ) /*0x598b1e*/
-    Multiplayer::ShowProgress((Multiplayer *)&dword_A8B238, 154); /*0x598b30*/
+    ((Multiplayer *)&dword_A8B238)->ShowProgress( 154); /*0x598b30*/
   else
     Network::UpdateLatencyDisplay((int)&stru_AC4B48.__pad_2F4[284], 0, 55.0, NAN); /*0x598b4b*/
   if ( off_82AF14 ) /*0x598b57*/
@@ -3634,7 +3634,7 @@ AbstractClass * * RandomMap::Generate(char a2, HWND hDlg, void *a3)
   if ( off_82AF14 ) /*0x598b9a*/
     off_82AF14(); /*0x598b9c*/
   if ( LOBYTE(dword_A8B230[381].ptr_4) ) /*0x598ba4*/
-    Multiplayer::ShowProgress((Multiplayer *)&dword_A8B238, 159); /*0x598bb6*/
+    ((Multiplayer *)&dword_A8B238)->ShowProgress( 159); /*0x598bb6*/
   else
     Network::UpdateLatencyDisplay((int)&stru_AC4B48.__pad_2F4[284], 0, 60.0, NAN); /*0x598bd1*/
   if ( off_82AF14 ) /*0x598bdd*/
@@ -3688,7 +3688,7 @@ AbstractClass * * RandomMap::Generate(char a2, HWND hDlg, void *a3)
   }
   Map_Helper_58D010(0); /*0x598cfc*/
   if ( LOBYTE(dword_A8B230[381].ptr_4) ) /*0x598d07*/
-    Multiplayer::ShowProgress((Multiplayer *)&dword_A8B238, 164); /*0x598d19*/
+    ((Multiplayer *)&dword_A8B238)->ShowProgress( 164); /*0x598d19*/
   else
     Network::UpdateLatencyDisplay((int)&stru_AC4B48.__pad_2F4[284], 0, 65.0, NAN); /*0x598d34*/
   if ( off_82AF14 ) /*0x598d40*/
@@ -3704,7 +3704,7 @@ AbstractClass * * RandomMap::Generate(char a2, HWND hDlg, void *a3)
     MapClass::FindPassableNeighbor(); /*0x598d82*/
   }
   if ( LOBYTE(dword_A8B230[381].ptr_4) ) /*0x598d8d*/
-    Multiplayer::ShowProgress((Multiplayer *)&dword_A8B238, 169); /*0x598d9f*/
+    ((Multiplayer *)&dword_A8B238)->ShowProgress( 169); /*0x598d9f*/
   else
     Network::UpdateLatencyDisplay((int)&stru_AC4B48.__pad_2F4[284], 0, 70.0, NAN); /*0x598dba*/
   if ( off_82AF14 ) /*0x598dc6*/
@@ -3730,7 +3730,7 @@ AbstractClass * * RandomMap::Generate(char a2, HWND hDlg, void *a3)
   if ( off_82AF14 ) /*0x598e62*/
     off_82AF14(); /*0x598e64*/
   if ( LOBYTE(dword_A8B230[381].ptr_4) ) /*0x598e6c*/
-    Multiplayer::ShowProgress((Multiplayer *)&dword_A8B238, 174); /*0x598e7e*/
+    ((Multiplayer *)&dword_A8B238)->ShowProgress( 174); /*0x598e7e*/
   else
     Network::UpdateLatencyDisplay((int)&stru_AC4B48.__pad_2F4[284], 0, 75.0, NAN); /*0x598e99*/
   Debug::Log(); /*0x598ea3*/
@@ -3803,7 +3803,7 @@ AbstractClass * * RandomMap::Generate(char a2, HWND hDlg, void *a3)
     House::AnnounceUpgrade(n, -1); /*0x598fe7*/
   }
   if ( LOBYTE(dword_A8B230[381].ptr_4) ) /*0x598fff*/
-    Multiplayer::ShowProgress((Multiplayer *)&dword_A8B238, 179); /*0x599011*/
+    ((Multiplayer *)&dword_A8B238)->ShowProgress( 179); /*0x599011*/
   else
     Network::UpdateLatencyDisplay((int)&stru_AC4B48.__pad_2F4[284], 0, 80.0, NAN); /*0x59902c*/
   if ( off_82AF14 ) /*0x599038*/
@@ -3823,7 +3823,7 @@ AbstractClass * * RandomMap::Generate(char a2, HWND hDlg, void *a3)
   if ( off_82AF14 ) /*0x59909a*/
     off_82AF14(); /*0x59909c*/
   if ( LOBYTE(dword_A8B230[381].ptr_4) ) /*0x5990a4*/
-    Multiplayer::ShowProgress((Multiplayer *)&dword_A8B238, 184); /*0x5990b6*/
+    ((Multiplayer *)&dword_A8B238)->ShowProgress( 184); /*0x5990b6*/
   else
     Network::UpdateLatencyDisplay((int)&stru_AC4B48.__pad_2F4[284], 0, 85.0, NAN); /*0x5990d1*/
   if ( off_82AF14 ) /*0x5990dd*/
@@ -3851,7 +3851,7 @@ AbstractClass * * RandomMap::Generate(char a2, HWND hDlg, void *a3)
   v25 = v40; /*0x59917b*/
   ((ObjectClass *)v40)->GenerateTerrainHeightMap(); /*0x599184*/
   if ( LOBYTE(dword_A8B230[381].ptr_4) ) /*0x59918f*/
-    Multiplayer::ShowProgress((Multiplayer *)&dword_A8B238, 189); /*0x5991a1*/
+    ((Multiplayer *)&dword_A8B238)->ShowProgress( 189); /*0x5991a1*/
   else
     Network::UpdateLatencyDisplay((int)&stru_AC4B48.__pad_2F4[284], 0, 90.0, NAN); /*0x5991bc*/
   if ( off_82AF14 ) /*0x5991c8*/
@@ -3890,7 +3890,7 @@ AbstractClass * * RandomMap::Generate(char a2, HWND hDlg, void *a3)
   if ( off_82AF14 ) /*0x5992b7*/
     off_82AF14(); /*0x5992b9*/
   if ( LOBYTE(dword_A8B230[381].ptr_4) ) /*0x5992c1*/
-    Multiplayer::ShowProgress((Multiplayer *)&dword_A8B238, 194); /*0x5992d3*/
+    ((Multiplayer *)&dword_A8B238)->ShowProgress( 194); /*0x5992d3*/
   else
     Network::UpdateLatencyDisplay((int)&stru_AC4B48.__pad_2F4[284], 0, 95.0, NAN); /*0x5992ee*/
   if ( off_82AF14 ) /*0x5992fa*/
@@ -3952,7 +3952,7 @@ AbstractClass * * RandomMap::Generate(char a2, HWND hDlg, void *a3)
   Shroud::ProcessCellVisibility((RadarClass *)&dword_87F7E8, (int *)&dword_87F8E4); /*0x599468*/
   RadarClass::RecreateSurface(v37, 0); /*0x599472*/
   if ( LOBYTE(dword_A8B230[381].ptr_4) ) /*0x59947e*/
-    Multiplayer::ShowProgress((Multiplayer *)&dword_A8B238, 199); /*0x599490*/
+    ((Multiplayer *)&dword_A8B238)->ShowProgress( 199); /*0x599490*/
   else
     Network::UpdateLatencyDisplay((int)&stru_AC4B48.__pad_2F4[284], 0, 100.0, NAN); /*0x5994ab*/
   Debug::Log(); /*0x5994b5*/
@@ -3962,7 +3962,7 @@ AbstractClass * * RandomMap::Generate(char a2, HWND hDlg, void *a3)
     if ( v32 ) /*0x5994da*/
       ShowWindow(v32, 0); /*0x5994de*/
     if ( LOBYTE(dword_A8B230[381].ptr_4) ) /*0x5994ea*/
-      Multiplayer::ShowProgress((Multiplayer *)&dword_A8B238, 99); /*0x5994f9*/
+      ((Multiplayer *)&dword_A8B238)->ShowProgress( 99); /*0x5994f9*/
     else
       Network::UpdateLatencyDisplay((int)&stru_AC4B48.__pad_2F4[284], 0, 0.0, NAN); /*0x599510*/
     VtableStub::sub_643E70(&stru_AC4B48.__pad_2F4[284]); /*0x59951a*/
@@ -4164,7 +4164,7 @@ AbstractClass * * RandomMap::SetupTheater(char a2)
     *&v76->__pad_17C = v19; /*0x599b4d*/
   }
   if ( LOBYTE(dword_A8B230[381].ptr_4) ) /*0x599b59*/
-    Multiplayer::ShowProgress((Multiplayer *)&dword_A8B238, 101); /*0x599b68*/
+    ((Multiplayer *)&dword_A8B238)->ShowProgress( 101); /*0x599b68*/
   else
     Network::UpdateLatencyDisplay((int)&stru_AC4B48.__pad_2F4[284], 0, 2.0, NAN); /*0x599b83*/
   v20 = *&v17->ptr_178; /*0x599b8e*/
@@ -4249,7 +4249,7 @@ LABEL_59:
     }
   }
   if ( LOBYTE(dword_A8B230[381].ptr_4) ) /*0x599cef*/
-    Multiplayer::ShowProgress((Multiplayer *)&dword_A8B238, 104); /*0x599cfe*/
+    ((Multiplayer *)&dword_A8B238)->ShowProgress( 104); /*0x599cfe*/
   else
     Network::UpdateLatencyDisplay((int)&stru_AC4B48.__pad_2F4[284], 0, 5.0, NAN); /*0x599d19*/
   if ( off_82AF14 ) /*0x599d25*/
@@ -4272,7 +4272,7 @@ LABEL_59:
     Map_Setup_6DA980(); /*0x599d90*/
   }
   if ( LOBYTE(dword_A8B230[381].ptr_4) ) /*0x599d9a*/
-    Multiplayer::ShowProgress((Multiplayer *)&dword_A8B238, 109); /*0x599da9*/
+    ((Multiplayer *)&dword_A8B238)->ShowProgress( 109); /*0x599da9*/
   else
     Network::UpdateLatencyDisplay((int)&stru_AC4B48.__pad_2F4[284], 0, 10.0, NAN); /*0x599dc4*/
   for ( i = dword_8B4118; dword_8B4118 > 0; i = dword_8B4118 ) /*0x599dd0*/
@@ -4320,14 +4320,14 @@ LABEL_59:
   if ( off_82AF14 ) /*0x599ec0*/
     off_82AF14(); /*0x599ec2*/
   if ( LOBYTE(dword_A8B230[381].ptr_4) ) /*0x599ec9*/
-    Multiplayer::ShowProgress((Multiplayer *)&dword_A8B238, 114); /*0x599ed8*/
+    ((Multiplayer *)&dword_A8B238)->ShowProgress( 114); /*0x599ed8*/
   else
     Network::UpdateLatencyDisplay((int)&stru_AC4B48.__pad_2F4[284], 0, 15.0, NAN); /*0x599ef3*/
   MapClass::ProcessRegion((MapClass *)&dword_87F7E8); /*0x599efd*/
   Terrain::ConnectivityGraph((Terrain *)&dword_87F7E8); /*0x599f07*/
   MapClass::BuildSubzones((MapClass *)&dword_87F7E8); /*0x599f11*/
   if ( LOBYTE(dword_A8B230[381].ptr_4) ) /*0x599f1c*/
-    Multiplayer::ShowProgress((Multiplayer *)&dword_A8B238, 119); /*0x599f2b*/
+    ((Multiplayer *)&dword_A8B238)->ShowProgress( 119); /*0x599f2b*/
   else
     Network::UpdateLatencyDisplay((int)&stru_AC4B48.__pad_2F4[284], 0, 20.0, NAN); /*0x599f46*/
   if ( off_82AF14 ) /*0x599f52*/
@@ -4344,7 +4344,7 @@ LABEL_59:
   v44 = (RadarClass *)Cell::GetWorldCoords((Cell *)dword_A8B230, v83, 699); /*0x59a006*/
   TacticalClass::SetPositionThunk(v44); /*0x59a011*/
   if ( LOBYTE(dword_A8B230[381].ptr_4) ) /*0x59a01c*/
-    Multiplayer::ShowProgress((Multiplayer *)&dword_A8B238, 124); /*0x59a02b*/
+    ((Multiplayer *)&dword_A8B238)->ShowProgress( 124); /*0x59a02b*/
   else
     Network::UpdateLatencyDisplay((int)&stru_AC4B48.__pad_2F4[284], 0, 25.0, NAN); /*0x59a046*/
   if ( off_82AF14 ) /*0x59a052*/
@@ -4357,7 +4357,7 @@ LABEL_59:
     dword_A8B230[130].uniqueId = v45; /*0x59a083*/
   }
   if ( LOBYTE(dword_A8B230[381].ptr_4) ) /*0x59a08f*/
-    Multiplayer::ShowProgress((Multiplayer *)&dword_A8B238, 129); /*0x59a0a1*/
+    ((Multiplayer *)&dword_A8B238)->ShowProgress( 129); /*0x59a0a1*/
   else
     Network::UpdateLatencyDisplay((int)&stru_AC4B48.__pad_2F4[284], 0, 30.0, NAN); /*0x59a0bc*/
   if ( off_82AF14 ) /*0x59a0c8*/
@@ -4369,7 +4369,7 @@ LABEL_59:
     ScenarioClass::ReadGlobalVariables((char *)dword_A8B230, (char *)dword_887048); /*0x59a102*/
   }
   if ( LOBYTE(dword_A8B230[381].ptr_4) ) /*0x59a10d*/
-    Multiplayer::ShowProgress((Multiplayer *)&dword_A8B238, 134); /*0x59a11f*/
+    ((Multiplayer *)&dword_A8B238)->ShowProgress( 134); /*0x59a11f*/
   else
     Network::UpdateLatencyDisplay((int)&stru_AC4B48.__pad_2F4[284], 0, 35.0, NAN); /*0x59a13a*/
   v47 = (void (*)())off_82AF14; /*0x59a13f*/
@@ -4434,7 +4434,7 @@ LABEL_153:
   v52 = v76; /*0x59a294*/
   --dword_A8E7AC; /*0x59a2a4*/
   if ( LOBYTE(dword_A8B230[381].ptr_4) ) /*0x59a2a9*/
-    Multiplayer::ShowProgress((Multiplayer *)&dword_A8B238, 139); /*0x59a2bd*/
+    ((Multiplayer *)&dword_A8B238)->ShowProgress( 139); /*0x59a2bd*/
   else
     Network::UpdateLatencyDisplay((int)&stru_AC4B48.__pad_2F4[284], 0, 40.0, NAN); /*0x59a2d8*/
   if ( off_82AF14 ) /*0x59a2e4*/
@@ -4498,7 +4498,7 @@ LABEL_153:
     *(unsigned char *)(ii + 283) = v52[1].__pad_4C[176]; /*0x59a3cf*/
   }
   if ( LOBYTE(dword_A8B230[381].ptr_4) ) /*0x59a3e3*/
-    Multiplayer::ShowProgress((Multiplayer *)&dword_A8B238, 144); /*0x59a3f5*/
+    ((Multiplayer *)&dword_A8B238)->ShowProgress( 144); /*0x59a3f5*/
   else
     Network::UpdateLatencyDisplay((int)&stru_AC4B48.__pad_2F4[284], 0, 45.0, NAN); /*0x59a410*/
   if ( off_82AF14 ) /*0x59a41c*/
@@ -4560,7 +4560,7 @@ LABEL_153:
     v65 = *(unsigned int *)(v52[1].RandomMap_field_0x8 + 4 * v52->ptr_48); /*0x59a5d5*/
   dword_A8B230[378].abstractFlags = v65; /*0x59a5ec*/
   if ( LOBYTE(dword_A8B230[381].ptr_4) ) /*0x59a5f8*/
-    Multiplayer::ShowProgress((Multiplayer *)&dword_A8B238, 149); /*0x59a60a*/
+    ((Multiplayer *)&dword_A8B238)->ShowProgress( 149); /*0x59a60a*/
   else
     Network::UpdateLatencyDisplay((int)&stru_AC4B48.__pad_2F4[284], 0, 50.0, NAN); /*0x59a625*/
   if ( !wcslen((const wchar_t *)&v52->__pad_078) ) /*0x59a62e*/
