@@ -1,0 +1,758 @@
+{
+"AbstractType": [
+"int"
+],
+"AbstractFlags": [
+"unsigned"
+],
+"Action": [
+"unsigned"
+],
+"Ability": [
+"int"
+],
+"AIDifficulty": [
+"unsigned"
+],
+"TriggerPersistence": [
+"unsigned"
+],
+"TriggerEvent": [
+"unsigned"
+],
+"TriggerAction": [
+"unsigned"
+],
+"AIMode": [
+"int"
+],
+"AITriggerCondition": [
+"int"
+],
+"AITriggerHouseType": [
+"int"
+],
+"Armor": [
+"unsigned"
+],
+"SpotlightBehaviour": [
+"unsigned"
+],
+"SpotlightFlags": [
+"unsigned"
+],
+"BehavesLike": [
+"int"
+],
+"BuildCat": [
+"unsigned"
+],
+"BuildingAnimSlot": [
+"int"
+],
+"Category": [
+"int"
+],
+"CloakState": [
+"int"
+],
+"DamageState": [
+"int"
+],
+"DamageAreaResult": [
+"int"
+],
+"KickOutResult": [
+"int"
+],
+"CanBuildResult": [
+"int"
+],
+"FireError": [
+"int"
+],
+"HealthState": [
+"unsigned"
+],
+"GameMode": [
+"unsigned"
+],
+"InfDeath": [
+"unsigned"
+],
+"LandType": [
+"int"
+],
+"Layer": [
+"int"
+],
+"PlacementType": [
+"int"
+],
+"Mission": [
+"int"
+],
+"MovementZone": [
+"int"
+],
+"PipIndex": [
+"unsigned"
+],
+"PipScale": [
+"unsigned"
+],
+"Powerup": [
+"unsigned"
+],
+"PrismChargeState": [
+"int"
+],
+"RadarEventType": [
+"int"
+],
+"PsychicDominatorStatus": [
+"unsigned"
+],
+"NukeFlashStatus": [
+"unsigned"
+],
+"ChargeDrainState": [
+"int"
+],
+"SuperWeaponType": [
+"int"
+],
+"MouseCursorType": [
+"unsigned"
+],
+"RadBeamType": [
+"unsigned"
+],
+"Rank": [
+"int"
+],
+"Sequence": [
+"int"
+],
+"SequenceFacing": [
+"unsigned"
+],
+"SpeedType": [
+"int"
+],
+"TheaterType": [
+"int"
+],
+"VisualType": [
+"unsigned"
+],
+"RadioCommand": [
+"int"
+],
+"SoundPriority": [
+"int"
+],
+"SoundType": [
+"unsigned"
+],
+"SoundControl": [
+"unsigned"
+],
+"VoxType": [
+"int"
+],
+"VoxPriority": [
+"int"
+],
+"WaveType": [
+"int"
+],
+"TargetType": [
+"unsigned"
+],
+"TargetFlags": [
+"unsigned"
+],
+"BlitterFlags": [
+"unsigned"
+],
+"Edge": [
+"int"
+],
+"Move": [
+"int"
+],
+"ZGradient": [
+"int"
+],
+"ParasiteState": [
+"int"
+],
+"ISwizzle": [
+"IUnknown"
+],
+"IApplication": [
+"IUnknown"
+],
+"IHouse": [
+"IUnknown"
+],
+"IPublicHouse": [
+"IUnknown"
+],
+"IEnumConnections": [
+"IUnknown"
+],
+"IConnectionPoint": [
+"IUnknown"
+],
+"IConnectionPointContainer": [
+"IUnknown"
+],
+"IEnumConnectionPoints": [
+"IUnknown"
+],
+"IGameMap": [
+"IUnknown"
+],
+"ILinkStream": [
+"IUnknown"
+],
+"IFlyControl": [
+"IUnknown"
+],
+"ILocomotion": [
+"IUnknown"
+],
+"IPiggyback": [
+"IUnknown"
+],
+"AbstractTypeClass": [
+"AbstractClass"
+],
+"AirstrikeClass": [
+"AbstractClass"
+],
+"Blitter": [
+"BlitterCore"
+],
+"BlitPlain": [
+"Blitter"
+],
+"BlitPlainXlat": [
+"BlitPlain"
+],
+"BlitTrans": [
+"Blitter"
+],
+"BlitTransWarp": [
+"BlitTrans"
+],
+"BlitTransXlat": [
+"BlitTrans"
+],
+"BlitTransDarken": [
+"BlitTransXlat"
+],
+"BlitTransLucent25": [
+"BlitTransXlat"
+],
+"BlitTransLucent50": [
+"BlitTransXlat"
+],
+"BlitTransLucent75": [
+"BlitTransXlat"
+],
+"BlitTransRemap": [
+"BlitTransXlat"
+],
+"BlitTransXlatAlpha": [
+"BlitTransXlat"
+],
+"BlitTransXlatZRead": [
+"BlitTransXlat"
+],
+"BlitTransXlatZReadWrite": [
+"BlitTransXlatZRead"
+],
+"BombClass": [
+"AbstractClass"
+],
+"CampaignClass": [
+"AbstractClass"
+],
+"CaptureManagerClass": [
+"AbstractClass"
+],
+"AddTeamCommand": [
+"CommandClass"
+],
+"AreaGuardCommandClass": [
+"CommandClass"
+],
+"AttackCommandClass": [
+"CommandClass"
+],
+"C4CommandClass": [
+"CommandClass"
+],
+"CenterTeamCommand": [
+"CommandClass"
+],
+"ChronoCommandClass": [
+"CommandClass"
+],
+"CursorPositionCommandClass": [
+"CommandClass"
+],
+"DeleteCommandClass": [
+"CommandClass"
+],
+"DeployCommandClass": [
+"CommandClass"
+],
+"EnterCommandClass": [
+"CommandClass"
+],
+"FactoryClass": [
+"AbstractClass"
+],
+"FoggedObjectClass": [
+"AbstractClass"
+],
+"GuardCommandClass": [
+"CommandClass"
+],
+"HouseClass": [
+"AbstractClass"
+],
+"HouseTypeClass": [
+"AbstractClass"
+],
+"CCINIClass": [
+"INIClass"
+],
+"IPXConnClass": [
+"ConnectionClass"
+],
+"LightSourceClass": [
+"AbstractClass"
+],
+"LocomotionClass": [
+"ILocomotion"
+],
+"DriveLocomotionClass": [
+"LocomotionClass"
+],
+"DropPodLocomotionClass": [
+"LocomotionClass"
+],
+"FlyLocomotionClass": [
+"LocomotionClass"
+],
+"HoverLocomotionClass": [
+"LocomotionClass"
+],
+"JumpjetLocomotionClass": [
+"LocomotionClass"
+],
+"LogicClass": [
+"LayerClass"
+],
+"MPBattleClass": [
+"MPGameModeClass"
+],
+"MPFreeForAllClass": [
+"MPGameModeClass"
+],
+"MPManBattleClass": [
+"MPGameModeClass"
+],
+"MPMegawealthClass": [
+"MPGameModeClass"
+],
+"MPSiegeClass": [
+"MPGameModeClass"
+],
+"MPUnholyAllianceClass": [
+"MPGameModeClass"
+],
+"MechLocomotionClass": [
+"LocomotionClass"
+],
+"ModemConnectionClass": [
+"ConnectionClass"
+],
+"MoveCommandClass": [
+"CommandClass"
+],
+"BinkMovieHandle": [
+"MovieHandle"
+],
+"Node": [
+"GenericNode"
+],
+"MixFileClass": [
+"Node"
+],
+"NukeCommandClass": [
+"CommandClass"
+],
+"NullModemClass": [
+"ConnectionClass"
+],
+"ObjectClass": [
+"AbstractClass"
+],
+"BuildingLightClass": [
+"ObjectClass"
+],
+"MissionClass": [
+"ObjectClass"
+],
+"ObjectTypeClass": [
+"AbstractTypeClass"
+],
+"AnimTypeClass": [
+"ObjectTypeClass"
+],
+"BulletTypeClass": [
+"ObjectTypeClass"
+],
+"OverlayClass": [
+"ObjectClass"
+],
+"OverlayTypeClass": [
+"ObjectTypeClass"
+],
+"PageUserCommandClass": [
+"CommandClass"
+],
+"ParasiteClass": [
+"AbstractClass"
+],
+"ParticleSystemClass": [
+"ObjectClass"
+],
+"RLEBlitter": [
+"RLEBlitterCore"
+],
+"RLEBlitTrans": [
+"RLEBlitter"
+],
+"RLEBlitTransXlat": [
+"RLEBlitTrans"
+],
+"RLEBlitTransXlatAlpha": [
+"RLEBlitTransXlat"
+],
+"RLEBlitTransXlatZRead": [
+"RLEBlitTransXlat"
+],
+"RadBeam": [
+"AbstractClass"
+],
+"RadSiteClass": [
+"AbstractClass"
+],
+"RadioClass": [
+"MissionClass"
+],
+"RateTimer": [
+"CDTimerClass"
+],
+"RawFileClass": [
+"FileClass"
+],
+"BufferIOFileClass": [
+"RawFileClass"
+],
+"CDFileClass": [
+"BufferIOFileClass"
+],
+"CCFileClass": [
+"CDFileClass"
+],
+"RepairCommandClass": [
+"CommandClass"
+],
+"RocketLocomotionClass": [
+"LocomotionClass"
+],
+"SHPFile": [
+"SHPStruct"
+],
+"SHPReference": [
+"SHPStruct"
+],
+"ScatterCommandClass": [
+"CommandClass"
+],
+"ScreenCaptureCommandClass": [
+"CommandClass"
+],
+"ScriptClass": [
+"AbstractClass"
+],
+"ScriptTypeClass": [
+"AbstractClass"
+],
+"SelectCommandClass": [
+"CommandClass"
+],
+"SelectTeamCommand": [
+"CommandClass"
+],
+"SellCommandClass": [
+"CommandClass"
+],
+"ShipLocomotionClass": [
+"LocomotionClass"
+],
+"ShpButtonClass": [
+"GadgetClass"
+],
+"SideClass": [
+"AbstractClass"
+],
+"SlaveManagerClass": [
+"AbstractClass"
+],
+"SmudgeClass": [
+"ObjectClass"
+],
+"SmudgeTypeClass": [
+"ObjectTypeClass"
+],
+"SpawnManagerClass": [
+"AbstractClass"
+],
+"StageClass": [
+"IFlyControl"
+],
+"FlasherClass": [
+"StageClass"
+],
+"StopCommandClass": [
+"CommandClass"
+],
+"SuperWeaponTypeClass": [
+"AbstractTypeClass"
+],
+"TActionClass": [
+"AbstractClass"
+],
+"TEventClass": [
+"AbstractClass"
+],
+"TacticalClass": [
+"AbstractClass"
+],
+"TagClass": [
+"AbstractClass"
+],
+"TagTypeClass": [
+"AbstractClass"
+],
+"TauntCommandClass": [
+"CommandClass"
+],
+"TeamClass": [
+"AbstractClass"
+],
+"TeamTypeClass": [
+"AbstractClass"
+],
+"TechnoClass": [
+"RadioClass"
+],
+"BuildingClass": [
+"TechnoClass"
+],
+"FootClass": [
+"TechnoClass"
+],
+"AircraftClass": [
+"FootClass"
+],
+"InfantryClass": [
+"FootClass"
+],
+"TechnoTypeClass": [
+"ObjectTypeClass"
+],
+"AircraftTypeClass": [
+"TechnoTypeClass"
+],
+"BuildingTypeClass": [
+"TechnoTypeClass"
+],
+"InfantryTypeClass": [
+"TechnoTypeClass"
+],
+"TeleportLocomotionClass": [
+"LocomotionClass"
+],
+"TemporalClass": [
+"AbstractClass"
+],
+"TerrainClass": [
+"ObjectClass"
+],
+"TerrainTypeClass": [
+"ObjectTypeClass"
+],
+"TiberiumClass": [
+"ObjectClass"
+],
+"TogglePowerCommandClass": [
+"CommandClass"
+],
+"ToggleRepairCommandClass": [
+"CommandClass"
+],
+"ToggleSellCommandClass": [
+"CommandClass"
+],
+"TriggerClass": [
+"AbstractClass"
+],
+"TriggerTypeClass": [
+"AbstractClass"
+],
+"TubeClass": [
+"ObjectClass"
+],
+"TunnelLocomotionClass": [
+"LocomotionClass"
+],
+"UnitClass": [
+"FootClass"
+],
+"UnitTypeClass": [
+"TechnoTypeClass"
+],
+"VQMovieHandle": [
+"MovieHandle"
+],
+"DynamicVectorClass": [
+"VectorClass"
+],
+"TypeList": [
+"DynamicVectorClass"
+],
+"VoxelAnimTypeClass": [
+"ObjectTypeClass"
+],
+"WalkLocomotionClass": [
+"LocomotionClass"
+],
+"WaveClass": [
+"ObjectClass"
+],
+"WaypointCommandClass": [
+"CommandClass"
+],
+"WaypointPathClass": [
+"AbstractClass"
+],
+"WeaponTypeClass": [
+"AbstractTypeClass"
+],
+"XSurface": [
+"Surface"
+],
+"BSurface": [
+"XSurface"
+],
+"AnimClass": [
+"ObjectClass"
+],
+"BulletClass": [
+"ObjectClass"
+],
+"ParticleClass": [
+"ObjectClass"
+],
+"VxlNormalType": [
+"uint8_t"
+],
+"VoxelAnimClass": [
+"ObjectClass"
+],
+"TClassFactory_MechLocomotionClass": [
+"IClassFactory"
+],
+"SuperClass": [
+"AbstractClass"
+],
+"IPersistStream": [
+"IUnknown"
+],
+"IRTTITypeInfo": [
+"IUnknown"
+],
+"AbstractClass": [
+"IPersistStream",
+"IRTTITypeInfo",
+"INoticeSink",
+"INoticeSource"
+],
+"Status": [
+"int"
+],
+"DisplayClass": [
+"MapClass"
+],
+"MovieType": [
+"uint8_t"
+],
+"DSurface": [
+"XSurface"
+],
+"CellFlags": [
+"uint32_t"
+],
+"LightConvertClass": [
+"ConvertClass"
+],
+"MapClass": [
+"GScreenClass"
+],
+"RadarClass": [
+"DisplayClass"
+],
+"ParticleSystemTypeClass": [
+"ObjectTypeClass"
+],
+"ParticleTypeClass": [
+"ObjectTypeClass"
+],
+"WarheadTypeClass": [
+"AbstractTypeClass"
+],
+"GadgetFlag": [
+"uint32_t"
+],
+"TextButtonClass": [
+"GadgetClass"
+],
+"LabelClass": [
+"GadgetClass"
+],
+"MouseClass": [
+"RadarClass"
+],
+"PowerClass": [
+"RadarClass"
+],
+"SidebarClass": [
+"PowerClass"
+],
+"TabClass": [
+"SidebarClass"
+],
+"GameOption": [
+"int"
+]
+}

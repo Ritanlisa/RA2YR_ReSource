@@ -176,6 +176,26 @@ def _load_hierarchy(class_layouts_path: Optional[str] = None) -> tuple[
     """
     rtti_direct, rtti_class_names = _load_rtti_truth()
 
+    # X178: 第三路继承证据 —— 头文件声明 `class X : public Y`。
+    # 非多态类（无 vtable → 无 RTTI）的继承关系此前完全缺失（class_layouts
+    # 的 parent 多为 None），导致"最派生类"规则无从判定、全局类型只剩
+    # VOID_PTR。此处在 RTTI 之后、class_layouts 之前并入（RTTI 仍优先）。
+    try:
+        _extra_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(
+            os.path.abspath(__file__)))), "anchors", "class_hierarchy_extra.json")
+        if os.path.exists(_extra_path):
+            with open(_extra_path, "r", encoding="utf-8") as _ef:
+                _extra = json.load(_ef)
+            for _child, _bases in _extra.items():
+                if not isinstance(_bases, list) or not _bases:
+                    continue
+                # 仅在 RTTI 未覆盖时补边（RTTI 是真值）
+                if _child not in rtti_direct:
+                    rtti_direct[_child] = list(_bases)
+            rtti_class_names |= set(_extra)
+    except Exception as _e:
+        print(f"  class_hierarchy_extra load failed ({_e})", file=sys.stderr)
+
     # 缺口 1: RTTI 边经对齐表映射到 canon（header）命名空间——两套命名
     # 从"不相交的图节点"变为同一节点（模板实例折叠到族、自环删除、
     # 多实例父列表并集，均由生成器保证）。legacy 类名与 canon 同体系，
