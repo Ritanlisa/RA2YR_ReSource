@@ -23,7 +23,7 @@ struct ComPtr {
     static int Dtor(void *aP0);
     int Release_Alt();
      int Set(int a2);  // was C2597 interim stub, := truth 0x0x65d480
-    unsigned int * Release();  // 0x65d460
+    unsigned int * Release();  // 0x65d460 thiscall (x181c: static-form overload removed)
     int ReleaseSimple();
     static unsigned int * Constructor(void *aP0);
     static int ReleaseAndSet(void *aP0, unsigned int *aP1);

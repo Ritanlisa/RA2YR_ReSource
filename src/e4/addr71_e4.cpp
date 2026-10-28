@@ -69,7 +69,7 @@ char E4Recv_7187A0::ProcessUnitDeploymentAtCell(int a2, int a3, int a4)
   char v22; // [esp+31h] [ebp-5h]
   __int16 v23[2]; // [esp+32h] [ebp-4h] BYREF
 
-  for ( i = (unsigned int *)((Coord *)&dword_87F7E8)->To_Cell( &a2)->firstObject; i; i = (unsigned int *)i[12] ) /*0x7187bf*/
+  for ( i = (unsigned int *)((Coord *)&dword_87F7E8)->To_Cell(&a2)->firstObject; i; i = (unsigned int *)i[12] ) /*0x7187bf*/
   {
     if ( (*(unsigned __int8 (**)(unsigned int *))(*i + 352))(i) ) /*0x7187c5*/
     {
@@ -87,8 +87,8 @@ char E4Recv_7187A0::ProcessUnitDeploymentAtCell(int a2, int a3, int a4)
   }
   v22 = 0; /*0x718814*/
   if ( *(unsigned char *)((*(int (**)(int))(*(unsigned int *)this->ptr_C + 132))(this->ptr_C) + 3278) /*0x71885d*/
-    && ((((Coord *)&dword_87F7E8)->To_Cell( &a2)->flags & 0x100) != 0
-     || ((Coord *)&dword_87F7E8)->To_Cell( &a2)->landType == 1) )
+    && ((((Coord *)&dword_87F7E8)->To_Cell(&a2)->flags & 0x100) != 0
+     || ((Coord *)&dword_87F7E8)->To_Cell(&a2)->landType == 1) )
   {
     v22 = 1; /*0x71885f*/
   }
@@ -108,20 +108,20 @@ char E4Recv_7187A0::ProcessUnitDeploymentAtCell(int a2, int a3, int a4)
     || v6
     || *(unsigned char *)((*(int (**)(int))(*(unsigned int *)this->ptr_C + 132))(this->ptr_C) + 3278)
     || (*(int (**)(int))(*(unsigned int *)this->ptr_C + 44))(this->ptr_C) == 15
-    || (((Coord *)&dword_87F7E8)->To_Cell( &a2)->flags & 0x100) != 0
-    || ((Coord *)&dword_87F7E8)->To_Cell( &a2)->landType == 1 )
+    || (((Coord *)&dword_87F7E8)->To_Cell(&a2)->flags & 0x100) != 0
+    || ((Coord *)&dword_87F7E8)->To_Cell(&a2)->landType == 1 )
   {
     ptr_C = (int *)this->ptr_C; /*0x718a01*/
     v23[0] = a2 / 256; /*0x718a14*/
     v23[1] = a3 / 256; /*0x718a2f*/
     v14 = *ptr_C; /*0x718a3c*/
-    v15 = ((CellCoord *)&dword_87F7E8)->To_CellObj(v23); /*0x718a46*/
+    v15 = (((CellCoord *)&dword_87F7E8)->To_CellObj(v23); /*0x718a46*/
     if ( (*(int (**)(int, void *, int, int, unsigned int, int))(v14 + 428))(this->ptr_C, v15, -1, -1, 0, 1) == 7 /*0x718a60*/
       || (LOBYTE(v12) = v22) != 0 )
     {
       v23[0] = a2 / 256; /*0x718a80*/
       v23[1] = a3 / 256; /*0x718a95*/
-      v16 = (Cell *)((CellCoord *)&dword_87F7E8)->To_CellObj(v23); /*0x718aa2*/
+      v16 = (Cell *)(((CellCoord *)&dword_87F7E8)->To_CellObj(v23); /*0x718aa2*/
       if ( !(unsigned __int8)Cell::IsGroundTypeRange(v16) /*0x718abd*/
         || (*(int (**)(int))(*(unsigned int *)this->ptr_C + 44))(this->ptr_C) == 15 )
       {
@@ -264,7 +264,7 @@ int InitializeCellSpreadTables()
   dword_B0EEEC = *(unsigned int *)((CellStruct *)&v4)->Set(1, 1); /*0x71da0b*/
   dword_B0EEF0 = *(unsigned int *)((CellStruct *)&v4)->Set(2, 1); /*0x71da19*/
   dword_B0EEF4 = *(unsigned int *)((CellStruct *)&v4)->Set(3, 1); /*0x71da3a*/
-  dword_B0EEF8 = *(unsigned int *)((CellStruct *)&v4)->Set( 0x7FFF, 0x7FFF); /*0x71da4c*/
+  dword_B0EEF8 = *(unsigned int *)(&v4)->Set(0x7FFF, 0x7FFF); /*0x71da4c*/
   dword_B0EEFC = 0; /*0x71da62*/
   memset(&unk_B0EF00, 0, 0x230u); /*0x71da73*/
   return Arr  return Array::ForEach((gamemd::Array*)(&dword_B0EEFC), 4, 141, (int (__thiscall *)(int))__0Iostream_init_QAE_XZ_2); 

@@ -29,7 +29,7 @@ struct WideString {
     wchar_t * GetOrEmpty_Alt();  // 0x7B7140
          int GetChar(size_t aP1);  // 0x7B7180
     int Length(void *a1 = 0);  // 0x7B71B0
-    short Reassign(wchar_t * String, void *a2_1);  // 0x7B7600
+    short Reassign(wchar_t * String);  // 0x7B7600 thiscall (x181c: spurious receiver param dropped; IDA: (this, wchar_t* String))
     char IsASCII(void *a1 = 0);  // 0x7B7D90
     static int Hash(wchar_t * Source);  // def-aligned
 };
