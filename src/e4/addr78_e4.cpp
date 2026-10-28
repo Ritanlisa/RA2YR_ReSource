@@ -1258,7 +1258,7 @@ char InsertGameSettings(unsigned char * a1, char a2)
   memset(v20, 0, sizeof(v20)); /*0x781fce*/
   v19 = g_WOL_UserList.owningHouseIndex; /*0x781fd8*/
   if ( !g_WOL_UserList.owningHouseIndex ) /*0x781fdc*/
-    return DynamicClass::Insert((DynamicClass *)&g_WOL_UserList.owningHouseIndex, a1, 0); /*0x781ff1*/
+    return ((DynamicClass *)(DynamicClass *)&g_WOL_UserList.owningHouseIndex)->Insert( a1, 0); /*0x781ff1*/
   v5 = 0; /*0x781ff2*/
   if ( g_WOL_UserList.owningHouseIndex > 0 ) /*0x781ff6*/
     memcpy(v20, g_WOL_UserList.nextObject, sizeof(v20)); /*0x782007*/
@@ -1868,7 +1868,7 @@ LABEL_160:
   }
   else
   {
-    DynamicClass::Insert((DynamicClass *)&stru_B778FC.m_3[1], a1, 0); /*0x7823d3*/
+    ((DynamicClass *)(DynamicClass *)&stru_B778FC.m_3[1])->Insert( a1, 0); /*0x7823d3*/
   }
   return DeleteAndZero((ObjectClass *)v47); /*0x782b98*/
 
@@ -1911,7 +1911,7 @@ char FindBuddyList(unsigned char *a1, char a2)
   owningHouseIndex = g_WOL_UserList.owningHouseIndex; /*0x782bd2*/
   memset(v32, 0, sizeof(v32)); /*0x782bd6*/
   if ( !g_WOL_UserList.owningHouseIndex ) /*0x782bd8*/
-    return DynamicClass::Insert((DynamicClass *)&g_WOL_UserList.owningHouseIndex, a1, 0); /*0x782beb*/
+    return ((DynamicClass *)(DynamicClass *)&g_WOL_UserList.owningHouseIndex)->Insert( a1, 0); /*0x782beb*/
   nextObject = g_WOL_UserList.nextObject; /*0x782bec*/
   v4 = 0; /*0x782bf2*/
   if ( g_WOL_UserList.owningHouseIndex > 0 ) /*0x782bf7*/
@@ -1933,7 +1933,7 @@ char FindBuddyList(unsigned char *a1, char a2)
     if ( a2 ) /*0x782e68*/
     {
       if ( v4 >= g_WOL_UserList.owningHouseIndex ) /*0x782e70*/
-        return DynamicClass::Insert((DynamicClass *)&g_WOL_UserList.owningHouseIndex, a1, v29); /*0x782e70*/
+        return ((DynamicClass *)(DynamicClass *)&g_WOL_UserList.owningHouseIndex)->Insert( a1, v29); /*0x782e70*/
       v18 = 108 * v4; /*0x782e7d*/
       while ( 1 ) /*0x782e89*/
       {
@@ -1957,13 +1957,13 @@ char FindBuddyList(unsigned char *a1, char a2)
         if ( !v9 && v21 < g_WOL_UserList.owningHouseIndex ) /*0x782edc*/
           memcpy(v32, (char *)g_WOL_UserList.nextObject + v18, sizeof(v32)); /*0x782eef*/
         if ( v29 >= owningHouseIndex ) /*0x782efb*/
-          return DynamicClass::Insert((DynamicClass *)&g_WOL_UserList.owningHouseIndex, a1, v29); /*0x782efb*/
+          return ((DynamicClass *)(DynamicClass *)&g_WOL_UserList.owningHouseIndex)->Insert( a1, v29); /*0x782efb*/
       }
     }
     else
     {
       if ( v4 >= g_WOL_UserList.owningHouseIndex ) /*0x782f12*/
-        return DynamicClass::Insert((DynamicClass *)&g_WOL_UserList.owningHouseIndex, a1, v29); /*0x782f12*/
+        return ((DynamicClass *)(DynamicClass *)&g_WOL_UserList.owningHouseIndex)->Insert( a1, v29); /*0x782f12*/
       v22 = 108 * v4; /*0x782f23*/
       while ( 1 ) /*0x782f2f*/
       {
@@ -1987,12 +1987,12 @@ char FindBuddyList(unsigned char *a1, char a2)
         if ( !v9 && v4 < g_WOL_UserList.owningHouseIndex ) /*0x782f73*/
           memcpy(v32, (char *)g_WOL_UserList.nextObject + v22, sizeof(v32)); /*0x782f87*/
         if ( v4 >= owningHouseIndex ) /*0x782f8d*/
-          return DynamicClass::Insert((DynamicClass *)&g_WOL_UserList.owningHouseIndex, a1, v29); /*0x782f8d*/
+          return ((DynamicClass *)(DynamicClass *)&g_WOL_UserList.owningHouseIndex)->Insert( a1, v29); /*0x782f8d*/
       }
     }
     v25 = v29; /*0x782f9b*/
     if ( v29 >= owningHouseIndex ) /*0x782fa5*/
-      return DynamicClass::Insert((DynamicClass *)&g_WOL_UserList.owningHouseIndex, a1, v29); /*0x782fa5*/
+      return ((DynamicClass *)(DynamicClass *)&g_WOL_UserList.owningHouseIndex)->Insert( a1, v29); /*0x782fa5*/
     v26 = 108 * v29; /*0x782fb2*/
     while ( 1 ) /*0x782fbe*/
     {
@@ -2003,7 +2003,7 @@ char FindBuddyList(unsigned char *a1, char a2)
       if ( v28 == 1 ) /*0x782fde*/
         break; /*0x782fde*/
       if ( _strcmpi(a1 + 87, &v32[87]) ) /*0x782fe6*/
-        return DynamicClass::Insert((DynamicClass *)&g_WOL_UserList.owningHouseIndex, a1, v29); /*0x782ff0*/
+        return ((DynamicClass *)(DynamicClass *)&g_WOL_UserList.owningHouseIndex)->Insert( a1, v29); /*0x782ff0*/
       LABEL_84:
       if ( _strcmpi(&v32[36], a1 + 36) < 0 ) /*0x783009*/
       {
@@ -2016,13 +2016,13 @@ char FindBuddyList(unsigned char *a1, char a2)
         if ( v25 < owningHouseIndex ) /*0x783035*/
           continue; /*0x783035*/
       }
-      return DynamicClass::Insert((DynamicClass *)&g_WOL_UserList.owningHouseIndex, a1, v29); /*0x783035*/
+      return ((DynamicClass *)(DynamicClass *)&g_WOL_UserList.owningHouseIndex)->Insert( a1, v29); /*0x783035*/
     }
     if ( (int)(v27 - 1) > 0 ) /*0x783059*/
-      return DynamicClass::Insert((DynamicClass *)&g_WOL_UserList.owningHouseIndex, a1, v29); /*0x783059*/
+      return ((DynamicClass *)(DynamicClass *)&g_WOL_UserList.owningHouseIndex)->Insert( a1, v29); /*0x783059*/
     LABEL_91:
     if ( (int)(v28 - 1) > 0 ) /*0x78305d*/
-      return DynamicClass::Insert((DynamicClass *)&g_WOL_UserList.owningHouseIndex, a1, v29); /*0x78305d*/
+      return ((DynamicClass *)(DynamicClass *)&g_WOL_UserList.owningHouseIndex)->Insert( a1, v29); /*0x78305d*/
     goto LABEL_84; /*0x78305d*/
   }
   v29 = 0; /*0x782c40*/
@@ -2031,7 +2031,7 @@ char FindBuddyList(unsigned char *a1, char a2)
   if ( a2 ) /*0x782c61*/
   {
     if ( v4 <= 0 ) /*0x782c69*/
-      return DynamicClass::Insert((DynamicClass *)&g_WOL_UserList.owningHouseIndex, a1, v29); /*0x782c69*/
+      return ((DynamicClass *)(DynamicClass *)&g_WOL_UserList.owningHouseIndex)->Insert( a1, v29); /*0x782c69*/
     v5 = 0; /*0x782c6f*/
     while ( 1 ) /*0x782c7a*/
     {
@@ -2055,13 +2055,13 @@ char FindBuddyList(unsigned char *a1, char a2)
       if ( !v9 && v8 < g_WOL_UserList.owningHouseIndex ) /*0x782ccc*/
         memcpy(v32, (char *)g_WOL_UserList.nextObject + v5, sizeof(v32)); /*0x782ce0*/
       if ( v29 >= v4 ) /*0x782ce6*/
-        return DynamicClass::Insert((DynamicClass *)&g_WOL_UserList.owningHouseIndex, a1, v29); /*0x782ce6*/
+        return ((DynamicClass *)(DynamicClass *)&g_WOL_UserList.owningHouseIndex)->Insert( a1, v29); /*0x782ce6*/
     }
   }
   else
   {
     if ( v4 <= 0 ) /*0x782cfa*/
-      return DynamicClass::Insert((DynamicClass *)&g_WOL_UserList.owningHouseIndex, a1, v29); /*0x782cfa*/
+      return ((DynamicClass *)(DynamicClass *)&g_WOL_UserList.owningHouseIndex)->Insert( a1, v29); /*0x782cfa*/
     v10 = 0; /*0x782d00*/
     while ( 1 ) /*0x782d0b*/
     {
@@ -2085,7 +2085,7 @@ char FindBuddyList(unsigned char *a1, char a2)
       if ( !v9 && v13 < g_WOL_UserList.owningHouseIndex ) /*0x782d56*/
         memcpy(v32, (char *)g_WOL_UserList.nextObject + v10, sizeof(v32)); /*0x782d69*/
       if ( v29 >= v4 ) /*0x782d6f*/
-        return DynamicClass::Insert((DynamicClass *)&g_WOL_UserList.owningHouseIndex, a1, v29); /*0x782d6f*/
+        return ((DynamicClass *)(DynamicClass *)&g_WOL_UserList.owningHouseIndex)->Insert( a1, v29); /*0x782d6f*/
     }
   }
   if ( v29 < v4 ) /*0x782d83*/
@@ -2100,7 +2100,7 @@ char FindBuddyList(unsigned char *a1, char a2)
       if ( v16 == 1 ) /*0x782db9*/
         break; /*0x782db9*/
       if ( _strcmpi(a1 + 87, &v32[87]) ) /*0x782dc1*/
-        return DynamicClass::Insert((DynamicClass *)&g_WOL_UserList.owningHouseIndex, a1, v29); /*0x782dcb*/
+        return ((DynamicClass *)(DynamicClass *)&g_WOL_UserList.owningHouseIndex)->Insert( a1, v29); /*0x782dcb*/
       LABEL_43:
       if ( _strcmpi(&v32[36], a1 + 36) < 0 ) /*0x782de8*/
       {
@@ -2113,16 +2113,16 @@ char FindBuddyList(unsigned char *a1, char a2)
         if ( v29 < v4 ) /*0x782e1e*/
           continue; /*0x782e1e*/
       }
-      return DynamicClass::Insert((DynamicClass *)&g_WOL_UserList.owningHouseIndex, a1, v29); /*0x782e1e*/
+      return ((DynamicClass *)(DynamicClass *)&g_WOL_UserList.owningHouseIndex)->Insert( a1, v29); /*0x782e1e*/
     }
     if ( (int)(v15 - 1) > 0 ) /*0x782e2b*/
-      return DynamicClass::Insert((DynamicClass *)&g_WOL_UserList.owningHouseIndex, a1, v29); /*0x782e2b*/
+      return ((DynamicClass *)(DynamicClass *)&g_WOL_UserList.owningHouseIndex)->Insert( a1, v29); /*0x782e2b*/
     LABEL_50:
     if ( (int)(v16 - 1) > 0 ) /*0x782e33*/
-      return DynamicClass::Insert((DynamicClass *)&g_WOL_UserList.owningHouseIndex, a1, v29); /*0x782e33*/
+      return ((DynamicClass *)(DynamicClass *)&g_WOL_UserList.owningHouseIndex)->Insert( a1, v29); /*0x782e33*/
     goto LABEL_43; /*0x782e33*/
   }
-  return DynamicClass::Insert((DynamicClass *)&g_WOL_UserList.owningHouseIndex, a1, v29); /*0x782be6*/
+  return ((DynamicClass *)(DynamicClass *)&g_WOL_UserList.owningHouseIndex)->Insert( a1, v29); /*0x782be6*/
 }
 }
 // 0x7830C0

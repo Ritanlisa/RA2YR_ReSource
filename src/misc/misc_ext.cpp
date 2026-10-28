@@ -16861,8 +16861,8 @@ LABEL_13:
         v46.customSound_controller[4] = 0; /*0x7a72bf*/
         if ( stru_B76B00.StringVector_field_0x10 ) /*0x7a72c7*/
         {
-          DynamicClass::Insert( /*0x7a7346*/
-            (DynamicClass *)&stru_B778FC.m_3[1],
+          ((DynamicClass *) /*0x7a7346*/
+            (DynamicClass *)&stru_B778FC.m_3[1])->Insert(
             &v46.ambientSoundController[1],
             *(int *)&stru_B778FC.m_3[1]);
         }
