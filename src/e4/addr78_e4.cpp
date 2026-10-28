@@ -2907,8 +2907,8 @@ LABEL_87:
   {
     v36 = *(unsigned int *)v42[2].__pad_0; /*0x787644*/
     v34 = dword_84A238; /*0x787645*/
-    v29 = String::GetOrEmpty((String *)&g_WebBrowserConfig); /*0x787655*/
-    v30 = String::GetOrEmpty((String *)&stru_B73E10.q030); /*0x787657*/
+    v29 = ((String *)(String *)&g_WebBrowserConfig)->GetOrEmpty(); /*0x787655*/
+    v30 = ((String *)(String *)&stru_B73E10.q030)->GetOrEmpty(); /*0x787657*/
     FindChannelWOL(v30, (int)v29, v34, v36); /*0x787660*/
     SaveConfigWOL((TechnoClass *)&dword_A8B238); /*0x78766a*/
   }
@@ -3009,7 +3009,7 @@ int NetworkLobbyWOL(HWND hWnd, char a2)
     ((WideString *)&v67)->Assign( (wchar_t *)&unk_A8D1FC + 56 * dword_A8D584); /*0x7877d8*/
     ToWideStringCharAlt((char **)&v67.ptr_4, (const wchar_t **)&v67); /*0x7877e5*/
     ((DeleteAndZero *)&v67)->Alt(); /*0x7877ee*/
-    v3 = String::GetOrEmpty((String *)&v67.ptr_4); /*0x7877fe*/
+    v3 = ((String *)(String *)&v67.ptr_4)->GetOrEmpty(); /*0x7877fe*/
     if ( !_strnicmp(v3, unk_A8B380, 0x14u) ) /*0x787804*/
     {
       if ( !dword_A8B3AC ) /*0x78781b*/
@@ -3086,7 +3086,7 @@ LABEL_25:
         v12 = (char *)__2_YAPAXI_Z(v11 + 1); /*0x787a33*/
         if ( v12 ) /*0x787a3a*/
         {
-          v13 = String::GetOrEmpty((String *)&unk_B73AE0); /*0x787a4a*/
+          v13 = ((String *)(String *)&unk_B73AE0)->GetOrEmpty(); /*0x787a4a*/
           v64.q008 = (int)asc_83F328; /*0x787a51*/
           v64.q004 = (int)strcpy(v12, v13); /*0x787a66*/
           v15 = strtok((char *)v64.q004, (const char *)v64.q008); /*0x787a74*/
@@ -3851,7 +3851,7 @@ int CreateAccountWOL(int a2, int a3)
     else
     {
       FromStringInt((char **)&v52.u32_8, v55); /*0x788d35*/
-      v14 = String::GetOrEmpty((String *)&v52.u32_8); /*0x788d43*/
+      v14 = ((String *)(String *)&v52.u32_8)->GetOrEmpty(); /*0x788d43*/
       v15 = GetDlgItem((HWND)DialogIndirect, 1583); /*0x788d4b*/
       SendMessageA(v15, 0x4B4u, 0, (LPARAM)v14); /*0x788d56*/
       DeleteAndZero((ObjectClass *)&v52.u32_8); /*0x788d5c*/
@@ -3864,7 +3864,7 @@ int CreateAccountWOL(int a2, int a3)
     else
     {
       FromStringInt((char **)v56, v50.u32_8); /*0x788d86*/
-      v17 = String::GetOrEmpty((String *)v56); /*0x788d94*/
+      v17 = ((String *)(String *)v56)->GetOrEmpty(); /*0x788d94*/
       v18 = GetDlgItem((HWND)DialogIndirect, 1584); /*0x788d9c*/
       SendMessageA(v18, 0x4B4u, 0, (LPARAM)v17); /*0x788da7*/
       DeleteAndZero((ObjectClass *)v56); /*0x788dad*/
@@ -3876,7 +3876,7 @@ int CreateAccountWOL(int a2, int a3)
     if ( MessageDialogLoopAlt((HWND)DialogIndirect, (unsigned __int8 (*)(void))GameLoop::Thunk, 0, 1, 1) != 1 ) /*0x788e25*/
       break; /*0x788e25*/
     v56[100] = 0; /*0x788e30*/
-    strcpy(&v56[100], String::GetOrEmpty(&stru_B76E34)); /*0x788e5a*/
+    strcpy(&v56[100], ((String *)&stru_B76E34)->GetOrEmpty()); /*0x788e5a*/
     DeleteAndZero_field_0x08 = *(unsigned int *)stru_B77820.__pad_C; /*0x788e5e*/
     v50.u32_8 = *(unsigned int *)stru_B77820.__pad_C; /*0x788e66*/
     v55 = dword_B73AB8; /*0x788e78*/
@@ -3955,7 +3955,7 @@ LABEL_27:
           SetupDialog(v27, v22); /*0x789065*/
           if ( ((String *)&unk_B77794)->Length() ) /*0x78906f*/
           {
-            v28 = String::GetOrEmpty((String *)&unk_B77794); /*0x789082*/
+            v28 = ((String *)(String *)&unk_B77794)->GetOrEmpty(); /*0x789082*/
             v29 = GetDlgItem((HWND)v27, 1576); /*0x78908a*/
             SendMessageA(v29, 0x4B4u, 0, (LPARAM)v28); /*0x78908d*/
           }
@@ -3966,7 +3966,7 @@ LABEL_27:
           }
           if ( ((String *)&stru_B765EC)->Length() ) /*0x7890ab*/
           {
-            v31 = String::GetOrEmpty((String *)&stru_B765EC); /*0x7890be*/
+            v31 = ((String *)(String *)&stru_B765EC)->GetOrEmpty(); /*0x7890be*/
             v32 = GetDlgItem((HWND)v27, 1509); /*0x7890c6*/
             SendMessageA(v32, 0x4B4u, 0, (LPARAM)v31); /*0x7890c9*/
           }
@@ -3977,7 +3977,7 @@ LABEL_27:
           }
           if ( ((String *)&unk_B778F4)->Length() ) /*0x7890e7*/
           {
-            v34 = String::GetOrEmpty((String *)&unk_B778F4); /*0x7890fa*/
+            v34 = ((String *)(String *)&unk_B778F4)->GetOrEmpty(); /*0x7890fa*/
             v35 = GetDlgItem((HWND)v27, 1836); /*0x789102*/
             SendMessageA(v35, 0x4B4u, 0, (LPARAM)v34); /*0x789105*/
           }
@@ -3988,7 +3988,7 @@ LABEL_27:
           }
           if ( ((String *)&stru_B778FC)->Length() ) /*0x789123*/
           {
-            v37 = String::GetOrEmpty(&stru_B778FC); /*0x789136*/
+            v37 = ((String *)&stru_B778FC)->GetOrEmpty(); /*0x789136*/
             v38 = GetDlgItem((HWND)v27, 1575); /*0x78913e*/
             SendMessageA(v38, 0x4B4u, 0, (LPARAM)v37); /*0x789141*/
           }
@@ -4002,15 +4002,15 @@ LABEL_27:
           if ( MessageDialogLoopAlt((HWND)v27, (unsigned __int8 (*)(void))GameLoop::Thunk, 0, 1, 1) != 1 ) /*0x789184*/
             break; /*0x789184*/
           v56[68] = 0; /*0x78918f*/
-          strcpy(&v56[68], String::GetOrEmpty((String *)&unk_B77794)); /*0x7891b3*/
+          strcpy(&v56[68], ((String *)(String *)&unk_B77794)->GetOrEmpty()); /*0x7891b3*/
           v56[4] = 0; /*0x7891c1*/
-          v40 = String::GetOrEmpty((String *)&unk_B778F4); /*0x7891cb*/
+          v40 = ((String *)(String *)&unk_B778F4)->GetOrEmpty(); /*0x7891cb*/
           v56[36] = 0; /*0x7891dc*/
           strcpy(&v56[4], v40); /*0x7891ea*/
-          strcpy(&v56[36], String::GetOrEmpty(&stru_B778FC)); /*0x789217*/
+          strcpy(&v56[36], ((String *)&stru_B778FC)->GetOrEmpty()); /*0x789217*/
           v57[0] = 0; /*0x789229*/
           if ( *(unsigned int *)v50.owningHouseIndex == 243 ) /*0x789231*/
-            strcpy(v57, String::GetOrEmpty((String *)&stru_B765EC)); /*0x78925a*/
+            strcpy(v57, ((String *)(String *)&stru_B765EC)->GetOrEmpty()); /*0x78925a*/
           v54 = 0; /*0x789267*/
           if ( *(unsigned int *)v50.owningHouseIndex == 244 ) /*0x789274*/
             v54 = unk_B76C20; /*0x78927c*/
@@ -4469,7 +4469,7 @@ char CreateGameWOL(int a2)
   v48[1] = 1; /*0x789ca3*/
   if ( dword_B77DC4 < 2 ) /*0x789ca7*/
     dword_B77DC4 = 6; /*0x789ca9*/
-  strcpy((char *)&v48[53] + 3, String::GetOrEmpty((String *)&v44)); /*0x789cdb*/
+  strcpy((char *)&v48[53] + 3, ((String *)(String *)&v44)->GetOrEmpty()); /*0x789cdb*/
   v48[2] = dword_B77DC4; /*0x789cf3*/
   memset(Buffer, 0, 0x50u); /*0x789cfc*/
   GameConfig::BuildChecksum(Buffer); /*0x789d05*/
@@ -4943,7 +4943,7 @@ int OnlineLobbyDlgProcWOL(HWND hDlg, unsigned int a2, int a3, HWND hWnd)
     v17 = GetDlgItem(hDlg, 1473); /*0x78d4c3*/
     GetDialogText(v17, &v39); /*0x78d4c9*/
     String::CopyTruncated(9u); /*0x78d4d4*/
-    strcpy((char *)&v44[9], String::GetOrEmpty((char **)&v39)); /*0x78d4fc*/
+    strcpy((char *)&v44[9], ((String *)(char **)&v39)->GetOrEmpty()); /*0x78d4fc*/
     if ( WideString::Length((const wchar_t **)&v40) && strlen((const char *)&v44[9]) ) /*0x78d51a*/
     {
       if ( !dword_A8B538 || (v18 = 0, MEMORY[0xA8DA84] <= 0) ) /*0x78d53c*/
@@ -5021,7 +5021,7 @@ LABEL_50:
     if ( ppv ) /*0x78d2ea*/
     {
       memset(v44, 0, sizeof(v44)); /*0x78d2f7*/
-      strcpy((char *)&v44[9], String::GetOrEmpty((char **)&v40)); /*0x78d320*/
+      strcpy((char *)&v44[9], ((String *)(char **)&v40)->GetOrEmpty()); /*0x78d320*/
       (*(void (**)(LPVOID, LPARAM *))(*(unsigned int *)ppv + 96))(ppv, v44); /*0x78d332*/
     }
     v12 = GetDlgItem(hDlg, 1480); /*0x78d33b*/
@@ -5679,7 +5679,7 @@ wchar_t ** WOL_FormatLocaleString(wchar_t ** a1, int a2)
   v3 = FormatStringInt((char **)&v7.u32_8, a2, 2); /*0x780a0f*/
   ProcessStringAndCopy((char **)&v7.q004, aWolLocale, v3); /*0x780a1e*/
   DeleteAndZero((ObjectClass *)&v7.u32_8); /*0x780a27*/
-  v4 = String::GetOrEmpty((String *)&v7.q004); /*0x780a3a*/
+  v4 = ((String *)(String *)&v7.q004)->GetOrEmpty(); /*0x780a3a*/
   StringCSF = GetStringCSF((wchar_t *)v4, 0, g_Str_File_wonline_cpp, 2909); /*0x780a43*/
   ((WideString *)&v7)->Assign( StringCSF); /*0x780a4d*/
   WideString::AssignFromPtr((WideString *)a1, (const wchar_t **)&v7); /*0x780a65*/

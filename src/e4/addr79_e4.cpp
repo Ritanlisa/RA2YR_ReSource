@@ -557,7 +557,7 @@ LABEL_110:
           while ( 1 ) /*0x79400a*/
           {
             v21 = ToWideStringChar(*(char **)(*(unsigned int *)&stru_A8D804.__pad_3D[567] + 4 * v20)); /*0x79400a*/
-            v22 = String::GetOrEmpty((String *)&stru_B73E10.q030); /*0x79400c*/
+            v22 = ((String *)(String *)&stru_B73E10.q030)->GetOrEmpty(); /*0x79400c*/
             if ( !_strcmpi(v21, v22) ) /*0x794013*/
               break; /*0x794013*/
             if ( ++v20 >= *(int *)&stru_A8D804.__pad_3D[579] ) /*0x794027*/
@@ -660,7 +660,7 @@ LABEL_34:
       v99 = 0; /*0x794268*/
       v100 = 0; /*0x79426a*/
       v98[0] = 41; /*0x794270*/
-      strcpy((char *)&v98[1], String::GetOrEmpty((String *)&stru_B73E10.q030)); /*0x79429d*/
+      strcpy((char *)&v98[1], ((String *)(String *)&stru_B73E10.q030)->GetOrEmpty()); /*0x79429d*/
       if ( (dword_ABFEC8 & 8) != 0 && (stru_A8D804.__pad_3FD[4 * v3 + 43] & 8) == 0 ) /*0x7942b7*/
       {
         Debug::Log(); /*0x7942be*/
@@ -2163,7 +2163,7 @@ AbstractClass * * NetworkGame_Init()
   *(unsigned int *)dword_B779C4 = 0; /*0x7970f1*/
   strcpy( /*0x797115*/
     (char *)&stru_B77820.q010,
-    String::GetOrEmpty((String *)&stru_B73E10.q030));
+    ((String *)(String *)&stru_B73E10.q030)->GetOrEmpty());
   PtrVector::Destroy((PtrVector *)&stru_A8D804.__pad_3D[563]); /*0x797123*/
   nSize = 1015; /*0x797132*/
   GetComputerNameA(Buffer, &nSize); /*0x79713a*/
@@ -4789,7 +4789,7 @@ AbstractClass * * WOL_SendGameList()
   }
   v7 = *(unsigned int *)g_UIPointerTable; /*0x79d27c*/
   v11 = g_NetworkRematchState & 0xFFFF00; /*0x79d285*/
-  v8 = String::GetOrEmpty(&v13); /*0x79d28a*/
+  v8 = ((String *)&v13)->GetOrEmpty(); /*0x79d28a*/
   (*(void (**)(LPVOID, char *, int, char *, int, int, unsigned int, unsigned int))(v7 + 20))( /*0x79d2a3*/
     g_UIPointerTable,
     g_WOL_ConnectFlag,
@@ -4801,7 +4801,7 @@ AbstractClass * * WOL_SendGameList()
     0);
   v9 = *(unsigned int *)g_UIPointerTable; /*0x79d2b7*/
   v12 = g_NetworkRematchState & 0xFFFF00; /*0x79d2b9*/
-  v10 = String::GetOrEmpty(&v13); /*0x79d2be*/
+  v10 = ((String *)&v13)->GetOrEmpty(); /*0x79d2be*/
   (*(void (**)(LPVOID, char *, int, char *, int))(v9 + 56))( /*0x79d2d6*/
     g_UIPointerTable,
     g_WOL_ConnectFlag,
@@ -5542,7 +5542,7 @@ LABEL_112:
                     DynamicArray::Remove((DynamicArray *)&stru_B76970.q010, 0); /*0x79efaa*/
                   dword_B779D0 = time(0); /*0x79efb6*/
                   memset(v40, 0, sizeof(v40)); /*0x79efc6*/
-                  strcpy(&v40[36], String::GetOrEmpty((String *)&unk_B73ACC)); /*0x79eff3*/
+                  strcpy(&v40[36], ((String *)(String *)&unk_B73ACC)->GetOrEmpty()); /*0x79eff3*/
                   (*(void (**)(LPVOID, char *))(*(unsigned int *)ppv + 96))(ppv, v40); /*0x79f005*/
                 }
               }
@@ -5752,7 +5752,7 @@ LABEL_90:
           DynamicArray::Remove((DynamicArray *)&stru_B76970.q010, 0); /*0x79e96f*/
         dword_B779D0 = time(0); /*0x79e97b*/
         memset(v40, 0, sizeof(v40)); /*0x79e98b*/
-        strcpy(&v40[36], String::GetOrEmpty((String *)&unk_B73ACC)); /*0x79e9b8*/
+        strcpy(&v40[36], ((String *)(String *)&unk_B73ACC)->GetOrEmpty()); /*0x79e9b8*/
         (*(void (**)(LPVOID, char *))(*(unsigned int *)ppv + 96))(ppv, v40); /*0x79e9ca*/
         return 0; /*0x79e9d0*/
       case 0x497u: /*0x79e612*/

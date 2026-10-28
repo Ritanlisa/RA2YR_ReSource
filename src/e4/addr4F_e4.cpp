@@ -435,7 +435,7 @@ LABEL_18:
       v18 = (MSAnim *)__2_YAPAXI_Z(0x3Cu); /*0x4f1f17*/
       if ( v18 ) /*0x4f1f1e*/
       {
-        v19 = String::GetOrEmpty((String *)&v38.referenceCount); /*0x4f1f24*/
+        v19 = ((String *)(String *)&v38.referenceCount)->GetOrEmpty(); /*0x4f1f24*/
         ((String *)&v38.ptr_8)->Assign( v19); /*0x4f1f2e*/
         v20 = 1; /*0x4f1f33*/
         Config = UI_Load(v18, (const char **)&v38.ptr_8, v8 + 28, 1); /*0x4f1f49*/

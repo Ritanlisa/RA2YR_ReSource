@@ -614,7 +614,7 @@ v12 = (HWND)Dialog::FindByHandle((Dialog *)0xCF); /*0x7a7cf3*/
     *(unsigned int *)dword_B779C4 = dword_B76B24; /*0x7a7d31*/
     if ( *(unsigned int *)&dword_A8B238 == 4 && (dword_B76B30 & 0x100) != 0 ) /*0x7a7d47*/
       *(unsigned int *)dword_B779C4 = 2; /*0x7a7d49*/
-    v13 = String::GetOrEmpty((String *)&stru_B73E10.q030); /*0x7a7d59*/
+    v13 = ((String *)(String *)&stru_B73E10.q030)->GetOrEmpty(); /*0x7a7d59*/
     v14 = *(unsigned int *)&stru_B778FC.m_3[1]; /*0x7a7d66*/
     strcpy((char *)&stru_B77820.q010, v13); /*0x7a7d77*/
     if ( v14 > 0 && dword_B77908 ) /*0x7a7d8b*/
@@ -1671,7 +1671,7 @@ int CComObject_CChatEventSink___ATL::DispatchStub_33(int a1, int a2, int a3)
         if ( (double)(unsigned int)g_WOL_ConnectionPool.HashMap_field_0x04 /*0x7ab9d0*/
            / (double)g_WOL_ConnectionPool.HashMap_field_0x08 >= dbl_B76558 )
           HashTable::Grow((HashTable *)&g_WOL_ConnectionPool); /*0x7ab9d7*/
-        v10 = String::GetOrEmpty((String *)&g_WindowManager.__pad_EC[684]); /*0x7ab9e1*/
+        v10 = ((String *)(String *)&g_WindowManager.__pad_EC[684])->GetOrEmpty(); /*0x7ab9e1*/
         if ( !_strcmpi((char *)(a3 + 36), v10) ) /*0x7ab9ef*/
         {
           v14.q008 = 0; /*0x7aba03*/

@@ -545,7 +545,7 @@ int Lobby::BuildPlayerList()
       String::Reassign((String *)&v7, PlayerTypeString); /*0x77dc1e*/
       j_DeleteAndZero((ObjectClass *)&v7.ptr_C); /*0x77dc27*/
     }
-    v5 = String::GetOrEmpty((String *)&v7); /*0x77dc35*/
+    v5 = ((String *)(String *)&v7)->GetOrEmpty(); /*0x77dc35*/
     strncat((char *)&v7.uniqueId, v5, 0x100u); /*0x77dc40*/
     strncat((char *)&v7.uniqueId, Delimiter, 0x100u); /*0x77dc54*/
     DeleteAndZero(&v7); /*0x77dc60*/

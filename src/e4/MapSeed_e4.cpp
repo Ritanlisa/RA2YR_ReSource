@@ -227,7 +227,7 @@ LABEL_33:
       }
       dword_B779D0 = time(0); /*0x79c864*/
       memset(v12, 0, sizeof(v12)); /*0x79c874*/
-      strcpy(&v12[36], String::GetOrEmpty((String *)&unk_B73ACC)); /*0x79c8a1*/
+      strcpy(&v12[36], ((String *)(String *)&unk_B73ACC)->GetOrEmpty()); /*0x79c8a1*/
       (*(void (**)(LPVOID, char *))(*(unsigned int *)ppv + 96))(ppv, v12); /*0x79c8b3*/
     }
     goto LABEL_33; /*0x79c8b3*/

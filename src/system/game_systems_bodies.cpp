@@ -5723,10 +5723,10 @@ void LoadingScreen::Render()
             ((String *)(*(unsigned int *)v80.m_Colors + 72))->Length())
         && ((String *)(*(unsigned int *)v80.m_Colors + 68))->Length() )
       {
-        v29 = String::GetOrEmpty((String *)(*(unsigned int *)v80.m_Colors + 72)); /*0x553373*/
+        v29 = ((String *)(String *)(*(unsigned int *)v80.m_Colors + 72))->GetOrEmpty(); /*0x553373*/
         Palette::LoadFile(v29); /*0x55337a*/
         v75 = Render_Render_72B520(); /*0x553388*/
-        strcpy(&v80.m_Colors[108], String::GetOrEmpty((String *)(*(unsigned int *)v80.m_Colors + 68))); /*0x5533b1*/
+        strcpy(&v80.m_Colors[108], ((String *)(String *)(*(unsigned int *)v80.m_Colors + 68))->GetOrEmpty()); /*0x5533b1*/
         v30 = v75; /*0x5533ba*/
       }
       else

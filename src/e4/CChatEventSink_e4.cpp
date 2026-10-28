@@ -313,7 +313,7 @@ LABEL_72:
             else
             {
 LABEL_87:
-              strcat(v34, String::GetOrEmpty((String *)v33)); /*0x7aad7a*/
+              strcat(v34, ((String *)(String *)v33)->GetOrEmpty()); /*0x7aad7a*/
               strcat(v34, asc_8318B8); /*0x7aadd7*/
               ++*(unsigned int *)&v33[4]; /*0x7aade5*/
             }

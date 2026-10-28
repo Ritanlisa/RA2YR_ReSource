@@ -1167,7 +1167,7 @@ unsigned int * PlayerProfile_Load(unsigned int * a1, const char ** a2)
       ((String *)&v17)->Assign( g_INI_Key_Locale); /*0x778be6*/
       Int = INIClass::ReadInt((bool *)&v17.nextArrayIndex, (String *)&v17.ptr_4, (String *)&v17, 0); /*0x778c03*/
       DeleteAndZero(&v17); /*0x778c05*/
-      v7 = (unsigned __int8 *)String::GetOrEmpty((String *)&v17.ptr_4); /*0x778c14*/
+      v7 = (unsigned __int8 *)((String *)(String *)&v17.ptr_4)->GetOrEmpty(); /*0x778c14*/
       Bool_Overwrite = INIClass::ReadBool_Overwrite(&v17.nextArrayIndex, v7, (unsigned __int8 *)aLocaleverified, 0); /*0x778c23*/
       v17.customSound_controller[4] = Bool_Overwrite; /*0x778c2e*/
       ((String *)&v17)->Assign( g_INI_Key_Country); /*0x778c32*/
@@ -1199,7 +1199,7 @@ unsigned int * PlayerProfile_Load(unsigned int * a1, const char ** a2)
                                         (String *)&v17,
                                         -1);
       DeleteAndZero(&v17); /*0x778d73*/
-      v11 = (unsigned __int8 *)String::GetOrEmpty((String *)&v17.ptr_4); /*0x778d83*/
+      v11 = (unsigned __int8 *)((String *)(String *)&v17.ptr_4)->GetOrEmpty(); /*0x778d83*/
       LOBYTE(v17.estimatedHealth) = INIClass::ReadBool_Overwrite( /*0x778d96*/
                                       &v17.nextArrayIndex,
                                       v11,
@@ -2444,7 +2444,7 @@ LABEL_9:
   {
     if ( v3 >= 0 && v3 < *(int *)g_WindowManager.__pad_0 ) /*0x77d41d*/
       String::Reassign((String *)&v6, (const char **)(*(unsigned int *)g_WindowManager.__pad_8 + 4 * v3)); /*0x77d42c*/
-    if ( !strcmp(String::GetOrEmpty((String *)&v6), (const char *)p_occupant) ) /*0x77d442*/
+    if ( !strcmp(((String *)(String *)&v6)->GetOrEmpty(), (const char *)p_occupant) ) /*0x77d442*/
       break; /*0x77d442*/
     if ( ++v3 >= v2 ) /*0x77d46c*/
       goto LABEL_9; /*0x77d46c*/

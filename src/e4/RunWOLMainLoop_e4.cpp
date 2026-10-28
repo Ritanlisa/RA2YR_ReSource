@@ -198,7 +198,7 @@ Coord * * RunWOLMainLoop_Read(void * a1, void * a2)
   {
     v3 = *(unsigned int *)g_UIPointerTable; /*0x798e3f*/
     v9 = g_NetworkRematchState & 0xFFFF00; /*0x798e49*/
-    v4 = String::GetOrEmpty((String *)&stru_B73E10.q030); /*0x798e4f*/
+    v4 = ((String *)(String *)&stru_B73E10.q030)->GetOrEmpty(); /*0x798e4f*/
     (*(void (**)(LPVOID, char *, int, char *, int, int, unsigned int, unsigned int))(v3 + 20))( /*0x798e67*/
       g_UIPointerTable,
       byte_B761A8,
@@ -210,7 +210,7 @@ Coord * * RunWOLMainLoop_Read(void * a1, void * a2)
       0);
     v5 = *(unsigned int *)g_UIPointerTable; /*0x798e7c*/
     v10 = g_NetworkRematchState & 0xFFFF00; /*0x798e7e*/
-    v6 = String::GetOrEmpty((String *)&stru_B73E10.q030); /*0x798e84*/
+    v6 = ((String *)(String *)&stru_B73E10.q030)->GetOrEmpty(); /*0x798e84*/
     (*(void (**)(LPVOID, char *, int, char *, int))(v5 + 56))( /*0x798e9c*/
       g_UIPointerTable,
       byte_B761A8,
@@ -357,7 +357,7 @@ int sub_799D30()
       {
         v6 = *(unsigned int *)g_UIPointerTable; /*0x799dea*/
         v11 = g_NetworkRematchState & 0xFFFF00; /*0x799df4*/
-        v7 = String::GetOrEmpty((String *)&stru_B73E10.q030); /*0x799dfa*/
+        v7 = ((String *)(String *)&stru_B73E10.q030)->GetOrEmpty(); /*0x799dfa*/
         (*(void (**)(LPVOID, char *, int, char *, int, int, unsigned int, unsigned int))(v6 + 20))( /*0x799e12*/
           g_UIPointerTable,
           byte_B761A8,
@@ -369,7 +369,7 @@ int sub_799D30()
           0);
         v8 = *(unsigned int *)g_UIPointerTable; /*0x799e27*/
         v12 = g_NetworkRematchState & 0xFFFF00; /*0x799e29*/
-        v9 = String::GetOrEmpty((String *)&stru_B73E10.q030); /*0x799e2f*/
+        v9 = ((String *)(String *)&stru_B73E10.q030)->GetOrEmpty(); /*0x799e2f*/
         (*(void (**)(LPVOID, char *, int, char *, int))(v8 + 56))( /*0x799e47*/
           g_UIPointerTable,
           byte_B761A8,
