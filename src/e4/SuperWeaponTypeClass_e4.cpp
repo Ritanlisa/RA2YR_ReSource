@@ -543,7 +543,7 @@ void* SuperWeaponTypeClass::SD_vt25(unsigned char *** aP1)
   v32 = SearchMIXFile(Buffer, 0); /*0x6cee20*/
   *(unsigned int *)(_EBP + 184) = v32; /*0x6cee26*/
   if ( !v32 ) /*0x6cee2f*/
-    *(unsigned int *)(_EBP + 184) = SearchMIXFile(&stru_820320.?[143], 0); /*0x6cee3d*/
+    *(unsigned int *)(_EBP + 184) = SearchMIXFile(aXxiconShp, 0); /*0x6cee3d*/
   return 1; /*0x6cee43*/
 
 }
