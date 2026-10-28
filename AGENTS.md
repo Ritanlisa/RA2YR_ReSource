@@ -1303,8 +1303,10 @@ python tools/type_infer/auto_name.py
 
 ## 下一会话快速接手指引
 
-> **2026-10-28 编译收敛轮（当前状态，接手先核对）**
-> HEAD `81ddb49a`，MSVC **21,017**（本轮 22,176 → 21,017，**−1,159**，0 fatal）。门：def-count PASS 17,498 / anchors 354,332 / vtable 标识符 0 / tree `?` 1 / CSP verify 7/7 ALL PASS。
+> **2026-10-28 编译收敛 + 结构证据轮（当前状态，接手先核对）**
+> HEAD `bff59531`，MSVC **20,697**（本轮 22,176 → 20,697，**−1,479**，0 fatal）。门：def-count PASS 17,498 / qmark clean（0 残留）/ vtable 标识符 0 / CSP verify 7/7 ALL PASS（TOP 0 / ORPHAN 138,020 / ANCHORED 403,817）。逐文件基线 = `.omo/x189/perfile_base.json`（594 文件）。
+> **结构证据三件套（本轮新增，均已入库）**：①`anchors/rtti_base_arrays.json` — IDA `??_R2` 的 **954 类精确基类表**，lattice 第一优先层次源；②`anchors/vtable_slot_authority.json` — **954 类 / 13,204 主表槽 / 13,188 带原型（100%）**，每槽 `{addr,name,proto}`，另记 260 次级表 + 162 未归属表（多继承/无 RTTI 遗留）；③`anchors/global_cast_types.json` — 全局类型证据（**28 个**：16 名称证据 + 12 cast 多数派），生成器 `tools/type_infer/gen_global_cast_types.py`。
+> **全局类型取证结论（勿重跑）**：IDA 自身对对象全局只给兜底类型（`IUnknown`/`ObjectClass*`），全量导出 3,928 个全局里绝大多数是字符串字面量；把它当锚 **+77 TOP 冲突**，已停用。cast 用法证据才是上限，且**名称证据必须压过 cast**（`g_TacticalClass_Instance` 被我们自己的错代码 cast 成 Coord 112 次）。
 > **已实测证伪、勿重跑**：批量 retype（MSVC **+20**）；语法层微修（长尾，单点 −1）；C2352 纯头文件修法（**0 个**合格符号）；`LoadFileSHP` 改 const（级联进函数体）；pad 名称合并（**净 0**）；语义成员补建（权威表无此成员=发明符号）；`String::Assign` 改 static-form（**净 +6**，C2660 反涨 19）；非 e4 头文件类型修正（**净 0**，说明手写头已正确）。
 > **唯一有效杠杆**：e4 头文件真缺陷——幻影匿名 union（`String` −223 / `SuperClass` −39，**已清零**）；**双权威一致的成员类型修正**（`anchors/member_types.json` ANCHORED × `tools/class_layouts.json` 对照声明，77 处 **−45**，提交 81ddb49a）；声明与调用点**同步**迁移（C2660 先 +224 后 −144）。
 > 剩余 21,017 条中 **C2440 4,536 + C2664 4,061 = 8,597（41%）是「指针 vs 裸 dword」**。`anchors/x147_sig_alignment.json` 证明**签名已基本对齐（7,720 agree）**，故病因在**调用点的值类型**，必须逐站点处理。
