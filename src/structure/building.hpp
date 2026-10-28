@@ -493,7 +493,7 @@ int CanAcceptType(int,int);  // 0x452670
     void DecrementTypeCounter();  // 0x4FF980
     void IncrementOccupantTypeCounter();  // 0x4FFA50
     bool IsMassSelectable();  // 0x459C00
-    void AddUpgrade(BuildingTypeClass* upgrade);  // 0x6551C0
+    int AddUpgrade(int upgrade);  // 0x6551C0 (IDA proto: int __thiscall(int, int); all call sites pass a raw int address)
     void ProcessUpgradeEffects();  // 0x726400
 
     void ProcessUpgradeTargeting();  // 0x459C20

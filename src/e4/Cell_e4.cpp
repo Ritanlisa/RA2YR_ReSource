@@ -928,7 +928,7 @@ char Cell::UpdateTileType(int16_t *aP0, int aP1, int a3)
     (v10) &= ~(((~(~0x20u)) & 0xFF) << 8); /*0x56eac5*/
     v6[80] = v10 | ((aP1 & 1) << 13); /*0x56eace*/
     v23 = v11; /*0x56ead9*/
-    BuildingClass::AddUpgrade((int)&dword_87F7E8, (int)(v6 + 9)); /*0x56eadd*/
+    ((BuildingClass *)(int)&dword_87F7E8)->AddUpgrade( (int)(v6 + 9)); /*0x56eadd*/
     v12 = 0; /*0x56eae2*/
     v13 = 8; /*0x56eae4*/
     do /*0x56eb67*/

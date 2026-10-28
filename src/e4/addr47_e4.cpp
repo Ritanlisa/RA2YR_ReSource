@@ -657,7 +657,7 @@ int CellClass_UpdateNeighborTerrain(int a1, int a2, unsigned int a3, int a4)
     CellClass::UpdateAnimations((CellClass *)a1); /*0x47e114*/
   }
   p_smudgeTypeIndex = &v4->smudgeTypeIndex; /*0x47e122*/
-  BuildingClass::AddUpgrade(&dword_87F7E8.field_0, (int)&v4->smudgeTypeIndex); /*0x47e126*/
+  ((BuildingClass *)&dword_87F7E8.field_0)->AddUpgrade( (int)&v4->smudgeTypeIndex); /*0x47e126*/
   if ( a3 < 8 ) /*0x47e132*/
   {
     LOWORD(v41) = *p_smudgeTypeIndex + LOWORD(dword_89F688[a3 & 7]); /*0x47e157*/
@@ -687,7 +687,7 @@ int CellClass_UpdateNeighborTerrain(int a1, int a2, unsigned int a3, int a4)
     v4->powerup[0] = 0; /*0x47e1e8*/
     CellClass::UpdateAnimations(v4); /*0x47e1ef*/
   }
-  BuildingClass::AddUpgrade(&dword_87F7E8.field_0, (int)&v4->smudgeTypeIndex); /*0x47e201*/
+  ((BuildingClass *)&dword_87F7E8.field_0)->AddUpgrade( (int)&v4->smudgeTypeIndex); /*0x47e201*/
   v18 = a3; /*0x47e206*/
   if ( a3 < 8 ) /*0x47e20d*/
   {
@@ -718,7 +718,7 @@ int CellClass_UpdateNeighborTerrain(int a1, int a2, unsigned int a3, int a4)
     v4->powerup[0] = 0; /*0x47e2ae*/
     CellClass::UpdateAnimations(v4); /*0x47e2b5*/
   }
-  BuildingClass::AddUpgrade(&dword_87F7E8.field_0, (int)&v4->smudgeTypeIndex); /*0x47e2c7*/
+  ((BuildingClass *)&dword_87F7E8.field_0)->AddUpgrade( (int)&v4->smudgeTypeIndex); /*0x47e2c7*/
   v24 = a3; /*0x47e2cc*/
   if ( a3 < 8 ) /*0x47e2d3*/
   {
@@ -772,7 +772,7 @@ int CellClass_UpdateNeighborTerrain(int a1, int a2, unsigned int a3, int a4)
     CellClass::UpdateAnimations((CellClass *)v28); /*0x47e3ec*/
   }
   v35 = (int *)(v28 + 36); /*0x47e3f1*/
-  result = BuildingClass::AddUpgrade(&dword_87F7E8.field_0, (int)v35); /*0x47e3fa*/
+  result = ((BuildingClass *)&dword_87F7E8.field_0)->AddUpgrade( (int)v35); /*0x47e3fa*/
   if ( a3 == 6 ) /*0x47e404*/
   {
     a4 = *v35; /*0x47e40e*/
@@ -871,7 +871,7 @@ int CellClass_SetOccupancyFlags(int a1, int a2, unsigned int a3, int a4)
     CellClass::UpdateAnimations((CellClass *)a1); /*0x47e544*/
   }
   p_smudgeTypeIndex = &v4->smudgeTypeIndex; /*0x47e552*/
-  BuildingClass::AddUpgrade(&dword_87F7E8.field_0, (int)&v4->smudgeTypeIndex); /*0x47e556*/
+  ((BuildingClass *)&dword_87F7E8.field_0)->AddUpgrade( (int)&v4->smudgeTypeIndex); /*0x47e556*/
   if ( a3 < 8 ) /*0x47e562*/
   {
     LOWORD(v41) = *p_smudgeTypeIndex + LOWORD(dword_89F688[a3 & 7]); /*0x47e587*/
@@ -901,7 +901,7 @@ int CellClass_SetOccupancyFlags(int a1, int a2, unsigned int a3, int a4)
     v4->powerup[0] = 0; /*0x47e618*/
     CellClass::UpdateAnimations(v4); /*0x47e61f*/
   }
-  BuildingClass::AddUpgrade(&dword_87F7E8.field_0, (int)&v4->smudgeTypeIndex); /*0x47e631*/
+  ((BuildingClass *)&dword_87F7E8.field_0)->AddUpgrade( (int)&v4->smudgeTypeIndex); /*0x47e631*/
   v18 = a3; /*0x47e636*/
   if ( a3 < 8 ) /*0x47e63d*/
   {
@@ -932,7 +932,7 @@ int CellClass_SetOccupancyFlags(int a1, int a2, unsigned int a3, int a4)
     v4->powerup[0] = 0; /*0x47e6de*/
     CellClass::UpdateAnimations(v4); /*0x47e6e5*/
   }
-  BuildingClass::AddUpgrade(&dword_87F7E8.field_0, (int)&v4->smudgeTypeIndex); /*0x47e6f7*/
+  ((BuildingClass *)&dword_87F7E8.field_0)->AddUpgrade( (int)&v4->smudgeTypeIndex); /*0x47e6f7*/
   v24 = a3; /*0x47e6fc*/
   if ( a3 < 8 ) /*0x47e703*/
   {
@@ -986,7 +986,7 @@ int CellClass_SetOccupancyFlags(int a1, int a2, unsigned int a3, int a4)
     CellClass::UpdateAnimations((CellClass *)v28); /*0x47e81c*/
   }
   v35 = (int *)(v28 + 36); /*0x47e821*/
-  result = BuildingClass::AddUpgrade(&dword_87F7E8.field_0, (int)v35); /*0x47e82a*/
+  result = ((BuildingClass *)&dword_87F7E8.field_0)->AddUpgrade( (int)v35); /*0x47e82a*/
   if ( a3 == 6 ) /*0x47e834*/
   {
     a4 = *v35; /*0x47e83e*/

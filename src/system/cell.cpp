@@ -794,7 +794,7 @@ void CellClass::ReduceTiberium(int v23)
     this->powerup = 0; /*0x480bd5*/
     House::AnnounceUpgrade((int)this, -1); /*0x480bdc*/
     v18 = &this->smudgeTypeIndex; /*0x480be1*/
-    BuildingClass::AddUpgrade((int *)&DataGlobal_87F7E8, (int)v18); /*0x480bea*/
+    ((BuildingClass *)(int *)&DataGlobal_87F7E8)->AddUpgrade( (int)v18); /*0x480bea*/
     CellClass::ClearCrateStateForAll((CellClass *)v18); /*0x480bf1*/
     for ( i = 0; i < 8; ++i ) /*0x480bf6*/
     {

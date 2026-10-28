@@ -13172,7 +13172,7 @@ namespace gamemd {
   }
   v75 = v7; /*0x485bde*/
   LABEL_14:
-  BuildingClass::AddUpgrade((int *)&DataGlobal_87F7E8, (int)&v1->occupant); /*0x485c7d*/
+  ((BuildingClass *)(int *)&DataGlobal_87F7E8)->AddUpgrade( (int)&v1->occupant); /*0x485c7d*/
   transporter = (char)v1->transporter; /*0x485c9b*/
   v1->ambientSoundController[2] = 126; /*0x485ca1*/
   if ( !transporter ) /*0x485caa*/
@@ -13334,7 +13334,7 @@ namespace gamemd {
             v1 = v73; /*0x48612d*/
           }
         }
-        BuildingClass::AddUpgrade((int *)&DataGlobal_87F7E8, (int)&NeighbourContent->occupant); /*0x48627e*/
+        ((BuildingClass *)(int *)&DataGlobal_87F7E8)->AddUpgrade( (int)&NeighbourContent->occupant); /*0x48627e*/
       }
       v9 += 2; /*0x486283*/
       v68 = v9; /*0x486289*/
@@ -13384,7 +13384,7 @@ namespace gamemd {
   }
   v75 = v7; /*0x485bde*/
   LABEL_14:
-  BuildingClass::AddUpgrade((int *)&DataGlobal_87F7E8, (int)&v1->occupant); /*0x485c7d*/
+  ((BuildingClass *)(int *)&DataGlobal_87F7E8)->AddUpgrade( (int)&v1->occupant); /*0x485c7d*/
   transporter = (char)v1->transporter; /*0x485c9b*/
   v1->ambientSoundController[2] = 126; /*0x485ca1*/
   if ( !transporter ) /*0x485caa*/
@@ -13546,7 +13546,7 @@ namespace gamemd {
             v1 = v73; /*0x48612d*/
           }
         }
-        BuildingClass::AddUpgrade((int *)&DataGlobal_87F7E8, (int)&NeighbourContent->occupant); /*0x48627e*/
+        ((BuildingClass *)(int *)&DataGlobal_87F7E8)->AddUpgrade( (int)&NeighbourContent->occupant); /*0x48627e*/
       }
       v9 += 2; /*0x486283*/
       v68 = v9; /*0x486289*/
@@ -13735,7 +13735,7 @@ namespace gamemd {
     v16 = v9; /*0x486f9a*/
   }
   Cell::CreateCrater(v5 - DSurface_ViewBounds.field_0, v15 - (unsigned int)DSurface_ViewBounds.field_4, v8, v16, 0); /*0x486fd1*/
-  return BuildingClass::AddUpgrade((int *)&DataGlobal_87F7E8, (int)&bug->occupant); /*0x486fe8*/
+  return ((BuildingClass *)(int *)&DataGlobal_87F7E8)->AddUpgrade( (int)&bug->occupant); /*0x486fe8*/
 }
   else
   {
@@ -13809,7 +13809,7 @@ namespace gamemd {
     v16 = v9; /*0x486f9a*/
   }
   Cell::CreateCrater(v5 - DSurface_ViewBounds.field_0, v15 - (unsigned int)g_Map_VisibleRect, v8, v16, 0); /*0x486fd1*/
-  return BuildingClass::AddUpgrade((int *)&DataGlobal_87F7E8, (int)&bug->occupant); /*0x486fe8*/
+  return ((BuildingClass *)(int *)&DataGlobal_87F7E8)->AddUpgrade( (int)&bug->occupant); /*0x486fe8*/
 }
 // 0x490B90
 namespace gamemd {  

@@ -1177,7 +1177,7 @@ void BuildingClass::ValidatePlacement(char a2) {
     v14 = Rect::Construct(&v61, v13, v33, v35); /*0x48078e*/
     Cell::CreateCrater(*v14, v14->Y, v14->Width, v14->Height, 0); /*0x4807b4*/
     v15 = v4 + 36; /*0x4807b9*/
-    BuildingClass::AddUpgrade(&dword_87F7E8.field_0, (int)(v4 + 36)); /*0x4807c2*/
+    ((BuildingClass *)&dword_87F7E8.field_0)->AddUpgrade( (int)(v4 + 36)); /*0x4807c2*/
     v16 = v4->q044; /*0x4807c7*/
     if ( v16 != -1 && *(unsigned char *)(*(unsigned int *)(*(int *)((char *)&stru_A83CD9.lineTrailer + 3) + 4 * v16) + 680) ) /*0x4807dc*/
     {
@@ -8786,7 +8786,7 @@ void BuildingClass::Capture()
                 House::AnnounceUpgrade((int)v12, -1); /*0x4fcfe7*/
                 v13 = (BuildingClass *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(a2); /*0x4fcff4*/
                 BuildingClass::ValidatePlacement(v13, 0); /*0x4fcffb*/
-                BuildingClass::AddUpgrade((int *)&DataGlobal_87F7E8, (int)a2); /*0x4fd006*/
+                ((BuildingClass *)(int *)&DataGlobal_87F7E8)->AddUpgrade( (int)a2); /*0x4fd006*/
                 v14 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(a2); /*0x4fd011*/
                 AbstractClass::ClearTargetToMeClearManagerTarget((int)v14); /*0x4fd018*/
                 Cell::SetRadar((Cell *)&DataGlobal_87F7E8, a2); /*0x4fd023*/

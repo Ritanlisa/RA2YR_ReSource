@@ -491,7 +491,7 @@ struct BuildingClass {
     void ClearSuperWeaponAnim();
     void* LoadFromStream();
     static char AbandonProduction(BuildingClass * aP1);
-    static int AddUpgrade(BuildingClass * aP1, int a2);
+    int AddUpgrade(int a2);
     static int AimTurret(BuildingClass * aP1, uint8_t *a2);
     static unsigned int * CalcDrawPos(BuildingClass * aP1, unsigned int *a2);
     static int ClearAnims(BuildingClass * aP1, int a2);

@@ -1475,13 +1475,13 @@ AbstractClass * * CreateCliffRampMap(IUnknown * aP0)
       if ( v23 == 100 ) /*0x57e1db*/
       {
         LOBYTE(v54) = 1; /*0x57e1e8*/
-        BuildingClass::AddUpgrade(&dword_87F7E8.field_0, (int)v1); /*0x57e1ec*/
+        ((BuildingClass *)&dword_87F7E8.field_0)->AddUpgrade( (int)v1); /*0x57e1ec*/
         right = 0x10000; /*0x57e1fd*/
         v50[0] = *((CellStruct *)v1)->Add( v52, &right); /*0x57e21a*/
-        BuildingClass::AddUpgrade(&dword_87F7E8.field_0, (int)v50); /*0x57e21e*/
+        ((BuildingClass *)&dword_87F7E8.field_0)->AddUpgrade( (int)v50); /*0x57e21e*/
         v39 = ((CellStruct *)v52)->Set( 0, 1); /*0x57e22a*/
         v50[0] = *CellStruct::Sub((CellStruct *)v1, &right, v39); /*0x57e248*/
-        BuildingClass::AddUpgrade(&dword_87F7E8.field_0, (int)v50); /*0x57e24c*/
+        ((BuildingClass *)&dword_87F7E8.field_0)->AddUpgrade( (int)v50); /*0x57e24c*/
       }
       House::AnnounceUpgrade((int)v24, -1); /*0x57e255*/
       v40 = v51; /*0x57e25a*/
@@ -1762,15 +1762,15 @@ void* CreateCliffStraightMap(IUnknown * aP0)
       if ( v23 == 101 ) /*0x57e6d0*/
       {
         LOBYTE(v55) = 1; /*0x57e6e4*/
-        BuildingClass::AddUpgrade(&dword_87F7E8.field_0, (int)aP0); /*0x57e6e8*/
+        ((BuildingClass *)&dword_87F7E8.field_0)->AddUpgrade( (int)aP0); /*0x57e6e8*/
         v40 = LOWORD(aP0->ptr_0) + 1; /*0x57e6f4*/
         HIWORD(right) = HIWORD(aP0->ptr_0); /*0x57e6f6*/
         (right) = ((right) & ~0xFFFF) | ((v40) & 0xFFFF); /*0x57e6fb*/
         v51[0] = right; /*0x57e708*/
-        BuildingClass::AddUpgrade(&dword_87F7E8.field_0, (int)v51); /*0x57e712*/
+        ((BuildingClass *)&dword_87F7E8.field_0)->AddUpgrade( (int)v51); /*0x57e712*/
         right = 1; /*0x57e723*/
         v51[0] = *CellStruct::Sub((CellStruct *)aP0, v56, &right); /*0x57e73a*/
-        BuildingClass::AddUpgrade(&dword_87F7E8.field_0, (int)v51); /*0x57e744*/
+        ((BuildingClass *)&dword_87F7E8.field_0)->AddUpgrade( (int)v51); /*0x57e744*/
       }
       House::AnnounceUpgrade((int)v5, -1); /*0x57e74c*/
       v41 = v52; /*0x57e751*/
@@ -2050,13 +2050,13 @@ AbstractClass * * CreateCliffBridgeMap(IUnknown * aP0)
       if ( v23 == 231 ) /*0x57ec38*/
       {
         LOBYTE(v54) = 1; /*0x57ec45*/
-        BuildingClass::AddUpgrade(&dword_87F7E8.field_0, (int)v1); /*0x57ec49*/
+        ((BuildingClass *)&dword_87F7E8.field_0)->AddUpgrade( (int)v1); /*0x57ec49*/
         right = 0x10000; /*0x57ec5a*/
         v50[0] = *((CellStruct *)v1)->Add( v52, &right); /*0x57ec77*/
-        BuildingClass::AddUpgrade(&dword_87F7E8.field_0, (int)v50); /*0x57ec7b*/
+        ((BuildingClass *)&dword_87F7E8.field_0)->AddUpgrade( (int)v50); /*0x57ec7b*/
         v39 = ((CellStruct *)v52)->Set( 0, 1); /*0x57ec87*/
         v50[0] = *CellStruct::Sub((CellStruct *)v1, &right, v39); /*0x57eca5*/
-        BuildingClass::AddUpgrade(&dword_87F7E8.field_0, (int)v50); /*0x57eca9*/
+        ((BuildingClass *)&dword_87F7E8.field_0)->AddUpgrade( (int)v50); /*0x57eca9*/
       }
       House::AnnounceUpgrade((int)v24, -1); /*0x57ecb2*/
       v40 = v51; /*0x57ecb7*/
@@ -2337,15 +2337,15 @@ void* CreateCliffStraightBridgeMap(IUnknown * aP0)
       if ( v23 == 232 ) /*0x57f13d*/
       {
         LOBYTE(v55) = 1; /*0x57f151*/
-        BuildingClass::AddUpgrade(&dword_87F7E8.field_0, (int)aP0); /*0x57f155*/
+        ((BuildingClass *)&dword_87F7E8.field_0)->AddUpgrade( (int)aP0); /*0x57f155*/
         v40 = LOWORD(aP0->ptr_0) + 1; /*0x57f161*/
         HIWORD(right) = HIWORD(aP0->ptr_0); /*0x57f163*/
         (right) = ((right) & ~0xFFFF) | ((v40) & 0xFFFF); /*0x57f168*/
         v51[0] = right; /*0x57f175*/
-        BuildingClass::AddUpgrade(&dword_87F7E8.field_0, (int)v51); /*0x57f17f*/
+        ((BuildingClass *)&dword_87F7E8.field_0)->AddUpgrade( (int)v51); /*0x57f17f*/
         right = 1; /*0x57f190*/
         v51[0] = *CellStruct::Sub((CellStruct *)aP0, v56, &right); /*0x57f1a7*/
-        BuildingClass::AddUpgrade(&dword_87F7E8.field_0, (int)v51); /*0x57f1b1*/
+        ((BuildingClass *)&dword_87F7E8.field_0)->AddUpgrade( (int)v51); /*0x57f1b1*/
       }
       House::AnnounceUpgrade((int)v5, -1); /*0x57f1b9*/
       v41 = v52; /*0x57f1be*/

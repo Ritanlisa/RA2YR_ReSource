@@ -697,7 +697,7 @@ int VoxelAnimClass::VoxelAnimClass_Update()
               v108 = v48; /*0x74a557*/
               v6 = v50; /*0x74a55b*/
               v110 = v51; /*0x74a55d*/
-              BuildingClass::AddUpgrade(&dword_87F7E8.field_0, (int)v94); /*0x74a561*/
+              ((BuildingClass *)&dword_87F7E8.field_0)->AddUpgrade( (int)v94); /*0x74a561*/
               v41 = v91; /*0x74a566*/
             }
             v91 = ++v41; /*0x74a56e*/
@@ -754,7 +754,7 @@ int VoxelAnimClass::VoxelAnimClass_Update()
             (v56)->RegisterForRedraw(&v55->q11E); /*0x74a6d9*/
             v55->powerup[0] = 0; /*0x74a6e2*/
             House::GetStartCoords((House *)v55, &v108); /*0x74a6ec*/
-            BuildingClass::AddUpgrade(&dword_87F7E8.field_0, (int)&v55->smudgeTypeIndex); /*0x74a6f7*/
+            ((BuildingClass *)&dword_87F7E8.field_0)->AddUpgrade( (int)&v55->smudgeTypeIndex); /*0x74a6f7*/
           }
         }
       }

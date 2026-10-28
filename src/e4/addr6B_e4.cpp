@@ -811,7 +811,7 @@ LABEL_31:
       }
     }
     v97 = v12->ptr_24; /*0x6b332a*/
-    BuildingClass::AddUpgrade(&dword_87F7E8.field_0, (int)&v97); /*0x6b3333*/
+    ((BuildingClass *)&dword_87F7E8.field_0)->AddUpgrade( (int)&v97); /*0x6b3333*/
     if ( (__int16)v97 < v78 ) /*0x6b3341*/
       v78 = v97; /*0x6b3343*/
     if ( (__int16)v97 > v80 ) /*0x6b334d*/
@@ -856,7 +856,7 @@ LABEL_31:
     v12->u32_38 = v47; /*0x6b3402*/
     House::AnnounceUpgrade((int)v12, -1); /*0x6b3409*/
     v77 = v12->ptr_24; /*0x6b341b*/
-    BuildingClass::AddUpgrade(&dword_87F7E8.field_0, (int)&v77); /*0x6b341f*/
+    ((BuildingClass *)&dword_87F7E8.field_0)->AddUpgrade( (int)&v77); /*0x6b341f*/
     v48 = CellClass::GetScreenRect((CellClass *)v12, v108); /*0x6b342e*/
     v49 = v87; /*0x6b3433*/
     if ( v87 <= 0 || v88 <= 0 ) /*0x6b3445*/

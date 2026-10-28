@@ -8381,7 +8381,7 @@ int TerrainClass::ApplyCellModifications() {
   {
     Cell::SetRadar((Cell *)&DataGlobal_87F7E8, v11); /*0x71ca42*/
     Radar::Update((Radar *)&DataGlobal_87F7E8, v11); /*0x71ca51*/
-    BuildingClass::AddUpgrade((int *)&DataGlobal_87F7E8, (int)v11); /*0x71ca60*/
+    ((BuildingClass *)(int *)&DataGlobal_87F7E8)->AddUpgrade( (int)v11); /*0x71ca60*/
   }
   return v8; /*0x71ca67*/
 }

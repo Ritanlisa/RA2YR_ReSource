@@ -21457,7 +21457,7 @@ int Gap2Recv_74C9F0::DestroyVeinholeMonster() {
       v6 = v5->ambientSoundController[2]; /*0x74ca91*/
       if ( v6 == 126 || v6 != -1 && (v4 = *(unsigned int *)(*(unsigned int *)g_BuildingTypeClass_Array + 4 * v6), *(unsigned char *)(v4 + 686)) ) /*0x74caab*/
       {
-        BuildingClass::AddUpgrade((int *)&DataGlobal_87F7E8, (int)&v5->occupant); /*0x74cac2*/
+        ((BuildingClass *)(int *)&DataGlobal_87F7E8)->AddUpgrade( (int)&v5->occupant); /*0x74cac2*/
         v40[1] = DSurface_ViewBounds.field_4; /*0x74cad2*/
         v40[0] = DSurface_ViewBounds.field_0; /*0x74cadd*/
         StartCoords = ((House *)v5)->GetStartCoords(v43); /*0x74caed*/

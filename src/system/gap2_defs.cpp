@@ -4223,7 +4223,7 @@ LABEL_17:
     *&v1->q044 = -1; /*0x485768*/
   else
     v1->powerup[0] = 3 * BridgeBitfield + abs32(((Random *)&dword_A8B230[14].NeedsSaveOrLink)->State() % 3); /*0x485760*/
-  BuildingClass::AddUpgrade(&dword_87F7E8.field_0, (int)&v1->smudgeTypeIndex); /*0x485778*/
+  ((BuildingClass *)&dword_87F7E8.field_0)->AddUpgrade( (int)&v1->smudgeTypeIndex); /*0x485778*/
   v16 = 0; /*0x48577d*/
   v60 = 0; /*0x48577f*/
   do /*0x485a30*/
@@ -4314,7 +4314,7 @@ LABEL_17:
       v63 = v34->Width; /*0x4859e6*/
       v64 = v34->Height; /*0x4859ef*/
       Cell::CreateCrater(*v34, v34->Y, v34->Width, v34->Height, 0); /*0x485a0f*/
-      BuildingClass::AddUpgrade(&dword_87F7E8.field_0, (int)&NeighbourContent->smudgeTypeIndex); /*0x485a1d*/
+      ((BuildingClass *)&dword_87F7E8.field_0)->AddUpgrade( (int)&NeighbourContent->smudgeTypeIndex); /*0x485a1d*/
       v1 = v66; /*0x485a22*/
     }
     v16 += 2; /*0x485a26*/
@@ -4752,7 +4752,7 @@ int Crate::FindPlacement(int a1, int a2) {
     v12 = (v11)->Sub(v52, v57); /*0x48732d*/
     v13 = (&v58)->Construct(v12, v38, v40); /*0x487337*/
     Cell::CreateCrater(*v13, v13->Y, v13->Width, v13->Height, 0); /*0x48735d*/
-    BuildingClass::AddUpgrade(&dword_87F7E8.field_0, &this->__pad_024); /*0x487368*/
+    ((BuildingClass *)&dword_87F7E8.field_0)->AddUpgrade( &this->__pad_024); /*0x487368*/
     return 1; /*0x487379*/
   }
   if ( !BYTE2(dword_A8B230[374].ptr_C) ) /*0x487382*/
@@ -14899,7 +14899,7 @@ LABEL_85:
       SetCellClassOccupancyFlags((int)v48, v45, 6u, 0); /*0x570ffc*/
     v48->powerup[0] = 0; /*0x571001*/
     *&v48->u32_44 = -1; /*0x571008*/
-    BuildingClass::AddUpgrade(&dword_87F7E8.field_0, (int)&v48->smudgeTypeIndex); /*0x571014*/
+    ((BuildingClass *)&dword_87F7E8.field_0)->AddUpgrade( (int)&v48->smudgeTypeIndex); /*0x571014*/
     result = CellClass::RecursiveTileUpdate(v60, a1, a2, a3); /*0x571028*/
     (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x571030*/
   }
@@ -16894,7 +16894,7 @@ LABEL_85:
       UpdateCellClassNeighborTerrain((int)v48, v45, 6u, 0); /*0x57671c*/
     v48->powerup[0] = 0; /*0x576721*/
     *&v48->u32_44 = -1; /*0x576728*/
-    BuildingClass::AddUpgrade(&dword_87F7E8.field_0, (int)&v48->smudgeTypeIndex); /*0x576734*/
+    ((BuildingClass *)&dword_87F7E8.field_0)->AddUpgrade( (int)&v48->smudgeTypeIndex); /*0x576734*/
     result = CellClass::RecursiveCraterUpdate(v60, a1, a2, a3); /*0x576748*/
     (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x576750*/
   }
@@ -17798,9 +17798,9 @@ int (void* a1)->ApplyTileModification() {
     v59->q044 = 100; /*0x57bff2*/
     v30->q044 = 100; /*0x57bff5*/
     v4->ambientSoundController[2] = 100; /*0x57bffb*/
-    BuildingClass::AddUpgrade((int *)&DataGlobal_87F7E8, v29 + 36); /*0x57c004*/
-    BuildingClass::AddUpgrade((int *)&DataGlobal_87F7E8, v30 + 36); /*0x57c012*/
-    BuildingClass::AddUpgrade((int *)&DataGlobal_87F7E8, (int)&v4->occupant); /*0x57c020*/
+    ((BuildingClass *)(int *)&DataGlobal_87F7E8)->AddUpgrade( v29 + 36); /*0x57c004*/
+    ((BuildingClass *)(int *)&DataGlobal_87F7E8)->AddUpgrade( v30 + 36); /*0x57c012*/
+    ((BuildingClass *)(int *)&DataGlobal_87F7E8)->AddUpgrade( (int)&v4->occupant); /*0x57c020*/
     LOWORD(v54) = *a1 - 1; /*0x57c032*/
     HIWORD(v54) = a1[1]; /*0x57c03b*/
     (v63) = ((v63) & ~0xFF) | ((1) & 0xFF); /*0x57c047*/
@@ -18112,9 +18112,9 @@ int (void* a1)->ApplyTileModification2() {
     v56->q044 = 101; /*0x57c5b2*/
     v30->q044 = 101; /*0x57c5b5*/
     v4->ambientSoundController[2] = 101; /*0x57c5bb*/
-    BuildingClass::AddUpgrade((int *)&DataGlobal_87F7E8, v29 + 36); /*0x57c5c4*/
-    BuildingClass::AddUpgrade((int *)&DataGlobal_87F7E8, v30 + 36); /*0x57c5d2*/
-    BuildingClass::AddUpgrade((int *)&DataGlobal_87F7E8, (int)&v4->occupant); /*0x57c5e0*/
+    ((BuildingClass *)(int *)&DataGlobal_87F7E8)->AddUpgrade( v29 + 36); /*0x57c5c4*/
+    ((BuildingClass *)(int *)&DataGlobal_87F7E8)->AddUpgrade( v30 + 36); /*0x57c5d2*/
+    ((BuildingClass *)(int *)&DataGlobal_87F7E8)->AddUpgrade( (int)&v4->occupant); /*0x57c5e0*/
     v51 = *(unsigned int *)a1 - 0x10000; /*0x57c5fb*/
     (v60) = ((v60) & ~0xFF) | ((1) & 0xFF); /*0x57c607*/
     v53 = v51; /*0x57c60c*/
@@ -18426,9 +18426,9 @@ int (void* a1)->ApplyTileModification3() {
     v59->q044 = 231; /*0x57d268*/
     v30->q044 = 231; /*0x57d26b*/
     v4->ambientSoundController[2] = 231; /*0x57d271*/
-    BuildingClass::AddUpgrade((int *)&DataGlobal_87F7E8, v29 + 36); /*0x57d27a*/
-    BuildingClass::AddUpgrade((int *)&DataGlobal_87F7E8, v30 + 36); /*0x57d288*/
-    BuildingClass::AddUpgrade((int *)&DataGlobal_87F7E8, (int)&v4->occupant); /*0x57d296*/
+    ((BuildingClass *)(int *)&DataGlobal_87F7E8)->AddUpgrade( v29 + 36); /*0x57d27a*/
+    ((BuildingClass *)(int *)&DataGlobal_87F7E8)->AddUpgrade( v30 + 36); /*0x57d288*/
+    ((BuildingClass *)(int *)&DataGlobal_87F7E8)->AddUpgrade( (int)&v4->occupant); /*0x57d296*/
     LOWORD(v54) = *a1 - 1; /*0x57d2a8*/
     HIWORD(v54) = a1[1]; /*0x57d2b1*/
     (v63) = ((v63) & ~0xFF) | ((1) & 0xFF); /*0x57d2bd*/
@@ -18737,9 +18737,9 @@ int (void* a1)->ApplyTileModification4() {
     v56->q044 = 232; /*0x57d833*/
     v30->q044 = 232; /*0x57d836*/
     v4->ambientSoundController[2] = 232; /*0x57d83c*/
-    BuildingClass::AddUpgrade((int *)&DataGlobal_87F7E8, v29 + 36); /*0x57d845*/
-    BuildingClass::AddUpgrade((int *)&DataGlobal_87F7E8, v30 + 36); /*0x57d853*/
-    BuildingClass::AddUpgrade((int *)&DataGlobal_87F7E8, (int)&v4->occupant); /*0x57d861*/
+    ((BuildingClass *)(int *)&DataGlobal_87F7E8)->AddUpgrade( v29 + 36); /*0x57d845*/
+    ((BuildingClass *)(int *)&DataGlobal_87F7E8)->AddUpgrade( v30 + 36); /*0x57d853*/
+    ((BuildingClass *)(int *)&DataGlobal_87F7E8)->AddUpgrade( (int)&v4->occupant); /*0x57d861*/
     v52 = *(unsigned int *)a1 - 0x10000; /*0x57d888*/
     CreateCliffStraightBridgeMap((__int16 *)&v52); /*0x57d88c*/
     v52 = *(unsigned int *)a1 + 0x10000; /*0x57d8ac*/
@@ -19293,15 +19293,15 @@ LABEL_49:
           Cell::CreateCrater(*v35, v35->Y, v35->Width, v35->Height, 0); /*0x57fa76*/
           if ( v20 == 100 ) /*0x57fa7e*/
           {
-            BuildingClass::AddUpgrade(&dword_87F7E8.field_0, (int)v45); /*0x57fa8e*/
+            ((BuildingClass *)&dword_87F7E8.field_0)->AddUpgrade( (int)v45); /*0x57fa8e*/
             v54[0] = 0; /*0x57faa9*/
             v54[1] = 1; /*0x57fab0*/
             v66 = *((CellStruct *)v45)->Add( &v70, v54); /*0x57fac0*/
-            BuildingClass::AddUpgrade(&dword_87F7E8.field_0, (int)&v66); /*0x57faca*/
+            ((BuildingClass *)&dword_87F7E8.field_0)->AddUpgrade( (int)&v66); /*0x57faca*/
             v56[0] = 0; /*0x57fae0*/
             v56[1] = 1; /*0x57fae7*/
             v68 = *((CellStruct *)v45)->Sub(&v71, v56); /*0x57fafd*/
-            BuildingClass::AddUpgrade(&dword_87F7E8.field_0, (int)&v68); /*0x57fb04*/
+            ((BuildingClass *)&dword_87F7E8.field_0)->AddUpgrade( (int)&v68); /*0x57fb04*/
           }
           ((int)v6)->AnnounceUpgrade(-1); /*0x57fb0d*/
           ((int)v29)->AnnounceUpgrade(-1); /*0x57fb16*/
@@ -19609,15 +19609,15 @@ LABEL_51:
           Cell::CreateCrater(*v40, v40->Y, v40->Width, v40->Height, 0); /*0x57ff8d*/
           if ( v25 == 101 ) /*0x57ff95*/
           {
-            BuildingClass::AddUpgrade(&dword_87F7E8.field_0, (int)v48); /*0x57ffa5*/
+            ((BuildingClass *)&dword_87F7E8.field_0)->AddUpgrade( (int)v48); /*0x57ffa5*/
             v59[0] = 1; /*0x57ffc0*/
             v59[1] = 0; /*0x57ffc5*/
             v72 = *((CellStruct *)v48)->Add( &v74, v59); /*0x57ffd7*/
-            BuildingClass::AddUpgrade(&dword_87F7E8.field_0, (int)&v72); /*0x57ffe1*/
+            ((BuildingClass *)&dword_87F7E8.field_0)->AddUpgrade( (int)&v72); /*0x57ffe1*/
             v62[0] = 1; /*0x57fff7*/
             v62[1] = 0; /*0x57fffc*/
             v69 = *((CellStruct *)v48)->Sub(&v75, v62); /*0x580014*/
-            BuildingClass::AddUpgrade(&dword_87F7E8.field_0, (int)&v69); /*0x580018*/
+            ((BuildingClass *)&dword_87F7E8.field_0)->AddUpgrade( (int)&v69); /*0x580018*/
           }
           ((int)v6)->AnnounceUpgrade(-1); /*0x580021*/
           (v34)->AnnounceUpgrade(-1); /*0x58002a*/
@@ -19909,15 +19909,15 @@ LABEL_49:
           Cell::CreateCrater(*v35, v35->Y, v35->Width, v35->Height, 0); /*0x5804af*/
           if ( v20 == 231 ) /*0x5804ba*/
           {
-            BuildingClass::AddUpgrade(&dword_87F7E8.field_0, (int)v45); /*0x5804ca*/
+            ((BuildingClass *)&dword_87F7E8.field_0)->AddUpgrade( (int)v45); /*0x5804ca*/
             v54[0] = 0; /*0x5804e5*/
             v54[1] = 1; /*0x5804ec*/
             v66 = *((CellStruct *)v45)->Add( &v70, v54); /*0x5804fc*/
-            BuildingClass::AddUpgrade(&dword_87F7E8.field_0, (int)&v66); /*0x580506*/
+            ((BuildingClass *)&dword_87F7E8.field_0)->AddUpgrade( (int)&v66); /*0x580506*/
             v56[0] = 0; /*0x58051c*/
             v56[1] = 1; /*0x580523*/
             v68 = *((CellStruct *)v45)->Sub(&v71, v56); /*0x580539*/
-            BuildingClass::AddUpgrade(&dword_87F7E8.field_0, (int)&v68); /*0x580540*/
+            ((BuildingClass *)&dword_87F7E8.field_0)->AddUpgrade( (int)&v68); /*0x580540*/
           }
           ((int)v6)->AnnounceUpgrade(-1); /*0x580549*/
           ((int)v29)->AnnounceUpgrade(-1); /*0x580552*/
@@ -20225,15 +20225,15 @@ LABEL_51:
           Cell::CreateCrater(*v40, v40->Y, v40->Width, v40->Height, 0); /*0x5809d6*/
           if ( v25 == 232 ) /*0x5809e1*/
           {
-            BuildingClass::AddUpgrade(&dword_87F7E8.field_0, (int)v48); /*0x5809f1*/
+            ((BuildingClass *)&dword_87F7E8.field_0)->AddUpgrade( (int)v48); /*0x5809f1*/
             v59[0] = 1; /*0x580a0c*/
             v59[1] = 0; /*0x580a11*/
             v72 = *((CellStruct *)v48)->Add( &v74, v59); /*0x580a23*/
-            BuildingClass::AddUpgrade(&dword_87F7E8.field_0, (int)&v72); /*0x580a2d*/
+            ((BuildingClass *)&dword_87F7E8.field_0)->AddUpgrade( (int)&v72); /*0x580a2d*/
             v62[0] = 1; /*0x580a43*/
             v62[1] = 0; /*0x580a48*/
             v69 = *((CellStruct *)v48)->Sub(&v75, v62); /*0x580a60*/
-            BuildingClass::AddUpgrade(&dword_87F7E8.field_0, (int)&v69); /*0x580a64*/
+            ((BuildingClass *)&dword_87F7E8.field_0)->AddUpgrade( (int)&v69); /*0x580a64*/
           }
           ((int)v6)->AnnounceUpgrade(-1); /*0x580a6d*/
           (v34)->AnnounceUpgrade(-1); /*0x580a76*/
