@@ -1,208 +1,300 @@
 {
- "g_VisibilitySystem": {
-  "type": "HouseClass",
-  "explains": 0,
-  "sites": 869,
+ "g_TacticalClass_Instance": {
+  "type": "TacticalClass",
+  "sites": 171,
+  "support": 0.123,
   "classes": {
+   "Coord": 112,
+   "TacticalClass": 21,
+   "Tactical": 19,
+   "ObjectClass": 9,
    "PlayerClass": 4,
-   "Game": 1,
-   "Network": 486,
-   "HouseClass": 15,
-   "BufferIO": 363
-  }
+   "HouseClass": 4,
+   "DisplayClass": 2
+  },
+  "source": "x185-name"
  },
- "g_MissionQueueFrame": {
-  "type": "BuildingClass",
-  "explains": 2,
-  "sites": 97185,
+ "HouseClass_Observer": {
+  "type": "HouseClass",
+  "sites": 11,
+  "support": 0.364,
   "classes": {
-   "AbstractClass": 177,
-   "VectorClass": 2,
-   "Random": 94485,
-   "WaypointPath": 363,
-   "ListNode": 198,
-   "LoadGame": 1,
-   "ObjectClass": 2,
-   "CellClass": 1713,
-   "ScenarioClass": 60,
-   "BuildingClass": 136,
-   "RandomMap": 44,
-   "bool": 1,
-   "MapClass": 1,
-   "_WORD": 2
-  }
+   "Object": 7,
+   "HouseClass": 4
+  },
+  "source": "x185-name"
  },
- "ppv": {
-  "type": "InfantryClass",
-  "explains": 1,
-  "sites": 187,
+ "DataGlobal_87E810": {
+  "type": "AudioQueue",
+  "sites": 5,
+  "support": 1.0,
   "classes": {
-   "ObjectClass": 72,
-   "NetworkAddress": 10,
-   "CellStruct": 42,
-   "StreamClass": 42,
-   "InfantryClass": 21
-  }
+   "AudioQueue": 5
+  },
+  "source": "x185-cast"
  },
- "stru_A8E960": {
-  "type": "ObjectClass",
-  "explains": 0,
-  "sites": 4261,
+ "g_FogOfWarState": {
+  "type": "FogOfWar",
+  "sites": 15,
+  "support": 0.0,
   "classes": {
-   "GameSettings": 1,
-   "ScenarioClass": 1,
-   "AudioController": 2,
-   "AudioSource": 2,
-   "Network": 284,
-   "IPXManagerClass": 517,
-   "NullModemClass": 1,
-   "EventClass": 2,
-   "Stream": 6,
-   "Count": 7,
-   "ObjectTypeClass": 8,
-   "Connection": 6,
-   "ObjectClass": 3403,
-   "NetworkBuffer": 3,
-   "Modem": 1,
-   "AudioOptionsClass": 1,
-   "SessionClass": 1,
-   "Rules": 14,
-   "Vector": 1
-  }
+   "Char": 7,
+   "TextGroup": 3,
+   "Property": 3,
+   "FontClass": 2
+  },
+  "source": "x185-name"
  },
- "stru_A8D804": {
-  "type": "ObjectClass",
-  "explains": 0,
-  "sites": 264,
+ "g_DSurface_Hidden": {
+  "type": "DSurface",
+  "sites": 11,
+  "support": 0.273,
   "classes": {
-   "NetworkID": 8,
-   "Network": 124,
-   "ObjectClass": 1,
-   "PtrVector": 129,
-   "Modem": 2
-  }
+   "AudioStream": 8,
+   "DSurface": 3
+  },
+  "source": "x185-name"
  },
- "stru_B73E10": {
-  "type": "ObjectClass",
-  "explains": 0,
-  "sites": 535,
+ "g_UIControlState": {
+  "type": "ComPtr",
+  "sites": 26,
+  "support": 0.846,
   "classes": {
-   "String": 527,
-   "DeleteAndZero": 6,
-   "ObjectClass": 1,
-   "Array": 1
-  }
+   "ComPtr": 22,
+   "Palette": 1,
+   "PreviewClass": 1,
+   "MapPreview": 1,
+   "Skirmish": 1
+  },
+  "source": "x185-cast"
  },
- "stru_AC4B48": {
-  "type": "FactoryClass",
-  "explains": 0,
-  "sites": 430,
+ "g_GameNetworkObject": {
+  "type": "MessageListClass",
+  "sites": 15,
+  "support": 0.933,
   "classes": {
-   "DynamicVectorClass": 275,
-   "_VectorClass_PAVPlanningNodeClass": 1,
-   "ScriptActionVector": 1,
-   "LoadScreen": 4,
-   "Function": 3,
-   "Scenario": 3,
-   "Progress": 2,
-   "Sidebar": 1,
-   "Array": 1,
-   "ObjectClass": 1,
-   "LoadingScreen": 3,
-   "FactoryClass": 135
-  }
+   "MessageListClass": 14,
+   "TacticalClass": 1
+  },
+  "source": "x185-cast"
+ },
+ "g_DialogHashMap_Base": {
+  "type": "HashTable",
+  "sites": 6,
+  "support": 1.0,
+  "classes": {
+   "HashTable": 6
+  },
+  "source": "x185-cast"
+ },
+ "g_CellClassManager": {
+  "type": "CellClass",
+  "sites": 9,
+  "support": 0.0,
+  "classes": {
+   "GadgetGrid": 8,
+   "LoadGame": 1
+  },
+  "source": "x185-name"
  },
  "g_WOL_UserList": {
-  "type": "CChatEventSink",
-  "explains": 0,
-  "sites": 268,
+  "type": "DynamicClass",
+  "sites": 28,
+  "support": 0.714,
   "classes": {
    "DynamicClass": 20,
    "DynamicArray": 4,
    "ObjectClass": 2,
-   "CChatEventSink": 242
-  }
+   "CChatEventSink": 2
+  },
+  "source": "x185-cast"
  },
- "stru_B765F8": {
-  "type": "ObjectClass",
-  "explains": 0,
-  "sites": 247,
+ "g_WebBrowserConfig": {
+  "type": "WebBrowser",
+  "sites": 30,
+  "support": 0.0,
   "classes": {
-   "HashTable": 125,
-   "ObjectClass": 1,
-   "StringVector": 121
-  }
+   "String": 22,
+   "DeleteAndZero": 6,
+   "DynamicVector": 2
+  },
+  "source": "x185-name"
  },
- "Block": {
-  "type": "ObjectClass",
-  "explains": 0,
-  "sites": 485,
+ "g_WebBrowser": {
+  "type": "WebBrowser",
+  "sites": 17,
+  "support": 0.0,
   "classes": {
-   "AudioQueue": 1,
-   "String": 242,
-   "__int64": 121,
-   "ObjectClass": 121
-  }
+   "String": 16,
+   "DeleteAndZero": 1
+  },
+  "source": "x185-name"
  },
- "stru_B76AD0": {
-  "type": "CChatEventSink",
-  "explains": 0,
-  "sites": 364,
+ "g_WOL_AuthObject": {
+  "type": "String",
+  "sites": 20,
+  "support": 0.7,
   "classes": {
-   "Array": 1,
-   "CChatEventSink": 121,
-   "DynamicVector": 242
-  }
+   "String": 14,
+   "DeleteAndZero": 6
+  },
+  "source": "x185-cast"
  },
- "Destination": {
-  "type": "CCFileClass",
-  "explains": 1,
+ "g_WOL_ConnectionPool": {
+  "type": "Connection",
+  "sites": 3,
+  "support": 0.0,
+  "classes": {
+   "HashTable": 3
+  },
+  "source": "x185-name"
+ },
+ "g_BuildingLoadQueue_Array": {
+  "type": "BuildingLoadQueue",
+  "sites": 9,
+  "support": 0.0,
+  "classes": {
+   "DynamicVector": 5,
+   "Selection": 2,
+   "Factory": 1,
+   "BuildingTypeClass": 1
+  },
+  "source": "x185-name"
+ },
+ "g_HouseClass_ObserverFlags": {
+  "type": "HouseClass",
+  "sites": 9,
+  "support": 0.0,
+  "classes": {
+   "SessionClass": 5,
+   "ObjectClass": 2,
+   "GameClass": 1,
+   "NetworkLobby": 1
+  },
+  "source": "x185-name"
+ },
+ "g_Lobby_PlayerCount": {
+  "type": "SessionClass",
+  "sites": 8,
+  "support": 0.625,
+  "classes": {
+   "SessionClass": 5,
+   "GameClass": 1,
+   "NetworkLobby": 1,
+   "ObjectClass": 1
+  },
+  "source": "x185-cast"
+ },
+ "g_Lobby_PlayerTeam": {
+  "type": "SessionClass",
+  "sites": 6,
+  "support": 0.5,
+  "classes": {
+   "SessionClass": 3,
+   "GameClass": 1,
+   "Player": 1,
+   "ObjectClass": 1
+  },
+  "source": "x185-cast"
+ },
+ "g_Lobby_PlayerSide": {
+  "type": "SessionClass",
+  "sites": 6,
+  "support": 0.5,
+  "classes": {
+   "SessionClass": 3,
+   "GameClass": 1,
+   "Player": 1,
+   "ObjectClass": 1
+  },
+  "source": "x185-cast"
+ },
+ "g_Lobby_PlayerColor": {
+  "type": "SessionClass",
+  "sites": 6,
+  "support": 0.5,
+  "classes": {
+   "SessionClass": 3,
+   "GameClass": 1,
+   "Player": 1,
+   "ObjectClass": 1
+  },
+  "source": "x185-cast"
+ },
+ "g_MixerState": {
+  "type": "Audio",
+  "sites": 6,
+  "support": 1.0,
+  "classes": {
+   "Audio": 6
+  },
+  "source": "x185-cast"
+ },
+ "g_Lobby_PlayerReady": {
+  "type": "SessionClass",
   "sites": 7,
+  "support": 0.714,
   "classes": {
-   "HouseTypeClass": 3,
-   "_VectorClass_PBVUnitTypeClass": 1,
-   "CCFileClass": 1,
-   "Vector": 1,
-   "BufferIOFileClass": 1
-  }
+   "SessionClass": 5,
+   "NetworkLobby": 1,
+   "ObjectClass": 1
+  },
+  "source": "x185-cast"
+ },
+ "g_ClipboardBuffer": {
+  "type": "NullModemClass",
+  "sites": 10,
+  "support": 0.6,
+  "classes": {
+   "NullModemClass": 6,
+   "SerialPort": 4
+  },
+  "source": "x185-cast"
  },
  "CCINIClass_INI_RA2MD": {
+  "type": "CCINIClass",
+  "sites": 7,
+  "support": 0.0,
+  "classes": {
+   "INIClass": 7
+  },
+  "source": "x185-name"
+ },
+ "g_ScenarioClass_Instance": {
+  "type": "ScenarioClass",
+  "sites": 33,
+  "support": 0.0,
+  "classes": {
+   "INIClass": 23,
+   "CCINIClass": 10
+  },
+  "source": "x185-name"
+ },
+ "DataGlobal_87F8E4": {
   "type": "INIClass",
-  "explains": 0,
-  "sites": 24479,
+  "sites": 7,
+  "support": 1.0,
   "classes": {
-   "bool": 2,
-   "INIClass": 24477
-  }
+   "INIClass": 7
+  },
+  "source": "x185-cast"
  },
- "g_SidebarFlag": {
-  "type": "GadgetClass",
-  "explains": 1,
-  "sites": 6463,
+ "g_MPCooperativeState": {
+  "type": "MPCooperative",
+  "sites": 3,
+  "support": 0.0,
   "classes": {
-   "ScenarioClass": 3225,
-   "LinkClass": 3225,
-   "ShapeButton": 2,
-   "ButtonClass": 1,
-   "GadgetClass": 6,
-   "DialogControl": 4
-  }
+   "PlayerSlot": 3
+  },
+  "source": "x185-name"
  },
- "Source": {
-  "type": "ObjectClass",
-  "explains": 0,
+ "g_TerrainSoundConfig": {
+  "type": "__int16",
   "sites": 5,
+  "support": 1.0,
   "classes": {
-   "String": 4,
-   "ObjectClass": 1
-  }
- },
- "g_AudioInitFlag": {
-  "type": "CellClass",
-  "explains": 0,
-  "sites": 30,
-  "classes": {
-   "CellClass": 30
-  }
+   "__int16": 5
+  },
+  "source": "x185-cast"
  }
 }

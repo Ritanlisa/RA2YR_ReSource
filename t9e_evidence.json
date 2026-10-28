@@ -1,11 +1,11 @@
 {
  "note": "T9e arithmetic typing rules (X142b) — evidence ledger",
- "total_fired": 2872,
+ "total_fired": 2874,
  "by_rule": {
-  "int-arith": 1856,
-  "ptr-plus": 838,
-  "call-arg": 171,
-  "const-store": 7
+  "int-arith": 1853,
+  "ptr-plus": 840,
+  "call-arg": 173,
+  "const-store": 8
  },
  "firings": [
   {
@@ -28,6 +28,13 @@
    "rule": "ptr-plus",
    "tier": 1,
    "edge": "ADD from=0x00401080::esi_v0x401081 @ 0x401090"
+  },
+  {
+   "root": 259758,
+   "var": "0x004010C0::ebx_v0x4010F9",
+   "rule": "ptr-plus",
+   "tier": 1,
+   "edge": "ADD from=0x004010C0::esi_v0x4010C5 @ 0x4010F9"
   },
   {
    "root": 259831,
@@ -154,6 +161,13 @@
    "rule": "ptr-plus",
    "tier": 1,
    "edge": "ADD reverse to=0x004061D0::esi_v0x40621F @ 0x40621F"
+  },
+  {
+   "root": 264089,
+   "var": "0x00406670::esi_v0x406701",
+   "rule": "int-arith",
+   "tier": 4,
+   "edge": "ADD int-operand from=0x00406670::edi_v0x4066C5 @ 0x406701"
   },
   {
    "root": 264847,
@@ -2403,13 +2417,6 @@
    "edge": "ADD reverse to=0x00478E30::edi_v0x478EDB @ 0x478EDB"
   },
   {
-   "root": 350665,
-   "var": "0x00479900::esi_v0x479909",
-   "rule": "int-arith",
-   "tier": 4,
-   "edge": "ADD int-operand from=0x00479900::eax_v0x479900 @ 0x479909"
-  },
-  {
    "root": 352522,
    "var": "0x0047C620::ebp_v0x47C6D3",
    "rule": "call-arg",
@@ -2643,9 +2650,9 @@
   {
    "root": 360788,
    "var": "0x00486BF0::edx_v0x486C14",
-   "rule": "int-arith",
-   "tier": 4,
-   "edge": "SUB int-operand from=0x00486BF0::esi_v0x486BF9 @ 0x486C14"
+   "rule": "ptr-plus",
+   "tier": 1,
+   "edge": "SUB from=0x00486BF0::esi_v0x486BF9 @ 0x486C14"
   },
   {
    "root": 360829,
@@ -3761,11 +3768,11 @@
    "edge": "ADD reverse to=0x004B6040::esi_v0x4B6052 @ 0x4B6052"
   },
   {
-   "root": 408265,
-   "var": "0x004B6C30::ecx_v0x4B8DE1",
-   "rule": "call-arg",
-   "tier": 4,
-   "edge": "param1 of 0x004AF2A0 (cdecl) int @ 0x4B8E1B"
+   "root": 408922,
+   "var": "0x004B6C30::stack_+0x54",
+   "rule": "const-store",
+   "tier": 0,
+   "edge": "literal store → 0x004B6C30::stack_+0x54"
   },
   {
    "root": 409022,
@@ -3780,13 +3787,6 @@
    "rule": "int-arith",
    "tier": 4,
    "edge": "ADD int-operand from=0x004B96A0::edi_v0x4B975C @ 0x4B9773"
-  },
-  {
-   "root": 409043,
-   "var": "0x004B96A0::ecx_v0x4B9823",
-   "rule": "call-arg",
-   "tier": 4,
-   "edge": "param1 of 0x004AF2A0 (cdecl) int @ 0x4B9832"
   },
   {
    "root": 410905,
@@ -5763,6 +5763,13 @@
    "edge": "ADD int-operand from=0x0052FEC0::esi_v0x52FF0D @ 0x52FF21"
   },
   {
+   "root": 508858,
+   "var": "0x00536350::esi_v0x536460",
+   "rule": "ptr-plus",
+   "tier": 1,
+   "edge": "ADD reverse to=0x00536350::ebx_v0x5364A0 @ 0x5364A0"
+  },
+  {
    "root": 511102,
    "var": "0x00538980::edi_v0x5389F0",
    "rule": "int-arith",
@@ -5849,9 +5856,9 @@
   {
    "root": 515555,
    "var": "0x0053EF30::edi_v0x53EF4B",
-   "rule": "ptr-plus",
-   "tier": 1,
-   "edge": "ADD from=0x0053EF30::edx_v0x53EF32 @ 0x53EF4B"
+   "rule": "int-arith",
+   "tier": 4,
+   "edge": "ADD int-operand from=0x0053EF30::edx_v0x53EF32 @ 0x53EF4B"
   },
   {
    "root": 515585,
@@ -10180,6 +10187,20 @@
    "edge": "ADD int-operand from=0x006223C0::eax_v0x6223FD @ 0x62240E"
   },
   {
+   "root": 678830,
+   "var": "0x00623F00::esi_v0x623F34",
+   "rule": "call-arg",
+   "tier": 4,
+   "edge": "param1 of 0x007B48D0 (thiscall) int @ 0x623F47"
+  },
+  {
+   "root": 678886,
+   "var": "0x00623FC0::esi_v0x623FF4",
+   "rule": "call-arg",
+   "tier": 4,
+   "edge": "param1 of 0x007B48D0 (thiscall) int @ 0x624007"
+  },
+  {
    "root": 679363,
    "var": "0x006247D0::ecx_v0x6247DA",
    "rule": "ptr-plus",
@@ -13010,9 +13031,9 @@
   {
    "root": 770605,
    "var": "0x00697F10::edx_v0x698093",
-   "rule": "int-arith",
-   "tier": 4,
-   "edge": "SCALE @ 0x698093"
+   "rule": "ptr-plus",
+   "tier": 1,
+   "edge": "ADD from=0x00697F10::esi_v0x698037 @ 0x698093"
   },
   {
    "root": 771324,
@@ -17824,6 +17845,13 @@
    "edge": "ADD from=0x007806C0::ecx_v0x780894 @ 0x7808AB"
   },
   {
+   "root": 949932,
+   "var": "0x00780A90::ebx_v0x780B6B",
+   "rule": "call-arg",
+   "tier": 4,
+   "edge": "param1 of 0x007B48D0 (thiscall) int @ 0x780B73"
+  },
+  {
    "root": 950182,
    "var": "0x00780E30::esi_v0x780EA1",
    "rule": "ptr-plus",
@@ -18263,20 +18291,6 @@
    "rule": "const-store",
    "tier": 0,
    "edge": "literal store → 0x007A41C0::stack_+0x14"
-  },
-  {
-   "root": 974105,
-   "var": "0x007A4C10::ebx_v0x7A4CF4",
-   "rule": "int-arith",
-   "tier": 4,
-   "edge": "ADD int-operand from=0x007A4C10::esi_v0x7A4C28 @ 0x7A4CF4"
-  },
-  {
-   "root": 974140,
-   "var": "0x007A4C10::edi_v0x7A4CD7",
-   "rule": "int-arith",
-   "tier": 4,
-   "edge": "ADD int-operand from=0x007A4C10::esi_v0x7A4C28 @ 0x7A4CD7"
   },
   {
    "root": 974305,
@@ -19161,13 +19175,6 @@
    "edge": "SUB index operand of 0x007C81DB::esi_v0x7C82EA @ 0x7C82EA"
   },
   {
-   "root": 1008104,
-   "var": "0x007CA489::esi_v0x7CA495",
-   "rule": "ptr-plus",
-   "tier": 1,
-   "edge": "ADD from=0x007CA489::eax_v0x7CA48D @ 0x7CA495"
-  },
-  {
    "root": 1008458,
    "var": "0x007CA845::stack_+0x8",
    "rule": "call-arg",
@@ -19649,6 +19656,13 @@
    "rule": "int-arith",
    "tier": 4,
    "edge": "SCALE @ 0x7DC484"
+  },
+  {
+   "root": 1022656,
+   "var": "0x007DCFC4::stack_+0xfffffffffffffff8",
+   "rule": "call-arg",
+   "tier": 4,
+   "edge": "param1 of 0x007D4BF0 (cdecl) int @ 0x7DD0C9"
   },
   {
    "root": 1023161,
