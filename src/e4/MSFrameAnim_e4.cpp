@@ -250,7 +250,7 @@ namespace gamemd {
 rc_ptr * MSFrameAnim::resumeAnimation(unsigned int * Block, char a2)
 {
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_var_5878c0) */  /*0x769d93*/
-  ComPtr::Release((ComPtr *)Block); /*0x769d99*/
+  ((ComPtr *)Block)->Release(); /*0x769d99*/
   if ( (a2 & 1) != 0 ) /*0x769da3*/
     operator delete((Block)); /*0x769da6*/
   return Block->tail_0; /*0x769db0*/

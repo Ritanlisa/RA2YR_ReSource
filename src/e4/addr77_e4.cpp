@@ -6530,7 +6530,7 @@ namespace gamemd {
 void sub_77D140()
 {
   stru_B75E48 = (int)&g_var_5878c0; /*0x77d140*/
-  ComPtr::Release(&stru_B75E48); /*0x77d14f*/
+  ((ComPtr *)&stru_B75E48)->Release(); /*0x77d14f*/
 }
 } // namespace gamemd
 

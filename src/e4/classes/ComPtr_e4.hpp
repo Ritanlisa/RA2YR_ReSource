@@ -26,7 +26,6 @@ struct ComPtr {
     unsigned int * Release();  // 0x65d460
     int ReleaseSimple();
     static unsigned int * Constructor(void *aP0);
-    static int Release(void *aP0);
     static int ReleaseAndSet(void *aP0, unsigned int *aP1);
     static void * Territory_Dtor(void *aP0);
     static int Set(void *aP0, int aP2);  // G57a1 static-form mirror

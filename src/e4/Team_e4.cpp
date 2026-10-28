@@ -633,10 +633,10 @@ bool Team_Start_76ED10(void * a1, void * a2)
       v6 = 0; /*0x76ee77*/
     }
     v9 = &g_ptr_7EBFA4; /*0x76ee7d*/
-    ComPtr::Release(&v9); /*0x76ee85*/
+    ((ComPtr *)&v9)->Release(); /*0x76ee85*/
   }
   v11 = &g_ptr_7F71C4; /*0x76ee8e*/
-  ComPtr::Release(&v11); /*0x76ee96*/
+  ((ComPtr *)&v11)->Release(); /*0x76ee96*/
   SelectionInitializeWOL((int)v13); /*0x76ee9f*/
   return v6; /*0x76ed22*/
 

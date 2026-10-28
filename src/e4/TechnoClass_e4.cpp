@@ -2323,7 +2323,7 @@ int TechnoClass::Team_Start_76E430(int a2, void* aP2) {
     v5 = this->currentTargetThreatValues[0]; /*0x76e46a*/
     v8 = &g_var_5878c0; /*0x76e476*/
     *aP2 = v4 <= v5; /*0x76e481*/
-    ComPtr::Release((ComPtr *)&v8); /*0x76e487*/
+    ((ComPtr *)&v8)->Release(); /*0x76e487*/
     return 1; /*0x76e495*/
   }
   if ( v4 >= this->previousTeam ) /*0x76e49e*/
@@ -2331,7 +2331,7 @@ int TechnoClass::Team_Start_76E430(int a2, void* aP2) {
     grindingAnimHandle = this->grindingAnimHandle; /*0x76e4a0*/
     v8 = &g_var_5878c0; /*0x76e4a6*/
     *aP2 = v4 >= grindingAnimHandle; /*0x76e4b7*/
-    ComPtr::Release((ComPtr *)&v8); /*0x76e4bd*/
+    ((ComPtr *)&v8)->Release(); /*0x76e4bd*/
     return 0; /*0x76e4c2*/
   }
   else
@@ -2339,7 +2339,7 @@ int TechnoClass::Team_Start_76E430(int a2, void* aP2) {
   LABEL_6:
     v8 = &g_var_5878c0; /*0x76e4d3*/
     *aP2 = 0; /*0x76e4db*/
-    ComPtr::Release((ComPtr *)&v8); /*0x76e4de*/
+    ((ComPtr *)&v8)->Release(); /*0x76e4de*/
     return 2; /*0x76e4e3*/
   }
 }
@@ -2402,9 +2402,9 @@ bool TechnoClass::Team_Start_76E8B0(int a2, int a3) {
     *(unsigned int *)v14.owningHouseIndex = v3; /*0x76e98b*/
     v12 = WDTGame::ReviewHistory((int)this, v14) == 0; /*0x76e99e*/
     v15[0] = &g_var_5878c0; /*0x76e9a1*/
-    ComPtr::Release((ComPtr *)v15); /*0x76e9a5*/
+    ((ComPtr *)v15)->Release(); /*0x76e9a5*/
     v16[0] = &g_var_5878c0; /*0x76e9ae*/
-    ComPtr::Release((ComPtr *)v16); /*0x76e9b2*/
+    ((ComPtr *)v16)->Release(); /*0x76e9b2*/
     return v12; /*0x76e9b7*/
 }
 } // namespace gamemd

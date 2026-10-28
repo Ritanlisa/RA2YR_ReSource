@@ -96,7 +96,7 @@ int WOL_ResetSystem()
   AccountInfoWOL = (unsigned int *)((unsigned int)(((ObjectClass *)(ObjectClass *)v25)->LoadAccountInfoWOL()));
   ComPtr::Set(&stru_B75E48, AccountInfoWOL[1]); /*0x780129*/
   v25[0] = (unsigned int)(&g_var_5878c0); /*0x780132*/
-  ComPtr::Release((ComPtr *)v25); /*0x78013a*/
+  ((ComPtr *)v25)->Release(); /*0x78013a*/
   int v2 = 0; // esi /*0x780146*/
   *(unsigned int *)&g_WOL_AuthPool = 0; /*0x78014a*/
   stru_B76AC4.referenceCount = 0; /*0x780150*/
@@ -2733,7 +2733,7 @@ LABEL_40:
         }
         /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F3F44) */  /*0x7872f4*/
       }
-      ComPtr::Release((ComPtr *)&v41.q008); /*0x7872fc*/
+      ((ComPtr *)&v41.q008)->Release(); /*0x7872fc*/
       if ( v8 != -1 ) /*0x787304*/
       {
         dword_B76468 = v8; /*0x787309*/
@@ -2832,7 +2832,7 @@ LABEL_98:
     PlayerProfile = LoadPlayerProfile((ObjectClass *)&v39, (const char **)&stru_B73E10.q030); /*0x7874fc*/
     ComPtr::Set((ComPtr *)&v41.q008, PlayerProfile->ptr_4); /*0x787509*/
     /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7F3F44) */  /*0x787512*/
-    ComPtr::Release((ComPtr *)&v39); /*0x787516*/
+    ((ComPtr *)&v39)->Release(); /*0x787516*/
   }
   else
   {
@@ -2888,7 +2888,7 @@ LABEL_78:
         goto LABEL_87; /*0x7875f0*/
 LABEL_96:
       /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F3F44) */  /*0x7876f1*/
-      ComPtr::Release((ComPtr *)&v41.q008); /*0x7876fd*/
+      ((ComPtr *)&v41.q008)->Release(); /*0x7876fd*/
       goto LABEL_97; /*0x7876fd*/
     }
   }
@@ -2924,7 +2924,7 @@ LABEL_87:
     OwnerDrawControl::InitVtable((OwnerDrawControl *)&v39); /*0x7876c1*/
   }
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F3F44) */  /*0x7876ca*/
-  ComPtr::Release((ComPtr *)&v41.q008); /*0x7876d2*/
+  ((ComPtr *)&v41.q008)->Release(); /*0x7876d2*/
   v43.q008 = (int)&off_7F7624; /*0x7876db*/
   OwnerDrawControl::InitVtable((OwnerDrawControl *)&v43.q008); /*0x7876df*/
   return 1; /*0x787348*/
@@ -4208,7 +4208,7 @@ int PopulateWOLUserList(HWND hWnd, char a2)
       PlayerProfile = LoadPlayerProfile((ObjectClass *)v23, (const char **)&stru_B73E10.q030); /*0x789744*/
       ComPtr::Set((ComPtr *)&v24, PlayerProfile->ptr_4); /*0x789751*/
       v23[0] = (char *)&g_ptr_7F3F44; /*0x78975a*/
-      ComPtr::Release((ComPtr *)v23); /*0x78975e*/
+      ((ComPtr *)v23)->Release(); /*0x78975e*/
     }
     else
     {
@@ -4285,7 +4285,7 @@ LABEL_30:
       SendMessageA((HWND)hWnd, 0x197u, v14, 0); /*0x789938*/
     }
     v24 = &g_ptr_7F3F44; /*0x78993e*/
-    ComPtr::Release((ComPtr *)&v24); /*0x789946*/
+    ((ComPtr *)&v24)->Release(); /*0x789946*/
     DeleteAndZero((ObjectClass *)&v20); /*0x78994f*/
     return 1; /*0x789954*/
   }
@@ -4560,7 +4560,7 @@ LABEL_22:
                       (const char **)&stru_B73E10.q030);
     ComPtr::Set(&v45, PlayerProfile->ptr_4); /*0x789f6b*/
     /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F3F44) */  /*0x789f74*/
-    ComPtr::Release((ComPtr *)&v45.q020); /*0x789f78*/
+    ((ComPtr *)&v45.q020)->Release(); /*0x789f78*/
   }
   else
   {
@@ -4641,7 +4641,7 @@ LABEL_50:
     SetFocus(DlgItem); /*0x78a136*/
 LABEL_72:
     /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F3F44) */  /*0x78a29d*/
-    ComPtr::Release((ComPtr *)&v44.q004); /*0x78a2a5*/
+    ((ComPtr *)&v44.q004)->Release(); /*0x78a2a5*/
     ((DeleteAndZero *)&v44)->Alt(); /*0x78a2ae*/
     /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7F7874) */  /*0x78a2b7*/
     DeleteAndZero((ObjectClass *)&v45.q00C); /*0x78a2bf*/
@@ -4731,7 +4731,7 @@ LABEL_71:
   }
   ((DeleteAndZero *)&v46)->Alt(); /*0x78a411*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F3F44) */  /*0x78a41a*/
-  ComPtr::Release((ComPtr *)&v44.q004); /*0x78a422*/
+  ((ComPtr *)&v44.q004)->Release(); /*0x78a422*/
   ((DeleteAndZero *)&v44)->Alt(); /*0x78a42b*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7F7874) */  /*0x78a434*/
   DeleteAndZero((ObjectClass *)&v45.q00C); /*0x78a43c*/

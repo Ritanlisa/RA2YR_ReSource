@@ -787,7 +787,7 @@ unsigned int * GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)())
     WDTTerritoryClass = FindWDTTerritoryClass((rc_ptr *)&v17.q008, *(int *)dword_A8B240); /*0x595ff1*/
     ComPtr::Set(&v17, WDTTerritoryClass->u32_4); /*0x595ffe*/
     /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7EBFA4) */  /*0x596007*/
-    ComPtr::Release((ComPtr *)&v17.q008); /*0x59600b*/
+    ((ComPtr *)&v17.q008)->Release(); /*0x59600b*/
   }
   if ( v17.q004 ) /*0x596016*/
     dword_ABE028 = 4; /*0x596018*/
@@ -885,7 +885,7 @@ LABEL_39:
   *(unsigned int *)v18.__tail_0 = &off_7E1668; /*0x5962d7*/
   ((BufferIOFileClass *)&v18)->Dtor(); /*0x5962df*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EBFA4) */  /*0x5962e8*/
-  return ComPtr::Release(&v17); /*0x5962f5*/
+  return ((ComPtr *)&v17)->Release(); /*0x5962f5*/
 
 }
 }

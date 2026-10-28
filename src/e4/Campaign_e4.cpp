@@ -210,7 +210,7 @@ rc_ptr * Campaign_WorldDominationTour_16::Constructor(char a2, void *a2_1, void 
 {
 
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_var_5878c0) */  /*0x765713*/
-  ComPtr::Release((ComPtr *)this); /*0x765719*/
+  ((ComPtr *)this)->Release(); /*0x765719*/
   if ( (a2 & 1) != 0 ) /*0x765723*/
     __3_YAXPAX_Z(this); /*0x765726*/
   return (gamemd::rc_ptr *)(this); /*0x765730*/
@@ -224,7 +224,7 @@ rc_ptr * Campaign_WorldDominationTour_16::Constructor_0(char a2)
 {
 
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_var_5878c0) */  /*0x765743*/
-  ComPtr::Release((ComPtr *)this); /*0x765749*/
+  ((ComPtr *)this)->Release(); /*0x765749*/
   if ( (a2 & 1) != 0 ) /*0x765753*/
     __3_YAXPAX_Z(this); /*0x765756*/
   return (gamemd::rc_ptr *)(this); /*0x765760*/

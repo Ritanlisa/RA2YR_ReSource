@@ -880,7 +880,7 @@ int PlayerClass::UpdateAIUnits() {
 namespace gamemd { 
 void* COMClass::invokeMethod(int a2) {
   *(unsigned int *)this->__pad_000 = 0; /*0x765793*/
-  ComPtr::Release((ComPtr *)this); /*0x765799*/
+  ((ComPtr *)this)->Release(); /*0x765799*/
   if ( (a2 & 1) != 0 ) /*0x7657a3*/
     operator delete((this)); /*0x7657a6*/
   return this->__pad_000; /*0x7657b0*/
@@ -890,7 +890,7 @@ void* COMClass::invokeMethod(int a2) {
 namespace gamemd { 
 void* COMClass::getTypeInfo(int a2) {
   *(unsigned int *)this->__pad_000 = 0; /*0x7657c3*/
-  ComPtr::Release((ComPtr *)this); /*0x7657c9*/
+  ((ComPtr *)this)->Release(); /*0x7657c9*/
   if ( (a2 & 1) != 0 ) /*0x7657d3*/
     operator delete((this)); /*0x7657d6*/
   return this->__pad_000; /*0x7657e0*/
@@ -1015,7 +1015,7 @@ int COMClass::unregisterObject(int a2) {
 namespace gamemd { 
 void* COMClass::connectPoint(int a2) {
   *(unsigned int *)this->__pad_000 = 0; /*0x7669c3*/
-  ComPtr::Release((ComPtr *)this); /*0x7669c9*/
+  ((ComPtr *)this)->Release(); /*0x7669c9*/
   if ( (a2 & 1) != 0 ) /*0x7669d3*/
     operator delete((this)); /*0x7669d6*/
   return this->__pad_000; /*0x7669e0*/
@@ -1096,7 +1096,7 @@ int COMClass::unlockServer(int a2) {
 namespace gamemd { 
 void* ComPtr::Territory_Dtor() {
   *(unsigned int *)this->__pad_000 = 0; /*0x76f060*/
-  return ComPtr::Release(this);
+  return (this)->Release();
 }
 }
 // 0x7AE5D0

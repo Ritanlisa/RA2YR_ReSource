@@ -218,7 +218,7 @@ HashTable_flat * * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int
             (v11) = ((v11) & ~0xFF) | ((v25 & 0xFE) & 0xFF); /*0x764ceb*/
             /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7EBFA4) */  /*0x764ced*/
             v25 = v11; /*0x764cf5*/
-            ComPtr::Release((ComPtr *)&v24.ptr_C); /*0x764cfc*/
+            ((ComPtr *)&v24.ptr_C)->Release(); /*0x764cfc*/
           }
           if ( v24.ptr_8 ) /*0x764d07*/
           {
@@ -238,10 +238,10 @@ HashTable_flat * * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int
               ComPtr::Set((ComPtr *)(this->M28 + 8 * v14), nextArrayIndex); /*0x764d56*/
             }
             /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F6F34) */  /*0x764d5f*/
-            ComPtr::Release((ComPtr *)&v24.abstractFlags); /*0x764d67*/
+            ((ComPtr *)&v24.abstractFlags)->Release(); /*0x764d67*/
           }
           /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7EBFA4) */  /*0x764d70*/
-          ComPtr::Release((ComPtr *)&v24.ptr_4); /*0x764d78*/
+          ((ComPtr *)&v24.ptr_4)->Release(); /*0x764d78*/
           ptr_0 = v24.ptr_0; /*0x764d7d*/
         }
         v15 = ptr_0--; /*0x764d81*/
@@ -250,7 +250,7 @@ HashTable_flat * * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int
       while ( v15 ); /*0x764d8a*/
     }
     /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F6F2C) */  /*0x764d94*/
-    ComPtr::Release((ComPtr *)&v24.referenceCount); /*0x764d9c*/
+    ((ComPtr *)&v24.referenceCount)->Release(); /*0x764d9c*/
   }
   BufferIOFile::Constructor((BufferIOFile *)&v24.customSound, aWdthistIni_0); /*0x764daa*/
   v16 = 0; /*0x764daf*/
@@ -456,10 +456,10 @@ int WDT_InitGameOptions()
     ComPtr::Set((unsigned int *)(dword_B72764 + 8 * v2), v28); /*0x7661a7*/
   }
   v27 = &g_var_5878c0; /*0x7661b0*/
-  ComPtr::Release(&v27); /*0x7661b4*/
+  ((ComPtr *)&v27)->Release(); /*0x7661b4*/
   unsigned int v29[2]; // [esp+30h] [ebp-8h] BYREF
   v29[0] = &g_ptr_7F701C; /*0x7661bd*/
-  ComPtr::Release(v29); /*0x7661c5*/
+  ((ComPtr *)v29)->Release(); /*0x7661c5*/
   v26 = 1; /*0x7661ca*/
   char *v3; // ecx
   v25 = v3; /*0x7661cc*/
@@ -488,9 +488,9 @@ int WDT_InitGameOptions()
     ComPtr::Set((unsigned int *)(dword_B72764 + 8 * v6), v28); /*0x76626d*/
   }
   v27 = &g_var_5878c0; /*0x766276*/
-  ComPtr::Release(&v27); /*0x76627a*/
+  ((ComPtr *)&v27)->Release(); /*0x76627a*/
   v29[0] = &g_var_5878c0; /*0x766283*/
-  ComPtr::Release(v29); /*0x76628b*/
+  ((ComPtr *)v29)->Release(); /*0x76628b*/
   v26 = 0; /*0x766290*/
   char *v7; // ecx
   v25 = v7; /*0x766292*/
@@ -517,9 +517,9 @@ int WDT_InitGameOptions()
     ComPtr::Set((unsigned int *)(dword_B72764 + 8 * v10), v28); /*0x766333*/
   }
   v27 = &g_var_5878c0; /*0x76633c*/
-  ComPtr::Release(&v27); /*0x766340*/
+  ((ComPtr *)&v27)->Release(); /*0x766340*/
   v29[0] = &g_var_5878c0; /*0x766349*/
-  ComPtr::Release(v29); /*0x766351*/
+  ((ComPtr *)v29)->Release(); /*0x766351*/
   v26 = 0; /*0x766356*/
   char *v11; // ecx
   v25 = v11; /*0x766358*/
@@ -542,9 +542,9 @@ int WDT_InitGameOptions()
     ComPtr::Set((unsigned int *)(dword_B72764 + 8 * v13), v28); /*0x7663ef*/
   }
   v27 = &g_var_5878c0; /*0x7663f8*/
-  ComPtr::Release(&v27); /*0x7663fc*/
+  ((ComPtr *)&v27)->Release(); /*0x7663fc*/
   v29[0] = &g_ptr_7F701C; /*0x766405*/
-  ComPtr::Release(v29); /*0x76640d*/
+  ((ComPtr *)v29)->Release(); /*0x76640d*/
   v26 = 0; /*0x766412*/
   char *v14; // ecx
   v25 = v14; /*0x766414*/
@@ -571,9 +571,9 @@ int WDT_InitGameOptions()
     ComPtr::Set((unsigned int *)(dword_B72764 + 8 * v17), v28); /*0x7664b5*/
   }
   v27 = &g_var_5878c0; /*0x7664be*/
-  ComPtr::Release(&v27); /*0x7664c2*/
+  ((ComPtr *)&v27)->Release(); /*0x7664c2*/
   v29[0] = &g_var_5878c0; /*0x7664cb*/
-  ComPtr::Release(v29); /*0x7664d3*/
+  ((ComPtr *)v29)->Release(); /*0x7664d3*/
   v26 = 1; /*0x7664d8*/
   char *v18; // ecx
   v25 = v18; /*0x7664da*/
@@ -589,7 +589,7 @@ int WDT_InitGameOptions()
   ComPtr::Set(&v27, v20->u32_4); /*0x76651b*/
   System_Init_766EE0(&v27); /*0x76652a*/
   v27 = &g_var_5878c0; /*0x766533*/
-  ComPtr::Release(&v27); /*0x766537*/
+  ((ComPtr *)&v27)->Release(); /*0x766537*/
   System_Init_766900(v29); /*0x766540*/
   int v21; // eax
   v21 = System_Init_7676F0(&v27, 201326592); /*0x76654e*/
@@ -2816,11 +2816,11 @@ bool E4Recv_76D3A0::sub_76D3A0(unsigned int * a2)
   int v9; // [esp+14h] [ebp-8h]
   ComPtr::Set((ComPtr *)v7, v9); /*0x76d422*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_var_5878c0) */  /*0x76d42b*/
-  ComPtr::Release((ComPtr *)v8); /*0x76d433*/
+  ((ComPtr *)v8)->Release(); /*0x76d433*/
   bool v5; // bl
   v5 = TerritorySelectWDT(this, (int)v7); /*0x76d448*/
   v7[0] = (int)&g_var_5878c0; /*0x76d44a*/
-  ComPtr::Release((ComPtr *)v7); /*0x76d452*/
+  ((ComPtr *)v7)->Release(); /*0x76d452*/
   return v5; /*0x76d459*/
 
 }
@@ -2841,7 +2841,7 @@ unsigned int * E4Recv_76D470::sub_76D470(unsigned int * a2)
     FindTerritoryWOL(v4, this->currentTargets[1] + 44, (int)result); /*0x76d4a2*/
     TerritorySelectWDT(this, (int)v4); /*0x76d4ae*/
     /* X11: ptr_0 install elided (X67 star-deref, RHS g_var_5878c0) */  /*0x76d4b7*/
-    return ComPtr::Release((ComPtr *)v4); /*0x76d4bf*/
+    return ((ComPtr *)v4)->Release(); /*0x76d4bf*/
   }
   return result; /*0x76d4c4*/
 
@@ -2982,7 +2982,7 @@ unsigned int * E4Recv_76E090::sub_76E090()
   *(unsigned int *)&v4.ptr_4 = &g_ptr_7F71C4; /*0x76e15a*/
   TerritorySelectWDT(this, (int)&v4.ptr_4); /*0x76e162*/
   *(unsigned int *)&v4.ptr_4 = &g_ptr_7F71C4; /*0x76e16b*/
-  return ComPtr::Release((ComPtr *)&v4.ptr_4); /*0x76e178*/
+  return ((ComPtr *)&v4.ptr_4)->Release(); /*0x76e178*/
 
 }
 } // namespace gamemd
@@ -3303,7 +3303,7 @@ rc_ptr * FindTerritoryWOL(ObjectClass * aP0, int a2, int a3)
   if ( (v4 & 1) != 0 ) /*0x76fff5*/
   {
     v7[0] = &g_var_5878c0; /*0x76fffb*/
-    ComPtr::Release((ComPtr *)v7); /*0x770003*/
+    ((ComPtr *)v7)->Release(); /*0x770003*/
   }
   return aP0; /*0x77000a*/
 }

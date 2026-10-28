@@ -3091,7 +3091,7 @@ int Multiplayer_GameMode_DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned in
           if ( v35 ) /*0x7989c0*/
             FillPersonaInfoWOL(v35, hWnd, (char **)&dword_B73E40, (wchar_t **)1); /*0x7989ca*/
           Type = (DWORD)&g_var_5878c0; /*0x7989d3*/
-          ComPtr::Release(&Type); /*0x7989db*/
+          ((ComPtr *)&Type)->Release(); /*0x7989db*/
         }
         HWND DlgItem; // ebx
         DlgItem = GetDlgItem(hWnd, 1862); /*0x7989fa*/
@@ -3355,7 +3355,7 @@ void MainLobbyDlgProcWOL(HWND hWnd, LPARAM lParam, ObjectClass)
         SendMessageA(v47, 0xF1u, v48, 0); /*0x799b21*/
         DeleteAndZero((ObjectClass *)&v55.q004); /*0x799b27*/
         v62 = &g_ptr_7F3F44; /*0x799b30*/
-        ComPtr::Release((ComPtr *)&v62); /*0x799b38*/
+        ((ComPtr *)&v62)->Release(); /*0x799b38*/
         ((DeleteAndZero *)&v55)->Alt(); /*0x799b41*/
       }
       return 0; /*0x7998ed*/
@@ -3452,7 +3452,7 @@ void MainLobbyDlgProcWOL(HWND hWnd, LPARAM lParam, ObjectClass)
             InvalidateRect(v32, 0, 0); /*0x7998ad*/
           }
           v60 = &g_ptr_7F3F44; /*0x7998b3*/
-          ComPtr::Release((ComPtr *)&v60); /*0x7998bb*/
+          ((ComPtr *)&v60)->Release(); /*0x7998bb*/
           result = 0; /*0x7998c3*/
           break; /*0x7998c9*/
         case 1772: /*0x79955d*/
@@ -3550,7 +3550,7 @@ void MainLobbyDlgProcWOL(HWND hWnd, LPARAM lParam, ObjectClass)
             EnableWindow(v15, v51); /*0x799340*/
             DeleteAndZero((ObjectClass *)&hWnd); /*0x799346*/
             v60 = &g_ptr_7F3F44; /*0x79934f*/
-            ComPtr::Release((ComPtr *)&v60); /*0x799357*/
+            ((ComPtr *)&v60)->Release(); /*0x799357*/
             return 0; /*0x799365*/
           case 1577: /*0x79915a*/
             if ( (((ptr_0) >> 16) & 0xFFFF) != 1 ) /*0x79936c*/
@@ -3564,7 +3564,7 @@ void MainLobbyDlgProcWOL(HWND hWnd, LPARAM lParam, ObjectClass)
               SaveProfileWOL((int)v61, (const char **)&stru_B73E10.q030); /*0x7993af*/
             }
             v60 = &g_ptr_7F3F44; /*0x7993b8*/
-            ComPtr::Release((ComPtr *)&v60); /*0x7993c0*/
+            ((ComPtr *)&v60)->Release(); /*0x7993c0*/
             DeleteAndZero((ObjectClass *)&hWnd.m_3[1]); /*0x7993c9*/
             return 0; /*0x7993d7*/
           case 1578: /*0x79915a*/
@@ -3625,7 +3625,7 @@ void MainLobbyDlgProcWOL(HWND hWnd, LPARAM lParam, ObjectClass)
       }
 LABEL_67:
       v60 = &g_ptr_7F3F44; /*0x799662*/
-      ComPtr::Release((ComPtr *)&v60); /*0x79966e*/
+      ((ComPtr *)&v60)->Release(); /*0x79966e*/
       return 0; /*0x799676*/
     }
   }

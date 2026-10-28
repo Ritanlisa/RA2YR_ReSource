@@ -278,7 +278,7 @@ unsigned int * Conflict_WorldDominationTour_12::Constructor(char a2, void *a2_1,
 {
 
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7F701C) */  /*0x766963*/
-  ComPtr::Release((ComPtr *)this); /*0x766969*/
+  ((ComPtr *)this)->Release(); /*0x766969*/
   if ( (a2 & 1) != 0 ) /*0x766973*/
     __3_YAXPAX_Z(this); /*0x766976*/
   return (unsigned int *)(this); /*0x766980*/
@@ -292,7 +292,7 @@ unsigned int * Conflict_WorldDominationTour_12::Constructor_0(char a2)
 {
 
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_var_5878c0) */  /*0x766993*/
-  ComPtr::Release((ComPtr *)this); /*0x766999*/
+  ((ComPtr *)this)->Release(); /*0x766999*/
   if ( (a2 & 1) != 0 ) /*0x7669a3*/
     __3_YAXPAX_Z(this); /*0x7669a6*/
   return (unsigned int *)(this); /*0x7669b0*/

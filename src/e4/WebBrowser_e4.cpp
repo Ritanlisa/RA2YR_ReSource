@@ -440,7 +440,7 @@ int WebBrowser::GoBack()
   String::Assign_Alt((String *)&g_WindowManager.__pad_EC[684], (const char *)&v4[0].q008); /*0x773dee*/
   ((String *)&g_WebBrowserConfig)->Assign_Alt(v5); /*0x773dfd*/
   *(unsigned int *)&v2.m_3[1] = &g_ptr_7F3F44; /*0x773e06*/
-  ComPtr::Release((ComPtr *)&v2.m_3[1]); /*0x773e0e*/
+  ((ComPtr *)&v2.m_3[1])->Release(); /*0x773e0e*/
   j_DeleteAndZero((ObjectClass *)&v2); /*0x773e17*/
   return 0; /*0x773e1e*/
 

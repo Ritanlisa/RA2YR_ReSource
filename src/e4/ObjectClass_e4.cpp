@@ -11282,7 +11282,7 @@ void* ObjectClass::TerritorySelectWDT_Create(void* a2) {
       }
     }
     v14 = &g_var_5878c0; /*0x76669a*/
-    ComPtr::Release(&v14); /*0x76669e*/
+    ((ComPtr *)&v14)->Release(); /*0x76669e*/
     ((void (*)(void ***))v16[2])(&v16); /*0x7666ab*/
   }
   while ( v3 ); /*0x7666b0*/
@@ -11312,7 +11312,7 @@ void* ObjectClass::TerritorySelectWDT_Create(void* a2) {
       }
     }
     v14 = &g_var_5878c0; /*0x76674f*/
-    ComPtr::Release(&v14); /*0x766753*/
+    ((ComPtr *)&v14)->Release(); /*0x766753*/
     ((void (*)(void ***))v16[2])(&v16); /*0x766760*/
   }
   WideString::AssignFromPtr(a2, (const wchar_t **)&v11); /*0x766776*/

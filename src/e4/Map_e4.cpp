@@ -1601,7 +1601,7 @@ void * Map_WorldDominationTour_20::Constructor_0(rc_ptr_base * Block, char a2, v
       {
         v5 = (ComPtr *)((char *)v5 - 8); /*0x76a62e*/
         /* X11: ptr_0 install elided (X67 star-deref, RHS g_var_5878c0) */  /*0x76a633*/
-        ComPtr::Release(v5); /*0x76a639*/
+        ((ComPtr *)v5)->Release(); /*0x76a639*/
         --v7; /*0x76a63e*/
       }
       while ( v7 ); /*0x76a63f*/

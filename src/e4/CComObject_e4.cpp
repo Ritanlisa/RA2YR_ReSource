@@ -1686,7 +1686,7 @@ int CComObject_CChatEventSink___ATL::DispatchStub_33(int a1, int a2, int a3)
                               (const char **)&g_WindowManager.__pad_EC[684]);
             ComPtr::Set(&v14, (int)PlayerProfile->ptr_4); /*0x7aba45*/
             /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F3F44) */  /*0x7aba4e*/
-            ComPtr::Release((ComPtr *)&v14.q020); /*0x7aba52*/
+            ((ComPtr *)&v14.q020)->Release(); /*0x7aba52*/
           }
           else
           {
@@ -1698,7 +1698,7 @@ int CComObject_CChatEventSink___ATL::DispatchStub_33(int a1, int a2, int a3)
           Debug::Log(); /*0x7abaa0*/
           v12 = 1; /*0x7abaac*/
           /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7F3F44) */  /*0x7abab1*/
-          ComPtr::Release(&v14); /*0x7abab5*/
+          ((ComPtr *)&v14)->Release(); /*0x7abab5*/
         }
         v4 = *(unsigned int *)(v4 + 32); /*0x7ababa*/
         DeleteAndZero((ObjectClass *)&a2); /*0x7abac1*/

@@ -283,7 +283,7 @@ unsigned int * COMClass::releaseInterface() {
 namespace gamemd {
 unsigned int * COMClass::marshalInterface(char a2) {
   *(unsigned int *)this->__pad_000 = 0; /*0x767c53*/
-  ComPtr::Release((ComPtr *)this); /*0x767c59*/
+  ((ComPtr *)this)->Release(); /*0x767c59*/
   if ( (a2 & 1) != 0 ) /*0x767c63*/
     operator delete((this)); /*0x767c66*/
   return this->__pad_000; /*0x767c70*/
@@ -4621,7 +4621,7 @@ char * COMClass::createInstance(char a2) {
       {
         v5 = (ComPtr *)((char *)v5 - 8); /*0x765bce*/
         *(unsigned int *)v5->__pad_000 = 0; /*0x765bd3*/
-        ComPtr::Release(v5); /*0x765bd9*/
+        ((ComPtr *)v5)->Release(); /*0x765bd9*/
         --v7; /*0x765bde*/
       }
       while ( v7 ); /*0x765bdf*/
@@ -4633,7 +4633,7 @@ char * COMClass::createInstance(char a2) {
   else
   {
     *(unsigned int *)this->__pad_000 = 0; /*0x765bfa*/
-    ComPtr::Release((ComPtr *)this); /*0x765c00*/
+    ((ComPtr *)this)->Release(); /*0x765c00*/
     if ( (a2 & 1) != 0 ) /*0x765c08*/
       operator delete((this)); /*0x765c0b*/
     return this->__pad_000; /*0x765c13*/

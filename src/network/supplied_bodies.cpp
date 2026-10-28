@@ -5856,7 +5856,7 @@ void WOLGameList::PopulateLobbyLists()
           }
         }
         *(unsigned int *)&v51[12] = 0; /*0x7a3a7b*/
-        ComPtr::Release((ComPtr *)&v51[12]); /*0x7a3a83*/
+        ((ComPtr *)&v51[12])->Release(); /*0x7a3a83*/
       }
       *(unsigned int *)&v51[8] = *(unsigned int *)(*(unsigned int *)&v51[8] + 60); /*0x7a3a93*/
       DeleteAndZero((ObjectClass *)v51); /*0x7a3a97*/

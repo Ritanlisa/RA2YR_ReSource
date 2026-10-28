@@ -10754,7 +10754,7 @@ unsigned int *  VectorClass_rc_ptr_WDTTerritory::loc_76B6C0(int a3, void *a2)
       v77 = *(unsigned int *)(a3 + 32); /*0x76b68c*/
       v79 = &g_var_5878c0; /*0x76b68f*/
       *(unsigned int *)(a3 + 32) = v77 + 1; /*0x76b698*/
-      ComPtr::Release(&v79); /*0x76b69f*/
+      ((ComPtr *)&v79)->Release(); /*0x76b69f*/
       if ( v5 >= a3 ) /*0x76b6a8*/
         return 1; /*0x76b6b1*/
       v3 = a3; /*0x76b1b1*/

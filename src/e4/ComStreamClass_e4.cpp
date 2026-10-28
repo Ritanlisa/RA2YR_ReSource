@@ -128,7 +128,7 @@ LABEL_14:
     }
   }
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F3F44) */  /*0x7a3fd1*/
-  ComPtr::Release((ComPtr *)&v22[0].ptr_0.ptr_4); /*0x7a3fdd*/
+  ((ComPtr *)&v22[0].ptr_0.ptr_4)->Release(); /*0x7a3fdd*/
 LABEL_16:
   if ( lParam ) /*0x7a3fed*/
   {
@@ -363,9 +363,9 @@ unsigned int * ComStreamClass::seekToPosition()
   v3 = (unsigned int *)(Audio_Create(v5, (const char **)&g_WebBrowser, (int)_76BE90)); /*0x7b0249*/
   ComPtr::Set(&stru_B77F68, v3->u32_4); /*0x7b0257*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_var_5878c0) */  /*0x7b0260*/
-  ComPtr::Release((ComPtr *)v5); /*0x7b0268*/
+  ((ComPtr *)v5)->Release(); /*0x7b0268*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_var_5878c0) */  /*0x7b0271*/
-  return (unsigned int *)(ComPtr::Release((ComPtr *)v6)); /*0x7b027e*/
+  return (unsigned int *)(((ComPtr *)v6)->Release()); /*0x7b027e*/
 
 }
 } // namespace gamemd
@@ -384,9 +384,9 @@ unsigned int * ComStreamClass::getStreamSize()
   v3 = (unsigned int *)(Audio_Create(v5, (const char **)&g_WebBrowser, (int)_76BE90)); /*0x7b02c9*/
   ComPtr::Set((ComPtr *)&DataGlobal_B77F78, v3->u32_4); /*0x7b02d7*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_var_5878c0) */  /*0x7b02e0*/
-  ComPtr::Release((ComPtr *)v5); /*0x7b02e8*/
+  ((ComPtr *)v5)->Release(); /*0x7b02e8*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_var_5878c0) */  /*0x7b02f1*/
-  return (unsigned int *)(ComPtr::Release((ComPtr *)v6)); /*0x7b02fe*/
+  return (unsigned int *)(((ComPtr *)v6)->Release()); /*0x7b02fe*/
 
 }
 } // namespace gamemd
