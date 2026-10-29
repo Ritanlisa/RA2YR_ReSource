@@ -1557,6 +1557,34 @@ def main():
                 census["C6"] += 1
     print("[C6] evidence=%d entities=%d" % (census["C6"], len(fam["C6"])), flush=True)
 
+    # X155: 二进制装表（C4/C6）反驳 C2 的名字型 pin。
+    # 实测最后 16 个冲突全是这种：实体在函数里装了 vtable（C4 EXACT），而 C2 的
+    # pin 来自**命名轮发明的类名**（TeamTypeVector / SmudgeTypeList / …），
+    # 两者槽数不同 → 空域。装表是二进制事实，名字不是，故丢弃该 pin。
+    c2_refuted_by_install = 0
+    if facts:
+        _final2 = {}
+        for fn, site, off, sym in facts["this_installs"]:
+            if off != 0:
+                continue
+            cur = _final2.get(fn)
+            if cur is None or site > cur[0]:
+                _final2[fn] = (site, sym)
+        for fn, (site, sym) in _final2.items():
+            ci = resolve(sym)
+            if ci is None:
+                continue
+            eid = "T:%X" % fn
+            m2 = fam["C2"].get(eid)
+            if m2 is None:
+                continue
+            if not ((m2 >> ci) & 1):
+                # C2 的 mask 不包含装表类 → 名字 pin 被二进制反驳
+                fam["C2"][eid] = FULL
+                c2_pin_log.setdefault(eid, []).append(["refuted_by_install", sym, names[ci]])
+                c2_refuted_by_install += 1
+    print("[C2] pins refuted by binary vtable install: %d" % c2_refuted_by_install, flush=True)
+
     # ---------------- C7：参数/返回方差 ----------------
     for a, v in protos.items():
         pr = parse_proto((v or {}).get("proto"))

@@ -108,11 +108,11 @@
    }
   ],
   "K": 771,
-  "K_upper": 787,
+  "K_upper": 771,
   "lower_bound": 771,
-  "constrained_clusters": 15017,
+  "constrained_clusters": 15033,
   "free_clusters": 28085,
-  "conflicts": 16,
+  "conflicts": 0,
   "c1_gaps": 0,
   "universe": 1597,
   "entities": 43827
@@ -145,20 +145,20 @@
    "desc": "this passing (arg class ⊑ callee this-class)",
    "evidence": 14477,
    "entities_touched": 9316,
-   "clusters_constrained": 13449,
-   "clusters_pinned": 6264,
+   "clusters_constrained": 13451,
+   "clusters_pinned": 5888,
    "clusters_free": 29665,
-   "pinned_classes": 656,
-   "forced_classes": 656,
-   "conflicts": 4,
+   "pinned_classes": 606,
+   "forced_classes": 606,
+   "conflicts": 2,
    "c1_gaps": 0,
-   "K": 659,
-   "K_upper": 663,
-   "K_total": 659,
-   "K_greedy": 659,
-   "delta_forced": 656,
-   "delta_K": 658,
-   "lower_bound": 659,
+   "K": 610,
+   "K_upper": 612,
+   "K_total": 610,
+   "K_greedy": 610,
+   "delta_forced": 606,
+   "delta_K": 609,
+   "lower_bound": 610,
    "merges": 0,
    "bad_cover": 0
   },
@@ -167,20 +167,20 @@
    "desc": "vtable slot membership",
    "evidence": 14110,
    "entities_touched": 2252,
-   "clusters_constrained": 14031,
-   "clusters_pinned": 6264,
+   "clusters_constrained": 14033,
+   "clusters_pinned": 5888,
    "clusters_free": 29083,
-   "pinned_classes": 656,
-   "forced_classes": 656,
-   "conflicts": 4,
+   "pinned_classes": 606,
+   "forced_classes": 606,
+   "conflicts": 2,
    "c1_gaps": 0,
-   "K": 659,
-   "K_upper": 663,
-   "K_total": 659,
-   "K_greedy": 659,
+   "K": 610,
+   "K_upper": 612,
+   "K_total": 610,
+   "K_greedy": 610,
    "delta_forced": 0,
    "delta_K": 0,
-   "lower_bound": 659,
+   "lower_bound": 610,
    "merges": 0,
    "bad_cover": 0
   },
@@ -190,19 +190,19 @@
    "evidence": 1295,
    "entities_touched": 1295,
    "clusters_constrained": 14040,
-   "clusters_pinned": 6948,
+   "clusters_pinned": 6865,
    "clusters_free": 29077,
-   "pinned_classes": 774,
-   "forced_classes": 774,
+   "pinned_classes": 768,
+   "forced_classes": 768,
    "conflicts": 1,
    "c1_gaps": 0,
-   "K": 774,
-   "K_upper": 775,
-   "K_total": 774,
-   "K_greedy": 774,
-   "delta_forced": 118,
-   "delta_K": 115,
-   "lower_bound": 774,
+   "K": 768,
+   "K_upper": 769,
+   "K_total": 768,
+   "K_greedy": 768,
+   "delta_forced": 162,
+   "delta_K": 158,
+   "lower_bound": 768,
    "merges": 0,
    "bad_cover": 0
   },
@@ -212,19 +212,19 @@
    "evidence": 842,
    "entities_touched": 839,
    "clusters_constrained": 14873,
-   "clusters_pinned": 6948,
+   "clusters_pinned": 6865,
    "clusters_free": 28244,
-   "pinned_classes": 774,
-   "forced_classes": 774,
+   "pinned_classes": 768,
+   "forced_classes": 768,
    "conflicts": 1,
    "c1_gaps": 0,
-   "K": 774,
-   "K_upper": 775,
-   "K_total": 774,
-   "K_greedy": 775,
+   "K": 768,
+   "K_upper": 769,
+   "K_total": 768,
+   "K_greedy": 769,
    "delta_forced": 0,
    "delta_K": 0,
-   "lower_bound": 774,
+   "lower_bound": 768,
    "merges": 1,
    "bad_cover": 0
   },
@@ -233,19 +233,19 @@
    "desc": "vtable identity slot count (EXACT)",
    "evidence": 1377,
    "entities_touched": 1377,
-   "clusters_constrained": 14856,
-   "clusters_pinned": 6931,
+   "clusters_constrained": 14873,
+   "clusters_pinned": 6865,
    "clusters_free": 28244,
    "pinned_classes": 768,
    "forced_classes": 768,
-   "conflicts": 18,
+   "conflicts": 1,
    "c1_gaps": 0,
    "K": 768,
-   "K_upper": 786,
+   "K_upper": 769,
    "K_total": 768,
    "K_greedy": 769,
-   "delta_forced": -6,
-   "delta_K": -6,
+   "delta_forced": 0,
+   "delta_K": 0,
    "lower_bound": 768,
    "merges": 1,
    "bad_cover": 0
@@ -255,15 +255,15 @@
    "desc": "param/return variance",
    "evidence": 79,
    "entities_touched": 79,
-   "clusters_constrained": 14930,
-   "clusters_pinned": 6996,
+   "clusters_constrained": 14947,
+   "clusters_pinned": 6930,
    "clusters_free": 28170,
    "pinned_classes": 769,
    "forced_classes": 769,
-   "conflicts": 18,
+   "conflicts": 1,
    "c1_gaps": 0,
    "K": 769,
-   "K_upper": 787,
+   "K_upper": 770,
    "K_total": 769,
    "K_greedy": 770,
    "delta_forced": 1,
@@ -277,15 +277,15 @@
    "desc": "global object identity",
    "evidence": 158,
    "entities_touched": 158,
-   "clusters_constrained": 15017,
-   "clusters_pinned": 7109,
+   "clusters_constrained": 15033,
+   "clusters_pinned": 7043,
    "clusters_free": 28085,
    "pinned_classes": 771,
    "forced_classes": 771,
-   "conflicts": 16,
+   "conflicts": 0,
    "c1_gaps": 0,
    "K": 771,
-   "K_upper": 787,
+   "K_upper": 771,
    "K_total": 771,
    "K_greedy": 772,
    "delta_forced": 2,
@@ -295,1064 +295,7 @@
    "bad_cover": 0
   }
  ],
- "conflicts": [
-  {
-   "cluster": "R:49E8E0:ecx",
-   "entities": [
-    "T:49E8E0"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1464,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 522,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain",
-   "c2_pins": [
-    [
-     "self",
-     "0x0049E8E0",
-     "INISectionList"
-    ]
-   ],
-   "c2_pinned": [
-    "INISectionList"
-   ],
-   "pinned_excluded_by": [
-    "C6"
-   ]
-  },
-  {
-   "cluster": "R:50E830:ecx",
-   "entities": [
-    "T:50E830"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     4,
-     4
-    ],
-    [
-     8,
-     4
-    ],
-    [
-     12,
-     1
-    ],
-    [
-     13,
-     1
-    ],
-    [
-     16,
-     4
-    ],
-    [
-     20,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1130,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 522,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain",
-   "c2_pins": [
-    [
-     "self",
-     "0x0050E830",
-     "TeamTypeVector"
-    ]
-   ],
-   "c2_pinned": [
-    "TeamTypeVector"
-   ],
-   "pinned_excluded_by": [
-    "C6"
-   ]
-  },
-  {
-   "cluster": "R:512DC0:ecx",
-   "entities": [
-    "T:512DC0"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     4,
-     4
-    ],
-    [
-     8,
-     4
-    ],
-    [
-     12,
-     1
-    ],
-    [
-     13,
-     1
-    ],
-    [
-     16,
-     4
-    ],
-    [
-     20,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1130,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 522,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain",
-   "c2_pins": [
-    [
-     "self",
-     "0x00512DC0",
-     "InfantryTypeVector"
-    ]
-   ],
-   "c2_pinned": [
-    "InfantryTypeVector"
-   ],
-   "pinned_excluded_by": [
-    "C6"
-   ]
-  },
-  {
-   "cluster": "R:513190:ecx",
-   "entities": [
-    "T:513190"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     4,
-     4
-    ],
-    [
-     8,
-     4
-    ],
-    [
-     12,
-     1
-    ],
-    [
-     13,
-     1
-    ],
-    [
-     16,
-     4
-    ],
-    [
-     20,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1130,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 522,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain",
-   "c2_pins": [
-    [
-     "self",
-     "0x00513190",
-     "UnitTypeVector"
-    ]
-   ],
-   "c2_pinned": [
-    "UnitTypeVector"
-   ],
-   "pinned_excluded_by": [
-    "C6"
-   ]
-  },
-  {
-   "cluster": "R:589100:ecx",
-   "entities": [
-    "T:589100"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     4,
-     4
-    ],
-    [
-     8,
-     4
-    ],
-    [
-     12,
-     1
-    ],
-    [
-     13,
-     1
-    ],
-    [
-     16,
-     4
-    ],
-    [
-     20,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1130,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 522,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain",
-   "c2_pins": [
-    [
-     "self",
-     "0x00589100",
-     "Subzone"
-    ]
-   ],
-   "c2_pinned": [
-    "Subzone"
-   ],
-   "pinned_excluded_by": [
-    "C6"
-   ]
-  },
-  {
-   "cluster": "R:5CBD20:ecx",
-   "entities": [
-    "T:5CBD20"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     4,
-     4
-    ],
-    [
-     8,
-     4
-    ],
-    [
-     12,
-     1
-    ],
-    [
-     16,
-     4
-    ],
-    [
-     24,
-     4
-    ],
-    [
-     28,
-     4
-    ],
-    [
-     32,
-     4
-    ],
-    [
-     36,
-     4
-    ],
-    [
-     40,
-     4
-    ],
-    [
-     44,
-     4
-    ],
-    [
-     48,
-     4
-    ],
-    [
-     52,
-     1
-    ],
-    [
-     56,
-     4
-    ],
-    [
-     64,
-     4
-    ],
-    [
-     68,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1034,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 522,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain",
-   "c2_pins": [
-    [
-     "self",
-     "0x005CBD20",
-     "Trigger"
-    ]
-   ],
-   "c2_pinned": [
-    "Trigger"
-   ],
-   "pinned_excluded_by": [
-    "C6"
-   ]
-  },
-  {
-   "cluster": "R:5CC760:ecx",
-   "entities": [
-    "T:5CC760"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     4,
-     4
-    ],
-    [
-     8,
-     4
-    ],
-    [
-     12,
-     1
-    ],
-    [
-     16,
-     4
-    ],
-    [
-     24,
-     4
-    ],
-    [
-     28,
-     4
-    ],
-    [
-     32,
-     4
-    ],
-    [
-     52,
-     4
-    ],
-    [
-     56,
-     1
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1039,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 522,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain",
-   "c2_pins": [
-    [
-     "self",
-     "0x005CC760",
-     "ArtConfig"
-    ]
-   ],
-   "c2_pinned": [
-    "ArtConfig"
-   ],
-   "pinned_excluded_by": [
-    "C6"
-   ]
-  },
-  {
-   "cluster": "R:628240:ecx",
-   "entities": [
-    "T:628240"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     4,
-     4
-    ],
-    [
-     8,
-     4
-    ],
-    [
-     12,
-     1
-    ],
-    [
-     13,
-     1
-    ],
-    [
-     16,
-     4
-    ],
-    [
-     20,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1130,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 522,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain",
-   "c2_pins": [
-    [
-     "self",
-     "0x00628240",
-     "FileExtension"
-    ]
-   ],
-   "c2_pinned": [
-    "FileExtension"
-   ],
-   "pinned_excluded_by": [
-    "C6"
-   ]
-  },
-  {
-   "cluster": "R:658DE0:ecx",
-   "entities": [
-    "T:658DE0"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     4,
-     4
-    ],
-    [
-     8,
-     4
-    ],
-    [
-     12,
-     1
-    ],
-    [
-     13,
-     1
-    ],
-    [
-     16,
-     4
-    ],
-    [
-     20,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1130,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 522,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain",
-   "c2_pins": [
-    [
-     "self",
-     "0x00658DE0",
-     "RadarHashVector"
-    ]
-   ],
-   "c2_pinned": [
-    "RadarHashVector"
-   ],
-   "pinned_excluded_by": [
-    "C6"
-   ]
-  },
-  {
-   "cluster": "R:67AFF0:ecx",
-   "entities": [
-    "T:67AFF0"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     4,
-     4
-    ],
-    [
-     8,
-     4
-    ],
-    [
-     12,
-     1
-    ],
-    [
-     13,
-     1
-    ],
-    [
-     16,
-     4
-    ],
-    [
-     20,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1130,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 522,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain",
-   "c2_pins": [
-    [
-     "self",
-     "0x0067AFF0",
-     "SmudgeTypeVector"
-    ]
-   ],
-   "c2_pinned": [
-    "SmudgeTypeVector"
-   ],
-   "pinned_excluded_by": [
-    "C6"
-   ]
-  },
-  {
-   "cluster": "R:67B370:ecx",
-   "entities": [
-    "T:67B370"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     4,
-     4
-    ],
-    [
-     8,
-     4
-    ],
-    [
-     12,
-     1
-    ],
-    [
-     13,
-     1
-    ],
-    [
-     16,
-     4
-    ],
-    [
-     20,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1130,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 522,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain",
-   "c2_pins": [
-    [
-     "self",
-     "0x0067B370",
-     "TerrainTypeVector"
-    ]
-   ],
-   "c2_pinned": [
-    "TerrainTypeVector"
-   ],
-   "pinned_excluded_by": [
-    "C6"
-   ]
-  },
-  {
-   "cluster": "R:67C280:ecx",
-   "entities": [
-    "T:67C280"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     4,
-     4
-    ],
-    [
-     8,
-     4
-    ],
-    [
-     12,
-     1
-    ],
-    [
-     13,
-     1
-    ],
-    [
-     16,
-     4
-    ],
-    [
-     20,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1130,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 522,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain",
-   "c2_pins": [
-    [
-     "self",
-     "0x0067C280",
-     "SmudgeTypeList"
-    ]
-   ],
-   "c2_pinned": [
-    "SmudgeTypeList"
-   ],
-   "pinned_excluded_by": [
-    "C6"
-   ]
-  },
-  {
-   "cluster": "R:68C200:ecx",
-   "entities": [
-    "T:68C200"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     4,
-     4
-    ],
-    [
-     8,
-     4
-    ],
-    [
-     12,
-     1
-    ],
-    [
-     13,
-     1
-    ],
-    [
-     16,
-     4
-    ],
-    [
-     20,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1130,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 522,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain",
-   "c2_pins": [
-    [
-     "self",
-     "0x0068C200",
-     "TechnoTypeVector"
-    ]
-   ],
-   "c2_pinned": [
-    "TechnoTypeVector"
-   ],
-   "pinned_excluded_by": [
-    "C6"
-   ]
-  },
-  {
-   "cluster": "R:690A10:ecx",
-   "entities": [
-    "T:690A10"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     4,
-     4
-    ],
-    [
-     8,
-     4
-    ],
-    [
-     12,
-     4
-    ],
-    [
-     16,
-     1
-    ],
-    [
-     20,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1123,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 522,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain",
-   "c2_pins": [
-    [
-     "self",
-     "0x00690A10",
-     "ScoreScreen"
-    ]
-   ],
-   "c2_pinned": [
-    "ScoreScreen"
-   ],
-   "pinned_excluded_by": [
-    "C6"
-   ]
-  },
-  {
-   "cluster": "R:690AE0:ecx",
-   "entities": [
-    "T:690AE0"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     4,
-     4
-    ],
-    [
-     8,
-     4
-    ],
-    [
-     12,
-     4
-    ],
-    [
-     16,
-     1
-    ],
-    [
-     20,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1123,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 522,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain",
-   "c2_pins": [
-    [
-     "self",
-     "0x00690AE0",
-     "ScoreScreen"
-    ]
-   ],
-   "c2_pinned": [
-    "ScoreScreen"
-   ],
-   "pinned_excluded_by": [
-    "C6"
-   ]
-  },
-  {
-   "cluster": "R:75E6B0:ecx",
-   "entities": [
-    "T:75E6B0"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     4,
-     4
-    ],
-    [
-     8,
-     4
-    ],
-    [
-     12,
-     1
-    ],
-    [
-     13,
-     1
-    ],
-    [
-     16,
-     4
-    ],
-    [
-     20,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1130,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 522,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain",
-   "c2_pins": [
-    [
-     "self",
-     "0x0075E6B0",
-     "Voxel_Section"
-    ]
-   ],
-   "c2_pinned": [
-    "Voxel_Section"
-   ],
-   "pinned_excluded_by": [
-    "C6"
-   ]
-  }
- ],
+ "conflicts": [],
  "diagnostics": {
   "no_layout_match": {
    "count": 30,
